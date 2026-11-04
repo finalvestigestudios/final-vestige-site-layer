@@ -91,7 +91,35 @@ function ex2_replace_native_nav(&$blocks,$menu_id) {
 }
 $original=get_block_template('assembler//header','wp_template_part');
 if (!$original || empty($original->content)) ex2_abort('Assembler header template part missing');
+// A customized wp_template_part can override the same slug. Never use an
+// imported editor/database header as the foundation of a synthetic fixture.
+if (($original->source ?? '') !== 'theme' ||
+    ($original->theme ?? '') !== 'assembler' ||
+    ($original->slug ?? '') !== 'header')
+    ex2_abort('Refusing non-vendor or customized Assembler header');
+// Pin both vendor files BEFORE *either* branch can create a wp_navigation
+// or wp_template_part post, not just the registered-pattern fallback.
+$theme_dir=realpath(get_stylesheet_directory());
+$header_path=realpath(get_stylesheet_directory().'/parts/header.html');
+$pattern_path=realpath(get_stylesheet_directory().'/patterns/header.php');
+if (!$theme_dir || !$header_path || !$pattern_path ||
+    dirname(dirname($header_path)) !== $theme_dir ||
+    dirname(dirname($pattern_path)) !== $theme_dir ||
+    !is_file($header_path) || !is_readable($header_path) ||
+    !is_file($pattern_path) || !is_readable($pattern_path))
+    ex2_abort('Installed Assembler header or pattern absent/outside theme');
+$part_bytes=file_get_contents($header_path);
+$pattern_bytes=file_get_contents($pattern_path);
+$expected_part_sha256='3b983fa0d9d6ce9b2bc1024e215d9d63d9ecba2ad11f881ec59e87a40c28c2aa';
+$expected_pattern_sha256='962d31e7fe0dccc0f3398367b28744d54683743922b79209eeaae71b9731a480';
+if (!is_string($part_bytes) || hash('sha256',$part_bytes)!==$expected_part_sha256 ||
+    !is_string($pattern_bytes) || hash('sha256',$pattern_bytes)!==$expected_pattern_sha256)
+    ex2_abort('Unreviewed installed Assembler header or pattern digest');
 $source=$original->content;
+// WordPress theme-sourced template parts originate from the theme file;
+// reject even a deceptively theme-labelled or filtered altered copy.
+if (hash('sha256',$source)!==$expected_part_sha256)
+    ex2_abort('Resolved header differs from the pinned vendor part');
 $resolved_header_sha256=hash('sha256',$source);
 $header_source='wp_resolved_template';
 $blocks=parse_blocks($source);
@@ -101,24 +129,7 @@ if (ex2_nav_count($blocks)!==1) {
     // header references a PHP pattern; "nav_self" counted ALL self-closing
     // blocks, not necessarily navigation. Resolve that registered pattern
     // only after pinning BOTH public vendor files and verifying theme origin.
-    if (($original->source ?? '') !== 'theme')
-        ex2_abort('Custom header template: refusing to override unknown content');
-    $theme_dir=realpath(get_stylesheet_directory());
-    $header_path=realpath(get_stylesheet_directory().'/parts/header.html');
-    $pattern_path=realpath(get_stylesheet_directory().'/patterns/header.php');
-    if (!$theme_dir || !$header_path || !$pattern_path ||
-        dirname(dirname($header_path)) !== $theme_dir ||
-        dirname(dirname($pattern_path)) !== $theme_dir ||
-        !is_file($header_path) || !is_readable($header_path) ||
-        !is_file($pattern_path) || !is_readable($pattern_path))
-        ex2_abort('Installed Assembler header or pattern absent/outside theme');
-    $part_bytes=file_get_contents($header_path);
-    $pattern_bytes=file_get_contents($pattern_path);
-    $expected_part_sha256='3b983fa0d9d6ce9b2bc1024e215d9d63d9ecba2ad11f881ec59e87a40c28c2aa';
-    $expected_pattern_sha256='962d31e7fe0dccc0f3398367b28744d54683743922b79209eeaae71b9731a480';
-    if (!is_string($part_bytes) || hash('sha256',$part_bytes)!==$expected_part_sha256 ||
-        !is_string($pattern_bytes) || hash('sha256',$pattern_bytes)!==$expected_pattern_sha256)
-        ex2_abort('Unreviewed installed Assembler header or pattern digest');
+    // Theme custody and content digest already checked for every path above.
     $part_blocks=parse_blocks($part_bytes);
     $slugs=ex2_pattern_slugs($part_blocks);
     if ($slugs!==array('assembler/header') || ex2_nav_count($part_blocks)!==0)
