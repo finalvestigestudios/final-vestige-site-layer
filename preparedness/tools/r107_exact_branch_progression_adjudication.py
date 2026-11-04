@@ -16,6 +16,9 @@ import re
 import subprocess
 import sys
 
+# -I removes the script directory from sys.path; pin imports to our own tools.
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+
 import cluster_git_parity_gate as r15
 import r60_contributor_provenance_drift_docket as r60
 
