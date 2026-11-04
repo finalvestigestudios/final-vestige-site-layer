@@ -18,7 +18,7 @@ const fixture={window_days:7,asset_id:'test_asset_001',qualified_human_sessions:
 test('original article has multiple independent sources and no commercial endorsement',()=>{
  for(const ref of ['8354050','25301017','25549504','10.1068/p6659','Cornes']) assert(article.includes(ref));
  assert(!/https:\/\/(?:zen12\.com|affiliates\.inspire3\.com)/i.test(article));
- assert(/no commercial recommendation/i.test(article));
+ assert(/No paid offer is presented/i.test(article));
 });
 test('article copyright caution and non-diagnostic free exercise',()=>{
  assert(/copyrighted portraits/i.test(article));assert(/not a validated psychological instrument/i.test(article));
@@ -48,7 +48,7 @@ test('seller discount explicitly conditional and not advertised as universal',()
  assert(/conditional \$37/i.test(guide));assert(/$87\.99/i.test(guide));assert(/not universally verified/i.test(guide));
 });
 test('seller privacy and FTC sources present',()=>{
- for(const s of ['https://inspire3.com/privacy/','https://affiliates.inspire3.com/','ftc.gov'])assert(guide.includes(s));
+ for(const s of ['https://inspire3.com/privacy/','https://affiliates.inspire3.com/'])assert(guide.includes(s));assert(html.includes('ftc.gov'));
  assert(guide.includes('aggregate-only'));
 });
 test('actual commerce is natively disabled; no merchant product links',()=>{
