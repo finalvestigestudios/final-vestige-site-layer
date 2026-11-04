@@ -82,3 +82,8 @@ test('NASA photographic source custody and uncertain catalog ID remain explicit'
   assert.match(html,/S67-19766/);
   assert.match(html,/0\/6/);
 });
+test('Receipt includes exact git HEAD commit SHA and refuses missing SHA',()=>{
+  assert.match(runner,/git_head_sha=git_head_sha\(\)/);
+  assert.match(runner,/\['git','rev-parse','HEAD'\]/);
+  assert.match(runner,/or not record\['git_head_sha'\]/);
+});
