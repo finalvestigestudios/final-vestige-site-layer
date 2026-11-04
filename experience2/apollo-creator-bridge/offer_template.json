@@ -1,0 +1,20 @@
+{
+  "schema": "fv.apollo.offergate.v1",
+  "offer": {
+    "sku": "APOLLO_EDU_PENDING",
+    "product_title": "Apollo 1: Evidence vs Explanation — candidate only",
+    "seller": "Final Vestige Studios",
+    "category": "educator_casefile",
+    "product_url": "https://payhip.com/b/UNVERIFIED",
+    "price_minor_units": 1,
+    "currency": "USD"
+  },
+  "checks": {
+    "seller_listing": {"state": "pending", "evidence_sha256": null, "checked_utc": null},
+    "rights_media": {"state": "pending", "evidence_sha256": null, "checked_utc": null},
+    "fulfillment": {"state": "pending", "evidence_sha256": null, "checked_utc": null},
+    "refund_terms": {"state": "pending", "evidence_sha256": null, "checked_utc": null},
+    "independent_editorial": {"state": "pending", "evidence_sha256": null, "checked_utc": null},
+    "founder_release": {"state": "pending", "evidence_sha256": null, "checked_utc": null}
+  }
+}
