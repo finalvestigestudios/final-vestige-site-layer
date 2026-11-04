@@ -1,0 +1,66 @@
+{
+  "evidence_date_utc": "2026-11-04T22:38:35Z",
+  "type": "READ_ONLY_AGGREGATE_EVIDENCE_NOT_PII",
+  "owners": {
+    "dispatch": "#174",
+    "focus": "#129",
+    "mind": "#171",
+    "conversion": "#820"
+  },
+  "wordpress": {
+    "site": "https://finalvestige.com",
+    "focus_page_id": 1579,
+    "dispatch_page_id": 523,
+    "newsletter": {
+      "enabled": true,
+      "can_send": true,
+      "email_new_posts_by_default": false,
+      "email_content_format": "excerpt",
+      "reply_to": "no-reply"
+    },
+    "aggregates": {
+      "total": 3,
+      "confirmed": 3,
+      "unconfirmed": 2,
+      "imported_last_24h": 1,
+      "suppressed": 0
+    },
+    "audience_eligibility": "UNKNOWN",
+    "confirmed_signup_event_records": "NOT_AVAILABLE",
+    "welcome_configured": true,
+    "welcome_received": "NOT_VERIFIED",
+    "pdf_page_count_read": "NOT_VERIFIED",
+    "latest_five_post_notifications": "never_sent_opted_out"
+  },
+  "focusSource": {
+    "script_id": "fvf-gift-v2",
+    "logic": "any nonempty subscribe query value except five blocked errors reveals gift; is-subscriber CSS class also reveals gift",
+    "duplicate_signup_mobile_faq": true,
+    "confirmation_gate_claim_in_faq": true,
+    "confirmed_lead_proved_by_url": false,
+    "confirmed_lead_proved_by_css": false,
+    "confirmed_lead_proved_by_download": false
+  },
+  "commercial": {
+    "reserved_pilot_issues": [
+      3,
+      5
+    ],
+    "affiliate_email_rights": "NOT_VERIFIED",
+    "approved_live_guides": "NOT_VERIFIED",
+    "published_email_footer_and_optout": "NOT_VERIFIED",
+    "net_revenue_per_1000": "NOT_COMPUTABLE"
+  },
+  "release": {
+    "six_issues": "HOLD_UNSENT",
+    "offer_03": "HOLD_MERCHANT",
+    "offer_05": "HOLD_MERCHANT",
+    "requires_founder_final_approval": true
+  },
+  "tools": {
+    "v8_source_preflight": "20/20 synthetic checks passed against source text",
+    "native_node": "NOT_EXECUTED",
+    "hosted_ci": "NOT_VERIFIED",
+    "actual_email_sending": "NONE"
+  }
+}
