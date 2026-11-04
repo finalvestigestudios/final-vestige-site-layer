@@ -83,12 +83,52 @@ def navigate_actual_page(page,url,label):
             label+': browser navigation timing missing (set_content is not acceptable)')
     return response
 
+def audit_campaign_boundary(browser, target, record):
+    """Read-only visitor-path replay; never emit an analytics event or a real referral."""
+    # Synthetic, non-user campaign ID. This test deliberately does not record a sale.
+    campaign='utm_source=youtube&utm_medium=organic_social&utm_campaign=history_pilot_2026_11&utm_content=apollo1_youtube_lf_qa001'
+    for width in (390,1440):
+        ctx=browser.new_context(viewport={'width':width,'height':850},reduced_motion='reduce')
+        try:
+            page=ctx.new_page()
+            requests=[]
+            page.on('request',lambda req: requests.append(req.url))
+            destination=target+'?'+campaign
+            navigate_actual_page(page,destination,f'campaign-{width}')
+            require(page.evaluate('location.search')=='?'+campaign,
+                    f'campaign-{width}: source asset attribution lost on landing')
+            nasa=page.locator('a[href^="https://www.nasa.gov/"], a[href^="https://sma.nasa.gov/"]')
+            require(nasa.count()==22 and nasa.evaluate_all(
+                '(a)=>a.every(e=>e.relList.contains("noreferrer")&&e.relList.contains("noopener"))'),
+                f'campaign-{width}: external source link can leak campaign referrer')
+            require(page.locator('[data-fv-primary-cta]').count()==1,
+                    f'campaign-{width}: competing primary action')
+            page.locator('[data-fv-primary-cta]').click()
+            require(page.url==destination+'#classroom-preview' and
+                    page.locator('#classroom-preview').is_visible(),
+                    f'campaign-{width}: Grok visitor lost source URL or free worksheet')
+            # The review page has no cookies, storage or automatic outbound requests.
+            # This is a smoke test, not authorization to add new measurement code.
+            require(page.evaluate('document.cookie==="" && localStorage.length===0 && sessionStorage.length===0'),
+                    f'campaign-{width}: unexpected visitor persistence')
+            require(len(requests)>=1 and all(
+                req.startswith(target+'?') or req.startswith(target.rsplit('/',1)[0]+'/')
+                for req in requests),
+                f'campaign-{width}: unexpected network request during landing')
+            record['campaign_boundary'].append({
+                'width':width,'asset_id':'apollo1_youtube_lf_qa001',
+                'query_preserved':True,'nasa_referrer_blocked':True,
+                'automatic_third_party_requests':0,'storage_writes':0,
+                'classification':'synthetic_browser_smoke_not_a_conversion'})
+        finally:
+            ctx.close()
+
 def run(html,out,exe,axe=None):
     out.mkdir(parents=True,exist_ok=True)
     record=dict(source_sha256=sha(html),source=str(html),classification='actual-source' if html.name=='landing-preview.html' else 'fixture',
                 browser=None,modes=[],screenshots={},pdf=None,performance=[],axe_scans=[],axe_bundle_status='NOT_SUPPLIED',
                 source_identity='UNCHECKED',git_head_sha=git_head_sha(),navigation_mode='REQUIRED_LOOPBACK_HTTP',
-                complete=False,failure_code=None,worksheet_pdf=None)
+                complete=False,failure_code=None,worksheet_pdf=None,campaign_boundary=[])
     journal=out/'R113_BROWSER_RECEIPT.json'
     def checkpoint():journal.write_text(json.dumps(record,indent=2,sort_keys=True)+'\n',encoding='utf-8')
     record['source_identity']=source_identity(html)
@@ -101,6 +141,8 @@ def run(html,out,exe,axe=None):
         browser=p.chromium.launch(executable_path=exe,headless=True,args=['--no-sandbox'])
         record['browser']=browser.version
         try:
+            audit_campaign_boundary(browser,target,record)
+            checkpoint()
             for w in WIDTHS:
                 for js in (False,True):
                     label=f'{w}px-js-{int(js)}'
@@ -386,6 +428,7 @@ def run(html,out,exe,axe=None):
                     checkpoint()
                     require(not violations,f'axe violations {width}/{state}')
                 ctx.close()
+            require(len(record['campaign_boundary'])==2,'synthetic campaign replay incomplete')
             require(len(record['modes'])==14 and len(record['performance'])==6 and
                     len(record['axe_scans'])==4,'incomplete matrix')
             require(len(record['screenshots'])==2 and record['pdf'] is not None and
