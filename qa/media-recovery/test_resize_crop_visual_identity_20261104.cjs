@@ -13,7 +13,7 @@ const net=(url,status=404,width=0)=>[{request_id:'TEST-283-3',url,status,mime_ty
 test('exact published 283:3 image URL remains self-identical',()=>assert.equal(sameSource(published,published),true));
 test('original full image is NOT certified same historical composition as resize',()=>assert.equal(sameSource(townnews,published),false));
 test('crop geometry change is NOT identity-equivalent',()=>assert.equal(sameSource(published,otherCrop),false));
-test('size-only fit remains source identity equivalent to uncropped original',()=>assert.equal(sameSource(townnews,fit),true));
+test('untrusted TownNews numeric fit is not documented as WP size-only and fails closed',()=>assert.equal(sameSource(townnews,fit),false));
 test('same exact resize through different Jetpack proxy host remains equal',()=>{
  const p='https://i0.wp.com/'+new URL(townnews).host+new URL(townnews).pathname+'?resize=1200%2C804&ssl=1';
  const q=p.replace('i0.wp.com','i1.wp.com');
