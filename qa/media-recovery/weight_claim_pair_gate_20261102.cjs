@@ -6,6 +6,7 @@
  * "76% savings" from uploaded originals, cached bytes or incomplete pages.
  */
 const {scopeByRequestId}=require('./request_id_wire_core.cjs');
+const {assessApprovedWireAttribution}=require('./approved_wire_attribution_20261104.cjs');
 const {assessPage}=require('./image_census_coverage_core.cjs');
 const HTTPS=/^https:\/\/[^\s/]+\//i;
 const UINT=x=>Number.isSafeInteger(x)&&x>=0;
@@ -112,11 +113,18 @@ function assessPair(baseline,candidate,approvals=[]){
   measured_sitewide_image_bytes_before:null,measured_sitewide_image_bytes_after:null,
   savings_percent:null,claim_76_percent_supported:false,production_changes_approved_by_this_tool:false};
  const saved=b.bytes-a.bytes,percent=saved*100/b.bytes;
+ // Measured transfer savings and *attributable* optimization savings differ.
+ // Without a changed approved source, CDN variability or server-side
+ // recompression of an unchanged URL cannot substantiate an editorial claim.
+ const attribution=assessApprovedWireAttribution(baseline,candidate,changed);
+ const attributable=attribution.pass&&attribution.approved_source_savings_bytes===saved;
  return {status:'MEASURED',basis:'sum_of_61_per_page_uncached_CDPA_article_image_requestId_bytes',
+  approved_source_attribution:attribution,
+  optimization_claim_attributable:attributable,
   measured_post_count:61,measured_slot_count:355,approved_changed_slots:changed.sort(),
   measured_sitewide_image_bytes_before:b.bytes,measured_sitewide_image_bytes_after:a.bytes,
   savings_bytes:saved,savings_percent:Math.round(percent*100)/100,
-  claim_76_percent_supported:percent>=76,
+  claim_76_percent_supported:percent>=76&&attributable,
   production_changes_approved_by_this_tool:false,
   interpretation:'Equal-weight one uncached visit per article; not a production analytics traffic-weighted result.'};
 }
