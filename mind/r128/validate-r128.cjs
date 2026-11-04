@@ -27,13 +27,13 @@ const checkHTML=(s,film=false)=>{
 };
 test('editorial researched and separated from commercial recommendation',()=>{
  assert.ok(words(art)>=1800);assert.match(art,/Johansson/);assert.match(art,/Hall/);
- assert.match(art,/not a replication/i);assert.match(art,/not hypnosis/i);
+ assert.match(art,/not\\*\\* a replication/i);assert.match(art,/not hypnosis/i);
  assert.doesNotMatch(art,/affiliate|commission|zen12\.com|inspire3\.com/i);
  for(const u of ['pubmed.ncbi.nlm.nih.gov/16210542','pubmed.ncbi.nlm.nih.gov/20637455','10.1371/journal.pone.0045457'])assert.ok(art.includes(u));
 });
 test('buyer guide source grounding and non-endorsement',()=>{
  assert.ok(words(guide)>=1400);assert.match(guide,/not an endorsement/i);
- assert.match(guide,/not independently established/i);assert.match(guide,/\$87\.99/);
+ assert.match(guide,/does not independently establish/i);assert.match(guide,/\$87\.99/);
  assert.match(guide,/\$37/);assert.match(guide,/free twelve-minute/i);
  assert.match(guide,/not verified an approved affiliate relationship/i);
  assert.match(guide,/inspire3\.com\/privacy\//i);
@@ -68,7 +68,7 @@ test('B film is optional storyboard with captions, poster and transcript but NO 
 });
 test('conversion memo keeps true paid-sale semantics and single existing lead route',()=>{
  for(const v of ['merchant_paid_conversion','affiliate_click','confirmed_signup','realized_net_revenue','qualified_human_session','NOT COMPUTABLE','TASK-008','360/390/768/1440','PR #172'])assert.ok(memo.includes(v),v);
- assert.match(memo,/No.*email.*list/i);assert.match(memo,/no.*script/i);
+ assert.match(memo,/no supplementary subscriber list/i);assert.match(memo,/no.*script/i);
 });
 test('negative mutation: activating seller CTA fails closed',()=>{
  assert.equal(checkHTML(a.replace('<button type="button" disabled aria-disabled="true">','<button type="button">')),false);
