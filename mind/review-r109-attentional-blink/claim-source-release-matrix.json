@@ -183,6 +183,15 @@
       "scope": "Supporting policy page only; insufficient as sole near-link disclosure.",
       "reviewed_at": "2026-11-03",
       "citation_level": "source-identity-or-primary-summary"
+    },
+    {
+      "id": "S21",
+      "category": "merchant-legal",
+      "name": "Inspire3 Terms of Sale",
+      "url": "https://inspire3.com/terms/",
+      "scope": "Explicit Zen12 one-year money-back guarantee; card refunds after 90 days processed manually through PayPal; MP3/PDF files may be tagged with personal information; optional SMS marketing if phone provided, 3–4 messages weekly.",
+      "reviewed_at": "2026-11-03",
+      "citation_level": "directly-read-policy-text"
     }
   ],
   "claim_decisions": [
@@ -328,11 +337,12 @@
       "claim": "Refund guaranteed for a year",
       "domain": "purchase-guarantee",
       "evidence": [
-        "S04"
+        "S04",
+        "S21"
       ],
-      "status": "checkout-label-only",
-      "decision": "CONDITIONAL_AND_RECHECK",
-      "qualification": "Do not adopt vendor promise; operative terms inaccessible"
+      "status": "seller-terms-verified",
+      "decision": "ATTRIBUTE_AND_RECHECK",
+      "qualification": "Zen12 1-year per current written Terms; after 90 days card refund manually via PayPal; no fulfillment independently tested."
     },
     {
       "id": "C14",
@@ -517,6 +527,28 @@
       "status": "unsupported",
       "decision": "PROHIBIT",
       "qualification": "Only analogy about evidence and witness interpretation"
+    },
+    {
+      "id": "C31",
+      "claim": "Downloaded MP3s or PDFs may contain identifiable purchaser information",
+      "domain": "buyer-privacy",
+      "evidence": [
+        "S21"
+      ],
+      "status": "published-vendor-terms",
+      "decision": "ALLOW_WITH_ATTRIBUTION",
+      "qualification": "Possibility stated in Terms, not forensic testing of downloaded Zen12 files."
+    },
+    {
+      "id": "C32",
+      "claim": "Provided telephone number may lead to 3–4 marketing messages weekly",
+      "domain": "buyer-privacy",
+      "evidence": [
+        "S21"
+      ],
+      "status": "published-vendor-terms",
+      "decision": "ALLOW_WITH_ATTRIBUTION",
+      "qualification": "Seller says may be added; do not assert all purchasers receive messages."
     }
   ],
   "release_gates": [
@@ -571,7 +603,7 @@
     },
     {
       "id": "G08",
-      "name": "current operative vendor Terms of Sale/refund verification",
+      "name": "reconfirm current vendor Terms of Sale/Zen12 refund workflow at final release",
       "status": "CLOSED",
       "owner": "merchant/legal",
       "proof_needed": "Independent reviewer evidence; DO NOT infer approval from a draft PR."
@@ -704,7 +736,7 @@
     }
   ],
   "limitations": [
-    "Official seller Terms of Sale endpoint could not be reliably retrieved; do not claim final binding refund terms.",
+    "Official seller Terms of Sale verified via privacy-policy link 2026-11-03; terms and refund experience still require recheck before launch.",
     "Affiliate acceptance and official swipe/creative permission not verified.",
     "No actual audio files examined; do not conflate binaural beat literature with Zen12 acoustic structure.",
     "Video-B is static design/transcript only; not an MP4 or A/B measurement.",
@@ -715,5 +747,7 @@
     "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
     "https://finalvestige.com/2026/11/02/change-blindness/",
     "https://finalvestige.com/2026/11/02/mesmerism/"
-  ]
+  ],
+  "merchant_terms_verified_on": "2026-11-03",
+  "notes": "New primary seller Terms of Sale source S21 resolves prior transient retrieval blocker. It does NOT resolve affiliate acceptance, data-sharing permissions, real refund fulfillment, or release QA."
 }
