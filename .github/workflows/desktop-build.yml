@@ -116,6 +116,10 @@ jobs:
         run: |
           python products/desktop/scripts/safe_unittest_r183.py
           python -OO products/desktop/scripts/safe_unittest_r183.py
+      - name: R184 R180 physical-order legacy compatibility (20 methods, normal and -OO)
+        run: |
+          python products/desktop/scripts/safe_unittest_r184.py
+          python -OO products/desktop/scripts/safe_unittest_r184.py
       - name: Install pinned local evidence crypto dependency
         run: python -m pip install "cryptography==46.0.4"
       - name: Verify R100 privacy-safe source-method regressions (normal and -OO)
@@ -544,6 +548,14 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R183 global source-coordinate custody tests failed" }
           python -OO products/desktop/scripts/safe_unittest_r183.py
           if ($LASTEXITCODE -ne 0) { throw "R183 optimized global source-coordinate custody tests failed" }
+      - name: R184 R180 physical-order legacy compatibility (20 methods, normal and -OO)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python products/desktop/scripts/safe_unittest_r184.py
+          if ($LASTEXITCODE -ne 0) { throw "R184 source-order custody tests failed" }
+          python -OO products/desktop/scripts/safe_unittest_r184.py
+          if ($LASTEXITCODE -ne 0) { throw "R184 optimized source-order custody tests failed" }
       - name: Install pinned local evidence crypto dependency
         run: python -m pip install "cryptography==46.0.4"
       - name: R100 Windows source-stage diagnostic (read-only, NOT a release gate)
