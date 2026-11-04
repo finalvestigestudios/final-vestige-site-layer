@@ -204,6 +204,8 @@
    exposed accessibility tree. Keep the Focus CTA and chapter rail intact. */
 .fv-hf .fv-hf__mobile-explore { display: none; }
 @media (max-width: 920px) {
+  /* The chapter rail has z-index:65; the open site menu must be above it. */
+  .fv-hf .fv-hf__masthead { z-index: 80; }
   .fv-hf .fv-hf__mobile-explore { display: block; margin-left: auto; position: static; }
   .fv-hf .fv-hf__mobile-explore summary {
     min-height: 44px; min-width: 80px; padding: 8px 12px;
