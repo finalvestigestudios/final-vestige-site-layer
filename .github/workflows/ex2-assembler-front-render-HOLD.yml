@@ -150,6 +150,11 @@ jobs:
           trap 'rm -rf -- "$smoke" "$actual"' EXIT
           python -I experience2/home-flagship/tests/verify_chapter_keyboard_focus.py --smoke --out "$smoke"
           python -I experience2/home-flagship/tests/verify_chapter_keyboard_focus.py --out "$actual"
+      - name: Exact-source no-JS mobile Explore and unobstructed Focus in Chromium
+        run: |
+          set -euo pipefail
+          mkdir -p "$FV_SCREEN_DIR"
+          python -I experience2/home-flagship/tests/verify_mobile_explore_browser.py --out "$FV_SCREEN_DIR"
       - name: Actual isolated WordPress Gutenberg Save then Assembler render/axe/media/no-JS
         timeout-minutes: 22
         run: |
