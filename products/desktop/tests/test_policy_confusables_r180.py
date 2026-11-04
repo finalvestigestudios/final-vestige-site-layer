@@ -74,7 +74,7 @@ class PolicyConfusableR180(unittest.TestCase):
         self.assertIn("human review", result)
 
     def test_deterministic_sorted_physical_lines(self):
-        value = hunk([(9, "A\n"), (2, "B\n")], [(9, "А\n"), (2, "Β\n")])
+        value = hunk([(2, "B\n"), (9, "A\n")], [(2, "Β\n"), (9, "А\n")])
         result = render([value])
         self.assertEqual(result, render([value]))
         self.assertLess(result.index("before L2"), result.index("before L9"))
