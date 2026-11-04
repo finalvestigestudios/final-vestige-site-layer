@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Apollo actual-source offline Chromium regression. Full PASS requires axe, touch, performance and print."""
 import argparse, hashlib, json, math, subprocess
-from datetime import datetime, timezone
+from datetime import datetime
 from pathlib import Path
 from playwright.sync_api import sync_playwright
 ROOT=Path(__file__).resolve().parent
@@ -82,6 +82,21 @@ def run(html,out,exe,axe=None):
                             label+': technical chronology missing its NASA primary source link')
                     require(not page.locator('.print-custody').is_visible(),label+': print-only rights notice leaked onto screen')
                     require(page.locator('[data-fv-photo-record]').count()==6,label+': six source rail links')
+
+                    # R123 parity with Atlas R80: known-day photographs only in ordered rail.
+                    days=page.locator('[data-fv-photo-day-sequence] > li')
+                    require(days.count()==4,label+': photo day rail must have exactly four checkpoints')
+                    photo_days=days.evaluate_all('(a)=>a.map(n=>n.dataset.fvPhotoDay)')
+                    require(photo_days==['1966-10-18','1967-01-03','1967-01-28','2017-01-24'],
+                            label+': photo day sequence false precision or chronology drift')
+                    require(days.nth(3).locator('[data-fv-photo-record]').count()==2,
+                            label+': same-day 2017 retrospective photographs not grouped')
+                    unresolved=page.locator('[data-fv-photo-month-uncertain]')
+                    require(unresolved.count()==1 and unresolved.locator('time[datetime="1967-01"]').count()==1
+                            and unresolved.locator('[data-fv-photo-record="01"]').count()==1,
+                            label+': month-only crew portrait not segregated')
+                    require(days.locator('[data-fv-photo-record="01"]').count()==0,
+                            label+': unverified portrait day falsely ordered among known days')
                     require(page.locator("[id^='photo-source-']").count()==6,label+': six photo rows')
                     # Verify exact NASA source identities and visible credit/producer custody on actual HTML.
                     for rid, credit in (('01','Image Credit: NASA'),('02','Producer: JSC'),
