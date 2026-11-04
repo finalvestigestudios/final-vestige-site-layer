@@ -65,12 +65,12 @@ class BridgeSourceTests(unittest.TestCase):
         self.assertNotIn("fetch(", self.source)
         self.assertNotIn("sendBeacon", self.source)
     def test_no_inferred_geography(self):
-        for pattern in (r"\\bdata-lat=",r"\\bdata-lon=",r"\\bdata-geo=",r"<canvas",r"leaflet",r"mapbox"):
+        for pattern in (r"\bdata-lat=",r"\bdata-lon=",r"\bdata-geo=",r"<canvas",r"leaflet",r"mapbox"):
             self.assertNotRegex(self.source.lower(),pattern)
     def test_no_checkout_form_or_unverified_price(self):
         self.assertEqual(self.page.forms, [])
         self.assertNotIn("payhip.com", self.source)
-        self.assertNotRegex(self.source, r"\\$[0-9]+")
+        self.assertNotRegex(self.source, r"\$[0-9]+")
     def test_single_contextual_primary_action(self):
         self.assertEqual(self.page.primary, ["#classroom-preview"])
         self.assertIn('id="classroom-preview"',self.source)
