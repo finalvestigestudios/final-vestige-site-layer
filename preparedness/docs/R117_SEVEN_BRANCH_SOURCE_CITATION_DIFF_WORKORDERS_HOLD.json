@@ -1,0 +1,314 @@
+{
+  "schema": "fv-preparedness-r117-reviewer-source-and-author-diff-workorders-HOLD-v1",
+  "issue": 136,
+  "business_issue": 820,
+  "checked_date": "2026-11-04",
+  "source_snapshot": "preparedness/docs/R117_NINE_SNAPSHOT_GIT_OBJECT_CUSTODY_HOLD.json",
+  "baseline_sha": "980659031b0bd5787a326d38698138c1e8cad82d",
+  "candidate_sha": "ddb3528ba6494dada1fa1c3a142ce746e3a67706",
+  "seven_contributor_heads": {
+    "food": "f911ff7a655de8d81535ea86ec3d65a49ee76648",
+    "health": "d5ef5bafd68361434dd1cc9209915b8e8a4eaf17",
+    "historical-field": "4e5caf812727953aa45e3bda2d382f2c67b6a09c",
+    "historical-food": "67e116e536c7410bed30f8f3b1bb8c166f3c223d",
+    "historical-home": "7504a5f099594d635e3dd7332a33a2e1346c43a2",
+    "shelter": "5daeaf2dd5ab71806a6b73c91edfb1d8df5da976",
+    "start-here": "2122d856fce9f64887c16df3d52e64be9f59a55b"
+  },
+  "meaning": "Git object equality only; changes are not approved or rejected for safety, truth, attribution or reading depth; redundant shared unchanged files omitted",
+  "release_state": "HOLD",
+  "may_publish": false,
+  "may_merge": false,
+  "independent_QD_PASS": false,
+  "observation_count": 24,
+  "unique_changed_paths": 18,
+  "non_exact_candidate_observations": 19,
+  "rows": [
+    {
+      "cluster": "food",
+      "contributor_head": "f911ff7a655de8d81535ea86ec3d65a49ee76648",
+      "path": "preparedness/content/articles/homemade-water-filters.meta.json",
+      "kind": "article_files",
+      "contributor_git_blob": "33789d3db0ec06007deb50d0293361f07cea27ae",
+      "frozen_original_git_blob": "91c730bd1c7a61fa3140a86245c9bc0c88160c29",
+      "release_candidate_git_blob": "91c730bd1c7a61fa3140a86245c9bc0c88160c29",
+      "disposition": "RELEASE_CANDIDATE_RETAINS_BASELINE",
+      "requires_human_source_or_safety_adjudication": true
+    },
+    {
+      "cluster": "health",
+      "contributor_head": "d5ef5bafd68361434dd1cc9209915b8e8a4eaf17",
+      "path": "preparedness/content/articles/homemade-water-filters.meta.json",
+      "kind": "article_files",
+      "contributor_git_blob": "33789d3db0ec06007deb50d0293361f07cea27ae",
+      "frozen_original_git_blob": "91c730bd1c7a61fa3140a86245c9bc0c88160c29",
+      "release_candidate_git_blob": "91c730bd1c7a61fa3140a86245c9bc0c88160c29",
+      "disposition": "RELEASE_CANDIDATE_RETAINS_BASELINE",
+      "requires_human_source_or_safety_adjudication": true
+    },
+    {
+      "cluster": "historical-field",
+      "contributor_head": "4e5caf812727953aa45e3bda2d382f2c67b6a09c",
+      "path": "preparedness/content/articles/homemade-water-filters.meta.json",
+      "kind": "article_files",
+      "contributor_git_blob": "33789d3db0ec06007deb50d0293361f07cea27ae",
+      "frozen_original_git_blob": "91c730bd1c7a61fa3140a86245c9bc0c88160c29",
+      "release_candidate_git_blob": "91c730bd1c7a61fa3140a86245c9bc0c88160c29",
+      "disposition": "RELEASE_CANDIDATE_RETAINS_BASELINE",
+      "requires_human_source_or_safety_adjudication": true
+    },
+    {
+      "cluster": "historical-food",
+      "contributor_head": "67e116e536c7410bed30f8f3b1bb8c166f3c223d",
+      "path": "preparedness/content/articles/homemade-water-filters.meta.json",
+      "kind": "article_files",
+      "contributor_git_blob": "33789d3db0ec06007deb50d0293361f07cea27ae",
+      "frozen_original_git_blob": "91c730bd1c7a61fa3140a86245c9bc0c88160c29",
+      "release_candidate_git_blob": "91c730bd1c7a61fa3140a86245c9bc0c88160c29",
+      "disposition": "RELEASE_CANDIDATE_RETAINS_BASELINE",
+      "requires_human_source_or_safety_adjudication": true
+    },
+    {
+      "cluster": "historical-home",
+      "contributor_head": "7504a5f099594d635e3dd7332a33a2e1346c43a2",
+      "path": "preparedness/content/articles/homemade-water-filters.meta.json",
+      "kind": "article_files",
+      "contributor_git_blob": "33789d3db0ec06007deb50d0293361f07cea27ae",
+      "frozen_original_git_blob": "91c730bd1c7a61fa3140a86245c9bc0c88160c29",
+      "release_candidate_git_blob": "91c730bd1c7a61fa3140a86245c9bc0c88160c29",
+      "disposition": "RELEASE_CANDIDATE_RETAINS_BASELINE",
+      "requires_human_source_or_safety_adjudication": true
+    },
+    {
+      "cluster": "shelter",
+      "contributor_head": "5daeaf2dd5ab71806a6b73c91edfb1d8df5da976",
+      "path": "preparedness/content/articles/homemade-water-filters.meta.json",
+      "kind": "article_files",
+      "contributor_git_blob": "33789d3db0ec06007deb50d0293361f07cea27ae",
+      "frozen_original_git_blob": "91c730bd1c7a61fa3140a86245c9bc0c88160c29",
+      "release_candidate_git_blob": "91c730bd1c7a61fa3140a86245c9bc0c88160c29",
+      "disposition": "RELEASE_CANDIDATE_RETAINS_BASELINE",
+      "requires_human_source_or_safety_adjudication": true
+    },
+    {
+      "cluster": "start-here",
+      "contributor_head": "2122d856fce9f64887c16df3d52e64be9f59a55b",
+      "path": "preparedness/content/articles/homemade-water-filters.meta.json",
+      "kind": "article_files",
+      "contributor_git_blob": "33789d3db0ec06007deb50d0293361f07cea27ae",
+      "frozen_original_git_blob": "91c730bd1c7a61fa3140a86245c9bc0c88160c29",
+      "release_candidate_git_blob": "91c730bd1c7a61fa3140a86245c9bc0c88160c29",
+      "disposition": "RELEASE_CANDIDATE_RETAINS_BASELINE",
+      "requires_human_source_or_safety_adjudication": true
+    },
+    {
+      "cluster": "historical-field",
+      "contributor_head": "4e5caf812727953aa45e3bda2d382f2c67b6a09c",
+      "path": "preparedness/content/articles/navigation-before-gps.body.html",
+      "kind": "article_files",
+      "contributor_git_blob": "49beb68339a6b85b07d686c0cfb9fe1d88b8de4f",
+      "frozen_original_git_blob": "64c6b2c7004bc5549eea5a47d9095183e7436750",
+      "release_candidate_git_blob": "3c02e58c30d1d608224944142f31fbead44a1252",
+      "disposition": "RELEASE_CANDIDATE_DIFFERS_FROM_BOTH",
+      "requires_human_source_or_safety_adjudication": true
+    },
+    {
+      "cluster": "historical-food",
+      "contributor_head": "67e116e536c7410bed30f8f3b1bb8c166f3c223d",
+      "path": "preparedness/content/articles/pemmican-and-dried-meats.body.html",
+      "kind": "article_files",
+      "contributor_git_blob": "1febc8929f8b90c81a3fcef1e46a2811778b7e06",
+      "frozen_original_git_blob": "0b3319cc85ea2bc6d069b46d13a40e12ddbd5bc5",
+      "release_candidate_git_blob": "0b3319cc85ea2bc6d069b46d13a40e12ddbd5bc5",
+      "disposition": "RELEASE_CANDIDATE_RETAINS_BASELINE",
+      "requires_human_source_or_safety_adjudication": true
+    },
+    {
+      "cluster": "historical-food",
+      "contributor_head": "67e116e536c7410bed30f8f3b1bb8c166f3c223d",
+      "path": "preparedness/content/articles/pemmican-and-dried-meats.meta.json",
+      "kind": "article_files",
+      "contributor_git_blob": "c19f68f2ac0988a8d0959e2d05b8ace8f9511348",
+      "frozen_original_git_blob": "03d3824e07fe51931671d0ddc7aa8c85eda58435",
+      "release_candidate_git_blob": "03d3824e07fe51931671d0ddc7aa8c85eda58435",
+      "disposition": "RELEASE_CANDIDATE_RETAINS_BASELINE",
+      "requires_human_source_or_safety_adjudication": true
+    },
+    {
+      "cluster": "historical-home",
+      "contributor_head": "7504a5f099594d635e3dd7332a33a2e1346c43a2",
+      "path": "preparedness/content/articles/pickling-fermentation-old-recipes.body.html",
+      "kind": "article_files",
+      "contributor_git_blob": "1869e37626b7463da45763d60202bd5ac0bd7700",
+      "frozen_original_git_blob": "17f5da8a998e6b9b38695a2ef6716c6f336f31c4",
+      "release_candidate_git_blob": "1869e37626b7463da45763d60202bd5ac0bd7700",
+      "disposition": "EXACT_IN_RELEASE_CANDIDATE",
+      "requires_human_source_or_safety_adjudication": true
+    },
+    {
+      "cluster": "historical-home",
+      "contributor_head": "7504a5f099594d635e3dd7332a33a2e1346c43a2",
+      "path": "preparedness/content/articles/pickling-fermentation-old-recipes.meta.json",
+      "kind": "article_files",
+      "contributor_git_blob": "da97f42fcabbd05dc513d26c6af289bbeb8816f3",
+      "frozen_original_git_blob": "4b955811459017df83a28704aaf1e69ddb036c29",
+      "release_candidate_git_blob": "da97f42fcabbd05dc513d26c6af289bbeb8816f3",
+      "disposition": "EXACT_IN_RELEASE_CANDIDATE",
+      "requires_human_source_or_safety_adjudication": true
+    },
+    {
+      "cluster": "historical-field",
+      "contributor_head": "4e5caf812727953aa45e3bda2d382f2c67b6a09c",
+      "path": "preparedness/content/articles/pioneer-supply-chains-failed.body.html",
+      "kind": "article_files",
+      "contributor_git_blob": "3643c50b43ca7ba6c1d9bc439e7c78730503b80f",
+      "frozen_original_git_blob": "1332df3540a903fdecdb3527fb22347d57968fb0",
+      "release_candidate_git_blob": "ad158ee898f76d05bcb65c845b1e4a0e8103c660",
+      "disposition": "RELEASE_CANDIDATE_DIFFERS_FROM_BOTH",
+      "requires_human_source_or_safety_adjudication": true
+    },
+    {
+      "cluster": "historical-field",
+      "contributor_head": "4e5caf812727953aa45e3bda2d382f2c67b6a09c",
+      "path": "preparedness/content/articles/pioneer-supply-chains-failed.meta.json",
+      "kind": "article_files",
+      "contributor_git_blob": "8789c77dcc2be717f09ce0fbd340a04319aaf223",
+      "frozen_original_git_blob": "fcb42c440e3b7aad5eeecfd4e0c974a5d04a9cec",
+      "release_candidate_git_blob": "4d2dc4958736e3c5257c65dda8ed016a473ac6be",
+      "disposition": "RELEASE_CANDIDATE_DIFFERS_FROM_BOTH",
+      "requires_human_source_or_safety_adjudication": true
+    },
+    {
+      "cluster": "historical-food",
+      "contributor_head": "67e116e536c7410bed30f8f3b1bb8c166f3c223d",
+      "path": "preparedness/content/articles/pioneer-travel-rations.body.html",
+      "kind": "article_files",
+      "contributor_git_blob": "a658481d828dc4c5ba85f296adbfbee0514f0611",
+      "frozen_original_git_blob": "058c90b763d8cd6dec0731a7b0a9cee4dd5a57c7",
+      "release_candidate_git_blob": "058c90b763d8cd6dec0731a7b0a9cee4dd5a57c7",
+      "disposition": "RELEASE_CANDIDATE_RETAINS_BASELINE",
+      "requires_human_source_or_safety_adjudication": true
+    },
+    {
+      "cluster": "historical-food",
+      "contributor_head": "67e116e536c7410bed30f8f3b1bb8c166f3c223d",
+      "path": "preparedness/content/articles/pioneer-travel-rations.meta.json",
+      "kind": "article_files",
+      "contributor_git_blob": "521e56a3f18d8b211920529a88a3c3b86eb332d7",
+      "frozen_original_git_blob": "7191acba55d63dc405ad9c2003d66193276da89f",
+      "release_candidate_git_blob": "7191acba55d63dc405ad9c2003d66193276da89f",
+      "disposition": "RELEASE_CANDIDATE_RETAINS_BASELINE",
+      "requires_human_source_or_safety_adjudication": true
+    },
+    {
+      "cluster": "start-here",
+      "contributor_head": "2122d856fce9f64887c16df3d52e64be9f59a55b",
+      "path": "preparedness/content/articles/preparedness-real-households.meta.json",
+      "kind": "article_files",
+      "contributor_git_blob": "a0c3a09143a825560b5a5ed79d857b7402bfa295",
+      "frozen_original_git_blob": "ba840917f34634ccd634c488eeca4a8a6b3a8fe2",
+      "release_candidate_git_blob": "ba840917f34634ccd634c488eeca4a8a6b3a8fe2",
+      "disposition": "RELEASE_CANDIDATE_RETAINS_BASELINE",
+      "requires_human_source_or_safety_adjudication": true
+    },
+    {
+      "cluster": "historical-home",
+      "contributor_head": "7504a5f099594d635e3dd7332a33a2e1346c43a2",
+      "path": "preparedness/content/articles/root-cellars-cool-storage.body.html",
+      "kind": "article_files",
+      "contributor_git_blob": "7f375c32d74f2828b4912f5692abc44483e4629a",
+      "frozen_original_git_blob": "e28548b4e5014f36ffd12becb9261ae696480efa",
+      "release_candidate_git_blob": "2ff8d029769aa9a97de6b1e388d937899f3af38c",
+      "disposition": "RELEASE_CANDIDATE_DIFFERS_FROM_BOTH",
+      "requires_human_source_or_safety_adjudication": true
+    },
+    {
+      "cluster": "historical-home",
+      "contributor_head": "7504a5f099594d635e3dd7332a33a2e1346c43a2",
+      "path": "preparedness/content/articles/root-cellars-cool-storage.meta.json",
+      "kind": "article_files",
+      "contributor_git_blob": "c3b7425711c3953c2d6cac9eb2aabe21a6717285",
+      "frozen_original_git_blob": "705e1157f9394b615ecb74ffd25be8500453e18a",
+      "release_candidate_git_blob": "c3b7425711c3953c2d6cac9eb2aabe21a6717285",
+      "disposition": "EXACT_IN_RELEASE_CANDIDATE",
+      "requires_human_source_or_safety_adjudication": true
+    },
+    {
+      "cluster": "historical-home",
+      "contributor_head": "7504a5f099594d635e3dd7332a33a2e1346c43a2",
+      "path": "preparedness/content/articles/sanitation-before-germ-theory.body.html",
+      "kind": "article_files",
+      "contributor_git_blob": "02090fc1b773fd79f08a7ba754b6125844c37eab",
+      "frozen_original_git_blob": "15852c158708270d72d5f9723d90e5cb6083a766",
+      "release_candidate_git_blob": "d56df76647d2598f35cfd4609f91649cef063f12",
+      "disposition": "RELEASE_CANDIDATE_DIFFERS_FROM_BOTH",
+      "requires_human_source_or_safety_adjudication": true
+    },
+    {
+      "cluster": "historical-home",
+      "contributor_head": "7504a5f099594d635e3dd7332a33a2e1346c43a2",
+      "path": "preparedness/content/articles/sanitation-before-germ-theory.meta.json",
+      "kind": "article_files",
+      "contributor_git_blob": "3294cd9fcf59496c9ece9342e67b0d57d2ed5523",
+      "frozen_original_git_blob": "0dad1731adc3c88aac65baceaa9aa09112e5eb5b",
+      "release_candidate_git_blob": "3294cd9fcf59496c9ece9342e67b0d57d2ed5523",
+      "disposition": "EXACT_IN_RELEASE_CANDIDATE",
+      "requires_human_source_or_safety_adjudication": true
+    },
+    {
+      "cluster": "historical-field",
+      "contributor_head": "4e5caf812727953aa45e3bda2d382f2c67b6a09c",
+      "path": "preparedness/sources/fragments/hist-field.json",
+      "kind": "source_fragments",
+      "contributor_git_blob": "6b65e0aaa777b4c5ebc57fbeade0386b4ab6c32f",
+      "frozen_original_git_blob": "4f369122cc0e230ee39654c215f18ffc79b5cc85",
+      "release_candidate_git_blob": "3dafa9425f3829c0be2e6fea00889aff95124031",
+      "disposition": "RELEASE_CANDIDATE_DIFFERS_FROM_BOTH",
+      "requires_human_source_or_safety_adjudication": true
+    },
+    {
+      "cluster": "historical-food",
+      "contributor_head": "67e116e536c7410bed30f8f3b1bb8c166f3c223d",
+      "path": "preparedness/sources/fragments/hist-food.json",
+      "kind": "source_fragments",
+      "contributor_git_blob": "c1856c998c6c728f0de72221e5654a238df994a9",
+      "frozen_original_git_blob": "d10628342fea5f177a8d1be00dd906d0c9c7850e",
+      "release_candidate_git_blob": "d10628342fea5f177a8d1be00dd906d0c9c7850e",
+      "disposition": "RELEASE_CANDIDATE_RETAINS_BASELINE",
+      "requires_human_source_or_safety_adjudication": true
+    },
+    {
+      "cluster": "historical-home",
+      "contributor_head": "7504a5f099594d635e3dd7332a33a2e1346c43a2",
+      "path": "preparedness/sources/fragments/hist-home.json",
+      "kind": "source_fragments",
+      "contributor_git_blob": "8d85fd868508c5caba14a839d119d55f31f14f72",
+      "frozen_original_git_blob": "6460d4b0734991675c889f28be2f73a19e3c42c0",
+      "release_candidate_git_blob": "8d85fd868508c5caba14a839d119d55f31f14f72",
+      "disposition": "EXACT_IN_RELEASE_CANDIDATE",
+      "requires_human_source_or_safety_adjudication": true
+    }
+  ],
+  "overlapping_paths": [
+    {
+      "path": "preparedness/content/articles/homemade-water-filters.meta.json",
+      "contributors": [
+        "food",
+        "health",
+        "historical-field",
+        "historical-food",
+        "historical-home",
+        "shelter",
+        "start-here"
+      ],
+      "distinct_contributor_git_blobs": 1
+    }
+  ],
+  "review_dependencies": [
+    "PR #157 qualified start-here safety language (draft, no approval)",
+    "PR #169 in-tree _dup_test.json fixture mutation (draft, unresolved)",
+    "23 historical contributor files and 30 shared source URL groups require source-specific human adjudication",
+    "15 safety exceptions / 22 editorial decisions / five tools",
+    "native validation/build/full regression/mandatory integrity/independent QD/founder release"
+  ]
+}
