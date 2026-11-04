@@ -58,9 +58,9 @@ test('PHP refuses production, wrong theme and multisite before native writes',()
 });
 test('native WordPress post-cache invalidation uses real core API (regression #864)',()=>{
   const php=phpFixtureSource();
-  assert.match(php,/\\bclean_post_cache\\(\\$post\\);/,
+  assert.match(php,/\bclean_post_cache\(\$post\);/,
     'wp_template_part must use WordPress core clean_post_cache()');
-  assert.doesNotMatch(php,/\\bwp_clean_post_cache\\s*\\(/,
+  assert.doesNotMatch(php,/\bwp_clean_post_cache\s*\(/,
     'Invented wp_clean_post_cache() fatals in actual WP/Chromium');
   assert.ok(php.indexOf("wp_set_post_terms($post") < php.indexOf('clean_post_cache($post);'),
     'Invalidate post cache only after successful Assembler taxonomy binding');
