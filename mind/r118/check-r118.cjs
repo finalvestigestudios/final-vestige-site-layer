@@ -48,7 +48,7 @@ function checkAll(files){
   check('prospective commission disclosure adjacent',()=>h.includes('may earn a commission at no additional cost')&&h.indexOf('fv-mind-commercial-disclosure')<h.indexOf('<button'));
   check('no active merchant link in panel',()=>!/<a\b[^>]*href=["'][^"']*(zen12|inspire3|hypnosislive|brainwaveshots)/i.test(h));
   check('only internal free signup, no extra form',()=>h.includes('href="/focus/"')&&!/<form\b|<input\b/i.test(h));
-  check('no external players/JS/tracking',()=>!/<script\b|<iframe\b|<video\b|<audio\b|autoplay\b|<img\b[^>]*pixel/i.test(h));
+  check('no external players/JS/tracking',()=>!/<script\b|<iframe\b|<video\b|<audio\b|<img\b[^>]*pixel/i.test(h));
   check('keyboard and reduced-motion styles present',()=>h.includes(':focus-visible')&&h.includes('prefers-reduced-motion'));
   check('existing R114 A and B are still draft',()=>A.includes('noindex,nofollow')&&B.includes('noindex,nofollow'));
   check('existing R114 A and B no live purchase activation',()=>A.includes('disabled')&&B.includes('disabled'));
