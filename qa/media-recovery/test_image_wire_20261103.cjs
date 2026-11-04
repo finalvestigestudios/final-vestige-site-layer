@@ -66,7 +66,23 @@ function runTests(){
  eq(result.observed_post_count,61);eq(result.observed_slot_count,355);
  eq(result.sitewide_76_percent_verified,true);eq(result.repetitions,3);passed++;
  d.pairs[0].after[0].requests[0].encoded_data_length=800;
- result=evaluate(d,inventory);eq(result.status,'SITEWIDE_IMAGE_TRANSFER_MEASURED');eq(result.sitewide_76_percent_verified,true);passed++;
+ result=evaluate(d,inventory);eq(result.status,'SITEWIDE_IMAGE_TRANSFER_MEASURED');
+ eq(result.sitewide_76_percent_verified,false);
+ check(result.measured_reduction_percent<76,'one repeat below threshold must block 76 claim');passed++;
+ // Median-run 76% is misleading when the heaviest run saves zero actual bytes.
+ const skew=copy(d);skew.pairs[0].after[0].requests[0].encoded_data_length=240;
+ for(const p of skew.pairs){
+  p.before[2].requests[0].encoded_data_length=100000;
+  p.after[2].requests[0].encoded_data_length=100000;
+ }
+ result=evaluate(skew,inventory);eq(result.status,'SITEWIDE_IMAGE_TRANSFER_MEASURED');
+ eq(result.median_repeat_reduction_percent,76);
+ check(result.measured_reduction_percent<2,'pooled byte weighting must expose skew');
+ eq(result.sitewide_76_percent_verified,false);passed++;
+ const pooledCheck=copy(d);pooledCheck.pairs[0].after[0].requests[0].encoded_data_length=240;
+ result=evaluate(pooledCheck,inventory);
+ eq(result.measured_reduction_percent,76);
+ eq(result.pooled_baseline_bytes,183000);eq(result.pooled_candidate_bytes,43920);passed++;
  d.pairs[0].before[1].conditions.viewport_width=1234;
  result=evaluate(d,inventory);eq(result.status,'INSUFFICIENT_DATA');passed++;
  const frozen=copy(d);frozen.pairs[0].before[1].conditions.viewport_width=1280;
