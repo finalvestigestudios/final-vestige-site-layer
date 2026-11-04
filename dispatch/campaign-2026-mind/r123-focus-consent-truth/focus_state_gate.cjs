@@ -24,7 +24,7 @@ function classifyUi(input={}){
   const q=typeof input.subscribeParam==="string"?input.subscribeParam:"";
   const cls=typeof input.containerClass==="string"?input.containerClass:"";
   const fromQuery=!!q&&!BAD.includes(q);
-  const fromClass=/(?:^|\s)is-subscriber(?:\s|$)/.test(cls);
+  const fromClass=/\bis-subscriber\b/.test(cls);
   return {gift_visible_in_source_logic:fromQuery||fromClass,
     reason:fromQuery?"NON_BLOCKLIST_QUERY":fromClass?"CSS_CLASS":"NO_REVEAL",
     confirmed_signup:false,email_reachable:null,welcome_received:null,
