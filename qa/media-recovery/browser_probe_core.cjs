@@ -28,7 +28,11 @@ function contentQuery(p){
  // Preserve query values which may select different archival photos at the same path.
  // Only established image resizing/format knobs are excluded from file identity.
  // A crop selector can remove historically meaningful content. It is NOT a size-only transform.
- // 'resize' is NOT universally size-only: WordPress Site Accelerator documents\n // ?resize=W,H as resizing AND CROPPING to the specified aspect ratio. Third-party\n // media CDNs may also apply content-changing transforms. Preserve it in identity.\n // ?fit=W,H retains aspect ratio (size-only); ?crop was already preserved.\n const transforms=new Set(['width','height','w','h','fit','quality','q','ssl','auto','format','fm']);
+ // 'resize' is NOT universally size-only: WordPress Site Accelerator documents
+ // ?resize=W,H as resizing AND CROPPING to the specified aspect ratio. Third-party
+ // media CDNs may also apply content-changing transforms. Preserve it in identity.
+ // ?fit=W,H retains aspect ratio (size-only); ?crop was already preserved.
+ const transforms=new Set(['width','height','w','h','fit','quality','q','ssl','auto','format','fm']);
  const staticImage=/\.(?:jpe?g|png|webp|gif|svg|avif|bmp|tiff?)$/i.test(p.pathname);
  // Dynamic endpoints may use ANY parameter as a photo selector, even 'width'.
  // Navy's documented imageDownload endpoint specifically uses image= for archival identity,
