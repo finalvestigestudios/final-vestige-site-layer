@@ -1,0 +1,60 @@
+# R105: isolated, offline, exact-head Apollo source custody audit. STAGING HOLD.
+name: Apollo R105 sealed NASA cross-view source custody
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    paths:
+      - 'experience2/evidence-atlas/tools/audit_source_crossview_r105.py'
+      - 'experience2/evidence-atlas/tests/test_crossview_custody_r105.py'
+      - 'experience2/evidence-atlas/R105_CROSSVIEW_CUSTODY_STAGING_HOLD.md'
+      - '.github/workflows/ex2-apollo-r105-crossview-custody.yml'
+permissions:
+  contents: read
+jobs:
+  offline-source-integrity:
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Rebuild original sealed R103 and independently audit all research views
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
+        run: |
+          set -euo pipefail
+          export PYTHONPYCACHEPREFIX="$RUNNER_TEMP/apollo-r105-pycache"
+          test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+          test -z "$(git status --porcelain)"
+          python -m py_compile experience2/evidence-atlas/tools/audit_source_crossview_r105.py
+          python experience2/evidence-atlas/tools/build_reciprocal_routes_r92.py "$RUNNER_TEMP/r92"
+          python experience2/evidence-atlas/tools/build_source_passports_r93.py --src "$RUNNER_TEMP/r92" --out "$RUNNER_TEMP/r93"
+          python experience2/evidence-atlas/tools/build_curated_atlas_r94.py --src "$RUNNER_TEMP/r93" --out "$RUNNER_TEMP/r94"
+          python experience2/evidence-atlas/tools/build_source_gallery_r97.py --src "$RUNNER_TEMP/r94" --out "$RUNNER_TEMP/r97"
+          python experience2/evidence-atlas/tools/build_source_roundtrip_r98.py --src "$RUNNER_TEMP/r97" --out "$RUNNER_TEMP/r98"
+          python experience2/evidence-atlas/tools/build_wp_private_preview_r99.py --src "$RUNNER_TEMP/r98" --out "$RUNNER_TEMP/r99-one"
+          python experience2/evidence-atlas/tools/build_wp_private_preview_r99.py --src "$RUNNER_TEMP/r98" --out "$RUNNER_TEMP/r99-two"
+          python experience2/evidence-atlas/tools/build_mobile_gallery_r103.py --src "$RUNNER_TEMP/r99-one" --out "$RUNNER_TEMP/r103-one" --archive "$RUNNER_TEMP/r103-a.zip"
+          python experience2/evidence-atlas/tools/build_mobile_gallery_r103.py --src "$RUNNER_TEMP/r99-two" --out "$RUNNER_TEMP/r103-two" --archive "$RUNNER_TEMP/r103-b.zip"
+          cmp "$RUNNER_TEMP/r103-a.zip" "$RUNNER_TEMP/r103-b.zip"
+          mkdir -p "$RUNNER_TEMP/r105-evidence"
+          sha256sum "$RUNNER_TEMP/r103-a.zip" | tee "$RUNNER_TEMP/r105-evidence/R105_PINNED_SOURCE_SHA256.txt"
+          APOLLO_R105_STAGE="$RUNNER_TEMP/r103-one" python -m unittest discover -s experience2/evidence-atlas/tests -p test_crossview_custody_r105.py -v
+          python experience2/evidence-atlas/tools/audit_source_crossview_r105.py --stage "$RUNNER_TEMP/r103-one" --out "$RUNNER_TEMP/r105-evidence/R105_CROSSVIEW_CUSTODY.json"
+          python experience2/evidence-atlas/tools/audit_source_crossview_r105.py --stage "$RUNNER_TEMP/r103-two" --out "$RUNNER_TEMP/r105-evidence/R105_SECOND_BUILD.json"
+          cmp "$RUNNER_TEMP/r105-evidence/R105_CROSSVIEW_CUSTODY.json" "$RUNNER_TEMP/r105-evidence/R105_SECOND_BUILD.json"
+          sha256sum "$RUNNER_TEMP/r105-evidence/R105_CROSSVIEW_CUSTODY.json" | tee "$RUNNER_TEMP/r105-evidence/R105_REPORT_SHA256.txt"
+          test -z "$(git status --porcelain)"
+      - name: Preserve deterministic custody and audit receipts (STAGING HOLD)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: apollo-r105-sealed-source-custody-STAGING-HOLD
+          path: ${{ runner.temp }}/r105-evidence/
+          if-no-files-found: warn
+          retention-days: 7
