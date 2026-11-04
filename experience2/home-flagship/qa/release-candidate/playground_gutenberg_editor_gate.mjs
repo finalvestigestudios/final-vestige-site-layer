@@ -371,7 +371,9 @@ if (process.argv.includes('--self-test')) {
       const res=await context.request.get(url.toString(),{
         timeout:10000,maxRedirects:0,failOnStatusCode:false
       });
-      assert.notEqual(res.status(),200,'Disposable QA state is HTTP-retrievable: '+name);
+      assert.ok([401,403,404,410].includes(res.status()),
+        'Disposable QA state URL must be denied or absent, not redirected/served: '+name+
+        ' HTTP '+res.status());
     }
     act = (action) => postLocalAction(context,server.serverUrl,action,token);
     // Creation can succeed even when the HTTP receipt is corrupted or lost.
