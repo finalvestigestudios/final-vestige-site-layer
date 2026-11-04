@@ -55,6 +55,9 @@ def validated_spend_rows(
             raise ValueError("Spend source field names must be plain text")
         frozen_records.append(dict(dict.items(original)))
 
+    # Validate all frozen source coordinates and required plain-text fields
+    # before running ANY external parser callback or yielding ANY row. A late
+    # malformed row must not cause partial report evidence or callback effects.
     seen_rows: set[str] = set()
     for record in frozen_records:
         physical_row = record.get("row")
@@ -72,6 +75,11 @@ def validated_spend_rows(
         if type(category) is not str:
             raise ValueError(f"Spend category must be imported text at physical row {physical_row}")
 
+    # After collection-wide structural preflight, parse from the immutable
+    # per-row copies. Original physical row order and callback order remain.
+    for record in frozen_records:
+        physical_row = record["row"]
+        category = record.get("category", "")
         try:
             vendor = normalize_vendor(record["vendor"])
         except Exception:
