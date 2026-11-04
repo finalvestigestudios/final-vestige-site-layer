@@ -176,16 +176,16 @@ async function checkView(page,width,axePath,outputDirectory,expectedMargins){
       overflow:document.documentElement.scrollWidth>innerWidth+1,
       // Gutenberg embeds the standalone flagship body within the actual
       // WordPress/Assembler template main. Its inner <main> is intentionally
-      // adapted to a neutral div to prevent duplicate/nested main landmarks.
+      // adapted to a neutral div; count HTML main plus explicit role=main landmarks.
       main:(()=>{
-        const landmarks=[...document.querySelectorAll('main')];
+        const landmarks=[...document.querySelectorAll('main,[role="main" i]')];
         const embed=root.querySelector('[data-fv-embedded-main="wordpress-assembler"]');
         return landmarks.length===1 && !!embed && landmarks[0].contains(embed)
-          && root.querySelectorAll('main').length===0
+          && root.querySelectorAll('main,[role="main" i]').length===0
           && root.querySelectorAll('[data-fv-embedded-main]').length===1;
       })(),
-      main_landmarks:document.querySelectorAll('main').length,
-      nested_main_landmarks:root.querySelectorAll('main').length,
+      main_landmarks:document.querySelectorAll('main,[role="main" i]').length,
+      nested_main_landmarks:root.querySelectorAll('main,[role="main" i]').length,
       h1:!!root.querySelector('h1'),
       // Executable sources are Gutenberg siblings AFTER the flagship root.
       // Inspect them independently at DOCUMENT scope below.
