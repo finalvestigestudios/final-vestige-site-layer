@@ -1,0 +1,11 @@
+"use strict";const {test}=require("node:test"),assert=require("node:assert/strict"),fs=require("node:fs"),path=require("node:path");const m=require("./synthetic-only.cjs"),dir=__dirname;
+const a=fs.readFileSync(path.join(dir,"variant-a.html"),"utf8"),b=fs.readFileSync(path.join(dir,"variant-b-video-concept.html"),"utf8"),c=JSON.parse(fs.readFileSync(path.join(dir,"claims.json"),"utf8"));
+const row={source:"tiktok",campaign:"mind_pilot_2026_11",asset:"grok_mind_001",event:"offer_view",cohort:"d7"};
+test("PII and unknown fields blocked",()=>{for(const k of ["email","ip","referrer","user_agent","order_id","revenue","cookie","uid"])assert.throws(()=>m.validate({...row,[k]:"x"}));});
+test("no fake purchase event",()=>{assert.throws(()=>m.validate({...row,event:"merchant_confirmed_purchase"}));assert.throws(()=>m.validate({...row,asset:"pending_grok_id"}));});
+test("suppression threshold",()=>{assert.equal(m.summarizeSynthetic(Array(19).fill(row))[0].count,null);assert.equal(m.summarizeSynthetic(Array(20).fill(row))[0].count,20);});
+test("live and sale blocked",()=>{assert.throws(m.collectLive);assert.throws(m.confirmSale);});
+test("no merchant commerce links or track embeds",()=>{for(const h of [a,b]){assert.doesNotMatch(h,/<(?:iframe|form|script|video)\b/i);assert.match(h,/<button[^>]*disabled/);assert.match(h,/Prospective affiliate disclosure:[\s\S]*?<button/);assert.doesNotMatch(h,/<a[^>]*href=["']https:\/\/(?:zen12|inspire3)\.com/i)}});
+test("A B shared editorial content",()=>{let pick=x=>[...x.matchAll(/<section class="fvmo-panel"><h2>([^<]+)<\/h2><p>([^<]+)<\/p><\/section>/g)].map(y=>y[0]);assert.equal(pick(a).length,10);assert.deepEqual(pick(a),pick(b))});
+test("VTT 0 to 40 contiguous",()=>{const v=fs.readFileSync(path.join(dir,"film-captions.vtt"),"utf8");let cues=[...v.matchAll(/(\d\d:\d\d:\d\d)\.000 --> (\d\d:\d\d:\d\d)\.000/g)];assert.equal(cues.length,6);assert.equal(cues[0][1],"00:00:00");assert.equal(cues.at(-1)[2],"00:00:40");for(let i=1;i<6;i++)assert.equal(cues[i-1][2],cues[i][1])});
+test("release gates closed",()=>assert.ok(Object.values(c.gates).every(v=>v==="CLOSED")));
