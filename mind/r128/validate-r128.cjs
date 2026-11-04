@@ -27,7 +27,7 @@ const checkHTML=(s,film=false)=>{
 };
 test('editorial researched and separated from commercial recommendation',()=>{
  assert.ok(words(art)>=1800);assert.match(art,/Johansson/);assert.match(art,/Hall/);
- assert.match(art,/not\\*\\* a replication/i);assert.match(art,/not hypnosis/i);
+ assert.match(art,/not.{0,20}a replication/i);assert.match(art,/not hypnosis/i);
  assert.doesNotMatch(art,/affiliate|commission|zen12\.com|inspire3\.com/i);
  for(const u of ['pubmed.ncbi.nlm.nih.gov/16210542','pubmed.ncbi.nlm.nih.gov/20637455','10.1371/journal.pone.0045457'])assert.ok(art.includes(u));
 });
