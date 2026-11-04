@@ -135,6 +135,13 @@ def main():
                             assert anchor.is_visible() and anchor.get_attribute("href") == href
                             box = anchor.bounding_box()
                             assert box and box["height"] >= 44 and box["width"] >= 44, label+" touch target"
+                            # is_visible() only tests CSS geometry, not whether the
+                            # sticky chapter rail actually covers this destination.
+                            assert anchor.evaluate("""e => {
+                                const r=e.getBoundingClientRect();
+                                const hit=document.elementFromPoint((r.left+r.right)/2,(r.top+r.bottom)/2);
+                                return hit===e || e.contains(hit);
+                            }"""), label+" covered by another element"
                         page.keyboard.press("Tab")
                         first = page.locator(".fv-hf__mobile-explore-links a").first
                         assert first.evaluate("(e)=>document.activeElement===e"), "Tab did not reach first route"
