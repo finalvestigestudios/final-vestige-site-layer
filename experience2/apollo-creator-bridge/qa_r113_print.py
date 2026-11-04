@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 """Apollo actual-source offline Chromium regression. Full PASS requires axe, touch, performance and print."""
 import argparse, hashlib, json, math, subprocess
+from contextlib import contextmanager
+from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+from threading import Thread
 from datetime import datetime
 from pathlib import Path
 from playwright.sync_api import sync_playwright
@@ -31,11 +34,51 @@ def source_identity(html):
             else 'HEAD_SOURCE_MISMATCH')
 def require(ok,message):
     if not ok:raise AssertionError(message)
+
+@contextmanager
+def serve_canonical_landing(html):
+    """Serve exact tracked HTML bytes over loopback for a real navigation, never document.write."""
+    payload=html.read_bytes()
+    class Handler(BaseHTTPRequestHandler):
+        def do_GET(self):
+            if self.path.split('?',1)[0]!='/landing-preview.html':
+                self.send_error(404)
+                return
+            self.send_response(200)
+            self.send_header('Content-Type','text/html; charset=utf-8')
+            self.send_header('Content-Length',str(len(payload)))
+            self.send_header('Cache-Control','no-store')
+            self.end_headers()
+            self.wfile.write(payload)
+        def log_message(self,*args):
+            return
+    server=ThreadingHTTPServer(('127.0.0.1',0),Handler)
+    worker=Thread(target=server.serve_forever,daemon=True)
+    worker.start()
+    try:
+        yield f'http://127.0.0.1:{server.server_port}/landing-preview.html'
+    finally:
+        server.shutdown()
+        server.server_close()
+        worker.join(timeout=5)
+
+def navigate_actual_page(page,url,label):
+    try:
+        response=page.goto(url,wait_until='load',timeout=15000)
+    except Exception as exc:
+        raise AssertionError(label+': NAVIGATION_BLOCKED — real loopback navigation required; document.write fallback prohibited') from exc
+    require(response is not None and response.status==200 and page.url==url,
+            label+': navigation status, URL or real-document identity failed')
+    timing=page.evaluate("performance.getEntriesByType('navigation').map(e=>e.name)")
+    require(len(timing)>=1 and timing[0]==url,
+            label+': browser navigation timing missing (set_content is not acceptable)')
+    return response
+
 def run(html,out,exe,axe=None):
     body=html.read_text(encoding='utf-8');out.mkdir(parents=True,exist_ok=True)
     record=dict(source_sha256=sha(html),source=str(html),classification='actual-source' if html.name=='landing-preview.html' else 'fixture',
                 browser=None,modes=[],screenshots={},pdf=None,performance=[],axe_scans=[],axe_bundle_status='NOT_SUPPLIED',
-                source_identity='UNCHECKED',
+                source_identity='UNCHECKED',navigation_mode='REQUIRED_LOOPBACK_HTTP',
                 complete=False,failure_code=None,worksheet_pdf=None)
     journal=out/'R113_BROWSER_RECEIPT.json'
     def checkpoint():journal.write_text(json.dumps(record,indent=2,sort_keys=True)+'\n',encoding='utf-8')
@@ -45,7 +88,7 @@ def run(html,out,exe,axe=None):
         checkpoint()
         raise AssertionError('actual-source release QA requires canonical file identical to git HEAD; '+record['source_identity'])
     checkpoint()
-    with sync_playwright() as p:
+    with serve_canonical_landing(html) as target, sync_playwright() as p:
         browser=p.chromium.launch(executable_path=exe,headless=True,args=['--no-sandbox'])
         record['browser']=browser.version
         try:
@@ -53,7 +96,7 @@ def run(html,out,exe,axe=None):
                 for js in (False,True):
                     label=f'{w}px-js-{int(js)}'
                     ctx=browser.new_context(viewport={'width':w,'height':850},java_script_enabled=js,reduced_motion='reduce',has_touch=True)
-                    page=ctx.new_page();page.set_content(body,wait_until='load')
+                    page=ctx.new_page();navigate_actual_page(page,target,label)
                     require(page.locator('[data-fv-claim]').count()==4,label+': four claims')
                     # R123: validate the ACTUAL NASA Board timeline, precision and epistemic boundaries.
                     rail=page.locator('[data-fv-board-clock-rail]')
@@ -285,8 +328,12 @@ def run(html,out,exe,axe=None):
             for w in (390,1440):
                 for trial in (1,2,3):
                     ctx=browser.new_context(viewport={'width':w,'height':850},reduced_motion='reduce')
-                    page=ctx.new_page();page.evaluate(PERF_INIT)
-                    page.set_content(body,wait_until='load');page.wait_for_timeout(500)
+                    page=ctx.new_page()
+                    page.add_init_script(script='('+PERF_INIT+')()')
+                    navigate_actual_page(page,target,f'performance-{w}-{trial}')
+                    page.wait_for_function('window.__fv_perf && window.__fv_perf.lcp !== null',
+                                           timeout=6000)
+                    page.wait_for_timeout(300)
                     m=page.evaluate('window.__fv_perf');lcp,cls=m['lcp'],m['cls']
                     require(isinstance(lcp,(int,float)) and math.isfinite(lcp) and lcp>=0,
                             f'unobserved LCP {w}/{trial}')
@@ -305,8 +352,10 @@ def run(html,out,exe,axe=None):
             for width in (390,1440):
                 ctx=browser.new_context(viewport={'width':width,'height':850})
                 page=ctx.new_page()
-                page.set_content(body,wait_until='load')
+                navigate_actual_page(page,target,f'axe-{width}')
                 page.add_script_tag(content=axe.read_text(encoding='utf-8'))
+                require(page.evaluate("typeof window.axe !== 'undefined' && typeof window.axe.run === 'function'"),
+                        f'axe {width}: approved bundle did not expose axe.run')
                 for state in ('all','limit'):
                     if state=='limit':
                         require(page.locator('[data-fv-lens]').is_visible(),
@@ -326,7 +375,9 @@ def run(html,out,exe,axe=None):
                     'missing reproducible screenshots or printable PDF')
             record['complete']=True
         except Exception:
-            record['failure_code']=record['failure_code'] or 'ACCEPTANCE_FAILED';checkpoint();raise
+            record['failure_code']=record['failure_code'] or ('ACTUAL_NAVIGATION_FAILED' if 'NAVIGATION_BLOCKED' in str(__import__('sys').exc_info()[1]) else 'ACCEPTANCE_FAILED')
+            checkpoint()
+            raise
         finally:
             checkpoint();browser.close()
     return record
