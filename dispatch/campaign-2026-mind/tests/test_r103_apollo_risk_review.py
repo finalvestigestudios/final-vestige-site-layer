@@ -38,7 +38,7 @@ class R103(unittest.TestCase):
         self.assertEqual(self.j["preheader_native_supported"],"UNVERIFIED")
         for s in (self.m,self.t): self.assertIn("Jetpack",s)
     def test_historical_nonhazardous_provenance(self):
-        for phrase in ("unfueled","nonhazardous","90 seconds","source of ignition"):
+        for phrase in ("unfueled","nonhazardous","90 seconds","ignition source"):
             self.assertIn(phrase,self.m.lower())
     def test_no_claim_exact_ignition(self):
         self.assertIn("did not identify a specific ignition source",self.m)
