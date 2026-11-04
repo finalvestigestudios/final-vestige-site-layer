@@ -23,6 +23,9 @@ class NASAProvenanceContracts(unittest.TestCase):
         self.assertEqual(result["confirmed_catalog_ids"], 5)
         self.assertEqual(result["browser_axe_wordpress_merchant"], "NOT_TESTED")
 
+    def test_low_contrast_print_credit_fails(self):
+        self.reject(HTML.replace("small,.muted{color:#111!important}", ""))
+
     def test_missing_nasa_source_credits_fail(self):
         self.reject(HTML.replace("Image Credit: NASA/Kim Shiflett", "Credit unverified", 1))
 
