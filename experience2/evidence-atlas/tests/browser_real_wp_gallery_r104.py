@@ -306,9 +306,11 @@ if __name__ == '__main__':
     try:
         result = run(args.base, args.out, args.axe, args.user, args.password)
     except Exception as exc:
-        # Redact exception text; CI always uploads the last atomic checkpoint.
+        # Preserve only the exception type in the journal. A raw Playwright
+        # traceback may contain private HTTP URLs, page HTML or login fields;
+        # never echo it into public CI logs. Last checkpoint gives triage context.
         EvidenceJournal(args.out).fail(type(exc).__name__)
-        raise
+        raise SystemExit('R106_WORDPRESS_QA_FAILED: inspect sanitized R105_QA_PROGRESS.json (STAGING HOLD)') from None
     print(json.dumps({
         'schema': result['schema'], 'cases': len(result['r103_interaction_cases']),
         'axe_scans': len(result['axe']),
