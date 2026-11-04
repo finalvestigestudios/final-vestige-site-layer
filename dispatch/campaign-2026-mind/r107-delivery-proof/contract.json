@@ -1,0 +1,120 @@
+{
+  "schema": "fv.dispatch.r107.no_send.v1",
+  "status": "HOLD_UNSENT",
+  "date_utc": "2026-11-04",
+  "source": {
+    "master_pr": 175,
+    "master_sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+    "quality_pr": 201,
+    "prior_qa_pr": 896,
+    "original_editions": 6,
+    "editorial": 4,
+    "commercial_reserved": 2
+  },
+  "website": {
+    "focus": "https://finalvestige.com/focus/",
+    "dispatch": "https://finalvestige.com/dispatch/",
+    "observed_at_utc": "2026-11-04T06:32:45Z",
+    "jetpack_enabled": true,
+    "new_post_automail": false,
+    "email_content_format": "excerpt",
+    "welcome_fieldbook_configured": true,
+    "subscriber_counts": {
+      "total": 2,
+      "confirmed": 2,
+      "unconfirmed": 2,
+      "suppressed": 0
+    },
+    "subscriber_count_categories_nonadditive_possible": true,
+    "reader_follower_count_last_observed": 2,
+    "email_follower_count_last_observed": 0,
+    "authoritative_email_eligible_recipients": null,
+    "confirmed_signup_transitions": null,
+    "real_received_welcome": false,
+    "jetpack_native_preview": false,
+    "real_received_newsletter": false,
+    "publisher_postal_address_verified": false,
+    "optout_function_verified": false
+  },
+  "consent": {
+    "focus_discloses_commission_recommendations": true,
+    "dispatch_discloses_commission_recommendations": false,
+    "approved_change": false,
+    "subscriber_identifiers_in_artifacts": false
+  },
+  "nurture": {
+    "is_triggered_autoresponder": false,
+    "one_verified_offer": null,
+    "candidate_not_verified": "Zen12",
+    "second_reserved_offer_issue05": "HOLD_MERCHANT",
+    "newsletter_issues": [
+      {
+        "number": 1,
+        "kind": "editorial",
+        "status": "HOLD"
+      },
+      {
+        "number": 2,
+        "kind": "editorial",
+        "status": "HOLD"
+      },
+      {
+        "number": 3,
+        "kind": "commercial_reserved",
+        "status": "HOLD_MERCHANT"
+      },
+      {
+        "number": 4,
+        "kind": "editorial",
+        "status": "HOLD"
+      },
+      {
+        "number": 5,
+        "kind": "commercial_reserved",
+        "status": "HOLD_MERCHANT"
+      },
+      {
+        "number": 6,
+        "kind": "editorial",
+        "status": "HOLD"
+      }
+    ]
+  },
+  "attribution": {
+    "social_owner": "Grok/Praxxis",
+    "social_utm": "source=<platform>;medium=organic_social;campaign=<cluster>_pilot_2026_11;content=<actual immutable asset_id>",
+    "email_owner": "Dispatch/Claude",
+    "email_utm": "source=dispatch;medium=email;campaign=dispatch_mind_pilot_2026_11;content=issueXX",
+    "live_utm_measurement_verified": false,
+    "duplicate_script_added": false,
+    "confirmed_signup_requires": "Jetpack authoritative transition",
+    "clicks_are_not_sales": true
+  },
+  "revenue": {
+    "verified_sku": null,
+    "independently_confirmed_paid_orders": null,
+    "qualified_human_sessions": null,
+    "refunds_fees": null,
+    "net_revenue_per_1000_qualified_human_sessions": "N/A",
+    "cohort_days": [
+      7,
+      30
+    ]
+  },
+  "approval": {
+    "exact_creative": false,
+    "real_audience": false,
+    "real_email_render": false,
+    "merchant_channel": false,
+    "founder_sending": false,
+    "release": "HOLD_UNSENT"
+  },
+  "references": [
+    "https://wordpress.com/support/subscribers/",
+    "https://wordpress.com/support/newsletter-settings/",
+    "https://wordpress.com/support/newsletter/email-appearance/",
+    "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business",
+    "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/174",
+    "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820"
+  ]
+}
