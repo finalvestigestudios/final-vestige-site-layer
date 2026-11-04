@@ -196,6 +196,49 @@ class R108SourceImpactCrosswalk(unittest.TestCase):
         with self.assertRaises(g.Hold):
             self.result(meta(), b(json.dumps(x)), META)
 
+    def test_multi_file_source_id_impact_join(self):
+        old_body = body("<p>History {{cite:source-a}}</p>")
+        new_body = body("<p>Revised history {{cite:source-c}}</p>")
+        old_meta, new_meta = meta(), meta(use={
+            "source-b": "historical scope of B",
+            "source-c": "a new reading scope pending review"})
+        old_frag, new_frag = fragment(), fragment(supports="changed reading claim")
+        q, _ = make(old_body, new_body, BODY)
+        rows = q["contributor_reviewer_queue_NOT_APPROVED"]
+        payloads = {
+            BODY: (old_body, new_body), META: (old_meta, new_meta),
+            FRAG: (old_frag, new_frag),
+        }
+        for p in (META, FRAG):
+            old, new = payloads[p]
+            r = copy.deepcopy(rows[0])
+            r.update({"path": p, "classification": r107.kind(p),
+                      "frozen_blob_sha": r107.r60.blob_sha(old),
+                      "current_blob_sha": r107.r60.blob_sha(new)})
+            rows.append(r)
+        q["changed_path_count"] = 3
+        seal(q)
+        def fetch(commit, path):
+            old, new = payloads[path]
+            return old if commit == OLD_COMMIT else new
+        x = g.crosswalk(q, fetch)
+        intersection = x["cross_file_source_id_intersections_NOT_APPROVED"]
+        self.assertEqual(intersection["source-a"], ["body", "fragment", "meta"])
+        self.assertEqual(intersection["source-c"], ["body", "meta"])
+        self.assertFalse(x["factual_claim_support_approved"])
+        self.assertEqual(len(x["source_id_change_impact_index_NOT_APPROVED"]["source-a"]), 3)
+
+    def test_single_file_impact_index_is_not_false_shared_source(self):
+        x = self.result()
+        self.assertIn("source-a", x["source_id_change_impact_index_NOT_APPROVED"])
+        self.assertEqual(x["cross_file_source_id_intersections_NOT_APPROVED"], {})
+
+    def test_impact_index_contains_no_source_support_or_original_prose(self):
+        x = self.result()
+        index_text = json.dumps(x["source_id_change_impact_index_NOT_APPROVED"])
+        self.assertNotIn("Original careful explanation", index_text)
+        self.assertIn("human_review", index_text)
+
     def test_fragment_source_support_changed(self):
         x = self.result(fragment(), fragment(supports="New meaning"), FRAG)
         fields = x["rows_NOT_APPROVED"][0]["change_indicators_NOT_FACT_VERDICTS"]
