@@ -1,0 +1,476 @@
+{
+  "schema": "fv-mind-r128-claim-and-release-v1",
+  "date": "2026-11-04",
+  "status": "draft-not-live",
+  "offer": "Zen12 Premium (candidate only)",
+  "sources": [
+    {
+      "id": "S01",
+      "kind": "Study",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/16210542/",
+      "desc": "Johansson et al. 2005 face choice manipulation"
+    },
+    {
+      "id": "S02",
+      "kind": "Study",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/20637455/",
+      "desc": "Hall et al. 2010 jam/tea choice experiment"
+    },
+    {
+      "id": "S03",
+      "kind": "Study",
+      "url": "https://doi.org/10.1371/journal.pone.0045457",
+      "desc": "Hall et al. 2012 attitude survey"
+    },
+    {
+      "id": "S04",
+      "kind": "Study",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23593244/",
+      "desc": "Hall et al. 2013 political attitude study"
+    },
+    {
+      "id": "S05",
+      "kind": "Study",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17049881/",
+      "desc": "2006 introspection and choice blindness interpretation"
+    },
+    {
+      "id": "S06",
+      "kind": "Review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/21223921/",
+      "desc": "1997 change blindness review"
+    },
+    {
+      "id": "S07",
+      "kind": "Seller",
+      "url": "https://inspire3.com/",
+      "desc": "Official Inspire3 catalog; product descriptions are advertising"
+    },
+    {
+      "id": "S08",
+      "kind": "Seller",
+      "url": "https://zen12.com/hnp",
+      "desc": "Zen12 exact primary offer; Premium specification and displayed 87.99 offer"
+    },
+    {
+      "id": "S09",
+      "kind": "Seller",
+      "url": "https://zen12.com/secret/",
+      "desc": "Conditional coupon and 37 displayed; not universal final price"
+    },
+    {
+      "id": "S10",
+      "kind": "Seller",
+      "url": "https://affiliates.inspire3.com/",
+      "desc": "Public sign-up, no FV-specific affiliate approval"
+    },
+    {
+      "id": "S11",
+      "kind": "Seller policy",
+      "url": "https://inspire3.com/privacy/",
+      "desc": "Names/emails/purchased products may be shared with affiliates"
+    },
+    {
+      "id": "S12",
+      "kind": "Research",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/27580462/",
+      "desc": "2016 systematic review of standardized mindfulness training cognition"
+    },
+    {
+      "id": "S13",
+      "kind": "Research",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33582570/",
+      "desc": "2021 cognitive meta-analysis across mindfulness interventions"
+    },
+    {
+      "id": "S14",
+      "kind": "FTC",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "desc": "Material connections and honest endorsements"
+    },
+    {
+      "id": "S15",
+      "kind": "FTC",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "desc": "Health efficacy substantiation and disclosure"
+    },
+    {
+      "id": "S16",
+      "kind": "FV first-party",
+      "url": "https://finalvestige.com/focus/",
+      "desc": "Existing free Focus Fieldbook route; not a paid product"
+    },
+    {
+      "id": "S17",
+      "kind": "FV first-party",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "desc": "Historical bridge"
+    },
+    {
+      "id": "S18",
+      "kind": "FV first-party",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "desc": "Already published change-blindness route"
+    },
+    {
+      "id": "S19",
+      "kind": "FV first-party",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "desc": "Already published historical suggestion route"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "People sometimes explain a face they did not choose.",
+      "decision": "supported-context-specific",
+      "source_ids": [
+        "S01",
+        "S05"
+      ],
+      "limits": "Do not universalize to all decisions"
+    },
+    {
+      "id": "C02",
+      "claim": "In 2010 field study no more than one-third of manipulated jam/tea trials detected.",
+      "decision": "supported-context-specific",
+      "source_ids": [
+        "S02"
+      ],
+      "limits": "Not proof of lasting consumer preference"
+    },
+    {
+      "id": "C03",
+      "claim": "2012 survey reported 69 percent missed at least one of two reversals.",
+      "decision": "supported-context-specific",
+      "source_ids": [
+        "S03"
+      ],
+      "limits": "Study-specific, not proof values are empty"
+    },
+    {
+      "id": "C04",
+      "claim": "2013 political intervention demonstrates malleability in one design.",
+      "decision": "supported-context-specific",
+      "source_ids": [
+        "S04"
+      ],
+      "limits": "No claim of sustained election outcomes"
+    },
+    {
+      "id": "C05",
+      "claim": "Choice blindness and change blindness are distinct mechanisms.",
+      "decision": "supported-explanatory",
+      "source_ids": [
+        "S01",
+        "S06"
+      ],
+      "limits": "Do not conflate"
+    },
+    {
+      "id": "C06",
+      "claim": "Choice-blindness experiments prove hypnosis recordings can implant preferences.",
+      "decision": "reject",
+      "source_ids": [
+        "S01",
+        "S05"
+      ],
+      "limits": "No relevant hypnosis intervention"
+    },
+    {
+      "id": "C07",
+      "claim": "Premium listing specifies 48 MP3s/12 levels.",
+      "decision": "seller-description-only",
+      "source_ids": [
+        "S08"
+      ],
+      "limits": "Verify actual fulfillment before release"
+    },
+    {
+      "id": "C08",
+      "claim": "Zen12 provides hour-equivalent benefits in 12 minutes.",
+      "decision": "reject-unsubstantiated-product-efficacy",
+      "source_ids": [
+        "S08",
+        "S12",
+        "S13"
+      ],
+      "limits": "Independent program-specific evidence not established"
+    },
+    {
+      "id": "C09",
+      "claim": "Zen12 has proven treatment for stress, anxiety, cognitive function.",
+      "decision": "reject-unsubstantiated-health",
+      "source_ids": [
+        "S08",
+        "S15"
+      ],
+      "limits": "Do not publish health benefit claim"
+    },
+    {
+      "id": "C10",
+      "claim": "Premium seller page displays $87.99 on Nov 4 2026.",
+      "decision": "seller-page-observation",
+      "source_ids": [
+        "S08"
+      ],
+      "limits": "Not final checkout"
+    },
+    {
+      "id": "C11",
+      "claim": "Coupon page displays conditional $37 offer.",
+      "decision": "seller-page-observation",
+      "source_ids": [
+        "S09"
+      ],
+      "limits": "Not universal discount or current paid total"
+    },
+    {
+      "id": "C12",
+      "claim": "One-year refund promised on primary listing.",
+      "decision": "seller-policy-description",
+      "source_ids": [
+        "S08"
+      ],
+      "limits": "Actual refund outcome and complete terms unverified"
+    },
+    {
+      "id": "C13",
+      "claim": "Public Inspire3 affiliate sign-up is FV partner acceptance.",
+      "decision": "reject",
+      "source_ids": [
+        "S10"
+      ],
+      "limits": "No named approval or approved earning link"
+    },
+    {
+      "id": "C14",
+      "claim": "Inspire3 can share buyer name/email/product with affiliates.",
+      "decision": "policy-supported",
+      "source_ids": [
+        "S11"
+      ],
+      "limits": "Require aggregate-only settlement authorization"
+    },
+    {
+      "id": "C15",
+      "claim": "2016 and 2021 mindfulness training literature shows mixed attention results.",
+      "decision": "supported-general-not-product",
+      "source_ids": [
+        "S12",
+        "S13"
+      ],
+      "limits": "Not Zen12 test or MP3 proof"
+    },
+    {
+      "id": "C16",
+      "claim": "FV Focus Fieldbook is existing free opt-in resource.",
+      "decision": "first-party-route",
+      "source_ids": [
+        "S16"
+      ],
+      "limits": "Do not present as paid offer; verify confirmed leads separately"
+    },
+    {
+      "id": "C17",
+      "claim": "FTC disclosure should be close to compensated recommendation.",
+      "decision": "rule-supported",
+      "source_ids": [
+        "S14"
+      ],
+      "limits": "Near CTA, visible without JS"
+    },
+    {
+      "id": "C18",
+      "claim": "No merchant-confirmed paid conversion or commission proven for campaign.",
+      "decision": "unverified-not-zero",
+      "source_ids": [],
+      "limits": "Require authorized merchant settlement and qualified-session denominator"
+    },
+    {
+      "id": "C19",
+      "claim": "The optional short film improves paid conversion.",
+      "decision": "hypothesis-only",
+      "source_ids": [],
+      "limits": "Must compare confirmed paid conversion, same traffic eligibility and channel"
+    },
+    {
+      "id": "C20",
+      "claim": "Grok assets match corresponding published FV pages.",
+      "decision": "pending-independent-reconciliation",
+      "source_ids": [
+        "S18",
+        "S19"
+      ],
+      "limits": "Need actual published asset IDs/permalinks"
+    },
+    {
+      "id": "C21",
+      "claim": "There is a sellable rights-cleared FV-owned paid Mind SKU.",
+      "decision": "unverified",
+      "source_ids": [],
+      "limits": "Need authenticated Payhip product and fulfillment"
+    },
+    {
+      "id": "C22",
+      "claim": "Affiliate commission rate is applicable to FV.",
+      "decision": "reject-unverified-program-terms",
+      "source_ids": [
+        "S10"
+      ],
+      "limits": "Public merchant advertising is not negotiated/approved FV commission"
+    },
+    {
+      "id": "C23",
+      "claim": "An affiliate outbound click equals a sale.",
+      "decision": "reject",
+      "source_ids": [],
+      "limits": "Source-verified paid order needed"
+    }
+  ],
+  "gates": [
+    {
+      "id": "G01",
+      "name": "named Final Vestige affiliate account acceptance",
+      "status": "CLOSED",
+      "reason": "Required evidence unavailable or release unapproved"
+    },
+    {
+      "id": "G02",
+      "name": "authorized Zen12 offer and earning URL",
+      "status": "CLOSED",
+      "reason": "Required evidence unavailable or release unapproved"
+    },
+    {
+      "id": "G03",
+      "name": "permitted social/content/email channels per agreement",
+      "status": "CLOSED",
+      "reason": "Required evidence unavailable or release unapproved"
+    },
+    {
+      "id": "G04",
+      "name": "approved promotional creative conditions",
+      "status": "CLOSED",
+      "reason": "Required evidence unavailable or release unapproved"
+    },
+    {
+      "id": "G05",
+      "name": "written privacy-safe aggregate-only affiliate reporting",
+      "status": "CLOSED",
+      "reason": "Required evidence unavailable or release unapproved"
+    },
+    {
+      "id": "G06",
+      "name": "valid UTM/subid tracking permissions",
+      "status": "CLOSED",
+      "reason": "Required evidence unavailable or release unapproved"
+    },
+    {
+      "id": "G07",
+      "name": "final checkout price/currency/taxes verified",
+      "status": "CLOSED",
+      "reason": "Required evidence unavailable or release unapproved"
+    },
+    {
+      "id": "G08",
+      "name": "refund policy and actual effective terms verified",
+      "status": "CLOSED",
+      "reason": "Required evidence unavailable or release unapproved"
+    },
+    {
+      "id": "G09",
+      "name": "product material/content rights",
+      "status": "CLOSED",
+      "reason": "Required evidence unavailable or release unapproved"
+    },
+    {
+      "id": "G10",
+      "name": "seller efficacy claims independently substantiated or omitted",
+      "status": "CLOSED",
+      "reason": "Required evidence unavailable or release unapproved"
+    },
+    {
+      "id": "G11",
+      "name": "FTC adjacent material-connection disclosure approved",
+      "status": "CLOSED",
+      "reason": "Required evidence unavailable or release unapproved"
+    },
+    {
+      "id": "G12",
+      "name": "real MP4 captions/controls/rights and mobile review for variant B",
+      "status": "CLOSED",
+      "reason": "Required evidence unavailable or release unapproved"
+    },
+    {
+      "id": "G13",
+      "name": "founder production release approval",
+      "status": "CLOSED",
+      "reason": "Required evidence unavailable or release unapproved"
+    },
+    {
+      "id": "G14",
+      "name": "independent site QA mobile/browser/a11y passes",
+      "status": "CLOSED",
+      "reason": "Required evidence unavailable or release unapproved"
+    },
+    {
+      "id": "G15",
+      "name": "publisher/engineering deployment sign-off",
+      "status": "CLOSED",
+      "reason": "Required evidence unavailable or release unapproved"
+    },
+    {
+      "id": "G16",
+      "name": "merchant orders and refunds reconciliation",
+      "status": "CLOSED",
+      "reason": "Required evidence unavailable or release unapproved"
+    },
+    {
+      "id": "G17",
+      "name": "verified qualified human sessions denominator",
+      "status": "CLOSED",
+      "reason": "Required evidence unavailable or release unapproved"
+    },
+    {
+      "id": "G18",
+      "name": "single preexisting Jetpack Focus list preserved",
+      "status": "CLOSED",
+      "reason": "Required evidence unavailable or release unapproved"
+    },
+    {
+      "id": "G19",
+      "name": "Grok asset IDs and published media links validated",
+      "status": "CLOSED",
+      "reason": "Required evidence unavailable or release unapproved"
+    },
+    {
+      "id": "G20",
+      "name": "existing Payhip paid Mind SKU authenticated (fallback)",
+      "status": "CLOSED",
+      "reason": "Required evidence unavailable or release unapproved"
+    },
+    {
+      "id": "G21",
+      "name": "conflict checks against homepage PR49/Issue150 and Mind PR172",
+      "status": "CLOSED",
+      "reason": "Required evidence unavailable or release unapproved"
+    }
+  ],
+  "prohibitions": [
+    "No active paid merchant links",
+    "No offsite buy CTA",
+    "No fabricated testimonials or product usage",
+    "No price/health/wealth guarantees",
+    "No duplicated email stack",
+    "No scripts or personally identifying analytics"
+  ],
+  "tests_expected": {
+    "sources": 19,
+    "claims": 23,
+    "closed_gates": 21,
+    "ab_variants": [
+      "A",
+      "B"
+    ]
+  }
+}
