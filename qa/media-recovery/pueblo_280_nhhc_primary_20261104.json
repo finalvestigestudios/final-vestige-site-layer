@@ -1,0 +1,331 @@
+{
+  "schema": "fv.media_recovery.pueblo_280.v1",
+  "date": "2026-11-04",
+  "mode": "SOURCE_ONLY_READ_ONLY",
+  "frozen": {
+    "part_path": "qa/media-recovery/parts/03.json",
+    "git_blob_sha": "49183f66f880f7c4dfd363acca906876877f2e5e",
+    "post_id": 280,
+    "post_url": "https://finalvestige.com/2026/08/19/the-sledgehammers-broke-first-uss-pueblo/",
+    "original_refs": 6,
+    "baseline_posts": 61,
+    "baseline_images": 355,
+    "external_refs": 288,
+    "oversize_originals": 13,
+    "reported_broken_42": "UNVERIFIED",
+    "claimed_wire_reduction_76_percent": "UNMEASURED"
+  },
+  "results": {
+    "references_reconciled": 6,
+    "authoritative_subject_mappings": 6,
+    "exact_binary_identity_verifications": 0,
+    "origin_http_codes_verified": 0,
+    "guest_browser_failures_verified": 0,
+    "independent_image_search_displays": 2,
+    "editorial_review_flags": 2,
+    "production_replacements": 0
+  },
+  "rights_guidance_urls": [
+    "https://www.history.navy.mil/our-collections/photography.html",
+    "https://www.history.navy.mil/about-us/services-and-policies/scan-copyright.html"
+  ],
+  "rights_note": "Most NHHC collection photos are public domain, but archive does not certify rights for every photograph and requires checking item copyright/creator. Government photographs can be resized/cropped without altering content; verify credit and rights before any rehosting.",
+  "transport_note": "Six text-retriever probes of exact published original URLs did not yield origin HTTP/MIME; five wrapper 502 and one tool inaccessible. This is NOT six verified broken images. Container HTTP requests failed DNS before receiving a response.",
+  "wordpress_plan": "HOLD all caching/WP writes. Request guest CDP Image GET status, redirects/currentSrc, image decode and natural dimensions/screenshot; check historical identity, accession, rights, credits and crop; authorized derivative min(original_width,960) and proportional height without enlargement; stage immutable asset and rollback plan; separately approve any production publication.",
+  "images": [
+    {
+      "key": "280:0",
+      "post_id": 280,
+      "original_src": "https://www.history.navy.mil/content/history/museums/nmusn/explore/photography/ships-us/ships-usn-p/uss-pueblo-ager-2/428-gx-usn-1129207/_jcr_content/mediaitem/image.img.jpg/1504112093611.jpg",
+      "original_alt": "USS Pueblo underway off San Diego in October 1967, three months before its capture by North Korea.",
+      "html_width_px": null,
+      "html_height_px": null,
+      "archive": {
+        "publisher": "Naval History and Heritage Command",
+        "catalog_id": "428-GX-USN-1129207",
+        "catalog_url": "https://www.history.navy.mil/content/history/museums/nmusn/explore/photography/ships-us/ships-usn-p/uss-pueblo-ager-2/428-gx-usn-1129207.html",
+        "catalog_description": "USS Pueblo off San Diego, 19 October 1967, photographed by PHCS J.M. Lahr",
+        "mapping_kind": "EXACT_CATALOG_ACCESSION",
+        "original_binary_identity_verified": false,
+        "source_binary_sha256": null
+      },
+      "retrieval": {
+        "method": "web.open text retriever, NOT visitor browser",
+        "checked_at": "2026-11-04",
+        "tool_outcome": "WRAPPER_502",
+        "original_url": "https://www.history.navy.mil/content/history/museums/nmusn/explore/photography/ships-us/ships-usn-p/uss-pueblo-ager-2/428-gx-usn-1129207/_jcr_content/mediaitem/image.img.jpg/1504112093611.jpg",
+        "actual_origin_http_status": null,
+        "guest_browser_http_status": null,
+        "mime_type": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "decoded": null,
+        "wire_bytes": null,
+        "broken_for_visitors": null,
+        "image_search_displayed": null
+      },
+      "derivative": {
+        "source_catalog_master_width_px": 3263,
+        "source_catalog_master_height_px": 2244,
+        "source_geometry_basis": "NHHC high-resolution archival catalog; NOT original published JPG decode",
+        "max_width_px": 960,
+        "conditional_height_px": 660,
+        "no_upscale": true
+      },
+      "rights": {
+        "status": "ITEM_SPECIFIC_REVIEW_REQUIRED",
+        "license": null,
+        "required_credit": "Naval History and Heritage Command, 428-GX-USN-1129207",
+        "wordPress_upload_allowed": false,
+        "local_cache_allowed": false,
+        "post_rewrite_allowed": false
+      },
+      "review_flag": null
+    },
+    {
+      "key": "280:1",
+      "post_id": 280,
+      "original_src": "https://www.history.navy.mil/content/history/nhhc/research/histories/ship-histories/danfs/p/pueblo-iii/_jcr_content/body/media_asset_1086930325/image.img.jpg/1514467381634.jpg",
+      "original_alt": "A USS Pueblo sailor drawing coffee in the ship's mess during 1967.",
+      "html_width_px": null,
+      "html_height_px": null,
+      "archive": {
+        "publisher": "Naval History and Heritage Command",
+        "catalog_id": "NH 75559",
+        "catalog_url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/NH-75000/NH-75559.html",
+        "catalog_description": "Crewmember drawing coffee in USS Pueblo messing spaces, 1967",
+        "mapping_kind": "DANFS_CAPTION_ACCESSION",
+        "original_binary_identity_verified": false,
+        "source_binary_sha256": null
+      },
+      "retrieval": {
+        "method": "web.open text retriever, NOT visitor browser",
+        "checked_at": "2026-11-04",
+        "tool_outcome": "WRAPPER_502",
+        "original_url": "https://www.history.navy.mil/content/history/nhhc/research/histories/ship-histories/danfs/p/pueblo-iii/_jcr_content/body/media_asset_1086930325/image.img.jpg/1514467381634.jpg",
+        "actual_origin_http_status": null,
+        "guest_browser_http_status": null,
+        "mime_type": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "decoded": null,
+        "wire_bytes": null,
+        "broken_for_visitors": null,
+        "image_search_displayed": null
+      },
+      "derivative": {
+        "source_catalog_master_width_px": null,
+        "source_catalog_master_height_px": null,
+        "source_geometry_basis": "UNVERIFIED",
+        "max_width_px": 960,
+        "conditional_height_px": null,
+        "no_upscale": true
+      },
+      "rights": {
+        "status": "ITEM_SPECIFIC_REVIEW_REQUIRED",
+        "license": null,
+        "required_credit": "Naval History and Heritage Command, NH 75559",
+        "wordPress_upload_allowed": false,
+        "local_cache_allowed": false,
+        "post_rewrite_allowed": false
+      },
+      "review_flag": null
+    },
+    {
+      "key": "280:2",
+      "post_id": 280,
+      "original_src": "https://www.history.navy.mil/bin/imageDownload?image=%2Fcontent%2Fdam%2Fnhhc%2Four-collections%2Fphotography%2Fimages%2FNH+75000%2FNH+75561&rendition=cq5dam.web.1280.1280.jpeg",
+      "original_alt": "Interior mess and living space aboard USS Pueblo before the 1968 seizure.",
+      "html_width_px": null,
+      "html_height_px": null,
+      "archive": {
+        "publisher": "Naval History and Heritage Command",
+        "catalog_id": "NH 75561",
+        "catalog_url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/NH-75000/NH-75561.html",
+        "catalog_description": "Pueblo crew messing spaces, 1967",
+        "mapping_kind": "EXACT_CATALOG_ID_IN_PUBLISHED_URL",
+        "original_binary_identity_verified": false,
+        "source_binary_sha256": null
+      },
+      "retrieval": {
+        "method": "web.open text retriever, NOT visitor browser",
+        "checked_at": "2026-11-04",
+        "tool_outcome": "WRAPPER_502",
+        "original_url": "https://www.history.navy.mil/bin/imageDownload?image=%2Fcontent%2Fdam%2Fnhhc%2Four-collections%2Fphotography%2Fimages%2FNH+75000%2FNH+75561&rendition=cq5dam.web.1280.1280.jpeg",
+        "actual_origin_http_status": null,
+        "guest_browser_http_status": null,
+        "mime_type": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "decoded": null,
+        "wire_bytes": null,
+        "broken_for_visitors": null,
+        "image_search_displayed": true
+      },
+      "derivative": {
+        "source_catalog_master_width_px": null,
+        "source_catalog_master_height_px": null,
+        "source_geometry_basis": "UNVERIFIED",
+        "max_width_px": 960,
+        "conditional_height_px": null,
+        "no_upscale": true
+      },
+      "rights": {
+        "status": "ITEM_SPECIFIC_REVIEW_REQUIRED",
+        "license": null,
+        "required_credit": "Naval History and Heritage Command, NH 75561",
+        "wordPress_upload_allowed": false,
+        "local_cache_allowed": false,
+        "post_rewrite_allowed": false
+      },
+      "review_flag": null
+    },
+    {
+      "key": "280:3",
+      "post_id": 280,
+      "original_src": "https://www.history.navy.mil/content/history/nhhc/our-collections/photography/numerical-list-of-images/nara-series/80-g-k/80-G-K-60000/K-64683/_jcr_content/mediaitem/image.img.jpg/1459314791691.jpg",
+      "original_alt": "Released USS Pueblo crewmen at Panmunjom in December 1968.",
+      "html_width_px": null,
+      "html_height_px": null,
+      "archive": {
+        "publisher": "Naval History and Heritage Command",
+        "catalog_id": "K-64683",
+        "catalog_url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nara-series/80-g-k/80-G-K-60000/K-64683.html",
+        "catalog_description": "Crewman checks in after crossing Bridge of No Return on 23 December 1968; North Korean troops behind",
+        "mapping_kind": "EXACT_CATALOG_ID_IN_PUBLISHED_URL",
+        "original_binary_identity_verified": false,
+        "source_binary_sha256": null
+      },
+      "retrieval": {
+        "method": "web.open text retriever, NOT visitor browser",
+        "checked_at": "2026-11-04",
+        "tool_outcome": "WRAPPER_502",
+        "original_url": "https://www.history.navy.mil/content/history/nhhc/our-collections/photography/numerical-list-of-images/nara-series/80-g-k/80-G-K-60000/K-64683/_jcr_content/mediaitem/image.img.jpg/1459314791691.jpg",
+        "actual_origin_http_status": null,
+        "guest_browser_http_status": null,
+        "mime_type": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "decoded": null,
+        "wire_bytes": null,
+        "broken_for_visitors": null,
+        "image_search_displayed": null
+      },
+      "derivative": {
+        "source_catalog_master_width_px": 6184,
+        "source_catalog_master_height_px": 4978,
+        "source_geometry_basis": "NHHC high-resolution archival catalog; NOT original published JPG decode",
+        "max_width_px": 960,
+        "conditional_height_px": 773,
+        "no_upscale": true
+      },
+      "rights": {
+        "status": "ITEM_SPECIFIC_REVIEW_REQUIRED",
+        "license": null,
+        "required_credit": "Naval History and Heritage Command, K-64683",
+        "wordPress_upload_allowed": false,
+        "local_cache_allowed": false,
+        "post_rewrite_allowed": false
+      },
+      "review_flag": "Specific scene is Bridge of No Return check-in, not generic Panmunjom group"
+    },
+    {
+      "key": "280:4",
+      "post_id": 280,
+      "original_src": "https://www.history.navy.mil/content/history/nhhc/research/histories/ship-histories/danfs/b/banner-ii/_jcr_content/body/media_asset/image.img.jpg",
+      "original_alt": "USS Banner, sister ship of USS Pueblo, after the Pueblo incident prompted changes to the intelligence-ship program.",
+      "html_width_px": null,
+      "html_height_px": null,
+      "archive": {
+        "publisher": "Naval History and Heritage Command",
+        "catalog_id": "NH 68705",
+        "catalog_url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/NH-68000/NH-68705.html",
+        "catalog_description": "DIFFERENT-PHOTOGRAPH candidate: USS Banner (AGER-1) on 12 May 1969",
+        "mapping_kind": "DIFFERENT_ASSET_ALTERNATE_NOT_IDENTICAL",
+        "original_binary_identity_verified": false,
+        "source_binary_sha256": null
+      },
+      "retrieval": {
+        "method": "web.open text retriever, NOT visitor browser",
+        "checked_at": "2026-11-04",
+        "tool_outcome": "TOOL_ACCESS_UNAVAILABLE",
+        "original_url": "https://www.history.navy.mil/content/history/nhhc/research/histories/ship-histories/danfs/b/banner-ii/_jcr_content/body/media_asset/image.img.jpg",
+        "actual_origin_http_status": null,
+        "guest_browser_http_status": null,
+        "mime_type": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "decoded": null,
+        "wire_bytes": null,
+        "broken_for_visitors": null,
+        "image_search_displayed": null
+      },
+      "derivative": {
+        "source_catalog_master_width_px": 6312,
+        "source_catalog_master_height_px": 4750,
+        "source_geometry_basis": "NHHC high-resolution archival catalog; NOT original published JPG decode",
+        "max_width_px": 960,
+        "conditional_height_px": 722,
+        "no_upscale": true
+      },
+      "rights": {
+        "status": "ITEM_SPECIFIC_REVIEW_REQUIRED",
+        "license": null,
+        "required_credit": "Naval History and Heritage Command, NH 68705",
+        "wordPress_upload_allowed": false,
+        "local_cache_allowed": false,
+        "post_rewrite_allowed": false
+      },
+      "review_flag": "DANFS published Banner photo accession unknown. NH 68705 is a different-photograph archival candidate, not an exact replacement"
+    },
+    {
+      "key": "280:5",
+      "post_id": 280,
+      "original_src": "https://www.history.navy.mil/content/history/nhhc/our-collections/photography/numerical-list-of-images/nara-series/80-g-k/80-G-K-60000/K-64728/_jcr_content/mediaitem/image.img.jpg/1424360116159.jpg",
+      "original_alt": "USS Pueblo crewmen eating after their release from North Korean captivity in December 1968.",
+      "html_width_px": null,
+      "html_height_px": null,
+      "archive": {
+        "publisher": "Naval History and Heritage Command",
+        "catalog_id": "K-64728",
+        "catalog_url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nara-series/80-g-k/80-G-K-60000/K-64728.html",
+        "catalog_description": "Pueblo crew eating at United Nations Advance Camp after 23 December 1968 release",
+        "mapping_kind": "EXACT_CATALOG_ID_IN_PUBLISHED_URL",
+        "original_binary_identity_verified": false,
+        "source_binary_sha256": null
+      },
+      "retrieval": {
+        "method": "web.open text retriever, NOT visitor browser",
+        "checked_at": "2026-11-04",
+        "tool_outcome": "WRAPPER_502",
+        "original_url": "https://www.history.navy.mil/content/history/nhhc/our-collections/photography/numerical-list-of-images/nara-series/80-g-k/80-G-K-60000/K-64728/_jcr_content/mediaitem/image.img.jpg/1424360116159.jpg",
+        "actual_origin_http_status": null,
+        "guest_browser_http_status": null,
+        "mime_type": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "decoded": null,
+        "wire_bytes": null,
+        "broken_for_visitors": null,
+        "image_search_displayed": true
+      },
+      "derivative": {
+        "source_catalog_master_width_px": null,
+        "source_catalog_master_height_px": null,
+        "source_geometry_basis": "UNVERIFIED",
+        "max_width_px": 960,
+        "conditional_height_px": null,
+        "no_upscale": true
+      },
+      "rights": {
+        "status": "ITEM_SPECIFIC_REVIEW_REQUIRED",
+        "license": null,
+        "required_credit": "Naval History and Heritage Command, K-64728",
+        "wordPress_upload_allowed": false,
+        "local_cache_allowed": false,
+        "post_rewrite_allowed": false
+      },
+      "review_flag": null
+    }
+  ]
+}
