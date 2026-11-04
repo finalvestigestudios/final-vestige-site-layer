@@ -1,0 +1,69 @@
+{
+  "checked_at_utc": "2026-11-04T15:36:00Z",
+  "evidence_class": "PUBLIC_SELLER_PAGE_CLAIMS_ONLY_NOT_INDEPENDENT_PROOF",
+  "source_of_truth_for_acceptance": "Final Vestige specific authenticated Inspire3 affiliate approval and email promotion policy; NOT AVAILABLE",
+  "offer_priority": "Zen12 as a conditional single-offer hypothesis, not an activated promotion",
+  "offers": [
+    {
+      "offer": "Zen12",
+      "official_primary": "https://zen12.com/hnp",
+      "official_conditional": "https://zen12.com/secret/",
+      "seller_described_features": [
+        "12 levels",
+        "Four audio style choices per level",
+        "Premium package 48 MP3s",
+        "12-minute sessions"
+      ],
+      "seller_claims_not_independently_verified": [
+        "12 minutes delivers an hour of meditation",
+        "Brainwave sounds automatically produce deep meditation",
+        "Focus or health gains from this particular audio"
+      ],
+      "seller_displayed_prices": {
+        "primary_premium": "$87.99 promotional display noted by Mind Studio issue #171 R120; needs direct checkout verification",
+        "conditional_landing": "$37 with coupon on a separate /secret/ promotional page; no universal validity established"
+      },
+      "refund": "Primary page advertises a one-year money-back guarantee; transaction-specific terms not verified",
+      "email_permission": "UNVERIFIED",
+      "approved_affiliate_url": null,
+      "approved_warmup_guide_live": false,
+      "settled_paid_conversions": null,
+      "mailing_activation_allowed": false
+    },
+    {
+      "offer": "Hypnosis Live Total Focus",
+      "official_primary": "https://hypnosislive.com/mental-skills/total-focus",
+      "seller_described_features": [
+        "33-minute audio",
+        "47 MB downloadable recording"
+      ],
+      "seller_claims_not_independently_verified": [
+        "Concentration improvements guaranteed from the product",
+        "Changes to future career prospects",
+        "100% on-demand focus"
+      ],
+      "seller_displayed_prices": {
+        "single_price_on_page": "$24.44 displayed as discount vs $29.95",
+        "paired_promotion_on_page": "$19.95 per recording in a two-product $39.90 offer; do not present as standalone price"
+      },
+      "refund": "Seller advertises 14-day refund; exact controlling conditions and applicability unverified",
+      "email_permission": "UNVERIFIED",
+      "approved_affiliate_url": null,
+      "approved_warmup_guide_live": false,
+      "settled_paid_conversions": null,
+      "mailing_activation_allowed": false
+    }
+  ],
+  "publication_and_compliance_sources": [
+    "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business",
+    "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "https://finalvestige.com/editorial-standards/"
+  ],
+  "newsletter_received_email_evidence": "NOT_AVAILABLE",
+  "sender_postal_address_approved": false,
+  "functional_unsubscribe_verified": false,
+  "human_consent_and_email_eligibility": "UNKNOWN",
+  "paid_orders": "UNVERIFIED",
+  "revenue_per_1000_qualified_human_sessions": "NOT_COMPUTABLE",
+  "no_prices_or_refund_claims_should_be_published": true
+}
