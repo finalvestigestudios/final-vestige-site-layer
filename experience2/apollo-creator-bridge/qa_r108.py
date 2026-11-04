@@ -108,6 +108,13 @@ def main():
                     target = page.locator("#classroom-preview")
                     check(target.count() == 1 and target.locator("h2").count() == 1,
                         label + ": free evidence exercise destination missing")
+                    # A fragment that scrolls but leaves focus in the hero is not a
+                    # reliable keyboard and screen-reader evidence-to-exercise handoff.
+                    check(target.get_attribute("tabindex") == "-1" and
+                          target.evaluate("(e) => document.activeElement === e"),
+                          label + ": fragment destination did not receive keyboard focus")
+                    check(target.locator("a[href='#source-custody']").count() == 1,
+                          label + ": the classroom activity has no return source trail")
                     check(target.evaluate("(e) => {const r=e.getBoundingClientRect();return r.top >= -4 && r.top < innerHeight}"),
                         label + ": CTA did not reveal destination in viewport")
                     # The native document destination must be meaningful without scripts.
