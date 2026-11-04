@@ -1,0 +1,341 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-03",
+  "lane": "FV Media Recovery Engineering; isolated from Site QA #154 and homepage",
+  "scope": "P0 Hebgen Lake post 407; all 8 frozen direct USGS S3 external image references",
+  "frozen_inventory": {
+    "file": "qa/media-recovery/parts/02.json",
+    "git_blob_sha": "48e1ebf07207e948ba5802e714eb39659d2e1c1d",
+    "post_id": 407,
+    "expected_slots": 8,
+    "post_url": "https://finalvestige.com/2026/08/20/the-lake-wasnt-there-yesterday-hebgen/"
+  },
+  "retrieval_method": "Independent web.open on each exact published image URL, not visitor browser; catalog matches verified with USGS primary pages",
+  "summary": {
+    "slots": 8,
+    "independently_displayed_original": 6,
+    "unsupported_binary_tool_wrapper": 1,
+    "unavailable_without_numeric_origin_status": 1,
+    "confirmed_guest_browser_failures": 0,
+    "confirmed_origin_http_statuses": 0,
+    "usgs_primary_catalog_scene_matches": 8,
+    "exact_binary_identity_matches_verified": 0,
+    "media_republished": 0
+  },
+  "rights_policy": "USGS catalog labels all eight 'Public Domain'; USGS copyright policy warns non-agency guest photographs may have separate copyright. Hall and Nile credits in particular require item-specific review. Catalog signals do not authorize copying.",
+  "rights_policy_url": "https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+  "claim_status": {
+    "reported_sitewide_broken_42": "UNVERIFIED",
+    "reported_sitewide_wire_savings_76_percent": "UNMEASURED",
+    "source_inventory_reference_only": true
+  },
+  "wordpress_production_write_authorized": false,
+  "download_or_caching_authorized": false,
+  "subscription_spend_authorized": false,
+  "rows": [
+    {
+      "key": "407:0",
+      "post_id": 407,
+      "page_url": "https://finalvestige.com/2026/08/20/the-lake-wasnt-there-yesterday-hebgen/",
+      "exact_published_source_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/vhp_img317.jpg",
+      "frozen_alt": "A house partly submerged in Hebgen Lake beside a broken roadway after the 1959 earthquake.",
+      "stored_width_px": null,
+      "stored_height_px": null,
+      "independent_retrieval": {
+        "method": "web.open exact original URL; not browser CDP",
+        "date": "2026-11-03",
+        "state": "displayed_original",
+        "origin_http_status": null,
+        "guest_browser_http_status": null,
+        "decoded_in_guest_browser": null,
+        "note": "Exact published image visibly rendered in independent viewer; numeric HTTP response not exposed"
+      },
+      "archive_candidate": {
+        "catalog_url": "https://www.usgs.gov/media/images/earthquake-damage-1959-hebgen-lake-event-yellowstone-plateau",
+        "catalog_scene_description": "USGS catalog photo of Mrs. Grace Miller's submerged house",
+        "source_credit": "USGS; photographer unlisted",
+        "source_catalog_rights_signal": "Public Domain",
+        "pixel_identical_to_published_source_verified": false,
+        "external_photographer_review_required": false,
+        "rights_review_required": true,
+        "reuse_approved": false
+      },
+      "derived_max": {
+        "width_px": null,
+        "height_px": null,
+        "maximum_allowed_width_px": 960,
+        "no_upscale": true,
+        "dimensions_verified_from": "pending verified intrinsic original dimensions"
+      },
+      "wordpress_media_action": "HOLD",
+      "copied_to_wordpress": false
+    },
+    {
+      "key": "407:1",
+      "post_id": 407,
+      "page_url": "https://finalvestige.com/2026/08/20/the-lake-wasnt-there-yesterday-hebgen/",
+      "exact_published_source_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/img7535.jpg",
+      "frozen_alt": "Fresh fault scarp near Hebgen Lake produced by the August 1959 earthquake.",
+      "stored_width_px": null,
+      "stored_height_px": null,
+      "independent_retrieval": {
+        "method": "web.open exact original URL; not browser CDP",
+        "date": "2026-11-03",
+        "state": "unsupported_content_type",
+        "origin_http_status": null,
+        "guest_browser_http_status": null,
+        "decoded_in_guest_browser": null,
+        "note": "Retriever rejected binary/octet-stream (tool-wrapper 400); not an origin/browser HTTP 400"
+      },
+      "archive_candidate": {
+        "catalog_url": "https://www.usgs.gov/media/images/hebgen-lake-fault-scarp-1959",
+        "catalog_scene_description": "USGS photo of Hebgen Lake fault scarp, 1959",
+        "source_credit": "J. R. Stacy / USGS",
+        "source_catalog_rights_signal": "Public Domain",
+        "pixel_identical_to_published_source_verified": false,
+        "external_photographer_review_required": false,
+        "rights_review_required": true,
+        "reuse_approved": false
+      },
+      "derived_max": {
+        "width_px": null,
+        "height_px": null,
+        "maximum_allowed_width_px": 960,
+        "no_upscale": true,
+        "dimensions_verified_from": "pending verified intrinsic original dimensions"
+      },
+      "wordpress_media_action": "HOLD",
+      "copied_to_wordpress": false
+    },
+    {
+      "key": "407:2",
+      "post_id": 407,
+      "page_url": "https://finalvestige.com/2026/08/20/the-lake-wasnt-there-yesterday-hebgen/",
+      "exact_published_source_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/media/images/EarthquakeLake1.jpg",
+      "frozen_alt": "The Madison Slide and rapidly filling Earthquake Lake four days after the 1959 Hebgen Lake earthquake, with camping gear abandoned by survivors in the foreground.",
+      "stored_width_px": 1024,
+      "stored_height_px": 719,
+      "independent_retrieval": {
+        "method": "web.open exact original URL; not browser CDP",
+        "date": "2026-11-03",
+        "state": "displayed_original",
+        "origin_http_status": null,
+        "guest_browser_http_status": null,
+        "decoded_in_guest_browser": null,
+        "note": "Exact published image visibly rendered in independent viewer; numeric HTTP response not exposed"
+      },
+      "archive_candidate": {
+        "catalog_url": "https://www.usgs.gov/media/images/view-madison-slide-august-21-1959-rapidly-filling-earthquake-lake",
+        "catalog_scene_description": "Madison Slide, Aug 21, 1959; displaced campground items",
+        "source_credit": "Professor William B. Hall / Montana School of Mines",
+        "source_catalog_rights_signal": "Public Domain",
+        "pixel_identical_to_published_source_verified": false,
+        "external_photographer_review_required": true,
+        "rights_review_required": true,
+        "reuse_approved": false
+      },
+      "derived_max": {
+        "width_px": 960,
+        "height_px": 674,
+        "maximum_allowed_width_px": 960,
+        "no_upscale": true,
+        "dimensions_verified_from": "stored WordPress width/height 1024x...; rounded proportional proposal"
+      },
+      "wordpress_media_action": "HOLD",
+      "copied_to_wordpress": false
+    },
+    {
+      "key": "407:3",
+      "post_id": 407,
+      "page_url": "https://finalvestige.com/2026/08/20/the-lake-wasnt-there-yesterday-hebgen/",
+      "exact_published_source_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/media/images/EarthquakeLake3.jpg",
+      "frozen_alt": "Dragline excavating the Earthquake Lake spillway on October 18, 1959, with one of the nighttime lighting plants visible on the hillside.",
+      "stored_width_px": 1024,
+      "stored_height_px": 730,
+      "independent_retrieval": {
+        "method": "web.open exact original URL; not browser CDP",
+        "date": "2026-11-03",
+        "state": "unavailable_no_numeric_status",
+        "origin_http_status": null,
+        "guest_browser_http_status": null,
+        "decoded_in_guest_browser": null,
+        "note": "Retriever could not access URL; no origin response code"
+      },
+      "archive_candidate": {
+        "catalog_url": "https://www.usgs.gov/media/images/dragline-working-lower-outlet-channel-earthquake-lake-october-18-1959",
+        "catalog_scene_description": "Outlet channel dragline, October 18, 1959",
+        "source_credit": "Mrs. Steven W. Nile / Montana School of Mines attribution",
+        "source_catalog_rights_signal": "Public Domain",
+        "pixel_identical_to_published_source_verified": false,
+        "external_photographer_review_required": true,
+        "rights_review_required": true,
+        "reuse_approved": false
+      },
+      "derived_max": {
+        "width_px": 960,
+        "height_px": 684,
+        "maximum_allowed_width_px": 960,
+        "no_upscale": true,
+        "dimensions_verified_from": "stored WordPress width/height 1024x...; rounded proportional proposal"
+      },
+      "wordpress_media_action": "HOLD",
+      "copied_to_wordpress": false
+    },
+    {
+      "key": "407:4",
+      "post_id": 407,
+      "page_url": "https://finalvestige.com/2026/08/20/the-lake-wasnt-there-yesterday-hebgen/",
+      "exact_published_source_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/thumbnails/image/img7536.jpg",
+      "frozen_alt": "Rockslide damage along the Golden Gate road near Mammoth Hot Springs caused by the 1959 Hebgen Lake earthquake.",
+      "stored_width_px": null,
+      "stored_height_px": null,
+      "independent_retrieval": {
+        "method": "web.open exact original URL; not browser CDP",
+        "date": "2026-11-03",
+        "state": "displayed_original",
+        "origin_http_status": null,
+        "guest_browser_http_status": null,
+        "decoded_in_guest_browser": null,
+        "note": "Exact published image visibly rendered in independent viewer; numeric HTTP response not exposed"
+      },
+      "archive_candidate": {
+        "catalog_url": "https://www.usgs.gov/media/images/rockslide-damage-golden-gate-area-near-mammoth-hot-springs",
+        "catalog_scene_description": "Golden Gate area rockslide, 1959",
+        "source_credit": "USGS catalog; photographer unlisted",
+        "source_catalog_rights_signal": "Public Domain",
+        "pixel_identical_to_published_source_verified": false,
+        "external_photographer_review_required": false,
+        "rights_review_required": true,
+        "reuse_approved": false
+      },
+      "derived_max": {
+        "width_px": null,
+        "height_px": null,
+        "maximum_allowed_width_px": 960,
+        "no_upscale": true,
+        "dimensions_verified_from": "pending verified intrinsic original dimensions"
+      },
+      "wordpress_media_action": "HOLD",
+      "copied_to_wordpress": false
+    },
+    {
+      "key": "407:5",
+      "post_id": 407,
+      "page_url": "https://finalvestige.com/2026/08/20/the-lake-wasnt-there-yesterday-hebgen/",
+      "exact_published_source_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/thumbnails/image/img7538.jpg",
+      "frozen_alt": "Sapphire Pool in Yellowstone erupting after the 1959 Hebgen Lake earthquake altered the park’s hydrothermal system.",
+      "stored_width_px": null,
+      "stored_height_px": null,
+      "independent_retrieval": {
+        "method": "web.open exact original URL; not browser CDP",
+        "date": "2026-11-03",
+        "state": "displayed_original",
+        "origin_http_status": null,
+        "guest_browser_http_status": null,
+        "decoded_in_guest_browser": null,
+        "note": "Exact published image visibly rendered in independent viewer; numeric HTTP response not exposed"
+      },
+      "archive_candidate": {
+        "catalog_url": "https://www.usgs.gov/media/images/sapphire-pool-upper-geyser-basin-erupting-after-1959-hebg",
+        "catalog_scene_description": "Sapphire Pool erupting following 1959 earthquake",
+        "source_credit": "USGS catalog; photographer unlisted",
+        "source_catalog_rights_signal": "Public Domain",
+        "pixel_identical_to_published_source_verified": false,
+        "external_photographer_review_required": false,
+        "rights_review_required": true,
+        "reuse_approved": false
+      },
+      "derived_max": {
+        "width_px": null,
+        "height_px": null,
+        "maximum_allowed_width_px": 960,
+        "no_upscale": true,
+        "dimensions_verified_from": "pending verified intrinsic original dimensions"
+      },
+      "wordpress_media_action": "HOLD",
+      "copied_to_wordpress": false
+    },
+    {
+      "key": "407:6",
+      "post_id": 407,
+      "page_url": "https://finalvestige.com/2026/08/20/the-lake-wasnt-there-yesterday-hebgen/",
+      "exact_published_source_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/thumbnails/image/img7537.jpg",
+      "frozen_alt": "Seismic Geyser erupting in Yellowstone in 1970 after developing from a fracture formed following the 1959 earthquake.",
+      "stored_width_px": null,
+      "stored_height_px": null,
+      "independent_retrieval": {
+        "method": "web.open exact original URL; not browser CDP",
+        "date": "2026-11-03",
+        "state": "displayed_original",
+        "origin_http_status": null,
+        "guest_browser_http_status": null,
+        "decoded_in_guest_browser": null,
+        "note": "Exact published image visibly rendered in independent viewer; numeric HTTP response not exposed"
+      },
+      "archive_candidate": {
+        "catalog_url": "https://www.usgs.gov/media/images/seismic-geyser-eruption-1970",
+        "catalog_scene_description": "Seismic Geyser erupting, circa 1970",
+        "source_credit": "John Brandow / USGS",
+        "source_catalog_rights_signal": "Public Domain",
+        "pixel_identical_to_published_source_verified": false,
+        "external_photographer_review_required": false,
+        "rights_review_required": true,
+        "reuse_approved": false
+      },
+      "derived_max": {
+        "width_px": null,
+        "height_px": null,
+        "maximum_allowed_width_px": 960,
+        "no_upscale": true,
+        "dimensions_verified_from": "pending verified intrinsic original dimensions"
+      },
+      "wordpress_media_action": "HOLD",
+      "copied_to_wordpress": false
+    },
+    {
+      "key": "407:7",
+      "post_id": 407,
+      "page_url": "https://finalvestige.com/2026/08/20/the-lake-wasnt-there-yesterday-hebgen/",
+      "exact_published_source_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/media/images/Quake%20lake%20and%20slide%2020230627.jpg",
+      "frozen_alt": "Earthquake Lake in 2023 with standing dead trees in the water and the 1959 Madison Slide scar visible beyond the lake.",
+      "stored_width_px": 1024,
+      "stored_height_px": 771,
+      "independent_retrieval": {
+        "method": "web.open exact original URL; not browser CDP",
+        "date": "2026-11-03",
+        "state": "displayed_original",
+        "origin_http_status": null,
+        "guest_browser_http_status": null,
+        "decoded_in_guest_browser": null,
+        "note": "Exact published image visibly rendered in independent viewer; numeric HTTP response not exposed"
+      },
+      "archive_candidate": {
+        "catalog_url": "https://www.usgs.gov/media/images/earthquake-lake-and-madison-slide",
+        "catalog_scene_description": "Earthquake Lake and 1959 slide scar, June 27, 2023",
+        "source_credit": "Mike Poland / USGS",
+        "source_catalog_rights_signal": "Public Domain",
+        "pixel_identical_to_published_source_verified": false,
+        "external_photographer_review_required": false,
+        "rights_review_required": true,
+        "reuse_approved": false
+      },
+      "derived_max": {
+        "width_px": 960,
+        "height_px": 723,
+        "maximum_allowed_width_px": 960,
+        "no_upscale": true,
+        "dimensions_verified_from": "stored WordPress width/height 1024x...; rounded proportional proposal"
+      },
+      "wordpress_media_action": "HOLD",
+      "copied_to_wordpress": false
+    }
+  ],
+  "release_gate": [
+    "guest Chrome HTTP/MIME/decoded intrinsic dimensions and screenshot for 407:1 & 407:3",
+    "visual/crop and catalog fingerprint comparison for all 8",
+    "rights review especially Hall & Nile",
+    "conditional <=960px WebP/JPEG derivation using approved original with credit and rollback",
+    "measure transferred CDP encoded bytes before/after with same cohort",
+    "stage/cache media only after explicit publication approval; no Gutenberg auto rewrites"
+  ]
+}
