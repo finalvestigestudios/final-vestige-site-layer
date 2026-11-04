@@ -217,6 +217,21 @@ export async function runIsolatedGuestRender({server,browser,draftId,axePath,out
         const region=document.querySelector('.fv-margin-strip__window');
         const items=[...document.querySelectorAll('.fv-margin-strip__item')];
         const first=items[0];
+        const readability=items.map(el=>{
+          const rect=el.getBoundingClientRect();
+          let ancestorHidden=false,cur=el;
+          while(cur&&cur.nodeType===1) {
+            const cs=getComputedStyle(cur);
+            if(cs.display==='none'||cs.visibility!=='visible'||Number(cs.opacity)<0.5||
+               cur.hidden||cur.inert||cur.getAttribute('aria-hidden')==='true')
+              ancestorHidden=true;
+            cur=cur.parentElement;
+          }
+          const css=getComputedStyle(el);
+          return {display:css.display,visibility:css.visibility,opacity:css.opacity,
+            position:css.position,width:rect.width,height:rect.height,
+            ancestor_hidden:ancestorHidden};
+        });
         return {admin_bar:!!document.querySelector('#wpadminbar'),
           logged_in:document.body.classList.contains('logged-in'),
           details:!!summary,summary_visible:visible(summary),
@@ -225,6 +240,7 @@ export async function runIsolatedGuestRender({server,browser,draftId,axePath,out
           margins:items.length,margin_texts:items.map(el=>el.textContent),
           margin_position:first?getComputedStyle(first).position:null,
           margin_opacity:first?getComputedStyle(first).opacity:null,
+          margin_readability:readability,
           window_overflow:region?getComputedStyle(region).overflowY:null,
           horizontal_overflow:document.documentElement.scrollWidth>innerWidth+1};
       });
@@ -236,7 +252,8 @@ export async function runIsolatedGuestRender({server,browser,draftId,axePath,out
       } catch(e) {
         failures.push({width:'390-nojs',reason:String(e?.message||e).slice(0,700)});
       }
-      const {margin_texts:publicMarginalText,...noJSSummary}=noJS;
+      const {margin_texts:publicMarginalText,
+        margin_readability:privateRenderDetail,...noJSSummary}=noJS;
       checks.push({width:'390-nojs',state:noJSSummary});
     } finally {await noContext.close();}
   } finally {
