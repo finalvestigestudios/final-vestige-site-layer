@@ -174,7 +174,19 @@ async function checkView(page,width,axePath,outputDirectory,expectedMargins){
       margins:document.querySelectorAll('.fv-margin-strip__item').length,
       focus:(document.body.innerText.match(/Focus Fieldbook/g)||[]).length,
       overflow:document.documentElement.scrollWidth>innerWidth+1,
-      main:!!root.querySelector('main'),h1:!!root.querySelector('h1'),
+      // Gutenberg embeds the standalone flagship body within the actual
+      // WordPress/Assembler template main. Its inner <main> is intentionally
+      // adapted to a neutral div to prevent duplicate/nested main landmarks.
+      main:(()=>{
+        const landmarks=[...document.querySelectorAll('main')];
+        const embed=root.querySelector('[data-fv-embedded-main="wordpress-assembler"]');
+        return landmarks.length===1 && !!embed && landmarks[0].contains(embed)
+          && root.querySelectorAll('main').length===0
+          && root.querySelectorAll('[data-fv-embedded-main]').length===1;
+      })(),
+      main_landmarks:document.querySelectorAll('main').length,
+      nested_main_landmarks:root.querySelectorAll('main').length,
+      h1:!!root.querySelector('h1'),
       // Executable sources are Gutenberg siblings AFTER the flagship root.
       // Inspect them independently at DOCUMENT scope below.
       // The styling must exist in the SAVED Gutenberg source; page.addStyleTag
@@ -214,7 +226,10 @@ async function checkView(page,width,axePath,outputDirectory,expectedMargins){
   assert.equal(state.margins,72);
   assert.ok(state.focus>=1);
   assert.equal(state.overflow,false,`Horizontal overflow at ${width}`);
-  assert.equal(state.main,true);assert.equal(state.h1,true);
+  assert.equal(state.main,true,'Exactly one theme-owned main landmark must contain the adapted flagship');
+  assert.equal(state.main_landmarks,1,'WordPress/Assembler document must have exactly one main');
+  assert.equal(state.nested_main_landmarks,0,'Flagship must not nest a second main inside WordPress main');
+  assert.equal(state.h1,true);
   assertRenderedScriptNames(sourceScripts);
   assert.equal(state.saved_layout_styles,1,'Assembler styles must be persisted in Gutenberg');
   assert.ok(state.root_width>=width-2 && state.root_width<=width+2,
