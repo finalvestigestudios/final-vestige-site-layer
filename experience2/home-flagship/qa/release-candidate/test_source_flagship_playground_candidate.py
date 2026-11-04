@@ -206,7 +206,7 @@ class FullSourceFlagshipTests(unittest.TestCase):
         variants = (
             '<main class="rogue">',
             '<MAIN id="rogue">',
-            '<main\\taria-label="rogue">',
+            '<main\taria-label="rogue">',
             '<main/>',
             '</main >',
             '<div role="main">',
