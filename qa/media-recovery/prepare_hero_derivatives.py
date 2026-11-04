@@ -117,6 +117,23 @@ def prepare_one(row, approval, input_dir, *, check_size=True):
     return candidate, facts
 
 
+
+def validated_output_root(output_dir, input_root):
+    """Resolve a local staging destination without traversing a symlink.
+
+    Path.resolve() dereferences an output symlink, so checking is_symlink()
+    *after* resolve is ineffective. Check the requested path and ancestors first.
+    The guard is for controlled local staging, not an adversarial TOCTOU sandbox.
+    """
+    requested = Path(output_dir).absolute()
+    if any(p.is_symlink() for p in (requested, *requested.parents)):
+        raise ValueError('output_path_symlink_component_refused')
+    root = requested.resolve()
+    if root == input_root or root.is_relative_to(input_root):
+        raise ValueError('output_directory_must_be_separate_from_originals')
+    return root
+
+
 def run(ids, approvals, input_dir, output_dir, *, check_size=True):
     rows = catalog_rows()
     if not ids or any(i not in rows for i in ids) or len(set(ids)) != len(ids):
@@ -126,11 +143,7 @@ def run(ids, approvals, input_dir, output_dir, *, check_size=True):
         raise ValueError('duplicate_approval')
     by_id = {a['media_id']: a for a in approved if isinstance(a, dict) and 'media_id' in a}
     root = Path(input_dir).resolve(strict=True)
-    target_root = Path(output_dir).resolve()
-    if target_root == root or target_root.is_relative_to(root):
-        raise ValueError('output_directory_must_be_separate_from_originals')
-    if target_root.exists() and target_root.is_symlink():
-        raise ValueError('output_directory_must_not_be_symlink')
+    target_root = validated_output_root(output_dir, root)
     # Encode EVERYTHING and validate ALL permissions before any write.
     batch = [prepare_one(rows[i], by_id.get(i), root, check_size=check_size) for i in ids]
     successes = [(binary, record) for binary, record in batch if binary is not None]
