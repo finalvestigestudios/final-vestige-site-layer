@@ -1,5 +1,5 @@
 # Apollo R103: genuine disposable WordPress integration for modified gallery; never live.
-name: Apollo R103 genuine WordPress + gallery source custody acceptance
+name: Apollo R103-R104 genuine WordPress + gallery interaction custody acceptance
 on:
   pull_request:
     types: [opened, synchronize, reopened]
@@ -7,6 +7,8 @@ on:
       - 'experience2/evidence-atlas/tools/build_mobile_gallery_r103.py'
       - 'experience2/evidence-atlas/tests/test_mobile_gallery_r103.py'
       - 'experience2/evidence-atlas/tests/browser_mobile_gallery_r103.py'
+      - 'experience2/evidence-atlas/tests/browser_real_wp_gallery_r104.py'
+      - 'experience2/evidence-atlas/R104_REAL_WP_GALLERY_STAGING_HOLD.md'
       - 'experience2/evidence-atlas/R103_MOBILE_GALLERY_STAGING_HOLD.md'
       - '.github/workflows/ex2-apollo-r103-actual-wordpress.yml'
 permissions:
@@ -130,13 +132,20 @@ jobs:
             --author apollo_author --author-password 'ephemeral-author-2026' \
             --contributor apollo_contributor --contributor-password 'ephemeral-contributor-2026' \
             --editor apollo_editor --editor-password 'ephemeral-editor-2026'
+          # R104: real WP routes (CSP preserved), mobile comparison, no-JS,
+          # selected-state axe and six repeat LCP/CLS observations.
+          python experience2/evidence-atlas/tests/browser_real_wp_gallery_r104.py \
+            --base http://127.0.0.1:8955/ \
+            --axe "$RUNNER_TEMP/r100-axe/node_modules/axe-core/axe.min.js" \
+            --out "$RUNNER_TEMP/r100-real-wp-evidence" \
+            --user apollo_admin --password 'ephemeral-Apollo-test-2026'
           cp "$RUNNER_TEMP/r100-source-sha.txt" "$RUNNER_TEMP/r100-real-wp-evidence/R100_PINNED_SOURCE_SHA256.txt"
           test -z "$(git status --porcelain)"
       - name: Upload genuine disposable WP browser receipts (STAGING HOLD)
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: apollo-r103-genuine-wordpress-gallery-STAGING-HOLD
+          name: apollo-r104-genuine-wordpress-gallery-STAGING-HOLD
           path: |
             ${{ runner.temp }}/r100-real-wp-evidence/
             ${{ runner.temp }}/r100-source-sha.txt
