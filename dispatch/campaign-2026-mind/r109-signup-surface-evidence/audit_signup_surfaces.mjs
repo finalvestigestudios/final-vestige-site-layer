@@ -25,7 +25,7 @@ function formHint(html){
 }
 function fallbackHint(html){
  return /wp-block-jetpack-subscriptions/i.test(html) && !formHint(html) &&
- /<a\b[^>]*href\s*=\s*["'][^"']*(?:post_type=page|p=\d+)[^"']*["'][^>]*>\s*Subscribe\s*<\/a>/i.test(html);
+ /<a\b[^>]*href\s*=\s*["'][^"']*(?:post_type=page|p=\d+)[^"']*["'][^>]*>[^<]{1,100}<\/a>/i.test(html);
 }
 export function auditSurface({route,raw,rendered}={}){
  if(!["focus","dispatch"].includes(route)||typeof raw!=="string"||typeof rendered!=="string")throw new TypeError("Expected route focus/dispatch and two HTML strings");
