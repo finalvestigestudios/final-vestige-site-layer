@@ -1,0 +1,97 @@
+{
+  "schema": "fv.dispatch.r109.static-signup-surfaces.v1",
+  "snapshot_utc": "2026-11-04T08:34:44Z",
+  "source": "authenticated WordPress pages get edit+view; Jetpack status/settings; follower summary",
+  "site": "finalvestige.com",
+  "pr_base": 908,
+  "base_commit": "fa90e2d83d47ee74e3f1a056da86e3cf699dbf12",
+  "pages": {
+    "focus": {
+      "page_id": 1579,
+      "native_subscription_block_count": 1,
+      "confirmation_explained": true,
+      "commission_recommendations_disclosed": true,
+      "privacy_policy_link": true,
+      "direct_fieldbook_download_link": true,
+      "rest_email_field_visible": false,
+      "rest_anchor_fallback": true,
+      "live_public_interactive_form_verified": false
+    },
+    "dispatch": {
+      "page_id": 523,
+      "native_subscription_block_count": 1,
+      "confirmation_explained": true,
+      "commission_recommendations_disclosed": false,
+      "privacy_policy_link": true,
+      "direct_fieldbook_download_link": false,
+      "rest_email_field_visible": false,
+      "rest_anchor_fallback": true,
+      "live_public_interactive_form_verified": false
+    }
+  },
+  "newsletter": {
+    "enabled": true,
+    "new_post_auto_send": false,
+    "email_content_format": "excerpt",
+    "welcome_pdf_configured": true,
+    "welcome_received_verified": false,
+    "subscriber_total": 2,
+    "confirmed": 2,
+    "unconfirmed": 2,
+    "suppressed": 0,
+    "followers_email": 0,
+    "followers_wordpress": 2,
+    "eligible_email_recipients": null,
+    "last_five_post_notifications": "never_sent_opted_out"
+  },
+  "missing_proofs": [
+    "real public browser form usability",
+    "native email recipient eligibility",
+    "authoritative confirmed opt-in transition",
+    "genuine received welcome and PDF access",
+    "publisher physical postal address in commercial email",
+    "successful opt-out suppression",
+    "publisher-specific Inspire3 approval and email marketing rights",
+    "published approved warm-up guides",
+    "rights-cleared paid offer with authenticated order reconciliation",
+    "founder campaign send approval"
+  ],
+  "campaign": {
+    "editorial": 4,
+    "commercial_reserved": 2,
+    "issues": [
+      "01",
+      "02",
+      "03",
+      "04",
+      "05",
+      "06"
+    ],
+    "merchant_hold": [
+      "03",
+      "05"
+    ],
+    "decision": "HOLD_UNSENT"
+  },
+  "tests": {
+    "v8_node_compatibility_synthetic_pass": 36,
+    "native_node_run": false,
+    "hosted_ci_run": false,
+    "production_end_to_end": false
+  },
+  "revenue": {
+    "source_confirmed_paid_orders": null,
+    "net_revenue_7d": null,
+    "net_revenue_30d": null,
+    "net_revenue_per_1000_qualified_human_sessions": null
+  },
+  "writes": {
+    "wordpress": false,
+    "email": false,
+    "new_list": false,
+    "subscriber_test": false,
+    "affiliate": false,
+    "commerce": false,
+    "social": false
+  }
+}
