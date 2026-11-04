@@ -19,7 +19,7 @@ function loadPinnedParts(directory){
  return FROZEN_PART_BLOBS.map((expected,i)=>{
   const bytes=fs.readFileSync(path.join(directory,'parts',String(i+1).padStart(2,'0')+'.json'));
   const gitSha=crypto.createHash('sha1')
-   .update(Buffer.from('blob '+bytes.length+'\\0')).update(bytes).digest('hex');
+   .update(Buffer.from('blob '+bytes.length+'\0')).update(bytes).digest('hex');
   if(gitSha!==expected)throw Error('frozen Git blob mismatch part '+(i+1));
   return JSON.parse(bytes.toString('utf8'));
  });
