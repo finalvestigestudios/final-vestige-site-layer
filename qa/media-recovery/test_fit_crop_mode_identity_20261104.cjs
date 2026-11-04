@@ -56,3 +56,10 @@ test('synthetic exact currentSrc/CDP 200 and decoded pixels can prove cropped re
  assert.equal(row.result,'loaded_in_probe_browser');
  assert.equal(row.verified_broken_in_browser,false);
 });
+
+const rotterdam='https://stadsarchief.rotterdam.nl/sites/default/files/styles/gallery_large/public/2025-04/hal-prinsendam-nl-rtsa_4121_24162-1-14.jpg';
+const rotterdamPublished=rotterdam+'?h=3e6ca723&itok=wjXwUo3w';
+test('actual 292:1 Drupal h style hash cannot be discarded as a height',()=>assert.equal(sameSource(rotterdamPublished,rotterdam+'?itok=wjXwUo3w'),false));
+test('different 292:1 Drupal style hashes cannot be same-source certified',()=>assert.equal(sameSource(rotterdamPublished,rotterdam+'?h=0deadbea&itok=wjXwUo3w'),false));
+test('292:1 style hash is retained in computed image identity',()=>assert.ok(imageIdentity(rotterdamPublished).includes('h=3e6ca723')));
+test('non-numeric width selector is preserved instead of normalized as a pixel size',()=>assert.equal(sameSource(base,base+'?w=original'),false));
