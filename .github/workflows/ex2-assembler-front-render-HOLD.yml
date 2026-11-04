@@ -137,6 +137,19 @@ jobs:
           npm install --no-save --no-package-lock --no-audit --no-fund \
             @wp-playground/cli@3.1.56 playwright@1.56.1 axe-core@4.10.3
           npx playwright install --with-deps chromium
+      - name: Exact-source seven-chapter keyboard focus in Chromium (nonproduction)
+        run: |
+          set -euo pipefail
+          # Free pinned Python binding; system Chromium is provided by the
+          # already-pinned browser-tooling step. Do not access production.
+          python -m pip install --disable-pip-version-check 'playwright==1.56.0'
+          python -m playwright install chromium
+          test -n "${RUNNER_TEMP:-}"
+          smoke="$RUNNER_TEMP/ex2-chapter-focus-smoke"
+          actual="$RUNNER_TEMP/ex2-chapter-focus-exact"
+          trap 'rm -rf -- "$smoke" "$actual"' EXIT
+          python -I experience2/home-flagship/tests/verify_chapter_keyboard_focus.py --smoke --out "$smoke"
+          python -I experience2/home-flagship/tests/verify_chapter_keyboard_focus.py --out "$actual"
       - name: Actual isolated WordPress Gutenberg Save then Assembler render/axe/media/no-JS
         timeout-minutes: 22
         run: |

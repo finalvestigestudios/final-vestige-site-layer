@@ -185,3 +185,16 @@
     width: 100%;
   }
 }
+
+/* Keyboard fragment navigation: chapter and skip-link destinations receive
+   programmatic focus, never extra Tab stops. Do not suppress this focus ring. */
+.fv-hf :is(h1, h2, section)[tabindex="-1"]:focus-visible {
+  outline: 3px solid #f6cc86;
+  outline-offset: -3px;
+  scroll-margin-top: 16px;
+}
+@media (forced-colors: active) {
+  .fv-hf :is(h1, h2, section)[tabindex="-1"]:focus-visible {
+    outline-color: Highlight;
+  }
+}
