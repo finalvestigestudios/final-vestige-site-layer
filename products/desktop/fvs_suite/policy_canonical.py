@@ -12,6 +12,8 @@ import unicodedata
 # large range of different Unicode characters. No raw policy text is emitted.
 _MAX_DISTINCT_NONASCII = 64
 _MAX_CODEPOINT_CUES = 12
+_MAX_SOURCE_LINE = 50_000  # Matches the policy file reader's physical-line cap.
+_MAX_NAV_LINE_CHARS = 4096  # Skip long evidence navigation; original diff remains.
 
 
 def _nonascii_counts(text: str) -> dict[int, int] | None:
@@ -46,6 +48,52 @@ def _canonical_codepoint_cue(before: str, after: str) -> str:
             (f" (+{omitted} omitted)" if omitted > 0 else ""))
 
 
+def _verified_canonical_hunks(hunks: list[dict]) -> list[tuple[int, dict, dict]] | None:
+    """Snapshot exact source primitives; reject contradictory physical citations.
+
+    A direct Python caller must not be able to create apparent source-owned
+    coordinates via virtual dict/list methods, duplicate rows, or backward
+    physical order. Scan all rows, including those too long to annotate,
+    before emitting a single supplemental cue.
+    """
+    if type(hunks) is not list or len(hunks) > _MAX_SOURCE_LINE:
+        return None
+    staged = []
+    last_before = last_after = 0
+    for hunk_no, hunk in enumerate(hunks, 1):
+        if type(hunk) is not dict:
+            return None
+        # An exact dict can still contain arbitrary key objects. Inspect its
+        # stored keys before string lookup so hostile __eq__/__hash__ hooks
+        # cannot execute when a key collides with a source field name.
+        if any(type(key) is not str for key in hunk):
+            return None
+        sides = []
+        for name, checkpoint in (("removed_sources", last_before),
+                                 ("added_sources", last_after)):
+            rows = hunk.get(name)
+            if type(rows) is not list:
+                return None
+            grouped: dict[str, list[tuple[int, str]]] = {}
+            last_line = checkpoint
+            for row in rows:
+                if type(row) is not tuple or len(row) != 2:
+                    return None
+                line, raw = row
+                if (type(line) is not int or not 1 <= line <= _MAX_SOURCE_LINE
+                        or type(raw) is not str or line <= last_line):
+                    return None
+                last_line = line
+                if len(raw) <= _MAX_NAV_LINE_CHARS:
+                    normalized = unicodedata.normalize("NFC", raw)
+                    grouped.setdefault(normalized, []).append((line, raw))
+            sides.append((grouped, last_line))
+        removed, last_before = sides[0]
+        added, last_after = sides[1]
+        staged.append((hunk_no, removed, added))
+    return staged
+
+
 def render_local_canonical_evidence(hunks: list[dict]) -> str:
     """Cite unique NFC-equivalent *changed* lines within each existing hunk.
 
@@ -53,14 +101,11 @@ def render_local_canonical_evidence(hunks: list[dict]) -> str:
     interpret Unicode normalization as semantic/legal equivalence. This is
     deliberately an index over already-computed physical diff coordinates.
     """
+    staged = _verified_canonical_hunks(hunks)
+    if staged is None:
+        return ""  # Never emit partial or contradictory source citations.
     candidates: list[tuple[int, int, int, str, str]] = []
-    for hunk_number, hunk in enumerate(hunks, 1):
-        removed: dict[str, list[tuple[int, str]]] = {}
-        added: dict[str, list[tuple[int, str]]] = {}
-        for number, raw in hunk["removed_sources"]:
-            removed.setdefault(unicodedata.normalize("NFC", raw), []).append((number, raw))
-        for number, raw in hunk["added_sources"]:
-            added.setdefault(unicodedata.normalize("NFC", raw), []).append((number, raw))
+    for hunk_number, removed, added in staged:
         for normalized in removed.keys() & added.keys():
             old_group, new_group = removed[normalized], added[normalized]
             if len(old_group) != 1 or len(new_group) != 1:

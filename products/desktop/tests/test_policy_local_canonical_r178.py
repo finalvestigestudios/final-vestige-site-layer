@@ -77,8 +77,8 @@ class PolicyLocalCanonicalR178(unittest.TestCase):
         self.assertLess(result.index("hunk 001"), result.index("hunk 002"))
 
     def test_two_pairs_in_one_hunk_physical_order(self):
-        result = render([hunk([(11, "Café\n"), (3, "が\n")],
-                              [(11, "Cafe\u0301\n"), (3, "か\u3099\n")])])
+        result = render([hunk([(3, "が\n"), (11, "Café\n")],
+                              [(3, "か\u3099\n"), (11, "Cafe\u0301\n")])])
         self.assertLess(result.index("before L3"), result.index("before L11"))
 
     def test_mixed_substantive_change_retains_one_canonical_pair(self):
@@ -108,8 +108,8 @@ class PolicyLocalCanonicalR178(unittest.TestCase):
         self.assertNotIn("hunk 017", result)
 
     def test_deterministic_multiple_candidates(self):
-        values = [hunk([(5, "é\n"), (1, "Café\n")],
-                       [(5, "e\u0301\n"), (1, "Cafe\u0301\n")])]
+        values = [hunk([(1, "Café\n"), (5, "é\n")],
+                       [(1, "Cafe\u0301\n"), (5, "e\u0301\n")])]
         self.assertEqual(render(values), render(values))
 
     def test_original_private_text_not_echoed(self):
