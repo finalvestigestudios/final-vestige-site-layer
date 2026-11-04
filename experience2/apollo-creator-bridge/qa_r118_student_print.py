@@ -24,6 +24,8 @@ class WorksheetParser(HTMLParser):
         self.ctas = 0
     def handle_starttag(self, tag, attrs):
         a = dict(attrs)
+        if len(a) != len(attrs):
+            raise PrintIntegrityError("DUPLICATE_ATTRIBUTE")
         if "data-fv-primary-cta" in a:
             self.ctas += 1
         if tag == "article" and "data-fv-student-print" in a:
