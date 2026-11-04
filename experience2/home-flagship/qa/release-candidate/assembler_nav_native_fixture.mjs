@@ -54,15 +54,87 @@ if (!is_array($u) || ($u['scheme'] ?? '') !== 'http' ||
     empty($u['port']) || is_multisite() || get_stylesheet() !== 'assembler') {
     ex2_abort('Refusing non-loopback, multisite or non-Assembler WordPress');
 }
+// Use WP block parser, not regex against serialized nested block markup.
+function ex2_nav_count($blocks) {
+  $n=0;
+  foreach ($blocks as $b) {
+    if (($b['blockName'] ?? '') === 'core/navigation') ++$n;
+    if (!empty($b['innerBlocks'])) $n+=ex2_nav_count($b['innerBlocks']);
+  }
+  return $n;
+}
+function ex2_pattern_slugs($blocks) {
+  $out=array();
+  foreach ($blocks as $b) {
+    if (($b['blockName'] ?? '') === 'core/pattern')
+      $out[]=$b['attrs']['slug'] ?? null;
+    if (!empty($b['innerBlocks']))
+      $out=array_merge($out,ex2_pattern_slugs($b['innerBlocks']));
+  }
+  return $out;
+}
+function ex2_replace_native_nav(&$blocks,$menu_id) {
+  $count=0;
+  foreach ($blocks as &$b) {
+    if (($b['blockName'] ?? '') === 'core/navigation') {
+      $b['attrs']['ref']=(int)$menu_id;
+      $b['innerBlocks']=array();
+      $b['innerHTML']='';
+      $b['innerContent']=array();
+      ++$count;
+    } elseif (!empty($b['innerBlocks'])) {
+      $count+=ex2_replace_native_nav($b['innerBlocks'],$menu_id);
+    }
+  }
+  unset($b);
+  return $count;
+}
 $original=get_block_template('assembler//header','wp_template_part');
 if (!$original || empty($original->content)) ex2_abort('Assembler header template part missing');
 $source=$original->content;
-$pattern='~<!-- wp:navigation(?:\s+(\{[^>]*\}))?\s*(?:/-->|-->.*?<!-- /wp:navigation -->)~s';
-if (preg_match_all($pattern,$source,$matches,PREG_SET_ORDER)!==1) {
-    ex2_abort('Unexpected header navigation block shape; wrapped='.preg_match_all('~<!-- wp:navigation(?:\\s|>)~',$source).' closing='.substr_count($source,'<!-- /wp:navigation -->').' selfclosing='.preg_match_all('~<!-- wp:navigation[^>]*?/-->~s',$source));
+$resolved_header_sha256=hash('sha256',$source);
+$header_source='wp_resolved_template';
+$blocks=parse_blocks($source);
+$pattern_source_sha256=null;
+if (ex2_nav_count($blocks)!==1) {
+    // The official theme ZIP at hosted run 41744662962 showed its *parts*
+    // header references a PHP pattern; "nav_self" counted ALL self-closing
+    // blocks, not necessarily navigation. Resolve that registered pattern
+    // only after pinning BOTH public vendor files and verifying theme origin.
+    if (($original->source ?? '') !== 'theme')
+        ex2_abort('Custom header template: refusing to override unknown content');
+    $theme_dir=realpath(get_stylesheet_directory());
+    $header_path=realpath(get_stylesheet_directory().'/parts/header.html');
+    $pattern_path=realpath(get_stylesheet_directory().'/patterns/header.php');
+    if (!$theme_dir || !$header_path || !$pattern_path ||
+        dirname(dirname($header_path)) !== $theme_dir ||
+        dirname(dirname($pattern_path)) !== $theme_dir ||
+        !is_file($header_path) || !is_readable($header_path) ||
+        !is_file($pattern_path) || !is_readable($pattern_path))
+        ex2_abort('Installed Assembler header or pattern absent/outside theme');
+    $part_bytes=file_get_contents($header_path);
+    $pattern_bytes=file_get_contents($pattern_path);
+    $expected_part_sha256='3b983fa0d9d6ce9b2bc1024e215d9d63d9ecba2ad11f881ec59e87a40c28c2aa';
+    $expected_pattern_sha256='962d31e7fe0dccc0f3398367b28744d54683743922b79209eeaae71b9731a480';
+    if (!is_string($part_bytes) || hash('sha256',$part_bytes)!==$expected_part_sha256 ||
+        !is_string($pattern_bytes) || hash('sha256',$pattern_bytes)!==$expected_pattern_sha256)
+        ex2_abort('Unreviewed installed Assembler header or pattern digest');
+    $part_blocks=parse_blocks($part_bytes);
+    $slugs=ex2_pattern_slugs($part_blocks);
+    if ($slugs!==array('assembler/header') || ex2_nav_count($part_blocks)!==0)
+        ex2_abort('Pinned part is not an exclusive assembler/header pattern reference');
+    if (ex2_pattern_slugs($blocks)!==array('assembler/header'))
+        ex2_abort('Resolved header is not the pinned vendor pattern');
+    $entry=WP_Block_Patterns_Registry::get_instance()->get_registered('assembler/header');
+    if (!is_array($entry) || !is_string($entry['content'] ?? null) || !$entry['content'])
+        ex2_abort('Installed theme header pattern not registered in WordPress');
+    $source=$entry['content'];
+    $blocks=parse_blocks($source);
+    if (ex2_nav_count($blocks)!==1)
+        ex2_abort('Official registered Assembler header does not have one navigation block');
+    $header_source='pinned_registered_theme_pattern';
+    $pattern_source_sha256=hash('sha256',$source);
 }
-$attrs=json_decode($matches[0][1] ?: '{}',true);
-if (!is_array($attrs)) ex2_abort('Unexpected header navigation block attributes');
 $base=home_url('/');
 $link_attrs=wp_json_encode(array('label'=>'Home','url'=>$base,'kind'=>'custom'));
 $markup='<!-- wp:navigation-link '.$link_attrs.' -->'.
@@ -73,10 +145,11 @@ $menu=wp_insert_post(array('post_type'=>'wp_navigation',
     'post_title'=>'EX2 Synthetic Accessible Navigation — Local Only',
     'post_status'=>'publish','post_content'=>$markup),true);
 if (is_wp_error($menu) || !$menu) ex2_abort('Failed creating local navigation menu');
-$attrs['ref']=(int)$menu;
-$replacement='<!-- wp:navigation '.wp_json_encode($attrs).' /-->';
-$replaced=str_replace($matches[0][0],$replacement,$source,$replace_count);
-if ($replace_count!==1 || $replaced===$source) ex2_abort('Failed isolated header rewrite');
+$replace_count=ex2_replace_native_nav($blocks,$menu);
+if ($replace_count!==1) ex2_abort('Expected exactly one parsed native navigation rewrite');
+$replaced=serialize_blocks($blocks);
+if (!is_string($replaced) || $replaced===$source)
+    ex2_abort('Failed native WordPress block serializer rewrite');
 $post=wp_insert_post(array('post_type'=>'wp_template_part','post_name'=>'header',
   'post_title'=>'EX2 Synthetic Header — Local Only','post_status'=>'publish',
   'post_content'=>$replaced),true);
@@ -87,7 +160,9 @@ wp_clean_post_cache($post);
 echo wp_json_encode(array('status'=>'ISOLATED_NAVIGATION_TEMPLATE_ONLY',
   'part_slug'=>'header','menu_id'=>$menu,'header_override_id'=>$post,
   'original_sha256'=>hash('sha256',$source),'modified_sha256'=>hash('sha256',$replaced),
-  'navigation_block_replacements'=>1));`;
+  'navigation_block_replacements'=>1,
+  'header_source'=>$header_source,'resolved_header_sha256'=>$resolved_header_sha256,
+  'pattern_source_sha256'=>$pattern_source_sha256));`;
 export function phpFixtureSource(){return PHP;}
 
 export async function correctIsolatedNavigation({server,page,axePath,outputDirectory}) {
@@ -108,6 +183,9 @@ export async function correctIsolatedNavigation({server,page,axePath,outputDirec
   assert.equal(native.status,'ISOLATED_NAVIGATION_TEMPLATE_ONLY',
     'WP native navigation override incomplete: '+String(native.error||''));
   assert.equal(native.navigation_block_replacements,1);
+  assert.ok(['wp_resolved_template','pinned_registered_theme_pattern'].includes(native.header_source),
+    'Unrecognized source provenance');
+  assert.match(native.resolved_header_sha256,/^[a-f0-9]{64}$/);
   assert.equal(native.part_slug,'header');
   assert.match(native.original_sha256,/^[a-f0-9]{64}$/);
   assert.match(native.modified_sha256,/^[a-f0-9]{64}$/);
