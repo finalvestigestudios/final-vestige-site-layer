@@ -10,7 +10,7 @@ const path=require('node:path');
 const html=fs.readFileSync(path.join(__dirname,'landing-preview.html'),'utf8');
 const BOARD='https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/';
 function railFrom(src) {
-  const m=src.match(/<section id="event-sequence"\b[^>]*>([\s\S]*?)<\/section>/);
+  const m=src.match(/<section id="event-sequence"[^>]*>([\s\S]*?)<\/section>/);
   assert.ok(m,'missing event sequence');
   return m[1];
 }
