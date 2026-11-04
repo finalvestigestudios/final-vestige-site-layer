@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dispatch R123 — Focus consent-state evidence</title>
+<style>
+:root{color-scheme:dark}*{box-sizing:border-box}body{margin:0;color:#f1eadd;background:#0a0c0c;font:16px/1.65 system-ui,-apple-system,sans-serif}main{margin:auto;max-width:1000px;padding:32px 20px 88px}h1,h2{font-family:Georgia,serif;font-weight:400;line-height:1.12}h1{font-size:clamp(2rem,5vw,3.5rem);max-width:780px}h2{font-size:clamp(1.5rem,3vw,2rem);margin:42px 0 16px}p{max-width:800px}strong{color:#f7eddc}.kicker{color:#dcb77b;text-transform:uppercase;letter-spacing:.14em;font-size:.78rem;font-weight:700}.status{padding:18px 20px;border:1px solid #c49d61;background:#201d16;border-radius:4px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:14px}.card{border:1px solid #494640;background:#141616;padding:18px 18px 8px;border-radius:4px}.card h3{margin-top:0;color:#dcb77b}code{color:#f6d4a1;font-family:ui-monospace,monospace;overflow-wrap:anywhere}table{width:100%;border-collapse:collapse;display:block;overflow-x:auto}th,td{border-bottom:1px solid #45403a;text-align:left;padding:10px 14px;min-width:148px;white-space:normal}th{color:#ebc38a}.hold{font-weight:700;color:#f4c57b}footer{border-top:1px solid #45403a;margin-top:48px;padding-top:22px;color:#b3aca2;font-size:.88rem}a{color:#dcb77b}a:focus-visible{outline:3px solid white;outline-offset:3px}@media(max-width:420px){main{padding:20px 14px 64px}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important}}
+</style></head><body><main>
+<p class="kicker">Final Vestige Studios · Dispatch · independent proof</p>
+<h1>Seeing a download is not the same as confirming a subscription.</h1>
+<p class="status" role="note"><strong>All six newsletter issues are HOLD_UNSENT.</strong> The commercial editions 03 and 05 are also HOLD_MERCHANT. This reviewer is a static, non-sending artifact with no signup form, affiliate link, tracker, or live WordPress control.</p>
+<h2>One source-verified mismatch</h2>
+<p>Authenticated WordPress page 1579 source uses a <code>subscribe</code> URL query and a CSS class to reveal the free Fieldbook panel. The query check accepts any value except five named error cases. This display does not prove native email confirmation, consent, deliverability, or a paid purchase.</p>
+<div class="grid">
+<section class="card"><h3>Known example</h3><p><code>?subscribe=foo</code></p><p>Panel is revealed by the source logic. Confirmed signup: <strong>No proof</strong>.</p></section>
+<section class="card"><h3>Native UI class</h3><p><code>.is-subscriber</code></p><p>Panel is revealed. New confirmation event: <strong>No proof</strong>.</p></section>
+<section class="card"><h3>Conversion contract</h3><p><code>confirmed_signup</code></p><p>Requires authenticated, independently recorded native WordPress confirmation and consent, with server-side dedup.</p></section>
+</div>
+<h2>Evidence table</h2>
+<table><thead><tr><th scope="col">Observed signal</th><th scope="col">Gift visible in script?</th><th scope="col">New confirmed lead?</th></tr></thead><tbody>
+<tr><td><code>?subscribe=thanks</code></td><td>Yes</td><td>Not proven</td></tr>
+<tr><td><code>?subscribe=error</code></td><td>No, unless subscriber CSS class</td><td>Not proven</td></tr>
+<tr><td>PDF download click</td><td>Independent</td><td>No</td></tr>
+<tr><td>Imported count increases</td><td>Independent</td><td>No</td></tr>
+<tr><td>Actual native consent + confirmed status</td><td>Not dependent</td><td>Potentially, subject to independent proof and dedup</td></tr>
+</tbody></table>
+<h2>Two reader-facing copy changes</h2>
+<p>The current FAQ implies confirmation is required before downloading and tells mobile users to subscribe again if their browser cannot open the PDF. Proposed wording distinguishes <strong>confirmation to join the list</strong> from <strong>access to a public PDF</strong> and tells existing subscribers to use their existing link without re-subscribing.</p>
+<h2>Subscriber and commercial reality</h2>
+<p>Authenticated snapshot November 4, 2026: 3 total and 3 confirmed, with 2 pending; one import recorded in the preceding 24 hours. Counts are nonadditive; actual email-reachable recipients and received welcome remain unverified. No paid order or independently reported affiliate sale is established, so net revenue per 1,000 qualified human sessions is <strong>not computable</strong>.</p>
+<footer>Draft source audit for Issues #174, #129, #171 and #820. Built from WordPress read-only source. Browser hydration and actual received email are separate verification tasks. Founder approval remains mandatory before publication, email delivery, affiliate activation or spending.</footer>
+</main></body></html>
