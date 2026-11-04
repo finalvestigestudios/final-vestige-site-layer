@@ -63,6 +63,11 @@ def _verified_canonical_hunks(hunks: list[dict]) -> list[tuple[int, dict, dict]]
     for hunk_no, hunk in enumerate(hunks, 1):
         if type(hunk) is not dict:
             return None
+        # An exact dict can still contain arbitrary key objects. Inspect its
+        # stored keys before string lookup so hostile __eq__/__hash__ hooks
+        # cannot execute when a key collides with a source field name.
+        if any(type(key) is not str for key in hunk):
+            return None
         sides = []
         for name, checkpoint in (("removed_sources", last_before),
                                  ("added_sources", last_after)):
