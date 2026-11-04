@@ -76,6 +76,10 @@ jobs:
         run: |
           python products/desktop/scripts/safe_unittest_r173.py
           python -OO products/desktop/scripts/safe_unittest_r173.py
+      - name: R174 SpendMap native stored record custody (normal and -OO)
+        run: |
+          python products/desktop/scripts/safe_unittest_r174.py
+          python -OO products/desktop/scripts/safe_unittest_r174.py
       - name: Install pinned local evidence crypto dependency
         run: python -m pip install "cryptography==46.0.4"
       - name: Verify R100 privacy-safe source-method regressions (normal and -OO)
@@ -424,6 +428,14 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R173 normal policy primitive tests failed" }
           python -OO products/desktop/scripts/safe_unittest_r173.py
           if ($LASTEXITCODE -ne 0) { throw "R173 optimized policy primitive tests failed" }
+      - name: R174 SpendMap native stored record custody (normal and -OO)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python products/desktop/scripts/safe_unittest_r174.py
+          if ($LASTEXITCODE -ne 0) { throw "R174 normal SpendMap custody tests failed" }
+          python -OO products/desktop/scripts/safe_unittest_r174.py
+          if ($LASTEXITCODE -ne 0) { throw "R174 optimized SpendMap custody tests failed" }
       - name: Install pinned local evidence crypto dependency
         run: python -m pip install "cryptography==46.0.4"
       - name: R100 Windows source-stage diagnostic (read-only, NOT a release gate)
