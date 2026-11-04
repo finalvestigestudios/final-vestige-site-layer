@@ -1,0 +1,92 @@
+{
+  "id": "fv-dispatch-r117-native-excerpt-2026-11-04",
+  "master_campaign_sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "parent_proof_pr": 957,
+  "release": "HOLD_UNSENT",
+  "transport": "JETPACK_NEW_POST_EXCERPT_DRAFT_ONLY",
+  "rules": {
+    "native_email_trigger": "publish_new_post_with_per_post_send_enabled_ONLY_AFTER_FOUNDER_APPROVAL",
+    "do_not_publish": true,
+    "email_new_posts_by_default": false,
+    "email_content_format": "excerpt",
+    "single_message_action": "read_full_post_first_party",
+    "actual_footer_verified": false,
+    "actual_received_email_verified": false,
+    "merchant_email_permission_verified": false,
+    "legal_postal_address_verified": false,
+    "unsubscribe_working_verified": false,
+    "official_doc_conflict": "WordPress.com documents 55 words; Jetpack documentation dated Nov 4 documents 350 characters. Explicit Post Excerpt needed; real native preview mandatory."
+  },
+  "issues": [
+    {
+      "number": 1,
+      "kind": "editorial",
+      "canonical_subject": "The mind is not a camera",
+      "editorial_title_qa": "PASS_CANDIDATE",
+      "excerpt": "A witness can be sincere and still miss a crucial detail. In this Dispatch, we use a documented historical account to ask what seeing can—and cannot—prove. Follow the source trail, not a neat conclusion.",
+      "primary_next_step": "read_full_investigation",
+      "in_post_destination": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "eligibility": "HOLD_TRANSPORT_LEGAL_FOUNDER"
+    },
+    {
+      "number": 2,
+      "kind": "editorial",
+      "canonical_subject": "Before hypnosis had a name",
+      "editorial_title_qa": "PASS_CANDIDATE",
+      "excerpt": "Before modern hypnosis came reports of unusual behavior under suggestion. Puységur's records tell us what witnesses said—not necessarily why it happened. This Dispatch separates testimony, interpretation, and unanswered questions.",
+      "primary_next_step": "read_full_investigation",
+      "in_post_destination": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "eligibility": "HOLD_TRANSPORT_LEGAL_FOUNDER"
+    },
+    {
+      "number": 3,
+      "kind": "commercial-review-pending",
+      "canonical_subject": "The twelve-minute meditation question",
+      "editorial_title_qa": "PASS_CANDIDATE",
+      "excerpt": "Can twelve minutes make a routine easier? That's a fair question. A seller's claims about audio effectiveness are a different matter. This Dispatch examines Zen12 without treating its promises as proof. If you buy through a qualifying guide link, Final Vestige may earn a commission.",
+      "primary_next_step": "read_full_evaluation_only_after_merchant_approval",
+      "in_post_destination": "[[APPROVED_ZEN12_WARMUP_GUIDE_URL_REQUIRED]]",
+      "eligibility": "HOLD_MERCHANT_GUIDE_TRANSPORT_LEGAL_FOUNDER"
+    },
+    {
+      "number": 4,
+      "kind": "editorial",
+      "canonical_subject": "Fourteen seconds. A much longer explanation.",
+      "suggested_replacement_subject": "Apollo 1: what the fire record actually says",
+      "editorial_title_qa": "BLOCK_UNSOURCED_FOURTEEN_SECONDS",
+      "excerpt": "Apollo 1 wasn't explained by one spark or one number. NASA's investigation describes an oxygen-rich cabin, hazardous materials, and a hatch that complicated escape. The official record warrants a careful reading; the ignition source was not conclusively identified.",
+      "primary_next_step": "read_full_investigation",
+      "in_post_destination": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/",
+      "eligibility": "HOLD_FACT_CHECK_TRANSPORT_LEGAL_FOUNDER"
+    },
+    {
+      "number": 5,
+      "kind": "commercial-review-pending",
+      "canonical_subject": "Before you press play on a hypnosis audio",
+      "editorial_title_qa": "PASS_CANDIDATE",
+      "excerpt": "An audio recording's format is easy to describe. Its promised results deserve separate scrutiny. Here are questions to ask before considering Hypnosis Live Total Focus. If you buy through a qualifying guide link, Final Vestige may earn a commission.",
+      "primary_next_step": "read_full_evaluation_only_after_merchant_approval",
+      "in_post_destination": "[[APPROVED_HYPNOSIS_LIVE_WARMUP_GUIDE_URL_REQUIRED]]",
+      "eligibility": "HOLD_MERCHANT_GUIDE_TRANSPORT_LEGAL_FOUNDER"
+    },
+    {
+      "number": 6,
+      "kind": "editorial",
+      "canonical_subject": "What did seven days of attention reveal?",
+      "editorial_title_qa": "PASS_CANDIDATE",
+      "excerpt": "A notebook can't prove a method works for everyone. It can help you notice which habits are sustainable. This Dispatch shows how to review a week's attention notes without miracle claims, then return to your free Fieldbook—without signing up twice.",
+      "primary_next_step": "read_full_fieldbook_reflection",
+      "in_post_destination": "[[DIRECT_FIELD_BOOK_PDF_URL_MUST_BE_RETRIEVED_AND_VERIFIED]]",
+      "eligibility": "HOLD_PDF_RECEIPT_TRANSPORT_LEGAL_FOUNDER"
+    }
+  ],
+  "official_sources": [
+    "https://jetpack.com/support/newsletter/",
+    "https://jetpack.com/support/newsletter/customize-the-newsletter-experience/",
+    "https://wordpress.com/support/newsletter-settings/",
+    "https://wordpress.com/support/newsletter/email-appearance/",
+    "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business",
+    "https://zen12.com/hnp",
+    "https://hypnosislive.com/mental-skills/total-focus"
+  ]
+}
