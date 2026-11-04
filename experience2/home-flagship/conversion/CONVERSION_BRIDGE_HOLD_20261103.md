@@ -1,0 +1,38 @@
+# EX2 / Conversion-first observer exit — isolated UX experiment, RELEASE HOLD
+**Prepared 2026-11-03 PT. No WordPress write, deployment, social post, customer data or analytics injection.**
+
+## Source and ownership
+- Base: draft PR #888 at exact commit \`ac2a26f49338131671d500bcd43952706374b481\`. This branch introduces only files in \`experience2/home-flagship/conversion/\`; **it does not modify the seven-chapter candidate, theme, frozen PR #49 or page 6**.
+- Read-only production reference: WordPress.com site ID **256784396**, published page ID **6**, source last modified **2026-11-02T17:48:13**. Source section \`#fv-hf-observer\`: an original studio change-blindness illustration, the two DOI research links, and \`fv-hf__observer-exit\` linking to published Puységur historical files. Next \`fv-hf__mind\` already links to \`/focus/\`; the 52-page Seven Day Focus Fieldbook CTA also appears later in the page. This is an **intent/proximity** experiment, NOT a claim there is no Focus CTA currently.
+- Source references already in production: Rensink/O'Regan/Clark DOI https://doi.org/10.1111/j.1467-9280.1997.tb00427.x; Simons/Levin DOI https://doi.org/10.3758/BF03208840; history article https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/; existing free resource https://finalvestige.com/focus/. No new archival asset, rights claim or historical quotation.
+- Issue ownership: #150 homepage; #820 conversion attribution (Claude engineering, Grok asset IDs, Praxxis QA); #818 business charter; #171 Mind/affiliate. Independent Site QA has its own #892. We do not replace any of their deliverables or instrument events.
+
+## Offer → funnel step → blocker → experiment → evidence → owner
+| Field | Current evidence / recommendation |
+|---|---|
+| Audience | Readers arriving from **Mind/Perception** social content and engaging with homepage observer/change-blindness evidence. Grok asset IDs and live campaign destinations **NOT SUPPLIED/VERIFIED**; do not invent a campaign. |
+| Primary *verified live resource* | Existing **free 52-page Seven Day Focus Fieldbook** at \`/focus/\` via existing Dispatch/Jetpack signup. This is **LEAD CAPTURE, NOT REVENUE**. No new form or subscriber created. |
+| Actual primary *paid* offer | **UNVERIFIED / BLOCKED**. Public page reading and Issue #820/#818 do not establish a currently sellable, rights-cleared, priced FV Mind Payhip SKU or approved named Inspire3 affiliate payout. No paid CTA allowed in this experiment. |
+| Funnel | Approved Grok asset ID → qualified human homepage observer visit → relevant free-resource click → **confirmed**, non-duplicated subscriber → (only when approved/verified) relevant offer → independently confirmed merchant order/refund/fee and net revenue. |
+| Current conversion blocker | Observer exercise and source disclosure occur before the current downstream Focus invitation; on a small screen the benefit/specific next action may not be visible at the moment of interest. This is a **hypothesis**, not measured abandonment. Dominant commercial blocker remains missing source-confirmed paid-offer readiness and purchase attribution. |
+| Non-invasive variant | **Replace**, not stack over, the observer-exit CTA region *only if later separately approved*. Keep source trail, historical link and clinical-claim boundary. Show one explicit **free 52-page** next action with 44px+ target, no popup, no merchant link and no new JS. Obsidian/teal/gold/parchment remains separate from the three unresolved primary art-direction choices. |
+| Local test evidence | Python structural suite **10/10 passed**. Separate offline **real Chromium**, JavaScript disabled, candidate screenshots at 320/390/768/1440/1920px; no horizontal overflow, CTA rendered ≥44px tall (67.6px at 320/390, 48px wider), five anchors, no page errors. Keyboard first Tab reached a link. The fixture is **not WordPress/Assembler or an exact source staging checkout**, and its no-JS behavior does not certify the seven-chapter homepage. |
+| Owner | Homepage art/engineering prepares review-only prototype; **Claude** owns approved production integration, campaign data and merchant events; **Grok** owns creative/asset IDs and distribution; **Praxxis** independently evaluates intent match; **Site QA** owns separate WCAG/mobile/checkout verification; founder controls all release/commerce approvals. |
+
+## UX hypothesis, test contract and anti-goals
+- **Hypothesis**: following the actual observer illustration, a clearly labeled, source-adjacent free Fieldbook CTA will produce a higher **confirmed** high-intent opt-in rate than the existing indirect observer-exit link, without harming the article/source path, accessibility, comprehension or paid conversion after an eligible offer is established.
+- **Unit of assignment**: only approved, privacy-respecting test allocation, if technically supported; do NOT activate randomization on production here. Attribution and existing GA4/Jetpack tags must be reconciled through Claude's #820; \`data-fv-destination=focus\` is merely a static QA selector, not telemetry. Do not create another UTM implementation. Canonical campaign parameters are those in #820 / Grok TASK-008.
+- **Primary eligibility gate**: source-confirm actual product/affiliate acceptance, accessible checkout, pricing, delivery, license and source-of-truth paid orders, returns and fees. Revenue per 1,000 *qualified human sessions* is the ultimate metric; absent merchant confirmation, it is **not computable**, not $0.
+- **Exploratory leading measures only**: qualified visitor → /focus/ click; actual confirmed subscriber (Jetpack ambiguity reconciled); separately merchant-confirmed paid purchase. Clicks, outbound taps, video views and subscribers are not paid orders. Report by 7/30-day cohort, asset ID and data-confidence flag; never claim significance with tiny samples.
+- **Acceptance**: confirm no horizontal overflow at 320/390/768/1440/1920 + 200% actual zoom/reflow, 44×44 target, sequential focus, reasonable visible contrast, reduced motion, screen-reader comprehension, no-JS, no lost source link, no popup, no duplicate Jetpack list, no hidden paid pitch. Verify live authoring and host behavior only in authorized staging/final release.
+- **HOLD** until the main #888 stacked branch's genuine saved-Assember whole-document axe defect is resolved, actual Gutenberg source and image rights are verified, Lighthouse/CWV is measured, QD passes exact head, the product inventory is independently reconciled, founder chooses design and specifically approves release. This fixture alone cannot bypass any of those gates.
+
+## Exact reproduction
+\`\`\`bash
+python experience2/home-flagship/conversion/test_observer_bridge.py -v
+python experience2/home-flagship/conversion/browser_review.py
+\`\`\`
+The browser script needs installed Playwright Python and local Chromium (\`/usr/bin/chromium\`); it loads **only in-memory fixture HTML**, performs no network request, and writes screenshot files beside itself. These runtime prerequisites may be absent in GitHub Actions; no CI pass is claimed. Screenshots are local reproducible study assets, **not** currently part of the Git tree.
+
+## Before/after visual review notes
+**Existing excerpt** (quoted from page 6): source-keeping pledge plus a single historical suggestion file link. **Variant**: evidence boundary and two research trail sources remain directly visible; one free, specific Fieldbook CTA and one historical file link, stacked and touch-sized on 320/390px. The variant is intentionally a restrained, contextual chapter-exit proposal—not a new chapter, competing homepage hero, popover or storefront. No visual award or conversion lift is claimed.
