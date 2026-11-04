@@ -31,7 +31,7 @@ function runChecks(gates, A, B, vtt, article, contract) {
   check('multiple hard release gates remain', gates.unmet_release_gates.length >= 10);
   for (const [name, html] of [['A', A], ['B', B]]) {
     check(name + ' remains noindex and readable without scripts', html.includes('noindex,nofollow') &&
-      !/<script\b/i.test(html) && html.includes('<main>'));
+      !/<script\b/i.test(html) && /<main(?:\s|>)/.test(html));
     check(name + ' merchant source exact but unclickable', html.includes('https://zen12.com/hnp') &&
       !/href=["'][^"']*(zen12\.com|subliminalguru\.com)/i.test(html));
     check(name + ' disabled commerce with near commission disclosure', /<button[^>]*disabled[^>]*>/i.test(html) &&
