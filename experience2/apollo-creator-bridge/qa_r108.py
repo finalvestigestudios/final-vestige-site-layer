@@ -77,8 +77,36 @@ def main():
                     check(page.locator("img,video,iframe,canvas,svg,picture").count() == 0, label + ": media present")
                     check(page.evaluate("document.documentElement.scrollWidth <= innerWidth + 2"), label + ": horizontal page overflow")
                     check(page.evaluate("() => {let a=[...document.querySelectorAll('[id]')].map(x=>x.id);return a.length===new Set(a).size}"), label + ": duplicate IDs")
-                    check(page.locator("[data-fv-primary-cta]").get_attribute("href") == "#classroom-preview", label + ": wrong action")
+                    primary = page.locator("[data-fv-primary-cta]")
+                    check(primary.count() == 1 and primary.get_attribute("href") == "#classroom-preview",
+                        label + ": missing or diverted primary free-exercise CTA")
+                    check(page.locator("a[href*='payhip.com'], form, [data-fv-checkout]").count() == 0,
+                        label + ": unverified purchase or lead action entered historical preview")
                     check(page.locator("[data-fv-lens]").is_visible() == js, label + ": no-JS progressive enhancement failed")
+                    # Test ACTUAL navigation, not merely an href attribute. The only intended
+                    # micro-action is a free evidence exercise; this is never a paid conversion.
+                    if width <= 390 and js:
+                        primary.tap()
+                    else:
+                        primary.focus()
+                        primary.press("Enter")
+                    page.wait_for_function("location.hash === '#classroom-preview'")
+                    target = page.locator("#classroom-preview")
+                    check(target.count() == 1 and target.locator("h2").count() == 1,
+                        label + ": free evidence exercise destination missing")
+                    check(target.evaluate("(e) => {const r=e.getBoundingClientRect();return r.top >= -4 && r.top < innerHeight}"),
+                        label + ": CTA did not reveal destination in viewport")
+                    # The native document destination must be meaningful without scripts.
+                    check(target.locator("details").count() >= 2,
+                        label + ": free source analysis or answer is missing")
+                    receipt_action = "free_exercise_fragment_navigated_not_sale"
+                    check(page.locator("#source-custody .table-scroll").get_attribute("tabindex") == "0",
+                        label + ": mobile source register not keyboard-scrollable")
+                    source_disclosure = page.locator("#source-custody details summary").first
+                    source_disclosure.focus()
+                    source_disclosure.press("Enter")
+                    check(source_disclosure.evaluate("(x) => x.parentNode.open"),
+                        label + ": NASA rights/source disclosure cannot open by keyboard")
                     check(page.locator("[data-fv-claim]:visible").count() == 4, label + ": initial evidence hidden")
                     summary = page.locator("#classroom-preview summary").first
                     summary.focus()
@@ -105,7 +133,9 @@ def main():
                         filename = f"apollo-r108-{width}-{'js' if js else 'nojs'}.png"
                         page.screenshot(path=str(out / filename), full_page=True, animations="disabled")
                         screen.append({"name": filename, "sha256": digest(out / filename)})
-                    receipts.append({"width": width, "javascript": js, "passed": True})
+                    receipts.append({"width": width, "javascript": js, "passed": True,
+                        "first_party_action": receipt_action,
+                        "merchant_order_verified": False, "external_requests": 0})
                     context.close()
             # Separate repeated lab navs, no JS interception of reader content.
             for width in (390, 1440):
@@ -147,7 +177,7 @@ def main():
           "R108 incomplete authoritative browser matrix")
     (out / "r108-local-http-browser-receipt.json").write_text(
          json.dumps(result, sort_keys=True, indent=2) + "\n", encoding="utf-8")
-    print("R108 browser: 14/14 modes, 6 local HTTP lab trials; release STAGING HOLD")
+    print("R110-enhanced R108 browser: 14/14 CTA navigation modes, 6 local HTTP lab trials; release STAGING HOLD")
     return result
 
 if __name__ == "__main__":
