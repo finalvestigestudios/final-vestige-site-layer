@@ -75,8 +75,8 @@ if (require.main===module) {
   const fs=require("node:fs"), crypto=require("node:crypto"), path=require("node:path");
   const read=(p)=>fs.readFileSync(path.join(__dirname,p),"utf8");
   const raw=read("parts/03.json");
-  const blob=crypto.createHash("sha1").update("blob "+Buffer.byteLength(raw)+"\\0").update(raw).digest("hex");
+  const blob=crypto.createHash("sha1").update("blob "+Buffer.byteLength(raw)+String.fromCharCode(0)).update(raw).digest("hex");
   if(blob!=="49183f66f880f7c4dfd363acca906876877f2e5e") throw new Error("Frozen source blob SHA drift");
   const out=runSkyway287Tests(JSON.parse(read("skyway_287_original_host_migration_20261104.json")),JSON.parse(raw));
-  process.stdout.write(JSON.stringify(out)+"\\n");
+  process.stdout.write(JSON.stringify(out)+String.fromCharCode(10));
 }
