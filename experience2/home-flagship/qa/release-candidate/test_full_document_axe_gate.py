@@ -50,11 +50,12 @@ class CompleteDocumentAxeRegression(unittest.TestCase):
     def test_theme_owned_single_main_landmark_is_mandatory(self):
         # Gutenberg custom HTML is nested in Assembler's existing main landmark.
         # A second descendant <main> cannot pass the anonymous admission gate.
-        self.assertIn("main_landmarks:document.querySelectorAll('main').length", self.script)
-        self.assertIn("nested_main_landmarks:root.querySelectorAll('main').length", self.script)
+        self.assertIn('main_landmarks:document.querySelectorAll(\'main,[role="main" i]\').length', self.script)
+        self.assertIn('nested_main_landmarks:root.querySelectorAll(\'main,[role="main" i]\').length', self.script)
         self.assertIn("assert.equal(state.main_landmarks,1", self.script)
         self.assertIn("assert.equal(state.nested_main_landmarks,0", self.script)
         self.assertIn("data-fv-embedded-main", self.script)
+        self.assertIn('const landmarks=[...document.querySelectorAll(\'main,[role="main" i]\')]', self.script)
 
     def test_existing_branch_still_requires_disposable_loopback(self):
         self.assertIn("assert.ok(loopback(server.serverUrl))", self.script)

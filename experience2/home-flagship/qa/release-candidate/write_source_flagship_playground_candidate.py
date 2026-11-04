@@ -188,7 +188,12 @@ def compose(index: str, css: dict[str, str], js: dict[str, str],
     embedded_body = body.replace(
         "<main>", '<div data-fv-embedded-main="wordpress-assembler">', 1
     ).replace("</main>", "</div>", 1)
-    if re.search(r"</?main(?:\\s|>)", embedded_body, re.I):
+    # Reject disguised <main> spellings AND implicit role=main landmarks before
+    # Gutenberg Save. The former regex used \\s in a raw Python string, which
+    # matched a literal backslash-s instead of HTML tag whitespace.
+    if (re.search(r"</?main(?=[\s>/])", embedded_body, re.I) or
+            re.search(r"(?<![\w:-])role\s*=\s*(?:[\"']main[\"']|main(?=[\s>/]))",
+                      embedded_body, re.I)):
         raise ValueError("Nested main landmark remains in WordPress embed")
 
     section = (

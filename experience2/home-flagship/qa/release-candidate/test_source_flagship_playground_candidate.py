@@ -200,6 +200,34 @@ class FullSourceFlagshipTests(unittest.TestCase):
                 write(HOME, path, path)
 
 
+    def test_admission_rejects_html_whitespace_case_and_aria_main_variants(self):
+        # These mutants bypassed the old Python raw-regex with a double-escaped
+        # backslash: <main class=...> and <div role=main> could be embedded.
+        variants = (
+            '<main class="rogue">',
+            '<MAIN id="rogue">',
+            '<main\taria-label="rogue">',
+            '<main/>',
+            '</main >',
+            '<div role="main">',
+            "<div role='MAIN'>",
+            '<div role=main>',
+        )
+        for variant in variants:
+            with self.subTest(variant=variant):
+                injected = self.index.replace("<main>", "<main>" + variant, 1)
+                # Exactly one canonical <main> and </main> still exist.
+                self.assertEqual(injected.count("<main>"), 1)
+                self.assertEqual(injected.count("</main>"), 1)
+                with self.assertRaisesRegex(ValueError, "Nested main landmark"):
+                    compose(injected, self.css, self.js)
+
+        # Do not confuse a non-semantic data-role attribute with ARIA role.
+        benign = self.index.replace(
+            "<main>", '<main><div data-role="main"></div>', 1)
+        candidate, _manifest = compose(benign, self.css, self.js)
+        self.assertIn('data-role="main"', candidate)
+
     def test_wordpress_embed_uses_theme_main_without_nested_flagship_landmark(self):
         # Standalone version must retain its own semantic main region.
         self.assertEqual(self.index.count("<main>"), 1)
