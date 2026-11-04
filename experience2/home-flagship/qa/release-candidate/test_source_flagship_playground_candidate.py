@@ -149,6 +149,29 @@ class FullSourceFlagshipTests(unittest.TestCase):
         self.assertNotIn("'data_class'=>'SYNTHETIC_TEST_FIXTURE_ONLY'", php)
         self.assertNotIn("assert.equal(manifest.data_classification, 'SYNTHETIC_TEST_FIXTURE_ONLY')", runner)
 
+    def test_gutenberg_creation_receipt_is_checked_and_cleanup_armed_first(self):
+        """A created WordPress test draft must be owned for cleanup before
+        asserting mutable PHP receipt fields. Source contract also prevents the
+        former PUBLIC vs SYNTHETIC data-class mismatch on a real create path.
+        """
+        runner=(HERE / "playground_gutenberg_editor_gate.mjs").read_text("utf-8")
+        php=(HERE / "playground_gutenberg_editor_gate.php").read_text("utf-8")
+        cls="PUBLIC_PAGE6_MARGINS_WITH_SYNTHETIC_JETPACK_FIXTURE"
+        self.assertIn("function checkCreatedReceipt(created,digest)",runner)
+        self.assertIn("assert.equal(body?.data_class,DATA_CLASS);",runner)
+        self.assertIn("assert.equal(body?.release,'HOLD');",runner)
+        self.assertIn("assert.equal(body?.source_sha256,digest);",runner)
+        self.assertIn("assert.ok(Number.isSafeInteger(body?.draft_id)",runner)
+        arm="draftCreated = created.status===200 && created.body?.result==='CREATED';"
+        check="const draftId = checkCreatedReceipt(created,digest);"
+        self.assertIn(arm,runner)
+        self.assertIn(check,runner)
+        self.assertLess(runner.index(arm),runner.index(check),
+                        "Cleanup ownership must be armed BEFORE receipt assertions")
+        self.assertNotIn("assert.equal(created.body.data_class,'SYNTHETIC_TEST_FIXTURE_ONLY')",runner)
+        self.assertIn("for(const bad of badCreates)",runner)
+        self.assertIn("'data_class'=>'"+cls+"'",php)
+
     def test_public_margins_custody_mutations_fail_closed(self):
         original = json.loads(PUBLIC_MARGINS_JSON.read_text(encoding="utf-8"))
         mutations = [
