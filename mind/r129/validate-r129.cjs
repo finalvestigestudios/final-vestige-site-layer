@@ -50,7 +50,7 @@ test("09 investigation commercial conclusions separated",()=>{assert(!article.in
 test("10 buyer guide substantive",()=>assert(buyer.trim().split(/\s+/).length>=1400));
 test("11 buyer guide true conditional price warning",()=>{assert(buyer.includes("$87.99"));assert(buyer.includes("$37"));assert(buyer.includes("conditional"));});
 test("12 buyer guide distinguishes other meditation research",()=>{assert(buyer.includes("not a direct trial"));assert(buyer.includes("specific"));});
-test("13 seller purchaser-data concern disclosed",()=>{assert(buyer.includes("names"));assert(buyer.includes("email"));assert(buyer.includes("aggregate"));});
+test("13 seller purchaser-data concern disclosed",()=>{assert(buyer.includes("name, email"));assert(buyer.includes("aggregate"));});
 test("14 CTA compliance both variants",()=>all.forEach(h=>assert.deepEqual(errorCodes(h),[])));
 test("15 A and B copy exact parity with B-only media",()=>{
  let marker='<div class="line deal"';
