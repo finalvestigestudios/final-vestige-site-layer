@@ -56,7 +56,9 @@ def _changes(before: str, after: str) -> str:
     return shown + (f" (+{omitted} substitution(s) omitted)" if omitted > 0 else "")
 
 
-def _owned_rows(hunk: dict, field: str) -> dict[str, list[tuple[int, str]]] | None:
+def _owned_rows(
+    hunk: dict, field: str,
+) -> tuple[dict[str, list[tuple[int, str]]], tuple[int, int] | None] | None:
     """Index only unambiguous physical source rows from the canonical diff.
 
     Direct helper callers must not supply a fabricated line identity, an
@@ -71,19 +73,25 @@ def _owned_rows(hunk: dict, field: str) -> dict[str, list[tuple[int, str]]] | No
     if type(rows) is not list:
         return None
     grouped: dict[str, list[tuple[int, str]]] = {}
-    seen: set[int] = set()
+    # Actual unified-diff records occur in strictly increasing physical order.
+    # Include even overlong (uncitable) rows in this validation so a malicious
+    # direct API caller cannot hide a duplicate behind the display bound.
+    first: int | None = None
+    previous = 0
     for row in rows:
         if type(row) is not tuple or len(row) != 2:
             return None
         line, raw = row
         if (type(line) is not int or not 1 <= line <= _MAX_SOURCE_LINE
-                or type(raw) is not str or line in seen):
+                or type(raw) is not str or line <= previous):
             return None
-        seen.add(line)
+        if first is None:
+            first = line
+        previous = line
         key = _skeleton(raw)
         if key is not None:
             grouped.setdefault(key, []).append((line, raw))
-    return grouped
+    return grouped, ((first, previous) if first is not None else None)
 
 
 def render_local_confusable_evidence(hunks: list[dict]) -> str:
@@ -92,14 +100,32 @@ def render_local_confusable_evidence(hunks: list[dict]) -> str:
     Pairs are navigational hints only. Exact raw text, SHA-256 and human
     judgment decide whether an apparent look-alike matters to a policy.
     """
-    if type(hunks) is not list:
+    if type(hunks) is not list or len(hunks) > _MAX_SOURCE_LINE:
         return ""
-    found: list[tuple[int, int, int, str]] = []
+    # Validate *all* well-formed hunks before emitting a single citation.
+    # Reusing a physical source coordinate in a later hunk, or presenting
+    # backward-moving hunks, otherwise lets distinct text borrow a seemingly
+    # authoritative citation from an earlier hunk. A collision invalidates
+    # navigation globally; partial evidence would still mislead a reviewer.
+    staged = []
+    last_before = last_after = 0
     for hunk_no, hunk in enumerate(hunks, 1):
-        removed = _owned_rows(hunk, "removed_sources")
-        added = _owned_rows(hunk, "added_sources")
-        if removed is None or added is None:
-            continue  # Never claim provenance from a malformed source hunk.
+        removed_result = _owned_rows(hunk, "removed_sources")
+        added_result = _owned_rows(hunk, "added_sources")
+        if removed_result is None or added_result is None:
+            continue  # A locally malformed hunk has no navigational cues.
+        removed, before_span = removed_result
+        added, after_span = added_result
+        if ((before_span is not None and before_span[0] <= last_before)
+                or (after_span is not None and after_span[0] <= last_after)):
+            return ""  # Cross-hunk coordinate collision or reversal.
+        if before_span is not None:
+            last_before = before_span[1]
+        if after_span is not None:
+            last_after = after_span[1]
+        staged.append((hunk_no, removed, added))
+    found: list[tuple[int, int, int, str]] = []
+    for hunk_no, removed, added in staged:
         for key in removed.keys() & added.keys():
             prior, following = removed[key], added[key]
             if len(prior) != 1 or len(following) != 1:
