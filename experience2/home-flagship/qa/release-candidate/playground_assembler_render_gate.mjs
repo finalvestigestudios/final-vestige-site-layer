@@ -340,11 +340,28 @@ export async function runAssemblerPreview({server,browser,context,draftId,themeD
   assert.deepEqual(noJS,{chapters:7,margins:72,h1:1,
     saved_layout_styles:1,canvas_width:390,region_tabindex:'0',region_role:'region'});
   await noContext.close();
-  if(viewportFailures.length)
+  // The editor/preview context has WordPress admin cookies. A preview screenshot
+  // with the admin toolbar is NOT a customer-facing conversion or mobile proof.
+  // Copy only the Gutenberg-saved content to a transient locally published page,
+  // inspect it with a fresh anonymous browser context, and delete it afterward.
+  // Fail closed on any whole-document axe, 44px CTA, viewport or cleanup issue.
+  const {runIsolatedGuestRender}=await import('./isolated_guest_render_gate.mjs');
+  let guestEvidence=null,guestFailure=null;
+  try {
+    guestEvidence=await runIsolatedGuestRender({
+      server,browser,draftId,axePath,outputDirectory
+    });
+  } catch(e) {
+    guestFailure=String(e?.message||e).slice(0,3500);
+    console.error(JSON.stringify({event:'EX2_ANONYMOUS_VISITOR_RELEASE_HOLD',
+      error:guestFailure,production_writes:false}));
+  }
+  if(viewportFailures.length || guestFailure)
     throw new Error('ISOLATED_ASSEMBLER_VIEWPORT_ADMISSION_HOLD '+
-      JSON.stringify(viewportFailures));
+      JSON.stringify({viewportFailures,guestFailure}));
   return {type:'ISOLATED_WP_ASSEMBLER_PUBLIC_MARGINS_SYNTHETIC_JETPACK',release:'HOLD',theme,
-    responsive,navigation_fixture:navigationFixture,zoom_200_percent_equivalent:reflow,no_js:noJS,blocked_hosts:[...blocked].sort(),
+    responsive,navigation_fixture:navigationFixture,anonymous_guest:guestEvidence,
+    zoom_200_percent_equivalent:reflow,no_js:noJS,blocked_hosts:[...blocked].sort(),
     limits:['72 Margins texts match published page 6 but are not independently re-fact-checked','stage CSS is not proposed production CSS',
       'not WP.com Atomic parity','the local Assembler header is intentionally overridden via native WP template part; unmodified-vendor axe remains FAIL','not real Jetpack','not complete hosted page6 or live Margins rotator parity','not physical browser zoom','not manual WCAG 2.2 AA','not field Core Web Vitals']};
 }
