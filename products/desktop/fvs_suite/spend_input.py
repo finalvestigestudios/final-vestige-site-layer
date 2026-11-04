@@ -41,16 +41,22 @@ def validated_spend_rows(
         raise ValueError("Spend source records must be a list")
     if len(records) > MAX_SPEND_ROWS:
         raise ValueError("Too many spend source records; no report was saved")
-    seen_rows: set[str] = set()
+    # Freeze the *entire* direct-API collection before invoking any caller
+    # callback. A normalizer/parser for the first row can otherwise mutate,
+    # delete, append or reorder later caller-owned rows and forge the physical
+    # CSV lines or amounts associated with the supplied source digest.
+    # Copy native dict storage only: dict subclasses may override .items(),
+    # .keys(), .get(), __getitem__ or iteration with unsafe side effects.
+    frozen_records: list[dict[str, str]] = []
     for original in records:
         if not isinstance(original, dict):
             raise ValueError("Spend source record must be a mapping")
-        # A direct caller can provide a dict subclass that lies through get(),
-        # items(), keys() or __getitem__. Read native storage once before
-        # validation and callbacks; keep that owned snapshot for evidence.
         if any(type(field) is not str for field in dict.keys(original)):
             raise ValueError("Spend source field names must be plain text")
-        record = dict(dict.items(original))
+        frozen_records.append(dict(dict.items(original)))
+
+    seen_rows: set[str] = set()
+    for record in frozen_records:
         physical_row = record.get("row")
         if (type(physical_row) is not str
                 or _PHYSICAL_ROW.fullmatch(physical_row) is None
