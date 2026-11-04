@@ -44,3 +44,5 @@ test("pair checks missing block",()=>assert.ok(auditPair(check("focus"),check("d
 test("pair checks missing privacy",()=>assert.ok(auditPair(check("focus"),check("dispatch",raw().replace(privacy,""))).mismatches.includes("PRIVACY_LINK_GAP")));
 test("pair direction constrained",()=>assert.throws(()=>auditPair(check("dispatch"),check("focus")),TypeError));
 test("clicks are never sales",()=>{let o=auditPair(check("focus"),check("dispatch"));assert.equal(o.pdf_click_is_not_lead,true);assert.equal(o.email_click_is_not_sale,true)});
+
+test("Focus custom subscribe label still detected as REST fallback",()=>assert.equal(check("focus",raw(),'<div class="wp-block-jetpack-subscriptions"><a href="https://finalvestige.com/?post_type=page&amp;p=1579">Send me the fieldbook</a></div>').rest_has_anchor_fallback,true));
