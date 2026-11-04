@@ -49,7 +49,7 @@ Session qualification is an explicit engineering/QA rule—not “all pageviews.
 
 ## Prespecified A/B hypothesis
 
-A: accessible text-only independent guide. B: **same** product descriptions, objections, free preference exercise, CTA position, disclosure and no sales pressure, plus original *optional* 40-second educational film about monitoring a thought. No video autoplay; static poster and full readable transcript in no-JS path; optional MP4/WebM only if later produced from rights-cleared assets. Responsive 360, 390, 768, 1440 and 1920 checks; keyboard, focus, color contrast, captions, touch target, reduced-motion, no-JS, mobile performance and CSP. If optional film increases LCP or confuses buyers, remove it.
+A: accessible text-only independent guide. B: **same** product descriptions, objections, free preference exercise, CTA position, disclosure and no sales pressure, plus original *optional* 40-second educational film about monitoring a thought. No video autoplay; static poster and full readable transcript in no-JS path; optional MP4/WebM only if later produced from rights-cleared assets. WCAG 2.2 AA review and responsive 360, 390, 768, 1440 and 1920 checks; keyboard, focus, color contrast, captions, touch target, reduced-motion, no-JS, mobile performance and CSP. If optional film increases LCP or confuses buyers, remove it.
 
 Random assignment only after an authorized earning link and founder release; no retroactive significance fishing. Define primary KPI as net revenue/1000 qualified sessions; secondary metrics are diagnostic only; record attribution gaps and asymmetric refund windows. With zero or tiny paid transactions, outcome = **INCONCLUSIVE**. Do not claim that storyboard placement is evidence of A/B success.
 
