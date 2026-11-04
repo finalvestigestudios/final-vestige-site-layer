@@ -1,0 +1,33 @@
+THE DISPATCH — ISSUE 05 • CONDITIONAL RESEARCH DRAFT • NEVER SEND
+STATUS: HOLD_UNSENT / HOLD_MERCHANT / NOT FOUNDER-APPROVED
+SUBJECT: Before you buy a focus recording, ask this
+PREHEADER CANDIDATE (NOT NATIVE JETPACK VERIFIED): Format, evidence and refund terms are three different questions.
+TYPE: commercial-review-pending; retains master issue 05 slot.
+
+Imagine hearing an audio sample that sounds reassuring and well produced. That tells you how it sounds. It doesn't tell you how much better you'll concentrate afterward. If our future guide contains a commission-earning link, we'll disclose that before any recommendation.
+
+Our Puységur archive makes a related historical point: an experience can be genuinely reported while the explanation attached to it remains in dispute. The same distinction matters when evaluating modern self-hypnosis recordings. Marketing copy is a claim, not an outcome measurement.
+
+Consider three checks before paying.
+
+First, the actual file. The seller lists Hypnosis Live's Total Focus as a 33-minute, 47 MB recording. Is a single session in a form you will realistically use? A downloadable MP3 is not the same thing as an ongoing course or a therapist's assessment.
+
+Second, the claimed result. The product page promises unusually powerful concentration and describes changes to the brain. Those are the seller's assertions; we have not verified that this specific recording reliably produces them. Don't mistake an attractive sample, testimonials or the broader literature for a product-specific trial.
+
+Third, the terms. The seller currently advertises a fourteen-day refund promise for this product, but the controlling policy, transaction conditions, and final checkout price need verification at the time of any recommendation. Don't turn an advertisement into a guarantee on our authority.
+
+A lower-cost alternative is simply to run the attention log you already have, without buying anything, and compare which practice you find sustainable. If a vetted guide becomes available, it will lay out the genuine tradeoffs and provide transparent sources.
+
+PRIMARY CTA — NOT ACTIVE: Read our independent Total Focus evaluation: [[APPROVED_LIVE_TOTAL_FOCUS_FIRST_PARTY_GUIDE_URL_REQUIRED]]
+DISCLOSURE BESIDE CTA: If you buy through a qualifying link within that guide, Final Vestige may earn a commission. This placement is blocked until the merchant approves Final Vestige, its email promotion, and its exact tracking format.
+
+SOURCE NOTES (not purchase CTAs):
+- Official Total Focus listing and seller's current advertised terms: https://hypnosislive.com/mental-skills/total-focus
+- Historical source archive: https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/
+- Editorial Standards: https://finalvestige.com/editorial-standards/
+
+PRE-SEND LEGAL GATE — NOT A REAL FOOTER:
+Publisher: Final Vestige Studios
+Publisher physical address: [[VALID_FV_POSTAL_ADDRESS_REQUIRED]]
+Real delivered-message unsubscribe: [[ACTUAL_JETPACK_UNSUBSCRIBE_NOT_YET_VERIFIED]]
+This text is a non-sending review artifact. Its placeholders intentionally prohibit publishing and sending.

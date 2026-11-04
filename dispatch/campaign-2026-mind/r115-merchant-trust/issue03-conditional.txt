@@ -1,0 +1,29 @@
+THE DISPATCH — ISSUE 03 • CONDITIONAL RESEARCH DRAFT • NEVER SEND
+STATUS: HOLD_UNSENT / HOLD_MERCHANT / NOT FOUNDER-APPROVED
+SUBJECT: What can twelve minutes actually tell you?
+PREHEADER CANDIDATE (NOT NATIVE JETPACK VERIFIED): A free seven-day experiment, and the limits of an audio promise.
+TYPE: commercial-review-pending; retains master issue 03 slot.
+
+An appealing idea fits in a busy morning: twelve minutes to get a little quieter. But a short appointment with yourself and an audio program that promises extraordinary results are two very different things. If a recommendation earns us a commission, we'll tell you before you reach it.
+
+The useful question is not whether twelve minutes can magically replace an hour. It is whether you can find a repeatable practice, observe what happens, and decide whether a paid recording adds anything you value.
+
+Here's a small experiment. For seven days, reserve twelve minutes at roughly the same time. Set a timer, sit comfortably, and bring attention back gently when it wanders. Afterward, note whether you started, what interrupted you, and whether the format felt workable. This is a personal practice log, not a clinical test. It cannot prove changes in brain activity, anxiety or long-term health.
+
+Zen12 is a candidate under review, not an endorsed treatment. Its seller describes a twelve-level audio course with four listening formats per level and a 48-MP3 Premium collection. Those features may matter if you want different types of guided or background audio. The seller also claims striking equivalence and rapid outcomes; we have not established independent, product-specific evidence for those promises. We will not borrow them for this newsletter.
+
+If the exact offer is eligible, our independent guide will compare what comes in the purchase, the current checkout terms, restrictions, and a free alternative. No purchase is necessary to experiment with a routine.
+
+PRIMARY CTA — NOT ACTIVE: Read our independent Zen12 buyer's guide: [[APPROVED_LIVE_ZEN12_FIRST_PARTY_GUIDE_URL_REQUIRED]]
+DISCLOSURE BESIDE CTA: If you buy through a qualifying link within that guide, Final Vestige may earn a commission. We will not link or recommend this product until our affiliate authorization, email-promotion rights, guide, and claims are independently reviewed.
+
+SOURCE NOTES (not purchase CTAs):
+- Official seller description (claims are seller claims): https://zen12.com/hnp
+- Scientific context; not a Zen12 clinical trial: https://pubmed.ncbi.nlm.nih.gov/37205669/
+- Final Vestige's research integrity standard: https://finalvestige.com/editorial-standards/
+
+PRE-SEND LEGAL GATE — NOT A REAL FOOTER:
+Publisher: Final Vestige Studios
+Publisher physical address: [[VALID_FV_POSTAL_ADDRESS_REQUIRED]]
+Real delivered-message unsubscribe: [[ACTUAL_JETPACK_UNSUBSCRIBE_NOT_YET_VERIFIED]]
+This text is a non-sending review artifact. Its placeholders intentionally prohibit publishing and sending.
