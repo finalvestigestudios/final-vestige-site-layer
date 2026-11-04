@@ -1,0 +1,560 @@
+{
+  "version": "r129.1",
+  "created_at": "2026-11-04",
+  "artifact_status": "DRAFT_UNPUBLISHED",
+  "affiliate_active": false,
+  "paid_sku_verified": false,
+  "paid_commission_verified": false,
+  "primary_offer": "Zen12 Premium CONDITIONAL ONLY",
+  "research_sources": [
+    {
+      "id": "S01",
+      "type": "primary_research",
+      "url": "https://doi.org/10.1126/science.1192439",
+      "title": "Killingsworth & Gilbert 2010",
+      "scope": "experience sampling, no product trial",
+      "checked_at": "2026-11-04",
+      "retrieval_status": "current_web_or_repository_reference"
+    },
+    {
+      "id": "S02",
+      "type": "secondary_university_release",
+      "url": "https://www.sciencedaily.com/releases/2010/11/101111141759.htm",
+      "title": "Harvard report, 2010",
+      "scope": "250000+ data points and sample; nonrepresentative volunteer limits",
+      "checked_at": "2026-11-04",
+      "retrieval_status": "current_web_or_repository_reference"
+    },
+    {
+      "id": "S03",
+      "type": "review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25293689/",
+      "title": "Smallwood & Schooler 2015",
+      "scope": "costs, benefits and metacognition",
+      "checked_at": "2026-11-04",
+      "retrieval_status": "current_web_or_repository_reference"
+    },
+    {
+      "id": "S04",
+      "type": "primary_research",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/22941876/",
+      "title": "Baird et al 2012",
+      "scope": "specific creative incubation condition",
+      "checked_at": "2026-11-04",
+      "retrieval_status": "current_web_or_repository_reference"
+    },
+    {
+      "id": "S05",
+      "type": "review",
+      "url": "https://doi.org/10.1177/1089268020918843",
+      "title": "Kvavilashvili & Rummel 2020",
+      "scope": "future thinking and plans",
+      "checked_at": "2026-11-04",
+      "retrieval_status": "current_web_or_repository_reference"
+    },
+    {
+      "id": "S06",
+      "type": "primary_research",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/28110087/",
+      "title": "Internal external attention fMRI 2017",
+      "scope": "small meditation-naive sample",
+      "checked_at": "2026-11-04",
+      "retrieval_status": "current_web_or_repository_reference"
+    },
+    {
+      "id": "S07",
+      "type": "meta_analysis",
+      "url": "https://doi.org/10.1080/17437199.2023.2248222",
+      "title": "Zainal & Newman 2024",
+      "scope": "111 MBI randomized trials not Zen12",
+      "checked_at": "2026-11-04",
+      "retrieval_status": "current_web_or_repository_reference"
+    },
+    {
+      "id": "S08",
+      "type": "systematic_review",
+      "url": "https://doi.org/10.1371/journal.pone.0286023",
+      "title": "2023 binaural beats EEG review",
+      "scope": "14 EEG studies inconsistent; no Zen12 trial",
+      "checked_at": "2026-11-04",
+      "retrieval_status": "current_web_or_repository_reference"
+    },
+    {
+      "id": "S09",
+      "type": "seller_catalog",
+      "url": "https://inspire3.com/",
+      "title": "Inspire3 official catalog",
+      "scope": "seller category claims only",
+      "checked_at": "2026-11-04",
+      "retrieval_status": "current_web_or_repository_reference"
+    },
+    {
+      "id": "S10",
+      "type": "seller_offer",
+      "url": "https://zen12.com/hnp",
+      "title": "Zen12 HNP full offer",
+      "scope": "12 levels 48 MP3; Premium $87.99 displayed; unverified final price",
+      "checked_at": "2026-11-04",
+      "retrieval_status": "current_web_or_repository_reference"
+    },
+    {
+      "id": "S11",
+      "type": "seller_offer_conditional",
+      "url": "https://zen12.com/secret/",
+      "title": "Zen12 secret conditional offer",
+      "scope": "$37 coupon presentation; not universal",
+      "checked_at": "2026-11-04",
+      "retrieval_status": "current_web_or_repository_reference"
+    },
+    {
+      "id": "S12",
+      "type": "seller_policy",
+      "url": "https://inspire3.com/privacy/",
+      "title": "Inspire3 privacy policy",
+      "scope": "names/emails/products may be shared with affiliate",
+      "checked_at": "2026-11-04",
+      "retrieval_status": "current_web_or_repository_reference"
+    },
+    {
+      "id": "S13",
+      "type": "seller_comparator",
+      "url": "https://hypnosislive.com/faq",
+      "title": "Hypnosis Live FAQ",
+      "scope": "different product; not Zen12 proof",
+      "checked_at": "2026-11-04",
+      "retrieval_status": "current_web_or_repository_reference"
+    },
+    {
+      "id": "S14",
+      "type": "regulatory_guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "title": "FTC endorsements",
+      "scope": "adjacent commission disclosure",
+      "checked_at": "2026-11-04",
+      "retrieval_status": "current_web_or_repository_reference"
+    },
+    {
+      "id": "S15",
+      "type": "regulatory_guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "title": "FTC health claims",
+      "scope": "competent relevant evidence",
+      "checked_at": "2026-11-04",
+      "retrieval_status": "current_web_or_repository_reference"
+    },
+    {
+      "id": "S16",
+      "type": "owned_live_resource",
+      "url": "https://finalvestige.com/focus/",
+      "title": "Existing Focus Fieldbook",
+      "scope": "prior WP-confirmed live; current full conversion still needs QA",
+      "checked_at": "2026-11-04",
+      "retrieval_status": "previously_authenticated_live_inventory"
+    },
+    {
+      "id": "S17",
+      "type": "owned_live_resource",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "title": "Puységur historical archive",
+      "scope": "prior WP-confirmed live",
+      "checked_at": "2026-11-04",
+      "retrieval_status": "previously_authenticated_live_inventory"
+    },
+    {
+      "id": "S18",
+      "type": "owned_live_resource",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "title": "Change Blindness investigation",
+      "scope": "prior WP-confirmed live",
+      "checked_at": "2026-11-04",
+      "retrieval_status": "previously_authenticated_live_inventory"
+    },
+    {
+      "id": "S19",
+      "type": "owned_live_resource",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "title": "Mesmerism investigation",
+      "scope": "prior WP-confirmed live",
+      "checked_at": "2026-11-04",
+      "retrieval_status": "previously_authenticated_live_inventory"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "Volunteer sample reported off-task mind wandering average 46.9 percent",
+      "decision": "bounded_research",
+      "source_id": "S01",
+      "note": "sample and experience-probe estimate only"
+    },
+    {
+      "id": "C02",
+      "claim": "Participants in 2010 experience sampling reported mind wandering and lower happiness",
+      "decision": "bounded_research",
+      "source_id": "S01",
+      "note": "observational association; causation unestablished by RCT"
+    },
+    {
+      "id": "C03",
+      "claim": "Mind wandering can impair performance on demanding attention tasks",
+      "decision": "bounded_review",
+      "source_id": "S03",
+      "note": "context-dependent"
+    },
+    {
+      "id": "C04",
+      "claim": "Mind wandering may support creative incubation under a particular protocol",
+      "decision": "bounded_research",
+      "source_id": "S04",
+      "note": "do not promise creativity gains"
+    },
+    {
+      "id": "C05",
+      "claim": "Spontaneous future thoughts may aid prospective task remembering",
+      "decision": "bounded_review",
+      "source_id": "S05",
+      "note": "not guaranteed"
+    },
+    {
+      "id": "C06",
+      "claim": "DMN relative activity differed across attention versus wandering states",
+      "decision": "bounded_research",
+      "source_id": "S06",
+      "note": "not a consumer efficacy claim"
+    },
+    {
+      "id": "C07",
+      "claim": "MBI randomized trial meta-analysis does not validate Zen12 specifically",
+      "decision": "supported_scope_boundary",
+      "source_id": "S07",
+      "note": "training versus proprietary audio distinction"
+    },
+    {
+      "id": "C08",
+      "claim": "Binaural beats EEG entrainment evidence remains inconsistent",
+      "decision": "supported_scope_boundary",
+      "source_id": "S08",
+      "note": "no Zen12 RCT"
+    },
+    {
+      "id": "C09",
+      "claim": "Zen12 Premium seller page describes twelve levels and 48 MP3s",
+      "decision": "seller_description_only",
+      "source_id": "S10",
+      "note": "configuration may change"
+    },
+    {
+      "id": "C10",
+      "claim": "Zen12 seller HNP Premium displayed $87.99",
+      "decision": "dated_seller_display_only",
+      "source_id": "S10",
+      "note": "not checked out"
+    },
+    {
+      "id": "C11",
+      "claim": "Zen12 secret offer displayed $37 with conditional coupon",
+      "decision": "dated_conditional_display_only",
+      "source_id": "S11",
+      "note": "not universal or verified cart"
+    },
+    {
+      "id": "C12",
+      "claim": "Zen12 seller advertises one-year guarantee",
+      "decision": "seller_claim_only",
+      "source_id": "S10",
+      "note": "refund process untested"
+    },
+    {
+      "id": "C13",
+      "claim": "Hypnosis Live generally offers forty-minute single-session MP3s",
+      "decision": "seller_comparator_only",
+      "source_id": "S13",
+      "note": "separate seller product"
+    },
+    {
+      "id": "C14",
+      "claim": "Inspire3 can share buyer name, email and purchased-product details with referring affiliates",
+      "decision": "seller_policy_verified",
+      "source_id": "S12",
+      "note": "aggregate-only contract absent"
+    },
+    {
+      "id": "C15",
+      "claim": "Affiliate disclosures must be clear and conspicuous near recommendations",
+      "decision": "regulatory_guidance",
+      "source_id": "S14",
+      "note": "exact copy depends on real relationship"
+    },
+    {
+      "id": "C16",
+      "claim": "Health benefit claims require adequate product-relevant substantiation",
+      "decision": "regulatory_guidance",
+      "source_id": "S15",
+      "note": "seller anecdotes inadequate"
+    },
+    {
+      "id": "C17",
+      "claim": "Twelve minutes of Zen12 equals hour of advanced meditation",
+      "decision": "omit_unsubstantiated",
+      "source_id": "S10",
+      "note": "seller efficacy not independently verified"
+    },
+    {
+      "id": "C18",
+      "claim": "Zen12 cures anxiety, depression or other health conditions",
+      "decision": "prohibited_unsubstantiated",
+      "source_id": "S15",
+      "note": "no such FV claim"
+    },
+    {
+      "id": "C19",
+      "claim": "Zen12 guarantees creativity, intelligence, income, or productivity",
+      "decision": "prohibited_unsubstantiated",
+      "source_id": "S15",
+      "note": "no such FV claim"
+    },
+    {
+      "id": "C20",
+      "claim": "Final Vestige has named Inspire3 acceptance and authorized earning URL",
+      "decision": "unverified_blocked",
+      "source_id": "S09",
+      "note": "public portal not named acceptance"
+    },
+    {
+      "id": "C21",
+      "claim": "A paid FV Mind SKU on Payhip is currently rights-cleared and fulfilling",
+      "decision": "unverified_blocked",
+      "source_id": null,
+      "note": "no authenticated inventory"
+    },
+    {
+      "id": "C22",
+      "claim": "Final Vestige has merchant confirmed attributable paid orders/commissions",
+      "decision": "unverified_blocked",
+      "source_id": null,
+      "note": "no authenticated settlement"
+    },
+    {
+      "id": "C23",
+      "claim": "WordPress Focus PDF reveal equals consent or confirmed signup",
+      "decision": "false_prohibited",
+      "source_id": null,
+      "note": "Dispatch R124 found query/CSS false reveal; native Jetpack confirmation required"
+    },
+    {
+      "id": "C24",
+      "claim": "Actual Grok IDs and matching video->article campaign UTMs are proven",
+      "decision": "unverified_blocked",
+      "source_id": null,
+      "note": "TASK-008 awaiting real media ledger"
+    }
+  ],
+  "gates": [
+    {
+      "id": "FV_named_inspire3_partner_approval",
+      "status": "CLOSED",
+      "condition": "Evidence-based signoff required; no automatic activation."
+    },
+    {
+      "id": "approved_zen12_offer_and_destination",
+      "status": "CLOSED",
+      "condition": "Evidence-based signoff required; no automatic activation."
+    },
+    {
+      "id": "permitted_tiktok_youtube_channels",
+      "status": "CLOSED",
+      "condition": "Evidence-based signoff required; no automatic activation."
+    },
+    {
+      "id": "permitted_organic_site_pre_sell",
+      "status": "CLOSED",
+      "condition": "Evidence-based signoff required; no automatic activation."
+    },
+    {
+      "id": "email_channel_permission_if_ever_used",
+      "status": "CLOSED",
+      "condition": "Evidence-based signoff required; no automatic activation."
+    },
+    {
+      "id": "merchant_tracking_subid_rules",
+      "status": "CLOSED",
+      "condition": "Evidence-based signoff required; no automatic activation."
+    },
+    {
+      "id": "aggregate_only_payout_reporting",
+      "status": "CLOSED",
+      "condition": "Evidence-based signoff required; no automatic activation."
+    },
+    {
+      "id": "named_buyer_data_exclusion",
+      "status": "CLOSED",
+      "condition": "Evidence-based signoff required; no automatic activation."
+    },
+    {
+      "id": "current_final_checkout_amount",
+      "status": "CLOSED",
+      "condition": "Evidence-based signoff required; no automatic activation."
+    },
+    {
+      "id": "current_valid_refund_and_tax_terms",
+      "status": "CLOSED",
+      "condition": "Evidence-based signoff required; no automatic activation."
+    },
+    {
+      "id": "independent_health_claim_substantiation",
+      "status": "CLOSED",
+      "condition": "Evidence-based signoff required; no automatic activation."
+    },
+    {
+      "id": "no_unsupported_time_equivalence",
+      "status": "CLOSED",
+      "condition": "Evidence-based signoff required; no automatic activation."
+    },
+    {
+      "id": "verified_fv_paid_alternative_product_inventory",
+      "status": "CLOSED",
+      "condition": "Evidence-based signoff required; no automatic activation."
+    },
+    {
+      "id": "payhip_owned_rights_license",
+      "status": "CLOSED",
+      "condition": "Evidence-based signoff required; no automatic activation."
+    },
+    {
+      "id": "payhip_live_fulfillment",
+      "status": "CLOSED",
+      "condition": "Evidence-based signoff required; no automatic activation."
+    },
+    {
+      "id": "merchant_confirmed_purchases",
+      "status": "CLOSED",
+      "condition": "Evidence-based signoff required; no automatic activation."
+    },
+    {
+      "id": "merchant_refunds_fees_settlement",
+      "status": "CLOSED",
+      "condition": "Evidence-based signoff required; no automatic activation."
+    },
+    {
+      "id": "verified_qualified_human_sessions",
+      "status": "CLOSED",
+      "condition": "Evidence-based signoff required; no automatic activation."
+    },
+    {
+      "id": "actual_grok_media_ids_destinations",
+      "status": "CLOSED",
+      "condition": "Evidence-based signoff required; no automatic activation."
+    },
+    {
+      "id": "focus_confirmed_opt_in_not_css_reveal",
+      "status": "CLOSED",
+      "condition": "Evidence-based signoff required; no automatic activation."
+    },
+    {
+      "id": "final_legal_affiliate_disclosure",
+      "status": "CLOSED",
+      "condition": "Evidence-based signoff required; no automatic activation."
+    },
+    {
+      "id": "site_qa_mobile_accessibility",
+      "status": "CLOSED",
+      "condition": "Evidence-based signoff required; no automatic activation."
+    },
+    {
+      "id": "real_video_playable_caption_qa",
+      "status": "CLOSED",
+      "condition": "Evidence-based signoff required; no automatic activation."
+    },
+    {
+      "id": "founder_release_authorization",
+      "status": "CLOSED",
+      "condition": "Evidence-based signoff required; no automatic activation."
+    },
+    {
+      "id": "github_ci_native_node",
+      "status": "CLOSED",
+      "condition": "Evidence-based signoff required; no automatic activation."
+    },
+    {
+      "id": "full_browser_lighthouse_and_nojs",
+      "status": "CLOSED",
+      "condition": "Evidence-based signoff required; no automatic activation."
+    }
+  ],
+  "funnel_contract": {
+    "campaign_keys": [
+      "asset_id",
+      "utm_source",
+      "utm_medium",
+      "utm_campaign",
+      "utm_content"
+    ],
+    "collection_limit": "No buyer PII, email, payment data, IP address, device fingerprint or raw referral tokens stored by FV pilot",
+    "events": [
+      "qualified_human_session",
+      "article_view",
+      "focus_cta_click",
+      "native_confirmed_signup_if_authoritative",
+      "affiliate_outbound_only_when_authorized",
+      "merchant_paid_order_only_from_authoritative_source",
+      "refund_or_fee_adjustment",
+      "realized_net_revenue"
+    ],
+    "events_never_equivalent": [
+      [
+        "affiliate_outbound",
+        "merchant_paid_order"
+      ],
+      [
+        "focus_cta_click",
+        "native_confirmed_signup_if_authoritative"
+      ],
+      [
+        "pdf_reveal",
+        "native_confirmed_signup_if_authoritative"
+      ]
+    ],
+    "kpi": "settled net revenue divided by qualified human sessions multiplied by 1000, only if verified denominator and orders/fees/refunds",
+    "windows_days": [
+      7,
+      30
+    ],
+    "unknown_when_missing": true,
+    "ab_hypothesis": "text guide versus identical guide plus optional original 40-second captioned playable video; no conversion lift claimed",
+    "ab_primary_outcome": "independently merchant-confirmed paid purchase, adjusted for refunds and fees",
+    "minimum_requirements": [
+      "written merchant authorization",
+      "accurate approved link",
+      "signed or authenticated aggregate merchant reporting",
+      "original rights cleared video",
+      "founder approved release",
+      "native consent proof"
+    ]
+  },
+  "creator_fit": [
+    {
+      "topic": "Change Blindness",
+      "status": "published_article_priorknown",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "primary_cta": "free Focus",
+      "paid_offer": "none_by_default",
+      "asset_id": null
+    },
+    {
+      "topic": "Mesmerism / Puységur",
+      "status": "published_article_priorknown",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "primary_cta": "source archive then Focus",
+      "paid_offer": "none_by_default",
+      "asset_id": null
+    },
+    {
+      "topic": "Mind-wandering and meditation audio buying intent",
+      "status": "article_in_this_PR_unpublished",
+      "url": null,
+      "primary_cta": "no public route until approved",
+      "paid_offer": "Zen12 CONDITIONAL ONLY",
+      "asset_id": null
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+"use strict";
+const test=require("node:test");
+const assert=require("node:assert/strict");
+const fs=require("node:fs");
+const path=require("node:path");
+const dir=__dirname;
+const read=name=>fs.readFileSync(path.join(dir,name),"utf8");
+const A=read("zen12-guide-A-text.html"),B=read("zen12-guide-B-optional-film-concept.html");
+const article=read("mind-wandering-investigation.md"),buyer=read("zen12-evidence-first-buyer-guide.md");
+const plan=read("conversion-acceptance-creator-crosswalk.md");
+const ledger=JSON.parse(read("claim-source-and-release-gates.json"));
+const metrics=require("./revenue-gate.cjs");
+const all=[A,B];
+const errorCodes=(html)=>{
+  const errs=[];
+  if(!html.includes('data-affiliate-activation="blocked"'))errs.push("affiliate_state");
+  if(!html.includes("Potential affiliate disclosure:"))errs.push("disclosure");
+  if(!html.includes("may earn a commission at no additional cost"))errs.push("commission_terms");
+  if(!html.includes(' disabled aria-disabled="true"'))errs.push("purchasing_enabled");
+  if(!html.includes('href="https://finalvestige.com/focus/"'))errs.push("focus_missing");
+  if(!html.includes('aria-labelledby="fv-r129-title"'))errs.push("heading_label");
+  if(!html.includes("@media(max-width:680px)"))errs.push("responsive_missing");
+  if(!html.includes("prefers-reduced-motion:reduce"))errs.push("motion_missing");
+  if(/<script\b/i.test(html))errs.push("script");
+  if(/<form\b/i.test(html))errs.push("form");
+  if(/<iframe\b/i.test(html))errs.push("third_party_embed");
+  if(/<video[^>]*\bautoplay\b/i.test(html))errs.push("autoplay");
+  if(/<a[^>]*href=["']https?:\/\/(?:www\.)?(?:zen12\.com|inspire3\.com|affiliates\.inspire3\.com)/i.test(html))errs.push("merchant_link");
+  if(/href=["'][^"']*(?:\bemail=|\btoken=|\baff_id=)/i.test(html))errs.push("leakable_url");
+  const dis=html.indexOf("Potential affiliate disclosure:");
+  const buy=html.indexOf('Merchant purchase unavailable — approval pending');
+  if(dis<0||buy<0||buy-dis>1000||buy<dis)errs.push("disclosure_distance");
+  return errs;
+};
+const valid={
+  qualified_human_sessions:1000,cohort_days:7,owned_settled_gross_cents:20000,
+  affiliate_settled_commission_cents:3000,refunds_cents:2000,fees_cents:1000,
+  chargebacks_cents:0,confirmed_paid_orders:12,qualified_sessions_authoritative:true,
+  merchant_settlement_authoritative:true,refunds_and_fees_reconciled:true,attribution_verified:true
+};
+test("01 source register has 19 source URLs",()=>assert.equal(ledger.research_sources.length,19));
+test("02 source IDs unique",()=>assert.equal(new Set(ledger.research_sources.map(s=>s.id)).size,19));
+test("03 claim decisions exist and unique",()=>{assert.equal(ledger.claims.length,24);assert.equal(new Set(ledger.claims.map(c=>c.id)).size,24);});
+test("04 all sourced claims trace to registered sources",()=>{let ids=new Set(ledger.research_sources.map(s=>s.id));assert(ledger.claims.every(c=>c.source_id===null||ids.has(c.source_id)));});
+test("05 26 release gates closed",()=>{assert.equal(ledger.gates.length,26);assert(ledger.gates.every(g=>g.status==="CLOSED"));});
+test("06 no merchant active in registry",()=>{assert.equal(ledger.affiliate_active,false);assert.equal(ledger.paid_commission_verified,false);});
+test("07 original investigation substantial",()=>assert(article.trim().split(/\s+/).length>=1700));
+test("08 independent investigation has a scholarly reading trail",()=>{assert(article.includes("Science"));assert(article.includes("pubmed.ncbi.nlm.nih.gov/25293689"));assert(article.includes("doi.org/10.1126/science.1192439"));});
+test("09 investigation commercial conclusions separated",()=>{assert(!article.includes("https://zen12.com"));assert(article.includes("Editorial boundary"));});
+test("10 buyer guide substantive",()=>assert(buyer.trim().split(/\s+/).length>=1400));
+test("11 buyer guide true conditional price warning",()=>{assert(buyer.includes("$87.99"));assert(buyer.includes("$37"));assert(buyer.includes("conditional"));});
+test("12 buyer guide distinguishes other meditation research",()=>{assert(buyer.includes("not a direct trial"));assert(buyer.includes("specific"));});
+test("13 seller purchaser-data concern disclosed",()=>{assert(buyer.includes("name, email"));assert(buyer.includes("aggregate"));});
+test("14 CTA compliance both variants",()=>all.forEach(h=>assert.deepEqual(errorCodes(h),[])));
+test("15 A and B copy exact parity with B-only media",()=>{
+ let marker='<div class="line deal"';
+ let split=A.indexOf(marker);
+ assert(split>0);
+ assert(B.startsWith(A.slice(0,split)));
+ assert(B.endsWith(A.slice(split)));
+ assert(B.length>A.length);
+});
+test("16 film variant is labeled unplayable concept",()=>{assert(B.includes('CONCEPT_ONLY_NOT_PLAYABLE'));assert(B.includes("40-second"));});
+test("17 film transcript six timed intervals",()=>{const segments=(B.match(/<li><strong>\d\d–\d\d s\./g)||[]);assert.equal(segments.length,6);});
+test("18 no external video players, forms or scripts",()=>all.forEach(h=>{assert(!/<iframe/i.test(h));assert(!/<form/i.test(h));assert(!/<script/i.test(h));}));
+test("19 mutation enabling merchant CTA fails",()=>assert(errorCodes(A.replace(' disabled aria-disabled="true"','')).includes("purchasing_enabled")));
+test("20 mutation removing adjacent disclosure fails",()=>assert(errorCodes(A.replace("Potential affiliate disclosure:","")).includes("disclosure")));
+test("21 mutation adding merchant link fails",()=>assert(errorCodes(A.replace("</section>",'<a href="https://zen12.com/hnp">Buy now</a></section>')).includes("merchant_link")));
+test("22 mutation script injection fails",()=>assert(errorCodes(A+'<script>alert(1)</script>').includes("script")));
+test("23 mutation invalid form fails",()=>assert(errorCodes(A+'<form><input type="email"></form>').includes("form")));
+test("24 outbound click not paid conversion",()=>assert.equal(metrics.classifyEvent("affiliate_outbound","merchant_authoritative_aggregate"),"NOT_PAID_CONVERSION"));
+test("25 Focus client gift reveal not native signup",()=>{assert.equal(metrics.classifyEvent("focus_query_reveal","jetpack_native_verified"),"NOT_PAID_CONVERSION");assert.equal(metrics.classifyEvent("native_confirmed_signup","unknown"),"UNVERIFIED");});
+test("26 authoritative native consent is only confirmed lead",()=>assert.equal(metrics.classifyEvent("native_confirmed_signup","jetpack_native_verified"),"CONFIRMED_LEAD_ONLY"));
+test("27 missing merchant settlement makes KPI unknowable",()=>assert.equal(metrics.netRevenuePer1000({...valid,merchant_settlement_authoritative:false}).status,"NOT_COMPUTABLE"));
+test("28 unverified qualified humans makes KPI unknowable",()=>assert.equal(metrics.netRevenuePer1000({...valid,qualified_sessions_authoritative:false}).status,"NOT_COMPUTABLE"));
+test("29 zero denominator cannot be called zero revenue",()=>assert.equal(metrics.netRevenuePer1000({...valid,qualified_human_sessions:0}).status,"NOT_COMPUTABLE"));
+test("30 private email rejects metric",()=>assert.equal(metrics.netRevenuePer1000({...valid,email:"a@example.com"}).status,"REJECTED_PRIVATE_DATA"));
+test("31 NaN and Infinity invalid",()=>{assert.equal(metrics.netRevenuePer1000({...valid,refunds_cents:NaN}).status,"NOT_COMPUTABLE");assert.equal(metrics.netRevenuePer1000({...valid,fees_cents:Infinity}).status,"NOT_COMPUTABLE");});
+test("32 known aggregate fixture computes net correctly",()=>{let r=metrics.netRevenuePer1000(valid);assert.equal(r.status,"VERIFIED_AGGREGATE_INPUTS_ONLY");assert.equal(r.net_revenue_cents,20000);assert.equal(r.net_revenue_per_1000_qualified_sessions_usd,200);assert(r.sample_warning);});
+test("33 revenue with no verified paid order is blocked",()=>assert.equal(metrics.netRevenuePer1000({...valid,confirmed_paid_orders:0}).status,"NOT_COMPUTABLE"));
+test("34 creator mapping keeps unpublished article unlinked",()=>{let c=ledger.creator_fit.find(x=>x.topic.includes("Mind-wandering"));assert.equal(c.url,null);assert.equal(c.asset_id,null);});
+test("35 plan names exact validation and owners",()=>{assert(plan.includes("OFFER → FUNNEL STEP"));assert(plan.includes("Issue #174"));assert(plan.includes("NOT COMPUTABLE"));});
+test("36 draft remains unlaunched",()=>{assert(!A.includes('data-affiliate-activation="active"'));assert(!B.includes('data-affiliate-activation="active"'));assert(!plan.includes("REVENUE VERIFIED:"));});
