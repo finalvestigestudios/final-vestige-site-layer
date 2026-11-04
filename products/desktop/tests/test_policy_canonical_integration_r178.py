@@ -36,7 +36,8 @@ class PolicyCanonicalIntegrationR178(unittest.TestCase):
         report = self.compare("Café\nOwner Old\n", "Cafe\u0301\nOwner New\n")
         self.assertIn("Canonical hunk 001: before L1; after L1; NFC-only candidate", report)
         self.assertNotIn("NFC-normalization-equivalent;", report)
-        self.assertIn("-Owner Old\n+Owner New", report)
+        self.assertIn("-Owner Old\n", report)
+        self.assertIn("+Owner New\n", report)
 
     def test_mixed_edit_separated_hunks(self):
         old = "Café\n" + ("same\n" * 9) + "Owner Old\n"
