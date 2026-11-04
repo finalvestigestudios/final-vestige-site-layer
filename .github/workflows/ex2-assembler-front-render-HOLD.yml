@@ -50,6 +50,7 @@ jobs:
           node --test experience2/home-flagship/qa/release-candidate/test_assembler_media_failure_evidence.mjs
           node --test experience2/home-flagship/qa/release-candidate/test_assembler_nav_native_fixture.mjs
           node --test experience2/home-flagship/qa/release-candidate/test_isolated_guest_render_gate.mjs
+          node --test experience2/home-flagship/qa/release-candidate/test_guest_render_source_contract.mjs
           node --test experience2/home-flagship/qa/release-candidate/test_playground_published_margins_gate.mjs
           node experience2/home-flagship/qa/release-candidate/playground_gutenberg_editor_gate.mjs --self-test
           node experience2/home-flagship/qa/release-candidate/playground_assembler_render_gate.mjs --self-test
