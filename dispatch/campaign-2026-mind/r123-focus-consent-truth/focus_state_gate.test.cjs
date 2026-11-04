@@ -37,8 +37,13 @@ test("CSS class shows panel, not a new confirmed signup",()=>{
  assert.equal(s.gift_visible_in_source_logic,true);
  assert.equal(s.confirmed_signup,false);
 });
-test("CSS substring is insufficient",()=>{
- assert.equal(classifyUi({containerClass:"not-is-subscriber"}).gift_visible_in_source_logic,false);
+test("actual WordPress CSS word boundary also matches not-is-subscriber (not a consent proof)",()=>{
+ const s=classifyUi({containerClass:"not-is-subscriber"});
+ assert.equal(s.gift_visible_in_source_logic,true);
+ assert.equal(s.confirmed_signup,false);
+});
+test("non-matching CSS remains no gift reveal",()=>{
+ assert.equal(classifyUi({containerClass:"unrelated-block"}).gift_visible_in_source_logic,false);
 });
 test("blocking query + subscriber class still cannot prove confirmation",()=>{
  const s=classifyUi({subscribeParam:"error",containerClass:"is-subscriber"});
