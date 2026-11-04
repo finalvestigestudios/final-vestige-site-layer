@@ -4,6 +4,7 @@ import importlib.util
 import json
 from pathlib import Path
 import tempfile
+from unittest.mock import patch
 import unittest
 
 path=Path(__file__).resolve().parents[1]/'tools/r128_hazard_citation_triage.py'
@@ -63,6 +64,18 @@ class TestRoster(unittest.TestCase):
         with self.assertRaises(gate.Hold):gate.audit(self.root,expected_citations=2000)
     def test_no_unverified_git_head(self):
         with self.assertRaises(gate.Hold):gate.audit(self.root,expected_citations=35,verify_ref=True)
+    def test_dirty_checkout_rejected(self):
+        with patch.object(gate.subprocess, 'check_output', side_effect=[gate.RC_SHA+'\n',' M preparedness/content/articles/page-1.body.html\n']):
+            with self.assertRaisesRegex(gate.Hold, 'DIRTY_CANDIDATE_WORKTREE'):
+                gate.audit(self.root,expected_citations=35,verify_ref=True)
+    def test_clean_checkout_with_matching_sha(self):
+        with patch.object(gate.subprocess, 'check_output', side_effect=[gate.RC_SHA+'\n','']):
+            self.assertEqual(gate.audit(self.root,expected_citations=35,verify_ref=True)['article_count'],35)
+    def test_unterminated_citation(self):
+        p=self.article_dir/'page-0.body.html'
+        p.write_text('<p>Generator.{{cite:official-a</p>')
+        with self.assertRaisesRegex(gate.Hold, 'UNTERMINATED_CITATION'):
+            gate.audit(self.root,expected_citations=35)
     def test_missing_file(self):
         (self.article_dir/f'{self.slugs[0]}.body.html').unlink()
         with self.assertRaises(OSError):gate.audit(self.root,expected_citations=35)
