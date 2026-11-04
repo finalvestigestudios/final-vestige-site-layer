@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import io
+import os
 import tempfile
 import unittest
 from contextlib import redirect_stdout, redirect_stderr
@@ -155,6 +156,15 @@ class CatalogPreflightR186(unittest.TestCase):
                 self.assertEqual(gate.main([str(path)]), 1)
             self.assertNotIn(str(path), error.getvalue())
             self.assertNotIn('secret', error.getvalue())
+
+    def test_cli_first_read_atime_change_is_not_source_mutation(self):
+        # Real-world atime advances on an otherwise unchanged source file.
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / 'catalog.html'
+            path.write_bytes(catalog().encode())
+            os.utime(path, (1, 1))
+            with redirect_stdout(io.StringIO()):
+                self.assertEqual(gate.main([str(path)]), 0)
 
     def test_cli_symlink_rejected_without_mutation(self):
         with tempfile.TemporaryDirectory() as tmp:
