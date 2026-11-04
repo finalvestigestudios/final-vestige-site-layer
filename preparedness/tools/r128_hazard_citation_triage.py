@@ -96,6 +96,7 @@ def triage_article(slug,html,meta):
          'EMPTY_SOURCE_EXPLANATION:'+slug)
     p=VisibleBlocks();p.feed(html);p.close()
     raw=ANY_CITE.findall(html)
+    need(html.count('{{cite:')==len(raw),'UNTERMINATED_CITATION:'+slug)
     visible=ANY_CITE.findall(''.join(p.visible))
     need(len(raw)==len(visible) and Counter(raw)==Counter(visible),
          'HIDDEN_CITATION:'+slug)
@@ -125,6 +126,13 @@ def audit(root,*, expected_citations=2000,verify_ref=False):
                                         text=True,stderr=subprocess.DEVNULL).strip()
         except (OSError,subprocess.CalledProcessError) as e:raise Hold('GIT_HEAD_UNAVAILABLE') from e
         need(sha==RC_SHA,'WRONG_CANDIDATE_GIT_HEAD')
+        try:
+            dirty=subprocess.check_output(
+                ['git','-C',str(root),'status','--porcelain','--untracked-files=no',
+                 '--','preparedness/content/articles','preparedness/taxonomy.json'],
+                text=True,stderr=subprocess.DEVNULL)
+        except (OSError,subprocess.CalledProcessError) as e:raise Hold('GIT_STATUS_UNAVAILABLE') from e
+        need(not dirty.strip(),'DIRTY_CANDIDATE_WORKTREE')
     tax=parse_json_bytes((root/'preparedness/taxonomy.json').read_bytes())
     slate=tax.get('slate')
     need(isinstance(slate,list) and len(slate)==35,'ARTICLE_COUNT_NOT_35')
