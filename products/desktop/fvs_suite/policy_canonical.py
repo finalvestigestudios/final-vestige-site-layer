@@ -8,6 +8,44 @@ from __future__ import annotations
 import unicodedata
 
 
+# Metadata must remain bounded even when a private policy line contains a
+# large range of different Unicode characters. No raw policy text is emitted.
+_MAX_DISTINCT_NONASCII = 64
+_MAX_CODEPOINT_CUES = 12
+
+
+def _nonascii_counts(text: str) -> dict[int, int] | None:
+    counts: dict[int, int] = {}
+    for character in text:
+        point = ord(character)
+        if point < 128:
+            continue
+        if point not in counts and len(counts) == _MAX_DISTINCT_NONASCII:
+            return None
+        counts[point] = counts.get(point, 0) + 1
+    return counts
+
+
+def _canonical_codepoint_cue(before: str, after: str) -> str:
+    """Provide accessible numeric Unicode evidence, never private source text.
+
+    Equal codepoint counts are possible after reordered combining marks.
+    Report that explicitly instead of suggesting nothing changed.
+    """
+    old, new = _nonascii_counts(before), _nonascii_counts(after)
+    if old is None or new is None:
+        return "non-ASCII detail withheld (over 64 distinct source codepoints)"
+    different = sorted(point for point in old.keys() | new.keys()
+                       if old.get(point, 0) != new.get(point, 0))
+    if not different:
+        return "non-ASCII counts unchanged; inspect codepoint order"
+    shown = ", ".join(f"U+{point:04X} {old.get(point, 0)}->{new.get(point, 0)}"
+                      for point in different[:_MAX_CODEPOINT_CUES])
+    omitted = len(different) - _MAX_CODEPOINT_CUES
+    return ("non-ASCII codepoint counts " + shown +
+            (f" (+{omitted} omitted)" if omitted > 0 else ""))
+
+
 def render_local_canonical_evidence(hunks: list[dict]) -> str:
     """Cite unique NFC-equivalent *changed* lines within each existing hunk.
 
@@ -15,7 +53,7 @@ def render_local_canonical_evidence(hunks: list[dict]) -> str:
     interpret Unicode normalization as semantic/legal equivalence. This is
     deliberately an index over already-computed physical diff coordinates.
     """
-    candidates: list[tuple[int, int, int]] = []
+    candidates: list[tuple[int, int, int, str, str]] = []
     for hunk_number, hunk in enumerate(hunks, 1):
         removed: dict[str, list[tuple[int, str]]] = {}
         added: dict[str, list[tuple[int, str]]] = {}
@@ -30,20 +68,21 @@ def render_local_canonical_evidence(hunks: list[dict]) -> str:
             old_number, old_raw = old_group[0]
             new_number, new_raw = new_group[0]
             if old_raw != new_raw:
-                candidates.append((hunk_number, old_number, new_number))
+                candidates.append((hunk_number, old_number, new_number, old_raw, new_raw))
     if not candidates:
         return ""
-    candidates.sort()
+    candidates.sort(key=lambda row: (row[0], row[1], row[2]))
     result = [
         "LOCAL REVIEW: NFC-only canonical Unicode changes at cited physical "
         "source lines, including mixed revisions. These are navigation cues, "
         "NOT legal or semantic equivalence; inspect both original files. "
         "Ambiguous duplicate lines are intentionally not paired.\n"
     ]
-    for hunk, before, after in candidates[:16]:
+    for hunk, before, after, old_raw, new_raw in candidates[:16]:
         result.append(
             f"Canonical hunk {hunk:03d}: before L{before}; after L{after}; "
-            "NFC-only candidate; human review.\n"
+            "NFC-only candidate; " + _canonical_codepoint_cue(old_raw, new_raw) +
+            "; human review.\n"
         )
     if len(candidates) > 16:
         result.append(
