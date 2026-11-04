@@ -289,9 +289,13 @@ def run(base, out, axe_path, user, password):
             and len(receipt['performance_lab_samples']) == 6,
             'R104: incomplete acceptance matrix')
     receipt['screenshots_sha256'] = dict(sorted(receipt['screenshots_sha256'].items()))
+    # The secondary human-readable QA report is emitted only AFTER the strict
+    # R106 journal gate accepts every viewport, scan, LCP/CLS and artifact.
+    # Failure leaves only the sanitized, explicitly incomplete progress journal.
+    journal.complete(receipt)
+    receipt['r106_isolated_core_contract'] = 'verified; production/hosted release HOLD'
     (out / 'R104_REAL_WP_GALLERY_QA.json').write_text(
         json.dumps(receipt, sort_keys=True, indent=2) + '\n', encoding='utf-8')
-    journal.complete(receipt)
     return receipt
 
 
