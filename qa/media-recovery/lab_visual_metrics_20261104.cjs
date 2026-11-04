@@ -12,6 +12,10 @@ const DOCUMENT_START_SCRIPT = String.raw`(() => {
     layout_shift_supported: false,
     largest_contentful_paint_supported: false,
     layout_shift_score: null,
+    max_session_window_shift_score: null,
+    session_start_ms: null,
+    session_previous_ms: null,
+    session_score: 0,
     qualifying_layout_shift_events: 0,
     excluded_recent_input_events: 0,
     largest_contentful_paint: null,
@@ -25,12 +29,25 @@ const DOCUMENT_START_SCRIPT = String.raw`(() => {
   try {
     const layout = new PerformanceObserver(list => {
       for (const entry of list.getEntries()) {
-        if (!Number.isFinite(entry.value) || entry.value < 0) continue;
+        if (!Number.isFinite(entry.value) || entry.value < 0 ||
+            !Number.isFinite(entry.startTime) || entry.startTime < 0) continue;
         if (entry.hadRecentInput === true) {
           state.excluded_recent_input_events++;
           continue;
         }
         state.layout_shift_score += entry.value;
+        // CLS-style lab diagnostic: largest session window, with max 1s
+        // gap and max 5s duration (not field / 75th-percentile CLS).
+        if (state.session_start_ms === null ||
+            entry.startTime - state.session_previous_ms > 1000 ||
+            entry.startTime - state.session_start_ms > 5000) {
+          state.session_start_ms = entry.startTime;
+          state.session_score = 0;
+        }
+        state.session_previous_ms = entry.startTime;
+        state.session_score += entry.value;
+        state.max_session_window_shift_score =
+          Math.max(state.max_session_window_shift_score, state.session_score);
         state.qualifying_layout_shift_events++;
         if (state.layout_shift_samples.length < 20) {
           state.layout_shift_samples.push({
@@ -46,6 +63,7 @@ const DOCUMENT_START_SCRIPT = String.raw`(() => {
     layout.observe({ type: 'layout-shift', buffered: true });
     state.layout_shift_supported = true;
     state.layout_shift_score = 0;
+    state.max_session_window_shift_score = 0;
     state.observers.push(layout);
   } catch (_) { /* Unsupported LayoutShift: do not invent a zero. */ }
   try {
@@ -76,6 +94,8 @@ const READ_EXPRESSION = String.raw`(() => {
     largest_contentful_paint_supported: s.largest_contentful_paint_supported === true,
     layout_shift_score: s.layout_shift_supported === true ?
       Math.round(s.layout_shift_score * 1000000) / 1000000 : null,
+    max_session_window_shift_score: s.layout_shift_supported === true ?
+      Math.round(s.max_session_window_shift_score * 1000000) / 1000000 : null,
     qualifying_layout_shift_events: s.qualifying_layout_shift_events,
     excluded_recent_input_events: s.excluded_recent_input_events,
     largest_contentful_paint: s.largest_contentful_paint || null,
