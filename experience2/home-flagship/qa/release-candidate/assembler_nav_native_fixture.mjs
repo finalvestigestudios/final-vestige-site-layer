@@ -57,9 +57,31 @@ if (!is_array($u) || ($u['scheme'] ?? '') !== 'http' ||
 $original=get_block_template('assembler//header','wp_template_part');
 if (!$original || empty($original->content)) ex2_abort('Assembler header template part missing');
 $source=$original->content;
+$resolved_header_sha256=hash('sha256',$source);
+$header_source='wp_resolved_template';
 $pattern='~<!-- wp:navigation(?:\s+(\{[^>]*\}))?\s*(?:/-->|-->.*?<!-- /wp:navigation -->)~s';
 if (preg_match_all($pattern,$source,$matches,PREG_SET_ORDER)!==1) {
-    ex2_abort('Unexpected header navigation block shape; wrapped='.preg_match_all('~<!-- wp:navigation(?:\\s|>)~',$source).' closing='.substr_count($source,'<!-- /wp:navigation -->').' selfclosing='.preg_match_all('~<!-- wp:navigation[^>]*?/-->~s',$source));
+    // WordPress may return a resolved header containing a pattern reference
+    // rather than the concrete navigation block. This fallback is permitted
+    // ONLY for an unmodified official Assembler theme in disposable Playground.
+    if (($original->source ?? '') !== 'theme')
+        ex2_abort('Custom header template: refusing to override unknown content');
+    $theme_dir=realpath(get_stylesheet_directory());
+    $header_path=realpath(get_stylesheet_directory().'/parts/header.html');
+    if (!$theme_dir || !$header_path || dirname(dirname($header_path)) !== $theme_dir ||
+        !is_file($header_path) || !is_readable($header_path))
+        ex2_abort('Installed Assembler header file absent or outside theme');
+    $vendor=file_get_contents($header_path);
+    // The digest comes from the actual official theme archive inspected in
+    // hosted Assembler run 41744662962; a theme update must be re-reviewed.
+    $expected_header_sha256='3b983fa0d9d6ce9b2bc1024e215d9d63d9ecba2ad11f881ec59e87a40c28c2aa';
+    if (!is_string($vendor) || hash('sha256',$vendor)!==$expected_header_sha256)
+        ex2_abort('Unreviewed installed theme header: pinned digest mismatch');
+    if (preg_match_all($pattern,$vendor,$vendor_matches,PREG_SET_ORDER)!==1)
+        ex2_abort('Pinned vendor header lacks exactly one supported navigation block');
+    $source=$vendor;
+    $matches=$vendor_matches;
+    $header_source='pinned_installed_theme_header';
 }
 $attrs=json_decode($matches[0][1] ?: '{}',true);
 if (!is_array($attrs)) ex2_abort('Unexpected header navigation block attributes');
@@ -87,7 +109,8 @@ wp_clean_post_cache($post);
 echo wp_json_encode(array('status'=>'ISOLATED_NAVIGATION_TEMPLATE_ONLY',
   'part_slug'=>'header','menu_id'=>$menu,'header_override_id'=>$post,
   'original_sha256'=>hash('sha256',$source),'modified_sha256'=>hash('sha256',$replaced),
-  'navigation_block_replacements'=>1));`;
+  'navigation_block_replacements'=>1,
+  'header_source'=>$header_source,'resolved_header_sha256'=>$resolved_header_sha256));`;
 export function phpFixtureSource(){return PHP;}
 
 export async function correctIsolatedNavigation({server,page,axePath,outputDirectory}) {
@@ -108,6 +131,9 @@ export async function correctIsolatedNavigation({server,page,axePath,outputDirec
   assert.equal(native.status,'ISOLATED_NAVIGATION_TEMPLATE_ONLY',
     'WP native navigation override incomplete: '+String(native.error||''));
   assert.equal(native.navigation_block_replacements,1);
+  assert.ok(['wp_resolved_template','pinned_installed_theme_header'].includes(native.header_source),
+    'Unrecognized source provenance');
+  assert.match(native.resolved_header_sha256,/^[a-f0-9]{64}$/);
   assert.equal(native.part_slug,'header');
   assert.match(native.original_sha256,/^[a-f0-9]{64}$/);
   assert.match(native.modified_sha256,/^[a-f0-9]{64}$/);
