@@ -14,6 +14,7 @@ from pathlib import Path
 from urllib.parse import quote, urlparse
 
 from playwright.sync_api import sync_playwright
+from qa_receipt_r105 import EvidenceJournal
 
 WIDTHS = (320, 390, 768, 1440, 1920)
 VIEW = 'R97_SOURCE_GALLERY.html'
@@ -61,6 +62,8 @@ def run(base, out, axe_path, user, password):
             'read-only temporary WordPress; no production or content writes',
         ],
     }
+    journal = EvidenceJournal(out)
+    journal.checkpoint(receipt, 'started')
     with sync_playwright() as playwright:
         browser = playwright.chromium.launch(headless=True, args=['--no-sandbox'])
         login_ctx = browser.new_context()
@@ -78,6 +81,7 @@ def run(base, out, axe_path, user, password):
 
         for width in WIDTHS:
             for js in (False, True):
+                journal.checkpoint(receipt, f'browser:{width}:js{int(js)}')
                 ctx = browser.new_context(
                     viewport={'width': width, 'height': 900},
                     storage_state=storage,
@@ -182,10 +186,12 @@ def run(base, out, axe_path, user, password):
                     'actual_wordpress_http': True, 'passed': True,
                 })
                 ctx.close()
+                journal.checkpoint(receipt, f'browser-done:{width}:js{int(js)}')
 
         # Test the *selected* state with real HTTP, with CSP bypass restricted to
         # diagnostic axe injection. Baseline functional contexts above retain CSP.
         for width in (390, 1440):
+            journal.checkpoint(receipt, f'axe:{width}')
             ctx = browser.new_context(
                 viewport={'width': width, 'height': 900},
                 storage_state=storage, bypass_csp=True,
@@ -212,12 +218,14 @@ def run(base, out, axe_path, user, password):
             require(not outcome['violations'],
                     f'R104: selected-state axe violations: {outcome["violations"]}')
             ctx.close()
+            journal.checkpoint(receipt, f'axe-done:{width}')
 
         # Repeat measurements on fresh navigations so variability is visible.
         # Instrument before navigation. No production/field CWV claim is permitted.
         for width in (390, 1440):
             recorded = 0
             for trial in range(1, 4):
+                journal.checkpoint(receipt, f'performance:{width}:trial{trial}')
                 ctx = browser.new_context(
                     viewport={'width': width, 'height': 900},
                     storage_state=storage, reduced_motion='reduce')
@@ -244,6 +252,9 @@ def run(base, out, axe_path, user, password):
                     'lcp_ms': perf['lcp_ms'], 'cls': perf['cls'],
                     'scope': 'disposable WordPress core, not Assembler/production',
                 })
+                # Persist the raw lab measurement *before* the budget assertion.
+                # Even a 2.5s LCP failure leaves a reproducible partial receipt.
+                journal.checkpoint(receipt, f'performance-observed:{width}:trial{trial}')
                 require(perf['cls'] is not None and perf['cls'] <= 0.1,
                         f'R104: CLS budget exceeded on {width} trial {trial}')
                 if perf['lcp_ms'] is not None:
@@ -280,6 +291,7 @@ def run(base, out, axe_path, user, password):
     receipt['screenshots_sha256'] = dict(sorted(receipt['screenshots_sha256'].items()))
     (out / 'R104_REAL_WP_GALLERY_QA.json').write_text(
         json.dumps(receipt, sort_keys=True, indent=2) + '\n', encoding='utf-8')
+    journal.complete(receipt)
     return receipt
 
 
@@ -291,7 +303,12 @@ if __name__ == '__main__':
     parser.add_argument('--user', required=True)
     parser.add_argument('--password', required=True)
     args = parser.parse_args()
-    result = run(args.base, args.out, args.axe, args.user, args.password)
+    try:
+        result = run(args.base, args.out, args.axe, args.user, args.password)
+    except Exception as exc:
+        # Redact exception text; CI always uploads the last atomic checkpoint.
+        EvidenceJournal(args.out).fail(type(exc).__name__)
+        raise
     print(json.dumps({
         'schema': result['schema'], 'cases': len(result['r103_interaction_cases']),
         'axe_scans': len(result['axe']),
