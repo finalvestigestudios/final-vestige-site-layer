@@ -30,6 +30,8 @@ function checkRun(run,expected,path,errors){
    slots.add(s);
   }
   if(!url(r.request_url)||!url(r.final_url))errors.push(p+': invalid URL');
+  // An unrelated XHR/Fetch on the same URL is not a browser Image response.
+  if(r.resource_type!=='Image')errors.push(p+': not CDP Image resource type');
   if(r.http_status!==200&&r.http_status!==206)errors.push(p+': not successful image response');
   if(typeof r.mime_type!=='string'||!/^image\//i.test(r.mime_type))errors.push(p+': wrong MIME');
   if(!Number.isSafeInteger(r.encoded_data_length)||r.encoded_data_length<=0)errors.push(p+': unknown actual CDP wire bytes');
@@ -70,7 +72,7 @@ function evaluate(data,verifiedSourceInventory){
  if(typeof data.source_inventory_id!=='string'||!data.source_inventory_id.trim())
    errors.push('missing source inventory identity');
  const posts=new Set(),slots=new Set(),beforeTotals=[],afterTotals=[];
- let repeats=null;
+ let repeats=null,cohortConditions=null;
  data.pairs.forEach((pair,n)=>{
   const p='pairs['+n+']';
   if(!pair||!Number.isInteger(pair.post_id)||pair.post_id<1||posts.has(pair.post_id)){
@@ -96,6 +98,11 @@ function evaluate(data,verifiedSourceInventory){
    const a=pair.after[i];
    const bb=checkRun(b,expected,p+'.before['+i+']',errors);
    const ab=checkRun(a,expected,p+'.after['+i+']',errors);
+   // Totals across 61 articles must not mix desktop, mobile or throttling profiles.
+   if(b&&okConditions(b.conditions)){
+    if(cohortConditions===null)cohortConditions=b.conditions;
+    else if(!same(cohortConditions,b.conditions))errors.push(p+': unequal cross-post browser conditions');
+   }
    if(b&&a&&(!same(b.conditions,a.conditions)||!same(b.conditions,pair.before[0]?.conditions)||
        !same(a.conditions,pair.after[0]?.conditions)))errors.push(p+': unequal browser conditions');
    beforeTotals[i]=(beforeTotals[i]||0)+bb;afterTotals[i]=(afterTotals[i]||0)+ab;
