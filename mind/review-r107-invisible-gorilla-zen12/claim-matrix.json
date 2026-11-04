@@ -1,0 +1,428 @@
+{
+  "checked": "2026-11-03",
+  "release": "HARD_HOLD",
+  "affiliate_acceptance": "NOT_VERIFIED",
+  "affiliate_url": null,
+  "buyer_pii_contract": "NOT_VERIFIED",
+  "live_tracking": false,
+  "source_register": [
+    {
+      "id": "S01",
+      "url": "https://inspire3.com/",
+      "kind": "merchant_catalog",
+      "scope": "Zen12 identity; seller claims"
+    },
+    {
+      "id": "S02",
+      "url": "https://zen12.com/hnp",
+      "kind": "exact_product_page",
+      "scope": "12-minute sessions; Beginner, Premium, Advanced tiers; guarantee headline"
+    },
+    {
+      "id": "S03",
+      "url": "https://zen12.com/about",
+      "kind": "merchant_details",
+      "scope": "12 levels; four audio styles; cautions"
+    },
+    {
+      "id": "S04",
+      "url": "https://zen12.com/getstarted",
+      "kind": "merchant_checkout",
+      "scope": "Premium full-course 48 MP3; requested mobile; not other tiers"
+    },
+    {
+      "id": "S05",
+      "url": "https://inspire3.com/privacy/",
+      "kind": "merchant_privacy",
+      "scope": "affiliate referred buyer identity sharing; SMS"
+    },
+    {
+      "id": "S06",
+      "url": "https://affiliates.inspire3.com/",
+      "kind": "generic_program",
+      "scope": "no Final Vestige acceptance or channel permission"
+    },
+    {
+      "id": "S07",
+      "url": "https://doi.org/10.1371/journal.pone.0286023",
+      "kind": "systematic_review",
+      "scope": "14 binaural EEG studies, inconsistent; product not assessed"
+    },
+    {
+      "id": "S08",
+      "url": "https://doi.org/10.1068/p281059",
+      "kind": "primary_study",
+      "scope": "1999 gorilla sustained inattentional blindness"
+    },
+    {
+      "id": "S09",
+      "url": "https://doi.org/10.1068/i0386",
+      "kind": "primary_study",
+      "scope": "2010 prior familiarity did not generalize"
+    },
+    {
+      "id": "S10",
+      "url": "https://doi.org/10.1177/0956797613479386",
+      "kind": "primary_study",
+      "scope": "2013 expert search; 24 radiologists, 83% missed"
+    },
+    {
+      "id": "S11",
+      "url": "https://doi.org/10.1073/pnas.2214930120",
+      "kind": "primary_study",
+      "scope": "2023 fast unexpected motion is detectable; n=4493"
+    },
+    {
+      "id": "S12",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/21299325/",
+      "kind": "study",
+      "scope": "task-conditional working-memory association"
+    },
+    {
+      "id": "S13",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "kind": "regulator",
+      "scope": "material connections near specific recommendation/earning link"
+    },
+    {
+      "id": "S14",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "kind": "regulator",
+      "scope": "objective health efficacy requires appropriate evidence"
+    },
+    {
+      "id": "S15",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "kind": "published_first_party",
+      "scope": "verified existing historical bridge"
+    },
+    {
+      "id": "S16",
+      "url": "https://finalvestige.com/focus/",
+      "kind": "published_first_party",
+      "scope": "existing Focus Fieldbook; only one Jetpack funnel"
+    },
+    {
+      "id": "S17",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "kind": "published_first_party",
+      "scope": "verified related investigation"
+    }
+  ],
+  "claim_decisions": [
+    {
+      "id": "C01",
+      "text": "Zen12 12-minute sessions",
+      "classification": "SELLER_DELIVERABLE",
+      "evidence": [
+        "S02",
+        "S03"
+      ],
+      "decision": "Attribute to merchant"
+    },
+    {
+      "id": "C02",
+      "text": "Beginner = six levels / 24 MP3s",
+      "classification": "SELLER_DELIVERABLE",
+      "evidence": [
+        "S02"
+      ],
+      "decision": "State tier"
+    },
+    {
+      "id": "C03",
+      "text": "Advanced = six levels / 24 MP3s",
+      "classification": "SELLER_DELIVERABLE",
+      "evidence": [
+        "S02"
+      ],
+      "decision": "State tier"
+    },
+    {
+      "id": "C04",
+      "text": "Premium = twelve levels / 48 MP3s",
+      "classification": "SELLER_DELIVERABLE",
+      "evidence": [
+        "S02",
+        "S04"
+      ],
+      "decision": "Do not generalize to all tiers"
+    },
+    {
+      "id": "C05",
+      "text": "Four audio styles",
+      "classification": "SELLER_DELIVERABLE",
+      "evidence": [
+        "S03"
+      ],
+      "decision": "Attribute"
+    },
+    {
+      "id": "C06",
+      "text": "12 minutes equal one hour of advanced meditation",
+      "classification": "UNSUPPORTED_PRODUCT_EFFICACY",
+      "evidence": [
+        "S02",
+        "S07"
+      ],
+      "decision": "Do not endorse"
+    },
+    {
+      "id": "C07",
+      "text": "Zen12 reliably induces claimed EEG brainwave state",
+      "classification": "UNVERIFIED_PRODUCT_MECHANISM",
+      "evidence": [
+        "S07"
+      ],
+      "decision": "Do not claim"
+    },
+    {
+      "id": "C08",
+      "text": "Specific mental/health improvement from Zen12",
+      "classification": "UNVERIFIED_PRODUCT_EFFICACY",
+      "evidence": [
+        "S14"
+      ],
+      "decision": "Do not claim"
+    },
+    {
+      "id": "C09",
+      "text": "2023 review covered fourteen EEG studies",
+      "classification": "SUPPORTED_LITERATURE_FINDING",
+      "evidence": [
+        "S07"
+      ],
+      "decision": "Cite directly"
+    },
+    {
+      "id": "C10",
+      "text": "2023 review tested Zen12",
+      "classification": "FALSE",
+      "evidence": [
+        "S07"
+      ],
+      "decision": "Explicitly deny"
+    },
+    {
+      "id": "C11",
+      "text": "Seller advertises one-year money-back guarantee",
+      "classification": "SELLER_POLICY_CLAIM",
+      "evidence": [
+        "S02",
+        "S04"
+      ],
+      "decision": "Terms still require verification"
+    },
+    {
+      "id": "C12",
+      "text": "Premium checkout requests mobile number",
+      "classification": "OBSERVED_MERCHANT_FORM",
+      "evidence": [
+        "S04"
+      ],
+      "decision": "Disclose"
+    },
+    {
+      "id": "C13",
+      "text": "Seller may pass purchaser name/email/product to affiliate",
+      "classification": "MERCHANT_PRIVACY_POLICY",
+      "evidence": [
+        "S05"
+      ],
+      "decision": "Contractual stop gate"
+    },
+    {
+      "id": "C14",
+      "text": "FV-specific affiliate acceptance is verified",
+      "classification": "NOT_VERIFIED",
+      "evidence": [
+        "S06"
+      ],
+      "decision": "No earning links"
+    },
+    {
+      "id": "C15",
+      "text": "1999 noticing depended on task difficulty and similarity",
+      "classification": "SUPPORTED_STUDY",
+      "evidence": [
+        "S08"
+      ],
+      "decision": "Cite in noncommercial article"
+    },
+    {
+      "id": "C16",
+      "text": "2010 knowing original gorilla increased all change detections",
+      "classification": "CONTRADICTED_STUDY",
+      "evidence": [
+        "S09"
+      ],
+      "decision": "Do not claim"
+    },
+    {
+      "id": "C17",
+      "text": "2013 83% of 24 radiologists missed staged gorilla",
+      "classification": "SUPPORTED_STUDY",
+      "evidence": [
+        "S10"
+      ],
+      "decision": "Do not infer clinical error rate"
+    },
+    {
+      "id": "C18",
+      "text": "2023 fast motion weakens inattentional blindness",
+      "classification": "SUPPORTED_STUDY",
+      "evidence": [
+        "S11"
+      ],
+      "decision": "Nuance limits"
+    },
+    {
+      "id": "C19",
+      "text": "Zen12 fixes inattentional blindness",
+      "classification": "UNSUPPORTED",
+      "evidence": [
+        "S08",
+        "S07"
+      ],
+      "decision": "Never imply"
+    },
+    {
+      "id": "C20",
+      "text": "Video improves FV conversion",
+      "classification": "UNTESTED_HYPOTHESIS",
+      "evidence": [],
+      "decision": "No uplift promise"
+    },
+    {
+      "id": "C21",
+      "text": "Near-CTA affiliate disclosure",
+      "classification": "FTC_GUIDANCE",
+      "evidence": [
+        "S13"
+      ],
+      "decision": "Required upon earning link activation"
+    },
+    {
+      "id": "C22",
+      "text": "FTC scientific proof for therapeutic claims",
+      "classification": "FTC_GUIDANCE",
+      "evidence": [
+        "S14"
+      ],
+      "decision": "No unsupported outcomes"
+    },
+    {
+      "id": "C23",
+      "text": "Final Vestige bought/tested Zen12",
+      "classification": "FALSE",
+      "evidence": [],
+      "decision": "Do not state"
+    }
+  ],
+  "gates": [
+    {
+      "name": "Named acceptance of Final Vestige in Inspire3 network",
+      "status": "CLOSED"
+    },
+    {
+      "name": "Authorized Zen12 product URL",
+      "status": "CLOSED"
+    },
+    {
+      "name": "Allowed website promotion",
+      "status": "CLOSED"
+    },
+    {
+      "name": "Allowed TikTok promotion",
+      "status": "CLOSED"
+    },
+    {
+      "name": "Allowed Dispatch email promotion",
+      "status": "CLOSED"
+    },
+    {
+      "name": "Approved original media and brand creative rights",
+      "status": "CLOSED"
+    },
+    {
+      "name": "Written exclusion of personally identifying buyer data to FV",
+      "status": "CLOSED"
+    },
+    {
+      "name": "Legal review of possible buyer details embedded in download",
+      "status": "CLOSED"
+    },
+    {
+      "name": "Exact tier/offer mapping verification",
+      "status": "CLOSED"
+    },
+    {
+      "name": "Operative Terms of Sale accessible and checked",
+      "status": "CLOSED"
+    },
+    {
+      "name": "Refund conditions and payment flows verified",
+      "status": "CLOSED"
+    },
+    {
+      "name": "No seller testimony implied to be independently typical",
+      "status": "CLOSED"
+    },
+    {
+      "name": "Product-specific clinical/EEG claims checked",
+      "status": "CLOSED"
+    },
+    {
+      "name": "Founder selects one canonical guide, no near-duplicate publishing",
+      "status": "CLOSED"
+    },
+    {
+      "name": "Actual WordPress Gutenberg/staging review",
+      "status": "CLOSED"
+    },
+    {
+      "name": "WCAG 2.2 AA audit 360/390/768/1440/1920",
+      "status": "CLOSED"
+    },
+    {
+      "name": "Keyboard/screenreader/no-JS/reduced-motion test",
+      "status": "CLOSED"
+    },
+    {
+      "name": "Video MP4 first-party render if variant B activated",
+      "status": "CLOSED"
+    },
+    {
+      "name": "WebVTT caption sync and poster review",
+      "status": "CLOSED"
+    },
+    {
+      "name": "No external embed/tracking SDK",
+      "status": "CLOSED"
+    },
+    {
+      "name": "Lighthouse/CWV/performance baseline",
+      "status": "CLOSED"
+    },
+    {
+      "name": "Attribution privacy impact sign-off",
+      "status": "CLOSED"
+    },
+    {
+      "name": "Independent site QA Issue #126 pass",
+      "status": "CLOSED"
+    },
+    {
+      "name": "Homepage lead Issue #150 coordination",
+      "status": "CLOSED"
+    },
+    {
+      "name": "Dispatch Issue #174 no-email-send hold",
+      "status": "CLOSED"
+    },
+    {
+      "name": "Separate explicit publication/deploy approval",
+      "status": "CLOSED"
+    }
+  ]
+}
