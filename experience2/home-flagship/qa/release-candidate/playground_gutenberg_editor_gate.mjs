@@ -106,8 +106,8 @@ function checkEditorReceipt(receipt, digest) {
   for (const v of Object.values(receipt.checks)) assert.equal(v, true);
 }
 /** On a successful PHP create response, validate the whole creation receipt.
- * IMPORTANT: mark draftCreated BEFORE calling this function so that even a
- * malformed receipt results in verified disposable-draft cleanup. */
+ * IMPORTANT: arm cleanup BEFORE requesting creation: a malformed or lost
+ * HTTP response does not prove that no disposable page was created. */
 function checkCreatedReceipt(created,digest) {
   assert.equal(created.status,200,'Disposable WordPress create HTTP status');
   const body=created.body;
@@ -163,6 +163,15 @@ async function postLocalAction(context,serverUrl,action,token) {
       }
       const body = await res.json();
       return {status,body};
+}
+
+/** Recover only a PHP-verified deletion; no invented cleanup successes. */
+async function verifyDisposableDeletion(act) {
+  try {
+    const r=await act('cleanup');
+    return r.status===200 && r.body?.result==='DELETED' &&
+      r.body?.verified_absent===true && r.body?.release==='HOLD';
+  } catch { return false; }
 }
 
 async function selfTest() {
@@ -291,6 +300,28 @@ async function selfTest() {
   await assert.rejects(()=>postLocalAction(fake([
     {status:200,contentType:'text/html',body:deletedBody}
   ]),'http://127.0.0.1:9473/','cleanup',testToken),/non-JSON/);total++;
+  const deletionOk={status:200,body:{result:'DELETED',verified_absent:true,release:'HOLD'}};
+  let cleanupAttempted=false;
+  assert.equal(await verifyDisposableDeletion(async action=>{
+    assert.equal(action,'cleanup'); cleanupAttempted=true; return deletionOk;
+  }),true); assert.equal(cleanupAttempted,true); total++;
+  for(const bad of [
+    {...deletionOk,status:422},
+    {...deletionOk,body:{...deletionOk.body,verified_absent:false}},
+    {...deletionOk,body:{...deletionOk.body,release:'LIVE'}},
+    {...deletionOk,body:{...deletionOk.body,result:'NOT_FOUND'}}
+  ]) { assert.equal(await verifyDisposableDeletion(async()=>bad),false); total++; }
+  assert.equal(await verifyDisposableDeletion(async()=>{throw Error('lost cleanup reply');}),false);total++;
+  const phpSource=await readFile(join(HERE,'playground_gutenberg_editor_gate.php'),'utf8');
+  for(const [name,variable] of [
+    ['fv-ex2-synthetic-only.marker','marker'],
+    ['fv-ex2-editor-token','token_file'],
+    ['fv-ex2-synthetic-candidate.html','candidate_path'],
+    ['fv-ex2-editor-draft-id','id_file']
+  ]) {
+    assert.ok(phpSource.includes('$'+variable+" = '/tmp/"+name+"';"),
+      'Private Playground fixture path mismatch: '+name);total++;
+  }
   console.log(JSON.stringify({self_test:'PASS',cases:total,fixture_sha256:sha(fixtureBytes),
     data_class:DATA_CLASS,network_used:false,release:'HOLD'}));
 }
@@ -314,7 +345,7 @@ if (process.argv.includes('--self-test')) {
   ]);
   const token = randomBytes(32).toString('hex');
   const probe = await readFile(join(HERE,'playground_gutenberg_editor_gate.php'));
-  let server, browser, context, draftCreated = false, act;
+  let server, browser, context, creationAttempted = false, act;
   let failure = null;
   let proof = null;
   try {
@@ -322,20 +353,30 @@ if (process.argv.includes('--self-test')) {
       command:'server', wp:'6.8', php:'8.3', port:9473, login:false
     });
     assert.ok(loopback(server.serverUrl), 'Playground server must be HTTP loopback with explicit port');
-    await server.playground.writeFile('/wordpress/wp-content/fv-ex2-synthetic-only.marker',
+    await server.playground.writeFile('/tmp/fv-ex2-synthetic-only.marker',
       'SYNTHETIC_TEST_FIXTURE_ONLY\n');
-    await server.playground.writeFile('/wordpress/wp-content/fv-ex2-synthetic-candidate.html',candidate);
-    await server.playground.writeFile('/wordpress/wp-content/fv-ex2-editor-token',token+'\n');
+    await server.playground.writeFile('/tmp/fv-ex2-synthetic-candidate.html',candidate);
+    await server.playground.writeFile('/tmp/fv-ex2-editor-token',token+'\n');
     await server.playground.writeFile('/wordpress/fv_ex2_editor_qa_once.php',probe);
     const makeUrl = (action) => new URL('/fv_ex2_editor_qa_once.php?action='+action,server.serverUrl);
     browser = await chromium.launch({headless:true});
     context = await browser.newContext({viewport:{width:1440,height:900}});
+    // Real local-HTTP negative controls; no fixture may be delivered from
+    // the public wp-content URL. Run before initiating any WordPress writes.
+    for (const name of [
+      'fv-ex2-synthetic-only.marker','fv-ex2-editor-token',
+      'fv-ex2-synthetic-candidate.html','fv-ex2-editor-draft-id'
+    ]) {
+      const url=new URL('/wp-content/'+name,server.serverUrl);
+      const res=await context.request.get(url.toString(),{
+        timeout:10000,maxRedirects:0,failOnStatusCode:false
+      });
+      assert.notEqual(res.status(),200,'Disposable QA state is HTTP-retrievable: '+name);
+    }
     act = (action) => postLocalAction(context,server.serverUrl,action,token);
+    // Creation can succeed even when the HTTP receipt is corrupted or lost.
+    creationAttempted = true;
     const created = await act('create');
-    // A CREATED response means a temporary draft may exist. Arm cleanup
-    // BEFORE validating the receipt: corrupted data-class or digest must
-    // never leave a test draft orphaned.
-    draftCreated = created.status===200 && created.body?.result==='CREATED';
     const draftId = checkCreatedReceipt(created,digest);
     const login = await act('login');
     assert.equal(login.status,200);
@@ -388,14 +429,9 @@ if (process.argv.includes('--self-test')) {
   } catch(e) {
     failure = e;
   } finally {
-    let cleaned = !draftCreated;
-    if(draftCreated && server && context && act) {
-      try {
-        // Reuse the same guarded POST and canonicalization policy as create.
-        const deleted=await act('cleanup');
-        cleaned=deleted.status===200 && deleted.body.result==='DELETED' &&
-          deleted.body.verified_absent===true && deleted.body.release==='HOLD';
-      } catch {cleaned=false; }
+    let cleaned = !creationAttempted;
+    if(creationAttempted && server && context && act) {
+      cleaned=await verifyDisposableDeletion(act);
     }
     if(!cleaned) failure = new Error('FAIL CLOSED: disposable Gutenberg draft deletion unverified');
     if(browser) await browser.close();
