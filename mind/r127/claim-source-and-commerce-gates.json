@@ -1,0 +1,335 @@
+{
+  "schema": "fv-mind-claims-eligibility-v1",
+  "reviewed_at": "2026-11-04",
+  "scope": "R127 Zen12 single-offer research; all commercial gates remain closed",
+  "selected_offer": {
+    "merchant": "Inspire3",
+    "product": "Zen12 Premium",
+    "audience": "Adults already researching a structured, short meditation-audio library",
+    "eligibility": "NOT VERIFIED / HOLD",
+    "authorized_affiliate_url": null,
+    "commission_terms": null,
+    "actual_buyer_checkout_price": null,
+    "validated_refund_experience": null,
+    "merchant_reported_paid_conversions": null,
+    "refunds_and_fees": null,
+    "qualified_human_sessions": null,
+    "verified_net_revenue": null,
+    "ad_approval": "NOT VERIFIED",
+    "email_approval": "NOT VERIFIED",
+    "funnel_status": "DRAFT ONLY"
+  },
+  "sources": [
+    {
+      "id": "s01",
+      "type": "primary_experiment",
+      "title": "Wegner et al. 1987 Paradoxical effects of thought suppression",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/3612492/"
+    },
+    {
+      "id": "s02",
+      "type": "theory",
+      "title": "Wegner 1994 Ironic processes of mental control",
+      "url": "https://doi.org/10.1037/0033-295X.101.1.34"
+    },
+    {
+      "id": "s03",
+      "type": "research_review",
+      "title": "Wenzlaff and Wegner 2000 Thought suppression",
+      "url": "https://doi.org/10.1146/annurev.psych.51.1.59"
+    },
+    {
+      "id": "s04",
+      "type": "research_review",
+      "title": "Levin et al 2015 Decoupling as mechanism",
+      "url": "https://doi.org/10.1177/0145445515603707"
+    },
+    {
+      "id": "s05",
+      "type": "systematic_review",
+      "title": "Ingendoh et al 2023 Binaural beats EEG review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37205669/"
+    },
+    {
+      "id": "s06",
+      "type": "seller_page",
+      "title": "Inspire3 official catalog",
+      "url": "https://inspire3.com/"
+    },
+    {
+      "id": "s07",
+      "type": "seller_page",
+      "title": "Zen12 primary HNP Premium offer",
+      "url": "https://zen12.com/hnp"
+    },
+    {
+      "id": "s08",
+      "type": "seller_page",
+      "title": "Zen12 secret conditional coupon offer",
+      "url": "https://zen12.com/secret/"
+    },
+    {
+      "id": "s09",
+      "type": "seller_policy",
+      "title": "Inspire3 published privacy",
+      "url": "https://inspire3.com/privacy/"
+    },
+    {
+      "id": "s10",
+      "type": "regulator",
+      "title": "FTC Endorsement Guides What People Are Asking",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking"
+    },
+    {
+      "id": "s11",
+      "type": "regulator",
+      "title": "FTC Health Products Compliance Guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+    },
+    {
+      "id": "s12",
+      "type": "existing_first_party",
+      "title": "FV Focus Fieldbook",
+      "url": "https://finalvestige.com/focus/",
+      "verification_note": "Previously confirmed by authenticated WordPress inspection; current unauthenticated web fetch failed Nov 4"
+    },
+    {
+      "id": "s13",
+      "type": "existing_first_party",
+      "title": "FV Puységur Animal Magnetism Files",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "verification_note": "Previously confirmed by authenticated WordPress inspection; current unauthenticated web fetch failed Nov 4"
+    },
+    {
+      "id": "s14",
+      "type": "existing_first_party",
+      "title": "FV Change Blindness",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "verification_note": "Previously confirmed by authenticated WordPress inspection; current unauthenticated web fetch failed Nov 4"
+    },
+    {
+      "id": "s15",
+      "type": "existing_first_party",
+      "title": "FV Mesmerism",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "verification_note": "Previously confirmed by authenticated WordPress inspection; current unauthenticated web fetch failed Nov 4"
+    }
+  ],
+  "claims": [
+    {
+      "id": "c01",
+      "claim": "Volunteers in specified suppression-first experiment had more later white-bear mentions",
+      "basis": [
+        "s01"
+      ],
+      "decision": "PUBLISH_WITH_DESIGN_LIMITS"
+    },
+    {
+      "id": "c02",
+      "claim": "Trying not to think of anything always makes it worse",
+      "basis": [
+        "s01",
+        "s03"
+      ],
+      "decision": "EXCLUDE_UNIVERSAL"
+    },
+    {
+      "id": "c03",
+      "claim": "Monitoring and operating processes help explain ironic mental control",
+      "basis": [
+        "s02",
+        "s03"
+      ],
+      "decision": "PRESENT_AS_MODEL"
+    },
+    {
+      "id": "c04",
+      "claim": "A specific distractor reduced some later preoccupation in second original experiment",
+      "basis": [
+        "s01"
+      ],
+      "decision": "PUBLISH_WITH_EXPERIMENTAL_LIMITS"
+    },
+    {
+      "id": "c05",
+      "claim": "Mindfulness acceptance decoupling proves Zen12 treats intrusive thoughts",
+      "basis": [
+        "s04"
+      ],
+      "decision": "EXCLUDE_INFERENCE"
+    },
+    {
+      "id": "c06",
+      "claim": "Zen12 seller describes twelve-minute audio, twelve levels, four listening styles",
+      "basis": [
+        "s06",
+        "s07"
+      ],
+      "decision": "SELLER_DESCRIPTION_ONLY"
+    },
+    {
+      "id": "c07",
+      "claim": "Premium contains 48 MP3s and accompanying materials",
+      "basis": [
+        "s07"
+      ],
+      "decision": "SELLER_DESCRIPTION_NO_DELIVERY_TEST"
+    },
+    {
+      "id": "c08",
+      "claim": "Twelve Zen12 minutes equal one hour of advanced meditation",
+      "basis": [
+        "s07"
+      ],
+      "decision": "EXCLUDE_UNSUBSTANTIATED"
+    },
+    {
+      "id": "c09",
+      "claim": "Zen12 guarantees increased focus, relaxation or clinical outcomes",
+      "basis": [
+        "s07",
+        "s11"
+      ],
+      "decision": "EXCLUDE_UNSUBSTANTIATED"
+    },
+    {
+      "id": "c10",
+      "claim": "Brainwave entrainment via binaural beats is conclusively demonstrated",
+      "basis": [
+        "s05"
+      ],
+      "decision": "EXCLUDE_CONTRADICTORY_EVIDENCE"
+    },
+    {
+      "id": "c11",
+      "claim": "2023 review of fourteen EEG studies finds five supportive eight contradictory one mixed",
+      "basis": [
+        "s05"
+      ],
+      "decision": "PUBLISH_WITH_HETEROGENEITY_LIMIT"
+    },
+    {
+      "id": "c12",
+      "claim": "Official seller HNP page displays Premium $87.99",
+      "basis": [
+        "s07"
+      ],
+      "decision": "DATE_STAMP_SELLER_PROMOTION_ONLY"
+    },
+    {
+      "id": "c13",
+      "claim": "Secret page displays conditional $37 coupon offer universally available",
+      "basis": [
+        "s08"
+      ],
+      "decision": "EXCLUDE_UNVERIFIED_GENERALIZATION"
+    },
+    {
+      "id": "c14",
+      "claim": "Seller advertises one-year refund policy",
+      "basis": [
+        "s07"
+      ],
+      "decision": "MERCHANT_POLICY_ONLY_NO_ACTUAL_REFUND_TEST"
+    },
+    {
+      "id": "c15",
+      "claim": "Inspire3 policy permits buyer information to be shared with referring affiliate",
+      "basis": [
+        "s09"
+      ],
+      "decision": "PUBLISH_PRIVACY_WARNING_AND_GATE"
+    },
+    {
+      "id": "c16",
+      "claim": "Affiliate tracking approval for Final Vestige is established",
+      "basis": [
+        "s06"
+      ],
+      "decision": "HOLD_NO_NAMED_VERIFICATION"
+    },
+    {
+      "id": "c17",
+      "claim": "Disclosure must be proximate to a potential earning recommendation",
+      "basis": [
+        "s10"
+      ],
+      "decision": "REQUIRED"
+    },
+    {
+      "id": "c18",
+      "claim": "Objective psychological benefit claims must be adequately substantiated",
+      "basis": [
+        "s11"
+      ],
+      "decision": "REQUIRED"
+    },
+    {
+      "id": "c19",
+      "claim": "Focus Fieldbook is free through existing Jetpack path",
+      "basis": [
+        "s12"
+      ],
+      "decision": "EXISTING_ROUTE_RECHECK_BEFORE_RELEASE"
+    },
+    {
+      "id": "c20",
+      "claim": "Outbound affiliate clicks demonstrate paid affiliate sales",
+      "basis": [],
+      "decision": "FALSE_METRIC_MUST_NOT_REPORT"
+    }
+  ],
+  "closed_gates": [
+    "named_final_vestige_merchant_acceptance",
+    "approved_affiliate_tracking_link",
+    "approved_product_specific_promo_channels",
+    "approved_email_promotions",
+    "review_of_approved_creatives_no_ad_copying",
+    "actual_buyer_final_price",
+    "product_bundle_match_at_checkout",
+    "applicable_return_terms",
+    "merchant_privacy_minimization_in_writing",
+    "no_purchase_PII_in_FV_measurement",
+    "authoritative_settlement_export_access",
+    "paid_sale_and_refund_mapping",
+    "verified_payhip_rights_cleared_alternative",
+    "grok_real_asset_id_mapping",
+    "first_party_qualified_session_evidence",
+    "attribution_instrumentation_staging",
+    "browser_wcag_2_2_AA",
+    "lighthouse_and_cwv",
+    "playable_captions_and_transcript",
+    "release_approval",
+    "site_QA",
+    "founder_merchant_activation_approval"
+  ],
+  "experiment": {
+    "variants": [
+      "A text-only",
+      "B identical guide + optional 40-second original film"
+    ],
+    "status": "BUILT_AS_HTML_STORYBOARD_NOT_TESTED_REAL_USERS",
+    "randomization": "NOT ACTIVE",
+    "primary_metric": "7/30-day realized net revenue per 1000 qualified-human sessions",
+    "do_not_equate": [
+      "landing_visit",
+      "affiliate_outbound_click",
+      "focus_lead",
+      "checkout_start",
+      "merchant_settled_sale"
+    ],
+    "session_denominator": "UNKNOWN",
+    "order_source": "NO_AUTHORIZED_EXPORT",
+    "hypothesis": "An optional original film may clarify audio-shopping criteria without raising LCP; unknown outcome"
+  },
+  "guardrails": {
+    "live_cms_writes": false,
+    "affiliate_links_active": false,
+    "duplicate_Jetpack_forms": false,
+    "new_scripts": false,
+    "external_embed": false,
+    "autoplay": false,
+    "payment_claims": false
+  },
+  "owner": "FV Mind & Affiliate Studio; founder release approval; Claude engineering; Site QA independent"
+}
