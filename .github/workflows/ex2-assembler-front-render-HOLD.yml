@@ -48,10 +48,11 @@ jobs:
           node --check experience2/home-flagship/qa/release-candidate/playground_assembler_render_gate.mjs
           node --test experience2/home-flagship/qa/release-candidate/test_assembler_media_failure_evidence.mjs
           node --test experience2/home-flagship/qa/release-candidate/test_assembler_nav_native_fixture.mjs
+          node --test experience2/home-flagship/qa/release-candidate/test_playground_published_margins_gate.mjs
           node experience2/home-flagship/qa/release-candidate/playground_gutenberg_editor_gate.mjs --self-test
           node experience2/home-flagship/qa/release-candidate/playground_assembler_render_gate.mjs --self-test
           php -l experience2/home-flagship/qa/release-candidate/playground_gutenberg_editor_gate.php
-      - name: Assemble actual eleven source-controlled flagship files with synthetic Margins and Jetpack
+      - name: Assemble eleven real flagship sources with published Margins and synthetic Jetpack
         run: |
           set -euo pipefail
           python -I experience2/home-flagship/qa/release-candidate/write_source_flagship_playground_candidate.py \
@@ -140,7 +141,7 @@ jobs:
           node experience2/home-flagship/qa/release-candidate/playground_gutenberg_editor_gate.mjs \
             --candidate "$FV_CANDIDATE" --manifest "$FV_MANIFEST" \
             --assembler-dir "$FV_THEME_PARENT/assembler" --evidence-dir "$FV_SCREEN_DIR"
-      - name: Store only non-sensitive synthetic candidate screenshots
+      - name: Store only non-sensitive isolated candidate screenshots
         if: ${{ always() && env.FV_SCREEN_DIR != '' }}
         uses: actions/upload-artifact@v4
         with:
