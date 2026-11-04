@@ -1,0 +1,38 @@
+name: Preparedness R113 private source and merchant-proof diagnostics
+on:
+  push:
+    branches:
+      - review/preparedness-r113-citation-visibility-hold-20261103
+  pull_request:
+    paths:
+      - preparedness/tools/r113_preparedness_landing_custody.py
+      - preparedness/tests/test_r113_preparedness_landing_custody.py
+      - preparedness/docs/R113_FROZEN_GUIDE_CITATION_VISIBILITY_AND_CONVERSION_HOLD.md
+      - .github/workflows/preparedness-r113-private-tests.yml
+permissions:
+  contents: read
+jobs:
+  r113-private-hold:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Focused source and commercial fail-closed controls
+        run: python -I -m unittest discover -s preparedness/tests -p 'test_r113_*.py' -v
+      - name: Exact original frozen guide and source-visible CTA hold
+        run: python -I preparedness/tools/r113_preparedness_landing_custody.py --repo-root .
+      - name: Native unpublished archive validation
+        run: python -I preparedness/tools/validate.py
+      - name: Offline WordPress-ready DRAFT build (no API or publishing)
+        run: python -I preparedness/tools/build.py
+      - name: Complete Python regression suite bounded but not skipped
+        run: timeout 480s python -I -m unittest discover -s preparedness/tests -q
+      - name: Converged seven-branch source-and-citation scan (must fail closed)
+        run: python -I preparedness/tools/r111_converged_source_review_gate.py --repo-root .
+      - name: Assert no publication or CMS access
+        run: echo 'R113 HOLD - engineering diagnostics are not safety or publication approval'
