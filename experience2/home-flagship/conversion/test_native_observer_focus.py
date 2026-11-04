@@ -27,7 +27,7 @@ def assert_bridge(index: str, css: str) -> None:
         raise ValueError("Native observer exit absent or duplicated")
     # Only inspect inside the authentic observer chapter, never a QA fixture.
     part = index[index.index(BEGIN):index.index("</section>", index.index(BEGIN))]
-    anchors = re.findall(r"<a\\b[^>]*>", part)
+    anchors = re.findall(r"<a\b[^>]*>", part)
     focus = [a for a in anchors if MARKER in a]
     if len(focus) != 1 or f'href="{FOCUS}"' not in focus[0]:
         raise ValueError("Native Focus CTA must be unique, untagged, and canonical")
