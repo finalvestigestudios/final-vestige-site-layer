@@ -56,6 +56,39 @@ test('PHP refuses production, wrong theme and multisite before native writes',()
     assert.ok(src.includes(token),'missing '+token);
   assert.equal(src.includes('finalvestige.com'),false);
 });
+test('pinned vendor header custody is required BEFORE all isolated WordPress writes',()=>{
+  const php=phpFixtureSource();
+  const markers=[
+    "get_block_template('assembler//header','wp_template_part')",
+    "($original->source ?? '') !== 'theme'",
+    "($original->theme ?? '') !== 'assembler'",
+    "($original->slug ?? '') !== 'header'",
+    "hash('sha256',$part_bytes)!==$expected_part_sha256",
+    "hash('sha256',$pattern_bytes)!==$expected_pattern_sha256",
+    "hash('sha256',$source)!==$expected_part_sha256",
+    "$blocks=parse_blocks($source)"
+  ];
+  for(const marker of markers)assert.ok(php.includes(marker),'Missing preflight: '+marker);
+  const cutoff=php.indexOf("$menu=wp_insert_post(");
+  assert.ok(cutoff>0,'Missing first synthetic DB write');
+  for(const marker of markers)
+    assert.ok(php.indexOf(marker)<cutoff,'Header trust check must predate WP writes: '+marker);
+  assert.equal((php.match(/\$theme_dir=realpath\(get_stylesheet_directory\(\)\)/g)||[]).length,1,
+    'Vendor fingerprint must be a single universal preflight, not fallback-only');
+});
+test('custom, filtered or unknown-source headers are rejected before native navigation creation',()=>{
+  const php=phpFixtureSource();
+  const failGuards=[
+    "Refusing non-vendor or customized Assembler header",
+    "Resolved header differs from the pinned vendor part",
+    "Unreviewed installed Assembler header or pattern digest"
+  ];
+  const firstInsert=php.indexOf("$menu=wp_insert_post(");
+  for(const marker of failGuards){
+    assert.ok(php.includes(marker),'Missing fail-closed template origin guard: '+marker);
+    assert.ok(php.indexOf(marker)<firstInsert,'Header rejection must precede menu insertion');
+  }
+});
 test('native WordPress post-cache invalidation uses real core API (regression #864)',()=>{
   const php=phpFixtureSource();
   assert.match(php,/\bclean_post_cache\(\$post\);/,
