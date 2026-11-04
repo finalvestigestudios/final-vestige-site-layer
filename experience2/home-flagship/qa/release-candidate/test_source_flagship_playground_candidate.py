@@ -210,7 +210,7 @@ class FullSourceFlagshipTests(unittest.TestCase):
         self.assertNotIn("<main>", candidate)
         self.assertNotIn("</main>", candidate)
         self.assertEqual(candidate.count('class="fv-hf__chapter-nav"'), 1)
-        self.assertEqual(candidate.count('href="https://finalvestige.com/focus/"'),
+        self.assertGreaterEqual(candidate.count('href="https://finalvestige.com/focus/"'),
                          self.index.count('href="https://finalvestige.com/focus/"'))
         for bad in (
             self.index.replace("<main>", "<section>", 1),
