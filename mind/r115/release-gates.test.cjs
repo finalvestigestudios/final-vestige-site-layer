@@ -31,18 +31,18 @@ function runChecks(gates, A, B, vtt, article, contract) {
   check('multiple hard release gates remain', gates.unmet_release_gates.length >= 10);
   for (const [name, html] of [['A', A], ['B', B]]) {
     check(name + ' remains noindex and readable without scripts', html.includes('noindex,nofollow') &&
-      !/<script\\b/i.test(html) && html.includes('<main>'));
+      !/<script\b/i.test(html) && html.includes('<main>'));
     check(name + ' merchant source exact but unclickable', html.includes('https://zen12.com/hnp') &&
-      !/href=["'][^"']*(zen12\\.com|subliminalguru\\.com)/i.test(html));
+      !/href=["'][^"']*(zen12\.com|subliminalguru\.com)/i.test(html));
     check(name + ' disabled commerce with near commission disclosure', /<button[^>]*disabled[^>]*>/i.test(html) &&
       Math.abs(html.indexOf('commission') - html.indexOf('disabled aria-disabled')) < 450);
-    check(name + ' no live auto tracking or signup', !/<(form|iframe|video)[\\s>]/i.test(html) &&
-      !/autoplay\\s*=/i.test(html));
+    check(name + ' no live auto tracking or signup', !/<(form|iframe|video)[\s>]/i.test(html) &&
+      !/autoplay\s*=/i.test(html));
   }
   check('video is explicitly storyboard not playback', B.includes('data-film-status="storyboard-only"') &&
     B.includes('video has NOT been produced'));
-  check('B minus one film section equals A', B.replace(/<section aria-labelledby="film-title" id="optional-film"[\\s\\S]*?<\\/section>\\n/, '') === A);
-  const cues = [...vtt.matchAll(/(\\d\\d):(\\d\\d):(\\d\\d)\\.(\\d{3}) --> (\\d\\d):(\\d\\d):(\\d\\d)\\.(\\d{3})/g)]
+  check('B minus one film section equals A', B.replace(/<section aria-labelledby="film-title" id="optional-film"[\s\S]*?<\/section>\n/, '') === A);
+  const cues = [...vtt.matchAll(/(\d\d):(\d\d):(\d\d)\.(\d{3}) --> (\d\d):(\d\d):(\d\d)\.(\d{3})/g)]
     .map(x => [Number(x[1])*3600000 + Number(x[2])*60000 + Number(x[3])*1000 + Number(x[4]),
       Number(x[5])*3600000 + Number(x[6])*60000 + Number(x[7])*1000 + Number(x[8])]);
   check('40 seconds contiguous captions', cues.length === 6 && cues[0][0] === 0 &&
@@ -63,6 +63,6 @@ if (typeof require === 'function' && require.main === module) {
     get('mind/r114/zen12-text-A.html'), get('mind/r114/zen12-film-B.html'),
     get('mind/r114/film-40s.vtt'), get('mind/r115/subliminal-audio-investigation.md'),
     get('mind/r115/conversion-release-contract.md'));
-  process.stdout.write(JSON.stringify(result, null, 2) + '\\n');
+  process.stdout.write(JSON.stringify(result, null, 2) + '\n');
   if (result.failures.length) process.exitCode = 1;
 }
