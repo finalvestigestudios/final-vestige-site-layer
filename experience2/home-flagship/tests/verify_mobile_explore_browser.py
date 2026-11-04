@@ -3,14 +3,14 @@
 
 Run from any directory:
  python -I experience2/home-flagship/tests/verify_mobile_explore_browser.py --out /tmp/ex2-mobile-menu
-Requires local playwright + Chromium. Never writes WordPress. This is FILE://
+Requires local playwright + Chromium. Never writes WordPress. This is inlined exact
 source QA, not Assembler staging, field CWV, whole-document WCAG or QD approval.
 """
 import argparse
 import json
 import hashlib
 from pathlib import Path
-from urllib.parse import unquote
+import re
 
 HERE = Path(__file__).resolve().parents[1]
 WIDTHS = (320, 360, 390, 420, 600, 768, 920, 921, 1440)
@@ -22,27 +22,47 @@ LINKS = (
 
 
 def assert_source_contract(html, css):
-    from bs4 import BeautifulSoup
-    soup = BeautifulSoup(html, "html.parser")
-    masthead = soup.select_one(".fv-hf__masthead")
-    assert masthead is not None
-    details = masthead.select("details.fv-hf__mobile-explore")
-    assert len(details) == 1 and not details[0].has_attr("open")
-    summary = details[0].find("summary", recursive=False)
-    assert summary and "Explore" in summary.get_text(" ", strip=True)
-    desktop = masthead.select_one("nav.fv-hf__nav")
-    mobile = details[0].select_one("nav.fv-hf__mobile-explore-links")
-    assert desktop and mobile
-    for nav in (desktop, mobile):
-        found = [(a.get_text(" ", strip=True), a.get("href"))
-                 for a in nav.find_all("a")]
-        assert found == list(LINKS), f"Navigation route mismatch: {found!r}"
-    assert masthead.select_one(".fv-hf__mast-cta")["href"] == "https://finalvestige.com/focus/"
-    assert len(soup.select(".fv-hf__chapter-nav a")) == 7
-    assert "aria-label=\"Primary site destinations\"" in html
+    mast = re.search(r'<header class="fv-hf__masthead">(.*?)</header>', html, re.S)
+    assert mast, "Missing flagship masthead"
+    header = mast.group(1)
+    details = re.search(r'<details class="fv-hf__mobile-explore">(.*?)</details>', header, re.S)
+    assert details, "Native closed-by-default details disclosure missing"
+    assert "<summary>Explore " in details.group(1), "Missing native summary"
+    for selector, fragment in (
+        ("desktop", re.search(r'<nav class="fv-hf__nav"[^>]*>(.*?)</nav>', header, re.S)),
+        ("mobile", re.search(r'<nav class="fv-hf__mobile-explore-links"[^>]*>(.*?)</nav>',
+                             details.group(1), re.S)),
+    ):
+        assert fragment, f"Missing {selector} primary routes"
+        found = [(re.sub(r'<[^>]*>', '', name).strip(), href)
+                 for href, name in re.findall(r'<a href="([^"]+)">(.+?)</a>',
+                                              fragment.group(1), re.S)]
+        assert found == list(LINKS), f"{selector} routes changed: {found!r}"
+    assert re.search(r'class="fv-hf__mast-cta" href="https://finalvestige.com/focus/"', header)
+    chapter = re.search(r'<nav class="fv-hf__chapter-nav"[^>]*>(.*?)</nav>', html, re.S)
+    assert chapter and len(re.findall(r'<a href="#fv-hf-', chapter.group(1))) == 7
+    assert 'aria-label="Primary site destinations"' in html
     assert ".fv-hf .fv-hf__mobile-explore" in css
     assert "@media (max-width: 920px)" in css
     assert "@media (forced-colors: active)" in css
+
+
+def inline_local_styles(html):
+    # Browser sandbox may block file:// navigation. Inlining the actual six
+    # checked-out stylesheets is deterministic and requires no HTTP server.
+    stylesheet_names = (
+        "flagship.css", "chronicle.css", "chronicle-lens.css",
+        "inquiry.css", "observer-lab.css", "reading-trail.css",
+    )
+    found = []
+    def replace(m):
+        name = m.group(1)
+        assert name in stylesheet_names, f"Unapproved stylesheet {name!r}"
+        found.append(name)
+        return "<style>\n" + (HERE / name).read_text() + "\n</style>"
+    rendered = re.sub(r'<link rel="stylesheet" href="\./([^"]+)">', replace, html)
+    assert tuple(found) == stylesheet_names, f"Stylesheet order changed: {found}"
+    return rendered
 
 
 def main():
@@ -56,6 +76,7 @@ def main():
     css_path = HERE / "flagship.css"
     html, css = html_path.read_text(), css_path.read_text()
     assert_source_contract(html, css)
+    render_html = inline_local_styles(html)
     args.out.mkdir(parents=True, exist_ok=True)
     results, failures = [], []
     with sync_playwright() as pw:
@@ -72,7 +93,7 @@ def main():
                 page.route("http://**/*", lambda route: route.abort())
                 row = {"width": width, "status": "FAIL"}
                 try:
-                    page.goto(html_path.as_uri(), wait_until="load", timeout=30000)
+                    page.set_content(render_html, wait_until="domcontentloaded", timeout=30000)
                     assert page.locator(".fv-hf__mobile-explore").count() == 1
                     is_mobile = width <= 920
                     visible_mobile = page.locator(".fv-hf__mobile-explore").is_visible()
@@ -102,6 +123,12 @@ def main():
                         assert summary.evaluate("(e)=>document.activeElement===e"), "Summary not focusable"
                         page.keyboard.press("Enter")
                         assert page.locator(".fv-hf__mobile-explore").evaluate("(d)=>d.open"), "Enter did not open"
+                        # Even with the menu open, the free Focus CTA must remain hittable.
+                        assert cta.evaluate("""e => {
+                            const r=e.getBoundingClientRect();
+                            const hit=document.elementFromPoint((r.left+r.right)/2,(r.top+r.bottom)/2);
+                            return hit===e || e.contains(hit);
+                        }"""), "Mobile menu overlays the Focus CTA"
                         for label, href in LINKS:
                             anchor = page.locator(".fv-hf__mobile-explore-links a", has_text=label)
                             assert anchor.is_visible() and anchor.get_attribute("href") == href
