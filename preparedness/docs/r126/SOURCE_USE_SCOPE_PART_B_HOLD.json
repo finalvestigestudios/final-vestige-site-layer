@@ -1,0 +1,420 @@
+{
+  "schema": "fv-r126-author-source-binding-part-v1",
+  "partition": "B",
+  "state": "DRAFT_UNREVIEWED_HOLD",
+  "candidate_git_commit": "ddb3528ba6494dada1fa1c3a142ce746e3a67706",
+  "crosswalk_git_commit": "6ca388edbed803e64663e8f0ecfa55bda0fe08c3",
+  "crosswalk_git_blob": "c8c57c80963580645983402ad2cbed775827586e",
+  "taxonomy_git_blob": "15c547bb3018ac182b12a51036389cfa39a59168",
+  "crosswalk_group_count": 32,
+  "disclaimer": "Article metadata source_use declarations only, not claim verification, citation counts, medical safety or authority to publish.",
+  "articles": [
+    {
+      "slug": "home-fire-escape-plan",
+      "origin": "shelter",
+      "metadata_blob_sha": "ff1246dcbfb0dd0bc864977f815badb9ad4e7ed8",
+      "publish": "draft",
+      "safety_state": "pending",
+      "total_declared_source_uses": 13,
+      "shared_source_bindings": [
+        {
+          "source_id": "shelter-cdc-power-outage",
+          "source_record_origin": "shelter",
+          "shared_url": "https://www.cdc.gov/natural-disasters/response/what-to-do-protect-yourself-during-a-power-outage.html",
+          "source_use_scope": "Flashlights over candles; candles away from flammables and never unattended."
+        },
+        {
+          "source_id": "shelter-ready-disabilities",
+          "source_record_origin": "shelter",
+          "shared_url": "https://www.ready.gov/people-disabilities",
+          "source_use_scope": "Neighbors who can assist with building evacuation; backup mobility devices."
+        },
+        {
+          "source_id": "shelter-ready-plan",
+          "source_record_origin": "shelter",
+          "shared_url": "https://www.ready.gov/plan",
+          "source_use_scope": "Household plan questions including shelter, evacuation and communication; practice with the household."
+        },
+        {
+          "source_id": "shelter-usfa-high-rise",
+          "source_record_origin": "shelter",
+          "shared_url": "https://www.usfa.fema.gov/blog/protecting-people-who-live-or-work-in-high-rises/",
+          "source_use_scope": "USFA high-rise page: evacuate by stairs by default; shelter in place only for those who cannot self-evacuate; keep stair doors closed; no elevators."
+        },
+        {
+          "source_id": "usfa-fire-escape",
+          "source_record_origin": "shelter",
+          "shared_url": "https://www.usfa.fema.gov/prevention/home-fires/prepare-for-fire/home-fire-escape-plans/index.html",
+          "source_use_scope": "Less than 2 minutes to escape; map with all doors and windows; two ways out of every room; keep exits unblocked; outside meeting place in front; practice with everyone; test button starts the drill; high-rise sequence."
+        }
+      ],
+      "problems": []
+    },
+    {
+      "slug": "shelter-or-evacuate",
+      "origin": "shelter",
+      "metadata_blob_sha": "cb559141d1e4a39debad16cf5cb796b746a01f19",
+      "publish": "draft",
+      "safety_state": "pending",
+      "total_declared_source_uses": 15,
+      "shared_source_bindings": [
+        {
+          "source_id": "shelter-ready-evacuation",
+          "source_record_origin": "shelter",
+          "shared_url": "https://www.ready.gov/evacuation",
+          "source_use_scope": "Evacuation checklist: destinations, routes, on foot, fuel, one car, go-bag, leaving, note, out-of-state contact, neighbors, returning, FEMA app shelters."
+        },
+        {
+          "source_id": "shelter-ready-disabilities",
+          "source_record_origin": "shelter",
+          "shared_url": "https://www.ready.gov/people-disabilities",
+          "source_use_scope": "Support network; accessible transportation; registries; dialysis; assistive devices; service animals in shelters."
+        },
+        {
+          "source_id": "shelter-ready-plan",
+          "source_record_origin": "shelter",
+          "shared_url": "https://www.ready.gov/plan",
+          "source_use_scope": "Household discussion questions; household-needs checklist."
+        },
+        {
+          "source_id": "shelter-ready-power-outages",
+          "source_record_origin": "shelter",
+          "shared_url": "https://www.ready.gov/power-outages",
+          "source_use_scope": "Go to a community location with power if heat or cold is extreme."
+        },
+        {
+          "source_id": "shelter-nws-nwr",
+          "source_record_origin": "shelter",
+          "shared_url": "https://www.weather.gov/nwr/",
+          "source_use_scope": "NOAA Weather Radio All Hazards description, EAS link, chemical-release alerts, receiver need, transmitter outages."
+        }
+      ],
+      "problems": []
+    },
+    {
+      "slug": "family-communication-plan",
+      "origin": "shelter",
+      "metadata_blob_sha": "dcad79faa8e0e6f1aef6db03e9e6e9451e19d8d3",
+      "publish": "draft",
+      "safety_state": "pending",
+      "total_declared_source_uses": 20,
+      "shared_source_bindings": [
+        {
+          "source_id": "shelter-fcc-comms",
+          "source_record_origin": "shelter",
+          "shared_url": "https://www.fcc.gov/reports-research/guides/tips-communicating-emergency",
+          "source_use_scope": "Out-of-area central contact; network congestion; limit calls, brief calls, text, try other services, wait 10 seconds, vehicle stationary, call forwarding, backup power, corded phone, personal care attendant."
+        },
+        {
+          "source_id": "shelter-ready-evacuation",
+          "source_record_origin": "shelter",
+          "shared_url": "https://www.ready.gov/evacuation",
+          "source_use_scope": "Out-of-state contact in the family communications plan; update the meeting place with circumstance."
+        },
+        {
+          "source_id": "shelter-ready-disabilities",
+          "source_record_origin": "shelter",
+          "shared_url": "https://www.ready.gov/people-disabilities",
+          "source_use_scope": "Communication cards; deaf and hard-of-hearing tools; support network contact list."
+        },
+        {
+          "source_id": "shelter-ready-plan",
+          "source_record_origin": "shelter",
+          "shared_url": "https://www.ready.gov/plan",
+          "source_use_scope": "Family may not be together; meeting place familiar and easy to find; household-needs checklist; network assistance; practice the plan; pets."
+        }
+      ],
+      "problems": []
+    },
+    {
+      "slug": "go-bags",
+      "origin": "start",
+      "metadata_blob_sha": "16cc5e91204a77486912444c6e516f5d5b48f567",
+      "publish": "draft",
+      "safety_state": "pending",
+      "total_declared_source_uses": 18,
+      "shared_source_bindings": [
+        {
+          "source_id": "start-ready-evacuation",
+          "source_record_origin": "start",
+          "shared_url": "https://www.ready.gov/evacuation",
+          "source_use_scope": "Build a go-bag for leaving on foot or by public transport, supplies for longer trips by car, who is responsible for the bag, what to do before and during an evacuation, and pet-friendly destinations."
+        },
+        {
+          "source_id": "start-ready-food",
+          "source_record_origin": "start",
+          "shared_url": "https://www.ready.gov/food",
+          "source_use_scope": "Use ready-to-feed formula; bottled or boiled water as a last resort if mixing."
+        },
+        {
+          "source_id": "start-ready-kit",
+          "source_record_origin": "start",
+          "shared_url": "https://www.ready.gov/kit",
+          "source_use_scope": "The item list a go-bag draws on, and kit locations."
+        },
+        {
+          "source_id": "start-ready-disability",
+          "source_record_origin": "start",
+          "shared_url": "https://www.ready.gov/people-disabilities",
+          "source_use_scope": "Support network, accessible transport, spare batteries, manual chair backup, patch kit, cushions, device information, kit tips by disability, dementia tips."
+        },
+        {
+          "source_id": "ready-are-you-ready",
+          "source_record_origin": "start",
+          "shared_url": "https://www.ready.gov/sites/default/files/2021-11/are-you-ready-guide.pdf",
+          "source_use_scope": "Evacuation guidelines, leaving a note, sturdy shoes and clothing, one car per family, never below half a tank, shelter pet limits."
+        }
+      ],
+      "problems": []
+    },
+    {
+      "slug": "medication-and-devices",
+      "origin": "health",
+      "metadata_blob_sha": "a49a6d42a3deb14acbe67e7cf636c23cdc5ec49c",
+      "publish": "draft",
+      "safety_state": "pending",
+      "total_declared_source_uses": 9,
+      "shared_source_bindings": [
+        {
+          "source_id": "health-cdc-power-outage",
+          "source_record_origin": "health",
+          "shared_url": "https://www.cdc.gov/natural-disasters/response/what-to-do-protect-yourself-during-a-power-outage.html",
+          "source_use_scope": "CDC rule for refrigerated medication after a day or more without power, with the life-sustaining exception; generator distances and carbon monoxide detector; Poison Control number; air-conditioned shelter and fans."
+        },
+        {
+          "source_id": "health-fcc-comms-tips",
+          "source_record_origin": "health",
+          "shared_url": "https://www.fcc.gov/reports-research/guides/tips-communicating-emergency",
+          "source_use_scope": "Medical alert systems usually need a working phone line, so keep a backup; registering with local police for help needs."
+        },
+        {
+          "source_id": "health-ready-disabilities",
+          "source_record_origin": "health",
+          "shared_url": "https://www.ready.gov/people-disabilities",
+          "source_use_scope": "Medical alert tags; device style and serial lists; priority power restoration; local registries; more than one dialysis facility; backup oxygen and spare batteries; manual chair backup; support network; heat and medication caution; dementia caution; practical lists by disability."
+        },
+        {
+          "source_id": "health-ready-power-outages",
+          "source_record_origin": "health",
+          "shared_url": "https://www.ready.gov/power-outages",
+          "source_use_scope": "Alternate plans for refrigerated medicines and devices; inventory of electric dependencies; ask provider how long medicine tolerates higher temperatures; discard-after-a-day rule with label exception; community locations with power."
+        },
+        {
+          "source_id": "health-fema-power-outage-sheet",
+          "source_record_origin": "health",
+          "shared_url": "https://www.ready.gov/sites/default/files/2024-03/ready.gov_power-outage_hazard-info-sheet.pdf",
+          "source_use_scope": "FEMA's December 2023 fact sheet wording: replace refrigerated medications after a day or more without power unless the label says otherwise; call a doctor or pharmacist; use the medicine only until a new supply; make a plan for refrigerating medicines and powering devices."
+        }
+      ],
+      "problems": []
+    },
+    {
+      "slug": "emergency-hygiene-sanitation",
+      "origin": "health",
+      "metadata_blob_sha": "e94ff9b33e6ced71dafcdcc4412ad687a503ccf6",
+      "publish": "draft",
+      "safety_state": "pending",
+      "total_declared_source_uses": 7,
+      "shared_source_bindings": [
+        {
+          "source_id": "health-cdc-power-outage",
+          "source_record_origin": "health",
+          "shared_url": "https://www.cdc.gov/natural-disasters/response/what-to-do-protect-yourself-during-a-power-outage.html",
+          "source_use_scope": "Safe water for drinking, cooking and personal hygiene is bottled, boiled or treated."
+        },
+        {
+          "source_id": "cdc-hygiene-emergency",
+          "source_record_origin": "health",
+          "shared_url": "https://www.cdc.gov/water-emergency/safety/guidelines-for-personal-hygiene-during-an-emergency.html",
+          "source_use_scope": "Handwashing for at least 20 seconds; when boiled or disinfected water is recommended; temporary jug station; sanitizer with at least 60% alcohol and its limits; bathing, teeth, wound care and Vibrio; diaper fact sheets pointer."
+        },
+        {
+          "source_id": "health-ready-kit",
+          "source_record_origin": "health",
+          "shared_url": "https://www.ready.gov/kit",
+          "source_use_scope": "One gallon per person per day counts for drinking and sanitation; moist towelettes, garbage bags and ties; soap, sanitizer, diapers, feminine and hygiene supplies."
+        }
+      ],
+      "problems": []
+    },
+    {
+      "slug": "warnings-radios-offline-maps",
+      "origin": "health",
+      "metadata_blob_sha": "025ddac0f8c077f2a6fa17d7fcb746caa51234a7",
+      "publish": "draft",
+      "safety_state": "pending",
+      "total_declared_source_uses": 9,
+      "shared_source_bindings": [
+        {
+          "source_id": "health-fcc-comms-tips",
+          "source_record_origin": "health",
+          "shared_url": "https://www.fcc.gov/reports-research/guides/tips-communicating-emergency",
+          "source_use_scope": "Congestion explanation; limit and shorten calls; text first; try several services; wait 10 seconds before redialing; backup power; out-of-area contact; call forwarding; corded phone."
+        },
+        {
+          "source_id": "health-ready-alerts",
+          "source_record_origin": "health",
+          "shared_url": "https://www.ready.gov/alerts",
+          "source_use_scope": "WEA features and troubleshooting; who may send WEAs; EAS description and the 10-minute presidential access; NWR and IPAWS summaries; FEMA App features; children and WEAs."
+        },
+        {
+          "source_id": "health-ready-kit",
+          "source_record_origin": "health",
+          "shared_url": "https://www.ready.gov/kit",
+          "source_use_scope": "Battery-powered or hand-crank radio and NOAA Weather Radio with tone alert; local maps; phone chargers and a backup battery; yearly kit review."
+        },
+        {
+          "source_id": "health-ready-disabilities",
+          "source_record_origin": "health",
+          "shared_url": "https://www.ready.gov/people-disabilities",
+          "source_use_scope": "Weather radio with text display and flashing alert; hearing-aid batteries; battery lantern; FEMA App alerts for up to five locations; Braille labels and communication devices."
+        },
+        {
+          "source_id": "health-ready-plan",
+          "source_record_origin": "health",
+          "shared_url": "https://www.ready.gov/plan",
+          "source_use_scope": "Alerts as the first planning question; evacuation route; family communication plan; meeting place; practice."
+        },
+        {
+          "source_id": "nws-nwr",
+          "source_record_origin": "health",
+          "shared_url": "https://www.weather.gov/cys/nwr",
+          "source_use_scope": "Three useful receiver features: tone alert, SAME for one county, and battery backup; NWR works with the Emergency Alert System."
+        },
+        {
+          "source_id": "health-nws-nwr-national",
+          "source_record_origin": "health",
+          "shared_url": "https://www.weather.gov/nwr/",
+          "source_use_scope": "NWR scope, non-weather hazards, over 1,000 transmitters, need for a special receiver, the seven VHF frequencies, station and county listings, live outage list and reasons, weekly-test notice."
+        }
+      ],
+      "problems": []
+    },
+    {
+      "slug": "preparedness-real-households",
+      "origin": "start",
+      "metadata_blob_sha": "ba840917f34634ccd634c488eeca4a8a6b3a8fe2",
+      "publish": "draft",
+      "safety_state": "pending",
+      "total_declared_source_uses": 17,
+      "shared_source_bindings": [
+        {
+          "source_id": "start-ready-alerts",
+          "source_record_origin": "start",
+          "shared_url": "https://www.ready.gov/alerts",
+          "source_use_scope": "Alert systems and the limits of each."
+        },
+        {
+          "source_id": "start-ready-disability",
+          "source_record_origin": "start",
+          "shared_url": "https://www.ready.gov/people-disabilities",
+          "source_use_scope": "Support network, key, registries, dialysis, power priority list, assistive devices, heat risk, kit tips."
+        },
+        {
+          "source_id": "start-ready-plan",
+          "source_record_origin": "start",
+          "shared_url": "https://www.ready.gov/plan",
+          "source_use_scope": "Ready.gov's Make A Plan asks households to consider the languages spoken when assessing individual needs. Cited here only for that language/accessibility consideration in family communication planning."
+        },
+        {
+          "source_id": "start-ready-power",
+          "source_record_origin": "start",
+          "shared_url": "https://www.ready.gov/power-outages",
+          "source_use_scope": "Outage effects, medical devices, refrigeration times, generator and stove cautions."
+        },
+        {
+          "source_id": "ready-are-you-ready",
+          "source_record_origin": "start",
+          "shared_url": "https://www.ready.gov/sites/default/files/2021-11/are-you-ready-guide.pdf",
+          "source_use_scope": "Insurance for an apartment, lease documents, emergency savings, cash, 72-hour framing."
+        },
+        {
+          "source_id": "start-usfa-high-rise",
+          "source_record_origin": "start",
+          "shared_url": "https://www.usfa.fema.gov/blog/protecting-people-who-live-or-work-in-high-rises/",
+          "source_use_scope": "Know your exits, practice your route, keep stair doors closed, do not use elevators in a fire, call 911 and shelter in place or wait on a clear landing if you cannot use the stairs (fire only), not all tall buildings meet modern standards."
+        }
+      ],
+      "problems": []
+    },
+    {
+      "slug": "salt-beef-salt-pork-age-of-sail",
+      "origin": "base",
+      "metadata_blob_sha": "1c4c5396da703f3724b584c67e49e2128ab1f4c6",
+      "publish": "draft",
+      "safety_state": "approved",
+      "total_declared_source_uses": 10,
+      "shared_source_bindings": [],
+      "problems": []
+    },
+    {
+      "slug": "ships-biscuit-and-hardtack",
+      "origin": "hist-food",
+      "metadata_blob_sha": "2b2c3ce9472073df3d15e8befb39178d369632b1",
+      "publish": "draft",
+      "safety_state": "pending",
+      "total_declared_source_uses": 8,
+      "shared_source_bindings": [
+        {
+          "source_id": "loc-prairie-traveler",
+          "source_record_origin": "hist-food",
+          "shared_url": "https://www.loc.gov/resource/gdcmassbookdig.prairietravelerh01marc/?st=list",
+          "source_use_scope": "Library of Congress digitization and edition date of Marcy's handbook."
+        }
+      ],
+      "problems": []
+    },
+    {
+      "slug": "lewis-and-clark-salt-works",
+      "origin": "hist-food",
+      "metadata_blob_sha": "3a350aedac67ea89c6995831032367634248c9e9",
+      "publish": "draft",
+      "safety_state": "pending",
+      "total_declared_source_uses": 11,
+      "shared_source_bindings": [
+        {
+          "source_id": "nps-lewis-clark-salt",
+          "source_record_origin": "hist-food",
+          "shared_url": "https://www.nps.gov/articles/000/how-to-make-salt.htm",
+          "source_use_scope": "The five kettles, wood, rocks and kegs; almost a gallon a day; Lewis's 'tedious opperation'; Clatsop-Nehalem village; mid-February end."
+        },
+        {
+          "source_id": "nps-salt-works",
+          "source_record_origin": "hist-food",
+          "shared_url": "https://www.nps.gov/places/salt-works-oregon.htm",
+          "source_use_scope": "Why the party needed salt; the three named salt makers; kindness of the village; blubber sold; about twenty gallons by Lewis's count; the replica."
+        }
+      ],
+      "problems": []
+    },
+    {
+      "slug": "pioneer-travel-rations",
+      "origin": "hist-food",
+      "metadata_blob_sha": "7191acba55d63dc405ad9c2003d66193276da89f",
+      "publish": "draft",
+      "safety_state": "pending",
+      "total_declared_source_uses": 10,
+      "shared_source_bindings": [
+        {
+          "source_id": "hist-food-fsis-jerky",
+          "source_record_origin": "hist-food",
+          "shared_url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/meat-fish/jerky",
+          "source_use_scope": "Current USDA recommendation to heat meat to 160 F and poultry to 165 F before dehydrating."
+        },
+        {
+          "source_id": "loc-pioneer-diaries",
+          "source_record_origin": "hist-food",
+          "shared_url": "https://www.loc.gov/item/2002564479/",
+          "source_use_scope": "Catalogue description of the Library of Congress collection of emigrant diaries and guides (collection level only)."
+        },
+        {
+          "source_id": "loc-prairie-traveler",
+          "source_record_origin": "hist-food",
+          "shared_url": "https://www.loc.gov/resource/gdcmassbookdig.prairietravelerh01marc/?st=list",
+          "source_use_scope": "Library of Congress digitization of Marcy's handbook and its edition date."
+        }
+      ],
+      "problems": []
+    }
+  ]
+}
