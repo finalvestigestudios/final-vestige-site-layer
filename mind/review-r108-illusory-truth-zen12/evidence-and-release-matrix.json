@@ -1,0 +1,497 @@
+{
+  "schema": "fv-mind-claims-release-v1",
+  "review_date": "2026-11-03",
+  "site_inventory_note": "Issue #171 records historical 61 posts; read-only site search on Nov 3 verified live Puységur and Focus and 66 posts reported in prior reviews; 61 is not asserted current.",
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "Repetition may raise subjective truth ratings even without corroboration",
+      "sources": [
+        "S01"
+      ],
+      "decision": "SUPPORTED_QUALIFIED",
+      "why": "Controlled 1977 conditions; not universal mind control"
+    },
+    {
+      "id": "C02",
+      "claim": "Knowledge always protects against illusory truth",
+      "sources": [
+        "S02",
+        "S03"
+      ],
+      "decision": "REJECT",
+      "why": "Experiments show effect may occur despite relevant stored knowledge"
+    },
+    {
+      "id": "C03",
+      "claim": "Accuracy attention can reduce later illusory truth",
+      "sources": [
+        "S04"
+      ],
+      "decision": "SUPPORTED_CONDITIONAL",
+      "why": "Selective effect reported when relevant knowledge held; no guaranteed prophylaxis"
+    },
+    {
+      "id": "C04",
+      "claim": "Haser studies explain Puységur in 1784",
+      "sources": [
+        "S01",
+        "S15"
+      ],
+      "decision": "REJECT",
+      "why": "Anachronistic causal inference; methodology analogy only"
+    },
+    {
+      "id": "C05",
+      "claim": "Zen12 session length is twelve minutes",
+      "sources": [
+        "S07",
+        "S08"
+      ],
+      "decision": "SELLER_DESCRIPTION_ONLY",
+      "why": "Describes seller content not an outcome"
+    },
+    {
+      "id": "C06",
+      "claim": "Zen12 presents four styles for each level",
+      "sources": [
+        "S07",
+        "S08"
+      ],
+      "decision": "SELLER_DESCRIPTION_ONLY",
+      "why": "Relaxation music / guided / nature / white noise"
+    },
+    {
+      "id": "C07",
+      "claim": "Beginner six levels and 24 MP3s",
+      "sources": [
+        "S07"
+      ],
+      "decision": "SELLER_DESCRIPTION_ONLY",
+      "why": "Reconfirm current offer for publication"
+    },
+    {
+      "id": "C08",
+      "claim": "Premium twelve levels and 48 MP3s",
+      "sources": [
+        "S07",
+        "S09"
+      ],
+      "decision": "SELLER_DESCRIPTION_ONLY",
+      "why": "Full checkout confirms only full-course inventory"
+    },
+    {
+      "id": "C09",
+      "claim": "Advanced final six levels and 24 MP3s",
+      "sources": [
+        "S07"
+      ],
+      "decision": "SELLER_DESCRIPTION_ONLY",
+      "why": "Reconfirm eligibility and contents"
+    },
+    {
+      "id": "C10",
+      "claim": "One hour of advanced meditation in twelve minutes",
+      "sources": [
+        "S07",
+        "S05"
+      ],
+      "decision": "DO_NOT_ASSERT",
+      "why": "No identified controlled Zen12 product-specific evidence"
+    },
+    {
+      "id": "C11",
+      "claim": "Brainwave entrainment occurs consistently from binaural beats",
+      "sources": [
+        "S05"
+      ],
+      "decision": "DO_NOT_ASSERT",
+      "why": "2023 systematic review 5 supporting, 8 contradictory, 1 mixed across 14 heterogeneous studies"
+    },
+    {
+      "id": "C12",
+      "claim": "Zen12 treats anxiety or other mental or health conditions",
+      "sources": [
+        "S07",
+        "S05",
+        "S14"
+      ],
+      "decision": "DO_NOT_ASSERT",
+      "why": "No competent reliable product-specific health evidence reviewed"
+    },
+    {
+      "id": "C13",
+      "claim": "Zen12 guarantees productivity, creativity, cognitive change or wealth",
+      "sources": [
+        "S07",
+        "S14"
+      ],
+      "decision": "DO_NOT_ASSERT",
+      "why": "Seller promotion does not substantiate outcome"
+    },
+    {
+      "id": "C14",
+      "claim": "Full checkout requests mobile phone and other identifying fields",
+      "sources": [
+        "S09"
+      ],
+      "decision": "MERCHANT_FORM_OBSERVED",
+      "why": "Field presence not proof of required/optional validation"
+    },
+    {
+      "id": "C15",
+      "claim": "Policy permits referred purchasers' identities shared with affiliates",
+      "sources": [
+        "S10"
+      ],
+      "decision": "MERCHANT_POLICY_VERIFIED",
+      "why": "Written no-PII contract required for Final Vestige"
+    },
+    {
+      "id": "C16",
+      "claim": "Seller may send telephone/SMS marketing",
+      "sources": [
+        "S10"
+      ],
+      "decision": "MERCHANT_POLICY_VERIFIED",
+      "why": "Do not infer buyer necessarily receives messages"
+    },
+    {
+      "id": "C17",
+      "claim": "One-year guarantee is performed under verified current operative terms",
+      "sources": [
+        "S07",
+        "S11"
+      ],
+      "decision": "UNVERIFIED",
+      "why": "Marketing guarantee advertised, operative terms retrieval failed"
+    },
+    {
+      "id": "C18",
+      "claim": "Countdown proves real offer deadline",
+      "sources": [
+        "S09"
+      ],
+      "decision": "DO_NOT_ASSERT",
+      "why": "Clock display not independently verified scarcity"
+    },
+    {
+      "id": "C19",
+      "claim": "Public affiliate portal establishes Final Vestige acceptance",
+      "sources": [
+        "S12"
+      ],
+      "decision": "REJECT",
+      "why": "Generic affiliate application page not name-specific agreement"
+    },
+    {
+      "id": "C20",
+      "claim": "Affiliate commission is a fixed rate or payout to Final Vestige",
+      "sources": [
+        "S12"
+      ],
+      "decision": "DO_NOT_ASSERT",
+      "why": "Generic portal language not partner-specific terms"
+    },
+    {
+      "id": "C21",
+      "claim": "Potential affiliate earning link must have clear nearby disclosure",
+      "sources": [
+        "S13"
+      ],
+      "decision": "REQUIRED",
+      "why": "Plain commission statement next to relevant recommendation"
+    },
+    {
+      "id": "C22",
+      "claim": "Separate /mind/ investigation conclusions from product promotion",
+      "sources": [
+        "S13",
+        "S14",
+        "S19"
+      ],
+      "decision": "REQUIRED",
+      "why": "Avoid implicit efficacy endorsement through historical narrative"
+    },
+    {
+      "id": "C23",
+      "claim": "Existing /focus/ Fieldbook can be linked without new capture forms",
+      "sources": [
+        "S16"
+      ],
+      "decision": "SUPPORTED_ROUTING",
+      "why": "Link only; do not create duplicate Jetpack form"
+    },
+    {
+      "id": "C24",
+      "claim": "Video addition improves conversion",
+      "sources": [],
+      "decision": "UNTESTED_HYPOTHESIS",
+      "why": "Needs ethical accessible controlled pilot after deployment approval"
+    },
+    {
+      "id": "C25",
+      "claim": "This editorial team personally listened to Zen12",
+      "sources": [],
+      "decision": "DO_NOT_ASSERT",
+      "why": "No hands-on testing performed"
+    },
+    {
+      "id": "C26",
+      "claim": "An affiliate click represents a sale",
+      "sources": [],
+      "decision": "REJECT",
+      "why": "Outbound click does not establish conversion"
+    },
+    {
+      "id": "C27",
+      "claim": "Total Focus / Brainwave Shots may use Zen12 checkout framing",
+      "sources": [
+        "S06"
+      ],
+      "decision": "REJECT",
+      "why": "Each product requires exact official sales page and channel permission"
+    }
+  ],
+  "source_register": [
+    {
+      "id": "S01",
+      "title": "1977 Hasher et al.",
+      "type": "primary research",
+      "url": "https://doi.org/10.1016/S0022-5371(77)80012-1"
+    },
+    {
+      "id": "S02",
+      "title": "2015 Fazio et al.",
+      "type": "primary research",
+      "url": "https://doi.org/10.1037/xge0000098"
+    },
+    {
+      "id": "S03",
+      "title": "2020 Fazio",
+      "type": "primary research",
+      "url": "https://doi.org/10.1525/collabra.347"
+    },
+    {
+      "id": "S04",
+      "title": "2020 Brashier et al.",
+      "type": "primary research",
+      "url": "https://doi.org/10.1016/j.cognition.2019.104054"
+    },
+    {
+      "id": "S05",
+      "title": "Ingendoh et al. 2023 systematic EEG review",
+      "type": "systematic review",
+      "url": "https://doi.org/10.1371/journal.pone.0286023"
+    },
+    {
+      "id": "S06",
+      "title": "Inspire3 official catalog",
+      "type": "merchant",
+      "url": "https://inspire3.com/"
+    },
+    {
+      "id": "S07",
+      "title": "Zen12 exact presentation",
+      "type": "merchant",
+      "url": "https://zen12.com/hnp"
+    },
+    {
+      "id": "S08",
+      "title": "Zen12 program description",
+      "type": "merchant",
+      "url": "https://zen12.com/about"
+    },
+    {
+      "id": "S09",
+      "title": "Zen12 full course checkout",
+      "type": "merchant",
+      "url": "https://zen12.com/getstarted"
+    },
+    {
+      "id": "S10",
+      "title": "Inspire3 privacy policy",
+      "type": "merchant policy",
+      "url": "https://inspire3.com/privacy/"
+    },
+    {
+      "id": "S11",
+      "title": "Inspire3 operative terms read attempt unsuccessful",
+      "type": "merchant terms blocked",
+      "url": "https://inspire3.com/terms/"
+    },
+    {
+      "id": "S12",
+      "title": "Public Inspire3 affiliate portal",
+      "type": "public merchant marketing NOT approval",
+      "url": "https://affiliates.inspire3.com/"
+    },
+    {
+      "id": "S13",
+      "title": "FTC endorsements and affiliate disclosures",
+      "type": "US regulator",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking"
+    },
+    {
+      "id": "S14",
+      "title": "FTC health products claims guidance",
+      "type": "US regulator",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+    },
+    {
+      "id": "S15",
+      "title": "Final Vestige Puységur published archive",
+      "type": "editorial internal link",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+    },
+    {
+      "id": "S16",
+      "title": "Final Vestige published Focus Fieldbook",
+      "type": "existing first party funnel",
+      "url": "https://finalvestige.com/focus/"
+    },
+    {
+      "id": "S17",
+      "title": "Final Vestige published Change Blindness",
+      "type": "editorial internal link",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/"
+    },
+    {
+      "id": "S18",
+      "title": "Final Vestige published Mesmerism investigation",
+      "type": "editorial internal link",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/"
+    },
+    {
+      "id": "S19",
+      "title": "Final Vestige editorial standards",
+      "type": "site standards",
+      "url": "https://finalvestige.com/editorial-standards/"
+    },
+    {
+      "id": "S20",
+      "title": "Final Vestige affiliate disclosure",
+      "type": "site disclosure",
+      "url": "https://finalvestige.com/affiliate-disclosure/"
+    }
+  ],
+  "release_gates": [
+    {
+      "id": "G01",
+      "requirement": "Named Final Vestige Inspire3 affiliate approval",
+      "passed": false,
+      "status": "HOLD_CLOSED"
+    },
+    {
+      "id": "G02",
+      "requirement": "Zen12 authorized exact product URL and permitted website channel",
+      "passed": false,
+      "status": "HOLD_CLOSED"
+    },
+    {
+      "id": "G03",
+      "requirement": "Zen12 authorized TikTok channel and creative permissions",
+      "passed": false,
+      "status": "HOLD_CLOSED"
+    },
+    {
+      "id": "G04",
+      "requirement": "Zen12 authorized email/Dispatch promotional channel and creative",
+      "passed": false,
+      "status": "HOLD_CLOSED"
+    },
+    {
+      "id": "G05",
+      "requirement": "Signed aggregate-only purchaser reporting; no name/email/order content",
+      "passed": false,
+      "status": "HOLD_CLOSED"
+    },
+    {
+      "id": "G06",
+      "requirement": "Reverified operative merchant Terms of Sale and refund details",
+      "passed": false,
+      "status": "HOLD_CLOSED"
+    },
+    {
+      "id": "G07",
+      "requirement": "Independent final claim/legal editorial review",
+      "passed": false,
+      "status": "HOLD_CLOSED"
+    },
+    {
+      "id": "G08",
+      "requirement": "QA review of draft #172 navigation and homepage #49 separation",
+      "passed": false,
+      "status": "HOLD_CLOSED"
+    },
+    {
+      "id": "G09",
+      "requirement": "Real-browser 360/390/768/1440/1920 responsive checks",
+      "passed": false,
+      "status": "HOLD_CLOSED"
+    },
+    {
+      "id": "G10",
+      "requirement": "WCAG 2.2 AA keyboard/screenreader/reduced-motion/no-JS review",
+      "passed": false,
+      "status": "HOLD_CLOSED"
+    },
+    {
+      "id": "G11",
+      "requirement": "Real first-party 40s MP4 with poster and synchronized caption test",
+      "passed": false,
+      "status": "HOLD_CLOSED"
+    },
+    {
+      "id": "G12",
+      "requirement": "Lighthouse and measured performance before publishing video",
+      "passed": false,
+      "status": "HOLD_CLOSED"
+    },
+    {
+      "id": "G13",
+      "requirement": "Actual Gutenberg draft rendering/sanitization review",
+      "passed": false,
+      "status": "HOLD_CLOSED"
+    },
+    {
+      "id": "G14",
+      "requirement": "Privacy-safe measurement DPIA/legal review + cookie/consent decision",
+      "passed": false,
+      "status": "HOLD_CLOSED"
+    },
+    {
+      "id": "G15",
+      "requirement": "Verified single existing Focus/Jetpack welcome behavior preserved",
+      "passed": false,
+      "status": "HOLD_CLOSED"
+    },
+    {
+      "id": "G16",
+      "requirement": "Founder publication/release approval tied to exact PR/SHA",
+      "passed": false,
+      "status": "HOLD_CLOSED"
+    }
+  ],
+  "activation": {
+    "affiliate_enabled": false,
+    "merchant_links_clickable": false,
+    "tracking_enabled": false,
+    "new_signup_form": false,
+    "wordpress_write": false,
+    "unpublished": true,
+    "canonical_mind_hub_pr": 172,
+    "flagship_homepage_pr": 49,
+    "issue_owner": 171
+  },
+  "measurement": {
+    "mode": "synthetic-only",
+    "collect_raw_ip": false,
+    "collect_email": false,
+    "store_user_agent": false,
+    "ad_click_ids": false,
+    "conversion_attribution": "not inferred",
+    "minimum_group_to_report": 20
+  },
+  "source_policy": "Seller claims are description, never independent product efficacy. Terms inaccessible, no approval inferred from public portal."
+}
