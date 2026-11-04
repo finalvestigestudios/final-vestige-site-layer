@@ -15,7 +15,7 @@ function throws(rec){assert.throws(()=>m.sanitizeSynthetic(rec))}
 test('all merchant outbound clicks withheld in A and B',()=>{for(const h of [A,B]) assert.doesNotMatch(h,/href=["']https?:\/\/(?:zen12|inspire3|affiliates\.inspire3)/i)});
 test('both preview buttons are native disabled, not CSS imitations',()=>{for(const h of [A,B])assert.match(h,/<button[^>]*\bdisabled\b[^>]*>/i)});
 test('prospective affiliate disclosure next to buttons',()=>{for(const h of [A,B]){const button=h.indexOf('<button');const d=h.indexOf('id="fv-r109-disclosure"');assert.ok(button!==-1&&d>button&&d-button<700)}});
-test('both versions keep exactly equal substantive guide',()=>{const body=h=>h.split('<div data-guide-core="r109">')[1].split('</div>\n<section id="fv-r109-sources"')[0]; assert.equal(body(A),body(B))});
+test('both versions keep exactly equal substantive guide',()=>{const body=h=>h.split('<div data-guide-core="r109">')[1].split('</div><section id="fv-r109-sources"')[0]; assert.equal(body(A),body(B))});
 test('B does not falsely pretend MP4 exists',()=>{assert.match(B,/Not a playable video yet/);assert.doesNotMatch(B,/<video\b/i);assert.match(B,/data-video-ready="false"/)});
 test('both variants are no-JS, no forms, no third-party embeds',()=>{for(const h of [A,B]){assert.doesNotMatch(h,/<(script|form|iframe)\b/i);assert.doesNotMatch(h,/\bautoplay\s*(?:=|>)/i)}});
 test('both retain existing Focus/Jetpack route without new signup',()=>{for(const h of [A,B])assert.match(h,/https:\/\/finalvestige\.com\/focus\//)});
