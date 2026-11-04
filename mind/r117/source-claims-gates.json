@@ -1,0 +1,452 @@
+{
+  "metadata": {
+    "sprint": "Mind R117",
+    "audited_at": "2026-11-04",
+    "owner": "FV Mind & Affiliate Studio",
+    "editorial_status": "UNPUBLISHED",
+    "experiment_status": "CONTROLLED OFFLINE HYPOTHESIS",
+    "commercial_status": "HARD_HOLD",
+    "partner_name": "Inspire3",
+    "affiliate_approval_id": null,
+    "affiliate_url": null,
+    "approved_paid_offer": null,
+    "merchant_order_evidence": null,
+    "qualified_human_sessions": null,
+    "realized_net_revenue": null,
+    "net_revenue_per_1000_qualified_human_sessions": null,
+    "base_branch": "feature/mind-r116-memory-reconstruction-offer-evidence-20261104",
+    "active_lead_magnet": "https://finalvestige.com/focus/",
+    "no_new_subscriber_list": true
+  },
+  "source_records": [
+    {
+      "id": "C1",
+      "type": "primary",
+      "name": "Johansson et al. choice-blindness paper",
+      "url": "https://doi.org/10.1126/science.1111709",
+      "checked": "2026-11-04"
+    },
+    {
+      "id": "C2",
+      "type": "university_record",
+      "name": "Lund primary study record",
+      "url": "https://www.lunduniversity.lu.se/publication/c579a9b6-1b4a-4572-932e-0ff15f9832b4",
+      "checked": "2026-11-04"
+    },
+    {
+      "id": "C3",
+      "type": "primary",
+      "name": "Hall et al. moral attitude reversal",
+      "url": "https://doi.org/10.1371/journal.pone.0045457",
+      "checked": "2026-11-04"
+    },
+    {
+      "id": "C4",
+      "type": "university_record",
+      "name": "Lund primary moral study record",
+      "url": "https://portal.research.lu.se/en/publications/lifting-the-veil-of-morality-choice-blindness-and-attitude-revers/",
+      "checked": "2026-11-04"
+    },
+    {
+      "id": "C5",
+      "type": "primary",
+      "name": "Haptic choice blindness",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23799197/",
+      "checked": "2026-11-04"
+    },
+    {
+      "id": "C6",
+      "type": "primary",
+      "name": "Political attitude choice blindness",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23593244/",
+      "checked": "2026-11-04"
+    },
+    {
+      "id": "M1",
+      "type": "seller",
+      "name": "Inspire3 catalog",
+      "url": "https://inspire3.com/",
+      "checked": "2026-11-04"
+    },
+    {
+      "id": "M2",
+      "type": "seller",
+      "name": "Exact Zen12 /hnp offer",
+      "url": "https://zen12.com/hnp",
+      "checked": "2026-11-04"
+    },
+    {
+      "id": "M3",
+      "type": "seller",
+      "name": "Exact Brainwave Shots Focus Shot offer",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "checked": "2026-11-04"
+    },
+    {
+      "id": "M4",
+      "type": "seller_policy",
+      "name": "Inspire3 sales terms (reverify at release)",
+      "url": "https://inspire3.com/terms/",
+      "checked": "2026-11-04",
+      "verification_note": "Previously read on R116; transient unavailable via current web view; do not independently assert unchanged terms"
+    },
+    {
+      "id": "M5",
+      "type": "seller_policy",
+      "name": "Inspire3 privacy",
+      "url": "https://inspire3.com/privacy/",
+      "checked": "2026-11-04"
+    },
+    {
+      "id": "M6",
+      "type": "recruitment_only",
+      "name": "Inspire3 affiliate application portal",
+      "url": "https://affiliates.inspire3.com/",
+      "checked": "2026-11-04"
+    },
+    {
+      "id": "S1",
+      "type": "systematic_review",
+      "name": "Binaural-beat EEG entrainment systematic review 2023",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+      "checked": "2026-11-04"
+    },
+    {
+      "id": "S2",
+      "type": "systematic_review",
+      "name": "Self-hypnosis clinical trials review",
+      "url": "https://eprints.bournemouth.ac.uk/31277/",
+      "checked": "2026-11-04"
+    },
+    {
+      "id": "R1",
+      "type": "regulatory",
+      "name": "FTC endorsement guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "checked": "2026-11-04"
+    },
+    {
+      "id": "R2",
+      "type": "regulatory",
+      "name": "FTC health-claim substantiation",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "checked": "2026-11-04"
+    },
+    {
+      "id": "F1",
+      "type": "authenticated_site",
+      "name": "Live FV Collection 78 read-only Nov 4",
+      "url": "https://finalvestige.com/collection/",
+      "checked": "2026-11-04"
+    },
+    {
+      "id": "F2",
+      "type": "site",
+      "name": "Existing 52-page Focus Fieldbook",
+      "url": "https://finalvestige.com/focus/",
+      "checked": "2026-11-04"
+    },
+    {
+      "id": "F3",
+      "type": "site",
+      "name": "Published Mesmerism investigation",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "checked": "2026-11-04"
+    },
+    {
+      "id": "F4",
+      "type": "site",
+      "name": "Published Puységur archive",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "checked": "2026-11-04"
+    }
+  ],
+  "claims": [
+    {
+      "id": "CL01",
+      "claim": "Choice outcome substitution can go unnoticed under face-choice experimental conditions",
+      "status": "SUPPORTED_STUDY_SCOPE",
+      "proof": [
+        "C1",
+        "C2"
+      ],
+      "use": "investigation"
+    },
+    {
+      "id": "CL02",
+      "claim": "Choice blindness means all conscious decisions are made up",
+      "status": "EXCLUDE_OVERGENERALIZATION",
+      "proof": [
+        "C1",
+        "C2"
+      ],
+      "use": "never"
+    },
+    {
+      "id": "CL03",
+      "claim": "69 percent of 2012 participants missed at least one of two manipulated moral survey reversals",
+      "status": "SUPPORTED_STUDY_SCOPE",
+      "proof": [
+        "C3",
+        "C4"
+      ],
+      "use": "investigation"
+    },
+    {
+      "id": "CL04",
+      "claim": "69 percent of all moral opinions are false or can be rewritten",
+      "status": "EXCLUDE_OVERGENERALIZATION",
+      "proof": [
+        "C3"
+      ],
+      "use": "never"
+    },
+    {
+      "id": "CL05",
+      "claim": "Haptic detection around 22 percent similar pairs versus around 70 percent distinctive pairs",
+      "status": "SUPPORTED_STUDY_SCOPE",
+      "proof": [
+        "C5"
+      ],
+      "use": "investigation"
+    },
+    {
+      "id": "CL06",
+      "claim": "Choice blindness validates hypnosis, subliminals, or merchant audio",
+      "status": "EXCLUDE_NO_DIRECT_EVIDENCE",
+      "proof": [
+        "C1",
+        "S1"
+      ],
+      "use": "never"
+    },
+    {
+      "id": "CL07",
+      "claim": "Zen12 markets twelve-minute sessions with 12 levels and 48 Premium MP3s",
+      "status": "SELLER_DESCRIPTION_ONLY",
+      "proof": [
+        "M1",
+        "M2"
+      ],
+      "use": "independent_buyers_guide"
+    },
+    {
+      "id": "CL08",
+      "claim": "Zen12 is clinically equivalent to an hour of advanced meditation",
+      "status": "EXCLUDE_UNSUBSTANTIATED_FOR_PRODUCT",
+      "proof": [
+        "M2",
+        "S1"
+      ],
+      "use": "never_as_fact"
+    },
+    {
+      "id": "CL09",
+      "claim": "2023 binaural-beat EEG review found five compatible, eight contradictory, one mixed study",
+      "status": "SUPPORTED_REVIEW_NOT_PRODUCT",
+      "proof": [
+        "S1"
+      ],
+      "use": "independent_buyers_guide"
+    },
+    {
+      "id": "CL10",
+      "claim": "Zen12 can cure anxiety, improve health or neurological conditions",
+      "status": "EXCLUDE_UNSUBSTANTIATED_FOR_PRODUCT",
+      "proof": [
+        "M2",
+        "S1",
+        "R2"
+      ],
+      "use": "never"
+    },
+    {
+      "id": "CL11",
+      "claim": "A seller page displayed a Premium $87.99 advertised price at Nov 4",
+      "status": "DATED_SELLER_DISPLAY_NOT_CHECKOUT",
+      "proof": [
+        "M2"
+      ],
+      "use": "internal_only_until_checkout"
+    },
+    {
+      "id": "CL12",
+      "claim": "One-year Zen12 money-back promise appears on offer",
+      "status": "SELLER_PROMISE_CONFIRM_CHECKOUT",
+      "proof": [
+        "M2",
+        "M4"
+      ],
+      "use": "with_caveat"
+    },
+    {
+      "id": "CL13",
+      "claim": "Inspire3 may share purchaser name, email, purchased product with referrer",
+      "status": "CONFIRMED_VENDOR_PRIVACY_RISK",
+      "proof": [
+        "M5"
+      ],
+      "use": "merchant_gate"
+    },
+    {
+      "id": "CL14",
+      "claim": "FV is an approved Inspire3 affiliate",
+      "status": "NO_EVIDENCE_HARD_HOLD",
+      "proof": [
+        "M6"
+      ],
+      "use": "never"
+    },
+    {
+      "id": "CL15",
+      "claim": "Zen12 promotional link or swipe approved for FV",
+      "status": "NO_EVIDENCE_HARD_HOLD",
+      "proof": [
+        "M6",
+        "M4"
+      ],
+      "use": "never"
+    },
+    {
+      "id": "CL16",
+      "claim": "Focus Shot seller offers 15/30 minute versions and brainwave-only versions",
+      "status": "SELLER_DESCRIPTION_ONLY",
+      "proof": [
+        "M3"
+      ],
+      "use": "offer_comparison_only"
+    },
+    {
+      "id": "CL17",
+      "claim": "Focus Shot gives guaranteed intense focus for hours",
+      "status": "EXCLUDE_UNSUBSTANTIATED_FOR_PRODUCT",
+      "proof": [
+        "M3",
+        "S1",
+        "R2"
+      ],
+      "use": "never_as_fact"
+    },
+    {
+      "id": "CL18",
+      "claim": "Focus Shot visible price is unambiguous and verified at checkout",
+      "status": "EXCLUDE_CONFLICTING_SELLER_DISPLAY",
+      "proof": [
+        "M3"
+      ],
+      "use": "never"
+    },
+    {
+      "id": "CL19",
+      "claim": "Published FV Focus Fieldbook is free with existing Dispatch subscription",
+      "status": "VERIFIED_SITE_DESCRIPTION",
+      "proof": [
+        "F1",
+        "F2"
+      ],
+      "use": "optional_existing_lead"
+    },
+    {
+      "id": "CL20",
+      "claim": "FV currently sells a confirmed paid Mind SKU with verified license/receipt",
+      "status": "UNVERIFIED_MERCHANT",
+      "proof": [
+        "F1"
+      ],
+      "use": "never"
+    },
+    {
+      "id": "CL21",
+      "claim": "A merchant affiliate outbound click is a verified commission",
+      "status": "INVALID_MEASUREMENT",
+      "proof": [
+        "M6",
+        "R1"
+      ],
+      "use": "never"
+    },
+    {
+      "id": "CL22",
+      "claim": "Affiliate earnings link should be clearly disclosed near same CTA",
+      "status": "SUPPORTED_COMPLIANCE_EXPECTATION",
+      "proof": [
+        "R1"
+      ],
+      "use": "if_authorized"
+    },
+    {
+      "id": "CL23",
+      "claim": "FV tested the experience of Zen12 or Focus Shot personally",
+      "status": "EXCLUDE_NO_EXPERIENCE",
+      "proof": [
+        "M2",
+        "M3"
+      ],
+      "use": "never"
+    },
+    {
+      "id": "CL24",
+      "claim": "Scientific self-hypnosis outcomes generalize to commercial recorded audio",
+      "status": "EXCLUDE_INTERVENTION_MISMATCH",
+      "proof": [
+        "S2"
+      ],
+      "use": "never"
+    },
+    {
+      "id": "CL25",
+      "claim": "Choice-blindness experiment proves human witnesses are generally dishonest",
+      "status": "EXCLUDE_OVERGENERALIZATION",
+      "proof": [
+        "C1",
+        "C5"
+      ],
+      "use": "never"
+    }
+  ],
+  "closed_gates": {
+    "partner_fv_named_acceptance": false,
+    "approved_zen12_offer_link": false,
+    "approved_email_and_social_channels": false,
+    "creative_swipe_rights": false,
+    "written_aggregate_only_commission_reporting": false,
+    "licensed_customer_privacy_protocol": false,
+    "product_specific_outcome_substantiation": false,
+    "current_checkout_and_refunds_proof": false,
+    "validated_paid_fv_owned_sku": false,
+    "merchant_paid_order_and_fees_proof": false,
+    "asset_id_to_human_session_attribution": false,
+    "independent_mobile_qa": false,
+    "native_ci_and_browser_perf": false,
+    "founder_release_approval": false
+  },
+  "entry_route_hypotheses": [
+    {
+      "topic": "Change Blindness",
+      "published_article": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "grok_asset_id": null,
+      "permitted_social_placement": null,
+      "lead_magnet": "https://finalvestige.com/focus/",
+      "commercial_offer": "Zen12 only for direct meditation-buying intent after verification",
+      "status": "HYPOTHESIS_ONLY"
+    },
+    {
+      "topic": "Mesmerism / suggestion",
+      "published_article": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "grok_asset_id": null,
+      "permitted_social_placement": null,
+      "lead_magnet": "https://finalvestige.com/focus/",
+      "commercial_offer": null,
+      "status": "HYPOTHESIS_ONLY"
+    },
+    {
+      "topic": "Choice Blindness",
+      "published_article": null,
+      "grok_asset_id": null,
+      "permitted_social_placement": null,
+      "lead_magnet": "https://finalvestige.com/focus/",
+      "commercial_offer": null,
+      "status": "ARTICLE_DRAFT_DO_NOT_LINK"
+    }
+  ]
+}
