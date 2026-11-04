@@ -6,7 +6,7 @@
 
 The actual landing's six-row photographic register linked to NASA but used ambiguous "NASA page 01–06" links and omitted visible credited photographers/producers. Two **2017 retrospective** exhibit pages explicitly credit **NASA/Kim Shiflett**; treating these as unattributed 1967 photographs undermines classroom source custody. A separate provisional crew portrait catalog association was still represented only as an internal assertion, not verified by the cited NASA page.
 
-**BUILT on this staging-only branch:** Replace six generic links with descriptive subjects and credit/producer lines; distinguish retrospective, preparation, training and aftermath photographs from the January 27 event chronology; keep the provisional crew catalog ID explicitly uncertain. Add a six-record machine-readable provenance ledger and a fail-closed stdlib validator with 15 unittest cases covering date/source swaps, credit loss, rights status escalation, invented geo pins/edges, photo embedding and unapproved capture/checkout. Extend real-page Chromium runner to require displayed photographer/producer credits in every 320–1920px JS/no-JS configuration and print for both 2017 records.
+**BUILT on this staging-only branch:** Replace six generic links with descriptive subjects and credit/producer lines; distinguish retrospective, preparation, training and aftermath photographs from the January 27 event chronology; keep the provisional crew catalog ID explicitly uncertain. Add a six-record machine-readable provenance ledger and a fail-closed stdlib validator with 16 unittest cases covering date/source swaps, credit loss, rights status escalation, invented geo pins/edges, photo embedding, illegible print credits and unapproved capture/checkout. Extend real-page Chromium runner to require displayed photographer/producer credits in every 320–1920px JS/no-JS configuration and print for both 2017 records, with dark high-contrast print credit styling.
 
 ## Direct NASA page evidence, rechecked 2026-11-04
 
@@ -31,7 +31,7 @@ python -I experience2/apollo-creator-bridge/qa_r113_print.py --html experience2/
 
 **TESTED:** Read-only connector/V8 structural checks against GitHub exact blobs: **26/26 PASS** for six NASA links, credits, catalog statuses, dates, legal/citation restrictions, no speculative geo, single free CTA and staged validator tests. This is **not** executable Python, browser or rights clearance.
 
-**NOT TESTED:** 15 Python tests and compilation, actual R116 Chromium/Playwright 14-mode matrix, axe 4 scans, print PDFs/screenshots, six lab LCP/CLS observations, physical keyboard/screen-reader, WordPress.com/Assembler and hosted exact-head CI. Local Python/container returned `redis.exceptions.ResponseError` on 2026-11-04; no approved axe bundle provided in this environment. Do not label any full QA receipt complete.
+**NOT TESTED:** 16 Python tests and compilation, actual R116 Chromium/Playwright 14-mode matrix, axe 4 scans, print PDFs/screenshots, six lab LCP/CLS observations, physical keyboard/screen-reader, WordPress.com/Assembler and hosted exact-head CI. Local Python/container returned `redis.exceptions.ResponseError` on 2026-11-04; no approved axe bundle provided in this environment. Do not label any full QA receipt complete.
 
 **LIVE:** No R116 component or QA runner live. A separately published Atlas page 2017 has unresolved approval-state reconciliation and is not proof of R116 deployment.
 
