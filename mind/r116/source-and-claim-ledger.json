@@ -1,0 +1,292 @@
+{
+  "metadata": {
+    "generated_on": "2026-11-04",
+    "status": "draft_unpublished",
+    "offer": "Zen12",
+    "exact_offer": "https://zen12.com/hnp",
+    "author": "FV Mind & Affiliate",
+    "is_merchant_authorized": false,
+    "earning_link": null,
+    "earning_link_allowed": false,
+    "production_tracking_allowed": false,
+    "merchant_sale_evidence": null,
+    "net_revenue_per_1000_qualified_humans": null
+  },
+  "sources": [
+    {
+      "id": "S01",
+      "url": "https://inspire3.com/",
+      "type": "official_seller_catalog"
+    },
+    {
+      "id": "S02",
+      "url": "https://zen12.com/hnp",
+      "type": "exact_seller_offer"
+    },
+    {
+      "id": "S03",
+      "url": "https://inspire3.com/terms/",
+      "type": "official_terms_2026_11_04"
+    },
+    {
+      "id": "S04",
+      "url": "https://inspire3.com/privacy/",
+      "type": "official_privacy_2026_11_04"
+    },
+    {
+      "id": "S05",
+      "url": "https://affiliates.inspire3.com/",
+      "type": "public_recruitment_not_account_approval"
+    },
+    {
+      "id": "S06",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+      "type": "independent_systematic_review"
+    },
+    {
+      "id": "S07",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17488185/",
+      "type": "independent_intensive_training_study_not_product_test"
+    },
+    {
+      "id": "S08",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "type": "ftc"
+    },
+    {
+      "id": "S09",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "type": "ftc"
+    },
+    {
+      "id": "S10",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34110859/",
+      "type": "independent_memory_experiment"
+    },
+    {
+      "id": "S11",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/16027179/",
+      "type": "independent_memory_review"
+    },
+    {
+      "id": "S12",
+      "url": "https://doi.org/10.1016/S0022-5371(74)80011-3",
+      "type": "memory_original_experiment"
+    },
+    {
+      "id": "S13",
+      "url": "https://finalvestige.com/collection/",
+      "type": "authenticated_WP_read_2026_11_04"
+    },
+    {
+      "id": "S14",
+      "url": "https://finalvestige.com/focus/",
+      "type": "authenticated_WP_read_2026_11_04"
+    },
+    {
+      "id": "S15",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "type": "authenticated_WP_read_2026_11_04"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "proposition": "Zen12 uses twelve-minute sessions",
+      "origin": "seller",
+      "proof": [
+        "S02"
+      ],
+      "status": "seller_description_only",
+      "public_use": "attribute_to_seller"
+    },
+    {
+      "id": "C02",
+      "proposition": "Zen12 premium includes 12 levels and 48 MP3s",
+      "origin": "seller",
+      "proof": [
+        "S02"
+      ],
+      "status": "seller_description_only",
+      "public_use": "attribute_and_reverify_checkout"
+    },
+    {
+      "id": "C03",
+      "proposition": "Music, guided, nature, white noise options",
+      "origin": "seller",
+      "proof": [
+        "S02"
+      ],
+      "status": "seller_description_only",
+      "public_use": "attribute_to_seller"
+    },
+    {
+      "id": "C04",
+      "proposition": "Premium advertised 87.99 USD on 2026-11-04 page",
+      "origin": "seller_snapshot",
+      "proof": [
+        "S02"
+      ],
+      "status": "dated_unverified_checkout_total",
+      "public_use": "do_not_quote_as_current_final_price"
+    },
+    {
+      "id": "C05",
+      "proposition": "12 minutes Zen12 equals one hour of advanced meditation",
+      "origin": "seller",
+      "proof": [
+        "S02",
+        "S06",
+        "S07"
+      ],
+      "status": "not_product_substantiated",
+      "public_use": "exclude_as_benefit_promise"
+    },
+    {
+      "id": "C06",
+      "proposition": "Zen12 automatically induces deep meditation by entrainment",
+      "origin": "seller",
+      "proof": [
+        "S02",
+        "S06"
+      ],
+      "status": "not_product_substantiated",
+      "public_use": "exclude"
+    },
+    {
+      "id": "C07",
+      "proposition": "Zen12 relieves anxiety or improves health/focus",
+      "origin": "seller",
+      "proof": [
+        "S02",
+        "S09"
+      ],
+      "status": "not_product_substantiated",
+      "public_use": "exclude_as_guarantee_or_expected_outcome"
+    },
+    {
+      "id": "C08",
+      "proposition": "2023 EEG review studied Zen12",
+      "origin": "editorial_guard",
+      "proof": [
+        "S06"
+      ],
+      "status": "false",
+      "public_use": "exclude"
+    },
+    {
+      "id": "C09",
+      "proposition": "Intensive 2007 meditation training demonstrates effects of MP3 product",
+      "origin": "editorial_guard",
+      "proof": [
+        "S07"
+      ],
+      "status": "false",
+      "public_use": "exclude"
+    },
+    {
+      "id": "C10",
+      "proposition": "Zen12 one-year return policy listed in official terms",
+      "origin": "seller",
+      "proof": [
+        "S03"
+      ],
+      "status": "seller_published_policy_not_execution_proof",
+      "public_use": "attribute_with_date_and_revalidate"
+    },
+    {
+      "id": "C11",
+      "proposition": "Hypnosis Live return policy is 14 days (not Zen12 1 year)",
+      "origin": "seller",
+      "proof": [
+        "S03"
+      ],
+      "status": "distinct_product_seller_policy",
+      "public_use": "do_not_conflate"
+    },
+    {
+      "id": "C12",
+      "proposition": "Inspire3 may share purchaser name/email/product with affiliate",
+      "origin": "seller_policy",
+      "proof": [
+        "S04"
+      ],
+      "status": "confirmed_policy_risk",
+      "public_use": "require_aggregate_only_contract"
+    },
+    {
+      "id": "C13",
+      "proposition": "Inspire3 affiliate portal proves FV acceptance",
+      "origin": "editorial_guard",
+      "proof": [
+        "S05"
+      ],
+      "status": "false",
+      "public_use": "hold_links"
+    },
+    {
+      "id": "C14",
+      "proposition": "FV-owned paid Mind SKU listed and merchant-validated",
+      "origin": "incomplete_inventory",
+      "proof": [
+        "S13",
+        "S14"
+      ],
+      "status": "unverified",
+      "public_use": "do_not_assume_payhip_sales"
+    },
+    {
+      "id": "C15",
+      "proposition": "Affiliate clicks demonstrate paid orders",
+      "origin": "editorial_guard",
+      "proof": [
+        "S08"
+      ],
+      "status": "false",
+      "public_use": "never_equate"
+    },
+    {
+      "id": "C16",
+      "proposition": "1974 collision wording affected reported speed and later glass report",
+      "origin": "independent_primary",
+      "proof": [
+        "S12"
+      ],
+      "status": "supported_in_task",
+      "public_use": "with_study_limitations"
+    },
+    {
+      "id": "C17",
+      "proposition": "2022 misinformation method comparison had 1182 participants",
+      "origin": "independent_primary",
+      "proof": [
+        "S10"
+      ],
+      "status": "supported_in_task",
+      "public_use": "with_context"
+    },
+    {
+      "id": "C18",
+      "proposition": "Historical mesmerism claims demonstrate commercial hypnosis efficacy",
+      "origin": "editorial_guard",
+      "proof": [
+        "S15"
+      ],
+      "status": "false",
+      "public_use": "exclude"
+    }
+  ],
+  "gating": {
+    "named_partner_acceptance": false,
+    "approved_link": false,
+    "approved_website_social_email_channels": false,
+    "original_creative_permission": false,
+    "aggregate_only_buyer_data": false,
+    "actual_checkout_price_and_delivery": false,
+    "rights_cleared_paid_FV_Mind_SKU": false,
+    "reproducible_merchant_reconciliation": false,
+    "actual_grok_asset_ids": false,
+    "real_browser_accessibility_pass": false,
+    "founder_release_approval": false
+  }
+}
