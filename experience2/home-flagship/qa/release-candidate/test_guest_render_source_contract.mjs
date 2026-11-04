@@ -32,7 +32,9 @@ test('truncation, duplicate, swapped and HTML-escaped text are rejected',()=>{
 });
 const valid={admin_bar:false,logged_in:false,details:true,summary_visible:true,
   evidence:2,focus:true,focus_visible:true,margins:72,margin_position:'static',
-  margin_opacity:'1',window_overflow:'auto',horizontal_overflow:false};
+  margin_opacity:'1',window_overflow:'auto',horizontal_overflow:false,
+  margin_readability:Array.from({length:72},()=>({display:'block',visibility:'visible',
+    position:'static',opacity:'1',width:180,height:24,ancestor_hidden:false}))};
 test('anonymous JavaScript-disabled document-flow meaning passes exact valid contract',()=>{
   assert.equal(assertAnonymousNoJSState(valid),true);
 });
@@ -46,4 +48,25 @@ test('no-JS disclosure, offer and readability defects fail individually',()=>{
   for(const change of attacks)
     assert.throws(()=>assertAnonymousNoJSState({...valid,...change}),
       'Must reject '+JSON.stringify(change));
+});
+
+test('all 72 no-JS record boxes must be independently visible',()=>{
+  for(let i=0;i<72;i++) {
+    const rows=valid.margin_readability.map(r=>({...r}));
+    rows[i].display='none';
+    assert.throws(()=>assertAnonymousNoJSState({...valid,margin_readability:rows}),
+      new RegExp('at '+i));
+  }
+});
+test('ancestor, ARIA, inert, invisible, zero-height and off-flow defects fail closed',()=>{
+  const flaws=[{ancestor_hidden:true},{visibility:'hidden'},{opacity:'0'},
+    {width:0},{height:0},{position:'absolute'}];
+  for(const flaw of flaws){
+    const rows=valid.margin_readability.map(r=>({...r}));
+    rows[47]={...rows[47],...flaw};
+    assert.throws(()=>assertAnonymousNoJSState({...valid,margin_readability:rows}),
+      /at 47/);
+  }
+  assert.throws(()=>assertAnonymousNoJSState({...valid,margin_readability:valid.margin_readability.slice(0,71)}),
+    /72 Margins/);
 });
