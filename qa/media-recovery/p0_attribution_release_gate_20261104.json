@@ -1,0 +1,231 @@
+{
+  "schema": "fv-image-recovery-claim-attribution-and-p0-release-gates-v1",
+  "audit_date_utc": "2026-11-04",
+  "frozen_source_inventory": {
+    "posts": 61,
+    "image_slots": 355,
+    "external_origin_refs": 288,
+    "oversize_wp_originals_gt_1_5_mib": 13,
+    "oversize_original_storage_bytes": 43522829,
+    "reported_42_broken_images": "UNVERIFIED_IN_VISITOR_BROWSER",
+    "reported_76_percent_wire_savings": "UNMEASURED",
+    "production_media_repairs": 0
+  },
+  "engineering": {
+    "finding": "paired CDP before/after bytes can change despite NO approved image-source change; measured delta must not automatically be described as caused by image optimization",
+    "new_module": "qa/media-recovery/approved_wire_attribution_20261104.cjs",
+    "updated_gate": "qa/media-recovery/weight_claim_pair_gate_20261102.cjs",
+    "attribution_rule": "every unchanged source request group must retain the same wire bytes; each changed group must be backed by approved source manifest; CDP request grouping and 61/355 coverage must remain exact",
+    "same_url_cdn_compression": "requires separate versioned deployment/optimization attestation before causal claim",
+    "actual_guest_cdp_measurement_available": false,
+    "synthetic_v8_test_assertions_passed": 40,
+    "synthetic_v8_test_assertions_failed": 0,
+    "native_node_ci_run": false
+  },
+  "source_evidence_blobs": {
+    "qa/media-recovery/p0_restoration_release_queue_20261101.json": "a337a4c93639e5cb0f69914525e4ee7056c4eaa5",
+    "qa/media-recovery/tmi_285_p0_live_wp_source_custody_20261104.json": "7c07c5873a07736ce9c014979e6fc08d0765e57d",
+    "qa/media-recovery/skyway_287_original_host_migration_20261104.json": "b22e56e73e4f59c08a33f5f8b931058e8970f5e0"
+  },
+  "p0_browser_check_queue": [
+    {
+      "priority": 1,
+      "image_key": "285:5",
+      "exact_original_source_url": "https://images.saymedia-content.com/.image/ar_16:9,c_fill,cs_srgb,fl_progressive,q_auto:eco,w_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg",
+      "source_observation": {
+        "method": "independent_web_retriever",
+        "description": "tool_error_404",
+        "tool_wrapper_code": 404,
+        "origin_http_status": null,
+        "actual_logged_out_browser_http_status": null,
+        "final_current_src": null,
+        "decode_ok": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "cold_cdp_encoded_bytes": null
+      },
+      "candidate": {
+        "archive_or_publisher_record_url": "https://commons.wikimedia.org/wiki/File:Three_mile_island_062010.jpg",
+        "authority": "Wikimedia Commons creator release (linked by upstream publisher)",
+        "image_identity_status": "same_scene_candidate_cropped_binary_unknown",
+        "intrinsic_dimensions_verified_from_binary": false,
+        "catalog_or_preview_dimensions_px": [
+          819,
+          614
+        ],
+        "permitted_max_width_without_upscale_px": 819,
+        "permitted_max_height_without_upscale_px": 614,
+        "rights_status": "HOLD",
+        "rights_rationale": "Creator PD-self assertion, exact crop and photographer provenance HOLD",
+        "cache_rehost_authorized": false,
+        "post_rewrite_authorized": false
+      },
+      "repair_decision": "HOLD_UNTIL_VISITOR_FAILURE_AND_ITEM_RIGHTS_VERIFIED"
+    },
+    {
+      "priority": 2,
+      "image_key": "285:2",
+      "exact_original_source_url": "https://blog.ucsusa.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+      "source_observation": {
+        "method": "independent_web_retriever",
+        "description": "redirect_to_blog.ucs.org_then_tool_wrapper_500",
+        "tool_wrapper_code": 500,
+        "origin_http_status": null,
+        "actual_logged_out_browser_http_status": null,
+        "final_current_src": null,
+        "decode_ok": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "cold_cdp_encoded_bytes": null
+      },
+      "candidate": {
+        "archive_or_publisher_record_url": null,
+        "authority": "Union of Concerned Scientists (publisher canonical-host transition)",
+        "image_identity_status": "same_exact_image_not_yet_located_on_new_host",
+        "intrinsic_dimensions_verified_from_binary": false,
+        "catalog_or_preview_dimensions_px": null,
+        "permitted_max_width_without_upscale_px": null,
+        "permitted_max_height_without_upscale_px": null,
+        "rights_status": "HOLD",
+        "rights_rationale": "UCS photo creator and reuse grant unverified HOLD",
+        "cache_rehost_authorized": false,
+        "post_rewrite_authorized": false
+      },
+      "repair_decision": "HOLD_UNTIL_VISITOR_FAILURE_AND_ITEM_RIGHTS_VERIFIED"
+    },
+    {
+      "priority": 3,
+      "image_key": "287:5",
+      "exact_original_source_url": "https://stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+      "source_observation": {
+        "method": "independent_web_retriever",
+        "description": "tool_reported_404",
+        "tool_wrapper_code": 404,
+        "origin_http_status": null,
+        "actual_logged_out_browser_http_status": null,
+        "final_current_src": null,
+        "decode_ok": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "cold_cdp_encoded_bytes": null
+      },
+      "candidate": {
+        "archive_or_publisher_record_url": "https://media.stpetecatalyst.com/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+        "authority": "St. Pete Catalyst (current publisher media host; credited University Press of Florida)",
+        "image_identity_status": "same_filename_binary_identity_unverified",
+        "intrinsic_dimensions_verified_from_binary": false,
+        "catalog_or_preview_dimensions_px": null,
+        "permitted_max_width_without_upscale_px": null,
+        "permitted_max_height_without_upscale_px": null,
+        "rights_status": "HOLD",
+        "rights_rationale": "University Press of Florida credit is NOT reproduction permission; HOLD",
+        "cache_rehost_authorized": false,
+        "post_rewrite_authorized": false
+      },
+      "repair_decision": "HOLD_UNTIL_VISITOR_FAILURE_AND_ITEM_RIGHTS_VERIFIED"
+    },
+    {
+      "priority": 4,
+      "image_key": "418:1",
+      "exact_original_source_url": "https://media.defense.gov/2021/Mar/30/2002610812/1920/1080/0/210330-G-DE713-0002.JPG",
+      "source_observation": {
+        "method": "independent_web_retriever",
+        "description": "tool_wrapper_403",
+        "tool_wrapper_code": 403,
+        "origin_http_status": null,
+        "actual_logged_out_browser_http_status": null,
+        "final_current_src": null,
+        "decode_ok": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "cold_cdp_encoded_bytes": null
+      },
+      "candidate": {
+        "archive_or_publisher_record_url": "https://www.history.uscg.mil/Our-Collections/Photos/igphoto/2002905913/",
+        "authority": "U.S. Coast Guard archival VIRIN 210330-G-DE713-0002",
+        "image_identity_status": "exact_virin_gallery_master_unhashed",
+        "intrinsic_dimensions_verified_from_binary": false,
+        "catalog_or_preview_dimensions_px": null,
+        "permitted_max_width_without_upscale_px": null,
+        "permitted_max_height_without_upscale_px": null,
+        "rights_status": "HOLD",
+        "rights_rationale": "USCG public-domain/cleared-release statement; credit/DoD restrictions HOLD",
+        "cache_rehost_authorized": false,
+        "post_rewrite_authorized": false
+      },
+      "repair_decision": "HOLD_UNTIL_VISITOR_FAILURE_AND_ITEM_RIGHTS_VERIFIED"
+    },
+    {
+      "priority": 5,
+      "image_key": "418:2",
+      "exact_original_source_url": "https://www.history.uscg.mil/Portals/6/5_%20Scotch_Cap_debris2_1946.jpg",
+      "source_observation": {
+        "method": "independent_web_retriever",
+        "description": "tool_wrapper_403",
+        "tool_wrapper_code": 403,
+        "origin_http_status": null,
+        "actual_logged_out_browser_http_status": null,
+        "final_current_src": null,
+        "decode_ok": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "cold_cdp_encoded_bytes": null
+      },
+      "candidate": {
+        "archive_or_publisher_record_url": "https://www.history.uscg.mil/Research/THE-LONG-BLUE-LINE/Article/2866442/the-long-blue-line-standing-a-deadly-watch-75-years-agofinal-hours-of-scotch-ca/",
+        "authority": "U.S. Coast Guard historical record; museum attribution preview",
+        "image_identity_status": "600x463_museum_preview_unverified_crop",
+        "intrinsic_dimensions_verified_from_binary": false,
+        "catalog_or_preview_dimensions_px": [
+          600,
+          463
+        ],
+        "permitted_max_width_without_upscale_px": 600,
+        "permitted_max_height_without_upscale_px": 463,
+        "rights_status": "HOLD",
+        "rights_rationale": "Exact creator and institution reproduction/credit review HOLD",
+        "cache_rehost_authorized": false,
+        "post_rewrite_authorized": false
+      },
+      "repair_decision": "HOLD_UNTIL_VISITOR_FAILURE_AND_ITEM_RIGHTS_VERIFIED"
+    },
+    {
+      "priority": 6,
+      "image_key": "407:1",
+      "exact_original_source_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/img7535.jpg",
+      "source_observation": {
+        "method": "independent_web_retriever",
+        "description": "tool_unsupported_octet_stream",
+        "tool_wrapper_code": 400,
+        "origin_http_status": null,
+        "actual_logged_out_browser_http_status": null,
+        "final_current_src": null,
+        "decode_ok": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "cold_cdp_encoded_bytes": null
+      },
+      "candidate": {
+        "archive_or_publisher_record_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/thumbnails/image/img7535.jpg",
+        "authority": "U.S. Geological Survey J.R. Stacy Hebgen fault scarp 1959",
+        "image_identity_status": "same_official_record_different_path_binary_unhashed",
+        "intrinsic_dimensions_verified_from_binary": false,
+        "catalog_or_preview_dimensions_px": null,
+        "permitted_max_width_without_upscale_px": null,
+        "permitted_max_height_without_upscale_px": null,
+        "rights_status": "HOLD",
+        "rights_rationale": "USGS catalog Public Domain; item-specific derivative and named photographer rights HOLD",
+        "cache_rehost_authorized": false,
+        "post_rewrite_authorized": false
+      },
+      "repair_decision": "HOLD_UNTIL_VISITOR_FAILURE_AND_ITEM_RIGHTS_VERIFIED"
+    }
+  ],
+  "constraints": {
+    "wordPress_production_writes": 0,
+    "third_party_binary_downloads": 0,
+    "new_spend": 0,
+    "homepage_design_edits": 0,
+    "site_qa_pr154_file_edits": 0
+  }
+}
