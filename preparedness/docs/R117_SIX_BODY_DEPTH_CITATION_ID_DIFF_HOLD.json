@@ -1,0 +1,568 @@
+{
+  "schema": "fv-preparedness-r117-six-high-risk-body-reading-depth-source-id-delta-HOLD-v1",
+  "checked_date": "2026-11-04",
+  "issue": 136,
+  "business_issue": 820,
+  "release_state": "HOLD",
+  "may_publish": false,
+  "independent_QD_PASS": false,
+  "verified_claim_accuracy": false,
+  "method": "Authenticated exact-SHA GitHub raw article-body fetch. Approximate text-token counts strip markup with regex (not a browser DOM or reading-comprehension proof). Cite IDs are {{cite:id}} occurrences, not evidence of factual support.",
+  "comparison_basis": {
+    "baseline_sha": "980659031b0bd5787a326d38698138c1e8cad82d",
+    "candidate_sha": "ddb3528ba6494dada1fa1c3a142ce746e3a67706"
+  },
+  "article_count": 6,
+  "observations": [
+    {
+      "slug": "navigation-before-gps",
+      "cluster": "historical-field",
+      "baseline": {
+        "slug": "navigation-before-gps",
+        "cluster": "historical-field",
+        "version": "baseline",
+        "commit_sha": "980659031b0bd5787a326d38698138c1e8cad82d",
+        "git_blob_oid": "64c6b2c7004bc5549eea5a47d9095183e7436750",
+        "metrics": {
+          "raw_html_chars": 21729,
+          "approx_visible_word_tokens": 2893,
+          "citation_occurrences": 47,
+          "citation_ids": [
+            "hist-field-nasa-north-star",
+            "hist-field-noaa-declination",
+            "hist-field-nws-winter-before",
+            "hist-field-rmg-harrison",
+            "hist-field-rmg-lunar",
+            "hist-field-rmg-why-longitude",
+            "hist-field-si-sextant",
+            "hist-field-usgs-declination",
+            "hist-field-usgs-north-arrows",
+            "loc-prairie-traveler"
+          ],
+          "headings_h2_h3": 14,
+          "paragraphs": 33
+        }
+      },
+      "candidate": {
+        "slug": "navigation-before-gps",
+        "cluster": "historical-field",
+        "version": "candidate",
+        "commit_sha": "ddb3528ba6494dada1fa1c3a142ce746e3a67706",
+        "git_blob_oid": "3c02e58c30d1d608224944142f31fbead44a1252",
+        "metrics": {
+          "raw_html_chars": 21746,
+          "approx_visible_word_tokens": 2893,
+          "citation_occurrences": 47,
+          "citation_ids": [
+            "hist-field-nasa-north-star",
+            "hist-field-noaa-declination",
+            "hist-field-nws-winter-before",
+            "hist-field-rmg-harrison",
+            "hist-field-rmg-lunar",
+            "hist-field-rmg-why-longitude",
+            "hist-field-si-sextant",
+            "hist-field-usgs-declination",
+            "hist-field-usgs-north-arrows",
+            "loc-prairie-traveler"
+          ],
+          "headings_h2_h3": 14,
+          "paragraphs": 33
+        }
+      },
+      "contributor": {
+        "slug": "navigation-before-gps",
+        "cluster": "historical-field",
+        "version": "contributor",
+        "commit_sha": "4e5caf812727953aa45e3bda2d382f2c67b6a09c",
+        "git_blob_oid": "49beb68339a6b85b07d686c0cfb9fe1d88b8de4f",
+        "metrics": {
+          "raw_html_chars": 21846,
+          "approx_visible_word_tokens": 2893,
+          "citation_occurrences": 47,
+          "citation_ids": [
+            "hist-field-nasa-north-star",
+            "hist-field-noaa-declination",
+            "hist-field-nws-winter-before",
+            "hist-field-rmg-harrison",
+            "hist-field-rmg-lunar",
+            "hist-field-rmg-why-longitude",
+            "hist-field-si-sextant",
+            "hist-field-usgs-declination",
+            "hist-field-usgs-north-arrows",
+            "loc-prairie-traveler"
+          ],
+          "headings_h2_h3": 14,
+          "paragraphs": 33
+        }
+      },
+      "review_flags": {
+        "candidate_vs_contributor_word_token_delta": 0,
+        "candidate_vs_baseline_word_token_delta": 0,
+        "candidate_vs_contributor_citation_delta": 0,
+        "contributor_citation_ids_absent_from_candidate": [],
+        "candidate_citation_ids_absent_from_contributor": [],
+        "candidate_different_git_blob_from_both": true,
+        "requires_human_reading_depth_claim_and_safety_review": true
+      }
+    },
+    {
+      "slug": "pioneer-supply-chains-failed",
+      "cluster": "historical-field",
+      "baseline": {
+        "slug": "pioneer-supply-chains-failed",
+        "cluster": "historical-field",
+        "version": "baseline",
+        "commit_sha": "980659031b0bd5787a326d38698138c1e8cad82d",
+        "git_blob_oid": "1332df3540a903fdecdb3527fb22347d57968fb0",
+        "metrics": {
+          "raw_html_chars": 22205,
+          "approx_visible_word_tokens": 2773,
+          "citation_occurrences": 57,
+          "citation_ids": [
+            "hist-field-britannica-donner",
+            "hist-field-ca-parks-donner",
+            "hist-field-mccurdy-1994",
+            "hist-field-nps-donner",
+            "hist-field-nws-winter-before",
+            "hist-field-nws-winter-during",
+            "hist-field-utah-hastings",
+            "loc-pioneer-diaries",
+            "loc-prairie-traveler"
+          ],
+          "headings_h2_h3": 14,
+          "paragraphs": 29
+        }
+      },
+      "candidate": {
+        "slug": "pioneer-supply-chains-failed",
+        "cluster": "historical-field",
+        "version": "candidate",
+        "commit_sha": "ddb3528ba6494dada1fa1c3a142ce746e3a67706",
+        "git_blob_oid": "ad158ee898f76d05bcb65c845b1e4a0e8103c660",
+        "metrics": {
+          "raw_html_chars": 24803,
+          "approx_visible_word_tokens": 3133,
+          "citation_occurrences": 63,
+          "citation_ids": [
+            "hist-field-britannica-donner",
+            "hist-field-ca-parks-donner",
+            "hist-field-ia-hastings-guide",
+            "hist-field-mccurdy-1994",
+            "hist-field-nps-donner",
+            "hist-field-nws-winter-before",
+            "hist-field-nws-winter-during",
+            "hist-field-oac-breen-diary",
+            "hist-field-utah-hastings",
+            "loc-pioneer-diaries",
+            "loc-prairie-traveler"
+          ],
+          "headings_h2_h3": 14,
+          "paragraphs": 30
+        }
+      },
+      "contributor": {
+        "slug": "pioneer-supply-chains-failed",
+        "cluster": "historical-field",
+        "version": "contributor",
+        "commit_sha": "4e5caf812727953aa45e3bda2d382f2c67b6a09c",
+        "git_blob_oid": "3643c50b43ca7ba6c1d9bc439e7c78730503b80f",
+        "metrics": {
+          "raw_html_chars": 24916,
+          "approx_visible_word_tokens": 3133,
+          "citation_occurrences": 63,
+          "citation_ids": [
+            "hist-field-britannica-donner",
+            "hist-field-ca-parks-donner",
+            "hist-field-ia-hastings-guide",
+            "hist-field-mccurdy-1994",
+            "hist-field-nps-donner",
+            "hist-field-nws-winter-before",
+            "hist-field-nws-winter-during",
+            "hist-field-oac-breen-diary",
+            "hist-field-utah-hastings",
+            "loc-pioneer-diaries",
+            "loc-prairie-traveler"
+          ],
+          "headings_h2_h3": 14,
+          "paragraphs": 30
+        }
+      },
+      "review_flags": {
+        "candidate_vs_contributor_word_token_delta": 0,
+        "candidate_vs_baseline_word_token_delta": 360,
+        "candidate_vs_contributor_citation_delta": 0,
+        "contributor_citation_ids_absent_from_candidate": [],
+        "candidate_citation_ids_absent_from_contributor": [],
+        "candidate_different_git_blob_from_both": true,
+        "requires_human_reading_depth_claim_and_safety_review": true
+      }
+    },
+    {
+      "slug": "pemmican-and-dried-meats",
+      "cluster": "historical-food",
+      "baseline": {
+        "slug": "pemmican-and-dried-meats",
+        "cluster": "historical-food",
+        "version": "baseline",
+        "commit_sha": "980659031b0bd5787a326d38698138c1e8cad82d",
+        "git_blob_oid": "0b3319cc85ea2bc6d069b46d13a40e12ddbd5bc5",
+        "metrics": {
+          "raw_html_chars": 18652,
+          "approx_visible_word_tokens": 2419,
+          "citation_occurrences": 46,
+          "citation_ids": [
+            "cdc-botulism-prevention",
+            "fsis-home-cure-qa",
+            "hist-food-ce-pemmican",
+            "hist-food-fsis-jerky",
+            "hist-food-headsmashedin",
+            "hist-food-marcy-prairie-traveler-text",
+            "hist-food-metis-fur-trade",
+            "hist-food-natifs-wasna",
+            "hist-food-nchfp-jerky",
+            "hist-food-nk360-bison",
+            "loc-prairie-traveler"
+          ],
+          "headings_h2_h3": 11,
+          "paragraphs": 22
+        }
+      },
+      "candidate": {
+        "slug": "pemmican-and-dried-meats",
+        "cluster": "historical-food",
+        "version": "candidate",
+        "commit_sha": "ddb3528ba6494dada1fa1c3a142ce746e3a67706",
+        "git_blob_oid": "0b3319cc85ea2bc6d069b46d13a40e12ddbd5bc5",
+        "metrics": {
+          "raw_html_chars": 18652,
+          "approx_visible_word_tokens": 2419,
+          "citation_occurrences": 46,
+          "citation_ids": [
+            "cdc-botulism-prevention",
+            "fsis-home-cure-qa",
+            "hist-food-ce-pemmican",
+            "hist-food-fsis-jerky",
+            "hist-food-headsmashedin",
+            "hist-food-marcy-prairie-traveler-text",
+            "hist-food-metis-fur-trade",
+            "hist-food-natifs-wasna",
+            "hist-food-nchfp-jerky",
+            "hist-food-nk360-bison",
+            "loc-prairie-traveler"
+          ],
+          "headings_h2_h3": 11,
+          "paragraphs": 22
+        }
+      },
+      "contributor": {
+        "slug": "pemmican-and-dried-meats",
+        "cluster": "historical-food",
+        "version": "contributor",
+        "commit_sha": "67e116e536c7410bed30f8f3b1bb8c166f3c223d",
+        "git_blob_oid": "1febc8929f8b90c81a3fcef1e46a2811778b7e06",
+        "metrics": {
+          "raw_html_chars": 18673,
+          "approx_visible_word_tokens": 2419,
+          "citation_occurrences": 46,
+          "citation_ids": [
+            "cdc-botulism-prevention",
+            "fsis-home-cure-qa",
+            "hist-food-ce-pemmican",
+            "hist-food-fsis-jerky",
+            "hist-food-headsmashedin",
+            "hist-food-marcy-prairie-traveler-text",
+            "hist-food-metis-fur-trade",
+            "hist-food-natifs-wasna",
+            "hist-food-nk360-bison",
+            "loc-prairie-traveler",
+            "nchfp-jerky"
+          ],
+          "headings_h2_h3": 11,
+          "paragraphs": 22
+        }
+      },
+      "review_flags": {
+        "candidate_vs_contributor_word_token_delta": 0,
+        "candidate_vs_baseline_word_token_delta": 0,
+        "candidate_vs_contributor_citation_delta": 0,
+        "contributor_citation_ids_absent_from_candidate": [
+          "nchfp-jerky"
+        ],
+        "candidate_citation_ids_absent_from_contributor": [
+          "hist-food-nchfp-jerky"
+        ],
+        "candidate_different_git_blob_from_both": false,
+        "requires_human_reading_depth_claim_and_safety_review": true
+      }
+    },
+    {
+      "slug": "pioneer-travel-rations",
+      "cluster": "historical-food",
+      "baseline": {
+        "slug": "pioneer-travel-rations",
+        "cluster": "historical-food",
+        "version": "baseline",
+        "commit_sha": "980659031b0bd5787a326d38698138c1e8cad82d",
+        "git_blob_oid": "058c90b763d8cd6dec0731a7b0a9cee4dd5a57c7",
+        "metrics": {
+          "raw_html_chars": 18095,
+          "approx_visible_word_tokens": 2334,
+          "citation_occurrences": 39,
+          "citation_ids": [
+            "cdc-botulism-prevention",
+            "fsis-home-cure-qa",
+            "hist-food-fsis-jerky",
+            "hist-food-marcy-prairie-traveler-text",
+            "hist-food-nchfp-jerky",
+            "hist-food-nps-emigrant-trails",
+            "hist-food-nps-nht-nevada-guide",
+            "loc-pioneer-diaries",
+            "loc-prairie-traveler",
+            "nchfp-cure-smoke"
+          ],
+          "headings_h2_h3": 11,
+          "paragraphs": 23
+        }
+      },
+      "candidate": {
+        "slug": "pioneer-travel-rations",
+        "cluster": "historical-food",
+        "version": "candidate",
+        "commit_sha": "ddb3528ba6494dada1fa1c3a142ce746e3a67706",
+        "git_blob_oid": "058c90b763d8cd6dec0731a7b0a9cee4dd5a57c7",
+        "metrics": {
+          "raw_html_chars": 18095,
+          "approx_visible_word_tokens": 2334,
+          "citation_occurrences": 39,
+          "citation_ids": [
+            "cdc-botulism-prevention",
+            "fsis-home-cure-qa",
+            "hist-food-fsis-jerky",
+            "hist-food-marcy-prairie-traveler-text",
+            "hist-food-nchfp-jerky",
+            "hist-food-nps-emigrant-trails",
+            "hist-food-nps-nht-nevada-guide",
+            "loc-pioneer-diaries",
+            "loc-prairie-traveler",
+            "nchfp-cure-smoke"
+          ],
+          "headings_h2_h3": 11,
+          "paragraphs": 23
+        }
+      },
+      "contributor": {
+        "slug": "pioneer-travel-rations",
+        "cluster": "historical-food",
+        "version": "contributor",
+        "commit_sha": "67e116e536c7410bed30f8f3b1bb8c166f3c223d",
+        "git_blob_oid": "a658481d828dc4c5ba85f296adbfbee0514f0611",
+        "metrics": {
+          "raw_html_chars": 18175,
+          "approx_visible_word_tokens": 2334,
+          "citation_occurrences": 39,
+          "citation_ids": [
+            "cdc-botulism-prevention",
+            "fsis-home-cure-qa",
+            "hist-food-fsis-jerky",
+            "hist-food-marcy-prairie-traveler-text",
+            "hist-food-nps-emigrant-trails",
+            "hist-food-nps-nht-nevada-guide",
+            "loc-pioneer-diaries",
+            "loc-prairie-traveler",
+            "nchfp-cure-smoke",
+            "nchfp-jerky"
+          ],
+          "headings_h2_h3": 11,
+          "paragraphs": 23
+        }
+      },
+      "review_flags": {
+        "candidate_vs_contributor_word_token_delta": 0,
+        "candidate_vs_baseline_word_token_delta": 0,
+        "candidate_vs_contributor_citation_delta": 0,
+        "contributor_citation_ids_absent_from_candidate": [
+          "nchfp-jerky"
+        ],
+        "candidate_citation_ids_absent_from_contributor": [
+          "hist-food-nchfp-jerky"
+        ],
+        "candidate_different_git_blob_from_both": false,
+        "requires_human_reading_depth_claim_and_safety_review": true
+      }
+    },
+    {
+      "slug": "root-cellars-cool-storage",
+      "cluster": "historical-home",
+      "baseline": {
+        "slug": "root-cellars-cool-storage",
+        "cluster": "historical-home",
+        "version": "baseline",
+        "commit_sha": "980659031b0bd5787a326d38698138c1e8cad82d",
+        "git_blob_oid": "e28548b4e5014f36ffd12becb9261ae696480efa",
+        "metrics": {
+          "raw_html_chars": 18830,
+          "approx_visible_word_tokens": 2415,
+          "citation_occurrences": 37,
+          "citation_ids": [
+            "cdc-botulism-prevention",
+            "hist-home-fsis-refrigeration",
+            "hist-home-monticello-ice-house",
+            "hist-home-mu-root-cellars",
+            "hist-home-nps-fort-union-water",
+            "hist-home-nps-oxon-hill-root-cellar",
+            "hist-home-nps-ww2-canning"
+          ],
+          "headings_h2_h3": 12,
+          "paragraphs": 29
+        }
+      },
+      "candidate": {
+        "slug": "root-cellars-cool-storage",
+        "cluster": "historical-home",
+        "version": "candidate",
+        "commit_sha": "ddb3528ba6494dada1fa1c3a142ce746e3a67706",
+        "git_blob_oid": "2ff8d029769aa9a97de6b1e388d937899f3af38c",
+        "metrics": {
+          "raw_html_chars": 21264,
+          "approx_visible_word_tokens": 2780,
+          "citation_occurrences": 42,
+          "citation_ids": [
+            "cdc-botulism-prevention",
+            "hist-home-fsis-refrigeration",
+            "hist-home-monticello-ice-house",
+            "hist-home-msu-simmons-1798",
+            "hist-home-mu-root-cellars",
+            "hist-home-nps-fort-union-water",
+            "hist-home-nps-oxon-hill-root-cellar",
+            "hist-home-nps-ww2-canning"
+          ],
+          "headings_h2_h3": 13,
+          "paragraphs": 32
+        }
+      },
+      "contributor": {
+        "slug": "root-cellars-cool-storage",
+        "cluster": "historical-home",
+        "version": "contributor",
+        "commit_sha": "7504a5f099594d635e3dd7332a33a2e1346c43a2",
+        "git_blob_oid": "7f375c32d74f2828b4912f5692abc44483e4629a",
+        "metrics": {
+          "raw_html_chars": 21366,
+          "approx_visible_word_tokens": 2780,
+          "citation_occurrences": 42,
+          "citation_ids": [
+            "cdc-botulism-prevention",
+            "hist-home-fsis-refrigeration",
+            "hist-home-monticello-ice-house",
+            "hist-home-msu-simmons-1798",
+            "hist-home-mu-root-cellars",
+            "hist-home-nps-fort-union-water",
+            "hist-home-nps-oxon-hill-root-cellar",
+            "hist-home-nps-ww2-canning"
+          ],
+          "headings_h2_h3": 13,
+          "paragraphs": 32
+        }
+      },
+      "review_flags": {
+        "candidate_vs_contributor_word_token_delta": 0,
+        "candidate_vs_baseline_word_token_delta": 365,
+        "candidate_vs_contributor_citation_delta": 0,
+        "contributor_citation_ids_absent_from_candidate": [],
+        "candidate_citation_ids_absent_from_contributor": [],
+        "candidate_different_git_blob_from_both": true,
+        "requires_human_reading_depth_claim_and_safety_review": true
+      }
+    },
+    {
+      "slug": "sanitation-before-germ-theory",
+      "cluster": "historical-home",
+      "baseline": {
+        "slug": "sanitation-before-germ-theory",
+        "cluster": "historical-home",
+        "version": "baseline",
+        "commit_sha": "980659031b0bd5787a326d38698138c1e8cad82d",
+        "git_blob_oid": "15852c158708270d72d5f9723d90e5cb6083a766",
+        "metrics": {
+          "raw_html_chars": 21687,
+          "approx_visible_word_tokens": 2614,
+          "citation_occurrences": 47,
+          "citation_ids": [
+            "cdc-water-safe",
+            "hist-home-cdc-clean-hands",
+            "hist-home-chadwick-cureus",
+            "hist-home-nps-fort-union-water",
+            "hist-home-smith-naval-hygiene",
+            "hist-home-snow-mode-of-communication",
+            "hist-home-tulchinsky-snow",
+            "hist-home-wellcome-snow-map",
+            "rmg-life-at-sea"
+          ],
+          "headings_h2_h3": 12,
+          "paragraphs": 29
+        }
+      },
+      "candidate": {
+        "slug": "sanitation-before-germ-theory",
+        "cluster": "historical-home",
+        "version": "candidate",
+        "commit_sha": "ddb3528ba6494dada1fa1c3a142ce746e3a67706",
+        "git_blob_oid": "d56df76647d2598f35cfd4609f91649cef063f12",
+        "metrics": {
+          "raw_html_chars": 21947,
+          "approx_visible_word_tokens": 2648,
+          "citation_occurrences": 48,
+          "citation_ids": [
+            "cdc-water-safe",
+            "hist-home-cdc-clean-hands",
+            "hist-home-chadwick-cureus",
+            "hist-home-nps-fort-union-water",
+            "hist-home-smith-naval-hygiene",
+            "hist-home-snow-mode-of-communication",
+            "hist-home-tulchinsky-snow",
+            "hist-home-wellcome-chadwick-1842",
+            "hist-home-wellcome-snow-map",
+            "rmg-life-at-sea"
+          ],
+          "headings_h2_h3": 12,
+          "paragraphs": 29
+        }
+      },
+      "contributor": {
+        "slug": "sanitation-before-germ-theory",
+        "cluster": "historical-home",
+        "version": "contributor",
+        "commit_sha": "7504a5f099594d635e3dd7332a33a2e1346c43a2",
+        "git_blob_oid": "02090fc1b773fd79f08a7ba754b6125844c37eab",
+        "metrics": {
+          "raw_html_chars": 22049,
+          "approx_visible_word_tokens": 2648,
+          "citation_occurrences": 48,
+          "citation_ids": [
+            "cdc-water-safe",
+            "hist-home-cdc-clean-hands",
+            "hist-home-chadwick-cureus",
+            "hist-home-nps-fort-union-water",
+            "hist-home-smith-naval-hygiene",
+            "hist-home-snow-mode-of-communication",
+            "hist-home-tulchinsky-snow",
+            "hist-home-wellcome-chadwick-1842",
+            "hist-home-wellcome-snow-map",
+            "rmg-life-at-sea"
+          ],
+          "headings_h2_h3": 12,
+          "paragraphs": 29
+        }
+      },
+      "review_flags": {
+        "candidate_vs_contributor_word_token_delta": 0,
+        "candidate_vs_baseline_word_token_delta": 34,
+        "candidate_vs_contributor_citation_delta": 0,
+        "contributor_citation_ids_absent_from_candidate": [],
+        "candidate_citation_ids_absent_from_contributor": [],
+        "candidate_different_git_blob_from_both": true,
+        "requires_human_reading_depth_claim_and_safety_review": true
+      }
+    }
+  ]
+}
