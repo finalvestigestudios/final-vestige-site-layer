@@ -25,6 +25,26 @@ _RELEASE = re.compile(
 _FAILURE = "Catalog visible copy violates pre-release publication hold"
 
 
+def _scan_rendered_copy(chunks: list[str]) -> None:
+    """Scan one bounded text representation without logging original text."""
+    visible = "".join(chunks)
+    if len(visible) > 81920:
+        raise ValueError(_FAILURE)
+    for ch in visible:
+        category = unicodedata.category(ch)
+        # Unicode default-ignorable format controls include zero-width and
+        # bidi markers that can disguise public release claims or destinations.
+        # Preserve ordinary line breaks/tabs in source text.
+        if category in ("Cf", "Cs", "Cc", "Zl", "Zp") and ch not in "\r\n\t":
+            raise ValueError(_FAILURE)
+    compact = "".join(ch for ch in visible if not ch.isspace())
+    spaced = " ".join(chunks)
+    if (_URI.search(compact) or _ARTIFACT.search(compact)
+            or _ARTIFACT.search(spaced) or _RELEASE.search(spaced)):
+        raise ValueError(_FAILURE)
+    check_fragmented_claims(chunks)
+
+
 def check_visible_hold(chunks: list[str]) -> None:
     """Raise a text-private ValueError if a draft exposes destinations/claims.
 
@@ -37,25 +57,11 @@ def check_visible_hold(chunks: list[str]) -> None:
         raise ValueError(_FAILURE)
     if any(type(part) is not str for part in chunks):
         raise ValueError(_FAILURE)
-    visible = "".join(chunks)
-    if len(visible) > 81920:
-        raise ValueError(_FAILURE)
-    for ch in visible:
-        category = unicodedata.category(ch)
-        # Unicode default-ignorable format controls include zero-width and
-        # bidi markers that can disguise public release claims or destinations.
-        # Preserve ordinary line breaks/tabs in source text.
-        if category in ("Cf", "Cs", "Cc", "Zl", "Zp") and ch not in "\r\n\t":
-            raise ValueError(_FAILURE)
-    # Whitespace-separated schemes/extensions are not safe either. URL text
-    # split across <strong> or WordPress blocks must still fail closed.
-    compact = "".join(ch for ch in visible if not ch.isspace())
-    # Also preserve boundaries between HTMLParser data nodes. Concatenation
-    # alone can turn ".msix" + "Pilot" into ".msixPilot" and hide a suffix,
-    # or "Download " + "now" + "Pilot" into "Download nowPilot".
-    spaced = " ".join(chunks)
-    if (_URI.search(compact) or _ARTIFACT.search(compact)
-            or _ARTIFACT.search(spaced) or _RELEASE.search(spaced)):
-        raise ValueError(_FAILURE)
-    # R189 closes claims/installer suffixes concealed across inline-node edges.
-    check_fragmented_claims(chunks)
+    _scan_rendered_copy(chunks)
+    # NFKC folds fullwidth/circled/math-alphanumeric release words, installer
+    # extensions and scheme punctuation. Only the *review copy* is normalized:
+    # the tracked Gutenberg source remains byte-for-byte untouched. Preserve
+    # HTMLParser's original node boundaries so R189 still finds split words.
+    normalized = [unicodedata.normalize("NFKC", part) for part in chunks]
+    if normalized != chunks:
+        _scan_rendered_copy(normalized)
