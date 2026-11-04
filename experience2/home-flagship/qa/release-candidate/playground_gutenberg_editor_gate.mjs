@@ -105,6 +105,20 @@ function checkEditorReceipt(receipt, digest) {
   assert.equal(Object.keys(receipt.checks || {}).length, 9);
   for (const v of Object.values(receipt.checks)) assert.equal(v, true);
 }
+/** On a successful PHP create response, validate the whole creation receipt.
+ * IMPORTANT: mark draftCreated BEFORE calling this function so that even a
+ * malformed receipt results in verified disposable-draft cleanup. */
+function checkCreatedReceipt(created,digest) {
+  assert.equal(created.status,200,'Disposable WordPress create HTTP status');
+  const body=created.body;
+  assert.equal(body?.result,'CREATED');
+  assert.equal(body?.release,'HOLD');
+  assert.equal(body?.data_class,DATA_CLASS);
+  assert.equal(body?.source_sha256,digest);
+  assert.ok(Number.isSafeInteger(body?.draft_id) && body.draft_id>0,
+    'Disposable WordPress draft ID invalid');
+  return body.draft_id;
+}
 async function selfTest() {
   // Real public text fixture, synthetic candidate layout: no production CMS reads.
   const fixtureBytes=await readFile(join(HERE,'public_page6_margins_20261102.json'));
@@ -165,6 +179,23 @@ async function selfTest() {
     result:'PASS',release:'HOLD',test_type:'REAL_GUTENBERG_EDITOR_SAVE_SYNTHETIC_PLAYGROUND_ONLY',
     data_class:DATA_CLASS,source_sha256:'a',stored_sha256:'a',source_bytes:5,stored_bytes:5,checks
   };
+
+  // Real create() receipt contract, including regression for the old
+  // SYNTHETIC_TEST_FIXTURE_ONLY mismatch that aborted before cleanup.
+  const goodCreate={status:200,body:{result:'CREATED',release:'HOLD',
+    data_class:DATA_CLASS,source_sha256:'a',draft_id:42}};
+  assert.equal(checkCreatedReceipt(goodCreate,'a'),42);total++;
+  const badCreates=[
+    {...goodCreate,body:{...goodCreate.body,data_class:'SYNTHETIC_TEST_FIXTURE_ONLY'}},
+    {...goodCreate,body:{...goodCreate.body,release:'LIVE'}},
+    {...goodCreate,body:{...goodCreate.body,source_sha256:'tampered'}},
+    {...goodCreate,body:{...goodCreate.body,draft_id:0}},
+    {...goodCreate,body:{...goodCreate.body,draft_id:'42'}},
+    {...goodCreate,body:{...goodCreate.body,result:'FAIL'}},
+    {...goodCreate,status:422},
+    {...goodCreate,body:null}
+  ];
+  for(const bad of badCreates){assert.throws(()=>checkCreatedReceipt(bad,'a'));total++;}
   checkEditorReceipt(pass,'a');total++;
   for(const invalid of [
     {...pass,data_class:'SYNTHETIC_TEST_FIXTURE_ONLY'},
@@ -256,13 +287,11 @@ if (process.argv.includes('--self-test')) {
       return {status,body};
     };
     const created = await act('create');
-    assert.equal(created.status,200);
-    assert.equal(created.body.result,'CREATED');
-    assert.equal(created.body.data_class,'SYNTHETIC_TEST_FIXTURE_ONLY');
-    assert.equal(created.body.source_sha256,digest);
-    const draftId = created.body.draft_id;
-    assert.ok(Number.isSafeInteger(draftId) && draftId>0);
-    draftCreated = true;
+    // A CREATED response means a temporary draft may exist. Arm cleanup
+    // BEFORE validating the receipt: corrupted data-class or digest must
+    // never leave a test draft orphaned.
+    draftCreated = created.status===200 && created.body?.result==='CREATED';
+    const draftId = checkCreatedReceipt(created,digest);
     const login = await act('login');
     assert.equal(login.status,200);
     assert.equal(login.body.result,'LOGIN_SET');
