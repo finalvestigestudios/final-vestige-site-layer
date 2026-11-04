@@ -6,6 +6,7 @@ hosted network calls, or WordPress content/settings writes.
 """
 import hashlib
 import json
+import math
 import os
 import re
 from pathlib import Path
@@ -36,7 +37,9 @@ class EvidenceJournal:
         return {'schema': SCHEMA, 'release': 'STAGING_HOLD', 'status': 'not_started'}
 
     def checkpoint(self, record, stage):
-        if not CHECKPOINT.fullmatch(stage):
+        if self._read().get('status') == 'completed':
+            raise ValueError('R106_COMPLETED_RECEIPT_IMMUTABLE')
+        if not isinstance(stage, str) or not CHECKPOINT.fullmatch(stage):
             raise ValueError('R105_INVALID_STAGE')
         counts = {
             'browser_cases': len(record.get('r103_interaction_cases', [])),
@@ -66,33 +69,96 @@ class EvidenceJournal:
         self._write(payload)
 
     def complete(self, record):
-        if len(record.get('r103_interaction_cases', [])) != 10 or any(not c.get('passed') for c in record['r103_interaction_cases']):
-            raise ValueError('R105_INCOMPLETE_BROWSER_MATRIX')
-        if len(record.get('axe', [])) != 2 or any(a.get('violations') for a in record['axe']):
-            raise ValueError('R105_INCOMPLETE_AXE')
+        """Certify *complete* isolated-browser evidence, never production readiness.
+
+        Reject plausible looking but incomplete / forged matrix entries, non-finite
+        numbers, missing LCP observations and artifact substitution. All values are
+        evaluated from the test harness' in-memory record, not untrusted web input.
+        """
+        if self._read().get('status') == 'completed':
+            raise ValueError('R106_COMPLETED_RECEIPT_IMMUTABLE')
+        if (record.get('schema') != 'fv.apollo.r104.real-wp-gallery.v1'
+                or record.get('release') != 'STAGING_HOLD'
+                or record.get('real_wordpress_core_http') is not True
+                or record.get('hosted_wordpress_or_assembler_verified') is not False
+                or record.get('production_core_web_vitals') is not False):
+            raise ValueError('R106_SCOPE_MISMATCH')
+
+        cases = record.get('r103_interaction_cases', [])
+        expected = {(width, js) for width in (320, 390, 768, 1440, 1920)
+                    for js in (False, True)}
+        observed = set()
+        if len(cases) != len(expected):
+            raise ValueError('R106_INCOMPLETE_BROWSER_MATRIX')
+        for case in cases:
+            if not isinstance(case, dict):
+                raise ValueError('R106_INCOMPLETE_BROWSER_MATRIX')
+            key = (case.get('width'), case.get('javascript_enabled'))
+            if (type(key[0]) is not int or type(key[1]) is not bool
+                    or key not in expected or key in observed
+                    or case.get('passed') is not True
+                    or case.get('actual_wordpress_http') is not True
+                    or case.get('reduced_motion') is not True
+                    or case.get('forced_colors') is not (key[0] == 320)):
+                raise ValueError('R106_INCOMPLETE_BROWSER_MATRIX')
+            observed.add(key)
+        if observed != expected:
+            raise ValueError('R106_INCOMPLETE_BROWSER_MATRIX')
+
+        axe = record.get('axe', [])
+        if len(axe) != 2 or {a.get('width') for a in axe if isinstance(a, dict)} != {390, 1440}:
+            raise ValueError('R106_INCOMPLETE_AXE')
+        for scan in axe:
+            if (scan.get('state') != 'selected_two_sources'
+                    or type(scan.get('passes')) is not int or scan['passes'] <= 0
+                    or scan.get('violations') != []):
+                raise ValueError('R106_INCOMPLETE_AXE')
+
         samples = record.get('performance_lab_samples', [])
-        if len(samples) != 6 or any(not isinstance(s.get('cls'), (int, float)) or s['cls'] > 0.1 or s['cls'] < 0 for s in samples):
-            raise ValueError('R105_INCOMPLETE_CLS')
-        for width in (390, 1440):
-            group = [s for s in samples if s.get('width') == width]
-            if sorted(s.get('trial') for s in group) != [1, 2, 3]:
-                raise ValueError('R105_MISSING_LAB_TRIAL')
-            seen = [s['lcp_ms'] for s in group if isinstance(s.get('lcp_ms'), (int, float))]
-            if not seen or any(v < 0 or v > 2500 for v in seen):
-                raise ValueError('R105_MISSING_OR_FAILED_LCP')
+        expected_trials = {(width, trial) for width in (390, 1440) for trial in (1, 2, 3)}
+        observed_trials = set()
+        if len(samples) != 6:
+            raise ValueError('R106_INCOMPLETE_LAB_MATRIX')
+        for sample in samples:
+            if not isinstance(sample, dict):
+                raise ValueError('R106_INCOMPLETE_LAB_MATRIX')
+            key = (sample.get('width'), sample.get('trial'))
+            if (type(key[0]) is not int or type(key[1]) is not int
+                    or key not in expected_trials or key in observed_trials):
+                raise ValueError('R106_MISSING_LAB_TRIAL')
+            observed_trials.add(key)
+            cls = sample.get('cls')
+            if (type(cls) not in (int, float) or not math.isfinite(cls)
+                    or cls < 0 or cls > 0.1):
+                raise ValueError('R106_INVALID_OR_FAILED_CLS')
+            lcp = sample.get('lcp_ms')
+            if (type(lcp) not in (int, float) or not math.isfinite(lcp)
+                    or lcp <= 0 or lcp > 2500):
+                raise ValueError('R106_MISSING_OR_FAILED_LCP')
+        if observed_trials != expected_trials:
+            raise ValueError('R106_MISSING_LAB_TRIAL')
+
         images = record.get('screenshots_sha256', {})
         documents = record.get('pdf_sha256', {})
-        if len(images) != 4 or len(documents) != 1:
-            raise ValueError('R105_INCOMPLETE_ARTIFACT_SET')
-        for name, expected in {**images, **documents}.items():
-            if not re.fullmatch(r'R104_REAL_WP_[A-Z0-9_]+\.(?:png|pdf)', name):
-                raise ValueError('R105_INVALID_ARTIFACT_NAME')
+        expected_images = {f'R104_REAL_WP_SELECTED_{width}.png' for width in (320, 390, 1440)}
+        expected_images.add('R104_REAL_WP_NOJS_390.png')
+        expected_documents = {'R104_REAL_WP_PRINT.pdf'}
+        if set(images) != expected_images or set(documents) != expected_documents:
+            raise ValueError('R106_INCOMPLETE_ARTIFACT_SET')
+        for name, digest in {**images, **documents}.items():
+            if not isinstance(digest, str) or not re.fullmatch(r'[a-f0-9]{64}', digest):
+                raise ValueError('R106_INVALID_ARTIFACT_HASH')
             file = self.directory / name
-            if not file.is_file() or hashlib.sha256(file.read_bytes()).hexdigest() != expected:
-                raise ValueError('R105_ARTIFACT_HASH_MISMATCH')
+            if not file.is_file():
+                raise ValueError('R106_MISSING_ARTIFACT')
+            content = file.read_bytes()
+            if (name.endswith('.png') and not content.startswith(b'\\x89PNG\\r\\n\\x1a\\n')) or (name.endswith('.pdf') and not content.startswith(b'%PDF-')):
+                raise ValueError('R106_INVALID_ARTIFACT_TYPE')
+            if hashlib.sha256(content).hexdigest() != digest:
+                raise ValueError('R106_ARTIFACT_HASH_MISMATCH')
         self.checkpoint(record, 'all-gates-verified')
         payload = self._read()
         payload.update(status='completed', complete=True,
                        artifact_sha256={**images, **documents},
-                       note='R104 isolated WordPress QA complete; release remains STAGING HOLD.')
+                       note='Isolated WordPress QA evidence complete; release remains STAGING HOLD.')
         self._write(payload)
