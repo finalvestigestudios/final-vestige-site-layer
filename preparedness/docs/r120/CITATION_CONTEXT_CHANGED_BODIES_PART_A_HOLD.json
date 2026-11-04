@@ -1,0 +1,295 @@
+{
+  "schema": "r120-partial-citation-context-HOLD-v1",
+  "issue": 136,
+  "base_sha": "980659031b0bd5787a326d38698138c1e8cad82d",
+  "candidate_sha": "ddb3528ba6494dada1fa1c3a142ce746e3a67706",
+  "rows": [
+    {
+      "slug": "family-communication-plan",
+      "before_git_blob": "16e2b1ec37fd6ea37f442d13e831180253c709b9",
+      "after_git_blob": "8ac8bd7dba3be15d477c15737e54d83364d72527",
+      "before_word_count": 3009,
+      "after_word_count": 3543,
+      "before_citation_count": 62,
+      "after_citation_count": 69,
+      "citation_sequence_changed": true,
+      "occurrence_changes": [
+        {
+          "source_id": "shelter-ca-cde-safety-plans",
+          "before": 0,
+          "after": 1
+        },
+        {
+          "source_id": "shelter-cdc-chemical-evac",
+          "before": 0,
+          "after": 1
+        },
+        {
+          "source_id": "shelter-cdc-chemical-sip",
+          "before": 0,
+          "after": 1
+        },
+        {
+          "source_id": "shelter-fema-reunification",
+          "before": 0,
+          "after": 1
+        },
+        {
+          "source_id": "shelter-ncmec-hotline",
+          "before": 0,
+          "after": 1
+        },
+        {
+          "source_id": "shelter-ready-plan-locations",
+          "before": 5,
+          "after": 6
+        },
+        {
+          "source_id": "shelter-ready-tech",
+          "before": 0,
+          "after": 1
+        }
+      ],
+      "same_source_id_changed_context_count": 5,
+      "context_examples": [
+        {
+          "citation": "shelter-fcc-comms#6",
+          "before": "The FCC's recommended practices for all users are, in summary:",
+          "after": "Ready.gov's Get Tech Ready page (updated March 2026) is the current statement: mobile networks can become overwhelmed in emergencies, making"
+        },
+        {
+          "citation": "shelter-cdc-reunification#11",
+          "before": "If a child is missing after a disaster, the CDC lists the National Center for Missing and Exploited Children's 24-hour hotline, 1-800-THE-LO",
+          "after": "If a child is missing after a disaster, the CDC lists the National Center for Missing and Exploited Children's 24-hour hotline, 1-800-THE-LO"
+        },
+        {
+          "citation": "shelter-ready-disabilities#3",
+          "before": "People who rely on a caregiver or support network. Ready.gov says to create a support network, keep its contact list in a watertight contain",
+          "after": "People who rely on a caregiver or support network, including older adults. Ready.gov says to create a support network, keep its contact list"
+        },
+        {
+          "citation": "shelter-ready-plan-locations#5",
+          "before": "Neighbors, condominiums and apartments. Ready.gov suggests talking to neighbors about working together in an emergency, finding out who has ",
+          "after": "People who rely on a caregiver or support network, including older adults. Ready.gov says to create a support network, keep its contact list"
+        },
+        {
+          "citation": "shelter-fcc-comms#8",
+          "before": "People who rely on a caregiver or support network. Ready.gov says to create a support network, keep its contact list in a watertight contain",
+          "after": "People who rely on a caregiver or support network, including older adults. Ready.gov says to create a support network, keep its contact list"
+        }
+      ],
+      "approval": "UNREVIEWED"
+    },
+    {
+      "slug": "go-bags",
+      "before_git_blob": "5135639786bbafa4e03939a74659cd0f31df3564",
+      "after_git_blob": "e5910015fc6e33ad015bc5dc0605b86622b701be",
+      "before_word_count": 3383,
+      "after_word_count": 3624,
+      "before_citation_count": 72,
+      "after_citation_count": 73,
+      "citation_sequence_changed": true,
+      "occurrence_changes": [
+        {
+          "source_id": "start-cdc-disability-evacuate",
+          "before": 2,
+          "after": 3
+        }
+      ],
+      "same_source_id_changed_context_count": 0,
+      "context_examples": [],
+      "approval": "UNREVIEWED"
+    },
+    {
+      "slug": "home-fire-escape-plan",
+      "before_git_blob": "ba869874b5ee6ef85a7694e65a364e12f4aed873",
+      "after_git_blob": "0412484304a3bcf08f0bb1b170110f617e3c2869",
+      "before_word_count": 3725,
+      "after_word_count": 4230,
+      "before_citation_count": 70,
+      "after_citation_count": 73,
+      "citation_sequence_changed": true,
+      "occurrence_changes": [
+        {
+          "source_id": "shelter-nfpa-escape",
+          "before": 21,
+          "after": 20
+        },
+        {
+          "source_id": "shelter-nfpa-high-rise",
+          "before": 0,
+          "after": 2
+        },
+        {
+          "source_id": "shelter-usfa-escape-grid",
+          "before": 0,
+          "after": 1
+        },
+        {
+          "source_id": "shelter-usfa-high-rise",
+          "before": 3,
+          "after": 2
+        },
+        {
+          "source_id": "shelter-usfa-high-rise-handout",
+          "before": 0,
+          "after": 3
+        },
+        {
+          "source_id": "usfa-fire-escape",
+          "before": 11,
+          "after": 10
+        }
+      ],
+      "same_source_id_changed_context_count": 18,
+      "context_examples": [
+        {
+          "citation": "shelter-nfpa-escape#5",
+          "before": "USFA's instructions are short: draw a map of your home that includes all doors and windows, and find two ways out of every room. NFPA adds t",
+          "after": "If there are security bars, do they have an emergency release on the inside? NFPA says the release devices will not compromise your security"
+        },
+        {
+          "citation": "shelter-nfpa-escape#6",
+          "before": "If there are security bars, do they have an emergency release on the inside? NFPA says the release devices will not compromise your security",
+          "after": "Is anything in front of it, such as furniture, boxes or stored items? NFPA says items that block doors and windows can mean the difference b"
+        },
+        {
+          "citation": "shelter-nfpa-escape#7",
+          "before": "Is anything in front of it, such as furniture, boxes or stored items? NFPA says items that block doors and windows can mean the difference b",
+          "after": "NFPA says that if the home has two floors, every family member, including children, must be able to escape from second-floor rooms. An escap"
+        },
+        {
+          "citation": "usfa-fire-escape#8",
+          "before": "USFA's instructions are short: draw a map of your home that includes all doors and windows, and find two ways out of every room. NFPA adds t",
+          "after": "USFA says to choose an outside meeting place in front of your home. NFPA's examples are a neighbor's house, a light post, a mailbox or a sto"
+        },
+        {
+          "citation": "shelter-nfpa-escape#8",
+          "before": "NFPA says that if the home has two floors, every family member, including children, must be able to escape from second-floor rooms. An escap",
+          "after": "USFA says to choose an outside meeting place in front of your home. NFPA's examples are a neighbor's house, a light post, a mailbox or a sto"
+        }
+      ],
+      "approval": "UNREVIEWED"
+    },
+    {
+      "slug": "household-emergency-plan",
+      "before_git_blob": "8ca5c261dba56eeaf79c445332381a74867233de",
+      "after_git_blob": "f81cd43516e8295104230412f18776919148f905",
+      "before_word_count": 3180,
+      "after_word_count": 3420,
+      "before_citation_count": 57,
+      "after_citation_count": 57,
+      "citation_sequence_changed": false,
+      "occurrence_changes": [],
+      "same_source_id_changed_context_count": 0,
+      "context_examples": [],
+      "approval": "UNREVIEWED"
+    },
+    {
+      "slug": "navigation-before-gps",
+      "before_git_blob": "64c6b2c7004bc5549eea5a47d9095183e7436750",
+      "after_git_blob": "3c02e58c30d1d608224944142f31fbead44a1252",
+      "before_word_count": 2883,
+      "after_word_count": 2883,
+      "before_citation_count": 47,
+      "after_citation_count": 47,
+      "citation_sequence_changed": false,
+      "occurrence_changes": [],
+      "same_source_id_changed_context_count": 1,
+      "context_examples": [
+        {
+          "citation": "loc-prairie-traveler#2",
+          "before": "The title page promises \"maps, illustrations, and itineraries,\" and the contents list shows how the book thought about the problem: chapters",
+          "after": "The title page promises \"maps, illustrations, and itineraries,\" and the two pages of the contents list describe seven chapters: routes, wago"
+        }
+      ],
+      "approval": "UNREVIEWED"
+    },
+    {
+      "slug": "outage-heat-cold-generators",
+      "before_git_blob": "47d949d97ddb15abc5fdc3b556f37aea5036ce29",
+      "after_git_blob": "2cd3e30b3a7e3dfdb3fd30cfd2b832355f58dfe2",
+      "before_word_count": 4181,
+      "after_word_count": 4445,
+      "before_citation_count": 116,
+      "after_citation_count": 121,
+      "citation_sequence_changed": true,
+      "occurrence_changes": [
+        {
+          "source_id": "fsis-power-failure",
+          "before": 0,
+          "after": 1
+        },
+        {
+          "source_id": "shelter-cpsc-co-tips",
+          "before": 0,
+          "after": 3
+        },
+        {
+          "source_id": "shelter-nws-winter-during",
+          "before": 0,
+          "after": 1
+        }
+      ],
+      "same_source_id_changed_context_count": 0,
+      "context_examples": [],
+      "approval": "UNREVIEWED"
+    },
+    {
+      "slug": "pickling-fermentation-old-recipes",
+      "before_git_blob": "17f5da8a998e6b9b38695a2ef6716c6f336f31c4",
+      "after_git_blob": "1869e37626b7463da45763d60202bd5ac0bd7700",
+      "before_word_count": 2374,
+      "after_word_count": 2736,
+      "before_citation_count": 42,
+      "after_citation_count": 49,
+      "citation_sequence_changed": true,
+      "occurrence_changes": [
+        {
+          "source_id": "cdc-botulism-prevention",
+          "before": 4,
+          "after": 6
+        },
+        {
+          "source_id": "hist-home-loc-simmons-1796",
+          "before": 5,
+          "after": 4
+        },
+        {
+          "source_id": "hist-home-msu-simmons-1798",
+          "before": 0,
+          "after": 6
+        }
+      ],
+      "same_source_id_changed_context_count": 5,
+      "context_examples": [
+        {
+          "citation": "cdc-botulism-prevention#2",
+          "before": "What makes it dangerous is that you cannot check. The CDC says you cannot see, smell or taste the toxin. Its page on home-canned foods lists",
+          "after": "The passage that matters most for this guide is a direction for keeping green peas until Christmas in sealed bottles under a layer of fat. I"
+        },
+        {
+          "citation": "cdc-botulism-prevention#3",
+          "before": "Editor's note A fair reading of the evidence is that tradition and safety are not enemies. Many traditional foods are made in ways that work",
+          "after": "What makes it dangerous is that you cannot check. The CDC says you cannot see, smell or taste the toxin. Its page on home-canned foods lists"
+        },
+        {
+          "citation": "cdc-botulism-prevention#4",
+          "before": "Home-preserved foods are a common source of botulism, and you cannot detect the toxin by sight, smell or taste.",
+          "after": "Editor's note A fair reading of the evidence is that tradition and safety are not enemies. Many traditional foods are made in ways that work"
+        },
+        {
+          "citation": "hist-home-loc-simmons-1796#4",
+          "before": "Editor's note A fair reading of the evidence is that tradition and safety are not enemies. Many traditional foods are made in ways that work",
+          "after": "Documented history A cook relied on a printed directions book, local custom and experience. By the 1790s a printed cook book was the guidanc"
+        },
+        {
+          "citation": "hist-home-nps-ww2-canning#4",
+          "before": "Documented history A cook relied on a printed directions book, local custom and experience. By the 1940s, governments and extension services",
+          "after": "Documented history A cook relied on a printed directions book, local custom and experience. By the 1790s a printed cook book was the guidanc"
+        }
+      ],
+      "approval": "UNREVIEWED"
+    }
+  ]
+}
