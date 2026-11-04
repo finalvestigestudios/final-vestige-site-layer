@@ -1,0 +1,231 @@
+{
+  "schema_version": 1,
+  "post_id": 218,
+  "post_title": "The Rock Had to Be Real",
+  "post_url": "https://finalvestige.com/2026/08/18/the-rock-had-to-be-real/",
+  "verified_wp_state": {
+    "status": "publish",
+    "last_modified": "2026-10-29T16:01:32",
+    "read_only_checked_on_utc": "2026-11-04",
+    "frozen_urls_and_alts_exact": true,
+    "html_width_height_pairs": 0
+  },
+  "frozen_part": "qa/media-recovery/parts/06.json",
+  "frozen_blob_sha": "0f3dfe398a76838049cebba7cb773d5c5a0c8c69",
+  "audit_date_utc": "2026-11-04",
+  "sample_size": 6,
+  "evidence_methods": [
+    "authenticated_readonly_WordPress_posts_get",
+    "frozen_Git_source_census",
+    "Wikimedia_Commons_file_catalog_text",
+    "CIA_primary_context",
+    "web_text_retriever_not_browser"
+  ],
+  "metrics": {
+    "published_sources": 6,
+    "commons_redirect_sources": 6,
+    "originals_at_or_below_960px": 3,
+    "originals_above_960px": 3,
+    "catalog_originals_above_1_5_mib": 2,
+    "actual_browser_broken_confirmed": 0,
+    "actual_browser_transfer_bytes": null,
+    "reported_42_browser_verified": false,
+    "claimed_76percent_wire_measured": false,
+    "sitewide_baseline": {
+      "published_posts": 61,
+      "inline_image_references": 355,
+      "offsite_original_references": 288,
+      "wp_media_originals_above_1_5_mib": 13
+    },
+    "production_replacements": 0
+  },
+  "rights_and_release": "NO_DOWNLOAD_NO_COPY_NO_WP_WRITE",
+  "rows": [
+    {
+      "slot": "218:0",
+      "published_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Glomar_Manganese_Nodule_Encased_in_Lucite.jpg?width=1280",
+      "published_alt": "Manganese nodule recovered from the Pacific by the Glomar Explorer and preserved in Lucite by the CIA Museum.",
+      "source_host": "commons.wikimedia.org",
+      "catalog_record_url": "https://commons.wikimedia.org/wiki/File:Glomar_Manganese_Nodule_Encased_in_Lucite.jpg",
+      "primary_institutional_context_url": "https://www.cia.gov/legacy/museum/artifact/manganese-nodule-encased-in-lucite/",
+      "archive_relation": "same_named_commons_file_catalog_not_verified_binary_hash",
+      "catalog_dimensions_px": {
+        "width": 800,
+        "height": 533
+      },
+      "catalog_file_bytes_approx": 9281,
+      "requested_width_parameter_px": 1280,
+      "conditional_derivative_px": {
+        "width": 800,
+        "height": 533
+      },
+      "no_upscale": true,
+      "published_html_dimensions": null,
+      "catalog_rights_note": "CIA.gov 2022 nodule artifact; uploader labels PD US Government",
+      "item_rights_review": "HOLD",
+      "attribution_review": "HOLD",
+      "image_binary_sha256": null,
+      "real_guest_http_status": null,
+      "real_guest_decode_ok": null,
+      "real_guest_transfer_bytes": null,
+      "web_retriever_observation": "exact_1280_redirect_not_accessible_to_text_retriever_no_origin_http_status",
+      "cache_or_rehost_allowed": false,
+      "wordpress_write_allowed": false
+    },
+    {
+      "slot": "218:1",
+      "published_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/USNS_Glomar_Explorer_(T-AG-193).jpg?width=1280",
+      "published_alt": "Hughes Glomar Explorer at sea, the vessel secretly built for Project AZORIAN.",
+      "source_host": "commons.wikimedia.org",
+      "catalog_record_url": "https://commons.wikimedia.org/wiki/File:USNS_Glomar_Explorer_(T-AG-193).jpg",
+      "primary_institutional_context_url": "https://www.cia.gov/legacy/museum/exhibit/project-azorian/",
+      "archive_relation": "same_named_commons_file_catalog_not_verified_binary_hash",
+      "catalog_dimensions_px": {
+        "width": 1280,
+        "height": 833
+      },
+      "catalog_file_bytes_approx": 551000,
+      "requested_width_parameter_px": 1280,
+      "conditional_derivative_px": {
+        "width": 960,
+        "height": 625
+      },
+      "no_upscale": true,
+      "published_html_dimensions": null,
+      "catalog_rights_note": "Commons states US Government photo; original government photographer/agency not independently identified",
+      "item_rights_review": "HOLD",
+      "attribution_review": "HOLD",
+      "image_binary_sha256": null,
+      "real_guest_http_status": null,
+      "real_guest_decode_ok": null,
+      "real_guest_transfer_bytes": null,
+      "web_retriever_observation": "exact_1280_redirect_not_accessible_to_text_retriever_no_origin_http_status",
+      "cache_or_rehost_allowed": false,
+      "wordpress_write_allowed": false
+    },
+    {
+      "slot": "218:2",
+      "published_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Glomar_Patch.jpg?width=1280",
+      "published_alt": "Hughes Glomar Explorer crew patch bearing the Summa Corporation name used during Project AZORIAN.",
+      "source_host": "commons.wikimedia.org",
+      "catalog_record_url": "https://commons.wikimedia.org/wiki/File:Glomar_Patch.jpg",
+      "primary_institutional_context_url": "https://www.cia.gov/legacy/museum/exhibit/project-azorian/",
+      "archive_relation": "same_named_commons_file_catalog_not_verified_binary_hash",
+      "catalog_dimensions_px": {
+        "width": 800,
+        "height": 533
+      },
+      "catalog_file_bytes_approx": 26721,
+      "requested_width_parameter_px": 1280,
+      "conditional_derivative_px": {
+        "width": 800,
+        "height": 533
+      },
+      "no_upscale": true,
+      "published_html_dimensions": null,
+      "catalog_rights_note": "CIA.gov 2022 artifact; uploader labels PD US Government",
+      "item_rights_review": "HOLD",
+      "attribution_review": "HOLD",
+      "image_binary_sha256": null,
+      "real_guest_http_status": null,
+      "real_guest_decode_ok": null,
+      "real_guest_transfer_bytes": null,
+      "web_retriever_observation": "exact_1280_redirect_not_accessible_to_text_retriever_no_origin_http_status",
+      "cache_or_rehost_allowed": false,
+      "wordpress_write_allowed": false
+    },
+    {
+      "slot": "218:3",
+      "published_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Model_of_the_sunken_and_deteriorated_K-129_submarine_was_created_by_the_CIA_during_the_AZORIAN_mission_that_has_never_been_displayed_before_at_the_CIA_Museum_in_2022.jpg?width=1280",
+      "published_alt": "CIA model of the wrecked Soviet submarine K-129 created during Project AZORIAN.",
+      "source_host": "commons.wikimedia.org",
+      "catalog_record_url": "https://commons.wikimedia.org/wiki/File:Model_of_the_sunken_and_deteriorated_K-129_submarine_was_created_by_the_CIA_during_the_AZORIAN_mission_that_has_never_been_displayed_before_at_the_CIA_Museum_in_2022.jpg",
+      "primary_institutional_context_url": "https://www.cia.gov/stories/story/modernized-cia-museum/",
+      "archive_relation": "same_named_commons_file_catalog_not_verified_binary_hash",
+      "catalog_dimensions_px": {
+        "width": 3598,
+        "height": 2400
+      },
+      "catalog_file_bytes_approx": 5740268,
+      "requested_width_parameter_px": 1280,
+      "conditional_derivative_px": {
+        "width": 960,
+        "height": 640
+      },
+      "no_upscale": true,
+      "published_html_dimensions": null,
+      "catalog_rights_note": "CIA employee 2022 Museum photo, Commons PD-CIA claim via agency Flickr",
+      "item_rights_review": "HOLD",
+      "attribution_review": "HOLD",
+      "image_binary_sha256": null,
+      "real_guest_http_status": null,
+      "real_guest_decode_ok": null,
+      "real_guest_transfer_bytes": null,
+      "web_retriever_observation": "exact_1280_redirect_not_accessible_to_text_retriever_no_origin_http_status",
+      "cache_or_rehost_allowed": false,
+      "wordpress_write_allowed": false
+    },
+    {
+      "slot": "218:4",
+      "published_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Painting-of-AZORIAN-mission-approved.jpg?width=1280",
+      "published_alt": "Project AZORIAN lead engineer Sherman Wetmore looking at a painting of Glomar Explorer raising K-129 during a 2022 CIA Museum visit.",
+      "source_host": "commons.wikimedia.org",
+      "catalog_record_url": "https://commons.wikimedia.org/wiki/File:Painting-of-AZORIAN-mission-approved.jpg",
+      "primary_institutional_context_url": "https://www.cia.gov/stories/story/honoring-the-mission-of-project-azorian/",
+      "archive_relation": "same_named_commons_file_catalog_not_verified_binary_hash",
+      "catalog_dimensions_px": {
+        "width": 800,
+        "height": 709
+      },
+      "catalog_file_bytes_approx": 31376,
+      "requested_width_parameter_px": 1280,
+      "conditional_derivative_px": {
+        "width": 800,
+        "height": 709
+      },
+      "no_upscale": true,
+      "published_html_dimensions": null,
+      "catalog_rights_note": "CIA.gov 2022 photograph of Sherman Wetmore, Commons PD-USGov claim",
+      "item_rights_review": "HOLD",
+      "attribution_review": "HOLD",
+      "image_binary_sha256": null,
+      "real_guest_http_status": null,
+      "real_guest_decode_ok": null,
+      "real_guest_transfer_bytes": null,
+      "web_retriever_observation": "exact_1280_redirect_not_accessible_to_text_retriever_no_origin_http_status",
+      "cache_or_rehost_allowed": false,
+      "wordpress_write_allowed": false
+    },
+    {
+      "slot": "218:5",
+      "published_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Hughes_Glomar_Explorer_coveralls_and_ashtray_are_examples_of_the_depth_of_cover_that_CIA_and_Hughes_manufactured_for_the_expedition_and_these_artifacts_have_never_been_displayed_before_at_the_CIA_Museum_in_2022.jpg?width=1280",
+      "published_alt": "Glomar Explorer coveralls and ashtray created as part of the Hughes and Summa Corporation cover identity for Project AZORIAN.",
+      "source_host": "commons.wikimedia.org",
+      "catalog_record_url": "https://commons.wikimedia.org/wiki/File:Hughes_Glomar_Explorer_coveralls_and_ashtray_are_examples_of_the_depth_of_cover_that_CIA_and_Hughes_manufactured_for_the_expedition_and_these_artifacts_have_never_been_displayed_before_at_the_CIA_Museum_in_2022.jpg",
+      "primary_institutional_context_url": "https://www.cia.gov/stories/story/modernized-cia-museum/",
+      "archive_relation": "same_named_commons_file_catalog_not_verified_binary_hash",
+      "catalog_dimensions_px": {
+        "width": 2400,
+        "height": 3598
+      },
+      "catalog_file_bytes_approx": 5171994,
+      "requested_width_parameter_px": 1280,
+      "conditional_derivative_px": {
+        "width": 960,
+        "height": 1439
+      },
+      "no_upscale": true,
+      "published_html_dimensions": null,
+      "catalog_rights_note": "CIA employee 2022 Museum photo, Commons PD-CIA claim via agency Flickr",
+      "item_rights_review": "HOLD",
+      "attribution_review": "HOLD",
+      "image_binary_sha256": null,
+      "real_guest_http_status": null,
+      "real_guest_decode_ok": null,
+      "real_guest_transfer_bytes": null,
+      "web_retriever_observation": "exact_1280_redirect_not_accessible_to_text_retriever_no_origin_http_status",
+      "cache_or_rehost_allowed": false,
+      "wordpress_write_allowed": false
+    }
+  ]
+}
