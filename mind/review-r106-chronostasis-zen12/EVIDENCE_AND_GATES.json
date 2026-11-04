@@ -1,0 +1,462 @@
+{
+  "version": "r106",
+  "date": "2026-11-03",
+  "sources": [
+    {
+      "id": "chrono-01",
+      "kind": "primary",
+      "url": "https://doi.org/10.1038/35104551",
+      "scope": "Original visual chronostasis experiment; eye movement and spatial target stability",
+      "status": "read"
+    },
+    {
+      "id": "chrono-02",
+      "kind": "commentary",
+      "url": "https://doi.org/10.1016/S0960-9822(02)00707-8",
+      "scope": "Contemporaneous discussion of visual experiment",
+      "status": "read"
+    },
+    {
+      "id": "chrono-03",
+      "kind": "primary",
+      "url": "https://doi.org/10.1016/S0960-9822(02)01219-8",
+      "scope": "Auditory attention and timing experiment",
+      "status": "read"
+    },
+    {
+      "id": "fv-01",
+      "kind": "owned",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "scope": "Published history source archive, no mechanistic inference",
+      "status": "WordPress-read"
+    },
+    {
+      "id": "fv-02",
+      "kind": "owned",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "scope": "Published perception article link",
+      "status": "WordPress-read"
+    },
+    {
+      "id": "fv-03",
+      "kind": "owned",
+      "url": "https://finalvestige.com/focus/",
+      "scope": "Existing free fieldbook one Jetpack funnel",
+      "status": "WordPress-read"
+    },
+    {
+      "id": "merchant-01",
+      "kind": "seller",
+      "url": "https://inspire3.com/",
+      "scope": "Official Inspire3 catalog",
+      "status": "read"
+    },
+    {
+      "id": "merchant-02",
+      "kind": "seller",
+      "url": "https://zen12.com/hnp",
+      "scope": "Exact Zen12 offer claims",
+      "status": "read"
+    },
+    {
+      "id": "merchant-03",
+      "kind": "seller",
+      "url": "https://zen12.com/about",
+      "scope": "Four formats and 12 levels",
+      "status": "read"
+    },
+    {
+      "id": "merchant-04",
+      "kind": "seller",
+      "url": "https://zen12.com/getstarted",
+      "scope": "Full 48 MP3 checkout and mobile field",
+      "status": "read"
+    },
+    {
+      "id": "merchant-05",
+      "kind": "seller",
+      "url": "https://inspire3.com/privacy/",
+      "scope": "Seller referral PII sharing; SMS",
+      "status": "read"
+    },
+    {
+      "id": "merchant-06",
+      "kind": "seller",
+      "url": "https://inspire3.com/terms/",
+      "scope": "Operative refund terms; access error",
+      "status": "BLOCKED_RECHECK"
+    },
+    {
+      "id": "merchant-07",
+      "kind": "seller",
+      "url": "https://affiliates.inspire3.com/",
+      "scope": "Generic signup only; not FV authorization",
+      "status": "read"
+    },
+    {
+      "id": "science-01",
+      "kind": "systematic-review",
+      "url": "https://doi.org/10.1371/journal.pone.0286023",
+      "scope": "14 EEG studies mixed; not Zen12",
+      "status": "read"
+    },
+    {
+      "id": "policy-01",
+      "kind": "regulatory",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "scope": "Conspicuous near-endorsement disclosure",
+      "status": "read"
+    },
+    {
+      "id": "policy-02",
+      "kind": "regulatory",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "scope": "Product-specific health claim substantiation",
+      "status": "read"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "Zen12 session lasts 12 minutes",
+      "evidence_type": "seller-description",
+      "source_id": "merchant-02",
+      "decision": "ALLOW_ATTRIBUTED_ONLY"
+    },
+    {
+      "id": "C02",
+      "claim": "Full package has 12 levels and 48 MP3s",
+      "evidence_type": "seller-checkout",
+      "source_id": "merchant-04",
+      "decision": "ALLOW_AS_CURRENT_SELLER_COPY"
+    },
+    {
+      "id": "C03",
+      "claim": "Four formats: music, guided, white noise, nature",
+      "evidence_type": "seller-description",
+      "source_id": "merchant-03",
+      "decision": "ALLOW_ATTRIBUTED_ONLY"
+    },
+    {
+      "id": "C04",
+      "claim": "Beginner/Advanced six-level tier characteristics",
+      "evidence_type": "prior merchant materials",
+      "source_id": "merchant-02",
+      "decision": "HOLD_UNTIL_EXACT_TIER_VERIFIED"
+    },
+    {
+      "id": "C05",
+      "claim": "12 minutes equal 60 minutes advanced meditation",
+      "evidence_type": "seller-efficacy",
+      "source_id": "merchant-02",
+      "decision": "REJECT_UNSUBSTANTIATED"
+    },
+    {
+      "id": "C06",
+      "claim": "Stress/anxiety treatment",
+      "evidence_type": "seller-efficacy",
+      "source_id": "merchant-02",
+      "decision": "REJECT_UNSUBSTANTIATED"
+    },
+    {
+      "id": "C07",
+      "claim": "Improved creativity/focus guaranteed",
+      "evidence_type": "seller-efficacy",
+      "source_id": "merchant-02",
+      "decision": "REJECT_UNSUBSTANTIATED"
+    },
+    {
+      "id": "C08",
+      "claim": "EEG response implies cognitive benefit",
+      "evidence_type": "unjustified-inference",
+      "source_id": "science-01",
+      "decision": "REJECT"
+    },
+    {
+      "id": "C09",
+      "claim": "14 binaural EEG studies results mixed",
+      "evidence_type": "independent-review",
+      "source_id": "science-01",
+      "decision": "ALLOW_WITH_LIMIT_NOT_ZEN12"
+    },
+    {
+      "id": "C10",
+      "claim": "Free preference exercise is clinical proof",
+      "evidence_type": "editorial",
+      "source_id": "fv-03",
+      "decision": "REJECT"
+    },
+    {
+      "id": "C11",
+      "claim": "Checkout requests mobile phone",
+      "evidence_type": "seller-checkout",
+      "source_id": "merchant-04",
+      "decision": "ALLOW_AS_OF_2026_11_03"
+    },
+    {
+      "id": "C12",
+      "claim": "Seller may use number for SMS offers",
+      "evidence_type": "seller-policy",
+      "source_id": "merchant-05",
+      "decision": "ALLOW_AS_SELLER_POLICY"
+    },
+    {
+      "id": "C13",
+      "claim": "Seller may share purchaser identity with affiliates",
+      "evidence_type": "seller-policy",
+      "source_id": "merchant-05",
+      "decision": "ALLOW_AS_SELLER_POLICY"
+    },
+    {
+      "id": "C14",
+      "claim": "Current price/limited discount/urgency timer",
+      "evidence_type": "dynamic-commerce",
+      "source_id": "merchant-04",
+      "decision": "HOLD_NEVER_ASSERT_STABLE"
+    },
+    {
+      "id": "C15",
+      "claim": "One-year guarantee covers this exact purchase",
+      "evidence_type": "seller-terms",
+      "source_id": "merchant-06",
+      "decision": "HOLD_TERMS_INACCESSIBLE"
+    },
+    {
+      "id": "C16",
+      "claim": "Affiliate payout or FV acceptance",
+      "evidence_type": "merchant-partner",
+      "source_id": "merchant-07",
+      "decision": "BLOCK_UNVERIFIED"
+    },
+    {
+      "id": "C17",
+      "claim": "Affiliate promotional video rights",
+      "evidence_type": "partner-terms",
+      "source_id": "merchant-07",
+      "decision": "BLOCK_UNVERIFIED"
+    },
+    {
+      "id": "C18",
+      "claim": "FV can link directly to merchant for earnings",
+      "evidence_type": "partner-terms",
+      "source_id": "merchant-07",
+      "decision": "BLOCK_UNVERIFIED"
+    },
+    {
+      "id": "C19",
+      "claim": "Commission disclosure near endorsed links",
+      "evidence_type": "FTC",
+      "source_id": "policy-01",
+      "decision": "REQUIRED_IF_ACTIVATED"
+    },
+    {
+      "id": "C20",
+      "claim": "Product health claim needs independent substantiation",
+      "evidence_type": "FTC",
+      "source_id": "policy-02",
+      "decision": "REQUIRED"
+    },
+    {
+      "id": "C21",
+      "claim": "Chronostasis after saccade due to perceptual continuity",
+      "evidence_type": "experimental-interpretation",
+      "source_id": "chrono-01",
+      "decision": "ALLOW_WITH_INFERENCE_LABEL"
+    },
+    {
+      "id": "C22",
+      "claim": "Auditory chronostasis demonstrates single neural clock",
+      "evidence_type": "experimental-interpretation",
+      "source_id": "chrono-03",
+      "decision": "REJECT_AS_PROVEN_MECHANISM"
+    },
+    {
+      "id": "C23",
+      "claim": "Chronostasis proves meditation improves time perception",
+      "evidence_type": "unsupported-bridge",
+      "source_id": "chrono-01",
+      "decision": "REJECT"
+    },
+    {
+      "id": "C24",
+      "claim": "First-party video raises conversions",
+      "evidence_type": "hypothesis",
+      "source_id": "policy-01",
+      "decision": "HYPOTHESIS_UNTESTED"
+    },
+    {
+      "id": "C25",
+      "claim": "Final Vestige fieldbook separate free resource",
+      "evidence_type": "owned",
+      "source_id": "fv-03",
+      "decision": "ALLOW_LINK_EXISTING_ONLY"
+    },
+    {
+      "id": "C26",
+      "claim": "Affiliate data can be aggregated without buyer identities",
+      "evidence_type": "contract-proposal",
+      "source_id": "merchant-05",
+      "decision": "HOLD_SIGNED_AGREEMENT"
+    }
+  ],
+  "release_gates": [
+    {
+      "id": "named_partner_acceptance",
+      "status": "CLOSED",
+      "reason": "No production authorization or independently documented pass"
+    },
+    {
+      "id": "zen12_exclusive_link_authorization",
+      "status": "CLOSED",
+      "reason": "No production authorization or independently documented pass"
+    },
+    {
+      "id": "approved_website_channel",
+      "status": "CLOSED",
+      "reason": "No production authorization or independently documented pass"
+    },
+    {
+      "id": "approved_tiktok_channel",
+      "status": "CLOSED",
+      "reason": "No production authorization or independently documented pass"
+    },
+    {
+      "id": "approved_email_channel",
+      "status": "CLOSED",
+      "reason": "No production authorization or independently documented pass"
+    },
+    {
+      "id": "affiliate_approved_creative_rights",
+      "status": "CLOSED",
+      "reason": "No production authorization or independently documented pass"
+    },
+    {
+      "id": "signed_aggregate_only_no_buyer_PII",
+      "status": "CLOSED",
+      "reason": "No production authorization or independently documented pass"
+    },
+    {
+      "id": "current_checkout_TOS_access",
+      "status": "CLOSED",
+      "reason": "No production authorization or independently documented pass"
+    },
+    {
+      "id": "current_exact_tier_mapping",
+      "status": "CLOSED",
+      "reason": "No production authorization or independently documented pass"
+    },
+    {
+      "id": "independent_claims_signoff",
+      "status": "CLOSED",
+      "reason": "No production authorization or independently documented pass"
+    },
+    {
+      "id": "WCAG_22_AA_browser",
+      "status": "CLOSED",
+      "reason": "No production authorization or independently documented pass"
+    },
+    {
+      "id": "360_390_768_1440_1920_screenshots",
+      "status": "CLOSED",
+      "reason": "No production authorization or independently documented pass"
+    },
+    {
+      "id": "keyboard_screenreader",
+      "status": "CLOSED",
+      "reason": "No production authorization or independently documented pass"
+    },
+    {
+      "id": "no_js_confirmed",
+      "status": "CLOSED",
+      "reason": "No production authorization or independently documented pass"
+    },
+    {
+      "id": "csp_xss_review",
+      "status": "CLOSED",
+      "reason": "No production authorization or independently documented pass"
+    },
+    {
+      "id": "Lighthouse_CWV",
+      "status": "CLOSED",
+      "reason": "No production authorization or independently documented pass"
+    },
+    {
+      "id": "first_party_video_render",
+      "status": "CLOSED",
+      "reason": "No production authorization or independently documented pass"
+    },
+    {
+      "id": "video_caption_sync",
+      "status": "CLOSED",
+      "reason": "No production authorization or independently documented pass"
+    },
+    {
+      "id": "caption_transcript_review",
+      "status": "CLOSED",
+      "reason": "No production authorization or independently documented pass"
+    },
+    {
+      "id": "video_host_performance",
+      "status": "CLOSED",
+      "reason": "No production authorization or independently documented pass"
+    },
+    {
+      "id": "A_B_assignment_consent_privacy",
+      "status": "CLOSED",
+      "reason": "No production authorization or independently documented pass"
+    },
+    {
+      "id": "measurement_without_PII_review",
+      "status": "CLOSED",
+      "reason": "No production authorization or independently documented pass"
+    },
+    {
+      "id": "WordPress_blocks_preview",
+      "status": "CLOSED",
+      "reason": "No production authorization or independently documented pass"
+    },
+    {
+      "id": "canonical_editorial_selection",
+      "status": "CLOSED",
+      "reason": "No production authorization or independently documented pass"
+    },
+    {
+      "id": "internal_links_review",
+      "status": "CLOSED",
+      "reason": "No production authorization or independently documented pass"
+    },
+    {
+      "id": "homepage_art_lead_coordination",
+      "status": "CLOSED",
+      "reason": "No production authorization or independently documented pass"
+    },
+    {
+      "id": "site_QA_signoff",
+      "status": "CLOSED",
+      "reason": "No production authorization or independently documented pass"
+    },
+    {
+      "id": "Dispatch_174_coordination",
+      "status": "CLOSED",
+      "reason": "No production authorization or independently documented pass"
+    },
+    {
+      "id": "Jetpack_single_funnel_integrity",
+      "status": "CLOSED",
+      "reason": "No production authorization or independently documented pass"
+    },
+    {
+      "id": "founder_publication_approval",
+      "status": "CLOSED",
+      "reason": "No production authorization or independently documented pass"
+    },
+    {
+      "id": "founder_affiliate_activation_approval",
+      "status": "CLOSED",
+      "reason": "No production authorization or independently documented pass"
+    }
+  ],
+  "partner_approved": false,
+  "merchant_earning_url": null,
+  "live_tracking": false
+}

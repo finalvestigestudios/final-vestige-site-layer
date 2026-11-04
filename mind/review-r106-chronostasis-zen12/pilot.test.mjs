@@ -1,0 +1,17 @@
+import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';import path from 'node:path';import {fileURLToPath} from 'node:url';
+import {validateSynthetic,aggregateSynthetic,captureLiveEvent,ACTIVE} from './synthetic-measurement.mjs';
+const root=path.dirname(fileURLToPath(import.meta.url));const read=x=>fs.readFileSync(path.join(root,x),'utf8');
+const a=read('ZEN12_A.blocks.html'),b=read('ZEN12_B.blocks.html'),vtt=read('ZEN12_40S_CAPTIONS.vtt');const matrix=JSON.parse(read('EVIDENCE_AND_GATES.json'));
+const stripVideo=s=>s.replace(/<figure class="fvz-video">[\s\S]*?<\/figure>/,'');
+test('variant parity except optional film',()=>assert.equal(a,stripVideo(b)));
+test('each variant one disabled native merchant control',()=>{for(const s of [a,b]){assert.equal((s.match(/<button disabled/g)||[]).length,1);assert.match(s,/Prospective affiliate disclosure:[\s\S]{0,500}<button disabled/)}});
+test('no active merchant earning or tracker',()=>{for(const s of [a,b]){assert.doesNotMatch(s,/href="https?:\/\/(?:affiliates\.inspire3\.com|go\.zen12\.com)/);assert.doesNotMatch(s,/<script|autoplay|<form|<iframe/i)}});
+test('no fake video player',()=>{assert.doesNotMatch(b,/<video|<audio|<button[^>]*play/i);assert.match(b,/PRE-PRODUCTION/);assert.match(b,/<details>/)});
+test('no tier promise or hour equivalence adoption',()=>{assert.match(a,/not a Final Vestige conclusion/);assert.match(a,/unsubstantiated product-specific efficacy claim/);assert.match(a,/full course/);assert.match(a,/no active earning link/)});
+test('all release gates closed and URLs empty',()=>{assert.equal(matrix.partner_approved,false);assert.equal(matrix.merchant_earning_url,null);assert.ok(matrix.release_gates.length>=25);assert.ok(matrix.release_gates.every(g=>g.status==='CLOSED'))});
+test('all claims reference known sources',()=>{const ids=new Set(matrix.sources.map(s=>s.id));assert.ok(matrix.claims.every(c=>ids.has(c.source_id)))});
+test('caption cues six and contiguous 0–40',()=>{const m=[...vtt.matchAll(/(\d\d):(\d\d):(\d\d)\.000 --> (\d\d):(\d\d):(\d\d)\.000/g)];assert.equal(m.length,6);let expected=0;for(const k of m){const start=Number(k[1])*3600+Number(k[2])*60+Number(k[3]);const end=Number(k[4])*3600+Number(k[5])*60+Number(k[6]);assert.equal(start,expected);assert.ok(end>start);expected=end}assert.equal(expected,40)});
+test('synthetic rejects identifiers',()=>{const row={page:'zen12-evidence-guide',variant:'A',source:'search',event:'guide_view'};for(const key of ['email','ip','user_id','timestamp','url','referrer','utm_content','userAgent','buyer_name','purchase_id'])assert.throws(()=>validateSynthetic({...row,[key]:'private'}));});
+test('k minimum 20 and no real events',()=>{const row={page:'zen12-evidence-guide',variant:'B',source:'internal',event:'offer_intent'};assert.deepEqual(aggregateSynthetic(Array(19).fill(row)),[]);assert.equal(aggregateSynthetic(Array(20).fill(row)).length,1);assert.throws(()=>aggregateSynthetic(Array(20).fill(row),19));assert.throws(captureLiveEvent);assert.equal(ACTIVE,false)});
+test('four distinct hub sections and approved resources',()=>{let s=read('MIND_HUB_ALTERNATIVE.blocks.html');assert.equal((s.match(/<article>/g)||[]).length,4);assert.match(s,/finalvestige.com\/focus/);assert.match(s,/Puységur/);assert.doesNotMatch(s,/<form|<script|autoplay/)});
+test('investigation independent and sourced',()=>{const s=read('INVESTIGATION.md');assert.match(s,/10\.1038\/35104551/);assert.match(s,/10\.1016\/S0960-9822\(02\)01219-8/);assert.doesNotMatch(s,/buy Zen12|commission through/)});
