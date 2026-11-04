@@ -85,35 +85,35 @@ test('Ordinary printing retains clock rail; student-only printing remains separa
   assert.doesNotMatch(html,/@media print\s*\{[^}]*#event-sequence\s*\{display\s*:\s*none/i);
 });
 test('Atlas R80 parity: exactly four known-day photographic checkpoints',()=>{
-  const section=html.match(/<nav class="photo-provenance"[\\s\\S]*?<\\/nav>/);
+  const section=html.match(/<nav class="photo-provenance"[\s\S]*?<\/nav>/);
   assert.ok(section,'photo provenance rail missing');
   const days=[...section[0].matchAll(/<li data-fv-photo-day="([^"]+)">/g)].map(m=>m[1]);
   assert.deepEqual(days,['1966-10-18','1967-01-03','1967-01-28','2017-01-24']);
 });
 test('Same-day 2017 retrospective sources 04 and 06 share one date',()=>{
-  const day=html.match(/<li data-fv-photo-day="2017-01-24">([\\s\\S]*?)<\\/li>/);
+  const day=html.match(/<li data-fv-photo-day="2017-01-24">([\s\S]*?)<\/li>/);
   assert.ok(day);
   assert.match(day[1],/data-fv-photo-record="04"/);
   assert.match(day[1],/data-fv-photo-record="06"/);
   assert.match(day[1],/time datetime="2017-01-24"/);
 });
 test('January month-only portrait is not falsely ordered by day',()=>{
-  const nav=html.match(/<nav class="photo-provenance"[\\s\\S]*?<\\/nav>/)[0];
-  const days=nav.match(/<ol data-fv-photo-day-sequence>([\\s\\S]*?)<\\/ol>/)[1];
+  const nav=html.match(/<nav class="photo-provenance"[\s\S]*?<\/nav>/)[0];
+  const days=nav.match(/<ol data-fv-photo-day-sequence>([\s\S]*?)<\/ol>/)[1];
   assert.doesNotMatch(days,/data-fv-photo-record="01"/);
   assert.match(nav,/data-fv-photo-month-uncertain/);
   assert.match(nav,/time datetime="1967-01"/);
   assert.match(nav,/data-fv-photo-record="01"/);
 });
 test('Exactly six unique NASA source-custody targets survive navigation',()=>{
-  const nav=html.match(/<nav class="photo-provenance"[\\s\\S]*?<\\/nav>/)[0];
+  const nav=html.match(/<nav class="photo-provenance"[\s\S]*?<\/nav>/)[0];
   const ids=[...nav.matchAll(/data-fv-photo-record="([^"]+)"/g)].map(m=>m[1]);
   assert.equal(ids.length,6);
   assert.equal(new Set(ids).size,6);
   for(const id of ids)assert.ok(html.includes('id="photo-source-'+id+'"'));
 });
 test('No unverified geographic assertions or thumbnails leak into photo chronology',()=>{
-  const nav=html.match(/<nav class="photo-provenance"[\\s\\S]*?<\\/nav>/)[0];
+  const nav=html.match(/<nav class="photo-provenance"[\s\S]*?<\/nav>/)[0];
   assert.doesNotMatch(nav,/<img|data-latitude|data-longitude|data-geo=|data-edge=/i);
 });
 test('Mutation guard: timing changes that break Board interval are detectable',()=>{
