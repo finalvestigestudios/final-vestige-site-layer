@@ -10,6 +10,7 @@ import math
 import os
 import re
 from pathlib import Path
+from qa_artifacts_r107 import check_png, check_pdf
 
 SCHEMA = 'fv.apollo.r105.partial-evidence.v1'
 FILENAME = 'R105_QA_PROGRESS.json'
@@ -41,6 +42,20 @@ class EvidenceJournal:
             raise ValueError('R106_COMPLETED_RECEIPT_IMMUTABLE')
         if not isinstance(stage, str) or not CHECKPOINT.fullmatch(stage):
             raise ValueError('R105_INVALID_STAGE')
+        # Progress receipts are retained even when testing fails. Never allow
+        # arbitrary strings (including URLs, tokens or HTML) into those artifacts.
+        def safe_number(value, valid):
+            return value if type(value) in (int, float) and math.isfinite(value) and valid(value) else None
+
+        observations = []
+        for sample in record.get('performance_lab_samples', []):
+            sample = sample if isinstance(sample, dict) else {}
+            observations.append({
+                'width': safe_number(sample.get('width'), lambda n: n in (390, 1440)),
+                'trial': safe_number(sample.get('trial'), lambda n: n in (1, 2, 3)),
+                'lcp_ms': safe_number(sample.get('lcp_ms'), lambda n: 0 < n <= 100000),
+                'cls': safe_number(sample.get('cls'), lambda n: 0 <= n <= 10),
+            })
         counts = {
             'browser_cases': len(record.get('r103_interaction_cases', [])),
             'axe_scans': len(record.get('axe', [])),
@@ -50,10 +65,7 @@ class EvidenceJournal:
         }
         self._write({'schema': SCHEMA, 'release': 'STAGING_HOLD',
                      'status': 'in_progress', 'last_checkpoint': stage,
-                     'counts': counts, 'lab_observations': [
-                         {'width': s.get('width'), 'trial': s.get('trial'),
-                          'lcp_ms': s.get('lcp_ms'), 'cls': s.get('cls')}
-                         for s in record.get('performance_lab_samples', [])],
+                     'counts': counts, 'lab_observations': observations,
                      'complete': False,
                      'contains_private_credentials': False,
                      'note': 'Progress only; no WordPress or publication approval.'})
@@ -152,10 +164,19 @@ class EvidenceJournal:
             if not file.is_file():
                 raise ValueError('R106_MISSING_ARTIFACT')
             content = file.read_bytes()
-            if (name.endswith('.png') and not content.startswith(b'\x89PNG\r\n\x1a\n')) or (name.endswith('.pdf') and not content.startswith(b'%PDF-')):
-                raise ValueError('R106_INVALID_ARTIFACT_TYPE')
             if hashlib.sha256(content).hexdigest() != digest:
                 raise ValueError('R106_ARTIFACT_HASH_MISMATCH')
+            if name.endswith('.png'):
+                expected_width = int(re.search(r'_(320|390|1440)\.png        self.checkpoint(record, 'all-gates-verified')
+        payload = self._read()
+        payload.update(status='completed', complete=True,
+                       artifact_sha256={**images, **documents},
+                       note='Isolated WordPress QA evidence complete; release remains STAGING HOLD.')
+        self._write(payload)
+, name).group(1))
+                check_png(file, expected_width)
+            else:
+                check_pdf(file)
         self.checkpoint(record, 'all-gates-verified')
         payload = self._read()
         payload.update(status='completed', complete=True,
