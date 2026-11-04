@@ -37,4 +37,4 @@ fails('source classification drift',c=>c[0].images[0].source_kind='unknown');
 fails('external census mutation',c=>c[0].images[7].source_kind='first_party');
 fails('duplicate post',c=>c[1].posts[0].id=c[0].posts[0].id);
 fails('source key mismatch',c=>c[0].images[0].key='some-other-key');
-process.stdout.write('PASS '+n+'/'+n+' host-topology assertions; native Node verified on pinned Git blobs\n');
+process.stdout.write('PASS '+n+'/'+n+' host-topology assertions; offline assertions complete; native Node CI status depends on runner\n');
