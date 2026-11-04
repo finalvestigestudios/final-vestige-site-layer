@@ -27,7 +27,8 @@
       "no unrelated frozen original photographs merged as one request",
       "three paired cold repeats still required",
       "CLI checks Git SHA1 blob identities of eight original census parts"
-    ]
+    ],
+    "strong_fail_closed_policy": "A complete 61/355 census with missing/mismatched original DOM source bindings returns INSUFFICIENT_DATA, measured_reduction_percent:null, not merely a limited-sample percentage."
   },
   "verification": {
     "method": "isolated V8 CommonJS compatibility runner using exact postcommit GitHub blobs, synthetic inputs only",
@@ -80,6 +81,14 @@
     {
       "commit": "7db385b7428aa0f9eefc154e0ff6c94bc5322e72",
       "change": "correct Git hash object NUL separator"
+    },
+    {
+      "commit": "a31179264e603b8fe7bdbe0678b3c56aed8f6a0b",
+      "change": "full frozen source drift returns INSUFFICIENT_DATA and no numerical savings claim"
+    },
+    {
+      "commit": "739c32fde00a3740f4cb8e191915dddbd62f0e72",
+      "change": "38-case evaluator suite expectations for strict invalidation"
     }
   ],
   "release": {
