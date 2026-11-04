@@ -1,3 +1,6 @@
+## R181 — Policy Delta Desk spoken Unicode character names (DRAFT / HARD HOLD)
+The R180 cross-script review cues now include official Unicode character names beside each bounded U+ substitution and physical before/after line citation, making the script of look-alike letters readable without exposing source text. [R181 exact-file 25-case tests, local evidence and release safeguards](docs/POLICY_SPOKEN_UNICODE_NAMES_R181.md). Ubuntu/Windows normal and optimized Python remain required; **all six apps remain UNRELEASED** pending native Windows and independent QD/founder acceptance.
+
 ## R179 — Policy Delta Desk Unicode codepoint accessibility cues (DRAFT / HARD HOLD)
 For uniquely matched NFC-only changed policy lines, Policy Delta now adds human-readable U+ codepoint count changes (bounded at 12 codepoints per candidate, 16 candidates total), or explicitly notes reordered marks with unchanged counts. Source text is not duplicated in these cues; physical line references, raw file SHA-256 and mandatory human review remain authoritative. [R179 source, 24 test cases and reviewer boundary](docs/POLICY_UNICODE_CODEPOINT_EVIDENCE_R179.md) require normal/-OO Python on Ubuntu and Windows, with full native release acceptance still HOLD. **No software is released.**
 
