@@ -120,7 +120,7 @@ jobs:
         run: |
           python products/desktop/scripts/safe_unittest_r184.py
           python -OO products/desktop/scripts/safe_unittest_r184.py
-      - name: R185 Policy Delta canonical source-coordinate custody (30 methods, normal and -OO)
+      - name: R185 Policy Delta canonical source-coordinate custody (32 methods, normal and -OO)
         run: |
           python products/desktop/scripts/safe_unittest_r185.py
           python -OO products/desktop/scripts/safe_unittest_r185.py
@@ -560,7 +560,7 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R184 source-order custody tests failed" }
           python -OO products/desktop/scripts/safe_unittest_r184.py
           if ($LASTEXITCODE -ne 0) { throw "R184 optimized source-order custody tests failed" }
-      - name: R185 Policy Delta canonical source-coordinate custody (30 methods, normal and -OO)
+      - name: R185 Policy Delta canonical source-coordinate custody (32 methods, normal and -OO)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
