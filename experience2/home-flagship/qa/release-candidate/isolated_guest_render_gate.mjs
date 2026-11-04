@@ -5,6 +5,10 @@
  */
 import assert from 'node:assert/strict';
 import {join} from 'node:path';
+import {readFile} from 'node:fs/promises';
+import {validatePublishedMarginsFixture} from './playground_assembler_render_gate.mjs';
+import {GUEST_VIEWPORTS,assertPublishedMarginParity,assertAnonymousNoJSState}
+  from './guest_render_source_contract.mjs';
 
 export function safeLocalUrl(raw, serverUrl) {
   try {
@@ -105,6 +109,10 @@ async function restrictVisitorNetwork(page,base,blocked) {
 export async function runIsolatedGuestRender({server,browser,draftId,axePath,outputDirectory}) {
   assert.ok(safeLocalUrl(server?.serverUrl,server?.serverUrl),'Local Playground only');
   assert.ok(typeof axePath==='string'&&axePath.endsWith('.js'));
+  // Fail before any local copy/write if the PUBLIC source fixture drifts.
+  const fixture=JSON.parse(await readFile(
+    new URL('./public_page6_margins_20261102.json',import.meta.url),'utf8'));
+  const publishedMargins=validatePublishedMarginsFixture(fixture);
   const raw=await server.playground.run({code:phpGuestCopy(draftId)});
   let receipt;
   try {receipt=JSON.parse(raw.text);}catch{throw new Error('Invalid local guest-copy receipt');}
@@ -116,13 +124,35 @@ export async function runIsolatedGuestRender({server,browser,draftId,axePath,out
     validateGuestReceipt(receipt,draftId,server.serverUrl);
     context=await browser.newContext({viewport:{width:390,height:844},reducedMotion:'reduce'});
     assert.ok(isCookieFreeGuest(await context.cookies()));
-    for(const width of [360,390,768,1440,1920]) {
+    for(const {width,height,kind} of GUEST_VIEWPORTS) {
       const page=await context.newPage();
       try {
-        await page.setViewportSize({width,height:width<=390?844:900});
+        await page.setViewportSize({width,height});
         await restrictVisitorNetwork(page,server.serverUrl,blocked);
         await page.goto(receipt.url,{waitUntil:'domcontentloaded',timeout:90000});
         await page.locator('[data-fv-home-flagship]').waitFor({timeout:30000});
+        // A DOMContentLoaded screenshot alone can record a broken folio.
+        // Decode first-viewport archival images and resolve fonts before capture.
+        // Still save the screenshot if decoding fails for review evidence.
+        let paintFailure=null;
+        try {
+          await page.evaluate(async()=>{
+            if(document.fonts?.ready)await document.fonts.ready;
+            const visible=[...document.querySelectorAll('[data-fv-home-flagship] img')]
+              .filter(el=>{const r=el.getBoundingClientRect();
+                return r.width>0&&r.height>0&&r.bottom>0&&r.top<innerHeight;});
+            await Promise.all(visible.map(async el=>{
+              let timer;
+              try {
+                await Promise.race([el.decode(),new Promise((_,reject)=>{
+                  timer=setTimeout(()=>reject(new Error('Visible image decode timeout')),15000);
+                })]);
+                if(!el.complete||!el.naturalWidth||!el.naturalHeight)
+                  throw new Error('Visible image has no decoded pixels');
+              } finally {clearTimeout(timer);}
+            }));
+          });
+        } catch(e){paintFailure=String(e?.message||e).slice(0,250);}
         const state=await page.evaluate(()=>{
           const root=document.querySelector('[data-fv-home-flagship]');
           const cta=root?.querySelector('.fv-hf__mast-cta');
@@ -145,6 +175,9 @@ export async function runIsolatedGuestRender({server,browser,draftId,axePath,out
         });
         await page.screenshot({path:join(outputDirectory,`assembler-guest-${width}.png`),
           animations:'disabled',fullPage:false,timeout:30000});
+        assertPublishedMarginParity(
+          await page.locator('.fv-margin-strip__item').allTextContents(),publishedMargins);
+        if(paintFailure)throw new Error('Guest first-screen media incomplete: '+paintFailure);
         if(state.admin_bar||state.logged_in||state.chapters!==7||state.margins!==72||
           state.cta_href!=='https://finalvestige.com/focus/'||!state.cta_visible||
           state.horizontal_overflow)throw new Error('Guest admission '+JSON.stringify(state));
@@ -165,7 +198,7 @@ export async function runIsolatedGuestRender({server,browser,draftId,axePath,out
           return r.violations.map(v=>({id:v.id,impact:v.impact,
             nodes:v.nodes.length,selectors:v.nodes.slice(0,2).map(n=>n.target)}));
         });
-        checks.push({width,state,whole_document_axe_violations:violations});
+        checks.push({width,kind,state,whole_document_axe_violations:violations});
         if(violations.length)failures.push({width,reason:'Full-document axe: '+JSON.stringify(violations)});
       } catch(e){failures.push({width,reason:String(e?.message||e).slice(0,1200)});}
       finally{await page.close();}
@@ -175,15 +208,36 @@ export async function runIsolatedGuestRender({server,browser,draftId,axePath,out
       const page=await noContext.newPage();
       await restrictVisitorNetwork(page,server.serverUrl,blocked);
       await page.goto(receipt.url,{waitUntil:'domcontentloaded',timeout:90000});
-      const noJS=await page.evaluate(()=>({admin_bar:!!document.querySelector('#wpadminbar'),
-        details:!!document.querySelector('#fv-hf-observer-answer summary'),
-        evidence:document.querySelectorAll('.fv-hf__observer-context a').length,
-        focus:!!document.querySelector('.fv-hf__observer-exit a[data-fv-destination="focus"]')}));
+      const noJS=await page.evaluate(()=>{
+        const summary=document.querySelector('#fv-hf-observer-answer summary');
+        const focus=document.querySelector('.fv-hf__observer-exit a[data-fv-destination="focus"]');
+        const visible=el=>{if(!el||!el.getClientRects().length)return false;
+          const c=getComputedStyle(el);
+          return c.display!=='none'&&c.visibility==='visible'&&Number(c.opacity)>0;};
+        const region=document.querySelector('.fv-margin-strip__window');
+        const items=[...document.querySelectorAll('.fv-margin-strip__item')];
+        const first=items[0];
+        return {admin_bar:!!document.querySelector('#wpadminbar'),
+          logged_in:document.body.classList.contains('logged-in'),
+          details:!!summary,summary_visible:visible(summary),
+          evidence:document.querySelectorAll('.fv-hf__observer-context a').length,
+          focus:!!focus,focus_visible:visible(focus),
+          margins:items.length,margin_texts:items.map(el=>el.textContent),
+          margin_position:first?getComputedStyle(first).position:null,
+          margin_opacity:first?getComputedStyle(first).opacity:null,
+          window_overflow:region?getComputedStyle(region).overflowY:null,
+          horizontal_overflow:document.documentElement.scrollWidth>innerWidth+1};
+      });
       await page.screenshot({path:join(outputDirectory,'assembler-guest-390-nojs.png'),
         animations:'disabled',fullPage:false,timeout:30000});
-      if(noJS.admin_bar||!noJS.details||noJS.evidence<2||!noJS.focus)
-        failures.push({width:'390-nojs',reason:'Anonymous no-JS disclosure or Focus missing'});
-      checks.push({width:'390-nojs',state:noJS});
+      try {
+        assertPublishedMarginParity(noJS.margin_texts,publishedMargins);
+        assertAnonymousNoJSState(noJS);
+      } catch(e) {
+        failures.push({width:'390-nojs',reason:String(e?.message||e).slice(0,700)});
+      }
+      const {margin_texts:publicMarginalText,...noJSSummary}=noJS;
+      checks.push({width:'390-nojs',state:noJSSummary});
     } finally {await noContext.close();}
   } finally {
     if(context)await context.close();
