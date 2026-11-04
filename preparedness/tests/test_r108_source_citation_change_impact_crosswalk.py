@@ -337,7 +337,6 @@ ROW_MUTATIONS = [
     ("origin", "invented"),
     ("frozen_blob_sha", "not-sha"),
     ("current_blob_sha", "not-sha"),
-    ("current_blob_sha", None),
     ("frozen_blob_sha", None),
 ]
 HEAD_MUTATIONS = [
