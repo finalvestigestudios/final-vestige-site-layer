@@ -31,8 +31,8 @@ function validate(html) {
   assert(!/<(?:img|picture|iframe|video)\b/i.test(packet[0]),'no photo/media assets in student packet');
   assert(/not a fire-event timeline/i.test(index[0]),'source chronology must not become fire chronology');
   assert(/crew portrait's day in January 1967 and proposed S67-19766 association remain unconfirmed/.test(index[0]), 'crew portrait uncertainty required');
-  assert(/data-fv-student-photo="04"[\s\S]*?Jan 24, 2017[^<]*retrospective/i.test(index[0]),'2017 record 04 must be retrospective');
-  assert(/data-fv-student-photo="06"[\s\S]*?Jan 24, 2017[^<]*retrospective/i.test(index[0]),'2017 record 06 must be retrospective');
+  assert(/<li data-fv-student-photo="04"><strong>Jan 24, 2017 · retrospective/i.test(index[0]),'2017 record 04 must be retrospective');
+  assert(/<li data-fv-student-photo="06"><strong>Jan 24, 2017 · retrospective/i.test(index[0]),'2017 record 06 must be retrospective');
   assert((index[0].match(/NASA\/Kim Shiflett/g)||[]).length===2,'two retrospective credits');
   assert(packet[0].includes('The complete source register is available on the investigation page'), 'no fictitious printed preceding register');
   assert(!packet[0].includes('The dated source register and unresolved reuse limitations appear earlier'), 'obsolete false copy');
