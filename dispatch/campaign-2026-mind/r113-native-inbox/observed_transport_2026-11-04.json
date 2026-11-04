@@ -1,0 +1,60 @@
+{
+  "schema": "fv_dispatch_transport_read_only_v1",
+  "captured_at_utc": "2026-11-04T12:39:25Z",
+  "authority": "connected WordPress.com site newsletter.status and newsletter.get_settings",
+  "site": "https://finalvestige.com",
+  "campaign_original_pr": 175,
+  "campaign_original_sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "pr_stack_parent": 932,
+  "newsletter": {
+    "subscriptions": true,
+    "site_can_send": true,
+    "email_new_posts_by_default": false,
+    "email_content_format": "excerpt",
+    "from_name": "Final Vestige",
+    "reply_to": "no-reply",
+    "sender_address_control": "WordPress-controlled, not editable via newsletter settings",
+    "welcome_fieldbook_52_page_link_configured": true,
+    "welcome_receipt_verified": false
+  },
+  "native_counts": {
+    "total": 2,
+    "confirmed": 2,
+    "unconfirmed": 2,
+    "suppressed": 0,
+    "paid": 0,
+    "imported_last_24h": 0,
+    "verified_reachable_email_recipients": null
+  },
+  "recent_post_notifications": {
+    "sample_size": 5,
+    "status": "never_sent_opted_out",
+    "no_lifetime_sends_claim": true,
+    "recipient_counts_verified": false
+  },
+  "actual_received_mail": {
+    "welcome": null,
+    "campaign": null,
+    "postal_footer": null,
+    "unsubscribe_function": null
+  },
+  "email_semantics": {
+    "subject_source": "WordPress post title (vendor-documented)",
+    "preheader_separately_configurable": "NOT_VERIFIED",
+    "custom_excerpt_suppresses_full_manuscript": "vendor-documented",
+    "actual_editor_preview": null
+  },
+  "authority_urls": [
+    "https://wordpress.com/support/newsletter/send-newsletter-emails/",
+    "https://wordpress.com/support/newsletter-settings/",
+    "https://wordpress.com/support/newsletter/email-appearance/"
+  ],
+  "release": {
+    "all_issues": "HOLD_UNSENT",
+    "issues_03_05": "HOLD_MERCHANT",
+    "merchant_email_rights": "NOT_VERIFIED",
+    "paid_orders": null,
+    "net_revenue_per_1000_qualified_sessions": null
+  },
+  "privacy": "Aggregates only. No addresses, email tokens, personalized URLs, identities or tracking pixels."
+}
