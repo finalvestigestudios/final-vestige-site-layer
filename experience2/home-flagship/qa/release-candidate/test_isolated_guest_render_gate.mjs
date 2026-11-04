@@ -58,3 +58,16 @@ test('both inlined PHP scripts lint without a WordPress runtime',()=>{
     assert.equal(r.status,0,r.stderr||r.stdout||String(r.error));
   }
 });
+
+test('source browser gate checks unobstructed first-screen target and keyboard focus path',async()=>{
+  const fs=await import('node:fs/promises');
+  const source=await fs.readFile(new URL('./isolated_guest_render_gate.mjs',import.meta.url),'utf8');
+  for(const marker of ['document.elementFromPoint','cta.contains(pointed)',
+      'box.bottom<=innerHeight','box.width>=44','box.height>=44',
+      "page.keyboard.press('Tab')","'#fv-hf-title'",
+      'full-document axe']) {
+    // axe is checked by a separate whole-document violation evaluation.
+    if(marker==='full-document axe')assert.ok(source.includes('window.axe.run(document'));
+    else assert.ok(source.includes(marker),'Missing browser admission: '+marker);
+  }
+});
