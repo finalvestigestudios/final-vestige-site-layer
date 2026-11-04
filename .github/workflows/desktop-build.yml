@@ -143,6 +143,11 @@ jobs:
           python -m unittest discover -s products/desktop/tests -p 'test_catalog_fragment*189.py'
           python -OO -m unittest discover -s products/desktop/tests -p 'test_catalog_fragment*189.py'
           python products/desktop/catalog_preflight_r186.py products/desktop/site/software-catalog.gutenberg.html
+      - name: R190 NFKC compatibility spoofing hard hold (29 methods, normal and -OO)
+        run: |
+          python -m unittest discover -s products/desktop/tests -p 'test_catalog_compatibility_r190.py'
+          python -OO -m unittest discover -s products/desktop/tests -p 'test_catalog_compatibility_r190.py'
+          python products/desktop/catalog_preflight_r186.py products/desktop/site/software-catalog.gutenberg.html
       - name: Install pinned local evidence crypto dependency
         run: python -m pip install "cryptography==46.0.4"
       - name: Verify R100 privacy-safe source-method regressions (normal and -OO)
@@ -625,6 +630,16 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R189 optimized fragment tests failed" }
           python products/desktop/catalog_preflight_r186.py products/desktop/site/software-catalog.gutenberg.html
           if ($LASTEXITCODE -ne 0) { throw "R189 catalog preflight failed" }
+      - name: R190 NFKC compatibility spoofing hard hold (29 methods, normal and -OO)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python -m unittest discover -s products/desktop/tests -p 'test_catalog_compatibility_r190.py'
+          if ($LASTEXITCODE -ne 0) { throw "R190 normal compatibility tests failed" }
+          python -OO -m unittest discover -s products/desktop/tests -p 'test_catalog_compatibility_r190.py'
+          if ($LASTEXITCODE -ne 0) { throw "R190 optimized compatibility tests failed" }
+          python products/desktop/catalog_preflight_r186.py products/desktop/site/software-catalog.gutenberg.html
+          if ($LASTEXITCODE -ne 0) { throw "R190 catalog preflight failed" }
       - name: Install pinned local evidence crypto dependency
         run: python -m pip install "cryptography==46.0.4"
       - name: R100 Windows source-stage diagnostic (read-only, NOT a release gate)
