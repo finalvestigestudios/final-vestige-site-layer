@@ -1,0 +1,471 @@
+{
+  "schema_version": "2026-11-04.r126",
+  "status": "DRAFT_UNPUBLISHED_HARD_HOLD",
+  "primary_offer": "Zen12 (provisional)",
+  "commercial_activation": false,
+  "offer_url": null,
+  "tracking_affiliate_url": null,
+  "affiliate_approval": null,
+  "net_revenue_per_1000_qualified_human_sessions": null,
+  "reason_primary_kpi_null": "Unverified human denominator and no independently merchant-reconciled paid orders/fees/refunds. Null is not zero.",
+  "sources": [
+    {
+      "id": "S01",
+      "type": "source",
+      "url": "https://inspire3.com/",
+      "purpose": "official seller catalog"
+    },
+    {
+      "id": "S02",
+      "type": "offer",
+      "url": "https://zen12.com/hnp",
+      "purpose": "official specified product offer; one page only"
+    },
+    {
+      "id": "S03",
+      "type": "conditional_offer",
+      "url": "https://zen12.com/secret/",
+      "purpose": "separate conditional promotional page; do not transfer price"
+    },
+    {
+      "id": "S04",
+      "type": "affiliate_portal",
+      "url": "https://affiliates.inspire3.com/",
+      "purpose": "public invitation NOT FV-specific acceptance"
+    },
+    {
+      "id": "S05",
+      "type": "privacy",
+      "url": "https://inspire3.com/privacy/",
+      "purpose": "affiliate may receive purchaser personal data"
+    },
+    {
+      "id": "S06",
+      "type": "merchant_terms",
+      "url": "https://inspire3.com/terms/",
+      "purpose": "seller stated refund terms need checkout verification"
+    },
+    {
+      "id": "S07",
+      "type": "science_primary",
+      "url": "https://doi.org/10.1038/264746a0",
+      "purpose": "McGurk and MacDonald 1976"
+    },
+    {
+      "id": "S08",
+      "type": "science_review",
+      "url": "https://doi.org/10.1163/22134808-00002548",
+      "purpose": "2017 historical methods review"
+    },
+    {
+      "id": "S09",
+      "type": "science_primary",
+      "url": "https://doi.org/10.1371/journal.pone.0207160",
+      "purpose": "McGurk individual differences 2018"
+    },
+    {
+      "id": "S10",
+      "type": "science_primary",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33221701/",
+      "purpose": "McGurk stimulus versus observer differences 2020"
+    },
+    {
+      "id": "S11",
+      "type": "science_primary",
+      "url": "https://doi.org/10.3389/fnins.2024.1421713",
+      "purpose": "Japanese sample 2024"
+    },
+    {
+      "id": "S12",
+      "type": "science_primary",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11987121/",
+      "purpose": "Mandarin and English samples 2025"
+    },
+    {
+      "id": "S13",
+      "type": "science_meta",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30073406/",
+      "purpose": "binaural beats 22-study meta-analysis"
+    },
+    {
+      "id": "S14",
+      "type": "science_review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+      "purpose": "EEG entrainment 14-study inconsistent systematic review"
+    },
+    {
+      "id": "S15",
+      "type": "policy",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "purpose": "FTCs endorsement guides disclosure"
+    },
+    {
+      "id": "S16",
+      "type": "policy",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "purpose": "FTC objective efficacy substantiation"
+    },
+    {
+      "id": "S17",
+      "type": "live_fv",
+      "url": "https://finalvestige.com/focus/",
+      "purpose": "published existing free Focus signup"
+    },
+    {
+      "id": "S18",
+      "type": "live_fv",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "purpose": "published historical evidence resource"
+    },
+    {
+      "id": "S19",
+      "type": "owner_instruction",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "purpose": "commercial approval holds and scope"
+    },
+    {
+      "id": "S20",
+      "type": "owner_instruction",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "purpose": "attribution separation/qualified sessions"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "Zen12 session length 12 minutes",
+      "decision": "SELLER_DESCRIPTION",
+      "source_id": "S02",
+      "eligible_in_copy": true
+    },
+    {
+      "id": "C02",
+      "claim": "Zen12 12 levels and 4 styles",
+      "decision": "SELLER_DESCRIPTION",
+      "source_id": "S02",
+      "eligible_in_copy": true
+    },
+    {
+      "id": "C03",
+      "claim": "Zen12 Premium 48 MP3 recordings",
+      "decision": "SELLER_DESCRIPTION",
+      "source_id": "S02",
+      "eligible_in_copy": true
+    },
+    {
+      "id": "C04",
+      "claim": "Nov 4 seller promotional Premium price $87.99",
+      "decision": "DATED_SELLER_OBSERVATION",
+      "source_id": "S02",
+      "eligible_in_copy": false
+    },
+    {
+      "id": "C05",
+      "claim": "Conditional separate seller page displayed $37 coupon",
+      "decision": "DATED_CONDITIONAL_OBSERVATION",
+      "source_id": "S03",
+      "eligible_in_copy": false
+    },
+    {
+      "id": "C06",
+      "claim": "Final checkout/tax/coupon/refund processing verified",
+      "decision": "NOT_VERIFIED",
+      "source_id": "S02",
+      "eligible_in_copy": false
+    },
+    {
+      "id": "C07",
+      "claim": "Zen12 12-minute session equals hour of meditation",
+      "decision": "UNSUBSTANTIATED_SELLER_EFFICACY",
+      "source_id": "S02",
+      "eligible_in_copy": false
+    },
+    {
+      "id": "C08",
+      "claim": "Zen12 independently proven treatment for anxiety/ADHD/depression",
+      "decision": "NOT_SUPPORTED",
+      "source_id": "S14",
+      "eligible_in_copy": false
+    },
+    {
+      "id": "C09",
+      "claim": "Zen12 independently proven neurologic entrainment",
+      "decision": "NOT_SUPPORTED",
+      "source_id": "S14",
+      "eligible_in_copy": false
+    },
+    {
+      "id": "C10",
+      "claim": "Binaural beats general pooled effect in meta-analysis across varied tasks",
+      "decision": "SCIENTIFIC_LITERATURE_NOT_PRODUCT_SPECIFIC",
+      "source_id": "S13",
+      "eligible_in_copy": true
+    },
+    {
+      "id": "C11",
+      "claim": "2023 EEG review five supporting eight contradicting one mixed",
+      "decision": "SCIENTIFIC_LITERATURE_NOT_PRODUCT_SPECIFIC",
+      "source_id": "S14",
+      "eligible_in_copy": true
+    },
+    {
+      "id": "C12",
+      "claim": "Public Inspire3 portal provides general affiliate signup",
+      "decision": "PUBLIC_PORTAL_NOT_APPROVAL",
+      "source_id": "S04",
+      "eligible_in_copy": true
+    },
+    {
+      "id": "C13",
+      "claim": "Final Vestige member accepted and earning link authorized",
+      "decision": "NOT_VERIFIED",
+      "source_id": "S04",
+      "eligible_in_copy": false
+    },
+    {
+      "id": "C14",
+      "claim": "Final Vestige affiliate payout rate or EPC known",
+      "decision": "NOT_VERIFIED",
+      "source_id": "S04",
+      "eligible_in_copy": false
+    },
+    {
+      "id": "C15",
+      "claim": "Seller may disclose purchaser name, email, product to affiliate",
+      "decision": "PUBLISHED_SELLER_PRIVACY",
+      "source_id": "S05",
+      "eligible_in_copy": true
+    },
+    {
+      "id": "C16",
+      "claim": "Final Vestige aggregate-only privacy reporting agreed",
+      "decision": "NOT_VERIFIED",
+      "source_id": "S05",
+      "eligible_in_copy": false
+    },
+    {
+      "id": "C17",
+      "claim": "Published Focus Fieldbook is a free existing resource",
+      "decision": "VERIFIED_LIVE_WORDPRESS_READ",
+      "source_id": "S17",
+      "eligible_in_copy": true
+    },
+    {
+      "id": "C18",
+      "claim": "FV paid Payhip Mind SKU with rights/fulfillment verified",
+      "decision": "NOT_VERIFIED",
+      "source_id": "S20",
+      "eligible_in_copy": false
+    },
+    {
+      "id": "C19",
+      "claim": "One particular Grok asset ID mapped to paid order",
+      "decision": "NOT_VERIFIED",
+      "source_id": "S20",
+      "eligible_in_copy": false
+    },
+    {
+      "id": "C20",
+      "claim": "Qualified human sessions and settled net revenue measured",
+      "decision": "NOT_VERIFIED",
+      "source_id": "S20",
+      "eligible_in_copy": false
+    },
+    {
+      "id": "C21",
+      "claim": "McGurk audiovisual mismatch can alter reported heard syllable",
+      "decision": "SCIENTIFIC_LITERATURE",
+      "source_id": "S07",
+      "eligible_in_copy": true
+    },
+    {
+      "id": "C22",
+      "claim": "McGurk effect diagnoses hypnotic susceptibility",
+      "decision": "NOT_SUPPORTED",
+      "source_id": "S09",
+      "eligible_in_copy": false
+    },
+    {
+      "id": "C23",
+      "claim": "All viewers experience same illusion response",
+      "decision": "CONTRADICTED_BY_INDIVIDUAL_DIFFERENCES",
+      "source_id": "S11",
+      "eligible_in_copy": false
+    },
+    {
+      "id": "C24",
+      "claim": "40-second explanatory video playable and accessible",
+      "decision": "STORYBOARD_NOT_MEDIA",
+      "source_id": "S07",
+      "eligible_in_copy": false
+    },
+    {
+      "id": "C25",
+      "claim": "Affiliate link click establishes paid sale",
+      "decision": "CATEGORY_ERROR",
+      "source_id": "S20",
+      "eligible_in_copy": false
+    }
+  ],
+  "gates": [
+    {
+      "id": "G01",
+      "requirement": "named FV affiliate acceptance",
+      "state": "CLOSED",
+      "evidence": "missing or not yet independently accepted"
+    },
+    {
+      "id": "G02",
+      "requirement": "written approved Zen12 earning URL",
+      "state": "CLOSED",
+      "evidence": "missing or not yet independently accepted"
+    },
+    {
+      "id": "G03",
+      "requirement": "platform permissions for organic social",
+      "state": "CLOSED",
+      "evidence": "missing or not yet independently accepted"
+    },
+    {
+      "id": "G04",
+      "requirement": "website placement approval",
+      "state": "CLOSED",
+      "evidence": "missing or not yet independently accepted"
+    },
+    {
+      "id": "G05",
+      "requirement": "email/Dispatch permissions",
+      "state": "CLOSED",
+      "evidence": "missing or not yet independently accepted"
+    },
+    {
+      "id": "G06",
+      "requirement": "approved creative or copyright-safe original",
+      "state": "CLOSED",
+      "evidence": "missing or not yet independently accepted"
+    },
+    {
+      "id": "G07",
+      "requirement": "live seller product/purchase page matched",
+      "state": "CLOSED",
+      "evidence": "missing or not yet independently accepted"
+    },
+    {
+      "id": "G08",
+      "requirement": "accurate checkout inclusive price",
+      "state": "CLOSED",
+      "evidence": "missing or not yet independently accepted"
+    },
+    {
+      "id": "G09",
+      "requirement": "refund procedure confirmed",
+      "state": "CLOSED",
+      "evidence": "missing or not yet independently accepted"
+    },
+    {
+      "id": "G10",
+      "requirement": "privacy-safe aggregate partner terms",
+      "state": "CLOSED",
+      "evidence": "missing or not yet independently accepted"
+    },
+    {
+      "id": "G11",
+      "requirement": "commission recognition and refunds",
+      "state": "CLOSED",
+      "evidence": "missing or not yet independently accepted"
+    },
+    {
+      "id": "G12",
+      "requirement": "approved analytics and consent",
+      "state": "CLOSED",
+      "evidence": "missing or not yet independently accepted"
+    },
+    {
+      "id": "G13",
+      "requirement": "Grok immutable media IDs and final URLs",
+      "state": "CLOSED",
+      "evidence": "missing or not yet independently accepted"
+    },
+    {
+      "id": "G14",
+      "requirement": "real browser mobile/a11y tests",
+      "state": "CLOSED",
+      "evidence": "missing or not yet independently accepted"
+    },
+    {
+      "id": "G15",
+      "requirement": "actual playable optimized video and captions",
+      "state": "CLOSED",
+      "evidence": "missing or not yet independently accepted"
+    },
+    {
+      "id": "G16",
+      "requirement": "founder explicit production release",
+      "state": "CLOSED",
+      "evidence": "missing or not yet independently accepted"
+    },
+    {
+      "id": "G17",
+      "requirement": "qualified human sessions verified",
+      "state": "CLOSED",
+      "evidence": "missing or not yet independently accepted"
+    },
+    {
+      "id": "G18",
+      "requirement": "settled sales reconciled",
+      "state": "CLOSED",
+      "evidence": "missing or not yet independently accepted"
+    },
+    {
+      "id": "G19",
+      "requirement": "Payhip paid Mind SKU and rights authenticated",
+      "state": "CLOSED",
+      "evidence": "missing or not yet independently accepted"
+    }
+  ],
+  "measurement": {
+    "campaign_utm": {
+      "utm_source": "verified_platform",
+      "utm_medium": "organic_social",
+      "utm_campaign": "mind_pilot_2026_11",
+      "utm_content": "VERIFIED_IMMUTABLE_GROK_ASSET_ID_REQUIRED"
+    },
+    "events": [
+      "campaign_landing",
+      "article_to_resource_click",
+      "confirmed_signup",
+      "affiliate_outbound",
+      "verified_checkout_start",
+      "merchant_confirmed_paid_conversion",
+      "refund_or_chargeback",
+      "net_settlement"
+    ],
+    "paid_events_only": [
+      "merchant_confirmed_paid_conversion",
+      "net_settlement"
+    ],
+    "pii_denied": [
+      "name",
+      "email",
+      "phone",
+      "street_address",
+      "full_ip",
+      "raw_merchant_customer_record"
+    ],
+    "cohorts_days": [
+      7,
+      30
+    ],
+    "variant_a": "source guide text only",
+    "variant_b": "same text plus optional 40sec film after media rights/QA; storyboard currently",
+    "primary_metric": "settled net revenue / 1000 qualified human sessions",
+    "note": "No new scripts, signup forms, affiliate clicks, social posts, or sales activation."
+  },
+  "reviews": {
+    "seller_pages_reviewed": "2026-11-04",
+    "ftc_guidance_reviewed": "2026-11-04",
+    "live_wordpress_read_only": "2026-11-04",
+    "specific_affiliate_mail_search": "2026-11-04 limited search yielded promotions, not approval",
+    "sale_verification": "unavailable; Payhip authenticated merchant ledger required"
+  }
+}
