@@ -52,7 +52,9 @@ export function evaluateConfirmedSignup(input, alreadySeen = new Set()) {
   } else {
     event.attribution = null; // NO invented source or fallback to last referrer.
   }
-  return { event, reason: 'confirmed_platform_opt_in', reachable: true };
+  // Confirmed subscription is NOT verified inbox reachability or delivered mail.
+  // Native aggregate subscriber counts, bounces and actual received-mail proof are separate.
+  return { event, reason: 'confirmed_platform_opt_in', reachable: null };
 }
 
 /** Reports count UNIQUE confirmed signup events only; does not claim recipients,
