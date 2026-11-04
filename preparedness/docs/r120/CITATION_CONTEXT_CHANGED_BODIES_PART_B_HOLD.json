@@ -1,0 +1,276 @@
+{
+  "schema": "r120-partial-citation-context-HOLD-v1",
+  "issue": 136,
+  "base_sha": "980659031b0bd5787a326d38698138c1e8cad82d",
+  "candidate_sha": "ddb3528ba6494dada1fa1c3a142ce746e3a67706",
+  "rows": [
+    {
+      "slug": "pioneer-supply-chains-failed",
+      "before_git_blob": "1332df3540a903fdecdb3527fb22347d57968fb0",
+      "after_git_blob": "ad158ee898f76d05bcb65c845b1e4a0e8103c660",
+      "before_word_count": 2773,
+      "after_word_count": 3132,
+      "before_citation_count": 57,
+      "after_citation_count": 63,
+      "citation_sequence_changed": true,
+      "occurrence_changes": [
+        {
+          "source_id": "hist-field-ia-hastings-guide",
+          "before": 0,
+          "after": 3
+        },
+        {
+          "source_id": "hist-field-nps-donner",
+          "before": 15,
+          "after": 16
+        },
+        {
+          "source_id": "hist-field-oac-breen-diary",
+          "before": 0,
+          "after": 2
+        }
+      ],
+      "same_source_id_changed_context_count": 8,
+      "context_examples": [
+        {
+          "citation": "hist-field-nps-donner#4",
+          "before": "Britannica supplies the specifics the other sources omit. Breaking a new trail through the Wasatch mountains cost the party about two weeks.",
+          "after": "The guide itself is digitized. In the Internet Archive's scan of the 1845 Cincinnati edition, as we read its machine-made (OCR) text, Hastin"
+        },
+        {
+          "citation": "hist-field-nps-donner#5",
+          "before": "Britannica says Paiute warriors killed several of the remaining oxen, and that by this point the party had cached nearly everything except f",
+          "after": "Britannica supplies the specifics the other sources omit. Breaking a new trail through the Wasatch mountains cost the party about two weeks."
+        },
+        {
+          "citation": "hist-field-nps-donner#6",
+          "before": "The record gets less certain as it nears the snow. Britannica says the pass was blocked by deepening snow on October 31 and that many oxen, ",
+          "after": "Britannica says Paiute warriors killed several of the remaining oxen, and that by this point the party had cached nearly everything except f"
+        },
+        {
+          "citation": "hist-field-nps-donner#7",
+          "before": "The National Park Service says that when all the animals had been killed by mid-December, the party was forced to eat rawhide, and that some",
+          "after": "The record gets less certain as it nears the snow. Britannica says the pass was blocked by deepening snow on October 31 and that many oxen, "
+        },
+        {
+          "citation": "hist-field-nps-donner#8",
+          "before": "The numbers do not agree, and it matters because they are repeated everywhere. Party size and deaths as counted by each source Source People",
+          "after": "The National Park Service says that when all the animals had been killed by mid-December, the party was forced to eat rawhide, and that some"
+        }
+      ],
+      "approval": "UNREVIEWED"
+    },
+    {
+      "slug": "preparedness-real-households",
+      "before_git_blob": "70d03c366e10db623929f118501becfa26c48bab",
+      "after_git_blob": "68344cf6c4022285fffb2a01f42027bf6f9ee95d",
+      "before_word_count": 3156,
+      "after_word_count": 3385,
+      "before_citation_count": 64,
+      "after_citation_count": 64,
+      "citation_sequence_changed": false,
+      "occurrence_changes": [],
+      "same_source_id_changed_context_count": 0,
+      "context_examples": [],
+      "approval": "UNREVIEWED"
+    },
+    {
+      "slug": "root-cellars-cool-storage",
+      "before_git_blob": "e28548b4e5014f36ffd12becb9261ae696480efa",
+      "after_git_blob": "2ff8d029769aa9a97de6b1e388d937899f3af38c",
+      "before_word_count": 2416,
+      "after_word_count": 2782,
+      "before_citation_count": 37,
+      "after_citation_count": 42,
+      "citation_sequence_changed": true,
+      "occurrence_changes": [
+        {
+          "source_id": "hist-home-msu-simmons-1798",
+          "before": 0,
+          "after": 4
+        },
+        {
+          "source_id": "hist-home-mu-root-cellars",
+          "before": 14,
+          "after": 15
+        }
+      ],
+      "same_source_id_changed_context_count": 5,
+      "context_examples": [
+        {
+          "citation": "hist-home-mu-root-cellars#6",
+          "before": "The same chart lists a few crops, horseradish, Jerusalem artichoke and salsify among them, that may be left in the ground undisturbed until ",
+          "after": "The book also records the opposite of cellar storage for parsnips: they may be kept almost anywhere that avoids heat and frost, and are rich"
+        },
+        {
+          "citation": "hist-home-mu-root-cellars#7",
+          "before": "Notice how the two sets of numbers sit side by side. The Extension chart gives a target range for whole produce, with an upper end at 40 °F ",
+          "after": "The same chart lists a few crops, horseradish, Jerusalem artichoke and salsify among them, that may be left in the ground undisturbed until "
+        },
+        {
+          "citation": "hist-home-mu-root-cellars#8",
+          "before": "Most households in 2026 do not, and renters in particular may have no space they can change. The Extension chart groups cool and dry storage",
+          "after": "Notice how the two sets of numbers sit side by side. The Extension chart gives a target range for whole produce, with an upper end at 40 °F "
+        },
+        {
+          "citation": "hist-home-mu-root-cellars#13",
+          "before": "Whole, sound, properly cured produce: storage in the temperature and humidity ranges Extension publishes, with no freezing, and fruit kept a",
+          "after": "Most households in 2026 do not, and renters in particular may have no space they can change. The Extension chart groups cool and dry storage"
+        },
+        {
+          "citation": "hist-home-mu-root-cellars#14",
+          "before": "Official guidance Crop-specific temperature and humidity ranges for produce, no freezing, fruit kept away from vegetables, and refrigeration",
+          "after": "Whole, sound, properly cured produce: storage in the temperature and humidity ranges Extension publishes, with no freezing, and fruit kept a"
+        }
+      ],
+      "approval": "UNREVIEWED"
+    },
+    {
+      "slug": "sanitation-before-germ-theory",
+      "before_git_blob": "15852c158708270d72d5f9723d90e5cb6083a766",
+      "after_git_blob": "d56df76647d2598f35cfd4609f91649cef063f12",
+      "before_word_count": 2619,
+      "after_word_count": 2653,
+      "before_citation_count": 47,
+      "after_citation_count": 48,
+      "citation_sequence_changed": true,
+      "occurrence_changes": [
+        {
+          "source_id": "hist-home-wellcome-chadwick-1842",
+          "before": 0,
+          "after": 1
+        }
+      ],
+      "same_source_id_changed_context_count": 0,
+      "context_examples": [],
+      "approval": "UNREVIEWED"
+    },
+    {
+      "slug": "shelter-or-evacuate",
+      "before_git_blob": "b8acf07e533eea43795aa242f39fd926b080130f",
+      "after_git_blob": "de3cb805041904cf22d4f216296bd4c8ddec17c1",
+      "before_word_count": 3423,
+      "after_word_count": 4172,
+      "before_citation_count": 50,
+      "after_citation_count": 59,
+      "citation_sequence_changed": true,
+      "occurrence_changes": [
+        {
+          "source_id": "shelter-cdc-chemical-evac",
+          "before": 0,
+          "after": 1
+        },
+        {
+          "source_id": "shelter-cdc-chemical-sip",
+          "before": 0,
+          "after": 3
+        },
+        {
+          "source_id": "shelter-ready-floods",
+          "before": 4,
+          "after": 5
+        },
+        {
+          "source_id": "shelter-ready-hazmat",
+          "before": 5,
+          "after": 8
+        },
+        {
+          "source_id": "shelter-ready-hurricanes",
+          "before": 7,
+          "after": 8
+        }
+      ],
+      "same_source_id_changed_context_count": 9,
+      "context_examples": [
+        {
+          "citation": "shelter-ready-floods#2",
+          "before": "Ready.gov calls floods the most common disaster in the United States and says flash floods can come without warning. Its instruction under a",
+          "after": "Four things decide the answer, and no category of hazard settles it by itself: the hazard and how it behaves; the warning time you have; whe"
+        },
+        {
+          "citation": "shelter-ready-hurricanes#4",
+          "before": "Ready.gov says hurricanes can bring storm surge, wind, rip currents and flooding, are not just a coastal problem, and can cause wind, rain, ",
+          "after": "Four things decide the answer, and no category of hazard settles it by itself: the hazard and how it behaves; the warning time you have; whe"
+        },
+        {
+          "citation": "shelter-ready-hazmat#3",
+          "before": "The page lists signs of a chemical release, including difficulty breathing, eye irritation, loss of coordination, nausea, or burning in the ",
+          "after": "Four things decide the answer, and no category of hazard settles it by itself: the hazard and how it behaves; the warning time you have; whe"
+        },
+        {
+          "citation": "shelter-ready-tornadoes#3",
+          "before": "Ready.gov's tornado page lists winds that can exceed 200 miles per hour, and says a tornado can happen anytime and anywhere. The signs inclu",
+          "after": "Ready.gov's tornado page lists winds that can exceed 200 miles per hour, and says a tornado can happen anytime and anywhere. The signs inclu"
+        },
+        {
+          "citation": "shelter-ready-tornadoes#4",
+          "before": "Ready.gov's tornado page lists winds that can exceed 200 miles per hour, and says a tornado can happen anytime and anywhere. The signs inclu",
+          "after": "Ready.gov's tornado page lists winds that can exceed 200 miles per hour, and says a tornado can happen anytime and anywhere. The signs inclu"
+        }
+      ],
+      "approval": "UNREVIEWED"
+    },
+    {
+      "slug": "three-day-kit",
+      "before_git_blob": "ef5463ca668166766ca3d868908bc0bcb6040a23",
+      "after_git_blob": "933f38ff3cd55a241cf9b392014fc52d4961e84f",
+      "before_word_count": 3297,
+      "after_word_count": 3761,
+      "before_citation_count": 75,
+      "after_citation_count": 79,
+      "citation_sequence_changed": true,
+      "occurrence_changes": [
+        {
+          "source_id": "start-cdc-power-outage",
+          "before": 0,
+          "after": 1
+        },
+        {
+          "source_id": "start-fema-power-sheet",
+          "before": 4,
+          "after": 5
+        },
+        {
+          "source_id": "start-fsis-emergency-food",
+          "before": 0,
+          "after": 1
+        },
+        {
+          "source_id": "start-ready-power",
+          "before": 5,
+          "after": 6
+        }
+      ],
+      "same_source_id_changed_context_count": 11,
+      "context_examples": [
+        {
+          "citation": "start-ready-power#1",
+          "before": "An unopened refrigerator keeps food cold for about four hours, and Ready.gov's power-outage page says a full freezer holds for about 48 hour",
+          "after": "An unopened refrigerator keeps food cold for about four hours, and a full freezer for about 48 hours, according to Ready.gov and FEMA. The U"
+        },
+        {
+          "citation": "start-fema-power-sheet#1",
+          "before": "An unopened refrigerator keeps food cold for about four hours, and Ready.gov's power-outage page says a full freezer holds for about 48 hour",
+          "after": "An unopened refrigerator keeps food cold for about four hours, and a full freezer for about 48 hours, according to Ready.gov and FEMA. The U"
+        },
+        {
+          "citation": "start-ready-power#2",
+          "before": "Charcoal grills and camp stoves are for outdoor use only. Ready.gov's power-outage page places generators, camp stoves and grills outdoors a",
+          "after": "An unopened refrigerator keeps food cold for about four hours, and a full freezer for about 48 hours, according to Ready.gov and FEMA. The U"
+        },
+        {
+          "citation": "start-ready-food#6",
+          "before": "An unopened refrigerator keeps food cold for about four hours, and Ready.gov's power-outage page says a full freezer holds for about 48 hour",
+          "after": "An unopened refrigerator keeps food cold for about four hours, and a full freezer for about 48 hours, according to Ready.gov and FEMA. The U"
+        },
+        {
+          "citation": "start-fema-power-sheet#2",
+          "before": "Charcoal grills and camp stoves are for outdoor use only. Ready.gov's power-outage page places generators, camp stoves and grills outdoors a",
+          "after": "An unopened refrigerator keeps food cold for about four hours, and a full freezer for about 48 hours, according to Ready.gov and FEMA. The U"
+        }
+      ],
+      "approval": "UNREVIEWED"
+    }
+  ]
+}
