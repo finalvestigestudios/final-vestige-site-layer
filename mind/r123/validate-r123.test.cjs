@@ -65,7 +65,7 @@ check('caption ends at 40',ends.at(-1)===40);
 check('caption intervals contiguous',captions.every((t,i)=>i===0||t===ends[i-1]));
 check('caption intervals positive',captions.every((t,i)=>ends[i]>t));
 check('seller price not presented as fixed',[a,b].every(s=>!s.includes('$87.99')&&!s.includes('$37')));
-check('plan includes no verified conversion claim',plan.includes('NOT COMPUTABLE')&&plan.includes('ZERO approved affiliate links'));
+check('plan includes no verified conversion claim',plan.includes('NOT COMPUTABLE')&&/zero approved affiliate links/i.test(plan));
 check('plan has 3 creator mappings',plan.includes('Change Blindness')&&plan.includes('Mesmerism/Puységur')&&plan.includes('Attentional Blink'));
 check('plan distinguishes seller click',plan.includes('An outbound click is not a commission'));
 check('plan includes cohorts',plan.includes('7/30-day cohorts'));
