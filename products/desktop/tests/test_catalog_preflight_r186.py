@@ -138,6 +138,14 @@ class CatalogPreflightR186(unittest.TestCase):
     def test_reject_hidden_comment_payload(self):
         self.assert_rejected(catalog().replace('<!-- /wp:group -->', '<!-- secret download path --><!-- /wp:group -->').encode())
 
+    def test_reject_hidden_gutenberg_json_premium_link(self):
+        injected = '<!-- wp:paragraph {"href":"https://leak.test/GrantAuditStudioPro.exe"} -->'
+        self.assert_rejected(catalog().replace('<!-- /wp:group -->', injected + '<!-- /wp:group -->').encode())
+
+    def test_reject_unknown_gutenberg_custom_block(self):
+        injected = '<!-- wp:custom-html -->'
+        self.assert_rejected(catalog().replace('<!-- /wp:group -->', injected + '<!-- /wp:group -->').encode())
+
     def test_accept_gutenberg_block_comments_and_entities(self):
         good = catalog().replace('No downloads are available', 'No downloads are available')
         self.assertEqual(gate.verify_catalog(good.encode())['contact_links'], 1)
