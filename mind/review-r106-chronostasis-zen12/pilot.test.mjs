@@ -5,7 +5,7 @@ const a=read('ZEN12_A.blocks.html'),b=read('ZEN12_B.blocks.html'),vtt=read('ZEN1
 const stripVideo=s=>s.replace(/<figure class="fvz-video">[\s\S]*?<\/figure>/,'');
 test('variant parity except optional film',()=>assert.equal(a,stripVideo(b)));
 test('each variant one disabled native merchant control',()=>{for(const s of [a,b]){assert.equal((s.match(/<button disabled/g)||[]).length,1);assert.match(s,/Prospective affiliate disclosure:[\s\S]{0,500}<button disabled/)}});
-test('no active merchant earning or tracker',()=>{for(const s of [a,b]){assert.doesNotMatch(s,/href="https?:\/\/(?:affiliates\.inspire3\.com|go\.zen12\.com)/);assert.doesNotMatch(s,/<script|autoplay|<form|<iframe/i)}});
+test('no active merchant earning or tracker',()=>{for(const s of [a,b]){assert.doesNotMatch(s,/href="https?:\/\/(?:affiliates\.inspire3\.com|go\.zen12\.com|zen12\.com)/);assert.doesNotMatch(s,/<script|autoplay|<form|<iframe/i)}});
 test('no fake video player',()=>{assert.doesNotMatch(b,/<video|<audio|<button[^>]*play/i);assert.match(b,/PRE-PRODUCTION/);assert.match(b,/<details>/)});
 test('no tier promise or hour equivalence adoption',()=>{assert.match(a,/not a Final Vestige conclusion/);assert.match(a,/unsubstantiated product-specific efficacy claim/);assert.match(a,/full course/);assert.match(a,/no active earning link/)});
 test('all release gates closed and URLs empty',()=>{assert.equal(matrix.partner_approved,false);assert.equal(matrix.merchant_earning_url,null);assert.ok(matrix.release_gates.length>=25);assert.ok(matrix.release_gates.every(g=>g.status==='CLOSED'))});
