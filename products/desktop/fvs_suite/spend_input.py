@@ -8,6 +8,7 @@ from __future__ import annotations
 
 from datetime import date
 from decimal import Context, Decimal, localcontext
+from types import MappingProxyType
 import re
 from typing import Callable, Iterator, Mapping
 
@@ -74,6 +75,11 @@ def validated_spend_rows(
         category = record.get("category", "")
         if type(category) is not str:
             raise ValueError(f"Spend category must be imported text at physical row {physical_row}")
+        # CSV imports carry only native text. Even an unused extra column must
+        # not smuggle a mutable object or a method-bearing str subclass into
+        # the returned evidence record. Never invoke the object's methods.
+        if any(type(value) is not str for value in record.values()):
+            raise ValueError(f"Spend source column values must be plain text at physical row {physical_row}")
 
     # Precompute every semantic result *before* yielding the first one.
     # Previously the first valid row escaped to a direct iterator consumer
@@ -143,7 +149,12 @@ def validated_spend_rows(
         if has_subcent:
             raise ValueError(f"Spend amount must have cent precision at physical row {physical_row}")
 
-        prepared_rows.append((record, vendor, calendar_day.strftime("%Y-%m"),
+        # A mutable record escaping here lets direct consumers rewrite the
+        # physical line or source label *after* successful verification, while
+        # leaving the parsed Decimal and associated file digest unchanged.
+        # The dictionary is our private copied storage; expose read-only view.
+        prepared_rows.append((MappingProxyType(record), vendor,
+                              calendar_day.strftime("%Y-%m"),
                               category or "Uncategorized", amount))
 
     # No caller can consume or export a partially parsed source collection.
