@@ -1,0 +1,190 @@
+{
+  "schema": "fv-preparedness-r116-exact-metadata-blob-and-roster-HOLD-v1",
+  "issue": 136,
+  "business_issue": 820,
+  "reference_commit": "8f42bd2d4bd2a5a3a9781b1ac28cd8ec80d25620",
+  "verification": "GitHub authenticated exact commit directory listing: 35 author metadata Git blobs and 35 body blobs; compare against R115 baseline; not claim truth or safety",
+  "metadata_count": 35,
+  "original_article_body_count": 35,
+  "metadata_rows_NOT_APPROVED": [
+    {
+      "n": 1,
+      "slug": "household-emergency-plan",
+      "metadata_git_blob_oid": "0681d51e6e29166eaae27ac2b7f1fbde3f836787"
+    },
+    {
+      "n": 2,
+      "slug": "three-day-kit",
+      "metadata_git_blob_oid": "c830e4b8b0ee2890a8ddaf82273fdc25bd4b50f2"
+    },
+    {
+      "n": 3,
+      "slug": "water-math",
+      "metadata_git_blob_oid": "4b1c3cd7166afa03e56991f7de8af771828a6e54"
+    },
+    {
+      "n": 4,
+      "slug": "two-week-water-storage",
+      "metadata_git_blob_oid": "76f317f047ed95c8b6c7ab130f44d79232e7a463"
+    },
+    {
+      "n": 5,
+      "slug": "water-advisories-explained",
+      "metadata_git_blob_oid": "4c88e747b46d9e95264ec3367911a5175baa6c31"
+    },
+    {
+      "n": 6,
+      "slug": "making-water-safer",
+      "metadata_git_blob_oid": "bcb567905444687b5ae0a261cbbdb7a24a9e7870"
+    },
+    {
+      "n": 7,
+      "slug": "homemade-water-filters",
+      "metadata_git_blob_oid": "91c730bd1c7a61fa3140a86245c9bc0c88160c29"
+    },
+    {
+      "n": 8,
+      "slug": "pantry-rotation",
+      "metadata_git_blob_oid": "dfafbb77e076d6cab5aec8217f98d7fd20dbff1c"
+    },
+    {
+      "n": 9,
+      "slug": "food-safety-power-outage",
+      "metadata_git_blob_oid": "3283071134ba24490d47f5a0635836b6ed4f8965"
+    },
+    {
+      "n": 10,
+      "slug": "pressure-canning-low-acid",
+      "metadata_git_blob_oid": "4ab01d4aa566b8970351d8d8d43f7f85e8a04341"
+    },
+    {
+      "n": 11,
+      "slug": "safe-jerky-dehydration",
+      "metadata_git_blob_oid": "50b365e8109c14bdb9ce1a9365db88215a678ec5"
+    },
+    {
+      "n": 12,
+      "slug": "outage-heat-cold-generators",
+      "metadata_git_blob_oid": "77dd194b096bb60ea99728a5b0042adf016b905e"
+    },
+    {
+      "n": 13,
+      "slug": "home-fire-escape-plan",
+      "metadata_git_blob_oid": "6a54547ef1458b0b5b0464f95d735ff4653c8368"
+    },
+    {
+      "n": 14,
+      "slug": "shelter-or-evacuate",
+      "metadata_git_blob_oid": "fe90c9ef50e2cad5fd36f2a9c4e2edd70c424186"
+    },
+    {
+      "n": 15,
+      "slug": "family-communication-plan",
+      "metadata_git_blob_oid": "e63bbe70f5b93936da5cd71c030e33d82256d3ee"
+    },
+    {
+      "n": 16,
+      "slug": "go-bags",
+      "metadata_git_blob_oid": "16cc5e91204a77486912444c6e516f5d5b48f567"
+    },
+    {
+      "n": 17,
+      "slug": "medication-and-devices",
+      "metadata_git_blob_oid": "a49a6d42a3deb14acbe67e7cf636c23cdc5ec49c"
+    },
+    {
+      "n": 18,
+      "slug": "emergency-hygiene-sanitation",
+      "metadata_git_blob_oid": "e94ff9b33e6ced71dafcdcc4412ad687a503ccf6"
+    },
+    {
+      "n": 19,
+      "slug": "warnings-radios-offline-maps",
+      "metadata_git_blob_oid": "025ddac0f8c077f2a6fa17d7fcb746caa51234a7"
+    },
+    {
+      "n": 20,
+      "slug": "preparedness-real-households",
+      "metadata_git_blob_oid": "ba840917f34634ccd634c488eeca4a8a6b3a8fe2"
+    },
+    {
+      "n": 21,
+      "slug": "salt-beef-salt-pork-age-of-sail",
+      "metadata_git_blob_oid": "06b1cec809cb78a3315f7a7655b028c0a27dd642"
+    },
+    {
+      "n": 22,
+      "slug": "ships-biscuit-and-hardtack",
+      "metadata_git_blob_oid": "2b2c3ce9472073df3d15e8befb39178d369632b1"
+    },
+    {
+      "n": 23,
+      "slug": "lewis-and-clark-salt-works",
+      "metadata_git_blob_oid": "3a350aedac67ea89c6995831032367634248c9e9"
+    },
+    {
+      "n": 24,
+      "slug": "pioneer-travel-rations",
+      "metadata_git_blob_oid": "7191acba55d63dc405ad9c2003d66193276da89f"
+    },
+    {
+      "n": 25,
+      "slug": "pemmican-and-dried-meats",
+      "metadata_git_blob_oid": "03d3824e07fe51931671d0ddc7aa8c85eda58435"
+    },
+    {
+      "n": 26,
+      "slug": "smokehouses-salting-curing",
+      "metadata_git_blob_oid": "16223945e83f95b349acf09a2b684c09326550c0"
+    },
+    {
+      "n": 27,
+      "slug": "root-cellars-cool-storage",
+      "metadata_git_blob_oid": "705e1157f9394b615ecb74ffd25be8500453e18a"
+    },
+    {
+      "n": 28,
+      "slug": "pickling-fermentation-old-recipes",
+      "metadata_git_blob_oid": "4b955811459017df83a28704aaf1e69ddb036c29"
+    },
+    {
+      "n": 29,
+      "slug": "rain-barrels-and-cisterns",
+      "metadata_git_blob_oid": "dc42694e842969624f24ab5edc9bff2497693e70"
+    },
+    {
+      "n": 30,
+      "slug": "water-purification-through-history",
+      "metadata_git_blob_oid": "1d9b77aa4a4cdbf4f9a02fe6d1cf5d2691cc798e"
+    },
+    {
+      "n": 31,
+      "slug": "fire-making-across-time",
+      "metadata_git_blob_oid": "ca9e2c84d825b5cd9e182dc9a4a381c8a6905884"
+    },
+    {
+      "n": 32,
+      "slug": "navigation-before-gps",
+      "metadata_git_blob_oid": "40c83419760bc7bd0c4c574304e65b773b4a8423"
+    },
+    {
+      "n": 33,
+      "slug": "sanitation-before-germ-theory",
+      "metadata_git_blob_oid": "0dad1731adc3c88aac65baceaa9aa09112e5eb5b"
+    },
+    {
+      "n": 34,
+      "slug": "pioneer-supply-chains-failed",
+      "metadata_git_blob_oid": "fcb42c440e3b7aad5eeecfd4e0c974a5d04a9cec"
+    },
+    {
+      "n": 35,
+      "slug": "history-of-food-preservation",
+      "metadata_git_blob_oid": "907237e436b44a34f8d673ef9de3168d1e9ad517"
+    }
+  ],
+  "release_state": "HOLD",
+  "may_publish": false,
+  "independent_QD_PASS": false,
+  "medical_safety_verified": false
+}
