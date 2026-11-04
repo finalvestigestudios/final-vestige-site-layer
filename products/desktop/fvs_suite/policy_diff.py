@@ -12,6 +12,7 @@ import unicodedata
 from pathlib import Path
 
 from .unicode_hazards import is_visually_blank_filler
+from .policy_canonical import render_local_canonical_evidence
 
 MAX_POLICY_BYTES = 10 * 1024 * 1024
 MAX_POLICY_LINES = 50_000
@@ -178,7 +179,8 @@ def _unified_diff(before, after, old_label, new_label, *, include_index=False):
         hunks.append(current)
     rendered = "".join(chunks)
     return (rendered, _render_change_index(hunks) +
-            _local_compatibility_evidence(hunks)) if include_index else rendered
+            _local_compatibility_evidence(hunks) +
+            render_local_canonical_evidence(hunks)) if include_index else rendered
 
 
 def _compatibility_codepoint_evidence(before_text: str, after_text: str) -> str:

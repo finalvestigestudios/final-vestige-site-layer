@@ -92,6 +92,10 @@ jobs:
         run: |
           python products/desktop/scripts/safe_unittest_r177.py
           python -OO products/desktop/scripts/safe_unittest_r177.py
+      - name: R178 Policy Delta local canonical NFC change evidence (normal and -OO)
+        run: |
+          python products/desktop/scripts/safe_unittest_r178.py
+          python -OO products/desktop/scripts/safe_unittest_r178.py
       - name: Install pinned local evidence crypto dependency
         run: python -m pip install "cryptography==46.0.4"
       - name: Verify R100 privacy-safe source-method regressions (normal and -OO)
@@ -472,6 +476,14 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R177 native source identity tests failed" }
           python -OO products/desktop/scripts/safe_unittest_r177.py
           if ($LASTEXITCODE -ne 0) { throw "R177 optimized identity tests failed" }
+      - name: R178 Policy Delta local canonical NFC change evidence (normal and -OO)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python products/desktop/scripts/safe_unittest_r178.py
+          if ($LASTEXITCODE -ne 0) { throw "R178 canonical policy tests failed" }
+          python -OO products/desktop/scripts/safe_unittest_r178.py
+          if ($LASTEXITCODE -ne 0) { throw "R178 optimized canonical policy tests failed" }
       - name: Install pinned local evidence crypto dependency
         run: python -m pip install "cryptography==46.0.4"
       - name: R100 Windows source-stage diagnostic (read-only, NOT a release gate)
