@@ -37,16 +37,22 @@ def validated_spend_rows(
     is not a CSV authenticity check: the caller must supply a digest from the
     *same* descriptor-verified byte snapshot as its records.
     """
-    if not isinstance(records, list):
+    if type(records) is not list:
         raise ValueError("Spend source records must be a list")
     if len(records) > MAX_SPEND_ROWS:
         raise ValueError("Too many spend source records; no report was saved")
     seen_rows: set[str] = set()
-    for record in records:
-        if not isinstance(record, dict):
+    for original in records:
+        if not isinstance(original, dict):
             raise ValueError("Spend source record must be a mapping")
+        # A direct caller can provide a dict subclass that lies through get(),
+        # items(), keys() or __getitem__. Read native storage once before
+        # validation and callbacks; keep that owned snapshot for evidence.
+        if any(type(field) is not str for field in dict.keys(original)):
+            raise ValueError("Spend source field names must be plain text")
+        record = dict(dict.items(original))
         physical_row = record.get("row")
-        if (not isinstance(physical_row, str)
+        if (type(physical_row) is not str
                 or _PHYSICAL_ROW.fullmatch(physical_row) is None
                 or int(physical_row) < 2):
             raise ValueError("Spend source requires a canonical physical CSV row")
@@ -54,20 +60,22 @@ def validated_spend_rows(
             raise ValueError("Duplicate spend physical CSV row; no report was saved")
         seen_rows.add(physical_row)
         for field in ("vendor", "date", "amount"):
-            if not isinstance(record.get(field), str):
+            if type(record.get(field)) is not str:
                 raise ValueError(f"Spend {field} must be imported text at physical row {physical_row}")
         category = record.get("category", "")
-        if not isinstance(category, str):
+        if type(category) is not str:
             raise ValueError(f"Spend category must be imported text at physical row {physical_row}")
 
         try:
             vendor = normalize_vendor(record["vendor"])
         except Exception:
             raise ValueError(f"Invalid vendor at physical row {physical_row}") from None
+        if type(vendor) is not str:
+            raise ValueError(f"Invalid normalized vendor key at physical row {physical_row}")
         if vendor == "":
             # Preserve the original R59 message for the normal CSV pathway.
             raise ValueError("Blank vendor at row " + physical_row)
-        if not isinstance(vendor, str) or _VENDOR_KEY.fullmatch(vendor) is None:
+        if _VENDOR_KEY.fullmatch(vendor) is None:
             raise ValueError(f"Invalid normalized vendor key at physical row {physical_row}")
 
         try:
@@ -81,7 +89,7 @@ def validated_spend_rows(
             amount = parse_money(record["amount"])
         except Exception:
             raise ValueError(f"Invalid spend amount at physical row {physical_row}") from None
-        if not isinstance(amount, Decimal) or not amount.is_finite():
+        if type(amount) is not Decimal or not amount.is_finite():
             raise ValueError(f"Spend amount must be a finite exact Decimal at physical row {physical_row}")
         # The CSV path uses engine.money (<= 1 trillion, rounded to cents).
         # Enforce the same finite fixed-point domain for direct callers so a
