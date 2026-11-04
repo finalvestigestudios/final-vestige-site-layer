@@ -114,6 +114,18 @@ jobs:
           css=(root/'assembler'/'style.css').read_text()
           if 'Theme Name: Assembler' not in css: raise RuntimeError('Theme identity mismatch')
           print('Assembler theme preflight passed; extracted files:',len(items))
+          # Public vendor-source metadata only; no page content, subscriber
+          # data or credentials. Find where the fallback page-list is declared.
+          for folder in ('parts','patterns'):
+              d=root/'assembler'/folder
+              if d.exists():
+                  for p in sorted(d.glob('*.html')):
+                      t=p.read_text(encoding='utf-8')
+                      if any(m in t for m in ('wp:navigation','wp:page-list','wp:pattern')):
+                          print('EX2_VENDOR_BLOCK_SOURCE',
+                            {'file':folder+'/'+p.name,'nav_open':t.count('<!-- wp:navigation '),
+                             'nav_self':t.count(' /-->'),'page_list':t.count('wp:page-list'),
+                             'pattern_refs':t.count('wp:pattern'),'sha256':__import__('hashlib').sha256(t.encode()).hexdigest()})
           PY
       - name: Install free pinned browser tooling
         run: |
