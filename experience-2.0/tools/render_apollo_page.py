@@ -82,16 +82,82 @@ def approved_images(data: dict, path=SIGNOFFS) -> set:
     known = {r["image"]["nasa_id"] for r in data["records"]}
     ok = set()
     for item in json.loads(path.read_text(encoding="utf-8")).get("approved", []):
+        if item.get("placement") == "chronology":
+            continue
         if item.get("nasa_id") in known and all(str(item.get(k, "")).strip() for k in ("editor", "date", "contextual_use")):
             ok.add(item["nasa_id"])
     return ok
 
 
+def approved_timeline_images(data: dict, path=SIGNOFFS) -> set:
+    """Approve only separately documented chronology-context images."""
+    known = {r["image"]["nasa_id"] for r in data["records"]}
+    return {item["nasa_id"] for item in json.loads(path.read_text(encoding="utf-8")).get("approved", [])
+            if item.get("placement") == "chronology" and item.get("nasa_id") in known
+            and all(str(item.get(k, "")).strip() for k in ("editor", "date", "contextual_use"))}
+
+
 # Kept in its own block so the main style block (and its stored hash) did not change when text-only chapters were added.
-TEXT_CHAPTER_CSS = """
-.fv-ex2-page .fv-ex2-chapter__grid--text { grid-template-columns: minmax(0, 1fr); }
-.fv-ex2-page .fv-ex2-chapter__grid--text .fv-ex2-chapter__text { grid-column: 1; grid-row: auto; justify-self: center; width: 100%; max-width: 46rem; }
+TEXT_CHAPTER_CSS = """.fv-ex2-page .fv-ex2-chapter__grid--text{grid-template-columns: minmax(0,1fr);}.fv-ex2-page .fv-ex2-chapter__grid--text .fv-ex2-chapter__text{grid-column: 1;grid-row: auto;justify-self: center;width: 100%;max-width: 46rem;}
+/* Center the reading hierarchy within the existing full-width dark canvas. */
+.fv-ex2-page .fv-ex2-sec__head{width:min(100%,46rem);margin-inline:auto}
+.fv-ex2-page .fv-ex2-desk__head{width:min(100%,46rem);margin-inline:auto}
+.fv-ex2-page #limits>.fv-ex2-wrap>.fv-ex2-chapter__text{width:min(100%,60rem);margin-inline:auto}
+.fv-ex2-page .fv-ex2-hero__inner{max-width:70rem;margin-inline:auto}
+.fv-ex2-page .fv-ex2-classlist{width:min(100%,70rem);margin-inline:auto}
+.fv-ex2-page .fv-ex2-policy{margin-inline:auto}
+.fv-ex2-page .fv-ex2-chronology{width:min(100%,70rem);margin-inline:auto}
+.fv-ex2-page .fv-ex2-chapter__grid--text .fv-ex2-chapter__text{margin-inline:auto}
+.fv-ex2-page .fvx-chrono-gallery{margin:2rem auto 0;padding:clamp(1rem,2vw,1.5rem);border:1px solid var(--fvx-line);background:linear-gradient(130deg,#141410,#101111 70%,#171511);width:100%;max-width:68rem}
+.fv-ex2-page .fvx-chrono-gallery__kicker{font:700 .7rem/1.5 var(--fvx-font-catalog);letter-spacing:.12em;text-transform:uppercase;color:var(--fvx-gold);margin:0 0 .45rem}
+.fv-ex2-page .fvx-chrono-gallery__note{font-size:.84rem;color:var(--fvx-text-muted);max-width:70ch;margin:0 0 1.1rem}
+.fv-ex2-page .fvx-chrono-gallery__figure{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(1rem,3vw,2.5rem);align-items:center;margin:0}
+.fv-ex2-page .fvx-chrono-gallery__figure[hidden]{display:none!important}
+.fv-ex2-page .fvx-chrono-gallery__image{display:block;width:100%;height:min(36vw,27rem);min-height:13rem;object-fit:contain;background:#090a0a;border:1px solid var(--fvx-line)}
+.fv-ex2-page .fvx-chrono-gallery__caption{font-size:clamp(.85rem,1.15vw,.96rem);line-height:1.65;color:var(--fvx-text-muted)}
+.fv-ex2-page .fvx-chrono-gallery__caption strong{display:block;font-family:var(--fvx-font-display);font-size:clamp(1.1rem,1.8vw,1.6rem);font-weight:400;line-height:1.25;color:var(--fvx-text);margin:0 0 .6rem}
+.fv-ex2-page .fvx-chrono-gallery__caption small{display:block;margin-top:.75rem;font-size:.76rem;color:var(--fvx-gold)}
+.fv-ex2-page .fvx-chrono-gallery__caption a{display:inline-flex;min-height:44px;align-items:center}
+.fv-ex2-page .fvx-chrono-gallery__position{margin-top:.9rem;font-size:.78rem;color:var(--fvx-gold);letter-spacing:.04em}
+@media(max-width:48rem){.fv-ex2-page .fvx-chrono-gallery__figure{grid-template-columns:minmax(0,1fr)}.fv-ex2-page .fvx-chrono-gallery__image{height:clamp(14rem,60vw,24rem)}}
+@media(prefers-reduced-motion:no-preference){.fv-ex2-page .fvx-chrono-gallery__figure.is-current{animation:fvx-archive-photo-in .28s ease-out both}@keyframes fvx-archive-photo-in{from{opacity:.55;transform:translateY(5px)}to{opacity:1;transform:none}}}
 """
+
+CHRONO_GALLERY_HTML = r"""
+<div class="fvx-chrono-gallery" data-fvx-chrono-gallery aria-label="Historical photographs accompanying the Apollo 1 chronology">
+  <p class="fvx-chrono-gallery__kicker">Three archival views · contextual imagery</p>
+  <p class="fvx-chrono-gallery__note">The timeline marks come from the Apollo 204 Review Board. The photographs below show separate historical contexts, not the actual fire or the events at each slider second. Moving the slider changes the archival view for exploration only.</p>
+  <div class="fvx-chrono-gallery__frames">
+    <figure class="fvx-chrono-gallery__figure" data-fvx-chrono-photo="0">
+      <img class="fvx-chrono-gallery__image" src="https://finalvestige.com/wp-content/uploads/2026/11/apollo1-nasa-s66-58038.jpg" width="3000" height="2417" loading="lazy" decoding="async" alt="Apollo 1 prime crew entering an altitude chamber during training in October 1966, months before the fire.">
+      <figcaption class="fvx-chrono-gallery__caption"><strong>The crew before the test</strong>NASA S66-58038 records the Apollo 1 prime crew preparing to enter an altitude chamber on October 18, 1966. This training scene does not depict the January 27 fire.<small>NASA / Johnson Space Center · October 18, 1966 · <a href="https://www.nasa.gov/image-detail/amf-s66-58038/" target="_blank" rel="noopener noreferrer">Original NASA record</a></small></figcaption>
+    </figure>
+    <figure class="fvx-chrono-gallery__figure" data-fvx-chrono-photo="1">
+      <img class="fvx-chrono-gallery__image" src="https://finalvestige.com/wp-content/uploads/2026/11/apollo1-nasa-s67-15717.jpg" width="2367" height="3000" loading="lazy" decoding="async" alt="Apollo Spacecraft 012 being moved during preflight processing in January 1967, weeks before the fire.">
+      <figcaption class="fvx-chrono-gallery__caption"><strong>Spacecraft 012 in preparation</strong>NASA S67-15717 shows the spacecraft during January 1967 processing. It helps establish the physical vehicle under investigation; it is not a photograph of the emergency.<small>NASA / Johnson Space Center · January 3, 1967 · <a href="https://www.nasa.gov/image-detail/amf-s67-15717/" target="_blank" rel="noopener noreferrer">Original NASA record</a></small></figcaption>
+    </figure>
+    <figure class="fvx-chrono-gallery__figure" data-fvx-chrono-photo="2">
+      <img class="fvx-chrono-gallery__image" src="https://finalvestige.com/wp-content/uploads/2026/11/apollo1-nasa-ksc-20170124-three-part-hatch.jpg" width="1920" height="1280" loading="lazy" decoding="async" alt="The preserved original three-part Apollo 1 hatch displayed at Kennedy Space Center in 2017.">
+      <figcaption class="fvx-chrono-gallery__caption"><strong>The original hatch, preserved</strong>A 2017 museum photograph shows the three-part Apollo 1 hatch, whose inward-opening design became central to the investigation. The exhibit was photographed fifty years after the fire.<small>NASA / Kim Shiflett · January 24, 2017 · <a href="https://images.nasa.gov/details/KSC-20170124-PH_KLS01_0129" target="_blank" rel="noopener noreferrer">Original NASA record</a></small></figcaption>
+    </figure>
+  </div>
+  <p class="fvx-chrono-gallery__position" data-fvx-chrono-position hidden>Context photo 1 of 3 · Archive photographs do not depict the marked seconds.</p>
+</div>"""
+CHRONO_CLASSIFICATION_HTML = r"""<section class="fv-ex2 fv-ex2-page alignfull fv-ex2-sec" id="classification" aria-labelledby="fvx-class">
+<div class="fv-ex2-wrap">
+<div class="fv-ex2-sec__head"><p class="fv-ex2-label">Evidence Atlas</p>
+<h2 class="fv-ex2-sec__title" id="fvx-class">How each item is classified</h2>
+<p class="fv-ex2-sec__intro">The Evidence Atlas distinguishes documented findings from contextual presentation. Three archival photographs accompany the timeline, but none depicts the fire's recorded seconds.</p></div>
+<ul class="fv-ex2-classlist"><li><div class="fv-ex2-classlist__head"><span class="fv-ex2-badge" data-status="documented">Documented</span><span class="fv-ex2-classlist__title">Apollo 204 Review Board Final Report</span></div><p>The Apollo 204 Review Board report is the institutional investigation of this event.</p><p>Atlas review status: Not yet reviewed.</p></li><li><div class="fv-ex2-classlist__head"><span class="fv-ex2-badge" data-status="interpretive">Interpretive</span><span class="fv-ex2-classlist__title">The recorded markers</span></div><p>Final Vestige plots four times stated in the Board account on a proportional axis. It adds no values between markers.</p><p>Atlas review status: Not yet reviewed.</p></li><li><div class="fv-ex2-classlist__head"><span class="fv-ex2-badge" data-status="interpretive">Interpretive</span><span class="fv-ex2-classlist__title">Crew entering altitude chamber · S66-58038</span></div><p>NASA's October 1966 photograph supplies training context, not an image of the January 1967 emergency.</p></li><li><div class="fv-ex2-classlist__head"><span class="fv-ex2-badge" data-status="interpretive">Interpretive</span><span class="fv-ex2-classlist__title">Spacecraft 012 in processing · S67-15717</span></div><p>NASA's January 3, 1967 processing photograph depicts the vehicle before the fire.</p></li><li><div class="fv-ex2-classlist__head"><span class="fv-ex2-badge" data-status="interpretive">Interpretive</span><span class="fv-ex2-classlist__title">Original hatch museum exhibit · KSC-20170124-PH_KLS01_0129</span></div><p>NASA / Kim Shiflett photographed the preserved hatch in 2017. The exhibit is retrospective context, not an event image.</p></li></ul></div></section>"""
+CHRONO_RIGHTS_HTML = r"""<section class="fv-ex2 fv-ex2-page alignfull fv-ex2-sec" id="rights" aria-labelledby="fvx-rights">
+<div class="fv-ex2-wrap">
+<div class="fv-ex2-sec__head"><p class="fv-ex2-label">Sources and rights</p>
+<h2 class="fv-ex2-sec__title" id="fvx-rights">Sources and image rights</h2>
+<p class="fv-ex2-sec__intro">Three NASA archival photographs now accompany the timeline as contextual illustrations. None depicts the 15 seconds of the fire. The other three photographs in the research record are withheld.</p></div>
+<div class="fv-ex2-policy"><span class="fv-ex2-label">Rights basis &middot; retrieved 2026-10-30</span>
+<p>NASA content is generally not subject to copyright in the United States and may be used editorially with NASA acknowledged as the source and without implying endorsement. Clearances may be needed where images include NASA logos or NASA employees and are used as cover art or in promotional content. Names and likenesses of deceased astronauts may be controlled by their estates for commercial use.</p>
+<p><strong>Editorial use only. Do not use these images in promotional, product or merchandise contexts.</strong> Basis: <a href="https://www.nasa.gov/nasa-brand-center/images-and-media/" target="_blank" rel="noopener noreferrer">NASA Media Usage Guidelines<span class="fv-ex2-visually-hidden"> (opens in a new tab)</span> &#8599;</a></p></div>
+<div class="fv-ex2-sec__head" style="margin-top:var(--fvx-s-7)"><h3 class="fv-ex2-sec__title" style="font-size:var(--fvx-fs-h3)">Image provenance and editorial use</h3><p class="fv-ex2-sec__intro">The founder/editor approved the three contextual photographs shown in the chronology on November 4, 2026. Other photographs remain withheld pending separate contextual-use approval.</p></div><ul class="fv-ex2-rights"><li id="rights-record-01"><p class="fv-ex2-label">Not shown &middot; Context photograph</p><h3>S67-19766</h3><p class="fv-ex2-caption">Context photograph. January 1967.</p><p class="fv-ex2-caption"><a href="https://www.nasa.gov/image-detail/apollo-1-crew-honored/" target="_blank" rel="noopener noreferrer">NASA image record<span class="fv-ex2-visually-hidden"> (opens in a new tab)</span> &#8599;</a></p></li><li id="rights-record-02"><p class="fv-ex2-label">Shown in chronology &middot; Context photograph</p><h3>S67-15717</h3><p class="fv-ex2-caption">Context photograph. 3 January 1967 (NASA record date).</p><p class="fv-ex2-caption"><a href="https://www.nasa.gov/image-detail/amf-s67-15717/" target="_blank" rel="noopener noreferrer">NASA image record<span class="fv-ex2-visually-hidden"> (opens in a new tab)</span> &#8599;</a></p></li><li id="rights-record-03"><p class="fv-ex2-label">Shown in chronology &middot; Context photograph</p><h3>S66-58038</h3><p class="fv-ex2-caption">Context photograph. 18 October 1966.</p><p class="fv-ex2-caption"><a href="https://www.nasa.gov/image-detail/amf-s66-58038/" target="_blank" rel="noopener noreferrer">NASA image record<span class="fv-ex2-visually-hidden"> (opens in a new tab)</span> &#8599;</a></p></li><li id="rights-record-04"><p class="fv-ex2-label">Shown in chronology &middot; Museum exhibit, 2017</p><h3>KSC-20170124-PH_KLS01_0129</h3><p class="fv-ex2-caption">Museum exhibit, 2017. 24 January 2017.</p><p class="fv-ex2-caption"><a href="https://images.nasa.gov/details/KSC-20170124-PH_KLS01_0129" target="_blank" rel="noopener noreferrer">NASA image record<span class="fv-ex2-visually-hidden"> (opens in a new tab)</span> &#8599;</a></p></li><li id="rights-record-05"><p class="fv-ex2-label">Not shown &middot; Post-fire photograph</p><h3>S67-21294</h3><p class="fv-ex2-caption">Post-fire photograph. 28 January 1967.</p><p class="fv-ex2-caption"><a href="https://www.nasa.gov/image-detail/amf-s67-21294/" target="_blank" rel="noopener noreferrer">NASA image record<span class="fv-ex2-visually-hidden"> (opens in a new tab)</span> &#8599;</a></p></li><li id="rights-record-06"><p class="fv-ex2-label">Not shown &middot; Museum exhibit, 2017</p><h3>KSC-20170124-PH_KLS01_0090</h3><p class="fv-ex2-caption">Museum exhibit, 2017. 24 January 2017.</p><p class="fv-ex2-caption"><a href="https://www.nasa.gov/image-detail/amf-ksc-20170124-ph_kls01_0090/" target="_blank" rel="noopener noreferrer">NASA image record<span class="fv-ex2-visually-hidden"> (opens in a new tab)</span> &#8599;</a></p></li></ul></div></section>"""
 
 
 def _minify(css: str) -> str:
@@ -280,12 +346,18 @@ def render_parts(data: dict, atlas: dict) -> list[tuple[str, str]]:
     policy = data["rights_policy"]
     atlas_inv = next(i for i in atlas["investigations"] if i["wordpress_post_id"] == inv["wordpress_post_id"])
     shown = approved_images(data)
+    chronology_approved = approved_timeline_images(data)
+    gallery_enabled = chronology_approved == {"S66-58038", "S67-15717", "KSC-20170124-PH_KLS01_0129"}
     rows = _classification(atlas, atlas_inv["id"], shown)
     any_open = any(r["status"] != "verified" for rec in recs for r in rec["crosswalk"])
     chapters = []
     for i, rec in enumerate(recs):
         nxt = recs[i + 1] if i + 1 < total else None
         chrono = render_chronology(data["chronology"]) if rec["id"] == "record-03" else ""
+        if rec["id"] == "record-03" and gallery_enabled:
+            if chrono.count("</ol></section>") != 1:
+                raise ValueError("Chronology list closing marker changed")
+            chrono = chrono.replace("</ol></section>", "</ol>" + CHRONO_GALLERY_HTML + "</section>", 1)
         row = _basis_for_image(rows, rec["image"]["nasa_id"])
         basis = (f'<p class="fv-ex2-plate__basis">{_badge(row["rel"]["basis"])}<span class="fv-ex2-caption">{esc(row["rel"]["justification"])}</span></p>'
                  if row else "")
@@ -316,7 +388,7 @@ def render_parts(data: dict, atlas: dict) -> list[tuple[str, str]]:
     page = f'class="fv-ex2 fv-ex2-page alignfull"'
     return [
         ("00-style", f"<style>{css}</style>"),
-        ("00b-style-text", f"<style>{_minify(TEXT_CHAPTER_CSS)}</style>"),
+        ("00b-style-text", f"<style>{TEXT_CHAPTER_CSS}</style>"),
         ("01-investigation", f'''<div {page} data-fvx="flagship" data-fvx-investigation="{int(inv["wordpress_post_id"])}">
 {_hero(data)}
 {_intro(data, shown, any_open)}
@@ -326,9 +398,9 @@ def render_parts(data: dict, atlas: dict) -> list[tuple[str, str]]:
 </div>
 {_limits(recs)}
 </div>'''),
-        ("02-classification", _classification_section(rows, shown)),
+        ("02-classification", CHRONO_CLASSIFICATION_HTML if gallery_enabled else _classification_section(rows, shown)),
         ("03-research-desk", f'<div id="{DESK_ID}" class="fv-ex2 fv-ex2-page alignfull fv-ex2-sec">{desk}</div>'),
-        ("04-rights", _rights(data, shown)),
+        ("04-rights", CHRONO_RIGHTS_HTML if gallery_enabled else _rights(data, shown)),
         ("05-related", _related(atlas, atlas_inv)),
         ("06-footer", f'''<div {page}><div class="fv-ex2-wrap fv-ex2-pagefoot"><p>A companion to the published investigation <a href="{esc(safe_https(inv["url"]))}">{esc(inv["title"])}</a>. It does not replace the full article.</p>
 {foot_images}</div></div>'''),
