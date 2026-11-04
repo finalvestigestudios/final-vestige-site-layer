@@ -1,0 +1,116 @@
+{
+  "date": "2026-11-03",
+  "gates": {
+    "named_partner_acceptance": "CLOSED",
+    "authorized_tracking_url": "CLOSED",
+    "approved_channels_creatives": "CLOSED",
+    "no_buyer_pii_contract": "CLOSED",
+    "owned_paid_sku_verified": "CLOSED",
+    "current_terms_review": "CLOSED",
+    "independent_browser_qa": "CLOSED",
+    "founder_publication": "CLOSED"
+  },
+  "sources": {
+    "catalog": "https://inspire3.com/",
+    "offer": "https://zen12.com/hnp",
+    "checkout": "https://zen12.com/getstarted",
+    "privacy": "https://inspire3.com/privacy/",
+    "terms": "https://inspire3.com/terms/",
+    "slg": "https://pubmed.ncbi.nlm.nih.gov/17488185/",
+    "beats": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+    "ftc": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "health": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+    "collection": "https://finalvestige.com/collection/",
+    "focus": "https://finalvestige.com/focus/",
+    "change": "https://finalvestige.com/2026/11/02/change-blindness/",
+    "puy": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "dispatch": "https://finalvestige.com/dispatch/"
+  },
+  "decisions": [
+    {
+      "claim": "12-minute audio sessions",
+      "status": "SELLER_DESCRIPTION",
+      "source": "https://zen12.com/hnp"
+    },
+    {
+      "claim": "Premium 12 levels/48 MP3s",
+      "status": "SELLER_DESCRIPTION",
+      "source": "https://zen12.com/getstarted"
+    },
+    {
+      "claim": "Beginner / Advanced six levels 24 MP3s",
+      "status": "SELLER_DESCRIPTION",
+      "source": "https://zen12.com/hnp"
+    },
+    {
+      "claim": "four audio styles",
+      "status": "SELLER_DESCRIPTION",
+      "source": "https://zen12.com/hnp"
+    },
+    {
+      "claim": "12 min equals one hour",
+      "status": "UNSUBSTANTIATED_SELLER_EFFICACY_CLAIM",
+      "source": "https://zen12.com/hnp"
+    },
+    {
+      "claim": "3 months intensive meditation attentional blink",
+      "status": "SCOPED_PRIMARY_STUDY_NOT_ZEN12",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/17488185/"
+    },
+    {
+      "claim": "binaural-beat EEG review inconsistent",
+      "status": "SYSTEMATIC_REVIEW_NOT_ZEN12",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/37205669/"
+    },
+    {
+      "claim": "checkout $87.99 full course before local tax",
+      "status": "DATE_AND_CONFIGURATION_SPECIFIC_SNAPSHOT",
+      "source": "https://zen12.com/getstarted"
+    },
+    {
+      "claim": "seller advertises one-year refund guarantee",
+      "status": "SELLER_POLICY_NOT_REFUND_FULFILLMENT",
+      "source": "https://zen12.com/hnp"
+    },
+    {
+      "claim": "checkout requests mobile number",
+      "status": "OBSERVED_SELLER_FORM",
+      "source": "https://zen12.com/getstarted"
+    },
+    {
+      "claim": "merchant may share buyer identity with referring affiliates",
+      "status": "OBSERVED_SELLER_POLICY",
+      "source": "https://inspire3.com/privacy/"
+    },
+    {
+      "claim": "named affiliate approval",
+      "status": "NOT_VERIFIED",
+      "source": null
+    },
+    {
+      "claim": "owned FV paid Mind offer currently purchasable",
+      "status": "NOT_VERIFIED",
+      "source": null
+    },
+    {
+      "claim": "free Fieldbook on live Collection",
+      "status": "READ_ONLY_WORDPRESS_VERIFIED",
+      "source": "https://finalvestige.com/collection/"
+    },
+    {
+      "claim": "Grok asset ID and verified paid sale attribution",
+      "status": "NOT_OBSERVABLE",
+      "source": null
+    },
+    {
+      "claim": "proximity disclosure",
+      "status": "FTC_POLICY_REQUIRED_IF_ACTIVATED",
+      "source": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking"
+    },
+    {
+      "claim": "medical/health claims adequate support",
+      "status": "UNSUPPORTED_PRODUCT_SPECIFIC",
+      "source": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+    }
+  ]
+}
