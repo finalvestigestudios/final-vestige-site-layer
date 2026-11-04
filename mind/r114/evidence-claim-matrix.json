@@ -1,0 +1,314 @@
+{
+  "milestone": "R114",
+  "date": "2026-11-04",
+  "activation": "HARD_HOLD",
+  "site_live_changes": false,
+  "affiliate_link_enabled": false,
+  "primary_offer": "Zen12 full-course seller-described audio; NOT approved FV affiliate",
+  "comparison_offer": "Hypnosis Live Total Focus different contract and 14-day terms; not active",
+  "owned_paid_sku_verified": false,
+  "partner_acceptance_verified": false,
+  "source_records": [
+    {
+      "id": "S01",
+      "kind": "official seller catalog",
+      "url": "https://inspire3.com/",
+      "status": "public accessed Nov 4",
+      "boundary": "descriptions not efficacy"
+    },
+    {
+      "id": "S02",
+      "kind": "exact merchant product sales page",
+      "url": "https://zen12.com/hnp",
+      "status": "public accessed Nov 4",
+      "boundary": "12 minutes, 12 levels, four styles, 48 MP3 full offer, seller-described guarantee, dated listed price"
+    },
+    {
+      "id": "S03",
+      "kind": "seller privacy",
+      "url": "https://inspire3.com/privacy/",
+      "status": "public accessed Nov 4",
+      "boundary": "affiliate may receive customer name/email/products"
+    },
+    {
+      "id": "S04",
+      "kind": "official seller terms",
+      "url": "https://inspire3.com/terms/",
+      "status": "retrieval failure Nov 4",
+      "boundary": "must reconfirm operative refund"
+    },
+    {
+      "id": "S05",
+      "kind": "independent systematic review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+      "status": "read Nov 4",
+      "boundary": "14 EEG studies inconsistent; not Zen12"
+    },
+    {
+      "id": "S06",
+      "kind": "primary experimental research",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17488185/",
+      "status": "read Nov 4",
+      "boundary": "intensive training for 3 months changed attentional blink in experimental context"
+    },
+    {
+      "id": "S07",
+      "kind": "mindfulness review",
+      "url": "https://doi.org/10.1146/annurev-psych-042716-051139",
+      "status": "read Nov 4",
+      "boundary": "varied interventions and evidence; not product trial"
+    },
+    {
+      "id": "S08",
+      "kind": "FTC endorsements FAQ",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "status": "read Nov 4",
+      "boundary": "clear adjacent disclosure"
+    },
+    {
+      "id": "S09",
+      "kind": "FTC health-claims guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "status": "read Nov 4",
+      "boundary": "clinical product-specific substantiation"
+    },
+    {
+      "id": "S10",
+      "kind": "existing free Focus route",
+      "url": "https://finalvestige.com/focus/",
+      "status": "authenticated WordPress read Nov 4",
+      "boundary": "52-page free Fieldbook, existing single Dispatch funnel"
+    },
+    {
+      "id": "S11",
+      "kind": "published Collection route",
+      "url": "https://finalvestige.com/collection/",
+      "status": "authenticated WordPress read Nov 4",
+      "boundary": "Focus is free, no paid Mind SKU established"
+    },
+    {
+      "id": "S12",
+      "kind": "published Puységur research",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "status": "authenticated WordPress read Nov 4",
+      "boundary": "historical magnetism, not treatment evidence"
+    },
+    {
+      "id": "S13",
+      "kind": "published Mesmerism",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "status": "authenticated WordPress search Nov 4",
+      "boundary": "historical topic route"
+    },
+    {
+      "id": "S14",
+      "kind": "published Change Blindness",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "status": "authenticated WordPress posts list Nov 4",
+      "boundary": "perception route"
+    },
+    {
+      "id": "S15",
+      "kind": "distinct Hypnosis Live SKU",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "status": "public read Nov 4",
+      "boundary": "seller describes 33 min/47 MB, $24.44 display, 14-day offer; does NOT apply to Zen12"
+    },
+    {
+      "id": "S16",
+      "kind": "Grok / Praxxis assigned plan",
+      "url": "https://docs.google.com/document/d/1_dqcJeqxbvYb1prGxy0nSWTsHu8p0PSRsDB_NPNbL48/edit",
+      "status": "connected Drive read Nov 4",
+      "boundary": "TASK-008 has no verified matching Grok media ids"
+    },
+    {
+      "id": "S17",
+      "kind": "founder conversion measurement",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "status": "GitHub read Nov 4",
+      "boundary": "source-of-truth qualified session versus order contract"
+    },
+    {
+      "id": "S18",
+      "kind": "public affiliate portal",
+      "url": "https://affiliates.inspire3.com/",
+      "status": "public destination in seller navigation; enrollment not evidenced",
+      "boundary": "do not assume affiliate accepted"
+    }
+  ],
+  "dated_offer_snapshot": {
+    "offer": "https://zen12.com/hnp",
+    "displayed_premium_usd": "87.99",
+    "date": "2026-11-04",
+    "assert_as_current_checkout_total": false,
+    "source": "S02"
+  },
+  "claim_decisions": [
+    {
+      "id": "C1",
+      "claim": "Zen12 has 12-minute sessions",
+      "source": "S02",
+      "decision": "SELLER_DESCRIPTION"
+    },
+    {
+      "id": "C2",
+      "claim": "Full Zen12 offer has 12 levels/four styles/48 MP3s",
+      "source": "S02",
+      "decision": "SELLER_DESCRIPTION"
+    },
+    {
+      "id": "C3",
+      "claim": "Zen12 12 minutes clinically equals an hour of advanced meditation",
+      "source": "S02",
+      "decision": "REJECT_UNSUBSTANTIATED"
+    },
+    {
+      "id": "C4",
+      "claim": "Brainwave entrainment consistently demonstrated in fourteen EEG studies",
+      "source": "S05",
+      "decision": "REJECT_CONFLICTING_STUDIES"
+    },
+    {
+      "id": "C5",
+      "claim": "2007 experiment measured smaller blink after three months of intensive training",
+      "source": "S06",
+      "decision": "PUBLISH_SPECIFIC_CONDITIONS"
+    },
+    {
+      "id": "C6",
+      "claim": "2007 trial proves Zen12's passive listening benefit",
+      "source": "S06",
+      "decision": "REJECT_NOT_SAME_PRODUCT"
+    },
+    {
+      "id": "C7",
+      "claim": "Zen12 Premium is always $87.99",
+      "source": "S02",
+      "decision": "REJECT_PRICE_NOT_UNIVERSAL"
+    },
+    {
+      "id": "C8",
+      "claim": "Zen12 seller advertises one-year guarantee on /hnp",
+      "source": "S02",
+      "decision": "SELLER_DESCRIPTION_ONLY"
+    },
+    {
+      "id": "C9",
+      "claim": "Actual refund honored and all current legal terms verified",
+      "source": "S04",
+      "decision": "WITHHOLD_TERMS_UNAVAILABLE"
+    },
+    {
+      "id": "C10",
+      "claim": "Seller may disclose affiliate buyer name/email/product",
+      "source": "S03",
+      "decision": "PUBLISH_WITH_CONTEXT"
+    },
+    {
+      "id": "C11",
+      "claim": "FV has named Inspire3 approved merchant referral agreement",
+      "source": null,
+      "decision": "UNVERIFIED_HOLD"
+    },
+    {
+      "id": "C12",
+      "claim": "FV owned paid Mind SKU through Payhip is verified",
+      "source": null,
+      "decision": "UNVERIFIED_HOLD"
+    },
+    {
+      "id": "C13",
+      "claim": "52-page Focus Fieldbook is free via existing Jetpack route",
+      "source": "S10",
+      "decision": "PUBLISH_NOT_ORDER"
+    },
+    {
+      "id": "C14",
+      "claim": "Affiliate outbound is merchant-confirmed sale",
+      "source": null,
+      "decision": "REJECT"
+    },
+    {
+      "id": "C15",
+      "claim": "Hypnosis Live Total Focus has 33min/47MB seller-described recording",
+      "source": "S15",
+      "decision": "SELLER_DESCRIPTION_SEPARATE_PRODUCT"
+    },
+    {
+      "id": "C16",
+      "claim": "Total Focus 14-day policy applies to Zen12",
+      "source": "S15",
+      "decision": "REJECT_WRONG_OFFER"
+    },
+    {
+      "id": "C17",
+      "claim": "An A/B storyboard proves conversion lift",
+      "source": null,
+      "decision": "REJECT_UNTESTED"
+    },
+    {
+      "id": "C18",
+      "claim": "Final Vestige verified real paid orders and net 1k sessions",
+      "source": null,
+      "decision": "UNOBSERVABLE"
+    }
+  ],
+  "gates": {
+    "named_partner_approval": false,
+    "approved_exact_earning_url": false,
+    "permitted_social_email_channels": false,
+    "aggregate_only_buyer_data_terms": false,
+    "owned_mind_payhip_paid_sku_rights_checkout_fulfillment": false,
+    "merchant_reconciled_paid_orders_commissions": false,
+    "grok_asset_id_and_published_url": false,
+    "qualified_first_party_human_sessions": false,
+    "founder_release_approval": false,
+    "real_browser_mobile_a11y_security_review": false,
+    "rendered_video_captions_poster_performance": false
+  },
+  "observed_outcomes": {
+    "paid_orders": null,
+    "net_affiliate_commissions": null,
+    "realized_net_revenue": null,
+    "qualified_human_sessions": null,
+    "net_revenue_per_1000_qualified_sessions": null,
+    "registered_jetpack_confirmed_leads": null
+  },
+  "reporting_contract": {
+    "events": [
+      "qualified_landing",
+      "relevant_guide_click",
+      "confirmed_lead_when_source_record_exists",
+      "affiliate_outbound_click",
+      "verified_merchant_order",
+      "verified_affiliate_commission",
+      "refund",
+      "fee"
+    ],
+    "safe_campaign_dimensions": [
+      "utm_source",
+      "utm_medium",
+      "utm_campaign",
+      "utm_content_asset_id",
+      "landing_slug",
+      "offer_slug",
+      "cohort_day"
+    ],
+    "prohibited": [
+      "name",
+      "email",
+      "phone",
+      "IP",
+      "device_fingerprint",
+      "raw_customer_id",
+      "raw_checkout_query"
+    ],
+    "cohorts": [
+      7,
+      30
+    ],
+    "minimum_reporting_cell": 20,
+    "primary_metric": "net_settled_revenue_times_1000_divided_by_qualified_human_sessions_when_both_verified",
+    "no_new_tracking_script": true
+  }
+}
