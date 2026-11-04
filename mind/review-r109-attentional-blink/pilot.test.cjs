@@ -21,7 +21,7 @@ test('both variants are no-JS, no forms, no third-party embeds',()=>{for(const h
 test('both retain existing Focus/Jetpack route without new signup',()=>{for(const h of [A,B])assert.match(h,/https:\/\/finalvestige\.com\/focus\//)});
 test('both variants have a focus indicator and small mobile breakpoint',()=>{for(const h of [A,B]){assert.match(h,/:focus-visible/);assert.match(h, /max-width:680px/);assert.match(h,/prefers-reduced-motion/)}});
 test('hub has four streams only and no seller URL',()=>{assert.equal((hub.match(/class="card" role="listitem"/g)||[]).length,4);assert.doesNotMatch(hub,/href=["']https?:\/\/(?:zen12|inspire3)/i)});
-test('hub is not an alternative live newsletter form',()=>{assert.doesNotMatch(hub,/<form\b/i);assert.match(hub,/original Jetpack signup/);});
+test('hub is not an alternative live newsletter form',()=>{assert.doesNotMatch(hub,/<form\b/i);assert.match(hub,/established Jetpack signup/);});
 test('matrix explicitly treats seller claims as seller statements',()=>{assert.equal(M.claim_decisions.find(x=>x.id==='C04').decision,'OMIT_AS_BENEFIT')});
 test('matrix has 20 identified sources and all links valid HTTPS',()=>{assert.equal(M.source_register.length,20);for(const s of M.source_register)assert.ok(s.url.startsWith('https://'))});
 test('matrix has no release-approved gate',()=>{assert.ok(M.release_gates.length>=20);assert.ok(M.release_gates.every(g=>g.status==='CLOSED'))});
