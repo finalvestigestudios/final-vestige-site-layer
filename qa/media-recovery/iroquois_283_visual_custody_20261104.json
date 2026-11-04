@@ -1,0 +1,364 @@
+{
+  "schema_version": 1,
+  "date_checked_utc": "2026-11-04",
+  "mode": "READ_ONLY_CMS_AND_INDEPENDENT_IMAGE_RENDERER",
+  "source": {
+    "path": "qa/media-recovery/parts/03.json",
+    "git_blob_sha": "49183f66f880f7c4dfd363acca906876877f2e5e",
+    "post_id": 283,
+    "reference_posts": 61,
+    "reference_images": 355,
+    "offsite_origin_refs": 288,
+    "oversized_wp_originals": 13
+  },
+  "cms": {
+    "id": 283,
+    "status": "publish",
+    "modified_utc": "2026-11-02T21:39:57",
+    "permalink": "https://finalvestige.com/2026/08/19/the-crowd-became-the-lock-iroquois-theatre/",
+    "img_tags": 7,
+    "matching_source_url": 7,
+    "matching_alt": 7,
+    "with_width_and_height": 0
+  },
+  "results": {
+    "original_urls_displayed_in_independent_renderer": 6,
+    "original_urls_inaccessible_to_renderer": 1,
+    "confirmed_guest_browser_broken": 0,
+    "confirmed_origin_http_status": 0,
+    "claimed_broken_42": "UNVERIFIED",
+    "claimed_savings_76_percent": "UNMEASURED",
+    "production_fixes": 0
+  },
+  "image_rows": [
+    {
+      "key": "283:0",
+      "original_url": "https://2.bp.blogspot.com/-vFf9zOG42QU/W2shS055U-I/AAAAAAAACc0/uHswGJB19E4OgUANkDatBX7LSCIEswfZgCLcBGAs/s1600/Fire%2BEscape%2BDoors%2BPortrait%2BMode.jpg",
+      "original_alt": "Fire-damaged exit doors inside Chicago's Iroquois Theatre after the December 30, 1903 fire.",
+      "source_host": "2.bp.blogspot.com",
+      "published_html_width_px": null,
+      "published_html_height_px": null,
+      "retrieval": {
+        "method": "web.open image display (not a browser network trace)",
+        "result": "DISPLAYED",
+        "origin_http_code": null,
+        "guest_browser_http_code": null,
+        "guest_mime_type": null,
+        "guest_natural_dimensions": null,
+        "guest_decode_success": null,
+        "cdp_encoded_bytes": null
+      },
+      "visual": {
+        "finding": "MODERN_ANNOTATED_COMPOSITE_NOT_HISTORIC_PHOTOGRAPH",
+        "evidence": "Modern diagram/collage with arrows and explanatory text depicts exits; published ALT and opening prose call this a period photograph of fire-damaged doors."
+      },
+      "provenance": {
+        "archive_url": "https://commons.wikimedia.org/wiki/File:Iroquois_Theatre_fire_-_DPLA_-_c9e2f3b69954059bcfebf35bf12d84b9.jpg",
+        "mapping_kind": "DIFFERENT_PHOTO_DO_NOT_AUTO_SWAP",
+        "original_binary_sha256": null
+      },
+      "rights": {
+        "republication_status": "HOLD_FOR_ITEM_REVIEW",
+        "approved_license": null,
+        "allow_download_for_cache": false,
+        "allow_wp_upload": false,
+        "allow_post_rewrite": false
+      },
+      "resize": {
+        "max_width_px": 960,
+        "no_upscale": true,
+        "verified_original_width_px": null,
+        "verified_original_height_px": null
+      }
+    },
+    {
+      "key": "283:1",
+      "original_url": "https://miro.medium.com/v2/resize:fit:1400/1*IcflN4VAkB2zIyMzIbcmyQ.jpeg",
+      "original_alt": "The new Iroquois Theatre on Randolph Street in Chicago shortly before the 1903 fire.",
+      "source_host": "miro.medium.com",
+      "published_html_width_px": null,
+      "published_html_height_px": null,
+      "retrieval": {
+        "method": "web.open image display (not a browser network trace)",
+        "result": "DISPLAYED",
+        "origin_http_code": null,
+        "guest_browser_http_code": null,
+        "guest_mime_type": null,
+        "guest_natural_dimensions": null,
+        "guest_decode_success": null,
+        "cdp_encoded_bytes": null
+      },
+      "visual": {
+        "finding": "SOURCE_ORIGINAL_UNIDENTIFIED",
+        "evidence": "Visible original shows theater facade with a horse and street activity; specific pre-fire date, accession, author and identity unknown."
+      },
+      "provenance": {
+        "archive_url": "https://www.wttw.com/chicago-stories/downtown-disasters/the-tragedy-of-the-iroquois-theater-fire",
+        "mapping_kind": "EXTERIOR_REFERENCE_ONLY",
+        "original_binary_sha256": null
+      },
+      "rights": {
+        "republication_status": "HOLD_FOR_ITEM_REVIEW",
+        "approved_license": null,
+        "allow_download_for_cache": false,
+        "allow_wp_upload": false,
+        "allow_post_rewrite": false
+      },
+      "resize": {
+        "max_width_px": 960,
+        "no_upscale": true,
+        "verified_original_width_px": null,
+        "verified_original_height_px": null
+      }
+    },
+    {
+      "key": "283:2",
+      "original_url": "https://chicagology.com/wp-content/themes/revolution-20/chicagoimages2/iroquoispromenade.jpg",
+      "original_alt": "Contemporary drawing of the ornate Iroquois Theatre foyer and promenade before the fire.",
+      "source_host": "chicagology.com",
+      "published_html_width_px": null,
+      "published_html_height_px": null,
+      "retrieval": {
+        "method": "web.open image display (not a browser network trace)",
+        "result": "DISPLAYED",
+        "origin_http_code": null,
+        "guest_browser_http_code": null,
+        "guest_mime_type": null,
+        "guest_natural_dimensions": null,
+        "guest_decode_success": null,
+        "cdp_encoded_bytes": null
+      },
+      "visual": {
+        "finding": "HISTORICAL_CAPTION_TIMING_CONFLICT",
+        "evidence": "This foyer composition corresponds visually to CHM ICHi-36010. Northwestern reproduction caption says 'SCENE OF FIRE PANIC, DEC. 30 1903' but its item text attributes it to Nov. 23 dedication souvenir program; cannot simultaneously be unmodified pre-fire program and post-fire caption."
+      },
+      "provenance": {
+        "archive_url": "https://fk-sandbox.library.northwestern.edu/historical/iroquois/",
+        "mapping_kind": "SAME_COMPOSITION_NOT_BINARY",
+        "original_binary_sha256": null
+      },
+      "rights": {
+        "republication_status": "HOLD_FOR_ITEM_REVIEW",
+        "approved_license": null,
+        "allow_download_for_cache": false,
+        "allow_wp_upload": false,
+        "allow_post_rewrite": false
+      },
+      "resize": {
+        "max_width_px": 960,
+        "no_upscale": true,
+        "verified_original_width_px": null,
+        "verified_original_height_px": null
+      }
+    },
+    {
+      "key": "283:3",
+      "original_url": "https://bloximages.chicago2.vip.townnews.com/enidnews.com/content/tncms/assets/v3/editorial/b/4e/b4e59e84-74da-5f9e-b24f-5e9e3658fd34/54716e12ac97b.image.jpg?resize=1200%2C804",
+      "original_alt": "Charred seating and stage area inside the Iroquois Theatre after the 1903 fire.",
+      "source_host": "bloximages.chicago2.vip.townnews.com",
+      "published_html_width_px": null,
+      "published_html_height_px": null,
+      "retrieval": {
+        "method": "web.open image display (not a browser network trace)",
+        "result": "INACCESSIBLE",
+        "origin_http_code": null,
+        "guest_browser_http_code": null,
+        "guest_mime_type": null,
+        "guest_natural_dimensions": null,
+        "guest_decode_success": null,
+        "cdp_encoded_bytes": null
+      },
+      "visual": {
+        "finding": "NO_INDEPENDENT_VIEWER_RESULT",
+        "evidence": "Original EnidNews CDN image not accessible in web renderer; do not claim HTTP error. Northwestern catalog ICHi-36007 charred interior only subject-matched and metadata chronology conflicts."
+      },
+      "provenance": {
+        "archive_url": "https://fk-sandbox.library.northwestern.edu/historical/iroquois/",
+        "mapping_kind": "SUBJECT_ONLY_UNVERIFIED",
+        "original_binary_sha256": null
+      },
+      "rights": {
+        "republication_status": "HOLD_FOR_ITEM_REVIEW",
+        "approved_license": null,
+        "allow_download_for_cache": false,
+        "allow_wp_upload": false,
+        "allow_post_rewrite": false
+      },
+      "resize": {
+        "max_width_px": 960,
+        "no_upscale": true,
+        "verified_original_width_px": null,
+        "verified_original_height_px": null
+      }
+    },
+    {
+      "key": "283:4",
+      "original_url": "https://www.wttw.com/sites/default/files/csdd-investigators_02.jpg",
+      "original_alt": "Investigators inside the damaged Iroquois Theatre after the 1903 fire.",
+      "source_host": "www.wttw.com",
+      "published_html_width_px": null,
+      "published_html_height_px": null,
+      "retrieval": {
+        "method": "web.open image display (not a browser network trace)",
+        "result": "DISPLAYED",
+        "origin_http_code": null,
+        "guest_browser_http_code": null,
+        "guest_mime_type": null,
+        "guest_natural_dimensions": null,
+        "guest_decode_success": null,
+        "cdp_encoded_bytes": null
+      },
+      "visual": {
+        "finding": "EXACT_WTTW_IMAGE_RENDERS",
+        "evidence": "Original WTTW JPEG displays men taking notes in wrecked theater; no direct rights clearance from availability."
+      },
+      "provenance": {
+        "archive_url": "https://www.wttw.com/chicago-stories/downtown-disasters/the-tragedy-of-the-iroquois-theater-fire",
+        "mapping_kind": "PUBLISHER_EXACT_MEDIA",
+        "original_binary_sha256": null
+      },
+      "rights": {
+        "republication_status": "HOLD_FOR_ITEM_REVIEW",
+        "approved_license": null,
+        "allow_download_for_cache": false,
+        "allow_wp_upload": false,
+        "allow_post_rewrite": false
+      },
+      "resize": {
+        "max_width_px": 960,
+        "no_upscale": true,
+        "verified_original_width_px": null,
+        "verified_original_height_px": null
+      }
+    },
+    {
+      "key": "283:5",
+      "original_url": "https://images2.minutemediacdn.com/image/upload/c_fill,w_720,ar_16:9,f_auto,q_auto,g_auto/shape/cover/sport/627134-wikimedia-iroquois-fire-66b8dccd06d18b8b1200a566c6d50b53.jpg",
+      "original_alt": "Historical Iroquois Theatre exit and fire-escape area after the disaster.",
+      "source_host": "images2.minutemediacdn.com",
+      "published_html_width_px": null,
+      "published_html_height_px": null,
+      "retrieval": {
+        "method": "web.open image display (not a browser network trace)",
+        "result": "DISPLAYED",
+        "origin_http_code": null,
+        "guest_browser_http_code": null,
+        "guest_mime_type": null,
+        "guest_natural_dimensions": null,
+        "guest_decode_success": null,
+        "cdp_encoded_bytes": null
+      },
+      "visual": {
+        "finding": "EXTERIOR_FIRE_ESCAPE_CLAIM_UNSUPPORTED",
+        "evidence": "Exact MinuteMedia crop shows main EXIT from FIRST BALCONY (stairwell), not evidence of an external fire-escape structure. Commons original has distinct framing and CC BY-SA 4.0 source metadata."
+      },
+      "provenance": {
+        "archive_url": "https://commons.wikimedia.org/wiki/File:Chicago-iroquois-theater-fire-05-main-exit-from-first-balcony-where-occurred-the-greatest-loss-of-life.jpg",
+        "mapping_kind": "SAME_SCENE_DIFFERENT_CROP",
+        "original_binary_sha256": null
+      },
+      "rights": {
+        "republication_status": "HOLD_FOR_ITEM_REVIEW",
+        "approved_license": null,
+        "allow_download_for_cache": false,
+        "allow_wp_upload": false,
+        "allow_post_rewrite": false
+      },
+      "resize": {
+        "max_width_px": 960,
+        "no_upscale": true,
+        "verified_original_width_px": null,
+        "verified_original_height_px": null
+      }
+    },
+    {
+      "key": "283:6",
+      "original_url": "https://florencekelley.northwestern.edu/img/galleries/historical/iroquois/i36009aa.jpg",
+      "original_alt": "Crowd and street scene outside the Iroquois Theatre after the 1903 fire.",
+      "source_host": "florencekelley.northwestern.edu",
+      "published_html_width_px": null,
+      "published_html_height_px": null,
+      "retrieval": {
+        "method": "web.open image display (not a browser network trace)",
+        "result": "DISPLAYED",
+        "origin_http_code": null,
+        "guest_browser_http_code": null,
+        "guest_mime_type": null,
+        "guest_natural_dimensions": null,
+        "guest_decode_success": null,
+        "cdp_encoded_bytes": null
+      },
+      "visual": {
+        "finding": "POST_FIRE_SCENE_TIMING_UNPROVEN",
+        "evidence": "The exact Northwestern JPEG depicts theater exterior with passersby, CHM ICHi-36009 attributed Charles R. Clark. Archive does not substantiate published ALT's 'after the fire' timing."
+      },
+      "provenance": {
+        "archive_url": "https://fk-sandbox.library.northwestern.edu/historical/iroquois/",
+        "mapping_kind": "EXACT_ILLUSTRATED_SCENE_ARCHIVE_RECORD",
+        "original_binary_sha256": null
+      },
+      "rights": {
+        "republication_status": "HOLD_FOR_ITEM_REVIEW",
+        "approved_license": null,
+        "allow_download_for_cache": false,
+        "allow_wp_upload": false,
+        "allow_post_rewrite": false
+      },
+      "resize": {
+        "max_width_px": 960,
+        "no_upscale": true,
+        "verified_original_width_px": null,
+        "verified_original_height_px": null
+      }
+    }
+  ],
+  "primary_or_archival_candidates": [
+    {
+      "key": "283:0",
+      "catalog_url": "https://commons.wikimedia.org/wiki/File:Iroquois_Theatre_fire_-_DPLA_-_c9e2f3b69954059bcfebf35bf12d84b9.jpg",
+      "reference": "Knox College / DPLA, Allen A. Green death-trap exit photograph (a different photo)",
+      "intrinsic_px": [
+        4118,
+        5221
+      ],
+      "target_px": [
+        960,
+        1217
+      ],
+      "rights_signal": "Commons US public-domain claim; item-by-item recheck",
+      "same_original": false
+    },
+    {
+      "key": "283:2",
+      "catalog_url": "https://commons.wikimedia.org/wiki/File:Foyer_of_the_Iroquois_Theatre_(Chicago,_1903)_(hi-res).jpg",
+      "reference": "Tacoma Times Jan 5, 1904 foyer print, composition only",
+      "intrinsic_px": [
+        1920,
+        1192
+      ],
+      "target_px": [
+        960,
+        596
+      ],
+      "rights_signal": "Commons US public-domain claim, publication January 1904",
+      "same_original": null
+    },
+    {
+      "key": "283:5",
+      "catalog_url": "https://commons.wikimedia.org/wiki/File:Chicago-iroquois-theater-fire-05-main-exit-from-first-balcony-where-occurred-the-greatest-loss-of-life.jpg",
+      "reference": "Commons main exit from first balcony, historical photo with alternate crop",
+      "intrinsic_px": [
+        1181,
+        888
+      ],
+      "target_px": [
+        960,
+        722
+      ],
+      "rights_signal": "Commons CC BY-SA 4.0 metadata, original source/attribution needs review",
+      "same_original": null
+    }
+  ],
+  "license_and_methods": "No third-party media binary was copied or cached. Image display proves neither guest-browser success nor origin status or copyright permission. CHM image access is not a general rights grant. Different archival photo is not a drop-in replacement.",
+  "release_plan": "Preserve URL+ALT and evidence, Site QA #154 to run guest browser for suspect images, reconcile photograph identity and provenance, review item rights, stage exact archive asset with at most 960 px width and no upscaling, screenshots and rollback; explicit approval required for any WordPress write."
+}
