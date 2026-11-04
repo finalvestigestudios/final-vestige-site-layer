@@ -18,6 +18,7 @@ function harness(unsupported=[]){
 test('document-start observers supported; no fabricated LCP',()=>{
  const h=harness();h.inject();const s=h.read();
  assert.equal(s.version,1);assert.equal(s.layout_shift_score,0);
+ assert.equal(s.max_session_window_shift_score,0);
  assert.equal(s.layout_shift_supported,true);assert.equal(s.largest_contentful_paint_supported,true);
  assert.equal(s.largest_contentful_paint,null);
 });
@@ -47,6 +48,7 @@ test('missing PerformanceObserver leaves unknown scores null',()=>{
  vm.runInContext(DOCUMENT_START_SCRIPT,ctx);
  const s=vm.runInContext(READ_EXPRESSION,ctx);
  assert.equal(s.layout_shift_supported,false);assert.equal(s.layout_shift_score,null);
+ assert.equal(s.max_session_window_shift_score,null);
  assert.equal(s.largest_contentful_paint_supported,false);
 });
 test('partially unsupported browser retains null for missing observer',()=>{
@@ -93,4 +95,30 @@ test('negative and non-finite entries cannot increase scores',()=>{
  h.emit('layout-shift',[{value:-1,startTime:0},{value:NaN,startTime:0}]);
  assert.equal(h.read().largest_contentful_paint,null);
  assert.equal(h.read().layout_shift_score,0);
+});
+
+test('CLS-style largest session window differs from cumulative shifts',()=>{
+ const h=harness();h.inject();
+ h.emit('layout-shift',[
+  {value:.12,hadRecentInput:false,startTime:100,sources:[]},
+  {value:.03,hadRecentInput:false,startTime:800,sources:[]},
+  {value:.2,hadRecentInput:false,startTime:2500,sources:[]}]);
+ assert.equal(h.read().layout_shift_score,.35);
+ assert.equal(h.read().max_session_window_shift_score,.2);
+});
+test('new session after 5 seconds despite sub-second gaps',()=>{
+ const h=harness();h.inject();
+ const e=Array.from({length:8},(_,i)=>({
+  value:.1,hadRecentInput:false,startTime:100+i*900,sources:[]}));
+ h.emit('layout-shift',e);
+ assert.equal(h.read().qualifying_layout_shift_events,8);
+ assert.equal(h.read().max_session_window_shift_score,.6);
+});
+test('recent-input exclusions never inflate session window',()=>{
+ const h=harness();h.inject();
+ h.emit('layout-shift',[
+  {value:.05,hadRecentInput:false,startTime:100,sources:[]},
+  {value:.9,hadRecentInput:true,startTime:200,sources:[]},
+  {value:.1,hadRecentInput:false,startTime:400,sources:[]}]);
+ assert.equal(h.read().max_session_window_shift_score,.15);
 });
