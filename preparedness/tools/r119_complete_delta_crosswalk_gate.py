@@ -222,6 +222,17 @@ def build_crosswalk(snapshot, workorders):
             "CANDIDATE_AND_CONTRIBUTOR" if in_candidate and path in contributor_review_paths
             else "CANDIDATE_ONLY_UNTRACKED_BY_R118" if in_candidate
             else "CONTRIBUTOR_ONLY_NOT_IN_CANDIDATE")
+    # Flag actionable household/fire/outage guidance before historical research.
+    # Priority is an editorial triage tag, not a safety or medical judgment.
+    urgent_body_slugs = (
+        "household-emergency-plan", "three-day-kit",
+        "family-communication-plan", "go-bags", "home-fire-escape-plan",
+        "making-water-safer", "outage-heat-cold-generators",
+        "shelter-or-evacuate")
+    for decision in decisions:
+        if any(decision["path"] == ARTICLE_PREFIX + slug + ".body.html"
+               for slug in urgent_body_slugs):
+            decision["risk_priority"] = "P0"
     decisions.sort(key=lambda r: r["path"])
     candidate_only = sorted(
         r["path"] for r in decisions
