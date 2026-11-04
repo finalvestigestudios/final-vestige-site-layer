@@ -1,0 +1,307 @@
+{
+  "as_of": "2026-11-03 America/Los_Angeles",
+  "scope": "Mind + affiliate, draft-only",
+  "reviewed": "Official Inspire3 catalog, Zen12 core landing + checkout, indexed official Terms linked by checkout, seller Privacy, FTC guidance, primary Thatcher studies, authenticated FV Collection and Focus page, scoped Gmail merchant messages",
+  "eligibility": {
+    "inspire3_named_fv_affiliate_acceptance": null,
+    "inspire3_approved_earning_url": null,
+    "inspire3_approved_social_channels": null,
+    "inspire3_creative_permissions": null,
+    "inspire3_no_buyer_identifiers_agreement": null,
+    "eligible_owned_paid_mind_sku": null,
+    "eligible_owned_paid_checkout": null,
+    "owned_product_rights": null,
+    "owned_product_refund_policy": null,
+    "release_approved": false,
+    "affiliate_activation": false
+  },
+  "source_records": [
+    {
+      "id": "I3CAT",
+      "url": "https://inspire3.com/",
+      "kind": "MERCHANT_CATALOG",
+      "supports": "Catalog names Zen12, Hypnosis Live, Brainwave Shots; merchant promotional claims not independent science"
+    },
+    {
+      "id": "Z12",
+      "url": "https://zen12.com/",
+      "kind": "MERCHANT_LANDING",
+      "supports": "12-minute format, 12 levels, 4 audio styles, Beginner/Premium/Advanced descriptions; vendor stated benefits not validated"
+    },
+    {
+      "id": "Z12CHECK",
+      "url": "https://zen12.com/getstarted",
+      "kind": "MERCHANT_CHECKOUT_READONLY_2026-11-03",
+      "supports": "Premium 12 levels/48 MP3 and $87.99 visible before jurisdiction-specific checkout; mobile field, no card data entered"
+    },
+    {
+      "id": "TERMS",
+      "url": "https://inspire3.com/terms/?s=zen12",
+      "kind": "MERCHANT_TERMS_2026-11-03",
+      "supports": "1-year seller-stated Zen12 refund policy; 90d manual PayPal card refunds; downloads may bear PII; SMS opt-in possibility"
+    },
+    {
+      "id": "PRIVACY",
+      "url": "https://inspire3.com/privacy/",
+      "kind": "MERCHANT_PRIVACY",
+      "supports": "May share affiliate referred buyer name/email/purchased items; not proof any referral occurred"
+    },
+    {
+      "id": "REV2023",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+      "kind": "SYSTEMATIC_REVIEW",
+      "supports": "Mixed binaural-beat EEG entrainment evidence, no Zen12 product trial"
+    },
+    {
+      "id": "THATCHER",
+      "url": "https://doi.org/10.1068/p090483",
+      "kind": "ORIGINAL_PAPER",
+      "supports": "1980 original inverted-feature illusion"
+    },
+    {
+      "id": "ERP",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25102929/",
+      "kind": "PRIMARY_STUDY",
+      "supports": "ERP evidence includes perceptual and decisional sources"
+    },
+    {
+      "id": "FTCENDORSE",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "kind": "REGULATORY_GUIDANCE",
+      "supports": "Clear, proximate and understandable compensation disclosures"
+    },
+    {
+      "id": "FTCHEALTH",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "kind": "REGULATORY_GUIDANCE",
+      "supports": "Claims about health outcomes need sufficient competent product-specific substantiation"
+    },
+    {
+      "id": "COLLECTION",
+      "url": "https://finalvestige.com/collection/",
+      "kind": "AUTHENTICATED_WORDPRESS_2026-11-03",
+      "supports": "Collection lists free 52-page Focus Fieldbook and Suunto navigation affiliate; no shown paid FV Mind SKU"
+    },
+    {
+      "id": "FOCUS",
+      "url": "https://finalvestige.com/focus/",
+      "kind": "AUTHENTICATED_WORDPRESS_2026-11-03",
+      "supports": "Existing Focus resource route, existing Jetpack conversion stack"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "Inspire3 sells Zen12",
+      "status": "MERCHANT_IDENTITY",
+      "support": [
+        "I3CAT",
+        "Z12"
+      ],
+      "use": "FACT_ABOUT_VENDOR"
+    },
+    {
+      "id": "C02",
+      "claim": "Zen12 Premium includes 48 MP3 files across 12 levels",
+      "status": "MERCHANT_DESCRIPTION",
+      "support": [
+        "Z12",
+        "Z12CHECK"
+      ],
+      "use": "SELLER_SAYS"
+    },
+    {
+      "id": "C03",
+      "claim": "Zen12 four sounds: music, guided, nature and white noise",
+      "status": "MERCHANT_DESCRIPTION",
+      "support": [
+        "Z12"
+      ],
+      "use": "SELLER_SAYS"
+    },
+    {
+      "id": "C04",
+      "claim": "$87.99 on read-only Premium checkout observed November 3, 2026, before locally variable final taxes and terms",
+      "status": "DATED_MERCHANT_CHECKOUT",
+      "support": [
+        "Z12CHECK"
+      ],
+      "use": "DATE_ONLY_NOT_EVERGREEN"
+    },
+    {
+      "id": "C05",
+      "claim": "12-minute Zen12 is equivalent to an hour of advanced meditation",
+      "status": "NO_PRODUCT_SPECIFIC_SUBSTANTIATION",
+      "support": [
+        "Z12",
+        "REV2023"
+      ],
+      "use": "DO_NOT_ASSERT"
+    },
+    {
+      "id": "C06",
+      "claim": "Zen12 treats anxiety/trauma/clinical conditions, enhances earnings, or rewires perception",
+      "status": "NO_PRODUCT_SPECIFIC_SUBSTANTIATION",
+      "support": [
+        "FTCHEALTH"
+      ],
+      "use": "DO_NOT_ASSERT"
+    },
+    {
+      "id": "C07",
+      "claim": "Binaural beats consistently cause EEG entrainment",
+      "status": "CONTESTED_MIXED_EVIDENCE",
+      "support": [
+        "REV2023"
+      ],
+      "use": "DISCUSS_UNCERTAINTY"
+    },
+    {
+      "id": "C08",
+      "claim": "Zen12 offers a 1-year refund guarantee",
+      "status": "SELLER_POLICY_NOT_REFUND_OUTCOME",
+      "support": [
+        "TERMS"
+      ],
+      "use": "ATTRIBUTE_VENDOR_AND_RECHECK"
+    },
+    {
+      "id": "C09",
+      "claim": "Card refunds after ninety days processed manually through PayPal",
+      "status": "SELLER_POLICY",
+      "support": [
+        "TERMS"
+      ],
+      "use": "ATTRIBUTE_VENDOR_AND_RECHECK"
+    },
+    {
+      "id": "C10",
+      "claim": "Purchased MP3/PDF files may be tagged with personal information",
+      "status": "SELLER_POLICY_POSSIBILITY",
+      "support": [
+        "TERMS"
+      ],
+      "use": "MAY_NOT_WILL"
+    },
+    {
+      "id": "C11",
+      "claim": "Referring affiliates may receive buyer name, email and purchased-item information",
+      "status": "SELLER_POLICY_POSSIBILITY",
+      "support": [
+        "PRIVACY"
+      ],
+      "use": "REQUIRES_WRITTEN_BUYER_DATA_PROTECTION"
+    },
+    {
+      "id": "C12",
+      "claim": "FV is accepted to Inspire3 affiliate program and may promote via social/email",
+      "status": "UNVERIFIED_PARTNER_SPECIFIC",
+      "support": [],
+      "use": "BLOCK"
+    },
+    {
+      "id": "C13",
+      "claim": "FV owns a currently purchasable Mind digital SKU with verified rights, price, fulfillment and refund terms",
+      "status": "NOT_ESTABLISHED_IN_COLLECTION_OR_PUBLIC_PAYHIP_SEARCH",
+      "support": [
+        "COLLECTION"
+      ],
+      "use": "BLOCK_NOT_ABSENCE_PROOF"
+    },
+    {
+      "id": "C14",
+      "claim": "52-page Focus Fieldbook is available free via current Dispatch signup",
+      "status": "VERIFIED_EXISTING_FREE_OFFER",
+      "support": [
+        "COLLECTION",
+        "FOCUS"
+      ],
+      "use": "FREE_NOT_PAID"
+    },
+    {
+      "id": "C15",
+      "claim": "Thatcher inversion affects expression recognition",
+      "status": "ORIGINAL_AND_SUBSEQUENT_RESEARCH",
+      "support": [
+        "THATCHER",
+        "ERP"
+      ],
+      "use": "EDITORIAL_ONLY"
+    },
+    {
+      "id": "C16",
+      "claim": "Face inversion studies prove commercial audio perceptual improvement",
+      "status": "UNSUPPORTED_BRIDGE",
+      "support": [
+        "THATCHER",
+        "ERP",
+        "FTCHEALTH"
+      ],
+      "use": "DO_NOT_ASSERT"
+    }
+  ],
+  "funnel": {
+    "grok_asset_ids": [],
+    "proposed_topics": [
+      {
+        "topic": "Change blindness",
+        "public_article": "https://finalvestige.com/2026/11/02/change-blindness/",
+        "article_public_status": "REPORTED_PUBLISHED_REVALIDATE",
+        "grok_asset_id": null,
+        "grok_post_url": null
+      },
+      {
+        "topic": "Mesmer and Puységur historical suggestion",
+        "public_article": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+        "article_public_status": "REPORTED_PUBLISHED_REVALIDATE",
+        "grok_asset_id": null,
+        "grok_post_url": null
+      },
+      {
+        "topic": "Thatcher illusion",
+        "public_article": null,
+        "draft": "mind/conversion-r112-thatcher-proof/thatcher-investigation.md",
+        "grok_asset_id": null,
+        "grok_post_url": null
+      }
+    ],
+    "free_resource_url": "https://finalvestige.com/focus/",
+    "optional_product_guide": "Existing unpublished Zen12 canonical guide R110/R111; no live merchant CTA",
+    "event_names": [
+      "campaign_landing",
+      "article_to_resource_click",
+      "confirmed_signup_verified",
+      "affiliate_outbound_click",
+      "merchant_confirmed_paid_order",
+      "merchant_confirmed_affiliate_commission",
+      "verified_refund",
+      "verified_fee"
+    ],
+    "paid_outcome_source": "REQUIRED_MERCHANT_LEDGER",
+    "qualified_human_sessions": null,
+    "confirmed_orders": null,
+    "confirmed_commissions": null,
+    "net_realized_usd": null,
+    "net_revenue_per_1000_qualified_humans": null
+  },
+  "ab_test": {
+    "A": "Unpublished R110 evidence-first text guide",
+    "B": "R110 identical substantive text plus optional original poster/transcript of offline 40-second film",
+    "source_delta": "B consists of A plus only one extra accessible aside",
+    "live": false,
+    "approved": false,
+    "eligible_visits": null,
+    "paid_orders": null,
+    "winner": "NOT_ESTABLISHED"
+  },
+  "release_gates": {
+    "partner_authorization": false,
+    "affiliate_link_approved": false,
+    "channel_permission": false,
+    "no_buyer_pii_terms": false,
+    "buyer_claim_audit": false,
+    "site_qa_accessibility": false,
+    "merchant_paid_conversion_reconciliation": false,
+    "founder_release": false
+  }
+}
