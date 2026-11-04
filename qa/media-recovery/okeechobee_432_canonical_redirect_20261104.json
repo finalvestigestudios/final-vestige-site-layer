@@ -1,0 +1,421 @@
+{
+  "schema": "fv.media_recovery.okeechobee_432.v1",
+  "audit_date": "2026-11-04",
+  "mode": "SOURCE_ONLY_READ_ONLY",
+  "frozen_inventory": {
+    "date": "2026-10-30",
+    "blob_sha": "948bc1b65b42799aa40cfdb810ddf6ffd80886b6",
+    "post_id": 432,
+    "post_url": "https://finalvestige.com/2026/08/20/they-buried-the-dead-apart-okeechobee-1928/",
+    "sitewide_posts": 61,
+    "sitewide_slots": 355,
+    "sitewide_external_origins": 288,
+    "reported_broken_unverified": 42,
+    "claimed_wire_savings_percent_unmeasured": 76,
+    "wordpress_originals_above_1_5_mib": 13
+  },
+  "results": {
+    "slots": 7,
+    "exact_primary_catalog_image_paths": 7,
+    "www_to_apex_redirect_targets_observed": 7,
+    "real_browser_checks": 0,
+    "verified_origin_http_codes": 0,
+    "verified_broken_images": 0,
+    "editorial_review_flags": 3,
+    "production_replacements": 0
+  },
+  "publisher_policy_sources": [
+    "https://floridamemory.com/learn/about/disclaimer.php",
+    "https://floridamemory.com/discover/photographs/refpricelist.php",
+    "https://floridamemory.com/learn/about/guidelines.php"
+  ],
+  "interpretation": "Seven text retriever wrapper 500 errors on redirect from www to apex, not observed origin 500s, not browser failures. All HTTP status, MIME, dimensions and transfer bytes remain null. Exact catalog paths established from item records. Licensing and proper archive credit remain subject to item review. No media downloads or WP writes.",
+  "staging_plan": "Only after browser-confirmed broken image AND per-item reuse approval: select same archive item, acquire authorized original, checksum, decode, no-upscale <=960px conditional derivative, preserve crop and captions, compare desktop/mobile screenshots, measure actual transferred bytes, request explicit WP change approval.",
+  "images": [
+    {
+      "key": "432:0",
+      "snapshot": {
+        "post_url": "https://finalvestige.com/2026/08/20/they-buried-the-dead-apart-okeechobee-1928/",
+        "original_src": "https://www.floridamemory.com/fpc/prints/pr04493.jpg",
+        "alt": "Mourners gathered for a funeral service for victims of the 1928 hurricane at Woodlawn Cemetery in West Palm Beach.",
+        "html_width_px": null,
+        "html_height_px": null,
+        "git_blob_sha": "948bc1b65b42799aa40cfdb810ddf6ffd80886b6"
+      },
+      "primary_archive": {
+        "item_id": "PR04493",
+        "catalog_url": "https://floridamemory.com/items/show/4144",
+        "catalog_date": "1928",
+        "catalog_title": "Funeral service for hurricane victims.",
+        "catalog_image_path": "/fpc/prints/pr04493.jpg",
+        "exact_catalog_path_match": true
+      },
+      "retrieval": {
+        "date": "2026-11-04",
+        "method": "web.open text retriever, not browser",
+        "original_requested": "https://www.floridamemory.com/fpc/prints/pr04493.jpg",
+        "observed_redirect_target": "https://floridamemory.com/fpc/prints/pr04493.jpg",
+        "tool_error": "500 wrapper cannot access redirected apex image",
+        "apex_probe": "not accessible via tool",
+        "actual_origin_http_status": null,
+        "guest_browser_http_status": null,
+        "mime_type": null,
+        "guest_decoded": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "image_transfer_bytes": null,
+        "broken_for_visitors": null
+      },
+      "editorial": {
+        "status": "MATCH",
+        "suggested_alt_for_review": null,
+        "production_caption_changed": false
+      },
+      "restoration": {
+        "primary_candidate_catalog": "https://floridamemory.com/items/show/4144",
+        "max_width_px": 960,
+        "target_height_px": null,
+        "original_intrinsic_width_px": null,
+        "original_intrinsic_height_px": null,
+        "no_upscale": true,
+        "rights": "REVIEW_REQUIRED",
+        "license": null,
+        "required_credit": "State Archives of Florida, Florida Memory, PR04493",
+        "binary_identity_verified": false,
+        "wordpress_upload_permitted": false,
+        "local_cache_permitted": false,
+        "post_rewrite_permitted": false
+      }
+    },
+    {
+      "key": "432:1",
+      "snapshot": {
+        "post_url": "https://finalvestige.com/2026/08/20/they-buried-the-dead-apart-okeechobee-1928/",
+        "original_src": "https://www.floridamemory.com/fpc/reference/rc17068.jpg",
+        "alt": "Floodwater and storm damage in the Lake Okeechobee region after the 1928 hurricane.",
+        "html_width_px": null,
+        "html_height_px": null,
+        "git_blob_sha": "948bc1b65b42799aa40cfdb810ddf6ffd80886b6"
+      },
+      "primary_archive": {
+        "item_id": "RC17068",
+        "catalog_url": "https://floridamemory.com/items/show/38362",
+        "catalog_date": "1928-09",
+        "catalog_title": "View of Avenue A, flooded after hurricane - Belle Glade.",
+        "catalog_image_path": "/fpc/reference/rc17068.jpg",
+        "exact_catalog_path_match": true
+      },
+      "retrieval": {
+        "date": "2026-11-04",
+        "method": "web.open text retriever, not browser",
+        "original_requested": "https://www.floridamemory.com/fpc/reference/rc17068.jpg",
+        "observed_redirect_target": "https://floridamemory.com/fpc/reference/rc17068.jpg",
+        "tool_error": "500 wrapper cannot access redirected apex image",
+        "apex_probe": "not accessible via tool",
+        "actual_origin_http_status": null,
+        "guest_browser_http_status": null,
+        "mime_type": null,
+        "guest_decoded": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "image_transfer_bytes": null,
+        "broken_for_visitors": null
+      },
+      "editorial": {
+        "status": "PRECISION_IMPROVEMENT",
+        "suggested_alt_for_review": "Avenue A in Belle Glade flooded in September 1928 after the hurricane.",
+        "production_caption_changed": false
+      },
+      "restoration": {
+        "primary_candidate_catalog": "https://floridamemory.com/items/show/38362",
+        "max_width_px": 960,
+        "target_height_px": null,
+        "original_intrinsic_width_px": null,
+        "original_intrinsic_height_px": null,
+        "no_upscale": true,
+        "rights": "REVIEW_REQUIRED",
+        "license": null,
+        "required_credit": "State Archives of Florida, Florida Memory, RC17068",
+        "binary_identity_verified": false,
+        "wordpress_upload_permitted": false,
+        "local_cache_permitted": false,
+        "post_rewrite_permitted": false
+      }
+    },
+    {
+      "key": "432:2",
+      "snapshot": {
+        "post_url": "https://finalvestige.com/2026/08/20/they-buried-the-dead-apart-okeechobee-1928/",
+        "original_src": "https://www.floridamemory.com/fpc/reference/rc10673.jpg",
+        "alt": "Collapsed automotive garage and debris in Belle Glade after the 1928 Okeechobee Hurricane.",
+        "html_width_px": null,
+        "html_height_px": null,
+        "git_blob_sha": "948bc1b65b42799aa40cfdb810ddf6ffd80886b6"
+      },
+      "primary_archive": {
+        "item_id": "RC10673",
+        "catalog_url": "https://floridamemory.com/items/show/33289",
+        "catalog_date": "1928",
+        "catalog_title": "Automotive garage, demolished by hurricane - Belle Glade.",
+        "catalog_image_path": "/fpc/reference/rc10673.jpg",
+        "exact_catalog_path_match": true
+      },
+      "retrieval": {
+        "date": "2026-11-04",
+        "method": "web.open text retriever, not browser",
+        "original_requested": "https://www.floridamemory.com/fpc/reference/rc10673.jpg",
+        "observed_redirect_target": "https://floridamemory.com/fpc/reference/rc10673.jpg",
+        "tool_error": "500 wrapper cannot access redirected apex image",
+        "apex_probe": "not accessible via tool",
+        "actual_origin_http_status": null,
+        "guest_browser_http_status": null,
+        "mime_type": null,
+        "guest_decoded": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "image_transfer_bytes": null,
+        "broken_for_visitors": null
+      },
+      "editorial": {
+        "status": "MATCH",
+        "suggested_alt_for_review": null,
+        "production_caption_changed": false
+      },
+      "restoration": {
+        "primary_candidate_catalog": "https://floridamemory.com/items/show/33289",
+        "max_width_px": 960,
+        "target_height_px": null,
+        "original_intrinsic_width_px": null,
+        "original_intrinsic_height_px": null,
+        "no_upscale": true,
+        "rights": "REVIEW_REQUIRED",
+        "license": null,
+        "required_credit": "State Archives of Florida, Florida Memory, RC10673",
+        "binary_identity_verified": false,
+        "wordpress_upload_permitted": false,
+        "local_cache_permitted": false,
+        "post_rewrite_permitted": false
+      }
+    },
+    {
+      "key": "432:3",
+      "snapshot": {
+        "post_url": "https://finalvestige.com/2026/08/20/they-buried-the-dead-apart-okeechobee-1928/",
+        "original_src": "https://www.floridamemory.com/fpc/general/n031889.jpg",
+        "alt": "Florida State Board of Health personnel at the Pahokee disaster-response headquarters after the 1928 hurricane.",
+        "html_width_px": null,
+        "html_height_px": null,
+        "git_blob_sha": "948bc1b65b42799aa40cfdb810ddf6ffd80886b6"
+      },
+      "primary_archive": {
+        "item_id": "N031889",
+        "catalog_url": "https://floridamemory.com/items/show/141398",
+        "catalog_date": "1928",
+        "catalog_title": "State Board of Health headquarters - Pahokee.",
+        "catalog_image_path": "/fpc/general/n031889.jpg",
+        "exact_catalog_path_match": true
+      },
+      "retrieval": {
+        "date": "2026-11-04",
+        "method": "web.open text retriever, not browser",
+        "original_requested": "https://www.floridamemory.com/fpc/general/n031889.jpg",
+        "observed_redirect_target": "https://floridamemory.com/fpc/general/n031889.jpg",
+        "tool_error": "500 wrapper cannot access redirected apex image",
+        "apex_probe": "not accessible via tool",
+        "actual_origin_http_status": null,
+        "guest_browser_http_status": null,
+        "mime_type": null,
+        "guest_decoded": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "image_transfer_bytes": null,
+        "broken_for_visitors": null
+      },
+      "editorial": {
+        "status": "UNSUPPORTED_POST_DISASTER_TIMING",
+        "suggested_alt_for_review": "Florida State Board of Health personnel at their Pahokee headquarters in 1928.",
+        "production_caption_changed": false
+      },
+      "restoration": {
+        "primary_candidate_catalog": "https://floridamemory.com/items/show/141398",
+        "max_width_px": 960,
+        "target_height_px": null,
+        "original_intrinsic_width_px": null,
+        "original_intrinsic_height_px": null,
+        "no_upscale": true,
+        "rights": "REVIEW_REQUIRED",
+        "license": null,
+        "required_credit": "State Archives of Florida, Florida Memory, N031889",
+        "binary_identity_verified": false,
+        "wordpress_upload_permitted": false,
+        "local_cache_permitted": false,
+        "post_rewrite_permitted": false
+      }
+    },
+    {
+      "key": "432:4",
+      "snapshot": {
+        "post_url": "https://finalvestige.com/2026/08/20/they-buried-the-dead-apart-okeechobee-1928/",
+        "original_src": "https://www.floridamemory.com/fpc/reference/rc04344.jpg",
+        "alt": "Wooden coffins stacked beside a canal at Belle Glade during recovery from the 1928 Okeechobee Hurricane.",
+        "html_width_px": null,
+        "html_height_px": null,
+        "git_blob_sha": "948bc1b65b42799aa40cfdb810ddf6ffd80886b6"
+      },
+      "primary_archive": {
+        "item_id": "RC04344",
+        "catalog_url": "https://floridamemory.com/items/show/27848",
+        "catalog_date": "1928",
+        "catalog_title": "Coffins stacked along canal bank after hurricane - Belle Glade.",
+        "catalog_image_path": "/fpc/reference/rc04344.jpg",
+        "exact_catalog_path_match": true
+      },
+      "retrieval": {
+        "date": "2026-11-04",
+        "method": "web.open text retriever, not browser",
+        "original_requested": "https://www.floridamemory.com/fpc/reference/rc04344.jpg",
+        "observed_redirect_target": "https://floridamemory.com/fpc/reference/rc04344.jpg",
+        "tool_error": "500 wrapper cannot access redirected apex image",
+        "apex_probe": "not accessible via tool",
+        "actual_origin_http_status": null,
+        "guest_browser_http_status": null,
+        "mime_type": null,
+        "guest_decoded": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "image_transfer_bytes": null,
+        "broken_for_visitors": null
+      },
+      "editorial": {
+        "status": "MATCH",
+        "suggested_alt_for_review": null,
+        "production_caption_changed": false
+      },
+      "restoration": {
+        "primary_candidate_catalog": "https://floridamemory.com/items/show/27848",
+        "max_width_px": 960,
+        "target_height_px": null,
+        "original_intrinsic_width_px": null,
+        "original_intrinsic_height_px": null,
+        "no_upscale": true,
+        "rights": "REVIEW_REQUIRED",
+        "license": null,
+        "required_credit": "State Archives of Florida, Florida Memory, RC04344",
+        "binary_identity_verified": false,
+        "wordpress_upload_permitted": false,
+        "local_cache_permitted": false,
+        "post_rewrite_permitted": false
+      }
+    },
+    {
+      "key": "432:5",
+      "snapshot": {
+        "post_url": "https://finalvestige.com/2026/08/20/they-buried-the-dead-apart-okeechobee-1928/",
+        "original_src": "https://www.floridamemory.com/fpc/reference/rc07668.jpg",
+        "alt": "Crowds gathered during burial of victims of the 1928 hurricane in West Palm Beach.",
+        "html_width_px": null,
+        "html_height_px": null,
+        "git_blob_sha": "948bc1b65b42799aa40cfdb810ddf6ffd80886b6"
+      },
+      "primary_archive": {
+        "item_id": "RC07668",
+        "catalog_url": "https://floridamemory.com/items/show/30741",
+        "catalog_date": "1928",
+        "catalog_title": "Burial of victims of 1928 hurricane - West Palm Beach.",
+        "catalog_image_path": "/fpc/reference/rc07668.jpg",
+        "exact_catalog_path_match": true
+      },
+      "retrieval": {
+        "date": "2026-11-04",
+        "method": "web.open text retriever, not browser",
+        "original_requested": "https://www.floridamemory.com/fpc/reference/rc07668.jpg",
+        "observed_redirect_target": "https://floridamemory.com/fpc/reference/rc07668.jpg",
+        "tool_error": "500 wrapper cannot access redirected apex image",
+        "apex_probe": "not accessible via tool",
+        "actual_origin_http_status": null,
+        "guest_browser_http_status": null,
+        "mime_type": null,
+        "guest_decoded": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "image_transfer_bytes": null,
+        "broken_for_visitors": null
+      },
+      "editorial": {
+        "status": "MATCH",
+        "suggested_alt_for_review": null,
+        "production_caption_changed": false
+      },
+      "restoration": {
+        "primary_candidate_catalog": "https://floridamemory.com/items/show/30741",
+        "max_width_px": 960,
+        "target_height_px": null,
+        "original_intrinsic_width_px": null,
+        "original_intrinsic_height_px": null,
+        "no_upscale": true,
+        "rights": "REVIEW_REQUIRED",
+        "license": null,
+        "required_credit": "State Archives of Florida, Florida Memory, RC07668",
+        "binary_identity_verified": false,
+        "wordpress_upload_permitted": false,
+        "local_cache_permitted": false,
+        "post_rewrite_permitted": false
+      }
+    },
+    {
+      "key": "432:6",
+      "snapshot": {
+        "post_url": "https://finalvestige.com/2026/08/20/they-buried-the-dead-apart-okeechobee-1928/",
+        "original_src": "https://www.floridamemory.com/fpc/msf/MSF-PB11548-001.jpg",
+        "alt": "The historic African American mass burial site for victims of the 1928 Okeechobee Hurricane at 25th Street and Tamarind Avenue in West Palm Beach.",
+        "html_width_px": null,
+        "html_height_px": null,
+        "git_blob_sha": "948bc1b65b42799aa40cfdb810ddf6ffd80886b6"
+      },
+      "primary_archive": {
+        "item_id": "MSF-PB11548-001",
+        "catalog_url": "https://floridamemory.com/items/show/340182",
+        "catalog_date": "2001",
+        "catalog_title": "Historic cemetery and mass grave site for 1928 victims - West Palm Beach.",
+        "catalog_image_path": "/fpc/msf/MSF-PB11548-001.jpg",
+        "exact_catalog_path_match": true
+      },
+      "retrieval": {
+        "date": "2026-11-04",
+        "method": "web.open text retriever, not browser",
+        "original_requested": "https://www.floridamemory.com/fpc/msf/MSF-PB11548-001.jpg",
+        "observed_redirect_target": "https://floridamemory.com/fpc/msf/MSF-PB11548-001.jpg",
+        "tool_error": "500 wrapper cannot access redirected apex image",
+        "apex_probe": "not accessible via tool",
+        "actual_origin_http_status": null,
+        "guest_browser_http_status": null,
+        "mime_type": null,
+        "guest_decoded": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "image_transfer_bytes": null,
+        "broken_for_visitors": null
+      },
+      "editorial": {
+        "status": "MODERN_SITE_PHOTOGRAPH_NOT_1928_EVENT",
+        "suggested_alt_for_review": "The historic African American mass burial site for 1928 hurricane victims in West Palm Beach, photographed in 2001.",
+        "production_caption_changed": false
+      },
+      "restoration": {
+        "primary_candidate_catalog": "https://floridamemory.com/items/show/340182",
+        "max_width_px": 960,
+        "target_height_px": null,
+        "original_intrinsic_width_px": null,
+        "original_intrinsic_height_px": null,
+        "no_upscale": true,
+        "rights": "REVIEW_REQUIRED",
+        "license": null,
+        "required_credit": "State Archives of Florida, Florida Memory, MSF-PB11548-001",
+        "binary_identity_verified": false,
+        "wordpress_upload_permitted": false,
+        "local_cache_permitted": false,
+        "post_rewrite_permitted": false
+      }
+    }
+  ]
+}
