@@ -51,7 +51,7 @@ class R115Contracts(unittest.TestCase):
     def test_no_unapproved_commercial_capture(self):
         self.assertFalse(any(t in {"form", "iframe"} for t, _ in self.dom.tags))
         self.assertNotIn("payhip", HTML.lower())
-        self.assertFalse(re.search(r"gtag\\(|fbq\\(|analytics\\.js", HTML, re.I))
+        self.assertFalse(re.search(r"gtag\(|fbq\(|analytics\.js", HTML, re.I))
 
     def test_print_custody_is_preserved(self):
         self.assertIn("photograph reuse assessments remain incomplete (0/6)", HTML)
