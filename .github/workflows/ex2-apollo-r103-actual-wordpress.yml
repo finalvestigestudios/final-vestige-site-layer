@@ -1,5 +1,5 @@
 # Apollo R103: genuine disposable WordPress integration for modified gallery; never live.
-name: Apollo R103-R105 genuine WordPress + journaled gallery acceptance
+name: Apollo R103-R107 genuine WordPress + verified gallery receipts
 on:
   pull_request:
     types: [opened, synchronize, reopened]
@@ -9,6 +9,9 @@ on:
       - 'experience2/evidence-atlas/tests/browser_mobile_gallery_r103.py'
       - 'experience2/evidence-atlas/tests/browser_real_wp_gallery_r104.py'
       - 'experience2/evidence-atlas/tests/qa_receipt_r105.py'
+      - 'experience2/evidence-atlas/tests/qa_artifacts_r107.py'
+      - 'experience2/evidence-atlas/tests/test_qa_artifacts_r107.py'
+      - 'experience2/evidence-atlas/R107_ARTIFACT_INTEGRITY_STAGING_HOLD.md'
       - 'experience2/evidence-atlas/tests/test_qa_receipt_r105.py'
       - 'experience2/evidence-atlas/R105_CRASH_SAFE_RECEIPTS_STAGING_HOLD.md'
       - 'experience2/evidence-atlas/R104_REAL_WP_GALLERY_STAGING_HOLD.md'
@@ -53,8 +56,9 @@ jobs:
           export PYTHONPYCACHEPREFIX="$RUNNER_TEMP/r100-pycache"
           test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
           test -z "$(git status --porcelain)"
-          python -m py_compile experience2/evidence-atlas/tests/browser_actual_wordpress_r100.py experience2/evidence-atlas/tests/browser_real_wp_gallery_r104.py experience2/evidence-atlas/tests/qa_receipt_r105.py
+          python -m py_compile experience2/evidence-atlas/tests/browser_actual_wordpress_r100.py experience2/evidence-atlas/tests/browser_real_wp_gallery_r104.py experience2/evidence-atlas/tests/qa_receipt_r105.py experience2/evidence-atlas/tests/qa_artifacts_r107.py
           python -m unittest discover -s experience2/evidence-atlas/tests -p test_qa_receipt_r105.py -v
+          python -m unittest discover -s experience2/evidence-atlas/tests -p test_qa_artifacts_r107.py -v
           python -m unittest discover -s experience2/evidence-atlas/tests -p test_wp_private_preview_r99.py -v
           python experience2/evidence-atlas/tools/build_reciprocal_routes_r92.py "$RUNNER_TEMP/r92"
           python experience2/evidence-atlas/tools/build_source_passports_r93.py --src "$RUNNER_TEMP/r92" --out "$RUNNER_TEMP/r93"
@@ -149,7 +153,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: apollo-r105-genuine-wordpress-gallery-STAGING-HOLD
+          name: apollo-r107-genuine-wordpress-gallery-STAGING-HOLD
           path: |
             ${{ runner.temp }}/r100-real-wp-evidence/
             ${{ runner.temp }}/r100-source-sha.txt
