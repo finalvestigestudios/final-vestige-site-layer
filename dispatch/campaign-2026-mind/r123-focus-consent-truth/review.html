@@ -11,7 +11,7 @@
 <p>Authenticated WordPress page 1579 source uses a <code>subscribe</code> URL query and a CSS class to reveal the free Fieldbook panel. The query check accepts any value except five named error cases. This display does not prove native email confirmation, consent, deliverability, or a paid purchase.</p>
 <div class="grid">
 <section class="card"><h3>Known example</h3><p><code>?subscribe=foo</code></p><p>Panel is revealed by the source logic. Confirmed signup: <strong>No proof</strong>.</p></section>
-<section class="card"><h3>Native UI class</h3><p><code>.is-subscriber</code></p><p>Panel is revealed. New confirmation event: <strong>No proof</strong>.</p></section>
+<section class="card"><h3>Native UI class</h3><p><code>.is-subscriber</code></p><p>Panel is revealed. The actual source word-boundary regex also matches synthetic <code>not-is-subscriber</code>; it is not an exact CSS-token proof. New confirmation event: <strong>No proof</strong>.</p></section>
 <section class="card"><h3>Conversion contract</h3><p><code>confirmed_signup</code></p><p>Requires authenticated, independently recorded native WordPress confirmation and consent, with server-side dedup.</p></section>
 </div>
 <h2>Evidence table</h2>
