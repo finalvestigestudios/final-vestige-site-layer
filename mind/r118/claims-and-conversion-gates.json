@@ -1,0 +1,388 @@
+{
+  "schema": "fv.mind.r118.evidence.v1",
+  "date_researched": "2026-11-04",
+  "status": "DRAFT_UNPUBLISHED",
+  "commercial_candidate": "Zen12 Premium",
+  "canonical_existing_guide": "mind/r114/zen12-canonical-decision-guide.md",
+  "canonical_hub_pr": 172,
+  "merchant_source": "https://zen12.com/hnp",
+  "offer_verified_for_paid_conversion": false,
+  "affiliate_earning_url": null,
+  "partner_acceptance_document": null,
+  "approved_channels": null,
+  "merchant_privacy_addendum": null,
+  "payhip_rights_cleared_paid_mind_sku": null,
+  "confirmed_paid_orders": null,
+  "settled_commissions": null,
+  "qualified_session_denominator": null,
+  "net_revenue_per_1000": null,
+  "sources": [
+    {
+      "id": "S01",
+      "url": "https://inspire3.com/",
+      "type": "seller catalog",
+      "observed": "2026-11-04"
+    },
+    {
+      "id": "S02",
+      "url": "https://zen12.com/hnp",
+      "type": "exact seller offer",
+      "observed": "2026-11-04"
+    },
+    {
+      "id": "S03",
+      "url": "https://affiliates.inspire3.com/",
+      "type": "public recruiting only",
+      "observed": "2026-11-04"
+    },
+    {
+      "id": "S04",
+      "url": "https://inspire3.com/privacy/",
+      "type": "seller privacy",
+      "observed": "2026-11-04"
+    },
+    {
+      "id": "S05",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "type": "FTC guidance"
+    },
+    {
+      "id": "S06",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "type": "FTC guidance"
+    },
+    {
+      "id": "S07",
+      "url": "https://doi.org/10.1111/j.1749-818X.2010.00263.x",
+      "type": "2011 reading review"
+    },
+    {
+      "id": "S08",
+      "url": "https://doi.org/10.1126/science.1192439",
+      "type": "2010 experience sampling"
+    },
+    {
+      "id": "S09",
+      "url": "https://doi.org/10.1146/annurev-psych-010814-015331",
+      "type": "2015 synthesis"
+    },
+    {
+      "id": "S10",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/21684189/",
+      "type": "2011 meta-awareness review"
+    },
+    {
+      "id": "S11",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23538911/",
+      "type": "2013 randomized mindfulness training"
+    },
+    {
+      "id": "S12",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+      "type": "2023 binaural EEG systematic review"
+    },
+    {
+      "id": "S13",
+      "url": "https://finalvestige.com/focus/",
+      "type": "owned route reported published by earlier authenticated WP; external web fetch this run failed"
+    },
+    {
+      "id": "S14",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "type": "owned archive route reported by WP; external web fetch this run failed"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "text": "Zen12 seller advertises 12-minute sessions",
+      "status": "SELLER_FORMAT_NOT_INDEPENDENTLY_TESTED",
+      "sources": [
+        "S02"
+      ],
+      "may_publish_as_fact": false,
+      "allowed_wording": "The seller describes 12-minute MP3 sessions."
+    },
+    {
+      "id": "C02",
+      "text": "Zen12 seller offers 12 levels and Premium 48 MP3",
+      "status": "SELLER_FORMAT",
+      "sources": [
+        "S02"
+      ],
+      "allowed_wording": "The seller advertises a Premium library of 48 MP3 files across 12 levels."
+    },
+    {
+      "id": "C03",
+      "text": "Seller advertises four styles music/guided/nature/white-noise",
+      "status": "SELLER_FORMAT",
+      "sources": [
+        "S02"
+      ],
+      "allowed_wording": "The seller lists four listening styles."
+    },
+    {
+      "id": "C04",
+      "text": "Premium advertised price 87.99 on Nov 4",
+      "status": "DATED_SELLER_OBSERVATION_NOT_CHECKOUT",
+      "sources": [
+        "S02"
+      ],
+      "allowed_wording": "On Nov 4 the seller page displayed a Premium promotional price of $87.99; final checkout not verified."
+    },
+    {
+      "id": "C05",
+      "text": "One-year money-back guarantee advertised",
+      "status": "SELLER_PROMISE_NOT_INDEPENDENTLY_VERIFIED",
+      "sources": [
+        "S02"
+      ],
+      "allowed_wording": "The seller page advertises a one-year money-back guarantee; operative terms must be checked."
+    },
+    {
+      "id": "C06",
+      "text": "One hour of advanced meditation in 12 minutes",
+      "status": "WITHHOLD_UNSUBSTANTIATED_PRODUCT_EFFICACY",
+      "sources": [
+        "S02",
+        "S12"
+      ],
+      "allowed_wording": "The seller makes an hour-equivalence claim, but reviewed independent science does not establish it for Zen12."
+    },
+    {
+      "id": "C07",
+      "text": "Brainwave copying reliably induces deep meditation",
+      "status": "WITHHOLD_UNSUBSTANTIATED_PRODUCT_EFFICACY",
+      "sources": [
+        "S02",
+        "S12"
+      ],
+      "allowed_wording": "The proposed mechanism is advertised by the seller; evidence about EEG entrainment is inconsistent."
+    },
+    {
+      "id": "C08",
+      "text": "Instant anxiety relief, health gains, mental/financial guarantees",
+      "status": "PROHIBITED_WITHOUT_PRODUCT_SPECIFIC_EVIDENCE",
+      "sources": [
+        "S02",
+        "S06"
+      ],
+      "allowed_wording": "Do not assert these outcomes."
+    },
+    {
+      "id": "C09",
+      "text": "Two-week mindfulness RCT reduced mind wandering",
+      "status": "SUPPORTED_IN_STUDY_CONTEXT_NOT_ZEN12",
+      "sources": [
+        "S11"
+      ],
+      "allowed_wording": "In one randomized two-week training study, the mindfulness group improved selected measured outcomes; not a trial of Zen12."
+    },
+    {
+      "id": "C10",
+      "text": "Reading while mind wanders can diminish comprehension",
+      "status": "SUPPORTED_REVIEW_CONTEXTUAL",
+      "sources": [
+        "S07",
+        "S09"
+      ],
+      "allowed_wording": "Reviews describe perceptual decoupling during mindless reading."
+    },
+    {
+      "id": "C11",
+      "text": "Wandering associated with lower self-reported happiness in experience sampling",
+      "status": "SUPPORTED_OBSERVATIONAL_NO_CAUSAL_GENERALIZATION",
+      "sources": [
+        "S08"
+      ],
+      "allowed_wording": "In an experience-sampling study wandering was associated with lower reported happiness."
+    },
+    {
+      "id": "C12",
+      "text": "Mind wandering has costs and possible planning/creative functions",
+      "status": "SUPPORTED_REVIEW_CONTEXTUAL",
+      "sources": [
+        "S09"
+      ],
+      "allowed_wording": "A review discusses both costs and potential benefits depending on context."
+    },
+    {
+      "id": "C13",
+      "text": "Inspire3 may share referral purchaser names/emails/purchases with affiliate",
+      "status": "SUPPORTED_SELLER_POLICY",
+      "sources": [
+        "S04"
+      ],
+      "allowed_wording": "The seller policy permits sharing named purchaser details with an affiliate; FV requires aggregate-only contract."
+    },
+    {
+      "id": "C14",
+      "text": "Public affiliate program description implies FV accepted",
+      "status": "REJECT",
+      "sources": [
+        "S03"
+      ],
+      "allowed_wording": "Public recruitment is not named acceptance."
+    },
+    {
+      "id": "C15",
+      "text": "FV Focus is a free existing resource",
+      "status": "PRIOR_AUTHENTICATED_WP_NO_FRESH_WEB_PROOF",
+      "sources": [
+        "S13"
+      ],
+      "allowed_wording": "Earlier authenticated WP audit identifies Focus as a free 52-page signup resource."
+    },
+    {
+      "id": "C16",
+      "text": "Paid FV Mind Payhip SKU exists and is order-verified",
+      "status": "UNKNOWN_NO_AUTHENTICATED_PAYHIP_DATA",
+      "sources": [],
+      "allowed_wording": "No paid Mind SKU was independently verified."
+    }
+  ],
+  "release_gates": [
+    {
+      "id": "G01",
+      "name": "named FV Inspire3 acceptance",
+      "passed": false
+    },
+    {
+      "id": "G02",
+      "name": "approved affiliate URL",
+      "passed": false
+    },
+    {
+      "id": "G03",
+      "name": "approved promotional formats and channels",
+      "passed": false
+    },
+    {
+      "id": "G04",
+      "name": "original vs approved creative rights",
+      "passed": false
+    },
+    {
+      "id": "G05",
+      "name": "partner aggregate-only reporting and buyer-PII controls",
+      "passed": false
+    },
+    {
+      "id": "G06",
+      "name": "current final checkout total and operative refund policy",
+      "passed": false
+    },
+    {
+      "id": "G07",
+      "name": "seller-authenticated FV Payhip paid SKU and rights",
+      "passed": false
+    },
+    {
+      "id": "G08",
+      "name": "merchant-confirmed paid order and settlement evidence",
+      "passed": false
+    },
+    {
+      "id": "G09",
+      "name": "Grok actual immutable media asset IDs",
+      "passed": false
+    },
+    {
+      "id": "G10",
+      "name": "verified attributed qualified human sessions",
+      "passed": false
+    },
+    {
+      "id": "G11",
+      "name": "source-cited final guide editorial review",
+      "passed": false
+    },
+    {
+      "id": "G12",
+      "name": "native Node and CI tests",
+      "passed": false
+    },
+    {
+      "id": "G13",
+      "name": "real browser mobile/keyboard/no-JS/a11y performance QA",
+      "passed": false
+    },
+    {
+      "id": "G14",
+      "name": "captioned playable film and transcoding QA",
+      "passed": false
+    },
+    {
+      "id": "G15",
+      "name": "founder publication/merchant contact approvals",
+      "passed": false
+    },
+    {
+      "id": "G16",
+      "name": "separate website release/QA signoff",
+      "passed": false
+    }
+  ],
+  "creator_to_offer": [
+    {
+      "topic": "Change blindness",
+      "article": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "focus": "https://finalvestige.com/focus/",
+      "offer": null,
+      "asset_id": null,
+      "reason": "Perception curiosity alone not Zen12 purchase intent"
+    },
+    {
+      "topic": "Attentional blink",
+      "article": null,
+      "focus": "https://finalvestige.com/focus/",
+      "offer": "Zen12 buyer guide only for opt-in listening comparison intent",
+      "asset_id": null,
+      "reason": "No invented published article"
+    },
+    {
+      "topic": "Mesmerism/Puységur",
+      "article": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "focus": "https://finalvestige.com/focus/",
+      "offer": null,
+      "asset_id": null,
+      "reason": "Historical suggestion never validates product"
+    }
+  ],
+  "attribution": {
+    "utm_source": "platform approved by Grok",
+    "utm_medium": "organic_social",
+    "utm_campaign": "mind_pilot_2026_11",
+    "utm_content": "ACTUAL_GROK_ASSET_ID_ONLY",
+    "first_party_existing_only": true,
+    "personally_identifying_fields": [],
+    "create_tracking_script": false,
+    "events": [
+      "campaign_landing",
+      "article_to_resource_click",
+      "confirmed_signup",
+      "buyer_guide_cta_click",
+      "affiliate_outbound",
+      "merchant_confirmed_affiliate_sale",
+      "merchant_confirmed_owned_sale"
+    ],
+    "session_denominator": null,
+    "cohorts_days": [
+      7,
+      30
+    ],
+    "small_group_public_suppression_below": 20,
+    "metric": "net_1000 = 1000*settled_net_revenue/qualified_human_sessions, else NULL"
+  },
+  "experiment": {
+    "baseline": "mind/r114/zen12-text-A.html",
+    "optional_film": "mind/r114/zen12-film-B.html",
+    "vtt": "mind/r114/film-40s.vtt",
+    "only_variation": "optional 40-second media section",
+    "hypothesis": "Possible better qualified paid conversion, not guaranteed",
+    "live": false,
+    "approval": false,
+    "privacy_safe": true,
+    "disclose_next_to_link": true
+  }
+}
