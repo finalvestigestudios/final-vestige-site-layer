@@ -1,0 +1,356 @@
+{
+  "schema": "fv-r126-author-source-binding-part-v1",
+  "partition": "A",
+  "state": "DRAFT_UNREVIEWED_HOLD",
+  "candidate_git_commit": "ddb3528ba6494dada1fa1c3a142ce746e3a67706",
+  "crosswalk_git_commit": "6ca388edbed803e64663e8f0ecfa55bda0fe08c3",
+  "crosswalk_git_blob": "c8c57c80963580645983402ad2cbed775827586e",
+  "taxonomy_git_blob": "15c547bb3018ac182b12a51036389cfa39a59168",
+  "crosswalk_group_count": 32,
+  "disclaimer": "Article metadata source_use declarations only, not claim verification, citation counts, medical safety or authority to publish.",
+  "articles": [
+    {
+      "slug": "household-emergency-plan",
+      "origin": "start",
+      "metadata_blob_sha": "0681d51e6e29166eaae27ac2b7f1fbde3f836787",
+      "publish": "draft",
+      "safety_state": "pending",
+      "total_declared_source_uses": 14,
+      "shared_source_bindings": [
+        {
+          "source_id": "start-ready-alerts",
+          "source_record_origin": "start",
+          "shared_url": "https://www.ready.gov/alerts",
+          "source_use_scope": "How Wireless Emergency Alerts, the Emergency Alert System, NOAA Weather Radio and the FEMA App differ, and the limits of each."
+        },
+        {
+          "source_id": "start-ready-evacuation",
+          "source_record_origin": "start",
+          "shared_url": "https://www.ready.gov/evacuation",
+          "source_use_scope": "Several possible destinations, and finding a pet-friendly place in advance because most public shelters allow only service animals."
+        },
+        {
+          "source_id": "start-ready-kit",
+          "source_record_origin": "start",
+          "shared_url": "https://www.ready.gov/kit",
+          "source_use_scope": "The NOAA Weather Radio item on the kit list, and the current page's 're-think your needs every year' interval."
+        },
+        {
+          "source_id": "start-ready-disability",
+          "source_record_origin": "start",
+          "shared_url": "https://www.ready.gov/people-disabilities",
+          "source_use_scope": "A weather radio with a text display and flashing alert for people who are deaf or hard of hearing."
+        },
+        {
+          "source_id": "start-ready-plan",
+          "source_record_origin": "start",
+          "shared_url": "https://www.ready.gov/plan",
+          "source_use_scope": "The four steps (meet, assess household needs, document, practice), the five starting questions and the list of household factors to consider."
+        },
+        {
+          "source_id": "ready-are-you-ready",
+          "source_record_origin": "start",
+          "shared_url": "https://www.ready.gov/sites/default/files/2021-11/are-you-ready-guide.pdf",
+          "source_use_scope": "Assess the situation, then decide to stay or change location; communication plan with an out-of-state contact reachable two ways; wallet or digital copy for everyone; meeting places in several directions; practice like a fire drill; six-month refresh; one-year timeline; documents and cash guidance; school plans."
+        }
+      ],
+      "problems": []
+    },
+    {
+      "slug": "three-day-kit",
+      "origin": "start",
+      "metadata_blob_sha": "1c69d5f1636a3a41631a5d93f11254d85cbe1b59",
+      "publish": "draft",
+      "safety_state": "pending",
+      "total_declared_source_uses": 18,
+      "shared_source_bindings": [
+        {
+          "source_id": "start-cdc-power-outage",
+          "source_record_origin": "start",
+          "shared_url": "https://www.cdc.gov/natural-disasters/response/what-to-do-protect-yourself-during-a-power-outage.html",
+          "source_use_scope": "CDC cross-check of the generator rule: never inside the home, basement or garage, or less than 20 feet from any window, door or vent."
+        },
+        {
+          "source_id": "start-ready-food",
+          "source_record_origin": "start",
+          "shared_url": "https://www.ready.gov/food",
+          "source_use_scope": "Several-day non-perishable food; choose foods your family will eat; example items; the swollen/dented can rule; outdoor-only cooking appliances; Ready.gov's two-hour rule."
+        },
+        {
+          "source_id": "start-ready-kit",
+          "source_record_origin": "start",
+          "shared_url": "https://www.ready.gov/kit",
+          "source_use_scope": "The Basic Disaster Supplies Kit list and additional items; storing items in airtight bags in one or two easy-to-carry containers; maintenance; home, work and car kits."
+        },
+        {
+          "source_id": "start-ready-disability",
+          "source_record_origin": "start",
+          "shared_url": "https://www.ready.gov/people-disabilities",
+          "source_use_scope": "'Several days supply of prescription medicines'; tips for specific disabilities."
+        },
+        {
+          "source_id": "start-ready-power",
+          "source_record_origin": "start",
+          "shared_url": "https://www.ready.gov/power-outages",
+          "source_use_scope": "Outage effects; refrigerator and freezer holding times; Ready.gov's two-hour food rule and discard-medicine wording (older than FEMA's 2023 sheet); 20-foot generator rule; talk to your provider about how long medicine can be stored warm."
+        },
+        {
+          "source_id": "ready-are-you-ready",
+          "source_record_origin": "start",
+          "shared_url": "https://www.ready.gov/sites/default/files/2021-11/are-you-ready-guide.pdf",
+          "source_use_scope": "'At least 72 hours'; water of 3, 7 or 14 days depending on location; cash in small bills; N95 masks; the maintenance steps; bottled water for the kit; learning to shut off utilities before an emergency. Its 2020 'discard refrigerated medication after a day' line, shown as older than the 2023 FEMA sheet."
+        },
+        {
+          "source_id": "start-fema-power-sheet",
+          "source_record_origin": "start",
+          "shared_url": "https://www.ready.gov/sites/default/files/2024-03/ready.gov_power-outage_hazard-info-sheet.pdf",
+          "source_use_scope": "FEMA's December 2023 power-outage fact sheet: replace refrigerated medicines after a day or more unless the label says otherwise, call the doctor or pharmacist, use only until a new supply; 4-hour food rule; 20 feet from building openings; no grill, dryer or stove for heat."
+        }
+      ],
+      "problems": []
+    },
+    {
+      "slug": "water-math",
+      "origin": "base",
+      "metadata_blob_sha": "4b1c3cd7166afa03e56991f7de8af771828a6e54",
+      "publish": "draft",
+      "safety_state": "pending",
+      "total_declared_source_uses": 5,
+      "shared_source_bindings": [],
+      "problems": []
+    },
+    {
+      "slug": "two-week-water-storage",
+      "origin": "base",
+      "metadata_blob_sha": "76f317f047ed95c8b6c7ab130f44d79232e7a463",
+      "publish": "draft",
+      "safety_state": "pending",
+      "total_declared_source_uses": 3,
+      "shared_source_bindings": [],
+      "problems": []
+    },
+    {
+      "slug": "water-advisories-explained",
+      "origin": "base",
+      "metadata_blob_sha": "4c88e747b46d9e95264ec3367911a5175baa6c31",
+      "publish": "draft",
+      "safety_state": "pending",
+      "total_declared_source_uses": 4,
+      "shared_source_bindings": [],
+      "problems": []
+    },
+    {
+      "slug": "making-water-safer",
+      "origin": "base",
+      "metadata_blob_sha": "827d861eb3beebfd010ee98fcca764b23a2de90e",
+      "publish": "draft",
+      "safety_state": "approved",
+      "total_declared_source_uses": 8,
+      "shared_source_bindings": [],
+      "problems": []
+    },
+    {
+      "slug": "homemade-water-filters",
+      "origin": "base",
+      "metadata_blob_sha": "91c730bd1c7a61fa3140a86245c9bc0c88160c29",
+      "publish": "draft",
+      "safety_state": "pending",
+      "total_declared_source_uses": 6,
+      "shared_source_bindings": [],
+      "problems": []
+    },
+    {
+      "slug": "pantry-rotation",
+      "origin": "food",
+      "metadata_blob_sha": "dfafbb77e076d6cab5aec8217f98d7fd20dbff1c",
+      "publish": "draft",
+      "safety_state": "pending",
+      "total_declared_source_uses": 9,
+      "shared_source_bindings": [
+        {
+          "source_id": "fsis-emergency-foods",
+          "source_record_origin": "food",
+          "shared_url": "https://ask.fsis.usda.gov/article/What-foods-should-I-keep-in-my-house-for-emergencies",
+          "source_use_scope": "Example foods to keep; 3-day bottled water; small cans; infant formula, pet food and special-diet foods; manual can opener; use and refresh the supply."
+        },
+        {
+          "source_id": "food-cdc-home-canned",
+          "source_record_origin": "food",
+          "shared_url": "https://www.cdc.gov/botulism/prevention/home-canned-foods.html",
+          "source_use_scope": "Home-canned storage: a year's worth, not above 95 F, 50 to 70 F for quality; boil-before-eating advice that agrees with FSIS's text."
+        },
+        {
+          "source_id": "food-ready-food",
+          "source_record_origin": "food",
+          "shared_url": "https://www.ready.gov/food",
+          "source_use_scope": "Several-day supply of non-perishable food; choose foods your family will eat; example items; swollen, dented or corroded cans."
+        }
+      ],
+      "problems": []
+    },
+    {
+      "slug": "food-safety-power-outage",
+      "origin": "food",
+      "metadata_blob_sha": "3283071134ba24490d47f5a0635836b6ed4f8965",
+      "publish": "draft",
+      "safety_state": "pending",
+      "total_declared_source_uses": 9,
+      "shared_source_bindings": [
+        {
+          "source_id": "fsis-power-failure",
+          "source_record_origin": "food",
+          "shared_url": "https://ask.fsis.usda.gov/article/How-do-you-keep-food-safe-during-a-power-failure",
+          "source_use_scope": "Refrigerator about 4 hours unopened; full freezer about 48 hours, half full 24; freezer compartment of a refrigerator may not hold as long; group freezer packages."
+        },
+        {
+          "source_id": "food-fsis-emergencies",
+          "source_record_origin": "food",
+          "shared_url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/emergencies/keep-your-food-safe-during-emergencies",
+          "source_use_scope": "Planning steps; 4-hour refrigerator and 48/24-hour freezer figures; dry ice example; snow warning; foods to discard and foods that are safe; flood and fire steps; the FSIS bleach amounts; USDA Meat and Poultry Hotline."
+        },
+        {
+          "source_id": "food-ready-food",
+          "source_record_origin": "food",
+          "shared_url": "https://www.ready.gov/food",
+          "source_use_scope": "Refrigerator four hours; discard perishables above 40 F for two hours; dry ice example and gloves; ready-to-feed formula; Ready.gov bleach ratio."
+        },
+        {
+          "source_id": "food-fema-outage-sheet",
+          "source_record_origin": "food",
+          "shared_url": "https://www.ready.gov/sites/default/files/2024-03/ready.gov_power-outage_hazard-info-sheet.pdf",
+          "source_use_scope": "December 2023 FEMA fact sheet: 4 hours above 40 F; medication wording (plan with your doctor, replace if out a day or more unless the label says otherwise, call doctor or pharmacist); generators outdoors 20 feet from openings."
+        }
+      ],
+      "problems": []
+    },
+    {
+      "slug": "pressure-canning-low-acid",
+      "origin": "food",
+      "metadata_blob_sha": "4ab01d4aa566b8970351d8d8d43f7f85e8a04341",
+      "publish": "draft",
+      "safety_state": "pending",
+      "total_declared_source_uses": 17,
+      "shared_source_bindings": [
+        {
+          "source_id": "nchfp-home",
+          "source_record_origin": "food",
+          "shared_url": "https://nchfp.uga.edu/",
+          "source_use_scope": "What the National Center for Home Food Preservation is and says it provides."
+        },
+        {
+          "source_id": "nchfp-pressure-ground-meat",
+          "source_record_origin": "food",
+          "shared_url": "https://nchfp.uga.edu/how/can/preparing-and-canning-poultry-red-meats-and-seafoods/meat-ground-or-chopped/",
+          "source_use_scope": "The example of a tested process: preparation, separate tables by jar size, gauge type and elevation band (not reprinted)."
+        },
+        {
+          "source_id": "food-cdc-home-canned",
+          "source_record_origin": "food",
+          "shared_url": "https://www.cdc.gov/botulism/prevention/home-canned-foods.html",
+          "source_use_scope": "Pressure canning is the only recommended method for low-acid foods; no boiling water canner or electric multi-cooker; use USDA recipes only; canner and gauge advice; storage; boil-before-eating rule; signs of contamination; if in doubt throw it out."
+        },
+        {
+          "source_id": "food-fsis-emergencies",
+          "source_record_origin": "food",
+          "shared_url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/emergencies/keep-your-food-safe-during-emergencies",
+          "source_use_scope": "Discard home-canned food that touched floodwater."
+        }
+      ],
+      "problems": []
+    },
+    {
+      "slug": "safe-jerky-dehydration",
+      "origin": "food",
+      "metadata_blob_sha": "50b365e8109c14bdb9ce1a9365db88215a678ec5",
+      "publish": "draft",
+      "safety_state": "pending",
+      "total_declared_source_uses": 11,
+      "shared_source_bindings": [
+        {
+          "source_id": "nchfp-jerky",
+          "source_record_origin": "food",
+          "shared_url": "https://nchfp.uga.edu/how/dry/recipes/jerky",
+          "source_use_scope": "Raw poultry; Trichinella freezing; handling; wild game; two heating routes to 160 F; slices no thicker than 1/4 inch; dry at 140 F; ground meat; packaging; 2 weeks at room temperature."
+        },
+        {
+          "source_id": "food-fsis-emergencies",
+          "source_record_origin": "food",
+          "shared_url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/emergencies/keep-your-food-safe-during-emergencies",
+          "source_use_scope": "USDA Meat and Poultry Hotline number and hours."
+        },
+        {
+          "source_id": "food-fsis-jerky",
+          "source_record_origin": "food",
+          "shared_url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/meat-fish/jerky",
+          "source_use_scope": "Why dehydrators do not kill pathogens; Salmonella and E. coli O157:H7; 160 F / 165 F then 130 to 140 F; the physics of heat resistance; sun drying; the two studies as FSIS summarizes them; wild game; storage times."
+        }
+      ],
+      "problems": []
+    },
+    {
+      "slug": "outage-heat-cold-generators",
+      "origin": "shelter",
+      "metadata_blob_sha": "be37b602d0b82593d438083dfc8a1e5ef595dd44",
+      "publish": "draft",
+      "safety_state": "pending",
+      "total_declared_source_uses": 19,
+      "shared_source_bindings": [
+        {
+          "source_id": "fsis-power-failure",
+          "source_record_origin": "shelter",
+          "shared_url": "https://ask.fsis.usda.gov/article/How-do-you-keep-food-safe-during-a-power-failure",
+          "source_use_scope": "Refrigerator about 4 hours unopened; full freezer about 48 hours (24 if half full)."
+        },
+        {
+          "source_id": "shelter-cdc-co-basics",
+          "source_record_origin": "shelter",
+          "shared_url": "https://www.cdc.gov/carbon-monoxide/about/index.html",
+          "source_use_scope": "What CO is and who is most at risk; non-fire death and emergency-visit figures; alarm placement and upkeep; annual servicing of heating and chimneys; charcoal and camp-stove warnings; generator and vehicle rules."
+        },
+        {
+          "source_id": "cdc-co-generators",
+          "source_record_origin": "shelter",
+          "shared_url": "https://www.cdc.gov/natural-disasters/psa-toolkit/avoiding-carbon-monoxide-poisoning.html",
+          "source_use_scope": "Never use generators, grills or other fuel-burning devices inside the home, garage or carport or near doors, windows or vents; CO figure ('more than 500 Americans each year'); stay elsewhere if the home is damaged."
+        },
+        {
+          "source_id": "shelter-cdc-power-outage",
+          "source_record_origin": "shelter",
+          "shared_url": "https://www.cdc.gov/natural-disasters/response/what-to-do-protect-yourself-during-a-power-outage.html",
+          "source_use_scope": "Generator, pressure washer and engine rules (20 ft, long extension cord, never in basement or garage even with doors open unless professionally installed and vented); never charcoal grills, camp stoves or lanterns indoors; no gas range or oven for heat; CO symptoms, 911 and Poison Control; heat stroke and air-conditioning options; hypothermia; backup heat sources; flashlights over candles; do not siphon gasoline; food and refrigerated-medication guidance."
+        },
+        {
+          "source_id": "shelter-ready-evacuation",
+          "source_record_origin": "shelter",
+          "shared_url": "https://www.ready.gov/evacuation",
+          "source_use_scope": "Never connect a generator to the home's electrical system; generators outside during evacuation and return."
+        },
+        {
+          "source_id": "shelter-ready-disabilities",
+          "source_record_origin": "shelter",
+          "shared_url": "https://www.ready.gov/people-disabilities",
+          "source_use_scope": "Priority power restoration; medical-equipment backups; extreme-heat risks for people with disabilities; support networks."
+        },
+        {
+          "source_id": "shelter-ready-power-outages",
+          "source_record_origin": "shelter",
+          "shared_url": "https://www.ready.gov/power-outages",
+          "source_use_scope": "Generator and fuel at least 20 ft from windows, doors and attached garages; CO detectors on every level; keep dry; heavy-duty cords; cool before refueling; no gas oven for heat; medical-device and medicine planning; community location with power; food timings."
+        },
+        {
+          "source_id": "shelter-fema-power-outage-sheet",
+          "source_record_origin": "shelter",
+          "shared_url": "https://www.ready.gov/sites/default/files/2024-03/ready.gov_power-outage_hazard-info-sheet.pdf",
+          "source_use_scope": "FEMA December 2023 sheet: 20 ft from any building openings; no gas stovetop, oven, grill or dryer for heat; vehicle never running in a garage; CO alarms on every level and near sleeping areas; medication wording (replace, call doctor or pharmacist, use only until new supply)."
+        },
+        {
+          "source_id": "shelter-nws-winter-during",
+          "source_record_origin": "shelter",
+          "shared_url": "https://www.weather.gov/safety/winter-during",
+          "source_use_scope": "Stuck-car instruction: stay in the vehicle, run the motor about 10 minutes an hour, open the window a little, clear the exhaust pipe."
+        }
+      ],
+      "problems": []
+    }
+  ]
+}
