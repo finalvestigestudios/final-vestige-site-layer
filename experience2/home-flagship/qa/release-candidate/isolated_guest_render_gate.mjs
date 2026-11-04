@@ -133,7 +133,8 @@ $deleted=wp_delete_post($id,true);
 clean_post_cache($id);
 if (!$deleted||get_post($id)!==null)
  ex2_guest_cleanup_reply(array('error'=>'Guest copy deletion was not verified'));
-@unlink($copy_path);
+if (!@unlink($copy_path)||is_file($copy_path))
+ ex2_guest_cleanup_reply(array('error'=>'Guest page removed but private tracker cleanup failed'));
 ex2_guest_cleanup_reply(array('deleted'=>true,'verified_absent'=>true,'id'=>$id,'release'=>'HOLD'));`;
 }
 export function validateGuestReceipt(receipt,draftId,serverUrl) {
