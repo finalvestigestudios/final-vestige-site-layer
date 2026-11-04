@@ -1,0 +1,202 @@
+{
+  "schema": "fv-r126-author-source-binding-part-v1",
+  "partition": "C",
+  "state": "DRAFT_UNREVIEWED_HOLD",
+  "candidate_git_commit": "ddb3528ba6494dada1fa1c3a142ce746e3a67706",
+  "crosswalk_git_commit": "6ca388edbed803e64663e8f0ecfa55bda0fe08c3",
+  "crosswalk_git_blob": "c8c57c80963580645983402ad2cbed775827586e",
+  "taxonomy_git_blob": "15c547bb3018ac182b12a51036389cfa39a59168",
+  "crosswalk_group_count": 32,
+  "disclaimer": "Article metadata source_use declarations only, not claim verification, citation counts, medical safety or authority to publish.",
+  "articles": [
+    {
+      "slug": "pemmican-and-dried-meats",
+      "origin": "hist-food",
+      "metadata_blob_sha": "03d3824e07fe51931671d0ddc7aa8c85eda58435",
+      "publish": "draft",
+      "safety_state": "pending",
+      "total_declared_source_uses": 11,
+      "shared_source_bindings": [
+        {
+          "source_id": "hist-food-fsis-jerky",
+          "source_record_origin": "hist-food",
+          "shared_url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/meat-fish/jerky",
+          "source_use_scope": "USDA heat step before dehydrating; reasons; wild game; home-dried jerky stored 1 to 2 months."
+        },
+        {
+          "source_id": "loc-prairie-traveler",
+          "source_record_origin": "hist-food",
+          "shared_url": "https://www.loc.gov/resource/gdcmassbookdig.prairietravelerh01marc/?st=list",
+          "source_use_scope": "Library of Congress digitization of Marcy's handbook."
+        }
+      ],
+      "problems": []
+    },
+    {
+      "slug": "smokehouses-salting-curing",
+      "origin": "hist-food",
+      "metadata_blob_sha": "16223945e83f95b349acf09a2b684c09326550c0",
+      "publish": "draft",
+      "safety_state": "pending",
+      "total_declared_source_uses": 11,
+      "shared_source_bindings": [
+        {
+          "source_id": "nchfp-historical-origins",
+          "source_record_origin": "hist-food",
+          "shared_url": "https://nchfp.uga.edu/resources/entry/historical-origins-of-food-preservation",
+          "source_use_scope": "Curing as dehydration; nitrites and red colour in the 1800s; nitrite and C. botulinum recognized in the 1920s."
+        }
+      ],
+      "problems": []
+    },
+    {
+      "slug": "root-cellars-cool-storage",
+      "origin": "hist-home",
+      "metadata_blob_sha": "c3b7425711c3953c2d6cac9eb2aabe21a6717285",
+      "publish": "draft",
+      "safety_state": "not-required",
+      "total_declared_source_uses": 8,
+      "shared_source_bindings": [],
+      "problems": []
+    },
+    {
+      "slug": "pickling-fermentation-old-recipes",
+      "origin": "hist-home",
+      "metadata_blob_sha": "da97f42fcabbd05dc513d26c6af289bbeb8816f3",
+      "publish": "draft",
+      "safety_state": "pending",
+      "total_declared_source_uses": 10,
+      "shared_source_bindings": [
+        {
+          "source_id": "nchfp-home",
+          "source_record_origin": "hist-home",
+          "shared_url": "https://nchfp.uga.edu/",
+          "source_use_scope": "Where tested home-preservation methods are published; program purpose and book reference."
+        },
+        {
+          "source_id": "hist-home-cdc-botulism-home-canned",
+          "source_record_origin": "hist-home",
+          "shared_url": "https://www.cdc.gov/botulism/prevention/home-canned-foods.html",
+          "source_use_scope": "Signs to discard a home-canned container; never taste; boil-before-eating list (times not reproduced)."
+        }
+      ],
+      "problems": []
+    },
+    {
+      "slug": "rain-barrels-and-cisterns",
+      "origin": "hist-home",
+      "metadata_blob_sha": "dc42694e842969624f24ab5edc9bff2497693e70",
+      "publish": "draft",
+      "safety_state": "pending",
+      "total_declared_source_uses": 7,
+      "shared_source_bindings": [],
+      "problems": []
+    },
+    {
+      "slug": "water-purification-through-history",
+      "origin": "hist-home",
+      "metadata_blob_sha": "1d9b77aa4a4cdbf4f9a02fe6d1cf5d2691cc798e",
+      "publish": "draft",
+      "safety_state": "pending",
+      "total_declared_source_uses": 14,
+      "shared_source_bindings": [],
+      "problems": []
+    },
+    {
+      "slug": "fire-making-across-time",
+      "origin": "hist-field",
+      "metadata_blob_sha": "ca9e2c84d825b5cd9e182dc9a4a381c8a6905884",
+      "publish": "draft",
+      "safety_state": "pending",
+      "total_declared_source_uses": 11,
+      "shared_source_bindings": [
+        {
+          "source_id": "hist-field-cdc-co-basics",
+          "source_record_origin": "hist-field",
+          "shared_url": "https://www.cdc.gov/carbon-monoxide/about/index.html",
+          "source_use_scope": "Carbon monoxide: what it is, symptoms, never burn charcoal or use camp stoves indoors, CO detectors."
+        },
+        {
+          "source_id": "hist-field-nws-winter-during",
+          "source_record_origin": "hist-field",
+          "shared_url": "https://www.weather.gov/safety/winter-during",
+          "source_use_scope": "Source for the stuck-vehicle and no-shelter fire statements, deliberately not reproduced."
+        }
+      ],
+      "problems": []
+    },
+    {
+      "slug": "navigation-before-gps",
+      "origin": "hist-field",
+      "metadata_blob_sha": "40c83419760bc7bd0c4c574304e65b773b4a8423",
+      "publish": "draft",
+      "safety_state": "not-required",
+      "total_declared_source_uses": 10,
+      "shared_source_bindings": [
+        {
+          "source_id": "loc-prairie-traveler",
+          "source_record_origin": "hist-field",
+          "shared_url": "https://www.loc.gov/resource/gdcmassbookdig.prairietravelerh01marc/?st=list",
+          "source_use_scope": "Library of Congress digitized handbook; title page, preface and contents only."
+        }
+      ],
+      "problems": []
+    },
+    {
+      "slug": "sanitation-before-germ-theory",
+      "origin": "hist-home",
+      "metadata_blob_sha": "3294cd9fcf59496c9ece9342e67b0d57d2ed5523",
+      "publish": "draft",
+      "safety_state": "not-required",
+      "total_declared_source_uses": 10,
+      "shared_source_bindings": [],
+      "problems": []
+    },
+    {
+      "slug": "pioneer-supply-chains-failed",
+      "origin": "hist-field",
+      "metadata_blob_sha": "4d2dc4958736e3c5257c65dda8ed016a473ac6be",
+      "publish": "draft",
+      "safety_state": "not-required",
+      "total_declared_source_uses": 11,
+      "shared_source_bindings": [
+        {
+          "source_id": "loc-pioneer-diaries",
+          "source_record_origin": "hist-field",
+          "shared_url": "https://www.loc.gov/item/2002564479/",
+          "source_use_scope": "Library of Congress catalogue record for 49 emigrant diaries and seven guides; pointer only."
+        },
+        {
+          "source_id": "loc-prairie-traveler",
+          "source_record_origin": "hist-field",
+          "shared_url": "https://www.loc.gov/resource/gdcmassbookdig.prairietravelerh01marc/?st=list",
+          "source_use_scope": "Library of Congress Army handbook; title page, preface and contents only."
+        },
+        {
+          "source_id": "hist-field-nws-winter-during",
+          "source_record_origin": "hist-field",
+          "shared_url": "https://www.weather.gov/safety/winter-during",
+          "source_use_scope": "Stay with a stuck vehicle; leaving means becoming disoriented."
+        }
+      ],
+      "problems": []
+    },
+    {
+      "slug": "history-of-food-preservation",
+      "origin": "hist-food",
+      "metadata_blob_sha": "907237e436b44a34f8d673ef9de3168d1e9ad517",
+      "publish": "draft",
+      "safety_state": "pending",
+      "total_declared_source_uses": 12,
+      "shared_source_bindings": [
+        {
+          "source_id": "nchfp-historical-origins",
+          "source_record_origin": "hist-food",
+          "shared_url": "https://nchfp.uga.edu/resources/entry/historical-origins-of-food-preservation",
+          "source_use_scope": "Overview of drying, freezing, fermenting, pickling, curing, jam, canning; Appert, Durand, Pasteur, Chevalier-Appert; nitrites and C. botulinum in the 1920s."
+        }
+      ],
+      "problems": []
+    }
+  ]
+}
