@@ -38,6 +38,12 @@ _BIDI = frozenset(chr(n) for n in (
 ))
 
 
+def _identity(info) -> tuple[int, ...]:
+    """Exclude access time, which a harmless first read is allowed to change."""
+    return (info.st_dev, info.st_ino, info.st_mode, info.st_nlink,
+            info.st_size, info.st_mtime_ns, info.st_ctime_ns)
+
+
 class CatalogPreflightError(ValueError):
     """Draft requires independent review; never publish from this preflight."""
 
@@ -214,7 +220,7 @@ def main(argv: list[str] | None = None) -> int:
         if not stat.S_ISREG(info.st_mode) or info.st_nlink != 1 or info.st_size > MAX_CATALOG_BYTES:
             _reject()
         data = args.catalog.read_bytes()
-        if len(data) != info.st_size or args.catalog.lstat() != info:
+        if len(data) != info.st_size or _identity(args.catalog.lstat()) != _identity(info):
             _reject()
         result = verify_catalog(data)
     except (OSError, CatalogPreflightError):
