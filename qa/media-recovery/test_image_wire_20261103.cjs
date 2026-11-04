@@ -53,34 +53,49 @@ function runTests(){
  invalid('no inventory',x=>x.source_inventory_id='','source inventory');
  invalid('duplicate request',x=>x.pairs[0].before[0].requests.push(copy(x.pairs[0].before[0].requests[0])),'duplicate/missing request');
  const inventory=require('./wire_source_inventory_20261030.json');
+ const parts=require('./validate_inventory.cjs').loadSnapshot().parts;
+ const originals=new Map(parts.flatMap(p=>p.images.map(im=>[im.key,im.source_url])));
  d={schema_version:1,source_inventory_id:inventory.inventory_id,pairs:[]};
  for(const row of inventory.posts){
-   const p=pair(row.post_id,row.expected_slots,3);p.page_url=row.page_url;d.pairs.push(p);
+   const p=pair(row.post_id,row.expected_slots,3);p.page_url=row.page_url;
+   for(const phase of ['before','after'])for(const run of p[phase]){
+    const orig=run.requests[0],len=row.expected_slots.length,size=orig.encoded_data_length;
+    run.requests=row.expected_slots.map((s,i)=>{const u=originals.get(s);
+     return {...orig,request_id:'CDP-'+i,slot_keys:[s],request_url:u,final_url:u,
+      encoded_data_length:Math.floor(size/len)+(i<size%len?1:0),
+      dom_stored_sources:{[s]:u},dom_current_sources:{[s]:u}};
+    });
+   }
+   d.pairs.push(p);
  }
- result=evaluate(d,inventory);eq(result.status,'SITEWIDE_IMAGE_TRANSFER_MEASURED');
+ result=evaluate(d,inventory,parts);eq(result.status,'SITEWIDE_IMAGE_TRANSFER_MEASURED');
+ const unbound=evaluate(d,inventory);eq(unbound.status,'LIMITED_SAMPLE_MEASURED');eq(unbound.sitewide_76_percent_verified,false);passed++;
+ const swapped=copy(d);swapped.pairs[0].after[0].requests[0].dom_stored_sources[swapped.pairs[0].expected_slots[0]]='https://finalvestige.com/decoy.png';
+ const rejected=evaluate(swapped,inventory,parts);eq(rejected.sitewide_76_percent_verified,false);eq(rejected.status,'LIMITED_SAMPLE_MEASURED');
+ check(rejected.source_binding_reason_codes.some(x=>x.includes('frozen stored URL drift')),'source swap must block the sitewide claim');passed++;
  const mixed=copy(d);
  for(const phase of ['before','after'])for(const run of mixed.pairs[1][phase])run.conditions.viewport_width=1920;
- const mixedResult=evaluate(mixed,inventory);
+ const mixedResult=evaluate(mixed,inventory,parts);
  eq(mixedResult.status,'INSUFFICIENT_DATA');
  check(mixedResult.reason_codes.some(x=>x.includes('unequal cross-post browser conditions')),'cross-post mixed viewport not blocked');passed++;
  eq(result.observed_post_count,61);eq(result.observed_slot_count,355);
  eq(result.sitewide_76_percent_verified,true);eq(result.repetitions,3);passed++;
  d.pairs[0].after[0].requests[0].encoded_data_length=800;
- result=evaluate(d,inventory);eq(result.status,'SITEWIDE_IMAGE_TRANSFER_MEASURED');
+ result=evaluate(d,inventory,parts);eq(result.status,'SITEWIDE_IMAGE_TRANSFER_MEASURED');
  eq(result.sitewide_76_percent_verified,false);
  check(result.measured_reduction_percent<76,'one repeat below threshold must block 76 claim');passed++;
  // Median-run 76% is misleading when the heaviest run saves zero actual bytes.
  const skew=copy(d);skew.pairs[0].after[0].requests[0].encoded_data_length=240;
  for(const p of skew.pairs){
-  p.before[2].requests[0].encoded_data_length=100000;
-  p.after[2].requests[0].encoded_data_length=100000;
+  for(const req of p.before[2].requests)req.encoded_data_length=100000;
+  for(const req of p.after[2].requests)req.encoded_data_length=100000;
  }
- result=evaluate(skew,inventory);eq(result.status,'SITEWIDE_IMAGE_TRANSFER_MEASURED');
+ result=evaluate(skew,inventory,parts);eq(result.status,'SITEWIDE_IMAGE_TRANSFER_MEASURED');
  eq(result.median_repeat_reduction_percent,76);
  check(result.measured_reduction_percent<2,'pooled byte weighting must expose skew');
  eq(result.sitewide_76_percent_verified,false);passed++;
  const pooledCheck=copy(d);pooledCheck.pairs[0].after[0].requests[0].encoded_data_length=240;
- result=evaluate(pooledCheck,inventory);
+ result=evaluate(pooledCheck,inventory,parts);
  eq(result.measured_reduction_percent,76);
  eq(result.pooled_baseline_bytes,183000);eq(result.pooled_candidate_bytes,43920);passed++;
  const overflow=copy(pooledCheck);
@@ -88,14 +103,14 @@ function runTests(){
   for(const run of p.before)run.requests[0].encoded_data_length=100000000000000;
   for(const run of p.after)run.requests[0].encoded_data_length=24000000000000;
  }
- result=evaluate(overflow,inventory);eq(result.status,'INSUFFICIENT_DATA');
+ result=evaluate(overflow,inventory,parts);eq(result.status,'INSUFFICIENT_DATA');
  check(result.reason_codes.some(x=>x.includes('unsafe pooled transfer bytes')),'unsafe pooled integer should fail closed');passed++;
  d.pairs[0].before[1].conditions.viewport_width=1234;
- result=evaluate(d,inventory);eq(result.status,'INSUFFICIENT_DATA');passed++;
+ result=evaluate(d,inventory,parts);eq(result.status,'INSUFFICIENT_DATA');passed++;
  const frozen=copy(d);frozen.pairs[0].before[1].conditions.viewport_width=1280;
  result=evaluate(frozen);eq(result.status,'LIMITED_SAMPLE_MEASURED');eq(result.sitewide_76_percent_verified,false);passed++;
  const altered=copy(frozen);altered.pairs[0].page_url='https://finalvestige.com/another-article/';
- result=evaluate(altered,inventory);eq(result.status,'LIMITED_SAMPLE_MEASURED');passed++;
+ result=evaluate(altered,inventory,parts);eq(result.status,'LIMITED_SAMPLE_MEASURED');passed++;
  const altInventory=copy(inventory);altInventory.inventory_id='wrong-fingerprint';
  result=evaluate(frozen,altInventory);eq(result.status,'LIMITED_SAMPLE_MEASURED');passed++;
  return {passed,source:'synthetic mutations only',real_guest_http_tests:0,real_wire_bytes_measured:false};
