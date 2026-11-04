@@ -6,7 +6,7 @@ from pathlib import Path
 import tempfile
 import unittest
 
-TOOL = Path(__file__).with_name('r124_source_crosswalk_integrity.py')
+TOOL = Path(__file__).resolve().parents[1] / 'tools' / 'r124_source_crosswalk_integrity.py'
 SPEC = importlib.util.spec_from_file_location('r124_gate', TOOL)
 G = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(G)
