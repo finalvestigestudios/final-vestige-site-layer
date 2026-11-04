@@ -1,0 +1,400 @@
+{
+  "version": "2026-11-04-r120",
+  "status": "UNPUBLISHED_ALL_MONETIZATION_GATES_CLOSED",
+  "scope": "Mind & Perception Zen12; read-only source review",
+  "source_access": "Public seller and study abstract; no privileged merchant checkout or authenticated Payhip",
+  "sources": [
+    {
+      "id": "S1",
+      "kind": "peer_reviewed_systematic_review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+      "fact": "2023 review of 14 binaural EEG studies: five support, eight contradict, one mixed"
+    },
+    {
+      "id": "S2",
+      "kind": "peer_reviewed_meta_analysis",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30073406/",
+      "fact": "2019 meta-analysis of 22 studies; 35 outcome effect sizes; pooled g about 0.45 across mixed outcomes"
+    },
+    {
+      "id": "S3",
+      "kind": "peer_reviewed_experiment",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17488185/",
+      "fact": "2007 Slagter intensive meditation training and attentional blink, not proprietary audio"
+    },
+    {
+      "id": "S4",
+      "kind": "peer_reviewed_meta_analysis",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33582570/",
+      "fact": "2021 meta-analysis of 25 studies, n1439; small executive function effect; nonsignificant pooled attention, working and long-term memory"
+    },
+    {
+      "id": "S5",
+      "kind": "peer_reviewed_meta_analysis",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/32739799/",
+      "fact": "2020 synthesis 34 studies; small overall brief induction effect with domain-specific qualification"
+    },
+    {
+      "id": "S6",
+      "kind": "peer_reviewed_meta_analysis",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29939051/",
+      "fact": "2018 brief mindfulness meta-analysis n5489; negative affect effect attenuated after publication bias"
+    },
+    {
+      "id": "S7",
+      "kind": "seller_offer",
+      "url": "https://zen12.com/hnp",
+      "fact": "12 levels, 4 listening formats, 48 Premium MP3 files, seller advertisement $87.99 dated 2026-11-04"
+    },
+    {
+      "id": "S8",
+      "kind": "seller_alternate_offer",
+      "url": "https://zen12.com/secret/",
+      "fact": "different promotional conditional offer displayed $37 with coupon on retrieved official page"
+    },
+    {
+      "id": "S9",
+      "kind": "seller_terms",
+      "url": "https://inspire3.com/terms/",
+      "fact": "Zen12 seller 1-year refund representation; checkout total includes tax if applicable; card refund >90 days via PayPal; digital files may be personalized"
+    },
+    {
+      "id": "S10",
+      "kind": "seller_privacy",
+      "url": "https://inspire3.com/privacy/",
+      "fact": "seller may share affiliate-referred buyers names/emails/purchased products with affiliate"
+    },
+    {
+      "id": "S11",
+      "kind": "seller_affiliate_public",
+      "url": "https://affiliates.inspire3.com/",
+      "fact": "public sign-up and promotional commissions are not named Final Vestige acceptance"
+    },
+    {
+      "id": "S12",
+      "kind": "ftc",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "fact": "clear material relationship disclosure near endorsements"
+    },
+    {
+      "id": "S13",
+      "kind": "ftc",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "fact": "objective benefit claims require adequate substantiation"
+    },
+    {
+      "id": "S14",
+      "kind": "first_party_existing",
+      "url": "https://finalvestige.com/focus/",
+      "fact": "existing free 52-page Focus Fieldbook / Dispatch as documented in Issue 171 (public web tool inaccessible this run)"
+    },
+    {
+      "id": "S15",
+      "kind": "first_party_existing",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "fact": "existing historical source archive documented in Issue 171 (public web tool inaccessible this run)"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "binaural auditory percept can be heard with tones delivered separately to ears",
+      "decision": "SUPPORT_GENERAL",
+      "source_ids": [
+        "S1",
+        "S2"
+      ],
+      "scope": "not behavioral effect"
+    },
+    {
+      "id": "C02",
+      "claim": "binaural beats reliably entrain EEG rhythms",
+      "decision": "NOT_ESTABLISHED",
+      "source_ids": [
+        "S1"
+      ],
+      "detail": "14 study EEG review inconsistent; methodology heterogeneous"
+    },
+    {
+      "id": "C03",
+      "claim": "some binaural-beat intervention studies report behavioral/subjective improvements",
+      "decision": "QUALIFIED",
+      "source_ids": [
+        "S2"
+      ],
+      "detail": "2019 synthesis pooled heterogeneous cognition/anxiety/pain outcomes; not specific to Zen12"
+    },
+    {
+      "id": "C04",
+      "claim": "Zen12 produces these research outcomes",
+      "decision": "PROHIBIT_NO_PRODUCT_TRIAL",
+      "source_ids": [
+        "S1",
+        "S2",
+        "S7"
+      ]
+    },
+    {
+      "id": "C05",
+      "claim": "12 minutes of Zen12 equals 1 hour advanced meditation",
+      "decision": "PROHIBIT_UNSUBSTANTIATED",
+      "source_ids": [
+        "S3",
+        "S4",
+        "S5",
+        "S7"
+      ]
+    },
+    {
+      "id": "C06",
+      "claim": "meditation improves all cognitive domains",
+      "decision": "PROHIBIT_OVERGENERALIZED",
+      "source_ids": [
+        "S4",
+        "S5"
+      ]
+    },
+    {
+      "id": "C07",
+      "claim": "Slagter meditation training changed attentional blink",
+      "decision": "SUPPORTED_NARROW",
+      "source_ids": [
+        "S3"
+      ],
+      "detail": "intensive practice, not audio product"
+    },
+    {
+      "id": "C08",
+      "claim": "Premium includes 12 levels, 4 styles, 48 MP3s",
+      "decision": "SELLER_DESCRIPTION_ONLY",
+      "source_ids": [
+        "S7"
+      ],
+      "detail": "actual delivery not independently tested"
+    },
+    {
+      "id": "C09",
+      "claim": "Zen12 universally costs $87.99",
+      "decision": "PROHIBIT",
+      "source_ids": [
+        "S7",
+        "S8",
+        "S9"
+      ],
+      "detail": "official seller page-price discrepancy and checkout/taxes unverified"
+    },
+    {
+      "id": "C10",
+      "claim": "Zen12 guaranteed to refund all buyers",
+      "decision": "PROHIBIT",
+      "source_ids": [
+        "S9"
+      ],
+      "detail": "one-year policy a seller representation; process & results unverified"
+    },
+    {
+      "id": "C11",
+      "claim": "Inspire3 affiliate may receive customer PII",
+      "decision": "SUPPORTED_SELLER_POLICY",
+      "source_ids": [
+        "S10"
+      ]
+    },
+    {
+      "id": "C12",
+      "claim": "Final Vestige accepted Inspire3 affiliate",
+      "decision": "UNVERIFIED_BLOCKED",
+      "source_ids": [
+        "S11"
+      ],
+      "detail": "public join page is not specific acceptance"
+    },
+    {
+      "id": "C13",
+      "claim": "FV can legally republish seller logos, graphics, swipe",
+      "decision": "UNVERIFIED_BLOCKED",
+      "source_ids": [
+        "S9"
+      ],
+      "detail": "terms reserve rights; need explicit permission"
+    },
+    {
+      "id": "C14",
+      "claim": "Focus PDF is a paid purchase",
+      "decision": "PROHIBIT",
+      "source_ids": [
+        "S14"
+      ],
+      "detail": "free Jetpack/Dispatch resource"
+    },
+    {
+      "id": "C15",
+      "claim": "affiliate outbound click equals sale or commission",
+      "decision": "PROHIBIT",
+      "source_ids": [
+        "S12"
+      ],
+      "detail": "needs merchant reconciliation of paid transactions"
+    },
+    {
+      "id": "C16",
+      "claim": "optional video improves paid conversions",
+      "decision": "HYPOTHESIS_ONLY",
+      "source_ids": [
+        "S12"
+      ],
+      "detail": "A/B not run; no customer revenue evidence"
+    }
+  ],
+  "gates": [
+    {
+      "id": "G01",
+      "name": "named FV partner acceptance",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G02",
+      "name": "allowed channels & email permissions",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G03",
+      "name": "approved precise tracking link & destination",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G04",
+      "name": "licensed creatives and merchant re-use rights",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G05",
+      "name": "privacy-safe aggregate-only merchant reporting agreement",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G06",
+      "name": "actual buyer checkout price taxes and coupon validity",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G07",
+      "name": "refunds, chargebacks and settlement terms",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G08",
+      "name": "authenticated FV owned paid Mind Payhip SKU/rights",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G09",
+      "name": "merchant confirmed paid order/commission evidence",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G10",
+      "name": "qualified-human sessions and true asset ID",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G11",
+      "name": "live Jetpack confirmed subscriber attribution tested",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G12",
+      "name": "no duplicate analytics and consent review",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G13",
+      "name": "native browser WCAG/keyboard mobile performance QA",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G14",
+      "name": "original optional-film license, captions and playable QA",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G15",
+      "name": "founder production release & posting approval",
+      "status": "CLOSED"
+    }
+  ],
+  "conversion_contract": {
+    "primary_kpi": "realized_net_revenue_per_1000_qualified_human_sessions",
+    "cohort_days": [
+      7,
+      30
+    ],
+    "current_status": "NOT_COMPUTABLE",
+    "events": [
+      "qualified_landing",
+      "relevant_guide_click",
+      "confirmed_lead",
+      "affiliate_outbound_click",
+      "verified_merchant_order",
+      "verified_affiliate_commission",
+      "refund",
+      "fee"
+    ],
+    "trusted_paid_sources": [
+      "authenticated FV Payhip merchant transactions",
+      "authenticated approved Inspire3 affiliate settlement"
+    ],
+    "rejected_paid_proxies": [
+      "Jetpack pageview",
+      "Grok video view",
+      "CTA click",
+      "affiliate outbound click",
+      "email subscribe",
+      "unattributed checkout start"
+    ],
+    "no_pii": [
+      "email",
+      "name",
+      "ip_address",
+      "order_id",
+      "phone",
+      "raw_referrer_query",
+      "merchant_buyer_id"
+    ]
+  },
+  "creator_routes": [
+    {
+      "topic": "change_blindness",
+      "hook": "What changed while you were watching?",
+      "live_article": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "actual_asset_id": null,
+      "purchase_fit": "low",
+      "primary_next_step": "optional existing free Focus"
+    },
+    {
+      "topic": "mesmerism_puysegur",
+      "hook": "When does suggestion become evidence?",
+      "live_article": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "actual_asset_id": null,
+      "purchase_fit": "low",
+      "primary_next_step": "Puységur archive; optional free Focus"
+    },
+    {
+      "topic": "binaural_beat_buyer",
+      "hook": "A beat you hear is not proof your brain follows",
+      "live_article": null,
+      "article_status": "UNPUBLISHED R120",
+      "actual_asset_id": null,
+      "purchase_fit": "conditional higher intent",
+      "primary_next_step": "existing canonical R114 buyer guide only if approved"
+    }
+  ],
+  "limitations": [
+    "No actual product trial",
+    "No live WordPress writes",
+    "No native browser or performance proof",
+    "Official alternate promo cannot be generalized",
+    "No attributable real paid revenue",
+    "External finalvestige pages not fetchable through public web tool during this run; rely on previously authenticated issue records"
+  ]
+}
