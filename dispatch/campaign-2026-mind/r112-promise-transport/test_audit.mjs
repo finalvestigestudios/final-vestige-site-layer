@@ -37,7 +37,7 @@ test('live subscriber counts do NOT add to four',()=>{
  assert.equal(a.email_reachable,null);
 });
 test('new-post default remains off',()=>assert.equal(reviewSubscriberPromise(snap()).automatic_new_posts,false));
-test('checked opted-out non-sends are not delivery',()=>assert.equal(reviewSubscriberPromise(snap()).recent_delivery_observed,false));
+test('checked opted-out non-sends are not delivery',()=>assert.equal(reviewSubscriberPromise(snap()).recent_send_recorded,false));
 test('truth-in-promise manual-send review flagged',()=>assert.ok(reviewSubscriberPromise(snap()).blockers.includes('publisher_promise_needs_manual_send_expectation_review')));
 test('dispatch commercial disclosure gap detected',()=>assert.equal(reviewSubscriberPromise(snap()).consent_parity,'dispatch_copy_not_equivalent'));
 test('configuring PDF in welcome is not receiving PDF',()=>assert.equal(reviewSubscriberPromise(snap()).welcome_delivered,null));
@@ -49,7 +49,7 @@ test('invalid date rejected',()=>{const a=snap();a.status.as_of='yesterday';asse
 test('negative count rejected',()=>{const a=snap();a.status.subscribers.total=-1;assert.equal(reviewSubscriberPromise(a).state,'INVALID_EVIDENCE');});
 test('confirmed greater than total rejected',()=>{const a=snap();a.status.subscribers.confirmed=5;assert.equal(reviewSubscriberPromise(a).state,'INVALID_EVIDENCE');});
 test('word-heavy content cannot be injected',()=>{const a=snap();a.pages.dispatch='x'.repeat(10001);assert.equal(reviewSubscriberPromise(a).state,'INVALID_EVIDENCE');});
-test('unexpected auto-send toggle triggers manual review',()=>{const a=snap();a.settings.email_new_posts_by_default=true;assert.ok(reviewSubscriberPromise(a).blockers.includes('automatic_new_post_default_not_proven_off'));});
+test('unexpected auto-send toggle triggers manual review',()=>{const a=snap();a.settings.email_new_posts_by_default=true;assert.ok(reviewSubscriberPromise(a).blockers.includes('automatic_new_post_default_not_proven_off'));assert.equal(reviewSubscriberPromise(a).automatic_new_posts,true);});
 test('transport full-mode drift triggers re-review',()=>{const a=snap();a.settings.email_content_format='full';assert.ok(reviewSubscriberPromise(a).blockers.includes('native_transport_contract_changed_review_again'));});
 test('proof of welcome can change only welcome field, never enable send',()=>{
  const a=snap();a.received={origin:'independent_authorized_mime_review',kind:'fieldbook_welcome',result:'received_with_pdf_link_and_download_verified'};
