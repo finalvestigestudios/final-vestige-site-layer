@@ -1,0 +1,83 @@
+{
+  "schema_version": "1.0",
+  "state": "HOLD_UNSENT",
+  "role": "issue02_editorial_optional",
+  "master_pr": 175,
+  "master_sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "stacked_parent_pr": 858,
+  "issue": 174,
+  "coordination_issue": 171,
+  "subject_candidate": "The failed cure that belongs in the file",
+  "preheader_candidate": "What the 1784–85 books preserve—and what Franklin's commission did not test.",
+  "custom_excerpt_candidate": "A failed cure. A signed account. An observer who believed something extraordinary was happening. In Puységur's papers, the useful question is not whether a story sounds convincing, but what its surviving record can actually support.",
+  "cta": {
+    "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "status": "PUBLISHED_FIRST_PARTY",
+    "is_affiliate": false
+  },
+  "sources": [
+    {
+      "name": "Bibliothèque nationale de France, catalog of Puységur's two-volume Mémoires (1784–1785)",
+      "url": "https://catalogue.bnf.fr/ark:/12148/cb31160297p",
+      "use": "Original publication dates and two-volume 232/256-page bibliography; not outcome validation"
+    },
+    {
+      "name": "Wellcome Collection, 1785 translation of the royal commissioners' animal-magnetism report",
+      "url": "https://wellcomecollection.org/works/enhgscmf",
+      "use": "Institutional holding of 1785 English translation of separate 1784 investigation involving Deslon"
+    },
+    {
+      "name": "The James Lind Library, Bailly and the 1784 royal commission",
+      "url": "https://www.jameslindlibrary.org/commission-royale-bailly-a-1784/",
+      "use": "Context for controlled observations and the commission's distinct target"
+    },
+    {
+      "name": "Crabtree (2019), Puységur and the psychological turn, Journal of the History of the Behavioral Sciences",
+      "url": "https://doi.org/10.1002/jhbs.21974",
+      "use": "Interpretive scholarship, not primary evidence of paranormal efficacy"
+    },
+    {
+      "name": "Final Vestige, Puységur's Animal Magnetism Files",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "use": "First-party case/source ledger, objections, failed claims, provenance and ethics; sole CTA"
+    }
+  ],
+  "distinctions": [
+    {
+      "id": "puysegur_volumes",
+      "status": "BIBLIOGRAPHIC_VERIFIED",
+      "claim": "BnF lists Puységur 1784–1785 in two volumes, 232 and 256 pages"
+    },
+    {
+      "id": "commission_subject",
+      "status": "SUPPORTED_SEPARATE_SOURCE",
+      "claim": "Royal investigators examined Charles Deslon's Mesmer-related practice; not a study of all Puységur cases"
+    },
+    {
+      "id": "failed_outcomes",
+      "status": "ATTRIBUTED_TO_FIRST_PARTY_LEDGER",
+      "claim": "Madeleine failed cure, Louis de Rieux failed prediction and patient autonomy episodes retained in FV source ledger"
+    },
+    {
+      "id": "causal_credibility",
+      "status": "NOT ESTABLISHED",
+      "claim": "Extraordinary cures, clairvoyance and magnetic fluid not treated as independently established"
+    }
+  ],
+  "hold": {
+    "founder_final_approval": false,
+    "postal_verified": false,
+    "unsubscribe_rendered_verified": false,
+    "received_mime_verified": false,
+    "eligible_recipients_verified": false,
+    "wp_writes": false,
+    "emails_sent": false,
+    "affiliate_email_permission_verified": false
+  },
+  "delivery": {
+    "native_jetpack_preheader_field_verified": false,
+    "excerpt_mode_on": true,
+    "html_preview_is_received_email": false
+  },
+  "notes": "Review artifact only. Full article excerpts cannot be assumed to appear in Jetpack's actual excerpt-format messages."
+}
