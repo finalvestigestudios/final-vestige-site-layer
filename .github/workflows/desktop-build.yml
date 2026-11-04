@@ -84,6 +84,10 @@ jobs:
         run: |
           python products/desktop/scripts/safe_unittest_r175.py
           python -OO products/desktop/scripts/safe_unittest_r175.py
+      - name: R176 reject forged shared monetary and quantity primitives (normal and -OO)
+        run: |
+          python products/desktop/scripts/safe_unittest_r176.py
+          python -OO products/desktop/scripts/safe_unittest_r176.py
       - name: Install pinned local evidence crypto dependency
         run: python -m pip install "cryptography==46.0.4"
       - name: Verify R100 privacy-safe source-method regressions (normal and -OO)
@@ -448,6 +452,14 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R175 normal LedgerDiff custody tests failed" }
           python -OO products/desktop/scripts/safe_unittest_r175.py
           if ($LASTEXITCODE -ne 0) { throw "R175 optimized LedgerDiff custody tests failed" }
+      - name: R176 shared numeric primitive custody (normal and -OO)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python products/desktop/scripts/safe_unittest_r176.py
+          if ($LASTEXITCODE -ne 0) { throw "R176 normal financial primitive tests failed" }
+          python -OO products/desktop/scripts/safe_unittest_r176.py
+          if ($LASTEXITCODE -ne 0) { throw "R176 optimized financial primitive tests failed" }
       - name: Install pinned local evidence crypto dependency
         run: python -m pip install "cryptography==46.0.4"
       - name: R100 Windows source-stage diagnostic (read-only, NOT a release gate)
