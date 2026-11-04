@@ -23,10 +23,12 @@ function fv_ex2_editor_loopback_host($value) {
     return in_array(strtolower((string)$parsed), array('127.0.0.1','localhost','::1'), true);
 }
 
-$marker = __DIR__ . '/wp-content/fv-ex2-synthetic-only.marker';
-$token_file = __DIR__ . '/wp-content/fv-ex2-editor-token';
-$candidate_path = __DIR__ . '/wp-content/fv-ex2-synthetic-candidate.html';
-$id_file = __DIR__ . '/wp-content/fv-ex2-editor-draft-id';
+// Playground VFS /tmp is outside the HTTP-served /wordpress tree.
+// Never expose the disposable authentication token or unreleased candidate as web assets.
+$marker = '/tmp/fv-ex2-synthetic-only.marker';
+$token_file = '/tmp/fv-ex2-editor-token';
+$candidate_path = '/tmp/fv-ex2-synthetic-candidate.html';
+$id_file = '/tmp/fv-ex2-editor-draft-id';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') fv_ex2_editor_refuse('POST required');
 if (!fv_ex2_editor_loopback_host((string)($_SERVER['HTTP_HOST'] ?? ''))
@@ -111,10 +113,12 @@ if ($action === 'verify' || $action === 'cleanup') {
     $post = get_post($id);
     $owner = get_post_meta($id, '_fv_ex2_editor_qa_owner', true);
     $proof = hash_hmac('sha256', (string)$id, $expected_token);
-    if (!$post || $post->post_type !== 'page' || $post->post_status !== 'draft'
+    if (!$post || $post->post_type !== 'page'
         || !is_string($owner) || !hash_equals($proof, $owner)) {
-        fv_ex2_editor_refuse('Refusing an unowned or non-draft WordPress page');
+        fv_ex2_editor_refuse('Refusing an unowned disposable WordPress page');
     }
+    // Delete only an HMAC-owned fixture even if Gutenberg accidentally
+    // changed its status. Verification still fails on any non-draft status.
     if ($action === 'cleanup') {
         $deleted = wp_delete_post($id, true);
         clean_post_cache($id);
@@ -123,6 +127,7 @@ if ($action === 'verify' || $action === 'cleanup') {
         @unlink($id_file);
         fv_ex2_editor_reply(200, array('result'=>'DELETED','verified_absent'=>true,'release'=>'HOLD'));
     }
+    if ($post->post_status !== 'draft') fv_ex2_editor_refuse('Disposable page no longer a draft');
     if (!is_file($candidate_path)) fv_ex2_editor_refuse('Candidate disappeared before verification');
     $source = file_get_contents($candidate_path);
     clean_post_cache($id);
