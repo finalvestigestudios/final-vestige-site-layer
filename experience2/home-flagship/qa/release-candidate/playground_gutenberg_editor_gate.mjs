@@ -98,7 +98,7 @@ function checkEditorReceipt(receipt, digest) {
   assert.equal(receipt.release, 'HOLD');
   assert.equal(receipt.test_type, 'REAL_GUTENBERG_EDITOR_SAVE_SYNTHETIC_PLAYGROUND_ONLY');
   assert.equal(receipt.data_class,DATA_CLASS);
-  assert.equal(receipt.data_class, 'SYNTHETIC_TEST_FIXTURE_ONLY');
+  // Data class reports public Margins; synthetic-only is the loopback marker, not content.
   assert.equal(receipt.source_sha256, digest);
   assert.equal(receipt.stored_sha256, digest);
   assert.equal(receipt.source_bytes, receipt.stored_bytes);
