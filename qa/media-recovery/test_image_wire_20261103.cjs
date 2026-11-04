@@ -69,10 +69,10 @@ function runTests(){
    d.pairs.push(p);
  }
  result=evaluate(d,inventory,parts);eq(result.status,'SITEWIDE_IMAGE_TRANSFER_MEASURED');
- const unbound=evaluate(d,inventory);eq(unbound.status,'LIMITED_SAMPLE_MEASURED');eq(unbound.sitewide_76_percent_verified,false);passed++;
+ const unbound=evaluate(d,inventory);eq(unbound.status,'INSUFFICIENT_DATA');eq(unbound.sitewide_76_percent_verified,false);passed++;
  const swapped=copy(d);swapped.pairs[0].after[0].requests[0].dom_stored_sources[swapped.pairs[0].expected_slots[0]]='https://finalvestige.com/decoy.png';
- const rejected=evaluate(swapped,inventory,parts);eq(rejected.sitewide_76_percent_verified,false);eq(rejected.status,'LIMITED_SAMPLE_MEASURED');
- check(rejected.source_binding_reason_codes.some(x=>x.includes('frozen stored URL drift')),'source swap must block the sitewide claim');passed++;
+ const rejected=evaluate(swapped,inventory,parts);eq(rejected.sitewide_76_percent_verified,false);eq(rejected.status,'INSUFFICIENT_DATA');
+ check(rejected.reason_codes.some(x=>x.includes('frozen stored URL drift')),'source swap must block the sitewide claim');passed++;
  const mixed=copy(d);
  for(const phase of ['before','after'])for(const run of mixed.pairs[1][phase])run.conditions.viewport_width=1920;
  const mixedResult=evaluate(mixed,inventory,parts);
