@@ -74,3 +74,21 @@ For **strict independent local Git proof**, first fetch the nine named branch re
 **Draft on-site CTA text only, not a live link or product claim:** "Make a household plan you can actually practice. Read the complete, free guide when editorial and safety review are complete." A second optional pack CTA remains ABSENT until a merchant-verified appropriate product exists. The existing Focus Fieldbook remains the separate approved lead magnet; no retired water freebies, posting, email send, CMS write, analytics installation, merchant operation, or public release.
 
 **Release gates remain**: 23 historically flagged contributor-file revisions; 30 shared-source URL groups; 15 safety exceptions; 22 editorial decisions; five unfinished tools; qualified human emergency-safety review; real browser, keyboard, print and mobile QA; native validation, build and all tests; mandatory integrity; independent QD; founder release. **HOLD.**
+
+
+## R117 follow-on actual-body reading-depth and citation-ID preflight (exact SHA)
+
+A further **18 exact-commit GitHub file reads** examined six relevant historical article bodies (frozen R116, proposed release candidate, exact contributor) without editing or reproducing author prose. Reproducible per-version Git blob OIDs, **approximate visible word-token counts** (regex-stripped HTML; not a real browser), citation-token occurrences, heading/paragraph counts, and unique citation-ID differences are in \`R117_SIX_BODY_DEPTH_CITATION_ID_DIFF_HOLD.json\`.
+
+| Historical article | R116 tokens / citations | Contributor tokens / citations | RC tokens / citations | Primary review reason |
+|---|---:|---:|---:|---|
+| Navigation before GPS | 2,893 / 47 | 2,893 / 47 | 2,893 / 47 | Contributor and RC text are different Git blobs despite matching counts; compare wording/context. |
+| Pioneer supply chains failed | 2,773 / 57 | 3,133 / 63 | 3,133 / 63 | +360 approximate tokens and +6 citation occurrences vs frozen original; contributor and RC differ in exact blob, requiring claim-level comparison. |
+| Pemmican and dried meats | 2,419 / 46 | 2,419 / 46 | 2,419 / 46 | Contributor uses \`nchfp-jerky\`; RC uses \`hist-food-nchfp-jerky\` at unchanged count. Source-ID retarget is NOT automatically accepted. |
+| Pioneer travel rations | 2,334 / 39 | 2,334 / 39 | 2,334 / 39 | Same source-ID retarget \`nchfp-jerky\` ↔ \`hist-food-nchfp-jerky\`; needs author-specific supporting-source review. |
+| Root cellars and cool storage | 2,415 / 37 | 2,780 / 42 | 2,780 / 42 | +365 approximate tokens and +5 citation occurrences vs original; RC/contributor distinct Git blobs, caveat equivalence unproved. |
+| Sanitation before germ theory | 2,614 / 47 | 2,648 / 48 | 2,648 / 48 | +34 approximate tokens and one citation occurrence; distinct RC/contributor Git blobs still demand human comparison. |
+
+The **two historical-food source-ID differences** are especially relevant to the release candidate's previously documented **S-7 intentional retarget HOLD** in PR #584. Matching URL, words or citation count is not evidence of equivalent source-reading scope. Reconcile the author-specific \`source_use\` descriptions and verified source contents before changing IDs. This comparison does **not** indicate a confirmed shortening or safety regression in these six files; it establishes where numerical equality conceals changed author prose or provenance.
+
+**Fresh exact-head recheck:** nine article directories and nine fragment directories were subsequently re-fetched using each **immutable commit SHA** rather than the mutable branch name. All **18/18** had **zero Git filename/fragment/blob mismatches** with the committed R117 snapshot. This verifies recorded object identities at the nine commits, **not** current branch movement after the check and **not** external source truth.
