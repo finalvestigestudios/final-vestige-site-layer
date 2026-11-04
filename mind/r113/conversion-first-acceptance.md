@@ -1,0 +1,41 @@
+# Mind R113 — conversion-first eligibility, attribution and controlled study (UNPUBLISHED)
+Date: November 3, 2026 PST. Lane: only Mind/Perception and ethical presell; no core website engineering or Dispatch authoring.
+
+## Founder decision, tested against available evidence
+**Candidate 1 / Zen12 (high intent): HOLD.** Official catalog and exact seller presentation checked: https://inspire3.com/ ; https://zen12.com/?no-popup=1 ; competing seller offer https://zen12.com/secret/ . Short-session audio offer is real as seller description. Affiliate acceptance, named Final Vestige approved link/channel permissions, reporting/contract restrictions on purchaser names/emails, and product-specific efficacy evidence **not established**. Product varies across seller landing pages; older $87.99 checkout observation is NOT a universal price. Current offer checkout/terms require final prelaunch recheck.
+
+**Candidate 2 / owned product: NOT VERIFIED.** Authenticated WordPress Collection page ID 78 describes only free 52-page Focus with existing Dispatch and one Suunto navigational compass affiliate; Suunto is not Mind-relevant. Public Payhip searches returned unrelated products, not authenticated FV shop inventory. The absence of proof is NOT proof of absence. Do not fabricate a Payhip SKU, its price, rights, delivery/return terms or revenue. Owner Claude/commerce must produce the actual authenticated paid SKU + saleable licensed file + live checkout receipt and merchant-settlement acceptance. No commerce CTA if either candidate remains unverified.
+
+**Candidate 3 / Focus: LIVE FREE PATH, NOT SELLABLE.** WordPress ID 1579 exists with Jetpack and PDF, but signup-click not equivalent to native verified confirmation, and email welcome was independently flagged unreceived in #820. Keep the one existing list, no new opt-in scripts.
+
+## High-intent reader and one conditional offer
+Adult reading a self-hypnosis/meditation-audio comparison because they are deciding whether a short recorded routine is worth paying for. **One primary offered product candidate: Zen12 Premium only after all partner gates pass.** No other Inspire3 items mentioned in buying CTA. Link deliberately disabled in HTML prototype. Historic/scientific article has no paid CTA. Landing presell explains scope and mismatched seller claims, gives a free observation exercise and FTC adjacent proposed disclosure.
+
+## Three social → evidence → first-party route proposals, pending real Grok asset IDs
+| Proposed Grok topic | Exact live destination (never link to draft) | Next action | Product fit |
+| Change blindness | https://finalvestige.com/2026/11/02/change-blindness/ | Optional existing /focus/ | General attention curiosity; weak immediate buyer intent; no forced Zen12 upsell |
+| Mesmer / Franklin commission | https://finalvestige.com/2026/11/02/mesmerism/ | Puységur source file then optional /focus/ | History of suggestion; do not call animal magnetism proven |
+| Focus routine / attention practice | https://finalvestige.com/focus/ | Existing signup and PDF only | More direct practical intent; offer candidate only if user independently seeks audio purchasing decision |
+
+Grok/Praxxis TASK-008 owns real platform post URL, actual asset_id, permitted link route and script rights; NO fabricated IDs, no existing TASKS changes, no platform post. Proposed campaign key: `utm_source` actual platform; `utm_medium=organic_social`; `utm_campaign=mind_r113_candidate`; `utm_content` immutable actual asset_id (must be allowlisted not PII). Use existing Claude #820 analytics only; no duplicate script, pixels, browser credentials or cookies.
+
+## Offer → funnel → blocker → experiment → evidence → owner
+|Priority|Offer → funnel step|Blocker|Change / experiment|Pass / fail evidence|Owner|
+|---|---|---|---|---|---|
+|P0|Zen12 → paid affiliate order|Partner acceptance, channels, privacy reporting absent|Request written commercial verification, exact approved URL; avoid name/email purchase reports|FAIL/HOLD, no affiliate link issued|Founder/commerce + Mind evidence|
+|P0|FV-owned paid Mind SKU → settled Payhip order|No validated merchant inventory/rights/checkout|Check live merchant account SKU, delivery, refund policy, payout fees; independent tiny non-live QA|NOT VERIFIED|Claude/commerce, founder|
+|P1|Short social asset → matching content|Real asset_id and link path unknown|TASK-008 Praxxis receives Grok inventory; route only to existing live content|PENDING actual media URL|Grok/Praxxis|
+|P1|Article → free Focus → verified lead|Native subscribed transition and welcome receipt not proven|Use existing Jetpack; QA on consent/delivery nonproduction|Only live free page confirmed; email receipt FAIL/UNKNOWN|Dispatch + Site QA + Claude|
+|P1|Paid CTA → merchant settlement|No sales/fees/refunds or qualified-human denominators|Crosswalk reconciled merchant statement without PII with allowlisted campaign cohort|UNOBSERVABLE, net/1k NOT COMPUTABLE|Commerce/Growth|
+|P2|Evidence text A vs video B|No approved eligible merchant endpoint and browser testing|Source-parity + optional 40s film; test only after product authorization|No conversion result, video optional/not embedded|Mind + QA|
+
+## Release-safe A/B
+A is canonical evidence-first guide (existing PR #891 / #904). B adds **only** optional 40s short explanatory video with exact same purchase copy/CTA and disclosure. The R113 HTML file is a **source-only presentation reference** with CSS poster/transcript, NOT a third live URL or a measurement deployment. Hypothesis: media improves reader comprehension/qualified buyer confidence, not necessarily purchases. Final paid outcome is independently verified settled orders/commissions per qualified-human 7-day and 30-day cohort. Random assignment, identical copy/pricing and a clear cookie/consent review would need founder-approved staging and existing analytics. Sample sizes under 20 per arm reported as too small for comparison; do not claim statistical significance from tiny cohorts.
+
+## Privacy-safe measurement contract
+Events (existing approved first-party instrumentation only): `qualified_session` (human gate, campaign and source), `evidence_guide_view`, `focus_signup_click` (NOT lead), `native_confirmed_subscriber` (only authorized Jetpack state), `merchant_outbound_click` (NOT sale), `merchant_confirmed_paid_order` (merchant report with anonymized aggregate), `merchant_refund_or_chargeback`, `merchant_fee`. No email, name, phone, IP, address, order reference, click identifiers or raw URL queries in event payload/Drive/GitHub. Retention and consent follow existing policy. Avoid exposing seller buyer-identifying reports. If no safe reporting terms, abandon affiliate program.
+
+**Key metric:** `(merchant-reconciled settled paid revenue + affiliate commissions - refunds - chargebacks - processing fees) / qualified_human_sessions * 1000`. If denominator OR numerator provenance missing, status **NOT COMPUTABLE**, not 0. Report 7-/30-day cohorts, number of customers and orders, supported lead-to-order and paid conversion rates, fee/refund lags, unknown unattributed conversions and sample limits.
+
+## Source and release gates
+FTC https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking and https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance ; official seller https://inspire3.com/ and exact product https://zen12.com/?no-popup=1 ; privacy https://inspire3.com/privacy/ ; 2019 RCT synthesis https://eprints.bournemouth.ac.uk/31277/ ; 2023 EEG synthesis https://pubmed.ncbi.nlm.nih.gov/37205669/ . No direct paid links. No pricing guaranteed. No claim to have used the audio. No personal medical guidance. Before release: written partner and privacy terms, exact offer recheck, a11y 360/390/768/1440/1920 browser, keyboard and focus tests, reduced-motion, transcript+captions on produced MP4, actual no-JS render, Lighthouse/CWV, independent claims and footer disclosures, source-specific WordPress approval, founder explicit release approval. Homepage PR #49, Issue #150, Mind hub PR #172 and Dispatch Issue #174 untouched.
