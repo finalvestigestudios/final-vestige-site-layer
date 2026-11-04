@@ -41,7 +41,7 @@ export function reviewSubscriberPromise({status,settings,pages,received}={}) {
     return {state:'INVALID_EVIDENCE',blockers:['invalid_subscriber_aggregates'],sending_authorized:false};
   }
   const messages=Array.isArray(status.recent_sends) ? status.recent_sends : [];
-  const recentDelivered=messages.some(m=>m && m.dispatched_at && ['sent','completed','delivered'].includes(m.status));
+  const recentDispatched=messages.some(m=>m && m.dispatched_at && ['sent','completed','delivered'].includes(m.status));
   const automaticNewPosts=settings.email_new_posts_by_default;
   const explicitPromise=/when (?:we|there(?:'s| is)).{0,60}(?:publish|new.*investigation)/i.test(pages.dispatch+' '+settings.welcome_message);
   const commercialConsentFocus=/commission|affiliate recommendation|earning link/i.test(pages.focus);
@@ -59,8 +59,8 @@ export function reviewSubscriberPromise({status,settings,pages,received}={}) {
   blockers.push('native_preheader_and_excerpt_received_rendering_unverified');
   return {
     state:'REVIEW_REQUIRED_HOLD_UNSENT', transport:'jetpack_native_excerpt',
-    automatic_new_posts:false, recent_delivery_observed:recentDelivered,
-    note:recentDelivered ? 'some_recent_delivery_observed_not_campaign_proof' : 'none_of_checked_recent_sends_prove_delivery',
+    automatic_new_posts:automaticNewPosts, recent_send_recorded:recentDispatched,
+    note:recentDispatched ? 'some_recent_dispatch_recorded_not_proof_of_inbox_delivery' : 'none_of_checked_recent_sends_prove_dispatch',
     counts:{newsletter_total:s.total,confirmed:s.confirmed,unconfirmed_excluded:s.unconfirmed},
     email_reachable:null, welcome_delivered:receivedWelcome ? true : null,
     consent_parity:commercialConsentDispatch ? 'matched_or_requires_manual_review' : 'dispatch_copy_not_equivalent',
