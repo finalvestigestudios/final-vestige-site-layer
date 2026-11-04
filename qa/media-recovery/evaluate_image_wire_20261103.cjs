@@ -148,7 +148,7 @@ if(require.main===module){
  const inventory=JSON.parse(fs.readFileSync(path.join(__dirname,'wire_source_inventory_20261030.json'),'utf8'));
  const parts=inventory.source_parts.map(p=>{
   const raw=fs.readFileSync(path.join(__dirname,p.path));
-  const sha=crypto.createHash('sha1').update('blob '+raw.length+'\\0').update(raw).digest('hex');
+  const sha=crypto.createHash('sha1').update('blob '+raw.length+'\0').update(raw).digest('hex');
   if(sha!==p.blob_sha)throw Error('Frozen source Git blob SHA mismatch: '+p.path);
   return JSON.parse(raw.toString('utf8'));
  });
