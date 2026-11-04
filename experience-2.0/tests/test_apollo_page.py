@@ -119,6 +119,7 @@ class Block(unittest.TestCase):
         """Founder rule: an image with no sign-off is omitted and the text-and-document page stands without it."""
         data = lib.load_apollo1()
         approved = page.approved_images(data)
+        timeline_approved = page.approved_timeline_images(data)
         text = _block()
         for rec in data["records"]:
             img = rec["image"]
@@ -126,10 +127,21 @@ class Block(unittest.TestCase):
             self.assertEqual(img["src"] in text, shown, img["nasa_id"])
             self.assertIn(f'id="rights-{rec["id"]}"', text)
             self.assertIn(img["record_url"], text)
-        if not approved:
+        if not approved and not timeline_approved:
             self.assertNotIn("<img", text)
             self.assertIn("Photographs not shown in this release", text)
         self.assertIn(data["rights_policy"]["restriction"], text)
+
+    def test_chronology_archival_views_are_approved_and_context_only(self):
+        data = lib.load_apollo1()
+        ids = page.approved_timeline_images(data)
+        self.assertEqual(ids, {"S66-58038", "S67-15717", "KSC-20170124-PH_KLS01_0129"})
+        markup = _block()
+        self.assertEqual(markup.count('data-fvx-chrono-photo='), 3)
+        self.assertEqual(markup.count('class="fvx-chrono-gallery__image"'), 3)
+        self.assertIn("The photographs below show separate historical contexts", markup)
+        self.assertIn("These photographs do not depict the marked seconds", markup)
+        self.assertIn("Image provenance and editorial use", markup)
 
     def test_signoff_rules(self):
         import tempfile, pathlib
