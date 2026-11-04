@@ -1,0 +1,47 @@
+# THE DISPATCH — OPTIONAL ISSUE 04: APOLLO 1 / R103
+
+> **UNSENT DRAFT — REVIEW ONLY; NOT APPROVED REPLACEMENT**
+
+**Subject candidate:** The test they called nonhazardous
+
+**Preheader candidate (not a verified independent Jetpack field):** Apollo 1 carried no rocket fuel that day. That was not the whole risk.
+
+**Campaign position:** Editorial 04 of six; master Issue 04 is unchanged. 4 editorial / 2 commercial reservations preserved.
+
+---
+
+On January 27, 1967, the Saturn IB on Launch Complex 34 was not fueled. Three astronauts were inside the Apollo command module anyway. Gus Grissom, Ed White and Roger Chaffee were rehearsing a countdown, not preparing to leave the ground.
+
+The procedure had a reassuring administrative description: the plugs-out test. NASA later recorded something more consequential about its classification. Because the rocket was unfueled, the test had been considered nonhazardous. It had not received the safety review appropriate to what the sealed spacecraft could actually become.
+
+Here is the uncomfortable distinction: a test can have no rocket propellant and still present a grave fire hazard. The command module was sealed and pressurized with pure oxygen. Combustible material and vulnerable wiring were present inside. A rescue plan cannot be replaced with a label.
+
+At about 6:31 p.m. Eastern, the fire began. Grissom, White and Chaffee died. The tragedy is sometimes summarized as a spark in an oxygen-filled capsule. That description captures part of the danger, but it can also create a false impression that investigators found one definitive wire, one definitive ignition instant, and a single sufficient explanation.
+
+The Apollo 204 Review Board did not identify a specific ignition source. It found evidence of arcing in multiple wires near the environmental control system, alongside conditions that made ignition and fire spread catastrophic. The oxygen atmosphere, flammable materials and rapidly rising pressure mattered even if the first electrical arc could not be pinned down. That is not ambiguity for its own sake; it is the boundary the record supports.
+
+Escape was another part of the system. The spacecraft used a three-piece hatch that took at least 90 seconds to open in ideal circumstances, according to NASA's later investigation summary. With pressure rising inside, opening the inner hatch was impossible. The pad crew tried to reach the astronauts, but the fire overwhelmed the available time.
+
+The inquiry also examined management decisions. Treating the test as nonhazardous meant the rescue arrangements and oversight were not matched to the enclosed cabin's risks. The historical record therefore points beyond a search for a single broken component. It asks why the system permitted multiple known hazards to coincide.
+
+An evidence-first approach does not make the story smaller. It lets us name the dead, acknowledge the team's work, and resist the temptation to reduce a fatal organizational failure to a tidy phrase.
+
+Try applying four questions to the next confident explanation you encounter. What conditions were present? What sequence can the record actually establish? What did investigators rule in, rule out or leave uncertain? And which safeguards should have interrupted the sequence, regardless of its first trigger?
+
+That is the distinction we keep returning to at Final Vestige: a dramatic moment is not automatically the whole cause. The documentary trail is where explanation has to earn its certainty.
+
+**Read the Apollo 1 evidence trail: https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/**
+
+### Sources and fact boundaries
+
+[1] NASA, Apollo 1 official mission page (crew, test, planned launch): https://www.nasa.gov/mission/apollo-1/
+
+[2] NASA Safety and Mission Assurance, Apollo 1 accident-learning page (investigation, classification, hatch and rescue): https://sma.nasa.gov/sma-disciplines/accllp/apollo-1
+
+[3] NASA History, 55 Years Ago: The Apollo 1 Fire and its Aftermath (review board, uncertain ignition, oxygen atmosphere): https://www.nasa.gov/history/55-years-ago-the-apollo-1-fire-and-its-aftermath/
+
+[4] NASA Johnson Space Center history, Tragedy on the Launch Pad (test context): https://www.nasa.gov/history/55-years-ago-tragedy-on-the-launch-pad/
+
+### Release block
+
+UNSENT DRAFT — DO NOT PUBLISH, SCHEDULE, OR EMAIL. Pre-send physical mailing address: [[VALID_POSTAL_ADDRESS_REQUIRED]]. Verified functioning Jetpack unsubscribe: [[JETPACK_UNSUBSCRIBE_LINK_MUST_BE_VERIFIED]]. These are hard-stop reviewer tokens, not real email-footer content.
