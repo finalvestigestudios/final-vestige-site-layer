@@ -36,15 +36,15 @@ test('same-host different filename after redirect is unverified',()=>{
  const s=classify(original,'https://archive.example.gov/photos/photo-B.jpg',[original]);
  assert.equal(s.verified_broken_in_browser,null);
 });
-test('real failed HTTP 404 after redirect is still a broken image',()=>{
+test('HTTP 404 after cross-host redirect is not proof of the archived image identity',()=>{
  const s=classify(original,'https://cdn.example.gov/error.jpg',[original],404,0);
- assert.equal(s.result,'confirmed_broken_in_probe_browser');
- assert.equal(s.visual_failure_kind,'http_error');
+ assert.equal(s.result,'redirected_image_identity_unverified');
+ assert.equal(s.verified_broken_in_browser,null);
 });
-test('HTTP 200 HTML redirect with failed image decode is a broken image',()=>{
+test('cross-host HTML redirect without final source identity stays unverified',()=>{
  const s=classify(original,'https://cdn.example.gov/login',[original],200,0,'text/html');
- assert.equal(s.result,'confirmed_broken_in_probe_browser');
- assert.equal(s.visual_failure_kind,'non_image_error_payload');
+ assert.equal(s.result,'redirected_image_identity_unverified');
+ assert.equal(s.verified_broken_in_browser,null);
 });
 test('Commons canonical redirect to matching hashed upload is verified',()=>{
  const u='https://commons.wikimedia.org/wiki/Special:Redirect/file/Archimedes_Palimpsest.jpg?width=960';
@@ -62,10 +62,11 @@ test('Navy dynamic endpoint may change rendition of the SAME image',()=>{
  const final='https://www.history.navy.mil/bin/imageDownload?image=80-G-276907&rendition=large';
  const s=classify(u,final,[u]);assert.equal(s.result,'loaded_in_probe_browser');
 });
-test('normal Jetpack resizing proxy can still prove original-photo identity',()=>{
+test('Jetpack resize may crop: final transformed request does not certify full photo',()=>{
  const u='https://archive.example.gov/photos/photo-A.jpg';
  const final='https://i0.wp.com/archive.example.gov/photos/photo-A.jpg?resize=960%2C640';
- const s=classify(u,final,[u]);assert.equal(s.result,'loaded_in_probe_browser');
+ const s=classify(u,final,[u]);assert.equal(s.result,'redirected_image_identity_unverified');
+ assert.equal(s.verified_broken_in_browser,null);
 });
 test('an unrelated decoded currentSrc is never verified by a stale source URL alias',()=>{
  const substitute='https://cdn.example.gov/photo-B.jpg';
