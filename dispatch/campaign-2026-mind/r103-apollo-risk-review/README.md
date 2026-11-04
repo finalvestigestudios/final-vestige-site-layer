@@ -1,6 +1,6 @@
 # Dispatch R103 — Apollo 1: the nonhazardous-test classification (review only)
 
-**This is a new *optional* Issue 04 alternative, not an approved replacement of Issue 04 in master draft PR #175, and not an actual Jetpack email preview.** Master Issue 04's opening subject is unchanged. Stacked on draft PR #865, issue owner #174, with commercial requirements coordinated under #171. Keep historical evidence central; preserve 4 editorial and 2 merchant-reserved positions. All six remain HOLD_UNSENT and 03/05 also HOLD_MERCHANT.
+**This is a new *optional* Issue 04 alternative, not an approved replacement of Issue 04 in master draft PR #175, and not an actual Jetpack email preview.** R103 leaves the *stacked* master untouched. Important provenance note: earlier draft PR #178 already changed all six master manuscripts and the manifest relative to frozen PR #175 (including Issue 04's subject from 'Fourteen seconds' to 'Seventeen seconds'). Those changes were NOT introduced or approved by R103; no substitution or sending approval is inferred. Compare the frozen #175 SHA separately from the later stacked master before founder content selection. Stacked on draft PR #865, issue owner #174, with commercial requirements coordinated under #171. Keep historical evidence central; preserve 4 editorial and 2 merchant-reserved positions. All six remain HOLD_UNSENT and 03/05 also HOLD_MERCHANT.
 
 ## Distinct new editorial finding
 
