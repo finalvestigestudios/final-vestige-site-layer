@@ -1,3 +1,6 @@
+## R182 — Policy Delta source-line identity custody (DRAFT / HARD HOLD)
+Source-cited cross-script review cues now **reject malformed or duplicated physical line coordinates and deceptive non-native source containers**, rather than presenting contradictory before/after evidence. The reader's 50,000-line boundary, private-text-free diagnostics, deterministic Unicode names, original fingerprints and mandatory human review remain intact. [R182 38-case tests, exact local execution evidence and release/QD hold](docs/POLICY_SOURCE_COORDINATE_CUSTODY_R182.md). Full Ubuntu/Windows CI and six executable builds remain unverified; **all apps are UNRELEASED**.
+
 ## R181 — Policy Delta Desk spoken Unicode character names (DRAFT / HARD HOLD)
 The R180 cross-script review cues now include official Unicode character names beside each bounded U+ substitution and physical before/after line citation, making the script of look-alike letters readable without exposing source text. [R181 exact-file 25-case tests, local evidence and release safeguards](docs/POLICY_SPOKEN_UNICODE_NAMES_R181.md). Ubuntu/Windows normal and optimized Python remain required; **all six apps remain UNRELEASED** pending native Windows and independent QD/founder acceptance.
 
