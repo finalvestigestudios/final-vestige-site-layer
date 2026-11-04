@@ -24,25 +24,36 @@ function commonsFile(p){
  }
  return null;
 }
-function contentQuery(p){
- // Preserve query values which may select different archival photos at the same path.
- // Only established image resizing/format knobs are excluded from file identity.
- // A crop selector can remove historically meaningful content. It is NOT a size-only transform.
- // 'resize' is NOT universally size-only: WordPress Site Accelerator documents
- // ?resize=W,H as resizing AND CROPPING to the specified aspect ratio. Third-party
- // media CDNs may also apply content-changing transforms. Preserve it in identity.
- // ?fit=W,H retains aspect ratio (size-only); ?crop was already preserved.
- const transforms=new Set(['width','height','w','h','fit','quality','q','ssl','auto','format','fm']);
+function contentQuery(p,viaJetpack=false){
+ // Static-image transform names are NOT globally equivalent to size-only changes.
+ // WP Site Accelerator documents ?fit=W,H as aspect-preserving; imgix and other
+ // CDNs use ?fit=crop|smart-crop|facearea to discard historical photo content.
+ // Only trust numeric W,H fit on a Jetpack proxy or our WP uploads host.
  const staticImage=/\.(?:jpe?g|png|webp|gif|svg|avif|bmp|tiff?)$/i.test(p.pathname);
- // Dynamic endpoints may use ANY parameter as a photo selector, even 'width'.
- // Navy's documented imageDownload endpoint specifically uses image= for archival identity,
- // while rendition= selects the same photograph's delivery size/format.
+ const wpManaged=viaJetpack||(p.hostname==='finalvestige.com'&&
+   p.pathname.startsWith('/wp-content/uploads/'));
+ const fits=[...p.searchParams].filter(([k])=>k.toLowerCase()==='fit').map(([,v])=>v);
+ const safeNumericFit=wpManaged&&fits.length===1&&/^\d{1,5},\d{1,5}$/.test(fits[0]);
+ const keys=new Set([...p.searchParams].map(([k])=>k.toLowerCase()));
+ // Some CDNs crop whenever BOTH axes are supplied, even without fit=crop.
+ // Preserve those dimensions. Width-only image scaling can remain equivalent.
+ const twoAxes=(keys.has('w')||keys.has('width'))&&(keys.has('h')||keys.has('height'));
+ const mayChangeComposition=twoAxes||(fits.length>0&&!safeNumericFit);
+ const sizeOnly=new Set(['quality','q','ssl','auto','format','fm']);
+ if(!mayChangeComposition){
+  for(const k of ['width','height','w','h'])sizeOnly.add(k);
+ }
+ if(safeNumericFit)sizeOnly.add('fit');
+ // Retain all other selectors, including resize=, crop=, VersionId= and
+ // source identifiers. A resulting false negative must be reviewed—not fixed
+ // by weakening archival provenance.
  const navyRendition=p.hostname==='www.history.navy.mil'&&p.pathname==='/bin/imageDownload';
  const selectors=[...p.searchParams].filter(([k])=>
-  !(staticImage&&transforms.has(k.toLowerCase()))&&!(navyRendition&&k.toLowerCase()==='rendition'));
+   !(staticImage&&sizeOnly.has(k.toLowerCase()))&&
+   !(navyRendition&&k.toLowerCase()==='rendition'));
  return selectors.length?'?'+new URLSearchParams(selectors).toString():'';
 }
-function imageIdentity(url){
+function imageIdentity(url,viaJetpack=false){
  const u=clean(url);if(!u)return null;
  try{
   const p=new URL(u),host=p.hostname.toLowerCase();
@@ -54,12 +65,12 @@ function imageIdentity(url){
     // a different historical photograph. Only ssl= is unambiguously proxy-only.
     // For static images, contentQuery() independently drops resize-only knobs.
     const q=new URLSearchParams([...p.searchParams].filter(([k])=>k.toLowerCase()!=='ssl')).toString();
-    return imageIdentity('https://'+seg.join('/')+(q?'?'+q:''));
+    return imageIdentity('https://'+seg.join('/')+(q?'?'+q:''),true);
    }
   }
   const filename=commonsFile(p);
   if(filename)return 'commons-file:'+filename;
-  return p.origin+p.pathname+contentQuery(p);
+  return p.origin+p.pathname+contentQuery(p,viaJetpack);
  }catch{return null}
 }
 function sameSource(a,b){
