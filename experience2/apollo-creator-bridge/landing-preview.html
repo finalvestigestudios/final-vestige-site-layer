@@ -253,8 +253,12 @@ details{border:1px solid var(--edge);padding:1rem;background:var(--panel);margin
     sheet.scrollIntoView({block:'start',behavior:'instant'});
   });
   closeButton.addEventListener('click',closePreview);
-  sheet.addEventListener('keydown',function(event){
-    if(event.key==='Escape'&&sheet.classList.contains('fv-student-preview')){event.preventDefault();closePreview();}
+  /* Escape must close even after focus leaves the worksheet for another page control. */
+  document.addEventListener('keydown',function(event){
+    if(event.key==='Escape'&&sheet.classList.contains('fv-student-preview')){
+      event.preventDefault();
+      closePreview();
+    }
   });
 })();
 </script>
