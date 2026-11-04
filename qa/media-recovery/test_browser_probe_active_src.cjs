@@ -55,11 +55,12 @@ test('Commons canonical redirect and thumbnail currentSrc remain same file',()=>
  assert.equal(d.result,'loaded_in_probe_browser');
  assert.equal(d.current_src_identity_verified,true);
 });
-test('Jetpack origin and decoded currentSrc remain verifiable',()=>{
+test('crop-capable Jetpack resize is decoded but uncropped archival scene identity stays unverified',()=>{
  const active='https://i0.wp.com/archive.example.gov/original.jpg?resize=960%2C600';
  const d=classifyImages(stored,rendered({currentSrc:active}),net(active),true)[0];
- assert.equal(d.result,'loaded_in_probe_browser');
- assert.equal(d.current_src_identity_verified,true);
+ assert.equal(d.result,'current_src_identity_unverified');
+ assert.equal(d.current_src_identity_verified,false);
+ assert.equal(d.verified_broken_in_browser,null);
 });
 test('identity still requires matching DOM URL, not alternative text alone',()=>{
  const active='https://other.example.com/fake.jpg';
