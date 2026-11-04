@@ -5,6 +5,8 @@ interpretation. Original source bytes and cited diff lines are authoritative.
 """
 from __future__ import annotations
 
+import unicodedata
+
 # Deliberately small, visually close single-codepoint substitutes. Map only
 # to ASCII Latin, not to NFKC/NFC or to a language-dependent transliteration.
 _TO_LATIN = {
@@ -38,8 +40,15 @@ def _changes(before: str, after: str) -> str:
                in enumerate(zip(before, after), 1) if old != new]
     if not changes:
         return ""
-    shown = ", ".join(f"column {position} U+{old:04X}->U+{new:04X}"
-                      for position, old, new in changes[:_MAX_GLYPHS])
+    # Unicode's assigned character names give screen-reader reviewers an
+    # unambiguous script/letter cue without repeating private source text.
+    # Only pre-existing, bounded substitutions are labeled. Assigned names
+    # for these mapped ASCII/Greek/Cyrillic characters are stable.
+    shown = ", ".join(
+        f"column {position} U+{old:04X}->U+{new:04X} "
+        f"[{unicodedata.name(chr(old))} -> {unicodedata.name(chr(new))}]"
+        for position, old, new in changes[:_MAX_GLYPHS]
+    )
     omitted = len(changes) - _MAX_GLYPHS
     return shown + (f" (+{omitted} substitution(s) omitted)" if omitted > 0 else "")
 
