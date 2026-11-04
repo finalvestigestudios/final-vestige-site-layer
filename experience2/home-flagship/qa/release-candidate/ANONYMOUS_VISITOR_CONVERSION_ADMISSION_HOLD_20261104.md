@@ -1,0 +1,28 @@
+# EX2 / anonymous visitor conversion admission — DRAFT / RELEASE HOLD
+**2026-11-03 PT / 2026-11-04 UTC · stacked on draft #900 at exact source head `10826822bd09636b4c8d16efb08949e7ad151fbf`.**
+
+## Evidence-triggered change — not another homepage chapter
+Prior real WordPress/Assembler screenshots from isolated run [41736939617](https://github.com/finalvestigestudios/final-vestige-site-layer/actions/runs/41736939617) visibly include a **logged-in WordPress admin toolbar** above a generic `My WordPress Website` Assembler header, followed by the 72 synthetic Margins strip and the cinematic seven-chapter candidate. The mobile screenshot `assembler-390.png` begins with that editor-only chrome. These captures are valid **authenticated-editor staging diagnostics** but must not be described as visitor-first-screen evidence, a true landing/CTA acceptance, or live finalvestige.com rendering.
+
+Current runner uses the authenticated Gutenberg editor `context` (with login cookies) and a draft `?preview=true` URL in responsive screenshot tests. A clean browser context cannot normally read an unpublished WP draft. Simply clearing cookies would produce a login/404 rather than genuine customer-view QA. Hiding the admin bar with injected CSS would create a misleading visual correction.
+
+## Code changes
+1. **New `isolated_guest_render_gate.mjs`:** after a real Gutenberg Save and theme/nav fixture setup, verifies the loopback WordPress/Assembler source; creates a temporary **published COPY only inside the disposable Playground** of the saved Gutenberg draft, matching complete saved `post_content` SHA-256. The original draft remains intact.
+2. Uses **new Playwright browser contexts without login cookies** to capture genuine anonymous visitor screenshots at **360, 390, 768, 1440, 1920px**, plus **390px without JavaScript**. Verifies 7 chapter links, all 72 published Margins records, no WordPress admin bar, no horizontal overflow, no inherited auth cookies, the canonical Focus CTA, its **>=44px hit target**, and its first-viewport position. Entire-document axe WCAG 2.x including 2.2 AA is **fail closed** and never suppressed.
+3. Network allowlist: same-origin loopback and the two existing archival media hosts/images only. No merchant navigation, new analytics or subscriber records.
+4. **Mandatory cleanup:** deletes only the verified `EX2 ANONYMOUS LOCAL REVIEW` temporary copy, confirms removal, fails if deletion cannot be confirmed. WordPress production, WordPress.com Atomic, theme settings, payment, signup and Grok accounts never receive a write.
+5. Integrates the guest admission into the actual existing `playground_assembler_render_gate.mjs` following editor responsive/no-JS evidence; guest failures are explicit HOLDs even when editor screenshots are collected. Registers six Node/PHP safety regression tests in the existing CI workflow.
+
+## Actual verification vs outstanding
+- **EXECUTED locally:** `node --check isolated_guest_render_gate.mjs` PASS; `node --test test_isolated_guest_render_gate.mjs` **6/6 PASS**; both inline PHP scripts linted with PHP `-l`; local Git blob SHA values matched GitHub fetched blob SHAs for both files.
+- **NOT EXECUTED:** disposable WordPress guest COPY/PHP integration, full WordPress/Assembler visitor browser screenshots on this new exact head, full-document axe visitor results, screenshot 200% physical zoom, lab Lighthouse. GitHub Actions previously failed before jobs executed; do not infer pass from source checks.
+- **KNOWN BLOCKERS:** serious unmodified Assembler desktop navigation `list` axe finding remains until independently proven corrected in actual WP; a saved seven-chapter local visitor candidate is not the live WordPress.com Atomic host; 72 Margins text presence is not independent historical refact-check; image copyright/use and signed independent QD remain separately gated.
+- **HOST PLAN:** founder confirmed WordPress.com Personal, not Business. Native clone is unavailable without upgrade, which is **not** requested or recommended.
+- **NO LIVE CHANGES:** frozen #49, production homepage page 6, 52-page Focus/Jetpack, 72 Margins, Apollo #158, Mind/affiliate #171, creator/Grok TASK-008, attribution #820, and existing production settings untouched.
+
+## Conversion-first experiment contract (no instrumentation installed)
+**OFFER:** free 52-page Focus Fieldbook (confirmed published) → **STEP:** anonymous first-screen and observer-exit CTA readability → **BLOCKER:** prior evidence includes authenticated admin toolbar and does not represent reader CTA; guest target may be below minimum hit area; commercial paid offer still not verified → **CHANGE:** guest-only WP/Assembler visual+axe admission, no new offer/chapters → **PASS:** true clean guest screenshots, visible >=44px CTA, seven chapters, 72 records, no overflow, whole-doc axe empty at all widths, JS-off intact, copy deleted → **OWNER:** Homepage test gate; Claude attribution/commerce; Site QA independent release; Grok/Praxxis content IDs; founder release.
+
+Neither a free CTA click nor confirmed signup is paid revenue. Net revenue per 1,000 qualified human sessions remains UNKNOWN until seller-confirmed paid orders or affiliate commission, refunds, fees and qualified-human denominators are available. No new event tracking, UTM strategy, earnings claim or merchant link is authorized by this PR.
+
+**Decision: HOLD / draft only.** Do not merge, publish, deploy, install to production, promote affiliate products, email subscribers, add paid services or assert award-winning quality.
