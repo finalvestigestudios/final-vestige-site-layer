@@ -54,7 +54,7 @@ def main() -> int:
     try:
         suite = unittest.defaultTestLoader.discover(
             start_dir=str(ROOT / "tests"),
-            pattern="test_premium_event_custody_r173.py",
+            pattern="test_procure_policy_primitive_r173.py",
         )
         loaded = list(cases(suite))
         methods = [case._testMethodName for case in loaded]
