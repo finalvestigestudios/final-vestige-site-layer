@@ -5,6 +5,7 @@ import tempfile
 import unittest
 from pathlib import Path
 from qa_receipt_r105 import EvidenceJournal, FILENAME
+from test_qa_artifacts_r107 import png, pdf
 
 
 class ReceiptTests(unittest.TestCase):
@@ -31,10 +32,10 @@ class ReceiptTests(unittest.TestCase):
                        'screenshots_sha256': {}, 'pdf_sha256': {}}
         for name in ('R104_REAL_WP_SELECTED_320.png', 'R104_REAL_WP_SELECTED_390.png',
                      'R104_REAL_WP_SELECTED_1440.png', 'R104_REAL_WP_NOJS_390.png'):
-            (self.root / name).write_bytes(b'\x89PNG\r\n\x1a\n' + name.encode())
+            (self.root / name).write_bytes(png(int(name.rsplit('_', 1)[-1][:-4])))
             self.record['screenshots_sha256'][name] = hashlib.sha256((self.root / name).read_bytes()).hexdigest()
         name = 'R104_REAL_WP_PRINT.pdf'
-        (self.root / name).write_bytes(b'%PDF-1.7\n' + name.encode())
+        (self.root / name).write_bytes(pdf())
         self.record['pdf_sha256'][name] = hashlib.sha256((self.root / name).read_bytes()).hexdigest()
 
     def test_checkpoint_never_claims_complete(self):
@@ -166,7 +167,7 @@ class ReceiptTests(unittest.TestCase):
         name = 'R104_REAL_WP_SELECTED_390.png'
         (self.root / name).write_bytes(b'pretend-png')
         self.record['screenshots_sha256'][name] = hashlib.sha256(b'pretend-png').hexdigest()
-        with self.assertRaisesRegex(ValueError, 'INVALID_ARTIFACT_TYPE'):
+        with self.assertRaisesRegex(ValueError, 'INVALID_PNG_BYTES'):
             self.writer.complete(self.record)
 
     def test_completed_checkpoint_immutable(self):
