@@ -140,6 +140,7 @@ class FullSourceFlagshipTests(unittest.TestCase):
         self.assertIn("assert.equal(manifest.public_fragment_fixture_sha256,sha(fixtureBytes)", runner)
         self.assertIn("checkManifest(manifest,candidate,fixtureBytes);", runner)
         self.assertIn("assert.equal(receipt.data_class,DATA_CLASS)", runner)
+        self.assertNotIn("assert.equal(receipt.data_class, \'SYNTHETIC_TEST_FIXTURE_ONLY\')", runner)
         self.assertIn("await selfTest();", runner)
         # The synthetic-only *marker* guards the local environment. It must
         # never be mistaken for the provenance of the public page-6 records.
