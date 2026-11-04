@@ -41,7 +41,12 @@ function contentQuery(p,viaJetpack=false){
  const mayChangeComposition=twoAxes||(fits.length>0&&!safeNumericFit);
  const sizeOnly=new Set(['quality','q','ssl','auto','format','fm']);
  if(!mayChangeComposition){
-  for(const k of ['width','height','w','h'])sizeOnly.add(k);
+  for(const key of ['width','height','w','h']){
+   const values=[...p.searchParams].filter(([k])=>k.toLowerCase()===key).map(([,v])=>v);
+   // Real-world Drupal image style URLs use h=3e6ca723 as a crop/style
+   // identity hash, NOT a pixel height. Unknown or mixed values are selectors.
+   if(values.length&&values.every(v=>/^[1-9]\d{0,5}$/.test(v)))sizeOnly.add(key);
+  }
  }
  if(safeNumericFit)sizeOnly.add('fit');
  // Retain all other selectors, including resize=, crop=, VersionId= and
