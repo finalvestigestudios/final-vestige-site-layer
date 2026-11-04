@@ -84,6 +84,12 @@ class CatalogVisibleHoldR188(unittest.TestCase):
     def test_executable_extension_split_nodes(self):
         self.assert_blocked('Windows', 'Utility', '.', 'exe')
 
+    def test_extension_at_node_boundary(self):
+        self.assert_blocked("installer.msix", "Pilot with us")
+
+    def test_release_phrase_at_node_boundary(self):
+        self.assert_blocked("Download ", "now", "Pilot with us")
+
     def test_download_now(self):
         self.assert_blocked('Download now')
 
