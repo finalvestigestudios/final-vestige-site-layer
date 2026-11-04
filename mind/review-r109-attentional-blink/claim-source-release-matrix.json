@@ -1,0 +1,719 @@
+{
+  "schema": "fv.mind.r109.v1",
+  "as_of": "2026-11-03",
+  "workstream": "Mind & Perception / evidence-first Zen12 presell",
+  "authority": "DRAFT_ONLY",
+  "source_register": [
+    {
+      "id": "S01",
+      "category": "merchant",
+      "name": "Inspire3 official product catalogue",
+      "url": "https://inspire3.com/",
+      "scope": "Products are presented by seller; broad science language not independently validated.",
+      "reviewed_at": "2026-11-03",
+      "citation_level": "source-identity-or-primary-summary"
+    },
+    {
+      "id": "S02",
+      "category": "merchant",
+      "name": "Zen12 official offer /hnp",
+      "url": "https://zen12.com/hnp",
+      "scope": "Twelve minutes, alleged hour equivalence, brainwave and outcome promises are seller claims.",
+      "reviewed_at": "2026-11-03",
+      "citation_level": "source-identity-or-primary-summary"
+    },
+    {
+      "id": "S03",
+      "category": "merchant",
+      "name": "Zen12 official About page",
+      "url": "https://zen12.com/about",
+      "scope": "Twelve levels and four formats; headphones comment is merchant, audio composition not independently measured.",
+      "reviewed_at": "2026-11-03",
+      "citation_level": "source-identity-or-primary-summary"
+    },
+    {
+      "id": "S04",
+      "category": "merchant",
+      "name": "Zen12 checkout /getstarted",
+      "url": "https://zen12.com/getstarted",
+      "scope": "Full-course 12 levels/48 MP3s and named extras; mobile number field; displayed 1-year money-back description. Dynamic price not recorded.",
+      "reviewed_at": "2026-11-03",
+      "citation_level": "source-identity-or-primary-summary"
+    },
+    {
+      "id": "S05",
+      "category": "merchant",
+      "name": "Inspire3 privacy policy",
+      "url": "https://inspire3.com/privacy/",
+      "scope": "Potential buyer-identifying sharing with affiliates, marketing via SMS/telephone. Written Final Vestige exclusion not obtained.",
+      "reviewed_at": "2026-11-03",
+      "citation_level": "source-identity-or-primary-summary"
+    },
+    {
+      "id": "S06",
+      "category": "independent-review",
+      "name": "Ingendoh, Posny and Heine 2023 systematic review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+      "scope": "14 binaural-beat EEG studies, 5 in favor, 8 contrary, 1 mixed; Zen12 not studied.",
+      "reviewed_at": "2026-11-03",
+      "citation_level": "source-identity-or-primary-summary"
+    },
+    {
+      "id": "S07",
+      "category": "primary-research",
+      "name": "Slagter et al. 2007 intensive meditation training",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17488185/",
+      "scope": "Three-month intensive training, attentional blink/P3b; not any commercial Zen12 audio.",
+      "reviewed_at": "2026-11-03",
+      "citation_level": "source-identity-or-primary-summary"
+    },
+    {
+      "id": "S08",
+      "category": "independent-review",
+      "name": "Basu and Banerjee memory/attention meta-analysis",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35842538/",
+      "scope": "Separate binaural beats review; product comparability not established.",
+      "reviewed_at": "2026-11-03",
+      "citation_level": "source-identity-or-primary-summary"
+    },
+    {
+      "id": "S09",
+      "category": "primary-research",
+      "name": "Raymond, Shapiro and Arnell 1992",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/1500880/",
+      "scope": "Original RSVP experiment and conditional probe-detection deficit.",
+      "reviewed_at": "2026-11-03",
+      "citation_level": "source-identity-or-primary-summary"
+    },
+    {
+      "id": "S10",
+      "category": "primary-research",
+      "name": "Visser et al. 1999",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/12198780/",
+      "scope": "Lag-one sparing abolished when second target required spatial shift.",
+      "reviewed_at": "2026-11-03",
+      "citation_level": "source-identity-or-primary-summary"
+    },
+    {
+      "id": "S11",
+      "category": "primary-research",
+      "name": "Hommel and Akyürek 2005",
+      "url": "https://doi.org/10.1080/02724980443000647",
+      "scope": "Lag-one sparing and integration costs; journal abstract, not proprietary raw data.",
+      "reviewed_at": "2026-11-03",
+      "citation_level": "source-identity-or-primary-summary"
+    },
+    {
+      "id": "S12",
+      "category": "primary-research",
+      "name": "Anderson and Phelps 2001",
+      "url": "https://doi.org/10.1038/35077083",
+      "scope": "Emotionally salient words and amygdala lesion study; narrowly contextualized.",
+      "reviewed_at": "2026-11-03",
+      "citation_level": "source-identity-or-primary-summary"
+    },
+    {
+      "id": "S13",
+      "category": "primary-research",
+      "name": "Kawahara et al. 2003",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/12785064/",
+      "scope": "Task switching/masking conditionality.",
+      "reviewed_at": "2026-11-03",
+      "citation_level": "source-identity-or-primary-summary"
+    },
+    {
+      "id": "S14",
+      "category": "regulator",
+      "name": "FTC endorsements FAQ",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "scope": "Disclosure near recommendation/link; general policy link alone insufficient.",
+      "reviewed_at": "2026-11-03",
+      "citation_level": "source-identity-or-primary-summary"
+    },
+    {
+      "id": "S15",
+      "category": "regulator",
+      "name": "FTC Health Products Compliance Guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "scope": "Express and implied objective benefits need adequate product-relevant substantiation.",
+      "reviewed_at": "2026-11-03",
+      "citation_level": "source-identity-or-primary-summary"
+    },
+    {
+      "id": "S16",
+      "category": "published-FV",
+      "name": "Puységur historical source page",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "scope": "Published 2026-11-03 by authenticated WP read-only search; contextual analogy only.",
+      "reviewed_at": "2026-11-03",
+      "citation_level": "source-identity-or-primary-summary"
+    },
+    {
+      "id": "S17",
+      "category": "published-FV",
+      "name": "Change Blindness investigation",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "scope": "Published existing internal route, not same experiment as attentional blink.",
+      "reviewed_at": "2026-11-03",
+      "citation_level": "source-identity-or-primary-summary"
+    },
+    {
+      "id": "S18",
+      "category": "published-FV",
+      "name": "Mesmerism 1784 commission",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "scope": "Published source investigation; no modern product validation.",
+      "reviewed_at": "2026-11-03",
+      "citation_level": "source-identity-or-primary-summary"
+    },
+    {
+      "id": "S19",
+      "category": "published-FV",
+      "name": "Seven Day Focus Fieldbook",
+      "url": "https://finalvestige.com/focus/",
+      "scope": "Published existing Jetpack opt-in; don't create new list or alter welcome.",
+      "reviewed_at": "2026-11-03",
+      "citation_level": "source-identity-or-primary-summary"
+    },
+    {
+      "id": "S20",
+      "category": "published-FV",
+      "name": "Affiliate disclosure",
+      "url": "https://finalvestige.com/affiliate-disclosure/",
+      "scope": "Supporting policy page only; insufficient as sole near-link disclosure.",
+      "reviewed_at": "2026-11-03",
+      "citation_level": "source-identity-or-primary-summary"
+    }
+  ],
+  "claim_decisions": [
+    {
+      "id": "C01",
+      "claim": "Zen12 has 12-minute sessions",
+      "domain": "product-format",
+      "evidence": [
+        "S02"
+      ],
+      "status": "seller-described",
+      "decision": "ALLOW_WITH_ATTRIBUTION",
+      "qualification": "Describe format, not efficacy"
+    },
+    {
+      "id": "C02",
+      "claim": "Zen12 has 12 levels and four listening formats",
+      "domain": "product-format",
+      "evidence": [
+        "S03"
+      ],
+      "status": "seller-described",
+      "decision": "ALLOW_WITH_ATTRIBUTION",
+      "qualification": "Formats: guided/music/white noise/nature"
+    },
+    {
+      "id": "C03",
+      "claim": "Full-course checkout presents 12 levels / 48 MP3s",
+      "domain": "checkout-inventory",
+      "evidence": [
+        "S04"
+      ],
+      "status": "seller-described",
+      "decision": "ALLOW_WITH_ATTRIBUTION",
+      "qualification": "Only the exact observed full checkout; recheck before release"
+    },
+    {
+      "id": "C04",
+      "claim": "Zen12 equals 60 minutes of advanced meditation",
+      "domain": "comparative-efficacy",
+      "evidence": [
+        "S02",
+        "S06"
+      ],
+      "status": "seller-only/unsupported",
+      "decision": "OMIT_AS_BENEFIT",
+      "qualification": "Explicitly label claim unsubstantiated; review did not test Zen12"
+    },
+    {
+      "id": "C05",
+      "claim": "Zen12 automatically entrains the brain",
+      "domain": "psychological-efficacy",
+      "evidence": [
+        "S02",
+        "S06"
+      ],
+      "status": "not-product-substantiated",
+      "decision": "OMIT_AS_BENEFIT",
+      "qualification": "EEG review heterogeneous and mixed"
+    },
+    {
+      "id": "C06",
+      "claim": "Zen12 eliminates stress or anxiety",
+      "domain": "health",
+      "evidence": [
+        "S02",
+        "S15"
+      ],
+      "status": "seller-only",
+      "decision": "OMIT_AS_BENEFIT",
+      "qualification": "No product-specific reliable clinical substantiation"
+    },
+    {
+      "id": "C07",
+      "claim": "Zen12 has proven health gains",
+      "domain": "health",
+      "evidence": [
+        "S02",
+        "S15"
+      ],
+      "status": "seller-only",
+      "decision": "OMIT_AS_BENEFIT",
+      "qualification": "No unspecified medical promises"
+    },
+    {
+      "id": "C08",
+      "claim": "Zen12 improves focus and creativity",
+      "domain": "cognitive-efficacy",
+      "evidence": [
+        "S02",
+        "S08"
+      ],
+      "status": "seller-only",
+      "decision": "OMIT_AS_BENEFIT",
+      "qualification": "Literature on other audio does not validate product"
+    },
+    {
+      "id": "C09",
+      "claim": "Intensive meditation training can alter lab attentional blink",
+      "domain": "research",
+      "evidence": [
+        "S07"
+      ],
+      "status": "primary-conditional",
+      "decision": "ALLOW_CAUTIOUS",
+      "qualification": "Three-month intensive training, cannot transfer effect to Zen12"
+    },
+    {
+      "id": "C10",
+      "claim": "Binaural-beat EEG evidence is inconsistent",
+      "domain": "research",
+      "evidence": [
+        "S06"
+      ],
+      "status": "systematic-review",
+      "decision": "ALLOW_CONTEXT",
+      "qualification": "5 supportive,8 contradictory,1 mixed; method heterogeneity"
+    },
+    {
+      "id": "C11",
+      "claim": "Headphones not required for Zen12",
+      "domain": "product-use",
+      "evidence": [
+        "S03"
+      ],
+      "status": "seller-described/unverified",
+      "decision": "ATTRIBUTED_ONLY",
+      "qualification": "Do not infer acoustics; test files unavailable"
+    },
+    {
+      "id": "C12",
+      "claim": "Classic binaural beats require separate tones at ears",
+      "domain": "scientific-description",
+      "evidence": [
+        "S06"
+      ],
+      "status": "independent-review",
+      "decision": "ALLOW_CONTEXT",
+      "qualification": "Not evidence about actual Zen12 file technology"
+    },
+    {
+      "id": "C13",
+      "claim": "Refund guaranteed for a year",
+      "domain": "purchase-guarantee",
+      "evidence": [
+        "S04"
+      ],
+      "status": "checkout-label-only",
+      "decision": "CONDITIONAL_AND_RECHECK",
+      "qualification": "Do not adopt vendor promise; operative terms inaccessible"
+    },
+    {
+      "id": "C14",
+      "claim": "Zen12 current price/discount",
+      "domain": "price",
+      "evidence": [
+        "S04"
+      ],
+      "status": "dynamic/volatile",
+      "decision": "OMIT",
+      "qualification": "No fixed figures, no copied countdown"
+    },
+    {
+      "id": "C15",
+      "claim": "Inspire3 checkout collects mobile number",
+      "domain": "privacy",
+      "evidence": [
+        "S04"
+      ],
+      "status": "observed-field",
+      "decision": "ALLOW",
+      "qualification": "Notice without presuming marketing always sent"
+    },
+    {
+      "id": "C16",
+      "claim": "Inspire3 may share purchaser name/email/product with affiliate",
+      "domain": "privacy",
+      "evidence": [
+        "S05"
+      ],
+      "status": "policy-text",
+      "decision": "ALLOW",
+      "qualification": "Separate policy permission from actual transfer evidence"
+    },
+    {
+      "id": "C17",
+      "claim": "FV can activate affiliate links",
+      "domain": "partner-authorization",
+      "evidence": [
+        "S01"
+      ],
+      "status": "not-verified",
+      "decision": "HARD_HOLD",
+      "qualification": "Named acceptance, exact earning URL and channel rights required"
+    },
+    {
+      "id": "C18",
+      "claim": "FV receives only aggregate partner reports",
+      "domain": "partner-privacy",
+      "evidence": [
+        "S05"
+      ],
+      "status": "not-verified",
+      "decision": "HARD_HOLD",
+      "qualification": "Require contract excluding all identifiable purchaser data"
+    },
+    {
+      "id": "C19",
+      "claim": "Editorial commission disclosure near link",
+      "domain": "regulatory",
+      "evidence": [
+        "S14"
+      ],
+      "status": "verified-guidance",
+      "decision": "MUST",
+      "qualification": "Plain language near CTA; policy page alone inadequate"
+    },
+    {
+      "id": "C20",
+      "claim": "Independent source guide may discuss product",
+      "domain": "editorial",
+      "evidence": [
+        "S14",
+        "S15"
+      ],
+      "status": "conditional",
+      "decision": "ALLOW_IN_DRAFT",
+      "qualification": "No personal testimonials, unsupported effects or merchant activation"
+    },
+    {
+      "id": "C21",
+      "claim": "Attentional blink is an eyelid blink",
+      "domain": "science-accuracy",
+      "evidence": [
+        "S09"
+      ],
+      "status": "false",
+      "decision": "OMIT",
+      "qualification": "Laboratory target-report effect, not eye closure"
+    },
+    {
+      "id": "C22",
+      "claim": "1992 paper reported lag-dependent probe deficit",
+      "domain": "science-accuracy",
+      "evidence": [
+        "S09"
+      ],
+      "status": "primary",
+      "decision": "ALLOW",
+      "qualification": "270-ms interval began ~180 ms after target in original conditions"
+    },
+    {
+      "id": "C23",
+      "claim": "Lag-one sparing universally occurs",
+      "domain": "science-accuracy",
+      "evidence": [
+        "S10",
+        "S11"
+      ],
+      "status": "conditional",
+      "decision": "OMIT_UNQUALIFIED",
+      "qualification": "Spatial shift changes sparing"
+    },
+    {
+      "id": "C24",
+      "claim": "Emotion can alter blink results in studied tasks",
+      "domain": "science-accuracy",
+      "evidence": [
+        "S12"
+      ],
+      "status": "primary-conditional",
+      "decision": "ALLOW_CAUTIOUS",
+      "qualification": "No universal fear boosts perception claim"
+    },
+    {
+      "id": "C25",
+      "claim": "A self-directed three-day format comparison proves health benefit",
+      "domain": "exercise-claim",
+      "evidence": [
+        "S15"
+      ],
+      "status": "unsupported",
+      "decision": "PROHIBIT",
+      "qualification": "Exercise labels unvalidated consumer preference"
+    },
+    {
+      "id": "C26",
+      "claim": "A 40s optional video improves conversion",
+      "domain": "marketing-experiment",
+      "evidence": [],
+      "status": "hypothesis",
+      "decision": "UNTESTED",
+      "qualification": "Requires consented, adequate comparison, exposure denominators"
+    },
+    {
+      "id": "C27",
+      "claim": "Seller tracking link available",
+      "domain": "link",
+      "evidence": [],
+      "status": "not-verified",
+      "decision": "HARD_HOLD",
+      "qualification": "No invented affiliate URL or substitution"
+    },
+    {
+      "id": "C28",
+      "claim": "Clicks imply partner sales",
+      "domain": "measurement",
+      "evidence": [],
+      "status": "false",
+      "decision": "PROHIBIT",
+      "qualification": "Track events and sales separately, if ever allowed"
+    },
+    {
+      "id": "C29",
+      "claim": "New subscriber form needed",
+      "domain": "subscriber-data",
+      "evidence": [
+        "S19"
+      ],
+      "status": "unnecessary",
+      "decision": "PROHIBIT",
+      "qualification": "Keep existing Jetpack/Focus funnel"
+    },
+    {
+      "id": "C30",
+      "claim": "Attentional-blink study proves Puységur mechanism",
+      "domain": "history",
+      "evidence": [
+        "S16",
+        "S09"
+      ],
+      "status": "unsupported",
+      "decision": "PROHIBIT",
+      "qualification": "Only analogy about evidence and witness interpretation"
+    }
+  ],
+  "release_gates": [
+    {
+      "id": "G01",
+      "name": "named Final Vestige Inspire3 affiliate acceptance",
+      "status": "CLOSED",
+      "owner": "merchant/legal",
+      "proof_needed": "Independent reviewer evidence; DO NOT infer approval from a draft PR."
+    },
+    {
+      "id": "G02",
+      "name": "authorized product-specific earning URL",
+      "status": "CLOSED",
+      "owner": "merchant/legal",
+      "proof_needed": "Independent reviewer evidence; DO NOT infer approval from a draft PR."
+    },
+    {
+      "id": "G03",
+      "name": "product and website promotion rights",
+      "status": "CLOSED",
+      "owner": "merchant/legal",
+      "proof_needed": "Independent reviewer evidence; DO NOT infer approval from a draft PR."
+    },
+    {
+      "id": "G04",
+      "name": "TikTok promotion rights",
+      "status": "CLOSED",
+      "owner": "merchant/legal",
+      "proof_needed": "Independent reviewer evidence; DO NOT infer approval from a draft PR."
+    },
+    {
+      "id": "G05",
+      "name": "email promotion rights (Dispatch Issue #174)",
+      "status": "CLOSED",
+      "owner": "merchant/legal",
+      "proof_needed": "Independent reviewer evidence; DO NOT infer approval from a draft PR."
+    },
+    {
+      "id": "G06",
+      "name": "approved original creative rights",
+      "status": "CLOSED",
+      "owner": "merchant/legal",
+      "proof_needed": "Independent reviewer evidence; DO NOT infer approval from a draft PR."
+    },
+    {
+      "id": "G07",
+      "name": "zero identifiable purchaser reports in written partner agreement",
+      "status": "CLOSED",
+      "owner": "merchant/legal",
+      "proof_needed": "Independent reviewer evidence; DO NOT infer approval from a draft PR."
+    },
+    {
+      "id": "G08",
+      "name": "current operative vendor Terms of Sale/refund verification",
+      "status": "CLOSED",
+      "owner": "merchant/legal",
+      "proof_needed": "Independent reviewer evidence; DO NOT infer approval from a draft PR."
+    },
+    {
+      "id": "G09",
+      "name": "no inherited unsubstantiated health/financial/product equivalence claims",
+      "status": "CLOSED",
+      "owner": "founder/Mind-editorial",
+      "proof_needed": "Independent reviewer evidence; DO NOT infer approval from a draft PR."
+    },
+    {
+      "id": "G10",
+      "name": "independent external claims audit",
+      "status": "CLOSED",
+      "owner": "founder/Mind-editorial",
+      "proof_needed": "Independent reviewer evidence; DO NOT infer approval from a draft PR."
+    },
+    {
+      "id": "G11",
+      "name": "source QA of full investigation",
+      "status": "CLOSED",
+      "owner": "site-QA",
+      "proof_needed": "Independent reviewer evidence; DO NOT infer approval from a draft PR."
+    },
+    {
+      "id": "G12",
+      "name": "partner policy review with legal counsel as appropriate",
+      "status": "CLOSED",
+      "owner": "merchant/legal",
+      "proof_needed": "Independent reviewer evidence; DO NOT infer approval from a draft PR."
+    },
+    {
+      "id": "G13",
+      "name": "founder choice of ONE consolidated canonical guide vs R97-R108 drafts",
+      "status": "CLOSED",
+      "owner": "founder/Mind-editorial",
+      "proof_needed": "Independent reviewer evidence; DO NOT infer approval from a draft PR."
+    },
+    {
+      "id": "G14",
+      "name": "canonical Mind hub PR #172 coordination",
+      "status": "CLOSED",
+      "owner": "founder/Mind-editorial",
+      "proof_needed": "Independent reviewer evidence; DO NOT infer approval from a draft PR."
+    },
+    {
+      "id": "G15",
+      "name": "homepage art lead #150 scope coordination",
+      "status": "CLOSED",
+      "owner": "founder/Mind-editorial",
+      "proof_needed": "Independent reviewer evidence; DO NOT infer approval from a draft PR."
+    },
+    {
+      "id": "G16",
+      "name": "site QA #126 WCAG 2.2 AA browser verification",
+      "status": "CLOSED",
+      "owner": "site-QA",
+      "proof_needed": "Independent reviewer evidence; DO NOT infer approval from a draft PR."
+    },
+    {
+      "id": "G17",
+      "name": "360/390/768/1440/1920 responsive verification",
+      "status": "CLOSED",
+      "owner": "site-QA",
+      "proof_needed": "Independent reviewer evidence; DO NOT infer approval from a draft PR."
+    },
+    {
+      "id": "G18",
+      "name": "no-JS keyboard/reduced-motion screen-reader verification",
+      "status": "CLOSED",
+      "owner": "site-QA",
+      "proof_needed": "Independent reviewer evidence; DO NOT infer approval from a draft PR."
+    },
+    {
+      "id": "G19",
+      "name": "first-party media MP4+poster+accurate captions if B chosen",
+      "status": "CLOSED",
+      "owner": "founder/Mind-editorial",
+      "proof_needed": "Independent reviewer evidence; DO NOT infer approval from a draft PR."
+    },
+    {
+      "id": "G20",
+      "name": "Lighthouse/Core Web Vitals with optional video",
+      "status": "CLOSED",
+      "owner": "site-QA",
+      "proof_needed": "Independent reviewer evidence; DO NOT infer approval from a draft PR."
+    },
+    {
+      "id": "G21",
+      "name": "FTC disclosure legibility check on actual production theme",
+      "status": "CLOSED",
+      "owner": "site-QA",
+      "proof_needed": "Independent reviewer evidence; DO NOT infer approval from a draft PR."
+    },
+    {
+      "id": "G22",
+      "name": "real privacy-safe attribution implementation authorization",
+      "status": "CLOSED",
+      "owner": "founder/Mind-editorial",
+      "proof_needed": "Independent reviewer evidence; DO NOT infer approval from a draft PR."
+    },
+    {
+      "id": "G23",
+      "name": "existing Jetpack Focus welcome/funnel nonregression",
+      "status": "CLOSED",
+      "owner": "founder/Mind-editorial",
+      "proof_needed": "Independent reviewer evidence; DO NOT infer approval from a draft PR."
+    },
+    {
+      "id": "G24",
+      "name": "verified live links after separate publication authorization",
+      "status": "CLOSED",
+      "owner": "founder/Mind-editorial",
+      "proof_needed": "Independent reviewer evidence; DO NOT infer approval from a draft PR."
+    },
+    {
+      "id": "G25",
+      "name": "explicit founder release/publish approval",
+      "status": "CLOSED",
+      "owner": "founder/Mind-editorial",
+      "proof_needed": "Independent reviewer evidence; DO NOT infer approval from a draft PR."
+    },
+    {
+      "id": "G26",
+      "name": "no merging or deployment before release evidence",
+      "status": "CLOSED",
+      "owner": "founder/Mind-editorial",
+      "proof_needed": "Independent reviewer evidence; DO NOT infer approval from a draft PR."
+    }
+  ],
+  "limitations": [
+    "Official seller Terms of Sale endpoint could not be reliably retrieved; do not claim final binding refund terms.",
+    "Affiliate acceptance and official swipe/creative permission not verified.",
+    "No actual audio files examined; do not conflate binaural beat literature with Zen12 acoustic structure.",
+    "Video-B is static design/transcript only; not an MP4 or A/B measurement.",
+    "No identifiable purchaser data, no subscriber changes, no production analytics."
+  ],
+  "latest_verified_wordpress_routes": [
+    "https://finalvestige.com/focus/",
+    "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "https://finalvestige.com/2026/11/02/change-blindness/",
+    "https://finalvestige.com/2026/11/02/mesmerism/"
+  ]
+}
