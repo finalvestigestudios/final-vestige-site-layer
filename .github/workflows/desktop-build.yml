@@ -129,16 +129,10 @@ jobs:
           python -m unittest discover -s products/desktop/tests -p 'test_catalog_preflight_r186.py'
           python -OO -m unittest discover -s products/desktop/tests -p 'test_catalog_preflight_r186.py'
           python products/desktop/catalog_preflight_r186.py products/desktop/site/software-catalog.gutenberg.html
-      - name: R186 six-app static catalog publication gate (38 cases, normal and -OO)
-        shell: pwsh
+      - name: R187 enforce catalog gate in BOTH independent runner jobs (16 methods, normal and -OO)
         run: |
-          $env:PYTHONPATH = "products/desktop"
-          python -m unittest discover -s products/desktop/tests -p 'test_catalog_preflight_r186.py'
-          if ($LASTEXITCODE -ne 0) { throw "R186 catalog preflight tests failed" }
-          python -OO -m unittest discover -s products/desktop/tests -p 'test_catalog_preflight_r186.py'
-          if ($LASTEXITCODE -ne 0) { throw "R186 optimized catalog preflight tests failed" }
-          python products/desktop/catalog_preflight_r186.py products/desktop/site/software-catalog.gutenberg.html
-          if ($LASTEXITCODE -ne 0) { throw "R186 catalog draft preflight failed" }
+          python -m unittest discover -s products/desktop/tests -p 'test_catalog_ci_placement_r187.py'
+          python -OO -m unittest discover -s products/desktop/tests -p 'test_catalog_ci_placement_r187.py'
       - name: Install pinned local evidence crypto dependency
         run: python -m pip install "cryptography==46.0.4"
       - name: Verify R100 privacy-safe source-method regressions (normal and -OO)
@@ -583,6 +577,24 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R185 canonical source custody tests failed" }
           python -OO products/desktop/scripts/safe_unittest_r185.py
           if ($LASTEXITCODE -ne 0) { throw "R185 optimized canonical source custody tests failed" }
+      - name: R186 six-app static catalog publication gate (38 cases, normal and -OO)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python -m unittest discover -s products/desktop/tests -p 'test_catalog_preflight_r186.py'
+          if ($LASTEXITCODE -ne 0) { throw "R186 catalog preflight tests failed" }
+          python -OO -m unittest discover -s products/desktop/tests -p 'test_catalog_preflight_r186.py'
+          if ($LASTEXITCODE -ne 0) { throw "R186 optimized catalog preflight tests failed" }
+          python products/desktop/catalog_preflight_r186.py products/desktop/site/software-catalog.gutenberg.html
+          if ($LASTEXITCODE -ne 0) { throw "R186 catalog draft preflight failed" }
+      - name: R187 enforce catalog gate in BOTH independent runner jobs (16 methods, normal and -OO)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python -m unittest discover -s products/desktop/tests -p 'test_catalog_ci_placement_r187.py'
+          if ($LASTEXITCODE -ne 0) { throw "R187 dual-job source contract failed" }
+          python -OO -m unittest discover -s products/desktop/tests -p 'test_catalog_ci_placement_r187.py'
+          if ($LASTEXITCODE -ne 0) { throw "R187 optimized dual-job source contract failed" }
       - name: Install pinned local evidence crypto dependency
         run: python -m pip install "cryptography==46.0.4"
       - name: R100 Windows source-stage diagnostic (read-only, NOT a release gate)
