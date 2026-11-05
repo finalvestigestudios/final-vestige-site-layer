@@ -13,16 +13,36 @@
       "src": "https://finalvestige.com/wp-content/uploads/2026/08/s67-19766.webp",
       "wp_media_mime": "image/webp",
       "wp_media_declared_bytes": 78346,
-      "wp_media_dimensions": [1041, 810],
+      "wp_media_dimensions": [
+        1041,
+        810
+      ],
       "claimed_archive_identifier": "S67-19766",
       "origin": "NASA / Apollo 1",
       "source_reference": "https://www.nasa.gov/image-article/remembering-apollo-1-astronauts/",
       "source_identity": "REVIEW_REQUIRED",
       "rights": "PROVISIONAL_NASA_US_GOVT_IMAGE_VERIFY_ORIGIN",
-      "rights_review": "NASA publication supports a crew photo near LC-34; does NOT independently establish S67-19766 is that exact file. Confirm identifier and photograph before claiming source-verified.",
+      "rights_review": "Catalogue identifier S67-19766 is attested in a secondary DVIDS/NARA-labelled public index (2026-11-05 research), but official NASA original URL has not been fetched, no image-level comparison with WP 473 was made, and this is NOT rights or exact identity certification. Preserve NASA credit as provisional until original and derivative chain verified.",
       "network_body_sha256": null,
       "network_decoded_bytes": null,
-      "browser_response_status": null
+      "browser_response_status": null,
+      "catalogue_trace": {
+        "status": "SECONDARY_INDEX_CORROBORATES_IDENTIFIER_NOT_LOCAL_BINARY",
+        "identifier": "S67-19766",
+        "index_reference": "https://nara.getarchive.net/amp/topics/apollo%2B1",
+        "indexed_item": "https://garystockbridge617.getarchive.net/media/astro-grissom-chaffee-white-in-va-in-mission-simulator-and-on-complex-34-4f44b4",
+        "index_owner_notice": "NARA-branded getarchive.net/PICRYL mirror of DVIDS-labelled records; NOT an official nasa.gov or archives.gov primary source",
+        "indexed_description": "ASTRO GRISSOM, CHAFFEE, WHITE IN VA, IN MISSION SIMULATOR AND ON COMPLEX 34",
+        "indexed_large_dimensions": [
+          7920,
+          6160
+        ],
+        "reported_nasa_first_party_image_url": "https://www.nasa.gov/sites/default/files/thumbnails/image/s67-19766.jpg",
+        "primary_image_url_directly_verified": false,
+        "uploaded_webp_binary_matched": false,
+        "recognition_basis": "identifier and general subject are independently searchable; uploaded media remains visually and cryptographically unmatched",
+        "catalogue_checked_on": "2026-11-05"
+      }
     },
     {
       "key": "franklin",
@@ -31,7 +51,10 @@
       "src": "https://finalvestige.com/wp-content/uploads/2026/08/Franklinexpeditionnote.jpg",
       "wp_media_mime": "image/jpeg",
       "wp_media_declared_bytes": 466043,
-      "wp_media_dimensions": [960, 1526],
+      "wp_media_dimensions": [
+        960,
+        1526
+      ],
       "origin": "Wikimedia Commons: Franklinexpeditionnote.jpg; historical manuscript at Royal Museums Greenwich HSR/C/9/1",
       "source_reference": "https://commons.wikimedia.org/wiki/File:Franklinexpeditionnote.jpg",
       "historical_object_reference": "https://www.rmg.co.uk/collections/objects/rmgc-object-504898",
@@ -40,7 +63,25 @@
       "rights_review": "Commons marks its file public domain; the RMG object page is evidence of history, NOT permission to use a museum-supplied image. The displayed site JPEG is locally derived: binary provenance unverified.",
       "network_body_sha256": null,
       "network_decoded_bytes": null,
-      "browser_response_status": null
+      "browser_response_status": null,
+      "commons_preview_trace": {
+        "status": "DIMENSIONS_MATCH_COMMONS_LISTED_PREVIEW_BINARY_UNMATCHED",
+        "reference": "https://commons.wikimedia.org/wiki/File:Franklinexpeditionnote.jpg",
+        "preview_dimensions": [
+          960,
+          1526
+        ],
+        "listed_original_dimensions": [
+          1576,
+          2506
+        ],
+        "listed_original_bytes": 902181,
+        "listed_original_sha1": "584cf387d7dcf3e259058ec14db2f4c7d04bac00",
+        "wp_media_matches_listed_preview_dimensions": true,
+        "wp_media_binary_matched": false,
+        "caution": "matching listed preview dimensions is provenance corroboration, not pixel equality, derivative rights, or transferred-byte proof",
+        "checked_on": "2026-11-05"
+      }
     },
     {
       "key": "nypl_brooklyn",
@@ -49,7 +90,10 @@
       "src": "https://finalvestige.com/wp-content/uploads/2026/08/edit-017-v02-nypl-5003296-original.jpg",
       "wp_media_mime": "image/jpeg",
       "wp_media_declared_bytes": 5553669,
-      "wp_media_dimensions": [5667, 3831],
+      "wp_media_dimensions": [
+        5667,
+        3831
+      ],
       "source_reference": "https://libguides.nypl.org/nyc-rail-transit/companies",
       "claimed_nypl_image_id": "5003296",
       "source_identity": "REVIEW_REQUIRED",
