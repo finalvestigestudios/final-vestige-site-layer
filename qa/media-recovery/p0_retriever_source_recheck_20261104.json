@@ -1,0 +1,268 @@
+{
+  "schema": "fv-p0-retriever-source-recheck-v1",
+  "audit_date_pacific": "2026-11-04",
+  "article_source_readback_record": "qa/media-recovery/live_wp_p0_and_oversize_13_20261105.json",
+  "immutable_source_blob": "45c9764941f531c9981c8fe569c2d91409c00d18",
+  "prior_candidate_record": "qa/media-recovery/p0_restoration_release_queue_20261101.json",
+  "immutable_candidate_blob": "a337a4c93639e5cb0f69914525e4ee7056c4eaa5",
+  "method": "web.open URL retrieval; tool wrapper errors are not origin or visitor HTTP status",
+  "checked_sources": 4,
+  "source_count": 6,
+  "guest_browser_confirmed_broken": null,
+  "claims": {
+    "reported_broken_42": "UNVERIFIED",
+    "reduction_76_percent": "UNMEASURED",
+    "repair_count_this_batch": 0,
+    "first_party_wordpress_mutation": false,
+    "third_party_download_or_cache": false
+  },
+  "rows": [
+    {
+      "image_key": "285:5",
+      "post_id": 285,
+      "latest_wp_modified": "2026-11-02T21:39:59",
+      "exact_published_original_url": "https://images.saymedia-content.com/.image/ar_16:9,c_fill,cs_srgb,fl_progressive,q_auto:eco,w_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg",
+      "published_source_read_back_from_wp": true,
+      "retriever": {
+        "method": "NOT_TESTED_THIS_BATCH",
+        "checked_date_pacific": null,
+        "tool_result": "NOT_TESTED",
+        "wrapper_error_code": null,
+        "redirect_observed": null,
+        "origin_http_status": null,
+        "guest_browser_http_status": null,
+        "guest_browser_current_src": null,
+        "image_decode_verified": null,
+        "transferred_bytes": null,
+        "visitor_broken": null
+      },
+      "archival_candidate": {
+        "authority": "Wikimedia Commons original-creator catalog linked by publisher attribution",
+        "archive_record_url": "https://commons.wikimedia.org/wiki/File:Three_mile_island_062010.jpg",
+        "identifier": "Three mile island 062010.jpg",
+        "source_relationship": "publisher_credit_exact_scene_candidate_unconfirmed_pixel_match",
+        "original_pixel_dimensions": [
+          819,
+          614
+        ],
+        "proposed_960_max_dimensions": [
+          819,
+          614
+        ],
+        "geometry_basis": "commons_catalog_metadata_not_downloaded_binary",
+        "no_upscale": true,
+        "exact_binary_identity_verified": false,
+        "rights_review": "HOLD",
+        "source_authorization_to_cache": false
+      },
+      "production_write_authorized": false
+    },
+    {
+      "image_key": "285:2",
+      "post_id": 285,
+      "latest_wp_modified": "2026-11-02T21:39:59",
+      "exact_published_original_url": "https://blog.ucsusa.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+      "published_source_read_back_from_wp": true,
+      "retriever": {
+        "method": "independent_web_open_NOT_guest_browser",
+        "checked_date_pacific": "2026-11-04",
+        "tool_result": "WRAPPER_500_AFTER_REDIRECT_INACCESSIBLE",
+        "wrapper_error_code": 500,
+        "redirect_observed": "https://blog.ucs.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+        "origin_http_status": null,
+        "guest_browser_http_status": null,
+        "guest_browser_current_src": null,
+        "image_decode_verified": null,
+        "transferred_bytes": null,
+        "visitor_broken": null
+      },
+      "archival_candidate": {
+        "authority": "National Archives / President's Commission",
+        "archive_record_url": "https://commons.wikimedia.org/wiki/File:Control_room_Number_2._Nuclear_Regulatory_Commission_inspector_looking_at_meters._-_NARA_-_540034.tif",
+        "identifier": "NARA 540034",
+        "source_relationship": "different_photo_same_topic_not_a_drop_in_replacement",
+        "original_pixel_dimensions": [
+          3000,
+          2023
+        ],
+        "proposed_960_max_dimensions": [
+          960,
+          647
+        ],
+        "geometry_basis": "candidate_catalog_dimensions_not_existing_published_image",
+        "no_upscale": true,
+        "exact_binary_identity_verified": false,
+        "rights_review": "HOLD",
+        "source_authorization_to_cache": false
+      },
+      "production_write_authorized": false
+    },
+    {
+      "image_key": "287:5",
+      "post_id": 287,
+      "latest_wp_modified": "2026-11-02T21:40:01",
+      "exact_published_original_url": "https://stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+      "published_source_read_back_from_wp": true,
+      "retriever": {
+        "method": "independent_web_open_NOT_guest_browser",
+        "checked_date_pacific": "2026-11-04",
+        "tool_result": "WRAPPER_FETCH_404",
+        "wrapper_error_code": 404,
+        "redirect_observed": null,
+        "origin_http_status": null,
+        "guest_browser_http_status": null,
+        "guest_browser_current_src": null,
+        "image_decode_verified": null,
+        "transferred_bytes": null,
+        "visitor_broken": null
+      },
+      "archival_candidate": {
+        "authority": null,
+        "archive_record_url": null,
+        "identifier": null,
+        "source_relationship": "NOT_YET_SELECTED",
+        "original_pixel_dimensions": [
+          null,
+          null
+        ],
+        "proposed_960_max_dimensions": [
+          null,
+          null
+        ],
+        "geometry_basis": "UNKNOWN",
+        "no_upscale": true,
+        "exact_binary_identity_verified": false,
+        "rights_review": "HOLD",
+        "source_authorization_to_cache": false
+      },
+      "production_write_authorized": false
+    },
+    {
+      "image_key": "418:1",
+      "post_id": 418,
+      "latest_wp_modified": "2026-08-28T03:11:08",
+      "exact_published_original_url": "https://media.defense.gov/2021/Mar/30/2002610812/1920/1080/0/210330-G-DE713-0002.JPG",
+      "published_source_read_back_from_wp": true,
+      "retriever": {
+        "method": "NOT_TESTED_THIS_BATCH",
+        "checked_date_pacific": null,
+        "tool_result": "NOT_TESTED",
+        "wrapper_error_code": null,
+        "redirect_observed": null,
+        "origin_http_status": null,
+        "guest_browser_http_status": null,
+        "guest_browser_current_src": null,
+        "image_decode_verified": null,
+        "transferred_bytes": null,
+        "visitor_broken": null
+      },
+      "archival_candidate": {
+        "authority": "United States Coast Guard",
+        "archive_record_url": "https://www.history.uscg.mil/Our-Collections/Photos/igphoto/2002905913/",
+        "identifier": "210330-G-DE713-0002.JPG",
+        "source_relationship": "official_virin_filename_match_no_master_hash",
+        "original_pixel_dimensions": [
+          null,
+          null
+        ],
+        "proposed_960_max_dimensions": [
+          null,
+          null
+        ],
+        "geometry_basis": "unknown_original_dimensions_url_transform_not_master",
+        "no_upscale": true,
+        "exact_binary_identity_verified": false,
+        "rights_review": "HOLD",
+        "source_authorization_to_cache": false
+      },
+      "production_write_authorized": false
+    },
+    {
+      "image_key": "418:2",
+      "post_id": 418,
+      "latest_wp_modified": "2026-08-28T03:11:08",
+      "exact_published_original_url": "https://www.history.uscg.mil/Portals/6/5_%20Scotch_Cap_debris2_1946.jpg",
+      "published_source_read_back_from_wp": true,
+      "retriever": {
+        "method": "independent_web_open_NOT_guest_browser",
+        "checked_date_pacific": "2026-11-04",
+        "tool_result": "WRAPPER_FETCH_403",
+        "wrapper_error_code": 403,
+        "redirect_observed": null,
+        "origin_http_status": null,
+        "guest_browser_http_status": null,
+        "guest_browser_current_src": null,
+        "image_decode_verified": null,
+        "transferred_bytes": null,
+        "visitor_broken": null
+      },
+      "archival_candidate": {
+        "authority": "US Coast Guard History",
+        "archive_record_url": "https://www.history.uscg.mil/Research/THE-LONG-BLUE-LINE/Article/2866442/the-long-blue-line-standing-a-deadly-watch-75-years-agofinal-hours-of-scotch-ca/",
+        "identifier": "5_ Scotch_Cap_debris2_1946.jpg (individual accession unknown)",
+        "source_relationship": "publisher_article_original_filename_catalog_unmatched",
+        "original_pixel_dimensions": [
+          null,
+          null
+        ],
+        "proposed_960_max_dimensions": [
+          null,
+          null
+        ],
+        "geometry_basis": "unknown_original_dimensions",
+        "no_upscale": true,
+        "exact_binary_identity_verified": false,
+        "rights_review": "HOLD",
+        "source_authorization_to_cache": false
+      },
+      "production_write_authorized": false
+    },
+    {
+      "image_key": "407:1",
+      "post_id": 407,
+      "latest_wp_modified": "2026-10-29T18:30:30",
+      "exact_published_original_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/img7535.jpg",
+      "published_source_read_back_from_wp": true,
+      "retriever": {
+        "method": "independent_web_open_NOT_guest_browser",
+        "checked_date_pacific": "2026-11-04",
+        "tool_result": "WRAPPER_UNSUPPORTED_CONTENT_TYPE_OCTET_STREAM",
+        "wrapper_error_code": 400,
+        "redirect_observed": null,
+        "origin_http_status": null,
+        "guest_browser_http_status": null,
+        "guest_browser_current_src": null,
+        "image_decode_verified": null,
+        "transferred_bytes": null,
+        "visitor_broken": null
+      },
+      "archival_candidate": {
+        "authority": "USGS",
+        "archive_record_url": "https://www.usgs.gov/media/images/hebgen-lake-fault-scarp-1959",
+        "identifier": "J. R. Stacy 1959 Hebgen fault-scarp USGS record",
+        "source_relationship": "same_record_alternative_original_path_binary_unverified",
+        "original_pixel_dimensions": [
+          null,
+          null
+        ],
+        "proposed_960_max_dimensions": [
+          null,
+          null
+        ],
+        "geometry_basis": "unknown_actual_master_dimensions",
+        "no_upscale": true,
+        "exact_binary_identity_verified": false,
+        "rights_review": "HOLD",
+        "source_authorization_to_cache": false
+      },
+      "production_write_authorized": false
+    }
+  ],
+  "release_gate": {
+    "requires_logged_out_chromium": true,
+    "requires_exact_subject_and_rights": true,
+    "requires_960_px_no_upscale_binary_metadata": true,
+    "wp_rewrite_approval": false,
+    "homepage_scope_excluded": true
+  }
+}
