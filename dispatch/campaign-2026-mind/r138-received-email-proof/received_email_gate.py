@@ -84,6 +84,14 @@ def _has_unsub_url(links: list[tuple[str, str]], plain: str) -> bool:
     return bool(re.search(r"unsubscribe.{0,120}https?://[^\s<>]+", plain, re.I | re.S))
 
 
+def _near_disclosure(text: str, anchor: str, max_chars: int = 300) -> bool:
+    """Conservative text-only proximity signal; native visual position still unverified."""
+    if not anchor:
+        return False
+    spots = [m.start() for m in re.finditer(re.escape(anchor), text, re.I)]
+    return any(abs(m.start() - spot) <= max_chars for m in COMMISSION.finditer(text) for spot in spots)
+
+
 def audit(raw: bytes, *, edition: str, expected_path: str, publisher_address: str | None = None,
           domain: str = "finalvestige.com", expected_sender: str = "donotreply@wordpress.com") -> dict:
     """Produce an aggregate-only structural report. Never infer a delivery or paid sale.
@@ -112,6 +120,12 @@ def audit(raw: bytes, *, edition: str, expected_path: str, publisher_address: st
     disclosure_html = bool(COMMISSION.search(" ".join(markup.text))) if html else None
     disclosure_both = (not commercial or (disclosure_plain is not False and disclosure_html is not False
                                       and (disclosure_plain is True or disclosure_html is True)))
+    html_text = " ".join(markup.text)
+    plain_proximity = (not plain or any(_near_disclosure(plain, url) for url, _ in urls_plain
+                                       if _is_site_url(url, domain, expected_path)))
+    html_proximity = (not html or any(_near_disclosure(html_text, label) for url, label in markup.links
+                                     if _is_site_url(url, domain, expected_path)))
+    disclosure_near_cta = (not commercial or (disclosure_both and plain_proximity and html_proximity))
     postal_present = bool(publisher_address and len(publisher_address.strip()) >= 10
                           and publisher_address.casefold().strip() in combined.casefold()
                           and "automattic" not in publisher_address.casefold())
@@ -127,6 +141,7 @@ def audit(raw: bytes, *, edition: str, expected_path: str, publisher_address: st
         "list_unsubscribe_header_present": list_unsub_header,
         "verified_publisher_postal_address_present": postal_present,
         "commercial_disclosure_in_present_mime_parts": disclosure_both,
+        "commercial_disclosure_near_first_party_cta": disclosure_near_cta,
         "email_html_has_no_unsafe_elements_or_unlabeled_images": html_safe,
         "plaintext_body_present": bool(plain.strip()),
         "html_body_present": bool(html.strip()),
