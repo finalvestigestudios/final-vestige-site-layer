@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "as_of": "2026-10-30",
+  "as_of": "2026-11-04",
   "status": "DRAFT_CROSSWALK_ALL_SHARED_SOURCE_GROUPS_UNRESOLVED",
-  "warning": "No variant is editorially or clinically approved by this registry. A machine fetch is NOT a human link/claim/safety check. These exact source records preserve individual reading depth and may disagree.",
+  "warning": "R124 draft candidate source-variant parity only; 32 shared-URL groups UNREVIEWED. No source agreement, emergency-safety approval, QD PASS, publish eligibility or product eligibility.",
   "base_commit": "ee591e2df5de08aea7603fc4cbf3c5249361e119",
   "source_head_commits": {
     "base": "ee591e2df5de08aea7603fc4cbf3c5249361e119",
@@ -22,28 +22,10 @@
       "count": 34
     },
     {
-      "origin": "start",
-      "path": "preparedness/sources/fragments/start.json",
-      "git_blob_sha": "29574c328cbab0548e6e5d4a026694857d56b6b4",
-      "count": 27
-    },
-    {
-      "origin": "shelter",
-      "path": "preparedness/sources/fragments/shelter.json",
-      "git_blob_sha": "d9eeb4546e58f083031e0767aaea7cf112099e09",
-      "count": 31
-    },
-    {
       "origin": "food",
       "path": "preparedness/sources/fragments/food.json",
       "git_blob_sha": "a1f73c8170932d6b3192e9cd506686d516d23d30",
       "count": 30
-    },
-    {
-      "origin": "hist-food",
-      "path": "preparedness/sources/fragments/hist-food.json",
-      "git_blob_sha": "d10628342fea5f177a8d1be00dd906d0c9c7850e",
-      "count": 28
     },
     {
       "origin": "health",
@@ -52,21 +34,39 @@
       "count": 21
     },
     {
-      "origin": "hist-home",
-      "path": "preparedness/sources/fragments/hist-home.json",
-      "git_blob_sha": "6460d4b0734991675c889f28be2f73a19e3c42c0",
-      "count": 27
-    },
-    {
       "origin": "hist-field",
       "path": "preparedness/sources/fragments/hist-field.json",
-      "git_blob_sha": "4f369122cc0e230ee39654c215f18ffc79b5cc85",
-      "count": 26
+      "git_blob_sha": "3dafa9425f3829c0be2e6fea00889aff95124031",
+      "count": 28
+    },
+    {
+      "origin": "hist-food",
+      "path": "preparedness/sources/fragments/hist-food.json",
+      "git_blob_sha": "d10628342fea5f177a8d1be00dd906d0c9c7850e",
+      "count": 28
+    },
+    {
+      "origin": "hist-home",
+      "path": "preparedness/sources/fragments/hist-home.json",
+      "git_blob_sha": "8d85fd868508c5caba14a839d119d55f31f14f72",
+      "count": 29
+    },
+    {
+      "origin": "shelter",
+      "path": "preparedness/sources/fragments/shelter.json",
+      "git_blob_sha": "2a3f1a7ddeab2782add875be1e0e378513504aa1",
+      "count": 45
+    },
+    {
+      "origin": "start",
+      "path": "preparedness/sources/fragments/start.json",
+      "git_blob_sha": "96140d6d1872588e5d20d9052445c9157e88934d",
+      "count": 29
     }
   ],
-  "raw_source_rows": 224,
-  "unique_source_urls": 186,
-  "duplicate_url_groups": 30,
+  "raw_source_rows": 244,
+  "unique_source_urls": 202,
+  "duplicate_url_groups": 32,
   "duplicate_id_groups": 15,
   "article_origins": {
     "homemade-water-filters": "base",
@@ -123,6 +123,11 @@
           "origin": "food",
           "id": "fsis-power-failure",
           "row_index": 0
+        },
+        {
+          "origin": "shelter",
+          "id": "fsis-power-failure",
+          "row_index": 41
         }
       ],
       "variants": [
@@ -158,6 +163,25 @@
             "human_link_check": false,
             "supports": "A refrigerator keeps food cold for about 4 hours if unopened; a full stand-alone freezer holds temperature about 48 hours (24 if half full) with the door closed; a refrigerator's freezer compartment may not hold as long; group freezer packages together.",
             "notes": "Short Q&A that points to the longer FSIS emergencies page. Upgraded from the register placeholder."
+          }
+        },
+        {
+          "origin": "shelter",
+          "source_file": "preparedness/sources/fragments/shelter.json",
+          "row_index": 41,
+          "source": {
+            "id": "fsis-power-failure",
+            "title": "How do you keep food safe during a power failure? (Ask USDA)",
+            "publisher": "USDA Food Safety and Inspection Service (Ask USDA)",
+            "kind": "regulator",
+            "url": "https://ask.fsis.usda.gov/article/How-do-you-keep-food-safe-during-a-power-failure",
+            "published": null,
+            "updated": "2024-12-17",
+            "reviewed": null,
+            "verified_on": "2026-11-01",
+            "human_link_check": false,
+            "supports": "A refrigerator keeps food cold for about 4 hours if unopened; a full stand-alone freezer holds its temperature for approximately 48 hours (24 hours if half full) if the door stays closed; the freezer compartment of a refrigerator-freezer may not keep food frozen as long; group freezer packages together.",
+            "notes": "Upgraded from the register placeholder. Read: the whole short article as rendered by Firecrawl on 2026-11-01. Page shows 'Last Updated: Dec 17, 2024'. Agrees with the CDC, FEMA and Ready.gov timings. human_link_check remains false."
           }
         }
       ]
@@ -367,6 +391,11 @@
           "origin": "food",
           "id": "nchfp-jerky",
           "row_index": 3
+        },
+        {
+          "origin": "hist-food",
+          "id": "hist-food-nchfp-jerky",
+          "row_index": 14
         }
       ],
       "variants": [
@@ -402,6 +431,25 @@
             "human_link_check": false,
             "supports": "Jerky safety procedure: raw poultry generally not recommended; freeze pork and wild game 6 inches or thinner at 0 F or below for at least 30 days against trichinella; handling rules; wild-game cautions; reaching 160 F internally by heating in marinade before drying or in an oven after drying, without case hardening; slices no thicker than 1/4 inch; dry in a dehydrator or oven preheated to 140 F until a test piece cracks but does not break; ground-meat jerky is harder; home-dried jerky keeps 2 weeks at room temperature in a sealed container, longer refrigerated or frozen.",
             "notes": "Page text credits \"So Easy to Preserve\", 6th ed. 2014 (Bulletin 989, UGA Cooperative Extension). No page-level date is shown. Upgraded from the register placeholder."
+          }
+        },
+        {
+          "origin": "hist-food",
+          "source_file": "preparedness/sources/fragments/hist-food.json",
+          "row_index": 14,
+          "source": {
+            "id": "hist-food-nchfp-jerky",
+            "title": "Jerky",
+            "publisher": "National Center for Home Food Preservation, University of Georgia (from So Easy to Preserve, 6th ed., Bulletin 989)",
+            "kind": "extension",
+            "url": "https://nchfp.uga.edu/how/dry/recipes/jerky/",
+            "published": "2014",
+            "updated": null,
+            "reviewed": null,
+            "verified_on": "2026-10-29",
+            "human_link_check": false,
+            "supports": "Jerky raw-meat hazards; wild game and pork trichinella treatment; heating meat strips to 160 F either in marinade before drying or in an oven after drying; fecal contamination of game; properly dried jerky keeps at room temperature two weeks in a sealed container.",
+            "notes": "Same page as the register placeholder 'nchfp-jerky' (read at the URL without the trailing slash; both return HTTP 200). Defined under a new id because the shared test suite uses 'nchfp-jerky' as its permanent unverified-placeholder fixture. Source of an official disagreement: NCHFP allows the 160 F heat step after drying; USDA FSIS recommends it before dehydrating and says home-dried jerky keeps 1 to 2 months. See hist-food-fsis-jerky. Extent read: full page text, live scrape."
           }
         }
       ]
@@ -642,17 +690,41 @@
       "canonical_url": "https://www.cdc.gov/natural-disasters/response/what-to-do-protect-yourself-during-a-power-outage.html",
       "identities": [
         {
+          "origin": "health",
+          "id": "health-cdc-power-outage",
+          "row_index": 3
+        },
+        {
           "origin": "shelter",
           "id": "shelter-cdc-power-outage",
           "row_index": 2
         },
         {
-          "origin": "health",
-          "id": "health-cdc-power-outage",
-          "row_index": 3
+          "origin": "start",
+          "id": "start-cdc-power-outage",
+          "row_index": 28
         }
       ],
       "variants": [
+        {
+          "origin": "health",
+          "source_file": "preparedness/sources/fragments/health.json",
+          "row_index": 3,
+          "source": {
+            "id": "health-cdc-power-outage",
+            "title": "What to Do to Protect Yourself During a Power Outage",
+            "publisher": "Centers for Disease Control and Prevention (National Center for Environmental Health)",
+            "kind": "regulator",
+            "url": "https://www.cdc.gov/natural-disasters/response/what-to-do-protect-yourself-during-a-power-outage.html",
+            "published": "2024-05-15",
+            "updated": "2024-01-26",
+            "reviewed": "2026-08-26",
+            "verified_on": "2026-10-29",
+            "human_link_check": false,
+            "supports": "Medication safety in an outage: some drugs need refrigeration to keep their strength; when the power is out for a day or more, throw away refrigerated medication unless the label says otherwise; if a life depends on a refrigerated drug that has been at room temperature, use it only until a new supply is available; replace refrigerated drugs as soon as possible. Also: safe water for drinking, cooking and hygiene is bottled, boiled or treated; carbon monoxide rules (never run a generator indoors or less than 20 feet from a window, door or vent; Poison Control 1-800-222-1222); fridge and freezer hold times.",
+            "notes": "Page shows 'Updated: January 26, 2024' while also showing 'Reviewed: August 26, 2026'; both recorded as shown."
+          }
+        },
         {
           "origin": "shelter",
           "source_file": "preparedness/sources/fragments/shelter.json",
@@ -673,22 +745,22 @@
           }
         },
         {
-          "origin": "health",
-          "source_file": "preparedness/sources/fragments/health.json",
-          "row_index": 3,
+          "origin": "start",
+          "source_file": "preparedness/sources/fragments/start.json",
+          "row_index": 28,
           "source": {
-            "id": "health-cdc-power-outage",
+            "id": "start-cdc-power-outage",
             "title": "What to Do to Protect Yourself During a Power Outage",
-            "publisher": "Centers for Disease Control and Prevention (National Center for Environmental Health)",
+            "publisher": "CDC",
             "kind": "regulator",
             "url": "https://www.cdc.gov/natural-disasters/response/what-to-do-protect-yourself-during-a-power-outage.html",
-            "published": "2024-05-15",
-            "updated": "2024-01-26",
-            "reviewed": "2026-08-26",
-            "verified_on": "2026-10-29",
+            "published": null,
+            "updated": null,
+            "reviewed": null,
+            "verified_on": "2026-11-02",
             "human_link_check": false,
-            "supports": "Medication safety in an outage: some drugs need refrigeration to keep their strength; when the power is out for a day or more, throw away refrigerated medication unless the label says otherwise; if a life depends on a refrigerated drug that has been at room temperature, use it only until a new supply is available; replace refrigerated drugs as soon as possible. Also: safe water for drinking, cooking and hygiene is bottled, boiled or treated; carbon monoxide rules (never run a generator indoors or less than 20 feet from a window, door or vent; Poison Control 1-800-222-1222); fridge and freezer hold times.",
-            "notes": "Page shows 'Updated: January 26, 2024' while also showing 'Reviewed: August 26, 2026'; both recorded as shown."
+            "supports": "Carbon monoxide section: never use a generator, pressure washer or other gasoline-powered engine inside the home, basement or garage, or less than 20 feet from any window, door or vent; use an extension cord longer than 20 feet to keep the generator at a safe distance.",
+            "notes": "Search excerpt read 2026-11-02; full page text fetched by audit/start-here/verify_sources.py on the same run (size and hash in ledger.json). Added to cross-check the 20-foot figure from Ready.gov and FEMA. The CDC's wording ('less than 20 feet') and its carbon monoxide basics page ('more than 20 feet') differ slightly from Ready.gov's 'at least 20 feet'; none of them says 20 feet is safe at every site."
           }
         }
       ]
@@ -803,6 +875,65 @@
             "human_link_check": false,
             "supports": "Emergencies create network congestion; limit non-emergency calls and keep calls brief; try text messaging, which may go through when a call will not; try several services (text, email, landline); wait 10 seconds before redialing; have charged batteries and car-charger adapters; keep emergency numbers in the phone; place calls while the vehicle is stationary; have a family communications plan with an out-of-area central contact; forward a home number to a wireless number when evacuating; keep a corded phone that does not depend on electricity; for people with disabilities, medical alert systems usually need a working phone line so keep a backup.",
             "notes": "Undated; some wording (pagers, PDAs, text radio) reflects older technology. Cited for its congestion advice, which it states generally."
+          }
+        }
+      ]
+    },
+    {
+      "url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/emergencies/keep-your-food-safe-during-emergencies",
+      "review_status": "pending-human-source-and-reading-scope-review",
+      "reviewer": null,
+      "reviewed_on": null,
+      "canonical_url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/emergencies/keep-your-food-safe-during-emergencies",
+      "identities": [
+        {
+          "origin": "food",
+          "id": "food-fsis-emergencies",
+          "row_index": 5
+        },
+        {
+          "origin": "shelter",
+          "id": "shelter-usda-fsis-emergencies",
+          "row_index": 42
+        }
+      ],
+      "variants": [
+        {
+          "origin": "food",
+          "source_file": "preparedness/sources/fragments/food.json",
+          "row_index": 5,
+          "source": {
+            "id": "food-fsis-emergencies",
+            "title": "Keep Your Food Safe During Emergencies: Power Outages, Floods & Fires",
+            "publisher": "USDA Food Safety and Inspection Service",
+            "kind": "regulator",
+            "url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/emergencies/keep-your-food-safe-during-emergencies",
+            "published": null,
+            "updated": "2013-08-07",
+            "reviewed": null,
+            "verified_on": "2026-10-29",
+            "human_link_check": false,
+            "supports": "Power-outage planning (appliance thermometers: refrigerator 40 F or below, freezer 0 F or below; group and fill the freezer; cooler and gel packs); refrigerator safe up to 4 hours; full freezer about 48 hours (24 half full); 50 lb dry ice holds an 18 cu ft freezer 2 days; do not put perishable food in snow; never taste food to judge safety; lists of foods to discard after more than 4 hours without power and foods that are safe; frozen-food rules; flood and fire guidance; USDA Meat and Poultry Hotline 1-888-674-6854.",
+            "notes": "Visible 'Last Updated' is Aug 07, 2013; it is the older, longer FSIS page and the shorter Ask USDA articles point to it. Its bleach sanitizing amounts (1 tablespoon per gallon) differ from CDC's and Ready.gov's."
+          }
+        },
+        {
+          "origin": "shelter",
+          "source_file": "preparedness/sources/fragments/shelter.json",
+          "row_index": 42,
+          "source": {
+            "id": "shelter-usda-fsis-emergencies",
+            "title": "Keep Your Food Safe During Emergencies: Power Outages, Floods & Fires",
+            "publisher": "USDA Food Safety and Inspection Service",
+            "kind": "regulator",
+            "url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/emergencies/keep-your-food-safe-during-emergencies",
+            "published": null,
+            "updated": "2013-08-07",
+            "reviewed": null,
+            "verified_on": "2026-11-01",
+            "human_link_check": false,
+            "supports": "Keep an appliance thermometer in the refrigerator and freezer (refrigerator 40 F or below, freezer 0 F or below); group foods; keep the freezer full or fill gaps with frozen jugs of water, ice or gel packs; have an insulated cooler and frozen gel packs; perishable food stays safe in a refrigerator only 4 hours; refrigerator up to 4 hours and full freezer about 48 hours (24 if half full); never taste food to judge its safety, when in doubt throw it out; discard listed perishable foods (raw, cooked or leftover meat, poultry, fish, eggs, milk, soft cheeses, cut fruit and others) if the refrigerator has been without power for more than 4 hours; do not put perishable food in the snow, make ice instead; USDA Meat and Poultry Hotline 1-888-MPHotline; flood and fire sections.",
+            "notes": "Read: the whole page as rendered by Firecrawl on 2026-11-01, including the flood and fire sections, which these guides do not reproduce. Page shows 'Last Updated: Aug 07, 2013', so it is old; its 4-hour figure matches the newer Ask USDA article (Dec 2024), CDC and FEMA. Resolves the Ready.gov '40 F for two hours' wording by giving a specific outage rule. The dry-ice figure is on this page and is not reproduced. human_link_check remains false."
           }
         }
       ]
@@ -958,14 +1089,14 @@
           "row_index": 32
         },
         {
-          "origin": "hist-food",
-          "id": "loc-prairie-traveler",
-          "row_index": 11
-        },
-        {
           "origin": "hist-field",
           "id": "loc-prairie-traveler",
           "row_index": 0
+        },
+        {
+          "origin": "hist-food",
+          "id": "loc-prairie-traveler",
+          "row_index": 11
         }
       ],
       "variants": [
@@ -985,6 +1116,25 @@
           }
         },
         {
+          "origin": "hist-field",
+          "source_file": "preparedness/sources/fragments/hist-field.json",
+          "row_index": 0,
+          "source": {
+            "id": "loc-prairie-traveler",
+            "title": "The prairie traveler. A hand-book for overland expeditions (Randolph B. Marcy), Harper & Brothers, 1861 printing",
+            "publisher": "Library of Congress (Joseph Meredith Toner Collection, digitized book)",
+            "kind": "primary-digitized",
+            "url": "https://www.loc.gov/resource/gdcmassbookdig.prairietravelerh01marc/?st=list",
+            "published": "1861",
+            "updated": null,
+            "reviewed": null,
+            "verified_on": "2026-10-29",
+            "human_link_check": false,
+            "supports": "Digitized public-domain handbook by Capt. Randolph B. Marcy, U.S. Army, 'published by authority of the War Department'. Contents list (seven chapters, read in full) shows chapters on routes, wagons and teams, stores and provisions (including anti-scorbutics), camp life including fuel and making fires, and guides. Preface says it draws on the author's frontier experience and on officers' reports for the routes.",
+            "notes": "Upgraded from the register placeholder. The drafting agent read the LOC catalogue record and the OCR snippets of the first 25 of 398 page images (title page, copyright page, preface, both contents pages and the opening of chapter I). The two contents pages (images 17 and 18) were read in full on 2026-11-01; the book's full-text file could not be fetched (404), NOT the body chapters. No passage from the chapters is quoted or relied on. The LOC copy is the 1861 printing; the title page shows a copyright entry of 1860, and the work postdates the 1846-47 events discussed in pioneer-supply-chains-failed. Rights: LOC says books in this collection are in the public domain."
+          }
+        },
+        {
           "origin": "hist-food",
           "source_file": "preparedness/sources/fragments/hist-food.json",
           "row_index": 11,
@@ -1001,25 +1151,6 @@
             "human_link_check": false,
             "supports": "Catalogue and contents: 'published by authority of the War Department'; Chapter I contents list 'Stores and Provisions ... Pemmican ... Antiscorbutics ... Cold Flour'; Chapter V includes 'Jerking Meat'; rights statement says the book is in the public domain.",
             "notes": "The LOC page-level text view did not load for us; the passages we quote were read in the Internet Archive text of the same scan (see hist-food-marcy-prairie-traveler-text). Extent read: the item landing page (catalogue record, contents list and a few page-level OCR excerpts); the page-level text view did not load."
-          }
-        },
-        {
-          "origin": "hist-field",
-          "source_file": "preparedness/sources/fragments/hist-field.json",
-          "row_index": 0,
-          "source": {
-            "id": "loc-prairie-traveler",
-            "title": "The prairie traveler. A hand-book for overland expeditions (Randolph B. Marcy), Harper & Brothers, 1861 printing",
-            "publisher": "Library of Congress (Joseph Meredith Toner Collection, digitized book)",
-            "kind": "primary-digitized",
-            "url": "https://www.loc.gov/resource/gdcmassbookdig.prairietravelerh01marc/?st=list",
-            "published": "1861",
-            "updated": null,
-            "reviewed": null,
-            "verified_on": "2026-10-29",
-            "human_link_check": false,
-            "supports": "Digitized public-domain handbook by Capt. Randolph B. Marcy, U.S. Army, 'published by authority of the War Department'. Contents list shows chapters on routes, wagons and teams, stores and provisions (including anti-scorbutics), camp life including fuel and making fires, and guides. Preface says it draws on the author's frontier experience and on officers' reports for the routes.",
-            "notes": "Upgraded from the register placeholder. The drafting agent read the LOC catalogue record and the OCR snippets of the first 25 of 398 page images (title page, copyright page, preface, contents and the opening of chapter I), NOT the body chapters. No passage from the chapters is quoted or relied on. The LOC copy is the 1861 printing; the title page shows a copyright entry of 1860, and the work postdates the 1846-47 events discussed in pioneer-supply-chains-failed. Rights: LOC says books in this collection are in the public domain."
           }
         }
       ]
@@ -2004,6 +2135,65 @@
           }
         }
       ]
+    },
+    {
+      "url": "https://www.weather.gov/safety/winter-during",
+      "review_status": "pending-human-source-and-reading-scope-review",
+      "reviewer": null,
+      "reviewed_on": null,
+      "canonical_url": "https://www.weather.gov/safety/winter-during",
+      "identities": [
+        {
+          "origin": "hist-field",
+          "id": "hist-field-nws-winter-during",
+          "row_index": 12
+        },
+        {
+          "origin": "shelter",
+          "id": "shelter-nws-winter-during",
+          "row_index": 40
+        }
+      ],
+      "variants": [
+        {
+          "origin": "hist-field",
+          "source_file": "preparedness/sources/fragments/hist-field.json",
+          "row_index": 12,
+          "source": {
+            "id": "hist-field-nws-winter-during",
+            "title": "What To Do If You're Caught in a Winter Storm",
+            "publisher": "NOAA National Weather Service",
+            "kind": "regulator",
+            "url": "https://www.weather.gov/safety/winter-during",
+            "published": null,
+            "updated": null,
+            "reviewed": null,
+            "verified_on": "2026-10-29",
+            "human_link_check": false,
+            "supports": "In a vehicle: let someone know where you are going and what route you will take so a search can start in the right place; if the car is stuck, stay in the vehicle because leaving means becoming disoriented quickly in wind-driven snow and cold; be visible to rescuers. The page also gives engine-running and exhaust-pipe instructions to avoid carbon monoxide poisoning, which this archive does not reproduce.",
+            "notes": "Page carries no visible update date (metadata shows 2019). Contains engine-running timing and a statement that outdoors with no shelter one should 'build a fire for heat'; neither is reproduced or endorsed by this archive. Flagged for the safety reviewer of fire-making-across-time."
+          }
+        },
+        {
+          "origin": "shelter",
+          "source_file": "preparedness/sources/fragments/shelter.json",
+          "row_index": 40,
+          "source": {
+            "id": "shelter-nws-winter-during",
+            "title": "What To Do If You're Caught in a Winter Storm",
+            "publisher": "National Weather Service (NOAA)",
+            "kind": "regulator",
+            "url": "https://www.weather.gov/safety/winter-during",
+            "published": null,
+            "updated": null,
+            "reviewed": null,
+            "verified_on": "2026-11-01",
+            "human_link_check": false,
+            "supports": "If your car gets stuck: stay in the vehicle, run the motor about 10 minutes each hour for heat, open the window a little for fresh air while running it to avoid carbon monoxide poisoning, clear snow from the exhaust pipe, be visible to rescuers (dome light at night, bright cloth, raise the hood after snow stops); indoors: use fire safeguards and ventilate when using a fireplace, wood stove or space heater, make sure a gas furnace vent is not blocked by snow; close off rooms, stuff towels in cracks, close curtains.",
+            "notes": "Read: the whole page text, extracted from a direct download on 2026-11-01 (the 'Outside' section includes advice to build a fire for heat when no shelter is nearby, which is not reproduced in these guides). No page date. Corroborates the CDC 10-minutes-per-hour stranded-vehicle instruction. human_link_check remains false."
+          }
+        }
+      ]
     }
   ],
   "reconciliation_20261030": {
@@ -2039,5 +2229,141 @@
     "clinical_and_safety_review": "PENDING",
     "independent_qd_reapproval": "PENDING",
     "note": "New Start FEMA power fact sheet shares the exact URL already present in shelter/food/health; preserve all FOUR contributor reading scopes and independent notes. A source machine-fetch is not QD approval."
+  },
+  "historical_crosswalk_census_20261030": {
+    "raw_source_rows": 224,
+    "unique_source_urls": 186,
+    "duplicate_url_groups": 30,
+    "duplicate_id_groups": 15,
+    "source_files": [
+      {
+        "origin": "base",
+        "path": "preparedness/sources/register.json",
+        "git_blob_sha": "b25cd02b9beaadaf5a2db0c52e0ae66d20b1ac77",
+        "count": 34
+      },
+      {
+        "origin": "start",
+        "path": "preparedness/sources/fragments/start.json",
+        "git_blob_sha": "29574c328cbab0548e6e5d4a026694857d56b6b4",
+        "count": 27
+      },
+      {
+        "origin": "shelter",
+        "path": "preparedness/sources/fragments/shelter.json",
+        "git_blob_sha": "d9eeb4546e58f083031e0767aaea7cf112099e09",
+        "count": 31
+      },
+      {
+        "origin": "food",
+        "path": "preparedness/sources/fragments/food.json",
+        "git_blob_sha": "a1f73c8170932d6b3192e9cd506686d516d23d30",
+        "count": 30
+      },
+      {
+        "origin": "hist-food",
+        "path": "preparedness/sources/fragments/hist-food.json",
+        "git_blob_sha": "d10628342fea5f177a8d1be00dd906d0c9c7850e",
+        "count": 28
+      },
+      {
+        "origin": "health",
+        "path": "preparedness/sources/fragments/health.json",
+        "git_blob_sha": "cc29c439372b9d49debf78e63020ffe4d62baeb8",
+        "count": 21
+      },
+      {
+        "origin": "hist-home",
+        "path": "preparedness/sources/fragments/hist-home.json",
+        "git_blob_sha": "6460d4b0734991675c889f28be2f73a19e3c42c0",
+        "count": 27
+      },
+      {
+        "origin": "hist-field",
+        "path": "preparedness/sources/fragments/hist-field.json",
+        "git_blob_sha": "4f369122cc0e230ee39654c215f18ffc79b5cc85",
+        "count": 26
+      }
+    ]
+  },
+  "candidate_reconciliation_20261104": {
+    "status": "DRAFT_UNREVIEWED_HOLD",
+    "candidate_commit": "ddb3528ba6494dada1fa1c3a142ce746e3a67706",
+    "issue": 136,
+    "business_issue": 820,
+    "business_charter": 818,
+    "source_inventory_proof": "Source file exact Git blob identities in source_files; source_head_commits preserves historic branch heads.",
+    "candidate_source_rows": 244,
+    "candidate_distinct_urls": 202,
+    "candidate_shared_url_groups": 32,
+    "changes": [
+      {
+        "url": "https://ask.fsis.usda.gov/article/How-do-you-keep-food-safe-during-a-power-failure",
+        "variant_count": 3,
+        "origins": [
+          "base",
+          "food",
+          "shelter"
+        ],
+        "new_group": false,
+        "roster_changed": true,
+        "content_changed": []
+      },
+      {
+        "url": "https://www.cdc.gov/natural-disasters/response/what-to-do-protect-yourself-during-a-power-outage.html",
+        "variant_count": 3,
+        "origins": [
+          "health",
+          "shelter",
+          "start"
+        ],
+        "new_group": false,
+        "roster_changed": true,
+        "content_changed": []
+      },
+      {
+        "url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/emergencies/keep-your-food-safe-during-emergencies",
+        "variant_count": 2,
+        "origins": [
+          "food",
+          "shelter"
+        ],
+        "new_group": true,
+        "roster_changed": true,
+        "content_changed": []
+      },
+      {
+        "url": "https://www.loc.gov/resource/gdcmassbookdig.prairietravelerh01marc/?st=list",
+        "variant_count": 3,
+        "origins": [
+          "base",
+          "hist-field",
+          "hist-food"
+        ],
+        "new_group": false,
+        "roster_changed": false,
+        "content_changed": [
+          "hist-field/loc-prairie-traveler"
+        ]
+      },
+      {
+        "url": "https://www.weather.gov/safety/winter-during",
+        "variant_count": 2,
+        "origins": [
+          "hist-field",
+          "shelter"
+        ],
+        "new_group": true,
+        "roster_changed": true,
+        "content_changed": []
+      }
+    ],
+    "independent_QD_PASS": false,
+    "safety_approved": false,
+    "medical_safety_verified": false,
+    "may_publish": false,
+    "may_merge": false,
+    "merchant_offer_verified": false,
+    "note": "Readings remain source-scoped and all groups unreviewed. The live contributor heads may advance after this candidate snapshot."
   }
 }

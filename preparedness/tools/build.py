@@ -18,11 +18,22 @@ import html
 import json
 import re
 import sys
+from urllib.parse import urlsplit, urlunsplit
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 SITE = "https://finalvestige.com"
 WORDS_PER_MINUTE = 220
+
+
+def review_alias_key(url: str) -> str:
+    """Conservative terminal-slash equivalence only for source review worklists.
+
+    This never authorizes merging author reading scopes or rewriting citation URLs.
+    """
+    p = urlsplit(url)
+    return urlunsplit((p.scheme, p.netloc, (p.path or '/').rstrip('/') or '/',
+                       p.query, p.fragment))
 
 
 def load_json(path: Path):
@@ -40,6 +51,14 @@ class Library:
         crosswalk_file = root / "sources" / "crosswalk.json"
         self.crosswalk = load_json(crosswalk_file) if crosswalk_file.exists() else {}
         self.crosswalk_groups = {g["url"]: g for g in self.crosswalk.get("groups", [])}
+        self.crosswalk_member_groups = {}
+        for group in self.crosswalk.get("groups", []):
+            for variant in group["variants"]:
+                source = variant["source"]
+                key = (variant["origin"], source["id"], source["url"])
+                if key in self.crosswalk_member_groups:
+                    raise ValueError(f"duplicate crosswalk source identity: {key}")
+                self.crosswalk_member_groups[key] = group
         self.article_origins = self.crosswalk.get("article_origins", {})
         self.source_variants: dict[str, list[dict]] = {}
 
@@ -67,7 +86,8 @@ class Library:
             # once by a fragment with exactly the same URL.
             if len(verified) > 1 or (verified and variants[0].get("verified_on") and len(variants) > 1):
                 group = self.crosswalk_groups.get(url)
-                declared = {(v["origin"], v["source"]["id"]) for v in group["variants"]} if group else set()
+                declared = {(v["origin"], v["source"]["id"]) for v in group["variants"]
+                            if v["source"]["id"] == sid} if group else set()
                 observed = {(v["_origin"], v["id"]) for v in variants}
                 if declared != observed:
                     raise ValueError(f"duplicate source id '{sid}' is not documented in source crosswalk")
@@ -247,7 +267,7 @@ def sources_block(lib: Library, order: list[str], meta: dict) -> str:
             if s.get("human_link_check") is True
             else "Human source-link check pending"
         )
-        shared = lib.crosswalk_groups.get(s["url"])
+        shared = lib.crosswalk_member_groups.get((s.get("_origin"), sid, s["url"]))
         shared_html = (
             '<span class="pa-src-use">Shared-source reading scope: independent review pending</span>'
             if shared and shared.get("review_status") != "resolved"
