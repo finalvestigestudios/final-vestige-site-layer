@@ -5,6 +5,7 @@
  * a merchant, approves commercial reuse or authorizes publishing.
  * It is deliberately distinct from production analytics (#820) and Grok TASK-008.
  */
+const {URL}=require('node:url');
 const SCHEMA='fv.apollo.r136.conversion-evidence.v1';
 const REQUIRED_SOURCES=Object.freeze([
  'https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/',
