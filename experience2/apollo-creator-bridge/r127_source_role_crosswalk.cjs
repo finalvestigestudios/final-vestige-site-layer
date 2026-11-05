@@ -25,6 +25,21 @@ const EXPECTED = Object.freeze([
   ['06','https://www.nasa.gov/image-detail/amf-ksc-20170124-ph_kls01_0090/','RETROSPECTIVE_2017_REDESIGN']
 ]);
 const sha256 = text => crypto.createHash('sha256').update(text,'utf8').digest('hex');
+// Git blob pinned to independently maintained Research Desk draft PR #158.
+const TRUSTED_RESEARCH_BLOB = '403d128c57b9bc82dac7c619651689070edef86c';
+const gitBlobSha = text => {
+  const bytes=Buffer.from(text,'utf8');
+  return crypto.createHash('sha1').update(Buffer.from('blob '+bytes.length+'\0')).update(bytes).digest('hex');
+};
+const anchorAttr=(tag,name)=> {
+  const m=tag.match(new RegExp('(?:^|\\s)'+name+'\\s*=\\s*"([^"]*)"','i'));
+  return m ? m[1] : null;
+};
+const imageAnchors=block=>[...block.matchAll(/<a\b[^>]*>/gi)]
+  .map(m=>({href:anchorAttr(m[0],'href'),rel:anchorAttr(m[0],'rel')}))
+  .filter(a=>a.href && a.href.startsWith('https://www.nasa.gov/image-detail/'));
+const referrerSafe=link=>link && ['noreferrer','noopener'].every(token=>
+  (link.rel||'').toLowerCase().split(/\s+/).includes(token));
 const visibleText = section => section.replace(/<[^>]*>/g,' ').replace(/&nbsp;/g,' ').replace(/\s+/g,' ').trim();
 const extract = (html, tag, idprefix) => {
   const matches = [...html.matchAll(new RegExp('<'+tag+'\\b[^>]*\\bid="'+idprefix+'(0[1-6])"[^>]*>[\\s\\S]*?<\\/'+tag+'>','g'))];
@@ -35,6 +50,8 @@ function audit(apollo, research) {
   const photos=extract(apollo,'tr','photo-source-');
   const desk=extract(research,'article','fv-ex2-ledger-apollo1-record-');
   const errors=[], unresolved=[], records=[];
+  const actualResearchBlob=gitBlobSha(research);
+  const snapshotVerified=actualResearchBlob===TRUSTED_RESEARCH_BLOB;
   if(photos.size!==6)errors.push('APOLLO_PHOTO_RECORD_COUNT');
   if(desk.size!==6)errors.push('DESK_RECORD_COUNT');
   const duplicate = (html, pattern) => [...html.matchAll(pattern)].length!==6;
@@ -51,7 +68,11 @@ function audit(apollo, research) {
     if(aurl!==expectedUrl || durl!==expectedUrl)errors.push('NASA_URL_MISMATCH_'+id);
     if(!p.includes('data-fv-source-kind="photograph"'))
       errors.push('APOLLO_ROLE_NOT_MACHINE_READABLE_'+id);
-    if(!/rel="noreferrer noopener"/i.test(p))
+    // Privacy tokens must belong to the precise photo anchor, not a sibling.
+    const photoLinks=imageAnchors(p), deskLinks=imageAnchors(d);
+    if(photoLinks.length!==1 || deskLinks.length!==1)
+      errors.push('PHOTO_SOURCE_LINK_CARDINALITY_'+id);
+    if(!referrerSafe(photoLinks[0]))
       errors.push('APOLLO_PHOTO_REFERRER_LEAK_'+id);
     if(id==='01' && !/\bprovisional\b|\bunconfirmed\b/i.test(text))
       unresolved.push('R158_'+reason);
@@ -72,6 +93,27 @@ function audit(apollo, research) {
       image_role:'VISUAL_CONTEXT_ONLY',media_reuse:'INDIVIDUAL_REVIEW_REQUIRED',
       issue_code:reason});
   }
+  // The printable worksheet has its own six links: preserve URL custody,
+  // uniqueness and referrer protection independently of the table.
+  const handout=[...apollo.matchAll(/<li\b[^>]*data-fv-student-photo="(0[1-6])"[^>]*>[\s\S]*?<\/li>/g)];
+  if(handout.length!==6 || new Set(handout.map(m=>m[1])).size!==6)
+    errors.push('STUDENT_WORKSHEET_SOURCE_COUNT');
+  for(const [id,url] of EXPECTED){
+    const matching=handout.filter(m=>m[1]===id);
+    const links=matching.length===1?imageAnchors(matching[0][0]):[];
+    if(links.length!==1 || links[0].href!==url)
+      errors.push('STUDENT_WORKSHEET_SOURCE_MISMATCH_'+id);
+    if(!referrerSafe(links[0]))
+      errors.push('STUDENT_WORKSHEET_SOURCE_PRIVACY_'+id);
+  }
+  const documentedDates=['1966-10-18','1967-01-03','1967-01-28','2017-01-24'];
+  const dateRows=[...apollo.matchAll(/<li\b[^>]*data-fv-photo-day="([^"]+)"[^>]*>[\s\S]*?<\/li>/g)];
+  if(dateRows.length!==4 || dateRows.some((m,i)=>
+    m[1]!==documentedDates[i] || !m[0].includes('<time datetime="'+m[1]+'">')))
+    errors.push('PHOTO_CHRONOLOGY_DATE_DRIFT');
+  if(!apollo.includes('data-fv-photo-month-uncertain') ||
+     !/January 1967[\s\S]*S67-19766/.test(apollo))
+    errors.push('PROVISIONAL_PORTRAIT_DATE_MISSING');
   if(!apollo.includes('data-fv-source-role-warning') ||
      !/Apollo 204 Review Board/.test(apollo))
     errors.push('VISIBLE_NOJS_EVIDENCE_BOUNDARY_MISSING');
@@ -81,6 +123,10 @@ function audit(apollo, research) {
   // even after the editorial warnings are corrected.
   return {schema:'fv.apollo.research-desk.crosswalk.v1',
     source_sha256:{apollo:sha256(apollo),research_desk:sha256(research)},
+    research_desk_snapshot:{expected_git_blob:TRUSTED_RESEARCH_BLOB,
+      actual_git_blob:actualResearchBlob,
+      status:snapshotVerified?'PINNED_PR158_SOURCE_VERIFIED':'UNREVIEWED_SOURCE_DRIFT'},
+    source_custody:snapshotVerified?'VERIFIED_SNAPSHOT':'BLOCKED_UNREVIEWED_SOURCE',
     source: {apollo:'Apollo isolated staging',research_desk:'Independent PR #158 (read-only)'},
     record_count:records.length,records,integrity_errors:errors,
     editorial_flags:unresolved,photograph_rights_approved:0,
@@ -110,9 +156,10 @@ function main(argv) {
   if(output)fs.writeFileSync(output,json,'utf8');
   else process.stdout.write(json);
   // Unknown rights and unresolved editorial scope are failures, never a green release.
-  process.exitCode=report.link_integrity==='PASS' && report.editorial_flags.length===0 &&
+  process.exitCode=report.link_integrity==='PASS' &&
+    report.source_custody==='VERIFIED_SNAPSHOT' && report.editorial_flags.length===0 &&
     report.photograph_rights_approved===6 ? 0 : 2;
 }
-module.exports={audit,EXPECTED,photoUrl,extract};
+module.exports={audit,EXPECTED,photoUrl,extract,gitBlobSha,TRUSTED_RESEARCH_BLOB,imageAnchors};
 if(require.main===module){try{main(process.argv.slice(2));}catch(err){
   process.stderr.write('R127_CROSSWALK_BLOCKED: '+err.message+'\n');process.exitCode=2;}}
