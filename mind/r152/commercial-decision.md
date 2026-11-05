@@ -1,0 +1,46 @@
+# R152: One offer, one honest route, no unverified sale
+**November 5, 2026 | Unpublished research + commercial readiness | P0 = verified net paid revenue, not clicks**
+
+## Current offer selection and evidence
+Primary potential commercial offer: **Hypnosis Live — Total Focus**, not Zen12 and not Hypnotize Yourself. Official product page https://hypnosislive.com/mental-skills/total-focus was checked on November 5, 2026: single **33-minute / 47-MB** audio, written and recorded by J. A. Amos. Seller displays **$24.44** for the standalone track and another **$19.95** amount inside a different bundle presentation; exact cart total, taxes, discounts, refund execution, and the version seen by any future buyer remain unverified. **Do not hard-code a public price or promise checkout terms.** Seller claims about “reprogramming” or guaranteed concentration are excluded. No one here has reviewed the audio first-hand.
+
+Inspire3's public affiliate network at https://affiliates.inspire3.com/ describes sign-up and designated special links; it does **not** establish acceptance of Final Vestige or authority for website/social/email promotion. 2026-11-05 bounded connected Gmail searches found promotions and no matching personal acceptance. This proves only the search's limitations, not absence of an account. **HARD HOLD on earning links until named dashboard/written partner evidence, allowed promotional channels and exact trackable URL are independently authenticated.** Do not use the merchant's advertised payout/EPC as FV earnings.
+
+Owned-product fallback: current rights-cleared *FV Mind paid SKU* in Payhip **UNKNOWN**. A Gmail check for Payhip orders/products since September 1 returned one marketing/setup email, not authenticated product inventory. WordPress or public search is not equivalent to Payhip account access. Commerce must show the product ID, creator rights, exact product-page URL, current buyer total, delivery test, refund terms, and order data before choosing this substitute. Unknown does not mean absent.
+
+**One useful existing asset:** R149 source-controlled [Total Focus buyer guide](https://github.com/finalvestigestudios/final-vestige-site-layer/blob/f88f70899a660c67a092cc0620950547019d7c74/mind/r149/total-focus-evidence-first-presell-UNPUBLISHED.html). It already has a physically disabled purchase control and FTC disclosure. Avoid duplicate storefronts. Maintain R145 Zen12 guide A and +optional 40s storyboard B as **unexecuted hypothesis only**. The video has not been produced or randomized. No added autoplay, JS dependency or paid vendor.
+
+## Specific, buyer-led path (conditional)
+**Grok topic → article → free resource → optional buyer guide → merchant-confirmed order.** Don't equate adjacency with proof. The new false-memory article is intentionally **not** mapped to a product benefit. Social viewers interested only in psychology should receive research, not a hard sell. A reader who specifically asks for an audio focus routine may voluntarily open the separately labeled R149 buyer guide after merchant approval. The guide is not an endorsement.
+
+The only available current first-party lead route is https://finalvestige.com/focus/ with existing Jetpack configuration and welcome copy. The published Change Blindness and Puységur stored bodies lacked contextual /focus/ links in the previous authenticated QA. R142/R150 propose a no-JS, accessible bridge; Site QA + Claude must review/release it **only with founder approval**, without adding a signup form or changing welcome email. This sprint leaves WordPress untouched.
+
+## Three prospective creator-to-reader maps — never invent Grok IDs
+| Topic / intent | Article and status | Optional next step | Product fit |
+| --- | --- | --- | --- |
+| Change Blindness / learn why changes vanish | Published Change Blindness, WP ID 1922; video media ID **UNKNOWN** | proposed QA-approved article-body Focus bridge; /focus/ existing | Zen12 independent guide only if explicitly seeking meditation audio and approval confirmed |
+| Puységur / what witnesses actually reported | Published Puységur Files WP ID 1377; video media ID **UNKNOWN** | existing history archive, optional Focus | Total Focus buyer guide only for separate interest in nonclinical audio, never hypnosis evidence from historical claims |
+| False-memory word-list effect / keep the source | R152 NEW article **UNPUBLISHED**; Grok video **NOT ASSIGNED** | approved article, optional free Focus or related archival source | **NO DIRECT PRODUCT CLAIM/CTA**; do not distort curiosity intent |
+
+Praxxis/Grok TASK-008 retains ownership of immutable media IDs, topics and posting; do not change their queue. Claude Issue #820 owns first-party attribution instrumentation. Do not start new analytics scripts.
+
+## Narrow conversion acceptance contract
+Use `utm_source` = platform, `utm_medium=organic_social`, `utm_campaign=mind_focus_pilot_2026_11`, and `utm_content=GROK_ASSET_ID` **only after verified asset ID and final destination**. Keep all IDs absent until supplied. Do not store PII, fingerprint users, add cross-site cookies, or duplicate analytics. Honor user consent and platform restrictions.
+
+Stage events **as different statuses**: `campaign_landing` (verified qualified-human, consent-respecting count if available), `article_to_focus_click`, `jetpack_confirmed_signup` (authoritative provider confirmation only), `offer_guide_view`, `affiliate_outbound` (click, not revenue), `merchant_confirmed_order`, `paid_affiliate_conversion` (partner report), `refund`, `settled_net_revenue`. Avoid invented `checkout_start` unless merchant instrumentation actually confirms it. Document 7d/30d cohort attribution quality and tiny samples. **KPI:** settled net revenue / qualified-human sessions × 1000; when either component cannot be verified, display **NOT COMPUTABLE**, never zero. Match orders/fees/refunds using merchant-side transaction identifiers under access controls; never claim client-side clicks were sales.
+
+**A/B hypothesis:** for an approved Zen12 campaign only, optional 40-second no-autoplay/captioned/transcribed video may raise **settled paid conversion** relative to identical text-only source guide. Its load must be `preload=none`, no third-party pixels, no reduced-motion violation and a readable no-JS fallback; primary estimand by assigned qualified visitor, not those who clicked play. Test only with sufficient consented qualified traffic, actual rendered video, approval, and verifiable partner sales/refunds. No efficacy or superiority inference from an unrun pilot.
+
+## OFFER → STEP → BLOCKER → EXPERIMENT → PASS/FAIL EVIDENCE → OWNER
+| Priority | Offer / step | Blocker | Narrow change | Evidence & current result | Owner |
+| --- | --- | --- | --- | --- | --- |
+| P0 | Total Focus → partner sale | Named FV acceptance, channel rights, source link unavailable | Authenticate actual dashboard + exact link + terms; record redacted proof | Public portal + bounded inbox are insufficient: **HOLD** | Founder/Mind |
+| P0 | FV paid Mind SKU → checkout | Actual existing SKU/rights/fulfillment unverified | Read Payhip account, select only rights-cleared active item; check total/terms | Marketing email ≠ product: **UNKNOWN** | Commerce/Claude |
+| P1 | Investigation → free Focus | Stored body contextual route absent in historical WP reads | Site QA tests R142/R150 no-JS component in staging; approval before release | Link route **DRAFT**, not live | Site QA/Claude |
+| P1 | Grok media → human landing | Media IDs and destination IDs unverified | Reconcile TASK-008, test 1 campaign on staging | Asset IDs **UNKNOWN** | Praxxis/Grok/Claude |
+| P0 | Offer → net income | No merchant orders/fees/refunds and qualified sessions | Source-of-truth reconciliation, cohort tags | **NOT COMPUTABLE**, not zero | Commerce/Growth |
+
+## Release, security and FTC boundaries
+No authorized affiliate URL, no playable optional video, no CMS write, no sending newsletter, no publishing, no merchant account change, no menu edits, no checkout/test order, no spent media and no deployment. Keep PR #49, PR #172 and Issue #150 intact. FTC near-offer disclosure for a **future authorized earning link**: “If you buy through this link, Final Vestige may earn a commission at no additional cost to you.” It must be next to the actual link, not only in the site's blanket policy. Do not display this text as a claim of an existing commercial relationship on an active public page before acceptance. The same buyer guide must say the merchant's performance assertions are not proven by independent studies of other interventions. See https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking and https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance .
+
+**Coordination:** Issue #171 editorial record; #820 commercial acceptance; #126 independent QA; #150 art lead non-overlap; #174 Dispatch (do not alter current email drafts, Jetpack welcome, opt-out or publication). Grok latest handoff says TASK-018 synthesis still missing named merchant entitlement and media fit; respect existing TASK-008 NOT ACTIVATED.
