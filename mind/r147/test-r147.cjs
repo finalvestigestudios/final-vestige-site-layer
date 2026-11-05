@@ -9,8 +9,9 @@ let count=0;
 function check(name,test){assert.ok(test,name);count++}
 check('release gated',h.includes('data-release="HARD_HOLD"'));
 check('exact Premium offer',h.includes('data-offer="zen12-premium"')&&g.includes('Zen12 Premium'));
-check('inert paid button',/<button[^>]*disabled[^>]*>/.test(h));
-check('exactly one button and disabled', (h.match(/<button\b/g)||[]).length===1 && (h.match(/<button[^>]*disabled/g)||[]).length===1);
+const buttons=[...h.matchAll(/<button\b[^>]*>/g)].map(x=>x[0]);
+check('inert paid button',buttons.some(b=>/\sdisabled(?:\s|=|>)/.test(b)));
+check('exactly one button and truly disabled',buttons.length===1 && /\sdisabled(?:\s|=|>)/.test(buttons[0]));
 check('clear near-link commission disclosure',/Prospective affiliate disclosure:[\s\S]{0,400}may earn a commission[\s\S]{0,500}<button/.test(h));
 check('free Focus only enabled CTA',h.includes('href="https://finalvestige.com/focus/"')&&h.includes('Explore the free'));
 check('no active affiliate URL',!(/utm_affiliate|[?&](?:ref|aff_id|hop)=|clickbank|affiliate_click_redirect/.test(h)));
