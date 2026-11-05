@@ -162,7 +162,7 @@
         if (upcoming ? !exact : false) text += ' Next marker: ' + upcoming.label + ' at +' + fmt(upcoming.t) + ' s.';
         out.textContent = text;
         /* Historical context views: these photos are NOT time-stamped fire evidence. */
-        const photos = $(box, '[data-fvx-chrono-photo]');
+        const photos = $$(box, '[data-fvx-chrono-photo]');
         if (photos.length === 3) {
           const index = t < 6 ? 0 : (t < 11.3 ? 1 : 2);
           photos.forEach((photo, i) => {
