@@ -21,6 +21,30 @@ from typing import Callable, Iterable, Mapping
 # otherwise an infinite iterator can exhaust memory or fill the output disk.
 MAX_REPORT_COLUMNS = 256
 MAX_REPORT_ROWS = 200_000
+# R214: total final CSV evidence size INCLUDES UTF-8 BOM, separators,
+# quoted/escaped text and line endings; no truncation or partial publication.
+MAX_REPORT_BYTES = 64 * 1024 * 1024
+MAX_REPORT_CELL_CHARS = 1_048_576
+
+
+class _BudgetedCSVTextSink:
+    """Enforce a final on-disk byte budget on csv.writer's serialized output.
+
+    Counting source-cell lengths is unsafe: CSV quoting and UTF-8 encoding can
+    expand values. utf-8-sig writes a three-byte BOM at the first write; we
+    reserve its exact size even for a header-only export.
+    """
+    def __init__(self, stream):
+        self._stream = stream
+        self._remaining = MAX_REPORT_BYTES - len(b"\xef\xbb\xbf")
+
+    def write(self, text: str) -> int:
+        encoded_bytes = len(text.encode("utf-8"))
+        if encoded_bytes > self._remaining:
+            raise ValueError("CSV report byte limit exceeded")
+        written = self._stream.write(text)
+        self._remaining -= encoded_bytes
+        return written
 
 
 def _render_cell(value: object, cell: Callable[[object], str]) -> str:
@@ -44,6 +68,8 @@ def _render_cell(value: object, cell: Callable[[object], str]) -> str:
     # Python str admits isolated UTF-16 surrogate code points, but UTF-8
     # reports cannot encode them. Reject before csv/TextIOWrapper can raise
     # a UnicodeEncodeError carrying user-controlled report text.
+    if type(rendered) is str and len(rendered) > MAX_REPORT_CELL_CHARS:
+        raise ValueError("CSV report cell size limit exceeded")
     if (type(rendered) is not str or "\x00" in rendered
             or rendered.startswith(("=", "+", "@"))
             or any(0xD800 <= ord(char) <= 0xDFFF for char in rendered)):
@@ -64,6 +90,8 @@ def write_csv_report(destination: str | Path, fields: Iterable[str],
     Missing row keys, forged labels and duplicate row items fail closed;
     explicit empty values remain permitted. Very wide or unbounded iterables
     fail closed before untrusted data can exhaust RAM or fill the disk.
+    Cells are limited to 1,048,576 characters and serialized files to 64 MiB
+    including BOM and CSV quoting; split larger reports into reviewed batches.
     Nothing ever overwrites an existing destination or follows its symlink.
     On a filesystem lacking the required safe publication operation, fail
     rather than silently fall back to an overwriting move.
@@ -98,7 +126,7 @@ def write_csv_report(destination: str | Path, fields: Iterable[str],
         prefix=f".{target.stem}-", suffix=".partial", dir=target.parent)
     try:
         with os.fdopen(descriptor, "w", encoding="utf-8-sig", newline="") as stream:
-            writer = csv.DictWriter(stream, fieldnames=names, extrasaction="ignore")
+            writer = csv.DictWriter(_BudgetedCSVTextSink(stream), fieldnames=names, extrasaction="ignore")
             writer.writer.writerow(rendered)
             # Explicit next() isolates arbitrary caller-owned iterator errors
             # from the writer's own exceptions, including their __context__.
