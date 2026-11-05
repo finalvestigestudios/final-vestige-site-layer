@@ -38,7 +38,7 @@ check('no unapproved merchant earning href',()=>[A,B,H].forEach(x=>assert.ok(!/h
 check('hub existing live destinations only',()=>['https://finalvestige.com/focus/','https://finalvestige.com/2026/11/02/change-blindness/','https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/'].forEach(x=>contains(H,x)));
 check('guide substantial and source-rich',()=>{assert.ok(G.split(/\s+/).length>=1500);['https://doi.org/10.1016/j.concog.2024.103730','https://hypnosislive.com/faq','https://www.ftc.gov/'].forEach(x=>contains(G,x));});
 check('explicit distinct Total Focus vs Hypnotize Yourself',()=>['Total Focus','Hypnotize Yourself','not the same SKU'].forEach(x=>contains(G,x)));
-check('pricing inconsistency and refund caveat',()=>['$24.44','$17.95','five sessions per year'].forEach(x=>contains(G,x)));
+check('pricing inconsistency and refund caveat',()=>['$24.44','$17.95','five refunded sessions per year'].forEach(x=>contains(G,x)));
 check('matrix sources complete',()=>M.claims.forEach(c=>c.source_ids.forEach(k=>assert.ok(M.sources[k],'missing '+k))));
 check('claims and closed gates nonempty',()=>{assert.ok(M.claims.length>=18);assert.ok(Object.values(M.release_gates).length>=15);assert.ok(Object.values(M.release_gates).every(v=>v===false));});
 check('monetization UNKNOWN not 0',()=>['qualified_human_sessions','verified_paid_orders','realized_net_revenue','net_revenue_per_1000_qualified_sessions'].forEach(k=>assert.equal(M.traffic_and_conversion[k],null)));
