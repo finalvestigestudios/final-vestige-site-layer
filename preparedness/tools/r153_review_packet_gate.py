@@ -53,9 +53,9 @@ def fingerprint(data):
 
 def make_packet(docket, contributor, alias):
     require(docket.get('schema') == 'FV-PREP-R149-TOOL-CLAIM-CUSTODY-1', 'incorrect tool docket schema')
-    require(docket.get('publication_allowed') is False and docket.get('independent_qd') is False,
+    require(docket.get('publication_allowed') is False and docket.get('independent_qd') == 'NOT_APPROVED',
             'tool docket has unauthorized approval')
-    require(docket.get('source_scope_human_review') is False, 'tool docket asserts source approval')
+    require(docket.get('source_scope_human_review') == 'PENDING', 'tool docket asserts source approval')
     require(docket.get('human_link_checked_rows') == 0, 'link checks are no longer the frozen baseline')
     require(contributor.get('schema') == 'fv-preparedness-r151-v1', 'incorrect contributor manifest schema')
     require(contributor.get('decision') == 'DRAFT_HARD_HOLD' and contributor.get('qd_pass') is False
