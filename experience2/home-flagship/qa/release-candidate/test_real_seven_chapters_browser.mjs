@@ -35,7 +35,7 @@ function fixture(mutation=''){
     const marker=isHeading?
       '<h2 id="'+id+'">'+heading+'</h2>':
       '<h2 id="'+headingId+'">'+heading+'</h2>';
-    return '<section aria-labelledby="'+label+'"'+hidden+className+'>'+marker+
+    return '<section'+(isHeading?'':' id="'+id+'"')+' aria-labelledby="'+label+'"'+hidden+className+'>'+marker+
       '<p>'+words+'</p></section>';
   });
   if(mutation==='duplicate-target')sections.push('<div id="fv-hf-method-title">Duplicate</div>');
