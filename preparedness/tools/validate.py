@@ -15,6 +15,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import build  # noqa: E402
 import evidence_freeze  # noqa: E402
+import r122_reader_visible_citation_gate as reader_visible_citations  # noqa: E402
 
 REQUIRED_META = ["n", "slug", "title", "h1", "dek", "description", "section", "track", "updated", "last_checked", "status", "safety_review"]
 MIN_WORDS_CORNERSTONE = 1800
@@ -213,6 +214,22 @@ def validate(lib: build.Library | None = None) -> tuple[list[str], list[str]]:
             errors.append(f"{p}: description over 165 chars ({len(meta['description'])})")
         if len(meta["title"]) > 60:
             warns.append(f"{p}: title over 60 chars")
+
+        # Visible citation custody is an editorial release gate, not a QD or
+        # scientific source approval. Reject hidden/comment/attribute/script citations
+        # BEFORE build.resolve_tokens can turn them into apparently valid footnotes.
+        try:
+            placement = reader_visible_citations.check_body(meta["_body"], slug)
+        except reader_visible_citations.Hold as exc:
+            errors.append(f"{p}: reader-visible citation integrity: {exc}")
+            continue
+        if placement["concealed"]:
+            errors.append(
+                f"{p}: citation token not reader-visible "
+                f"(raw={len(placement['raw'])}, visible={len(placement['visible'])}); "
+                "check HTML comments, attributes, scripts, and hidden regions"
+            )
+            continue
 
         try:
             body, order = build.resolve_tokens(lib, meta)
