@@ -22,7 +22,7 @@ check("FTC disclosure in both",()=>{for(const v of [a,b])assert.match(v,/Final V
 check("disclosure BEFORE purchasing button",()=>{for(const v of [a,b])assert(v.indexOf("Final Vestige may earn a commission")<v.indexOf("<button"))});
 check("hard disabled purchasing controls",()=>{for(const v of [a,b])assert.match(v,/<button type="button" disabled aria-disabled="true">/)});
 check("release HARD_HOLD both",()=>{for(const v of [a,b])assert.match(v,/data-release="HARD_HOLD"/)});
-check("no active earning CTA anchors",()=>{for(const v of [a,b]){assert(!/<a[^>]*\b(?:affiliate|ref=|hop=|hoplink|clickbank)\b/i.test(v))}});
+check("no active earning CTA anchors",()=>{for(const v of [a,b])assert(!/<a[^>]*href="[^"]*(?:[?&](?:ref|aff|hop)=|clickbank|hoplink)[^"]*"/i.test(v))});
 check("no forms or embedded scripts",()=>{for(const v of [a,b]){assert(!/<(script|form|iframe|video|audio)\b/i.test(v))}});
 check("no external assets or pixels",()=>{for(const v of [a,b]){assert(!/(src\s*=|@import|url\s*\()/i.test(v))}});
 check("no forced autoplay",()=>{for(const v of [a,b])assert(!/<(?:audio|video)[^>]*\\bautoplay\\b/i.test(v))});
