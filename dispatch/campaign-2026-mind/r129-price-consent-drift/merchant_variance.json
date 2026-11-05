@@ -1,0 +1,84 @@
+{
+  "schema": "FV_DISPATCH_R129_INERT",
+  "status": "HOLD_ALL_UNSENT",
+  "parent_pr": 1032,
+  "master_pr": 175,
+  "owner_issue": 174,
+  "mind_issue": 171,
+  "latest_manuscript_sha": "a62a74c6cc2a3722048ff801ccba6212a6cdb397",
+  "release_all_approved": false,
+  "merchant_permissions_verified": false,
+  "email_promotion_permission_verified": false,
+  "first_party_guide_live": false,
+  "founder_send_approval": false,
+  "wordpress": {
+    "as_of_utc": "2026-11-05T04:32:24Z",
+    "newsletter_enabled": true,
+    "post_auto_email": false,
+    "email_format": "excerpt",
+    "reported_total": 3,
+    "reported_confirmed": 3,
+    "reported_unconfirmed": 2,
+    "legacy_email_followers": 0,
+    "wordpress_com_followers": 3,
+    "individually_reachable_count_verified": null,
+    "welcome_inbox_verified": false,
+    "physical_postal_verified": false,
+    "real_unsubscribe_verified": false
+  },
+  "merchant": [
+    {
+      "product": "Total Focus",
+      "source": "https://hypnosislive.com/mental-skills/total-focus",
+      "prior_seller_display": "$17.95",
+      "latest_seller_display": "$24.44",
+      "list_display": "$29.95",
+      "checkout_verified": false,
+      "seller_claim": "33-minute, 47MB single recording; 14-day refund stated",
+      "faq": "https://hypnosislive.com/faq",
+      "refund_at_checkout_verified": false,
+      "product_specific_effectiveness_verified": false
+    },
+    {
+      "product": "Zen12 Premium",
+      "source": "https://zen12.com/hnp",
+      "prior_seller_display": "$87.99",
+      "latest_seller_display": "$87.99",
+      "checkout_verified": false,
+      "seller_claim": "12 levels / 48 Premium MP3s and one-year guarantee stated",
+      "merchant_opt_in_warning": "Free MP3 capture form says You will receive our newsletter (seller list, not FV Jetpack list)",
+      "refund_at_checkout_verified": false,
+      "product_specific_effectiveness_verified": false
+    }
+  ],
+  "campaign_mix": {
+    "editorial": [
+      1,
+      2,
+      4,
+      6
+    ],
+    "commercial_reserved": [
+      3,
+      5
+    ]
+  },
+  "live_affiliate_url": null,
+  "actual_paid_orders": null,
+  "net_revenue_per_1000_qualified_human_sessions": null,
+  "qualified_human_sessions": null,
+  "sources": [
+    "https://hypnosislive.com/mental-skills/total-focus",
+    "https://hypnosislive.com/faq",
+    "https://zen12.com/hnp",
+    "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business",
+    "https://wordpress.com/support/newsletter/email-appearance/",
+    "https://wordpress.com/support/subscribers/"
+  ],
+  "caveats": [
+    "Merchant displayed dollar figures were retrieved via public website content; visitor variant and actual checkout unknown",
+    "Price discrepancy can reflect promotions, sessions, geography, or caches. None established",
+    "No official named Final Vestige affiliate email permission was found",
+    "No subscriber addresses or personally identifying data retained"
+  ]
+}
