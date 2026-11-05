@@ -10,8 +10,12 @@ const audit={routeAudit:{status:'PASS',primary_cta_count:1},
  mediaAudit:{status:'PASS_SOURCE_CUSTODY_ONLY',record_count:6,commercially_cleared_count:0},
  researchAudit:{status:'PASS'}};
 const baseline=()=>assess({landingHtml:src,...audit});
+// SYNTHETIC route, not a verified live WordPress permalink or Grok publication.
+const reviewedLandingUrl='https://finalvestige.com/investigations/apollo-1/';
 const candidateCampaign={source:'youtube',owner:'Grok',asset_id:'apollo_fall_2026_v001',
- public_url:'https://www.youtube.com/watch?v=abcdefghijk',
+ public_url:'https://www.youtube.com/watch?v=abcdefghijk',youtube_video_id:'abcdefghijk',
+ destination_url:reviewedLandingUrl+'?utm_source=youtube&utm_medium=organic_social'+
+  '&utm_campaign=history_pilot_2026_11&utm_content=apollo_fall_2026_v001',
  destination_reviewed:true,destination_fragment:'#classroom-preview',publication_verified:true};
 const candidateOffer={sku:'apollo_educator_pack',audience:'educators_grades_6_9',
  topic:'apollo1_source_analysis',rights_review:'SIGNED_OFF_BY_REVIEWER',
@@ -54,12 +58,24 @@ test('campaign IDs remain unassigned absent documented Grok publication',()=>{
  assert.equal(cleanCampaign({...candidateCampaign,publication_verified:false}).status,'INVALID');
 });
 test('candidate campaign has deterministic UTM plan but no verified attribution',()=>{
- const c=cleanCampaign(candidateCampaign);
+ const c=cleanCampaign(candidateCampaign,reviewedLandingUrl);
  assert.equal(c.status,'CANDIDATE_REQUIRES_INDEPENDENT_PLATFORM_CHECK');
  assert.equal(c.utm.utm_content,candidateCampaign.asset_id);
- const r=assess({landingHtml:src,...audit,campaign:candidateCampaign});
+ const r=assess({landingHtml:src,...audit,campaign:candidateCampaign,reviewedLandingUrl});
  assert.equal(r.campaign.independently_verified,false);
  assert.equal(r.measurement.qualified_human_sessions,'UNOBSERVABLE');
+});
+test('R138 no reviewed first-party permalink, no candidate attribution',()=>{
+ assert.equal(cleanCampaign(candidateCampaign).status,'INVALID');
+ const r=assess({landingHtml:src,...audit,campaign:candidateCampaign});
+ assert.ok(r.blockers.includes('NO_VERIFIED_GROK_CAMPAIGN_ROUTE'));
+ assert.equal(r.measurement.qualified_human_sessions,'UNOBSERVABLE');
+});
+test('R138 reject disconnected Grok video, asset UTM and destination',()=>{
+ for(const delta of [{youtube_video_id:'XXXXXXXXXXX'},
+   {destination_url:candidateCampaign.destination_url.replace('apollo_fall_2026_v001','other_asset')},
+   {destination_url:candidateCampaign.destination_url.replace('/apollo-1/','/crystal-skulls/')}])
+  assert.equal(cleanCampaign({...candidateCampaign,...delta},reviewedLandingUrl).status,'INVALID');
 });
 test('fake asset URL and wrong social owner fail closed',()=>{
  assert.equal(cleanCampaign({...candidateCampaign,public_url:'https://evil.test/'}).status,'INVALID');
@@ -78,7 +94,7 @@ test('merchant URL must be safe HTTPS with no credentials',()=>{
 });
 test('plausible offer data is NEVER independent merchant proof',()=>{
  const r=assess({landingHtml:src,...audit,offer:candidateOffer,campaign:candidateCampaign,
-  merchantReceipts:[{paid:true}],browserReceipt:{browser_acceptance:'TESTED_LOCAL_ONLY',errors:[]}});
+  reviewedLandingUrl,merchantReceipts:[{paid:true}],browserReceipt:{browser_acceptance:'TESTED_LOCAL_ONLY',errors:[]}});
  assert.equal(r.proposed_offer.status,'DOCUMENT_ONLY_NOT_MERCHANT_ATTESTATION');
  assert.equal(r.proposed_offer.independently_verified,false);
  assert.ok(r.blockers.includes('MERCHANT_SETTLEMENT_NOT_INDEPENDENTLY_RECONCILED'));
