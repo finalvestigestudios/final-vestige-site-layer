@@ -1,0 +1,276 @@
+{
+  "schema": "fv-mind-r150-claims-v1",
+  "date": "2026-11-05",
+  "state": "UNPUBLISHED",
+  "merchant_cta_authorized": false,
+  "commission_verified": false,
+  "notes": "Seller representations are not efficacy proof. Closed gates remain closed until documentary proof.",
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "Kihlstrom 1985 selected 80 highly hypnotizable students",
+      "status": "SUPPORTED_PUBLISHED_ABSTRACT",
+      "url": "https://doi.org/10.1037/0021-843X.94.3.264",
+      "limitation": "population-limited"
+    },
+    {
+      "id": "C02",
+      "claim": "Reinduction and relaxation comparison reported different later reversibility",
+      "status": "SUPPORTED_PUBLISHED_ABSTRACT",
+      "url": "https://doi.org/10.1037/0021-843X.94.3.264",
+      "limitation": "not replicated here"
+    },
+    {
+      "id": "C03",
+      "claim": "Hypnosis erases memory",
+      "status": "REJECT",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/4031223/",
+      "limitation": "study does not support erasure"
+    },
+    {
+      "id": "C04",
+      "claim": "Hypnosis retrieves hidden factual memory reliably",
+      "status": "REJECT",
+      "url": "https://doi.org/10.1037/0021-843X.94.3.264",
+      "limitation": "study cautions against simple retrieval-key story"
+    },
+    {
+      "id": "C05",
+      "claim": "Allen 1995 evaluated 42 participants with ERP recognition tasks",
+      "status": "SUPPORTED_ABSTRACT",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/7673565/",
+      "limitation": "selected group"
+    },
+    {
+      "id": "C06",
+      "claim": "Brain wave recordings prove an MP3 increases memory",
+      "status": "REJECT",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/7673565/",
+      "limitation": "no commercial audio tested"
+    },
+    {
+      "id": "C07",
+      "claim": "Frischholz 1992 compared clinical and student groups",
+      "status": "SUPPORTED_ABSTRACT",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/1442638/",
+      "limitation": "small groups do not generalize"
+    },
+    {
+      "id": "C08",
+      "claim": "Puységur historical reports prove magnetic fluid",
+      "status": "REJECT",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "limitation": "historical claims not mechanism proof"
+    },
+    {
+      "id": "C09",
+      "claim": "Hypnosis Live Total Focus is seller-described 33-minute 47-MB MP3",
+      "status": "SELLER_DESCRIPTION",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "limitation": "not independently delivered"
+    },
+    {
+      "id": "C10",
+      "claim": "Total Focus guaranteed razor-sharp concentration",
+      "status": "REJECT",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "limitation": "seller claim no product trial supplied"
+    },
+    {
+      "id": "C11",
+      "claim": "Total Focus checkout total equals indexed price",
+      "status": "WITHHOLD",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "limitation": "checkout not tested"
+    },
+    {
+      "id": "C12",
+      "claim": "Hypnosis Live FAQ advertises 14-day refund requests with limits",
+      "status": "SELLER_POLICY",
+      "url": "https://hypnosislive.com/faq",
+      "limitation": "refund execution not tested"
+    },
+    {
+      "id": "C13",
+      "claim": "Final Vestige affiliate program acceptance is established",
+      "status": "UNKNOWN_BLOCKED",
+      "url": "https://affiliates.inspire3.com/",
+      "limitation": "public portal not named acceptance"
+    },
+    {
+      "id": "C14",
+      "claim": "Advertised public affiliate percentage equals FV realized commission",
+      "status": "REJECT",
+      "url": "https://affiliates.inspire3.com/",
+      "limitation": "no FV account/settlement evidence"
+    },
+    {
+      "id": "C15",
+      "claim": "Disclose material earning connection near paid recommendations",
+      "status": "FTC_GUIDANCE",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "limitation": "disclosure template draft"
+    },
+    {
+      "id": "C16",
+      "claim": "Specific health benefit claims require support",
+      "status": "FTC_GUIDANCE",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "limitation": "product specific"
+    },
+    {
+      "id": "C17",
+      "claim": "Focus Fieldbook live route exists",
+      "status": "PREVIOUS_WP_READ_ONLY",
+      "url": "https://finalvestige.com/focus/",
+      "limitation": "web tool unable to fetch current body"
+    },
+    {
+      "id": "C18",
+      "claim": "Unpublished Mind bridge is presently on live website",
+      "status": "FALSE",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "limitation": "not deployed"
+    },
+    {
+      "id": "C19",
+      "claim": "Zen12 Premium merchant describes 12 levels/48 MP3s",
+      "status": "SELLER_DESCRIPTION",
+      "url": "https://zen12.com/hnp",
+      "limitation": "distinct exact product"
+    },
+    {
+      "id": "C20",
+      "claim": "Zen12 12 minutes equals hour of meditation scientifically",
+      "status": "REJECT",
+      "url": "https://zen12.com/hnp",
+      "limitation": "seller claim not independently established"
+    },
+    {
+      "id": "C21",
+      "claim": "FV Payhip Mind SKU is currently sellable",
+      "status": "UNKNOWN",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "limitation": "authenticate first"
+    },
+    {
+      "id": "C22",
+      "claim": "3 Grok asset IDs reconciled",
+      "status": "UNKNOWN",
+      "url": "https://docs.google.com/document/d/1_dqcJeqxbvYb1prGxy0nSWTsHu8p0PSRsDB_NPNbL48/edit",
+      "limitation": "do not fabricate"
+    },
+    {
+      "id": "C23",
+      "claim": "Affiliate click means verified commission",
+      "status": "REJECT",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "limitation": "separate events"
+    },
+    {
+      "id": "C24",
+      "claim": "FV realized net revenue per 1000 qualified humans computable",
+      "status": "UNKNOWN",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "limitation": "no settlement denominator"
+    }
+  ],
+  "gates": {
+    "named_partner_approval": {
+      "status": "CLOSED",
+      "evidence": null
+    },
+    "product_specific_earning_url": {
+      "status": "CLOSED",
+      "evidence": null
+    },
+    "permitted_organic_channels": {
+      "status": "CLOSED",
+      "evidence": null
+    },
+    "permitted_social_channels": {
+      "status": "CLOSED",
+      "evidence": null
+    },
+    "permitted_email_marketing": {
+      "status": "CLOSED",
+      "evidence": null
+    },
+    "approved_creative_and_usage": {
+      "status": "CLOSED",
+      "evidence": null
+    },
+    "tracking_and_attribution_terms": {
+      "status": "CLOSED",
+      "evidence": null
+    },
+    "merchant_checkout_price_and_currency": {
+      "status": "CLOSED",
+      "evidence": null
+    },
+    "merchant_return_policy_buyer_verification": {
+      "status": "CLOSED",
+      "evidence": null
+    },
+    "paid_settlement_reporting": {
+      "status": "CLOSED",
+      "evidence": null
+    },
+    "privacy_and_data_transfer_review": {
+      "status": "CLOSED",
+      "evidence": null
+    },
+    "owner_payhip_sku_rights": {
+      "status": "CLOSED",
+      "evidence": null
+    },
+    "owner_payhip_current_price": {
+      "status": "CLOSED",
+      "evidence": null
+    },
+    "owner_payhip_delivery": {
+      "status": "CLOSED",
+      "evidence": null
+    },
+    "owner_payhip_refunds": {
+      "status": "CLOSED",
+      "evidence": null
+    },
+    "creator_asset_id_match": {
+      "status": "CLOSED",
+      "evidence": null
+    },
+    "creator_licensed_media": {
+      "status": "CLOSED",
+      "evidence": null
+    },
+    "contextual_focus_live_release": {
+      "status": "CLOSED",
+      "evidence": null
+    },
+    "qa_screenreader_keyboard": {
+      "status": "CLOSED",
+      "evidence": null
+    },
+    "qa_responsive_browser": {
+      "status": "CLOSED",
+      "evidence": null
+    },
+    "performance_test": {
+      "status": "CLOSED",
+      "evidence": null
+    },
+    "founder_approved_release": {
+      "status": "CLOSED",
+      "evidence": null
+    },
+    "verified_orders_and_refunds": {
+      "status": "CLOSED",
+      "evidence": null
+    },
+    "qualified_human_denominator": {
+      "status": "CLOSED",
+      "evidence": null
+    }
+  }
+}
