@@ -1,0 +1,617 @@
+{
+  "title": "Mind R131 source-to-claim and conversion-release register",
+  "as_of": "2026-11-04",
+  "mode": "unpublished_evidence_draft",
+  "commercial_product": "Zen12 Premium",
+  "approval_status": "NOT VERIFIED",
+  "merchant_referral_url": null,
+  "verified_sale_count": null,
+  "commission_net_revenue": null,
+  "qualified_human_sessions": null,
+  "sources": [
+    {
+      "id": "S1",
+      "url": "https://inspire3.com/",
+      "type": "merchant_catalog",
+      "checked": "2026-11-04",
+      "applies_to": "Inspire3 category presence only"
+    },
+    {
+      "id": "S2",
+      "url": "https://zen12.com/hnp",
+      "type": "merchant_exact_offer",
+      "checked": "2026-11-04",
+      "applies_to": "Product package variants, displayed Premium 87.99, seller guarantee"
+    },
+    {
+      "id": "S3",
+      "url": "https://zen12.com/secret/",
+      "type": "merchant_conditional_promo",
+      "checked": "2026-11-04",
+      "applies_to": "Conditional seller coupon display 37; not buyer price"
+    },
+    {
+      "id": "S4",
+      "url": "https://inspire3.com/privacy/",
+      "type": "merchant_policy",
+      "checked": "2026-11-04",
+      "applies_to": "Purchaser identifying details may be shared with affiliate"
+    },
+    {
+      "id": "S5",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+      "type": "systematic_review",
+      "year": 2023,
+      "applies_to": "14 EEG binaural beat studies; 5 supportive 8 contradictory 1 mixed"
+    },
+    {
+      "id": "S6",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41176178/",
+      "type": "systematic_review",
+      "year": 2025,
+      "applies_to": "Perioperative anxiety/pain context; not a Zen12 trial"
+    },
+    {
+      "id": "S7",
+      "url": "https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety/",
+      "type": "government_health_review",
+      "applies_to": "Broad mindfulness literature and safety; not product-specific"
+    },
+    {
+      "id": "S8",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "type": "regulator",
+      "applies_to": "Adjacent conspicuous commission disclosure"
+    },
+    {
+      "id": "S9",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "type": "regulator",
+      "applies_to": "Competent reliable support for objective health-related claims"
+    },
+    {
+      "id": "S10",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/8346328/",
+      "type": "scientific_review",
+      "year": 1993,
+      "applies_to": "Source monitoring framework"
+    },
+    {
+      "id": "S11",
+      "url": "https://doi.org/10.3758/BF03211367",
+      "type": "experimental_study",
+      "year": 1998,
+      "applies_to": "Imagination-inflation action event experiment"
+    },
+    {
+      "id": "S12",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/24213869/",
+      "type": "experimental_study",
+      "year": 1996,
+      "applies_to": "Childhood imagined events confidence under study conditions"
+    },
+    {
+      "id": "S13",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/8467368/",
+      "type": "experimental_study",
+      "year": 1993,
+      "applies_to": "Eyewitness film vs written source attribution"
+    },
+    {
+      "id": "S14",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/12679042/",
+      "type": "experimental_study",
+      "year": 2003,
+      "applies_to": "Source-monitoring adjustments improve frequency judgment in task"
+    },
+    {
+      "id": "S15",
+      "url": "https://finalvestige.com/focus/",
+      "type": "existing_first_party",
+      "applies_to": "Existing free Focus destination, no new signup"
+    },
+    {
+      "id": "S16",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "type": "existing_first_party",
+      "applies_to": "Historical archive connection"
+    },
+    {
+      "id": "S17",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "type": "existing_first_party",
+      "applies_to": "Prior verified published article; confirm before release"
+    },
+    {
+      "id": "S18",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "type": "existing_first_party",
+      "applies_to": "Prior verified published article; confirm before release"
+    },
+    {
+      "id": "S19",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "type": "issue",
+      "applies_to": "Commercial and release governance"
+    },
+    {
+      "id": "S20",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "type": "issue",
+      "applies_to": "Attribution and revenue verification"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "Zen12 Premium marketed as twelve levels, 48 MP3 files",
+      "classification": "seller_description",
+      "evidence_ids": [
+        "S2"
+      ],
+      "decision": "ALLOW only attributed to merchant"
+    },
+    {
+      "id": "C02",
+      "claim": "Seller Premium page displays 87.99 USD",
+      "classification": "seller_display_not_checkout",
+      "evidence_ids": [
+        "S2"
+      ],
+      "decision": "ALLOW dated price observation, not final checkout"
+    },
+    {
+      "id": "C03",
+      "claim": "Seller conditional promotion displays 37 USD with code",
+      "classification": "seller_display_not_checkout",
+      "evidence_ids": [
+        "S3"
+      ],
+      "decision": "ALLOW dated contextual note; no coupon CTA/countdown"
+    },
+    {
+      "id": "C04",
+      "claim": "Zen12 seller advertises one-year refund guarantee",
+      "classification": "seller_promise",
+      "evidence_ids": [
+        "S2"
+      ],
+      "decision": "ALLOW as seller promise only; never guarantee fulfillment"
+    },
+    {
+      "id": "C05",
+      "claim": "Brainwave entrainment is proven for Zen12",
+      "classification": "unsubstantiated_product_efficacy",
+      "evidence_ids": [
+        "S2",
+        "S5"
+      ],
+      "decision": "REJECT"
+    },
+    {
+      "id": "C06",
+      "claim": "Twelve minutes Zen12 equals one hour of formal meditation",
+      "classification": "unsubstantiated_comparative_efficacy",
+      "evidence_ids": [
+        "S2",
+        "S7"
+      ],
+      "decision": "REJECT"
+    },
+    {
+      "id": "C07",
+      "claim": "Binaural beats trigger perceptual beat sensation",
+      "classification": "scientific_background",
+      "evidence_ids": [
+        "S5"
+      ],
+      "decision": "ALLOW with listening context"
+    },
+    {
+      "id": "C08",
+      "claim": "2023 review EEG studies split 5/8/1",
+      "classification": "review_finding",
+      "evidence_ids": [
+        "S5"
+      ],
+      "decision": "ALLOW, mention methodological heterogeneity"
+    },
+    {
+      "id": "C09",
+      "claim": "Meditation program guarantees anxiety treatment",
+      "classification": "medical_claim",
+      "evidence_ids": [
+        "S7",
+        "S9"
+      ],
+      "decision": "REJECT"
+    },
+    {
+      "id": "C10",
+      "claim": "Perioperative binaural review demonstrates Zen12 efficacy",
+      "classification": "incorrect_transfer",
+      "evidence_ids": [
+        "S6"
+      ],
+      "decision": "REJECT"
+    },
+    {
+      "id": "C11",
+      "claim": "Meditation always harmless",
+      "classification": "unsubstantiated_safety",
+      "evidence_ids": [
+        "S7"
+      ],
+      "decision": "REJECT"
+    },
+    {
+      "id": "C12",
+      "claim": "Final Vestige has tried Zen12",
+      "classification": "personal_experience",
+      "evidence_ids": [],
+      "decision": "REJECT no evidence"
+    },
+    {
+      "id": "C13",
+      "claim": "Final Vestige has received Inspire3 named affiliate approval",
+      "classification": "partner_acceptance",
+      "evidence_ids": [],
+      "decision": "NOT VERIFIED; commercial gate closed"
+    },
+    {
+      "id": "C14",
+      "claim": "Partner approved any exact FV earning link",
+      "classification": "partner_link",
+      "evidence_ids": [],
+      "decision": "NOT VERIFIED; null"
+    },
+    {
+      "id": "C15",
+      "claim": "Affiliate may receive buyer name email product details",
+      "classification": "merchant_privacy_representation",
+      "evidence_ids": [
+        "S4"
+      ],
+      "decision": "ALLOW warn plainly"
+    },
+    {
+      "id": "C16",
+      "claim": "Final Vestige may receive aggregate-only commission data",
+      "classification": "merchant_reporting_agreement",
+      "evidence_ids": [],
+      "decision": "NOT VERIFIED; closed"
+    },
+    {
+      "id": "C17",
+      "claim": "Links generate paid commissions",
+      "classification": "verified_sale",
+      "evidence_ids": [],
+      "decision": "REJECT until merchant settlement"
+    },
+    {
+      "id": "C18",
+      "claim": "An outbound click is a paid sale",
+      "classification": "invalid_metric",
+      "evidence_ids": [
+        "S20"
+      ],
+      "decision": "REJECT"
+    },
+    {
+      "id": "C19",
+      "claim": "A Fieldbook page display proves confirmed lead",
+      "classification": "invalid_metric",
+      "evidence_ids": [
+        "S20"
+      ],
+      "decision": "REJECT"
+    },
+    {
+      "id": "C20",
+      "claim": "Source monitoring involves attribution of remembered content",
+      "classification": "science_framework",
+      "evidence_ids": [
+        "S10"
+      ],
+      "decision": "ALLOW"
+    },
+    {
+      "id": "C21",
+      "claim": "Imagining actions under certain lab conditions can cause performance source errors",
+      "classification": "experimental_narrow",
+      "evidence_ids": [
+        "S11"
+      ],
+      "decision": "ALLOW scoped"
+    },
+    {
+      "id": "C22",
+      "claim": "Imagination always implants autobiographical memories",
+      "classification": "unsubstantiated_generalization",
+      "evidence_ids": [
+        "S11",
+        "S12"
+      ],
+      "decision": "REJECT"
+    },
+    {
+      "id": "C23",
+      "claim": "The 1993 imagery task distinguished recognition from source attribution",
+      "classification": "experimental_narrow",
+      "evidence_ids": [
+        "S13"
+      ],
+      "decision": "ALLOW scoped"
+    },
+    {
+      "id": "C24",
+      "claim": "Attributing frequency judgments to wrong lists can bias counts",
+      "classification": "experimental_narrow",
+      "evidence_ids": [
+        "S14"
+      ],
+      "decision": "ALLOW scoped"
+    },
+    {
+      "id": "C25",
+      "claim": "Affiliate disclosure must sit visibly with commissionable recommendation",
+      "classification": "FTC_guidance",
+      "evidence_ids": [
+        "S8"
+      ],
+      "decision": "REQUIRE before live link"
+    },
+    {
+      "id": "C26",
+      "claim": "Product-specific claims require adequate substantiation",
+      "classification": "FTC_guidance",
+      "evidence_ids": [
+        "S9"
+      ],
+      "decision": "REQUIRE"
+    },
+    {
+      "id": "C27",
+      "claim": "Grok's 3 video IDs / first-party attributable sessions are verified",
+      "classification": "attribution",
+      "evidence_ids": [],
+      "decision": "NOT VERIFIED; hold"
+    },
+    {
+      "id": "C28",
+      "claim": "Paid FV Mind SKU rights, delivery and sale are authenticated",
+      "classification": "first_party_commerce",
+      "evidence_ids": [],
+      "decision": "NOT VERIFIED; hold"
+    },
+    {
+      "id": "C29",
+      "claim": "One existing Focus journey is sufficient editorial pathway",
+      "classification": "architecture",
+      "evidence_ids": [
+        "S15",
+        "S19"
+      ],
+      "decision": "Preserve, verify native Jetpack records"
+    },
+    {
+      "id": "C30",
+      "claim": "First party source article exists live",
+      "classification": "prior_repository_WP_inventory",
+      "evidence_ids": [
+        "S17",
+        "S18"
+      ],
+      "decision": "Read-only verify again before link publication"
+    }
+  ],
+  "release_gates": [
+    {
+      "id": "G01",
+      "name": "named merchant written acceptance",
+      "status": "CLOSED",
+      "proof": null
+    },
+    {
+      "id": "G02",
+      "name": "approved FV referral URL",
+      "status": "CLOSED",
+      "proof": null
+    },
+    {
+      "id": "G03",
+      "name": "allowed website channel",
+      "status": "CLOSED",
+      "proof": null
+    },
+    {
+      "id": "G04",
+      "name": "allowed social channels",
+      "status": "CLOSED",
+      "proof": null
+    },
+    {
+      "id": "G05",
+      "name": "allowed email channel (if used)",
+      "status": "CLOSED",
+      "proof": null
+    },
+    {
+      "id": "G06",
+      "name": "permitted affiliate creative use",
+      "status": "CLOSED",
+      "proof": null
+    },
+    {
+      "id": "G07",
+      "name": "current merchant SKU and fulfillment",
+      "status": "CLOSED",
+      "proof": null
+    },
+    {
+      "id": "G08",
+      "name": "current actual checkout amount",
+      "status": "CLOSED",
+      "proof": null
+    },
+    {
+      "id": "G09",
+      "name": "current refund terms",
+      "status": "CLOSED",
+      "proof": null
+    },
+    {
+      "id": "G10",
+      "name": "no unsupported benefit claims",
+      "status": "CLOSED",
+      "proof": null
+    },
+    {
+      "id": "G11",
+      "name": "no fake scarcity or discount",
+      "status": "CLOSED",
+      "proof": null
+    },
+    {
+      "id": "G12",
+      "name": "written purchaser privacy/data controls",
+      "status": "CLOSED",
+      "proof": null
+    },
+    {
+      "id": "G13",
+      "name": "aggregate-only sale/refund/fee reporting",
+      "status": "CLOSED",
+      "proof": null
+    },
+    {
+      "id": "G14",
+      "name": "affiliate click not sale",
+      "status": "CLOSED",
+      "proof": null
+    },
+    {
+      "id": "G15",
+      "name": "confirmed Jetpack lead evidence",
+      "status": "CLOSED",
+      "proof": null
+    },
+    {
+      "id": "G16",
+      "name": "Payhip rights-cleared Mind SKU (fallback)",
+      "status": "CLOSED",
+      "proof": null
+    },
+    {
+      "id": "G17",
+      "name": "Payhip final price and return terms",
+      "status": "CLOSED",
+      "proof": null
+    },
+    {
+      "id": "G18",
+      "name": "Payhip authenticated order evidence",
+      "status": "CLOSED",
+      "proof": null
+    },
+    {
+      "id": "G19",
+      "name": "real Grok asset IDs and public links",
+      "status": "CLOSED",
+      "proof": null
+    },
+    {
+      "id": "G20",
+      "name": "first-party UTMs consent/security",
+      "status": "CLOSED",
+      "proof": null
+    },
+    {
+      "id": "G21",
+      "name": "first-party qualified session validation",
+      "status": "CLOSED",
+      "proof": null
+    },
+    {
+      "id": "G22",
+      "name": "7d cohort reconciliation",
+      "status": "CLOSED",
+      "proof": null
+    },
+    {
+      "id": "G23",
+      "name": "30d cohort reconciliation",
+      "status": "CLOSED",
+      "proof": null
+    },
+    {
+      "id": "G24",
+      "name": "mobile 360/390/768/1440",
+      "status": "CLOSED",
+      "proof": null
+    },
+    {
+      "id": "G25",
+      "name": "keyboard no-JS WCAG 2.2 review",
+      "status": "CLOSED",
+      "proof": null
+    },
+    {
+      "id": "G26",
+      "name": "real media file captions transcript",
+      "status": "CLOSED",
+      "proof": null
+    },
+    {
+      "id": "G27",
+      "name": "native browser performance QA",
+      "status": "CLOSED",
+      "proof": null
+    },
+    {
+      "id": "G28",
+      "name": "independent site QA signoff",
+      "status": "CLOSED",
+      "proof": null
+    },
+    {
+      "id": "G29",
+      "name": "founder release approval",
+      "status": "CLOSED",
+      "proof": null
+    }
+  ],
+  "metric_contract": {
+    "event_namespace": "mind_r131",
+    "required_dimension_keys": [
+      "asset_id",
+      "utm_source",
+      "utm_medium",
+      "utm_campaign",
+      "utm_content",
+      "landing_path",
+      "cohort_date"
+    ],
+    "permitted_events": [
+      "qualified_landing",
+      "article_to_focus_click",
+      "confirmed_signup",
+      "affiliate_click",
+      "merchant_paid_order",
+      "affiliate_confirmed_sale",
+      "refund",
+      "fee"
+    ],
+    "forbidden_dimensions": [
+      "name",
+      "email",
+      "phone",
+      "postal_address",
+      "ip_address",
+      "user_agent",
+      "buyer_id"
+    ],
+    "interpretation": "Affiliate click, site view, or Focus display is not a verified lead or paid sale. Never compute net revenue/1000 without authoritative denominator and settled order/commission ledger.",
+    "seven_thirty_day_windows": "7 and 30 completed calendar days based on PT campaign cohorts, reconciled merchant settlement/refunds/fees"
+  }
+}
