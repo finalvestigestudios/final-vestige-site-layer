@@ -1,0 +1,20 @@
+'use strict';
+const test=require('node:test'),assert=require('node:assert/strict');
+const {BASELINE,inspect,digest}=require('./r147_snapshot_gate.cjs');
+const metadata={id:BASELINE.id,slug:BASELINE.slug,status:BASELINE.status,modified:BASELINE.modified,link:BASELINE.link,source:'WORDPRESS_AUTHORIZED_READ'};
+const html='raw-content',review='corrected-content';
+const baseline={...BASELINE,rawCharacters:html.length,repairedCharacters:review.length,rawSha256:digest(html),repairedSha256:digest(review)};
+const previewFn=()=>({html:review,manifest:{release:'STAGING_HOLD',approved_to_publish:false,source_records_verified:3}});
+const run=(o={})=>inspect({html,metadata,baseline,previewFn,...o});
+test('sha256 standard known vector',()=>assert.equal(digest('abc'),'ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad'));
+test('matched artifact still staging hold',()=>{const r=run();assert.equal(r.ok,true);assert.equal(r.receipt.release,'STAGING_HOLD');assert.equal(r.receipt.approved_to_publish,false);});
+for(const k of ['id','slug','status','modified','link'])
+ test('metadata drift: '+k,()=>{const r=run({metadata:{...metadata,[k]:'altered'}});assert.equal(r.ok,false);assert(r.blockers.includes('WP_'+k.toUpperCase()+'_DRIFT'));});
+test('untrusted source rejected',()=>assert(run({metadata:{...metadata,source:'campaign'}}).blockers.includes('UNTRUSTED_EXPORT_PROVENANCE')));
+test('missing metadata rejected',()=>assert(run({metadata:null}).blockers.includes('MISSING_INDEPENDENT_WP_METADATA')));
+test('changed source length rejected',()=>assert(run({html:html+' '}).blockers.includes('SOURCE_CHARACTER_COUNT_DRIFT')));
+test('same length mutation rejected',()=>assert(run({html:'raw-Content'}).blockers.includes('SOURCE_DIGEST_DRIFT')));
+test('never patch mutated source',()=>{let called=false;const r=run({html:'tampered',previewFn:()=>{called=true;return previewFn();}});assert.equal(called,false);assert.equal(r.ok,false);});
+test('altered review artifact rejected',()=>assert(run({previewFn:()=>({...previewFn(),html:'tampered-content'})}).blockers.includes('REVIEW_DIGEST_DRIFT')));
+test('release self-approval rejected',()=>assert(run({previewFn:()=>({html:review,manifest:{release:'LIVE',approved_to_publish:true}})}).blockers.includes('STAGING_GOVERNANCE_RECEIPT_MISSING')));
+test('never claim revenue, media rights, browser testing',()=>{const r=run().receipt;assert.equal(r.browser,'NOT_EXECUTED');assert.equal(r.sales,'NOT_OBSERVED');assert.equal(r.rights,'NOT_CLEARED_FOR_PRODUCT');assert.equal(r.production_lcp_cls,'NOT_MEASURED');});
