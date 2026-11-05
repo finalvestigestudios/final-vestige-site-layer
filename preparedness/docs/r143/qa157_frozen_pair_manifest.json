@@ -1,0 +1,22 @@
+{
+  "schema": "R143-QA157-AUTHENTIC-PAIRS-1",
+  "candidate_ref": "ddb3528ba6494dada1fa1c3a142ce746e3a67706",
+  "qa_ref": "7d1ae6b8ef93d10cfb6810987672360885e9c1aa",
+  "status": "UNREVIEWED_HUMAN_REQUIRED",
+  "articles": {
+    "household-emergency-plan": {
+      "rc_sha": "f81cd43516e8295104230412f18776919148f905",
+      "qa_sha": "6407a31a882211e62c00f4e07ec7dc4d5abf99c6",
+      "rc_meta_sha": "0681d51e6e29166eaae27ac2b7f1fbde3f836787",
+      "rc_cites": 57,
+      "qa_cites": 57
+    },
+    "three-day-kit": {
+      "rc_sha": "933f38ff3cd55a241cf9b392014fc52d4961e84f",
+      "qa_sha": "f578cdbae602c1ad58a9237c8dea0fd74c99f7da",
+      "rc_meta_sha": "1c69d5f1636a3a41631a5d93f11254d85cbe1b59",
+      "rc_cites": 79,
+      "qa_cites": 68
+    }
+  }
+}
