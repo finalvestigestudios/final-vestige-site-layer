@@ -4,7 +4,16 @@ from pathlib import Path
 import tempfile
 import unittest
 
-from r149_tool_claim_custody import CANDIDATES, Hold, make_docket, verify
+import importlib.util
+
+# Native repository discovery places tests/ on the import path, not tools/.
+TOOL_PATH = Path(__file__).resolve().parents[1] / 'tools' / 'r149_tool_claim_custody.py'
+SPEC = importlib.util.spec_from_file_location('r149_tool_claim_custody', TOOL_PATH)
+assert SPEC is not None and SPEC.loader is not None
+MODULE = importlib.util.module_from_spec(SPEC)
+SPEC.loader.exec_module(MODULE)
+CANDIDATES, Hold = MODULE.CANDIDATES, MODULE.Hold
+make_docket, verify = MODULE.make_docket, MODULE.verify
 
 class Fixture(unittest.TestCase):
     def setUp(self):
