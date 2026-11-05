@@ -133,10 +133,17 @@ def run_live() -> dict:
                         route.continue_()
                 page.route('**/*', restrict)
                 try:
-                    page.goto(url,wait_until='domcontentloaded',timeout=15000)
+                    response = page.goto(url,wait_until='domcontentloaded',timeout=15000)
+                    code = response.status if response is not None else None
+                    if code is None or not (200 <= code < 400):
+                        results.append({'page':key,'status':'HTTP_NOT_OK',
+                                        'http_status':code,'live_signed_out_dom_observed':False,
+                                        'blocked_requests':blocked,'confirmed_signup':None})
+                        context.close()
+                        continue
                     page.wait_for_timeout(1000)
                     result = inspect_page(page,key)
-                    result['http_status_verified'] = True
+                    result['http_status'] = code
                     result['live_signed_out_dom_observed'] = True
                     result['blocked_requests'] = blocked
                     results.append(result)
