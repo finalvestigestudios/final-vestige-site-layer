@@ -52,4 +52,4 @@ shouldFail(()=>verify(args[0],args[1],args[2],args[3].replace('"affiliate_url": 
 shouldFail(()=>verify(args[0],args[1],args[2],args[3].replace('"CLOSED_NOT_VERIFIED"','"OPEN"')));
 shouldFail(()=>verify(args[0],args[1],args[2],args[3].replace('"NOT_COMPUTABLE"','0')));
 shouldFail(()=>verify(args[0],args[1].replace('HARD HOLD','ACTIVATED'),args[2],args[3]));
-console.log('PASS: '+checks+' source/compliance assertions and '+muts+' deliberate-negative mutations. Native Node. No network, CMS or merchant calls.');
+console.log('PASS: '+checks+' source/compliance assertions and '+muts+' deliberate-negative mutations. Use native Node when available; CJS-compatible V8 harness is supported. No network, CMS or merchant calls.');
