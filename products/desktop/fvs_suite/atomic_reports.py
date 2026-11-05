@@ -22,9 +22,18 @@ def _render_cell(value: object, cell: Callable[[object], str]) -> str:
     additional boundary blocks blatant formulas, NUL evidence ambiguity, and
     implicit conversion of None, bytes, numbers or crafted string subclasses.
     """
-    rendered = cell(value)
+    # Direct API callbacks can fail with financial values in their exception
+    # text. Do not let a converter's private payload surface as a UI/CI error.
+    try:
+        rendered = cell(value)
+    except Exception:
+        raise ValueError("CSV report cell sanitizer failed") from None
+    # Python str admits isolated UTF-16 surrogate code points, but UTF-8
+    # reports cannot encode them. Reject before csv/TextIOWrapper can raise
+    # a UnicodeEncodeError carrying user-controlled report text.
     if (type(rendered) is not str or "\x00" in rendered
-            or rendered.startswith(("=", "+", "@"))):
+            or rendered.startswith(("=", "+", "@"))
+            or any(0xD800 <= ord(char) <= 0xDFFF for char in rendered)):
         raise ValueError("Unsafe or non-text CSV report cell")
     return rendered
 
