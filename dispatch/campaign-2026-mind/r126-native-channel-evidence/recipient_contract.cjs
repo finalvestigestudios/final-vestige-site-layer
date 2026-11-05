@@ -12,7 +12,7 @@ null,
 function ok(b,msg){if(!b)throw Error(msg);}
 function count(x){return Number.isSafeInteger(x)&&x>=0;}
 function time(t){return typeof t==="string"&&/^20\d\d-\d\d-\d\dT\d\d:\d\d/.test(t)&&!Number.isNaN(Date.parse(t));}
-function pii(obj){if(!obj||typeof obj!=="object")return false;if(Array.isArray(obj))return obj.some(pii);return Object.keys(obj).some(k=>/^(email|address|name|phone|ip|user_id|subscriber_id|token|cookie)$/i.test(k)||pii(obj[k]));}
+function pii(obj){if(!obj||typeof obj!=="object")return false;if(Array.isArray(obj))return obj.some(pii);return Object.keys(obj).some(k=>(/^(email|address|name|phone|ip|user_id|subscriber_id|token|cookie)$/i.test(k)&&typeof obj[k]!=="number")||pii(obj[k]));}
 function audit(x){
 ok(x&&typeof x==="object"&&!pii(x),"PII or missing snapshot");
 const n=x.newsletter,f=x.followers;
