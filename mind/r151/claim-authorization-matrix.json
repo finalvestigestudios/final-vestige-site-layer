@@ -1,0 +1,237 @@
+{
+  "run": "mind-r151",
+  "date": "2026-11-05",
+  "state": "UNPUBLISHED_HARD_HOLD",
+  "partner_approval": "UNVERIFIED",
+  "preferred_offer": "Hypnosis Live Total Focus",
+  "catalog_source": "https://inspire3.com/",
+  "affiliate_portal": "https://affiliates.inspire3.com/",
+  "buyer_source": "https://hypnosislive.com/mental-skills/total-focus",
+  "refund_source": "https://hypnosislive.com/faq",
+  "sources": [
+    {
+      "key": "S1",
+      "type": "academic",
+      "url": "https://doi.org/10.1016/S0065-2601(06)38002-1"
+    },
+    {
+      "key": "S2",
+      "type": "academic",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/18096108/"
+    },
+    {
+      "key": "S3",
+      "type": "academic",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36476147/"
+    },
+    {
+      "key": "S4",
+      "type": "academic",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36976901/"
+    },
+    {
+      "key": "S5",
+      "type": "academic",
+      "url": "https://doi.org/10.1126/science.1192439"
+    },
+    {
+      "key": "M1",
+      "type": "merchant",
+      "url": "https://inspire3.com/"
+    },
+    {
+      "key": "M2",
+      "type": "merchant",
+      "url": "https://zen12.com/?no-popup=1"
+    },
+    {
+      "key": "M3",
+      "type": "merchant",
+      "url": "https://hypnosislive.com/mental-skills/total-focus"
+    },
+    {
+      "key": "M4",
+      "type": "merchant",
+      "url": "https://hypnosislive.com/faq"
+    },
+    {
+      "key": "A1",
+      "type": "public_affiliate_program_not_approval",
+      "url": "https://affiliates.inspire3.com/"
+    },
+    {
+      "key": "F1",
+      "type": "regulator",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking"
+    },
+    {
+      "key": "F2",
+      "type": "regulator",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+    },
+    {
+      "key": "FV1",
+      "type": "existing_public_destination_not_new_cms_write",
+      "url": "https://finalvestige.com/focus/"
+    }
+  ],
+  "claim_decisions": [
+    {
+      "id": "C1",
+      "claim": "Gollwitzer and Sheeran reviewed 94 independent tests, overall d=0.65",
+      "source": "S1",
+      "verdict": "ALLOW_QUALIFIED_RESEARCH"
+    },
+    {
+      "id": "C2",
+      "claim": "Implementation intentions increase desire or confidence",
+      "source": "S2",
+      "verdict": "EXCLUDE_OVERGENERALIZATION"
+    },
+    {
+      "id": "C3",
+      "claim": "Cue-response associations are hypothesized mechanism",
+      "source": "S2",
+      "verdict": "ALLOW_QUALIFIED"
+    },
+    {
+      "id": "C4",
+      "claim": "Automatic if-then rules are always beneficial",
+      "source": "S3",
+      "verdict": "REJECT"
+    },
+    {
+      "id": "C5",
+      "claim": "Planning necessarily reduces flexibility",
+      "source": "S4",
+      "verdict": "REJECT"
+    },
+    {
+      "id": "C6",
+      "claim": "Mind-wandering always causes unhappiness",
+      "source": "S5",
+      "verdict": "REJECT_CAUSAL_OVERCLAIM"
+    },
+    {
+      "id": "C7",
+      "claim": "Zen12 has 12 levels and 48 recordings",
+      "source": "M2",
+      "verdict": "MERCHANT_ONLY"
+    },
+    {
+      "id": "C8",
+      "claim": "12 minutes of Zen12 equal 1 hour meditation benefit",
+      "source": "M2",
+      "verdict": "EXCLUDE_UNSUBSTANTIATED_PRODUCT_EFFECT"
+    },
+    {
+      "id": "C9",
+      "claim": "Total Focus MP3 is 33 minutes and 47MB",
+      "source": "M3",
+      "verdict": "MERCHANT_ONLY"
+    },
+    {
+      "id": "C10",
+      "claim": "Total Focus achieves 100 percent concentration",
+      "source": "M3",
+      "verdict": "EXCLUDE_UNSUBSTANTIATED_PRODUCT_EFFECT"
+    },
+    {
+      "id": "C11",
+      "claim": "Total Focus 14-day refund requests and 5 sessions yearly",
+      "source": "M4",
+      "verdict": "MERCHANT_ONLY_FINAL_PROCESS_UNKNOWN"
+    },
+    {
+      "id": "C12",
+      "claim": "Final Vestige accepted to Inspire3",
+      "source": "A1",
+      "verdict": "NOT_VERIFIED"
+    },
+    {
+      "id": "C13",
+      "claim": "Affiliate clicks are paid commissions",
+      "source": "A1",
+      "verdict": "REJECT"
+    },
+    {
+      "id": "C14",
+      "claim": "Final Vestige has Payhip Mind SKU ready",
+      "source": "",
+      "verdict": "UNKNOWN_AUTHENTICATE_COMMERCE"
+    },
+    {
+      "id": "C15",
+      "claim": "FTC financial relationship must be disclosed conspicuously",
+      "source": "F1",
+      "verdict": "ALLOW"
+    },
+    {
+      "id": "C16",
+      "claim": "FTC requires substantiation for marketing claims",
+      "source": "F2",
+      "verdict": "ALLOW"
+    },
+    {
+      "id": "C17",
+      "claim": "Total Focus checkout price as of buyer purchase",
+      "source": "M3",
+      "verdict": "UNKNOWN_FINAL_CHECKOUT"
+    },
+    {
+      "id": "C18",
+      "claim": "Site article body has active Focus CTA",
+      "source": "FV1",
+      "verdict": "NOT_VERIFIED_FOR_RELEASE"
+    },
+    {
+      "id": "C19",
+      "claim": "Existing Focus CTA click is verified newsletter subscribe",
+      "source": "FV1",
+      "verdict": "REJECT"
+    },
+    {
+      "id": "C20",
+      "claim": "Zen12 video variant improves sales",
+      "source": "",
+      "verdict": "NOT_TESTED"
+    },
+    {
+      "id": "C21",
+      "claim": "A qualified social visitor is a unique human",
+      "source": "",
+      "verdict": "REQUIRES_DEDUPE_AND_BOT_FILTER"
+    },
+    {
+      "id": "C22",
+      "claim": "Realized FV net per 1k humans is known",
+      "source": "",
+      "verdict": "NOT_COMPUTABLE"
+    }
+  ],
+  "release_gates": {
+    "named_partner_acceptance": false,
+    "per_product_authorization": false,
+    "website_channel_authorized": false,
+    "social_channels_authorized": false,
+    "email_channel_authorized": false,
+    "approved_earning_url": false,
+    "attribution_window_verified": false,
+    "settlement_reporting_verified": false,
+    "partner_privacy_terms_reviewed": false,
+    "merchant_checkout_verified": false,
+    "refund_execution_verified": false,
+    "own_paid_mind_sku_verified": false,
+    "product_rights_verified": false,
+    "first_party_measurement_approved": false,
+    "source_asset_ids_verified": false,
+    "lead_confirmed_reporting_verified": false,
+    "attributable_paid_orders_verified": false,
+    "net_revenue_verified": false,
+    "focus_bridge_browser_qa": false,
+    "accessibility_real_browser_qa": false,
+    "video_asset_rendered": false,
+    "video_captions_verified": false,
+    "production_release_approved": false
+  }
+}
