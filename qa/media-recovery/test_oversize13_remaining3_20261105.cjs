@@ -36,6 +36,6 @@ const mutations=[
  ["pretend draft live",a=>a.entries.find(x=>x.media_id===405).usage_evidence.status="published"],
  ["pretend unknown PNG orphan",a=>a.entries.find(x=>x.media_id===482).usage_evidence.status="verified_orphan"],
  ["invent page usage",a=>a.read_only_page_checks.find(x=>x.id===234).filename_hits.founder_portrait=0],
- ["invent delivered thumbnail",a=>a.entries[0].registered_sizes[0].virtual="VERIFIED"]
+ ["invent delivered thumbnail",a=>a.entries.find(x=>x.media_id===293).registered_sizes[0].virtual="VERIFIED"]
 ];
 for(const [name,change]of mutations)test("fail closed: "+name,()=>assert.ok(validate(modified(change)).length>0,name));
