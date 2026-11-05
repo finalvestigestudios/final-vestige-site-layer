@@ -13,7 +13,7 @@ function inspect(a){
  const sourceString=(m.source_observations||[]).map(x=>x.source).join("\n");
  need(sourceString.includes("zen12.com/hnp")&&sourceString.includes("inspire3.com/privacy/")&&sourceString.includes("nccih.nih.gov")&&sourceString.includes("ftc.gov"),"sources_missing");
  for(const [textPart,id] of [[md,"markdown"],[p,"plain"]]){
-  need(textPart.includes("Twelve minutes of calm")&&textPart.includes("HOLD_"),"status_missing_"+id);
+  need(textPart.includes("Twelve minutes of calm")&&textPart.includes("HOLD_ALL_UNSENT"),"status_missing_"+id);
   need(textPart.includes("seller's newsletter")&&textPart.includes("separate"),"seller_list_not_clear_"+id);
   need(textPart.includes("[[VALID_POSTAL_ADDRESS_REQUIRED]]")&&textPart.includes("[[JETPACK_UNSUBSCRIBE_LINK_MUST_BE_VERIFIED]]"),"footer_hold_missing_"+id);
   need(textPart.includes("[[APPROVED_LIVE_FIRST_PARTY_ZEN12_BUYER_GUIDE_REQUIRED]]"),"guide_hold_missing_"+id);
@@ -21,7 +21,7 @@ function inspect(a){
  }
  need((md.match(/ONE PRIMARY ACTION/g)||[]).length===1&&(p.match(/PRIMARY CTA/g)||[]).length===1,"more_than_one_primary_action");
  need(md.includes("Commercial disclosure (beside")&&p.includes("Commercial disclosure:"),"disclosure_missing");
- need(md.includes("Stop if")&&md.includes("not independently"),"benefit_claim_overreach");
+ need(md.includes("Stop if")&&md.includes("independently demonstrated"),"benefit_claim_overreach");
  need(/<html lang="en">/i.test(h)&&/name="viewport"/i.test(h),"html_mobile_language_missing");
  need(/role="presentation"/i.test(h)&&/max-width:600px/.test(h),"html_email_table_missing");
  need(!/<(?:script|form|iframe|img|video|input)\b/i.test(h),"html_unsafe_markups");
