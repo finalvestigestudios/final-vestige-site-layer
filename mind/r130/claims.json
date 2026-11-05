@@ -1,0 +1,243 @@
+{
+  "checked_on": "2026-11-04",
+  "scope": "mind-r130",
+  "status": "DRAFT_HARD_HOLD",
+  "sources": [
+    {
+      "id": "S1",
+      "url": "https://doi.org/10.1068/p281059",
+      "type": "original_peer_reviewed",
+      "note": "1999 counting / inattentional blindness"
+    },
+    {
+      "id": "S2",
+      "url": "https://doi.org/10.1068/i0386",
+      "type": "original_peer_reviewed",
+      "note": "2010 unexpected changes"
+    },
+    {
+      "id": "S3",
+      "url": "https://doi.org/10.1177/0956797613479386",
+      "type": "original_peer_reviewed",
+      "note": "2013 24 radiologists CT gorilla"
+    },
+    {
+      "id": "S4",
+      "url": "https://inspire3.com/",
+      "type": "merchant_seller",
+      "note": "catalog and marketing only"
+    },
+    {
+      "id": "S5",
+      "url": "https://zen12.com/hnp",
+      "type": "merchant_seller",
+      "note": "Premium 12 levels, 48 MP3s, promotion $87.99 observed"
+    },
+    {
+      "id": "S6",
+      "url": "https://zen12.com/secret/",
+      "type": "merchant_conditional_promotion",
+      "note": "coupon-dependent $37 display; not verified checkout"
+    },
+    {
+      "id": "S7",
+      "url": "https://inspire3.com/privacy/",
+      "type": "merchant_policy",
+      "note": "sharing of names/emails/product details with affiliates permitted"
+    },
+    {
+      "id": "S8",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "type": "regulator",
+      "note": "clear conspicuous near-link disclosures"
+    },
+    {
+      "id": "S9",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "type": "regulator",
+      "note": "product-relevant substantiation"
+    },
+    {
+      "id": "S10",
+      "url": "https://finalvestige.com/focus/",
+      "type": "first_party",
+      "note": "previously verified via WP inventory; live fetch unavailable this sprint"
+    },
+    {
+      "id": "S11",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "type": "first_party",
+      "note": "previously verified via WP inventory; live fetch unavailable this sprint"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "claim": "Counting task can impair reporting of unexpected event",
+      "verdict": "SUPPORTED_EXPERIMENT_SPECIFIC",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "id": "C2",
+      "claim": "Half of ALL humans miss gorillas",
+      "verdict": "REJECT_UNIVERSAL",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "id": "C3",
+      "claim": "Foreknowledge of gorilla improves all unexpected-event awareness",
+      "verdict": "CONTRADICTED",
+      "source_ids": [
+        "S2"
+      ]
+    },
+    {
+      "id": "C4",
+      "claim": "83% of 24 expert observers in 2013 study missed artificial gorilla",
+      "verdict": "SUPPORTED_EXPERIMENT_SPECIFIC",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    {
+      "id": "C5",
+      "claim": "This implies 83% miss real radiology pathology",
+      "verdict": "REJECT_EXTRAPOLATION",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    {
+      "id": "C6",
+      "claim": "Zen12 Premium is represented by seller as 12 levels and 48 MP3s",
+      "verdict": "SELLER_DESCRIPTION_ONLY",
+      "source_ids": [
+        "S4",
+        "S5"
+      ]
+    },
+    {
+      "id": "C7",
+      "claim": "Zen12 gives 1 hour of meditation in 12 minutes",
+      "verdict": "NOT_INDEPENDENTLY_SUBSTANTIATED_OMIT",
+      "source_ids": [
+        "S5",
+        "S9"
+      ]
+    },
+    {
+      "id": "C8",
+      "claim": "Audio prevents inattentional blindness",
+      "verdict": "NOT_SUBSTANTIATED_OMIT",
+      "source_ids": [
+        "S1",
+        "S2",
+        "S3",
+        "S9"
+      ]
+    },
+    {
+      "id": "C9",
+      "claim": "Offer page displays $87.99 and another conditional page $37",
+      "verdict": "SELLER_DISPLAY_NOT_CHECKOUT",
+      "source_ids": [
+        "S5",
+        "S6"
+      ]
+    },
+    {
+      "id": "C10",
+      "claim": "All purchasers qualify for $37",
+      "verdict": "REJECT_UNVERIFIED",
+      "source_ids": [
+        "S6"
+      ]
+    },
+    {
+      "id": "C11",
+      "claim": "One-year refund guarantee advertised",
+      "verdict": "SELLER_POLICY_NOT_REFUND_VERIFIED",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    {
+      "id": "C12",
+      "claim": "Affiliate can receive buyer identity per Inspire3 privacy",
+      "verdict": "PUBLISHED_POLICY_SAYS_MAY",
+      "source_ids": [
+        "S7"
+      ]
+    },
+    {
+      "id": "C13",
+      "claim": "Affiliate disclosure near purchasing link required",
+      "verdict": "FTC_GUIDANCE",
+      "source_ids": [
+        "S8"
+      ]
+    },
+    {
+      "id": "C14",
+      "claim": "Final Vestige named affiliate approval and earning URL",
+      "verdict": "NOT_VERIFIED_HOLD",
+      "source_ids": []
+    },
+    {
+      "id": "C15",
+      "claim": "FV Payhip paid Mind SKU, rights and sale fulfillment",
+      "verdict": "NOT_VERIFIED_HOLD",
+      "source_ids": []
+    },
+    {
+      "id": "C16",
+      "claim": "Confirmed settled sales and net revenue per 1000 qualified humans",
+      "verdict": "NOT_COMPUTABLE",
+      "source_ids": []
+    }
+  ],
+  "release_gates": {
+    "affiliate_acceptance": false,
+    "authorized_channels": false,
+    "approved_earning_url": false,
+    "privacy_acceptable_aggregate_reporting": false,
+    "exact_checkout_verified": false,
+    "refund_terms_verified": false,
+    "paid_owned_sku_authenticated": false,
+    "asset_ids_verified": false,
+    "release_approval": false,
+    "merchant_settled_orders_verified": false,
+    "real_browser_accessibility": false,
+    "actual_video_asset": false
+  },
+  "intent_routes": [
+    {
+      "topic": "Change blindness",
+      "article": "/2026/11/02/change-blindness/",
+      "lead": "/focus/",
+      "paid": "NONE_AUTOMATIC"
+    },
+    {
+      "topic": "Mesmerism and Puységur",
+      "article": "/2026/11/02/mesmerism/",
+      "lead": "/focus/",
+      "paid": "NONE_AUTOMATIC"
+    },
+    {
+      "topic": "Inattentional blindness",
+      "article": "UNPUBLISHED_R130",
+      "lead": "/focus/",
+      "paid": "NONE_AUTOMATIC"
+    },
+    {
+      "topic": "Zen12 buyer questions",
+      "article": "UNPUBLISHED_R130_BUYER_GUIDE",
+      "lead": "/focus/",
+      "paid": "BLOCKED_PENDING_ACCEPTANCE"
+    }
+  ]
+}
