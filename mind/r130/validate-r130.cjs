@@ -3,7 +3,7 @@
 const fs=require('node:fs'), assert=require('node:assert/strict'), path=require('node:path');
 const root=__dirname;
 const read=p=>fs.readFileSync(path.join(root,p),'utf8');
-const a=read('zen12-A-text.html'), b=read('zen12-B-storyboard.html');
+const a=read('zen12-A-text.html'), b=read('zen12-B-storyboard.html'), hub=read('mind-hub-wordpress-draft.html');
 const article=read('inattentional-blindness-investigation.md'), guide=read('zen12-buyer-guide.md'), plan=read('acceptance-and-grok-crosswalk.md');
 const claims=JSON.parse(read('claims.json'));let assertions=0;
 function pass(x,msg){assert.ok(x,msg);assertions++;}
@@ -42,4 +42,10 @@ pass(!disclosureRemoved.includes('If you purchase through this link, Final Vesti
 const injected=a.replace('<button class="hold"','<a href="https://zen12.com/secret/">Seller</a><button class="hold"');
 pass(/<a[^>]+href=["']https?:\/\/(?:zen12|inspire3|affiliates\.inspire3)/i.test(injected),'mutation: unapproved merchant href flagged');
 pass(!/<a[^>]+href=["']https?:\/\/(?:zen12|inspire3)/i.test(b),'no merchant live href');
+pass(/id="fv-mind-hub-title"/.test(hub),'hub accessible labelled title');
+pass(/grid-template-columns:repeat\(auto-fit/.test(hub),'hub responsive grid');
+pass(/\/focus\//.test(hub)&&/change-blindness/.test(hub)&&/puysegurs-animal-magnetism-files/.test(hub),'hub first-party links');
+pass(!/<script|<form|<iframe/i.test(hub),'hub no scripts/forms/embeds');
+pass(!/<a[^>]*href=["']https?:\/\/(?:zen12|inspire3)/i.test(hub),'hub no merchant links');
+pass(/Editorial Standards/.test(hub)&&/Affiliate Disclosure/.test(hub),'hub editorial policy links');
 console.log('R130 tests passed:',assertions,'structural assertions; no real browser/merchant tests run.');
