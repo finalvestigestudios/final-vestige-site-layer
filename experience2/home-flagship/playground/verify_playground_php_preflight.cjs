@@ -15,8 +15,10 @@ const { spawnSync } = require('node:child_process');
 const blueprint = JSON.parse(fs.readFileSync(path.join(__dirname, 'FV_EX2_ASSEMBLER_BLUEPRINT_20261105.json'), 'utf8'));
 const pluginStep = blueprint.steps.find(s => s.step === 'writeFile' && /mu-plugins\/fv-ex2-playground-review\.php$/.test(s.path));
 const runnerStep = blueprint.steps.find(s => s.step === 'runPHP');
+const admissionStep = blueprint.steps.filter(s => s.step === 'runPHP')[1];
 assert.ok(pluginStep, 'Missing local-only MU-plugin');
 assert.ok(runnerStep, 'Missing local page-creation step');
+assert.ok(admissionStep, 'Missing fresh WordPress runtime admission step');
 
 const markerKey = 'fv_ex2_playground_review_only';
 const markerValue = 'FV_EX2_LOCAL_PLAYGROUND_2026_11_05_V1';
@@ -47,6 +49,8 @@ const temp = fs.mkdtempSync(path.join(os.tmpdir(), 'fv-ex2-playground-php-'));
 try {
   const phpFile = path.join(temp, 'fv-ex2-playground-review.php');
   const harnessFile = path.join(temp, 'guard-harness.php');
+  const admissionFile = path.join(temp, 'wordpress-runtime-admission.php');
+  fs.writeFileSync(admissionFile, admissionStep.code, { mode: 0o600 });
   fs.writeFileSync(phpFile, plugin, { mode: 0o600 });
   const phpHarness = String.raw`<?php
 define('ABSPATH', __DIR__ . '/');
@@ -72,13 +76,14 @@ echo json_encode(array('actions' => $GLOBALS['fv_actions'], 'shortcodes' => $GLO
     return out.stdout;
   }
   assert.match(php(['-l', phpFile]), /No syntax errors detected/, 'PHP parser must accept the real generated plugin');
+  assert.match(php(['-l', admissionFile]), /No syntax errors detected/, 'PHP parser must accept the fresh WordPress runtime admission');
   const inactive = JSON.parse(php([harnessFile, phpFile, 'missing']));
   assert.deepEqual(inactive, { actions: [], shortcodes: [] }, 'Plugin must do nothing if imported without local marker');
   const active = JSON.parse(php([harnessFile, phpFile, 'valid']));
   assert.deepEqual(active, { actions: ['wp_enqueue_scripts'], shortcodes: ['fv_ex2_playground'] }, 'Plugin should register exactly the expected local callbacks');
   const wrong = JSON.parse(php([harnessFile, phpFile, 'wrong']));
   assert.deepEqual(wrong, inactive, 'Wrong marker must also fail closed');
-  console.log('PASS: native PHP syntax; inactive/active/invalid-marker behavior; exact Blueprint marker; 3 adversarial structural cases');
+  console.log('PASS: native plugin and WordPress-admission PHP syntax; inactive/active/invalid-marker behavior; exact Blueprint marker; 3 adversarial structural cases');
 } finally {
   fs.rmSync(temp, { recursive: true, force: true });
 }

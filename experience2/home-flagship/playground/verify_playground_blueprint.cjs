@@ -6,7 +6,14 @@ const assert = require('node:assert/strict');
 const home = path.resolve(__dirname,'..');
 const blueprint = JSON.parse(fs.readFileSync(path.join(__dirname,'FV_EX2_ASSEMBLER_BLUEPRINT_20261105.json'),'utf8'));
 const plugin = blueprint.steps.find(s=>s.step==='writeFile')?.data;
-assert.equal(blueprint.steps.length,4);
+assert.equal(blueprint.steps.length,5);
+const runtimeAdmission = blueprint.steps[4];
+assert.equal(runtimeAdmission.step, 'runPHP', 'Fresh WordPress runtime admission must follow initialization');
+assert.ok(runtimeAdmission.code.startsWith("<?php\\n") || runtimeAdmission.code.startsWith("<?php\n"));
+for (const marker of ['get_template()', "shortcode_exists('fv_ex2_playground')", "new WP_Query(", "do_shortcode('[fv_ex2_playground]')", "get_option('page_on_front')", 'FV_EX2_WORDPRESS_IMPORT_ADMISSION_PASS']) {
+  assert.ok(runtimeAdmission.code.includes(marker), 'Missing WordPress runtime admission: '+marker);
+}
+assert.equal((runtimeAdmission.code.match(/fv-hf-(?:evidence|title|chronicle|inquiry|method-title|observer|mind-title)/g)||[]).length,7);
 assert.equal(blueprint.steps[0].themeData.ref,'75faa8a1e0367a37c2638250a3c9ed0a0f8c0b7f');
 assert.ok(blueprint.steps[0].themeData.url.endsWith('Automattic/themes'));
 assert.ok(plugin.includes('if (!is_page(\'fv-ex2-review\'))'));
