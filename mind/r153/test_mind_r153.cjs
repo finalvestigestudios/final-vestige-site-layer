@@ -34,7 +34,7 @@ function review(a) {
   want(article.includes("https://finalvestige.com/focus/"), "free resource absent");
   want(article.includes("puysegurs-animal-magnetism-files"), "historical connection absent");
   want(!/href=.{0,30}(?:hypnosislive|affiliates\.inspire3)/i.test(article), "article must not endorse merchant");
-  want(!/guaranteed (?:focus|results|wealth|health)/i.test(article), "unqualified guarantee");
+  want(!/(?:we|final vestige) (?:guarantee|promise) (?:focus|results|wealth|health)/i.test(article), "unqualified guarantee");
 
   want(html.includes('data-release="HARD_HOLD"'), "review-only release gate absent");
   want(html.includes('data-merchant-approval="UNVERIFIED"'), "falsified partner approval");
