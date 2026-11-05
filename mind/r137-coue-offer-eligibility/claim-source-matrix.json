@@ -1,0 +1,201 @@
+{
+  "recorded_on": "2026-11-05",
+  "status": "draft_held_no_commerce",
+  "primary_offer": "Hypnosis Live: Hypnotize Yourself",
+  "seller_url": "https://hypnosislive.com/personal-improvement/hypnotize-yourself",
+  "no_affiliate_url": true,
+  "claims": [
+    {
+      "id": "M1",
+      "claim": "44-minute / 61 MB single MP3 by J.A. Amos",
+      "origin": "seller_description",
+      "source": "https://hypnosislive.com/personal-improvement/hypnotize-yourself",
+      "disposition": "qualify_as_seller_description",
+      "verified_product_used": false
+    },
+    {
+      "id": "M2",
+      "claim": "$17.95 displayed, regular $22.95",
+      "origin": "seller_display",
+      "source": "https://hypnosislive.com/personal-improvement/hypnotize-yourself",
+      "disposition": "no_final_checkout_price_claim"
+    },
+    {
+      "id": "M3",
+      "claim": "14-day refund advertised",
+      "origin": "seller_policy_summary",
+      "source": "https://hypnosislive.com/personal-improvement/hypnotize-yourself",
+      "disposition": "policy_and_test_pending"
+    },
+    {
+      "id": "M4",
+      "claim": "May change any area of life or produce lasting self-change",
+      "origin": "seller_aspirational_efficacy",
+      "source": "https://hypnosislive.com/personal-improvement/hypnotize-yourself",
+      "disposition": "exclude_unsubstantiated"
+    },
+    {
+      "id": "R1",
+      "claim": "Self-hypnosis review included 22 eligible RCTs; teaching independent skill often favored",
+      "origin": "independent_synthesis",
+      "source": "https://eprints.bournemouth.ac.uk/31277/",
+      "disposition": "qualify_as_category_level_evidence"
+    },
+    {
+      "id": "R2",
+      "claim": "Hypnotic suggestion theories contested; response can vary",
+      "origin": "independent_synthesis",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/39032268/",
+      "disposition": "category_level_only"
+    },
+    {
+      "id": "R3",
+      "claim": "49 hypnosis meta-analyses summarized; strongest clinical evidence in procedures and pain",
+      "origin": "independent_synthesis",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/38268815/",
+      "disposition": "no_product_transfer"
+    },
+    {
+      "id": "Z1",
+      "claim": "Zen12 twelve levels and four style options",
+      "origin": "seller_description",
+      "source": "https://zen12.com/hnp",
+      "disposition": "feature_only"
+    },
+    {
+      "id": "Z2",
+      "claim": "An hour of advanced meditation in twelve minutes",
+      "origin": "seller_efficacy_claim",
+      "source": "https://zen12.com/hnp",
+      "disposition": "exclude_unsubstantiated"
+    },
+    {
+      "id": "Z3",
+      "claim": "Zen12 prices differ on two seller presentations",
+      "origin": "seller_display",
+      "source": "https://zen12.com/secret/",
+      "disposition": "no_final_price_without_checkout"
+    },
+    {
+      "id": "Z4",
+      "claim": "Free audio includes merchant newsletter",
+      "origin": "seller_signup_notice",
+      "source": "https://zen12.com/welcome",
+      "disposition": "disclose_separate_consent"
+    },
+    {
+      "id": "P1",
+      "claim": "Purchaser identifiers may be shared with affiliates",
+      "origin": "privacy_policy",
+      "source": "https://inspire3.com/privacy/",
+      "disposition": "require_aggregate_only_contract_and_no_FV_PII_ingest"
+    },
+    {
+      "id": "A1",
+      "claim": "Inspire3 public affiliate program exists",
+      "origin": "public_portal",
+      "source": "https://affiliates.inspire3.com/",
+      "disposition": "does_not_prove_FV_partner_approval"
+    },
+    {
+      "id": "H1",
+      "claim": "Coué 1922 historical autosuggestion assertions",
+      "origin": "primary_historical",
+      "source": "https://www.gutenberg.org/cache/epub/27203/pg27203-images.html",
+      "disposition": "history_not_medical_evidence"
+    },
+    {
+      "id": "H2",
+      "claim": "Contemporary 1922 criticism of Coué",
+      "origin": "historical_editorial",
+      "source": "https://jamanetwork.com/journals/jama/article-abstract/230698",
+      "disposition": "critical_context_not_clinical_trial"
+    },
+    {
+      "id": "F1",
+      "claim": "Clear proximate commission disclosure required",
+      "origin": "regulator",
+      "source": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "disposition": "adjacent_to_future_earning_link"
+    },
+    {
+      "id": "F2",
+      "claim": "Health outcome claims require competent reliable evidence",
+      "origin": "regulator",
+      "source": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "disposition": "exclude_unsubstantiated"
+    }
+  ],
+  "closed_gates": [
+    "named_FV_affiliate_partner_acceptance",
+    "allowed_specific_product_and_channel",
+    "approved_non_cloaked_earning_link",
+    "written_affiliate_creative_and_attribution_terms",
+    "aggregate_only_commission_reporting_privacy",
+    "actual_merchant_checkout_price_and_refund_check",
+    "storefront_owned_paid_Mind_SKU_rights_and_delivery",
+    "merchant_paid_orders_and_settlements",
+    "qualified_human_session_denominator",
+    "confirmed_opt_in_jetpack_attribution",
+    "Grok_asset_id_and_live_permalink",
+    "real_mobile_browser_a11y_QA",
+    "video_rights_captions_playable_asset",
+    "founder_release_signoff",
+    "QA_release_signoff"
+  ],
+  "editorial_paths": [
+    {
+      "topic": "Change blindness",
+      "published_url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "grok_asset_id": null,
+      "optional_resource": "https://finalvestige.com/focus/",
+      "conditional_offer": "Zen12",
+      "status": "route_live_asset_unverified_offer_held"
+    },
+    {
+      "topic": "Puységur / historical suggestion",
+      "published_url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "grok_asset_id": null,
+      "optional_resource": "https://finalvestige.com/focus/",
+      "conditional_offer": "Hypnotize Yourself",
+      "status": "route_live_asset_unverified_offer_held"
+    },
+    {
+      "topic": "Attentional blink",
+      "published_url": null,
+      "grok_asset_id": null,
+      "optional_resource": "https://finalvestige.com/focus/",
+      "conditional_offer": "Zen12",
+      "status": "draft_route_not_publishable"
+    }
+  ],
+  "metric_contract": {
+    "entry": "utm_source/platform+utm_medium=organic_social+utm_campaign=mind_pilot_2026_11+utm_content=unique_asset_id",
+    "events": [
+      "qualified_human_session",
+      "campaign_landing",
+      "buyer_guide_view",
+      "buyer_guide_cta",
+      "confirmed_jetpack_signup_if_authoritative",
+      "affiliate_outbound_if_authorized",
+      "merchant_confirmed_paid_order",
+      "merchant_settled_commission"
+    ],
+    "gross_and_net": "Net realized = settled gross attributable receipts - refunded amounts - payment fees - other directly attributable costs; never substitute clicks",
+    "primary_kpi": "1000 * realized_net_revenue / qualified_human_sessions",
+    "cohorts_days": [
+      7,
+      30
+    ],
+    "status": "NOT_COMPUTABLE_NO_DENOMINATOR_OR_MERCHANT_SETTLEMENT",
+    "do_not_collect": [
+      "name",
+      "email",
+      "address",
+      "IP",
+      "customer_id",
+      "transaction_id"
+    ],
+    "experiment": "A exact text buyer guide versus B same text + original optional 40s film after approval; intent-matched allocation; pre-specify paid orders per qualified-human session and net revenue per 1000; stop for accessibility or consent failures; tiny sample warnings"
+  }
+}
