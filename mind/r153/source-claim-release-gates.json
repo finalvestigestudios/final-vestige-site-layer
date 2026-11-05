@@ -1,0 +1,549 @@
+{
+  "schema_version": "1.0",
+  "artifact": "FV Mind R153 research/evidence/release register",
+  "generated_utc_date": "2026-11-05",
+  "classification": "UNPUBLISHED / REVIEW_ONLY",
+  "primary_candidate": {
+    "merchant": "Hypnosis Live",
+    "exact_offer": "Total Focus",
+    "single_audio_minutes": 33,
+    "merchant_stated_file_mb": 47,
+    "partner_approved": false,
+    "purchase_enabled": false,
+    "partner_url": null,
+    "public_future_price": null,
+    "owner_product_verified": false,
+    "commercial_activation": "HARD_HOLD"
+  },
+  "sources": [
+    {
+      "id": "S01",
+      "kind": "primary",
+      "url": "https://doi.org/10.1037/0096-1523.27.4.763",
+      "description": "Rubinstein, Meyer & Evans 2001 task-switching experiments",
+      "review": "abstract"
+    },
+    {
+      "id": "S02",
+      "kind": "primary",
+      "url": "https://doi.org/10.1016/j.obhdp.2009.04.002",
+      "description": "Leroy 2009 attention residue, two experiments",
+      "review": "bibliographic record and abstract; full article inaccessible"
+    },
+    {
+      "id": "S03",
+      "kind": "primary",
+      "url": "https://doi.org/10.1287/orsc.2017.1184",
+      "description": "Leroy & Glomb 2018, four studies ready-to-resume plan",
+      "review": "scholarly record and institutional abstract"
+    },
+    {
+      "id": "S04",
+      "kind": "university",
+      "url": "https://www.washington.edu/news/2018/01/16/task-interrupted-a-plan-for-returning-helps-you-move-on/",
+      "description": "UW institutional 2018 explanation and limits",
+      "review": "article"
+    },
+    {
+      "id": "S05",
+      "kind": "scholarly-record",
+      "url": "https://experts.umn.edu/en/publications/tasks-interrupted-how-anticipating-time-pressure-on-resumption-of/",
+      "description": "University of Minnesota author record for Leroy & Glomb",
+      "review": "abstract"
+    },
+    {
+      "id": "S06",
+      "kind": "seller",
+      "url": "https://inspire3.com/",
+      "description": "Inspire3 official catalog",
+      "review": "live seller site"
+    },
+    {
+      "id": "S07",
+      "kind": "affiliate-program",
+      "url": "https://affiliates.inspire3.com/",
+      "description": "Inspire3 publicly advertised program; not named approval",
+      "review": "public landing only"
+    },
+    {
+      "id": "S08",
+      "kind": "seller",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "description": "Exact Hypnosis Live Total Focus listing; variable seller price displays",
+      "review": "live merchant + alternate indexed snapshot; checkout not observed"
+    },
+    {
+      "id": "S09",
+      "kind": "seller",
+      "url": "https://hypnosislive.com/faq",
+      "description": "Merchant FAQ, advertised refunds not execution",
+      "review": "public FAQ"
+    },
+    {
+      "id": "S10",
+      "kind": "regulatory",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "description": "FTC endorsements and affiliate-link adjacency",
+      "review": "public regulator"
+    },
+    {
+      "id": "S11",
+      "kind": "regulatory",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "description": "FTC objective product benefit substantiation",
+      "review": "public regulator"
+    },
+    {
+      "id": "S12",
+      "kind": "fv-live",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "description": "Published Change Blindness; prior auth WP R152 no body /focus/ literal",
+      "review": "R152 read-only CMS recorded; current renderer not browser-tested"
+    },
+    {
+      "id": "S13",
+      "kind": "fv-live",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "description": "Published history record; prior CMS no body /focus/",
+      "review": "R152 read-only CMS recorded"
+    },
+    {
+      "id": "S14",
+      "kind": "fv-live",
+      "url": "https://finalvestige.com/focus/",
+      "description": "Published Fieldbook existing Jetpack path",
+      "review": "saved WP content proof; guest conversion unverified"
+    },
+    {
+      "id": "S15",
+      "kind": "coordination",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "description": "Mind ownership, editorial-first, affiliate hold",
+      "review": "issue and latest comments"
+    },
+    {
+      "id": "S16",
+      "kind": "coordination",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "description": "Attribution, legit revenue, technical QA",
+      "review": "issue and latest comments"
+    },
+    {
+      "id": "S17",
+      "kind": "coordination",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/1156",
+      "description": "Inherited R152 draft state",
+      "review": "PR metadata and exact SHA"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "2001 task switching experiments found switch costs varying by rule complexity and cues",
+      "decision": "supported_in_studied_conditions",
+      "source_ids": [
+        "S01"
+      ],
+      "note": "Do not quantify universal seconds lost."
+    },
+    {
+      "id": "C02",
+      "claim": "Leroy 2009 demonstrated attention residue in two experiments",
+      "decision": "supported_in_studied_conditions",
+      "source_ids": [
+        "S02"
+      ],
+      "note": "Abstract reviewed, full paper inaccessible."
+    },
+    {
+      "id": "C03",
+      "claim": "Finishing prior tasks always eliminates intrusive thoughts",
+      "decision": "unsupported",
+      "source_ids": [
+        "S02"
+      ],
+      "note": "Cannot claim."
+    },
+    {
+      "id": "C04",
+      "claim": "Time pressure reliably improves human health/productivity",
+      "decision": "unsupported",
+      "source_ids": [
+        "S02"
+      ],
+      "note": "Do not extrapolate from experiment."
+    },
+    {
+      "id": "C05",
+      "claim": "2018 ready-to-resume plan reduced residue and helped interrupting task performance in studied cases",
+      "decision": "supported_in_studied_conditions",
+      "source_ids": [
+        "S03",
+        "S04",
+        "S05"
+      ],
+      "note": "Four-study program, not universal."
+    },
+    {
+      "id": "C06",
+      "claim": "Ready-to-resume plan proven to improve Task A after resumption",
+      "decision": "not_tested",
+      "source_ids": [
+        "S04"
+      ],
+      "note": "UW says not studied."
+    },
+    {
+      "id": "C07",
+      "claim": "Return-note exercise in article is personal observation rather than treatment",
+      "decision": "editorial_original",
+      "source_ids": [
+        "S03",
+        "S04"
+      ],
+      "note": "Never claim medical efficacy."
+    },
+    {
+      "id": "C08",
+      "claim": "Total Focus is one 33-minute 47 MB MP3 written/recorded by J. A. Amos",
+      "decision": "seller_representation",
+      "source_ids": [
+        "S08"
+      ],
+      "note": "File delivery not independently downloaded."
+    },
+    {
+      "id": "C09",
+      "claim": "Total Focus permanently reprograms the brain or guarantees super-sharp focus",
+      "decision": "unsubstantiated_seller_claim",
+      "source_ids": [
+        "S08",
+        "S11"
+      ],
+      "note": "Exclude endorsement; no product-specific trials established."
+    },
+    {
+      "id": "C10",
+      "claim": "Total Focus price is fixed for all readers",
+      "decision": "not_verified",
+      "source_ids": [
+        "S08"
+      ],
+      "note": "Live $24.44 vs differently indexed $17.95; checkout may vary."
+    },
+    {
+      "id": "C11",
+      "claim": "Merchant 14-day refund policy will be executed correctly",
+      "decision": "seller_representation_unverified",
+      "source_ids": [
+        "S08",
+        "S09"
+      ],
+      "note": "Policy text not real refund test."
+    },
+    {
+      "id": "C12",
+      "claim": "Inspire3 has public affiliate portal",
+      "decision": "verified_public",
+      "source_ids": [
+        "S06",
+        "S07"
+      ],
+      "note": "Program exists; user not approved by inference."
+    },
+    {
+      "id": "C13",
+      "claim": "FV is an approved Inspire3 affiliate with an earning link",
+      "decision": "not_verified",
+      "source_ids": [
+        "S07",
+        "S15"
+      ],
+      "note": "HARD HOLD."
+    },
+    {
+      "id": "C14",
+      "claim": "Personal acceptance and email/social permissions established by bounded Gmail search",
+      "decision": "not_verified",
+      "source_ids": [
+        "S15"
+      ],
+      "note": "Matching acceptance mail not found, dashboard may exist."
+    },
+    {
+      "id": "C15",
+      "claim": "Published Change Blindness and Puységur stored bodies have no contextual /focus/ link",
+      "decision": "prior_cms_evidence",
+      "source_ids": [
+        "S12",
+        "S13",
+        "S15"
+      ],
+      "note": "Authenticated R152 content report, not a browser proof."
+    },
+    {
+      "id": "C16",
+      "claim": "Focus page has native Jetpack subscription block",
+      "decision": "prior_cms_evidence",
+      "source_ids": [
+        "S14",
+        "S15"
+      ],
+      "note": "Guest success/welcome not proven."
+    },
+    {
+      "id": "C17",
+      "claim": "FTC requires clear nearby earning-link disclosure when material connection exists",
+      "decision": "regulatory",
+      "source_ids": [
+        "S10"
+      ],
+      "note": "General footer alone may be insufficient."
+    },
+    {
+      "id": "C18",
+      "claim": "Health-related objective product outcome requires adequate product-relevant evidence",
+      "decision": "regulatory",
+      "source_ids": [
+        "S11"
+      ],
+      "note": "Do not transfer general studies to product."
+    },
+    {
+      "id": "C19",
+      "claim": "Affiliate outbound click is a confirmed affiliate sale",
+      "decision": "false_definition",
+      "source_ids": [
+        "S16"
+      ],
+      "note": "Strictly forbidden."
+    },
+    {
+      "id": "C20",
+      "claim": "Two subscribers establish reliable A/B paid conversion uplift",
+      "decision": "unsupported",
+      "source_ids": [
+        "S16"
+      ],
+      "note": "Low N/no enrollment."
+    },
+    {
+      "id": "C21",
+      "claim": "Optional Zen12 video variant already produced and proven",
+      "decision": "not_verified",
+      "source_ids": [
+        "S15"
+      ],
+      "note": "Inherited storyboard only; never autoplay."
+    },
+    {
+      "id": "C22",
+      "claim": "An FV-owned Payhip Mind SKU is rights-cleared and currently sellable",
+      "decision": "unknown",
+      "source_ids": [
+        "S16"
+      ],
+      "note": "Authenticate account SKU, rights, price, delivery and refunds."
+    },
+    {
+      "id": "C23",
+      "claim": "Exact Grok published asset_id for three candidate videos",
+      "decision": "unknown",
+      "source_ids": [
+        "S16"
+      ],
+      "note": "TASK-008 inventory not supplied."
+    },
+    {
+      "id": "C24",
+      "claim": "R153 source components are live/merchant enabled",
+      "decision": "false",
+      "source_ids": [
+        "S15",
+        "S17"
+      ],
+      "note": "Draft Git-only."
+    },
+    {
+      "id": "C25",
+      "claim": "Settled net revenue per 1000 qualified humans is zero",
+      "decision": "not_computable",
+      "source_ids": [
+        "S16"
+      ],
+      "note": "No verified numerator/denominator. Never say zero."
+    }
+  ],
+  "gates": [
+    {
+      "id": "named_inspire3_partner_approval",
+      "status": "CLOSED",
+      "reason": "Unverified, untested, not available, or not released; do not infer approval from public sources."
+    },
+    {
+      "id": "authorized_total_focus_earning_url",
+      "status": "CLOSED",
+      "reason": "Unverified, untested, not available, or not released; do not infer approval from public sources."
+    },
+    {
+      "id": "allowed_website_channel",
+      "status": "CLOSED",
+      "reason": "Unverified, untested, not available, or not released; do not infer approval from public sources."
+    },
+    {
+      "id": "allowed_social_channel",
+      "status": "CLOSED",
+      "reason": "Unverified, untested, not available, or not released; do not infer approval from public sources."
+    },
+    {
+      "id": "allowed_email_channel",
+      "status": "CLOSED",
+      "reason": "Unverified, untested, not available, or not released; do not infer approval from public sources."
+    },
+    {
+      "id": "product_specific_efficacy_support_if_claimed",
+      "status": "CLOSED",
+      "reason": "Unverified, untested, not available, or not released; do not infer approval from public sources."
+    },
+    {
+      "id": "merchant_price_checkout_total",
+      "status": "CLOSED",
+      "reason": "Unverified, untested, not available, or not released; do not infer approval from public sources."
+    },
+    {
+      "id": "merchant_delivery_proof",
+      "status": "CLOSED",
+      "reason": "Unverified, untested, not available, or not released; do not infer approval from public sources."
+    },
+    {
+      "id": "merchant_refund_terms_and_execution",
+      "status": "CLOSED",
+      "reason": "Unverified, untested, not available, or not released; do not infer approval from public sources."
+    },
+    {
+      "id": "merchant_settlement_feed",
+      "status": "CLOSED",
+      "reason": "Unverified, untested, not available, or not released; do not infer approval from public sources."
+    },
+    {
+      "id": "verified_owned_payhip_mind_sku",
+      "status": "CLOSED",
+      "reason": "Unverified, untested, not available, or not released; do not infer approval from public sources."
+    },
+    {
+      "id": "owned_product_rights_manifest",
+      "status": "CLOSED",
+      "reason": "Unverified, untested, not available, or not released; do not infer approval from public sources."
+    },
+    {
+      "id": "owned_product_current_price",
+      "status": "CLOSED",
+      "reason": "Unverified, untested, not available, or not released; do not infer approval from public sources."
+    },
+    {
+      "id": "owned_product_fulfillment",
+      "status": "CLOSED",
+      "reason": "Unverified, untested, not available, or not released; do not infer approval from public sources."
+    },
+    {
+      "id": "owned_product_refund_policy",
+      "status": "CLOSED",
+      "reason": "Unverified, untested, not available, or not released; do not infer approval from public sources."
+    },
+    {
+      "id": "grok_actual_asset_ids",
+      "status": "CLOSED",
+      "reason": "Unverified, untested, not available, or not released; do not infer approval from public sources."
+    },
+    {
+      "id": "first_party_qualified_human_denominator",
+      "status": "CLOSED",
+      "reason": "Unverified, untested, not available, or not released; do not infer approval from public sources."
+    },
+    {
+      "id": "jetpack_guest_signup_proof",
+      "status": "CLOSED",
+      "reason": "Unverified, untested, not available, or not released; do not infer approval from public sources."
+    },
+    {
+      "id": "jetpack_welcome_delivery_proof",
+      "status": "CLOSED",
+      "reason": "Unverified, untested, not available, or not released; do not infer approval from public sources."
+    },
+    {
+      "id": "contextual_link_staging_QA",
+      "status": "CLOSED",
+      "reason": "Unverified, untested, not available, or not released; do not infer approval from public sources."
+    },
+    {
+      "id": "real_browser_keyboard_mobile_WCAG",
+      "status": "CLOSED",
+      "reason": "Unverified, untested, not available, or not released; do not infer approval from public sources."
+    },
+    {
+      "id": "performance_Lighthouse_source",
+      "status": "CLOSED",
+      "reason": "Unverified, untested, not available, or not released; do not infer approval from public sources."
+    },
+    {
+      "id": "data_privacy_approval",
+      "status": "CLOSED",
+      "reason": "Unverified, untested, not available, or not released; do not infer approval from public sources."
+    },
+    {
+      "id": "founder_merchandising_release",
+      "status": "CLOSED",
+      "reason": "Unverified, untested, not available, or not released; do not infer approval from public sources."
+    },
+    {
+      "id": "final_link_disclosure_QA",
+      "status": "CLOSED",
+      "reason": "Unverified, untested, not available, or not released; do not infer approval from public sources."
+    },
+    {
+      "id": "video_file_and_poster_actual",
+      "status": "CLOSED",
+      "reason": "Unverified, untested, not available, or not released; do not infer approval from public sources."
+    },
+    {
+      "id": "video_caption_and_transcript_actual",
+      "status": "CLOSED",
+      "reason": "Unverified, untested, not available, or not released; do not infer approval from public sources."
+    },
+    {
+      "id": "consent_aware_AB_assignment",
+      "status": "CLOSED",
+      "reason": "Unverified, untested, not available, or not released; do not infer approval from public sources."
+    },
+    {
+      "id": "7_30_day_merchant_attribution",
+      "status": "CLOSED",
+      "reason": "Unverified, untested, not available, or not released; do not infer approval from public sources."
+    },
+    {
+      "id": "live_WP_publication_approval",
+      "status": "CLOSED",
+      "reason": "Unverified, untested, not available, or not released; do not infer approval from public sources."
+    }
+  ],
+  "measurement": {
+    "qualified_human_sessions_verified": false,
+    "settled_orders_verified": false,
+    "affiliate_paid_conversions_verified": false,
+    "refund_and_fee_reconciliation_verified": false,
+    "settled_net_revenue_per_1000_humans": "NOT_COMPUTABLE",
+    "affiliate_click_is_sale": false,
+    "cohorts_days": [
+      7,
+      30
+    ]
+  },
+  "forbidden_assumptions": [
+    "Seller claims become proven outcomes",
+    "Public program is personal acceptance",
+    "Two prices imply same buyer checkout",
+    "Jetpack stored block proves subscriber confirmation",
+    "Editorial pageviews are qualified humans",
+    "Affiliate clicks are merchant-reported paid sales"
+  ]
+}
