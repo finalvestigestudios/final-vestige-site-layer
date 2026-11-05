@@ -15,6 +15,20 @@ from pathlib import Path
 from typing import Callable, Iterable, Mapping
 
 
+def _render_cell(value: object, cell: Callable[[object], str]) -> str:
+    """Demand owned, sanitized text; never let csv.writer coerce unsafe objects.
+
+    The caller's sanitizer still owns the full invisible-prefix policy. This
+    additional boundary blocks blatant formulas, NUL evidence ambiguity, and
+    implicit conversion of None, bytes, numbers or crafted string subclasses.
+    """
+    rendered = cell(value)
+    if (type(rendered) is not str or "\x00" in rendered
+            or rendered.startswith(("=", "+", "@"))):
+        raise ValueError("Unsafe or non-text CSV report cell")
+    return rendered
+
+
 def write_csv_report(destination: str | Path, fields: Iterable[str],
                      rows: Iterable[Mapping[str, object]],
                      cell: Callable[[object], str]) -> Path:
@@ -23,6 +37,8 @@ def write_csv_report(destination: str | Path, fields: Iterable[str],
     ``cell`` must sanitize untrusted spreadsheet content. It is applied to
     every header and row value, including ignored extra columns. Rendered
     header collisions reject the export instead of losing column identity.
+    All rendered cells must be plain text without NUL or bare formula prefixes;
+    malformed sanitizer output fails closed before publication.
     Nothing ever overwrites an existing destination or follows its symlink.
     On a filesystem lacking the required safe publication operation, fail
     rather than silently fall back to an overwriting move.
@@ -37,7 +53,7 @@ def write_csv_report(destination: str | Path, fields: Iterable[str],
     if (not names or any(type(name) is not str or not name for name in names)
             or len(set(names)) != len(names)):
         raise ValueError("Invalid or duplicate CSV report columns")
-    rendered = tuple(cell(name) for name in names)
+    rendered = tuple(_render_cell(name, cell) for name in names)
     if (any(type(name) is not str or not name or any(c in name for c in "\x00\r\n")
             for name in rendered) or len(set(rendered)) != len(rendered)):
         # Two distinct input labels may collapse to one visible label after
@@ -50,7 +66,7 @@ def write_csv_report(destination: str | Path, fields: Iterable[str],
             writer = csv.DictWriter(stream, fieldnames=names, extrasaction="ignore")
             writer.writer.writerow(rendered)
             for row in rows:
-                writer.writerow({name: cell(value) for name, value in row.items()})
+                writer.writerow({name: _render_cell(value, cell) for name, value in row.items()})
             stream.flush()
             os.fsync(stream.fileno())
         if os.name == "nt":
