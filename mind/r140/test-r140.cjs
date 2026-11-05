@@ -92,7 +92,7 @@ ok('memo UTM no invented ID',()=>{has(memo,'utm_content=<actual_grok_immutable_a
 ok('memo 7 and 30 day cohorts',()=>has(memo,'7- and 30-day'));
 ok('memo explicit commission event',()=>has(memo,'event=commission_settled'));
 ok('memo no duplicative first party scripting',()=>has(memo,'Do not add scripts'));
-ok('memo not claim randomization',()=>has(memo,'after a real original'));
+ok('memo not claim randomization',()=>has(memo,'After a real original'));
 ok('memo hard release hold',()=>has(memo,'No merge, live WordPress'));
 ok('R139 inherited guards still all closed',()=>Object.values(base.release_gates).forEach(v=>assert.equal(v,false)));
 ok('arithmetic synthetic 1000 per human qualified',()=>assert.equal(netPer1000(200,200,10,20,10),800));
