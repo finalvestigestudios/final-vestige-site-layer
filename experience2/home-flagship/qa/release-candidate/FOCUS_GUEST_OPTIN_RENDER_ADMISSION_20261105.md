@@ -27,7 +27,7 @@ To check `/focus/` in a network-isolated environment, use **synthetic fixture te
 
 ## What this DOES NOT prove
 
-It does not submit a Jetpack form or prove email delivery, double opt-in, PDF fulfillment, subscriber counts, sales, attribution, legitimate visitors, Accessibility Conformance or field CWV. Rendered REST output is **not equivalent** to anonymous public HTML. Full JavaScript/no-JavaScript, actual WCAG 2.2 AA, native 200% zoom, WordPress/Assembler integration and live guest request still need independent acceptance before release. The local environment lacks outbound DNS, so the live guest command **failed closed at all four widths**; the fixture tests are the only Chromium PASS.
+It does not submit a Jetpack form or prove email delivery, double opt-in, PDF fulfillment, subscriber counts, sales, attribution, legitimate visitors, Accessibility Conformance or field CWV. Rendered REST output is **not equivalent** to anonymous public HTML. Full JavaScript/no-JavaScript, actual WCAG 2.2 AA, native 200% zoom, WordPress/Assembler integration and live guest request still need independent acceptance before release. The local execution environment blocked all browser navigation with `net::ERR_BLOCKED_BY_ADMINISTRATOR`, so the live guest command **failed closed at all four widths**; the fixture tests are the only Chromium PASS.
 
 ## Offer → funnel step → blocker → experiment → evidence → owner
 
