@@ -33,6 +33,8 @@ def fixture():
                          contributor_citations=new, baseline_words=ow, contributor_words=nw,
                          removed_source_ids=[x['id'] for x in counts if x['rc'] and not x['contributor']],
                          added_source_ids=[x['id'] for x in counts if x['contributor'] and not x['rc']]))
+    # R140's frozen record omitted one independently observed source disappearance.
+    next(x for x in rows if x['slug']=='three-day-kit')['removed_source_ids'].remove('start-cdc-power-outage')
     source = dict(schema='R140-INTAKE-1', rc_sha=DOC['r140_rc_sha'],
         branch_heads={k:'0'*39+str(i) for i,k in enumerate(sorted(m.EXPECTED_CLUSTERS),1)},
         drifts=rows, source_note='32 groups require human review')
@@ -91,6 +93,11 @@ class DocketTests(unittest.TestCase):
     def test_empty_counts_provenance_rows_stay_human_hold(self):
         report=self.check()
         self.assertEqual(sum(x['kind']=='PROSE_OR_PROVENANCE_DRIFT_HOLD' for x in report),6)
+
+    def test_r140_incomplete_legacy_identity_is_exposed(self):
+        report=self.check()
+        row=next(x for x in report if x['slug']=='three-day-kit')
+        self.assertEqual(row['r140_omitted_removed_source_ids'],['start-cdc-power-outage'])
 
     def test_histfood_retarget_is_not_collapsed(self):
         report=self.check()
