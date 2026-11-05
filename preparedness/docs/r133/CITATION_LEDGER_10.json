@@ -7,7 +7,7 @@
   "crosswalk_sha": "d62e493a67dedd23e04cfdf3cce762ef933c6bf9",
   "prior_article_lock_sha": "2dc41fccad6f1272f0a9d9585b6c10c760dcb08c",
   "scope": "Issue #136; conversion #820",
-  "method": "read-only lexical audit of exact GitHub blobs; link tokens parsed as slug|label; not DOM, source correctness, human safety, build, CI or QD",
+  "method": "read-only lexical audit of exact GitHub blobs; link tokens parsed as slug|label; not DOM, source correctness, human safety, build, CI or QD; link targets checked against 35 articles AND tool route inventory; tool-only targets recorded separately.",
   "offset": 10,
   "entries": [
     {
@@ -57,7 +57,8 @@
       "unused_explanations": [],
       "unresolved_scope_ids": [],
       "broken_article_links": [],
-      "invisible_token_count": 0
+      "invisible_token_count": 0,
+      "non_article_tool_links": []
     },
     {
       "slug": "outage-heat-cold-generators",
@@ -121,10 +122,11 @@
       "missing_explanations": [],
       "unused_explanations": [],
       "unresolved_scope_ids": [],
-      "broken_article_links": [
+      "broken_article_links": [],
+      "invisible_token_count": 0,
+      "non_article_tool_links": [
         "power-outage-planner"
-      ],
-      "invisible_token_count": 0
+      ]
     },
     {
       "slug": "home-fire-escape-plan",
@@ -176,10 +178,11 @@
       "missing_explanations": [],
       "unused_explanations": [],
       "unresolved_scope_ids": [],
-      "broken_article_links": [
+      "broken_article_links": [],
+      "invisible_token_count": 0,
+      "non_article_tool_links": [
         "home-fire-escape-worksheet"
-      ],
-      "invisible_token_count": 0
+      ]
     },
     {
       "slug": "shelter-or-evacuate",
@@ -235,11 +238,12 @@
       "missing_explanations": [],
       "unused_explanations": [],
       "unresolved_scope_ids": [],
-      "broken_article_links": [
+      "broken_article_links": [],
+      "invisible_token_count": 0,
+      "non_article_tool_links": [
         "power-outage-planner",
         "family-reunification-card"
-      ],
-      "invisible_token_count": 0
+      ]
     },
     {
       "slug": "family-communication-plan",
@@ -305,10 +309,11 @@
       "missing_explanations": [],
       "unused_explanations": [],
       "unresolved_scope_ids": [],
-      "broken_article_links": [
+      "broken_article_links": [],
+      "invisible_token_count": 0,
+      "non_article_tool_links": [
         "family-reunification-card"
-      ],
-      "invisible_token_count": 0
+      ]
     }
   ]
 }
