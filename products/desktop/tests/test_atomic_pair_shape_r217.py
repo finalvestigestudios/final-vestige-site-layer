@@ -161,7 +161,7 @@ class PairShapeCustodyR217(unittest.TestCase):
     def test_deterministic_csv_bytes_and_exact_decimal(self):
         self.write([self.valid()])
         original = self.target.read_bytes()
-        self.assertTrue(original.startswith(b"\\xef\\xbb\\xbf"))
+        self.assertTrue(original.startswith(bytes((0xEF, 0xBB, 0xBF))))
         second = self.root / "audit-two.csv"
         write_csv_report(second, self.fields, [self.valid()], str)
         self.assertEqual(second.read_bytes(), original)
