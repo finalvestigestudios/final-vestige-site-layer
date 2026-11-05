@@ -14,6 +14,7 @@ from pathlib import Path
 import re
 import sys
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))  # required for CLI under python -I
 from r133_snapshot_gate import audit as custody_audit, load_json, IntegrityHold, CITE
 
 BLOCK = frozenset({'p', 'li', 'blockquote', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'dt', 'dd', 'figcaption'})
