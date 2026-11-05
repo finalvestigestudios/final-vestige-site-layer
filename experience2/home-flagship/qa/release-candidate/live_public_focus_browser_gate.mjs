@@ -292,16 +292,77 @@ async function runWidth(browser,width,axeSource){
   }catch(e){fail('width '+width+' fatal: '+String(e).slice(0,500));entry.fatal=String(e);}
   finally{await context.close();receipt.widths.push(entry);}
 }
+
+/**
+ * No-JavaScript acceptance must verify visible, readable historical evidence,
+ * not merely hidden DOM IDs. Mirrors the actual public Page 6 archive semantics:
+ * three unhidden source-linked articles, with the enhancement-only case chooser
+ * hidden. This intentionally does NOT claim that image requests succeeded.
+ */
+export async function auditNoJsArchives(page){
+  return page.evaluate(ids=>{
+    const root=document.querySelector('[data-fv-home-flagship]')||document;
+    const exposed=el=>{
+      if(!el)return false;
+      for(let node=el;node&&node.nodeType===1;node=node.parentElement){
+        const style=getComputedStyle(node);
+        if(node.hidden||style.display==='none'||style.visibility==='hidden'||
+          style.visibility==='collapse'||style.contentVisibility==='hidden')return false;
+      }
+      const rect=el.getBoundingClientRect();
+      return rect.width>0&&rect.height>0;
+    };
+    const controls=root.querySelector('[data-fv-case-buttons]');
+    return {controlsHidden:!!controls&&!exposed(controls),
+      panelCount:root.querySelectorAll('[data-fv-case]').length,
+      cases:ids.map(id=>{
+        const matches=[...root.querySelectorAll('[data-fv-case]')]
+          .filter(p=>p.dataset.fvCase===id);
+        const p=matches.length===1?matches[0]:null;
+        const label=p?.getAttribute('aria-labelledby');
+        const heading=label?document.getElementById(label):null;
+        const sourceLinked=!!p&&[...p.querySelectorAll('a[href]')].some(a=>{
+          try{
+            const u=new URL(a.href);
+            return u.protocol==='https:'&&u.hostname!=='finalvestige.com'&&
+              u.hostname!=='www.finalvestige.com';
+          }catch{return false;}
+        });
+        return {id,unique:matches.length===1,exposed:exposed(p),
+          titled:!!(heading&&p.contains(heading)&&/^H[1-6]$/.test(heading.tagName)&&
+            heading.textContent.trim()),
+          readable:!!(p&&p.textContent.trim().length>=160),sourceLinked};
+      })};
+  },ARCHIVE_CASES);
+}
+
 async function noJs(browser){
   const width=390,{context,page,errors}=await createPage(browser,width,false);
   try{
     const http=await navigatePublic(page,'/');
     const dom=await chapterState(page,width,'NO-JS');
+    const evidence=await auditNoJsArchives(page);
+    check(evidence.controlsHidden,'NO-JS archive chooser must remain hidden');
+    check(evidence.panelCount===ARCHIVE_CASES.length,
+      'NO-JS archive must contain exactly three original evidence panels');
+    for(const a of evidence.cases){
+      check(a.unique&&a.exposed&&a.titled&&a.readable&&a.sourceLinked,
+        'NO-JS archived record is hidden, truncated or lacks a source: '+a.id+
+        ' '+JSON.stringify(a));
+    }
     const links=await focusGeometry(page),geo=validateFocusGeometry(links,width,900);
     check(geo.hitCount>=1,'NO-JS mobile Focus CTA hidden/blocked');
-    receipt.no_js={http,dom,geo,errors};
+    receipt.no_js={http,dom,geo,evidence,errors};
     await page.screenshot({path:resolve(OUT,'published-nojs-0390.png'),
       fullPage:true,animations:'disabled'});
+    // The real non-JS header CTA must navigate by plain link; no form submission.
+    const chosen=page.locator(focusSelectors()).filter({visible:true}).first();
+    await chosen.click({timeout:12000});
+    await page.waitForURL(u=>u.origin===ORIGIN&&u.pathname==='/focus/',{timeout:25000});
+    receipt.no_js.focusClick={arrived:pathOnly(page.url()),
+      fieldbookMention:await page.getByText('Seven Day Focus Fieldbook',{exact:false}).count()>0};
+    check(receipt.no_js.focusClick.fieldbookMention,
+      'NO-JS Focus destination lacks the intended Fieldbook offer');
     check(errors.length===0,'No-JS page exceptions');
   }catch(e){fail('NO-JS fatal: '+String(e));receipt.no_js.fatal=String(e);}
   finally{await context.close();}
