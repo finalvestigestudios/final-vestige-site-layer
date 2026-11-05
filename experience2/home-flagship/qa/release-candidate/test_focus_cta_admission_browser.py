@@ -1,4 +1,4 @@
-"""Real Chromium + nine adversarial controls for Focus hero admission, offline only.
+"""Real Chromium + twelve adversarial controls for Focus hero admission, offline only.
 
 No WordPress writes, no affiliate/analytics activation, no customer data.
 Fixture ≠ exact WordPress/Assembler qualification.
@@ -18,7 +18,8 @@ CSS='''body{margin:0;background:#0b0b0a;color:#f4e7d5;font:16px Georgia,serif}
 .fv-hf__opening{padding:45px max(20px,7vw);max-width:1250px;min-height:480px}
 h1{font-size:clamp(40px,6vw,88px);line-height:1.05;margin:20px 0}
 p{max-width:580px;line-height:1.7}
-a{color:#f9d58e;text-underline-offset:5px}.fv-hf__button{display:inline-flex;min-height:48px;padding:5px 15px;align-items:center;background:#c19b61;color:#130f0a}
+a{color:#f9d58e;text-underline-offset:5px}
+.fv-hf :where(a):focus-visible{outline:3px solid #f6cc86;outline-offset:4px}.fv-hf__button{display:inline-flex;min-height:48px;padding:5px 15px;align-items:center;background:#c19b61;color:#130f0a}
 .fv-hf__opening-copy{min-width:0}.fv-hf__text-link--focus{display:block;min-height:44px;min-width:0;max-width:100%;white-space:normal;overflow-wrap:anywhere;line-height:1.45}
 @media(max-width:600px){.fv-hf__opening-actions{display:grid}.fv-hf__text-link--focus{width:100%}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}'''
@@ -34,6 +35,9 @@ negatives={
 'focus_inert':lambda s:s.replace('class="fv-hf__text-link--focus"','inert class="fv-hf__text-link--focus"'),
 'focus_obstructed':lambda s:s.replace('</style>','</style><style>body:after{content:"";position:fixed;inset:0;background:transparent;z-index:9999}</style>'),
 'outside_viewport':lambda s:s.replace('width:100%}}','width:100%;transform:translateX(160vw)}}'),
+'focus_ring_removed':lambda s:s.replace('outline:3px solid #f6cc86','outline:0 solid transparent'),
+'interposed_tabstop':lambda s:s.replace('<a class="fv-hf__text-link--focus"','<button type="button">Unrelated action</button><a class="fv-hf__text-link--focus"'),
+'wrong_tab_priority':lambda s:s.replace('class="fv-hf__text-link--focus"', 'tabindex="1" class="fv-hf__text-link--focus"'),
 }
 results=[]
 with sync_playwright() as p:
