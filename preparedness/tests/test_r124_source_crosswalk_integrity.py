@@ -78,6 +78,37 @@ class SyntheticReview(unittest.TestCase):
         (self.root/'preparedness/sources/crosswalk.json').write_text(
             json.dumps(self.x, indent=2), encoding='utf-8')
 
+    def add_alias(self):
+        """Add a third origin with a distinct literal URL and author reading scope.
+
+        This extends the *same* canonical group, but does not change any of the
+        32 exact-URL groups, source records, or human-review decisions.
+        """
+        source = copy.deepcopy(self.x['groups'][0]['variants'][0]['source'])
+        source['id'] = 'hist-food-separate-reading'
+        source['url'] += '/'
+        source['supports'] = 'Distinct author reading scope, not a merged claim.'
+        path = self.root/'preparedness/sources/fragments/hist-food.json'
+        fragment = json.loads(path.read_text(encoding='utf-8'))
+        i = len(fragment['sources'])
+        fragment['sources'].append(source)
+        raw = json.dumps(fragment, indent=2).encode()
+        path.write_bytes(raw)
+        source_file = next(f for f in self.x['source_files'] if f['origin'] == 'hist-food')
+        source_file['git_blob_sha'] = G.blob_sha(raw)
+        source_file['count'] += 1
+        self.x['raw_source_rows'] += 1
+        self.x['unique_source_urls'] += 1
+        self.x['candidate_reconciliation_20261104']['candidate_source_rows'] += 1
+        self.x['candidate_reconciliation_20261104']['candidate_distinct_urls'] += 1
+        variant = {'origin':'hist-food',
+                   'source_file':'preparedness/sources/fragments/hist-food.json',
+                   'row_index':i, 'source':source}
+        self.x['groups'][0]['variants'].append(variant)
+        self.x['groups'][0]['identities'].append(
+            {'origin':'hist-food','id':source['id'],'row_index':i})
+        return variant
+
     def assert_hold(self, code):
         self.save()
         with self.assertRaisesRegex(G.IntegrityHold, code):
@@ -191,6 +222,72 @@ class SyntheticReview(unittest.TestCase):
         before = p.read_bytes()
         G.audit(self.root)
         self.assertEqual(before, p.read_bytes())
+
+    def test_canonical_alias_adds_author_without_erasing_scope(self):
+        added = self.add_alias()
+        self.save()
+        result = G.audit(self.root)
+        self.assertEqual(result['shared_url_groups'], 32)
+        self.assertEqual(result['canonical_shared_groups'], 32)
+        self.assertEqual(result['canonical_alias_groups'], 1)
+        self.assertEqual(result['unreviewed_groups'], 32)
+        self.assertEqual(result['release_state'], 'HOLD')
+        self.assertFalse(result['may_publish'])
+        self.assertEqual(added['source']['supports'],
+                         'Distinct author reading scope, not a merged claim.')
+
+    def test_canonical_alias_missing_variant_fails(self):
+        self.add_alias()
+        self.x['groups'][0]['variants'].pop()
+        self.assert_hold('SOURCE_VARIANT_ROSTER_DRIFT')
+
+    def test_canonical_alias_missing_identity_fails(self):
+        self.add_alias()
+        self.x['groups'][0]['identities'].pop()
+        self.assert_hold('SOURCE_IDENTITY_ROSTER_DRIFT')
+
+    def test_canonical_alias_wrong_author_fails(self):
+        alias = self.add_alias()
+        alias['origin'] = 'food'
+        self.assert_hold('SOURCE_VARIANT_ROSTER_DRIFT')
+
+    def test_canonical_alias_changed_reading_scope_fails(self):
+        alias = self.add_alias()
+        alias['source']['supports'] = 'Fabricated substitute.'
+        self.assert_hold('SOURCE_VARIANT_CONTENT_DRIFT')
+
+    def test_canonical_alias_changed_row_index_fails(self):
+        alias = self.add_alias()
+        alias['row_index'] = 99
+        self.assert_hold('SOURCE_VARIANT_ROSTER_DRIFT')
+
+    def test_canonical_alias_unauthorized_approval_fails(self):
+        self.add_alias()
+        self.x['groups'][0]['review_status'] = 'resolved'
+        self.assert_hold('PREMATURE_SOURCE_APPROVAL')
+
+    def test_canonical_alias_group_retarget_fails(self):
+        self.add_alias()
+        self.x['groups'][0]['url'] = 'https://unrelated.example.org/wrong'
+        self.assert_hold('MISSING_OR_EXTRA_SHARED_URL_GROUP')
+
+    def test_alias_key_keeps_query_distinct(self):
+        self.assertNotEqual(G.alias_key_url('https://example.org/a/?x=1'),
+                            G.alias_key_url('https://example.org/a?x=2'))
+
+    def test_alias_key_keeps_path_case_distinct(self):
+        self.assertNotEqual(G.alias_key_url('https://example.org/A/'),
+                            G.alias_key_url('https://example.org/a'))
+
+    def test_alias_key_collapses_terminal_slash_only(self):
+        self.assertEqual(G.alias_key_url('https://example.org/a/'),
+                         G.alias_key_url('https://example.org/a'))
+        self.assertNotEqual(G.key_url('https://example.org/a/'),
+                            G.key_url('https://example.org/a'))
+
+    def test_alias_key_preserves_fragments(self):
+        self.assertNotEqual(G.alias_key_url('https://example.org/a/#first'),
+                            G.alias_key_url('https://example.org/a/#second'))
 
 
 def per_group_test(index):
