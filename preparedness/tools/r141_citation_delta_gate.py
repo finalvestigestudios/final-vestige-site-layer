@@ -23,6 +23,9 @@ RELEASE = 'DRAFT_HOLD_HUMAN_SOURCE_SAFETY_AND_QD_REVIEW_REQUIRED'
 FIELDS = {'schema', 'r140_rc_sha', 'r140_manifest_blob', 'article_deltas', 'review_state'}
 ARTICLE_FIELDS = {'slug', 'cluster', 'rc_blob', 'contributor_blob', 'counts'}
 COUNT_FIELDS = {'id', 'rc', 'contributor'}
+# Independently observed 2026-11-05: R140 omitted this lost citation identity.
+# Never edit the frozen R140 manifest to hide the discrepancy.
+R140_KNOWN_GAP = {'three-day-kit': frozenset({'start-cdc-power-outage'})}
 
 
 def git_blob(raw: bytes) -> str:
@@ -101,7 +104,11 @@ def validate_docket(manifest: dict, manifest_bytes: bytes, docket: dict) -> list
             if new and not old: added.add(sid)
         if delta != original['contributor_citations'] - original['baseline_citations']:
             raise ValueError('citation net loss masked by incomplete count changes')
-        if removed != set(original['removed_source_ids']) or added != set(original['added_source_ids']):
+        prior_removed = set(original['removed_source_ids'])
+        newly_observed = removed - prior_removed
+        if (not prior_removed.issubset(removed) or
+            newly_observed != R140_KNOWN_GAP.get(slug, frozenset()) or
+            added != set(original['added_source_ids'])):
             raise ValueError('lost or added citation source identity mismatch')
         if original['baseline_citations'] < 1 or original['contributor_citations'] < 1:
             raise ValueError('empty cited article')
@@ -113,7 +120,8 @@ def validate_docket(manifest: dict, manifest_bytes: bytes, docket: dict) -> list
         report.append({'slug': slug, 'cluster': cluster, 'kind': kind,
                        'total_rc_citations': original['baseline_citations'],
                        'total_contributor_citations': original['contributor_citations'],
-                       'changed_source_counts': len(counts), 'human_review': 'REQUIRED'})
+                       'changed_source_counts': len(counts),
+                       'r140_omitted_removed_source_ids': sorted(newly_observed), 'human_review': 'REQUIRED'})
     if seen != set(m):
         raise ValueError('missing original author evidence')
     return sorted(report, key=lambda r: r['slug'])
