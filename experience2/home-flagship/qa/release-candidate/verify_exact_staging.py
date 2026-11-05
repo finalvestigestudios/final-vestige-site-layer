@@ -425,6 +425,11 @@ def run(url: str, allowed_host: str, expected_sha: str, repo: Path, output: Path
                     'no_js_case_panels_visible':all(rendered.locator('[data-fv-case="'+id+'"]').is_visible()
                                                    for id in ('apollo','franklin','malbone'))
                 }
+                # The free lead-capture route must remain usable even when
+                # WordPress/Assembler enhancement JS is disabled. Do not click
+                # through or submit anything to the live production form.
+                for name, passed in inspect_focus_entry(rendered, 390).items():
+                    nojs['checks']['hero_'+name] = passed
                 # Browsers often never fetch loading=lazy <img> with JS off.
                 # Confirm BOTH noscript eager fallbacks load actual pixels,
                 # and the rights-pending Malbone map remains unrendered.
