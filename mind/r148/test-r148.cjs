@@ -48,7 +48,7 @@ check("same-SKU seller source as citation",()=>html.includes('href="https://zen1
 check("explicit no proven product outcome",()=>html.includes("It did not test Zen12") && html.includes("We have not listened to or personally tested Zen12 Premium"));
 check("no magic hour in 12 efficacy claim",()=>html.includes("do not endorse") && html.includes("one hour in 12 minutes"));
 check("refund guarantee labeled seller claim",()=>html.includes("advertised one-year money-back guarantee"));
-check("checkout amount not falsely guaranteed",()=>html.includes("not a guaranteed current purchase price"));
+check("checkout amount not falsely guaranteed",()=>html.includes("do not present that as a guaranteed current purchase price"));
 check("privacy seller source documented",()=>html.includes("https://inspire3.com/privacy/"));
 check("meaningful mobile single-column layout",()=>html.includes("grid-template-columns:minmax(0,1fr)"));
 check("keyboard focus visible",()=>html.includes(":focus-visible"));
