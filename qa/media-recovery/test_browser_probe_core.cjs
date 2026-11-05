@@ -15,3 +15,5 @@ test('alt-only match is not failure proof',()=>{const r=[{...rendered[0],current
 test('ambiguous URLs are not arbitrarily assigned',()=>{const d=matchStoredImages(source,[rendered[0],rendered[0]])[0];assert.equal(d.match,'ambiguous_url');assert.equal(d.rendered,null)});
 test('article and requested URL must survive navigation',()=>{const u='https://finalvestige.com/2026/08/20/article/';assert.equal(pageHostVerified(u,'Article',u,true,false),true);assert.equal(pageHostVerified(u,'Article',u,false,false),false);assert.equal(pageHostVerified(u,'Article','https://example.com/404/',true,false),false);assert.equal(pageHostVerified(u,'Article',u,true,'net::ERR_NAME_NOT_RESOLVED'),false)});
 test('network wire bytes are counted without placeholders',()=>assert.equal(countTransfer([{encodedDataLength:100},{encodedDataLength:200},{encodedDataLength:null},{encodedDataLength:-1}]),300));
+
+test('preserves natural height for geometric integrity check',()=>{const d=classifyImages(source,[{...rendered[0],naturalHeight:480}],[],true)[0];assert.equal(d.natural_height,480);const m=classifyImages(source,rendered,[],true)[0];assert.equal(m.natural_height,null)});
