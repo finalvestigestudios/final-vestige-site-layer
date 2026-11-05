@@ -226,6 +226,10 @@ jobs:
         run: |
           python -m unittest discover -s products/desktop/tests -p 'test_atomic_formula_prefix_r215.py' > /dev/null 2>&1
           python -OO -m unittest discover -s products/desktop/tests -p 'test_atomic_formula_prefix_r215.py' > /dev/null 2>&1
+      - name: R216 reject nonnumeric minus and Unicode-prefix formulas (21 cases; normal and -OO)
+        run: |
+          python -m unittest discover -s products/desktop/tests -p 'test_atomic_negative_formula_r216.py' > /dev/null 2>&1
+          python -OO -m unittest discover -s products/desktop/tests -p 'test_atomic_negative_formula_r216.py' > /dev/null 2>&1
       - name: R200 execute R194-R199 financial and policy audit tests (148 methods per mode)
         run: |
           python products/desktop/scripts/safe_audit_subprocess_r205.py
@@ -874,6 +878,14 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R215 CSV formula prefix regression failed" }
           python -OO -m unittest discover -s products/desktop/tests -p 'test_atomic_formula_prefix_r215.py' *> $null
           if ($LASTEXITCODE -ne 0) { throw "R215 optimized CSV formula prefix regression failed" }
+      - name: R216 reject nonnumeric minus and Unicode-prefix formulas (21 cases; normal and -OO)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python -m unittest discover -s products/desktop/tests -p 'test_atomic_negative_formula_r216.py' *> $null
+          if ($LASTEXITCODE -ne 0) { throw "R216 CSV formula custody regression failed" }
+          python -OO -m unittest discover -s products/desktop/tests -p 'test_atomic_negative_formula_r216.py' *> $null
+          if ($LASTEXITCODE -ne 0) { throw "R216 optimized CSV formula custody regression failed" }
       - name: R200 execute R194-R199 financial and policy audit tests (148 methods per mode)
         shell: pwsh
         run: |
