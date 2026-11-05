@@ -28,7 +28,7 @@ function inspect(a){
  need(!/href=["']https?:\/\/(?:www\.)?zen12\.com/i.test(h)||h.includes("Source notes"),"merchant_checkout_button");
  need(h.includes("UNSENT")&&h.includes("GUIDE NOT LIVE")&&h.includes("Seller")==false,"html_preview_not_inert");
  need(h.includes("Commercial disclosure beside the proposed CTA")&&h.includes("[[VALID_POSTAL_ADDRESS_REQUIRED]]")&&h.includes("[[JETPACK_UNSUBSCRIBE_LINK_MUST_BE_VERIFIED]]"),"html_legal_hold_missing");
- need((m.source_observations||[]).some(x=>x.fact?.includes("names")),"data_sharing_not_disclosed");
+ need((m.source_observations||[]).some(x=>x.fact?.includes("name")),"data_sharing_not_disclosed");
  return {status:"HOLD_ALL_UNSENT",commercial_status:"HOLD_MERCHANT",passed:errors.length===0,errors};
 }
 module.exports={inspect};
