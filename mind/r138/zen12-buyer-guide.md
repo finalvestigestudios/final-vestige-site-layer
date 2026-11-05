@@ -11,7 +11,7 @@ On its current publicly accessible **Zen12 /hnp** sales presentation, the mercha
 
 ### What the science does not establish
 
-The site says its special audio can *meditate for you* and invokes “brainwave entrainment” to support wide-ranging benefits. Those are **Inspire3/Zen12 marketing claims**. Evidence that general meditation practices sometimes help some people does not prove this particular twelve-minute recording equals an hour of advanced meditation. A controlled, product-specific comparison would be needed for such equivalence. Likewise, the 1976 McGurk effect demonstrates audiovisual speech integration, **not** the neurological efficacy of binaural beats or guided audio.
+The site says its special audio can *meditate for you* and invokes “brainwave entrainment” to support wide-ranging benefits. Those are **Inspire3/Zen12 marketing claims**. Evidence that general meditation practices sometimes help some people does not prove this particular twelve-minute recording equals an hour of advanced meditation. Zen12's specific equivalence claim has not been independently substantiated by Final Vestige. A controlled, product-specific comparison would be needed for such equivalence. Likewise, the 1976 McGurk effect demonstrates audiovisual speech integration, **not** the neurological efficacy of binaural beats or guided audio.
 
 Independent research into binaural beats and EEG entrainment has produced mixed findings; the field contains positive and null/contradictory results. Do not infer that owning MP3 files guarantees improved focus, relief of distress or clinical benefit. Do not use these recordings to substitute for a licensed clinician or to manage a health condition without professional advice.
 
