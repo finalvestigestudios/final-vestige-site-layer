@@ -39,7 +39,7 @@ Aphantasia can affect more than the familiar instruction to "picture a beach." A
 
 That last observation is important. A person may know the layout of a childhood home, turn directions in the mind, or recall where an object belongs without having an image that resembles seeing. Aphantasia does not mean the person has no imagination, no creativity, no attention, or no ability to learn mindfulness.
 
-The story is still developing. A 2024 article by Nanay and colleagues argues that voluntary-versus-involuntary imagery is not a tidy boundary; dreams and afterimages require separate investigation rather than sweeping assumptions. [5] A different 2024 review noted that imagery vividness differs by person and sensory modality and that subtypes likely exist. [2] The cautious conclusion is not "everyone can learn to visualize." It is "people experience internal representation differently, and simplistic universal instructions can miss some of them."
+The story is still developing. A 2024 article by Raquel Krempel and Merlin Monzel argues that voluntary-versus-involuntary imagery is not a tidy boundary; dreams and afterimages require separate investigation rather than sweeping assumptions. [5] A different 2024 review noted that imagery vividness differs by person and sensory modality and that subtypes likely exist. [2] The cautious conclusion is not "everyone can learn to visualize." It is "people experience internal representation differently, and simplistic universal instructions can miss some of them."
 
 ## When imagining a frightening story becomes measurable
 
@@ -85,7 +85,7 @@ The beach that never appeared may be the most useful image of all: a reminder th
 2. Zeman (2024), "Aphantasia and hyperphantasia: exploring imagery vividness extremes." *Trends in Cognitive Sciences*. https://pubmed.ncbi.nlm.nih.gov/38548492/
 3. Kay, Keogh, Andrillon & Pearson (2022), "The pupillary light response as a physiological index..." *eLife*. https://elifesciences.org/articles/72484
 4. Dawes et al. (2020), "A cognitive profile of multi-sensory imagery, memory and dreaming in aphantasia." https://pubmed.ncbi.nlm.nih.gov/32572039/
-5. Nanay et al. (2024), "Aphantasia and involuntary imagery." https://pubmed.ncbi.nlm.nih.gov/38564857/
+5. Krempel & Monzel (2024), "Aphantasia and involuntary imagery." https://pubmed.ncbi.nlm.nih.gov/38564857/
 6. Wicken, Keogh & Pearson (2021), "The critical role of mental imagery in human emotion." *Proceedings of the Royal Society B*. https://pubmed.ncbi.nlm.nih.gov/33715433/
 
 **Editorial boundary:** An historical and research investigation; no claims of aphantasia diagnosis, treatment, or personal product use. This unpublished manuscript is not an affiliate offer.
