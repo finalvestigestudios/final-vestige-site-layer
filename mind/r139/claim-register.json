@@ -1,0 +1,265 @@
+{
+  "schema": "fv-mind-claim-register-v1",
+  "created": "2026-11-05",
+  "milestone": "R139",
+  "production_state": "UNPUBLISHED",
+  "offer_under_test": "Hypnosis Live — Total Focus",
+  "offer_sales_page": "https://hypnosislive.com/mental-skills/total-focus",
+  "activation": "CLOSED",
+  "sources": {
+    "M1": "https://hypnosislive.com/mental-skills/total-focus",
+    "M2": "https://hypnosislive.com/personal-improvement/hypnotize-yourself",
+    "M4": "https://hypnosislive.com/faq",
+    "M5": "https://inspire3.com/privacy/",
+    "M6": "https://inspire3.com/",
+    "M7": "https://affiliates.inspire3.com/",
+    "Z1": "https://zen12.com/hnp",
+    "Z2": "https://zen12.com/secret/",
+    "Z3": "https://zen12.com/welcome",
+    "S1": "https://doi.org/10.1016/j.concog.2024.103730",
+    "S2": "https://doi.org/10.1080/00207144.2024.2434085",
+    "F1": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "F2": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+    "FV1": "https://finalvestige.com/focus/",
+    "FV2": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "FV3": "https://finalvestige.com/2026/11/02/change-blindness/",
+    "D1": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171#issuecomment-6652681925"
+  },
+  "claims": [
+    {
+      "id": "total-focus-format",
+      "claim": "Total Focus 33m 47MB J.A. Amos downloadable MP3",
+      "evidence": "seller-described",
+      "decision": "describe with source; do not infer clinical results",
+      "source_ids": [
+        "M1"
+      ]
+    },
+    {
+      "id": "total-focus-price",
+      "claim": "Direct opened merchant page displayed $24.44/$29.95; older indexed page $17.95/$22.95",
+      "evidence": "conflicting seller snapshots",
+      "decision": "do not state a final/current checkout price; verify at release",
+      "source_ids": [
+        "M1"
+      ]
+    },
+    {
+      "id": "total-focus-bundle",
+      "claim": "Seller offers product bundles and discounted package",
+      "evidence": "seller-described",
+      "decision": "not a promised always-available total",
+      "source_ids": [
+        "M1"
+      ]
+    },
+    {
+      "id": "total-focus-refunds",
+      "claim": "14-day request, max 5 refunded sessions/year, stated 7–10-day issue window",
+      "evidence": "seller-policy-not-tested",
+      "decision": "present limit and processing caveat",
+      "source_ids": [
+        "M4"
+      ]
+    },
+    {
+      "id": "total-focus-guaranteed-concentration",
+      "claim": "100% razor-sharp concentration",
+      "evidence": "unsupported marketing claim",
+      "decision": "do not adopt or paraphrase positively",
+      "source_ids": [
+        "M1",
+        "F2"
+      ]
+    },
+    {
+      "id": "total-focus-income",
+      "claim": "Get recognized at work and boost prospects",
+      "evidence": "unsupported marketing claim",
+      "decision": "do not present as likely benefit",
+      "source_ids": [
+        "M1",
+        "F2"
+      ]
+    },
+    {
+      "id": "total-focus-NLP",
+      "claim": "NLP and hypnosis reprogram your brain",
+      "evidence": "unsupported product-specific mechanism",
+      "decision": "do not treat neuro-language as clinical substantiation",
+      "source_ids": [
+        "M1",
+        "F2"
+      ]
+    },
+    {
+      "id": "hypnotize-yourself-sku",
+      "claim": "Hypnotize Yourself is a separate 44-minute instructional SKU",
+      "evidence": "seller-described",
+      "decision": "do not mix with Total Focus or Dispatch Slot 05",
+      "source_ids": [
+        "M2",
+        "D1"
+      ]
+    },
+    {
+      "id": "hypnosis-field",
+      "claim": "General experimental literature on suggestions and hypnosis",
+      "evidence": "general-literature",
+      "decision": "not proof Total Focus works",
+      "source_ids": [
+        "S1",
+        "F2"
+      ]
+    },
+    {
+      "id": "hypnosis-apps-study",
+      "claim": "Review examined 168 hypnosis apps; 4 reported a trial",
+      "evidence": "general market review",
+      "decision": "do not use as direct MP3 appraisal",
+      "source_ids": [
+        "S2"
+      ]
+    },
+    {
+      "id": "zen12-format",
+      "claim": "Zen12 Premium twelve levels, four formats/level, 48 MP3s",
+      "evidence": "seller-described",
+      "decision": "may state as seller-described contents",
+      "source_ids": [
+        "Z1"
+      ]
+    },
+    {
+      "id": "zen12-onehour",
+      "claim": "Zen12 12 minutes equals one advanced meditation hour",
+      "evidence": "unsupported product-specific equivalence",
+      "decision": "do not adopt",
+      "source_ids": [
+        "Z1",
+        "F2"
+      ]
+    },
+    {
+      "id": "zen12-pricing",
+      "claim": "Premium seller page advertised $87.99 and conditional $37 page",
+      "evidence": "conditional seller snapshots",
+      "decision": "no fixed final buyer price",
+      "source_ids": [
+        "Z1",
+        "Z2"
+      ]
+    },
+    {
+      "id": "zen12-free-newsletter",
+      "claim": "Seller free audio states subscriber receives seller newsletter",
+      "evidence": "seller-disclosed consent",
+      "decision": "distinguish FV's existing Jetpack signup",
+      "source_ids": [
+        "Z3"
+      ]
+    },
+    {
+      "id": "affiliate-approval",
+      "claim": "Public affiliate site explains potential program but no FV-specific acceptance",
+      "evidence": "not-established",
+      "decision": "hard hold activation",
+      "source_ids": [
+        "M7"
+      ]
+    },
+    {
+      "id": "privacy-affiliate",
+      "claim": "Inspire3 privacy permits sharing certain referred-customer details with affiliates",
+      "evidence": "seller-policy",
+      "decision": "require acceptable aggregate-only data reporting terms",
+      "source_ids": [
+        "M5"
+      ]
+    },
+    {
+      "id": "commission-disclosure",
+      "claim": "Affiliate material connection should be clear and proximate",
+      "evidence": "regulatory-guidance",
+      "decision": "show adjacent to any future earning link",
+      "source_ids": [
+        "F1"
+      ]
+    },
+    {
+      "id": "focus-route",
+      "claim": "Seven Day Focus Fieldbook exists at the existing /focus/ route",
+      "evidence": "first-party-route",
+      "decision": "do not create another list/signup form",
+      "source_ids": [
+        "FV1"
+      ]
+    },
+    {
+      "id": "grok-campaigns",
+      "claim": "Change Blindness/Puységur social IDs unverified",
+      "evidence": "unverified",
+      "decision": "do not invent UTMs/paid attribution",
+      "source_ids": [
+        "FV2",
+        "FV3"
+      ]
+    },
+    {
+      "id": "purchase-measurement",
+      "claim": "Affiliate outbound and merchant-confirmed paid order are different",
+      "evidence": "measurement-contract",
+      "decision": "never count click as sale",
+      "source_ids": [
+        "F1"
+      ]
+    }
+  ],
+  "release_gates": {
+    "affiliate_partner_named_approval": false,
+    "exact_sku_whitelist": false,
+    "approved_affiliate_url": false,
+    "organic_social_channel_permission": false,
+    "email_marketing_permission": false,
+    "creative_reuse_permission": false,
+    "aggregate_only_affiliate_reporting_verified": false,
+    "privacy_retention_verified": false,
+    "current_checkout_total_verified": false,
+    "refund_processing_verified": false,
+    "owned_paid_mind_sku_authenticated": false,
+    "paid_order_receipt_verified": false,
+    "refunds_fees_settled_verified": false,
+    "grok_asset_id_verified": false,
+    "existing_focus_confirmed_signups_attributed": false,
+    "native_browser_accessibility_pass": false,
+    "playable_captioned_video_pass": false,
+    "founder_release_approval": false,
+    "qa_release_approval": false
+  },
+  "traffic_and_conversion": {
+    "qualified_human_sessions": null,
+    "confirmed_leads": null,
+    "verified_paid_orders": null,
+    "verified_affiliate_commissions": null,
+    "refunds_and_fees": null,
+    "realized_net_revenue": null,
+    "net_revenue_per_1000_qualified_sessions": null,
+    "note": "Missing denominator and merchant settlement. Not zero."
+  },
+  "owner_issues": {
+    "mind": 171,
+    "commerce": 820,
+    "dispatch": 174,
+    "site_qa": 126,
+    "homepage_art": 150
+  },
+  "owned_product_fallback": {
+    "payhip_catalog_authenticated": false,
+    "mind_paid_sku": null,
+    "price": null,
+    "rights_manifest": null,
+    "checkout_and_delivery": null,
+    "returns_policy": null,
+    "decision": "HARD HOLD—do not pretend catalog is empty"
+  }
+}
