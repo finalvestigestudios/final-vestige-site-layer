@@ -1,0 +1,98 @@
+{
+  "status": "REVIEW_ONLY_HOLD_UNSENT",
+  "master_pr": 175,
+  "master_sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "stack_parent_pr": 1118,
+  "stack_parent_sha": "6336c05e85d96c7427be471c11f7e201382a9d64",
+  "read_at_utc": "2026-11-05T17:38:52Z",
+  "facts": {
+    "jetpack_enabled": true,
+    "automatic_post_email": false,
+    "email_format": "excerpt",
+    "subscriber_dashboard": {
+      "total": 3,
+      "confirmed": 3,
+      "unconfirmed": 2,
+      "imported_last_24h": 1
+    },
+    "eligible_recipients": null,
+    "delivered_welcome": null,
+    "independently_verified_paid_orders": null,
+    "qualified_human_sessions": null,
+    "net_revenue_per_1000_qualified_humans": null,
+    "publisher_address_verified": false,
+    "unsub_inbox_verified": false,
+    "merchant_email_permission_verified": false
+  },
+  "issues": [
+    {
+      "n": 1,
+      "type": "editorial",
+      "old": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "proposal": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "state": "OPTIONAL_REVIEW_ONLY",
+      "reason": "Existing Issue01 and Issue02 duplicate destination. Published change-blindness post #1922 better matches Issue01 perception intent."
+    },
+    {
+      "n": 2,
+      "type": "editorial",
+      "old": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "proposal": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "state": "KEEP",
+      "reason": "Puységur archival source destination remains appropriate to Issue02."
+    },
+    {
+      "n": 3,
+      "type": "commercial-review-pending",
+      "old": null,
+      "proposal": null,
+      "state": "HOLD_MERCHANT",
+      "sku": "Zen12 Premium",
+      "reason": "No named affiliate email permission, approved earning URL or live buyer guide."
+    },
+    {
+      "n": 4,
+      "type": "editorial",
+      "old": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/",
+      "proposal": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/",
+      "state": "KEEP_WITH_TITLE_QA",
+      "reason": "Historical CTA stays, but original 14-second subject precision remains unproven; R139 alternative awaits approval."
+    },
+    {
+      "n": 5,
+      "type": "commercial-review-pending",
+      "old": null,
+      "proposal": null,
+      "state": "HOLD_MERCHANT",
+      "sku": "Hypnosis Live Total Focus",
+      "reason": "Total Focus (33 min, 47 MB) is not Hypnotize Yourself; partner permission, guide, checkout, refunds remain unverified."
+    },
+    {
+      "n": 6,
+      "type": "editorial",
+      "old": "https://finalvestige.com/focus/",
+      "proposal": "https://finalvestige.com/wp-content/uploads/2026/10/Final_Vestige_Seven_Day_Focus_Fieldbook_Complete_Edition.pdf",
+      "state": "OPTIONAL_REVIEW_ONLY",
+      "reason": "Already subscribed readers promised PDF in welcome should not have to pass another signup form; media asset #1737 registered but independent PDF fetch not verified."
+    }
+  ],
+  "flags": {
+    "wordpress_post_create": false,
+    "newsletter_send": false,
+    "new_platform": false,
+    "new_list": false,
+    "affiliate_links_live": false,
+    "approved_marketing": false
+  },
+  "event_contract": {
+    "confirmed_signup": "Provider-native confirmation evidence only; not success-screen URL or click",
+    "dedup": "One native confirmation per consenting subscriber per period; no PII in issue reports",
+    "email_utm": "utm_source=dispatch&utm_medium=email&utm_campaign=dispatch_pilot_2026_11&utm_content=issue_XX only after approved source mapping",
+    "commercial_success": "Settled paid FV order or partner-reported affiliate sale net refunds/fees",
+    "cohorts_days": [
+      7,
+      30
+    ],
+    "no_tracking_script": true
+  }
+}
