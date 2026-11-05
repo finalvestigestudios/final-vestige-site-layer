@@ -45,8 +45,8 @@ def run_matrix(tests: Path = TESTS, targets=TARGETS) -> bool:
     """Enforce audited test counts without echoing test-generated evidence.
 
     No financial files, accounts, network access, downloads or builds are used
-    by this runner. A skip is included in executed totals but explicitly
-    recorded and never represented as a passing test.
+    by this runner. Every audited case must pass; skips, expected failures,
+    unexpected successes and incomplete counts block the matrix.
     """
     if not tests.is_dir() or tests.is_symlink():
         print("HOLD: desktop tests directory missing or linked", file=sys.stderr)
@@ -66,7 +66,8 @@ def run_matrix(tests: Path = TESTS, targets=TARGETS) -> bool:
             return False
         try:
             count, result = _run_private(tests, filename)
-        except Exception:
+        except BaseException:
+            # SystemExit/KeyboardInterrupt from a test are untrusted too.
             # No exception text or traceback: they may contain customer data.
             print(f"HOLD: {filename}: private audit execution unavailable", file=sys.stderr)
             return False
@@ -75,15 +76,18 @@ def run_matrix(tests: Path = TESTS, targets=TARGETS) -> bool:
                   file=sys.stderr)
             return False
         skipped = len(result.skipped)
+        expected_failures = len(result.expectedFailures)
+        unexpected_successes = len(result.unexpectedSuccesses)
         if (not result.wasSuccessful() or result.testsRun != count
-                or skipped == count):
-            print(f"HOLD: {filename}: audit regressions failed or all skipped "
-                  f"({skipped} skipped)", file=sys.stderr)
+                or skipped or expected_failures or unexpected_successes):
+            print(f"HOLD: {filename}: audit regressions include non-passes "
+                  f"({skipped} skipped, {expected_failures} expected failures, "
+                  f"{unexpected_successes} unexpected successes)", file=sys.stderr)
             return False
         total += result.testsRun
-        print(f"R201: {filename}: {result.testsRun} executed, "
-              f"{skipped} skipped (not counted as passes)")
-    print(f"R201: {total} audit regression executions across {len(seen)} modules; "
+        print(f"R202: {filename}: {result.testsRun} executed, 0 skipped, "
+              "0 expected failures (all passed)")
+    print(f"R202: {total} passing audit cases across {len(seen)} modules; "
           "no release or production approval implied")
     return True
 
