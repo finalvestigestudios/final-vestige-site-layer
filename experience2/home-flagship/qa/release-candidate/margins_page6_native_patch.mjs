@@ -64,7 +64,7 @@ export function patchPage6(html) {
   let block = pre.block.replace(OLD_WINDOW, NEW_WINDOW)
     .replace(OLD_LABEL, NEW_LABEL)
     .replace(OLD_REDUCED_RULE, REDUCED_REPLACEMENT);
-  if (block === pre.block || occurrences(block, "fv-margin-strip__reduced-hint") !== 2)
+  if (block === pre.block || occurrences(block, "fv-margin-strip__reduced-hint") !== 3)
     fail("replacement failed");
   const output = block + pre.tail;
   // Exact bytes of all unrelated Gutenberg blocks and all original fragment texts.
