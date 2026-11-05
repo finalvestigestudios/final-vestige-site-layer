@@ -1,0 +1,148 @@
+{
+  "schema": "fv-media-malbone621-wp-virtual-renditions-v1",
+  "captured_date": "2026-11-05",
+  "evidence_method": "READ_ONLY wpcom posts.get 621 edit; media.get 1257 and 1258 edit; no raw image binary or guest-browser captures",
+  "post": {
+    "id": 621,
+    "title": "Six Miles an Hour",
+    "url": "https://finalvestige.com/2026/08/23/six-miles-an-hour-malbone-street-wreck/",
+    "status": "publish",
+    "modified": "2026-09-09T12:03:35",
+    "inline_images": 6,
+    "stored_img_missing_dimensions": 6,
+    "stored_img_srcset_count": 0
+  },
+  "wp_originals_stored_bytes": 10352064,
+  "guest_transferred_bytes": null,
+  "guest_trace_sha256": null,
+  "sitewide_broken_42": "BROWSER_UNVERIFIED",
+  "reduction_76_percent": "WIRE_UNMEASURED",
+  "approved_to_publish": false,
+  "images": [
+    {
+      "image_key": "621:0",
+      "media_id": 1257,
+      "exact_published_src": "https://finalvestige.com/wp-content/uploads/2026/08/edit-017-v01-malbone-tunnel-generalpunger-original.jpg",
+      "wp_source_url": "https://finalvestige.com/wp-content/uploads/2026/08/edit-017-v01-malbone-tunnel-generalpunger-original.jpg",
+      "alt": "View into the Malbone Street Tunnel from the southbound platform at Prospect Park, showing the surviving curved tunnel alignment.",
+      "wp_dimensions": [
+        4000,
+        3000
+      ],
+      "wp_filesize_bytes": 4798395,
+      "wp_mime": "image/jpeg",
+      "registered_sizes_virtual": true,
+      "html_width": null,
+      "html_height": null,
+      "html_srcset": false,
+      "intermediate_768": {
+        "url": "https://finalvestige.com/wp-content/uploads/2026/08/edit-017-v01-malbone-tunnel-generalpunger-original-768x576.jpg",
+        "dimensions": [
+          768,
+          576
+        ],
+        "virtual": true,
+        "actual_http_status": null,
+        "guest_decodes": null
+      },
+      "intermediate_1024": {
+        "url": "https://finalvestige.com/wp-content/uploads/2026/08/edit-017-v01-malbone-tunnel-generalpunger-original-1024x768.jpg",
+        "dimensions": [
+          1024,
+          768
+        ],
+        "virtual": true,
+        "actual_http_status": null,
+        "guest_decodes": null
+      },
+      "candidate_derivative_960": [
+        960,
+        720
+      ],
+      "no_upscale": true,
+      "provenance": {
+        "description": "Caption credits GeneralPunger / Wikimedia Commons, CC BY-SA 4.0; item-level file URL and edits unverified",
+        "basis": "POST_CAPTION_ONLY",
+        "rights": "HOLD",
+        "checklist": [
+          "verify Commons file",
+          "credit author and link CC license",
+          "disclose image edits",
+          "evaluate share-alike"
+        ]
+      },
+      "original_sha256": null,
+      "guest_current_src": null,
+      "guest_http_status": null,
+      "guest_decode_ok": null,
+      "guest_encoded_transfer_bytes": null,
+      "rights_cleared": false,
+      "cache_authorized": false,
+      "wp_upload_authorized": false,
+      "post_edit_authorized": false
+    },
+    {
+      "image_key": "621:1",
+      "media_id": 1258,
+      "exact_published_src": "https://finalvestige.com/wp-content/uploads/2026/08/edit-017-v02-nypl-5003296-original.jpg",
+      "wp_source_url": "https://finalvestige.com/wp-content/uploads/2026/08/edit-017-v02-nypl-5003296-original.jpg",
+      "alt": "1903 map of the Brooklyn Rapid Transit street railway and rapid-transit network.",
+      "wp_dimensions": [
+        5667,
+        3831
+      ],
+      "wp_filesize_bytes": 5553669,
+      "wp_mime": "image/jpeg",
+      "registered_sizes_virtual": true,
+      "html_width": null,
+      "html_height": null,
+      "html_srcset": false,
+      "intermediate_768": {
+        "url": "https://finalvestige.com/wp-content/uploads/2026/08/edit-017-v02-nypl-5003296-original-768x519.jpg",
+        "dimensions": [
+          768,
+          519
+        ],
+        "virtual": true,
+        "actual_http_status": null,
+        "guest_decodes": null
+      },
+      "intermediate_1024": {
+        "url": "https://finalvestige.com/wp-content/uploads/2026/08/edit-017-v02-nypl-5003296-original-1024x692.jpg",
+        "dimensions": [
+          1024,
+          692
+        ],
+        "virtual": true,
+        "actual_http_status": null,
+        "guest_decodes": null
+      },
+      "candidate_derivative_960": [
+        960,
+        649
+      ],
+      "no_upscale": true,
+      "provenance": {
+        "description": "Caption claims NYPL image ID 5003296 public domain in US; NYPL research guide references ID but capture rights not verified",
+        "basis": "POST_CAPTION_PLUS_NYPL_GUIDE",
+        "rights": "HOLD",
+        "checklist": [
+          "verify capture item rights",
+          "link exact NYPL image",
+          "preserve map labels",
+          "verify edited binary identity"
+        ]
+      },
+      "original_sha256": null,
+      "guest_current_src": null,
+      "guest_http_status": null,
+      "guest_decode_ok": null,
+      "guest_encoded_transfer_bytes": null,
+      "rights_cleared": false,
+      "cache_authorized": false,
+      "wp_upload_authorized": false,
+      "post_edit_authorized": false
+    }
+  ],
+  "staging_gate": "PENDING_BROWSER_PROVEN_RIGHTS_ITEM_IDENTITY_AND_VISUAL_CHECK"
+}
