@@ -60,3 +60,12 @@ test('zero-cleared visible copy cannot be removed',()=>{
  const changed=source.replace('none of the six linked photographs is cleared for commercial republication (0/6)','all cleared');
  assert.notEqual(changed,source);assert.equal(run(ledger,changed).status,'FAIL');
 });
+
+test('visible NASA catalog date cannot drift from reviewed record',()=>{
+ const changed=source.replace('Jan 3, 1967</td><td>Spacecraft preparation','Jan 4, 1967</td><td>Spacecraft preparation');
+ assert.notEqual(changed,source);assert.equal(run(ledger,changed).status,'FAIL');
+});
+test('visible source credit cannot be silently reassigned',()=>{
+ const changed=source.replace('Image Credit: NASA/Kim Shiflett</small>','Image Credit: Unverified Contributor</small>');
+ assert.notEqual(changed,source);assert.equal(run(ledger,changed).status,'FAIL');
+});
