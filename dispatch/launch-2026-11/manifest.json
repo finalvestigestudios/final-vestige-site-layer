@@ -1,0 +1,81 @@
+{
+  "name": "The Dispatch — Six Week Editorial Launch",
+  "status": "DRAFT_UNSENT_UNSCHEDULED",
+  "generated_on": "2026-11-04",
+  "channel": "Jetpack WordPress.com new-post newsletter",
+  "site": "https://finalvestige.com",
+  "cadence": "Weekly Thursday morning Pacific proposed; requires founder send/schedule approval",
+  "audience": "All confirmed newsletter subscribers at each broadcast; NOT a per-subscriber welcome drip",
+  "welcome": "Jetpack native confirmation + Fieldbook direct PDF already verified by founder",
+  "settingsObserved": {
+    "newsletter_enabled": true,
+    "email_new_posts_by_default": false,
+    "email_content_format": "excerpt",
+    "from_name": "Final Vestige",
+    "reply_to": "no-reply"
+  },
+  "launchGates": [
+    "Confirm founder target date and individual send approval",
+    "Preview actual Jetpack email on desktop and mobile",
+    "Use Jetpack paper-airplane sidebar to enable Send this post to subscribers for that issue only",
+    "Verify native unsubscribe/footer and any applicable legal address requirements",
+    "No commercial affiliate promotion until product terms, approved tracking and disclosures verified",
+    "Draft content only — do not infer emails are sent"
+  ],
+  "issues": [
+    {
+      "n": 1,
+      "slug": "the-mind-is-not-a-camera",
+      "subject": "The mind is not a camera",
+      "excerpt": "A simple experiment in what attention misses—and why feeling certain is not the same as having a complete record.",
+      "kind": "editorial",
+      "primary_cta": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "filename": "issues/01-the-mind-is-not-a-camera.md"
+    },
+    {
+      "n": 2,
+      "slug": "before-hypnosis-had-a-name",
+      "subject": "Before hypnosis had a name",
+      "excerpt": "Puységur’s eighteenth-century records raise a surprisingly modern question: what did witnesses observe, and what did they infer?",
+      "kind": "editorial",
+      "primary_cta": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "filename": "issues/02-before-hypnosis-had-a-name.md"
+    },
+    {
+      "n": 3,
+      "slug": "the-twelve-minute-question",
+      "subject": "The twelve-minute question",
+      "excerpt": "Can a short practice fit a real week? Try a modest experiment, record what happened, and skip the miracle claims.",
+      "kind": "fieldbook-retention",
+      "primary_cta": "https://finalvestige.com/wp-content/uploads/2026/10/Final_Vestige_Seven_Day_Focus_Fieldbook_Complete_Edition.pdf",
+      "filename": "issues/03-the-twelve-minute-question.md"
+    },
+    {
+      "n": 4,
+      "slug": "fifteen-seconds-a-much-longer-explanation",
+      "subject": "About fifteen seconds. A much longer explanation.",
+      "excerpt": "Apollo 1 and the difference between a probable ignition source and a conclusively established cause.",
+      "kind": "editorial",
+      "primary_cta": "https://finalvestige.com/apollo-1-evidence-atlas/",
+      "filename": "issues/04-fifteen-seconds-a-much-longer-explanation.md"
+    },
+    {
+      "n": 5,
+      "slug": "before-you-press-play",
+      "subject": "Before you press play",
+      "excerpt": "Three questions to ask before trusting a hypnosis or meditation audio claim—and a historical case that explains why they matter.",
+      "kind": "editorial-product-literacy",
+      "primary_cta": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "filename": "issues/05-before-you-press-play.md"
+    },
+    {
+      "n": 6,
+      "slug": "the-evidence-log",
+      "subject": "What did seven days of attention reveal?",
+      "excerpt": "Make a record of what worked, what didn't, and what you'd change. Then see where the Final Vestige archive goes next.",
+      "kind": "editorial-bridge",
+      "primary_cta": "https://finalvestige.com/free-resources/",
+      "filename": "issues/06-the-evidence-log.md"
+    }
+  ]
+}
