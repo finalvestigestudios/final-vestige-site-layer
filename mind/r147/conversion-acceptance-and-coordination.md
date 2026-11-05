@@ -1,0 +1,53 @@
+# R147 Mind commercial readiness and release contract
+**Date: 2026-11-05 · Issue #171 / #820 · SOURCE CONTROL ONLY · HARD HOLD**
+
+## Governing commercial choice, before more storytelling
+
+Selected conditional offer: **Zen12 Premium**, not Beginner, Advanced, Brainwave Shots or Hypnosis Live Total Focus. Audience = adult reader with existing intent to assess an organized short guided/audio meditation package. The newly researched attentional blink supplies a legitimate subject-matter bridge, but an ordinary curiosity visitor is not automatically a buyer. Conversion work must begin with evidence of *buyer intent*, not clicks to a compelling illusion.
+
+The merchant page https://zen12.com/hnp (reviewed Nov 5) describes 12 levels, four listening styles per level, 48 MP3s, support materials and a one-year advertised guarantee. Observed page advertised an $87.99 Premium amount (crossed-out $187.99), **not a final checkout charge or verified savings**. It states meditation equivalence and mental/health benefits not independently substantiated for Zen12. The official Inspire3 catalog https://inspire3.com/ confirms association, and its public https://affiliates.inspire3.com/ sign-up information is not named FV enrollment. We do not inherit public network EPC/payout claims as our own earned revenue or terms.
+
+**Actual authorization evidence:** bounded connected Gmail search Nov 5 for Inspire3/Zen12/Hypnosis Live affiliate approvals/acceptance returned no matching correspondence; not proof of non-acceptance in a separate dashboard. No recognized affiliate account credential, approved trackable link, social/email creative permission or independently reported commission was accessible in this lane. Therefore HARD HOLD. A separate bounded search for Payhip orders returned unrelated messages, not an authenticated catalog, and cannot certify an owned, rights-cleared paid Mind SKU. Commerce/Claude must inspect direct Payhip inventory, buyer terms, rights, delivery and order records. No new merchant account registration, checkout or email contact was initiated.
+
+## Source-to-claim matrix decisions
+
+Use [claim-source-offer-verification.json](claim-source-offer-verification.json): 12 source records, 20 explicit claim decisions, 17 false release gates. High-risk exclusions: 12 minutes equals an hour, guaranteed focus/mood/wealth/medical results, product-specific cognitive improvement, cash-back processing proved by website copy, commission paid implied by click. Seller-described product features can be quoted in neutral context if recency-checked, accompanied by disclosed sourcing. The 1992 Raymond visual task and 2007 Slagter **three-month intensive-training** study are separate interventions and cannot be conflated with one another or this commercial recording. The 2019 broad short-mindfulness review and 2023 EEG evidence further limit inferences; no product trial identified.
+
+Independent editorial [attentional-blink investigation](attentional-blink-and-meditation-investigation.md) is free of endorsements. [Buyer guide](zen12-premium-independent-buyer-guide.md) and [buyer bridge](zen12-premium-buyer-bridge-review-only.html) are explicitly commercial-consideration drafts, never packaged as study conclusions. Preserve original existing Focus list/welcome journey; no extra form, paid tool or analytics library.
+
+## OFFER → FUNNEL STEP → BLOCKER → EXPERIMENT → ACCEPTANCE → OWNER
+
+| Priority | Offer and step | Measurable blocker | Change or controlled experiment | Evidence needed to PASS | Owner / current status |
+|---|---|---|---|---|---|
+| P0 | Zen12 Premium → verified merchant sale | No written named FV approval/terms or authorized earning URL | Obtain proof of identity/channel permission/transaction reporting; reconcile exact sales SKU | Signed or logged-in merchant agreement, precise allowed link, permitted website/social/email channels, affiliate ID/settlement API scope documented without sharing private keys | Founder / Mind: **HARD HOLD** |
+| P0 | Existing FV paid Mind SKU → verified paid order | No authenticated paid rights-cleared catalog/checkout | Commerce read-only catalog and terms audit; evaluate one actually live checkout | SKU URL, pricing+tax, ownership/license, file delivery, refund rules, test paid order if expressly authorized | Commerce/Claude: **UNKNOWN** |
+| P1 | Actual Grok asset → qualified landing | No immutable campaign asset IDs or destination proofs | Research-only TASK-008 reconciliation for three topics | Published media ID, actual platform link, approved site destination, source rights, original timestamps, deduplicated campaign labels | Praxxis/Grok: **PENDING** |
+| P1 | Change Blindness/Puységur → Focus confirmed lead | No article-body CTA live in examined published content; no end-to-end signup join | Independent QA of R142 contextual block and existing Jetpack flow; no list changes | Published URL, working CTA on devices, consent-confirmed first-party signup and delivered welcome within existing list | Site QA/Dispatch/Founder: **DRAFT, NOT LIVE** |
+| P1 | High-intent source guide → vetted offer | Pricing and merchant return process not independently tested; A/B media not playable | A = complete no-JS text guide; B = identical guide + original optional 40s captioned film; both off until explicit approval | Same-SKU copy, current authenticated checkout details, approved live link, original licensed video with accessible captions/transcript, mobile/browser QA | Mind/QA: **DRAFT** |
+| P0 | Merchant-paid order → realized net revenue | No merchant settlement, fee/refund and qualified-human denominator join | Two-way read-only reconciliation with consent-respecting first-party campaign cohorts | Verified order ID anonymized/aggregated, paid status, network settlement, fees, refunds and 7/30-day qualified denominator | Commerce/Growth: **NOT COMPUTABLE** |
+
+## Creator-to-archive-to-offer intent matching
+
+1. **Change Blindness**: published https://finalvestige.com/2026/11/02/change-blindness/ → existing https://finalvestige.com/focus/ → optional later Zen12 Premium independent guide *only for readers who explicitly request meditation audio*, not a default redirect. Actual published Grok media ID and permitted outbound caption/bio link **NULL** until TASK-008 reconciliation.
+2. **Puységur / mesmerism**: published https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/ → optional existing Focus → distinct **Hypnosis Live Total Focus** specific review only if reader asks about focused guided recordings and if merchant terms approve. Never conflate this SKU with Hypnotize Yourself. Actual Grok media ID **NULL**.
+3. **Attentional blink**: new source-linked investigation lives ONLY at a branch review file; no live article URL and **no social CTA to draft**. If a release were separately approved, optional Focus could follow. Conditional Zen12 guide only to an identifiable high-intent subset. Actual media ID **NULL**.
+
+Use existing Praxxis/Grok Drive TASK-008 https://docs.google.com/document/d/1_dqcJeqxbvYb1prGxy0nSWTsHu8p0PSRsDB_NPNbL48/edit and dated handoff https://docs.google.com/document/d/1uK7cZdMv44dkKwDDGILUTCrI2zw3iA0cN5VzdLmF5C8/edit for read-only reconciliation; never write content production requests over the team's existing assignments. Dispatch #174 owns newsletter copies and opted-in sending; this lane owns the presell only. The public archive /mind/ remains an **inherited unpublished draft**, not a live page or new top-level tile.
+
+## Event and attribution contract
+
+* URL inputs (only when platform supports): utm_source=actual_platform, utm_medium=organic_social, utm_campaign=mind_verified_pilot_2026_11, utm_content=actual_asset_id; absent ID means NULL, not a fabricated placeholder in production.
+* Events: campaign_landing (qualified visit candidate), article_to_resource_click, confirmed_signup **only after existing Jetpack confirmation evidence**, merchant_cta_click/affiliate_outbound, merchant_confirmed_order, commission_settled, refund_or_reversal. Each has one unique event meaning. No session, email, IP, exact person, click-token or merchant private data is proposed for third-party export.
+* Observability depends on existing WordPress/Jetpack/merchant tools; **do not add a new JavaScript tracker**. Conversion joins use only consent-permitted, pseudonymous or aggregate fields. A missing join is an **unknown**, not zero.
+* Weekly seven- and thirty-day cohort calculation: net realized revenue = independently settled commission or attributable owned-product paid revenue MINUS refunds/reversals/payment fees and documented incremental costs. Net revenue per 1,000 qualified humans = 1000 × net realized revenue ÷ independently filtered qualified-human sessions. If either term is unavailable, report NOT_COMPUTABLE. Report unique confirmed paid customers, paid order conversion, confirmed lead-to-customer rate where joinable; show sample size and uncertainty rather than significance claims.
+* Guardrails: do not run the controlled A/B before **all** acceptance gates open; variant assignment only with appropriate consent and independent performance/accessibility evidence. No deceptive scarcity or claims; no forced playback, popup/signup duplication, or offsite checkout redirect without agreement.
+
+## Reproducible engineering QA
+
+On a checked-out copy of branch R147, run: node mind/r147/test-r147.cjs. This checks exact SKU labeling, closed purchasing button, proximate disclosure, no injected scripts/forms, safe existing Focus CTA, source citations, appropriate evidentiary caveats and conservative measurement gates. It is a structural test **not** a substitute for Chromium 360/390/768/1440/1920, keyboard/screen-reader, WCAG 2.2 AA, actual no-JS rendering, Lighthouse/CWV, security header/network and licensed media review. Independent Site QA #126 must sign off on staged evidence; visual art #150 only comments on integration, and founder alone releases.
+
+## Release controls
+
+This branch is a STACK on R146 #1111 and changes only Mind-source files, including a precise R146 metadata correction requested by Praxxis: ordinary merchant citations exist while **earning URL and merchant purchase CTA do not**. Preserve PR #49, canonical /mind/ PR #172, Issue #150 and Dispatch #174. Do not publish, send, merge, turn on affiliates, install scripts, create subscribers, or pay for services. Release state is **HARD HOLD**.
+
+**Validation honesty:** source copies and tests were checked against committed GitHub files in V8-compatible CommonJS shim. They are not native Node process results, no hosted CI or actual browser proof, no authenticated merchant checkout/settlement, and no Grok attribution join.
