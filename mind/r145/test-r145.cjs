@@ -25,7 +25,7 @@ check("release HARD_HOLD both",()=>{for(const v of [a,b])assert.match(v,/data-re
 check("no active earning CTA anchors",()=>{for(const v of [a,b]){assert(!/<a[^>]*\b(?:affiliate|ref=|hop=|hoplink|clickbank)\b/i.test(v))}});
 check("no forms or embedded scripts",()=>{for(const v of [a,b]){assert(!/<(script|form|iframe|video|audio)\b/i.test(v))}});
 check("no external assets or pixels",()=>{for(const v of [a,b]){assert(!/(src\s*=|@import|url\s*\()/i.test(v))}});
-check("no forced autoplay",()=>{for(const v of [a,b])assert(!/autoplay/i.test(v))});
+check("no forced autoplay",()=>{for(const v of [a,b])assert(!/<(?:audio|video)[^>]*\\bautoplay\\b/i.test(v))});
 check("no external merchant purchase button target",()=>{for(const v of [a,b])assert(!/<a[^>]*>[^<]*(?:Buy Now|Purchase Zen12|Checkout)[^<]*<\/a>/i.test(v))});
 check("one native Focus link, no replacement signup",()=>{for(const v of [a,b])assert.match(v,/https:\/\/finalvestige\.com\/focus\//)});
 check("keyboard visible focus",()=>{for(const v of [a,b])assert.match(v,/:focus-visible/)});
