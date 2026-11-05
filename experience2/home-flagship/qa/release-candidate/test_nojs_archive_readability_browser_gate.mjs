@@ -19,7 +19,9 @@ function fixture(breakType=''){
       ('This independent archival case provides readable evidence and historic context. ').repeat(5);
     const source=breakType==='no-source'&&id==='franklin'
       ?'<a href="https://finalvestige.com/focus/">Only internal</a>'
-      :'<a href="https://www.nasa.gov/source-'+id+'">Primary source</a>';
+      :(breakType==='invisible-source'&&id==='franklin'
+        ?'<a style="display:none" href="https://www.nasa.gov/source-'+id+'">Hidden source</a>'
+        :'<a href="https://www.nasa.gov/source-'+id+'">Primary source</a>');
     const hidden=breakType==='hidden-panel'&&id==='franklin'?' hidden':'';
     return '<article data-fv-case="'+id+'" aria-labelledby="fv-hf-'+id+'-title"'+hidden+'>'+
       '<h3 id="'+title+'">Verified '+id+' record</h3><p>'+text+'</p>'+source+'</article>';
@@ -61,7 +63,7 @@ test('hidden, unsourced, unlabeled, unreadable, duplicated and visible chooser r
     const page=await browser.newPage({javaScriptEnabled:false});
     try{
       for(const mutation of [
-        'hidden-panel','no-source','broken-label','short',
+        'hidden-panel','no-source','invisible-source','broken-label','short',
         'duplicate','visible-chooser','css-invisible'
       ]){
         await page.setContent(fixture(mutation));
