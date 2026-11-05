@@ -1,0 +1,198 @@
+{
+  "schema": "fv-preparedness-r151-v1",
+  "decision": "DRAFT_HARD_HOLD",
+  "qualified_safety_review": false,
+  "qd_pass": false,
+  "candidate_commit": "2826612f9caf327dff3ef00b242e4e67a3491200",
+  "crosswalk_blob": "d62e493a67dedd23e04cfdf3cce762ef933c6bf9",
+  "source_head_commits": {
+    "start": "2122d856fce9f64887c16df3d52e64be9f59a55b",
+    "shelter": "5daeaf2dd5ab71806a6b73c91edfb1d8df5da976",
+    "food": "e9cd7766dac59d47ab467d8945269b9146c2aef5",
+    "health": "d2212d0ca0750817d3929865d3069835980faf20",
+    "hist-food": "2acf65ca3efa9b4b5db7976f379b9ea693be43a4",
+    "hist-home": "f654e600f89c321a480dd8f055be4d13d0673490",
+    "hist-field": "a5ce8a62f168db05c95232e3eb385dccd0d19e7f"
+  },
+  "branches": {
+    "start": "claude/prep-start-bbfeb8",
+    "shelter": "claude/prep-shelter-5e1e0e",
+    "food": "claude/prep-food-ccdc55",
+    "health": "claude/prep-health-837444",
+    "hist-food": "claude/prep-hist-food-b81f19",
+    "hist-home": "claude/prep-hist-home-0e0e38",
+    "hist-field": "claude/prep-hist-field-9db767"
+  },
+  "branch_heads": {
+    "start": "2122d856fce9f64887c16df3d52e64be9f59a55b",
+    "shelter": "5daeaf2dd5ab71806a6b73c91edfb1d8df5da976",
+    "food": "f911ff7a655de8d81535ea86ec3d65a49ee76648",
+    "health": "d5ef5bafd68361434dd1cc9209915b8e8a4eaf17",
+    "hist-food": "67e116e536c7410bed30f8f3b1bb8c166f3c223d",
+    "hist-home": "7504a5f099594d635e3dd7332a33a2e1346c43a2",
+    "hist-field": "4e5caf812727953aa45e3bda2d382f2c67b6a09c"
+  },
+  "articles": [
+    {
+      "slug": "pemmican-and-dried-meats",
+      "origin": "hist-food",
+      "resolution": "PINNED_SUBSTITUTION_PENDING",
+      "pinned": {
+        "commit": "2acf65ca3efa9b4b5db7976f379b9ea693be43a4",
+        "blob": "0b3319cc85ea2bc6d069b46d13a40e12ddbd5bc5",
+        "words": 2459,
+        "citations": 46
+      },
+      "upstream": {
+        "commit": "67e116e536c7410bed30f8f3b1bb8c166f3c223d",
+        "blob": "1febc8929f8b90c81a3fcef1e46a2811778b7e06",
+        "words": 2459,
+        "citations": 46
+      },
+      "candidate": {
+        "commit": "2826612f9caf327dff3ef00b242e4e67a3491200",
+        "blob": "0b3319cc85ea2bc6d069b46d13a40e12ddbd5bc5",
+        "words": 2459,
+        "citations": 46
+      }
+    },
+    {
+      "slug": "pioneer-travel-rations",
+      "origin": "hist-food",
+      "resolution": "PINNED_SUBSTITUTION_PENDING",
+      "pinned": {
+        "commit": "2acf65ca3efa9b4b5db7976f379b9ea693be43a4",
+        "blob": "058c90b763d8cd6dec0731a7b0a9cee4dd5a57c7",
+        "words": 2400,
+        "citations": 39
+      },
+      "upstream": {
+        "commit": "67e116e536c7410bed30f8f3b1bb8c166f3c223d",
+        "blob": "a658481d828dc4c5ba85f296adbfbee0514f0611",
+        "words": 2400,
+        "citations": 39
+      },
+      "candidate": {
+        "commit": "2826612f9caf327dff3ef00b242e4e67a3491200",
+        "blob": "058c90b763d8cd6dec0731a7b0a9cee4dd5a57c7",
+        "words": 2400,
+        "citations": 39
+      }
+    },
+    {
+      "slug": "pickling-fermentation-old-recipes",
+      "origin": "hist-home",
+      "resolution": "UPSTREAM_EXACT",
+      "pinned": {
+        "commit": "f654e600f89c321a480dd8f055be4d13d0673490",
+        "blob": "17f5da8a998e6b9b38695a2ef6716c6f336f31c4",
+        "words": 2408,
+        "citations": 42
+      },
+      "upstream": {
+        "commit": "7504a5f099594d635e3dd7332a33a2e1346c43a2",
+        "blob": "1869e37626b7463da45763d60202bd5ac0bd7700",
+        "words": 2773,
+        "citations": 49
+      },
+      "candidate": {
+        "commit": "2826612f9caf327dff3ef00b242e4e67a3491200",
+        "blob": "1869e37626b7463da45763d60202bd5ac0bd7700",
+        "words": 2773,
+        "citations": 49
+      }
+    },
+    {
+      "slug": "root-cellars-cool-storage",
+      "origin": "hist-home",
+      "resolution": "UPSTREAM_EOL_ONLY",
+      "pinned": {
+        "commit": "f654e600f89c321a480dd8f055be4d13d0673490",
+        "blob": "e28548b4e5014f36ffd12becb9261ae696480efa",
+        "words": 2456,
+        "citations": 37
+      },
+      "upstream": {
+        "commit": "7504a5f099594d635e3dd7332a33a2e1346c43a2",
+        "blob": "7f375c32d74f2828b4912f5692abc44483e4629a",
+        "words": 2825,
+        "citations": 42
+      },
+      "candidate": {
+        "commit": "2826612f9caf327dff3ef00b242e4e67a3491200",
+        "blob": "2ff8d029769aa9a97de6b1e388d937899f3af38c",
+        "words": 2825,
+        "citations": 42
+      }
+    },
+    {
+      "slug": "sanitation-before-germ-theory",
+      "origin": "hist-home",
+      "resolution": "UPSTREAM_EOL_ONLY",
+      "pinned": {
+        "commit": "f654e600f89c321a480dd8f055be4d13d0673490",
+        "blob": "15852c158708270d72d5f9723d90e5cb6083a766",
+        "words": 2683,
+        "citations": 47
+      },
+      "upstream": {
+        "commit": "7504a5f099594d635e3dd7332a33a2e1346c43a2",
+        "blob": "02090fc1b773fd79f08a7ba754b6125844c37eab",
+        "words": 2720,
+        "citations": 48
+      },
+      "candidate": {
+        "commit": "2826612f9caf327dff3ef00b242e4e67a3491200",
+        "blob": "d56df76647d2598f35cfd4609f91649cef063f12",
+        "words": 2720,
+        "citations": 48
+      }
+    },
+    {
+      "slug": "navigation-before-gps",
+      "origin": "hist-field",
+      "resolution": "UPSTREAM_EOL_ONLY",
+      "pinned": {
+        "commit": "a5ce8a62f168db05c95232e3eb385dccd0d19e7f",
+        "blob": "64c6b2c7004bc5549eea5a47d9095183e7436750",
+        "words": 2928,
+        "citations": 47
+      },
+      "upstream": {
+        "commit": "4e5caf812727953aa45e3bda2d382f2c67b6a09c",
+        "blob": "49beb68339a6b85b07d686c0cfb9fe1d88b8de4f",
+        "words": 2928,
+        "citations": 47
+      },
+      "candidate": {
+        "commit": "2826612f9caf327dff3ef00b242e4e67a3491200",
+        "blob": "3c02e58c30d1d608224944142f31fbead44a1252",
+        "words": 2928,
+        "citations": 47
+      }
+    },
+    {
+      "slug": "pioneer-supply-chains-failed",
+      "origin": "hist-field",
+      "resolution": "UPSTREAM_EOL_ONLY",
+      "pinned": {
+        "commit": "a5ce8a62f168db05c95232e3eb385dccd0d19e7f",
+        "blob": "1332df3540a903fdecdb3527fb22347d57968fb0",
+        "words": 2811,
+        "citations": 57
+      },
+      "upstream": {
+        "commit": "4e5caf812727953aa45e3bda2d382f2c67b6a09c",
+        "blob": "3643c50b43ca7ba6c1d9bc439e7c78730503b80f",
+        "words": 3180,
+        "citations": 63
+      },
+      "candidate": {
+        "commit": "2826612f9caf327dff3ef00b242e4e67a3491200",
+        "blob": "ad158ee898f76d05bcb65c845b1e4a0e8103c660",
+        "words": 3180,
+        "citations": 63
+      }
+    }
+  ]
+}
