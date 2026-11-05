@@ -1,0 +1,212 @@
+{
+  "branch_heads": {
+    "food": "f911ff7a655de8d81535ea86ec3d65a49ee76648",
+    "health": "d5ef5bafd68361434dd1cc9209915b8e8a4eaf17",
+    "histfield": "4e5caf812727953aa45e3bda2d382f2c67b6a09c",
+    "histfood": "67e116e536c7410bed30f8f3b1bb8c166f3c223d",
+    "histhome": "7504a5f099594d635e3dd7332a33a2e1346c43a2",
+    "shelter": "5daeaf2dd5ab71806a6b73c91edfb1d8df5da976",
+    "start": "2122d856fce9f64887c16df3d52e64be9f59a55b"
+  },
+  "drifts": [
+    {
+      "added_source_ids": [],
+      "baseline_blob": "e5910015fc6e33ad015bc5dc0605b86622b701be",
+      "baseline_citations": 73,
+      "baseline_words": 3638,
+      "cluster": "start",
+      "contributor_blob": "5135639786bbafa4e03939a74659cd0f31df3564",
+      "contributor_citations": 72,
+      "contributor_words": 3397,
+      "removed_source_ids": [],
+      "slug": "go-bags"
+    },
+    {
+      "added_source_ids": [],
+      "baseline_blob": "f81cd43516e8295104230412f18776919148f905",
+      "baseline_citations": 57,
+      "baseline_words": 3434,
+      "cluster": "start",
+      "contributor_blob": "8ca5c261dba56eeaf79c445332381a74867233de",
+      "contributor_citations": 57,
+      "contributor_words": 3193,
+      "removed_source_ids": [],
+      "slug": "household-emergency-plan"
+    },
+    {
+      "added_source_ids": [],
+      "baseline_blob": "68344cf6c4022285fffb2a01f42027bf6f9ee95d",
+      "baseline_citations": 64,
+      "baseline_words": 3400,
+      "cluster": "start",
+      "contributor_blob": "70d03c366e10db623929f118501becfa26c48bab",
+      "contributor_citations": 64,
+      "contributor_words": 3171,
+      "removed_source_ids": [],
+      "slug": "preparedness-real-households"
+    },
+    {
+      "added_source_ids": [],
+      "baseline_blob": "933f38ff3cd55a241cf9b392014fc52d4961e84f",
+      "baseline_citations": 79,
+      "baseline_words": 3790,
+      "cluster": "start",
+      "contributor_blob": "ef5463ca668166766ca3d868908bc0bcb6040a23",
+      "contributor_citations": 75,
+      "contributor_words": 3326,
+      "removed_source_ids": [
+        "start-fsis-emergency-food"
+      ],
+      "slug": "three-day-kit"
+    },
+    {
+      "added_source_ids": [],
+      "baseline_blob": "8ac8bd7dba3be15d477c15737e54d83364d72527",
+      "baseline_citations": 69,
+      "baseline_words": 3563,
+      "cluster": "shelter",
+      "contributor_blob": "16e2b1ec37fd6ea37f442d13e831180253c709b9",
+      "contributor_citations": 62,
+      "contributor_words": 3026,
+      "removed_source_ids": [
+        "shelter-cdc-chemical-sip",
+        "shelter-ready-tech",
+        "shelter-ca-cde-safety-plans",
+        "shelter-cdc-chemical-evac",
+        "shelter-ncmec-hotline",
+        "shelter-fema-reunification"
+      ],
+      "slug": "family-communication-plan"
+    },
+    {
+      "added_source_ids": [],
+      "baseline_blob": "0412484304a3bcf08f0bb1b170110f617e3c2869",
+      "baseline_citations": 73,
+      "baseline_words": 4256,
+      "cluster": "shelter",
+      "contributor_blob": "ba869874b5ee6ef85a7694e65a364e12f4aed873",
+      "contributor_citations": 70,
+      "contributor_words": 3746,
+      "removed_source_ids": [
+        "shelter-usfa-escape-grid",
+        "shelter-nfpa-high-rise",
+        "shelter-usfa-high-rise-handout"
+      ],
+      "slug": "home-fire-escape-plan"
+    },
+    {
+      "added_source_ids": [],
+      "baseline_blob": "2cd3e30b3a7e3dfdb3fd30cfd2b832355f58dfe2",
+      "baseline_citations": 121,
+      "baseline_words": 4463,
+      "cluster": "shelter",
+      "contributor_blob": "47d949d97ddb15abc5fdc3b556f37aea5036ce29",
+      "contributor_citations": 116,
+      "contributor_words": 4196,
+      "removed_source_ids": [
+        "shelter-cpsc-co-tips",
+        "shelter-nws-winter-during",
+        "fsis-power-failure"
+      ],
+      "slug": "outage-heat-cold-generators"
+    },
+    {
+      "added_source_ids": [],
+      "baseline_blob": "de3cb805041904cf22d4f216296bd4c8ddec17c1",
+      "baseline_citations": 59,
+      "baseline_words": 4193,
+      "cluster": "shelter",
+      "contributor_blob": "b8acf07e533eea43795aa242f39fd926b080130f",
+      "contributor_citations": 50,
+      "contributor_words": 3437,
+      "removed_source_ids": [
+        "shelter-cdc-chemical-sip",
+        "shelter-cdc-chemical-evac"
+      ],
+      "slug": "shelter-or-evacuate"
+    },
+    {
+      "added_source_ids": [
+        "nchfp-jerky"
+      ],
+      "baseline_blob": "0b3319cc85ea2bc6d069b46d13a40e12ddbd5bc5",
+      "baseline_citations": 46,
+      "baseline_words": 2413,
+      "cluster": "histfood",
+      "contributor_blob": "1febc8929f8b90c81a3fcef1e46a2811778b7e06",
+      "contributor_citations": 46,
+      "contributor_words": 2413,
+      "removed_source_ids": [
+        "hist-food-nchfp-jerky"
+      ],
+      "slug": "pemmican-and-dried-meats"
+    },
+    {
+      "added_source_ids": [
+        "nchfp-jerky"
+      ],
+      "baseline_blob": "058c90b763d8cd6dec0731a7b0a9cee4dd5a57c7",
+      "baseline_citations": 39,
+      "baseline_words": 2350,
+      "cluster": "histfood",
+      "contributor_blob": "a658481d828dc4c5ba85f296adbfbee0514f0611",
+      "contributor_citations": 39,
+      "contributor_words": 2350,
+      "removed_source_ids": [
+        "hist-food-nchfp-jerky"
+      ],
+      "slug": "pioneer-travel-rations"
+    },
+    {
+      "added_source_ids": [],
+      "baseline_blob": "2ff8d029769aa9a97de6b1e388d937899f3af38c",
+      "baseline_citations": 42,
+      "baseline_words": 2793,
+      "cluster": "histhome",
+      "contributor_blob": "7f375c32d74f2828b4912f5692abc44483e4629a",
+      "contributor_citations": 42,
+      "contributor_words": 2793,
+      "removed_source_ids": [],
+      "slug": "root-cellars-cool-storage"
+    },
+    {
+      "added_source_ids": [],
+      "baseline_blob": "d56df76647d2598f35cfd4609f91649cef063f12",
+      "baseline_citations": 48,
+      "baseline_words": 2673,
+      "cluster": "histhome",
+      "contributor_blob": "02090fc1b773fd79f08a7ba754b6125844c37eab",
+      "contributor_citations": 48,
+      "contributor_words": 2673,
+      "removed_source_ids": [],
+      "slug": "sanitation-before-germ-theory"
+    },
+    {
+      "added_source_ids": [],
+      "baseline_blob": "3c02e58c30d1d608224944142f31fbead44a1252",
+      "baseline_citations": 47,
+      "baseline_words": 2889,
+      "cluster": "histfield",
+      "contributor_blob": "49beb68339a6b85b07d686c0cfb9fe1d88b8de4f",
+      "contributor_citations": 47,
+      "contributor_words": 2889,
+      "removed_source_ids": [],
+      "slug": "navigation-before-gps"
+    },
+    {
+      "added_source_ids": [],
+      "baseline_blob": "ad158ee898f76d05bcb65c845b1e4a0e8103c660",
+      "baseline_citations": 63,
+      "baseline_words": 3136,
+      "cluster": "histfield",
+      "contributor_blob": "3643c50b43ca7ba6c1d9bc439e7c78730503b80f",
+      "contributor_citations": 63,
+      "contributor_words": 3136,
+      "removed_source_ids": [],
+      "slug": "pioneer-supply-chains-failed"
+    }
+  ],
+  "rc_sha": "ddb3528ba6494dada1fa1c3a142ce746e3a67706",
+  "schema": "R140-INTAKE-1",
+  "source_note": "All 32 shared-source groups require human adjudication; observations are blob/citation/approximate-depth evidence, never safety, medical, or QD clearance."
+}
