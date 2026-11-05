@@ -1,0 +1,83 @@
+{
+  "schema": "fv-teton-291-duplicate-scene-gate-v1",
+  "observed_date": "2026-11-05",
+  "method": "Read-only WordPress posts.get(context=edit) plus independent image renderer of exact published URL and archival catalog text. No guest Chrome or origin HTTP measurement.",
+  "post": {
+    "id": 291,
+    "status": "publish",
+    "modified": "2026-11-02T21:36:09",
+    "url": "https://finalvestige.com/2026/08/19/one-bulldozer-never-came-back-teton-dam/"
+  },
+  "pinned_inventory": {
+    "file": "qa/media-recovery/parts/02.json",
+    "git_blob": "48e1ebf07207e948ba5802e714eb39659d2e1c1d",
+    "post_count_baseline": 61,
+    "image_count_baseline": 355
+  },
+  "source_reused": "https://cloudfront-us-east-1.images.arcpublishing.com/deseretnews/PLWPL72QKJB7BBFJWTXJWVK6QQ.JPG",
+  "renderer": {
+    "exact_url_rendered": true,
+    "rendered_subject": "Black-and-white view of street cleanup: people washing pavement amid mud/debris with shops, parked vehicles and upright buildings; no dam structure or breach shown.",
+    "wrapper_status": null,
+    "origin_http_status": null,
+    "guest_browser_http_status": null,
+    "image_dimensions_px": null,
+    "bytes_transferred": null
+  },
+  "rows": [
+    {
+      "key": "291:2",
+      "source_url": "https://cloudfront-us-east-1.images.arcpublishing.com/deseretnews/PLWPL72QKJB7BBFJWTXJWVK6QQ.JPG",
+      "alt": "Growing breach in Teton Dam during the final hour before collapse.",
+      "caption": "The failure progressed rapidly enough to be photographed frame by frame.",
+      "claim_subject": "dam_breach_progression",
+      "retrieved_visual_matches_claim": false,
+      "visitor_visual_status": "UNVERIFIED",
+      "action": "REVIEW_REPLACEMENT_FOR_INCORRECT_HISTORICAL_SCENE"
+    },
+    {
+      "key": "291:5",
+      "source_url": "https://cloudfront-us-east-1.images.arcpublishing.com/deseretnews/PLWPL72QKJB7BBFJWTXJWVK6QQ.JPG",
+      "alt": "Aftermath of the Teton Dam failure and downstream cleanup in Idaho.",
+      "caption": "Cleanup and reconstruction continued long after the floodwaters withdrew.",
+      "claim_subject": "downstream_cleanup",
+      "retrieved_visual_matches_claim": true,
+      "visitor_visual_status": "UNVERIFIED",
+      "action": "RETAIN_FOR_SCENE_PENDING_ORIGIN_RIGHTS_AND_BROWSER_QA"
+    }
+  ],
+  "candidate_for_291_2": {
+    "catalog": "https://text-message.blogs.archives.gov/2016/05/31/the-unforgettable-calamity-40th-anniversary-of-the-teton-dam-failure/",
+    "naid": 28894685,
+    "catalog_description": "Hole in dam embankment grows larger and reaches dam crest",
+    "historical_date": "1976-06-05",
+    "creator_context": "Jerry Dursteller sequence, Records of Bureau of Reclamation, National Archives at Denver",
+    "rendition_catalog": "https://commons.wikimedia.org/wiki/File:Teton_Dam_Embankment_Leak_-_DPLA_-_7d121ff5023893a03827fcb49b0d4bd4.jpg",
+    "master_width_px": 2798,
+    "master_height_px": 1966,
+    "conditional_width_px": 960,
+    "conditional_height_px": 675,
+    "no_upscale": true,
+    "rights_summary": "National Archives at Denver / DPLA RightsStatements.org: No Copyright - United States; other jurisdictions and noncopyright permissions not certified",
+    "same_original_binary": false,
+    "candidate_is_different_photo": true,
+    "scene_subject_match": "CATALOG_MATCH_TO_BREACH_NOT_PIXEL_COMPARED",
+    "rights_rehosting_authorized": false,
+    "binary_fetched": false
+  },
+  "decision": {
+    "browser_broken_images_confirmed": null,
+    "source_visual_integrity_issue": "VISUALLY_RETRIEVED_IMAGE_CONTRADICTS_291_2_ALT",
+    "source_replacement_for_291_2": "EDITORIAL_CANDIDATE_ONLY",
+    "target_max_width_px": 960,
+    "frozen_original_291_2_preserved": true,
+    "wordpress_media_upload_authorized": false,
+    "wordpress_edit_authorized": false,
+    "cache_authorized": false,
+    "publish_authorized": false,
+    "sitewide_claim_42_broken_verified": false,
+    "sitewide_claim_76_percent_weight_reduction_verified": false,
+    "image_transfer_reduction_measured": null,
+    "production_repairs": 0
+  }
+}
