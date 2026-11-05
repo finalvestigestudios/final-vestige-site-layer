@@ -11,8 +11,16 @@ from __future__ import annotations
 import csv
 import os
 import tempfile
+from itertools import islice
 from pathlib import Path
 from typing import Callable, Iterable, Mapping
+
+
+# Application imports already cap source rows at 200,000. The publication API
+# must independently bound direct API generators and custom Mapping.items(),
+# otherwise an infinite iterator can exhaust memory or fill the output disk.
+MAX_REPORT_COLUMNS = 256
+MAX_REPORT_ROWS = 200_000
 
 
 def _render_cell(value: object, cell: Callable[[object], str]) -> str:
@@ -54,7 +62,8 @@ def write_csv_report(destination: str | Path, fields: Iterable[str],
     All rendered cells must be plain text without NUL or bare formula prefixes;
     malformed sanitizer output fails closed before publication.
     Missing row keys, forged labels and duplicate row items fail closed;
-    explicit empty values remain permitted.
+    explicit empty values remain permitted. Very wide or unbounded iterables
+    fail closed before untrusted data can exhaust RAM or fill the disk.
     Nothing ever overwrites an existing destination or follows its symlink.
     On a filesystem lacking the required safe publication operation, fail
     rather than silently fall back to an overwriting move.
@@ -69,11 +78,13 @@ def write_csv_report(destination: str | Path, fields: Iterable[str],
     # heading or customer identifier. Never chain its private exception.
     fields_failed = False
     try:
-        names = tuple(fields)
+        names = tuple(islice(fields, MAX_REPORT_COLUMNS + 1))
     except Exception:
         fields_failed = True
     if fields_failed:
         raise ValueError("CSV report columns could not be read")
+    if len(names) > MAX_REPORT_COLUMNS:
+        raise ValueError("CSV report column limit exceeded")
     if (not names or any(type(name) is not str or not name for name in names)
             or len(set(names)) != len(names)):
         raise ValueError("Invalid or duplicate CSV report columns")
@@ -98,6 +109,7 @@ def write_csv_report(destination: str | Path, fields: Iterable[str],
                 iterator_failed = True
             if iterator_failed:
                 raise ValueError("CSV report rows could not be read")
+            count = 0
             while True:
                 next_failed = False
                 try:
@@ -108,6 +120,9 @@ def write_csv_report(destination: str | Path, fields: Iterable[str],
                     next_failed = True
                 if next_failed:
                     raise ValueError("CSV report rows could not be read")
+                count += 1
+                if count > MAX_REPORT_ROWS:
+                    raise ValueError("CSV report row limit exceeded")
                 # DictWriter would silently substitute an empty cell for
                 # absent keys, disguising missing financial/source evidence.
                 # Sanitize *all* supplied values, including ignored extras,
@@ -120,11 +135,13 @@ def write_csv_report(destination: str | Path, fields: Iterable[str],
                     raise ValueError("Invalid CSV report row mapping")
                 items_failed = False
                 try:
-                    entries = tuple(row.items())
+                    entries = tuple(islice(row.items(), MAX_REPORT_COLUMNS + 1))
                 except Exception:
                     items_failed = True
                 if items_failed:
                     raise ValueError("CSV report row columns could not be read")
+                if len(entries) > MAX_REPORT_COLUMNS:
+                    raise ValueError("CSV report row column limit exceeded")
                 if (any(type(name) is not str for name, _ in entries)
                         or len({name for name, _ in entries}) != len(entries)):
                     raise ValueError("Invalid or duplicate CSV report row columns")
