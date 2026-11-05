@@ -1,0 +1,133 @@
+{
+  "id": "fv-dispatch-historical-mysteries-offer-paths-2026-11",
+  "state": "EIGHT_DRAFTS_UNSENT_UNSCHEDULED",
+  "brand": "Final Vestige Studios",
+  "site": "https://finalvestige.com",
+  "broadcast_channel": "Jetpack WordPress.com Newsletter — new WordPress posts only",
+  "relative_to_signup": "NOT a per-subscriber automation; the separate Fieldbook welcome is triggered by subscription",
+  "campaign_design": "Weeks 1–5 value-first history and objects; week 6 Mini Museum collector guide; week 7 free evidence exercise; week 8 Cold Case Inc paid-case guide",
+  "wordPressSettingsVerified": {
+    "newsletter_enabled": true,
+    "email_new_posts_by_default": false,
+    "email_content_format": "full",
+    "from_name": "Final Vestige Studios",
+    "reply_to": "no-reply"
+  },
+  "public_pages": {
+    "collection": {
+      "id": 78,
+      "url": "https://finalvestige.com/collection/"
+    },
+    "mini_museum": {
+      "id": 2088,
+      "url": "https://finalvestige.com/mini-museum-history-collectibles/"
+    },
+    "cold_case": {
+      "id": 2089,
+      "url": "https://finalvestige.com/cold-case-mystery-games/"
+    }
+  },
+  "approved_to_send": false,
+  "affiliate_program_status": "UNKNOWN_FROM_CONNECTED_TOOLS; founder supplied advertiser banner creatives; actual joined/active and email channel eligibility must be verified",
+  "merchant_click_links": "Only on disclosed first-party sales pages, not in the eight newsletter emails",
+  "regulatory_qa": "Real rendered email unsubscribe/legal footer, valid postal identity for commercial messages, and partner email permission must be checked before broadcast",
+  "proposed_cadence": "One issue per week, subject to founder sign-off; none scheduled",
+  "issues": [
+    {
+      "n": 1,
+      "wordpress_post_id": 2076,
+      "title": "The crystal skull that wasn't ancient",
+      "slug": "dispatch-2026-01-crystal-skull",
+      "excerpt": "The object looked ancient. Its documented history told a different story. The first clue in our new series.",
+      "primary_cta": "https://finalvestige.com/2026/11/02/crystal-skulls/",
+      "source_path": "dispatch/launch-historical-mysteries/issues/01-dispatch-2026-01-crystal-skull.block.html",
+      "last_modified": "2026-11-04T23:16:49",
+      "stage": "WordPress draft — UNSENT",
+      "commercial": false
+    },
+    {
+      "n": 2,
+      "wordpress_post_id": 2077,
+      "title": "The map that invited a thousand stories",
+      "slug": "dispatch-2026-02-piri-reis",
+      "excerpt": "A surviving 1513 chart inspired extraordinary claims. Here's how to read the evidence without adding a lost world.",
+      "primary_cta": "https://finalvestige.com/2026/11/02/piri-reis-map/",
+      "source_path": "dispatch/launch-historical-mysteries/issues/02-dispatch-2026-02-piri-reis.block.html",
+      "last_modified": "2026-11-04T23:16:56",
+      "stage": "WordPress draft — UNSENT",
+      "commercial": false
+    },
+    {
+      "n": 3,
+      "wordpress_post_id": 2078,
+      "title": "The Roman cup that changed its color",
+      "slug": "dispatch-2026-03-lycurgus",
+      "excerpt": "One ancient object offers a real visual surprise, and a reminder that mystery and scientific explanation belong together.",
+      "primary_cta": "https://finalvestige.com/2026/11/02/lycurgus-cup/",
+      "source_path": "dispatch/launch-historical-mysteries/issues/03-dispatch-2026-03-lycurgus.block.html",
+      "last_modified": "2026-11-05T09:56:58",
+      "stage": "WordPress draft — UNSENT",
+      "commercial": false
+    },
+    {
+      "n": 4,
+      "wordpress_post_id": 2079,
+      "title": "An accident with no conclusively identified first spark",
+      "slug": "dispatch-2026-04-apollo1",
+      "excerpt": "Six records, roughly fifteen seconds and an important boundary between what investigators knew and what they couldn't prove.",
+      "primary_cta": "https://finalvestige.com/apollo-1-evidence-atlas/",
+      "source_path": "dispatch/launch-historical-mysteries/issues/04-dispatch-2026-04-apollo1.block.html",
+      "last_modified": "2026-11-05T09:57:06",
+      "stage": "WordPress draft — UNSENT",
+      "commercial": false
+    },
+    {
+      "n": 5,
+      "wordpress_post_id": 2080,
+      "title": "Tarot was a game before it became a prophecy",
+      "slug": "dispatch-2026-05-tarot-history",
+      "excerpt": "The surviving fifteenth-century cards and the much later mystical interpretations belong to different chapters of the story.",
+      "primary_cta": "https://finalvestige.com/free-resources/",
+      "source_path": "dispatch/launch-historical-mysteries/issues/05-dispatch-2026-05-tarot-history.block.html",
+      "last_modified": "2026-11-05T09:57:13",
+      "stage": "WordPress draft — UNSENT",
+      "commercial": false
+    },
+    {
+      "n": 6,
+      "wordpress_post_id": 2081,
+      "title": "What if you could hold a piece of the past?",
+      "slug": "dispatch-2026-06-hold-history",
+      "excerpt": "A fossil. A meteorite. A fragment of history. What should you know before inviting one into your own collection?",
+      "primary_cta": "https://finalvestige.com/mini-museum-history-collectibles/?utm_source=dispatch&utm_medium=email&utm_campaign=objects-and-evidence&utm_content=issue06",
+      "source_path": "dispatch/launch-historical-mysteries/issues/06-dispatch-2026-06-hold-history.block.html",
+      "last_modified": "2026-11-05T09:58:11",
+      "stage": "WordPress draft — UNSENT",
+      "commercial": true
+    },
+    {
+      "n": 7,
+      "wordpress_post_id": 2099,
+      "title": "One clue can change the entire case",
+      "slug": "dispatch-2026-07-one-clue",
+      "excerpt": "A four-step challenge for reading a case file without letting the most persuasive story win too early.",
+      "primary_cta": "https://finalvestige.com/apollo-1-evidence-atlas/?utm_source=dispatch&utm_medium=email&utm_campaign=objects-and-evidence&utm_content=issue07",
+      "source_path": "dispatch/launch-historical-mysteries/issues/07-dispatch-2026-07-one-clue.block.html",
+      "last_modified": "2026-11-05T09:58:48",
+      "stage": "WordPress draft — UNSENT",
+      "commercial": false
+    },
+    {
+      "n": 8,
+      "wordpress_post_id": 2100,
+      "title": "This time, the case is yours",
+      "slug": "dispatch-2026-08-case-is-yours",
+      "excerpt": "A fictional police file, conflicting accounts and a free short mystery before you decide whether to buy a longer case.",
+      "primary_cta": "https://finalvestige.com/cold-case-mystery-games/?utm_source=dispatch&utm_medium=email&utm_campaign=objects-and-evidence&utm_content=issue08",
+      "source_path": "dispatch/launch-historical-mysteries/issues/08-dispatch-2026-08-case-is-yours.block.html",
+      "last_modified": "2026-11-05T09:58:52",
+      "stage": "WordPress draft — UNSENT",
+      "commercial": true
+    }
+  ]
+}
