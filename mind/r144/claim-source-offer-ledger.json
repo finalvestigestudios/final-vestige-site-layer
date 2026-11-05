@@ -1,0 +1,643 @@
+{
+  "schema": "fv.mind.r144.claims-and-conversion.v1",
+  "date": "2026-11-05",
+  "branch": "mind-r144-brainwave-claims-buyer-proof-20261105",
+  "release_state": "UNPUBLISHED_DRAFT_HARD_HOLD",
+  "sources": {
+    "EEG2023": {
+      "url": "https://doi.org/10.1371/journal.pone.0286023",
+      "kind": "peer_reviewed_systematic_review",
+      "observed": "2026-11-05"
+    },
+    "META2019": {
+      "url": "https://doi.org/10.1007/s00426-018-1066-8",
+      "kind": "peer_reviewed_meta_analysis",
+      "observed": "2026-11-05"
+    },
+    "META2023": {
+      "url": "https://doi.org/10.1007/s00426-022-01706-7",
+      "kind": "peer_reviewed_meta_analysis",
+      "observed": "2026-11-05"
+    },
+    "NULL2023": {
+      "url": "https://doi.org/10.1007/s12144-023-04681-3",
+      "kind": "peer_reviewed_controlled_experiment",
+      "observed": "2026-11-05"
+    },
+    "AUTONOMIC2024": {
+      "url": "https://doi.org/10.1016/j.ijpsycho.2024.112328",
+      "kind": "peer_reviewed_systematic_review",
+      "observed": "2026-11-05"
+    },
+    "STRESS2024": {
+      "url": "https://doi.org/10.1080/18387357.2024.2374759",
+      "kind": "peer_reviewed_systematic_review",
+      "observed": "2026-11-05"
+    },
+    "NCCIH": {
+      "url": "https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety",
+      "kind": "government_scientific_guidance",
+      "observed": "2026-11-05"
+    },
+    "FTCENDORSE": {
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "kind": "federal_regulator",
+      "observed": "2026-11-05"
+    },
+    "FTCHEALTH": {
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "kind": "federal_regulator",
+      "observed": "2026-11-05"
+    },
+    "INSPIRE": {
+      "url": "https://inspire3.com/",
+      "kind": "merchant_parent_catalog",
+      "observed": "2026-11-05"
+    },
+    "ZEN12": {
+      "url": "https://zen12.com/hnp",
+      "kind": "merchant_exact_premium_page",
+      "observed": "2026-11-05"
+    },
+    "TOTAL": {
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "kind": "merchant_different_sku",
+      "observed": "2026-11-05"
+    },
+    "AFF": {
+      "url": "https://affiliates.inspire3.com/",
+      "kind": "public_affiliate_enrollment_only",
+      "observed": "2026-11-05"
+    },
+    "PRIVACY": {
+      "url": "https://inspire3.com/privacy/",
+      "kind": "merchant_policy",
+      "observed": "2026-11-05"
+    },
+    "FOCUS": {
+      "url": "https://finalvestige.com/focus/",
+      "kind": "authenticated_live_wordpress_page",
+      "observed": "2026-11-05"
+    },
+    "PUY": {
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "kind": "authenticated_live_wordpress_page",
+      "observed": "2026-11-05"
+    },
+    "CHANGE": {
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "kind": "authenticated_live_wordpress_post",
+      "observed": "2026-11-05"
+    },
+    "DISC": {
+      "url": "https://finalvestige.com/affiliate-disclosure/",
+      "kind": "published_brand_policy",
+      "observed": "2026-11-05"
+    },
+    "STANDARD": {
+      "url": "https://finalvestige.com/editorial-standards/",
+      "kind": "published_brand_policy",
+      "observed": "2026-11-05"
+    }
+  },
+  "claim_decisions": [
+    {
+      "id": "BB1",
+      "claim": "Separate-ear tones can cause perceived beat at difference frequency",
+      "decision": "SUPPORTED_PHENOMENON",
+      "source_ids": [
+        "EEG2023"
+      ],
+      "reason": "Perceptual event; not product outcome"
+    },
+    {
+      "id": "BB2",
+      "claim": "Every audio pulse is a binaural beat",
+      "decision": "REJECT_DEFINITION_ERROR",
+      "source_ids": [
+        "EEG2023"
+      ],
+      "reason": "Acoustic modulation and binaural presentation differ"
+    },
+    {
+      "id": "BB3",
+      "claim": "Binaural perception alone verifies meaningful EEG entrainment",
+      "decision": "REJECT_UNPROVEN_INFERENCE",
+      "source_ids": [
+        "EEG2023"
+      ],
+      "reason": "EEG outcomes inconsistent"
+    },
+    {
+      "id": "BB4",
+      "claim": "The 2023 EEG review examined fourteen studies",
+      "decision": "SUPPORTED",
+      "source_ids": [
+        "EEG2023"
+      ],
+      "reason": "Five supportive eight contrary one mixed"
+    },
+    {
+      "id": "BB5",
+      "claim": "All fourteen EEG studies showed entrainment",
+      "decision": "FALSE",
+      "source_ids": [
+        "EEG2023"
+      ],
+      "reason": "Contradicted by source"
+    },
+    {
+      "id": "BB6",
+      "claim": "2019 meta-analysis twenty-two studies reported g=0.45",
+      "decision": "SUPPORTED_POOLED_OUTCOMES",
+      "source_ids": [
+        "META2019"
+      ],
+      "reason": "Different outcomes and methods"
+    },
+    {
+      "id": "BB7",
+      "claim": "An individual will experience g=0.45 improvement",
+      "decision": "REJECT_GROUP_TO_INDIVIDUAL",
+      "source_ids": [
+        "META2019"
+      ],
+      "reason": "Effect size does not predict one buyer"
+    },
+    {
+      "id": "BB8",
+      "claim": "Basu and Banerjee reported pooled g=0.40 with mixed tasks",
+      "decision": "SUPPORTED_MIXED",
+      "source_ids": [
+        "META2023"
+      ],
+      "reason": "Fifteen studies and outcome differences"
+    },
+    {
+      "id": "BB9",
+      "claim": "A 58-adult 2023 gamma experiment found no significant attention advantage",
+      "decision": "SUPPORTED_NARROW_NULL",
+      "source_ids": [
+        "NULL2023"
+      ],
+      "reason": "Specific frequency/sample/outcomes, not universal absence"
+    },
+    {
+      "id": "BB10",
+      "claim": "A null experiment proves all binaural protocols ineffective",
+      "decision": "REJECT_UNIVERSAL",
+      "source_ids": [
+        "NULL2023",
+        "META2019"
+      ],
+      "reason": "Cannot extrapolate across protocols"
+    },
+    {
+      "id": "BB11",
+      "claim": "2024 autonomic-arousal review gave firm evidence of universal benefit",
+      "decision": "REJECT",
+      "source_ids": [
+        "AUTONOMIC2024"
+      ],
+      "reason": "Evidence mixed or insufficient"
+    },
+    {
+      "id": "BB12",
+      "claim": "Stress review showed 8 of 12 trials with at least one favorable outcome",
+      "decision": "SUPPORTED_WITH_CAVEATS",
+      "source_ids": [
+        "STRESS2024"
+      ],
+      "reason": "Also 4 no group effects and quality limits"
+    },
+    {
+      "id": "BB13",
+      "claim": "Binaural listening is a medically established treatment for stress",
+      "decision": "REJECT_UNSUBSTANTIATED",
+      "source_ids": [
+        "STRESS2024",
+        "FTCHEALTH"
+      ],
+      "reason": "No named-product clinical support"
+    },
+    {
+      "id": "BB14",
+      "claim": "Meditation science validates all brainwave recordings",
+      "decision": "REJECT_CATEGORY_ERROR",
+      "source_ids": [
+        "NCCIH",
+        "FTCHEALTH"
+      ],
+      "reason": "Different interventions and outcomes"
+    },
+    {
+      "id": "Z1",
+      "claim": "Seller describes Premium as 12 levels four formats and 48 MP3s",
+      "decision": "SELLER_DESCRIPTION_ONLY",
+      "source_ids": [
+        "ZEN12"
+      ],
+      "reason": "Not delivered/tested by FV"
+    },
+    {
+      "id": "Z2",
+      "claim": "Zen12 has clinically proven one hour equivalence in 12 minutes",
+      "decision": "REJECT_NO_PRODUCT_SPECIFIC_PROOF",
+      "source_ids": [
+        "ZEN12",
+        "EEG2023",
+        "FTCHEALTH"
+      ],
+      "reason": "Seller wording not independently verified"
+    },
+    {
+      "id": "Z3",
+      "claim": "Zen12 guarantees stress relief cognitive and creativity outcomes",
+      "decision": "REJECT_NO_PRODUCT_SPECIFIC_PROOF",
+      "source_ids": [
+        "ZEN12",
+        "FTCHEALTH"
+      ],
+      "reason": "No independent controlled product test"
+    },
+    {
+      "id": "Z4",
+      "claim": "Zen12's advertised prices prove final buyer checkout total",
+      "decision": "UNVERIFIED",
+      "source_ids": [
+        "ZEN12"
+      ],
+      "reason": "Conditional price presentation and currency unknown"
+    },
+    {
+      "id": "Z5",
+      "claim": "Seller refund promise proves refunds processed",
+      "decision": "UNVERIFIED",
+      "source_ids": [
+        "ZEN12"
+      ],
+      "reason": "No independently verified refund transaction"
+    },
+    {
+      "id": "Z6",
+      "claim": "Merchant free audio signup duplicates FV Jetpack membership",
+      "decision": "FALSE_SEPARATE_CONSENT",
+      "source_ids": [
+        "ZEN12",
+        "FOCUS",
+        "PRIVACY"
+      ],
+      "reason": "Keep consent paths distinct"
+    },
+    {
+      "id": "A1",
+      "claim": "Inspire3 parent owns Zen12 Hypnosis Live Brainwave Shots",
+      "decision": "SELLER_CATALOG",
+      "source_ids": [
+        "INSPIRE"
+      ],
+      "reason": "Distinct products"
+    },
+    {
+      "id": "A2",
+      "claim": "Total Focus is the same SKU as Zen12 or Hypnotize Yourself",
+      "decision": "FALSE",
+      "source_ids": [
+        "INSPIRE",
+        "TOTAL"
+      ],
+      "reason": "Do not confuse merchants and SKUs"
+    },
+    {
+      "id": "A3",
+      "claim": "Public affiliate portal proves named Final Vestige acceptance",
+      "decision": "FALSE",
+      "source_ids": [
+        "AFF"
+      ],
+      "reason": "No account-specific authorization"
+    },
+    {
+      "id": "A4",
+      "claim": "Public commission advertisement proves payout terms for FV",
+      "decision": "FALSE",
+      "source_ids": [
+        "AFF"
+      ],
+      "reason": "No approval or settlement evidence"
+    },
+    {
+      "id": "A5",
+      "claim": "An affiliate relationship should be disclosed beside specific link",
+      "decision": "FTC_EXPECTED",
+      "source_ids": [
+        "FTCENDORSE"
+      ],
+      "reason": "Clear conspicuous material connection disclosure"
+    },
+    {
+      "id": "A6",
+      "claim": "Seller testimonials prove typical product effect",
+      "decision": "REJECT_UNSUBSTANTIATED",
+      "source_ids": [
+        "FTCHEALTH",
+        "FTCENDORSE"
+      ],
+      "reason": "No invented experience or typical outcome"
+    },
+    {
+      "id": "M1",
+      "claim": "An outbound click is a confirmed affiliate sale",
+      "decision": "FALSE",
+      "source_ids": [
+        "AFF"
+      ],
+      "reason": "Need merchant order evidence"
+    },
+    {
+      "id": "M2",
+      "claim": "Merchant order is equal to settled commission",
+      "decision": "FALSE",
+      "source_ids": [
+        "AFF"
+      ],
+      "reason": "Reversal fees settlement separate"
+    },
+    {
+      "id": "M3",
+      "claim": "User's qualified-human denominator is known from pageviews",
+      "decision": "FALSE",
+      "source_ids": [
+        "CHANGE"
+      ],
+      "reason": "Needs validated campaign and human qualification"
+    },
+    {
+      "id": "M4",
+      "claim": "Owner has authenticated a paid rights-cleared Payhip Mind SKU",
+      "decision": "UNKNOWN",
+      "source_ids": [
+        "FOCUS"
+      ],
+      "reason": "WordPress content search does not authenticate Payhip inventory"
+    },
+    {
+      "id": "M5",
+      "claim": "FV Focus remains a published distinct opt-in pathway",
+      "decision": "VERIFIED_LIVE",
+      "source_ids": [
+        "FOCUS"
+      ],
+      "reason": "Read-only WordPress page ID 1579 status publish"
+    },
+    {
+      "id": "M6",
+      "claim": "Puységur research remains published historical bridge",
+      "decision": "VERIFIED_LIVE",
+      "source_ids": [
+        "PUY"
+      ],
+      "reason": "Read-only WordPress page ID 1377 status publish"
+    },
+    {
+      "id": "M7",
+      "claim": "New R144 audio evidence investigation is live",
+      "decision": "FALSE_DRAFT_ONLY",
+      "source_ids": [
+        "STANDARD"
+      ],
+      "reason": "No new WP article published"
+    },
+    {
+      "id": "M8",
+      "claim": "A 40 second video in R139 is playable",
+      "decision": "FALSE_STORYBOARD_ONLY",
+      "source_ids": [
+        "STANDARD"
+      ],
+      "reason": "Only a storyboard and transcript; do not claim media asset"
+    },
+    {
+      "id": "M9",
+      "claim": "Merchant purchaser data sharing acceptable without term review",
+      "decision": "UNVERIFIED",
+      "source_ids": [
+        "PRIVACY"
+      ],
+      "reason": "Need aggregate privacy-safe reporting permission"
+    }
+  ],
+  "release_gates": [
+    {
+      "id": "named_FV_account_affiliate_approval",
+      "passed": false,
+      "proof_url": null
+    },
+    {
+      "id": "exact_authorized_Zen12_Premium_link",
+      "passed": false,
+      "proof_url": null
+    },
+    {
+      "id": "allowed_website_SEO_social_email_channels",
+      "passed": false,
+      "proof_url": null
+    },
+    {
+      "id": "approved_creative_rights",
+      "passed": false,
+      "proof_url": null
+    },
+    {
+      "id": "seller_exact_SKU_match",
+      "passed": false,
+      "proof_url": null
+    },
+    {
+      "id": "checkout_total_currency_taxes_upsells",
+      "passed": false,
+      "proof_url": null
+    },
+    {
+      "id": "current_refund_terms_and_exercise_test",
+      "passed": false,
+      "proof_url": null
+    },
+    {
+      "id": "seller_lead_capture_consent_review",
+      "passed": false,
+      "proof_url": null
+    },
+    {
+      "id": "aggregate_partner_reporting_terms",
+      "passed": false,
+      "proof_url": null
+    },
+    {
+      "id": "commission_attribution_window",
+      "passed": false,
+      "proof_url": null
+    },
+    {
+      "id": "commission_reversal_and_settlement_proof",
+      "passed": false,
+      "proof_url": null
+    },
+    {
+      "id": "product_specific_efficacy_proof_or_claims_omitted",
+      "passed": false,
+      "proof_url": null
+    },
+    {
+      "id": "free_focus_Jetpack_unchanged",
+      "passed": false,
+      "proof_url": null
+    },
+    {
+      "id": "actual_Grok_media_asset_id",
+      "passed": false,
+      "proof_url": null
+    },
+    {
+      "id": "first_party_qualified_human_sessions",
+      "passed": false,
+      "proof_url": null
+    },
+    {
+      "id": "verified_confirmed_native_leads",
+      "passed": false,
+      "proof_url": null
+    },
+    {
+      "id": "merchant_confirmed_paid_orders",
+      "passed": false,
+      "proof_url": null
+    },
+    {
+      "id": "separately_reconciled_fees_and_reversals",
+      "passed": false,
+      "proof_url": null
+    },
+    {
+      "id": "source_control_CI_pass",
+      "passed": false,
+      "proof_url": null
+    },
+    {
+      "id": "no_duplicate_analytics",
+      "passed": false,
+      "proof_url": null
+    },
+    {
+      "id": "mobile_browser_WCAG_review",
+      "passed": false,
+      "proof_url": null
+    },
+    {
+      "id": "real_selfhosted_accessible_video_B",
+      "passed": false,
+      "proof_url": null
+    },
+    {
+      "id": "founder_release_approval",
+      "passed": false,
+      "proof_url": null
+    },
+    {
+      "id": "approved_commercial_CMS_publish",
+      "passed": false,
+      "proof_url": null
+    }
+  ],
+  "exact_offer": {
+    "seller": "Inspire3 / Zen12",
+    "sku": "Zen12 Premium",
+    "official_product_page": "https://zen12.com/hnp",
+    "description_basis": "seller_only",
+    "premium_levels": 12,
+    "formats_per_level": 4,
+    "seller_claimed_MP3s": 48,
+    "claimed_benefits_substantiated": false,
+    "merchant_checkout_verified": false,
+    "price_verified": null,
+    "refund_execution_verified": false,
+    "partner_approval": null,
+    "approved_affiliate_url": null,
+    "activation": false
+  },
+  "owned_fallback": {
+    "product_id": null,
+    "payhip_inventory_authenticated": false,
+    "rights_clearance_verified": false,
+    "checkout_test": null,
+    "refund_fee_policy_verified": false,
+    "do_not_activate": true
+  },
+  "reporting": {
+    "qualified_human_sessions": null,
+    "qualified_buyer_sessions": null,
+    "confirmed_jetpack_leads": null,
+    "merchant_confirmed_paid_orders": null,
+    "merchant_reported_gross_commissions": null,
+    "settled_affiliate_cash": null,
+    "post_settlement_unmatched_reversals": null,
+    "affiliate_fees": null,
+    "realized_net_revenue": null,
+    "net_per_1000_qualified_humans": "NOT_COMPUTABLE",
+    "settlement_coverage": "UNKNOWN",
+    "aggregation_only": true
+  },
+  "attribution": {
+    "no_pii": true,
+    "utm_source_allowlist": [
+      "youtube",
+      "tiktok",
+      "instagram",
+      "facebook",
+      "pinterest",
+      "x",
+      "bluesky"
+    ],
+    "utm_medium": "organic_social",
+    "utm_campaign_pattern": "mind_<topic>_2026_11",
+    "utm_content": "ACTUAL_GROK_ASSET_ID_REQUIRED",
+    "verified_grok_assets": [],
+    "no_duplicate_scripts": true
+  },
+  "routes": [
+    {
+      "topic": "Change Blindness",
+      "asset_id": null,
+      "verified_article": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "focus": "https://finalvestige.com/focus/",
+      "offer": "Zen12 Premium only upon separate purchase-intent",
+      "affiliate_live": false
+    },
+    {
+      "topic": "Puységur / Mesmerism",
+      "asset_id": null,
+      "verified_article": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "focus": "https://finalvestige.com/focus/",
+      "offer": "Hypnosis Live guide conditional exact SKU, not a historical proof",
+      "affiliate_live": false
+    },
+    {
+      "topic": "Binaural beat evidence",
+      "asset_id": null,
+      "verified_article": null,
+      "focus": "https://finalvestige.com/focus/",
+      "offer": "Zen12 Premium buyer guide AFTER buyer intent",
+      "affiliate_live": false
+    }
+  ],
+  "ab": {
+    "variant_A": "mind/r139/zen12-variant-a.html",
+    "variant_B": "mind/r139/zen12-variant-b.html",
+    "B_video_state": "STORYBOARD_ONLY_NOT_PLAYABLE",
+    "headline_identical_offer": true,
+    "primary_kpi": "settled net commission per 1000 qualified human landing sessions",
+    "assignment_live": false,
+    "test_result": "NOT_TESTED",
+    "success_guaranteed": false
+  }
+}
