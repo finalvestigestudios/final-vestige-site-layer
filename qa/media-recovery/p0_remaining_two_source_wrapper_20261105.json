@@ -1,0 +1,102 @@
+{
+  "schema": "fv-media-p0-retriever-two-source-20261105-v1",
+  "run_date_pacific": "2026-11-04",
+  "prior_p0_source_blob": "d3e0dd5c8ac2f8f78895c5fbed941d392c735b06",
+  "source_origin": "WordPress read-only posts 285 and 418 plus independent URL retrieval; catalog metadata only",
+  "rows": [
+    {
+      "image_key": "285:5",
+      "post_id": 285,
+      "live_wp_post_modified": "2026-11-02T21:39:59",
+      "live_wp_checked_on": "2026-11-04",
+      "published_url": "https://images.saymedia-content.com/.image/ar_16:9,c_fill,cs_srgb,fl_progressive,q_auto:eco,w_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg",
+      "current_published_url_unchanged": true,
+      "wrapper_observation": {
+        "method": "independent_web_open_not_origin_or_browser",
+        "checked_date_pacific": "2026-11-04",
+        "result": "RETRIEVER_WRAPPER_404",
+        "wrapper_status": 404,
+        "origin_http_status": null,
+        "guest_browser_http_status": null,
+        "guest_browser_current_src": null,
+        "guest_image_decoded": null,
+        "guest_transfer_bytes": null,
+        "guest_broken": null,
+        "notes": "Tool wrapper could not fetch third-party image; NOT verified publisher origin or guest-browser status. Published alt identifies an aerial plant view, exact match to Commons 2010 ground-level image remains unverified."
+      },
+      "primary_catalog": {
+        "url": "https://commons.wikimedia.org/wiki/File:Three_mile_island_062010.jpg",
+        "record_id": "Three mile island 062010.jpg",
+        "subject": "Three Mile Island plant 2010, scene/framing unverified relative to published aerial ALT",
+        "pixel_dimensions": [
+          819,
+          614
+        ],
+        "rights": "COMMONS_UPLOADER_DECLARED_PUBLIC_DOMAIN_REVIEW_SOURCE_AND_SCENE",
+        "credit": "Commons user Marque1313",
+        "binary_identity_hash": null,
+        "max_derivative_width": 819,
+        "proposed_derivative_dimensions": [
+          819,
+          614
+        ],
+        "cache_authorized_by_workflow": false
+      },
+      "actions": {
+        "third_party_download": false,
+        "wp_upload": false,
+        "wp_post_change": false,
+        "publish": false,
+        "needs_guest_chromium": true,
+        "needs_item_rights": true,
+        "needs_same_scene_visual_review": true
+      }
+    },
+    {
+      "image_key": "418:1",
+      "post_id": 418,
+      "live_wp_post_modified": "2026-08-28T03:11:08",
+      "live_wp_checked_on": "2026-11-04",
+      "published_url": "https://media.defense.gov/2021/Mar/30/2002610812/1920/1080/0/210330-G-DE713-0002.JPG",
+      "current_published_url_unchanged": true,
+      "wrapper_observation": {
+        "method": "independent_web_open_not_origin_or_browser",
+        "checked_date_pacific": "2026-11-04",
+        "result": "RETRIEVER_WRAPPER_403",
+        "wrapper_status": 403,
+        "origin_http_status": null,
+        "guest_browser_http_status": null,
+        "guest_browser_current_src": null,
+        "guest_image_decoded": null,
+        "guest_transfer_bytes": null,
+        "guest_broken": null,
+        "notes": "Tool wrapper could not fetch media.defense.gov image. Coast Guard official item 2002905913 independently catalogs the exact VIRIN, describes historic Chief Anthony Petit/Pettit portrait; catalog says public domain/cleared for release subject to DoD limitations and credit. NOT verified visitor browser failure."
+      },
+      "primary_catalog": {
+        "url": "https://www.history.uscg.mil/Our-Collections/Photos/igphoto/2002905913/",
+        "record_id": "2002905913",
+        "virin": "210330-G-DE713-0002.JPG",
+        "subject": "Scotch Cap station chief historical portrait, NOT storm debris",
+        "pixel_dimensions": null,
+        "rights": "USCG_CATALOG_PUBLIC_DOMAIN_CLEARED_WITH_DOD_LIMITATIONS",
+        "credit": "U.S. Coast Guard",
+        "binary_identity_hash": null,
+        "max_derivative_width": 960,
+        "proposed_derivative_dimensions": null,
+        "cache_authorized_by_workflow": false
+      },
+      "actions": {
+        "third_party_download": false,
+        "wp_upload": false,
+        "wp_post_change": false,
+        "publish": false,
+        "needs_guest_chromium": true,
+        "needs_item_rights": true,
+        "needs_same_scene_visual_review": true
+      }
+    }
+  ],
+  "reported_broken_42": "UNVERIFIED_IN_GUEST_BROWSER",
+  "claimed_76_percent_wire_reduction": "UNMEASURED",
+  "production_fixes_this_run": 0
+}
