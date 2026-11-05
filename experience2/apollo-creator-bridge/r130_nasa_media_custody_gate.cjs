@@ -1,12 +1,12 @@
 'use strict';
 /** R130: conservative NASA image source/custody gate; never treats citation as a paid-media license. */
 const CANONICAL = Object.freeze([
-  ['01','https://www.nasa.gov/image-detail/apollo-1-crew-honored/','1967-01','MONTH_ONLY'],
-  ['02','https://www.nasa.gov/image-detail/amf-s67-15717/','1967-01-03','DAY'],
-  ['03','https://www.nasa.gov/image-detail/amf-s66-58038/','1966-10-18','DAY'],
-  ['04','https://www.nasa.gov/image-detail/amf-ksc-20170124-ph_kls01_0164/','2017-01-24','DAY'],
-  ['05','https://www.nasa.gov/image-detail/amf-s67-21294/','1967-01-28','DAY'],
-  ['06','https://www.nasa.gov/image-detail/amf-ksc-20170124-ph_kls01_0090/','2017-01-24','DAY']
+  ['01','https://www.nasa.gov/image-detail/apollo-1-crew-honored/','1967-01','MONTH_ONLY','Jan 1967; day unconfirmed','Jan 1967 · exact day unknown','Image Credit: NASA'],
+  ['02','https://www.nasa.gov/image-detail/amf-s67-15717/','1967-01-03','DAY','Jan 3, 1967','Jan 3, 1967','Producer: JSC'],
+  ['03','https://www.nasa.gov/image-detail/amf-s66-58038/','1966-10-18','DAY','Oct 18, 1966','Oct 18, 1966','Producer: JSC'],
+  ['04','https://www.nasa.gov/image-detail/amf-ksc-20170124-ph_kls01_0164/','2017-01-24','DAY','Jan 24, 2017','Jan 24, 2017','Image Credit: NASA/Kim Shiflett'],
+  ['05','https://www.nasa.gov/image-detail/amf-s67-21294/','1967-01-28','DAY','Jan 28, 1967','Jan 28, 1967','Producer: JSC'],
+  ['06','https://www.nasa.gov/image-detail/amf-ksc-20170124-ph_kls01_0090/','2017-01-24','DAY','Jan 24, 2017','Jan 24, 2017','Image Credit: NASA/Kim Shiflett']
 ]);
 function auditMediaLedger(ledger,apollo) {
   const errors=[];
@@ -17,7 +17,7 @@ function auditMediaLedger(ledger,apollo) {
       errors:['INVALID_LEDGER_OR_APOLLO_SOURCE'],release_status:'STAGING_HOLD'};
   const urls=new Set();
   for (let i=0;i<CANONICAL.length;i++){
-    const [id,url,date,precision]=CANONICAL[i],r=ledger.records[i];
+    const [id,url,date,precision,tableDate,handoutDate,visibleCredit]=CANONICAL[i],r=ledger.records[i];
     if (!r || r.id!==id || r.source_url!==url || r.record_date!==date ||
         r.date_precision!==precision || urls.has(r.source_url))
       errors.push('UNTRUSTED_MEDIA_RECORD_'+id);
@@ -46,19 +46,22 @@ function auditMediaLedger(ledger,apollo) {
     if(!tableRow || !handout || !tableRow[0].includes('href="'+url+'"') ||
        !handout[0].includes('href="'+url+'"'))
       errors.push('REGISTER_TO_STUDENT_SOURCE_DRIFT_'+id);
+    if(!tableRow || !tableRow[0].includes(tableDate) || !tableRow[0].includes(visibleCredit) ||
+       !handout || !handout[0].includes(handoutDate))
+      errors.push('DISPLAYED_DATE_CREDIT_CUSTODY_DRIFT_'+id);
   }
   if(!ledger.media_policy_sources || ledger.media_policy_sources.length<2 ||
      ledger.commercial_image_reuse!=='HOLD_ALL_SIX_INDIVIDUAL_REVIEWS')
     errors.push('GLOBAL_MEDIA_POLICY_GATE_REMOVED');
-  if(/<\s*(?:img|picture|iframe|video)\b/i.test(apollo))
-    errors.push('UNREVIEWED_EMBEDDED_MEDIA');
+  const embeddedMedia=/<\s*(?:img|picture|iframe|video)\b/i.test(apollo);
+  if(embeddedMedia)errors.push('UNREVIEWED_EMBEDDED_MEDIA');
   if(!/none of the six linked photographs is cleared for commercial republication \(0\/6\)/i.test(apollo) ||
      !/individual photograph reuse assessments remain incomplete \(0\/6\)/i.test(apollo))
     errors.push('VISIBLE_RIGHTS_DISCLOSURE_MISSING');
   return {schema:'fv.apollo.media-audit.v1',status:errors.length?'FAIL':'PASS_SOURCE_CUSTODY_ONLY',
     errors,record_count:CANONICAL.length,official_metadata_verified_count:5,
     secondary_only_metadata_count:1,commercially_cleared_count:0,
-    image_binaries_embedded:false,release_status:'STAGING_HOLD',
+    image_binaries_embedded:embeddedMedia,release_status:'STAGING_HOLD',
     commercial_offer_status:'NO_VERIFIED_PAID_APOLLO_SKU'};
 }
 module.exports={auditMediaLedger,CANONICAL};
