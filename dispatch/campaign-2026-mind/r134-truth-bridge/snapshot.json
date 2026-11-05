@@ -1,0 +1,33 @@
+{
+  "recorded_at_utc": "2026-11-05T09:39:41Z",
+  "wordpress": {
+    "counts": {"total": 3, "confirmed": 3, "unconfirmed": 2, "suppressed": 0},
+    "native_email_eligible": null,
+    "native_email_eligibility_source": "unavailable via authenticated aggregate diagnostics",
+    "email_new_posts_by_default": false,
+    "email_content_format": "excerpt",
+    "cta_observation_status": "source_observed",
+    "cta_observation": "Authenticated WordPress pages_get returned /dispatch/ subscriptions inner HTML as anchor href to same page; visitor rendered DOM and actual submission still UNTESTED",
+    "welcome_message_configured": true,
+    "fieldbook_pdf_url_configured": true
+  },
+  "native_confirmed_signup_evidence": false,
+  "native_recipient_filter_evidence": false,
+  "received_welcome_evidence": false,
+  "fieldbook_received_evidence": false,
+  "native_email_preview_evidence": false,
+  "publisher_postal_address_rendered": false,
+  "unsubscribe_mechanism_verified": false,
+  "explicit_founder_send_approval": false,
+  "offer": {
+    "exact_sku": "Zen12 Premium (provisional); Issue 05 separately reviews Total Focus, NOT Hypnotize Yourself",
+    "named_partner_approval": false,
+    "email_promotion_permission": false,
+    "verified_link_format": false,
+    "exact_sku_guide_live": false,
+    "seller_claims_reviewed": false,
+    "current_checkout_terms_reviewed": false,
+    "merchant_consent_separate": false
+  },
+  "paid_outcomes": {"confirmed_orders": null, "qualified_human_sessions": null, "realized_net_revenue_usd": null}
+}
