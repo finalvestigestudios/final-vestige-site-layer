@@ -6,6 +6,7 @@
  * It is deliberately distinct from production analytics (#820) and Grok TASK-008.
  */
 const {inspectCreatorUrl,inspectMerchantUrl}=require('./r137_destination_integrity.cjs');
+const {inspectBoundCampaign,STATUS:BOUND_CANDIDATE}=require('./r138_creator_landing_custody.cjs');
 const SCHEMA='fv.apollo.r136.conversion-evidence.v1';
 const REQUIRED_SOURCES=Object.freeze([
  'https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/',
@@ -19,7 +20,7 @@ const REQUIRED_SOURCES=Object.freeze([
 const FREE_FRAGMENT='#classroom-preview';
 const ENTITY='Apollo 1: Fourteen Seconds, More Than One Failure';
 function isPlainObject(v){return v!==null&&typeof v==='object'&&!Array.isArray(v);}
-function cleanCampaign(c){
+function cleanCampaign(c,independentlyReviewedLandingUrl=null){
  const errors=[];
  if(c===null||c===undefined)return {status:'NOT_SUBMITTED',errors:[],utm:null};
  if(!isPlainObject(c))return {status:'INVALID',errors:['CAMPAIGN_NOT_OBJECT'],utm:null};
@@ -34,6 +35,10 @@ function cleanCampaign(c){
     errors.push('PUBLICATION_NOT_INDEPENDENTLY_ATTESTED');
  if(c.destination_reviewed!==true||c.destination_fragment!==FREE_FRAGMENT)
     errors.push('DESTINATION_NOT_REVIEWED');
+ // R138: claimed approval and a plausible video URL do not bind a Grok asset
+ // to the actual reviewed WordPress route. This is still only an offline preflight.
+ if(inspectBoundCampaign(c,independentlyReviewedLandingUrl).status!==BOUND_CANDIDATE)
+    errors.push('GROK_VIDEO_TO_APOLLO_LANDING_NOT_BOUND');
  return {status:errors.length?'INVALID':'CANDIDATE_REQUIRES_INDEPENDENT_PLATFORM_CHECK',
   errors,utm:errors.length?null:{
    utm_source:'youtube',utm_medium:'organic_social',
@@ -63,7 +68,7 @@ function cleanOffer(o){
    errors,candidate:errors.length?null:{sku:o.sku,merchant_url:href,topic:o.topic}};
 }
 function assess({landingHtml,routeAudit,mediaAudit,researchAudit,offer=null,campaign=null,
- browserReceipt=null,merchantReceipts=null}={}){
+ browserReceipt=null,merchantReceipts=null,reviewedLandingUrl=null}={}){
  const blockers=[];
  if(typeof landingHtml!=='string'||!landingHtml.includes('data-fv-primary-cta')||
     !landingHtml.includes('href="'+FREE_FRAGMENT+'"')||
@@ -78,7 +83,7 @@ function assess({landingHtml,routeAudit,mediaAudit,researchAudit,offer=null,camp
     blockers.push('NASA_MEDIA_CUSTODY_NOT_SOURCE_ONLY');
  if(!isPlainObject(researchAudit)||researchAudit.status!=='PASS')
     blockers.push('RESEARCH_DESK_EDITORIAL_GATE_NOT_PASS');
- const campaignCandidate=cleanCampaign(campaign),offerCandidate=cleanOffer(offer);
+ const campaignCandidate=cleanCampaign(campaign,reviewedLandingUrl),offerCandidate=cleanOffer(offer);
  if(campaignCandidate.status!=='CANDIDATE_REQUIRES_INDEPENDENT_PLATFORM_CHECK')
     blockers.push('NO_VERIFIED_GROK_CAMPAIGN_ROUTE');
  if(offerCandidate.status!=='DOCUMENT_ONLY_NOT_MERCHANT_ATTESTATION')
