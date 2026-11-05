@@ -90,8 +90,8 @@ class RecentRegressionPrivacyR201(unittest.TestCase):
     def test_partial_skip_reason_is_suppressed(self):
         self.write(f"import unittest\nclass C(unittest.TestCase):\n @unittest.skip({SECRET!r})\n def test_skip(self): pass\n def test_ok(self): pass\n")
         passed, output = self.run_gate(minimum=2)
-        self.assertTrue(passed)
-        self.assertIn("2 executed, 1 skipped", output)
+        self.assertFalse(passed)
+        self.assertIn("1 skipped", output)
 
     def test_subtest_failure_is_suppressed(self):
         self.write(f"import unittest\nclass C(unittest.TestCase):\n def test_sub(self):\n  with self.subTest(key={SECRET!r}): self.fail({SECRET!r})\n")
