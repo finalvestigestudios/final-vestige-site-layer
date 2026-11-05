@@ -22,7 +22,7 @@ The actual source losses remain per R141 docket: `start-cdc-power-outage` remove
 
 ## New engineering
 
-`r142_citation_context_gate.py` compares source identities **and** SHA-256 hashes of the normalized surrounding reader-visible paragraph/list/heading/table text. An unchanged source count can still be flagged if a claim-bearing passage changes. It reports old-only and new-only occurrences with passage ordinal, source ID and 220-character excerpt, so a qualified source reader can examine exactly what moved. It requires R141's immutable R140 manifest pin, R141 docket, and SHA-matching **both** candidate and staged contributor article files; it refuses missing/changed bytes, stray tokens, malformed IDs, citations outside recognized visible blocks and forged approvals. It never changes articles.
+`r142_citation_context_gate.py` compares source identities **and** SHA-256 hashes of the normalized surrounding reader-visible paragraph/list/heading/table text. An unchanged source count can still be flagged if a claim-bearing passage changes. It reports old-only and new-only occurrences with passage ordinal, source ID and 220-character excerpt, so a qualified source reader can examine exactly what moved. It requires R141's immutable R140 manifest pin, R141 docket, and SHA-matching **both** candidate and staged contributor article files; it refuses missing/changed bytes, stray tokens, malformed IDs, citations in explicit hidden/script/template/comment markup, citations outside recognized visible blocks and forged approvals. It cannot infer CSS-class/browser-computed visibility; staged independent browser QA remains required. It never changes articles.
 
 **Execution:**
 
@@ -41,7 +41,7 @@ python -I -m unittest discover -s preparedness/tests -v
 
 Staged contributor root must contain only the selected exact source versions at `preparedness/content/articles/<slug>.body.html`. Do not install them over the trusted RC. Empty or missing input is a blocker; exit 0 from R142 means an **evidence packet was generated**, not editorial approval, QD, source correctness or readiness to publish.
 
-**Executed in local isolated environment:** 66/66 R142 synthetic/adversarial Python tests PASS and syntax compilation PASS. **Actual repo execution / native validation / build / repository-wide suite / WordPress draft / independent QD:** NOT EXECUTED because a complete authenticated local checkout is unavailable and GitHub DNS fails. This limitation is not a code-test pass/fail. No GitHub Actions result is represented as an executed Python test. Never promote an automatic context-difference detector to medical, electrical, fire or food-safety signoff. PR #157 and PR #169/#973 must remain separate for independent qualified review.
+**Executed in local isolated environment:** 75/75 R142 synthetic/adversarial Python tests PASS and syntax compilation PASS. **Actual repo execution / native validation / build / repository-wide suite / WordPress draft / independent QD:** NOT EXECUTED because a complete authenticated local checkout is unavailable and GitHub DNS fails. This limitation is not a code-test pass/fail. No GitHub Actions result is represented as an executed Python test. Never promote an automatic context-difference detector to medical, electrical, fire or food-safety signoff. PR #157 and PR #169/#973 must remain separate for independent qualified review.
 
 ## Conversion-first acceptance (not activated)
 
