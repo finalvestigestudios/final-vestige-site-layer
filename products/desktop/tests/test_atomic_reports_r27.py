@@ -45,7 +45,7 @@ class AtomicReportsTests(unittest.TestCase):
         private.write_bytes(b"private")
         self.output.symlink_to(private)
         with self.assertRaises(FileExistsError):
-            self.publish([{"id": "A"}])
+            self.publish([{"id": "A", "amount": "1"}])
         self.assertEqual(private.read_bytes(), b"private")
         self.assertTrue(self.output.is_symlink())
         self.assert_no_partials()
