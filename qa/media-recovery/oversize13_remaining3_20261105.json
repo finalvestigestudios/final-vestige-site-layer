@@ -920,5 +920,24 @@
   "origin_actual_http_checks_performed": 0,
   "guest_browser_checks_performed": 0,
   "production_fixes_made": 0,
-  "limitations": "Original media storage bytes are not cold visitor network transfer bytes; virtual sizes in WP metadata are not proof of successful delivery. No full site page/theme/media references search was performed. Never delete, reuse, download, optimize or republish from this audit alone."
+  "limitations": "Original media storage bytes are not cold visitor network transfer bytes; virtual sizes in WP metadata are not proof of successful delivery. No full site page/theme/media references search was performed. Never delete, reuse, download, optimize or republish from this audit alone.",
+  "published_post_inline_image_crosscheck": {
+    "source": "PR #1138 frozen live66 read-only source census 2026-11-05",
+    "published_posts": 66,
+    "stored_inline_img_src_slots": 361,
+    "exact_filename_matches": {
+      "293_ne_png": 0,
+      "405_water_cover": 0,
+      "482_opaque_png": 0
+    },
+    "underlying_source_blob_shas": [
+      "05b01ce3876a62233b1bb497cdc4b1e842d487ee",
+      "fe4a33b8a0ca0d2c19d8a577d92281af0ce1e9e7",
+      "ccda35904b62ed1f2dbda09ab5001c39888b6faa",
+      "a4e0ad40652446761fdcc5f879127038255d8838",
+      "c3278c73bd6498debb541e9a52dc3df9b4fd3e61",
+      "aab2002740fcd59bb0a192d80a86a3b2e1514e26"
+    ],
+    "limitations": "Absence from inline img src in 66 posts is not evidence of unused media. Pages, JSON-LD, CSS, theme, featured_media, WooCommerce or draft references may use media; page 234 does use 293, draft 85 uses 405."
+  }
 }
