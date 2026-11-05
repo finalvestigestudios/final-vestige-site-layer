@@ -24,7 +24,7 @@ check('responsive grid',h.includes('@media(min-width:760px)'));
 check('legitimate seller source',h.includes('https://zen12.com/hnp'));
 check('scholarly links',a.includes('pubmed.ncbi.nlm.nih.gov/1500880')&&a.includes('10.1371/journal.pbio.0050138'));
 check('does not claim product study',a.includes('did not test Zen12')&&g.includes('not after using Zen12 Premium'));
-check('no unqualified meditation hour efficacy',a.includes('not established')&&g.includes('not established'));
+check('no unqualified meditation hour efficacy',a.includes('not established')&&g.includes('None of these studies validates'));
 check('original article length >= 1400',a.trim().split(/\s+/).length>=1400);
 check('guide length >= 700',g.trim().split(/\s+/).length>=700);
 check('claim register adequate',m.claims.length>=18&&m.evidence.length>=10);
