@@ -14,6 +14,8 @@ REQUIRED = (
     'focus_early_in_reading_flow',
     'focus_unobstructed_at_center',
     'focus_keyboard_reachable',
+    'focus_is_next_tab_after_evidence',
+    'focus_visible_keyboard_indicator',
 )
 
 
@@ -64,9 +66,27 @@ def inspect_focus_entry(frame, width):
         checks['focus_in_horizontal_viewport'] = (metrics['visible'] and metrics['left'] >= -1
             and metrics['right'] <= metrics['viewportWidth'] + 1)
         checks['focus_unobstructed_at_center'] = (metrics['visible'] and metrics['overlap'])
-        if metrics['tabbable'] and metrics['visible']:
-            secondary.focus(timeout=4500)
-            checks['focus_keyboard_reachable'] = loc.evaluate('el => document.activeElement === el')
+        # A scripted .focus() alone is not keyboard evidence: it can focus
+        # controls in an unexpected order, with no visible keyboard indicator.
+        # Use the browser's native Tab movement from the evidence-first action.
+        if metrics['tabbable'] and metrics['visible'] and primary.is_visible():
+            primary.focus(timeout=4500)
+            frame.page.keyboard.press('Tab')
+            keyboard = loc.evaluate('''el => {
+              const cs=getComputedStyle(el);
+              return {
+                active:document.activeElement===el,
+                visibleFocus:el.matches(':focus-visible'),
+                outlineStyle:cs.outlineStyle,
+                outlineWidth:parseFloat(cs.outlineWidth)||0
+              };
+            }''')
+            checks['focus_keyboard_reachable'] = keyboard['active']
+            checks['focus_is_next_tab_after_evidence'] = keyboard['active']
+            checks['focus_visible_keyboard_indicator'] = (
+                keyboard['active'] and keyboard['visibleFocus'] and
+                keyboard['outlineStyle'] not in ('none','hidden') and
+                keyboard['outlineWidth'] >= 2)
     except Exception:
         return checks
     return {key: bool(value) for key, value in checks.items()}
