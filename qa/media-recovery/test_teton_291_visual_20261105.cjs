@@ -29,6 +29,8 @@ const mutations = [
   a=>a.candidate_for_291_2.conditional_height_px=676,
   a=>a.candidate_for_291_2.rights_rehosting_authorized=true,
   a=>a.candidate_for_291_2.binary_fetched=true,
+  a=>a.candidate_for_291_2.current_rendition_cropped_since_2023=false,
+  a=>a.candidate_for_291_2.avoid_likely_duplicate_with_post_image_291_0=false,
   a=>a.decision.browser_broken_images_confirmed=1,
   a=>a.decision.sitewide_claim_76_percent_weight_reduction_verified=true,
   a=>a.decision.wordpress_edit_authorized=true,
