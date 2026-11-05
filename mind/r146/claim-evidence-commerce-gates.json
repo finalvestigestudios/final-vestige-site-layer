@@ -1,0 +1,473 @@
+{
+  "version": "r146",
+  "as_of": "2026-11-05",
+  "release": "HARD_HOLD",
+  "commercial_activation_allowed": false,
+  "source_evidence": [
+    {
+      "id": "s1",
+      "kind": "peer_reviewed",
+      "title": "Basso et al 2019 13-minute guided practice randomized active-control study",
+      "url": "https://doi.org/10.1016/j.bbr.2018.08.023"
+    },
+    {
+      "id": "s2",
+      "kind": "government",
+      "title": "NCCIH meditation research and safety summary",
+      "url": "https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety/"
+    },
+    {
+      "id": "s3",
+      "kind": "peer_reviewed",
+      "title": "2023 binaural beats EEG entrainment systematic review",
+      "url": "https://doi.org/10.1371/journal.pone.0286023"
+    },
+    {
+      "id": "s4",
+      "kind": "merchant",
+      "title": "Zen12 Premium exact official offer as inspected Nov 5 2026",
+      "url": "https://zen12.com/hnp"
+    },
+    {
+      "id": "s5",
+      "kind": "merchant",
+      "title": "Zen12 free MP3 form and merchant-newsletter consent",
+      "url": "https://zen12.com/freeaudio"
+    },
+    {
+      "id": "s6",
+      "kind": "government",
+      "title": "FTC endorsement disclosure FAQ",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking"
+    },
+    {
+      "id": "s7",
+      "kind": "government",
+      "title": "FTC Health Products Compliance Guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+    },
+    {
+      "id": "s8",
+      "kind": "peer_reviewed",
+      "title": "Farias et al 2020 meditation adverse-events review",
+      "url": "https://doi.org/10.1111/acps.13225"
+    },
+    {
+      "id": "s9",
+      "kind": "merchant",
+      "title": "Inspire3 official product catalog and positioning",
+      "url": "https://inspire3.com/"
+    },
+    {
+      "id": "s10",
+      "kind": "merchant",
+      "title": "Inspire3 public affiliate portal (not named approval)",
+      "url": "https://affiliates.inspire3.com/"
+    },
+    {
+      "id": "s11",
+      "kind": "merchant",
+      "title": "Inspire3 privacy policy",
+      "url": "https://inspire3.com/privacy/"
+    },
+    {
+      "id": "s12",
+      "kind": "first_party",
+      "title": "Published FV Change Blindness post",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/"
+    },
+    {
+      "id": "s13",
+      "kind": "first_party",
+      "title": "Published FV Puységur record",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+    },
+    {
+      "id": "s14",
+      "kind": "first_party",
+      "title": "Published FV Seven Day Focus Fieldbook",
+      "url": "https://finalvestige.com/focus/"
+    },
+    {
+      "id": "s15",
+      "kind": "first_party",
+      "title": "FV existing editorial standards",
+      "url": "https://finalvestige.com/editorial-standards/"
+    },
+    {
+      "id": "s16",
+      "kind": "prior_draft",
+      "title": "R145 draft matched Zen12 A/B variants (not published)",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/1106"
+    }
+  ],
+  "claim_decisions": [
+    {
+      "id": "d01",
+      "claim": "A 13-minute daily guided practice showed selected benefits after eight, not four weeks in a particular study",
+      "status": "SUPPORTED_EXACT_STUDY",
+      "source_ids": [
+        "s1"
+      ]
+    },
+    {
+      "id": "d02",
+      "claim": "The 2019 trial established product-specific Zen12 Premium benefits",
+      "status": "EXCLUDE_UNSUPPORTED",
+      "source_ids": [
+        "s1",
+        "s4"
+      ]
+    },
+    {
+      "id": "d03",
+      "claim": "A 12-minute recording is equivalent to one hour of advanced meditation",
+      "status": "EXCLUDE_SELLER_CLAIM",
+      "source_ids": [
+        "s4",
+        "s1"
+      ]
+    },
+    {
+      "id": "d04",
+      "claim": "Zen12 Premium seller describes 12 levels and four listening styles per level (48 recordings)",
+      "status": "ATTRIBUTE_SELLER",
+      "source_ids": [
+        "s4"
+      ]
+    },
+    {
+      "id": "d05",
+      "claim": "Each listening session is advertised by seller as 12 minutes",
+      "status": "ATTRIBUTE_SELLER",
+      "source_ids": [
+        "s4"
+      ]
+    },
+    {
+      "id": "d06",
+      "claim": "Premium advertises a one-year guarantee",
+      "status": "ATTRIBUTE_SELLER_NOT_TESTED",
+      "source_ids": [
+        "s4"
+      ]
+    },
+    {
+      "id": "d07",
+      "claim": "$87.99 appeared on official Premium page Nov 5 2026, not authenticated checkout total",
+      "status": "OBSERVED_AD_PRICE_NOT_CHECKOUT",
+      "source_ids": [
+        "s4"
+      ]
+    },
+    {
+      "id": "d08",
+      "claim": "Final Vestige independently fulfilled a Zen12 order",
+      "status": "UNVERIFIED_NO_CLAIM",
+      "source_ids": [
+        "s4"
+      ]
+    },
+    {
+      "id": "d09",
+      "claim": "Binaural beat EEG entrainment review included 5 supportive, 8 contradictory and 1 mixed study",
+      "status": "SUPPORTED_REVIEW_ONLY",
+      "source_ids": [
+        "s3"
+      ]
+    },
+    {
+      "id": "d10",
+      "claim": "General binaural beat reviews prove Zen12 Premium clinical effects",
+      "status": "EXCLUDE_UNSUPPORTED",
+      "source_ids": [
+        "s3",
+        "s4"
+      ]
+    },
+    {
+      "id": "d11",
+      "claim": "Meditation can cause adverse experiences for some users",
+      "status": "QUALIFIED_GENERAL_EVIDENCE",
+      "source_ids": [
+        "s2",
+        "s8"
+      ]
+    },
+    {
+      "id": "d12",
+      "claim": "An 8 percent adverse event estimate applies specifically to Zen12 users",
+      "status": "EXCLUDE_UNSUPPORTED",
+      "source_ids": [
+        "s8"
+      ]
+    },
+    {
+      "id": "d13",
+      "claim": "Zen12 free audio signup also enrolls subscribers in merchant newsletter",
+      "status": "ATTRIBUTE_SELLER_FORM",
+      "source_ids": [
+        "s5"
+      ]
+    },
+    {
+      "id": "d14",
+      "claim": "Zen12 merchant list equals FV Jetpack Focus list",
+      "status": "FALSE_EXCLUDE",
+      "source_ids": [
+        "s5",
+        "s14"
+      ]
+    },
+    {
+      "id": "d15",
+      "claim": "FTC expects clear proximate compensation disclosure for earning recommendations",
+      "status": "SUPPORTED_REGULATORY_GUIDANCE",
+      "source_ids": [
+        "s6"
+      ]
+    },
+    {
+      "id": "d16",
+      "claim": "FTC health benefit representations must be properly substantiated",
+      "status": "SUPPORTED_REGULATORY_GUIDANCE",
+      "source_ids": [
+        "s7"
+      ]
+    },
+    {
+      "id": "d17",
+      "claim": "Public affiliate portal proves named FV acceptance",
+      "status": "FALSE_EXCLUDE",
+      "source_ids": [
+        "s10"
+      ]
+    },
+    {
+      "id": "d18",
+      "claim": "Affiliate commission percentage and attribution window are established",
+      "status": "UNKNOWN_NO_QUOTE",
+      "source_ids": [
+        "s10"
+      ]
+    },
+    {
+      "id": "d19",
+      "claim": "Approved earning URL, organic-social and newsletter use are established",
+      "status": "UNKNOWN_HOLD",
+      "source_ids": [
+        "s10"
+      ]
+    },
+    {
+      "id": "d20",
+      "claim": "Merchant refund performance is independently verified",
+      "status": "UNKNOWN_HOLD",
+      "source_ids": [
+        "s4"
+      ]
+    },
+    {
+      "id": "d21",
+      "claim": "A rights-cleared paid FV Mind SKU is currently live on Payhip",
+      "status": "NOT_AUTHENTICATED",
+      "source_ids": [
+        "s14"
+      ]
+    },
+    {
+      "id": "d22",
+      "claim": "Grok platform media IDs and asset-level qualified sessions are verified",
+      "status": "NOT_AUTHENTICATED",
+      "source_ids": [
+        "s12",
+        "s13"
+      ]
+    },
+    {
+      "id": "d23",
+      "claim": "An affiliate outbound click is a paid sale or commission",
+      "status": "FALSE_EXCLUDE",
+      "source_ids": [
+        "s6"
+      ]
+    },
+    {
+      "id": "d24",
+      "claim": "Net revenue per 1000 qualified humans is now computable",
+      "status": "NOT_COMPUTABLE",
+      "source_ids": [
+        "s16"
+      ]
+    },
+    {
+      "id": "d25",
+      "claim": "New affiliate CTA may be activated without founder approval",
+      "status": "FALSE_HARD_HOLD",
+      "source_ids": [
+        "s16"
+      ]
+    },
+    {
+      "id": "d26",
+      "claim": "Zen12 Premium differs from Hypnosis Live Total Focus and Hypnotize Yourself",
+      "status": "SUPPORTED_CATALOG_DIFFERENCE",
+      "source_ids": [
+        "s9",
+        "s4"
+      ]
+    },
+    {
+      "id": "d27",
+      "claim": "Disclosure is needed adjacent to earning links, not on policy page alone",
+      "status": "SUPPORTED_REGULATORY_GUIDANCE",
+      "source_ids": [
+        "s6"
+      ]
+    },
+    {
+      "id": "d28",
+      "claim": "This story constitutes published FV content",
+      "status": "FALSE_DRAFT_ONLY",
+      "source_ids": [
+        "s16"
+      ]
+    },
+    {
+      "id": "d29",
+      "claim": "A/B video variant is a playable rights-cleared video",
+      "status": "FALSE_STORYBOARD_ONLY",
+      "source_ids": [
+        "s16"
+      ]
+    }
+  ],
+  "gates": [
+    {
+      "id": "named_partner_acceptance",
+      "verified": false,
+      "activation_blocking": true
+    },
+    {
+      "id": "written_exact_premium_affiliate_url",
+      "verified": false,
+      "activation_blocking": true
+    },
+    {
+      "id": "channel_permissions_social",
+      "verified": false,
+      "activation_blocking": true
+    },
+    {
+      "id": "channel_permissions_email",
+      "verified": false,
+      "activation_blocking": true
+    },
+    {
+      "id": "approved_creatives_and_claims",
+      "verified": false,
+      "activation_blocking": true
+    },
+    {
+      "id": "commission_reporting_and_refund_rules",
+      "verified": false,
+      "activation_blocking": true
+    },
+    {
+      "id": "approved_personal_data_handling",
+      "verified": false,
+      "activation_blocking": true
+    },
+    {
+      "id": "final_checkout_total",
+      "verified": false,
+      "activation_blocking": true
+    },
+    {
+      "id": "merchant_refund_terms_authenticated",
+      "verified": false,
+      "activation_blocking": true
+    },
+    {
+      "id": "fulfillment_test_authorized",
+      "verified": false,
+      "activation_blocking": true
+    },
+    {
+      "id": "health_claims_product_specific_proof",
+      "verified": false,
+      "activation_blocking": true
+    },
+    {
+      "id": "independent_claims_edit",
+      "verified": false,
+      "activation_blocking": true
+    },
+    {
+      "id": "browser_keyboard_accessibility",
+      "verified": false,
+      "activation_blocking": true
+    },
+    {
+      "id": "browser_mobile_360_390_768_1440_1920",
+      "verified": false,
+      "activation_blocking": true
+    },
+    {
+      "id": "native_browser_no_js",
+      "verified": false,
+      "activation_blocking": true
+    },
+    {
+      "id": "playable_original_video_rights",
+      "verified": false,
+      "activation_blocking": true
+    },
+    {
+      "id": "captions_transcript_qc",
+      "verified": false,
+      "activation_blocking": true
+    },
+    {
+      "id": "performance_lighthouse",
+      "verified": false,
+      "activation_blocking": true
+    },
+    {
+      "id": "focus_signup_delivery_guest",
+      "verified": false,
+      "activation_blocking": true
+    },
+    {
+      "id": "real_grok_asset_ids",
+      "verified": false,
+      "activation_blocking": true
+    },
+    {
+      "id": "consent_appropriate_attribution",
+      "verified": false,
+      "activation_blocking": true
+    },
+    {
+      "id": "merchant_paid_order_reconciliation",
+      "verified": false,
+      "activation_blocking": true
+    },
+    {
+      "id": "founder_publication_approval",
+      "verified": false,
+      "activation_blocking": true
+    },
+    {
+      "id": "qa_ci_exact_sha",
+      "verified": false,
+      "activation_blocking": true
+    }
+  ],
+  "manual_review": "Merchant details are seller descriptions. No inferred customer outcomes or personal testimonials. Bounded Gmail search did not find named FV acceptance. WordPress content search for payhip returned zero public content results; neither proves absence of an account nor a paid SKU.",
+  "offline_audit_notes": {
+    "r145_variant_a": "mind/r145/zen12-premium-presell-a-review-only.html",
+    "r145_variant_b": "mind/r145/zen12-premium-presell-b-review-only.html",
+    "r144_mind_hub": "mind/r144/mind-hub-wp-draft.html"
+  }
+}
