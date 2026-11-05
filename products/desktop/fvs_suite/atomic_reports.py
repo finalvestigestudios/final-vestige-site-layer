@@ -15,6 +15,8 @@ from itertools import islice
 from pathlib import Path
 from typing import Callable, Iterable, Mapping
 
+from .csv_formula_guard import has_unescaped_formula_prefix
+
 
 # Application imports already cap source rows at 200,000. The publication API
 # must independently bound direct API generators and custom Mapping.items(),
@@ -50,8 +52,9 @@ class _BudgetedCSVTextSink:
 def _render_cell(value: object, cell: Callable[[object], str]) -> str:
     """Demand owned, sanitized text; never let csv.writer coerce unsafe objects.
 
-    The caller's sanitizer still owns the full invisible-prefix policy. This
-    additional boundary blocks blatant formulas, NUL evidence ambiguity, and
+    The caller's sanitizer still owns its complete escaping policy. This
+    additional boundary rejects formulas after whitespace or zero-width marks,
+    NUL evidence ambiguity, and
     implicit conversion of None, bytes, numbers or crafted string subclasses.
     """
     # Direct API callbacks can fail with financial values in their exception
@@ -71,7 +74,7 @@ def _render_cell(value: object, cell: Callable[[object], str]) -> str:
     if type(rendered) is str and len(rendered) > MAX_REPORT_CELL_CHARS:
         raise ValueError("CSV report cell size limit exceeded")
     if (type(rendered) is not str or "\x00" in rendered
-            or rendered.startswith(("=", "+", "@"))
+            or has_unescaped_formula_prefix(rendered)
             or any(0xD800 <= ord(char) <= 0xDFFF for char in rendered)):
         raise ValueError("Unsafe or non-text CSV report cell")
     return rendered
@@ -85,7 +88,8 @@ def write_csv_report(destination: str | Path, fields: Iterable[str],
     ``cell`` must sanitize untrusted spreadsheet content. It is applied to
     every header and row value, including ignored extra columns. Rendered
     header collisions reject the export instead of losing column identity.
-    All rendered cells must be plain text without NUL or bare formula prefixes;
+    All rendered cells must be plain text without NUL or unescaped formula
+    operators after Unicode whitespace and common invisible prefix marks;
     malformed sanitizer output fails closed before publication.
     Missing row keys, forged labels and duplicate row items fail closed;
     explicit empty values remain permitted. Very wide or unbounded iterables
