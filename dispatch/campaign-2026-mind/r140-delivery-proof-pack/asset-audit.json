@@ -1,0 +1,76 @@
+{
+  "state": "HOLD_UNSENT",
+  "mail_sent": false,
+  "source_campaign": "fv-dispatch-mind-launch-2026-10-30",
+  "independently_settled_orders": null,
+  "realized_net_revenue": null,
+  "recipient_eligibility": null,
+  "editions": [
+    {
+      "edition": 1,
+      "kind": "editorial",
+      "source_and_subject_match": true,
+      "html_review_only": true,
+      "plaintext_review_only": true,
+      "excerpt_simulated_only": true,
+      "affiliate_activated": false,
+      "real_jetpack_preview": false,
+      "release_approved": false
+    },
+    {
+      "edition": 2,
+      "kind": "editorial",
+      "source_and_subject_match": true,
+      "html_review_only": true,
+      "plaintext_review_only": true,
+      "excerpt_simulated_only": true,
+      "affiliate_activated": false,
+      "real_jetpack_preview": false,
+      "release_approved": false
+    },
+    {
+      "edition": 3,
+      "kind": "commercial-review-pending",
+      "source_and_subject_match": true,
+      "html_review_only": true,
+      "plaintext_review_only": true,
+      "excerpt_simulated_only": true,
+      "affiliate_activated": false,
+      "real_jetpack_preview": false,
+      "release_approved": false
+    },
+    {
+      "edition": 4,
+      "kind": "editorial",
+      "source_and_subject_match": true,
+      "html_review_only": true,
+      "plaintext_review_only": true,
+      "excerpt_simulated_only": true,
+      "affiliate_activated": false,
+      "real_jetpack_preview": false,
+      "release_approved": false
+    },
+    {
+      "edition": 5,
+      "kind": "commercial-review-pending",
+      "source_and_subject_match": true,
+      "html_review_only": true,
+      "plaintext_review_only": true,
+      "excerpt_simulated_only": true,
+      "affiliate_activated": false,
+      "real_jetpack_preview": false,
+      "release_approved": false
+    },
+    {
+      "edition": 6,
+      "kind": "editorial",
+      "source_and_subject_match": true,
+      "html_review_only": true,
+      "plaintext_review_only": true,
+      "excerpt_simulated_only": true,
+      "affiliate_activated": false,
+      "real_jetpack_preview": false,
+      "release_approved": false
+    }
+  ]
+}
