@@ -86,7 +86,7 @@ ok('article no fabricated clinical test',()=>has(article,'not** a replication'))
 ok('article no commercial endorsement',()=>has(article,'no affiliate URL, product endorsement'));
 ok('memo proper buyer and exact SKU',()=>{has(memo,'33-minute, 47 MB');has(memo,'44 minutes/61 MB');});
 ok('memo notes price/return uncertainty',()=>{has(memo,'final checkout total');has(memo,'14-day refund');});
-ok('memo claim/FTC source coverage',()=>{has(memo,'https://inspire3.com/privacy/');has(memo,'material');});
+ok('memo claim/FTC source coverage',()=>{has(memo,'https://inspire3.com/privacy/');has(memo,'FTC disclosure');});
 ok('memo 3 creator paths',()=>{has(memo,'change blindness');has(memo,'history of suggestion');has(memo,'attentional blink');});
 ok('memo UTM no invented ID',()=>{has(memo,'utm_content=<actual_grok_immutable_asset_id>');has(memo,'No Grok immutable');});
 ok('memo 7 and 30 day cohorts',()=>has(memo,'7- and 30-day'));
