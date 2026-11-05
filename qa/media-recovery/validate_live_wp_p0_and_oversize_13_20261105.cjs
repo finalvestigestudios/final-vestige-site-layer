@@ -14,7 +14,7 @@ function validateLiveRecheck(a){
     a?.frozen_baseline?.external_refs!==288)reject('frozen_inventory_drift');
  const inventory=a?.live_media_inventory;
  if(inventory?.image_media_items_count!==113||inventory?.pages_read!==2||
-    inventory?.oversize_threshold_strictly_greater_than_bytes!==1572864||
+    inventory?.threshold_bytes_exclusive!==1572864||
     inventory?.visitor_transfer_bytes!==null)reject('wp_media_census_invalid');
  const rows=a?.oversized_media;
  if(!Array.isArray(rows)||rows.length!==13)reject('oversized_13_required');
