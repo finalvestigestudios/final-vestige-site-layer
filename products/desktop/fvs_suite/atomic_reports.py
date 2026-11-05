@@ -21,7 +21,8 @@ def write_csv_report(destination: str | Path, fields: Iterable[str],
     """Write UTF-8-BOM CSV and publish only after the entire report is synced.
 
     ``cell`` must sanitize untrusted spreadsheet content. It is applied to
-    every value, including ignored extra columns, as in the prior writer.
+    every header and row value, including ignored extra columns. Rendered
+    header collisions reject the export instead of losing column identity.
     Nothing ever overwrites an existing destination or follows its symlink.
     On a filesystem lacking the required safe publication operation, fail
     rather than silently fall back to an overwriting move.
@@ -29,12 +30,25 @@ def write_csv_report(destination: str | Path, fields: Iterable[str],
     target = Path(destination)
     if not target.parent.is_dir():
         raise ValueError("Choose an existing output folder")
+    # Source-derived field labels are spreadsheet cells too. Freeze the
+    # schema and sanitize it before creating even a temporary report; a
+    # formula in a header must never bypass the caller's safe_cell policy.
+    names = tuple(fields)
+    if (not names or any(type(name) is not str or not name for name in names)
+            or len(set(names)) != len(names)):
+        raise ValueError("Invalid or duplicate CSV report columns")
+    rendered = tuple(cell(name) for name in names)
+    if (any(type(name) is not str or not name or any(c in name for c in "\x00\r\n")
+            for name in rendered) or len(set(rendered)) != len(rendered)):
+        # Two distinct input labels may collapse to one visible label after
+        # spreadsheet-formula neutralization; never publish ambiguous evidence.
+        raise ValueError("Unsafe or ambiguous CSV report columns")
     descriptor, temporary = tempfile.mkstemp(
         prefix=f".{target.stem}-", suffix=".partial", dir=target.parent)
     try:
         with os.fdopen(descriptor, "w", encoding="utf-8-sig", newline="") as stream:
-            writer = csv.DictWriter(stream, fieldnames=fields, extrasaction="ignore")
-            writer.writeheader()
+            writer = csv.DictWriter(stream, fieldnames=names, extrasaction="ignore")
+            writer.writer.writerow(rendered)
             for row in rows:
                 writer.writerow({name: cell(value) for name, value in row.items()})
             stream.flush()
