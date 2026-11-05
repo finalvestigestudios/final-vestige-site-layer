@@ -1,0 +1,310 @@
+{
+  "sprint": "mind-r152",
+  "as_of": "2026-11-05",
+  "publication": "UNPUBLISHED",
+  "main_offer": "Hypnosis Live Total Focus",
+  "merchant_authorization": "UNVERIFIED",
+  "affiliate_url": null,
+  "merchant_paid_sales_verified": false,
+  "net_revenue_per_1000_qualified_humans": "NOT_COMPUTABLE",
+  "sources": [
+    {
+      "id": "R1",
+      "type": "peer_review",
+      "url": "https://doi.org/10.1037/0278-7393.21.4.803"
+    },
+    {
+      "id": "R2",
+      "type": "peer_review",
+      "url": "https://doi.org/10.1111/j.1467-9280.1997.tb00417.x"
+    },
+    {
+      "id": "R3",
+      "type": "peer_review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/8656157/"
+    },
+    {
+      "id": "R4",
+      "type": "peer_review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/15856285/"
+    },
+    {
+      "id": "R5",
+      "type": "peer_review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/12009174/"
+    },
+    {
+      "id": "R6",
+      "type": "peer_review",
+      "url": "https://doi.org/10.2190/YPC4-WMK6-XU4R-KUV9"
+    },
+    {
+      "id": "M1",
+      "type": "seller",
+      "url": "https://inspire3.com/"
+    },
+    {
+      "id": "M2",
+      "type": "seller",
+      "url": "https://hypnosislive.com/mental-skills/total-focus"
+    },
+    {
+      "id": "M3",
+      "type": "seller",
+      "url": "https://hypnosislive.com/faq"
+    },
+    {
+      "id": "A1",
+      "type": "public_affiliate_signup_not_authorization",
+      "url": "https://affiliates.inspire3.com/"
+    },
+    {
+      "id": "F1",
+      "type": "regulatory",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking"
+    },
+    {
+      "id": "F2",
+      "type": "regulatory",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+    },
+    {
+      "id": "FV1",
+      "type": "existing_first_party",
+      "url": "https://finalvestige.com/focus/"
+    },
+    {
+      "id": "FV2",
+      "type": "existing_first_party",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "statement": "1995 experiments yielded 40% / 55% false recall in their respective procedures",
+      "sources": [
+        "R1"
+      ],
+      "verdict": "ALLOW_WITH_PROCEDURE_SCOPE"
+    },
+    {
+      "id": "C02",
+      "statement": "These rates apply to everyday personal memories or allegations",
+      "sources": [
+        "R1",
+        "R3"
+      ],
+      "verdict": "EXCLUDE_UNSUPPORTED_GENERALIZATION"
+    },
+    {
+      "id": "C03",
+      "statement": "Number of associates influences recall intrusion",
+      "sources": [
+        "R2"
+      ],
+      "verdict": "ALLOW_QUALIFIED"
+    },
+    {
+      "id": "C04",
+      "statement": "The surprise and list procedure influence false recognition",
+      "sources": [
+        "R4"
+      ],
+      "verdict": "ALLOW_QUALIFIED"
+    },
+    {
+      "id": "C05",
+      "statement": "Hypnosis and misleading questions increased errors in a specific study",
+      "sources": [
+        "R5"
+      ],
+      "verdict": "ALLOW_STUDY_SCOPE"
+    },
+    {
+      "id": "C06",
+      "statement": "Hypnosis always reduces memory accuracy",
+      "sources": [
+        "R5",
+        "R6"
+      ],
+      "verdict": "REJECT_BLANKET"
+    },
+    {
+      "id": "C07",
+      "statement": "2002 hypnosis DRM comparison did not find hypnosis memory enhancement",
+      "sources": [
+        "R6"
+      ],
+      "verdict": "ALLOW_WITH_DESIGN_SCOPE"
+    },
+    {
+      "id": "C08",
+      "statement": "Hypnosis reliably recovers historical events",
+      "sources": [
+        "R5",
+        "R6"
+      ],
+      "verdict": "REJECT"
+    },
+    {
+      "id": "C09",
+      "statement": "Total Focus has 33-minute 47 MB audio by J. A. Amos",
+      "sources": [
+        "M2"
+      ],
+      "verdict": "SELLER_REPRESENTATION"
+    },
+    {
+      "id": "C10",
+      "statement": "Total Focus's results are proven by general self-hypnosis studies",
+      "sources": [
+        "M2",
+        "R6"
+      ],
+      "verdict": "REJECT_PRODUCT_EFFICACY_INFERENCE"
+    },
+    {
+      "id": "C11",
+      "statement": "Total Focus exact final checkout price",
+      "sources": [
+        "M2"
+      ],
+      "verdict": "UNVERIFIED_NEVER_PROMISE"
+    },
+    {
+      "id": "C12",
+      "statement": "Merchant refunds processed as advertised",
+      "sources": [
+        "M3"
+      ],
+      "verdict": "UNVERIFIED_NEVER_GUARANTEE"
+    },
+    {
+      "id": "C13",
+      "statement": "Named FV Inspire3 affiliate entitlement",
+      "sources": [
+        "A1"
+      ],
+      "verdict": "NOT_VERIFIED"
+    },
+    {
+      "id": "C14",
+      "statement": "Affiliate earning URL or commission exists for FV",
+      "sources": [
+        "A1"
+      ],
+      "verdict": "NOT_VERIFIED"
+    },
+    {
+      "id": "C15",
+      "statement": "Public affiliate portal is proof of individual approval",
+      "sources": [
+        "A1"
+      ],
+      "verdict": "REJECT"
+    },
+    {
+      "id": "C16",
+      "statement": "Near-link disclosure is needed for material commission relationship",
+      "sources": [
+        "F1"
+      ],
+      "verdict": "REQUIRED_IF_ACTIVATED"
+    },
+    {
+      "id": "C17",
+      "statement": "Any health benefit promise may rely on seller's adjectives",
+      "sources": [
+        "F2"
+      ],
+      "verdict": "REJECT_UNSUBSTANTIATED"
+    },
+    {
+      "id": "C18",
+      "statement": "Focus click equals confirmed signup",
+      "sources": [
+        "FV1"
+      ],
+      "verdict": "REJECT_EVENT_CONFLATION"
+    },
+    {
+      "id": "C19",
+      "statement": "Affiliate outbound equals purchase or commission",
+      "sources": [
+        "A1"
+      ],
+      "verdict": "REJECT_EVENT_CONFLATION"
+    },
+    {
+      "id": "C20",
+      "statement": "Current paid FV Mind SKU ready in Payhip",
+      "sources": [],
+      "verdict": "UNKNOWN_REQUIRES_ACCOUNT_VERIFICATION"
+    },
+    {
+      "id": "C21",
+      "statement": "Current Grok media IDs and purchase attribution known",
+      "sources": [],
+      "verdict": "UNKNOWN"
+    },
+    {
+      "id": "C22",
+      "statement": "Net paid revenue per 1000 qualified human visitors",
+      "sources": [],
+      "verdict": "NOT_COMPUTABLE"
+    },
+    {
+      "id": "C23",
+      "statement": "Optional 40-second video raises paid conversion",
+      "sources": [],
+      "verdict": "HYPOTHESIS_NOT_RUN"
+    },
+    {
+      "id": "C24",
+      "statement": "FTC disclosure alone cures an unsupported efficacy claim",
+      "sources": [
+        "F1",
+        "F2"
+      ],
+      "verdict": "REJECT"
+    },
+    {
+      "id": "C25",
+      "statement": "Archival testimony by Puységur proves animal magnetism",
+      "sources": [
+        "FV2"
+      ],
+      "verdict": "REJECT_HISTORICAL_EFFICACY_INFERENCE"
+    }
+  ],
+  "gates": {
+    "named_partner_approval": "CLOSED_NOT_VERIFIED",
+    "per_sku_approval": "CLOSED_NOT_VERIFIED",
+    "approved_tracking_url": "CLOSED_NOT_VERIFIED",
+    "permitted_site_channel": "CLOSED_NOT_VERIFIED",
+    "permitted_youtube_channel": "CLOSED_NOT_VERIFIED",
+    "permitted_tiktok_channel": "CLOSED_NOT_VERIFIED",
+    "permitted_email_channel": "CLOSED_NOT_VERIFIED",
+    "affiliate_reporting": "CLOSED_NOT_VERIFIED",
+    "settlement_terms": "CLOSED_NOT_VERIFIED",
+    "owned_SKU_auth": "CLOSED_NOT_VERIFIED",
+    "owned_rights": "CLOSED_NOT_VERIFIED",
+    "owned_checkout": "CLOSED_NOT_VERIFIED",
+    "owned_fulfillment": "CLOSED_NOT_VERIFIED",
+    "refund_terms_verified": "CLOSED_NOT_VERIFIED",
+    "published_mind_hub": "CLOSED_NOT_VERIFIED",
+    "no_js_accessibility_browser_test": "CLOSED_NOT_VERIFIED",
+    "mobile_390px_browser_test": "CLOSED_NOT_VERIFIED",
+    "wcag_browser_audit": "CLOSED_NOT_VERIFIED",
+    "site_QA_approval": "CLOSED_NOT_VERIFIED",
+    "founder_release": "CLOSED_NOT_VERIFIED",
+    "grok_asset_ids": "CLOSED_NOT_VERIFIED",
+    "qualified_sessions": "CLOSED_NOT_VERIFIED",
+    "paid_orders": "CLOSED_NOT_VERIFIED",
+    "refunds_and_fees": "CLOSED_NOT_VERIFIED",
+    "7_30_day_cohorts": "CLOSED_NOT_VERIFIED",
+    "video_produced": "CLOSED_NOT_VERIFIED",
+    "randomization_approved": "CLOSED_NOT_VERIFIED"
+  }
+}
