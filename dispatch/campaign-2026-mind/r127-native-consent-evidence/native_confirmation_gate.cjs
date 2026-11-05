@@ -40,7 +40,7 @@ function confirmSignup(e){
  if(!e||e.native_record_verified!==true||e.provider!=="wordpress_native_subscriber_transition")
   return {countable:false,reason:"No verified native transition"};
  demand(CONFIRM.includes(e.confirmation_path),"unknown confirmation path");
- demand(e.previous_email_status!=="Subscribed","duplicate or preexisting subscriber");
+ demand(e.previous_email_status==="Not subscribed"||e.previous_email_status==="Not confirmed","valid prior native status transition required; reject unknown/preexisting");
  demand(e.current_email_status==="Subscribed","not currently email-subscribed");
  demand(e.explicit_site_subscription_consent===true,"consent unverified");
  demand(e.unique_transition_attested===true,"dedup evidence missing");
