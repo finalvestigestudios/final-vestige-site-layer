@@ -234,6 +234,10 @@ jobs:
         run: |
           python -m unittest discover -s products/desktop/tests -p 'test_atomic_pair_shape_r217.py' > /dev/null 2>&1
           python -OO -m unittest discover -s products/desktop/tests -p 'test_atomic_pair_shape_r217.py' > /dev/null 2>&1
+      - name: R218 reject NFKC-compatible formula prefixes (20 cases; normal and -OO)
+        run: |
+          python -m unittest discover -s products/desktop/tests -p 'test_atomic_nfkc_prefix_r218.py' > /dev/null 2>&1
+          python -OO -m unittest discover -s products/desktop/tests -p 'test_atomic_nfkc_prefix_r218.py' > /dev/null 2>&1
       - name: R200 execute R194-R199 financial and policy audit tests (148 methods per mode)
         run: |
           python products/desktop/scripts/safe_audit_subprocess_r205.py
@@ -898,6 +902,14 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R217 CSV row-item custody regression failed" }
           python -OO -m unittest discover -s products/desktop/tests -p 'test_atomic_pair_shape_r217.py' *> $null
           if ($LASTEXITCODE -ne 0) { throw "R217 optimized CSV row-item custody regression failed" }
+      - name: R218 reject NFKC-compatible formula prefixes (20 cases; normal and -OO)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python -m unittest discover -s products/desktop/tests -p 'test_atomic_nfkc_prefix_r218.py' *> $null
+          if ($LASTEXITCODE -ne 0) { throw "R218 CSV compatibility formula custody failed" }
+          python -OO -m unittest discover -s products/desktop/tests -p 'test_atomic_nfkc_prefix_r218.py' *> $null
+          if ($LASTEXITCODE -ne 0) { throw "R218 optimized CSV compatibility formula custody failed" }
       - name: R200 execute R194-R199 financial and policy audit tests (148 methods per mode)
         shell: pwsh
         run: |
