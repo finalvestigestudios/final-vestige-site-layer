@@ -95,7 +95,7 @@ Inspire3 markets products aimed at meditation, focus and personal growth. Its me
 
 A reader may prefer guided audio as a form of entertainment or structure. Preference is a legitimate personal consideration, but it is not evidence that the track treats a health condition or produces measurable productivity gains. A buyer should confirm the actual format, present checkout total, download and refund terms. The seller page displayed varying prices in different November 5 retrievals, and no checkout was independently tested. [5]
 
-This independent investigation does **not** endorse or link to a paid product. Any later optional purchasing guide belongs in a visibly separate commercial section. An approved earning link would require documented partner authorization and a clear disclosure beside that link. The FTC's endorsement and health-advertising guidance requires financial connections to be understandable and benefit claims to be adequately supported. [6]
+This independent investigation does **not** endorse a paid product or provide an affiliate earning link; the merchant page is cited only as a factual source about the seller's offer. Any later optional purchasing guide belongs in a visibly separate commercial section. An approved earning link would require documented partner authorization and a clear disclosure beside that link. The FTC's endorsement and health-advertising guidance requires financial connections to be understandable and benefit claims to be adequately supported. [6]
 
 The distinction is not a bureaucratic footnote. It is the difference between explaining a study and borrowing the study's credibility to sell something it never tested.
 
