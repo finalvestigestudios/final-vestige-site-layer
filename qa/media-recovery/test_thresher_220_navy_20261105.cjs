@@ -3,6 +3,7 @@ const {test}=require('node:test'),assert=require('node:assert/strict');
 const {audit}=require('./validate_thresher_220_navy_20261105.cjs');
 const data=require('./thresher_220_navy_catalog_20261105.json');
 const copy=()=>JSON.parse(JSON.stringify(data));
+const clone=x=>JSON.parse(JSON.stringify(x));
 test('seven live WordPress images, six primary Navy catalogs; no publication',()=>assert.deepEqual(audit(data).errors,[]));
 const cases=[
  ["invented 42 failures", v=>v.actual_broken_image_count=42],
