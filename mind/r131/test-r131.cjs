@@ -23,7 +23,7 @@ test("original sourced investigation separates commerce",()=>{
  assert.doesNotMatch(ARTICLE,/ref=affiliate|affiliate\/checkout|buy-now/);
 });
 test("buyer guide contains meaningful evidence and explicit limits",()=>{
- for(const t of ["5 supportive","not an authenticated checkout","privacy","not a statement that we have used","November 4, 2026"])assert.ok(GUIDE.toLowerCase().includes(t.toLowerCase()),t);
+ for(const t of ["Five produced findings","not an authenticated checkout","privacy","not a statement that we have used","November 4, 2026"])assert.ok(GUIDE.toLowerCase().includes(t.toLowerCase()),t);
  assert.match(GUIDE,/Ingendoh/);assert.match(GUIDE,/NCCIH/);
 });
 test("evidence register has traceable claims and all gates closed",()=>{
