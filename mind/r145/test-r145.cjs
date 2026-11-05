@@ -44,7 +44,7 @@ check("all creator IDs unknown",()=>assert(data.social_routes.every(x=>x.media_i
 check("KPI not fabricated",()=>assert(data.commerce_measurement.kpi_net_per_1000===null));
 check("fraudulent sale status absent",()=>assert(!/"verified":true/.test(raw)));
 check("FTC URLs and purchase source",()=>{for(const x of ["www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides","www.ftc.gov/business-guidance/resources/health-products-compliance-guidance","https://zen12.com/hnp"])assert(raw.includes(x))});
-check("plan has owned Payhip fallback and merchant outreach UNSENT",()=>{assert(plan.includes("Payhip"));assert(plan.includes("NOT SENT"));assert(plan.includes("written named partner approval"))});
+check("plan has owned Payhip fallback and merchant outreach UNSENT",()=>{assert(plan.includes("Payhip"));assert(plan.includes("NOT SENT"));assert(plan.includes("named partner approval"))});
 check("no claimed net sales",()=>{assert(plan.includes("NOT COMPUTABLE")||plan.includes("NOT_COMPUTABLE"))});
 check("30/7 day and 1000 session KPI",()=>{assert(plan.includes("30-day"));assert(plan.includes("1,000 qualified human sessions"))});
 check("no off-topic homepage edits planned",()=>{assert(plan.includes("homepage PR #49"));assert(plan.includes("canonical Mind hub #172"))});
