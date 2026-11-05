@@ -1,0 +1,306 @@
+{
+  "schema_version": 1,
+  "status": "DRAFT_HOLD_INDEPENDENT_REVIEW_REQUIRED",
+  "source_repo": "finalvestigestudios/final-vestige-site-layer",
+  "source_ref": "5ea94442b56ec040e8846d784032d38200cd7dae",
+  "parent_r133_manifest": "preparedness/docs/r133/locked_files.json",
+  "audit_date": "2026-11-05",
+  "method": "Read all 35 actual article HTML and meta JSON documents through authenticated GitHub file read at immutable R138 SHA; count citation tokens and source_use IDs; estimate prose words by stripping HTML/citation tokens and Unicode word segmentation. Approximate word estimates are NOT a content-quality/safety pass. Prose floors are 75% of independently observed counts to catch gross inadvertent truncation; exact original files remain protected by R133 Git blob identities.",
+  "may_publish": false,
+  "qd_pass": false,
+  "medical_safety_verified": false,
+  "merchant_offer_verified": false,
+  "articles": [
+    {
+      "slug": "emergency-hygiene-sanitation",
+      "observed_approx_prose_words": 3292,
+      "minimum_prose_words": 2469,
+      "citation_occurrences": 62,
+      "source_use_ids": 7,
+      "historical_safety_state": "pending"
+    },
+    {
+      "slug": "family-communication-plan",
+      "observed_approx_prose_words": 3603,
+      "minimum_prose_words": 2702,
+      "citation_occurrences": 69,
+      "source_use_ids": 20,
+      "historical_safety_state": "pending"
+    },
+    {
+      "slug": "fire-making-across-time",
+      "observed_approx_prose_words": 3142,
+      "minimum_prose_words": 2356,
+      "citation_occurrences": 67,
+      "source_use_ids": 11,
+      "historical_safety_state": "pending"
+    },
+    {
+      "slug": "food-safety-power-outage",
+      "observed_approx_prose_words": 3104,
+      "minimum_prose_words": 2328,
+      "citation_occurrences": 69,
+      "source_use_ids": 9,
+      "historical_safety_state": "pending"
+    },
+    {
+      "slug": "go-bags",
+      "observed_approx_prose_words": 3674,
+      "minimum_prose_words": 2755,
+      "citation_occurrences": 73,
+      "source_use_ids": 18,
+      "historical_safety_state": "pending"
+    },
+    {
+      "slug": "history-of-food-preservation",
+      "observed_approx_prose_words": 2238,
+      "minimum_prose_words": 1678,
+      "citation_occurrences": 47,
+      "source_use_ids": 12,
+      "historical_safety_state": "pending"
+    },
+    {
+      "slug": "home-fire-escape-plan",
+      "observed_approx_prose_words": 4370,
+      "minimum_prose_words": 3277,
+      "citation_occurrences": 73,
+      "source_use_ids": 13,
+      "historical_safety_state": "pending"
+    },
+    {
+      "slug": "homemade-water-filters",
+      "observed_approx_prose_words": 1951,
+      "minimum_prose_words": 1463,
+      "citation_occurrences": 51,
+      "source_use_ids": 6,
+      "historical_safety_state": "pending"
+    },
+    {
+      "slug": "household-emergency-plan",
+      "observed_approx_prose_words": 3473,
+      "minimum_prose_words": 2604,
+      "citation_occurrences": 57,
+      "source_use_ids": 14,
+      "historical_safety_state": "pending"
+    },
+    {
+      "slug": "lewis-and-clark-salt-works",
+      "observed_approx_prose_words": 2327,
+      "minimum_prose_words": 1745,
+      "citation_occurrences": 49,
+      "source_use_ids": 11,
+      "historical_safety_state": "pending"
+    },
+    {
+      "slug": "making-water-safer",
+      "observed_approx_prose_words": 2925,
+      "minimum_prose_words": 2193,
+      "citation_occurrences": 52,
+      "source_use_ids": 8,
+      "historical_safety_state": "approved"
+    },
+    {
+      "slug": "medication-and-devices",
+      "observed_approx_prose_words": 3953,
+      "minimum_prose_words": 2964,
+      "citation_occurrences": 68,
+      "source_use_ids": 9,
+      "historical_safety_state": "pending"
+    },
+    {
+      "slug": "navigation-before-gps",
+      "observed_approx_prose_words": 2900,
+      "minimum_prose_words": 2175,
+      "citation_occurrences": 47,
+      "source_use_ids": 10,
+      "historical_safety_state": "not-required"
+    },
+    {
+      "slug": "outage-heat-cold-generators",
+      "observed_approx_prose_words": 4506,
+      "minimum_prose_words": 3379,
+      "citation_occurrences": 121,
+      "source_use_ids": 19,
+      "historical_safety_state": "pending"
+    },
+    {
+      "slug": "pantry-rotation",
+      "observed_approx_prose_words": 3103,
+      "minimum_prose_words": 2327,
+      "citation_occurrences": 68,
+      "source_use_ids": 9,
+      "historical_safety_state": "pending"
+    },
+    {
+      "slug": "pemmican-and-dried-meats",
+      "observed_approx_prose_words": 2422,
+      "minimum_prose_words": 1816,
+      "citation_occurrences": 46,
+      "source_use_ids": 11,
+      "historical_safety_state": "pending"
+    },
+    {
+      "slug": "pickling-fermentation-old-recipes",
+      "observed_approx_prose_words": 2749,
+      "minimum_prose_words": 2061,
+      "citation_occurrences": 49,
+      "source_use_ids": 10,
+      "historical_safety_state": "pending"
+    },
+    {
+      "slug": "pioneer-supply-chains-failed",
+      "observed_approx_prose_words": 3140,
+      "minimum_prose_words": 2355,
+      "citation_occurrences": 63,
+      "source_use_ids": 11,
+      "historical_safety_state": "not-required"
+    },
+    {
+      "slug": "pioneer-travel-rations",
+      "observed_approx_prose_words": 2364,
+      "minimum_prose_words": 1773,
+      "citation_occurrences": 39,
+      "source_use_ids": 10,
+      "historical_safety_state": "pending"
+    },
+    {
+      "slug": "preparedness-real-households",
+      "observed_approx_prose_words": 3442,
+      "minimum_prose_words": 2581,
+      "citation_occurrences": 64,
+      "source_use_ids": 17,
+      "historical_safety_state": "pending"
+    },
+    {
+      "slug": "pressure-canning-low-acid",
+      "observed_approx_prose_words": 3465,
+      "minimum_prose_words": 2598,
+      "citation_occurrences": 74,
+      "source_use_ids": 17,
+      "historical_safety_state": "pending"
+    },
+    {
+      "slug": "rain-barrels-and-cisterns",
+      "observed_approx_prose_words": 2638,
+      "minimum_prose_words": 1978,
+      "citation_occurrences": 44,
+      "source_use_ids": 7,
+      "historical_safety_state": "pending"
+    },
+    {
+      "slug": "root-cellars-cool-storage",
+      "observed_approx_prose_words": 2796,
+      "minimum_prose_words": 2097,
+      "citation_occurrences": 42,
+      "source_use_ids": 8,
+      "historical_safety_state": "not-required"
+    },
+    {
+      "slug": "safe-jerky-dehydration",
+      "observed_approx_prose_words": 2901,
+      "minimum_prose_words": 2175,
+      "citation_occurrences": 71,
+      "source_use_ids": 11,
+      "historical_safety_state": "pending"
+    },
+    {
+      "slug": "salt-beef-salt-pork-age-of-sail",
+      "observed_approx_prose_words": 2855,
+      "minimum_prose_words": 2141,
+      "citation_occurrences": 49,
+      "source_use_ids": 10,
+      "historical_safety_state": "approved"
+    },
+    {
+      "slug": "sanitation-before-germ-theory",
+      "observed_approx_prose_words": 2682,
+      "minimum_prose_words": 2011,
+      "citation_occurrences": 48,
+      "source_use_ids": 10,
+      "historical_safety_state": "not-required"
+    },
+    {
+      "slug": "shelter-or-evacuate",
+      "observed_approx_prose_words": 4316,
+      "minimum_prose_words": 3237,
+      "citation_occurrences": 59,
+      "source_use_ids": 15,
+      "historical_safety_state": "pending"
+    },
+    {
+      "slug": "ships-biscuit-and-hardtack",
+      "observed_approx_prose_words": 2668,
+      "minimum_prose_words": 2001,
+      "citation_occurrences": 42,
+      "source_use_ids": 8,
+      "historical_safety_state": "pending"
+    },
+    {
+      "slug": "smokehouses-salting-curing",
+      "observed_approx_prose_words": 2155,
+      "minimum_prose_words": 1616,
+      "citation_occurrences": 36,
+      "source_use_ids": 11,
+      "historical_safety_state": "pending"
+    },
+    {
+      "slug": "three-day-kit",
+      "observed_approx_prose_words": 3839,
+      "minimum_prose_words": 2879,
+      "citation_occurrences": 79,
+      "source_use_ids": 18,
+      "historical_safety_state": "pending"
+    },
+    {
+      "slug": "two-week-water-storage",
+      "observed_approx_prose_words": 1904,
+      "minimum_prose_words": 1428,
+      "citation_occurrences": 28,
+      "source_use_ids": 3,
+      "historical_safety_state": "pending"
+    },
+    {
+      "slug": "warnings-radios-offline-maps",
+      "observed_approx_prose_words": 2924,
+      "minimum_prose_words": 2193,
+      "citation_occurrences": 55,
+      "source_use_ids": 9,
+      "historical_safety_state": "pending"
+    },
+    {
+      "slug": "water-advisories-explained",
+      "observed_approx_prose_words": 1910,
+      "minimum_prose_words": 1432,
+      "citation_occurrences": 30,
+      "source_use_ids": 4,
+      "historical_safety_state": "pending"
+    },
+    {
+      "slug": "water-math",
+      "observed_approx_prose_words": 2014,
+      "minimum_prose_words": 1510,
+      "citation_occurrences": 33,
+      "source_use_ids": 5,
+      "historical_safety_state": "pending"
+    },
+    {
+      "slug": "water-purification-through-history",
+      "observed_approx_prose_words": 2970,
+      "minimum_prose_words": 2227,
+      "citation_occurrences": 76,
+      "source_use_ids": 14,
+      "historical_safety_state": "pending"
+    }
+  ],
+  "totals": {
+    "article_count": 35,
+    "citation_occurrences": 2000,
+    "author_source_use_bindings": 385,
+    "observed_approx_prose_words": 104715,
+    "historical_safety_states": {
+      "pending": 29,
+      "approved": 2,
+      "not-required": 4
+    }
+  }
+}
