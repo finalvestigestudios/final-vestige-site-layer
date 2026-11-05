@@ -42,9 +42,11 @@ def _run_private(tests: Path, filename: str) -> tuple[int, unittest.TestResult]:
 
 
 def run_matrix(tests: Path = TESTS, targets=TARGETS) -> bool:
-    """Enforce audited test counts without echoing test-generated evidence.
+    """Preflight the whole matrix before running privacy-safe audited tests.
 
-    No financial files, accounts, network access, downloads or builds are used
+    This is structural preflight, not an atomic execution guarantee: a test
+    might still fail after previous validated modules have executed. No
+    financial files, accounts, network access, downloads or builds are used
     by this runner. Every audited case must pass; skips, expected failures,
     unexpected successes and incomplete counts block the matrix.
     """
@@ -52,7 +54,10 @@ def run_matrix(tests: Path = TESTS, targets=TARGETS) -> bool:
         print("HOLD: desktop tests directory missing or linked", file=sys.stderr)
         return False
     seen = set()
-    total = 0
+    vetted = []
+    # R203: first verify every contracted path before importing *any* suite.
+    # This prevents an early test module from running when a later audited
+    # selector is absent, duplicated, invalid, or replaced by a symlink.
     for filename, minimum in targets:
         if (type(filename) is not str
                 or re.fullmatch(r"test_[a-z0-9_]+\.py", filename) is None
@@ -64,6 +69,10 @@ def run_matrix(tests: Path = TESTS, targets=TARGETS) -> bool:
         if not source.is_file() or source.is_symlink():
             print(f"HOLD: audited test module absent or linked: {filename}", file=sys.stderr)
             return False
+        vetted.append((filename, minimum))
+
+    total = 0
+    for filename, minimum in vetted:
         try:
             count, result = _run_private(tests, filename)
         except BaseException:
@@ -85,9 +94,9 @@ def run_matrix(tests: Path = TESTS, targets=TARGETS) -> bool:
                   f"{unexpected_successes} unexpected successes)", file=sys.stderr)
             return False
         total += result.testsRun
-        print(f"R202: {filename}: {result.testsRun} executed, 0 skipped, "
+        print(f"R203: {filename}: {result.testsRun} executed, 0 skipped, "
               "0 expected failures (all passed)")
-    print(f"R202: {total} passing audit cases across {len(seen)} modules; "
+    print(f"R203: {total} passing audit cases across {len(seen)} modules; "
           "no release or production approval implied")
     return True
 
