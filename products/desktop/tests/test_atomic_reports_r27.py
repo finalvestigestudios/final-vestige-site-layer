@@ -95,7 +95,8 @@ class AtomicReportsTests(unittest.TestCase):
             visited.append(value)
             return str(value)
         self.publish([{"id": "A", "amount": "4", "unused": "private"}], cell=cell)
-        self.assertEqual(visited, ["A", "4", "private"])
+        # R207: header cells are sanitized before any data cells.
+        self.assertEqual(visited, ["id", "amount", "A", "4", "private"])
         with self.output.open(encoding="utf-8-sig", newline="") as stream:
             self.assertEqual(list(csv.DictReader(stream)), [{"id": "A", "amount": "4"}])
 
