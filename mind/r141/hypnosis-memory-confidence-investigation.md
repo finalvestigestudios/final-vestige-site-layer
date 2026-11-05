@@ -14,9 +14,9 @@ That distinction matters anywhere someone promises to uncover hidden truth by ch
 
 ## A confident witness is not automatically an accurate witness
 
-A study can ask at least two distinct questions: what event did participants report, and how certain were they that their report was correct? The second is not a substitute for the first. Researchers studying hypnotically influenced memory noticed precisely this problem. Jeanette Krass's 1989 review, *Hypnotic memory and confident reporting*, examined how hypnosis, expectations, and social influences may alter the relationship between accuracy and expressed confidence. The review describes situations in which confidence changes without a corresponding increase in accuracy, and in which accuracy suffers without a clear drop in confidence. It does **not** mean that every hypnotic memory is false or that all witnesses lack useful memories.
+A study can ask at least two distinct questions: what event did participants report, and how certain were they that their report was correct? The second is not a substitute for the first. Researchers studying hypnotically influenced memory noticed precisely this problem. Jeanette Krass, Sachiko Kinoshita, and Kevin M. McConkey's 1989 review, *Hypnotic memory and confident reporting*, examined how hypnosis, expectations, and social influences may alter the relationship between accuracy and expressed confidence. The review describes situations in which confidence changes without a corresponding increase in accuracy, and in which accuracy suffers without a clear drop in confidence. It does **not** mean that every hypnotic memory is false or that all witnesses lack useful memories.
 
-Source: [Krass, 1989, *Applied Cognitive Psychology*](https://doi.org/10.1002/acp.2350030105).
+Source: [Krass, Kinoshita & McConkey, 1989, *Applied Cognitive Psychology*](https://doi.org/10.1002/acp.2350030105).
 
 Consider what happens when an interviewer is certain there must be more to a story. Even without openly demanding a specific answer, a sequence of questions can signal that hesitancy is a failure, that additional detail is desirable, and that producing a vivid scene will be rewarded. The participant may be earnest and cooperative. Yet an earnest answer does not make every detail an observation. Some details can come from expectations, imagination, familiar situations, later suggestions, or previous conversations.
 
@@ -26,9 +26,9 @@ This is why methodological safeguards matter: the exact wording of a prompt, whe
 
 In the widely discussed “lost in the mall” experimental tradition, researchers explored whether participants could develop beliefs or recollective experiences about an event that did not occur. Some studies provided a mixture of true childhood experiences and a fabricated story, sometimes shaped using real biographical details supplied by relatives. By making a suggested event familiar and plausible, such designs offered a way to study how misinformation could acquire the subjective character of remembering.
 
-There are substantial, legitimate disputes over how to classify the outcomes. Does tentative belief count as a memory? How much detail must a participant report? What if part of an account is a real memory mixed with invented material? A 2017 systematic review by Brewin and Andrews explicitly separated *autobiographical belief*, *recollective experience*, and *confidence*. It cautioned against treating these as interchangeable. A 2021 systematic review by Muschalla and colleagues examined laboratory induction of false beliefs and memories while emphasizing complexity and disagreement in the literature. Neither review implies that every allegation of a past event is fabricated, nor that a person can simply be talked into any memory on demand.
+There are substantial, legitimate disputes over how to classify the outcomes. Does tentative belief count as a memory? How much detail must a participant report? What if part of an account is a real memory mixed with invented material? A 2017 systematic review by Brewin and Andrews explicitly separated *autobiographical belief*, *recollective experience*, and *confidence*. It cautioned against treating these as interchangeable. A 2021 systematic review by Muschalla and Schönborn examined laboratory induction of false beliefs and memories while emphasizing complexity and disagreement in the literature. Neither review implies that every allegation of a past event is fabricated, nor that a person can simply be talked into any memory on demand.
 
-Sources: [Brewin & Andrews, 2017](https://doi.org/10.1002/acp.3220); [Muschalla et al., 2021](https://doi.org/10.1002/cpp.2567).
+Sources: [Brewin & Andrews, 2017](https://doi.org/10.1002/acp.3220); [Muschalla & Schönborn, 2021](https://doi.org/10.1002/cpp.2567).
 
 This distinction also protects against a different error: concluding that because memory can be influenced, someone's account should be dismissed automatically. Scientists study the conditions under which distortion is possible, not a universal rule for accepting or rejecting testimony. Evaluating a particular account still depends on its details, independent evidence, the circumstances in which it emerged, and the methods used to examine it.
 
@@ -72,9 +72,9 @@ The appropriate next step for a reader is optional: explore the [Seven Day Focus
 
 ## Evidence ledger and limitations
 
-1. [Krass (1989), *Hypnotic memory and confident reporting*](https://doi.org/10.1002/acp.2350030105): analysis of confidence/accuracy relationships; not a claim about a named retail product.
+1. [Krass, Kinoshita & McConkey (1989), *Hypnotic memory and confident reporting*](https://doi.org/10.1002/acp.2350030105): analysis of confidence/accuracy relationships; not a claim about a named retail product.
 2. [Brewin & Andrews (2017), systematic review of suggested childhood memories](https://doi.org/10.1002/acp.3220): distinguishes belief, experience and confidence; not universal false-memory prevalence.
-3. [Muschalla et al. (2021), false belief/false memory systematic review](https://doi.org/10.1002/cpp.2567): methodological diversity and contested conceptual questions.
+3. [Muschalla & Schönborn (2021), false belief/false memory systematic review](https://doi.org/10.1002/cpp.2567): methodological diversity and contested conceptual questions.
 4. [Wagstaff (2008), pseudomemory and hypnosis](https://doi.org/10.1002/ch.366): specific experiments do not license forensic memory-recovery claims.
 5. [Johns Hopkins Medicine, Hypnosis](https://www.hopkinsmedicine.org/health/wellness-and-prevention/hypnosis): institutional caution about memory retrieval.
 6. [NCCIH, Hypnosis](https://www.nccih.nih.gov/health/hypnosis): research scope varies by application.
@@ -83,4 +83,4 @@ The appropriate next step for a reader is optional: explore the [Seven Day Focus
 
 **Research boundaries:** No primary-source manuscript was newly translated for this draft. Historical interpretation relies on the existing FV Puységur archive. The scholarly references above support discussion of specific experimental paradigms; they do not measure any named Inspire3 product, do not establish the truth or falsity of an individual account, and should not be used as clinical guidance.
 
-**Editorial/release decision:** UNPUBLISHED; source, copy, legal, visual and mobile review pending. No commercial link in article.
+**Editorial/release decision:** UNPUBLISHED; source, copy, legal, visual and mobile review pending. No affiliate or earning link; seller URLs appear as references.
