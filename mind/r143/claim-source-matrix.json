@@ -1,0 +1,451 @@
+{
+  "schema": "fv.mind.r143.claims.v1",
+  "status": "UNPUBLISHED_DRAFT_HARD_HOLD",
+  "date": "2026-11-05",
+  "branch": "mind-r143-thatcher-evidence-and-offer-gate-20261105",
+  "sources": {
+    "T1980": {
+      "url": "https://doi.org/10.1068/p090483",
+      "type": "primary_science",
+      "year": 1980
+    },
+    "VB1985": {
+      "url": "https://doi.org/10.1068/p140515",
+      "type": "primary_science",
+      "year": 1985
+    },
+    "B2006": {
+      "url": "https://doi.org/10.1016/j.neuroimage.2006.03.023",
+      "type": "primary_science",
+      "year": 2006
+    },
+    "M2008": {
+      "url": "https://doi.org/10.1068/p6048",
+      "type": "primary_science",
+      "year": 2008
+    },
+    "W2010": {
+      "url": "https://doi.org/10.1068/p6659",
+      "type": "primary_science",
+      "year": 2010
+    },
+    "S2011": {
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3166144/",
+      "type": "primary_science",
+      "year": 2011
+    },
+    "FTCENDORSE": {
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "type": "regulator"
+    },
+    "FTCHEALTH": {
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "type": "regulator"
+    },
+    "PARENT": {
+      "url": "https://inspire3.com/",
+      "type": "seller"
+    },
+    "ZEN": {
+      "url": "https://zen12.com/hnp",
+      "type": "exact_seller_offer"
+    },
+    "TOTAL": {
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "type": "different_seller_offer"
+    },
+    "AFF": {
+      "url": "https://affiliates.inspire3.com/",
+      "type": "public_enrollment_not_account_authorization"
+    },
+    "PRIVACY": {
+      "url": "https://inspire3.com/privacy/",
+      "type": "seller_policy"
+    },
+    "FOCUS": {
+      "url": "https://finalvestige.com/focus/",
+      "type": "published_asset_prior_authenticated"
+    },
+    "CHANGE": {
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "type": "published_asset_prior_authenticated"
+    },
+    "PUY": {
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "type": "published_asset_prior_authenticated"
+    }
+  },
+  "claim_decisions": [
+    {
+      "id": "TH1",
+      "claim": "Original Thatcher manipulation observed local eye/mouth inversion masked by global inversion",
+      "decision": "SUPPORTED_IN_NARROW_TASK",
+      "sources": [
+        "T1980"
+      ]
+    },
+    {
+      "id": "TH2",
+      "claim": "All viewers see exactly the same illusion regardless of display and history",
+      "decision": "REJECT_UNSUPPORTED_UNIVERSAL",
+      "sources": [
+        "T1980",
+        "M2008"
+      ]
+    },
+    {
+      "id": "TH3",
+      "claim": "Thatcher work was followed up by Valentine and Bruce",
+      "decision": "SUPPORTED_BIBLIOGRAPHIC",
+      "sources": [
+        "VB1985"
+      ]
+    },
+    {
+      "id": "TH4",
+      "claim": "Face holistic processing changes as orientation changes in composite-face tests",
+      "decision": "SUPPORTED_TASK_SPECIFIC",
+      "sources": [
+        "M2008"
+      ]
+    },
+    {
+      "id": "TH5",
+      "claim": "Some non-face categories can show Thatcher-like effects",
+      "decision": "SUPPORTED_TASK_SPECIFIC",
+      "sources": [
+        "W2010"
+      ]
+    },
+    {
+      "id": "TH6",
+      "claim": "The illusion is absolutely exclusive to faces under every procedure",
+      "decision": "CONTESTED_REJECT_UNIVERSAL",
+      "sources": [
+        "W2010",
+        "S2011"
+      ]
+    },
+    {
+      "id": "TH7",
+      "claim": "ERP studies show timing differences in experimental face processing",
+      "decision": "SUPPORTED_TASK_SPECIFIC",
+      "sources": [
+        "B2006"
+      ]
+    },
+    {
+      "id": "TH8",
+      "claim": "Imaging results establish a single universal neural explanation",
+      "decision": "REJECT_UNSUPPORTED",
+      "sources": [
+        "B2006",
+        "S2011"
+      ]
+    },
+    {
+      "id": "TH9",
+      "claim": "This illusion proves paranormal hypnosis or animal magnetism",
+      "decision": "REJECT_CATEGORY_ERROR",
+      "sources": [
+        "T1980",
+        "PUY"
+      ]
+    },
+    {
+      "id": "TH10",
+      "claim": "A simple paper exercise is a validated clinical attention test",
+      "decision": "REJECT_UNSUPPORTED",
+      "sources": [
+        "T1980",
+        "FTCHEALTH"
+      ]
+    },
+    {
+      "id": "TH11",
+      "claim": "Thatcher visuals can be copied freely from any source",
+      "decision": "REJECT_RIGHTS_UNVERIFIED",
+      "sources": [
+        "T1980"
+      ]
+    },
+    {
+      "id": "Z1",
+      "claim": "Zen12 Premium page describes 12 levels, four styles, 48 MP3s",
+      "decision": "SELLER_PRODUCT_DESCRIPTION_ONLY",
+      "sources": [
+        "ZEN"
+      ]
+    },
+    {
+      "id": "Z2",
+      "claim": "Twelve minutes of this product equals an hour of advanced meditation",
+      "decision": "SELLER_EFFICACY_UNSUBSTANTIATED_EXCLUDE",
+      "sources": [
+        "ZEN",
+        "FTCHEALTH"
+      ]
+    },
+    {
+      "id": "Z3",
+      "claim": "Zen12 conclusively improves stress, health, creativity or cognitive disorders",
+      "decision": "SELLER_EFFICACY_UNSUBSTANTIATED_EXCLUDE",
+      "sources": [
+        "ZEN",
+        "FTCHEALTH"
+      ]
+    },
+    {
+      "id": "Z4",
+      "claim": "Seller's stated guarantee proves actual refunds",
+      "decision": "NOT_VERIFIED_BY_TRANSACTION",
+      "sources": [
+        "ZEN"
+      ]
+    },
+    {
+      "id": "Z5",
+      "claim": "Seller displays prices that may be conditional; final checkout authenticated",
+      "decision": "NOT_VERIFIED",
+      "sources": [
+        "ZEN"
+      ]
+    },
+    {
+      "id": "Z6",
+      "claim": "Seller free-audio signup equals FV existing Jetpack list",
+      "decision": "FALSE_SEPARATE_LIST",
+      "sources": [
+        "ZEN",
+        "FOCUS"
+      ]
+    },
+    {
+      "id": "A1",
+      "claim": "An Inspire3 public signup establishes named FV acceptance",
+      "decision": "FALSE",
+      "sources": [
+        "AFF"
+      ]
+    },
+    {
+      "id": "A2",
+      "claim": "Published commission promises establish FV payee terms and paid revenue",
+      "decision": "FALSE",
+      "sources": [
+        "AFF"
+      ]
+    },
+    {
+      "id": "A3",
+      "claim": "A near-link disclosure is required for future earning link",
+      "decision": "REQUIRED_BY_FTC",
+      "sources": [
+        "FTCENDORSE"
+      ]
+    },
+    {
+      "id": "A4",
+      "claim": "Total Focus and Zen12 are the same SKU",
+      "decision": "FALSE",
+      "sources": [
+        "ZEN",
+        "TOTAL"
+      ]
+    },
+    {
+      "id": "A5",
+      "claim": "Actual affiliate commission can be inferred from clicks",
+      "decision": "FALSE_REQUIRE_PARTNER_SETTLEMENT",
+      "sources": [
+        "AFF"
+      ]
+    },
+    {
+      "id": "F1",
+      "claim": "A Focus link itself proves confirmed signup",
+      "decision": "FALSE",
+      "sources": [
+        "FOCUS"
+      ]
+    },
+    {
+      "id": "F2",
+      "claim": "A published Grok asset and immutable asset ID can be inferred from the proposal",
+      "decision": "FALSE",
+      "sources": [
+        "CHANGE"
+      ]
+    },
+    {
+      "id": "F3",
+      "claim": "A rights-cleared paid FV Mind product is authenticated",
+      "decision": "UNKNOWN_NOT_AUTHENTICATED",
+      "sources": [
+        "FOCUS"
+      ]
+    }
+  ],
+  "release_gates": [
+    {
+      "id": "named_FV_partner_acceptance",
+      "passed": false,
+      "proof": null
+    },
+    {
+      "id": "exact_approved_earning_url",
+      "passed": false,
+      "proof": null
+    },
+    {
+      "id": "channel_permissions",
+      "passed": false,
+      "proof": null
+    },
+    {
+      "id": "creative_rights",
+      "passed": false,
+      "proof": null
+    },
+    {
+      "id": "exact_sku_and_checkout_price",
+      "passed": false,
+      "proof": null
+    },
+    {
+      "id": "refund_process_evidence",
+      "passed": false,
+      "proof": null
+    },
+    {
+      "id": "merchant_consent_terms",
+      "passed": false,
+      "proof": null
+    },
+    {
+      "id": "product_claim_independent_substantiation",
+      "passed": false,
+      "proof": null
+    },
+    {
+      "id": "partner_privacy_aggregate_reporting",
+      "passed": false,
+      "proof": null
+    },
+    {
+      "id": "independent_browser_a11y",
+      "passed": false,
+      "proof": null
+    },
+    {
+      "id": "hosted_CI",
+      "passed": false,
+      "proof": null
+    },
+    {
+      "id": "real_40_second_video_with_caption_and_poster",
+      "passed": false,
+      "proof": null
+    },
+    {
+      "id": "founder_release_approval",
+      "passed": false,
+      "proof": null
+    },
+    {
+      "id": "live_wordpress_editorial_approval",
+      "passed": false,
+      "proof": null
+    },
+    {
+      "id": "verified_payhip_paid_mind_sku",
+      "passed": false,
+      "proof": null
+    },
+    {
+      "id": "qualified_human_session_denominator",
+      "passed": false,
+      "proof": null
+    },
+    {
+      "id": "confirmed_lead_source_records",
+      "passed": false,
+      "proof": null
+    },
+    {
+      "id": "merchant_paid_order_reporting",
+      "passed": false,
+      "proof": null
+    },
+    {
+      "id": "refunded_reversed_commission_reporting",
+      "passed": false,
+      "proof": null
+    },
+    {
+      "id": "settled_net_commission_reporting",
+      "passed": false,
+      "proof": null
+    },
+    {
+      "id": "grok_real_asset_ids",
+      "passed": false,
+      "proof": null
+    },
+    {
+      "id": "no_duplicate_tracking_scripts",
+      "passed": false,
+      "proof": null
+    }
+  ],
+  "commercial_state": {
+    "partner_approved": null,
+    "affiliate_url": null,
+    "owned_sku": null,
+    "checkout_total": null,
+    "paid_orders": null,
+    "refunds": null,
+    "settled_commission": null,
+    "qualified_human_sessions": null,
+    "net_per_1000_qualified_human_sessions": "NOT_COMPUTABLE",
+    "activation": false
+  },
+  "creator_routes": [
+    {
+      "topic": "Change Blindness",
+      "published_article": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "asset_id": null,
+      "utm_campaign": null,
+      "optional_fieldbook": "https://finalvestige.com/focus/",
+      "conditional_offer": "Zen12 Premium",
+      "promotion_authorized": false
+    },
+    {
+      "topic": "Puységur",
+      "published_article": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "asset_id": null,
+      "utm_campaign": null,
+      "optional_fieldbook": "https://finalvestige.com/focus/",
+      "conditional_offer": "Hypnotize Yourself ONLY IF exact SKU separately verified",
+      "promotion_authorized": false
+    },
+    {
+      "topic": "Thatcher illusion",
+      "published_article": null,
+      "asset_id": null,
+      "utm_campaign": null,
+      "optional_fieldbook": "https://finalvestige.com/focus/",
+      "conditional_offer": null,
+      "promotion_authorized": false
+    }
+  ],
+  "ab_experiment": {
+    "variant_A": "mind/r139/zen12-variant-a.html",
+    "variant_B": "mind/r139/zen12-variant-b.html",
+    "B_video_state": "STORYBOARD_ONLY_NOT_PLAYABLE",
+    "buyer_copy_parity": "REQUIRES_TEST",
+    "assignment": "NOT_IMPLEMENTED",
+    "primary_metric": "SETTLED_NET_COMMISSION_PER_1000_QUALIFIED_HUMAN_SESSIONS",
+    "test_live": false
+  }
+}
