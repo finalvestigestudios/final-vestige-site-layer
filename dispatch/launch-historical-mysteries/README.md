@@ -1,93 +1,83 @@
-# The Dispatch — Historical Mysteries / Symbolism / Evidence
+# The Dispatch — Historical Mysteries, Collectors and Case Files
 
-**Release state: SIX WORDPRESS DRAFTS, NO EMAILS SENT OR SCHEDULED.**
+**Current release state (November 5, 2026): LIVE website offer pages, EIGHT WordPress newsletter drafts, NO EMAIL SENT OR SCHEDULED.**
 
-This supersedes the earlier Mind & Perception-led six-issue creative direction, which remains preserved in PR #175 and prior R&D drafts. We do not create a second newsletter list or purchase another email platform.
+This is the authoritative state of the founder-directed Mini Museum-first conversion campaign. Earlier six-email Mind & Perception concepts in PR #175 and previous revisions of this branch are retained only as version history, not the current send plan.
 
-## Brand and conversion strategy
+## First-party journey now live
 
-Final Vestige readers are drawn to mysteries, disputed histories, physical artifacts, maps, symbolism, historical occult movements and the process of verifying claims. The series builds from actual curiosity to an active evidence-solving skill. A commercial recommendation is **conditional and late**; it is not slipped into the first three emails.
+- **Subscriber entry:** [Seven Day Focus Fieldbook](https://finalvestige.com/focus/) — native Jetpack opt-in and confirmation, verified by the founder with a received welcome email and the complete 52-page PDF.
+- **Curated Collection:** https://finalvestige.com/collection/ — dedicated editorial feature cards for Mini Museum and Cold Case Inc, added as a separately reversible Gutenberg block. Main site navigation already labels this page **Editions**.
+- **Primary physical-history offer:** https://finalvestige.com/mini-museum-history-collectibles/ (WordPress page **2088**, published). A source/collector-focused Mini Museum guide with two explicit affiliate disclosures, verified founder-supplied Awin banner creative, and transparent seller-claim/variation cautions. No invented testimonials, urgency or guaranteed resale value.
+- **Secondary fictional detective offer:** https://finalvestige.com/cold-case-mystery-games/ (WordPress page **2089**, published). Offers a free short Flat 33 case, accurately distinguishes fictional crime entertainment from real documentary investigations, and includes the founder-supplied sponsored The Waters Edge creative with disclosure.
+- **Contextual article bridges:** Crystal Skulls post **1926** → Mini Museum guide, Change Blindness post **1922** → Cold Case guide. These are compact editorial links, **not** abrupt checkout buttons inside sensitive investigations. Original content, related-reading, schema and FAQ blocks were preserved.
 
-- **01**: British Museum crystal skulls — question the artifact provenance; tease a real early modern map
-- **02**: Piri Reis map — a real 1513 document and uncertain readings; tease unusual Roman glass
-- **03**: Lycurgus Cup — genuine effect versus exaggerated explanation; tease an investigation readers can inspect
-- **04**: Apollo 1 — evidence, time markers, uncertainties; introduce idea of handling a case file
-- **05**: Tarot as historical object — fifteenth-century Italian card games versus later occult interpretation; tease hands-on inquiry without pretending divination claims are verified
-- **06**: Five-step reader case-file exercise and first-party Apollo Atlas CTA; editorial mention only that partner options are being evaluated, **no merchant recommendation or URL**
+### Live content/source location
 
-Each installment fulfills its own informational promise. The next-email clue is a truthful preview, not a fabricated disappearance, scarcity claim or invented breakthrough. Cross-issue CTA stays within the real first-party website except an optional openly cited V&A museum article.
+Exact WordPress Gutenberg blocks for the two presell pages and Collection/article bridges are in `site/`. Do not replay them without fresh WordPress optimistic locks or overwrite the current production content.
 
-## New priority: authentic specimens as the history/collector conversion lane (2026-11-05)
+The exact Awin click/display creative parameters and original founder-supplied HTML appear in `offers/AWIN_CREATIVE_REGISTER.md`. **Affiliate program joined/active status, actual payout group and email-channel approval have not been verified through an Awin account connector.** An Awin creative's presence does not itself prove that transactions will be commissioned. Confirm these details with the founder in Awin before forecasting revenue or approving merchant-specific email sends.
 
-**Mini Museum LLC** is an especially close fit to the Final Vestige historical-object and evidence audience. Unlike the fictional case-solving offer from Cold Case Inc, it sells physical historical/scientific specimens and curated collectible editions. The official Mini Museum authenticity page claims genuine labeled specimens and information-card certificates; these are seller claims and individual items still require provenance checks. Its Awin public profile, ID 89949, reports a **15-day cookie** and **$60–$100 average order**, but the available public profile does **not** verify a commission percentage. Do not project exact commission until the joined account shows its applicable rate.
+## Eight-week warm-up and reveal sequence (all drafts)
 
-The founder supplied a creative for Mini Museum under Awin publisher ID 3055117 (creative s=4236132, q=552988) and a Cold Case Inc creative (s=4959313, q=620613). **Both exact codes are preserved** in `offers/AWIN_CREATIVE_REGISTER.md`. These indicate shareable ad assets but do not alone establish active partner approval or email-promotion permission.
+| Week | WordPress draft | Subject | Reader value | Commercial handling |
+| --- | ---: | --- | --- | --- |
+| 1 | 2076 | The crystal skull that wasn't ancient | Provenance and documentary evidence | No offer |
+| 2 | 2077 | The map that invited a thousand stories | Real 1513 chart, disciplined interpretation | No offer |
+| 3 | 2078 | The Roman cup that changed its color | Material history and observation | No offer |
+| 4 | 2079 | An accident with no conclusively identified first spark | Apollo 1 source-linked case and timeline | No offer |
+| 5 | 2080 | Tarot was a game before it became a prophecy | History of symbols, provenance and objects; **teaser for physical artifacts** | No merchant named |
+| 6 | 2081 | What if you could hold a piece of the past? | **Mini Museum collector evaluation**, documentation and buyer questions | First disclosed offer, FV first-party landing CTA |
+| 7 | 2099 | One clue can change the entire case | Free evidence exercise and reader participation | No paid offer |
+| 8 | 2100 | This time, the case is yours | **Cold Case Inc experience**, free case and paid choices | Disclosed secondary offer, FV first-party landing CTA |
 
-**WordPress presell draft:** page **2088**, `mini-museum-history-collectibles`, exists as a private `draft` at the moment of this note. It contains product-relevant headline, benefit copy, provenance cautions, contextual disclosure, and the exact Awin click and image links. The connected WordPress API readback confirms exactly one H1, three Awin sponsored click links, one original banner image and two visible disclosure lines; no production page was modified.
+The story arc is **mystery → observation → provenance → credible relationship → collector desire → offer → free challenge → secondary offer**. Each email delivers an independently worthwhile discovery; anticipation comes from truthful future topics rather than fake withheld information or pressure.
 
-**Updated two-lane commercial order:**
-- **Physical-history collector route:** Mini Museum first for readers arriving from Apollo artifacts, fossil/meteorite history, maps, museum objects or collectible curiosities; Folio Society secondary for beautifully produced historical books.
-- **Participatory detective route:** Cold Case Inc first for readers who actively use the Evidence Atlas, enjoy clues and want a fictional case-solving experience; The Detective Society secondary, mindful of UK→US delivery costs.
-- **Deep historical education route:** The Great Courses on secret societies, historical occult currents and related sourced topics.
+All eight WordPress posts are in category `The Dispatch`, **status=draft**. Their exact Gutenberg content is pinned in `issues/`. They have one primary linked CTA apiece, and the two commercial installments contain a visible near-CTA disclosure in addition to the disclosure on their destination pages. **No direct Awin or other merchant tracking links appear in the emails.**
 
-The six weekly mystery issues remain **UNSENT** and unchanged. Mini Museum's commercial reveal is **conditional after** adequate editorial warm-up and affiliate/email terms approval. The product-specific concept is stored in `offers/landing-mini-museum.md` and `offers/email-mini-museum-conditional.md`. Do not activate site or newsletter links without advertiser approval, per-product truth checks, a validated U.S. customer journey, and founder release signoff.
+## Native Jetpack delivery configuration
 
-## Candidate partners (NONE APPROVED / NO AFFILIATE LINKS)
+On November 5 the connected WordPress newsletter settings were read and changed:
 
-| Candidate | Commission reported | Audience/use | Risks and next gate |
-| --- | --- | --- | --- |
-| Cold Case Inc | 20% per sale, 30-day cookie; direct affiliate page at https://coldcaseinc.com/become-an-affiliate/ | Low-price fictional digital case file, a direct extension of the Evidence Atlas skill; test the free case first | ~£7.99 per case = ~£1.60 commission before adjustments; small seller, primarily self-published user reviews; email promo permissions and US checkout must be verified |
-| The Great Courses | Awin program #25597; up to 10% purchases, advertised $5 qualifying trial, 30-day cookie | Historians: Secrets of the Occult, Templars, Secret Societies; strong authority | Broad education SEO competition; California publisher requires annual certification of no solicitation. Email approval and payout group must be verified |
-| The Folio Society | Third-party CJ network listing reports 10%; rate not independently confirmed in account | Collector/history/artifact audience: Herodotus, ancient history, mythology, folklore illustrated editions | High order value but likely lower conversion; must confirm actual CJ enrollment/rate and email eligibility |
-| The Detective Society | Awin program #22389 3–5%, 30-day window; AOV ~£72 / $100 advertised | Higher-ticket immersive case-solving boxes | Trustpilot ~4.3/5 with limited review sample; UK ships to USA at ~£28 plus applicable tariffs, so a secondary non-US choice, NOT lead US offer |
+- `email_content_format`: **excerpt → full** so readers can receive the complete editorial letter, not just a summary.
+- `from_name`: **Final Vestige → Final Vestige Studios** for consistent sender identity.
+- `email_new_posts_by_default`: **remains false**. No ordinary article publication automatically sends emails.
+- `reply_to`: remains `no-reply`; `subscriptions`: remains enabled.
+- Existing successful Fieldbook welcome content and consent mechanism remain intact.
 
-**Rejected/waitlisted:** Hay House external affiliate program discontinued; History Unboxed currently inactive; Mysterious Package Company good thematic fit but recent Trustpilot sample is poor (approx. 2.6/5, 27 reviews); generic claims of supernatural outcomes and anonymous unverified merchants not admitted.
+**Important:** Jetpack native Newsletter is a post-triggered *broadcast* to the currently eligible list, NOT an 8-email subscriber-relative drip automation. The Fieldbook welcome email is separate. Do not claim new subscribers receive week 1 automatically; do not turn on send-by-default to simulate a sequence.
 
-## Funnel and copywriting design
+**Suggested cadence:** one weekly issue; exact first-send date/time subject to founder authorization. No send/schedule action was taken while preparing the campaign.
 
-1. **Entry:** a traffic-source story → `/focus/` free Fieldbook → native consent/confirmation → native welcome with PDF. Popup and ebook delivery already tested by founder. This is one existing list.
-2. **Value before offer:** three mystery articles, then Apollo interactive evidence, then tarot-object museum context. Every email contains one clear CTA and a truthful one-line next-story hook. First four emails contain NO offer.
-3. **Interest before purchase:** readers who engage with Apollo/Crystal Skulls/Tarot can be invited to choose between detective case, historical learning and collector editions on first-party evidence-led comparison pages once approval and terms exist.
-4. **Commercial launch:** only after written program acceptance, specific merchant mail permission, test purchase/checkout and product fit, first-party editorial review/comparison and near-link plain-English affiliate disclosure. Never build a merchant link or limited-time claim from an unapproved offer.
-5. **Post-offer:** follow-up addresses genuine fit/price/format/support questions, not artificial countdowns or deceptive threats.
+## Conversion architecture
 
-No affiliate referral tracking, merchant names or offer prices were inserted into the six WordPress drafts.
+1. Social/SEO historical intrigue brings visitors to source-rich Final Vestige investigations.
+2. Fieldbook popup and sign-up capture **consenting/confirmed** subscribers without forcing a purchase.
+3. Weeks 1–5 of Dispatch build trust and value; each provides one relevant first-party research CTA.
+4. Week 6 introduces the Mini Museum collector guide as a conditional commercial recommendation with clear evidence/provenance considerations and a first-party Awin-tracked checkout bridge.
+5. Week 7 returns to free reader participation to avoid back-to-back selling.
+6. Week 8 introduces the optional Cold Case Inc review after real case-solving context, with free first case and no misleading claim that paid cases are free.
+7. After these eight emails, return to the normal weekly research-led Dispatch; offer future collector products only where objectively relevant.
 
-## Critical channel limitation
+**Main KPI:** actually confirmed qualifying commissions and net revenue per 1,000 qualified visitors. Secondary: opt-in rate per relevant site entrance, confirmed/welcome-delivered subscribers, verified Dispatch recipient/delivery counts, first-party presell CTA clicks and actual affiliate orders. Do not interpret impressions, click counts or three-person sample rates as profitable conversion proof.
 
-Jetpack Newsletter emails are **broadcasts tied to publishing new WordPress posts**, not a recipient-relative subscriber onboarding drip. These six WordPress posts are category "The Dispatch" and currently status `draft`. `email_new_posts_by_default=false` and `email_content_format=excerpt` remain unchanged. To send the full educational email, a human must review whether switching the email format to FULL is appropriate and verify a real test email before changing settings. Turning on the global automatic-send default is **not** recommended.
+## Pre-send and ongoing safety/ethics gates
 
-Suggested cadence: one weekly edition (e.g., Thursday 9 AM PT) to confirmed eligible subscribers, after explicit approval of the exact sending date/creative. These are not automatically delivered in order relative to each individual signup.
+- Confirm advertiser `joined/active` status within Awin, qualifying commission rate, eligible website/email channels, allowed creative and tracking, and any exclusions. The user-supplied banners do **not** complete those checks.
+- Verify any product-specific price, returns, shipping, authenticity and case-content notes directly on the merchant page before making claims; do not invent personal use, star ratings, endorsements or testimonials.
+- Preview the actual native Jetpack full-email rendering in a real inbox (including one CTA, mobile accessibility, sender, consent and unsubscribe/footer). The founder already proved the **welcome** email; that does **not** verify a promotional **broadcast**.
+- Confirm an appropriate physical postal address or other marketing compliance details where required; do not invent one or assume the WordPress default footer alone meets every commercial requirement.
+- Ensure commercial recommendations include clear near-link plain-English disclosure. Preserve no affiliate tracking in the first five issues.
+- Get explicit founder approval of the **actual recipient audience, exact issue, and send/schedule action** before sending. A request to prepare a campaign is not permission for an email blast.
+- Preserve rollback for public pages and avoid changing homepage, WordPress theme, signup plugin, or protected research evidence without a separate justified release.
 
-## Pre-send controls
+## Working files
 
-- Confirm who is actually eligible to receive the email from Jetpack; total WP subscribers is not proof of email delivery.
-- Check sender identity, valid postal address as required for applicable commercial marketing, working unsubscribe in the actual rendered message, and consent record.
-- Mobile test on real inbox, verify one H1 and recipient links/CTA, title/excerpt vs full body, no placeholders and no unintended commercial product claims.
-- Obtain separate permission for any actual broadcast; drafting is NOT authorization to send.
-- Measure per cohort: verified recipients delivered, first-party clicks, new confirmed subscribers, completed and attributable affiliate orders, net commission. Tiny lists cannot support credible conversion lift significance.
+- `manifest.json`: exact eight-issue post IDs, titles, status, CTA destinations and current setting snapshot.
+- `issues/`: eight full source snapshots, all draft/unsent.
+- `offers/AWIN_CREATIVE_REGISTER.md`: exact tracking creatives provided by the founder.
+- `offers/landing-mini-museum.md`, `offers/landing-cold-case-inc.md`, `offers/email-mini-museum-conditional.md`: copy concepts, claim-review gates and pre-sell creative (some predate public page release).
+- `COPY_STANDARD.md`: founder's sales-copy design and compliance standards, mapped to their supplied brand screenshots.
+- `site/`: exact public Gutenberg release blocks for the pages and article/Collection integrations.
 
-## Supporting primary and network sources
-
-- V&A tarot history (updated 2026): https://www.vam.ac.uk/articles/tarot-cards/
-- Met Museum historical tarot: https://www.metmuseum.org/es/perspectives/tarot-2
-- British Museum crystal skull: https://www.britishmuseum.org/collection/death-and-memory
-- Awin The Great Courses: https://ui.awin.com/merchant-profile/25597
-- Awin Cold Case Inc: https://ui.awin.com/merchant-profile/46005
-- Detective Society affiliate: https://explore.thedetectivesociety.com/affiliates/
-- The Folio Society third-party CJ listing: https://www.affiliategraph.ai/programs/the-folio-society
-- FTC endorsement disclosure: https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking
-- FTC CAN-SPAM: https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business
-- Mailchimp welcome sequencing: https://mailchimp.com/resources/how-to-write-a-great-welcome-email-for-your-new-customers/
-- Shopify email sequencing: https://www.shopify.com/blog/email-sequence
-
-## WordPress drafts and source control
-
-- Issue 01 WordPress draft 2076 — **The crystal skull that wasn't ancient**; slug `dispatch-2026-01-crystal-skull`; last saved `2026-11-04T23:16:49`.
-- Issue 02 WordPress draft 2077 — **The map that invited a thousand stories**; slug `dispatch-2026-02-piri-reis`; last saved `2026-11-04T23:16:56`.
-- Issue 03 WordPress draft 2078 — **The Roman cup that changed its color**; slug `dispatch-2026-03-lycurgus`; last saved `2026-11-04T23:17:03`.
-- Issue 04 WordPress draft 2079 — **An accident with no conclusively identified first spark**; slug `dispatch-2026-04-apollo1`; last saved `2026-11-04T23:17:10`.
-- Issue 05 WordPress draft 2080 — **Tarot was a game before it became a prophecy**; slug `dispatch-2026-05-tarot-history`; last saved `2026-11-04T23:17:18`.
-- Issue 06 WordPress draft 2081 — **You've read the clues. Could you solve the case?**; slug `dispatch-2026-06-case-file`; last saved `2026-11-04T23:17:25`.
-
-This GitHub branch is a **snapshot of the six actual WordPress drafts**, not another copy to publish independently. The founder must review full content and explicitly authorize broadcast sends. Original Mind & Perception-led drafts are superseded, not deleted.
+Historical research drafts and the first six-issue campaign source are preserved in earlier PRs/commits. This branch is the **current eight-week production-integration handoff**, not a second campaign to publish independently.
