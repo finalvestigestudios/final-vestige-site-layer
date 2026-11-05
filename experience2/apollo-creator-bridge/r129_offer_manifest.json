@@ -1,0 +1,30 @@
+{
+  "schema": "fv.apollo.educator-offer.v1",
+  "offer_type": "original_educator_casefile",
+  "target_audience": "secondary_history_educators",
+  "merchant": {
+    "listing_url": null,
+    "seller_account_verified": null,
+    "existing_sku_verified": null,
+    "checkout_test_passed": null,
+    "delivery_test_passed": null,
+    "refund_terms_reviewed": null
+  },
+  "rights": {
+    "original_instructional_content_reviewed": null,
+    "third_party_assets_cleared_or_excluded": null
+  },
+  "education": {
+    "teacher_preview_approved": null,
+    "accessibility_reviewed": null
+  },
+  "measurement": {
+    "real_campaign_asset_id_verified": null,
+    "session_to_order_attribution_verified": null
+  },
+  "governance": {
+    "founder_commercial_terms_approved": null,
+    "founder_production_release_approved": null
+  },
+  "provenance_note": "Unverified read-only readiness proposal. Never fill from inference or public video metrics."
+}
