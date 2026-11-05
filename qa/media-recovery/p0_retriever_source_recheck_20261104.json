@@ -117,22 +117,26 @@
         "visitor_broken": null
       },
       "archival_candidate": {
-        "authority": null,
-        "archive_record_url": null,
-        "identifier": null,
-        "source_relationship": "NOT_YET_SELECTED",
+        "authority": "State Archives of Florida / Florida Memory (Commons catalog crosswalk)",
+        "archive_record_url": "https://www.floridamemory.com/items/show/131903",
+        "secondary_file_catalog_url": "https://commons.wikimedia.org/wiki/File:View_of_the_old_and_new_Sunshine_Skyway_bridges_from_St._Petersburg,_Florida,_1987.jpg",
+        "identifier": "Stewart H. Milo, 1987, Florida Memory 131903; Commons 600x595 rendition",
+        "creator": "H. Milo Stewart",
+        "subject_date": 1987,
+        "source_relationship": "DIFFERENT_PHOTOGRAPH_SAME_SUBJECT_NOT_EXACT_REPLACEMENT",
         "original_pixel_dimensions": [
           null,
           null
         ],
         "proposed_960_max_dimensions": [
-          null,
-          null
+          600,
+          595
         ],
-        "geometry_basis": "UNKNOWN",
+        "geometry_basis": "Commons secondary 600x595 image, NOT Florida Memory master",
         "no_upscale": true,
         "exact_binary_identity_verified": false,
         "rights_review": "HOLD",
+        "rights_basis": "Commons contributor labels CC0; primary Florida Memory page returned wrapper 403; copyright grant and credit not verified at original item",
         "source_authorization_to_cache": false
       },
       "production_write_authorized": false
