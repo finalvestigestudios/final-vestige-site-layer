@@ -1,0 +1,62 @@
+{
+  "schema": "FV-EX2-REVENUE-ROUTE-20261105",
+  "sources": {
+    "kind": "connected WordPress API, read-only",
+    "site_id": 256784396,
+    "homepage": {
+      "id": 6,
+      "modified": "2026-11-04T14:39:24"
+    },
+    "collection": {
+      "id": 78,
+      "modified": "2026-10-29T15:37:38"
+    },
+    "focus": {
+      "id": 1579,
+      "modified": "2026-11-03T14:36:15"
+    },
+    "code_blob_sha": "8738553a303f8dbcedcad2e56a1ed07d35ab8b0a"
+  },
+  "evaluation": {
+    "execution": "V8 source evaluation with minimal URL compatibility shim, not native Node on the connected pages",
+    "source_path": "experience2/home-flagship/qa/release-candidate/revenue_path_gate.mjs",
+    "native_node_fixture_tests": "14/14 PASS"
+  },
+  "result": {
+    "status": "OWNED_REVENUE_ROUTE_NOT_EXPOSED",
+    "homepage": {
+      "lead_destination": 5,
+      "editorial_or_navigation": 84,
+      "other_external": 14
+    },
+    "collection": {
+      "lead_destination": 4,
+      "affiliate_outbound": 2,
+      "editorial_or_navigation": 2,
+      "potential_owned_checkout": 0
+    },
+    "focus": {
+      "lead_destination": 1,
+      "editorial_or_navigation": 17,
+      "other_external": 3
+    },
+    "flags": {
+      "published_home_to_focus": true,
+      "published_collection_to_focus": true,
+      "focus_landing_source_offer_present": true,
+      "focus_landing_form_markup_present": true,
+      "owned_paid_catalog_destination_present": false,
+      "affiliate_outbound_present": true
+    }
+  },
+  "limitations": {
+    "merchant_acceptance": "NOT_CHECKED",
+    "order_records": "NOT_CHECKED",
+    "affiliate_sales": "NOT_CHECKED",
+    "revenue": "NOT_CHECKED",
+    "qualified_human_sessions": "NOT_CHECKED",
+    "web_browser_a11y_performance": "NOT_RUN",
+    "verified_net_revenue_per_1000_qualified_human_sessions": "NOT_MEASURABLE"
+  },
+  "production_changes": false
+}
