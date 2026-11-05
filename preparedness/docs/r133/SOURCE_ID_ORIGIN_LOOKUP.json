@@ -1,0 +1,1730 @@
+{
+  "schema_version": 1,
+  "candidate_ref": "5685b54796d520e8dd50e0cdf4d35e38c9cec7a4",
+  "state": "HOLD_UNREVIEWED",
+  "source_files": [
+    {
+      "origin": "base",
+      "path": "preparedness/sources/register.json",
+      "sha": "b25cd02b9beaadaf5a2db0c52e0ae66d20b1ac77",
+      "count": 34
+    },
+    {
+      "origin": "start",
+      "path": "preparedness/sources/fragments/start.json",
+      "sha": "96140d6d1872588e5d20d9052445c9157e88934d",
+      "count": 29
+    },
+    {
+      "origin": "shelter",
+      "path": "preparedness/sources/fragments/shelter.json",
+      "sha": "2a3f1a7ddeab2782add875be1e0e378513504aa1",
+      "count": 45
+    },
+    {
+      "origin": "food",
+      "path": "preparedness/sources/fragments/food.json",
+      "sha": "a1f73c8170932d6b3192e9cd506686d516d23d30",
+      "count": 30
+    },
+    {
+      "origin": "health",
+      "path": "preparedness/sources/fragments/health.json",
+      "sha": "cc29c439372b9d49debf78e63020ffe4d62baeb8",
+      "count": 21
+    },
+    {
+      "origin": "hist-food",
+      "path": "preparedness/sources/fragments/hist-food.json",
+      "sha": "d10628342fea5f177a8d1be00dd906d0c9c7850e",
+      "count": 28
+    },
+    {
+      "origin": "hist-home",
+      "path": "preparedness/sources/fragments/hist-home.json",
+      "sha": "8d85fd868508c5caba14a839d119d55f31f14f72",
+      "count": 29
+    },
+    {
+      "origin": "hist-field",
+      "path": "preparedness/sources/fragments/hist-field.json",
+      "sha": "3dafa9425f3829c0be2e6fea00889aff95124031",
+      "count": 28
+    }
+  ],
+  "raw_source_rows": 244,
+  "unique_source_ids": 225,
+  "literal_urls": 202,
+  "by_source_id": {
+    "cdc-water-store": [
+      {
+        "origin": "base",
+        "row_index": 0,
+        "url": "https://www.cdc.gov/water-emergency/about/how-to-create-and-store-an-emergency-water-supply.html"
+      }
+    ],
+    "cdc-water-safe": [
+      {
+        "origin": "base",
+        "row_index": 1,
+        "url": "https://www.cdc.gov/water-emergency/about/"
+      }
+    ],
+    "epa-emergency-disinfection": [
+      {
+        "origin": "base",
+        "row_index": 2,
+        "url": "https://www.epa.gov/ground-water-and-drinking-water/emergency-disinfection-drinking-water"
+      }
+    ],
+    "cdc-botulism-prevention": [
+      {
+        "origin": "base",
+        "row_index": 3,
+        "url": "https://www.cdc.gov/botulism/prevention/index.html"
+      }
+    ],
+    "fsis-botulism": [
+      {
+        "origin": "base",
+        "row_index": 4,
+        "url": "https://www.fsis.usda.gov/food-safety/foodborne-illness-and-disease/illnesses-and-pathogens/botulism"
+      }
+    ],
+    "fsis-home-cure-qa": [
+      {
+        "origin": "base",
+        "row_index": 5,
+        "url": "https://ask.fsis.usda.gov/article/How-do-I-safely-cure-meats-at-home-to-avoid-botulism"
+      }
+    ],
+    "nchfp-cure-smoke": [
+      {
+        "origin": "base",
+        "row_index": 6,
+        "url": "https://nchfp.uga.edu/how/cure-smoke"
+      }
+    ],
+    "usscm-brenckle-2019": [
+      {
+        "origin": "base",
+        "row_index": 7,
+        "url": "https://ussconstitutionmuseum.org/wp-content/uploads/dlm_uploads/2019/05/Food-and-Drink-in-the-US-Navy.pdf"
+      }
+    ],
+    "rmg-life-at-sea": [
+      {
+        "origin": "base",
+        "row_index": 8,
+        "url": "https://www.rmg.co.uk/stories/maritime-history/life-sea-age-sail"
+      }
+    ],
+    "rmg-biscuit-aab0766": [
+      {
+        "origin": "base",
+        "row_index": 9,
+        "url": "https://www.rmg.co.uk/collections/objects/rmgc-object-6813"
+      }
+    ],
+    "si-nmah-life-aboard": [
+      {
+        "origin": "base",
+        "row_index": 10,
+        "url": "https://americanhistory.si.edu/explore/exhibitions/on-the-water/online/fishing-living/commercial-fishers/atlantic-cod/life-aboard"
+      }
+    ],
+    "si-lind-1753": [
+      {
+        "origin": "base",
+        "row_index": 11,
+        "url": "https://library.si.edu/digital-library/book/treatisescurvyt00lind"
+      }
+    ],
+    "jll-trohler-2003": [
+      {
+        "origin": "base",
+        "row_index": 12,
+        "url": "https://www.jameslindlibrary.org/articles/james-lind-and-scurvy-1747-to-1795/"
+      }
+    ],
+    "cdc-water-advisories": [
+      {
+        "origin": "base",
+        "row_index": 13,
+        "url": "https://www.cdc.gov/water-emergency/about/drinking-water-advisories-an-overview.html"
+      }
+    ],
+    "cdc-find-clean-water": [
+      {
+        "origin": "base",
+        "row_index": 14,
+        "url": "https://www.cdc.gov/water-emergency/about/how-to-find-clean-water-in-an-emergency.html"
+      }
+    ],
+    "cdc-water-hiking": [
+      {
+        "origin": "base",
+        "row_index": 15,
+        "url": "https://www.cdc.gov/drinking-water/prevention/water-treatment-hiking-camping-traveling.html"
+      }
+    ],
+    "nps-purify-water": [
+      {
+        "origin": "base",
+        "row_index": 16,
+        "url": "https://www.nps.gov/articles/2wayspurifywater.htm"
+      }
+    ],
+    "ready-water": [
+      {
+        "origin": "base",
+        "row_index": 17,
+        "url": "https://www.ready.gov/water"
+      }
+    ],
+    "ready-pets": [
+      {
+        "origin": "base",
+        "row_index": 18,
+        "url": "https://www.ready.gov/pets"
+      }
+    ],
+    "nchfp-home": [
+      {
+        "origin": "base",
+        "row_index": 19,
+        "url": "https://nchfp.uga.edu/"
+      },
+      {
+        "origin": "food",
+        "row_index": 2,
+        "url": "https://nchfp.uga.edu/"
+      },
+      {
+        "origin": "hist-home",
+        "row_index": 0,
+        "url": "https://nchfp.uga.edu/"
+      }
+    ],
+    "nchfp-jerky": [
+      {
+        "origin": "base",
+        "row_index": 20,
+        "url": "https://nchfp.uga.edu/how/dry/recipes/jerky"
+      },
+      {
+        "origin": "food",
+        "row_index": 3,
+        "url": "https://nchfp.uga.edu/how/dry/recipes/jerky"
+      }
+    ],
+    "nchfp-pressure-ground-meat": [
+      {
+        "origin": "base",
+        "row_index": 21,
+        "url": "https://nchfp.uga.edu/how/can/preparing-and-canning-poultry-red-meats-and-seafoods/meat-ground-or-chopped/"
+      },
+      {
+        "origin": "food",
+        "row_index": 4,
+        "url": "https://nchfp.uga.edu/how/can/preparing-and-canning-poultry-red-meats-and-seafoods/meat-ground-or-chopped/"
+      }
+    ],
+    "fsis-power-failure": [
+      {
+        "origin": "base",
+        "row_index": 22,
+        "url": "https://ask.fsis.usda.gov/article/How-do-you-keep-food-safe-during-a-power-failure"
+      },
+      {
+        "origin": "shelter",
+        "row_index": 41,
+        "url": "https://ask.fsis.usda.gov/article/How-do-you-keep-food-safe-during-a-power-failure"
+      },
+      {
+        "origin": "food",
+        "row_index": 0,
+        "url": "https://ask.fsis.usda.gov/article/How-do-you-keep-food-safe-during-a-power-failure"
+      }
+    ],
+    "fsis-emergency-foods": [
+      {
+        "origin": "base",
+        "row_index": 23,
+        "url": "https://ask.fsis.usda.gov/article/What-foods-should-I-keep-in-my-house-for-emergencies"
+      },
+      {
+        "origin": "food",
+        "row_index": 1,
+        "url": "https://ask.fsis.usda.gov/article/What-foods-should-I-keep-in-my-house-for-emergencies"
+      }
+    ],
+    "usfa-fire-escape": [
+      {
+        "origin": "base",
+        "row_index": 24,
+        "url": "https://www.usfa.fema.gov/prevention/home-fires/prepare-for-fire/home-fire-escape-plans/index.html"
+      },
+      {
+        "origin": "shelter",
+        "row_index": 0,
+        "url": "https://www.usfa.fema.gov/prevention/home-fires/prepare-for-fire/home-fire-escape-plans/index.html"
+      }
+    ],
+    "cdc-co-generators": [
+      {
+        "origin": "base",
+        "row_index": 25,
+        "url": "https://www.cdc.gov/natural-disasters/psa-toolkit/avoiding-carbon-monoxide-poisoning.html"
+      },
+      {
+        "origin": "shelter",
+        "row_index": 1,
+        "url": "https://www.cdc.gov/natural-disasters/psa-toolkit/avoiding-carbon-monoxide-poisoning.html"
+      }
+    ],
+    "cdc-hygiene-emergency": [
+      {
+        "origin": "base",
+        "row_index": 26,
+        "url": "https://www.cdc.gov/water-emergency/safety/guidelines-for-personal-hygiene-during-an-emergency.html"
+      },
+      {
+        "origin": "health",
+        "row_index": 0,
+        "url": "https://www.cdc.gov/water-emergency/safety/guidelines-for-personal-hygiene-during-an-emergency.html"
+      }
+    ],
+    "nws-nwr": [
+      {
+        "origin": "base",
+        "row_index": 27,
+        "url": "https://www.weather.gov/cys/nwr"
+      },
+      {
+        "origin": "health",
+        "row_index": 1,
+        "url": "https://www.weather.gov/cys/nwr"
+      }
+    ],
+    "ready-are-you-ready": [
+      {
+        "origin": "base",
+        "row_index": 28,
+        "url": "https://www.ready.gov/sites/default/files/2021-11/are-you-ready-guide.pdf"
+      },
+      {
+        "origin": "start",
+        "row_index": 0,
+        "url": "https://www.ready.gov/sites/default/files/2021-11/are-you-ready-guide.pdf"
+      }
+    ],
+    "nps-lewis-clark-salt": [
+      {
+        "origin": "base",
+        "row_index": 29,
+        "url": "https://www.nps.gov/articles/000/how-to-make-salt.htm"
+      },
+      {
+        "origin": "hist-food",
+        "row_index": 0,
+        "url": "https://www.nps.gov/articles/000/how-to-make-salt.htm"
+      }
+    ],
+    "nps-salt-works": [
+      {
+        "origin": "base",
+        "row_index": 30,
+        "url": "https://www.nps.gov/places/salt-works-oregon.htm"
+      },
+      {
+        "origin": "hist-food",
+        "row_index": 1,
+        "url": "https://www.nps.gov/places/salt-works-oregon.htm"
+      }
+    ],
+    "loc-pioneer-diaries": [
+      {
+        "origin": "base",
+        "row_index": 31,
+        "url": "https://www.loc.gov/item/2002564479/"
+      },
+      {
+        "origin": "hist-food",
+        "row_index": 12,
+        "url": "https://www.loc.gov/item/2002564479/"
+      },
+      {
+        "origin": "hist-field",
+        "row_index": 1,
+        "url": "https://www.loc.gov/item/2002564479/"
+      }
+    ],
+    "loc-prairie-traveler": [
+      {
+        "origin": "base",
+        "row_index": 32,
+        "url": "https://www.loc.gov/resource/gdcmassbookdig.prairietravelerh01marc/?st=list"
+      },
+      {
+        "origin": "hist-food",
+        "row_index": 11,
+        "url": "https://www.loc.gov/resource/gdcmassbookdig.prairietravelerh01marc/?st=list"
+      },
+      {
+        "origin": "hist-field",
+        "row_index": 0,
+        "url": "https://www.loc.gov/resource/gdcmassbookdig.prairietravelerh01marc/?st=list"
+      }
+    ],
+    "nchfp-historical-origins": [
+      {
+        "origin": "base",
+        "row_index": 33,
+        "url": "https://nchfp.uga.edu/resources/entry/historical-origins-of-food-preservation"
+      },
+      {
+        "origin": "hist-food",
+        "row_index": 13,
+        "url": "https://nchfp.uga.edu/resources/entry/historical-origins-of-food-preservation"
+      }
+    ],
+    "start-ready-plan": [
+      {
+        "origin": "start",
+        "row_index": 1,
+        "url": "https://www.ready.gov/plan"
+      }
+    ],
+    "start-ready-kit": [
+      {
+        "origin": "start",
+        "row_index": 2,
+        "url": "https://www.ready.gov/kit"
+      }
+    ],
+    "start-ready-supply-list": [
+      {
+        "origin": "start",
+        "row_index": 3,
+        "url": "https://www.ready.gov/sites/default/files/2024-05/ready_supply-kit-checklist.pdf"
+      }
+    ],
+    "start-ready-food": [
+      {
+        "origin": "start",
+        "row_index": 4,
+        "url": "https://www.ready.gov/food"
+      }
+    ],
+    "start-ready-evacuation": [
+      {
+        "origin": "start",
+        "row_index": 5,
+        "url": "https://www.ready.gov/evacuation"
+      }
+    ],
+    "start-ready-car": [
+      {
+        "origin": "start",
+        "row_index": 6,
+        "url": "https://www.ready.gov/car"
+      }
+    ],
+    "start-ready-power": [
+      {
+        "origin": "start",
+        "row_index": 7,
+        "url": "https://www.ready.gov/power-outages"
+      }
+    ],
+    "start-ready-alerts": [
+      {
+        "origin": "start",
+        "row_index": 8,
+        "url": "https://www.ready.gov/alerts"
+      }
+    ],
+    "start-ready-financial": [
+      {
+        "origin": "start",
+        "row_index": 9,
+        "url": "https://www.ready.gov/financial-preparedness"
+      }
+    ],
+    "start-ready-disability": [
+      {
+        "origin": "start",
+        "row_index": 10,
+        "url": "https://www.ready.gov/people-disabilities"
+      }
+    ],
+    "start-ready-older-adults": [
+      {
+        "origin": "start",
+        "row_index": 11,
+        "url": "https://www.ready.gov/older-adults"
+      }
+    ],
+    "start-ready-kids": [
+      {
+        "origin": "start",
+        "row_index": 12,
+        "url": "https://www.ready.gov/kids"
+      }
+    ],
+    "start-ready-low-cost": [
+      {
+        "origin": "start",
+        "row_index": 13,
+        "url": "https://www.ready.gov/collection/low-and-no-cost-preparedness"
+      }
+    ],
+    "start-cdc-pyh-connected": [
+      {
+        "origin": "start",
+        "row_index": 14,
+        "url": "https://www.cdc.gov/prepare-your-health/plan-ahead/stay-connected.html"
+      }
+    ],
+    "start-cdc-pyh-prescriptions": [
+      {
+        "origin": "start",
+        "row_index": 15,
+        "url": "https://www.cdc.gov/prepare-your-health/take-action/prescriptions.html"
+      }
+    ],
+    "start-cdc-disability-plan": [
+      {
+        "origin": "start",
+        "row_index": 16,
+        "url": "https://www.cdc.gov/disability-emergency-preparedness/people-with-disabilities/make-a-plan.html"
+      }
+    ],
+    "start-cdc-disability-kit": [
+      {
+        "origin": "start",
+        "row_index": 17,
+        "url": "https://www.cdc.gov/disability-emergency-preparedness/people-with-disabilities/build-a-kit.html"
+      }
+    ],
+    "start-cdc-disability-evacuate": [
+      {
+        "origin": "start",
+        "row_index": 18,
+        "url": "https://www.cdc.gov/disability-emergency-preparedness/people-with-disabilities/sheltering-and-evacuating.html"
+      }
+    ],
+    "start-cdc-family-kit": [
+      {
+        "origin": "start",
+        "row_index": 19,
+        "url": "https://www.cdc.gov/children-and-school-preparedness/resources/emergency-kit-checklist-pregnant-women-infants-and-children.html"
+      }
+    ],
+    "start-cdc-infant-checklist": [
+      {
+        "origin": "start",
+        "row_index": 20,
+        "url": "https://www.cdc.gov/infant-feeding-emergencies-toolkit/php/checklist.html"
+      }
+    ],
+    "start-redcross-older-adults": [
+      {
+        "origin": "start",
+        "row_index": 21,
+        "url": "https://www.redcross.org/get-help/how-to-prepare-for-emergencies/older-adults.html"
+      }
+    ],
+    "start-acl-emergency": [
+      {
+        "origin": "start",
+        "row_index": 22,
+        "url": "https://acl.gov/emergencypreparedness"
+      }
+    ],
+    "start-hud-multifamily-template": [
+      {
+        "origin": "start",
+        "row_index": 23,
+        "url": "https://files.hudexchange.info/resources/documents/Multifamily-Disaster-Preparedness-Plan-Template.pdf"
+      }
+    ],
+    "start-fema-housing": [
+      {
+        "origin": "start",
+        "row_index": 24,
+        "url": "https://www.fema.gov/assistance/individual/housing"
+      }
+    ],
+    "start-usfa-high-rise": [
+      {
+        "origin": "start",
+        "row_index": 25,
+        "url": "https://www.usfa.fema.gov/blog/protecting-people-who-live-or-work-in-high-rises/"
+      }
+    ],
+    "start-fema-power-sheet": [
+      {
+        "origin": "start",
+        "row_index": 26,
+        "url": "https://www.ready.gov/sites/default/files/2024-03/ready.gov_power-outage_hazard-info-sheet.pdf"
+      }
+    ],
+    "start-fsis-emergency-food": [
+      {
+        "origin": "start",
+        "row_index": 27,
+        "url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/keeping-food-safe-during"
+      }
+    ],
+    "start-cdc-power-outage": [
+      {
+        "origin": "start",
+        "row_index": 28,
+        "url": "https://www.cdc.gov/natural-disasters/response/what-to-do-protect-yourself-during-a-power-outage.html"
+      }
+    ],
+    "shelter-cdc-power-outage": [
+      {
+        "origin": "shelter",
+        "row_index": 2,
+        "url": "https://www.cdc.gov/natural-disasters/response/what-to-do-protect-yourself-during-a-power-outage.html"
+      }
+    ],
+    "shelter-cdc-co-basics": [
+      {
+        "origin": "shelter",
+        "row_index": 3,
+        "url": "https://www.cdc.gov/carbon-monoxide/about/index.html"
+      }
+    ],
+    "shelter-cpsc-co": [
+      {
+        "origin": "shelter",
+        "row_index": 4,
+        "url": "https://www.cpsc.gov/Safety-Education/Safety-Education-Centers/Carbon-Monoxide-Information-Center"
+      }
+    ],
+    "shelter-cpsc-heaters": [
+      {
+        "origin": "shelter",
+        "row_index": 5,
+        "url": "https://www.cpsc.gov/Safety-Education/Safety-Education-Centers/Carbon-Monoxide-Information-Center/Portable-Heaters--Camping-Equipment"
+      }
+    ],
+    "shelter-cdc-winter-storm": [
+      {
+        "origin": "shelter",
+        "row_index": 6,
+        "url": "https://www.cdc.gov/winter-weather/safety/stay-safe-during-after-a-winter-storm-safety.html"
+      }
+    ],
+    "shelter-cdc-heat": [
+      {
+        "origin": "shelter",
+        "row_index": 7,
+        "url": "https://www.cdc.gov/heat-health/about/index.html"
+      }
+    ],
+    "shelter-ready-power-outages": [
+      {
+        "origin": "shelter",
+        "row_index": 8,
+        "url": "https://www.ready.gov/power-outages"
+      }
+    ],
+    "shelter-ready-heat": [
+      {
+        "origin": "shelter",
+        "row_index": 9,
+        "url": "https://www.ready.gov/heat"
+      }
+    ],
+    "shelter-ready-winter-weather": [
+      {
+        "origin": "shelter",
+        "row_index": 10,
+        "url": "https://www.ready.gov/winter-weather"
+      }
+    ],
+    "shelter-ready-home-fires": [
+      {
+        "origin": "shelter",
+        "row_index": 11,
+        "url": "https://www.ready.gov/home-fires"
+      }
+    ],
+    "shelter-nfpa-escape": [
+      {
+        "origin": "shelter",
+        "row_index": 12,
+        "url": "https://www.nfpa.org/education-and-research/home-fire-safety/escape-planning"
+      }
+    ],
+    "shelter-nfpa-smoke-alarms": [
+      {
+        "origin": "shelter",
+        "row_index": 13,
+        "url": "https://www.nfpa.org/education-and-research/home-fire-safety/smoke-alarms"
+      }
+    ],
+    "shelter-ready-shelter": [
+      {
+        "origin": "shelter",
+        "row_index": 14,
+        "url": "https://www.ready.gov/shelter"
+      }
+    ],
+    "shelter-ready-evacuation": [
+      {
+        "origin": "shelter",
+        "row_index": 15,
+        "url": "https://www.ready.gov/evacuation"
+      }
+    ],
+    "shelter-ready-tornadoes": [
+      {
+        "origin": "shelter",
+        "row_index": 16,
+        "url": "https://www.ready.gov/tornadoes"
+      }
+    ],
+    "shelter-ready-hurricanes": [
+      {
+        "origin": "shelter",
+        "row_index": 17,
+        "url": "https://www.ready.gov/hurricanes"
+      }
+    ],
+    "shelter-ready-floods": [
+      {
+        "origin": "shelter",
+        "row_index": 18,
+        "url": "https://www.ready.gov/floods"
+      }
+    ],
+    "shelter-ready-wildfires": [
+      {
+        "origin": "shelter",
+        "row_index": 19,
+        "url": "https://www.ready.gov/wildfires"
+      }
+    ],
+    "shelter-ready-hazmat": [
+      {
+        "origin": "shelter",
+        "row_index": 20,
+        "url": "https://www.ready.gov/hazmat"
+      }
+    ],
+    "shelter-ready-plan": [
+      {
+        "origin": "shelter",
+        "row_index": 21,
+        "url": "https://www.ready.gov/plan"
+      }
+    ],
+    "shelter-ready-plan-locations": [
+      {
+        "origin": "shelter",
+        "row_index": 22,
+        "url": "https://www.ready.gov/plan-for-locations"
+      }
+    ],
+    "shelter-ready-plan-form": [
+      {
+        "origin": "shelter",
+        "row_index": 23,
+        "url": "https://www.ready.gov/plan-form"
+      }
+    ],
+    "shelter-ready-disabilities": [
+      {
+        "origin": "shelter",
+        "row_index": 24,
+        "url": "https://www.ready.gov/people-disabilities"
+      }
+    ],
+    "shelter-fcc-comms": [
+      {
+        "origin": "shelter",
+        "row_index": 25,
+        "url": "https://www.fcc.gov/reports-research/guides/tips-communicating-emergency"
+      }
+    ],
+    "shelter-cdc-reunification": [
+      {
+        "origin": "shelter",
+        "row_index": 26,
+        "url": "https://www.cdc.gov/children-and-school-preparedness/before-during-after/reunification.html"
+      }
+    ],
+    "shelter-co-oss-reunification": [
+      {
+        "origin": "shelter",
+        "row_index": 27,
+        "url": "https://oss.colorado.gov/reunification"
+      }
+    ],
+    "shelter-nws-nwr": [
+      {
+        "origin": "shelter",
+        "row_index": 28,
+        "url": "https://www.weather.gov/nwr/"
+      }
+    ],
+    "shelter-fema-power-outage-sheet": [
+      {
+        "origin": "shelter",
+        "row_index": 29,
+        "url": "https://www.ready.gov/sites/default/files/2024-03/ready.gov_power-outage_hazard-info-sheet.pdf"
+      }
+    ],
+    "shelter-usfa-high-rise": [
+      {
+        "origin": "shelter",
+        "row_index": 30,
+        "url": "https://www.usfa.fema.gov/blog/protecting-people-who-live-or-work-in-high-rises/"
+      }
+    ],
+    "shelter-nfpa-high-rise": [
+      {
+        "origin": "shelter",
+        "row_index": 31,
+        "url": "https://www.nfpa.org/-/media/Project/Storefront/Catalog/Files/Safety-tip-sheets/HighRiseSafetyTips.pdf"
+      }
+    ],
+    "shelter-usfa-high-rise-handout": [
+      {
+        "origin": "shelter",
+        "row_index": 32,
+        "url": "https://www.usfa.fema.gov/downloads/pdf/publications/high-rise-fire-safety-infographic.pdf"
+      }
+    ],
+    "shelter-usfa-escape-grid": [
+      {
+        "origin": "shelter",
+        "row_index": 33,
+        "url": "https://www.usfa.fema.gov/downloads/pdf/publications/escape_grid.pdf"
+      }
+    ],
+    "shelter-usfa-two-ways": [
+      {
+        "origin": "shelter",
+        "row_index": 34,
+        "url": "https://www.usfa.fema.gov/downloads/pdf/publications/two_ways_out_infographic.pdf"
+      }
+    ],
+    "shelter-fema-reunification": [
+      {
+        "origin": "shelter",
+        "row_index": 35,
+        "url": "https://www.fema.gov/fact-sheet/reunification-support"
+      }
+    ],
+    "shelter-ncmec-hotline": [
+      {
+        "origin": "shelter",
+        "row_index": 36,
+        "url": "https://www.missingkids.org/gethelpnow/cybertipline"
+      }
+    ],
+    "shelter-ready-tech": [
+      {
+        "origin": "shelter",
+        "row_index": 37,
+        "url": "https://www.ready.gov/get-tech-ready"
+      }
+    ],
+    "shelter-cpsc-co-tips": [
+      {
+        "origin": "shelter",
+        "row_index": 38,
+        "url": "https://www.cpsc.gov/safety-education/safety-education-centers/carbon-monoxide-information-center/protect-your-family-from-carbon-monoxide-poisoning--"
+      }
+    ],
+    "shelter-cdc-chemical-sip": [
+      {
+        "origin": "shelter",
+        "row_index": 39,
+        "url": "https://www.cdc.gov/chemical-emergencies/response/shelter-in-place.html"
+      }
+    ],
+    "shelter-nws-winter-during": [
+      {
+        "origin": "shelter",
+        "row_index": 40,
+        "url": "https://www.weather.gov/safety/winter-during"
+      }
+    ],
+    "shelter-usda-fsis-emergencies": [
+      {
+        "origin": "shelter",
+        "row_index": 42,
+        "url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/emergencies/keep-your-food-safe-during-emergencies"
+      }
+    ],
+    "shelter-cdc-chemical-evac": [
+      {
+        "origin": "shelter",
+        "row_index": 43,
+        "url": "https://www.cdc.gov/chemical-emergencies/response/evacuation.html"
+      }
+    ],
+    "shelter-ca-cde-safety-plans": [
+      {
+        "origin": "shelter",
+        "row_index": 44,
+        "url": "https://www.cde.ca.gov/ls/ss/vp/cssp.asp"
+      }
+    ],
+    "food-fsis-emergencies": [
+      {
+        "origin": "food",
+        "row_index": 5,
+        "url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/emergencies/keep-your-food-safe-during-emergencies"
+      }
+    ],
+    "food-cdc-after-emergency": [
+      {
+        "origin": "food",
+        "row_index": 6,
+        "url": "https://www.cdc.gov/food-safety/foods/keep-food-safe-after-emergency.html"
+      }
+    ],
+    "food-foodsafety-outage-chart": [
+      {
+        "origin": "food",
+        "row_index": 7,
+        "url": "https://www.foodsafety.gov/food-safety-charts/food-safety-during-power-outage"
+      }
+    ],
+    "food-fda-outage-flood": [
+      {
+        "origin": "food",
+        "row_index": 8,
+        "url": "https://www.fda.gov/food/buy-store-serve-safe-food/food-and-water-safety-during-power-outages-and-floods"
+      }
+    ],
+    "food-ready-food": [
+      {
+        "origin": "food",
+        "row_index": 9,
+        "url": "https://www.ready.gov/food"
+      }
+    ],
+    "food-fsis-shelf-stable": [
+      {
+        "origin": "food",
+        "row_index": 10,
+        "url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/shelf-stable-food"
+      }
+    ],
+    "food-fsis-dating": [
+      {
+        "origin": "food",
+        "row_index": 11,
+        "url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/food-product-dating"
+      }
+    ],
+    "food-foodkeeper": [
+      {
+        "origin": "food",
+        "row_index": 12,
+        "url": "https://www.foodsafety.gov/keep-food-safe/foodkeeper-app"
+      }
+    ],
+    "food-illinois-room-temp": [
+      {
+        "origin": "food",
+        "row_index": 13,
+        "url": "https://extension.illinois.edu/food-safety/room-temperature-storage"
+      }
+    ],
+    "food-usu-canned-goods": [
+      {
+        "origin": "food",
+        "row_index": 14,
+        "url": "https://extension.usu.edu/preserve-the-harvest/research/storing-canned-goods"
+      }
+    ],
+    "food-osu-survival-food": [
+      {
+        "origin": "food",
+        "row_index": 15,
+        "url": "https://extension.oregonstate.edu/catalog/em-9331-survival-basics-food"
+      }
+    ],
+    "food-fsis-jerky": [
+      {
+        "origin": "food",
+        "row_index": 16,
+        "url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/meat-fish/jerky"
+      }
+    ],
+    "food-fsis-jerky-qa": [
+      {
+        "origin": "food",
+        "row_index": 17,
+        "url": "https://ask.fsis.usda.gov/article/How-do-I-dry-jerky"
+      }
+    ],
+    "food-ksu-jerky": [
+      {
+        "origin": "food",
+        "row_index": 18,
+        "url": "https://bookstore.ksre.ksu.edu/pubs/dehydrating-meat-safely-at-home_MF3173.PDF"
+      }
+    ],
+    "food-nchfp-using-pressure-canners": [
+      {
+        "origin": "food",
+        "row_index": 19,
+        "url": "https://nchfp.uga.edu/how/can/general-information/using-pressure-canners/"
+      }
+    ],
+    "food-nchfp-ensuring-safe": [
+      {
+        "origin": "food",
+        "row_index": 20,
+        "url": "https://nchfp.uga.edu/how/can/general-information/ensuring-safe-canned-foods/"
+      }
+    ],
+    "food-nchfp-recommended-canners": [
+      {
+        "origin": "food",
+        "row_index": 21,
+        "url": "https://nchfp.uga.edu/how/can/general-information/recommended-canners/"
+      }
+    ],
+    "food-nchfp-multicooker": [
+      {
+        "origin": "food",
+        "row_index": 22,
+        "url": "https://nchfp.uga.edu/newsflash/canning-in-electric-multi-cookers"
+      }
+    ],
+    "food-nchfp-dry-canning": [
+      {
+        "origin": "food",
+        "row_index": 23,
+        "url": "https://nchfp.uga.edu/blog/dry-canning-raw-vegetables-is-an-unsafe-practice"
+      }
+    ],
+    "food-nchfp-not-recommended": [
+      {
+        "origin": "food",
+        "row_index": 24,
+        "url": "https://nchfp.uga.edu/how/can/general-information/equipment-and-methods-not-recommended/"
+      }
+    ],
+    "food-nchfp-steam-canning": [
+      {
+        "origin": "food",
+        "row_index": 25,
+        "url": "https://nchfp.uga.edu/newsflash/atmospheric-steam-canning-tatement"
+      }
+    ],
+    "food-cdc-home-canned": [
+      {
+        "origin": "food",
+        "row_index": 26,
+        "url": "https://www.cdc.gov/botulism/prevention/home-canned-foods.html"
+      }
+    ],
+    "food-usda-canning-guide-1": [
+      {
+        "origin": "food",
+        "row_index": 27,
+        "url": "https://nchfp.uga.edu/papers/guide/GUIDE01_HomeCan_rev0715.pdf"
+      }
+    ],
+    "food-fema-outage-sheet": [
+      {
+        "origin": "food",
+        "row_index": 28,
+        "url": "https://www.ready.gov/sites/default/files/2024-03/ready.gov_power-outage_hazard-info-sheet.pdf"
+      }
+    ],
+    "food-cdc-risk-factors": [
+      {
+        "origin": "food",
+        "row_index": 29,
+        "url": "https://www.cdc.gov/food-safety/risk-factors/index.html"
+      }
+    ],
+    "health-nws-nwr-national": [
+      {
+        "origin": "health",
+        "row_index": 2,
+        "url": "https://www.weather.gov/nwr/"
+      }
+    ],
+    "health-cdc-power-outage": [
+      {
+        "origin": "health",
+        "row_index": 3,
+        "url": "https://www.cdc.gov/natural-disasters/response/what-to-do-protect-yourself-during-a-power-outage.html"
+      }
+    ],
+    "health-cdc-septic": [
+      {
+        "origin": "health",
+        "row_index": 4,
+        "url": "https://www.cdc.gov/floods/safety/guidelines-for-septic-and-onsite-wastewater-systems.html"
+      }
+    ],
+    "health-cdc-sanitation-archive": [
+      {
+        "origin": "health",
+        "row_index": 5,
+        "url": "https://archive.cdc.gov/www_cdc_gov/healthywater/global/sanitation/sanitation-emergency-response.html"
+      }
+    ],
+    "health-fda-safe-drug-use": [
+      {
+        "origin": "health",
+        "row_index": 6,
+        "url": "https://www.fda.gov/drugs/emergency-preparedness-drugs/safe-drug-use-after-natural-disaster"
+      }
+    ],
+    "health-fda-insulin": [
+      {
+        "origin": "health",
+        "row_index": 7,
+        "url": "https://www.fda.gov/drugs/emergency-preparedness-drugs/information-regarding-insulin-storage-and-switching-between-products-emergency"
+      }
+    ],
+    "health-fda-devices": [
+      {
+        "origin": "health",
+        "row_index": 8,
+        "url": "https://www.fda.gov/medical-devices/emergency-situations-medical-devices/fda-offers-tips-about-medical-devices-and-natural-disasters"
+      }
+    ],
+    "health-empower-about": [
+      {
+        "origin": "health",
+        "row_index": 9,
+        "url": "https://empowerprogram.hhs.gov/about.html"
+      }
+    ],
+    "health-ready-power-outages": [
+      {
+        "origin": "health",
+        "row_index": 10,
+        "url": "https://www.ready.gov/power-outages"
+      }
+    ],
+    "health-ready-disabilities": [
+      {
+        "origin": "health",
+        "row_index": 11,
+        "url": "https://www.ready.gov/people-disabilities"
+      }
+    ],
+    "health-ready-kit": [
+      {
+        "origin": "health",
+        "row_index": 12,
+        "url": "https://www.ready.gov/kit"
+      }
+    ],
+    "health-ready-plan": [
+      {
+        "origin": "health",
+        "row_index": 13,
+        "url": "https://www.ready.gov/plan"
+      }
+    ],
+    "health-ready-alerts": [
+      {
+        "origin": "health",
+        "row_index": 14,
+        "url": "https://www.ready.gov/alerts"
+      }
+    ],
+    "health-fema-ipaws": [
+      {
+        "origin": "health",
+        "row_index": 15,
+        "url": "https://www.fema.gov/emergency-managers/practitioners/integrated-public-alert-warning-system"
+      }
+    ],
+    "health-fcc-wea": [
+      {
+        "origin": "health",
+        "row_index": 16,
+        "url": "https://www.fcc.gov/Alerting/WEA"
+      }
+    ],
+    "health-fcc-comms-tips": [
+      {
+        "origin": "health",
+        "row_index": 17,
+        "url": "https://www.fcc.gov/reports-research/guides/tips-communicating-emergency"
+      }
+    ],
+    "health-wadoh-toilet": [
+      {
+        "origin": "health",
+        "row_index": 18,
+        "url": "https://doh.wa.gov/community-and-environment/wastewater-management/toilet-use-during-emergencies"
+      }
+    ],
+    "health-osu-sanitation": [
+      {
+        "origin": "health",
+        "row_index": 19,
+        "url": "https://extension.oregonstate.edu/catalog/pub/em9334-s"
+      }
+    ],
+    "health-fema-power-outage-sheet": [
+      {
+        "origin": "health",
+        "row_index": 20,
+        "url": "https://www.ready.gov/sites/default/files/2024-03/ready.gov_power-outage_hazard-info-sheet.pdf"
+      }
+    ],
+    "hist-food-lc-journal-1805-12-28": [
+      {
+        "origin": "hist-food",
+        "row_index": 2,
+        "url": "https://lewisandclarkjournals.unl.edu/item/lc.jrn.1805-12-28"
+      }
+    ],
+    "hist-food-lc-journal-1806-01-05": [
+      {
+        "origin": "hist-food",
+        "row_index": 3,
+        "url": "https://lewisandclarkjournals.unl.edu/item/lc.jrn.1806-01-05"
+      }
+    ],
+    "hist-food-lc-journal-1806-02-21": [
+      {
+        "origin": "hist-food",
+        "row_index": 4,
+        "url": "https://lewisandclarkjournals.unl.edu/item/lc.jrn.1806-02-21"
+      }
+    ],
+    "hist-food-lc-salt-works-trail-alliance": [
+      {
+        "origin": "hist-food",
+        "row_index": 5,
+        "url": "https://lewis-clark.org/the-trail/fort-clatsop/the-salt-works/"
+      }
+    ],
+    "hist-food-nps-lewi-tribes": [
+      {
+        "origin": "hist-food",
+        "row_index": 6,
+        "url": "https://www.nps.gov/lewi/learn/historyculture/histcult-people-tribes.htm"
+      }
+    ],
+    "hist-food-nps-hardtack-mana": [
+      {
+        "origin": "hist-food",
+        "row_index": 7,
+        "url": "https://www.nps.gov/mana/learn/kidsyouth/hardtack-during-the-civil-war.htm"
+      }
+    ],
+    "hist-food-nps-fosc-rations": [
+      {
+        "origin": "hist-food",
+        "row_index": 8,
+        "url": "https://www.nps.gov/fosc/learn/education/cookrations.htm"
+      }
+    ],
+    "hist-food-fsis-molds": [
+      {
+        "origin": "hist-food",
+        "row_index": 9,
+        "url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/molds-food-are-they-dangerous"
+      }
+    ],
+    "hist-food-marcy-prairie-traveler-text": [
+      {
+        "origin": "hist-food",
+        "row_index": 10,
+        "url": "https://archive.org/download/prairietravelerh01marc/prairietravelerh01marc_djvu.txt"
+      }
+    ],
+    "hist-food-nchfp-jerky": [
+      {
+        "origin": "hist-food",
+        "row_index": 14,
+        "url": "https://nchfp.uga.edu/how/dry/recipes/jerky/"
+      }
+    ],
+    "hist-food-fsis-jerky": [
+      {
+        "origin": "hist-food",
+        "row_index": 15,
+        "url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/meat-fish/jerky"
+      }
+    ],
+    "hist-food-fsis-smoking": [
+      {
+        "origin": "hist-food",
+        "row_index": 16,
+        "url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/smoking-meat-and-poultry"
+      }
+    ],
+    "hist-food-ce-pemmican": [
+      {
+        "origin": "hist-food",
+        "row_index": 17,
+        "url": "https://thecanadianencyclopedia.ca/en/article/pemmican"
+      }
+    ],
+    "hist-food-metis-fur-trade": [
+      {
+        "origin": "hist-food",
+        "row_index": 18,
+        "url": "https://www.metismuseum.ca/media/document.php/00731.The%20M%C3%A9tis%20Fur%20Trade.pdf"
+      }
+    ],
+    "hist-food-headsmashedin": [
+      {
+        "origin": "hist-food",
+        "row_index": 19,
+        "url": "https://www.headsmashedin.ca/about-jump"
+      }
+    ],
+    "hist-food-natifs-wasna": [
+      {
+        "origin": "hist-food",
+        "row_index": 20,
+        "url": "https://natifs.org/blog/lesson-plan/lesson-9-how-to-make-wasna/"
+      }
+    ],
+    "hist-food-nk360-bison": [
+      {
+        "origin": "hist-food",
+        "row_index": 21,
+        "url": "https://americanindian.si.edu/nk360/plains-belonging/itbc.cshtml"
+      }
+    ],
+    "hist-food-monticello-meat": [
+      {
+        "origin": "hist-food",
+        "row_index": 22,
+        "url": "https://www.monticello.org/encyclopedia/preservation-of-meat"
+      }
+    ],
+    "hist-food-mv-smokehouse": [
+      {
+        "origin": "hist-food",
+        "row_index": 23,
+        "url": "https://www.mountvernon.org/the-estate-gardens/location/smokehouse"
+      }
+    ],
+    "hist-food-si-cold": [
+      {
+        "origin": "hist-food",
+        "row_index": 24,
+        "url": "https://americanhistory.si.edu/explore/stories/keeping-your-food-cool-ice-harvesting-electric-refrigeration"
+      }
+    ],
+    "hist-food-nps-icebox": [
+      {
+        "origin": "hist-food",
+        "row_index": 25,
+        "url": "https://www.nps.gov/articles/000/the-icebox-the-predecessor-of-modern-refrigeration.htm"
+      }
+    ],
+    "hist-food-nps-emigrant-trails": [
+      {
+        "origin": "hist-food",
+        "row_index": 26,
+        "url": "https://www.nps.gov/articles/000/traveling-emigrant-trails.htm"
+      }
+    ],
+    "hist-food-nps-nht-nevada-guide": [
+      {
+        "origin": "hist-food",
+        "row_index": 27,
+        "url": "https://www.nps.gov/orgs/1453/upload/National-Historic-Trails-Auto-Tour-Route-Interpretive-Guide-Across-Nevada.pdf"
+      }
+    ],
+    "hist-home-nchfp-pickling": [
+      {
+        "origin": "hist-home",
+        "row_index": 1,
+        "url": "https://nchfp.uga.edu/how/pickle/general-information-pickling/general-information-on-pickling/"
+      }
+    ],
+    "hist-home-loc-simmons-1796": [
+      {
+        "origin": "hist-home",
+        "row_index": 2,
+        "url": "https://www.loc.gov/item/96126967/"
+      }
+    ],
+    "hist-home-cdc-botulism-about": [
+      {
+        "origin": "hist-home",
+        "row_index": 3,
+        "url": "https://www.cdc.gov/botulism/about/index.html"
+      }
+    ],
+    "hist-home-cdc-botulism-home-canned": [
+      {
+        "origin": "hist-home",
+        "row_index": 4,
+        "url": "https://www.cdc.gov/botulism/prevention/home-canned-foods.html"
+      }
+    ],
+    "hist-home-nps-ww2-canning": [
+      {
+        "origin": "hist-home",
+        "row_index": 5,
+        "url": "https://www.nps.gov/articles/000/canning-and-food-preservation-on-the-world-war-ii-home-front.htm"
+      }
+    ],
+    "hist-home-mu-root-cellars": [
+      {
+        "origin": "hist-home",
+        "row_index": 6,
+        "url": "https://extension.missouri.edu/publications/mp562"
+      }
+    ],
+    "hist-home-nps-oxon-hill-root-cellar": [
+      {
+        "origin": "hist-home",
+        "row_index": 7,
+        "url": "https://www.nps.gov/places/000/oxon-hill-root-cellar.htm"
+      }
+    ],
+    "hist-home-monticello-ice-house": [
+      {
+        "origin": "hist-home",
+        "row_index": 8,
+        "url": "https://www.monticello.org/encyclopedia/ice-house"
+      }
+    ],
+    "hist-home-fsis-refrigeration": [
+      {
+        "origin": "hist-home",
+        "row_index": 9,
+        "url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/refrigeration"
+      }
+    ],
+    "hist-home-cdc-cisterns": [
+      {
+        "origin": "hist-home",
+        "row_index": 10,
+        "url": "https://www.cdc.gov/water-emergency/about/cistern-safety-and-disasters-before-during-and-after.html"
+      }
+    ],
+    "hist-home-cdc-rainwater": [
+      {
+        "origin": "hist-home",
+        "row_index": 11,
+        "url": "https://www.cdc.gov/drinking-water/about/collecting-rainwater-and-your-health-an-overview.html"
+      }
+    ],
+    "hist-home-epa-rain-barrels": [
+      {
+        "origin": "hist-home",
+        "row_index": 12,
+        "url": "https://www.epa.gov/soakuptherain/soak-rain-rain-barrels"
+      }
+    ],
+    "hist-home-monticello-cisterns": [
+      {
+        "origin": "hist-home",
+        "row_index": 13,
+        "url": "https://www.monticello.org/encyclopedia/cisterns"
+      }
+    ],
+    "hist-home-nps-fort-union-water": [
+      {
+        "origin": "hist-home",
+        "row_index": 14,
+        "url": "https://www.nps.gov/foun/learn/historyculture/water-supply.htm"
+      }
+    ],
+    "hist-home-nps-san-juan-cisterns": [
+      {
+        "origin": "hist-home",
+        "row_index": 15,
+        "url": "https://www.nps.gov/saju/learn/news/inauguration-of-restored-rain-harvesting-systems.htm"
+      }
+    ],
+    "hist-home-cdc-chlorine": [
+      {
+        "origin": "hist-home",
+        "row_index": 16,
+        "url": "https://www.cdc.gov/drinking-water/about/about-water-disinfection-with-chlorine-and-chloramine.html"
+      }
+    ],
+    "hist-home-tulchinsky-snow": [
+      {
+        "origin": "hist-home",
+        "row_index": 17,
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7150208/"
+      }
+    ],
+    "hist-home-wellcome-snow-map": [
+      {
+        "origin": "hist-home",
+        "row_index": 18,
+        "url": "https://wellcomecollection.org/works/uxgfjt62"
+      }
+    ],
+    "hist-home-snow-mode-of-communication": [
+      {
+        "origin": "hist-home",
+        "row_index": 19,
+        "url": "https://archive.org/stream/b28985266/b28985266_djvu.txt"
+      }
+    ],
+    "hist-home-aim25-chelsea": [
+      {
+        "origin": "hist-home",
+        "row_index": 20,
+        "url": "https://atom.aim25.com/index.php/chelsea-waterworks-company-purchase-records"
+      }
+    ],
+    "hist-home-oregon-slow-sand": [
+      {
+        "origin": "hist-home",
+        "row_index": 21,
+        "url": "https://www.oregon.gov/oha/PH/HEALTHYENVIRONMENTS/DRINKINGWATER/OPERATIONS/TREATMENT/Documents/slowsand/SSF-3-2024/SSF-a-notes.pdf"
+      }
+    ],
+    "hist-home-savours-phipps": [
+      {
+        "origin": "hist-home",
+        "row_index": 22,
+        "url": "https://pubs.aina.ucalgary.ca/arctic/Arctic37-4-402.pdf"
+      }
+    ],
+    "hist-home-ayu-water": [
+      {
+        "origin": "hist-home",
+        "row_index": 23,
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3361915/"
+      }
+    ],
+    "hist-home-smith-naval-hygiene": [
+      {
+        "origin": "hist-home",
+        "row_index": 24,
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5883164/"
+      }
+    ],
+    "hist-home-chadwick-cureus": [
+      {
+        "origin": "hist-home",
+        "row_index": 25,
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11457289/"
+      }
+    ],
+    "hist-home-cdc-clean-hands": [
+      {
+        "origin": "hist-home",
+        "row_index": 26,
+        "url": "https://www.cdc.gov/clean-hands/about/index.html"
+      }
+    ],
+    "hist-home-wellcome-chadwick-1842": [
+      {
+        "origin": "hist-home",
+        "row_index": 27,
+        "url": "https://wellcomecollection.org/works/vgy8svyj"
+      }
+    ],
+    "hist-home-msu-simmons-1798": [
+      {
+        "origin": "hist-home",
+        "row_index": 28,
+        "url": "https://d.lib.msu.edu/fa/1"
+      }
+    ],
+    "hist-field-smg-fire-methods": [
+      {
+        "origin": "hist-field",
+        "row_index": 2,
+        "url": "https://www.sciencemuseum.org.uk/objects-and-stories/ways-catching-spark-history-fire-making-methods"
+      }
+    ],
+    "hist-field-bbc-walker-light": [
+      {
+        "origin": "hist-field",
+        "row_index": 3,
+        "url": "https://www.bbc.co.uk/ahistoryoftheworld/objects/hQR9oN5LTeCLcuKfPDMJ9A"
+      }
+    ],
+    "hist-field-tvm-walker": [
+      {
+        "origin": "hist-field",
+        "row_index": 4,
+        "url": "https://teesvalleymuseums.org/blog/post/john-walker-and-the-friction-match/"
+      }
+    ],
+    "hist-field-nps-flint-steel": [
+      {
+        "origin": "hist-field",
+        "row_index": 5,
+        "url": "https://www.nps.gov/pisp/learn/historyculture/flint-and-steel.htm"
+      }
+    ],
+    "hist-field-nmah-tinder-box": [
+      {
+        "origin": "hist-field",
+        "row_index": 6,
+        "url": "https://americanhistory.si.edu/collections/object/nmah_308548"
+      }
+    ],
+    "hist-field-usfa-outdoor-fire": [
+      {
+        "origin": "hist-field",
+        "row_index": 7,
+        "url": "https://www.usfa.fema.gov/prevention/outdoor-fires/"
+      }
+    ],
+    "hist-field-nps-campfires": [
+      {
+        "origin": "hist-field",
+        "row_index": 8,
+        "url": "https://www.nps.gov/articles/campfires.htm"
+      }
+    ],
+    "hist-field-nfpa-outdoor-fire": [
+      {
+        "origin": "hist-field",
+        "row_index": 9,
+        "url": "https://www.nfpa.org/news-blogs-and-articles/blogs/2025/09/10/wildfire-prevention-tips-for-fire-pits-and-outdoor-fires"
+      }
+    ],
+    "hist-field-cdc-co-basics": [
+      {
+        "origin": "hist-field",
+        "row_index": 10,
+        "url": "https://www.cdc.gov/carbon-monoxide/about/index.html"
+      }
+    ],
+    "hist-field-nws-winter-before": [
+      {
+        "origin": "hist-field",
+        "row_index": 11,
+        "url": "https://www.weather.gov/safety/winter-before"
+      }
+    ],
+    "hist-field-nws-winter-during": [
+      {
+        "origin": "hist-field",
+        "row_index": 12,
+        "url": "https://www.weather.gov/safety/winter-during"
+      }
+    ],
+    "hist-field-rmg-why-longitude": [
+      {
+        "origin": "hist-field",
+        "row_index": 13,
+        "url": "https://www.rmg.co.uk/stories/time/what-made-search-longitude-so-important"
+      }
+    ],
+    "hist-field-rmg-harrison": [
+      {
+        "origin": "hist-field",
+        "row_index": 14,
+        "url": "https://www.rmg.co.uk/stories/time/harrisons-clocks-longitude-problem"
+      }
+    ],
+    "hist-field-rmg-lunar": [
+      {
+        "origin": "hist-field",
+        "row_index": 15,
+        "url": "https://www.rmg.co.uk/stories/time/longitude-found-nevil-maskelyne-lunar-method"
+      }
+    ],
+    "hist-field-si-sextant": [
+      {
+        "origin": "hist-field",
+        "row_index": 16,
+        "url": "https://timeandnavigation.si.edu/multimedia-asset/sextant"
+      }
+    ],
+    "hist-field-usgs-declination": [
+      {
+        "origin": "hist-field",
+        "row_index": 17,
+        "url": "https://www.usgs.gov/faqs/what-declination"
+      }
+    ],
+    "hist-field-usgs-north-arrows": [
+      {
+        "origin": "hist-field",
+        "row_index": 18,
+        "url": "https://www.usgs.gov/faqs/what-do-different-north-arrows-a-usgs-topographic-map-mean"
+      }
+    ],
+    "hist-field-noaa-declination": [
+      {
+        "origin": "hist-field",
+        "row_index": 19,
+        "url": "https://www.ncei.noaa.gov/products/magnetic-declination"
+      }
+    ],
+    "hist-field-nasa-north-star": [
+      {
+        "origin": "hist-field",
+        "row_index": 20,
+        "url": "https://science.nasa.gov/solar-system/what-is-the-north-star-and-how-do-you-find-it/"
+      }
+    ],
+    "hist-field-nps-donner": [
+      {
+        "origin": "hist-field",
+        "row_index": 21,
+        "url": "https://www.nps.gov/cali/learn/historyculture/donner-reed-party.htm"
+      }
+    ],
+    "hist-field-utah-hastings": [
+      {
+        "origin": "hist-field",
+        "row_index": 22,
+        "url": "https://historytogo.utah.gov/post/hastings-cutoff/"
+      }
+    ],
+    "hist-field-mccurdy-1994": [
+      {
+        "origin": "hist-field",
+        "row_index": 23,
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1022425/"
+      }
+    ],
+    "hist-field-ca-parks-donner": [
+      {
+        "origin": "hist-field",
+        "row_index": 24,
+        "url": "https://www.parks.ca.gov/DonnerMemorial"
+      }
+    ],
+    "hist-field-britannica-donner": [
+      {
+        "origin": "hist-field",
+        "row_index": 25,
+        "url": "https://www.britannica.com/topic/Donner-party"
+      }
+    ],
+    "hist-field-oac-breen-diary": [
+      {
+        "origin": "hist-field",
+        "row_index": 26,
+        "url": "https://oac.cdlib.org/findaid/ark:/13030/tf10000759/"
+      }
+    ],
+    "hist-field-ia-hastings-guide": [
+      {
+        "origin": "hist-field",
+        "row_index": 27,
+        "url": "https://archive.org/details/GR_1815"
+      }
+    ]
+  }
+}
