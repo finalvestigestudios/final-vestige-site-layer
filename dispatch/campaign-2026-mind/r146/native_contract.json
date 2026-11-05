@@ -1,0 +1,108 @@
+{
+  "schema_version": "dispatch.native_jetpack.v1",
+  "observed_at_utc": "2026-11-05T21:31:05Z",
+  "evidence": {
+    "newsletter_settings": "WordPress wpcom_jetpack_newsletter get_settings, read-only, 2026-11-05T21:31:05Z",
+    "newsletter_status": "WordPress wpcom_jetpack_newsletter status, read-only, 2026-11-05T21:31:00Z",
+    "follower_counts": "WordPress wpcom_jetpack_stats_followers read-only, 2026-11-05",
+    "manuscripts": "GitHub draft PR #175 commit d57ccdba3aee8f065e143e101c2945f4f3d01647; verified eight Git blobs",
+    "commercial_owner": "GitHub Issues #171, #174 and draft PR #1146; not live"
+  },
+  "jetpack": {
+    "subscriptions": true,
+    "email_new_posts_by_default": false,
+    "email_content_format": "full",
+    "reply_to": "no-reply",
+    "from_name": "Final Vestige Studios",
+    "newsletter_categories_enabled": false,
+    "site_can_send": true,
+    "last_five_post_notifications": "never_sent_opted_out"
+  },
+  "subscribers": {
+    "reported_total": 3,
+    "reported_confirmed": 3,
+    "reported_unconfirmed": 2,
+    "reported_imported_last_24h": 0,
+    "jetpack_email_followers": 0,
+    "jetpack_wpcom_followers": 3,
+    "email_eligible_verified": false,
+    "consent_provenance_verified": false,
+    "counter_sets_reconciled": false
+  },
+  "welcome": {
+    "fieldbook_media_id": 1737,
+    "wp_registered_size_bytes": 599946,
+    "configured_link_present": true,
+    "real_received_welcome_verified": false,
+    "live_pdf_http_and_pagecount_verified": false
+  },
+  "actual_delivery": {
+    "native_visual_preview_verified": false,
+    "actual_received_mail_verified": false,
+    "rendered_fv_postal_address_verified": false,
+    "functional_unsubscribe_verified": false,
+    "named_affiliate_acceptance_verified": false,
+    "email_channel_permission_verified": false,
+    "merchant_earning_url_verified": false,
+    "realized_paid_order_verified": false,
+    "founder_final_send_approval": false
+  },
+  "issues": [
+    {
+      "number": "01",
+      "kind": "editorial",
+      "subject": "The mind is not a camera",
+      "destination": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "destination_state": "wp_published",
+      "known_copy_risk": "Perception subject leads to Puységur; optional replacement PR #1126 is not approved"
+    },
+    {
+      "number": "02",
+      "kind": "editorial",
+      "subject": "Before hypnosis had a name",
+      "destination": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "destination_state": "wp_published",
+      "known_copy_risk": "Sender/footer still unverified in actual mail"
+    },
+    {
+      "number": "03",
+      "kind": "commercial",
+      "subject": "The twelve-minute meditation question",
+      "destination": null,
+      "destination_state": "NOT_LIVE_OR_APPROVED",
+      "known_copy_risk": "Zen12 Premium guide and named affiliate email approval absent"
+    },
+    {
+      "number": "04",
+      "kind": "editorial",
+      "subject": "Fourteen seconds. A much longer explanation.",
+      "destination": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/",
+      "destination_state": "wp_published",
+      "known_copy_risk": "Original 14-second precision questioned; optional revision PR #1104 remains unapproved"
+    },
+    {
+      "number": "05",
+      "kind": "commercial",
+      "subject": "Before you press play on a hypnosis audio",
+      "destination": null,
+      "destination_state": "NOT_LIVE_OR_APPROVED",
+      "known_copy_risk": "Hypnosis Live Total Focus exact product guide and email permission absent"
+    },
+    {
+      "number": "06",
+      "kind": "editorial",
+      "subject": "What did seven days of attention reveal?",
+      "destination": "https://finalvestige.com/focus/",
+      "destination_state": "wp_published",
+      "known_copy_risk": "Returns existing subscriber to another signup; optional direct asset replacement PR #1126 unapproved"
+    }
+  ],
+  "measurement": {
+    "acquisition_convention": "utm_source={platform}&utm_medium=organic_social&utm_campaign={cluster_pilot_yyyy_mm}&utm_content={grok_asset_id}",
+    "email_convention": "utm_source=dispatch&utm_medium=email&utm_campaign=dispatch_mind_pilot_2026_11&utm_content=issue_{NN}",
+    "confirmed_signup_requires_provider_consent_proof": true,
+    "qualified_human_sessions_verified": false,
+    "settled_orders_refunds_fees_verified": false,
+    "net_revenue_per_1000_qualified_human_sessions": null
+  }
+}
