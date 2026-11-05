@@ -46,3 +46,18 @@ A portable WordPress Playground blueprint containing **exact current source** fo
 **NOT TESTED:** actual Playground runtime, PHP parsing in WordPress, full-page Chromium/axe/Lighthouse, real source image delivery and guest Jetpack signup.
 **LIVE:** no changes.
 **RELEASE:** HOLD.
+
+
+## Fail-closed accidental-copy fence and native PHP review (2026-11-05)
+
+The Blueprint's local-only MU-plugin now returns immediately unless the disposable local WordPress database contains `fv_ex2_playground_review_only=FV_EX2_LOCAL_PLAYGROUND_2026_11_05_V1`. The Blueprint initializes this option **only after** successfully creating the disposable review page. Without it, the plugin does not register any frontend asset or shortcode callbacks. This guards against **accidentally copying the plugin alone** to a real WordPress site. It is **not** an authentication token, not a secure environment attestation, and not permission to install the complete Blueprint on production; a deliberately copied option would bypass it.
+
+**Mandatory preflight, run in an exact checkout with Node 22 and native PHP available:**
+
+```bash
+node experience2/home-flagship/playground/verify_playground_blueprint.cjs
+```
+
+This first compares all eleven actual source files with the generated Blueprint, then invokes `verify_playground_php_preflight.cjs`, which extracts the full 118 KB MU-plugin into an isolated 0600 temporary file, runs `php -l` against **that exact file**, and executes a minimal PHP function-registration harness three times: no marker must register **zero** callbacks, the correct marker must register **one** scoped asset hook and **one** review shortcode, and a wrong marker must again register **zero** callbacks. Three synthetic structural negative cases ensure a missing, mismatched or late guard fails admission. A missing PHP binary fails the script instead of being silently treated as a pass. The harness is a WordPress-function stub, **not** proof of Assembler or Playground rendering.
+
+**Verification disclosure:** The branch's Blueprint marker ordering and JavaScript syntax were checked against connector-retrieved exact GitHub content with V8. The native Node/PHP preflight is committed and ready but **has not executed in the connected exact Git checkout** in this run: this execution container cannot resolve GitHub/npm hosts, and the private repository/120 KB Blueprint are not locally mounted. True WordPress/Assembler browser QA, full-page axe, images' HTTP-body bytes, anonymous Jetpack, native zoom and Lighthouse remain release-blocking. Do not substitute these structural checks for integrated QA or merge/deploy from this evidence.
