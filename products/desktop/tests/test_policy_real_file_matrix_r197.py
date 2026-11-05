@@ -7,12 +7,29 @@ Run from repo root with PYTHONPATH=products/desktop.
 from __future__ import annotations
 
 import hashlib
+import os
+import stat
 import tempfile
 import unittest
 from pathlib import Path
 from unittest.mock import patch
 
 from fvs_suite import policy_diff
+
+
+def _linked_metadata_witness_r204(path, original_lstat, marked_path, *args, **kwargs):
+    """For permission-limited CI only: mock the link's lstat mode, not bytes.
+
+    The path being inspected still exists on disk. Non-target paths retain
+    their genuine native metadata. This is not a native symlink acceptance
+    test, and the six-app release gate remains closed until Windows verification.
+    """
+    info = original_lstat(path, *args, **kwargs)
+    if path != marked_path:
+        return info
+    fields = list(info)
+    fields[0] = stat.S_IFLNK | stat.S_IMODE(info.st_mode)
+    return os.stat_result(fields)
 
 
 class PolicyRealFileMatrixR197(unittest.TestCase):
@@ -156,11 +173,29 @@ class PolicyRealFileMatrixR197(unittest.TestCase):
         self.new.write_bytes(b"safe\n")
         try:
             self.old.symlink_to(target)
-        except (OSError, NotImplementedError) as exc:
-            self.skipTest("symlinks unavailable: " + type(exc).__name__)
-        with self.assertRaisesRegex(ValueError, "stable regular file"):
-            policy_diff.compare_policy_files(
-                self.old, self.new, self.folder, lambda *_: self.report)
+        except (OSError, NotImplementedError):
+            # On Windows, native symlink creation may need privileges. Rather
+            # than skip a mandatory audit case, use a real stand-in source
+            # whose *lstat metadata* is marked as a link. This verifies the
+            # production reader's reject-before-open guard, NOT the native
+            # Windows filesystem behavior or its release qualification.
+            self._native_link_verified = False
+            self.old.write_bytes(b"private-tenant-82917\n")
+            native_lstat = Path.lstat
+
+            def simulate_link(path, *args, **kwargs):
+                return _linked_metadata_witness_r204(
+                    path, native_lstat, self.old, *args, **kwargs)
+
+            with patch.object(Path, "lstat", simulate_link):
+                with self.assertRaisesRegex(ValueError, "stable regular file"):
+                    policy_diff.compare_policy_files(
+                        self.old, self.new, self.folder, lambda *_: self.report)
+        else:
+            self._native_link_verified = True
+            with self.assertRaisesRegex(ValueError, "stable regular file"):
+                policy_diff.compare_policy_files(
+                    self.old, self.new, self.folder, lambda *_: self.report)
         self.assertFalse(self.report.exists())
         self.assertEqual(target.read_bytes(), b"private-tenant-82917\n")
 
