@@ -65,6 +65,18 @@ class ManifestContract(unittest.TestCase):
         m = copy.deepcopy(MANIFEST); m["candidate_commit"] = "yesterday"
         with self.assertRaises(ValueError): GATE.check_manifest(m)
 
+    def test_missing_metadata_custody(self):
+        m = copy.deepcopy(MANIFEST); del m["metadata_blobs"]
+        with self.assertRaises(ValueError): GATE.check_manifest(m)
+
+    def test_metadata_blob_forgery(self):
+        m = copy.deepcopy(MANIFEST); m["metadata_blobs"]["water-math"] = "NotAnObject"
+        with self.assertRaises(ValueError): GATE.check_manifest(m)
+
+    def test_metadata_article_missing(self):
+        m = copy.deepcopy(MANIFEST); m["metadata_blobs"].pop("water-math")
+        with self.assertRaises(ValueError): GATE.check_manifest(m)
+
     def test_crosswalk_branch_removed(self):
         m = copy.deepcopy(MANIFEST); del m["source_head_commits"]["hist-food"]
         with self.assertRaises(ValueError): GATE.check_manifest(m)
