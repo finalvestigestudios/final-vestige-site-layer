@@ -14,6 +14,7 @@ import subprocess
 from urllib.parse import urlsplit
 from media_transfer_admission import audit_image_payloads, archive_identity
 from verify_release_content_parity import verify_repo, RIGHTS, MIND_NOTICE
+from focus_cta_admission import inspect_focus_entry
 
 HOME = Path('experience2/home-flagship')
 CHAPTERS = ('fv-hf-title','fv-hf-chronicle','fv-hf-evidence','fv-hf-inquiry',
@@ -113,7 +114,8 @@ def checkout(repo: Path, expected_sha: str) -> tuple[Path, dict]:
         files[name] = raw
     # Attest the executed QA code as well as the original eleven homepage assets.
     for name in ('verify_exact_staging.py', 'media_transfer_admission.py', 'test_media_transfer_admission.py', 'test_exact_staging.py',
-                 'verify_release_content_parity.py', 'test_release_content_parity.py'):
+                 'verify_release_content_parity.py', 'test_release_content_parity.py',
+                 'focus_cta_admission.py', 'test_focus_cta_admission_browser.py'):
         rel = HOME/'qa/release-candidate'/name
         p = repo/rel
         if p.is_symlink() or not p.is_file() or not p.resolve().is_relative_to(repo):
@@ -184,6 +186,12 @@ def inspect_frame(frame, files: dict, expected_index_hash: str, headers: dict, w
             check('real_hero_screenshot',True)
         except Exception:
             check('real_hero_screenshot',False)
+
+    # Integration test the actual hero action: priority, free-offer honesty,
+    # mobile target size, unobstructed hit-testing and keyboard reachability.
+    # This runs AFTER first-screen screenshot to preserve its scroll position.
+    for name, passed in inspect_focus_entry(frame, width).items():
+        check('hero_'+name, passed)
 
     # Archive exhibits are mutually exclusive ONLY after JS enhancement.
     # An inactive case image is intentionally hidden, so Playwright cannot
@@ -417,6 +425,11 @@ def run(url: str, allowed_host: str, expected_sha: str, repo: Path, output: Path
                     'no_js_case_panels_visible':all(rendered.locator('[data-fv-case="'+id+'"]').is_visible()
                                                    for id in ('apollo','franklin','malbone'))
                 }
+                # The free lead-capture route must remain usable even when
+                # WordPress/Assembler enhancement JS is disabled. Do not click
+                # through or submit anything to the live production form.
+                for name, passed in inspect_focus_entry(rendered, 390).items():
+                    nojs['checks']['hero_'+name] = passed
                 # Browsers often never fetch loading=lazy <img> with JS off.
                 # Confirm BOTH noscript eager fallbacks load actual pixels,
                 # and the rights-pending Malbone map remains unrendered.
