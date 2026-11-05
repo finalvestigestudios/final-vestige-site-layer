@@ -22,8 +22,10 @@ import {fileURLToPath} from 'node:url';
 const require=createRequire(import.meta.url);
 const ORIGIN='https://finalvestige.com';
 const VIEWPORTS=[320,390,768,1279,1280,1440,1920];
-const CHAPTERS=['fv-hf-chronicle','fv-hf-evidence','fv-hf-apollo',
-  'fv-hf-franklin','fv-hf-malbone','fv-hf-inquiry','fv-hf-observer'];
+// Actual seven chapter-rail anchors on public WordPress Page 6 (Nov 4).
+// Apollo / Franklin / Malbone are case cards nested within chapter 03.
+const CHAPTERS=Object.freeze(['fv-hf-title','fv-hf-chronicle','fv-hf-evidence',
+  'fv-hf-inquiry','fv-hf-method-title','fv-hf-observer','fv-hf-mind-title']);
 const ARCHIVE_CASES=Object.freeze(['apollo','franklin','malbone']);
 const ARCHIVE_FILES=Object.freeze(['s67-19766.webp',
   'franklinexpeditionnote.jpg','edit-017-v02-nypl-5003296-original.jpg']);
@@ -133,6 +135,52 @@ async function navigatePublic(page,path){
   // No submission, sign-in, or click instrumentation of any sort.
   return {status:response.status(),urlPath:pathOnly(page.url())};
 }
+
+/** Read-only seven-chapter destination and accessible reading contract. */
+export async function auditChapterNavigation(page){
+  return page.evaluate(ids=>{
+    const root=document.querySelector('[data-fv-home-flagship]');
+    const nav=root?.querySelector('.fv-hf__chapter-nav[aria-label="Explore the chapters"]');
+    const links=nav?[...nav.querySelectorAll('a[href]')]:[];
+    const exposed=el=>{
+      if(!el)return false;
+      for(let n=el;n&&n.nodeType===1;n=n.parentElement){
+        const c=getComputedStyle(n);
+        if(n.hidden||n.getAttribute('aria-hidden')==='true'||c.display==='none'||
+           c.visibility==='hidden'||c.visibility==='collapse'||
+           c.contentVisibility==='hidden')return false;
+      }
+      const box=el.getBoundingClientRect();
+      return box.width>0&&box.height>0;
+    };
+    return {navPresent:!!nav,navExposed:exposed(nav),
+      navTargets:links.map(a=>a.getAttribute('href')),
+      entries:ids.map(id=>{
+        const targets=[...document.querySelectorAll('[id]')].filter(el=>el.id===id);
+        const linksFor=links.filter(a=>a.getAttribute('href')==='#'+id);
+        const target=targets.length===1?targets[0]:null;
+        const region=target?.closest('section')||null;
+        const heading=target?.matches('h1,h2,h3,h4,h5,h6')?target:
+          (target?.getAttribute('aria-labelledby')
+            ?document.getElementById(target.getAttribute('aria-labelledby')):null);
+        return {id,linkCount:linksFor.length,targetCount:targets.length,
+          named:!!(heading&&heading.matches('h1,h2,h3,h4,h5,h6')&&
+            heading.textContent.trim()&&region?.contains(heading)&&
+            region.getAttribute('aria-labelledby')===heading.id),
+          visible:exposed(target)&&exposed(heading)&&exposed(region),
+          readable:!!(region&&region.textContent.trim().length>=120)};
+      })};
+  },CHAPTERS);
+}
+export function chapterNavigationPassed(r){
+  return !!r&&r.navPresent&&r.navExposed&&
+    r.navTargets?.length===CHAPTERS.length&&
+    CHAPTERS.every((id,i)=>r.navTargets[i]==='#'+id)&&
+    r.entries?.length===CHAPTERS.length&&
+    CHAPTERS.every((id,i)=>{const e=r.entries[i];return e.id===id&&
+      e.linkCount===1&&e.targetCount===1&&e.named&&e.visible&&e.readable;});
+}
+
 async function chapterState(page,width,mode){
   const state=await page.evaluate(ids=>({
     chapterIds:ids.map(id=>({id,exists:!!document.getElementById(id)})),
@@ -150,6 +198,10 @@ async function chapterState(page,width,mode){
     }).length
   }),CHAPTERS);
   for(const id of state.chapterIds) check(id.exists,mode+' '+width+' missing '+id.id);
+  state.chapterNav=await auditChapterNavigation(page);
+  check(chapterNavigationPassed(state.chapterNav),
+    mode+' '+width+' seven real chapter rail destinations fail: '+
+    JSON.stringify(state.chapterNav));
   check(state.mainCount===1,mode+' '+width+' expected exactly one accessible main');
   check(state.marginCount===72&&state.marginSequential&&state.marginNonempty,
     mode+' '+width+' must preserve all 72 sequential, readable Margins');
