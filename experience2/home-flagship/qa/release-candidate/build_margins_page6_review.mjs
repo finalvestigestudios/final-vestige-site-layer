@@ -6,7 +6,7 @@
  * node build_margins_page6_review.mjs --in public-page-6.json \
  *      --out page-6-margins.review.blocks.html --review-only
  */
-import { readFile, writeFile, realpath } from "node:fs/promises";
+import { readFile, open, unlink } from "node:fs/promises";
 import { createHash } from "node:crypto";
 import { resolve } from "node:path";
 import { patchPage6 } from "./margins_page6_native_patch.mjs";
@@ -49,10 +49,33 @@ if (!seen.has("--review-only") || [...seen].some(s => !permitted.has(s)) ||
           "axe WCAG 2.2 AA and manual zoom/touch/keyboard/no-JS", "measured current Lighthouse",
           "media/rights and conversion verification", "CI green exact SHA", "founder release approval"]
       };
-      // Output is a REVIEW ARTIFACT, not an API upload. Keep it out of production.
-      await writeFile(output, result.html, { encoding: "utf8", flag: "wx", mode: 0o600 });
-      await writeFile(output + ".receipt.json", JSON.stringify(receipt, null, 2) + "\n",
-        { encoding: "utf8", flag: "wx", mode: 0o600 });
+      // Both review files must be produced or neither may remain after a detected
+      // filesystem failure. Never overwrite or delete a pre-existing file.
+      const created = [];
+      let handle = null;
+      try {
+        for (const [path, body] of [
+          [output, result.html],
+          [output + ".receipt.json", JSON.stringify(receipt, null, 2) + "\n"]
+        ]) {
+          handle = await open(path, "wx", 0o600);
+          created.push(path);
+          await handle.writeFile(body, "utf8");
+          await handle.sync();
+          await handle.close();
+          handle = null;
+        }
+      } catch (writeError) {
+        if (handle) { try { await handle.close(); } catch {} }
+        for (const path of created.reverse()) {
+          try { await unlink(path); }
+          catch (cleanupError) {
+            throw Error("partial review cleanup FAILED for " + path + ": " + cleanupError.message +
+              " (original failure: " + writeError.message + ")");
+          }
+        }
+        throw writeError;
+      }
       console.log(JSON.stringify({review_file: output, receipt_file: output + ".receipt.json",
         records: result.receipt.record_count, unchanged_tail_bytes: result.receipt.unchanged_tail_bytes,
         source_sha256: receipt.source_sha256, proposed_sha256: receipt.proposed_sha256,
