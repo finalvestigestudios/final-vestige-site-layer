@@ -162,6 +162,14 @@ jobs:
           python -OO -m unittest discover -s products/desktop/tests -p 'test_spend_collection_preflight_r193.py'
       - name: Install pinned local evidence crypto dependency
         run: python -m pip install "cryptography==46.0.4"
+      - name: R200 regression matrix runner self-tests (16 methods; normal and -OO)
+        run: |
+          python -m unittest discover -s products/desktop/tests -p 'test_recent_regression_gate_r200.py'
+          python -OO -m unittest discover -s products/desktop/tests -p 'test_recent_regression_gate_r200.py'
+      - name: R200 execute R194-R199 financial and policy audit tests (148 methods per mode)
+        run: |
+          python products/desktop/scripts/safe_recent_regressions_r200.py
+          python -OO products/desktop/scripts/safe_recent_regressions_r200.py
       - name: Verify R100 privacy-safe source-method regressions (normal and -OO)
         run: |
           python -m unittest discover -s products/desktop/tests -p 'test_static_method_diagnostics_r100.py' > /dev/null 2>&1
@@ -678,6 +686,22 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R193 optimized SpendMap preflight failed" }
       - name: Install pinned local evidence crypto dependency
         run: python -m pip install "cryptography==46.0.4"
+      - name: R200 regression matrix runner self-tests (16 methods; normal and -OO)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python -m unittest discover -s products/desktop/tests -p 'test_recent_regression_gate_r200.py'
+          if ($LASTEXITCODE -ne 0) { throw "R200 regression runner self-tests failed" }
+          python -OO -m unittest discover -s products/desktop/tests -p 'test_recent_regression_gate_r200.py'
+          if ($LASTEXITCODE -ne 0) { throw "R200 optimized regression runner self-tests failed" }
+      - name: R200 execute R194-R199 financial and policy audit tests (148 methods per mode)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python products/desktop/scripts/safe_recent_regressions_r200.py
+          if ($LASTEXITCODE -ne 0) { throw "R200 native-mode audit regression matrix failed" }
+          python -OO products/desktop/scripts/safe_recent_regressions_r200.py
+          if ($LASTEXITCODE -ne 0) { throw "R200 optimized audit regression matrix failed" }
       - name: R100 Windows source-stage diagnostic (read-only, NOT a release gate)
         shell: pwsh
         run: |
