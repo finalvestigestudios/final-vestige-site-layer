@@ -111,8 +111,9 @@ function audit(apollo, research) {
   if(dateRows.length!==4 || dateRows.some((m,i)=>
     m[1]!==documentedDates[i] || !m[0].includes('<time datetime="'+m[1]+'">')))
     errors.push('PHOTO_CHRONOLOGY_DATE_DRIFT');
-  if(!apollo.includes('data-fv-photo-month-uncertain') ||
-     !/January 1967[\s\S]*S67-19766/.test(apollo))
+  if(!/<aside\b[^>]*data-fv-photo-month-uncertain(?:\s|>)/.test(apollo) ||
+     !/<time datetime="1967-01">January 1967<\/time>/.test(apollo) ||
+     !/provisional/i.test(apollo.split('<aside data-fv-photo-month-uncertain')[1]||''))
     errors.push('PROVISIONAL_PORTRAIT_DATE_MISSING');
   if(!apollo.includes('data-fv-source-role-warning') ||
      !/Apollo 204 Review Board/.test(apollo))
