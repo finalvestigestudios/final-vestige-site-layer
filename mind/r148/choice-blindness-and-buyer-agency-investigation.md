@@ -26,13 +26,13 @@ Nor is every failure of detection necessarily the same phenomenon. The experimen
 
 ## From photographs to jam jars
 
-The idea would have been simpler to dismiss had it remained confined to portrait photographs. In 2010, Hall, Johansson, Betty Tärning, Sikström and Thérèse Deutgen carried a related manipulation into a supermarket setting. Passersby compared varieties of jam or tea and made a preference judgment. At the retasting stage, researchers sometimes substituted the previously rejected option. [3]
+The idea would have been simpler to dismiss had it remained confined to portrait photographs. In 2010, Hall, Johansson, Betty Tärning, Sikström and Thérèse Deutgen carried a related manipulation into a supermarket setting. Passersby compared varieties of jam or tea and made a preference judgment. At the resampling stage, researchers sometimes substituted the previously rejected option; the study compared the **taste of jam and smell of tea**. [3]
 
 Across manipulated trials, **no more than one third were detected**, according to the researchers' abstract. Even pronounced sensory differences did not guarantee detection. Some people went on to explain why they preferred the very sample that had been switched. [3][4]
 
 It is worth picturing the ordinary surroundings: jars, a spoon, a shopper who is not expecting to take part in a lecture about consciousness. In that setting the experimental question becomes less exotic. How accurately can a person track a decision and its result when the sequence is interrupted and the result comes back through another person's hands?
 
-Still, we must resist inflating the finding. The researchers did not study an online audio course, an affiliate referral, a meditation purchase, or a long-term customer relationship. Jam and tea preferences are not equivalent to consequential financial or medical decisions. The experiment supports a bounded observation about decision-outcome monitoring in that tasting task. It does not supply a universal persuasion algorithm.
+Still, we must resist inflating the finding. The researchers did not study an online audio course, an affiliate referral, a meditation purchase, or a long-term customer relationship. Jam and tea preferences are not equivalent to consequential financial or medical decisions. The experiment supports a bounded observation about decision-outcome monitoring in those taste-and-smell tasks. It does not supply a universal persuasion algorithm.
 
 ## The inconvenient distinction between blindnesses
 

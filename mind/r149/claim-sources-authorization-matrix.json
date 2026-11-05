@@ -1,0 +1,374 @@
+{
+  "milestone": "R149",
+  "review_date": "2026-11-05",
+  "release": "HARD_HOLD",
+  "commercial_links_enabled": false,
+  "paid_verified": false,
+  "partner_accepted": "UNVERIFIED",
+  "source_note": "Public merchant and FTC pages read November 5, 2026. Gmail search bounded from September 1; past WP findings annotated prior-run. Seller descriptions are not product trials.",
+  "sources": [
+    {
+      "id": "S01",
+      "url": "https://eprints.bournemouth.ac.uk/31277/",
+      "kind": "independent primary institutional repository",
+      "scope": "2019 RCT review 22/576, active learning vs passive heterohypnosis audio"
+    },
+    {
+      "id": "S02",
+      "url": "https://doi.org/10.1037/cns0000173",
+      "kind": "primary journal DOI",
+      "scope": "Eason and Parris article identity"
+    },
+    {
+      "id": "S03",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39032268/",
+      "kind": "scientific systematic theory review",
+      "scope": "2024 hypnotic suggestion mechanisms not settled"
+    },
+    {
+      "id": "S04",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36536625/",
+      "kind": "primary randomized pilot",
+      "scope": "2022 distinct-indication audio trial with null findings"
+    },
+    {
+      "id": "S05",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "kind": "official exact-SKU seller listing",
+      "scope": "Total Focus 33 mins 47 MB J.A. Amos; sales claims and fluctuating price"
+    },
+    {
+      "id": "S06",
+      "url": "https://hypnosislive.com/faq",
+      "kind": "official seller FAQ",
+      "scope": "14 day refund request marketing; five annual sessions refund cap"
+    },
+    {
+      "id": "S07",
+      "url": "https://inspire3.com/",
+      "kind": "official publisher catalog",
+      "scope": "Hypnosis Live Zen12 and Brainwave Shots are distinct products"
+    },
+    {
+      "id": "S08",
+      "url": "https://affiliates.inspire3.com/",
+      "kind": "official public partner site",
+      "scope": "program existence only; no FV named membership"
+    },
+    {
+      "id": "S09",
+      "url": "https://zen12.com/hnp",
+      "kind": "official Zen12 Premium offer",
+      "scope": "12 levels and 48 files, separate SKU"
+    },
+    {
+      "id": "S10",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "kind": "FTC primary guidance",
+      "scope": "plain material-connection disclosure next to recommendation"
+    },
+    {
+      "id": "S11",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "kind": "FTC primary guidance",
+      "scope": "objective claims need appropriate substantiation"
+    },
+    {
+      "id": "S12",
+      "url": "https://finalvestige.com/focus/",
+      "kind": "live FV resource",
+      "scope": "existing free Fieldbook pathway only"
+    },
+    {
+      "id": "S13",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "kind": "live FV reference",
+      "scope": "historical suggestion archive not product proof"
+    },
+    {
+      "id": "S14",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "kind": "live FV investigation",
+      "scope": "editorial destination, contextual Focus body link unverified live"
+    },
+    {
+      "id": "S15",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23957263/",
+      "kind": "research review",
+      "scope": "2013 hypnosis app evidence gap historical sample, not today's product catalog"
+    },
+    {
+      "id": "S16",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "kind": "FV canonical conversion issue",
+      "scope": "verified commercial attribution and release governance"
+    },
+    {
+      "id": "S17",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "kind": "FV pillar issue",
+      "scope": "editorial and affiliate policy, no unapproved release"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "statement": "Eason/Parris screened 576 and included 22 RCTs",
+      "source_id": "S01",
+      "status": "VERIFIED_AT_SOURCE",
+      "qualification": "Bounded review finding"
+    },
+    {
+      "id": "C02",
+      "statement": "Independent learned self-hypnosis protocols often performed better than passive recorded heterohypnosis in review",
+      "source_id": "S01",
+      "status": "VERIFIED_AT_SOURCE",
+      "qualification": "Cross-study association; not proof an MP3 never works"
+    },
+    {
+      "id": "C03",
+      "statement": "Three or more training sessions guaranteed efficacy",
+      "source_id": "S01",
+      "status": "PROHIBITED",
+      "qualification": "Review characteristic is not a universal dose"
+    },
+    {
+      "id": "C04",
+      "statement": "Hypnotic suggestion mechanisms are definitively explained by brain rewiring",
+      "source_id": "S03",
+      "status": "PROHIBITED",
+      "qualification": "Competing accounts; no single consensus"
+    },
+    {
+      "id": "C05",
+      "statement": "2022 audio self-hypnosis pilot found no significant weight or stage-of-change outcome at three weeks",
+      "source_id": "S04",
+      "status": "VERIFIED_AT_SOURCE",
+      "qualification": "Different condition; underpowered and no inference on concentration"
+    },
+    {
+      "id": "C06",
+      "statement": "Total Focus is one 33 minute 47 MB MP3 by J.A. Amos",
+      "source_id": "S05",
+      "status": "SELLER_DESCRIPTION",
+      "qualification": "No independently verified delivery"
+    },
+    {
+      "id": "C07",
+      "statement": "Total Focus cures ADHD or guarantees 100% attention",
+      "source_id": "S05",
+      "status": "PROHIBITED",
+      "qualification": "Vendor marketing lacks product-specific substantiation"
+    },
+    {
+      "id": "C08",
+      "statement": "Total Focus costs $24.44 at final checkout",
+      "source_id": "S05",
+      "status": "UNVERIFIED",
+      "qualification": "Current page showed this amount; cached $17.95 conflicting; no purchase verification"
+    },
+    {
+      "id": "C09",
+      "statement": "A 14-day satisfaction refund period is advertised",
+      "source_id": "S06",
+      "status": "SELLER_POLICY",
+      "qualification": "No refunded order checked"
+    },
+    {
+      "id": "C10",
+      "statement": "Five sessions annual refund limitation is advertised",
+      "source_id": "S06",
+      "status": "SELLER_POLICY",
+      "qualification": "Check applicable actual policy"
+    },
+    {
+      "id": "C11",
+      "statement": "Public Inspire3 affiliate portal proves FV acceptance",
+      "source_id": "S08",
+      "status": "PROHIBITED",
+      "qualification": "No named partner approval evidence"
+    },
+    {
+      "id": "C12",
+      "statement": "FV approved earning URL and social/email channel rights",
+      "source_id": "S08",
+      "status": "UNVERIFIED",
+      "qualification": "No signed terms or partner account data"
+    },
+    {
+      "id": "C13",
+      "statement": "Zen12 Premium is 48 MP3 files separate from Total Focus",
+      "source_id": "S09",
+      "status": "SELLER_DESCRIPTION",
+      "qualification": "No product substitution"
+    },
+    {
+      "id": "C14",
+      "statement": "FTC disclosure adjacent to future recommendation",
+      "source_id": "S10",
+      "status": "REQUIRED",
+      "qualification": "Plain commission statement; nearby and visible"
+    },
+    {
+      "id": "C15",
+      "statement": "FTC permits generic clinical trial to establish exact MP3 benefits",
+      "source_id": "S11",
+      "status": "PROHIBITED",
+      "qualification": "General evidence not product-specific substantiation"
+    },
+    {
+      "id": "C16",
+      "statement": "Published Focus page exists",
+      "source_id": "S12",
+      "status": "VERIFIED_EXISTENCE",
+      "qualification": "Actual confirmation and signup attribution not retested"
+    },
+    {
+      "id": "C17",
+      "statement": "Change Blindness and Puységur stored WP bodies lack contextual /focus/ link",
+      "source_id": "S14",
+      "status": "PRIOR_RUN_AUTHENTICATED",
+      "qualification": "Prior R148 read-only result; not re-read this run; remediation not live"
+    },
+    {
+      "id": "C18",
+      "statement": "Grok Mind social asset IDs and landing URL publication",
+      "source_id": "S16",
+      "status": "UNVERIFIED",
+      "qualification": "Asset IDs NULL pending TASK-008"
+    },
+    {
+      "id": "C19",
+      "statement": "Merchant orders and earned commissions settled",
+      "source_id": "S16",
+      "status": "UNVERIFIED",
+      "qualification": "Not measured; cannot infer from clicks"
+    },
+    {
+      "id": "C20",
+      "statement": "No named approval in bounded recent Gmail search",
+      "source_id": "S08",
+      "status": "BOUNDED_SEARCH_OBSERVATION",
+      "qualification": "2026-09-01 onward search found no matching approval; absence not proof of rejection"
+    },
+    {
+      "id": "C21",
+      "statement": "R149 page itself contains no active affiliate link or form",
+      "source_id": "S17",
+      "status": "IMPLEMENTED_TO_TEST",
+      "qualification": "Disabled button and no JS; verify from committed source"
+    }
+  ],
+  "gates": [
+    {
+      "id": "partner_acceptance",
+      "status": "CLOSED",
+      "evidence_needed": "Named written acceptance for FV"
+    },
+    {
+      "id": "merchant_specific_url",
+      "status": "CLOSED",
+      "evidence_needed": "Exact earning URL or creative verified in partner account"
+    },
+    {
+      "id": "allowed_channels",
+      "status": "CLOSED",
+      "evidence_needed": "Social, TikTok, YouTube, email and website promotional rights"
+    },
+    {
+      "id": "commission_terms",
+      "status": "CLOSED",
+      "evidence_needed": "Attribution windows, clawbacks, caps and permitted formats"
+    },
+    {
+      "id": "sku_alignment",
+      "status": "CLOSED",
+      "evidence_needed": "Final referent SKU validated against merchant checkout"
+    },
+    {
+      "id": "final_price",
+      "status": "CLOSED",
+      "evidence_needed": "Cart checkout total and taxes verified independently"
+    },
+    {
+      "id": "refund_terms",
+      "status": "CLOSED",
+      "evidence_needed": "Current refund rules and fulfillment verified"
+    },
+    {
+      "id": "data_privacy",
+      "status": "CLOSED",
+      "evidence_needed": "Consent/cookies/partner data sharing reviewed"
+    },
+    {
+      "id": "merchant_settlement",
+      "status": "CLOSED",
+      "evidence_needed": "Source of truth for commission settlement"
+    },
+    {
+      "id": "sales_dedup",
+      "status": "CLOSED",
+      "evidence_needed": "Cross-channel order identifiers deduped without PII"
+    },
+    {
+      "id": "creator_asset_id",
+      "status": "CLOSED",
+      "evidence_needed": "Grok published media ID and approved link confirmed"
+    },
+    {
+      "id": "qualified_sessions",
+      "status": "CLOSED",
+      "evidence_needed": "Human-qualified attributed denominator validated"
+    },
+    {
+      "id": "landing_link",
+      "status": "CLOSED",
+      "evidence_needed": "Live destination CTA and mobile click path QA"
+    },
+    {
+      "id": "disclosure_proximity",
+      "status": "CLOSED",
+      "evidence_needed": "Actual browser disclosure link adjacency QA"
+    },
+    {
+      "id": "native_device_tests",
+      "status": "CLOSED",
+      "evidence_needed": "360 390 768 1440 browser WCAG and reduced-motion tested"
+    },
+    {
+      "id": "founder_release",
+      "status": "CLOSED",
+      "evidence_needed": "Explicit production approval"
+    },
+    {
+      "id": "no_extra_signup",
+      "status": "CLOSED",
+      "evidence_needed": "Native Jetpack remains single consent funnel"
+    },
+    {
+      "id": "no_duplicated_tag",
+      "status": "CLOSED",
+      "evidence_needed": "Existing analytics inventory reconciled"
+    },
+    {
+      "id": "no_unclear_health_claims",
+      "status": "CLOSED",
+      "evidence_needed": "All claim boundaries approved by independent QA"
+    },
+    {
+      "id": "net_revenue_reconciliation",
+      "status": "CLOSED",
+      "evidence_needed": "Order gross fees reversals refunds tax and settled commission"
+    },
+    {
+      "id": "real_video_asset",
+      "status": "CLOSED",
+      "evidence_needed": "Original optional 40s media with captions/transcript, rights, poster and reduced motion"
+    },
+    {
+      "id": "ab_experiment_approval",
+      "status": "CLOSED",
+      "evidence_needed": "No A/B traffic or user assignment without release authorization"
+    }
+  ]
+}
