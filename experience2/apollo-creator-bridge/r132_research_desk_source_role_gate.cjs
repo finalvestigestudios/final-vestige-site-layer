@@ -32,12 +32,12 @@ function audit(html,upstream){
  if(/<(?:img|picture|canvas|iframe|script|form|video|audio|embed|object)\b/i.test(html))errors.push('UNREVIEWED_MEDIA_OR_COLLECTION');
  if(/(?:utm_campaign|utm_content|paypal|payhip|checkout|affiliate|dataLayer|localStorage|sessionStorage|sendBeacon)\s*=/i.test(html))errors.push('UNAPPROVED_COMMERCE_OR_TRACKING');
  if(/\s+on(?:click|load|error|submit|input)\s*=/i.test(html))errors.push('INLINE_EVENT_HANDLER');
- const allLinks=[...html.matchAll(/<a\\b[^>]*>/g)].map(m=>m[0]);
+ const allLinks=[...html.matchAll(/<a\b[^>]*>/g)].map(m=>m[0]);
  if(allLinks.length!==14)errors.push('LINK_COUNT_CHANGED');
  for(let i=0;i<allLinks.length;i++){
-  const a=allLinks[i];const hrefs=[...a.matchAll(/\\bhref="([^"]*)"/g)].map(m=>m[1]);
+  const a=allLinks[i];const hrefs=[...a.matchAll(/\bhref="([^"]*)"/g)].map(m=>m[1]);
   if(hrefs.length!==1||!ALLOWED_LINKS.has(hrefs[0]))errors.push('UNAPPROVED_DESTINATION_'+i);
-  if(/\\s+on[a-z]+\\s*=/i.test(a))errors.push('INLINE_LINK_HANDLER_'+i);
+  if(/\s+on[a-z]+\s*=/i.test(a))errors.push('INLINE_LINK_HANDLER_'+i);
  }
  const cards=[...html.matchAll(/<article class="fv-ex2-ledger__card" id="fv-ex2-ledger-apollo1-record-(\d{2})"[\s\S]*?<\/article>/g)];
  if(cards.length!==6)errors.push('SIX_CARD_COUNT_MISMATCH');
