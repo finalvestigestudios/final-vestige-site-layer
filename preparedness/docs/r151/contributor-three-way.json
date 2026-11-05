@@ -194,5 +194,42 @@
         "citations": 63
       }
     }
-  ]
+  ],
+  "metadata_blobs": {
+    "emergency-hygiene-sanitation": "e94ff9b33e6ced71dafcdcc4412ad687a503ccf6",
+    "family-communication-plan": "dcad79faa8e0e6f1aef6db03e9e6e9451e19d8d3",
+    "fire-making-across-time": "ca9e2c84d825b5cd9e182dc9a4a381c8a6905884",
+    "food-safety-power-outage": "3283071134ba24490d47f5a0635836b6ed4f8965",
+    "go-bags": "16cc5e91204a77486912444c6e516f5d5b48f567",
+    "history-of-food-preservation": "907237e436b44a34f8d673ef9de3168d1e9ad517",
+    "home-fire-escape-plan": "ff1246dcbfb0dd0bc864977f815badb9ad4e7ed8",
+    "homemade-water-filters": "91c730bd1c7a61fa3140a86245c9bc0c88160c29",
+    "household-emergency-plan": "0681d51e6e29166eaae27ac2b7f1fbde3f836787",
+    "lewis-and-clark-salt-works": "3a350aedac67ea89c6995831032367634248c9e9",
+    "making-water-safer": "827d861eb3beebfd010ee98fcca764b23a2de90e",
+    "medication-and-devices": "a49a6d42a3deb14acbe67e7cf636c23cdc5ec49c",
+    "navigation-before-gps": "40c83419760bc7bd0c4c574304e65b773b4a8423",
+    "outage-heat-cold-generators": "be37b602d0b82593d438083dfc8a1e5ef595dd44",
+    "pantry-rotation": "dfafbb77e076d6cab5aec8217f98d7fd20dbff1c",
+    "pemmican-and-dried-meats": "03d3824e07fe51931671d0ddc7aa8c85eda58435",
+    "pickling-fermentation-old-recipes": "da97f42fcabbd05dc513d26c6af289bbeb8816f3",
+    "pioneer-supply-chains-failed": "4d2dc4958736e3c5257c65dda8ed016a473ac6be",
+    "pioneer-travel-rations": "7191acba55d63dc405ad9c2003d66193276da89f",
+    "preparedness-real-households": "ba840917f34634ccd634c488eeca4a8a6b3a8fe2",
+    "pressure-canning-low-acid": "4ab01d4aa566b8970351d8d8d43f7f85e8a04341",
+    "rain-barrels-and-cisterns": "dc42694e842969624f24ab5edc9bff2497693e70",
+    "root-cellars-cool-storage": "c3b7425711c3953c2d6cac9eb2aabe21a6717285",
+    "safe-jerky-dehydration": "50b365e8109c14bdb9ce1a9365db88215a678ec5",
+    "salt-beef-salt-pork-age-of-sail": "1c4c5396da703f3724b584c67e49e2128ab1f4c6",
+    "sanitation-before-germ-theory": "3294cd9fcf59496c9ece9342e67b0d57d2ed5523",
+    "shelter-or-evacuate": "cb559141d1e4a39debad16cf5cb796b746a01f19",
+    "ships-biscuit-and-hardtack": "2b2c3ce9472073df3d15e8befb39178d369632b1",
+    "smokehouses-salting-curing": "16223945e83f95b349acf09a2b684c09326550c0",
+    "three-day-kit": "1c69d5f1636a3a41631a5d93f11254d85cbe1b59",
+    "two-week-water-storage": "76f317f047ed95c8b6c7ab130f44d79232e7a463",
+    "warnings-radios-offline-maps": "025ddac0f8c077f2a6fa17d7fcb746caa51234a7",
+    "water-advisories-explained": "4c88e747b46d9e95264ec3367911a5175baa6c31",
+    "water-math": "4b1c3cd7166afa03e56991f7de8af771828a6e54",
+    "water-purification-through-history": "1d9b77aa4a4cdbf4f9a02fe6d1cf5d2691cc798e"
+  }
 }
