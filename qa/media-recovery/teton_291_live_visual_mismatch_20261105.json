@@ -48,22 +48,28 @@
   ],
   "candidate_for_291_2": {
     "catalog": "https://text-message.blogs.archives.gov/2016/05/31/the-unforgettable-calamity-40th-anniversary-of-the-teton-dam-failure/",
-    "naid": 28894685,
-    "catalog_description": "Hole in dam embankment grows larger and reaches dam crest",
+    "naid": 28894684,
+    "catalog_description": "Hole in dam embankment grows larger (earlier than the final crest-reaching frame)",
     "historical_date": "1976-06-05",
     "creator_context": "Jerry Dursteller sequence, Records of Bureau of Reclamation, National Archives at Denver",
-    "rendition_catalog": "https://commons.wikimedia.org/wiki/File:Teton_Dam_Embankment_Leak_-_DPLA_-_7d121ff5023893a03827fcb49b0d4bd4.jpg",
-    "master_width_px": 2798,
-    "master_height_px": 1966,
+    "rendition_catalog": "https://commons.wikimedia.org/wiki/File:Teton_Dam_Embankment_Leak_-_DPLA_-_fee62ebfb4a83f7a00334af1e3dbc6bc.jpg",
+    "master_width_px": 2558,
+    "master_height_px": 1728,
     "conditional_width_px": 960,
-    "conditional_height_px": 675,
+    "conditional_height_px": 649,
     "no_upscale": true,
-    "rights_summary": "National Archives at Denver / DPLA RightsStatements.org: No Copyright - United States; other jurisdictions and noncopyright permissions not certified",
+    "rights_summary": "National Archives/DPLA no copyright - United States; Commons current 2558x1728 rendition was cropped/rotated in 2023 from earlier 2852x1980 uploaded version; historic crop and noncopyright rights still require editorial review.",
     "same_original_binary": false,
     "candidate_is_different_photo": true,
-    "scene_subject_match": "CATALOG_MATCH_TO_BREACH_NOT_PIXEL_COMPARED",
+    "scene_subject_match": "CATALOG_AND_RETRIEVED_VISUAL_MATCH_TO_GROWING_BREACH_NOT_BINARY_VERIFIED",
     "rights_rehosting_authorized": false,
-    "binary_fetched": false
+    "binary_fetched": false,
+    "current_rendition_cropped_since_2023": true,
+    "prior_uncropped_rendition_dimensions_px": [
+      2852,
+      1980
+    ],
+    "avoid_likely_duplicate_with_post_image_291_0": true
   },
   "decision": {
     "browser_broken_images_confirmed": null,
