@@ -49,7 +49,7 @@ ok(guide.trim().split(/\s+/).length>1000,'full buyer guide');
 ok(investigation.includes('https://pubmed.ncbi.nlm.nih.gov/1500880/'),'1992 primary');
 ok(investigation.includes('https://pmc.ncbi.nlm.nih.gov/articles/PMC8062350/'),'replication');
 ok(guide.includes('https://zen12.com/secret/'),'price objection sources');
-ok(guide.includes('not a Final Vestige download'),'independent merchant signup');
+ok(/not\*\* a Final Vestige download/.test(guide),'independent merchant signup');
 ok(contract.includes('NOT_COMPUTABLE'),'realization KPI unknown');
 ok(contract.includes('affiliate_outbound'),'click != sale');
 eq(matrix.sources.length,16,'ledger sources count');
