@@ -9,11 +9,11 @@
         "sha256": "bd76f0a27c4430bdea43d8edbe217b320eae279eb9af469add2893e46d37aeef"
       },
       {
-        "bytes": 2960,
+        "bytes": 3138,
         "file": "apollo1-investigation/00b-style-text.block.html",
         "order": 1,
-        "sha1": "1cc81b476ea69bb2dac95600ad40e4119845fb70",
-        "sha256": "6c3410051230ab8e8a9209acdbf72ef86bf87e2fd351f34ebe994f15e94a9aa3"
+        "sha1": "e75d3815d6eba314ebf951e89533989e9e3de05d",
+        "sha256": "4c01650fbd1a485256efa92f6dba95d282f89153977ba7ede01a9eb9bf80322e"
       },
       {
         "bytes": 21987,
@@ -72,10 +72,10 @@
       "title": "Apollo 1: The Evidence Atlas"
     },
     "page_content": {
-      "bytes": 96126,
+      "bytes": 96304,
       "join": "blocks concatenated in order, separated by one newline",
-      "sha1": "224677881b16a49eb38b2ec60ffbdfb49b641ab3",
-      "sha256": "95003dafdb64d98ac6fe7639c289fa6948f69303865f94cf2b0c7d2f30336692"
+      "sha1": "30c05cbba69dc840f97bfa9664783b8162084b0f",
+      "sha256": "cdcc459ddbcb07e8449521521a35c82107bff4b95460898b599b7a310ad6833f"
     },
     "sources": {
       "apollo1_sha256": "dbcb8cc25544b35e49cdfdebf62b498cac653283bb34af186a4d65f8f2672721",
