@@ -1,0 +1,47 @@
+{
+  "schema": "fv.apollo.r131.source-evidence-manifest.v1",
+  "review_date_utc": "2026-11-05",
+  "source_page": "https://www.nasa.gov/image-detail/amf-ksc-20170124-ph_kls01_0164/",
+  "verified_nasa_metadata": {
+    "record": "04",
+    "photograph_taken": "2017-01-24",
+    "producer": "KSC",
+    "image_credit": "NASA/Kim Shiflett",
+    "pia_number": "KSC-20170124-PH_KLS01_0164",
+    "evidence_class": "PRIMARY_PAGE_VERIFIED",
+    "role": "RETROSPECTIVE_DISPLAY"
+  },
+  "source_blobs": {
+    "landing-preview.html": "bc579a3dbd189347dc54b0ddcd3cdf459795a8f4",
+    "r130_nasa_media_custody.json": "ff2f755b23d6738adf23effd4b7d0a1155ce8f55",
+    "r130_nasa_media_custody_gate.cjs": "440c9f2bb833f70a2eff40a846c04a987e93caac",
+    "test_r130_nasa_media_custody_gate.cjs": "c48004e07a86b50378732524646c997bbf86b2b2"
+  },
+  "tests": {
+    "v8_node_compatible_authored_test_cases": {
+      "passed": 21,
+      "failed": 0
+    },
+    "precommit_contract_assertions": {
+      "passed": 12,
+      "failed": 0
+    },
+    "native_node": "NOT_EXECUTED",
+    "playwright_actual_page": "NOT_EXECUTED",
+    "axe": "NOT_EXECUTED",
+    "lcp_cls": "NOT_MEASURED",
+    "screenshots": "NOT_GENERATED"
+  },
+  "reviewed_media_count": 6,
+  "primary_nasa_metadata_count": 6,
+  "commercially_cleared_media_count": 0,
+  "provisional_crew_photo_catalog": "S67-19766",
+  "research_desk_pr_158": {
+    "edited": false,
+    "editorial_flags": 6
+  },
+  "release": "STAGING_HOLD",
+  "commerce": "NO_VERIFIED_APOLLO_SKU",
+  "commercial_activity": "NONE",
+  "live": "NOT_DEPLOYED"
+}

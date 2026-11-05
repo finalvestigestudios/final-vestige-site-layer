@@ -15,6 +15,10 @@ function auditMediaLedger(ledger,apollo) {
       typeof apollo!=='string') return {
       schema:'fv.apollo.media-audit.v1', status:'FAIL',
       errors:['INVALID_LEDGER_OR_APOLLO_SOURCE'],release_status:'STAGING_HOLD'};
+  // Independent primary NASA page metadata verified for all six records on 2026-11-04. Rights remain separate.
+  const canonicalCredits=['NASA','JSC','JSC','NASA/Kim Shiflett','JSC','NASA/Kim Shiflett'];
+  const canonicalCatalogs=['S67-19766_PROPOSED_NOT_VERIFIED','S67-15717','S66-58038','KSC-20170124-PH_KLS01_0164','S67-21294','KSC-20170124-PH_KLS01_0090'];
+  const canonicalRoles=['CREW_LIKENESSES','SPACECRAFT_CONTEXT','CREW_LIKENESSES','RETROSPECTIVE_DISPLAY','POST_FIRE_CONTEXT','RETROSPECTIVE_DISPLAY'];
   const urls=new Set();
   for (let i=0;i<CANONICAL.length;i++){
     const [id,url,date,precision,tableDate,handoutDate,visibleCredit]=CANONICAL[i],r=ledger.records[i];
@@ -23,18 +27,21 @@ function auditMediaLedger(ledger,apollo) {
       errors.push('UNTRUSTED_MEDIA_RECORD_'+id);
     if (!r) continue;
     urls.add(r.source_url);
+    if(r.credit!==canonicalCredits[i] || r.catalog_status!==canonicalCatalogs[i] ||
+       r.visual_role!==canonicalRoles[i])
+      errors.push('PRIMARY_METADATA_CREDIT_CATALOG_ROLE_DRIFT_'+id);
     if (r.source_role!=='VISUAL_CONTEXT_NOT_TECHNICAL_MEASUREMENT' ||
         r.rights_status!=='NOT_CLEARED_FOR_FV_REPUBLICATION' ||
         r.endorsement!=='NOT_NASA_ENDORSED' ||
         !['PERSON_LIKENESS_NEEDS_REVIEW','UNDETERMINED_NOT_WAIVED'].includes(r.publicity_review))
       errors.push('UNSUPPORTED_RIGHTS_OR_SOURCE_CLAIM_'+id);
-    if(r.metadata_evidence!==(id==='04'?'SECONDARY_NASA_ORIGIN_REFERENCE_ONLY':'PRIMARY_PAGE_VERIFIED'))
+    if(r.metadata_evidence!=='PRIMARY_PAGE_VERIFIED')
       errors.push('SOURCE_METADATA_VERIFICATION_OVERCLAIM_'+id);
     if(id==='01' && (r.catalog_status!=='S67-19766_PROPOSED_NOT_VERIFIED' ||
         r.date_precision!=='MONTH_ONLY'))errors.push('CREW_ID_DATE_OVERCLAIM');
     if ((id==='04'||id==='06') && r.visual_role!=='RETROSPECTIVE_DISPLAY')
       errors.push('RETROSPECTIVE_EXHIBIT_MISCLASSIFIED_'+id);
-    if(!r.metadata_support || !/^https:\/\//.test(r.metadata_support))
+    if(r.metadata_support!==url)
       errors.push('UNTRACEABLE_MEDIA_EVIDENCE_'+id);
     const tableTag=apollo.match(new RegExp('<tr\\b[^>]*\\bid="photo-source-'+id+'"[^>]*>','i'));
     const handoutTag=apollo.match(new RegExp('<li\\b[^>]*\\bdata-fv-student-photo="'+id+'"[^>]*>','i'));
@@ -59,8 +66,8 @@ function auditMediaLedger(ledger,apollo) {
      !/individual photograph reuse assessments remain incomplete \(0\/6\)/i.test(apollo))
     errors.push('VISIBLE_RIGHTS_DISCLOSURE_MISSING');
   return {schema:'fv.apollo.media-audit.v1',status:errors.length?'FAIL':'PASS_SOURCE_CUSTODY_ONLY',
-    errors,record_count:CANONICAL.length,official_metadata_verified_count:5,
-    secondary_only_metadata_count:1,commercially_cleared_count:0,
+    errors,record_count:CANONICAL.length,official_metadata_verified_count:6,
+    secondary_only_metadata_count:0,commercially_cleared_count:0,
     image_binaries_embedded:embeddedMedia,release_status:'STAGING_HOLD',
     commercial_offer_status:'NO_VERIFIED_PAID_APOLLO_SKU'};
 }
