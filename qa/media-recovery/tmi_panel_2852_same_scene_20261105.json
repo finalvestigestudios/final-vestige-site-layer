@@ -1,0 +1,85 @@
+{
+  "schema": "fv-tmi-p0-same-scene-candidate-v1",
+  "audit_date": "2026-11-05",
+  "scope": "read-only post 285 image slot 2; frozen October 30 inventory, third-party primary article and archive catalogue",
+  "image_key": "285:2",
+  "post_id": 285,
+  "article_url": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+  "frozen_inventory_git_blob": "49183f66f880f7c4dfd363acca906876877f2e5e",
+  "published_src": "https://blog.ucsusa.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+  "published_alt": "Three Mile Island control panel showing dense rows of gauges, lights and switches.",
+  "original_source_article": "https://blog.ucs.org/dlochbaum/nuclear-plant-accidents-three-mile-island/",
+  "original_article_date": "2016-07-26",
+  "original_article_fig": "Fig. 4 (Source: Nuclear Regulatory Commission)",
+  "original_source_retrieval": {
+    "method": "independent_web_text_retriever",
+    "observed_redirect_to": "https://blog.ucs.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+    "tool_wrapper_error": 500,
+    "origin_http_status": null,
+    "guest_http_status": null,
+    "guest_broken": null,
+    "guest_decoded_dimensions": null,
+    "guest_transfer_bytes": null,
+    "original_binary_sha256": null
+  },
+  "candidate": {
+    "catalog": "https://commons.wikimedia.org/wiki/File:TMI-2_control_panel.png",
+    "direct_original_url": "https://upload.wikimedia.org/wikipedia/commons/e/ea/TMI-2_control_panel.png",
+    "source_title": "TMI-2 control panel.png",
+    "upstream_original_reference": "Report of the President's Commission on the Accident at Three Mile Island: The Need for Change, The Legacy of TMI, page 97",
+    "catalogued_creation_context": "October 1979 commission report; image depicts control panel in March 1979 accident",
+    "commons_master_pixel_dimensions": [
+      604,
+      590
+    ],
+    "commons_master_file_size_display": "459 KB (catalog display, NOT page transfer)",
+    "commons_master_mime": "image/png",
+    "published_jpeg_pixel_dimensions": null,
+    "proposed_derivative_dimensions": [
+      604,
+      590
+    ],
+    "max_derivative_width": 960,
+    "no_upscale": true,
+    "visual_relationship": "SAME_PANEL_SCENE_WITH_CROP_OR_RETOUCH_DIFFERENCE_NOT_PIXEL_PROVEN",
+    "visual_basis": "Visual comparison of indexed UCS figure 4 and Commons rendition: same tag-covered switch panel; Commons omits UCS caption strip and has different crop. Binary and exact provenance not compared.",
+    "pixel_identity_verified": false,
+    "source_binary_sha256": null,
+    "rights_claim": "Commons catalog marks federal-government work public domain; current Commons file retouched by contributors. Confirm commission-photo provenance and applicable alteration/attribution rules item by item.",
+    "rights_review": "HOLD",
+    "credit_proposed": "President's Commission on the Accident at Three Mile Island / U.S. Nuclear Regulatory Commission; Commons contributors for retouched rendition (verify exact credit)",
+    "licence_to_rehost_verified": false,
+    "credit_verified": false
+  },
+  "rejected_prior_candidate": {
+    "catalog": "https://commons.wikimedia.org/wiki/File:Control_room_Number_2._Nuclear_Regulatory_Commission_inspector_looking_at_meters._-_NARA_-_540034.tif",
+    "reason": "Different image depicting NRC inspector, not the tag-obscured close-up shown in UCS Figure 4. Do not use as a direct photo replacement.",
+    "direct_substitution_allowed": false
+  },
+  "editorial": {
+    "finding": "Current ALT omits the distinctive maintenance tags obscuring an indicator light; potential accessibility/educational loss.",
+    "proposed_alt": "Close-up of Three Mile Island Unit 2 control switches with maintenance tags obscuring an emergency feedwater valve indicator light.",
+    "alt_edit_authorized": false,
+    "requires_visual_editor_review": true
+  },
+  "controls": {
+    "needs_site_qa_logged_out_chrome": true,
+    "needs_both_source_binary_comparison": true,
+    "needs_specific_rights_review": true,
+    "allow_download": false,
+    "allow_cache": false,
+    "allow_wordpress_upload": false,
+    "allow_post_rewrite": false,
+    "allow_publish": false
+  },
+  "sitewide_baseline": {
+    "frozen_published_posts": 61,
+    "frozen_image_refs": 355,
+    "frozen_external_origin_refs": 288,
+    "oversized_wp_originals": 13,
+    "oversized_wp_stored_bytes": 43522829,
+    "reported_broken_42": "UNVERIFIED",
+    "reported_wire_reduction_76": "UNMEASURED",
+    "production_image_repair_count_this_batch": 0
+  }
+}
