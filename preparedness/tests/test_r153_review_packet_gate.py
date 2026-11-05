@@ -68,7 +68,7 @@ class InterlockTest(unittest.TestCase):
     def test_07_never_source_review(self): self.assertFalse(self.packet()['qualified_source_review'])
     def test_08_never_medical_safety(self): self.assertFalse(self.packet()['medical_safety_approved'])
     def test_09_never_paid_sku(self): self.assertFalse(self.packet()['genuine_paid_preparedness_sku_verified'])
-    def test_10_never_crosswalk_writes(self): self.assertFalse(self.packet()['source_crosswalk_changed'])
+    def test_10_never_crosswalk_writes(self): self.assertFalse(self.packet()['source_crosswalk_modified_by_r153'])
     def test_11_stable_fingerprint(self): self.assertEqual(self.packet()['packet_fingerprint'],self.packet()['packet_fingerprint'])
     def test_12_deterministic_round_trip(self): self.assertEqual(self.packet(),m.make_packet(copy.deepcopy(self.d),copy.deepcopy(self.c),copy.deepcopy(self.a)))
     def test_13_original_docket_not_mutated(self):
