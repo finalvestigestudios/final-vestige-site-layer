@@ -1,0 +1,448 @@
+{
+  "schema_version": "1.0.0",
+  "id": "FV-MIND-R140-EVIDENCE",
+  "as_of": "2026-11-05",
+  "status": "UNPUBLISHED_DRAFT_HARD_HOLD",
+  "derived_from": "R139 draft PR #1066; no change to published CMS or prior homepage / Mind #172",
+  "sources": [
+    {
+      "id": "S01",
+      "kind": "merchant",
+      "url": "https://inspire3.com/",
+      "checked": "2026-11-05",
+      "notes": "Portfolio descriptions; all seller language"
+    },
+    {
+      "id": "S02",
+      "kind": "merchant",
+      "url": "https://zen12.com/hnp",
+      "checked": "2026-11-05",
+      "notes": "Zen12 offer; 12-level 48 recordings and extraordinary seller outcome claims"
+    },
+    {
+      "id": "S03",
+      "kind": "merchant",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "checked": "2026-11-05",
+      "notes": "Total Focus 33 mins/47 MB; page displayed $24.44; checkout not verified"
+    },
+    {
+      "id": "S04",
+      "kind": "merchant",
+      "url": "https://hypnosislive.com/personal-improvement/hypnotize-yourself",
+      "checked": "2026-11-05",
+      "notes": "Hypnotize Yourself 44 mins/61 MB; different SKU; $24.44 displayed; checkout unverified"
+    },
+    {
+      "id": "S05",
+      "kind": "merchant",
+      "url": "https://hypnosislive.com/faq",
+      "checked": "2026-11-05",
+      "notes": "Merchant refund FAQ; not empirically tested"
+    },
+    {
+      "id": "S06",
+      "kind": "merchant",
+      "url": "https://affiliates.inspire3.com/",
+      "checked": "2026-11-05",
+      "notes": "Public program, not named Final Vestige authorization; advertised payouts not contractual"
+    },
+    {
+      "id": "S07",
+      "kind": "merchant",
+      "url": "https://inspire3.com/privacy/",
+      "checked": "2026-11-05",
+      "notes": "Possible name/email/product purchase disclosure to affiliates; do not collect"
+    },
+    {
+      "id": "S08",
+      "kind": "regulator",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "checked": "2026-11-05",
+      "notes": "Clear conspicuous material-connection disclosure near recommendation"
+    },
+    {
+      "id": "S09",
+      "kind": "regulator",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "checked": "2026-11-05",
+      "notes": "Adequate substantiation for health/efficacy claims; general evidence insufficient for specific offering"
+    },
+    {
+      "id": "S10",
+      "kind": "experiment-abstract",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/1202145/",
+      "checked": "2026-11-05",
+      "notes": "Easton & Shor 1975 Chevreul pendulum sensory feedback study; abstract"
+    },
+    {
+      "id": "S11",
+      "kind": "experiment-abstract",
+      "url": "https://doi.org/10.1080/00221309.1976.9710871",
+      "checked": "2026-11-05",
+      "notes": "Easton & Shor 1976 pendulum experiment 60 participants; abstract"
+    },
+    {
+      "id": "S12",
+      "kind": "historical-review-abstract",
+      "url": "https://doi.org/10.1080/00029157.2011.10401754",
+      "checked": "2026-11-05",
+      "notes": "Shenefelt 2011 ideomotor and hypnosis historical review; abstract"
+    },
+    {
+      "id": "S13",
+      "kind": "systematic-review-abstract",
+      "url": "https://eprints.bournemouth.ac.uk/31277/",
+      "checked": "2026-11-05",
+      "notes": "2019 self-hypnosis 22 RCT review; not specific to retail audios"
+    },
+    {
+      "id": "S14",
+      "kind": "systematic-review",
+      "url": "https://doi.org/10.3389/fpsyg.2023.1330238",
+      "checked": "2026-11-05",
+      "notes": "2024 hypnosis health evidence review, not product efficacy"
+    },
+    {
+      "id": "S15",
+      "kind": "first-party-published",
+      "url": "https://finalvestige.com/focus/",
+      "checked": "2026-11-05",
+      "notes": "Existing Focus Fieldbook live; native Jetpack single-list pathway"
+    },
+    {
+      "id": "S16",
+      "kind": "first-party-published",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "checked": "2026-11-05",
+      "notes": "Puységur archive published"
+    },
+    {
+      "id": "S17",
+      "kind": "first-party-published",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "checked": "2026-11-05",
+      "notes": "Change blindness article published"
+    },
+    {
+      "id": "S18",
+      "kind": "first-party-published",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "checked": "2026-11-05",
+      "notes": "Mesmerism article published"
+    },
+    {
+      "id": "S19",
+      "kind": "coordination",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "checked": "2026-11-05",
+      "notes": "Mind lane charter and prior r139 record"
+    },
+    {
+      "id": "S20",
+      "kind": "coordination",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "checked": "2026-11-05",
+      "notes": "Revenue-first acceptance and diagnostics"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "Zen12's official page promotes an hour-equivalent meditation experience in 12 minutes",
+      "decision": "seller_claim_only",
+      "source_ids": [
+        "S02"
+      ],
+      "handling": "Exclude as scientific fact; cannot infer dose equivalence."
+    },
+    {
+      "id": "C02",
+      "claim": "Zen12 seller describes 12 levels and 48 Premium MP3s",
+      "decision": "seller_description_qualified",
+      "source_ids": [
+        "S02"
+      ],
+      "handling": "May say seller describes; independently delivered count not verified."
+    },
+    {
+      "id": "C03",
+      "claim": "Hypnosis Live Total Focus is listed as 33-minute/47 MB audio by J.A. Amos",
+      "decision": "seller_description_qualified",
+      "source_ids": [
+        "S03"
+      ],
+      "handling": "Allowed with seller attribution; not hands-on verified."
+    },
+    {
+      "id": "C04",
+      "claim": "Hypnotize Yourself is a separate 44-minute/61 MB instructional recording",
+      "decision": "seller_description_qualified",
+      "source_ids": [
+        "S04"
+      ],
+      "handling": "Do not conflate SKUs."
+    },
+    {
+      "id": "C05",
+      "claim": "Total Focus improves concentration for every user",
+      "decision": "unsubstantiated_exclude",
+      "source_ids": [
+        "S03",
+        "S09"
+      ],
+      "handling": "No independent exact-product trial established."
+    },
+    {
+      "id": "C06",
+      "claim": "Hypnotize Yourself teaches self-hypnosis (merchant description)",
+      "decision": "seller_description_qualified",
+      "source_ids": [
+        "S04"
+      ],
+      "handling": "Feature description, not observed skill acquisition."
+    },
+    {
+      "id": "C07",
+      "claim": "Any hypnosis MP3 reprograms the brain",
+      "decision": "unsubstantiated_exclude",
+      "source_ids": [
+        "S03",
+        "S04",
+        "S09"
+      ],
+      "handling": "No validated operational definition or exact-product evidence."
+    },
+    {
+      "id": "C08",
+      "claim": "Merchant page displayed a $24.44 price for Total Focus on Nov 5",
+      "decision": "merchant_display_only",
+      "source_ids": [
+        "S03"
+      ],
+      "handling": "Never represent as guaranteed final checkout, promotion or permanent value."
+    },
+    {
+      "id": "C09",
+      "claim": "Merchant page displayed a $24.44 price for Hypnotize Yourself on Nov 5",
+      "decision": "merchant_display_only",
+      "source_ids": [
+        "S04"
+      ],
+      "handling": "Checkout/tax/payment terms unverified."
+    },
+    {
+      "id": "C10",
+      "claim": "Hypnosis Live FAQ describes conditional 14-day returns and five-session annual cap",
+      "decision": "seller_policy_only",
+      "source_ids": [
+        "S05"
+      ],
+      "handling": "Terms subject to checkout; refund processing unverified."
+    },
+    {
+      "id": "C11",
+      "claim": "Inspire3 has public affiliate signup portal",
+      "decision": "verified_public_not_account",
+      "source_ids": [
+        "S06"
+      ],
+      "handling": "Named FV account acceptance NOT confirmed."
+    },
+    {
+      "id": "C12",
+      "claim": "Inspire3 advertises high commission rates publicly",
+      "decision": "seller_claim_only",
+      "source_ids": [
+        "S06"
+      ],
+      "handling": "Never quote as FV compensation or approved terms."
+    },
+    {
+      "id": "C13",
+      "claim": "FV authorized earning URL is verified",
+      "decision": "blocked_no_evidence",
+      "source_ids": [
+        "S06"
+      ],
+      "handling": "No link to add."
+    },
+    {
+      "id": "C14",
+      "claim": "Email promotional permission for FV from Inspire3 is verified",
+      "decision": "blocked_no_evidence",
+      "source_ids": [
+        "S06"
+      ],
+      "handling": "Do not approve Dispatch merchant links or emails."
+    },
+    {
+      "id": "C15",
+      "claim": "Inspire3 policy permits sharing purchaser name/email/product with affiliates",
+      "decision": "documented_privacy_risk",
+      "source_ids": [
+        "S07"
+      ],
+      "handling": "Require acceptable privacy controls; do not solicit purchaser PII."
+    },
+    {
+      "id": "C16",
+      "claim": "FTC expects material connections disclosed clearly near review links",
+      "decision": "regulatory_guidance",
+      "source_ids": [
+        "S08"
+      ],
+      "handling": "Place adjacent to any *approved* recommendation."
+    },
+    {
+      "id": "C17",
+      "claim": "Health/psychological product efficacy needs appropriate support",
+      "decision": "regulatory_guidance",
+      "source_ids": [
+        "S09"
+      ],
+      "handling": "Suppress unsupported inferred benefits."
+    },
+    {
+      "id": "C18",
+      "claim": "Ideomotor pendulum movement depends partly on sensory cues",
+      "decision": "research_abstract_supported",
+      "source_ids": [
+        "S10",
+        "S11"
+      ],
+      "handling": "No inference to medical diagnosis or psychic messages."
+    },
+    {
+      "id": "C19",
+      "claim": "Chevreul pendulum lab included sixty participants in 1976",
+      "decision": "research_abstract_supported",
+      "source_ids": [
+        "S11"
+      ],
+      "handling": "Cannot generalize to all contexts."
+    },
+    {
+      "id": "C20",
+      "claim": "Ideomotor movements discussed historically in hypnosis",
+      "decision": "historical_review_supported",
+      "source_ids": [
+        "S12"
+      ],
+      "handling": "Historical record is not therapy outcome evidence."
+    },
+    {
+      "id": "C21",
+      "claim": "2019 self-hypnosis review included 22 RCTs",
+      "decision": "review_abstract_supported",
+      "source_ids": [
+        "S13"
+      ],
+      "handling": "Not specific to Inspire3 or MP3s."
+    },
+    {
+      "id": "C22",
+      "claim": "Independent 2024 review synthesized broad hypnosis health outcomes",
+      "decision": "review_background_only",
+      "source_ids": [
+        "S14"
+      ],
+      "handling": "Do not transfer general evidence to exact recording."
+    },
+    {
+      "id": "C23",
+      "claim": "Published Focus resource exists with a preexisting Jetpack pathway",
+      "decision": "first_party_status_verified",
+      "source_ids": [
+        "S15"
+      ],
+      "handling": "Does NOT verify each impression converted or email captured."
+    },
+    {
+      "id": "C24",
+      "claim": "Puységur page is published",
+      "decision": "first_party_status_verified",
+      "source_ids": [
+        "S16"
+      ],
+      "handling": "Do NOT claim it currently links to /focus/ within its body."
+    },
+    {
+      "id": "C25",
+      "claim": "Change blindness page is published",
+      "decision": "first_party_status_verified",
+      "source_ids": [
+        "S17"
+      ],
+      "handling": "No known Grok asset_id or source-attribution proof."
+    },
+    {
+      "id": "C26",
+      "claim": "Owned paid Mind Payhip SKU is currently sellable",
+      "decision": "blocked_unverified",
+      "source_ids": [
+        "S20"
+      ],
+      "handling": "Public/mail checks cannot authenticate seller rights/checkout."
+    },
+    {
+      "id": "C27",
+      "claim": "Paid affiliate sale or commission has been verified",
+      "decision": "blocked_unverified",
+      "source_ids": [
+        "S20"
+      ],
+      "handling": "Clicks, views, test payments and merchant claims are not settled commissions."
+    },
+    {
+      "id": "C28",
+      "claim": "A two-sound unguided exercise can determine guided audio preference",
+      "decision": "unsubstantiated_exclude",
+      "source_ids": [
+        "S19"
+      ],
+      "handling": "Corrected in R139 presell via this stacked PR."
+    },
+    {
+      "id": "C29",
+      "claim": "Affiliate / checkout conversion rate and net RPM can be reported today",
+      "decision": "blocked_missing_denominator_and_orders",
+      "source_ids": [
+        "S20"
+      ],
+      "handling": "Both qualified-human denominator and authoritative settlements absent."
+    }
+  ],
+  "commercial_gates": {
+    "named_affiliate_acceptance": false,
+    "product_channel_authorization": false,
+    "approved_exact_earning_url": false,
+    "affiliate_disclosure_audited_in_browser": false,
+    "final_checkout_price_verified": false,
+    "refund_checkout_terms_verified": false,
+    "acceptable_partner_reporting_privacy": false,
+    "publisher_release_approval": false,
+    "publisher_visual_accessibility_qa": false,
+    "hosted_ci_green": false,
+    "video_rendered_captioned_and_approved": false,
+    "no_js_mobile_browser_qa": false,
+    "known_purchasable_fv_owned_mind_sku": false,
+    "fv_owned_product_rights_manifest": false,
+    "fv_owned_product_test_delivery_approved": false,
+    "merchant_verified_paid_orders": false,
+    "merchant_refunds_fees_reconciled": false,
+    "qualified_human_sessions_validated": false,
+    "grok_asset_ids_confirmed": false,
+    "consent_and_single_jetpack_funnel_qa": false,
+    "source_article_body_focus_link_verified": false,
+    "experimentally_balanced_a_b_traffic": false,
+    "verified_commission_settlement": false
+  },
+  "commercial_url": null,
+  "authorized_tracking_parameters": null,
+  "actual_commission_rate": null,
+  "actual_net_revenue": null,
+  "qualified_human_sessions": null,
+  "paid_orders": null,
+  "notes": "Never reinterpret a merchant promotion, outbound click, checkout start, unconfirmed lead or content impression as a sale. No PII, names, email, IP or device fingerprints captured."
+}
