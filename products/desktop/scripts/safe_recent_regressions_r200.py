@@ -1,11 +1,13 @@
-"""Fail-closed, offline R194-R199 desktop audit regression matrix.
+"""Fail-closed, privacy-safe offline R194-R199 desktop audit regression matrix.
 
-Run with normal Python and again with -OO from the repository root. Each
-pattern is an exact filename and must discover at least the audited number
-of tests; a zero-test unittest discovery must NEVER count as a pass.
+Run in normal and -OO modes from the repository root. A test exception,
+fixture path, imported-module output or skip reason must not reach CI logs.
+Only static audited test filenames and numerical results are emitted.
 """
 from __future__ import annotations
 
+import contextlib
+import os
 import re
 import sys
 import unittest
@@ -23,15 +25,31 @@ TARGETS = (
 )
 
 
-def run_matrix(tests: Path = TESTS, targets=TARGETS) -> bool:
-    """Execute all named modules without swallowing missing or failing tests.
+def _run_private(tests: Path, filename: str) -> tuple[int, unittest.TestResult]:
+    """Discard Python-level test/import output, retaining only aggregate counts.
 
-    No financial files, accounts, network access, downloads or builds are used.
-    A platform-specific unittest skip remains visible in stderr and is not
-    misrepresented as a passed case; the native Windows gate is separate.
+    Deliberately do not use TextTestRunner: its failure tracebacks, skip
+    reasons and exception representations can contain private fixture data.
     """
-    if not tests.is_dir():
-        print("HOLD: desktop tests directory missing", file=sys.stderr)
+    with open(os.devnull, "w", encoding="utf-8") as sink:
+        with contextlib.redirect_stdout(sink), contextlib.redirect_stderr(sink):
+            suite = unittest.TestLoader().discover(
+                str(tests), pattern=filename, top_level_dir=str(tests))
+            count = suite.countTestCases()
+            result = unittest.TestResult()
+            suite.run(result)
+    return count, result
+
+
+def run_matrix(tests: Path = TESTS, targets=TARGETS) -> bool:
+    """Enforce audited test counts without echoing test-generated evidence.
+
+    No financial files, accounts, network access, downloads or builds are used
+    by this runner. A skip is included in executed totals but explicitly
+    recorded and never represented as a passing test.
+    """
+    if not tests.is_dir() or tests.is_symlink():
+        print("HOLD: desktop tests directory missing or linked", file=sys.stderr)
         return False
     seen = set()
     total = 0
@@ -46,23 +64,26 @@ def run_matrix(tests: Path = TESTS, targets=TARGETS) -> bool:
         if not source.is_file() or source.is_symlink():
             print(f"HOLD: audited test module absent or linked: {filename}", file=sys.stderr)
             return False
-        suite = unittest.TestLoader().discover(str(tests), pattern=filename,
-                                               top_level_dir=str(tests))
-        count = suite.countTestCases()
+        try:
+            count, result = _run_private(tests, filename)
+        except Exception:
+            # No exception text or traceback: they may contain customer data.
+            print(f"HOLD: {filename}: private audit execution unavailable", file=sys.stderr)
+            return False
         if count < minimum:
             print(f"HOLD: {filename}: discovered {count}, minimum {minimum}",
                   file=sys.stderr)
             return False
-        result = unittest.TextTestRunner(verbosity=1).run(suite)
+        skipped = len(result.skipped)
         if (not result.wasSuccessful() or result.testsRun != count
-                or len(result.skipped) == count):
+                or skipped == count):
             print(f"HOLD: {filename}: audit regressions failed or all skipped "
-                  f"({len(result.skipped)} skipped)", file=sys.stderr)
+                  f"({skipped} skipped)", file=sys.stderr)
             return False
         total += result.testsRun
-        print(f"R200: {filename}: {result.testsRun} executed, "
-              f"{len(result.skipped)} skipped (platform-specific skips are not passes)")
-    print(f"R200: {total} audit regression executions across {len(seen)} modules; "
+        print(f"R201: {filename}: {result.testsRun} executed, "
+              f"{skipped} skipped (not counted as passes)")
+    print(f"R201: {total} audit regression executions across {len(seen)} modules; "
           "no release or production approval implied")
     return True
 
