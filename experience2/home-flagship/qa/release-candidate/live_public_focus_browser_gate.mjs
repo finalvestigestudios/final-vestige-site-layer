@@ -13,6 +13,7 @@
  * Exit 1 is a HOLD. Output is only a read-only local screenshot/JSON receipt.
  */
 import assert from 'node:assert/strict';
+import {createHash} from 'node:crypto';
 import {mkdir,writeFile,readFile} from 'node:fs/promises';
 import {createRequire} from 'node:module';
 import {resolve} from 'node:path';
@@ -41,17 +42,29 @@ function safeOrigin(raw){try{return new URL(raw).origin===ORIGIN;}catch{return f
 function imageAssetName(raw){
   try{
     const u=new URL(raw,ORIGIN);
-    const allowed=(u.origin===ORIGIN&&u.pathname.startsWith('/wp-content/uploads/'))||
-      (u.hostname==='i0.wp.com'&&u.pathname.startsWith('/finalvestige.com/wp-content/uploads/'));
+    const allowed=u.protocol==='https:'&&!u.username&&!u.password&&
+      ((u.origin===ORIGIN&&u.pathname.startsWith('/wp-content/uploads/'))||
+      (u.origin==='https://i0.wp.com'&&u.pathname.startsWith('/finalvestige.com/wp-content/uploads/')));
     return allowed?u.pathname.split('/').pop().toLowerCase():null;
+  }catch{return null;}
+}
+function imageKey(raw){
+  try{
+    const u=new URL(raw,ORIGIN);
+    return imageAssetName(u.href)?
+      createHash('sha256').update(u.href).digest('hex'):null;
   }catch{return null;}
 }
 function auditedArchives(items,transfers){
   return ARCHIVE_FILES.map(asset=>{
-    const dom=items.find(i=>imageAssetName('https://'+i.srcHost+i.srcPath)===asset);
-    const transferred=transfers.find(i=>i.asset===asset&&i.http===200&&
-      Number.isSafeInteger(i.bytes)&&i.bytes>0);
-    return {asset,dom:!!dom,
+    const matches=items.filter(i=>i.isArchive&&
+      imageAssetName('https://'+i.srcHost+i.srcPath)===asset);
+    const dom=matches.length===1?matches[0]:null;
+    const transferred=dom&&dom.sourceKey?transfers.find(i=>
+      i.asset===asset&&i.sourceKey===dom.sourceKey&&i.http===200&&
+      Number.isSafeInteger(i.bytes)&&i.bytes>0):null;
+    return {asset,dom:matches.length===1,
+      described:!!(dom&&typeof dom.alt==='string'&&dom.alt.trim()),
       decoded:!!(dom&&dom.complete&&dom.naturalWidth>0&&dom.naturalHeight>0),
       transfer:!!transferred,bytes:transferred?.bytes??0};
   });
@@ -70,7 +83,7 @@ function validateFocusGeometry(rows,width,height){
     hitCount:onScreen.filter(r=>r.hit && r.box.width>=44 && r.box.height>=44).length,
     modes:[...new Set(visible.map(r=>r.mode))]};
 }
-export {VIEWPORTS,CHAPTERS,ARCHIVE_FILES,imageAssetName,auditedArchives,validateFocusGeometry,pathOnly};
+export {VIEWPORTS,CHAPTERS,ARCHIVE_FILES,imageAssetName,imageKey,auditedArchives,validateFocusGeometry,pathOnly};
 
 async function browserLib(){
   try{return await import('playwright');}
@@ -105,7 +118,7 @@ async function createPage(browser,width,js=true){
     imageTransfers.push((async()=>{
       const u=r.url();let bytes=null;
       try{if(r.status()===200)bytes=(await r.body()).length;}catch{}
-      images.push({path:pathOnly(u),asset:imageAssetName(u),
+      images.push({path:pathOnly(u),asset:imageAssetName(u),sourceKey:imageKey(u),
         http:r.status(),bytes,firstParty:safeOrigin(u)});
     })());
   });
@@ -123,6 +136,11 @@ async function chapterState(page,width,mode){
   const state=await page.evaluate(ids=>({
     chapterIds:ids.map(id=>({id,exists:!!document.getElementById(id)})),
     mainCount:document.querySelectorAll('main,[role="main"]').length,
+    marginCount:document.querySelectorAll('.fv-margin-strip__item').length,
+    marginSequential:[...document.querySelectorAll('.fv-margin-strip__item')].
+      every((el,i)=>el.style.getPropertyValue('--i').trim()===String(i)),
+    marginNonempty:[...document.querySelectorAll('.fv-margin-strip__item')].
+      every(el=>!!el.textContent?.trim()),
     horizontalOverflow:document.documentElement.scrollWidth>innerWidth+2,
     title:document.title,
     visibleDialogs:[...document.querySelectorAll('[role="dialog"],dialog')].filter(n=>{
@@ -132,6 +150,8 @@ async function chapterState(page,width,mode){
   }),CHAPTERS);
   for(const id of state.chapterIds) check(id.exists,mode+' '+width+' missing '+id.id);
   check(state.mainCount===1,mode+' '+width+' expected exactly one accessible main');
+  check(state.marginCount===72&&state.marginSequential&&state.marginNonempty,
+    mode+' '+width+' must preserve all 72 sequential, readable Margins');
   check(!state.horizontalOverflow,mode+' '+width+' horizontal overflow');
   check(state.visibleDialogs===0,mode+' '+width+' unexpected visible modal');
   return state;
@@ -163,10 +183,14 @@ async function readImages(page,width){
     });}catch{}
     const row=await img.evaluate(el=>({
       alt:el.getAttribute('alt'),
+      isArchive:el.hasAttribute('data-fv-archive-img'),
+      currentSrc:el.currentSrc||'',
       srcHost:el.currentSrc?new URL(el.currentSrc).hostname:'',
       srcPath:el.currentSrc?new URL(el.currentSrc).pathname:'',
       complete:el.complete,naturalWidth:el.naturalWidth,naturalHeight:el.naturalHeight
     }));
+    row.sourceKey=imageKey(row.currentSrc);
+    delete row.currentSrc; // Never persist query-bearing URLs in browser receipts.
     items.push(row);
     check(row.complete&&row.naturalWidth>0,'width '+width+' failed image: '+row.srcPath);
   }
@@ -193,9 +217,11 @@ async function runWidth(browser,width,axeSource){
     // A missing image list or zero HTTP body bytes must never produce a PASS.
     await Promise.allSettled(imageTransfers);
     entry.archives=auditedArchives(entry.images.checked,images);
-    check(entry.archives.every(a=>a.dom&&a.decoded&&a.transfer),
+    check(entry.images.checked.filter(i=>i.isArchive).length===ARCHIVE_FILES.length,
+      'width '+width+' expected exactly three archival exhibit elements');
+    check(entry.archives.every(a=>a.dom&&a.described&&a.decoded&&a.transfer),
       'width '+width+' missing/undecoded/untransferred required archival images: '+
-      JSON.stringify(entry.archives.filter(a=>!a.dom||!a.decoded||!a.transfer)));
+      JSON.stringify(entry.archives.filter(a=>!a.dom||!a.described||!a.decoded||!a.transfer)));
     await page.evaluate(()=>scrollTo(0,0));
     await page.screenshot({path:resolve(OUT,'published-'+viewportId(width)+'.png'),
       fullPage:true,animations:'disabled'});

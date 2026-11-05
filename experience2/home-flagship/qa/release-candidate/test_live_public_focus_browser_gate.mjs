@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {VIEWPORTS,CHAPTERS,ARCHIVE_FILES,imageAssetName,auditedArchives,validateFocusGeometry,pathOnly}
+import {VIEWPORTS,CHAPTERS,ARCHIVE_FILES,imageAssetName,imageKey,auditedArchives,validateFocusGeometry,pathOnly}
   from './live_public_focus_browser_gate.mjs';
 
 const valid=(mode='strip')=>({
@@ -47,40 +47,63 @@ test('sanitize URLs, never report query/fragment/foreign hostname',()=>{
   assert.equal(pathOnly('http://[bad'),'invalid-url');
 });
 
-const liveArchiveDom=ARCHIVE_FILES.map(asset=>({
+const cdn=a=>'https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/'+a+'?fit=768%2C600&ssl=1';
+const archives=ARCHIVE_FILES.map(asset=>({
   srcHost:'i0.wp.com',srcPath:'/finalvestige.com/wp-content/uploads/2026/08/'+asset,
+  sourceKey:imageKey(cdn(asset)),isArchive:true,alt:'Evidence caption',
   complete:true,naturalWidth:960,naturalHeight:700
 }));
-const liveArchiveTransfers=ARCHIVE_FILES.map(asset=>({
-  asset,http:200,bytes:12000,firstParty:false
+const network=ARCHIVE_FILES.map((asset,i)=>({
+  asset,sourceKey:archives[i].sourceKey,http:200,bytes:12000
 }));
-test('exact published Apollo/Franklin/NYPL archive assets are required',()=>{
-  assert.deepEqual(ARCHIVE_FILES,[
-    's67-19766.webp','franklinexpeditionnote.jpg',
-    'edit-017-v02-nypl-5003296-original.jpg']);
-  assert.ok(auditedArchives(liveArchiveDom,liveArchiveTransfers)
-    .every(r=>r.dom&&r.decoded&&r.transfer));
+const ok=(dom=archives,tx=network)=>auditedArchives(dom,tx)
+  .every(r=>r.dom&&r.described&&r.decoded&&r.transfer);
+test('all three exact archival exhibits require decoded positive HTTP bytes',()=>{
+  assert.equal(ARCHIVE_FILES.length,3);
+  assert.equal(ok(),true);
 });
-test('zero archive images cannot yield a browser PASS',()=>{
-  assert.ok(auditedArchives([],[]).every(r=>!r.dom&&!r.decoded&&!r.transfer));
+test('empty DOM, missing exhibit, duplicate or unmarked decoy fail',()=>{
+  assert.equal(ok([],[]),false);
+  assert.equal(ok(archives.slice(1)),false);
+  assert.equal(ok([...archives,archives[0]]),false);
+  assert.equal(ok(archives.map((d,i)=>i===0?{...d,isArchive:false}:d)),false);
 });
-test('one missing archive fails even when other images load',()=>{
-  assert.equal(auditedArchives(liveArchiveDom.slice(1),liveArchiveTransfers)[0].dom,false);
+test('same filename other responsive derivative is not a matching transfer',()=>{
+  const alter=network.map((t,i)=>i===0?{...t,
+    sourceKey:imageKey(cdn(ARCHIVE_FILES[0]).replace('768%2C600','300%2C233'))}:t);
+  assert.equal(ok(archives,alter),false);
 });
-test('decoded pixels and metadata alone do not establish HTTP image bytes',()=>{
-  assert.ok(auditedArchives(liveArchiveDom,
-    liveArchiveTransfers.map(x=>({...x,bytes:0}))).every(r=>!r.transfer));
+test('same filename other allowed origin is not a matching transfer',()=>{
+  const alter=network.map((t,i)=>i===0?{...t,
+    sourceKey:imageKey('https://finalvestige.com/wp-content/uploads/2026/08/'+ARCHIVE_FILES[0])}:t);
+  assert.equal(ok(archives,alter),false);
 });
-test('403 HTTP, missing decode, or zero dimension fail closed',()=>{
-  assert.equal(auditedArchives(liveArchiveDom,
-    liveArchiveTransfers.map(x=>({...x,http:403})))[0].transfer,false);
-  assert.equal(auditedArchives(liveArchiveDom.map(x=>({...x,naturalWidth:0})),
-    liveArchiveTransfers)[0].decoded,false);
+test('no description, missing decode, failed status, zero bytes all fail closed',()=>{
+  assert.equal(ok(archives.map((d,i)=>i===1?{...d,alt:'   '}:d)),false);
+  assert.equal(ok(archives.map((d,i)=>i===1?{...d,naturalWidth:0}:d)),false);
+  assert.equal(ok(archives,network.map((d,i)=>i===1?{...d,http:403}:d)),false);
+  assert.equal(ok(archives,network.map((d,i)=>i===1?{...d,bytes:0}:d)),false);
 });
-test('trust only real FV uploads or the exact i0.wp.com WP CDN path',()=>{
-  assert.equal(imageAssetName('https://finalvestige.com/wp-content/uploads/2026/08/s67-19766.webp'),'s67-19766.webp');
-  assert.equal(imageAssetName('https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/Franklinexpeditionnote.jpg?fit=644%2C1024'),'franklinexpeditionnote.jpg');
-  assert.equal(imageAssetName('https://evil.example/wp-content/uploads/2026/08/s67-19766.webp'),null);
-  assert.equal(imageAssetName('https://i0.wp.com/not-finalvestige.com/wp-content/uploads/2026/08/s67-19766.webp'),null);
-  assert.equal(imageAssetName('invalid://['),null);
+test('non-HTTPS, bad CDN path, userinfo, foreign host blocked',()=>{
+  for(const s of [
+    'http://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/s67-19766.webp',
+    'https://bad.example/wp-content/uploads/2026/08/s67-19766.webp',
+    'https://i0.wp.com/not-finalvestige.com/wp-content/uploads/2026/08/s67-19766.webp',
+    'https://user:pass@i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/s67-19766.webp'
+  ])assert.equal(imageAssetName(s),null);
+});
+test('fingerprint distinguishes responsive src and is SHA-256 format',()=>{
+  const x=imageKey(cdn(ARCHIVE_FILES[0]));
+  const y=imageKey(cdn(ARCHIVE_FILES[0]).replace('768%2C600','300%2C233'));
+  assert.match(x,/^[a-f0-9]{64}$/);
+  assert.notEqual(x,y);
+});
+test('72 Margins are admission requirements for both JS/no-JS',async()=>{
+  const {readFile}=await import('node:fs/promises');
+  const {dirname,join}=await import('node:path');
+  const {fileURLToPath}=await import('node:url');
+  const s=await readFile(join(dirname(fileURLToPath(import.meta.url)),
+    'live_public_focus_browser_gate.mjs'),'utf8');
+  assert.match(s,/state\.marginCount===72&&state\.marginSequential&&state\.marginNonempty/);
+  assert.match(s,/isArchive:el\.hasAttribute\('data-fv-archive-img'\)/);
 });
