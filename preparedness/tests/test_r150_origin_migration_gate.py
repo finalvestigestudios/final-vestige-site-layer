@@ -2,6 +2,8 @@
 import copy
 import importlib.util
 import unittest
+import tempfile
+import json
 from pathlib import Path
 
 spec=importlib.util.spec_from_file_location('r150',Path(__file__).with_name('r150_origin_migration_gate.py'))
@@ -64,6 +66,25 @@ class PositiveControls(unittest.TestCase):
         self.assertEqual(g.git_blob(b''),'e69de29bb2d1d6434b8b29ae775ad8c2e48c5391')
     def test_strict_needs_authentic(self):
         d,r=fixture();self.assertRaises(g.Hold,g.analyze,d,r)
+    def test_custodied_html_is_raw_evidence(self):
+        with tempfile.TemporaryDirectory() as d:
+            p=Path(d)/'content/tools/sample.body.html';p.parent.mkdir(parents=True)
+            p.write_bytes(b'<p>Do not auto-publish.</p>')
+            self.assertEqual(g.load_custodied(Path(d),'content/tools/sample.body.html',g.git_blob(p.read_bytes())),p.read_bytes())
+    def test_custodied_json_parses(self):
+        with tempfile.TemporaryDirectory() as d:
+            p=Path(d)/'sources/register.json';p.parent.mkdir(parents=True)
+            p.write_text('{"sources":[]}',encoding='utf-8')
+            self.assertEqual(g.load_custodied(Path(d),'sources/register.json',g.git_blob(p.read_bytes())),{'sources':[]})
+    def test_custodied_changed_body_fails(self):
+        with tempfile.TemporaryDirectory() as d:
+            p=Path(d)/'content/tools/sample.body.html';p.parent.mkdir(parents=True)
+            p.write_bytes(b'<p>before</p>');old_sha=g.git_blob(p.read_bytes())
+            p.write_bytes(b'<p>after</p>')
+            self.assertRaises(g.Hold,g.load_custodied,Path(d),'content/tools/sample.body.html',old_sha)
+    def test_custodied_traversal_fails(self):
+        with tempfile.TemporaryDirectory() as d:
+            self.assertRaises(g.Hold,g.load_custodied,Path(d),'../unsafe.json','0'*40)
 
 class MutationCases(unittest.TestCase):
     def test_each_author_source_support_detects_tampering(self):
@@ -121,5 +142,5 @@ class AttackCases(unittest.TestCase):
     def test_origin_annotation_drift(self):self.check_fail(lambda d,r:d['source_use_rows'][0].update(effective_source_origin='base'))
 
 # Each subTest executes an independent synthetic mutation. There are 240 per-row
-# adversarial subcases and 28 named negative tests across 38 unittest methods.
+# adversarial subcases, 28 negative tests and four custody positives across 42 methods.
 if __name__=='__main__':unittest.main()
