@@ -59,7 +59,7 @@ const bad=[
   ['NASA primary claimed fetched', c=>c.assets.find(a=>a.key==='apollo').catalogue_trace.primary_image_url_directly_verified=true],
   ['Franklin binary claimed matched', c=>c.assets.find(a=>a.key==='franklin').commons_preview_trace.wp_media_binary_matched=true],
   ['Franklin dimensions altered', c=>c.assets.find(a=>a.key==='franklin').commons_preview_trace.preview_dimensions=[900,1526]],
-  ['NYPL embedded before rights', c=>c.assets.find(a=>a.key==='nypl').embedded=true],
+  ['NYPL embedded before rights', c=>c.assets.find(a=>a.key==='nypl_brooklyn').embedded=true],
   ['Release wrongly promoted', c=>c.release_decision='PASS'],
   ['NASA catalog identifier swapped', c=>c.assets.find(a=>a.key==='apollo').catalogue_trace.identifier='S67-19770']
 ];
