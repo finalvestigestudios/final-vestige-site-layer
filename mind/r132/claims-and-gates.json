@@ -1,0 +1,213 @@
+{
+  "date": "2026-11-04",
+  "release": "HARD_HOLD",
+  "authorization": "UNVERIFIED",
+  "sources": [
+    {
+      "id": "S1",
+      "type": "research",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+      "checked": "2023-05-19"
+    },
+    {
+      "id": "S2",
+      "type": "research",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30073406/",
+      "checked": "2018-08-02"
+    },
+    {
+      "id": "S3",
+      "type": "research",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38458383/",
+      "checked": "2024-03-16"
+    },
+    {
+      "id": "S4",
+      "type": "seller",
+      "url": "https://inspire3.com/",
+      "checked": "2026-11-04"
+    },
+    {
+      "id": "S5",
+      "type": "seller",
+      "url": "https://zen12.com/hnp",
+      "checked": "2026-11-04"
+    },
+    {
+      "id": "S6",
+      "type": "seller",
+      "url": "https://zen12.com/secret/",
+      "checked": "2026-11-04"
+    },
+    {
+      "id": "S7",
+      "type": "seller-policy",
+      "url": "https://inspire3.com/privacy/",
+      "checked": "2026-11-04"
+    },
+    {
+      "id": "S8",
+      "type": "merchant-program",
+      "url": "https://affiliates.inspire3.com/",
+      "checked": "2026-11-04"
+    },
+    {
+      "id": "S9",
+      "type": "regulator",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "checked": "2026-11-04"
+    },
+    {
+      "id": "S10",
+      "type": "regulator",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "checked": "2026-11-04"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "Binaural beat phenomenon is a perceived rhythmic experience from distinct tones presented to two ears.",
+      "decision": "ALLOW_QUALIFIED",
+      "sources": [
+        "S1"
+      ]
+    },
+    {
+      "id": "C02",
+      "claim": "Fourteen EEG studies: 5 supportive, 8 contradictory, 1 mixed.",
+      "decision": "ALLOW_AS_REVIEW_RESULT",
+      "sources": [
+        "S1"
+      ]
+    },
+    {
+      "id": "C03",
+      "claim": "2019 meta-analysis reported g=0.45 pooled across diverse cognition, anxiety and pain outcomes.",
+      "decision": "ALLOW_QUALIFIED_NOT_PRODUCT_SPECIFIC",
+      "sources": [
+        "S2"
+      ]
+    },
+    {
+      "id": "C04",
+      "claim": "2024 review of 31 studies found mixed/insufficient evidence for auditory stimulation and autonomic indices with cognition.",
+      "decision": "ALLOW_AS_REVIEW_RESULT",
+      "sources": [
+        "S3"
+      ]
+    },
+    {
+      "id": "C05",
+      "claim": "Premium seller describes 12 levels/four formats/48 MP3.",
+      "decision": "SELLER_DESCRIPTION_ONLY",
+      "sources": [
+        "S5"
+      ]
+    },
+    {
+      "id": "C06",
+      "claim": "Premium page displays $87.99, separate page conditional $37.",
+      "decision": "DATED_SELLER_DISPLAY_NOT_CHECKOUT",
+      "sources": [
+        "S5",
+        "S6"
+      ]
+    },
+    {
+      "id": "C07",
+      "claim": "Seller advertises one-year money-back guarantee.",
+      "decision": "SELLER_TERM_UNTESTED",
+      "sources": [
+        "S5"
+      ]
+    },
+    {
+      "id": "C08",
+      "claim": "Zen12 audio provides one hour of meditation benefits in twelve minutes.",
+      "decision": "PROHIBIT_UNSUBSTANTIATED",
+      "sources": [
+        "S5",
+        "S1",
+        "S2",
+        "S3"
+      ]
+    },
+    {
+      "id": "C09",
+      "claim": "Zen12 cures stress/anxiety/pain, increases intelligence or improves wealth.",
+      "decision": "PROHIBIT_UNSUBSTANTIATED",
+      "sources": [
+        "S5",
+        "S10"
+      ]
+    },
+    {
+      "id": "C10",
+      "claim": "Named FV affiliation, commission rate, approved creative and URL established.",
+      "decision": "NOT_VERIFIED_PROHIBIT",
+      "sources": [
+        "S8"
+      ]
+    },
+    {
+      "id": "C11",
+      "claim": "Merchant may share affiliate purchasers' names/emails/purchased products.",
+      "decision": "ALLOW_POLICY_DESCRIPTION",
+      "sources": [
+        "S7"
+      ]
+    },
+    {
+      "id": "C12",
+      "claim": "Affiliate earnings need conspicuous nearby disclosure.",
+      "decision": "ALLOW_REGULATORY_GUIDANCE",
+      "sources": [
+        "S9"
+      ]
+    },
+    {
+      "id": "C13",
+      "claim": "FTC expects objective product benefit claims to be substantiated.",
+      "decision": "ALLOW_REGULATORY_GUIDANCE",
+      "sources": [
+        "S10"
+      ]
+    },
+    {
+      "id": "C14",
+      "claim": "Owned FV paid Mind SKU rights/fulfillment/current price are verified.",
+      "decision": "UNKNOWN_DO_NOT_ACTIVATE",
+      "sources": []
+    },
+    {
+      "id": "C15",
+      "claim": "FV has merchant-confirmed attributable paid revenue.",
+      "decision": "UNKNOWN_DO_NOT_CLAIM",
+      "sources": []
+    }
+  ],
+  "gates": {
+    "named_partner_approval": "CLOSED",
+    "exact_earning_url": "CLOSED",
+    "allowed_social_channels": "CLOSED",
+    "email_promotion_permission": "CLOSED",
+    "creative_rights": "CLOSED",
+    "privacy_aggregate_only": "CLOSED",
+    "product_specific_efficacy": "CLOSED",
+    "checkout_price": "CLOSED",
+    "refund_terms": "CLOSED",
+    "refund_execution": "CLOSED",
+    "merchant_settlement": "CLOSED",
+    "realized_fees_refunds": "CLOSED",
+    "paid_order_correlation": "CLOSED",
+    "qualified_human_sessions": "CLOSED",
+    "grok_asset_ids": "CLOSED",
+    "founder_release": "CLOSED",
+    "qa_browser": "CLOSED",
+    "native_ci": "CLOSED",
+    "video_file_captions": "CLOSED",
+    "focus_confirmed_leads": "CLOSED",
+    "payhip_owned_sku_rights": "CLOSED"
+  }
+}
