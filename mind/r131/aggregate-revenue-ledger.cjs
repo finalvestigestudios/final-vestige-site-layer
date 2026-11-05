@@ -6,7 +6,7 @@
  */
 const K=["date","asset_id","utm_campaign"];
 const PII=/\b(?:email|e-?mail|phone|address|ip_address|user_agent|buyer_id|customer_id|first_name|last_name|fullname|session_id)\b/i;
-const DATE=/^\d{4}-\d{2}-\d{2}$/;
+const SESSION_KEYS=new Set(["date","asset_id","utm_campaign","qualified_human_sessions","audit_status","proof_ref"]);\nconst SETTLEMENT_KEYS=new Set(["date","asset_id","utm_campaign","offer_type","authorization","statement_verified","complete","proof_ref","paid_orders","gross_cents","refund_cents","fees_cents","commission_cents"]);\nconst DATE=/^\d{4}-\d{2}-\d{2}$/;
 const ID=/^[a-z0-9][a-z0-9_-]{2,80}$/i;
 function assertClean(o,kind){
  if(!o||typeof o!=="object"||Array.isArray(o))throw Error(kind+": object required");
@@ -17,7 +17,8 @@ function assertClean(o,kind){
 }
 function whole(n,k){if(!Number.isSafeInteger(n)||n<0)throw Error(k+" must be a nonnegative safe integer");return n;}
 function validateSession(s){
- assertClean(s,"session");whole(s.qualified_human_sessions,"qualified_human_sessions");
+ assertClean(s,"session");
+ if(Object.keys(s).some(k=>!SESSION_KEYS.has(k)))throw Error("session has unexpected data field");whole(s.qualified_human_sessions,"qualified_human_sessions");
  if(s.qualified_human_sessions>100000000)throw Error("implausible aggregate sessions");
  if(s.audit_status!=="verified_human_exclusion")throw Error("qualified human exclusion not verified");
  if(!/^audit:[a-z0-9_-]{5,80}$/i.test(s.proof_ref||""))throw Error("first-party proof_ref missing");
@@ -25,6 +26,7 @@ function validateSession(s){
 }
 function validateSettlement(s){
  assertClean(s,"settlement");
+ if(Object.keys(s).some(k=>!SETTLEMENT_KEYS.has(k)))throw Error("settlement has unexpected data field");
  if(!["affiliate","first_party"].includes(s.offer_type))throw Error("invalid offer_type");
  if(s.authorization!==true||s.statement_verified!==true||s.complete!==true)throw Error("missing partner permission or complete merchant proof");
  if(!/^merchant:[a-z0-9_-]{5,80}$/i.test(s.proof_ref||""))throw Error("merchant proof_ref missing");
@@ -36,11 +38,12 @@ function validateSettlement(s){
  return s;
 }
 function key(s){return K.map(k=>s[k]).join("|");}
-function reconcile({sessions,settlements,period_days=7,as_of}){
+function reconcile({sessions,settlements,period_days=7,as_of,coverage}){
  if(![7,30].includes(period_days))throw Error("only 7/30 day cohort windows supported");
  if(!DATE.test(as_of||"")||!Number.isFinite(Date.parse(as_of+"T00:00:00Z")))throw Error("as_of date required");
  if(as_of>new Date().toISOString().slice(0,10))throw Error("as_of cannot be future");
  if(!Array.isArray(sessions)||!Array.isArray(settlements))throw Error("arrays required");
+ if(!coverage||coverage.first_party_complete!==true||coverage.merchant_complete!==true||!/^audit:[a-z0-9_-]{5,80}$/i.test(coverage.proof_ref||""))return {status:"NOT_COMPUTABLE",period_days,reason:"Incomplete 7/30 day coverage or missing independent coverage evidence"};
  // Only completed dates; caller must prove complete coverage of source/merchant statements.
  const start=new Date(Date.parse(as_of+"T00:00:00Z")-(period_days-1)*86400000).toISOString().slice(0,10);
  const inside=x=>x.date>=start&&x.date<=as_of;
@@ -51,6 +54,8 @@ function reconcile({sessions,settlements,period_days=7,as_of}){
  if(!sx.length||!mx.length)return {status:"NOT_COMPUTABLE",period_days,reason:"Missing verified qualified human denominator or merchant settlement"};
  const sKeys=new Set(sx.map(key));
  if(mx.some(x=>!sKeys.has(key(x))))return {status:"NOT_COMPUTABLE",period_days,reason:"Merchant cohort cannot be matched to qualified first-party session cohort"};
+ const mKeys=new Set(mx.map(key));
+ if(sx.some(x=>!mKeys.has(key(x))))return {status:"NOT_COMPUTABLE",period_days,reason:"Merchant coverage missing a qualifying source cohort"};
  if(!mx.every(x=>x.statement_verified&&x.complete))return {status:"NOT_COMPUTABLE",period_days,reason:"Incomplete authoritative merchant records"};
  const qualified=sx.reduce((t,x)=>t+x.qualified_human_sessions,0);
  if(qualified===0)return {status:"NOT_COMPUTABLE",period_days,reason:"Zero qualified-human denominator"};
