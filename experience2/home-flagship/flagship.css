@@ -244,12 +244,14 @@
 /* P0 conversion candidate: give the hero's existing *secondary* action a
    precise free offer and WCAG-sized touch target, without new overlays,
    scripts, network assets or changes to its evidence-primary CTA. */
+.fv-hf .fv-hf__opening-copy { min-width: 0; }
 .fv-hf .fv-hf__text-link--focus {
-  display: inline-flex;
-  align-items: center;
+  display: block;
   min-height: 44px;
+  min-width: 0;
   max-width: 100%;
-  gap: .5em;
+  white-space: normal;
+  overflow-wrap: anywhere;
   line-height: 1.45;
 }
 @media (max-width: 600px) {
