@@ -30,7 +30,7 @@ const disclosureBeforeButton = html => {
 };
 const noActiveMerchant = html => {
   const buttons = [...html.matchAll(/<button\b([^>]*)>/gi)];
-  return buttons.length === 1 && /\bdisabled\b/.test(buttons[0][1]) &&
+  return buttons.length === 1 && /\sdisabled(?=\s|>)/.test(buttons[0][1]) &&
     /aria-disabled="true"/.test(buttons[0][1]) &&
     !/<script\b|<form\b|\sautoplay(?=[\s=>])|dataLayer|gtag\s*\(/i.test(html);
 };
