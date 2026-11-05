@@ -1,0 +1,395 @@
+{
+  "schema_version": "1.0",
+  "milestone": "Mind R154",
+  "as_of": "2026-11-05",
+  "source_kind": "scholarly abstracts, official vendor pages, FTC guidance, read-only WordPress and linked GitHub issues; not private merchant transaction reports",
+  "source_urls": {
+    "s01": "https://pubmed.ncbi.nlm.nih.gov/17874601/",
+    "s02": "https://doi.org/10.1146/annurev-psych-010814-015331",
+    "s03": "https://pubmed.ncbi.nlm.nih.gov/23538911/",
+    "s04": "https://doi.org/10.1111/j.1467-9280.2007.01948.x",
+    "s05": "https://doi.org/10.1126/science.1192439",
+    "s06": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "s07": "https://finalvestige.com/2026/11/02/change-blindness/",
+    "s08": "https://finalvestige.com/focus/",
+    "s09": "https://hypnosislive.com/mental-skills/total-focus",
+    "s10": "https://inspire3.com/",
+    "s11": "https://affiliates.inspire3.com/",
+    "s12": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "s13": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+    "s14": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+    "s15": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+    "s16": "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/172",
+    "s17": "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/1134",
+    "s18": "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/1163"
+  },
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "Mind wandering may occur without awareness",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/17874601/",
+      "disposition": "SUPPORTED_LAB_CONTEXT",
+      "boundary": "Do not infer every episode or clinical impairment."
+    },
+    {
+      "id": "C02",
+      "claim": "Mind wandering may have both costs and benefits",
+      "source": "https://doi.org/10.1146/annurev-psych-010814-015331",
+      "disposition": "SUPPORTED_REVIEW",
+      "boundary": "Context determines functional consequences."
+    },
+    {
+      "id": "C03",
+      "claim": "Two-week mindfulness training changed measures in a particular randomized study",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/23538911/",
+      "disposition": "SUPPORTED_STUDY",
+      "boundary": "No transfer to any proprietary audio."
+    },
+    {
+      "id": "C04",
+      "claim": "Two-week training trial proves Total Focus improves concentration",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/23538911/",
+      "disposition": "REJECT_UNSUPPORTED",
+      "boundary": "Wrong intervention; no product-specific evidence."
+    },
+    {
+      "id": "C05",
+      "claim": "Working memory capacity interacts with context in daily-life mind wandering",
+      "source": "https://doi.org/10.1111/j.1467-9280.2007.01948.x",
+      "disposition": "SUPPORTED_STUDY",
+      "boundary": "Volunteer student sample; no universal treatment."
+    },
+    {
+      "id": "C06",
+      "claim": "Wandering thoughts correlate with lower momentary happiness in the sampled study",
+      "source": "https://doi.org/10.1126/science.1192439",
+      "disposition": "SUPPORTED_ASSOCIATION",
+      "boundary": "Do not assert causality or universal effect."
+    },
+    {
+      "id": "C07",
+      "claim": "Mind wandering always causes unhappiness",
+      "source": "https://doi.org/10.1126/science.1192439",
+      "disposition": "REJECT_OVERGENERALIZATION",
+      "boundary": "Study cannot support universal causality."
+    },
+    {
+      "id": "C08",
+      "claim": "Animal magnetism was historically claimed",
+      "source": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "disposition": "SUPPORTED_AS_HISTORICAL_CLAIM",
+      "boundary": "Historical claim not scientific mechanism."
+    },
+    {
+      "id": "C09",
+      "claim": "Historical animal magnetism clinically demonstrated",
+      "source": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "disposition": "REJECT_UNSUPPORTED",
+      "boundary": "No adequate direct clinical support."
+    },
+    {
+      "id": "C10",
+      "claim": "Change blindness investigation is a published site resource",
+      "source": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "disposition": "CONFIRMED_WP_READ_ONLY",
+      "boundary": "WordPress post #1922 published; no literal Focus link in stored content."
+    },
+    {
+      "id": "C11",
+      "claim": "Puységur page is a published site resource",
+      "source": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "disposition": "CONFIRMED_WP_READ_ONLY",
+      "boundary": "WordPress page #1377 published; no literal Focus link in stored content."
+    },
+    {
+      "id": "C12",
+      "claim": "Seven Day Focus Fieldbook page is published",
+      "source": "https://finalvestige.com/focus/",
+      "disposition": "CONFIRMED_WP_READ_ONLY",
+      "boundary": "WordPress page #1579 published; native Jetpack block present."
+    },
+    {
+      "id": "C13",
+      "claim": "Guest subscription and welcome email work end to end",
+      "source": "https://finalvestige.com/focus/",
+      "disposition": "UNVERIFIED",
+      "boundary": "Live page and stored Jetpack block do not prove email confirmation or delivery."
+    },
+    {
+      "id": "C14",
+      "claim": "Total Focus merchant describes one 33-minute recording, 47 MB",
+      "source": "https://hypnosislive.com/mental-skills/total-focus",
+      "disposition": "SELLER_DESCRIPTION_VERIFIED",
+      "boundary": "Exact named SKU, not universal treatment benefit."
+    },
+    {
+      "id": "C15",
+      "claim": "Total Focus authored/recorded by J.A. Amos",
+      "source": "https://hypnosislive.com/mental-skills/total-focus",
+      "disposition": "SELLER_DESCRIPTION_VERIFIED",
+      "boundary": "No independent audio-rights examination."
+    },
+    {
+      "id": "C16",
+      "claim": "Total Focus has guaranteed 100% focus benefit",
+      "source": "https://hypnosislive.com/mental-skills/total-focus",
+      "disposition": "REJECT_SELLER_CLAIM",
+      "boundary": "Not substantiated by product-specific reliable clinical evidence."
+    },
+    {
+      "id": "C17",
+      "claim": "Total Focus has a checkout-verified stable price",
+      "source": "https://hypnosislive.com/mental-skills/total-focus",
+      "disposition": "UNVERIFIED",
+      "boundary": "Live price 24.44 USD vs indexed 17.95; no checkout."
+    },
+    {
+      "id": "C18",
+      "claim": "Total Focus advertises 14-day refund guarantee",
+      "source": "https://hypnosislive.com/mental-skills/total-focus",
+      "disposition": "SELLER_TERM_ONLY",
+      "boundary": "Actual refund performance and exclusions untested."
+    },
+    {
+      "id": "C19",
+      "claim": "Inspire3 affiliate program publicly exists",
+      "source": "https://affiliates.inspire3.com/",
+      "disposition": "VERIFIED_PUBLIC_PORTAL",
+      "boundary": "Does not establish named account enrollment."
+    },
+    {
+      "id": "C20",
+      "claim": "Final Vestige is accepted into Inspire3 affiliate program",
+      "source": "https://affiliates.inspire3.com/",
+      "disposition": "UNKNOWN_HARD_HOLD",
+      "boundary": "No named acceptance document or partner dashboard verified."
+    },
+    {
+      "id": "C21",
+      "claim": "A Final Vestige earning URL and permitted social/email channels are documented",
+      "source": "https://affiliates.inspire3.com/",
+      "disposition": "UNKNOWN_HARD_HOLD",
+      "boundary": "Never insert, guess, cloak or enable."
+    },
+    {
+      "id": "C22",
+      "claim": "FV paid Mind SKU currently purchase-ready and rights-cleared",
+      "source": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "disposition": "UNKNOWN_HARD_HOLD",
+      "boundary": "No authenticated Payhip SKU, rights, prices, refund policy or fulfillment."
+    },
+    {
+      "id": "C23",
+      "claim": "Disclosure immediately beside eventual earning link is required",
+      "source": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "disposition": "SUPPORTED_FTC",
+      "boundary": "Plain compensation notice, not vague 'affiliate link' label."
+    },
+    {
+      "id": "C24",
+      "claim": "Mental/health product benefit claims require appropriate evidence",
+      "source": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "disposition": "SUPPORTED_FTC",
+      "boundary": "Do not borrow general research for product-specific efficacy."
+    },
+    {
+      "id": "C25",
+      "claim": "Contextual /focus/ link in both published investigation bodies",
+      "source": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "disposition": "FALSE_BY_WP_STORED_CONTENT",
+      "boundary": "No literal /focus/ found as of 2026-11-05; rendered front-end untested."
+    },
+    {
+      "id": "C26",
+      "claim": "Existing /mind/ hub PR172 has been released to production",
+      "source": "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/172",
+      "disposition": "UNKNOWN_NOT_ESTABLISHED",
+      "boundary": "Proposed module is not permission to publish hub."
+    },
+    {
+      "id": "C27",
+      "claim": "Existing Total Focus buyer guide is live on WordPress",
+      "source": "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/1134",
+      "disposition": "FALSE_DRAFT_ONLY",
+      "boundary": "Existing R149 is an unpublished draft in code."
+    },
+    {
+      "id": "C28",
+      "claim": "R153 article says no affiliate earning link exists",
+      "source": "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/1163",
+      "disposition": "SUPPORTED_AFTER_R154_EDIT",
+      "boundary": "Corrected 'no link' imprecision while retaining seller source."
+    }
+  ],
+  "release_gates": [
+    {
+      "id": "named_inspire3_account_acceptance",
+      "status": "CLOSED",
+      "reason": "MISSING"
+    },
+    {
+      "id": "written_total_focus_permission",
+      "status": "CLOSED",
+      "reason": "MISSING"
+    },
+    {
+      "id": "allowed_social_channels",
+      "status": "CLOSED",
+      "reason": "MISSING"
+    },
+    {
+      "id": "allowed_email_channels",
+      "status": "CLOSED",
+      "reason": "MISSING"
+    },
+    {
+      "id": "authorized_earning_url",
+      "status": "CLOSED",
+      "reason": "MISSING"
+    },
+    {
+      "id": "verified_partner_tracking_terms",
+      "status": "CLOSED",
+      "reason": "MISSING"
+    },
+    {
+      "id": "independent_claim_substantiation",
+      "status": "CLOSED",
+      "reason": "MISSING"
+    },
+    {
+      "id": "merchant_checkout_price_verified",
+      "status": "CLOSED",
+      "reason": "MISSING"
+    },
+    {
+      "id": "merchant_refund_terms_verified_end_to_end",
+      "status": "CLOSED",
+      "reason": "MISSING"
+    },
+    {
+      "id": "founder_revenue_activation_approval",
+      "status": "CLOSED",
+      "reason": "MISSING"
+    },
+    {
+      "id": "founder_WP_publication_approval",
+      "status": "CLOSED",
+      "reason": "MISSING"
+    },
+    {
+      "id": "independent_site_QA",
+      "status": "CLOSED",
+      "reason": "MISSING"
+    },
+    {
+      "id": "browser_accessibility_360_390_768_1440",
+      "status": "CLOSED",
+      "reason": "MISSING"
+    },
+    {
+      "id": "no_JS_regression_browser",
+      "status": "CLOSED",
+      "reason": "MISSING"
+    },
+    {
+      "id": "native_node_regression_execution",
+      "status": "CLOSED",
+      "reason": "MISSING"
+    },
+    {
+      "id": "hosted_CI_tests",
+      "status": "CLOSED",
+      "reason": "MISSING"
+    },
+    {
+      "id": "video_produced_captions_transcript",
+      "status": "CLOSED",
+      "reason": "MISSING"
+    },
+    {
+      "id": "actual_AB_random_assignment",
+      "status": "CLOSED",
+      "reason": "MISSING"
+    },
+    {
+      "id": "anonymous_jetpack_signup_QA",
+      "status": "CLOSED",
+      "reason": "MISSING"
+    },
+    {
+      "id": "welcome_email_delivery_QA",
+      "status": "CLOSED",
+      "reason": "MISSING"
+    },
+    {
+      "id": "site_commercial_rights_cleared_SKU",
+      "status": "CLOSED",
+      "reason": "MISSING"
+    },
+    {
+      "id": "payhip_inventory_transaction_check",
+      "status": "CLOSED",
+      "reason": "MISSING"
+    },
+    {
+      "id": "grok_media_ids_reconciled",
+      "status": "CLOSED",
+      "reason": "MISSING"
+    },
+    {
+      "id": "grok_utm_attribution_confirmed",
+      "status": "CLOSED",
+      "reason": "MISSING"
+    },
+    {
+      "id": "qualified_human_denominator",
+      "status": "CLOSED",
+      "reason": "MISSING"
+    },
+    {
+      "id": "merchant_paid_order_evidence",
+      "status": "CLOSED",
+      "reason": "MISSING"
+    },
+    {
+      "id": "affiliate_paid_commission_evidence",
+      "status": "CLOSED",
+      "reason": "MISSING"
+    },
+    {
+      "id": "refunds_and_fees_reconciled",
+      "status": "CLOSED",
+      "reason": "MISSING"
+    },
+    {
+      "id": "seven_day_cohort_complete",
+      "status": "CLOSED",
+      "reason": "MISSING"
+    },
+    {
+      "id": "thirty_day_cohort_complete",
+      "status": "CLOSED",
+      "reason": "MISSING"
+    },
+    {
+      "id": "checkout_and_gdpr_privacy_review",
+      "status": "CLOSED",
+      "reason": "MISSING"
+    },
+    {
+      "id": "paid_conversion_truth_gate",
+      "status": "CLOSED",
+      "reason": "MISSING"
+    }
+  ],
+  "eligible_for_affiliate_activation": false,
+  "eligible_for_publication": false,
+  "product_specific_effectiveness_verified": false,
+  "controlled_ab_results": null,
+  "paid_attributable_orders": null,
+  "affiliate_commissions_settled": null,
+  "qualified_human_sessions": null,
+  "net_revenue_per_1000_qualified_sessions": null,
+  "notes": "Not computable, not zero; unknown product rights, no partner approval. Vendor promises are not scientific proof. No personal data collected."
+}
