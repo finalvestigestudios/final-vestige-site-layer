@@ -27,6 +27,8 @@ def has_unescaped_formula_prefix(value: str) -> bool:
     Called only with built-in str, after size/type checks in the CSV publisher.
     Skip import-ignorable *leading* characters for inspection only. Preserve
     legitimate plain negative amounts and apostrophe-escaped source text.
+    Inspect NFKC-compatible operator variants at the same leading boundary,
+    but do not normalize or alter the exported evidence itself.
     """
     for index, char in enumerate(value):
         if char.isspace() or unicodedata.category(char) in _IGNORABLE_CATEGORIES:
@@ -35,5 +37,11 @@ def has_unescaped_formula_prefix(value: str) -> bool:
             return True
         if char == "-":
             return _CANONICAL_NEGATIVE_DECIMAL.fullmatch(value[index:]) is None
-        return False
+        # Some spreadsheet importers apply Unicode compatibility folds before
+        # deciding whether a cell is a formula. Check the first meaningful
+        # character's NFKC equivalent without rewriting the source evidence.
+        # A compatibility-form minus is *never* a canonical ASCII Decimal
+        # prefix: the sanitizer must explicitly escape it for review.
+        compatibility = unicodedata.normalize("NFKC", char)
+        return bool(compatibility and compatibility[0] in "=+@-")
     return False
