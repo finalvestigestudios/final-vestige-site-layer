@@ -49,6 +49,10 @@ function validate(a) {
  push(by(293)?.usage_evidence?.status==="published_author_bio_jsonld_image"&&by(293)?.usage_evidence?.page_id===234,"published author image");
  push(by(405)?.usage_evidence?.status==="draft_product_page_img_jetpack_819x1024"&&by(405)?.usage_evidence?.page_id===85,"draft cover not live wire");
  push(by(482)?.usage_evidence?.status==="unknown_not_assigned_or_reconciled","opaque PNG not declared orphan");
+ const cross=a?.published_post_inline_image_crosscheck;
+ push(cross?.published_posts===66&&cross?.stored_inline_img_src_slots===361,"66/361 source census crosscheck");
+ push(cross?.exact_filename_matches?.["293_ne_png"]===0&&cross?.exact_filename_matches?.["405_water_cover"]===0&&cross?.exact_filename_matches?.["482_opaque_png"]===0,"none of three in article img tags (not global orphan)");
+ push(Array.isArray(cross?.underlying_source_blob_shas)&&cross.underlying_source_blob_shas.join(",")==="05b01ce3876a62233b1bb497cdc4b1e842d487ee,fe4a33b8a0ca0d2c19d8a577d92281af0ce1e9e7,ccda35904b62ed1f2dbda09ab5001c39888b6faa,a4e0ad40652446761fdcc5f879127038255d8838,c3278c73bd6498debb541e9a52dc3df9b4fd3e61,aab2002740fcd59bb0a192d80a86a3b2e1514e26","pinned 6 inventory blobs");
  const checks=a?.read_only_page_checks;
  push(Array.isArray(checks)&&checks.some(x=>x.id===234&&x.status==="publish"&&x.filename_hits.founder_portrait>0)&&checks.some(x=>x.id===85&&x.status==="draft"&&x.filename_hits.water_manual>0),"fresh targeted page evidence");
  return fail;
