@@ -1,0 +1,24 @@
+'use strict';
+const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
+const read=n=>fs.readFileSync(path.join(__dirname,n),'utf8');
+const A=read('zen12-pilot-text.html'),B=read('zen12-pilot-storyboard.html'),hub=read('mind-hub-wordpress-draft.html');
+const claims=JSON.parse(read('claim-evidence-matrix.json'));
+const article=read('self-hypnosis-investigation.md'),guide=read('hypnosis-live-buyer-guide.md'),contract=read('conversion-and-qa-contract.md');
+let passed=0;
+function test(name,fn){try{fn();passed++;console.log('PASS '+name)}catch(e){console.error('FAIL '+name+' '+e.message);process.exitCode=1}}
+const section=h=>h.match(/<section aria-labelledby="r136-title">[\s\S]*?<\/section>/)?.[0];
+test('A B identical buyer section',()=>assert.equal(section(A),section(B)));
+test('A B prospective disclosures beside disabled button',()=>{for(const h of [A,B]){let p=h.indexOf('id="r136-disclose"'),q=h.indexOf('<button type="button" disabled');assert.ok(p>0&&q>p&&q-p<600);assert.match(h,/aria-describedby="r136-disclose"/);assert.match(h,/may earn a commission/)}});
+test('no script or form elements',()=>{for(const h of [A,B,hub]) assert.doesNotMatch(h,/<(?:script|form)(?:\s|>)/i)});
+test('no active unauthorized merchant link',()=>{for(const h of [A,B,hub])assert.doesNotMatch(h,/<a[^>]+href="https?:\/\/(?:zen12|hypnosislive|affiliates\.inspire3|payhip)/i)});
+test('no autoplay attributes',()=>{for(const h of [A,B,hub])assert.doesNotMatch(h,/<(?:video|audio)[^>]*\sautoplay(?:\s|=|>)/i)});
+test('B video is storyboard not embedded media',()=>{assert.match(B,/STORYBOARD ONLY/);assert.match(B,/<details open>/);assert.match(B,/00–06/);assert.match(B,/34–40/);assert.doesNotMatch(B,/<video(?:\s|>)/i)});
+test('A does not render film',()=>assert.doesNotMatch(A,/<details open>/));
+test('noJS and reduced motion',()=>{for(const h of [A,B,hub])assert.match(h,/prefers-reduced-motion/);assert.match(A,/max-width:390px/)});
+test('free Focus unchanged, no new form',()=>{for(const h of [A,B,hub])assert.match(h,/https:\/\/finalvestige.com\/focus\//)});
+test('claim register provenance and rejections',()=>{assert.ok(claims.claims.length>=20&&claims.gates.length>=15);assert.ok(claims.claims.every(c=>c.source.startsWith('https://')&&c.disposition));assert.ok(claims.claims.some(c=>c.id==='R11'&&c.disposition.startsWith('REJECT')))});
+test('all commercial gates closed',()=>assert.ok(claims.gates.every(c=>c.state==='CLOSED')));
+test('article research and historical route',()=>{assert.match(article,/22 randomized controlled trials/);assert.match(article,/49 meta-analyses/);assert.match(article,/44 studies/);assert.match(article,/puységur/i);assert.doesNotMatch(article,/If you purchase through this link/i)});
+test('exact Hypnosis Live SKU seller copy qualified',()=>{assert.match(guide,/44-minute/);assert.match(guide,/61 MB/);assert.match(guide,/14-day/);assert.match(guide,/not verified/i)});
+test('attribution not revenue',()=>{assert.match(contract,/merchant_confirmed_paid_order/);assert.match(contract,/affiliate_outbound/);assert.match(contract,/NOT_COMPUTABLE/);assert.match(contract,/utm_content/);assert.match(contract,/HARD HOLD/)});
+console.log('PASS_COUNT '+passed);if(process.exitCode)process.exit(process.exitCode);

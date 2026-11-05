@@ -1,0 +1,246 @@
+{
+  "reviewed_at": "2026-11-04",
+  "lane": "Mind & Perception",
+  "release_state": "HARD_HOLD",
+  "offers": [
+    "Hypnosis Live — Hypnotize Yourself",
+    "Zen12 — Premium"
+  ],
+  "claims": [
+    {
+      "id": "R01",
+      "claim": "2019 self-hypnosis review 576 records; 22 trials",
+      "disposition": "SUPPORTED_LIMITED",
+      "source": "https://eprints.bournemouth.ac.uk/31277/",
+      "limits": "Clinical heterogeneous trials; not retail MP3"
+    },
+    {
+      "id": "R02",
+      "claim": "Independent self-hypnosis practice differs from simply hearing an audio",
+      "disposition": "SUPPORTED_LIMITED",
+      "source": "https://eprints.bournemouth.ac.uk/31277/",
+      "limits": "No universal dose or automatic effect"
+    },
+    {
+      "id": "R03",
+      "claim": "2024 clinical overview 49 meta-analyses, 261 distinct studies",
+      "disposition": "SUPPORTED_LIMITED",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/38268815/",
+      "limits": "Only nine high-method-quality analyses"
+    },
+    {
+      "id": "R04",
+      "claim": "2023 sleep review included 44 studies with mixed outcomes",
+      "disposition": "SUPPORTED_LIMITED",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/37399315/",
+      "limits": "Not buyer product outcomes"
+    },
+    {
+      "id": "R05",
+      "claim": "Hypnotize Yourself seller describes 44 minute 61MB MP3",
+      "disposition": "SELLER_DESCRIBED",
+      "source": "https://hypnosislive.com/personal-improvement/hypnotize-yourself",
+      "limits": "Content/playback not tested"
+    },
+    {
+      "id": "R06",
+      "claim": "Hypnotize Yourself seller display 17.95 and crossed out 22.95",
+      "disposition": "SELLER_PRICE_ONLY",
+      "source": "https://hypnosislive.com/personal-improvement/hypnotize-yourself",
+      "limits": "Actual checkout not verified"
+    },
+    {
+      "id": "R07",
+      "claim": "Hypnotize Yourself page advertises 14 day refund",
+      "disposition": "SELLER_TERMS_ONLY",
+      "source": "https://hypnosislive.com/personal-improvement/hypnotize-yourself",
+      "limits": "Precise terms/refund experience unknown"
+    },
+    {
+      "id": "R08",
+      "claim": "Hypnotize Yourself changes absolutely any life outcome",
+      "disposition": "REJECT_UNSUBSTANTIATED",
+      "source": "https://hypnosislive.com/personal-improvement/hypnotize-yourself",
+      "limits": "Product-specific evidence absent"
+    },
+    {
+      "id": "R09",
+      "claim": "Hypnosis Live catalogs over 200 MP3 tracks",
+      "disposition": "SELLER_DESCRIBED",
+      "source": "https://hypnosislive.com/",
+      "limits": "Inventory may change"
+    },
+    {
+      "id": "R10",
+      "claim": "Zen12 Premium described as 48 MP3 across 12 levels",
+      "disposition": "SELLER_DESCRIBED",
+      "source": "https://zen12.com/hnp",
+      "limits": "No firsthand product verification"
+    },
+    {
+      "id": "R11",
+      "claim": "Zen12 12 minutes equals one hour advanced meditation",
+      "disposition": "REJECT_UNSUBSTANTIATED",
+      "source": "https://zen12.com/hnp",
+      "limits": "No exact-product independent equivalence evidence"
+    },
+    {
+      "id": "R12",
+      "claim": "Conditional Zen12 price universally available",
+      "disposition": "REJECT_UNVERIFIED",
+      "source": "https://zen12.com/secret/",
+      "limits": "Coupon eligibility and checkout unknown"
+    },
+    {
+      "id": "R13",
+      "claim": "Zen12 free audio separately subscribes merchant newsletter",
+      "disposition": "SELLER_CONSENT_NOTICE",
+      "source": "https://zen12.com/welcome",
+      "limits": "Different from FV Jetpack"
+    },
+    {
+      "id": "R14",
+      "claim": "Inspire3 shares some identifying buyer information with affiliates",
+      "disposition": "OFFICIAL_PRIVACY_POLICY",
+      "source": "https://inspire3.com/privacy/",
+      "limits": "Requires contractual aggregate-only reporting protections"
+    },
+    {
+      "id": "R15",
+      "claim": "Public Inspire3 affiliate portal proves FV accepted",
+      "disposition": "REJECT_UNVERIFIED",
+      "source": "https://affiliates.inspire3.com/",
+      "limits": "No named partner documentation"
+    },
+    {
+      "id": "R16",
+      "claim": "Public commission/payout offer proves FV-specific terms",
+      "disposition": "REJECT_UNVERIFIED",
+      "source": "https://affiliates.inspire3.com/",
+      "limits": "No FV contract, approved link or tracking terms"
+    },
+    {
+      "id": "R17",
+      "claim": "FTC expects clear material-connection disclosure near purchase link",
+      "disposition": "REGULATORY_REQUIREMENT",
+      "source": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "limits": "Do not rely on footer alone"
+    },
+    {
+      "id": "R18",
+      "claim": "FTC requires appropriate support for health advertising claims",
+      "disposition": "REGULATORY_REQUIREMENT",
+      "source": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "limits": "Do not inherit claims from seller"
+    },
+    {
+      "id": "R19",
+      "claim": "Published FV free Fieldbook is existing Focus funnel",
+      "disposition": "VERIFIED_PUBLISHED",
+      "source": "https://finalvestige.com/focus/",
+      "limits": "Resource view not verified subscribed lead"
+    },
+    {
+      "id": "R20",
+      "claim": "Published Puységur archive is historical source",
+      "disposition": "VERIFIED_PUBLISHED",
+      "source": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "limits": "Cannot support retail therapy claims"
+    },
+    {
+      "id": "R21",
+      "claim": "Published Mesmerism analysis is existing live route",
+      "disposition": "VERIFIED_PUBLISHED",
+      "source": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "limits": "History not endorsement"
+    },
+    {
+      "id": "R22",
+      "claim": "Affiliate click counts as confirmed commission",
+      "disposition": "REJECT",
+      "source": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "limits": "Only confirmed paid merchant outcomes count"
+    },
+    {
+      "id": "R23",
+      "claim": "Current attributable net/1000 qualified humans known",
+      "disposition": "NOT_COMPUTABLE",
+      "source": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "limits": "No merchant settled revenue or qualified denominator"
+    }
+  ],
+  "gates": [
+    {
+      "name": "named_affiliate_approval",
+      "state": "CLOSED"
+    },
+    {
+      "name": "approved_tracking_link",
+      "state": "CLOSED"
+    },
+    {
+      "name": "advertising_channel_permission",
+      "state": "CLOSED"
+    },
+    {
+      "name": "official_approved_creatives",
+      "state": "CLOSED"
+    },
+    {
+      "name": "merchant_checkout_total",
+      "state": "CLOSED"
+    },
+    {
+      "name": "merchant_refund_conditions",
+      "state": "CLOSED"
+    },
+    {
+      "name": "privacy_data_agreement",
+      "state": "CLOSED"
+    },
+    {
+      "name": "product_specific_claim_proof",
+      "state": "CLOSED"
+    },
+    {
+      "name": "live_original_optional_video_webvtt",
+      "state": "CLOSED"
+    },
+    {
+      "name": "native_browser_accessibility",
+      "state": "CLOSED"
+    },
+    {
+      "name": "mobile_cwv",
+      "state": "CLOSED"
+    },
+    {
+      "name": "grok_verified_asset_id",
+      "state": "CLOSED"
+    },
+    {
+      "name": "native_jetpack_confirmed_lead",
+      "state": "CLOSED"
+    },
+    {
+      "name": "paid_product_rights_fulfillment",
+      "state": "CLOSED"
+    },
+    {
+      "name": "merchant_verified_order",
+      "state": "CLOSED"
+    },
+    {
+      "name": "reconciled_refunds_fees",
+      "state": "CLOSED"
+    },
+    {
+      "name": "qualified_human_sessions",
+      "state": "CLOSED"
+    },
+    {
+      "name": "founder_release_approval",
+      "state": "CLOSED"
+    }
+  ]
+}
