@@ -56,7 +56,7 @@ pass(words(investigation)>=1600,'substantive article');
 pass(words(memo)>=1100,'substantive conversion plan');
 for(const x of ['Simons','Chabris','Most','Jensen','Drew','Puységur','2013','1999','2010','Change Blindness','Five-minute','not an affiliate','NOT approved'])pass(investigation.toLowerCase().includes(x.toLowerCase()),'article evidence '+x);
 for(const url of ['10.1068/p281059','10.1037/0033-295X.112.1.217','10.3758/PBR.16.2.398','10.1068/i0386','10.1177/0956797613479386'])pass(investigation.includes(url),'citation '+url);
-pass(investigation.includes('https://finalvestige.com/focus/'),'article's free resource exists');
+pass(investigation.includes('https://finalvestige.com/focus/'),"article's free resource exists");
 pass(!/\[.*?\]\(https:\/\/[^)]*(?:clickbank|affiliates\.inspire3)/i.test(investigation),'no affiliate recommendation in investigation');
 pass(/Krass, Sachiko Kinoshita, and Kevin M\. McConkey/.test(memory),'coauthors corrected');
 pass(/Muschalla and Schönborn/.test(memory),'coauthors corrected');
