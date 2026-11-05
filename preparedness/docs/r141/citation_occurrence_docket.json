@@ -1,0 +1,264 @@
+{
+  "schema": "R141-CITATION-OCCURRENCE-1",
+  "r140_rc_sha": "ddb3528ba6494dada1fa1c3a142ce746e3a67706",
+  "r140_manifest_blob": "a839c53bc3b6f7c72c7eaf1c901edae02664007e",
+  "review_state": "UNREVIEWED_HUMAN_REQUIRED",
+  "article_deltas": [
+    {
+      "slug": "family-communication-plan",
+      "cluster": "shelter",
+      "rc_blob": "8ac8bd7dba3be15d477c15737e54d83364d72527",
+      "contributor_blob": "16e2b1ec37fd6ea37f442d13e831180253c709b9",
+      "counts": [
+        {
+          "id": "shelter-ca-cde-safety-plans",
+          "rc": 1,
+          "contributor": 0
+        },
+        {
+          "id": "shelter-cdc-chemical-evac",
+          "rc": 1,
+          "contributor": 0
+        },
+        {
+          "id": "shelter-cdc-chemical-sip",
+          "rc": 1,
+          "contributor": 0
+        },
+        {
+          "id": "shelter-fema-reunification",
+          "rc": 1,
+          "contributor": 0
+        },
+        {
+          "id": "shelter-ncmec-hotline",
+          "rc": 1,
+          "contributor": 0
+        },
+        {
+          "id": "shelter-ready-plan-locations",
+          "rc": 6,
+          "contributor": 5
+        },
+        {
+          "id": "shelter-ready-tech",
+          "rc": 1,
+          "contributor": 0
+        }
+      ]
+    },
+    {
+      "slug": "go-bags",
+      "cluster": "start",
+      "rc_blob": "e5910015fc6e33ad015bc5dc0605b86622b701be",
+      "contributor_blob": "5135639786bbafa4e03939a74659cd0f31df3564",
+      "counts": [
+        {
+          "id": "start-cdc-disability-evacuate",
+          "rc": 3,
+          "contributor": 2
+        }
+      ]
+    },
+    {
+      "slug": "home-fire-escape-plan",
+      "cluster": "shelter",
+      "rc_blob": "0412484304a3bcf08f0bb1b170110f617e3c2869",
+      "contributor_blob": "ba869874b5ee6ef85a7694e65a364e12f4aed873",
+      "counts": [
+        {
+          "id": "shelter-nfpa-escape",
+          "rc": 20,
+          "contributor": 21
+        },
+        {
+          "id": "shelter-nfpa-high-rise",
+          "rc": 2,
+          "contributor": 0
+        },
+        {
+          "id": "shelter-usfa-escape-grid",
+          "rc": 1,
+          "contributor": 0
+        },
+        {
+          "id": "shelter-usfa-high-rise",
+          "rc": 2,
+          "contributor": 3
+        },
+        {
+          "id": "shelter-usfa-high-rise-handout",
+          "rc": 3,
+          "contributor": 0
+        },
+        {
+          "id": "usfa-fire-escape",
+          "rc": 10,
+          "contributor": 11
+        }
+      ]
+    },
+    {
+      "slug": "household-emergency-plan",
+      "cluster": "start",
+      "rc_blob": "f81cd43516e8295104230412f18776919148f905",
+      "contributor_blob": "8ca5c261dba56eeaf79c445332381a74867233de",
+      "counts": []
+    },
+    {
+      "slug": "navigation-before-gps",
+      "cluster": "histfield",
+      "rc_blob": "3c02e58c30d1d608224944142f31fbead44a1252",
+      "contributor_blob": "49beb68339a6b85b07d686c0cfb9fe1d88b8de4f",
+      "counts": []
+    },
+    {
+      "slug": "outage-heat-cold-generators",
+      "cluster": "shelter",
+      "rc_blob": "2cd3e30b3a7e3dfdb3fd30cfd2b832355f58dfe2",
+      "contributor_blob": "47d949d97ddb15abc5fdc3b556f37aea5036ce29",
+      "counts": [
+        {
+          "id": "fsis-power-failure",
+          "rc": 1,
+          "contributor": 0
+        },
+        {
+          "id": "shelter-cpsc-co-tips",
+          "rc": 3,
+          "contributor": 0
+        },
+        {
+          "id": "shelter-nws-winter-during",
+          "rc": 1,
+          "contributor": 0
+        }
+      ]
+    },
+    {
+      "slug": "pemmican-and-dried-meats",
+      "cluster": "histfood",
+      "rc_blob": "0b3319cc85ea2bc6d069b46d13a40e12ddbd5bc5",
+      "contributor_blob": "1febc8929f8b90c81a3fcef1e46a2811778b7e06",
+      "counts": [
+        {
+          "id": "hist-food-nchfp-jerky",
+          "rc": 7,
+          "contributor": 0
+        },
+        {
+          "id": "nchfp-jerky",
+          "rc": 0,
+          "contributor": 7
+        }
+      ]
+    },
+    {
+      "slug": "pioneer-supply-chains-failed",
+      "cluster": "histfield",
+      "rc_blob": "ad158ee898f76d05bcb65c845b1e4a0e8103c660",
+      "contributor_blob": "3643c50b43ca7ba6c1d9bc439e7c78730503b80f",
+      "counts": []
+    },
+    {
+      "slug": "pioneer-travel-rations",
+      "cluster": "histfood",
+      "rc_blob": "058c90b763d8cd6dec0731a7b0a9cee4dd5a57c7",
+      "contributor_blob": "a658481d828dc4c5ba85f296adbfbee0514f0611",
+      "counts": [
+        {
+          "id": "hist-food-nchfp-jerky",
+          "rc": 1,
+          "contributor": 0
+        },
+        {
+          "id": "nchfp-jerky",
+          "rc": 0,
+          "contributor": 1
+        }
+      ]
+    },
+    {
+      "slug": "preparedness-real-households",
+      "cluster": "start",
+      "rc_blob": "68344cf6c4022285fffb2a01f42027bf6f9ee95d",
+      "contributor_blob": "70d03c366e10db623929f118501becfa26c48bab",
+      "counts": []
+    },
+    {
+      "slug": "root-cellars-cool-storage",
+      "cluster": "histhome",
+      "rc_blob": "2ff8d029769aa9a97de6b1e388d937899f3af38c",
+      "contributor_blob": "7f375c32d74f2828b4912f5692abc44483e4629a",
+      "counts": []
+    },
+    {
+      "slug": "sanitation-before-germ-theory",
+      "cluster": "histhome",
+      "rc_blob": "d56df76647d2598f35cfd4609f91649cef063f12",
+      "contributor_blob": "02090fc1b773fd79f08a7ba754b6125844c37eab",
+      "counts": []
+    },
+    {
+      "slug": "shelter-or-evacuate",
+      "cluster": "shelter",
+      "rc_blob": "de3cb805041904cf22d4f216296bd4c8ddec17c1",
+      "contributor_blob": "b8acf07e533eea43795aa242f39fd926b080130f",
+      "counts": [
+        {
+          "id": "shelter-cdc-chemical-evac",
+          "rc": 1,
+          "contributor": 0
+        },
+        {
+          "id": "shelter-cdc-chemical-sip",
+          "rc": 3,
+          "contributor": 0
+        },
+        {
+          "id": "shelter-ready-floods",
+          "rc": 5,
+          "contributor": 4
+        },
+        {
+          "id": "shelter-ready-hazmat",
+          "rc": 8,
+          "contributor": 5
+        },
+        {
+          "id": "shelter-ready-hurricanes",
+          "rc": 8,
+          "contributor": 7
+        }
+      ]
+    },
+    {
+      "slug": "three-day-kit",
+      "cluster": "start",
+      "rc_blob": "933f38ff3cd55a241cf9b392014fc52d4961e84f",
+      "contributor_blob": "ef5463ca668166766ca3d868908bc0bcb6040a23",
+      "counts": [
+        {
+          "id": "start-cdc-power-outage",
+          "rc": 1,
+          "contributor": 0
+        },
+        {
+          "id": "start-fema-power-sheet",
+          "rc": 5,
+          "contributor": 4
+        },
+        {
+          "id": "start-fsis-emergency-food",
+          "rc": 1,
+          "contributor": 0
+        },
+        {
+          "id": "start-ready-power",
+          "rc": 6,
+          "contributor": 5
+        }
+      ]
+    }
+  ]
+}
