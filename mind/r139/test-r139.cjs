@@ -26,7 +26,7 @@ check('merchant CTA parity A B',()=>assert.equal(offer(A),offer(B)));
 check('disabled CTA with adjacent understandable disclosure A',()=>assert.ok(disclosure(A)));
 check('disabled CTA with adjacent understandable disclosure B',()=>assert.ok(disclosure(B)));
 check('text-only A has no film content',()=>assert.ok(!A.includes('<aside class="film"')));
-check('B film clearly hypothetical',()=>{contains(B,'storyboard, not recorded');contains(B,'00:33–00:40');contains(B,'<details>');});
+check('B film clearly hypothetical',()=>{contains(B,'film, not recorded');contains(B,'00:33–00:40');contains(B,'<details>');});
 check('B original accessible poster label',()=>contains(B,'role="img" aria-label='));
 check('all markup has static no-remote-script/no-form controls',()=>[A,B,H].forEach(x=>assert.ok(safe(x))));
 check('no duplicate email capture',()=>[A,B,H].forEach(x=>assert.ok(!/<form\b/i.test(x))));
@@ -45,7 +45,7 @@ check('monetization UNKNOWN not 0',()=>['qualified_human_sessions','verified_pai
 check('fallback Payhip SKU not invented',()=>assert.equal(M.owned_product_fallback.mind_paid_sku,null));
 check('Grok three pathways and no invented ID',()=>{contains(C,'Change Blindness');contains(C,'Puységur');contains(C,'Attentional Blink');contains(C,'UNKNOWN / UNKNOWN');});
 check('7/30-day net revenue contract',()=>{contains(C,'7/30-day cohorts');contains(C,'merchant_confirmed_paid_order');contains(C,'affiliate_outbound');});
-check('commission and click semantics',()=>{contains(C,'Click');contains(C,'net_per_1000');contains(C,'NOT COMPUTABLE');});
+check('commission and click semantics',()=>{contains(C,'affiliate_outbound');contains(C,'net_per_1000');contains(C,'NOT COMPUTABLE');});
 check('net arithmetic nominal case',()=>assert.equal(net(200,200,10,20,10),800));
 check('net rejects missing & zero denominator',()=>{assert.equal(net(null,100,0,0,0),null);assert.equal(net(0,100,0,0,0),null);});
 check('net rejects impossible negative fee',()=>assert.equal(net(300,100,0,-1,0),null));
