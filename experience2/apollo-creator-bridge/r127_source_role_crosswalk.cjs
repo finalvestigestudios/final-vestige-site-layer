@@ -16,6 +16,7 @@ const crypto = require('node:crypto');
 const child = require('node:child_process');
 const {auditRoute}=require('./r129_creator_route_gate.cjs');
 const {auditMediaLedger}=require('./r130_nasa_media_custody_gate.cjs');
+const {assess: assessConversionEvidence}=require('./r136_conversion_evidence_gate.cjs');
 const NASA_MEDIA_LEDGER=require('./r130_nasa_media_custody.json');
 const ROOT = __dirname;
 const NASA_BOARD = 'https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/';
@@ -127,6 +128,13 @@ function audit(apollo, research) {
     errors.push('VISIBLE_NOJS_EVIDENCE_BOUNDARY_MISSING');
   if(/<img\b|<picture\b|<iframe\b/i.test(apollo))
     errors.push('UNREVIEWED_EMBEDDED_MEDIA');
+  // R136: record conversion feasibility without creating any CTA, attribution or
+  // paid-order claim. PR #158 editorial flags remain independently disqualifying.
+  const conversionEvidence=assessConversionEvidence({
+    landingHtml:apollo,routeAudit:creatorRoute,mediaAudit:mediaCustody,
+    researchAudit:{status:errors.length===0&&unresolved.length===0?'PASS':'FAIL'},
+    offer:null,campaign:null,browserReceipt:null,merchantReceipts:null
+  });
   // Rights decisions and independent historical review remain external gates
   // even after the editorial warnings are corrected.
   return {schema:'fv.apollo.research-desk.crosswalk.v1',
@@ -137,6 +145,7 @@ function audit(apollo, research) {
     source_custody:snapshotVerified?'VERIFIED_SNAPSHOT':'BLOCKED_UNREVIEWED_SOURCE',
     source: {apollo:'Apollo isolated staging',research_desk:'Independent PR #158 (read-only)'},
     creator_route:creatorRoute,media_custody:mediaCustody,
+    conversion_evidence:conversionEvidence,
     record_count:records.length,records,integrity_errors:errors,
     editorial_flags:unresolved,photograph_rights_approved:0,
     research_desk_edited:false,
