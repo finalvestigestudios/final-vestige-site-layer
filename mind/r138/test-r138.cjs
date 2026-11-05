@@ -1,0 +1,15 @@
+/* Node built-in offline compliance guardrails. Run: node --test mind/r138/test-r138.cjs */
+'use strict';
+const test=require('node:test'), assert=require('node:assert/strict'), fs=require('node:fs'), path=require('node:path');
+const here=__dirname, read=n=>fs.readFileSync(path.join(here,n),'utf8');
+const a=read('zen12-presell-A.html'), b=read('zen12-presell-B.html'), article=read('mcgurk-investigation.md'), guide=read('zen12-buyer-guide.md'), matrix=JSON.parse(read('claim-matrix.json')), flow=read('conversion-proof.md');
+const buyer=html=>html.slice(html.indexOf('<div class="review">'));
+test('identical substantive buyer disclosure and CTA in both variants',()=>assert.equal(buyer(a),buyer(b)));
+test('disabled merchant controls and near-control disclosure',()=>{for(const h of [a,b]){assert.match(h,/<p class="disclosure">[\s\S]*?commission[\s\S]*?<\/p>\s*<button class="closed" disabled/mi);assert.match(h,/aria-describedby="closedreason"/);}});
+test('no affiliate redirect, signup form, script, iframe or auto media',()=>{for(const h of [a,b]){assert.doesNotMatch(h,/<(script|iframe|form|video)\b/i);assert.doesNotMatch(h,/\bautoplay\b/i);assert.doesNotMatch(h,/href="https?:\/\/(zen12|affiliates\.inspire3)\.[^" ]+\?(?:[^" ]*affiliate|[^" ]*ref=)/i);}});
+test('storyboard only B, no fake playable video',()=>{assert.doesNotMatch(a,/id="optional-video"/);assert.match(b,/id="optional-video"/);assert.match(b,/NOT A PLAYABLE VIDEO/);assert.equal((b.match(/<time>/g)||[]).length,6);assert.match(b,/<details><summary>/);});
+test('no-JS, semantic landmarks, free Focus route, responsive',()=>{for(const h of [a,b]){assert.match(h,/<main /);assert.match(h,/aria-label="On this guide"/);assert.match(h,/https:\/\/finalvestige.com\/focus\//);assert.match(h,/max-width:390px/);assert.match(h,/prefers-reduced-motion/);assert.match(h,/<meta name="robots" content="noindex,nofollow">/);}});
+test('editorial investigation independent and primary sourced',()=>{assert.match(article,/McGurk and MacDonald/);assert.match(article,/nature\.com\/articles\/264746a0/);assert.match(article,/pubmed\.ncbi\.nlm\.nih\.gov\/30418995/);assert.match(article,/no affiliate recommendation/i);});
+test('seller claims not adopted, privacy and newsletter addressed',()=>{assert.match(guide,/seller description/i);assert.match(guide,/has not been independently substantiated/i);assert.match(guide,/newsletter/i);assert.match(guide,/customer-level affiliate reporting/i);assert.match(guide,/No affiliate earning link is active/i);});
+test('closed program and settlement gates',()=>{assert.equal(matrix.authorizedAffiliateUrl,null);assert.equal(matrix.partnerEligibility,'UNVERIFIED');assert.ok(matrix.releaseGates.length>=10);assert.ok(matrix.releaseGates.every(g=>g.status==='CLOSED'));assert.ok(matrix.claims.some(c=>c.decision==='REJECT_UNSUBSTANTIATED_PRODUCT_EFFICACY'));});
+test('verified settlement distinct from clicks and 7/30 cohort',()=>{assert.match(flow,/affiliate outbound event is \*\*not\*\*/i);assert.match(flow,/7-day and 30-day cohorts/);assert.match(flow,/NOT_COMPUTABLE/);assert.match(flow,/Actual playable media if B is launched/);});
