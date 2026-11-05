@@ -1,0 +1,92 @@
+{
+  "schema": "fv-dispatch-r130-2026-11-04",
+  "status": "DRAFT_UNSENT",
+  "source_master_pr": 175,
+  "source_master_sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "source_safety_pr": 201,
+  "source_parent_pr": 1038,
+  "original_canonical_manuscripts_unchanged": true,
+  "campaign_mix": {
+    "editorial": 4,
+    "commercial_review_pending": 2
+  },
+  "issue_number": 3,
+  "offer_name": "Zen12 Premium (provisional)",
+  "offer_authorization": "UNVERIFIED",
+  "merchant_email_channel_permission": "UNVERIFIED",
+  "merchant_tracking_format": "UNVERIFIED",
+  "partner_approved_creative": "UNVERIFIED",
+  "final_price": "UNVERIFIED",
+  "actual_refund_terms": "UNVERIFIED",
+  "guide_live": false,
+  "earning_url": null,
+  "send_authorized": false,
+  "approved_audience": false,
+  "rendered_unsubscribe_verified": false,
+  "publisher_postal_address_verified": false,
+  "received_jetpack_preview_verified": false,
+  "recipient_eligibility_verified": false,
+  "delivered_fieldbook_verified": false,
+  "confirmed_signup_attribution_verified": false,
+  "source_observations": [
+    {
+      "source": "https://zen12.com/hnp",
+      "fact": "12 levels and 4 listening styles; Premium displayed 48 MP3s and $87.99; 1-year refund claimed; not authenticated checkout",
+      "kind": "seller_claim",
+      "checked_date": "2026-11-04"
+    },
+    {
+      "source": "https://zen12.com/hnp",
+      "fact": "Free MP3 email form says 'You will receive our newsletter', a separate seller list",
+      "kind": "consent_observation",
+      "checked_date": "2026-11-04"
+    },
+    {
+      "source": "https://inspire3.com/privacy/",
+      "fact": "Privacy policy says affiliate buyers' name, email and purchased products may be shared with affiliates",
+      "kind": "policy_observation",
+      "checked_date": "2026-11-04"
+    },
+    {
+      "source": "https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety",
+      "fact": "General research has limitations and reports possible negative experiences; does not validate product",
+      "kind": "official_research",
+      "checked_date": "2026-11-04"
+    },
+    {
+      "source": "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business",
+      "fact": "Truthful headers/subject, valid physical address, recognizable opt out and prompt opt-out handling required for commercial mail",
+      "kind": "official_compliance",
+      "checked_date": "2026-11-04"
+    },
+    {
+      "source": "https://affiliates.inspire3.com/",
+      "fact": "Public affiliate login does not demonstrate named Final Vestige acceptance or approved email marketing rights",
+      "kind": "program_public",
+      "checked_date": "2026-11-04"
+    }
+  ],
+  "subscriber_snapshot": {
+    "as_of_utc": "2026-11-05T05:38:33Z",
+    "total": 3,
+    "confirmed": 3,
+    "unconfirmed": 2,
+    "not_additive": true,
+    "email_eligible": null,
+    "jetpack_new_post_auto": false,
+    "jetpack_format": "excerpt"
+  },
+  "conversion_contract": {
+    "asset_id": "prospective_unique_grok_asset_id",
+    "utm_source": "dispatch",
+    "utm_medium": "email",
+    "utm_campaign": "mind_pilot_2026_11",
+    "utm_content": "dispatch_issue_03",
+    "destination": "[[APPROVED_LIVE_FIRST_PARTY_ZEN12_BUYER_GUIDE_REQUIRED]]",
+    "verified_orders": null,
+    "net_revenue_usd": null,
+    "qualified_human_sessions": null,
+    "net_revenue_per_1000": null
+  },
+  "status_reason": "HOLD_ALL_UNSENT; additional HOLD_MERCHANT; content is optional editorial candidate, not approved canonical replacement"
+}
