@@ -18,7 +18,8 @@
     "threshold_bytes_exclusive": 1572864,
     "oversized_original_count": 13,
     "oversized_original_storage_bytes": 43522829,
-    "real_visitor_transfer_bytes": null
+    "real_visitor_transfer_bytes": null,
+    "visitor_transfer_bytes": null
   },
   "prioritized_existing_p0_exact_live_sources": [
     {
