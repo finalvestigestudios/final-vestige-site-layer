@@ -70,7 +70,7 @@ test("No PII or marketing tracking in local review HTML",()=>{
  assert(!/mailto:|<form\b|<input\b|<iframe\b/i.test(html));
 });
 test("Full mail body includes NASA summary + one known local CTA",()=>{
- for(const anchor of ["not conclusively established","oxygen atmosphere","vulnerable wiring","90 seconds","rescue or medical","Apollo 204 Review Board"]){
+ for(const anchor of ["not conclusively established","oxygen atmosphere","vulnerable wiring","90 seconds","escape or rescue","Apollo 204 Review Board"]){
   assert(md.includes(anchor),anchor);assert(html.includes(anchor),anchor);
  }
 });
