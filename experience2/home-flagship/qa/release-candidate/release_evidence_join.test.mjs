@@ -85,3 +85,24 @@ for(const [name,change,code] of mutations){
     assert.ok(r.failure_codes.includes(code),name+': '+JSON.stringify(r.failure_codes));
   });
 }
+
+ // Verify the real producers' schema, not arbitrary optimistic boolean labels.
+const forgeryMutations=[
+  ['stage generic true-only record',x=>{x.stage.viewports[0].checks={success:true};},'STAGE_CHECKS_FAIL_360'],
+  ['no-JS generic true-only record',x=>{x.stage.no_javascript.checks={looks_ok:true};},'STAGE_NOJS_MEANING_HOLD'],
+  ['media status PASS with no network receipts',x=>{x.stage.viewports[1].image_http_delivery={status:'PASS'};},'STAGE_REAL_IMAGE_TRANSFER_HOLD_390'],
+  ['media zero bytes',x=>{x.stage.viewports[2].image_http_delivery.images[0].decoded_payload_bytes=0;},'STAGE_REAL_IMAGE_TRANSFER_HOLD_768'],
+  ['media duplicate body hash',x=>{x.stage.viewports[3].image_http_delivery.images[1].payload_sha256='a'.repeat(64);},'STAGE_REAL_IMAGE_TRANSFER_HOLD_1440'],
+  ['media totals disagree',x=>{x.stage.viewports[4].image_http_delivery.decoded_payload_total_bytes=1;},'STAGE_REAL_IMAGE_TRANSFER_HOLD_1920'],
+  ['media bad HTTP status',x=>{x.stage.viewports[0].image_http_delivery.images[0].http_status=404;},'STAGE_REAL_IMAGE_TRANSFER_HOLD_360'],
+  ['guest generic true-only record',x=>{x.guest.results[1].checks={all_ok:true};},'ANONYMOUS_FOCUS_GUEST_RENDER_HOLD'],
+];
+for(const [name,change,code] of forgeryMutations) {
+  test('reject incomplete producer receipt: '+name,()=>{
+    const x=good();change(x);
+    const r=classifyReleaseEvidence(x);
+    assert.equal(r.lab_evidence_satisfied,false,name);
+    assert.ok(r.failure_codes.includes(code),name+': '+JSON.stringify(r.failure_codes));
+    assert.equal(r.release,'HOLD');
+  });
+}
