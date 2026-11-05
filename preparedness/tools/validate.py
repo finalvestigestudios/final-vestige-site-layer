@@ -68,6 +68,7 @@ def validate(lib: build.Library | None = None) -> tuple[list[str], list[str]]:
     # Inspect ALL fragment variants, not merely a winning global dictionary
     # entry. Different branches may have read only a catalogue or a PDF section.
     url_variants: dict[str, list[dict]] = {}
+    alias_variants: dict[str, list[dict]] = {}
     raw_count = 0
     for sid, variants in lib.source_variants.items():
         for s in variants:
@@ -75,6 +76,7 @@ def validate(lib: build.Library | None = None) -> tuple[list[str], list[str]]:
             origin = s["_origin"]
             url = s["url"]
             url_variants.setdefault(url, []).append(s)
+            alias_variants.setdefault(build.review_alias_key(url), []).append(s)
             tag = f"register:{sid}@{origin}"
             if not url.startswith("https://"):
                 errors.append(f"{tag}: url must be https")
@@ -110,8 +112,15 @@ def validate(lib: build.Library | None = None) -> tuple[list[str], list[str]]:
         # _origin is provenance metadata from the loader, NOT original data.
         return {"origin": s["_origin"], "source": {k: v for k, v in s.items() if k != "_origin"}}
 
-    declared = lib.crosswalk_groups
-    observed_collisions = {url: rows for url, rows in url_variants.items() if len(rows) > 1}
+    exact_collisions = {url: rows for url, rows in url_variants.items() if len(rows) > 1}
+    # An alias means only a shared HUMAN source-scope review worklist.
+    # Keep exact-URL census separate and retain original author descriptions.
+    declared = {build.review_alias_key(url): group
+                for url, group in lib.crosswalk_groups.items()}
+    if len(declared) != len(lib.crosswalk_groups):
+        errors.append("register: duplicate canonical alias crosswalk groups")
+    observed_collisions = {url: rows for url, rows in alias_variants.items()
+                           if len(rows) > 1}
     unresolved = 0
     for url, rows in observed_collisions.items():
         item = declared.get(url)
@@ -155,7 +164,7 @@ def validate(lib: build.Library | None = None) -> tuple[list[str], list[str]]:
             errors.append("register: unique URL count changed from crosswalk baseline")
         if set(lib.crosswalk.get("article_origins", {})) != set(lib.articles):
             errors.append("taxonomy: source crosswalk article origin map must contain every article and tool")
-        if lib.crosswalk.get("duplicate_url_groups") != len(observed_collisions):
+        if lib.crosswalk.get("duplicate_url_groups") != len(exact_collisions):
             errors.append("register: collision count differs from crosswalk")
     if unresolved:
         warns.append(f"register: {unresolved} source URL collision groups have NOT received human source-scope review")
@@ -301,7 +310,8 @@ def validate(lib: build.Library | None = None) -> tuple[list[str], list[str]]:
             # or editor marks the article reviewed. Scoped reading matters.
             for sid in order:
                 source = lib.source_for(meta, sid)
-                group = lib.crosswalk_groups.get(source["url"])
+                group = lib.crosswalk_member_groups.get(
+                    (source.get("_origin"), sid, source["url"]))
                 if group and group.get("review_status") != "resolved":
                     errors.append(f"{p}: CANNOT be published with unresolved shared-source scope '{sid}'")
             for sid in order:
