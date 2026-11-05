@@ -51,7 +51,7 @@ test('artifact retains 6 source-only NASA photo links and a single H1',()=>{
 });
 test('no-JS native markup has six evidence records and search controls hidden',()=>{
  const html=buildPair().a;
- assert.equal((html.match(/data-fvx-record\b/g)||[]).length,6);
+ assert.equal((html.match(/<article\b[^>]*data-fvx-record\b/g)||[]).length,6);
  assert.match(html,/data-fvx-tools hidden/);
  assert.match(html,/data-fvx-clear hidden/);
  assert.equal((html.match(/<details\b/g)||[]).length,6);
