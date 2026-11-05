@@ -12,6 +12,48 @@ export const GUEST_WIDTHS = Object.freeze([320, 390, 768, 1440]);
 const isSha = x => typeof x === 'string' && /^[0-9a-f]{40}$/.test(x);
 const allTrue = obj => obj && typeof obj === 'object' && !Array.isArray(obj)
   && Object.keys(obj).length > 0 && Object.values(obj).every(v => v === true);
+// Use the *actual keys* emitted by verify_exact_staging.py and focus_guest_gate.py.
+// Arbitrary {checks:{ok:true}} is not evidence that required tests executed.
+const mustHaveChecks = (checks, required) => allTrue(checks)
+  && required.every(name => Object.hasOwn(checks,name) && checks[name] === true);
+export const REQUIRED_STAGE_CHECKS = Object.freeze([
+  'server_exposes_exact_index_hash','header_no_cache','header_no_index',
+  'response_csp_nonces','exactly_one_heading','all_seven_chapters',
+  'no_horizontal_root_overflow','source_galleries_survive',
+  'focus_link_present','two_cleared_archival_images',
+  'real_images_loaded','actual_image_http_payloads',
+  'locked_visual_identity','nypl_capture_not_embedded',
+  'franklin_folio_editorial_disclosure','axe_no_aa_violations'
+]);
+export const REQUIRED_NOJS_CHECKS = Object.freeze([
+  'private_shortcode_renders','all_chapters','three_cases',
+  'no_root_overflow','true_390px_viewport','no_js_case_panels_visible',
+  'nojs_archival_photographs_fetched','nojs_only_approved_photo_sources',
+  'nojs_malbone_map_not_reproduced'
+]);
+export const REQUIRED_GUEST_CHECKS = Object.freeze([
+  'focus_root','jetpack_block','guest_email_form','labelled_email',
+  'email_touch_height_44px','submit_touch_height_44px',
+  'no_self_link_only_fallback','no_horizontal_overflow','no_existing_email_data'
+]);
+const isHash = x => typeof x === 'string' && /^[0-9a-f]{64}$/.test(x);
+// media_transfer_admission.py measures *decoded response-body bytes*, not
+// Content-Length or actual on-wire bytes. A status flag alone is insufficient.
+const validDeliveredImages = item => {
+  if (item?.status !== 'PASS' || !Array.isArray(item.images)
+      || item.images.length !== 2 || !hasNoFailures(item.failure_codes)) return false;
+  const ids=item.images.map(x=>x?.archive).sort();
+  if (ids[0] !== 'apollo' || ids[1] !== 'franklin') return false;
+  const bytes=item.images.map(x=>x?.decoded_payload_bytes);
+  if (bytes.some(x=>!Number.isSafeInteger(x)||x<32||x>8*1024*1024)) return false;
+  const hashes=item.images.map(x=>x?.payload_sha256);
+  if (hashes.some(x=>!isHash(x)) || hashes[0]===hashes[1]) return false;
+  if (item.images.some(x=>x.http_status!==200||!x.response_seen
+    || !['jpeg','png','webp','avif'].includes(x.detected_raster_format)
+    || !['image/jpeg','image/png','image/webp','image/avif'].includes(x.content_type))) return false;
+  return Number.isSafeInteger(item.decoded_payload_total_bytes)
+    && item.decoded_payload_total_bytes===bytes.reduce((a,b)=>a+b,0);
+};
 const widthsAre = (items, expected) => Array.isArray(items)
   && items.length === expected.length
   && expected.every((w,i) => items[i]?.width === w);
@@ -29,14 +71,14 @@ export function classifyReleaseEvidence({sha, stage, local, lighthouse, usabilit
   must(widthsAre(stage?.viewports, STAGE_WIDTHS), 'STAGE_WIDTH_SET_MISSING');
   if (widthsAre(stage?.viewports, STAGE_WIDTHS)) {
     for (const v of stage.viewports) {
-      must(allTrue(v.checks), 'STAGE_CHECKS_FAIL_' + v.width);
+      must(mustHaveChecks(v.checks,REQUIRED_STAGE_CHECKS), 'STAGE_CHECKS_FAIL_' + v.width);
       must(v.axe?.status === 'RUN' && hasNoFailures(v.axe.violations),
         'STAGE_AXE_NOT_ZERO_' + v.width);
-      must(v.image_http_delivery?.status === 'PASS',
+      must(validDeliveredImages(v.image_http_delivery),
         'STAGE_REAL_IMAGE_TRANSFER_HOLD_' + v.width);
     }
   }
-  must(allTrue(stage?.no_javascript?.checks), 'STAGE_NOJS_MEANING_HOLD');
+  must(mustHaveChecks(stage?.no_javascript?.checks, REQUIRED_NOJS_CHECKS), 'STAGE_NOJS_MEANING_HOLD');
   must(local?.status === 'ISOLATED_BROWSER_AND_LAB_ADMISSION_PASSED_NOT_RELEASE'
     && local?.public_wordpress_writes === false
     && local?.wordpress_com_host_parity === 'NOT_ESTABLISHED',
@@ -62,7 +104,7 @@ export function classifyReleaseEvidence({sha, stage, local, lighthouse, usabilit
     'REAL_WORDPRESS_USABILITY_HOLD');
   must(guest?.url === 'https://finalvestige.com/focus/'
     && widthsAre(guest?.results, GUEST_WIDTHS)
-    && guest.results.every(r => r.pass === true && allTrue(r.checks)
+    && guest.results.every(r => r.pass === true && mustHaveChecks(r.checks, REQUIRED_GUEST_CHECKS)
       && r.markers?.guest_email_form === true
       && r.markers?.email_is_empty === true),
     'ANONYMOUS_FOCUS_GUEST_RENDER_HOLD');
