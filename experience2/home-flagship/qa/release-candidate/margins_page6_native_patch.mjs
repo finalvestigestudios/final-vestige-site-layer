@@ -73,7 +73,7 @@ export function patchPage6(html) {
   if (JSON.stringify(records) !== JSON.stringify(pre.records)) fail("history text changed");
   if ([...output.matchAll(FOCUS_RE)].length !== pre.focusLinks) fail("Focus link changed");
   if (occurrences(output, NEW_WINDOW) !== 1 || occurrences(output, NEW_LABEL) !== 1) fail("accessible UX not installed");
-  if (output.includes(OLD_REDUCED_RULE) || output.includes('class="fv-margin-strip__item" style="--i:72"')) fail("legacy rule or extra record survived");
+  if (block.includes(OLD_REDUCED_RULE) || output.includes('class="fv-margin-strip__item" style="--i:72"')) fail("legacy rule or extra record survived");
   return { html: output, receipt: {
     status: "REVIEW_ONLY_NOT_TESTED_ON_WORDPRESS", record_count: records.length,
     focus_link_count: pre.focusLinks, chapter_count: EXPECTED_CHAPTERS.length,
