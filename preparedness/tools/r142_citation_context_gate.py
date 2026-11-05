@@ -23,6 +23,8 @@ CITE = re.compile(r"\{\{cite:([a-z0-9]+(?:-[a-z0-9]+)*)\}\}")
 ANY_CITE = re.compile(r"\{\{cite:([^}]+)\}\}")
 LINK = re.compile(r"\{\{link:[^}]+\}\}")
 BLOCKS = frozenset(('p','li','h1','h2','h3','h4','h5','h6','blockquote','td','th','dd','dt','figcaption','caption'))
+VOID_TAGS = frozenset(('area','base','br','col','embed','hr','img','input','link','meta','param','source','track','wbr'))
+HIDDEN_TAGS = frozenset(('script','style','template','noscript'))
 RELEASE = 'DRAFT_HOLD_QUALIFIED_SOURCE_SAFETY_AND_QD_REVIEW_REQUIRED'
 
 
@@ -40,8 +42,16 @@ class PassageParser(HTMLParser):
         self.rows: list[dict] = []
         self.unscoped: list[str] = []
         self.blocks_seen = 0
+        self.tags: list[tuple[str, bool]] = []
 
     def handle_starttag(self, tag: str, attrs: list) -> None:
+        attributes = dict(attrs)
+        style = re.sub(r'\s+', '', attributes.get('style') or '').casefold()
+        hidden = (tag in HIDDEN_TAGS or 'hidden' in attributes or 'inert' in attributes
+                  or (attributes.get('aria-hidden') or '').casefold() == 'true'
+                  or 'display:none' in style or 'visibility:hidden' in style)
+        if tag not in VOID_TAGS:
+            self.tags.append((tag, hidden))
         if tag in BLOCKS:
             self.stack.append({'tag':tag, 'parts':[], 'index':self.blocks_seen})
             self.blocks_seen += 1
@@ -51,12 +61,25 @@ class PassageParser(HTMLParser):
         pass
 
     def handle_data(self, data: str) -> None:
+        if any(hidden for _, hidden in self.tags):
+            if ANY_CITE.search(data):
+                raise ValueError('citation concealed in hidden/script/template content')
+            return
         if self.stack:
             self.stack[-1]['parts'].append(data)
         elif ANY_CITE.search(data):
             self.unscoped.extend(ANY_CITE.findall(data))
 
+    def handle_comment(self, data: str) -> None:
+        if ANY_CITE.search(data):
+            raise ValueError('citation concealed in HTML comment')
+
     def handle_endtag(self, tag: str) -> None:
+        if tag in (t for t, _ in self.tags):
+            idx = len(self.tags) - 1 - [t for t, _ in reversed(self.tags)].index(tag)
+            if any(hidden for _, hidden in self.tags[idx+1:]):
+                raise ValueError('malformed closure around hidden citation region')
+            self.tags = self.tags[:idx]
         if tag not in BLOCKS:
             return
         if not self.stack or self.stack[-1]['tag'] != tag:
@@ -82,7 +105,7 @@ def contexts(raw: bytes) -> list[dict]:
     parser = PassageParser()
     parser.feed(html)
     parser.close()
-    if parser.stack or parser.unscoped:
+    if parser.stack or parser.unscoped or any(hidden for _, hidden in parser.tags):
         raise ValueError('unclosed blocks or citation outside recognized reader-visible block')
     literal = Counter(ANY_CITE.findall(html))
     extracted = Counter(row['id'] for row in parser.rows)
