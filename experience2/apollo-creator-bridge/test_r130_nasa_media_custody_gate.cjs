@@ -5,18 +5,18 @@ const dir=__dirname, ledger=JSON.parse(fs.readFileSync(path.join(dir,'r130_nasa_
 const source=fs.readFileSync(path.join(dir,'landing-preview.html'),'utf8');
 const run=(l,h)=>auditMediaLedger(l,h);
 const mutate=(fn)=>{const copy=JSON.parse(JSON.stringify(ledger));fn(copy);return copy;};
-test('exact NASA source custody has five direct-page records and one secondary-only unresolved metadata record',()=>{
+test('exact NASA source custody has six direct NASA image-page records and zero commercial clearances',()=>{
  const result=run(ledger,source);
  assert.equal(result.status,'PASS_SOURCE_CUSTODY_ONLY',JSON.stringify(result.errors));
- assert.equal(result.record_count,6);assert.equal(result.official_metadata_verified_count,5);
- assert.equal(result.secondary_only_metadata_count,1);assert.equal(result.commercially_cleared_count,0);
+ assert.equal(result.record_count,6);assert.equal(result.official_metadata_verified_count,6);
+ assert.equal(result.secondary_only_metadata_count,0);assert.equal(result.commercially_cleared_count,0);
  assert.equal(result.release_status,'STAGING_HOLD');
 });
 test('media rights cannot be auto-cleared by ledger editing',()=>{
  const x=mutate(l=>l.records[0].rights_status='CLEARED');assert.equal(run(x,source).status,'FAIL');
 });
-test('a stated image metadata check cannot be upgraded without separate verification',()=>{
- const x=mutate(l=>l.records[3].metadata_evidence='PRIMARY_PAGE_VERIFIED');assert.equal(run(x,source).status,'FAIL');
+test('NASA official metadata confirmation cannot silently regress to secondary-only',()=>{
+ const x=mutate(l=>l.records[3].metadata_evidence='SECONDARY_NASA_ORIGIN_REFERENCE_ONLY');assert.equal(run(x,source).status,'FAIL');
 });
 test('crew portrait catalog cannot be treated as confirmed',()=>{
  const x=mutate(l=>l.records[0].catalog_status='S67-19766_VERIFIED');assert.equal(run(x,source).status,'FAIL');
@@ -68,4 +68,21 @@ test('visible NASA catalog date cannot drift from reviewed record',()=>{
 test('visible source credit cannot be silently reassigned',()=>{
  const changed=source.replace('Image Credit: NASA/Kim Shiflett</small>','Image Credit: Unverified Contributor</small>');
  assert.notEqual(changed,source);assert.equal(run(ledger,changed).status,'FAIL');
+});
+
+test('NASA 04 official record evidence cannot be replaced with secondary-only provenance',()=>{
+ const x=mutate(l=>l.records[3].metadata_support='https://commons.wikimedia.org/wiki/File:Apollo_1_Tribute_spacecraft_mockup.JPG');
+ assert.equal(run(x,source).status,'FAIL');
+});
+test('record 04 NASA/Kim Shiflett source credit drift is rejected',()=>{
+ const x=mutate(l=>l.records[3].credit='Unverified contributor');
+ assert.equal(run(x,source).status,'FAIL');
+});
+test('record 04 primary NASA catalog identifier drift is rejected',()=>{
+ const x=mutate(l=>l.records[3].catalog_status='KSC-20170124-PH_KLS01_0000');
+ assert.equal(run(x,source).status,'FAIL');
+});
+test('record 02 visual evidence cannot be elevated to technical measurement',()=>{
+ const x=mutate(l=>l.records[1].visual_role='CABIN_OXYGEN_INSTRUMENT');
+ assert.equal(run(x,source).status,'FAIL');
 });
