@@ -1,0 +1,171 @@
+{
+  "schema": "fv-media-origin-duplicate-crosswalk-v1",
+  "date": "2026-11-04",
+  "frozen_snapshot_date": "2026-10-30",
+  "sources": {
+    "qa/media-recovery/parts/01.json": "948bc1b65b42799aa40cfdb810ddf6ffd80886b6",
+    "qa/media-recovery/parts/02.json": "48e1ebf07207e948ba5802e714eb39659d2e1c1d",
+    "qa/media-recovery/parts/03.json": "49183f66f880f7c4dfd363acca906876877f2e5e",
+    "qa/media-recovery/parts/04.json": "6df3251e5a67a971d87a516a1ba4a0cc32f51f96",
+    "qa/media-recovery/parts/05.json": "9b16b828342a9ac338f3e65610fd3d8d508355e9",
+    "qa/media-recovery/parts/06.json": "0f3dfe398a76838049cebba7cb773d5c5a0c8c69",
+    "qa/media-recovery/parts/07.json": "21095161e633aba093b74c0ead9936c9f6186d00",
+    "qa/media-recovery/parts/08.json": "5659ec243c188928be3f89c0f96354b660608ca2"
+  },
+  "external_qa_csv": {
+    "path": "qa/media/cms_image_census_20261030.csv",
+    "PR": 154,
+    "blob_sha": "76aa63ffaa299a6e6878edc1b66e637fa6f058ab"
+  },
+  "metrics": {
+    "posts": 61,
+    "img_src_references": 355,
+    "unique_exact_source_urls": 353,
+    "duplicate_ref_excess": 2,
+    "source_kinds": {
+      "first_party": 60,
+      "external": 170,
+      "wikimedia_redirect": 118,
+      "jetpack_proxy": 7
+    },
+    "media_offsite": 288,
+    "qa_csv_offsite": 286,
+    "source_count_disagreements": 2,
+    "repeated_exact_source_groups": 2,
+    "broken_images_42": "not_guest_browser_verified",
+    "image_transfer_reduction_76pct": "unmeasured",
+    "oversized_media_original_count": 13,
+    "oversized_original_storage_bytes": 43522829,
+    "production_repairs": 0
+  },
+  "mismatches": [
+    {
+      "post_id": 285,
+      "qa_csv_offsite": 5,
+      "media_offsite": 6,
+      "external_jetpack": [
+        {
+          "key": "285:1",
+          "url": "https://i0.wp.com/www.squawkpoint.com/wp-content/uploads/2019/02/Three-Mile-Island-Control-Centre.jpg?ssl=1",
+          "upstream_host": "www.squawkpoint.com"
+        }
+      ]
+    },
+    {
+      "post_id": 291,
+      "qa_csv_offsite": 5,
+      "media_offsite": 6,
+      "external_jetpack": [
+        {
+          "key": "291:0",
+          "url": "https://i0.wp.com/text-message.blogs.archives.gov/wp-content/uploads/sites/5/2016/05/teton_failing_fourth-scaled.jpg?ssl=1",
+          "upstream_host": "text-message.blogs.archives.gov"
+        }
+      ]
+    }
+  ],
+  "duplicates": [
+    {
+      "url": "https://fs-prod-nwcg.s3.us-gov-west-1.amazonaws.com/s3fs-public/2023-11/sr-mg-historical-map-race-pg5.jpg?VersionId=E03fTtNlZbsFr8cZyXxAMTHZfT8wEb4p",
+      "slots": [
+        {
+          "key": "213:2",
+          "alt": "Historical Mann Gulch diagram showing smokejumper movements, wind, fire positions, the tool drop, escape fire, and survivor locations."
+        },
+        {
+          "key": "213:6",
+          "alt": "Mann Gulch staff-ride map marking the location where Wag Dodge set his escape fire and where the crew continued toward the ridge."
+        }
+      ],
+      "same_post": true,
+      "visitor_http_status": null,
+      "guest_decode_ok": null,
+      "actual_transfer_bytes": null,
+      "rights_clearance": false,
+      "wordpress_write_allowed": false
+    },
+    {
+      "url": "https://cloudfront-us-east-1.images.arcpublishing.com/deseretnews/PLWPL72QKJB7BBFJWTXJWVK6QQ.JPG",
+      "slots": [
+        {
+          "key": "291:2",
+          "alt": "Growing breach in Teton Dam during the final hour before collapse."
+        },
+        {
+          "key": "291:5",
+          "alt": "Aftermath of the Teton Dam failure and downstream cleanup in Idaho."
+        }
+      ],
+      "same_post": true,
+      "visitor_http_status": null,
+      "guest_decode_ok": null,
+      "actual_transfer_bytes": null,
+      "rights_clearance": false,
+      "wordpress_write_allowed": false
+    }
+  ],
+  "source_candidates": [
+    {
+      "for_slot": "291:2",
+      "agency": "National Archives at Denver",
+      "identifier": "NAID 28894684",
+      "description": "Teton Dam enlarging breach June 5 1976",
+      "catalog": "https://text-message.blogs.archives.gov/2016/05/31/the-unforgettable-calamity-40th-anniversary-of-the-teton-dam-failure/",
+      "binary_match": false,
+      "original_dimensions": null,
+      "derivative_max_width_px": 960,
+      "derivative_height_px": null,
+      "rights": "HOLD",
+      "permission_to_cache": false
+    },
+    {
+      "for_slot": "291:5",
+      "agency": "National Archives at Denver/Bureau of Reclamation",
+      "identifier": "NAID 28894688",
+      "description": "Teton Dam breached aftermath June 6 1976",
+      "catalog": "https://dp.la/item/0998c6830bca790f010e6ba5552ec4ec",
+      "binary_match": false,
+      "original_dimensions": null,
+      "derivative_max_width_px": 960,
+      "derivative_height_px": null,
+      "rights": "HOLD",
+      "permission_to_cache": false
+    },
+    {
+      "for_slot": "213:6",
+      "agency": "USDA Forest Service/NWCG",
+      "identifier": "INT-GTR-299 (1993)",
+      "description": "Mann Gulch Dodge escape fire map, alternate diagram",
+      "catalog": "https://commons.wikimedia.org/wiki/File:Mann_Gulch_Fire,_1949._Dodge_%22escape_fire%22_map.jpg",
+      "binary_match": false,
+      "catalog_original_px": [
+        2113,
+        1690
+      ],
+      "conditional_derivative_px": [
+        960,
+        768
+      ],
+      "rights": "HOLD item-level confirmation",
+      "permission_to_cache": false
+    }
+  ],
+  "caveats": [
+    "Exactly identical stored source URLs do NOT prove an identical final browser source if the theme rewrites or srcset varies; logged-out currentSrc and network responses remain required.",
+    "P1: Teton post 291 uses identical Deseret photo URL for captions describing growing breach and later aftermath; edit neither without visual verification.",
+    "P2: Mann Gulch post 213 repeats a staff-ride map with different alt text; verify legibility and context.",
+    "Two external upstream URLs behind i0.wp.com at 285:1 and 291:0 precisely account for 286-vs-288 disagreement; do not claim which prior algorithm or revision created the CSV discrepancy.",
+    "No visitor HTTP, image decode, CDP bytes, LCP, CLS or native binary dimension observations in this audit.",
+    "No third-party copying, media downloads, WordPress production writes, risky post-block rewrites or subscriptions."
+  ],
+  "gate": {
+    "browser_status": null,
+    "allow_wp_write": false,
+    "allow_caching": false,
+    "allow_derivative": false,
+    "rights_review_required": true,
+    "original_dimensions_required": true,
+    "width_cap_px": 960,
+    "do_not_upscale": true
+  }
+}
