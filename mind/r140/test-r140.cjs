@@ -82,8 +82,8 @@ ok('article Chevreul original work sourced',()=>{has(article,'https://pubmed.ncb
 ok('article clinical review grounded',()=>has(article,'https://eprints.bournemouth.ac.uk/31277/'));
 ok('article retains history link',()=>has(article,'https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/'));
 ok('article has no merchant referral or medical guarantees',()=>{assert.ok(!/href=["'][^"']*(?:hypnosislive|inspire3)/i.test(article));absent(article,'guaranteed to work');});
-ok('article no fabricated clinical test',()=>has(article,'not a replication'));
-ok('article no commercial endorsement',()=>has(article,'No commercial recommendation'));
+ok('article no fabricated clinical test',()=>has(article,'not** a replication'));
+ok('article no commercial endorsement',()=>has(article,'no affiliate URL, product endorsement'));
 ok('memo proper buyer and exact SKU',()=>{has(memo,'33-minute, 47 MB');has(memo,'44 minutes/61 MB');});
 ok('memo notes price/return uncertainty',()=>{has(memo,'final checkout total');has(memo,'14-day refund');});
 ok('memo claim/FTC source coverage',()=>{has(memo,'https://inspire3.com/privacy/');has(memo,'material');});
