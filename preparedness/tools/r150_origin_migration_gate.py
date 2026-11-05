@@ -46,7 +46,8 @@ def load_custodied(root: Path, path: str, expected_sha: str):
     check(p.is_file() and not p.is_symlink(), 'missing or linked evidence '+path)
     raw=p.read_bytes()
     check(git_blob(raw)==expected_sha, 'evidence blob drift: '+path)
-    return json.loads(raw.decode('utf-8'))
+    # Article/tool body HTML is raw evidence, not a JSON document.
+    return json.loads(raw.decode('utf-8')) if path.endswith('.json') else raw
 
 def index_sources(source_registers):
     indexed={}
