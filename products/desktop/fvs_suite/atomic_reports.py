@@ -39,6 +39,7 @@ def write_csv_report(destination: str | Path, fields: Iterable[str],
     header collisions reject the export instead of losing column identity.
     All rendered cells must be plain text without NUL or bare formula prefixes;
     malformed sanitizer output fails closed before publication.
+    Missing row keys fail closed; explicit empty values remain permitted.
     Nothing ever overwrites an existing destination or follows its symlink.
     On a filesystem lacking the required safe publication operation, fail
     rather than silently fall back to an overwriting move.
@@ -66,7 +67,16 @@ def write_csv_report(destination: str | Path, fields: Iterable[str],
             writer = csv.DictWriter(stream, fieldnames=names, extrasaction="ignore")
             writer.writer.writerow(rendered)
             for row in rows:
-                writer.writerow({name: _render_cell(value, cell) for name, value in row.items()})
+                # DictWriter would silently substitute an empty cell for
+                # absent keys, disguising missing financial/source evidence.
+                # Sanitize *all* supplied values, including ignored extras,
+                # before demanding an explicit value for every schema field.
+                rendered_row = {
+                    name: _render_cell(value, cell) for name, value in row.items()
+                }
+                if any(name not in rendered_row for name in names):
+                    raise ValueError("Incomplete CSV report row schema")
+                writer.writerow(rendered_row)
             stream.flush()
             os.fsync(stream.fileno())
         if os.name == "nt":
