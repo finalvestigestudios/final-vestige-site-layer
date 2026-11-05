@@ -33,8 +33,10 @@ function scopeByRequestId(slots,network){
     v.current_src_identity_verified!==true||v.network_final_identity_verified!==true||
     v.loaded_network_proof_verified!==true||v.redirected_image_identity_unverified===true||
     !identity(v.stored_url,v.current_src)||!identity(v.current_src,v.request_url)||
-    !Number.isSafeInteger(v.natural_width)||v.natural_width<=0||v.http_status!==200||
-    !bytes(v.transfer_bytes)){
+    !Number.isSafeInteger(v.natural_width)||v.natural_width<=0||
+    !Number.isSafeInteger(v.natural_height)||v.natural_height<=0||
+    v.http_status!==200||!bytes(v.transfer_bytes)||
+    typeof v.response_mime_type!=='string'||!/^image\//i.test(v.response_mime_type)){
    errors.push('slot_not_network_verified:'+v.image_key);continue;
   }
   if(!isId(v.request_id)){errors.push('slot_request_id_missing:'+v.image_key);continue}
@@ -42,8 +44,12 @@ function scopeByRequestId(slots,network){
   if(!n){errors.push('slot_request_id_not_found:'+v.image_key);continue}
   if(!identity(v.request_url,n.url)||!identity(v.current_src,n.url)||
     n.status!==200||typeof n.mime_type!=='string'||!/^image\//i.test(n.mime_type)||
-    n.error||n.was_cached===true||n.from_disk_cache===true||
-    n.from_service_worker===true||!bytes(n.encoded_data_length)||
+    // Missing cache flags never prove a cold transfer, and the CDP MIME
+    // must agree with the decoded DOM image response before counting bytes.
+    n.error||n.was_cached!==false||n.from_disk_cache!==false||
+    n.from_service_worker!==false||!bytes(n.encoded_data_length)||
+    String(v.response_mime_type).split(';')[0].trim().toLowerCase()!==
+      String(n.mime_type).split(';')[0].trim().toLowerCase()||
     v.transfer_bytes!==n.encoded_data_length){
    errors.push('slot_cdp_response_mismatch:'+v.image_key);unmeasured++;continue;
   }
