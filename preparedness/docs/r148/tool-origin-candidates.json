@@ -1,0 +1,27 @@
+{
+  "schema": "FV-PREP-R148-CANDIDATE-ONLY-1",
+  "as_of": "2026-11-05",
+  "status": "PROPOSED_NOT_APPLIED_HUMAN_SOURCE_REVIEW_REQUIRED",
+  "parent_commit": "094a9707fa4c342fa6e9720caaa253f00fa2e026",
+  "source_register_modified": false,
+  "article_bodies_modified": false,
+  "publication_allowed": false,
+  "independent_qd": "NOT_APPROVED",
+  "candidate_tool_origins": {
+    "water-planner": "base",
+    "home-fire-escape-worksheet": "shelter",
+    "power-outage-planner": "shelter",
+    "family-reunification-card": "shelter",
+    "reunification-plan": "start",
+    "kit-builder": "start"
+  },
+  "currently_unresolvable_tool_source_use_ids": {
+    "water-planner": 0,
+    "home-fire-escape-worksheet": 6,
+    "power-outage-planner": 16,
+    "family-reunification-card": 11,
+    "reunification-plan": 6,
+    "kit-builder": 19
+  },
+  "required_review": "Verify each author source-use claim and literal source URL with a qualified human reviewer, preserve immutable blob custody, never auto-apply or publish."
+}
