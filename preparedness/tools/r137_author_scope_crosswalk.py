@@ -170,7 +170,12 @@ def audit(repo: Path, *, expected=COUNTS) -> dict:
                     'citation_occurrences': citations.count(sid)})
         article_rows.append({'slug': slug, 'origin': origin, 'citation_occurrences': len(citations),
                              'source_use_ids': len(scopes), 'status': 'DRAFT_HOLD'})
-    check(slugs == {x['slug'] for x in slate} == set(cross['article_origins']),
+    tools = {x['slug'] for x in taxonomy.get('tools', [])}
+    origins = set(cross['article_origins'])
+    # The source crosswalk intentionally includes a standalone water-planner tool.
+    # Protect all 35 article origins without misclassifying known tools as extra articles.
+    check(slugs == {x['slug'] for x in slate} and slugs <= origins and
+          (origins - slugs) <= tools and not (slugs & tools),
           'SLATE_OR_ARTICLE_ORIGIN_DRIFT')
     check(total == expected['citations'] == frozen['expected_citation_occurrences'],
           'CITATION_OCCURRENCE_DRIFT')
