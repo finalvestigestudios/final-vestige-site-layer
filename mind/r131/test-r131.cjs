@@ -100,3 +100,14 @@ test("adversarial mutation: affiliate purchase anchor is caught",()=>{
  const bad=A.replace("</main>",'<a href="https://zen12.com/secret/?ref=unapproved">Buy here</a></main>');
  assert.match(bad,/<a\s+[^>]*href="https:\/\/zen12\.com\//i);
 });
+
+test("WordPress /mind/ hub is accessible, editorial-first, and commercially inactive",()=>{
+ const h=txt("mind-hub-wordpress-proposal.html");
+ for(const s of ["Change Blindness","Puységur","Seven Day Focus Fieldbook","Tools Under Review","Editorial Standards","Affiliate Disclosure"]){assert.ok(h.includes(s),s);}
+ assert.match(h,/id="fv-mind-title"/);assert.match(h,/aria-labelledby="fv-mind-title"/);
+ assert.match(h,/grid-template-columns:repeat\(2/);assert.match(h,/max-width:680px/);
+ assert.match(h,/:focus-visible/);assert.match(h,/prefers-reduced-motion/);
+ assert.doesNotMatch(h,/<script\b|<iframe\b|<form\b|<video\b/i);
+ assert.doesNotMatch(h,/href="https:\/\/zen12\.com\//i);
+ assert.ok((h.match(/https:\/\/finalvestige\.com\/focus\//g)||[]).length>=2);
+});
