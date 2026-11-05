@@ -37,6 +37,7 @@ function verifyCss(source) {
   const rule = source.match(/\.fv-hf \.fv-hf__text-link--focus\s*\{([^}]+)\}/)?.[1] ?? "";
   assert.match(rule, /min-height:\s*44px\s*;/, "44px touch target missing");
   assert.match(rule, /max-width:\s*100%\s*;/, "mobile width cap missing");
+  assert.match(rule, /overflow-wrap:\s*anywhere\s*;/, "200%-zoom wrap protection missing");
   assert.match(source, /@media\s*\(max-width:\s*600px\)[\s\S]*?\.fv-hf \.fv-hf__text-link--focus\s*\{\s*width:\s*100%\s*;/);
 }
 test("hero keeps evidence-primary and adds one precise free reader action", () => verifyHero(html));
@@ -63,3 +64,5 @@ test("negative control: missing chapter destination fails", () =>
   assert.throws(() => verifyChapters(html.replace('href="#fv-hf-mind-title"','href="#not-chapter"'))));
 test("negative control: undersized touch target fails", () =>
   assert.throws(() => verifyCss(css.replace("min-height: 44px;", "min-height: 20px;"))));
+test("negative control: a non-wrapping zoom-clipped CTA fails", () =>
+  assert.throws(() => verifyCss(css.replace("overflow-wrap: anywhere;", "overflow-wrap: normal;"))));
