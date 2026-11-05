@@ -1,0 +1,82 @@
+{
+  "status": "DRAFT_ONLY_NO_WORDPRESS_WRITES_NO_SENDS",
+  "date": "2026-11-05",
+  "owner_issue": 174,
+  "stacked_pr_head": "38b448b1101ae3ae01d1ae8276bb911e62e7bfec",
+  "source_master_sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "email_format_seen": "excerpt",
+  "native_render_proven": false,
+  "recipient_eligible_count": null,
+  "merchant_approved": false,
+  "partner_email_permission_verified": false,
+  "valid_fv_postal_address_verified": false,
+  "unsubscribe_render_verified": false,
+  "founder_final_approval": false,
+  "model_only": "WordPress.com 55-word auto excerpt; Jetpack alternative 350-character model. Custom excerpts are proposals ONLY; native formatting and link behavior unproven.",
+  "issues": [
+    {
+      "number": 1,
+      "kind": "editorial",
+      "subject": "The mind is not a camera",
+      "preheader": "What witnesses remember—and what surviving records can actually establish.",
+      "excerpt": "Memory can feel like a recording, but it is not a complete record. Puységur’s surviving files show why observation and explanation deserve separate questions. Read the historical source trail before deciding what the witnesses proved.",
+      "primary_action": "Read the historical source trail",
+      "source_url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "guide_state": "existing_editorial_destination"
+    },
+    {
+      "number": 2,
+      "kind": "editorial",
+      "subject": "Before hypnosis had a name",
+      "preheader": "Eighteenth-century witnesses, sincere observations, and the problem of proof.",
+      "excerpt": "A witness can describe something sincerely and still mistake its cause. The Puységur files preserve that gap between what people reported and what they concluded. Read the archival account and judge the evidence yourself.",
+      "primary_action": "Read the archival account",
+      "source_url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "guide_state": "existing_editorial_destination"
+    },
+    {
+      "number": 3,
+      "kind": "commercial-review-pending",
+      "subject": "The twelve-minute meditation question",
+      "preheader": "Try a free baseline before examining any seller’s audio promise.",
+      "excerpt": "A short meditation routine may be easier to keep; that does not validate Zen12’s advertised results. Our pending guide will compare the seller’s claims with free alternatives. If you buy through a link in that guide, Final Vestige may earn a commission. Read the independent evaluation.",
+      "primary_action": "Read the independent evaluation",
+      "source_url": null,
+      "guide_state": "NOT_LIVE_NOT_APPROVED",
+      "prospective_guide": "Zen12",
+      "commercial_disclosure": "If you buy through a link in that guide, Final Vestige may earn a commission."
+    },
+    {
+      "number": 4,
+      "kind": "editorial",
+      "subject": "Fourteen seconds. A much longer explanation.",
+      "preheader": "Apollo 1 and the evidence that a single image cannot explain.",
+      "excerpt": "Apollo 1 left a record far richer than a single photograph. Examine the hatch, the fire, and the safety decisions without reducing the investigation to one easy cause. Read the historical evidence behind the tragedy.",
+      "primary_action": "Read the historical evidence",
+      "source_url": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/",
+      "guide_state": "existing_editorial_destination"
+    },
+    {
+      "number": 5,
+      "kind": "commercial-review-pending",
+      "subject": "Before you press play on a hypnosis audio",
+      "preheader": "Know the recording, the seller’s promises, and the purchase terms.",
+      "excerpt": "A downloadable hypnosis recording is easy to describe; promised results require stronger evidence. Our pending guide separates the format, seller claims, and buyer terms. If you buy through a link in that guide, Final Vestige may earn a commission. Read the independent evaluation.",
+      "primary_action": "Read the independent evaluation",
+      "source_url": null,
+      "guide_state": "NOT_LIVE_NOT_APPROVED",
+      "prospective_guide": "Hypnosis Live",
+      "commercial_disclosure": "If you buy through a link in that guide, Final Vestige may earn a commission."
+    },
+    {
+      "number": 6,
+      "kind": "editorial",
+      "subject": "What did seven days of attention reveal?",
+      "preheader": "Record what happened, including the days that did not go to plan.",
+      "excerpt": "An attention log is valuable when it records what happened, including days the routine did not work. Compare seven days without treating a pleasant session as proof of a product’s effect. Read the Fieldbook follow-up and make an evidence log of your own.",
+      "primary_action": "Read the Fieldbook follow-up",
+      "source_url": "https://finalvestige.com/focus/",
+      "guide_state": "existing_editorial_destination"
+    }
+  ]
+}
