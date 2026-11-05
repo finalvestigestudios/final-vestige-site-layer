@@ -77,7 +77,7 @@ def inspect_accessibility(html: str, axe: Path | None) -> dict:
                         page.add_script_tag(path=str(axe))
                         value=page.evaluate('async()=>{const r=await axe.run(document,{runOnly:{type:"tag",values:["wcag2a","wcag2aa","wcag21aa","wcag22aa"]}});return {violations:r.violations.map(v=>({id:v.id,impact:v.impact,nodes:v.nodes.length})),incomplete:r.incomplete.length}}')
                         axes.append({'width':width,**value})
-                        add(width,'axe_no_wcag_violations',len(value['violations'])==0,value)
+                        add(width,'axe_no_wcag_violations',len(value['violations'])==0 and value['incomplete']==0,value)
                     except Exception as error:
                         add(width,'axe_execution',False,repr(error))
                     finally:
