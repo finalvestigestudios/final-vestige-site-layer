@@ -12,7 +12,7 @@ const EXPECTED=[
 ];
 const FROZEN_BLOB='948bc1b65b42799aa40cfdb810ddf6ffd80886b6';
 function gitBlob(raw){const b=Buffer.isBuffer(raw)?raw:Buffer.from(raw,'utf8');
- return crypto.createHash('sha1').update(Buffer.from('blob '+b.length+'\\0')).update(b).digest('hex')}
+ return crypto.createHash('sha1').update(Buffer.from('blob '+b.length+String.fromCharCode(0))).update(b).digest('hex')}
 function validateAudit(a,part){
  const errors=[],bad=(cond,msg)=>{if(!cond)errors.push(msg)};
  bad(a?.schema==='fv-media-florida-memory-archival-custody-v1','schema');
