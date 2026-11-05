@@ -39,16 +39,22 @@
 9. **Commercial disclosure:** plain English beside a qualifying affiliate link and in the email itself as appropriate; never hide commission relationships in a distant footer.
 10. **Closing CTA:** one precise next action, with free first-party alternative for people who don't want to buy.
 
-## Email warm-up, without false “open loops”
+## Eight-week email warm-up — trustworthy anticipation before the offer
 
-- Email 1–3: deliver genuine findings and invite a *free* investigation. Tease a **real upcoming** next topic in one sentence.
-- Email 4: transition from “read our evidence” to “try our Evidence Atlas.”
-- Email 5: offer a specific hands-on evidence challenge; mention that comparable paid experiences exist but do not manufacture a mystery or scarcity.
-- Email 6: teach a repeatable five-step case-file method. The reader should gain something even if no product is ever approved.
-- Conditional Email 7: reveal **one** verified product *after acceptance and actual review*; explain the choice and honest limitations. Include disclosure.
-- Conditional Email 8: answer real purchasing questions and alternatives; do not use fake countdowns, false testimonials or repeated hard selling.
+- **Email 1:** Crystal Skulls. Give provenance insight, one first-party CTA, no merchant.
+- **Email 2:** Piri Reis. Show a real 1513 source, tease a physical artifact, no merchant.
+- **Email 3:** Lycurgus Cup. Demonstrate an authentic material mystery, no merchant.
+- **Email 4:** Apollo 1. Let readers try a source-linked Evidence Atlas, no merchant.
+- **Email 5:** Tarot's material history. Raise the legitimate question of owning and documenting historical objects; hint that next week explores collecting. No Mini Museum name or product button yet.
+- **Email 6 (Mini Museum):** Earn the reveal: a tangible piece of the past, how to evaluate provenance and buyer terms, then a clear disclosed CTA to FV's live first-party Mini Museum guide. Explain merchant authenticity claims as claims, not independently certified by FV. Avoid specific current prices unless checked that day.
+- **Email 7:** Free five-step case-file method and historical source exercise. Rebuild trust by giving value between offers. Mention next week's fictional detective challenge accurately.
+- **Email 8 (Cold Case Inc):** Explain actual fictional gameplay, free Flat 33 starter, paid-case differences and fit; disclosed CTA to FV's live first-party case-game guide. No fake police provenance or sales claims.
 
-**Reality check:** Jetpack's weekly newsletter is a post-triggered **broadcast**, not a subscriber-relative automated drip. The six historical-mystery issues currently exist as unsent drafts. No change to Jetpack settings, subscribers, email scheduling or WordPress publishing is authorised by this document.
+**The first five emails must work even if no merchant has been approved.** Story teasers identify real subjects and future reader decisions, not contrived scarcity, suppressed secrets or misleading “watch this space” gimmicks.
+
+**Live WordPress state as of November 5, 2026:** The Collection and both first-party offer pages are published. Eight Dispatch posts are DRAFT and UNSENT. Jetpack's `email_content_format` was changed from `excerpt` to `full` and `from_name` from `Final Vestige` to `Final Vestige Studios`; the automatic email-new-post default remains OFF. Native broadcasts still require per-post publishing and a separate explicit send authorization; they are not subscriber-relative drip emails.
+
+**Commercial guard:** The founder provided Awin creatives for Mini Museum and Cold Case Inc, but joined/active advertiser state and authorized email-promotion channels are not directly verified. Do not assert commission eligibility, merchant approval or seller-tested products merely because the landing pages contain Awin links.
 
 ## Conversion scoreboard
 
