@@ -23,6 +23,9 @@ const ORIGIN='https://finalvestige.com';
 const VIEWPORTS=[320,390,768,1279,1280,1440,1920];
 const CHAPTERS=['fv-hf-chronicle','fv-hf-evidence','fv-hf-apollo',
   'fv-hf-franklin','fv-hf-malbone','fv-hf-inquiry','fv-hf-observer'];
+const ARCHIVE_FILES=Object.freeze(['s67-19766.webp',
+  'franklinexpeditionnote.jpg','edit-017-v02-nypl-5003296-original.jpg']);
+// Published Page 6 archive exhibits; WP media 473, 474, 1258. Rights separately gated.
 const OUT=resolve(process.env.FV_EX2_EVIDENCE_DIR||'artifacts/ex2-live-focus-20261104');
 const failures=[];
 const receipt={kind:'ANONYMOUS_PUBLIC_BROWSER_NOT_PRIVATE_STAGING',
@@ -35,6 +38,24 @@ function fail(msg){failures.push(msg);}
 function check(ok,msg){if(!ok) fail(msg);}
 function pathOnly(raw){try {const u=new URL(raw,ORIGIN);return u.origin===ORIGIN?u.pathname:'external-host';}catch{return 'invalid-url';}}
 function safeOrigin(raw){try{return new URL(raw).origin===ORIGIN;}catch{return false;}}
+function imageAssetName(raw){
+  try{
+    const u=new URL(raw,ORIGIN);
+    const allowed=(u.origin===ORIGIN&&u.pathname.startsWith('/wp-content/uploads/'))||
+      (u.hostname==='i0.wp.com'&&u.pathname.startsWith('/finalvestige.com/wp-content/uploads/'));
+    return allowed?u.pathname.split('/').pop().toLowerCase():null;
+  }catch{return null;}
+}
+function auditedArchives(items,transfers){
+  return ARCHIVE_FILES.map(asset=>{
+    const dom=items.find(i=>imageAssetName('https://'+i.srcHost+i.srcPath)===asset);
+    const transferred=transfers.find(i=>i.asset===asset&&i.http===200&&
+      Number.isSafeInteger(i.bytes)&&i.bytes>0);
+    return {asset,dom:!!dom,
+      decoded:!!(dom&&dom.complete&&dom.naturalWidth>0&&dom.naturalHeight>0),
+      transfer:!!transferred,bytes:transferred?.bytes??0};
+  });
+}
 function viewportId(width){return String(width).padStart(4,'0');}
 function focusSelectors(){
   return '.fv-site-header .fv-ebook-strip-wrap a[href*="/focus/"], '+
@@ -49,7 +70,7 @@ function validateFocusGeometry(rows,width,height){
     hitCount:onScreen.filter(r=>r.hit && r.box.width>=44 && r.box.height>=44).length,
     modes:[...new Set(visible.map(r=>r.mode))]};
 }
-export {VIEWPORTS,CHAPTERS,validateFocusGeometry,pathOnly};
+export {VIEWPORTS,CHAPTERS,ARCHIVE_FILES,imageAssetName,auditedArchives,validateFocusGeometry,pathOnly};
 
 async function browserLib(){
   try{return await import('playwright');}
@@ -77,15 +98,18 @@ async function createPage(browser,width,js=true){
       }}).observe({type:'layout-shift',buffered:true});}catch{}
     }
   });
-  const errors=[],images=[];
+  const errors=[],images=[],imageTransfers=[];
   page.on('pageerror',e=>errors.push(String(e).slice(0,200)));
-  page.on('response',async r=>{
-    if(!r.request().resourceType().includes('image'))return;
-    const u=r.url();let bytes=null;
-    try{if(r.status()===200)bytes=(await r.body()).length;}catch{}
-    images.push({path:pathOnly(u),http:r.status(),bytes,firstParty:safeOrigin(u)});
+  page.on('response',r=>{
+    if(r.request().resourceType()!=='image')return;
+    imageTransfers.push((async()=>{
+      const u=r.url();let bytes=null;
+      try{if(r.status()===200)bytes=(await r.body()).length;}catch{}
+      images.push({path:pathOnly(u),asset:imageAssetName(u),
+        http:r.status(),bytes,firstParty:safeOrigin(u)});
+    })());
   });
-  return {context,page,errors,images};
+  return {context,page,errors,images,imageTransfers};
 }
 async function navigatePublic(page,path){
   const response=await page.goto(ORIGIN+path,{waitUntil:'domcontentloaded',timeout:45000});
@@ -138,7 +162,9 @@ async function readImages(page,width){
         el.addEventListener('error',done,{once:true});setTimeout(done,8000);});
     });}catch{}
     const row=await img.evaluate(el=>({
-      alt:el.getAttribute('alt'),srcPath:el.currentSrc?new URL(el.currentSrc).pathname:null,
+      alt:el.getAttribute('alt'),
+      srcHost:el.currentSrc?new URL(el.currentSrc).hostname:'',
+      srcPath:el.currentSrc?new URL(el.currentSrc).pathname:'',
       complete:el.complete,naturalWidth:el.naturalWidth,naturalHeight:el.naturalHeight
     }));
     items.push(row);
@@ -147,7 +173,7 @@ async function readImages(page,width){
   return {total,checked:items};
 }
 async function runWidth(browser,width,axeSource){
-  const {context,page,errors,images}=await createPage(browser,width,true);
+  const {context,page,errors,images,imageTransfers}=await createPage(browser,width,true);
   const entry={width,js:true};
   try{
     entry.http=await navigatePublic(page,'/');
@@ -164,6 +190,12 @@ async function runWidth(browser,width,axeSource){
     }
     for(const l of entry.links)check(l.href==='/focus/','Incorrect Focus URL at '+width+':'+l.href);
     entry.images=await readImages(page,width);
+    // A missing image list or zero HTTP body bytes must never produce a PASS.
+    await Promise.allSettled(imageTransfers);
+    entry.archives=auditedArchives(entry.images.checked,images);
+    check(entry.archives.every(a=>a.dom&&a.decoded&&a.transfer),
+      'width '+width+' missing/undecoded/untransferred required archival images: '+
+      JSON.stringify(entry.archives.filter(a=>!a.dom||!a.decoded||!a.transfer)));
     await page.evaluate(()=>scrollTo(0,0));
     await page.screenshot({path:resolve(OUT,'published-'+viewportId(width)+'.png'),
       fullPage:true,animations:'disabled'});
@@ -194,6 +226,8 @@ async function runWidth(browser,width,axeSource){
         jetpackPresent:await page.locator('[class*="jetpack"],form[action*="subscribe"],.wp-block-jetpack-subscriptions').count()>0,
         fieldbookMention:await page.getByText('Seven Day Focus Fieldbook',{exact:false}).count()>0};
       check(entry.focusClick.jetpackPresent,'width '+width+' /focus/ missing Jetpack evidence');
+      check(entry.focusClick.fieldbookMention,
+        'width '+width+' /focus/ missing the intended Fieldbook offer');
       await page.screenshot({path:resolve(OUT,'focus-'+viewportId(width)+'.png'),
         fullPage:true,animations:'disabled'});
     }
