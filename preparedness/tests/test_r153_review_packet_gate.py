@@ -18,8 +18,8 @@ RESOLVED = {
  'water-planner': [('cdc-water-store',2), ('ready-pets',1), ('ready-water',4)]}
 
 def fixtures():
-    d={'schema':'FV-PREP-R149-TOOL-CLAIM-CUSTODY-1','publication_allowed':False,'independent_qd':False,
-       'source_scope_human_review':False,'human_link_checked_rows':0,'currently_unresolved_source_ids':58,
+    d={'schema':'FV-PREP-R149-TOOL-CLAIM-CUSTODY-1','publication_allowed':False,'independent_qd':'NOT_APPROVED',
+       'source_scope_human_review':'PENDING','human_link_checked_rows':0,'currently_unresolved_source_ids':58,
        'source_use_row_count':67,'source_use_rows':[],'tool_summaries':[],
        'candidate_tool_origins':{k: ('base' if k=='water-planner' else 'start' if k in ('kit-builder','reunification-plan') else 'shelter') for k in m.TOOLS}}
     for tool,(sources,occurrences) in m.TOOLS.items():
