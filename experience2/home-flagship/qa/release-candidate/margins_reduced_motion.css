@@ -1,0 +1,41 @@
+/* FV Experience 2.0 | REVIEW-ONLY overlay for published Page 6 Margins strip.
+ * Apply only after the existing strip CSS on an approved isolated staging build.
+ * No subscription, analytics, plugin, theme or production change is authorized.
+ * Source snapshot: WordPress Page 6, modified 2026-11-04T14:39:24.
+ */
+@media (prefers-reduced-motion: reduce) {
+  .fv-margin-strip__window {
+    display: flex;
+    align-items: stretch;
+    gap: 12px;
+    max-width: 100%;
+    min-height: 0;
+    padding: 8px 3px 13px 12px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: auto;
+    scrollbar-width: auto;
+  }
+  .fv-margin-strip__window::before { display: none; }
+  .fv-margin-strip__item,
+  .fv-margin-strip__item:nth-child(1) {
+    display: block;
+    position: relative;
+    flex: 0 0 clamp(240px, 68vw, 450px);
+    left: auto;
+    right: auto;
+    top: auto;
+    margin: 0;
+    padding: 10px 14px;
+    min-height: 60px;
+    border-left: 2px solid #b8955e;
+    background: #171917;
+    color: #d8d2c7;
+    transform: none;
+    opacity: 1;
+    filter: none;
+    animation: none;
+    white-space: normal;
+    line-height: 1.5;
+  }
+}
