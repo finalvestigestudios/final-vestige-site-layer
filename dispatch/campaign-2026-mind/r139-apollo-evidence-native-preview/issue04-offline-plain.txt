@@ -1,0 +1,40 @@
+FINAL VESTIGE STUDIOS — THE DISPATCH
+ISSUE 04 · OPTIONAL EDITORIAL EMAIL · REVIEW ONLY
+DRAFT — HOLD_UNSENT. NEVER SEND OR PUBLISH WITHOUT FOUNDER APPROVAL.
+
+Subject: A hatch, a cabin, and an unanswered question
+Preheader: NASA identified the hazards without proving the first spark.
+
+The Apollo 1 review board could explain the disaster. It could not identify the precise point where the fire began.
+
+That distinction is the reason to return to the evidence.
+
+On January 27, 1967, Gus Grissom, Ed White, and Roger Chaffee were inside a command module during a ground test. Their spacecraft was pressurized with pure oxygen. A fire spread through the cabin, and the crew could not escape. NASA later determined that the men died primarily from inhaling toxic gases.
+
+After the accident, investigators searched the burned spacecraft for the initiating event. They examined wiring, reconstructed fire behavior, and considered how a spark might reach combustible material. They judged an electrical arc the most probable initiator, but the exact ignition point was not conclusively established.
+
+That does not leave us with an empty explanation. The Apollo 204 Review Board identified a cluster of dangerous conditions: a sealed oxygen atmosphere, combustible materials, vulnerable wiring, potentially vulnerable coolant plumbing, and inadequate provisions for escape or rescue.
+
+Consider the hatch. The three-part design took about 90 seconds to open even under favorable conditions, NASA's retrospective account says. Rising cabin pressure made opening it during the fire impossible. The hazard was not simply that a door swung the wrong way. It was the interaction between its design, the cabin atmosphere, the fire, and a test treated as less dangerous than it was.
+
+This is a useful test for any historical investigation. Draw two columns on a page: what the documents establish and what they suggest but cannot prove. In the first, write "the cabin was filled with oxygen" and "the hatch could not be opened in time." In the second, write "the fire started at this exact wire." The distinction makes an explanation stronger, not weaker.
+
+Our investigation follows those boundaries through the official findings and the redesign that followed.
+
+READ THE EVIDENCE — THE HATCH OPENED INWARD:
+https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/
+
+The larger lesson is a Final Vestige principle: a dramatic event seldom becomes more truthful when we compress it to one satisfying cause.
+
+SOURCE NOTES (not additional calls to action)
+NASA Safety and Mission Assurance — Apollo 1 / AS-204
+https://sma.nasa.gov/sma-disciplines/accllp/apollo-1
+NASA — Report of the Apollo 204 Review Board
+https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/
+
+LEGAL / DELIVERY REVIEW — NOT SENDABLE:
+Final Vestige Studios
+[[FV_VALID_PHYSICAL_POSTAL_ADDRESS_REQUIRED]]
+[[REAL_JETPACK_UNSUBSCRIBE_RENDERING_AND_FUNCTION_REQUIRED]]
+
+This file is an offline editorial review asset only. The legal placeholders and actual recipient eligibility are deliberately unresolved. This draft has never been emailed.
