@@ -7,7 +7,7 @@
   "crosswalk_sha": "d62e493a67dedd23e04cfdf3cce762ef933c6bf9",
   "prior_article_lock_sha": "2dc41fccad6f1272f0a9d9585b6c10c760dcb08c",
   "scope": "Issue #136; conversion #820",
-  "method": "read-only lexical audit of exact GitHub blobs; not DOM, source correctness, human safety, build, CI or QD",
+  "method": "read-only lexical audit of exact GitHub blobs; not DOM, source correctness, human safety, build, CI or QD; link token grammar slug|label is parsed by slug only (fixed from first lexical pass).",
   "offset": 0,
   "entries": [
     {
@@ -62,17 +62,7 @@
       "missing_explanations": [],
       "unused_explanations": [],
       "unresolved_scope_ids": [],
-      "broken_article_links": [
-        "go-bags|go-bags",
-        "go-bags|go-bags",
-        "three-day-kit|three-day kit guide",
-        "three-day-kit|three-day kit",
-        "water-math|water math",
-        "two-week-water-storage|two-week storage",
-        "three-day-kit|three-day kit",
-        "go-bags|go-bags",
-        "preparedness-real-households|preparedness in real households"
-      ],
+      "broken_article_links": [],
       "invisible_token_count": 0
     },
     {
@@ -135,18 +125,7 @@
       "missing_explanations": [],
       "unused_explanations": [],
       "unresolved_scope_ids": [],
-      "broken_article_links": [
-        "water-math|water math",
-        "household-emergency-plan|household emergency plan",
-        "two-week-water-storage|two-week water storage",
-        "water-math|the water-math guide",
-        "two-week-water-storage|the storage guide",
-        "making-water-safer|making water safer",
-        "go-bags|the go-bag guide",
-        "preparedness-real-households|preparedness in real households",
-        "go-bags|go-bag guide",
-        "preparedness-real-households|preparedness for renters, apartments, low income, caregiving and disability access"
-      ],
+      "broken_article_links": [],
       "invisible_token_count": 0
     },
     {
@@ -183,10 +162,7 @@
       "missing_explanations": [],
       "unused_explanations": [],
       "unresolved_scope_ids": [],
-      "broken_article_links": [
-        "two-week-water-storage|two-week water storage",
-        "making-water-safer|making water safer in an emergency"
-      ],
+      "broken_article_links": [],
       "invisible_token_count": 0
     },
     {
@@ -219,10 +195,7 @@
       "missing_explanations": [],
       "unused_explanations": [],
       "unresolved_scope_ids": [],
-      "broken_article_links": [
-        "water-math|water math",
-        "making-water-safer|making water safer in an emergency"
-      ],
+      "broken_article_links": [],
       "invisible_token_count": 0
     },
     {
@@ -257,12 +230,7 @@
       "missing_explanations": [],
       "unused_explanations": [],
       "unresolved_scope_ids": [],
-      "broken_article_links": [
-        "making-water-safer|making water safer",
-        "water-math|water math",
-        "two-week-water-storage|two-week water storage",
-        "making-water-safer|making water safer"
-      ],
+      "broken_article_links": [],
       "invisible_token_count": 0
     }
   ]
