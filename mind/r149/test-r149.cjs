@@ -34,7 +34,7 @@ no(article,/affiliate_id=|utm_campaign=/,'investigation no earning/tracking');
 assert(sourced(article),'original study and theory sources');
 yes(article,/No commercial endorsement/,'editorial independence statement');
 yes(article,/https:\/\/hypnosislive\.com\/mental-skills\/total-focus/,'exact merchant cited, not referral');
-yes(article,/not the same intervention/,'actual protocol distinction');
+yes(article,/not automatically the same intervention/,'actual protocol distinction');
 assert(releaseSafe(guide),'guide is hard-hold, no remote code/forms');
 assert(disabledButton(guide),'real HTML disabled, no affiliate earning link');
 assert(adequateDisclosure(guide),'near-CTA FTC disclosure');
