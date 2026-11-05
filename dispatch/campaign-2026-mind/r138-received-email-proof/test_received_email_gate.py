@@ -7,7 +7,7 @@ CTA = "https://finalvestige.com/mind/"
 UNSUB = "https://wordpress.com/email-subscriptions/unsubscribe/?fixture=1"
 
 def make_email(*, html=True, plain=True, cta=True, unsubscribe=True, address=True,
-               disclosure=True, sender="donotreply@wordpress.com", unsafe=False, header=True):
+               disclosure=True, sender="donotreply@wordpress.com", unsafe=False, header=True, far_disclosure=False):
     m = EmailMessage()
     m["From"] = f"Final Vestige <{sender}>"
     m["To"] = "synthetic@example.invalid"
@@ -24,6 +24,9 @@ def make_email(*, html=True, plain=True, cta=True, unsubscribe=True, address=Tru
          + ("<script>alert('fixture')</script>" if unsafe else "") + "</body></html>")
     if not disclosure:
         p = p.replace("May earn a commission.", "No commission disclosure.")
+    if far_disclosure:
+        p = p.replace("May earn a commission.", ("filler " * 400) + "May earn a commission.")
+        h = h.replace("<p>May earn a commission.</p>", "<p>" + ("filler " * 400) + "May earn a commission.</p>")
     if plain:
         m.set_content(p)
     else:
@@ -58,6 +61,14 @@ class EmailAuditTests(unittest.TestCase):
         self.assertFalse(audit(make_email(), edition="01", expected_path="/mind/", publisher_address="Automattic, 42 Example Lane")["structural_checks"]["verified_publisher_postal_address_present"])
     def test_missing_commercial_disclosure_fails(self):
         self.assertFalse(audit(make_email(disclosure=False), edition="03", expected_path="/mind/", publisher_address=ADDR)["structural_checks"]["commercial_disclosure_in_present_mime_parts"])
+    def test_near_disclosure_positive(self):
+        r = audit(make_email(), edition="03", expected_path="/mind/", publisher_address=ADDR)
+        self.assertTrue(r["structural_checks"]["commercial_disclosure_near_first_party_cta"])
+    def test_disclosure_only_far_away_fails(self):
+        r = audit(make_email(far_disclosure=True), edition="03", expected_path="/mind/", publisher_address=ADDR)
+        self.assertTrue(r["structural_checks"]["commercial_disclosure_in_present_mime_parts"])
+        self.assertFalse(r["structural_checks"]["commercial_disclosure_near_first_party_cta"])
+        self.assertFalse(r["structural_pass"])
     def test_editorial_does_not_require_affiliate_disclosure(self):
         self.assertTrue(audit(make_email(disclosure=False), edition="01", expected_path="/mind/", publisher_address=ADDR)["structural_checks"]["commercial_disclosure_in_present_mime_parts"])
     def test_email_safe_html(self):
