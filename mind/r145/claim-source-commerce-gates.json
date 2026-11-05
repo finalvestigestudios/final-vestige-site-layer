@@ -1,0 +1,536 @@
+{
+  "schema_version": "mind-evidence-r145-v1",
+  "as_of": "2026-11-05",
+  "release_status": "UNPUBLISHED_HARD_HOLD",
+  "products": {
+    "primary": "Zen12 Premium",
+    "fallback": "FV owned paid Mind SKU — unavailable until authenticated"
+  },
+  "sources": [
+    {
+      "id": "S01",
+      "title": "Zen12 Premium official offer",
+      "url": "https://zen12.com/hnp",
+      "type": "merchant",
+      "checked": "2026-11-05"
+    },
+    {
+      "id": "S02",
+      "title": "Inspire3 official catalog",
+      "url": "https://inspire3.com/",
+      "type": "merchant",
+      "checked": "2026-11-05"
+    },
+    {
+      "id": "S03",
+      "title": "Zen12 free-audio opt-in",
+      "url": "https://zen12.com/freeaudio",
+      "type": "merchant",
+      "checked": "2026-11-05"
+    },
+    {
+      "id": "S04",
+      "title": "FTC Endorsement Guides",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "type": "regulator"
+    },
+    {
+      "id": "S05",
+      "title": "FTC Health Products Compliance Guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "type": "regulator"
+    },
+    {
+      "id": "S06",
+      "title": "Ingendoh et al 2023 systematic EEG review",
+      "url": "https://doi.org/10.1371/journal.pone.0286023",
+      "type": "peer_review"
+    },
+    {
+      "id": "S07",
+      "title": "Garcia-Argibay et al 2019 binaural-beat meta-analysis",
+      "url": "https://doi.org/10.1007/s00426-018-1066-8",
+      "type": "peer_review"
+    },
+    {
+      "id": "S08",
+      "title": "Kirsch 1999 hypnosis and expectancy review",
+      "url": "https://revistas.um.es/analesps/article/view/31161/0",
+      "type": "peer_review"
+    },
+    {
+      "id": "S09",
+      "title": "Burgess and Kirsch expectancy memory task",
+      "url": "https://doi.org/10.1002/ch.146",
+      "type": "peer_review"
+    },
+    {
+      "id": "S10",
+      "title": "Farias et al 2020 meditation adverse-events systematic review",
+      "url": "https://doi.org/10.1111/acps.13225",
+      "type": "peer_review"
+    },
+    {
+      "id": "S11",
+      "title": "NCCIH meditation evidence and safety overview",
+      "url": "https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety/",
+      "type": "public_health"
+    },
+    {
+      "id": "S12",
+      "title": "FV existing Seven Day Focus Fieldbook",
+      "url": "https://finalvestige.com/focus/",
+      "type": "site_live_prior_inventory"
+    },
+    {
+      "id": "S13",
+      "title": "FV published Puységur archive",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "type": "site_live_prior_inventory"
+    },
+    {
+      "id": "S14",
+      "title": "FV published change blindness",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "type": "site_live_prior_inventory"
+    },
+    {
+      "id": "S15",
+      "title": "Hypnosis Live Total Focus official",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "type": "merchant"
+    },
+    {
+      "id": "S16",
+      "title": "Inspire3 affiliate site",
+      "url": "https://affiliates.inspire3.com/",
+      "type": "public_affiliate_portal"
+    },
+    {
+      "id": "S17",
+      "title": "GitHub FV source-of-truth #171",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "type": "internal"
+    },
+    {
+      "id": "S18",
+      "title": "GitHub FV conversion #820",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "type": "internal"
+    }
+  ],
+  "claims": [
+    {
+      "id": "zen12_exact_sku",
+      "claim": "Zen12 Premium: 12 levels, four listening styles each, 48 MP3s",
+      "status": "SELLER_DESCRIPTION",
+      "source_ids": [
+        "S01"
+      ],
+      "decision": "ALLOW with seller attribution; do not imply purchase/download tested"
+    },
+    {
+      "id": "seller_12_minute",
+      "claim": "Seller markets 12-minute listening sessions",
+      "status": "SELLER_DESCRIPTION",
+      "source_ids": [
+        "S01"
+      ],
+      "decision": "ALLOW only as format; do not imply proven benefits"
+    },
+    {
+      "id": "seller_hour_equivalence",
+      "claim": "12 min is scientifically equivalent to 1 hour meditation",
+      "status": "UNSUBSTANTIATED_PRODUCT_EFFICACY",
+      "source_ids": [
+        "S01",
+        "S06",
+        "S07"
+      ],
+      "decision": "EXCLUDE; do not launder general science into product proof"
+    },
+    {
+      "id": "seller_guarantee",
+      "claim": "Merchant advertises one-year refund guarantee",
+      "status": "SELLER_POLICY_UNVERIFIED",
+      "source_ids": [
+        "S01"
+      ],
+      "decision": "ALLOW with conditional description; checkout/terms/refund outcome unverified"
+    },
+    {
+      "id": "seller_landing_price",
+      "claim": "Merchant page displayed $87.99 Premium offer on Nov 5",
+      "status": "SELLER_DISPLAY_ONLY",
+      "source_ids": [
+        "S01"
+      ],
+      "decision": "Dated observation only; cannot assert checkout price"
+    },
+    {
+      "id": "seller_free_email",
+      "claim": "Free sample path says merchant newsletter received",
+      "status": "SELLER_DESCRIPTION",
+      "source_ids": [
+        "S03"
+      ],
+      "decision": "ALLOW consent caveat; never blend with Jetpack"
+    },
+    {
+      "id": "premium_lifetime_support",
+      "claim": "Seller says lifetime support and manuals",
+      "status": "SELLER_DESCRIPTION",
+      "source_ids": [
+        "S01"
+      ],
+      "decision": "ALLOW with attribution; untested"
+    },
+    {
+      "id": "inspire3_program",
+      "claim": "Public affiliate program portal exists",
+      "status": "PUBLIC_CATALOG",
+      "source_ids": [
+        "S16"
+      ],
+      "decision": "DO NOT infer FV approval"
+    },
+    {
+      "id": "affiliate_accepted",
+      "claim": "FV has named Inspire3 affiliate acceptance",
+      "status": "NOT_VERIFIED",
+      "source_ids": [
+        "S16"
+      ],
+      "decision": "HARD_HOLD"
+    },
+    {
+      "id": "affiliate_tracklink",
+      "claim": "FV has allowed exact-SKU earning URL/terms",
+      "status": "NOT_VERIFIED",
+      "source_ids": [
+        "S16"
+      ],
+      "decision": "HARD_HOLD"
+    },
+    {
+      "id": "approved_creatives",
+      "claim": "FV has approved merchant creative/swipe usage",
+      "status": "NOT_VERIFIED",
+      "source_ids": [
+        "S16"
+      ],
+      "decision": "No copied marketing, use original assets only"
+    },
+    {
+      "id": "hypnosis_sku",
+      "claim": "Total Focus distinct exact offer 33 min 47MB",
+      "status": "SELLER_DESCRIPTION",
+      "source_ids": [
+        "S15"
+      ],
+      "decision": "Not interchangeable with Zen12 nor Hypnotize Yourself"
+    },
+    {
+      "id": "eeg_review",
+      "claim": "2023 14-study EEG review: 5 support, 8 contradict, 1 mixed",
+      "status": "PEER_REVIEWED_REVIEW",
+      "source_ids": [
+        "S06"
+      ],
+      "decision": "ALLOW exact scope; not branded product proof"
+    },
+    {
+      "id": "binaural_meta",
+      "claim": "2019 study synthesis positive pooled result for selected outcomes",
+      "status": "PEER_REVIEWED_META_ANALYSIS",
+      "source_ids": [
+        "S07"
+      ],
+      "decision": "ALLOW with scope and study limitations; not seller proof"
+    },
+    {
+      "id": "response_expectancy",
+      "claim": "Kirsch conceptualized expectation as a mediator of suggestion effects",
+      "status": "LITERATURE_ARGUMENT",
+      "source_ids": [
+        "S08"
+      ],
+      "decision": "ALLOW attributed, not settled universal mechanism"
+    },
+    {
+      "id": "memory_experiment",
+      "claim": "Burgess and Kirsch tested expectancy instructions with memory tasks",
+      "status": "EXPERIMENT",
+      "source_ids": [
+        "S09"
+      ],
+      "decision": "ALLOW bounded task description only"
+    },
+    {
+      "id": "safety_prevalence",
+      "claim": "Meditation adverse-event pooled prevalence 8.3% varied by study design",
+      "status": "REVIEW_ESTIMATE",
+      "source_ids": [
+        "S10",
+        "S11"
+      ],
+      "decision": "ALLOW only with heterogeneity caution; not exact product risk"
+    },
+    {
+      "id": "ftc_disclosure",
+      "claim": "Near-CTA clear relationship disclosure required where material",
+      "status": "REGULATORY_GUIDANCE",
+      "source_ids": [
+        "S04"
+      ],
+      "decision": "Adjacent plain-language description, not vague badge"
+    },
+    {
+      "id": "ftc_health",
+      "claim": "Objective health/mental claims require adequate substantiation",
+      "status": "REGULATORY_GUIDANCE",
+      "source_ids": [
+        "S05"
+      ],
+      "decision": "EXCLUDE unsourced benefits and diagnosis"
+    },
+    {
+      "id": "focus_live",
+      "claim": "Existing Focus Fieldbook and sole Jetpack funnel in place",
+      "status": "PRIOR_VERIFIED_SITE",
+      "source_ids": [
+        "S12",
+        "S17"
+      ],
+      "decision": "No duplicate signup, no autoresponder modification"
+    },
+    {
+      "id": "product_rights",
+      "claim": "Rights-cleared sellable owned Mind SKU, price, delivery and returns",
+      "status": "NOT_VERIFIED",
+      "source_ids": [
+        "S18"
+      ],
+      "decision": "Fallback requires authenticated Payhip product record"
+    },
+    {
+      "id": "grok_media_ids",
+      "claim": "Immutable asset IDs/actual social post URL and destination",
+      "status": "NOT_VERIFIED",
+      "source_ids": [
+        "S18"
+      ],
+      "decision": "No invented attribution or live new article link"
+    },
+    {
+      "id": "affiliate_revenue",
+      "claim": "Verified product-specific commission, payout, refunds",
+      "status": "NOT_VERIFIED",
+      "source_ids": [
+        "S18"
+      ],
+      "decision": "Never conflate affiliate_click with sale"
+    },
+    {
+      "id": "primary_kpi",
+      "claim": "Net revenue per 1000 qualified human sessions",
+      "status": "REQUIRED_MEASUREMENT",
+      "source_ids": [
+        "S18"
+      ],
+      "decision": "NOT COMPUTABLE until numerator and denominator verified"
+    }
+  ],
+  "gates": [
+    {
+      "id": "G01",
+      "name": "named written partner acceptance",
+      "verified": false,
+      "owner": "Founder/Mind",
+      "evidence": null
+    },
+    {
+      "id": "G02",
+      "name": "approved exact Zen12 Premium link",
+      "verified": false,
+      "owner": "Site QA/Engineering/Commerce",
+      "evidence": null
+    },
+    {
+      "id": "G03",
+      "name": "approved organic social channel terms",
+      "verified": false,
+      "owner": "Founder/Mind",
+      "evidence": null
+    },
+    {
+      "id": "G04",
+      "name": "approved newsletter/email promotion terms",
+      "verified": false,
+      "owner": "Founder/Mind",
+      "evidence": null
+    },
+    {
+      "id": "G05",
+      "name": "approved affiliate creative rights or original-only use",
+      "verified": false,
+      "owner": "Founder/Mind",
+      "evidence": null
+    },
+    {
+      "id": "G06",
+      "name": "affiliate attribution window, refund clawback and payout terms",
+      "verified": false,
+      "owner": "Founder/Mind",
+      "evidence": null
+    },
+    {
+      "id": "G07",
+      "name": "privacy-approved purchaser-reporting fields",
+      "verified": false,
+      "owner": "Site QA/Engineering/Commerce",
+      "evidence": null
+    },
+    {
+      "id": "G08",
+      "name": "product-specific claim substantiation",
+      "verified": false,
+      "owner": "Site QA/Engineering/Commerce",
+      "evidence": null
+    },
+    {
+      "id": "G09",
+      "name": "published live same-SKU guide approval",
+      "verified": false,
+      "owner": "Site QA/Engineering/Commerce",
+      "evidence": null
+    },
+    {
+      "id": "G10",
+      "name": "mobile no-JS and keyboard/a11y browser QA",
+      "verified": false,
+      "owner": "Site QA/Engineering/Commerce",
+      "evidence": null
+    },
+    {
+      "id": "G11",
+      "name": "actual 40-second original captioned video",
+      "verified": false,
+      "owner": "Site QA/Engineering/Commerce",
+      "evidence": null
+    },
+    {
+      "id": "G12",
+      "name": "performance/CWV QA 360/390/768/1440",
+      "verified": false,
+      "owner": "Site QA/Engineering/Commerce",
+      "evidence": null
+    },
+    {
+      "id": "G13",
+      "name": "founder release permission",
+      "verified": false,
+      "owner": "Site QA/Engineering/Commerce",
+      "evidence": null
+    },
+    {
+      "id": "G14",
+      "name": "site QA approval",
+      "verified": false,
+      "owner": "Site QA/Engineering/Commerce",
+      "evidence": null
+    },
+    {
+      "id": "G15",
+      "name": "canonical homepage lead approval",
+      "verified": false,
+      "owner": "Site QA/Engineering/Commerce",
+      "evidence": null
+    },
+    {
+      "id": "G16",
+      "name": "live CMS or navigation approval",
+      "verified": false,
+      "owner": "Site QA/Engineering/Commerce",
+      "evidence": null
+    },
+    {
+      "id": "G17",
+      "name": "existing Focus email delivery verified for flow",
+      "verified": false,
+      "owner": "Site QA/Engineering/Commerce",
+      "evidence": null
+    },
+    {
+      "id": "G18",
+      "name": "verified approved FV Mind Payhip SKU, rights, price, fulfillment",
+      "verified": false,
+      "owner": "Site QA/Engineering/Commerce",
+      "evidence": null
+    },
+    {
+      "id": "G19",
+      "name": "first-party consent-safe campaign attribution",
+      "verified": false,
+      "owner": "Site QA/Engineering/Commerce",
+      "evidence": null
+    },
+    {
+      "id": "G20",
+      "name": "confirmed non-test purchase / commission report",
+      "verified": false,
+      "owner": "Site QA/Engineering/Commerce",
+      "evidence": null
+    },
+    {
+      "id": "G21",
+      "name": "net settlement fees refunds reconciliation",
+      "verified": false,
+      "owner": "Site QA/Engineering/Commerce",
+      "evidence": null
+    },
+    {
+      "id": "G22",
+      "name": "Grok actual media IDs and allowed destination",
+      "verified": false,
+      "owner": "Site QA/Engineering/Commerce",
+      "evidence": null
+    }
+  ],
+  "social_routes": [
+    {
+      "topic": "Change Blindness",
+      "site_url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "lead_url": "https://finalvestige.com/focus/",
+      "offer": "Zen12 Premium (conditional)",
+      "media_id": null,
+      "published_social_url": null
+    },
+    {
+      "topic": "Puységur / Mesmerism",
+      "site_url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "lead_url": "https://finalvestige.com/focus/",
+      "offer": "Hypnosis Live Total Focus only with separate buyer intent and approval",
+      "media_id": null,
+      "published_social_url": null
+    },
+    {
+      "topic": "Expectation / binaural audio",
+      "site_url": null,
+      "proposed_article": "/mind/expectation-suggestion-meditation-audio/",
+      "lead_url": "https://finalvestige.com/focus/",
+      "offer": "Zen12 Premium (conditional)",
+      "media_id": null,
+      "published_social_url": null
+    }
+  ],
+  "commerce_measurement": {
+    "qualifying_sessions": null,
+    "confirmed_leads": null,
+    "merchant_paid_orders": null,
+    "affiliate_confirmed_sales": null,
+    "net_settled_revenue": null,
+    "kpi_net_per_1000": null,
+    "reason": "Missing verified human-qualified denominator, orders, payout, refunds and costs. Not zero."
+  }
+}
