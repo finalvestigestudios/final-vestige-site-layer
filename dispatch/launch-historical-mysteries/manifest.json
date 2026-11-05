@@ -1,0 +1,85 @@
+{
+  "status": "DRAFT_UNSENT_UNSCHEDULED",
+  "brand": "Final Vestige Studios",
+  "channel": "Jetpack WordPress.com",
+  "audience": "Historical mysteries, artifacts, symbols, documentary research",
+  "cadence": "Proposed one weekly broadcast, not per-subscriber drip",
+  "email_new_posts_by_default": false,
+  "newsletter_format_observed": "excerpt",
+  "publisher_approved_partner": null,
+  "merchant_affiliate_urls": [],
+  "issues": [
+    {
+      "n": 1,
+      "wordpress_post_id": 2076,
+      "title": "The crystal skull that wasn't ancient",
+      "slug": "dispatch-2026-01-crystal-skull",
+      "excerpt": "The object looked ancient. Its documented history told a different story. The first clue in our new series.",
+      "cta": [
+        "https://finalvestige.com/2026/11/02/crystal-skulls/"
+      ],
+      "source_path": "dispatch/launch-historical-mysteries/issues/01-dispatch-2026-01-crystal-skull.block.html",
+      "stage": "WordPress draft, not sent"
+    },
+    {
+      "n": 2,
+      "wordpress_post_id": 2077,
+      "title": "The map that invited a thousand stories",
+      "slug": "dispatch-2026-02-piri-reis",
+      "excerpt": "A surviving 1513 chart inspired extraordinary claims. Here's how to read the evidence without adding a lost world.",
+      "cta": [
+        "https://finalvestige.com/2026/11/02/piri-reis-map/"
+      ],
+      "source_path": "dispatch/launch-historical-mysteries/issues/02-dispatch-2026-02-piri-reis.block.html",
+      "stage": "WordPress draft, not sent"
+    },
+    {
+      "n": 3,
+      "wordpress_post_id": 2078,
+      "title": "The Roman cup that changed its color",
+      "slug": "dispatch-2026-03-lycurgus",
+      "excerpt": "One ancient object offers a real visual surprise, and a reminder that mystery and scientific explanation belong together.",
+      "cta": [
+        "https://finalvestige.com/2026/11/02/lycurgus-cup/"
+      ],
+      "source_path": "dispatch/launch-historical-mysteries/issues/03-dispatch-2026-03-lycurgus.block.html",
+      "stage": "WordPress draft, not sent"
+    },
+    {
+      "n": 4,
+      "wordpress_post_id": 2079,
+      "title": "An accident with no conclusively identified first spark",
+      "slug": "dispatch-2026-04-apollo1",
+      "excerpt": "Six records, roughly fifteen seconds and an important boundary between what investigators knew and what they couldn't prove.",
+      "cta": [
+        "https://finalvestige.com/apollo-1-evidence-atlas/"
+      ],
+      "source_path": "dispatch/launch-historical-mysteries/issues/04-dispatch-2026-04-apollo1.block.html",
+      "stage": "WordPress draft, not sent"
+    },
+    {
+      "n": 5,
+      "wordpress_post_id": 2080,
+      "title": "Tarot was a game before it became a prophecy",
+      "slug": "dispatch-2026-05-tarot-history",
+      "excerpt": "The surviving fifteenth-century cards and the much later mystical interpretations belong to different chapters of the story.",
+      "cta": [
+        "https://finalvestige.com/free-resources/"
+      ],
+      "source_path": "dispatch/launch-historical-mysteries/issues/05-dispatch-2026-05-tarot-history.block.html",
+      "stage": "WordPress draft, not sent"
+    },
+    {
+      "n": 6,
+      "wordpress_post_id": 2081,
+      "title": "You've read the clues. Could you solve the case?",
+      "slug": "dispatch-2026-06-case-file",
+      "excerpt": "An investigator's checklist for separating evidence, inference and invention—plus what's coming next from Final Vestige.",
+      "cta": [
+        "https://finalvestige.com/apollo-1-evidence-atlas/"
+      ],
+      "source_path": "dispatch/launch-historical-mysteries/issues/06-dispatch-2026-06-case-file.block.html",
+      "stage": "WordPress draft, not sent"
+    }
+  ]
+}
