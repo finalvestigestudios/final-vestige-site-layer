@@ -170,6 +170,10 @@ jobs:
         run: |
           python -m unittest discover -s products/desktop/tests -p 'test_recent_regression_privacy_r201.py'
           python -OO -m unittest discover -s products/desktop/tests -p 'test_recent_regression_privacy_r201.py'
+      - name: R202 strict pass-only audit results (17 synthetic methods; normal and -OO)
+        run: |
+          python -m unittest discover -s products/desktop/tests -p 'test_recent_regression_strict_results_r202.py'
+          python -OO -m unittest discover -s products/desktop/tests -p 'test_recent_regression_strict_results_r202.py'
       - name: R200 execute R194-R199 financial and policy audit tests (148 methods per mode)
         run: |
           python products/desktop/scripts/safe_recent_regressions_r200.py
@@ -706,6 +710,14 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R201 privacy tests failed" }
           python -OO -m unittest discover -s products/desktop/tests -p 'test_recent_regression_privacy_r201.py'
           if ($LASTEXITCODE -ne 0) { throw "R201 optimized privacy tests failed" }
+      - name: R202 strict pass-only audit results (17 synthetic methods; normal and -OO)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python -m unittest discover -s products/desktop/tests -p 'test_recent_regression_strict_results_r202.py'
+          if ($LASTEXITCODE -ne 0) { throw "R202 strict audit tests failed" }
+          python -OO -m unittest discover -s products/desktop/tests -p 'test_recent_regression_strict_results_r202.py'
+          if ($LASTEXITCODE -ne 0) { throw "R202 optimized strict audit tests failed" }
       - name: R200 execute R194-R199 financial and policy audit tests (148 methods per mode)
         shell: pwsh
         run: |
