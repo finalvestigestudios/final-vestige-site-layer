@@ -1,0 +1,63 @@
+{
+  "schema": "fv-live66-source-only-reconciled-summary-v1",
+  "captured_date": "2026-11-05",
+  "audit_part_git_blobs": [
+    {
+      "part": 1,
+      "sha": "05b01ce3876a62233b1bb497cdc4b1e842d487ee"
+    },
+    {
+      "part": 2,
+      "sha": "fe4a33b8a0ca0d2c19d8a577d92281af0ce1e9e7"
+    },
+    {
+      "part": 3,
+      "sha": "ccda35904b62ed1f2dbda09ab5001c39888b6faa"
+    },
+    {
+      "part": 4,
+      "sha": "a4e0ad40652446761fdcc5f879127038255d8838"
+    },
+    {
+      "part": 5,
+      "sha": "c3278c73bd6498debb541e9a52dc3df9b4fd3e61"
+    },
+    {
+      "part": 6,
+      "sha": "aab2002740fcd59bb0a192d80a86a3b2e1514e26"
+    }
+  ],
+  "previous_snapshot_blob": "921e09ec4a26f69cc5063e867efacbc16070a36a",
+  "old_branch": "qa/media-all61-guest-evidence-binding-20261105",
+  "verification": {
+    "posts": 66,
+    "slots": 361,
+    "unique_urls": 359,
+    "external": 294,
+    "first_party": 60,
+    "first_party_jetpack": 7,
+    "wikimedia_redirect": 124,
+    "missing_dimensions": 311,
+    "source_query_width_over_960": 79,
+    "legacy_drift_keys": [],
+    "new_slots": [
+      "1926:0",
+      "1924:0",
+      "1920:0",
+      "1920:1",
+      "1917:0",
+      "1917:1"
+    ],
+    "actual_browser_verified": false,
+    "claim_42_broken": "UNVERIFIED",
+    "claim_76_percent": "UNMEASURED",
+    "production_changes": 0
+  },
+  "mutation_replays_passed": 22,
+  "limitations": [
+    "Stored Gutenberg inline img src (not CSS backgrounds, featured media, or page builder runtime)",
+    "No external image HTTP requests, Chromium CDP, image decode, rights clearance, or real wire bytes",
+    "960px is a conditional optimization ceiling; technically detailed figures require readability and crop checks",
+    "All browser status fields null rather than reported failures"
+  ]
+}
