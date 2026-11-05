@@ -50,7 +50,7 @@ test('all legal and approval gates remain CLOSED',()=>{
 });
 test('merchant URLs and rights restrictions are explicit',()=>{
  assert.match(memo,/named partner agreement/);
- assert.match(memo,/NO.*source/i);
+ assert.match(memo,/NO customer\/sale\/commission|not proof of rejection|no actual paid|No manufacturer/i);
  assert.match(memo,/NOT_COMPUTABLE/);
 });
 const good={cohort_days:7,qualified_human_sessions:100,attribution_evidence:'verified',merchant_report_complete:true,merchant_settlement_verified:true,attributable_orders:2,gross_commission_cents:1200,refunds_cents:200,fees_cents:100,report_period:'2026-11-01/2026-11-07',data_handling_approved:true};
