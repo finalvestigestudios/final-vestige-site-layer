@@ -1,0 +1,223 @@
+{
+  "schema": "fv-mind-claims-v1",
+  "date": "2026-11-05",
+  "sprint": "R138",
+  "status": "DRAFT_HARD_HOLD",
+  "offer": "Zen12 Premium",
+  "partnerEligibility": "UNVERIFIED",
+  "authorizedAffiliateUrl": null,
+  "approvedCreative": null,
+  "priceVerifiedAtCheckout": null,
+  "refundSuccessfullyTested": null,
+  "productUsedByFV": false,
+  "claims": [
+    {
+      "claim": "McGurk mismatched audiovisual syllables can change reported hearing",
+      "source": "MCGURK-1976",
+      "decision": "ALLOW_WITH_CONDITIONS"
+    },
+    {
+      "claim": "Susceptibility varies considerably among people",
+      "source": "BROWN-2018",
+      "decision": "ALLOW_WITH_CONDITIONS"
+    },
+    {
+      "claim": "McGurk illusion proves commercial brainwave entrainment",
+      "source": "MCGURK-1976",
+      "decision": "REJECT_NO_RELEVANT_EVIDENCE"
+    },
+    {
+      "claim": "Zen12 Premium contains 48 MP3 files across 12 levels",
+      "source": "ZEN12-OFFER",
+      "decision": "SELLER_SAYS_ONLY"
+    },
+    {
+      "claim": "Zen12 gives 1 hour of advanced meditation in 12 minutes",
+      "source": "ZEN12-OFFER",
+      "decision": "REJECT_UNSUBSTANTIATED_PRODUCT_EFFICACY"
+    },
+    {
+      "claim": "Zen12 treats anxiety or medical problems",
+      "source": "ZEN12-OFFER",
+      "decision": "REJECT_NO_PRODUCT_SPECIFIC_CLINICAL_EVIDENCE"
+    },
+    {
+      "claim": "Public merchant displays coupon promotion",
+      "source": "ZEN12-PROMO",
+      "decision": "SELLER_SAYS_ONLY_NOT_PRICE_GUARANTEE"
+    },
+    {
+      "claim": "Free Zen12 audio also leads to merchant newsletter",
+      "source": "ZEN12-FREE",
+      "decision": "SELLER_SAYS_ONLY_CONSENT_DISCLOSURE"
+    },
+    {
+      "claim": "Referring affiliate may receive identifying buyer data",
+      "source": "INSPIRE3-PRIVACY",
+      "decision": "DISCLOSE_RISK_AND_RESTRICT_DATA"
+    },
+    {
+      "claim": "FV currently an approved Inspire3 affiliate",
+      "source": "INSPIRE3-PORTAL",
+      "decision": "REJECT_NO_ACCEPTANCE_PROOF"
+    },
+    {
+      "claim": "FTC disclosure must be proximate to earning CTA",
+      "source": "FTC-DISCLOSURE",
+      "decision": "REQUIRED"
+    },
+    {
+      "claim": "Actual paid sale can be inferred from affiliate_click",
+      "source": "FTC-DISCLOSURE",
+      "decision": "REJECT_DISTINCT_EVENTS"
+    }
+  ],
+  "sources": [
+    {
+      "id": "MCGURK-1976",
+      "kind": "primary",
+      "url": "https://www.nature.com/articles/264746a0",
+      "claim": "Audible /ba/ with visible /ga/ yielded /da/ reports for some participants",
+      "status": "supported-specific",
+      "limits": "Do not assert everyone experiences fusion or reuse film without license"
+    },
+    {
+      "id": "BROWN-2018",
+      "kind": "independent",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30418995/",
+      "claim": "Individuals vary widely; part of variability related to lipreading articulation",
+      "status": "supported-specific",
+      "limits": "Not a diagnostic or general cognitive ranking"
+    },
+    {
+      "id": "MACDONALD-2018",
+      "kind": "retrospective",
+      "url": "https://doi.org/10.1163/22134808-00002548",
+      "claim": "Historical development of audiovisual speech research",
+      "status": "supported-historical",
+      "limits": "Not evidence for commercial audio products"
+    },
+    {
+      "id": "ZEN12-OFFER",
+      "kind": "seller",
+      "url": "https://zen12.com/hnp",
+      "claim": "12 levels, four styles, 48 Premium MP3s; advertised one-year guarantee",
+      "status": "seller-description-only",
+      "limits": "Checkout price, product delivered, applicability of terms not independently checked"
+    },
+    {
+      "id": "ZEN12-PROMO",
+      "kind": "seller",
+      "url": "https://zen12.com/secret/",
+      "claim": "Separate coupon-dependent offer exists",
+      "status": "seller-description-only",
+      "limits": "No eligibility or final checkout verified; no promised discount"
+    },
+    {
+      "id": "ZEN12-FREE",
+      "kind": "seller",
+      "url": "https://zen12.com/welcome",
+      "claim": "Free-audio invitation indicates merchant newsletter",
+      "status": "seller-description-only",
+      "limits": "Do not merge with FV subscriber list"
+    },
+    {
+      "id": "INSPIRE3-PRIVACY",
+      "kind": "seller",
+      "url": "https://inspire3.com/privacy/",
+      "claim": "Merchant says it may share affiliate-referred customer identity and products",
+      "status": "seller-policy-public",
+      "limits": "Affiliate terms could differ; require written aggregate-only reporting arrangements"
+    },
+    {
+      "id": "INSPIRE3-PORTAL",
+      "kind": "seller",
+      "url": "https://affiliates.inspire3.com/",
+      "claim": "Public partner signup available",
+      "status": "seller-public",
+      "limits": "No named FV approval, commission agreement or authorized tracking URL established"
+    },
+    {
+      "id": "FTC-DISCLOSURE",
+      "kind": "regulatory",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "claim": "Disclose material commission relationship clearly and conspicuously near a recommendation",
+      "status": "official-guidance",
+      "limits": "A distant policy-only link is inadequate"
+    },
+    {
+      "id": "FTC-HEALTH",
+      "kind": "regulatory",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "claim": "Health-related efficacy claims require competent reliable evidence appropriate to the claim",
+      "status": "official-guidance",
+      "limits": "FTC guidance does not endorse Zen12"
+    },
+    {
+      "id": "FV-FOCUS",
+      "kind": "owned-live",
+      "url": "https://finalvestige.com/focus/",
+      "claim": "Existing free Focus Fieldbook published",
+      "status": "wordpress-read-verified",
+      "limits": "Content visibility not confirmed subscription; no duplicate list"
+    },
+    {
+      "id": "FV-PUY",
+      "kind": "owned-live",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "claim": "Published historical archive",
+      "status": "wordpress-read-verified",
+      "limits": "Historical claims not product efficacy"
+    }
+  ],
+  "releaseGates": [
+    {
+      "gate": "named_affiliate_acceptance",
+      "status": "CLOSED"
+    },
+    {
+      "gate": "approved_earning_link",
+      "status": "CLOSED"
+    },
+    {
+      "gate": "approved_distribution_channels",
+      "status": "CLOSED"
+    },
+    {
+      "gate": "seller_privacy_reporting_terms",
+      "status": "CLOSED"
+    },
+    {
+      "gate": "merchant_checkout_total",
+      "status": "CLOSED"
+    },
+    {
+      "gate": "merchant_refund_terms",
+      "status": "CLOSED"
+    },
+    {
+      "gate": "founder_release_approval",
+      "status": "CLOSED"
+    },
+    {
+      "gate": "independent_site_QA",
+      "status": "CLOSED"
+    },
+    {
+      "gate": "real_browser_a11y",
+      "status": "CLOSED"
+    },
+    {
+      "gate": "actual_media_video_licensed",
+      "status": "CLOSED"
+    },
+    {
+      "gate": "asset_id_reconciliation",
+      "status": "CLOSED"
+    },
+    {
+      "gate": "verified_paid_settlement",
+      "status": "CLOSED"
+    }
+  ]
+}
