@@ -24,6 +24,7 @@ const ORIGIN='https://finalvestige.com';
 const VIEWPORTS=[320,390,768,1279,1280,1440,1920];
 const CHAPTERS=['fv-hf-chronicle','fv-hf-evidence','fv-hf-apollo',
   'fv-hf-franklin','fv-hf-malbone','fv-hf-inquiry','fv-hf-observer'];
+const ARCHIVE_CASES=Object.freeze(['apollo','franklin','malbone']);
 const ARCHIVE_FILES=Object.freeze(['s67-19766.webp',
   'franklinexpeditionnote.jpg','edit-017-v02-nypl-5003296-original.jpg']);
 // Published Page 6 archive exhibits; WP media 473, 474, 1258. Rights separately gated.
@@ -171,11 +172,40 @@ async function focusGeometry(page){
       hit:!!top&&(top===a||a.contains(top))};
   }));
 }
+/**
+ * Exercise the ACTUAL progressive-enhancement archive selector before inspecting
+ * a lazy image. Published Page 6 hides the two inactive case <article> panels
+ * in JS mode; scrolling hidden <img loading="lazy"> can never prove delivery.
+ * This is read-only: it clicks local case buttons, not external links/forms.
+ */
+export async function activateArchiveCase(page,caseId){
+  if(!ARCHIVE_CASES.includes(caseId))
+    throw new Error('Unexpected archive case identifier: '+String(caseId));
+  const button=page.locator('[data-fv-case-button="'+caseId+'"]');
+  const panel=page.locator('[data-fv-case="'+caseId+'"]');
+  if(await button.count()!==1 || await panel.count()!==1)
+    throw new Error('Archive case control/panel missing or duplicated: '+caseId);
+  await button.click({timeout:8000});
+  const state=await page.evaluate(id=>{
+    const control=document.querySelector('[data-fv-case-button="'+id+'"]');
+    const selected=[...document.querySelectorAll('[data-fv-case]')]
+      .filter(el=>!el.hidden).map(el=>el.dataset.fvCase);
+    return {pressed:control?.getAttribute('aria-pressed')??null,selected};
+  },caseId);
+  if(state.pressed!=='true' || state.selected.length!==1 || state.selected[0]!==caseId)
+    throw new Error('Archive selection did not reveal exactly the chosen case: '+caseId);
+  return state;
+}
 async function readImages(page,width){
   const imgs=page.locator('main img');
-  const total=await imgs.count(),items=[];
+  const total=await imgs.count(),items=[],activated=new Set();
   for(let i=0;i<Math.min(total,20);i++){
     const img=imgs.nth(i);
+    const caseId=await img.evaluate(el=>el.closest('[data-fv-case]')?.dataset.fvCase??null);
+    if(caseId && !activated.has(caseId)){
+      await activateArchiveCase(page,caseId);
+      activated.add(caseId);
+    }
     try{await img.scrollIntoViewIfNeeded({timeout:7000});await img.evaluate(el=>{
       if(el.complete)return Promise.resolve();
       return new Promise(done=>{el.addEventListener('load',done,{once:true});
@@ -194,7 +224,9 @@ async function readImages(page,width){
     items.push(row);
     check(row.complete&&row.naturalWidth>0,'width '+width+' failed image: '+row.srcPath);
   }
-  return {total,checked:items};
+  check(ARCHIVE_CASES.every(id=>activated.has(id)),
+    'width '+width+' not all three evidence cases interacted/inspected');
+  return {total,checked:items,activatedCases:[...activated]};
 }
 async function runWidth(browser,width,axeSource){
   const {context,page,errors,images,imageTransfers}=await createPage(browser,width,true);
