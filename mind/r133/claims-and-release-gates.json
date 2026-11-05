@@ -1,0 +1,420 @@
+{
+  "schema": "FV.MIND.R133.CLAIMS.v1",
+  "date": "2026-11-04",
+  "publication": "DRAFT_ONLY",
+  "partner_status": "NOT_VERIFIED",
+  "affiliate_activation": "HARD_HOLD",
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Zeman et al 2015 coinage",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26115582/",
+      "verified_date": "2026-11-04"
+    },
+    {
+      "id": "S2",
+      "title": "Zeman 2024 imagery extremes review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38548492/",
+      "verified_date": "2026-11-04"
+    },
+    {
+      "id": "S3",
+      "title": "Kay et al 2022 eLife pupillary test",
+      "url": "https://elifesciences.org/articles/72484",
+      "verified_date": "2026-11-04"
+    },
+    {
+      "id": "S4",
+      "title": "Dawes et al 2020 multisensory profile",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/32572039/",
+      "verified_date": "2026-11-04"
+    },
+    {
+      "id": "S5",
+      "title": "Nanay et al 2024 involuntary imagery",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38564857/",
+      "verified_date": "2026-11-04"
+    },
+    {
+      "id": "S6",
+      "title": "Wicken et al 2021 fear imagery study",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33715433/",
+      "verified_date": "2026-11-04"
+    },
+    {
+      "id": "S7",
+      "title": "Inspire3 official catalog",
+      "url": "https://inspire3.com/",
+      "verified_date": "2026-11-04"
+    },
+    {
+      "id": "S8",
+      "title": "Zen12 official main Premium listing",
+      "url": "https://zen12.com/hnp",
+      "verified_date": "2026-11-04"
+    },
+    {
+      "id": "S9",
+      "title": "Zen12 conditional campaign",
+      "url": "https://zen12.com/secret/",
+      "verified_date": "2026-11-04"
+    },
+    {
+      "id": "S10",
+      "title": "Inspire3 public affiliate network",
+      "url": "https://affiliates.inspire3.com/",
+      "verified_date": "2026-11-04"
+    },
+    {
+      "id": "S11",
+      "title": "Inspire3 privacy policy",
+      "url": "https://inspire3.com/privacy/",
+      "verified_date": "2026-11-04"
+    },
+    {
+      "id": "S12",
+      "title": "FTC endorsement disclosure guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "verified_date": "2026-11-04"
+    },
+    {
+      "id": "S13",
+      "title": "FTC health claims",
+      "url": "https://www.ftc.gov/business-guidance/advertising-marketing/health-claims",
+      "verified_date": "2026-11-04"
+    },
+    {
+      "id": "S14",
+      "title": "Binaural-beat EEG systematic review 2023",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+      "verified_date": "2026-11-04"
+    },
+    {
+      "id": "S15",
+      "title": "Mindfulness induction systematic review 2024",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38215647/",
+      "verified_date": "2026-11-04"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "text": "Aphantasia describes markedly diminished voluntary visual imagery",
+      "classification": "independent-supported",
+      "sources": [
+        "S1",
+        "S2"
+      ],
+      "restriction": "No diagnostic claims"
+    },
+    {
+      "id": "C2",
+      "text": "Not all individuals have same imagery or modality profile",
+      "classification": "independent-supported",
+      "sources": [
+        "S2",
+        "S4",
+        "S5"
+      ],
+      "restriction": "Variability; avoid universal conclusions"
+    },
+    {
+      "id": "C3",
+      "text": "2022 study compared control participants and 18 with aphantasia on imagery pupil responses",
+      "classification": "independent-supported",
+      "sources": [
+        "S3"
+      ],
+      "restriction": "Specific experimental conditions, no home test"
+    },
+    {
+      "id": "C4",
+      "text": "Aphantasia eliminates all mental cognition or creativity",
+      "classification": "unsupported-reject",
+      "sources": [
+        "S4"
+      ],
+      "restriction": "False generalization"
+    },
+    {
+      "id": "C5",
+      "text": "Imagery differences make guided meditation ineffective for all people with aphantasia",
+      "classification": "unsupported-reject",
+      "sources": [
+        "S2",
+        "S4"
+      ],
+      "restriction": "No population-specific clinical outcomes established"
+    },
+    {
+      "id": "C6",
+      "text": "A reading/imagery fear-task study showed differentiated skin conductance",
+      "classification": "independent-supported",
+      "sources": [
+        "S6"
+      ],
+      "restriction": "Not a mental-health protection claim"
+    },
+    {
+      "id": "C7",
+      "text": "Inspire3 lists Zen12 among its programs",
+      "classification": "seller-description",
+      "sources": [
+        "S7"
+      ],
+      "restriction": "Does not verify affiliate approval"
+    },
+    {
+      "id": "C8",
+      "text": "Main Zen12 Premium page describes 48 MP3s and 12 levels",
+      "classification": "seller-description",
+      "sources": [
+        "S8"
+      ],
+      "restriction": "Verify before publication; catalog description"
+    },
+    {
+      "id": "C9",
+      "text": "Main Premium offer visually displays $87.99",
+      "classification": "seller-display-unverified-checkout",
+      "sources": [
+        "S8"
+      ],
+      "restriction": "May change or vary by checkout, do not advertise"
+    },
+    {
+      "id": "C10",
+      "text": "Conditional Zen12 campaign displays $37 with a countdown",
+      "classification": "seller-display-unverified-checkout",
+      "sources": [
+        "S9"
+      ],
+      "restriction": "Do not inherit urgency, scarcity or promotional conditions"
+    },
+    {
+      "id": "C11",
+      "text": "One-year money-back guarantee is asserted on seller main page",
+      "classification": "seller-policy-unverified-redemption",
+      "sources": [
+        "S8"
+      ],
+      "restriction": "Buyer must inspect current written terms; not tested"
+    },
+    {
+      "id": "C12",
+      "text": "Public affiliate signup portal represents acceptance of FV",
+      "classification": "unsupported-reject",
+      "sources": [
+        "S10"
+      ],
+      "restriction": "Signed named account authorization required"
+    },
+    {
+      "id": "C13",
+      "text": "Affiliate program public payout amounts apply to FV",
+      "classification": "unsupported-reject",
+      "sources": [
+        "S10"
+      ],
+      "restriction": "No negotiated commission terms, do not quote"
+    },
+    {
+      "id": "C14",
+      "text": "Inspire3 privacy policy says customer name/email/purchase details may be shared with affiliate",
+      "classification": "seller-policy-verified-text",
+      "sources": [
+        "S11"
+      ],
+      "restriction": "Obtain reporting minimization agreement before activation"
+    },
+    {
+      "id": "C15",
+      "text": "Affiliate disclosures should be clear and close to commercial recommendations",
+      "classification": "FTC-guidance",
+      "sources": [
+        "S12"
+      ],
+      "restriction": "Do not rely on footers alone"
+    },
+    {
+      "id": "C16",
+      "text": "Specific Zen12 mental-health, wealth and brainwave effects are independently proven",
+      "classification": "unsupported-reject",
+      "sources": [
+        "S13",
+        "S14"
+      ],
+      "restriction": "No product-specific trials independently validated here"
+    },
+    {
+      "id": "C17",
+      "text": "Brief audio mindfulness studies show small-study limited outcomes",
+      "classification": "independent-qualified",
+      "sources": [
+        "S15"
+      ],
+      "restriction": "Not a Zen12 product trial"
+    },
+    {
+      "id": "C18",
+      "text": "A clicked offer or PDF reveal proves a paid order or confirmed signup",
+      "classification": "unsupported-reject",
+      "sources": [],
+      "restriction": "Only merchant/Jetpack source-of-truth confirms"
+    },
+    {
+      "id": "C19",
+      "text": "Published /mind/ live page exists",
+      "classification": "not-verified",
+      "sources": [],
+      "restriction": "Prior authenticated WP inventory indicated no published slug; recheck before release"
+    },
+    {
+      "id": "C20",
+      "text": "FV owns a currently sellable rights-cleared Mind Payhip product",
+      "classification": "not-verified",
+      "sources": [],
+      "restriction": "Authenticate dashboard, product license and fulfillment first"
+    }
+  ],
+  "gates": [
+    {
+      "id": "named_partner_acceptance",
+      "status": "CLOSED",
+      "reason": "No dated source-of-truth acceptance evidence supplied for this release gate"
+    },
+    {
+      "id": "approved_Zen12_offer",
+      "status": "CLOSED",
+      "reason": "No dated source-of-truth acceptance evidence supplied for this release gate"
+    },
+    {
+      "id": "approved_exact_earning_URL",
+      "status": "CLOSED",
+      "reason": "No dated source-of-truth acceptance evidence supplied for this release gate"
+    },
+    {
+      "id": "approved_social_and_email_channels",
+      "status": "CLOSED",
+      "reason": "No dated source-of-truth acceptance evidence supplied for this release gate"
+    },
+    {
+      "id": "affiliate_commission_terms",
+      "status": "CLOSED",
+      "reason": "No dated source-of-truth acceptance evidence supplied for this release gate"
+    },
+    {
+      "id": "affiliate_reporting_privacy",
+      "status": "CLOSED",
+      "reason": "No dated source-of-truth acceptance evidence supplied for this release gate"
+    },
+    {
+      "id": "claim_to_proof_signoff",
+      "status": "CLOSED",
+      "reason": "No dated source-of-truth acceptance evidence supplied for this release gate"
+    },
+    {
+      "id": "current_checkout_price_terms",
+      "status": "CLOSED",
+      "reason": "No dated source-of-truth acceptance evidence supplied for this release gate"
+    },
+    {
+      "id": "documented_refund_terms",
+      "status": "CLOSED",
+      "reason": "No dated source-of-truth acceptance evidence supplied for this release gate"
+    },
+    {
+      "id": "FTC_adjacent_disclosure_visual_test",
+      "status": "CLOSED",
+      "reason": "No dated source-of-truth acceptance evidence supplied for this release gate"
+    },
+    {
+      "id": "privacy_and_consent_review",
+      "status": "CLOSED",
+      "reason": "No dated source-of-truth acceptance evidence supplied for this release gate"
+    },
+    {
+      "id": "real_WP_draft_prepublication_review",
+      "status": "CLOSED",
+      "reason": "No dated source-of-truth acceptance evidence supplied for this release gate"
+    },
+    {
+      "id": "existing_jetpack_opt_in_flow_QA",
+      "status": "CLOSED",
+      "reason": "No dated source-of-truth acceptance evidence supplied for this release gate"
+    },
+    {
+      "id": "native_mobile_browser_QA",
+      "status": "CLOSED",
+      "reason": "No dated source-of-truth acceptance evidence supplied for this release gate"
+    },
+    {
+      "id": "WCAG_keyboard_and_screen_reader",
+      "status": "CLOSED",
+      "reason": "No dated source-of-truth acceptance evidence supplied for this release gate"
+    },
+    {
+      "id": "no_JS_accessibility",
+      "status": "CLOSED",
+      "reason": "No dated source-of-truth acceptance evidence supplied for this release gate"
+    },
+    {
+      "id": "video_file_captions_transcript_when_available",
+      "status": "CLOSED",
+      "reason": "No dated source-of-truth acceptance evidence supplied for this release gate"
+    },
+    {
+      "id": "core_web_vitals_acceptable",
+      "status": "CLOSED",
+      "reason": "No dated source-of-truth acceptance evidence supplied for this release gate"
+    },
+    {
+      "id": "founder_explicit_commercial_release",
+      "status": "CLOSED",
+      "reason": "No dated source-of-truth acceptance evidence supplied for this release gate"
+    },
+    {
+      "id": "merchant_transaction_attribution",
+      "status": "CLOSED",
+      "reason": "No dated source-of-truth acceptance evidence supplied for this release gate"
+    },
+    {
+      "id": "merchant_refunds_fees_reconciled",
+      "status": "CLOSED",
+      "reason": "No dated source-of-truth acceptance evidence supplied for this release gate"
+    },
+    {
+      "id": "unique_qualified_session_evidence",
+      "status": "CLOSED",
+      "reason": "No dated source-of-truth acceptance evidence supplied for this release gate"
+    },
+    {
+      "id": "Grok_asset_id_inventory",
+      "status": "CLOSED",
+      "reason": "No dated source-of-truth acceptance evidence supplied for this release gate"
+    },
+    {
+      "id": "Payhip_owned_product_rights",
+      "status": "CLOSED",
+      "reason": "No dated source-of-truth acceptance evidence supplied for this release gate"
+    },
+    {
+      "id": "Payhip_checkout_delivery_verification",
+      "status": "CLOSED",
+      "reason": "No dated source-of-truth acceptance evidence supplied for this release gate"
+    }
+  ],
+  "source_truth": {
+    "research": "primary study or review",
+    "merchant": "seller representation not independent efficacy proof",
+    "commercial": "merchant settlement or Payhip verified order only",
+    "lead": "Jetpack confirmed record, not download or reveal"
+  },
+  "commercial_readiness": {
+    "inspire3_named_acceptance": false,
+    "approved_affiliate_url": null,
+    "approved_promotion_channels": null,
+    "rights_cleared_payhip_mind_sku": null,
+    "realized_net_per_1000_qualified_sessions": null
+  }
+}
