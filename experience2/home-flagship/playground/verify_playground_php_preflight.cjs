@@ -31,7 +31,7 @@ assert.ok(runPHP.includes("update_option('" + markerKey + "', '" + markerValue +
 assert.ok(runPHP.indexOf("update_option('" + markerKey) > runPHP.indexOf("wp_insert_post("), 'Do not authorize activation before local page creation');
 assert.ok(plugin.includes("if (!is_page('fv-ex2-review'))"), 'Assets and shortcode must remain scoped to review page');
 assert.ok(!/wp_remote_(?:post|request)\s*\(/.test(plugin), 'No backend outbound calls permitted');
-assert.ok(!/fetch\s*\(\s*['"`\]https?:/.test(plugin), 'No newly added remote JS calls permitted');
+assert.ok(!/fetch\s*\(\s*['\"]https?:/.test(plugin), 'No newly added remote JS calls permitted');
 
 function recognizesGuard(source) {
   return source.includes(guard) &&
