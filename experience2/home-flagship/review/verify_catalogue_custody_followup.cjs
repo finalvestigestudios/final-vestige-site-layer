@@ -17,7 +17,7 @@ function accept(c) {
   assert.equal(c.assets.length, 3);
   const ap=c.assets.find(a=>a.key==='apollo');
   const fr=c.assets.find(a=>a.key==='franklin');
-  const ny=c.assets.find(a=>a.key==='nypl');
+  const ny=c.assets.find(a=>a.key==='nypl_brooklyn');
   assert.ok(ap && fr && ny);
   assert.equal(ap.wp_media_id, 473);
   assert.equal(ap.claimed_archive_identifier, 'S67-19766');
