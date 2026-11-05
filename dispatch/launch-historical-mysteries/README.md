@@ -17,6 +17,21 @@ Final Vestige readers are drawn to mysteries, disputed histories, physical artif
 
 Each installment fulfills its own informational promise. The next-email clue is a truthful preview, not a fabricated disappearance, scarcity claim or invented breakthrough. Cross-issue CTA stays within the real first-party website except an optional openly cited V&A museum article.
 
+## New priority: authentic specimens as the history/collector conversion lane (2026-11-05)
+
+**Mini Museum LLC** is an especially close fit to the Final Vestige historical-object and evidence audience. Unlike the fictional case-solving offer from Cold Case Inc, it sells physical historical/scientific specimens and curated collectible editions. The official Mini Museum authenticity page claims genuine labeled specimens and information-card certificates; these are seller claims and individual items still require provenance checks. Its Awin public profile, ID 89949, reports a **15-day cookie** and **$60–$100 average order**, but the available public profile does **not** verify a commission percentage. Do not project exact commission until the joined account shows its applicable rate.
+
+The founder supplied a creative for Mini Museum under Awin publisher ID 3055117 (creative s=4236132, q=552988) and a Cold Case Inc creative (s=4959313, q=620613). **Both exact codes are preserved** in `offers/AWIN_CREATIVE_REGISTER.md`. These indicate shareable ad assets but do not alone establish active partner approval or email-promotion permission.
+
+**WordPress presell draft:** page **2088**, `mini-museum-history-collectibles`, exists as a private `draft` at the moment of this note. It contains product-relevant headline, benefit copy, provenance cautions, contextual disclosure, and the exact Awin click and image links. The connected WordPress API readback confirms exactly one H1, three Awin sponsored click links, one original banner image and two visible disclosure lines; no production page was modified.
+
+**Updated two-lane commercial order:**
+- **Physical-history collector route:** Mini Museum first for readers arriving from Apollo artifacts, fossil/meteorite history, maps, museum objects or collectible curiosities; Folio Society secondary for beautifully produced historical books.
+- **Participatory detective route:** Cold Case Inc first for readers who actively use the Evidence Atlas, enjoy clues and want a fictional case-solving experience; The Detective Society secondary, mindful of UK→US delivery costs.
+- **Deep historical education route:** The Great Courses on secret societies, historical occult currents and related sourced topics.
+
+The six weekly mystery issues remain **UNSENT** and unchanged. Mini Museum's commercial reveal is **conditional after** adequate editorial warm-up and affiliate/email terms approval. The product-specific concept is stored in `offers/landing-mini-museum.md` and `offers/email-mini-museum-conditional.md`. Do not activate site or newsletter links without advertiser approval, per-product truth checks, a validated U.S. customer journey, and founder release signoff.
+
 ## Candidate partners (NONE APPROVED / NO AFFILIATE LINKS)
 
 | Candidate | Commission reported | Audience/use | Risks and next gate |
