@@ -119,6 +119,12 @@ def check_manifest(m):
     for ref in m["source_head_commits"].values():
         if not SHA.fullmatch(ref):
             raise ValueError("invalid source pin")
+    metadata_blobs = m.get("metadata_blobs")
+    if not isinstance(metadata_blobs, dict) or len(metadata_blobs) != 35:
+        raise ValueError("all 35 original metadata Git blobs must be pinned")
+    if any(not SLUG.fullmatch(slug) or not SHA.fullmatch(blob)
+           for slug, blob in metadata_blobs.items()):
+        raise ValueError("malformed metadata identity/blob custody")
     for row in rows:
         if row.get("origin") not in m["source_head_commits"] or row["pinned"]["commit"] != m["source_head_commits"][row["origin"]]:
             raise ValueError("incorrect frozen source provenance")
@@ -145,15 +151,15 @@ def audit(repo, m):
     base = "preparedness/content/articles/"
     bodies = {x[len(base):-len(".body.html")] for x in tree if x.startswith(base) and x.endswith(".body.html")}
     metas = {x[len(base):-len(".meta.json")] for x in tree if x.startswith(base) and x.endswith(".meta.json")}
-    if len(bodies) != 35 or bodies != metas:
+    if len(bodies) != 35 or bodies != metas or set(m["metadata_blobs"]) != metas:
         raise ValueError("35-body/35-meta article census failed")
     for slug in sorted(metas):
         if not SLUG.fullmatch(slug):
             raise ValueError("invalid article census identity")
-        meta = json.loads(read_git(repo, candidate, f"{base}{slug}.meta.json"))
+        meta = json.loads(require_blob(repo, candidate, f"{base}{slug}.meta.json", m["metadata_blobs"][slug]))
         if meta.get("slug") != slug or meta.get("status", {}).get("publish") != "draft":
             raise ValueError(f"article not draft: {slug}")
-        if meta.get("safety_review", {}).get("state") not in ("pending", "unreviewed", "required"):
+        if meta.get("safety_review", {}).get("state") not in ("pending", "not-required", "approved"):
             raise ValueError(f"unexpected human safety review state: {slug}")
     for origin, branch in m["branches"].items():
         local = git_query(repo, "rev-parse", "--verify", f"refs/remotes/origin/{branch}")
