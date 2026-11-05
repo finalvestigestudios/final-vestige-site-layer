@@ -1,0 +1,198 @@
+{
+  "anchor": "5685b54796d520e8dd50e0cdf4d35e38c9cec7a4",
+  "automatic_merge": false,
+  "chain": [
+    {
+      "draft": true,
+      "files": [
+        "preparedness/docs/r133/EXACT_35_ARTICLE_SNAPSHOT_AND_CONVERSION_HOLD.md",
+        "preparedness/docs/r133/locked_files.json",
+        "preparedness/tests/test_r133_snapshot_gate.py",
+        "preparedness/tools/r133_snapshot_gate.py"
+      ],
+      "head": "233ba9876b88508d103c5d7fe13906dd975eabc5",
+      "parent": "5685b54796d520e8dd50e0cdf4d35e38c9cec7a4",
+      "pr": 1025,
+      "round": 133,
+      "state": "open"
+    },
+    {
+      "draft": true,
+      "files": [
+        "preparedness/docs/r134/35_ARTICLE_CITATION_PASSAGE_REVIEW_AND_CONVERSION_HOLD.md",
+        "preparedness/tests/test_r134_reviewer_packet.py",
+        "preparedness/tools/r134_reviewer_packet.py"
+      ],
+      "head": "8bcd67a2b14b9c3d91aa817ebe59b3afe2b3fa37",
+      "parent": "233ba9876b88508d103c5d7fe13906dd975eabc5",
+      "pr": 1031,
+      "round": 134,
+      "state": "open"
+    },
+    {
+      "draft": true,
+      "files": [
+        "preparedness/docs/r135/QUALIFIED_SOURCE_SAFETY_REVIEW_QUEUE_AND_CONVERSION_HOLD.md",
+        "preparedness/tests/test_r135_review_queue.py",
+        "preparedness/tools/r135_review_queue.py"
+      ],
+      "head": "072768f207847989c69b10770d83e4e533ce9ba3",
+      "parent": "8bcd67a2b14b9c3d91aa817ebe59b3afe2b3fa37",
+      "pr": 1037,
+      "round": 135,
+      "state": "open"
+    },
+    {
+      "draft": true,
+      "files": [
+        "preparedness/docs/r136/HUMAN_REVIEW_LEDGER_HOLD.md",
+        "preparedness/tests/test_r136_human_review_ledger.py",
+        "preparedness/tools/r136_human_review_ledger.py"
+      ],
+      "head": "52e477b22e1143d4f768369ab7d46265968ccc5a",
+      "parent": "072768f207847989c69b10770d83e4e533ce9ba3",
+      "pr": 1043,
+      "round": 136,
+      "state": "open"
+    },
+    {
+      "draft": true,
+      "files": [
+        "preparedness/docs/r137/AUTHOR_SCOPE_CROSSWALK_REVIEW_HOLD.md",
+        "preparedness/tests/test_r137_author_scope_crosswalk.py",
+        "preparedness/tools/r137_author_scope_crosswalk.py"
+      ],
+      "head": "5a0dfe1067440d7607394ae85b9c2cb6f21b7014",
+      "parent": "52e477b22e1143d4f768369ab7d46265968ccc5a",
+      "pr": 1049,
+      "round": 137,
+      "state": "open"
+    },
+    {
+      "draft": true,
+      "files": [
+        "preparedness/docs/r138/SOURCE_REVIEW_LANE_ALIGNMENT_HOLD.md",
+        "preparedness/tests/test_r138_cross_lane_reconciliation.py",
+        "preparedness/tools/r138_cross_lane_reconciliation.py"
+      ],
+      "head": "5ea94442b56ec040e8846d784032d38200cd7dae",
+      "parent": "5a0dfe1067440d7607394ae85b9c2cb6f21b7014",
+      "pr": 1057,
+      "round": 138,
+      "state": "open"
+    },
+    {
+      "draft": true,
+      "files": [
+        "preparedness/docs/r139/README.md",
+        "preparedness/docs/r139/article_depth_census.json",
+        "preparedness/tests/test_r139_article_depth_gate.py",
+        "preparedness/tools/r139_article_depth_gate.py"
+      ],
+      "head": "f88ec21534cf6166e52adab3ed246cdc89f09198",
+      "parent": "5ea94442b56ec040e8846d784032d38200cd7dae",
+      "pr": 1063,
+      "round": 139,
+      "state": "open"
+    },
+    {
+      "draft": true,
+      "files": [
+        "preparedness/docs/r140/README.md",
+        "preparedness/docs/r140/branch_intake_evidence.json",
+        "preparedness/tests/test_r140_contributor_intake.py",
+        "preparedness/tools/r140_contributor_intake.py"
+      ],
+      "head": "b7f81c8ad6963b7f44fe8898d6bca12f4c562634",
+      "parent": "f88ec21534cf6166e52adab3ed246cdc89f09198",
+      "pr": 1069,
+      "round": 140,
+      "state": "open"
+    },
+    {
+      "draft": true,
+      "files": [
+        "preparedness/docs/r141/README.md",
+        "preparedness/docs/r141/citation_occurrence_docket.json",
+        "preparedness/tests/test_r141_citation_delta_gate.py",
+        "preparedness/tools/r141_citation_delta_gate.py"
+      ],
+      "head": "b2cac019fb9c85e8555ff4cf0c24aa996a415041",
+      "parent": "b7f81c8ad6963b7f44fe8898d6bca12f4c562634",
+      "pr": 1076,
+      "round": 141,
+      "state": "open"
+    },
+    {
+      "draft": true,
+      "files": [
+        "preparedness/docs/r142/README.md",
+        "preparedness/tests/test_r142_citation_context_gate.py",
+        "preparedness/tools/r142_citation_context_gate.py"
+      ],
+      "head": "4662ecd45d7ad4ccf55e40fced76fb909f838542",
+      "parent": "b2cac019fb9c85e8555ff4cf0c24aa996a415041",
+      "pr": 1083,
+      "round": 142,
+      "state": "open"
+    },
+    {
+      "draft": true,
+      "files": [
+        "preparedness/docs/r143/README.md",
+        "preparedness/docs/r143/qa157_frozen_pair_manifest.json",
+        "preparedness/tests/test_r143_qa157_regression_gate.py",
+        "preparedness/tools/r143_qa157_regression_gate.py"
+      ],
+      "head": "a1dcbf98aec0f1ae07f83f590896603a995e2e99",
+      "parent": "4662ecd45d7ad4ccf55e40fced76fb909f838542",
+      "pr": 1090,
+      "round": 143,
+      "state": "open"
+    },
+    {
+      "draft": true,
+      "files": [
+        "preparedness/docs/r144/README.md",
+        "preparedness/tests/test_r144_surgical_source_preservation.py",
+        "preparedness/tools/r144_surgical_source_preservation.py"
+      ],
+      "head": "ee0dcc6e3ad7a3c63a52b1327b99310d3e7e4edc",
+      "parent": "a1dcbf98aec0f1ae07f83f590896603a995e2e99",
+      "pr": 1096,
+      "round": 144,
+      "state": "open"
+    }
+  ],
+  "contributors": {
+    "claude/prep-food-ccdc55": "f911ff7a655de8d81535ea86ec3d65a49ee76648",
+    "claude/prep-health-837444": "d5ef5bafd68361434dd1cc9209915b8e8a4eaf17",
+    "claude/prep-hist-field-9db767": "4e5caf812727953aa45e3bda2d382f2c67b6a09c",
+    "claude/prep-hist-food-b81f19": "67e116e536c7410bed30f8f3b1bb8c166f3c223d",
+    "claude/prep-hist-home-0e0e38": "7504a5f099594d635e3dd7332a33a2e1346c43a2",
+    "claude/prep-shelter-5e1e0e": "5daeaf2dd5ab71806a6b73c91edfb1d8df5da976",
+    "claude/prep-start-bbfeb8": "2122d856fce9f64887c16df3d52e64be9f59a55b"
+  },
+  "expected_articles": 35,
+  "expected_citations": 2000,
+  "frozen_rc": "ddb3528ba6494dada1fa1c3a142ce746e3a67706",
+  "independent_refs": {
+    "fixture_fix973": "4d40996a559b0124d74a9bb3bdcd481ad1992aa8",
+    "fixtures169": "e9cd7766dac59d47ab467d8945269b9146c2aef5",
+    "home49": "10495883299d53596992c26a8987f629b2904670",
+    "home604": "bdf01b4a3e13fd6179ae9e847c9d4429bbe16176",
+    "qa157": "7d1ae6b8ef93d10cfb6810987672360885e9c1aa"
+  },
+  "issues": [
+    136,
+    820,
+    818
+  ],
+  "may_publish": false,
+  "medical_safety_verified": false,
+  "merchant_offer_verified": false,
+  "qd_pass": false,
+  "release": "DRAFT_HOLD",
+  "schema": "FV-PREP-R145-STACK-1",
+  "verification_note": "GitHub connector, 2026-11-05. Twelve open draft PR refs; per-PR added files; no branch merged or published. Does not certify source content or medical safety. Verifier checks exact local Git objects before recognizing custody."
+}
