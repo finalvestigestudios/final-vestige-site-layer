@@ -39,7 +39,8 @@ def write_csv_report(destination: str | Path, fields: Iterable[str],
     header collisions reject the export instead of losing column identity.
     All rendered cells must be plain text without NUL or bare formula prefixes;
     malformed sanitizer output fails closed before publication.
-    Missing row keys fail closed; explicit empty values remain permitted.
+    Missing row keys, forged labels and duplicate row items fail closed;
+    explicit empty values remain permitted.
     Nothing ever overwrites an existing destination or follows its symlink.
     On a filesystem lacking the required safe publication operation, fail
     rather than silently fall back to an overwriting move.
@@ -71,8 +72,18 @@ def write_csv_report(destination: str | Path, fields: Iterable[str],
                 # absent keys, disguising missing financial/source evidence.
                 # Sanitize *all* supplied values, including ignored extras,
                 # before demanding an explicit value for every schema field.
+                # Freeze real mapping items before rendering. A crafted str
+                # subclass may compare equal to a required audit key without
+                # actually being that key; duplicate custom mapping entries
+                # can also erase one evidence value when coerced into a dict.
+                if not isinstance(row, Mapping):
+                    raise ValueError("Invalid CSV report row mapping")
+                entries = tuple(row.items())
+                if (any(type(name) is not str for name, _ in entries)
+                        or len({name for name, _ in entries}) != len(entries)):
+                    raise ValueError("Invalid or duplicate CSV report row columns")
                 rendered_row = {
-                    name: _render_cell(value, cell) for name, value in row.items()
+                    name: _render_cell(value, cell) for name, value in entries
                 }
                 if any(name not in rendered_row for name in names):
                     raise ValueError("Incomplete CSV report row schema")

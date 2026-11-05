@@ -202,6 +202,10 @@ jobs:
         run: |
           python -m unittest discover -s products/desktop/tests -p 'test_atomic_row_schema_custody_r209.py'
           python -OO -m unittest discover -s products/desktop/tests -p 'test_atomic_row_schema_custody_r209.py'
+      - name: R210 reject forged/duplicate CSV row columns (16 cases; normal and -OO)
+        run: |
+          python -m unittest discover -s products/desktop/tests -p 'test_atomic_row_key_custody_r210.py'
+          python -OO -m unittest discover -s products/desktop/tests -p 'test_atomic_row_key_custody_r210.py'
       - name: R200 execute R194-R199 financial and policy audit tests (148 methods per mode)
         run: |
           python products/desktop/scripts/safe_audit_subprocess_r205.py
@@ -802,6 +806,14 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R209 CSV evidence-row tests failed" }
           python -OO -m unittest discover -s products/desktop/tests -p 'test_atomic_row_schema_custody_r209.py'
           if ($LASTEXITCODE -ne 0) { throw "R209 optimized CSV evidence-row tests failed" }
+      - name: R210 reject forged/duplicate CSV row columns (16 cases; normal and -OO)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python -m unittest discover -s products/desktop/tests -p 'test_atomic_row_key_custody_r210.py'
+          if ($LASTEXITCODE -ne 0) { throw "R210 CSV row-key tests failed" }
+          python -OO -m unittest discover -s products/desktop/tests -p 'test_atomic_row_key_custody_r210.py'
+          if ($LASTEXITCODE -ne 0) { throw "R210 optimized CSV row-key tests failed" }
       - name: R200 execute R194-R199 financial and policy audit tests (148 methods per mode)
         shell: pwsh
         run: |
