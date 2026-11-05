@@ -69,6 +69,12 @@ def _owned_rows(
     """
     if type(hunk) is not dict:
         return None
+    # An exact dict may still contain attacker-controlled key objects. Inspect
+    # stored key types BEFORE looking up either source field: a colliding key
+    # could otherwise run custom __eq__ or masquerade as report metadata.
+    # Iterating the exact dict uses native storage, not overridden callbacks.
+    if any(type(key) is not str for key in hunk):
+        return None
     rows = hunk.get(field)
     if type(rows) is not list:
         return None
