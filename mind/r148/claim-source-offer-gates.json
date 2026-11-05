@@ -102,26 +102,26 @@
     {
       "id": "S13",
       "name": "Existing Focus Fieldbook destination (prior authenticated CMS evidence)",
-      "kind": "owned_existing_unverified_browser_this_run",
+      "kind": "owned_existing_wp_authenticated_this_run",
       "url": "https://finalvestige.com/focus/",
       "checked_date": "2026-11-05",
-      "note": "Not accessible through public browser tool in this run; rely only on earlier authenticated CMS observation, do not newly assert current accessibility."
+      "note": "Authenticated read-only WordPress content search/get on 2026-11-05: publish status and destination confirmed; web page browser retrieval failed, so browser visual/HTTP QA remains untested."
     },
     {
       "id": "S14",
       "name": "Puységur resource (prior authenticated CMS evidence)",
-      "kind": "owned_existing_unverified_browser_this_run",
+      "kind": "owned_existing_wp_authenticated_this_run",
       "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
       "checked_date": "2026-11-05",
-      "note": "Not accessible through public browser tool in this run; rely only on earlier authenticated CMS observation, do not newly assert current accessibility."
+      "note": "Authenticated read-only WordPress content search/get on 2026-11-05: publish status and destination confirmed; web page browser retrieval failed, so browser visual/HTTP QA remains untested."
     },
     {
       "id": "S15",
       "name": "Published Change Blindness page (prior authenticated CMS evidence)",
-      "kind": "owned_existing_unverified_browser_this_run",
+      "kind": "owned_existing_wp_authenticated_this_run",
       "url": "https://finalvestige.com/2026/11/02/change-blindness/",
       "checked_date": "2026-11-05",
-      "note": "Not accessible through public browser tool in this run; rely only on earlier authenticated CMS observation, do not newly assert current accessibility."
+      "note": "Authenticated read-only WordPress content search/get on 2026-11-05: publish status and destination confirmed; web page browser retrieval failed, so browser visual/HTTP QA remains untested."
     },
     {
       "id": "S16",
@@ -327,8 +327,8 @@
       "source_ids": [
         "S13"
       ],
-      "decision": "INHERITED_PRIOR_CMS",
-      "scope": "Do not add forms; live reachability not verified this run"
+      "decision": "SUPPORTED_WP_PUBLISH_STATUS_ONLY",
+      "scope": "Authenticated WordPress confirmed Focus page is published, but no new signup was performed and confirmation/delivery remain untested"
     },
     {
       "id": "C22",
@@ -401,6 +401,26 @@
       "source_ids": [],
       "decision": "UNKNOWN_MERCHANT_ACCOUNT",
       "scope": "Never infer sale from CTA click"
+    },
+    {
+      "id": "C31",
+      "claim": "Published Change Blindness post contains contextual /focus/ link in its stored body",
+      "source_ids": [
+        "S15",
+        "S13"
+      ],
+      "decision": "VERIFIED_ABSENT",
+      "scope": "Authenticated read-only WordPress get 2026-11-05 ID 1922: content does not contain /focus/"
+    },
+    {
+      "id": "C32",
+      "claim": "Published Puységur resource contains contextual /focus/ link in stored body",
+      "source_ids": [
+        "S14",
+        "S13"
+      ],
+      "decision": "VERIFIED_ABSENT",
+      "scope": "Authenticated read-only WordPress get 2026-11-05 ID 1377: content does not contain /focus/"
     }
   ],
   "gates": [
