@@ -42,11 +42,11 @@ check('no duplicate email list',()=>assert.doesNotMatch(html,/subscribe|input ty
 function mutationCaught(name,mutated,bad){
  check('adversarial mutation caught: '+name,()=>assert.equal(Boolean(bad(mutated)),true));
 }
-mutationCaught('external script',html.replace('</main>','<script src="https://other.example/t.js"></script></main>'),x=>/<script\\b/i.test(x));
-mutationCaught('second signup form',html.replace('</main>','<form><input type="email"></form></main>'),x=>/<form\\b/i.test(x));
-mutationCaught('merchant URL',html.replace('href="https://finalvestige.com/focus/"','href="https://zen12.com/?ref=bogus"'),x=>/href="https:\\/\\/(?:zen12|hypnosislive|inspire3)\\./i.test(x));
+mutationCaught('external script',html.replace('</main>','<script src="https://other.example/t.js"></script></main>'),x=>/<script\b/i.test(x));
+mutationCaught('second signup form',html.replace('</main>','<form><input type="email"></form></main>'),x=>/<form\b/i.test(x));
+mutationCaught('merchant URL',html.replace('href="https://finalvestige.com/focus/"','href="https://zen12.com/?ref=bogus"'),x=>/href="https:\/\/(?:zen12|hypnosislive|inspire3)\./i.test(x));
 mutationCaught('affiliate query',html.replace('https://finalvestige.com/focus/','https://finalvestige.com/focus/?aff_id=bogus'),x=>/[?&](?:ref|aff_id|click_id)=/i.test(x));
-mutationCaught('focus CTA removed',html.replace('href="https://finalvestige.com/focus/"','href="#"'),x=>!/href="https:\\/\\/finalvestige\\.com\\/focus\\/"/.test(x));
+mutationCaught('focus CTA removed',html.replace('href="https://finalvestige.com/focus/"','href="#"'),x=>!/href="https:\/\/finalvestige\.com\/focus\/"/.test(x));
 mutationCaught('commercial gate opened',JSON.stringify({...data,merchant_cta_authorized:true}),x=>JSON.parse(x).merchant_cta_authorized!==false);
 mutationCaught('invented paid commission',JSON.stringify({...data,commission_verified:true}),x=>JSON.parse(x).commission_verified!==false);
 mutationCaught('reopened merchant gate',JSON.stringify({...data,gates:{...data.gates,named_partner_approval:{status:'VERIFIED'}}}),x=>Object.values(JSON.parse(x).gates).some(g=>g.status!=='CLOSED'));
