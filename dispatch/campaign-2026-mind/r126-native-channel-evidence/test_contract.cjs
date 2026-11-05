@@ -11,6 +11,7 @@ run("no event invented from import",()=>assert.equal(m.audit(original).verified_
 run("no welcome invented",()=>assert.equal(m.audit(original).verified_welcome_receipts,null));
 run("no paid sale invented",()=>assert.equal(m.audit(original).verified_paid_orders,null));
 run("reject PII",()=>assert.throws(()=>m.audit(changed(x=>x.email="private@example.net"))));
+run("reject nested subscriber PII",()=>assert.throws(()=>m.audit(changed(x=>x.newsletter.private={email:"reader@example.invalid"}))));
 run("reject mismatched site",()=>assert.throws(()=>m.audit(changed(x=>x.followers.site="other.com"))));
 run("reject forged provider",()=>assert.throws(()=>m.audit(changed(x=>x.newsletter.provider="fake"))));
 run("reject partial stats",()=>assert.throws(()=>m.audit(changed(x=>x.followers.partial=true))));
