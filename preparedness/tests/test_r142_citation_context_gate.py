@@ -83,6 +83,28 @@ class PassageTests(unittest.TestCase):
         with self.assertRaises(UnicodeError):m.contexts(b'\xff')
     def test_no_possible_long_citation_hidden_in_attrs(self):
         with self.assertRaises(ValueError):parse('<p title="{{cite:foo}}">no evidence</p>')
+    def test_explicit_hidden_citation_rejected(self):
+        with self.assertRaises(ValueError):parse('<p>Hi<span hidden>secret {{cite:a}}</span>{{cite:b}}</p>')
+    def test_aria_hidden_citation_rejected(self):
+        with self.assertRaises(ValueError):parse('<p><span aria-hidden="true">{{cite:a}}</span>Safe{{cite:b}}</p>')
+    def test_style_hidden_citation_rejected(self):
+        with self.assertRaises(ValueError):parse('<p><span style="display:none">{{cite:a}}</span>Safe{{cite:b}}</p>')
+    def test_inert_citation_rejected(self):
+        with self.assertRaises(ValueError):parse('<p><span inert>{{cite:a}}</span>Safe{{cite:b}}</p>')
+    def test_hidden_css_visibility_citation_rejected(self):
+        with self.assertRaises(ValueError):parse('<p><span style="visibility: hidden">{{cite:a}}</span>Safe{{cite:b}}</p>')
+    def test_template_citation_rejected(self):
+        with self.assertRaises(ValueError):parse('<p><template>{{cite:a}}</template>Safe{{cite:b}}</p>')
+    def test_hidden_comment_citation_rejected(self):
+        with self.assertRaises(ValueError):parse('<p><!-- {{cite:a}} -->Safe{{cite:b}}</p>')
+    def test_hidden_non_citation_text_not_part_of_context(self):
+        a=parse('<p><span hidden>secret</span>Public{{cite:b}}</p>')
+        b=parse('<p>Public{{cite:b}}</p>')
+        self.assertEqual(m.compare_contexts(a,b)['lost_context_occurrences'],0)
+    def test_script_without_citation_not_part_of_context(self):
+        a=parse('<p><script>something private</script>Public{{cite:b}}</p>')
+        b=parse('<p>Public{{cite:b}}</p>')
+        self.assertEqual(m.compare_contexts(a,b)['added_context_occurrences'],0)
     def test_compare_has_excerpts(self):
         d=m.compare_contexts(parse('<p>Sample{{cite:a}}</p>'),[])
         self.assertEqual(d['old_only'][0]['excerpt'],'sample')
