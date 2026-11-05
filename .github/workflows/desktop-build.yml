@@ -186,6 +186,10 @@ jobs:
         run: |
           python -m unittest discover -s products/desktop/tests -p 'test_audit_subprocess_privacy_r205.py'
           python -OO -m unittest discover -s products/desktop/tests -p 'test_audit_subprocess_privacy_r205.py'
+      - name: R206 private child environment regression (12 tests; normal and -OO)
+        run: |
+          python -m unittest discover -s products/desktop/tests -p 'test_audit_child_environment_r206.py'
+          python -OO -m unittest discover -s products/desktop/tests -p 'test_audit_child_environment_r206.py'
       - name: R200 execute R194-R199 financial and policy audit tests (148 methods per mode)
         run: |
           python products/desktop/scripts/safe_audit_subprocess_r205.py
@@ -754,6 +758,14 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R205 private audit wrapper tests failed" }
           python -OO -m unittest discover -s products/desktop/tests -p 'test_audit_subprocess_privacy_r205.py'
           if ($LASTEXITCODE -ne 0) { throw "R205 optimized private audit wrapper tests failed" }
+      - name: R206 private child environment regression (12 tests; normal and -OO)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python -m unittest discover -s products/desktop/tests -p 'test_audit_child_environment_r206.py'
+          if ($LASTEXITCODE -ne 0) { throw "R206 private child environment tests failed" }
+          python -OO -m unittest discover -s products/desktop/tests -p 'test_audit_child_environment_r206.py'
+          if ($LASTEXITCODE -ne 0) { throw "R206 optimized private child environment tests failed" }
       - name: R200 execute R194-R199 financial and policy audit tests (148 methods per mode)
         shell: pwsh
         run: |
