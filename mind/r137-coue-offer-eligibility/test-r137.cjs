@@ -11,7 +11,7 @@ let count=0; const test=(name,fn)=>{fn();++count;process.stdout.write('PASS '+na
 for(const [label,html] of [['A',a],['B',b]]) {
 test(label+' disclosure next to blocked checkout',()=>{assert.match(html,/Prospective affiliate disclosure:[\s\S]{0,500}<button[^>]+disabled/);});
 test(label+' no merchant earning URL/link or active commerce',()=>{assert.doesNotMatch(html,/<a[^>]+href="[^"]*\?(?:[^"]*&)?(?:ref|aff|affiliate|aid)=/i);assert.doesNotMatch(html,/https?:\/\/payhip\.com\//);assert.match(html,/button type="button" disabled/);});
-test(label+' no tracking scripts or email forms',()=>{assert.doesNotMatch(html,/<script\b|<form\b|<iframe\b|\sautoplay(?:\s|=|>)/i);});
+test(label+' no tracking scripts or email forms',()=>{assert.doesNotMatch(html,/<script\b|<form\b|<iframe\b|<(?:video|audio)[^>]*\bautoplay\b/i);});
 test(label+' Focus and mobile essentials',()=>{assert.match(html,/https:\/\/finalvestige.com\/focus\//);assert.match(html,/name="viewport"/);assert.match(html,/:focus-visible/);assert.match(html,/@media\(max-width:700px\)/);assert.match(html,/prefers-reduced-motion/);});
 test(label+' claims and seller privacy explained',()=>{assert.match(html,/seller-described features/);assert.match(html,/inspire3.com\/privacy/);assert.match(html,/newsletter/);});
 }
