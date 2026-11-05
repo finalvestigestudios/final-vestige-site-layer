@@ -1,0 +1,50 @@
+# R149 — One Offer to Settled Revenue: Decision and QA Contract
+**2026-11-05 | UNPUBLISHED | HARD HOLD | Mind #171, conversion #820**
+
+## Business decision, evidence first
+The conditional buyer-intent offer is precisely **Hypnosis Live Total Focus**, https://hypnosislive.com/mental-skills/total-focus — the merchant says it is a **33-minute, 47-MB recording written and recorded by J. A. Amos**. It is not the separately sold Hypnotize Yourself instructional title and is not Zen12 Premium. The review-only [presell](./total-focus-evidence-first-presell-UNPUBLISHED.html) has a physically disabled merchant referral and the accompanying [2,724-word original research investigation](./tape-not-technique-self-hypnosis-investigation.md) distinguishes clinical self-directed protocols from passive recordings. The general scientific literature supplies no product-specific proof of Total Focus's performance claims.
+
+**Affiliate access:** NOT VERIFIED. A public https://affiliates.inspire3.com/ enrollment page is not FV named acceptance, and a bounded Gmail search of post-September-1 messages found no partner-approval correspondence matching approval terms. That does not prove denial or exclude a separate affiliate dashboard. The precise earning URL, channel permissions, approved creatives, commission/chargeback terms and partner sales reporting are all missing. The product page's advertised prices varied between retrieved versions, so final checkout price is NOT VERIFIED; seller's FAQ https://hypnosislive.com/faq describes a 14-day refund request and five refunded sessions per year, not tested processing.
+
+**FV-owned fallback:** No authenticated *sellable, rights-cleared, delivered* Payhip Mind product, checkout price, refund policy or payment record was available in this run. Do not infer absence of a store from a WordPress search or a Gmail nonmatch. Commerce/Claude must verify actual source-of-truth Payhip inventory and rights. Until one route is authenticated, do not activate purchase links or commercial traffic tests.
+
+## Three creator-to-product mappings; no invented Grok asset IDs
+| Candidate Grok story | Current source destination | Reader's intent | Free and conditional paid continuation | Actual asset ID |
+|---|---|---|---|---|
+| Change Blindness | https://finalvestige.com/2026/11/02/change-blindness/ published | Understand an attention failure with verifiable source | Existing /focus/ only after approved contextual article-body bridge; separate exact Zen12 Premium source guide only for self-declared audio purchasers | NULL |
+| Puységur / Mesmerism | https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/ published | Documentary history of suggestion, not clinical cure | Optional /focus/; separate Total Focus exact-SKU guide only if audience expresses buyer intent, affiliate acceptance verified | NULL |
+| Attentional Blink | R147 investigation exists solely as an unpublished draft | Visual RSVP phenomenon and study of intensive meditation training | NO live social destination; after editorial release only, optional /focus/, future Zen12 guide gated | NULL |
+
+Grok retains all video creation and distribution. Praxxis retains content/rights QA. Reconcile actual platform links, upload timestamps, immutable IDs, approved caption/profile placement and qualified sessions through existing [TASK-008](https://docs.google.com/document/d/1_dqcJeqxbvYb1prGxy0nSWTsHu8p0PSRsDB_NPNbL48/edit) and [dated handoff](https://docs.google.com/document/d/1uK7cZdMv44dkKwDDGILUTCrI2zw3iA0cN5VzdLmF5C8/edit). Do not alter Grok's queue or publish an unpublished article URL.
+
+## Focus bridge and internal link map
+Editorial flow: six established history categories → existing live article/part of future canonical Mind hub #172 → source note and optional contextual /focus/ button → original, existing Jetpack signup → existing welcome/Dispatch pathway → optional evidence-reviewed merchant guide. Direct navigation to the commercial guide must remain possible without signing up. Prior authenticated read-only WordPress checks found stored-body /focus/ links absent in published Change Blindness and Puységur content; this is a PRIOR-RUN observation, not revalidated this run. R142's proposed accessible contextual CTA remains draft and needs independent QA plus founder release approval. No new form/list or newsletter copy edits.
+
+## Experiment hypothesis, not a claim of winning
+Retain R145 **Zen12 Premium text-only vs text + original optional 40-second video storyboard** (unproduced and not playable). Test only after written partner approval, working earning link, current merchant offer/checkout, video production+rights+poster+captions+transcript, publisher consent, mobile/keyboard/screen-reader/no-JS QA and founder approval. Same disclosure, product terms, price qualification, free route and intent must appear in both variants. No autoplay and no forced media. Use first-party consent-compatible allocation, with a no-JS fallback and no extra tracking vendor. Hypothesis: education may improve true purchase quality and realized revenue, or it may distract/harm mobile performance. Track 7/30-day cohorts; do not call a lift in clicks a commercial win.
+
+## First-party attribution and revenue contract
+Use native or approved first-party tags only, avoiding duplicate Ahrefs/GA/Jetpack events. Before any tracking changes, engineering checks current tags and consent. Campaign parameters: utm_source=actual_platform, utm_medium=organic_social, utm_campaign=mind_pilot_2026_11, utm_content=verified_Grok_asset_id. If platform requires bio links, record the actual link journey and any attribution loss instead of inventing precise session joins. Do not put email address, IP, customer names or private identifiers into URLs/logged event fields.
+
+Separate these stages: campaign_landing (qualified if demonstrably human) → article_to_resource_click → confirmed_signup (only from existing Jetpack verified confirmation) → offer_view → affiliate_click (only if live authorized URL and consent) → merchant_confirmed_paid_order (merchant evidence only) → settled_affiliate_commission / confirmed FV digital product net receipts → refunds, reversals and fees → net_realized_revenue. Deduplicate source-order events with merchant-private IDs in restricted reconciliation and publish only aggregate campaign cohorts. Partner sales reported by dashboard are not settled cash until confirmed. If denominator, attribution or merchant settlement is missing, KPI remains **NOT COMPUTABLE**, not zero.
+
+Primary KPI: (confirmed realized net revenue / qualified human sessions) * 1000, separately for 7/30 day cohorts; secondary: paid conversion %, confirmed orders/customers, gross and net receipts, lead-to-paid conversions and refund rates. Tiny samples require uncertainty warnings; pageviews, follow counts and outbound clicks are diagnostics only.
+
+## OFFER → FUNNEL STEP → BLOCKER → CHANGE / EXPERIMENT → PASS/FAIL → OWNER
+| Offer → step | Blocker | Specific remedy | Evidence | Owner |
+|---|---|---|---|---|
+| Total Focus → partner commission | Named acceptance, approved URL and allowed social/email promotion missing | Verify account, agreement, creative rights, reporting, commission/clawbacks | HARD HOLD | Founder/Mind |
+| FV-owned Mind paid SKU → checkout | Rights-cleared Payhip SKU/fulfillment/returns unknown | Commerce authenticated catalog and test checkout/readback | UNKNOWN | Commerce/Claude |
+| Change Blindness article → /focus/ | No approved live contextual link | Independently QA R142 link before release, then test on mobile | DRAFT ONLY | Site QA/Claude |
+| Puységur → separate buyer guide | No exact-SKU live guide or approval | R149 verified independent guide as draft; review before publishing | BUILT, NOT LIVE | Mind/Site QA |
+| Grok published media → qualified landing | Immutable ID and exact public URL missing | Reconcile TASK-008 without taking over production | PENDING | Praxxis/Grok |
+| Checkout → paid verified order | Merchant report and privacy-safe matching absent | Merchant order and refund reconciliation after consent and authorization | UNTESTED | Commerce/Growth |
+| Zen12 A/B → realized profit | Partner permission, actual playable media, cohort mechanism missing | Do not allocate users; stage text/video later | NO EXPERIMENT | Mind/QA/Founder |
+
+## Disclosure, UX and production contract
+Inactive review prototype includes the conspicuous near-control sentence: “If you purchase through a future approved affiliate link, Final Vestige may earn a commission at no additional cost to you.” There is no affiliate earning URL and no active purchasing control; normal seller source citations are not tracked earning links. Claims are treated as seller representations. Avoid medical, memory, wealth or guaranteed concentration claims. Accessibility requirement: 360/390/768/1440 mobile+desktop, WCAG2.2AA, visible keyboard focus, static content without JS, reduced motion and Lighthouse; these remain REAL-BROWSER UNTESTED. No new signup system, paid software or analytics scripts.
+
+## Sources and governance
+See [R149 provenance register](./claim-sources-authorization-matrix.json) and [R149 reproducible checks](./test-r149.cjs). Sources: https://eprints.bournemouth.ac.uk/31277/ ; https://pubmed.ncbi.nlm.nih.gov/39032268/ ; https://pubmed.ncbi.nlm.nih.gov/36536625/ ; https://hypnosislive.com/mental-skills/total-focus ; https://hypnosislive.com/faq ; https://inspire3.com/ ; https://affiliates.inspire3.com/ ; https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking ; https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance .
+
+No WordPress/Jetpack/Dispatch/social/commerce/deploy/merge/approval/spending writes. Preserve homepage PR #49, canonical Mind hub #172, art lead Issue #150; coordinate independent QA via #126, Dispatch only via #174, source-of-truth commercial gates via #820.
