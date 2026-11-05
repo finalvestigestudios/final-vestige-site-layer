@@ -20,7 +20,7 @@ const getAttr = (tag, name) => (tag.match(new RegExp('\\b' + name + '="([^"]+)"'
 for (const [label, html] of [['candidate', canonical], ['single-file founder review', preview]]) {
   const images = imageTags(html);
   assert.equal(images.length, 2, label + ': exactly one image per source');
-  assert.equal((html.match(/data-fv-archive-img/g) || []).length, 2, label + ': both semantic images retained');
+  assert.equal(images.filter((tag) => tag.includes('data-fv-archive-img')).length, 2, label + ': both semantic images retained');
   assert.equal((html.match(/data-fv-noscript-archive/g) || []).length, 0, label + ': no redundant no-JS image');
   const srcs = images.map((tag) => getAttr(tag, 'src'));
   assert.deepEqual(srcs, expectedSources, label + ': provenance/source URLs unchanged');
