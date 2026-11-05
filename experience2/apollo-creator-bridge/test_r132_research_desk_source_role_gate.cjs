@@ -38,7 +38,7 @@ fail('An injected external collection form fails',source+'<form action="https://
 fail('Removing rights notice fails',source.replace('All six photographs require individual reuse review','All rights certified'),'MISSING_RIGHTS_BOUNDARY');
 fail('Removing source classification fails',source.replace('data-fv-r132-photo-role="PHOTO_CONTEXT_NOT_TELEMETRY"','data-broken-role="unknown"'),'PHOTO_DATE_OR_ROLE_DRIFT');
 fail('Unhiding controls without JS fails',source.replace('data-fvx-tools hidden','data-fvx-tools'),'NO_JS_FAIL_OPEN_UNPROVEN');
-fail('Adding a duplicate photographic record fails',source.replace('</section>',source.match(/<article class="fv-ex2-ledger__card"[\\s\\S]*?<\\/article>/)[0]+'</section>'),'SIX_CARD_COUNT_MISMATCH');
+fail('Adding a duplicate photographic record fails',source.replace('</section>',source.match(/<article class="fv-ex2-ledger__card"[\s\S]*?<\/article>/)[0]+'</section>'),'SIX_CARD_COUNT_MISMATCH');
 test('A changed upstream Research Desk source must fail strict pinned-blob verification',()=>{
  const result=audit(source,'modified PR158 template');
  assert.equal(result.status,'FAIL');
