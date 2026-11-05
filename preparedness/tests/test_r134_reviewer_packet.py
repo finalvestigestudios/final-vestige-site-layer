@@ -3,6 +3,9 @@ from __future__ import annotations
 import importlib.util
 from pathlib import Path
 import re
+import subprocess
+import tempfile
+import shutil
 import sys
 import types
 import unittest
@@ -141,6 +144,21 @@ class TestAdversarialCases(unittest.TestCase):
     def test_long_excerpt_clamped(self):
         r=review_article('a','<p>Generator '+'x'*500+' {{cite:a}}</p>',metadata(),'base',data(),{})
         self.assertLessEqual(len(r['blocks_for_human_review'][0]['excerpt']),220)
+    def test_isolated_python_cli_imports_real_sibling_gate(self):
+        with tempfile.TemporaryDirectory() as d:
+            tool = Path(d) / 'r134_reviewer_packet.py'
+            shutil.copy(TOOLS / 'r134_reviewer_packet.py', tool)
+            (Path(d) / 'r133_snapshot_gate.py').write_text(
+                'import re\nclass IntegrityHold(ValueError): pass\n'
+                'CITE=re.compile(r"\\{\\{cite:([a-z0-9-]+)\\}\\}")\n'
+                'def audit(*args): raise IntegrityHold("UNREVIEWED")\n'
+                'def load_json(b): import json; return json.loads(b)\n')
+            result = subprocess.run([sys.executable, '-I', str(tool), '--root', d],
+                                    capture_output=True, text=True, check=False)
+            self.assertEqual(result.returncode, 2)
+            self.assertIn('HOLD:', result.stderr)
+            self.assertNotIn('ModuleNotFoundError', result.stderr)
+
     def test_no_output_without_custody(self):
         with self.assertRaises((IntegrityHold, FileNotFoundError)):
             packet(Path('/tmp/r134-no-trusted-candidate'), {'may_publish':False})
