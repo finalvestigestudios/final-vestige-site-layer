@@ -1,0 +1,428 @@
+{
+  "schema": "fv.mind.r142.acceptance.v1",
+  "status": "UNPUBLISHED_DRAFT",
+  "date": "2026-11-05",
+  "primary_offer": {
+    "name": "Zen12 Premium",
+    "merchant_url": "https://zen12.com/hnp",
+    "seller_offer_details": [
+      "12 levels",
+      "four listening styles",
+      "48 Premium MP3 recordings"
+    ],
+    "fitness": "Adults considering structured, short meditation listening; NOT a remedy for inattentional blindness.",
+    "affiliate_partner_approved": null,
+    "approved_tracking_link": null,
+    "approved_email_social_channels": null,
+    "approved_reporting_and_privacy_terms": null,
+    "checkout_price_verified": null,
+    "returns_verified_by_transaction": null,
+    "merchant_paid_commissions_verified": null,
+    "activation": false,
+    "cta": "WITHHELD",
+    "near_cta_disclosure": "If you purchase through this link, Final Vestige may earn a commission at no additional cost to you.",
+    "source_kind": "SELLER_DESCRIPTIONS_ONLY"
+  },
+  "alternate_offer": {
+    "name": "Total Focus",
+    "merchant_url": "https://hypnosislive.com/mental-skills/total-focus",
+    "seller_offer_details": [
+      "33-minute audio",
+      "47 MB",
+      "written/recorded by J.A. Amos"
+    ],
+    "do_not_confuse_with": "Hypnotize Yourself (different 44-minute recording)",
+    "eligibility": "UNVERIFIED",
+    "activation": false
+  },
+  "owned_fallback": {
+    "name": null,
+    "payhip_sku": null,
+    "rights_confirmed": null,
+    "public_checkout_verified": null,
+    "fulfillment_verified": null,
+    "refund_policy_verified": null,
+    "fee_schedule_verified": null,
+    "permitted_to_launch": false,
+    "reason": "Gmail search of promotional mail and public site content cannot authenticate one owned, sellable Mind SKU or merchant settlements."
+  },
+  "sources": {
+    "SC1999": {
+      "url": "https://doi.org/10.1068/p281059",
+      "type": "scholarship"
+    },
+    "MOST2005": {
+      "url": "https://doi.org/10.1037/0033-295X.112.1.217",
+      "type": "scholarship"
+    },
+    "SJ2009": {
+      "url": "https://doi.org/10.3758/PBR.16.2.398",
+      "type": "scholarship"
+    },
+    "SIMONS2010": {
+      "url": "https://doi.org/10.1068/i0386",
+      "type": "scholarship"
+    },
+    "DREW2013": {
+      "url": "https://doi.org/10.1177/0956797613479386",
+      "type": "scholarship"
+    },
+    "FTC_ENDORSE": {
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "type": "regulator"
+    },
+    "FTC_HEALTH": {
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "type": "regulator"
+    },
+    "ZEN12": {
+      "url": "https://zen12.com/hnp",
+      "type": "seller"
+    },
+    "FOCUS": {
+      "url": "https://finalvestige.com/focus/",
+      "type": "published_FV"
+    },
+    "CHANGE": {
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "type": "published_FV"
+    },
+    "PUYSEGUR": {
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "type": "published_FV"
+    },
+    "AFFILIATE": {
+      "url": "https://affiliates.inspire3.com/",
+      "type": "public_registration_not_named_approval"
+    },
+    "PRIVACY": {
+      "url": "https://inspire3.com/privacy/",
+      "type": "seller_privacy"
+    },
+    "TOTAL_FOCUS": {
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "type": "seller"
+    }
+  },
+  "claim_decisions": [
+    {
+      "id": "IB1",
+      "claim": "Inattentional blindness occurs during attention-demanding tasks",
+      "decision": "SUPPORTED_NARROW_EXPERIMENTAL",
+      "sources": [
+        "SC1999",
+        "MOST2005"
+      ]
+    },
+    {
+      "id": "IB2",
+      "claim": "All people miss the gorilla in every condition",
+      "decision": "REJECTED_UNIVERSAL_GENERALIZATION",
+      "sources": [
+        "SC1999",
+        "SJ2009"
+      ]
+    },
+    {
+      "id": "IB3",
+      "claim": "Expert radiologists sometimes miss an unexpected gorilla in lab search",
+      "decision": "SUPPORTED_N24_EXPERIMENTAL",
+      "sources": [
+        "DREW2013"
+      ]
+    },
+    {
+      "id": "IB4",
+      "claim": "Radiologists missed real clinical cancer diagnoses due to gorillas",
+      "decision": "REJECTED_NOT_SHOWN",
+      "sources": [
+        "DREW2013"
+      ]
+    },
+    {
+      "id": "IB5",
+      "claim": "Knowing about one gorilla ensures all future surprises are seen",
+      "decision": "CONTRADICTED",
+      "sources": [
+        "SIMONS2010"
+      ]
+    },
+    {
+      "id": "IB6",
+      "claim": "A one-minute demo diagnoses attention impairment",
+      "decision": "REJECTED",
+      "sources": [
+        "SC1999",
+        "SJ2009"
+      ]
+    },
+    {
+      "id": "IB7",
+      "claim": "Zen12 treats inattentional blindness",
+      "decision": "UNSUBSTANTIATED_EXCLUDE",
+      "sources": [
+        "ZEN12",
+        "FTC_HEALTH"
+      ]
+    },
+    {
+      "id": "IB8",
+      "claim": "Total Focus provides proven perfect attention",
+      "decision": "SELLER_CLAIM_NOT_ADOPTED",
+      "sources": [
+        "TOTAL_FOCUS",
+        "FTC_HEALTH"
+      ]
+    },
+    {
+      "id": "ZEN1",
+      "claim": "Zen12 sales page lists 12 levels and 48 MP3 tracks",
+      "decision": "SELLER_DESCRIPTION_VERIFIED_NOT_DELIVERY",
+      "sources": [
+        "ZEN12"
+      ]
+    },
+    {
+      "id": "ZEN2",
+      "claim": "Twelve minutes equals an hour of meditation",
+      "decision": "SELLER_CLAIM_NOT_SUBSTANTIATED",
+      "sources": [
+        "ZEN12",
+        "FTC_HEALTH"
+      ]
+    },
+    {
+      "id": "A1",
+      "claim": "Inspire3 has a publicly offered partner program",
+      "decision": "PUBLIC_PORTAL_VERIFIED",
+      "sources": [
+        "AFFILIATE"
+      ]
+    },
+    {
+      "id": "A2",
+      "claim": "Final Vestige accepted and may use earning URL",
+      "decision": "UNVERIFIED_CLOSED",
+      "sources": [
+        "AFFILIATE"
+      ]
+    },
+    {
+      "id": "A3",
+      "claim": "Affiliate disclosure needed next to active link",
+      "decision": "FTC_GUIDANCE",
+      "sources": [
+        "FTC_ENDORSE"
+      ]
+    },
+    {
+      "id": "A4",
+      "claim": "Affiliate seller may share purchaser details",
+      "decision": "POLICY_FLAG_SEPARATE_APPROVAL_NEEDED",
+      "sources": [
+        "PRIVACY"
+      ]
+    },
+    {
+      "id": "F1",
+      "claim": "Focus page is published",
+      "decision": "READ_ONLY_VERIFIED_PREVIOUS_RUN",
+      "sources": [
+        "FOCUS"
+      ]
+    },
+    {
+      "id": "F2",
+      "claim": "Change Blindness body contains a direct Focus link",
+      "decision": "PREVIOUS_READ_ONLY_CHECK_FOUND_NO_BODY_LINK",
+      "sources": [
+        "CHANGE"
+      ]
+    },
+    {
+      "id": "F3",
+      "claim": "Puységur body contains a direct Focus link",
+      "decision": "PREVIOUS_READ_ONLY_CHECK_FOUND_NO_BODY_LINK",
+      "sources": [
+        "PUYSEGUR"
+      ]
+    },
+    {
+      "id": "F4",
+      "claim": "Focus link click is confirmed subscriber",
+      "decision": "REJECTED_NO_JETPACK_CONFIRMATION",
+      "sources": [
+        "FOCUS"
+      ]
+    },
+    {
+      "id": "P1",
+      "claim": "Final Vestige paid net revenue per 1000 qualified sessions",
+      "decision": "NOT_COMPUTABLE_NULL",
+      "sources": [
+        "FTC_ENDORSE"
+      ]
+    }
+  ],
+  "creator_routes": [
+    {
+      "topic": "Change Blindness",
+      "grok_asset_id": null,
+      "grok_permalink": null,
+      "actual_live_article": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "video_link_placement": null,
+      "article_body_to_focus_verified": false,
+      "offer": "Zen12 optional after independent guide",
+      "offer_active": false
+    },
+    {
+      "topic": "Puységur / Mesmerism",
+      "grok_asset_id": null,
+      "grok_permalink": null,
+      "actual_live_article": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "video_link_placement": null,
+      "article_body_to_focus_verified": false,
+      "offer": "Hypnosis Live Total Focus only if supported fit and authorization",
+      "offer_active": false
+    },
+    {
+      "topic": "Invisible Gorilla",
+      "grok_asset_id": null,
+      "grok_permalink": null,
+      "actual_live_article": null,
+      "proposed_slug": "/mind/invisible-gorilla-inattentional-blindness/",
+      "video_link_placement": null,
+      "article_body_to_focus_verified": false,
+      "offer": "Focus Fieldbook (free) first; no direct earning offer",
+      "offer_active": false
+    }
+  ],
+  "measurement": {
+    "campaign_params": {
+      "utm_source": "actual_platform",
+      "utm_medium": "organic_social",
+      "utm_campaign": "mind_pilot_2026_11",
+      "utm_content": "immutable_grok_asset_id",
+      "asset_id": "from_Grok_source_inventory_only"
+    },
+    "steps": [
+      "qualified_human_session",
+      "article_view",
+      "contextual_focus_click",
+      "jetpack_confirmed_opt_in_if_observable",
+      "offer_guide_view",
+      "approved_affiliate_outbound_click",
+      "merchant_confirmed_paid_conversion",
+      "refunds_and_fees",
+      "settled_net_revenue"
+    ],
+    "verified": {
+      "qualified_human_sessions": null,
+      "confirmed_opt_ins": null,
+      "merchant_confirmed_orders": null,
+      "net_revenue": null,
+      "net_revenue_per_1000_qualified_humans": null
+    },
+    "rules": [
+      "Do not persist email, names, full IP addresses or raw affiliate purchaser data.",
+      "Never infer a subscription from URL tokens or a click.",
+      "Only merchant source can verify purchases; affiliate outbound is not commission.",
+      "7/30-day campaigns; record attribution missingness, cohort maturity and confidence; tiny samples flagged."
+    ],
+    "ab_test": {
+      "variant_A": "Existing Zen12 evidence-first text-only guide",
+      "variant_B": "Same guide + optional 40-second captions/transcript storyboard; NOT playable or shipped",
+      "status": "UNRUN_NO_MERCHANT_LINK",
+      "success_metric": "settled net revenue per 1000 qualified humans where independently attributable",
+      "guardrails": [
+        "mobile readability",
+        "disclosure comprehension",
+        "no forced playback",
+        "no external embed",
+        "no-JS",
+        "no additional signup form",
+        "no merchant CTA until approval"
+      ]
+    }
+  },
+  "release_gates": [
+    {
+      "name": "named_inspire3_acceptance",
+      "owner": "Founder/Mind",
+      "passed": false,
+      "proof": "partner-specific account acceptance"
+    },
+    {
+      "name": "exact_offer_approved_url",
+      "owner": "Founder/Mind",
+      "passed": false,
+      "proof": "approved URL and terms"
+    },
+    {
+      "name": "channel_permission",
+      "owner": "Founder/Mind/Dispatch",
+      "passed": false,
+      "proof": "social/email terms"
+    },
+    {
+      "name": "privacy_aggregate_reporting",
+      "owner": "Founder/Mind",
+      "passed": false,
+      "proof": "acceptable purchaser data terms"
+    },
+    {
+      "name": "owned_mind_sku_or_authorized_affiliate",
+      "owner": "Commerce",
+      "passed": false,
+      "proof": "actual checkout/permissions"
+    },
+    {
+      "name": "merchant_price_return_delivery",
+      "owner": "Commerce",
+      "passed": false,
+      "proof": "checkout/refund/fulfillment evidence"
+    },
+    {
+      "name": "grok_asset_inventory",
+      "owner": "Praxxis/Grok",
+      "passed": false,
+      "proof": "public media permalink immutable ID & rights"
+    },
+    {
+      "name": "contextual_body_cta_approved",
+      "owner": "Founder/WordPress engineering",
+      "passed": false,
+      "proof": "release approval and CMS diff"
+    },
+    {
+      "name": "confirmed_jetpack_lead_validation",
+      "owner": "Site QA/Dispatch",
+      "passed": false,
+      "proof": "native confirmation records"
+    },
+    {
+      "name": "merchant_settlement_audit",
+      "owner": "Commerce",
+      "passed": false,
+      "proof": "orders/refunds/fees"
+    },
+    {
+      "name": "real_browser_360_390_768_1440",
+      "owner": "Site QA",
+      "passed": false,
+      "proof": "screenshots, keyboard, no-JS, WCAG"
+    },
+    {
+      "name": "playable_video_accessibility",
+      "owner": "Grok/QA",
+      "passed": false,
+      "proof": "video captions/transcript actual media"
+    },
+    {
+      "name": "founder_release_authorization",
+      "owner": "Founder",
+      "passed": false,
+      "proof": "explicit approval"
+    }
+  ]
+}
