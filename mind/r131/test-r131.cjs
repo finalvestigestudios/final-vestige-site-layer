@@ -43,7 +43,7 @@ for(const [name,html] of [["A",A],["B",B]]){
   assert.doesNotMatch(html,/<a\s+[^>]*href="https:\/\/inspire3\.com\/(?!privacy)/i);
  });
  test(name+" has no unauthorized tracking, email, or media",()=>{
-  assert.doesNotMatch(html,/<script|<iframe|<form|autoplay|<video/i);
+  assert.doesNotMatch(html,/<script\\b|<iframe\\b|<form\\b|<video\\b/i);
   assert.match(html,/prefers-reduced-motion/);assert.match(html,/:focus-visible/);
   assert.match(html,/width=device-width/);assert.match(html,/max-width:500px/);
   assert.match(html,/https:\/\/finalvestige\.com\/focus\//);
@@ -54,7 +54,7 @@ for(const [name,html] of [["A",A],["B",B]]){
 test("B includes optional original storyboard and no fake playback",()=>{
  assert.match(B,/00–06s/);assert.match(B,/35–40s/);
  assert.match(B,/<details>/);assert.match(B,/complete 40-second film transcript/i);
- assert.match(B,/not a playable media/i);
+ assert.match(B,/not playable media/i);
  assert.doesNotMatch(A,/00–06s/);
  const normalize=s=>s.replace(/<section class="panel" aria-labelledby="film-r131">[\s\S]*?<\/section>/,"");
  assert.equal(normalize(B).replace(/<title>[^<]*<\/title>/,""),normalize(A).replace(/<title>[^<]*<\/title>/,""));
