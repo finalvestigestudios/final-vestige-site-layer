@@ -11,7 +11,7 @@ for (const [label,html] of [['A',a],['B',b]]) {
  pass(/<html lang="en">/.test(html),label+' language');
  pass(/name="viewport"/.test(html),label+' mobile viewport');
  pass(/<main>/.test(html)&&/<h1>/.test(html),label+' semantic hierarchy');
- pass(/<button[^>]+disabled/.test(html),label+' disabled merchant');
+ pass(/<button\b[^>]*\sdisabled(?:\s|>|=)/.test(html),label+' disabled merchant');
  pass(/If you purchase through this link, Final Vestige may earn a commission/.test(html),label+' adjacent FTC disclosure');
  pass(html.indexOf('If you purchase through this link')<html.indexOf('disabled aria-disabled'),label+' disclosure precedes button');
  pass(!/<script/i.test(html),label+' zero scripts');
@@ -35,5 +35,11 @@ pass(claims.sources.length>=10&&claims.claims.length>=15,'claims source coverage
 pass(claims.claims.every(c=>c.verdict&&Array.isArray(c.source_ids)),'claim normalization');
 pass(Object.values(claims.release_gates).every(v=>v===false),'all release gates closed');
 pass(plan.includes('NOT COMPUTABLE')&&plan.includes('asset_id'),'measurement discipline');
+const activated=a.replace('disabled aria-disabled="true"','aria-disabled="false"');
+pass(!/<button\b[^>]*\sdisabled(?:\s|>|=)/.test(activated),'mutation: activated merchant control rejected');
+const disclosureRemoved=a.replace('If you purchase through this link, Final Vestige may earn a commission at no additional cost to you.','');
+pass(!disclosureRemoved.includes('If you purchase through this link, Final Vestige may earn a commission'),'mutation: removed FTC disclosure rejected');
+const injected=a.replace('<button class="hold"','<a href="https://zen12.com/secret/">Seller</a><button class="hold"');
+pass(/<a[^>]+href=["']https?:\/\/(?:zen12|inspire3|affiliates\.inspire3)/i.test(injected),'mutation: unapproved merchant href flagged');
 pass(!/<a[^>]+href=["']https?:\/\/(?:zen12|inspire3)/i.test(b),'no merchant live href');
 console.log('R130 tests passed:',assertions,'structural assertions; no real browser/merchant tests run.');
