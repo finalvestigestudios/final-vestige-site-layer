@@ -1,0 +1,222 @@
+{
+  "date": "2026-11-04",
+  "status": "HOLD",
+  "affiliate_approval_verified": false,
+  "approved_earning_link": null,
+  "sources": [
+    {
+      "id": "S01",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33593124/",
+      "kind": "review"
+    },
+    {
+      "id": "S02",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/32820538/",
+      "kind": "review"
+    },
+    {
+      "id": "S03",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34074221/",
+      "kind": "observational_survey"
+    },
+    {
+      "id": "S04",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34385088/",
+      "kind": "intervention"
+    },
+    {
+      "id": "S05",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35464906/",
+      "kind": "viewpoint"
+    },
+    {
+      "id": "S06",
+      "url": "https://inspire3.com/",
+      "kind": "seller_catalog"
+    },
+    {
+      "id": "S07",
+      "url": "https://zen12.com/hnp",
+      "kind": "seller_offer"
+    },
+    {
+      "id": "S08",
+      "url": "https://zen12.com/secret/",
+      "kind": "seller_conditional_promo"
+    },
+    {
+      "id": "S09",
+      "url": "https://inspire3.com/privacy/",
+      "kind": "seller_privacy"
+    },
+    {
+      "id": "S10",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "kind": "FTC"
+    },
+    {
+      "id": "S11",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "kind": "FTC"
+    },
+    {
+      "id": "S12",
+      "url": "https://finalvestige.com/focus/",
+      "kind": "existing_first_party"
+    }
+  ],
+  "claims": [
+    {
+      "claim": "12 levels and 48 Premium MP3s",
+      "source": "S07",
+      "status": "SELLER_DESCRIPTION_ONLY"
+    },
+    {
+      "claim": "4 listening styles",
+      "source": "S07",
+      "status": "SELLER_DESCRIPTION_ONLY"
+    },
+    {
+      "claim": "1 year refund offer",
+      "source": "S07",
+      "status": "SELLER_REPRESENTATION_NOT_TESTED"
+    },
+    {
+      "claim": "Price in checkout",
+      "source": "S07",
+      "status": "NOT_VERIFIED"
+    },
+    {
+      "claim": "Conditional price guaranteed for readers",
+      "source": "S08",
+      "status": "REJECT"
+    },
+    {
+      "claim": "An hour of meditation benefits in 12 minutes",
+      "source": "S07",
+      "status": "REJECT_UNSUBSTANTIATED"
+    },
+    {
+      "claim": "Brainwave entrainment automatically delivers clinical benefits",
+      "source": "S07",
+      "status": "REJECT_UNSUBSTANTIATED"
+    },
+    {
+      "claim": "Health/wealth/mental health gains from Zen12",
+      "source": "S11",
+      "status": "REJECT_UNSUBSTANTIATED"
+    },
+    {
+      "claim": "Mindfulness interventions vary by active control",
+      "source": "S01",
+      "status": "QUALIFIED"
+    },
+    {
+      "claim": "2020 review estimated 8.3 percent adverse events across heterogeneous study designs",
+      "source": "S02",
+      "status": "QUALIFIED"
+    },
+    {
+      "claim": "Population survey proves meditation caused all adverse experiences",
+      "source": "S03",
+      "status": "REJECT_CAUSALITY"
+    },
+    {
+      "claim": "Momentary adverse event equals lasting harm",
+      "source": "S04",
+      "status": "REJECT_OVERSIMPLIFICATION"
+    },
+    {
+      "claim": "Dispute about classification of adversity",
+      "source": "S05",
+      "status": "QUALIFIED_VIEWPOINT"
+    },
+    {
+      "claim": "Seller can share purchaser identities with affiliates",
+      "source": "S09",
+      "status": "POLICY_DESCRIPTION"
+    },
+    {
+      "claim": "Disclosure only footer is sufficient",
+      "source": "S10",
+      "status": "REJECT"
+    },
+    {
+      "claim": "Outside seller's free-audio newsletter is FV Jetpack list",
+      "source": "S07",
+      "status": "REJECT"
+    },
+    {
+      "claim": "Confirmed merchant paid sale recorded",
+      "source": "S09",
+      "status": "NOT_OBSERVABLE"
+    },
+    {
+      "claim": "Verified Final Vestige paid Mind SKU",
+      "source": "S12",
+      "status": "NOT_VERIFIED"
+    }
+  ],
+  "gates": [
+    {
+      "id": "G1",
+      "title": "written named partner approval",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G2",
+      "title": "permitted channel and creative",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G3",
+      "title": "approved exact URL",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G4",
+      "title": "aggregate-only settlement and buyer PII controls",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G5",
+      "title": "independent final checkout and return terms",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G6",
+      "title": "verified sellable rights-cleared FV Mind product fallback",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G7",
+      "title": "Grok asset ID and rights",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G8",
+      "title": "stage/browser a11y and no-JS",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G9",
+      "title": "original playable video/captions and rights",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G10",
+      "title": "founder release signoff",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G11",
+      "title": "merchant-confirmed paid settlement",
+      "status": "CLOSED"
+    },
+    {
+      "id": "G12",
+      "title": "human-qualified session denominator",
+      "status": "CLOSED"
+    }
+  ]
+}
