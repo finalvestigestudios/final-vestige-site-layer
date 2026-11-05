@@ -21,7 +21,7 @@ NASA policy references: https://www.nasa.gov/nasa-brand-center/ ; https://www.na
 ## Implementation
 - `r130_nasa_media_custody.json`: six-record structured and attributable NASA/media ledger with documented uncertainty and clearance HOLD.
 - `r130_nasa_media_custody_gate.cjs`: read-only strict crosswalk of ledger ↔ Apollo table ↔ classroom worksheet, right status and NASA metadata fidelity; no network, data collection, or tracking.
-- `test_r130_nasa_media_custody_gate.cjs`: native Node tests and negative mutation scenarios against the exact in-repo landing HTML.
+- `test_r130_nasa_media_custody_gate.cjs`: 17 native Node tests (including negative mutations for human-visible NASA dates and credits) against the exact in-repo landing HTML; authored but not executed in exact-head CI.
 - `landing-preview.html`: twelve semantic `data-fv-photo-rights="not-cleared"` bindings for record rows and handout entries, no visual, URL, layout, CTA or JS changes.
 - `r127_source_role_crosswalk.cjs`: include media-custody error propagation into the existing Research Desk / creator-route fail-closed audit.
 
