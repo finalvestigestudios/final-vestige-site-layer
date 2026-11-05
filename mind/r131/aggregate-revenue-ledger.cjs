@@ -6,7 +6,9 @@
  */
 const K=["date","asset_id","utm_campaign"];
 const PII=/\b(?:email|e-?mail|phone|address|ip_address|user_agent|buyer_id|customer_id|first_name|last_name|fullname|session_id)\b/i;
-const SESSION_KEYS=new Set(["date","asset_id","utm_campaign","qualified_human_sessions","audit_status","proof_ref"]);\nconst SETTLEMENT_KEYS=new Set(["date","asset_id","utm_campaign","offer_type","authorization","statement_verified","complete","proof_ref","paid_orders","gross_cents","refund_cents","fees_cents","commission_cents"]);\nconst DATE=/^\d{4}-\d{2}-\d{2}$/;
+const SESSION_KEYS=new Set(["date","asset_id","utm_campaign","qualified_human_sessions","audit_status","proof_ref"]);
+const SETTLEMENT_KEYS=new Set(["date","asset_id","utm_campaign","offer_type","authorization","statement_verified","complete","proof_ref","paid_orders","gross_cents","refund_cents","fees_cents","commission_cents"]);
+const DATE=/^\d{4}-\d{2}-\d{2}$/;
 const ID=/^[a-z0-9][a-z0-9_-]{2,80}$/i;
 function assertClean(o,kind){
  if(!o||typeof o!=="object"||Array.isArray(o))throw Error(kind+": object required");
