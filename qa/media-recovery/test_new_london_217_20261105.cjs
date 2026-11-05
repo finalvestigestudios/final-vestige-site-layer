@@ -1,0 +1,50 @@
+'use strict';
+/** Run: node --test qa/media-recovery/test_new_london_217_20261105.cjs */
+const test=require('node:test');
+const assert=require('node:assert/strict');
+const {validate}=require('./validate_new_london_217_20261105.cjs');
+const canonical=require('./new_london_217_six_catalog_20261105.json');
+const copy=()=>JSON.parse(JSON.stringify(canonical));
+test('six source catalog entries pass with all release holds',()=>{
+  const r=validate(copy());assert.equal(r.ok,true,JSON.stringify(r.errors));assert.equal(r.metrics.catalog_records,6);assert.equal(r.metrics.requested_width_gt_original,2);
+});
+function negative(name,mutation){
+  test(name,()=>{const j=copy();mutation(j);const r=validate(j);assert.equal(r.ok,false,'unsafe mutation was accepted: '+name);assert.ok(r.errors.length>0);});
+}
+negative('reject invented browser 404',a=>a.images[0].browser_http_status=404);
+negative('reject invented origin 200',a=>a.images[1].source_http_status=200);
+negative('reject invented broken image',a=>a.images[2].visitor_image_broken=true);
+negative('reject invented naturalWidth',a=>a.images[3].visitor_natural_width_px=760);
+negative('reject invented encoded transfer bytes',a=>a.images[4].network_transferred_bytes=123456);
+negative('reject downloaded binary equivalence assertion',a=>a.images[5].binary_hash_verified=true);
+negative('reject WP write enabled',a=>a.images[2].wp_write_authorized=true);
+negative('reject rehost authorized',a=>a.images[1].rehost_authorized=true);
+negative('reject rights granted without review',a=>a.images[4].rights_cleared_for_fv_republication=true);
+negative('reject post source replacement authorized',a=>a.images[3].replace_published_source_authorized=true);
+negative('reject 1280px upscale',a=>a.images[0].conditional_derivative_width_px=1280);
+negative('reject 760px origin fabricated as 960',a=>a.images[0].catalog_original_width_px=960);
+negative('reject aspect-ratio drift',a=>a.images[2].conditional_derivative_height_px+=5);
+negative('reject changed source basename',a=>a.images[2].source_url=a.images[1].source_url);
+negative('reject changed query request',a=>a.images[1].source_url=a.images[1].source_url.replace('1280','960'));
+negative('reject changed Commons catalog URL',a=>a.images[4].catalog_url=a.images[2].catalog_url);
+negative('reject altered published ALT',a=>a.images[3].published_alt+=' (different image)');
+negative('reject switched image slots',a=>[a.images[0],a.images[1]]=[a.images[1],a.images[0]]);
+negative('reject missing slot',a=>a.images.pop());
+negative('reject false CC0 memorial license',a=>a.images[5].catalog_license_claim='CC0');
+negative('reject removed CC memorial review',a=>a.visual_integrity_findings=a.visual_integrity_findings.filter(x=>x.key!=='217:5'));
+negative('reject chronology flag removed',a=>a.visual_integrity_findings=a.visual_integrity_findings.filter(x=>!x.finding.includes('17 March 1937')));
+negative('reject incorrect frozen post modified date',a=>a.source_snapshot.post_modified_at_inventory='2026-10-29T16:01:32');
+negative('reject frozen inventory part switched',a=>a.source_snapshot.blob_sha='ffffffffffffffffffffffffffffffffffffffff');
+negative('reject unsupported 42 actual browser errors',a=>a.baseline.reported_broken_42='CONFIRMED');
+negative('reject invented 76 percent wire savings',a=>a.baseline.claimed_76_percent_transfer_savings='MEASURED');
+negative('reject stored bytes substituted for transfer bytes',a=>a.baseline.first_party_oversized_original_storage_bytes=76);
+negative('reject first-party media import enabled',a=>a.release_gates.wordpress_media_import_approved=true);
+negative('reject binary downloads enabled',a=>a.release_gates.third_party_binary_download_approved=true);
+negative('reject production publish enabled',a=>a.release_gates.production_changes_approved=true);
+negative('reject UTA noncommercial rights replaced',a=>a.primary_custodial_alternatives[1].license='public domain unrestricted');
+negative('reject UTA falsely same image',a=>a.primary_custodial_alternatives[1].exact_original_photo_match=true);
+negative('reject catalog HTTP status invented',a=>a.primary_custodial_alternatives[0].catalog_http_status=200);
+negative('reject catalog photo pixel dimensions invented',a=>a.primary_custodial_alternatives[2].pixel_dimensions=[1000,1200]);
+negative('reject positive subject-match implied rights',a=>a.primary_custodial_alternatives[0].reuse_status='APPROVED');
+negative('reject removal of visual comparison gate',a=>a.release_gates.visual_comparison_required=false);
+negative('reject 1280 target ceiling',a=>a.release_gates.max_width_px=1280);
