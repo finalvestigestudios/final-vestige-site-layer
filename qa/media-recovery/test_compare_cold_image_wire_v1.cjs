@@ -57,3 +57,34 @@ hold('different historical caption requires review',null,a=>{a.pages[0].stored_i
 hold('unknown CDP cache flag is not uncached evidence',b=>{delete b.pages[0].network_images[0].was_cached},null,'uncached_cdp_request_mismatch');
 hold('unknown service worker cache flag fails closed',null,a=>{delete a.pages[0].network_images[0].from_service_worker},'uncached_cdp_request_mismatch');
 test('proportional 960x720 to 640x480 is measurable but cannot certify visual parity',()=>{const r=compare(null,a=>{a.pages[0].stored_images[0].natural_width=640;a.pages[0].stored_images[0].natural_height=480});assert.equal(r.state,'LAB_PAIR_MEASURED');assert.equal(r.visual_parity_verified,false)});
+
+hold('reject forged CDN URL where the decoded currentSrc is a different photo',null,a=>{
+ const s=a.pages[0].stored_images[0],n=a.pages[0].network_images[0];
+ s.current_src='https://elsewhere.example.org/different-photo.png';
+ s.request_url=s.current_src;n.url=s.current_src;
+},'unverified_image_source_chain');
+hold('reject unrelated CDP image request under the same valid post',null,a=>{
+ const s=a.pages[0].stored_images[0],n=a.pages[0].network_images[0];
+ s.request_url='https://finalvestige.com/wp-content/uploads/2026/08/other-photo.png';
+ n.url=s.request_url;
+},'unverified_image_source_chain');
+hold('reject an unauthorized PNG-to-WebP format transform as identity equivalent',null,a=>{
+ const s=a.pages[0].stored_images[0],n=a.pages[0].network_images[0];
+ s.current_src=s.stored_url+'?format=webp';s.request_url=s.current_src;n.url=s.current_src;
+},'unverified_image_source_chain');
+hold('reject contradicting CDP MIME declarations',null,a=>{
+ a.pages[0].stored_images[0].response_mime_type='image/jpeg';
+},'cdp_source_or_mime_identity_mismatch');
+hold('missing article wire error ledger must not silently pass',null,a=>{
+ a.pages[0].article_wire_evidence_errors=null;
+},'article_wire_evidence_unverified');
+test('Jetpack numeric fit for a first-party image stays eligible after independent source-chain validation',()=>{
+ const r=compare(null,a=>{
+  const s=a.pages[0].stored_images[0],n=a.pages[0].network_images[0];
+  s.current_src='https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/test.png?fit=960%2C720';
+  s.request_url=s.current_src;n.url=s.current_src;
+ });
+ assert.equal(r.state,'LAB_PAIR_MEASURED');
+ assert.equal(r.reduction_percent,76);
+ assert.equal(r.visual_parity_verified,false);
+});
