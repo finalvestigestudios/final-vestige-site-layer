@@ -323,6 +323,7 @@ export async function auditNoJsArchives(page){
         const heading=label?document.getElementById(label):null;
         const sourceLinked=!!p&&[...p.querySelectorAll('a[href]')].some(a=>{
           try{
+            if(!exposed(a))return false;
             const u=new URL(a.href);
             return u.protocol==='https:'&&u.hostname!=='finalvestige.com'&&
               u.hostname!=='www.finalvestige.com';
