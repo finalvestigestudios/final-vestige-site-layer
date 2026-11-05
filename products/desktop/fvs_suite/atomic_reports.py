@@ -174,6 +174,13 @@ def write_csv_report(destination: str | Path, fields: Iterable[str],
                     raise ValueError("CSV report row columns could not be read")
                 if len(entries) > MAX_REPORT_COLUMNS:
                     raise ValueError("CSV report row column limit exceeded")
+                # Mapping.items() is user-controlled for direct API callers.
+                # Require actual two-field tuple pairs before unpacking; a
+                # tuple subclass or arbitrary iterable can execute a forged
+                # __iter__ or leak private data through an exception context.
+                # Native dict/UserDict/MappingProxyType items all meet this.
+                if any(type(entry) is not tuple or len(entry) != 2 for entry in entries):
+                    raise ValueError("Invalid or duplicate CSV report row columns")
                 if (any(type(name) is not str for name, _ in entries)
                         or len({name for name, _ in entries}) != len(entries)):
                     raise ValueError("Invalid or duplicate CSV report row columns")
