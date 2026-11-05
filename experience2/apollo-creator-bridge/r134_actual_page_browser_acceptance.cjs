@@ -57,7 +57,7 @@ async function inspectPage(page,receipt,label,html){
  const errors=[];const outbound=[];
  page.on('pageerror',err=>errors.push(err.message));
  page.on('request',req=>{if(!req.url().startsWith('http://127.0.0.1:'))outbound.push(req.url());});
- const response=await page.goto(page.url()==='about:blank'?receipt.url:receipt.url,
+ const response=await page.goto(receipt.url,
    {waitUntil:'load',timeout:15000});
  assertCheck(receipt,label+'_HTTP_200',response&&response.status()===200,response&&response.status());
  assertCheck(receipt,label+'_REAL_NAVIGATION',page.url()===receipt.url,page.url());
@@ -68,6 +68,7 @@ async function inspectPage(page,receipt,label,html){
   const root=document.querySelector('[data-fvx-ledger]');
   const viewport=document.documentElement.clientWidth;
   return {cards:document.querySelectorAll('[data-fvx-record]').length,
+   visibleCards:[...document.querySelectorAll('[data-fvx-record]')].filter(el=>getComputedStyle(el).display!=='none'&&getComputedStyle(el).visibility!=='hidden').length,
    links:[...document.querySelectorAll('a[href*="nasa.gov/image-detail/"]')].length,
    overflow:document.documentElement.scrollWidth-viewport,
    toolsHidden:root?root.querySelector('[data-fvx-tools]').hidden:null,
@@ -76,6 +77,7 @@ async function inspectPage(page,receipt,label,html){
    metrics:window.__fvR134||null};
  });
  assertCheck(receipt,label+'_SIX_RECORDS',state.cards===6,state.cards);
+ assertCheck(receipt,label+'_SIX_VISIBLE_RECORDS',state.visibleCards===6,state.visibleCards);
  assertCheck(receipt,label+'_SIX_NASA_LINKS',state.links===6,state.links);
  assertCheck(receipt,label+'_NO_HORIZONTAL_OVERFLOW',state.overflow<=1,state.overflow);
  assertCheck(receipt,label+'_NO_UNEXPECTED_NETWORK',outbound.length===0,outbound);
@@ -126,8 +128,9 @@ async function run({outDir=path.join(os.tmpdir(),'apollo-r134-browser-qa')}={}){
     const input=page.locator('[data-fvx-search]');
     const records=page.locator('[data-fvx-record]:visible');
     await input.fill('nonexistent-r134-test-phrase');
-    assertCheck(receipt,label+'_EMPTY_SEARCH',await records.count()===0,
-      await page.locator('[data-fvx-empty]').isVisible());
+    const emptyVisible=await page.locator('[data-fvx-empty]').isVisible();
+    assertCheck(receipt,label+'_EMPTY_SEARCH',await records.count()===0&&emptyVisible,
+      {visible:emptyVisible});
     await input.press('Escape');
     assertCheck(receipt,label+'_ESC_CLEARS_SEARCH',
       await input.inputValue()===''&&(await records.count())===6);
@@ -151,7 +154,7 @@ async function run({outDir=path.join(os.tmpdir(),'apollo-r134-browser-qa')}={}){
   const noJs=await browser.newContext({viewport:{width:390,height:844},javaScriptEnabled:false});
   const noJsPage=await noJs.newPage();
   const noJsState=await inspectPage(noJsPage,receipt,'no_js_390',html);
-  assertCheck(receipt,'NO_JS_EVIDENCE_AVAILABLE',noJsState.cards===6&&noJsState.links===6&&noJsState.toolsHidden===true);
+  assertCheck(receipt,'NO_JS_EVIDENCE_AVAILABLE',noJsState.visibleCards===6&&noJsState.links===6&&noJsState.toolsHidden===true);
   await noJs.close();
   // A separate audit context bypasses CSP solely to inject local axe-core.
   // The ordinary real-navigation test above NEVER bypasses production CSP.
@@ -159,6 +162,8 @@ async function run({outDir=path.join(os.tmpdir(),'apollo-r134-browser-qa')}={}){
    const c=await browser.newContext({viewport:{width,height:900},bypassCSP:true,reducedMotion:'reduce'});
    const p=await c.newPage();
    await p.goto(receipt.url,{waitUntil:'load',timeout:15000});
+   assertCheck(receipt,'REDUCED_MOTION_'+width,
+     await p.evaluate(()=>matchMedia('(prefers-reduced-motion: reduce)').matches));
    await p.addScriptTag({path:axePath});
    const axe=await p.evaluate(async()=>window.axe.run(document,{
     runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21aa','wcag22aa']}}));
