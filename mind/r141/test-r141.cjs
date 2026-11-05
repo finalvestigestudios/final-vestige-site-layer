@@ -59,7 +59,7 @@ check(ledger.measurement.facts.kpi_net_per_1000_qualified_humans === null, 'unco
 check(ledger.measurement.stages.includes('merchant_confirmed_paid_order'), 'paid event stage');
 check(ledger.measurement.rule.includes('asset_id'), 'campaign asset mapping');
 check(ledger.measurement.privacy.includes('No email'), 'no buyer PII');
-check(ledger.experiments.variant_B.includes('not playable'), 'video storyboard status');
+check(ledger.measurement.experiments.variant_B.includes('not playable'), 'video storyboard status');
 check(words(article) >= 1400, 'research depth');
 check(words(guide) >= 1150, 'buyer depth');
 check(words(memo) >= 1000, 'commercial-plan depth');
