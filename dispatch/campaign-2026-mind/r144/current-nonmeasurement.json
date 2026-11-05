@@ -1,0 +1,13 @@
+{
+  "data_classification": "NO_LIVE_TRANSACTIONS_OR_PERSONAL_IDENTIFIERS",
+  "capture_date_utc": "2026-11-05T19:32:10Z",
+  "coverage": {},
+  "events": [],
+  "source_notes": {
+    "wordpress_newsletter": "enabled; full emails; new-post automatic sends disabled; recent five never sent; reported total3 confirmed3 unconfirmed2 (nonadditive); imported_last_24h0 (rolling window)",
+    "wordpress_followers": "wpcom followers3; email followers0; different measurement surface, do not add to newsletter totals",
+    "welcome": "configured Fieldbook URL, actual received delivery unverified",
+    "merchant": "named Inspire3 partner approval, email rights, exact tracking links and actual settled commissions unknown",
+    "commerce": "no independently reported paid-order or refund/fee/settlement records provided to this QA lane"
+  }
+}
