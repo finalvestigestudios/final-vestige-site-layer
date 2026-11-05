@@ -1,0 +1,488 @@
+{
+  "schema": "fv-live-wordpress-p0-and-oversize-recheck-v1",
+  "captured_date_pacific": "2026-11-04",
+  "capture_method": "READ_ONLY WordPress posts.get context=edit on posts 285,287,418,407,291,299,621,34-38,434 and paginated media.list image media pages 1/2; 113 images in list",
+  "site": "https://finalvestige.com",
+  "frozen_baseline": {
+    "as_of": "2026-10-30",
+    "posts": 61,
+    "images": 355,
+    "distinct_urls": 353,
+    "external_refs": 288
+  },
+  "fresh_sitewide_posts_count": null,
+  "fresh_sitewide_post_image_count": null,
+  "live_media_inventory": {
+    "image_media_items_count": 113,
+    "pages_read": 2,
+    "threshold_bytes_exclusive": 1572864,
+    "oversized_original_count": 13,
+    "oversized_original_storage_bytes": 43522829,
+    "real_visitor_transfer_bytes": null
+  },
+  "prioritized_existing_p0_exact_live_sources": [
+    {
+      "image_key": "285:5",
+      "post_id": 285,
+      "live_modified": "2026-11-02T21:39:59",
+      "live_source_url": "https://images.saymedia-content.com/.image/ar_16:9,c_fill,cs_srgb,fl_progressive,q_auto:eco,w_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg",
+      "frozen_source_url_matches_latest_read_only_wp": true,
+      "actual_browser_status": null,
+      "actual_browser_current_src": null,
+      "decoded_image_pixels_verified": null,
+      "visitor_broken": null,
+      "visitor_transferred_bytes": null,
+      "localize_or_rewrite_authorized": false
+    },
+    {
+      "image_key": "285:2",
+      "post_id": 285,
+      "live_modified": "2026-11-02T21:39:59",
+      "live_source_url": "https://blog.ucsusa.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+      "frozen_source_url_matches_latest_read_only_wp": true,
+      "actual_browser_status": null,
+      "actual_browser_current_src": null,
+      "decoded_image_pixels_verified": null,
+      "visitor_broken": null,
+      "visitor_transferred_bytes": null,
+      "localize_or_rewrite_authorized": false
+    },
+    {
+      "image_key": "287:5",
+      "post_id": 287,
+      "live_modified": "2026-11-02T21:40:01",
+      "live_source_url": "https://stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+      "frozen_source_url_matches_latest_read_only_wp": true,
+      "actual_browser_status": null,
+      "actual_browser_current_src": null,
+      "decoded_image_pixels_verified": null,
+      "visitor_broken": null,
+      "visitor_transferred_bytes": null,
+      "localize_or_rewrite_authorized": false
+    },
+    {
+      "image_key": "418:1",
+      "post_id": 418,
+      "live_modified": "2026-08-28T03:11:08",
+      "live_source_url": "https://media.defense.gov/2021/Mar/30/2002610812/1920/1080/0/210330-G-DE713-0002.JPG",
+      "frozen_source_url_matches_latest_read_only_wp": true,
+      "actual_browser_status": null,
+      "actual_browser_current_src": null,
+      "decoded_image_pixels_verified": null,
+      "visitor_broken": null,
+      "visitor_transferred_bytes": null,
+      "localize_or_rewrite_authorized": false
+    },
+    {
+      "image_key": "418:2",
+      "post_id": 418,
+      "live_modified": "2026-08-28T03:11:08",
+      "live_source_url": "https://www.history.uscg.mil/Portals/6/5_%20Scotch_Cap_debris2_1946.jpg",
+      "frozen_source_url_matches_latest_read_only_wp": true,
+      "actual_browser_status": null,
+      "actual_browser_current_src": null,
+      "decoded_image_pixels_verified": null,
+      "visitor_broken": null,
+      "visitor_transferred_bytes": null,
+      "localize_or_rewrite_authorized": false
+    },
+    {
+      "image_key": "407:1",
+      "post_id": 407,
+      "live_modified": "2026-10-29T18:30:30",
+      "live_source_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/img7535.jpg",
+      "frozen_source_url_matches_latest_read_only_wp": true,
+      "actual_browser_status": null,
+      "actual_browser_current_src": null,
+      "decoded_image_pixels_verified": null,
+      "visitor_broken": null,
+      "visitor_transferred_bytes": null,
+      "localize_or_rewrite_authorized": false
+    }
+  ],
+  "live_published_post_source_crosswalk": {
+    "inspected_posts": 13,
+    "first_party_large_originals_with_confirmed_live_article_usage": 10,
+    "unmapped_oversized_originals": 3,
+    "one_image_png_posts": [
+      34,
+      35,
+      36,
+      37,
+      38
+    ],
+    "malbone_originals_post": 621,
+    "vasa_first_party_jetpack_resized_post": 299,
+    "all_live_inspected_image_urls_match_frozen_october30": true,
+    "not_a_fresh_61_post_census": true
+  },
+  "oversized_media": [
+    {
+      "media_id": 388,
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/vasa-modell-2020.jpg",
+      "wp_original_stored_bytes": 8176362,
+      "wp_metadata_dimensions_px": [
+        4256,
+        2832
+      ],
+      "wp_declared_nonfull_subsizes": true,
+      "live_published_post_exact_image_source_confirmed": true,
+      "live_published_post_id": 299,
+      "live_published_post_title": "Thirty Men Were Enough",
+      "live_source_route": "first_party_jetpack_fit",
+      "proposed_max_derivative_px": [
+        960,
+        639
+      ],
+      "geometry_evidence": "WP_media_metadata_not_binary_image_inspection",
+      "media_rights": "HOLD",
+      "image_downloaded": false,
+      "local_cache_authorized": false,
+      "wp_upload_authorized": false,
+      "post_rewrite_authorized": false,
+      "visitor_http_status": null,
+      "visitor_transfer_bytes": null,
+      "visitor_broken": null
+    },
+    {
+      "media_id": 1258,
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/edit-017-v02-nypl-5003296-original.jpg",
+      "wp_original_stored_bytes": 5553669,
+      "wp_metadata_dimensions_px": [
+        5667,
+        3831
+      ],
+      "wp_declared_nonfull_subsizes": true,
+      "live_published_post_exact_image_source_confirmed": true,
+      "live_published_post_id": 621,
+      "live_published_post_title": "Six Miles an Hour",
+      "live_source_route": "direct_first_party_original",
+      "proposed_max_derivative_px": [
+        960,
+        649
+      ],
+      "geometry_evidence": "WP_media_metadata_not_binary_image_inspection",
+      "media_rights": "HOLD",
+      "image_downloaded": false,
+      "local_cache_authorized": false,
+      "wp_upload_authorized": false,
+      "post_rewrite_authorized": false,
+      "visitor_http_status": null,
+      "visitor_transfer_bytes": null,
+      "visitor_broken": null
+    },
+    {
+      "media_id": 1257,
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/edit-017-v01-malbone-tunnel-generalpunger-original.jpg",
+      "wp_original_stored_bytes": 4798395,
+      "wp_metadata_dimensions_px": [
+        4000,
+        3000
+      ],
+      "wp_declared_nonfull_subsizes": true,
+      "live_published_post_exact_image_source_confirmed": true,
+      "live_published_post_id": 621,
+      "live_published_post_title": "Six Miles an Hour",
+      "live_source_route": "direct_first_party_original",
+      "proposed_max_derivative_px": [
+        960,
+        720
+      ],
+      "geometry_evidence": "WP_media_metadata_not_binary_image_inspection",
+      "media_rights": "HOLD",
+      "image_downloaded": false,
+      "local_cache_authorized": false,
+      "wp_upload_authorized": false,
+      "post_rewrite_authorized": false,
+      "visitor_http_status": null,
+      "visitor_transfer_bytes": null,
+      "visitor_broken": null
+    },
+    {
+      "media_id": 43,
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/01340c2e-1165-4ca0-aa96-87398a83d13a.png",
+      "wp_original_stored_bytes": 2836245,
+      "wp_metadata_dimensions_px": [
+        1672,
+        941
+      ],
+      "wp_declared_nonfull_subsizes": false,
+      "live_published_post_exact_image_source_confirmed": true,
+      "live_published_post_id": 38,
+      "live_published_post_title": "The Cisterns Beneath San Francisco",
+      "live_source_route": "direct_first_party_original",
+      "proposed_max_derivative_px": [
+        960,
+        540
+      ],
+      "geometry_evidence": "WP_media_metadata_not_binary_image_inspection",
+      "media_rights": "HOLD",
+      "image_downloaded": false,
+      "local_cache_authorized": false,
+      "wp_upload_authorized": false,
+      "post_rewrite_authorized": false,
+      "visitor_http_status": null,
+      "visitor_transfer_bytes": null,
+      "visitor_broken": null
+    },
+    {
+      "media_id": 389,
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/vasa-01-2020.jpg",
+      "wp_original_stored_bytes": 2822969,
+      "wp_metadata_dimensions_px": [
+        2147,
+        1417
+      ],
+      "wp_declared_nonfull_subsizes": true,
+      "live_published_post_exact_image_source_confirmed": true,
+      "live_published_post_id": 299,
+      "live_published_post_title": "Thirty Men Were Enough",
+      "live_source_route": "first_party_jetpack_fit",
+      "proposed_max_derivative_px": [
+        960,
+        634
+      ],
+      "geometry_evidence": "WP_media_metadata_not_binary_image_inspection",
+      "media_rights": "HOLD",
+      "image_downloaded": false,
+      "local_cache_authorized": false,
+      "wp_upload_authorized": false,
+      "post_rewrite_authorized": false,
+      "visitor_http_status": null,
+      "visitor_transfer_bytes": null,
+      "visitor_broken": null
+    },
+    {
+      "media_id": 39,
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/bceca0bd-a16f-44f7-be08-16376fbf08ca.png",
+      "wp_original_stored_bytes": 2892087,
+      "wp_metadata_dimensions_px": [
+        1672,
+        941
+      ],
+      "wp_declared_nonfull_subsizes": false,
+      "live_published_post_exact_image_source_confirmed": true,
+      "live_published_post_id": 34,
+      "live_published_post_title": "The Morning San Francisco Lost Its Water",
+      "live_source_route": "direct_first_party_original",
+      "proposed_max_derivative_px": [
+        960,
+        540
+      ],
+      "geometry_evidence": "WP_media_metadata_not_binary_image_inspection",
+      "media_rights": "HOLD",
+      "image_downloaded": false,
+      "local_cache_authorized": false,
+      "wp_upload_authorized": false,
+      "post_rewrite_authorized": false,
+      "visitor_http_status": null,
+      "visitor_transfer_bytes": null,
+      "visitor_broken": null
+    },
+    {
+      "media_id": 40,
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/377e08da-e121-4f57-9174-1548343402b3.png",
+      "wp_original_stored_bytes": 2552136,
+      "wp_metadata_dimensions_px": [
+        1672,
+        941
+      ],
+      "wp_declared_nonfull_subsizes": false,
+      "live_published_post_exact_image_source_confirmed": true,
+      "live_published_post_id": 35,
+      "live_published_post_title": "The Boat That Refused to Die",
+      "live_source_route": "direct_first_party_original",
+      "proposed_max_derivative_px": [
+        960,
+        540
+      ],
+      "geometry_evidence": "WP_media_metadata_not_binary_image_inspection",
+      "media_rights": "HOLD",
+      "image_downloaded": false,
+      "local_cache_authorized": false,
+      "wp_upload_authorized": false,
+      "post_rewrite_authorized": false,
+      "visitor_http_status": null,
+      "visitor_transfer_bytes": null,
+      "visitor_broken": null
+    },
+    {
+      "media_id": 41,
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/a44f673d-a8a8-4c83-9f29-7e24dd55156b.png",
+      "wp_original_stored_bytes": 2498247,
+      "wp_metadata_dimensions_px": [
+        1672,
+        941
+      ],
+      "wp_declared_nonfull_subsizes": false,
+      "live_published_post_exact_image_source_confirmed": true,
+      "live_published_post_id": 36,
+      "live_published_post_title": "The City That Went Underground",
+      "live_source_route": "direct_first_party_original",
+      "proposed_max_derivative_px": [
+        960,
+        540
+      ],
+      "geometry_evidence": "WP_media_metadata_not_binary_image_inspection",
+      "media_rights": "HOLD",
+      "image_downloaded": false,
+      "local_cache_authorized": false,
+      "wp_upload_authorized": false,
+      "post_rewrite_authorized": false,
+      "visitor_http_status": null,
+      "visitor_transfer_bytes": null,
+      "visitor_broken": null
+    },
+    {
+      "media_id": 42,
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/c1237ffd-4a47-4988-8254-e3b021069e72.png",
+      "wp_original_stored_bytes": 2488823,
+      "wp_metadata_dimensions_px": [
+        1672,
+        941
+      ],
+      "wp_declared_nonfull_subsizes": false,
+      "live_published_post_exact_image_source_confirmed": true,
+      "live_published_post_id": 37,
+      "live_published_post_title": "How Petra Made Water Flow Through Stone",
+      "live_source_route": "direct_first_party_original",
+      "proposed_max_derivative_px": [
+        960,
+        540
+      ],
+      "geometry_evidence": "WP_media_metadata_not_binary_image_inspection",
+      "media_rights": "HOLD",
+      "image_downloaded": false,
+      "local_cache_authorized": false,
+      "wp_upload_authorized": false,
+      "post_rewrite_authorized": false,
+      "visitor_http_status": null,
+      "visitor_transfer_bytes": null,
+      "visitor_broken": null
+    },
+    {
+      "media_id": 382,
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/vasa-med-gamla-och-nya-stottor_vasa-with-old-and-new-supports.jpg",
+      "wp_original_stored_bytes": 2318980,
+      "wp_metadata_dimensions_px": [
+        1800,
+        1200
+      ],
+      "wp_declared_nonfull_subsizes": true,
+      "live_published_post_exact_image_source_confirmed": true,
+      "live_published_post_id": 299,
+      "live_published_post_title": "Thirty Men Were Enough",
+      "live_source_route": "first_party_jetpack_fit",
+      "proposed_max_derivative_px": [
+        960,
+        640
+      ],
+      "geometry_evidence": "WP_media_metadata_not_binary_image_inspection",
+      "media_rights": "HOLD",
+      "image_downloaded": false,
+      "local_cache_authorized": false,
+      "wp_upload_authorized": false,
+      "post_rewrite_authorized": false,
+      "visitor_http_status": null,
+      "visitor_transfer_bytes": null,
+      "visitor_broken": null
+    },
+    {
+      "media_id": 482,
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/050e21e0-7b54-4f9a-ba0b-7f594657af05.png",
+      "wp_original_stored_bytes": 2293016,
+      "wp_metadata_dimensions_px": [
+        1672,
+        941
+      ],
+      "wp_declared_nonfull_subsizes": true,
+      "live_published_post_exact_image_source_confirmed": false,
+      "live_published_post_id": null,
+      "live_published_post_title": null,
+      "live_source_route": "not_reconciled_to_live_published_post",
+      "proposed_max_derivative_px": [
+        960,
+        540
+      ],
+      "geometry_evidence": "WP_media_metadata_not_binary_image_inspection",
+      "media_rights": "HOLD",
+      "image_downloaded": false,
+      "local_cache_authorized": false,
+      "wp_upload_authorized": false,
+      "post_rewrite_authorized": false,
+      "visitor_http_status": null,
+      "visitor_transfer_bytes": null,
+      "visitor_broken": null
+    },
+    {
+      "media_id": 405,
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/The20Water20Resilience20Field20Manual.png",
+      "wp_original_stored_bytes": 2201573,
+      "wp_metadata_dimensions_px": [
+        1122,
+        1402
+      ],
+      "wp_declared_nonfull_subsizes": true,
+      "live_published_post_exact_image_source_confirmed": false,
+      "live_published_post_id": null,
+      "live_published_post_title": null,
+      "live_source_route": "not_reconciled_to_live_published_post",
+      "proposed_max_derivative_px": [
+        960,
+        1200
+      ],
+      "geometry_evidence": "WP_media_metadata_not_binary_image_inspection",
+      "media_rights": "HOLD",
+      "image_downloaded": false,
+      "local_cache_authorized": false,
+      "wp_upload_authorized": false,
+      "post_rewrite_authorized": false,
+      "visitor_http_status": null,
+      "visitor_transfer_bytes": null,
+      "visitor_broken": null
+    },
+    {
+      "media_id": 293,
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/ne.png",
+      "wp_original_stored_bytes": 2090327,
+      "wp_metadata_dimensions_px": [
+        1122,
+        1402
+      ],
+      "wp_declared_nonfull_subsizes": true,
+      "live_published_post_exact_image_source_confirmed": false,
+      "live_published_post_id": null,
+      "live_published_post_title": null,
+      "live_source_route": "not_reconciled_to_live_published_post",
+      "proposed_max_derivative_px": [
+        960,
+        1200
+      ],
+      "geometry_evidence": "WP_media_metadata_not_binary_image_inspection",
+      "media_rights": "HOLD",
+      "image_downloaded": false,
+      "local_cache_authorized": false,
+      "wp_upload_authorized": false,
+      "post_rewrite_authorized": false,
+      "visitor_http_status": null,
+      "visitor_transfer_bytes": null,
+      "visitor_broken": null
+    }
+  ],
+  "performance_claims": {
+    "reported_42_broken": "UNVERIFIED_IN_LOGGED_OUT_BROWSER",
+    "reported_76_percent_reduction": "UNMEASURED",
+    "stored_bytes_not_network_bytes": true,
+    "production_repair_count_claimed_by_this_batch": null
+  },
+  "staging_plan": {
+    "first": "Site QA #154 browser CDP P0 source/response + screenshots",
+    "second": "item-specific copyright/caption+scene/crop approval",
+    "third": "obtain original lawfully; hash and inspect binary dimensions; no upscale, max width 960",
+    "fourth": "staged local derivative side-by-side visual review; compare cold mobile/desktop CDP bytes + CLS/LCP",
+    "fifth": "WordPress media staging only after separate publication approval; atomic reversible post change; verify and rollback",
+    "no_write_this_batch": true,
+    "no_media_binary_download_this_batch": true,
+    "no_homepage_design_change": true
+  }
+}
