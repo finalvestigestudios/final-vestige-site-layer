@@ -210,6 +210,10 @@ jobs:
         run: |
           python -m unittest discover -s products/desktop/tests -p 'test_atomic_unicode_privacy_r211.py' > /dev/null 2>&1
           python -OO -m unittest discover -s products/desktop/tests -p 'test_atomic_unicode_privacy_r211.py' > /dev/null 2>&1
+      - name: R212 prove CSV callback and input iterator failures cannot leak hidden financial exceptions (16 cases; normal and -OO)
+        run: |
+          python -m unittest discover -s products/desktop/tests -p 'test_atomic_iterator_privacy_r212.py' > /dev/null 2>&1
+          python -OO -m unittest discover -s products/desktop/tests -p 'test_atomic_iterator_privacy_r212.py' > /dev/null 2>&1
       - name: R200 execute R194-R199 financial and policy audit tests (148 methods per mode)
         run: |
           python products/desktop/scripts/safe_audit_subprocess_r205.py
@@ -826,6 +830,14 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R211 CSV privacy regression failed" }
           python -OO -m unittest discover -s products/desktop/tests -p 'test_atomic_unicode_privacy_r211.py' *> $null
           if ($LASTEXITCODE -ne 0) { throw "R211 optimized CSV privacy regression failed" }
+      - name: R212 prove CSV callback and input iterator failures cannot leak hidden financial exceptions (16 cases; normal and -OO)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python -m unittest discover -s products/desktop/tests -p 'test_atomic_iterator_privacy_r212.py' *> $null
+          if ($LASTEXITCODE -ne 0) { throw "R212 CSV iterator privacy regression failed" }
+          python -OO -m unittest discover -s products/desktop/tests -p 'test_atomic_iterator_privacy_r212.py' *> $null
+          if ($LASTEXITCODE -ne 0) { throw "R212 optimized CSV iterator privacy regression failed" }
       - name: R200 execute R194-R199 financial and policy audit tests (148 methods per mode)
         shell: pwsh
         run: |
