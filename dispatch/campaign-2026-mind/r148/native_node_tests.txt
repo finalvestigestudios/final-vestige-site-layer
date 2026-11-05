@@ -1,0 +1,26 @@
+PASS 01 read-only live snapshot is red flag but not guest failure
+PASS 02 original release stays on hold
+PASS 03 commercial stays blocked
+PASS 04 no confirmed lead inferred
+PASS 05 no welcome inferred
+PASS 06 no revenue inferred
+PASS 07 bad input null fails
+PASS 08 bad input array fails
+PASS 09 bad editor rejects
+PASS 10 bad view rejects
+PASS 11 unsafe enabled missing rejects
+PASS 12 auto send on rejects
+PASS 13 missing format rejects
+PASS 14 excerpt supported but same hold
+PASS 15 invalid boolean rejects
+PASS 16 personal email prohibited
+PASS 17 confirmation token prohibited
+PASS 18 api key prohibited
+PASS 19 observed HTML input without browser stays unknown
+PASS 20 editor block absent does not fabricate failure
+PASS 21 nonself anchor avoids current red flag
+PASS 22 guest object missing required fields rejected
+PASS 23 successful signed-out first click still no subscriber
+PASS 24 failed guest path explicitly fails
+PASS 25 guest appearance does not satisfy mailbox delivery
+RESULT 25/25 passing native Node assertions. Synthetic data; no external proof.
