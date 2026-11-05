@@ -47,7 +47,7 @@ function auditPublishedAtlas(snapshot,review={}){
  if(missingAlt)blockers.push('MISSING_IMAGE_ALT_TEXT');
  if(missingWidthHeight)blockers.push('UNSIZED_IMAGES_LAYOUT_SHIFT_RISK');
  if(!hasWorksheet)blockers.push('NO_MATCHING_FREE_CLASSROOM_WORKSHEET_PATH');
- if(uploadedNasaMedia.length && !review.photoSpecificReuseReviewed)
+ if(uploadedNasaMedia.length)
   blockers.push('NASA_MEDIA_IN_LIVE_HTML_WITHOUT_SUPPLIED_INDIVIDUAL_REUSE_RECEIPTS');
  if(images.length && review.photoSpecificReuseReviewed===true)
   blockers.push('PHOTO_RIGHTS_CLAIM_REQUIRES_INDEPENDENT_MANIFEST_AND_REVIEW');
