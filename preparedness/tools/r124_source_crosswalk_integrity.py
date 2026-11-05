@@ -59,6 +59,17 @@ def key_url(value):
         authority += ':' + str(port)
     return urlunsplit(('https', authority, p.path or '/', p.query, p.fragment))
 
+def alias_key_url(value):
+    """Conservative review-only alias: preserve query, path case and fragment.
+
+    A terminal slash is only evidence that two records need a shared worklist.
+    It NEVER merges author interpretations or changes original source URLs.
+    """
+    p = urlsplit(key_url(value))
+    return urlunsplit((p.scheme, p.netloc, (p.path or '/').rstrip('/') or '/',
+                       p.query, p.fragment))
+
+
 def audit(root, *, expected_groups=32, expected_commit=CANDIDATE):
     root = Path(root)
     source_dir = root / 'preparedness' / 'sources'
@@ -79,6 +90,7 @@ def audit(root, *, expected_groups=32, expected_commit=CANDIDATE):
 
     observed_files = []
     by_url = defaultdict(list)
+    by_alias = defaultdict(list)
     by_id = Counter()
     for origin, suffix in FILES.items():
         rel = 'preparedness/sources/' + suffix
@@ -96,29 +108,33 @@ def audit(root, *, expected_groups=32, expected_commit=CANDIDATE):
                     'INVALID_SOURCE_ID:' + origin)
             url = key_url(source.get('url'))
             by_id[source['id']] += 1
-            by_url[url].append({'origin': origin, 'source_file': rel,
-                                'row_index': index, 'source': source})
+            evidence = {'origin': origin, 'source_file': rel,
+                        'row_index': index, 'source': source}
+            by_url[url].append(evidence)
+            by_alias[alias_key_url(source['url'])].append(evidence)
     require(observed_files == x.get('source_files'), 'SOURCE_FILE_BLOB_OR_ROW_DRIFT')
     raw_count = sum(f['count'] for f in observed_files)
-    collisions = {url: rows for url, rows in by_url.items() if len(rows) > 1}
+    exact_collisions = {url: rows for url, rows in by_url.items() if len(rows) > 1}
+    collisions = {url: rows for url, rows in by_alias.items() if len(rows) > 1}
     require(raw_count == x.get('raw_source_rows'), 'SOURCE_ROW_COUNT_DRIFT')
     require(len(by_url) == x.get('unique_source_urls'), 'DISTINCT_SOURCE_URL_DRIFT')
-    require(len(collisions) == expected_groups == x.get('duplicate_url_groups'),
+    require(len(exact_collisions) == expected_groups == x.get('duplicate_url_groups'),
             'SHARED_URL_GROUP_COUNT_DRIFT')
+    require(len(collisions) == expected_groups, 'ALIAS_GROUP_COUNT_DRIFT')
     require(sum(n > 1 for n in by_id.values()) == x.get('duplicate_id_groups'),
             'DUPLICATE_SOURCE_ID_COUNT_DRIFT')
     require(raw_count == rec.get('candidate_source_rows') and
             len(by_url) == rec.get('candidate_distinct_urls') and
-            len(collisions) == rec.get('candidate_shared_url_groups'),
+            len(exact_collisions) == rec.get('candidate_shared_url_groups'),
             'CANDIDATE_CENSUS_DRIFT')
 
     declared = {}
     for group in x.get('groups', []):
         require(type(group) is dict and type(group.get('url')) is str,
                 'INVALID_SHARED_SOURCE_GROUP')
-        url = key_url(group['url'])
+        url = alias_key_url(group['url'])
         require(url not in declared, 'DUPLICATE_SHARED_URL_GROUP')
-        require(group.get('canonical_url') == url, 'CANONICAL_URL_DRIFT')
+        require(group.get('canonical_url') == key_url(group['url']), 'CANONICAL_URL_DRIFT')
         require(group.get('review_status') == PENDING and
                 group.get('reviewer') is None and group.get('reviewed_on') is None,
                 'PREMATURE_SOURCE_APPROVAL')
@@ -152,7 +168,12 @@ def audit(root, *, expected_groups=32, expected_commit=CANDIDATE):
     return {'release_state': 'HOLD', 'QD_PASS': False, 'may_publish': False,
             'medical_safety_verified': False, 'merchant_offer_verified': False,
             'source_rows': raw_count, 'distinct_urls': len(by_url),
-            'shared_url_groups': len(collisions), 'unreviewed_groups': len(declared),
+            'shared_url_groups': len(exact_collisions),
+            'canonical_shared_groups': len(collisions),
+            'canonical_alias_groups': sum(
+                len({row['source']['url'] for row in rows}) > 1
+                for rows in collisions.values()),
+            'unreviewed_groups': len(declared),
             'warning': 'Structural parity only; every source group requires human review.'}
 
 def main(argv=None):
