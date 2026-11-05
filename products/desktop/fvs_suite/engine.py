@@ -12,6 +12,7 @@ from .identity_inputs import normalize_key, parse_date as _parse_date_native
 from .audit_display import _escape_source_character
 from .csv_diagnostics import csv_input_error
 from .invoice_match import candidate_pairs, review_flags as invoice_review_flags
+from .csv_formula_guard import has_unescaped_formula_prefix
 
 ALIASES = {
  "id": ("transaction_id","id","reference","ref","document_id","claim_id"),
@@ -276,6 +277,8 @@ def safe_cell(value):
     or exotic whitespace characters that Python str.lstrip() does not.
     Quote ALL labels with such a leading character, even benign labels.
     Ordinary ASCII-space prefixes and exact negative decimals remain intact.
+    NFKC-compatible operators are escaped too, since the publisher rejects
+    them rather than rewriting original source evidence. No normalization.
     The original input SHA and source rows remain the audit authority.
     """
     s = str(value)
@@ -295,7 +298,8 @@ def safe_cell(value):
     token = s[index:]
     if (invisible_prefix or token.startswith(("=", "+", "@"))
             or (token.startswith("-") and
-                re.fullmatch(r"-[0-9]+(?:\.[0-9]+)?", token) is None)):
+                re.fullmatch(r"-[0-9]+(?:\.[0-9]+)?", token) is None)
+            or has_unescaped_formula_prefix(s)):
         return "'" + s
     return s
 
