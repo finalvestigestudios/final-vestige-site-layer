@@ -23,6 +23,12 @@ const mutations=[
  ["deleted image reference",a=>{a[1].posts[0].images.pop();a[1].posts[0].image_count--;}],
  ["wrong batch pagination",a=>a[0].page=2],
  ["invalid intrinsic tag width",a=>a[0].posts[0].images[0].html_width=-20],
- ["image-source drift without browser proof",a=>a[0].posts[5].images[0].original_url='https://finalvestige.com/wrong-image.jpg']
+ ["non-HTTP source URL",a=>a[0].posts[5].images[0].original_url='file:///unapproved.jpg']
 ];
 for(const [name,mutate] of mutations)test('reject '+name,()=>{const a=clone(load());mutate(a);assert.equal(verify(a).valid,false)});
+
+// A derived fixture tests the cross-baseline API; actual independent Oct 30 crosscheck
+// was performed separately with immutable blob 921e09ec4a26f69cc5063e867efacbc16070a36a.
+const syntheticPrevious=a=>({rows:a.flatMap(b=>b.posts).filter(p=>![1926,1924,1922,1920,1917].includes(p.id)).flatMap(p=>p.images.map(i=>({key:i.key,original_url:i.original_url})))});
+test('cross-baseline strict comparison detects a changed historic photograph source',()=>{const a=load(),old=syntheticPrevious(a);assert.equal(old.rows.length,355);assert.equal(verify(a,old).valid,true);a[1].posts[0].images[0].original_url='https://finalvestige.com/wrong-image.jpg';assert.equal(verify(a,old).valid,false)});
+test('cross-baseline rejects a forged earlier URL',()=>{const a=load(),old=syntheticPrevious(a);old.rows[0].original_url='https://example.org/fabricated.jpg';assert.equal(verify(a,old).valid,false)});
