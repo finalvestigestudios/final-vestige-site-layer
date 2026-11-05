@@ -1,0 +1,42 @@
+'use strict';
+const fs = require('node:fs');
+function validate(d) {
+  const e=[];
+  const ok=(p,msg)=>{if(!p)e.push(msg)};
+  const exact="https://blog.ucsusa.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg";
+  const page="https://commons.wikimedia.org/wiki/File:TMI-2_control_panel.png";
+  ok(d?.schema==="fv-tmi-p0-same-scene-candidate-v1","schema");
+  ok(d?.image_key==="285:2"&&d?.post_id===285,"slot");
+  ok(d?.published_src===exact,"original source");
+  ok(d?.published_alt==="Three Mile Island control panel showing dense rows of gauges, lights and switches.","frozen alt");
+  ok(d?.original_article_fig==="Fig. 4 (Source: Nuclear Regulatory Commission)","source figure");
+  ok(d?.original_source_article==="https://blog.ucs.org/dlochbaum/nuclear-plant-accidents-three-mile-island/","source article");
+  const r=d?.original_source_retrieval||{};
+  ok(r.method==="independent_web_text_retriever"&&r.tool_wrapper_error===500,"wrapper-only observation");
+  for(const k of ["origin_http_status","guest_http_status","guest_broken","guest_decoded_dimensions","guest_transfer_bytes","original_binary_sha256"])ok(r[k]===null,"unverified original "+k);
+  const c=d?.candidate||{};
+  ok(c.catalog===page,"catalog URL");
+  ok(c.direct_original_url==="https://upload.wikimedia.org/wikipedia/commons/e/ea/TMI-2_control_panel.png","catalog original path");
+  ok(c.commons_master_mime==="image/png","catalog mime");
+  ok(JSON.stringify(c.commons_master_pixel_dimensions)==="[604,590]","catalog dimensions");
+  ok(JSON.stringify(c.proposed_derivative_dimensions)==="[604,590]","no-upscale dimensions");
+  ok(c.max_derivative_width===960&&c.no_upscale===true,"960 px/no upscale");
+  ok(c.commons_master_file_size_display==="459 KB (catalog display, NOT page transfer)","catalog bytes aren't wire bytes");
+  ok(c.visual_relationship==="SAME_PANEL_SCENE_WITH_CROP_OR_RETOUCH_DIFFERENCE_NOT_PIXEL_PROVEN","visual candidate not binary verified");
+  ok(c.pixel_identity_verified===false&&c.source_binary_sha256===null,"no fake binary proof");
+  ok(c.rights_review==="HOLD"&&c.licence_to_rehost_verified===false&&c.credit_verified===false,"reuse rights hold");
+  ok(typeof c.rights_claim==="string"&&c.rights_claim.includes("retouched"),"retouch rights review");
+  ok(d?.rejected_prior_candidate?.direct_substitution_allowed===false,"reject different NRC inspector scene");
+  ok(d?.editorial?.alt_edit_authorized===false&&d?.editorial?.requires_visual_editor_review===true,"ALT editorial gate");
+  const a=d?.controls||{};
+  for(const k of ["allow_download","allow_cache","allow_wordpress_upload","allow_post_rewrite","allow_publish"])ok(a[k]===false,"no production "+k);
+  for(const k of ["needs_site_qa_logged_out_chrome","needs_both_source_binary_comparison","needs_specific_rights_review"])ok(a[k]===true,"verification gate "+k);
+  const b=d?.sitewide_baseline||{};
+  ok(b.frozen_published_posts===61&&b.frozen_image_refs===355&&b.frozen_external_origin_refs===288,"frozen site baseline");
+  ok(b.oversized_wp_originals===13&&b.oversized_wp_stored_bytes===43522829,"stored originals");
+  ok(b.reported_broken_42==="UNVERIFIED"&&b.reported_wire_reduction_76==="UNMEASURED","no invented performance");
+  ok(b.production_image_repair_count_this_batch===0,"no repairs claim");
+  return {ok:e.length===0,errors:e};
+}
+module.exports={validate};
+if(require.main===module){const d=JSON.parse(fs.readFileSync(process.argv[2]||'qa/media-recovery/tmi_panel_2852_same_scene_20261105.json','utf8')); const r=validate(d);console.log(JSON.stringify(r));process.exitCode=r.ok?0:1;}
