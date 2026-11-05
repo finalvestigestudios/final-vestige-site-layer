@@ -1,5 +1,7 @@
 # Apollo 1 Evidence Atlas page: independent review packet (revision 2, responds to the HOLD on `65f98aad`)
 
+> **Current status addendum — November 4, 2026:** This packet preserves the November 3 **private, image-free revision-2 review** as historical evidence. The page is now **published** at https://finalvestige.com/apollo-1-evidence-atlas/ and has since received scoped centering fixes and three explicitly approved contextual NASA photographs tied to the timeline. See draft PR #991 and `APOLLO1_IMAGE_DECISION_SHEET.md` for the current source/rights state. The original `FVSL-QD-PASS` line immediately below applies only to the earlier revision, not to the current site. The enhanced current head has no hosted CI PASS while the GitHub job-start gate fails; do not mistake the earlier approved package for an exact-head acceptance.
+
 **`FVSL-QD-PASS: NO`.** No independent reviewer has cleared this revision; the author issues no pass. Page 2017 is a **private, unpublished draft**. Prepared 2026-11-03. Earlier verdict being answered: HOLD, PR #798 comment 6607291873, head `65f98aad79369c9c8a3ef9dad4bea1f136bf43c5`. Author's full record: `APOLLO1_PAGE_DRAFT_RECORD.md`. Image decisions: `APOLLO1_IMAGE_DECISION_SHEET.md`.
 
 ## 1. Exact subject

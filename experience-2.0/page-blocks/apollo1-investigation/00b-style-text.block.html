@@ -1,3 +1,27 @@
 <!-- wp:html -->
-<style>.fv-ex2-page .fv-ex2-chapter__grid--text{grid-template-columns: minmax(0,1fr);}.fv-ex2-page .fv-ex2-chapter__grid--text .fv-ex2-chapter__text{grid-column: 1;grid-row: auto;justify-self: start;max-width: 46rem;}</style>
+<style>.fv-ex2-page .fv-ex2-chapter__grid--text{grid-template-columns: minmax(0,1fr);}.fv-ex2-page .fv-ex2-chapter__grid--text .fv-ex2-chapter__text{grid-column: 1;grid-row: auto;justify-self: center;width: 100%;max-width: 56rem;}
+/* Center the reading hierarchy within the existing full-width dark canvas. */
+.fv-ex2-page .fv-ex2-sec__head{width:min(100%,56rem);margin-inline:auto}
+.fv-ex2-page .fv-ex2-desk__head{width:min(100%,56rem);margin-inline:auto}
+.fv-ex2-page #limits>.fv-ex2-wrap>.fv-ex2-chapter__text{width:min(100%,60rem);margin-inline:auto}
+.fv-ex2-page .fv-ex2-hero__inner{max-width:70rem;margin-inline:auto}
+.fv-ex2-page .fv-ex2-classlist{width:min(100%,70rem);margin-inline:auto}
+.fv-ex2-page .fv-ex2-policy{margin-inline:auto}
+.fv-ex2-page .fv-ex2-chronology{width:min(100%,70rem);margin-inline:auto}
+.fv-ex2-page .fv-ex2-chapter__grid--text .fv-ex2-chapter__text{margin-inline:auto}
+@media(min-width:60rem){.fv-ex2-page .fv-ex2-chapter{padding-block:clamp(4rem,5.5vw,6.5rem)}.fv-ex2-page.fv-ex2-sec,.fv-ex2-page .fv-ex2-sec{padding-block:clamp(3rem,5vw,5rem)}}
+.fv-ex2-page .fvx-chrono-gallery{margin:2rem auto 0;padding:clamp(1rem,2vw,1.5rem);border:1px solid var(--fvx-line);background:linear-gradient(130deg,#141410,#101111 70%,#171511);width:100%;max-width:68rem}
+.fv-ex2-page .fvx-chrono-gallery__kicker{font:700 .7rem/1.5 var(--fvx-font-catalog);letter-spacing:.12em;text-transform:uppercase;color:var(--fvx-gold);margin:0 0 .45rem}
+.fv-ex2-page .fvx-chrono-gallery__note{font-size:.84rem;color:var(--fvx-text-muted);max-width:70ch;margin:0 0 1.1rem}
+.fv-ex2-page .fvx-chrono-gallery__figure{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(1rem,3vw,2.5rem);align-items:center;margin:0}
+.fv-ex2-page .fvx-chrono-gallery__figure[hidden]{display:none!important}
+.fv-ex2-page .fvx-chrono-gallery__image{display:block;width:100%;height:min(36vw,27rem);min-height:13rem;object-fit:contain;background:#090a0a;border:1px solid var(--fvx-line)}
+.fv-ex2-page .fvx-chrono-gallery__caption{font-size:clamp(.85rem,1.15vw,.96rem);line-height:1.65;color:var(--fvx-text-muted)}
+.fv-ex2-page .fvx-chrono-gallery__caption strong{display:block;font-family:var(--fvx-font-display);font-size:clamp(1.1rem,1.8vw,1.6rem);font-weight:400;line-height:1.25;color:var(--fvx-text);margin:0 0 .6rem}
+.fv-ex2-page .fvx-chrono-gallery__caption small{display:block;margin-top:.75rem;font-size:.76rem;color:var(--fvx-gold)}
+.fv-ex2-page .fvx-chrono-gallery__caption a{display:inline-flex;min-height:44px;align-items:center}
+.fv-ex2-page .fvx-chrono-gallery__position{margin-top:.9rem;font-size:.78rem;color:var(--fvx-gold);letter-spacing:.04em}
+@media(max-width:48rem){.fv-ex2-page .fvx-chrono-gallery__figure{grid-template-columns:minmax(0,1fr)}.fv-ex2-page .fvx-chrono-gallery__image{height:clamp(14rem,60vw,24rem)}}
+@media(prefers-reduced-motion:no-preference){.fv-ex2-page .fvx-chrono-gallery__figure.is-current{animation:fvx-archive-photo-in .28s ease-out both}@keyframes fvx-archive-photo-in{from{opacity:.55;transform:translateY(5px)}to{opacity:1;transform:none}}}
+</style>
 <!-- /wp:html -->
