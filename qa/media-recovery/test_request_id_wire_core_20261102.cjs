@@ -8,7 +8,7 @@ const slot=(over={})=>({
  result:'loaded_in_probe_browser',match:'exact_url_or_jetpack_origin',
  current_src_identity_verified:true,network_final_identity_verified:true,
  loaded_network_proof_verified:true,redirected_image_identity_unverified:false,
- natural_width:600,http_status:200,transfer_bytes:5000,
+ natural_width:600,natural_height:450,http_status:200,response_mime_type:'image/jpeg',transfer_bytes:5000,
  verified_broken_in_browser:false,...over});
 const net=(over={})=>({
  request_id:'33.1',url:img,url_aliases:[],status:200,
@@ -101,4 +101,29 @@ test('duplicate stored image keys fail closed',()=>{
 });
 test('empty inputs return unknown, never zero bytes',()=>{
  assert.equal(result([],[]).article_bytes,null);
+});
+
+// An absent CDP cache flag is UNKNOWN, not proof of an uncached transfer.
+// A mismatched decoded-image MIME and intrinsic height also fails closed.
+for (const [name,networkChange] of [
+ ['missing was_cached flag',{was_cached:undefined}],
+ ['missing disk-cache flag',{from_disk_cache:undefined}],
+ ['missing service-worker flag',{from_service_worker:undefined}],
+ ['network JPEG vs decoded PNG',{mime_type:'image/png'}]
+])test('fail closed on '+name,()=>{
+ const v=result([slot()],[net(networkChange)]);
+ assert.equal(v.article_bytes,null,name);
+ assert.equal(v.complete,false,name);
+ assert.ok(v.reasons.some(s=>s.startsWith('slot_cdp_response_mismatch')),name);
+});
+for (const [name,slotChange] of [
+ ['missing intrinsic height',{natural_height:undefined}],
+ ['zero intrinsic height',{natural_height:0}],
+ ['missing DOM MIME',{response_mime_type:undefined}],
+ ['DOM JPEG vs CDP PNG',{response_mime_type:'image/png'}]
+])test('fail closed on '+name,()=>{
+ const v=result([slot(slotChange)],[net()]);
+ assert.equal(v.article_bytes,null,name);
+ assert.equal(v.complete,false,name);
+ assert.ok(v.reasons.some(s=>s.startsWith('slot_not_network_verified')||s.startsWith('slot_cdp_response_mismatch')),name);
 });
