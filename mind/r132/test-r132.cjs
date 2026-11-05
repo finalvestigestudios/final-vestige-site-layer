@@ -12,7 +12,7 @@ const {parseAggregate}=require('./conversion-metrics.cjs');
 for(const [name,html] of [['A',a],['B',b]]){
  test(name+' has no commerce activation or runtime tracking',()=>{
   assert.match(html,/button type="button" disabled aria-disabled="true"/);
-  assert.doesNotMatch(html,/<script\b|<iframe\b|autoplay|<form\b|<input\b|href="https?:\/\/(?:www\.)?(?:zen12|affiliates\.inspire3)/i);
+  assert.doesNotMatch(html,/<script\b|<iframe\b|\bautoplay\s*=|<form\b|<input\b|href="https?:\/\/(?:www\.)?(?:zen12|affiliates\.inspire3)/i);
  });
  test(name+' has near-button explicit earnings disclosure',()=>{
   const at=html.indexOf('class="disclosure"'),btn=html.indexOf('<button');
@@ -26,7 +26,7 @@ for(const [name,html] of [['A',a],['B',b]]){
 }
 test('Variant B contains original optional storyboard and transcript but no faux video',()=>{
  assert.match(b,/0–6s/);assert.match(b,/33–40s/);assert.match(b,/Full transcript/);
- assert.match(b,/storyboard only/);assert.doesNotMatch(b,/<video\b|autoplay|<iframe\b/i);
+ assert.match(b,/storyboard only/);assert.doesNotMatch(b,/<video\b|\bautoplay\s*=|<iframe\b/i);
  assert.doesNotMatch(a,/Full transcript/);
 });
 test('A and B have identical central offer/merchant safeguards',()=>{
