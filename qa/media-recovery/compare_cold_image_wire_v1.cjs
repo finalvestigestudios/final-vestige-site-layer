@@ -62,7 +62,7 @@ function inspectRun(run, label, reasons) {
           !['exact_url_or_jetpack_origin','exact_url_unique_alt'].includes(slot.match) ||
           slot.current_src_identity_verified !== true || slot.network_final_identity_verified !== true ||
           slot.loaded_network_proof_verified !== true || slot.redirected_image_identity_unverified === true ||
-          slot.complete !== true || !positive(slot.natural_width) || slot.http_status !== 200 ||
+          slot.complete !== true || !positive(slot.natural_width) || !positive(slot.natural_height) || slot.http_status !== 200 ||
           !/^image\//i.test(slot.response_mime_type||'') || !positive(slot.transfer_bytes) ||
           !netUrl(slot.stored_url) || !netUrl(slot.current_src) || !netUrl(slot.request_url)) {
         add(reasons, label+':unverified_or_broken_image:'+key);continue;
@@ -71,7 +71,7 @@ function inspectRun(run, label, reasons) {
       if (!validId(slot.request_id) || !n || netUrl(slot.request_url) !== netUrl(n.url) ||
           n.status !== 200 || !/^image\//i.test(n.mime_type||'') ||
           !positive(n.encoded_data_length) || n.encoded_data_length !== slot.transfer_bytes ||
-          n.error || n.was_cached === true || n.from_disk_cache === true || n.from_service_worker === true) {
+          n.error || n.was_cached !== false || n.from_disk_cache !== false || n.from_service_worker !== false) {
         add(reasons, label+':uncached_cdp_request_mismatch:'+key);continue;
       }
       if (!bound.has(slot.request_id)) {bound.add(slot.request_id);sum += n.encoded_data_length;}
@@ -113,6 +113,25 @@ function compareColdImageWire(before, after) {
     if (!pairedSourceSetMatches) continue;
     const bs=new Map(br.page.stored_images.map(s=>[s.image_key,s]));
     const as=new Map(ar.page.stored_images.map(s=>[s.image_key,s]));
+    // This is only a geometry and caption guard, NOT visual/historical equivalence.
+    for (const k of bkeys) {
+      const x=bs.get(k), y=as.get(k);
+      if (typeof x.rendered_alt !== 'string' || typeof y.rendered_alt !== 'string' ||
+          x.rendered_alt !== y.rendered_alt)
+        add(reasons,'rendered_alt_changed_or_missing:'+k);
+      if (!positive(x.natural_width) || !positive(x.natural_height) ||
+          !positive(y.natural_width) || !positive(y.natural_height)) {
+        add(reasons,'intrinsic_geometry_missing:'+k);continue;
+      }
+      const ratioDrift=Math.abs(x.natural_width*y.natural_height-y.natural_width*x.natural_height)/
+        (x.natural_width*y.natural_height);
+      if(ratioDrift>0.01)add(reasons,'image_crop_or_aspect_changed:'+k);
+      if(y.natural_width>x.natural_width || y.natural_height>x.natural_height)
+        add(reasons,'candidate_intrinsic_upscale_requires_review:'+k);
+      if(y.natural_width<Math.min(320,x.natural_width) ||
+          y.natural_height<Math.min(160,x.natural_height))
+        add(reasons,'candidate_intrinsic_too_small:'+k);
+    }
     paired.push({post_id:id,image_slots:bkeys.length,baseline_cdp_bytes:br.computed,candidate_cdp_bytes:ar.computed,
       sources:bkeys.map(k=>({image_key:k,baseline_stored_url:bs.get(k).stored_url,
         candidate_stored_url:as.get(k).stored_url,baseline_current_src:bs.get(k).current_src,
@@ -126,15 +145,15 @@ function compareColdImageWire(before, after) {
   if (errors.length) return {schema:'fv-cold-image-wire-pair-v1',state:'HOLD',reasons:errors,
     paired_post_count:null,baseline_cdp_bytes:null,candidate_cdp_bytes:null,
     reduction_percent:null,at_least_76_percent_in_this_pair:null,
-    sitewide_76_percent_claim_permitted:false,production_repair_claim_permitted:false};
+    sitewide_76_percent_claim_permitted:false,production_repair_claim_permitted:false,visual_parity_verified:false};
   const reduction=(baseline-candidate)*100/baseline;
   return {schema:'fv-cold-image-wire-pair-v1',state:'LAB_PAIR_MEASURED',reasons:[],
     viewport:before.viewport,mode:before.mode,post_count:paired.length,
     paired_post_count:paired.length,paired,baseline_cdp_bytes:baseline,
     candidate_cdp_bytes:candidate,reduction_percent:Math.round(reduction*100)/100,
     at_least_76_percent_in_this_pair:reduction>=76,
-    sitewide_76_percent_claim_permitted:false,production_repair_claim_permitted:false,
-    limitations:'One cold lab CDP pair, not field traffic or a validated 61-post multi-run site-wide performance result. Rights/visual parity and WordPress release require separate approval.'};
+    sitewide_76_percent_claim_permitted:false,production_repair_claim_permitted:false,visual_parity_verified:false,
+    limitations:'One cold lab CDP pair, not field traffic or a validated 61-post multi-run site-wide result. Geometry and ALT checks are only a safety screen: pixel-level scene/caption/rights review and any WordPress release require separate approval.'};
 }
 if (require.main===module) {
  const files=process.argv.slice(2);
