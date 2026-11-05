@@ -20,7 +20,7 @@ const WIDTHS=[320,360,390,768,1440,1920];
 const PAGE_PATH='/apollo/r134-preview.html';
 const sha256=x=>crypto.createHash('sha256').update(x).digest('hex');
 function receiptBase(){
- return {schema:'fv.apollo.r134.actual-page.v1',release:'STAGING_HOLD',
+ return {schema:'fv.apollo.r135.actual-page.v1',release:'STAGING_HOLD',
   browser_acceptance:'NOT_ESTABLISHED',rights:'0_OF_6_CLEARED',
   offer:'NOT_VERIFIED',net_revenue:'NOT_OBSERVABLE',checks:[],errors:[],
   user_agent:null,screenshots:[],metrics:{},axe:{},build:null};
@@ -74,7 +74,16 @@ async function inspectPage(page,receipt,label,html){
    toolsHidden:root?root.querySelector('[data-fvx-tools]').hidden:null,
    initialized:root?root.dataset.fvxInitialized:null,
    status:root?root.querySelector('[data-fvx-status]').textContent:null,
-   metrics:window.__fvR134||null};
+   metrics:window.__fvR134||null,
+   language:document.documentElement.lang,
+   embeddedMedia:document.querySelectorAll('img,picture,iframe,video,canvas').length,
+   photoUrls:[...document.querySelectorAll('a[href*="nasa.gov/image-detail/"]')].map(a=>a.href),
+   photoRelSafe:[...document.querySelectorAll('a[href*="nasa.gov/image-detail/"]')]
+      .every(a=>a.relList.contains('noopener')&&a.relList.contains('noreferrer')),
+   clearLabel:root?root.querySelector('[data-fvx-clear]')?.textContent?.trim():null,
+   hasH1:document.querySelectorAll('h1').length===1,
+   userStorage:{cookie:document.cookie,
+     local:localStorage.length,session:sessionStorage.length}};
  });
  assertCheck(receipt,label+'_SIX_RECORDS',state.cards===6,state.cards);
  assertCheck(receipt,label+'_SIX_VISIBLE_RECORDS',state.visibleCards===6,state.visibleCards);
@@ -82,6 +91,16 @@ async function inspectPage(page,receipt,label,html){
  assertCheck(receipt,label+'_NO_HORIZONTAL_OVERFLOW',state.overflow<=1,state.overflow);
  assertCheck(receipt,label+'_NO_UNEXPECTED_NETWORK',outbound.length===0,outbound);
  assertCheck(receipt,label+'_NO_PAGE_ERRORS',errors.length===0,errors);
+ assertCheck(receipt,label+'_SIX_DISTINCT_NASA_SOURCES',
+   state.photoUrls.length===6&&new Set(state.photoUrls).size===6,state.photoUrls);
+ assertCheck(receipt,label+'_SOURCE_LINK_PRIVACY',state.photoRelSafe,state.photoRelSafe);
+ assertCheck(receipt,label+'_ACCESSIBLE_SOURCE_STRUCTURE',
+   state.language==='en'&&state.hasH1&&state.clearLabel==='Clear search',
+   {language:state.language,h1:state.hasH1,clearLabel:state.clearLabel});
+ assertCheck(receipt,label+'_NO_EMBEDDED_UNCLEARED_MEDIA',state.embeddedMedia===0,state.embeddedMedia);
+ assertCheck(receipt,label+'_NO_UNEXPECTED_CLIENT_STORAGE',
+   state.userStorage.cookie===''&&state.userStorage.local===0&&state.userStorage.session===0,
+   state.userStorage);
  receipt.metrics[label]=state.metrics;
  return state;
 }
@@ -89,11 +108,25 @@ async function run({outDir=path.join(os.tmpdir(),'apollo-r134-browser-qa')}={}){
  fs.mkdirSync(outDir,{recursive:true});
  const receipt=receiptBase();
  const built=path.join(outDir,'generated');
+ const twin=path.join(outDir,'generated-replay');
  let server=null,browser=null;
  try{
   const result=build({outDir:built});
   const html=fs.readFileSync(result.output,'utf8');
-  receipt.build={artifact_sha256:sha256(html),manifest:result.manifest};
+  // A manifest hash alone does not prove a reproducible build. Compare a fresh replay.
+  const replay=build({outDir:twin});
+  const replayHtml=fs.readFileSync(replay.output,'utf8');
+  const identical=html===replayHtml &&
+    JSON.stringify(result.manifest)===JSON.stringify(replay.manifest);
+  assertCheck(receipt,'TWO_INDEPENDENT_BUILDS_IDENTICAL',identical,
+    {first:sha256(html),replay:sha256(replayHtml)});
+  assertCheck(receipt,'MANIFEST_MATCHES_EXACT_ARTIFACT',
+    result.manifest.artifact_sha256===sha256(html),
+    {declared:result.manifest.artifact_sha256,actual:sha256(html)});
+  if(!identical || result.manifest.artifact_sha256!==sha256(html))
+    throw Error('REFUSED_NONDETERMINISTIC_OR_MISMATCHED_ARTIFACT');
+  receipt.build={artifact_sha256:sha256(html),replay_artifact_sha256:sha256(replayHtml),
+    deterministic:true,manifest:result.manifest};
   const {chromium}=require('playwright');
   const axePath=require.resolve('axe-core/axe.min.js');
   const executable=process.env.FV_CHROMIUM_EXECUTABLE||undefined;
@@ -135,6 +168,17 @@ async function run({outDir=path.join(os.tmpdir(),'apollo-r134-browser-qa')}={}){
     assertCheck(receipt,label+'_ESC_CLEARS_SEARCH',
       await input.inputValue()===''&&(await records.count())===6);
     await input.fill('ignition');
+    await input.focus();
+    await page.keyboard.press('Tab');
+    assertCheck(receipt,label+'_KEYBOARD_TAB_REACHES_CLEAR',
+      await page.locator('[data-fvx-clear]').evaluate(el=>document.activeElement===el));
+    if(width===390){
+      // Dispatch a real touch event, not a mouse click at a mobile viewport.
+      await page.locator('[data-fvx-clear]').tap();
+      assertCheck(receipt,label+'_TOUCH_RESET_RESTORES_SIX',
+        await input.inputValue()===''&&(await records.count())===6);
+      await input.fill('ignition');
+    }
     await page.locator('[data-fvx-clear]').click();
     assertCheck(receipt,label+'_CLEAR_CLICK_RESTORES_SIX',
       await input.inputValue()===''&&(await records.count())===6);
@@ -154,7 +198,23 @@ async function run({outDir=path.join(os.tmpdir(),'apollo-r134-browser-qa')}={}){
   const noJs=await browser.newContext({viewport:{width:390,height:844},javaScriptEnabled:false});
   const noJsPage=await noJs.newPage();
   const noJsState=await inspectPage(noJsPage,receipt,'no_js_390',html);
-  assertCheck(receipt,'NO_JS_EVIDENCE_AVAILABLE',noJsState.visibleCards===6&&noJsState.links===6&&noJsState.toolsHidden===true);
+  assertCheck(receipt,'NO_JS_EVIDENCE_AVAILABLE',
+    noJsState.visibleCards===6&&noJsState.links===6&&noJsState.toolsHidden===true);
+  const noJsShot='no_js_390.png';
+  await noJsPage.screenshot({path:path.join(outDir,noJsShot),fullPage:true,
+    animations:'disabled',caret:'hide'});
+  receipt.screenshots.push({path:noJsShot,sha256:sha256(fs.readFileSync(path.join(outDir,noJsShot)))});
+  await noJsPage.emulateMedia({media:'print'});
+  const printable=await noJsPage.evaluate(()=>({
+    visible:[...document.querySelectorAll('[data-fvx-record]')]
+       .filter(e=>getComputedStyle(e).display!=='none').length,
+    links:document.querySelectorAll('a[href*="nasa.gov/image-detail/"]').length
+  }));
+  assertCheck(receipt,'PRINT_NO_JS_SIX_SOURCE_RECORDS',
+    printable.visible===6&&printable.links===6,printable);
+  const pdfFile='research-desk-no-js-print.pdf';
+  await noJsPage.pdf({path:path.join(outDir,pdfFile),format:'A4',printBackground:true});
+  receipt.screenshots.push({path:pdfFile,sha256:sha256(fs.readFileSync(path.join(outDir,pdfFile))),kind:'print_pdf'});
   await noJs.close();
   // A separate audit context bypasses CSP solely to inject local axe-core.
   // The ordinary real-navigation test above NEVER bypasses production CSP.
