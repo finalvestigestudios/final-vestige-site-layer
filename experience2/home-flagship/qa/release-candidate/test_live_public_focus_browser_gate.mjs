@@ -44,5 +44,5 @@ test('mobile strip and desktop navigation are distinct modes',()=>{
 test('sanitize URLs, never report query/fragment/foreign hostname',()=>{
   assert.equal(pathOnly('https://finalvestige.com/focus/?asset_id=private#x'),'/focus/');
   assert.equal(pathOnly('https://notfinalvestige.com/focus/'),'external-host');
-  assert.equal(pathOnly('not a valid //url'),'invalid-url');
+  assert.equal(pathOnly('http://[bad'),'invalid-url');
 });
