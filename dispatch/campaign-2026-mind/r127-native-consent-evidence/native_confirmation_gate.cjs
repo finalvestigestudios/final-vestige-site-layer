@@ -7,7 +7,7 @@ function demand(ok,msg){if(!ok)throw Error(msg);}
 function safe(x,path="root"){
  if(!x||typeof x!=="object")return;
  for(const [k,v] of Object.entries(x)){
-  demand(!BLOCK.some(p=>k.toLowerCase()===p), "PII key rejected at "+path);
+  demand(!BLOCK.some(p=>k.toLowerCase()===p) || (k.toLowerCase()==="email" && Number.isSafeInteger(v) && v>=0), "PII key rejected at "+path);
   if(typeof v==="string")demand(!/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/i.test(v),"PII value rejected");
   if(v&&typeof v==="object")safe(v,path+"."+k);
  }
