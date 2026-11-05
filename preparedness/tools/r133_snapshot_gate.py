@@ -14,6 +14,7 @@ CITE = re.compile(r'\{\{cite:([a-z0-9]+(?:-[a-z0-9]+)*)\}\}')
 HOLD = 'DRAFT_HUMAN_REVIEW_HOLD'
 PENDING = 'pending-human-source-and-reading-scope-review'
 IGNORED = {'script', 'style', 'template', 'noscript'}
+VOID = {'area','base','br','col','embed','hr','img','input','link','meta','param','source','track','wbr'}
 
 
 class IntegrityHold(ValueError):
@@ -49,6 +50,8 @@ class VisibleCites(HTMLParser):
         self.visible = []
 
     def handle_starttag(self, tag, attrs):
+        if tag in VOID:
+            return
         attrs = dict(attrs)
         style = re.sub(r'\s+', '', attrs.get('style') or '').lower()
         hidden = tag in IGNORED or ('hidden' in attrs) or ('inert' in attrs) or (
@@ -80,7 +83,7 @@ def audit(root: Path, manifest: dict, expected_articles: int = 35):
          manifest.get('medical_safety_verified') is False and
          manifest.get('merchant_offer_verified') is False, 'FORGED_APPROVAL')
     entries = manifest.get('files')
-    need(isinstance(entries, list) and entries, 'MISSING_FILE_MANIFEST')
+    need(isinstance(entries, list) and len(entries) == 80, 'FILE_INVENTORY_DRIFT')
     declared = {}
     for entry in entries:
         path, sha = entry.get('path'), entry.get('blob_sha')
@@ -102,6 +105,10 @@ def audit(root: Path, manifest: dict, expected_articles: int = 35):
     need({str(p.relative_to(root)) for p in article_dir.glob('*.body.html')} == set(bodies)
          and {str(p.relative_to(root)) for p in article_dir.glob('*.meta.json')} == set(metas),
          'UNMANIFESTED_OR_MISSING_ARTICLES')
+    frag_dir = root / 'preparedness/sources/fragments'
+    need({str(p.relative_to(root)) for p in frag_dir.glob('*.json')} ==
+         {p for p in declared if p.startswith('preparedness/sources/fragments/')},
+         'UNMANIFESTED_SOURCE_FRAGMENT')
     tax = load_json(actual['preparedness/taxonomy.json'])
     slate = tax['slate']
     need(len(slate) == expected_articles and len({a['slug'] for a in slate}) == expected_articles,
