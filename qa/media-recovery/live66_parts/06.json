@@ -1,0 +1,283 @@
+{
+  "schema": "fv-live-wp-source-batch-v1",
+  "captured_date": "2026-11-05",
+  "page": 6,
+  "total_published": 66,
+  "post_range": [
+    60,
+    65
+  ],
+  "read_method": "wp posts.list complete and posts.get edit, read-only, not browser evidence",
+  "posts": [
+    {
+      "id": 101,
+      "url": "https://finalvestige.com/2026/08/17/six-inches-of-water-boston-molasses-flood/",
+      "title": "Six Inches of Water",
+      "modified": "2026-10-29T18:26:05",
+      "image_count": 7,
+      "images": [
+        {
+          "key": "101:0",
+          "original_url": "https://finalvestige.com/wp-content/uploads/2026/08/Boston_Elevated_Railway_after_the_Molasses_Flood_January_1919_from_the_City_of_Boston_Archives_-_9800-018-031.jpg",
+          "host": "finalvestige.com",
+          "origin": "first_party",
+          "alt": "Wreckage in Boston’s North End after the Great Molasses Flood of January 1919, with damaged elevated-rail infrastructure and tank debris.",
+          "html_width": null,
+          "html_height": null,
+          "query_width": null,
+          "actual_browser_http_status": null,
+          "actual_browser_decoded": null,
+          "actual_browser_transfer_bytes": null,
+          "rights": "HOLD",
+          "max_derivative_width": 960,
+          "no_upscale": true,
+          "local_cache_authorized": false,
+          "wp_write_authorized": false
+        },
+        {
+          "key": "101:1",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/5/59/North_End_molasses_tank.jpg",
+          "host": "upload.wikimedia.org",
+          "origin": "external",
+          "alt": "Large cylindrical steel molasses storage tank beside elevated rail tracks in Boston’s North End before the 1919 failure.",
+          "html_width": null,
+          "html_height": null,
+          "query_width": null,
+          "actual_browser_http_status": null,
+          "actual_browser_decoded": null,
+          "actual_browser_transfer_bytes": null,
+          "rights": "HOLD",
+          "max_derivative_width": 960,
+          "no_upscale": true,
+          "local_cache_authorized": false,
+          "wp_write_authorized": false
+        },
+        {
+          "key": "101:2",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Boston_molasses_detail_map.png",
+          "host": "upload.wikimedia.org",
+          "origin": "external",
+          "alt": "Detail map of Boston’s North End showing the 1919 molasses tank, firehouse, elevated railway, paving yard and surrounding streets.",
+          "html_width": null,
+          "html_height": null,
+          "query_width": null,
+          "actual_browser_http_status": null,
+          "actual_browser_decoded": null,
+          "actual_browser_transfer_bytes": null,
+          "rights": "HOLD",
+          "max_derivative_width": 960,
+          "no_upscale": true,
+          "local_cache_authorized": false,
+          "wp_write_authorized": false
+        },
+        {
+          "key": "101:3",
+          "original_url": "https://finalvestige.com/wp-content/uploads/2026/08/Boston_Elevated_Railway_after_the_Molasses_Flood_January_1919_from_the_City_of_Boston_Archives_-_9800-018-023.jpg",
+          "host": "finalvestige.com",
+          "origin": "first_party",
+          "alt": "Collapsed structures, steel debris and damage beside Boston’s elevated railway after the 1919 molasses flood.",
+          "html_width": null,
+          "html_height": null,
+          "query_width": null,
+          "actual_browser_http_status": null,
+          "actual_browser_decoded": null,
+          "actual_browser_transfer_bytes": null,
+          "rights": "HOLD",
+          "max_derivative_width": 960,
+          "no_upscale": true,
+          "local_cache_authorized": false,
+          "wp_write_authorized": false
+        },
+        {
+          "key": "101:4",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Boston_post-January_16%2C_1919%2C.jpg",
+          "host": "upload.wikimedia.org",
+          "origin": "external",
+          "alt": "Front page of the Boston Post from January 16, 1919 reporting the deadly molasses tank disaster in Boston.",
+          "html_width": null,
+          "html_height": null,
+          "query_width": null,
+          "actual_browser_http_status": null,
+          "actual_browser_decoded": null,
+          "actual_browser_transfer_bytes": null,
+          "rights": "HOLD",
+          "max_derivative_width": 960,
+          "no_upscale": true,
+          "local_cache_authorized": false,
+          "wp_write_authorized": false
+        },
+        {
+          "key": "101:5",
+          "original_url": "https://finalvestige.com/wp-content/uploads/2026/08/Boston_Elevated_Railway_after_the_Molasses_Flood_January_1919_from_the_City_of_Boston_Archives_-_9800-018-054.jpg",
+          "host": "finalvestige.com",
+          "origin": "first_party",
+          "alt": "Workers amid debris and damaged infrastructure during cleanup after Boston’s Great Molasses Flood in January 1919.",
+          "html_width": null,
+          "html_height": null,
+          "query_width": null,
+          "actual_browser_http_status": null,
+          "actual_browser_decoded": null,
+          "actual_browser_transfer_bytes": null,
+          "rights": "HOLD",
+          "max_derivative_width": 960,
+          "no_upscale": true,
+          "local_cache_authorized": false,
+          "wp_write_authorized": false
+        },
+        {
+          "key": "101:6",
+          "original_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Molasses_Flood_Historical_Marker.jpg/1280px-Molasses_Flood_Historical_Marker.jpg",
+          "host": "upload.wikimedia.org",
+          "origin": "external",
+          "alt": "Historical marker in Boston describing the 1919 Great Molasses Flood near the former tank site.",
+          "html_width": null,
+          "html_height": null,
+          "query_width": null,
+          "actual_browser_http_status": null,
+          "actual_browser_decoded": null,
+          "actual_browser_transfer_bytes": null,
+          "rights": "HOLD",
+          "max_derivative_width": 960,
+          "no_upscale": true,
+          "local_cache_authorized": false,
+          "wp_write_authorized": false
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "url": "https://finalvestige.com/2026/08/16/the-cisterns-beneath-san-francisco/",
+      "title": "The Cisterns Beneath San Francisco",
+      "modified": "2026-10-29T17:06:51",
+      "image_count": 1,
+      "images": [
+        {
+          "key": "38:0",
+          "original_url": "https://finalvestige.com/wp-content/uploads/2026/08/01340c2e-1165-4ca0-aa96-87398a83d13a.png",
+          "host": "finalvestige.com",
+          "origin": "first_party",
+          "alt": "Firefighters drawing emergency water from an underground cistern in post-earthquake San Francisco",
+          "html_width": 1024,
+          "html_height": 576,
+          "query_width": null,
+          "actual_browser_http_status": null,
+          "actual_browser_decoded": null,
+          "actual_browser_transfer_bytes": null,
+          "rights": "HOLD",
+          "max_derivative_width": 960,
+          "no_upscale": true,
+          "local_cache_authorized": false,
+          "wp_write_authorized": false
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "url": "https://finalvestige.com/2026/08/16/how-petra-made-water-flow-through-stone/",
+      "title": "How Petra Made Water Flow Through Stone",
+      "modified": "2026-10-29T17:07:17",
+      "image_count": 1,
+      "images": [
+        {
+          "key": "37:0",
+          "original_url": "https://finalvestige.com/wp-content/uploads/2026/08/c1237ffd-4a47-4988-8254-e3b021069e72.png",
+          "host": "finalvestige.com",
+          "origin": "first_party",
+          "alt": "Reconstruction of Petra’s water channels and reservoir system in the ancient desert city",
+          "html_width": 1024,
+          "html_height": 576,
+          "query_width": null,
+          "actual_browser_http_status": null,
+          "actual_browser_decoded": null,
+          "actual_browser_transfer_bytes": null,
+          "rights": "HOLD",
+          "max_derivative_width": 960,
+          "no_upscale": true,
+          "local_cache_authorized": false,
+          "wp_write_authorized": false
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "url": "https://finalvestige.com/2026/08/16/the-city-that-went-underground/",
+      "title": "The City That Went Underground",
+      "modified": "2026-10-29T17:07:30",
+      "image_count": 1,
+      "images": [
+        {
+          "key": "36:0",
+          "original_url": "https://finalvestige.com/wp-content/uploads/2026/08/a44f673d-a8a8-4c83-9f29-7e24dd55156b.png",
+          "host": "finalvestige.com",
+          "origin": "first_party",
+          "alt": "Civilians sheltering inside a cave during the Siege of Vicksburg",
+          "html_width": 1024,
+          "html_height": 576,
+          "query_width": null,
+          "actual_browser_http_status": null,
+          "actual_browser_decoded": null,
+          "actual_browser_transfer_bytes": null,
+          "rights": "HOLD",
+          "max_derivative_width": 960,
+          "no_upscale": true,
+          "local_cache_authorized": false,
+          "wp_write_authorized": false
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "url": "https://finalvestige.com/2026/08/16/the-boat-that-refused-to-die/",
+      "title": "The Boat That Refused to Die",
+      "modified": "2026-10-29T17:07:04",
+      "image_count": 1,
+      "images": [
+        {
+          "key": "35:0",
+          "original_url": "https://finalvestige.com/wp-content/uploads/2026/08/377e08da-e121-4f57-9174-1548343402b3.png",
+          "host": "finalvestige.com",
+          "origin": "first_party",
+          "alt": "Shackleton and crew in a small lifeboat crossing icy seas during the Endurance expedition",
+          "html_width": 1024,
+          "html_height": 576,
+          "query_width": null,
+          "actual_browser_http_status": null,
+          "actual_browser_decoded": null,
+          "actual_browser_transfer_bytes": null,
+          "rights": "HOLD",
+          "max_derivative_width": 960,
+          "no_upscale": true,
+          "local_cache_authorized": false,
+          "wp_write_authorized": false
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "url": "https://finalvestige.com/2026/08/16/the-morning-san-francisco-lost-its-water/",
+      "title": "The Morning San Francisco Lost Its Water",
+      "modified": "2026-10-29T21:19:13",
+      "image_count": 1,
+      "images": [
+        {
+          "key": "34:0",
+          "original_url": "https://finalvestige.com/wp-content/uploads/2026/08/bceca0bd-a16f-44f7-be08-16376fbf08ca.png",
+          "host": "finalvestige.com",
+          "origin": "first_party",
+          "alt": "Firefighters and horse-drawn fire engines on a ruined San Francisco street during the 1906 fires",
+          "html_width": 1024,
+          "html_height": 576,
+          "query_width": null,
+          "actual_browser_http_status": null,
+          "actual_browser_decoded": null,
+          "actual_browser_transfer_bytes": null,
+          "rights": "HOLD",
+          "max_derivative_width": 960,
+          "no_upscale": true,
+          "local_cache_authorized": false,
+          "wp_write_authorized": false
+        }
+      ]
+    }
+  ]
+}
