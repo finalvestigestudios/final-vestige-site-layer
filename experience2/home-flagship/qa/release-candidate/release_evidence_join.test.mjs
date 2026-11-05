@@ -86,7 +86,7 @@ for(const [name,change,code] of mutations){
   });
 }
 
- // Verify the real producers' schema, not arbitrary optimistic boolean labels.
+// Verify the real producers' schema, not arbitrary optimistic boolean labels.
 const forgeryMutations=[
   ['stage generic true-only record',x=>{x.stage.viewports[0].checks={success:true};},'STAGE_CHECKS_FAIL_360'],
   ['no-JS generic true-only record',x=>{x.stage.no_javascript.checks={looks_ok:true};},'STAGE_NOJS_MEANING_HOLD'],
