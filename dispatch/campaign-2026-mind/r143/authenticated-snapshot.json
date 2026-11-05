@@ -1,0 +1,35 @@
+{
+  "as_of": "2026-11-05T18:30:53Z",
+  "evidence_source": "Connected WordPress wpcom_jetpack_newsletter status + get_settings (read-only)",
+  "settings": {
+    "subscriptions": true,
+    "email_new_posts_by_default": false,
+    "email_content_format": "full",
+    "from_name": "Final Vestige Studios",
+    "reply_to": "no-reply"
+  },
+  "status": {
+    "site_can_send": true,
+    "subscribers": {
+      "total": 3,
+      "confirmed": 3,
+      "unconfirmed": 2,
+      "suppressed": 0,
+      "paid": 0,
+      "imported_last_24h": 1
+    },
+    "latest_five_notifications": "never_sent_opted_out"
+  },
+  "previous_reported": {
+    "email_content_format": "excerpt",
+    "from_name": "Final Vestige"
+  },
+  "what_is_not_established": [
+    "Any actor or exact change time for reported settings differences",
+    "Net unique email-eligible subscribers or reason for import counter",
+    "Genuine Jetpack native preview, unsub link or publisher postal address",
+    "Receipt of welcome plus Fieldbook for an authorized test recipient",
+    "Named affiliate permission for email marketing or merchant paid settlements"
+  ],
+  "privacy": "No subscriber addresses, IDs, or contact records included"
+}
