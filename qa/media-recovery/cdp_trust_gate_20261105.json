@@ -1,0 +1,118 @@
+{
+  "schema": "fv-media-cdp-trust-regression-v1",
+  "date_local": "2026-11-05",
+  "type": "OFFLINE_SYNTHETIC_REGRESSION_NOT_LIVE_SITE_EVIDENCE",
+  "repository": "finalvestigestudios/final-vestige-site-layer",
+  "branch": "qa/media-recovery-reviewed-20261030-1158",
+  "comparison": {
+    "before_commit": "c98bc465e3322cea19e7256b8f8ab9c8bf545b5b",
+    "before_source_blob_sha": "cb7e3e21e190db93fe7d7e3cda1fd98feba2f408",
+    "source_fix_commit": "757766163778854895ecad12628c9820fa774869",
+    "source_blob_sha": "3c5b3cb50ac6d793415c232ad0df1898af8d9c04",
+    "new_tests_commit": "fe9032c9235aa6524779c8b3e92b69ea603c4064",
+    "test_blob_sha": "c8af5f3ccae9fb4d0a9f8ad06847e82754629dfa",
+    "module": "qa/media-recovery/request_id_wire_core.cjs",
+    "test_module": "qa/media-recovery/test_request_id_wire_core_20261102.cjs",
+    "replay": {
+      "passed": 31,
+      "total": 31,
+      "environment": "V8 isolated execution, simplified fixture URL sameSource shim; NOT native Node CI or Chromium"
+    }
+  },
+  "negative_controls": [
+    {
+      "scenario": "legitimate cold JPEG",
+      "prior_code_article_bytes": 5000,
+      "corrected_code_article_bytes": 5000,
+      "corrected_complete": true,
+      "expected_corrected_article_bytes": 5000
+    },
+    {
+      "scenario": "missing was_cached",
+      "prior_code_article_bytes": 5000,
+      "corrected_code_article_bytes": null,
+      "corrected_complete": false,
+      "expected_corrected_article_bytes": null
+    },
+    {
+      "scenario": "missing from_disk_cache",
+      "prior_code_article_bytes": 5000,
+      "corrected_code_article_bytes": null,
+      "corrected_complete": false,
+      "expected_corrected_article_bytes": null
+    },
+    {
+      "scenario": "missing from_service_worker",
+      "prior_code_article_bytes": 5000,
+      "corrected_code_article_bytes": null,
+      "corrected_complete": false,
+      "expected_corrected_article_bytes": null
+    },
+    {
+      "scenario": "CDP MIME disagrees with DOM JPEG",
+      "prior_code_article_bytes": 5000,
+      "corrected_code_article_bytes": null,
+      "corrected_complete": false,
+      "expected_corrected_article_bytes": null
+    },
+    {
+      "scenario": "intrinsic height missing",
+      "prior_code_article_bytes": 5000,
+      "corrected_code_article_bytes": null,
+      "corrected_complete": false,
+      "expected_corrected_article_bytes": null
+    },
+    {
+      "scenario": "intrinsic height zero",
+      "prior_code_article_bytes": 5000,
+      "corrected_code_article_bytes": null,
+      "corrected_complete": false,
+      "expected_corrected_article_bytes": null
+    },
+    {
+      "scenario": "DOM MIME missing",
+      "prior_code_article_bytes": 5000,
+      "corrected_code_article_bytes": null,
+      "corrected_complete": false,
+      "expected_corrected_article_bytes": null
+    },
+    {
+      "scenario": "DOM MIME mismatched",
+      "prior_code_article_bytes": 5000,
+      "corrected_code_article_bytes": null,
+      "corrected_complete": false,
+      "expected_corrected_article_bytes": null
+    }
+  ],
+  "known_live_site_baseline": {
+    "source": "qa/media-recovery/live_wp_p0_and_oversize_13_20261105.json",
+    "frozen_sitewide_posts": 61,
+    "stored_image_slots": 355,
+    "external_origins": 288,
+    "unverified_reported_broken_count": 42,
+    "unverified_claimed_reduction_percent": 76,
+    "wp_oversized_originals_over_1_5_mib": 13,
+    "wp_oversized_storage_bytes": 43522829,
+    "first_party_five_png_storage_bytes": 13267538,
+    "real_visitor_image_transfer_bytes": null,
+    "confirmed_production_image_repairs": 0
+  },
+  "high_priority_external_slots": [
+    "285:5",
+    "285:2",
+    "287:5",
+    "418:1",
+    "418:2",
+    "407:1"
+  ],
+  "exact_external_urls_and_prior_non_browser_statuses": "qa/media-recovery/source_chain_gate_safety_20261105.json",
+  "guest_browser_statuses": null,
+  "authoritative_candidate_rights_status": "HOLD_PER_ITEM",
+  "proposed_derivative_max_width_px": 960,
+  "no_upscale": true,
+  "wordpress_upload_authorized": false,
+  "production_post_rewrite_authorized": false,
+  "third_party_caching_authorized": false,
+  "site_qa_154_probe_modified": false,
+  "homepage_visual_design_modified": false
+}
