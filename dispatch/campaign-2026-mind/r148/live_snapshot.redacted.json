@@ -1,0 +1,15 @@
+{
+  "site": "https://finalvestige.com",
+  "retrieved_utc": "2026-11-05T23:39:22Z",
+  "dispatch_page_id": 523,
+  "dispatch_editor": { "jetpack_block_present": true, "literal_form_count": 0, "literal_email_input_count": 0 },
+  "dispatch_api_view": { "has_email_input": false, "has_html_form": false, "has_self_link_to_page": true, "subscribe_anchor_appears_to_point_to": "https://finalvestige.com/?post_type=page&p=523" },
+  "focus_page_id": 1579,
+  "focus_editor": { "jetpack_block_present": true, "literal_form_count": 0, "focus_success_query_is_permissive": true },
+  "newsletter": {"enabled": true, "auto_send_new_posts": false, "email_format": "full", "from_name": "Final Vestige Studios", "reply_to": "no-reply", "total": 3, "confirmed": 3, "unconfirmed": 2, "imported_last_24h": 0},
+  "guest_anonymous_browser": null,
+  "actual_confirmed_leads": null,
+  "actual_welcome_receipts": null,
+  "actual_paid_orders": null,
+  "privacy": "aggregate counts only; subscriber identities and tokens intentionally excluded"
+}
