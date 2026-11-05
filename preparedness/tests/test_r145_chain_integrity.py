@@ -10,9 +10,11 @@ import unittest
 from unittest import mock
 
 HERE=Path(__file__).resolve().parent
-spec=importlib.util.spec_from_file_location('r145_chain_integrity',HERE/'r145_chain_integrity.py')
+TOOL = HERE.parent/'tools'/'r145_chain_integrity.py' if (HERE.parent/'tools'/'r145_chain_integrity.py').exists() else HERE/'r145_chain_integrity.py'
+MANIFEST = HERE.parent/'docs'/'r145'/'r145_stack_manifest.json' if (HERE.parent/'docs'/'r145'/'r145_stack_manifest.json').exists() else HERE/'r145_stack_manifest.json'
+spec=importlib.util.spec_from_file_location('r145_chain_integrity',TOOL)
 gate=importlib.util.module_from_spec(spec);spec.loader.exec_module(gate)
-MASTER=json.loads((HERE/'r145_stack_manifest.json').read_text())
+MASTER=json.loads(MANIFEST.read_text())
 
 def fresh():return copy.deepcopy(MASTER)
 
@@ -63,7 +65,7 @@ class PlanTests(unittest.TestCase):
             self.assertEqual(gate._diff(Path('/tmp'),'x','y'),{'preparedness/tools/tool.py':'A'})
 
     def test_can_compile_guard_without_repo_checkout(self):
-        p=subprocess.run(['python','-I','-m','py_compile',str(HERE/'r145_chain_integrity.py')],capture_output=True)
+        p=subprocess.run(['python','-I','-m','py_compile',str(TOOL)],capture_output=True)
         self.assertEqual(p.returncode,0,p.stderr)
 
 
