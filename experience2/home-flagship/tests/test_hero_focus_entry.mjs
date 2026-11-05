@@ -55,7 +55,7 @@ test("44px Focus tap target, width containment and reduced-motion source retaine
   assert.match(css, /prefers-reduced-motion/);
 });
 test("negative control: merchant/unverified offer cannot replace free Focus", () =>
-  assert.throws(() => verifyHero(html.replace("finalvestige.com/focus/","example.com/paid/"))));
+  assert.throws(() => verifyHero(html.replace('href="https://finalvestige.com/focus/">Explore the free 52-page', 'href="https://example.com/paid/">Explore the free 52-page'))));
 test("negative control: missing explicit 52-page resource label fails", () =>
   assert.throws(() => verifyHero(html.replace("Explore the free 52-page Focus Fieldbook", "Learn More"))));
 test("negative control: primary evidence action cannot be removed", () =>
@@ -63,6 +63,6 @@ test("negative control: primary evidence action cannot be removed", () =>
 test("negative control: missing chapter destination fails", () =>
   assert.throws(() => verifyChapters(html.replace('href="#fv-hf-mind-title"','href="#not-chapter"'))));
 test("negative control: undersized touch target fails", () =>
-  assert.throws(() => verifyCss(css.replace("min-height: 44px;", "min-height: 20px;"))));
+  assert.throws(() => verifyCss(css.replace(/(\.fv-hf \.fv-hf__text-link--focus\s*\{[^}]*?)min-height: 44px;/, "$1min-height: 20px;"))));
 test("negative control: a non-wrapping zoom-clipped CTA fails", () =>
   assert.throws(() => verifyCss(css.replace("overflow-wrap: anywhere;", "overflow-wrap: normal;"))));
