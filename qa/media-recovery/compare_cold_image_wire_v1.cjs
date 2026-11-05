@@ -6,6 +6,7 @@
  */
 const fs = require('node:fs');
 const {createHash}=require('node:crypto');
+const {sameSource}=require('./browser_probe_core.cjs');
 const positive = v => Number.isSafeInteger(v) && v > 0;
 const validId = v => typeof v === 'string' && v.length > 0 && v.length <= 128 && !/\s/.test(v);
 const url = v => { try { const u = new URL(v); return u.protocol === 'https:' && u.hostname === 'finalvestige.com' ? u.href : null; } catch { return null; } };
@@ -38,7 +39,7 @@ function inspectRun(run, label, reasons) {
         p.confirmed_broken_count !== 0)
       add(reasons, label+':page_or_scroll_unverified:'+id);
     if (p.article_wire_evidence_complete !== true ||
-        (Array.isArray(p.article_wire_evidence_errors) && p.article_wire_evidence_errors.length) ||
+        !Array.isArray(p.article_wire_evidence_errors) || p.article_wire_evidence_errors.length !== 0 ||
         p.article_wire_attribution_mode !== 'strict_cdp_request_id')
       add(reasons, label+':article_wire_evidence_unverified:'+id);
     if (!Array.isArray(p.stored_images) || !positive(p.stored_image_count) ||
@@ -67,12 +68,24 @@ function inspectRun(run, label, reasons) {
           !netUrl(slot.stored_url) || !netUrl(slot.current_src) || !netUrl(slot.request_url)) {
         add(reasons, label+':unverified_or_broken_image:'+key);continue;
       }
+      // Never count bytes for a different historical photo (or a format-changing
+      // rendition) merely because a forged/stale CDP request ID matches.
+      // Use the SAME conservative source-equivalence gate as the browser probe.
+      if (!sameSource(slot.stored_url,slot.current_src) ||
+          !sameSource(slot.current_src,slot.request_url)) {
+        add(reasons,label+':unverified_image_source_chain:'+key);continue;
+      }
       const n = byId.get(slot.request_id);
       if (!validId(slot.request_id) || !n || netUrl(slot.request_url) !== netUrl(n.url) ||
           n.status !== 200 || !/^image\//i.test(n.mime_type||'') ||
           !positive(n.encoded_data_length) || n.encoded_data_length !== slot.transfer_bytes ||
           n.error || n.was_cached !== false || n.from_disk_cache !== false || n.from_service_worker !== false) {
         add(reasons, label+':uncached_cdp_request_mismatch:'+key);continue;
+      }
+      if (!sameSource(slot.current_src,n.url) ||
+          String(slot.response_mime_type||'').split(';')[0].trim().toLowerCase() !==
+          String(n.mime_type||'').split(';')[0].trim().toLowerCase()) {
+        add(reasons,label+':cdp_source_or_mime_identity_mismatch:'+key);continue;
       }
       if (!bound.has(slot.request_id)) {bound.add(slot.request_id);sum += n.encoded_data_length;}
     }
