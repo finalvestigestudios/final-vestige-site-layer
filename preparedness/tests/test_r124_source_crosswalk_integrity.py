@@ -269,7 +269,7 @@ class SyntheticReview(unittest.TestCase):
     def test_canonical_alias_group_retarget_fails(self):
         self.add_alias()
         self.x['groups'][0]['url'] = 'https://unrelated.example.org/wrong'
-        self.assert_hold('MISSING_OR_EXTRA_SHARED_URL_GROUP')
+        self.assert_hold('CANONICAL_URL_DRIFT')
 
     def test_alias_key_keeps_query_distinct(self):
         self.assertNotEqual(G.alias_key_url('https://example.org/a/?x=1'),
