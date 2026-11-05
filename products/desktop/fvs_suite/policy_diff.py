@@ -14,6 +14,7 @@ from pathlib import Path
 from .unicode_hazards import is_visually_blank_filler
 from .policy_canonical import render_local_canonical_evidence
 from .policy_confusables import render_local_confusable_evidence
+from .policy_compatibility_custody import owned_nfkc_hunks
 
 MAX_POLICY_BYTES = 10 * 1024 * 1024
 MAX_POLICY_LINES = 50_000
@@ -223,13 +224,14 @@ def _local_compatibility_evidence(hunks) -> str:
     equal but NFC is not. Never claim that the pair is legally equivalent.
     Report line numbers and bounded codepoints, not extra raw policy content.
     """
+    # A direct helper caller can supply synthetic hunks. Verify every exact
+    # native source record and cross-hunk physical coordinate *before* emitting
+    # any human-review cue; the base diff and byte fingerprints remain intact.
+    staged = owned_nfkc_hunks(hunks)
+    if staged is None:
+        return ""
     matches = []
-    for number, hunk in enumerate(hunks, 1):
-        removed, added = {}, {}
-        for line, value in hunk["removed_sources"]:
-            removed.setdefault(unicodedata.normalize("NFKC", value), []).append((line, value))
-        for line, value in hunk["added_sources"]:
-            added.setdefault(unicodedata.normalize("NFKC", value), []).append((line, value))
+    for number, removed, added in staged:
         for normalized in removed.keys() & added.keys():
             before_group, after_group = removed[normalized], added[normalized]
             # Duplicate normalized lines make a one-to-one citation ambiguous.
