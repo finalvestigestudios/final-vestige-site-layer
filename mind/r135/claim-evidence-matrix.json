@@ -1,0 +1,375 @@
+{
+  "date": "2026-11-04",
+  "workstream": "Mind R135",
+  "status": "DRAFT_UNPUBLISHED",
+  "offer": "Zen12 Premium",
+  "exact_page": "https://zen12.com/hnp",
+  "conditional_page": "https://zen12.com/secret/",
+  "approved_affiliate_link": null,
+  "commission_terms": null,
+  "checkout_total_observed": null,
+  "confirmed_partner_approval": false,
+  "sources": [
+    {
+      "id": "S1",
+      "type": "primary",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/1500880/",
+      "note": "Raymond et al 1992"
+    },
+    {
+      "id": "S2",
+      "type": "primary",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/8189198/",
+      "note": "Shapiro et al 1994"
+    },
+    {
+      "id": "S3",
+      "type": "primary",
+      "url": "https://journals.sagepub.com/doi/10.1111/j.1467-9280.1997.tb00689.x",
+      "note": "Shapiro et al 1997 priming"
+    },
+    {
+      "id": "S4",
+      "type": "primary",
+      "url": "https://journals.sagepub.com/doi/10.1111/j.0956-7976.2005.01526.x",
+      "note": "Olivers Nieuwenhuis 2005"
+    },
+    {
+      "id": "S5",
+      "type": "primary",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17488185/",
+      "note": "Slagter et al 2007 intensive practice"
+    },
+    {
+      "id": "S6",
+      "type": "replication",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8062350/",
+      "note": "Grassi et al replications"
+    },
+    {
+      "id": "S7",
+      "type": "seller",
+      "url": "https://inspire3.com/",
+      "note": "Inspire3 catalog"
+    },
+    {
+      "id": "S8",
+      "type": "seller",
+      "url": "https://zen12.com/hnp",
+      "note": "Exact Zen12 offer"
+    },
+    {
+      "id": "S9",
+      "type": "seller",
+      "url": "https://zen12.com/secret/",
+      "note": "Conditional promotional price"
+    },
+    {
+      "id": "S10",
+      "type": "seller",
+      "url": "https://zen12.com/welcome",
+      "note": "Merchant free audio newsletter"
+    },
+    {
+      "id": "S11",
+      "type": "merchant-policy",
+      "url": "https://inspire3.com/privacy/",
+      "note": "Personal buyer data sharing"
+    },
+    {
+      "id": "S12",
+      "type": "partner-portal",
+      "url": "https://affiliates.inspire3.com/",
+      "note": "Public signup not authorization"
+    },
+    {
+      "id": "S13",
+      "type": "regulator",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "note": "FTC endorsements"
+    },
+    {
+      "id": "S14",
+      "type": "regulator",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "note": "FTC health claims"
+    },
+    {
+      "id": "S15",
+      "type": "FV",
+      "url": "https://finalvestige.com/focus/",
+      "note": "Existing Focus"
+    },
+    {
+      "id": "S16",
+      "type": "FV",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "note": "Existing Puységur archive"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "text": "T2 report decreases when second target follows T1 shortly in RSVP",
+      "refs": [
+        "S1",
+        "S2",
+        "S6"
+      ],
+      "decision": "SUPPORTED_CONTEXT"
+    },
+    {
+      "id": "C02",
+      "text": "Missed items produce priming under certain controlled paradigms",
+      "refs": [
+        "S3"
+      ],
+      "decision": "SUPPORTED_NARROW"
+    },
+    {
+      "id": "C03",
+      "text": "Task-irrelevant mental activity sometimes reduces blink in laboratory",
+      "refs": [
+        "S4"
+      ],
+      "decision": "SUPPORTED_NARROW_NOT_PRESCRIPTION"
+    },
+    {
+      "id": "C04",
+      "text": "Three months intensive meditation training altered blink and P3b response",
+      "refs": [
+        "S5"
+      ],
+      "decision": "SUPPORTED_CONTEXT"
+    },
+    {
+      "id": "C05",
+      "text": "That intensive meditation finding proves effectiveness of Zen12 MP3",
+      "refs": [
+        "S5",
+        "S8"
+      ],
+      "decision": "REJECTED_EXTRAPOLATION"
+    },
+    {
+      "id": "C06",
+      "text": "Zen12 Premium: 12 levels four styles 48 MP3 according to seller",
+      "refs": [
+        "S8"
+      ],
+      "decision": "SELLER_DESCRIPTION"
+    },
+    {
+      "id": "C07",
+      "text": "12 minute Zen12 equals one hour advanced meditation",
+      "refs": [
+        "S8"
+      ],
+      "decision": "UNSUPPORTED_SELLER_CLAIM"
+    },
+    {
+      "id": "C08",
+      "text": "Zen12 treatment of depression or anxiety",
+      "refs": [
+        "S8",
+        "S14"
+      ],
+      "decision": "UNSUPPORTED_EXCLUDED"
+    },
+    {
+      "id": "C09",
+      "text": "Main seller page displays $87.99",
+      "refs": [
+        "S8"
+      ],
+      "decision": "SELLER_PRICE_NOT_CHECKOUT"
+    },
+    {
+      "id": "C10",
+      "text": "Conditional seller offer displays $37 code",
+      "refs": [
+        "S9"
+      ],
+      "decision": "CONDITIONAL_NOT_CHECKOUT"
+    },
+    {
+      "id": "C11",
+      "text": "Seller advertises one-year moneyback guarantee",
+      "refs": [
+        "S8"
+      ],
+      "decision": "SELLER_POLICY_TERMS_UNVERIFIED"
+    },
+    {
+      "id": "C12",
+      "text": "Free merchant audio means separate merchant newsletter",
+      "refs": [
+        "S10"
+      ],
+      "decision": "SELLER_SIGNUP_CONSENT"
+    },
+    {
+      "id": "C13",
+      "text": "Merchant may share purchasers name email product with affiliates",
+      "refs": [
+        "S11"
+      ],
+      "decision": "PUBLISHED_POLICY"
+    },
+    {
+      "id": "C14",
+      "text": "FV has received individual affiliate acceptance",
+      "refs": [
+        "S12"
+      ],
+      "decision": "UNVERIFIED_DO_NOT_ASSERT"
+    },
+    {
+      "id": "C15",
+      "text": "Advertised affiliate commission applies to FV",
+      "refs": [
+        "S12"
+      ],
+      "decision": "UNVERIFIED_DO_NOT_ASSERT"
+    },
+    {
+      "id": "C16",
+      "text": "Outbound click proves sale",
+      "refs": [
+        "S12"
+      ],
+      "decision": "FALSE_REJECT"
+    },
+    {
+      "id": "C17",
+      "text": "Affiliate disclosure belongs near recommendation",
+      "refs": [
+        "S13"
+      ],
+      "decision": "REQUIRED"
+    },
+    {
+      "id": "C18",
+      "text": "Product-specific health efficacy requires reliable support",
+      "refs": [
+        "S14"
+      ],
+      "decision": "REQUIRED"
+    },
+    {
+      "id": "C19",
+      "text": "Current paid FV Mind Payhip SKU is rights cleared and sale verified",
+      "refs": [],
+      "decision": "UNVERIFIED"
+    },
+    {
+      "id": "C20",
+      "text": "Video variant raises confirmed paid conversion",
+      "refs": [],
+      "decision": "UNTESTED_HYPOTHESIS"
+    }
+  ],
+  "gates": [
+    {
+      "id": "G01",
+      "item": "Named partner acceptance",
+      "state": "CLOSED"
+    },
+    {
+      "id": "G02",
+      "item": "Approved exact affiliate link",
+      "state": "CLOSED"
+    },
+    {
+      "id": "G03",
+      "item": "Terms and approved creatives",
+      "state": "CLOSED"
+    },
+    {
+      "id": "G04",
+      "item": "Aggregate-only acceptable buyer data reporting",
+      "state": "CLOSED"
+    },
+    {
+      "id": "G05",
+      "item": "Verified checkout total and refund terms",
+      "state": "CLOSED"
+    },
+    {
+      "id": "G06",
+      "item": "Independent substantiation and FTC copy",
+      "state": "CLOSED"
+    },
+    {
+      "id": "G07",
+      "item": "Merchant newsletter separated from Jetpack",
+      "state": "CLOSED"
+    },
+    {
+      "id": "G08",
+      "item": "One existing Focus and Dispatch funnel",
+      "state": "CLOSED"
+    },
+    {
+      "id": "G09",
+      "item": "No extra analytics/vendor scripts",
+      "state": "CLOSED"
+    },
+    {
+      "id": "G10",
+      "item": "Real Grok media IDs/UTM allowed placements",
+      "state": "CLOSED"
+    },
+    {
+      "id": "G11",
+      "item": "Mobile browser 360/390/768/1440/1920",
+      "state": "CLOSED"
+    },
+    {
+      "id": "G12",
+      "item": "Keyboard and no JS a11y validation",
+      "state": "CLOSED"
+    },
+    {
+      "id": "G13",
+      "item": "Original playable film rights/captions",
+      "state": "CLOSED"
+    },
+    {
+      "id": "G14",
+      "item": "Committed-source structural tests",
+      "state": "CLOSED"
+    },
+    {
+      "id": "G15",
+      "item": "Native Node and hosted CI",
+      "state": "CLOSED"
+    },
+    {
+      "id": "G16",
+      "item": "Independent QA and founder approval",
+      "state": "CLOSED"
+    },
+    {
+      "id": "G17",
+      "item": "Authenticated Payhip eligible Mind paid SKU",
+      "state": "CLOSED"
+    },
+    {
+      "id": "G18",
+      "item": "Confirmed settled merchant paid revenue",
+      "state": "CLOSED"
+    }
+  ],
+  "measurement": {
+    "metric": "net_revenue_per_1000_qualified_human_sessions",
+    "state": "NOT_COMPUTABLE",
+    "reason": "no qualified-session denominator and merchant verified settled revenue",
+    "source_truth": "merchant accounting",
+    "cohorts": [
+      7,
+      30
+    ],
+    "privacy": "no PII, fingerprints, third-party pixels or duplicated scripts"
+  }
+}

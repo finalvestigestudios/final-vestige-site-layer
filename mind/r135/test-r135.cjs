@@ -1,0 +1,63 @@
+'use strict';
+/* Final Vestige R135 offline structural guardrails.
+   Run: node mind/r135/test-r135.cjs
+   This does not substitute for Chrome/keyboard/screen-reader/cross-device QA. */
+const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
+const here=__dirname;
+const file=n=>fs.readFileSync(path.join(here,n),'utf8');
+const a=file('zen12-landing-text-only.html');
+const b=file('zen12-landing-video-concept.html');
+const hub=file('mind-hub-wordpress-draft.html');
+const investigation=file('attentional-blink-investigation.md');
+const guide=file('zen12-independent-buyer-guide.md');
+const contract=file('conversion-contract.md');
+const matrix=JSON.parse(file('claim-evidence-matrix.json'));
+let total=0;
+const ok=(v,msg)=>{assert.ok(v,msg);total++};
+const eq=(v,w,msg)=>{assert.equal(v,w,msg);total++};
+for(const [name,html] of [['text',a],['video-concept',b]]){
+ ok(/affiliate disclosure/i.test(html),name+' commission disclosure');
+ ok(/Final Vestige may earn a commission/i.test(html),name+' plain commission language');
+ ok(/<button[^>]*disabled/i.test(html),name+' disabled purchase');
+ ok(/aria-describedby="affiliate-disclosure"/.test(html),name+' disclosure accessible link');
+ ok(html.indexOf('id="affiliate-disclosure"')<html.indexOf('<button'),name+' adjacent before CTA');
+ ok(!/<form\b/i.test(html),name+' no new signup');
+ ok(!/<script\b/i.test(html),name+' no javascript');
+ ok(!/<iframe\b/i.test(html),name+' no remote embeds');
+ ok(!/<video\b/i.test(html),name+' storyboard not filmed');
+ ok(!/autoplay\s*=/i.test(html),name+' autoplay absent');
+ ok(!/href=["']https?:\/\/(?:zen12|inspire3)\.com[^"']*(?:aff|hop=|ref=)/i.test(html),name+' no earning link');
+ ok(/prefers-reduced-motion/.test(html),name+' reduced motion');
+ ok(/grid-template-columns:1fr/.test(html),name+' responsive breakpoint');
+ ok(/https:\/\/finalvestige.com\/focus\//.test(html),name+' existing Focus');
+ ok(/https:\/\/zen12.com\/hnp/.test(html),name+' exact merchant');
+ ok(!/dataLayer|gtag\(|fbq\(/.test(html),name+' no additional analytics');
+}
+const body=s=>s.slice(s.indexOf('<div class="fvmind" lang="en">'));
+eq(body(a),body(b),'Both guide bodies, CTA, product claims and disclosure remain exactly equal');
+ok(/<details>/.test(b), 'B is optional disclosure');
+ok(/<summary/.test(b),'B has keyboard reachable summary');
+ok(/0–6 seconds/.test(b)&&/34–40 seconds/.test(b),'B 40 second timeline');
+ok(/Complete spoken transcript/.test(b),'B transcript');
+ok(/not playable/i.test(b),'B avoids false playability');
+ok(!/<form\b/i.test(hub),'hub no duplicate Jetpack forms');
+ok(/<h1/.test(hub)&&/focus-visible/.test(hub),'hub structural keyboard consideration');
+ok(/Puységur/.test(hub)&&/Change Blindness/.test(hub),'hub links rooted in real archive');
+ok(!/href=["']https?:\/\/(?:zen12|inspire3)\.com[^"']*?(?:aff|ref=)/i.test(hub),'hub no affiliate url');
+ok(investigation.trim().split(/\s+/).length>1700,'deep investigation');
+ok(guide.trim().split(/\s+/).length>1000,'full buyer guide');
+ok(investigation.includes('https://pubmed.ncbi.nlm.nih.gov/1500880/'),'1992 primary');
+ok(investigation.includes('https://pmc.ncbi.nlm.nih.gov/articles/PMC8062350/'),'replication');
+ok(guide.includes('https://zen12.com/secret/'),'price objection sources');
+ok(/not\*\* a Final Vestige download/.test(guide),'independent merchant signup');
+ok(contract.includes('NOT_COMPUTABLE'),'realization KPI unknown');
+ok(contract.includes('affiliate_outbound'),'click != sale');
+eq(matrix.sources.length,16,'ledger sources count');
+eq(matrix.claims.length,20,'ledger claim count');
+eq(matrix.gates.length,18,'ledger gate count');
+ok(matrix.gates.every(g=>g.state==='CLOSED'),'release gates all closed');
+eq(matrix.approved_affiliate_link,null,'affiliate URL absent');
+eq(matrix.checkout_total_observed,null,'final checkout unknown');
+ok(matrix.claims.some(c=>c.decision==='REJECTED_EXTRAPOLATION'),'efficacy not borrowed');
+ok(matrix.claims.every(c=>c.refs.every(x=>matrix.sources.some(s=>s.id===x))),'every claim ref resolves');
+console.log('Mind R135 structural checks PASS: '+total);
