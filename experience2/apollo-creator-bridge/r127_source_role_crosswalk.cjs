@@ -15,6 +15,8 @@ const path = require('node:path');
 const crypto = require('node:crypto');
 const child = require('node:child_process');
 const {auditRoute}=require('./r129_creator_route_gate.cjs');
+const {auditMediaLedger}=require('./r130_nasa_media_custody_gate.cjs');
+const NASA_MEDIA_LEDGER=require('./r130_nasa_media_custody.json');
 const ROOT = __dirname;
 const NASA_BOARD = 'https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/';
 const EXPECTED = Object.freeze([
@@ -52,6 +54,8 @@ function audit(apollo, research) {
   const desk=extract(research,'article','fv-ex2-ledger-apollo1-record-');
   const errors=[], unresolved=[], records=[];
   const creatorRoute=auditRoute(apollo);
+  const mediaCustody=auditMediaLedger(NASA_MEDIA_LEDGER,apollo);
+  errors.push(...mediaCustody.errors.map(code=>'MEDIA_CUSTODY_'+code));
   errors.push(...creatorRoute.errors.map(code=>'CREATOR_ROUTE_'+code));
   const actualResearchBlob=gitBlobSha(research);
   const snapshotVerified=actualResearchBlob===TRUSTED_RESEARCH_BLOB;
@@ -132,7 +136,7 @@ function audit(apollo, research) {
       status:snapshotVerified?'PINNED_PR158_SOURCE_VERIFIED':'UNREVIEWED_SOURCE_DRIFT'},
     source_custody:snapshotVerified?'VERIFIED_SNAPSHOT':'BLOCKED_UNREVIEWED_SOURCE',
     source: {apollo:'Apollo isolated staging',research_desk:'Independent PR #158 (read-only)'},
-    creator_route:creatorRoute,
+    creator_route:creatorRoute,media_custody:mediaCustody,
     record_count:records.length,records,integrity_errors:errors,
     editorial_flags:unresolved,photograph_rights_approved:0,
     research_desk_edited:false,
