@@ -5,7 +5,7 @@
  * a merchant, approves commercial reuse or authorizes publishing.
  * It is deliberately distinct from production analytics (#820) and Grok TASK-008.
  */
-const {URL}=require('node:url');
+const {inspectCreatorUrl,inspectMerchantUrl}=require('./r137_destination_integrity.cjs');
 const SCHEMA='fv.apollo.r136.conversion-evidence.v1';
 const REQUIRED_SOURCES=Object.freeze([
  'https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/',
@@ -30,7 +30,7 @@ function cleanCampaign(c){
     /placeholder|example|sample|pending|unknown|tbd|test/i.test(c.asset_id||''))
     errors.push('ASSET_ID_NOT_CONCRETE');
  if(c.owner!=='Grok'||c.publication_verified!==true||
-    !/^https:\/\/(www\.)?youtube\.com\/watch\?v=[A-Za-z0-9_-]{11}$/.test(c.public_url||''))
+    inspectCreatorUrl(c.public_url).status!=='SYNTAX_ONLY_NOT_PUBLICATION_PROOF')
     errors.push('PUBLICATION_NOT_INDEPENDENTLY_ATTESTED');
  if(c.destination_reviewed!==true||c.destination_fragment!==FREE_FRAGMENT)
     errors.push('DESTINATION_NOT_REVIEWED');
@@ -55,13 +55,10 @@ function cleanOffer(o){
  if(o.refund_policy_reviewed!==true)errors.push('REFUNDS_NOT_REVIEWED');
  if(o.founder_approval!==true)errors.push('FOUNDER_NOT_APPROVED');
  if(o.nasa_media_embedded!==false)errors.push('NASA_MEDIA_REUSE_SCOPE_UNCLEARED');
- let href=null;
- try{
-  const url=new URL(o.merchant_url);
-  if(url.protocol!=='https:'||!url.hostname||url.username||url.password||
-     url.searchParams.has('utm_content')||url.hash)throw Error('unsafe');
-  href=url.toString();
- }catch(_){errors.push('MERCHANT_URL_UNVERIFIED');}
+ // R137: exact Payhip product origin only. Still not proof of an actual listing.
+ const checked=inspectMerchantUrl(o.merchant_url);
+ const href=checked.status==='DOCUMENT_ONLY_NOT_MERCHANT_PROOF'?checked.product_url:null;
+ if(!href)errors.push('MERCHANT_URL_UNVERIFIED');
  return {status:errors.length?'BLOCKED':'DOCUMENT_ONLY_NOT_MERCHANT_ATTESTATION',
    errors,candidate:errors.length?null:{sku:o.sku,merchant_url:href,topic:o.topic}};
 }
