@@ -29,3 +29,6 @@ A fresh WordPress media.list(image) scan returned **115 image records** in two c
 `qa/media-recovery/oversize13_remaining3_20261105.json`: all 13 exact URLs, dimensions, stored bytes, WordPress virtual-size descriptors, rights and browser NULLs, and six targeted page checks.
 `qa/media-recovery/validate_oversize13_remaining3_20261105.cjs` and `test_...`: all exact identities, totals and no-upscale, rights, caching/WordPress write and fabricated HTTP assertions enforced. Run: `node --test qa/media-recovery/test_oversize13_remaining3_20261105.cjs`.
 **No image binaries were fetched, transformed, cached or republished. WordPress was read-only.**
+
+### Independent 66-post cross-check (source only)
+For additional confidence, fetched all six pinned JSON batches from the separate **#1138** published-post inventory (Git blobs named in the machine-readable manifest) and scanned **all 66 posts / 361 inline `img src` slots** for the three remaining filenames. Result: **0/361** exact filename matches for **#293, #405, #482**. This finding does *not* establish nonuse: #293 is linked in live page 234 JSON-LD, #405 is on draft page 85, and #482 could be referenced in theme/CSS/custom fields/other pages. No assets were deleted. Keep #482 status **UNKNOWN**, not `verified_orphan`.
