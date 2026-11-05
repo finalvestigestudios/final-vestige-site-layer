@@ -22,6 +22,8 @@ run("existing WordPress account valid confirmation path",()=>assert.equal(m.conf
 run("email-link confirmation path also valid",()=>assert.equal(m.confirmSignup(change(event,x=>x.confirmation_path="email_link")).countable,true));
 run("existing user without new transition rejected",()=>throws(()=>m.confirmSignup(change(event,x=>x.previous_email_status="Subscribed"))));
 run("no explicit consent rejected",()=>throws(()=>m.confirmSignup(change(event,x=>x.explicit_site_subscription_consent=false))));
+run("unknown prior status rejected",()=>throws(()=>m.confirmSignup(change(event,x=>x.previous_email_status="unknown"))));
+run("not-confirmed to subscribed is an eligible transition",()=>assert.equal(m.confirmSignup(change(event,x=>x.previous_email_status="Not confirmed")).countable,true));
 run("not confirmed not countable",()=>throws(()=>m.confirmSignup(change(event,x=>x.current_email_status="Not confirmed"))));
 run("duplicate event deduplicated",()=>assert.equal(m.aggregateTransitions([event,event]),1));
 run("two distinct transitions",()=>assert.equal(m.aggregateTransitions([event,change(event,x=>x.anonymous_transition_key="c9kN6yPn_Native002")]),2));
