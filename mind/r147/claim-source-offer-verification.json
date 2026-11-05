@@ -1,0 +1,254 @@
+{
+  "milestone": "R147",
+  "review_date": "2026-11-05",
+  "status": "BUILT_UNPUBLISHED",
+  "offer_id": "inspire3_zen12_premium_candidate",
+  "evidence": [
+    {
+      "id": "S01",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/1500880/",
+      "role": "1992 original visual-target task"
+    },
+    {
+      "id": "S02",
+      "url": "https://doi.org/10.1371/journal.pbio.0050138",
+      "role": "2007 intensive-meditation task"
+    },
+    {
+      "id": "S03",
+      "url": "https://zen12.com/hnp",
+      "role": "exact seller-described Premium tier"
+    },
+    {
+      "id": "S04",
+      "url": "https://inspire3.com/",
+      "role": "catalog seller"
+    },
+    {
+      "id": "S05",
+      "url": "https://affiliates.inspire3.com/",
+      "role": "public program only, no named partner acceptance"
+    },
+    {
+      "id": "S06",
+      "url": "https://doi.org/10.1007/s12671-019-01163-1",
+      "role": "review of brief mindfulness interventions"
+    },
+    {
+      "id": "S07",
+      "url": "https://doi.org/10.1371/journal.pone.0286023",
+      "role": "mixed EEG results in binaural-beat literature"
+    },
+    {
+      "id": "S08",
+      "url": "https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety/",
+      "role": "safety caveats"
+    },
+    {
+      "id": "S09",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "role": "proximate affiliate disclosure"
+    },
+    {
+      "id": "S10",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "role": "product-claim substantiation"
+    },
+    {
+      "id": "S11",
+      "url": "https://finalvestige.com/focus/",
+      "role": "existing free fieldbook"
+    },
+    {
+      "id": "S12",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "role": "published historical archive"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "statement": "Visual second target less often reported at selected intervals",
+      "source": "S01",
+      "decision": "INCLUDE_WITH_TASK_SCOPE"
+    },
+    {
+      "id": "C02",
+      "statement": "1992 experiments prove daily attention failures",
+      "source": "S01",
+      "decision": "EXCLUDE_UNSUPPORTED_GENERALIZATION"
+    },
+    {
+      "id": "C03",
+      "statement": "Three months intensive meditation associated with smaller blink in studied task",
+      "source": "S02",
+      "decision": "INCLUDE_WITH_POPULATION_AND_METHOD"
+    },
+    {
+      "id": "C04",
+      "statement": "Zen12 was tested in Slagter 2007",
+      "source": "S02",
+      "decision": "EXCLUDE_FALSE"
+    },
+    {
+      "id": "C05",
+      "statement": "Zen12 Premium 12 levels x 4 formats = 48 MP3",
+      "source": "S03",
+      "decision": "INCLUDE_SELLER_DESCRIBES"
+    },
+    {
+      "id": "C06",
+      "statement": "Seller page advertises Premium $87.99",
+      "source": "S03",
+      "decision": "OBSERVED_PAGE_ONLY_NOT_FINAL_CHECKOUT"
+    },
+    {
+      "id": "C07",
+      "statement": "Zen12 Premium one-year refund guarantee",
+      "source": "S03",
+      "decision": "SELLER_DESCRIBES_ONLY_NO_REFUND_TEST"
+    },
+    {
+      "id": "C08",
+      "statement": "Zen12 12min equals hour of meditation",
+      "source": "S03",
+      "decision": "EXCLUDE_UNPROVEN_EQUIVALENCE"
+    },
+    {
+      "id": "C09",
+      "statement": "Audio automatically improves attention/health/wealth",
+      "source": "S03",
+      "decision": "EXCLUDE_NO_PRODUCT_RCT"
+    },
+    {
+      "id": "C10",
+      "statement": "Brief mindfulness literature has varied short-term outcomes",
+      "source": "S06",
+      "decision": "INCLUDE_NO_BRANDED_TRANSFER"
+    },
+    {
+      "id": "C11",
+      "statement": "Binaural beats always entrain EEG",
+      "source": "S07",
+      "decision": "EXCLUDE_MIXED_EVIDENCE"
+    },
+    {
+      "id": "C12",
+      "statement": "Audio practice has no adverse experiences",
+      "source": "S08",
+      "decision": "EXCLUDE_NO_ZERO_RISK_PROOF"
+    },
+    {
+      "id": "C13",
+      "statement": "Inspire3 program exists",
+      "source": "S05",
+      "decision": "INCLUDE_PUBLIC_PROGRAM"
+    },
+    {
+      "id": "C14",
+      "statement": "FV has verified partner approval",
+      "source": "S05",
+      "decision": "UNKNOWN_NOT_ESTABLISHED"
+    },
+    {
+      "id": "C15",
+      "statement": "The merchant sales page is an affiliate earning URL",
+      "source": "S03",
+      "decision": "EXCLUDE_REFERENCE_IS_NOT_EARNING_URL"
+    },
+    {
+      "id": "C16",
+      "statement": "An affiliate recommendation requires clear adjacent disclosure",
+      "source": "S09",
+      "decision": "INCLUDE"
+    },
+    {
+      "id": "C17",
+      "statement": "Objective health claims demand evidence",
+      "source": "S10",
+      "decision": "INCLUDE"
+    },
+    {
+      "id": "C18",
+      "statement": "Fieldbook is published/free existing route",
+      "source": "S11",
+      "decision": "REFERENCE_PRIOR_LIVE_NOT_CURRENT_BROWSER_QA"
+    },
+    {
+      "id": "C19",
+      "statement": "Offer click implies commission paid",
+      "source": "S05",
+      "decision": "EXCLUDE"
+    },
+    {
+      "id": "C20",
+      "statement": "Attributable realized net revenue available",
+      "source": "S05",
+      "decision": "UNKNOWN_NOT_COMPUTABLE"
+    }
+  ],
+  "release_gates": {
+    "written_named_partner_approval": false,
+    "approved_exact_affiliate_url": false,
+    "allowed_website_and_social_channels": false,
+    "allowed_email_channel": false,
+    "approved_creative_and_claims": false,
+    "authenticated_checkout_total": false,
+    "verified_refund_mechanics": false,
+    "consent_and_partner_reporting_terms": false,
+    "independently_verified_paid_order": false,
+    "settled_commission_record": false,
+    "rights_cleared_paid_fv_mind_fallback": false,
+    "qualified_human_denominator": false,
+    "native_ci_pass": false,
+    "real_browser_a11y_pass": false,
+    "playable_captioned_video": false,
+    "final_qa_approval": false,
+    "founder_release_approval": false
+  },
+  "creator_fit": [
+    {
+      "topic": "change blindness",
+      "article": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "source_asset_id": null,
+      "first_party_offer": "https://finalvestige.com/focus/",
+      "merchant": "NOT_AUTOMATIC; only reader-initiated Zen12 guide after release"
+    },
+    {
+      "topic": "Puységur / magnetism",
+      "article": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "source_asset_id": null,
+      "first_party_offer": "https://finalvestige.com/focus/",
+      "merchant": "Hypnosis Live Total Focus distinct SKU; only after approval"
+    },
+    {
+      "topic": "attentional blink",
+      "article": null,
+      "draft": "mind/r147/attentional-blink-and-meditation-investigation.md",
+      "source_asset_id": null,
+      "first_party_offer": "https://finalvestige.com/focus/",
+      "merchant": "Zen12 Premium conditional guide, no social route to draft"
+    }
+  ],
+  "measurement": {
+    "primary": "settled_net_revenue / qualified_human_sessions * 1000",
+    "denominator_status": "UNKNOWN",
+    "numerator_status": "UNKNOWN",
+    "report": "NOT_COMPUTABLE",
+    "windows_days": [
+      7,
+      30
+    ],
+    "distinguish": [
+      "campaign_landing",
+      "resource_click",
+      "confirmed_signup",
+      "affiliate_outbound",
+      "merchant_order_paid",
+      "commission_settled",
+      "refund_or_reversal"
+    ],
+    "no_personal_identifiers": true,
+    "no_tracking_script": true
+  }
+}
