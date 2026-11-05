@@ -69,7 +69,10 @@ def fixture(root):
              'raw_source_rows': 244, 'source_files': source_files, 'groups': crossgroups,
              'article_origins': {slug: 'base' for slug in slugs}}
     dump(root, 'preparedness/sources/crosswalk.json', cross)
-    dump(root, 'preparedness/taxonomy.json', {'slate': [{'slug': s} for s in slugs]})
+    dump(root, 'preparedness/taxonomy.json', {'slate': [{'slug': s} for s in slugs],
+                                              'tools': [{'slug': 'water-planner'}]})
+    cross['article_origins']['water-planner'] = 'base'
+    dump(root, 'preparedness/sources/crosswalk.json', cross)
     for i, slug in enumerate(slugs):
         count = 58 if i < 5 else 57
         body = ' '.join(['{{cite:base-id-0}}'] * count)
@@ -210,6 +213,12 @@ class R137AuditTests(unittest.TestCase):
     def test_duplicate_crosswalk_group_rejected(self):
         self.change_json('preparedness/sources/crosswalk.json',
                          lambda v:v['groups'][1].update(url=v['groups'][0]['url']),True)
+        self.expect_hold()
+    def test_crosswalk_nonarticle_tool_permitted(self):
+        self.assertEqual(m.audit(self.root)['stats']['articles'], 35)
+    def test_unknown_crosswalk_origin_rejected(self):
+        self.change_json('preparedness/sources/crosswalk.json',
+                         lambda v:v['article_origins'].update({'unknown-fake':'base'}), True)
         self.expect_hold()
     def test_duplicate_article_route_rejected(self):
         self.change_json('preparedness/taxonomy.json',
