@@ -1,0 +1,421 @@
+{
+  "schema": "fv.mind.r141.offer_evidence.v1",
+  "created_on": "2026-11-05",
+  "environment": "UNPUBLISHED_DRAFT",
+  "offer_priority": [
+    "Zen12 Premium (affiliate conditional)",
+    "FV owned paid Mind SKU (fallback NOT authenticated)"
+  ],
+  "sources": {
+    "ZEN12": "https://zen12.com/hnp",
+    "INSPIRE3": "https://inspire3.com/",
+    "AFFILIATE": "https://affiliates.inspire3.com/",
+    "PRIVACY": "https://inspire3.com/privacy/",
+    "FTC_ENDORSE": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "FTC_HEALTH": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+    "HOPKINS": "https://www.hopkinsmedicine.org/health/wellness-and-prevention/hypnosis",
+    "NCCIH": "https://www.nccih.nih.gov/health/hypnosis",
+    "KRASS": "https://doi.org/10.1002/acp.2350030105",
+    "BREWIN": "https://doi.org/10.1002/acp.3220",
+    "MUSCHALLA": "https://doi.org/10.1002/cpp.2567",
+    "WAGSTAFF": "https://doi.org/10.1002/ch.366",
+    "PUYSEGUR": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "FOCUS": "https://finalvestige.com/focus/",
+    "CHANGE": "https://finalvestige.com/2026/11/02/change-blindness/",
+    "TOTAL_FOCUS": "https://hypnosislive.com/mental-skills/total-focus",
+    "TOTAL_REFUND": "https://hypnosislive.com/faq",
+    "R140": "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/1073"
+  },
+  "claims": [
+    {
+      "id": "ZEN12-01",
+      "claim": "Premium tier described as 12 levels, 48 MP3 tracks",
+      "decision": "seller-described",
+      "source_keys": [
+        "ZEN12"
+      ],
+      "note": "Mention as merchant description; no user verification."
+    },
+    {
+      "id": "ZEN12-02",
+      "claim": "Four style options: music, guided, nature, white noise",
+      "decision": "seller-described",
+      "source_keys": [
+        "ZEN12"
+      ],
+      "note": "Tier qualification required."
+    },
+    {
+      "id": "ZEN12-03",
+      "claim": "A session lasts 12 minutes",
+      "decision": "seller-described",
+      "source_keys": [
+        "ZEN12"
+      ],
+      "note": "Timing claim of format only, not benefit."
+    },
+    {
+      "id": "ZEN12-04",
+      "claim": "12 minutes equals one hour advanced meditation",
+      "decision": "UNSUBSTANTIATED",
+      "source_keys": [
+        "ZEN12",
+        "FTC_HEALTH"
+      ],
+      "note": "Never adopt as independent outcome."
+    },
+    {
+      "id": "ZEN12-05",
+      "claim": "Brainwave entrainment reliably causes deep meditation",
+      "decision": "UNSUBSTANTIATED",
+      "source_keys": [
+        "ZEN12",
+        "FTC_HEALTH"
+      ],
+      "note": "Seller mechanism/effect asserted; not product independently demonstrated."
+    },
+    {
+      "id": "ZEN12-06",
+      "claim": "Premium page displays $87.99",
+      "decision": "seller-page snapshot",
+      "source_keys": [
+        "ZEN12"
+      ],
+      "note": "No buyer price guarantee; checkout unverified, no numeric price on CTA."
+    },
+    {
+      "id": "ZEN12-07",
+      "claim": "Seller advertises 1-year refund guarantee",
+      "decision": "seller-described",
+      "source_keys": [
+        "ZEN12"
+      ],
+      "note": "Do not promise fulfillment; verify current contractual terms."
+    },
+    {
+      "id": "ZEN12-08",
+      "claim": "Merchant free-audio opt-in is separate from Jetpack",
+      "decision": "consent-separation",
+      "source_keys": [
+        "ZEN12",
+        "FOCUS"
+      ],
+      "note": "Do not merge consent or duplicate signup."
+    },
+    {
+      "id": "INSPIRE-01",
+      "claim": "General Inspire3 affiliate program exists",
+      "decision": "public-program-only",
+      "source_keys": [
+        "AFFILIATE"
+      ],
+      "note": "Not proof of named FV acceptance or permission."
+    },
+    {
+      "id": "INSPIRE-02",
+      "claim": "FV approved Inspire3 affiliate and earning link",
+      "decision": "NOT_VERIFIED",
+      "source_keys": [
+        "AFFILIATE"
+      ],
+      "note": "HARD HOLD: require documentary named approval plus valid URL."
+    },
+    {
+      "id": "INSPIRE-03",
+      "claim": "Merchant might share buyer email,name,product with affiliates",
+      "decision": "privacy-risk",
+      "source_keys": [
+        "PRIVACY"
+      ],
+      "note": "Refuse identifying report; seek aggregate-only authorization."
+    },
+    {
+      "id": "TOTAL-01",
+      "claim": "Total Focus is a distinct seller SKU from Hypnotize Yourself",
+      "decision": "seller-described",
+      "source_keys": [
+        "TOTAL_FOCUS"
+      ],
+      "note": "Presell SKU must exactly match page; no substitution."
+    },
+    {
+      "id": "TOTAL-02",
+      "claim": "Total Focus 33-minute 47MB seller listing",
+      "decision": "seller-described",
+      "source_keys": [
+        "TOTAL_FOCUS"
+      ],
+      "note": "No personal use/test represented."
+    },
+    {
+      "id": "TOTAL-03",
+      "claim": "Total Focus checkout amount is currently $24.44",
+      "decision": "NOT_VERIFIED",
+      "source_keys": [
+        "TOTAL_FOCUS"
+      ],
+      "note": "Seller display can drift; no checkout verified."
+    },
+    {
+      "id": "HYPNOSIS-01",
+      "claim": "Hypnotically influenced memory confidence can depart from accuracy",
+      "decision": "contextual research",
+      "source_keys": [
+        "KRASS",
+        "HOPKINS"
+      ],
+      "note": "Do not imply all memories false."
+    },
+    {
+      "id": "HYPNOSIS-02",
+      "claim": "Hypnosis reliably recovers hidden factual memories",
+      "decision": "CONTRADICTED_OR_UNSUPPORTED",
+      "source_keys": [
+        "HOPKINS",
+        "WAGSTAFF"
+      ],
+      "note": "Exclude claim."
+    },
+    {
+      "id": "MEMORY-01",
+      "claim": "Suggested false-memory paradigms show influence under some conditions",
+      "decision": "contextual research",
+      "source_keys": [
+        "BREWIN",
+        "MUSCHALLA"
+      ],
+      "note": "Outcome definitions disputed; avoid universal numbers."
+    },
+    {
+      "id": "MEMORY-02",
+      "claim": "Named Inspire3 audio clinically prevents false memories",
+      "decision": "NOT_VERIFIED",
+      "source_keys": [
+        "FTC_HEALTH"
+      ],
+      "note": "No source supporting product-specific claim."
+    },
+    {
+      "id": "DISCLOSURE-01",
+      "claim": "Earning relationships require conspicuous nearby disclosure",
+      "decision": "regulatory guidance",
+      "source_keys": [
+        "FTC_ENDORSE"
+      ],
+      "note": "Must sit visually adjacent to any subsequently approved earning CTA."
+    },
+    {
+      "id": "HEALTH-01",
+      "claim": "Health-related benefits require relevant robust scientific evidence",
+      "decision": "regulatory guidance",
+      "source_keys": [
+        "FTC_HEALTH"
+      ],
+      "note": "Do not launder generic meditation/hypnosis literature into specific promises."
+    },
+    {
+      "id": "ROUTE-01",
+      "claim": "Puységur and Change Blindness are documented FV content routes",
+      "decision": "previously-published-source",
+      "source_keys": [
+        "PUYSEGUR",
+        "CHANGE"
+      ],
+      "note": "Current body-to-Focus path remains UNVERIFIED."
+    },
+    {
+      "id": "FOCUS-01",
+      "claim": "Focus landing exists and is intended single first-party Jetpack funnel",
+      "decision": "prior-live-verification",
+      "source_keys": [
+        "FOCUS"
+      ],
+      "note": "No duplicate subscribe or marketing consent."
+    },
+    {
+      "id": "COMMERCE-01",
+      "claim": "An owned FV Mind Payhip SKU is rights-cleared, fulfillable and paid",
+      "decision": "NOT_VERIFIED",
+      "source_keys": [],
+      "note": "No assumed fallback product; Commerce owner must authenticate."
+    },
+    {
+      "id": "ATTRIB-01",
+      "claim": "Affiliate outbound click proves a paid commission",
+      "decision": "FALSE",
+      "source_keys": [
+        "AFFILIATE"
+      ],
+      "note": "affiliate_click != partner-confirmed commission."
+    },
+    {
+      "id": "ATTRIB-02",
+      "claim": "Current net revenue per 1,000 qualified human sessions is measurable",
+      "decision": "NOT_COMPUTABLE",
+      "source_keys": [],
+      "note": "Numerator verified paid settlement and denominator qualified humans missing."
+    }
+  ],
+  "release_gates": [
+    {
+      "gate": "named_inspire3_acceptance",
+      "owner": "Founder/Mind",
+      "proof_required": "written accepted partner identity",
+      "open": false
+    },
+    {
+      "gate": "approved_exact_offer_link",
+      "owner": "Founder/Mind",
+      "proof_required": "offer-specific earning URL",
+      "open": false
+    },
+    {
+      "gate": "permitted_platform_channels",
+      "owner": "Founder/Mind",
+      "proof_required": "written web/social/email authorization",
+      "open": false
+    },
+    {
+      "gate": "affiliate_data_handling",
+      "owner": "Privacy/Founder",
+      "proof_required": "aggregate-only report agreement or signed minimization process",
+      "open": false
+    },
+    {
+      "gate": "live_checkout_terms",
+      "owner": "Commerce",
+      "proof_required": "written current checkout price + taxes/currency + refund terms",
+      "open": false
+    },
+    {
+      "gate": "owned_payhip_sku_rights",
+      "owner": "Commerce",
+      "proof_required": "exact existing eligible paid product rights + license",
+      "open": false
+    },
+    {
+      "gate": "owned_payhip_fulfillment",
+      "owner": "Commerce/QA",
+      "proof_required": "checkout and download smoke test authorized",
+      "open": false
+    },
+    {
+      "gate": "merchant_sale_and_fee_data",
+      "owner": "Commerce",
+      "proof_required": "settled merchant orders, refunds, fees and chargebacks",
+      "open": false
+    },
+    {
+      "gate": "qualified_human_sessions",
+      "owner": "Claude/#820",
+      "proof_required": "documented privacy-safe counting and bot filters",
+      "open": false
+    },
+    {
+      "gate": "media_asset_id_alignment",
+      "owner": "Grok/Praxxis",
+      "proof_required": "real published Grok asset_id, public permalink, destination",
+      "open": false
+    },
+    {
+      "gate": "article_to_focus_verified",
+      "owner": "QA/#129",
+      "proof_required": "browser click path plus native confirmed signup",
+      "open": false
+    },
+    {
+      "gate": "ab_variant_parity",
+      "owner": "Mind/QA",
+      "proof_required": "A and B identical price/legal/offer detail; video alone differs",
+      "open": false
+    },
+    {
+      "gate": "video_playable_accessible",
+      "owner": "Mind/QA",
+      "proof_required": "40s video captions, transcript, pause, reduced motion, no autoplay",
+      "open": false
+    },
+    {
+      "gate": "browser_accessibility",
+      "owner": "QA",
+      "proof_required": "360/390/768/1440 keyboard/touch/reduced-motion/noJS",
+      "open": false
+    },
+    {
+      "gate": "founder_release_approval",
+      "owner": "Founder",
+      "proof_required": "explicit approval for a scoped commercial publication",
+      "open": false
+    }
+  ],
+  "creator_topic_routes": [
+    {
+      "topic": "Change Blindness",
+      "grok_asset_id": null,
+      "grok_public_permalink": null,
+      "destination": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "conversion_step": "optional existing Focus Fieldbook",
+      "optional_offer": "Zen12 only if partner approved",
+      "state": "proposed routing only; body-to-Focus CTA not verified"
+    },
+    {
+      "topic": "Mesmerism / Puységur",
+      "grok_asset_id": null,
+      "grok_public_permalink": null,
+      "destination": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "conversion_step": "optional existing Focus Fieldbook",
+      "optional_offer": "Hypnosis Live Total Focus independent guide only if approved and relevant",
+      "state": "proposed routing only; no approved Grok asset"
+    },
+    {
+      "topic": "Hypnosis & confident memories",
+      "grok_asset_id": null,
+      "grok_public_permalink": null,
+      "destination": null,
+      "source_draft": "mind/r141/hypnosis-memory-confidence-investigation.md",
+      "conversion_step": "existing Focus optional, only if article published",
+      "optional_offer": "none inside investigation",
+      "state": "draft only, not a live route"
+    }
+  ],
+  "measurement": {
+    "attribution_fields": [
+      "utm_source",
+      "utm_medium",
+      "utm_campaign",
+      "utm_content"
+    ],
+    "rule": "utm_content must be confirmed Grok immutable asset_id; collect no person-level identifiers",
+    "stages": [
+      "qualified_human_landing",
+      "article_to_resource_click",
+      "confirmed_jetpack_lead_if_observable",
+      "offer_guide_view",
+      "affiliate_click_if_authorized",
+      "merchant_confirmed_paid_order",
+      "refunds",
+      "fees",
+      "realized_net_revenue"
+    ],
+    "facts": {
+      "qualified_human_sessions": null,
+      "confirmed_paid_orders": null,
+      "affiliate_commissions_settled": null,
+      "realized_net_revenue": null,
+      "kpi_net_per_1000_qualified_humans": null
+    },
+    "formula": "verified_realized_net_revenue / qualified_human_sessions * 1000; not computable unless both values exist; 7 and 30 day cohorts separately",
+    "privacy": "No email, name, phone, IP, full referrer URL, checkout token or buyer identity stored in local event logs. Reuse approved existing measurement; no duplicate scripts.",
+    "risk": "Counting landing visits or outbound clicks as sales is prohibited.",
+    "experiments": {
+      "hypothesis": "Original optional short educational video may change verified paid conversion relative to a complete text-only guide; direction is unknown.",
+      "variant_A": "Inherited R139 exact Zen12 text-only guide",
+      "variant_B": "Inherited R139 same buyer copy plus optional original 40-second storyboard; not playable",
+      "primary_metric": "settled paid orders per qualified-human session",
+      "secondary": "confirmed leads and qualified guide engagement",
+      "randomization": "privacy-minimal stable session assignment only after founder-approved analytics; do not deploy localStorage script without consent review",
+      "condition": "No A/B exposure or commercialization until all partner, legal, video and release gates pass",
+      "power_warning": "No significant difference claim from tiny samples or null paid purchases."
+    }
+  }
+}
