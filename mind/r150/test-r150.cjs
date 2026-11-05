@@ -35,7 +35,19 @@ check('no active CTA authorization',()=>assert.equal(data.merchant_cta_authorize
 check('no verified commissions invented',()=>assert.equal(data.commission_verified,false));
 check('unproven benefits rejected',()=>assert.ok(data.claims.some(c=>c.id==='C10'&&c.status==='REJECT')));
 check('exact product not confused with zen12',()=>assert.ok(data.claims.some(c=>c.id==='C09'&&c.claim.includes('33-minute'))));
-check('no fabricated tracking URLs in bridge',()=>assert.doesNotMatch(html,/ref=|aff_id=|click_id=/i));
+check('no fabricated tracking URLs in bridge',()=>assert.doesNotMatch(html,/[?&](?:ref|aff_id|click_id)=/i));
 check('FTC disclaimer template near planned control documented',()=>assert.match(packet,/If you purchase through this link/));
 check('no duplicate email list',()=>assert.doesNotMatch(html,/subscribe|input type="email"/i));
+
+function mutationCaught(name,mutated,bad){
+ check('adversarial mutation caught: '+name,()=>assert.equal(Boolean(bad(mutated)),true));
+}
+mutationCaught('external script',html.replace('</main>','<script src="https://other.example/t.js"></script></main>'),x=>/<script\\b/i.test(x));
+mutationCaught('second signup form',html.replace('</main>','<form><input type="email"></form></main>'),x=>/<form\\b/i.test(x));
+mutationCaught('merchant URL',html.replace('href="https://finalvestige.com/focus/"','href="https://zen12.com/?ref=bogus"'),x=>/href="https:\\/\\/(?:zen12|hypnosislive|inspire3)\\./i.test(x));
+mutationCaught('affiliate query',html.replace('https://finalvestige.com/focus/','https://finalvestige.com/focus/?aff_id=bogus'),x=>/[?&](?:ref|aff_id|click_id)=/i.test(x));
+mutationCaught('focus CTA removed',html.replace('href="https://finalvestige.com/focus/"','href="#"'),x=>!/href="https:\\/\\/finalvestige\\.com\\/focus\\/"/.test(x));
+mutationCaught('commercial gate opened',JSON.stringify({...data,merchant_cta_authorized:true}),x=>JSON.parse(x).merchant_cta_authorized!==false);
+mutationCaught('invented paid commission',JSON.stringify({...data,commission_verified:true}),x=>JSON.parse(x).commission_verified!==false);
+mutationCaught('reopened merchant gate',JSON.stringify({...data,gates:{...data.gates,named_partner_approval:{status:'VERIFIED'}}}),x=>Object.values(JSON.parse(x).gates).some(g=>g.status!=='CLOSED'));
 if(process.exitCode)process.exit(process.exitCode); console.log(n+' / '+n+' checks passed');
