@@ -16,7 +16,7 @@ const assert = (yes,msg) => { if (!yes) throw Error('FAIL '+msg); passed++; };
 const no = (s,rx,msg) => assert(!rx.test(s),msg);
 const yes = (s,rx,msg) => assert(rx.test(s),msg);
 const releaseSafe = s => s.includes('data-release="HARD_HOLD"') && s.includes('data-affiliate-approved="false"') && !/<script\b|<form\b|<iframe\b|<img\b[^>]*src=|on(click|load|error)\s*=/i.test(s);
-const disabledButton = s => /<button\b[^>]*\sdisabled(?:\s|=|>)/i.test(s) && !/<a\b[^>]*\b(href|data-href)\s*=\s*["'][^"']*(?:affiliat|hop=|referrer=)/i.test(s);
+const disabledButton = s => /<button\b[^>]*\sdisabled(?:\s|=|>)/i.test(s) && !/<a\b[^>]*\b(href|data-href)\s*=\s*["'][^"']*(?:[?&](?:aff_id|affiliate_id|hop|referrer|tracking_id)=)/i.test(s);
 const adequateDisclosure = s => {let p=s.indexOf('If you purchase through a future approved affiliate link, Final Vestige may earn a commission');let q=s.indexOf('<button',p);return p>=0 && q>p && q-p<500;};
 const sourced = s => /https:\/\/eprints\.bournemouth\.ac\.uk\/31277\//.test(s) && /https:\/\/pubmed\.ncbi\.nlm\.nih\.gov\/39032268\//.test(s);
 yes(article,/^# The Tape Is Not the Technique/m,'article title');
