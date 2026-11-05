@@ -16,6 +16,7 @@ function validate(a) {
   must(one && two && one.source_url === EXPECTED && two.source_url === EXPECTED, 'both slots still same URL');
   must(one?.alt === 'Growing breach in Teton Dam during the final hour before collapse.' && one?.claim_subject === 'dam_breach_progression' && one?.retrieved_visual_matches_claim === false && one?.visitor_visual_status === 'UNVERIFIED', 'incorrect breach-scene disclosure');
   must(two?.alt === 'Aftermath of the Teton Dam failure and downstream cleanup in Idaho.' && two?.claim_subject === 'downstream_cleanup' && two?.retrieved_visual_matches_claim === true && two?.visitor_visual_status === 'UNVERIFIED', 'aftermath scene disclosure');
+  must(one?.caption === 'The failure progressed rapidly enough to be photographed frame by frame.' && two?.caption === 'The Teton failure became both a disaster scene and a forensic engineering site.', 'exact current Gutenberg captions');
   must(one?.action === 'REVIEW_REPLACEMENT_FOR_INCORRECT_HISTORICAL_SCENE' && two?.action === 'RETAIN_FOR_SCENE_PENDING_ORIGIN_RIGHTS_AND_BROWSER_QA', 'no automatic rewrite');
   const c = a?.candidate_for_291_2;
   must(c?.naid === 28894685 && c?.rendition_catalog === CATALOG && c?.historical_date === '1976-06-05' && c?.candidate_is_different_photo === true && c?.same_original_binary === false, 'archival photo identity');
