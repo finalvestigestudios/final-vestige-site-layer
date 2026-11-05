@@ -182,10 +182,14 @@ jobs:
         run: |
           python -m unittest discover -s products/desktop/tests -p 'test_policy_symlink_witness_r204.py'
           python -OO -m unittest discover -s products/desktop/tests -p 'test_policy_symlink_witness_r204.py'
+      - name: R205 OS-level audit log isolation regression (14 tests; normal and -OO)
+        run: |
+          python -m unittest discover -s products/desktop/tests -p 'test_audit_subprocess_privacy_r205.py'
+          python -OO -m unittest discover -s products/desktop/tests -p 'test_audit_subprocess_privacy_r205.py'
       - name: R200 execute R194-R199 financial and policy audit tests (148 methods per mode)
         run: |
-          python products/desktop/scripts/safe_recent_regressions_r200.py
-          python -OO products/desktop/scripts/safe_recent_regressions_r200.py
+          python products/desktop/scripts/safe_audit_subprocess_r205.py
+          python -OO products/desktop/scripts/safe_audit_subprocess_r205.py
       - name: Verify R100 privacy-safe source-method regressions (normal and -OO)
         run: |
           python -m unittest discover -s products/desktop/tests -p 'test_static_method_diagnostics_r100.py' > /dev/null 2>&1
@@ -742,13 +746,21 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R204 Policy Delta symlink witness failed" }
           python -OO -m unittest discover -s products/desktop/tests -p 'test_policy_symlink_witness_r204.py'
           if ($LASTEXITCODE -ne 0) { throw "R204 optimized Policy Delta symlink witness failed" }
+      - name: R205 OS-level audit log isolation regression (14 tests; normal and -OO)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python -m unittest discover -s products/desktop/tests -p 'test_audit_subprocess_privacy_r205.py'
+          if ($LASTEXITCODE -ne 0) { throw "R205 private audit wrapper tests failed" }
+          python -OO -m unittest discover -s products/desktop/tests -p 'test_audit_subprocess_privacy_r205.py'
+          if ($LASTEXITCODE -ne 0) { throw "R205 optimized private audit wrapper tests failed" }
       - name: R200 execute R194-R199 financial and policy audit tests (148 methods per mode)
         shell: pwsh
         run: |
           $env:PYTHONPATH = "products/desktop"
-          python products/desktop/scripts/safe_recent_regressions_r200.py
+          python products/desktop/scripts/safe_audit_subprocess_r205.py
           if ($LASTEXITCODE -ne 0) { throw "R200 native-mode audit regression matrix failed" }
-          python -OO products/desktop/scripts/safe_recent_regressions_r200.py
+          python -OO products/desktop/scripts/safe_audit_subprocess_r205.py
           if ($LASTEXITCODE -ne 0) { throw "R200 optimized audit regression matrix failed" }
       - name: R100 Windows source-stage diagnostic (read-only, NOT a release gate)
         shell: pwsh

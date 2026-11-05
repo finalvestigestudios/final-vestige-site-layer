@@ -1,0 +1,57 @@
+"""Run the strict R200 audited matrix with OS-level log isolation.
+
+R201's sys.stdout/sys.stderr redirection protects Python writes but not raw
+file-descriptor writes, sys.__stderr__, or grandchildren. A separate child
+with all three standard handles bound to DEVNULL closes this CI log channel.
+Source tests remain an internal gate, never executable/release approval.
+"""
+from __future__ import annotations
+
+import stat
+import subprocess
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[3]
+AUDIT = ROOT / "products" / "desktop" / "scripts" / "safe_recent_regressions_r200.py"
+
+
+def run_private(runner: Path = AUDIT, *, timeout: int = 300) -> bool:
+    """Return PASS only for a complete zero-exit child; print no child data.
+
+    The runner itself enforces the R194-R199 148-case strict matrix and
+    counts. This wrapper suppresses all descendant output, even os.write(1/2).
+    It intentionally does not purport to sandbox arbitrary malicious code.
+    """
+    try:
+        if type(timeout) is not int or not 1 <= timeout <= 600:
+            raise ValueError("invalid timeout")
+        if not isinstance(runner, Path) or runner.is_symlink():
+            raise ValueError("invalid runner")
+        mode = runner.stat().st_mode
+        if not stat.S_ISREG(mode):
+            raise ValueError("missing or nonregular runner")
+        flags = ["-I", "-B"]
+        if sys.flags.optimize >= 2:
+            flags.append("-OO")
+        completed = subprocess.run(
+            [sys.executable, *flags, str(runner)],
+            cwd=str(ROOT),
+            stdin=subprocess.DEVNULL,
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
+            check=False,
+            timeout=timeout,
+        )
+        if type(completed.returncode) is not int or completed.returncode != 0:
+            raise RuntimeError("child matrix did not pass")
+    except BaseException:
+        # No exception messages, paths, stderr, tracebacks, or fixture values.
+        print("HOLD: R205 private audit matrix did not complete", file=sys.stderr)
+        return False
+    print("R205: strict audited matrix PASS (private child output suppressed; NOT release approval)")
+    return True
+
+
+if __name__ == "__main__":
+    raise SystemExit(0 if run_private() else 1)
