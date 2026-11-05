@@ -27,7 +27,6 @@ assert.equal(section.split('<img ').length - 1,2);
 assert.ok(section.includes('https://finalvestige.com/focus/'));
 assert.ok(!section.includes('<script src='));
 assert.ok(!section.includes('<main>'));
-console.log('PASS: exact-source isolated Assembler WordPress Playground importer');
-
 // Native PHP parser + accidental-copy behavior is mandatory; never skip silently.
 require('./verify_playground_php_preflight.cjs');
+console.log('PASS: exact-source importer plus native PHP preflight');
