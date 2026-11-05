@@ -19,6 +19,8 @@ const mutations = [
   a=>a.rows[0].source_url='https://other.example/photo.jpg',
   a=>a.rows[0].retrieved_visual_matches_claim=true,
   a=>a.rows[1].retrieved_visual_matches_claim=false,
+  a=>a.rows[0].caption='wrong photograph',
+  a=>a.rows[1].caption='false date',
   a=>a.rows[0].visitor_visual_status='BROKEN',
   a=>a.rows[0].action='PUBLISH',
   a=>a.candidate_for_291_2.naid=28894688,
