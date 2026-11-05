@@ -1,0 +1,44 @@
+# Media Recovery — archival PNG/GIF/SVG format-integrity gate and 31-slot site-wide census (2026-11-04)
+
+**Status:** isolated draft #183 only; no website/WordPress changes, media downloads, new expenses, image binaries, or Site QA #154 file edits. This is not confirmation of a broken public image.
+
+## Concrete issue and minimal fix
+
+The existing `qa/media-recovery/browser_probe_core.cjs` dropped `format=`, `fm=` and `auto=` from image identity for *every* static image path. For photographic JPEGs a quality or delivery-format change usually retains scene identity. But historical graphics need a higher bar: GIF may contain multiple frames or palette behavior, PNG may encode annotated lines and transparency, and SVG may contain embedded typography and scalable vector geometry. Silently treating `diagram.png?fm=jpg`, `panel.gif?format=jpeg`, or `schematic.svg?auto=format` as proven to be the unmodified source can create false "loaded original" and false "broken original" conclusions. **No current browser transformation is asserted to have occurred.**
+
+The new small, source-only guard `format_variant_identity_core_20261104.cjs` treats PNG/GIF/SVG as format-sensitive and retains these explicit output-variant selectors. Existing width/quality-only handling, documented first-party Jetpack proportional `fit=W,H`, crops, dynamic IDs and ordinary JPEG semantics remain unchanged. The Commons `Special:Redirect/file` canonicalization also preserves explicit material-format selectors for these classes. This is a *URL-equivalence confidence rule*, **not** a claim of matching binaries, animation detection, copyright clearance, an on-site visual defect, or CDN optimization.
+
+## Exact frozen site-wide coverage
+
+The read-only October 30 eight-part WordPress inventory covers **61 published investigations, 355 exact HTML image-source references, 288 external-origin references**. Audited format-sensitive references: **31 distinct image slots = 28 PNG + 2 GIF + 1 SVG**. The new `format_sensitive_31_sitewide_20261104.json` ledger holds each actual frozen `src`, full ALT, post URL, metadata and frozen source Git blob, rights restrictions, browser/status/bytes all explicitly **null**, and staging holds. Each of the eight source blob SHAs was independently checked against GitHub after writing. A separate `validate_format_sensitive_31_20261104.cjs` protects against stale blobs, altered ALT or URL, invented statuses or dimensions, unapproved caching, rights bypass, the reported 42-broken or 76%-savings claim, and changed Site QA priority. Dedicated 20-case census mutation tests are present but require full native checkout to execute.
+
+### Three primary-source crosswalks
+
+* **257:4 Apollo 12 command module control panel GIF.** The current Commons catalog identifies NASA's `Apollo Operations Handbook: Block II Spacecraft` drawing, **3420 × 1640**, 693,183 bytes as a **catalog master**, and labels it NASA public domain. A conditional raster preview would be **960 × 460**, preserving text legibility, subject to item review and valid source acquisition. The **published URL requests width=1280**, but that does not establish actual delivered bytes, format or animation. Official linked [Commons catalog](https://commons.wikimedia.org/wiki/File:Apollo_Command_Module_Main_Control_Panel.gif); catalog cites NASA's historical source. Never assert that the GIF is animated without checking its actual frames.
+* **255:1 Hyatt Regency `HRWalkway.svg`.** Commons identifies a **nominal SVG viewBox of 720 × 420** and embedded text; the user-transferred tracing credits **DTR and an earlier drawing**. Catalog claims creator's public-domain dedication, but chain of authorship and publication rights still require individual verification. Rendering a **960 × 560 raster preview** from a vector is not equivalent to enlarging a 720px bitmap; preserve the vector and test glyphs, contrast, and fine connection labels. [Commons record](https://commons.wikimedia.org/wiki/File:HRWalkway.svg). No image transformation or replacement authorized.
+* **166:1 LOC historic aqueduct HAER drawing GIF.** The catalog [HAER CA-298 / LOC ca3095](https://www.loc.gov/pictures/item/ca3095/) documents Los Angeles Aqueduct work **compiled after 1968**; it does not establish the particular GIF sheet's original native dimensions or prove every image in the collection originated with the federal government. LOC warns that copied material can have third-party restrictions. **Original binary geometry and conditional maximum remain unknown**; do not misdate the drawing as a 1928 contemporaneous photograph.
+
+These are **archival references**, not licenses for bulk scraping, automatic mirroring or Gutenberg block replacement.
+
+### First-party performance crosswalk
+
+The 31-image census intersects the previously inspected 13 oversized WordPress originals in **five PNG hero images (posts 34–38, media #39–43)**. Existing WP metadata records each original as **1672 × 941**, with no registered subsizes; their **combined stored originals total 13,267,538 bytes**. Their *conditional* no-upscale raster geometry is **960 × 540**. Source ownership, illustrations' visual fidelity, WordPress editor behavior and actual browser-requested bytes still require review. **Stored 13-file originals total 43,522,829 bytes**, which is *not* a visitor-transfer estimate. Optimization is meaningful only after Site QA proves what Chrome actually fetched and a paired approved change establishes attributable transferred-byte savings; the reported **76% is unmeasured**.
+
+## Acceptance / WordPress caching path (NOT authorized to execute)
+
+1. Site QA #154 maintains its P0 order **285:5, 285:2, 287:5, 418:1–2, 407:1**, using its existing guest-browser scripts. For PNG/GIF/SVG requests found in the 61-post crawl, capture `src`, `currentSrc`, final CDP request/status/MIME/redirect chain, `naturalWidth`, decode, cold encoded bytes, screenshots, and label/animation integrity. A text retriever error is not a confirmed visitor failure.
+2. Only if a genuinely broken original is confirmed, reconcile exact item/provenance, caption, author, use rights and replacement subject with an archival original (NASA, LOC, Navy, Coast Guard, Florida Memory, etc.). Prefer same photograph/diagram; different-scene alternatives require an explicit editorial decision, not invisible substitution.
+3. Confirm rights and original-file dimensions/frames from a legitimately obtained authorized source. Preserve master and SHA-256; bitmap derivative maximum width **min(960, native bitmap width)**, preserve aspect and alpha/annotation legibility; do not squash an SVG without text-resolution QA. Keep any new media in **nonproduction isolated staging**, outside WordPress, with no overwrites.
+4. Prepare a one-to-one old URL, exact replacement, reuse license/credit, new WP media ID (only after a future specific approval), old/new screenshot, and rollback manifest. Stage caching or WordPress changes only after explicit approval, and only after Site QA confirms the new candidate decodes without content drift.
+5. For performance, compare paired **cold** Chrome CDP image-request bytes and lab visual metrics on all 61 posts with equal conditions. Never equate CDN cache variance, catalog original bytes or WordPress original storage with real visitor savings. The claim gate requires an attributable approved change.
+
+## Verification and exact commits
+
+* New source helper: `8eeff2c535205da016cd82a40d1f186d23503d57`; its Git **blob SHA is `f9251f3af8ea7d47524911def783cd36d0ac0ead`**.
+* Integrated image identity: `e946f89bfdcd4916570ec8392636a6fca0b59cd3`, resulting blob `2680b15fced12a2da83c89e194762936d5fe06fe`.
+* New integration regression suite (20 cases): `7eca5a030d873c6ada5677e76c91a86cb5c0d74d` — not yet run under native Node checkout.
+* New 31-slot source ledger `74fed6996b1917e0cf95b49fe77a21dffe69919b`; primary metadata enrichment `bd32f656e4710b37206010e49bd2f3b2d2f57bc2`.
+* Full eight-part validator `addb0e7b9f98d2ab4f531635b8b538c64a22ced0`; 20-case adversarial corpus suite `49ad08e21890a0cf55be93ae3d3d0377cc5198cd`.
+* **14/14 native Node standalone guard tests PASSED** on an independently executed local fixture with a Git blob SHA `f9251f3af8ea7d47524911def783cd36d0ac0ead` exactly matching the GitHub-committed helper. The 20 integration and 20 census suites await native repository CI; source-level crosschecking confirmed **31/31 exact URL+ALT**, **8/8 Git source blobs**, **5/5 oversized PNG metadata matches**, and **0 invented status/rights flags**. **No real guest-browser verification was performed.**
+
+**Current production:** 0 image repairs, 42 alleged broken images *not visitor-browser-confirmed*, 76% wire reduction *not measured*, 0 caching, asset downloads, WordPress writes, risky post edits, homepage design modifications or subscriptions.
