@@ -120,6 +120,6 @@ class AttackCases(unittest.TestCase):
     def test_source_scope_forgery(self):self.check_fail(lambda d,r:d['source_use_rows'][0].update(human_source_scope_adjudicated=True))
     def test_origin_annotation_drift(self):self.check_fail(lambda d,r:d['source_use_rows'][0].update(effective_source_origin='base'))
 
-# Each subTest executes an independent synthetic mutation. 265 adversarial subcases,
-# 31 methods; no repository production or merchant code is exercised here.
+# Each subTest executes an independent synthetic mutation. There are 240 per-row
+# adversarial subcases and 28 named negative tests across 38 unittest methods.
 if __name__=='__main__':unittest.main()
