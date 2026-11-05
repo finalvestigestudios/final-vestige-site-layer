@@ -413,7 +413,20 @@
         "source_record_url": "https://commons.wikimedia.org/wiki/File:Apollo_Command_Module_Main_Control_Panel.gif",
         "authority": "Wikimedia Commons catalog; Apollo command module technical drawing",
         "identity_status": "same_catalog_file_title_unhashed",
-        "reuse_rights_status": "HOLD: source file item reuse and GIF frame behavior not reviewed"
+        "reuse_rights_status": "HOLD: source file item reuse and GIF frame behavior not reviewed",
+        "catalog_dimensions_px": {
+          "width": 3420,
+          "height": 1640
+        },
+        "catalog_bytes": 693183,
+        "source_master_kind": "GIF NASA engineering drawing in Apollo Operations Handbook",
+        "catalog_rights_claim": "NASA-created public domain per Commons file record; review individual item, captions and media provenance before publication",
+        "conditional_preview_raster_px": {
+          "width": 960,
+          "height": 460
+        },
+        "primary_reference_url": "https://commons.wikimedia.org/wiki/File:Apollo_Command_Module_Main_Control_Panel.gif",
+        "note": "Do not presume GIF animated merely from extension. Preserve original graphic and compare text legibility after any encoding."
       },
       "first_party_oversized_wordpress_original": null,
       "max_width_conditional_px": null,
@@ -476,7 +489,20 @@
         "source_record_url": "https://commons.wikimedia.org/wiki/File:HRWalkway.svg",
         "authority": "Wikimedia Commons catalog; Hyatt Regency engineering illustration",
         "identity_status": "same_catalog_file_title_unhashed",
-        "reuse_rights_status": "HOLD: illustrator license and vector rendition not reviewed"
+        "reuse_rights_status": "HOLD: illustrator license and vector rendition not reviewed",
+        "catalog_dimensions_px": {
+          "nominal_viewport_width": 720,
+          "nominal_viewport_height": 420
+        },
+        "catalog_bytes": 31000,
+        "source_master_kind": "Editable SVG technical drawing, nominal vector viewport; 720 is NOT raster pixel resolution",
+        "catalog_rights_claim": "Commons description asserts author DTR public-domain release; original tracing authorship/rights must be reviewed",
+        "conditional_preview_raster_px": {
+          "width": 960,
+          "height": 560
+        },
+        "primary_reference_url": "https://commons.wikimedia.org/wiki/File:HRWalkway.svg",
+        "note": "The SVG contains embedded labels. Preserve the vector original, and inspect glyph rasterization; nominal viewport does not impose an image-upscale prohibition on vector rendering."
       },
       "first_party_oversized_wordpress_original": null,
       "max_width_conditional_px": null,
@@ -771,7 +797,14 @@
         "source_record_url": "https://www.loc.gov/pictures/item/ca3095/",
         "authority": "Library of Congress HAER CA-298 sheet 2 (historical drawing); catalog subject lead",
         "identity_status": "subject_level_loc_catalog_lead",
-        "reuse_rights_status": "HOLD: LOC rights/advisory and sheet match require item review"
+        "reuse_rights_status": "HOLD: LOC rights/advisory and sheet match require item review",
+        "catalog_dimensions_px": null,
+        "catalog_bytes": null,
+        "source_master_kind": "LOC historic HAER Los Angeles Aqueduct survey drawing, HAER CA-298; exact sheet from source GIF not binary-verified",
+        "catalog_rights_claim": "LOC: government-made images generally unrestricted; copies sourced elsewhere may be restricted",
+        "conditional_preview_raster_px": null,
+        "primary_reference_url": "https://www.loc.gov/pictures/item/ca3095/",
+        "note": "HAER documentation compiled after 1968. Do not describe sheet as a 1928 contemporaneous original without dating evidence; verify exact sheet."
       },
       "first_party_oversized_wordpress_original": null,
       "max_width_conditional_px": null,
