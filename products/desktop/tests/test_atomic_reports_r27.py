@@ -54,7 +54,7 @@ class AtomicReportsTests(unittest.TestCase):
         def data():
             yield {"id": "A", "amount": "1"}
             raise ValueError("sensitive sample value")
-        with self.assertRaisesRegex(ValueError, "sensitive sample value"):
+        with self.assertRaisesRegex(ValueError, "CSV report rows could not be read"):
             self.publish(data())
         self.assertFalse(self.output.exists())
         self.assert_no_partials()
