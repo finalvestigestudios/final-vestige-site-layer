@@ -1,5 +1,6 @@
 'use strict';
 /** Conservative, offline browser identity classification. URL equivalence is NOT a rights or binary-hash check. */
+const {isFormatSensitive,materialSelectors}=require('./format_variant_identity_core_20261104.cjs');
 function clean(u){try{const v=new URL(String(u));return v.protocol==='https:'||v.protocol==='http:'?v.href:null}catch{return null}}
 function wikiName(s){try{return decodeURIComponent(s).replaceAll(' ','_')}catch{return null}}
 function commonsFile(p){
@@ -39,7 +40,10 @@ function contentQuery(p,viaJetpack=false){
  // Preserve those dimensions. Width-only image scaling can remain equivalent.
  const twoAxes=(keys.has('w')||keys.has('width'))&&(keys.has('h')||keys.has('height'));
  const mayChangeComposition=twoAxes||(fits.length>0&&!safeNumericFit);
- const sizeOnly=new Set(['quality','q','ssl','auto','format','fm']);
+ const sizeOnly=new Set(['quality','q','ssl']);
+ // Do not equate a lossy or rasterized rendering of archival diagrams, GIFs
+ // or SVGs with the original: animation, transparency or line detail may differ.
+ if(!isFormatSensitive(p.pathname))for(const k of ['auto','format','fm'])sizeOnly.add(k);
  if(!mayChangeComposition){
   for(const key of ['width','height','w','h']){
    const values=[...p.searchParams].filter(([k])=>k.toLowerCase()===key).map(([,v])=>v);
@@ -74,7 +78,12 @@ function imageIdentity(url,viaJetpack=false){
    }
   }
   const filename=commonsFile(p);
-  if(filename)return 'commons-file:'+filename;
+  if(filename){
+   // Commons title canonicalization also needs to retain explicit output-format
+   // transformations for sensitive source files, not only the filename.
+   const material=materialSelectors(filename,p.searchParams);
+   return 'commons-file:'+filename+(material.length?'?'+new URLSearchParams(material).toString():'');
+  }
   return p.origin+p.pathname+contentQuery(p,viaJetpack);
  }catch{return null}
 }
