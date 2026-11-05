@@ -24,9 +24,14 @@ def _render_cell(value: object, cell: Callable[[object], str]) -> str:
     """
     # Direct API callbacks can fail with financial values in their exception
     # text. Do not let a converter's private payload surface as a UI/CI error.
+    failed = False
     try:
         rendered = cell(value)
     except Exception:
+        failed = True
+    # Raise outside the except block: `from None` hides display context but
+    # leaves a private exception reachable via __context__ and debug tools.
+    if failed:
         raise ValueError("CSV report cell sanitizer failed") from None
     # Python str admits isolated UTF-16 surrogate code points, but UTF-8
     # reports cannot encode them. Reject before csv/TextIOWrapper can raise
@@ -60,7 +65,15 @@ def write_csv_report(destination: str | Path, fields: Iterable[str],
     # Source-derived field labels are spreadsheet cells too. Freeze the
     # schema and sanitize it before creating even a temporary report; a
     # formula in a header must never bypass the caller's safe_cell policy.
-    names = tuple(fields)
+    # A caller-owned fields iterator may throw an error containing a source
+    # heading or customer identifier. Never chain its private exception.
+    fields_failed = False
+    try:
+        names = tuple(fields)
+    except Exception:
+        fields_failed = True
+    if fields_failed:
+        raise ValueError("CSV report columns could not be read")
     if (not names or any(type(name) is not str or not name for name in names)
             or len(set(names)) != len(names)):
         raise ValueError("Invalid or duplicate CSV report columns")
@@ -76,7 +89,25 @@ def write_csv_report(destination: str | Path, fields: Iterable[str],
         with os.fdopen(descriptor, "w", encoding="utf-8-sig", newline="") as stream:
             writer = csv.DictWriter(stream, fieldnames=names, extrasaction="ignore")
             writer.writer.writerow(rendered)
-            for row in rows:
+            # Explicit next() isolates arbitrary caller-owned iterator errors
+            # from the writer's own exceptions, including their __context__.
+            iterator_failed = False
+            try:
+                row_iterator = iter(rows)
+            except Exception:
+                iterator_failed = True
+            if iterator_failed:
+                raise ValueError("CSV report rows could not be read")
+            while True:
+                next_failed = False
+                try:
+                    row = next(row_iterator)
+                except StopIteration:
+                    break
+                except Exception:
+                    next_failed = True
+                if next_failed:
+                    raise ValueError("CSV report rows could not be read")
                 # DictWriter would silently substitute an empty cell for
                 # absent keys, disguising missing financial/source evidence.
                 # Sanitize *all* supplied values, including ignored extras,
@@ -87,7 +118,13 @@ def write_csv_report(destination: str | Path, fields: Iterable[str],
                 # can also erase one evidence value when coerced into a dict.
                 if not isinstance(row, Mapping):
                     raise ValueError("Invalid CSV report row mapping")
-                entries = tuple(row.items())
+                items_failed = False
+                try:
+                    entries = tuple(row.items())
+                except Exception:
+                    items_failed = True
+                if items_failed:
+                    raise ValueError("CSV report row columns could not be read")
                 if (any(type(name) is not str for name, _ in entries)
                         or len({name for name, _ in entries}) != len(entries)):
                     raise ValueError("Invalid or duplicate CSV report row columns")
