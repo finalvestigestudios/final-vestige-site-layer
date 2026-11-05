@@ -218,6 +218,10 @@ jobs:
         run: |
           python -m unittest discover -s products/desktop/tests -p 'test_atomic_capacity_r213.py' > /dev/null 2>&1
           python -OO -m unittest discover -s products/desktop/tests -p 'test_atomic_capacity_r213.py' > /dev/null 2>&1
+      - name: R214 enforce CSV output byte budget and cell limits (17 cases; normal and -OO)
+        run: |
+          python -m unittest discover -s products/desktop/tests -p 'test_atomic_byte_budget_r214.py' > /dev/null 2>&1
+          python -OO -m unittest discover -s products/desktop/tests -p 'test_atomic_byte_budget_r214.py' > /dev/null 2>&1
       - name: R200 execute R194-R199 financial and policy audit tests (148 methods per mode)
         run: |
           python products/desktop/scripts/safe_audit_subprocess_r205.py
@@ -850,6 +854,14 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R213 bounded CSV evidence regression failed" }
           python -OO -m unittest discover -s products/desktop/tests -p 'test_atomic_capacity_r213.py' *> $null
           if ($LASTEXITCODE -ne 0) { throw "R213 optimized bounded CSV evidence regression failed" }
+      - name: R214 enforce CSV output byte budget and cell limits (17 cases; normal and -OO)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python -m unittest discover -s products/desktop/tests -p 'test_atomic_byte_budget_r214.py' *> $null
+          if ($LASTEXITCODE -ne 0) { throw "R214 CSV output budget regression failed" }
+          python -OO -m unittest discover -s products/desktop/tests -p 'test_atomic_byte_budget_r214.py' *> $null
+          if ($LASTEXITCODE -ne 0) { throw "R214 optimized CSV output budget regression failed" }
       - name: R200 execute R194-R199 financial and policy audit tests (148 methods per mode)
         shell: pwsh
         run: |
