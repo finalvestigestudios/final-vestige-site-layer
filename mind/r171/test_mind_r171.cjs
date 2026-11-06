@@ -101,7 +101,7 @@ const bad=[
 ["remove skip",s=>s.replace('class="skip" href="#main"','class="skip" href="#none"')],
 ["price becomes guaranteed",s=>s.replace('not</em> a verified final checkout amount','verified final checkout amount')],
 ["product description removed",s=>s.replace('12 levels, 48 MP3 recordings','many MP3 recordings')],
-["no support caveat removed",s=>s.replace('no product-specific controlled evidence','excellent product-specific controlled evidence')],
+["no support caveat removed",s=>s.replace('No product-specific controlled evidence','Excellent product-specific controlled evidence')],
 ["seller no optin replaced",s=>s.replace('Final Vestige does not subscribe','Final Vestige subscribes')],
 ["video details removed",s=>s.replace('<details class="film">','<section class="film">')]
 ];
