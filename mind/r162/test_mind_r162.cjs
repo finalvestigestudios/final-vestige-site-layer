@@ -71,7 +71,7 @@ function assertSource(raw) {
     ['separate click and paid conversion',()=>raw.funnel.includes('affiliate_outbound') && raw.funnel.includes('merchant_confirmed_order') && raw.funnel.includes('settlement')],
     ['no purchase claims',()=>raw.funnel.includes('NOT_COMPUTABLE') && raw.funnel.includes('No authenticated')],
     ['no second list',()=>raw.funnel.includes('native Jetpack subscription list') && raw.funnel.includes('no new form')],
-    ['A/B ethical and text complete',()=>raw.funnel.includes('A / control') && raw.funnel.includes('B / treatment') && raw.funnel.includes('not a commercial conversion test') ],
+    ['A/B ethical and text complete',()=>raw.funnel.includes('A / control') && raw.funnel.includes('B / treatment') && raw.funnel.includes('neither A nor B can be called a commercial conversion test') ],
     ['ownership boundaries',()=>raw.funnel.includes('Grok retains') && raw.funnel.includes('Homepage flagship PR #49')],
     ['missing WP links noted',()=>raw.funnel.includes('#1922') && raw.funnel.includes('#1377')],
     ['no paid product invention',()=>raw.funnel.includes('do not reclassify the free') && m.owned_fallback.paid_sku===null]
@@ -105,7 +105,7 @@ const adversarial=[
  ['rewrite seller price as checkout',s=>{s.html=s.html.replace('not a verified checkout total','verified checkout total');}],
  ['omit central research source',s=>{s.article=s.article.replace('https://doi.org/10.1111/nyas.15095','not-a-source');}],
  ['invent a video media ID',s=>{s.funnel=s.funnel.replace('ASSET_ID_FROM_GROK','invented-video-0001');}],
- ['turn video A/B into a victory claim',s=>{s.funnel=s.funnel.replace('not a commercial conversion test','a proven commercial conversion test');}],
+ ['turn video A/B into a victory claim',s=>{s.funnel=s.funnel.replace('neither A nor B can be called a commercial conversion test','A/B experiment proven profitable');}],
  ['claim copied experience',s=>{s.html=s.html.replace('does not assume we have tried the recordings','we personally tested Zen12 and recommend it');}],
  ['remove transcript',s=>{s.html=s.html.replace('<summary>Read the full timed narration','<p>Read the full timed narration');}],
  ['erase no live edits evidence',s=>{s.matrix=s.matrix.replace('"changes_to_live_systems": 0','"changes_to_live_systems": 1');}]
