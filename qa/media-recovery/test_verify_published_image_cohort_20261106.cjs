@@ -87,3 +87,14 @@ test('omitting any published article from claimed full cohort fails even when 76
  const result=verify(x);assert.equal(result.ok,true);
  assert.equal(result.sitewide_claim_allowed,false);
 });
+
+test('caller cannot override the trusted on-disk published URL manifest',()=>{
+ const fake=clone(manifest),x=fixture();
+ const invented='https://finalvestige.com/2026/08/16/invented-article/';
+ fake.articles[0].url=invented;fake.articles[0].slug='invented-article';
+ x.expected_page_urls[0]=invented;x.pairs[0].page_url=invented;
+ // Any legacy second argument must be ignored; the pinned manifest remains authoritative.
+ const result=verify(x,fake);
+ assert.equal(result.ok,false);
+ assert.equal(result.sitewide_claim_allowed,false);
+});
