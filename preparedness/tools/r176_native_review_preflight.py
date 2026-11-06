@@ -3,7 +3,8 @@
 
 Copies only the Preparedness tree into a disposable directory, runs existing
 validation, WordPress draft generation, full tests, and R174/R175 structural
-review gates. It never invokes WordPress or the network. Report states are
+review gates. It makes no direct network/WordPress calls; trusted invoked code may.
+Report states are
 DRAFT_HARD_HOLD or INVALID_HARD_HOLD, and CLI always exits code 2.
 This is a diagnostic harness, not a security sandbox against malicious scripts.
 """
