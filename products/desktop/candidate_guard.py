@@ -72,8 +72,22 @@ def _inspect(path: str | Path, maximum: int, *, return_bytes: bool):
         descriptor = os.open(path, flags)
     except OSError:
         raise CandidateGuardError("Unable to open candidate payload safely") from None
+    # A raw descriptor belongs to this function until fdopen has succeeded.
+    # If fdopen fails (including BaseException interruptions), no stream exists
+    # to close it. Never leave an untracked handle to a private candidate.
     try:
-        with os.fdopen(descriptor, "rb") as stream:
+        stream = os.fdopen(descriptor, "rb")
+    except BaseException as exc:
+        try:
+            os.close(descriptor)
+        except OSError:
+            pass
+        if isinstance(exc, Exception):
+            # Suppress OS paths, client-provided messages, and exception chains.
+            raise CandidateGuardError("Unable to read candidate payload safely") from None
+        raise
+    try:
+        with stream:
             opened = os.fstat(stream.fileno())
             if (not _same_path_descriptor_signature(before, opened)
                     or not stat.S_ISREG(opened.st_mode) or opened.st_nlink > 1):
