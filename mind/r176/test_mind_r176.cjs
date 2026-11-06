@@ -44,11 +44,12 @@ function audit(s){
  ck(s.offer.includes('type="button" disabled aria-disabled="true"'),'native disabled purchase control');
  ck(s.offer.includes('Merchant purchase unavailable — approval pending'),'disabled label');
  ck(s.offer.includes('Potential affiliate disclosure:'),'adjacent affiliate notice');
+ ck(s.offer.includes('at no additional cost to you'),'accurate adjacent prospective disclosure');
  ck(s.offer.indexOf('Potential affiliate disclosure:')>s.offer.indexOf('Merchant purchase unavailable — approval pending'),'disclosure after purchase control');
  ck(s.offer.indexOf('Potential affiliate disclosure:')-s.offer.indexOf('Merchant purchase unavailable — approval pending')<500,'disclosure reasonably near button');
  ck(s.offer.includes('42-second') && s.offer.includes('00–08s:') && s.offer.includes('29–42s:'),'42-second original transcript');
  ck(s.offer.includes('poster') && s.offer.includes('no autoplay'),'static optional video concept');
- ck(s.offer.includes('rel="noopener noreferrer"'),'source links safe');
+ ck((s.offer.match(/rel="noopener noreferrer"/g)||[]).length>=5,'source links safe');
  ck(s.hub.includes('four streams') && s.hub.includes('Tools Under Review'),'four-stream archive');
  ck(s.hub.includes('canonical /mind/') && s.hub.includes('PR #172'),'canonical hub protection');
  const j=JSON.parse(s.matrix);
