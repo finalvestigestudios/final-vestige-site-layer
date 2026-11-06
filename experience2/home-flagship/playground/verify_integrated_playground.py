@@ -148,9 +148,15 @@ def run(url, output, authorized_host, axe_path):
                             page.locator('[data-fv-observer-switch="b"]').click(timeout=4000)
                             if page.locator('[data-fv-observer-switch="b"]').get_attribute('aria-pressed')!='true':
                                 errs.append('observation interaction failed')
-                            page.locator('.fv-margin-strip__motion-check').check(timeout=4000)
-                            if not page.locator('.fv-margin-strip__motion-check').is_checked():
-                                errs.append('voluntary animation toggle failed')
+                            if width == 390:
+                                if page.locator('.fv-margin-strip__motion-toggle').is_visible():
+                                    errs.append('reduced-motion control should not offer animation')
+                                if page.locator('.fv-margin-strip__item:visible').count() != 72:
+                                    errs.append('reduced-motion hides historical records')
+                            else:
+                                page.locator('.fv-margin-strip__motion-check').check(timeout=4000)
+                                if not page.locator('.fv-margin-strip__motion-check').is_checked():
+                                    errs.append('voluntary animation toggle failed')
                         except Exception as e: errs.append('interaction: '+str(e)[:180])
                         # Scroll lazy-loaded evidence onto the stage. Confirm actual RESPONSE BYTES,
                         # not image metadata or cached CSS status.
