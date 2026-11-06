@@ -1,0 +1,10 @@
+/* R173 staging-only source role styles; visible without CSS and JS. */
+.fv-ex2-ledger .fv-ex2-source-custody{border:1px solid #796d55;background:#1d1b17;color:#f4efe6;padding:clamp(16px,3vw,28px);margin:0 0 28px;line-height:1.7}
+.fv-ex2-ledger .fv-ex2-source-custody strong,.fv-ex2-ledger .fv-ex2-source-custody__role strong{color:#e3c58f}
+.fv-ex2-ledger .fv-ex2-source-custody details{padding-top:12px}
+.fv-ex2-ledger .fv-ex2-source-custody summary{cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.fv-ex2-ledger .fv-ex2-source-custody__role{color:#f0e6d3;border-left:3px solid #d2b57b;padding:12px 15px;background:#26251f;margin:10px 0 18px;font-size:clamp(14px,1.3vw,16px);overflow-wrap:anywhere}
+.fv-ex2-ledger .fv-ex2-source-custody__role em{font-style:normal;text-decoration:underline;text-underline-offset:3px}
+.fv-ex2-ledger .fv-ex2-source-custody summary:focus-visible{outline:3px solid #e3c58f;outline-offset:4px}
+@media (forced-colors:active){.fv-ex2-ledger .fv-ex2-source-custody,.fv-ex2-ledger .fv-ex2-source-custody__role{forced-color-adjust:auto;border:2px solid CanvasText;background:Canvas;color:CanvasText}.fv-ex2-ledger .fv-ex2-source-custody strong,.fv-ex2-ledger .fv-ex2-source-custody__role strong{color:CanvasText}}
+@media (prefers-reduced-motion:reduce){.fv-ex2-ledger .fv-ex2-source-custody *{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
