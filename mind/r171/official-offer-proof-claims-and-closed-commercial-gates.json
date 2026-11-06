@@ -1,0 +1,550 @@
+{
+  "version": "r171",
+  "review_date": "2026-11-06",
+  "publication": "UNPUBLISHED",
+  "commercial_activation": "HARD_HOLD",
+  "sources": [
+    {
+      "id": "S01",
+      "title": "Inspire3 official catalog",
+      "url": "https://inspire3.com/",
+      "accessed": "2026-11-06",
+      "type": "seller",
+      "note": "Corporate product descriptions; no member-specific authorization"
+    },
+    {
+      "id": "S02",
+      "title": "Zen12 exact Premium merchant page",
+      "url": "https://zen12.com/",
+      "accessed": "2026-11-06",
+      "type": "seller",
+      "note": "12 levels/48 MP3s; 4 styles; displayed $87.99; advertises one-year guarantee"
+    },
+    {
+      "id": "S03",
+      "title": "Inspire3 public affiliate portal",
+      "url": "https://affiliates.inspire3.com/",
+      "accessed": "2026-11-06",
+      "type": "seller",
+      "note": "Public signup/login; not publisher authorization"
+    },
+    {
+      "id": "S04",
+      "title": "FTC Endorsement Guides Q&A",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "accessed": "2026-11-06",
+      "type": "regulator",
+      "note": "Near-link clear, conspicuous disclosure; material connections"
+    },
+    {
+      "id": "S05",
+      "title": "FTC Health Products Compliance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "accessed": "2026-11-06",
+      "type": "regulator",
+      "note": "Adequate science for objective product claims"
+    },
+    {
+      "id": "S06",
+      "title": "Stroop 1935",
+      "url": "https://doi.org/10.1037/h0054651",
+      "accessed": "2026-11-06",
+      "type": "primary",
+      "note": "Color-word interference, no merchant test"
+    },
+    {
+      "id": "S07",
+      "title": "Raz et al 2002",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/12470132/",
+      "accessed": "2026-11-06",
+      "type": "primary",
+      "note": "16 highly suggestible and 16 less suggestible participants; task-specific suggestion"
+    },
+    {
+      "id": "S08",
+      "title": "Raz et al 2005",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/15994228/",
+      "accessed": "2026-11-06",
+      "type": "primary",
+      "note": "Neuroimaging of Stroop conflict and suggestion"
+    },
+    {
+      "id": "S09",
+      "title": "Raz et al 2006",
+      "url": "https://www.psychologicalscience.org/journals/psychological-science/j.1467-9280.2006.01669.x/",
+      "accessed": "2026-11-06",
+      "type": "primary",
+      "note": "Suggestions reduced Stroop interference in highly suggestible subjects with/without hypnotic induction"
+    },
+    {
+      "id": "S10",
+      "title": "Zahedi et al 2024",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39032268/",
+      "accessed": "2026-11-06",
+      "type": "review",
+      "note": "Multiple competing hypnosis theories; not a product trial"
+    },
+    {
+      "id": "S11",
+      "title": "Ingendoh et al 2023",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+      "accessed": "2026-11-06",
+      "type": "review",
+      "note": "Heterogeneous EEG entrainment research; cannot transfer to product"
+    },
+    {
+      "id": "S12",
+      "title": "Existing Focus Fieldbook",
+      "url": "https://finalvestige.com/focus/",
+      "accessed": "2026-11-06",
+      "type": "fv-existing",
+      "note": "Established free route; no new signup"
+    },
+    {
+      "id": "S13",
+      "title": "Existing Puységur Files",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "accessed": "2026-11-06",
+      "type": "fv-existing",
+      "note": "Existing historical archive; content known from Issue 171"
+    },
+    {
+      "id": "S14",
+      "title": "Existing Change Blindness article",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "accessed": "2026-11-06",
+      "type": "fv-existing",
+      "note": "Existing editorial route per Issue 171, not live HTTP retested"
+    },
+    {
+      "id": "S15",
+      "title": "Mind PR #172",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/172",
+      "accessed": "2026-11-06",
+      "type": "project",
+      "note": "Canonical draft hub ownership retained"
+    },
+    {
+      "id": "S16",
+      "title": "Issue #171",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "accessed": "2026-11-06",
+      "type": "project",
+      "note": "Founder release and ethics requirements"
+    }
+  ],
+  "claims": [
+    {
+      "id": "Z01",
+      "claim": "Zen12 Premium lists 12 levels",
+      "type": "seller_description",
+      "source": "S02",
+      "decision": "ALLOWED_WITH_ATTRIBUTION"
+    },
+    {
+      "id": "Z02",
+      "claim": "Zen12 Premium lists 48 MP3s",
+      "type": "seller_description",
+      "source": "S02",
+      "decision": "ALLOWED_WITH_ATTRIBUTION"
+    },
+    {
+      "id": "Z03",
+      "claim": "Zen12 offers four styles (music/guided/nature/white noise)",
+      "type": "seller_description",
+      "source": "S02",
+      "decision": "ALLOWED_WITH_ATTRIBUTION"
+    },
+    {
+      "id": "Z04",
+      "claim": "Zen12 offers 12-minute listening sessions",
+      "type": "seller_description",
+      "source": "S02",
+      "decision": "ALLOWED_WITH_ATTRIBUTION"
+    },
+    {
+      "id": "Z05",
+      "claim": "Zen12 displayed $87.99 on 6 Nov 2026",
+      "type": "seller_price_snapshot",
+      "source": "S02",
+      "decision": "DRAFT_ONLY_NO_PUBLIC_PRICE_PROMISE"
+    },
+    {
+      "id": "Z06",
+      "claim": "Zen12 says a one-year refund guarantee applies",
+      "type": "seller_promise",
+      "source": "S02",
+      "decision": "SELLER_ATTRIBUTION_ONLY_NEVER_FULFILLMENT_CLAIM"
+    },
+    {
+      "id": "Z07",
+      "claim": "A Zen12 checkout will charge $87.99",
+      "type": "merchant_transaction",
+      "source": "S02",
+      "decision": "NOT_VERIFIED_HOLD"
+    },
+    {
+      "id": "Z08",
+      "claim": "A refund will be honored in practice",
+      "type": "merchant_performance",
+      "source": "S02",
+      "decision": "NOT_VERIFIED_HOLD"
+    },
+    {
+      "id": "Z09",
+      "claim": "Zen12 makes 12 min equal an hour of meditation",
+      "type": "efficacy",
+      "source": "S02",
+      "decision": "REJECT_UNSUPPORTED"
+    },
+    {
+      "id": "Z10",
+      "claim": "Zen12 improves health/anxiety/concentration",
+      "type": "health_cognitive_efficacy",
+      "source": "S02",
+      "decision": "REJECT_UNSUPPORTED"
+    },
+    {
+      "id": "Z11",
+      "claim": "Zen12 produces guaranteed brainwave entrainment",
+      "type": "physiological_efficacy",
+      "source": "S11",
+      "decision": "REJECT_UNSUPPORTED"
+    },
+    {
+      "id": "Z12",
+      "claim": "Zen12 Premium is delivered as described to actual customers",
+      "type": "fulfillment",
+      "source": "S02",
+      "decision": "NOT_VERIFIED_HOLD"
+    },
+    {
+      "id": "A01",
+      "claim": "An Inspire3 affiliate program exists publicly",
+      "type": "program_existence",
+      "source": "S03",
+      "decision": "ESTABLISHED_PUBLIC_ONLY"
+    },
+    {
+      "id": "A02",
+      "claim": "Final Vestige is approved",
+      "type": "publisher_acceptance",
+      "source": "S03",
+      "decision": "UNKNOWN_HOLD"
+    },
+    {
+      "id": "A03",
+      "claim": "A publisher earning link is approved",
+      "type": "permission",
+      "source": "S03",
+      "decision": "UNKNOWN_HOLD"
+    },
+    {
+      "id": "A04",
+      "claim": "Website promotion is contractually permitted",
+      "type": "permission",
+      "source": "S03",
+      "decision": "UNKNOWN_HOLD"
+    },
+    {
+      "id": "A05",
+      "claim": "Social promotion is contractually permitted",
+      "type": "permission",
+      "source": "S03",
+      "decision": "UNKNOWN_HOLD"
+    },
+    {
+      "id": "A06",
+      "claim": "Email/Dispatch promotion is contractually permitted",
+      "type": "permission",
+      "source": "S03",
+      "decision": "UNKNOWN_HOLD"
+    },
+    {
+      "id": "A07",
+      "claim": "Commission or payout amounts for Final Vestige",
+      "type": "income",
+      "source": "S03",
+      "decision": "UNKNOWN_HOLD"
+    },
+    {
+      "id": "R01",
+      "claim": "Stroop interference occurs under experimentally tested conditions",
+      "type": "research",
+      "source": "S06",
+      "decision": "SUPPORTED_WITH_SCOPE"
+    },
+    {
+      "id": "R02",
+      "claim": "2002 suggestion can reduce Stroop interference in highly suggestible participants",
+      "type": "research",
+      "source": "S07",
+      "decision": "SUPPORTED_WITH_SCOPE"
+    },
+    {
+      "id": "R03",
+      "claim": "2005 imaging demonstrates task-related activity difference under studied conditions",
+      "type": "research",
+      "source": "S08",
+      "decision": "SUPPORTED_WITH_SCOPE"
+    },
+    {
+      "id": "R04",
+      "claim": "2006 suggestion effect did not require hypnosis induction in tested highly suggestible group",
+      "type": "research",
+      "source": "S09",
+      "decision": "SUPPORTED_WITH_SCOPE"
+    },
+    {
+      "id": "R05",
+      "claim": "The above results show Zen12 product efficacy",
+      "type": "product_extrapolation",
+      "source": "S07",
+      "decision": "REJECT_UNSUPPORTED"
+    },
+    {
+      "id": "R06",
+      "claim": "Hypnosis has a single established neural mechanism",
+      "type": "research_overclaim",
+      "source": "S10",
+      "decision": "REJECT_UNSUPPORTED"
+    },
+    {
+      "id": "R07",
+      "claim": "Binaural beats reliably induce product-specific cognitive benefit",
+      "type": "research_overclaim",
+      "source": "S11",
+      "decision": "REJECT_UNSUPPORTED"
+    },
+    {
+      "id": "F01",
+      "claim": "Existing /focus/ is the sole landing capture resource",
+      "type": "known_project",
+      "source": "S12",
+      "decision": "KEEP_EXISTING_ONLY"
+    },
+    {
+      "id": "F02",
+      "claim": "Confirmed paid orders/commissions are known",
+      "type": "revenue",
+      "source": "S16",
+      "decision": "UNKNOWN_NO_NUMERIC_RESULT"
+    },
+    {
+      "id": "F03",
+      "claim": "Unique qualified Grok asset IDs/UTMs are confirmed",
+      "type": "attribution",
+      "source": "S16",
+      "decision": "UNKNOWN"
+    },
+    {
+      "id": "F04",
+      "claim": "Focus display state confirms email ownership",
+      "type": "lead_proof",
+      "source": "S16",
+      "decision": "REJECT_FALSE_POSITIVE"
+    },
+    {
+      "id": "F05",
+      "claim": "Owned Mind Payhip product is currently sellable and rights cleared",
+      "type": "inventory",
+      "source": "S16",
+      "decision": "UNKNOWN_NEEDS_AUTHENTICATION"
+    },
+    {
+      "id": "P01",
+      "claim": "The unpublished guide can receive an active merchant link",
+      "type": "release",
+      "source": "S16",
+      "decision": "REJECT_NOT_APPROVED"
+    }
+  ],
+  "gates": {
+    "authenticated_inspire3_partner_acceptance": {
+      "status": "CLOSED",
+      "evidence": null
+    },
+    "partner_terms_version": {
+      "status": "CLOSED",
+      "evidence": null
+    },
+    "approved_zen12_publisher_link": {
+      "status": "CLOSED",
+      "evidence": null
+    },
+    "approved_website_channel": {
+      "status": "CLOSED",
+      "evidence": null
+    },
+    "approved_social_channel": {
+      "status": "CLOSED",
+      "evidence": null
+    },
+    "approved_email_channel": {
+      "status": "CLOSED",
+      "evidence": null
+    },
+    "verified_offer_landing_url": {
+      "status": "CLOSED",
+      "evidence": null
+    },
+    "merchant_creative_usage_rights": {
+      "status": "CLOSED",
+      "evidence": null
+    },
+    "merchant_price_checkout_confirmed": {
+      "status": "CLOSED",
+      "evidence": null
+    },
+    "merchant_refund_terms_confirmed": {
+      "status": "CLOSED",
+      "evidence": null
+    },
+    "merchant_refund_fulfillment_test": {
+      "status": "CLOSED",
+      "evidence": null
+    },
+    "legal_claim_proof_to_product": {
+      "status": "CLOSED",
+      "evidence": null
+    },
+    "privacy_review": {
+      "status": "CLOSED",
+      "evidence": null
+    },
+    "first_party_analytics_dedup": {
+      "status": "CLOSED",
+      "evidence": null
+    },
+    "asset_id_inventory": {
+      "status": "CLOSED",
+      "evidence": null
+    },
+    "approved_utms": {
+      "status": "CLOSED",
+      "evidence": null
+    },
+    "no_unconsented_pii": {
+      "status": "CLOSED",
+      "evidence": null
+    },
+    "ga4_no_duplicate_tag": {
+      "status": "CLOSED",
+      "evidence": null
+    },
+    "qualified_human_session_def": {
+      "status": "CLOSED",
+      "evidence": null
+    },
+    "verified_email_optin_proof": {
+      "status": "CLOSED",
+      "evidence": null
+    },
+    "payhip_owned_sku_rights": {
+      "status": "CLOSED",
+      "evidence": null
+    },
+    "payhip_checkout_total": {
+      "status": "CLOSED",
+      "evidence": null
+    },
+    "payhip_fulfillment": {
+      "status": "CLOSED",
+      "evidence": null
+    },
+    "payhip_returns": {
+      "status": "CLOSED",
+      "evidence": null
+    },
+    "merchant_commission_ledger": {
+      "status": "CLOSED",
+      "evidence": null
+    },
+    "merchant_settlement_reconcile": {
+      "status": "CLOSED",
+      "evidence": null
+    },
+    "refund_chargeback_fee_reconcile": {
+      "status": "CLOSED",
+      "evidence": null
+    },
+    "native_node_suite": {
+      "status": "CLOSED",
+      "evidence": null
+    },
+    "real_browser_mobile_a11y": {
+      "status": "CLOSED",
+      "evidence": null
+    },
+    "reduced_motion_keyboard": {
+      "status": "CLOSED",
+      "evidence": null
+    },
+    "captioned_video_render": {
+      "status": "CLOSED",
+      "evidence": null
+    },
+    "lighthouse_perf": {
+      "status": "CLOSED",
+      "evidence": null
+    },
+    "site_QA_approval": {
+      "status": "CLOSED",
+      "evidence": null
+    },
+    "homepage_lead_approval": {
+      "status": "CLOSED",
+      "evidence": null
+    },
+    "founder_publishing_approval": {
+      "status": "CLOSED",
+      "evidence": null
+    },
+    "founder_earning_link_activation": {
+      "status": "CLOSED",
+      "evidence": null
+    },
+    "founder_social_publish_approval": {
+      "status": "CLOSED",
+      "evidence": null
+    },
+    "founder_spend_approval": {
+      "status": "CLOSED",
+      "evidence": null
+    },
+    "github_CI_green": {
+      "status": "CLOSED",
+      "evidence": null
+    },
+    "first_verified_paid_order": {
+      "status": "CLOSED",
+      "evidence": null
+    }
+  },
+  "revenue": {
+    "owned_product": "cleared_customer_payments less refunds, chargebacks and fees NOT ALREADY NETTED",
+    "affiliate": "commissions ACTUALLY RECEIVED less adjustments NOT ALREADY WITHHELD; never merchant retail gross",
+    "qualified_human_sessions": null,
+    "confirmed_orders": null,
+    "settled_affiliate_commissions": null,
+    "refunds": null,
+    "fees": null,
+    "net_revenue_per_1000_qualified_human_sessions": "NOT_COMPUTABLE"
+  },
+  "prohibitions": [
+    "no fabricated product experience",
+    "no invented accepted partner terms",
+    "no merchant or affiliate href activation",
+    "no unconditional health/wealth claim",
+    "no copied seller swipe",
+    "no analytics duplication",
+    "no CMS writing",
+    "no email funnel duplication"
+  ],
+  "gmail_bounded_check": {
+    "date": "2026-11-06",
+    "query": "(inspire3 OR zen12 OR hypnosislive) (approved OR accepted OR affiliate OR commission)",
+    "result": "Search results predominantly seller/promotional; one 'access approved' sales subject was an unrelated Reprogram.ME waitlist; named FV publisher acceptance NOT established; partner dashboard not authenticated"
+  },
+  "caveat": "This ledger is editorial due diligence, not a merchant receipt or compliance certification."
+}
