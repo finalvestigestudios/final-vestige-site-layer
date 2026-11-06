@@ -25,6 +25,7 @@ const unsafe=[
  ['upscale beyond max width',m=>m.records[0].conditional_960.width=1280],
  ['create dimensions from unknown',m=>m.records[1].conditional_960={width:960,height:960}],
  ['tamper source URL',m=>m.records[1].original_src='https://example.com/a.jpg'],
+ ['tamper article URL',m=>m.records[3].post_url='https://finalvestige.com/not-the-honda-point-article/'],
  ['enable WordPress write',m=>m.release.wordpress_production_writes=true],
  ['enable binary download',m=>m.release.binary_download=true],
  ['remove a record',m=>m.records.pop()],
