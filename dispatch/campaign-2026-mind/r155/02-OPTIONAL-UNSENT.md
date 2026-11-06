@@ -1,0 +1,40 @@
+# DISPATCH OPTIONAL ISSUE 02 — UNSENT REVIEW ONLY
+
+**Status:** DRAFT, NOT A SUBSTITUTION FOR MASTER #175, NOT A WORDPRESS POST
+**Subject:** The fourth tree wasn't magnetized
+**Preheader:** Franklin's 1784 investigators separated expectation from the claimed force.
+**Category:** Editorial; no offer, price, affiliate URL, new signup or test email
+**Primary CTA:** Read what Franklin's commission actually found — https://finalvestige.com/2026/11/02/mesmerism/
+
+In the garden of Benjamin Franklin's house at Passy, an apricot tree was supposed to carry a remarkable power. A boy was blindfolded and brought into the orchard. The physician who supported animal magnetism had treated one tree; the commissioners wanted to know whether the boy could detect it.
+
+This was not a parlor trick invented for a modern television program. The experiment appears in the French royal commissioners' report of 1784, preserved in an English translation published in 1785. Its details reveal a surprisingly useful distinction between an experience and the explanation offered for it.
+
+
+## What happened to the fourth tree?
+
+The boy was led to four trees that had not been magnetized. At the first, he reported physical sensations. At the second and third, he described stronger discomfort and believed he was approaching the treated tree. By the fourth untreated tree, the report says, he fell into a crisis and needed assistance. The treated apricot tree was never necessary to produce the reported episode.
+
+The commissioners argued that expectation could account for the observed response without invoking an undetected magnetic fluid. They also documented safeguards against signaling, though their procedures were not a modern, preregistered clinical trial. The report is direct evidence of what the commissioners recorded, not independent proof of every interpretation they made.
+
+
+## The important thing they did not say
+
+The experiment did not require that the boy was pretending. A genuine subjective sensation can be misattributed. Nor does a historical test of animal magnetism prove or disprove the effectiveness of a particular modern hypnosis or meditation recording. Those are different claims requiring their own evidence.
+
+For any surprising claim, try three questions: What did the participant expect? What did an observer know and communicate? What happened when the supposed cause was absent? This simple framework is useful whether you are reading an eighteenth-century report, a contemporary product page, or your own memory of an event.
+
+The full Final Vestige investigation examines the commission, its methods, and the limits of its findings. It is a different stop in the archive from Puységur's account in the previous dispatch.
+
+**Read the investigation:** [Read what Franklin's commission actually found](https://finalvestige.com/2026/11/02/mesmerism/)
+
+
+## Source trail
+
+- [1785 English translation of the 1784 royal commissioners' report (primary historical text)](https://www.gutenberg.org/files/78413/78413-h/78413-h.htm)
+- [Wellcome Collection catalog record for the 1785 translation](https://wellcomecollection.org/works/enhgscmf)
+- [Final Vestige published Mesmerism investigation](https://finalvestige.com/2026/11/02/mesmerism/)
+
+
+---
+**FAIL-CLOSED LEGAL HOLD:** Sender: Final Vestige Studios. Publisher address [[VALID_POSTAL_ADDRESS_REQUIRED]]. Native unsubscribe [[JETPACK_UNSUBSCRIBE_LINK_MUST_BE_VERIFIED]]. These tokens must never appear in a sent email; verify actual Jetpack footer and founder approval.
