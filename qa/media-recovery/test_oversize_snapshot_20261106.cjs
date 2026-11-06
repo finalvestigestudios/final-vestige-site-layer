@@ -26,4 +26,4 @@ rejects('unmatched image declared in seven posts',a=>a.rows.find(x=>x.observed_r
 rejects('fake new published post count',a=>a.fresh_published_posts=67,'counts');
 rejects('falsely claim full site source census',a=>a.full_66_post_markup_recensused=true,'counts');
 rejects('inflate bucket',a=>a.buckets.jetpack.original_storage_bytes++,'bucket_manifest');
-rejects('2001 manual media parent must be 85, not presumed unused',a=>a.rows.find(x=>x.id===405).wp_parent=null,'wp_parent_405');
+rejects('field manual attachment parent must remain 85, not presumed unused',a=>a.rows.find(x=>x.id===405).wp_parent=null,'wp_parent_405');
