@@ -61,14 +61,13 @@
     if (!snapshot.newsletter_enabled) out.reasons.push("NEWSLETTER_DISABLED");
     if (snapshot.new_posts_auto_send) out.reasons.push("AUTO_SEND_ENABLED_RELEASE_STOP");
     if (providerRows === null) {out.reasons.push("NO_AUTHORITATIVE_PER_SUBSCRIBER_EMAIL_STATUS");return out;}
-    const seen = new Set(); let candidates=0,signup=0;
+    const seen = new Set(); let candidates=0;
     for(const r of providerRows) {
       assertSafe(r);
       if(seen.has(r.opaque_key)) throw new Error("DUPLICATE_OPAQUE_KEY_REQUIRES_PROVIDER_RESOLUTION");
       seen.add(r.opaque_key);
       const eligible = r.email_subscription === "Subscribed" && r.confirmation_proof === true && r.consent_proof === true;
       if(eligible) candidates++;
-      if(eligible && r.confirmed_at_utc) signup++;
     }
     out.provider_reviewed_count = seen.size;
     if(!completeProviderExport) {
@@ -76,7 +75,9 @@
       return out;
     }
     out.exact_email_eligible_count = candidates;
-    out.confirmed_signup_count = signup;
+    // A provider status record is NOT a new transition event; only a verified before/after change may generate confirmed_signup.
+    out.confirmed_signup_count = null;
+    out.reasons.push("NO_NATIVE_BEFORE_AFTER_TRANSITION_EVENT");
     out.reasons.push("PRIVATE_PROVIDER_ROWS_REVIEWED_NOT_AN_EMAIL_SEND_OR_PAID_ORDER");
     return out;
   }
