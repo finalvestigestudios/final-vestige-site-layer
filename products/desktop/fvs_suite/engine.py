@@ -13,6 +13,7 @@ from .audit_display import _escape_source_character
 from .csv_diagnostics import csv_input_error
 from .invoice_match import candidate_pairs, review_flags as invoice_review_flags
 from .csv_formula_guard import has_unescaped_formula_prefix
+from .csv_native_cell import native_report_text
 
 ALIASES = {
  "id": ("transaction_id","id","reference","ref","document_id","claim_id"),
@@ -281,7 +282,8 @@ def safe_cell(value):
     them rather than rewriting original source evidence. No normalization.
     The original input SHA and source rows remain the audit authority.
     """
-    s = str(value)
+    # No untrusted __str__ may forge an exported financial/source value.
+    s = native_report_text(value)
     index = 0
     invisible_prefix = False
     while index < len(s):
