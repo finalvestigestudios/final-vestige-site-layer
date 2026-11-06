@@ -1,0 +1,7 @@
+/* Research-only, scoped, no external assets or JavaScript. Preserve source visibility with CSS off. */
+.fv-ex2-ledger .fv-ex2-media-custody { margin: 4px 0 17px; padding: 15px 18px; border: 1px solid #807253; border-left: 4px solid #e3c58f; background: #28261f; color: #f4efe6; line-height: 1.65; overflow-wrap: anywhere; }
+.fv-ex2-ledger .fv-ex2-media-custody strong { display: block; font-size: clamp(14px, 1.5vw, 16px); color: #ffe3a3; }
+.fv-ex2-ledger .fv-ex2-media-custody p { margin: 7px 0 9px; font-size: 15px; }
+.fv-ex2-ledger .fv-ex2-media-custody small { display: block; font-size: 13px; line-height: 1.65; color: #f1e3cd; }
+@media (forced-colors: active) { .fv-ex2-ledger .fv-ex2-media-custody { border: 2px solid CanvasText; background: Canvas; color: CanvasText; forced-color-adjust: auto; } .fv-ex2-ledger .fv-ex2-media-custody strong, .fv-ex2-ledger .fv-ex2-media-custody small { color: CanvasText; } }
+@media (prefers-reduced-motion: reduce) { .fv-ex2-ledger .fv-ex2-media-custody { animation: none !important; transition: none !important; } }
