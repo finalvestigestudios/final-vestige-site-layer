@@ -1,0 +1,622 @@
+{
+  "title": "Mind R163 exact-product commercial claims and release gates",
+  "as_of_date": "2026-11-05",
+  "status": "UNPUBLISHED",
+  "activation": "HARD_HOLD",
+  "product": {
+    "merchant": "Hypnosis Live",
+    "product": "Total Focus",
+    "specific_official_url": "https://hypnosislive.com/mental-skills/total-focus",
+    "seller_claimed_duration_minutes": 33,
+    "seller_claimed_size_mb": 47,
+    "seller_credited_author": "J. A. Amos",
+    "current_checkout_price": null,
+    "refund_approved": null,
+    "verified_affiliate_status": null,
+    "earning_url": null,
+    "verified_commission": null,
+    "verified_paid_orders": null,
+    "verified_net_revenue": null
+  },
+  "sources": [
+    {
+      "id": "s01",
+      "title": "Zahedi et al. 2024 systematic review of hypnosis theories",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39032268/",
+      "type": "scientific"
+    },
+    {
+      "id": "s02",
+      "title": "Raturi et al. 2024 suggestion-related Stroop interference review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38874567/",
+      "type": "scientific"
+    },
+    {
+      "id": "s03",
+      "title": "2020 self-hypnosis and self-care combined RCT",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/32297396/",
+      "type": "scientific"
+    },
+    {
+      "id": "s04",
+      "title": "2021 chronic pain comparative RCT",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34358272/",
+      "type": "scientific"
+    },
+    {
+      "id": "s05",
+      "title": "Self-hypnosis audio weight pilot",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36536625/",
+      "type": "scientific"
+    },
+    {
+      "id": "s06",
+      "title": "Official Total Focus sales description",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "type": "merchant"
+    },
+    {
+      "id": "s07",
+      "title": "Official Inspire3 catalog",
+      "url": "https://inspire3.com/",
+      "type": "merchant"
+    },
+    {
+      "id": "s08",
+      "title": "Inspire3 public affiliate portal",
+      "url": "https://affiliates.inspire3.com/",
+      "type": "merchant"
+    },
+    {
+      "id": "s09",
+      "title": "FTC endorsement disclosure FAQ",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "type": "regulator"
+    },
+    {
+      "id": "s10",
+      "title": "FTC Health Products Compliance Guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "type": "regulator"
+    },
+    {
+      "id": "s11",
+      "title": "FV Puységur Archive",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "type": "first_party"
+    },
+    {
+      "id": "s12",
+      "title": "FV Seven Day Focus Fieldbook",
+      "url": "https://finalvestige.com/focus/",
+      "type": "first_party"
+    },
+    {
+      "id": "s13",
+      "title": "FV Change Blindness live investigation",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "type": "first_party"
+    },
+    {
+      "id": "s14",
+      "title": "Mind scope and guardrails Issue 171",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "type": "governance"
+    },
+    {
+      "id": "s15",
+      "title": "Conversion attribution acceptance Issue 820",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "type": "governance"
+    }
+  ],
+  "claims": [
+    {
+      "id": "c01",
+      "text": "Hypnotic suggestions can affect reported subjective experience in studied conditions",
+      "status": "supported_scope_limited",
+      "source_ids": [
+        "s01"
+      ],
+      "notes": "Theory and reviewed experiments; no product transfer"
+    },
+    {
+      "id": "c02",
+      "text": "A consensus mechanism for hypnotic suggestion is established",
+      "status": "not_supported",
+      "source_ids": [
+        "s01"
+      ],
+      "notes": "Prominent theories remain competing"
+    },
+    {
+      "id": "c03",
+      "text": "Suggestion-related Stroop effects have been investigated in highly suggestible volunteers",
+      "status": "supported_scope_limited",
+      "source_ids": [
+        "s02"
+      ],
+      "notes": "Not general-focus proof"
+    },
+    {
+      "id": "c04",
+      "text": "The 2020 RCT analyzed 95 women after a combined self-care/self-hypnosis intervention",
+      "status": "supported_scope_limited",
+      "source_ids": [
+        "s03"
+      ],
+      "notes": "Not an audio product-only comparison"
+    },
+    {
+      "id": "c05",
+      "text": "The 2021 203-person study found a statistically significant between-group advantage of self-hypnosis",
+      "status": "contradicted",
+      "source_ids": [
+        "s04"
+      ],
+      "notes": "Abstract reports no group effect"
+    },
+    {
+      "id": "c06",
+      "text": "A 46-participant completed follow-up pilot proved self-hypnosis audio weight loss",
+      "status": "contradicted",
+      "source_ids": [
+        "s05"
+      ],
+      "notes": "No significant effects, underpowered"
+    },
+    {
+      "id": "c07",
+      "text": "Total Focus official listing says 33 minutes",
+      "status": "seller_description_only",
+      "source_ids": [
+        "s06"
+      ],
+      "notes": "Not verified delivered file"
+    },
+    {
+      "id": "c08",
+      "text": "Total Focus official listing says 47 MB",
+      "status": "seller_description_only",
+      "source_ids": [
+        "s06"
+      ],
+      "notes": "Not verified delivered file"
+    },
+    {
+      "id": "c09",
+      "text": "Total Focus official listing credits J. A. Amos",
+      "status": "seller_description_only",
+      "source_ids": [
+        "s06"
+      ],
+      "notes": "Not independently checked creator identity"
+    },
+    {
+      "id": "c10",
+      "text": "Total Focus official page invokes hypnosis and NLP exercises",
+      "status": "seller_description_only",
+      "source_ids": [
+        "s06"
+      ],
+      "notes": "Features listed, not independently reviewed"
+    },
+    {
+      "id": "c11",
+      "text": "Total Focus produces 100% concentration",
+      "status": "unsubstantiated_product_outcome",
+      "source_ids": [
+        "s06",
+        "s01"
+      ],
+      "notes": "Must not appear as endorsed statement"
+    },
+    {
+      "id": "c12",
+      "text": "Total Focus produces career advancement and financial gains",
+      "status": "unsubstantiated_product_outcome",
+      "source_ids": [
+        "s06"
+      ],
+      "notes": "Cannot be inherited from seller promises"
+    },
+    {
+      "id": "c13",
+      "text": "Hypnosis can reprogram every buyer's brain",
+      "status": "unsubstantiated_product_outcome",
+      "source_ids": [
+        "s06",
+        "s01"
+      ],
+      "notes": "Mechanism and universal claim not substantiated"
+    },
+    {
+      "id": "c14",
+      "text": "A study of an unrelated clinical intervention validates Total Focus",
+      "status": "not_supported",
+      "source_ids": [
+        "s03",
+        "s06"
+      ],
+      "notes": "Intervention/outcome/population mismatch"
+    },
+    {
+      "id": "c15",
+      "text": "A changing seller-page price proves future checkout total",
+      "status": "not_verified",
+      "source_ids": [
+        "s06"
+      ],
+      "notes": "Price display cannot bind checkout"
+    },
+    {
+      "id": "c16",
+      "text": "Merchant refund processing has been independently tested",
+      "status": "not_verified",
+      "source_ids": [
+        "s06"
+      ],
+      "notes": "No purchase/refund completed"
+    },
+    {
+      "id": "c17",
+      "text": "Inspire3 operates a public affiliate portal",
+      "status": "verified_public_program_only",
+      "source_ids": [
+        "s08"
+      ],
+      "notes": "No FV-specific eligibility"
+    },
+    {
+      "id": "c18",
+      "text": "Final Vestige is an accepted affiliate with approved Total Focus earning URL",
+      "status": "not_verified",
+      "source_ids": [
+        "s08",
+        "s14"
+      ],
+      "notes": "Must authenticate private dashboard and allowed channels"
+    },
+    {
+      "id": "c19",
+      "text": "The existing Focus landing exists and uses native Jetpack pathway",
+      "status": "first_party_observed",
+      "source_ids": [
+        "s12",
+        "s14"
+      ],
+      "notes": "Form existence not successful guest signup"
+    },
+    {
+      "id": "c20",
+      "text": "The Puységur archive is already published",
+      "status": "first_party_observed",
+      "source_ids": [
+        "s11"
+      ],
+      "notes": "Historic content, no efficacy validation"
+    },
+    {
+      "id": "c21",
+      "text": "The Change Blindness post is published",
+      "status": "first_party_observed",
+      "source_ids": [
+        "s13"
+      ],
+      "notes": "Missing in-body /focus/ link in stored content at last read"
+    },
+    {
+      "id": "c22",
+      "text": "FTC requires affiliate material connections disclosed clearly near the recommendation",
+      "status": "supported",
+      "source_ids": [
+        "s09"
+      ],
+      "notes": "A generic page alone not sufficient"
+    },
+    {
+      "id": "c23",
+      "text": "Objective health benefit claims need competent and reliable evidence",
+      "status": "supported",
+      "source_ids": [
+        "s10"
+      ],
+      "notes": "Claims cannot be cured by a small disclaimer"
+    },
+    {
+      "id": "c24",
+      "text": "The Total Focus file was purchased, used or tested by FV",
+      "status": "not_verified",
+      "source_ids": [
+        "s06"
+      ],
+      "notes": "Never imply personal experience"
+    },
+    {
+      "id": "c25",
+      "text": "The existing Focus welcome email was received by an anonymous test subscriber",
+      "status": "not_verified",
+      "source_ids": [
+        "s12"
+      ],
+      "notes": "No permitted end-to-end proof"
+    },
+    {
+      "id": "c26",
+      "text": "The new proposed paid control is disabled",
+      "status": "source_design_assertion",
+      "source_ids": [
+        "s14"
+      ],
+      "notes": "Test native disabled attribute; actual browser pending"
+    },
+    {
+      "id": "c27",
+      "text": "Outbound affiliate clicks prove paid orders or commission",
+      "status": "false_proxy",
+      "source_ids": [
+        "s15"
+      ],
+      "notes": "Merchant confirmation required"
+    },
+    {
+      "id": "c28",
+      "text": "Grok posted immutable media IDs for three suggested routes",
+      "status": "not_verified",
+      "source_ids": [
+        "s15"
+      ],
+      "notes": "TASK-008 read lacks asset inventory"
+    },
+    {
+      "id": "c29",
+      "text": "Current attributable merchant gross/net revenue can be computed",
+      "status": "not_verified",
+      "source_ids": [
+        "s15"
+      ],
+      "notes": "Missing verified sales, returns, fees and qualified human sessions"
+    },
+    {
+      "id": "c30",
+      "text": "An optional transcript-only video concept proves video increases sales",
+      "status": "not_supported",
+      "source_ids": [
+        "s15"
+      ],
+      "notes": "Unrun predeclared A/B hypothesis"
+    },
+    {
+      "id": "c31",
+      "text": "A consumer can choose guided audio for its structure without accepting an effectiveness guarantee",
+      "status": "editorial_decision",
+      "source_ids": [
+        "s01",
+        "s06"
+      ],
+      "notes": "Preferences distinct from outcome assertions"
+    },
+    {
+      "id": "c32",
+      "text": "Paid referral CTA can be enabled before partner terms are verified",
+      "status": "prohibited",
+      "source_ids": [
+        "s14"
+      ],
+      "notes": "Requires merchant identity, URL, permissions, founder release"
+    }
+  ],
+  "release_gates": [
+    {
+      "gate": "named_partner_approval",
+      "status": "CLOSED",
+      "evidence": "not independently established by this sprint"
+    },
+    {
+      "gate": "partner_program_terms",
+      "status": "CLOSED",
+      "evidence": "not independently established by this sprint"
+    },
+    {
+      "gate": "specific_product_permission",
+      "status": "CLOSED",
+      "evidence": "not independently established by this sprint"
+    },
+    {
+      "gate": "permitted_website_channel",
+      "status": "CLOSED",
+      "evidence": "not independently established by this sprint"
+    },
+    {
+      "gate": "permitted_video_channel",
+      "status": "CLOSED",
+      "evidence": "not independently established by this sprint"
+    },
+    {
+      "gate": "permitted_email_channel",
+      "status": "CLOSED",
+      "evidence": "not independently established by this sprint"
+    },
+    {
+      "gate": "approved_creatives_scope",
+      "status": "CLOSED",
+      "evidence": "not independently established by this sprint"
+    },
+    {
+      "gate": "authorized_earning_url",
+      "status": "CLOSED",
+      "evidence": "not independently established by this sprint"
+    },
+    {
+      "gate": "destination_link_validation",
+      "status": "CLOSED",
+      "evidence": "not independently established by this sprint"
+    },
+    {
+      "gate": "purchase_refund_price_checkout",
+      "status": "CLOSED",
+      "evidence": "not independently established by this sprint"
+    },
+    {
+      "gate": "product_fulfillment_review",
+      "status": "CLOSED",
+      "evidence": "not independently established by this sprint"
+    },
+    {
+      "gate": "exact_product_efficacy_substantiation_for_claimed_outcomes",
+      "status": "CLOSED",
+      "evidence": "not independently established by this sprint"
+    },
+    {
+      "gate": "affiliate_disclosure_in_situ",
+      "status": "CLOSED",
+      "evidence": "not independently established by this sprint"
+    },
+    {
+      "gate": "real_browser_a11y",
+      "status": "CLOSED",
+      "evidence": "not independently established by this sprint"
+    },
+    {
+      "gate": "mobile_360_390_768_1440_1920",
+      "status": "CLOSED",
+      "evidence": "not independently established by this sprint"
+    },
+    {
+      "gate": "video_asset_rendered",
+      "status": "CLOSED",
+      "evidence": "not independently established by this sprint"
+    },
+    {
+      "gate": "video_caption_quality",
+      "status": "CLOSED",
+      "evidence": "not independently established by this sprint"
+    },
+    {
+      "gate": "video_transcript_quality",
+      "status": "CLOSED",
+      "evidence": "not independently established by this sprint"
+    },
+    {
+      "gate": "video_licensing",
+      "status": "CLOSED",
+      "evidence": "not independently established by this sprint"
+    },
+    {
+      "gate": "performance_budget_verified",
+      "status": "CLOSED",
+      "evidence": "not independently established by this sprint"
+    },
+    {
+      "gate": "js_disabled_fallback",
+      "status": "CLOSED",
+      "evidence": "not independently established by this sprint"
+    },
+    {
+      "gate": "test_cohort_consent",
+      "status": "CLOSED",
+      "evidence": "not independently established by this sprint"
+    },
+    {
+      "gate": "first_party_utm_quality",
+      "status": "CLOSED",
+      "evidence": "not independently established by this sprint"
+    },
+    {
+      "gate": "actual_published_grok_asset_ids",
+      "status": "CLOSED",
+      "evidence": "not independently established by this sprint"
+    },
+    {
+      "gate": "anonymous_focus_signup_verified",
+      "status": "CLOSED",
+      "evidence": "not independently established by this sprint"
+    },
+    {
+      "gate": "single_jetpack_list_verified",
+      "status": "CLOSED",
+      "evidence": "not independently established by this sprint"
+    },
+    {
+      "gate": "welcome_message_receipt_verified",
+      "status": "CLOSED",
+      "evidence": "not independently established by this sprint"
+    },
+    {
+      "gate": "merchant_paid_orders_verified",
+      "status": "CLOSED",
+      "evidence": "not independently established by this sprint"
+    },
+    {
+      "gate": "merchant_commission_reporting_verified",
+      "status": "CLOSED",
+      "evidence": "not independently established by this sprint"
+    },
+    {
+      "gate": "fee_refund_reconciliation",
+      "status": "CLOSED",
+      "evidence": "not independently established by this sprint"
+    },
+    {
+      "gate": "attribution_join_validated",
+      "status": "CLOSED",
+      "evidence": "not independently established by this sprint"
+    },
+    {
+      "gate": "privacy_and_retention_review",
+      "status": "CLOSED",
+      "evidence": "not independently established by this sprint"
+    },
+    {
+      "gate": "qa_signoff",
+      "status": "CLOSED",
+      "evidence": "not independently established by this sprint"
+    },
+    {
+      "gate": "homepage_art_lead_review",
+      "status": "CLOSED",
+      "evidence": "not independently established by this sprint"
+    },
+    {
+      "gate": "founder_release_approval",
+      "status": "CLOSED",
+      "evidence": "not independently established by this sprint"
+    },
+    {
+      "gate": "wordPress_CMS_release_approval",
+      "status": "CLOSED",
+      "evidence": "not independently established by this sprint"
+    },
+    {
+      "gate": "dispatch_channel_release_approval",
+      "status": "CLOSED",
+      "evidence": "not independently established by this sprint"
+    },
+    {
+      "gate": "analytics_release_approval",
+      "status": "CLOSED",
+      "evidence": "not independently established by this sprint"
+    },
+    {
+      "gate": "A_B_predeclared_and_conducted",
+      "status": "CLOSED",
+      "evidence": "not independently established by this sprint"
+    },
+    {
+      "gate": "net_rev_per_1000_verified",
+      "status": "CLOSED",
+      "evidence": "not independently established by this sprint"
+    }
+  ],
+  "hard_rules": [
+    "merchant commissions are not inferred from affiliate_outbound clicks",
+    "no live CMS update or affiliate URL without written approval and QA",
+    "no unverified product efficacy or inherited clinical effectiveness claims",
+    "adjacent financial disclosure before any earning link",
+    "a single existing /focus/ and Jetpack newsletter route; no duplicate list",
+    "publisher-specific acceptance requires account-backed documentation",
+    "unpublished buyer experiment is hypothesis, not causal evidence"
+  ],
+  "citation_policy": "seller descriptions identify advertised packages, not empirical outcomes",
+  "tested": "pending native test and actual browser; planned source assertions and mutation checks"
+}
