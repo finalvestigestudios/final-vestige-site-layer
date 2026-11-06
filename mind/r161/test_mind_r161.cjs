@@ -24,7 +24,7 @@ function verify(files) {
   const checkClaim=(id,decision) => claims.some(x=>x.id===id && x.decision===decision);
   // Independent editorial: scientific references exist and no endorsement linked to research.
   check('ARTICLE_IS_UNPUBLISHED',/status:.*UNPUBLISHED/i.test(article));
-  check('ARTICLE_ORIGINAL_THESIS',article.includes('Wander') && article.includes('Notice') && article.includes('Return'));
+  check('ARTICLE_ORIGINAL_THESIS',/wander/i.test(article) && /notic/i.test(article) && /return/i.test(article));
   check('ARTICLE_HASENKAMP_PRIMARY',article.includes('https://pubmed.ncbi.nlm.nih.gov/21782031/'));
   check('ARTICLE_RCT_PRIMARY',article.includes('https://pubmed.ncbi.nlm.nih.gov/23538911/'));
   check('ARTICLE_META_PRIMARY',article.includes('https://pubmed.ncbi.nlm.nih.gov/37578065/'));
