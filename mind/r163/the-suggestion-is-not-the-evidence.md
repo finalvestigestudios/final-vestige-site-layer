@@ -125,7 +125,7 @@ The record from Puységur to modern suggestion laboratories is neither a tale of
 
 [5] “Complementary treatment comparison for chronic pain management: A randomized longitudinal study” (2021). https://pubmed.ncbi.nlm.nih.gov/34358272/
 
-[6] “The use of audio self-hypnosis to promote weight loss using the transtheoretical model of change: a randomized clinical pilot trial” (2022/23). https://pubmed.ncbi.nlm.nih.gov/36536625/
+[6] “The use of audio self-hypnosis to promote weight loss using the transtheoretical model of change: a randomized clinical pilot trial” (2022). https://pubmed.ncbi.nlm.nih.gov/36536625/
 
 [7] U.S. Federal Trade Commission. *Health Products Compliance Guidance*. https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance
 
