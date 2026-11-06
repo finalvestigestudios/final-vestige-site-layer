@@ -77,7 +77,7 @@ def run_probe(blueprint: Path, output: Path, expected_sha: str, axe_path: Path |
               'html_bytes': len(markup.encode()), 'css_bytes': len(css.encode()),
               'js_bytes': len(js.encode()), 'actual_wp_render': False,
               'jetpack_signup_verified': False, 'native_zoom_tested': False,
-              'field_cwv_measured': False, 'axe_available': bool(axe_path),
+              'field_cwv_measured': False, 'axe_available': bool(axe_path and axe_path.is_file()),
               'viewports': [], 'release_qualified': False}
     with sync_playwright() as pw:
         binary = shutil.which('chromium') or shutil.which('chromium-browser')
