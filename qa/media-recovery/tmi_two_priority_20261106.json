@@ -1,0 +1,127 @@
+{
+  "schema": "fv-tmi-two-priority-recovery-v1",
+  "observed_on": "2026-11-06",
+  "provenance": {
+    "inventory": "qa/media-recovery/wire_gate_targets_20261106.json",
+    "inventory_blob_sha": "07d5d55f702f66a3807666c62167264aefaf07c6",
+    "post_id": 285,
+    "slot_count": 2,
+    "scope": "Stored WordPress <img src> references, not browser network responses",
+    "external_retrieval_tool": "web.open and web.image (retriever observations only)",
+    "related_site_qa_pr": 154,
+    "media_recovery_pr": 1228
+  },
+  "summary": {
+    "claimed_broken_legacy": 42,
+    "confirmed_visitor_broken": null,
+    "source_cohort_old_posts": 61,
+    "source_cohort_current_posts": 66,
+    "proposed_sitewide_transfer_savings_percent": 76,
+    "measured_transfer_savings_percent": null,
+    "oversized_wp_originals": 13,
+    "oversized_original_storage_bytes": 43522829
+  },
+  "assets": [
+    {
+      "key": "285:5",
+      "post_id": 285,
+      "existing_src": "https://images.saymedia-content.com/.image/ar_16:9,c_fill,cs_srgb,fl_progressive,q_auto:eco,w_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg",
+      "source_retrieval": {
+        "method": "web.open",
+        "observed_on": "2026-11-06",
+        "result": "retriever_404",
+        "browser_http_status": null,
+        "origin_http_status": null
+      },
+      "primary_context": {
+        "url": "https://discover.hubpages.com/entertainment/The-China-Syndrome-Blockbuster-Movie-Becomes-Eerie-Prophecy",
+        "observation": "The publisher's story captions a June 6, 2010 Three Mile Island generating station photo as Wikimedia Commons/Public Domain; a matched source binary/crop has not been proved."
+      },
+      "candidate": {
+        "catalog_url": "https://commons.wikimedia.org/wiki/File:Three_mile_island_062010.jpg",
+        "provider": "Wikimedia Commons original photographer upload (Marque1313)",
+        "source_type": "original_photographer_catalog",
+        "image_description": "Three Mile Island generating station as photographed June 2010, not a 1979 accident photo or a movie still",
+        "relationship": "publisher_caption_subject_alignment_unverified_crop",
+        "same_binary": false,
+        "exact_crop_verified": false,
+        "native_width": 819,
+        "native_height": 614,
+        "conditional_preview_width": 819,
+        "conditional_preview_height": 614,
+        "rights": "PD-self claimed by photographer; verify catalog item and original attribution before republishing",
+        "item_republication_clearance": "HOLD"
+      },
+      "protections": [
+        "Never replace this power-station image with a copyrighted movie poster/still",
+        "Do not claim it depicts the 1979 accident",
+        "Do not upscale the 819px Commons source to 960px or the publisher's 1200px transformation"
+      ]
+    },
+    {
+      "key": "285:2",
+      "post_id": 285,
+      "existing_src": "https://blog.ucsusa.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+      "source_retrieval": {
+        "method": "web.open",
+        "observed_on": "2026-11-06",
+        "result": "retriever_wrapper_500_after_redirect_to_blog.ucs.org",
+        "redirect_target": "https://blog.ucs.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+        "browser_http_status": null,
+        "origin_http_status": null
+      },
+      "primary_context": {
+        "url": "https://blog.ucs.org/dlochbaum/nuclear-plant-accidents-three-mile-island/",
+        "observation": "Publisher's still-live 2016 analysis embeds its Fig. 4 link at the legacy blog.ucsusa.org image URL and credits 'Nuclear Regulatory Commission'."
+      },
+      "candidate": {
+        "catalog_url": "https://commons.wikimedia.org/wiki/File:TMI-2_control_panel.png",
+        "upstream_report_catalog_url": "https://www.si.edu/object/report-presidents-commission-accident-three-mile-island-need-change-legacy-tmi:siris_sil_765655",
+        "provider": "1979 President's Commission report figure, Commons scan with later retouch",
+        "source_type": "historical_federal_report_reproduction",
+        "image_description": "Control panel with maintenance tags obscuring emergency-feedwater valve indicator lights",
+        "relationship": "same_documented_subject_not_same_verified_scan_or_crop",
+        "same_binary": false,
+        "exact_crop_verified": false,
+        "native_width": 604,
+        "native_height": 590,
+        "conditional_preview_width": 604,
+        "conditional_preview_height": 590,
+        "rights": "Federal report reproduction labeled public domain by Commons, but current file was retouched in 2010; verify alteration provenance and NRC image-use limitations.",
+        "rights_policy_url": "https://www.nrc.gov/reading-rm/photo-gallery/guide",
+        "item_republication_clearance": "HOLD"
+      },
+      "protections": [
+        "Do not substitute a wide NRC control-room overview for the close-up showing tags",
+        "Do not assume the crowd-retouched Commons file is pixel-identical to the UCS Fig.4 image",
+        "No enlargement above the 604px source width without another verified higher-resolution original"
+      ]
+    }
+  ],
+  "browser_validation": {
+    "required": true,
+    "current_src": null,
+    "natural_width": null,
+    "natural_height": null,
+    "network_status": null,
+    "cold_wire_bytes": null,
+    "cache_flags": null,
+    "visual_crops_approved": false,
+    "visitor_broken": null
+  },
+  "release": {
+    "wordpress_production_writes": 0,
+    "third_party_image_downloads": 0,
+    "third_party_image_caches": 0,
+    "production_image_fixes": 0,
+    "subscription_spend_usd": 0,
+    "homepage_design_changes": 0
+  },
+  "approved_recovery_pipeline": [
+    "Logged-out Chrome/mobile inspect existing img currentSrc, response/redirect chain and naturalWidth",
+    "Rights and exact-identity/crop check against publisher and primary archive",
+    "Only if broken, prepare max-960px no-upscale first-party WordPress media derivative on staging with credits",
+    "Visual parity inspection for captions, chronology, mobile crops, accessibility",
+    "Measure full cold network transfer against matched before/after page cohorts; obtain explicit publication authorization"
+  ]
+}
