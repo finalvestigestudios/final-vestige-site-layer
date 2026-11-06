@@ -1,0 +1,470 @@
+{
+  "schema": "fv-commons-redirect-readonly-shard-v1",
+  "captured_date": "2026-11-06",
+  "source": "WordPress published post editor HTML; read-only; unprobed URLs",
+  "posts": [
+    {
+      "post_id": 166,
+      "url": "https://finalvestige.com/2026/08/18/they-checked-the-dam-that-morning/",
+      "modified_wp": "2026-11-02T21:39:29",
+      "inline_tags": 7,
+      "commons_redirects": 5
+    },
+    {
+      "post_id": 214,
+      "url": "https://finalvestige.com/2026/08/18/the-lifeboats-never-left-the-deck/",
+      "modified_wp": "2026-11-02T21:39:34",
+      "inline_tags": 6,
+      "commons_redirects": 4
+    },
+    {
+      "post_id": 215,
+      "url": "https://finalvestige.com/2026/08/18/a-wall-in-the-dark/",
+      "modified_wp": "2026-10-29T15:59:59",
+      "inline_tags": 6,
+      "commons_redirects": 6
+    },
+    {
+      "post_id": 216,
+      "url": "https://finalvestige.com/2026/08/18/the-fire-department-was-already-there/",
+      "modified_wp": "2026-11-02T21:39:36",
+      "inline_tags": 6,
+      "commons_redirects": 6
+    },
+    {
+      "post_id": 217,
+      "url": "https://finalvestige.com/2026/08/18/the-gas-had-no-smell/",
+      "modified_wp": "2026-10-29T16:04:52",
+      "inline_tags": 6,
+      "commons_redirects": 6
+    },
+    {
+      "post_id": 218,
+      "url": "https://finalvestige.com/2026/08/18/the-rock-had-to-be-real/",
+      "modified_wp": "2026-10-29T16:01:32",
+      "inline_tags": 6,
+      "commons_redirects": 6
+    }
+  ],
+  "images": [
+    {
+      "key": "166:2",
+      "post_id": 166,
+      "image_index": 2,
+      "post_url": "https://finalvestige.com/2026/08/18/they-checked-the-dam-that-morning/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/St.%20Francis%20abutment.jpg?width=1280",
+      "commons_file_title_unverified": "St. Francis abutment.jpg",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:St._Francis_abutment.jpg",
+      "requested_width_px": 1280,
+      "license_hints_from_caption": [
+        "Public domain"
+      ]
+    },
+    {
+      "key": "166:3",
+      "post_id": 166,
+      "image_index": 3,
+      "post_url": "https://finalvestige.com/2026/08/18/they-checked-the-dam-that-morning/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Twisted_Tracks.jpg?width=1280",
+      "commons_file_title_unverified": "Twisted Tracks.jpg",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:Twisted_Tracks.jpg",
+      "requested_width_px": 1280,
+      "license_hints_from_caption": []
+    },
+    {
+      "key": "166:4",
+      "post_id": 166,
+      "image_index": 4,
+      "post_url": "https://finalvestige.com/2026/08/18/they-checked-the-dam-that-morning/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/St.%20Francis%20Dam%20after%20the%201928%20failure.jpg?width=1280",
+      "commons_file_title_unverified": "St. Francis Dam after the 1928 failure.jpg",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:St._Francis_Dam_after_the_1928_failure.jpg",
+      "requested_width_px": 1280,
+      "license_hints_from_caption": [
+        "Public domain"
+      ]
+    },
+    {
+      "key": "166:5",
+      "post_id": 166,
+      "image_index": 5,
+      "post_url": "https://finalvestige.com/2026/08/18/they-checked-the-dam-that-morning/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Standing_section.jpg?width=1280",
+      "commons_file_title_unverified": "Standing section.jpg",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:Standing_section.jpg",
+      "requested_width_px": 1280,
+      "license_hints_from_caption": []
+    },
+    {
+      "key": "166:6",
+      "post_id": 166,
+      "image_index": 6,
+      "post_url": "https://finalvestige.com/2026/08/18/they-checked-the-dam-that-morning/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Man%20pointing%20at%20crack%20in%20Saint%20Francis%20Dam%20after%20its%20collapse.jpg?width=1280",
+      "commons_file_title_unverified": "Man pointing at crack in Saint Francis Dam after its collapse.jpg",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:Man_pointing_at_crack_in_Saint_Francis_Dam_after_its_collapse.jpg",
+      "requested_width_px": 1280,
+      "license_hints_from_caption": [
+        "CC BY 4.0"
+      ]
+    },
+    {
+      "key": "214:1",
+      "post_id": 214,
+      "image_index": 1,
+      "post_url": "https://finalvestige.com/2026/08/18/the-lifeboats-never-left-the-deck/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Wreck_of_the_Eastland,_Chicago,_1915.jpg",
+      "commons_file_title_unverified": "Wreck of the Eastland, Chicago, 1915.jpg",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:Wreck_of_the_Eastland%2C_Chicago%2C_1915.jpg",
+      "requested_width_px": null,
+      "license_hints_from_caption": [
+        "Public domain"
+      ]
+    },
+    {
+      "key": "214:2",
+      "post_id": 214,
+      "image_index": 2,
+      "post_url": "https://finalvestige.com/2026/08/18/the-lifeboats-never-left-the-deck/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/EastlandKenosha.jpg",
+      "commons_file_title_unverified": "EastlandKenosha.jpg",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:EastlandKenosha.jpg",
+      "requested_width_px": null,
+      "license_hints_from_caption": [
+        "public domain"
+      ]
+    },
+    {
+      "key": "214:3",
+      "post_id": 214,
+      "image_index": 3,
+      "post_url": "https://finalvestige.com/2026/08/18/the-lifeboats-never-left-the-deck/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Helen_Repa_Eastland_Disaster_photo.png?width=1280",
+      "commons_file_title_unverified": "Helen Repa Eastland Disaster photo.png",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:Helen_Repa_Eastland_Disaster_photo.png",
+      "requested_width_px": 1280,
+      "license_hints_from_caption": [
+        "public domain"
+      ]
+    },
+    {
+      "key": "214:5",
+      "post_id": 214,
+      "image_index": 5,
+      "post_url": "https://finalvestige.com/2026/08/18/the-lifeboats-never-left-the-deck/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Photograph_of_The_Eastland_(upside_down)_on_Chicago_River,_Chicago._-_NARA_-_281841.jpg?width=1280",
+      "commons_file_title_unverified": "Photograph of The Eastland (upside down) on Chicago River, Chicago. - NARA - 281841.jpg",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:Photograph_of_The_Eastland_(upside_down)_on_Chicago_River%2C_Chicago._-_NARA_-_281841.jpg",
+      "requested_width_px": 1280,
+      "license_hints_from_caption": []
+    },
+    {
+      "key": "215:0",
+      "post_id": 215,
+      "image_index": 0,
+      "post_url": "https://finalvestige.com/2026/08/18/a-wall-in-the-dark/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Cherry_Mine_disaster,_crowd_at_mouth_of_shaft.jpg?width=1280",
+      "commons_file_title_unverified": "Cherry Mine disaster, crowd at mouth of shaft.jpg",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:Cherry_Mine_disaster%2C_crowd_at_mouth_of_shaft.jpg",
+      "requested_width_px": 1280,
+      "license_hints_from_caption": [
+        "public domain"
+      ]
+    },
+    {
+      "key": "215:1",
+      "post_id": 215,
+      "image_index": 1,
+      "post_url": "https://finalvestige.com/2026/08/18/a-wall-in-the-dark/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Cherry_Mine_fan_house_and_escape_shaft_postcard.jpg?width=1280",
+      "commons_file_title_unverified": "Cherry Mine fan house and escape shaft postcard.jpg",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:Cherry_Mine_fan_house_and_escape_shaft_postcard.jpg",
+      "requested_width_px": 1280,
+      "license_hints_from_caption": [
+        "public domain"
+      ]
+    },
+    {
+      "key": "215:2",
+      "post_id": 215,
+      "image_index": 2,
+      "post_url": "https://finalvestige.com/2026/08/18/a-wall-in-the-dark/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/A_miner%27s_family_at_dinner_-_DPLA_-_5f57daf0a0ca864c0d59173171a22547.jpg?width=1280",
+      "commons_file_title_unverified": "A miner's family at dinner - DPLA - 5f57daf0a0ca864c0d59173171a22547.jpg",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:A_miner's_family_at_dinner_-_DPLA_-_5f57daf0a0ca864c0d59173171a22547.jpg",
+      "requested_width_px": 1280,
+      "license_hints_from_caption": [
+        "Public domain"
+      ]
+    },
+    {
+      "key": "215:3",
+      "post_id": 215,
+      "image_index": 3,
+      "post_url": "https://finalvestige.com/2026/08/18/a-wall-in-the-dark/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/The_Appalling_Mine_Disaster_at_Cherry,_III._(1).png?width=1280",
+      "commons_file_title_unverified": "The Appalling Mine Disaster at Cherry, III. (1).png",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:The_Appalling_Mine_Disaster_at_Cherry%2C_III._(1).png",
+      "requested_width_px": 1280,
+      "license_hints_from_caption": [
+        "public domain"
+      ]
+    },
+    {
+      "key": "215:4",
+      "post_id": 215,
+      "image_index": 4,
+      "post_url": "https://finalvestige.com/2026/08/18/a-wall-in-the-dark/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Cherry_Mine_disaster,_mourners_and_coffins_LCCN2014684364.jpg?width=1280",
+      "commons_file_title_unverified": "Cherry Mine disaster, mourners and coffins LCCN2014684364.jpg",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:Cherry_Mine_disaster%2C_mourners_and_coffins_LCCN2014684364.jpg",
+      "requested_width_px": 1280,
+      "license_hints_from_caption": [
+        "public domain"
+      ]
+    },
+    {
+      "key": "215:5",
+      "post_id": 215,
+      "image_index": 5,
+      "post_url": "https://finalvestige.com/2026/08/18/a-wall-in-the-dark/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Group_made_orphans_by_Cherry_Mine_disaster_where_400_men_were_entombed,_Nov._13,_1909,_Cherry,_Ill._-_Washington_Photo_Co._LCCN2011661524.jpg?width=1280",
+      "commons_file_title_unverified": "Group made orphans by Cherry Mine disaster where 400 men were entombed, Nov. 13, 1909, Cherry, Ill. - Washington Photo Co. LCCN2011661524.jpg",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:Group_made_orphans_by_Cherry_Mine_disaster_where_400_men_were_entombed%2C_Nov._13%2C_1909%2C_Cherry%2C_Ill._-_Washington_Photo_Co._LCCN2011661524.jpg",
+      "requested_width_px": 1280,
+      "license_hints_from_caption": []
+    },
+    {
+      "key": "216:0",
+      "post_id": 216,
+      "image_index": 0,
+      "post_url": "https://finalvestige.com/2026/08/18/the-fire-department-was-already-there/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Txcitydisasterparkinglot.jpg?width=1280",
+      "commons_file_title_unverified": "Txcitydisasterparkinglot.jpg",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:Txcitydisasterparkinglot.jpg",
+      "requested_width_px": 1280,
+      "license_hints_from_caption": [
+        "public domain"
+      ]
+    },
+    {
+      "key": "216:1",
+      "post_id": 216,
+      "image_index": 1,
+      "post_url": "https://finalvestige.com/2026/08/18/the-fire-department-was-already-there/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Texas_City_Disaster_Firemen_Memorial.jpg?width=960",
+      "commons_file_title_unverified": "Texas City Disaster Firemen Memorial.jpg",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:Texas_City_Disaster_Firemen_Memorial.jpg",
+      "requested_width_px": 960,
+      "license_hints_from_caption": [
+        "CC BY-SA 4.0"
+      ]
+    },
+    {
+      "key": "216:2",
+      "post_id": 216,
+      "image_index": 2,
+      "post_url": "https://finalvestige.com/2026/08/18/the-fire-department-was-already-there/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Txcitydisaster5storybuilding.jpg",
+      "commons_file_title_unverified": "Txcitydisaster5storybuilding.jpg",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:Txcitydisaster5storybuilding.jpg",
+      "requested_width_px": null,
+      "license_hints_from_caption": [
+        "Public-domain"
+      ]
+    },
+    {
+      "key": "216:3",
+      "post_id": 216,
+      "image_index": 3,
+      "post_url": "https://finalvestige.com/2026/08/18/the-fire-department-was-already-there/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Texas_-_Texas_City_-_NARA_-_68149862.jpg?width=1280",
+      "commons_file_title_unverified": "Texas - Texas City - NARA - 68149862.jpg",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:Texas_-_Texas_City_-_NARA_-_68149862.jpg",
+      "requested_width_px": 1280,
+      "license_hints_from_caption": [
+        "public domain"
+      ]
+    },
+    {
+      "key": "216:4",
+      "post_id": 216,
+      "image_index": 4,
+      "post_url": "https://finalvestige.com/2026/08/18/the-fire-department-was-already-there/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Txcitydisasterboat.jpg",
+      "commons_file_title_unverified": "Txcitydisasterboat.jpg",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:Txcitydisasterboat.jpg",
+      "requested_width_px": null,
+      "license_hints_from_caption": [
+        "Public-domain"
+      ]
+    },
+    {
+      "key": "216:5",
+      "post_id": 216,
+      "image_index": 5,
+      "post_url": "https://finalvestige.com/2026/08/18/the-fire-department-was-already-there/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Grandcampanchor.jpg",
+      "commons_file_title_unverified": "Grandcampanchor.jpg",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:Grandcampanchor.jpg",
+      "requested_width_px": null,
+      "license_hints_from_caption": [
+        "public domain"
+      ]
+    },
+    {
+      "key": "217:0",
+      "post_id": 217,
+      "image_index": 0,
+      "post_url": "https://finalvestige.com/2026/08/18/the-gas-had-no-smell/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/New_London_School_explosion.jpg?width=1280",
+      "commons_file_title_unverified": "New London School explosion.jpg",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:New_London_School_explosion.jpg",
+      "requested_width_px": 1280,
+      "license_hints_from_caption": [
+        "public domain"
+      ]
+    },
+    {
+      "key": "217:1",
+      "post_id": 217,
+      "image_index": 1,
+      "post_url": "https://finalvestige.com/2026/08/18/the-gas-had-no-smell/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/New_London_School_before_explosion.webp?width=1280",
+      "commons_file_title_unverified": "New London School before explosion.webp",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:New_London_School_before_explosion.webp",
+      "requested_width_px": 1280,
+      "license_hints_from_caption": [
+        "public-domain"
+      ]
+    },
+    {
+      "key": "217:2",
+      "post_id": 217,
+      "image_index": 2,
+      "post_url": "https://finalvestige.com/2026/08/18/the-gas-had-no-smell/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/INP_Photos_of_New_London_School_explosion.jpg?width=1280",
+      "commons_file_title_unverified": "INP Photos of New London School explosion.jpg",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:INP_Photos_of_New_London_School_explosion.jpg",
+      "requested_width_px": 1280,
+      "license_hints_from_caption": []
+    },
+    {
+      "key": "217:3",
+      "post_id": 217,
+      "image_index": 3,
+      "post_url": "https://finalvestige.com/2026/08/18/the-gas-had-no-smell/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/INP_Photos_of_New_London_School_explosion_(1).jpg?width=1280",
+      "commons_file_title_unverified": "INP Photos of New London School explosion (1).jpg",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:INP_Photos_of_New_London_School_explosion_(1).jpg",
+      "requested_width_px": 1280,
+      "license_hints_from_caption": [
+        "public domain"
+      ]
+    },
+    {
+      "key": "217:4",
+      "post_id": 217,
+      "image_index": 4,
+      "post_url": "https://finalvestige.com/2026/08/18/the-gas-had-no-smell/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/INP_Photos_of_New_London_School_explosion_(2).jpg?width=1280",
+      "commons_file_title_unverified": "INP Photos of New London School explosion (2).jpg",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:INP_Photos_of_New_London_School_explosion_(2).jpg",
+      "requested_width_px": 1280,
+      "license_hints_from_caption": [
+        "public domain"
+      ]
+    },
+    {
+      "key": "217:5",
+      "post_id": 217,
+      "image_index": 5,
+      "post_url": "https://finalvestige.com/2026/08/18/the-gas-had-no-smell/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/New_London_School_Explosion_Memorial_-_46699056584.jpg?width=1280",
+      "commons_file_title_unverified": "New London School Explosion Memorial - 46699056584.jpg",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:New_London_School_Explosion_Memorial_-_46699056584.jpg",
+      "requested_width_px": 1280,
+      "license_hints_from_caption": [
+        "CC BY-SA 2.0"
+      ]
+    },
+    {
+      "key": "218:0",
+      "post_id": 218,
+      "image_index": 0,
+      "post_url": "https://finalvestige.com/2026/08/18/the-rock-had-to-be-real/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Glomar_Manganese_Nodule_Encased_in_Lucite.jpg?width=1280",
+      "commons_file_title_unverified": "Glomar Manganese Nodule Encased in Lucite.jpg",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:Glomar_Manganese_Nodule_Encased_in_Lucite.jpg",
+      "requested_width_px": 1280,
+      "license_hints_from_caption": [
+        "public domain"
+      ]
+    },
+    {
+      "key": "218:1",
+      "post_id": 218,
+      "image_index": 1,
+      "post_url": "https://finalvestige.com/2026/08/18/the-rock-had-to-be-real/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/USNS_Glomar_Explorer_(T-AG-193).jpg?width=1280",
+      "commons_file_title_unverified": "USNS Glomar Explorer (T-AG-193).jpg",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:USNS_Glomar_Explorer_(T-AG-193).jpg",
+      "requested_width_px": 1280,
+      "license_hints_from_caption": [
+        "public domain"
+      ]
+    },
+    {
+      "key": "218:2",
+      "post_id": 218,
+      "image_index": 2,
+      "post_url": "https://finalvestige.com/2026/08/18/the-rock-had-to-be-real/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Glomar_Patch.jpg?width=1280",
+      "commons_file_title_unverified": "Glomar Patch.jpg",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:Glomar_Patch.jpg",
+      "requested_width_px": 1280,
+      "license_hints_from_caption": [
+        "public domain"
+      ]
+    },
+    {
+      "key": "218:3",
+      "post_id": 218,
+      "image_index": 3,
+      "post_url": "https://finalvestige.com/2026/08/18/the-rock-had-to-be-real/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Model_of_the_sunken_and_deteriorated_K-129_submarine_was_created_by_the_CIA_during_the_AZORIAN_mission_that_has_never_been_displayed_before_at_the_CIA_Museum_in_2022.jpg?width=1280",
+      "commons_file_title_unverified": "Model of the sunken and deteriorated K-129 submarine was created by the CIA during the AZORIAN mission that has never been displayed before at the CIA Museum in 2022.jpg",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:Model_of_the_sunken_and_deteriorated_K-129_submarine_was_created_by_the_CIA_during_the_AZORIAN_mission_that_has_never_been_displayed_before_at_the_CIA_Museum_in_2022.jpg",
+      "requested_width_px": 1280,
+      "license_hints_from_caption": [
+        "public domain"
+      ]
+    },
+    {
+      "key": "218:4",
+      "post_id": 218,
+      "image_index": 4,
+      "post_url": "https://finalvestige.com/2026/08/18/the-rock-had-to-be-real/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Painting-of-AZORIAN-mission-approved.jpg?width=1280",
+      "commons_file_title_unverified": "Painting-of-AZORIAN-mission-approved.jpg",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:Painting-of-AZORIAN-mission-approved.jpg",
+      "requested_width_px": 1280,
+      "license_hints_from_caption": [
+        "public domain"
+      ]
+    },
+    {
+      "key": "218:5",
+      "post_id": 218,
+      "image_index": 5,
+      "post_url": "https://finalvestige.com/2026/08/18/the-rock-had-to-be-real/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Hughes_Glomar_Explorer_coveralls_and_ashtray_are_examples_of_the_depth_of_cover_that_CIA_and_Hughes_manufactured_for_the_expedition_and_these_artifacts_have_never_been_displayed_before_at_the_CIA_Museum_in_2022.jpg?width=1280",
+      "commons_file_title_unverified": "Hughes Glomar Explorer coveralls and ashtray are examples of the depth of cover that CIA and Hughes manufactured for the expedition and these artifacts have never been displayed before at the CIA Museum in 2022.jpg",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:Hughes_Glomar_Explorer_coveralls_and_ashtray_are_examples_of_the_depth_of_cover_that_CIA_and_Hughes_manufactured_for_the_expedition_and_these_artifacts_have_never_been_displayed_before_at_the_CIA_Museum_in_2022.jpg",
+      "requested_width_px": 1280,
+      "license_hints_from_caption": [
+        "public domain"
+      ]
+    }
+  ]
+}
