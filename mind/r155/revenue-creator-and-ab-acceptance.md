@@ -1,0 +1,37 @@
+# R155 — Conversion acceptance, creator fit, internal links and no-JS experiment contract
+**2026-11-05 | Draft only; HARD HOLD.** Sources and authorization in accompanying JSON. Owned solely by Mind editorial/affiliate lane, not homepage #150, PR #49, /mind/ canonical PR #172 or Dispatch #174.
+
+## Actual business question and prioritization
+The highest-value action is not another generic landing page: get one **authorized, actually purchasable** Mind-relevant offer and demonstrate independently verified paid orders. Hypnosis Live Total Focus remains an exact-audio, high-intent candidate using the **existing R149 buyer guide** (PR #1134). Named Inspire3 partner approval, offer URL and channel rights UNKNOWN. If partner clearance absent, authenticate a rights-cleared existing FV-owned Payhip Mind SKU with price, checkout, delivery, refund and licensing proofs. Neither is currently confirmed sale-ready by our read-only evidence.
+
+| Priority | OFFER → FUNNEL STEP | BLOCKER | CHANGE / EXPERIMENT | PASS/FAIL EVIDENCE | OWNER |
+|---|---|---|---|---|---|
+| P0 | Exact Total Focus → paid commission | Acceptance and earning URL UNKNOWN | Authenticate named portal, product inclusion, permitted TikTok/YouTube/Dispatch channels, payout and reversals | HARD HOLD; public program cannot establish account clearance | Founder + Mind |
+| P0 | FV owned paid Mind SKU → merchant order | Rights-cleared SKU/checkout/fulfillment UNKNOWN | Check Payhip authenticated inventory, display price, download, returns and genuine order reporting | NOT VERIFIED; no transaction created | Commerce/Claude |
+| P1 | Change Blindness / Puységur → free Focus | No literal contextual /focus/ in stored bodies according to most recent authenticated read-only QA | Site QA proposes existing R142 component; founder approves WordPress edits | DRAFT ONLY; no guest completion tested | Site QA/Claude |
+| P1 | Focus → confirmed lead | Jetpack block presence is not confirmed email signup/welcome delivery | QA in authorized browser using consented test procedure and unsubscribe verification | UNVERIFIED, do not infer from pageview | Site QA/Dispatch |
+| P1 | Social → landing → product intent | Grok immutable asset_id and actual platform URLs UNKNOWN | Praxxis reconciles TASK-008; do not create media or overwrite queue | NOT ACTIVATED; no attributed human sessions | Praxxis/Grok |
+| P1 | Paid order → settled net revenue | Merchant reports, fees, refunds, approved affiliate settlement and qualified-human denominator missing | Join records with consent-limited first-party analytics | NOT COMPUTABLE—not zero | Commerce/Growth |
+
+## Three creator-topic maps (not creator assignments)
+- **Thatcher illusion:** proposed original 30–45-second video illustrating rotation with rights-cleared adult portrait or original diagram. *Unpublished R155 article* is destination; original technique/source first; optional published /focus/ only. **No automatic paid recommendation**: viewer purchase intent low. Media URL/asset_id unknown.
+- **Change blindness:** topic may already have a Grok asset but no public immutable media ID verified for this contract. Destination published https://finalvestige.com/2026/11/02/change-blindness/ . Honest focus bridge only after Site QA. Product guide appears only if self-selected.
+- **Puységur and Mesmerism:** historical claim vs archival records. Destination published https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/ . No statement that magnetism works, no clinical promises. Separate Total Focus buyer guide only for distinct present-day guided-audio intent.
+
+Actual media IDs, hooks, permissible link positions, consent, dates and platform metrics must be reconciled through *existing* Grok/Praxxis TASK-008; never insert fake creative assignments, social posts or utm_content IDs.
+
+## Internal link plan and UX
+Article → primary journal DOI and independent scholarly followups; published Change Blindness (cross-comparison only after verifying canonical link); Puységur historical archive; Focus Fieldbook as optional free follow-up. On /mind/ canonical PR #172, add a themed card **only after editorial approval**; do not alter that branch. Direct access to original scientific sources must never require subscribing or purchasing. Clear editorial vs tools separation and proximate disclosure. No replacement newsletter form.
+
+## First-party privacy-safe measurement contract
+Campaign candidate: utm_source=REAL_PLATFORM, utm_medium=organic_social, utm_campaign=mind_perception_pilot_2026_11, utm_content=REAL_GROK_ASSET_ID. Missing media IDs stay NULL. Preserve only approved UTM fields and event timestamps/aggregate counts; strip email, IP, precise geo, user agents, full referrer query strings and visitor profiles from exported reports. Honor consent, retention, and existing instrumentation; do **not** ship duplicate script or hidden tracking pixel.
+
+Distinct event definitions: campaign_landing (qualified human session where defensible) → article_to_resource_click → confirmed_signup (only authoritative Jetpack record) → offer_guide_view → affiliate_outbound (only actual approved outbound link) → merchant_confirmed_purchase (only paid merchant-source record) → affiliate_commission_settled (only paid settlement) → refunds_and_fees → settled_net_revenue. Clicks, followers, views and checkout starts are NOT paid conversions.
+
+Scorecard 7-day and 30-day cohorts: sum(confirmed settled gross receipt less merchant costs, refunds, chargebacks, attributable creator/direct costs where documented) ÷ qualified-human sessions × 1,000. If numerator/denominator cannot be reconciled, report **NOT COMPUTABLE**; null is not zero. Deduplicate refunds and repeat orders by merchant transaction ID in secure systems, never public GitHub. Flag small sample, unknown attribution and long settlement lag. Do not label visitor device fingerprinting as session qualification.
+
+## A/B hypothesis retained, not run
+Existing Zen12 pilot remains **text-only source guide (A)** versus **same source guide + optional original 30–45-second locally hosted, captioned, transcript-accessible film (B)**. Purpose: test whether film increases **settled paid revenue per 1,000 qualified human sessions**, while holding offer, copy, pricing and disclosure constant. No automatic play; poster with dimensions; no-JS text; 360/390/768/1440/1920 review; reduced motion, visible keyboard focus, sound optional, no third-party player. No randomization or media exists. Do not launch until affiliate clearance, source-proof, production approval, baseline consent, functionality and site QA pass. Avoid declaring winner on tiny samples or click-rate alone.
+
+## Release and handoff
+Research/source claims reviewed against Thompson 1980, Lewis 2001, Boutsen & Humphreys 2003, Psalta & Andrews 2014, FTC and the exact Total Focus page. The merchant's $24.44 display and advertised 14-day refund period are **seller representations only** as of retrieval 2026-11-05; no price text in on-site component, checkout not tested. Any future earning link needs explicit adjacent commission disclosure and two-person review. All commerce/release gates CLOSED. No live CMS/nav/Jetpack/email/social/analytics changes, no payment, no spend, no product endorsement. Coordinate findings in Issues #171, #820, QA #126, art #150, Dispatch #174 and Praxxis/Grok dated handoff.
