@@ -37,12 +37,31 @@ def focus_scroll_fraction(total_height, visible_height, top, widget_y, widget_he
     return min(1.0, max(0.0, desired / max(total_height, 1.0),
                         )) if maximum else None
 
+def wheel_scroll_units(*, delta=0, button=None):
+    """Translate an OS wheel event into bounded Tk vertical scroll units.
+
+    Windows/macOS generate MouseWheel delta events; X11 uses Button-4/5.
+    Direction and magnitude use only native integers, never widget contents.
+    Invalid event shapes are rejected without invoking application callbacks.
+    """
+    if button is not None:
+        if type(button) is not int or button not in (4, 5):
+            raise ValueError("Invalid mouse wheel button")
+        return -3 if button == 4 else 3
+    if type(delta) is not int:
+        raise ValueError("Invalid mouse wheel delta")
+    if delta == 0:
+        return 0
+    ticks = min(4, max(1, (abs(delta) + 119) // 120))
+    return (-3 if delta > 0 else 3) * ticks
+
 
 class ScrollableForm:
     """Single root-owned vertical viewport; controls keep native Tk Tab order.
 
-    The canvas and scrollbar are not keyboard-focus targets. When the user Tabs
-    to a field/button below the viewport, the focused control scrolls into view.
+    The canvas and scrollbar are not keyboard-focus targets. Tab/shortcut
+    focus still reveals obscured controls. Root-local wheel events scroll only
+    this app's viewport, never a child dialog or another application window.
     Styles follow the current system window background instead of hard-coded
     foreground/background colors.
     """
@@ -70,6 +89,11 @@ class ScrollableForm:
         self.frame.bind("<Configure>", self._content_resize, add="+")
         self.canvas.bind("<Configure>", self._canvas_resize, add="+")
         root.bind("<FocusIn>", self._focus_reveal, add="+")
+        # App-root bindings receive descendant Tk events via bindtags, without
+        # process-global bind_all hooks or hijacking dialog wheel behavior.
+        root.bind("<MouseWheel>", self._mouse_wheel, add="+")
+        root.bind("<Button-4>", self._x11_wheel, add="+")
+        root.bind("<Button-5>", self._x11_wheel, add="+")
 
     def track_label(self, label):
         """Responsive wrap without inspecting or recording text contents."""
@@ -88,6 +112,32 @@ class ScrollableForm:
         wraplength = max(100, event.width - 72)
         for widget in self.wrapping_labels:
             widget.configure(wraplength=wraplength)
+
+    def _inside_viewport(self, widget):
+        """Only descendants of our own viewport may scroll this canvas."""
+        while widget is not None:
+            if widget is self.viewport:
+                return True
+            widget = getattr(widget, "master", None)
+        return False
+
+    def _scroll_wheel(self, event, *, button=None):
+        if not self._inside_viewport(event.widget):
+            return None
+        units = wheel_scroll_units(delta=getattr(event, "delta", 0), button=button)
+        if not units:
+            return None
+        lo, hi = self.canvas.yview()
+        if lo <= 0.0 and hi >= 1.0:
+            return None
+        self.canvas.yview_scroll(units, "units")
+        return "break"
+
+    def _mouse_wheel(self, event):
+        return self._scroll_wheel(event)
+
+    def _x11_wheel(self, event):
+        return self._scroll_wheel(event, button=event.num)
 
     def _focus_reveal(self, event):
         widget = event.widget
