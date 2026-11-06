@@ -12,9 +12,9 @@ R153 supplies `r153_source_ledger_compat.js` and scoped staging-only `r153_sourc
 
 - Node v22.16.0 `--check` of the source JS: PASS.
 - Playwright Chromium 144.0.7559.96, **PR158-markup-shape controlled fixture (NOT complete real template)**: 99/99 checks PASS at 320, 360, 390, 768, 1440 and 1920; keyboard, touch, reduced motion, source links, hash continuity, fail-open/no-JS, horizontal overflow. Two runs identical (JSON receipts + 6 screenshot SHA-256 values).
-- Committed smoke runner `r153_pr158_smoke_qa.py`: 30/30 PASS in two native Chromium runs; receipts and screenshots identical.
+- Committed smoke runner `r153_pr158_smoke_qa.py`: 36/36 PASS in two native Chromium runs; receipts and screenshots identical.
 - Prior R152 browser runner using R153 JS: 79/79 controlled-fixture checks PASS.
-- Source JS Git blob `3610ec8f68fc0332db04bcfa5c368574818e9866`; smoke runner Git blob `2f02a3517657eef378272e889372c3e3b0be48e8` — both match locally tested files.
+- Source JS Git blob `3610ec8f68fc0332db04bcfa5c368574818e9866`; smoke runner Git blob `5066635d5b2ec213f975469fcc176c989ba2e82c` — both match locally tested files.
 - **NOT RUN:** complete PR #158 template, published WordPress 2017 export, actual-page axe-core, page LCP/CLS, third-party image delivery, exact-head hosted CI. NASA individual media commercial permissions and merchant checkout/confirmed orders are NOT VERIFIED.
 
 ## One controlled conversion pathway
