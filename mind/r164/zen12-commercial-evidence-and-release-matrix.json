@@ -1,0 +1,633 @@
+{
+  "schema": "fv.mind.claim-source-commercial-register.v1",
+  "milestone": "R164",
+  "recorded_on": "2026-11-06",
+  "artifact_status": "UNPUBLISHED_DRAFT",
+  "checked_by": "Mind editorial studio",
+  "primary_offer": "Zen12 Premium",
+  "offer_authorization": "UNVERIFIED",
+  "commercial_cta_active": false,
+  "product_link_active": false,
+  "confirmed_transactions": null,
+  "confirmed_commissions": null,
+  "qualified_sessions": null,
+  "net_revenue_per_1000_qualified_human_sessions": null,
+  "public_primary_sources_verified": true,
+  "individual_partner_eligibility_verified": false,
+  "owned_paid_mind_sku_verified": false,
+  "sources": [
+    {
+      "id": "S01",
+      "kind": "primary",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/16210542/",
+      "title": "Johansson et al. (2005), Science choice blindness",
+      "checked_on": "2026-11-06"
+    },
+    {
+      "id": "S02",
+      "kind": "institutional",
+      "url": "https://portal.research.lu.se/en/publications/failure-to-detect-mismatches-between-intention-and-outcome-in-a-s/",
+      "title": "Lund original choice-blindness study",
+      "checked_on": "2026-11-06"
+    },
+    {
+      "id": "S03",
+      "kind": "primary",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/20637455/",
+      "title": "Hall et al. (2010), Cognition jam/tea choice blindness",
+      "checked_on": "2026-11-06"
+    },
+    {
+      "id": "S04",
+      "kind": "primary",
+      "url": "https://doi.org/10.1371/journal.pone.0045457",
+      "title": "Hall et al. (2012), moral-opinion questionnaire reversal",
+      "checked_on": "2026-11-06"
+    },
+    {
+      "id": "S05",
+      "kind": "primary",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23593244/",
+      "title": "Hall et al. (2013), polling procedure",
+      "checked_on": "2026-11-06"
+    },
+    {
+      "id": "S06",
+      "kind": "primary",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17049881/",
+      "title": "Johansson et al. (2006), choice blindness/introspection",
+      "checked_on": "2026-11-06"
+    },
+    {
+      "id": "S07",
+      "kind": "seller",
+      "url": "https://inspire3.com/",
+      "title": "Inspire3 portfolio homepage",
+      "checked_on": "2026-11-06"
+    },
+    {
+      "id": "S08",
+      "kind": "seller",
+      "url": "https://zen12.com/?no-popup=1",
+      "title": "Zen12 official Premium sales page",
+      "checked_on": "2026-11-06"
+    },
+    {
+      "id": "S09",
+      "kind": "regulator",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "title": "FTC endorsements FAQs",
+      "checked_on": "2026-11-06"
+    },
+    {
+      "id": "S10",
+      "kind": "regulator",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "title": "FTC Health Products Compliance Guidance",
+      "checked_on": "2026-11-06"
+    },
+    {
+      "id": "S11",
+      "kind": "editorial_existing",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "title": "Mind archival baseline",
+      "checked_on": "2026-11-06"
+    },
+    {
+      "id": "S12",
+      "kind": "business_charter",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "title": "First-party revenue measurement charter",
+      "checked_on": "2026-11-06"
+    },
+    {
+      "id": "S13",
+      "kind": "seller_program_public",
+      "url": "https://affiliates.inspire3.com/",
+      "title": "Inspire3 affiliate portal, does not prove named account eligibility",
+      "checked_on": "2026-11-06"
+    },
+    {
+      "id": "S14",
+      "kind": "seller_promotion",
+      "url": "https://zen12.com/secret/",
+      "title": "Distinct promotional route, historical comparative reference only",
+      "checked_on": "2026-11-06"
+    }
+  ],
+  "claims": [
+    {
+      "id": "CB-01",
+      "statement": "Face-choice mismatches sometimes went unnoticed",
+      "status": "supported_bounded",
+      "source_ids": [
+        "S01",
+        "S02"
+      ],
+      "limit": "Laboratory protocol only"
+    },
+    {
+      "id": "CB-02",
+      "statement": "Participants offered reasons for substituted face choices",
+      "status": "supported_bounded",
+      "source_ids": [
+        "S01"
+      ],
+      "limit": "Some trials, not all choices"
+    },
+    {
+      "id": "CB-03",
+      "statement": "Choice blindness proves free will is an illusion",
+      "status": "unsupported",
+      "source_ids": [
+        "S01"
+      ],
+      "limit": "Omit"
+    },
+    {
+      "id": "CB-04",
+      "statement": "Researchers swapped jam/tea after selection",
+      "status": "supported_bounded",
+      "source_ids": [
+        "S03"
+      ],
+      "limit": "Public marketplace experiment"
+    },
+    {
+      "id": "CB-05",
+      "statement": "No more than one third of manipulated jam/tea trials detected",
+      "status": "supported_bounded",
+      "source_ids": [
+        "S03"
+      ],
+      "limit": "Applies to that setup"
+    },
+    {
+      "id": "CB-06",
+      "statement": "Swap study demonstrated more product sales",
+      "status": "unsupported",
+      "source_ids": [
+        "S03"
+      ],
+      "limit": "Not a purchasing-conversion experiment"
+    },
+    {
+      "id": "CB-07",
+      "statement": "69% failed to detect at least one of two moral questionnaire reversals",
+      "status": "supported_bounded",
+      "source_ids": [
+        "S04"
+      ],
+      "limit": "Not universal moral volatility"
+    },
+    {
+      "id": "CB-08",
+      "statement": "Opinion reversal means permanent attitude change",
+      "status": "unsupported",
+      "source_ids": [
+        "S04"
+      ],
+      "limit": "Omit"
+    },
+    {
+      "id": "CB-09",
+      "statement": "Political survey study manipulated some stated responses",
+      "status": "supported_bounded",
+      "source_ids": [
+        "S05"
+      ],
+      "limit": "Not a verified vote change"
+    },
+    {
+      "id": "CB-10",
+      "statement": "Self-explanations always reveal choice causes",
+      "status": "unsupported",
+      "source_ids": [
+        "S06"
+      ],
+      "limit": "Avoid absolute claims"
+    },
+    {
+      "id": "ZE-01",
+      "statement": "Inspire3 lists Zen12 among its product portfolio",
+      "status": "seller_verified_description",
+      "source_ids": [
+        "S07"
+      ],
+      "limit": "Not independent efficacy"
+    },
+    {
+      "id": "ZE-02",
+      "statement": "Zen12 Premium displays 12 levels and 48 MP3s",
+      "status": "seller_verified_description",
+      "source_ids": [
+        "S08"
+      ],
+      "limit": "Not purchased or delivered"
+    },
+    {
+      "id": "ZE-03",
+      "statement": "Four audio styles are advertised",
+      "status": "seller_verified_description",
+      "source_ids": [
+        "S08"
+      ],
+      "limit": "Music, guided, nature, white noise; no listening test"
+    },
+    {
+      "id": "ZE-04",
+      "statement": "Each marketed listening session lasts 12 minutes",
+      "status": "seller_verified_description",
+      "source_ids": [
+        "S08"
+      ],
+      "limit": "Reported merchant feature"
+    },
+    {
+      "id": "ZE-05",
+      "statement": "Premium displayed $87.99 on Nov 6",
+      "status": "seller_observed_nonbinding",
+      "source_ids": [
+        "S08"
+      ],
+      "limit": "Checkout, taxes and available discount not verified"
+    },
+    {
+      "id": "ZE-06",
+      "statement": "Merchant advertises one-year refund window",
+      "status": "seller_claim_only",
+      "source_ids": [
+        "S08"
+      ],
+      "limit": "Not independently fulfilled or checked terms"
+    },
+    {
+      "id": "ZE-07",
+      "statement": "12 minutes reproduces one hour of meditation benefits",
+      "status": "unsubstantiated_product_efficacy",
+      "source_ids": [
+        "S08"
+      ],
+      "limit": "Reject as FV efficacy claim"
+    },
+    {
+      "id": "ZE-08",
+      "statement": "Zen12 automatically controls brainwaves and brings all benefits",
+      "status": "unsubstantiated_product_efficacy",
+      "source_ids": [
+        "S08"
+      ],
+      "limit": "Reject as FV efficacy claim"
+    },
+    {
+      "id": "ZE-09",
+      "statement": "Zen12 proven to enhance cognition or cure anxiety",
+      "status": "unsubstantiated_health_efficacy",
+      "source_ids": [
+        "S08",
+        "S10"
+      ],
+      "limit": "Reject without competent reliable product-specific evidence"
+    },
+    {
+      "id": "ZE-10",
+      "statement": "Choice blindness results independently substantiate Zen12",
+      "status": "unsupported_transfer",
+      "source_ids": [
+        "S01",
+        "S08"
+      ],
+      "limit": "Unrelated experiment"
+    },
+    {
+      "id": "ZE-11",
+      "statement": "Inspire3 permits FV as affiliate",
+      "status": "authorization_unverified",
+      "source_ids": [
+        "S13"
+      ],
+      "limit": "Public portal is not named approval"
+    },
+    {
+      "id": "ZE-12",
+      "statement": "Final Vestige has approved earning URL/UTM permission",
+      "status": "authorization_unverified",
+      "source_ids": [
+        "S11",
+        "S13"
+      ],
+      "limit": "No URL activation"
+    },
+    {
+      "id": "ZE-13",
+      "statement": "Approved affiliate creative library is accessible",
+      "status": "unknown",
+      "source_ids": [
+        "S13"
+      ],
+      "limit": "Cannot inspect partner-restricted assets"
+    },
+    {
+      "id": "PAY-01",
+      "statement": "A rights-cleared FV Mind product is purchasable in Payhip",
+      "status": "unknown",
+      "source_ids": [
+        "S11",
+        "S12"
+      ],
+      "limit": "Authenticated SKU, rights, checkout needed"
+    },
+    {
+      "id": "PAY-02",
+      "statement": "FV Payhip transaction, delivery and returns verified",
+      "status": "unknown",
+      "source_ids": [
+        "S12"
+      ],
+      "limit": "No merchant proof"
+    },
+    {
+      "id": "REV-01",
+      "statement": "Click from FV to merchant equals paid sale",
+      "status": "false",
+      "source_ids": [
+        "S12"
+      ],
+      "limit": "Separate affiliate_click and merchant settled_order"
+    },
+    {
+      "id": "REV-02",
+      "statement": "A free Focus click equals subscribed lead",
+      "status": "false",
+      "source_ids": [
+        "S12"
+      ],
+      "limit": "Requires independently confirmed signup"
+    },
+    {
+      "id": "REV-03",
+      "statement": "Published Grok media IDs connect to current Focus funnel",
+      "status": "unverified",
+      "source_ids": [
+        "S12"
+      ],
+      "limit": "TASK-008 lacks independently checked IDs"
+    },
+    {
+      "id": "LEGAL-01",
+      "statement": "Financial connection needs near-link disclosure",
+      "status": "regulatory_guidance",
+      "source_ids": [
+        "S09",
+        "S10"
+      ],
+      "limit": "General footer not enough"
+    },
+    {
+      "id": "LEGAL-02",
+      "statement": "Benefit and health claims need adequate substantiation",
+      "status": "regulatory_guidance",
+      "source_ids": [
+        "S10"
+      ],
+      "limit": "No merchant copy laundering"
+    },
+    {
+      "id": "TEST-01",
+      "statement": "Text-only versus video variant is a confirmed converter",
+      "status": "unproven_hypothesis",
+      "source_ids": [
+        "S12"
+      ],
+      "limit": "No live allocation or paid orders"
+    },
+    {
+      "id": "TEST-02",
+      "statement": "Original 40s video produced and captioned",
+      "status": "not_built",
+      "source_ids": [
+        "S12"
+      ],
+      "limit": "Transcript/storyboard only"
+    },
+    {
+      "id": "LIVE-01",
+      "statement": "Commercial WordPress or nav update approved",
+      "status": "unapproved",
+      "source_ids": [
+        "S11"
+      ],
+      "limit": "No production writes"
+    },
+    {
+      "id": "LIVE-02",
+      "statement": "Paid commercial order confirmed",
+      "status": "unverified",
+      "source_ids": [
+        "S12"
+      ],
+      "limit": "Not computable"
+    }
+  ],
+  "gates": [
+    {
+      "id": "affiliate_application_status",
+      "owner": "Founder/partner account",
+      "status": "CLOSED",
+      "evidence": "NOT_VERIFIED"
+    },
+    {
+      "id": "inspire3_identity_verified",
+      "owner": "Founder/partner account",
+      "status": "CLOSED",
+      "evidence": "NOT_VERIFIED"
+    },
+    {
+      "id": "inspire3_channel_permissions",
+      "owner": "Founder/partner account",
+      "status": "CLOSED",
+      "evidence": "NOT_VERIFIED"
+    },
+    {
+      "id": "inspire3_approved_tracking_url",
+      "owner": "Founder/partner account",
+      "status": "CLOSED",
+      "evidence": "NOT_VERIFIED"
+    },
+    {
+      "id": "partner_referral_attribution_rules",
+      "owner": "Founder/partner account",
+      "status": "CLOSED",
+      "evidence": "NOT_VERIFIED"
+    },
+    {
+      "id": "merchant_checkout_price_tax",
+      "owner": "Commerce/merchant",
+      "status": "CLOSED",
+      "evidence": "NOT_VERIFIED"
+    },
+    {
+      "id": "merchant_refund_terms_and_process",
+      "owner": "Commerce/merchant",
+      "status": "CLOSED",
+      "evidence": "NOT_VERIFIED"
+    },
+    {
+      "id": "merchant_order_confirmation",
+      "owner": "Commerce/merchant",
+      "status": "CLOSED",
+      "evidence": "NOT_VERIFIED"
+    },
+    {
+      "id": "merchant_paid_commission_report",
+      "owner": "Commerce/merchant",
+      "status": "CLOSED",
+      "evidence": "NOT_VERIFIED"
+    },
+    {
+      "id": "merchant_settled_commission",
+      "owner": "Commerce/merchant",
+      "status": "CLOSED",
+      "evidence": "NOT_VERIFIED"
+    },
+    {
+      "id": "licensed_creatives_reviewed",
+      "owner": "Founder/partner account",
+      "status": "CLOSED",
+      "evidence": "NOT_VERIFIED"
+    },
+    {
+      "id": "owned_mind_payhip_sku",
+      "owner": "Commerce",
+      "status": "CLOSED",
+      "evidence": "NOT_VERIFIED"
+    },
+    {
+      "id": "owned_product_rights_and_fulfillment",
+      "owner": "Commerce",
+      "status": "CLOSED",
+      "evidence": "NOT_VERIFIED"
+    },
+    {
+      "id": "owned_paid_test_order_approval",
+      "owner": "Founder",
+      "status": "CLOSED",
+      "evidence": "NOT_VERIFIED"
+    },
+    {
+      "id": "focus_guest_signup_delivered",
+      "owner": "QA/Dispatch",
+      "status": "CLOSED",
+      "evidence": "NOT_VERIFIED"
+    },
+    {
+      "id": "grok_real_asset_ids",
+      "owner": "Praxxis/Grok",
+      "status": "CLOSED",
+      "evidence": "NOT_VERIFIED"
+    },
+    {
+      "id": "campaign_link_destination_approved",
+      "owner": "Grok/Claude/Founder",
+      "status": "CLOSED",
+      "evidence": "NOT_VERIFIED"
+    },
+    {
+      "id": "mobile_360_390_768_1440_1920_checked",
+      "owner": "Site QA",
+      "status": "CLOSED",
+      "evidence": "NOT_VERIFIED"
+    },
+    {
+      "id": "keyboard_screenreader_qa",
+      "owner": "Site QA",
+      "status": "CLOSED",
+      "evidence": "NOT_VERIFIED"
+    },
+    {
+      "id": "no_js_browser_test",
+      "owner": "Site QA",
+      "status": "CLOSED",
+      "evidence": "NOT_VERIFIED"
+    },
+    {
+      "id": "performance_lighthouse",
+      "owner": "Site QA",
+      "status": "CLOSED",
+      "evidence": "NOT_VERIFIED"
+    },
+    {
+      "id": "source_factcheck",
+      "owner": "Editorial reviewer",
+      "status": "CLOSED",
+      "evidence": "NOT_VERIFIED"
+    },
+    {
+      "id": "prelaunch_ftc_review",
+      "owner": "Site QA",
+      "status": "CLOSED",
+      "evidence": "NOT_VERIFIED"
+    },
+    {
+      "id": "preview_video_produced_original",
+      "owner": "Creative/Grok",
+      "status": "CLOSED",
+      "evidence": "NOT_VERIFIED"
+    },
+    {
+      "id": "caption_sync_verified",
+      "owner": "Site QA",
+      "status": "CLOSED",
+      "evidence": "NOT_VERIFIED"
+    },
+    {
+      "id": "experiment_randomization_authorized",
+      "owner": "Founder/Claude",
+      "status": "CLOSED",
+      "evidence": "NOT_VERIFIED"
+    },
+    {
+      "id": "privacy_consent_and_attribution_review",
+      "owner": "Claude/QA",
+      "status": "CLOSED",
+      "evidence": "NOT_VERIFIED"
+    },
+    {
+      "id": "actual_7day_30day_order_cohorts",
+      "owner": "Commerce",
+      "status": "CLOSED",
+      "evidence": "NOT_VERIFIED"
+    },
+    {
+      "id": "settlement_fees_and_refunds_reconciled",
+      "owner": "Commerce",
+      "status": "CLOSED",
+      "evidence": "NOT_VERIFIED"
+    },
+    {
+      "id": "production_release_approval",
+      "owner": "Founder",
+      "status": "CLOSED",
+      "evidence": "NOT_VERIFIED"
+    }
+  ],
+  "data_policy": {
+    "allow_only": [
+      "aggregated first-party qualified human session count",
+      "approved campaign and asset identifiers without PII",
+      "CTA clicks separately labeled",
+      "merchant aggregate confirmation IDs without purchaser PII",
+      "settled payment and refund/fees totals"
+    ],
+    "never_collect": [
+      "IP address",
+      "user email in UTM",
+      "identity fingerprints",
+      "third-party tracking pixels",
+      "unconsented cross-site identifiers"
+    ],
+    "measurement_not_activated": true
+  },
+  "release_policy": "Founder-controlled; no merchant link, publishing, social sends, CMS change, duplicate Jetpack signup or production scripts without documented approval.",
+  "limitations": "Public seller and paper abstracts checked; product not purchased, independent efficacy unavailable, partner login and Payhip inventory inaccessible, no in-person browser/checkout test."
+}
