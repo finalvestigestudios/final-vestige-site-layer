@@ -92,6 +92,8 @@ for i, mut in enumerate((
     lambda x:x.replace('{{inline-js:shelter_common.js}}\n{{inline-js:reunion_card.js}}',
                        '{{inline-js:reunion_card.js}}\n{{inline-js:shelter_common.js}}'),
     lambda x:x.replace('{{inline-js:reunion_card.js}}','{{inline-js:reunion_card.js}}\n{{inline-js:evil.js}}'),
+    lambda x:x.replace('{{inline-js:reunion_card.js}}','{{inline-js:reunion_card.js}}\n{{inline-js:evil-file.js}}'),
+    lambda x:x.replace('{{inline-js:reunion_card.js}}','{{inline-js:reunion_card.js}}\n{{inline-js:../private.js}}'),
 )):
     setattr(ClosureTests,f'test_reject_template_{i}',template_test(mut))
 
