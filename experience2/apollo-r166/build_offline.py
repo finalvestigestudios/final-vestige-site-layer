@@ -19,8 +19,16 @@ REQUIRED_NASA = (
 def build(source):
     if source.count('class="fvx-chrono-gallery" data-fvx-chrono-gallery') != 1:
         raise ValueError('HOLD: require exactly one gallery')
-    if any(source.count(anchor) != 1 for anchor in REQUIRED_NASA):
-        raise ValueError('HOLD: NASA citation absent, duplicated, or changed')
+    # NASA records may also be cited elsewhere on the full WordPress page.
+    # Validate the three original citations *inside the archival gallery*, not
+    # their total appearance count in the entire editor document.
+    start = source.index('class="fvx-chrono-gallery" data-fvx-chrono-gallery')
+    stop = source.find('data-fvx-chrono-position', start)
+    if stop < 0:
+        raise ValueError('HOLD: gallery position marker missing')
+    gallery = source[start:stop]
+    if any(gallery.count(anchor) != 1 for anchor in REQUIRED_NASA):
+        raise ValueError('HOLD: gallery NASA citation absent, duplicated, or changed')
     js = '\n'.join((HERE / n).read_text(encoding='utf8') for n in ('gallery-independent.js', 'gallery-fallback.js'))
     css = '\n'.join((HERE / n).read_text(encoding='utf8') for n in ('gallery-independent.css', 'gallery-fallback.css'))
     result = patch(source, js, css)
