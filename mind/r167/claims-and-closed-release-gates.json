@@ -1,0 +1,581 @@
+{
+  "milestone": "R167",
+  "date_checked": "2026-11-06",
+  "status": "DRAFT_ONLY_HARD_HOLD",
+  "primary_offer": "Zen12 Premium",
+  "sources": [
+    {
+      "id": "S01",
+      "title": "Simons & Chabris (1999), Perception",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/10694957/",
+      "type": "primary",
+      "meaning": "Sustained inattentional blindness in dynamic selective-attention task"
+    },
+    {
+      "id": "S02",
+      "title": "Original publisher abstract (1999)",
+      "url": "https://journals.sagepub.com/doi/10.1068/p281059",
+      "type": "primary",
+      "meaning": "Detection modulated by target similarity and difficulty; no product data"
+    },
+    {
+      "id": "S03",
+      "title": "Simons (2010), i-Perception",
+      "url": "https://journals.sagepub.com/doi/10.1068/i0386",
+      "type": "primary",
+      "meaning": "Foreknowledge of gorilla video does not ensure detection of other changes"
+    },
+    {
+      "id": "S04",
+      "title": "Drew, Võ & Wolfe (2013), Psychological Science",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23863753/",
+      "type": "primary",
+      "meaning": "24 radiologists; 83% did not report inserted gorilla in a lung nodule task; event and task specific"
+    },
+    {
+      "id": "S05",
+      "title": "FTC Endorsement Guides Q&A",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "type": "regulatory",
+      "meaning": "Material affiliate financial connection disclosure near contextual offer"
+    },
+    {
+      "id": "S06",
+      "title": "FTC Health Products Compliance Guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "type": "regulatory",
+      "meaning": "Health-related outcomes require competent reliable support"
+    },
+    {
+      "id": "S07",
+      "title": "Inspire3 official product directory",
+      "url": "https://inspire3.com/",
+      "type": "merchant",
+      "meaning": "Zen12 one of Inspire3 brands; directory marketing claims not evidence"
+    },
+    {
+      "id": "S08",
+      "title": "Zen12 official exact sales page",
+      "url": "https://zen12.com/",
+      "type": "merchant",
+      "meaning": "Premium 12 levels, 48 MP3; four formats; displayed $87.99 and claimed 1-year refund Nov 6; actual payment unverified"
+    },
+    {
+      "id": "S09",
+      "title": "Inspire3 affiliate public portal",
+      "url": "https://affiliates.inspire3.com/",
+      "type": "merchant",
+      "meaning": "Public program only; not proof of FV approval or channel permissions"
+    },
+    {
+      "id": "S10",
+      "title": "FV Focus Fieldbook",
+      "url": "https://finalvestige.com/focus/",
+      "type": "FV-existing",
+      "meaning": "Existing free Focus landing route and Jetpack funnel; guest lead proof unavailable"
+    },
+    {
+      "id": "S11",
+      "title": "FV Puységur historical archive",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "type": "FV-existing",
+      "meaning": "Historical contextual bridge; no causal evidence for modern commercial audio"
+    },
+    {
+      "id": "S12",
+      "title": "FV Change Blindness published article",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "type": "FV-existing",
+      "meaning": "Relevant published research route; exact internal link needs QA"
+    },
+    {
+      "id": "S13",
+      "title": "FV Editorial Standards",
+      "url": "https://finalvestige.com/editorial-standards/",
+      "type": "FV-existing",
+      "meaning": "Editorial standards route"
+    },
+    {
+      "id": "S14",
+      "title": "FV Affiliate Disclosure",
+      "url": "https://finalvestige.com/affiliate-disclosure/",
+      "type": "FV-existing",
+      "meaning": "General disclosure is complementary, never replaces near-link copy"
+    }
+  ],
+  "claims": [
+    {
+      "id": "G01",
+      "claim": "1999 dynamic sustained inattentional blindness was studied",
+      "status": "primary_supported",
+      "source_ids": [
+        "S01",
+        "S02"
+      ],
+      "copy_rule": "Say only task-dependent detection, do not say everybody missed"
+    },
+    {
+      "id": "G02",
+      "claim": "Perception report changes with monitored object/task difficulty",
+      "status": "primary_supported",
+      "source_ids": [
+        "S02"
+      ],
+      "copy_rule": "No fixed universal rate"
+    },
+    {
+      "id": "G03",
+      "claim": "Seeing location implies recognized object",
+      "status": "unsupported",
+      "source_ids": [
+        "S04"
+      ],
+      "copy_rule": "Do not conflate gaze and report"
+    },
+    {
+      "id": "G04",
+      "claim": "2010 foreknowledge does not ensure all other surprises detected",
+      "status": "primary_supported",
+      "source_ids": [
+        "S03"
+      ],
+      "copy_rule": "No anti-training global claim"
+    },
+    {
+      "id": "G05",
+      "claim": "24 radiologists; 83% failed to report inserted gorilla",
+      "status": "primary_supported",
+      "source_ids": [
+        "S04"
+      ],
+      "copy_rule": "Context specialized CT nodule task; not clinical miss rate"
+    },
+    {
+      "id": "G06",
+      "claim": "General inattentional blindness can be cured using audio",
+      "status": "unsupported",
+      "source_ids": [
+        "S01",
+        "S04"
+      ],
+      "copy_rule": "Do not claim"
+    },
+    {
+      "id": "G07",
+      "claim": "The experiment demonstrates mind control or suggestion",
+      "status": "unsupported",
+      "source_ids": [
+        "S01",
+        "S02"
+      ],
+      "copy_rule": "Do not claim"
+    },
+    {
+      "id": "G08",
+      "claim": "Scientific results prove an Inspire3 product",
+      "status": "unsupported",
+      "source_ids": [
+        "S01",
+        "S08"
+      ],
+      "copy_rule": "No efficacy transfer"
+    },
+    {
+      "id": "Z01",
+      "claim": "Inspire3 official lists Zen12 brand",
+      "status": "seller_verified",
+      "source_ids": [
+        "S07"
+      ],
+      "copy_rule": "Corporate directory only"
+    },
+    {
+      "id": "Z02",
+      "claim": "Premium 12 levels; 48 MP3",
+      "status": "seller_verified",
+      "source_ids": [
+        "S08"
+      ],
+      "copy_rule": "Package seller statement"
+    },
+    {
+      "id": "Z03",
+      "claim": "Four styles: music, guided, nature, white noise",
+      "status": "seller_verified",
+      "source_ids": [
+        "S08"
+      ],
+      "copy_rule": "Check exact checkout"
+    },
+    {
+      "id": "Z04",
+      "claim": "Premium displayed $87.99 on Nov 6 2026",
+      "status": "seller_display",
+      "source_ids": [
+        "S08"
+      ],
+      "copy_rule": "Display only, not checkout proof; coupon variability"
+    },
+    {
+      "id": "Z05",
+      "claim": "Advertised one-year money-back guarantee",
+      "status": "seller_display",
+      "source_ids": [
+        "S08"
+      ],
+      "copy_rule": "Actual refund processing unverified"
+    },
+    {
+      "id": "Z06",
+      "claim": "12 minutes is as good as one hour",
+      "status": "unsupported_seller_claim",
+      "source_ids": [
+        "S08"
+      ],
+      "copy_rule": "Never adopt as independent fact"
+    },
+    {
+      "id": "Z07",
+      "claim": "Medical, cognitive or anxiety outcomes for exact Zen12",
+      "status": "unsupported_seller_claim",
+      "source_ids": [
+        "S08",
+        "S06"
+      ],
+      "copy_rule": "No adequate product-specific substantiation established"
+    },
+    {
+      "id": "Z08",
+      "claim": "Every individual will find it calming",
+      "status": "unsupported_seller_claim",
+      "source_ids": [
+        "S08"
+      ],
+      "copy_rule": "No experience testimony"
+    },
+    {
+      "id": "Z09",
+      "claim": "48 audio files will work with all devices",
+      "status": "unknown",
+      "source_ids": [
+        "S08"
+      ],
+      "copy_rule": "File compatibility must be independently verified"
+    },
+    {
+      "id": "Z10",
+      "claim": "Paid checkout and final charge observed",
+      "status": "unknown",
+      "source_ids": [
+        "S08"
+      ],
+      "copy_rule": "No transaction performed"
+    },
+    {
+      "id": "Z11",
+      "claim": "Affiliate program exists in public portal",
+      "status": "seller_verified",
+      "source_ids": [
+        "S09"
+      ],
+      "copy_rule": "No member acceptance inferred"
+    },
+    {
+      "id": "Z12",
+      "claim": "FV Inspire3 approval verified",
+      "status": "unverified",
+      "source_ids": [
+        "S09"
+      ],
+      "copy_rule": "HARD HOLD"
+    },
+    {
+      "id": "Z13",
+      "claim": "FV promotion/channel permissions verified",
+      "status": "unverified",
+      "source_ids": [
+        "S09"
+      ],
+      "copy_rule": "HARD HOLD"
+    },
+    {
+      "id": "Z14",
+      "claim": "FV merchant tracking URL verified",
+      "status": "unverified",
+      "source_ids": [
+        "S09"
+      ],
+      "copy_rule": "HARD HOLD"
+    },
+    {
+      "id": "Z15",
+      "claim": "Commission payout or rate for FV known",
+      "status": "unverified",
+      "source_ids": [
+        "S09"
+      ],
+      "copy_rule": "No claims"
+    },
+    {
+      "id": "F01",
+      "claim": "Existing /focus/ resource accessible as link",
+      "status": "inventory_prior",
+      "source_ids": [
+        "S10"
+      ],
+      "copy_rule": "Guest confirmation/delivery unknown"
+    },
+    {
+      "id": "F02",
+      "claim": "Payhip Mind digital product purchasable/rights-cleared",
+      "status": "unverified",
+      "source_ids": [
+        "S10"
+      ],
+      "copy_rule": "Inventory owner must authenticate"
+    },
+    {
+      "id": "F03",
+      "claim": "Published Grok immutable media ID known",
+      "status": "unverified",
+      "source_ids": [
+        "S12"
+      ],
+      "copy_rule": "Coordinate TASK-008, no invented IDs"
+    },
+    {
+      "id": "F04",
+      "claim": "Confirmed paid affiliate sale or commission exists",
+      "status": "unverified",
+      "source_ids": [
+        "S09"
+      ],
+      "copy_rule": "Must come from partner settlement"
+    },
+    {
+      "id": "F05",
+      "claim": "Qualified human denominator known",
+      "status": "unverified",
+      "source_ids": [
+        "S12"
+      ],
+      "copy_rule": "Do not substitute Jetpack views"
+    },
+    {
+      "id": "F06",
+      "claim": "First-party outbound CTA clicks prove paid sales",
+      "status": "false",
+      "source_ids": [
+        "S09"
+      ],
+      "copy_rule": "Click != order != commission != payout"
+    },
+    {
+      "id": "F07",
+      "claim": "Near-CTA commercial disclosure needed when activated",
+      "status": "regulatory_supported",
+      "source_ids": [
+        "S05"
+      ],
+      "copy_rule": "Adjacent simple English disclosure"
+    },
+    {
+      "id": "F08",
+      "claim": "Health efficacy advertising requires adequate science",
+      "status": "regulatory_supported",
+      "source_ids": [
+        "S06"
+      ],
+      "copy_rule": "No medical promises"
+    },
+    {
+      "id": "F09",
+      "claim": "A/B video uplift exists",
+      "status": "unverified",
+      "source_ids": [
+        "S10"
+      ],
+      "copy_rule": "Storyboard only, no tests"
+    },
+    {
+      "id": "F10",
+      "claim": "Video demo is a validated concentration test",
+      "status": "false",
+      "source_ids": [
+        "S01"
+      ],
+      "copy_rule": "Label illustration, not research protocol"
+    }
+  ],
+  "gates": [
+    {
+      "gate": "named_merchant_publisher_approval",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "gate": "affiliate_channel_website",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "gate": "affiliate_channel_social",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "gate": "affiliate_channel_email",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "gate": "exact_authorized_earning_link",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "gate": "affiliate_reporting_terms",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "gate": "creative_approval_where_required",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "gate": "zen12_package_checkout",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "gate": "zen12_price_checkout",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "gate": "zen12_refund_terms_checkout",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "gate": "zen12_no_false_scarcity",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "gate": "product_specific_efficacy_substantiation",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "gate": "compliance_review",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "gate": "near_link_disclosure_review",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "gate": "scoped_site_QA",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "gate": "mobile_360_390_768_1440",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "gate": "keyboard_reader_reduced_motion",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "gate": "low_cost_performance",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "gate": "single_Jetpack_focus_path",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "gate": "confirmed_focus_lead_qa",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "gate": "creator_asset_id_reconciliation",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "gate": "consent_and_privacy_review",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "gate": "merchant_purchase_reporting",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "gate": "fees_refunds_reconciliation",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "gate": "paid_conversion_attribution",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "gate": "founder_content_approval",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "gate": "founder_commercial_approval",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "gate": "founder_production_approval",
+      "status": "CLOSED",
+      "evidence": null
+    }
+  ],
+  "authorization": {
+    "affiliate_approved": null,
+    "website_permission": null,
+    "social_permission": null,
+    "email_permission": null,
+    "affiliate_url": null,
+    "commission_rate": null,
+    "tracking_rules": null
+  },
+  "payhip_fallback": {
+    "eligible_owned_mind_sku": null,
+    "purchase_url": null,
+    "rights_clearance": null,
+    "checkout_verified": null,
+    "returns_verified": null,
+    "fulfillment_verified": null
+  },
+  "measurement": {
+    "confirmed_human_sessions": null,
+    "confirmed_leads": null,
+    "affiliate_clicks": null,
+    "confirmed_paid_orders": null,
+    "confirmed_affiliate_commissions": null,
+    "refunded_amount": null,
+    "fees": null,
+    "realized_net_revenue": null,
+    "revenue_per_1000_qualified_human_sessions": null
+  },
+  "notes": "No active merchant link. Never infer any of these nulls as 0. Verified seller page describes product; exact benefits unsubstantiated."
+}
