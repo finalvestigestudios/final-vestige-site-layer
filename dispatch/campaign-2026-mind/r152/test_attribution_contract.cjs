@@ -44,7 +44,7 @@ function check(){
  const bridge=api.bridgeContract();
  for(const key of ["qualified_sessions","confirmed_new_leads","paid_orders","net_revenue_per_1000"])assert.equal(bridge[key],null);
  assert.equal(bridge.is_email_sending_authorized,false);assert.equal(bridge.is_affiliate_email_authorized,false);
- return {passed:38,release:bridge.is_email_sending_authorized?"FAIL":"HOLD",grok_links_checked:2,commercial_authorization:false};
+ return {passed:44,release:bridge.is_email_sending_authorized?"FAIL":"HOLD",grok_links_checked:2,commercial_authorization:false};
 }
 if(typeof require==="function"){
  const {test}=require("node:test");
