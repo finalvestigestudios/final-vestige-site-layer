@@ -27,6 +27,7 @@ META_SHAS = {
     'pioneer-travel-rations': '7191acba55d63dc405ad9c2003d66193276da89f',
 }
 DOCKET_SHA = '45963b30ce48a069539c66ace9f1a2d2f5cf1dfd'
+R173_DOCKET_SHA = '48e1050e815f55c5f2564dc030b8ba2aa24df548'
 # Each anchor denotes a proposed editorial claim, not a validated safety action.
 # The IDs must occur in the very same structural content block as its claim.
 CLAIMS = (
@@ -152,6 +153,53 @@ def evaluate(bodies: dict, metas: dict, *, strict: bool = True) -> dict:
                 separators=(',', ':')).encode()).hexdigest()}
 
 
+
+def audit_review_docket(d: dict) -> None:
+    """A review worksheet is never evidence of a completed human decision."""
+    require(type(d) is dict and d.get('schema') ==
+            'fv-preparedness-r173-claim-scope-human-docket-v1' and
+            d.get('state') == HOLD and d.get('published') is False and
+            d.get('independent_qd_pass') is False and
+            d.get('qualified_food_safety_review') is False and
+            d.get('source_alias_equivalence_approved') is False and
+            d.get('human_checked_links') is False and
+            d.get('medical_safety_approved') is False and
+            d.get('original_files_modified') == [],
+            'human-review docket promoted or modified')
+    require(d.get('original_bodies') == BODY_SHAS, 'original body identities changed')
+    require(d.get('article_count_under_original_custody') == 35 and
+            d.get('original_citations_under_original_custody') == 2000 and
+            d.get('original_source_uses_under_original_custody') == 385 and
+            d.get('crosswalk_shared_url_groups_pending') == 32 and
+            d.get('previous_source_decisions_pending') == 75,
+            'original source/citation review denominator changed')
+    claims = d.get('claims')
+    require(type(claims) is list and len(claims) == len(CLAIMS),
+            'human-review claim roster incomplete')
+    expected = {(slug, label, tuple(ids)) for slug, label, _, ids in CLAIMS}
+    observed = set()
+    for row in claims:
+        require(type(row) is dict and type(row.get('source_ids')) is list and
+                all(type(sid) is str for sid in row['source_ids']),
+                'invalid source identity in human-review row')
+        signature = (row.get('slug'), row.get('claim'), tuple(row['source_ids']))
+        require(signature not in observed, 'duplicate human-review claim')
+        observed.add(signature)
+        require(row.get('human_source_scope_decision') == 'PENDING' and
+                row.get('qualified_food_safety_decision') == 'PENDING' and
+                row.get('independent_qd_decision') == 'PENDING' and
+                row.get('reviewer') is None and row.get('reviewed_at') is None and
+                row.get('evidence_link') is None,
+                'forged human-review completion')
+    require(observed == expected, 'missing or substituted source review row')
+    commerce = d.get('conversion')
+    require(type(commerce) is dict and
+            commerce.get('matching_existing_paid_preparedness_sku_verified') is False and
+            commerce.get('published_preparedness_asset_id_verified') is False and
+            commerce.get('sale_and_revenue_attribution_verified') is False,
+            'unverified commercial offer incorrectly promoted')
+
+
 def pinned(root: Path, path: str, sha: str) -> bytes:
     f = root / path
     require(f.is_file() and not f.is_symlink(), 'missing/symlink original: ' + path)
@@ -161,6 +209,8 @@ def pinned(root: Path, path: str, sha: str) -> bytes:
 
 
 def verify(root: Path) -> dict:
+    r173_docket = json.loads(pinned(root, 'preparedness/review/r173/claim-scope-human-docket.json', R173_DOCKET_SHA))
+    audit_review_docket(r173_docket)
     docket = json.loads(pinned(root, 'preparedness/review/r172/jerky-source-impact.json', DOCKET_SHA))
     require(docket.get('state') == HOLD and docket.get('review_decisions') == {
         'url_equivalence': False, 'source_claim_scope': False,
