@@ -143,7 +143,10 @@
       "slug": "the-morning-san-francisco-lost-its-water",
       "modified_wp": "2026-10-29T21:19:13",
       "inline_img_count": 1,
-      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot"
+      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot",
+      "fresh_inline_img_count": 1,
+      "fresh_external_img_count": 0,
+      "fresh_modified_wp": "2026-10-29T21:19:13"
     },
     {
       "id": 35,
@@ -151,7 +154,10 @@
       "slug": "the-boat-that-refused-to-die",
       "modified_wp": "2026-10-29T17:07:04",
       "inline_img_count": 1,
-      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot"
+      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot",
+      "fresh_inline_img_count": 1,
+      "fresh_external_img_count": 0,
+      "fresh_modified_wp": "2026-10-29T17:07:04"
     },
     {
       "id": 36,
@@ -159,7 +165,10 @@
       "slug": "the-city-that-went-underground",
       "modified_wp": "2026-10-29T17:07:30",
       "inline_img_count": 1,
-      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot"
+      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot",
+      "fresh_inline_img_count": 1,
+      "fresh_external_img_count": 0,
+      "fresh_modified_wp": "2026-10-29T17:07:30"
     },
     {
       "id": 37,
@@ -167,7 +176,10 @@
       "slug": "how-petra-made-water-flow-through-stone",
       "modified_wp": "2026-10-29T17:07:17",
       "inline_img_count": 1,
-      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot"
+      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot",
+      "fresh_inline_img_count": 1,
+      "fresh_external_img_count": 0,
+      "fresh_modified_wp": "2026-10-29T17:07:17"
     },
     {
       "id": 38,
@@ -175,7 +187,10 @@
       "slug": "the-cisterns-beneath-san-francisco",
       "modified_wp": "2026-10-29T17:06:51",
       "inline_img_count": 1,
-      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot"
+      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot",
+      "fresh_inline_img_count": 1,
+      "fresh_external_img_count": 0,
+      "fresh_modified_wp": "2026-10-29T17:06:51"
     },
     {
       "id": 101,
@@ -183,7 +198,10 @@
       "slug": "six-inches-of-water-boston-molasses-flood",
       "modified_wp": "2026-10-29T18:26:05",
       "inline_img_count": 7,
-      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot"
+      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot",
+      "fresh_inline_img_count": 7,
+      "fresh_external_img_count": 4,
+      "fresh_modified_wp": "2026-10-29T18:26:05"
     },
     {
       "id": 108,
@@ -191,7 +209,10 @@
       "slug": "the-richest-ship-couldnt-buy-another-hour",
       "modified_wp": "2026-08-25T18:54:29",
       "inline_img_count": 2,
-      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot"
+      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot",
+      "fresh_inline_img_count": 2,
+      "fresh_external_img_count": 0,
+      "fresh_modified_wp": "2026-08-25T18:54:29"
     },
     {
       "id": 139,
@@ -199,7 +220,10 @@
       "slug": "the-rescue-machine-nobody-had-ever-needed",
       "modified_wp": "2026-09-08T02:51:01",
       "inline_img_count": 2,
-      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot"
+      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot",
+      "fresh_inline_img_count": 2,
+      "fresh_external_img_count": 0,
+      "fresh_modified_wp": "2026-09-08T02:51:01"
     },
     {
       "id": 142,
@@ -673,5 +697,6 @@
   "legacy_stored_inline_images": 355,
   "image_count_scope": "Gutenberg stored <img> tags only, not dynamically injected/featured, srcset, CSS or live rendered; per-post counts may be stale after edits",
   "source_census_blob_sha": "76aa63ffaa299a6e6878edc1b66e637fa6f058ab",
-  "new_five_post_fresh_count_verification": "Read-only WordPress posts.get context=edit for IDs 1917 1920 1922 1924 1926, 2026-11-06"
+  "new_five_post_fresh_count_verification": "Read-only WordPress posts.get context=edit for IDs 1917 1920 1922 1924 1926, 2026-11-06",
+  "fresh_recensus_progress": 8
 }
