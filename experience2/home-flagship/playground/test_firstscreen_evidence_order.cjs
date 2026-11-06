@@ -21,7 +21,7 @@ const mutations=[
  ['missing motion control',s=>s.replace('type="checkbox"','type="hidden"')],
  ['missing reduced motion',s=>s.replaceAll('prefers-reduced-motion: reduce','unknown-motion')],
  ['duplicate complete source record',s=>{ const rows=[...s.matchAll(/<span class="fv-margin-strip__item"[^>]*>([\s\S]*?)<\/span>/g)]; return s.replace(rows[0][1], rows[1][1]); }],
- ['changed CSS selector',s=>s.replace('.fv-margin-strip__motion-check','.altered-check')]
+ ['changed CSS selector',s=>s.replaceAll('.fv-margin-strip__motion-check','.altered-check')]
 ];
 for (const [name,mutator] of mutations) test('reject '+name,()=>{
   assert.throws(()=>verify(change(mutator)));
