@@ -1,0 +1,66 @@
+{
+  "release": "STAGING_HOLD",
+  "source_review_date": "2026-11-06",
+  "base_template_blob": "403d128c57b9bc82dac7c619651689070edef86c",
+  "review_template_blob": "47424544ce344a3a1a364dfd27a78675c33935a5",
+  "archive_media_role": "CONTEXTUAL_NOT_TECHNICAL_PROOF",
+  "commercial_image_rights": "NOT_VERIFIED_OR_CLEARED",
+  "rights_guidance": "https://www.nasa.gov/nasa-brand-center/advertising-guidelines/",
+  "primary_technical_source": "https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/",
+  "records": [
+    {
+      "id": "01",
+      "catalog_id_displayed_on_nasa_page": null,
+      "photo_date": "January 1967",
+      "photo_actual_scope": "Crew portrait during training; NASA page does not publish S67-19766",
+      "archive_url": "https://www.nasa.gov/image-detail/apollo-1-crew-honored/",
+      "claim_reference_url": "https://www.nasa.gov/history/55-years-ago-tragedy-on-the-launch-pad/",
+      "media_commercial_status": "HOLD_UNTIL_RIGHTS_REVIEW"
+    },
+    {
+      "id": "02",
+      "catalog_id_displayed_on_nasa_page": "S67-15717",
+      "photo_date": "1967-01-03",
+      "photo_actual_scope": "Spacecraft 012 being moved for adapter mating; not an oxygen measurement",
+      "archive_url": "https://www.nasa.gov/image-detail/amf-s67-15717/",
+      "claim_reference_url": "https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/",
+      "media_commercial_status": "HOLD_UNTIL_RIGHTS_REVIEW"
+    },
+    {
+      "id": "03",
+      "catalog_id_displayed_on_nasa_page": "S66-58038",
+      "photo_date": "1966-10-18",
+      "photo_actual_scope": "Crew altitude chamber training; not January 27, 1967 sensor data",
+      "archive_url": "https://www.nasa.gov/image-detail/amf-s66-58038/",
+      "claim_reference_url": "https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/",
+      "media_commercial_status": "HOLD_UNTIL_RIGHTS_REVIEW"
+    },
+    {
+      "id": "04",
+      "catalog_id_displayed_on_nasa_page": "KSC-20170124-PH_KLS01_0164",
+      "photo_date": "2017-01-24",
+      "photo_actual_scope": "NASA/Kim Shiflett Apollo 1 tribute and hatch exhibit; retrospective, not contemporaneous engineering evidence",
+      "archive_url": "https://www.nasa.gov/image-detail/amf-ksc-20170124-ph_kls01_0164/",
+      "claim_reference_url": "https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/",
+      "media_commercial_status": "HOLD_UNTIL_RIGHTS_REVIEW"
+    },
+    {
+      "id": "05",
+      "catalog_id_displayed_on_nasa_page": "S67-21294",
+      "photo_date": "1967-01-28",
+      "photo_actual_scope": "Interior fire damage; photograph does not establish the ignition spark",
+      "archive_url": "https://www.nasa.gov/image-detail/amf-s67-21294/",
+      "claim_reference_url": "https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/",
+      "media_commercial_status": "HOLD_UNTIL_RIGHTS_REVIEW"
+    },
+    {
+      "id": "06",
+      "catalog_id_displayed_on_nasa_page": "KSC-20170124-PH_KLS01_0090",
+      "photo_date": "2017-01-24",
+      "photo_actual_scope": "NASA/Kim Shiflett redesigned hatch tribute; Review Board predates redesign",
+      "archive_url": "https://www.nasa.gov/image-detail/amf-ksc-20170124-ph_kls01_0090/",
+      "claim_reference_url": "https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/",
+      "media_commercial_status": "HOLD_UNTIL_RIGHTS_REVIEW"
+    }
+  ]
+}

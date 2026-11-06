@@ -1,0 +1,7 @@
+/* Apollo 1 review-only provenance treatment. Not activated in WordPress. */
+.fv-ex2-ledger__custody{margin:1rem 0;border-inline-start:3px solid currentColor;padding:.75rem .9rem;background:rgba(159,128,67,.085);overflow-wrap:anywhere}
+.fv-ex2-ledger__custody strong{display:block;font-size:.73rem;letter-spacing:.055em;line-height:1.5;margin-bottom:.45rem}
+.fv-ex2-ledger__custody p{font-size:.9rem;line-height:1.6;margin:0}
+.fv-ex2-ledger__custody-notice{font-size:.84rem;line-height:1.6;max-width:75ch;opacity:.9;margin:1rem 0}
+@media (forced-colors:active){.fv-ex2-ledger__custody{border:2px solid CanvasText;background:Canvas;color:CanvasText}}
+@media (prefers-reduced-motion:reduce){.fv-ex2-ledger__custody{scroll-behavior:auto;transition:none;animation:none}}
