@@ -167,7 +167,13 @@ def write_csv_report(destination: str | Path, fields: Iterable[str],
                     raise ValueError("Invalid CSV report row mapping")
                 items_failed = False
                 try:
-                    entries = tuple(islice(row.items(), MAX_REPORT_COLUMNS + 1))
+                    # A dict subclass can override .items() to fabricate
+                    # financial evidence or hide unsafe extra values. Read the
+                    # actual built-in dict storage, never its virtual view.
+                    # Other Mapping implementations retain the R217 validated
+                    # pair boundary (UserDict and mappingproxy remain valid).
+                    source_items = dict.items(row) if isinstance(row, dict) else row.items()
+                    entries = tuple(islice(source_items, MAX_REPORT_COLUMNS + 1))
                 except Exception:
                     items_failed = True
                 if items_failed:
