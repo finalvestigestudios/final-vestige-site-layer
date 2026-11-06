@@ -26,7 +26,7 @@ Try a small version of the historian's method. Before you start a focus session,
 
 The same discipline makes photographs, eyewitness statements, and sales claims easier to evaluate.
 
-**Single CTA:** [Read the Change Blindness investigation](https://finalvestige.com/2026/11/02/change-blindness-why-you-miss-big-changes-right-in-front-of-you/) (final slug to be checked against WP post #1922 before any approval).
+**Single CTA:** [Read the Change Blindness investigation](https://finalvestige.com/2026/11/02/change-blindness/) (canonical published permalink verified via WordPress post #1922).
 
 **Source/context:** Simons & Levin's door study (1998) https://doi.org/10.3758/BF03208840 ; published FV WordPress #1922; no vendor performance inference.
 
@@ -50,7 +50,7 @@ That was also the central discipline of Franklin's 1784 commission investigating
 
 You can use the same distinction while evaluating audio, an app, or a habit. An attractive explanation is not yet a demonstrated effect.
 
-**Single CTA:** [Read the Mesmerism investigation](https://finalvestige.com/2026/11/02/mesmerism-what-franklins-1784-commission-actually-found/) (verify canonical live WordPress post #1924).
+**Single CTA:** [Read the Mesmerism investigation](https://finalvestige.com/2026/11/02/mesmerism/) (canonical published permalink verified via WordPress post #1924).
 
 **Sources:** https://gallica.bnf.fr/ark:/12148/bpt6k6575 ; FV Mesmerism #1924. The claim refers to the historical approach, NOT modern audio efficacy.
 
