@@ -7,7 +7,9 @@ sys.path.insert(0,str(Path(__file__).resolve().parent))
 from verified_catalog_label import rewrite, blob, ORIGINAL, REPLACEMENT, FIRST_RECORD, PROVENANCE
 
 HERE=Path(__file__).resolve().parents[1]
-FIXTURE=HERE/'evidence'/'R174_SOURCE_DERIVED_FIXTURE_ONLY.html'
+CANONICAL=HERE/'apollo-r174'/'research-desk-provenance-candidate-UNPUBLISHED.html'
+FALLBACK=HERE/'evidence'/'R174_SOURCE_DERIVED_FIXTURE_ONLY.html'
+FIXTURE=CANONICAL if CANONICAL.exists() else FALLBACK
 class R175Tests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
@@ -31,7 +33,7 @@ class R175Tests(unittest.TestCase):
         self.assertIn(REPLACEMENT,result)
 
     def test_actual_source_pin_required(self):
-        with self.assertRaisesRegex(ValueError,'Git blob'):rewrite(self.source)
+        with self.assertRaisesRegex(ValueError,'Git blob'):rewrite(self.source+' unexpected mutation')
     def test_source_drift_closed(self):
         with self.assertRaisesRegex(ValueError,'Git blob'):
             rewrite(self.source.replace('NASA S67-19766','NASA S67-00000',1),expected_blob=self.pin)
