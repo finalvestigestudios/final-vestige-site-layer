@@ -1,0 +1,140 @@
+{
+  "schema": "fv-scotch-cap-two-v1",
+  "observed_date": "2026-11-06",
+  "site": "https://finalvestige.com",
+  "post_id": 418,
+  "scope": "Two priority suspected failures; original source versus publisher/catalog candidates; read-only web retrieval, NOT guest Chrome.",
+  "evidence_standard": "A web retriever 403 is an observed retrieval-tool response only, not the visitor browser/origin HTTP result.",
+  "baseline": {
+    "legacy_post_count": 61,
+    "legacy_img_src_count": 355,
+    "current_post_count": 66,
+    "current_img_src_count": 361,
+    "alleged_broken_count": 42,
+    "visitor_verified_broken_count": null,
+    "proposed_savings_pct": 76,
+    "measured_savings_pct": null,
+    "oversize_wp_originals": 13,
+    "oversize_storage_bytes": 43522829
+  },
+  "sources": [
+    {
+      "url": "https://www.history.uscg.mil/Our-Collections/Photos/igphoto/2002905913/",
+      "kind": "USCG official catalog",
+      "claim": "VIRIN 210330-G-DE713-0002.JPG, Anthony Pettit service portrait, 0.04 MB download; individual item says public domain and cleared for release",
+      "tool": "indexed primary page",
+      "retrieved_date": "2026-11-06"
+    },
+    {
+      "url": "https://www.history.uscg.mil/Research/THE-LONG-BLUE-LINE/Article/2866442/the-long-blue-line-standing-a-deadly-watch-75-years-agofinal-hours-of-scotch-ca/",
+      "kind": "USCG historical primary story",
+      "claim": "Captions distinguish Pettit portrait from tsunami debris images (1946)",
+      "tool": "indexed primary page",
+      "retrieved_date": "2026-11-06"
+    },
+    {
+      "url": "https://nationalcoastguardmuseum.org/articles/scotch-cap-lighthouse/",
+      "kind": "National Coast Guard Museum photo catalog",
+      "claim": "Credited U.S. Coast Guard; distinct before and after photos, museum 2024 page",
+      "tool": "web HTML read",
+      "retrieved_date": "2026-11-06"
+    }
+  ],
+  "targets": [
+    {
+      "key": "418:1",
+      "post_id": 418,
+      "published_src": "https://media.defense.gov/2021/Mar/30/2002610812/1920/1080/0/210330-G-DE713-0002.JPG",
+      "original_retrieval": {
+        "tool": "web.open",
+        "observed": "wrapper_403",
+        "observed_date": "2026-11-06",
+        "origin_http": null,
+        "visitor_browser_http": null,
+        "visitor_broken": null,
+        "natural_width": null,
+        "natural_height": null,
+        "cold_wire_bytes": null
+      },
+      "subject": "Service portrait of Chief Boatswain Anthony L. Pettit; NOT tsunami debris",
+      "archival_identifier": "VIRIN 210330-G-DE713-0002.JPG",
+      "official_catalog_url": "https://www.history.uscg.mil/Our-Collections/Photos/igphoto/2002905913/",
+      "candidate": {
+        "kind": "existing_official_gallery",
+        "url": "https://www.history.uscg.mil/Our-Collections/Photos/igphoto/2002905913/",
+        "linked_exact_filename": "210330-G-DE713-0002.JPG",
+        "same_photo_by_catalog_id": true,
+        "binary_identical": null,
+        "render_test": "catalog_text_loaded; binary_image_not_independently_decoded",
+        "native_dimensions": null,
+        "proposed_dimensions": null,
+        "max_preview_width": 960,
+        "no_upscale": true
+      },
+      "rights": {
+        "photograph_credit": "U.S. Coast Guard",
+        "item_public_domain_notice": true,
+        "origin": "U.S. Coast Guard official catalog",
+        "restrictions": "follow DoD image-use limitations; no implied endorsement, review item-level attribution",
+        "item_review": "HOLD_BEFORE_COPY"
+      },
+      "disposition": "DO_NOT_CHANGE_UNTIL_GUEST_BROWSER_CONFIRMS_FAILURE"
+    },
+    {
+      "key": "418:2",
+      "post_id": 418,
+      "published_src": "https://www.history.uscg.mil/Portals/6/5_%20Scotch_Cap_debris2_1946.jpg",
+      "original_retrieval": {
+        "tool": "web.open",
+        "observed": "wrapper_403",
+        "observed_date": "2026-11-06",
+        "origin_http": null,
+        "visitor_browser_http": null,
+        "visitor_broken": null,
+        "natural_width": null,
+        "natural_height": null,
+        "cold_wire_bytes": null
+      },
+      "subject": "Photograph of Scotch Cap Lighthouse remains seen from bluff after April 1, 1946 tsunami; NOT Anthony Pettit portrait",
+      "archival_identifier": "5_ Scotch_Cap_debris2_1946 (filename family)",
+      "official_catalog_url": "https://www.history.uscg.mil/Research/THE-LONG-BLUE-LINE/Article/2866442/the-long-blue-line-standing-a-deadly-watch-75-years-agofinal-hours-of-scotch-ca/",
+      "candidate": {
+        "kind": "museum_hosted_coast_guard_credited_corresponding_filename",
+        "url": "https://nationalcoastguardmuseum.org/wp-content/uploads/2023/08/5_-Scotch_Cap_debris2_1946-600x463.jpg",
+        "source_page": "https://nationalcoastguardmuseum.org/articles/scotch-cap-lighthouse/",
+        "filename_correspondence": true,
+        "binary_identical": null,
+        "render_test": "web image rendered from link 25 on Museum article",
+        "native_dimensions": null,
+        "available_image_dimensions": [
+          600,
+          463
+        ],
+        "proposed_dimensions": [
+          600,
+          463
+        ],
+        "max_preview_width": 960,
+        "no_upscale": true
+      },
+      "rights": {
+        "photograph_credit": "U.S. Coast Guard (Museum caption)",
+        "item_public_domain_notice": null,
+        "origin": "Museum hosted derivative credited to Coast Guard; underlying photograph provenance still requires item check",
+        "restrictions": "Do not assume Museum derivative may be mirrored; verify underlying original image rights and credit, ask permission if uncertain",
+        "item_review": "HOLD_BEFORE_COPY"
+      },
+      "disposition": "STRONG_SAME_FILENAME_CANDIDATE_BUT_NO_AUTOMATIC_HOTLINK_OR_MIRROR"
+    }
+  ],
+  "release": {
+    "wordpress_production_writes": 0,
+    "image_downloads": 0,
+    "image_caches": 0,
+    "production_repairs": 0,
+    "additional_spend_usd": 0,
+    "homepage_changes": 0,
+    "site_qa_collector_duplicated": false,
+    "approval_to_publish": false
+  }
+}
