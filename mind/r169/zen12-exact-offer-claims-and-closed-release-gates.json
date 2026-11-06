@@ -1,0 +1,628 @@
+{
+  "schema": "fv.mind.r169.claim-release.v1",
+  "as_of": "2026-11-06",
+  "status": "DRAFT_ONLY_HARD_HOLD",
+  "commercial_thesis": "One authentic offer before buyer optimization. Zen12 Premium remains ineligible for promotion because Final Vestige-specific authorization is unverified; owned Payhip Mind SKU also unverified.",
+  "sources": [
+    {
+      "id": "SRC-01",
+      "url": "https://inspire3.com/",
+      "type": "official seller catalog",
+      "scope": "Inspire3 brand families; sales claims not outcomes",
+      "checked_date": "2026-11-06"
+    },
+    {
+      "id": "SRC-02",
+      "url": "https://zen12.com/",
+      "type": "exact seller offer",
+      "scope": "Premium 12 levels, 48 MP3s, $87.99 displayed Nov 6, one-year seller advertised guarantee; unverified checkout",
+      "checked_date": "2026-11-06"
+    },
+    {
+      "id": "SRC-03",
+      "url": "https://zen12.com/secret/",
+      "type": "alternate official seller promotion",
+      "scope": "Displays different $37 coupon context; no FV coupon authorization, cannot combine checkout representations",
+      "checked_date": "2026-11-06"
+    },
+    {
+      "id": "SRC-04",
+      "url": "https://affiliates.inspire3.com/",
+      "type": "public partner program",
+      "scope": "Public sign-up only; no evidence FV is accepted",
+      "checked_date": "2026-11-06"
+    },
+    {
+      "id": "SRC-05",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/3612492/",
+      "type": "primary experimental abstract",
+      "scope": "1987 white-bear five-minute tasks, rebound, distracter",
+      "checked_date": "2026-11-06"
+    },
+    {
+      "id": "SRC-06",
+      "url": "https://doi.org/10.1037/0033-295X.101.1.34",
+      "type": "scientific theory",
+      "scope": "1994 ironic processes theory",
+      "checked_date": "2026-11-06"
+    },
+    {
+      "id": "SRC-07",
+      "url": "https://doi.org/10.1080/17437199.2023.2248222",
+      "type": "meta-analysis",
+      "scope": "2024 journal issue 111 RCT 9,538 mindfulness interventions; not Zen12 test",
+      "checked_date": "2026-11-06"
+    },
+    {
+      "id": "SRC-08",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+      "type": "systematic review",
+      "scope": "2023 14 heterogeneous EEG entrainment studies, no exact product evaluation",
+      "checked_date": "2026-11-06"
+    },
+    {
+      "id": "SRC-09",
+      "url": "https://onlinelibrary.wiley.com/doi/full/10.1111/acps.13225",
+      "type": "systematic review",
+      "scope": "2020 meditation adverse event heterogeneity, not product risk",
+      "checked_date": "2026-11-06"
+    },
+    {
+      "id": "SRC-10",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "type": "regulatory guidance",
+      "scope": "Near endorsement material connection disclosure",
+      "checked_date": "2026-11-06"
+    },
+    {
+      "id": "SRC-11",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "type": "regulatory guidance",
+      "scope": "Objective product claims need adequate substantiation",
+      "checked_date": "2026-11-06"
+    },
+    {
+      "id": "SRC-12",
+      "url": "https://finalvestige.com/focus/",
+      "type": "live FV route reviewed via WordPress 2026-11-06",
+      "scope": "Existing seven-day Focus Fieldbook / Jetpack funnel",
+      "checked_date": "2026-11-06"
+    },
+    {
+      "id": "SRC-13",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "type": "live FV route reviewed via WordPress 2026-11-06",
+      "scope": "Historical original content",
+      "checked_date": "2026-11-06"
+    },
+    {
+      "id": "SRC-14",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "type": "live WP post list verified 2026-11-06",
+      "scope": "Perception investigation",
+      "checked_date": "2026-11-06"
+    },
+    {
+      "id": "SRC-15",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "type": "live WP post list verified 2026-11-06",
+      "scope": "History of suggestion",
+      "checked_date": "2026-11-06"
+    },
+    {
+      "id": "SRC-16",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "type": "founder tracking charter",
+      "scope": "Paid revenue distinct from clicks and creator views",
+      "checked_date": "2026-11-06"
+    },
+    {
+      "id": "SRC-17",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "type": "founder editorial charter",
+      "scope": "Unpublished Mind archive and disclosure rules",
+      "checked_date": "2026-11-06"
+    }
+  ],
+  "claims": [
+    {
+      "id": "P01",
+      "statement": "Zen12 Premium contains 12 levels",
+      "status": "SELLER_DESCRIBES",
+      "source_ids": [
+        "SRC-02"
+      ],
+      "limit": "Do not assert personal access or independently audited contents"
+    },
+    {
+      "id": "P02",
+      "statement": "Zen12 Premium supplies 48 MP3s",
+      "status": "SELLER_DESCRIBES",
+      "source_ids": [
+        "SRC-02"
+      ],
+      "limit": "Exact package representation, not own verification"
+    },
+    {
+      "id": "P03",
+      "statement": "Zen12 Premium displayed $87.99 on seller page Nov 6",
+      "status": "DATED_SELLER_DISPLAY",
+      "source_ids": [
+        "SRC-02"
+      ],
+      "limit": "No checkout/taxes/coupon entitlement verified"
+    },
+    {
+      "id": "P04",
+      "statement": "Zen12 promotional /secret/ page displays a $37 coupon",
+      "status": "ALTERNATE_SELLER_DISPLAY_ONLY",
+      "source_ids": [
+        "SRC-03"
+      ],
+      "limit": "No authorized coupon, offer or final checkout; never deploy"
+    },
+    {
+      "id": "P05",
+      "statement": "Zen12 advertises a one-year guarantee",
+      "status": "SELLER_ADVERTISED",
+      "source_ids": [
+        "SRC-02"
+      ],
+      "limit": "Refund practice and terms independently unverified"
+    },
+    {
+      "id": "P06",
+      "statement": "Zen12 has manuals and support materials",
+      "status": "SELLER_DESCRIBES",
+      "source_ids": [
+        "SRC-02"
+      ],
+      "limit": "Access not independently verified"
+    },
+    {
+      "id": "P07",
+      "statement": "Twelve minutes of Zen12 equal one hour meditation",
+      "status": "UNSUPPORTED_PRODUCT_EFFICACY",
+      "source_ids": [
+        "SRC-01",
+        "SRC-02",
+        "SRC-07"
+      ],
+      "limit": "Exclude claim entirely from FV endorsements"
+    },
+    {
+      "id": "P08",
+      "statement": "Commercial audio delivers immediately better focus",
+      "status": "UNSUPPORTED_PRODUCT_EFFICACY",
+      "source_ids": [
+        "SRC-02",
+        "SRC-07",
+        "SRC-08"
+      ],
+      "limit": "Exclude outcome promise"
+    },
+    {
+      "id": "P09",
+      "statement": "Brainwave entrainment is unequivocally proven to improve cognition",
+      "status": "UNSUPPORTED_EXTRAPOLATION",
+      "source_ids": [
+        "SRC-08"
+      ],
+      "limit": "Separate perception, EEG and actual outcomes; heterogeneous evidence"
+    },
+    {
+      "id": "P10",
+      "statement": "Meditation training can yield benefits on some attention outcomes",
+      "status": "CLASS_OF_INTERVENTION_REVIEW",
+      "source_ids": [
+        "SRC-07"
+      ],
+      "limit": "Cannot transfer to this product"
+    },
+    {
+      "id": "P11",
+      "statement": "Meditation cannot cause adverse experiences",
+      "status": "FALSE_GENERALIZATION",
+      "source_ids": [
+        "SRC-09"
+      ],
+      "limit": "Do not claim universal safety"
+    },
+    {
+      "id": "P12",
+      "statement": "White-bear suppression condition demonstrated rebound",
+      "status": "PRIMARY_EXPERIMENT",
+      "source_ids": [
+        "SRC-05"
+      ],
+      "limit": "Five-minute tasks and comparison conditions; not product"
+    },
+    {
+      "id": "P13",
+      "statement": "Distracter condition reduced later preoccupation",
+      "status": "PRIMARY_EXPERIMENT",
+      "source_ids": [
+        "SRC-05"
+      ],
+      "limit": "Constrained setting; not a treatment"
+    },
+    {
+      "id": "P14",
+      "statement": "Ironic process monitoring is a theoretical explanation",
+      "status": "THEORY_NOT_BRAIN_MODULE",
+      "source_ids": [
+        "SRC-06"
+      ],
+      "limit": "Do not present as measured neural circuitry"
+    },
+    {
+      "id": "P15",
+      "statement": "Existing FV Focus Fieldbook is a live optional free resource",
+      "status": "WP_ROUTE_VERIFIED",
+      "source_ids": [
+        "SRC-12"
+      ],
+      "limit": "Existing signup flow and welcome delivery still require independent end-to-end QA"
+    },
+    {
+      "id": "P16",
+      "statement": "Puységur source archive already published",
+      "status": "WP_ROUTE_VERIFIED",
+      "source_ids": [
+        "SRC-13"
+      ],
+      "limit": "Historical documents not outcome validation"
+    },
+    {
+      "id": "P17",
+      "statement": "Inspire3 operates affiliate program signup",
+      "status": "PUBLIC_ONLY",
+      "source_ids": [
+        "SRC-04"
+      ],
+      "limit": "No publisher-specific approval"
+    },
+    {
+      "id": "P18",
+      "statement": "Final Vestige Inspire3 account accepted",
+      "status": "UNKNOWN",
+      "source_ids": [
+        "SRC-04"
+      ],
+      "limit": "Authenticated dashboard or explicit signed acceptance required"
+    },
+    {
+      "id": "P19",
+      "statement": "Final Vestige authorized website/email/social promotion",
+      "status": "UNKNOWN",
+      "source_ids": [
+        "SRC-04"
+      ],
+      "limit": "Terms for channels and marketing creatives required"
+    },
+    {
+      "id": "P20",
+      "statement": "Final Vestige has authorized tracking URL",
+      "status": "UNKNOWN",
+      "source_ids": [
+        "SRC-04"
+      ],
+      "limit": "Never invent link or bypass hold"
+    },
+    {
+      "id": "P21",
+      "statement": "Final Vestige received affiliate commissions",
+      "status": "UNKNOWN",
+      "source_ids": [
+        "SRC-16"
+      ],
+      "limit": "Merchant settlement report required"
+    },
+    {
+      "id": "P22",
+      "statement": "Final Vestige owns a rights-cleared current Payhip Mind SKU",
+      "status": "UNKNOWN",
+      "source_ids": [
+        "SRC-16"
+      ],
+      "limit": "Authenticate listing, rights, fulfillment, pricing, returns; do not invent"
+    },
+    {
+      "id": "P23",
+      "statement": "A buyer CTA click equals paid conversion",
+      "status": "PROHIBITED_INFERENCE",
+      "source_ids": [
+        "SRC-16"
+      ],
+      "limit": "Track distinct stage events"
+    },
+    {
+      "id": "P24",
+      "statement": "Grok creator published identifiable video IDs",
+      "status": "UNKNOWN",
+      "source_ids": [
+        "SRC-16"
+      ],
+      "limit": "Praxxis/Grok TASK-008 inventory required"
+    },
+    {
+      "id": "P25",
+      "statement": "An affiliate disclosure next to actual recommendation is needed",
+      "status": "COMPLIANCE_REQUIREMENT",
+      "source_ids": [
+        "SRC-10"
+      ],
+      "limit": "Test actual rendering at mobile sizes"
+    },
+    {
+      "id": "P26",
+      "statement": "Health claims must be adequately substantiated",
+      "status": "COMPLIANCE_REQUIREMENT",
+      "source_ids": [
+        "SRC-11"
+      ],
+      "limit": "Unproven product-specific efficacy excluded"
+    }
+  ],
+  "authorization": {
+    "affiliate_approved": null,
+    "allowed_channels": null,
+    "affiliate_url": null,
+    "partner_terms": null,
+    "approved_creatives": null
+  },
+  "product": {
+    "seller": "Inspire3 / Zen12",
+    "exact_offer": "Zen12 Premium",
+    "seller_displayed_price_usd": 87.99,
+    "price_checked_on": "2026-11-06",
+    "final_checkout_price_usd": null,
+    "refund_fulfilled": null,
+    "package_seller_describes": {
+      "levels": 12,
+      "mp3_files": 48
+    },
+    "product_specific_efficacy_independently_verified": false
+  },
+  "owned_alternative": {
+    "payhip_mind_sku": null,
+    "verified_sale_enabled": null,
+    "rights_verified": null,
+    "checkout_verified": null,
+    "refund_policy_verified": null
+  },
+  "revenue": {
+    "verified_affiliate_commissions_paid_usd": null,
+    "verified_owned_product_orders": null,
+    "refunds_and_fees_reconciled": null,
+    "qualified_human_sessions": null,
+    "net_revenue_per_1000_qualified_human_sessions": null
+  },
+  "gates": [
+    {
+      "id": "G01",
+      "name": "partner_account_acceptance",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G02",
+      "name": "approved_website_placement",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G03",
+      "name": "approved_social_placement",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G04",
+      "name": "approved_email_placement",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G05",
+      "name": "exact_earning_url",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G06",
+      "name": "creative_usage_rights",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G07",
+      "name": "advertiser_tracking_terms",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G08",
+      "name": "merchant_reporting_access",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G09",
+      "name": "final_checkout_price",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G10",
+      "name": "taxes_and_total",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G11",
+      "name": "refund_terms_readback",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G12",
+      "name": "refund_fulfillment_evidence",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G13",
+      "name": "owned_payhip_sku",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G14",
+      "name": "owned_payhip_rights",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G15",
+      "name": "owned_payhip_checkout",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G16",
+      "name": "owned_payhip_returns",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G17",
+      "name": "owned_payhip_delivery",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G18",
+      "name": "editorial_independent_source_qa",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G19",
+      "name": "product_claim_limit_qa",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G20",
+      "name": "mobile_360_390",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G21",
+      "name": "tablet_768",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G22",
+      "name": "desktop_1440",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G23",
+      "name": "keyboard_screenreader",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G24",
+      "name": "reduced_motion_nojs",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G25",
+      "name": "native_browser_performance",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G26",
+      "name": "video_rights_and_captions",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G27",
+      "name": "founder_editorial_release",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G28",
+      "name": "founder_commerce_release",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G29",
+      "name": "site_qa_approval",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G30",
+      "name": "dispatch_coordination",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G31",
+      "name": "grok_asset_id_reconciliation",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G32",
+      "name": "qualified_human_sessions",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G33",
+      "name": "confirmed_affiliate_order",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G34",
+      "name": "commission_settlement",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G35",
+      "name": "refunds_fees_reconciliation",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G36",
+      "name": "first_party_privacy_consent",
+      "status": "CLOSED",
+      "evidence": null
+    }
+  ],
+  "prohibitions": [
+    "No checkout link or merchant link in unpublished HTML",
+    "No product-specific cognition/health claims",
+    "No unapproved website/social/email promotion",
+    "No claiming clicks or signups as purchases",
+    "No new Jetpack form or tracking pixel",
+    "No production WordPress writes without founder release"
+  ],
+  "qa_note": "Public site tool fetch was unavailable; live pages and post inventory were verified read-only through connected WordPress. This register cannot verify shopper checkout or partner dashboard."
+}
