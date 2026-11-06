@@ -100,6 +100,12 @@ def inspect(raw: bytes, *, issue: int, subject: str, cta_url: str,
     # Plaintext fallback may print the bare destination rather than an HTML anchor.
     plain_cta = cta_url in plain
     unsub_links = [href for href, label in body_links if "unsubscribe" in label.casefold() and is_http(href)]
+    primary_labels = [label for href, label in body_links if href == cta_url and label.strip()]
+    anchor_pos = html_text.find(primary_labels[0]) if primary_labels else -1
+    url_pos = plain.find(cta_url)
+    # An affiliate disclosure elsewhere in the message is not a near-offer disclosure.
+    html_near = anchor_pos >= 0 and bool(DISCLOSURE.search(html_text[max(0, anchor_pos - 300):anchor_pos + 180]))
+    plain_near = url_pos >= 0 and bool(DISCLOSURE.search(plain[max(0, url_pos - 300):url_pos + 180]))
     has_unsub_header = bool(msg.get("List-Unsubscribe", ""))
     # An automated tool cannot establish the link actually functions or belongs to FV.
     flags = {
@@ -113,7 +119,8 @@ def inspect(raw: bytes, *, issue: int, subject: str, cta_url: str,
         "actual_optout_test_attested": bool(optout_checked),
         "publisher_address_in_body": bool(publisher_address and publisher_address.strip() in combined),
         "publisher_address_confirmed_by_owner": bool(publisher_address),
-        "affiliate_disclosure_in_text": bool(DISCLOSURE.search(combined)) if issue in COMMERCIAL else True,
+        "affiliate_disclosure_adjacent_html": html_near if issue in COMMERCIAL else True,
+        "affiliate_disclosure_adjacent_plaintext": plain_near if issue in COMMERCIAL else True,
         "html_images_have_alt": parsed.images_have_alt,
         "html_no_scripts_or_forms": not parsed.prohibited_markup,
         "accessed_in_authorized_received_inbox": bool(authorized_inbox),
