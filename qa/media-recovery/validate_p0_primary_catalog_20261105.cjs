@@ -39,7 +39,7 @@ function verify(a) {
  ok(c.catalog_high_resolution_label==='4.91 MB'&&c.cdc_highres_intrinsic_px===null,'cdc_master_unknown');
  ok(c.secondary_file_catalog==='https://commons.wikimedia.org/wiki/File:Three_Mile_Island_nuclear_power_plant.jpg','cdc_secondary');
  ok(c.secondary_original_width_px===2843&&c.secondary_original_height_px===1817&&c.proposed_secondary_960px_width===960&&c.proposed_secondary_960px_height===614,'cdc_commons_geometry');
- ok(c.identical_to_published_photo===false&&c.identical_to_official_cdc_master===null&&c.matches_subject==='PLANT_ONLY_AERIAL_COMPOSITION_UNVERIFIED','cdc_not_same_photo');
+ ok(c.identical_to_published_photo===null&&c.identical_to_official_cdc_master===null&&c.matches_subject==='PLANT_ONLY_AERIAL_COMPOSITION_UNVERIFIED','cdc_not_same_photo');
  ok(c.reuse_policy_url==='https://www.cdc.gov/other/agencymaterials.html'&&c.rights_copyright_classification==='OFFICIAL_ITEM_PUBLIC_DOMAIN'&&c.reuse_policy_verified===true,'cdc_policy');
  for(const f of ['agency_attribution_required','individual_credit_required','source_site_link_required','prominent_nonendorsement_disclaimer_required','free_original_source_statement_required','substantive_content_change_prohibited'])ok(c[f]===true,'cdc_rights_'+f);
  ok(c.rights_release_review==='HOLD_SITE_CONTEXT_AND_CREDIT_QA'&&c.proposed_credit==='CDC / Dr. Ewing. Source: CDC Public Health Image Library, image 1194.','cdc_credit_hold');
