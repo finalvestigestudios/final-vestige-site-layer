@@ -37,7 +37,7 @@ The curated input schema is the existing `fv-cold-image-wire-pairs-v1`; this too
 
 ## Tests and limits
 
-The new regression suite has **24 tests**, all executed successfully in an isolated V8 Node-compatible harness using the **GitHub-readback committed wrapper and manifest**. Included are fabricated article URLs; cross-post/out-of-range slots; incomplete image coverage; a non-article image request; mixed wire sources; viewport drift; HTTP 404; warm cache; failed decoding; false zero-image assertions; tampered manifest counts; and sample/61/66 cohort distinctions. **Native Node execution, GitHub CI and visitor Chrome evidence remain pending.** Tests use **synthetic** example bytes (100,000 before and 24,000 after, i.e. 76%) to check the gate. Those bytes are NOT measurements of Final Vestige traffic or image assets.
+The new regression suite has **25 tests**, all executed successfully in an isolated V8 Node-compatible harness using the **GitHub-readback committed wrapper and manifest**. Included are fabricated article URLs; cross-post/out-of-range slots; incomplete image coverage; a non-article image request; mixed wire sources; viewport drift; HTTP 404; warm cache; failed decoding; false zero-image assertions; tampered manifest counts; caller-side manifest injection; and sample/61/66 cohort distinctions. **Native Node execution, GitHub CI and visitor Chrome evidence remain pending.** Tests use **synthetic** example bytes (100,000 before and 24,000 after, i.e. 76%) to check the gate. Those bytes are NOT measurements of Final Vestige traffic or image assets.
 
 ## Site QA handoff: visitor-visible broken images remain first priority
 
