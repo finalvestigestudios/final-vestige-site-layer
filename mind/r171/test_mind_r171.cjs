@@ -31,7 +31,7 @@ function checkBuyer(h){
   assert.match(h,/12 levels, 48 MP3 recordings/);
   assert.match(h,/four listening styles/i);
   assert.match(h,/seller's public Premium comparison/i);
-  assert.match(h,/not<\\/em> a verified final checkout amount/i);
+  assert.match(h,/not<\/em> a verified final checkout amount/i);
   assert.match(h,/no product-specific controlled evidence/i);
   assert.match(h,/Final Vestige does not subscribe/i);
   assert.match(h,/https:\/\/finalvestige.com\/focus\//);
