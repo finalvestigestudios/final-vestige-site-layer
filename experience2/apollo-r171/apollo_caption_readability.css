@@ -1,0 +1,12 @@
+/* Staging only. No site-level typography or navigation changes. */
+.fv-ex2-page .fvx-archive-caption{line-height:1.55;overflow-wrap:anywhere}
+.fv-ex2-page .fvx-archive-caption > strong,
+.fv-ex2-page .fvx-archive-caption__body,
+.fv-ex2-page .fvx-archive-caption__source{display:block}
+.fv-ex2-page .fvx-archive-caption > strong{margin-block-end:.5rem;line-height:1.4}
+.fv-ex2-page .fvx-archive-caption__body{max-inline-size:65ch}
+.fv-ex2-page .fvx-archive-caption__source{margin-block-start:.75rem;line-height:1.65}
+.fv-ex2-page .fvx-archive-caption__source a{text-underline-offset:.18em}
+@media (forced-colors:active){
+ .fv-ex2-page .fvx-archive-caption__source a{color:LinkText;text-decoration:underline}
+}
