@@ -101,7 +101,6 @@ def build_inventory(candidate_dir: str | Path) -> str:
     just-created inventory (best effort, inode-checked), never another file.
     """
     stage: Path | None = None
-    published = False
     published_identity: tuple[int, int] | None = None
     root = Path(candidate_dir)
     target = root / MANIFEST
@@ -136,7 +135,6 @@ def build_inventory(candidate_dir: str | Path) -> str:
             raise InventoryBuildError("Inventory staging identity changed")
         published_identity = (staged_info.st_dev, staged_info.st_ino)
         os.link(stage, target)
-        published = True
         published_info = target.lstat()
         if (not stat.S_ISREG(published_info.st_mode)
                 or (published_info.st_dev, published_info.st_ino) != published_identity):
@@ -157,7 +155,11 @@ def build_inventory(candidate_dir: str | Path) -> str:
                 stage.unlink(missing_ok=True)
             except OSError:
                 pass
-        if published and sys.exc_info()[0] is not None and published_identity is not None:
+        # A filesystem wrapper may create the hardlink and then raise before
+        # returning. In that case no post-link flag can have been set. On ANY
+        # failed publication attempt, inspect the target against the inode we
+        # recorded before calling os.link. Never remove a foreign replacement.
+        if sys.exc_info()[0] is not None and published_identity is not None:
             try:
                 info = target.lstat()
                 if (info.st_dev, info.st_ino) == published_identity and stat.S_ISREG(info.st_mode):
