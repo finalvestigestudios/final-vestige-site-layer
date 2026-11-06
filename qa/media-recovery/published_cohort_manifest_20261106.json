@@ -407,7 +407,10 @@
       "slug": "they-thought-the-books-were-charcoal",
       "modified_wp": "2026-11-02T21:39:41",
       "inline_img_count": 6,
-      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot"
+      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot",
+      "fresh_inline_img_count": 6,
+      "fresh_external_img_count": 6,
+      "fresh_modified_wp": "2026-11-02T21:39:41"
     },
     {
       "id": 253,
@@ -415,7 +418,10 @@
       "slug": "the-life-preservers-had-passed-inspection",
       "modified_wp": "2026-11-02T21:39:43",
       "inline_img_count": 7,
-      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot"
+      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot",
+      "fresh_inline_img_count": 7,
+      "fresh_external_img_count": 7,
+      "fresh_modified_wp": "2026-11-02T21:39:43"
     },
     {
       "id": 254,
@@ -423,7 +429,10 @@
       "slug": "the-lump-had-gears",
       "modified_wp": "2026-11-03T14:46:49",
       "inline_img_count": 7,
-      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot"
+      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot",
+      "fresh_inline_img_count": 7,
+      "fresh_external_img_count": 7,
+      "fresh_modified_wp": "2026-11-03T14:46:49"
     },
     {
       "id": 255,
@@ -431,7 +440,10 @@
       "slug": "the-load-doubled-on-paper",
       "modified_wp": "2026-10-30T01:11:08",
       "inline_img_count": 7,
-      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot"
+      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot",
+      "fresh_inline_img_count": 7,
+      "fresh_external_img_count": 7,
+      "fresh_modified_wp": "2026-10-30T01:11:08"
     },
     {
       "id": 256,
@@ -439,7 +451,10 @@
       "slug": "the-torch-never-reopened",
       "modified_wp": "2026-11-02T21:39:45",
       "inline_img_count": 7,
-      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot"
+      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot",
+      "fresh_inline_img_count": 7,
+      "fresh_external_img_count": 7,
+      "fresh_modified_wp": "2026-11-02T21:39:45"
     },
     {
       "id": 257,
@@ -447,7 +462,10 @@
       "slug": "the-numbers-came-back-apollo-12",
       "modified_wp": "2026-10-29T20:59:35",
       "inline_img_count": 7,
-      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot"
+      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot",
+      "fresh_inline_img_count": 7,
+      "fresh_external_img_count": 7,
+      "fresh_modified_wp": "2026-10-29T20:59:35"
     },
     {
       "id": 258,
@@ -455,7 +473,10 @@
       "slug": "inside-the-joint-silver-bridge",
       "modified_wp": "2026-11-02T21:39:47",
       "inline_img_count": 6,
-      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot"
+      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot",
+      "fresh_inline_img_count": 6,
+      "fresh_external_img_count": 6,
+      "fresh_modified_wp": "2026-11-02T21:39:47"
     },
     {
       "id": 268,
@@ -463,7 +484,10 @@
       "slug": "they-painted-over-archimedes",
       "modified_wp": "2026-10-30T01:10:13",
       "inline_img_count": 10,
-      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot"
+      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot",
+      "fresh_inline_img_count": 10,
+      "fresh_external_img_count": 10,
+      "fresh_modified_wp": "2026-10-30T01:10:13"
     },
     {
       "id": 269,
@@ -746,5 +770,5 @@
   "image_count_scope": "Gutenberg stored <img> tags only, not dynamically injected/featured, srcset, CSS or live rendered; per-post counts may be stale after edits",
   "source_census_blob_sha": "76aa63ffaa299a6e6878edc1b66e637fa6f058ab",
   "new_five_post_fresh_count_verification": "Read-only WordPress posts.get context=edit for IDs 1917 1920 1922 1924 1926, 2026-11-06",
-  "fresh_recensus_progress": 24
+  "fresh_recensus_progress": 32
 }
