@@ -61,8 +61,8 @@ class AtomicTextTests(unittest.TestCase):
         self.assertFalse(self.target.exists())
         self.assert_no_partials()
 
-    def test_encoding_error_cleans_partial_without_report(self):
-        with self.assertRaises(UnicodeEncodeError):
+    def test_invalid_utf8_payload_rejected_before_staging(self):
+        with self.assertRaisesRegex(ValueError, '^Invalid text report content$'):
             publish_text(self.target, "unpaired surrogate \ud800")
         self.assertFalse(self.target.exists())
         self.assert_no_partials()
