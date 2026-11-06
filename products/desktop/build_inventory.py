@@ -127,10 +127,20 @@ def build_inventory(candidate_dir: str | Path) -> str:
             raise InventoryBuildError("Staged checksum inventory differs from canonical evidence")
         if _fingerprints(root) != original:
             raise InventoryBuildError("Candidate binaries changed during inventory build")
+        # Anchor rollback to the verified staging inode BEFORE publication.
+        # Capturing target identity after os.link leaves a failure window: an
+        # lstat error strands our new manifest, and an intervening replacement
+        # can be mistaken for ours (and potentially deleted during rollback).
+        staged_info = stage.lstat()
+        if not stat.S_ISREG(staged_info.st_mode) or staged_info.st_nlink != 1:
+            raise InventoryBuildError("Inventory staging identity changed")
+        published_identity = (staged_info.st_dev, staged_info.st_ino)
         os.link(stage, target)
         published = True
         published_info = target.lstat()
-        published_identity = (published_info.st_dev, published_info.st_ino)
+        if (not stat.S_ISREG(published_info.st_mode)
+                or (published_info.st_dev, published_info.st_ino) != published_identity):
+            raise InventoryBuildError("Published inventory identity changed")
         stage.unlink()
         stage = None
         check_candidate_directory(root, EXPECTED)
