@@ -1,0 +1,164 @@
+{
+  "as_of": "2026-11-06T16:31:35Z",
+  "wp_blog_id": 256784396,
+  "canonical_pr": 175,
+  "canonical_head": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "canonical_manifest_blob_sha": "86df98ad8a84e583ff5df64ddbf8c0eaa1335b00",
+  "inherited_stack_pr": 1272,
+  "inherited_head": "76978003e8dd8a5d2223aed5a82f51b02d07b1b2",
+  "newsletter_provider": {
+    "enabled": true,
+    "can_send": true,
+    "auto_new_post_send": false,
+    "email_content_format": "full",
+    "reply_to": "no-reply",
+    "reported_total": 3,
+    "reported_confirmed": 3,
+    "reported_unconfirmed": 2,
+    "reported_suppressed": 0,
+    "verified_email_eligible": null,
+    "received_welcome_verified": false,
+    "recent_observed_posts_not_sent": 5
+  },
+  "official_references": [
+    "https://wordpress.com/support/newsletter/email-appearance/",
+    "https://wordpress.com/support/newsletter/send-newsletter-emails/",
+    "https://wordpress.com/support/newsletter-settings/",
+    "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business",
+    "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking"
+  ],
+  "all_editions": "HOLD_UNSENT",
+  "commercial_editions": "HOLD_MERCHANT",
+  "allowed_preview": "local_offline_review_only",
+  "forbidden": [
+    "email_send",
+    "send_test_email",
+    "publish_post",
+    "schedule_post",
+    "change_newsletter_settings",
+    "import_subscribers",
+    "activate_affiliate_links"
+  ],
+  "issues": [
+    {
+      "edition": 1,
+      "subject": "The mind is not a camera",
+      "subject_chars": 24,
+      "preheader": "What an old record can teach us about the difference between seeing and knowing.",
+      "preheader_chars": 80,
+      "kind": "editorial",
+      "canonical_blob_sha": "039b452b5cb7cd6dc2fed6fac4d2dd77fa9d49c8",
+      "primary_cta": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "present_links": [
+        "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+      ],
+      "word_count": 207,
+      "canonical_draft_warning": true,
+      "legal_placeholders_present": true,
+      "merchant_link_present": false,
+      "explicit_research_source_section": false,
+      "release": "HOLD_UNSENT",
+      "commercial_hold": false
+    },
+    {
+      "edition": 2,
+      "subject": "Before hypnosis had a name",
+      "subject_chars": 26,
+      "preheader": "The eighteenth-century witnesses who left behind a problem of proof.",
+      "preheader_chars": 68,
+      "kind": "editorial",
+      "canonical_blob_sha": "faa207ab7deafd86460d36f8c17fe62d392d0e14",
+      "primary_cta": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "present_links": [
+        "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+      ],
+      "word_count": 220,
+      "canonical_draft_warning": true,
+      "legal_placeholders_present": true,
+      "merchant_link_present": false,
+      "explicit_research_source_section": false,
+      "release": "HOLD_UNSENT",
+      "commercial_hold": false
+    },
+    {
+      "edition": 3,
+      "subject": "The twelve-minute meditation question",
+      "subject_chars": 37,
+      "preheader": "An honest way to evaluate a short audio practice before you spend anything.",
+      "preheader_chars": 75,
+      "kind": "commercial-review-pending",
+      "canonical_blob_sha": "aeeef34efea0cc281f69901488e4501fea851245",
+      "primary_cta": "[[APPROVED_ZEN12_WARMUP_GUIDE_URL_REQUIRED]]",
+      "present_links": [
+        "https://finalvestige.com/focus/"
+      ],
+      "word_count": 272,
+      "canonical_draft_warning": true,
+      "legal_placeholders_present": true,
+      "merchant_link_present": false,
+      "explicit_research_source_section": false,
+      "release": "HOLD_UNSENT",
+      "commercial_hold": true
+    },
+    {
+      "edition": 4,
+      "subject": "Fourteen seconds. A much longer explanation.",
+      "subject_chars": 44,
+      "preheader": "Apollo 1, the surviving record, and why a tidy cause can mislead.",
+      "preheader_chars": 65,
+      "kind": "editorial",
+      "canonical_blob_sha": "89635bfb9c8d1ff17297a59b6b5b5b2a176934ca",
+      "primary_cta": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/",
+      "present_links": [
+        "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/"
+      ],
+      "word_count": 175,
+      "canonical_draft_warning": true,
+      "legal_placeholders_present": true,
+      "merchant_link_present": false,
+      "explicit_research_source_section": false,
+      "release": "HOLD_UNSENT",
+      "commercial_hold": false
+    },
+    {
+      "edition": 5,
+      "subject": "Before you press play on a hypnosis audio",
+      "subject_chars": 41,
+      "preheader": "Three questions that matter more than an impressive promise.",
+      "preheader_chars": 60,
+      "kind": "commercial-review-pending",
+      "canonical_blob_sha": "a9dfaa450ba025a7b5113ade8a294d6dbad778dc",
+      "primary_cta": "[[APPROVED_HYPNOSIS_LIVE_WARMUP_GUIDE_URL_REQUIRED]]",
+      "present_links": [
+        "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+      ],
+      "word_count": 239,
+      "canonical_draft_warning": true,
+      "legal_placeholders_present": true,
+      "merchant_link_present": false,
+      "explicit_research_source_section": false,
+      "release": "HOLD_UNSENT",
+      "commercial_hold": true
+    },
+    {
+      "edition": 6,
+      "subject": "What did seven days of attention reveal?",
+      "subject_chars": 40,
+      "preheader": "A small experiment, a useful notebook, and no miracle claims.",
+      "preheader_chars": 61,
+      "kind": "editorial",
+      "canonical_blob_sha": "004d558df6376d2ad6f4f79a4581e8d2c444e355",
+      "primary_cta": "https://finalvestige.com/focus/",
+      "present_links": [
+        "https://finalvestige.com/focus/"
+      ],
+      "word_count": 202,
+      "canonical_draft_warning": true,
+      "legal_placeholders_present": true,
+      "merchant_link_present": false,
+      "explicit_research_source_section": false,
+      "release": "HOLD_UNSENT",
+      "commercial_hold": false
+    }
+  ]
+}
