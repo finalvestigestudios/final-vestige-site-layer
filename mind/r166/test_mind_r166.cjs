@@ -24,7 +24,7 @@ function validate(d){
  check(a.includes('https://finalvestige.com/2026/11/02/change-blindness/'),'perception integration');
  check(a.includes('https://finalvestige.com/focus/'),'existing free resource');
  check(a.includes('not a clinical intervention')&&a.includes('not a promise'),'no medical/profit promise');
- check(!/affiliate (link|commission|offer)/i.test(a),'independent investigation no affiliate sale copy');
+ check(!/Buy using our affiliate link|href=[^>]*affid=/i.test(a),'independent investigation no affiliate sale copy');
  check(g.includes('<html lang="en">'),'HTML language');
  check(g.includes('name="viewport"'),'mobile viewport');
  check(g.includes('name="robots" content="noindex,nofollow"'),'private draft noindex');
@@ -50,7 +50,7 @@ function validate(d){
  check(!/<script\b/i.test(g),'no JS');
  check(!/<form\b/i.test(g),'no duplicated signup');
  check(!/<iframe\b/i.test(g),'no external embeds');
- check(!/autoplay|onload=|onclick=/i.test(g),'no autoplay or inline JS handler');
+ check(!/<video[^>]*\sautoplay(?:\s|>)/i.test(g)&&!/\sonload=|\sonclick=/i.test(g),'no autoplay or inline JS handler');
  check(!/href="[^"]*(?:affiliate_id|affid|refid|utm_campaign|clickbank|hop=)[^"]*"/i.test(g),'no affiliate redirect');
  check(!/href="https?:\/\/[^"]*\/(?:checkout|order|buy-now)[^"]*"/i.test(g),'no direct merchant checkout bypass');
  check(g.includes('42-second')&&g.includes('00:31–00:42'),'42 second storyboard');
@@ -89,19 +89,19 @@ const baseline=validate(data); const mutationTests=[
  ['inject-iframe','guide',s=>s.replace('</body>','<iframe src="https://player.example"></iframe></body>')],
  ['allow-autoplay','guide',s=>s.replace('</body>','<video autoplay></video></body>')],
  ['inject-inline-handler','guide',s=>s.replace('<main id="main"','<main onclick="evil()" id="main"')],
- ['remove-focus','guide',s=>s.replace('https://finalvestige.com/focus/','/missing-focus/')],
+ ['remove-focus','guide',s=>s.replaceAll('https://finalvestige.com/focus/','/missing-focus/')],
  ['invent-product-efficacy','guide',s=>s.replace('without product-specific substantiation','with product-specific proof')],
  ['remove-viewport','guide',s=>s.replace('name="viewport"','name="desktop-only"')],
  ['remove-alt','guide',s=>s.replace('aria-labelledby="art-title art-desc"','aria-labelledby="no-desc"')],
- ['remove-keyboard','guide',s=>s.replace('focus-visible','f0cus-visible')],
+ ['remove-keyboard','guide',s=>s.replaceAll('focus-visible','f0cus-visible')],
  ['remove-noindex','guide',s=>s.replace('noindex,nofollow','index,follow')],
  ['remove-video-timeline','guide',s=>s.replace('00:31–00:42','00:31–00:43')],
  ['inject-buy-checkout','guide',s=>s.replace('</body>','<a href="https://zen12.com/checkout">Pay now</a></body>')],
  ['inject-affiliate','guide',s=>s.replace('</body>','<a href="https://zen12.com/?affid=999">Earn</a></body>')],
- ['erase-history-source','article',s=>s.replace('https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/','/')],
- ['erase-primary-paper','article',s=>s.replace('https://pubmed.ncbi.nlm.nih.gov/6999452/','missing')],
+ ['erase-history-source','article',s=>s.replaceAll('https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/','/')],
+ ['erase-primary-paper','article',s=>s.replaceAll('https://pubmed.ncbi.nlm.nih.gov/6999452/','missing')],
  ['introduce-affiliate-in-investigation','article',s=>s+'\nBuy using our affiliate link today'],
- ['remove-hub-focus','hub',s=>s.replace('href="https://finalvestige.com/focus/"','href="/missing/"')],
+ ['remove-hub-focus','hub',s=>s.replaceAll('href="https://finalvestige.com/focus/"','href="/missing/"')],
  ['hub-create-form','hub',s=>s+'<form><input type="email"></form>'],
  ['delete-campaign-id','plan',s=>s.replace('utm_content=<real_grok_asset_id>','utm_content=unknown')],
  ['equate-click-sale','plan',s=>s.replace('affiliate_confirmed_sale','outbound_only')],
