@@ -287,6 +287,15 @@ jobs:
           command -v xvfb-run
           xvfb-run -a python -W error products/desktop/scripts/native_wheel_smoke_r227.py
           xvfb-run -a python -OO -W error products/desktop/scripts/native_wheel_smoke_r227.py
+      - name: R228 Win32 precision-wheel accumulation and viewport isolation (17 methods; normal and -OO)
+        run: |
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_precision_wheel_r228.py'
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_precision_wheel_r228.py'
+      - name: R228 actual Tk high-resolution wheel events under Xvfb (normal and -OO)
+        run: |
+          command -v xvfb-run
+          xvfb-run -a python -W error products/desktop/scripts/native_precision_wheel_r228.py
+          xvfb-run -a python -OO -W error products/desktop/scripts/native_precision_wheel_r228.py
       - name: R200 execute R194-R199 financial and policy audit tests (148 methods per mode)
         run: |
           python products/desktop/scripts/safe_audit_subprocess_r205.py
@@ -1529,6 +1538,14 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R227 viewport wheel controls FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_wheel_access_r227.py'
           if ($LASTEXITCODE -ne 0) { throw "R227 optimized viewport wheel controls FAILED" }
+      - name: R228 Win32 precision-wheel input prepackaging gate (17 methods; normal and -OO)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_precision_wheel_r228.py'
+          if ($LASTEXITCODE -ne 0) { throw "R228 precision-wheel input gate FAILED" }
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_precision_wheel_r228.py'
+          if ($LASTEXITCODE -ne 0) { throw "R228 optimized precision-wheel input gate FAILED" }
       - name: Verify full normal/optimized source suite before packaging (R57)
         shell: pwsh
         run: |

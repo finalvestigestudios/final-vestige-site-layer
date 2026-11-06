@@ -57,6 +57,25 @@ def wheel_scroll_units(*, delta=0, button=None):
     return (-3 if delta > 0 else 3) * ticks
 
 
+def precise_windows_wheel_units(delta, remainder=0):
+    """Accumulate partial Win32 120-unit notches without amplifying trackpads.
+
+    One physical notch moves three Tk units. Four 30-unit events equal one
+    notch, opposing partial events cancel, and a single huge event is capped
+    at four notches. Residual values cannot escape [-119, 119]. The function
+    never inspects paths, widgets or financial data.
+    """
+    if (type(delta) is not int or type(remainder) is not int
+            or not -120 < remainder < 120):
+        raise ValueError("Invalid Windows wheel delta")
+    total = delta + remainder
+    if total == 0:
+        return 0, 0
+    direction = 1 if total > 0 else -1
+    notches, residual = divmod(abs(total), 120)
+    return -3 * direction * min(4, notches), direction * residual
+
+
 class ScrollableForm:
     """Single root-owned vertical viewport; controls keep native Tk Tab order.
 
@@ -69,6 +88,8 @@ class ScrollableForm:
 
     def __init__(self, root):
         self.root = root
+        self._wheel_platform = root.tk.call("tk", "windowingsystem")
+        self._wheel_remainder = 0
         self.viewport = ttk.Frame(root)
         self.viewport.grid(row=0, column=0, sticky="nsew")
         self.viewport.rowconfigure(0, weight=1)
@@ -125,11 +146,15 @@ class ScrollableForm:
     def _scroll_wheel(self, event, *, button=None):
         if not self._inside_viewport(event.widget):
             return None
-        units = wheel_scroll_units(delta=getattr(event, "delta", 0), button=button)
-        if not units:
-            return None
         lo, hi = self.canvas.yview()
         if lo <= 0.0 and hi >= 1.0:
+            return None
+        if button is None and getattr(self, "_wheel_platform", None) == "win32":
+            units, self._wheel_remainder = precise_windows_wheel_units(
+                getattr(event, "delta", 0), self._wheel_remainder)
+        else:
+            units = wheel_scroll_units(delta=getattr(event, "delta", 0), button=button)
+        if not units:
             return None
         self.canvas.yview_scroll(units, "units")
         return "break"
