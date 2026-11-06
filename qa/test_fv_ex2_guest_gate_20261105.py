@@ -73,5 +73,16 @@ class GateTest(unittest.TestCase):
             self.assertTrue(all(report['checks'].values()))
             self.assertEqual(json.loads(Path(dest,'results.json').read_text())['release_ready'],False)
 
+    def test_private_preview_query_is_not_logged(self):
+        with tempfile.TemporaryDirectory() as dest:
+            target = HERE.joinpath('fixture.html').as_uri() + '?share_key=NEVER_PERSIST_THIS'
+            command = [sys.executable, str(HERE / 'fv_ex2_guest_browser_admission_20261105.py'),
+                       '--target', target, '--output', dest]
+            outcome = subprocess.run(command, capture_output=True, text=True, timeout=90)
+            self.assertEqual(outcome.returncode, 2)
+            receipt = Path(dest, 'results.json').read_text()
+            self.assertNotIn('NEVER_PERSIST_THIS', receipt)
+            self.assertEqual(json.loads(receipt)['axe']['status'], 'BLOCKED_AXE_MISSING')
+
 if __name__ == '__main__':
     unittest.main(verbosity=2)
