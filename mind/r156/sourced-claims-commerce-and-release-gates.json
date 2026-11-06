@@ -1,0 +1,554 @@
+{
+  "schema_version": "1.0",
+  "milestone": "Mind R156",
+  "date": "2026-11-05",
+  "status": "UNPUBLISHED_HARD_HOLD",
+  "primary_offer_candidate": "Hypnosis Live Total Focus",
+  "alternative_under_review": "Existing FV-owned rights-cleared Payhip Mind SKU — not authenticated",
+  "sources": {
+    "simons1999": "https://pubmed.ncbi.nlm.nih.gov/10694957/",
+    "simons2010": "https://pubmed.ncbi.nlm.nih.gov/23397479/",
+    "drew2013": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3964612/",
+    "inspire3": "https://inspire3.com/",
+    "zen12": "https://zen12.com/about",
+    "totalfocus": "https://hypnosislive.com/mental-skills/total-focus",
+    "affiliate": "https://affiliates.inspire3.com/",
+    "ftc_disclosure": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "ftc_health": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+    "fv_focus": "https://finalvestige.com/focus/",
+    "fv_puysegur": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "fv_change": "https://finalvestige.com/2026/11/02/change-blindness/",
+    "issue171": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+    "issue820": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+    "groktask": "https://docs.google.com/document/d/1_dqcJeqxbvYb1prGxy0nSWTsHu8p0PSRsDB_NPNbL48/edit"
+  },
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "Original sustained inattentional blindness dynamic task experiment appeared in 1999",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/10694957/",
+      "disposition": "SUPPORTED_AS_LAB_RESULT"
+    },
+    {
+      "id": "C02",
+      "claim": "Similarity of unexpected stimulus and task difficulty affected observation",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/10694957/",
+      "disposition": "SUPPORTED_WITH_TASK_CONTEXT"
+    },
+    {
+      "id": "C03",
+      "claim": "One universal 50% gorilla-miss rate applies everywhere",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/10694957/",
+      "disposition": "REJECT_UNIVERSAL_GENERALIZATION"
+    },
+    {
+      "id": "C04",
+      "claim": "Knowledge of gorilla does not ensure noticing curtain color or player departure",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/23397479/",
+      "disposition": "SUPPORTED_WITH_CONTEXT"
+    },
+    {
+      "id": "C05",
+      "claim": "Gorilla familiarity makes a person immune to inattentional blindness",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/23397479/",
+      "disposition": "REJECT_CONTRADICTED"
+    },
+    {
+      "id": "C06",
+      "claim": "2013 experiment recruited 24 radiologists",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3964612/",
+      "disposition": "SUPPORTED_LAB_SAMPLE"
+    },
+    {
+      "id": "C07",
+      "claim": "20 of 24 radiologists failed to report gorilla",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3964612/",
+      "disposition": "SUPPORTED_LAB_SAMPLE"
+    },
+    {
+      "id": "C08",
+      "claim": "12 of 20 missers fixated its location while visible",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3964612/",
+      "disposition": "SUPPORTED_LAB_SAMPLE"
+    },
+    {
+      "id": "C09",
+      "claim": "Gorilla estimated 48 times mean pulmonary nodule in study",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3964612/",
+      "disposition": "SUPPORTED_STUDY_MEASUREMENT"
+    },
+    {
+      "id": "C10",
+      "claim": "Nodule detection and unexpected gorilla detection are same task",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3964612/",
+      "disposition": "REJECT_DIFFERENT_TASKS"
+    },
+    {
+      "id": "C11",
+      "claim": "83% means actual clinical malpractice incidence is 83%",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3964612/",
+      "disposition": "REJECT_UNSUPPORTED_EXTRAPOLATION"
+    },
+    {
+      "id": "C12",
+      "claim": "All professional observers are careless",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3964612/",
+      "disposition": "REJECT_MISREPRESENTATION"
+    },
+    {
+      "id": "C13",
+      "claim": "Eye gaze proves conscious awareness of target",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3964612/",
+      "disposition": "REJECT_UNSUPPORTED_INFERENCE"
+    },
+    {
+      "id": "C14",
+      "claim": "Inattentional blindness is a neurological disorder",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/10694957/",
+      "disposition": "REJECT_CATEGORY_ERROR"
+    },
+    {
+      "id": "C15",
+      "claim": "Inattentional blindness differs from change blindness",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/10694957/",
+      "disposition": "SUPPORTED_DISTINCTION"
+    },
+    {
+      "id": "C16",
+      "claim": "Free desk exercise is a standardized attention test",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/10694957/",
+      "disposition": "REJECT_NOT_VALIDATED"
+    },
+    {
+      "id": "C17",
+      "claim": "Animal magnetism historical descriptions prove magnetic fluency",
+      "source": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "disposition": "REJECT_HISTORIC_VS_EFFICACY"
+    },
+    {
+      "id": "C18",
+      "claim": "Published Puységur archive provides historical connection",
+      "source": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "disposition": "HISTORICAL_CONTEXT_ONLY"
+    },
+    {
+      "id": "C19",
+      "claim": "Existing Seven Day Focus Fieldbook is optional free resource",
+      "source": "https://finalvestige.com/focus/",
+      "disposition": "EXISTING_DESTINATION"
+    },
+    {
+      "id": "C20",
+      "claim": "Focus resource confirms guest welcome email delivery",
+      "source": "https://finalvestige.com/focus/",
+      "disposition": "UNKNOWN_NEEDS_GUEST_QA"
+    },
+    {
+      "id": "C21",
+      "claim": "Inspire3 lists hypnosis and meditation-related properties",
+      "source": "https://inspire3.com/",
+      "disposition": "SELLER_CATALOG_ONLY"
+    },
+    {
+      "id": "C22",
+      "claim": "Zen12 describes 12 levels with four listening styles each",
+      "source": "https://zen12.com/about",
+      "disposition": "SELLER_FORMAT_ONLY"
+    },
+    {
+      "id": "C23",
+      "claim": "12 minute Zen12 equals clinical outcome of 60 minute meditation",
+      "source": "https://zen12.com/about",
+      "disposition": "REJECT_SELLER_CLAIM_NOT_SUBSTANTIATED"
+    },
+    {
+      "id": "C24",
+      "claim": "Special brainwave sounds guarantee total relaxation for all users",
+      "source": "https://zen12.com/about",
+      "disposition": "REJECT_SELLER_CLAIM_NOT_SUBSTANTIATED"
+    },
+    {
+      "id": "C25",
+      "claim": "Total Focus is one 33-minute 47 MB recording by J. A. Amos",
+      "source": "https://hypnosislive.com/mental-skills/total-focus",
+      "disposition": "SELLER_FORMAT_ONLY"
+    },
+    {
+      "id": "C26",
+      "claim": "Total Focus produces universal productivity gains",
+      "source": "https://hypnosislive.com/mental-skills/total-focus",
+      "disposition": "REJECT_SELLER_CLAIM_NOT_SUBSTANTIATED"
+    },
+    {
+      "id": "C27",
+      "claim": "Total Focus rewires brains or reverses inattentional blindness",
+      "source": "https://hypnosislive.com/mental-skills/total-focus",
+      "disposition": "REJECT_SELLER_CLAIM_NOT_SUBSTANTIATED"
+    },
+    {
+      "id": "C28",
+      "claim": "Merchant amount $17.95 or $24.44 is a checkout-verified final price",
+      "source": "https://hypnosislive.com/mental-skills/total-focus",
+      "disposition": "UNKNOWN_CHECKOUT_TOTAL"
+    },
+    {
+      "id": "C29",
+      "claim": "Merchant-described refund guarantee proves actual successful refund",
+      "source": "https://hypnosislive.com/mental-skills/total-focus",
+      "disposition": "UNKNOWN_REFUND_PERFORMANCE"
+    },
+    {
+      "id": "C30",
+      "claim": "Public affiliate program establishes FV-specific acceptance",
+      "source": "https://affiliates.inspire3.com/",
+      "disposition": "UNKNOWN_HARD_HOLD"
+    },
+    {
+      "id": "C31",
+      "claim": "Named affiliate URLs are legally authorized for TikTok and Dispatch",
+      "source": "https://affiliates.inspire3.com/",
+      "disposition": "UNKNOWN_HARD_HOLD"
+    },
+    {
+      "id": "C32",
+      "claim": "Tracking clicks count as validated paid affiliate sales",
+      "source": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "disposition": "REJECT_EVENT_CONFLATION"
+    },
+    {
+      "id": "C33",
+      "claim": "FTC recommends clear nearby affiliate disclosures",
+      "source": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "disposition": "SUPPORTED_REGULATORY_GUIDANCE"
+    },
+    {
+      "id": "C34",
+      "claim": "Product-specific health benefit marketing needs adequate substantiation",
+      "source": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "disposition": "SUPPORTED_REGULATORY_GUIDANCE"
+    },
+    {
+      "id": "C35",
+      "claim": "Review-only component has disabled purchase CTA and near-link disclosure",
+      "source": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "disposition": "SOURCE_CONTROLLED_TEST_ONLY"
+    },
+    {
+      "id": "C36",
+      "claim": "Seven Day Focus signup and the existing newsletter may be replaced",
+      "source": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "disposition": "REJECT_OUT_OF_SCOPE"
+    },
+    {
+      "id": "C37",
+      "claim": "Grok TASK-008 asset IDs have been reconciled for proposed videos",
+      "source": "https://docs.google.com/document/d/1_dqcJeqxbvYb1prGxy0nSWTsHu8p0PSRsDB_NPNbL48/edit",
+      "disposition": "UNKNOWN_PENDING_CREATOR"
+    },
+    {
+      "id": "C38",
+      "claim": "Independent affiliate commissions paid to FV established",
+      "source": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "disposition": "UNKNOWN_HARD_HOLD"
+    },
+    {
+      "id": "C39",
+      "claim": "Paid owned FV Mind product rights/SKU verified",
+      "source": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "disposition": "UNKNOWN_HARD_HOLD"
+    },
+    {
+      "id": "C40",
+      "claim": "True realized net revenue per 1000 qualified sessions is known",
+      "source": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "disposition": "NOT_COMPUTABLE"
+    }
+  ],
+  "release_gates": [
+    {
+      "id": "G01",
+      "name": "Named Inspire3 affiliate account acceptance",
+      "status": "CLOSED",
+      "reason": "Required external commercial/documentary authorization unavailable or unverified"
+    },
+    {
+      "id": "G02",
+      "name": "Specific Total Focus entitlement",
+      "status": "CLOSED",
+      "reason": "Required external commercial/documentary authorization unavailable or unverified"
+    },
+    {
+      "id": "G03",
+      "name": "Specific Zen12 Premium entitlement",
+      "status": "CLOSED",
+      "reason": "Required external commercial/documentary authorization unavailable or unverified"
+    },
+    {
+      "id": "G04",
+      "name": "Approved payable tracking URL",
+      "status": "CLOSED",
+      "reason": "Required external commercial/documentary authorization unavailable or unverified"
+    },
+    {
+      "id": "G05",
+      "name": "Affiliate organic website channel permission",
+      "status": "CLOSED",
+      "reason": "Required external commercial/documentary authorization unavailable or unverified"
+    },
+    {
+      "id": "G06",
+      "name": "Affiliate YouTube channel permission",
+      "status": "CLOSED",
+      "reason": "Required external commercial/documentary authorization unavailable or unverified"
+    },
+    {
+      "id": "G07",
+      "name": "Affiliate TikTok channel permission",
+      "status": "CLOSED",
+      "reason": "Required external commercial/documentary authorization unavailable or unverified"
+    },
+    {
+      "id": "G08",
+      "name": "Affiliate newsletter/email marketing permission",
+      "status": "CLOSED",
+      "reason": "Required external commercial/documentary authorization unavailable or unverified"
+    },
+    {
+      "id": "G09",
+      "name": "Merchant product offer and redirect validation",
+      "status": "CLOSED",
+      "reason": "Required external commercial/documentary authorization unavailable or unverified"
+    },
+    {
+      "id": "G10",
+      "name": "Written current affiliate terms",
+      "status": "CLOSED",
+      "reason": "Required external commercial/documentary authorization unavailable or unverified"
+    },
+    {
+      "id": "G11",
+      "name": "Reliable affiliate order attribution contract",
+      "status": "CLOSED",
+      "reason": "Required external commercial/documentary authorization unavailable or unverified"
+    },
+    {
+      "id": "G12",
+      "name": "Affiliate refund and reversal reporting",
+      "status": "CLOSED",
+      "reason": "Required external commercial/documentary authorization unavailable or unverified"
+    },
+    {
+      "id": "G13",
+      "name": "Affiliate payout settlement records",
+      "status": "CLOSED",
+      "reason": "Required external commercial/documentary authorization unavailable or unverified"
+    },
+    {
+      "id": "G14",
+      "name": "Merchant item identity at checkout",
+      "status": "CLOSED",
+      "reason": "Required external commercial/documentary authorization unavailable or unverified"
+    },
+    {
+      "id": "G15",
+      "name": "Merchant tax and final price verification",
+      "status": "CLOSED",
+      "reason": "Required external commercial/documentary authorization unavailable or unverified"
+    },
+    {
+      "id": "G16",
+      "name": "Merchant refund terms at purchase",
+      "status": "CLOSED",
+      "reason": "Required external commercial/documentary authorization unavailable or unverified"
+    },
+    {
+      "id": "G17",
+      "name": "Merchant refund processing independently tested",
+      "status": "CLOSED",
+      "reason": "Required external commercial/documentary authorization unavailable or unverified"
+    },
+    {
+      "id": "G18",
+      "name": "FV-owned Payhip paid Mind SKU identified",
+      "status": "CLOSED",
+      "reason": "Required external commercial/documentary authorization unavailable or unverified"
+    },
+    {
+      "id": "G19",
+      "name": "Owned SKU rights and distribution license authenticated",
+      "status": "CLOSED",
+      "reason": "Required external commercial/documentary authorization unavailable or unverified"
+    },
+    {
+      "id": "G20",
+      "name": "Owned SKU real checkout accessible",
+      "status": "CLOSED",
+      "reason": "Required external commercial/documentary authorization unavailable or unverified"
+    },
+    {
+      "id": "G21",
+      "name": "Owned SKU reliable file fulfillment",
+      "status": "CLOSED",
+      "reason": "Independent proof or testing not yet established"
+    },
+    {
+      "id": "G22",
+      "name": "Owned SKU refund and tax terms verified",
+      "status": "CLOSED",
+      "reason": "Independent proof or testing not yet established"
+    },
+    {
+      "id": "G23",
+      "name": "Real merchant paid order",
+      "status": "CLOSED",
+      "reason": "Independent proof or testing not yet established"
+    },
+    {
+      "id": "G24",
+      "name": "Paid customer count verified",
+      "status": "CLOSED",
+      "reason": "Independent proof or testing not yet established"
+    },
+    {
+      "id": "G25",
+      "name": "Attributable affiliate commission settled",
+      "status": "CLOSED",
+      "reason": "Independent proof or testing not yet established"
+    },
+    {
+      "id": "G26",
+      "name": "Merchant fees and refunds reconciled",
+      "status": "CLOSED",
+      "reason": "Independent proof or testing not yet established"
+    },
+    {
+      "id": "G27",
+      "name": "Qualified-human session denominator",
+      "status": "CLOSED",
+      "reason": "Independent proof or testing not yet established"
+    },
+    {
+      "id": "G28",
+      "name": "Privacy-compliant consent for required tracking",
+      "status": "CLOSED",
+      "reason": "Independent proof or testing not yet established"
+    },
+    {
+      "id": "G29",
+      "name": "Actual Grok asset_id and URL",
+      "status": "CLOSED",
+      "reason": "Independent proof or testing not yet established"
+    },
+    {
+      "id": "G30",
+      "name": "Video source and media rights",
+      "status": "CLOSED",
+      "reason": "Independent proof or testing not yet established"
+    },
+    {
+      "id": "G31",
+      "name": "Site QA browser test 360/390/768/1440/1920",
+      "status": "CLOSED",
+      "reason": "Independent proof or testing not yet established"
+    },
+    {
+      "id": "G32",
+      "name": "Site QA keyboard and screen-reader review",
+      "status": "CLOSED",
+      "reason": "Independent proof or testing not yet established"
+    },
+    {
+      "id": "G33",
+      "name": "Site QA no-JS and reduced-motion review",
+      "status": "CLOSED",
+      "reason": "Independent proof or testing not yet established"
+    },
+    {
+      "id": "G34",
+      "name": "Guest Jetpack Focus signup verification",
+      "status": "CLOSED",
+      "reason": "Independent proof or testing not yet established"
+    },
+    {
+      "id": "G35",
+      "name": "Welcome Fieldbook delivery verification",
+      "status": "CLOSED",
+      "reason": "Independent proof or testing not yet established"
+    },
+    {
+      "id": "G36",
+      "name": "Crosswalk to existing analytics without duplicate tag",
+      "status": "CLOSED",
+      "reason": "Independent proof or testing not yet established"
+    },
+    {
+      "id": "G37",
+      "name": "A/B registration and randomization QA",
+      "status": "CLOSED",
+      "reason": "Requires explicit governance approval and evidence"
+    },
+    {
+      "id": "G38",
+      "name": "Optional video produced/captions/poster licensed",
+      "status": "CLOSED",
+      "reason": "Requires explicit governance approval and evidence"
+    },
+    {
+      "id": "G39",
+      "name": "7/30-day settlement cohorts validated",
+      "status": "CLOSED",
+      "reason": "Requires explicit governance approval and evidence"
+    },
+    {
+      "id": "G40",
+      "name": "Founder paid-offer activation release",
+      "status": "CLOSED",
+      "reason": "Requires explicit governance approval and evidence"
+    },
+    {
+      "id": "G41",
+      "name": "Founder live WordPress release",
+      "status": "CLOSED",
+      "reason": "Requires explicit governance approval and evidence"
+    },
+    {
+      "id": "G42",
+      "name": "Homepage lead art review",
+      "status": "CLOSED",
+      "reason": "Requires explicit governance approval and evidence"
+    },
+    {
+      "id": "G43",
+      "name": "Issue #126 independent claims QA",
+      "status": "CLOSED",
+      "reason": "Requires explicit governance approval and evidence"
+    },
+    {
+      "id": "G44",
+      "name": "Issue #174 Dispatch coordination",
+      "status": "CLOSED",
+      "reason": "Requires explicit governance approval and evidence"
+    },
+    {
+      "id": "G45",
+      "name": "PR #172 canonical Mind hub review",
+      "status": "CLOSED",
+      "reason": "Requires explicit governance approval and evidence"
+    }
+  ],
+  "eligible_for_publication": false,
+  "eligible_for_affiliate_activation": false,
+  "affiliate_partner_acceptance_verified": false,
+  "affiliate_earning_url": null,
+  "owned_product_sale_ready": null,
+  "paid_attributable_orders": null,
+  "merchant_confirmed_sales": null,
+  "affiliate_commissions_settled": null,
+  "confirmed_focus_subscribers_attributed": null,
+  "qualified_human_sessions": null,
+  "realized_net_revenue": null,
+  "net_revenue_per_1000_qualified_sessions": null,
+  "costs": 0,
+  "spend_authorized": false,
+  "measurement_note": "null represents UNVERIFIED/UNOBSERVABLE, not measured zero. No new script and no purchase/lead test executed. Actual costs cannot be inferred from this JSON."
+}
