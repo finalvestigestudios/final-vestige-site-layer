@@ -7,6 +7,7 @@ approval remain separate gates. No binary content is executed here.
 from __future__ import annotations
 
 import os
+from contextlib import contextmanager
 import stat
 import struct
 from pathlib import Path
@@ -14,6 +15,33 @@ from pathlib import Path
 
 class PEFormatError(ValueError):
     """The candidate does not meet the desktop suite PE32+ shape contract."""
+
+
+@contextmanager
+def _private_pe_stream(stream):
+    """Redact failed stream operations after fdopen hands off ownership.
+
+    If stream.__enter__ fails, no context manager owns the stream yet; attempt
+    explicit cleanup. Normal body/exit failures are closed by ``with stream``.
+    Never reclassify a deliberate PE format failure or intercept interrupts.
+    """
+    entered = False
+    try:
+        with stream:
+            entered = True
+            yield stream
+    except PEFormatError:
+        raise
+    except Exception:
+        raise PEFormatError("Cannot inspect candidate file") from None
+    finally:
+        if not entered:
+            try:
+                stream.close()
+            except Exception:
+                # A broken close cannot be reported with client-derived text.
+                # The original failure already rejects this candidate.
+                pass
 
 
 def _u16(raw: bytes, at: int) -> int:
@@ -68,7 +96,7 @@ def verify_amd64_pe(path: str | Path) -> None:
         if isinstance(exc, Exception) and not isinstance(exc, PEFormatError):
             raise PEFormatError("Cannot inspect candidate file") from None
         raise
-    with stream:
+    with _private_pe_stream(stream):
         length = metadata.st_size
         if length < 512:
             raise PEFormatError("Truncated Windows image")
