@@ -231,7 +231,10 @@
       "slug": "almost-home-sultana-disaster",
       "modified_wp": "2026-09-08T10:07:17",
       "inline_img_count": 3,
-      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot"
+      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot",
+      "fresh_inline_img_count": 3,
+      "fresh_external_img_count": 0,
+      "fresh_modified_wp": "2026-09-08T10:07:17"
     },
     {
       "id": 146,
@@ -239,7 +242,10 @@
       "slug": "the-dam-that-didnt-fail-vajont",
       "modified_wp": "2026-11-02T21:37:02",
       "inline_img_count": 3,
-      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot"
+      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot",
+      "fresh_inline_img_count": 3,
+      "fresh_external_img_count": 0,
+      "fresh_modified_wp": "2026-11-02T21:37:02"
     },
     {
       "id": 151,
@@ -247,7 +253,10 @@
       "slug": "they-taught-the-lake-to-breathe",
       "modified_wp": "2026-08-28T02:11:36",
       "inline_img_count": 3,
-      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot"
+      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot",
+      "fresh_inline_img_count": 3,
+      "fresh_external_img_count": 0,
+      "fresh_modified_wp": "2026-08-28T02:11:36"
     },
     {
       "id": 156,
@@ -255,7 +264,10 @@
       "slug": "they-lifted-the-city-galveston",
       "modified_wp": "2026-11-02T21:39:27",
       "inline_img_count": 4,
-      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot"
+      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot",
+      "fresh_inline_img_count": 4,
+      "fresh_external_img_count": 0,
+      "fresh_modified_wp": "2026-11-02T21:39:27"
     },
     {
       "id": 166,
@@ -263,7 +275,10 @@
       "slug": "they-checked-the-dam-that-morning",
       "modified_wp": "2026-11-02T21:39:29",
       "inline_img_count": 7,
-      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot"
+      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot",
+      "fresh_inline_img_count": 7,
+      "fresh_external_img_count": 6,
+      "fresh_modified_wp": "2026-11-02T21:39:29"
     },
     {
       "id": 190,
@@ -271,7 +286,10 @@
       "slug": "the-hoses-that-wouldnt-fit",
       "modified_wp": "2026-11-02T21:39:31",
       "inline_img_count": 6,
-      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot"
+      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot",
+      "fresh_inline_img_count": 6,
+      "fresh_external_img_count": 6,
+      "fresh_modified_wp": "2026-11-02T21:39:31"
     },
     {
       "id": 211,
@@ -279,7 +297,10 @@
       "slug": "the-men-who-wouldnt-turn-left",
       "modified_wp": "2026-11-02T21:39:32",
       "inline_img_count": 6,
-      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot"
+      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot",
+      "fresh_inline_img_count": 6,
+      "fresh_external_img_count": 6,
+      "fresh_modified_wp": "2026-11-02T21:39:32"
     },
     {
       "id": 213,
@@ -287,7 +308,10 @@
       "slug": "the-fire-he-lit-himself",
       "modified_wp": "2026-10-29T20:59:21",
       "inline_img_count": 7,
-      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot"
+      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot",
+      "fresh_inline_img_count": 7,
+      "fresh_external_img_count": 7,
+      "fresh_modified_wp": "2026-10-29T20:59:21"
     },
     {
       "id": 214,
@@ -698,5 +722,5 @@
   "image_count_scope": "Gutenberg stored <img> tags only, not dynamically injected/featured, srcset, CSS or live rendered; per-post counts may be stale after edits",
   "source_census_blob_sha": "76aa63ffaa299a6e6878edc1b66e637fa6f058ab",
   "new_five_post_fresh_count_verification": "Read-only WordPress posts.get context=edit for IDs 1917 1920 1922 1924 1926, 2026-11-06",
-  "fresh_recensus_progress": 8
+  "fresh_recensus_progress": 16
 }
