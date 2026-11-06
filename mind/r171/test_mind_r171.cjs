@@ -62,7 +62,7 @@ ok(article.includes("**not** a validated Stroop task"),"exercise caution");
 ok(article.includes("did not show that any person's attention"),"no universal product transfer");
 ok(article.includes("Puységur"),"historical link");
 ok(plan.includes("paid, attributable conversion rate"),"A/B paid objective");
-ok(plan.includes("NOT_COMPUTABLE")||plan.includes("NOT COMPUTABLE"),"missing revenue stays undefined");
+ok(plan.includes("Undefined when denominator"),"missing revenue stays undefined");
 ok(plan.includes("confirmed_optin"),"confirmed optin distinct from click");
 ok(plan.includes("affiliate_click"),"affiliate click event");
 ok(plan.includes("NOT ALREADY NETTED")||plan.includes("not already netted"),"no double deduction");
