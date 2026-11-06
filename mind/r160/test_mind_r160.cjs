@@ -43,7 +43,7 @@ function validate(p){
  assert.ok(/<button class="locked"[^>]*\bdisabled\b/i.test(html),"purchase control not natively disabled");
  assert.ok(/HARD HOLD/i.test(html),"commercial block not explained");
  assert.ok(/12 levels and 48 MP3s/i.test(html),"exact seller package not described");
- assert.ok(/seller/i.test(html)&&/refund/i.test(html)&&/not independently verified/i.test(html),"limits absent");
+ assert.ok(/seller/i.test(html)&&/refund/i.test(html)&&/have not been independently verified|not independently verified/i.test(html),"limits absent");
  assert.equal(matrix.release_status,"HARD_HOLD");
  assert.equal(matrix.affiliate.named_fv_authorization,"UNVERIFIED");
  assert.equal(matrix.affiliate.authorized_affiliate_url,null);
