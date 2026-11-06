@@ -1,0 +1,70 @@
+{
+  "generated_at_utc": "2026-11-06T01:33:00Z",
+  "evidence_kind": "PRIVACY_REDACTED_READ_ONLY_SNAPSHOT_NOT_RECIPIENT_PROOF",
+  "site": "https://finalvestige.com",
+  "source": {
+    "wordpress_newsletter_status": "authenticated Jetpack newsletter status 2026-11-06T01:32:51Z",
+    "wordpress_settings": "authenticated Jetpack newsletter settings 2026-11-06T01:32:52Z",
+    "editorial_standards": "published /editorial-standards/ WP page 17",
+    "issues": "GitHub #174 and #171",
+    "master_pr": "#175 @ d57ccdba3aee8f065e143e101c2945f4f3d01647",
+    "base_pr": "#1176 @ d4cd3a0c6ddf1591472b236c41b232f88cf968bd"
+  },
+  "wordpress": {
+    "newsletter_enabled": true,
+    "can_send": true,
+    "auto_send_new_posts": false,
+    "email_content_format": "full",
+    "sender": "Final Vestige Studios",
+    "reply_to": "no-reply",
+    "reported_total": 3,
+    "reported_confirmed": 3,
+    "reported_unconfirmed": 2,
+    "reported_imported_last_24h": 0,
+    "subscriber_counts_additive": false,
+    "number_of_latest_published_post_records_examined": 5,
+    "latest_five_send_status": "never_sent_opted_out",
+    "welcome_contains_fieldbook_link": true,
+    "welcome_received_and_pdf_downloaded": null
+  },
+  "gmail_confirmation": {
+    "observed_date_utc": "2026-10-25T22:00:12Z",
+    "subject_class": "native subscription CONFIRMATION REQUEST",
+    "raw_rfc822_inspected_read_only": true,
+    "fieldbook_in_message_body": false,
+    "automattic_footer_seen": true,
+    "list_unsubscribe_header_seen": false,
+    "campaign_delivery_proof": false,
+    "native_confirmation_completed_proof": false,
+    "message_raw_content_stored": false,
+    "email_addresses_stored": false
+  },
+  "non_sending_visuals": {
+    "wordpress_com_mshots_status": "ready",
+    "viewport": 390,
+    "pages": [
+      "/dispatch/",
+      "/focus/"
+    ],
+    "interactive_guest_dom_verified": false,
+    "form_submitted": false,
+    "received_native_email_preview": false
+  },
+  "commercial": {
+    "issue_03": "Zen12 Premium: seller says 12 levels and 48 MP3s; benefit/equivalence claims not independent proof; named affiliate acceptance and email rights UNKNOWN",
+    "issue_05": "Hypnosis Live Total Focus: seller says 33-minute 47-MB audio; price display varies across retrieved page representations; checkout/refund and partner terms UNVERIFIED",
+    "affiliate_link_active": false,
+    "merchant_email_permission": null,
+    "paid_orders_verified": null,
+    "net_revenue_per_1000_qualified_sessions": null
+  },
+  "release": {
+    "issues_01_02_04_06": "HOLD_UNSENT",
+    "issues_03_05": "HOLD_MERCHANT_AND_UNSENT",
+    "founder_final_approval": false,
+    "postal_address_rendered_in_received_commercial_email": false,
+    "unsubscribe_functionally_tested": false,
+    "new_email_platform_created": false,
+    "emails_sent": 0
+  }
+}
