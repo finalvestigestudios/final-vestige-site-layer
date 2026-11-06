@@ -53,7 +53,7 @@ function validate(d){
  has(b,/<button[^>]*\bdisabled\b[^>]*>Zen12 Premium purchase link/,'native disabled CTA');
  has(b,/Affiliate disclosure:[\s\S]{0,300}may earn a commission at no additional cost to you/,'near-link material connection disclosure');
  has(b,/https:\/\/finalvestige\.com\/focus\//,'one existing Focus CTA');
- has(b,/42-second|forty-two-second/,'optional video concept');
+ has(b,/42-second/,'optional 42 second video concept');
  has(b,/00–08:[\s\S]*36–42:/,'timed 42s transcript');
  has(b,/not a playable video|No autoplay/i,'no produced/autoplay claims');
  has(b,/<svg[\s\S]*?aria-labelledby="arttitle artdesc"/,'accessible original illustration');
@@ -118,7 +118,7 @@ const probes=[
 ];
 for(const [key,find,replacement] of probes){
  if(!original[key].includes(find))throw Error('Bad R169 mutation setup '+key+': '+find);
- const changed={...original,[key]:original[key].replace(find,replacement)};
+ const changed={...original,[key]:original[key].replaceAll(find,replacement)};
  try{validate(changed);throw Error('UNDTECTED unsafe mutation '+key+': '+find)}
  catch(e){if(e.message.startsWith('UNDTECTED'))throw e;mutations++}
 }
