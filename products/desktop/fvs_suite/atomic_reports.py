@@ -18,6 +18,7 @@ from typing import Callable, Iterable, Mapping
 
 from .csv_formula_guard import has_unescaped_formula_prefix
 from .csv_stage_integrity import CSVStagingWitness
+from .csv_publish_guard import adopt_csv_descriptor, raise_private_csv_failure, require_free_destination
 from .csv_userdict_custody import verify_userdict_storage
 
 
@@ -94,7 +95,7 @@ def _render_cell(value: object, cell: Callable[[object], str]) -> str:
     return rendered
 
 
-def write_csv_report(destination: str | Path, fields: Iterable[str],
+def _write_csv_report(destination: str | Path, fields: Iterable[str],
                      rows: Iterable[Mapping[str, object]],
                      cell: Callable[[object], str]) -> Path:
     """Write UTF-8-BOM CSV and publish only after the entire report is synced.
@@ -140,10 +141,14 @@ def write_csv_report(destination: str | Path, fields: Iterable[str],
         # Two distinct input labels may collapse to one visible label after
         # spreadsheet-formula neutralization; never publish ambiguous evidence.
         raise ValueError("Unsafe or ambiguous CSV report columns")
+    # Reject occupied destinations (including dangling symlinks) without
+    # writing an unnecessary private staging file. Publication is still
+    # exclusive and protects against concurrent destination creation.
+    require_free_destination(target)
     descriptor, temporary = tempfile.mkstemp(
         prefix=".fvs-csv-", suffix=".partial", dir=target.parent)
     try:
-        with os.fdopen(descriptor, "w", encoding="utf-8-sig", newline="") as stream:
+        with adopt_csv_descriptor(descriptor) as stream:
             sink = _BudgetedCSVTextSink(stream)
             writer = csv.DictWriter(sink, fieldnames=names, extrasaction="ignore")
             writer.writer.writerow(rendered)
@@ -234,3 +239,18 @@ def write_csv_report(destination: str | Path, fields: Iterable[str],
             os.unlink(temporary)
         except FileNotFoundError:
             pass
+
+
+def write_csv_report(destination: str | Path, fields: Iterable[str],
+                     rows: Iterable[Mapping[str, object]],
+                     cell: Callable[[object], str]) -> Path:
+    """Publish an offline financial CSV without leaking client paths in OS errors.
+
+    Preserve the original deterministic CSV writer, financial byte witness,
+    source-row validation and exclusive no-overwrite semantics. Filesystem
+    failures are displayed with fixed text; caller input errors still fail.
+    """
+    try:
+        return _write_csv_report(destination, fields, rows, cell)
+    except OSError as exc:
+        raise_private_csv_failure(exc)
