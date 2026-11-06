@@ -65,7 +65,7 @@ If the product is primarily a convenience purchase, evaluate it like one. Check 
 
 ## What the broader evidence can and cannot rescue
 
-A further line of research assessed a short-form mindfulness-based attention-training program in applied settings. A 2024 report combining five studies compared training groups with no-training groups across a four-week period and reported some favorable differences in self-reported mind wandering, meta-awareness and response-time variability.[5] The authors explicitly characterized it as preliminary proof-of-concept and called for larger randomized controlled studies.
+A further line of research assessed a short-form mindfulness-based attention-training program in applied settings. A report published online on 28 December 2023 combining five studies compared training groups with no-training groups across a four-week period and reported some favorable differences in self-reported mind wandering, meta-awareness and response-time variability.[5] The authors explicitly characterized it as preliminary proof-of-concept and called for larger randomized controlled studies.
 
 The distinction matters. This investigation is not an argument that brief practices are worthless. Some interventions merit rigorous follow-up. It is an argument that **brief** is not a mechanism, **digital** is not a product identity, and **promising** is not interchangeable with **proven for this checkout item**.
 
@@ -112,7 +112,7 @@ At Final Vestige, evidence belongs to the reader before it belongs to any offer.
 
 [4] Ingendoh, Posny and Heine, *Binaural beats to entrain the brain?* (2023), [DOI](https://doi.org/10.1371/journal.pone.0286023), [PubMed](https://pubmed.ncbi.nlm.nih.gov/37205669/). The paper does not test Zen12.
 
-[5] *Investigating the protective effects of mindfulness-based attention training on mind wandering in applied settings* (2024), [PMC article](https://pmc.ncbi.nlm.nih.gov/articles/PMC10781831/). Preliminary applied-training evidence, not product-specific validation.
+[5] *Investigating the protective effects of mindfulness-based attention training on mind wandering in applied settings* (published online 28 December 2023), [PMC article](https://pmc.ncbi.nlm.nih.gov/articles/PMC10781831/). Preliminary applied-training evidence, not product-specific validation.
 
 [6] US FTC, [Health Products Compliance Guidance](https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance).
 
