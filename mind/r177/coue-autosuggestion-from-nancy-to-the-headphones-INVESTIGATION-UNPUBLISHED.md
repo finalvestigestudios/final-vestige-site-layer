@@ -4,7 +4,7 @@
 
 ## A string with twenty knots
 
-Imagine a visitor leaving a consultation in Nancy, France, carrying the instructions for a small ritual: close the eyes, relax the effort of willing, and recite a simple sentence, counting the repetitions along a string of knots. The physician-pharmacist Émile Coué wanted his followers to practice it upon waking and before sleep. He called it *conscious autosuggestion*.
+Imagine a visitor leaving a consultation in Nancy, France, carrying the instructions for a small ritual: close the eyes, relax the effort of willing, and recite a simple sentence, counting the repetitions along a string of knots. The French pharmacist and autosuggestion practitioner Émile Coué wanted his followers to practice it upon waking and before sleep. He called it *conscious autosuggestion*.
 
 This is not an invented reconstruction of a particular named patient. The instructions are described in Coué's own book *Self Mastery Through Conscious Autosuggestion*, published in English in the early twentieth century. In the text, Coué prescribes repeating the phrase twenty times morning and evening and using a knotted cord to count. [S1] The scene is memorable precisely because it locates the technology of persuasion in such ordinary materials: a sentence, a schedule, and a length of string.
 
