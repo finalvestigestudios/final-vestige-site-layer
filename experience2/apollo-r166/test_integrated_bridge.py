@@ -33,6 +33,8 @@ class Integration(unittest.TestCase):
   ready=build(src)
   self.assertNotIn('t < 11.3 ?',ready)
   self.assertTrue(all(ready.count(u)==1 for u in REQUIRED_NASA))
+  # Exact installed WP Page 2017 has the NASA links again elsewhere on-page.
+  self.assertIn('fvx-archive-choice', build(src+'<aside>'+''.join(REQUIRED_NASA)+'</aside>'))
  def test_real_chromium(self):
   receipt={'mode':'CONTROLLED_EDITOR_EXCERPT','widths':{},'release':'HOLD'}
   with sync_playwright() as p:
