@@ -44,7 +44,7 @@ const guard=(html,j,docs)=>{
 };
 check(/Project Gutenberg/.test(investigation),'primary history named');
 check(/pubmed\.ncbi\.nlm\.nih\.gov\/16466414/.test(investigation),'study DOI/research source');
-check(/2026-11-06/.test(investigation),'draft dated');
+check(/6 November 2026/.test(investigation),'draft dated');
 check(/No affiliate link/.test(investigation),'editorial-commercial separation');
 check(/not a medical guide/.test(investigation),'not medical advice');
 check(/noindex,nofollow/.test(guide),'buyer draft noindexed');
@@ -55,7 +55,7 @@ check(/aria-labelledby=/.test(guide),'SVG described');
 check(/type="button" disabled aria-disabled="true"/.test(guide),'native disabled CTA');
 check(/may earn a commission/.test(guide),'adjacent conditional disclosure');
 check(/Money Back Guarantee|money-back guarantee/.test(guide),'seller refund framed');
-check(/not been independently verified/.test(guide),'limit clearly stated');
+check(/has not independently verified/.test(guide),'limit clearly stated');
 check(!/<script\b/i.test(guide),'no script');
 check(!/<iframe\b/i.test(guide),'no embedded stream');
 check(!/<form\b/i.test(guide),'no second opt-in form');
@@ -86,7 +86,7 @@ const bad=[
  ['duplicate form',guide+'<form><input type="email"></form>',matrix,plan],
  ['missing disclosure',guide.replace('may earn a commission','can earn something'),matrix,plan],
  ['Focus hijack',guide.replaceAll('https://finalvestige.com/focus/','https://unknown.example/focus/'),matrix,plan],
- ['missing video',guide.replaceAll('42-second','fortyish'),matrix,plan],
+ ['missing video',guide.replaceAll('42-second','fortyish').replaceAll('42 seconds','fortyish'),matrix,plan],
  ['no noindex',guide.replace('noindex,nofollow','index,follow'),matrix,plan],
  ['no reduced motion',guide.replace('prefers-reduced-motion','prefers-motion'),matrix,plan],
  ['approved merchant',guide,{...matrix,commercial_state:'APPROVED'},plan],
