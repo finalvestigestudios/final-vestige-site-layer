@@ -94,7 +94,7 @@ function mutations(files) {
  const result=[];
  for(const [name,key,from,to] of bad){
   if(!String(files[key]||"").includes(from)) {result.push({name,error:"mutation_anchor_missing"});continue;}
-  const copy={...files,[key]:String(files[key]).replace(from,to)};
+  const copy={...files,[key]:(name==="erase_review_gate"?String(files[key]).replaceAll(from,to):String(files[key]).replace(from,to))};
   const output=inspect(copy);
   result.push({name,detected:output.problems.length>0,newFailures:output.problems});
  }
