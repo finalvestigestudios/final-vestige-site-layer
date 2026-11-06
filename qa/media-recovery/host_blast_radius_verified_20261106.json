@@ -58,7 +58,9 @@
       "wikimedia_redirect": 124,
       "jetpack_proxy": 7
     },
-    "hosts_with_4plus_refs": 13
+    "hosts_with_4plus_refs": 13,
+    "posts_with_inline_images": 65,
+    "posts_with_zero_inline_images": 1
   },
   "groups": [
     {
@@ -1947,5 +1949,8 @@
     "reported_broken_42": "UNVERIFIED_IN_GUEST_BROWSER",
     "claimed_76_percent_reduction": "UNMEASURED_COLD_TRANSFER",
     "production_images_fixed": 0
-  }
+  },
+  "zero_image_post_ids": [
+    1922
+  ]
 }
