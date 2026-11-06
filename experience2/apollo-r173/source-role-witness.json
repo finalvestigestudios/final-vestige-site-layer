@@ -1,0 +1,49 @@
+{
+  "scope": "R173 staging candidate derived from exact PR #158 blob, NOT installed WordPress",
+  "source_ref": "feature/experience-2-source-ledger-pilot-20261030",
+  "source_path": "experience2/research-desk/templates/ledger.html",
+  "source_git_blob": "403d128c57b9bc82dac7c619651689070edef86c",
+  "source_roles": [
+    {
+      "record": "01",
+      "image_id": "S67-19766",
+      "written_source": "institutional history article"
+    },
+    {
+      "record": "02",
+      "image_id": "S67-15717",
+      "written_source": "Apollo 204 Review Board"
+    },
+    {
+      "record": "03",
+      "image_id": "S66-58038",
+      "written_source": "Apollo 204 Review Board"
+    },
+    {
+      "record": "04",
+      "image_id": "KSC-20170124-PH_KLS01_0164",
+      "written_source": "Apollo 204 Review Board"
+    },
+    {
+      "record": "05",
+      "image_id": "S67-21294",
+      "written_source": "Apollo 204 Review Board"
+    },
+    {
+      "record": "06",
+      "image_id": "KSC-20170124-PH_KLS01_0090",
+      "written_source": "Apollo 204 Review Board"
+    }
+  ],
+  "strict_roundtrip_exact": true,
+  "nasa_and_cta_anchors_order_preserved": true,
+  "added_links": 0,
+  "added_javascript": 0,
+  "modified_original_files": 0,
+  "release_status": "STAGING HOLD",
+  "word_press_writes": 0,
+  "licensed_for_commercial_ads": false,
+  "production_cwv": "NOT MEASURED",
+  "genuine_axe": "NOT EXECUTED",
+  "net_revenue": "UNKNOWN"
+}
