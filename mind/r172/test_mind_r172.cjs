@@ -71,7 +71,7 @@ function mutate(b) {
  ["remove disclosure header",x=>({...x,buyer:x.buyer.replace('Prospective affiliate disclosure','Ad')})],
  ["add tracker",x=>({...x,buyer:x.buyer.replace('</head>','<script src="https://example.com/track.js"></script></head>')})],
  ["add signup form",x=>({...x,hub:x.hub.replace('</main>','<form action="/newsletter"><input type="email"></form></main>')})],
- ["remove Focus",x=>({...x,buyer:x.buyer.replace('https://finalvestige.com/focus/','https://example.com/missing') ,hub:x.hub.replace('https://finalvestige.com/focus/','https://example.com/missing')})],
+ ["remove Focus",x=>({...x,buyer:x.buyer.replaceAll('https://finalvestige.com/focus/','https://example.com/missing') ,hub:x.hub.replaceAll('https://finalvestige.com/focus/','https://example.com/missing')})],
  ["undo native disabled",x=>({...x,buyer:x.buyer.replace(' disabled aria-disabled="true"',' aria-disabled="true"')})],
  ["remove aria-disabled",x=>({...x,buyer:x.buyer.replace('aria-disabled="true"','aria-disabled="false"')})],
  ["raise merchant authorization",x=>{const d=JSON.parse(x.matrix);d.gates.find(g=>g.id==="partner_named_acceptance").status="OPEN";return {...x,matrix:JSON.stringify(d)};}],
