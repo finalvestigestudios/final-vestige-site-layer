@@ -41,3 +41,8 @@ OFFER → FUNNEL STEP → BLOCKER → CHANGE/EXPERIMENT → EVIDENCE → OWNER:
 - Confirmed order → realized revenue → missing settled orders and qualified-human sessions → reconcile privacy-safe 7/30-day cohorts, fees, refunds → NOT COMPUTABLE → Commerce/Analytics.
 
 Conversion KPI (realized net revenue per 1,000 qualified human sessions) is NOT COMPUTABLE. Pageviews, CTAs, and leads are not paid orders; no claims of transactions, sales or conversion metrics are made.
+
+
+## Authenticated read-only GitHub census — 2026-11-05 PT
+
+Read each of the original 35 article bodies and 35 metadata files through the authenticated GitHub connector at exact R160 branch snapshot. Across these **70 repository files**: 35 article slugs and routes, **2,000 citation occurrences**, **385 article-specific source-use mappings**. Every observed citation ID appeared in its own article's source_use record and every listed article source appeared in its article body (**zero orphaned or unmapped relationships**). All 35 metadata records retained publish=draft and the original safety-state distribution of 29 pending, 4 not-required, 2 recorded approved. Readable text exceeded 1,500 words per article; the smallest observed citation count was 28. This was a static read/compare, not execution of R160 against a complete local checkout, not checking whether linked sources support the claims, not a safety/QD PASS, and not an authorized release. Exactly two recorded metadata approval labels must never be treated as independent release approval.
