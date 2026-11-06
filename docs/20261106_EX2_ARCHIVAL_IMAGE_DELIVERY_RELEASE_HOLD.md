@@ -23,7 +23,7 @@ No live homepage screenshots, WP Playground/Assembler rendering, Jetpack subscri
 
 ## Conversion relevance and ownership
 
-**Offer:** Existing 52-page Seven Day Focus Fieldbook. **Step:** credible evidence → historical homepage → contextual lead CTA → independently confirmed signup → verified purchase. **Blocker:** broken or unverified archival images on responsive entry screens degrade trust, yet were not required by the prior browser gate. **Change:** real decoded-image and exact response-byte admission. **Evidence:** 15 passing native tests, seven negative image controls. **Owner:** EX2 homepage QA; Site QA independently reviews; Claude owns revenue attribution and production engineering. **Commercial conversion:** not measured and not claimed.
+**Offer:** Existing 52-page Seven Day Focus Fieldbook. **Step:** credible evidence → historical homepage → contextual lead CTA → independently confirmed signup → verified purchase. **Blocker:** broken or unverified archival images on responsive entry screens degrade trust, yet were not required by the prior browser gate. **Change:** real decoded-image and exact response-byte admission. **Evidence:** 15 passing native tests, six negative image controls. **Owner:** EX2 homepage QA; Site QA independently reviews; Claude owns revenue attribution and production engineering. **Commercial conversion:** not measured and not claimed.
 
 ## Next decisive action
 
