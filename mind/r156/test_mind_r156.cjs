@@ -39,7 +39,7 @@ function audit(d){
  ck(m.claims.length>=35 && m.claims.every(c=>/^https:\/\//.test(c.source)),"all claims linked");
  ck(m.release_gates.length>=40 && m.release_gates.every(g=>g.status==="CLOSED"),"all commercial release gates closed");
  ck(m.eligible_for_publication===false&&m.eligible_for_affiliate_activation===false&&m.affiliate_partner_acceptance_verified===false,"must not activate partner or release");
- ck(m.affiliate_earning_url===null&&m.merchant_confirmed_sales===null&&m.affiliate_commissions_settled===null&&m.qualified_human_sessions===null&&m.net_revenue_per_1000_qualified_sessions===null,"unknown commercial counts null, not fabricated zero");
+ ck(m.affiliate_earning_url===null&&m.merchant_confirmed_sales===null&&m.affiliate_commissions_settled===null&&m.qualified_human_sessions===null&&m.net_revenue_per_1000_qualified_sessions===null&&m.costs===null,"unknown commercial counts null, not fabricated zero");
  ck(m.claims.some(c=>/Zen12/.test(c.claim)&&c.disposition.startsWith("REJECT")),"reject unsupported Zen12 equivalence");
  ck(m.claims.some(c=>/Total Focus/.test(c.claim)&&c.disposition.startsWith("REJECT")),"reject unsupported paid audio effects");
  ck(/seller.*claim/i.test(d.article),"seller claims explicitly marked");
@@ -62,6 +62,7 @@ const trial=[
  ["erase caption timing",d=>d.html=d.html.replace('34–40s','timing-unknown')],
  ["fake sale",d=>{const m=JSON.parse(d.matrix);m.merchant_confirmed_sales=1;d.matrix=JSON.stringify(m)}],
  ["fake commission",d=>{const m=JSON.parse(d.matrix);m.affiliate_commissions_settled=1;d.matrix=JSON.stringify(m)}],
+ ["invent zero costs",d=>{const m=JSON.parse(d.matrix);m.costs=0;d.matrix=JSON.stringify(m)}],
  ["open partner gate",d=>{const m=JSON.parse(d.matrix);m.release_gates[0].status="OPEN";d.matrix=JSON.stringify(m)}],
  ["approve affiliate",d=>{const m=JSON.parse(d.matrix);m.affiliate_partner_acceptance_verified=true;d.matrix=JSON.stringify(m)}],
  ["remove paid event",d=>d.plan=d.plan.replaceAll("affiliate_commission_settled","affiliate_click")],
