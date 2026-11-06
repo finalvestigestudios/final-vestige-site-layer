@@ -1,0 +1,387 @@
+{
+  "schema": "mind.r177.evidence-v1",
+  "as_of_date": "2026-11-06",
+  "commercial_state": "HARD_HOLD",
+  "production_write": false,
+  "approved_affiliate_url": null,
+  "confirmed_paid_orders": null,
+  "qualified_human_sessions": null,
+  "attributed_net_revenue_per_1000": null,
+  "sources": [
+    {
+      "id": "P1",
+      "type": "primary_history",
+      "title": "Coué, Self Mastery Through Conscious Autosuggestion",
+      "url": "https://www.gutenberg.org/ebooks/27203",
+      "supports": "Historian's description of Coué's own instructions and beliefs, not medical efficacy"
+    },
+    {
+      "id": "P2",
+      "type": "peer_reviewed_study",
+      "title": "Raz et al., Suggestion reduces the Stroop effect (2006)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/16466414/",
+      "supports": "Narrow laboratory suggestion effect in selected highly suggestible participants"
+    },
+    {
+      "id": "R1",
+      "type": "research_review",
+      "title": "Meta-analytic evidence on the efficacy of hypnosis for mental and somatic health issues (2024)",
+      "url": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2023.1330238/full",
+      "supports": "Clinical hypnosis contexts; heterogeneous studies, not product-specific"
+    },
+    {
+      "id": "M1",
+      "type": "seller",
+      "title": "Inspire3 catalog",
+      "url": "https://inspire3.com/",
+      "checked": "2026-11-06",
+      "supports": "Brand and product categories, seller's marketing only"
+    },
+    {
+      "id": "M2",
+      "type": "seller",
+      "title": "Zen12 official offer and FAQ",
+      "url": "https://zen12.com/",
+      "checked": "2026-11-06",
+      "supports": "Seller-listed tiers, recordings, audio styles, dated displayed price and advertised guarantee; no checkout or outcomes"
+    },
+    {
+      "id": "A1",
+      "type": "seller_affiliate_portal",
+      "title": "Inspire3 Affiliate Network",
+      "url": "https://affiliates.inspire3.com/",
+      "checked": "2026-11-06",
+      "supports": "Affiliate network exists; does not prove FV acceptance"
+    },
+    {
+      "id": "F1",
+      "type": "regulator",
+      "title": "FTC Endorsement Guides FAQ",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "supports": "Proximity and conspicuousness of endorsement financial disclosure"
+    },
+    {
+      "id": "F2",
+      "type": "regulator",
+      "title": "FTC Health Products Compliance Guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "supports": "Competent and reliable science for health-related advertising claims"
+    },
+    {
+      "id": "F3",
+      "type": "regulator",
+      "title": "FTC Disclosures 101",
+      "url": "https://www.ftc.gov/business-guidance/resources/disclosures-101-social-media-influencers",
+      "supports": "Video disclosures within video and adjacent to endorsements"
+    },
+    {
+      "id": "FV1",
+      "type": "live_original",
+      "title": "Puységur's Animal Magnetism Files",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "supports": "Published historical source archive"
+    },
+    {
+      "id": "FV2",
+      "type": "live_original",
+      "title": "Seven Day Focus Fieldbook",
+      "url": "https://finalvestige.com/focus/",
+      "supports": "Single existing free Focus / Jetpack lead pathway"
+    },
+    {
+      "id": "FV3",
+      "type": "live_original",
+      "title": "Mesmerism: What Franklin's 1784 Commission Actually Found",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "supports": "Published investigation"
+    },
+    {
+      "id": "FV4",
+      "type": "live_original",
+      "title": "Affiliate disclosure",
+      "url": "https://finalvestige.com/affiliate-disclosure/",
+      "supports": "General disclosure, insufficient without near-CTA notice"
+    },
+    {
+      "id": "G1",
+      "type": "internal_policy",
+      "title": "Mind owner issue",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "supports": "Editorial and affiliate approval gates"
+    },
+    {
+      "id": "G2",
+      "type": "internal_policy",
+      "title": "Founder conversion measurement charter",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "supports": "Paid conversion proof, qualified-human traffic denominator"
+    }
+  ],
+  "claims": [
+    {
+      "id": "z01",
+      "text": "Zen12 Premium seller lists 12 levels",
+      "status": "seller_description",
+      "source": "M2",
+      "allowed": "The seller lists 12 levels.",
+      "not_allowed": "We tested twelve levels."
+    },
+    {
+      "id": "z02",
+      "text": "Zen12 Premium seller lists 48 downloadable MP3 tracks",
+      "status": "seller_description",
+      "source": "M2",
+      "allowed": "The seller lists 48 MP3 tracks.",
+      "not_allowed": "We reviewed and tested all tracks."
+    },
+    {
+      "id": "z03",
+      "text": "Four listening styles per level: guided, music, nature, white noise",
+      "status": "seller_description",
+      "source": "M2",
+      "allowed": "The seller describes four styles.",
+      "not_allowed": "These four styles work for everyone."
+    },
+    {
+      "id": "z04",
+      "text": "Seller lists quick-start guide, manual, audio level guides and support",
+      "status": "seller_description",
+      "source": "M2",
+      "allowed": "The seller's listing includes materials and support.",
+      "not_allowed": "FV verified all deliverables and support response."
+    },
+    {
+      "id": "z05",
+      "text": "Premium displayed $87.99 on 2026-11-06",
+      "status": "dated_seller_display_not_checkout",
+      "source": "M2",
+      "allowed": "The public seller page displayed $87.99 on Nov. 6; verify final checkout price.",
+      "not_allowed": "Your total today is $87.99."
+    },
+    {
+      "id": "z06",
+      "text": "One-year money-back guarantee",
+      "status": "advertised_seller_only",
+      "source": "M2",
+      "allowed": "The seller advertises a one-year guarantee; FV has not tested refunds.",
+      "not_allowed": "Risk-free purchase with guaranteed easy refunds."
+    },
+    {
+      "id": "z07",
+      "text": "12 minutes equals one hour of advanced meditation",
+      "status": "UNSUBSTANTIATED_product_specific",
+      "source": "M2",
+      "allowed": "The seller makes this claim; FV has not independently verified it.",
+      "not_allowed": "Get an hour of meditation in 12 minutes."
+    },
+    {
+      "id": "z08",
+      "text": "Brainwave entrainment always causes deep meditation",
+      "status": "UNSUBSTANTIATED_product_specific",
+      "source": "M2",
+      "allowed": "The seller discusses brainwave entrainment.",
+      "not_allowed": "Zen12 automatically puts your brain in a deep meditative state."
+    },
+    {
+      "id": "z09",
+      "text": "Zen12 treats anxiety and guarantees better focus",
+      "status": "UNSUBSTANTIATED_health_outcome",
+      "source": "M2",
+      "allowed": "No verified product-specific medical or focus outcomes.",
+      "not_allowed": "Treat your anxiety or attention disorder with Zen12."
+    },
+    {
+      "id": "z10",
+      "text": "Downloadable format may suit buyers wanting routine structure",
+      "status": "editorial_consumer_preference",
+      "source": "M2",
+      "allowed": "An organized audio library may suit people who prefer a guided routine.",
+      "not_allowed": "You will stick with it and achieve results."
+    },
+    {
+      "id": "s01",
+      "text": "Coué describes twenty knots and morning/evening repetition",
+      "status": "primary_historical_documentation",
+      "source": "P1",
+      "allowed": "Coué prescribed this practice.",
+      "not_allowed": "Coué scientifically proved it cures illness."
+    },
+    {
+      "id": "s02",
+      "text": "Coué's medical claims demonstrate efficacy",
+      "status": "UNSUBSTANTIATED_historical_claim",
+      "source": "P1",
+      "allowed": "The historical author claimed disease improvement.",
+      "not_allowed": "Repeating this phrase heals organs."
+    },
+    {
+      "id": "s03",
+      "text": "Suggestion can reduce Stroop interference in selected participants",
+      "status": "narrow_study_result",
+      "source": "P2",
+      "allowed": "Raz and colleagues reported reduced Stroop interference in a selected sample.",
+      "not_allowed": "All listeners can eliminate distraction."
+    },
+    {
+      "id": "s04",
+      "text": "Clinical hypnosis research validates Zen12",
+      "status": "INVALID_extrapolation",
+      "source": "R1",
+      "allowed": "Clinical hypnosis reviews concern varied studied interventions, not Zen12.",
+      "not_allowed": "Clinical science proves Zen12 works."
+    },
+    {
+      "id": "a01",
+      "text": "FV approved as affiliate",
+      "status": "NOT_VERIFIED",
+      "source": "A1",
+      "allowed": "Public Inspire3 program exists; FV acceptance not established.",
+      "not_allowed": "FV is an approved Inspire3 affiliate."
+    },
+    {
+      "id": "a02",
+      "text": "FV authorized affiliate tracking URL and payout terms",
+      "status": "NOT_VERIFIED",
+      "source": "A1",
+      "allowed": "No FV-specific earning URL or channel approval verified.",
+      "not_allowed": "Use any direct merchant URL to earn."
+    },
+    {
+      "id": "a03",
+      "text": "Emails from awesome@inspire3.com establish publisher acceptance",
+      "status": "NOT_ESTABLISHED",
+      "source": "A1",
+      "allowed": "General marketing messages are not proof of publisher acceptance.",
+      "not_allowed": "An Inspire3 promotional email is approval."
+    },
+    {
+      "id": "a04",
+      "text": "Disclosure only on general policy page suffices",
+      "status": "REJECTED",
+      "source": "F1",
+      "allowed": "Place plain commission notice immediately beside future earning CTA.",
+      "not_allowed": "Hide disclosure in footer."
+    },
+    {
+      "id": "a05",
+      "text": "Original optional 42s concept is a working video",
+      "status": "NOT_PRODUCED",
+      "source": "G1",
+      "allowed": "Original static poster and timed transcript only.",
+      "not_allowed": "The landing page features a finished video."
+    },
+    {
+      "id": "a06",
+      "text": "Clicks are sales, signups are purchases",
+      "status": "REJECTED",
+      "source": "G2",
+      "allowed": "Track separate landing, CTA, confirmed lead, partner-confirmed commission and actual settlements.",
+      "not_allowed": "Affiliate outbound click = earned revenue."
+    },
+    {
+      "id": "a07",
+      "text": "Payhip owned Mind product is current and sellable",
+      "status": "NOT_VERIFIED",
+      "source": "G2",
+      "allowed": "Commerce must verify SKU, rights, total price, checkout and fulfillment before selecting a paid FV product.",
+      "not_allowed": "An FV Mind product is available for purchase."
+    },
+    {
+      "id": "a08",
+      "text": "Grok campaign IDs and published URLs exist",
+      "status": "NOT_VERIFIED",
+      "source": "G2",
+      "allowed": "Map proposed topics; await immutable asset IDs and creator approval.",
+      "not_allowed": "This experiment drove traffic."
+    },
+    {
+      "id": "a09",
+      "text": "Lead capture uses existing Focus single list",
+      "status": "live_route_verified_not_optin_verified",
+      "source": "FV2",
+      "allowed": "Route visitors to the existing Focus page.",
+      "not_allowed": "Every click confirms a delivered subscriber."
+    }
+  ],
+  "gates": [
+    {
+      "name": "named_fv_partner_acceptance",
+      "open": false,
+      "owner": "Founder/Mind",
+      "proof": "Authenticated publisher approval explicitly naming FV"
+    },
+    {
+      "name": "approved_channels_including_website",
+      "open": false,
+      "owner": "Founder/Mind",
+      "proof": "Partner terms and current authorization"
+    },
+    {
+      "name": "approved_channels_including_email_if_needed",
+      "open": false,
+      "owner": "Founder/Dispatch",
+      "proof": "Explicit email permission, independent Dispatch approval"
+    },
+    {
+      "name": "exact_product_earning_url",
+      "open": false,
+      "owner": "Founder/Mind",
+      "proof": "Publisher portal link bound to approved FV ID"
+    },
+    {
+      "name": "current_tracking_and_redirect_terms",
+      "open": false,
+      "owner": "Founder/Mind",
+      "proof": "Partner agreement acceptance and cross-device verification"
+    },
+    {
+      "name": "merchant_checkout_total",
+      "open": false,
+      "owner": "Commerce",
+      "proof": "Authorized checkout test, no unapproved charge"
+    },
+    {
+      "name": "refund_policy_applicability",
+      "open": false,
+      "owner": "Commerce",
+      "proof": "Full current applicable terms and test outcome if authorized"
+    },
+    {
+      "name": "original_video_completed_captioned",
+      "open": false,
+      "owner": "Grok/QA",
+      "proof": "Final media and captions, transcript, no auto-play"
+    },
+    {
+      "name": "browser_360_390_768_1440_1920",
+      "open": false,
+      "owner": "Site QA",
+      "proof": "Real browser screenshots and WCAG 2.2 review"
+    },
+    {
+      "name": "native_node_or_ci",
+      "open": false,
+      "owner": "Mind/QA",
+      "proof": "Node test on authenticated clone or CI"
+    },
+    {
+      "name": "founder_commercial_release",
+      "open": false,
+      "owner": "Founder",
+      "proof": "Explicit exact-SHA commercial release approval"
+    },
+    {
+      "name": "payhip_owned_product_rights_checkout",
+      "open": false,
+      "owner": "Commerce",
+      "proof": "Right-cleared SKU, live inventory, payment, fees, refund and fulfillment"
+    }
+  ],
+  "notes": [
+    "Never infer product performance from Coué, Raz, or general clinical hypnosis research.",
+    "Do not infer publisher approval from public program terms or inbound consumer marketing.",
+    "No Payhip product is declared sellable without checkout/rights/settlement proof.",
+    "All pricing is seller page snapshot, not checked-out verified amount.",
+    "Only one Focus/Jetpack lead path; do not register duplicate tracking or newsletter."
+  ]
+}
