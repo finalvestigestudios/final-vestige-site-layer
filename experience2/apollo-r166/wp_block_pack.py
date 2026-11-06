@@ -25,7 +25,7 @@ def sha(s: str) -> str:
 def payload() -> str:
     names = ('gallery-independent.css', 'gallery-fallback.css', 'gallery-independent.js', 'gallery-fallback.js')
     contents = [(HERE / name).read_text(encoding='utf-8') for name in names]
-    css = '\n'.join(contents[:2])
+    css = '\n'.join(contents[:2] + [(HERE / 'gallery-fallback-flow.r167.css').read_text(encoding='utf-8')])
     js = '\n'.join(contents[2:])
     return '\n<!-- ' + TAG + ' -->\n<style>\n' + css + '\n</style>\n<script>\n' + js + '\n</script>\n'
 
