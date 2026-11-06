@@ -55,7 +55,7 @@ Scientists did what good scientists should do: they adjusted the conditions and 
 
 In 2021, Jessica McFadyen and colleagues published a paper with an admirably unromantic title: *Doorways do not always cause forgetting*. It was a conceptual replication, not an attempt to pretend the original research had never existed.
 
-The team conducted four experiments. Two used immersive virtual reality, one without and one with additional working-memory load. Another used passive video viewing; another used actual physical movement. They tracked hits and false alarms when participants responded to memory probes about recently encountered items. Their analysis used frequentist and Bayesian methods. [3]
+The team conducted four experiments. Two used immersive virtual reality, one without and one with additional working-memory load. Another used passive video viewing; another used actual physical movement. The first two virtual-reality experiments assessed object recognition with hits and false alarms; the later two experiments instead asked participants to reconstruct the positions of 16 butterfly photographs on a grid, scoring the percentage correctly placed. Experiments 3 and 4 also included backward counting. The authors' analysis used frequentist and Bayesian methods. [3]
 
 Across the series, they reported **no significant overall doorway-related forgetting effect** under their tested circumstances. There was, however, a narrower result in the working-memory-load condition: after doorway transitions, participants gave more false alarms to mismatched recognition probes, consistent with greater interference under those conditions. [3]
 
