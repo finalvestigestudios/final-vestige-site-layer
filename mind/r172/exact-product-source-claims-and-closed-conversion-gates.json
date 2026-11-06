@@ -1,0 +1,427 @@
+{
+  "workstream": "FV Mind & Perception R172",
+  "review_date": "2026-11-06",
+  "review_state": "DRAFT_UNPUBLISHED_HARD_HOLD",
+  "sources": [
+    {
+      "id": "FV-171",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "kind": "internal_governance",
+      "finding": "61 baseline investigations, Mind four streams, one Focus funnel, hard commercial hold"
+    },
+    {
+      "id": "FV-820",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "kind": "internal_governance",
+      "finding": "verified commercial conversion over traffic, privacy-safe qualified-session attribution"
+    },
+    {
+      "id": "FV-818",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/818",
+      "kind": "internal_governance",
+      "finding": "four revenue lanes, separated owned sales vs affiliates"
+    },
+    {
+      "id": "FV-PUY",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "kind": "published_WP_page",
+      "finding": "read-only WP page listing confirms published"
+    },
+    {
+      "id": "FV-FOCUS",
+      "url": "https://finalvestige.com/focus/",
+      "kind": "published_WP_page",
+      "finding": "read-only WP page listing confirms published; signup deliverability not independently checked"
+    },
+    {
+      "id": "FV-CHANGE",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "kind": "published_WP_post",
+      "finding": "read-only WP post listing confirms published"
+    },
+    {
+      "id": "MERCHANT-INSP",
+      "url": "https://inspire3.com/",
+      "kind": "seller",
+      "finding": "brands listed; effectiveness copy is seller claim"
+    },
+    {
+      "id": "MERCHANT-ZEN",
+      "url": "https://zen12.com/",
+      "kind": "seller",
+      "finding": "12 levels 48 MP3, 4 styles, $87.99 homepage Premium display, seller one-year refund promise as at 2026-11-06"
+    },
+    {
+      "id": "MERCHANT-AFF",
+      "url": "https://affiliates.inspire3.com/",
+      "kind": "seller_affiliate_portal",
+      "finding": "public affiliate network and special links advertised; no named FV approval or authorized tracking URL"
+    },
+    {
+      "id": "SCI-SALZ",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37263078/",
+      "kind": "research",
+      "finding": "2023 within-subjects 91-person change-detection/metacognition study; product-neutral"
+    },
+    {
+      "id": "SCI-BOCK",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34843370/",
+      "kind": "research",
+      "finding": "July 2022 9-month training; working memory improved for attention module, perceptual threshold/inhibition/metacognition null"
+    },
+    {
+      "id": "SCI-GOY",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/24395196/",
+      "kind": "systematic_review",
+      "finding": "2014 review 47 trials 3515 across meditation programs, not Zen12"
+    },
+    {
+      "id": "SCI-SIM",
+      "url": "https://journals.sagepub.com/doi/10.1068/p3104",
+      "kind": "research",
+      "finding": "2000 change blindness in absence of standard disruption"
+    },
+    {
+      "id": "FTC-END",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "kind": "regulator",
+      "finding": "material connections must be conspicuously disclosed near recommendation"
+    },
+    {
+      "id": "FTC-HEALTH",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "kind": "regulator",
+      "finding": "objective health-related benefits need appropriate independent scientific substantiation"
+    }
+  ],
+  "claims": [
+    {
+      "id": "ZEN-01",
+      "statement": "Zen12 Premium lists 12 levels and 48 MP3s",
+      "decision": "seller_described_allowed",
+      "source_ids": [
+        "MERCHANT-ZEN"
+      ],
+      "caveat": "Do not imply purchased or delivered"
+    },
+    {
+      "id": "ZEN-02",
+      "statement": "Four styles are guided, relaxation music, nature sounds, white noise",
+      "decision": "seller_described_allowed",
+      "source_ids": [
+        "MERCHANT-ZEN"
+      ],
+      "caveat": "No proof all delivered to a purchaser"
+    },
+    {
+      "id": "ZEN-03",
+      "statement": "Premium homepage displayed $87.99 on 2026-11-06",
+      "decision": "dated_seller_display_allowed",
+      "source_ids": [
+        "MERCHANT-ZEN"
+      ],
+      "caveat": "No final checkout total/tax/coupon proof; promotional prices can differ"
+    },
+    {
+      "id": "ZEN-04",
+      "statement": "Seller advertises one-year money-back guarantee",
+      "decision": "seller_promise_only",
+      "source_ids": [
+        "MERCHANT-ZEN"
+      ],
+      "caveat": "No evidence of refund fulfillment or specific eligibility"
+    },
+    {
+      "id": "ZEN-05",
+      "statement": "Zen12 provides 1h meditation benefits in 12 min",
+      "decision": "unsupported_omit",
+      "source_ids": [
+        "MERCHANT-ZEN"
+      ],
+      "caveat": "Product-specific equivalent efficacy not substantiated"
+    },
+    {
+      "id": "ZEN-06",
+      "statement": "Zen12 brainwaves automatically control cognition",
+      "decision": "unsupported_omit",
+      "source_ids": [
+        "MERCHANT-ZEN"
+      ],
+      "caveat": "Seller mechanism marketing; independent exact-product testing absent"
+    },
+    {
+      "id": "ZEN-07",
+      "statement": "Zen12 relieves anxiety or treats mental health conditions",
+      "decision": "unsupported_omit",
+      "source_ids": [
+        "MERCHANT-ZEN",
+        "FTC-HEALTH"
+      ],
+      "caveat": "Would require rigorous product-specific evidence; no treatments claimed"
+    },
+    {
+      "id": "ZEN-08",
+      "statement": "Zen12 makes buyers wealthier or enhances productivity",
+      "decision": "unsupported_omit",
+      "source_ids": [
+        "MERCHANT-ZEN",
+        "FTC-HEALTH"
+      ],
+      "caveat": "No product-outcome study authenticated"
+    },
+    {
+      "id": "SCI-01",
+      "statement": "2022 9-month training enhanced measured working memory after mindfulness attention module",
+      "decision": "allow_with_scope",
+      "source_ids": [
+        "SCI-BOCK"
+      ],
+      "caveat": "Not equivalent to audio, not a broad claim of attention enhancement"
+    },
+    {
+      "id": "SCI-02",
+      "statement": "Same 2022 study found no effects on measured perceptual thresholds/inhibition/metacognition",
+      "decision": "allow_with_scope",
+      "source_ids": [
+        "SCI-BOCK"
+      ],
+      "caveat": "Null on measured endpoints, not universal proof no training can work"
+    },
+    {
+      "id": "SCI-03",
+      "statement": "2023 change-detection experiment had 91 participants",
+      "decision": "allow_with_scope",
+      "source_ids": [
+        "SCI-SALZ"
+      ],
+      "caveat": "Not an intervention or product review"
+    },
+    {
+      "id": "SCI-04",
+      "statement": "Metacognition was more sensitive to discrete than continuous detection processes",
+      "decision": "allow_with_scope",
+      "source_ids": [
+        "SCI-SALZ"
+      ],
+      "caveat": "Model-dependent experimental finding"
+    },
+    {
+      "id": "SCI-05",
+      "statement": "Goyal review 47 trials/3515 participants",
+      "decision": "allow_with_scope",
+      "source_ids": [
+        "SCI-GOY"
+      ],
+      "caveat": "Across meditation programs; do not call all mindfulness trials"
+    },
+    {
+      "id": "SCI-06",
+      "statement": "Any of SCI findings prove Zen12 Premium benefit",
+      "decision": "prohibited_transfer",
+      "source_ids": [
+        "SCI-BOCK",
+        "SCI-SALZ",
+        "SCI-GOY"
+      ],
+      "caveat": "Zero exact-product evidence from these trials"
+    },
+    {
+      "id": "AFF-01",
+      "statement": "Public Inspire3 program exists",
+      "decision": "seller_program_verified",
+      "source_ids": [
+        "MERCHANT-AFF"
+      ],
+      "caveat": "Not proof of FV acceptance"
+    },
+    {
+      "id": "AFF-02",
+      "statement": "Final Vestige accepted and allowed website/TikTok/email promotion",
+      "decision": "not_verified_hold",
+      "source_ids": [
+        "MERCHANT-AFF"
+      ],
+      "caveat": "Named account/terms/scope not present"
+    },
+    {
+      "id": "AFF-03",
+      "statement": "Final Vestige earning link or contractual commission",
+      "decision": "not_verified_hold",
+      "source_ids": [
+        "MERCHANT-AFF"
+      ],
+      "caveat": "Do not activate/create links or assert rate"
+    },
+    {
+      "id": "FY-01",
+      "statement": "Existing /focus/ published destination",
+      "decision": "read_only_WP_verified",
+      "source_ids": [
+        "FV-FOCUS"
+      ],
+      "caveat": "No guarantee of email delivery/consent conversion"
+    },
+    {
+      "id": "FY-02",
+      "statement": "Existing Puységur archive published destination",
+      "decision": "read_only_WP_verified",
+      "source_ids": [
+        "FV-PUY"
+      ],
+      "caveat": "History is not evidence of mechanism"
+    },
+    {
+      "id": "COM-01",
+      "statement": "Product revenue equals merchant retail order value",
+      "decision": "prohibited_accounting",
+      "source_ids": [
+        "FV-820"
+      ],
+      "caveat": "For affiliates use FV's actual received commission after reconciled adjustments"
+    },
+    {
+      "id": "COM-02",
+      "statement": "Affiliate click equals verified paid sale",
+      "decision": "prohibited",
+      "source_ids": [
+        "FV-820"
+      ],
+      "caveat": "Only partner reported paid conversion and settlement count"
+    },
+    {
+      "id": "OWN-01",
+      "statement": "FV-owned eligible paid Mind product currently sellable",
+      "decision": "not_verified_hold",
+      "source_ids": [
+        "FV-818"
+      ],
+      "caveat": "Payhip dashboard/rights/checkout/returns not authenticated"
+    }
+  ],
+  "gates": [
+    {
+      "id": "partner_named_acceptance",
+      "status": "CLOSED",
+      "proof_required": "Exact authenticated acceptance for FV publisher account required"
+    },
+    {
+      "id": "partner_channel_website",
+      "status": "CLOSED",
+      "proof_required": "Website promotional permission required"
+    },
+    {
+      "id": "partner_channel_social",
+      "status": "CLOSED",
+      "proof_required": "Platform-specific social permission required"
+    },
+    {
+      "id": "partner_channel_email",
+      "status": "CLOSED",
+      "proof_required": "Email promotion not presumed"
+    },
+    {
+      "id": "partner_ad_creatives",
+      "status": "CLOSED",
+      "proof_required": "Only approved/current creative if used, no copy-pasting"
+    },
+    {
+      "id": "partner_tracking_link",
+      "status": "CLOSED",
+      "proof_required": "Exact earning URL from account, no invention"
+    },
+    {
+      "id": "partner_tracking_terms",
+      "status": "CLOSED",
+      "proof_required": "Attribution window/referrals/cookies terms unknown"
+    },
+    {
+      "id": "partner_paid_commissions",
+      "status": "CLOSED",
+      "proof_required": "Paid commission proof not available"
+    },
+    {
+      "id": "merchant_checkout_total",
+      "status": "CLOSED",
+      "proof_required": "Checkout must be checked with taxes and upsells"
+    },
+    {
+      "id": "merchant_refund_fulfillment",
+      "status": "CLOSED",
+      "proof_required": "Seller copy only, not actual refund verification"
+    },
+    {
+      "id": "owned_payhip_sku",
+      "status": "CLOSED",
+      "proof_required": "Eligible Mind product and rights unverified"
+    },
+    {
+      "id": "owned_payhip_checkout",
+      "status": "CLOSED",
+      "proof_required": "Live checkout and delivery unverified"
+    },
+    {
+      "id": "owned_payhip_price_returns",
+      "status": "CLOSED",
+      "proof_required": "Current terms unavailable"
+    },
+    {
+      "id": "live_mind_hub",
+      "status": "CLOSED",
+      "proof_required": "Canonical PR #172 unreleased; don't link /mind/ publicly"
+    },
+    {
+      "id": "qualified_grok_asset_ids",
+      "status": "CLOSED",
+      "proof_required": "Live immutable media IDs unprovided"
+    },
+    {
+      "id": "qualified_sessions",
+      "status": "CLOSED",
+      "proof_required": "Human denominator unknown"
+    },
+    {
+      "id": "confirmed_focus_subscribers",
+      "status": "CLOSED",
+      "proof_required": "Opt-in/delivery and count discrepancy not reconciled"
+    },
+    {
+      "id": "verified_affiliate_sale",
+      "status": "CLOSED",
+      "proof_required": "No independently reported partner sale"
+    },
+    {
+      "id": "verified_owned_purchase",
+      "status": "CLOSED",
+      "proof_required": "No independently verified purchase"
+    },
+    {
+      "id": "reconciled_net_revenue",
+      "status": "CLOSED",
+      "proof_required": "No settlements/refunds/fees/denominator reconciliation"
+    },
+    {
+      "id": "staging_browser_QA",
+      "status": "CLOSED",
+      "proof_required": "Native browser and actual mobile tests pending"
+    },
+    {
+      "id": "site_QA_approval",
+      "status": "CLOSED",
+      "proof_required": "Independent QA/release sign-off not obtained"
+    },
+    {
+      "id": "founder_release",
+      "status": "CLOSED",
+      "proof_required": "No approval to merge/deploy/publish/activate"
+    }
+  ],
+  "live_writes": false,
+  "commercial_activation": false,
+  "offer": "Zen12 Premium",
+  "evaluation": "Product-claim evidence does not establish affiliate authorization. Public site pages are readable; checkout/refund/earning and owned Payhip product remain unverified.",
+  "ab_test_status": "HYPOTHESIS_NOT_RUN",
+  "primary_kpi": "realized FV net revenue per 1000 qualified human sessions",
+  "current_kpi_value": null,
+  "data_note": "NOT COMPUTABLE, not zero",
+  "operator_guidance": "Reverify seller display/terms at release; no unapproved link, tracking or CMS write."
+}
