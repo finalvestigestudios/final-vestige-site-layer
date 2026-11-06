@@ -70,7 +70,8 @@ class GateTest(unittest.TestCase):
             self.assertEqual(len(report['widths']), 6)
             self.assertEqual(len(report['no_js']), 2)
             self.assertEqual(len(report['interactions']), 4)
-            self.assertTrue(all(report['checks'].values()))
+            self.assertFalse(report['checks']['archival_delivery'])  # synthetic fixture has no archival images
+            self.assertEqual(report['status'], 'FAIL_QUALIFICATION_CHECKS')
             self.assertEqual(json.loads(Path(dest,'results.json').read_text())['release_ready'],False)
 
     def test_private_preview_query_is_not_logged(self):

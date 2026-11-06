@@ -11,6 +11,7 @@ import json
 from pathlib import Path
 from urllib.parse import urlparse
 from playwright.sync_api import sync_playwright
+from fv_ex2_archival_transfer_gate_20261106 import audit_archival_transfers
 
 CHAPTER_IDS = (
     'fv-hf-title', 'fv-hf-chronicle', 'fv-hf-evidence', 'fv-hf-inquiry',
@@ -62,7 +63,7 @@ def run(target, output, axe_path=None, live_readonly=False, browser_path='/usr/b
     axe_available = bool(axe and axe.is_file())
     report = {'target': safe_target, 'mode': 'LIVE_READ_ONLY' if live_readonly else 'ISOLATED',
               'widths': {}, 'no_js': {}, 'interactions': {}, 'checks': {},
-              'reduced_motion': {}, 'image_network': [],
+              'reduced_motion': {}, 'image_network': [], 'archival_delivery': {},
               'axe': {'status': 'NOT_RUN'}, 'lab': {}, 'release_ready': False,
               'known_limits': ['Playground is not WordPress.com Atomic',
                                'No real Jetpack signup or email submission',
@@ -163,6 +164,8 @@ def run(target, output, axe_path=None, live_readonly=False, browser_path='/usr/b
                 else:
                     report['axe'] = {'status':'BLOCKED_AXE_MISSING',
                                      'reason':'Provide a local axe-core bundle via --axe'}
+                report['archival_delivery'] = audit_archival_transfers(page, transfers)
+                report['checks']['archival_delivery'] = report['archival_delivery']['passed']
                 report['image_network'] = list(transfers.values())
                 for width in (390, 1440):
                     no_js = browser.new_context(viewport={'width':width,'height':844},
