@@ -319,7 +319,10 @@
       "slug": "the-lifeboats-never-left-the-deck",
       "modified_wp": "2026-11-02T21:39:34",
       "inline_img_count": 6,
-      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot"
+      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot",
+      "fresh_inline_img_count": 6,
+      "fresh_external_img_count": 6,
+      "fresh_modified_wp": "2026-11-02T21:39:34"
     },
     {
       "id": 215,
@@ -327,7 +330,10 @@
       "slug": "a-wall-in-the-dark",
       "modified_wp": "2026-10-29T15:59:59",
       "inline_img_count": 6,
-      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot"
+      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot",
+      "fresh_inline_img_count": 6,
+      "fresh_external_img_count": 6,
+      "fresh_modified_wp": "2026-10-29T15:59:59"
     },
     {
       "id": 216,
@@ -335,7 +341,10 @@
       "slug": "the-fire-department-was-already-there",
       "modified_wp": "2026-11-02T21:39:36",
       "inline_img_count": 6,
-      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot"
+      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot",
+      "fresh_inline_img_count": 6,
+      "fresh_external_img_count": 6,
+      "fresh_modified_wp": "2026-11-02T21:39:36"
     },
     {
       "id": 217,
@@ -343,7 +352,10 @@
       "slug": "the-gas-had-no-smell",
       "modified_wp": "2026-10-29T16:04:52",
       "inline_img_count": 6,
-      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot"
+      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot",
+      "fresh_inline_img_count": 6,
+      "fresh_external_img_count": 6,
+      "fresh_modified_wp": "2026-10-29T16:04:52"
     },
     {
       "id": 218,
@@ -351,7 +363,10 @@
       "slug": "the-rock-had-to-be-real",
       "modified_wp": "2026-10-29T16:01:32",
       "inline_img_count": 6,
-      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot"
+      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot",
+      "fresh_inline_img_count": 6,
+      "fresh_external_img_count": 6,
+      "fresh_modified_wp": "2026-10-29T16:01:32"
     },
     {
       "id": 219,
@@ -359,7 +374,10 @@
       "slug": "the-airship-had-no-life-jackets",
       "modified_wp": "2026-10-29T15:54:20",
       "inline_img_count": 6,
-      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot"
+      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot",
+      "fresh_inline_img_count": 6,
+      "fresh_external_img_count": 6,
+      "fresh_modified_wp": "2026-10-29T15:54:20"
     },
     {
       "id": 220,
@@ -367,7 +385,10 @@
       "slug": "too-deep-for-the-rescue-bell",
       "modified_wp": "2026-11-02T21:39:38",
       "inline_img_count": 7,
-      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot"
+      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot",
+      "fresh_inline_img_count": 7,
+      "fresh_external_img_count": 7,
+      "fresh_modified_wp": "2026-11-02T21:39:38"
     },
     {
       "id": 221,
@@ -375,7 +396,10 @@
       "slug": "the-rod-was-supposed-to-move-four-inches",
       "modified_wp": "2026-11-02T21:39:39",
       "inline_img_count": 7,
-      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot"
+      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot",
+      "fresh_inline_img_count": 7,
+      "fresh_external_img_count": 7,
+      "fresh_modified_wp": "2026-11-02T21:39:39"
     },
     {
       "id": 252,
@@ -722,5 +746,5 @@
   "image_count_scope": "Gutenberg stored <img> tags only, not dynamically injected/featured, srcset, CSS or live rendered; per-post counts may be stale after edits",
   "source_census_blob_sha": "76aa63ffaa299a6e6878edc1b66e637fa6f058ab",
   "new_five_post_fresh_count_verification": "Read-only WordPress posts.get context=edit for IDs 1917 1920 1922 1924 1926, 2026-11-06",
-  "fresh_recensus_progress": 16
+  "fresh_recensus_progress": 24
 }
