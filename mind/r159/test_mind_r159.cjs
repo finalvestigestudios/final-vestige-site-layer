@@ -30,7 +30,7 @@ function check(A,H,M,D,O) {
  assert.ok(H.includes('<h1>') && H.includes('aria-label') && H.includes(':focus-visible') && H.includes('prefers-reduced-motion'),'a11y basics');
  assert.ok(H.includes('min-height:48px') && H.includes('max-width:390px'),'touch/small viewport');
  assert.ok(H.includes('https://finalvestige.com/focus/') && H.includes('Seven Day Focus Fieldbook'),'one existing resource CTA');
- assert.ok(/<button[^>]*\bdisabled\b[^>]*>Purchasing link not active<\/button>/.test(H),'physically disabled merchant control');
+ assert.ok(/<button[^>]*\sdisabled(?=\s|>)[^>]*>Purchasing link not active<\/button>/.test(H),'physically disabled merchant control');
  assert.ok(H.includes('If a future approved purchasing link is added and you purchase through it, Final Vestige may earn a commission at no additional cost to you.'),'adjacent plain disclosure');
  const buttonAt=H.indexOf('Purchasing link not active');
  const disclosureAt=H.indexOf('If a future approved purchasing link');
