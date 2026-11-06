@@ -49,7 +49,7 @@ function checkBuyer(h){
   const disclose=h.indexOf('class="disclose"'),button=h.indexOf("<button");
   assert.ok(disclose>=0&&button>disclose&&button-disclose<600,"disclosure must precede adjacent disabled CTA");
 }
-checkBuyer(buyer);checks+=35;
+checkBuyer(buyer);checks+=34;
 ok(hub.includes("canonical implementation remains draft PR #172")||hub.includes("Canonical implementation remains draft PR #172"),"PR172 preserved");
 ok(hub.includes("https://finalvestige.com/focus/"),"hub keeps Focus");
 ok(hub.includes("https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"),"hub links historical resource");
