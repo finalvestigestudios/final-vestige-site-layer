@@ -1,0 +1,500 @@
+{
+  "version": "mind-r166",
+  "review_date": "2026-11-06",
+  "classification": "UNPUBLISHED_UNMERGED_NO_COMMERCIAL_ACTIVATION",
+  "seller_url": "https://zen12.com/?no-popup=1",
+  "sources": {
+    "thompson1980": "https://pubmed.ncbi.nlm.nih.gov/6999452/",
+    "taubert2011": "https://pubmed.ncbi.nlm.nih.gov/21496463/",
+    "psalta2014": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4191594/",
+    "mestry2014": "https://link.springer.com/article/10.3758/s13423-014-0705-3",
+    "nonface2014": "https://doi.org/10.1068/p7853",
+    "primates2010": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2982021/",
+    "inspire3": "https://inspire3.com/",
+    "zen12": "https://zen12.com/?no-popup=1",
+    "affiliate_public": "https://affiliates.inspire3.com/",
+    "mindfulness": "https://pubmed.ncbi.nlm.nih.gov/37578065/",
+    "eeg": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+    "ftc_endorse": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "ftc_health": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+    "focus": "https://finalvestige.com/focus/",
+    "puysegur": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "change": "https://finalvestige.com/2026/11/02/change-blindness/",
+    "issue171": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+    "issue820": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820"
+  },
+  "claims": [
+    {
+      "id": "TI-01",
+      "claim": "Peter Thompson introduced Thatcher illusion in 1980",
+      "classification": "independent-supported",
+      "source_id": "thompson1980",
+      "notes": "Bibliographic primary paper; no effectiveness implication"
+    },
+    {
+      "id": "TI-02",
+      "claim": "Thatcher manipulation involves locally inverted eyes and/or mouth",
+      "classification": "independent-supported",
+      "source_id": "psalta2014",
+      "notes": "Do not show copyrighted face picture"
+    },
+    {
+      "id": "TI-03",
+      "claim": "The effect depends in part on global face orientation",
+      "classification": "independent-supported",
+      "source_id": "thompson1980",
+      "notes": "Qualitative phenomenon, not universal frequency"
+    },
+    {
+      "id": "TI-04",
+      "claim": "The illusion proves one single fixed face module",
+      "classification": "unsupported-omit",
+      "source_id": "psalta2014",
+      "notes": "Several competing models remain"
+    },
+    {
+      "id": "TI-05",
+      "claim": "Local eye-only or mouth-only presentations can show orientation sensitivity",
+      "classification": "independent-supported",
+      "source_id": "psalta2014",
+      "notes": "2014 matching-task outcome"
+    },
+    {
+      "id": "TI-06",
+      "claim": "Configural information plays no role whatsoever",
+      "classification": "unsupported-omit",
+      "source_id": "mestry2014",
+      "notes": "Overstates local-feature finding"
+    },
+    {
+      "id": "TI-07",
+      "claim": "ERP signals prove the mechanism completely",
+      "classification": "unsupported-omit",
+      "source_id": "mestry2014",
+      "notes": "ERP experimental correlations are not exhaustive causation"
+    },
+    {
+      "id": "TI-08",
+      "claim": "Face inversion relates to holistic/early grouping processing",
+      "classification": "independent-qualified",
+      "source_id": "taubert2011",
+      "notes": "Competing explanations should be named"
+    },
+    {
+      "id": "TI-09",
+      "claim": "Thatcher-like effects possible for some non-face categories",
+      "classification": "independent-supported",
+      "source_id": "nonface2014",
+      "notes": "Under familiar canonical-stimulus conditions"
+    },
+    {
+      "id": "TI-10",
+      "claim": "Human and macaque comparative studies exist",
+      "classification": "independent-supported",
+      "source_id": "primates2010",
+      "notes": "No species-universal interpretation"
+    },
+    {
+      "id": "TI-11",
+      "claim": "Thatcher illusion can diagnose ADHD or cognitive impairment",
+      "classification": "unsupported-omit",
+      "source_id": "thompson1980",
+      "notes": "Not a diagnostic test"
+    },
+    {
+      "id": "TI-12",
+      "claim": "Thatcher illusion is caused by hypnosis",
+      "classification": "unsupported-omit",
+      "source_id": "thompson1980",
+      "notes": "Not investigated by original studies"
+    },
+    {
+      "id": "TI-13",
+      "claim": "Zen12 reverses face-inversion failures",
+      "classification": "unsupported-omit",
+      "source_id": "zen12",
+      "notes": "No relevant product evidence"
+    },
+    {
+      "id": "Z12-01",
+      "claim": "Inspire3 lists Zen12 in its catalog",
+      "classification": "seller-description",
+      "source_id": "inspire3",
+      "notes": "Seller is not independent tester"
+    },
+    {
+      "id": "Z12-02",
+      "claim": "Premium includes 12 levels",
+      "classification": "seller-description",
+      "source_id": "zen12",
+      "notes": "Exact product main page observed 2026-11-06"
+    },
+    {
+      "id": "Z12-03",
+      "claim": "Premium claims 48 MP3 files",
+      "classification": "seller-description",
+      "source_id": "zen12",
+      "notes": "12 levels x 4 styles described"
+    },
+    {
+      "id": "Z12-04",
+      "claim": "Audio options include music, guided, nature, white noise",
+      "classification": "seller-description",
+      "source_id": "zen12",
+      "notes": "Descriptions not file-delivery verified"
+    },
+    {
+      "id": "Z12-05",
+      "claim": "Seller lists quick start guide and manual",
+      "classification": "seller-description",
+      "source_id": "zen12",
+      "notes": "Contents not independently retrieved"
+    },
+    {
+      "id": "Z12-06",
+      "claim": "Seller lists one-hour training call access for Premium",
+      "classification": "seller-description",
+      "source_id": "zen12",
+      "notes": "Access untested"
+    },
+    {
+      "id": "Z12-07",
+      "claim": "Sessions advertised as twelve minutes",
+      "classification": "seller-description",
+      "source_id": "zen12",
+      "notes": "Runtime of every actual recording unmeasured"
+    },
+    {
+      "id": "Z12-08",
+      "claim": "Main page displayed Premium $87.99 November 6, 2026",
+      "classification": "seller-observation",
+      "source_id": "zen12",
+      "notes": "Not checkout total/price guarantee"
+    },
+    {
+      "id": "Z12-09",
+      "claim": "Seller advertises one-year money-back guarantee",
+      "classification": "seller-description",
+      "source_id": "zen12",
+      "notes": "Refund execution and exclusions untested"
+    },
+    {
+      "id": "Z12-10",
+      "claim": "12 minutes delivers same benefits as 1 hour of meditation",
+      "classification": "seller-unsubstantiated-omit",
+      "source_id": "zen12",
+      "notes": "Do not imply scientific equivalence"
+    },
+    {
+      "id": "Z12-11",
+      "claim": "The product automatically treats anxiety or mental illness",
+      "classification": "seller-unsubstantiated-omit",
+      "source_id": "zen12",
+      "notes": "No FDA/clinical support identified"
+    },
+    {
+      "id": "Z12-12",
+      "claim": "Audio programs in general have identical methods",
+      "classification": "unsupported-omit",
+      "source_id": "eeg",
+      "notes": "Binaural/isochronic formats differ"
+    },
+    {
+      "id": "Z12-13",
+      "claim": "Research on mindfulness RCTs proves Zen12 efficacy",
+      "classification": "unsupported-omit",
+      "source_id": "mindfulness",
+      "notes": "Exact-product study not supplied"
+    },
+    {
+      "id": "Z12-14",
+      "claim": "Evidence concerning binaural-beat EEG is mixed",
+      "classification": "independent-qualified",
+      "source_id": "eeg",
+      "notes": "Does not automatically prove results for Zen12"
+    },
+    {
+      "id": "Z12-15",
+      "claim": "FV staff personally used Zen12 and improved focus",
+      "classification": "unsupported-omit",
+      "source_id": "zen12",
+      "notes": "No trial or staff testimonial exists"
+    },
+    {
+      "id": "Z12-16",
+      "claim": "Public affiliate program exists",
+      "classification": "seller-description",
+      "source_id": "affiliate_public",
+      "notes": "Not named FV acceptance or permissions"
+    },
+    {
+      "id": "Z12-17",
+      "claim": "Named Final Vestige publisher approved for Zen12",
+      "classification": "unverified-hard-hold",
+      "source_id": "affiliate_public",
+      "notes": "Authenticate logged-in dashboard"
+    },
+    {
+      "id": "Z12-18",
+      "claim": "Exact FV earning link and email/posting permissions verified",
+      "classification": "unverified-hard-hold",
+      "source_id": "affiliate_public",
+      "notes": "Do not manufacture/copy earning URL"
+    },
+    {
+      "id": "Z12-19",
+      "claim": "FV Payhip paid Mind SKU rights and checkout verified",
+      "classification": "unverified-hard-hold",
+      "source_id": "issue820",
+      "notes": "Requires owner source-of-truth inventory"
+    },
+    {
+      "id": "Z12-20",
+      "claim": "Actual affiliate commission is paid or attributable to campaign",
+      "classification": "unverified-hard-hold",
+      "source_id": "issue820",
+      "notes": "Merchant/partner report required"
+    },
+    {
+      "id": "FTC-01",
+      "claim": "Commercial recommendations require proximate clear material-connection disclosures",
+      "classification": "independent-guidance",
+      "source_id": "ftc_endorse",
+      "notes": "Prospective disclosure near withheld CTA"
+    },
+    {
+      "id": "FTC-02",
+      "claim": "Health/benefit efficacy claims require competent reliable evidence",
+      "classification": "independent-guidance",
+      "source_id": "ftc_health",
+      "notes": "General research not product validation"
+    },
+    {
+      "id": "FN-01",
+      "claim": "Existing FV free Focus page is established destination",
+      "classification": "legacy-documented-not-guest-tested",
+      "source_id": "issue171",
+      "notes": "Public URL failed external fetch in this run; issue baseline"
+    },
+    {
+      "id": "FN-02",
+      "claim": "First-party Grok asset identifiers and confirmed buyers available",
+      "classification": "unverified-hard-hold",
+      "source_id": "issue820",
+      "notes": "Do not infer from pageviews"
+    },
+    {
+      "id": "FN-03",
+      "claim": "Text-versus-video increases paid conversions",
+      "classification": "hypothesis-not-tested",
+      "source_id": "issue820",
+      "notes": "Must be tested using settled purchases"
+    }
+  ],
+  "commercial_authorization": {
+    "named_final_vestige_acceptance": null,
+    "earning_url": null,
+    "allowed_channels": null,
+    "approved_creatives": null,
+    "price_at_checkout": null,
+    "verified_refund_result": null,
+    "payhip_paid_mind_sku": null,
+    "paid_affiliate_conversions": null,
+    "paid_owned_orders": null,
+    "realized_net_revenue": null,
+    "qualified_human_sessions": null
+  },
+  "release_gates": [
+    {
+      "id": "named_publisher_approval",
+      "state": "CLOSED",
+      "reason": "Missing verified release-grade evidence or explicit founder approval; opening must be separately documented."
+    },
+    {
+      "id": "affiliate_channel_permissions",
+      "state": "CLOSED",
+      "reason": "Missing verified release-grade evidence or explicit founder approval; opening must be separately documented."
+    },
+    {
+      "id": "affiliate_email_permissions",
+      "state": "CLOSED",
+      "reason": "Missing verified release-grade evidence or explicit founder approval; opening must be separately documented."
+    },
+    {
+      "id": "affiliate_creative_approval",
+      "state": "CLOSED",
+      "reason": "Missing verified release-grade evidence or explicit founder approval; opening must be separately documented."
+    },
+    {
+      "id": "exact_premium_affiliate_url",
+      "state": "CLOSED",
+      "reason": "Missing verified release-grade evidence or explicit founder approval; opening must be separately documented."
+    },
+    {
+      "id": "commission_reporting_access",
+      "state": "CLOSED",
+      "reason": "Missing verified release-grade evidence or explicit founder approval; opening must be separately documented."
+    },
+    {
+      "id": "affiliate_cookie_tracking_terms",
+      "state": "CLOSED",
+      "reason": "Missing verified release-grade evidence or explicit founder approval; opening must be separately documented."
+    },
+    {
+      "id": "merchant_current_price_checkout",
+      "state": "CLOSED",
+      "reason": "Missing verified release-grade evidence or explicit founder approval; opening must be separately documented."
+    },
+    {
+      "id": "merchant_taxes_fees",
+      "state": "CLOSED",
+      "reason": "Missing verified release-grade evidence or explicit founder approval; opening must be separately documented."
+    },
+    {
+      "id": "merchant_refund_terms",
+      "state": "CLOSED",
+      "reason": "Missing verified release-grade evidence or explicit founder approval; opening must be separately documented."
+    },
+    {
+      "id": "actual_refund_test",
+      "state": "CLOSED",
+      "reason": "Missing verified release-grade evidence or explicit founder approval; opening must be separately documented."
+    },
+    {
+      "id": "owned_product_paid_sku",
+      "state": "CLOSED",
+      "reason": "Missing verified release-grade evidence or explicit founder approval; opening must be separately documented."
+    },
+    {
+      "id": "owned_product_rights",
+      "state": "CLOSED",
+      "reason": "Missing verified release-grade evidence or explicit founder approval; opening must be separately documented."
+    },
+    {
+      "id": "owned_product_delivery",
+      "state": "CLOSED",
+      "reason": "Missing verified release-grade evidence or explicit founder approval; opening must be separately documented."
+    },
+    {
+      "id": "owned_product_checkout",
+      "state": "CLOSED",
+      "reason": "Missing verified release-grade evidence or explicit founder approval; opening must be separately documented."
+    },
+    {
+      "id": "owned_product_refund_terms",
+      "state": "CLOSED",
+      "reason": "Missing verified release-grade evidence or explicit founder approval; opening must be separately documented."
+    },
+    {
+      "id": "grok_immutable_asset_ids",
+      "state": "CLOSED",
+      "reason": "Missing verified release-grade evidence or explicit founder approval; opening must be separately documented."
+    },
+    {
+      "id": "grok_platform_link_paths",
+      "state": "CLOSED",
+      "reason": "Missing verified release-grade evidence or explicit founder approval; opening must be separately documented."
+    },
+    {
+      "id": "first_party_utm_ingestion",
+      "state": "CLOSED",
+      "reason": "Missing verified release-grade evidence or explicit founder approval; opening must be separately documented."
+    },
+    {
+      "id": "qualified_human_definition",
+      "state": "CLOSED",
+      "reason": "Missing verified release-grade evidence or explicit founder approval; opening must be separately documented."
+    },
+    {
+      "id": "signup_confirmation_guest_test",
+      "state": "CLOSED",
+      "reason": "Missing verified release-grade evidence or explicit founder approval; opening must be separately documented."
+    },
+    {
+      "id": "fieldbook_welcome_delivery",
+      "state": "CLOSED",
+      "reason": "Missing verified release-grade evidence or explicit founder approval; opening must be separately documented."
+    },
+    {
+      "id": "video_original_master",
+      "state": "CLOSED",
+      "reason": "Missing verified release-grade evidence or explicit founder approval; opening must be separately documented."
+    },
+    {
+      "id": "video_caption_vtt",
+      "state": "CLOSED",
+      "reason": "Missing verified release-grade evidence or explicit founder approval; opening must be separately documented."
+    },
+    {
+      "id": "video_poster_rights",
+      "state": "CLOSED",
+      "reason": "Missing verified release-grade evidence or explicit founder approval; opening must be separately documented."
+    },
+    {
+      "id": "video_keyboard_browser_qa",
+      "state": "CLOSED",
+      "reason": "Missing verified release-grade evidence or explicit founder approval; opening must be separately documented."
+    },
+    {
+      "id": "no_js_accessibility_qa",
+      "state": "CLOSED",
+      "reason": "Missing verified release-grade evidence or explicit founder approval; opening must be separately documented."
+    },
+    {
+      "id": "mobile_360_390_768_1440_qa",
+      "state": "CLOSED",
+      "reason": "Missing verified release-grade evidence or explicit founder approval; opening must be separately documented."
+    },
+    {
+      "id": "third_party_script_audit",
+      "state": "CLOSED",
+      "reason": "Missing verified release-grade evidence or explicit founder approval; opening must be separately documented."
+    },
+    {
+      "id": "FTC_disclosure_in_context",
+      "state": "CLOSED",
+      "reason": "Missing verified release-grade evidence or explicit founder approval; opening must be separately documented."
+    },
+    {
+      "id": "product_specific_efficacy_review",
+      "state": "CLOSED",
+      "reason": "Missing verified release-grade evidence or explicit founder approval; opening must be separately documented."
+    },
+    {
+      "id": "consent_privacy_review",
+      "state": "CLOSED",
+      "reason": "Missing verified release-grade evidence or explicit founder approval; opening must be separately documented."
+    },
+    {
+      "id": "founder_production_release",
+      "state": "CLOSED",
+      "reason": "Missing verified release-grade evidence or explicit founder approval; opening must be separately documented."
+    },
+    {
+      "id": "merchant_sale_report",
+      "state": "CLOSED",
+      "reason": "Missing verified release-grade evidence or explicit founder approval; opening must be separately documented."
+    },
+    {
+      "id": "net_settlement_reconciliation",
+      "state": "CLOSED",
+      "reason": "Missing verified release-grade evidence or explicit founder approval; opening must be separately documented."
+    },
+    {
+      "id": "seven_day_cohort_sample",
+      "state": "CLOSED",
+      "reason": "Missing verified release-grade evidence or explicit founder approval; opening must be separately documented."
+    },
+    {
+      "id": "thirty_day_cohort_sample",
+      "state": "CLOSED",
+      "reason": "Missing verified release-grade evidence or explicit founder approval; opening must be separately documented."
+    }
+  ],
+  "disclosure_copy": "Final Vestige Studios may earn a commission if you purchase through a qualifying link. No earning link is active in this draft.",
+  "warnings": [
+    "Displayed seller price is not verified checkout total.",
+    "Do not equate paid media clicks or outbound events with merchant-confirmed orders.",
+    "Do not repeat generic Inspire3 payout marketing as this publisher's rate."
+  ]
+}
