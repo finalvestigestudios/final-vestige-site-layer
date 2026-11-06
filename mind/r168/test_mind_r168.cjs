@@ -55,7 +55,7 @@ has(d.buyer,/aria-describedby="affiliate-note"/,'disclosure proximity');
 has(d.buyer,/If you purchase through an affiliate link, Final Vestige may earn a commission/,'FTC clear plain disclosure');
 has(d.buyer,/No affiliate link is active/,'nonactivation explicit');
 has(d.buyer,/https:\/\/finalvestige\.com\/focus\//,'existing free funnel');
-has(d.buyer,/no video file|no video/i,'no video claims');
+has(d.buyer,/media asset currently exists|not yet produced/i,'no produced video claims');
 has(d.buyer,/42-second explanation|42-second|42 seconds/,'original short storyboarding');
 has(d.buyer,/<details class="transcript">/,'no-JS accessible transcript disclosure');
 lacks(d.buyer,/<(?:script|form|iframe|video|input)\b/i,'no thirdparty scripts, duplicate forms or fake video');
