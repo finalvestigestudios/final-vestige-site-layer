@@ -1,0 +1,310 @@
+{
+  "schema": "fv-eight-priority-published-pages-media-v1",
+  "captured_date": "2026-11-06",
+  "method": "Authenticated WordPress pages.get edit source for exactly 8 selected published pages; <img src> markup only, NOT guest browser, CSS background, JavaScript image injection, or featured image request inventory.",
+  "selection": "Existing page cohort excluded from 66-article census; includes affiliate landing pages, Apollo evidence atlas, podcast episode, focus, homepage (READ-ONLY), preparedness, Public Record.",
+  "pages": [
+    {
+      "id": 2088,
+      "url": "https://finalvestige.com/mini-museum-history-collectibles/",
+      "modified": "2026-11-05T20:01:36",
+      "title": "Hold a Piece of History — Mini Museum | Final Vestige",
+      "featured_media_id": 0,
+      "images": [
+        {
+          "slot": "2088:0",
+          "src": "https://www.awin1.com/cshow.php?s=4236132&v=89949&q=552988&r=3055117",
+          "alt": "Mini Museum sponsor advertisement for scientific and historical collectibles",
+          "width": null,
+          "height": null,
+          "source_class": "other",
+          "srcset": false,
+          "browser_http": null,
+          "visitor_natural_width": null,
+          "visitor_wire_bytes": null,
+          "rights": "HOLD_ITEM_LEVEL",
+          "rehost_allowed": false,
+          "wordpress_write_allowed": false
+        }
+      ]
+    },
+    {
+      "id": 2089,
+      "url": "https://finalvestige.com/cold-case-mystery-games/",
+      "modified": "2026-11-05T20:01:41",
+      "title": "Cold Case Inc — Solve the Case | Final Vestige",
+      "featured_media_id": 0,
+      "images": [
+        {
+          "slot": "2089:0",
+          "src": "https://www.awin1.com/cshow.php?s=4959313&v=46005&q=620613&r=3055117",
+          "alt": "Cold Case Inc sponsored banner featuring The Waters Edge, a hard-difficulty fictional detective case",
+          "width": null,
+          "height": null,
+          "source_class": "other",
+          "srcset": false,
+          "browser_http": null,
+          "visitor_natural_width": null,
+          "visitor_wire_bytes": null,
+          "rights": "HOLD_ITEM_LEVEL",
+          "rehost_allowed": false,
+          "wordpress_write_allowed": false
+        }
+      ]
+    },
+    {
+      "id": 2017,
+      "url": "https://finalvestige.com/apollo-1-evidence-atlas/",
+      "modified": "2026-11-05T18:19:45",
+      "title": "Apollo 1: The Evidence Atlas",
+      "featured_media_id": 0,
+      "images": [
+        {
+          "slot": "2017:0",
+          "src": "https://finalvestige.com/wp-content/uploads/2026/11/apollo1-nasa-s66-58038.jpg",
+          "alt": "Apollo 1 prime crew entering an altitude chamber during training in October 1966, months before the fire.",
+          "width": 3000,
+          "height": 2417,
+          "source_class": "other",
+          "srcset": false,
+          "browser_http": null,
+          "visitor_natural_width": null,
+          "visitor_wire_bytes": null,
+          "rights": "HOLD_ITEM_LEVEL",
+          "rehost_allowed": false,
+          "wordpress_write_allowed": false
+        },
+        {
+          "slot": "2017:1",
+          "src": "https://finalvestige.com/wp-content/uploads/2026/11/apollo1-nasa-s67-15717.jpg",
+          "alt": "Apollo Spacecraft 012 being moved during preflight processing in January 1967, weeks before the fire.",
+          "width": 2367,
+          "height": 3000,
+          "source_class": "other",
+          "srcset": false,
+          "browser_http": null,
+          "visitor_natural_width": null,
+          "visitor_wire_bytes": null,
+          "rights": "HOLD_ITEM_LEVEL",
+          "rehost_allowed": false,
+          "wordpress_write_allowed": false
+        },
+        {
+          "slot": "2017:2",
+          "src": "https://finalvestige.com/wp-content/uploads/2026/11/apollo1-nasa-ksc-20170124-three-part-hatch.jpg",
+          "alt": "The preserved original three-part Apollo 1 hatch displayed at Kennedy Space Center in 2017.",
+          "width": 1920,
+          "height": 1280,
+          "source_class": "other",
+          "srcset": false,
+          "browser_http": null,
+          "visitor_natural_width": null,
+          "visitor_wire_bytes": null,
+          "rights": "HOLD_ITEM_LEVEL",
+          "rehost_allowed": false,
+          "wordpress_write_allowed": false
+        }
+      ]
+    },
+    {
+      "id": 1484,
+      "url": "https://finalvestige.com/podcast/the-textbook-found-open-in-the-ruins/",
+      "modified": "2026-11-02T21:41:39",
+      "title": "The Textbook Found Open in the Ruins | New London, 1937",
+      "featured_media_id": 0,
+      "images": [
+        {
+          "slot": "1484:0",
+          "src": "https://drive.google.com/thumbnail?id=1V8rMf0ovXiJbJLLq77uLwfMHghlH7sMM&sz=w1600",
+          "alt": "Final Vestige Podcast Episode 1 artwork for The Textbook Found Open in the Ruins",
+          "width": null,
+          "height": null,
+          "source_class": "other",
+          "srcset": false,
+          "browser_http": null,
+          "visitor_natural_width": null,
+          "visitor_wire_bytes": null,
+          "rights": "HOLD_ITEM_LEVEL",
+          "rehost_allowed": false,
+          "wordpress_write_allowed": false
+        },
+        {
+          "slot": "1484:1",
+          "src": "https://upload.wikimedia.org/wikipedia/commons/9/9c/New_London_School_before_explosion.webp",
+          "alt": "New London School before the 1937 explosion",
+          "width": null,
+          "height": null,
+          "source_class": "other",
+          "srcset": false,
+          "browser_http": null,
+          "visitor_natural_width": null,
+          "visitor_wire_bytes": null,
+          "rights": "HOLD_ITEM_LEVEL",
+          "rehost_allowed": false,
+          "wordpress_write_allowed": false
+        },
+        {
+          "slot": "1484:2",
+          "src": "https://upload.wikimedia.org/wikipedia/commons/3/3c/New_London_School_explosion.jpg",
+          "alt": "Ruins of New London School after the March 1937 explosion",
+          "width": null,
+          "height": null,
+          "source_class": "other",
+          "srcset": false,
+          "browser_http": null,
+          "visitor_natural_width": null,
+          "visitor_wire_bytes": null,
+          "rights": "HOLD_ITEM_LEVEL",
+          "rehost_allowed": false,
+          "wordpress_write_allowed": false
+        },
+        {
+          "slot": "1484:3",
+          "src": "https://upload.wikimedia.org/wikipedia/commons/9/95/New_London_School_Explosion_Memorial.jpg",
+          "alt": "New London School Explosion Memorial cenotaph in New London, Texas",
+          "width": null,
+          "height": null,
+          "source_class": "other",
+          "srcset": false,
+          "browser_http": null,
+          "visitor_natural_width": null,
+          "visitor_wire_bytes": null,
+          "rights": "HOLD_ITEM_LEVEL",
+          "rehost_allowed": false,
+          "wordpress_write_allowed": false
+        }
+      ]
+    },
+    {
+      "id": 1579,
+      "url": "https://finalvestige.com/focus/",
+      "modified": "2026-11-05T17:44:02",
+      "title": "Free Seven Day Focus Fieldbook",
+      "featured_media_id": 0,
+      "images": [
+        {
+          "slot": "1579:0",
+          "src": "https://finalvestige.com/wp-content/uploads/2026/10/focus_complete_cover.webp",
+          "alt": "The black and aged-gold cover of Seven Day Focus Fieldbook, Complete Edition.",
+          "width": 1120,
+          "height": 1120,
+          "source_class": "other",
+          "srcset": false,
+          "browser_http": null,
+          "visitor_natural_width": null,
+          "visitor_wire_bytes": null,
+          "rights": "HOLD_ITEM_LEVEL",
+          "rehost_allowed": false,
+          "wordpress_write_allowed": false
+        },
+        {
+          "slot": "1579:1",
+          "src": "https://finalvestige.com/wp-content/uploads/2026/10/focus_complete_pages.webp",
+          "alt": "Six actual pages from the 52-page Focus Fieldbook, including a step chooser, session worksheet, progress review, audio-claims evaluator and thirty-day tracking log.",
+          "width": 1440,
+          "height": 1210,
+          "source_class": "other",
+          "srcset": false,
+          "browser_http": null,
+          "visitor_natural_width": null,
+          "visitor_wire_bytes": null,
+          "rights": "HOLD_ITEM_LEVEL",
+          "rehost_allowed": false,
+          "wordpress_write_allowed": false
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "url": "https://finalvestige.com/",
+      "modified": "2026-11-05T12:07:24",
+      "title": "Home",
+      "featured_media_id": 2104,
+      "images": [
+        {
+          "slot": "6:0",
+          "src": "https://finalvestige.com/wp-content/uploads/2026/08/s67-19766.webp",
+          "alt": "Apollo 1 astronauts Gus Grissom, Ed White and Roger Chaffee near Launch Complex 34 during training in January 1967.",
+          "width": 1041,
+          "height": 810,
+          "source_class": "other",
+          "srcset": true,
+          "browser_http": null,
+          "visitor_natural_width": null,
+          "visitor_wire_bytes": null,
+          "rights": "HOLD_ITEM_LEVEL",
+          "rehost_allowed": false,
+          "wordpress_write_allowed": false
+        },
+        {
+          "slot": "6:1",
+          "src": "https://finalvestige.com/wp-content/uploads/2026/08/Franklinexpeditionnote.jpg",
+          "alt": "The Victory Point note: an 1847 message with a later handwritten update dating from April 1848 around the margins.",
+          "width": 960,
+          "height": 1526,
+          "source_class": "other",
+          "srcset": true,
+          "browser_http": null,
+          "visitor_natural_width": null,
+          "visitor_wire_bytes": null,
+          "rights": "HOLD_ITEM_LEVEL",
+          "rehost_allowed": false,
+          "wordpress_write_allowed": false
+        },
+        {
+          "slot": "6:2",
+          "src": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/edit-017-v02-nypl-5003296-original.jpg?fit=1024%2C692&ssl=1",
+          "alt": "1903 Brooklyn Rapid Transit railway and rapid-transit map, created before the Malbone Street reverse curve existed.",
+          "width": 1536,
+          "height": 1038,
+          "source_class": "other",
+          "srcset": true,
+          "browser_http": null,
+          "visitor_natural_width": null,
+          "visitor_wire_bytes": null,
+          "rights": "HOLD_ITEM_LEVEL",
+          "rehost_allowed": false,
+          "wordpress_write_allowed": false
+        },
+        {
+          "slot": "6:3",
+          "src": "https://finalvestige.com/wp-content/uploads/2026/10/focus_complete_cover.webp",
+          "alt": "",
+          "width": 1120,
+          "height": 1120,
+          "source_class": "other",
+          "srcset": false,
+          "browser_http": null,
+          "visitor_natural_width": null,
+          "visitor_wire_bytes": null,
+          "rights": "HOLD_ITEM_LEVEL",
+          "rehost_allowed": false,
+          "wordpress_write_allowed": false
+        }
+      ]
+    },
+    {
+      "id": 1868,
+      "url": "https://finalvestige.com/preparedness/",
+      "modified": "2026-11-04T17:32:05",
+      "title": "The Preparedness Archive",
+      "featured_media_id": 0,
+      "images": []
+    },
+    {
+      "id": 1304,
+      "url": "https://finalvestige.com/accountability/",
+      "modified": "2026-11-06T11:22:20",
+      "title": "The Public Record",
+      "featured_media_id": 0,
+      "images": []
+    }
+  ],
+  "reported_42_broken_confirmed": null,
+  "measured_76_percent_savings": null,
+  "production_images_fixed": 0,
+  "wp_writes": 0,
+  "third_party_downloads": 0,
+  "third_party_caches": 0,
+  "new_spend_usd": 0
+}
