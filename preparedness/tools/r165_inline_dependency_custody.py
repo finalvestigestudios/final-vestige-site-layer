@@ -71,7 +71,7 @@ def expand_checked(template: str, scripts: dict[str, str]) -> tuple[str, dict]:
     for name, code in scripts.items():
         inspect_script(name, code)
     expanded = PLACEHOLDER.sub(lambda m: scripts[m.group(1)], template)
-    need(not PLACEHOLDER.search(expanded), 'unresolved inline dependency')
+    need('{{inline-js:' not in expanded, 'unresolved/unknown inline dependency')
     need(expanded.count('function rcModel(') == 1 and
          expanded.count('function paCleanText(') == 1,
          'duplicate or missing model function after expansion')
