@@ -23,7 +23,7 @@ function inspect(files) {
  test("article_original_primary_study",article.includes("10.1126/science.1111709")&&article.includes("Johansson"));
  test("article_marketplace_study",article.includes("10.1016/j.cognition.2010.06.010"));
  test("article_moral_study",article.includes("10.1371/journal.pone.0045457"));
- test("article_limit_on_choice_blindness",article.includes("did **not** show")&&article.includes("not evidence of"));
+ test("article_limit_on_choice_blindness",article.includes("did **not** show")&&article.includes("It does not prove"));
  test("article_separate_commerce",article.includes("No affiliate links")&&!/\[[^\]]*(buy now|affiliate offer|purchase through)/i.test(article));
  test("article_freely_usable_exercise",article.includes("consent-based demonstration")&&article.includes("Before"));
  test("article_historical_context",article.includes("Puységur"));
