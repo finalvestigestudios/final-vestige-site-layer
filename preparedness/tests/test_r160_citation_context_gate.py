@@ -36,6 +36,25 @@ class Gate(unittest.TestCase):
     def test_context_hash_changes_with_claim(self):
         m,b=fixture();after=b.replace('historical conditions. {{cite:','modern conditions. {{cite:',1)
         self.assertNotEqual(self.check(html=b)['contexts'][0]['context_sha256'],self.check(html=after)['contexts'][0]['context_sha256'])
+    def test_count_preserving_source_swap_is_visible(self):
+        m,b=fixture()
+        swapped=b.replace('{{cite:example-government-a}}','{{cite:example-research-b}}',1)
+        original=self.check(html=b)['contexts']
+        changed=self.check(html=swapped)['contexts']
+        self.assertEqual(len(original),len(changed))
+        self.assertNotEqual([(x['source_id'],x['context']) for x in original],
+                            [(x['source_id'],x['context']) for x in changed])
+    def test_source_interpretation_edit_is_visible(self):
+        m,b=fixture(); changed=copy.deepcopy(m)
+        changed['source_use']['example-government-a']='A different unsupported source interpretation.'
+        self.assertNotEqual(self.check(meta=m)['contexts'][0]['interpretation'],
+                            self.check(meta=changed)['contexts'][0]['interpretation'])
+    def test_context_relocation_preserves_count_but_changes_context(self):
+        m,b=fixture()
+        moved=b.replace('{{cite:example-government-a}}</p>', '</p>{{cite:example-government-a}}',1)
+        original=self.check(html=b);changed=self.check(html=moved)
+        self.assertEqual(original['citations'],changed['citations'])
+        self.assertNotEqual(original['contexts'][0]['context_sha256'],changed['contexts'][0]['context_sha256'])
     def test_known_blob(self):
         self.assertEqual(g.blob(b'hello'),'b6fc4c620b67d95f953a5c1c1230aaab5db5a1b0')
     def test_missing_and_symlink(self):
