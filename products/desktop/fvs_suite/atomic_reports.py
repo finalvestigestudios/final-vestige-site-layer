@@ -45,7 +45,8 @@ class _BudgetedCSVTextSink:
         self._witness = CSVStagingWitness()
 
     def write(self, text: str) -> int:
-        encoded_bytes = len(text.encode("utf-8"))
+        encoded = text.encode("utf-8")
+        encoded_bytes = len(encoded)
         if encoded_bytes > self._remaining:
             raise ValueError("CSV report byte limit exceeded")
         written = self._stream.write(text)
@@ -54,7 +55,7 @@ class _BudgetedCSVTextSink:
         # export, so a partial financial report could otherwise be published.
         if type(written) is not int or written != len(text):
             raise OSError(errno.EIO, "CSV report staging incomplete write")
-        self._witness.record(text.encode("utf-8"))
+        self._witness.record(encoded)
         self._remaining -= encoded_bytes
         return written
 
