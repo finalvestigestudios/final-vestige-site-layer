@@ -28,6 +28,12 @@ Linux CPython, real Tk 8.6 + Xvfb, with exactly matching Git source blob hashes:
 - `python -m compileall -q products/desktop`: **PASS**.
 - Tests cover all three modifier masks, combinations, lock keys, huge native mask, strict invalid types/poison conversion hooks, Win32 residual integrity, Aqua/X11 bypass, dialog isolation and legacy no-state events.
 
+### Additional inherited regression execution (exact source blobs)
+
+After the focused check above, re-created the *byte-identical committed* inherited R227/R228 wheel test files locally (Git blobs `11ba4ba84393c4ceca584c2644ec4fca9efc3267` and `a4185a44ec1b22877902a4c8b8e45577212c25dc`) alongside the R229 file. Executed `PYTHONPATH=products/desktop python -W error -m unittest discover -s products/desktop/tests -p 'test_*wheel*r*.py' -q`: **50/50 PASS**. Same discovery under `python -OO -W error`: **50/50 PASS**. This is **100/100 local method executions** (21 new + 12 R227 + 17 R228, each twice), zero skips, on Linux CPython 3.13.5.
+
+Also re-created committed R228 native Xvfb script byte-identically (Git blob `390415b485579b84c2363cd88a29e764bc9281fc`) and ran it against the new R229 module: **PASS normal and `-OO`**. Together with the new R229 real-Tk smoke, **4/4 real-Tk Xvfb script executions PASS**. Still source-extracted, not a complete private-repository test suite or physical Win11 certification.
+
 ## CI and release boundaries
 
 `.github/workflows/desktop-build.yml` now requires the exact 21-test file in **both** normal and optimized Python on Ubuntu and Windows; Ubuntu also mandates two real Tk/Xvfb runs. The historical R228 Actions run #42185069334 failed with Ubuntu and Windows `steps:null`; no runner execution evidence and no confirmed root cause. Check this new head's run before claiming CI pass.
