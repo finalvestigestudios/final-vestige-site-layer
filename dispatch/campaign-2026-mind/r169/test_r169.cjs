@@ -35,3 +35,9 @@ test('seller copy and independent efficacy separated',()=>assert.equal(ledger.cl
 test('no claimed paid performance',()=>assert.equal(ledger.attribution.cash_net_per_1000_qualified,'NOT_COMPUTABLE'));
 test('operational handoff and true owner captured',()=>{assert.match(doc,/Claude\/Site QA/);assert.match(doc,/Mind Studio/);assert.match(doc,/HOLD_MERCHANT/);});
 test('no personally identifying data in output ledger',()=>assert.doesNotMatch(JSON.stringify(ledger),/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}/i));
+
+test('official citations clickable without activating merchant',()=>{
+  assert.match(html, /<a href="https:\/\/wellcomecollection\.org/);
+  assert.match(html, /<a href="https:\/\/finalvestige\.com/);
+  assert.doesNotMatch(html, /<a href="https:\/\/hypnosislive\.com/);
+});
