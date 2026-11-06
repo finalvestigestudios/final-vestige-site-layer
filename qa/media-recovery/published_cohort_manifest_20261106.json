@@ -495,7 +495,10 @@
       "slug": "the-watch-lost-its-hands-halifax-explosion",
       "modified_wp": "2026-11-02T21:39:48",
       "inline_img_count": 7,
-      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot"
+      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot",
+      "fresh_inline_img_count": 7,
+      "fresh_external_img_count": 0,
+      "fresh_modified_wp": "2026-11-02T21:39:48"
     },
     {
       "id": 274,
@@ -503,7 +506,10 @@
       "slug": "twenty-four-feet-from-air-uss-tang",
       "modified_wp": "2026-11-02T21:39:50",
       "inline_img_count": 7,
-      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot"
+      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot",
+      "fresh_inline_img_count": 7,
+      "fresh_external_img_count": 7,
+      "fresh_modified_wp": "2026-11-02T21:39:50"
     },
     {
       "id": 276,
@@ -511,7 +517,10 @@
       "slug": "add-no-more-load-quebec-bridge",
       "modified_wp": "2026-11-02T21:37:08",
       "inline_img_count": 6,
-      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot"
+      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot",
+      "fresh_inline_img_count": 6,
+      "fresh_external_img_count": 6,
+      "fresh_modified_wp": "2026-11-02T21:37:08"
     },
     {
       "id": 277,
@@ -519,7 +528,10 @@
       "slug": "the-boat-went-over-the-trees-lituya-bay",
       "modified_wp": "2026-08-21T00:32:52",
       "inline_img_count": 6,
-      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot"
+      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot",
+      "fresh_inline_img_count": 6,
+      "fresh_external_img_count": 6,
+      "fresh_modified_wp": "2026-08-21T00:32:52"
     },
     {
       "id": 278,
@@ -527,7 +539,10 @@
       "slug": "they-walked-beyond-the-search-lady-be-good",
       "modified_wp": "2026-11-02T21:39:52",
       "inline_img_count": 7,
-      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot"
+      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot",
+      "fresh_inline_img_count": 7,
+      "fresh_external_img_count": 7,
+      "fresh_modified_wp": "2026-11-02T21:39:52"
     },
     {
       "id": 279,
@@ -535,7 +550,10 @@
       "slug": "the-geologists-found-the-spy-satellite",
       "modified_wp": "2026-11-02T21:39:54",
       "inline_img_count": 6,
-      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot"
+      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot",
+      "fresh_inline_img_count": 6,
+      "fresh_external_img_count": 6,
+      "fresh_modified_wp": "2026-11-02T21:39:54"
     },
     {
       "id": 280,
@@ -543,7 +561,10 @@
       "slug": "the-sledgehammers-broke-first-uss-pueblo",
       "modified_wp": "2026-11-02T21:39:55",
       "inline_img_count": 6,
-      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot"
+      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot",
+      "fresh_inline_img_count": 6,
+      "fresh_external_img_count": 6,
+      "fresh_modified_wp": "2026-11-02T21:39:55"
     },
     {
       "id": 283,
@@ -551,7 +572,10 @@
       "slug": "the-crowd-became-the-lock-iroquois-theatre",
       "modified_wp": "2026-11-02T21:39:57",
       "inline_img_count": 7,
-      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot"
+      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot",
+      "fresh_inline_img_count": 7,
+      "fresh_external_img_count": 7,
+      "fresh_modified_wp": "2026-11-02T21:39:57"
     },
     {
       "id": 285,
@@ -770,5 +794,5 @@
   "image_count_scope": "Gutenberg stored <img> tags only, not dynamically injected/featured, srcset, CSS or live rendered; per-post counts may be stale after edits",
   "source_census_blob_sha": "76aa63ffaa299a6e6878edc1b66e637fa6f058ab",
   "new_five_post_fresh_count_verification": "Read-only WordPress posts.get context=edit for IDs 1917 1920 1922 1924 1926, 2026-11-06",
-  "fresh_recensus_progress": 32
+  "fresh_recensus_progress": 40
 }
