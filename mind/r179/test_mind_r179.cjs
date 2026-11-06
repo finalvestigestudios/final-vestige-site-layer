@@ -105,7 +105,7 @@ const mutations=[
 const baseline=verify(files);
 let caught=0;for(const [key,from,to] of mutations){
  if(!files[key].includes(from))throw Error('MUTATION SOURCE MISSING '+key+' '+from);
- const damaged={...files,[key]:files[key].replace(from,to)};
+ const damaged={...files,[key]:files[key].split(from).join(to)};
  try{verify(damaged);}catch(e){caught++;continue;}
  throw Error('UNDETECTED mutation '+key+' '+from);
 }
