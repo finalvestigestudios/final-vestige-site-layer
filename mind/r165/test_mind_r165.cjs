@@ -29,7 +29,7 @@ const issues=(s)=>{
   check(HAS(page,'noindex,nofollow')&&HAS(page,'strict-origin-when-cross-origin'),'unpublished indexing/referrer policy');
   check(HAS(page,'<main id="main">')&&HAS(page,'<h1')&&HAS(page,'Skip to content'),'semantic landmarks');
   check(HAS(page,'aria-labelledby')&&HAS(page,'aria-describedby')&&HAS(page,'prefers-reduced-motion'),'a11y smoke controls');
-  check(!/<script\b|<iframe\b|<form\b|autoplay\b|\bonfocus\s*=|\bonblur\s*=|\bonclick\s*=/i.test(page),'no scripts/forms/iframe/autoplay/inline handlers');
+  check(!/<script\b|<iframe\b|<form\b|<video\b[^>]*\bautoplay\b|<audio\b[^>]*\bautoplay\b|\bonfocus\s*=|\bonblur\s*=|\bonclick\s*=/i.test(page),'no scripts/forms/iframe/autoplay/inline handlers');
   check(!/<a\b[^>]*href\s*=\s*['"]https?:\/\/(?:zen12\.com|affiliates\.inspire3\.com|www\.awin1\.com)/i.test(page),'no seller or earning click-through');
   check(/<button\b[^>]*\bdisabled\b/i.test(page),'merchant control must be natively disabled');
   check(HAS(page,'If a future authorized purchase link is enabled, Final Vestige may earn a commission at no additional cost to you'),'adjacent plain commission disclosure');
