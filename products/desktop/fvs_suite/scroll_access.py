@@ -9,6 +9,8 @@ import math
 import tkinter as tk
 from tkinter import ttk
 
+from .wheel_modifiers import is_plain_vertical_wheel
+
 
 def focus_scroll_fraction(total_height, visible_height, top, widget_y, widget_height):
     """Return a bounded scroll fraction when a focused control is out of view.
@@ -145,6 +147,10 @@ class ScrollableForm:
 
     def _scroll_wheel(self, event, *, button=None):
         if not self._inside_viewport(event.widget):
+            return None
+        # Leave Shift-wheel horizontal navigation and Ctrl/Alt wheel
+        # gestures to native controls; do not change Win32 partial residual.
+        if not is_plain_vertical_wheel(getattr(event, "state", 0)):
             return None
         lo, hi = self.canvas.yview()
         if lo <= 0.0 and hi >= 1.0:
