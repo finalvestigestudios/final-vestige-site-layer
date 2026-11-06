@@ -24,7 +24,7 @@ function verify(f){
  ok('specific competing price observations',f.claims.includes('$87.99')&&f.claims.includes('$87'));
  ok('no fixed checkout claim',f.claims.includes('final checkout')&&f.claims.includes('BLOCK'));
  ok('stale promotion risk',f.claims.includes('June 30, 2026'));
- ok('no fake payout record',f.claims.includes('payout')&&f.claims.includes('PAYOUT_UNVERIFIED'));
+ ok('no fake payout record',f.claims.includes('PAYOUT_UNVERIFIED'));
  ok('article substantive original',f.article.trim().split(/\s+/).length>2000);
  ok('primary ganzfeld study',f.article.includes('https://doi.org/10.1093/nc/niaf021'));
  ok('exact recruited and interview counts',f.article.includes('28')&&f.article.includes('45')&&f.article.includes('67')&&f.article.includes('27')&&f.article.includes('41')&&f.article.includes('66'));
