@@ -37,6 +37,7 @@ def focus_scroll_fraction(total_height, visible_height, top, widget_y, widget_he
     return min(1.0, max(0.0, desired / max(total_height, 1.0),
                         )) if maximum else None
 
+
 def wheel_scroll_units(*, delta=0, button=None):
     """Translate an OS wheel event into bounded Tk vertical scroll units.
 
