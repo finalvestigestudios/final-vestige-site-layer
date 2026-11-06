@@ -105,6 +105,14 @@ class ContractTests(unittest.TestCase):
         m=self.read_manifest();m['articles'].pop();self.write_manifest(m)
         self.assertEqual(gate.inspect(self.root)['state'],gate.INVALID)
 
+    def test_manifest_cannot_drop_required_fragments(self):
+        m=self.read_manifest();m['articles'][0]['sections'][0]['required']=[];self.write_manifest(m)
+        self.assertEqual(gate.inspect(self.root)['state'],gate.INVALID)
+
+    def test_manifest_cannot_remove_safety_sections(self):
+        m=self.read_manifest();m['articles'][1]['sections']=[];self.write_manifest(m)
+        self.assertEqual(gate.inspect(self.root)['state'],gate.INVALID)
+
     def test_duplicate_scope_fails(self):
         m=self.read_manifest();m['articles'][1]['slug']='household-emergency-plan';self.write_manifest(m)
         self.assertEqual(gate.inspect(self.root)['state'],gate.INVALID)
