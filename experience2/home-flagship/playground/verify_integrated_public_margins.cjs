@@ -53,15 +53,16 @@ if (require.main === module) {
   const raw = fs.readFileSync(bpPath,'utf8');
   console.log('PASS: integrated public Margins source admission', JSON.stringify(verify(raw)));
   let negative = 0;
-  const mutate = (before, after) => {
-    assert.ok(raw.includes(before), 'Negative-test source marker changed');
-    const trial = raw.replace(before, after);
-    assert.throws(() => verify(trial));
+  const reject = fn => {
+    const trial = JSON.parse(raw);
+    fn(trial);
+    assert.throws(() => verify(JSON.stringify(trial)));
     negative++;
   };
-  mutate('style=\\"--i:71\\"', 'style=\\"--i:999\\"');
-  mutate('Reviewed reduced-motion remedy from draft PR #1062','Removed reviewed overlay');
-  mutate('targetFolderName\\": \\"assembler\\"', 'targetFolderName\\": \\"another-theme\\ "');
+  reject(bp => { bp.steps[2].data = bp.steps[2].data.replace('style="--i:71"', 'style="--i:999"'); });
+  reject(bp => { bp.steps[2].data = bp.steps[2].data.replace('Reviewed reduced-motion remedy from draft PR #1062', 'NO REMEDY'); });
+  reject(bp => { bp.steps[0].options.targetFolderName = 'wrong-theme'; });
+  reject(bp => { bp.steps[4].code = bp.steps[4].code.replace("!== 72", "!== 71"); });
   console.log('PASS: negative-source variants rejected:', negative);
 }
 module.exports = { verify };
