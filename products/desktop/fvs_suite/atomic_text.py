@@ -6,6 +6,7 @@ ordinary I/O failures; it is not a multi-file transaction or power-loss proof.
 """
 from __future__ import annotations
 
+import errno
 import os
 import tempfile
 from pathlib import Path
@@ -35,6 +36,20 @@ def _report_bytes(contents: str) -> bytes:
     return encoded
 
 
+def _private_io_failure(exc: OSError) -> None:
+    """Keep customer paths and OS-supplied error text out of UI/log errors.
+
+    Preserve native errno and its PermissionError/OSError classification while
+    discarding filenames and potentially sensitive platform error strings.
+    Suppress exception chaining in ordinary tracebacks; never treat a failed
+    publication as a successful compliance decision.
+    """
+    if isinstance(exc, FileExistsError):
+        raise FileExistsError("Text report destination already exists") from None
+    code = exc.errno if type(exc.errno) is int and exc.errno > 0 else errno.EIO
+    raise OSError(code, "Text report publication failed") from None
+
+
 def publish_text(destination: str | Path, contents: str) -> Path:
     """Publish a complete, <=64 MiB UTF-8 TXT/manifest with no overwrite.
 
@@ -46,45 +61,48 @@ def publish_text(destination: str | Path, contents: str) -> Path:
     """
     payload = _report_bytes(contents)
     target = Path(destination)
-    if not target.parent.is_dir():
-        raise ValueError("Choose an existing output folder")
-    # Fail before creating a staging file when the name is occupied.
-    # lstat also catches dangling symlinks. This is only an early rejection:
-    # exclusive link/rename below remains the authority against races.
     try:
-        target.lstat()
-    except FileNotFoundError:
-        pass
-    else:
-        raise FileExistsError("Text report destination already exists")
-    # Do not place customer file names into temporary directory entries.
-    descriptor, temporary = tempfile.mkstemp(
-        prefix=".fvs-text-", suffix=".partial", dir=target.parent)
-    try:
-        # fdopen can fail before it assumes ownership; close the raw fd in
-        # that case. The outer finally removes the unpublished staging file.
+        if not target.parent.is_dir():
+            raise ValueError("Choose an existing output folder")
+        # Fail before creating a staging file when the name is occupied.
+        # lstat also catches dangling symlinks. This is only an early rejection:
+        # exclusive link/rename below remains the authority against races.
         try:
-            stream = os.fdopen(descriptor, "wb")
-        except BaseException:
-            try:
-                os.close(descriptor)
-            except OSError:
-                pass
-            raise
-        with stream:
-            stream.write(payload)
-            stream.flush()
-            os.fsync(stream.fileno())
-        if os.name == "nt":
-            # Windows os.rename rejects a destination that already exists.
-            os.rename(temporary, target)
-        else:
-            # POSIX os.rename can replace; link creation fails on collisions.
-            os.link(temporary, target)
-            os.unlink(temporary)
-        return target
-    finally:
-        try:
-            os.unlink(temporary)
+            target.lstat()
         except FileNotFoundError:
             pass
+        else:
+            raise FileExistsError("Text report destination already exists")
+        # Do not place customer file names into temporary directory entries.
+        descriptor, temporary = tempfile.mkstemp(
+            prefix=".fvs-text-", suffix=".partial", dir=target.parent)
+        try:
+            # fdopen can fail before it assumes ownership; close the raw fd in
+            # that case. The outer finally removes the unpublished staging file.
+            try:
+                stream = os.fdopen(descriptor, "wb")
+            except BaseException:
+                try:
+                    os.close(descriptor)
+                except OSError:
+                    pass
+                raise
+            with stream:
+                stream.write(payload)
+                stream.flush()
+                os.fsync(stream.fileno())
+            if os.name == "nt":
+                # Windows os.rename rejects a destination that already exists.
+                os.rename(temporary, target)
+            else:
+                # POSIX os.rename can replace; link creation fails on collisions.
+                os.link(temporary, target)
+                os.unlink(temporary)
+            return target
+        finally:
+            try:
+                os.unlink(temporary)
+            except FileNotFoundError:
+                pass
+    except OSError as exc:
+        _private_io_failure(exc)

@@ -324,6 +324,10 @@ jobs:
         run: |
           python -W error -m unittest discover -s products/desktop/tests -p 'test_atomic_text_staging_r232.py'
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_atomic_text_staging_r232.py'
+      - name: R233 redact private TXT file paths and OS errors (12 methods per mode)
+        run: |
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_atomic_text_io_privacy_r233.py'
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_atomic_text_io_privacy_r233.py'
       - name: R200 execute R194-R199 financial and policy audit tests (148 methods per mode)
         run: |
           python products/desktop/scripts/safe_audit_subprocess_r205.py
@@ -1610,6 +1614,14 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R232 normal private staging test gate FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_atomic_text_staging_r232.py'
           if ($LASTEXITCODE -ne 0) { throw "R232 optimized private staging test gate FAILED" }
+      - name: R233 Windows private TXT path/error prepackaging gate (12 methods per mode)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_atomic_text_io_privacy_r233.py'
+          if ($LASTEXITCODE -ne 0) { throw "R233 normal private TXT error redaction gate FAILED" }
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_atomic_text_io_privacy_r233.py'
+          if ($LASTEXITCODE -ne 0) { throw "R233 optimized private TXT error redaction gate FAILED" }
       - name: Verify full normal/optimized source suite before packaging (R57)
         shell: pwsh
         run: |
