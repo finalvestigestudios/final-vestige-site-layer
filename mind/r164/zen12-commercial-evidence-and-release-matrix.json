@@ -146,12 +146,12 @@
     },
     {
       "id": "CB-04",
-      "statement": "Researchers swapped jam/tea after selection",
+      "statement": "Researchers concealed a two-compartment reversal during initial sampling before final choice; shoppers later tasted jam or smelled tea",
       "status": "supported_bounded",
       "source_ids": [
         "S03"
       ],
-      "limit": "Public marketplace experiment"
+      "limit": "Marketplace experiment; jam tasted, tea smelled; reversal before choice, mismatch during resampling"
     },
     {
       "id": "CB-05",

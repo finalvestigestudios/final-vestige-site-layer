@@ -1,0 +1,590 @@
+{
+  "run": "R165",
+  "checked_on": "2026-11-06",
+  "status": "UNPUBLISHED_DRAFT",
+  "offer": "Zen12 Premium",
+  "partner_approval_verified": false,
+  "authorized_earning_url": null,
+  "merchant_purchase_href": null,
+  "confirmed_paid_orders": null,
+  "confirmed_commissions": null,
+  "confirmed_subscribers": null,
+  "qualified_human_sessions": null,
+  "net_revenue_per_1000_qualified_human_sessions": null,
+  "video_generated": false,
+  "AB_experiment_run": false,
+  "wordpress_modified": false,
+  "source_caveat": "Public pages rechecked Nov 6; actual partner account, checkout, Payhip inventory and guest subscriber flow not authenticated.",
+  "sources": [
+    {
+      "id": "S01",
+      "kind": "primary",
+      "title": "Loftus, Miller & Burns (1978) original misleading postevent information experiment",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/621467/",
+      "checked_on": "2026-11-06"
+    },
+    {
+      "id": "S02",
+      "kind": "primary_critical",
+      "title": "McCloskey & Zaragoza (1985) six-experiment objection to impairment inference",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/3156942/",
+      "checked_on": "2026-11-06"
+    },
+    {
+      "id": "S03",
+      "kind": "primary_2026",
+      "title": "Wiechert et al. (2026, online Sep 29 2025) contemporary replication",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41021526/",
+      "checked_on": "2026-11-06"
+    },
+    {
+      "id": "S04",
+      "kind": "primary",
+      "title": "Loftus (1977) Shifting human color memory",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/24203288/",
+      "checked_on": "2026-11-06"
+    },
+    {
+      "id": "S05",
+      "kind": "primary",
+      "title": "Dudek & Polczyk (2024) negation-related misinformation",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11305032/",
+      "checked_on": "2026-11-06"
+    },
+    {
+      "id": "S06",
+      "kind": "review",
+      "title": "Loftus (2005) 30-year memory malleability review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/16027179/",
+      "checked_on": "2026-11-06"
+    },
+    {
+      "id": "S07",
+      "kind": "primary",
+      "title": "Butler & Loftus (2018) discrepancy detection",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/28899262/",
+      "checked_on": "2026-11-06"
+    },
+    {
+      "id": "S08",
+      "kind": "seller",
+      "title": "Official Inspire3 catalog",
+      "url": "https://inspire3.com/",
+      "checked_on": "2026-11-06"
+    },
+    {
+      "id": "S09",
+      "kind": "seller",
+      "title": "Exact Zen12 Premium sales presentation",
+      "url": "https://zen12.com/?no-popup=1",
+      "checked_on": "2026-11-06"
+    },
+    {
+      "id": "S10",
+      "kind": "seller_program_public",
+      "title": "Public Inspire3 affiliate login, does not verify acceptance",
+      "url": "https://affiliates.inspire3.com/",
+      "checked_on": "2026-11-06"
+    },
+    {
+      "id": "S11",
+      "kind": "regulator",
+      "title": "FTC Endorsement Guides Q&A",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "checked_on": "2026-11-06"
+    },
+    {
+      "id": "S12",
+      "kind": "regulator",
+      "title": "FTC Health Products Compliance Guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "checked_on": "2026-11-06"
+    },
+    {
+      "id": "S13",
+      "kind": "editorial_history",
+      "title": "Puységur historical files published route listed in #171; live availability not retested",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "checked_on": "2026-11-06"
+    },
+    {
+      "id": "S14",
+      "kind": "editorial_free",
+      "title": "Existing Seven Day Focus Fieldbook route listed in #171; guest conversion not tested",
+      "url": "https://finalvestige.com/focus/",
+      "checked_on": "2026-11-06"
+    },
+    {
+      "id": "S15",
+      "kind": "source_correction",
+      "title": "Lund institutional Hall 2010 marketplace abstract and work",
+      "url": "https://portal.research.lu.se/en/publications/magic-at-the-marketplace-choice-blindness-for-the-taste-of-jam-an/",
+      "checked_on": "2026-11-06"
+    },
+    {
+      "id": "S16",
+      "kind": "primary",
+      "title": "Hall et al. 2010 taste of jam and smell of tea",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/20637455/",
+      "checked_on": "2026-11-06"
+    },
+    {
+      "id": "S17",
+      "kind": "business_governance",
+      "title": "Mind workstream charter",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "checked_on": "2026-11-06"
+    },
+    {
+      "id": "S18",
+      "kind": "business_governance",
+      "title": "First-party verified-sales charter",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "checked_on": "2026-11-06"
+    }
+  ],
+  "claims": [
+    {
+      "id": "MF-01",
+      "statement": "1978 series included 1,242 participants across five experiments and pilot",
+      "status": "supported_bounded",
+      "source_ids": [
+        "S01"
+      ],
+      "limit": "Do not label N as one experiment"
+    },
+    {
+      "id": "MF-02",
+      "statement": "Misleading postevent information worsened recognition responses in certain paradigms",
+      "status": "supported_bounded",
+      "source_ids": [
+        "S01"
+      ],
+      "limit": "Response measure, not universal memory destruction"
+    },
+    {
+      "id": "MF-03",
+      "statement": "Original memory was erased forever",
+      "status": "unsupported_do_not_publish",
+      "source_ids": [
+        "S02",
+        "S03"
+      ],
+      "limit": "Mechanisms remain contested"
+    },
+    {
+      "id": "MF-04",
+      "statement": "1985 six experiments challenged strong impairment interpretation",
+      "status": "supported_bounded",
+      "source_ids": [
+        "S02"
+      ],
+      "limit": "Not a proof that misinformation never matters"
+    },
+    {
+      "id": "MF-05",
+      "statement": "2026 study reproduced effect with original event then misleading statements",
+      "status": "supported_bounded",
+      "source_ids": [
+        "S03"
+      ],
+      "limit": "Online 2025, issue 2026, no inflated sample"
+    },
+    {
+      "id": "MF-06",
+      "statement": "More demanding 2026 confidence-based four-option test retained smaller effect",
+      "status": "supported_bounded",
+      "source_ids": [
+        "S03"
+      ],
+      "limit": "Do not assert identical magnitude"
+    },
+    {
+      "id": "MF-07",
+      "statement": "Reverse sequence removed effect in a binary test in one experiment",
+      "status": "supported_bounded",
+      "source_ids": [
+        "S03"
+      ],
+      "limit": "Mechanism not conclusively established"
+    },
+    {
+      "id": "MF-08",
+      "statement": "Blue-car misinformation shifted recognition in 1977 experiment",
+      "status": "supported_bounded",
+      "source_ids": [
+        "S04"
+      ],
+      "limit": "Controlled experiment, no general population inference"
+    },
+    {
+      "id": "MF-09",
+      "statement": "Negated details can affect subsequent memory judgments",
+      "status": "supported_bounded",
+      "source_ids": [
+        "S05"
+      ],
+      "limit": "Specific videos/delay; not all negations universally"
+    },
+    {
+      "id": "MF-10",
+      "statement": "Every warning prevents suggestion",
+      "status": "unsupported_do_not_publish",
+      "source_ids": [
+        "S06"
+      ],
+      "limit": "Limited circumstances"
+    },
+    {
+      "id": "MF-11",
+      "statement": "Discrepancy detection is investigated in retrieval-enhanced suggestibility",
+      "status": "supported_bounded",
+      "source_ids": [
+        "S07"
+      ],
+      "limit": "Mechanisms vary; no consumer treatment established"
+    },
+    {
+      "id": "MF-12",
+      "statement": "Research proves trauma-memory recovery or memory treatment benefits",
+      "status": "unsupported_do_not_publish",
+      "source_ids": [
+        "S01",
+        "S02",
+        "S06"
+      ],
+      "limit": "Avoid medical and forensic inference"
+    },
+    {
+      "id": "MF-13",
+      "statement": "Zen12 Premium seller describes twelve levels and forty-eight MP3 files",
+      "status": "seller_description_not_ efficacy",
+      "source_ids": [
+        "S09"
+      ],
+      "limit": "Subject to changes at checkout"
+    },
+    {
+      "id": "MF-14",
+      "statement": "Zen12 Premium main seller page displayed $87.99 on Nov 6 2026",
+      "status": "seller_display_observation_only",
+      "source_ids": [
+        "S09"
+      ],
+      "limit": "No tax/checkout/discount eligibility independently verified"
+    },
+    {
+      "id": "MF-15",
+      "statement": "Zen12 advertises a one-year money-back guarantee",
+      "status": "seller_description_only",
+      "source_ids": [
+        "S09"
+      ],
+      "limit": "Actual processing/terms untested"
+    },
+    {
+      "id": "MF-16",
+      "statement": "Zen12 provides benefit of one hour meditation in twelve minutes",
+      "status": "unsupported_product_efficacy",
+      "source_ids": [
+        "S09",
+        "S12"
+      ],
+      "limit": "Seller claim only; do not adopt"
+    },
+    {
+      "id": "MF-17",
+      "statement": "Zen12 clinically improves memory, attention, anxiety, health or wealth",
+      "status": "unsupported_product_efficacy",
+      "source_ids": [
+        "S09",
+        "S12"
+      ],
+      "limit": "No exact-product proof obtained"
+    },
+    {
+      "id": "MF-18",
+      "statement": "Zen12 library has a quick-start guide, user manual and level audio guides",
+      "status": "seller_description_only",
+      "source_ids": [
+        "S09"
+      ],
+      "limit": "Content/access quality untested"
+    },
+    {
+      "id": "MF-19",
+      "statement": "A public Inspire3 affiliate login page exists",
+      "status": "verified_public_only",
+      "source_ids": [
+        "S10"
+      ],
+      "limit": "Not proof of named Final Vestige approval"
+    },
+    {
+      "id": "MF-20",
+      "statement": "Final Vestige is accepted for Zen12 Premium and can distribute an earning link",
+      "status": "authorization_unverified",
+      "source_ids": [
+        "S10",
+        "S17"
+      ],
+      "limit": "Cannot activate merchant CTA"
+    },
+    {
+      "id": "MF-21",
+      "statement": "Any public affiliate EPC or payout necessarily applies to FV account",
+      "status": "unsupported_do_not_publish",
+      "source_ids": [
+        "S10"
+      ],
+      "limit": "Account-specific terms missing"
+    },
+    {
+      "id": "MF-22",
+      "statement": "Near-buy affiliate-commission disclosure required for hypothetical endorsed earning link",
+      "status": "regulatory_requirement",
+      "source_ids": [
+        "S11"
+      ],
+      "limit": "Conditional copy adjacent to disabled control for preview"
+    },
+    {
+      "id": "MF-23",
+      "statement": "Health and cognitive-performance claims need competent reliable substantiation",
+      "status": "regulatory_requirement",
+      "source_ids": [
+        "S12"
+      ],
+      "limit": "Seller story is not independent research"
+    },
+    {
+      "id": "MF-24",
+      "statement": "Fieldbook free page has existing native Jetpack form",
+      "status": "previous_project_observation_not_this_run",
+      "source_ids": [
+        "S14",
+        "S17"
+      ],
+      "limit": "Anonymous signup/delivery unverified"
+    },
+    {
+      "id": "MF-25",
+      "statement": "Actual confirmed subscriber exists for this specific campaign",
+      "status": "unverified",
+      "source_ids": [
+        "S18"
+      ],
+      "limit": "No lead record joined"
+    },
+    {
+      "id": "MF-26",
+      "statement": "Actual paid affiliate commission occurred",
+      "status": "unverified",
+      "source_ids": [
+        "S18"
+      ],
+      "limit": "No partner reporting/settlement"
+    },
+    {
+      "id": "MF-27",
+      "statement": "Actual Payhip Mind SKU with rights, price and fulfillment validated",
+      "status": "unverified",
+      "source_ids": [
+        "S18"
+      ],
+      "limit": "No authenticated inventory"
+    },
+    {
+      "id": "MF-28",
+      "statement": "2010 marketplace protocol involved tasting jam and smelling tea",
+      "status": "supported_bounded",
+      "source_ids": [
+        "S15",
+        "S16"
+      ],
+      "limit": "Two-compartment reversal during initial sampling before final choice; mismatch on resampling"
+    },
+    {
+      "id": "MF-29",
+      "statement": "2010 marketplace researchers swapped jam and tea after choice",
+      "status": "incorrect_retracted",
+      "source_ids": [
+        "S15",
+        "S16"
+      ],
+      "limit": "R164 prior phrasing corrected in R165"
+    },
+    {
+      "id": "MF-30",
+      "statement": "Video guide converts more paying buyers than text-only guide",
+      "status": "hypothesis_unrun",
+      "source_ids": [
+        "S18"
+      ],
+      "limit": "Requires random assignment, adequate sample and verified sales"
+    }
+  ],
+  "release_gates": [
+    {
+      "id": "G01",
+      "key": "inspire3_named_publisher_acceptance",
+      "status": "CLOSED",
+      "unlock": "Founder authenticates partner portal, dated acceptance"
+    },
+    {
+      "id": "G02",
+      "key": "zen12_premium_earning_url_exact",
+      "status": "CLOSED",
+      "unlock": "Partner-issued URL and product SKU verified without publishing secrets"
+    },
+    {
+      "id": "G03",
+      "key": "allowed_social_web_email_channels",
+      "status": "CLOSED",
+      "unlock": "Written current partner terms and approved promotional placements"
+    },
+    {
+      "id": "G04",
+      "key": "affiliate_creatives_rights",
+      "status": "CLOSED",
+      "unlock": "Verify reuse rights; original content only meanwhile"
+    },
+    {
+      "id": "G05",
+      "key": "merchant_terms_checkout_price",
+      "status": "CLOSED",
+      "unlock": "Review actual checkout and taxes/upsells with authorization"
+    },
+    {
+      "id": "G06",
+      "key": "merchant_refund_process",
+      "status": "CLOSED",
+      "unlock": "Confirm written refund terms and fulfillment path"
+    },
+    {
+      "id": "G07",
+      "key": "funds_and_commissions",
+      "status": "CLOSED",
+      "unlock": "Verified merchant purchase and settlement report"
+    },
+    {
+      "id": "G08",
+      "key": "payhip_sellable_mind_sku",
+      "status": "CLOSED",
+      "unlock": "Actual owned SKU rights/price/return/delivery proof"
+    },
+    {
+      "id": "G09",
+      "key": "wordpress_commercial_release",
+      "status": "CLOSED",
+      "unlock": "Founder explicit production approval"
+    },
+    {
+      "id": "G10",
+      "key": "mind_hub_PR172_independent_review",
+      "status": "CLOSED",
+      "unlock": "No branch overwrite or merge"
+    },
+    {
+      "id": "G11",
+      "key": "homepage_PR49_and_issue150_isolation",
+      "status": "CLOSED",
+      "unlock": "Never edit owned paths"
+    },
+    {
+      "id": "G12",
+      "key": "guest_focus_signup",
+      "status": "CLOSED",
+      "unlock": "Approved anonymous guest end-to-end signup and delivery"
+    },
+    {
+      "id": "G13",
+      "key": "creator_immutable_asset_ids",
+      "status": "CLOSED",
+      "unlock": "Grok/Praxxis TASK-008 published media inventory"
+    },
+    {
+      "id": "G14",
+      "key": "first_party_sessions_validated",
+      "status": "CLOSED",
+      "unlock": "Existing analytics definition, bot/referrer exclusions validated"
+    },
+    {
+      "id": "G15",
+      "key": "verified_affiliate_sale",
+      "status": "CLOSED",
+      "unlock": "Merchant-signed or authorized partner report matched to campaign"
+    },
+    {
+      "id": "G16",
+      "key": "verified_net_revenue",
+      "status": "CLOSED",
+      "unlock": "Settlements less refunds and fees reconciled"
+    },
+    {
+      "id": "G17",
+      "key": "video_render_caption_accessibility",
+      "status": "CLOSED",
+      "unlock": "Rendered original MP4/poster/VTT, keyboard+screen reader and no autoplay"
+    },
+    {
+      "id": "G18",
+      "key": "controlled_A_B_released",
+      "status": "CLOSED",
+      "unlock": "Founder/QA approval, stable assignment and privacy consent"
+    },
+    {
+      "id": "G19",
+      "key": "actual_browser_a11y_QA",
+      "status": "CLOSED",
+      "unlock": "360/390/768/1440/1920, Lighthouse, WCAG 2.2 AA"
+    },
+    {
+      "id": "G20",
+      "key": "newsletter_dispatch_approval",
+      "status": "CLOSED",
+      "unlock": "Issue #174 retains existing Jetpack and welcome; no sends"
+    }
+  ],
+  "active_link_policy": {
+    "allowlist": [
+      "https://finalvestige.com/focus/",
+      "https://finalvestige.com/2026/11/02/change-blindness/",
+      "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "https://finalvestige.com/editorial-standards/",
+      "https://finalvestige.com/affiliate-disclosure/",
+      "https://pubmed.ncbi.nlm.nih.gov/621467/",
+      "https://pubmed.ncbi.nlm.nih.gov/41021526/"
+    ],
+    "commercial_offsite_links_allowed": false,
+    "disclosure_near_button": true
+  },
+  "measurement": {
+    "join_keys": [
+      "asset_id",
+      "utm_campaign",
+      "utm_content",
+      "landing_path",
+      "offer_id"
+    ],
+    "events": [
+      "qualified_human_session",
+      "article_to_focus_click",
+      "confirmed_focus_signup",
+      "offer_guide_view",
+      "affiliate_outbound_click",
+      "merchant_confirmed_paid_order",
+      "merchant_confirmed_affiliate_sale",
+      "refund",
+      "fee",
+      "settled_net_revenue"
+    ],
+    "privacy": "No PII in UTM, no customer email in event logs, no third-party pixels; do not duplicate production scripts",
+    "cohorts_days": [
+      7,
+      30
+    ],
+    "primary_kpi": "settled_net_revenue * 1000 / qualified_human_sessions",
+    "kpi_status": "NOT_COMPUTABLE"
+  }
+}
