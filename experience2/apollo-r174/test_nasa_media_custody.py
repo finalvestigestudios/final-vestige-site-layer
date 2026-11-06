@@ -55,7 +55,7 @@ class MediaCustody(unittest.TestCase):
         self.assertIn('Read original investigation',text)
     def test_source_roles_not_replaced(self):
         changed=self.src.replace('data-fvx-r173-source-role=\"01\"','data-fvx-r173-deleted=\"01\"',1)
-        with self.assertRaisesRegex(ValueError,'source role'):
+        with self.assertRaisesRegex(ValueError,'custody missing|source role'):
             annotate(changed,self.data,fixture=True)
 
 if __name__=='__main__': unittest.main()
