@@ -31,7 +31,7 @@ function checkBuyer(h){
   assert.match(h,/12 levels, 48 MP3 recordings/);
   assert.match(h,/four listening styles/i);
   assert.match(h,/seller's public Premium comparison/i);
-  assert.match(h,/not a verified final checkout amount/i);
+  assert.match(h,/not<\\/em> a verified final checkout amount/i);
   assert.match(h,/no product-specific controlled evidence/i);
   assert.match(h,/Final Vestige does not subscribe/i);
   assert.match(h,/https:\/\/finalvestige.com\/focus\//);
@@ -99,7 +99,7 @@ const bad=[
 ["remove transcript",s=>s.replace('full accessible transcript','summary of a storyboard')],
 ["reduce motion removed",s=>s.replace('@media(prefers-reduced-motion:reduce)','@media(prefers-motion:please)')],
 ["remove skip",s=>s.replace('class="skip" href="#main"','class="skip" href="#none"')],
-["price becomes guaranteed",s=>s.replace('not a verified final checkout amount','verified final checkout amount')],
+["price becomes guaranteed",s=>s.replace('not</em> a verified final checkout amount','verified final checkout amount')],
 ["product description removed",s=>s.replace('12 levels, 48 MP3 recordings','many MP3 recordings')],
 ["no support caveat removed",s=>s.replace('no product-specific controlled evidence','excellent product-specific controlled evidence')],
 ["seller no optin replaced",s=>s.replace('Final Vestige does not subscribe','Final Vestige subscribes')],
