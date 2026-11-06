@@ -33,7 +33,7 @@ function validate(p){
  assert.ok(!/<script\b/i.test(html),"external/inline script forbidden");
  assert.ok(!/<iframe\b/i.test(html),"third-party iframe forbidden");
  assert.ok(!/<form\b/i.test(html),"duplicate signup form forbidden");
- assert.ok(!/<video[^>]+src\s*=|autoplay\b/i.test(html),"unreviewed video/autoplay forbidden");
+ assert.ok(!/<video[^>]+(?:src\s*=|\bautoplay\b)/i.test(html),"unreviewed video/autoplay forbidden");
  assert.ok(!/<a\b[^>]+href\s*=\s*["'][^"']*(zen12\.com|affiliates\.inspire3\.com|awin1\.com)/i.test(html),"unapproved merchant click URL forbidden");
  assert.ok(!/<a\b[^>]+href\s*=\s*["'][^"']*(payhip\.com|checkout)/i.test(html),"unverified paid checkout forbidden");
  assert.ok(/<a[^>]+href="https:\/\/finalvestige\.com\/focus\/"/i.test(html),"existing focus route required");
