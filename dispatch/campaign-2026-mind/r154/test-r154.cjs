@@ -25,7 +25,7 @@ check('email safe tables',()=>assert.match(html,/table role="presentation"/));
 check('lang and viewport',()=>{assert.match(html,/lang="en"/);assert.match(html,/name="viewport"/)});
 check('one actual promo button',()=>assert.equal((html.match(/display:inline-block;background:/g)||[]).length,1));
 check('no false proof',()=>assert.ok(!/proven that the wire|identified the exact spark|guaranteed to cure/i.test(md)));
-check('all content paragraphs in both renderings',()=>{for(const s of data.sections){assert.ok(md.includes(s.text));assert.ok(html.includes(s.text.replace(/&/g,'&amp;')));assert.ok(txt.includes(s.text))}});
+check('all content paragraphs in both renderings',()=>{for(const s of data.sections){assert.ok(md.includes(s.text));assert.ok(html.includes(s.text.replace(/&/g,'&amp;')));assert.ok(txt.includes(s.type==='h2'?s.text.toUpperCase():s.text))}});
 check('all primary source links appear',()=>{for(const s of data.sources)for(const body of [md,html,txt])assert.ok(body.includes(s.url))});
 check('honest critique canonical six',()=>{for(const x of ['| 01 |','| 02 |','| 03 |','| 04 |','| 05 |','| 06 |'])assert.ok(review.includes(x))});
 check('commercial issues held',()=>{assert.match(review,/HOLD_MERCHANT = 03,05/);assert.match(review,/HOLD_UNSENT = 01\.\.06/)});
