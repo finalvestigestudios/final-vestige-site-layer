@@ -6,6 +6,7 @@ and bytes read; it is not code-signing, malware scanning, or release approval.
 from __future__ import annotations
 
 import hashlib
+from contextlib import contextmanager
 import os
 import stat
 from pathlib import Path
@@ -58,6 +59,33 @@ def _read_chunks(stream):
         yield chunk
 
 
+
+@contextmanager
+def _private_candidate_stream(stream):
+    """Own the stream even when its context entry fails; redact private I/O.
+
+    Descriptor ownership has passed from os.open to os.fdopen. A failed
+    __enter__ does not run __exit__, so explicitly close in that case.
+    Keep deliberate validation errors and system interruptions unchanged.
+    """
+    entered = False
+    try:
+        with stream:
+            entered = True
+            yield stream
+    except CandidateGuardError:
+        raise
+    except Exception:
+        raise CandidateGuardError("Unable to read candidate payload safely") from None
+    finally:
+        if not entered:
+            try:
+                stream.close()
+            except Exception:
+                # Never report a user-derived exception from failed cleanup.
+                pass
+
+
 def _inspect(path: str | Path, maximum: int, *, return_bytes: bool):
     """Single verified descriptor, no pathname-following, bounded read, pre/post checks.
 
@@ -87,7 +115,7 @@ def _inspect(path: str | Path, maximum: int, *, return_bytes: bool):
             raise CandidateGuardError("Unable to read candidate payload safely") from None
         raise
     try:
-        with stream:
+        with _private_candidate_stream(stream):
             opened = os.fstat(stream.fileno())
             if (not _same_path_descriptor_signature(before, opened)
                     or not stat.S_ISREG(opened.st_mode) or opened.st_nlink > 1):
