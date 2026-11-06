@@ -21,7 +21,7 @@ function inspect(x){
  check(/Ingendoh|2023 systematic review/i.test(x.article),"no EEG review");
  check(/five[\s\S]{0,100}eight/i.test(x.article),"study tally missing");
  check(/isochronic/i.test(x.article)&&/binaural/i.test(x.article),"stimulus type confusion");
- check(/not.{0,70}tested.{0,55}Focus Shot/i.test(x.article),"product scope not clear");
+ check(/None of these papers directly tested the commercial Focus Shot|not.{0,70}tested.{0,55}Focus Shot/i.test(x.article),"product scope not clear");
  check(/no commercial|no product purchased|not an endorsement/i.test(x.article),"editorial independence absent");
  check(/https:\/\/finalvestige.com\/free-resources\/puysegurs-animal-magnetism-files\//i.test(x.article),"Puységur source missing");
  check(/https:\/\/brainwaveshots.com\/focus-shot/.test(x.guide),"exact product source missing");
@@ -31,7 +31,7 @@ function inspect(x){
  check(/isochronic/i.test(x.guide)&&/binaural/i.test(x.guide),"buyer method distinction missing");
  check(/NOT AUTHORIZED FOR FINAL VESTIGE/.test(x.guide),"authorization caution omitted");
  check(/not a checked checkout price/i.test(x.guide),"price certainty caution omitted");
- check(/refund/i.test(x.guide)&&/unverified/i.test(x.guide),"refund caveat omitted");
+ check(/refund.{0,100}(?:untested|not tested|not verified|unverified)|(?:untested|not tested|not verified|unverified).{0,100}refund/i.test(x.guide),"refund caveat omitted");
  check(/<html\s+lang="en"/i.test(x.html),"lang missing");
  check(/<meta\s+name="robots"\s+content="noindex,nofollow"/i.test(x.html),"review status indexable");
  check(/<main\s+id="main">/i.test(x.html),"semantic main missing");
