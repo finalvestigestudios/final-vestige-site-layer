@@ -22,10 +22,15 @@ function evaluate(input){
   if(!run||typeof run!=='object'){errors.push(prefix+' missing capture');return null;}
   for(const k of ['guest_browser_verified','cache_disabled','service_worker_bypassed','scrolled_to_bottom','all_images_loaded','capture_complete'])check(run[k]===true,prefix+' '+k);
   for(const k of envKeys)check(run[k]!==undefined&&run[k]!==null,prefix+' '+k);
+  for(const k of ['browser','browser_version','device_profile','network_profile'])check(typeof run[k]==='string'&&run[k].length>0,prefix+' valid '+k);
+  for(const k of ['viewport_width','viewport_height'])check(Number.isInteger(run[k])&&run[k]>=1&&run[k]<=8192,prefix+' valid '+k);
+  check(typeof run.dpr==='number'&&Number.isFinite(run.dpr)&&run.dpr>=0.5&&run.dpr<=5,prefix+' valid dpr');
   check(typeof run.captured_at==='string'&&!Number.isNaN(Date.parse(run.captured_at)),prefix+' timestamp');
   const reqs=run.image_requests,dom=run.dom_images;
-  check(Array.isArray(reqs)&&reqs.length>0&&reqs.length<=500,prefix+' network requests');
-  check(Array.isArray(dom)&&dom.length>0&&dom.length<=500,prefix+' DOM images');
+  const empty=run.zero_image_page_verified===true;
+  check(Array.isArray(reqs)&&reqs.length<=500&&(reqs.length>0||empty),prefix+' network requests / empty attestation');
+  check(Array.isArray(dom)&&dom.length<=500&&(dom.length>0||empty),prefix+' DOM images / empty attestation');
+  if(Array.isArray(reqs)&&Array.isArray(dom))check((reqs.length===0)===(dom.length===0),prefix+' zero-image capture mismatch');
   if(!Array.isArray(reqs)||!Array.isArray(dom))return null;
   let bytes=0,source=null;const urls=new Set(),slots=new Set();
   for(const [i,r] of reqs.entries()){
@@ -68,6 +73,7 @@ function evaluate(input){
   }
  }
  check(seen.size===pages.length&&pages.every(p=>seen.has(p)),'unobserved published URLs');
+ check(beforeTotal>0&&afterTotal>0,'zero transferred bytes across entire cohort');
  if(errors.length)return {ok:false,errors,measured:null,sitewide_claim_allowed:false};
  const percentage=Math.round((1-afterTotal/beforeTotal)*10000)/100;
  const sitewide=pages.length===input.published_cohort_size;
