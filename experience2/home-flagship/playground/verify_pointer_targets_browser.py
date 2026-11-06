@@ -7,6 +7,8 @@ Runs with local Playwright and Chromium; aborts external requests.
 import argparse
 import hashlib
 import json
+import os
+import shutil
 from pathlib import Path
 from playwright.sync_api import sync_playwright
 
@@ -59,7 +61,10 @@ def run():
     receipt={'sha256':sha,'environment':'exact-source Chromium static fixture; NOT WordPress',
              'runs':[]}
     with sync_playwright() as p:
-        browser=p.chromium.launch(headless=True)
+        chromium_bin=os.getenv('FV_CHROMIUM') or shutil.which('chromium') or shutil.which('chromium-browser')
+        launch={'headless':True, 'args':['--no-sandbox']}
+        if chromium_bin: launch['executable_path']=chromium_bin
+        browser=p.chromium.launch(**launch)
         for width in WIDTHS:
             for mode in ('standard','nojs','reduce'):
                 ctx=browser.new_context(viewport={'width':width,'height':900},
