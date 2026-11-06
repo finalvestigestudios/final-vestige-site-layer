@@ -47,7 +47,7 @@ function sourceCheck(b) {
   ok(/https:\/\/pubmed.ncbi.nlm.nih.gov\/34843370\//.test(buyer),"primary scientific source missing");
   ok(/seller representations|seller statements|seller promise|seller-listed/i.test(buyer),"seller vs evidence distinction missing");
   ok(/not a verified checkout|not a verified checkout total/i.test(buyer),"price and checkout caveat missing");
-  ok(/refund fulfillment/i.test(buyer),"refund verification caveat missing");
+  ok(/refunds are fulfilled|refund fulfillment/i.test(buyer),"refund verification caveat missing");
   ok(doc.review_state==="DRAFT_UNPUBLISHED_HARD_HOLD","public commercial activation state");
   ok(doc.commercial_activation===false && doc.live_writes===false,"unauthorized release");
   ok(Array.isArray(doc.sources)&&doc.sources.length>=12,"sources missing");
