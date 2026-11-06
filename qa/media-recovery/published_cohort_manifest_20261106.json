@@ -671,7 +671,10 @@
       "slug": "the-filter-was-at-the-top-windscale",
       "modified_wp": "2026-08-30T01:56:40",
       "inline_img_count": 8,
-      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot"
+      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot",
+      "fresh_inline_img_count": 8,
+      "fresh_external_img_count": 0,
+      "fresh_modified_wp": "2026-08-30T01:56:40"
     },
     {
       "id": 367,
@@ -679,7 +682,10 @@
       "slug": "they-found-the-bomb-twice-palomares",
       "modified_wp": "2026-10-29T17:34:27",
       "inline_img_count": 9,
-      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot"
+      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot",
+      "fresh_inline_img_count": 9,
+      "fresh_external_img_count": 8,
+      "fresh_modified_wp": "2026-10-29T17:34:27"
     },
     {
       "id": 370,
@@ -687,7 +693,10 @@
       "slug": "the-lines-were-in-the-fire-west-loch",
       "modified_wp": "2026-11-02T21:40:07",
       "inline_img_count": 8,
-      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot"
+      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot",
+      "fresh_inline_img_count": 8,
+      "fresh_external_img_count": 4,
+      "fresh_modified_wp": "2026-11-02T21:40:07"
     },
     {
       "id": 407,
@@ -695,7 +704,10 @@
       "slug": "the-lake-wasnt-there-yesterday-hebgen",
       "modified_wp": "2026-10-29T18:30:30",
       "inline_img_count": 8,
-      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot"
+      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot",
+      "fresh_inline_img_count": 8,
+      "fresh_external_img_count": 8,
+      "fresh_modified_wp": "2026-10-29T18:30:30"
     },
     {
       "id": 413,
@@ -703,7 +715,10 @@
       "slug": "the-cell-was-built-to-hold-a-man-mount-pelee",
       "modified_wp": "2026-10-29T15:30:32",
       "inline_img_count": 6,
-      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot"
+      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot",
+      "fresh_inline_img_count": 6,
+      "fresh_external_img_count": 4,
+      "fresh_modified_wp": "2026-10-29T15:30:32"
     },
     {
       "id": 418,
@@ -711,7 +726,10 @@
       "slug": "the-lighthouse-was-gone-at-dawn-1946-tsunami",
       "modified_wp": "2026-08-28T03:11:08",
       "inline_img_count": 6,
-      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot"
+      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot",
+      "fresh_inline_img_count": 6,
+      "fresh_external_img_count": 6,
+      "fresh_modified_wp": "2026-08-28T03:11:08"
     },
     {
       "id": 425,
@@ -719,7 +737,10 @@
       "slug": "the-word-came-out-of-the-mine-courrieres",
       "modified_wp": "2026-10-30T01:08:21",
       "inline_img_count": 9,
-      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot"
+      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot",
+      "fresh_inline_img_count": 9,
+      "fresh_external_img_count": 8,
+      "fresh_modified_wp": "2026-10-30T01:08:21"
     },
     {
       "id": 428,
@@ -727,7 +748,10 @@
       "slug": "the-way-out-was-underground-ed-pulaski-1910",
       "modified_wp": "2026-10-29T18:28:59",
       "inline_img_count": 6,
-      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot"
+      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot",
+      "fresh_inline_img_count": 6,
+      "fresh_external_img_count": 5,
+      "fresh_modified_wp": "2026-10-29T18:28:59"
     },
     {
       "id": 431,
@@ -818,5 +842,5 @@
   "image_count_scope": "Gutenberg stored <img> tags only, not dynamically injected/featured, srcset, CSS or live rendered; per-post counts may be stale after edits",
   "source_census_blob_sha": "76aa63ffaa299a6e6878edc1b66e637fa6f058ab",
   "new_five_post_fresh_count_verification": "Read-only WordPress posts.get context=edit for IDs 1917 1920 1922 1924 1926, 2026-11-06",
-  "fresh_recensus_progress": 48
+  "fresh_recensus_progress": 56
 }
