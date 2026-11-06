@@ -7,6 +7,7 @@ It never deletes a candidate executable or overwrites existing evidence.
 from __future__ import annotations
 
 import argparse
+from contextlib import contextmanager
 import os
 import stat
 import sys
@@ -49,6 +50,49 @@ def _fingerprints(root: Path) -> tuple[str, ...]:
                  for name in EXPECTED)
 
 
+@contextmanager
+def _private_inventory_writer(stream):
+    """Always close an owned staging stream, even if context entry fails.
+
+    Do not let a filesystem or test-wrapper exception reveal private build
+    paths in the CLI. System interruptions still propagate after cleanup.
+    """
+    try:
+        with stream:
+            yield stream
+    except InventoryBuildError:
+        raise
+    except Exception:
+        raise InventoryBuildError("Cannot safely stage checksum inventory") from None
+    finally:
+        try:
+            stream.close()
+        except Exception:
+            # Cleanup exceptions must not leak customer paths or mask interrupts.
+            pass
+
+
+def _write_inventory(fd: int, inventory: bytes) -> None:
+    """Take ownership of mkstemp's raw descriptor and verify complete writes."""
+    try:
+        stream = os.fdopen(fd, "wb")
+    except BaseException as exc:
+        try:
+            os.close(fd)
+        except OSError:
+            pass
+        if isinstance(exc, Exception):
+            raise InventoryBuildError("Cannot safely stage checksum inventory") from None
+        raise
+    with _private_inventory_writer(stream) as writer:
+        count = writer.write(inventory)
+        # bool is a subclass of int; it is not a trustworthy byte count.
+        if type(count) is not int or count != len(inventory):
+            raise InventoryBuildError("Incomplete checksum inventory staging")
+        writer.flush()
+        os.fsync(writer.fileno())
+
+
 def build_inventory(candidate_dir: str | Path) -> str:
     """Publish one canonical inventory only if all six source images stay stable.
 
@@ -73,12 +117,14 @@ def build_inventory(candidate_dir: str | Path) -> str:
         # and atomic: no empty/half-written manifest becomes available to others.
         fd, path = tempfile.mkstemp(prefix=".fvs-inventory-", dir=root)
         stage = Path(path)
-        with os.fdopen(fd, "wb") as stream:
-            stream.write(inventory)
-            stream.flush()
-            os.fsync(stream.fileno())
+        _write_inventory(fd, inventory)
         # Stage is expected here; independently reject any other new file.
         _membership_with_stage(root, stage)
+        # Never briefly expose an incomplete or same-size corrupted inventory
+        # through the exclusive hardlink publication step. The older final
+        # post-publication comparison remains as a separate race/drift defense.
+        if read_checksum_candidate(stage) != inventory:
+            raise InventoryBuildError("Staged checksum inventory differs from canonical evidence")
         if _fingerprints(root) != original:
             raise InventoryBuildError("Candidate binaries changed during inventory build")
         os.link(stage, target)
