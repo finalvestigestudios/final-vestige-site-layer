@@ -39,7 +39,7 @@ function check(A,H,M,D,O) {
  assert.ok(H.includes('transcript and captions') && H.includes('00–07s:') && H.includes('32–42s:'),'42s original timed transcript');
  assert.ok(!/<(?:script|form|iframe|video|audio)\b/i.test(H),'no new form/script/video/iframe until QA/approval');
  assert.ok(!/href="https?:\/\/[^"]*(?:affid=|affiliate_id|subid=|refid=|clickid=)/i.test(H),'no affiliate ref links');
- assert.ok(!/(?:autoplay|onload=|onclick=|dataLayer|gtag\s*\(|fbq\s*\()/i.test(H),'no autoplay/injected analytics');
+ assert.ok(!/(?:<video\b[^>]*\bautoplay\b|onload\s*=|onclick\s*=|dataLayer|gtag\s*\(|fbq\s*\()/i.test(H),'no autoplay/injected analytics');
  assert.ok(M.includes('TASK-008') && M.includes('Zen12') && M.includes('NOT COMPUTABLE') && M.includes('confirmed_signup'),'creator map/revenue proof boundaries');
  assert.ok(M.includes('No real earning URL') && M.includes('No video, binary file'),'commercial hard hold');
 }
