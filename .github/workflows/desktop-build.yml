@@ -314,6 +314,12 @@ jobs:
           command -v xvfb-run
           xvfb-run -a python -W error products/desktop/scripts/native_wheel_edge_r230.py
           xvfb-run -a python -OO -W error products/desktop/scripts/native_wheel_edge_r230.py
+      - name: R231 bounded UTF-8 text evidence and inherited R28 regressions (28 methods per mode)
+        run: |
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_atomic_text_r28.py'
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_atomic_text_budget_r231.py'
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_atomic_text_r28.py'
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_atomic_text_budget_r231.py'
       - name: R200 execute R194-R199 financial and policy audit tests (148 methods per mode)
         run: |
           python products/desktop/scripts/safe_audit_subprocess_r205.py
@@ -1580,6 +1586,18 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R230 wheel-edge gate FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_wheel_edge_guard_r230.py'
           if ($LASTEXITCODE -ne 0) { throw "R230 optimized wheel-edge gate FAILED" }
+      - name: R231 Windows text evidence prepackaging gate (28 methods per mode)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_atomic_text_r28.py'
+          if ($LASTEXITCODE -ne 0) { throw "R231 inherited atomic text gate FAILED" }
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_atomic_text_budget_r231.py'
+          if ($LASTEXITCODE -ne 0) { throw "R231 bounded atomic text gate FAILED" }
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_atomic_text_r28.py'
+          if ($LASTEXITCODE -ne 0) { throw "R231 optimized inherited text gate FAILED" }
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_atomic_text_budget_r231.py'
+          if ($LASTEXITCODE -ne 0) { throw "R231 optimized bounded text gate FAILED" }
       - name: Verify full normal/optimized source suite before packaging (R57)
         shell: pwsh
         run: |
