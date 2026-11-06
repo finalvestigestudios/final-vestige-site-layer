@@ -1,0 +1,23 @@
+/* FV Apollo R157: document-first chronology, isolated from live theme and analytics. */
+.fv-ex2-ledger__rail{border-top:1px solid var(--fvx-border);margin:0 0 2rem;padding:clamp(22px,4vw,48px) 0;color:var(--fvx-paper)}
+.fv-ex2-ledger__railhead{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,3vw,32px);align-items:end;margin-bottom:24px}
+.fv-ex2-ledger__rail-kicker{font:700 11px/1.6 ui-monospace,monospace;letter-spacing:.12em;color:var(--fvx-gold)}
+.fv-ex2-ledger__railhead h2{font:400 clamp(28px,4vw,52px)/1.12 Georgia,serif;margin:.5rem 0 0}
+.fv-ex2-ledger__railhead p{font-size:15px;line-height:1.65;color:var(--fvx-muted);max-width:55ch;margin:0}
+.fv-ex2-ledger__rail-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.fv-ex2-ledger__rail-list li{min-width:0}
+.fv-ex2-ledger__rail-list a{display:flex;flex-direction:column;gap:8px;min-height:100%;padding:19px 17px;border:1px solid var(--fvx-border);text-decoration:none;background:var(--fvx-surface);overflow-wrap:anywhere}
+.fv-ex2-ledger__rail-list a:hover,.fv-ex2-ledger__rail-list a:focus-visible{border-color:var(--fvx-gold);background:var(--fvx-raised)}
+.fv-ex2-ledger__rail-list time{font:700 11px/1.4 ui-monospace,monospace;color:var(--fvx-gold)}
+.fv-ex2-ledger__rail-list strong{font:400 clamp(19px,2vw,25px)/1.25 Georgia,serif;color:var(--fvx-paper)}
+.fv-ex2-ledger__rail-list span{font-size:13px;color:var(--fvx-muted);line-height:1.45}
+.fv-ex2-ledger__source-drawer{border:1px solid var(--fvx-border);margin-top:16px;padding:0 18px}
+.fv-ex2-ledger__source-drawer summary{cursor:pointer;font-size:15px;font-weight:700;padding:16px 0;min-height:44px}
+.fv-ex2-ledger__source-drawer-content{padding:0 0 18px;max-width:95ch;line-height:1.65;color:var(--fvx-muted)}
+.fv-ex2-ledger__source-drawer-content p{margin:0 0 12px}
+.fv-ex2-ledger__source-drawer-content strong{color:var(--fvx-paper)}
+.fv-ex2-ledger__source-drawer-content a{display:inline-block;padding:4px 1px}
+@media(max-width:850px){.fv-ex2-ledger__railhead{grid-template-columns:1fr}.fv-ex2-ledger__rail-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:440px){.fv-ex2-ledger__rail-list{grid-template-columns:1fr}}
+@media(forced-colors:active){.fv-ex2-ledger__rail-list a,.fv-ex2-ledger__source-drawer{border:1px solid CanvasText;background:Canvas;color:CanvasText}}
+@media(prefers-reduced-motion:reduce){.fv-ex2-ledger__rail *{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
