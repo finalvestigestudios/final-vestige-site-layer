@@ -583,7 +583,10 @@
       "slug": "the-light-said-closed-three-mile-island",
       "modified_wp": "2026-11-02T21:39:59",
       "inline_img_count": 6,
-      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot"
+      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot",
+      "fresh_inline_img_count": 6,
+      "fresh_external_img_count": 6,
+      "fresh_modified_wp": "2026-11-02T21:39:59"
     },
     {
       "id": 287,
@@ -591,7 +594,10 @@
       "slug": "the-warning-was-a-man-waving-sunshine-skyway",
       "modified_wp": "2026-11-02T21:40:01",
       "inline_img_count": 6,
-      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot"
+      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot",
+      "fresh_inline_img_count": 6,
+      "fresh_external_img_count": 6,
+      "fresh_modified_wp": "2026-11-02T21:40:01"
     },
     {
       "id": 288,
@@ -599,7 +605,10 @@
       "slug": "the-bearing-was-right-honda-point",
       "modified_wp": "2026-08-19T14:37:40",
       "inline_img_count": 6,
-      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot"
+      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot",
+      "fresh_inline_img_count": 6,
+      "fresh_external_img_count": 6,
+      "fresh_modified_wp": "2026-08-19T14:37:40"
     },
     {
       "id": 289,
@@ -607,7 +616,10 @@
       "slug": "they-thought-they-had-ten-minutes-forrestal",
       "modified_wp": "2026-08-28T15:23:16",
       "inline_img_count": 6,
-      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot"
+      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot",
+      "fresh_inline_img_count": 6,
+      "fresh_external_img_count": 6,
+      "fresh_modified_wp": "2026-08-28T15:23:16"
     },
     {
       "id": 290,
@@ -615,7 +627,10 @@
       "slug": "the-city-kept-moving-camp-century",
       "modified_wp": "2026-11-02T21:40:03",
       "inline_img_count": 6,
-      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot"
+      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot",
+      "fresh_inline_img_count": 6,
+      "fresh_external_img_count": 6,
+      "fresh_modified_wp": "2026-11-02T21:40:03"
     },
     {
       "id": 291,
@@ -623,7 +638,10 @@
       "slug": "one-bulldozer-never-came-back-teton-dam",
       "modified_wp": "2026-11-02T21:36:09",
       "inline_img_count": 6,
-      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot"
+      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot",
+      "fresh_inline_img_count": 6,
+      "fresh_external_img_count": 6,
+      "fresh_modified_wp": "2026-11-02T21:36:09"
     },
     {
       "id": 292,
@@ -631,7 +649,10 @@
       "slug": "they-marked-the-empty-boats-prinsendam",
       "modified_wp": "2026-08-27T11:24:49",
       "inline_img_count": 6,
-      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot"
+      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot",
+      "fresh_inline_img_count": 6,
+      "fresh_external_img_count": 6,
+      "fresh_modified_wp": "2026-08-27T11:24:49"
     },
     {
       "id": 299,
@@ -639,7 +660,10 @@
       "slug": "thirty-men-were-enough-vasa",
       "modified_wp": "2026-11-02T21:40:05",
       "inline_img_count": 8,
-      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot"
+      "inline_img_count_basis": "2026-10-30 CMS editor frozen snapshot",
+      "fresh_inline_img_count": 8,
+      "fresh_external_img_count": 0,
+      "fresh_modified_wp": "2026-11-02T21:40:05"
     },
     {
       "id": 330,
@@ -794,5 +818,5 @@
   "image_count_scope": "Gutenberg stored <img> tags only, not dynamically injected/featured, srcset, CSS or live rendered; per-post counts may be stale after edits",
   "source_census_blob_sha": "76aa63ffaa299a6e6878edc1b66e637fa6f058ab",
   "new_five_post_fresh_count_verification": "Read-only WordPress posts.get context=edit for IDs 1917 1920 1922 1924 1926, 2026-11-06",
-  "fresh_recensus_progress": 40
+  "fresh_recensus_progress": 48
 }
