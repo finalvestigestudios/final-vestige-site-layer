@@ -13,7 +13,7 @@ R232 first uses `lstat` to reject occupied destination names, including **dangli
 The 64 MiB **actual UTF-8 byte** cap, rejection of NUL/surrogates and custom string types, precise LF/CRLF/BOM behavior, `fsync`, POSIX 0600 staging permissions, no replacement, and local-only publication remain unchanged. No source-file edits, network calls, telemetry, financial Decimal changes, automated compliance approvals, or premium entitlement alterations.
 
 ## Verification executed (2026-11-06, Linux CPython 3.13.5)
-Locally reconstructed all **three Python files byte-identically** to Git object contents before running tests:
+Locally reconstructed all **four Python files byte-identically** to Git object contents before running tests:
 - Updated publisher: Git blob `30427bd47fdc734c92580a18dbc7cc54df041287`.
 - Newly committed 15-method R232 real-file suite: Git blob `ce5de90a39dbab3109451178094fff0ee705a7cf`.
 - Inherited R28 (12 methods): Git blob `30f8c2dc63760b9ec16150c5460b5a93176bbea6`.
