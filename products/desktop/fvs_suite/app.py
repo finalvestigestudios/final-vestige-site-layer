@@ -4,6 +4,7 @@ from pathlib import Path
 from tkinter import filedialog, messagebox, ttk
 from . import engine
 from .keyboard_access import install_shortcuts
+from .form_layout import standard_stacked_rows
 from .scroll_access import ScrollableForm
 from .ui_errors import safe_error_message
 
@@ -114,37 +115,28 @@ def run(app_id):
     # every LedgerDiff entry beyond the 600px viewport at 400% Tk scaling.
     # A stacked layout keeps native Tab order and survives resizing.
     ledger_layout = _ledger_stacked_rows(len(labels)) if app_id == "ledger" else None
-    if ledger_layout:
+    other_layout = standard_stacked_rows(app_id, len(labels)) if app_id != "ledger" else None
+    layout = ledger_layout or other_layout
+    if layout:
         frame.columnconfigure(0, weight=1)
         frame.columnconfigure(1, weight=0)
     selected = [tk.StringVar() for _ in labels]
     input_controls = []
     last_report = [None]
-    base_row = 3
     for index, label in enumerate(labels):
-        if ledger_layout:
-            label_row, entry_row, browse_row = ledger_layout["inputs"][index]
-            ui_label(frame, text=label).grid(
-                row=label_row, column=0, columnspan=3, sticky="ew",
-                pady=7, padx=(0, 12))
-            entry = ttk.Entry(frame, textvariable=selected[index], width=1)
-            entry.grid(row=entry_row, column=0, columnspan=3,
-                       sticky="ew", pady=7)
-        else:
-            row = base_row + index
-            ui_label(frame, text=label).grid(
-                row=row, column=0, sticky="w", pady=7, padx=(0, 12))
-            entry = ttk.Entry(frame, textvariable=selected[index], width=65)
-            entry.grid(row=row, column=1, sticky="ew", pady=7)
+        label_row, entry_row, browse_row = layout["inputs"][index]
+        ui_label(frame, text=label).grid(
+            row=label_row, column=0, columnspan=3, sticky="ew",
+            pady=7, padx=(0, 12))
+        entry = ttk.Entry(frame, textvariable=selected[index], width=1)
+        entry.grid(row=entry_row, column=0, columnspan=3,
+                   sticky="ew", pady=7)
         def choose_file(i=index):
             ext = [("Text and CSV", "*.txt *.md *.csv"), ("All files", "*.*")] if app_id=="policy" else [("CSV files", "*.csv")]
             name = filedialog.askopenfilename(parent=root, title=labels[i], filetypes=ext)
             if name: selected[i].set(name)
         browse = ttk.Button(frame, text="Browse…", command=choose_file)
-        if ledger_layout:
-            browse.grid(row=browse_row, column=0, columnspan=3, sticky="w")
-        else:
-            browse.grid(row=row, column=2, padx=(8, 0))
+        browse.grid(row=browse_row, column=0, columnspan=3, sticky="w")
         input_controls.append((entry, browse))
     ledger_columns = None
     if ledger_layout:
@@ -172,44 +164,39 @@ def run(app_id):
     invoice_window = tk.StringVar(value="7") if app_id == "invoices" else None
     if invoice_window is not None:
         ui_label(frame, text="Near-match days (0-365)", wraplength=220).grid(
-            row=base_row + len(labels), column=0, sticky="w", pady=7,
-            padx=(0, 12))
-        ttk.Entry(frame, textvariable=invoice_window, width=6).grid(
-            row=base_row + len(labels), column=1, sticky="w", pady=7)
+            row=layout["window"][0], column=0, columnspan=3,
+            sticky="ew", pady=7, padx=(0, 12))
+        ttk.Entry(frame, textvariable=invoice_window, width=1).grid(
+            row=layout["window"][1], column=0, columnspan=3,
+            sticky="ew", pady=7)
     output = tk.StringVar(value=str(Path.home() / "Documents"))
-    folder_row = ledger_layout["output"][0] if ledger_layout else base_row + len(labels) + 1
     ui_label(frame, text="Output folder").grid(
-        row=folder_row, column=0, columnspan=3 if ledger_layout else 1,
-        sticky="ew" if ledger_layout else "w", padx=(0, 12))
-    output_entry = (ttk.Entry(frame, textvariable=output, width=1)
-                    if ledger_layout else ttk.Entry(frame, textvariable=output))
-    if ledger_layout:
-        output_entry.grid(row=ledger_layout["output"][1], column=0,
-                          columnspan=3, sticky="ew")
-    else:
-        output_entry.grid(row=folder_row, column=1, sticky="ew")
+        row=layout["output"][0], column=0, columnspan=3,
+        sticky="ew", padx=(0, 12))
+    output_entry = ttk.Entry(frame, textvariable=output, width=1)
+    output_entry.grid(row=layout["output"][1], column=0,
+                      columnspan=3, sticky="ew")
     def choose_output():
         folder = filedialog.askdirectory(parent=root, title="Choose output folder")
         if folder: output.set(folder)
     output_browse = ttk.Button(frame, text="Browse…", command=choose_output)
-    if ledger_layout:
-        output_browse.grid(row=ledger_layout["output"][2], column=0,
-                           columnspan=3, sticky="w")
-    else:
-        output_browse.grid(row=folder_row, column=2, padx=(8, 0))
+    output_browse.grid(row=layout["output"][2], column=0,
+                       columnspan=3, sticky="w")
     rules = tk.StringVar()
     if app_id == "procurement":
         ui_label(frame, text="Price review policy JSON (optional)").grid(
-            row=folder_row+1, column=0, sticky="w", padx=(0, 12), pady=7)
-        ttk.Entry(frame, textvariable=rules).grid(row=folder_row+1, column=1, sticky="ew", pady=7)
+            row=layout["rules"][0], column=0, columnspan=3,
+            sticky="ew", padx=(0, 12), pady=7)
+        ttk.Entry(frame, textvariable=rules, width=1).grid(
+            row=layout["rules"][1], column=0, columnspan=3, sticky="ew", pady=7)
         def choose_rules():
             file = filedialog.askopenfilename(parent=root, title="Optional price review policy",
                                               filetypes=[("JSON policy", "*.json")])
             if file: rules.set(file)
         ttk.Button(frame, text="Browse…", command=choose_rules).grid(
-            row=folder_row+1, column=2, padx=(8, 0))
+            row=layout["rules"][2], column=0, columnspan=3, sticky="w")
     status = tk.StringVar(value="Choose your input files. Originals will not be modified.")
-    status_row = ledger_layout["status"] if ledger_layout else folder_row + 2
+    status_row = layout["status"]
     ui_label(frame, textvariable=status, wraplength=690).grid(
         row=status_row, column=0, columnspan=3, sticky="w", pady=(18, 8))
     def execute():
@@ -245,7 +232,7 @@ def run(app_id):
         status.set("Created: " + names)
         messagebox.showinfo("Review reports", "Saved in: " + output.get() + "\n\n" + names, parent=root)
     generate_button = ttk.Button(frame, text="Generate review report", command=execute)
-    generate_row = ledger_layout["generate"] if ledger_layout else folder_row + 3
+    generate_row = layout["generate"]
     generate_button.grid(row=generate_row, column=0, columnspan=3, sticky="w", pady=(8, 16))
     review_button = None
     if premium:
@@ -264,9 +251,8 @@ def run(app_id):
                 messagebox.showerror("Cannot open review", detail, parent=root)
         review_button = ttk.Button(frame, text="Review exceptions (human only)…",
                                    command=open_exception_review)
-        review_button.grid(row=folder_row+4, column=0, columnspan=3, sticky="w")
-    disclaimer_row = (ledger_layout["disclaimer"] if ledger_layout
-                      else folder_row + (5 if premium else 4))
+        review_button.grid(row=layout["review"], column=0, columnspan=3, sticky="w")
+    disclaimer_row = layout["disclaimer"]
     ui_label(frame, text="No AI model is used in this preview. All flags follow deterministic rules.",
               wraplength=690).grid(row=disclaimer_row, column=0,
                                    columnspan=3, sticky="w")
@@ -278,8 +264,7 @@ def run(app_id):
         hint += "; Tab to near-match day window (0-365; default 7)"
     if premium:
         hint += "; Alt+R review exceptions"
-    hint_row = (ledger_layout["hint"] if ledger_layout
-                else folder_row + (6 if premium else 5))
+    hint_row = layout["hint"]
     ui_label(frame, text=hint, wraplength=700).grid(
         row=hint_row, column=0, columnspan=3,
         sticky="w", pady=(6, 0))
