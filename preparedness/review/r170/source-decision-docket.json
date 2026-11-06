@@ -1,0 +1,123 @@
+{
+  "schema": "fv-preparedness-r170-family-source-docket-v1",
+  "state": "DRAFT_HARD_HOLD",
+  "observed_on": "2026-11-06",
+  "scope": "family-reunification-card",
+  "source_fragment_git_blob": "2a3f1a7ddeab2782add875be1e0e378513504aa1",
+  "card_meta_git_blob": "2bafef03a375b0156e2dcd7f1b913d119becad61",
+  "staged_html_git_blob": "1b8a340c69b28280ae485a667da4564d9e849d70",
+  "independent_qd_pass": false,
+  "publication_authorized": false,
+  "decisions": [
+    {
+      "id": "shelter-fcc-comms",
+      "original_url": "https://www.fcc.gov/reports-research/guides/tips-communicating-emergency",
+      "observation": "PRIOR_RECORD_UNRECHECKED",
+      "source_scope": "Undated FCC emergency communications advice is historical context only; source wording and availability need qualified recheck.",
+      "review_state": "PENDING",
+      "human_link_check": false,
+      "qualified_safety_review": false,
+      "alternative_current_page": null
+    },
+    {
+      "id": "shelter-ready-evacuation",
+      "original_url": "https://www.ready.gov/evacuation",
+      "observation": "PRIOR_RECORD_UNRECHECKED",
+      "source_scope": "Original Ready.gov evacuation link not directly re-fetched this round; prior extraction is not proof of current availability or wording.",
+      "review_state": "PENDING",
+      "human_link_check": false,
+      "qualified_safety_review": false,
+      "alternative_current_page": null
+    },
+    {
+      "id": "shelter-cdc-reunification",
+      "original_url": "https://www.cdc.gov/children-and-school-preparedness/before-during-after/reunification.html",
+      "observation": "CURRENT_PAGE_TEXT",
+      "source_scope": "CDC October 2024 page directly states that families should choose a meeting spot and make emergency cards; it does not authorize this specific interactive tool.",
+      "review_state": "PENDING",
+      "human_link_check": false,
+      "qualified_safety_review": false,
+      "alternative_current_page": "https://www.cdc.gov/children-and-school-preparedness/keeping-safe/"
+    },
+    {
+      "id": "shelter-ready-tech",
+      "original_url": "https://www.ready.gov/get-tech-ready",
+      "observation": "ACCESS_RESTRICTED",
+      "source_scope": "Ready.gov direct retrieval returned HTTP 403; no new claim that text messages are reliably delivered may be inferred.",
+      "review_state": "PENDING",
+      "human_link_check": false,
+      "qualified_safety_review": false,
+      "alternative_current_page": null
+    },
+    {
+      "id": "shelter-ready-plan",
+      "original_url": "https://www.ready.gov/plan",
+      "observation": "PRIOR_RECORD_UNRECHECKED",
+      "source_scope": "The original Ready.gov planning page was not directly re-fetched in this round; a prior extraction does not independently verify its current scope.",
+      "review_state": "PENDING",
+      "human_link_check": false,
+      "qualified_safety_review": false,
+      "alternative_current_page": null
+    },
+    {
+      "id": "shelter-ready-plan-form",
+      "original_url": "https://www.ready.gov/plan-form",
+      "observation": "PRIOR_RECORD_UNRECHECKED",
+      "source_scope": "The original Ready.gov plan form was not directly re-fetched in this round; no claim about its storage or privacy handling is substantiated.",
+      "review_state": "PENDING",
+      "human_link_check": false,
+      "qualified_safety_review": false,
+      "alternative_current_page": null
+    },
+    {
+      "id": "shelter-co-oss-reunification",
+      "original_url": "https://oss.colorado.gov/reunification",
+      "observation": "ACCESS_RESTRICTED",
+      "source_scope": "Colorado state webpage was inaccessible to this automated fetch; do not generalize local school procedures to other jurisdictions.",
+      "review_state": "PENDING",
+      "human_link_check": false,
+      "qualified_safety_review": false,
+      "alternative_current_page": null
+    },
+    {
+      "id": "shelter-ncmec-hotline",
+      "original_url": "https://www.missingkids.org/gethelpnow/cybertipline",
+      "observation": "SCOPE_LIMITED",
+      "source_scope": "NCMEC CyberTipline page is about online child exploitation; the separately read Contact page better identifies the missing-child 24-hour phone line, not disaster service.",
+      "review_state": "PENDING",
+      "human_link_check": false,
+      "qualified_safety_review": false,
+      "alternative_current_page": "https://www.missingkids.org/contact"
+    },
+    {
+      "id": "shelter-fema-reunification",
+      "original_url": "https://www.fema.gov/fact-sheet/reunification-support",
+      "observation": "ARCHIVED_UNCONFIRMED",
+      "source_scope": "Source previously recorded with Archived Content banner and latest access 403; no current federal reunification activation or service availability verified.",
+      "review_state": "PENDING",
+      "human_link_check": false,
+      "qualified_safety_review": false,
+      "alternative_current_page": null
+    },
+    {
+      "id": "shelter-cdc-chemical-evac",
+      "original_url": "https://www.cdc.gov/chemical-emergencies/response/evacuation.html",
+      "observation": "CURRENT_PAGE_TEXT",
+      "source_scope": "CDC June 10 2026 chemical emergency instructions say not to travel to separated children until local authorities say it is safe; hazard-specific only.",
+      "review_state": "PENDING",
+      "human_link_check": false,
+      "qualified_safety_review": false,
+      "alternative_current_page": null
+    },
+    {
+      "id": "shelter-ca-cde-safety-plans",
+      "original_url": "https://www.cde.ca.gov/ls/ss/vp/cssp.asp",
+      "observation": "ACCESS_RESTRICTED",
+      "source_scope": "California education agency page is bot-challenge blocked; earlier archival summary is not proof of current rule or parent instruction.",
+      "review_state": "PENDING",
+      "human_link_check": false,
+      "qualified_safety_review": false,
+      "alternative_current_page": null
+    }
+  ]
+}
