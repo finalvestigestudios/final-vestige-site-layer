@@ -20,8 +20,8 @@
     check("partial unknown eligibility",()=>lib.audit(snap,[valid(1)],false).exact_email_eligible_count===null);
     check("partial count known reviewed only",()=>lib.audit(snap,[valid(1)],false).provider_reviewed_count===1);
     check("complete known count",()=>lib.audit(snap,[valid(1)],true).exact_email_eligible_count===1);
-    check("complete zero valid not proof all time",()=>lib.audit(snap,[valid(1,"Not confirmed",false,false,null)],true).confirmed_signup_count===0);
-    check("no event without time",()=>lib.audit(snap,[valid(1,"Subscribed",true,true,null)],true).confirmed_signup_count===0);
+    check("complete zero valid not a transition",()=>lib.audit(snap,[valid(1,"Not confirmed",false,false,null)],true).confirmed_signup_count===null);
+    check("no event inferred without transition",()=>lib.audit(snap,[valid(1,"Subscribed",true,true,null)],true).confirmed_signup_count===null);
     check("not confirmed excluded",()=>lib.audit(snap,[valid(1,"Not confirmed")],true).exact_email_eligible_count===0);
     check("reader only excluded",()=>lib.audit(snap,[valid(1,"Not subscribed")],true).exact_email_eligible_count===0);
     check("paused excluded",()=>lib.audit(snap,[valid(1,"Emails paused")],true).exact_email_eligible_count===0);
