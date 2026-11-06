@@ -1,0 +1,46 @@
+{
+  "kind": "tool",
+  "section": "field-tools",
+  "track": "modern",
+  "updated": "2026-11-01",
+  "last_checked": "2026-11-01",
+  "status": {
+    "editorial": "drafted",
+    "publish": "draft"
+  },
+  "safety_review": {
+    "state": "pending",
+    "reviewer": null,
+    "date": null
+  },
+  "n": 104,
+  "slug": "family-reunification-card",
+  "title": "Family communication and reunification card",
+  "h1": "Family communication and reunification card",
+  "dek": "A compact fold-over wallet card for your out-of-area contact, meeting places and school pick-up reminders, with a minimal version for privacy. Free printable draft; privacy and print layout need independent browser testing.",
+  "description": "Make a free wallet-size family communication and reunification card with an out-of-area contact and meeting places. Optional minimal version; browser privacy and print behavior remain unverified.",
+  "tags": [
+    "Wallet card",
+    "Printable",
+    "Runs locally"
+  ],
+  "recheck": "If Ready.gov, the CDC or FEMA revise their reunification pages, and before each school year.",
+  "related": [
+    "family-communication-plan",
+    "shelter-or-evacuate",
+    "home-fire-escape-plan"
+  ],
+  "source_use": {
+    "shelter-fcc-comms": "Designate an out-of-area person as a central contact (older, undated guide).",
+    "shelter-ready-evacuation": "Out-of-state contact in the family communications plan; update the meeting place.",
+    "shelter-cdc-reunification": "Meeting spot, children's contact cards, memorize numbers, learn school procedures, NCMEC hotline.",
+    "shelter-ready-tech": "Text messages use less bandwidth and are transmitted more reliably.",
+    "shelter-ready-plan": "Reconnect plan; familiar easy-to-find meeting place; document and practice.",
+    "shelter-ready-plan-form": "Fields of Ready.gov's fillable plan; not saved by any government agency.",
+    "shelter-co-oss-reunification": "One state's example of parent guidance; not universal.",
+    "shelter-ncmec-hotline": "NCMEC's own listing of its 24-hour hotline number.",
+    "shelter-fema-reunification": "National reunification support; archived content; Presidential declaration trigger.",
+    "shelter-cdc-chemical-evac": "Do not go to your children unless officials say it is safe; they may be sheltered where they are.",
+    "shelter-ca-cde-safety-plans": "California recommendation that schools set reunification locations and procedures and tell parents in languages they understand."
+  }
+}
