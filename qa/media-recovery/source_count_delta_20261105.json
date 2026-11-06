@@ -1,0 +1,91 @@
+{
+  "schema": "fv-media-source-count-reconciliation-20261105-v1",
+  "as_of": "2026-11-05",
+  "scope": "Frozen 2026-10-30 61-post WordPress stored-markup snapshots, not visitor browser delivery",
+  "inputs": {
+    "site_qa_pr": 154,
+    "site_qa_csv_path": "qa/media/cms_image_census_20261030.csv",
+    "site_qa_csv_git_blob": "76aa63ffaa299a6e6878edc1b66e637fa6f058ab",
+    "site_qa_classifier_git_blob": "cdadab899abed4dfd222e75a5616a98390dca4ea",
+    "media_pr": 183,
+    "media_source_parts": {
+      "01": "948bc1b65b42799aa40cfdb810ddf6ffd80886b6",
+      "02": "48e1ebf07207e948ba5802e714eb39659d2e1c1d",
+      "03": "49183f66f880f7c4dfd363acca906876877f2e5e",
+      "04": "6df3251e5a67a971d87a516a1ba4a0cc32f51f96",
+      "05": "9b16b828342a9ac338f3e65610fd3d8d508355e9",
+      "06": "0f3dfe398a76838049cebba7cb773d5c5a0c8c69",
+      "07": "21095161e633aba093b74c0ead9936c9f6186d00",
+      "08": "5659ec243c188928be3f89c0f96354b660608ca2"
+    }
+  },
+  "reconciliation": {
+    "post_count_both": 61,
+    "inline_source_references_both": 355,
+    "site_qa_offsite_total": 286,
+    "media_inventory_offsite_total": 288,
+    "offsite_delta_media_minus_site_qa": 2,
+    "affected_posts": [
+      {
+        "post_id": 291,
+        "post_title": "One Bulldozer Never Came Back",
+        "site_qa_csv_offsite": 5,
+        "media_source_offsite": 6,
+        "inline_img_references_both": 6,
+        "exact_external_jetpack_host_reference_key": "291:0",
+        "exact_external_jetpack_host_reference_url": "https://i0.wp.com/text-message.blogs.archives.gov/wp-content/uploads/sites/5/2016/05/teton_failing_fourth-scaled.jpg?ssl=1",
+        "classifier_treatment_of_that_url": "external",
+        "classification_note": "Jetpack proxy host wraps an external archives.gov source, not finalvestige.com; should count as offsite source dependency. Cannot attribute the historic total discrepancy to this URL without Site QA's original per-image source snapshot."
+      },
+      {
+        "post_id": 285,
+        "post_title": "The Light Said Closed",
+        "site_qa_csv_offsite": 5,
+        "media_source_offsite": 6,
+        "inline_img_references_both": 6,
+        "exact_external_jetpack_host_reference_key": "285:1",
+        "exact_external_jetpack_host_reference_url": "https://i0.wp.com/www.squawkpoint.com/wp-content/uploads/2019/02/Three-Mile-Island-Control-Centre.jpg?ssl=1",
+        "classifier_treatment_of_that_url": "external",
+        "classification_note": "Jetpack proxy host wraps an external squawkpoint.com source, not finalvestige.com; should count as offsite source dependency. Cannot attribute the historic total discrepancy to this URL without Site QA's original per-image source snapshot."
+      }
+    ],
+    "confirmed_interpretation": "The entire aggregate difference is localized to these two post IDs; each has exactly one extra offsite reference in the pinned media inventory.",
+    "root_cause_status": "UNKNOWN_BASELINE_SOURCE_CONTENT_OR_PRIOR_CLASSIFIER_BEHAVIOR",
+    "no_presumed_live_404": true
+  },
+  "p0_us_coast_guard_primary_record": {
+    "image_key": "418:1",
+    "source_part": "01",
+    "source_url": "https://media.defense.gov/2021/Mar/30/2002610812/1920/1080/0/210330-G-DE713-0002.JPG",
+    "original_alt": "Chief Boatswain’s Mate Anthony L. Petit, officer in charge of Scotch Cap Lighthouse when the 1946 tsunami killed its five-man crew.",
+    "verified_primary_catalog_url": "https://www.history.uscg.mil/Our-Collections/Photos/igphoto/2002905913/",
+    "primary_catalog_virin": "210330-G-DE713-0002.JPG",
+    "primary_catalog_scene": "U.S. Coast Guard service portrait of officer-in-charge Anthony Pettit, NOT tsunami debris or lighthouse wreckage.",
+    "exact_virin_filename_match": true,
+    "binary_identity_verified": false,
+    "primary_catalog_reported_file_mb": 0.04,
+    "primary_catalog_dimensions_px": null,
+    "conditional_max_derivative_width_px": 960,
+    "derivative_dimensions_px": null,
+    "rights": "USCG primary catalog calls this photograph public domain and cleared for release; credit and DoD visual-information limitations apply. Review item and existing ALT's Petit/Pettit spelling before any reuse.",
+    "original_web_retriever_wrapper_status": 403,
+    "wrapper_status_is_guest_browser_http": false,
+    "actual_browser_http_status": null,
+    "actual_browser_natural_width": null,
+    "actual_browser_transfer_bytes": null,
+    "browser_broken": null,
+    "source_binary_sha256": null,
+    "rights_and_editorial_release_approved": false,
+    "cache_approved": false,
+    "wordpress_write_approved": false
+  },
+  "sitewide_context": {
+    "latest_other_inventory_posts": 66,
+    "latest_other_inventory_inline_image_refs": 361,
+    "reported_42_broken_browser_verified": false,
+    "claimed_76pct_wire_reduction_measured": false,
+    "oversize_originals_gt_1_5_MiB": 13,
+    "oversize_original_stored_bytes": 43522829,
+    "production_images_repaired": 0
+  }
+}
