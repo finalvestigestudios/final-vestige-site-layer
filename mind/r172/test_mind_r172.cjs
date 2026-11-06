@@ -56,7 +56,7 @@ function sourceCheck(b) {
   for (const id of ["partner_named_acceptance","partner_channel_email","partner_tracking_link","merchant_checkout_total","owned_payhip_sku","verified_affiliate_sale","verified_owned_purchase","reconciled_net_revenue","founder_release"]) ok(doc.gates.some(g=>g.id===id && g.status==="CLOSED"),"missing commercial gate "+id);
   ok(doc.current_kpi_value===null && /NOT COMPUTABLE/.test(doc.data_note),"invented net KPI");
   for (const id of ["ZEN-05","ZEN-06","ZEN-07","ZEN-08"]) ok(doc.claims.some(c=>c.id===id && c.decision==="unsupported_omit"),"unsupported seller efficacy allowed "+id);
-  for (const p of ["Grok","asset_id","merchant_confirmed_paid_sale","qualified human","Focus","NOT RUN","UNKNOWN","CLOSED","Payhip"]) ok(plan.includes(p),"measurement/ownership contract missing "+p);
+  for (const p of ["Grok","asset_id","merchant_confirmed_paid_sale","qualified human","Focus","NOT RUN","UNKNOWN","HOLD","Payhip"]) ok(plan.includes(p),"measurement/ownership contract missing "+p);
   ok(/not 0/i.test(plan),"unknown denominator must not be fake zero");
   ok(!/http[s]?:\/\/www\.awin1\.com\/cread\.php/i.test(buyer+hub+plan),"earning URL present");
   return n;
