@@ -1,0 +1,166 @@
+{
+  "schema": "fv-commons-6-source-dimension-grounding-v1",
+  "date": "2026-11-06",
+  "method": "Exact WordPress source images crosswalked to public Commons individual file page (one) and Commons category native-dimension listing (five); no media binaries or guest-browser HTTP retrieved",
+  "rights_guidance_url": "https://commons.wikimedia.org/wiki/Commons:Reusing_content_outside_Wikimedia",
+  "rows": [
+    {
+      "key": "268:0",
+      "post_url": "https://finalvestige.com/2026/08/18/they-painted-over-archimedes/",
+      "exact_stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Archimedes%20Palimpsest.jpg?width=1280",
+      "commons_file_page_candidate": "https://commons.wikimedia.org/wiki/File:Archimedes_Palimpsest.jpg",
+      "catalog_dimensions_native_px": [
+        665,
+        448
+      ],
+      "catalog_evidence_url": "https://commons.wikimedia.org/wiki/File:Archimedes_Palimpsest.jpg",
+      "catalog_evidence_type": "individual_file_page",
+      "proposed_preview_dimensions_no_upscale_px": [
+        665,
+        448
+      ],
+      "requested_width_parameter_px": 1280,
+      "source_rights_note": "Commons file page states U.S. public domain; independent use review required",
+      "license_release_approved": false,
+      "item_visual_identity_verified": false,
+      "browser_render_verified": false,
+      "browser_http": null,
+      "cold_wire_bytes": null,
+      "wordpress_change_allowed": false,
+      "media_caching_allowed": false
+    },
+    {
+      "key": "166:2",
+      "post_url": "https://finalvestige.com/2026/08/18/they-checked-the-dam-that-morning/",
+      "exact_stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/St.%20Francis%20abutment.jpg?width=1280",
+      "commons_file_page_candidate": "https://commons.wikimedia.org/wiki/File:St._Francis_abutment.jpg",
+      "catalog_dimensions_native_px": [
+        1400,
+        806
+      ],
+      "catalog_evidence_url": "https://commons.wikimedia.org/wiki/Category:St._Francis_Dam",
+      "catalog_evidence_type": "commons_category_listing",
+      "proposed_preview_dimensions_no_upscale_px": [
+        960,
+        553
+      ],
+      "requested_width_parameter_px": 1280,
+      "source_rights_note": "HOLD_ITEM_LICENSE_UNVERIFIED",
+      "license_release_approved": false,
+      "item_visual_identity_verified": false,
+      "browser_render_verified": false,
+      "browser_http": null,
+      "cold_wire_bytes": null,
+      "wordpress_change_allowed": false,
+      "media_caching_allowed": false
+    },
+    {
+      "key": "166:3",
+      "post_url": "https://finalvestige.com/2026/08/18/they-checked-the-dam-that-morning/",
+      "exact_stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Twisted_Tracks.jpg?width=1280",
+      "commons_file_page_candidate": "https://commons.wikimedia.org/wiki/File:Twisted_Tracks.jpg",
+      "catalog_dimensions_native_px": [
+        1400,
+        1017
+      ],
+      "catalog_evidence_url": "https://commons.wikimedia.org/wiki/Category:St._Francis_Dam",
+      "catalog_evidence_type": "commons_category_listing",
+      "proposed_preview_dimensions_no_upscale_px": [
+        960,
+        697
+      ],
+      "requested_width_parameter_px": 1280,
+      "source_rights_note": "HOLD_ITEM_LICENSE_UNVERIFIED",
+      "license_release_approved": false,
+      "item_visual_identity_verified": false,
+      "browser_render_verified": false,
+      "browser_http": null,
+      "cold_wire_bytes": null,
+      "wordpress_change_allowed": false,
+      "media_caching_allowed": false
+    },
+    {
+      "key": "166:4",
+      "post_url": "https://finalvestige.com/2026/08/18/they-checked-the-dam-that-morning/",
+      "exact_stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/St.%20Francis%20Dam%20after%20the%201928%20failure.jpg?width=1280",
+      "commons_file_page_candidate": "https://commons.wikimedia.org/wiki/File:St._Francis_Dam_after_the_1928_failure.jpg",
+      "catalog_dimensions_native_px": [
+        1400,
+        1043
+      ],
+      "catalog_evidence_url": "https://commons.wikimedia.org/wiki/Category:St._Francis_Dam",
+      "catalog_evidence_type": "commons_category_listing",
+      "proposed_preview_dimensions_no_upscale_px": [
+        960,
+        715
+      ],
+      "requested_width_parameter_px": 1280,
+      "source_rights_note": "HOLD_ITEM_LICENSE_UNVERIFIED",
+      "license_release_approved": false,
+      "item_visual_identity_verified": false,
+      "browser_render_verified": false,
+      "browser_http": null,
+      "cold_wire_bytes": null,
+      "wordpress_change_allowed": false,
+      "media_caching_allowed": false
+    },
+    {
+      "key": "166:5",
+      "post_url": "https://finalvestige.com/2026/08/18/they-checked-the-dam-that-morning/",
+      "exact_stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Standing_section.jpg?width=1280",
+      "commons_file_page_candidate": "https://commons.wikimedia.org/wiki/File:Standing_section.jpg",
+      "catalog_dimensions_native_px": [
+        1250,
+        936
+      ],
+      "catalog_evidence_url": "https://commons.wikimedia.org/wiki/Category:St._Francis_Dam",
+      "catalog_evidence_type": "commons_category_listing",
+      "proposed_preview_dimensions_no_upscale_px": [
+        960,
+        719
+      ],
+      "requested_width_parameter_px": 1280,
+      "source_rights_note": "HOLD_ITEM_LICENSE_UNVERIFIED",
+      "license_release_approved": false,
+      "item_visual_identity_verified": false,
+      "browser_render_verified": false,
+      "browser_http": null,
+      "cold_wire_bytes": null,
+      "wordpress_change_allowed": false,
+      "media_caching_allowed": false
+    },
+    {
+      "key": "166:6",
+      "post_url": "https://finalvestige.com/2026/08/18/they-checked-the-dam-that-morning/",
+      "exact_stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Man%20pointing%20at%20crack%20in%20Saint%20Francis%20Dam%20after%20its%20collapse.jpg?width=1280",
+      "commons_file_page_candidate": "https://commons.wikimedia.org/wiki/File:Man_pointing_at_crack_in_Saint_Francis_Dam_after_its_collapse.jpg",
+      "catalog_dimensions_native_px": [
+        4431,
+        5760
+      ],
+      "catalog_evidence_url": "https://commons.wikimedia.org/wiki/Category:St._Francis_Dam",
+      "catalog_evidence_type": "commons_category_listing",
+      "proposed_preview_dimensions_no_upscale_px": [
+        960,
+        1248
+      ],
+      "requested_width_parameter_px": 1280,
+      "source_rights_note": "HOLD_ITEM_LICENSE_UNVERIFIED",
+      "license_release_approved": false,
+      "item_visual_identity_verified": false,
+      "browser_render_verified": false,
+      "browser_http": null,
+      "cold_wire_bytes": null,
+      "wordpress_change_allowed": false,
+      "media_caching_allowed": false
+    }
+  ],
+  "release": {
+    "no_enlargement": true,
+    "ceiling_width_px": 960,
+    "verified_visitor_failure_count": 0,
+    "approved_replacement_count": 0,
+    "downloaded_assets": 0,
+    "wordpress_writes": 0
+  }
+}
