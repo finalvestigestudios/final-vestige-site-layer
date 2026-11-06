@@ -8,7 +8,7 @@ def fixture():
     return ('<!-- wp:html --><style>@media(prefers-reduced-motion:reduce){'
             '.fv-margin-strip__item{display:none}.fv-margin-strip__item:nth-child(1){display:block}}'
             '</style>'+''.join(f'<span class="fv-margin-strip__item" style="--i:{i}">QA {i}</span>' for i in range(72))
-            +'<!-- /wp:html --><!-- wp:html --><div data-fv-home-flagship>'
+            +'<!-- /wp:html --><!-- wp:html --><div class="fv-hf fv-hf--wp alignfull" data-fv-home-flagship>'
             +''.join(f'<div id="{i}"></div>' for i in IDS)
             +'<div class="fv-hf__opening-actions">'+OLD+'</div>'
             +'<a href="https://finalvestige.com/focus/">Focus Fieldbook</a>'
