@@ -29,7 +29,7 @@ function scan(files){
  const c=oldLedger.claims.find(x=>x.id==="CB-04");
  check(c&&c.statement.includes("tasted jam or smelled tea"),"old ledger sensory correction");
  check(c&&c.statement.includes("before the final preference"),"old ledger timing correction");
- check(c&&c.source_ids.includes("S15"),"old ledger full text methods source");
+ check(c&&c.source_ids.includes("S15")&&oldLedger.sources.some(x=>x.id==="S15"),"old ledger full text methods source");
  const guide=files[P.guide], page=files[P.html], spec=files[P.plan], hub=files[P.hub], m=JSON.parse(files[P.matrix]);
  check(guide.split(/\s+/).length>=1650,"independent guide substantial");
  check(guide.includes("November 6, 2026"),"research date");
@@ -78,13 +78,13 @@ function scan(files){
  check(m.claims.find(x=>x.id==="Z-08")?.status==="seller_claim_unsubstantiated","equivalence not adopted");
  check(m.claims.find(x=>x.id==="COM-01")?.status==="NOT_VERIFIED","named acceptance not assumed");
  check(m.measurement.net_revenue_per_1000==="NOT_COMPUTABLE","correct revenue state");
- check(spec.includes("asset_id = NULL")&&spec.toLowerCase().includes("three")&&spec.includes("TASK-008"),"creator coordination only");
+ check((spec.match(/asset_id = NULL/g)||[]).length>=3&&spec.toLowerCase().includes("three")&&spec.includes("TASK-008"),"creator coordination only");
  check(spec.includes("7-day")&&spec.includes("30-day"),"cohorts");
  check(spec.includes("merchant_confirmed_order")&&spec.includes("affiliate_click"),"clicks separate from commerce");
  check(spec.includes("preload=\"none\"")&&spec.includes("WebVTT"),"video accessibility/performance planned");
  check(spec.includes("Do not")&&spec.includes("Grok"),"no Grok queue takeover");
  check(hub.includes("wp:group")&&hub.includes("Mind &amp; Perception"),"WordPress hub companion");
- check(hub.includes("PR #172")&&hub.includes("unpublished"),"canonical ownership and draft status");
+ check(hub.includes("Do not insert in live WordPress or overwrite PR #172.")&&hub.includes("unpublished"),"canonical ownership and draft status");
  check(hub.includes("https://finalvestige.com/focus/"),"single Focus path hub");
  check(!/<form\b|<script\b/i.test(hub),"no scripts/forms in hub");
  check(!/href=["']https?:\/\/(?:www\.)?zen12\.com/i.test(hub),"no commerce links hub");
@@ -109,12 +109,12 @@ const mutations=[
  ["fabricate-commission",P.matrix,s=>s.replace('"commission_paid": null','"commission_paid": 1000')],
  ["fabricate-earning-url",P.matrix,s=>s.replace('"affiliate_earning_url": null','"affiliate_earning_url": "https://zen12.com/buy"')],
  ["activate-gate",P.matrix,s=>s.replace('"status": "CLOSED"','"status": "OPEN"')],
- ["erase-cohort",P.plan,s=>s.replace("30-day","one-day")],
- ["erase-click-vs-sale",P.plan,s=>s.replace("affiliate_click","fake_affiliate_sale")],
+ ["erase-cohort",P.plan,s=>s.replaceAll("30-day","one-day")],
+ ["erase-click-vs-sale",P.plan,s=>s.replaceAll("affiliate_click","fake_affiliate_sale")],
  ["overreach-grok",P.plan,s=>s.replace("asset_id = NULL","asset_id = ASSIGNED")],
  ["erase-hub-preservation",P.hub,s=>s.replace("PR #172","PR #NEXT")],
  ["add-hub-script",P.hub,s=>s+"<script>alert(1)</script>"],
- ["remove-42s",P.html,s=>s.replace("42-second", "short")],
+ ["remove-42s",P.html,s=>s.replaceAll("42-second", "short")],
 ];
 function run(files,{mutations_enabled=true}={}){
  const assertions=scan(files);
