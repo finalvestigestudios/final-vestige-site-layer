@@ -67,6 +67,6 @@ mutation('invent paid commission',(A,H,M,D,O)=>{D.paid_conversions_verified=10;r
 mutation('invent experiment results',(A,H,M,D,O)=>{D.experiment_status='VERIFIED';return[A,H,M,D,O]});
 mutation('delete independent source',(A,H,M,D,O)=>{delete D.sources.S07;return[A,H,M,D,O]});
 mutation('erase publisher revenue caution',(A,H,M,D,O)=>[A,H,M.replace('NOT COMPUTABLE','0'),D,O]);
-mutation('delete scientific participant evidence',(A,H,M,D,O)=>[A.replace('seventeen retreat participants','many retreat participants'),H,M,D,O]);
+mutation('delete scientific participant evidence',(A,H,M,D,O)=>[A.replace('Seventeen retreat participants','many retreat participants'),H,M,D,O]);
 mutation('restore 1977 erroneous stimulus',(A,H,M,D,O)=>[A,H,M,D,O.replace('tape-recorded statements','statements given to readers')]);
 console.log('R159 baseline PASS; '+killed+'/'+killed+' adversarial mutations killed. Source checks only; no Node CI/browser/merchant/live tests claimed.');
