@@ -10,7 +10,7 @@ SUBJECT = "The mind is not a camera"
 
 def synthetic(*, subject=SUBJECT, sender="Final Vestige Studios <donotreply@wordpress.com>",
               address=ADDRESS, disclosure=True, unsub=True, cta=CTA,
-              html=True, bad_img=False, js=False, with_plain=True, full=True):
+              html=True, bad_img=False, js=False, with_plain=True, full=True, late_gap=False):
     m = EmailMessage()
     m["Subject"] = subject
     m["From"] = sender
@@ -19,6 +19,7 @@ def synthetic(*, subject=SUBJECT, sender="Final Vestige Studios <donotreply@word
     body = ("A useful, specific research observation and its limitations. " * 13) if full else "Short. "
     if address: body += address + ". "
     if disclosure: body += " If you buy, Final Vestige may earn a commission. "
+    if late_gap: body += " Irrelevant intervening paragraph. " * 100
     if with_plain: m.set_content(body + "\n" + cta + "\nUnsubscribe")
     else: m.set_content(" ")
     html_body = "<html><body><main><p>"+body+"</p>"
@@ -57,7 +58,11 @@ class ReceivedMailAudit(unittest.TestCase):
     def test_missing_html_cta_blocks(self):self.assertFalse(audit(synthetic(cta=''))['checks']['first_party_cta_in_html_with_label'])
     def test_missing_plain_cta_blocks(self):self.assertFalse(audit(synthetic(with_plain=False))['checks']['first_party_cta_in_plaintext'])
     def test_short_body_blocks(self):self.assertFalse(audit(synthetic(full=False))['checks']['substantive_full_text'])
-    def test_commercial_requires_disclosure(self):self.assertFalse(audit(synthetic(disclosure=False),issue=3)['checks']['affiliate_disclosure_in_text'])
+    def test_commercial_requires_disclosure(self):self.assertFalse(audit(synthetic(disclosure=False),issue=3)['checks']['affiliate_disclosure_adjacent_html'])
+    def test_commercial_disclosure_far_from_cta_is_rejected(self):
+        r=audit(synthetic(late_gap=True),issue=3)
+        self.assertFalse(r['checks']['affiliate_disclosure_adjacent_html'])
+        self.assertFalse(r['checks']['affiliate_disclosure_adjacent_plaintext'])
     def test_editorial_does_not_require_merchant(self):self.assertTrue(audit(merchant_email_permission=False)['checks']['merchant_email_permission_attested'])
     def test_commercial_requires_merchant(self):self.assertFalse(audit(issue=5,merchant_email_permission=False)['checks']['merchant_email_permission_attested'])
     def test_image_alt_is_required(self):self.assertFalse(audit(synthetic(bad_img=True))['checks']['html_images_have_alt'])
