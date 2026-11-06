@@ -847,7 +847,10 @@
       "slug": "mesmerism",
       "modified_wp": "2026-11-03T14:52:20",
       "inline_img_count": 1,
-      "inline_img_count_basis": "2026-11-06 CMS editor read-only fresh check"
+      "inline_img_count_basis": "2026-11-06 CMS editor read-only fresh check",
+      "fresh_inline_img_count": 1,
+      "fresh_external_img_count": 1,
+      "fresh_modified_wp": "2026-11-03T14:52:20"
     },
     {
       "id": 1926,
@@ -855,7 +858,10 @@
       "slug": "crystal-skulls",
       "modified_wp": "2026-11-05T09:54:56",
       "inline_img_count": 1,
-      "inline_img_count_basis": "2026-11-06 CMS editor read-only fresh check"
+      "inline_img_count_basis": "2026-11-06 CMS editor read-only fresh check",
+      "fresh_inline_img_count": 1,
+      "fresh_external_img_count": 1,
+      "fresh_modified_wp": "2026-11-05T09:54:56"
     }
   ],
   "browser_verified": false,
@@ -866,5 +872,11 @@
   "image_count_scope": "Gutenberg stored <img> tags only, not dynamically injected/featured, srcset, CSS or live rendered; per-post counts may be stale after edits",
   "source_census_blob_sha": "76aa63ffaa299a6e6878edc1b66e637fa6f058ab",
   "new_five_post_fresh_count_verification": "Read-only WordPress posts.get context=edit for IDs 1917 1920 1922 1924 1926, 2026-11-06",
-  "fresh_recensus_progress": 64
+  "fresh_recensus_progress": 66,
+  "current_content_recensus_complete": true,
+  "fresh_total_inline_images": 361,
+  "fresh_total_external_images": 294,
+  "fresh_legacy_inline_images": 355,
+  "fresh_post_counts_mismatching_legacy": [],
+  "fresh_census_method": "2026-11-06 authenticated read-only WordPress posts.get context=edit for every published post; only inline <img> tags and stored src attributes; no network requests and no production writes"
 }
