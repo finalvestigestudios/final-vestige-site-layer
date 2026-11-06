@@ -149,7 +149,7 @@ class ScrollableForm:
         lo, hi = self.canvas.yview()
         if lo <= 0.0 and hi >= 1.0:
             return None
-        if button is None and self._wheel_platform == "win32":
+        if button is None and getattr(self, "_wheel_platform", None) == "win32":
             units, self._wheel_remainder = precise_windows_wheel_units(
                 getattr(event, "delta", 0), self._wheel_remainder)
         else:
