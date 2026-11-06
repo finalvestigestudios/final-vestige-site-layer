@@ -46,6 +46,7 @@ function sourceCheck(b) {
   ok(/<details>/.test(buyer),"optional video treatment control missing");
   ok(/https:\/\/pubmed.ncbi.nlm.nih.gov\/34843370\//.test(buyer),"primary scientific source missing");
   ok(/seller representations|seller statements|seller promise|seller-listed/i.test(buyer),"seller vs evidence distinction missing");
+  ok(/seller-listed/i.test(buyer),"product features must be labeled seller-listed");
   ok(/not a verified checkout|not a verified checkout total/i.test(buyer),"price and checkout caveat missing");
   ok(/refunds are fulfilled|refund fulfillment/i.test(buyer),"refund verification caveat missing");
   ok(doc.review_state==="DRAFT_UNPUBLISHED_HARD_HOLD","public commercial activation state");
