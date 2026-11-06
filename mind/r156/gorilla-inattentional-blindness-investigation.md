@@ -5,7 +5,7 @@
 
 ## The search was serious. The gorilla was ridiculous.
 
-Twenty-four trained radiologists examined lung scans in an experiment reported in *Psychological Science* in 2013. Their ordinary, demanding assignment was to look for lung nodules. The researchers inserted an image of a gorilla into the last scan. It was not the sort of subtle abnormality the doctors were trained to find: the image occupied a volume approximately 48 times that of an average nodule in the study. Twenty of the twenty-four radiologists did not report it. Eye tracking showed that twelve of the twenty who missed it had looked directly at its location while it was visible.
+Twenty-four trained radiologists examined lung scans in an experiment reported in *Psychological Science* in 2013. Their ordinary, demanding assignment was to look for lung nodules. The researchers inserted an image of a gorilla into the last scan. It was not the sort of subtle abnormality the doctors were trained to find: the rectangular volume enclosing the image was over 48 times the average nodule volume reported in the study. Twenty of the twenty-four radiologists did not report it. Eye tracking showed that twelve of the twenty who missed it had looked directly at its location while it was visible.
 
 This is arresting, but it is easy to misunderstand. The finding is **not** that radiologists are careless or that medical scans are routinely filled with missed creatures. The gorilla was a contrived, unexpected target; the doctors were asked to perform a legitimate specialized search. Their task made sense. That is precisely why the experiment matters. Expertise did not abolish the selectivity of attention, even when a person's gaze traveled through the relevant location.
 
