@@ -87,7 +87,7 @@ function mutate(b) {
  ["remove 42-second concept",x=>({...x,buyer:x.buyer.replaceAll("42-second","forty-two-second")})],
  ["remove buyer noindex",x=>({...x,buyer:x.buyer.replace('meta name="robots" content="noindex,nofollow"','meta name="robots" content="index,follow"')})],
  ["remove skip links",x=>({...x,buyer:x.buyer.replace('href="#main"','href="#other"'),hub:x.hub.replace('href="#main"','href="#other"')})],
- ["remove evidence seller warning",x=>({...x,buyer:x.buyer.replaceAll("seller-listed","internal-feature").replaceAll("Seller lists","Our editors confirm").replaceAll("seller statements","independent findings")})]
+ ["remove evidence seller warning",x=>({...x,buyer:x.buyer.replace(/seller-listed/gi,"proven").replace(/seller statements/gi,"independent findings").replace(/seller representations/gi,"scientific facts").replace(/seller promise/gi,"scientific fact")})]
  ];
  let blocked=0;const names=[];
  for(const [name,act] of attacks){let failed=false;try{sourceCheck(act(b))}catch(_){failed=true}if(!failed)throw new Error("UNDETECTED mutation: "+name);blocked++;names.push(name)}
