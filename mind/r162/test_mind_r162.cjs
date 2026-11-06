@@ -39,7 +39,7 @@ function assertSource(raw) {
     ['unsupported efficacy corrected',()=>raw.html.includes('does not establish product-specific Zen12 equivalence') && raw.html.includes('did not test')],
     ['no active product/merchant href',()=>!/<a\b[^>]*href\s*=\s*["']https?:\/\/(?:www\.)?(?:zen12\.com|brainwaveshots\.com|hypnosislive\.com)/i.test(raw.html)],
     ['no affiliate earning links',()=>!/(awin1\.com|hop\.clickbank|clickbank\.net|[?&](?:aff_id|affid|affiliate_id|hop)=)/i.test(raw.html)],
-    ['commercial physically disabled',()=>/<button\b[^>]*\bdisabled\b[^>]*>Merchant purchase link withheld/.test(raw.html)],
+    ['commercial physically disabled',()=>/<button\b[^>]*\sdisabled(?:\s|>)[^>]*>Merchant purchase link withheld/.test(raw.html)],
     ['no claims of first-hand use',()=>!/we personally tested|we personally used|we tried zen12/i.test(raw.html)],
     ['no active purchase call to action',()=>!/<a\b[^>]*>(?:\s*(?:Buy now|Purchase|Shop Now|Get Zen12)\s*)<\/a>/i.test(raw.html)],
     ['nearby plain commission disclosure',()=>{let k=raw.html.indexOf('Prospective commission disclosure');let b=raw.html.indexOf('Merchant purchase link withheld');return k>=0 && b>k && b-k<650;}],
