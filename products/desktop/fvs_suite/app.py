@@ -138,6 +138,7 @@ def run(app_id):
         browse = ttk.Button(frame, text="Browse…", command=choose_file)
         browse.grid(row=browse_row, column=0, columnspan=3, sticky="w")
         input_controls.append((entry, browse))
+    ledger_header_entries = []  # L/R match keys, then L/R amounts; preserve visual order
     ledger_columns = None
     if ledger_layout:
         ledger_columns = (tk.StringVar(), tk.StringVar())
@@ -147,9 +148,10 @@ def run(app_id):
             ui_label(frame, text=label).grid(
                 row=label_row, column=0, columnspan=3, sticky="ew",
                 padx=(0, 12), pady=7)
-            ttk.Entry(frame, textvariable=variable, width=1).grid(
-                row=entry_row, column=0, columnspan=3,
-                sticky="ew", pady=7)
+            header_entry = ttk.Entry(frame, textvariable=variable, width=1)
+            header_entry.grid(row=entry_row, column=0, columnspan=3,
+                              sticky="ew", pady=7)
+            ledger_header_entries.append(header_entry)
     ledger_amount_columns = None
     if ledger_layout:
         ledger_amount_columns = (tk.StringVar(), tk.StringVar())
@@ -159,8 +161,10 @@ def run(app_id):
             ui_label(frame, text=label).grid(
                 row=label_row, column=0, columnspan=3, sticky="ew",
                 padx=(0, 12), pady=7)
-            ttk.Entry(frame, textvariable=variable, width=1).grid(
-                row=entry_row, column=0, columnspan=3, sticky="ew", pady=7)
+            header_entry = ttk.Entry(frame, textvariable=variable, width=1)
+            header_entry.grid(row=entry_row, column=0, columnspan=3,
+                              sticky="ew", pady=7)
+            ledger_header_entries.append(header_entry)
     invoice_window = tk.StringVar(value="7") if app_id == "invoices" else None
     invoice_window_entry = None
     if invoice_window is not None:
@@ -265,7 +269,8 @@ def run(app_id):
     hint = (f"Keyboard: Alt+1..{len(labels)} focus an input; Ctrl+1..{len(labels)} browse; "
             "Alt+O/Ctrl+O output; Alt+G/Ctrl+Enter generate")
     if app_id == "ledger":
-        hint += "; Tab to optional left/right match and amount headers (blank = automatic)"
+        hint += ("; Alt+L left match, Alt+R right match; "
+                 "Alt+A left amount, Alt+M right amount (blank = automatic)")
     if app_id == "invoices":
         hint += "; Alt+W near-match day window (0-365; default 7)"
     if app_id == "procurement":
@@ -279,6 +284,7 @@ def run(app_id):
     install_shortcuts(root, input_controls, (output_entry, output_browse),
                       generate_button, review=review_button,
                       invoice_window=invoice_window_entry,
-                      policy_rules=policy_rules_controls)
+                      policy_rules=policy_rules_controls,
+                      ledger_headers=tuple(ledger_header_entries) if ledger_layout else None)
     root.after_idle(input_controls[0][0].focus_set)
     root.mainloop()
