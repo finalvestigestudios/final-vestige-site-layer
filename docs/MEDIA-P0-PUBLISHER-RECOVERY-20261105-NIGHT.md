@@ -1,0 +1,18 @@
+# P0 publisher-source recovery and historical integrity — 2026-11-05 PT
+
+**Scope:** Existing draft PR #183 only; complements existing Site QA #154. Reviewed media-branch `docs/IMAGE-WEIGHT-WORKLIST.md`, read-only authenticated current WordPress posts 285 and 287, and independent public web source/image rendering. No visitor Chrome, third-party binaries, CMS edits, or deployments.
+
+## 287:5 — live publisher migration (stronger recovery candidate)
+Stored exact WordPress image: `https://stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg`. Independent `web.open` reported **404**, not confirmed visitor-browser HTTP. The [April 10, 2020 publisher article](https://stpetecatalyst.com/skyway-disaster-documentary-available-for-streaming/) still embeds the **visibly rendered same-filename photo** at `https://media.stpetecatalyst.com/uploads/2020/04/Skyway-Bridge-documentary.jpg`. This recovers the **publisher source**, avoiding a premature swap to a different Florida Memory photo. Pixel-by-pixel identity, origin HTTP, dimensions, server hotlink policy and wire bytes remain unknown.
+
+**Image-rights block:** Publisher caption explicitly credits **University Press of Florida**. No rehost, download, caching or derivative rights are established; even direct linking requires a policy check. **Historical integrity block:** The currently published ALT says "old wreckage and later bridge replacement", but the photograph shows the **1980** wreckage, while the new bridge opened in **1987**. Editorial needs to correct ALT or choose a rights-cleared ca. 1987 photograph depicting both bridges (e.g. Florida Memory K894127), not silently switch photographs. Safe ALT candidate: "Wreckage of the original Sunshine Skyway Bridge following the May 9, 1980 collision."
+
+## 285:5 — original article itself links a public-domain aerial
+Old SayMedia 16:9 cropped URL returned **404 in web retriever**; live Final Vestige post ALT describes aerial Three Mile Island. The [current original article](https://discover.hubpages.com/entertainment/The-China-Syndrome-Blockbuster-Movie-Becomes-Eerie-Prophecy) links its **June 6, 2010 aerial image** directly to [Commons catalog](https://commons.wikimedia.org/wiki/File:Three_mile_island_062010.jpg). The Commons record credits **Marque1313**, identifies **PD-self** public-domain release and native **819×614 JPEG (~235 KB)**; the image renders. **Do not upscale to 960 px.** This is publisher-linked subject provenance, not proof the inaccessible SayMedia rendition was pixel-identical. The original transform was 16:9 whereas Commons is ~4:3; compare crop/layout before staging. Do not describe the photo as if it depicted 1979.
+
+## Safe restoration/caching plan
+Site QA retains guest-Chrome ownership: actual `currentSrc`, image GET status/redirect, `naturalWidth`, CDP encodedDataLength, full scroll and desktop/mobile screenshot. Tool-retriever 404 is not a browser failure. Once confirmed, require item-level licensing and publisher hotlink review (287), visual comparison/caption editorial approval, isolated staging preview, 960px cap/no upscaling, and save original Gutenberg block revision for rollback. Only use newly named local WordPress derivatives for rights-cleared material with explicit authorization; never cache the University Press image by default. No production WordPress writes.
+
+Frozen 61 posts/355 image references; newer 66/361. 13 oversized WordPress originals total **43,522,829 stored bytes**, not delivered bytes. **42 reported broken still not guest-verified; 76% transfer reduction unmeasured; production repairs 0.**
+
+Validation: `node qa/media-recovery/test_publisher_recovery_20261105_night.cjs`. This is fail-closed, offline, read-only.
