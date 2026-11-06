@@ -94,7 +94,7 @@ const bad=[
 ["form injection",s=>s.replace('</body>','<form><input type=email></form></body>')],
 ["remote image",s=>s.replace('</body>','<img src="https://track.test/pixel"></body>')],
 ["remote stylesheet",s=>s.replace('</head>','<link rel="stylesheet" href="https://track.test/a.css"></head>')],
-["claims medical benefit",s=>s.replace('No autoplay','guaranteed cure. No autoplay')],
+["claims medical benefit",s=>s.replace('no autoplay','guaranteed cure. no autoplay')],
 ["playable video false claim",s=>s.replace('</body>','<video controls src="video.mp4"></video></body>')],
 ["remove transcript",s=>s.replace('full accessible transcript','summary of a storyboard')],
 ["reduce motion removed",s=>s.replace('@media(prefers-reduced-motion:reduce)','@media(prefers-motion:please)')],
