@@ -21,7 +21,7 @@ function verify(d, verbose=false){
  const {article,guide,offer,hub,plan,r172article,r172plan}=d;
  const matrix=JSON.parse(d.matrix);
  ok(article.trim().split(/\s+/).length>=1900,'article is not deeply written');
- ok(article.includes('24 highly suggestible participants'),'research sample omitted');
+ ok(article.includes('24 highly suggestible participants')&&!article.includes('240 unselected people'),'research sample distorted');
  ok(article.includes('134 milliseconds'),'reaction time omitted');
  ok(article.includes('AUC 0.961')&&article.includes('0.956'),'accuracy result omitted');
  ok(article.includes('not statistically significant'),'accuracy caveat missing');
@@ -43,7 +43,7 @@ function verify(d, verbose=false){
  ok(/<a class="skip" href="#main">/i.test(offer),'skip link missing');
  ok(offer.includes('id="main"'),'main skip target missing');
  ok(offer.includes(':focus-visible'),'keyboard focus styling missing');
- ok(offer.includes('prefers-reduced-motion'),'reduced motion missing');
+ ok(offer.includes('@media(prefers-reduced-motion:reduce)'),'reduced motion rule missing');
  ok(offer.includes('max-width:800px'),'mobile layout CSS absent');
  ok(/<button[^>]*class="buy"[^>]*\bdisabled\b/i.test(offer),'purchase control not natively disabled');
  ok(!/href\s*=\s*["']https?:\/\/(?:www\.)?(?:zen12|inspire3|affiliates\.inspire3)\.com/i.test(offer),'active merchant or affiliate URL');
@@ -51,7 +51,7 @@ function verify(d, verbose=false){
  ok(!/autoplay\s*(?:=|>)/i.test(offer),'autoplay attr introduced');
  const i=offer.indexOf('<p class="disclosure">'),j=offer.indexOf('<button type="button" class="buy"');
  ok(i>=0&&j>i&&j-i<750,'FTC disclosure not proximate to disabled purchase');
- ok(offer.includes('at no additional cost to you'),'material connection not plainly described');
+ ok(offer.includes('at no additional cost to you')&&offer.includes('may earn a commission'),'material connection not plainly described');
  ok(offer.includes('No earning link is active now'),'missing nonactivation statement');
  ok(offer.includes('2026')&&offer.includes('$87.99'),'dated price fact absent');
  ok(offer.includes('final checkout quote'),'no checkout disclaimer missing');
@@ -79,7 +79,7 @@ function verify(d, verbose=false){
  const accuracy=matrix.claim_decisions.find(x=>x.id==='C11');
  ok(accuracy&&accuracy.decision==='REJECT','accuracy misrepresentation accepted');
  const clinical=matrix.claim_decisions.find(x=>x.id==='C09');
- ok(clinical&&clinical.decision==='DO_NOT_ADOPT_AS_FACT','unverified health efficacy adopted');
+ ok(clinical&&['C07','C08','C09'].every(id=>matrix.claim_decisions.find(x=>x.id===id)?.decision==='DO_NOT_ADOPT_AS_FACT'),'unverified commercial efficacy adopted');
  ok(plan.includes('NOT COMPUTABLE')&&plan.includes('Keep negative net negative'),'revenue treatment could hide loss');
  ok(!/Math\.max\(0|MAX\(0/i.test(plan),'negative net being clamped');
  ok(plan.includes('commission_paid_and_cleared')&&plan.includes('affiliate_outbound'),'click/paid conversion conflated');
