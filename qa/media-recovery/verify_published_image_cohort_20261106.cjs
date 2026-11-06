@@ -35,7 +35,8 @@ function validateManifest(m){
  ck(m.wordpress_writes===0&&m.browser_verified===false,'evidence must be read-only');
  return {ok:e.length===0,errors:e,byURL};
 }
-function verify(input,m=manifest){
+function verify(input){
+ const m=manifest;
  const guard=validateManifest(m),errors=[...guard.errors];
  const reject=()=>({ok:false,errors,measured:null,sitewide_claim_allowed:false,claim_76_percent_supported:false});
  if(!guard.ok)return reject();
