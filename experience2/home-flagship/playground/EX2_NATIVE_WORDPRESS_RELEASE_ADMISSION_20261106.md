@@ -2,8 +2,8 @@
 
 **Status: IMPLEMENTED and LOCALLY UNIT-TESTED; WORDPRESS STAGING NOT EXECUTED; RELEASE HOLD.**  
 **Source base:** PR #1300, exact base SHA \`b03ced998272a8dec5a70c5f6a48b31d54fe6599\`.  
-**Runner first committed:** \`74d9f062fec436fd4d1188cb83fa2e96e9f84393\`; extended at \`e4b6e44a3fcb1bb1dbcf90e3114ad7c05490ece7\`.  
-**Runner Git blob:** \`6edc8af89a7e4b34940377f22ee698f1b3fae87f\`.  
+**Runner first committed:** \`74d9f062fec436fd4d1188cb83fa2e96e9f84393\`; extended at \`e4b6e44a3fcb1bb1dbcf90e3114ad7c05490ece7\`, corrected at \`f30ea6c07380179c028aaa7d9a16bd3a78ed0170\`.  
+**Runner Git blob:** \`e61acd0cbbbe36f8ec8cdebe2bb1b77c7aa5aeb6\`.  
 **Unchanged review Blueprint Git blob:** \`455c6cccbf8a00e6ecc4c2524775010d7ee1762c\` (PR #1294/#1300). Frozen PR #49 remains \`10495883299d53596992c26a8987f629b2904670\`; untouched.
 
 ## Why this is different from the earlier static/PHP tests
@@ -15,7 +15,7 @@ The optional axe-core bundle can run real browser WCAG scans when supplied. It *
 ## Actual evidence from this run
 
 - **20/20 local negative and unit controls PASS.** Covers rejecting production and unauthorized staging URLs, accepting explicitly isolated URLs, rejecting non-HTTPS remote previews, rejecting fake image/HTML response bodies, decoding genuinely generated WebP/JPEG image bytes, and rejecting seven mutated invariants.
-- **Real Chromium / exact-source static reproduction:** all 7 chapter anchors, 72/72 Margins records, 5 Focus destinations and 2 review images exist. **Admission correctly returns HOLD** because the static page has no WordPress shell. This is intentional proof that static screenshots cannot falsely pass the native gate.
+- **Real Chromium reduced-motion interaction fixture:** 390px/`reduce` correctly hides the optional animation control and leaves all 72 records visible; 1440px/`no-preference` permits the visitor to opt into rotation. This corrected a false-failure hazard before native staging admission.\n- **Real Chromium / exact-source static reproduction:** all 7 chapter anchors, 72/72 Margins records, 5 Focus destinations and 2 review images exist. **Admission correctly returns HOLD** because the static page has no WordPress shell. This is intentional proof that static screenshots cannot falsely pass the native gate.
 - **Production-host negative control:** \`--url https://finalvestige.com/\` exits nonzero before a browser opens or a page is fetched.
 - **No actual Playground / WordPress URL available here.** The container has PHP 8.4, Chromium and Python Playwright, but DNS/network package acquisition was unavailable; the connected WP account shows **only production site 256784396**.
 - **Genuine 14-scenario native test, image response bytes, axe, Lighthouse, Safari, keyboard AT and host-specific WordPress.com/Jetpack behavior: NOT RUN.** No acceptance claim.
