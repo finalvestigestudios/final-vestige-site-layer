@@ -50,6 +50,27 @@ def _private_io_failure(exc: OSError) -> None:
     raise OSError(code, "Text report publication failed") from None
 
 
+
+def _verify_staged_bytes(descriptor: int, payload: bytes) -> None:
+    """Compare staged evidence with source bytes through the same private FD.
+
+    A same-size corruption can evade both a successful write result and fstat.
+    mkstemp opens a read/write FD on Windows and POSIX, so reread it in small
+    chunks after flush but before fsync/exclusive publication. Do not reopen
+    the temporary pathname, which could be swapped between checks.
+    """
+    os.lseek(descriptor, 0, os.SEEK_SET)
+    offset = 0
+    while offset < len(payload):
+        expected = payload[offset:offset + 256 * 1024]
+        actual = os.read(descriptor, len(expected))
+        if actual != expected:
+            raise OSError(errno.EIO, "Text evidence staging byte mismatch")
+        offset += len(expected)
+    if os.read(descriptor, 1) != b"":
+        raise OSError(errno.EIO, "Text evidence staging extra bytes")
+
+
 def publish_text(destination: str | Path, contents: str) -> Path:
     """Publish a complete, <=64 MiB UTF-8 TXT/manifest with no overwrite.
 
@@ -101,6 +122,8 @@ def publish_text(destination: str | Path, contents: str) -> Path:
                 # the real file length before fsync and exclusive publication.
                 if os.fstat(stream.fileno()).st_size != len(payload):
                     raise OSError(errno.EIO, "Text report staging length mismatch")
+                # Same-length corruption must also fail closed, before fsync.
+                _verify_staged_bytes(stream.fileno(), payload)
                 os.fsync(stream.fileno())
             if os.name == "nt":
                 # Windows os.rename rejects a destination that already exists.
