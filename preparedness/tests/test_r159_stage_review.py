@@ -6,7 +6,7 @@ from pathlib import Path
 import tempfile
 import unittest
 
-script=Path(__file__).with_name('r159_stage_review.py')
+script=Path(__file__).parents[1]/'tools'/'r159_stage_review.py'
 spec=importlib.util.spec_from_file_location('r159',script)
 g=importlib.util.module_from_spec(spec);spec.loader.exec_module(g)
 
