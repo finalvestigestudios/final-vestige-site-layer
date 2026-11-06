@@ -88,8 +88,19 @@ def publish_text(destination: str | Path, contents: str) -> Path:
                     pass
                 raise
             with stream:
-                stream.write(payload)
+                # Buffered I/O normally accepts the entire write, but a short
+                # return is legal for some file-like objects and must never
+                # result in a published truncated audit record. Reject odd
+                # return types (including bool) rather than assuming success.
+                written = stream.write(payload)
+                if type(written) is not int or written != len(payload):
+                    raise OSError(errno.EIO, "Incomplete text report staging write")
                 stream.flush()
+                # A lying/interposed writer could report all bytes accepted
+                # while leaving a truncated (or expanded) staging file. Seal
+                # the real file length before fsync and exclusive publication.
+                if os.fstat(stream.fileno()).st_size != len(payload):
+                    raise OSError(errno.EIO, "Text report staging length mismatch")
                 os.fsync(stream.fileno())
             if os.name == "nt":
                 # Windows os.rename rejects a destination that already exists.
