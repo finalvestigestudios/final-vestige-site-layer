@@ -1,0 +1,72 @@
+'use strict';
+// Mind R159 reproducible static and mutation regression, no network/no production effects.
+// Run: node mind/r159/test_mind_r159.cjs
+const fs = require('node:fs');
+const path = require('node:path');
+const assert = require('node:assert/strict');
+const root = path.join(__dirname, '..');
+const a = fs.readFileSync(path.join(__dirname, 'second-signal-attentional-blink-meditation-investigation.md'), 'utf8');
+const h = fs.readFileSync(path.join(__dirname, 'zen12-second-signal-buyer-bridge-UNPUBLISHED.html'), 'utf8');
+const m = fs.readFileSync(path.join(__dirname, 'one-offer-creator-to-settlement-experiment.md'), 'utf8');
+const old = fs.readFileSync(path.join(root, 'r158', 'when-familiarity-masquerades-as-evidence-investigation.md'), 'utf8');
+const d = JSON.parse(fs.readFileSync(path.join(__dirname, 'evidence-claims-and-commercial-holds.json'), 'utf8'));
+function check(A,H,M,D,O) {
+ assert.ok(A.trim().split(/\s+/).length > 2200, 'substantial original article required');
+ for(const term of ['attentional blink','Raymond','Shapiro','Arnell','Olivers','Hommel','Slagter','seventeen retreat','twenty-three novices','three-month','10–12 hours','P3b','lag-one','not a clinical trial','https://pubmed.ncbi.nlm.nih.gov/1500880/','https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.0050138','not independently']) assert.ok(A.toLowerCase().includes(term.toLowerCase()), 'missing investigation evidence: '+term);
+ assert.ok(O.includes('tape-recorded statements'), '1977 Praxxis factual correction missing');
+ assert.ok(!O.includes('in front of readers three times'), 'obsolete 1977 stimulus error');
+ assert.equal(D.status,'DRAFT_UNPUBLISHED_NOT_COMMERCIALLY_AUTHORIZED');
+ assert.equal(D.affiliate_url,null);
+ assert.equal(D.tracking_active,false);
+ assert.equal(D.paid_conversions_verified,null);
+ assert.equal(D.experiment_status,'NOT_RUN');
+ assert.ok(D.sources && Object.keys(D.sources).length >= 14,'source register');
+ assert.ok(D.claims.length >= 32,'claim decisions');
+ assert.ok(D.claims.every(c=>D.sources[c.source]),'all claims source mapped');
+ assert.ok(D.release_gates.length >= 35 && D.release_gates.every(g=>g.status==='CLOSED'),'all commercial gates fail closed');
+ for(const id of ['R159-10','R159-16','R159-17','R159-20','R159-21','R159-23','R159-28','R159-33']) assert.ok(D.claims.find(c=>c.id===id),'critical claim gate '+id);
+ assert.ok(H.includes('<meta name="robots" content="noindex,nofollow">'));
+ assert.ok(H.includes('<main class="wrap" id="main">') && H.includes('href="#main"'),'skip link/main');
+ assert.ok(H.includes('<h1>') && H.includes('aria-label') && H.includes(':focus-visible') && H.includes('prefers-reduced-motion'),'a11y basics');
+ assert.ok(H.includes('min-height:48px') && H.includes('max-width:390px'),'touch/small viewport');
+ assert.ok(H.includes('https://finalvestige.com/focus/') && H.includes('Seven Day Focus Fieldbook'),'one existing resource CTA');
+ assert.ok(/<button[^>]*\bdisabled\b[^>]*>Purchasing link not active<\/button>/.test(H),'physically disabled merchant control');
+ assert.ok(H.includes('If a future approved purchasing link is added and you purchase through it, Final Vestige may earn a commission at no additional cost to you.'),'adjacent plain disclosure');
+ const buttonAt=H.indexOf('Purchasing link not active');
+ const disclosureAt=H.indexOf('If a future approved purchasing link');
+ assert.ok(disclosureAt>0 && disclosureAt<buttonAt && buttonAt-disclosureAt<700,'disclosure adjacent to control');
+ assert.ok(H.includes('12 levels and 48 MP3') && H.includes('$87.99') && H.includes('November 5') && H.includes('one-year guarantee'),'exact seller offer, as-of representation');
+ assert.ok(H.includes('transcript and captions') && H.includes('00–07s:') && H.includes('32–42s:'),'42s original timed transcript');
+ assert.ok(!/<(?:script|form|iframe|video|audio)\b/i.test(H),'no new form/script/video/iframe until QA/approval');
+ assert.ok(!/href="https?:\/\/[^"]*(?:affid=|affiliate_id|subid=|refid=|clickid=)/i.test(H),'no affiliate ref links');
+ assert.ok(!/(?:autoplay|onload=|onclick=|dataLayer|gtag\s*\(|fbq\s*\()/i.test(H),'no autoplay/injected analytics');
+ assert.ok(M.includes('TASK-008') && M.includes('Zen12') && M.includes('NOT COMPUTABLE') && M.includes('confirmed_signup'),'creator map/revenue proof boundaries');
+ assert.ok(M.includes('No real earning URL') && M.includes('No video, binary file'),'commercial hard hold');
+}
+check(a,h,m,d,old);
+let killed=0;
+function mutation(label, mutate) {
+ let [A,H,M,D,O]=[a,h,m,JSON.parse(JSON.stringify(d)),old];
+ [A,H,M,D,O]=mutate(A,H,M,D,O);
+ assert.throws(()=>check(A,H,M,D,O),undefined,'mutation escaped: '+label);
+ killed++;
+}
+mutation('enable merchant purchase',(A,H,M,D,O)=>[A,H.replace('class="disabled" disabled type="button"','class="disabled" type="button"'),M,D,O]);
+mutation('remove near-CTA financial disclosure',(A,H,M,D,O)=>[A,H.replace('If a future approved purchasing link is added and you purchase through it, Final Vestige may earn a commission at no additional cost to you.','No fee.'),M,D,O]);
+mutation('add extra subscriber form',(A,H,M,D,O)=>[A,H.replace('</main>','<form><input type="email"></form></main>'),M,D,O]);
+mutation('inject analytics script',(A,H,M,D,O)=>[A,H.replace('</body>','<script src="https://example.net/pixel.js"></script></body>'),M,D,O]);
+mutation('insert external iframe',(A,H,M,D,O)=>[A,H.replace('</body>','<iframe src="https://example.net/ad"></iframe></body>'),M,D,O]);
+mutation('activate uncaptioned video',(A,H,M,D,O)=>[A,H.replace('</body>','<video autoplay src="media.mp4"></video></body>'),M,D,O]);
+mutation('insert affiliate click URL',(A,H,M,D,O)=>[A,H.replace('</main>','<a href="https://zen12.com/?affid=123">Buy</a></main>'),M,D,O]);
+mutation('remove noindex',(A,H,M,D,O)=>[A,H.replace('noindex,nofollow','index,follow'),M,D,O]);
+mutation('remove focus route',(A,H,M,D,O)=>[A,H.replaceAll('https://finalvestige.com/focus/','https://example.test/'),M,D,O]);
+mutation('remove small-screen rule',(A,H,M,D,O)=>[A,H.replace('max-width:390px','max-width:391px'),M,D,O]);
+mutation('unauthorized gate open',(A,H,M,D,O)=>{D.release_gates[0].status='OPEN';return[A,H,M,D,O]});
+mutation('invent affiliate URL',(A,H,M,D,O)=>{D.affiliate_url='https://example.test/aff';return[A,H,M,D,O]});
+mutation('invent paid commission',(A,H,M,D,O)=>{D.paid_conversions_verified=10;return[A,H,M,D,O]});
+mutation('invent experiment results',(A,H,M,D,O)=>{D.experiment_status='VERIFIED';return[A,H,M,D,O]});
+mutation('delete independent source',(A,H,M,D,O)=>{delete D.sources.S07;return[A,H,M,D,O]});
+mutation('erase publisher revenue caution',(A,H,M,D,O)=>[A,H,M.replace('NOT COMPUTABLE','0'),D,O]);
+mutation('delete scientific participant evidence',(A,H,M,D,O)=>[A.replace('seventeen retreat participants','many retreat participants'),H,M,D,O]);
+mutation('restore 1977 erroneous stimulus',(A,H,M,D,O)=>[A,H,M,D,O.replace('tape-recorded statements','statements given to readers')]);
+console.log('R159 baseline PASS; '+killed+'/'+killed+' adversarial mutations killed. Source checks only; no Node CI/browser/merchant/live tests claimed.');
