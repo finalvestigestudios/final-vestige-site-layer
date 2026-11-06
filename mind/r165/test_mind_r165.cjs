@@ -80,7 +80,7 @@ function scan(files){
  check(m.measurement.net_revenue_per_1000==="NOT_COMPUTABLE","correct revenue state");
  check(spec.includes("asset_id = NULL")&&spec.toLowerCase().includes("three")&&spec.includes("TASK-008"),"creator coordination only");
  check(spec.includes("7-day")&&spec.includes("30-day"),"cohorts");
- check(spec.includes("confirmed_paid_order")&&spec.includes("affiliate_click"),"clicks separate from commerce");
+ check(spec.includes("merchant_confirmed_order")&&spec.includes("affiliate_click"),"clicks separate from commerce");
  check(spec.includes("preload=\"none\"")&&spec.includes("WebVTT"),"video accessibility/performance planned");
  check(spec.includes("Do not")&&spec.includes("Grok"),"no Grok queue takeover");
  check(hub.includes("wp:group")&&hub.includes("Mind &amp; Perception"),"WordPress hub companion");
