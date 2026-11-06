@@ -1,0 +1,85 @@
+{
+  "status": "REVIEW_ONLY_HOLD_UNSENT",
+  "as_of_utc": "2026-11-06T06:41:02Z",
+  "original_master_pr": 175,
+  "quality_pr": 201,
+  "stacked_parent_pr": 1209,
+  "issues": {
+    "01": {
+      "type": "editorial",
+      "role": "perception",
+      "candidate": "R153 optional, not approved",
+      "cta_status": "published_focus"
+    },
+    "02": {
+      "type": "editorial",
+      "role": "historical_method",
+      "candidate": "R155 optional, distinct live Mesmerism CTA",
+      "cta_status": "published_wp_1924"
+    },
+    "03": {
+      "type": "affiliate-reserved",
+      "role": "Zen12 guide",
+      "candidate": "canonical master only pending founder selection",
+      "cta_status": "HOLD_MERCHANT_UNPUBLISHED"
+    },
+    "04": {
+      "type": "editorial",
+      "role": "Apollo1 primary_source",
+      "candidate": "R154 optional, not approved",
+      "cta_status": "published_Apollo"
+    },
+    "05": {
+      "type": "affiliate-reserved",
+      "role": "Total Focus guide",
+      "candidate": "canonical master only pending founder selection",
+      "cta_status": "HOLD_MERCHANT_UNPUBLISHED"
+    },
+    "06": {
+      "type": "editorial",
+      "role": "historical_method_transfer",
+      "candidate": "R155 optional, distinct live Piri Reis CTA",
+      "cta_status": "published_wp_1917"
+    }
+  },
+  "provider_reported_total": 3,
+  "provider_reported_confirmed": 3,
+  "provider_reported_unconfirmed": 2,
+  "email_eligible_audience": null,
+  "confirmed_signup_events": null,
+  "received_welcome_proof": null,
+  "net_paid_revenue": null,
+  "qualified_human_sessions": null,
+  "net_revenue_per_1000": null,
+  "locks": {
+    "founder_send_approval": false,
+    "editorial_substitutions_approved": false,
+    "affiliate_email_permission_verified": false,
+    "authorized_earning_url_verified": false,
+    "publisher_postal_address_verified": false,
+    "working_jetpack_unsubscribe_verified": false,
+    "native_email_preview_verified": false,
+    "received_email_verified": false,
+    "signed_out_signup_e2e_verified": false
+  },
+  "sources": [
+    {
+      "issue": "02",
+      "cta": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "links": [
+        "https://www.gutenberg.org/files/78413/78413-h/78413-h.htm",
+        "https://wellcomecollection.org/works/enhgscmf",
+        "https://finalvestige.com/2026/11/02/mesmerism/"
+      ]
+    },
+    {
+      "issue": "06",
+      "cta": "https://finalvestige.com/2026/11/02/piri-reis-map/",
+      "links": [
+        "https://commons.wikimedia.org/wiki/File:PiriReisMap_Akcura_1935.pdf",
+        "https://www.ugapress.org/9780820321578/the-piri-reis-map-of-1513/",
+        "https://finalvestige.com/2026/11/02/piri-reis-map/"
+      ]
+    }
+  ]
+}
