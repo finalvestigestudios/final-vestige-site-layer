@@ -1,0 +1,378 @@
+{
+  "schema": "fv.mind.product_claims.r179.v1",
+  "checked_on": "2026-11-06",
+  "status": "UNPUBLISHED_NO_EARNING_LINKS",
+  "review_scope": "Public source pages and bounded Gmail promotional search; no authenticated merchant/affiliate or Payhip ledger",
+  "linked_sources": [
+    {
+      "id": "S01",
+      "url": "https://inspire3.com/",
+      "type": "official_company_portfolio",
+      "verifies": "Company lists Zen12, Hypnosis Live, Brainwave Shots; benefit descriptions seller-originated"
+    },
+    {
+      "id": "S02",
+      "url": "https://zen12.com/",
+      "type": "exact_official_sales_page",
+      "verifies": "Premium includes 12 levels and 48 MP3; 4 listening styles; page has variable displayed price and advertised one-year guarantee; final checkout unknown"
+    },
+    {
+      "id": "S03",
+      "url": "https://affiliates.inspire3.com/",
+      "type": "official_public_partner_portal",
+      "verifies": "Program exists and seller advertises its own general terms; does not grant FV any individual authorization"
+    },
+    {
+      "id": "S04",
+      "url": "https://hypnosislive.com/",
+      "type": "official_sales_page_stale_date_warning",
+      "verifies": "Over 200 audios catalog claim; accessible page presents sale ending June 30 2026; cannot use displayed $2/countdown as November 2026 offer"
+    },
+    {
+      "id": "S05",
+      "url": "https://brainwaveshots.com/",
+      "type": "official_sales_page",
+      "verifies": "Audio catalog with Focus Shot etc; promotional timer and bundle claims require current checkout verification"
+    },
+    {
+      "id": "S06",
+      "url": "https://doi.org/10.1093/nc/niaf021",
+      "type": "primary_peer_reviewed_research",
+      "verifies": "Ganzfeld visual experiments 28/45/67; interview records 27/41/66; no significant noise-condition effect in reported event-count analysis"
+    },
+    {
+      "id": "S07",
+      "url": "https://doi.org/10.1016/j.jbtep.2020.101635",
+      "type": "review",
+      "verifies": "49 studies in 41 papers about induced auditory perceptual experiences, not Inspire3 outcomes"
+    },
+    {
+      "id": "S08",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "type": "regulatory",
+      "verifies": "Product-specific health benefits need appropriate substantiation; evaluate implied claims"
+    },
+    {
+      "id": "S09",
+      "url": "https://www.ftc.gov/business-guidance/resources/disclosures-101-social-media-influencers",
+      "type": "regulatory",
+      "verifies": "Disclosures clear, conspicuous and adjacent to material connection and endorsement"
+    },
+    {
+      "id": "S10",
+      "url": "https://finalvestige.com/focus/",
+      "type": "existing_live_first_party",
+      "verifies": "52-page free Focus Fieldbook through existing Jetpack/Dispatch signup; no paid offer"
+    },
+    {
+      "id": "S11",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "type": "existing_first_party_route",
+      "verifies": "Source-controlled historical research route referenced by Issue #171; current web open returned error"
+    },
+    {
+      "id": "S12",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "type": "governance",
+      "verifies": "Founder release controls and claims policy"
+    },
+    {
+      "id": "S13",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "type": "governance",
+      "verifies": "Attribution and paid-revenue proof requirements"
+    },
+    {
+      "id": "S14",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/1317",
+      "type": "prior_source_only",
+      "verifies": "R178 text/video A/B prototypes are unpublished and disabled"
+    },
+    {
+      "id": "S15",
+      "url": "https://finalvestige.com/collection/",
+      "type": "existing_first_party",
+      "verifies": "Public collection page prominently describes the free fieldbook and contextual Suunto affiliate, not paid Mind Payhip SKU"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "statement": "Zen12 Premium offers twelve levels",
+      "classification": "SELLER_DESCRIPTION",
+      "source_id": "S02",
+      "decision": "ALLOW as clearly attributed seller description"
+    },
+    {
+      "id": "C02",
+      "statement": "Premium contains forty-eight MP3 files",
+      "classification": "SELLER_DESCRIPTION",
+      "source_id": "S02",
+      "decision": "ALLOW with attribution; no download/fullness test"
+    },
+    {
+      "id": "C03",
+      "statement": "Premium offers four styles: guided, music, nature, white noise",
+      "classification": "SELLER_DESCRIPTION",
+      "source_id": "S02",
+      "decision": "ALLOW with attribution"
+    },
+    {
+      "id": "C04",
+      "statement": "Each session is advertised as twelve minutes",
+      "classification": "SELLER_DESCRIPTION",
+      "source_id": "S02",
+      "decision": "ALLOW as format claim, not time-equivalent efficacy"
+    },
+    {
+      "id": "C05",
+      "statement": "Public seller page advertises one-year money-back guarantee",
+      "classification": "SELLER_DESCRIPTION",
+      "source_id": "S02",
+      "decision": "ALLOW only with not-verified-at-checkout caveat; no promise FV fulfills"
+    },
+    {
+      "id": "C06",
+      "statement": "Premium final checkout price is $87.99",
+      "classification": "CONFLICTING_OR_UNVERIFIED",
+      "source_id": "S02",
+      "decision": "BLOCK: prior R178 said $87.99 while present web text presents $87; currency, taxes, order bumps and cart amount unverified"
+    },
+    {
+      "id": "C07",
+      "statement": "Premium final checkout price is $87",
+      "classification": "CONFLICTING_OR_UNVERIFIED",
+      "source_id": "S02",
+      "decision": "BLOCK: seller public text gives $87 but not binding checkout receipt"
+    },
+    {
+      "id": "C08",
+      "statement": "Seller claims twelve minutes equal an hour of advanced meditation",
+      "classification": "UNSUPPORTED_PRODUCT_EFFICACY",
+      "source_id": "S02",
+      "decision": "DO NOT REPEAT as outcome/endorsement; only discuss critically"
+    },
+    {
+      "id": "C09",
+      "statement": "Seller claims brainwave audio controls brainwaves",
+      "classification": "UNSUPPORTED_PRODUCT_EFFICACY",
+      "source_id": "S02",
+      "decision": "DO NOT ADOPT as FV factual claim"
+    },
+    {
+      "id": "C10",
+      "statement": "Zen12 treats anxiety, insomnia or disease",
+      "classification": "UNSUBSTANTIATED_MEDICAL",
+      "source_id": "S08",
+      "decision": "BLOCK"
+    },
+    {
+      "id": "C11",
+      "statement": "Ganzfeld study proves audio brainwave entrainment",
+      "classification": "FALSE_INFERENCE",
+      "source_id": "S06",
+      "decision": "BLOCK: not a product test, no difference in hallucination event count across noise conditions"
+    },
+    {
+      "id": "C12",
+      "statement": "Inspire3 affiliate program exists",
+      "classification": "PUBLIC_PORTAL_VERIFIED",
+      "source_id": "S03",
+      "decision": "ALLOW, not proof FV accepted"
+    },
+    {
+      "id": "C13",
+      "statement": "Final Vestige accepted by Inspire3",
+      "classification": "NO_PUBLISHER_PROOF",
+      "source_id": "S03",
+      "decision": "BLOCK pending named FV account/approval and terms"
+    },
+    {
+      "id": "C14",
+      "statement": "Final Vestige approved to market Zen12 on site",
+      "classification": "CHANNEL_AUTHORIZATION_UNKNOWN",
+      "source_id": "S03",
+      "decision": "BLOCK pending written permitted channel and exact product"
+    },
+    {
+      "id": "C15",
+      "statement": "Final Vestige approved to promote Zen12 in Jetpack emails",
+      "classification": "CHANNEL_AUTHORIZATION_UNKNOWN",
+      "source_id": "S03",
+      "decision": "BLOCK: distinct permission; Dispatch #174 owns copy"
+    },
+    {
+      "id": "C16",
+      "statement": "Final Vestige approved to use Inspire3 creatives or coupon",
+      "classification": "CREATIVE_RIGHTS_UNKNOWN",
+      "source_id": "S03",
+      "decision": "BLOCK no copied creative or code"
+    },
+    {
+      "id": "C17",
+      "statement": "An affiliate URL will track and pay FV commissions",
+      "classification": "TRACKING_UNVERIFIED",
+      "source_id": "S03",
+      "decision": "BLOCK no link; only partner account proof and controlled test when authorized"
+    },
+    {
+      "id": "C18",
+      "statement": "Public affiliate portal's commission percentages apply to FV",
+      "classification": "PAYOUT_UNVERIFIED",
+      "source_id": "S03",
+      "decision": "BLOCK; no commission statements in consumer copy"
+    },
+    {
+      "id": "C19",
+      "statement": "Hypnosis Live website's $2 sale applies November 6",
+      "classification": "PROBABLY_STALE",
+      "source_id": "S04",
+      "decision": "BLOCK: site says sale ends June 30, 2026 and has live countdown; observe not activate"
+    },
+    {
+      "id": "C20",
+      "statement": "Brainwave Shots Focus Shot reliably increases focus",
+      "classification": "UNSUBSTANTIATED_PRODUCT_EFFICACY",
+      "source_id": "S05",
+      "decision": "BLOCK"
+    },
+    {
+      "id": "C21",
+      "statement": "Brainwave Shots current bundle special applies",
+      "classification": "CHECKOUT_UNVERIFIED",
+      "source_id": "S05",
+      "decision": "BLOCK until current exact cart/payment terms"
+    },
+    {
+      "id": "C22",
+      "statement": "The free FV Focus Fieldbook is a paid Mind SKU",
+      "classification": "FALSE_OR_UNVERIFIED",
+      "source_id": "S10",
+      "decision": "BLOCK; it is a free signup incentive, no price"
+    },
+    {
+      "id": "C23",
+      "statement": "A rights-cleared FV Payhip Mind SKU is live and paid",
+      "classification": "INVENTORY_UNKNOWN",
+      "source_id": "S15",
+      "decision": "BLOCK absent SKU ID, license, current checkout and fulfillment proof"
+    },
+    {
+      "id": "C24",
+      "statement": "Using a disclosed affiliate link implies FV personally used the product",
+      "classification": "UNSUPPORTED_EXPERIENCE",
+      "source_id": "S09",
+      "decision": "BLOCK do not invent experience or personally tested claims"
+    },
+    {
+      "id": "C25",
+      "statement": "Outbound affiliate click equals sale",
+      "classification": "ACCOUNTING_INVALID",
+      "source_id": "S13",
+      "decision": "BLOCK; confirmed merchant sale separate"
+    },
+    {
+      "id": "C26",
+      "statement": "Merchant retail order value equals FV affiliate revenue",
+      "classification": "ACCOUNTING_INVALID",
+      "source_id": "S13",
+      "decision": "BLOCK; use settled FV commission only, net adjustments"
+    },
+    {
+      "id": "C27",
+      "statement": "Current social asset_id can be inferred from proposed topics",
+      "classification": "ATTRIBUTION_UNKNOWN",
+      "source_id": "S13",
+      "decision": "BLOCK; only Grok actual published IDs and valid UTMs"
+    },
+    {
+      "id": "C28",
+      "statement": "The 2025 Ganzfeld report involved 28/45/67 participants",
+      "classification": "PRIMARY_SUPPORTED",
+      "source_id": "S06",
+      "decision": "ALLOW, label interview subset 27/41/66"
+    },
+    {
+      "id": "C29",
+      "statement": "Audio condition changed number of visual experiences",
+      "classification": "NOT_ESTABLISHED",
+      "source_id": "S06",
+      "decision": "BLOCK; no significant observed main effect"
+    },
+    {
+      "id": "C30",
+      "statement": "Free Fieldbook is independently proven to treat procrastination",
+      "classification": "UNSUPPORTED_PRODUCT_CLAIM",
+      "source_id": "S10",
+      "decision": "BLOCK; free format is not clinically tested"
+    },
+    {
+      "id": "C31",
+      "statement": "Public full affiliate disclosure alone suffices at earning link",
+      "classification": "DISCLOSURE_INADEQUATE",
+      "source_id": "S09",
+      "decision": "BLOCK; material relationship near link"
+    },
+    {
+      "id": "C32",
+      "statement": "Any conversion/revenue has been verified during this run",
+      "classification": "NO_AUTHORITATIVE_LEDGER",
+      "source_id": "S13",
+      "decision": "BLOCK; metrics NOT COMPUTABLE"
+    }
+  ],
+  "required_go_no_go": [
+    {
+      "gate": "partner_identity",
+      "state": "HARD_HOLD",
+      "evidence": "Named FV approval/active account in partner dashboard"
+    },
+    {
+      "gate": "exact_zen12_offer",
+      "state": "HARD_HOLD",
+      "evidence": "Permitted offer ID/landing URL and approved channel list"
+    },
+    {
+      "gate": "affiliate_link",
+      "state": "HARD_HOLD",
+      "evidence": "Publisher-specific earning URL, allowed deep linking and attribution window"
+    },
+    {
+      "gate": "price_and_refund",
+      "state": "HARD_HOLD",
+      "evidence": "Live exact checkout snapshot incl tax/upsells and official refund process; do not advertise fixed price before"
+    },
+    {
+      "gate": "creative_rights",
+      "state": "HARD_HOLD",
+      "evidence": "Permission to use merchant assets OR keep 100% original creative"
+    },
+    {
+      "gate": "revenue_receipt",
+      "state": "UNOBSERVABLE",
+      "evidence": "Settled publisher commission net of refunds and payment fees"
+    },
+    {
+      "gate": "fv_owned_sku",
+      "state": "UNOBSERVABLE",
+      "evidence": "Payhip rights/stock/price/fulfillment and successful authorized purchase receipt"
+    },
+    {
+      "gate": "grok_ids",
+      "state": "UNOBSERVABLE",
+      "evidence": "Real media URLs/asset IDs handed off from Grok in TASK-008"
+    },
+    {
+      "gate": "guest_signup",
+      "state": "UNTESTED",
+      "evidence": "Existing Focus opt-in consent and message delivery in authorized QA"
+    },
+    {
+      "gate": "live_release",
+      "state": "REQUIRES_FOUNDER",
+      "evidence": "Founder explicit CMS/navigation/merchant release approval plus independent QA"
+    }
+  ],
+  "evidence_boundary": "Bounded Gmail search for Inspire3/Zen12 promotional email found no verified named FV affiliate acceptance. Search cannot rule out separately authenticated dashboard or other mailbox. This document is not an acceptance or refund audit.",
+  "privacy": "No visitor IP, emails, browser fingerprint, raw customer records or sensitive user profile data recorded."
+}
