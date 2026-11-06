@@ -246,6 +246,10 @@ jobs:
         run: |
           python -m unittest discover -s products/desktop/tests -p 'test_native_cell_custody_r220.py' > /dev/null 2>&1
           python -OO -m unittest discover -s products/desktop/tests -p 'test_native_cell_custody_r220.py' > /dev/null 2>&1
+      - name: R221 native dict row custody (20 synthetic tests; normal and -OO)
+        run: |
+          python -m unittest discover -s products/desktop/tests -p 'test_atomic_native_dict_snapshot_r221.py' > /dev/null 2>&1
+          python -OO -m unittest discover -s products/desktop/tests -p 'test_atomic_native_dict_snapshot_r221.py' > /dev/null 2>&1
       - name: R200 execute R194-R199 financial and policy audit tests (148 methods per mode)
         run: |
           python products/desktop/scripts/safe_audit_subprocess_r205.py
@@ -934,6 +938,14 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R220 native CSV value custody failed" }
           python -OO -m unittest discover -s products/desktop/tests -p 'test_native_cell_custody_r220.py' *> $null
           if ($LASTEXITCODE -ne 0) { throw "R220 optimized native CSV value custody failed" }
+      - name: R221 native dict row custody (20 synthetic tests; normal and -OO)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python -m unittest discover -s products/desktop/tests -p 'test_atomic_native_dict_snapshot_r221.py' *> $null
+          if ($LASTEXITCODE -ne 0) { throw "R221 native dict row custody failed" }
+          python -OO -m unittest discover -s products/desktop/tests -p 'test_atomic_native_dict_snapshot_r221.py' *> $null
+          if ($LASTEXITCODE -ne 0) { throw "R221 optimized native dict row custody failed" }
       - name: R200 execute R194-R199 financial and policy audit tests (148 methods per mode)
         shell: pwsh
         run: |
