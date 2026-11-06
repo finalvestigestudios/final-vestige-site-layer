@@ -19,6 +19,7 @@ SCHEMA = 'fv-preparedness-r177-safety-excerpt-custody-v1'
 HOLD = 'DRAFT_HARD_HOLD'
 INVALID = 'INVALID_HARD_HOLD'
 MANIFEST = Path('preparedness/review/r177/safety_contract.json')
+CONTRACT_SHA256 = 'bcff23175c09c9e4e54ade74377cadd4bf9604653593a819e6dd31f873c3a700'
 ROOT = Path('preparedness/content/articles')
 EXPORT = Path('preparedness/build/wp')
 SOURCE_RE = re.compile(r'\{\{(?:cite|link):[^}]+\}\}')
@@ -124,7 +125,10 @@ def inspect(repo: Path, check_export: bool = False) -> dict:
     }
     try:
         manifest_path = repo / MANIFEST
-        manifest = json.loads(manifest_path.read_text(encoding='utf-8'))
+        manifest_bytes = manifest_path.read_bytes()
+        if hashlib.sha256(manifest_bytes).hexdigest() != CONTRACT_SHA256:
+            raise ValueError('safety contract byte identity changed without reviewed code')
+        manifest = json.loads(manifest_bytes.decode('utf-8'))
         if (manifest.get('schema') != SCHEMA or manifest.get('state') != HOLD or
             any(manifest.get(k) is True for k in ('publication_authorized',
                 'independent_qd_pass', 'qualified_source_review',
