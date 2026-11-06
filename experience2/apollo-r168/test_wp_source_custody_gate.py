@@ -123,7 +123,7 @@ class SourceCustody(unittest.TestCase):
                             # an EMPTY WHITE BAR over the entire control label.
                             good=self.center_ink_pixels(controls.nth(0).screenshot())
                             self.assertGreater(good,40, 'active archive label visually blank')
-                            page.add_style_tag(content='.fv-ex2-page .fvx-archive-choice__button[aria-pressed=\\"true\\"]{background:Highlight!important;color:HighlightText!important;outline:none!important}')
+                            page.add_style_tag(content='.fv-ex2-page .fvx-archive-choice__button[aria-pressed=\"true\"]{background:Highlight!important;color:HighlightText!important;outline:none!important}')
                             bad=self.center_ink_pixels(controls.nth(0).screenshot())
                             self.assertLess(bad,5, 'negative control failed to recreate inaccessible label')
                             pixel_witness.update({'corrected_dark_pixels':good,'regression_dark_pixels':bad,'witness_viewport_css_px':390})
