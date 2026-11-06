@@ -78,7 +78,7 @@ Final Vestige should offer an **independent comparison**, not a miracle claim. D
 
 [3] FTC *Health Products Compliance Guidance*, https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance; product-specific substantiation required for health claims.
 
-[4] 2023 systematic review of brainwave entrainment EEG studies (see R168 prior reference and independently recheck before any marketing claim). This guide does not rely on the review for a positive Zen12 claim.
+[4] Ingendoh, Posny & Heine (2023), *Binaural beats to entrain the brain? A systematic review*, https://pubmed.ncbi.nlm.nih.gov/37205669/ — 14 studies: five results consistent with entrainment, eight contradictory, one mixed; heterogeneous methods; **not a Zen12 Premium product trial**.
 
 [5] Inspire3 catalog https://inspire3.com/ and partner portal https://affiliates.inspire3.com/; program existence, not publisher eligibility.
 
