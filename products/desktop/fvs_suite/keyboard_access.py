@@ -14,7 +14,9 @@ def install_shortcuts(root, inputs, output, generate, *, review=None,
     """Install shortcut access without replacing native Tab or focus-reveal.
 
     Alt+1..3 focuses source fields; Ctrl+1..3 opens their existing Browse
-    buttons. Alt+O/Ctrl+O access the output folder. Alt+G/Ctrl+Return invokes
+    buttons. Both numeric-keypad digit and navigation keysyms map to the same
+    actions, including with Num Lock off (KP_End/KP_Down/KP_Next).
+    Alt+O/Ctrl+O access the output folder. Alt+G/Ctrl+Return invokes
     the existing Generate button; Alt+R invokes the gated premium review.
     Invoice Twin's additional near-match window is focused by Alt+W.
     ProcureGuard's optional policy input/Browse use Alt+P/Ctrl+P.
@@ -51,9 +53,17 @@ def install_shortcuts(root, inputs, output, generate, *, review=None,
         raise ValueError("Input and optional controls must be independent")
 
     actions = {}
+    keypad_keysyms = (("KP_1", "KP_End"),
+                      ("KP_2", "KP_Down"),
+                      ("KP_3", "KP_Next"))
     for i, (entry, browse) in enumerate(fields, start=1):
         actions[f"<Alt-Key-{i}>"] = entry.focus_set
         actions[f"<Control-Key-{i}>"] = browse.invoke
+        # Tk may report either the digit or its navigation keysym depending
+        # on Num Lock. Both receive the identical existing button operation.
+        for keysym in keypad_keysyms[i - 1]:
+            actions[f"<Alt-Key-{keysym}>"] = entry.focus_set
+            actions[f"<Control-Key-{keysym}>"] = browse.invoke
     actions["<Alt-Key-o>"] = output[0].focus_set
     actions["<Control-Key-o>"] = output[1].invoke
     if invoice_window is not None:

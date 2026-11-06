@@ -267,6 +267,7 @@ def run(app_id):
               wraplength=690).grid(row=disclaimer_row, column=0,
                                    columnspan=3, sticky="w")
     hint = (f"Keyboard: Alt+1..{len(labels)} focus an input; Ctrl+1..{len(labels)} browse; "
+            "numeric keypad 1..3 also supported (Num Lock on/off); "
             "Alt+O/Ctrl+O output; Alt+G/Ctrl+Enter generate")
     if app_id == "ledger":
         hint += ("; Alt+L left match, Alt+R right match; "
