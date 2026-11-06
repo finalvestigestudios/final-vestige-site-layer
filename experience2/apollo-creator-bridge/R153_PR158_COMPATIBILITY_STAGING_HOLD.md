@@ -6,7 +6,7 @@ Scope: Experience 2.0 Issue #150; revenue/attribution Issue #820 and charter #81
 
 At blob `403d128c57b9bc82dac7c619651689070edef86c`, `experience2/research-desk/templates/ledger.html` contains **zero** `data-fvx-clear` elements and **zero** `data-fvx-chrono-link` attributes. The six actual evidence records have `data-fvx-record`, search indexes, and a hidden `data-fvx-tools` container. R152's JS requires a Clear button and therefore exits without initializing on PR #158's actual markup. Previous passing synthetic tests did not detect this mismatch.
 
-R153 supplies `r153_source_ledger_compat.js` as an **isolated candidate replacement**, NOT a second script to load beside PR #158's JS. It generates the optional Clear button only in JS when the six-record metadata contract is valid. External and repeated same-fragment links can reveal search-hidden evidence records. Native anchors and no-JS evidence remain readable. Malformed indexes or duplicate record IDs fail open.
+R153 supplies `r153_source_ledger_compat.js` and scoped staging-only `r153_source_ledger_compat.css` (responsive wrap, 44px touch target, visible keyboard focus; load CSS after the PR158 stylesheet) as an **isolated candidate replacement**, NOT a second script to load beside PR #158's JS. It generates the optional Clear button only in JS when the six-record metadata contract is valid. External and repeated same-fragment links can reveal search-hidden evidence records. Native anchors and no-JS evidence remain readable. Malformed indexes or duplicate record IDs fail open.
 
 ## Evidence and limits
 
@@ -14,7 +14,7 @@ R153 supplies `r153_source_ledger_compat.js` as an **isolated candidate replacem
 - Playwright Chromium 144.0.7559.96, **PR158-markup-shape controlled fixture (NOT complete real template)**: 99/99 checks PASS at 320, 360, 390, 768, 1440 and 1920; keyboard, touch, reduced motion, source links, hash continuity, fail-open/no-JS, horizontal overflow. Two runs identical (JSON receipts + 6 screenshot SHA-256 values).
 - Committed smoke runner `r153_pr158_smoke_qa.py`: 30/30 PASS in two native Chromium runs; receipts and screenshots identical.
 - Prior R152 browser runner using R153 JS: 79/79 controlled-fixture checks PASS.
-- Source JS Git blob `a485123a0c9bf8cd1f2ba7a52d5ffd611dd6f08a`; smoke runner Git blob `00ba3980332b933950202f7540f1b35384668bf8` — both match locally tested files.
+- Source JS Git blob `3610ec8f68fc0332db04bcfa5c368574818e9866`; smoke runner Git blob `2f02a3517657eef378272e889372c3e3b0be48e8` — both match locally tested files.
 - **NOT RUN:** complete PR #158 template, published WordPress 2017 export, actual-page axe-core, page LCP/CLS, third-party image delivery, exact-head hosted CI. NASA individual media commercial permissions and merchant checkout/confirmed orders are NOT VERIFIED.
 
 ## One controlled conversion pathway
