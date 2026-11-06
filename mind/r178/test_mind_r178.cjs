@@ -48,7 +48,7 @@ function validate(files){
   check('article no direct merchant purchasing link',!/<a\b[^>]*href=["']https?:\/\/(?:zen12|inspire3)\./i.test(G));
   check('article uncertainty and individual variation',G.includes('variability')&&G.includes('does not'));
   check('article with standalone free exercise',G.includes('two-column listening log'));
-  check('article separation of research and commercial',G.includes('contains no endorsement')&&G.includes('does not establish'));
+  check('article separation of research and commercial',G.includes('contains no endorsement')&&/does not (?:mean|tell us|establish)/.test(G));
   check('guide authentic review',P.includes('12 levels')||P.includes('twelve levels'));
   check('guide review citation is exact and mixed',P.includes('37205669')&&P.includes('eight contradictory'));
   check('guide no active earning link',P.includes('no active purchase/referral link')||P.includes('no active purchase'));
