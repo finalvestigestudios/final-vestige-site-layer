@@ -26,7 +26,7 @@ function verify(d, verbose=false){
  ok(article.includes('AUC 0.961')&&article.includes('0.956'),'accuracy result omitted');
  ok(article.includes('not statistically significant'),'accuracy caveat missing');
  ok(article.includes('49 people with acquired brain injury'),'distinct RCT context missing');
- ok(article.includes('not a hypnosis intervention'),'free demo disclaimer missing');
+ ok(article.replace(/\\*/g,'').includes('not a hypnosis intervention'),'free demo disclaimer missing');
  ok(article.includes('Puységur'),'archive bridge missing');
  ok(article.includes('38569321'),'primary research PMID missing');
  ok(article.includes('health'),'medical claim boundary missing');
