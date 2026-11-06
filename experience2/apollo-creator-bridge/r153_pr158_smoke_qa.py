@@ -29,7 +29,7 @@ def run(output):
         for w in [320,360,390,768,1440,1920]:
             c=b.new_context(viewport={'width':w,'height':800},reduced_motion='reduce',has_touch=w==390)
             c.route('**/*',lambda r:r.abort())
-            page=c.new_page();page.set_content(html());page.add_script_tag(content=code)
+            page=c.new_page();page.set_content(html());page.add_style_tag(path=str(ROOT/'r153_source_ledger_compat.css'));page.add_script_tag(content=code)
             search=page.locator('input[data-fvx-search]');clear=page.locator('button[data-fvx-clear]')
             ck(w,'activates_without_clear_in_template',page.locator('[data-fvx-tools]').is_visible() and clear.count()==1)
             search.fill('S67-19001');ck(w,'filters_to_one',page.locator('[data-fvx-record]:visible').count()==1)
