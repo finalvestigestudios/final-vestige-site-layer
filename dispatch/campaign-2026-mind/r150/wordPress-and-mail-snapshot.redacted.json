@@ -22,7 +22,7 @@
     "reported_unconfirmed": 2,
     "reported_imported_last_24h": 0,
     "subscriber_counts_additive": false,
-    "number_of_recent_sends": 5,
+    "number_of_latest_published_post_records_examined": 5,
     "latest_five_send_status": "never_sent_opted_out",
     "welcome_contains_fieldbook_link": true,
     "welcome_received_and_pdf_downloaded": null
