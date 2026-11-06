@@ -60,7 +60,7 @@ const mutations=[
 ["add JS","buyer",s=>s.replace("</head>",'<script src="https://example.org/pixel.js"></script></head>')],
 ["new form","hub",s=>s.replace("</main>",'<form></form></main>')],
 ["index draft","hub",s=>s.replace('name="robots" content="noindex,nofollow"','name="robots" content="index,follow"')],
-["remove focus","buyer",s=>s.replace('href="https://finalvestige.com/focus/"','href="#"')],
+["remove focus","buyer",s=>s.replaceAll('href="https://finalvestige.com/focus/"','href="#"')],
 ["remove skip","hub",s=>s.replace('class="skip" href="#main"','class="skip" href="#"')],
 ["remove motion safety","buyer",s=>s.replace("prefers-reduced-motion:reduce","prefers-reduced-motion:normal")],
 ["fake checkout price","buyer",s=>s.replace("final checkout terms are unknown","final price $87")],
