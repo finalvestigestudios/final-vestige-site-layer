@@ -1,0 +1,241 @@
+{
+  "version": "R175",
+  "checked_on": "2026-11-06",
+  "state": "UNPUBLISHED_HARD_HOLD",
+  "source_records": [
+    {
+      "id": "I3",
+      "kind": "seller",
+      "url": "https://inspire3.com/",
+      "observation": "Zen12, Hypnosis Live, Brainwave Shots catalogued",
+      "limit": "seller efficacy claims do not establish results"
+    },
+    {
+      "id": "Z12",
+      "kind": "seller",
+      "url": "https://zen12.com/",
+      "observation": "Premium 12 levels/48 MP3/four styles; on 2026-11-06 public listing showed $87.99; seller advertises one-year guarantee",
+      "limit": "not verified checkout/refund/files or FV promotional rights"
+    },
+    {
+      "id": "HL",
+      "kind": "seller",
+      "url": "https://hypnosislive.com/",
+      "observation": "seller catalogs 200+ self-hypnosis MP3s and Total Focus",
+      "limit": "marketing results and timed offers not independently verified"
+    },
+    {
+      "id": "BWS",
+      "kind": "seller",
+      "url": "https://brainwaveshots.com/",
+      "observation": "seller catalogs Focus Shot and other brainwave recordings",
+      "limit": "no product benefit established"
+    },
+    {
+      "id": "AFF",
+      "kind": "merchant_program",
+      "url": "https://affiliates.inspire3.com/",
+      "observation": "public affiliate marketing portal",
+      "limit": "does not verify FV partner acceptance, link, payout, commission, channel eligibility"
+    },
+    {
+      "id": "FTC",
+      "kind": "regulator",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "observation": "clear conspicuous material relationship disclosure near recommendation"
+    },
+    {
+      "id": "FTCH",
+      "kind": "regulator",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "observation": "objective health claims must be appropriately substantiated"
+    },
+    {
+      "id": "G12",
+      "kind": "primary_research",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/22377138/",
+      "observation": "2012 Ouija ideomotor vs conscious report: conditional guessing 65 vs 50%",
+      "limit": "not a general divination method"
+    },
+    {
+      "id": "O17",
+      "kind": "primary_research",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5858027/",
+      "observation": "2017 pendulum visual detection N80 verbal 57%, pendulum 53%; response bias difference",
+      "limit": "not stronger accuracy or product trial"
+    },
+    {
+      "id": "SH11",
+      "kind": "historical_review",
+      "url": "https://doi.org/10.1080/00029157.2011.10401754",
+      "observation": "historical background ideomotor / Chevreul / Carpenter"
+    },
+    {
+      "id": "Z24",
+      "kind": "scientific_review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39032268/",
+      "observation": "2024 hypnosis theory review",
+      "limit": "not proof about recording"
+    },
+    {
+      "id": "FOCUS",
+      "kind": "live_FV",
+      "url": "https://finalvestige.com/focus/",
+      "observation": "one established 52-page Fieldbook with existing subscriber path",
+      "limit": "workbook not clinically tested"
+    },
+    {
+      "id": "PUY",
+      "kind": "live_FV",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "observation": "historical Puységur source archive",
+      "limit": "historical testimony does not establish unusual cure"
+    },
+    {
+      "id": "GOV",
+      "kind": "governance",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "observation": "Mind ownership and release gates"
+    }
+  ],
+  "claim_decisions": [
+    {
+      "claim": "Zen12 Premium 12 levels, 48 MP3, four listening styles",
+      "status": "SELLER_DESCRIBED",
+      "allow": "date/source attribution",
+      "source": "Z12"
+    },
+    {
+      "claim": "Zen12 public Premium displayed $87.99 on 2026-11-06",
+      "status": "DATED_SELLER_DISPLAY",
+      "allow": "editorial record only, no CTA until checkout",
+      "source": "Z12"
+    },
+    {
+      "claim": "one-year money-back promise",
+      "status": "SELLER_DESCRIBED",
+      "allow": "not an independently confirmed refund",
+      "source": "Z12"
+    },
+    {
+      "claim": "12 minutes equals an hour of meditation",
+      "status": "UNSUBSTANTIATED",
+      "allow": "NO efficacy endorsement",
+      "source": "Z12"
+    },
+    {
+      "claim": "automatic stress relief, enhanced cognition or health",
+      "status": "UNSUBSTANTIATED",
+      "allow": "NO health or cognition benefit claim",
+      "source": "Z12"
+    },
+    {
+      "claim": "Hypnosis Live has an audio called Total Focus",
+      "status": "SELLER_DESCRIBED",
+      "allow": "no earning link or efficacy",
+      "source": "HL"
+    },
+    {
+      "claim": "Brainwave Shots sells Focus Shot",
+      "status": "SELLER_DESCRIBED",
+      "allow": "no earning link or efficacy",
+      "source": "BWS"
+    },
+    {
+      "claim": "2012 uncertain response 65% ideomotor and 50% verbal",
+      "status": "SPECIFIC_PRIMARY_CONDITION",
+      "allow": "investigation with controls/limits",
+      "source": "G12"
+    },
+    {
+      "claim": "2017 pendulum 53%, verbal 57% and altered response bias",
+      "status": "SPECIFIC_PRIMARY_CONDITION",
+      "allow": "investigation with task/limits",
+      "source": "O17"
+    },
+    {
+      "claim": "FV named Inspire3 affiliate approval",
+      "status": "NOT_VERIFIED",
+      "allow": "NO affiliate activation",
+      "source": "AFF"
+    },
+    {
+      "claim": "FV approved earning link and channels",
+      "status": "NOT_VERIFIED",
+      "allow": "NO merchant activation",
+      "source": "AFF"
+    },
+    {
+      "claim": "FV-owned saleable Mind Payhip SKU",
+      "status": "NOT_VERIFIED",
+      "allow": "NO SKU claim",
+      "source": "GOV"
+    },
+    {
+      "claim": "paid sales or settled affiliate commissions",
+      "status": "NOT_VERIFIED",
+      "allow": "NOT COMPUTABLE",
+      "source": "GOV"
+    }
+  ],
+  "release_gates": [
+    {
+      "name": "Named FV Inspire3 publisher acceptance",
+      "status": "CLOSED",
+      "owner": "Founder",
+      "required": "dated authenticated named dashboard approval"
+    },
+    {
+      "name": "Web/social/email permissions and approved creatives",
+      "status": "CLOSED",
+      "owner": "Founder/Mind",
+      "required": "partner terms for each actual channel"
+    },
+    {
+      "name": "Authorized earning URL",
+      "status": "CLOSED",
+      "owner": "Founder/Mind",
+      "required": "account-generated approved URL and link policy"
+    },
+    {
+      "name": "Product checkout total and returns",
+      "status": "CLOSED",
+      "owner": "Commerce",
+      "required": "authentic merchant checkout state and terms"
+    },
+    {
+      "name": "Owned Payhip Mind SKU rights and fulfilment",
+      "status": "UNKNOWN",
+      "owner": "Commerce",
+      "required": "authentic owned SKU, checkout and delivery"
+    },
+    {
+      "name": "Grok actual immutable social asset IDs",
+      "status": "UNKNOWN",
+      "owner": "Grok/Praxxis",
+      "required": "published URLs, ID, date, rights"
+    },
+    {
+      "name": "Existing Focus signup confirmed end-to-end",
+      "status": "UNKNOWN",
+      "owner": "Site QA/Dispatch",
+      "required": "approved guest opt-in and welcome proof"
+    },
+    {
+      "name": "Reconciled paid orders/commissions and qualified sessions",
+      "status": "UNKNOWN",
+      "owner": "Commerce/Claude",
+      "required": "settlement and attributable cohort evidence"
+    },
+    {
+      "name": "Site release",
+      "status": "CLOSED",
+      "owner": "Founder/Claude/QA",
+      "required": "explicit production approval"
+    }
+  ],
+  "affiliate_earning_url": null,
+  "activation": false,
+  "verified_paid_orders": null,
+  "realized_net_revenue_per_1000_qualified_human_sessions": null
+}
