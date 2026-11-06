@@ -1,0 +1,331 @@
+{
+  "schema": "fv-wp-fresh-oversize-20261106",
+  "date": "2026-11-06",
+  "site": "https://finalvestige.com",
+  "method": "Read-only WordPress media.list (2 pages), posts.list, selected 7 posts.get edit",
+  "fresh_published_posts": 66,
+  "fresh_wp_image_media_items": 115,
+  "selected_current_published_post_img_counts": {
+    "34": 1,
+    "35": 1,
+    "36": 1,
+    "37": 1,
+    "38": 1,
+    "299": 8,
+    "621": 6
+  },
+  "full_66_post_markup_recensused": false,
+  "threshold_exclusive": 1572864,
+  "oversized_originals": 13,
+  "original_storage_bytes": 43522829,
+  "buckets": {
+    "direct": {
+      "count": 7,
+      "original_storage_bytes": 23619602
+    },
+    "jetpack": {
+      "count": 3,
+      "original_storage_bytes": 13318311
+    },
+    "not_matched_in_seven_posts": {
+      "count": 3,
+      "original_storage_bytes": 6584916
+    }
+  },
+  "alleged_42_broken_browser_verified": false,
+  "claimed_76_percent_actual_transfer_reduction_measured": false,
+  "measured_browser_transfer_bytes": null,
+  "copyright_reuse_review": "HOLD",
+  "wp_production_writes": 0,
+  "third_party_asset_downloads": 0,
+  "max_preview_width": 960,
+  "site_qa_browser_owner": "#154",
+  "rows": [
+    {
+      "id": 388,
+      "original_url": "https://finalvestige.com/wp-content/uploads/2026/08/vasa-modell-2020.jpg",
+      "original_stored_bytes": 8176362,
+      "wp_original_pixels": [
+        4256,
+        2832
+      ],
+      "wp_has_nonfull_subsizes": true,
+      "observed_published_post": 299,
+      "observed_route": "jetpack",
+      "actual_published_img_src": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/vasa-modell-2020.jpg?fit=1024%2C681&ssl=1",
+      "conditional_960px_geometry": [
+        960,
+        639
+      ],
+      "actual_guest_http_status": null,
+      "actual_cold_wire_bytes": null,
+      "reuse_rights": "HOLD",
+      "wp_publish_allowed": false,
+      "downloaded": false
+    },
+    {
+      "id": 1258,
+      "original_url": "https://finalvestige.com/wp-content/uploads/2026/08/edit-017-v02-nypl-5003296-original.jpg",
+      "original_stored_bytes": 5553669,
+      "wp_original_pixels": [
+        5667,
+        3831
+      ],
+      "wp_has_nonfull_subsizes": true,
+      "observed_published_post": 621,
+      "observed_route": "direct",
+      "actual_published_img_src": "https://finalvestige.com/wp-content/uploads/2026/08/edit-017-v02-nypl-5003296-original.jpg",
+      "conditional_960px_geometry": [
+        960,
+        649
+      ],
+      "actual_guest_http_status": null,
+      "actual_cold_wire_bytes": null,
+      "reuse_rights": "HOLD",
+      "wp_publish_allowed": false,
+      "downloaded": false
+    },
+    {
+      "id": 1257,
+      "original_url": "https://finalvestige.com/wp-content/uploads/2026/08/edit-017-v01-malbone-tunnel-generalpunger-original.jpg",
+      "original_stored_bytes": 4798395,
+      "wp_original_pixels": [
+        4000,
+        3000
+      ],
+      "wp_has_nonfull_subsizes": true,
+      "observed_published_post": 621,
+      "observed_route": "direct",
+      "actual_published_img_src": "https://finalvestige.com/wp-content/uploads/2026/08/edit-017-v01-malbone-tunnel-generalpunger-original.jpg",
+      "conditional_960px_geometry": [
+        960,
+        720
+      ],
+      "actual_guest_http_status": null,
+      "actual_cold_wire_bytes": null,
+      "reuse_rights": "HOLD",
+      "wp_publish_allowed": false,
+      "downloaded": false
+    },
+    {
+      "id": 39,
+      "original_url": "https://finalvestige.com/wp-content/uploads/2026/08/bceca0bd-a16f-44f7-be08-16376fbf08ca.png",
+      "original_stored_bytes": 2892087,
+      "wp_original_pixels": [
+        1672,
+        941
+      ],
+      "wp_has_nonfull_subsizes": false,
+      "observed_published_post": 34,
+      "observed_route": "direct",
+      "actual_published_img_src": "https://finalvestige.com/wp-content/uploads/2026/08/bceca0bd-a16f-44f7-be08-16376fbf08ca.png",
+      "conditional_960px_geometry": [
+        960,
+        540
+      ],
+      "actual_guest_http_status": null,
+      "actual_cold_wire_bytes": null,
+      "reuse_rights": "HOLD",
+      "wp_publish_allowed": false,
+      "downloaded": false
+    },
+    {
+      "id": 43,
+      "original_url": "https://finalvestige.com/wp-content/uploads/2026/08/01340c2e-1165-4ca0-aa96-87398a83d13a.png",
+      "original_stored_bytes": 2836245,
+      "wp_original_pixels": [
+        1672,
+        941
+      ],
+      "wp_has_nonfull_subsizes": false,
+      "observed_published_post": 38,
+      "observed_route": "direct",
+      "actual_published_img_src": "https://finalvestige.com/wp-content/uploads/2026/08/01340c2e-1165-4ca0-aa96-87398a83d13a.png",
+      "conditional_960px_geometry": [
+        960,
+        540
+      ],
+      "actual_guest_http_status": null,
+      "actual_cold_wire_bytes": null,
+      "reuse_rights": "HOLD",
+      "wp_publish_allowed": false,
+      "downloaded": false
+    },
+    {
+      "id": 389,
+      "original_url": "https://finalvestige.com/wp-content/uploads/2026/08/vasa-01-2020.jpg",
+      "original_stored_bytes": 2822969,
+      "wp_original_pixels": [
+        2147,
+        1417
+      ],
+      "wp_has_nonfull_subsizes": true,
+      "observed_published_post": 299,
+      "observed_route": "jetpack",
+      "actual_published_img_src": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/vasa-01-2020.jpg?fit=1024%2C676&ssl=1",
+      "conditional_960px_geometry": [
+        960,
+        634
+      ],
+      "actual_guest_http_status": null,
+      "actual_cold_wire_bytes": null,
+      "reuse_rights": "HOLD",
+      "wp_publish_allowed": false,
+      "downloaded": false
+    },
+    {
+      "id": 40,
+      "original_url": "https://finalvestige.com/wp-content/uploads/2026/08/377e08da-e121-4f57-9174-1548343402b3.png",
+      "original_stored_bytes": 2552136,
+      "wp_original_pixels": [
+        1672,
+        941
+      ],
+      "wp_has_nonfull_subsizes": false,
+      "observed_published_post": 35,
+      "observed_route": "direct",
+      "actual_published_img_src": "https://finalvestige.com/wp-content/uploads/2026/08/377e08da-e121-4f57-9174-1548343402b3.png",
+      "conditional_960px_geometry": [
+        960,
+        540
+      ],
+      "actual_guest_http_status": null,
+      "actual_cold_wire_bytes": null,
+      "reuse_rights": "HOLD",
+      "wp_publish_allowed": false,
+      "downloaded": false
+    },
+    {
+      "id": 41,
+      "original_url": "https://finalvestige.com/wp-content/uploads/2026/08/a44f673d-a8a8-4c83-9f29-7e24dd55156b.png",
+      "original_stored_bytes": 2498247,
+      "wp_original_pixels": [
+        1672,
+        941
+      ],
+      "wp_has_nonfull_subsizes": false,
+      "observed_published_post": 36,
+      "observed_route": "direct",
+      "actual_published_img_src": "https://finalvestige.com/wp-content/uploads/2026/08/a44f673d-a8a8-4c83-9f29-7e24dd55156b.png",
+      "conditional_960px_geometry": [
+        960,
+        540
+      ],
+      "actual_guest_http_status": null,
+      "actual_cold_wire_bytes": null,
+      "reuse_rights": "HOLD",
+      "wp_publish_allowed": false,
+      "downloaded": false
+    },
+    {
+      "id": 42,
+      "original_url": "https://finalvestige.com/wp-content/uploads/2026/08/c1237ffd-4a47-4988-8254-e3b021069e72.png",
+      "original_stored_bytes": 2488823,
+      "wp_original_pixels": [
+        1672,
+        941
+      ],
+      "wp_has_nonfull_subsizes": false,
+      "observed_published_post": 37,
+      "observed_route": "direct",
+      "actual_published_img_src": "https://finalvestige.com/wp-content/uploads/2026/08/c1237ffd-4a47-4988-8254-e3b021069e72.png",
+      "conditional_960px_geometry": [
+        960,
+        540
+      ],
+      "actual_guest_http_status": null,
+      "actual_cold_wire_bytes": null,
+      "reuse_rights": "HOLD",
+      "wp_publish_allowed": false,
+      "downloaded": false
+    },
+    {
+      "id": 382,
+      "original_url": "https://finalvestige.com/wp-content/uploads/2026/08/vasa-med-gamla-och-nya-stottor_vasa-with-old-and-new-supports.jpg",
+      "original_stored_bytes": 2318980,
+      "wp_original_pixels": [
+        1800,
+        1200
+      ],
+      "wp_has_nonfull_subsizes": true,
+      "observed_published_post": 299,
+      "observed_route": "jetpack",
+      "actual_published_img_src": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/vasa-med-gamla-och-nya-stottor_vasa-with-old-and-new-supports.jpg?fit=1024%2C683&ssl=1",
+      "conditional_960px_geometry": [
+        960,
+        640
+      ],
+      "actual_guest_http_status": null,
+      "actual_cold_wire_bytes": null,
+      "reuse_rights": "HOLD",
+      "wp_publish_allowed": false,
+      "downloaded": false
+    },
+    {
+      "id": 482,
+      "original_url": "https://finalvestige.com/wp-content/uploads/2026/08/050e21e0-7b54-4f9a-ba0b-7f594657af05.png",
+      "original_stored_bytes": 2293016,
+      "wp_original_pixels": [
+        1672,
+        941
+      ],
+      "wp_has_nonfull_subsizes": true,
+      "observed_published_post": null,
+      "observed_route": "unknown",
+      "actual_published_img_src": null,
+      "conditional_960px_geometry": [
+        960,
+        540
+      ],
+      "actual_guest_http_status": null,
+      "actual_cold_wire_bytes": null,
+      "reuse_rights": "HOLD",
+      "wp_publish_allowed": false,
+      "downloaded": false
+    },
+    {
+      "id": 405,
+      "original_url": "https://finalvestige.com/wp-content/uploads/2026/08/The20Water20Resilience20Field20Manual.png",
+      "original_stored_bytes": 2201573,
+      "wp_original_pixels": [
+        1122,
+        1402
+      ],
+      "wp_has_nonfull_subsizes": true,
+      "observed_published_post": null,
+      "observed_route": "unknown",
+      "actual_published_img_src": null,
+      "conditional_960px_geometry": [
+        960,
+        1200
+      ],
+      "actual_guest_http_status": null,
+      "actual_cold_wire_bytes": null,
+      "reuse_rights": "HOLD",
+      "wp_publish_allowed": false,
+      "downloaded": false
+    },
+    {
+      "id": 293,
+      "original_url": "https://finalvestige.com/wp-content/uploads/2026/08/ne.png",
+      "original_stored_bytes": 2090327,
+      "wp_original_pixels": [
+        1122,
+        1402
+      ],
+      "wp_has_nonfull_subsizes": true,
+      "observed_published_post": null,
+      "observed_route": "unknown",
+      "actual_published_img_src": null,
+      "conditional_960px_geometry": [
+        960,
+        1200
+      ],
+      "actual_guest_http_status": null,
+      "actual_cold_wire_bytes": null,
+      "reuse_rights": "HOLD",
+      "wp_publish_allowed": false,
+      "downloaded": false
+    }
+  ]
+}
