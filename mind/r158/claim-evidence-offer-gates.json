@@ -1,0 +1,616 @@
+{
+  "schema_version": "1.1",
+  "milestone": "Mind R158",
+  "review_date": "2026-11-05",
+  "status": "UNPUBLISHED_HARD_HOLD",
+  "target": "Zen12 Premium exact offer (NOT endorsed)",
+  "commercial_priority": [
+    "legitimate paid sale",
+    "verified lead",
+    "qualified social session",
+    "views only diagnostic"
+  ],
+  "merchant_partner_approval": "UNKNOWN_NOT_REJECTED",
+  "own_product_fallback": "FV Payhip rights-cleared Mind paid SKU NOT authenticated",
+  "source_links": {
+    "I77": "https://doi.org/10.1016/S0022-5371(77)80012-1",
+    "I15": "https://pubmed.ncbi.nlm.nih.gov/26301795/",
+    "I20": "https://pubmed.ncbi.nlm.nih.gov/31473395/",
+    "I26": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13066098/",
+    "I23": "https://doi.org/10.1016/j.cognition.2023.105421",
+    "SZN": "https://zen12.com/?no-popup=1",
+    "SIN": "https://inspire3.com/",
+    "SAF": "https://affiliates.inspire3.com/",
+    "FTC1": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "FTC2": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+    "FOCUS": "https://finalvestige.com/focus/",
+    "PUY": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "BINA": "https://doi.org/10.1371/journal.pone.0286023",
+    "ISSUE171": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+    "TASK008": "https://docs.google.com/document/d/1_dqcJeqxbvYb1prGxy0nSWTsHu8p0PSRsDB_NPNbL48/edit"
+  },
+  "claim_matrix": [
+    {
+      "id": "R158-C01",
+      "claim": "Repeated plausible assertions received higher validity ratings across three 1977 sessions",
+      "classification": "independent_research",
+      "source_keys": [
+        "I77"
+      ],
+      "decision": "ALLOW_WITH_CONTEXT",
+      "limitation": "Sampled statements and judgment scales; not observed purchases"
+    },
+    {
+      "id": "R158-C02",
+      "claim": "1977 effect was observed for both true and false repeated statements",
+      "classification": "independent_research",
+      "source_keys": [
+        "I77"
+      ],
+      "decision": "ALLOW_WITH_CONTEXT",
+      "limitation": "Do not imply repeated false statements universally believed"
+    },
+    {
+      "id": "R158-C03",
+      "claim": "Fazio 2015 documented repetition-related lift despite available knowledge",
+      "classification": "independent_research",
+      "source_keys": [
+        "I15"
+      ],
+      "decision": "ALLOW_WITH_CONTEXT",
+      "limitation": "Relative shift in experimental judgments, not memory erasure"
+    },
+    {
+      "id": "R158-C04",
+      "claim": "2026 meta-analysis included 182 studies and 366 effects",
+      "classification": "independent_research",
+      "source_keys": [
+        "I26"
+      ],
+      "decision": "ALLOW",
+      "limitation": "Includes studies published through 2025"
+    },
+    {
+      "id": "R158-C05",
+      "claim": "2026 meta-analysis included 31,184 participants",
+      "classification": "independent_research",
+      "source_keys": [
+        "I26"
+      ],
+      "decision": "ALLOW",
+      "limitation": "Not number of distinct real-world purchasers"
+    },
+    {
+      "id": "R158-C06",
+      "claim": "Bias-corrected pooled Hedges g 0.37 CI 0.30 to 0.44",
+      "classification": "independent_research",
+      "source_keys": [
+        "I26"
+      ],
+      "decision": "ALLOW_WITH_CONTEXT",
+      "limitation": "Standardized effect not percentage of believers or conversion lift"
+    },
+    {
+      "id": "R158-C07",
+      "claim": "Substantial heterogeneity in meta-analysis",
+      "classification": "independent_research",
+      "source_keys": [
+        "I26"
+      ],
+      "decision": "ALLOW",
+      "limitation": "Avoid universal claims"
+    },
+    {
+      "id": "R158-C08",
+      "claim": "An initial accuracy prompt prevented tested illusory truth when relevant knowledge available",
+      "classification": "independent_research",
+      "source_keys": [
+        "I20"
+      ],
+      "decision": "ALLOW_WITH_CONTEXT",
+      "limitation": "Conditional research result, not guaranteed personal defense"
+    },
+    {
+      "id": "R158-C09",
+      "claim": "Repetition boosted perceived accuracy and sharing intentions in 2023 experiment",
+      "classification": "independent_research",
+      "source_keys": [
+        "I23"
+      ],
+      "decision": "ALLOW_WITH_CONTEXT",
+      "limitation": "Cannot extrapolate to every creator platform"
+    },
+    {
+      "id": "R158-C10",
+      "claim": "Puységur archive is a historical source bridge",
+      "classification": "site_resource",
+      "source_keys": [
+        "PUY"
+      ],
+      "decision": "ALLOW_LINK_ONLY",
+      "limitation": "No retrospective diagnostic or animal-magnetism endorsement"
+    },
+    {
+      "id": "R158-C11",
+      "claim": "Existing Fieldbook is the sole proposed FV free route",
+      "classification": "site_resource",
+      "source_keys": [
+        "FOCUS",
+        "ISSUE171"
+      ],
+      "decision": "ALLOW_LINK_ONLY",
+      "limitation": "Guest signup and email delivery still need independent test"
+    },
+    {
+      "id": "R158-C12",
+      "claim": "Zen12 Premium seller describes 12 levels and 48 MP3s",
+      "classification": "seller_described",
+      "source_keys": [
+        "SZN"
+      ],
+      "decision": "ALLOW_WITH_ATTRIBUTION",
+      "limitation": "No actual delivery inspection"
+    },
+    {
+      "id": "R158-C13",
+      "claim": "Zen12 Premium includes four style options per level",
+      "classification": "seller_described",
+      "source_keys": [
+        "SZN"
+      ],
+      "decision": "ALLOW_WITH_ATTRIBUTION",
+      "limitation": "Styles described by merchant; not audited files"
+    },
+    {
+      "id": "R158-C14",
+      "claim": "Zen12 Premium merchant advertises 12-minute sessions",
+      "classification": "seller_described",
+      "source_keys": [
+        "SZN"
+      ],
+      "decision": "ALLOW_WITH_ATTRIBUTION",
+      "limitation": "Session length is not efficacy evidence"
+    },
+    {
+      "id": "R158-C15",
+      "claim": "Zen12 Premium seller advertises a one-year guarantee",
+      "classification": "seller_described",
+      "source_keys": [
+        "SZN"
+      ],
+      "decision": "ALLOW_WITH_ATTRIBUTION",
+      "limitation": "Refund actual fulfillment not verified"
+    },
+    {
+      "id": "R158-C16",
+      "claim": "Zen12 Premium displayed USD 87.99 in reviewed seller snapshot Nov 5",
+      "classification": "seller_page_observation",
+      "source_keys": [
+        "SZN"
+      ],
+      "decision": "ALLOW_HISTORICAL_OBSERVATION_ONLY",
+      "limitation": "Currency/taxes/add-ons/current checkout not verified"
+    },
+    {
+      "id": "R158-C17",
+      "claim": "Twelve minutes of Zen12 is scientifically equivalent to one hour of meditation",
+      "classification": "seller_efficacy",
+      "source_keys": [
+        "SZN"
+      ],
+      "decision": "DO_NOT_REPEAT_AS_FACT",
+      "limitation": "No independently confirmed exact-product equivalence study"
+    },
+    {
+      "id": "R158-C18",
+      "claim": "Zen12 reliably reduces anxiety, improves health or enhances creativity",
+      "classification": "seller_efficacy",
+      "source_keys": [
+        "SZN",
+        "FTC2"
+      ],
+      "decision": "DO_NOT_REPEAT_AS_FACT",
+      "limitation": "Exact-product clinical outcomes not substantiated"
+    },
+    {
+      "id": "R158-C19",
+      "claim": "Zen12 guaranteed to control brainwaves for purchaser",
+      "classification": "seller_efficacy",
+      "source_keys": [
+        "SZN",
+        "BINA"
+      ],
+      "decision": "DO_NOT_REPEAT_AS_FACT",
+      "limitation": "Related auditory research neither identical technology nor product efficacy"
+    },
+    {
+      "id": "R158-C20",
+      "claim": "Binaural beats evidence independently confirms exact Zen12 Premium outcome",
+      "classification": "invalid_transfer",
+      "source_keys": [
+        "BINA",
+        "SZN"
+      ],
+      "decision": "REJECT",
+      "limitation": "Technology/formulation/intervention not demonstrated equivalent"
+    },
+    {
+      "id": "R158-C21",
+      "claim": "Inspire3 parent catalog lists Zen12, hypnosis and audio products",
+      "classification": "merchant_identity",
+      "source_keys": [
+        "SIN"
+      ],
+      "decision": "ALLOW_WITH_ATTRIBUTION",
+      "limitation": "Brand catalog is not scientific proof"
+    },
+    {
+      "id": "R158-C22",
+      "claim": "Public affiliate portal proves Final Vestige's partner approval",
+      "classification": "authorization",
+      "source_keys": [
+        "SAF"
+      ],
+      "decision": "REJECT",
+      "limitation": "Individual acceptance and channel permissions unknown"
+    },
+    {
+      "id": "R158-C23",
+      "claim": "An approved unique FV affiliate purchase URL exists",
+      "classification": "authorization",
+      "source_keys": [
+        "SAF"
+      ],
+      "decision": "UNVERIFIED_HARD_HOLD",
+      "limitation": "No token, earning format or channel terms verified"
+    },
+    {
+      "id": "R158-C24",
+      "claim": "Marketing emails establish a specific affiliate arrangement",
+      "classification": "authorization",
+      "source_keys": [
+        "SAF"
+      ],
+      "decision": "REJECT",
+      "limitation": "Promotional subscriber emails are not partner agreement"
+    },
+    {
+      "id": "R158-C25",
+      "claim": "FTC guidance requires clear nearby material-connection disclosure",
+      "classification": "regulatory",
+      "source_keys": [
+        "FTC1"
+      ],
+      "decision": "ALLOW",
+      "limitation": "Disclosure must be adjacent to enabled link; disabled example currently nearby"
+    },
+    {
+      "id": "R158-C26",
+      "claim": "FTC demands adequate product-claim substantiation for health-related statements",
+      "classification": "regulatory",
+      "source_keys": [
+        "FTC2"
+      ],
+      "decision": "ALLOW",
+      "limitation": "No unverified health-benefit promises"
+    },
+    {
+      "id": "R158-C27",
+      "claim": "All click events may be counted as verified paid orders",
+      "classification": "measurement",
+      "source_keys": [
+        "ISSUE171"
+      ],
+      "decision": "REJECT",
+      "limitation": "Affiliate outbound, checkout, confirmed order are separate events"
+    },
+    {
+      "id": "R158-C28",
+      "claim": "Focus confirmed email recipient implies paid customer",
+      "classification": "measurement",
+      "source_keys": [
+        "ISSUE171"
+      ],
+      "decision": "REJECT",
+      "limitation": "Lead and settled purchase require distinct sources"
+    },
+    {
+      "id": "R158-C29",
+      "claim": "An actual FV-owned Mind Payhip product is rights-cleared and sellable",
+      "classification": "owned_commerce",
+      "source_keys": [
+        "ISSUE171"
+      ],
+      "decision": "UNVERIFIED_HARD_HOLD",
+      "limitation": "No authenticated SKU, rights, checkout, terms or order proof"
+    },
+    {
+      "id": "R158-C30",
+      "claim": "Seller's one-year guarantee means every refund is already verified",
+      "classification": "seller_described",
+      "source_keys": [
+        "SZN"
+      ],
+      "decision": "REJECT",
+      "limitation": "Advertised policy is not fulfillment audit"
+    },
+    {
+      "id": "R158-C31",
+      "claim": "First-party campaign params are sufficient to infer qualified humans",
+      "classification": "measurement",
+      "source_keys": [
+        "ISSUE171"
+      ],
+      "decision": "REJECT",
+      "limitation": "Bots/internal traffic qualification and consent QA required"
+    },
+    {
+      "id": "R158-C32",
+      "claim": "The optional video will outperform the same guide without video",
+      "classification": "experiment",
+      "source_keys": [
+        "ISSUE171"
+      ],
+      "decision": "HYPOTHESIS_NOT_FACT",
+      "limitation": "No asset, randomization, traffic or paid outcome"
+    },
+    {
+      "id": "R158-C33",
+      "claim": "Any published Grok video ID corresponds to proposed illusory-truth story",
+      "classification": "creator_attribution",
+      "source_keys": [
+        "TASK008"
+      ],
+      "decision": "UNVERIFIED",
+      "limitation": "No media IDs verified; do not invent"
+    },
+    {
+      "id": "R158-C34",
+      "claim": "FV affiliate offer is LIVE",
+      "classification": "release_status",
+      "source_keys": [
+        "ISSUE171"
+      ],
+      "decision": "REJECT",
+      "limitation": "This workstream only created unpublished source-controlled drafts"
+    }
+  ],
+  "release_gates": [
+    {
+      "gate": "named_account_acceptance",
+      "status": "CLOSED_OR_UNVERIFIED",
+      "release_authorized": false
+    },
+    {
+      "gate": "exact_product_eligibility",
+      "status": "CLOSED_OR_UNVERIFIED",
+      "release_authorized": false
+    },
+    {
+      "gate": "permission_tiktok_youtube",
+      "status": "CLOSED_OR_UNVERIFIED",
+      "release_authorized": false
+    },
+    {
+      "gate": "permission_website_guide",
+      "status": "CLOSED_OR_UNVERIFIED",
+      "release_authorized": false
+    },
+    {
+      "gate": "permission_dispatch_email",
+      "status": "CLOSED_OR_UNVERIFIED",
+      "release_authorized": false
+    },
+    {
+      "gate": "approved_affiliate_url",
+      "status": "CLOSED_OR_UNVERIFIED",
+      "release_authorized": false
+    },
+    {
+      "gate": "url_attribution_parameters_allowed",
+      "status": "CLOSED_OR_UNVERIFIED",
+      "release_authorized": false
+    },
+    {
+      "gate": "partner_privacy_terms_review",
+      "status": "CLOSED_OR_UNVERIFIED",
+      "release_authorized": false
+    },
+    {
+      "gate": "commission_report_access",
+      "status": "CLOSED_OR_UNVERIFIED",
+      "release_authorized": false
+    },
+    {
+      "gate": "settled_commission_source",
+      "status": "CLOSED_OR_UNVERIFIED",
+      "release_authorized": false
+    },
+    {
+      "gate": "chargebacks_refunds_reconciliation",
+      "status": "CLOSED_OR_UNVERIFIED",
+      "release_authorized": false
+    },
+    {
+      "gate": "actual_merchant_checkout_price",
+      "status": "CLOSED_OR_UNVERIFIED",
+      "release_authorized": false
+    },
+    {
+      "gate": "currency_taxes_upsells",
+      "status": "CLOSED_OR_UNVERIFIED",
+      "release_authorized": false
+    },
+    {
+      "gate": "refund_terms_current",
+      "status": "CLOSED_OR_UNVERIFIED",
+      "release_authorized": false
+    },
+    {
+      "gate": "refund_merchant_fulfillment_verified",
+      "status": "CLOSED_OR_UNVERIFIED",
+      "release_authorized": false
+    },
+    {
+      "gate": "claims_product_specific",
+      "status": "CLOSED_OR_UNVERIFIED",
+      "release_authorized": false
+    },
+    {
+      "gate": "claim_review_signoff",
+      "status": "CLOSED_OR_UNVERIFIED",
+      "release_authorized": false
+    },
+    {
+      "gate": "copy_editorial_signoff",
+      "status": "CLOSED_OR_UNVERIFIED",
+      "release_authorized": false
+    },
+    {
+      "gate": "independent_site_QA",
+      "status": "CLOSED_OR_UNVERIFIED",
+      "release_authorized": false
+    },
+    {
+      "gate": "founder_commercial_release",
+      "status": "CLOSED_OR_UNVERIFIED",
+      "release_authorized": false
+    },
+    {
+      "gate": "founder_CMS_publication",
+      "status": "CLOSED_OR_UNVERIFIED",
+      "release_authorized": false
+    },
+    {
+      "gate": "footer_navigation_release",
+      "status": "CLOSED_OR_UNVERIFIED",
+      "release_authorized": false
+    },
+    {
+      "gate": "live_browser_keyboard_QA",
+      "status": "CLOSED_OR_UNVERIFIED",
+      "release_authorized": false
+    },
+    {
+      "gate": "screenreader_disclosure_QA",
+      "status": "CLOSED_OR_UNVERIFIED",
+      "release_authorized": false
+    },
+    {
+      "gate": "mobile_360_390_768_1440_QA",
+      "status": "CLOSED_OR_UNVERIFIED",
+      "release_authorized": false
+    },
+    {
+      "gate": "Lighthouse_CWV_measured",
+      "status": "CLOSED_OR_UNVERIFIED",
+      "release_authorized": false
+    },
+    {
+      "gate": "noJS_variant_A_QA",
+      "status": "CLOSED_OR_UNVERIFIED",
+      "release_authorized": false
+    },
+    {
+      "gate": "optional_video_file_rights",
+      "status": "CLOSED_OR_UNVERIFIED",
+      "release_authorized": false
+    },
+    {
+      "gate": "optional_video_captions",
+      "status": "CLOSED_OR_UNVERIFIED",
+      "release_authorized": false
+    },
+    {
+      "gate": "optional_video_transcript",
+      "status": "CLOSED_OR_UNVERIFIED",
+      "release_authorized": false
+    },
+    {
+      "gate": "optional_video_poster",
+      "status": "CLOSED_OR_UNVERIFIED",
+      "release_authorized": false
+    },
+    {
+      "gate": "video_performance_budget",
+      "status": "CLOSED_OR_UNVERIFIED",
+      "release_authorized": false
+    },
+    {
+      "gate": "experiment_traffic_quality",
+      "status": "CLOSED_OR_UNVERIFIED",
+      "release_authorized": false
+    },
+    {
+      "gate": "consent_analytics_review",
+      "status": "CLOSED_OR_UNVERIFIED",
+      "release_authorized": false
+    },
+    {
+      "gate": "transaction_source_reconciliation",
+      "status": "CLOSED_OR_UNVERIFIED",
+      "release_authorized": false
+    },
+    {
+      "gate": "Payhip_verified_Mind_SKU",
+      "status": "CLOSED_OR_UNVERIFIED",
+      "release_authorized": false
+    },
+    {
+      "gate": "Payhip_rights_confirmed",
+      "status": "CLOSED_OR_UNVERIFIED",
+      "release_authorized": false
+    },
+    {
+      "gate": "Payhip_order_and_refund_terms",
+      "status": "CLOSED_OR_UNVERIFIED",
+      "release_authorized": false
+    },
+    {
+      "gate": "Jetpack_guest_signup_verified",
+      "status": "CLOSED_OR_UNVERIFIED",
+      "release_authorized": false
+    },
+    {
+      "gate": "Jetpack_welcome_delivery_verified",
+      "status": "CLOSED_OR_UNVERIFIED",
+      "release_authorized": false
+    },
+    {
+      "gate": "Grok_asset_IDs_verified",
+      "status": "CLOSED_OR_UNVERIFIED",
+      "release_authorized": false
+    },
+    {
+      "gate": "qualified_sessions_observed",
+      "status": "CLOSED_OR_UNVERIFIED",
+      "release_authorized": false
+    },
+    {
+      "gate": "seven_day_paid_cohort",
+      "status": "CLOSED_OR_UNVERIFIED",
+      "release_authorized": false
+    },
+    {
+      "gate": "thirty_day_paid_cohort",
+      "status": "CLOSED_OR_UNVERIFIED",
+      "release_authorized": false
+    }
+  ],
+  "disclosure_near_future_link": "If you purchase through an approved link on this page, Final Vestige may earn a commission at no additional cost to you.",
+  "affiliate_url": null,
+  "partner_account_id": null,
+  "commission_rate_verified": null,
+  "paid_order_count_verified": null,
+  "affiliate_sale_count_verified": null,
+  "net_revenue_per_1000_qualified_sessions": null,
+  "observed_merchant_price_snapshot": {
+    "display": "$87.99",
+    "date": "2026-11-05",
+    "status": "SELLER_DISPLAY_NOT_CHECKOUT",
+    "source": "https://zen12.com/?no-popup=1"
+  },
+  "existing_FV_focus_form": "PRESERVE_UNMODIFIED",
+  "published_Grok_asset_ids": [],
+  "caveat": "Marketing emails and public partner portal are NOT acceptance; zero confirmed evidence is NOT same as zero actual sales."
+}

@@ -130,7 +130,7 @@
     },
     {
       "id": "C18",
-      "claim": "Merchant calls product completely safe for everyone",
+      "claim": "Merchant calls product completely safe (with asterisked safety caveat and FAQ exceptions)",
       "source": "https://brainwaveshots.com/focus-shot",
       "disposition": "REJECT_UNIVERSAL_SAFETY_CLAIM"
     },
