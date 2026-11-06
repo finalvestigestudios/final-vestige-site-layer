@@ -1,0 +1,13 @@
+/* R167 staging-only: a failed archival image must not cover its dated caption.
+   R166's absolute error overlay can overlap the caption in narrow layouts.
+   Preserve the NASA citation and let the failure text participate in flow. */
+.fvx-chrono-gallery .fvx-chrono-gallery__image--unavailable{display:none!important}
+.fvx-chrono-gallery .fvx-chrono-gallery__fallback{
+  position:static!important;
+  inset:auto!important;
+  display:block;
+  box-sizing:border-box;
+  inline-size:100%;
+  max-inline-size:none;
+  margin:0 0 1rem;
+}
