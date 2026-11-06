@@ -14,7 +14,7 @@ The `body_custody.json` baseline was assembled from **35 authenticated, read-onl
 
 ## Local isolated testing and full-checkout requirements
 
-New `preparedness/tests/test_r161_body_custody_gate.py` is a wholly synthetic 35-body fixture suite, using temporary directories. **56/56 Python unittest tests passed locally** on Nov 5 PT (35 individual full-body mutation tests plus 21 control/adversarial cases); Python compilation passed. The **committed Python files must match their locally tested Git blob identities**: gate `e2c3ed8eb1e8f2a97a5146b8b4162be87cf02451`, tests `8cffce79c4d420390206a5a7346a6ed3bd768201`. The committed manifest Git blob is `fede4222c796d92798eff7cf0dcb225c291f7d61`.
+New `preparedness/tests/test_r161_body_custody_gate.py` is a wholly synthetic 35-body fixture suite, using temporary directories. **56/56 Python unittest tests passed locally** on Nov 5 PT (35 individual full-body mutation tests plus 21 control/adversarial cases); Python compilation passed; the full local command was executed with Python -I, which ignores PYTHONPATH. The **committed Python files must match their locally tested Git blob identities**: gate `e2c3ed8eb1e8f2a97a5146b8b4162be87cf02451`, tests `aafcd035b4f79e95b732172bbe45a3fd4dfecfdc`. The committed manifest Git blob is `fede4222c796d92798eff7cf0dcb225c291f7d61`.
 
 On a trusted exact-head checkout, the reviewer must run the following read-only validations (do not interpret an expected exit 2 as success without inspecting the JSON):
 
