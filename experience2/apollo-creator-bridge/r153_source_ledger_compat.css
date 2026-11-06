@@ -1,0 +1,8 @@
+/* R153 supplemental Research Desk staging-only style; load after PR158 source-ledger.css.
+   Keeps the JS-generated Clear button visible and 44px touch accessible. */
+.fv-ex2-ledger .fv-ex2-ledger__tools{flex-wrap:wrap}
+.fv-ex2-ledger .fv-ex2-ledger__clear{flex:0 0 auto;min-height:44px;padding:10px 16px;background:#27221a;color:#f4efe6;border:1px solid #c7a66c;line-height:1.4;white-space:nowrap}
+.fv-ex2-ledger .fv-ex2-ledger__clear:hover{background:#393022}
+.fv-ex2-ledger .fv-ex2-ledger__clear:focus-visible{outline:3px solid #f6d48c;outline-offset:3px}
+@media(max-width:760px){.fv-ex2-ledger .fv-ex2-ledger__clear{width:100%;text-align:center}}
+@media(prefers-reduced-motion:reduce){.fv-ex2-ledger .fv-ex2-ledger__clear{transition:none!important}}
