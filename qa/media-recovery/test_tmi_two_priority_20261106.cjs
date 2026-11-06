@@ -7,6 +7,7 @@ const data=JSON.parse(fs.readFileSync(path.join(__dirname,'tmi_two_priority_2026
 let count=0;
 function run(name,edit,expected){const a=structuredClone(data); edit(a);const errors=validate(a);assert(errors.some(e=>e.includes(expected)),name+': expected '+expected+'; got '+errors.join('; ')); count++;}
 assert.deepEqual(validate(data),[]);count++;
+run('missing metrics object',m=>delete m.summary,'42 broken');
 run('false 42 confirmed',m=>m.summary.confirmed_visitor_broken=42,'42 broken');
 run('fake 76 measured',m=>m.summary.measured_transfer_savings_percent=76,'76%');
 run('malformed assets',m=>m.assets=null,'asset count');
