@@ -31,6 +31,10 @@ function snapshot(a){
 function cohort(c){
  safe(c);
  if(![7,30].includes(c.window_days))throw Error('Only 7/30 day cohorts permitted');
+ const day=/^\\d{4}-\\d{2}-\\d{2}$/;
+ if(!day.test(c.start_date_utc||'')||!day.test(c.end_date_utc||''))throw Error('Missing UTC cohort boundaries');
+ const start=Date.parse(c.start_date_utc),end=Date.parse(c.end_date_utc);
+ if(!Number.isFinite(start)||!Number.isFinite(end)||new Date(start).toISOString().slice(0,10)!==c.start_date_utc||new Date(end).toISOString().slice(0,10)!==c.end_date_utc||end-start!==c.window_days*86400000)throw Error('Cohort time bounds mismatch');
  if(!sourceCheck(c.source).source_checked)throw Error('Source absent');
  const checks=['qualified_human_sessions_verified','paid_source_verified','settlement_verified','refunds_fees_reconciled','attribution_reconciled'];
  if(checks.some(k=>c[k]!==true))return Object.freeze({window_days:c.window_days,net_cents:null,net_per_1000:null,status:'NOT_COMPUTABLE',missing:checks.filter(k=>c[k]!==true)});
