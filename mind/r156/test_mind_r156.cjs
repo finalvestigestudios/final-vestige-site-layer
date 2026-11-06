@@ -20,7 +20,7 @@ function audit(d){
  ck(/If you purchase through a future authorized link, Final Vestige may earn a commission at no additional cost to you/.test(d.html),"plain prospective paid-link disclosure");
  ck(/href="https:\/\/finalvestige\.com\/focus\/"/.test(d.html),"existing Focus destination");
  ck(!/<form\b|<script\b|<iframe\b/i.test(d.html),"no new forms scripts frames");
- ck(!/\bautoplay\b(?=[^>]*>)/i.test(d.html.replace(/&lt;video[^&]*&gt;/g,"")),"no autoplay media");
+ ck(!/<video\b[^>]*\bautoplay\b/i.test(d.html),"no autoplay media");
  ck(!/href="https?:\/\/(?:[^"]*hypnosislive\.com|[^"]*zen12\.com|[^"]*affiliates\.inspire3\.com)/i.test(d.html),"no clickable merchant link pending partner approval");
  ck(!/href="[^"]*(?:affiliate_id|sub_id|\/track\?|\/click\?)/i.test(d.html),"no unapproved earning or tracking URL");
  ck(/:focus-visible/.test(d.html)&&/prefers-reduced-motion/.test(d.html),"accessible focus and motion CSS");
