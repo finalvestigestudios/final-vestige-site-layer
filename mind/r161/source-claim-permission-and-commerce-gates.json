@@ -1,0 +1,619 @@
+{
+  "schema": "FV_MIND_R161_EVIDENCE_V1",
+  "review_date": "2026-11-05",
+  "release_state": "DRAFT_UNPUBLISHED_HARD_HOLD",
+  "offer": "Zen12 Premium",
+  "offer_url_for_research_only": "https://zen12.com/?no-popup=1",
+  "affiliate_earning_url": null,
+  "merchant_account_approval": null,
+  "channel_permissions": null,
+  "approved_creative": null,
+  "priced_checkout_verified": false,
+  "product_personally_used": false,
+  "video_rendered": false,
+  "experiment_run": false,
+  "verified_sales": null,
+  "paid_commissions": null,
+  "net_revenue_per_1000_qualified_human_sessions": null,
+  "source_links": [
+    {
+      "id": "S01",
+      "kind": "primary_experiment",
+      "title": "Hasenkamp et al., NeuroImage 2012",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/21782031/"
+    },
+    {
+      "id": "S02",
+      "kind": "primary_correlational",
+      "title": "Hasenkamp & Barsalou, Frontiers Human Neuroscience 2012",
+      "url": "https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2012.00038/full"
+    },
+    {
+      "id": "S03",
+      "kind": "randomized_trial",
+      "title": "Mrazek et al., Psychological Science 2013",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23538911/"
+    },
+    {
+      "id": "S04",
+      "kind": "systematic_meta_analysis",
+      "title": "Zainal & Newman, Health Psychology Review 2024",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37578065/"
+    },
+    {
+      "id": "S05",
+      "kind": "merchant_official",
+      "title": "Zen12 Premium official product sales page",
+      "url": "https://zen12.com/?no-popup=1"
+    },
+    {
+      "id": "S06",
+      "kind": "merchant_other_promotion",
+      "title": "Zen12 alternate promotional route; not automatically applicable",
+      "url": "https://zen12.com/secret/"
+    },
+    {
+      "id": "S07",
+      "kind": "merchant_catalog",
+      "title": "Inspire3 official portfolio",
+      "url": "https://inspire3.com/"
+    },
+    {
+      "id": "S08",
+      "kind": "affiliate_public_portal",
+      "title": "Inspire3 public affiliate site; not named account authorization",
+      "url": "https://affiliates.inspire3.com/"
+    },
+    {
+      "id": "S09",
+      "kind": "regulator",
+      "title": "FTC Endorsement Guides FAQ",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking"
+    },
+    {
+      "id": "S10",
+      "kind": "regulator",
+      "title": "FTC Health Products Compliance Guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+    },
+    {
+      "id": "S11",
+      "kind": "existing_first_party",
+      "title": "Seven Day Focus Fieldbook",
+      "url": "https://finalvestige.com/focus/"
+    },
+    {
+      "id": "S12",
+      "kind": "existing_first_party",
+      "title": "Puységur's Animal Magnetism Files",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+    },
+    {
+      "id": "S13",
+      "kind": "existing_first_party",
+      "title": "Change Blindness investigation",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/"
+    }
+  ],
+  "claim_decisions": [
+    {
+      "id": "C01",
+      "claim": "A 2012 fMRI study involved fourteen meditation practitioners",
+      "decision": "research_supported",
+      "source_ids": [
+        "S01"
+      ],
+      "limitation": "Explicit task context; cannot infer product efficacy"
+    },
+    {
+      "id": "C02",
+      "claim": "Four analysis intervals: wandering, awareness, shifting, sustained focus",
+      "decision": "research_supported",
+      "source_ids": [
+        "S01"
+      ],
+      "limitation": "Researcher model; intervals approximate button presses"
+    },
+    {
+      "id": "C03",
+      "claim": "Default-mode-related activation during inferred mind-wandering phases",
+      "decision": "research_supported_limited",
+      "source_ids": [
+        "S01"
+      ],
+      "limitation": "Association, not a neural readout of thought content"
+    },
+    {
+      "id": "C04",
+      "claim": "Awareness, shifting and sustained intervals had differentiated networks",
+      "decision": "research_supported_limited",
+      "source_ids": [
+        "S01"
+      ],
+      "limitation": "Method is fMRI correlational within task"
+    },
+    {
+      "id": "C05",
+      "claim": "Higher meditation experience associated with different connectivity",
+      "decision": "research_supported_limited",
+      "source_ids": [
+        "S02"
+      ],
+      "limitation": "Cross-sectional association not necessarily training causation"
+    },
+    {
+      "id": "C06",
+      "claim": "A two-week randomized mindfulness course improved certain tested task outcomes",
+      "decision": "research_supported_limited",
+      "source_ids": [
+        "S03"
+      ],
+      "limitation": "Does not generalize to single audio session"
+    },
+    {
+      "id": "C07",
+      "claim": "The 2024 synthesis included 111 RCTs and 9538 participants",
+      "decision": "research_supported",
+      "source_ids": [
+        "S04"
+      ],
+      "limitation": "Across varied mindfulness-based interventions"
+    },
+    {
+      "id": "C08",
+      "claim": "The synthesis reported small-to-moderate effects in some domains",
+      "decision": "research_supported_limited",
+      "source_ids": [
+        "S04"
+      ],
+      "limitation": "Effect sizes and controls vary"
+    },
+    {
+      "id": "C09",
+      "claim": "No effects on several other measured cognitive outcomes in synthesis",
+      "decision": "research_supported",
+      "source_ids": [
+        "S04"
+      ],
+      "limitation": "Do not imply universal cognitive uplift"
+    },
+    {
+      "id": "C10",
+      "claim": "Self-guided interventions uniformly match face-to-face programs",
+      "decision": "unsupported",
+      "source_ids": [
+        "S04"
+      ],
+      "limitation": "Study suggested effect modification; exclude"
+    },
+    {
+      "id": "C11",
+      "claim": "Zen12 Premium is described as twelve levels and 48 MP3 recordings",
+      "decision": "seller_described_only",
+      "source_ids": [
+        "S05"
+      ],
+      "limitation": "Needs entitlement/delivery verification"
+    },
+    {
+      "id": "C12",
+      "claim": "Zen12 supplies four styles per level",
+      "decision": "seller_described_only",
+      "source_ids": [
+        "S05"
+      ],
+      "limitation": "Music, guided, nature, white noise; no product-use claim"
+    },
+    {
+      "id": "C13",
+      "claim": "Each Zen12 meditation session takes twelve minutes",
+      "decision": "seller_described_only",
+      "source_ids": [
+        "S05"
+      ],
+      "limitation": "Seller description; exact downloaded audio not inspected"
+    },
+    {
+      "id": "C14",
+      "claim": "Official Premium page displayed $87.99 on 2026-11-05",
+      "decision": "observed_seller_page_only",
+      "source_ids": [
+        "S05"
+      ],
+      "limitation": "Not a price promise; checkout total unknown"
+    },
+    {
+      "id": "C15",
+      "claim": "Alternate official promotion advertises a different amount",
+      "decision": "observed_seller_page_only",
+      "source_ids": [
+        "S06"
+      ],
+      "limitation": "No eligibility, stacking or expiry assumption"
+    },
+    {
+      "id": "C16",
+      "claim": "Official page advertised one-year refund guarantee",
+      "decision": "seller_described_only",
+      "source_ids": [
+        "S05"
+      ],
+      "limitation": "Refund service and legal terms untested"
+    },
+    {
+      "id": "C17",
+      "claim": "Program includes quick-start guide, manual, support and other bonuses",
+      "decision": "seller_described_only",
+      "source_ids": [
+        "S05"
+      ],
+      "limitation": "Individual entitlement unverified"
+    },
+    {
+      "id": "C18",
+      "claim": "Zen12 delivers benefits of an hour of meditation in 12 minutes",
+      "decision": "unsupported_product_claim",
+      "source_ids": [
+        "S05",
+        "S01",
+        "S03",
+        "S04"
+      ],
+      "limitation": "Seller's claim not substantiated by cited trials; exclude"
+    },
+    {
+      "id": "C19",
+      "claim": "The precise Zen12 audio was independently tested by Final Vestige",
+      "decision": "false",
+      "source_ids": [],
+      "limitation": "Do not claim experience or testing"
+    },
+    {
+      "id": "C20",
+      "claim": "Zen12 automatically eliminates mind wandering",
+      "decision": "unsupported_product_claim",
+      "source_ids": [
+        "S05",
+        "S01"
+      ],
+      "limitation": "No product-specific controlled efficacy; exclude"
+    },
+    {
+      "id": "C21",
+      "claim": "Zen12 guarantees reduction in anxiety, illness or cognitive impairment",
+      "decision": "unsupported_health_claim",
+      "source_ids": [
+        "S05",
+        "S10"
+      ],
+      "limitation": "Exclude medical benefits absent appropriate product-specific evidence"
+    },
+    {
+      "id": "C22",
+      "claim": "Any brainwave modulation has permanent beneficial clinical outcomes",
+      "decision": "unsupported_health_claim",
+      "source_ids": [
+        "S05",
+        "S10"
+      ],
+      "limitation": "Exclude"
+    },
+    {
+      "id": "C23",
+      "claim": "The public Inspire3 affiliate program exists",
+      "decision": "public_program_verified",
+      "source_ids": [
+        "S07",
+        "S08"
+      ],
+      "limitation": "Not proof of FV account admission"
+    },
+    {
+      "id": "C24",
+      "claim": "Final Vestige has approval for Zen12 web and email promotions",
+      "decision": "not_verified",
+      "source_ids": [
+        "S08"
+      ],
+      "limitation": "Named authorization, channel permissions and creatives unknown"
+    },
+    {
+      "id": "C25",
+      "claim": "An FV-specific affiliate tracking link is authorized",
+      "decision": "not_verified",
+      "source_ids": [
+        "S08"
+      ],
+      "limitation": "Must not invent/activate earning URL"
+    },
+    {
+      "id": "C26",
+      "claim": "An advertiser may compensate a referring publisher",
+      "decision": "conditional_disclosure",
+      "source_ids": [
+        "S09"
+      ],
+      "limitation": "Near-link plain-language disclosure needed if a link is ever activated"
+    },
+    {
+      "id": "C27",
+      "claim": "An affiliate click or email subscription is an actual paid sale",
+      "decision": "false",
+      "source_ids": [],
+      "limitation": "Merchant confirmation necessary"
+    },
+    {
+      "id": "C28",
+      "claim": "The public Focus Fieldbook is an existing first-party free route",
+      "decision": "wp_authenticated_read_observed",
+      "source_ids": [
+        "S11"
+      ],
+      "limitation": "Stored Jetpack block exists but guest delivery not verified"
+    },
+    {
+      "id": "C29",
+      "claim": "Puységur historic reports prove commercial hypnosis efficacy",
+      "decision": "unsupported_historical_leap",
+      "source_ids": [
+        "S12"
+      ],
+      "limitation": "Do not infer"
+    },
+    {
+      "id": "C30",
+      "claim": "New mind-wandering exercise quantifies total mental distraction",
+      "decision": "false",
+      "source_ids": [
+        "S01"
+      ],
+      "limitation": "Measures noticed moments only; not a validated test"
+    },
+    {
+      "id": "C31",
+      "claim": "The optional video has been rendered, watched or A/B tested",
+      "decision": "false",
+      "source_ids": [],
+      "limitation": "Only an unproduced storyboard/transcript; no media or experiment"
+    },
+    {
+      "id": "C32",
+      "claim": "Any observed price is a guaranteed checkout total",
+      "decision": "false",
+      "source_ids": [
+        "S05",
+        "S06"
+      ],
+      "limitation": "Checkout taxes, discounts, currency, upsells untested"
+    },
+    {
+      "id": "C33",
+      "claim": "Free Focus CTA is an independently verified completed subscriber conversion",
+      "decision": "not_verified",
+      "source_ids": [
+        "S11"
+      ],
+      "limitation": "Guest confirmation and delivery test required"
+    },
+    {
+      "id": "C34",
+      "claim": "Qualified Grok asset IDs and attributed purchases are known",
+      "decision": "not_verified",
+      "source_ids": [],
+      "limitation": "Reconcile TASK-008; leave identifiers and economics null"
+    }
+  ],
+  "release_gates": [
+    {
+      "id": "G01",
+      "requirement": "named FV Inspire3 account acceptance",
+      "owner": "founder",
+      "state": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G02",
+      "requirement": "Zen12 SKU and exact approved promo destination",
+      "owner": "founder",
+      "state": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G03",
+      "requirement": "website-channel permissions",
+      "owner": "founder",
+      "state": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G04",
+      "requirement": "email channel permissions separately",
+      "owner": "founder",
+      "state": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G05",
+      "requirement": "specific approved earning URL and non-cloaking terms",
+      "owner": "founder",
+      "state": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G06",
+      "requirement": "current permitted creatives/swipe rights",
+      "owner": "founder",
+      "state": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G07",
+      "requirement": "merchant price at checkout in real buyer flow",
+      "owner": "commerce",
+      "state": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G08",
+      "requirement": "merchant guarantee terms and real support/refund process",
+      "owner": "commerce",
+      "state": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G09",
+      "requirement": "source-level health/product claim substantiation",
+      "owner": "mind_editor",
+      "state": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G10",
+      "requirement": "independent medical/benefit wording QA",
+      "owner": "site_qa",
+      "state": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G11",
+      "requirement": "manual accessibility on 360/390/768/1440/1920 widths",
+      "owner": "site_qa",
+      "state": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G12",
+      "requirement": "native keyboard/touch/reduced-motion review",
+      "owner": "site_qa",
+      "state": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G13",
+      "requirement": "real browser no-JS and screenreader review",
+      "owner": "site_qa",
+      "state": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G14",
+      "requirement": "short video actual authored/rendered and captioned",
+      "owner": "grok_video_owner",
+      "state": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G15",
+      "requirement": "video size/codec/poster and LCP performance budget",
+      "owner": "site_qa",
+      "state": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G16",
+      "requirement": "real opt-in Jetpack/Focus signup and existing welcome receipt",
+      "owner": "site_qa_dispatch",
+      "state": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G17",
+      "requirement": "existing one-list privacy review",
+      "owner": "dispatch",
+      "state": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G18",
+      "requirement": "actual published Grok asset_id and canonical media URL",
+      "owner": "praxxis_grok",
+      "state": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G19",
+      "requirement": "approved per-channel UTM and page continuity",
+      "owner": "praxxis_grok",
+      "state": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G20",
+      "requirement": "existing analytics configuration reviewed for duplication",
+      "owner": "claude_site_engineering",
+      "state": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G21",
+      "requirement": "merchant order report with SKU and net settlement proof",
+      "owner": "commerce",
+      "state": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G22",
+      "requirement": "refund/fees reconciliation for 7/30 day cohorts",
+      "owner": "commerce",
+      "state": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G23",
+      "requirement": "attribution consent and human-session definition",
+      "owner": "growth_qa",
+      "state": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G24",
+      "requirement": "founder approval to publish WordPress content",
+      "owner": "founder",
+      "state": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G25",
+      "requirement": "founder approval to activate earning URL",
+      "owner": "founder",
+      "state": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G26",
+      "requirement": "homepage and canonical Mind hub preservation checked",
+      "owner": "homepage_art",
+      "state": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G27",
+      "requirement": "PR review, CI and actual browser evidence",
+      "owner": "site_qa",
+      "state": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G28",
+      "requirement": "no live theme/menu/Jetpack edits made by Mind",
+      "owner": "mind_editor",
+      "state": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G29",
+      "requirement": "no affiliate revenue asserted on outbound click",
+      "owner": "growth_qa",
+      "state": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "G30",
+      "requirement": "no unapproved social or email publication",
+      "owner": "grok_dispatch",
+      "state": "CLOSED",
+      "evidence": null
+    }
+  ],
+  "change_policy": "Do not publish, deploy, send, activate affiliate links, add subscription forms or duplicate analytics absent independent QA and founder approval."
+}
