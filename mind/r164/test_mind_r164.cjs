@@ -38,7 +38,7 @@ function inspect(files) {
  test("html_existing_focus_only",html.includes('href="https://finalvestige.com/focus/"')&&!/<form\b/i.test(html));
  test("html_no_external_scripts",!/<script\b|<iframe\b|onload=|onclick=/i.test(html));
  test("html_no_hidden_product_href",!/<a\b[^>]*href=["'][^"']*(zen12\.com|hypnosislive\.com|inspire3\.com|payhip\.com)/i.test(html));
- test("html_purchase_native_disabled",/<button\b[^>]*\bdisabled\b[^>]*>Purchase link unavailable/.test(html));
+ test("html_purchase_native_disabled",html.includes('<button class="disabled" disabled type="button"')&&html.includes("Purchase link unavailable"));
  const disclosureIndex=html.indexOf("Potential affiliate relationship:"),buttonIndex=html.indexOf('class="disabled"');
  test("html_disclosure_immediately_beside_purchase",disclosureIndex>=0&&buttonIndex>disclosureIndex&&buttonIndex-disclosureIndex<550);
  test("html_product_correct",html.includes("48 MP3")&&html.includes("twelve-level program"));
