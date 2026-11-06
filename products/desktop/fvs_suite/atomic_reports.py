@@ -9,6 +9,7 @@ all-or-nothing transaction for a multi-report package.
 from __future__ import annotations
 
 import csv
+import errno
 import os
 import tempfile
 from itertools import islice
@@ -16,6 +17,7 @@ from pathlib import Path
 from typing import Callable, Iterable, Mapping
 
 from .csv_formula_guard import has_unescaped_formula_prefix
+from .csv_stage_integrity import CSVStagingWitness
 from .csv_userdict_custody import verify_userdict_storage
 
 
@@ -40,14 +42,24 @@ class _BudgetedCSVTextSink:
     def __init__(self, stream):
         self._stream = stream
         self._remaining = MAX_REPORT_BYTES - len(b"\xef\xbb\xbf")
+        self._witness = CSVStagingWitness()
 
     def write(self, text: str) -> int:
         encoded_bytes = len(text.encode("utf-8"))
         if encoded_bytes > self._remaining:
             raise ValueError("CSV report byte limit exceeded")
         written = self._stream.write(text)
+        # A text stream may legally return a short character count. Neither
+        # csv.writer nor DictWriter guarantees that such a result aborts the
+        # export, so a partial financial report could otherwise be published.
+        if type(written) is not int or written != len(text):
+            raise OSError(errno.EIO, "CSV report staging incomplete write")
+        self._witness.record(text.encode("utf-8"))
         self._remaining -= encoded_bytes
         return written
+
+    def verify(self, descriptor: int) -> None:
+        self._witness.verify(descriptor)
 
 
 def _render_cell(value: object, cell: Callable[[object], str]) -> str:
@@ -128,10 +140,11 @@ def write_csv_report(destination: str | Path, fields: Iterable[str],
         # spreadsheet-formula neutralization; never publish ambiguous evidence.
         raise ValueError("Unsafe or ambiguous CSV report columns")
     descriptor, temporary = tempfile.mkstemp(
-        prefix=f".{target.stem}-", suffix=".partial", dir=target.parent)
+        prefix=".fvs-csv-", suffix=".partial", dir=target.parent)
     try:
         with os.fdopen(descriptor, "w", encoding="utf-8-sig", newline="") as stream:
-            writer = csv.DictWriter(_BudgetedCSVTextSink(stream), fieldnames=names, extrasaction="ignore")
+            sink = _BudgetedCSVTextSink(stream)
+            writer = csv.DictWriter(sink, fieldnames=names, extrasaction="ignore")
             writer.writer.writerow(rendered)
             # Explicit next() isolates arbitrary caller-owned iterator errors
             # from the writer's own exceptions, including their __context__.
@@ -202,6 +215,9 @@ def write_csv_report(destination: str | Path, fields: Iterable[str],
                     raise ValueError("Incomplete CSV report row schema")
                 writer.writerow(rendered_row)
             stream.flush()
+            # Prove the real staged bytes match the exact serialized CSV
+            # stream (including BOM), not merely the accepted write counts.
+            sink.verify(stream.fileno())
             os.fsync(stream.fileno())
         if os.name == "nt":
             # Windows os.rename never replaces an existing destination.
