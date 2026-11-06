@@ -1,0 +1,403 @@
+{
+  "version": "R178",
+  "checked_on": "2026-11-06",
+  "state": "UNPUBLISHED_HARD_HOLD",
+  "products": [
+    "Zen12 Premium",
+    "Hypnosis Live Total Focus",
+    "Brainwave Shots Focus Shot"
+  ],
+  "sources": [
+    {
+      "id": "I3",
+      "type": "seller",
+      "url": "https://inspire3.com/",
+      "assessment": "Named Zen12, Hypnosis Live, Brainwave Shots catalogued; seller efficacy unproven"
+    },
+    {
+      "id": "Z12",
+      "type": "seller_exact",
+      "url": "https://zen12.com/",
+      "assessment": "Premium 12 levels/48 MP3/four styles, displayed $87.99 on 2026-11-06; advertised one-year refund; no checkout proof"
+    },
+    {
+      "id": "AFF",
+      "type": "merchant_program",
+      "url": "https://affiliates.inspire3.com/",
+      "assessment": "Public publisher login/signup; does not prove FV account approval, tracking link, channel rights or payout"
+    },
+    {
+      "id": "HL",
+      "type": "seller_exact",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "assessment": "Total Focus seller 33m 47MB; advertised guarantee, efficacy unverified"
+    },
+    {
+      "id": "BS",
+      "type": "seller_exact",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "assessment": "Focus Shot 15/30 minute tracks, bonus versions; claims of instant prolonged focus unsupported"
+    },
+    {
+      "id": "FTC_E",
+      "type": "regulator",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "assessment": "Material relationship disclosed clearly near affiliate recommendation and in video when relevant"
+    },
+    {
+      "id": "FTC_H",
+      "type": "regulator",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "assessment": "Health/cognitive claims must be accurately substantiated for actual marketed product"
+    },
+    {
+      "id": "MG76",
+      "type": "primary_research",
+      "url": "https://doi.org/10.1038/264746a0",
+      "assessment": "Original 1976 incongruent lip/audio perception finding"
+    },
+    {
+      "id": "MG15",
+      "type": "research",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25802068/",
+      "assessment": "Variability, 18-point response-format estimate, .91 retest correlation in specific studies"
+    },
+    {
+      "id": "MG18",
+      "type": "research",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30418995/",
+      "assessment": "Partial association with visual place-of-articulation sensitivity; no global cognitive predictors"
+    },
+    {
+      "id": "MG14",
+      "type": "research",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25076922/",
+      "assessment": "N15 ERP attention-load manipulation, weaker audiovisual illusion with divided attention"
+    },
+    {
+      "id": "MG11",
+      "type": "research",
+      "url": "https://doi.org/10.1068/p6939",
+      "assessment": "Selective attention effects and audiovisual stream manipulation"
+    },
+    {
+      "id": "BB23",
+      "type": "systematic_review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+      "assessment": "14 EEG studies; 5 supportive / 8 contradictory / 1 mixed; not product-specific"
+    },
+    {
+      "id": "FOCUS",
+      "type": "existing_FV",
+      "url": "https://finalvestige.com/focus/",
+      "assessment": "Single existing Fieldbook opt-in route discovered in WP content"
+    },
+    {
+      "id": "PUY",
+      "type": "existing_FV",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "assessment": "Historical source-oriented Puységur page"
+    },
+    {
+      "id": "MES",
+      "type": "existing_FV",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "assessment": "Existing investigation"
+    },
+    {
+      "id": "CB",
+      "type": "existing_FV",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "assessment": "Existing investigation"
+    }
+  ],
+  "claims": [
+    {
+      "id": "P01",
+      "text": "Zen12 Premium has 12 levels",
+      "source_id": "Z12",
+      "disposition": "ALLOW_AS_SELLER_DESCRIPTION"
+    },
+    {
+      "id": "P02",
+      "text": "Zen12 Premium lists 48 MP3 files",
+      "source_id": "Z12",
+      "disposition": "ALLOW_AS_SELLER_DESCRIPTION_NOT_FILE_AUDIT"
+    },
+    {
+      "id": "P03",
+      "text": "Zen12 has 4 style options per level",
+      "source_id": "Z12",
+      "disposition": "ALLOW_AS_SELLER_DESCRIPTION"
+    },
+    {
+      "id": "P04",
+      "text": "Zen12 displays a 12-minute session format",
+      "source_id": "Z12",
+      "disposition": "ALLOW_AS_SELLER_DESCRIPTION"
+    },
+    {
+      "id": "P05",
+      "text": "Zen12 Premium displayed $87.99 on 2026-11-06",
+      "source_id": "Z12",
+      "disposition": "DATE_QUALIFY_ONLY_NO_CHECKOUT_OR_DISCOUNT"
+    },
+    {
+      "id": "P06",
+      "text": "Seller advertises one-year money-back guarantee",
+      "source_id": "Z12",
+      "disposition": "SELLER_CLAIM_REFUND_PERFORMANCE_NOT_VERIFIED"
+    },
+    {
+      "id": "P07",
+      "text": "Premium includes seller-described guide/support/bonus offerings",
+      "source_id": "Z12",
+      "disposition": "SELLER_CLAIM_NO_FILE_ACCESS"
+    },
+    {
+      "id": "P08",
+      "text": "12 minutes equals benefits of 60 minutes",
+      "source_id": "Z12",
+      "disposition": "REJECT_NO_PRODUCT_SPECIFIC_PROOF"
+    },
+    {
+      "id": "P09",
+      "text": "Zen12 automatically induces deep meditation",
+      "source_id": "Z12",
+      "disposition": "REJECT_NO_PRODUCT_SPECIFIC_PROOF"
+    },
+    {
+      "id": "P10",
+      "text": "Zen12 provides health, anxiety or cognitive treatment benefits",
+      "source_id": "Z12",
+      "disposition": "REJECT_NOT_SUBSTANTIATED"
+    },
+    {
+      "id": "P11",
+      "text": "Binaural EEG entrainment is universally proven",
+      "source_id": "BB23",
+      "disposition": "REJECT_MIXED_EVIDENCE"
+    },
+    {
+      "id": "P12",
+      "text": "McGurk fusion shows vision affects heard syllables",
+      "source_id": "MG76",
+      "disposition": "ALLOW_NARROW_RESEARCH"
+    },
+    {
+      "id": "P13",
+      "text": "McGurk effect happens identically for all viewers",
+      "source_id": "MG15",
+      "disposition": "REJECT_INTERINDIVIDUAL_VARIABILITY"
+    },
+    {
+      "id": "P14",
+      "text": "McGurk susceptibility diagnoses intelligence or hearing",
+      "source_id": "MG18",
+      "disposition": "REJECT_NOT_DIAGNOSTIC"
+    },
+    {
+      "id": "P15",
+      "text": "Attention load can modulate illusion for tested stimuli",
+      "source_id": "MG14",
+      "disposition": "ALLOW_NARROW_RESEARCH_WITH_N15"
+    },
+    {
+      "id": "P16",
+      "text": "McGurk effect proves Zen12's efficacy",
+      "source_id": "MG76",
+      "disposition": "REJECT_UNRELATED_PRODUCT"
+    },
+    {
+      "id": "P17",
+      "text": "Public Inspire3 affiliate program exists",
+      "source_id": "AFF",
+      "disposition": "ALLOW_PROGRAM_EXISTS"
+    },
+    {
+      "id": "P18",
+      "text": "FV is accepted Inspire3 publisher",
+      "source_id": "AFF",
+      "disposition": "UNKNOWN_UNVERIFIED_HARD_HOLD"
+    },
+    {
+      "id": "P19",
+      "text": "FV has approved tracking URL and channel rights",
+      "source_id": "AFF",
+      "disposition": "UNKNOWN_UNVERIFIED_HARD_HOLD"
+    },
+    {
+      "id": "P20",
+      "text": "FV earns stated public portal commission amounts",
+      "source_id": "AFF",
+      "disposition": "REJECT_ACCOUNT_TERMS_UNKNOWN"
+    },
+    {
+      "id": "P21",
+      "text": "Any FV affiliate payout occurred",
+      "source_id": "AFF",
+      "disposition": "UNKNOWN_NOT_VERIFIED"
+    },
+    {
+      "id": "P22",
+      "text": "An outbound CTA is a paid sale",
+      "source_id": "FTC_E",
+      "disposition": "REJECT_SEPARATE_EVENTS"
+    },
+    {
+      "id": "P23",
+      "text": "New Focus email list can be created for this lane",
+      "source_id": "FOCUS",
+      "disposition": "REJECT_KEEP_EXISTING_ONE"
+    },
+    {
+      "id": "P24",
+      "text": "Owned FV Mind Payhip product is presently buyable",
+      "source_id": "FOCUS",
+      "disposition": "UNKNOWN_RIGHTS_CHECKOUT_NOT_AUTHENTICATED"
+    },
+    {
+      "id": "P25",
+      "text": "Hypnosis Live Total Focus is 33 min 47 MB according to seller",
+      "source_id": "HL",
+      "disposition": "SELLER_ONLY_NO_REVIEW"
+    },
+    {
+      "id": "P26",
+      "text": "Hypnosis Live immediately reprograms brain",
+      "source_id": "HL",
+      "disposition": "REJECT_NO_PRODUCT_SPECIFIC_PROOF"
+    },
+    {
+      "id": "P27",
+      "text": "Brainwave Focus Shot includes 15/30 minute versions per seller",
+      "source_id": "BS",
+      "disposition": "SELLER_ONLY_NO_REVIEW"
+    },
+    {
+      "id": "P28",
+      "text": "Brainwave Focus Shot gives hours of concentration",
+      "source_id": "BS",
+      "disposition": "REJECT_NO_PRODUCT_SPECIFIC_PROOF"
+    },
+    {
+      "id": "P29",
+      "text": "Prospective commission disclosure should appear next to earning CTA",
+      "source_id": "FTC_E",
+      "disposition": "REQUIRE_ADJACENT_EVEN_IF_SITEWIDE_EXISTS"
+    },
+    {
+      "id": "P30",
+      "text": "Meditation/suggestion results from unrelated papers transfer to Zen12",
+      "source_id": "FTC_H",
+      "disposition": "REJECT_UNSUPPORTED_INFERENCE"
+    }
+  ],
+  "gates": [
+    {
+      "id": "affiliate_partner_identity",
+      "state": "CLOSED",
+      "proof_required": "Need named authenticated acceptance"
+    },
+    {
+      "id": "affiliate_scope_web",
+      "state": "CLOSED",
+      "proof_required": "Need verified authorized channel and terms"
+    },
+    {
+      "id": "affiliate_scope_email",
+      "state": "CLOSED",
+      "proof_required": "Dispatch cannot promote until separate permission"
+    },
+    {
+      "id": "affiliate_tracking_url",
+      "state": "CLOSED",
+      "proof_required": "Exact publisher-authorized and source-checked URL"
+    },
+    {
+      "id": "affiliate_approved_creatives",
+      "state": "UNKNOWN",
+      "proof_required": "No authenticated swipe access"
+    },
+    {
+      "id": "merchant_checkout_price",
+      "state": "UNKNOWN",
+      "proof_required": "Seller display not merchant transaction"
+    },
+    {
+      "id": "merchant_refund_fulfillment",
+      "state": "UNKNOWN",
+      "proof_required": "No evidence of actual successful refund"
+    },
+    {
+      "id": "owned_payhip_mind_sku",
+      "state": "UNKNOWN",
+      "proof_required": "No independently authenticated eligible Mind SKU, rights, live checkout"
+    },
+    {
+      "id": "original_video_produced",
+      "state": "CLOSED",
+      "proof_required": "Poster/transcript only, no MP4"
+    },
+    {
+      "id": "video_rights_caption_a11y",
+      "state": "CLOSED",
+      "proof_required": "Requires produced source-controlled media, captions, poster, QA"
+    },
+    {
+      "id": "partner_commission_paid",
+      "state": "UNKNOWN",
+      "proof_required": "No commission settlement data"
+    },
+    {
+      "id": "qualified_human_denominator",
+      "state": "UNKNOWN",
+      "proof_required": "No reconciled campaign-specific human sessions"
+    },
+    {
+      "id": "ab_experiment_run",
+      "state": "CLOSED",
+      "proof_required": "Spec only; no user randomization or observed outcomes"
+    },
+    {
+      "id": "site_qa_browser",
+      "state": "CLOSED",
+      "proof_required": "Need real viewport/keyboard/screenreader/lighthouse"
+    },
+    {
+      "id": "founder_release_approval",
+      "state": "CLOSED",
+      "proof_required": "No production approval"
+    },
+    {
+      "id": "production_publish",
+      "state": "CLOSED",
+      "proof_required": "No CMS write or deployment"
+    }
+  ],
+  "commercial": {
+    "inspire3_approved": null,
+    "approved_tracking_url": null,
+    "approved_channels": null,
+    "reported_commissions": null,
+    "paid_commissions_received": null,
+    "verified_net_revenue": null,
+    "qualified_human_sessions": null,
+    "owned_payhip_mind_sku": null,
+    "seller_display_price_usd": {
+      "zen12_premium": 87.99,
+      "date": "2026-11-06",
+      "checkout_verified": false
+    },
+    "affiliate_activated": false,
+    "video_produced": false,
+    "AB_experiment_executed": false
+  },
+  "notes": [
+    "No user's medical outcomes, no fabricated reviews or testimonials.",
+    "Public seller/affiliate pages are not proof of publisher authorization.",
+    "No link to purchase or referral is activated.",
+    "Do not treat catalog pricing as currently guaranteed retail prices.",
+    "Track confirmed orders/commission separately from clicks, and allow negative net revenue."
+  ]
+}
