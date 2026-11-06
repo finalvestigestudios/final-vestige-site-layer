@@ -61,7 +61,7 @@ function scan(files){
  check(!/href=["']https?:\/\/(?:www\.)?(?:inspire3\.com|zen12\.com|affiliates\.inspire3\.com|www\.awin1\.com)/i.test(page),"no live merchant or affiliate hyperlinks");
  check(!/<script\b/i.test(page),"no JavaScript scripts");
  check(!/<form\b/i.test(page),"no duplicate mailing forms");
- check(!/<iframe\b|<video\b|autoplay/i.test(page),"no externally embedded or falsely playable video");
+ check(!/<iframe\b|<video\b/i.test(page),"no externally embedded or falsely playable video");
  check(page.includes("42-second")&&page.includes("<details>")&&page.includes("<summary>"),"optional accessible text video treatment");
  check(page.includes("No video file, player, autoplay"),"video explicitly not produced");
  check(page.includes("No approved affiliate sales links are active"),"compliance notice near hero");
