@@ -1,0 +1,137 @@
+{
+  "schema": "fv-page-source-image-shard-v1",
+  "captured_date": "2026-11-06",
+  "method": "Authenticated read-only WordPress page get(edit); stored HTML <img> only, no browser, no image requests or production changes.",
+  "page_list_count": 83,
+  "offset": 60,
+  "page_rows": 12,
+  "errors": [],
+  "reported_42_broken_browser_verified": null,
+  "measured_76_percent_saving": null,
+  "production_writes": 0,
+  "rows": [
+    {
+      "id": 523,
+      "url": "https://finalvestige.com/dispatch/",
+      "modified": "2026-11-05T20:01:31",
+      "title": "The Dispatch",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": []
+    },
+    {
+      "id": 502,
+      "url": "https://finalvestige.com/watch/courses-lectures/",
+      "modified": "2026-10-29T17:18:30",
+      "title": "Free History Courses & Lectures",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": []
+    },
+    {
+      "id": 501,
+      "url": "https://finalvestige.com/watch/objects-archaeology/",
+      "modified": "2026-11-05T12:07:05",
+      "title": "Archaeology, Objects & Museum Collections",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": []
+    },
+    {
+      "id": 500,
+      "url": "https://finalvestige.com/watch/failure-engineering/",
+      "modified": "2026-08-31T22:33:27",
+      "title": "Engineering Failure & Disaster Case Files",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": []
+    },
+    {
+      "id": 499,
+      "url": "https://finalvestige.com/watch/maps-places/",
+      "modified": "2026-11-03T14:47:03",
+      "title": "Historical Maps & Place Research",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": []
+    },
+    {
+      "id": 498,
+      "url": "https://finalvestige.com/watch/primary-sources/",
+      "modified": "2026-11-03T14:47:09",
+      "title": "Primary Historical Sources & Archives",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": []
+    },
+    {
+      "id": 235,
+      "url": "https://finalvestige.com/contact/",
+      "modified": "2026-09-09T16:03:23",
+      "title": "Corrections & Contact",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": []
+    },
+    {
+      "id": 234,
+      "url": "https://finalvestige.com/about/bryan-rhodes/",
+      "modified": "2026-11-06T09:18:24",
+      "title": "Bryan Rhodes",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": [
+        {
+          "slot": "234:0",
+          "src": "https://finalvestige.com/wp-content/uploads/2026/08/ne-819x1024.png",
+          "alt": "Bryan Rhodes, founder and editor of Final Vestige",
+          "width": null,
+          "height": null,
+          "source_class": "first_party",
+          "srcset_present": false,
+          "browser_status": null,
+          "natural_width": null,
+          "wire_bytes": null,
+          "reuse_rights": "HOLD",
+          "wp_write_authorized": false
+        }
+      ]
+    },
+    {
+      "id": 193,
+      "url": "https://finalvestige.com/the-lost-landscape/",
+      "modified": "2026-11-03T14:46:46",
+      "title": "The Lost Landscape",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": []
+    },
+    {
+      "id": 191,
+      "url": "https://finalvestige.com/what-survives/",
+      "modified": "2026-08-26T11:15:25",
+      "title": "What Survives",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": []
+    },
+    {
+      "id": 189,
+      "url": "https://finalvestige.com/the-archive-trail/",
+      "modified": "2026-11-02T21:38:01",
+      "title": "The Archive Trail",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": []
+    },
+    {
+      "id": 1,
+      "url": "https://finalvestige.com/about/",
+      "modified": "2026-11-06T09:41:48",
+      "title": "About",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": []
+    }
+  ]
+}
