@@ -83,7 +83,7 @@ function mutate(b) {
  ["remove study training reference",x=>({...x,investigation:x.investigation.replaceAll("34843370","MISSING")})],
  ["remove research limit",x=>({...x,buyer:x.buyer.replace('Neither study tested Zen12 audio.','Both studies tested Zen12 audio.')})],
  ["enable affiliate in state",x=>{const d=JSON.parse(x.matrix);d.commercial_activation=true;return {...x,matrix:JSON.stringify(d)};}],
- ["remove 42-second concept",x=>({...x,buyer:x.buyer.replace("42-second media hypothesis","media hypothesis").replace("42-second explainer concept","explainer concept")})],
+ ["remove 42-second concept",x=>({...x,buyer:x.buyer.replaceAll("42-second","forty-two-second")})],
  ["remove buyer noindex",x=>({...x,buyer:x.buyer.replace('meta name="robots" content="noindex,nofollow"','meta name="robots" content="index,follow"')})],
  ["remove skip links",x=>({...x,buyer:x.buyer.replace('href="#main"','href="#other"'),hub:x.hub.replace('href="#main"','href="#other"')})],
  ["remove evidence seller warning",x=>({...x,buyer:x.buyer.replaceAll("seller-listed","internal-feature").replaceAll("Seller lists","Our editors confirm").replaceAll("seller statements","independent findings")})]
