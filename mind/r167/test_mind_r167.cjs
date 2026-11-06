@@ -35,6 +35,7 @@ assert.match(html,/https:\/\/finalvestige\.com\/focus\//);
 assert.match(html,/video produced|not a film/);
 assert.doesNotMatch(html,/<(?:script|form|iframe|video)\b/i);
 assert.doesNotMatch(html,/(?:href|action)\s*=\s*["'](?:https?:\/\/)?(?:affiliates\.inspire3|www\.awin1|payhip\.com|checkout\.)/i);
+assert.doesNotMatch(html,/<a[^>]+href=["']https?:\/\/(?:www\.)?(?:zen12\.com|inspire3\.com|hypnosislive\.com|brainwaveshots\.com)/i);
 assert.doesNotMatch(html,/<a[^>]+(?:Buy now|Purchase|Get Started)[^>]*>/i);
 assert.doesNotMatch(html,/<video\b|<input\b|\sonload\s*=|\sonclick\s*=/i);
 assert.equal(matrix.status,'DRAFT_ONLY_HARD_HOLD');
