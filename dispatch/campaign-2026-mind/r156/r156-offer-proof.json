@@ -1,0 +1,71 @@
+{
+  "review_id": "R156",
+  "parent_pr": 1215,
+  "original_pr": 175,
+  "owner_issue": 174,
+  "mind_issue": 171,
+  "snapshot_utc": "2026-11-06T07:39:19Z",
+  "canonical_mix": {
+    "editorial": 4,
+    "commercial_reservations": 2
+  },
+  "subscriber": {
+    "total_reported": 3,
+    "confirmed_reported": 3,
+    "unconfirmed_reported": 2,
+    "email_eligible": null,
+    "welcome_received": null,
+    "nonadditive": true
+  },
+  "merchant_approval": {
+    "account_accepted": false,
+    "email_allowed": false,
+    "affiliate_earning_link_verified": false,
+    "offer_guide_live": false,
+    "current_cart_confirmed": false,
+    "refund_experience_confirmed": false
+  },
+  "legal_preview": {
+    "fv_postal_verified": false,
+    "actual_unsubscribe_verified": false,
+    "actual_jetpack_preview_verified": false,
+    "received_commercial_email_verified": false
+  },
+  "founder_send_approval": false,
+  "all_six": "HOLD_UNSENT",
+  "issue03": "HOLD_MERCHANT",
+  "issue05": "HOLD_MERCHANT",
+  "verified_paid_orders": null,
+  "realized_net_revenue": null,
+  "qualified_human_sessions": null,
+  "net_revenue_per_1000": null,
+  "messages": [
+    {
+      "id": "03",
+      "product": "Zen12 Premium",
+      "subject": "What twelve minutes can't establish",
+      "preheader": "A closer look at the 48 recordings, the seller's evidence, and your own routine.",
+      "cta": "[[APPROVED_LIVE_ZEN12_PRESELL_GUIDE_REQUIRED]]",
+      "merchant_affiliate_url": null,
+      "sources": [
+        "https://zen12.com/?no-popup=1",
+        "https://finalvestige.com/focus/"
+      ],
+      "substitution_approved": false
+    },
+    {
+      "id": "05",
+      "product": "Hypnosis Live Total Focus",
+      "subject": "Total Focus: the recording isn't the result",
+      "preheader": "The specific 33-minute MP3, ambitious seller claims, and refund terms worth checking.",
+      "cta": "[[APPROVED_LIVE_TOTAL_FOCUS_PRESELL_GUIDE_REQUIRED]]",
+      "merchant_affiliate_url": null,
+      "sources": [
+        "https://hypnosislive.com/mental-skills/total-focus",
+        "https://hypnosislive.com/faq",
+        "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+      ],
+      "substitution_approved": false
+    }
+  ]
+}
