@@ -75,6 +75,8 @@ class WordPressBlockPackaging(unittest.TestCase):
                         self.assertIsNotNone(fallback)
                         self.assertIsNotNone(caption)
                         self.assertLessEqual(fallback['y'] + fallback['height'], caption['y'] + 1, 'Error notice overlaps NASA caption')
+                        page.evaluate('document.activeElement && document.activeElement.blur()')
+                        page.wait_for_timeout(140)
                         image=page.screenshot(full_page=True,animations='disabled')
                         (HERE/'artifacts').mkdir(exist_ok=True)
                         (HERE/'artifacts'/('r167-gallery-'+str(width)+'.png')).write_bytes(image)
