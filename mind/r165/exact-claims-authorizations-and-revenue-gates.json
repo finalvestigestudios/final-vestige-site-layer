@@ -1,0 +1,439 @@
+{
+  "schema": "fv.mind.offer_claims_v165",
+  "status": "DRAFT_UNPUBLISHED_NOT_LIVE",
+  "updated_on": "2026-11-06",
+  "branch": "mind-r165-sensory-proof-zen12-buying-decision-20261106",
+  "offer": "Zen12 Premium standard official package",
+  "affiliate_partner_acceptance": "UNVERIFIED",
+  "affiliate_earning_url": null,
+  "affiliate_payout": null,
+  "commission_paid": null,
+  "paid_orders_confirmed": null,
+  "refunds_confirmed": null,
+  "qualified_human_sessions": null,
+  "realized_net_revenue_per_1000": null,
+  "observed_seller_standard_price_text": "$87 (indexed standard page); prior internal observation $87.99",
+  "observed_seller_promo": "$37 coupon on separate route (not FV authorized)",
+  "actual_checkout_price": null,
+  "sources": [
+    {
+      "id": "OFFICIAL-I3",
+      "type": "seller",
+      "url": "https://inspire3.com/",
+      "scope": "Inspire3 catalog; no named publisher authorization shown",
+      "checked_on": "2026-11-06"
+    },
+    {
+      "id": "OFFICIAL-ZEN12",
+      "type": "seller",
+      "url": "https://zen12.com/?no-popup=1",
+      "scope": "Exact Premium package on standard public sales page",
+      "checked_on": "2026-11-06"
+    },
+    {
+      "id": "PROMO-ZEN12",
+      "type": "seller",
+      "url": "https://zen12.com/secret/",
+      "scope": "Distinct promotional route; not assumed eligible",
+      "checked_on": "2026-11-06"
+    },
+    {
+      "id": "HALL-2010",
+      "type": "primary",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/20637455/",
+      "scope": "Marketplace choice-blindness abstract",
+      "checked_on": "2026-11-06"
+    },
+    {
+      "id": "HALL-METHOD",
+      "type": "primary_full_text",
+      "url": "https://www.lucs.lu.se/fileadmin/user_upload/lucs/2011/01/Hall-et-al.-2010-Magic-at-the-Marketplace-Choice-Blindness-for-the-Taste-of-Jam-and-the-Smell-of-Tea.pdf",
+      "scope": "Double-ended containers and flip procedure in full-text methods pp 56-57",
+      "checked_on": "2026-11-06"
+    },
+    {
+      "id": "MINDFUL-111",
+      "type": "systematic_review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37578065/",
+      "scope": "111 RCTs, 9,538 people; mindfulness, not exact Zen12",
+      "checked_on": "2026-11-06"
+    },
+    {
+      "id": "BINAURAL-14",
+      "type": "systematic_review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+      "scope": "14 EEG studies; 5 support, 8 contradictory, 1 mixed",
+      "checked_on": "2026-11-06"
+    },
+    {
+      "id": "FTC-END",
+      "type": "regulator",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "scope": "Near-link plain language material connection",
+      "checked_on": "2026-11-06"
+    },
+    {
+      "id": "FTC-HEALTH",
+      "type": "regulator",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "scope": "Product-specific health benefit substantiation",
+      "checked_on": "2026-11-06"
+    },
+    {
+      "id": "FV-FOCUS",
+      "type": "internal_currently_published_unverified_this_run",
+      "url": "https://finalvestige.com/focus/",
+      "scope": "Existing fieldbook and single Jetpack path, not tested this run",
+      "checked_on": "2026-11-06"
+    },
+    {
+      "id": "FV-PUYSEGUR",
+      "type": "internal_currently_published_unverified_this_run",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "scope": "Historical bridge; no causal support for merchant claims",
+      "checked_on": "2026-11-06"
+    },
+    {
+      "id": "ISSUE-171",
+      "type": "internal_requirement",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "scope": "Mind lane source-of-truth",
+      "checked_on": "2026-11-06"
+    }
+  ],
+  "claims": [
+    {
+      "id": "Z-01",
+      "statement": "Inspire3 lists Zen12 among its brands",
+      "status": "seller_described",
+      "source_ids": [
+        "OFFICIAL-I3"
+      ],
+      "limit": "No Final Vestige affiliate authorization inferred"
+    },
+    {
+      "id": "Z-02",
+      "statement": "Premium described as 12 levels and 48 MP3s",
+      "status": "seller_described",
+      "source_ids": [
+        "OFFICIAL-ZEN12"
+      ],
+      "limit": "Exact purchased media uninspected"
+    },
+    {
+      "id": "Z-03",
+      "statement": "Four styles per level include music guided nature white noise",
+      "status": "seller_described",
+      "source_ids": [
+        "OFFICIAL-ZEN12"
+      ],
+      "limit": "Availability and delivery untested"
+    },
+    {
+      "id": "Z-04",
+      "statement": "Quick-start guide manual audio guides bonuses and support advertised",
+      "status": "seller_described",
+      "source_ids": [
+        "OFFICIAL-ZEN12"
+      ],
+      "limit": "Terms and actual fulfillment unverified"
+    },
+    {
+      "id": "Z-05",
+      "statement": "One-year money-back guarantee advertised",
+      "status": "seller_described",
+      "source_ids": [
+        "OFFICIAL-ZEN12"
+      ],
+      "limit": "Not independently exercised or confirmed for a customer"
+    },
+    {
+      "id": "Z-06",
+      "statement": "Standard Premium extracted page showed $87 while previous observation was $87.99",
+      "status": "seller_display_variability",
+      "source_ids": [
+        "OFFICIAL-ZEN12"
+      ],
+      "limit": "Do not promise price; checkout not verified"
+    },
+    {
+      "id": "Z-07",
+      "statement": "Separate promo page showed coupon-specific $37 with conditions",
+      "status": "seller_display_variability",
+      "source_ids": [
+        "PROMO-ZEN12"
+      ],
+      "limit": "Not authorized for FV; never inherit or promise discount"
+    },
+    {
+      "id": "Z-08",
+      "statement": "12 minutes of Zen12 equals one hour of meditation benefits",
+      "status": "seller_claim_unsubstantiated",
+      "source_ids": [
+        "OFFICIAL-ZEN12",
+        "MINDFUL-111"
+      ],
+      "limit": "No product-specific equivalence trial reviewed; omit benefit assertion"
+    },
+    {
+      "id": "Z-09",
+      "statement": "Zen12 audio automatically controls EEG and produces meditative outcomes",
+      "status": "seller_claim_unsubstantiated",
+      "source_ids": [
+        "OFFICIAL-ZEN12",
+        "BINAURAL-14"
+      ],
+      "limit": "Mixed binaural EEG evidence; protocol and exact product not established"
+    },
+    {
+      "id": "Z-10",
+      "statement": "Zen12 guarantees focus health or wealth outcomes",
+      "status": "excluded_unsupported",
+      "source_ids": [
+        "OFFICIAL-ZEN12",
+        "FTC-HEALTH"
+      ],
+      "limit": "Never represent as FV conclusion"
+    },
+    {
+      "id": "SCI-01",
+      "statement": "Mindfulness interventions in 111 RCTs (n=9538) influenced some cognitive outcomes",
+      "status": "independently_supported_bounded",
+      "source_ids": [
+        "MINDFUL-111"
+      ],
+      "limit": "Different teaching interventions; not exact commercial audio"
+    },
+    {
+      "id": "SCI-02",
+      "statement": "14 binaural-beat EEG studies gave 5 supportive, 8 contradictory, 1 mixed findings",
+      "status": "independently_supported_bounded",
+      "source_ids": [
+        "BINAURAL-14"
+      ],
+      "limit": "Not evidence about every auditory technique or exact Zen12 audio"
+    },
+    {
+      "id": "CB-01",
+      "statement": "Shoppers tasted jam or smelled tea, not both tasted",
+      "status": "independently_supported_bounded",
+      "source_ids": [
+        "HALL-2010",
+        "HALL-METHOD"
+      ],
+      "limit": "Laboratory-style supermarket task; not purchase"
+    },
+    {
+      "id": "CB-02",
+      "statement": "Experimenter flipped two-compartment sample containers during initial sampling before final choice",
+      "status": "independently_supported_bounded",
+      "source_ids": [
+        "HALL-METHOD"
+      ],
+      "limit": "Mismatch at resampling, not fresh swap after final choice"
+    },
+    {
+      "id": "CB-03",
+      "statement": "No more than a third of manipulated jam/tea trials were detected",
+      "status": "independently_supported_bounded",
+      "source_ids": [
+        "HALL-2010"
+      ],
+      "limit": "Trial-specific finding; do not generalize to checkout or persuasion"
+    },
+    {
+      "id": "ETH-01",
+      "statement": "Affiliate disclosure must be understandable and close to purchasing link",
+      "status": "regulatory_guidance",
+      "source_ids": [
+        "FTC-END"
+      ],
+      "limit": "Draft discloses potential commission immediately next to disabled control"
+    },
+    {
+      "id": "ETH-02",
+      "statement": "Health benefit representations need adequate appropriate substantiation",
+      "status": "regulatory_guidance",
+      "source_ids": [
+        "FTC-HEALTH"
+      ],
+      "limit": "Do not inherit seller medical claims"
+    },
+    {
+      "id": "ORG-01",
+      "statement": "One existing first-party Focus route is designated for direct-audience capture",
+      "status": "internal_prior_evidence_not_reverified",
+      "source_ids": [
+        "FV-FOCUS",
+        "ISSUE-171"
+      ],
+      "limit": "Guest subscribe and delivery not tested in this run"
+    },
+    {
+      "id": "ORG-02",
+      "statement": "Puységur historical materials anchor responsible analogy to suggestion",
+      "status": "internal_prior_evidence_not_reverified",
+      "source_ids": [
+        "FV-PUYSEGUR",
+        "ISSUE-171"
+      ],
+      "limit": "Historical analogy not a mechanism or endorsement"
+    },
+    {
+      "id": "COM-01",
+      "statement": "Final Vestige authorized to earn Zen12 commissions",
+      "status": "NOT_VERIFIED",
+      "source_ids": [
+        "ISSUE-171"
+      ],
+      "limit": "Named publisher acceptance and permitted links/channel rights missing"
+    },
+    {
+      "id": "COM-02",
+      "statement": "Final Vestige has sellable rights-cleared paid Mind product",
+      "status": "NOT_VERIFIED",
+      "source_ids": [
+        "ISSUE-171"
+      ],
+      "limit": "Payhip SKU rights price checkout delivery missing"
+    },
+    {
+      "id": "COM-03",
+      "statement": "Any affiliate click represents paid order or commission",
+      "status": "FALSE",
+      "source_ids": [
+        "ISSUE-171"
+      ],
+      "limit": "Merchant confirmation and reconciliation required"
+    },
+    {
+      "id": "MET-01",
+      "statement": "Net revenue per 1k qualified humans is computable",
+      "status": "NOT_COMPUTABLE",
+      "source_ids": [
+        "ISSUE-171"
+      ],
+      "limit": "Human sessions, confirmed sales, reversals and fees unavailable"
+    }
+  ],
+  "gates": [
+    {
+      "id": "named_final_vestige_affiliate_approval",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "approved_products_and_media_channels",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "approved_specific_earning_url",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "partner_tracking_and_attribution_terms",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "partner_approved_creative_rights",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "actual_checkout_price",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "exact_refund_policy_and_fulfillment",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "privacy_legal_review",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "independent_mobile_and_keyboard_qa",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "no_js_review_and_a11y",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "founder_editorial_release",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "site_qa_acceptance",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "commerce_merchant_report_reconciliation",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "chargebacks_refunds_and_fees",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "grok_asset_id_and_utm_inventory",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "7_day_cohort_quality",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "30_day_cohort_quality",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "signed_off_wp_navigation",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "signed_off_dispatch_channel",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "first_party_event_deduplication",
+      "status": "CLOSED",
+      "evidence": null
+    }
+  ],
+  "commercial_button": "native_button_disabled",
+  "active_external_merchant_links": 0,
+  "active_first_party_link": "https://finalvestige.com/focus/",
+  "source_caveats": [
+    "Web extract of standard seller page is indexed content not independently completed buyer checkout",
+    "Read-only historical WordPress/Jetpack status from prior runs; not freshly validated here",
+    "No named Inspire3 partner dashboard acceptance read; Gmail promotional email is not acceptance",
+    "No external pixel, additional analytics library, third-party scripts, or new subscriber form authorized"
+  ],
+  "measurement": {
+    "qualified_human_sessions": "NOT_OBSERVED",
+    "cta_click": "NOT_OBSERVED",
+    "confirmed_lead": "NOT_OBSERVED",
+    "affiliate_click": "NOT_OBSERVED",
+    "confirmed_paid_order": "NOT_OBSERVED",
+    "confirmed_partner_commission": "NOT_OBSERVED",
+    "net_revenue_per_1000": "NOT_COMPUTABLE"
+  }
+}
