@@ -44,3 +44,20 @@ test('only a full 66-page cohort may support site-wide 76% threshold',()=>{
  for(let i=0;i<66;i++){const page='https://finalvestige.com/article-'+i+'/';x.expected_page_urls.push(page);x.pairs.push({...structuredClone(one),page_url:page});}
  const r=evaluate(x);assert.equal(r.ok,true);assert.equal(r.sitewide_claim_allowed,true);assert.equal(r.claim_76_percent_supported,true);
 });
+
+test('explicitly verified empty-image article is allowed within a page cohort',()=>{
+ const x=fixture(),empty=structuredClone(x.pairs[0]);
+ empty.page_url='https://finalvestige.com/article-with-no-images/';
+ for(const stage of ['before','after']){empty[stage].image_requests=[];empty[stage].dom_images=[];empty[stage].zero_image_page_verified=true;}
+ x.expected_page_urls.push(empty.page_url);x.pairs.push(empty);
+ const r=evaluate(x);assert.equal(r.ok,true);assert.equal(r.measured.before_wire_bytes,100000);
+});
+test('unverified empty image list cannot silently qualify',()=>{
+ const x=fixture();x.pairs[0].after.image_requests=[];x.pairs[0].after.dom_images=[];
+ assert.equal(evaluate(x).ok,false);
+});
+test('empty cohort transfer cannot yield division by zero savings',()=>{
+ const x=fixture();for(const phase of ['before','after']){x.pairs[0][phase].image_requests=[];x.pairs[0][phase].dom_images=[];x.pairs[0][phase].zero_image_page_verified=true;}
+ assert.equal(evaluate(x).ok,false);
+});
+test('reject invalid browser viewport numeric type',()=>{const x=fixture();x.pairs[0].after.viewport_width='390';assert.equal(evaluate(x).ok,false);});
