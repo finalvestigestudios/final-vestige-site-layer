@@ -1,0 +1,42 @@
+# R175 conversion-first creator → verified order acceptance contract
+**UNPUBLISHED • November 6, 2026 • Mind lane only**
+
+## Offer verification precedes another landing activation
+Chosen **candidate**, not live offer: Zen12 Premium for visitors actively comparing a twelve-level audio library. Seller evidence: https://zen12.com/ shows twelve levels, 48 MP3s in four styles and advertises a one-year guarantee. Its November 6 display was $87.99, not verified final checkout price, refunds, tax or permission to advertise a promo. The public https://affiliates.inspire3.com/ portal advertises an affiliate network but establishes no account acceptance or earning-link authority for Final Vestige. A bounded November 6 Gmail review again found promotional emails, not named FV publisher approval; authenticated partner dashboard could still exist and remains unverified. All merchant purchasing paths remain disabled.
+
+If Inspire3 cannot be authenticated, use a **currently owned and sellable** FV Payhip Mind product *only after* Commerce authenticates the SKU, rights, actual price, return terms, customer delivery and settled order. No qualifying owned SKU verified in this sprint. Do not substitute random Payhip web results.
+
+## Creator topic → factual destination → optional paid fit
+| Grok research hook | Destination | Audience intent | CTA | Commercial path |
+|---|---|---|---|---|
+| "How can a pendulum move if you did not mean to move it?" | R175 investigation, UNPUBLISHED, no external link until approval | evidence/history, low purchase intent | Pubished Puységur records and optional existing /focus/ | separate Zen12 buying guide only if visitor independently seeks it |
+| "What changed in the picture while you looked?" | https://finalvestige.com/2026/11/02/change-blindness/ LIVE | curiosity, low buying intent | article → existing /focus/ | no product pushed into scientific conclusions |
+| "Does suggestion need a trance?" | https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/ LIVE historical archive; R174 hypnotizability draft UNPUBLISHED | mixed history and self-hypnosis interest | historical source trail → optional /focus/ | Hypnosis Live or Zen12 buyer guide ONLY if authorized |
+
+These are source-based proposed pathways, **NOT claims of posted creator assets**. Praxxis and Grok must match actual immutable asset_id, platform-native media URL, publish date, permitted link placement, source/rights records and measurable landing URL in existing Drive TASK-008. Grok owns production and posting; no changes to its task queue. Dispatch Issue #174 owns newsletter drafts and existing welcome.
+
+## Offer → funnel step → blocker → experiment → pass/fail evidence → owner
+| Offer | Step | Blocker | Change/experiment | Evidence state | Owner |
+|---|---|---|---|---|---|
+| Zen12 | affiliate eligibility | named acceptance, URL and allowed channels missing | authenticate exact partner terms and earning link | **FAIL / HARD HOLD** | Founder/Mind |
+| Zen12 | qualified presell decision | independent source guide not approved or live | R175 source-controlled HTML with disabled CTA | **BUILT / source only, no browser** | Mind/QA |
+| FV owned Mind digital | actual purchase | owned SKU/right/checkout unconfirmed | check eligible existing product, terms, delivery, merchant settlement | **UNKNOWN** | Commerce |
+| Focus | confirmed lead | consent and actual welcome delivery not independently tested | QA-approved existing Jetpack test without duplicate subscriber | **UNKNOWN** | Site QA/Dispatch |
+| Grok | qualified landing | exact asset_ids and session source unresolved | match immutable IDs, UTMs, first-party traffic and bot filtering | **UNKNOWN** | Grok/Praxxis/Claude |
+| Both | verified sale/net | no merchant settlement/fee/refund ledger | reconcile customer-confirmed payments and commission payouts | **NOT COMPUTABLE** | Commerce |
+| Buyer guide | A/B video lift | no commerce endpoint/video production | text-only versus otherwise identical optional 42-second original video | **HYPOTHESIS / NOT RUN** | Mind/Claude/QA |
+
+## A/B design, with evidence threshold
+**A** is the source-linked text-only independent Zen12 guide. **B** is the same guide, disclosures, button, Focus pathway and source order with an optional, original 42-second clip introduced at the same point. Video requires a poster, WCAG-compliant captions and complete transcript, native keyboard-accessible controls, no autoplay, preload none and no third-party trackers. R175 currently contains only the **poster, full timestamped script and storyboard concept**, NOT a playable MP4. Experiment must not start without an actual approved original video and verified active commercial CTA.
+
+Primary metric after eligible launch: source-confirmed *paid purchasers or paid affiliate conversions per qualified-human session*, and realized net FV revenue per 1,000 qualified-human sessions. Secondary diagnostic metrics: buyer-guide views, relevant CTA clicks, permitted confirmed opt-ins, checkout starts if independently observable. No tests declaring winners from affiliate_clicks. Pre-register minimum detectable effect/power and sample horizon with Analytics/Commerce; stable first-party pseudonymous assignment only if compliant and approved. Randomize without user PII, avoid duplicate scripts. If tiny samples or missing settlement evidence, result = INCONCLUSIVE.
+
+## Privacy and attribution implementation contract (NO SCRIPT DEPLOYMENT)
+Only existing approved first-party instrumentation, not extra SaaS/pixels. Standard campaign parameters on Grok-permitted destination: utm_source=actual_platform; utm_medium=organic_social; utm_campaign=mind_ideomotor_2026_11; utm_content=immutable_asset_id. No emails, names, IP addresses, financial information or personal secrets in URLs. Define qualified_human_landing with internal/bot traffic exclusions and confidence labeling. Track article_to_resource_click as a diagnostic; confirmed_signup only from validated Jetpack consent/confirmation, never an unverified form submission. Record affiliate_click **separately** from merchant_confirmed_purchase and affiliate_paid_commission. Attribution must be checked against actual media IDs and merchant records, not inferred from Jetpack spikes.
+
+**Owned product realized net:** cleared receipts actually retained minus refunds, chargebacks, merchant fees and direct costs only when *not already deducted*. **Affiliate realized net:** commissions actually received by FV minus reversals/fees/costs only if not previously withheld; merchant customer's retail order total is not FV revenue. Preserve negative values. Reconcile seven- and thirty-day qualified-human cohorts with paid outcome timestamps and refunds, and report paid conversion rate, lead-to-paid rate, customer counts and realized net. KPI: 1,000 × realized net FV revenue / attributable qualified-human sessions. Missing numerator or denominator → **NOT COMPUTABLE**, not zero.
+
+## Disclosure / release gates
+The disabled seller CTA has the immediately adjacent **conditional** notice: "If this button is later replaced with an authorized earning link and you purchase through it, Final Vestige may earn a commission at no additional cost to you." Once (and only once) an approved earning link is activated, replace it with "If you purchase through this link, Final Vestige may earn a commission at no additional cost to you." The nearby disclosure must be visible on mobile; general policy page alone is insufficient. See FTC https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking and https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance . No false instant brainwave, health, wealth or clinical claims, no invented product experience.
+
+Require independent editorial/claims review, exact source links, stable page design at 360/390/768/1440/1920, no-JS, keyboard, WCAG 2.2 AA, Lighthouse and native Node/CI tests, authorized affiliate link and merchant checkout/returns, real consent and approved founder release. No production WordPress, menus, Jetpack, Dispatch, analytics, social posting, payment, merge, home PR #49, Issue #150 or canonical Mind PR #172 changes permitted by this sprint.
