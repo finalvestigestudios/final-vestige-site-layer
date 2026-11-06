@@ -56,7 +56,7 @@ const trial=[
  ["inject signup",d=>d.html+='<form><input type="email"></form>'],
  ["insert merchant CTA",d=>d.html+='<a href="https://hypnosislive.com/mental-skills/total-focus">buy now</a>'],
  ["insert earning URL",d=>d.html+='<a href="https://affiliates.inspire3.com/track?affiliate_id=unverified">purchase</a>'],
- ["drop Focus",d=>d.html=d.html.replace('href="https://finalvestige.com/focus/"','href="#"')],
+ ["drop Focus",d=>d.html=d.html.replaceAll('href="https://finalvestige.com/focus/"','href="#"')],
  ["remove study",d=>d.article=d.article.replaceAll('https://pmc.ncbi.nlm.nih.gov/articles/PMC3964612/','NO_SOURCE')],
  ["mark video produced",d=>d.html=d.html.replace('data-video-status="STORYBOARD_ONLY"','data-video-status="PLAYABLE"')],
  ["erase caption timing",d=>d.html=d.html.replace('34–40s','timing-unknown')],
