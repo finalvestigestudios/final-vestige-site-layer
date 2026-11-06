@@ -1,0 +1,77 @@
+{
+  "id": "dispatch-r160-provider-truth-20261106",
+  "observed_at_utc": "2026-11-06T11:32:00Z",
+  "source_scope": "CONNECTED_WP_READ_ONLY_AND_PUBLIC_OFFICIAL_DOCS",
+  "site": "https://finalvestige.com",
+  "newsletter": {
+    "enabled": true,
+    "new_post_default": false,
+    "can_send": true,
+    "email_format": "full",
+    "reply_to": "no-reply",
+    "sender_name": "Final Vestige Studios",
+    "welcome_points_to_fieldbook": true,
+    "newsletter_categories_enabled": false
+  },
+  "counts": {
+    "total": 3,
+    "confirmed": 3,
+    "unconfirmed": 2,
+    "suppressed": 0,
+    "paid": 0,
+    "imported_last_24h": 0
+  },
+  "followers": {
+    "wpcom": 3,
+    "email_legacy": 0,
+    "comment": 0,
+    "partial": false
+  },
+  "pages": {
+    "dispatch": {
+      "id": 523,
+      "url": "https://finalvestige.com/dispatch/",
+      "publish_state": "publish",
+      "api_contains_email_input": false,
+      "api_self_anchor": true,
+      "screenshot_ready": true,
+      "mshots": "https://s0.wp.com/mshots/v1/https%3A%2F%2Ffinalvestige.com%2Fdispatch%2F?vpw=390&vph=1700&w=1200"
+    },
+    "focus": {
+      "id": 1579,
+      "url": "https://finalvestige.com/focus/",
+      "publish_state": "publish",
+      "api_contains_email_input": false,
+      "api_self_anchor": true,
+      "screenshot_ready": true,
+      "mshots": "https://s0.wp.com/mshots/v1/https%3A%2F%2Ffinalvestige.com%2Ffocus%2F?vpw=390&vph=1700&w=1200"
+    }
+  },
+  "media": {
+    "id": 1737,
+    "url": "https://finalvestige.com/wp-content/uploads/2026/10/Final_Vestige_Seven_Day_Focus_Fieldbook_Complete_Edition.pdf",
+    "mime_type": "application/pdf",
+    "filesize": 599946
+  },
+  "recent_posts_sent": 0,
+  "recent_posts_inspected": 5,
+  "report_note": "All 5 recent posts were never_sent_opted_out; this is not a successful deliverability test.",
+  "critical_missing": [
+    "signed_out_guest_interactive_form",
+    "native_email_eligibility_status",
+    "provider_confirmed_signup_transition",
+    "received_welcome_evidence",
+    "real_jetpack_preview",
+    "publisher_postal",
+    "working_unsubscribe",
+    "affiliate_specific_email_permission",
+    "approved_live_buyer_guide",
+    "independent_settled_paid_orders"
+  ],
+  "no_pii": true,
+  "no_email_sent": true,
+  "no_test_email_sent": true,
+  "no_subscriber_changes": true,
+  "no_cms_changes": true,
+  "no_payment_or_affiliate_actions": true
+}
