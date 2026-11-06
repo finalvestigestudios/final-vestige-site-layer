@@ -40,7 +40,7 @@ c("all release gates closed",Object.values(j.release_gates).every(x=>x==="CLOSED
 c("free route only",j.cta.merchant_href===null&&j.cta.affiliate_href===null);
 c("no fictitious revenue",j.net_revenue_per_1000==="NOT_COMPUTABLE");
 c("no click-as-sale",j.measurement.events.affiliate_outbound==="CLICK_NOT_SALE");
-c("money paid not retail gross",/merchant retail gross merchandise value/i.test(d.plan));
+c("money paid not retail gross",/not merchant retail gross merchandise value/i.test(d.plan));
 c("no double subtract discounts",/discounts already reflected/.test(d.plan)&&/never subtract both a paid net receipt/.test(d.plan));
 c("explicit settlement-only commission",/commissions actually received/i.test(d.plan));
 c("unknown sessions",/UNKNOWN/.test(d.plan)&&/qualified human sessions/.test(d.plan));
