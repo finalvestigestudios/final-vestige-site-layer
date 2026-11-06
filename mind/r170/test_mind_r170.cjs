@@ -18,7 +18,7 @@ c("experiment vs product boundary",/not.*Zen12 Premium/i.test(d.article)&&/inten
 c("no article purchase endorsement",!/earn a commission|buy now|affiliate link/i.test(d.article));
 c("draft noindex both",["buyer","hub"].every(k=>/name="robots" content="noindex,nofollow"/.test(d[k])));
 c("no merchant links anywhere buyer/hub",!/<a\b[^>]*href=["']https?:\/\/(?:www\.)?(?:zen12\.com|inspire3\.com|affiliates\.inspire3\.com)/i.test(d.buyer+d.hub));
-c("native disabled CTA",/<button\b[^>]*\bdisabled\b[^>]*>Purchase link unavailable/i.test(d.buyer));
+c("native disabled CTA",/<button\b[^>]*\sdisabled(?=\s|>)[^>]*>Purchase link unavailable/i.test(d.buyer));
 c("disclosure adjacent",/Affiliate disclosure:[\s\S]{0,200}If you purchase through this link, Final Vestige may earn a commission at no additional cost to you[\s\S]{0,280}<button/i.test(d.buyer));
 c("no scripts",!/<script\b/i.test(d.buyer+d.hub));
 c("no forms",!/<form\b/i.test(d.buyer+d.hub));
