@@ -1,0 +1,275 @@
+{
+  "schema": "fv-preparedness-r178-35-safety-state-custody-v1",
+  "state": "DRAFT_HARD_HOLD",
+  "source_ref": "cfb03d0860352884bb628c45d71364aa0dc02ee9",
+  "r161_body_custody_blob": "fede4222c796d92798eff7cf0dcb225c291f7d61",
+  "expected_articles": 35,
+  "expected_citations": 2000,
+  "expected_source_use": 385,
+  "recorded_state_counts": {
+    "pending": 29,
+    "not-required": 4,
+    "approved": 2
+  },
+  "historical_labels_are_not_approvals": true,
+  "publication_authorized": false,
+  "independent_qd_pass": false,
+  "qualified_safety_review_complete": false,
+  "legacy_approved_unverified": [
+    "making-water-safer",
+    "salt-beef-salt-pork-age-of-sail"
+  ],
+  "not_required_still_editorial_hold": [
+    "navigation-before-gps",
+    "pioneer-supply-chains-failed",
+    "root-cellars-cool-storage",
+    "sanitation-before-germ-theory"
+  ],
+  "articles": [
+    {
+      "slug": "emergency-hygiene-sanitation",
+      "meta_git_blob": "e94ff9b33e6ced71dafcdcc4412ad687a503ccf6",
+      "article_number": 18,
+      "recorded_state": "pending",
+      "source_use_count": 7
+    },
+    {
+      "slug": "family-communication-plan",
+      "meta_git_blob": "dcad79faa8e0e6f1aef6db03e9e6e9451e19d8d3",
+      "article_number": 15,
+      "recorded_state": "pending",
+      "source_use_count": 20
+    },
+    {
+      "slug": "fire-making-across-time",
+      "meta_git_blob": "ca9e2c84d825b5cd9e182dc9a4a381c8a6905884",
+      "article_number": 31,
+      "recorded_state": "pending",
+      "source_use_count": 11
+    },
+    {
+      "slug": "food-safety-power-outage",
+      "meta_git_blob": "3283071134ba24490d47f5a0635836b6ed4f8965",
+      "article_number": 9,
+      "recorded_state": "pending",
+      "source_use_count": 9
+    },
+    {
+      "slug": "go-bags",
+      "meta_git_blob": "16cc5e91204a77486912444c6e516f5d5b48f567",
+      "article_number": 16,
+      "recorded_state": "pending",
+      "source_use_count": 18
+    },
+    {
+      "slug": "history-of-food-preservation",
+      "meta_git_blob": "907237e436b44a34f8d673ef9de3168d1e9ad517",
+      "article_number": 35,
+      "recorded_state": "pending",
+      "source_use_count": 12
+    },
+    {
+      "slug": "home-fire-escape-plan",
+      "meta_git_blob": "ff1246dcbfb0dd0bc864977f815badb9ad4e7ed8",
+      "article_number": 13,
+      "recorded_state": "pending",
+      "source_use_count": 13
+    },
+    {
+      "slug": "homemade-water-filters",
+      "meta_git_blob": "91c730bd1c7a61fa3140a86245c9bc0c88160c29",
+      "article_number": 7,
+      "recorded_state": "pending",
+      "source_use_count": 6
+    },
+    {
+      "slug": "household-emergency-plan",
+      "meta_git_blob": "0681d51e6e29166eaae27ac2b7f1fbde3f836787",
+      "article_number": 1,
+      "recorded_state": "pending",
+      "source_use_count": 14
+    },
+    {
+      "slug": "lewis-and-clark-salt-works",
+      "meta_git_blob": "3a350aedac67ea89c6995831032367634248c9e9",
+      "article_number": 23,
+      "recorded_state": "pending",
+      "source_use_count": 11
+    },
+    {
+      "slug": "making-water-safer",
+      "meta_git_blob": "827d861eb3beebfd010ee98fcca764b23a2de90e",
+      "article_number": 6,
+      "recorded_state": "approved",
+      "source_use_count": 8
+    },
+    {
+      "slug": "medication-and-devices",
+      "meta_git_blob": "a49a6d42a3deb14acbe67e7cf636c23cdc5ec49c",
+      "article_number": 17,
+      "recorded_state": "pending",
+      "source_use_count": 9
+    },
+    {
+      "slug": "navigation-before-gps",
+      "meta_git_blob": "40c83419760bc7bd0c4c574304e65b773b4a8423",
+      "article_number": 32,
+      "recorded_state": "not-required",
+      "source_use_count": 10
+    },
+    {
+      "slug": "outage-heat-cold-generators",
+      "meta_git_blob": "be37b602d0b82593d438083dfc8a1e5ef595dd44",
+      "article_number": 12,
+      "recorded_state": "pending",
+      "source_use_count": 19
+    },
+    {
+      "slug": "pantry-rotation",
+      "meta_git_blob": "dfafbb77e076d6cab5aec8217f98d7fd20dbff1c",
+      "article_number": 8,
+      "recorded_state": "pending",
+      "source_use_count": 9
+    },
+    {
+      "slug": "pemmican-and-dried-meats",
+      "meta_git_blob": "03d3824e07fe51931671d0ddc7aa8c85eda58435",
+      "article_number": 25,
+      "recorded_state": "pending",
+      "source_use_count": 11
+    },
+    {
+      "slug": "pickling-fermentation-old-recipes",
+      "meta_git_blob": "da97f42fcabbd05dc513d26c6af289bbeb8816f3",
+      "article_number": 28,
+      "recorded_state": "pending",
+      "source_use_count": 10
+    },
+    {
+      "slug": "pioneer-supply-chains-failed",
+      "meta_git_blob": "4d2dc4958736e3c5257c65dda8ed016a473ac6be",
+      "article_number": 34,
+      "recorded_state": "not-required",
+      "source_use_count": 11
+    },
+    {
+      "slug": "pioneer-travel-rations",
+      "meta_git_blob": "7191acba55d63dc405ad9c2003d66193276da89f",
+      "article_number": 24,
+      "recorded_state": "pending",
+      "source_use_count": 10
+    },
+    {
+      "slug": "preparedness-real-households",
+      "meta_git_blob": "ba840917f34634ccd634c488eeca4a8a6b3a8fe2",
+      "article_number": 20,
+      "recorded_state": "pending",
+      "source_use_count": 17
+    },
+    {
+      "slug": "pressure-canning-low-acid",
+      "meta_git_blob": "4ab01d4aa566b8970351d8d8d43f7f85e8a04341",
+      "article_number": 10,
+      "recorded_state": "pending",
+      "source_use_count": 17
+    },
+    {
+      "slug": "rain-barrels-and-cisterns",
+      "meta_git_blob": "dc42694e842969624f24ab5edc9bff2497693e70",
+      "article_number": 29,
+      "recorded_state": "pending",
+      "source_use_count": 7
+    },
+    {
+      "slug": "root-cellars-cool-storage",
+      "meta_git_blob": "c3b7425711c3953c2d6cac9eb2aabe21a6717285",
+      "article_number": 27,
+      "recorded_state": "not-required",
+      "source_use_count": 8
+    },
+    {
+      "slug": "safe-jerky-dehydration",
+      "meta_git_blob": "50b365e8109c14bdb9ce1a9365db88215a678ec5",
+      "article_number": 11,
+      "recorded_state": "pending",
+      "source_use_count": 11
+    },
+    {
+      "slug": "salt-beef-salt-pork-age-of-sail",
+      "meta_git_blob": "1c4c5396da703f3724b584c67e49e2128ab1f4c6",
+      "article_number": 21,
+      "recorded_state": "approved",
+      "source_use_count": 10
+    },
+    {
+      "slug": "sanitation-before-germ-theory",
+      "meta_git_blob": "3294cd9fcf59496c9ece9342e67b0d57d2ed5523",
+      "article_number": 33,
+      "recorded_state": "not-required",
+      "source_use_count": 10
+    },
+    {
+      "slug": "shelter-or-evacuate",
+      "meta_git_blob": "cb559141d1e4a39debad16cf5cb796b746a01f19",
+      "article_number": 14,
+      "recorded_state": "pending",
+      "source_use_count": 15
+    },
+    {
+      "slug": "ships-biscuit-and-hardtack",
+      "meta_git_blob": "2b2c3ce9472073df3d15e8befb39178d369632b1",
+      "article_number": 22,
+      "recorded_state": "pending",
+      "source_use_count": 8
+    },
+    {
+      "slug": "smokehouses-salting-curing",
+      "meta_git_blob": "16223945e83f95b349acf09a2b684c09326550c0",
+      "article_number": 26,
+      "recorded_state": "pending",
+      "source_use_count": 11
+    },
+    {
+      "slug": "three-day-kit",
+      "meta_git_blob": "1c69d5f1636a3a41631a5d93f11254d85cbe1b59",
+      "article_number": 2,
+      "recorded_state": "pending",
+      "source_use_count": 18
+    },
+    {
+      "slug": "two-week-water-storage",
+      "meta_git_blob": "76f317f047ed95c8b6c7ab130f44d79232e7a463",
+      "article_number": 4,
+      "recorded_state": "pending",
+      "source_use_count": 3
+    },
+    {
+      "slug": "warnings-radios-offline-maps",
+      "meta_git_blob": "025ddac0f8c077f2a6fa17d7fcb746caa51234a7",
+      "article_number": 19,
+      "recorded_state": "pending",
+      "source_use_count": 9
+    },
+    {
+      "slug": "water-advisories-explained",
+      "meta_git_blob": "4c88e747b46d9e95264ec3367911a5175baa6c31",
+      "article_number": 5,
+      "recorded_state": "pending",
+      "source_use_count": 4
+    },
+    {
+      "slug": "water-math",
+      "meta_git_blob": "4b1c3cd7166afa03e56991f7de8af771828a6e54",
+      "article_number": 3,
+      "recorded_state": "pending",
+      "source_use_count": 5
+    },
+    {
+      "slug": "water-purification-through-history",
+      "meta_git_blob": "1d9b77aa4a4cdbf4f9a02fe6d1cf5d2691cc798e",
+      "article_number": 30,
+      "recorded_state": "pending",
+      "source_use_count": 14
+    }
+  ]
+}
