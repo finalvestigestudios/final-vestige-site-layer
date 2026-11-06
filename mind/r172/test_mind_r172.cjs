@@ -35,11 +35,11 @@ function sourceCheck(b) {
   ok(/prospective affiliate disclosure/i.test(buyer),"visible adjacent disclosure missing");
   ok(/may earn a commission at no additional cost to you/i.test(buyer),"plain compensation disclosure missing");
   ok(/https:\/\/finalvestige.com\/focus\//i.test(buyer+hub),"existing Focus destination missing");
-  ok(/href="#main"/.test(buyer+hub),"skip-to-content behavior missing");
-  ok(/prefers-reduced-motion/.test(buyer+hub),"reduced-motion safeguard missing");
+  ok(/href="#main"/.test(buyer) && /href="#main"/.test(hub),"skip-to-content behavior missing");
+  ok(/prefers-reduced-motion/.test(buyer) && /prefers-reduced-motion/.test(hub),"reduced-motion safeguard missing");
   ok(/max-width:760px|760px/.test(buyer),"mobile breakpoint missing");
   ok(/max-width:700px/.test(hub),"hub breakpoint missing");
-  ok(/meta name="robots" content="noindex,nofollow"/i.test(buyer+hub),"unreleased preview indexed");
+  ok(/meta name="robots" content="noindex,nofollow"/i.test(buyer) && /meta name="robots" content="noindex,nofollow"/i.test(hub),"unreleased preview indexed");
   ok(/42-second/.test(buyer),"video hypothesis duration missing");
   ok(/not a playable media file/i.test(buyer),"unproduced video must be labeled honestly");
   ok(/Neither study tested Zen12 audio/.test(buyer),"no research-to-commercial efficacy transfer");
