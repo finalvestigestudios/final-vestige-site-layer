@@ -8,25 +8,35 @@ nothing here reads, transmits, or records paths or customer data.
 from __future__ import annotations
 
 
-def install_shortcuts(root, inputs, output, generate, *, review=None) -> tuple[str, ...]:
-    """Install discoverable keyboard controls on the root Tk window.
+def install_shortcuts(root, inputs, output, generate, *, review=None,
+                      invoice_window=None, policy_rules=None) -> tuple[str, ...]:
+    """Install shortcut access without replacing native Tab or focus-reveal.
 
-    Alt+1/2/3 focus the corresponding input; Ctrl+1/2/3 open the matching
-    file picker. Alt+O focuses the output folder; Ctrl+O opens its picker.
-    Alt+G or Ctrl+Return invokes Generate; Alt+R invokes the premium review
-    button when present. The existing button command is always responsible
-    for permissions and input validation.
-
-    Inputs is a sequence of (Entry, Browse Button) pairs and output
-    is the (Entry, Browse Button) pair for the output folder.
+    Alt+1..3 focuses source fields; Ctrl+1..3 opens their existing Browse
+    buttons. Alt+O/Ctrl+O access the output folder. Alt+G/Ctrl+Return invokes
+    the existing Generate button; Alt+R invokes the gated premium review.
+    Invoice Twin's additional near-match window is focused by Alt+W.
+    ProcureGuard's optional policy input/Browse use Alt+P/Ctrl+P. No shortcut
+    authorizes a report or executes a financial rule without the app's button.
     """
     fields = tuple(inputs)
     if not 1 <= len(fields) <= 3:
         raise ValueError("Expected one to three required input fields")
     if any(len(pair) != 2 for pair in (*fields, output)):
         raise ValueError("Each input/output needs an entry and browse button")
-    if len({id(widget) for pair in (*fields, output) for widget in pair}) != 2 * (len(fields) + 1):
-        raise ValueError("Input and output controls must be independent")
+    if invoice_window is not None and policy_rules is not None:
+        raise ValueError("Unexpected combination of optional controls")
+    if policy_rules is not None and (
+            type(policy_rules) not in (tuple, list) or len(policy_rules) != 2):
+        raise ValueError("Policy requires an entry and browse button")
+
+    widgets = [widget for pair in (*fields, output) for widget in pair]
+    if invoice_window is not None:
+        widgets.append(invoice_window)
+    if policy_rules is not None:
+        widgets.extend(policy_rules)
+    if len({id(widget) for widget in widgets}) != len(widgets):
+        raise ValueError("Input and optional controls must be independent")
 
     actions = {}
     for i, (entry, browse) in enumerate(fields, start=1):
@@ -34,6 +44,11 @@ def install_shortcuts(root, inputs, output, generate, *, review=None) -> tuple[s
         actions[f"<Control-Key-{i}>"] = browse.invoke
     actions["<Alt-Key-o>"] = output[0].focus_set
     actions["<Control-Key-o>"] = output[1].invoke
+    if invoice_window is not None:
+        actions["<Alt-Key-w>"] = invoice_window.focus_set
+    if policy_rules is not None:
+        actions["<Alt-Key-p>"] = policy_rules[0].focus_set
+        actions["<Control-Key-p>"] = policy_rules[1].invoke
     actions["<Alt-Key-g>"] = generate.invoke
     actions["<Control-Return>"] = generate.invoke
     if review is not None:
