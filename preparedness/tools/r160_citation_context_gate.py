@@ -67,9 +67,13 @@ def article(slug, meta, html, meta_blob, body_blob):
         before = clean(html[max(0, mark.start() - 175):mark.start()])[-130:]
         after = clean(html[mark.end():mark.end()+175])[:130]
         context = SPACE.sub(' ', before + ' [SOURCE] ' + after).strip()
+        # Hash raw local markup plus source identity/interpretation, not just
+        # rendered words: moving a cite across a paragraph boundary is drift.
+        raw_context = html[max(0, mark.start()-175):mark.start()] + '[SOURCE]' + html[mark.end():mark.end()+175]
+        fingerprint_input = source_id + '\x1f' + uses[source_id] + '\x1f' + raw_context
         entries.append({'article':slug, 'ordinal':i, 'source_id':source_id,
                         'interpretation':uses[source_id], 'context':context,
-                        'context_sha256':hashlib.sha256(context.encode('utf-8')).hexdigest()})
+                        'context_sha256':hashlib.sha256(fingerprint_input.encode('utf-8')).hexdigest()})
     return {'slug':slug, 'route':f'/preparedness/{section}/{slug}/',
             'safety_recorded':state, 'meta_blob':meta_blob, 'body_blob':body_blob,
             'words':len(WORD.findall(clean(html))), 'citations':len(entries),
