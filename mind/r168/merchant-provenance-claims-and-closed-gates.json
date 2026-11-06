@@ -1,0 +1,583 @@
+{
+  "schema": "fv.mind.r168.claim-and-release.v1",
+  "as_of": "2026-11-06",
+  "status": "DRAFT_ONLY_HARD_HOLD",
+  "sources": [
+    {
+      "id": "S1",
+      "url": "https://inspire3.com/",
+      "type": "official_merchant_catalog",
+      "verified_on": "2026-11-06",
+      "scope": "Company product categories; seller claims only"
+    },
+    {
+      "id": "S2",
+      "url": "https://zen12.com/",
+      "type": "exact_merchant_offer",
+      "verified_on": "2026-11-06",
+      "scope": "Premium offer display, features, 12 levels, 48 MP3, displayed $87.99, seller guarantee; no checkout"
+    },
+    {
+      "id": "S3",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "type": "exact_merchant_offer",
+      "verified_on": "2026-11-06",
+      "scope": "Focus Shot versions, price display, protocol as seller describes"
+    },
+    {
+      "id": "S4",
+      "url": "https://brainwaveshots.com/faq",
+      "type": "official_merchant_faq",
+      "verified_on": "2026-11-06",
+      "scope": "Merchant FAQ for formats, guarantee exclusions, precautions"
+    },
+    {
+      "id": "S5",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+      "type": "systematic_review",
+      "year": 2023,
+      "scope": "EEG entrainment across fourteen binaural-beat studies, not commercial products"
+    },
+    {
+      "id": "S6",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38458383/",
+      "type": "systematic_review",
+      "year": 2024,
+      "scope": "Auditory stimulation arousal/cognition mixed/insufficient"
+    },
+    {
+      "id": "S7",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/24395196/",
+      "type": "systematic_review",
+      "year": 2014,
+      "scope": "Meditation clinical programs, not commercial audio"
+    },
+    {
+      "id": "S8",
+      "url": "https://doi.org/10.1038/scientificamerican1073-94",
+      "type": "historical_science",
+      "year": 1973,
+      "scope": "Binaural beats as auditory phenomenon"
+    },
+    {
+      "id": "S9",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "type": "regulatory_guidance",
+      "scope": "Adjacent clear material connection disclosures"
+    },
+    {
+      "id": "S10",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "type": "regulatory_guidance",
+      "scope": "Objective benefit claims require adequate substantiation"
+    },
+    {
+      "id": "S11",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "type": "owner_project_record",
+      "scope": "61 post baseline historical, existing Puységur/Focus funnel"
+    },
+    {
+      "id": "S12",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "type": "owner_project_record",
+      "scope": "Qualification and net revenue contract"
+    },
+    {
+      "id": "S13",
+      "url": "https://finalvestige.com/focus/",
+      "type": "owner_existing_route",
+      "scope": "Existing published route per Issue #171, guest delivery not reverified"
+    },
+    {
+      "id": "S14",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "type": "owner_existing_route",
+      "scope": "Existing published archive per Issue #171, anon HTTP recheck unavailable"
+    },
+    {
+      "id": "S15",
+      "url": "https://affiliates.inspire3.com/",
+      "type": "public_affiliate_portal",
+      "scope": "Program exists; NOT named FV approval"
+    },
+    {
+      "id": "S16",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/1248",
+      "type": "preceding_draft",
+      "scope": "R167 isolated draft, commercial hold"
+    }
+  ],
+  "claims": [
+    {
+      "id": "Z12-01",
+      "statement": "Zen12 Premium includes 12 levels and 48 MP3 files",
+      "status": "SELLER_DESCRIBED",
+      "source_ids": [
+        "S2"
+      ],
+      "limit": "Attribute to seller only; no independent delivery check"
+    },
+    {
+      "id": "Z12-02",
+      "statement": "Zen12 Premium page displays $87.99 (2026-11-06)",
+      "status": "SELLER_DISPLAY_ONLY",
+      "source_ids": [
+        "S2"
+      ],
+      "limit": "No final checkout, tax, coupon or geo verification. Do not publish unqualified price"
+    },
+    {
+      "id": "Z12-03",
+      "statement": "Zen12 seller advertises 1-year money-back guarantee",
+      "status": "SELLER_DESCRIBED",
+      "source_ids": [
+        "S2"
+      ],
+      "limit": "Refund fulfillment and restrictions not independently tested"
+    },
+    {
+      "id": "Z12-04",
+      "statement": "Zen12 includes level audio guides, support, bonuses, training call on Premium tier",
+      "status": "SELLER_DESCRIBED",
+      "source_ids": [
+        "S2"
+      ],
+      "limit": "Availability / redemption unverified"
+    },
+    {
+      "id": "Z12-05",
+      "statement": "A 12-minute Zen12 session equals 1 hour of deep meditation",
+      "status": "EXCLUDE_UNSUBSTANTIATED",
+      "source_ids": [
+        "S2",
+        "S5",
+        "S7"
+      ],
+      "limit": "Cannot transfer generic meditation research to this claim"
+    },
+    {
+      "id": "Z12-06",
+      "statement": "Zen12 prevents anxiety/depression or produces medical benefit",
+      "status": "EXCLUDE_UNSUBSTANTIATED",
+      "source_ids": [
+        "S2",
+        "S7",
+        "S10"
+      ],
+      "limit": "No product-specific competent clinical evidence reviewed"
+    },
+    {
+      "id": "Z12-07",
+      "statement": "Zen12 uses brainwave stimulation",
+      "status": "SELLER_DESCRIBED",
+      "source_ids": [
+        "S2"
+      ],
+      "limit": "Exact stimulus methodology not independently checked; don't call exact audio binaural beats"
+    },
+    {
+      "id": "Z12-08",
+      "statement": "Zen12 recordings reliably entrain EEG for listeners",
+      "status": "EXCLUDE_UNSUBSTANTIATED",
+      "source_ids": [
+        "S5",
+        "S2"
+      ],
+      "limit": "14-study binaural review inconsistent and nonproduct-specific"
+    },
+    {
+      "id": "BWS-01",
+      "statement": "Focus Shot offers 15 and 30-minute audio plus brainwave-only variants",
+      "status": "SELLER_DESCRIBED",
+      "source_ids": [
+        "S3"
+      ],
+      "limit": "Content fulfillment not independent"
+    },
+    {
+      "id": "BWS-02",
+      "statement": "Focus Shot lists a 12-18Hz 30-minute beta protocol",
+      "status": "SELLER_DESCRIBED",
+      "source_ids": [
+        "S3"
+      ],
+      "limit": "Seller technical description only; mechanism/benefit unverified"
+    },
+    {
+      "id": "BWS-03",
+      "statement": "Focus Shot page displays $17.99 (2026-11-06)",
+      "status": "SELLER_DISPLAY_ONLY",
+      "source_ids": [
+        "S3"
+      ],
+      "limit": "Not checkout and not affiliate-eligible promotion"
+    },
+    {
+      "id": "BWS-04",
+      "statement": "Focus Shot triggers laser-sharp focus and productivity",
+      "status": "EXCLUDE_UNSUBSTANTIATED",
+      "source_ids": [
+        "S3",
+        "S6"
+      ],
+      "limit": "No exact-file endpoint trial authenticated"
+    },
+    {
+      "id": "BWS-05",
+      "statement": "Brainwave Shots seller FAQ advertises refund conditions",
+      "status": "SELLER_DESCRIBED",
+      "source_ids": [
+        "S4"
+      ],
+      "limit": "FAQ includes conditions; do not promise unconditional return"
+    },
+    {
+      "id": "AUD-01",
+      "statement": "Binaural beat is an auditory perception of difference frequency under appropriate dichotic presentation",
+      "status": "SCIENCE_SUPPORTED_LIMITED",
+      "source_ids": [
+        "S8"
+      ],
+      "limit": "Percept not proof of global cortical entrainment"
+    },
+    {
+      "id": "AUD-02",
+      "statement": "Five of 14 EEG studies supported entrainment, eight contradicted, one mixed",
+      "status": "SCIENCE_SUPPORTED_REVIEW",
+      "source_ids": [
+        "S5"
+      ],
+      "limit": "Heterogeneous studies; not a success rate"
+    },
+    {
+      "id": "AUD-03",
+      "statement": "Auditory stimulation review found mixed/insufficient physiological-cognitive relationship",
+      "status": "SCIENCE_SUPPORTED_REVIEW",
+      "source_ids": [
+        "S6"
+      ],
+      "limit": "Avoid absolute uselessness and guaranteed outcomes"
+    },
+    {
+      "id": "MED-01",
+      "statement": "Review of mindfulness meditation included 47 trials and 3515 participants",
+      "status": "SCIENCE_SUPPORTED_REVIEW",
+      "source_ids": [
+        "S7"
+      ],
+      "limit": "Does not evaluate Zen12/Focus Shot"
+    },
+    {
+      "id": "AFF-01",
+      "statement": "Inspire3 operates public affiliate sign-up portal",
+      "status": "PUBLIC_ONLY",
+      "source_ids": [
+        "S15"
+      ],
+      "limit": "Not FV-specific publisher approval"
+    },
+    {
+      "id": "AFF-02",
+      "statement": "FV approved for email, social, web placements and commission",
+      "status": "UNKNOWN",
+      "source_ids": [
+        "S11"
+      ],
+      "limit": "Need authenticated partner dashboard and terms"
+    },
+    {
+      "id": "AFF-03",
+      "statement": "FV has unique merchant earning URL with valid attribution terms",
+      "status": "UNKNOWN",
+      "source_ids": [
+        "S11"
+      ],
+      "limit": "Keep purchase control disabled"
+    },
+    {
+      "id": "CONV-01",
+      "statement": "Affiliate outgoing click means verified commission",
+      "status": "FALSE_SEPARATE_METRICS",
+      "source_ids": [
+        "S12"
+      ],
+      "limit": "Only partner-reported sale/settlement may support revenue"
+    },
+    {
+      "id": "CONV-02",
+      "statement": "Payhip offers verified eligible FV Mind digital SKU",
+      "status": "UNKNOWN",
+      "source_ids": [
+        "S12"
+      ],
+      "limit": "Must authenticate rights, checkout, price, refunds and fulfillment"
+    },
+    {
+      "id": "CONV-03",
+      "statement": "Realized net revenue per 1000 qualified human sessions calculable",
+      "status": "UNKNOWN",
+      "source_ids": [
+        "S12"
+      ],
+      "limit": "Requires cohort sessions and settled orders minus fees/refunds"
+    },
+    {
+      "id": "DISC-01",
+      "statement": "FTC affiliate disclosure only on general disclosure page is sufficient",
+      "status": "FALSE",
+      "source_ids": [
+        "S9"
+      ],
+      "limit": "Adjacent, clear and conspicuous near CTA"
+    },
+    {
+      "id": "HEALTH-01",
+      "statement": "A seller health claim is substantiated by reference to general research",
+      "status": "FALSE",
+      "source_ids": [
+        "S10"
+      ],
+      "limit": "Independent product-specific substantiation required"
+    },
+    {
+      "id": "VIDEO-01",
+      "statement": "Optional 42s video concept equals produced or tested video",
+      "status": "FALSE",
+      "source_ids": [
+        "S12"
+      ],
+      "limit": "Storyboard only; no movie, captions file, or experiment"
+    }
+  ],
+  "gates": [
+    {
+      "id": "named_inspire3_account_approval",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "permitted_web_promotion",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "permitted_social_promotion",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "permitted_email_promotion",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "exact_approved_affiliate_url",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "tracking_cookie_attribution_terms",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "approved_creative_rights",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "accurate_offer_merchant_checkout",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "price_geo_tax_coupon_verified",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "refund_fulfillment_reviewed",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "product_specific_health_evidence",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "material_connection_disclosure_approved",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "merchant_outbound_enabled",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "owned_mind_payhip_sku_verified",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "owned_mind_content_rights_verified",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "owned_mind_checkout_verified",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "owned_mind_price_verified",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "owned_mind_refund_terms_verified",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "owned_mind_fulfillment_verified",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "guest_focus_signup_verified",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "guest_welcome_delivery_verified",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "grok_published_asset_ids_verified",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "creator_link_placements_verified",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "qualified_session_definition_accepted",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "consent_and_privacy_review",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "affiliate_click_not_merged_with_sale",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "merchant_paid_order_import_verified",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "refund_fee_net_reconciliation",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "test_sample_sufficiency",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "real_mobile_accessibility_review",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "native_browser_nojs_review",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "video_asset_mp4_vtt_created",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "video_perf_lcp_review",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "founder_approved_release",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "ci_workflows_green",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "id": "actual_paid_order_proven",
+      "status": "CLOSED",
+      "evidence": null
+    }
+  ],
+  "authorization": {
+    "affiliate_approved": null,
+    "allowed_channels": null,
+    "affiliate_url": null,
+    "commission_terms": null,
+    "creative_usage_rights": null
+  },
+  "seller": {
+    "zen12_premium": {
+      "merchant_url": "https://zen12.com/",
+      "displayed_price_usd": "87.99",
+      "price_is_checkout_verified": false,
+      "advertised_guarantee": "1 year, merchant claim only",
+      "trial_specific_evidence": false,
+      "delivery_verified": false
+    },
+    "brainwave_focus_shot": {
+      "merchant_url": "https://brainwaveshots.com/focus-shot",
+      "displayed_price_usd": "17.99",
+      "price_is_checkout_verified": false,
+      "advertised_guarantee": "1 year, merchant claim only",
+      "delivery_verified": false
+    }
+  },
+  "payhip_fallback": {
+    "eligible_owned_mind_sku": null,
+    "rights": null,
+    "checkout": null,
+    "price": null,
+    "refund_terms": null,
+    "fulfillment": null
+  },
+  "measurement": {
+    "grok_asset_ids": null,
+    "qualified_human_sessions": null,
+    "verified_paid_orders": null,
+    "settled_commissions": null,
+    "fees": null,
+    "refunds": null,
+    "realized_net_revenue": null,
+    "revenue_per_1000_qualified_human_sessions": null
+  },
+  "draft_only": {
+    "enabled_merchant_links": 0,
+    "active_subscribe_forms": 0,
+    "duplicate_tracking_scripts": 0,
+    "commercial_publishing_approved": false
+  }
+}
