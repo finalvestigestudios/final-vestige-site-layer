@@ -1,0 +1,629 @@
+{
+  "milestone": "R160",
+  "reviewed_local": "2026-11-05",
+  "branch": "mind-r160-doorway-event-boundaries-revenue-20261105",
+  "product_focus": "Zen12 Premium exact main offer",
+  "seller_pages_differ": true,
+  "sources": [
+    {
+      "id": "P01",
+      "title": "Radvansky Copeland 2006",
+      "url": "https://aquila.usm.edu/fac_pubs/2333/",
+      "role": "primary paper institutional record"
+    },
+    {
+      "id": "P02",
+      "title": "Radvansky Krawietz Tamplin 2011",
+      "url": "https://doi.org/10.1080/17470218.2011.571267",
+      "role": "peer-reviewed paper and abstract"
+    },
+    {
+      "id": "P03",
+      "title": "McFadyen et al 2021",
+      "url": "https://doi.org/10.1186/s40359-021-00536-3",
+      "role": "peer-reviewed open-access replication"
+    },
+    {
+      "id": "P04",
+      "title": "Pettijohn Radvansky 2016",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26556012/",
+      "role": "peer-reviewed indexed abstract"
+    },
+    {
+      "id": "M01",
+      "title": "Zen12 Premium official exact offer",
+      "url": "https://zen12.com/?no-popup=1",
+      "role": "seller claim, read 2026-11-05"
+    },
+    {
+      "id": "M02",
+      "title": "Zen12 alternative merchant promo route",
+      "url": "https://zen12.com/secret/",
+      "role": "seller route with different promotional pricing"
+    },
+    {
+      "id": "M03",
+      "title": "Inspire3 catalog",
+      "url": "https://inspire3.com/",
+      "role": "official catalog; not authorization"
+    },
+    {
+      "id": "M04",
+      "title": "Inspire3 public affiliate portal",
+      "url": "https://affiliates.inspire3.com/",
+      "role": "public program description; not named approval"
+    },
+    {
+      "id": "F01",
+      "title": "FTC Endorsement Guides FAQ",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "role": "regulation/interpretive guidance"
+    },
+    {
+      "id": "F02",
+      "title": "FTC health products compliance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "role": "regulatory substantiation guidance"
+    },
+    {
+      "id": "V01",
+      "title": "Existing Focus Fieldbook",
+      "url": "https://finalvestige.com/focus/",
+      "role": "existing known FV route; guest signup untested this run"
+    },
+    {
+      "id": "V02",
+      "title": "Existing Puységur archive",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "role": "historic FV route; web fetch error, earlier authenticated inventory"
+    },
+    {
+      "id": "V03",
+      "title": "Published Change Blindness",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "role": "previously reported live FV route; public fetch not verified here"
+    },
+    {
+      "id": "G01",
+      "title": "Mind issue authority",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "role": "source of editorial and commerce policy"
+    },
+    {
+      "id": "G02",
+      "title": "Conversion measurement issue",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "role": "source of attribution/consent approval policy"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "Crossing spatial regions reduced specific memory-probe accessibility in the 2006 virtual-room task",
+      "status": "research_supported_scope_limited",
+      "source_ids": [
+        "P01"
+      ],
+      "editorial_decision": "Allowed when stated as task-specific"
+    },
+    {
+      "id": "C02",
+      "claim": "The 2006 paper measured everyday forgotten household errands",
+      "status": "not_supported",
+      "source_ids": [
+        "P01"
+      ],
+      "editorial_decision": "Must not claim"
+    },
+    {
+      "id": "C03",
+      "claim": "2011 follow-ups reported location-updating effects in virtual and physical environments",
+      "status": "research_supported_scope_limited",
+      "source_ids": [
+        "P02"
+      ],
+      "editorial_decision": "Allowed with design caveat"
+    },
+    {
+      "id": "C04",
+      "claim": "Returning to initial room restored performance in 2011",
+      "status": "contradicted",
+      "source_ids": [
+        "P02"
+      ],
+      "editorial_decision": "Must not claim"
+    },
+    {
+      "id": "C05",
+      "claim": "2021 four experiments found a general doorway forgetting effect",
+      "status": "contradicted",
+      "source_ids": [
+        "P03"
+      ],
+      "editorial_decision": "Must not claim"
+    },
+    {
+      "id": "C06",
+      "claim": "2021 found increased false alarms under a working-memory-load condition",
+      "status": "research_supported_scope_limited",
+      "source_ids": [
+        "P03"
+      ],
+      "editorial_decision": "Allowed with condition"
+    },
+    {
+      "id": "C07",
+      "claim": "Every doorway always causes forgetting",
+      "status": "not_supported",
+      "source_ids": [
+        "P01",
+        "P03"
+      ],
+      "editorial_decision": "Exclude"
+    },
+    {
+      "id": "C08",
+      "claim": "Doorway studies prove memory is deleted",
+      "status": "not_supported",
+      "source_ids": [
+        "P01",
+        "P03"
+      ],
+      "editorial_decision": "Exclude"
+    },
+    {
+      "id": "C09",
+      "claim": "Doorway studies prove an audio product repairs memory",
+      "status": "not_supported",
+      "source_ids": [
+        "P01",
+        "P03",
+        "M01"
+      ],
+      "editorial_decision": "Exclude"
+    },
+    {
+      "id": "C10",
+      "claim": "A self-observation cue is a validated treatment for memory lapses",
+      "status": "not_supported",
+      "source_ids": [
+        "P01",
+        "P03"
+      ],
+      "editorial_decision": "Present as informal practice only"
+    },
+    {
+      "id": "C11",
+      "claim": "Zen12 Premium advertises 12 levels and 48 MP3 recordings",
+      "status": "seller_description",
+      "source_ids": [
+        "M01"
+      ],
+      "editorial_decision": "Attribution to seller mandatory"
+    },
+    {
+      "id": "C12",
+      "claim": "Zen12 Premium displayed $87.99 on exact official main page 2026-11-05",
+      "status": "seller_page_display_only",
+      "source_ids": [
+        "M01"
+      ],
+      "editorial_decision": "Do not promise checkout or discounts"
+    },
+    {
+      "id": "C13",
+      "claim": "Alternative Zen12 merchant route advertises a different $37 coupon offer",
+      "status": "seller_promo_display_only",
+      "source_ids": [
+        "M02"
+      ],
+      "editorial_decision": "Price and attribution route risk; do not blend pages or assert eligibility"
+    },
+    {
+      "id": "C14",
+      "claim": "Zen12 Premium seller advertises one-year money-back guarantee",
+      "status": "seller_description",
+      "source_ids": [
+        "M01"
+      ],
+      "editorial_decision": "No independent refund fulfillment verification"
+    },
+    {
+      "id": "C15",
+      "claim": "Guarantee terms refund processing independently tested",
+      "status": "unverified",
+      "source_ids": [
+        "M01"
+      ],
+      "editorial_decision": "Do not claim"
+    },
+    {
+      "id": "C16",
+      "claim": "Zen12 12 minutes replicates an hour of meditation for buyers",
+      "status": "unsubstantiated_product_efficacy",
+      "source_ids": [
+        "M01"
+      ],
+      "editorial_decision": "Omit endorsement"
+    },
+    {
+      "id": "C17",
+      "claim": "Zen12 treats attention or memory disorders",
+      "status": "unsubstantiated_health_claim",
+      "source_ids": [
+        "M01",
+        "F02"
+      ],
+      "editorial_decision": "Do not claim"
+    },
+    {
+      "id": "C18",
+      "claim": "Zen12 is suitable for every individual and clinically risk-free",
+      "status": "unsubstantiated_safety_claim",
+      "source_ids": [
+        "M01",
+        "F02"
+      ],
+      "editorial_decision": "Do not claim"
+    },
+    {
+      "id": "C19",
+      "claim": "Inspire3 official catalog describes Zen12 and other brands",
+      "status": "seller_catalog",
+      "source_ids": [
+        "M03"
+      ],
+      "editorial_decision": "Allowed as catalog fact"
+    },
+    {
+      "id": "C20",
+      "claim": "Public Inspire3 program exists",
+      "status": "public_program_fact",
+      "source_ids": [
+        "M04"
+      ],
+      "editorial_decision": "Allowed without commissions"
+    },
+    {
+      "id": "C21",
+      "claim": "FV accepted as named Inspire3 affiliate",
+      "status": "unverified",
+      "source_ids": [
+        "M04"
+      ],
+      "editorial_decision": "Hard hold"
+    },
+    {
+      "id": "C22",
+      "claim": "FV has approved earning URL for Zen12 Premium",
+      "status": "unverified",
+      "source_ids": [
+        "M04"
+      ],
+      "editorial_decision": "Hard hold"
+    },
+    {
+      "id": "C23",
+      "claim": "Final Vestige can use affiliate email/TikTok channels",
+      "status": "unverified",
+      "source_ids": [
+        "M04"
+      ],
+      "editorial_decision": "Hard hold"
+    },
+    {
+      "id": "C24",
+      "claim": "FV will earn public advertised commission rates",
+      "status": "unverified_account_terms",
+      "source_ids": [
+        "M04"
+      ],
+      "editorial_decision": "No payout assumption"
+    },
+    {
+      "id": "C25",
+      "claim": "Specific merchant checkout price, tax, upsells and refund terms verified",
+      "status": "unverified",
+      "source_ids": [
+        "M01",
+        "M02"
+      ],
+      "editorial_decision": "Must authenticate before release"
+    },
+    {
+      "id": "C26",
+      "claim": "FTC expects clear disclosure close to paid recommendation",
+      "status": "regulatory_guidance",
+      "source_ids": [
+        "F01"
+      ],
+      "editorial_decision": "Exact adjacent plain text"
+    },
+    {
+      "id": "C27",
+      "claim": "A disclosure cures unsupported health-benefit claims",
+      "status": "contradicted_regulatory",
+      "source_ids": [
+        "F01",
+        "F02"
+      ],
+      "editorial_decision": "No: independent substantiation required"
+    },
+    {
+      "id": "C28",
+      "claim": "The existing /focus/ route is the single approved FV lead magnet",
+      "status": "known_project_route",
+      "source_ids": [
+        "G01",
+        "V01"
+      ],
+      "editorial_decision": "Preserve existing Jetpack form"
+    },
+    {
+      "id": "C29",
+      "claim": "Guest signup and Focus welcome email were tested this run",
+      "status": "unverified",
+      "source_ids": [
+        "V01"
+      ],
+      "editorial_decision": "Cannot claim"
+    },
+    {
+      "id": "C30",
+      "claim": "Existing Payhip rights-cleared paid Mind SKU is proven saleable",
+      "status": "unverified",
+      "source_ids": [
+        "G02"
+      ],
+      "editorial_decision": "Owner commerce must authenticate"
+    },
+    {
+      "id": "C31",
+      "claim": "Outbound affiliate click is a paid sale",
+      "status": "false_measurement_inference",
+      "source_ids": [
+        "G02"
+      ],
+      "editorial_decision": "Separate events and merchant reconciliation"
+    },
+    {
+      "id": "C32",
+      "claim": "Actual qualified-human sessions and settled net revenue measured this run",
+      "status": "unverified",
+      "source_ids": [
+        "G02"
+      ],
+      "editorial_decision": "NOT COMPUTABLE"
+    },
+    {
+      "id": "C33",
+      "claim": "Actual Grok media IDs verified and matched to URLs",
+      "status": "unverified",
+      "source_ids": [
+        "G02"
+      ],
+      "editorial_decision": "Proposals only; no platform writes"
+    },
+    {
+      "id": "C34",
+      "claim": "Short video creative has been produced or user-tested",
+      "status": "unverified",
+      "source_ids": [
+        "G01"
+      ],
+      "editorial_decision": "Storyboard only"
+    },
+    {
+      "id": "C35",
+      "claim": "Public web read for live FV routes succeeded this run",
+      "status": "unverified",
+      "source_ids": [
+        "V01",
+        "V02"
+      ],
+      "editorial_decision": "Tool returned an internal error; rely on previous project evidence only"
+    }
+  ],
+  "gates": [
+    {
+      "gate": "named_inspire3_partner_approval",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "gate": "exact_zen12_sku_authorized",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "gate": "approved_affiliate_link",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "gate": "allowed_promotion_channels",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "gate": "approved_creative_terms",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "gate": "attribution_parameter_terms",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "gate": "commission_reporting_access",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "gate": "commission_settlement_proof",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "gate": "actual_merchant_checkout_price",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "gate": "merchant_refund_process",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "gate": "merchant_privacy_policy",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "gate": "site_legal_review",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "gate": "independent_claim_review",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "gate": "FTC_disclosure_review",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "gate": "actual_browser_a11y",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "gate": "native_JSless_review",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "gate": "mobile_360_390_768_1440_1920",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "gate": "performance_lighthouse",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "gate": "actual_video_produced",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "gate": "video_caption_review",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "gate": "video_rights_review",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "gate": "consent_review",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "gate": "qualified_human_session_baseline",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "gate": "Focus_guest_signup_e2e",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "gate": "Focus_welcome_delivery_e2e",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "gate": "creator_actual_asset_ids",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "gate": "founder_commercial_release_approval",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "gate": "site_qa_release_approval",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "gate": "WordPress_CMS_release_approval",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "gate": "verified_payhip_owned_fallback_sku",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "gate": "payhip_rights_clearance",
+      "status": "CLOSED",
+      "evidence": null
+    },
+    {
+      "gate": "payhip_checkout_refund_qa",
+      "status": "CLOSED",
+      "evidence": null
+    }
+  ],
+  "affiliate": {
+    "named_fv_authorization": "UNVERIFIED",
+    "authorized_affiliate_url": null,
+    "permissions": null,
+    "commission_rate": null,
+    "price_at_checkout": null,
+    "paid_commissions": null
+  },
+  "owned_product_fallback": {
+    "verified_payhip_sku": null,
+    "rights_cleared": null,
+    "published_price": null,
+    "refunds_verified": false,
+    "release": "HOLD"
+  },
+  "experiment": {
+    "variant_a": "source text only",
+    "variant_b": "same source text + optional original 42s video with captions",
+    "status": "DESIGN_ONLY",
+    "randomized": false,
+    "media_produced": false
+  },
+  "analytics": {
+    "event_names": [
+      "qualified_campaign_landing",
+      "article_to_resource_click",
+      "confirmed_lead",
+      "affiliate_outbound_click",
+      "merchant_confirmed_paid_order",
+      "merchant_confirmed_paid_affiliate_commission",
+      "refund",
+      "fee"
+    ],
+    "exclude_personal_information": true,
+    "source_of_truth": "merchant settlement for revenue, not clicks",
+    "net_revenue_per_1000_qualified_human_sessions": null,
+    "reason": "no authenticated eligible offer plus no qualified session or settled merchant ledger"
+  },
+  "release_status": "HARD_HOLD",
+  "last_verified_checkout": null
+}
