@@ -1,0 +1,15 @@
+FINAL VESTIGE DISPATCH R165 | OFFLINE REVIEW BOARD | 2026-11-06 08:30 PT
+ALL SIX: HOLD_UNSENT. COMMERCIAL 03,05: HOLD_MERCHANT. NOT A SENT EMAIL.
+Verified WP aggregate snapshot: 3 total/3 confirmed/2 unconfirmed, overlapping counts.
+Email-eligible audience: UNKNOWN. Welcome received: UNVERIFIED. Commercial permission: UNVERIFIED.
+Canonical six issue snapshots pinned to #175 head d57ccdba3aee8f065e143e101c2945f4f3d01647:
+01 | editorial | The mind is not a camera | preheader: What an old record can teach us about the difference between seeing and knowing. | 207 body words | First-party destination https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/ | Sources heading: NO
+02 | editorial | Before hypnosis had a name | preheader: The eighteenth-century witnesses who left behind a problem of proof. | 220 body words | First-party destination https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/ | Sources heading: NO
+03 | commercial-review-pending | The twelve-minute meditation question | preheader: An honest way to evaluate a short audio practice before you spend anything. | 272 body words | GUIDE NOT LIVE | Sources heading: NO
+04 | editorial | Fourteen seconds. A much longer explanation. | preheader: Apollo 1, the surviving record, and why a tidy cause can mislead. | 175 body words | First-party destination https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/ | Sources heading: NO
+05 | commercial-review-pending | Before you press play on a hypnosis audio | preheader: Three questions that matter more than an impressive promise. | 239 body words | GUIDE NOT LIVE | Sources heading: NO
+06 | editorial | What did seven days of attention reveal? | preheader: A small experiment, a useful notebook, and no miracle claims. | 202 body words | First-party destination https://finalvestige.com/focus/ | Sources heading: NO
+Transport: Jetpack requires post + per-post Send flag. Global auto-send is OFF but per-post override exists. Preview email is not Send test email. No true native preview yet.
+Unverified: signed-out signup, confirmed subscriber statuses, received welcome, sender footer, functional unsubscribe, affiliate acceptance/email permission/earning URLs/checkout, and paid transactions.
+Only valid conversion metric: independently confirmed settled net paid returns divided by independently measured qualified human sessions, multiplied by 1,000. NOT COMPUTABLE at present.
+No publishing, settings, subscriber data exports/imports, sends, tracking installs, affiliate links or spend.
