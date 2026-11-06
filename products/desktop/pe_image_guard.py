@@ -49,13 +49,26 @@ def verify_amd64_pe(path: str | Path) -> None:
     flags = os.O_RDONLY | getattr(os, "O_BINARY", 0) | getattr(os, "O_NOFOLLOW", 0)
     try:
         fd = os.open(filename, flags)
-    except OSError as exc:
-        raise PEFormatError("Cannot open candidate without following file symlinks") from exc
-    metadata = os.fstat(fd)
-    if not stat.S_ISREG(metadata.st_mode):
-        os.close(fd)
-        raise PEFormatError("Candidate is not a regular file")
-    with os.fdopen(fd, "rb") as stream:
+    except OSError:
+        # OS exception messages can contain private candidate directories.
+        raise PEFormatError("Cannot open candidate without following file symlinks") from None
+    try:
+        metadata = os.fstat(fd)
+        if not stat.S_ISREG(metadata.st_mode):
+            raise PEFormatError("Candidate is not a regular file")
+        # Ownership moves to the stream only AFTER fdopen succeeds.
+        stream = os.fdopen(fd, "rb")
+    except BaseException as exc:
+        # fstat/fdopen can fail or be interrupted before ownership transfer.
+        # Never abandon the raw candidate descriptor on any of those paths.
+        try:
+            os.close(fd)
+        except OSError:
+            pass
+        if isinstance(exc, Exception) and not isinstance(exc, PEFormatError):
+            raise PEFormatError("Cannot inspect candidate file") from None
+        raise
+    with stream:
         length = metadata.st_size
         if length < 512:
             raise PEFormatError("Truncated Windows image")
