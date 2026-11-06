@@ -1,0 +1,5 @@
+/* R175 optional styling. The uncertainty text is semantic HTML without CSS or JS. */
+.fv-ex2-ledger [data-fvx-r175-catalog-review="unverified"] { overflow-wrap:anywhere; }
+.fv-ex2-ledger .fv-ex2-catalog-warning {display:block;max-width:72ch;margin:.4rem 0 0;padding:.55rem .75rem;border-left:3px solid #d9be82;background:#29271f;color:#f7e5c5;font-size:clamp(.875rem,1vw,1rem);line-height:1.55;overflow-wrap:anywhere}
+@media (forced-colors:active){.fv-ex2-ledger .fv-ex2-catalog-warning{background:Canvas;color:CanvasText;border:2px solid CanvasText}}
+@media (prefers-reduced-motion:reduce){.fv-ex2-ledger .fv-ex2-catalog-warning{animation:none!important;transition:none!important}}
