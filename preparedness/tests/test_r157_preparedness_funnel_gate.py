@@ -20,7 +20,7 @@ class Contract(unittest.TestCase):
     def test_baseline_fails_closed(self):
         v=gate.admission(proposal())
         self.assertEqual(v['status'],'DRAFT_HARD_HOLD')
-        self.assertFalse(v['creator_asset_observed'])
+        self.assertFalse(v['creator_asset_fields_complete'])
         self.assertFalse(v['public_release_allowed'])
         self.assertIsNone(v['confirmed_sales'])
     def test_known_creator_asset_still_holds(self):
@@ -28,7 +28,8 @@ class Contract(unittest.TestCase):
         x['social']={'platform':'youtube','asset_id':'realasset_2026_11',
             'published_post_url':'https://www.youtube.com/watch?v=example',
             'cta_placement':'pinned_sources_comment','utm_campaign':'preparedness_pilot_2026_11'}
-        self.assertTrue(gate.admission(x)['creator_asset_observed'])
+        self.assertTrue(gate.admission(x)['creator_asset_fields_complete'])
+        self.assertFalse(gate.admission(x)['creator_asset_verified'])
         self.assertFalse(gate.admission(x)['marketing_allowed'])
     def test_safe_guide_card_paths(self):
         x=proposal()
@@ -87,6 +88,12 @@ class Contract(unittest.TestCase):
             for value in values:
                 x=proposal();x['social']=dict(good);x['social'][key]=value
                 with self.subTest(key=key,value=value),self.assertRaises(ValueError):gate.admission(x)
+    def test_cross_platform_spoof_rejected(self):
+        x=proposal()
+        x['social']={'platform':'tiktok','asset_id':'realasset_2026_11',
+           'published_post_url':'https://www.youtube.com/watch?v=example',
+           'cta_placement':'profile_bio','utm_campaign':'preparedness_pilot_2026_11'}
+        with self.assertRaises(ValueError):gate.admission(x)
     def test_paid_offer_forgery_rejected(self):
         for key,value in [('sku','fake-paid-pack'),('checkout_url','https://payhip.com/fake'),
                           ('paid_cta_enabled',True),('rights_verified',True),
