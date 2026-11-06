@@ -16,10 +16,12 @@
         "resource": "git:directory",
         "url": "https://github.com/Automattic/themes",
         "ref": "75faa8a1e0367a37c2638250a3c9ed0a0f8c0b7f",
+        "refType": "commit",
         "path": "assembler"
       },
       "options": {
-        "activate": true
+        "activate": true,
+        "targetFolderName": "assembler"
       }
     },
     {
