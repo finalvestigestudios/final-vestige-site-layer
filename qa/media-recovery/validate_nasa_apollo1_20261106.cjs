@@ -5,7 +5,7 @@ function validate(x) {
  const url=(s,h)=>typeof s==='string'&&s.startsWith('https://'+h+'/')&&!/[\s?#]/.test(s);
  if(!x||typeof x!=='object')return {ok:false,errors:['manifest missing']};
  need(x.schema==='fv-media-nasa-apollo1-v1','schema');
- need(x.article?.post_id===434&&x.article?.url==='https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/'&&x.article?.read_method.includes('read-only'),'article');
+ need(x.article?.post_id===434&&x.article?.url==='https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/'&&x.article?.read_method?.includes('read-only')===true,'article');
  const sc=x.scope;
  need(sc?.inline_images===6&&sc?.first_party_images===1&&sc?.external_nasa_images===5&&sc?.catalog_records_found===5&&sc?.stored_html_width_height_present===6,'scope');
  need(x.rights?.policy_url==='https://www.nasa.gov/nasa-brand-center/images-and-media/'&&x.rights?.item_level_clearance==='REVIEW_REQUIRED_BEFORE_CACHE_OR_REPUBLICATION'&&x.rights?.allowed_automatic_localization===false,'rights gate');
@@ -16,7 +16,8 @@ function validate(x) {
  need(x.first_party_guard?.include_in_external_recovery===false&&url(x.first_party_guard?.src,'finalvestige.com'),'first-party exclusion');
  need(Array.isArray(x.images)&&x.images.length===5,'five NASA references');
  const ids=new Set(), sources=new Set(),keys=new Set();
- for(const [i,y] of (Array.isArray(x.images)?x.images:[]).entries()){
+ for(const [i,raw] of (Array.isArray(x.images)?x.images:[]).entries()){
+  const y=raw&&typeof raw==='object'?raw:{};
   const k='item '+i+' ';
   need(y.key==='434:'+(i+1),'source position '+i);
   need(!ids.has(y.nasa_id)&&!sources.has(y.stored_src)&&!keys.has(y.key),k+'duplicate');ids.add(y.nasa_id);sources.add(y.stored_src);keys.add(y.key);
