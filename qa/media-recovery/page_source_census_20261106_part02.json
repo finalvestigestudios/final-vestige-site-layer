@@ -1,0 +1,122 @@
+{
+  "schema": "fv-page-source-image-shard-v1",
+  "captured_date": "2026-11-06",
+  "method": "Authenticated read-only WordPress page get(edit); stored HTML <img> only, no browser, no image requests or production changes.",
+  "page_list_count": 83,
+  "offset": 12,
+  "page_rows": 12,
+  "errors": [],
+  "reported_42_broken_browser_verified": null,
+  "measured_76_percent_saving": null,
+  "production_writes": 0,
+  "rows": [
+    {
+      "id": 1310,
+      "url": "https://finalvestige.com/accountability/ledger/",
+      "modified": "2026-11-02T21:41:24",
+      "title": "The Accountability Ledger",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": []
+    },
+    {
+      "id": 1309,
+      "url": "https://finalvestige.com/accountability/watch/",
+      "modified": "2026-11-02T21:41:22",
+      "title": "Accountability Watch",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": []
+    },
+    {
+      "id": 1308,
+      "url": "https://finalvestige.com/accountability/votes-decisions/",
+      "modified": "2026-11-02T21:41:21",
+      "title": "Votes & Decisions",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": []
+    },
+    {
+      "id": 1307,
+      "url": "https://finalvestige.com/accountability/abuse-of-power/",
+      "modified": "2026-11-02T21:41:19",
+      "title": "Abuse of Power",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": []
+    },
+    {
+      "id": 1306,
+      "url": "https://finalvestige.com/accountability/public-money-private-power/",
+      "modified": "2026-11-02T21:41:17",
+      "title": "Public Money & Private Power",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": []
+    },
+    {
+      "id": 1305,
+      "url": "https://finalvestige.com/accountability/failures-to-protect/",
+      "modified": "2026-11-02T21:41:15",
+      "title": "Failures to Protect",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": []
+    },
+    {
+      "id": 1433,
+      "url": "https://finalvestige.com/labs/",
+      "modified": "2026-10-29T12:50:50",
+      "title": "Final Vestige Labs",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": []
+    },
+    {
+      "id": 1377,
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "modified": "2026-11-05T19:47:37",
+      "title": "Puységur’s Animal Magnetism Files",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": []
+    },
+    {
+      "id": 1304,
+      "url": "https://finalvestige.com/accountability/",
+      "modified": "2026-11-06T15:34:43",
+      "title": "The Public Record",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": []
+    },
+    {
+      "id": 1311,
+      "url": "https://finalvestige.com/accountability/evidence/",
+      "modified": "2026-11-02T21:41:26",
+      "title": "Evidence Room",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": []
+    },
+    {
+      "id": 1342,
+      "url": "https://finalvestige.com/about/disclosures-policies/",
+      "modified": "2026-09-07T14:30:49",
+      "title": "Disclosures & Policies",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": []
+    },
+    {
+      "id": 1338,
+      "url": "https://finalvestige.com/free-resources/research-sources/",
+      "modified": "2026-11-03T22:12:43",
+      "title": "Research Sources",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": []
+    }
+  ]
+}
