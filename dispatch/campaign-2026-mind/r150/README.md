@@ -6,7 +6,7 @@
 
 The team already has six manuscripts, many HTML/plain-text simulations, an offline reviewer, subject/excerpt alternatives, first-click fixture probes, synthetic conversion validators and multiple fail-closed merchant gates. **None is a genuine Jetpack-rendered email received by a person.** The remaining evidence problem is at the *mail provider boundary*, not the copy-editing boundary.
 
-The new `received_mail_audit.py` inspects a locally supplied RFC822 .eml **after** a real, separately authorized email exists. It reads MIME subject, From, text/plain, text/html, links and selected accessibility indicators and returns **only evidence booleans**. It never transmits an email, opens a web link, calls a vendor API, prints any recipient address, displays tokenized links or stores message contents. The code cannot authorize sending: `send_authorized` and `commercial_link_authorized` are always false, including when every synthetic check is true. Owner/provenance attestations remain human input, not cryptographic confirmation. A green synthetic case is **not legal signoff**.
+The new `received_mail_audit.py` inspects a locally supplied RFC822 .eml **after** a real, separately authorized email exists. It reads MIME subject, From, text/plain, text/html, links and selected accessibility indicators, requires an affiliate disclosure near the qualifying CTA in both HTML and plain-text for commercial issues, and returns **only evidence booleans**. It never transmits an email, opens a web link, calls a vendor API, prints any recipient address, displays tokenized links or stores message contents. The code cannot authorize sending: `send_authorized` and `commercial_link_authorized` are always false, including when every synthetic check is true. Owner/provenance attestations remain human input, not cryptographic confirmation. A green synthetic case is **not legal signoff**.
 
 ### What we checked today (2026-11-05 Pacific; UTC snapshot ~01:33 on Nov 6)
 
@@ -25,7 +25,7 @@ Install nothing: Python 3.10+ standard library only. To test synthetic, nonident
 python -m unittest discover -s r150 -p 'test_*.py' -v
 ```
 
-Expected native QA baseline **28 passing synthetic tests**. Then, if founder explicitly approves an actual test email (or an already received, authorized campaign email exists), have the recipient **privately** export the RFC822 .eml, and place it outside the repository. Never commit the .eml, a redacted screenshot containing identifiable token URL, subscriber addresses, mail headers or other personal information. Provide the valid **publisher** mailing address securely via environment variable `FV_VERIFIED_BUSINESS_POSTAL_TEXT`, only after the business confirms it.
+Expected native QA baseline **29 passing synthetic tests**. Then, if founder explicitly approves an actual test email (or an already received, authorized campaign email exists), have the recipient **privately** export the RFC822 .eml, and place it outside the repository. Never commit the .eml, a redacted screenshot containing identifiable token URL, subscriber addresses, mail headers or other personal information. Provide the valid **publisher** mailing address securely via environment variable `FV_VERIFIED_BUSINESS_POSTAL_TEXT`, only after the business confirms it.
 
 ```sh
 FV_VERIFIED_BUSINESS_POSTAL_TEXT='REPLACE OUTSIDE REPOSITORY' \
