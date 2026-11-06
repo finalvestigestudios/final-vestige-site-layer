@@ -188,6 +188,96 @@ def generate_mutation_tests():
         setattr(TestR173, f'test_required_scope_{label}', strip_qualifier)
 
 
+
+def pending_docket():
+    return {
+        'schema': 'fv-preparedness-r173-claim-scope-human-docket-v1',
+        'state': g.HOLD, 'published': False,
+        'independent_qd_pass': False, 'qualified_food_safety_review': False,
+        'source_alias_equivalence_approved': False, 'human_checked_links': False,
+        'medical_safety_approved': False, 'original_files_modified': [],
+        'original_bodies': dict(g.BODY_SHAS),
+        'article_count_under_original_custody': 35,
+        'original_citations_under_original_custody': 2000,
+        'original_source_uses_under_original_custody': 385,
+        'crosswalk_shared_url_groups_pending': 32,
+        'previous_source_decisions_pending': 75,
+        'claims': [
+            {'slug': slug, 'claim': label, 'source_ids': list(ids),
+             'human_source_scope_decision': 'PENDING',
+             'qualified_food_safety_decision': 'PENDING',
+             'independent_qd_decision': 'PENDING',
+             'reviewer': None, 'reviewed_at': None, 'evidence_link': None}
+            for slug, label, _, ids in g.CLAIMS],
+        'conversion': {
+            'matching_existing_paid_preparedness_sku_verified': False,
+            'published_preparedness_asset_id_verified': False,
+            'sale_and_revenue_attribution_verified': False}}
+
+
+class TestR173Docket(unittest.TestCase):
+    def test_pending_docket_is_only_valid_state(self):
+        self.assertIsNone(g.audit_review_docket(pending_docket()))
+
+    def test_review_decision_forgery_rejected(self):
+        d = pending_docket()
+        d['claims'][0]['qualified_food_safety_decision'] = 'APPROVED'
+        with self.assertRaises(ValueError): g.audit_review_docket(d)
+
+    def test_duplicate_claim_rejected(self):
+        d = pending_docket()
+        d['claims'][-1] = copy.deepcopy(d['claims'][0])
+        with self.assertRaises(ValueError): g.audit_review_docket(d)
+
+    def test_docket_claim_id_swap_rejected(self):
+        d = pending_docket()
+        d['claims'][0]['source_ids'] = ['nchfp-jerky']
+        with self.assertRaises(ValueError): g.audit_review_docket(d)
+
+    def test_docket_missing_claim_rejected(self):
+        d = pending_docket()
+        d['claims'].pop()
+        with self.assertRaises(ValueError): g.audit_review_docket(d)
+
+    def test_docket_wrong_body_pin_rejected(self):
+        d = pending_docket()
+        d['original_bodies']['safe-jerky-dehydration'] = '0' * 40
+        with self.assertRaises(ValueError): g.audit_review_docket(d)
+
+    def test_docket_source_denominator_drift_rejected(self):
+        d = pending_docket()
+        d['original_source_uses_under_original_custody'] = 384
+        with self.assertRaises(ValueError): g.audit_review_docket(d)
+
+    def test_docket_source_row_relabel_rejected(self):
+        d = pending_docket()
+        d['claims'][0]['claim'] = 'approved-by-editor'
+        with self.assertRaises(ValueError): g.audit_review_docket(d)
+
+    def test_unverified_sale_promotion_rejected(self):
+        d = pending_docket()
+        d['conversion']['sale_and_revenue_attribution_verified'] = True
+        with self.assertRaises(ValueError): g.audit_review_docket(d)
+
+
+def generate_docket_forgery_tests():
+    for field in ('published','independent_qd_pass','qualified_food_safety_review',
+                  'source_alias_equivalence_approved','human_checked_links',
+                  'medical_safety_approved'):
+        def run(self, field=field):
+            d = pending_docket(); d[field] = True
+            with self.assertRaises(ValueError): g.audit_review_docket(d)
+        setattr(TestR173Docket, 'test_fabricated_' + field, run)
+    for field in ('reviewer','reviewed_at','evidence_link',
+                  'human_source_scope_decision','independent_qd_decision'):
+        def run(self, field=field):
+            d = pending_docket(); d['claims'][0][field] = 'FAKE_APPROVAL'
+            with self.assertRaises(ValueError): g.audit_review_docket(d)
+        setattr(TestR173Docket, 'test_review_forgery_' + field, run)
+
+
+generate_docket_forgery_tests()
+
 generate_mutation_tests()
 
 if __name__ == '__main__':
