@@ -7,7 +7,7 @@ function validate(m) {
   if(m.schema!=='fv-tmi-two-priority-recovery-v1') bad('schema');
   if(m.provenance?.post_id!==285||m.provenance?.slot_count!==2) bad('provenance');
   if(m.provenance?.inventory_blob_sha!=='07d5d55f702f66a3807666c62167264aefaf07c6') bad('input SHA');
-  if(m.summary?.claimed_broken_legacy!==42||m.summary.confirmed_visitor_broken!==null) bad('42 broken unverified');
+  if(m.summary?.claimed_broken_legacy!==42||m.summary?.confirmed_visitor_broken!==null) bad('42 broken unverified');
   if(m.summary?.measured_transfer_savings_percent!==null||m.summary.proposed_sitewide_transfer_savings_percent!==76) bad('76% unmeasured');
   if(m.summary?.oversized_wp_originals!==13||m.summary?.oversized_original_storage_bytes!==43522829) bad('original storage-only count');
   if(!Array.isArray(m.assets)||m.assets.length!==2) return [...errors,'asset count'];
