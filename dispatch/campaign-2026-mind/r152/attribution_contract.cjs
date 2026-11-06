@@ -7,7 +7,14 @@
   "use strict";
   const SOURCE=new Set(["youtube","tiktok","instagram","facebook","pinterest","snapchat","bluesky","linkedin","x"]);
   const FIELDS=["utm_source","utm_medium","utm_campaign","utm_content"];
-  const CLUSTERS=new Set(["perception","investigation","preparedness","history","focus","education","archive"]);
+  const CLUSTERS=new Set(["perception","investigation","preparedness","history","focus","education","archive","mind","mysteries"]);
+  // Only published, provider-verified dated routes may be proposed here; expand after fresh URL QA.
+  // Sources: WP published #1922 (2026-11-02), #434 (2026-08-20), checked 2026-11-06.
+  const PUBLISHED_DATED_ROUTES=new Set([
+    "/2026/11/02/change-blindness/",
+    "/2026/08/20/the-hatch-opened-inward-apollo-1/"
+  ]);
+  const isApprovedTarget=(path)=>/^(\/focus\/|\/dispatch\/|\/mind\/|\/free-resources\/[a-z0-9/-]+\/|\/investigations\/[a-z0-9/-]+\/)$/.test(path)||PUBLISHED_DATED_ROUTES.has(path);
   const NO_SEND="HOLD_UNSENT";
   function stop(){throw Error("INVALID_OR_PRIVATE_SOURCE_URL");}
   function token(x){return typeof x==="string" && /^[a-z0-9][a-z0-9_-]{0,63}$/.test(x);}
@@ -35,14 +42,14 @@
     if(!SOURCE.has(p.utm_source)||p.utm_medium!=="organic_social"||!/^([a-z]+)_pilot_(20\d\d)_(0[1-9]|1[0-2])$/.test(p.utm_campaign)) stop();
     const cluster=p.utm_campaign.split("_pilot_")[0];
     if(!CLUSTERS.has(cluster))stop();
-    if(!(/^(\/focus\/|\/dispatch\/|\/mind\/|\/free-resources\/[a-z0-9/-]+\/|\/investigations\/[a-z0-9/-]+\/)$/).test(path))stop();
+    if(!isApprovedTarget(path))stop();
     if(p.utm_content.startsWith("issue_"))stop();
     return Object.freeze({kind:"GROK_OWNED_ASSET",platform:p.utm_source,campaign:p.utm_campaign,asset_id:p.utm_content,landing_path:path,release:NO_SEND,verified_live_post:false,verified_human_session:false,verified_signup:false,verified_order:false});
   }
   function inspectDispatchLink(url){
     const {path,params:p}=unpack(url);
     if(p.utm_source!=="dispatch"||p.utm_medium!=="email"||p.utm_campaign!=="dispatch_mind_pilot_2026_11"||!/^issue_0[1-6]$/.test(p.utm_content))stop();
-    if(!(/^(\/focus\/|\/dispatch\/|\/mind\/|\/free-resources\/[a-z0-9/-]+\/|\/investigations\/[a-z0-9/-]+\/)$/).test(path))stop();
+    if(!isApprovedTarget(path))stop();
     return Object.freeze({kind:"DRAFT_EMAIL_CTA",issue:p.utm_content,landing_path:path,release:NO_SEND,verified_jetpack_render:false,verified_unsubscribe:false,verified_order:false});
   }
   function auditGrokProposals(records){
