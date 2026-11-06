@@ -12,8 +12,8 @@ R166's guarded offline builder removes the misleading association between archiv
 
 ## Source and exact testing
 - From predecessor R166, pinned source code: `build_offline.py` Git blob `51853a8acb35935b5baf8c30d810bc048c457d3a`; `stage_patch.py` `ede23550595c5d0c0d6b348681fb91543d65394c`.
-- New `wp_block_pack.py` Git blob `e157aa44289a6b49029972081b902c9def8c36ce`.
-- New `test_wp_block_pack.py` Git blob `3b75a48cdf36c698d68e8637d76d28aca577ea37`.
+- New `wp_block_pack.py` Git blob `7c9b168b6478e6f06bc1d9627a4f331621fed246`.
+- New `test_wp_block_pack.py` Git blob `397aa1c56a7c9a32f3436bb9b62db35d4644812c`.
 - Both new blobs and all imported R166 fixture/dependency blobs matched their local Chromium-tested source files.
 - Reproduce within this directory with Python and Playwright + Chromium installed: `python -m unittest -v test_wp_block_pack`. To build an *offline preview*, obtain a current authorized **read-only** WP editor-source export and run `python wp_block_pack.py editor.txt preview-editor.txt`; inspect the resulting manifest and diff. Do not upload or publish.
 - Chromium positive test: 2/2 Python unittest methods passed, twice. For each run, actual Chromium at 320/360/390/768/1440/1920, JavaScript enabled and disabled, emulated touch, reduced motion, no external media access, source citations, keyboard Home, fire-slider independence, error fallback, horizontal overflow. Six screenshots were saved; all six PNG SHA-256 hashes matched across two clean test runs.
