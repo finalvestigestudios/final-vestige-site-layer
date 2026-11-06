@@ -125,6 +125,15 @@ class PrecisionScopeR228(unittest.TestCase):
             types.SimpleNamespace(widget=entry, delta=-1)), "break")
         self.assertEqual(form.canvas.calls, [(3, "units")])
 
+    def test_inherited_r227_uninitialized_fake_form_keeps_working(self):
+        form = ScrollableForm.__new__(ScrollableForm)
+        form.viewport = FakeWidget()
+        form.canvas = FakeCanvas()
+        entry = FakeWidget(form.viewport)
+        self.assertEqual(form._mouse_wheel(
+            types.SimpleNamespace(widget=entry, delta=-120)), "break")
+        self.assertEqual(form.canvas.calls, [(3, "units")])
+
     def test_completed_partial_reversal_does_not_scroll(self):
         form = make_form()
         entry = FakeWidget(form.viewport)
