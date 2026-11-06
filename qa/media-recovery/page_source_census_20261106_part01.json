@@ -1,0 +1,281 @@
+{
+  "schema": "fv-page-source-image-shard-v1",
+  "captured_date": "2026-11-06",
+  "method": "Authenticated read-only WordPress page get(edit); stored HTML <img> only, no browser, no image requests or production changes.",
+  "page_list_count": 83,
+  "offset": 0,
+  "page_rows": 12,
+  "errors": [],
+  "reported_42_broken_browser_verified": null,
+  "measured_76_percent_saving": null,
+  "production_writes": 0,
+  "rows": [
+    {
+      "id": 2089,
+      "url": "https://finalvestige.com/cold-case-mystery-games/",
+      "modified": "2026-11-05T20:01:41",
+      "title": "Cold Case Inc — Solve the Case | Final Vestige",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": [
+        {
+          "slot": "2089:0",
+          "src": "https://www.awin1.com/cshow.php?s=4959313&v=46005&q=620613&r=3055117",
+          "alt": "Cold Case Inc sponsored banner featuring The Waters Edge, a hard-difficulty fictional detective case",
+          "width": null,
+          "height": null,
+          "source_class": "non_http",
+          "srcset_present": false,
+          "browser_status": null,
+          "natural_width": null,
+          "wire_bytes": null,
+          "reuse_rights": "HOLD",
+          "wp_write_authorized": false
+        }
+      ]
+    },
+    {
+      "id": 2088,
+      "url": "https://finalvestige.com/mini-museum-history-collectibles/",
+      "modified": "2026-11-05T20:01:36",
+      "title": "Hold a Piece of History — Mini Museum | Final Vestige",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": [
+        {
+          "slot": "2088:0",
+          "src": "https://www.awin1.com/cshow.php?s=4236132&v=89949&q=552988&r=3055117",
+          "alt": "Mini Museum sponsor advertisement for scientific and historical collectibles",
+          "width": null,
+          "height": null,
+          "source_class": "non_http",
+          "srcset_present": false,
+          "browser_status": null,
+          "natural_width": null,
+          "wire_bytes": null,
+          "reuse_rights": "HOLD",
+          "wp_write_authorized": false
+        }
+      ]
+    },
+    {
+      "id": 1868,
+      "url": "https://finalvestige.com/preparedness/",
+      "modified": "2026-11-04T17:32:05",
+      "title": "The Preparedness Archive",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": []
+    },
+    {
+      "id": 2017,
+      "url": "https://finalvestige.com/apollo-1-evidence-atlas/",
+      "modified": "2026-11-05T18:19:45",
+      "title": "Apollo 1: The Evidence Atlas",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": [
+        {
+          "slot": "2017:0",
+          "src": "https://finalvestige.com/wp-content/uploads/2026/11/apollo1-nasa-s66-58038.jpg",
+          "alt": "Apollo 1 prime crew entering an altitude chamber during training in October 1966, months before the fire.",
+          "width": 3000,
+          "height": 2417,
+          "source_class": "non_http",
+          "srcset_present": false,
+          "browser_status": null,
+          "natural_width": null,
+          "wire_bytes": null,
+          "reuse_rights": "HOLD",
+          "wp_write_authorized": false
+        },
+        {
+          "slot": "2017:1",
+          "src": "https://finalvestige.com/wp-content/uploads/2026/11/apollo1-nasa-s67-15717.jpg",
+          "alt": "Apollo Spacecraft 012 being moved during preflight processing in January 1967, weeks before the fire.",
+          "width": 2367,
+          "height": 3000,
+          "source_class": "non_http",
+          "srcset_present": false,
+          "browser_status": null,
+          "natural_width": null,
+          "wire_bytes": null,
+          "reuse_rights": "HOLD",
+          "wp_write_authorized": false
+        },
+        {
+          "slot": "2017:2",
+          "src": "https://finalvestige.com/wp-content/uploads/2026/11/apollo1-nasa-ksc-20170124-three-part-hatch.jpg",
+          "alt": "The preserved original three-part Apollo 1 hatch displayed at Kennedy Space Center in 2017.",
+          "width": 1920,
+          "height": 1280,
+          "source_class": "non_http",
+          "srcset_present": false,
+          "browser_status": null,
+          "natural_width": null,
+          "wire_bytes": null,
+          "reuse_rights": "HOLD",
+          "wp_write_authorized": false
+        }
+      ]
+    },
+    {
+      "id": 1579,
+      "url": "https://finalvestige.com/focus/",
+      "modified": "2026-11-05T17:44:02",
+      "title": "Free Seven Day Focus Fieldbook",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": [
+        {
+          "slot": "1579:0",
+          "src": "https://finalvestige.com/wp-content/uploads/2026/10/focus_complete_cover.webp",
+          "alt": "The black and aged-gold cover of Seven Day Focus Fieldbook, Complete Edition.",
+          "width": 1120,
+          "height": 1120,
+          "source_class": "non_http",
+          "srcset_present": false,
+          "browser_status": null,
+          "natural_width": null,
+          "wire_bytes": null,
+          "reuse_rights": "HOLD",
+          "wp_write_authorized": false
+        },
+        {
+          "slot": "1579:1",
+          "src": "https://finalvestige.com/wp-content/uploads/2026/10/focus_complete_pages.webp",
+          "alt": "Six actual pages from the 52-page Focus Fieldbook, including a step chooser, session worksheet, progress review, audio-claims evaluator and thirty-day tracking log.",
+          "width": 1440,
+          "height": 1210,
+          "source_class": "non_http",
+          "srcset_present": false,
+          "browser_status": null,
+          "natural_width": null,
+          "wire_bytes": null,
+          "reuse_rights": "HOLD",
+          "wp_write_authorized": false
+        }
+      ]
+    },
+    {
+      "id": 1484,
+      "url": "https://finalvestige.com/podcast/the-textbook-found-open-in-the-ruins/",
+      "modified": "2026-11-02T21:41:39",
+      "title": "The Textbook Found Open in the Ruins | New London, 1937",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": [
+        {
+          "slot": "1484:0",
+          "src": "https://drive.google.com/thumbnail?id=1V8rMf0ovXiJbJLLq77uLwfMHghlH7sMM&sz=w1600",
+          "alt": "Final Vestige Podcast Episode 1 artwork for The Textbook Found Open in the Ruins",
+          "width": null,
+          "height": null,
+          "source_class": "non_http",
+          "srcset_present": false,
+          "browser_status": null,
+          "natural_width": null,
+          "wire_bytes": null,
+          "reuse_rights": "HOLD",
+          "wp_write_authorized": false
+        },
+        {
+          "slot": "1484:1",
+          "src": "https://upload.wikimedia.org/wikipedia/commons/9/9c/New_London_School_before_explosion.webp",
+          "alt": "New London School before the 1937 explosion",
+          "width": null,
+          "height": null,
+          "source_class": "non_http",
+          "srcset_present": false,
+          "browser_status": null,
+          "natural_width": null,
+          "wire_bytes": null,
+          "reuse_rights": "HOLD",
+          "wp_write_authorized": false
+        },
+        {
+          "slot": "1484:2",
+          "src": "https://upload.wikimedia.org/wikipedia/commons/3/3c/New_London_School_explosion.jpg",
+          "alt": "Ruins of New London School after the March 1937 explosion",
+          "width": null,
+          "height": null,
+          "source_class": "non_http",
+          "srcset_present": false,
+          "browser_status": null,
+          "natural_width": null,
+          "wire_bytes": null,
+          "reuse_rights": "HOLD",
+          "wp_write_authorized": false
+        },
+        {
+          "slot": "1484:3",
+          "src": "https://upload.wikimedia.org/wikipedia/commons/9/95/New_London_School_Explosion_Memorial.jpg",
+          "alt": "New London School Explosion Memorial cenotaph in New London, Texas",
+          "width": null,
+          "height": null,
+          "source_class": "non_http",
+          "srcset_present": false,
+          "browser_status": null,
+          "natural_width": null,
+          "wire_bytes": null,
+          "reuse_rights": "HOLD",
+          "wp_write_authorized": false
+        }
+      ]
+    },
+    {
+      "id": 1480,
+      "url": "https://finalvestige.com/podcast/",
+      "modified": "2026-11-02T21:41:37",
+      "title": "Final Vestige Podcast",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": []
+    },
+    {
+      "id": 1316,
+      "url": "https://finalvestige.com/accountability/public-money-private-power/andrew-do-orange-county-covid-relief-funds/",
+      "modified": "2026-11-02T21:41:35",
+      "title": "Andrew Do and Orange County COVID Relief Funds",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": []
+    },
+    {
+      "id": 1315,
+      "url": "https://finalvestige.com/accountability/public-money-private-power/maximus-public-money-private-infrastructure/",
+      "modified": "2026-11-02T21:41:33",
+      "title": "Maximus: Public Money, Private Infrastructure",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": []
+    },
+    {
+      "id": 1314,
+      "url": "https://finalvestige.com/accountability/abuse-of-power/iraq-wmd-intelligence-public-claims/",
+      "modified": "2026-11-02T21:41:32",
+      "title": "Iraq WMD: What the Intelligence Said and What the Public Was Told",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": []
+    },
+    {
+      "id": 1313,
+      "url": "https://finalvestige.com/accountability/abuse-of-power/watergate-plumbers-abuse-of-power/",
+      "modified": "2026-11-02T21:41:30",
+      "title": "Watergate: The Plumbers and the Abuse of Presidential Power",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": []
+    },
+    {
+      "id": 1312,
+      "url": "https://finalvestige.com/accountability/failures-to-protect/gabriel-fernandez-warnings-in-the-system/",
+      "modified": "2026-11-02T21:41:28",
+      "title": "Gabriel Fernandez: The Warnings Were Already in the System",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": []
+    }
+  ]
+}
