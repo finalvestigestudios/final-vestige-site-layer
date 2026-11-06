@@ -31,7 +31,7 @@ function transform(original) {
   // A real, parser-visible Gutenberg HTML block precedes the subscription block.
   // With JavaScript on, the existing installer detects the ID and does nothing.
   const patch = '<!-- wp:html -->\n' +
-    '<span id="subscribe-blog" style="display:block;scroll-margin-top:5rem" aria-hidden="true"></span>\n' +
+    '<h2 id="subscribe-blog" class="screen-reader-text" tabindex="-1" style="scroll-margin-top:5rem">Subscribe to receive the free Seven Day Focus Fieldbook</h2>\n' +
     '<!-- /wp:html -->\n\n';
   const index = markers[0].index;
   const modified = original.slice(0, index) + patch + original.slice(index);
@@ -51,7 +51,10 @@ function selfTest() {
     Array(5).fill('<a href="#subscribe-blog">Get the fieldbook</a>').join('') +
     '\n<!-- wp:jetpack/subscriptions {"submitButtonText":"Send me the fieldbook"} /-->';
   const good = transform(base);
-  if (good.inserted <= 90 || !good.fiveLinksResolvedInStaticMarkup) throw Error('POSITIVE_FIXTURE_FAILED');
+  if (good.inserted <= 90 || !good.fiveLinksResolvedInStaticMarkup ||
+      !good.content.includes('class="screen-reader-text" tabindex="-1"') ||
+      !good.content.includes('Subscribe to receive the free Seven Day Focus Fieldbook') ||
+      good.content.includes('aria-hidden="true"')) throw Error('POSITIVE_FIXTURE_FAILED');
   const bad = [
     base.replace('Stop dreading it.', 'Another page.'),
     base.replace('fvf-signup-anchor-v1', 'anchor missing'),
