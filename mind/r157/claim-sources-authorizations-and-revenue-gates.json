@@ -234,7 +234,7 @@
   "release_gates": [
     {
       "id": "G01",
-      "description": "named Inpsire3 partner acceptance (exact legal account)",
+      "description": "named Inspire3 partner acceptance (exact legal account)",
       "status": "CLOSED",
       "evidence": "No authoritative fulfillment/approval/release evidence presented"
     },
