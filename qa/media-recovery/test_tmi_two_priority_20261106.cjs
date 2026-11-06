@@ -33,4 +33,4 @@ run('subscription expense',m=>m.release.subscription_spend_usd=20,'unapproved');
 run('damage site design',m=>m.release.homepage_design_changes=1,'unapproved');
 run('wrong 1979 panel identity',m=>m.assets[1].candidate.catalog_url='https://commons.wikimedia.org/wiki/File:TMI-2_control_room.png','panel provenance');
 run('wrong plant identity',m=>m.assets[0].candidate.catalog_url='https://example.invalid/film-still.jpg','plant scene provenance');
-console.log(count+'/'+count+' native Node regression checks passed');
+console.log(count+'/'+count+' Node-compatible regression cases passed');
