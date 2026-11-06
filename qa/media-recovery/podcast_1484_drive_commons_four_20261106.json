@@ -48,7 +48,8 @@
       "same_binary_verified": false,
       "visual_parity_verified": false,
       "rights_review_complete": false,
-      "staging_approved": false
+      "staging_approved": false,
+      "visitor_broken": null
     },
     {
       "slot": "1484:1",
@@ -86,7 +87,8 @@
       "same_binary_verified": false,
       "visual_parity_verified": false,
       "rights_review_complete": false,
-      "staging_approved": false
+      "staging_approved": false,
+      "visitor_broken": null
     },
     {
       "slot": "1484:2",
@@ -124,7 +126,8 @@
       "same_binary_verified": false,
       "visual_parity_verified": false,
       "rights_review_complete": false,
-      "staging_approved": false
+      "staging_approved": false,
+      "visitor_broken": null
     },
     {
       "slot": "1484:3",
@@ -162,7 +165,8 @@
       "same_binary_verified": false,
       "visual_parity_verified": false,
       "rights_review_complete": false,
-      "staging_approved": false
+      "staging_approved": false,
+      "visitor_broken": null
     }
   ]
 }
