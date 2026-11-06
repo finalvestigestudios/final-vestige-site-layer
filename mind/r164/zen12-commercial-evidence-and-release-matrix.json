@@ -113,6 +113,13 @@
       "url": "https://zen12.com/secret/",
       "title": "Distinct promotional route, historical comparative reference only",
       "checked_on": "2026-11-06"
+    },
+    {
+      "id": "S15",
+      "kind": "primary_full_text",
+      "url": "https://www.lucs.lu.se/fileadmin/user_upload/lucs/2011/01/Hall-et-al.-2010-Magic-at-the-Marketplace-Choice-Blindness-for-the-Taste-of-Jam-and-the-Smell-of-Tea.pdf",
+      "title": "Hall et al. 2010 final author manuscript, pp. 56–57, sampling method and figure",
+      "checked_on": "2026-11-06"
     }
   ],
   "claims": [
@@ -146,12 +153,13 @@
     },
     {
       "id": "CB-04",
-      "statement": "Researchers swapped jam/tea after selection",
+      "statement": "In Hall et al. (2010), participants tasted jam or smelled tea. The experimenter flipped two-compartment sample containers during initial sampling before the final preference, so the re-sampled selected jar presented the previously unchosen alternative.",
       "status": "supported_bounded",
       "source_ids": [
-        "S03"
+        "S03",
+        "S15"
       ],
-      "limit": "Public marketplace experiment"
+      "limit": "Public supermarket choice-blindness task; does not measure buyer purchasing or audio efficacy; primary full-text methods pp. 56–57."
     },
     {
       "id": "CB-05",

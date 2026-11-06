@@ -37,7 +37,7 @@ The laboratory finding is narrower and more powerful: if investigators keep a re
 
 ## The jam that changed after the tasting
 
-The next test removed photographs from the picture entirely. In a 2010 paper in *Cognition*, Hall and colleagues described a public-market tasting setup. Shoppers sampled two varieties of jam or tea and declared a preference. During some follow-up tastings, researchers secretly swapped the contents of the containers, so the participant tasted the nonselected option while being invited to justify the preference. [2]
+The next test removed photographs from the picture entirely. In a 2010 paper in *Cognition*, Hall and colleagues described a supermarket preference experiment: people **tasted two jams or smelled two teas** and chose one. The researchers used paired, double-ended containers with different samples inside. An experimenter covertly **flipped each container after its initial sampling, before the participant's final selection**. When the participant sampled the supposedly chosen jam again—or smelled the supposedly chosen tea—the container instead presented the unchosen alternative, and the participant was asked to explain the choice. This design was a taste-and-smell mismatch, not two jam-and-tea tasting tasks and not a new swap carried out after the final selection. [2]
 
 Across manipulated trials, no more than a third of the substitutions were detected, according to the paper's abstract. Even relatively distinct pairs did not always produce detection. That result extends the choice-blindness question into sensory judgments with ordinary consumer goods.
 
