@@ -32,7 +32,7 @@ function inspect(v){
  check(/Puys[eé]gur/i.test(v.article)&&/finalvestige.com\/focus\//.test(v.article),"original FV archive or Fieldbook unlinked");
  check(/<button\b[^>]*\bdisabled\b[^>]*>/i.test(v.html),"native disabled attribute missing");
  check(/<button\b[^>]*\bdisabled\b[^>]*>Zen12 Premium purchase/i.test(v.html),"paid control not physically disabled");
- check(!/<a\b[^>]*(?:affiliate|tracking|ref=|hop=)/i.test(v.html),"affiliate link or tracking in href");
+ check(!/<a\b[^>]*(?:[?&](?:affiliate|aff|ref|hop|clickid)=|tracking[.])/i.test(v.html),"affiliate link or tracking in href");
  check(!/href=["']https?:\/\/(?:payhip\.com|checkout\.|go\.)[^"']+["']/i.test(v.html),"merchant checkout URL present");
  check(!/<form\b/i.test(v.html),"new subscription or checkout form");
  check(!/<script\b/i.test(v.html),"new tracking or JS script");
