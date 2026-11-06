@@ -1,0 +1,227 @@
+{
+  "schema": "fv-page-source-image-shard-v1",
+  "captured_date": "2026-11-06",
+  "method": "Authenticated read-only WordPress page get(edit); stored HTML <img> only, no browser, no image requests or production changes.",
+  "page_list_count": 83,
+  "offset": 72,
+  "page_rows": 11,
+  "errors": [],
+  "reported_42_broken_browser_verified": null,
+  "measured_76_percent_saving": null,
+  "production_writes": 0,
+  "rows": [
+    {
+      "id": 78,
+      "url": "https://finalvestige.com/collection/",
+      "modified": "2026-11-06T13:48:19",
+      "title": "The Collection",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": [
+        {
+          "slot": "78:0",
+          "src": "https://finalvestige.com/wp-content/uploads/2026/10/focus_complete_cover.webp",
+          "alt": "Seven Day Focus Fieldbook Complete Edition cover",
+          "width": 960,
+          "height": 960,
+          "source_class": "first_party",
+          "srcset_present": false,
+          "browser_status": null,
+          "natural_width": null,
+          "wire_bytes": null,
+          "reuse_rights": "HOLD",
+          "wp_write_authorized": false
+        },
+        {
+          "slot": "78:1",
+          "src": "https://finalvestige.com/wp-content/uploads/2026/08/suunto-logo-300x180.webp",
+          "alt": "Suunto logo",
+          "width": null,
+          "height": null,
+          "source_class": "first_party",
+          "srcset_present": false,
+          "browser_status": null,
+          "natural_width": null,
+          "wire_bytes": null,
+          "reuse_rights": "HOLD",
+          "wp_write_authorized": false
+        },
+        {
+          "slot": "78:2",
+          "src": "https://us.suunto.com/cdn/shop/files/SS014891000-Suunto-MC-2-G-USGS-MIRROR-COMPASS-perspective-view-01_297f0046-bf9a-4f3c-893c-ad50a6346ef9.png?v=1778238838&width=1390",
+          "alt": "Suunto MC-2 G USGS mirror compass open with sighting mirror",
+          "width": null,
+          "height": null,
+          "source_class": "external_origin",
+          "srcset_present": false,
+          "browser_status": null,
+          "natural_width": null,
+          "wire_bytes": null,
+          "reuse_rights": "HOLD",
+          "wp_write_authorized": false
+        },
+        {
+          "slot": "78:3",
+          "src": "https://www.awin1.com/cshow.php?s=4959313&v=46005&q=620613&r=3055117",
+          "alt": "Cold Case Inc sponsored mystery-game banner",
+          "width": null,
+          "height": null,
+          "source_class": "affiliate_dynamic",
+          "srcset_present": false,
+          "browser_status": null,
+          "natural_width": null,
+          "wire_bytes": null,
+          "reuse_rights": "HOLD",
+          "wp_write_authorized": false
+        }
+      ]
+    },
+    {
+      "id": 77,
+      "url": "https://finalvestige.com/free-resources/",
+      "modified": "2026-11-06T11:09:25",
+      "title": "The Library",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": []
+    },
+    {
+      "id": 76,
+      "url": "https://finalvestige.com/watch/",
+      "modified": "2026-09-09T16:04:00",
+      "title": "Watch",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": []
+    },
+    {
+      "id": 17,
+      "url": "https://finalvestige.com/editorial-standards/",
+      "modified": "2026-09-09T16:03:05",
+      "title": "Editorial Standards",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": []
+    },
+    {
+      "id": 16,
+      "url": "https://finalvestige.com/terms-disclaimer/",
+      "modified": "2026-11-02T21:39:26",
+      "title": "Terms &amp; Disclaimer",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": []
+    },
+    {
+      "id": 15,
+      "url": "https://finalvestige.com/privacy-policy/",
+      "modified": "2026-11-02T21:39:24",
+      "title": "Privacy Policy",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": []
+    },
+    {
+      "id": 14,
+      "url": "https://finalvestige.com/affiliate-disclosure/",
+      "modified": "2026-11-02T21:39:22",
+      "title": "Affiliate Disclosure",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": []
+    },
+    {
+      "id": 10,
+      "url": "https://finalvestige.com/blog/",
+      "modified": "2026-09-09T16:04:19",
+      "title": "Journal",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": []
+    },
+    {
+      "id": 8,
+      "url": "https://finalvestige.com/field-notes/",
+      "modified": "2026-09-09T16:15:47",
+      "title": "Field Notes",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": []
+    },
+    {
+      "id": 7,
+      "url": "https://finalvestige.com/archive/",
+      "modified": "2026-09-09T16:14:56",
+      "title": "Archive",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": []
+    },
+    {
+      "id": 6,
+      "url": "https://finalvestige.com/",
+      "modified": "2026-11-05T12:07:24",
+      "title": "Home",
+      "status": "publish",
+      "featured_media_id": 2104,
+      "images": [
+        {
+          "slot": "6:0",
+          "src": "https://finalvestige.com/wp-content/uploads/2026/08/s67-19766.webp",
+          "alt": "Apollo 1 astronauts Gus Grissom, Ed White and Roger Chaffee near Launch Complex 34 during training in January 1967.",
+          "width": 1041,
+          "height": 810,
+          "source_class": "first_party",
+          "srcset_present": true,
+          "browser_status": null,
+          "natural_width": null,
+          "wire_bytes": null,
+          "reuse_rights": "HOLD",
+          "wp_write_authorized": false
+        },
+        {
+          "slot": "6:1",
+          "src": "https://finalvestige.com/wp-content/uploads/2026/08/Franklinexpeditionnote.jpg",
+          "alt": "The Victory Point note: an 1847 message with a later handwritten update dating from April 1848 around the margins.",
+          "width": 960,
+          "height": 1526,
+          "source_class": "first_party",
+          "srcset_present": true,
+          "browser_status": null,
+          "natural_width": null,
+          "wire_bytes": null,
+          "reuse_rights": "HOLD",
+          "wp_write_authorized": false
+        },
+        {
+          "slot": "6:2",
+          "src": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/edit-017-v02-nypl-5003296-original.jpg?fit=1024%2C692&ssl=1",
+          "alt": "1903 Brooklyn Rapid Transit railway and rapid-transit map, created before the Malbone Street reverse curve existed.",
+          "width": 1536,
+          "height": 1038,
+          "source_class": "first_party_jetpack",
+          "srcset_present": true,
+          "browser_status": null,
+          "natural_width": null,
+          "wire_bytes": null,
+          "reuse_rights": "HOLD",
+          "wp_write_authorized": false
+        },
+        {
+          "slot": "6:3",
+          "src": "https://finalvestige.com/wp-content/uploads/2026/10/focus_complete_cover.webp",
+          "alt": "",
+          "width": 1120,
+          "height": 1120,
+          "source_class": "first_party",
+          "srcset_present": false,
+          "browser_status": null,
+          "natural_width": null,
+          "wire_bytes": null,
+          "reuse_rights": "HOLD",
+          "wp_write_authorized": false
+        }
+      ]
+    }
+  ]
+}
