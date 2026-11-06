@@ -2,7 +2,7 @@
 const test=require('node:test'),assert=require('node:assert/strict');
 const {sourceCheck,confirmSignupCandidate,snapshot,cohort,release}=require('./revenue_truth.cjs');
 const source={origin:'grok_verified_asset_inventory',utm_source:'tiktok',utm_medium:'organic_social',utm_campaign:'mind_pilot_2026_11',utm_content:'asset:verified_1234',asset_inventory_proof:'proof:grokasset123456'};
-const base={window_days:7,source,qualified_human_sessions_verified:true,paid_source_verified:true,settlement_verified:true,refunds_fees_reconciled:true,attribution_reconciled:true,session_proof:'proof:humansessions123',settlement_proof:'proof:settlement12345',refund_proof:'proof:refundfees12345',qualified_human_sessions:200,fv_settled_receipts_cents:1000,refunds_cents:200,fees_cents:100,verified_paid_orders:2};
+const base={window_days:7,start_date_utc:'2026-10-30',end_date_utc:'2026-11-06',source,qualified_human_sessions_verified:true,paid_source_verified:true,settlement_verified:true,refunds_fees_reconciled:true,attribution_reconciled:true,session_proof:'proof:humansessions123',settlement_proof:'proof:settlement12345',refund_proof:'proof:refundfees12345',qualified_human_sessions:200,fv_settled_receipts_cents:1000,refunds_cents:200,fees_cents:100,verified_paid_orders:2};
 test('publisher-specific source proof required',()=>assert.equal(sourceCheck(source).not_a_sale,true));
 test('fabricated platform rejected',()=>assert.throws(()=>sourceCheck({...source,utm_source:'telegram'})));
 test('unapproved asset rejects',()=>assert.throws(()=>sourceCheck({...source,asset_inventory_proof:null})));
@@ -15,9 +15,12 @@ test('loss-making cohort MUST show negative realized net',()=>{const x=cohort({.
 test('unverified settlement is not a zero-revenue sale',()=>{const x=cohort({...base,paid_source_verified:false});assert.equal(x.status,'NOT_COMPUTABLE');assert.equal(x.net_per_1000,null)});
 test('missing proof cannot unlock a result',()=>assert.throws(()=>cohort({...base,session_proof:null})));
 test('floating dollar estimates prohibited, integer cents only',()=>assert.throws(()=>cohort({...base,fees_cents:2.5})));
-test('7 and 30 day cohorts required',()=>assert.equal(cohort({...base,window_days:30}).window_days,30));
+test('7 and 30 day cohorts required',()=>assert.equal(cohort({...base,window_days:30,start_date_utc:'2026-10-07'}).window_days,30));
 test('30 day cohort not falsely inferred from 7 day input',()=>assert.throws(()=>cohort({...base,window_days:14})));
 test('PII excluded from source-linked data',()=>assert.throws(()=>cohort({...base,email_address:'person@example.com'})));
 test('incomplete receipts must not be interpreted as paid',()=>assert.equal(cohort({...base,attribution_reconciled:false}).status,'NOT_COMPUTABLE'));
 test('small-sample warning provided',()=>assert.equal(cohort(base).small_sample,true));
 test('release never authorizes sending or partner activation',()=>{const x=release();assert.equal(x.send_authorized,false);assert.equal(x.merchant_activation_authorized,false)});
+
+test('window length cannot be relabeled',()=>assert.throws(()=>cohort({...base,window_days:30})));
+test('invalid UTC date rejected',()=>assert.throws(()=>cohort({...base,start_date_utc:'2026-02-30'})));
