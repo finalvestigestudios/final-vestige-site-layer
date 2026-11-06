@@ -34,6 +34,9 @@ const cases=[
  ['alter published cohort',x=>x.performance.current_post_cohort=61],
  ['alter original oversize inventory',x=>x.performance.oversize_storage_bytes=0],
  ['set homepage edits',x=>x.release.homepage_design_changes=1],
- ['set subscription spend',x=>x.release.subscription_spend_usd=1]
+ ['set subscription spend',x=>x.release.subscription_spend_usd=1],
+ ['missing article read method',x=>delete x.article.read_method],
+ ['null image object',x=>x.images[0]=null],
+ ['missing catalog geometry',x=>delete x.images[0].publisher_metadata_native_dimensions]
 ];
 for(const [name,mutation] of cases)test('reject: '+name,()=>{const x=copy();mutation(x);assert.equal(validate(x).ok,false);});
