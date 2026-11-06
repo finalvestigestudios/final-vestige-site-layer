@@ -50,6 +50,7 @@ def inspect(page):
     }''', list(CHAPTER_IDS))
 
 
+
 def run_axe_all_widths(page, widths=WIDTHS):
     # Audit every layout; test doubles never establish WCAG conformance.
     receipts = {}
