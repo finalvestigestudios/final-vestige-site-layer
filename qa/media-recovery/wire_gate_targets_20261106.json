@@ -1,0 +1,260 @@
+{
+  "schema": "fv-media-wire-gate-targets-v1",
+  "date": "2026-11-06",
+  "inputs": {
+    "host_blast_radius_blob": "b23506dc59656fb3d0dfcb4719e9fb207c39a230",
+    "florida_memory_seven_blob": "7ba260c21fae3fef2ea2cd1963cd102d64df5ef1"
+  },
+  "scope": {
+    "legacy_posts": 61,
+    "legacy_inline_src_refs": 355,
+    "current_posts": 66,
+    "current_inline_src_refs": 361,
+    "reported_broken_images": 42,
+    "visitor_verified_broken_images": null,
+    "proposed_transfer_savings_percent": 76,
+    "measured_transfer_savings_percent": null,
+    "oversized_originals_count": 13,
+    "oversized_originals_storage_bytes": 43522829
+  },
+  "probe_note": "On 2026-11-06 independent web retriever rendered publisher relocated Skyway JPG, but Florida Memory original returned wrapper 500 after redirect. These are NOT Chrome response statuses.",
+  "source_retrieval_examples": [
+    {
+      "url": "https://stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+      "retriever_result": 404,
+      "browser_origin_status": null,
+      "observed_utc_date": "2026-11-06"
+    },
+    {
+      "url": "https://media.stpetecatalyst.com/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+      "retriever_result": "image_rendered",
+      "browser_origin_status": null,
+      "observed_utc_date": "2026-11-06"
+    },
+    {
+      "url": "https://www.history.uscg.mil/Portals/6/5_%20Scotch_Cap_debris2_1946.jpg",
+      "retriever_result": 403,
+      "browser_origin_status": null,
+      "observed_utc_date": "2026-11-06"
+    },
+    {
+      "url": "https://www.floridamemory.com/fpc/prints/pr04493.jpg",
+      "retriever_result": "wrapper_500_following_www_to_apex_redirect",
+      "browser_origin_status": null,
+      "observed_utc_date": "2026-11-06"
+    }
+  ],
+  "possible_same_publisher_restoration": {
+    "key": "287:5",
+    "url": "https://media.stpetecatalyst.com/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+    "web_retriever_rendered": true,
+    "reproduction_rights": "UNVERIFIED_HOLD",
+    "binary_identity": "UNVERIFIED",
+    "wordpress_change_allowed": false
+  },
+  "rights_preservation": {
+    "florida_policy_url": "https://floridamemory.com/share/order-info/faq.php",
+    "credit_obligation": "Florida Statutes 257.35(6)",
+    "other_sources_rights": "ITEM_LEVEL_REVIEW_HOLD",
+    "max_proposed_preview_width_px": 960,
+    "no_enlargement": true
+  },
+  "release": {
+    "wordpress_writes": 0,
+    "third_party_image_caches": 0,
+    "production_fixes": 0,
+    "browser_test_awaited": true
+  },
+  "targets": [
+    {
+      "key": "285:5",
+      "post_id": 285,
+      "existing_src": "https://images.saymedia-content.com/.image/ar_16:9,c_fill,cs_srgb,fl_progressive,q_auto:eco,w_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg",
+      "source_group": "priority_suspected",
+      "browser_http": null,
+      "natural_pixels": null,
+      "cold_network_bytes": null,
+      "visitor_broken": null,
+      "rights_review": "HOLD",
+      "wp_production_write": false,
+      "confirmed_960px_derivative": null
+    },
+    {
+      "key": "285:2",
+      "post_id": 285,
+      "existing_src": "https://blog.ucsusa.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+      "source_group": "priority_suspected",
+      "browser_http": null,
+      "natural_pixels": null,
+      "cold_network_bytes": null,
+      "visitor_broken": null,
+      "rights_review": "HOLD",
+      "wp_production_write": false,
+      "confirmed_960px_derivative": null
+    },
+    {
+      "key": "287:5",
+      "post_id": 287,
+      "existing_src": "https://stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+      "source_group": "priority_suspected",
+      "browser_http": null,
+      "natural_pixels": null,
+      "cold_network_bytes": null,
+      "visitor_broken": null,
+      "rights_review": "HOLD",
+      "wp_production_write": false,
+      "confirmed_960px_derivative": null
+    },
+    {
+      "key": "418:1",
+      "post_id": 418,
+      "existing_src": "https://media.defense.gov/2021/Mar/30/2002610812/1920/1080/0/210330-G-DE713-0002.JPG",
+      "source_group": "priority_suspected",
+      "browser_http": null,
+      "natural_pixels": null,
+      "cold_network_bytes": null,
+      "visitor_broken": null,
+      "rights_review": "HOLD",
+      "wp_production_write": false,
+      "confirmed_960px_derivative": null
+    },
+    {
+      "key": "418:2",
+      "post_id": 418,
+      "existing_src": "https://www.history.uscg.mil/Portals/6/5_%20Scotch_Cap_debris2_1946.jpg",
+      "source_group": "priority_suspected",
+      "browser_http": null,
+      "natural_pixels": null,
+      "cold_network_bytes": null,
+      "visitor_broken": null,
+      "rights_review": "HOLD",
+      "wp_production_write": false,
+      "confirmed_960px_derivative": null
+    },
+    {
+      "key": "407:1",
+      "post_id": 407,
+      "existing_src": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/img7535.jpg",
+      "source_group": "priority_suspected",
+      "browser_http": null,
+      "natural_pixels": null,
+      "cold_network_bytes": null,
+      "visitor_broken": null,
+      "rights_review": "HOLD",
+      "wp_production_write": false,
+      "confirmed_960px_derivative": null
+    },
+    {
+      "key": "432:0",
+      "post_id": 432,
+      "existing_src": "https://www.floridamemory.com/fpc/prints/pr04493.jpg",
+      "source_group": "florida_memory",
+      "primary_catalog_url": "https://www.floridamemory.com/items/show/4144",
+      "primary_catalog_id": "PR04493",
+      "browser_http": null,
+      "natural_pixels": null,
+      "cold_network_bytes": null,
+      "visitor_broken": null,
+      "rights_review": "HOLD_ITEM",
+      "credit": "State Archives of Florida / Florida Memory",
+      "wp_production_write": false,
+      "confirmed_960px_derivative": null
+    },
+    {
+      "key": "432:1",
+      "post_id": 432,
+      "existing_src": "https://www.floridamemory.com/fpc/reference/rc17068.jpg",
+      "source_group": "florida_memory",
+      "primary_catalog_url": "https://www.floridamemory.com/items/show/38362",
+      "primary_catalog_id": "RC17068",
+      "browser_http": null,
+      "natural_pixels": null,
+      "cold_network_bytes": null,
+      "visitor_broken": null,
+      "rights_review": "HOLD_ITEM",
+      "credit": "State Archives of Florida / Florida Memory",
+      "wp_production_write": false,
+      "confirmed_960px_derivative": null
+    },
+    {
+      "key": "432:2",
+      "post_id": 432,
+      "existing_src": "https://www.floridamemory.com/fpc/reference/rc10673.jpg",
+      "source_group": "florida_memory",
+      "primary_catalog_url": "https://www.floridamemory.com/items/show/33289",
+      "primary_catalog_id": "RC10673",
+      "browser_http": null,
+      "natural_pixels": null,
+      "cold_network_bytes": null,
+      "visitor_broken": null,
+      "rights_review": "HOLD_ITEM",
+      "credit": "State Archives of Florida / Florida Memory",
+      "wp_production_write": false,
+      "confirmed_960px_derivative": null
+    },
+    {
+      "key": "432:3",
+      "post_id": 432,
+      "existing_src": "https://www.floridamemory.com/fpc/general/n031889.jpg",
+      "source_group": "florida_memory",
+      "primary_catalog_url": "https://www.floridamemory.com/items/show/141398",
+      "primary_catalog_id": "N031889",
+      "browser_http": null,
+      "natural_pixels": null,
+      "cold_network_bytes": null,
+      "visitor_broken": null,
+      "rights_review": "HOLD_ITEM",
+      "credit": "State Archives of Florida / Florida Memory",
+      "wp_production_write": false,
+      "confirmed_960px_derivative": null
+    },
+    {
+      "key": "432:4",
+      "post_id": 432,
+      "existing_src": "https://www.floridamemory.com/fpc/reference/rc04344.jpg",
+      "source_group": "florida_memory",
+      "primary_catalog_url": "https://www.floridamemory.com/items/show/27848",
+      "primary_catalog_id": "RC04344",
+      "browser_http": null,
+      "natural_pixels": null,
+      "cold_network_bytes": null,
+      "visitor_broken": null,
+      "rights_review": "HOLD_ITEM",
+      "credit": "State Archives of Florida / Florida Memory",
+      "wp_production_write": false,
+      "confirmed_960px_derivative": null
+    },
+    {
+      "key": "432:5",
+      "post_id": 432,
+      "existing_src": "https://www.floridamemory.com/fpc/reference/rc07668.jpg",
+      "source_group": "florida_memory",
+      "primary_catalog_url": "https://www.floridamemory.com/items/show/30741",
+      "primary_catalog_id": "RC07668",
+      "browser_http": null,
+      "natural_pixels": null,
+      "cold_network_bytes": null,
+      "visitor_broken": null,
+      "rights_review": "HOLD_ITEM",
+      "credit": "State Archives of Florida / Florida Memory",
+      "wp_production_write": false,
+      "confirmed_960px_derivative": null
+    },
+    {
+      "key": "432:6",
+      "post_id": 432,
+      "existing_src": "https://www.floridamemory.com/fpc/msf/MSF-PB11548-001.jpg",
+      "source_group": "florida_memory",
+      "primary_catalog_url": "https://www.floridamemory.com/items/show/340182",
+      "primary_catalog_id": "MSF-PB11548-001",
+      "browser_http": null,
+      "natural_pixels": null,
+      "cold_network_bytes": null,
+      "visitor_broken": null,
+      "rights_review": "HOLD_ITEM",
+      "credit": "State Archives of Florida / Florida Memory",
+      "wp_production_write": false,
+      "confirmed_960px_derivative": null
+    }
+  ]
+}
