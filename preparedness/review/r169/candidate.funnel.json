@@ -1,0 +1,28 @@
+{
+  "guide": {
+    "cta": "Make a free household emergency contact and pickup plan.",
+    "price_usd": 0,
+    "route": "/preparedness/start-here/household-emergency-plan/",
+    "slug": "household-emergency-plan",
+    "ungated": true
+  },
+  "measurement": {
+    "affiliate_confirmed_sales": null,
+    "cohort_30d": null,
+    "cohort_7d": null,
+    "confirmed_leads": null,
+    "merchant_confirmed_orders": null,
+    "qualified_human_sessions": null,
+    "realized_net_usd": null
+  },
+  "paid_product": null,
+  "schema": "fv-preparedness-r169-offer-source-admission-v1",
+  "social": null,
+  "tool": {
+    "name": "Family Reunification Card",
+    "paid": false,
+    "public_url": null,
+    "state": "DRAFT_HARD_HOLD"
+  },
+  "topic": "school-pickup-reunification"
+}
