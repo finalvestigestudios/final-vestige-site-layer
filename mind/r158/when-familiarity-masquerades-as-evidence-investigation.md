@@ -94,7 +94,7 @@ The FTC's health-products guidance explains that objective health-related benefi
 
 FTC source: https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance ; https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking
 
-Here the archive draws a bright line. The public Inspire3 catalog and individual sales pages describe various meditation, hypnosis and audio products, including Zen12, Hypnosis Live and Brainwave Shots. Those descriptions tell a reader what the sellers advertise. They are **not** a cross-product body of independently verified clinical outcomes. Repeating the seller's description in a second voice would not change that.
+Here the archive draws a bright line. Specific commercial audio outcomes are not independently established by this repetition research. The public Inspire3 catalog and individual sales pages describe various meditation, hypnosis and audio products, including Zen12, Hypnosis Live and Brainwave Shots. Those descriptions tell a reader what the sellers advertise. They are **not** a cross-product body of independently verified clinical outcomes. Repeating the seller's description in a second voice would not change that.
 
 There is no shortcut from “research on suggestion exists” to “this recording has been proven to change your life.” That leap should be visible to a reader, not smuggled into an elegantly designed purchase button.
 
