@@ -48,7 +48,8 @@ def inspect(page):
         chapters:['fv-hf-evidence','fv-hf-title','fv-hf-chronicle','fv-hf-inquiry',
           'fv-hf-method-title','fv-hf-observer','fv-hf-mind-title'].filter(id=>document.getElementById(id)).length,
         margins:document.querySelectorAll('.fv-margin-strip__item').length,
-        focus:document.querySelectorAll('a[href="https://finalvestige.com/focus/"]').length};
+        focus:document.querySelectorAll('a[href="https://finalvestige.com/focus/"]').length,
+        heroFocusHeight:document.querySelector('.fv-hf__opening-actions .fv-hf__text-link--focus')?.getBoundingClientRect().height||0};
     }""")
 
 def run():
@@ -79,7 +80,7 @@ def run():
                 page.set_content(html, wait_until='domcontentloaded')
                 page.wait_for_timeout(80)
                 result=inspect(page)
-                if result['short'] or result['overflow'] or (result['chapters'],result['margins'],result['focus'])!=(7,72,5):
+                if result['short'] or result['overflow'] or result['heroFocusHeight'] < 43.5 or (result['chapters'],result['margins'],result['focus'])!=(7,72,5):
                     raise AssertionError(str((width,mode,result)))
                 receipt['runs'].append({'width':width,'mode':mode,'small_targets':0,'passed':True})
                 if width in (390,1440) and mode=='standard':
