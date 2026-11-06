@@ -20,6 +20,7 @@
   if(!clear){
    clear=document.createElement('button');
    clear.type='button';clear.textContent='Clear search';
+   clear.className='fv-ex2-ledger__clear';
    clear.setAttribute('data-fvx-clear','');
    clear.hidden=true;
    search.insertAdjacentElement('afterend',clear);
