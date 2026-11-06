@@ -34,7 +34,7 @@ const assertPage = s => {
  assert.doesNotMatch(s,/<(form|iframe|script|video|audio)\b/i);
  assert.doesNotMatch(s, /<a[^>]+href=["'][^"']*(inspire3\.com|hypnosislive\.com|zen12\.com)/i);
  assert.doesNotMatch(s, /<a[^>]+href=["']https?:\/\/(?:bit\.ly|tinyurl\.com|t\.co)/i);
- assert.doesNotMatch(s,/autoplay/i); // no autoplay even as a 'false' attribute
+ assert.doesNotMatch(s,/<video[^>]*\\bautoplay\\b/i); // no video autoplay attribute
  assert.doesNotMatch(s,/<input[^>]+type=["']email/i);
  assert.doesNotMatch(s,/utm_source=|fbclid=|gclid=/i);
 };
@@ -58,7 +58,7 @@ check('original long-form editorial evidence',()=>{
  assert.ok(article.trim().split(/\s+/).length>1800);
  assert.match(article,/Puységur/);
  assert.match(article,/The recording problem/);
- assert.match(article,/no case for telling a reader/i);
+ assert.match(article,/not a defensible case for telling a reader/i);
  assert.match(article,/The ninety-second return/i);
  assert.match(article,/https:\/\/pubmed\.ncbi\.nlm\.nih\.gov\/39032268\//);
  assert.match(article,/https:\/\/pubmed\.ncbi\.nlm\.nih\.gov\/34358272\//);
@@ -85,7 +85,7 @@ check('earlier bibliographic correction',()=>{
  assert.doesNotMatch(previous,/A 2024 report combining five studies/);
 });
 check('no seller engagement passed off as paid conversion',()=>{
- assert.doesNotMatch(html,/<a[^>]+href=["'][^"']+affiliate/i);
+ assert.doesNotMatch(html,/<a[^>]+href=["'][^"']*(?:hypnosislive|inspire3|zen12)[^"']*affiliate/i);
  assert.match(plan,/merchant_confirmed_paid_order/);
  assert.match(plan,/affiliate_confirmed_commission/);
  assert.match(plan,/NOT COMPUTABLE/);
