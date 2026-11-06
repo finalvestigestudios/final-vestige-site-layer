@@ -1,0 +1,279 @@
+{
+  "milestone": "R170",
+  "date": "2026-11-06",
+  "status": "UNPUBLISHED_COMMERCIAL_HARD_HOLD",
+  "focus_offer": "Zen12 Premium",
+  "checkout_price": "UNKNOWN_NOT_QUOTABLE",
+  "merchant_refund_fulfillment": "UNVERIFIED",
+  "publisher_authorization": "UNVERIFIED",
+  "earning_url": null,
+  "channel_permissions": {
+    "website": "UNKNOWN",
+    "social": "UNKNOWN",
+    "email": "UNKNOWN"
+  },
+  "owned_payhip_mind_sku": "UNKNOWN",
+  "paid_commissions": "UNKNOWN",
+  "qualified_human_sessions": "UNKNOWN",
+  "net_revenue_per_1000": "NOT_COMPUTABLE",
+  "sources": [
+    {
+      "id": "S1",
+      "kind": "SELLER",
+      "url": "https://inspire3.com/",
+      "use": "Catalog presence only"
+    },
+    {
+      "id": "S2",
+      "kind": "SELLER",
+      "url": "https://zen12.com/",
+      "use": "Exact seller offer packaging, not independent efficacy"
+    },
+    {
+      "id": "S3",
+      "kind": "REGULATORY",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "use": "Nearby clear conspicuous material connection disclosure"
+    },
+    {
+      "id": "S4",
+      "kind": "REGULATORY",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "use": "Competent reliable claim support, overall net impression"
+    },
+    {
+      "id": "S5",
+      "kind": "PRIMARY",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/1500880/",
+      "use": "Raymond Shapiro Arnell 1992 RSVP original"
+    },
+    {
+      "id": "S6",
+      "kind": "PRIMARY",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/8189198/",
+      "use": "Shapiro Raymond Arnell 1994 target definition"
+    },
+    {
+      "id": "S7",
+      "kind": "PRIMARY",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/7707027/",
+      "use": "Chun Potter 1995 2-stage model"
+    },
+    {
+      "id": "S8",
+      "kind": "PRIMARY",
+      "url": "https://journals.sagepub.com/doi/10.1111/j.1467-9280.1997.tb00689.x",
+      "use": "Shapiro et al 1997 residual processing"
+    },
+    {
+      "id": "S9",
+      "kind": "PRIMARY",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17488185/",
+      "use": "Slagter et al 2007 intensive mental training"
+    },
+    {
+      "id": "S10",
+      "kind": "LIVE_FV",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "use": "Published organic topic destination"
+    },
+    {
+      "id": "S11",
+      "kind": "LIVE_FV",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "use": "Published history source"
+    },
+    {
+      "id": "S12",
+      "kind": "LIVE_FV",
+      "url": "https://finalvestige.com/focus/",
+      "use": "Single existing lead magnet"
+    },
+    {
+      "id": "S13",
+      "kind": "LIVE_FV",
+      "url": "https://finalvestige.com/affiliate-disclosure/",
+      "use": "General policy, does not replace adjacent link disclosure"
+    }
+  ],
+  "claims": [
+    {
+      "id": "Z1",
+      "statement": "Premium includes twelve levels, four styles per level, 48 MP3 files",
+      "type": "SELLER_DESCRIPTION",
+      "source": [
+        "S2"
+      ],
+      "decision": "ATTRIBUTE_TO_SELLER",
+      "independent_product_test": false
+    },
+    {
+      "id": "Z2",
+      "statement": "Seller advertises one-year refund guarantee",
+      "type": "SELLER_DESCRIPTION",
+      "source": [
+        "S2"
+      ],
+      "decision": "ATTRIBUTE_WITH_REFUND_UNVERIFIED",
+      "independent_product_test": false
+    },
+    {
+      "id": "Z3",
+      "statement": "Exact final checkout price, tax, coupon, refund fulfillment",
+      "type": "UNVERIFIED",
+      "source": [
+        "S2"
+      ],
+      "decision": "WITHHOLD_PRICE_AND_PROMISES"
+    },
+    {
+      "id": "Z4",
+      "statement": "12 minutes equals an hour of advanced meditation",
+      "type": "EXTRAORDINARY_EFFICACY",
+      "source": [
+        "S2"
+      ],
+      "decision": "EXCLUDE_UNSUPPORTED"
+    },
+    {
+      "id": "Z5",
+      "statement": "Zen12 automatically induces deep states or treats anxiety",
+      "type": "HEALTH_EFFICACY",
+      "source": [
+        "S2",
+        "S4"
+      ],
+      "decision": "EXCLUDE_UNSUPPORTED"
+    },
+    {
+      "id": "Z6",
+      "statement": "Specific MP3 raises intelligence, productivity, earnings or solves inattentional blindness",
+      "type": "UNSUPPORTED",
+      "source": [
+        "S4"
+      ],
+      "decision": "EXCLUDE"
+    },
+    {
+      "id": "AB1",
+      "statement": "1992 RSVP original reported short-interval posttarget probe deficit under specified task controls",
+      "type": "SCIENTIFIC",
+      "source": [
+        "S5"
+      ],
+      "decision": "USE_WITH_TASK_LIMITS"
+    },
+    {
+      "id": "AB2",
+      "statement": "1994 experiments found differences according to target object vs temporal-interval definition",
+      "type": "SCIENTIFIC",
+      "source": [
+        "S6"
+      ],
+      "decision": "USE_WITH_TASK_LIMITS"
+    },
+    {
+      "id": "AB3",
+      "statement": "1995 study examined second targets around 200-500ms after first and two-stage model",
+      "type": "SCIENTIFIC",
+      "source": [
+        "S7"
+      ],
+      "decision": "USE_AS_MODEL_NOT_UNIVERSAL_PROOF"
+    },
+    {
+      "id": "AB4",
+      "statement": "1997 report found priming despite failed target reports",
+      "type": "SCIENTIFIC",
+      "source": [
+        "S8"
+      ],
+      "decision": "USE_NARROWLY"
+    },
+    {
+      "id": "AB5",
+      "statement": "2007 intensive meditation study found reduced attentional blink with altered P3b measures",
+      "type": "SCIENTIFIC",
+      "source": [
+        "S9"
+      ],
+      "decision": "USE_WITH_INTERVENTION_LIMIT"
+    },
+    {
+      "id": "AB6",
+      "statement": "2007 research proves effectiveness of Zen12 Premium",
+      "type": "UNSUPPORTED_TRANSFER",
+      "source": [
+        "S9",
+        "S2"
+      ],
+      "decision": "EXCLUDE"
+    },
+    {
+      "id": "FIN1",
+      "statement": "Named FV affiliate acceptance and authorized campaign earning link",
+      "type": "AUTHORIZATION",
+      "source": [],
+      "decision": "UNVERIFIED_HARD_HOLD"
+    },
+    {
+      "id": "FIN2",
+      "statement": "FV-owned paid Mind SKU with rights, fulfillment, actual price",
+      "type": "REVENUE",
+      "source": [],
+      "decision": "UNKNOWN_NOT_ESTABLISHED"
+    },
+    {
+      "id": "FIN3",
+      "statement": "Affiliate outbound is a paid conversion",
+      "type": "MISATTRIBUTION",
+      "source": [],
+      "decision": "PROHIBIT"
+    },
+    {
+      "id": "FIN4",
+      "statement": "Merchant gross merchandise sales are FV affiliate revenues",
+      "type": "ACCOUNTING",
+      "source": [],
+      "decision": "PROHIBIT"
+    }
+  ],
+  "release_gates": {
+    "named_publisher_approval": "CLOSED",
+    "approved_partner_earning_url": "CLOSED",
+    "explicit_website_permission": "CLOSED",
+    "explicit_social_permission": "CLOSED",
+    "explicit_email_permission": "CLOSED",
+    "current_checkout_total": "CLOSED",
+    "refund_terms_and_fulfillment": "CLOSED",
+    "owned_payhip_rights_checkout": "CLOSED",
+    "first_party_consent": "CLOSED",
+    "actual_checkout_funnel_test": "CLOSED",
+    "actual_real_browser_wcag": "CLOSED",
+    "actual_video_and_vtt": "CLOSED",
+    "independent_revenue_reconciliation": "CLOSED",
+    "founder_production_release": "CLOSED"
+  },
+  "cta": {
+    "state": "NATIVE_DISABLED",
+    "merchant_href": null,
+    "affiliate_href": null,
+    "disclosure": "If you purchase through this link, Final Vestige may earn a commission at no additional cost to you.",
+    "active_free_destination": "https://finalvestige.com/focus/"
+  },
+  "measurement": {
+    "events": {
+      "campaign_landing": "ATTENTION_NOT_SALE",
+      "focus_cta_click": "ENGAGEMENT_NOT_LEAD",
+      "jetpack_confirmed_signup": "PROVIDER_CONFIRMED_LEAD_NOT_SALE",
+      "affiliate_outbound": "CLICK_NOT_SALE",
+      "merchant_paid_order": "MERCHANT_CONFIRMED_ORDER",
+      "affiliate_commission_settled": "ACTUAL_FV_RECEIPT",
+      "refund_or_adjustment": "REALIZED_NET_ADJUSTMENT"
+    },
+    "owned_product_net": "Actual cleared amounts paid by buyers (discounts already reflected), less refunds, chargebacks and fees not already deducted; never double-subtract discounts",
+    "affiliate_net": "Actual FV-paid attributable commissions (merchant retail gross excluded), less fees/reversals not already netted",
+    "primary_kpi": "1000 * (owned realized net + affiliate realized net) / defensibly verified qualified-human sessions",
+    "unknown": "NOT_COMPUTABLE"
+  }
+}
