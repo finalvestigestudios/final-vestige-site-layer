@@ -1,0 +1,703 @@
+{
+  "milestone": "R162",
+  "reviewed_at": "2026-11-05 PT",
+  "release_decision": "HARD_HOLD",
+  "product": "Zen12 Premium",
+  "merchant_url": "https://zen12.com/?no-popup=1",
+  "merchant_observed_price": {
+    "amount": 87.99,
+    "currency": "USD",
+    "date": "2026-11-05",
+    "status": "seller_page_only_not_checkout"
+  },
+  "affiliate": {
+    "publisher_approved": null,
+    "valid_tracking_url": null,
+    "allowed_channels": null,
+    "confirmed_sale": null,
+    "commission": null
+  },
+  "owned_fallback": {
+    "paid_sku": null,
+    "rights_clearance": null,
+    "price": null,
+    "checkout": null
+  },
+  "video": {
+    "proposed_seconds": 42,
+    "produced": false,
+    "playable": false,
+    "experiment_run": false
+  },
+  "baseline": {
+    "historical_investigation_posts": 61,
+    "updated_wp_published_posts": 66,
+    "note": "66 total posts not independently reclassified as investigations",
+    "focus_wordpress_id": 1579,
+    "change_blindness_post_id": 1922,
+    "puysegur_page_id": 1377
+  },
+  "source_refs": [
+    {
+      "id": "S01",
+      "url": "https://inspire3.com/",
+      "type": "merchant_catalog",
+      "checked": "2026-11-05"
+    },
+    {
+      "id": "S02",
+      "url": "https://zen12.com/?no-popup=1",
+      "type": "exact_merchant_offer",
+      "checked": "2026-11-05"
+    },
+    {
+      "id": "S03",
+      "url": "https://affiliates.inspire3.com/",
+      "type": "public_affiliate_portal",
+      "checked": "2026-11-05"
+    },
+    {
+      "id": "S04",
+      "url": "https://doi.org/10.1080/17437199.2023.2248222",
+      "type": "peer_reviewed_meta_analysis"
+    },
+    {
+      "id": "S05",
+      "url": "https://doi.org/10.1111/nyas.15095",
+      "type": "preregistered_systematic_review"
+    },
+    {
+      "id": "S06",
+      "url": "https://doi.org/10.1371/journal.pone.0286023",
+      "type": "systematic_review"
+    },
+    {
+      "id": "S07",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10781831/",
+      "type": "empirical_applied_studies"
+    },
+    {
+      "id": "S08",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "type": "regulator_guidance"
+    },
+    {
+      "id": "S09",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "type": "regulator_guidance"
+    },
+    {
+      "id": "S10",
+      "url": "https://finalvestige.com/focus/",
+      "type": "fv_live_page"
+    },
+    {
+      "id": "S11",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "type": "fv_live_archive"
+    },
+    {
+      "id": "S12",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "type": "fv_live_article"
+    },
+    {
+      "id": "S13",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "type": "governance"
+    },
+    {
+      "id": "S14",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "type": "governance"
+    }
+  ],
+  "claim_decisions": [
+    {
+      "id": "c01",
+      "statement": "Zen12 is listed as an Inspire3 brand",
+      "decision": "merchant-confirmed-seller-description",
+      "source_ids": [
+        "S01"
+      ]
+    },
+    {
+      "id": "c02",
+      "statement": "Zen12 Premium seller page includes 12 levels",
+      "decision": "merchant-confirmed-seller-description",
+      "source_ids": [
+        "S02"
+      ]
+    },
+    {
+      "id": "c03",
+      "statement": "Zen12 Premium seller page lists 48 MP3s",
+      "decision": "merchant-confirmed-seller-description",
+      "source_ids": [
+        "S02"
+      ]
+    },
+    {
+      "id": "c04",
+      "statement": "Seller lists quick-start guide and user manual",
+      "decision": "merchant-confirmed-seller-description",
+      "source_ids": [
+        "S02"
+      ]
+    },
+    {
+      "id": "c05",
+      "statement": "Seller lists audio level guides",
+      "decision": "merchant-confirmed-seller-description",
+      "source_ids": [
+        "S02"
+      ]
+    },
+    {
+      "id": "c06",
+      "statement": "Seller advertises one-year money-back guarantee",
+      "decision": "merchant-representation-not-tested",
+      "source_ids": [
+        "S02"
+      ]
+    },
+    {
+      "id": "c07",
+      "statement": "Seller page displayed $87.99 on 2026-11-05",
+      "decision": "dated-advertisement-not-checkout",
+      "source_ids": [
+        "S02"
+      ]
+    },
+    {
+      "id": "c08",
+      "statement": "Final customer checkout charge is $87.99",
+      "decision": "not-verified-do-not-claim",
+      "source_ids": [
+        "S02"
+      ]
+    },
+    {
+      "id": "c09",
+      "statement": "The merchant has actually honored a refund for FV-referred buyer",
+      "decision": "not-verified-do-not-claim",
+      "source_ids": [
+        "S02"
+      ]
+    },
+    {
+      "id": "c10",
+      "statement": "Zen12 12 minutes yields the benefits of one hour advanced meditation",
+      "decision": "seller-assertion-unsubstantiated-for-exact-product",
+      "source_ids": [
+        "S02",
+        "S04",
+        "S05"
+      ]
+    },
+    {
+      "id": "c11",
+      "statement": "Zen12 automatically controls brainwaves",
+      "decision": "seller-mechanism-assertion-unsubstantiated-for-exact-product",
+      "source_ids": [
+        "S02",
+        "S06"
+      ]
+    },
+    {
+      "id": "c12",
+      "statement": "A meta-analysis evaluated 111 RCTs and 9538 participants",
+      "decision": "peer-reviewed-supported",
+      "source_ids": [
+        "S04"
+      ]
+    },
+    {
+      "id": "c13",
+      "statement": "The 111 RCTs independently tested Zen12 Premium",
+      "decision": "false-not-supported",
+      "source_ids": [
+        "S04"
+      ]
+    },
+    {
+      "id": "c14",
+      "statement": "Preregistered digital mindfulness review included 19 studies, 1654 participants",
+      "decision": "peer-reviewed-supported",
+      "source_ids": [
+        "S05"
+      ]
+    },
+    {
+      "id": "c15",
+      "statement": "Digital mindfulness review reported heterogeneous cognitive results",
+      "decision": "peer-reviewed-supported",
+      "source_ids": [
+        "S05"
+      ]
+    },
+    {
+      "id": "c16",
+      "statement": "Binaural EEG review covered 14 studies, 5 supportive 8 contradictory 1 mixed",
+      "decision": "peer-reviewed-supported",
+      "source_ids": [
+        "S06"
+      ]
+    },
+    {
+      "id": "c17",
+      "statement": "Binaural EEG review establishes Zen12 cognitive efficacy",
+      "decision": "false-category-error",
+      "source_ids": [
+        "S06",
+        "S02"
+      ]
+    },
+    {
+      "id": "c18",
+      "statement": "Brief applied mindfulness attention training has preliminary evidence",
+      "decision": "supported-with-design-limitations",
+      "source_ids": [
+        "S07"
+      ]
+    },
+    {
+      "id": "c19",
+      "statement": "Final Vestige has current named Inspire3 approval",
+      "decision": "not-verified-hard-hold",
+      "source_ids": [
+        "S03"
+      ]
+    },
+    {
+      "id": "c20",
+      "statement": "Inspire3 public portal advertises an affiliate program",
+      "decision": "portal-supported-only",
+      "source_ids": [
+        "S03"
+      ]
+    },
+    {
+      "id": "c21",
+      "statement": "Named tracked earning URL for this publisher and product exists",
+      "decision": "not-verified-hard-hold",
+      "source_ids": [
+        "S03"
+      ]
+    },
+    {
+      "id": "c22",
+      "statement": "Specific TikTok/YouTube/Dispatch promotion rights are established",
+      "decision": "not-verified-hard-hold",
+      "source_ids": [
+        "S03"
+      ]
+    },
+    {
+      "id": "c23",
+      "statement": "One Jetpack Focus resource route is live",
+      "decision": "production-page-verified-not-lead-delivery",
+      "source_ids": [
+        "S10"
+      ]
+    },
+    {
+      "id": "c24",
+      "statement": "Guest Focus signup and welcome email successfully completed",
+      "decision": "not-tested-do-not-claim",
+      "source_ids": [
+        "S10"
+      ]
+    },
+    {
+      "id": "c25",
+      "statement": "Change Blindness and Puységur pages have contextual Focus calls in stored article bodies",
+      "decision": "read-only-WP-body-absent-2026-11-05",
+      "source_ids": [
+        "S11",
+        "S12"
+      ]
+    },
+    {
+      "id": "c26",
+      "statement": "The prospective pre-sell block includes near-control FTC earnings disclosure",
+      "decision": "source-code-testable-unpublished",
+      "source_ids": [
+        "S08"
+      ]
+    },
+    {
+      "id": "c27",
+      "statement": "Objective health-related effects require sufficient relevant substantiation",
+      "decision": "regulatory-guidance",
+      "source_ids": [
+        "S09"
+      ]
+    },
+    {
+      "id": "c28",
+      "statement": "Affiliate click is equivalent to a paid commission",
+      "decision": "false-separate-events",
+      "source_ids": [
+        "S03",
+        "S14"
+      ]
+    },
+    {
+      "id": "c29",
+      "statement": "An attributed FV-paid Payhip Mind SKU is verified",
+      "decision": "unknown-await-authenticated-inventory",
+      "source_ids": [
+        "S14"
+      ]
+    },
+    {
+      "id": "c30",
+      "statement": "Commercial conversion or realized revenue from this pilot exists",
+      "decision": "no-evidence-do-not-claim",
+      "source_ids": [
+        "S14"
+      ]
+    },
+    {
+      "id": "c31",
+      "statement": "An original 42-second Zen12 explainer video is already produced",
+      "decision": "false-concept-only",
+      "source_ids": [
+        "S13"
+      ]
+    },
+    {
+      "id": "c32",
+      "statement": "The text-only versus video A/B pilot has demonstrated uplift",
+      "decision": "false-not-run",
+      "source_ids": [
+        "S13"
+      ]
+    },
+    {
+      "id": "c33",
+      "statement": "Purchasing link has been activated in the prototype",
+      "decision": "false-disabled",
+      "source_ids": [
+        "S03"
+      ]
+    },
+    {
+      "id": "c34",
+      "statement": "Research proves meditation never helps",
+      "decision": "false-overgeneralization",
+      "source_ids": [
+        "S04",
+        "S05"
+      ]
+    },
+    {
+      "id": "c35",
+      "statement": "Historical Puységur documents validate a modern recording",
+      "decision": "false-unsupported-transfer",
+      "source_ids": [
+        "S11"
+      ]
+    }
+  ],
+  "release_gates": [
+    {
+      "gate": "named_affiliate_acceptance",
+      "status": "CLOSED",
+      "requirement": "FVN creator/publisher acceptance in private Inspire3 dashboard",
+      "reason": "Not independently authorized/tested for commercial release",
+      "owner": "Founder/Mind"
+    },
+    {
+      "gate": "exact_tracking_url",
+      "status": "CLOSED",
+      "requirement": "authorized unique product URL or account-confirmed campaign link",
+      "reason": "Not independently authorized/tested for commercial release",
+      "owner": "Founder/Mind"
+    },
+    {
+      "gate": "promotion_channels",
+      "status": "CLOSED",
+      "requirement": "approved site, TikTok, YouTube and email permissions separately",
+      "reason": "Not independently authorized/tested for commercial release",
+      "owner": "Founder/Mind"
+    },
+    {
+      "gate": "approved_creatives",
+      "status": "CLOSED",
+      "requirement": "review approved supplier creatives, original copy only",
+      "reason": "Not independently authorized/tested for commercial release",
+      "owner": "Founder/Mind"
+    },
+    {
+      "gate": "current_checkout_price",
+      "status": "CLOSED",
+      "requirement": "guest checkout amount, currency, taxes and optional upsells",
+      "reason": "Not independently authorized/tested for commercial release",
+      "owner": "Founder/Mind"
+    },
+    {
+      "gate": "refund_terms",
+      "status": "CLOSED",
+      "requirement": "exact written refund policy at purchase time",
+      "reason": "Not independently authorized/tested for commercial release",
+      "owner": "Founder/Mind"
+    },
+    {
+      "gate": "refund_fulfillment",
+      "status": "CLOSED",
+      "requirement": "operational proof cannot be assumed",
+      "reason": "Not independently authorized/tested for commercial release",
+      "owner": "Founder/Mind"
+    },
+    {
+      "gate": "product_specific_12_to_60_evidence",
+      "status": "CLOSED",
+      "requirement": "claim withheld absent adequate direct research",
+      "reason": "Not independently authorized/tested for commercial release",
+      "owner": "Founder/Mind"
+    },
+    {
+      "gate": "brainwave_mechanism_evidence",
+      "status": "CLOSED",
+      "requirement": "claim withheld absent matching modality/product proof",
+      "reason": "Not independently authorized/tested for commercial release",
+      "owner": "Founder/Mind"
+    },
+    {
+      "gate": "meaningful_outcome_evidence",
+      "status": "CLOSED",
+      "requirement": "cognitive/health promises independently unsupported",
+      "reason": "Not independently authorized/tested for commercial release",
+      "owner": "Founder/Mind"
+    },
+    {
+      "gate": "fv_paid_sku_authentication",
+      "status": "CLOSED",
+      "requirement": "fallback requires commerce-owned rights-cleared actual SKU",
+      "reason": "Not independently authorized/tested for commercial release",
+      "owner": "Commerce"
+    },
+    {
+      "gate": "fv_owned_license",
+      "status": "CLOSED",
+      "requirement": "right to sell documented for proposed SKU",
+      "reason": "Not independently authorized/tested for commercial release",
+      "owner": "Commerce"
+    },
+    {
+      "gate": "fv_owned_price",
+      "status": "CLOSED",
+      "requirement": "authenticated merchant price",
+      "reason": "Not independently authorized/tested for commercial release",
+      "owner": "Commerce"
+    },
+    {
+      "gate": "fv_owned_returns",
+      "status": "CLOSED",
+      "requirement": "documented applicable returns/refunds",
+      "reason": "Not independently authorized/tested for commercial release",
+      "owner": "Commerce"
+    },
+    {
+      "gate": "fv_owned_checkout",
+      "status": "CLOSED",
+      "requirement": "real buyer journey test without unauthorized paid order",
+      "reason": "Not independently authorized/tested for commercial release",
+      "owner": "Commerce"
+    },
+    {
+      "gate": "fv_owned_delivery",
+      "status": "CLOSED",
+      "requirement": "download is actually delivered in verified purchase",
+      "reason": "Not independently authorized/tested for commercial release",
+      "owner": "Commerce"
+    },
+    {
+      "gate": "focus_guest_optin",
+      "status": "CLOSED",
+      "requirement": "native guest Jetpack opt-in test approval and execution",
+      "reason": "Not independently authorized/tested for commercial release",
+      "owner": "Site QA/Dispatch"
+    },
+    {
+      "gate": "focus_welcome_delivery",
+      "status": "CLOSED",
+      "requirement": "existing welcome verified, not overwritten",
+      "reason": "Not independently authorized/tested for commercial release",
+      "owner": "Site QA/Dispatch"
+    },
+    {
+      "gate": "missing_contextual_link_1922",
+      "status": "CLOSED",
+      "requirement": "existing Change Blindness route QA and approved fix",
+      "reason": "Not independently authorized/tested for commercial release",
+      "owner": "Founder/Mind"
+    },
+    {
+      "gate": "missing_contextual_link_1377",
+      "status": "CLOSED",
+      "requirement": "existing Puységur route QA and approved fix",
+      "reason": "Not independently authorized/tested for commercial release",
+      "owner": "Founder/Mind"
+    },
+    {
+      "gate": "grok_asset_inventory",
+      "status": "CLOSED",
+      "requirement": "immutable published video IDs and source hooks",
+      "reason": "Not independently authorized/tested for commercial release",
+      "owner": "Praxxis/Grok"
+    },
+    {
+      "gate": "grok_utm_match",
+      "status": "CLOSED",
+      "requirement": "UTMs correspond to actual published asset IDs",
+      "reason": "Not independently authorized/tested for commercial release",
+      "owner": "Praxxis/Grok"
+    },
+    {
+      "gate": "qualified_sessions",
+      "status": "CLOSED",
+      "requirement": "validated human sessions and campaign counts",
+      "reason": "Not independently authorized/tested for commercial release",
+      "owner": "Founder/Mind"
+    },
+    {
+      "gate": "paid_order_receipts",
+      "status": "CLOSED",
+      "requirement": "authenticated merchant confirmed paid orders",
+      "reason": "Not independently authorized/tested for commercial release",
+      "owner": "Commerce/Growth"
+    },
+    {
+      "gate": "paid_affiliate_commissions",
+      "status": "CLOSED",
+      "requirement": "authenticated independent affiliate sale/commission report",
+      "reason": "Not independently authorized/tested for commercial release",
+      "owner": "Commerce/Growth"
+    },
+    {
+      "gate": "refunds_fees_settlements",
+      "status": "CLOSED",
+      "requirement": "reconcile settled payout, refunds, fees",
+      "reason": "Not independently authorized/tested for commercial release",
+      "owner": "Founder/Mind"
+    },
+    {
+      "gate": "seven_day_cohort",
+      "status": "CLOSED",
+      "requirement": "7-day attributed qualified-session cohort",
+      "reason": "Not independently authorized/tested for commercial release",
+      "owner": "Founder/Mind"
+    },
+    {
+      "gate": "thirty_day_cohort",
+      "status": "CLOSED",
+      "requirement": "30-day attributed qualified-session cohort",
+      "reason": "Not independently authorized/tested for commercial release",
+      "owner": "Founder/Mind"
+    },
+    {
+      "gate": "audience_consent",
+      "status": "CLOSED",
+      "requirement": "no PII or unauthorized identity stitching",
+      "reason": "Not independently authorized/tested for commercial release",
+      "owner": "Founder/Mind"
+    },
+    {
+      "gate": "release_founder_approval",
+      "status": "CLOSED",
+      "requirement": "explicit approval for production and commercial change",
+      "reason": "Not independently authorized/tested for commercial release",
+      "owner": "Founder/Mind"
+    },
+    {
+      "gate": "qa_actual_chromium",
+      "status": "CLOSED",
+      "requirement": "real browser 360 390 768 1440 1920 and no-JS",
+      "reason": "Not independently authorized/tested for commercial release",
+      "owner": "Site QA"
+    },
+    {
+      "gate": "qa_wcag",
+      "status": "CLOSED",
+      "requirement": "contrast, headings, focus, touch, caption/transcript, reduced motion",
+      "reason": "Not independently authorized/tested for commercial release",
+      "owner": "Site QA"
+    },
+    {
+      "gate": "qa_cwv",
+      "status": "CLOSED",
+      "requirement": "staging or live first-party LCP/CLS/INP tested",
+      "reason": "Not independently authorized/tested for commercial release",
+      "owner": "Site QA"
+    },
+    {
+      "gate": "qa_external_security",
+      "status": "CLOSED",
+      "requirement": "target external rel and no affiliate-cloaking validation",
+      "reason": "Not independently authorized/tested for commercial release",
+      "owner": "Site QA"
+    },
+    {
+      "gate": "qa_copy",
+      "status": "CLOSED",
+      "requirement": "material link disclosure adjacent and clear",
+      "reason": "Not independently authorized/tested for commercial release",
+      "owner": "Site QA"
+    },
+    {
+      "gate": "qa_source_method",
+      "status": "CLOSED",
+      "requirement": "editorial research peer review and seller-label accuracy",
+      "reason": "Not independently authorized/tested for commercial release",
+      "owner": "Site QA"
+    },
+    {
+      "gate": "ab_test_consent",
+      "status": "CLOSED",
+      "requirement": "experimental allocation subject to privacy and founder review",
+      "reason": "Not independently authorized/tested for commercial release",
+      "owner": "Mind/Claude/Founder"
+    },
+    {
+      "gate": "ab_video_asset",
+      "status": "CLOSED",
+      "requirement": "actual original 42s asset, poster, WebVTT captions and transcript",
+      "reason": "Not independently authorized/tested for commercial release",
+      "owner": "Mind/Claude/Founder"
+    },
+    {
+      "gate": "ab_randomization",
+      "status": "CLOSED",
+      "requirement": "balanced first-party session assignment and predeclared stop",
+      "reason": "Not independently authorized/tested for commercial release",
+      "owner": "Mind/Claude/Founder"
+    },
+    {
+      "gate": "ab_revenue_outcome",
+      "status": "CLOSED",
+      "requirement": "primary endpoint verified paid net sales not clicks",
+      "reason": "Not independently authorized/tested for commercial release",
+      "owner": "Mind/Claude/Founder"
+    },
+    {
+      "gate": "paid_spend",
+      "status": "CLOSED",
+      "requirement": "no paid vendors, ads or tools",
+      "reason": "Not independently authorized/tested for commercial release",
+      "owner": "Founder/Mind"
+    },
+    {
+      "gate": "cms_release",
+      "status": "CLOSED",
+      "requirement": "no live WP writes, menu edits, merge or deploy",
+      "reason": "Not independently authorized/tested for commercial release",
+      "owner": "Founder/Mind"
+    }
+  ],
+  "net_revenue_per_1000_qualified_sessions": null,
+  "net_revenue_status": "NOT_COMPUTABLE_NO_AUTHORITATIVE_DENOMINATOR_OR_TRANSACTIONS",
+  "changes_to_live_systems": 0
+}
