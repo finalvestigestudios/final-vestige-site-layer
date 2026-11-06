@@ -49,7 +49,7 @@ function scan(files){
  check(page.includes('href="#main"')&&page.includes('id="main"'),"skip navigation");
  check(page.includes(":focus-visible")&&page.includes("prefers-reduced-motion"),"focus and reduced motion styles");
  check(page.includes("max-width:1160px")&&page.includes("@media(max-width:770px)"),"fluid/responsive intent");
- check(page.includes("tasted jam")&&page.includes("smelled tea"),"page correct modalities");
+ check(page.includes("jams by taste")&&page.includes("teas by smell"),"page correct modalities");
  check(page.includes("before the final choice"),"page correct timing");
  check(page.includes("12 levels and 48 downloadable MP3s"),"exact seller package");
  check(page.includes("111 randomized mindfulness studies"),"research transfer limitation");
