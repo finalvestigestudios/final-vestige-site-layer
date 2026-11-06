@@ -71,6 +71,8 @@ class WordPressBlockPackaging(unittest.TestCase):
                         self.assertTrue(figures.nth(0).is_visible())
                         self.assertGreaterEqual(page.locator('[data-fvx-image-fallback]').count(),1)
                         image=page.screenshot(full_page=True,animations='disabled')
+                        (HERE/'artifacts').mkdir(exist_ok=True)
+                        (HERE/'artifacts'/('r167-gallery-'+str(width)+'.png')).write_bytes(image)
                         screenshots[str(width)]=hashlib.sha256(image).hexdigest()
                     else:
                         self.assertTrue(all(figures.nth(i).is_visible() for i in range(3)))
