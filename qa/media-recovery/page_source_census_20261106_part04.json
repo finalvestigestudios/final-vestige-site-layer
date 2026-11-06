@@ -1,0 +1,122 @@
+{
+  "schema": "fv-page-source-image-shard-v1",
+  "captured_date": "2026-11-06",
+  "method": "Authenticated read-only WordPress page get(edit); stored HTML <img> only, no browser, no image requests or production changes.",
+  "page_list_count": 83,
+  "offset": 36,
+  "page_rows": 12,
+  "errors": [],
+  "reported_42_broken_browser_verified": null,
+  "measured_76_percent_saving": null,
+  "production_writes": 0,
+  "rows": [
+    {
+      "id": 1051,
+      "url": "https://finalvestige.com/the-moving-noon/",
+      "modified": "2026-10-29T14:13:29",
+      "title": "The Moving Noon",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": []
+    },
+    {
+      "id": 1048,
+      "url": "https://finalvestige.com/the-weather-window/",
+      "modified": "2026-10-29T14:11:53",
+      "title": "The Weather Window",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": []
+    },
+    {
+      "id": 1044,
+      "url": "https://finalvestige.com/the-findspot/",
+      "modified": "2026-11-03T14:47:00",
+      "title": "The Findspot",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": []
+    },
+    {
+      "id": 1043,
+      "url": "https://finalvestige.com/the-dark-interval/",
+      "modified": "2026-10-29T13:56:35",
+      "title": "The Dark Interval",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": []
+    },
+    {
+      "id": 1037,
+      "url": "https://finalvestige.com/the-breathing-room/",
+      "modified": "2026-10-29T17:19:57",
+      "title": "The Breathing Room",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": []
+    },
+    {
+      "id": 1035,
+      "url": "https://finalvestige.com/the-second-currency/",
+      "modified": "2026-10-29T13:12:44",
+      "title": "The Second Currency",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": []
+    },
+    {
+      "id": 1033,
+      "url": "https://finalvestige.com/the-signal-chain/",
+      "modified": "2026-11-02T21:40:54",
+      "title": "The Signal Chain",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": []
+    },
+    {
+      "id": 1031,
+      "url": "https://finalvestige.com/the-last-fix/",
+      "modified": "2026-10-29T13:12:37",
+      "title": "The Last Fix",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": []
+    },
+    {
+      "id": 1029,
+      "url": "https://finalvestige.com/the-failure-chain/",
+      "modified": "2026-11-05T23:40:35",
+      "title": "The Failure Chain",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": []
+    },
+    {
+      "id": 1027,
+      "url": "https://finalvestige.com/the-turning-screw/",
+      "modified": "2026-11-02T21:40:52",
+      "title": "The Turning Screw",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": []
+    },
+    {
+      "id": 748,
+      "url": "https://finalvestige.com/history-lab/",
+      "modified": "2026-10-29T12:51:22",
+      "title": "Final Vestige History Lab",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": []
+    },
+    {
+      "id": 747,
+      "url": "https://finalvestige.com/community/",
+      "modified": "2026-11-02T21:40:50",
+      "title": "The Exchange",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": []
+    }
+  ]
+}
