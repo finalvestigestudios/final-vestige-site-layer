@@ -1,0 +1,72 @@
+{
+  "schema": "fv-preparedness-r172-jerky-source-impact-docket-v1",
+  "observed_on": "2026-11-06",
+  "state": "DRAFT_HARD_HOLD",
+  "issue": 136,
+  "commercial_coordination_issue": 820,
+  "previous_pr": 1277,
+  "previous_head": "77df5c0ec20058faea163f04ca0d09b1dd3d4997",
+  "source_group_url": "https://nchfp.uga.edu/how/dry/recipes/jerky",
+  "hist_food_literal_url": "https://nchfp.uga.edu/how/dry/recipes/jerky/",
+  "original_hist_food_source_id": "hist-food-nchfp-jerky",
+  "prior_original_crosswalk_blob": "d62e493a67dedd23e04cfdf3cce762ef933c6bf9",
+  "metadata_verified_from_original_head": 35,
+  "original_source_use_edges_verified": 385,
+  "source_group_human_review": "PENDING",
+  "impacted_articles": [
+    {
+      "slug": "pemmican-and-dried-meats",
+      "route": "/preparedness/lost-ways/pemmican-and-dried-meats/",
+      "metadata_blob": "03d3824e07fe51931671d0ddc7aa8c85eda58435",
+      "source_id": "hist-food-nchfp-jerky"
+    },
+    {
+      "slug": "pioneer-travel-rations",
+      "route": "/preparedness/lost-ways/pioneer-travel-rations/",
+      "metadata_blob": "7191acba55d63dc405ad9c2003d66193276da89f",
+      "source_id": "hist-food-nchfp-jerky"
+    },
+    {
+      "slug": "safe-jerky-dehydration",
+      "route": "/preparedness/food/safe-jerky-dehydration/",
+      "metadata_blob": "50b365e8109c14bdb9ce1a9365db88215a678ec5",
+      "source_id": "nchfp-jerky"
+    }
+  ],
+  "source_scope_discrepancy": {
+    "nchfp_page": "https://nchfp.uga.edu/how/dry/recipes/jerky",
+    "nchfp_basis": "UGA So Easy to Preserve, 6th ed. 2014; page describes pre-drying heating and post-drying oven heating as methods; human safety review required.",
+    "usda_fsis_current_page": "https://ask.fsis.usda.gov/article/How-do-I-dry-jerky",
+    "usda_fsis_last_updated": "2025-02-04",
+    "usda_fsis_basis": "USDA FSIS Meat and Poultry Hotline recommends bringing meat to 160°F and poultry to 165°F before dehydrating; does not endorse using a post-drying alternative as equivalent.",
+    "fsis_rationale_page": "https://ask.fsis.usda.gov/article/Why-is-temperature-important-when-making-jerky",
+    "fsis_rationale_updated": "2024-11-18",
+    "release_risk": "Do not collapse distinct sources/IDs or silently select an after-drying process; a qualified food safety reviewer must reconcile applicable guidance and article wording."
+  },
+  "review_decisions": {
+    "url_equivalence": false,
+    "source_claim_scope": false,
+    "qualified_food_safety": false,
+    "independent_qd": false,
+    "founder_publication_authorized": false
+  },
+  "untouched_assets": [
+    "35 original bodies",
+    "35 metadata files",
+    "8 source inventories",
+    "crosswalk.json",
+    "WordPress and navigation",
+    "Grok campaign queue",
+    "merchant and analytics systems"
+  ],
+  "pending_source_decisions_previously_reported": 75,
+  "shared_url_groups_pending": 32,
+  "commercial_funnel": {
+    "audience": "caregivers planning school pickup and reunification",
+    "free_guide": "Household Emergency Plan (unpublished ungated draft)",
+    "optional_tool": "Family Reunification Card (unpublished free draft; pending independent safety/privacy/print checks)",
+    "paid_preparedness_sku_verified": false,
+    "grok_published_preparedness_asset_id_verified": false,
+    "verified_sales_or_net_revenue": false
+  }
+}
