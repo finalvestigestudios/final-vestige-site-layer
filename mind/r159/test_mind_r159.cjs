@@ -12,7 +12,7 @@ const old = fs.readFileSync(path.join(root, 'r158', 'when-familiarity-masquerade
 const d = JSON.parse(fs.readFileSync(path.join(__dirname, 'evidence-claims-and-commercial-holds.json'), 'utf8'));
 function check(A,H,M,D,O) {
  assert.ok(A.trim().split(/\s+/).length > 2200, 'substantial original article required');
- for(const term of ['attentional blink','Raymond','Shapiro','Arnell','Olivers','Hommel','Slagter','seventeen retreat','twenty-three novices','three-month','10–12 hours','P3b','lag-one','did not test Zen12 Premium','https://pubmed.ncbi.nlm.nih.gov/1500880/','https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.0050138','not independently']) assert.ok(A.toLowerCase().includes(term.toLowerCase()), 'missing investigation evidence: '+term);
+ for(const term of ['attentional blink','Raymond','Shapiro','Arnell','Olivers','Hommel','Slagter','seventeen retreat participants','twenty-three novices','three-month','10–12 hours','P3b','lag-one','did not test Zen12 Premium','https://pubmed.ncbi.nlm.nih.gov/1500880/','https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.0050138','not independently']) assert.ok(A.toLowerCase().includes(term.toLowerCase()), 'missing investigation evidence: '+term);
  assert.ok(O.includes('tape-recorded statements'), '1977 Praxxis factual correction missing');
  assert.ok(!O.includes('in front of readers three times'), 'obsolete 1977 stimulus error');
  assert.equal(D.status,'DRAFT_UNPUBLISHED_NOT_COMMERCIALLY_AUTHORIZED');
