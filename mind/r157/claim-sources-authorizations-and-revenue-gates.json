@@ -1,0 +1,492 @@
+{
+  "schema_version": "1.0",
+  "milestone": "Mind R157",
+  "review_date": "2026-11-05",
+  "status": "UNPUBLISHED_COMMERCE_HARD_HOLD",
+  "independent_offer_under_review": "Brainwave Shots Focus Shot (exact seller page; not an endorsed recommendation)",
+  "commercial_primary_candidate": "Hypnosis Live Total Focus from prior authorized-source R149, pending acceptance; do not activate",
+  "own_product_fallback": "FV Payhip Mind SKU — unverified, cannot assert sellable",
+  "merchant_approval": "UNKNOWN_NOT_REJECTED",
+  "source_links": {
+    "inspire3": "https://inspire3.com/",
+    "focus_shot": "https://brainwaveshots.com/focus-shot",
+    "shots_faq": "https://brainwaveshots.com/faq",
+    "eeg2023": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+    "meta2019": "https://pubmed.ncbi.nlm.nih.gov/30073406/",
+    "gamma2023": "https://pubmed.ncbi.nlm.nih.gov/37359672/",
+    "auditory2024": "https://pubmed.ncbi.nlm.nih.gov/38458383/",
+    "ftc_disclosure": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "ftc_health": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+    "partner_portal": "https://affiliates.inspire3.com/",
+    "focus": "https://finalvestige.com/focus/",
+    "puysegur": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "change": "https://finalvestige.com/2026/11/02/change-blindness/",
+    "issue171": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+    "issue820": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+    "task008": "https://docs.google.com/document/d/1_dqcJeqxbvYb1prGxy0nSWTsHu8p0PSRsDB_NPNbL48/edit"
+  },
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "Binaural beat percept arises with different tones supplied separately to ears",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+      "disposition": "SUPPORTED_EXPERIMENTAL_PHENOMENON"
+    },
+    {
+      "id": "C02",
+      "claim": "Binaural rhythm is equivalent to actual pulsed isochronic audio",
+      "source": "https://brainwaveshots.com/faq",
+      "disposition": "REJECT_DISTINCT_STIMULI"
+    },
+    {
+      "id": "C03",
+      "claim": "A binaural auditory percept proves cognition improved",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+      "disposition": "REJECT_CAUSAL_LEAP"
+    },
+    {
+      "id": "C04",
+      "claim": "2023 systematic review included fourteen EEG studies",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+      "disposition": "SUPPORTED_REVIEW"
+    },
+    {
+      "id": "C05",
+      "claim": "Five supportive, eight contradictory and one mixed entrainment findings",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+      "disposition": "SUPPORTED_REVIEW_WITH_HETEROGENEITY"
+    },
+    {
+      "id": "C06",
+      "claim": "2019 meta-analysis synthesized 22 studies and 35 effect sizes",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/30073406/",
+      "disposition": "SUPPORTED_REVIEW"
+    },
+    {
+      "id": "C07",
+      "claim": "2019 pooled medium effect g=0.45 proves Focus Shot results",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/30073406/",
+      "disposition": "REJECT_UNTESTED_SPECIFIC_PRODUCT"
+    },
+    {
+      "id": "C08",
+      "claim": "2023 gamma-binaural trial used 58 healthy adults",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/37359672/",
+      "disposition": "SUPPORTED_SPECIFIC_SAMPLE"
+    },
+    {
+      "id": "C09",
+      "claim": "2023 gamma-binaural trial found no significant tested attention/anxiety difference",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/37359672/",
+      "disposition": "SUPPORTED_SPECIFIC_TASK"
+    },
+    {
+      "id": "C10",
+      "claim": "2024 review mixed/insufficient autonomic-cognition evidence",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/38458383/",
+      "disposition": "SUPPORTED_REVIEW_SCOPE"
+    },
+    {
+      "id": "C11",
+      "claim": "Exact seller Focus Shot listing includes 15-minute and 30-minute versions",
+      "source": "https://brainwaveshots.com/focus-shot",
+      "disposition": "SELLER_DESCRIBED_NOT_INDEPENDENTLY_PURCHASED"
+    },
+    {
+      "id": "C12",
+      "claim": "Focus Shot bundle includes brainwave-only audio variants",
+      "source": "https://brainwaveshots.com/focus-shot",
+      "disposition": "SELLER_DESCRIBED"
+    },
+    {
+      "id": "C13",
+      "claim": "Seller's 30-minute protocol alternates 12Hz and 18Hz",
+      "source": "https://brainwaveshots.com/focus-shot",
+      "disposition": "SELLER_DESCRIBED_PROTOCOL_UNVERIFIED_AUDIO"
+    },
+    {
+      "id": "C14",
+      "claim": "Ambient audio includes mountain sounds and brown noise",
+      "source": "https://brainwaveshots.com/focus-shot",
+      "disposition": "SELLER_DESCRIBED_NOT_AUDITED"
+    },
+    {
+      "id": "C15",
+      "claim": "Seller FAQ calls Brainwave Shots technique isochronic",
+      "source": "https://brainwaveshots.com/faq",
+      "disposition": "SELLER_DESCRIBED"
+    },
+    {
+      "id": "C16",
+      "claim": "A binaural EEG paper validates proprietary 12/18Hz Focus Shot",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+      "disposition": "REJECT_PROTOCOL_MISMATCH"
+    },
+    {
+      "id": "C17",
+      "claim": "Merchant advertises hours of sustained concentration after listening",
+      "source": "https://brainwaveshots.com/focus-shot",
+      "disposition": "UNSUBSTANTIATED_SELLER_EFFICACY_CLAIM_DO_NOT_ADOPT"
+    },
+    {
+      "id": "C18",
+      "claim": "Merchant calls product completely safe for everyone",
+      "source": "https://brainwaveshots.com/focus-shot",
+      "disposition": "REJECT_UNIVERSAL_SAFETY_CLAIM"
+    },
+    {
+      "id": "C19",
+      "claim": "Seller FAQ flags epilepsy and alertness-critical situations",
+      "source": "https://brainwaveshots.com/faq",
+      "disposition": "SELLER_PRECAUTION_REPORT_NOT_MEDICAL_ADVICE"
+    },
+    {
+      "id": "C20",
+      "claim": "Focus Shot page displayed 17.99 promotional amount 2026-11-05",
+      "source": "https://brainwaveshots.com/focus-shot",
+      "disposition": "PAGE_OBSERVATION_NOT_CHECKOUT_VERIFIED"
+    },
+    {
+      "id": "C21",
+      "claim": "Seller advertises a one-year refund guarantee",
+      "source": "https://brainwaveshots.com/focus-shot",
+      "disposition": "SELLER_DESCRIBED_NOT_REFUND_VERIFIED"
+    },
+    {
+      "id": "C22",
+      "claim": "Seller FAQ qualifies recurring refunds and large-order downloads",
+      "source": "https://brainwaveshots.com/faq",
+      "disposition": "SELLER_TERMS_REQUIRE_CURRENT_CHECK"
+    },
+    {
+      "id": "C23",
+      "claim": "Official Inspire3 catalog lists Brainwave Shots",
+      "source": "https://inspire3.com/",
+      "disposition": "SUPPORTED_CATALOG_LISTING"
+    },
+    {
+      "id": "C24",
+      "claim": "Public affiliate portal establishes named Final Vestige partner approval",
+      "source": "https://affiliates.inspire3.com/",
+      "disposition": "UNVERIFIED_REJECT_INFERENCE"
+    },
+    {
+      "id": "C25",
+      "claim": "Marketing emails from inspire3 are acceptance evidence",
+      "source": "https://affiliates.inspire3.com/",
+      "disposition": "REJECT_NOT_APPROVAL"
+    },
+    {
+      "id": "C26",
+      "claim": "A CTA click is evidence of a paid merchant order",
+      "source": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "disposition": "REJECT_EVENT_MISCLASSIFICATION"
+    },
+    {
+      "id": "C27",
+      "claim": "Jetpack signup form existence proves lead confirmation",
+      "source": "https://finalvestige.com/focus/",
+      "disposition": "UNVERIFIED_END_TO_END"
+    },
+    {
+      "id": "C28",
+      "claim": "A live Focus Fieldbook exists as first-party resource",
+      "source": "https://finalvestige.com/focus/",
+      "disposition": "SUPPORTED_ROUTE_NOT_GUEST_SIGNUP"
+    },
+    {
+      "id": "C29",
+      "claim": "Financial relationship must be disclosed close to earning recommendation",
+      "source": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "disposition": "FTC_POLICY_SUPPORTED"
+    },
+    {
+      "id": "C30",
+      "claim": "Unsubstantiated cognition/health claims may be repeated as vendor facts",
+      "source": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "disposition": "REJECT_OBJECTIVE_EFFICACY_AS_FACT"
+    },
+    {
+      "id": "C31",
+      "claim": "A 40-second Zen12 concept already constitutes tested video conversion",
+      "source": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "disposition": "REJECT_EXPERIMENT_UNRUN"
+    },
+    {
+      "id": "C32",
+      "claim": "Actual Payhip paid Mind SKU is authorized rights-cleared and fulfilling",
+      "source": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "disposition": "UNKNOWN_NEEDS_AUTHENTICATED_ACCOUNT"
+    },
+    {
+      "id": "C33",
+      "claim": "Paid affiliate commission is established without partner settlement",
+      "source": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "disposition": "REJECT_NO_TRANSACTION"
+    },
+    {
+      "id": "C34",
+      "claim": "Grok video immutable media ids are established by proposed topic map",
+      "source": "https://docs.google.com/document/d/1_dqcJeqxbvYb1prGxy0nSWTsHu8p0PSRsDB_NPNbL48/edit",
+      "disposition": "UNKNOWN_NEEDS_GROK_ASSET_INVENTORY"
+    }
+  ],
+  "release_gates": [
+    {
+      "id": "G01",
+      "description": "named Inspire3 partner acceptance (exact legal account)",
+      "status": "CLOSED",
+      "evidence": "No authoritative fulfillment/approval/release evidence presented"
+    },
+    {
+      "id": "G02",
+      "description": "Focus Shot channel authorization for organic, social, website and email",
+      "status": "CLOSED",
+      "evidence": "No authoritative fulfillment/approval/release evidence presented"
+    },
+    {
+      "id": "G03",
+      "description": "Focus Shot specific affiliate URL issued by approved portal",
+      "status": "CLOSED",
+      "evidence": "No authoritative fulfillment/approval/release evidence presented"
+    },
+    {
+      "id": "G04",
+      "description": "commission and attribution terms authenticated",
+      "status": "CLOSED",
+      "evidence": "No authoritative fulfillment/approval/release evidence presented"
+    },
+    {
+      "id": "G05",
+      "description": "publisher eligibility and tax/payment credentials authenticated",
+      "status": "CLOSED",
+      "evidence": "No authoritative fulfillment/approval/release evidence presented"
+    },
+    {
+      "id": "G06",
+      "description": "merchant landing page and checkout price checked at launch",
+      "status": "CLOSED",
+      "evidence": "No authoritative fulfillment/approval/release evidence presented"
+    },
+    {
+      "id": "G07",
+      "description": "merchant guarantee exact current terms checked at launch",
+      "status": "CLOSED",
+      "evidence": "No authoritative fulfillment/approval/release evidence presented"
+    },
+    {
+      "id": "G08",
+      "description": "merchant safety disclaimers reconciled",
+      "status": "CLOSED",
+      "evidence": "No authoritative fulfillment/approval/release evidence presented"
+    },
+    {
+      "id": "G09",
+      "description": "seller claim of effortless concentration independently substantiated (otherwise omitted)",
+      "status": "CLOSED",
+      "evidence": "No authoritative fulfillment/approval/release evidence presented"
+    },
+    {
+      "id": "G10",
+      "description": "seller claim of hours-long results independently substantiated (otherwise omitted)",
+      "status": "CLOSED",
+      "evidence": "No authoritative fulfillment/approval/release evidence presented"
+    },
+    {
+      "id": "G11",
+      "description": "seller universal safety claim independently substantiated (otherwise omitted)",
+      "status": "CLOSED",
+      "evidence": "No authoritative fulfillment/approval/release evidence presented"
+    },
+    {
+      "id": "G12",
+      "description": "published proposed affiliate disclosure verified adjacent to earning link",
+      "status": "CLOSED",
+      "evidence": "No authoritative fulfillment/approval/release evidence presented"
+    },
+    {
+      "id": "G13",
+      "description": "FTC commercial-vs-independent editorial separation reviewed",
+      "status": "CLOSED",
+      "evidence": "No authoritative fulfillment/approval/release evidence presented"
+    },
+    {
+      "id": "G14",
+      "description": "tracked outbound affiliate click only following partner permission",
+      "status": "CLOSED",
+      "evidence": "No authoritative fulfillment/approval/release evidence presented"
+    },
+    {
+      "id": "G15",
+      "description": "approved on-site first-party privacy/consent requirements met",
+      "status": "CLOSED",
+      "evidence": "No authoritative fulfillment/approval/release evidence presented"
+    },
+    {
+      "id": "G16",
+      "description": "Payhip owned Mind SKU authenticated as paid and visible",
+      "status": "CLOSED",
+      "evidence": "No authoritative fulfillment/approval/release evidence presented"
+    },
+    {
+      "id": "G17",
+      "description": "Payhip ownership intellectual-property rights verified",
+      "status": "CLOSED",
+      "evidence": "No authoritative fulfillment/approval/release evidence presented"
+    },
+    {
+      "id": "G18",
+      "description": "Payhip currency and product checkout verified",
+      "status": "CLOSED",
+      "evidence": "No authoritative fulfillment/approval/release evidence presented"
+    },
+    {
+      "id": "G19",
+      "description": "Payhip tax/refund and digital delivery verified",
+      "status": "CLOSED",
+      "evidence": "No authoritative fulfillment/approval/release evidence presented"
+    },
+    {
+      "id": "G20",
+      "description": "Payhip paid order and net settlement reconciliation available",
+      "status": "CLOSED",
+      "evidence": "No authoritative fulfillment/approval/release evidence presented"
+    },
+    {
+      "id": "G21",
+      "description": "anonymous Jetpack fieldbook guest signup end-to-end test",
+      "status": "CLOSED",
+      "evidence": "No authoritative fulfillment/approval/release evidence presented"
+    },
+    {
+      "id": "G22",
+      "description": "Jetpack welcome and download delivery anonymous end-to-end test",
+      "status": "CLOSED",
+      "evidence": "No authoritative fulfillment/approval/release evidence presented"
+    },
+    {
+      "id": "G23",
+      "description": "approved relevant link in live Change Blindness article",
+      "status": "CLOSED",
+      "evidence": "No authoritative fulfillment/approval/release evidence presented"
+    },
+    {
+      "id": "G24",
+      "description": "approved relevant link in live Puységur page",
+      "status": "CLOSED",
+      "evidence": "No authoritative fulfillment/approval/release evidence presented"
+    },
+    {
+      "id": "G25",
+      "description": "actual Grok immutable media id reconciled against TASK-008",
+      "status": "CLOSED",
+      "evidence": "No authoritative fulfillment/approval/release evidence presented"
+    },
+    {
+      "id": "G26",
+      "description": "first-party campaign_id matched to permitted Grok destination",
+      "status": "CLOSED",
+      "evidence": "No authoritative fulfillment/approval/release evidence presented"
+    },
+    {
+      "id": "G27",
+      "description": "7-day session-to-verified-purchase cohort attributable",
+      "status": "CLOSED",
+      "evidence": "No authoritative fulfillment/approval/release evidence presented"
+    },
+    {
+      "id": "G28",
+      "description": "30-day session-to-verified-purchase cohort attributable",
+      "status": "CLOSED",
+      "evidence": "No authoritative fulfillment/approval/release evidence presented"
+    },
+    {
+      "id": "G29",
+      "description": "realized net revenue reconciliation includes refunds/fees",
+      "status": "CLOSED",
+      "evidence": "No authoritative fulfillment/approval/release evidence presented"
+    },
+    {
+      "id": "G30",
+      "description": "valid consent/accessibility for A/B assignments",
+      "status": "CLOSED",
+      "evidence": "No authoritative fulfillment/approval/release evidence presented"
+    },
+    {
+      "id": "G31",
+      "description": "original captioned short-video asset actually produced and licensed",
+      "status": "CLOSED",
+      "evidence": "No authoritative fulfillment/approval/release evidence presented"
+    },
+    {
+      "id": "G32",
+      "description": "Zen12 text-vs-video pilot has founder release approval",
+      "status": "CLOSED",
+      "evidence": "No authoritative fulfillment/approval/release evidence presented"
+    },
+    {
+      "id": "G33",
+      "description": "mobile 360/390 and desktop 768/1440/1920 QA",
+      "status": "CLOSED",
+      "evidence": "No authoritative fulfillment/approval/release evidence presented"
+    },
+    {
+      "id": "G34",
+      "description": "keyboard/screen-reader/contrast/reduced-motion/no-JS QA",
+      "status": "CLOSED",
+      "evidence": "No authoritative fulfillment/approval/release evidence presented"
+    },
+    {
+      "id": "G35",
+      "description": "browser CWV/performance QA",
+      "status": "CLOSED",
+      "evidence": "No authoritative fulfillment/approval/release evidence presented"
+    },
+    {
+      "id": "G36",
+      "description": "homepage PR49 and Mind hub PR172 integrity verified for release",
+      "status": "CLOSED",
+      "evidence": "No authoritative fulfillment/approval/release evidence presented"
+    },
+    {
+      "id": "G37",
+      "description": "site QA #126 and homeowner release clearance",
+      "status": "CLOSED",
+      "evidence": "No authoritative fulfillment/approval/release evidence presented"
+    }
+  ],
+  "measurement_contract": {
+    "first_party_events": [
+      "qualified_human_session",
+      "topic_article_view",
+      "focus_cta_click",
+      "merchant_outbound_click_if_approved",
+      "lead_confirmed_if_verified"
+    ],
+    "authoritative_revenue_events": [
+      "payhip_paid_order",
+      "payhip_refund_and_fee",
+      "affiliate_partner_approved_paid_conversion",
+      "affiliate_partner_settled_commission"
+    ],
+    "non_equivalences": [
+      "outbound_click_not_sale",
+      "subscribe_not_sale",
+      "checkout_start_not_paid_order",
+      "gross_price_not_net_revenue"
+    ],
+    "no_pii": true,
+    "unknown_attribution": "SEPARATE_UNATTRIBUTED_BUCKET",
+    "key_metric": "settled_net_revenue / qualified_human_sessions * 1000",
+    "metric_status": "NOT_COMPUTABLE",
+    "cohorts_days": [
+      7,
+      30
+    ]
+  },
+  "planned_variants": [
+    "text-only source guide",
+    "same guide + original user-initiated captioned 30-45s video, conditional approval"
+  ],
+  "public_site_write": false
+}
