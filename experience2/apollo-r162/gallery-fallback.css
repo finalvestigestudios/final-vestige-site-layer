@@ -1,0 +1,13 @@
+/* Sits alongside, never overrides, the Apollo 1 gallery controller. */
+.fvx-chrono-gallery__figure{position:relative}
+.fvx-chrono-gallery__image--unavailable{visibility:hidden}
+.fvx-chrono-gallery__fallback{
+  position:absolute;inset-block-start:1rem;inset-inline:1rem;
+  max-inline-size:34rem;padding:.85rem 1rem;
+  border:1px solid #b8955e;border-radius:.25rem;
+  background:#25221b;color:#f4efe6;
+  font:600 1rem/1.5 system-ui,sans-serif;
+  overflow-wrap:anywhere;z-index:1;
+}
+@media(prefers-reduced-motion:reduce){.fvx-chrono-gallery__fallback{transition:none!important;animation:none!important}}
+@media(max-width:360px){.fvx-chrono-gallery__fallback{inset-block-start:.5rem;inset-inline:.5rem;font-size:.9375rem;padding:.65rem}}
