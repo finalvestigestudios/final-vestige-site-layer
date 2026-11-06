@@ -23,7 +23,7 @@ python -I -m unittest discover -s preparedness/tests -p 'test_r165_inline_depend
 python -I -m py_compile preparedness/tools/r165_inline_dependency_custody.py preparedness/tests/test_r165_inline_dependency_custody.py
 ```
 
-**73/73 tests PASS**, including adversarial injection, dependency mutation, missing Node, broken Node, and missing checkout. Git-blob verification against committed Python files required. R164 static and full 35-article validation are NOT RUN locally because direct GitHub cloning fails DNS; native `validate.py` / `build.py` / full 36+ integration suite and browser QA are NOT VERIFIED. On an authenticated full checkout, execute:
+**75/75 tests PASS**, including adversarial injection, dependency mutation, missing Node, broken Node, and missing checkout. Git-blob verification against committed Python files required. R164 static and full 35-article validation are NOT RUN locally because direct GitHub cloning fails DNS; native `validate.py` / `build.py` / full 36+ integration suite and browser QA are NOT VERIFIED. On an authenticated full checkout, execute:
 
 ```
 python -I preparedness/tools/validate.py
@@ -58,7 +58,7 @@ Prior issue evidence records **75 pending source-review decisions**, including e
 |---|---|---|---|---|
 | Existing paid Preparedness pack → purchase | Current matching SKU/rights/merchant delivery unverified | Read-only review of real existing product and staged checkout/delivery/refund acceptance | HOLD: no verified paid SKU/order | Commerce / Claude |
 | Free Household Emergency Plan → reader | Independent source/safety/QD incomplete | Qualified review + actual WordPress preview | DRAFT, not release tested | Preparedness / QA |
-| Plan → free Card → print | Two JS deps previously unexpanded; privacy & print untested | R165 source closure + full staged browser network, print, keyboard QA | BUILT; 73 synthetic tests; browser NOT RUN | Preparedness / Site QA |
+| Plan → free Card → print | Two JS deps previously unexpanded; privacy & print untested | R165 source closure + full staged browser network, print, keyboard QA | BUILT; 75 synthetic tests; browser NOT RUN | Preparedness / Site QA |
 | Grok published asset → guide | No verified matching creator media ID or page destination | Praxxis/Grok TASK-008 read-only inventory, approved asset_id + permitted bio/caption URL | UNVERIFIED; no fictional UTM | Grok / Praxxis |
 | Qualified humans → confirmed purchase → net realized revenue | No attributable settled order, fees/refunds or qualified human denominator | Merchant receipts + consent-respecting 7/30-day attribution | NOT COMPUTABLE | Commerce / Analytics |
 
