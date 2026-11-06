@@ -16,7 +16,7 @@ NEW = '<a class="fv-hf__text-link" href="https://finalvestige.com/focus/">Explor
 
 def validate(raw):
     indices = [int(i) for i in re.findall(r'<span class="fv-margin-strip__item" style="--i:(\d+)">', raw)]
-    gates = (indices == list(range(72)), raw.count('data-fv-home-flagship') == 1,
+    gates = (indices == list(range(72)), raw.count('<div class="fv-hf fv-hf--wp alignfull" data-fv-home-flagship>') == 1,
              all(raw.count(f'id="{i}"') == 1 for i in IDS), raw.count(OLD) == 1,
              NEW not in raw, raw.count('jetpack/subscriptions') == 1,
              raw.count('<!-- wp:html -->') >= 2,
