@@ -48,7 +48,7 @@ def publish_text(destination: str | Path, contents: str) -> Path:
     target = Path(destination)
     if not target.parent.is_dir():
         raise ValueError("Choose an existing output folder")
-    # Fail before allocating/staging report bytes when the name is occupied.
+    # Fail before creating a staging file when the name is occupied.
     # lstat also catches dangling symlinks. This is only an early rejection:
     # exclusive link/rename below remains the authority against races.
     try:
