@@ -83,3 +83,4 @@ with sync_playwright() as p:
     browser.close()
 print(json.dumps({'result':'PASS','count':len(results),'scope':'source-exact local static Chromium, NOT WordPress, axe or Lighthouse',
                   'mobile_focus_390x667':next(r['metrics']['focus'] for r in results if r.get('w')==390 and r.get('js'))},indent=2))
+
