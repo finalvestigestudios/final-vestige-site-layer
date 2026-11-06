@@ -2,7 +2,7 @@
 
 **Final Vestige Studios | Mind & Perception Archive | Independent investigation | UNPUBLISHED draft, 5 November 2026**
 
-*An old experiment put ordinary statements in front of readers three times. Some statements were true, some false. The remarkable result was not that people ceased to know the difference. It was that repetition itself moved their judgments.*
+*In a 1977 experiment, participants heard tape-recorded statements on three occasions. Some were true, some false. The important result was not that people abandoned factual knowledge: repeated exposure shifted their judgments of truth.*
 
 ## The third encounter
 
