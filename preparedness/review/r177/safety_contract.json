@@ -1,0 +1,64 @@
+{
+  "schema": "fv-preparedness-r177-safety-excerpt-custody-v1",
+  "state": "DRAFT_HARD_HOLD",
+  "publication_authorized": false,
+  "independent_qd_pass": false,
+  "qualified_source_review": false,
+  "medical_safety_approved": false,
+  "food_safety_approved": false,
+  "purpose": "Detect removal, concealment or contradictory advice in two hazard-critical Preparedness draft passages. This is NOT safety approval.",
+  "comparison": {
+    "qa_pr": 157,
+    "qa_sha": "7d1ae6b8ef93d10cfb6810987672360885e9c1aa",
+    "note": "PR #157 is a separate independent-QA proposal. These requirements protect the newer R176 corpus wording; they do not merge PR #157. Human reviewers must adjudicate any differing wording."
+  },
+  "articles": [
+    {
+      "slug": "household-emergency-plan",
+      "sections": [
+        {
+          "id": "simulated_outage_nonessential_only",
+          "tag": "li",
+          "anchor": "The simulated-outage evening.",
+          "required": [
+            "Pretend the power is out for a few hours",
+            "switch off nonessential lights",
+            "smoke and carbon monoxide alarms",
+            "medical or safety-critical equipment",
+            "Do not switch off the main breaker as a drill"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "three-day-kit",
+      "sections": [
+        {
+          "id": "refrigerated_medicine_clinician_context",
+          "tag": "div",
+          "class": "pa-alert--stop",
+          "anchor": "Medicines that need refrigeration: ask your prescriber or pharmacist",
+          "required": [
+            "This page cannot tell you what to do with any particular medicine",
+            "the product label",
+            "Ask your prescriber or pharmacist before an outage",
+            "If you are already in an outage, call your doctor or pharmacist"
+          ]
+        },
+        {
+          "id": "conflicting_fema_guidance_context",
+          "tag": "div",
+          "class": "pa-alert",
+          "anchor": "Two FEMA documents, two wordings",
+          "required": [
+            "FEMA's 2020",
+            "newer December 2023",
+            "call your doctor or pharmacist",
+            "question for the human safety reviewer",
+            "gives no instruction of its own about any medicine"
+          ]
+        }
+      ]
+    }
+  ]
+}
