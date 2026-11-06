@@ -4,7 +4,7 @@
 
 ## Why this is different from R148
 
-R148 established an **API rendering discrepancy**, not a confirmed guest-browser defect. This increment specifies a non-submitting **real Chromium browser measurement** across four viewports, with explicit control cases for a form that mounts successfully, a circular self-link, a hidden form, and a disabled form. A runnable local Python Playwright harness and 17 native tests are available as a separate downloadable QA package; **the package must be executed against the actual signed-out production DOM before any guest failure is declared**. The locally tested fixture output is *not* production browser evidence.
+R148 established an **API rendering discrepancy**, not a confirmed guest-browser defect. This increment specifies a non-submitting **real Chromium browser measurement** across four viewports, with explicit control cases for a form that mounts successfully, a circular self-link, a hidden form, and a disabled form. The Python Playwright harness and 17 native fixture/browser tests are **committed in this PR** and also bundled in a downloadable QA package; **the package must be executed against the actual signed-out production DOM before any guest failure is declared**. The locally tested fixture output is *not* production browser evidence.
 
 ### Source-of-truth snapshot, verified authenticated read-only at 2026-11-06T00:36Z
 * Jetpack newsletter enabled; site's `site_can_send=true` means the platform can send **if explicitly commanded**, not permission to send.
@@ -21,7 +21,7 @@ R148 established an **API rendering discrepancy**, not a confirmed guest-browser
 Run from an environment with Python Playwright, Chromium, and external website reachability:
 
 ```shell
-python -I -m unittest -v test_guest_browser_probe.py
+python -m unittest -v test_native_release_contract.py test_guest_browser_probe.py
 python -I guest_browser_probe.py --mode fixture --chromium /usr/bin/chromium --out ./offline-proof
 python -I guest_browser_probe.py --mode live --chromium /usr/bin/chromium --out ./guest-proof
 ```
