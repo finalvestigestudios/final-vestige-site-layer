@@ -1,0 +1,178 @@
+{
+  "schema": "fv-media-navy-unmapped-four-v1",
+  "audit_date": "2026-11-06",
+  "basis": {
+    "previous_15_row_file": "qa/media-recovery/navy_15_primary_catalog_20261106.json",
+    "previous_15_row_blob_sha": "04d63548b39a311ee43a64f72383e0d5cd099e3d",
+    "frozen_articles": 61,
+    "frozen_inline_images": 355,
+    "current_source_references": 361,
+    "previous_unmapped_keys": [
+      "274:2",
+      "280:1",
+      "280:4",
+      "288:2"
+    ]
+  },
+  "catalog_review": {
+    "official_policy_url": "https://www.history.navy.mil/our-collections/photography.html",
+    "rights_rule": "OFFICIAL_US_PHOTO_MAY_BE_PD_BUT_NHHC_INCLUDES_DONATED_MATERIAL_REQUIRING_ITEM_LEVEL_REVIEW",
+    "found_catalog_pages": 4,
+    "catalog_pages_observed_via": "PUBLIC_NAVY_SEARCH_INDEX_AND_PAGE_TEXT_NOT_BINARY_OR_ORIGIN_HTTP",
+    "real_browser_capture_available": false,
+    "measured_wire_reduction_percent": null,
+    "original_42_broken_proven": false
+  },
+  "summary": {
+    "page_caption_candidates": 2,
+    "slug_identified": 1,
+    "subject_only": 1,
+    "original_urls_probed_in_guest_chrome": 0,
+    "production_fixes": 0
+  },
+  "records": [
+    {
+      "key": "274:2",
+      "post_id": 274,
+      "post_url": "https://finalvestige.com/2026/08/19/twenty-four-feet-from-air-uss-tang/",
+      "original_src": "https://www.history.navy.mil/content/history/nhhc/browse-by-topic/exploration-and-innovation/navy-torpedoes/_jcr_content/body/media_asset_1279725910/image.img.jpg/1701176168705.jpg",
+      "original_alt": "Mark 18-2 electric submarine torpedo photographed by the U.S. Navy during World War II.",
+      "candidate_catalog_id": "NH 88447",
+      "candidate_catalog_url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/NH-88000/NH-88447.html",
+      "parent_page_url": "https://www.history.navy.mil/browse-by-topic/exploration-and-innovation/navy-torpedoes.html",
+      "match_basis": "NAVY_PARENT_PAGE_CAPTION_TO_CATALOG",
+      "identity_confidence": "PARENT_CAPTION_SAME_SUBJECT_NOT_BINARY_PROOF",
+      "catalog_subject": "Mark XVIII-2 electric torpedo after body at Newport Torpedo Station, September 14, 1945; the catalog mentions apparent censorship.",
+      "catalog_master": {
+        "width": 6096,
+        "height": 4900
+      },
+      "conditional_960": {
+        "width": 960,
+        "height": 772
+      },
+      "rights_note": "NHHC lists itself as copyright owner; official vs donated provenance and item-level rights must be checked before reuse.",
+      "catalog_access": "NAVY_CATALOG_TEXT_INDEXED",
+      "original_origin_http_status": null,
+      "original_guest_browser_http": null,
+      "decoded_pixels": null,
+      "cold_transfer_bytes": null,
+      "visitor_broken": null,
+      "candidate_binary_identity_verified": false,
+      "rights_review": "HOLD_ITEM_LEVEL",
+      "rehost_or_cache_permission": false,
+      "wordpress_upload_authorized": false,
+      "wordpress_post_edit_authorized": false,
+      "max_preview_width": 960,
+      "no_upscale": true
+    },
+    {
+      "key": "280:1",
+      "post_id": 280,
+      "post_url": "https://finalvestige.com/2026/08/19/the-sledgehammers-broke-first-uss-pueblo/",
+      "original_src": "https://www.history.navy.mil/content/history/nhhc/research/histories/ship-histories/danfs/p/pueblo-iii/_jcr_content/body/media_asset_1086930325/image.img.jpg/1514467381634.jpg",
+      "original_alt": "A USS Pueblo sailor drawing coffee in the ship's mess during 1967.",
+      "candidate_catalog_id": "NH 75559",
+      "candidate_catalog_url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/NH-75000/NH-75559.html",
+      "parent_page_url": "https://www.history.navy.mil/research/histories/ship-histories/danfs/p/pueblo-iii.html",
+      "match_basis": "NAVY_PARENT_PAGE_CAPTION_TO_CATALOG",
+      "identity_confidence": "PARENT_CAPTION_SAME_SUBJECT_NOT_BINARY_PROOF",
+      "catalog_subject": "Crewmember drawing coffee in Pueblo mess spaces, circa 1967.",
+      "catalog_master": null,
+      "conditional_960": null,
+      "rights_note": "Navy catalog has 1280px medium rendition label but not verified intrinsic dimensions; do not infer 1280×1280 image geometry or reuse clearance.",
+      "catalog_access": "NAVY_CATALOG_TEXT_INDEXED",
+      "original_origin_http_status": null,
+      "original_guest_browser_http": null,
+      "decoded_pixels": null,
+      "cold_transfer_bytes": null,
+      "visitor_broken": null,
+      "candidate_binary_identity_verified": false,
+      "rights_review": "HOLD_ITEM_LEVEL",
+      "rehost_or_cache_permission": false,
+      "wordpress_upload_authorized": false,
+      "wordpress_post_edit_authorized": false,
+      "max_preview_width": 960,
+      "no_upscale": true
+    },
+    {
+      "key": "280:4",
+      "post_id": 280,
+      "post_url": "https://finalvestige.com/2026/08/19/the-sledgehammers-broke-first-uss-pueblo/",
+      "original_src": "https://www.history.navy.mil/content/history/nhhc/research/histories/ship-histories/danfs/b/banner-ii/_jcr_content/body/media_asset/image.img.jpg",
+      "original_alt": "USS Banner, sister ship of USS Pueblo, after the Pueblo incident prompted changes to the intelligence-ship program.",
+      "candidate_catalog_id": "NH 68705",
+      "candidate_catalog_url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/NH-68000/NH-68705.html",
+      "parent_page_url": "https://www.history.navy.mil/research/histories/ship-histories/danfs/b/banner-ii.html",
+      "match_basis": "SAME_SHIP_ONLY",
+      "identity_confidence": "SUBJECT_ALTERNATIVE_NOT_SAME_PHOTOGRAPH",
+      "catalog_subject": "Port-bow photograph of Banner, May 12, 1969; Navy lists 'Courtesy of USS Banner, 1969'.",
+      "catalog_master": {
+        "width": 6312,
+        "height": 4750
+      },
+      "conditional_960": {
+        "width": 960,
+        "height": 722
+      },
+      "rights_note": "Courtesy-of-ship archival catalog; never infer that this is the original scene or automatically cleared for republication.",
+      "catalog_access": "NAVY_CATALOG_TEXT_INDEXED",
+      "original_origin_http_status": null,
+      "original_guest_browser_http": null,
+      "decoded_pixels": null,
+      "cold_transfer_bytes": null,
+      "visitor_broken": null,
+      "candidate_binary_identity_verified": false,
+      "rights_review": "HOLD_ITEM_LEVEL",
+      "rehost_or_cache_permission": false,
+      "wordpress_upload_authorized": false,
+      "wordpress_post_edit_authorized": false,
+      "max_preview_width": 960,
+      "no_upscale": true
+    },
+    {
+      "key": "288:2",
+      "post_id": 288,
+      "post_url": "https://finalvestige.com/2026/08/20/the-nine-destroyers-honda-point/",
+      "original_src": "https://www.history.navy.mil/content/history/nhhc/our-collections/photography/technology/communications/radio/ug-21--us-naval-california-radio-station-collection/mare-island-naval-radio-station/ug-21-01-02-mare-island-naval-radio/jcr%3Acontent/mediaitem/image.img.jpg/1564510769845.jpg",
+      "original_alt": "Early U.S. Navy radio station equipment in California, similar to the shore direction-finding infrastructure used in 1923.",
+      "candidate_catalog_id": "UG 21-01.02",
+      "candidate_catalog_url": "https://www.history.navy.mil/our-collections/photography/technology/communications/radio/ug-21--us-naval-california-radio-station-collection/mare-island-naval-radio-station/ug-21-01-02-mare-island-naval-radio.html",
+      "parent_page_url": "https://www.history.navy.mil/content/history/nhhc/our-collections/photography/technology/communications/radio/ug-21--us-naval-california-radio-station-collection/mare-island-naval-radio-station.html",
+      "match_basis": "CATALOG_ID_IN_ORIGINAL_URL_SLUG",
+      "identity_confidence": "CATALOG_ID_STRONGLY_MATCHED_BINARY_NOT_VERIFIED",
+      "catalog_subject": "Radio equipment, Building 115, Mare Island Naval Radio Station electrical school; collection UG 21.",
+      "catalog_master": {
+        "width": 2197,
+        "height": 2773
+      },
+      "conditional_960": {
+        "width": 960,
+        "height": 1212
+      },
+      "rights_note": "NHHC donor field 'Found in collection' and 'Copyright owner: NHHC'; requires individual rights and context verification. This is analogous equipment, NOT proof of the Honda Point radio bearing error.",
+      "catalog_access": "NAVY_CATALOG_TEXT_INDEXED",
+      "original_origin_http_status": null,
+      "original_guest_browser_http": null,
+      "decoded_pixels": null,
+      "cold_transfer_bytes": null,
+      "visitor_broken": null,
+      "candidate_binary_identity_verified": false,
+      "rights_review": "HOLD_ITEM_LEVEL",
+      "rehost_or_cache_permission": false,
+      "wordpress_upload_authorized": false,
+      "wordpress_post_edit_authorized": false,
+      "max_preview_width": 960,
+      "no_upscale": true
+    }
+  ],
+  "release": {
+    "rights_review": "HOLD",
+    "binary_download": false,
+    "third_party_caching": false,
+    "wordpress_production_writes": false,
+    "homepage_design_changes": false,
+    "no_automatic_photo_swap": true,
+    "requires_guest_chrome_before_fix": true
+  }
+}
