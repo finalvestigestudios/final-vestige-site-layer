@@ -29,6 +29,13 @@ The second R177 command requires authentic prior `preparedness/build/wp/` drafts
 - GitHub clone remains unavailable to this local runner (Nov 6: `Could not resolve host: github.com`). No authentic 35-article validation/build/unittest or authentic WordPress export gate executed. Prior R176 and R175 synthetic evidence is not retroactively promoted to real corpus PASS.
 - R161 original custody manifest at `fede4222c796d92798eff7cf0dcb225c291f7d61` still declares **35** originals, **2,000** citation occurrences and **385** article-specific source relationships, but does not establish this round reran the complete corpus. Existing 75 source decisions, 32 shared-URL groups, 11 Family Card source decisions and 10 jerky-claim decisions remain human HOLD. Do not equate historical safety with current advice.
 
+
+## Fresh authentic 35-record metadata census (additional audit)
+
+After the initial synthetic gate implementation, the R176 **GitHub repository originals** were checked read-only article-by-article at exact commit `73fe9e2d7ca434288f30027e8cde71de65c8fcf2`. All **35/35** metadata JSON files were retrieved; all internal slug keys matched file slugs; the slate numbers were exactly **1–35**, with **zero duplicate proposed URLs** based on `/preparedness/<section>/<slug>/`. All **35/35 `status.publish` fields remain `draft`**; article-specific `source_use` keys total **385**, agreeing with the R161 original custody crosswalk. This is an authentic *metadata* census, not an authentic executable build or content-body review of every article.
+
+**Critical semantic release warning:** 29 files say `safety_review.state=pending`, four say `not-required`, and two say `approved`. The two `approved` labels are **NOT independent safety decisions**: `making-water-safer` and `salt-beef-salt-pork-age-of-sail` expressly record a one-word founder chat approval whose reviewer identity and scope were unconfirmed, no independent item-by-item checklist, and no QD. The four `not-required` cases (`navigation-before-gps`, `pioneer-supply-chains-failed`, `root-cellars-cool-storage`, `sanitation-before-germ-theory`) still explicitly require editorial read-through; root cellars and historical sanitation contain current safety-related statements. **No `approved` or `not-required` field may be used as global release evidence.** This is a distinct next-round automation candidate for an independently pinned whole-slate metadata gate; R177's current Python tool deliberately tests only the two warning excerpts and does not falsely claim to validate these 35 metadata records.
+
 ## Seven contributor heads (fresh exact-GitHub comparisons, all identical, 0 ahead / 0 behind)
 
 | Cluster | Current branch | Current SHA |
