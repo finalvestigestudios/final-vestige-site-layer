@@ -28,12 +28,12 @@ Live production is guarded by explicit `--live-readonly`; the runner rejects POS
 
 ## Independently executed native local tests
 
-- Python + Chromium fixtures: **6/6 unittest cases passed**, including invalid chapter ID, missing 1/72 Margins, removed /focus/ path, production opt-in refusal and missing axe rejection.
+- Python + Chromium fixtures: **7/7 unittest cases passed**, including invalid chapter ID, missing 1/72 Margins, removed /focus/ path, production opt-in refusal and missing axe rejection.
 - Representative *synthetic* fixture: real Chromium screenshot capture at **320, 360, 390, 768, 1440, 1920**; two no-JS captures at 390/1440; four fixture interactions passed. The fixture is **not actual page 6 or WordPress**.
 - The harness intentionally exits **2** without axe, with `BLOCKED_AXE_MISSING`, even when all synthetic interactions pass.
 - Attempted direct browser navigation to https://finalvestige.com from this runtime: **BLOCKED**, Chromium `net::ERR_BLOCKED_BY_ADMINISTRATOR`. No live browser screenshots, image transfer bytes, real interactive results, Lighthouse or field CWV obtained; do not treat the fixture as such.
 - No native 200% browser zoom, Safari/WebKit or WordPress/Assembler runtime qualified. Report must remain HOLD.
-- The code collects image response status and actual body bytes when a network-capable environment runs it. Such data is not available for the current fixture.
+- The code collects image response status, actual body bytes and SHA-256 only when a network-capable environment runs it. It strips URL query parameters from report targets and image URLs to avoid logging private staging preview keys. Such data is not available for the current fixture.
 
 ## Conversion contract
 
