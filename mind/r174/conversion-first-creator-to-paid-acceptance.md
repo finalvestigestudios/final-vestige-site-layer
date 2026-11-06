@@ -1,0 +1,42 @@
+# Mind R174 | Conversion-first acceptance and three creator journeys
+**Draft only, November 6, 2026; commercial authorization: HARD HOLD.** See Issue #171, canonical #820, TASK-008. Unpublished pages are not valid current social destinations.
+
+## P0: select an actual purchasable offer before scaling
+**Provisional high-intent audience:** people actively comparing short structured guided-meditation recordings. **Conditional offer:** Zen12 Premium (12-level/48-MP3 seller-described library). It is **not currently eligible for FV affiliate launch**: no publisher-specific Inspire3 acceptance, authorized tracking URL or website/social/EMAIL permission. A public catalog and generic promotional emails do not establish rights. In Gmail on November 6, searches since Nov 4 returned only marketing, and a targeted October–November acceptance search returned zero matching acceptance messages; an authenticated partner dashboard was not accessible. No affiliate earnings are attributed.
+
+**Fallback:** an existing FV-owned, rights-cleared, actively purchasable Payhip Mind product, but it remains UNKNOWN until Commerce produces **authenticated exact SKU/product URL, owner rights, current total, refund policy, published checkout, fulfillment proof and merchant paid-order/settlement records**. Do not invent an alternative. No speculative checkout or false CTA.
+
+## Explicit OFFER → FUNNEL STEP → BLOCKER → CHANGE/EXPERIMENT → EVIDENCE → OWNER
+| Priority | Offer / step | Blocker | Change / experiment | Actual evidence / status | Owner |
+|---|---|---|---|---|---|
+| 0 | Zen12 / earning entitlement | No signed FV acceptance, channel rights or exact link | Authenticated merchant dashboard/terms packet, verified version/date | **FAIL/CLOSED**; public program + marketing emails only | Founder + Mind |
+| 0 | Owned FV Payhip / checkout | No eligible rights-cleared Mind SKU authenticated | Commerce read-only inventory + product/pricing/terms/fulfillment test | **UNKNOWN**, no SKU claimed | Commerce |
+| 0 | Chosen offer / landing relevance | Most perception views aren't purchase intent | Present independent decision guide to buyer-intent searches, not force offer on article readers | **BUILT DRAFT**, no conversion evidence | Mind + Claude |
+| 1 | Grok / qualified session | No immutable published media IDs matched to landing | TASK-008 immutable asset_id packet with platform, URL, rights and actual page; non-breaking UTMs after QA | **UNKNOWN**, no post claim | Grok + Praxxis |
+| 1 | Focus / confirmed lead | Current Jetpack consent, delivery, popup interference not guest-verified | QA approved guest journey, existing welcome untouched; do not duplicate lists | **UNVERIFIED**, popup report is observation not loss measure | Site QA + Dispatch |
+| 1 | Eligible offer / paid customer | No live authorized product and settlement proof | Merchant purchase and independently paid commission reconciliation | **NOT TESTED, NOT REVENUE** | Commerce |
+| 1 | Net per 1k / cohort | Session qualification, fees, refunds and cash receipts unavailable | 7-/30-day source-of-truth ledger linked to campaign IDs | **NOT COMPUTABLE** | Claude analytics + Commerce |
+
+## Creator-topic → article → existing Focus → optional conditional offer
+| Source-grounded possible Grok topic (not a new assignment) | Destination | User intent | Measurable progression | Commerce fit |
+|---|---|---|---|---|
+| “Did a scene change while you watched?” gradual change blindness; check original Simons condition | LIVE https://finalvestige.com/2026/11/02/change-blindness/ | Curiosity/experiments | qualified human article session → optional existing Focus click/confirmed opt-in | Generic Zen12 upsell **poor fit**; no forced buyer CTA |
+| “Why did the second target disappear?” attentional blink, Raymond et al. 1992 | R170 unpublished investigation; no public link until approved | Learning/attention | landing → article→ existing Focus opt-in when confirmed | Optional evidence-relevant buyer-guide route, not efficacy transfer |
+| “Why does hypnotic suggestion work differently between people?” Raz 2002; test–retest literature | R174 unpublished article | Higher intent about hypnosis | article→ free exercise → opt-in existing Focus → optional independent guide | Conditional Zen12 buyer fit only if person *wants short meditation audio*, not because of study |
+
+**Creator handoff requirement:** Grok/Praxxis existing TASK-008 supplies actual asset_id, publish URL/time, platform and allowed CTA placement, destination path, rights and editorial QA. No author-created social copy or post. Mini Museum-first current TASK-008 priority continues to supersede launching an unapproved Mind campaign. No new Drive queue.
+
+## Event schema and privacy
+Use existing consent-aware first-party instrumentation only after Claude/QA review—**no extra GA4 pixel, cookie, fingerprint or paid product**. Proposed allowed marketing link params: `utm_source=<real_platform>&utm_medium=organic_social&utm_campaign=mind_pilot_2026_11&utm_content=<Grok_verified_asset_id>`. No pseudo ID or fabricated real campaign; reserve test IDs only in isolated fixtures. Exclude raw email, IP, names, individual health interests, exact timestamps tied to persons, referrer query PII and URL parameters other than approved allowlist.
+
+Distinct event semantics: `qualified_human_session` (documented human classification) → `campaign_landing` → `article_to_resource_click` or `buyer_guide_interest` → `confirmed_signup` (provider-authoritative acceptance only) → `affiliate_outbound` (only after authorization; click ≠ sale) → `merchant_reported_paid_affiliate_conversion` (merchant report, not paid cash) → `commission_cleared` (actual FV payment), including clawbacks. Owned product route instead: `merchant_confirmed_paid_owned_order` → cleared owned receipts (not a mere checkout start). Bot/referrer/source UNKNOWN when not attributable; never substitute Jetpack views.
+
+**Owned net:** `actual_cleared_customer_receipts - refunds_not_already_in_receipts - chargebacks_not_already_in_receipts - processor_fees_or_other_costs_not_already_withheld`. **Affiliate net:** `actual_paid_cleared_commissions_received_by_FV - clawbacks_or_costs_not_already_withheld`. Negative stays negative. Merchant retail gross is not FV affiliate revenue. FV net per 1,000 verified qualified-human sessions = 1000 × (owned net + affiliate net) / verified eligible unique human session denominator, 7/30-day attribution cohorts only with defensible rules. If cash, qualified denominator or linkage missing = **NOT COMPUTABLE**, not zero. Always state sample size, uncertainty, refunds and matched/unmatched attribution.
+
+## Controlled A/B design hypothesis — NOT RUN
+**A:** Evidence guide with exact same copy/source notes/disclosures, native disabled merchant CTA in the pre-launch period, and free Focus destination. **B:** Identical page except one optional original 42-second video, poster, transcript and captioned muted play control once a real video exists. Preload none, no autoplay, no gating, accessible, no-JS equivalent, no additional tracking. Run only once the exact merchant program, trusted earning URL, builder and release tests pass; no video success inferred from script existence. Randomize **sessions** fairly across the same source assets after appropriate consent, not post A vs post B. Primary outcome is **merchant-verified paid transactions / qualified-human sessions, and realized net/1,000 human sessions**, not play rate, CTA click or signup. Secondary: confirmed opt-ins and buyer guide interest. Guardrails: LCP/CLS, accessibility, unintended modal obstruction, return friction, misleading claims, missing disclosure, complaints or drop-offs. Predeclare horizon, sample threshold and stop rules; underpowered samples are descriptive only.
+
+## Handoff checks
+Site QA: 360/390/768/1440/1920, no-JS, keyboard/VoiceOver/NVDA, contrast, touch, scroll, reduced motion, link/disclosure proximity, video controls after rendering, transcript/captions, privacy, Core Web Vitals and guest Focus. Homepage #150: scoped design suggestion only; do not edit #49. Dispatch #174: merchant HOLD to avoid #03/#05 activation, no welcome/list changes. Claude #820: instrument only through existing owner and approval, no prod scripts. Founder: release decision only after ALL gates pass.
+
+**Current outcome:** source-controlled drafts only; native browser, Node, CI, real video, merchant/Payhip checkout, authorization, paid transactions and net revenue **not established**.

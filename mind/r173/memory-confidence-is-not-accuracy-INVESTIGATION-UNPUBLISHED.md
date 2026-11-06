@@ -1,4 +1,4 @@
-# The Memory That Felt Sharper, but Wasn't
+# The Memory That Felt More Certain Without Greater Accuracy
 ## What a post-hypnotic suggestion changed—and what it did not
 **FINAL VESTIGE STUDIOS — MIND & PERCEPTION / HISTORY OF SUGGESTION — ORIGINAL INVESTIGATION — UNPUBLISHED**
 *Research reviewed November 6, 2026. No medical advice, commercial recommendation, or affiliate link.*
