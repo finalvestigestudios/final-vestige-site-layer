@@ -64,4 +64,21 @@ class InboundTests(unittest.TestCase):
     def test_no_automatic_release_even_in_commercial(self):
         self.assertEqual(inspect(fixture(),kind='commercial')['release_decision'],'HOLD_UNSENT')
 
+    def test_double_bracket_postal_placeholder_rejected(self):
+        m=EmailMessage()
+        m['From']='Final Vestige Studios <donotreply@wordpress.com>'
+        m['Subject']='Synthetic validation only'
+        m.set_content('Research [[VALID_POSTAL_ADDRESS_REQUIRED]]')
+        m.add_alternative('<html><body>Research <a href="https://finalvestige.com/focus/">Resource</a></body></html>',subtype='html')
+        self.assertIn('has_no_placeholders', inspect(m.as_bytes())['failed_gates'])
+    def test_double_bracket_merchant_href_rejected(self):
+        m=EmailMessage()
+        m['From']='Final Vestige Studios <donotreply@wordpress.com>'
+        m['Subject']='Synthetic validation only'
+        m.set_content('Research and disclosure')
+        m.add_alternative('<html><body><a href="[[APPROVED_ZEN12_WARMUP_GUIDE_URL_REQUIRED]]">Read guide</a><a href="https://finalvestige.com/focus/">Fieldbook</a></body></html>',subtype='html')
+        self.assertIn('has_no_placeholders', inspect(m.as_bytes())['failed_gates'])
+    def test_no_placeholders_in_normal_reviewer_fixture(self):
+        self.assertTrue(inspect(fixture())['checks']['has_no_placeholders'])
+
 if __name__ == '__main__':unittest.main()

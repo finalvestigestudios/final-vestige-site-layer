@@ -15,7 +15,7 @@ from urllib.parse import urlparse
 
 MAX_BYTES = 2_000_000
 HARD_HOLD = 'HOLD_UNSENT'
-PLACEHOLDER = re.compile(r'\[(?:INSERT|TBD|PENDING|UNSUBSCRIBE|POSTAL|MERCHANT|LINK)[^\]]*\]|\{\{[^}]+\}\}', re.I)
+PLACEHOLDER = re.compile(r'\[\[[^]\r\n]{3,120}\]\]|\[(?:INSERT|TBD|PENDING|UNSUBSCRIBE|POSTAL|MERCHANT|LINK)[^\]]*\]|\{\{[^}]+\}\}', re.I)
 
 class LinkText(HTMLParser):
     def __init__(self):
@@ -89,7 +89,7 @@ def inspect(raw, kind='editorial', attest=None):
         'has_plain_text_part': bool(plain.strip()),
         'has_html_part': bool(html.strip()),
         'first_party_cta_present': native_firstparty,
-        'has_no_placeholders': not bool(PLACEHOLDER.search(visible)),
+        'has_no_placeholders': not bool(PLACEHOLDER.search(plain + '\n' + html)),
         'unsubscribe_visible': text_unsub,
         'unsubscribe_clickable_in_html': linked_unsub,
         'list_unsubscribe_header_present': listed_unsub,
