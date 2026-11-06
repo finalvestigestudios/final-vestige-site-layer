@@ -39,7 +39,7 @@ function audit(s){
    ck(!/<form\b/i.test(html),'duplicate email capture forbidden');
    ck(!/<(?:iframe|video)\b/i.test(html),'no third-party embedded or falsely produced video');
    ck(!/href\s*=\s*["']https?:\/\/(?:www\.)?(?:zen12\.com|affiliates\.inspire3\.com|inspire3\.com|www\.awin1\.com)/i.test(html),'unauthorized merchant links');
-   ck(html.includes('https://finalvestige.com/focus/'),'preserve one Focus CTA');
+   ck((html.match(/https:\/\/finalvestige\.com\/focus\//g)||[]).length>=2,'preserve both established Focus references');
  }
  ck(s.offer.includes('type="button" disabled aria-disabled="true"'),'native disabled purchase control');
  ck(s.offer.includes('Merchant purchase unavailable — approval pending'),'disabled label');
