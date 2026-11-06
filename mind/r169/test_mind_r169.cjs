@@ -71,7 +71,7 @@ function validate(d){
  has(h,/Tools Under Review/,'hub stream 4');
  has(h,/UNPUBLISHED PAGE CONCEPT/,'hub separate from PR172');
  has(h,/No second email form/,'single Jetpack path');
- has(h,/https:\\/\\/finalvestige\\.com\\/focus\\//,'live focus route in hub');
+ check(h.includes('https://finalvestige.com/focus/'),'live focus route in hub');
  has(p,/NOT COMPUTABLE/,'no synthetic zero');
  has(p,/merchant \*retail order value\* never becomes FV affiliate revenue|Merchant \*retail order value\* never becomes FV affiliate revenue/,'affiliate revenue definition');
  has(p,/confirmed_signup[\s\S]*affiliate_outbound[\s\S]*merchant_confirmed_paid_order[\s\S]*affiliate_commission_settled/,'event hierarchy');
