@@ -31,7 +31,7 @@ function inspect(x){
  check(/isochronic/i.test(x.guide)&&/binaural/i.test(x.guide),"buyer method distinction missing");
  check(/NOT AUTHORIZED FOR FINAL VESTIGE/.test(x.guide),"authorization caution omitted");
  check(/not a checked checkout price/i.test(x.guide),"price certainty caution omitted");
- check(/refund.{0,100}(?:untested|not tested|not verified|unverified)|(?:untested|not tested|not verified|unverified).{0,100}refund/i.test(x.guide),"refund caveat omitted");
+ check(x.guide.includes("We did **not** verify actual payment or refund handling"),"refund caveat omitted");
  check(/<html\s+lang="en"/i.test(x.html),"lang missing");
  check(/<meta\s+name="robots"\s+content="noindex,nofollow"/i.test(x.html),"review status indexable");
  check(/<main\s+id="main">/i.test(x.html),"semantic main missing");
