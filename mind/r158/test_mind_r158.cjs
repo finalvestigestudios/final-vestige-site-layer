@@ -75,7 +75,7 @@ const mutate=[
  ["fake_affiliate_url",x=>{const d=JSON.parse(x.ledger);d.affiliate_url="https://fake.invalid/?aff=1";x.ledger=JSON.stringify(d)}],
  ["fake_paid_order",x=>{const d=JSON.parse(x.ledger);d.paid_order_count_verified=2;x.ledger=JSON.stringify(d)}],
  ["release_gate_flip",x=>{const d=JSON.parse(x.ledger);d.release_gates[0].release_authorized=true;x.ledger=JSON.stringify(d)}],
- ["remove_exact_product",x=>x.guide=x.guide.replace("https://zen12.com/?no-popup=1","https://example.com/")],
+ ["remove_exact_product",x=>x.guide=x.guide.split("https://zen12.com/?no-popup=1").join("https://example.com/")],
  ["replace_primary_meta",x=>x.article=x.article.replace("182 studies","82 studies")],
  ["duplicate_signup",x=>x.html=x.html.replace("</main>","<form><input type='email'></form></main>")],
  ["inject_tracking",x=>x.html=x.html.replace("</head>","<script src='https://third.invalid/track.js'></script></head>")],
