@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Representative no-JS fragment behavior; NOT WordPress/Jetpack certification."""
 from pathlib import Path
+import shutil
 from playwright.sync_api import sync_playwright
 import json
 
@@ -23,7 +24,12 @@ anchor = ('<span id="subscribe-blog" style="display:block;scroll-margin-top:5rem
 
 results = []
 with sync_playwright() as playwright:
-    browser = playwright.chromium.launch(headless=True)
+    local_chromium = shutil.which('chromium') or shutil.which('chromium-browser')
+    kwargs = {'headless': True}
+    if local_chromium:
+        kwargs['executable_path'] = local_chromium
+        kwargs['args'] = ['--no-sandbox']
+    browser = playwright.chromium.launch(**kwargs)
     for width in (320, 390, 1440):
         for name, fragment in (("before", ""), ("after", anchor)):
             html = ('<!doctype html><html lang="en"><meta charset="utf-8">'
