@@ -22,7 +22,7 @@ const issues=(s)=>{
   let legacy; try{legacy=JSON.parse(r164ledger)}catch(e){err.push('invalid R164 ledger JSON');return err}
   function check(ok,msg){if(!ok)err.push(msg)}
   check(article.trim().split(/\s+/).length>=1800,'article must be substantive');
-  check(HAS(article,'misinformation effect')&&HAS(article,'McCloskey')&&HAS(article,'Wiechert'),'article must cover replication and alternative explanation');
+  check(HAS(article,'misinformation effect')&&HAS(article,'In 1985, Michael McCloskey')&&HAS(article,'Wiechert'),'article must cover replication and alternative explanation');
   check(HAS(article,'https://pubmed.ncbi.nlm.nih.gov/621467/')&&HAS(article,'https://pubmed.ncbi.nlm.nih.gov/3156942/')&&HAS(article,'https://pubmed.ncbi.nlm.nih.gov/41021526/'),'article must include primary source trail');
   check(HAS(article,'not a clinical')||HAS(article,'not memory improvement')||HAS(article,'not a clinical or forensic'),'exercise must limit clinical claims');
   check(HAS(article,'commercial_links: none')&&!/href\s*=\s*['"]https?:\/\/(?:zen12|affiliates\.inspire3)/i.test(article),'scientific investigation is not an affiliate placement');
@@ -31,10 +31,10 @@ const issues=(s)=>{
   check(HAS(page,'aria-labelledby')&&HAS(page,'aria-describedby')&&HAS(page,'prefers-reduced-motion'),'a11y smoke controls');
   check(!/<script\b|<iframe\b|<form\b|<video\b[^>]*\bautoplay\b|<audio\b[^>]*\bautoplay\b|\bonfocus\s*=|\bonblur\s*=|\bonclick\s*=/i.test(page),'no scripts/forms/iframe/autoplay/inline handlers');
   check(!/<a\b[^>]*href\s*=\s*['"]https?:\/\/(?:zen12\.com|affiliates\.inspire3\.com|www\.awin1\.com)/i.test(page),'no seller or earning click-through');
-  check(/<button\b[^>]*\bdisabled\b/i.test(page),'merchant control must be natively disabled');
+  check(/<button\b[^>]*\sdisabled(?:\s|>)/i.test(page),'merchant control must be natively disabled');
   check(HAS(page,'If a future authorized purchase link is enabled, Final Vestige may earn a commission at no additional cost to you'),'adjacent plain commission disclosure');
-  check(page.indexOf('Potential affiliate disclosure:')>0&&page.indexOf('Potential affiliate disclosure:')<page.indexOf('<button type="button" class="disabled"'),'disclosure precedes disabled CTA');
-  check(HAS(page,'https://finalvestige.com/focus/')&&HAS(page,'Seven Day Focus Fieldbook'),'preserve single Focus resource');
+  check(HAS(page,'<p class="disclosure" id="affiliate-disclosure">')&&page.indexOf('Potential affiliate disclosure:')>0&&page.indexOf('Potential affiliate disclosure:')<page.indexOf('<button type="button" class="disabled"'),'disclosure precedes disabled CTA');
+  check(HAS(page,'<a class="cta" href="https://finalvestige.com/focus/">')&&HAS(page,'Seven Day Focus Fieldbook'),'preserve single Focus resource');
   check(HAS(page,'12 levels and 48 MP3')&&HAS(page,'$87.99')&&HAS(page,'November 6, 2026')&&HAS(page,'seller-listed terms'),'exact seller page observations are bounded');
   check(HAS(page,'not been independently tested')&&HAS(page,'has not established product-specific evidence'),'objective product claims not adopted');
   check(HAS(page,'42-second')&&HAS(page,'34–42s:')&&HAS(page,'no MP4, VTT, poster file or player'),'video must be clearly unproduced');
@@ -46,7 +46,7 @@ const issues=(s)=>{
   check(j.claims.some(c=>c.id==='MF-16'&&c.status==='unsupported_product_efficacy'),'12 minutes product claim not independently validated');
   check(j.claims.some(c=>c.id==='MF-28'&&HAS(c.statement,'tasting jam and smelling tea')),'sensory method correctly classified');
   check(HAS(plan,'settled gross receipts - refunds - processing fees')&&HAS(plan,'NOT COMPUTABLE'),'paid KPI must subtract refunds and fees and handle unknowns');
-  check(HAS(plan,'asset_id = null')&&HAS(plan,'TASK-008'),'Grok content IDs not invented');
+  check(HAS(plan,'asset_id = null')&&!/asset_id\s*=\s*\d+/.test(plan)&&HAS(plan,'TASK-008'),'Grok content IDs not invented');
   check(HAS(r164article,'tasted jam or smelled tea')&&HAS(r164article,'before* the final choice'),'old article correction preserved');
   check(!HAS(r164article,'During some follow-up tastings, researchers secretly swapped'),'old mechanism error removed');
   check(HAS(r164page,'jam tasting, tea smelling')&&!HAS(r164page,'jam and tea tastings'),'old buyer-guide sensory correction preserved');
