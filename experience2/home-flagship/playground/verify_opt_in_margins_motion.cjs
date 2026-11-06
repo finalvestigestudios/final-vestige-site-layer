@@ -15,14 +15,14 @@ if (!plugin) throw Error('Missing exact MU-plugin review source');
 function audit(text) {
   const out = [];
   const sourceItems = [...text.matchAll(/<span class="fv-margin-strip__item" style="--i:(\d+)">([^<]*)<\/span>/g)];
-  const css = text.slice(text.indexOf('/* EX2 REVIEW ONLY — Issues #150/#820'), text.indexOf('FVPG_CSS_END'));
+  const css = text.slice(text.indexOf('/* EX2 REVIEW ONLY — Issues #150/#820'), text.lastIndexOf('FVPG_CSS_END'));
   const markup = text.slice(text.indexOf('<div class="fv-margin-strip fv-margin-strip--rotator"'), text.indexOf('<div class="fv-hf" data-fv-home-flagship>'));
   const check = (cond, name) => { if (!cond) out.push(name); };
   check(sourceItems.length === 72, 'all 72 records');
   check(sourceItems.every((m, n) => Number(m[1]) === n && m[2].trim()), 'records sequential and nonempty');
   check(markup.includes('class="fv-margin-strip__motion-check" type="checkbox"'), 'native motion choice');
   check(markup.includes('Animate fragments (optional)'), 'user-facing choice');
-  check(markup.includes('scroll horizontally'), 'accessible scroll instruction');
+  check(markup.toLowerCase().includes('scroll horizontally'), 'accessible scroll instruction');
   check(css.includes('animation:none;') && css.includes('overflow-x:auto'), 'static scroll by default');
   check(css.includes('scroll-snap-type:x proximity'), 'touch browsing');
   check(css.includes('selector(.fv-margin-strip:has('), 'opt-in CSS feature detection');
@@ -43,7 +43,7 @@ const mutations = [
   ['remove last record', s => s.replace(/<span class="fv-margin-strip__item" style="--i:71">[^<]*<\/span>/, '')],
   ['change index', s => s.replace('style="--i:20"', 'style="--i:21"')],
   ['erase motion checkbox', s => s.replace('class="fv-margin-strip__motion-check" type="checkbox"', '')],
-  ['erase scroll cue', s => s.replace('scroll horizontally', '')],
+  ['erase scroll cue', s => s.replace('Scroll horizontally', '')],
   ['erase no-preference', s => s.replace('prefers-reduced-motion: no-preference', 'prefers-reduced-motion: reduce')],
   ['erase static animation guard', s => s.replace('animation:none; will-change:auto;', 'animation:fvMarginReveal 360s linear infinite; will-change:auto;')],
   ['erase native review marker', s => s.replaceAll('FV_EX2_LOCAL_PLAYGROUND_2026_11_05_V1', 'UNSAFE-PRODUCTION-COPY')],
