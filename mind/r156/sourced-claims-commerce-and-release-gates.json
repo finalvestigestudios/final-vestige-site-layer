@@ -548,7 +548,8 @@
   "qualified_human_sessions": null,
   "realized_net_revenue": null,
   "net_revenue_per_1000_qualified_sessions": null,
-  "costs": 0,
+  "costs": null,
   "spend_authorized": false,
-  "measurement_note": "null represents UNVERIFIED/UNOBSERVABLE, not measured zero. No new script and no purchase/lead test executed. Actual costs cannot be inferred from this JSON."
+  "measurement_note": "null represents UNVERIFIED/UNOBSERVABLE, not measured zero. No new script and no purchase/lead test executed. Actual costs cannot be inferred from this JSON.",
+  "costs_note": "Not independently verified; NULL does not imply zero actual costs."
 }
