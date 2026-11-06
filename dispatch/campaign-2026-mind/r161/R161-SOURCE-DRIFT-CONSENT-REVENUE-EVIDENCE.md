@@ -1,6 +1,6 @@
 # Dispatch R161 — consent-to-customer rehearsal, source-drift audit and commercial hard stops
 
-**2026-11-06 04:30–05:xx Pacific / 12:32 UTC authenticated provider snapshot**  
+**2026-11-06 04:30–04:48 Pacific / 12:32 UTC authenticated provider snapshot**  
 **Owner:** Dispatch Campaign Studio / GitHub #174; Mind & Affiliate #171; Focus #129; business #820.  
 **Disposition:** ALL 6 `HOLD_UNSENT`; issues 03 and 05 independently `HOLD_MERCHANT`. This is not a production release or email-send approval.
 
@@ -31,7 +31,7 @@ A bounded Gmail search on Nov 6 found a **Oct 25** WordPress `Confirm your subsc
 
 ## 3. Independent copy/conversion finding: page-specific price is not stable evidence
 
-The Zen12 official [exact product page](https://zen12.com/?no-popup=1) describes 12 levels, four listening choices each and **48 MP3** in the Premium package. Public text inspected Nov 6 displays `$87` for Premium, while current Mind R167 issue notes a `$87.99` seller display. **Neither is a verified checkout total.** These discrepancies are the reason Issue 03 alternative deliberately contains no quoted price, percentage saved or limited-time claim.
+The Zen12 official [exact product page](https://zen12.com/?no-popup=1) describes 12 levels, four listening choices each and **48 MP3** in the Premium package. Previously indexed public text inspected on Nov 6 (crawler timestamps not proof of a Nov 6 live checkout) displays `$87` for Premium, while current Mind R167 issue notes a `$87.99` seller display. **Neither is a verified checkout total.** These discrepancies are the reason Issue 03 alternative deliberately contains no quoted price, percentage saved or limited-time claim.
 
 The official [Hypnosis Live Total Focus page](https://hypnosislive.com/mental-skills/total-focus) describes 33 minutes and 47 MB. Public text displayed `$2` in one retrieved view, while a search-indexed representation showed `$17.95` and earlier internal observations recorded another promotional amount. These are divergent sales-page representations (possibly date, presentation, offer or cache differences), NOT proof of checkout price or an actual discount. Keep Issue 05 **separately blocked**. The merchant's 14-day guarantee is an advertisement, not independently verified refund fulfillment.
 
@@ -74,3 +74,11 @@ Both sellers make assertive claims about cognitive results or rapid equivalence.
 FTC [CAN-SPAM guidance](https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business) requires truthful from/subject, clear advertising identity when commercial, valid publisher postal address, effective opt-out and prompt honoring of opt-outs. An address visible in a WordPress confirmation sent by Automattic or in Inspire3's seller footer is **not** evidence of Final Vestige's valid publisher address. Promotional email is not automatically exempt merely because the recipient subscribed to an editorial newsletter; classify by **primary purpose** of the actual message, including mixed editorial/sales content. Verify real Jetpack footer and consent before any message goes live.
 
 **Release disposition:** `ALL HOLD_UNSENT`; `03+05 HOLD_MERCHANT`; new materials are draft reviewer assets only. No WordPress writes, audience exports/imports, emails, test sends, new analytics, live affiliate links, payments, social work, expenses, homepage PR #49 edits or production changes performed. This PR targets only `dispatch/campaign-2026-mind/r161/`, stacked on prior Dispatch R160, and changes nothing outside its own directory.
+
+## 6. Native offline browser QA addendum / corrected mobile defect
+
+The *first* native Chromium render of the exactly committed R161 HTML reviewer preview at 320 and 390px detected **horizontal overflow**, caused by a long literal compliance placeholder expanding the HTML table's automatic width. This was a real **offline preview defect**—not evidence about Jetpack-rendered emails. We corrected **the reviewer HTML only** with `table-layout:fixed` on the presentation table and `overflow-wrap:anywhere` on the footer cell; original CTA, disclosure and compliance gates are unchanged. Source SHA after fix: `841184172fd9f3201fc4bc1c922d30f09069055b`.
+
+Re-rendered locally with Chromium + Playwright `page.set_content`, **320/390/768/1440px all PASS with zero horizontal overflow**, exactly one visible reserved CTA, zero active links, images, scripts or forms. The byte-identical HTML blob was checked against the committed GitHub source. New `test_static_preview.py` native isolated Python tests `python -I -m unittest discover -s . -p 'test_static_preview.py' -v`: **4/4 PASS**, including real offline Chromium at all four widths. This is a local HTML accessibility/compatibility check, **not** a real Jetpack email preview, inbox client compatibility assertion, subscriber test, or live site functionality proof. This separate preview QA helps catch a real narrow-viewport layout bug without touching production or subscriber data.
+
+**Freshness caveat:** Direct web and indexed seller pages can reflect different crawl dates and sessions. The $87 Zen12, $87.99 previously observed, $2 Total Focus and older $17.95 Total Focus representations are **display snapshots only**, not verified current prices and cannot support specific discount messages. Preserve all commercial-price claims as unverified until a checkout-level current authorized merchant check.
