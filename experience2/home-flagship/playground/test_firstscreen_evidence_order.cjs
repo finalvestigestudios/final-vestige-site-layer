@@ -20,7 +20,7 @@ const mutations=[
  ['missing image',s=>s.replace('<img ','<unverified-img ')],
  ['missing motion control',s=>s.replace('type="checkbox"','type="hidden"')],
  ['missing reduced motion',s=>s.replaceAll('prefers-reduced-motion: reduce','unknown-motion')],
- ['duplicate source fact',s=>s.replace('Nanni filed a clay complaint','A Roman birthday invitation')],
+ ['duplicate complete source record',s=>{ const rows=[...s.matchAll(/<span class="fv-margin-strip__item"[^>]*>([\s\S]*?)<\/span>/g)]; return s.replace(rows[0][1], rows[1][1]); }],
  ['changed CSS selector',s=>s.replace('.fv-margin-strip__motion-check','.altered-check')]
 ];
 for (const [name,mutator] of mutations) test('reject '+name,()=>{
