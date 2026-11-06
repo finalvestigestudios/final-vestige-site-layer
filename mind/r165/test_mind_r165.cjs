@@ -84,7 +84,7 @@ function scan(files){
  check(spec.includes("preload=\"none\"")&&spec.includes("WebVTT"),"video accessibility/performance planned");
  check(spec.includes("Do not")&&spec.includes("Grok"),"no Grok queue takeover");
  check(hub.includes("wp:group")&&hub.includes("Mind &amp; Perception"),"WordPress hub companion");
- check(hub.includes("Do not insert in live WordPress or overwrite PR #172.")&&hub.includes("unpublished"),"canonical ownership and draft status");
+ check(hub.includes("canonical Mind hub PR #172.")&&hub.includes("Do not insert in live WordPress or overwrite PR #172.")&&hub.includes("unpublished"),"canonical ownership and draft status");
  check(hub.includes("https://finalvestige.com/focus/"),"single Focus path hub");
  check(!/<form\b|<script\b/i.test(hub),"no scripts/forms in hub");
  check(!/href=["']https?:\/\/(?:www\.)?zen12\.com/i.test(hub),"no commerce links hub");
