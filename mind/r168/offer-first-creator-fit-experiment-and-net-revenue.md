@@ -69,7 +69,7 @@ Do not store email address, IP, device fingerprint, cross-site identifiers, indi
 
 **Primary KPI (only with verified denominator and numerator):**
 
-`Net revenue per 1,000 qualified human sessions = 1000 × (settled attributable gross receipts − fees − refunds/chargebacks) / qualified human sessions`.
+`Owned Payhip net/1k = 1000 × (FV-owned receipts actually settled − processor/platform fees − refunds/chargebacks − incremental fulfillment costs not already withheld) / qualified human sessions`. **Affiliate net/1k = 1000 × (FV's partner commissions actually settled and attributable − FV-borne fees − partner clawbacks/refunds not already netted in those settlements) / qualified human sessions**. Merchant gross merchandise value is NOT FV's affiliate revenue. Never subtract a fee or reversal twice from an already net settlement.
 
 The net revenue must be attributable to the *same defined cohort* with documented 7/30-day follow-through and partner settlement lag. Also show paid order conversion, independently confirmed order count, lead-to-paid rate only where observable, refund rate, gross/net revenue and content hours. If `Q` or net settlements are unknown, the KPI is **NOT COMPUTABLE**—never zero by default. A held partner link means no possible affiliate measurement test yet. Avoid assuming an affiliate click yielded a commission or that a checkout start equaled a paid order.
 
