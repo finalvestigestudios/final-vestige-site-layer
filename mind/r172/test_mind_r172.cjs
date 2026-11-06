@@ -42,6 +42,7 @@ function sourceCheck(b) {
   ok(/meta name="robots" content="noindex,nofollow"/i.test(buyer+hub),"unreleased preview indexed");
   ok(/42-second/.test(buyer),"video hypothesis duration missing");
   ok(/not a playable media file/i.test(buyer),"unproduced video must be labeled honestly");
+  ok(/Neither study tested Zen12 audio/.test(buyer),"no research-to-commercial efficacy transfer");
   ok(/<details>/.test(buyer),"optional video treatment control missing");
   ok(/https:\/\/pubmed.ncbi.nlm.nih.gov\/34843370\//.test(buyer),"primary scientific source missing");
   ok(/seller representations|seller statements|seller promise|seller-listed/i.test(buyer),"seller vs evidence distinction missing");
