@@ -26,7 +26,7 @@ function audit(s){
    ck(s.article.includes(x),'R176 research distinction missing: '+x);
  for(const x of ['twenty-one','sixty-three','thirty-four','Moga and Zoltan Dienes','2022'])
    ck(s.previous.includes(x),'R175 QA correction missing: '+x);
- for(const x of ['48 MP3','twelve','$87.99','one-year','we have not','free','Prospective affiliate disclosure','NOT ACTIVE'])
+ for(const x of ['48 downloadable MP3','twelve','$87.99','one-year','we have not','free','Prospective affiliate disclosure','NOT ACTIVE'])
    ck(s.guide.toLowerCase().includes(x.toLowerCase()),'exact-offer guide '+x);
  for(const html of [s.offer,s.hub]){
    ck(/<html lang="en">/.test(html),'html language');
@@ -61,7 +61,7 @@ function audit(s){
  ck(j.release_gates.some(x=>x.id==='founder_release' && x.state==='CLOSED'),'release gate closed');
  ck(s.plan.includes('affiliate_click') && s.plan.includes('merchant_confirmed_purchase') && s.plan.includes('affiliate_commission_paid'),'differentiate clicks from paid');
  ck(s.plan.includes('NOT COMPUTABLE') && s.plan.includes('not already deducted'),'no invented or duplicate-deducted money');
- ck(s.plan.includes('actual immutable Grok asset_id') && s.plan.includes('DO NOT'),'creator approval boundaries');
+ ck(s.plan.includes('actual immutable Grok asset_id') && s.plan.includes('No CMS'),'creator approval boundaries');
 }
 const original=read();audit(original);const baseline=count;
 const mutations=[
@@ -94,7 +94,7 @@ s=>s.plan=s.plan.replace('not already deducted','always deducted twice'),
 s=>s.hub=s.hub.replace('PR #172','PR #9999'),
 s=>s.offer=s.offer.replace('rel="noopener noreferrer"','rel="sponsored"'),
 s=>s.offer=s.offer.replace('</body>','<iframe src="https://player.example"></iframe></body>'),
-s=>s.guide=s.guide.replace('48 MP3','32 MP3')
+s=>s.guide=s.guide.replace('48 downloadable MP3','32 MP3')
 ];
 let caught=0;
 for(let i=0;i<mutations.length;i++){
