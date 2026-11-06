@@ -305,6 +305,15 @@ jobs:
           command -v xvfb-run
           xvfb-run -a python -W error products/desktop/scripts/native_wheel_modifiers_r229.py
           xvfb-run -a python -OO -W error products/desktop/scripts/native_wheel_modifiers_r229.py
+      - name: R230 precise wheel boundary/reversal custody (23 methods; normal and -OO)
+        run: |
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_wheel_edge_guard_r230.py'
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_wheel_edge_guard_r230.py'
+      - name: R230 real Tk boundary reverse-wheel smoke via Xvfb (normal and -OO)
+        run: |
+          command -v xvfb-run
+          xvfb-run -a python -W error products/desktop/scripts/native_wheel_edge_r230.py
+          xvfb-run -a python -OO -W error products/desktop/scripts/native_wheel_edge_r230.py
       - name: R200 execute R194-R199 financial and policy audit tests (148 methods per mode)
         run: |
           python products/desktop/scripts/safe_audit_subprocess_r205.py
@@ -1563,6 +1572,14 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R229 wheel modifier gate FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_wheel_modifiers_r229.py'
           if ($LASTEXITCODE -ne 0) { throw "R229 optimized wheel modifier gate FAILED" }
+      - name: R230 Windows precision-wheel boundary prepackaging gate (23 methods; normal and -OO)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_wheel_edge_guard_r230.py'
+          if ($LASTEXITCODE -ne 0) { throw "R230 wheel-edge gate FAILED" }
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_wheel_edge_guard_r230.py'
+          if ($LASTEXITCODE -ne 0) { throw "R230 optimized wheel-edge gate FAILED" }
       - name: Verify full normal/optimized source suite before packaging (R57)
         shell: pwsh
         run: |
