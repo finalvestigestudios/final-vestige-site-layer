@@ -6,6 +6,7 @@ Axe is mandatory for release admission: missing axe is a BLOCK, not a pass.
 Lab observations cannot certify field CWV or WP.com environment parity.
 """
 import argparse
+import hashlib
 import json
 from pathlib import Path
 from urllib.parse import urlparse
@@ -54,11 +55,12 @@ def run(target, output, axe_path=None, live_readonly=False, browser_path='/usr/b
         raise ValueError('Production requires explicit --live-readonly opt-in')
     if live_readonly and parsed.hostname != 'finalvestige.com':
         raise ValueError('--live-readonly is reserved for finalvestige.com')
+    safe_target = parsed._replace(query='', fragment='', params='').geturl()
     dest = Path(output)
     dest.mkdir(parents=True, exist_ok=True)
     axe = Path(axe_path) if axe_path else None
     axe_available = bool(axe and axe.is_file())
-    report = {'target': target, 'mode': 'LIVE_READ_ONLY' if live_readonly else 'ISOLATED',
+    report = {'target': safe_target, 'mode': 'LIVE_READ_ONLY' if live_readonly else 'ISOLATED',
               'widths': {}, 'no_js': {}, 'interactions': {}, 'checks': {},
               'reduced_motion': {}, 'image_network': [],
               'axe': {'status': 'NOT_RUN'}, 'lab': {}, 'release_ready': False,
@@ -92,10 +94,13 @@ def run(target, output, axe_path=None, live_readonly=False, browser_path='/usr/b
             def collect_response(response):
                 if response.request.resource_type != 'image':
                     return
-                entry = {'url': response.url, 'status': response.status,
+                image_url = urlparse(response.url)._replace(query='', fragment='', params='').geturl()
+                entry = {'url': image_url, 'status': response.status,
                          'declared_bytes': response.headers.get('content-length')}
                 try:
-                    entry['actual_body_bytes'] = len(response.body())
+                    image_body = response.body()
+                    entry['actual_body_bytes'] = len(image_body)
+                    entry['sha256'] = hashlib.sha256(image_body).hexdigest()
                 except Exception as err:
                     entry['error'] = type(err).__name__
                 transfers[response.url] = entry
@@ -188,7 +193,7 @@ def run(target, output, axe_path=None, live_readonly=False, browser_path='/usr/b
                     report['status'] = 'FAIL_QUALIFICATION_CHECKS'
             except Exception as err:
                 report['status'] = 'BLOCKED_BROWSER_RUNTIME'
-                report['error'] = f'{type(err).__name__}: {str(err)[:500]}'
+                report['error'] = f'{type(err).__name__}: {str(err).replace(target, safe_target)[:500]}'
         finally:
             browser.close()
     (dest/'results.json').write_text(json.dumps(report, indent=2), encoding='utf-8')
