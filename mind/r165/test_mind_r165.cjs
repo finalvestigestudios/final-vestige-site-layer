@@ -78,7 +78,7 @@ function scan(files){
  check(m.claims.find(x=>x.id==="Z-08")?.status==="seller_claim_unsubstantiated","equivalence not adopted");
  check(m.claims.find(x=>x.id==="COM-01")?.status==="NOT_VERIFIED","named acceptance not assumed");
  check(m.measurement.net_revenue_per_1000==="NOT_COMPUTABLE","correct revenue state");
- check(spec.includes("asset_id = NULL")&&spec.includes("three")&&spec.includes("TASK-008"),"creator coordination only");
+ check(spec.includes("asset_id = NULL")&&spec.toLowerCase().includes("three")&&spec.includes("TASK-008"),"creator coordination only");
  check(spec.includes("7-day")&&spec.includes("30-day"),"cohorts");
  check(spec.includes("confirmed_paid_order")&&spec.includes("affiliate_click"),"clicks separate from commerce");
  check(spec.includes("preload=\"none\"")&&spec.includes("WebVTT"),"video accessibility/performance planned");
