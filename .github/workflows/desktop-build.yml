@@ -256,6 +256,10 @@ jobs:
           python -OO -m unittest discover -s products/desktop/tests -p 'test_userdict_storage_r222.py' > /dev/null 2>&1
           python -m unittest discover -s products/desktop/tests -p 'test_atomic_userdict_custody_r222.py' > /dev/null 2>&1
           python -OO -m unittest discover -s products/desktop/tests -p 'test_atomic_userdict_custody_r222.py' > /dev/null 2>&1
+      - name: R224 optional form keyboard access (16 cases, normal and -OO)
+        run: |
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_optional_shortcuts_r224.py'
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_optional_shortcuts_r224.py'
       - name: R200 execute R194-R199 financial and policy audit tests (148 methods per mode)
         run: |
           python products/desktop/scripts/safe_audit_subprocess_r205.py
@@ -1466,6 +1470,14 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R119 focused synthetic 16-case matrix FAILED (normal)" }
           python -OO products/desktop/scripts/safe_unittest_r119.py
           if ($LASTEXITCODE -ne 0) { throw "R119 focused synthetic 16-case matrix FAILED (optimized)" }
+      - name: R224 optional form keyboard access before packaging (16 cases, normal and -OO)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_optional_shortcuts_r224.py'
+          if ($LASTEXITCODE -ne 0) { throw "R224 keyboard optional controls FAILED" }
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_optional_shortcuts_r224.py'
+          if ($LASTEXITCODE -ne 0) { throw "R224 optimized keyboard optional controls FAILED" }
       - name: Verify full normal/optimized source suite before packaging (R57)
         shell: pwsh
         run: |

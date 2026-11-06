@@ -162,11 +162,13 @@ def run(app_id):
             ttk.Entry(frame, textvariable=variable, width=1).grid(
                 row=entry_row, column=0, columnspan=3, sticky="ew", pady=7)
     invoice_window = tk.StringVar(value="7") if app_id == "invoices" else None
+    invoice_window_entry = None
     if invoice_window is not None:
         ui_label(frame, text="Near-match days (0-365)", wraplength=220).grid(
             row=layout["window"][0], column=0, columnspan=3,
             sticky="ew", pady=7, padx=(0, 12))
-        ttk.Entry(frame, textvariable=invoice_window, width=1).grid(
+        invoice_window_entry = ttk.Entry(frame, textvariable=invoice_window, width=1)
+        invoice_window_entry.grid(
             row=layout["window"][1], column=0, columnspan=3,
             sticky="ew", pady=7)
     output = tk.StringVar(value=str(Path.home() / "Documents"))
@@ -183,18 +185,22 @@ def run(app_id):
     output_browse.grid(row=layout["output"][2], column=0,
                        columnspan=3, sticky="w")
     rules = tk.StringVar()
+    policy_rules_controls = None
     if app_id == "procurement":
         ui_label(frame, text="Price review policy JSON (optional)").grid(
             row=layout["rules"][0], column=0, columnspan=3,
             sticky="ew", padx=(0, 12), pady=7)
-        ttk.Entry(frame, textvariable=rules, width=1).grid(
+        rules_entry = ttk.Entry(frame, textvariable=rules, width=1)
+        rules_entry.grid(
             row=layout["rules"][1], column=0, columnspan=3, sticky="ew", pady=7)
         def choose_rules():
             file = filedialog.askopenfilename(parent=root, title="Optional price review policy",
                                               filetypes=[("JSON policy", "*.json")])
             if file: rules.set(file)
-        ttk.Button(frame, text="Browse…", command=choose_rules).grid(
+        rules_browse = ttk.Button(frame, text="Browse…", command=choose_rules)
+        rules_browse.grid(
             row=layout["rules"][2], column=0, columnspan=3, sticky="w")
+        policy_rules_controls = (rules_entry, rules_browse)
     status = tk.StringVar(value="Choose your input files. Originals will not be modified.")
     status_row = layout["status"]
     ui_label(frame, textvariable=status, wraplength=690).grid(
@@ -261,7 +267,9 @@ def run(app_id):
     if app_id == "ledger":
         hint += "; Tab to optional left/right match and amount headers (blank = automatic)"
     if app_id == "invoices":
-        hint += "; Tab to near-match day window (0-365; default 7)"
+        hint += "; Alt+W near-match day window (0-365; default 7)"
+    if app_id == "procurement":
+        hint += "; Alt+P optional policy; Ctrl+P browse policy"
     if premium:
         hint += "; Alt+R review exceptions"
     hint_row = layout["hint"]
@@ -269,6 +277,8 @@ def run(app_id):
         row=hint_row, column=0, columnspan=3,
         sticky="w", pady=(6, 0))
     install_shortcuts(root, input_controls, (output_entry, output_browse),
-                      generate_button, review=review_button)
+                      generate_button, review=review_button,
+                      invoice_window=invoice_window_entry,
+                      policy_rules=policy_rules_controls)
     root.after_idle(input_controls[0][0].focus_set)
     root.mainloop()
