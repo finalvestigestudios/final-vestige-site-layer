@@ -10,6 +10,7 @@ import tkinter as tk
 from tkinter import ttk
 
 from .wheel_modifiers import is_plain_vertical_wheel
+from .wheel_edge_guard import wheel_points_outward
 
 
 def focus_scroll_fraction(total_height, visible_height, top, widget_y, widget_height):
@@ -154,6 +155,14 @@ class ScrollableForm:
             return None
         lo, hi = self.canvas.yview()
         if lo <= 0.0 and hi >= 1.0:
+            if getattr(self, "_wheel_platform", None) == "win32":
+                self._wheel_remainder = 0
+            return None
+        # A wheel pushing beyond either canvas edge must not accumulate
+        # unused Win32 fractions that cancel the user's first reverse move.
+        if wheel_points_outward(lo, hi, delta=getattr(event, "delta", 0), button=button):
+            if getattr(self, "_wheel_platform", None) == "win32":
+                self._wheel_remainder = 0
             return None
         if button is None and getattr(self, "_wheel_platform", None) == "win32":
             units, self._wheel_remainder = precise_windows_wheel_units(
