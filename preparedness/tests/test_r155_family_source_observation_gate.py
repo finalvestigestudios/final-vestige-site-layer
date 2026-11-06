@@ -6,7 +6,7 @@ from pathlib import Path
 import tempfile
 import unittest
 
-MOD = Path(__file__).with_name('r155_family_source_observation_gate.py')
+MOD = Path(__file__).parents[1] / 'tools' / 'r155_family_source_observation_gate.py'
 spec = importlib.util.spec_from_file_location('r155_gate', MOD)
 gate = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(gate)
