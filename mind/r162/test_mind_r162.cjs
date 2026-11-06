@@ -93,7 +93,7 @@ const adversarial=[
  ['remove FTC disclaimer',s=>{s.html=s.html.replace('Prospective commission disclosure','Disclosure missing');}],
  ['remove free CTA',s=>{s.html=s.html.replace('https://finalvestige.com/focus/','/none/');}],
  ['remove reduced motion',s=>{s.html=s.html.replace('prefers-reduced-motion','motion-ignored');}],
- ['remove keyboard focus',s=>{s.html=s.html.replace('focus-visible','focus-ignored');}],
+ ['remove keyboard focus',s=>{s.html=s.html.replaceAll('focus-visible','focus-ignored');}],
  ['insert autoplay video',s=>{s.html+='\n<video autoplay src="test.mp4"></video>';}],
  ['claim video already playable',s=>{s.matrix=s.matrix.replace('"produced": false','"produced": true');}],
  ['affiliate approved without proof',s=>{s.matrix=s.matrix.replace('"publisher_approved": null','"publisher_approved": true');}],
