@@ -1,0 +1,405 @@
+{
+  "schema_version": "1.0",
+  "milestone": "Mind R155",
+  "as_of": "2026-11-05",
+  "sources": {
+    "thompson": "https://doi.org/10.1068/p090483",
+    "lewis": "https://doi.org/10.1068/p3174",
+    "boutsen": "https://doi.org/10.1080/02724980244000774",
+    "psalta": "https://doi.org/10.1068/p7755",
+    "fmri": "https://doi.org/10.1177/0956797613501521",
+    "lewis_johnston": "https://doi.org/10.1068/p260225",
+    "fv_history": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "fv_focus": "https://finalvestige.com/focus/",
+    "fv_change": "https://finalvestige.com/2026/11/02/change-blindness/",
+    "inspire3": "https://inspire3.com/",
+    "total_focus": "https://hypnosislive.com/mental-skills/total-focus",
+    "affiliate_portal": "https://affiliates.inspire3.com/",
+    "ftc_disclosure": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "ftc_claims": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+    "issue171": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+    "issue820": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820"
+  },
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "Thatcher illusion original 1980 Thompson paper, published in Perception",
+      "source": "https://doi.org/10.1068/p090483",
+      "disposition": "VERIFY_SOURCE"
+    },
+    {
+      "id": "C02",
+      "claim": "Original historic figure is not licensed here",
+      "source": "https://doi.org/10.1068/p090483",
+      "disposition": "RIGHTS_HOLD"
+    },
+    {
+      "id": "C03",
+      "claim": "Local eyes and mouth inverted relative to face",
+      "source": "https://doi.org/10.1068/p090483",
+      "disposition": "VERIFY_SOURCE"
+    },
+    {
+      "id": "C04",
+      "claim": "Effect orientation-sensitive, not a universal intelligence test",
+      "source": "https://doi.org/10.1068/p090483",
+      "disposition": "CAUTIOUS_INTERPRETATION"
+    },
+    {
+      "id": "C05",
+      "claim": "Rotation performance differs gradually by angle",
+      "source": "https://doi.org/10.1068/p3174",
+      "disposition": "VERIFY_ABSTRACT"
+    },
+    {
+      "id": "C06",
+      "claim": "Local and whole-face face matching tested in four experiments",
+      "source": "https://doi.org/10.1080/02724980244000774",
+      "disposition": "VERIFY_ABSTRACT"
+    },
+    {
+      "id": "C07",
+      "claim": "Configural processing matters but is not one binary switch",
+      "source": "https://doi.org/10.1080/02724980244000774",
+      "disposition": "CAUTIOUS_INTERPRETATION"
+    },
+    {
+      "id": "C08",
+      "claim": "2014 study finds orientation-specific facial-feature encoding",
+      "source": "https://doi.org/10.1068/p7755",
+      "disposition": "VERIFY_ABSTRACT"
+    },
+    {
+      "id": "C09",
+      "claim": "Neuroimaging relates superior temporal sulcus response to orientation",
+      "source": "https://doi.org/10.1177/0956797613501521",
+      "disposition": "VERIFY_ABSTRACT"
+    },
+    {
+      "id": "C10",
+      "claim": "fMRI is not diagnostic of individual's susceptibility",
+      "source": "https://doi.org/10.1177/0956797613501521",
+      "disposition": "DO_NOT_GENERALIZE"
+    },
+    {
+      "id": "C11",
+      "claim": "Other face inversion findings support configuration question",
+      "source": "https://doi.org/10.1068/p260225",
+      "disposition": "VERIFY_ABSTRACT"
+    },
+    {
+      "id": "C12",
+      "claim": "Animal magnetism files are history, not verified clinical effect",
+      "source": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "disposition": "HISTORICAL_CONTEXT_ONLY"
+    },
+    {
+      "id": "C13",
+      "claim": "Focus Fieldbook is an existing optional resource not product proof",
+      "source": "https://finalvestige.com/focus/",
+      "disposition": "EXISTING_ROUTE"
+    },
+    {
+      "id": "C14",
+      "claim": "Change blindness is a different phenomenon",
+      "source": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "disposition": "DISTINGUISH_METHODS"
+    },
+    {
+      "id": "C15",
+      "claim": "Inspire3 catalog describes products; efficacy claims are seller claims",
+      "source": "https://inspire3.com/",
+      "disposition": "SELLER_ONLY"
+    },
+    {
+      "id": "C16",
+      "claim": "Total Focus exact item: 33 minutes, 47 MB by J.A. Amos",
+      "source": "https://hypnosislive.com/mental-skills/total-focus",
+      "disposition": "SELLER_ONLY"
+    },
+    {
+      "id": "C17",
+      "claim": "Total Focus seller promises dramatically improved focus",
+      "source": "https://hypnosislive.com/mental-skills/total-focus",
+      "disposition": "REJECT_SELLER_CLAIM"
+    },
+    {
+      "id": "C18",
+      "claim": "Total Focus page displays $24.44 Nov 5, not final checkout amount",
+      "source": "https://hypnosislive.com/mental-skills/total-focus",
+      "disposition": "DO_NOT_PUBLISH_PRICE"
+    },
+    {
+      "id": "C19",
+      "claim": "Seller advertises 14-day satisfaction guarantee; untested",
+      "source": "https://hypnosislive.com/mental-skills/total-focus",
+      "disposition": "SELLER_POLICY_UNVERIFIED"
+    },
+    {
+      "id": "C20",
+      "claim": "Affiliate program exists publicly",
+      "source": "https://affiliates.inspire3.com/",
+      "disposition": "VERIFY_PUBLIC_ONLY"
+    },
+    {
+      "id": "C21",
+      "claim": "Named FV acceptance and exact earning link not established",
+      "source": "https://affiliates.inspire3.com/",
+      "disposition": "UNKNOWN_HARD_HOLD"
+    },
+    {
+      "id": "C22",
+      "claim": "Affiliate percentages on portal are marketing, not actual account economics",
+      "source": "https://affiliates.inspire3.com/",
+      "disposition": "DO_NOT_PROJECT"
+    },
+    {
+      "id": "C23",
+      "claim": "Paid links require plain adjacent commission disclosure",
+      "source": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "disposition": "COMPLIANCE_REQUIRED"
+    },
+    {
+      "id": "C24",
+      "claim": "Health/cognitive benefit claims need appropriate substantiation",
+      "source": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "disposition": "CLAIM_UNSUBSTANTIATED"
+    },
+    {
+      "id": "C25",
+      "claim": "Merchant's focus claim cannot be proven by Thatcher experiments",
+      "source": "https://doi.org/10.1068/p090483",
+      "disposition": "DO_NOT_TRANSFER_EVIDENCE"
+    },
+    {
+      "id": "C26",
+      "claim": "Qualified-human sessions for this campaign unverified",
+      "source": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "disposition": "UNKNOWN_NOT_ZERO"
+    },
+    {
+      "id": "C27",
+      "claim": "Net realized revenue for this campaign not computable",
+      "source": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "disposition": "UNKNOWN_NOT_ZERO"
+    },
+    {
+      "id": "C28",
+      "claim": "Named owned Payhip Mind paid product not authenticated",
+      "source": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "disposition": "UNKNOWN_HARD_HOLD"
+    }
+  ],
+  "release_gates": [
+    {
+      "id": "G01",
+      "gate": "Named FV Inspire3 account approval",
+      "status": "CLOSED",
+      "reason": "Not authenticated or not release-authorized in this Mind lane"
+    },
+    {
+      "id": "G02",
+      "gate": "Product-specific Total Focus eligible affiliate offer",
+      "status": "CLOSED",
+      "reason": "Not authenticated or not release-authorized in this Mind lane"
+    },
+    {
+      "id": "G03",
+      "gate": "Exact authorized earning URL",
+      "status": "CLOSED",
+      "reason": "Not authenticated or not release-authorized in this Mind lane"
+    },
+    {
+      "id": "G04",
+      "gate": "Permitted TikTok account and placement",
+      "status": "CLOSED",
+      "reason": "Not authenticated or not release-authorized in this Mind lane"
+    },
+    {
+      "id": "G05",
+      "gate": "Permitted YouTube account and placement",
+      "status": "CLOSED",
+      "reason": "Not authenticated or not release-authorized in this Mind lane"
+    },
+    {
+      "id": "G06",
+      "gate": "Permitted email/Dispatch use",
+      "status": "CLOSED",
+      "reason": "Not authenticated or not release-authorized in this Mind lane"
+    },
+    {
+      "id": "G07",
+      "gate": "Terms/commission/reversal evidence",
+      "status": "CLOSED",
+      "reason": "Not authenticated or not release-authorized in this Mind lane"
+    },
+    {
+      "id": "G08",
+      "gate": "Merchant conversion reporting",
+      "status": "CLOSED",
+      "reason": "Not authenticated or not release-authorized in this Mind lane"
+    },
+    {
+      "id": "G09",
+      "gate": "Refund and payout reporting",
+      "status": "CLOSED",
+      "reason": "Not authenticated or not release-authorized in this Mind lane"
+    },
+    {
+      "id": "G10",
+      "gate": "Current checkout amount",
+      "status": "CLOSED",
+      "reason": "Not authenticated or not release-authorized in this Mind lane"
+    },
+    {
+      "id": "G11",
+      "gate": "Currency and tax display",
+      "status": "CLOSED",
+      "reason": "Not authenticated or not release-authorized in this Mind lane"
+    },
+    {
+      "id": "G12",
+      "gate": "Real return/redemption test approval",
+      "status": "CLOSED",
+      "reason": "Not authenticated or not release-authorized in this Mind lane"
+    },
+    {
+      "id": "G13",
+      "gate": "Audio accessibility/product review",
+      "status": "CLOSED",
+      "reason": "Not authenticated or not release-authorized in this Mind lane"
+    },
+    {
+      "id": "G14",
+      "gate": "Independent product-efficacy substantiation for any benefit claim",
+      "status": "CLOSED",
+      "reason": "Not authenticated or not release-authorized in this Mind lane"
+    },
+    {
+      "id": "G15",
+      "gate": "Original illustration rights manifest",
+      "status": "CLOSED",
+      "reason": "Not authenticated or not release-authorized in this Mind lane"
+    },
+    {
+      "id": "G16",
+      "gate": "Original Thatcher portrait rights clearance",
+      "status": "CLOSED",
+      "reason": "Not authenticated or not release-authorized in this Mind lane"
+    },
+    {
+      "id": "G17",
+      "gate": "Copyright and face/person likeness approval",
+      "status": "CLOSED",
+      "reason": "Not authenticated or not release-authorized in this Mind lane"
+    },
+    {
+      "id": "G18",
+      "gate": "Scientific claim QA and expert review",
+      "status": "CLOSED",
+      "reason": "Not authenticated or not release-authorized in this Mind lane"
+    },
+    {
+      "id": "G19",
+      "gate": "Founder content release approval",
+      "status": "CLOSED",
+      "reason": "Not authenticated or not release-authorized in this Mind lane"
+    },
+    {
+      "id": "G20",
+      "gate": "Site QA WCAG on 360,390,768,1440,1920",
+      "status": "CLOSED",
+      "reason": "Not authenticated or not release-authorized in this Mind lane"
+    },
+    {
+      "id": "G21",
+      "gate": "Page no-JS and keyboard browser QA",
+      "status": "CLOSED",
+      "reason": "Not authenticated or not release-authorized in this Mind lane"
+    },
+    {
+      "id": "G22",
+      "gate": "Page performance/Lighthouse QA",
+      "status": "CLOSED",
+      "reason": "Not authenticated or not release-authorized in this Mind lane"
+    },
+    {
+      "id": "G23",
+      "gate": "Host/caching and CSP audit",
+      "status": "CLOSED",
+      "reason": "Not authenticated or not release-authorized in this Mind lane"
+    },
+    {
+      "id": "G24",
+      "gate": "One Jetpack/Focus funnel verification",
+      "status": "CLOSED",
+      "reason": "Not authenticated or not release-authorized in this Mind lane"
+    },
+    {
+      "id": "G25",
+      "gate": "Guest signup/welcome delivery",
+      "status": "CLOSED",
+      "reason": "Not authenticated or not release-authorized in this Mind lane"
+    },
+    {
+      "id": "G26",
+      "gate": "Source linked article body integration",
+      "status": "CLOSED",
+      "reason": "Not authenticated or not release-authorized in this Mind lane"
+    },
+    {
+      "id": "G27",
+      "gate": "Grok asset_id and public platform URL",
+      "status": "CLOSED",
+      "reason": "Not authenticated or not release-authorized in this Mind lane"
+    },
+    {
+      "id": "G28",
+      "gate": "First-party campaign event ownership approval",
+      "status": "CLOSED",
+      "reason": "Not authenticated or not release-authorized in this Mind lane"
+    },
+    {
+      "id": "G29",
+      "gate": "Merchant confirmed purchase",
+      "status": "CLOSED",
+      "reason": "Not authenticated or not release-authorized in this Mind lane"
+    },
+    {
+      "id": "G30",
+      "gate": "Refund/fee settlement reconciliation",
+      "status": "CLOSED",
+      "reason": "Not authenticated or not release-authorized in this Mind lane"
+    },
+    {
+      "id": "G31",
+      "gate": "Qualified human denominator",
+      "status": "CLOSED",
+      "reason": "Not authenticated or not release-authorized in this Mind lane"
+    },
+    {
+      "id": "G32",
+      "gate": "Creator attribution consent and deduplication",
+      "status": "CLOSED",
+      "reason": "Not authenticated or not release-authorized in this Mind lane"
+    },
+    {
+      "id": "G33",
+      "gate": "Controlled Zen12 media asset and caption/transcript QA",
+      "status": "CLOSED",
+      "reason": "Not authenticated or not release-authorized in this Mind lane"
+    },
+    {
+      "id": "G34",
+      "gate": "Controlled A/B consent/randomization baseline",
+      "status": "CLOSED",
+      "reason": "Not authenticated or not release-authorized in this Mind lane"
+    }
+  ],
+  "eligible_for_publication": false,
+  "eligible_for_affiliate_activation": false,
+  "affiliate_commissions_settled": null,
+  "paid_attributable_orders": null,
+  "qualified_human_sessions": null,
+  "net_revenue_per_1000_qualified_sessions": null
+}
