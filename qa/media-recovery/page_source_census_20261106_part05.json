@@ -1,0 +1,122 @@
+{
+  "schema": "fv-page-source-image-shard-v1",
+  "captured_date": "2026-11-06",
+  "method": "Authenticated read-only WordPress page get(edit); stored HTML <img> only, no browser, no image requests or production changes.",
+  "page_list_count": 83,
+  "offset": 48,
+  "page_rows": 12,
+  "errors": [],
+  "reported_42_broken_browser_verified": null,
+  "measured_76_percent_saving": null,
+  "production_writes": 0,
+  "rows": [
+    {
+      "id": 547,
+      "url": "https://finalvestige.com/archive/time-place/",
+      "modified": "2026-09-09T09:38:51",
+      "title": "Across Time & Place",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": []
+    },
+    {
+      "id": 543,
+      "url": "https://finalvestige.com/archive/vestige-registry/",
+      "modified": "2026-09-09T16:12:29",
+      "title": "The Vestige Registry",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": []
+    },
+    {
+      "id": 542,
+      "url": "https://finalvestige.com/archive/dossiers/fire-safety/",
+      "modified": "2026-09-09T16:24:58",
+      "title": "Fire Safety",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": []
+    },
+    {
+      "id": 541,
+      "url": "https://finalvestige.com/archive/dossiers/search-recovery/",
+      "modified": "2026-09-09T16:19:10",
+      "title": "Search & Recovery",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": []
+    },
+    {
+      "id": 540,
+      "url": "https://finalvestige.com/archive/dossiers/nuclear-safety/",
+      "modified": "2026-09-09T16:24:04",
+      "title": "Nuclear Safety",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": []
+    },
+    {
+      "id": 539,
+      "url": "https://finalvestige.com/archive/dossiers/maritime-safety/",
+      "modified": "2026-09-09T16:22:11",
+      "title": "Maritime Safety",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": []
+    },
+    {
+      "id": 538,
+      "url": "https://finalvestige.com/archive/dossiers/us-navy/",
+      "modified": "2026-09-09T16:21:44",
+      "title": "U.S. Navy",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": []
+    },
+    {
+      "id": 537,
+      "url": "https://finalvestige.com/archive/dossiers/standards/",
+      "modified": "2026-09-09T16:21:09",
+      "title": "Standards",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": []
+    },
+    {
+      "id": 536,
+      "url": "https://finalvestige.com/archive/dossiers/",
+      "modified": "2026-09-09T16:18:48",
+      "title": "Research Dossiers",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": []
+    },
+    {
+      "id": 531,
+      "url": "https://finalvestige.com/field-cabinet/",
+      "modified": "2026-09-09T16:07:53",
+      "title": "The Field Cabinet",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": []
+    },
+    {
+      "id": 529,
+      "url": "https://finalvestige.com/watch/films/",
+      "modified": "2026-09-07T10:33:30",
+      "title": "Final Vestige Films",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": []
+    },
+    {
+      "id": 525,
+      "url": "https://finalvestige.com/explore/",
+      "modified": "2026-09-10T10:51:56",
+      "title": "Explore Final Vestige",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": []
+    }
+  ]
+}
