@@ -1,0 +1,36 @@
+{
+  "as_of": "2026-11-06T08:36:08Z",
+  "site": "finalvestige.com",
+  "verified_from": "authenticated read-only WordPress diagnostics",
+  "newsletter": {
+    "subscriptions": true,
+    "email_new_posts_by_default": false,
+    "email_content_format": "full",
+    "reported_total": 3,
+    "reported_confirmed": 3,
+    "reported_unconfirmed": 2,
+    "wpcom_followers": 3,
+    "legacy_email_followers": 0,
+    "recent_posts_not_sent": 5
+  },
+  "unknown": {
+    "native_email_eligible_recipient_count": null,
+    "confirmed_signup_event_count": null,
+    "received_welcome": null,
+    "valid_finalvestige_postal": null,
+    "unsubscribe_test": null,
+    "approved_merchant_email_permission": null,
+    "authorized_earning_url": null,
+    "verified_paid_orders": null,
+    "realized_net_revenue": null
+  },
+  "release": "HOLD_UNSENT",
+  "merchant_slots": "03_AND_05_HOLD_MERCHANT",
+  "source_links": [
+    "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/174",
+    "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+    "https://zen12.com/?no-popup=1",
+    "https://hypnosislive.com/mental-skills/total-focus",
+    "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business"
+  ]
+}
