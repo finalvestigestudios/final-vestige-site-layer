@@ -1,0 +1,590 @@
+{
+  "schema_version": "mind.r173.provenance.v1",
+  "review_date": "2026-11-06",
+  "status": "UNPUBLISHED_HARD_HOLD",
+  "offer": "Zen12 Premium",
+  "official_merchant": "https://zen12.com/",
+  "verified_publisher_approval": false,
+  "approval_evidence_status": "UNKNOWN",
+  "affiliate_url": null,
+  "authorized_channels": null,
+  "public_listing_price": {
+    "displayed": "$87.99",
+    "currency": "USD",
+    "date": "2026-11-06",
+    "nature": "seller public display",
+    "verified_final_checkout": false
+  },
+  "advertised_refund": {
+    "duration": "one year",
+    "nature": "seller public claim",
+    "refund_execution_verified": false
+  },
+  "owned_product_fallback": {
+    "eligible_payhip_mind_sku": null,
+    "rights_verified": false,
+    "checkout_verified": false,
+    "status": "UNKNOWN_NOT_ASSUMED"
+  },
+  "source_register": [
+    {
+      "id": "S1",
+      "kind": "official_seller",
+      "url": "https://inspire3.com/",
+      "checked": "2026-11-06",
+      "scope": "Parent brand portfolio only; not product clinical evidence."
+    },
+    {
+      "id": "S2",
+      "kind": "exact_product_seller",
+      "url": "https://zen12.com/",
+      "checked": "2026-11-06",
+      "scope": "Public Zen12 Premium listing and price display; not authenticated final checkout."
+    },
+    {
+      "id": "S3",
+      "kind": "public_affiliate_portal",
+      "url": "https://affiliates.inspire3.com/",
+      "checked": "2026-11-06",
+      "scope": "Program existence only; not FV-specific acceptance, permitted channels or actual rates."
+    },
+    {
+      "id": "S4",
+      "kind": "experiment_primary",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38569321/",
+      "checked": "2026-11-06",
+      "scope": "24 highly suggestible participants, posthypnotic cue, speed/confidence but no recognition-accuracy improvement."
+    },
+    {
+      "id": "S5",
+      "kind": "open_access_RCT",
+      "url": "https://link.springer.com/article/10.1007/s44202-024-00162-1",
+      "checked": "2026-11-06",
+      "scope": "49 acquired brain injury patients; targeted/non-targeted suggestions with active control, distinct population."
+    },
+    {
+      "id": "S6",
+      "kind": "experiment_primary",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37263078/",
+      "checked": "2026-11-06",
+      "scope": "91 participants, confidence in change detection, not meditation efficacy."
+    },
+    {
+      "id": "S7",
+      "kind": "experiment_primary",
+      "url": "https://journals.sagepub.com/doi/10.1068/p3104",
+      "checked": "2026-11-06",
+      "scope": "2000 change blindness without intervening disruption for sufficiently gradual changes; not arbitrary abrupt changes."
+    },
+    {
+      "id": "S8",
+      "kind": "longitudinal_training",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34843370/",
+      "checked": "2026-11-06",
+      "scope": "Nine-month study with attention/socioemotional/sociocognitive modules; attention module associated with working-memory result."
+    },
+    {
+      "id": "S9",
+      "kind": "ftc_compliance",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "checked": "2026-11-06",
+      "scope": "Material connections require clear/conspicuous proximal disclosure; not general legal clearance."
+    },
+    {
+      "id": "S10",
+      "kind": "ftc_compliance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "checked": "2026-11-06",
+      "scope": "Objective health benefit claims require reliable relevant scientific support."
+    },
+    {
+      "id": "S11",
+      "kind": "FV_existing_public_page",
+      "url": "https://finalvestige.com/focus/",
+      "checked": "2026-11-06",
+      "scope": "Verified through authenticated WP read; one existing focus/Jetpack funnel, no new form."
+    },
+    {
+      "id": "S12",
+      "kind": "FV_existing_public_page",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "checked": "2026-11-06",
+      "scope": "Verified through authenticated WP read; historical not efficacy evidence."
+    },
+    {
+      "id": "S13",
+      "kind": "FV_existing_public_post",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "checked": "2026-11-06",
+      "scope": "Reported published investigation, link to verify in release QA."
+    }
+  ],
+  "claim_decisions": [
+    {
+      "id": "C01",
+      "text": "Inspire3 publishes brands including Zen12 and Hypnosis Live.",
+      "source": [
+        "S1"
+      ],
+      "decision": "ALLOW_AS_SELLER_CATALOG_FACT",
+      "caveat": "No proof of FV publisher eligibility."
+    },
+    {
+      "id": "C02",
+      "text": "Zen12 Premium public listing says 12 levels spanning 12 months.",
+      "source": [
+        "S2"
+      ],
+      "decision": "ALLOW_SELLER_DESCRIBED",
+      "caveat": "Not subscription term or payments evidence."
+    },
+    {
+      "id": "C03",
+      "text": "Zen12 Premium public listing says 48 MP3s.",
+      "source": [
+        "S2"
+      ],
+      "decision": "ALLOW_SELLER_DESCRIBED",
+      "caveat": "No purchase/download verification."
+    },
+    {
+      "id": "C04",
+      "text": "Zen12 lists a user manual, quick start, level guides, call, and support.",
+      "source": [
+        "S2"
+      ],
+      "decision": "ALLOW_SELLER_DESCRIBED",
+      "caveat": "Support service levels/device compatibility unverified."
+    },
+    {
+      "id": "C05",
+      "text": "Zen12 public Premium offer showed $87.99 on Nov 6 2026.",
+      "source": [
+        "S2"
+      ],
+      "decision": "ALLOW_DATED_DISPLAY_ONLY",
+      "caveat": "Other promotions can differ; no verified final checkout/tax/discount."
+    },
+    {
+      "id": "C06",
+      "text": "Seller advertises a one-year money-back guarantee.",
+      "source": [
+        "S2"
+      ],
+      "decision": "ALLOW_ADVERTISED_WITH_CAVEAT",
+      "caveat": "Refund implementation, consumer eligibility and exact terms unverified."
+    },
+    {
+      "id": "C07",
+      "text": "Seller states 12 min equals 1h advanced meditation.",
+      "source": [
+        "S2"
+      ],
+      "decision": "DO_NOT_ADOPT_AS_FACT",
+      "caveat": "No product-specific comparable-outcome proof verified."
+    },
+    {
+      "id": "C08",
+      "text": "Seller says brainwave technology automatically meditates for buyer.",
+      "source": [
+        "S2"
+      ],
+      "decision": "DO_NOT_ADOPT_AS_FACT",
+      "caveat": "Consumer mental efficacy assertion without independent product trial."
+    },
+    {
+      "id": "C09",
+      "text": "Seller promises improved health and brain function.",
+      "source": [
+        "S2",
+        "S10"
+      ],
+      "decision": "DO_NOT_ADOPT_AS_FACT",
+      "caveat": "Clinical and objective health outcome substantiation absent for product."
+    },
+    {
+      "id": "C10",
+      "text": "24 highly suggestible participants had faster and more confident word recognition after a posthypnotic cue.",
+      "source": [
+        "S4"
+      ],
+      "decision": "ALLOW_STUDY_SPECIFIC",
+      "caveat": "Small selected sample, laboratory word task, not consumer MP3."
+    },
+    {
+      "id": "C11",
+      "text": "The posthypnotic cue improved recognition accuracy in the trial.",
+      "source": [
+        "S4"
+      ],
+      "decision": "REJECT",
+      "caveat": "Accuracy AUC ~0.961 vs 0.956, nonsignificant difference."
+    },
+    {
+      "id": "C12",
+      "text": "The posthypnotic cue result persisted at one-week retest.",
+      "source": [
+        "S4"
+      ],
+      "decision": "ALLOW_STUDY_SPECIFIC",
+      "caveat": "Do not extrapolate long-term life outcomes."
+    },
+    {
+      "id": "C13",
+      "text": "A 49-patient acquired-brain-injury hypnosis RCT validates Zen12 Premium.",
+      "source": [
+        "S5"
+      ],
+      "decision": "REJECT",
+      "caveat": "Different intervention/population and subjective outcome caveats."
+    },
+    {
+      "id": "C14",
+      "text": "A 91-participant scene-change confidence study demonstrates product efficacy.",
+      "source": [
+        "S6"
+      ],
+      "decision": "REJECT",
+      "caveat": "No commercial product or meditation tested."
+    },
+    {
+      "id": "C15",
+      "text": "Change blindness without interruption in a 2000 study includes gradual changes.",
+      "source": [
+        "S7"
+      ],
+      "decision": "ALLOW_EXACT_GRADUAL_BOUNDARY",
+      "caveat": "Do not generalize to abrupt unoccluded changes."
+    },
+    {
+      "id": "C16",
+      "text": "Nine months of attention-only training improved all cognitive skills.",
+      "source": [
+        "S8"
+      ],
+      "decision": "REJECT",
+      "caveat": "Multiple distinct modules; working-memory improvement specific to attention module, measured null outcomes."
+    },
+    {
+      "id": "C17",
+      "text": "Inspire3 public affiliate program proves FV is accepted.",
+      "source": [
+        "S3"
+      ],
+      "decision": "REJECT",
+      "caveat": "Named authorization must be verified from authenticated publisher account."
+    },
+    {
+      "id": "C18",
+      "text": "Public advertised 60%+ commissions apply to FV.",
+      "source": [
+        "S3"
+      ],
+      "decision": "REJECT",
+      "caveat": "No individual account rates/terms; do not promote payout claims."
+    },
+    {
+      "id": "C19",
+      "text": "FV may email or advertise affiliate links on Grok's channels.",
+      "source": [
+        "S3"
+      ],
+      "decision": "UNKNOWN_HOLD",
+      "caveat": "Require per-channel written permission and platform policies."
+    },
+    {
+      "id": "C20",
+      "text": "A public seller URL is safe to activate before approval.",
+      "source": [
+        "S3"
+      ],
+      "decision": "REJECT",
+      "caveat": "Commercial route must remain disabled without verified terms."
+    },
+    {
+      "id": "C21",
+      "text": "A near-link possible-commission disclosure is appropriate on a commercial recommendation.",
+      "source": [
+        "S9"
+      ],
+      "decision": "REQUIRE_ON_ACTIVATION",
+      "caveat": "If linked, use proximate plain English, and verify real relationship status."
+    },
+    {
+      "id": "C22",
+      "text": "Existing Focus Fieldbook and Jetpack path can be referenced.",
+      "source": [
+        "S11"
+      ],
+      "decision": "ALLOW_EXISTING_DESTINATION_ONLY",
+      "caveat": "No new form or subscriber count claim; guest delivery still not retested."
+    },
+    {
+      "id": "C23",
+      "text": "Puységur's historical notes demonstrate modern hypnosis efficacy.",
+      "source": [
+        "S12"
+      ],
+      "decision": "REJECT",
+      "caveat": "Historical record vs clinical evidence."
+    },
+    {
+      "id": "C24",
+      "text": "Outbound click equals affiliate sale or FV revenue.",
+      "source": [],
+      "decision": "REJECT",
+      "caveat": "Only independently reported and paid FV commissions are affiliate revenue."
+    },
+    {
+      "id": "C25",
+      "text": "A qualified-human session or product purchase has been independently measured today.",
+      "source": [],
+      "decision": "UNKNOWN_NOT_ZERO",
+      "caveat": "Do not substitute bot-heavy Jetpack views or merchant gross for FV net."
+    },
+    {
+      "id": "C26",
+      "text": "An actively sellable rights-cleared FV Payhip Mind SKU exists.",
+      "source": [],
+      "decision": "UNKNOWN_HOLD",
+      "caveat": "Requires authenticated SKU, rights, final checkout, digital delivery and refund proof."
+    }
+  ],
+  "release_gates": [
+    {
+      "id": "G01",
+      "gate": "named publisher approval",
+      "status": "CLOSED",
+      "acceptance_evidence": null
+    },
+    {
+      "id": "G02",
+      "gate": "approval effective dates",
+      "status": "CLOSED",
+      "acceptance_evidence": null
+    },
+    {
+      "id": "G03",
+      "gate": "authorized commercial URL",
+      "status": "CLOSED",
+      "acceptance_evidence": null
+    },
+    {
+      "id": "G04",
+      "gate": "website channel permitted",
+      "status": "CLOSED",
+      "acceptance_evidence": null
+    },
+    {
+      "id": "G05",
+      "gate": "TikTok/YouTube channels permitted",
+      "status": "CLOSED",
+      "acceptance_evidence": null
+    },
+    {
+      "id": "G06",
+      "gate": "EMAIL channel permitted",
+      "status": "CLOSED",
+      "acceptance_evidence": null
+    },
+    {
+      "id": "G07",
+      "gate": "mandatory creative/license terms",
+      "status": "CLOSED",
+      "acceptance_evidence": null
+    },
+    {
+      "id": "G08",
+      "gate": "product SKU/offer identity",
+      "status": "CLOSED",
+      "acceptance_evidence": null
+    },
+    {
+      "id": "G09",
+      "gate": "final-checkout charges and tax",
+      "status": "CLOSED",
+      "acceptance_evidence": null
+    },
+    {
+      "id": "G10",
+      "gate": "refund/returns terms and fulfillment",
+      "status": "CLOSED",
+      "acceptance_evidence": null
+    },
+    {
+      "id": "G11",
+      "gate": "signed product-specific health benefit substantiation",
+      "status": "CLOSED",
+      "acceptance_evidence": null
+    },
+    {
+      "id": "G12",
+      "gate": "offer-specific tracking validation",
+      "status": "CLOSED",
+      "acceptance_evidence": null
+    },
+    {
+      "id": "G13",
+      "gate": "founder explicit release approval",
+      "status": "CLOSED",
+      "acceptance_evidence": null
+    },
+    {
+      "id": "G14",
+      "gate": "independent link/disclosure QA",
+      "status": "CLOSED",
+      "acceptance_evidence": null
+    },
+    {
+      "id": "G15",
+      "gate": "mobile/keyboard WCAG 2.2 AA review",
+      "status": "CLOSED",
+      "acceptance_evidence": null
+    },
+    {
+      "id": "G16",
+      "gate": "no-JS and reduced-motion review",
+      "status": "CLOSED",
+      "acceptance_evidence": null
+    },
+    {
+      "id": "G17",
+      "gate": "CTA and consent testing",
+      "status": "CLOSED",
+      "acceptance_evidence": null
+    },
+    {
+      "id": "G18",
+      "gate": "no duplicate paid conversion scripts",
+      "status": "CLOSED",
+      "acceptance_evidence": null
+    },
+    {
+      "id": "G19",
+      "gate": "qualified session confidence review",
+      "status": "CLOSED",
+      "acceptance_evidence": null
+    },
+    {
+      "id": "G20",
+      "gate": "verified completed paid order/commission",
+      "status": "CLOSED",
+      "acceptance_evidence": null
+    },
+    {
+      "id": "G21",
+      "gate": "settled/cleared funds",
+      "status": "CLOSED",
+      "acceptance_evidence": null
+    },
+    {
+      "id": "G22",
+      "gate": "returns and chargebacks reconciled",
+      "status": "CLOSED",
+      "acceptance_evidence": null
+    },
+    {
+      "id": "G23",
+      "gate": "platform immutable asset IDs",
+      "status": "CLOSED",
+      "acceptance_evidence": null
+    },
+    {
+      "id": "G24",
+      "gate": "campaign UTM approvals",
+      "status": "CLOSED",
+      "acceptance_evidence": null
+    },
+    {
+      "id": "G25",
+      "gate": "merchant commission report verification",
+      "status": "CLOSED",
+      "acceptance_evidence": null
+    },
+    {
+      "id": "G26",
+      "gate": "email welcome end-to-end verification",
+      "status": "CLOSED",
+      "acceptance_evidence": null
+    },
+    {
+      "id": "G27",
+      "gate": "owned Mind Payhip SKU rights verification",
+      "status": "CLOSED",
+      "acceptance_evidence": null
+    },
+    {
+      "id": "G28",
+      "gate": "product delivered to authorized test buyer",
+      "status": "CLOSED",
+      "acceptance_evidence": null
+    },
+    {
+      "id": "G29",
+      "gate": "independent video creative rights review",
+      "status": "CLOSED",
+      "acceptance_evidence": null
+    },
+    {
+      "id": "G30",
+      "gate": "caption and transcript accessibility review",
+      "status": "CLOSED",
+      "acceptance_evidence": null
+    },
+    {
+      "id": "G31",
+      "gate": "video payload budget and CWV QA",
+      "status": "CLOSED",
+      "acceptance_evidence": null
+    },
+    {
+      "id": "G32",
+      "gate": "prior PR scope and merge-base audit",
+      "status": "CLOSED",
+      "acceptance_evidence": null
+    },
+    {
+      "id": "G33",
+      "gate": "API/CMS read-only release control",
+      "status": "CLOSED",
+      "acceptance_evidence": null
+    },
+    {
+      "id": "G34",
+      "gate": "real browser at 360/390/768/1440/1920",
+      "status": "CLOSED",
+      "acceptance_evidence": null
+    },
+    {
+      "id": "G35",
+      "gate": "merchant redemption/affiliate term audit",
+      "status": "CLOSED",
+      "acceptance_evidence": null
+    },
+    {
+      "id": "G36",
+      "gate": "weekly cohort data de-duplication",
+      "status": "CLOSED",
+      "acceptance_evidence": null
+    }
+  ],
+  "revenue_status": {
+    "affiliate_confirmed_sales": null,
+    "affiliate_paid_commissions": null,
+    "owned_confirmed_purchases": null,
+    "qualified_human_sessions": null,
+    "net_per_thousand": null,
+    "reason": "Authoritative merchant, consent/attribution and qualified-human denominator unknown; not zero."
+  },
+  "privacy": {
+    "new_analytics_script": false,
+    "pii_capture": false,
+    "signup_form_created": false,
+    "tracking_cookie_created": false
+  },
+  "known_research_correction": {
+    "R172_change_blindness": "Specified gradual changes with no standard disruption",
+    "R172_creator_training": "Specified multi-module nine-month study; working-memory effect of attention module"
+  },
+  "creatives": "Approved affiliate swipe/assets not authenticated. No copy or performance claims borrowed."
+}
