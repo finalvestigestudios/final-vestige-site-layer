@@ -366,6 +366,10 @@ jobs:
         run: |
           python -W error -m unittest discover -s products/desktop/tests -p 'test_inventory_staging_custody_r242.py'
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_inventory_staging_custody_r242.py'
+      - name: R243 manifest publication inode custody (12 methods per mode; no executable run)
+        run: |
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_inventory_publication_identity_r243.py'
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_inventory_publication_identity_r243.py'
       - name: R200 execute R194-R199 financial and policy audit tests (148 methods per mode)
         run: |
           python products/desktop/scripts/safe_audit_subprocess_r205.py
@@ -1736,6 +1740,14 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R242 normal manifest staging custody FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_inventory_staging_custody_r242.py'
           if ($LASTEXITCODE -ne 0) { throw "R242 optimized manifest staging custody FAILED" }
+      - name: R243 Windows manifest publication inode custody before packaging (12 methods per mode)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_inventory_publication_identity_r243.py'
+          if ($LASTEXITCODE -ne 0) { throw "R243 normal manifest inode custody FAILED" }
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_inventory_publication_identity_r243.py'
+          if ($LASTEXITCODE -ne 0) { throw "R243 optimized manifest inode custody FAILED" }
       - name: Verify full normal/optimized source suite before packaging (R57)
         shell: pwsh
         run: |
