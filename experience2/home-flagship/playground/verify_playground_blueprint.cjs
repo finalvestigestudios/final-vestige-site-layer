@@ -15,6 +15,8 @@ for (const marker of ['get_template()', "shortcode_exists('fv_ex2_playground')",
 }
 assert.equal((runtimeAdmission.code.match(/fv-hf-(?:evidence|title|chronicle|inquiry|method-title|observer|mind-title)/g)||[]).length,7);
 assert.equal(blueprint.steps[0].themeData.ref,'75faa8a1e0367a37c2638250a3c9ed0a0f8c0b7f');
+// A Git directory does not default to the WordPress template basename. Enforce it.
+require('./verify_assembler_theme_folder.cjs');
 assert.ok(blueprint.steps[0].themeData.url.endsWith('Automattic/themes'));
 assert.ok(plugin.includes('if (!is_page(\'fv-ex2-review\'))'));
 assert.ok(blueprint.steps.find(s=>s.step==='runPHP').code.includes('wp_insert_post('));
