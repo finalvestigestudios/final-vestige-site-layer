@@ -36,7 +36,7 @@ Before spending anything, write a one-line purpose: “I want twelve minutes of 
 
 > **Affiliate disclosure (conditional):** If Final Vestige later publishes an authorized earning link and you purchase through it, Final Vestige may earn a commission at no additional cost to you. An earning link has **not** been enabled in this draft.
 
-**Purchase action: unavailable.** Final Vestige-specific partner acceptance, terms and eligible campaign channels have not been authenticated. A public affiliate-program portal does not confer permission. There is intentionally **no checkout link here**, including an ordinary merchant URL. You can read the source-based article and use the [free Seven Day Focus Fieldbook](https://finalvestige.com/focus/) without making a purchase or providing personal information to this guide.
+**Purchase action: unavailable.** Final Vestige-specific partner acceptance, terms and eligible campaign channels have not been authenticated. A public affiliate-program portal does not confer permission. There is intentionally **no checkout or activated earning link here**. The ordinary Zen12 and Inspire3 URLs above and in the source list are **editorial citations for auditing seller descriptions**, not purchase buttons or affiliate tracking links. You can read the source-based article and use the [free Seven Day Focus Fieldbook](https://finalvestige.com/focus/) without making a purchase or providing personal information to this guide.
 
 ### Sources and standards
 

@@ -53,7 +53,7 @@ Canonical asset ID is an approved immutable Grok key. Do not store raw emails, n
 `qualified_human_session` (backend/classifier basis recorded) → `campaign_landing` → `article_to_resource_click` or `buying_guide_interest` → `confirmed_signup` **only from provider acceptance/confirmation** (not popup shown or PDF downloaded) → `affiliate_outbound` **only if merchant link approved** → `merchant_reported_paid_affiliate_conversion` (account report) → `commission_paid_and_cleared` (settlement) → adjustments/refunds. For FV-owned goods, use `merchant_confirmed_paid_owned_order`, fulfillment proof, then cleared receipt adjusted for refunds, chargebacks and *non-duplicated* fees. A shopping click, checkout open, email form submission, or reported merchant gross sales is **not FV realized revenue**.
 
 **Formula (separate 7- and 30-day cohorts):**
-- `fv_owned_net = cleared_customer_receipts - refunds - chargebacks - fees_or_costs_not_already_net_of_receipts`.
+- `fv_owned_net = cleared_customer_receipts - refunds_not_already_in_receipts - chargebacks_not_already_in_receipts - fees_or_costs_not_already_net_of_receipts`.
 - `fv_affiliate_net = cleared_commissions_received_by_FV - commission_clawbacks_or_costs_not_already_withheld`.
 - `fv_net_per_1000_qualified_human_sessions = 1000 * (fv_owned_net + fv_affiliate_net) / verified_unique_qualified_human_sessions`.
 - Keep negative net negative. Do **not** clamp losses to zero. If the denominator is zero or unavailable, or settlements/attribution cannot be reconciled, KPI = **NOT COMPUTABLE**; this must not be printed as zero. Avoid double-subtracting discounts already reflected in receipts.

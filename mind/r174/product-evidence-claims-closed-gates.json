@@ -1,0 +1,371 @@
+{
+  "reviewed_at": "2026-11-06",
+  "lane": "Mind & Perception only",
+  "status": "UNPUBLISHED_HARD_HOLD",
+  "branch": "mind-r174-hypnotizability-eligibility-and-revenue-proof-20261106",
+  "base_sha": "d399c94a6456b1f6fb8da3fbdbba878ff841198b",
+  "sources": [
+    {
+      "id": "S01",
+      "type": "merchant_official",
+      "url": "https://inspire3.com/",
+      "observed": "Catalog names Zen12, Hypnosis Live, Brainwave Shots; all efficacy language is seller messaging."
+    },
+    {
+      "id": "S02",
+      "type": "merchant_exact_offer",
+      "url": "https://zen12.com/",
+      "observed": "Premium 12 levels, 48 MP3, four audio styles, instructions/support, one-year guarantee; public November 6 price display $87.99; final checkout and refund not independently verified."
+    },
+    {
+      "id": "S03",
+      "type": "merchant_separate_offer",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "observed": "Focus Shot separate offer: seller lists 15/30-minute audios and one-year guarantee; performance claims unverified, listing price not used."
+    },
+    {
+      "id": "S04",
+      "type": "merchant_affiliate_public",
+      "url": "https://affiliates.inspire3.com/",
+      "observed": "Program existence; not publisher-specific approval or tracking rights."
+    },
+    {
+      "id": "S05",
+      "type": "primary_research",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/2926631/",
+      "observed": "50-person, 25-year Stanford scale cohort correlations .64/.82/.71."
+    },
+    {
+      "id": "S06",
+      "type": "primary_research",
+      "url": "https://doi.org/10.1080/00207144.2021.1834858",
+      "observed": "One-week two-instrument test–retest reliabilities .66/.82."
+    },
+    {
+      "id": "S07",
+      "type": "primary_research",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/12470132/",
+      "observed": "2002 Stroop 16 high/16 low suggestibility; specific task."
+    },
+    {
+      "id": "S08",
+      "type": "primary_research",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/16466414/",
+      "observed": "2006 suggestion with/without induction, high-suggestible sample."
+    },
+    {
+      "id": "S09",
+      "type": "scientific_review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38874567/",
+      "observed": "2024 review nineteen studies; fourteen in interference meta-analysis."
+    },
+    {
+      "id": "S10",
+      "type": "scientific_review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39032268/",
+      "observed": "2024 competing theoretical accounts of hypnosis mechanisms."
+    },
+    {
+      "id": "S11",
+      "type": "FTC",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "observed": "Material connection disclosures proximate and clear; disclosure page alone not enough."
+    },
+    {
+      "id": "S12",
+      "type": "FTC",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "observed": "Objective health efficacy requires appropriate scientific substantiation; adjacent disclaimer cannot cure deception."
+    },
+    {
+      "id": "S13",
+      "type": "FV_existing_resource",
+      "url": "https://finalvestige.com/focus/",
+      "observed": "Existing Focus Fieldbook destination; authoritative opt-in/welcome delivery not retested this run."
+    },
+    {
+      "id": "S14",
+      "type": "FV_existing_history",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "observed": "Existing historical research destination."
+    },
+    {
+      "id": "S15",
+      "type": "FV_existing_investigation",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "observed": "Existing published topic; active asset-to-page UTM unknown."
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "text": "Zen12 Premium includes 12 levels, 48 MP3 and four styles",
+      "decision": "SELLER_DESCRIBED_ONLY",
+      "sources": [
+        "S02"
+      ],
+      "context": "seller description not first-party product trial"
+    },
+    {
+      "id": "C02",
+      "text": "Zen12 Premium public price $87.99 Nov 6",
+      "decision": "DATED_SELLER_DISPLAY_ONLY",
+      "sources": [
+        "S02"
+      ],
+      "context": "no activated pricing in landing, promotions vary, checkout and tax unverified"
+    },
+    {
+      "id": "C03",
+      "text": "Zen12 advertises one-year return guarantee",
+      "decision": "SELLER_DESCRIBED_ONLY",
+      "sources": [
+        "S02"
+      ],
+      "context": "not proof refund paid"
+    },
+    {
+      "id": "C04",
+      "text": "12 minutes has outcome equivalent to an hour of meditation",
+      "decision": "EXCLUDE_NO_EXACT_PRODUCT_SUBSTANTIATION",
+      "sources": [
+        "S02",
+        "S12"
+      ]
+    },
+    {
+      "id": "C05",
+      "text": "Brainwave entrainment produces clinically proven focus from Zen12",
+      "decision": "EXCLUDE_NO_EXACT_PRODUCT_SUBSTANTIATION",
+      "sources": [
+        "S02",
+        "S12"
+      ]
+    },
+    {
+      "id": "C06",
+      "text": "Brainwave Shots Focus Shot format 15/30-minute",
+      "decision": "SELLER_DESCRIBED_SEPARATE_PRODUCT",
+      "sources": [
+        "S03"
+      ]
+    },
+    {
+      "id": "C07",
+      "text": "Focus Shot results for hours / safe / therapeutic",
+      "decision": "EXCLUDE_NO_PRODUCT_SPECIFIC_EVIDENCE",
+      "sources": [
+        "S03",
+        "S12"
+      ]
+    },
+    {
+      "id": "C08",
+      "text": "Hypnosis Live seller catalog exists",
+      "decision": "SELLER_CATALOG_ONLY",
+      "sources": [
+        "S01"
+      ]
+    },
+    {
+      "id": "C09",
+      "text": "A 25-year cohort showed test–retest hypnotizability correlation",
+      "decision": "STUDY_SPECIFIC_SUPPORTED",
+      "sources": [
+        "S05"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "Different hypnotizability instruments can yield different retest reliability",
+      "decision": "STUDY_SPECIFIC_SUPPORTED",
+      "sources": [
+        "S06"
+      ]
+    },
+    {
+      "id": "C11",
+      "text": "Stroop suggestion affected highly vs less suggestible groups in 2002",
+      "decision": "STUDY_SPECIFIC_SUPPORTED",
+      "sources": [
+        "S07"
+      ]
+    },
+    {
+      "id": "C12",
+      "text": "2006 suggestion effect not dependent on induction in selected cohort",
+      "decision": "STUDY_SPECIFIC_SUPPORTED",
+      "sources": [
+        "S08"
+      ]
+    },
+    {
+      "id": "C13",
+      "text": "2024 systematic review identifies multiple studies of Stroop suggestion",
+      "decision": "SCOPED_REVIEW_SUPPORTED",
+      "sources": [
+        "S09"
+      ]
+    },
+    {
+      "id": "C14",
+      "text": "Hypnosis theoretical mechanism universally established",
+      "decision": "EXCLUDE_REVIEW_REPORTS_NO_CONSENSUS",
+      "sources": [
+        "S10"
+      ]
+    },
+    {
+      "id": "C15",
+      "text": "Specific Zen12/Hypnosis Live/Brainwave Shots clinical outcomes proven by Stroop research",
+      "decision": "EXCLUDE_INVALID_TRANSFER",
+      "sources": [
+        "S07",
+        "S08",
+        "S09",
+        "S12"
+      ]
+    },
+    {
+      "id": "C16",
+      "text": "FV accepted as Inspire3 affiliate",
+      "decision": "CLOSED_PUBLISHER_ACCEPTANCE_UNKNOWN",
+      "sources": [
+        "S04"
+      ]
+    },
+    {
+      "id": "C17",
+      "text": "FV-approved earning URL and website/social/email rights",
+      "decision": "CLOSED_AUTHORIZATION_UNKNOWN",
+      "sources": [
+        "S04"
+      ]
+    },
+    {
+      "id": "C18",
+      "text": "FV affiliate commission or realized net revenue",
+      "decision": "CLOSED_NO_SETTLEMENT_PROOF",
+      "sources": []
+    },
+    {
+      "id": "C19",
+      "text": "FV Payhip owned Mind digital product currently eligible for sale",
+      "decision": "UNKNOWN_AUTHENTICATED_RIGHTS_CHECKOUT_REQUIRED",
+      "sources": []
+    },
+    {
+      "id": "C20",
+      "text": "Buyer guide can direct to free Focus destination",
+      "decision": "EXISTING_DESTINATION_NO_NEW_SUBSCRIPTION_FORM",
+      "sources": [
+        "S13"
+      ]
+    },
+    {
+      "id": "C21",
+      "text": "Affiliate block near disabled buying action",
+      "decision": "SOURCE_TESTABLE_NOT_USER_TESTED",
+      "sources": [
+        "S11"
+      ]
+    },
+    {
+      "id": "C22",
+      "text": "Optional 42-second video improves paid conversion",
+      "decision": "HYPOTHESIS_NOT_RUN",
+      "sources": []
+    }
+  ],
+  "gates": [
+    {
+      "name": "named_inspire3_publisher_acceptance",
+      "status": "CLOSED"
+    },
+    {
+      "name": "exact_permitted_program_and_offer",
+      "status": "CLOSED"
+    },
+    {
+      "name": "verified_earning_url",
+      "status": "CLOSED"
+    },
+    {
+      "name": "website_promotion_permission",
+      "status": "CLOSED"
+    },
+    {
+      "name": "social_promotion_permission",
+      "status": "CLOSED"
+    },
+    {
+      "name": "email_promotion_permission",
+      "status": "CLOSED"
+    },
+    {
+      "name": "merchant_checkout_and_taxes",
+      "status": "CLOSED"
+    },
+    {
+      "name": "refund_fulfillment",
+      "status": "CLOSED"
+    },
+    {
+      "name": "product_specific_efficacy",
+      "status": "CLOSED"
+    },
+    {
+      "name": "fv_owned_payhip_mind_sku",
+      "status": "CLOSED"
+    },
+    {
+      "name": "rights_cleared_owned_product",
+      "status": "CLOSED"
+    },
+    {
+      "name": "grok_immutable_asset_ids",
+      "status": "CLOSED"
+    },
+    {
+      "name": "first_party_qualified_human_session",
+      "status": "CLOSED"
+    },
+    {
+      "name": "signup_confirmation_reconciliation",
+      "status": "CLOSED"
+    },
+    {
+      "name": "owned_merchant_paid_order",
+      "status": "CLOSED"
+    },
+    {
+      "name": "paid_affiliate_commission",
+      "status": "CLOSED"
+    },
+    {
+      "name": "refund_fee_adjustment_reconciliation",
+      "status": "CLOSED"
+    },
+    {
+      "name": "playable_captioned_video",
+      "status": "CLOSED"
+    },
+    {
+      "name": "video_experiment_randomization",
+      "status": "CLOSED"
+    },
+    {
+      "name": "live_browser_accessibility",
+      "status": "CLOSED"
+    },
+    {
+      "name": "native_ci",
+      "status": "CLOSED"
+    },
+    {
+      "name": "founder_release_approval",
+      "status": "CLOSED"
+    }
+  ],
+  "commercial_block": "No merchant purchasing href, no affiliate URL, no commission-price claims, no new signup form or tracking scripts, no production activation."
+}
