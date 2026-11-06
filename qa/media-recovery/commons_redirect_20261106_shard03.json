@@ -1,0 +1,501 @@
+{
+  "schema": "fv-commons-redirect-readonly-shard-v1",
+  "captured_date": "2026-11-06",
+  "source": "WordPress published post editor HTML; read-only; unprobed URLs",
+  "posts": [
+    {
+      "post_id": 255,
+      "url": "https://finalvestige.com/2026/08/18/the-load-doubled-on-paper/",
+      "modified_wp": "2026-10-30T01:11:08",
+      "inline_tags": 7,
+      "commons_redirects": 7
+    },
+    {
+      "post_id": 256,
+      "url": "https://finalvestige.com/2026/08/18/the-torch-never-reopened/",
+      "modified_wp": "2026-11-02T21:39:45",
+      "inline_tags": 7,
+      "commons_redirects": 7
+    },
+    {
+      "post_id": 257,
+      "url": "https://finalvestige.com/2026/08/18/the-numbers-came-back-apollo-12/",
+      "modified_wp": "2026-10-29T20:59:35",
+      "inline_tags": 7,
+      "commons_redirects": 7
+    },
+    {
+      "post_id": 258,
+      "url": "https://finalvestige.com/2026/08/18/inside-the-joint-silver-bridge/",
+      "modified_wp": "2026-11-02T21:39:47",
+      "inline_tags": 6,
+      "commons_redirects": 2
+    },
+    {
+      "post_id": 268,
+      "url": "https://finalvestige.com/2026/08/18/they-painted-over-archimedes/",
+      "modified_wp": "2026-10-30T01:10:13",
+      "inline_tags": 10,
+      "commons_redirects": 6
+    },
+    {
+      "post_id": 367,
+      "url": "https://finalvestige.com/2026/08/19/they-found-the-bomb-twice-palomares/",
+      "modified_wp": "2026-10-29T17:34:27",
+      "inline_tags": 9,
+      "commons_redirects": 7
+    }
+  ],
+  "images": [
+    {
+      "key": "255:0",
+      "post_id": 255,
+      "image_index": 0,
+      "post_url": "https://finalvestige.com/2026/08/18/the-load-doubled-on-paper/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Figure%205.4%20-%20NARA%20-%2070172329.jpg?width=960",
+      "commons_file_title_unverified": "Figure 5.4 - NARA - 70172329.jpg",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:Figure_5.4_-_NARA_-_70172329.jpg",
+      "requested_width_px": 960,
+      "license_hints_from_caption": []
+    },
+    {
+      "key": "255:1",
+      "post_id": 255,
+      "image_index": 1,
+      "post_url": "https://finalvestige.com/2026/08/18/the-load-doubled-on-paper/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/HRWalkway.svg",
+      "commons_file_title_unverified": "HRWalkway.svg",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:HRWalkway.svg",
+      "requested_width_px": null,
+      "license_hints_from_caption": []
+    },
+    {
+      "key": "255:2",
+      "post_id": 255,
+      "image_index": 2,
+      "post_url": "https://finalvestige.com/2026/08/18/the-load-doubled-on-paper/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Hyatt%20Regency%20collapse%20support.PNG",
+      "commons_file_title_unverified": "Hyatt Regency collapse support.PNG",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:Hyatt_Regency_collapse_support.PNG",
+      "requested_width_px": null,
+      "license_hints_from_caption": [
+        "Public-domain"
+      ]
+    },
+    {
+      "key": "255:3",
+      "post_id": 255,
+      "image_index": 3,
+      "post_url": "https://finalvestige.com/2026/08/18/the-load-doubled-on-paper/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Figure%205.7%20-%20NARA%20-%2070172360.jpg?width=960",
+      "commons_file_title_unverified": "Figure 5.7 - NARA - 70172360.jpg",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:Figure_5.7_-_NARA_-_70172360.jpg",
+      "requested_width_px": 960,
+      "license_hints_from_caption": []
+    },
+    {
+      "key": "255:4",
+      "post_id": 255,
+      "image_index": 4,
+      "post_url": "https://finalvestige.com/2026/08/18/the-load-doubled-on-paper/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Figure%205.30%20a%20-%20NARA%20-%2070172364.jpg?width=960",
+      "commons_file_title_unverified": "Figure 5.30 a - NARA - 70172364.jpg",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:Figure_5.30_a_-_NARA_-_70172364.jpg",
+      "requested_width_px": 960,
+      "license_hints_from_caption": []
+    },
+    {
+      "key": "255:5",
+      "post_id": 255,
+      "image_index": 5,
+      "post_url": "https://finalvestige.com/2026/08/18/the-load-doubled-on-paper/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Hyatt%20Regency%20collapse%20floor%20view.PNG",
+      "commons_file_title_unverified": "Hyatt Regency collapse floor view.PNG",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:Hyatt_Regency_collapse_floor_view.PNG",
+      "requested_width_px": null,
+      "license_hints_from_caption": [
+        "public domain"
+      ]
+    },
+    {
+      "key": "255:6",
+      "post_id": 255,
+      "image_index": 6,
+      "post_url": "https://finalvestige.com/2026/08/18/the-load-doubled-on-paper/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Figure%205.6%20-%20NARA%20-%2070172359.jpg?width=960",
+      "commons_file_title_unverified": "Figure 5.6 - NARA - 70172359.jpg",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:Figure_5.6_-_NARA_-_70172359.jpg",
+      "requested_width_px": 960,
+      "license_hints_from_caption": []
+    },
+    {
+      "key": "256:0",
+      "post_id": 256,
+      "image_index": 0,
+      "post_url": "https://finalvestige.com/2026/08/18/the-torch-never-reopened/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Black%20Tom%20explosion%20-%201916.jpg?width=1280",
+      "commons_file_title_unverified": "Black Tom explosion - 1916.jpg",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:Black_Tom_explosion_-_1916.jpg",
+      "requested_width_px": 1280,
+      "license_hints_from_caption": [
+        "public domain"
+      ]
+    },
+    {
+      "key": "256:1",
+      "post_id": 256,
+      "image_index": 1,
+      "post_url": "https://finalvestige.com/2026/08/18/the-torch-never-reopened/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Map%20of%20Black%20Tom%20Island%2C%20Jersey%20City%2C%20New%20Jersey%20-%20showing%20area%20damaged%20by%20explosion%20and%20fire%2C%20July%2030th%201916.%20LOC%202010588272.jpg?width=1280",
+      "commons_file_title_unverified": "Map of Black Tom Island, Jersey City, New Jersey - showing area damaged by explosion and fire, July 30th 1916. LOC 2010588272.jpg",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:Map_of_Black_Tom_Island%2C_Jersey_City%2C_New_Jersey_-_showing_area_damaged_by_explosion_and_fire%2C_July_30th_1916._LOC_2010588272.jpg",
+      "requested_width_px": 1280,
+      "license_hints_from_caption": [
+        "public domain"
+      ]
+    },
+    {
+      "key": "256:2",
+      "post_id": 256,
+      "image_index": 2,
+      "post_url": "https://finalvestige.com/2026/08/18/the-torch-never-reopened/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Black%20Tom%20explosion%20-%20firefighters%20-%201916.jpg?width=1280",
+      "commons_file_title_unverified": "Black Tom explosion - firefighters - 1916.jpg",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:Black_Tom_explosion_-_firefighters_-_1916.jpg",
+      "requested_width_px": 1280,
+      "license_hints_from_caption": [
+        "Public domain"
+      ]
+    },
+    {
+      "key": "256:3",
+      "post_id": 256,
+      "image_index": 3,
+      "post_url": "https://finalvestige.com/2026/08/18/the-torch-never-reopened/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Black%20Tom%20explosion%20-%20Men%20on%20pier%20-%201916.jpg?width=1280",
+      "commons_file_title_unverified": "Black Tom explosion - Men on pier - 1916.jpg",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:Black_Tom_explosion_-_Men_on_pier_-_1916.jpg",
+      "requested_width_px": 1280,
+      "license_hints_from_caption": [
+        "Public domain"
+      ]
+    },
+    {
+      "key": "256:4",
+      "post_id": 256,
+      "image_index": 4,
+      "post_url": "https://finalvestige.com/2026/08/18/the-torch-never-reopened/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Diving%20at%20Black%20Tom%20LCCN2014702309.jpg?width=1280",
+      "commons_file_title_unverified": "Diving at Black Tom LCCN2014702309.jpg",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:Diving_at_Black_Tom_LCCN2014702309.jpg",
+      "requested_width_px": 1280,
+      "license_hints_from_caption": []
+    },
+    {
+      "key": "256:5",
+      "post_id": 256,
+      "image_index": 5,
+      "post_url": "https://finalvestige.com/2026/08/18/the-torch-never-reopened/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Girl%20with%20relics%20from%20the%20Black%20Tom%20Explosion.png?width=1280",
+      "commons_file_title_unverified": "Girl with relics from the Black Tom Explosion.png",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:Girl_with_relics_from_the_Black_Tom_Explosion.png",
+      "requested_width_px": 1280,
+      "license_hints_from_caption": [
+        "Public domain"
+      ]
+    },
+    {
+      "key": "256:6",
+      "post_id": 256,
+      "image_index": 6,
+      "post_url": "https://finalvestige.com/2026/08/18/the-torch-never-reopened/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Black%20Tom%20explosion%20-%20electrical%20poles%20-%201916.jpg?width=1280",
+      "commons_file_title_unverified": "Black Tom explosion - electrical poles - 1916.jpg",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:Black_Tom_explosion_-_electrical_poles_-_1916.jpg",
+      "requested_width_px": 1280,
+      "license_hints_from_caption": [
+        "Public domain"
+      ]
+    },
+    {
+      "key": "257:0",
+      "post_id": 257,
+      "image_index": 0,
+      "post_url": "https://finalvestige.com/2026/08/18/the-numbers-came-back-apollo-12/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Apollo%2012%20Blitzeinschlag.jpg?width=1280",
+      "commons_file_title_unverified": "Apollo 12 Blitzeinschlag.jpg",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:Apollo_12_Blitzeinschlag.jpg",
+      "requested_width_px": 1280,
+      "license_hints_from_caption": [
+        "public domain"
+      ]
+    },
+    {
+      "key": "257:1",
+      "post_id": 257,
+      "image_index": 1,
+      "post_url": "https://finalvestige.com/2026/08/18/the-numbers-came-back-apollo-12/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Apollo%2012%20crew%20walk%20to%20transfer%20van%20%28KSC-69PC-646%29.jpg?width=1280",
+      "commons_file_title_unverified": "Apollo 12 crew walk to transfer van (KSC-69PC-646).jpg",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:Apollo_12_crew_walk_to_transfer_van_(KSC-69PC-646).jpg",
+      "requested_width_px": 1280,
+      "license_hints_from_caption": [
+        "public domain"
+      ]
+    },
+    {
+      "key": "257:2",
+      "post_id": 257,
+      "image_index": 2,
+      "post_url": "https://finalvestige.com/2026/08/18/the-numbers-came-back-apollo-12/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Apollo%2012%20Saturn%20V%20launch.jpg?width=1280",
+      "commons_file_title_unverified": "Apollo 12 Saturn V launch.jpg",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:Apollo_12_Saturn_V_launch.jpg",
+      "requested_width_px": 1280,
+      "license_hints_from_caption": [
+        "public domain"
+      ]
+    },
+    {
+      "key": "257:3",
+      "post_id": 257,
+      "image_index": 3,
+      "post_url": "https://finalvestige.com/2026/08/18/the-numbers-came-back-apollo-12/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/KSC-69P-0856.jpg?width=1280",
+      "commons_file_title_unverified": "KSC-69P-0856.jpg",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:KSC-69P-0856.jpg",
+      "requested_width_px": 1280,
+      "license_hints_from_caption": [
+        "public domain"
+      ]
+    },
+    {
+      "key": "257:4",
+      "post_id": 257,
+      "image_index": 4,
+      "post_url": "https://finalvestige.com/2026/08/18/the-numbers-came-back-apollo-12/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Apollo%20Command%20Module%20Main%20Control%20Panel.gif?width=1280",
+      "commons_file_title_unverified": "Apollo Command Module Main Control Panel.gif",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:Apollo_Command_Module_Main_Control_Panel.gif",
+      "requested_width_px": 1280,
+      "license_hints_from_caption": [
+        "public domain"
+      ]
+    },
+    {
+      "key": "257:5",
+      "post_id": 257,
+      "image_index": 5,
+      "post_url": "https://finalvestige.com/2026/08/18/the-numbers-came-back-apollo-12/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Lunar%20module%20AS12-51-7507.jpg?width=1280",
+      "commons_file_title_unverified": "Lunar module AS12-51-7507.jpg",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:Lunar_module_AS12-51-7507.jpg",
+      "requested_width_px": 1280,
+      "license_hints_from_caption": [
+        "public domain"
+      ]
+    },
+    {
+      "key": "257:6",
+      "post_id": 257,
+      "image_index": 6,
+      "post_url": "https://finalvestige.com/2026/08/18/the-numbers-came-back-apollo-12/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Apollo%2012%20LRO.jpg?width=1280",
+      "commons_file_title_unverified": "Apollo 12 LRO.jpg",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:Apollo_12_LRO.jpg",
+      "requested_width_px": 1280,
+      "license_hints_from_caption": [
+        "public domain"
+      ]
+    },
+    {
+      "key": "258:0",
+      "post_id": 258,
+      "image_index": 0,
+      "post_url": "https://finalvestige.com/2026/08/18/inside-the-joint-silver-bridge/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Silver%20Bridge%2C%201928.jpg",
+      "commons_file_title_unverified": "Silver Bridge, 1928.jpg",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:Silver_Bridge%2C_1928.jpg",
+      "requested_width_px": null,
+      "license_hints_from_caption": [
+        "public domain"
+      ]
+    },
+    {
+      "key": "258:5",
+      "post_id": 258,
+      "image_index": 5,
+      "post_url": "https://finalvestige.com/2026/08/18/inside-the-joint-silver-bridge/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Silver%20Bridge%20-%20DPLA%20-%209fc0bcf07698072f128124fc79edd1c7%20%28page%202%29.jpg",
+      "commons_file_title_unverified": "Silver Bridge - DPLA - 9fc0bcf07698072f128124fc79edd1c7 (page 2).jpg",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:Silver_Bridge_-_DPLA_-_9fc0bcf07698072f128124fc79edd1c7_(page_2).jpg",
+      "requested_width_px": null,
+      "license_hints_from_caption": []
+    },
+    {
+      "key": "268:0",
+      "post_id": 268,
+      "image_index": 0,
+      "post_url": "https://finalvestige.com/2026/08/18/they-painted-over-archimedes/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Archimedes%20Palimpsest.jpg?width=1280",
+      "commons_file_title_unverified": "Archimedes Palimpsest.jpg",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:Archimedes_Palimpsest.jpg",
+      "requested_width_px": 1280,
+      "license_hints_from_caption": [
+        "Public-domain"
+      ]
+    },
+    {
+      "key": "268:2",
+      "post_id": 268,
+      "image_index": 2,
+      "post_url": "https://finalvestige.com/2026/08/18/they-painted-over-archimedes/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/002r-001v%20Arch13r%20Sinar%20uvblue%20norm8%20Euchologion%20up%20%289737603804%29.jpg?width=960",
+      "commons_file_title_unverified": "002r-001v Arch13r Sinar uvblue norm8 Euchologion up (9737603804).jpg",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:002r-001v_Arch13r_Sinar_uvblue_norm8_Euchologion_up_(9737603804).jpg",
+      "requested_width_px": 960,
+      "license_hints_from_caption": [
+        "CC BY 3.0"
+      ]
+    },
+    {
+      "key": "268:3",
+      "post_id": 268,
+      "image_index": 3,
+      "post_url": "https://finalvestige.com/2026/08/18/they-painted-over-archimedes/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/017r-016v%20Heiberg-UV-blue%20%289737623542%29.jpg?width=960",
+      "commons_file_title_unverified": "017r-016v Heiberg-UV-blue (9737623542).jpg",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:017r-016v_Heiberg-UV-blue_(9737623542).jpg",
+      "requested_width_px": 960,
+      "license_hints_from_caption": []
+    },
+    {
+      "key": "268:5",
+      "post_id": 268,
+      "image_index": 5,
+      "post_url": "https://finalvestige.com/2026/08/18/they-painted-over-archimedes/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/017r-016v%20Arch07r%20Sinar%20pseudo%20no-veil%20%289734386225%29.jpg?width=960",
+      "commons_file_title_unverified": "017r-016v Arch07r Sinar pseudo no-veil (9734386225).jpg",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:017r-016v_Arch07r_Sinar_pseudo_no-veil_(9734386225).jpg",
+      "requested_width_px": 960,
+      "license_hints_from_caption": [
+        "CC BY 3.0"
+      ]
+    },
+    {
+      "key": "268:6",
+      "post_id": 268,
+      "image_index": 6,
+      "post_url": "https://finalvestige.com/2026/08/18/they-painted-over-archimedes/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/028v-021r%20Arch08r%20XRF%20FeFront%20registered%20%289734104759%29.jpg?width=1280",
+      "commons_file_title_unverified": "028v-021r Arch08r XRF FeFront registered (9734104759).jpg",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:028v-021r_Arch08r_XRF_FeFront_registered_(9734104759).jpg",
+      "requested_width_px": 1280,
+      "license_hints_from_caption": [
+        "CC BY 3.0"
+      ]
+    },
+    {
+      "key": "268:9",
+      "post_id": 268,
+      "image_index": 9,
+      "post_url": "https://finalvestige.com/2026/08/18/they-painted-over-archimedes/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/176r-173v%20Hype03r%20Sinar%20LED445-735%20pseudo%20%289734660151%29.jpg?width=960",
+      "commons_file_title_unverified": "176r-173v Hype03r Sinar LED445-735 pseudo (9734660151).jpg",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:176r-173v_Hype03r_Sinar_LED445-735_pseudo_(9734660151).jpg",
+      "requested_width_px": 960,
+      "license_hints_from_caption": []
+    },
+    {
+      "key": "367:1",
+      "post_id": 367,
+      "image_index": 1,
+      "post_url": "https://finalvestige.com/2026/08/19/they-found-the-bomb-twice-palomares/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Operation_Chrome_Dome_route.jpg?width=1280",
+      "commons_file_title_unverified": "Operation Chrome Dome route.jpg",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:Operation_Chrome_Dome_route.jpg",
+      "requested_width_px": 1280,
+      "license_hints_from_caption": [
+        "CC BY-SA 2.5"
+      ]
+    },
+    {
+      "key": "367:2",
+      "post_id": 367,
+      "image_index": 2,
+      "post_url": "https://finalvestige.com/2026/08/19/they-found-the-bomb-twice-palomares/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/USS_Skill_(MSO-471)_operating_off_the_coast_of_Spain%2C_in_February_1966_(428-NPC-36556).jpg?width=1280",
+      "commons_file_title_unverified": "USS Skill (MSO-471) operating off the coast of Spain, in February 1966 (428-NPC-36556).jpg",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:USS_Skill_(MSO-471)_operating_off_the_coast_of_Spain%2C_in_February_1966_(428-NPC-36556).jpg",
+      "requested_width_px": 1280,
+      "license_hints_from_caption": [
+        "public domain"
+      ]
+    },
+    {
+      "key": "367:3",
+      "post_id": 367,
+      "image_index": 3,
+      "post_url": "https://finalvestige.com/2026/08/19/they-found-the-bomb-twice-palomares/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Zoeken_naar_H_bom_in_Spanje%2C_de_Alvin_wordt_te_water_gelaten%2C_Bestanddeelnr_918-8161.jpg?width=1280",
+      "commons_file_title_unverified": "Zoeken naar H bom in Spanje, de Alvin wordt te water gelaten, Bestanddeelnr 918-8161.jpg",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:Zoeken_naar_H_bom_in_Spanje%2C_de_Alvin_wordt_te_water_gelaten%2C_Bestanddeelnr_918-8161.jpg",
+      "requested_width_px": 1280,
+      "license_hints_from_caption": [
+        "CC0"
+      ]
+    },
+    {
+      "key": "367:5",
+      "post_id": 367,
+      "image_index": 5,
+      "post_url": "https://finalvestige.com/2026/08/19/they-found-the-bomb-twice-palomares/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/428-GX-_USN_118930_(26941557635).jpg?width=1280",
+      "commons_file_title_unverified": "428-GX- USN 118930 (26941557635).jpg",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:428-GX-_USN_118930_(26941557635).jpg",
+      "requested_width_px": 1280,
+      "license_hints_from_caption": [
+        "public domain"
+      ]
+    },
+    {
+      "key": "367:6",
+      "post_id": 367,
+      "image_index": 6,
+      "post_url": "https://finalvestige.com/2026/08/19/they-found-the-bomb-twice-palomares/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/1966_Palomares_B-52_crash_-_recovered_H-bomb.jpg?width=1280",
+      "commons_file_title_unverified": "1966 Palomares B-52 crash - recovered H-bomb.jpg",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:1966_Palomares_B-52_crash_-_recovered_H-bomb.jpg",
+      "requested_width_px": 1280,
+      "license_hints_from_caption": [
+        "public domain"
+      ]
+    },
+    {
+      "key": "367:7",
+      "post_id": 367,
+      "image_index": 7,
+      "post_url": "https://finalvestige.com/2026/08/19/they-found-the-bomb-twice-palomares/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Palomares_barrels.jpg?width=1280",
+      "commons_file_title_unverified": "Palomares barrels.jpg",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:Palomares_barrels.jpg",
+      "requested_width_px": 1280,
+      "license_hints_from_caption": [
+        "public domain"
+      ]
+    },
+    {
+      "key": "367:8",
+      "post_id": 367,
+      "image_index": 8,
+      "post_url": "https://finalvestige.com/2026/08/19/they-found-the-bomb-twice-palomares/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Recovered_Mk_28RI_bomb.JPG?width=1280",
+      "commons_file_title_unverified": "Recovered Mk 28RI bomb.JPG",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:Recovered_Mk_28RI_bomb.JPG",
+      "requested_width_px": 1280,
+      "license_hints_from_caption": [
+        "public domain"
+      ]
+    }
+  ]
+}
