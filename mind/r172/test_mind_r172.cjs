@@ -30,7 +30,7 @@ function sourceCheck(b) {
   ok(!/<script\b/i.test(buyer+hub),"no new JS, scripts or trackers");
   ok(!/<form\b/i.test(buyer+hub),"do not duplicate signup mechanism");
   ok(!/<(?:video|audio)[^>]*\sautoplay(?:\s|=|>)/i.test(buyer),"no media autoplay attribute");
-  ok(/<button[^>]*\bdisabled\b[^>]*>/i.test(buyer),"merchant button must natively be disabled");
+  ok(/<button[^>]*\sdisabled(?:\s|=|>)/i.test(buyer),"merchant button must natively be disabled");
   ok(/aria-disabled="true"/i.test(buyer),"a11y disability state missing");
   ok(/prospective affiliate disclosure/i.test(buyer),"visible adjacent disclosure missing");
   ok(/may earn a commission at no additional cost to you/i.test(buyer),"plain compensation disclosure missing");
