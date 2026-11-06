@@ -113,7 +113,7 @@ function run() {
     assert.ok(violations.length>0, 'adversarial mutation NOT detected: '+label);
     detected++;
   }
-  return {source_checks:'PASS', baseline_assertions:48,mutations_detected:detected,mutations_total:cases.length,test_mode:'native Node source checks only; no real browser or merchant'};
+  return {source_checks:'PASS', baseline_assertions:48,mutations_detected:detected,mutations_total:cases.length,test_mode:'CommonJS-compatible source checks; no real browser, merchant or native-Node CI evidence'};
 }
 if (require.main===module) console.log(JSON.stringify(run(),null,2));
 module.exports={verify,run};
