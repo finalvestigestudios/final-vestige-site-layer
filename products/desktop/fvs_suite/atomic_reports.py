@@ -16,6 +16,7 @@ from pathlib import Path
 from typing import Callable, Iterable, Mapping
 
 from .csv_formula_guard import has_unescaped_formula_prefix
+from .csv_userdict_custody import verify_userdict_storage
 
 
 # Application imports already cap source rows at 200,000. The publication API
@@ -190,6 +191,10 @@ def write_csv_report(destination: str | Path, fields: Iterable[str],
                 if (any(type(name) is not str for name, _ in entries)
                         or len({name for name, _ in entries}) != len(entries)):
                     raise ValueError("Invalid or duplicate CSV report row columns")
+                # Native backing custody: a UserDict subclass must not supply
+                # a plausible but forged .items() view of financial evidence.
+                # Retain R217 pair validation before checking the backing dict.
+                entries = verify_userdict_storage(row, entries, MAX_REPORT_COLUMNS)
                 rendered_row = {
                     name: _render_cell(value, cell) for name, value in entries
                 }
