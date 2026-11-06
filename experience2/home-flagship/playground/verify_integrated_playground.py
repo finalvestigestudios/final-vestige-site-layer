@@ -57,7 +57,7 @@ def verify_image_bytes(body, expected):
             "bytes": len(body), "sha256": hashlib.sha256(body).hexdigest()}
 
 
-def read_semantics(page, expect_wp=True):
+def read_semantics(page):
     return page.evaluate("""() => {
       const root=document.querySelector('[data-fv-home-flagship]');
       const inSite=!!document.querySelector('.wp-site-blocks');
@@ -73,6 +73,9 @@ def read_semantics(page, expect_wp=True):
         overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth,
         source_actions:tabs.length,
         has_review_label:!!document.querySelector('.fv-hf__studio-note') && /NOT LIVE/.test(document.querySelector('.fv-hf__studio-note').textContent),
+        static_visible:{cases:[...document.querySelectorAll('.fv-hf__case')].every(x=>x.getBoundingClientRect().height>0),
+          chronicle:[...document.querySelectorAll('.fv-hf__chronicle-entry')].every(x=>x.getBoundingClientRect().height>0),
+          observer:[...document.querySelectorAll('.fv-hf__observer-frame')].every(x=>x.getBoundingClientRect().height>0)},
         title:document.title};
     }""" % json.dumps(list(CHAPTERS)))
 
@@ -95,10 +98,6 @@ def assert_semantics(data, require_wp=True):
     return failures
 
 
-def safe_filename(s):
-    return ''.join(c for c in s if c.isalnum() or c in ('-', '_', '.'))[:90]
-
-
 def run(url, output, authorized_host, axe_path):
     from playwright.sync_api import sync_playwright
     admit_url(url, authorized_host)
@@ -113,6 +112,17 @@ def run(url, output, authorized_host, axe_path):
                 ctx=browser.new_context(viewport={'width':width,'height':height},java_script_enabled=js,reduced_motion='reduce' if width==390 else 'no-preference')
                 page=ctx.new_page(); errors=[]; responses={}
                 page.on('pageerror',lambda exc: errors.append(str(exc)))
+                # Refuse a cross-origin top-frame redirect before it can load production.
+                def gate_navigation(route):
+                    req=route.request
+                    if req.is_navigation_request() and req.frame == page.main_frame:
+                        try: admit_url(req.url, authorized_host)
+                        except ValueError:
+                            errors.append('blocked unsafe main-frame navigation: '+req.url)
+                            route.abort()
+                            return
+                    route.continue_()
+                page.route('**/*', gate_navigation)
                 def capture(resp):
                     if any(tag in resp.url for tag in IMAGES):
                         responses[resp.url]=resp
@@ -122,6 +132,8 @@ def run(url, output, authorized_host, axe_path):
                     page.wait_for_timeout(350)
                     evidence=read_semantics(page)
                     errs=assert_semantics(evidence)
+                    if not js and not all(evidence['static_visible'].values()):
+                        errs.append('no-JS hides historical entries or observation evidence')
                     errs += [f'JS: {x}' for x in errors]
                     if js:
                         # Actual user input, not merely a DOM text selector.
@@ -167,6 +179,12 @@ def run(url, output, authorized_host, axe_path):
                         except Exception as e:errs.append('axe unable to execute: '+str(e)[:130])
                     stem=f'{width}x{height}_{"js" if js else "nojs"}'
                     page.screenshot(path=str(output/(stem+'.png')),full_page=(width==390 and js),animations='disabled')
+                    if width in (390,1440) and js:
+                        page.evaluate("document.documentElement.style.zoom='2'")
+                        zoom=page.evaluate('document.documentElement.scrollWidth-document.documentElement.clientWidth')
+                        evidence['zoom_200_overflow']=zoom
+                        if zoom>1:errs.append('200% CSS zoom horizontal overflow: '+str(zoom))
+                        page.screenshot(path=str(output/(stem+'_zoom200.png')),animations='disabled')
                     report['checks'].append({'scenario':stem,'pass':not errs,'errors':errs,'observations':evidence})
                     report['failures'] += [stem+': '+x for x in errs]
                 except Exception as e:report['failures'].append(f'{width}x{height} {js}: {str(e)[:280]}')
