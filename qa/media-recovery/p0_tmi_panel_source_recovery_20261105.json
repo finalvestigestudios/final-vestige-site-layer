@@ -1,0 +1,104 @@
+{
+  "schema": "fv-media-p0-tmi-panel-archival-recovery-v1",
+  "observed_at_utc": "2026-11-06T03:26:00Z",
+  "scope": "Published source and primary provenance research, NOT real browser network evidence",
+  "provenance": {
+    "frozen_inventory_path": "qa/media-recovery/parts/03.json",
+    "frozen_inventory_blob_sha": "49183f66f880f7c4dfd363acca906876877f2e5e",
+    "site_qa_owner_pr": 154,
+    "media_recovery_owner_pr": 183,
+    "worklist_blob_sha": "9cdf7af84175883775aaebf55ffa5ca77b33e423"
+  },
+  "image": {
+    "key": "285:2",
+    "post_id": 285,
+    "post_url": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+    "published_source_url": "https://blog.ucsusa.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+    "published_alt": "Three Mile Island control panel showing dense rows of gauges, lights and switches.",
+    "published_html_width_px": null,
+    "published_html_height_px": null,
+    "retriever_observation": {
+      "method": "web_text_retriever_wrapper",
+      "wrapper_status": 500,
+      "redirect_to": "https://blog.ucs.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+      "origin_http_status": null,
+      "visitor_browser_http_status": null,
+      "is_proof_of_browser_failure": false
+    },
+    "live_browser": {
+      "confirmed_broken": null,
+      "current_src": null,
+      "http_status": null,
+      "mime": null,
+      "decoded_width_px": null,
+      "decoded_height_px": null,
+      "transferred_bytes": null,
+      "full_scroll_screenshot": null
+    },
+    "publisher_context": {
+      "url": "https://blog.ucs.org/dlochbaum/nuclear-plant-accidents-three-mile-island/",
+      "published_date": "2016-07-26",
+      "figure_number": 4,
+      "credit": "Nuclear Regulatory Commission",
+      "figure_description": "TMI-2 panel with maintenance tags obscuring the emergency feedwater valve indicator light.",
+      "original_embedded_link_exact_published_source": true
+    },
+    "recovery_candidate": {
+      "catalog_url": "https://commons.wikimedia.org/wiki/File:TMI-2_control_panel.png",
+      "catalog_title": "TMI-2 control panel.png",
+      "catalog_original_width_px": 604,
+      "catalog_original_height_px": 590,
+      "catalog_original_mime": "image/png",
+      "catalog_original_file_size_label": "459 KB",
+      "catalog_source_publication": "Report of The President's Commission on the Accident at Three Mile Island: The Need for Change: The Legacy of TMI, page 97",
+      "catalog_publication_date": "1979-10",
+      "catalog_licensing_statement": "Public domain as a U.S. federal government work, as asserted on the Commons item page; individual site-context and retouch-history review required.",
+      "catalog_current_version_retouched": true,
+      "catalog_original_2009_version_size_label": "290 KB",
+      "candidate_photo_subject_match": "CONTROL_PANEL_WITH_MAINTENANCE_TAGS",
+      "binary_identical_to_published_jpeg": null,
+      "same_exact_crop_to_published_jpeg": null,
+      "source_master_sha256": null,
+      "rights_republication_status": "HOLD_FINAL_ITEM_AND_RETOUCH_REVIEW",
+      "conditional_max_output_width_px": 604,
+      "conditional_max_output_height_px": 590,
+      "requested_960px_upscale_allowed": false,
+      "do_not_crop_explanatory_header": true,
+      "proposed_editorial_alt_only": "Three Mile Island Unit 2 control panel with maintenance tags covering an emergency feedwater valve indicator light.",
+      "proposed_credit_only": "Photo: U.S. President's Commission on the Accident at Three Mile Island, 1979, p. 97; Commons reproduction, version and rights subject to final review.",
+      "release": {
+        "rights_approved": false,
+        "visually_compared_originals": false,
+        "wp_media_upload_approved": false,
+        "wp_post_edit_approved": false,
+        "rehost_approved": false,
+        "visitor_failure_verified": false
+      }
+    }
+  },
+  "acceptance": {
+    "actual_guest_chrome_required": true,
+    "exact_image_identity_comparison_required": true,
+    "item_level_reuse_review_required": true,
+    "max_width_px": 960,
+    "no_upscale": true,
+    "source_and_alt_rollback_required": true,
+    "cold_before_after_transfer_measurement_required": true,
+    "automatic_post_rewrite": false,
+    "production_changes_made": 0,
+    "binary_downloads_made": 0
+  },
+  "sitewide_baseline": {
+    "previous_broken_claim": 42,
+    "previous_broken_claim_browser_verified": false,
+    "previous_wire_reduction_claim_percent": 76,
+    "previous_wire_reduction_measured": false,
+    "frozen_published_posts": 61,
+    "frozen_inline_images": 355,
+    "newer_published_posts_snapshot": 66,
+    "newer_inline_images_snapshot": 361,
+    "over_1point5MiB_wp_originals": 13,
+    "over_1point5MiB_wp_original_storage_bytes": 43522829,
+    "production_repairs_made": 0
+  }
+}
