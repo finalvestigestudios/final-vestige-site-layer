@@ -1,0 +1,152 @@
+{
+  "schema": "fv-media-p0-primary-record-correction-20261105-v1",
+  "captured_date": "2026-11-05",
+  "provenance": {
+    "pinned_prior_image_inventory": "qa/media-recovery/parts/03.json",
+    "pinned_prior_image_inventory_git_blob": "49183f66f880f7c4dfd363acca906876877f2e5e",
+    "pinned_p0_disposition": "qa/media-recovery/p0_guest_browser_disposition_pending_20261105.json",
+    "pinned_p0_disposition_git_blob": "9bf9a973fce37a546f8c3e79ecd0c34345eb2457",
+    "site_qa_pr": 154,
+    "image_worklist_pr": 183
+  },
+  "scope": {
+    "inspected_priority_slots": 2,
+    "published_article_baseline": 66,
+    "published_image_slots_baseline": 361,
+    "old_reported_broken": 42,
+    "old_reported_broken_status": "UNVERIFIED",
+    "claimed_reduction_percent": 76,
+    "claimed_reduction_status": "UNMEASURED",
+    "live_wordpress_changes": 0,
+    "image_binary_downloads": 0,
+    "public_release_authorized": false
+  },
+  "method": "New independently accessible primary catalog records and agency reuse-policy check; source URLs/ALTs pinned to GitHub. No origin or guest browser network probe and no image binary acquisition.",
+  "rows": [
+    {
+      "key": "285:5",
+      "post_id": 285,
+      "page_url": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+      "published_source_url": "https://images.saymedia-content.com/.image/ar_16:9,c_fill,cs_srgb,fl_progressive,q_auto:eco,w_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg",
+      "published_alt": "Aerial view of the Three Mile Island nuclear generating station on the Susquehanna River.",
+      "retriever_observation": {
+        "method": "independent_web_text_retriever_wrapper",
+        "wrapper_code": 404,
+        "origin_http": false,
+        "visitor_browser_http": false
+      },
+      "visitor_http_status": null,
+      "visitor_current_src": null,
+      "visitor_natural_width": null,
+      "visitor_natural_height": null,
+      "visitor_encoded_data_length": null,
+      "visitor_broken": null,
+      "replacement_candidate": {
+        "catalog_url": "https://wwwn.cdc.gov/phil/Details.aspx?pid=1194",
+        "catalog_host": "wwwn.cdc.gov",
+        "catalog_id": "CDC-PHIL-1194",
+        "catalog_caption": "Historic image of the Three Mile Island nuclear power plant near Middletown, Pennsylvania.",
+        "content_provider": "CDC/ Dr. Ewing",
+        "photographer": "Dr. Ewing",
+        "creation_date": null,
+        "catalog_high_resolution_label": "4.91 MB",
+        "catalog_rights_text": "Public domain; credit CDC and photographer and link back to PHIL in electronic media",
+        "secondary_file_catalog": "https://commons.wikimedia.org/wiki/File:Three_Mile_Island_nuclear_power_plant.jpg",
+        "secondary_original_width_px": 2843,
+        "secondary_original_height_px": 1817,
+        "proposed_secondary_960px_width": 960,
+        "proposed_secondary_960px_height": 614,
+        "cdc_highres_intrinsic_px": null,
+        "identical_to_published_photo": null,
+        "identical_to_official_cdc_master": null,
+        "matches_subject": "PLANT_ONLY_AERIAL_COMPOSITION_UNVERIFIED",
+        "reuse_policy_url": "https://www.cdc.gov/other/agencymaterials.html",
+        "rights_copyright_classification": "OFFICIAL_ITEM_PUBLIC_DOMAIN",
+        "agency_attribution_required": true,
+        "individual_credit_required": true,
+        "source_site_link_required": true,
+        "prominent_nonendorsement_disclaimer_required": true,
+        "free_original_source_statement_required": true,
+        "substantive_content_change_prohibited": true,
+        "rights_release_review": "HOLD_SITE_CONTEXT_AND_CREDIT_QA",
+        "proposed_credit": "CDC / Dr. Ewing. Source: CDC Public Health Image Library, image 1194.",
+        "reuse_policy_verified": true
+      },
+      "release": {
+        "image_mirror_approved": false,
+        "wp_upload_approved": false,
+        "published_post_edit_approved": false,
+        "staging_requires_guest_failure": true,
+        "staging_requires_same_scene_editorial_review": true,
+        "staging_requires_binary_decode": true,
+        "staging_requires_source_attribution_and_disclaimer": true,
+        "staging_requires_responsive_screenshots": true
+      }
+    },
+    {
+      "key": "287:5",
+      "post_id": 287,
+      "page_url": "https://finalvestige.com/2026/08/19/the-warning-was-a-man-waving-sunshine-skyway/",
+      "published_source_url": "https://stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+      "published_alt": "The old Sunshine Skyway wreckage and the later bridge replacement in Tampa Bay.",
+      "retriever_observation": {
+        "method": "independent_web_text_retriever_wrapper",
+        "wrapper_code": 404,
+        "origin_http": false,
+        "visitor_browser_http": false
+      },
+      "visitor_http_status": null,
+      "visitor_current_src": null,
+      "visitor_natural_width": null,
+      "visitor_natural_height": null,
+      "visitor_encoded_data_length": null,
+      "visitor_broken": null,
+      "replacement_candidate": {
+        "catalog_url": "https://floridamemory.com/items/show/131903",
+        "catalog_host": "floridamemory.com",
+        "catalog_id": "K894127",
+        "catalog_title": "View of the old and new Sunshine Skyway bridges from St. Petersburg, Florida.",
+        "photographer": "Stewart, H. Milo",
+        "catalog_date": "1987 (circa)",
+        "depicts_old_and_replacement_bridge": true,
+        "matches_subject": "OLD_AND_NEW_BRIDGES_SAME_THEME_NOT_PROVEN_IDENTICAL_PHOTO",
+        "catalog_image_relative_path": "/fpc/commerce/K894127.jpg",
+        "catalog_image_url_derived_not_http_checked": "https://floridamemory.com/fpc/commerce/K894127.jpg",
+        "photographer_credit": "State Archives of Florida / Stewart",
+        "archive_rights_policy_url": "https://dos.fl.gov/communications/press-releases/2017/florida-memory-achieves-major-milestone-with-the-200-000th-historical-photograph-added-online/",
+        "archive_item_rights_field": "NOT_EXPLICITLY_LICENSED_ON_ITEM_PAGE",
+        "archive_general_reuse_guidance": "2017 Florida Department of State press release states online photographs are free of copyright restrictions if State Archives is credited; item-specific commercial/reproduction review still required.",
+        "catalog_original_pixel_width": null,
+        "catalog_original_pixel_height": null,
+        "conditional_max_derivative_width_px": 960,
+        "conditional_derivative_height_px": null,
+        "no_upscale": true,
+        "exact_pixel_match_to_published_src": null,
+        "alternate_rejected_for_this_alt": {
+          "catalog_url": "https://www.floridamemory.com/items/show/32083",
+          "catalog_id": "RC09237",
+          "date": "1980-05-09",
+          "reason": "Depicts 1980 collapse; does not depict the later replacement bridge named in the existing ALT. This is not a drop-in for slot 287:5."
+        },
+        "rights_release_review": "HOLD_ITEM_LICENSE_AND_CREDIT_QA"
+      },
+      "release": {
+        "image_mirror_approved": false,
+        "wp_upload_approved": false,
+        "published_post_edit_approved": false,
+        "staging_requires_guest_failure": true,
+        "staging_requires_same_scene_editorial_review": true,
+        "staging_requires_binary_decode": true,
+        "staging_requires_source_attribution_and_disclaimer": true,
+        "staging_requires_responsive_screenshots": true
+      }
+    }
+  ],
+  "known_limitations": [
+    "Web text retrieval wrapper 404 is not the image origin HTTP status or decoded guest-browser failure.",
+    "CDC official catalog says 4.91 MB high-resolution; Commons file is 2843x1817 and 2.95 MB, so Commons is not assumed binary-identical to CDC master.",
+    "Florida Memory physical transparency dimension does not provide pixel dimensions or license for caching.",
+    "Skyway 1987 subject candidate is historically consistent with the existing ALT describing old wreckage AND later replacement; 1980 crash-only alternative is not.",
+    "No image downloaded or cached; no WordPress, homepage design, plugin, or subscription changes."
+  ]
+}
