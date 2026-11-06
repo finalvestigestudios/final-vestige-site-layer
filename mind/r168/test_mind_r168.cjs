@@ -116,7 +116,7 @@ const cases=[
 ['matrix',s=>{let x=JSON.parse(s);x.measurement.realized_net_revenue=1000;return JSON.stringify(x)}],
 ['matrix',s=>{let x=JSON.parse(s);x.payhip_fallback.eligible_owned_mind_sku='fake';return JSON.stringify(x)}],
 ['matrix',s=>{let x=JSON.parse(s);x.claims.find(q=>q.id==='Z12-05').status='SCIENCE_SUPPORTED';return JSON.stringify(x)}],
-['plan',s=>s.replace('NOT COMPUTABLE','zero')],
+['plan',s=>s.replaceAll('NOT COMPUTABLE','zero')],
 ['plan',s=>s.replace('preload="none"','preload="auto"')],
 ['plan',s=>s.replace('H0:','HO:')]
 ];
