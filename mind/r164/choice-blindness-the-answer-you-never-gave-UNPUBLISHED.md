@@ -35,13 +35,13 @@ We usually encounter this distinction in small ways. After buying something, we 
 
 The laboratory finding is narrower and more powerful: if investigators keep a record of what was chosen, they can compare it with what someone later reports and see that the story does not always track the original act.
 
-## The jam that changed after the tasting
+## The jam that changed before the final choice
 
-The next test removed photographs from the picture entirely. In a 2010 paper in *Cognition*, Hall and colleagues described a public-market tasting setup. Shoppers sampled two varieties of jam or tea and declared a preference. During some follow-up tastings, researchers secretly swapped the contents of the containers, so the participant tasted the nonselected option while being invited to justify the preference. [2]
+The next test removed photographs from the picture entirely. In a 2010 paper in *Cognition*, Hall and colleagues described a public-market setup in which shoppers **tasted jam or smelled tea** before declaring a preference. The two-compartment containers were covertly reversed during initial sampling, *before* the final choice; the discrepancy became apparent when the selected container was sampled again. Participants could thus encounter the unchosen jam by tasting or the unchosen tea by smelling it while explaining their preference. [2]
 
 Across manipulated trials, no more than a third of the substitutions were detected, according to the paper's abstract. Even relatively distinct pairs did not always produce detection. That result extends the choice-blindness question into sensory judgments with ordinary consumer goods.
 
-But this was not a retail-conversion experiment. It did not measure advertising performance, checkout behavior, post-purchase satisfaction, or willingness to pay for a meditation product. It tested whether people detected substitutions in a taste-and-smell procedure.
+But this was not a retail-conversion experiment. It did not measure advertising performance, checkout behavior, post-purchase satisfaction, or willingness to pay for a meditation product. It tested whether people detected a concealed change in a jam-tasting and tea-smelling procedure.
 
 The lesson for readers is not 'your senses are useless.' It is to keep the **original record** separate from the **subsequent account**. If a claim about a product can be backed only by a persuasive description written after the fact, what independent evidence shows that the promised effect occurred?
 
