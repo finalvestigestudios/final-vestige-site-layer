@@ -1,0 +1,457 @@
+{
+  "schema": "fv-mind-claims-v1",
+  "milestone": "R176",
+  "observed_at": "2026-11-06",
+  "scope": "UNPUBLISHED, no commerce activation",
+  "activation": false,
+  "affiliate_earning_url": null,
+  "verified_affiliate_approval": false,
+  "verified_payhip_mind_sku": null,
+  "paid_affiliate_commissions_confirmed": null,
+  "merchant_confirmed_sales": null,
+  "realized_net_revenue_per_1000_qualified_human_sessions": null,
+  "sources": [
+    {
+      "id": "I3-CAT",
+      "url": "https://inspire3.com/",
+      "owner": "Inspire3",
+      "asof": "2026-11-06",
+      "type": "official catalog"
+    },
+    {
+      "id": "Z12-EXACT",
+      "url": "https://zen12.com/",
+      "owner": "Zen12",
+      "asof": "2026-11-06",
+      "type": "seller exact Premium page"
+    },
+    {
+      "id": "I3-AFF",
+      "url": "https://affiliates.inspire3.com/",
+      "owner": "Inspire3 affiliate public portal",
+      "asof": "2026-11-06",
+      "type": "public program overview, no account authentication"
+    },
+    {
+      "id": "FTC-ENG",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "owner": "FTC",
+      "asof": "2026-11-06",
+      "type": "disclosure guidance"
+    },
+    {
+      "id": "FTC-HEALTH",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "owner": "FTC",
+      "asof": "2026-11-06",
+      "type": "substantiation guidance"
+    },
+    {
+      "id": "G2012",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/22377138/",
+      "owner": "Gauchou et al.",
+      "type": "primary paper 2012"
+    },
+    {
+      "id": "G2012-FULL",
+      "url": "https://www.cs.ubc.ca/~rensink/publications/download/Ouija-GRF.pdf",
+      "owner": "Gauchou et al.",
+      "type": "primary complete methods and exclusions"
+    },
+    {
+      "id": "O2017",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5858027/",
+      "owner": "Olson et al.",
+      "type": "primary open access 2017"
+    },
+    {
+      "id": "M2022",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35184700/",
+      "owner": "Moga & Dienes",
+      "type": "primary abstract 2022"
+    },
+    {
+      "id": "M2022-FULL",
+      "url": "https://doi.org/10.1080/00029157.2021.2010641",
+      "owner": "Moga & Dienes",
+      "type": "primary full text 2022"
+    },
+    {
+      "id": "FV-FOCUS",
+      "url": "https://finalvestige.com/focus/",
+      "owner": "FV WordPress",
+      "asof": "2026-11-06",
+      "type": "published page confirmed via connected WP search"
+    },
+    {
+      "id": "FV-PUY",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "owner": "FV WordPress",
+      "asof": "2026-11-06",
+      "type": "published page confirmed via connected WP search"
+    },
+    {
+      "id": "FV-CHANGE",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "owner": "FV WordPress",
+      "asof": "2026-11-06",
+      "type": "published post confirmed via connected WP search"
+    },
+    {
+      "id": "FV-MESMER",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "owner": "FV WordPress",
+      "asof": "2026-11-06",
+      "type": "published post confirmed via connected WP search"
+    }
+  ],
+  "claims": [
+    {
+      "id": "ZEN-01",
+      "claim": "Premium page specifies 12 levels / 48 MP3 recordings",
+      "decision": "SELLER_DESCRIPTION_ONLY",
+      "source_ids": [
+        "Z12-EXACT"
+      ],
+      "limitations": "Describe with attribution, not independently tested product content."
+    },
+    {
+      "id": "ZEN-02",
+      "claim": "Premium seller lists four listening styles",
+      "decision": "SELLER_DESCRIPTION_ONLY",
+      "source_ids": [
+        "Z12-EXACT"
+      ],
+      "limitations": "No independent inspection of downloadable files."
+    },
+    {
+      "id": "ZEN-03",
+      "claim": "Premium seller page displays $87.99 as of Nov 6",
+      "decision": "DATED_SELLER_DISPLAY",
+      "source_ids": [
+        "Z12-EXACT"
+      ],
+      "limitations": "Do not advertise definitive checkout price; offers vary."
+    },
+    {
+      "id": "ZEN-04",
+      "claim": "Seller advertises 1-year money-back guarantee",
+      "decision": "SELLER_DESCRIPTION_ONLY",
+      "source_ids": [
+        "Z12-EXACT"
+      ],
+      "limitations": "Refund processing and terms not authenticated."
+    },
+    {
+      "id": "ZEN-05",
+      "claim": "Seller advertises audio guides and exclusive hour training call",
+      "decision": "SELLER_DESCRIPTION_ONLY",
+      "source_ids": [
+        "Z12-EXACT"
+      ],
+      "limitations": "Availability and live fulfillment not verified."
+    },
+    {
+      "id": "ZEN-06",
+      "claim": "Seller claims each 12-minute session brings hour advanced meditation benefits",
+      "decision": "UNSUBSTANTIATED_PRODUCT_EFFICACY",
+      "source_ids": [
+        "Z12-EXACT",
+        "FTC-HEALTH"
+      ],
+      "limitations": "Exclude from FV product claim; no adequate product-specific proof."
+    },
+    {
+      "id": "ZEN-07",
+      "claim": "Seller claims brainwave sounds meditate for you",
+      "decision": "UNSUBSTANTIATED_PRODUCT_EFFICACY",
+      "source_ids": [
+        "Z12-EXACT",
+        "FTC-HEALTH"
+      ],
+      "limitations": "Do not affirm mechanism or clinical effect."
+    },
+    {
+      "id": "ZEN-08",
+      "claim": "Seller claims immediate focus and anxiety improvement",
+      "decision": "UNSUBSTANTIATED_PRODUCT_EFFICACY",
+      "source_ids": [
+        "Z12-EXACT",
+        "FTC-HEALTH"
+      ],
+      "limitations": "Omit specific clinical/psychological outcomes."
+    },
+    {
+      "id": "ZEN-09",
+      "claim": "A 12-minute session is described by the seller",
+      "decision": "SELLER_DESCRIPTION_ONLY",
+      "source_ids": [
+        "Z12-EXACT"
+      ],
+      "limitations": "Duration as format, not efficacy."
+    },
+    {
+      "id": "ZEN-10",
+      "claim": "Final checkout price/tax/currency verified",
+      "decision": "UNKNOWN",
+      "source_ids": [],
+      "limitations": "Seller display is not checkout verification."
+    },
+    {
+      "id": "ZEN-11",
+      "claim": "Refund fulfillment independently tested",
+      "decision": "UNKNOWN",
+      "source_ids": [],
+      "limitations": "Guarantee is seller representation."
+    },
+    {
+      "id": "AFF-01",
+      "claim": "Inspire3 has a public affiliate portal",
+      "decision": "VERIFIED_PUBLIC",
+      "source_ids": [
+        "I3-AFF"
+      ],
+      "limitations": "Not individual authorization."
+    },
+    {
+      "id": "AFF-02",
+      "claim": "FV account accepted for Inspire3 affiliate",
+      "decision": "NOT_VERIFIED",
+      "source_ids": [
+        "I3-AFF"
+      ],
+      "limitations": "No authenticated FV dashboard acceptance."
+    },
+    {
+      "id": "AFF-03",
+      "claim": "Authorized FV earning link for Zen12",
+      "decision": "NOT_VERIFIED",
+      "source_ids": [],
+      "limitations": "Keep URL null; purchase button disabled."
+    },
+    {
+      "id": "AFF-04",
+      "claim": "FV permissions for social/web/email promotions",
+      "decision": "NOT_VERIFIED",
+      "source_ids": [],
+      "limitations": "Different channels require separate terms check."
+    },
+    {
+      "id": "AFF-05",
+      "claim": "FV-specific commissions/payout terms",
+      "decision": "NOT_VERIFIED",
+      "source_ids": [],
+      "limitations": "Do not use public promotional rates as FV terms."
+    },
+    {
+      "id": "SCI-01",
+      "claim": "2012 guess-specific Ouija responses 65% versus 50% ordinary",
+      "decision": "SUPPORTED_LAB_CONTEXT_ONLY",
+      "source_ids": [
+        "G2012",
+        "G2012-FULL"
+      ],
+      "limitations": "Twenty-one analyzed; not universal hidden-knowledge inference."
+    },
+    {
+      "id": "SCI-02",
+      "claim": "2017 visual task sample eighty analyzed",
+      "decision": "INCORRECT",
+      "source_ids": [
+        "O2017"
+      ],
+      "limitations": "Eighty recruited, sixty-three analyzed."
+    },
+    {
+      "id": "SCI-03",
+      "claim": "2017 Study 2 forty analyzed",
+      "decision": "INCORRECT",
+      "source_ids": [
+        "O2017"
+      ],
+      "limitations": "Forty recruited, thirty-four analyzed."
+    },
+    {
+      "id": "SCI-04",
+      "claim": "2017 pendulum better accuracy than verbal 57/53",
+      "decision": "NOT_SUPPORTED",
+      "source_ids": [
+        "O2017"
+      ],
+      "limitations": "57% verbal, 53% pendulum Study 1; bias differed."
+    },
+    {
+      "id": "SCI-05",
+      "claim": "2022 guessed-answer pendulum and verbal near chance",
+      "decision": "SUPPORTED_LAB_CONTEXT_ONLY",
+      "source_ids": [
+        "M2022",
+        "M2022-FULL"
+      ],
+      "limitations": "Twenty-seven analyzed; method changed."
+    },
+    {
+      "id": "SCI-06",
+      "claim": "Ideomotor results prove specific audio improves cognition",
+      "decision": "NOT_SUPPORTED",
+      "source_ids": [
+        "G2012",
+        "O2017",
+        "M2022"
+      ],
+      "limitations": "None tested Zen12."
+    },
+    {
+      "id": "COM-01",
+      "claim": "FV Payhip owned eligible Mind product live and rights-cleared",
+      "decision": "UNKNOWN",
+      "source_ids": [],
+      "limitations": "Must authenticate SKU, receipt, rights, returns and fulfillment."
+    },
+    {
+      "id": "COM-02",
+      "claim": "Grok published matching asset id and CTA placement",
+      "decision": "UNKNOWN",
+      "source_ids": [],
+      "limitations": "Await real TASK-008 evidence; no fabricated media IDs."
+    },
+    {
+      "id": "COM-03",
+      "claim": "Existing Focus Fieldbook destination is published",
+      "decision": "PUBLISHED_CMS_RECORD_NOT_E2E",
+      "source_ids": [
+        "FV-FOCUS"
+      ],
+      "limitations": "Guest signup/welcome not verified."
+    },
+    {
+      "id": "COM-04",
+      "claim": "FV affiliate paid commission or customer order confirmed",
+      "decision": "UNKNOWN",
+      "source_ids": [],
+      "limitations": "No transaction ledger or verified merchant report."
+    },
+    {
+      "id": "COM-05",
+      "claim": "Net revenue per 1000 qualified humans can be calculated",
+      "decision": "NOT_COMPUTABLE",
+      "source_ids": [],
+      "limitations": "Both revenue and credible human session denominator required."
+    },
+    {
+      "id": "COM-06",
+      "claim": "Adjacent disclosure required for earning link",
+      "decision": "FTC_GUIDANCE",
+      "source_ids": [
+        "FTC-ENG"
+      ],
+      "limitations": "Conditional preview wording near disabled CTA; active wording must be changed upon authorization."
+    },
+    {
+      "id": "COM-07",
+      "claim": "No duplicate Jetpack capture, tracking scripts or merchant links",
+      "decision": "DRAFT_SOURCE_GATE",
+      "source_ids": [],
+      "limitations": "Source test only; no live browser evidence."
+    },
+    {
+      "id": "COM-08",
+      "claim": "Email permission for Insp3 commercial promotion",
+      "decision": "NOT_VERIFIED",
+      "source_ids": [],
+      "limitations": "Dispatch merchant content remains unsent."
+    },
+    {
+      "id": "EXP-01",
+      "claim": "Optional short video improves verified paid conversion",
+      "decision": "UNTESTED_HYPOTHESIS",
+      "source_ids": [],
+      "limitations": "Must run consent-compliant randomized eligible A/B; cannot claim lift."
+    },
+    {
+      "id": "EXP-02",
+      "claim": "User may navigate direct to buyer guide without signing up",
+      "decision": "DRAFT_DESIGN",
+      "source_ids": [],
+      "limitations": "Source design, not guest-flow acceptance."
+    }
+  ],
+  "release_gates": [
+    {
+      "id": "partner_approval",
+      "state": "CLOSED",
+      "proof_needed": "Named FV affiliate dashboard acceptance including account and offer"
+    },
+    {
+      "id": "earning_url",
+      "state": "CLOSED",
+      "proof_needed": "Verified publisher-specific URL and merchant tracking"
+    },
+    {
+      "id": "web_channel",
+      "state": "CLOSED",
+      "proof_needed": "Written or dashboard approval for web placements"
+    },
+    {
+      "id": "social_channel",
+      "state": "CLOSED",
+      "proof_needed": "Terms permit creator-platform traffic"
+    },
+    {
+      "id": "email_channel",
+      "state": "CLOSED",
+      "proof_needed": "Terms permit Jetpack Dispatch email promotion"
+    },
+    {
+      "id": "merchant_fulfillment",
+      "state": "UNKNOWN",
+      "proof_needed": "Exact checkout pricing/currency/return terms and delivery read-only verification"
+    },
+    {
+      "id": "owned_fv_sku",
+      "state": "UNKNOWN",
+      "proof_needed": "Rights-cleared eligible owned product actual active SKU/price"
+    },
+    {
+      "id": "commission_reporting",
+      "state": "CLOSED",
+      "proof_needed": "Attributed actual commission paid or independently reported sale"
+    },
+    {
+      "id": "qualified_session_attribution",
+      "state": "UNKNOWN",
+      "proof_needed": "Approved first-party visitor estimates with bot/internal filtering"
+    },
+    {
+      "id": "focus_signup_welcome",
+      "state": "UNKNOWN",
+      "proof_needed": "Consent-confirmed signup and existing welcome delivery"
+    },
+    {
+      "id": "browser_a11y",
+      "state": "CLOSED",
+      "proof_needed": "Actual WCAG 2.2 AA browser/device QA"
+    },
+    {
+      "id": "performance",
+      "state": "CLOSED",
+      "proof_needed": "Lighthouse/CWV hosted validation"
+    },
+    {
+      "id": "video_experiment",
+      "state": "CLOSED",
+      "proof_needed": "Rights-cleared produced MP4/captions and preregistered split test"
+    },
+    {
+      "id": "editorial_review",
+      "state": "CLOSED",
+      "proof_needed": "Independent source/claim/editorial review"
+    },
+    {
+      "id": "founder_release",
+      "state": "CLOSED",
+      "proof_needed": "Founder approval for specific commercial release"
+    }
+  ],
+  "notes": "Seller claims are descriptions, not proof. Published WordPress search records are not guest browser acceptance. No Gmail or dashboard approval attested."
+}
