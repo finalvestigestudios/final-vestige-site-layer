@@ -1,0 +1,244 @@
+{
+  "schema": "fv-commons-redirect-readonly-shard-v1",
+  "captured_date": "2026-11-06",
+  "source": "WordPress published post editor HTML; read-only; unprobed URLs",
+  "posts": [
+    {
+      "post_id": 425,
+      "url": "https://finalvestige.com/2026/08/20/the-word-came-out-of-the-mine-courrieres/",
+      "modified_wp": "2026-10-30T01:08:21",
+      "inline_tags": 9,
+      "commons_redirects": 8
+    },
+    {
+      "post_id": 431,
+      "url": "https://finalvestige.com/2026/08/20/the-mountain-buried-the-door-frank-slide/",
+      "modified_wp": "2026-10-29T18:42:26",
+      "inline_tags": 6,
+      "commons_redirects": 1
+    },
+    {
+      "post_id": 1917,
+      "url": "https://finalvestige.com/2026/11/02/piri-reis-map/",
+      "modified_wp": "2026-11-03T14:52:14",
+      "inline_tags": 2,
+      "commons_redirects": 2
+    },
+    {
+      "post_id": 1920,
+      "url": "https://finalvestige.com/2026/11/02/lycurgus-cup/",
+      "modified_wp": "2026-11-03T14:52:17",
+      "inline_tags": 2,
+      "commons_redirects": 2
+    },
+    {
+      "post_id": 1924,
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "modified_wp": "2026-11-03T14:52:20",
+      "inline_tags": 1,
+      "commons_redirects": 1
+    },
+    {
+      "post_id": 1926,
+      "url": "https://finalvestige.com/2026/11/02/crystal-skulls/",
+      "modified_wp": "2026-11-05T09:54:56",
+      "inline_tags": 1,
+      "commons_redirects": 1
+    }
+  ],
+  "images": [
+    {
+      "key": "425:1",
+      "post_id": 425,
+      "image_index": 1,
+      "post_url": "https://finalvestige.com/2026/08/20/the-word-came-out-of-the-mine-courrieres/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Catastrophe_de_Courri%C3%A8res_-_Groupe_de_Sauveteurs,_Fosse_n%C2%B0_2.jpg?width=960",
+      "commons_file_title_unverified": "Catastrophe de Courrières - Groupe de Sauveteurs, Fosse n° 2.jpg",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:Catastrophe_de_Courri%C3%A8res_-_Groupe_de_Sauveteurs%2C_Fosse_n%C2%B0_2.jpg",
+      "requested_width_px": 960,
+      "license_hints_from_caption": [
+        "Public domain"
+      ]
+    },
+    {
+      "key": "425:2",
+      "post_id": 425,
+      "image_index": 2,
+      "post_url": "https://finalvestige.com/2026/08/20/the-word-came-out-of-the-mine-courrieres/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Catastrophe_de_Courri%C3%A8res_-_La_remonte_des_victimes.jpg?width=960",
+      "commons_file_title_unverified": "Catastrophe de Courrières - La remonte des victimes.jpg",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:Catastrophe_de_Courri%C3%A8res_-_La_remonte_des_victimes.jpg",
+      "requested_width_px": 960,
+      "license_hints_from_caption": [
+        "Public-domain"
+      ]
+    },
+    {
+      "key": "425:3",
+      "post_id": 425,
+      "image_index": 3,
+      "post_url": "https://finalvestige.com/2026/08/20/the-word-came-out-of-the-mine-courrieres/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Catastrophe_de_Courri%C3%A8res_-_Les_rescap%C3%A9s_sont_soign%C3%A9s.jpg?width=1280",
+      "commons_file_title_unverified": "Catastrophe de Courrières - Les rescapés sont soignés.jpg",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:Catastrophe_de_Courri%C3%A8res_-_Les_rescap%C3%A9s_sont_soign%C3%A9s.jpg",
+      "requested_width_px": 1280,
+      "license_hints_from_caption": [
+        "Public domain"
+      ]
+    },
+    {
+      "key": "425:4",
+      "post_id": 425,
+      "image_index": 4,
+      "post_url": "https://finalvestige.com/2026/08/20/the-word-came-out-of-the-mine-courrieres/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Catastrophe_de_Courri%C3%A8res_-_Arriv%C3%A9e_des_Sauveteurs_allemands.jpg?width=960",
+      "commons_file_title_unverified": "Catastrophe de Courrières - Arrivée des Sauveteurs allemands.jpg",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:Catastrophe_de_Courri%C3%A8res_-_Arriv%C3%A9e_des_Sauveteurs_allemands.jpg",
+      "requested_width_px": 960,
+      "license_hints_from_caption": [
+        "Public domain"
+      ]
+    },
+    {
+      "key": "425:5",
+      "post_id": 425,
+      "image_index": 5,
+      "post_url": "https://finalvestige.com/2026/08/20/the-word-came-out-of-the-mine-courrieres/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Catastrophe_de_Courri%C3%A8res_-_Appareil_Guglielminetti-Drager_(01).jpg?width=1280",
+      "commons_file_title_unverified": "Catastrophe de Courrières - Appareil Guglielminetti-Drager (01).jpg",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:Catastrophe_de_Courri%C3%A8res_-_Appareil_Guglielminetti-Drager_(01).jpg",
+      "requested_width_px": 1280,
+      "license_hints_from_caption": [
+        "Public domain"
+      ]
+    },
+    {
+      "key": "425:6",
+      "post_id": 425,
+      "image_index": 6,
+      "post_url": "https://finalvestige.com/2026/08/20/the-word-came-out-of-the-mine-courrieres/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Courri%C3%A8res_1906_LeJ.jpg?width=960",
+      "commons_file_title_unverified": "Courrières 1906 LeJ.jpg",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:Courri%C3%A8res_1906_LeJ.jpg",
+      "requested_width_px": 960,
+      "license_hints_from_caption": [
+        "public domain"
+      ]
+    },
+    {
+      "key": "425:7",
+      "post_id": 425,
+      "image_index": 7,
+      "post_url": "https://finalvestige.com/2026/08/20/the-word-came-out-of-the-mine-courrieres/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Catastrophe_de_Courri%C3%A8res_-_Berthou,_le_dernier_survivant,_24_jours_dans_la_Mine_en_feu.jpg?width=960",
+      "commons_file_title_unverified": "Catastrophe de Courrières - Berthou, le dernier survivant, 24 jours dans la Mine en feu.jpg",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:Catastrophe_de_Courri%C3%A8res_-_Berthou%2C_le_dernier_survivant%2C_24_jours_dans_la_Mine_en_feu.jpg",
+      "requested_width_px": 960,
+      "license_hints_from_caption": [
+        "Public domain"
+      ]
+    },
+    {
+      "key": "425:8",
+      "post_id": 425,
+      "image_index": 8,
+      "post_url": "https://finalvestige.com/2026/08/20/the-word-came-out-of-the-mine-courrieres/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Catastrophe_de_Courri%C3%A8res_-_La_gr%C3%A8ve_des_mineurs.jpg?width=1280",
+      "commons_file_title_unverified": "Catastrophe de Courrières - La grève des mineurs.jpg",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:Catastrophe_de_Courri%C3%A8res_-_La_gr%C3%A8ve_des_mineurs.jpg",
+      "requested_width_px": 1280,
+      "license_hints_from_caption": [
+        "Public domain"
+      ]
+    },
+    {
+      "key": "431:5",
+      "post_id": 431,
+      "image_index": 5,
+      "post_url": "https://finalvestige.com/2026/08/20/the-mountain-buried-the-door-frank-slide/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Frank_Slide_from_NW_flank_of_Turtle_Mountain.jpg?width=1280",
+      "commons_file_title_unverified": "Frank Slide from NW flank of Turtle Mountain.jpg",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:Frank_Slide_from_NW_flank_of_Turtle_Mountain.jpg",
+      "requested_width_px": 1280,
+      "license_hints_from_caption": []
+    },
+    {
+      "key": "1917:0",
+      "post_id": 1917,
+      "image_index": 0,
+      "post_url": "https://finalvestige.com/2026/11/02/piri-reis-map/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Piri%20reis%20world%20map%2001.jpg?width=1280",
+      "commons_file_title_unverified": "Piri reis world map 01.jpg",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:Piri_reis_world_map_01.jpg",
+      "requested_width_px": 1280,
+      "license_hints_from_caption": [
+        "Public domain"
+      ]
+    },
+    {
+      "key": "1917:1",
+      "post_id": 1917,
+      "image_index": 1,
+      "post_url": "https://finalvestige.com/2026/11/02/piri-reis-map/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Cantino%20planisphere%20%281502%29.jpg?width=1280",
+      "commons_file_title_unverified": "Cantino planisphere (1502).jpg",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:Cantino_planisphere_(1502).jpg",
+      "requested_width_px": 1280,
+      "license_hints_from_caption": [
+        "Public domain"
+      ]
+    },
+    {
+      "key": "1920:0",
+      "post_id": 1920,
+      "image_index": 0,
+      "post_url": "https://finalvestige.com/2026/11/02/lycurgus-cup/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Front%20of%204th%20century%20CE%20Roman%20Lycurgus%20Cup%2C%20British%20Museum%20%281958%2C1202.1%29.jpg?width=1280",
+      "commons_file_title_unverified": "Front of 4th century CE Roman Lycurgus Cup, British Museum (1958,1202.1).jpg",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:Front_of_4th_century_CE_Roman_Lycurgus_Cup%2C_British_Museum_(1958%2C1202.1).jpg",
+      "requested_width_px": 1280,
+      "license_hints_from_caption": [
+        "CC BY 4.0"
+      ]
+    },
+    {
+      "key": "1920:1",
+      "post_id": 1920,
+      "image_index": 1,
+      "post_url": "https://finalvestige.com/2026/11/02/lycurgus-cup/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Top%20view%20of%20the%20famed%20Lycurgus%20Cup%20in%20the%20British%20Museum%2C%20showing%20the%20glass%20both%20green%20and%20ruby%20red.jpg?width=1280",
+      "commons_file_title_unverified": "Top view of the famed Lycurgus Cup in the British Museum, showing the glass both green and ruby red.jpg",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:Top_view_of_the_famed_Lycurgus_Cup_in_the_British_Museum%2C_showing_the_glass_both_green_and_ruby_red.jpg",
+      "requested_width_px": 1280,
+      "license_hints_from_caption": [
+        "CC BY 4.0"
+      ]
+    },
+    {
+      "key": "1924:0",
+      "post_id": 1924,
+      "image_index": 0,
+      "post_url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/%22Le%20Baquet%20de%20Mesmer%22%20Wellcome%20M0006352.jpg?width=900",
+      "commons_file_title_unverified": "\"Le Baquet de Mesmer\" Wellcome M0006352.jpg",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:%22Le_Baquet_de_Mesmer%22_Wellcome_M0006352.jpg",
+      "requested_width_px": 900,
+      "license_hints_from_caption": [
+        "CC BY 4.0"
+      ]
+    },
+    {
+      "key": "1926:0",
+      "post_id": 1926,
+      "image_index": 0,
+      "post_url": "https://finalvestige.com/2026/11/02/crystal-skulls/",
+      "stored_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Crystal%20Skull%20British%20Museum%2026072013%2005.jpg?width=900",
+      "commons_file_title_unverified": "Crystal Skull British Museum 26072013 05.jpg",
+      "catalog_lookup_url": "https://commons.wikimedia.org/wiki/File:Crystal_Skull_British_Museum_26072013_05.jpg",
+      "requested_width_px": 900,
+      "license_hints_from_caption": [
+        "CC0"
+      ]
+    }
+  ]
+}
