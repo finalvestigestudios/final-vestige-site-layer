@@ -55,7 +55,7 @@ function verify(d, verbose=false){
  ok(offer.includes('No earning link is active now'),'missing nonactivation statement');
  ok(offer.includes('2026')&&offer.includes('$87.99'),'dated price fact absent');
  ok(offer.includes('final checkout quote'),'no checkout disclaimer missing');
- ok(offer.includes('without a measured')||offer.includes('not significantly improve'),'accurate research boundary missing');
+ ok(offer.replace(/<[^>]+>/g,'').includes('not significantly improve')||offer.includes('did not show an accuracy improvement'),'accurate research boundary missing');
  ok(offer.includes('42-second')&&offer.includes('Open storyboard')&&offer.includes('timeline'),'optional storyboard absent');
  ok(offer.includes('No video exists')||offer.includes('no video exists'),'video must not be represented as produced');
  ok(offer.includes('https://finalvestige.com/focus/'),'existing Focus CTA missing');
