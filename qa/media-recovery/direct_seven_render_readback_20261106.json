@@ -1,0 +1,253 @@
+{
+  "schema": "fv-direct-original-seven-20261106",
+  "date": "2026-11-06",
+  "source": "WordPress live posts/media editor-mode read-only readback; prior oversized-original inventory",
+  "prior_blob_sha": "6e6fb1048f643a33fb6e0e1d5881657400e74968",
+  "baseline_article_count": 61,
+  "baseline_images": 355,
+  "current_articles": 66,
+  "wordPress_originals_over_1_5_mib": 13,
+  "wordPress_originals_over_1_5_mib_bytes": 43522829,
+  "source_png_have_markup_width_height": true,
+  "source_malbone_missing_markup_width_height": true,
+  "asserted_42_broken_browser_verified": false,
+  "asserted_76pct_actual_wire_saving_measured": false,
+  "source_only": true,
+  "site_qa_owner": "#154",
+  "production_wordpress_writes": 0,
+  "image_downloads": 0,
+  "third_party_caches": 0,
+  "preview_max_width": 960,
+  "rights": "HOLD",
+  "five_png_storage_bytes": 13267538,
+  "two_malbone_storage_bytes": 10352064,
+  "seven_total_storage_bytes": 23619602,
+  "rows": [
+    {
+      "media_id": 39,
+      "post_id": 34,
+      "slot": 0,
+      "markup_dimensions": [
+        1024,
+        576
+      ],
+      "article_caption_kind": "AI-assisted historical reconstruction",
+      "alt": "Firefighters and horse-drawn fire engines on a ruined San Francisco street during the 1906 fires",
+      "stored_image_src": "https://finalvestige.com/wp-content/uploads/2026/08/bceca0bd-a16f-44f7-be08-16376fbf08ca.png",
+      "wp_original_storage_bytes": 2892087,
+      "native_pixels": [
+        1672,
+        941
+      ],
+      "proposed_preview_pixels": [
+        960,
+        540
+      ],
+      "markup_has_srcset": false,
+      "markup_has_sizes": false,
+      "guest_http": null,
+      "cold_image_wire_bytes": null,
+      "guest_image_failure": null,
+      "reuse_approval": "HOLD",
+      "downloaded": false,
+      "wp_write": false,
+      "rights_checked": false,
+      "full_resolution_map_access_required": false,
+      "conditional_24pct_storage_budget_not_wire": 694100
+    },
+    {
+      "media_id": 40,
+      "post_id": 35,
+      "slot": 0,
+      "markup_dimensions": [
+        1024,
+        576
+      ],
+      "article_caption_kind": "AI-assisted historical reconstruction",
+      "alt": "Shackleton and crew in a small lifeboat crossing icy seas during the Endurance expedition",
+      "stored_image_src": "https://finalvestige.com/wp-content/uploads/2026/08/377e08da-e121-4f57-9174-1548343402b3.png",
+      "wp_original_storage_bytes": 2552136,
+      "native_pixels": [
+        1672,
+        941
+      ],
+      "proposed_preview_pixels": [
+        960,
+        540
+      ],
+      "markup_has_srcset": false,
+      "markup_has_sizes": false,
+      "guest_http": null,
+      "cold_image_wire_bytes": null,
+      "guest_image_failure": null,
+      "reuse_approval": "HOLD",
+      "downloaded": false,
+      "wp_write": false,
+      "rights_checked": false,
+      "full_resolution_map_access_required": false,
+      "conditional_24pct_storage_budget_not_wire": 612512
+    },
+    {
+      "media_id": 41,
+      "post_id": 36,
+      "slot": 0,
+      "markup_dimensions": [
+        1024,
+        576
+      ],
+      "article_caption_kind": "AI-assisted historical reconstruction",
+      "alt": "Civilians sheltering inside a cave during the Siege of Vicksburg",
+      "stored_image_src": "https://finalvestige.com/wp-content/uploads/2026/08/a44f673d-a8a8-4c83-9f29-7e24dd55156b.png",
+      "wp_original_storage_bytes": 2498247,
+      "native_pixels": [
+        1672,
+        941
+      ],
+      "proposed_preview_pixels": [
+        960,
+        540
+      ],
+      "markup_has_srcset": false,
+      "markup_has_sizes": false,
+      "guest_http": null,
+      "cold_image_wire_bytes": null,
+      "guest_image_failure": null,
+      "reuse_approval": "HOLD",
+      "downloaded": false,
+      "wp_write": false,
+      "rights_checked": false,
+      "full_resolution_map_access_required": false,
+      "conditional_24pct_storage_budget_not_wire": 599579
+    },
+    {
+      "media_id": 42,
+      "post_id": 37,
+      "slot": 0,
+      "markup_dimensions": [
+        1024,
+        576
+      ],
+      "article_caption_kind": "AI-assisted historical reconstruction",
+      "alt": "Reconstruction of Petra’s water channels and reservoir system in the ancient desert city",
+      "stored_image_src": "https://finalvestige.com/wp-content/uploads/2026/08/c1237ffd-4a47-4988-8254-e3b021069e72.png",
+      "wp_original_storage_bytes": 2488823,
+      "native_pixels": [
+        1672,
+        941
+      ],
+      "proposed_preview_pixels": [
+        960,
+        540
+      ],
+      "markup_has_srcset": false,
+      "markup_has_sizes": false,
+      "guest_http": null,
+      "cold_image_wire_bytes": null,
+      "guest_image_failure": null,
+      "reuse_approval": "HOLD",
+      "downloaded": false,
+      "wp_write": false,
+      "rights_checked": false,
+      "full_resolution_map_access_required": false,
+      "conditional_24pct_storage_budget_not_wire": 597317
+    },
+    {
+      "media_id": 43,
+      "post_id": 38,
+      "slot": 0,
+      "markup_dimensions": [
+        1024,
+        576
+      ],
+      "article_caption_kind": "AI-assisted historical reconstruction",
+      "alt": "Firefighters drawing emergency water from an underground cistern in post-earthquake San Francisco",
+      "stored_image_src": "https://finalvestige.com/wp-content/uploads/2026/08/01340c2e-1165-4ca0-aa96-87398a83d13a.png",
+      "wp_original_storage_bytes": 2836245,
+      "native_pixels": [
+        1672,
+        941
+      ],
+      "proposed_preview_pixels": [
+        960,
+        540
+      ],
+      "markup_has_srcset": false,
+      "markup_has_sizes": false,
+      "guest_http": null,
+      "cold_image_wire_bytes": null,
+      "guest_image_failure": null,
+      "reuse_approval": "HOLD",
+      "downloaded": false,
+      "wp_write": false,
+      "rights_checked": false,
+      "full_resolution_map_access_required": false,
+      "conditional_24pct_storage_budget_not_wire": 680698
+    },
+    {
+      "media_id": 1257,
+      "post_id": 621,
+      "slot": 0,
+      "markup_dimensions": [
+        null,
+        null
+      ],
+      "article_caption_kind": "CC BY-SA 4.0 / GeneralPunger; item-level clearance HOLD",
+      "alt": "View into the Malbone Street Tunnel from the southbound platform at Prospect Park, showing the surviving curved tunnel alignment.",
+      "registered_768px_src": "https://finalvestige.com/wp-content/uploads/2026/08/edit-017-v01-malbone-tunnel-generalpunger-original-768x576.jpg",
+      "stored_image_src": "https://finalvestige.com/wp-content/uploads/2026/08/edit-017-v01-malbone-tunnel-generalpunger-original.jpg",
+      "wp_original_storage_bytes": 4798395,
+      "native_pixels": [
+        4000,
+        3000
+      ],
+      "proposed_preview_pixels": [
+        960,
+        720
+      ],
+      "markup_has_srcset": false,
+      "markup_has_sizes": false,
+      "guest_http": null,
+      "cold_image_wire_bytes": null,
+      "guest_image_failure": null,
+      "reuse_approval": "HOLD",
+      "downloaded": false,
+      "wp_write": false,
+      "rights_checked": false,
+      "full_resolution_map_access_required": false,
+      "conditional_24pct_storage_budget_not_wire": 1151614
+    },
+    {
+      "media_id": 1258,
+      "post_id": 621,
+      "slot": 1,
+      "markup_dimensions": [
+        null,
+        null
+      ],
+      "article_caption_kind": "New York Public Library Digital Collections / public domain claim; verify item",
+      "alt": "1903 map of the Brooklyn Rapid Transit street railway and rapid-transit network.",
+      "registered_768px_src": "https://finalvestige.com/wp-content/uploads/2026/08/edit-017-v02-nypl-5003296-original-768x519.jpg",
+      "stored_image_src": "https://finalvestige.com/wp-content/uploads/2026/08/edit-017-v02-nypl-5003296-original.jpg",
+      "wp_original_storage_bytes": 5553669,
+      "native_pixels": [
+        5667,
+        3831
+      ],
+      "proposed_preview_pixels": [
+        960,
+        649
+      ],
+      "markup_has_srcset": false,
+      "markup_has_sizes": false,
+      "guest_http": null,
+      "cold_image_wire_bytes": null,
+      "guest_image_failure": null,
+      "reuse_approval": "HOLD",
+      "downloaded": false,
+      "wp_write": false,
+      "rights_checked": false,
+      "full_resolution_map_access_required": true,
+      "conditional_24pct_storage_budget_not_wire": 1332880
+    }
+  ]
+}
