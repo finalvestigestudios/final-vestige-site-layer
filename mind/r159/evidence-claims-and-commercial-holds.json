@@ -1,0 +1,542 @@
+{
+  "version": "r159-2026-11-05",
+  "status": "DRAFT_UNPUBLISHED_NOT_COMMERCIALLY_AUTHORIZED",
+  "branch": "mind-r159-attentional-blink-meditation-evidence-20261105",
+  "base_head": "8fa25b9984721be7998b123ba2e4dcbe6fb7cea7",
+  "purpose": "Attentional-blink independent investigation and gated Zen12 pilot, not endorsement",
+  "offer": "Zen12 Premium exact 48 MP3 12 level offer, checkout unknown",
+  "sources": {
+    "R92": {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/1500880/",
+      "kind": "primary",
+      "label": "Raymond et al. 1992 RSVP experiment"
+    },
+    "R94": {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/8189198/",
+      "kind": "primary",
+      "label": "Shapiro et al. 1994 target-definition experiments"
+    },
+    "H05": {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/16365947/",
+      "kind": "primary",
+      "label": "Hommel and Akyurek 2005 lag-one sparing"
+    },
+    "O07": {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/16341546/",
+      "kind": "primary",
+      "label": "Olivers et al. 2007 attentional control"
+    },
+    "S07": {
+      "url": "https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.0050138",
+      "kind": "primary",
+      "label": "Slagter et al. 2007 three-month intensive retreat"
+    },
+    "ZEN": {
+      "url": "https://zen12.com/?no-popup=1",
+      "kind": "merchant",
+      "label": "Zen12 official exact seller page retrieved 2026-11-05"
+    },
+    "INS": {
+      "url": "https://inspire3.com/",
+      "kind": "merchant",
+      "label": "Inspire3 official brand catalog"
+    },
+    "AFF": {
+      "url": "https://affiliates.inspire3.com/",
+      "kind": "merchant",
+      "label": "Inspire3 public affiliate program not named authorization"
+    },
+    "FTC1": {
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "kind": "regulatory",
+      "label": "FTC endorsement disclosure Q&A"
+    },
+    "FTC2": {
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "kind": "regulatory",
+      "label": "FTC health products guidance"
+    },
+    "FOCUS": {
+      "url": "https://finalvestige.com/focus/",
+      "kind": "live-site",
+      "label": "Existing Focus Fieldbook"
+    },
+    "CHANGE": {
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "kind": "live-site",
+      "label": "Published Change Blindness"
+    },
+    "PUY": {
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "kind": "live-site",
+      "label": "Published Puységur archive"
+    },
+    "ISSUE": {
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "kind": "internal",
+      "label": "Canonical editorial requirements"
+    },
+    "CHARTER": {
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "kind": "internal",
+      "label": "Revenue quality and measurement"
+    }
+  },
+  "claims": [
+    {
+      "id": "R159-01",
+      "claim": "Attentional-blink effect occurs in defined rapid target stream tasks",
+      "decision": "supported",
+      "source": "R92",
+      "notes": "Report conditional deficit, not universal perceptual blindness"
+    },
+    {
+      "id": "R159-02",
+      "claim": "1992 short probe deficit interval begins 180 ms after first target and lasts about 270 ms",
+      "decision": "supported",
+      "source": "R92",
+      "notes": "Do not interpret as blackout for all stimuli"
+    },
+    {
+      "id": "R159-03",
+      "claim": "Attentional blink is literally an eyelid blink",
+      "decision": "rejected",
+      "source": "R92",
+      "notes": "Metaphor only"
+    },
+    {
+      "id": "R159-04",
+      "claim": "1994 follow-up found target-definition constraints",
+      "decision": "supported",
+      "source": "R94",
+      "notes": "Exact task dependence"
+    },
+    {
+      "id": "R159-05",
+      "claim": "Lag-one sparing can coincide with loss of temporal order",
+      "decision": "supported",
+      "source": "H05",
+      "notes": "Condition-limited"
+    },
+    {
+      "id": "R159-06",
+      "claim": "Several consecutive targets can be processed well when uninterrupted by distractors",
+      "decision": "supported",
+      "source": "O07",
+      "notes": "Challenges overly simple fixed capacity account"
+    },
+    {
+      "id": "R159-07",
+      "claim": "2007 PLOS study had 17 intensive retreat practitioners and 23 novices",
+      "decision": "supported",
+      "source": "S07",
+      "notes": "Nonrandomized/experience differences noted"
+    },
+    {
+      "id": "R159-08",
+      "claim": "2007 retreat included three months of intensive meditation",
+      "decision": "supported",
+      "source": "S07",
+      "notes": "Not twelve-minute audio intervention"
+    },
+    {
+      "id": "R159-09",
+      "claim": "Retreat training correlated with smaller attentional blink and reduced T1-elicited P3b",
+      "decision": "supported-with-limits",
+      "source": "S07",
+      "notes": "Specific laboratory outcome"
+    },
+    {
+      "id": "R159-10",
+      "claim": "Retreat results establish a commercial meditation audio product works identically",
+      "decision": "rejected",
+      "source": "S07",
+      "notes": "No Zen12 intervention tested"
+    },
+    {
+      "id": "R159-11",
+      "claim": "Retreat results prove long-term clinical benefits or wealth improvements",
+      "decision": "rejected",
+      "source": "S07",
+      "notes": "No general clinical/financial outcome"
+    },
+    {
+      "id": "R159-12",
+      "claim": "Zen12 official seller offers twelve levels and four formats per level",
+      "decision": "seller-description",
+      "source": "ZEN",
+      "notes": "48 MP3 recordings seller stated"
+    },
+    {
+      "id": "R159-13",
+      "claim": "Zen12 seller describes twelve-minute sessions",
+      "decision": "seller-description",
+      "source": "ZEN",
+      "notes": "Not equivalent to independent benefit proof"
+    },
+    {
+      "id": "R159-14",
+      "claim": "Zen12 Premium advertised $87.99 during 2026-11-05 review",
+      "decision": "seller-display-only",
+      "source": "ZEN",
+      "notes": "No final checkout or price guarantee"
+    },
+    {
+      "id": "R159-15",
+      "claim": "Zen12 seller advertises one-year money back guarantee",
+      "decision": "seller-display-only",
+      "source": "ZEN",
+      "notes": "Refund performance and exact conditions not verified"
+    },
+    {
+      "id": "R159-16",
+      "claim": "Zen12 twelve minutes provides benefits of one hour's meditation",
+      "decision": "rejected-unsupported-product-specific",
+      "source": "ZEN",
+      "notes": "Do not repeat as scientific truth"
+    },
+    {
+      "id": "R159-17",
+      "claim": "Brainwave entrainment produces automatic meditation in every listener",
+      "decision": "rejected-unsupported-product-specific",
+      "source": "ZEN",
+      "notes": "Not scientifically established for this product"
+    },
+    {
+      "id": "R159-18",
+      "claim": "Zen12 Premium cures anxiety, disease or other disorders",
+      "decision": "prohibited-unsupported",
+      "source": "FTC2",
+      "notes": "No clinical validation"
+    },
+    {
+      "id": "R159-19",
+      "claim": "Inspire3 public affiliate network offers sign up and login",
+      "decision": "supported",
+      "source": "AFF",
+      "notes": "Does NOT confirm FV approval"
+    },
+    {
+      "id": "R159-20",
+      "claim": "Final Vestige approved for Inspire3 affiliate promotion",
+      "decision": "unknown-hard-hold",
+      "source": "AFF",
+      "notes": "Account-specific acceptance still absent"
+    },
+    {
+      "id": "R159-21",
+      "claim": "Final Vestige assigned authorized Zen12 tracking link",
+      "decision": "unknown-hard-hold",
+      "source": "AFF",
+      "notes": "No link to invent"
+    },
+    {
+      "id": "R159-22",
+      "claim": "Final Vestige allowed to promote Zen12 through email/newsletter",
+      "decision": "unknown-hard-hold",
+      "source": "AFF",
+      "notes": "No email activation"
+    },
+    {
+      "id": "R159-23",
+      "claim": "Publisher can infer paid affiliate commission from outbound click",
+      "decision": "rejected",
+      "source": "CHARTER",
+      "notes": "Needs partner settlement evidence"
+    },
+    {
+      "id": "R159-24",
+      "claim": "Nearby plain commission disclosure needed if earning link enabled",
+      "decision": "required",
+      "source": "FTC1",
+      "notes": "Do not use affiliate-link jargon alone"
+    },
+    {
+      "id": "R159-25",
+      "claim": "Health/efficacy objective claims require competent product-specific support",
+      "decision": "required",
+      "source": "FTC2",
+      "notes": "Seller marketing not independent evidence"
+    },
+    {
+      "id": "R159-26",
+      "claim": "Existing Focus Fieldbook should remain sole native Jetpack lead path",
+      "decision": "supported-existing",
+      "source": "FOCUS",
+      "notes": "Guest fulfillment unverified"
+    },
+    {
+      "id": "R159-27",
+      "claim": "A public Mind article visit is a qualified potential customer",
+      "decision": "rejected",
+      "source": "CHARTER",
+      "notes": "Only qualified-human session; no buyer intent assumed"
+    },
+    {
+      "id": "R159-28",
+      "claim": "A Focus CTA click is a confirmed lead",
+      "decision": "rejected",
+      "source": "CHARTER",
+      "notes": "Independent Jetpack confirmed signup needed"
+    },
+    {
+      "id": "R159-29",
+      "claim": "A tested Payhip Mind SKU is currently authorized",
+      "decision": "unknown-hard-hold",
+      "source": "CHARTER",
+      "notes": "Public WP payhip search returned zero; no merchant inventory login"
+    },
+    {
+      "id": "R159-30",
+      "claim": "Optional original video is scientifically proven to convert better",
+      "decision": "rejected-hypothesis-only",
+      "source": "CHARTER",
+      "notes": "No experiment or product order data"
+    },
+    {
+      "id": "R159-31",
+      "claim": "An unrestricted self-directed free attention practice can be included",
+      "decision": "allowed-nonclinical",
+      "source": "FOCUS",
+      "notes": "Do not diagnose, promise effect or require signup"
+    },
+    {
+      "id": "R159-32",
+      "claim": "A new pixel/fingerprint needed to measure first-party sessions",
+      "decision": "rejected",
+      "source": "CHARTER",
+      "notes": "Preserve privacy and existing instrumentation"
+    },
+    {
+      "id": "R159-33",
+      "claim": "Realized net revenue /1000 verified human sessions can be computed now",
+      "decision": "not-computable",
+      "source": "CHARTER",
+      "notes": "No verified paid orders, fees, refunds, denominator"
+    },
+    {
+      "id": "R159-34",
+      "claim": "Three proposed Grok topic hooks have verified media IDs",
+      "decision": "unknown",
+      "source": "CHARTER",
+      "notes": "Only creator owner/Praxxis can supply IDs"
+    },
+    {
+      "id": "R159-35",
+      "claim": "Historical Puységur documents validate Zen12 effects",
+      "decision": "rejected",
+      "source": "PUY",
+      "notes": "Historical records are not clinical trials"
+    }
+  ],
+  "release_gates": [
+    {
+      "id": "named_inspire3_acceptance",
+      "status": "CLOSED",
+      "evidence": "Not independently authenticated for release"
+    },
+    {
+      "id": "approved_zen12_channel_permissions",
+      "status": "CLOSED",
+      "evidence": "Not independently authenticated for release"
+    },
+    {
+      "id": "verified_tracking_url_and_partner_terms",
+      "status": "CLOSED",
+      "evidence": "Not independently authenticated for release"
+    },
+    {
+      "id": "allowed_social_and_email_usage",
+      "status": "CLOSED",
+      "evidence": "Not independently authenticated for release"
+    },
+    {
+      "id": "exact_price_at_checkout",
+      "status": "CLOSED",
+      "evidence": "Not independently authenticated for release"
+    },
+    {
+      "id": "actual_refund_fulfillment",
+      "status": "CLOSED",
+      "evidence": "Not independently authenticated for release"
+    },
+    {
+      "id": "seller_approved_affiliate_creatives",
+      "status": "CLOSED",
+      "evidence": "Not independently authenticated for release"
+    },
+    {
+      "id": "product_specific_efficacy_support",
+      "status": "CLOSED",
+      "evidence": "Not independently authenticated for release"
+    },
+    {
+      "id": "merchant_confirmed_paid_order",
+      "status": "CLOSED",
+      "evidence": "Not independently authenticated for release"
+    },
+    {
+      "id": "partner_settled_commission",
+      "status": "CLOSED",
+      "evidence": "Not independently authenticated for release"
+    },
+    {
+      "id": "refund_fee_reporting",
+      "status": "CLOSED",
+      "evidence": "Not independently authenticated for release"
+    },
+    {
+      "id": "qualified_human_denominator",
+      "status": "CLOSED",
+      "evidence": "Not independently authenticated for release"
+    },
+    {
+      "id": "grok_asset_id",
+      "status": "CLOSED",
+      "evidence": "Not independently authenticated for release"
+    },
+    {
+      "id": "native_utm_permission",
+      "status": "CLOSED",
+      "evidence": "Not independently authenticated for release"
+    },
+    {
+      "id": "wp_journalistic_review",
+      "status": "CLOSED",
+      "evidence": "Not independently authenticated for release"
+    },
+    {
+      "id": "wp_approval",
+      "status": "CLOSED",
+      "evidence": "Not independently authenticated for release"
+    },
+    {
+      "id": "independent_QA",
+      "status": "CLOSED",
+      "evidence": "Not independently authenticated for release"
+    },
+    {
+      "id": "browser_accessibility",
+      "status": "CLOSED",
+      "evidence": "Not independently authenticated for release"
+    },
+    {
+      "id": "no_js_check",
+      "status": "CLOSED",
+      "evidence": "Not independently authenticated for release"
+    },
+    {
+      "id": "video_asset_rights",
+      "status": "CLOSED",
+      "evidence": "Not independently authenticated for release"
+    },
+    {
+      "id": "caption_transcript_approved",
+      "status": "CLOSED",
+      "evidence": "Not independently authenticated for release"
+    },
+    {
+      "id": "video_media_produced",
+      "status": "CLOSED",
+      "evidence": "Not independently authenticated for release"
+    },
+    {
+      "id": "experiment_consent_scope",
+      "status": "CLOSED",
+      "evidence": "Not independently authenticated for release"
+    },
+    {
+      "id": "rollout_rollback",
+      "status": "CLOSED",
+      "evidence": "Not independently authenticated for release"
+    },
+    {
+      "id": "founder_commercial_approval",
+      "status": "CLOSED",
+      "evidence": "Not independently authenticated for release"
+    },
+    {
+      "id": "founder_release_approval",
+      "status": "CLOSED",
+      "evidence": "Not independently authenticated for release"
+    },
+    {
+      "id": "payhip_rights_cleared_owned_product",
+      "status": "CLOSED",
+      "evidence": "Not independently authenticated for release"
+    },
+    {
+      "id": "payhip_authenticated_sku",
+      "status": "CLOSED",
+      "evidence": "Not independently authenticated for release"
+    },
+    {
+      "id": "payhip_checkout",
+      "status": "CLOSED",
+      "evidence": "Not independently authenticated for release"
+    },
+    {
+      "id": "payhip_delivery",
+      "status": "CLOSED",
+      "evidence": "Not independently authenticated for release"
+    },
+    {
+      "id": "payhip_refund_terms",
+      "status": "CLOSED",
+      "evidence": "Not independently authenticated for release"
+    },
+    {
+      "id": "focus_guest_signup",
+      "status": "CLOSED",
+      "evidence": "Not independently authenticated for release"
+    },
+    {
+      "id": "focus_welcome_delivery",
+      "status": "CLOSED",
+      "evidence": "Not independently authenticated for release"
+    },
+    {
+      "id": "site_QA_contextual_links",
+      "status": "CLOSED",
+      "evidence": "Not independently authenticated for release"
+    },
+    {
+      "id": "cross_device_390_768_1440",
+      "status": "CLOSED",
+      "evidence": "Not independently authenticated for release"
+    },
+    {
+      "id": "lighthouse",
+      "status": "CLOSED",
+      "evidence": "Not independently authenticated for release"
+    },
+    {
+      "id": "CSP_and_external_links",
+      "status": "CLOSED",
+      "evidence": "Not independently authenticated for release"
+    },
+    {
+      "id": "revenue_source_reconciliation",
+      "status": "CLOSED",
+      "evidence": "Not independently authenticated for release"
+    },
+    {
+      "id": "seven_day_cohort",
+      "status": "CLOSED",
+      "evidence": "Not independently authenticated for release"
+    },
+    {
+      "id": "thirty_day_cohort",
+      "status": "CLOSED",
+      "evidence": "Not independently authenticated for release"
+    }
+  ],
+  "contact_permission": "No partner account-level permission proof",
+  "published": "none",
+  "tracking_active": false,
+  "affiliate_url": null,
+  "experiment_status": "NOT_RUN",
+  "paid_conversions_verified": null,
+  "net_revenue_per_1000_qualified_sessions": null,
+  "verified_payhip_mind_sku": null
+}
