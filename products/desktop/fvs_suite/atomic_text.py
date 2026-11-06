@@ -35,6 +35,7 @@ def _report_bytes(contents: str) -> bytes:
         raise ValueError("Text report byte limit exceeded")
     return encoded
 
+
 def _private_io_failure(exc: OSError) -> None:
     """Keep customer paths and OS-supplied error text out of UI/log errors.
 
