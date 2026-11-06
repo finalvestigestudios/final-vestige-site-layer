@@ -4,6 +4,12 @@ function validateManifest(m) {
  const fail=(x)=>e.push(x);
  const ids=['274:2','280:1','280:4','288:2'];
  const catalog={'274:2':'NH 88447','280:1':'NH 75559','280:4':'NH 68705','288:2':'UG 21-01.02'};
+ const exactPostUrls={
+  '274:2':'https://finalvestige.com/2026/08/19/twenty-four-feet-from-air-uss-tang/',
+  '280:1':'https://finalvestige.com/2026/08/19/the-sledgehammers-broke-first-uss-pueblo/',
+  '280:4':'https://finalvestige.com/2026/08/19/the-sledgehammers-broke-first-uss-pueblo/',
+  '288:2':'https://finalvestige.com/2026/08/19/the-bearing-was-right-honda-point/'
+ };
  const expected={
   '274:2':'/navy-torpedoes/',
   '280:1':'/pueblo-iii/',
@@ -21,6 +27,7 @@ function validateManifest(m) {
    if(rows.length!==1){fail('key:'+key);continue;}
    const r=rows[0];
    if(r.post_id!==Number(key.split(':')[0]))fail('post_id:'+key);
+   if(r.post_url!==exactPostUrls[key])fail('post_url:'+key);
    if(r.candidate_catalog_id!==catalog[key])fail('catalog_id:'+key);
    if(!r.original_src?.startsWith('https://www.history.navy.mil/')||!r.original_src.includes(expected[key]))fail('original_url:'+key);
    if(!r.candidate_catalog_url?.startsWith('https://www.history.navy.mil/'))fail('catalog_url:'+key);
