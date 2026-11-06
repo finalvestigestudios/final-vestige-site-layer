@@ -1,0 +1,197 @@
+{
+  "schema": "fv-preparedness-r173-claim-scope-human-docket-v1",
+  "observed_on": "2026-11-06",
+  "issue": 136,
+  "coordination_issue": 820,
+  "parent_pr": 1283,
+  "parent_sha": "54b2c5fbc170d10b1e4906df02eff587aaadef97",
+  "state": "DRAFT_HARD_HOLD",
+  "published": false,
+  "independent_qd_pass": false,
+  "qualified_food_safety_review": false,
+  "source_alias_equivalence_approved": false,
+  "human_checked_links": false,
+  "medical_safety_approved": false,
+  "article_count_under_original_custody": 35,
+  "original_citations_under_original_custody": 2000,
+  "original_source_uses_under_original_custody": 385,
+  "crosswalk_shared_url_groups_pending": 32,
+  "previous_source_decisions_pending": 75,
+  "original_bodies": {
+    "safe-jerky-dehydration": "6fa55c397b161437e016d5d4a6c27da7ce3fa6bd",
+    "pemmican-and-dried-meats": "0b3319cc85ea2bc6d069b46d13a40e12ddbd5bc5",
+    "pioneer-travel-rations": "058c90b763d8cd6dec0731a7b0a9cee4dd5a57c7"
+  },
+  "dispute": {
+    "crosswalk_url": "https://nchfp.uga.edu/how/dry/recipes/jerky",
+    "historical_fragment_literal_url": "https://nchfp.uga.edu/how/dry/recipes/jerky/",
+    "equivalence": "UNDECIDED",
+    "source_scope": "UNDECIDED",
+    "independent_sources": [
+      {
+        "agency": "National Center for Home Food Preservation (UGA)",
+        "source_date": "2014",
+        "url": "https://nchfp.uga.edu/how/dry/recipes/jerky",
+        "observation": "Describes heating before or after drying; not permission to declare either method safe without qualified review."
+      },
+      {
+        "agency": "USDA FSIS",
+        "source_last_updated": "2025-02-04",
+        "url": "https://ask.fsis.usda.gov/article/How-do-I-dry-jerky",
+        "observation": "Current USDA Hotline recommendation emphasizes heating before dehydration."
+      },
+      {
+        "agency": "USDA FSIS",
+        "source_last_updated": "2024-11-18",
+        "url": "https://ask.fsis.usda.gov/article/Why-is-temperature-important-when-making-jerky",
+        "observation": "Discusses increased bacterial heat resistance after drying."
+      }
+    ]
+  },
+  "claims": [
+    {
+      "slug": "safe-jerky-dehydration",
+      "claim": "usda-before",
+      "source_ids": [
+        "food-fsis-jerky-qa",
+        "nchfp-jerky"
+      ],
+      "human_source_scope_decision": "PENDING",
+      "qualified_food_safety_decision": "PENDING",
+      "independent_qd_decision": "PENDING",
+      "reviewer": null,
+      "reviewed_at": null,
+      "evidence_link": null
+    },
+    {
+      "slug": "safe-jerky-dehydration",
+      "claim": "published-method-conflict",
+      "source_ids": [
+        "food-fsis-jerky",
+        "nchfp-jerky"
+      ],
+      "human_source_scope_decision": "PENDING",
+      "qualified_food_safety_decision": "PENDING",
+      "independent_qd_decision": "PENDING",
+      "reviewer": null,
+      "reviewed_at": null,
+      "evidence_link": null
+    },
+    {
+      "slug": "safe-jerky-dehydration",
+      "claim": "nchfp-after-method",
+      "source_ids": [
+        "nchfp-jerky",
+        "food-ksu-jerky"
+      ],
+      "human_source_scope_decision": "PENDING",
+      "qualified_food_safety_decision": "PENDING",
+      "independent_qd_decision": "PENDING",
+      "reviewer": null,
+      "reviewed_at": null,
+      "evidence_link": null
+    },
+    {
+      "slug": "safe-jerky-dehydration",
+      "claim": "wild-game-parasite",
+      "source_ids": [
+        "nchfp-jerky"
+      ],
+      "human_source_scope_decision": "PENDING",
+      "qualified_food_safety_decision": "PENDING",
+      "independent_qd_decision": "PENDING",
+      "reviewer": null,
+      "reviewed_at": null,
+      "evidence_link": null
+    },
+    {
+      "slug": "safe-jerky-dehydration",
+      "claim": "room-storage-nchfp",
+      "source_ids": [
+        "nchfp-jerky"
+      ],
+      "human_source_scope_decision": "PENDING",
+      "qualified_food_safety_decision": "PENDING",
+      "independent_qd_decision": "PENDING",
+      "reviewer": null,
+      "reviewed_at": null,
+      "evidence_link": null
+    },
+    {
+      "slug": "pemmican-and-dried-meats",
+      "claim": "not-a-recipe",
+      "source_ids": [],
+      "human_source_scope_decision": "PENDING",
+      "qualified_food_safety_decision": "PENDING",
+      "independent_qd_decision": "PENDING",
+      "reviewer": null,
+      "reviewed_at": null,
+      "evidence_link": null
+    },
+    {
+      "slug": "pemmican-and-dried-meats",
+      "claim": "fsis-heat-guidance",
+      "source_ids": [
+        "hist-food-fsis-jerky"
+      ],
+      "human_source_scope_decision": "PENDING",
+      "qualified_food_safety_decision": "PENDING",
+      "independent_qd_decision": "PENDING",
+      "reviewer": null,
+      "reviewed_at": null,
+      "evidence_link": null
+    },
+    {
+      "slug": "pemmican-and-dried-meats",
+      "claim": "nchfp-scope-and-storage",
+      "source_ids": [
+        "hist-food-nchfp-jerky",
+        "hist-food-fsis-jerky"
+      ],
+      "human_source_scope_decision": "PENDING",
+      "qualified_food_safety_decision": "PENDING",
+      "independent_qd_decision": "PENDING",
+      "reviewer": null,
+      "reviewed_at": null,
+      "evidence_link": null
+    },
+    {
+      "slug": "pioneer-travel-rations",
+      "claim": "historical-modern-comparison",
+      "source_ids": [
+        "hist-food-fsis-jerky",
+        "hist-food-marcy-prairie-traveler-text"
+      ],
+      "human_source_scope_decision": "PENDING",
+      "qualified_food_safety_decision": "PENDING",
+      "independent_qd_decision": "PENDING",
+      "reviewer": null,
+      "reviewed_at": null,
+      "evidence_link": null
+    },
+    {
+      "slug": "pioneer-travel-rations",
+      "claim": "agencies-disagree",
+      "source_ids": [
+        "hist-food-nchfp-jerky",
+        "hist-food-fsis-jerky"
+      ],
+      "human_source_scope_decision": "PENDING",
+      "qualified_food_safety_decision": "PENDING",
+      "independent_qd_decision": "PENDING",
+      "reviewer": null,
+      "reviewed_at": null,
+      "evidence_link": null
+    }
+  ],
+  "original_files_modified": [],
+  "conversion": {
+    "audience": "caregivers seeking reliable emergency pickup and family reunification",
+    "free_guide": "Household Emergency Plan — existing unpublished, ungated draft",
+    "optional_free_tool": "Family Reunification Card — unpublished pending privacy/print/source review",
+    "matching_existing_paid_preparedness_sku_verified": false,
+    "published_preparedness_asset_id_verified": false,
+    "sale_and_revenue_attribution_verified": false,
+    "approval": "HOLD — do not invent a new product, paid CTA, or checkout link"
+  }
+}
