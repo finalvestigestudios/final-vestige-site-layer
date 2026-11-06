@@ -62,46 +62,7 @@ class AtomicTextTests(unittest.TestCase):
         self.assert_no_partials()
 
     def test_invalid_utf8_payload_rejected_before_staging(self):
-        with self.assertRaisesRegex(ValueError, '^Invalid text report content
-            publish_text(self.target, "unpaired surrogate \ud800")
-        self.assertFalse(self.target.exists())
-        self.assert_no_partials()
-
-    def test_fsync_error_cleans_partial_without_report(self):
-        with patch("fvs_suite.atomic_text.os.fsync", side_effect=OSError("disk full")):
-            with self.assertRaises(OSError):
-                publish_text(self.target, "private test")
-        self.assertFalse(self.target.exists())
-        self.assert_no_partials()
-
-    def test_publication_error_cleans_partial_without_report(self):
-        operation = "os.rename" if os.name == "nt" else "os.link"
-        with patch("fvs_suite.atomic_text." + operation,
-                   side_effect=OSError("unsupported filesystem")):
-            with self.assertRaises(OSError):
-                publish_text(self.target, "private test")
-        self.assertFalse(self.target.exists())
-        self.assert_no_partials()
-
-    def test_only_final_report_is_visible_after_success(self):
-        publish_text(self.target, "complete")
-        self.assertEqual([p.name for p in self.root.iterdir()], [self.target.name])
-        self.assert_no_partials()
-
-    def test_unicode_report_text_without_bom(self):
-        publish_text(self.target, "Γραμμή\n日本語\n")
-        self.assertEqual(self.target.read_text(encoding="utf-8"), "Γραμμή\n日本語\n")
-        self.assertFalse(self.target.read_bytes().startswith(b"\xef\xbb\xbf"))
-
-    @unittest.skipIf(os.name == "nt", "POSIX mode only")
-    def test_private_owner_permissions_posix(self):
-        publish_text(self.target, "financial evidence")
-        self.assertEqual(stat.S_IMODE(self.target.stat().st_mode), 0o600)
-
-
-if __name__ == "__main__":
-    unittest.main()
-):
+        with self.assertRaisesRegex(ValueError, '^Invalid text report content$'):
             publish_text(self.target, "unpaired surrogate \ud800")
         self.assertFalse(self.target.exists())
         self.assert_no_partials()
