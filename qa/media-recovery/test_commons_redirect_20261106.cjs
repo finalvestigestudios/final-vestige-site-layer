@@ -39,3 +39,5 @@ rejects('no synthetic clearance in caption hint',s=>s[3].images[0].license_hints
 rejects('no mismatched post counts',s=>s[3].posts[0].commons_redirects++);
 rejects('no HTTP source',s=>s[3].images[0].stored_src='http://commons.wikimedia.org/img.jpg');
 rejects('no swapped image ID',s=>s[3].images[0].key='999:1');
+
+rejects('no missing WordPress recensus revision',s=>s[0].posts[0].modified_wp='');
