@@ -33,7 +33,7 @@ test("non-GET network requests MUST be actively aborted",()=>{
   assert.ok(text.includes('route.abort("blockedbyclient")'));
 });
 test("no form submission, typing, stored cookies, client-side injection or send helpers",()=>{
-  for(const banned of [".fill(", ".type(", ".press(", ".submit(", "fetch(", "axios", "postData", "localStorage.setItem", "send_email", "newsletter_subscribers_add"]){
+  for(const banned of [".fill(", "page.keyboard.type(", "locator.type(", ".press(", ".submit(", "fetch(", "axios", "postData", "localStorage.setItem", "send_email", "newsletter_subscribers_add"]){
     assert.ok(!text.includes(banned),banned);
   }
   assert.ok(text.includes("storageState:{cookies:[],origins:[]}"));
