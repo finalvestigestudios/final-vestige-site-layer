@@ -48,10 +48,30 @@ def publish_text(destination: str | Path, contents: str) -> Path:
     target = Path(destination)
     if not target.parent.is_dir():
         raise ValueError("Choose an existing output folder")
-    descriptor, temporary = tempfile.mkstemp(
-        prefix=f".{target.stem}-", suffix=".partial", dir=target.parent)
+    # Fail before creating a staging file when the name is occupied.
+    # lstat also catches dangling symlinks. This is only an early rejection:
+    # exclusive link/rename below remains the authority against races.
     try:
-        with os.fdopen(descriptor, "wb") as stream:
+        target.lstat()
+    except FileNotFoundError:
+        pass
+    else:
+        raise FileExistsError("Text report destination already exists")
+    # Do not place customer file names into temporary directory entries.
+    descriptor, temporary = tempfile.mkstemp(
+        prefix=".fvs-text-", suffix=".partial", dir=target.parent)
+    try:
+        # fdopen can fail before it assumes ownership; close the raw fd in
+        # that case. The outer finally removes the unpublished staging file.
+        try:
+            stream = os.fdopen(descriptor, "wb")
+        except BaseException:
+            try:
+                os.close(descriptor)
+            except OSError:
+                pass
+            raise
+        with stream:
             stream.write(payload)
             stream.flush()
             os.fsync(stream.fileno())
