@@ -10,14 +10,14 @@ EXPECTED_PR158_HTML_BLOB='403d128c57b9bc82dac7c619651689070edef86c'
 INVESTIGATION='https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/'
 
 def sha(b): return hashlib.sha256(b).hexdigest()
-def gitblob(b): return hashlib.sha1(b'blob '+str(len(b)).encode()+b'\\0'+b).hexdigest()
+def gitblob(b): return hashlib.sha1(b'blob '+str(len(b)).encode()+b'\0'+b).hexdigest()
 
 def run(a):
     source=Path(a.source).read_bytes()
     original=Path(a.original).read_bytes()
     assert sha(source)==EXPECTED_TEMPLATE_SHA256, 'R156 reviewed template was modified'
     assert gitblob(original)==EXPECTED_PR158_HTML_BLOB, 'PR158 original changed'
-    css=Path(a.css).read_text()+'\\n'+Path(a.orig_css).read_text()+'\\n'+Path(a.compat_css).read_text()
+    css=Path(a.css).read_text()+'\n'+Path(a.orig_css).read_text()+'\n'+Path(a.compat_css).read_text()
     js=Path(a.compat_js).read_text()
     out=Path(a.out)
     if out.exists(): raise RuntimeError('Refusing to overwrite prior evidence')
@@ -78,8 +78,8 @@ def run(a):
     receipt['summary']={'passed':sum(c['pass'] for c in receipt['checks']),
         'failed':sum(not c['pass'] for c in receipt['checks']), 'axe_executed':bool(a.axe),
         'production_acceptance':False}
-    (out/'receipt.json').write_text(json.dumps(receipt,sort_keys=True,indent=2)+'\\n')
-    (out/'SHA256SUMS').write_text(''.join(f"{e['sha256']}  {e['file']}\\n" for e in receipt['screenshots']))
+    (out/'receipt.json').write_text(json.dumps(receipt,sort_keys=True,indent=2)+'\n')
+    (out/'SHA256SUMS').write_text(''.join(f"{e['sha256']}  {e['file']}\n" for e in receipt['screenshots']))
     print(json.dumps(receipt['summary'],sort_keys=True))
     return 1 if receipt['summary']['failed'] else 0
 
