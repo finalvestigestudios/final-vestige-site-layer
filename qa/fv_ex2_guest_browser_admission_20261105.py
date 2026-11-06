@@ -40,12 +40,49 @@ def inspect(page):
         y: Math.round(a.getBoundingClientRect().y),
         visible: !!a.getClientRects().length
       }));
-      return {root: !!root, margins: margins.length, chapters,
+      const marginsInLayout = [...margins].filter(n => getComputedStyle(n).display !== 'none' &&
+          getComputedStyle(n).visibility !== 'hidden').length;
+      return {root: !!root, margins: margins.length, marginsInLayout, chapters,
         documentWidth: html.scrollWidth, viewportWidth: window.innerWidth,
         horizontalOverflow: html.scrollWidth > window.innerWidth + 2,
         heroActions: actions, focusLinks: focus, h1: document.querySelectorAll('h1').length,
         reducedMotion: matchMedia('(prefers-reduced-motion: reduce)').matches};
     }''', list(CHAPTER_IDS))
+
+
+def run_axe_all_widths(page, widths=WIDTHS):
+    # Audit every layout; test doubles never establish WCAG conformance.
+    receipts = {}
+    for width in widths:
+        page.set_viewport_size({'width': width, 'height': 844})
+        page.wait_for_timeout(90)  # allow media queries / layout to settle
+        try:
+            response = page.evaluate('''async () => {
+              if (!window.axe || typeof window.axe.run !== 'function')
+                return {status:'BLOCKED_AXE_MISSING'};
+              const audit = await window.axe.run(document, {runOnly:{type:'tag',values:
+                ['wcag2a','wcag2aa','wcag21a','wcag21aa','wcag22aa']}});
+              return {status:audit.violations.length ? 'VIOLATIONS' : 'NO_AUTOMATED_VIOLATIONS',
+                violations:audit.violations.map(v => ({id:v.id,impact:v.impact,nodes:v.nodes.length}))};
+            }''')
+            if not isinstance(response, dict) or response.get('status') not in (
+                    'VIOLATIONS', 'NO_AUTOMATED_VIOLATIONS'):
+                response = {'status': 'BLOCKED_AXE_MISSING',
+                            'reason': 'axe did not provide a valid result'}
+            if response['status'] == 'VIOLATIONS' and not response.get('violations'):
+                response = {'status': 'BLOCKED_AXE_MISSING',
+                            'reason': 'violation result without evidence'}
+        except Exception as exc:
+            response = {'status': 'BLOCKED_AXE_RUNTIME', 'error': type(exc).__name__}
+        receipts[str(width)] = response
+    passed = len(receipts) == len(widths) and all(
+        item['status'] == 'NO_AUTOMATED_VIOLATIONS' for item in receipts.values())
+    blocked = any(item['status'].startswith('BLOCKED') for item in receipts.values())
+    return {'status': ('BLOCKED_AXE_RUNTIME' if blocked else
+                       'NO_AUTOMATED_VIOLATIONS' if passed else 'VIOLATIONS'),
+            'widths': receipts, 'tested_widths': list(widths),
+            'all_widths_pass': passed,
+            'note': 'Automated axe is not full WCAG 2.2 AA or human accessibility review.'}
 
 
 def run(target, output, axe_path=None, live_readonly=False, browser_path='/usr/bin/chromium'):
@@ -126,6 +163,9 @@ def run(target, output, axe_path=None, live_readonly=False, browser_path='/usr/b
                 report['checks']['structure'] = all(
                     d['root'] and d['chapter_pass'] and d['margins_pass'] and
                     not d['horizontalOverflow'] for d in report['widths'].values())
+                report['checks']['reduced_motion_all_72_in_layout'] = all(
+                    data['reducedMotion'] and data['marginsInLayout'] == 72
+                    for data in report['widths'].values())
                 report['checks']['mobile_contextual_focus'] = all(
                     report['widths'][str(w)]['focus_above_fold'] for w in (320,360,390))
                 for name, selector in (
@@ -153,17 +193,18 @@ def run(target, output, axe_path=None, live_readonly=False, browser_path='/usr/b
                       transferSize: e.transferSize, responseEnd_ms: Math.round(e.responseEnd)
                     }))})''')
                 if axe_available:
-                    page.add_script_tag(path=str(axe))
-                    report['axe'] = page.evaluate('''async () => {
-                      if (!window.axe || !window.axe.run) return {status:'BLOCKED_AXE_MISSING'};
-                      const r = await axe.run(document, {runOnly:{type:'tag',values:
-                        ['wcag2a','wcag2aa','wcag21a','wcag21aa','wcag22aa']}});
-                      return {status:r.violations.length ? 'VIOLATIONS' : 'NO_AUTOMATED_VIOLATIONS',
-                        violations:r.violations.map(v => ({id:v.id,impact:v.impact,nodes:v.nodes.length}))};
-                    }''')
+                    try:
+                        page.add_script_tag(path=str(axe))
+                        report['axe'] = run_axe_all_widths(page)
+                    except Exception as exc:
+                        report['axe'] = {'status': 'BLOCKED_AXE_RUNTIME',
+                                         'reason': type(exc).__name__,
+                                         'all_widths_pass': False}
                 else:
                     report['axe'] = {'status':'BLOCKED_AXE_MISSING',
-                                     'reason':'Provide a local axe-core bundle via --axe'}
+                                     'all_widths_pass': False,
+                                     'reason':'Provide a local verified axe-core bundle via --axe'}
+                report['checks']['axe_all_widths'] = report['axe'].get('all_widths_pass') is True
                 report['archival_delivery'] = audit_archival_transfers(page, transfers)
                 report['checks']['archival_delivery'] = report['archival_delivery']['passed']
                 report['image_network'] = list(transfers.values())
