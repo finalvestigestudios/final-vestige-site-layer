@@ -37,5 +37,6 @@ assert.ok(section.includes('https://finalvestige.com/focus/'));
 assert.ok(!section.includes('<script src='));
 assert.ok(!section.includes('<main>'));
 // Native PHP parser + accidental-copy behavior is mandatory; never skip silently.
+require('./verify_integrated_public_margins.cjs').verify(fs.readFileSync(path.join(__dirname,'FV_EX2_ASSEMBLER_BLUEPRINT_20261105.json'),'utf8'));
 require('./verify_playground_php_preflight.cjs');
 console.log('PASS: exact-source importer plus native PHP preflight');
