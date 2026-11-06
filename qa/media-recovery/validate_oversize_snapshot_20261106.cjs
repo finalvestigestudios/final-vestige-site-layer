@@ -10,6 +10,7 @@ function check(a) {
  const ids=new Set(),urls=new Set(),counts={direct:0,jetpack:0,not_matched_in_seven_posts:0},totals={direct:0,jetpack:0,not_matched_in_seven_posts:0};
  for(const r of a.rows){
   if(!Number.isInteger(r.id)||ids.has(r.id))e('duplicate_id');ids.add(r.id);
+  if(r.id===405&&r.wp_parent!==85)e('wp_parent_405');
   if(typeof r.original_url!=='string'||!r.original_url.startsWith('https://finalvestige.com/wp-content/uploads/2026/08/')||urls.has(r.original_url))e('original_url');urls.add(r.original_url);
   if(!Number.isInteger(r.original_stored_bytes)||r.original_stored_bytes<=1572864)e('size_threshold');
   const [w,h]=r.wp_original_pixels||[];const tw=Math.min(w,960);
