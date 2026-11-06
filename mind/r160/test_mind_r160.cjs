@@ -70,7 +70,7 @@ function validate(p){
  return true;
 }
 assert.equal(validate(original),true);
-const make=(key,fn)=>{const t={...original,matrix:structuredClone(original.matrix)};fn(t);let failed=false;try{validate(t)}catch(e){failed=true}assert.ok(failed,"unsafe mutation escaped "+key)};
+const make=(key,fn)=>{const t={...original,matrix:JSON.parse(JSON.stringify(original.matrix))};fn(t);let failed=false;try{validate(t)}catch(e){failed=true}assert.ok(failed,"unsafe mutation escaped "+key)};
 const mutations=[
 ["paid_button_enabled",t=>t.html=t.html.replace(/ type="button" disabled aria-describedby=/,' type="button" aria-describedby=')],
 ["disclosure_deleted",t=>t.html=t.html.replace(/<p class="disclosure"[\s\S]*?<\/p>/,'')],
