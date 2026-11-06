@@ -6,7 +6,7 @@ Issue #136; coordinated with #820, #818 and TASK-008. Parent R159 PR #1202 exact
 
 ## Purpose
 
-A citation count can stay constant while a citation moves away from the claim it purports to support. The new Python gate emits an inspectable, deterministic citation-context review docket for the authentic 35-article candidate. Every entry identifies article, citation ordinal, source ID, original author interpretation, normalized surrounding prose and SHA-256 context fingerprint. A changed claim context changes the fingerprint and requires human review. Evidence association does NOT establish that advice is accurate or medically safe.
+A citation count can stay constant while a citation moves away from the claim it purports to support. The new Python gate emits an inspectable, deterministic citation-context review docket for the authentic 35-article candidate. Every entry identifies article, citation ordinal, source ID, original author interpretation, normalized surrounding prose and a SHA-256 fingerprint binding the raw nearby HTML, citation source ID and original author interpretation. A changed claim context changes the fingerprint and requires human review. Evidence association does NOT establish that advice is accurate or medically safe.
 
 The gate also authenticates the frozen R151 35-article metadata manifest and R159 quarantined Family Card snapshots by exact Git blob identities. It checks original article-body/metadata census, source-use/citation bijection, syntactic reference validity, unique routes, reading/citation depth, publication draft state, original metadata safety-state distribution (29 pending, 4 not-required, 2 recorded approved), and R159 privacy/print-unverified qualification. Recorded approval labels are not an independent QD PASS. The generated docket is stdout-only, no canonical file mutation.
 
@@ -14,7 +14,7 @@ The CLI always exits 2. It reports DRAFT_HARD_HOLD for structurally sound review
 
 ## Test evidence and trusted-checkout commands
 
-72/72 isolated Python 3.13.5 unittest cases passed, including 64 individually named adversarial metadata, citation and source-use mutations. Python compilation passed. Synthetic unit tests are not authentic repository validation. All original 35 articles, canonical source registers, R159 snapshots, and seven contributor branches remain unchanged.
+75/75 isolated Python 3.13.5 unittest cases passed, including 64 individually named adversarial metadata, citation and source-use mutations plus count-preserving citation source swaps, author-interpretation changes and paragraph-boundary relocation tests. Python compilation passed. Synthetic unit tests are not authentic repository validation. All original 35 articles, canonical source registers, R159 snapshots, and seven contributor branches remain unchanged.
 
 From an authenticated exact-head full repository clone run:
 
