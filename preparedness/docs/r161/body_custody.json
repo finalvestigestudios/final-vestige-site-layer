@@ -1,0 +1,152 @@
+{
+  "article_count": 35,
+  "article_source_relationships": 385,
+  "articles": {
+    "emergency-hygiene-sanitation": {
+      "citations": 62,
+      "git_blob": "324eeafa4d48c3e83e88055c5f226645a8893b4a"
+    },
+    "family-communication-plan": {
+      "citations": 69,
+      "git_blob": "8ac8bd7dba3be15d477c15737e54d83364d72527"
+    },
+    "fire-making-across-time": {
+      "citations": 67,
+      "git_blob": "ff1b5e2c91172925e1d75462da4b3e162399269f"
+    },
+    "food-safety-power-outage": {
+      "citations": 69,
+      "git_blob": "70339ef60f3f7bf1bec26a0ca457b0438650163e"
+    },
+    "go-bags": {
+      "citations": 73,
+      "git_blob": "e5910015fc6e33ad015bc5dc0605b86622b701be"
+    },
+    "history-of-food-preservation": {
+      "citations": 47,
+      "git_blob": "273b246a069e834d8476bfc2854308732f5137ab"
+    },
+    "home-fire-escape-plan": {
+      "citations": 73,
+      "git_blob": "0412484304a3bcf08f0bb1b170110f617e3c2869"
+    },
+    "homemade-water-filters": {
+      "citations": 51,
+      "git_blob": "67aa44e9a332f57fb70298a3867410d8f66c8c15"
+    },
+    "household-emergency-plan": {
+      "citations": 57,
+      "git_blob": "f81cd43516e8295104230412f18776919148f905"
+    },
+    "lewis-and-clark-salt-works": {
+      "citations": 49,
+      "git_blob": "364152230a6956a4936fd4ec4bce6b1547fe2533"
+    },
+    "making-water-safer": {
+      "citations": 52,
+      "git_blob": "f85d158fc8752200a227282e640f6df48277daf5"
+    },
+    "medication-and-devices": {
+      "citations": 68,
+      "git_blob": "47bbfeefb5aca5f5a8d66ad8c66e2998e6caae5e"
+    },
+    "navigation-before-gps": {
+      "citations": 47,
+      "git_blob": "3c02e58c30d1d608224944142f31fbead44a1252"
+    },
+    "outage-heat-cold-generators": {
+      "citations": 121,
+      "git_blob": "2cd3e30b3a7e3dfdb3fd30cfd2b832355f58dfe2"
+    },
+    "pantry-rotation": {
+      "citations": 68,
+      "git_blob": "727a43eff8b30c0f68fb6695d76d63166eb51450"
+    },
+    "pemmican-and-dried-meats": {
+      "citations": 46,
+      "git_blob": "0b3319cc85ea2bc6d069b46d13a40e12ddbd5bc5"
+    },
+    "pickling-fermentation-old-recipes": {
+      "citations": 49,
+      "git_blob": "1869e37626b7463da45763d60202bd5ac0bd7700"
+    },
+    "pioneer-supply-chains-failed": {
+      "citations": 63,
+      "git_blob": "ad158ee898f76d05bcb65c845b1e4a0e8103c660"
+    },
+    "pioneer-travel-rations": {
+      "citations": 39,
+      "git_blob": "058c90b763d8cd6dec0731a7b0a9cee4dd5a57c7"
+    },
+    "preparedness-real-households": {
+      "citations": 64,
+      "git_blob": "68344cf6c4022285fffb2a01f42027bf6f9ee95d"
+    },
+    "pressure-canning-low-acid": {
+      "citations": 74,
+      "git_blob": "c60d824c2f679fb7362b8523aec18110f8248290"
+    },
+    "rain-barrels-and-cisterns": {
+      "citations": 44,
+      "git_blob": "1454ab95bef4e54ae8992addf4f815fc8bf358b4"
+    },
+    "root-cellars-cool-storage": {
+      "citations": 42,
+      "git_blob": "2ff8d029769aa9a97de6b1e388d937899f3af38c"
+    },
+    "safe-jerky-dehydration": {
+      "citations": 71,
+      "git_blob": "6fa55c397b161437e016d5d4a6c27da7ce3fa6bd"
+    },
+    "salt-beef-salt-pork-age-of-sail": {
+      "citations": 49,
+      "git_blob": "6539aafeca9bca67c96247c81a7412b117201b88"
+    },
+    "sanitation-before-germ-theory": {
+      "citations": 48,
+      "git_blob": "d56df76647d2598f35cfd4609f91649cef063f12"
+    },
+    "shelter-or-evacuate": {
+      "citations": 59,
+      "git_blob": "de3cb805041904cf22d4f216296bd4c8ddec17c1"
+    },
+    "ships-biscuit-and-hardtack": {
+      "citations": 42,
+      "git_blob": "f2ec2393819c26741f7ce77b7e0f0f893d1c33e4"
+    },
+    "smokehouses-salting-curing": {
+      "citations": 36,
+      "git_blob": "e5f6241c1fa09fdbd684234317aa819ea4ef13a2"
+    },
+    "three-day-kit": {
+      "citations": 79,
+      "git_blob": "933f38ff3cd55a241cf9b392014fc52d4961e84f"
+    },
+    "two-week-water-storage": {
+      "citations": 28,
+      "git_blob": "24572839d79a3c3f78805f3fc6834b7ab6037768"
+    },
+    "warnings-radios-offline-maps": {
+      "citations": 55,
+      "git_blob": "fbc39101ba2c8378423ba9554aaf467ee3bc53b7"
+    },
+    "water-advisories-explained": {
+      "citations": 30,
+      "git_blob": "e96486d74731606fdd5a616030f146f66c59e2b0"
+    },
+    "water-math": {
+      "citations": 33,
+      "git_blob": "e82ad3ab14acb23e1cb1d87e80fa2e5d60da6ae4"
+    },
+    "water-purification-through-history": {
+      "citations": 76,
+      "git_blob": "3c89d3041b170038c842dea1b4f943385b0c8a86"
+    }
+  },
+  "r151_manifest_git_blob": "9cf386519eda970209ff6be4ff0243661cd9d996",
+  "schema": "fv-preparedness-r161-body-custody-v1",
+  "source_commit": "9578433a87d6b866848da55ea714f8deac6ed07c",
+  "source_evidence": "Read-only authenticated GitHub file SHA and citation counts on R160 head; no content or safety approval.",
+  "status": "DRAFT_HARD_HOLD",
+  "total_citations": 2000
+}
