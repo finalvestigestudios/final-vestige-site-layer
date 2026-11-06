@@ -1,0 +1,80 @@
+{
+  "purpose": "Noncommercial editorial source-custody staging review. No image binaries, usage grant or paid product approval.",
+  "as_of": "2026-11-06",
+  "input": {
+    "repository": "finalvestigestudios/final-vestige-site-layer",
+    "reference_pr": 1303,
+    "source_path": "experience2/apollo-r173/research-desk-source-custody.html",
+    "source_git_blob_sha1": "bc5e9e2618ed5bbde86b9c40c10045fb72fc66c2"
+  },
+  "rights_policy": {
+    "nasa_guidance": "https://gpm.nasa.gov/image-use-policy",
+    "editorial_use": "Individual media rights and credits require case-level verification.",
+    "paid_promotion": "HOLD: this audit is not a license, publicity release, endorsement or approval for commercial product use.",
+    "logo_or_insignia": "NOT AUTHORIZED",
+    "astronaut_likeness_commercial": "HOLD: independent publicity/permission review required"
+  },
+  "records": [
+    {
+      "record": "01",
+      "display_id": "S67-19766",
+      "photo_url": "https://www.nasa.gov/image-detail/apollo-1-crew-honored/",
+      "date": "January 1967",
+      "role": "Pre-fire crew portrait during training",
+      "catalog_match": "NOT VERIFIED ON LINKED NASA PAGE",
+      "finding": "NASA's linked caption identifies the crew and January 1967 training location but does not display S67-19766; the ID-to-photo match must not be described as verified.",
+      "commercial_media": "HOLD_IDENTIFIABLE_PERSONS"
+    },
+    {
+      "record": "02",
+      "display_id": "S67-15717",
+      "photo_url": "https://www.nasa.gov/image-detail/amf-s67-15717/",
+      "date": "1967-01-03",
+      "role": "Pre-fire command module processing",
+      "catalog_match": "NASA PAGE IDENTIFIER VERIFIED",
+      "finding": "Photo describes the command/service module moving for mating; it is not an oxygen measurement.",
+      "commercial_media": "HOLD_PENDING_RIGHTS_REVIEW"
+    },
+    {
+      "record": "03",
+      "display_id": "S66-58038",
+      "photo_url": "https://www.nasa.gov/image-detail/amf-s66-58038/",
+      "date": "1966-10-18",
+      "role": "Pre-fire altitude chamber training",
+      "catalog_match": "NASA PAGE IDENTIFIER VERIFIED",
+      "finding": "Photo predates fire and is not a record of January 27 instrument telemetry.",
+      "commercial_media": "HOLD_IDENTIFIABLE_PERSONS"
+    },
+    {
+      "record": "04",
+      "display_id": "KSC-20170124-PH_KLS01_0164",
+      "photo_url": "https://www.nasa.gov/image-detail/amf-ksc-20170124-ph_kls01_0164/",
+      "date": "2017-01-24",
+      "role": "Fiftieth-anniversary Apollo 1 tribute exhibition",
+      "catalog_match": "NASA PAGE IDENTIFIER VERIFIED",
+      "finding": "Shows a 2017 exhibit; cannot illustrate a timestamp of the 1967 fire.",
+      "commercial_media": "HOLD_PENDING_RIGHTS_REVIEW"
+    },
+    {
+      "record": "05",
+      "display_id": "S67-21294",
+      "photo_url": "https://www.nasa.gov/image-detail/amf-s67-21294/",
+      "date": "1967-01-28",
+      "role": "POST-FIRE PHYSICAL AFTERMATH DOCUMENTATION",
+      "catalog_match": "NASA PAGE IDENTIFIER VERIFIED",
+      "finding": "Unlike the context-only images, this photograph shows the fire-damaged command module, one day later; the image alone cannot identify the precise ignition source.",
+      "commercial_media": "HOLD_PENDING_RIGHTS_REVIEW"
+    },
+    {
+      "record": "06",
+      "display_id": "KSC-20170124-PH_KLS01_0090",
+      "photo_url": "https://www.nasa.gov/image-detail/amf-ksc-20170124-ph_kls01_0090/",
+      "date": "2017-01-24",
+      "role": "Exhibited redesigned hatch",
+      "catalog_match": "NASA PAGE IDENTIFIER VERIFIED",
+      "finding": "A 2017 exhibit photograph, not imagery of the original fire or test sequence.",
+      "commercial_media": "HOLD_PENDING_RIGHTS_REVIEW"
+    }
+  ],
+  "historical_technical_source": "https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/"
+}
