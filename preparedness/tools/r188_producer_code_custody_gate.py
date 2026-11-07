@@ -59,6 +59,8 @@ def verify(preparedness: Path, pins: dict[str, str] | None = None) -> dict:
         raise ValueError('missing immutable producer roster')
     if not preparedness.is_dir() or preparedness.is_symlink():
         raise ValueError('missing or symlinked Preparedness root')
+    if not (preparedness / 'tools').is_dir() or (preparedness / 'tools').is_symlink():
+        raise ValueError('missing or symlinked producer tools directory')
     for relative, sha in expected.items():
         if (not isinstance(relative, str) or
             re.fullmatch(r'tools/[A-Za-z0-9_]+\.py', relative) is None or
