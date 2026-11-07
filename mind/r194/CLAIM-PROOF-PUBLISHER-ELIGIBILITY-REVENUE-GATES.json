@@ -189,7 +189,7 @@
     },
     {
       "id": "r193_volume",
-      "claim": "The gorilla's rectangular bounding volume was approximately 48 times the mean nodule bounding volume.",
+      "claim": "The gorilla's rectangular bounding box exceeded 7,400 mm³, compared with 153 mm³ mean nodule volume (about 48-fold); the nodule volume is not identified as a bounding-box volume.",
       "source_ids": [
         "drew2013"
       ],

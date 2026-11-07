@@ -76,7 +76,7 @@ function checks(f){
   ok(f.plan.includes('Variant')||f.plan.includes('42-second'),'A/B hypothesis present');
   ok(f.plan.includes('non-PII')&&f.plan.includes('utm_content'),'nonpersonal attribution');
   ok(f.plan.includes('HARD HOLD'),'commercial authorization hold');
-  ok(/rectangular bounding volume/i.test(f.priorArticle),'R193 volume precisely rectangular bounding box');
+  ok(/rectangular bounding box of more than 7,400 mm³/.test(f.priorArticle)&&/153 mm³/.test(f.priorArticle),'R193 gorilla box versus actual mean nodule volume');
   ok(/gaze dwell time/i.test(f.priorArticle),'R193 dwell rather than single fixation');
   ok(/gaze dwell time/.test(JSON.stringify(old.claim_decisions||[])),'R193 ledger dwell correction');
   const nativeDisabled=(s)=>/\sdisabled(?=\s|=|>)/i.test([...s.matchAll(/<button\b[^>]*>/gi)].map(x=>x[0]).join(' '));

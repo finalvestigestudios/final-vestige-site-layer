@@ -13,7 +13,7 @@ Imagine seeing a portrait upside down. It may be difficult to read the expressio
 
 The unsettling moment is not a revelation that the picture changed between viewings. It did not. The same arrangement of pixels may look different as its overall orientation changes. The change is in the conditions under which the observer interprets a face.
 
-In August 1980, psychologist Peter Thompson published a two-page paper titled **“Margaret Thatcher: A New Illusion”** in *Perception*. The effect would become known as the *Thatcher illusion*, or *Thatcherization*, named for the altered portrait used in its original illustration. That published historical detail matters: it is a specific demonstration with a traceable origin, not a mysterious modern social-media filter. [1]
+In August 1980, psychologist Peter Thompson published a two-page paper titled **“Margaret Thatcher: A New Illusion”** in *Perception*. The visual effect became known as the *Thatcher illusion*, while *Thatcherization* refers to the deliberate manipulation of facial features used to produce it; both names trace to the altered portrait in Thompson's original illustration. That published historical detail matters: it is a specific demonstration with a traceable origin, not a mysterious modern social-media filter. [1]
 
 Before looking for a recreated example, note the rights issue. A historically famous person's photograph and a journal's published figure do not become free to reuse just because the illusion is widely reproduced. This investigation therefore describes the mechanism without copying a copyrighted portrait. Any eventual interactive example should use a newly photographed, consented subject or an original rights-cleared synthetic illustration, with a documented license.
 
@@ -35,7 +35,7 @@ Thompson's original 1980 paper introduced the illusion. The subsequent literatur
 
 This helps prevent the over-neat claim that “the brain cannot recognize emotion upside down.” The experiments were not a test of whether all emotion reading ceases in inverted photographs. They compared specific distortions and judgments of their appearance.
 
-**1997: responding under speed.** Michael Lewis and Robert Johnston asked observers to respond quickly to whether only the eyes and mouth had been inverted. Responses were slower for inverted faces than upright ones. They also reported that presenting faces as photographic negatives hindered performance, consistent with disruption extending beyond a trivial inability to recognize the exact familiar face. [3]
+**1997: responding under speed.** Michael Lewis and Robert Johnston asked observers to respond quickly to whether only the eyes and mouth had been inverted. Responses were slower for inverted faces than upright ones. They also reported that presenting faces as photographic negatives hindered performance. That observation concerns this speeded detection task and its image format; the cited abstract does not establish a separate familiar-face-identity explanation. [3]
 
 A reaction-time difference is not the same thing as total blindness. People can notice the manipulation; its detection can simply become harder under defined viewing conditions. On a phone feed, where an image may flash past at uncertain scale and duration, the result depends on presentation details. A video should not assert that every viewer *must* fail.
 

@@ -1,0 +1,451 @@
+{
+  "milestone": "R195",
+  "date": "2026-11-07",
+  "status": "DRAFT_UNPUBLISHED_HARD_HOLD",
+  "scientific_research_separate_from_commerce": true,
+  "affiliate_earning_url": null,
+  "public_seller_link_not_affiliate": true,
+  "publisher_specific_approval": "NOT_VERIFIED",
+  "owned_paid_mind_sku": "NOT_VERIFIED",
+  "paid_orders_verified": null,
+  "verified_commissions_received": null,
+  "net_revenue_per_1000_qualified_humans": "NOT_COMPUTABLE",
+  "important_caveat": "Unknown is not zero; email promotional messages are not named affiliate authorization.",
+  "sources": [
+    {
+      "id": "stroop1935",
+      "url": "https://doi.org/10.1037/h0054651",
+      "kind": "publisher-abstract",
+      "note": "Primary original study, reported timing and reliability"
+    },
+    {
+      "id": "macleod1991",
+      "url": "https://doi.org/10.1037/0033-2909.109.2.163",
+      "kind": "peer-reviewed-review",
+      "note": "1991 integrative review; 400+ studies discussed"
+    },
+    {
+      "id": "salo2001",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/11761035/",
+      "kind": "primary-abstract",
+      "note": "Stroop test versions, baselines and blocking"
+    },
+    {
+      "id": "stroopmeta2024",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12602573/",
+      "kind": "full-research",
+      "note": "133 experiment neuroimaging meta-analysis"
+    },
+    {
+      "id": "clinical2021",
+      "url": "https://www.mdpi.com/1660-4601/18/20/10657",
+      "kind": "review",
+      "note": "Task variant/clinical interpretation limits"
+    },
+    {
+      "id": "inspire3",
+      "url": "https://inspire3.com/",
+      "kind": "seller-catalog",
+      "note": "Brands named, marketing claims not independently supported"
+    },
+    {
+      "id": "zen12",
+      "url": "https://zen12.com/hnp",
+      "kind": "seller-offer",
+      "note": "Exact public offer examined Nov 7; features/advertised terms only"
+    },
+    {
+      "id": "totalfocus",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "kind": "seller-offer",
+      "note": "Exact distinct Total Focus audio SKU; not interchangeable with Zen12"
+    },
+    {
+      "id": "affiliateportal",
+      "url": "https://affiliates.inspire3.com/",
+      "kind": "public-signup",
+      "note": "Program exists; FV named approval NOT established"
+    },
+    {
+      "id": "ftcendorsement",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "kind": "regulator-guidance",
+      "note": "Affiliate disclosure close to link and explicit"
+    },
+    {
+      "id": "ftchealth",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "kind": "regulator-guidance",
+      "note": "Product-specific support before objective health promises"
+    },
+    {
+      "id": "focus",
+      "url": "https://finalvestige.com/focus/",
+      "kind": "live-site",
+      "note": "One established free Fieldbook / existing Jetpack list"
+    },
+    {
+      "id": "puys",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "kind": "published-history",
+      "note": "Historical archive, not efficacy trials"
+    },
+    {
+      "id": "mesmerism",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "kind": "published-article",
+      "note": "Historical Mesmerism investigation"
+    },
+    {
+      "id": "change",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "kind": "published-article",
+      "note": "Visible public creator landing route"
+    },
+    {
+      "id": "issue171",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "kind": "governance",
+      "note": "Distinct Mind lane, editorial/affiliate holds"
+    },
+    {
+      "id": "issue820",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "kind": "governance",
+      "note": "Attribution, confirmed leads/sales and release governance"
+    },
+    {
+      "id": "guideA",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/blob/4864e73940c561a0889d4597ff0ac3317a664a62/mind/r188/zen12-variant-A-independent-text-UNPUBLISHED.html",
+      "kind": "unpublished-code",
+      "note": "Existing text-only guide; not live"
+    },
+    {
+      "id": "guideB",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/blob/4864e73940c561a0889d4597ff0ac3317a664a62/mind/r188/zen12-variant-B-optional-42s-storyboard-UNPUBLISHED.html",
+      "kind": "unpublished-code",
+      "note": "Same content plus optional 42s concept, not MP4"
+    }
+  ],
+  "claims": [
+    {
+      "id": "stroop_interference",
+      "text": "Classic incongruent color-word naming is slower than control tasks",
+      "source_ids": [
+        "stroop1935",
+        "macleod1991"
+      ],
+      "decision": "independently-supported",
+      "limits": "Research finding under defined protocols; not individual diagnosis"
+    },
+    {
+      "id": "stroop_colorname",
+      "text": "Original ink naming had 47.0s/74.3% longer time in stated setup",
+      "source_ids": [
+        "stroop1935"
+      ],
+      "decision": "independently-supported-with-scope",
+      "limits": "Do not generalize as universal per-person delay"
+    },
+    {
+      "id": "stroop_wordread",
+      "text": "Original word-reading time 2.3s/5.6% increase described as unreliable",
+      "source_ids": [
+        "stroop1935"
+      ],
+      "decision": "independently-supported-with-scope",
+      "limits": "Asymmetry is study result, not guaranteed replication"
+    },
+    {
+      "id": "macleod_scope",
+      "text": "1991 review discussed roughly 400 studies and 18 robust phenomena",
+      "source_ids": [
+        "macleod1991"
+      ],
+      "decision": "review-summary",
+      "limits": "Does not validate any audio"
+    },
+    {
+      "id": "baseline_dependence",
+      "text": "Baseline and task format alter interpretation of interference",
+      "source_ids": [
+        "salo2001"
+      ],
+      "decision": "independently-supported",
+      "limits": "Avoid diagnostic inferences"
+    },
+    {
+      "id": "neuro_meta",
+      "text": "2024 meta-analysis pooled 133 neuroimaging experiments",
+      "source_ids": [
+        "stroopmeta2024"
+      ],
+      "decision": "independently-supported",
+      "limits": "Brain network activity is not product effect"
+    },
+    {
+      "id": "clinical_task_warning",
+      "text": "Emotional/color word Stroop not mechanistically interchangeable",
+      "source_ids": [
+        "clinical2021"
+      ],
+      "decision": "review-supported",
+      "limits": "No diagnosis or clinical claims"
+    },
+    {
+      "id": "zen12_structure",
+      "text": "Zen12 Premium advertises 12 levels/48 MP3 recordings",
+      "source_ids": [
+        "zen12"
+      ],
+      "decision": "seller-described-feature",
+      "limits": "Not independently delivered or purchased"
+    },
+    {
+      "id": "zen12_12eq60",
+      "text": "12-minute audio equivalent to one hour of advanced meditation",
+      "source_ids": [
+        "zen12"
+      ],
+      "decision": "UNSUBSTANTIATED_SELLER_CLAIM",
+      "limits": "Exclude implied efficacy outcome from FV CTA and research"
+    },
+    {
+      "id": "zen12_benefits",
+      "text": "Seller touts concentration, stress, health and creativity improvements",
+      "source_ids": [
+        "zen12",
+        "ftchealth"
+      ],
+      "decision": "UNSUBSTANTIATED_SELLER_CLAIM",
+      "limits": "No adequate product-specific evidence provided to FV"
+    },
+    {
+      "id": "zen12_guarantee",
+      "text": "Seller advertises one-year money-back guarantee",
+      "source_ids": [
+        "zen12"
+      ],
+      "decision": "seller-advertised-term",
+      "limits": "Actual payment, conditions, refund execution not established"
+    },
+    {
+      "id": "zen12_price",
+      "text": "Public offer presents Premium price but current final checkout not established",
+      "source_ids": [
+        "zen12"
+      ],
+      "decision": "seller-price-observation-not-authoritative",
+      "limits": "Do not display price in FV page without checkout/merchant validation"
+    },
+    {
+      "id": "totalfocus_specs",
+      "text": "Total Focus seller describes 33-minute, 47MB file",
+      "source_ids": [
+        "totalfocus"
+      ],
+      "decision": "seller-described-feature",
+      "limits": "Separate exact SKU; delivery/claims unverified"
+    },
+    {
+      "id": "totalfocus_impact",
+      "text": "Recording can create limitless concentration",
+      "source_ids": [
+        "totalfocus",
+        "ftchealth"
+      ],
+      "decision": "UNSUBSTANTIATED_SELLER_CLAIM",
+      "limits": "Exclude guarantee/mental-health implication"
+    },
+    {
+      "id": "portal_public",
+      "text": "Inspire3 offers a public affiliate signup and program claims",
+      "source_ids": [
+        "affiliateportal"
+      ],
+      "decision": "verified-public-program-existence",
+      "limits": "Does NOT confirm current FV publisher status, permissions or payout"
+    },
+    {
+      "id": "fv_approval",
+      "text": "Final Vestige currently accepted for Inspire3 affiliate program",
+      "source_ids": [
+        "affiliateportal",
+        "issue171"
+      ],
+      "decision": "NOT_VERIFIED",
+      "limits": "Gmail targeted search did not establish named approval, no credentials inspected"
+    },
+    {
+      "id": "owned_payhip",
+      "text": "FV-owned Mind SKU is rights-cleared, live and sellable",
+      "source_ids": [
+        "issue820"
+      ],
+      "decision": "NOT_VERIFIED",
+      "limits": "Needs authenticated SKU, rights, checkout/returns and delivery proof"
+    },
+    {
+      "id": "focus_live",
+      "text": "Free 52-page Fieldbook uses existing Jetpack/Dispatch signup",
+      "source_ids": [
+        "focus"
+      ],
+      "decision": "public-route-observed",
+      "limits": "Do not add second form/list; visible gift is not confirmed subscription"
+    },
+    {
+      "id": "focus_lead",
+      "text": "A visible PDF download means confirmed subscriber",
+      "source_ids": [
+        "focus",
+        "issue820"
+      ],
+      "decision": "FALSE_UNSAFE_PROXY",
+      "limits": "Require authoritative Jetpack opt-in and consent proof"
+    },
+    {
+      "id": "outbound_sale",
+      "text": "Affiliate outbound click proves paid commission",
+      "source_ids": [
+        "issue820"
+      ],
+      "decision": "FALSE_UNSAFE_PROXY",
+      "limits": "Must reconcile merchant-paid commission and reversals"
+    },
+    {
+      "id": "disclosure",
+      "text": "Prospective affiliate disclosure must be adjacent and explicit",
+      "source_ids": [
+        "ftcendorsement"
+      ],
+      "decision": "regulator-guided",
+      "limits": "Disclose if link ever enabled; no affiliate link active"
+    },
+    {
+      "id": "video_variant",
+      "text": "R188 B adds optional 42s video to identical text-only A",
+      "source_ids": [
+        "guideA",
+        "guideB"
+      ],
+      "decision": "unpublished-design-prototype",
+      "limits": "No MP4, no traffic trial, no claim of higher conversion"
+    },
+    {
+      "id": "academic_commerce",
+      "text": "Stroop experiment proves Zen12 efficacy",
+      "source_ids": [
+        "stroop1935",
+        "zen12",
+        "ftchealth"
+      ],
+      "decision": "NOT_SUPPORTED",
+      "limits": "Never use research as product proof"
+    }
+  ],
+  "gates": [
+    {
+      "id": "publisher_acceptance",
+      "pass": false,
+      "owner": "Founder/Mind",
+      "proof_needed": "Named current FV-approved account proof"
+    },
+    {
+      "id": "allowed_channels",
+      "pass": false,
+      "owner": "Founder/Mind",
+      "proof_needed": "Permission for site/creator/email use; do not infer"
+    },
+    {
+      "id": "earning_url",
+      "pass": false,
+      "owner": "Founder/Mind",
+      "proof_needed": "Exact authorized tracking URL + compliant no-cloak rules"
+    },
+    {
+      "id": "approved_creatives",
+      "pass": false,
+      "owner": "Founder/Mind",
+      "proof_needed": "Commercial creatives permissions and rights"
+    },
+    {
+      "id": "merchant_price",
+      "pass": false,
+      "owner": "Commerce",
+      "proof_needed": "Live final checkout total and currency"
+    },
+    {
+      "id": "merchant_refunds",
+      "pass": false,
+      "owner": "Commerce",
+      "proof_needed": "Current policy plus fulfillment evidence"
+    },
+    {
+      "id": "owned_product_sku",
+      "pass": false,
+      "owner": "Commerce",
+      "proof_needed": "Actual saleable rights-cleared FV Mind SKU"
+    },
+    {
+      "id": "owned_product_checkout",
+      "pass": false,
+      "owner": "Commerce",
+      "proof_needed": "Checkout, tax/fees, delivery and refunds validated"
+    },
+    {
+      "id": "confirmed_jetpack_lead",
+      "pass": false,
+      "owner": "Site QA/Dispatch",
+      "proof_needed": "Authoritative opted-in confirmed subscriber, not gift display"
+    },
+    {
+      "id": "grok_assets",
+      "pass": false,
+      "owner": "Praxxis/Grok",
+      "proof_needed": "Actual published asset IDs, dates, rights and destinations"
+    },
+    {
+      "id": "browser_360_390_768_1440",
+      "pass": false,
+      "owner": "Site QA",
+      "proof_needed": "Native browser/keyboard/WCAG checks on staged proof"
+    },
+    {
+      "id": "performance_mobile",
+      "pass": false,
+      "owner": "Site QA",
+      "proof_needed": "Real Lighthouse/CWV on staged draft"
+    },
+    {
+      "id": "video_mp4_captioned",
+      "pass": false,
+      "owner": "Mind/Site QA",
+      "proof_needed": "Rendered optional video, poster, captions and transcript if variant B tested"
+    },
+    {
+      "id": "privacy_attribution",
+      "pass": false,
+      "owner": "Claude/Analytics",
+      "proof_needed": "Consent/retention plus no PII; avoid duplicate scripts"
+    },
+    {
+      "id": "orders_reconciled",
+      "pass": false,
+      "owner": "Commerce",
+      "proof_needed": "Merchant-confirmed paid orders or commissions, refunds, fees"
+    },
+    {
+      "id": "net_revenue_denominator",
+      "pass": false,
+      "owner": "Commerce/Analytics",
+      "proof_needed": "7/30-day qualified-human sessions and correct net numerator"
+    },
+    {
+      "id": "founder_release",
+      "pass": false,
+      "owner": "Founder",
+      "proof_needed": "Approval for WordPress, merchant and social activation"
+    }
+  ]
+}
