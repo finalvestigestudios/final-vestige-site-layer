@@ -1,7 +1,17 @@
 """Synthetic regression/adversarial contracts; never real-source or QD approval."""
 import copy
 import unittest
-import r187_receipt_contract_gate as gate
+from pathlib import Path
+from importlib import util
+
+MODULE = Path(__file__).resolve().parents[1] / "tools/r187_receipt_contract_gate.py"
+if not MODULE.is_file():  # Local synthetic harness lives alongside its helper.
+    MODULE = Path(__file__).resolve().with_name("r187_receipt_contract_gate.py")
+spec = util.spec_from_file_location("fv_r187_receipt_contract", MODULE)
+if spec is None or spec.loader is None:
+    raise ImportError("R187 helper cannot be loaded")
+gate = util.module_from_spec(spec)
+spec.loader.exec_module(gate)
 
 
 def good(label):
