@@ -170,6 +170,7 @@ def run(bundle, output, axe_js=None, timeout_ms=120000, chromium=None):
                 "PASS" if len(images) == 2 and all(x["first_party"] for x in images)
                 else "NOT_VERIFIED_CDN_SELECTED")
             report["image_provenance"] = "PASS_EXACT_MEDIA_IDS_AND_BYTES"
+            report["images"] = "PASS_BYTES_AND_PROVENANCE"
             if not axe_js or not Path(axe_js).is_file():
                 raise RuntimeError("Official axe-core library absent; cannot claim WCAG acceptance")
             wp.add_script_tag(path=str(axe_js))
