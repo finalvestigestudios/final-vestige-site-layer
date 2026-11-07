@@ -70,13 +70,14 @@ class ReviewQueue:
         """Revalidate the displayed source and journal before a human action.
 
         Clear *all* actionable references if the source or journal changed,
-        vanished, or failed validation. This complements operation-specific
+        vanished, or verification raised any exception (including interrupts). This complements operation-specific
         checks that must run again immediately before output publication.
         """
-        if (self.batch is None or self.journal is None or self.report_path is None
-                or self.journal_identity is None):
-            raise ValueError("No verified premium report is selected")
+        verified = False
         try:
+            if (self.batch is None or self.journal is None or self.report_path is None
+                    or self.journal_identity is None):
+                raise ValueError("No verified premium report is selected")
             if product not in ("grants", "procurement"):
                 raise ValueError("Review queue requires a premium product")
             current = read_cases(self.report_path, product)
@@ -89,7 +90,10 @@ class ReviewQueue:
             after = journal_snapshot_identity(self.journal)
             if after != before:
                 raise ValueError("Review journal changed during validation; reopen before acting")
+            verified = True
             return current
-        except (ValueError, OSError, UnicodeError):
-            self.clear()
-            raise
+        finally:
+            # Clear even for unexpected verifier bugs or interrupted validation.
+            # Never leave a stale financial review selected after *any* failure.
+            if not verified:
+                self.clear()
