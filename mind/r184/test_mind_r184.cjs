@@ -39,11 +39,11 @@ check(/name="viewport"/.test(html),name+' viewport');
 check(/<main>/.test(html),name+' main landmark');
 check(/:focus-visible/.test(html),name+' keyboard focus');
 check(/prefers-reduced-motion/.test(html),name+' reduced motion style');
-check(!/<script\b|<iframe\b|<form\b|autoplay|onload\s*=|onclick\s*=/i.test(html),name+' no scripts/forms/auto play');
+check(!/<(?:script|iframe|form)\b|<(?:video|audio)\b[^>]*\sautoplay(?:\s|=|>)|onload\s*=|onclick\s*=/i.test(html),name+' no scripts/forms/auto play');
 check(!/(?:awin1\.com|hop\.clickbank|tracking_id=|aff_id=)/i.test(html),name+' no affiliate url');
 }
 for(const [name,html] of [['a',a],['b',b]]){
-check(/<button[^>]*\bdisabled\b[^>]*>/.test(html),name+' natively disabled buying control');
+check(/<button[^>]*\sdisabled(?:\s|>|=)[^>]*>/.test(html),name+' natively disabled buying control');
 check(/Affiliate disclosure for a future approved link/.test(html),name+' adjacent truthful disclosure');
 check(html.indexOf('Affiliate disclosure for a future approved link')-html.indexOf('<button type="button" class="disabled"')<600,name+' disclosure near control');
 check(/noindex,nofollow/.test(html),name+' not search-indexable if preview exposed');
@@ -75,7 +75,7 @@ const mutationInputs=[
 ];
 let caught=0;const negative=[];
 const statusUnsafe=(v)=>{try{const j=JSON.parse(v.ledger);return j.advertising_activation||j.partner.authorized_earning_url!==null||j.metrics.realized_net_revenue!==null}catch(e){return true}};
-for(const m of mutationInputs){const original=files[m.key];if(!original.includes(m.s)){negative.push('setup missing '+m.note);continue}const altered={...files,[m.key]:original.replaceAll(m.s,m.r)};const detect= m.key==='ledger'?statusUnsafe(altered):m.key==='article'?!altered.article.includes('not a test of Zen12'):m.key==='dossier'?!altered.dossier.includes('NOT COMPUTABLE'):m.key==='hub'?!altered.hub.includes('https://finalvestige.com/focus/'):m.note==='enable button'?!/<button[^>]*\bdisabled\b[^>]*>/.test(altered.a):m.note==='remove near disclosure'?!altered.a.includes('Affiliate disclosure for a future approved link'):m.note==='preview discoverable'?!altered.a.includes('noindex,nofollow'):m.note==='missing main landmark'?!altered.a.includes('<main>'):m.note==='keyboard focus'?!altered.a.includes(':focus-visible'):m.note==='reduce motion'?!altered.a.includes('prefers-reduced-motion'):m.note==='film identity'?!altered.b.includes('42 seconds: the second number'):m.note==='false earned link'?!altered.b.includes('No earning link is active here.'):false;if(detect)caught++;else negative.push('not caught '+m.note)}
+for(const m of mutationInputs){const original=files[m.key];if(!original.includes(m.s)){negative.push('setup missing '+m.note);continue}const altered={...files,[m.key]:original.replaceAll(m.s,m.r)};const detect= m.key==='ledger'?statusUnsafe(altered):m.key==='article'?!altered.article.includes('not a test of Zen12'):m.key==='dossier'?!altered.dossier.includes('NOT COMPUTABLE'):m.key==='hub'?!altered.hub.includes('https://finalvestige.com/focus/'):m.note==='enable button'?!/<button[^>]*\sdisabled(?:\s|>|=)[^>]*>/.test(altered.a):m.note==='remove near disclosure'?!altered.a.includes('Affiliate disclosure for a future approved link'):m.note==='preview discoverable'?!altered.a.includes('noindex,nofollow'):m.note==='missing main landmark'?!altered.a.includes('<main>'):m.note==='keyboard focus'?!altered.a.includes(':focus-visible'):m.note==='reduce motion'?!altered.a.includes('prefers-reduced-motion'):m.note==='film identity'?!altered.b.includes('42 seconds: the second number'):m.note==='false earned link'?!altered.b.includes('No earning link is active here.'):false;if(detect)caught++;else negative.push('not caught '+m.note)}
 return {passed,failed:fails.length,failures:fails,mutations_caught:caught,mutations_total:mutationInputs.length,mutation_failures:negative};
 }
 module.exports={run,readAll};
