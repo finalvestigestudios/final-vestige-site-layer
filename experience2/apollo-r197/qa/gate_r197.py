@@ -76,7 +76,7 @@ def run(out):
         page.evaluate('document.fonts.ready')
         page.wait_for_timeout(100)
         performance=page.evaluate("""async () => {
-          const lcp=performance.getEntriesByType('largest-contentful-paint').at(-1)?.startTime??null;
+          let lcp=null;try {new PerformanceObserver(list=>{for(const e of list.getEntries())lcp=e.startTime}).observe({type:'largest-contentful-paint',buffered:true})}catch(e){};
           let cls=0;try {new PerformanceObserver(list => {for(const e of list.getEntries())if(!e.hadRecentInput)cls+=e.value}).observe({type:'layout-shift',buffered:true})}catch(e){};
           await new Promise(r=>setTimeout(r,30));return {lcp_ms:lcp,cls}; }""") if not nojs else {'lcp_ms':None,'cls':None}
         assert not page_errors,page_errors
