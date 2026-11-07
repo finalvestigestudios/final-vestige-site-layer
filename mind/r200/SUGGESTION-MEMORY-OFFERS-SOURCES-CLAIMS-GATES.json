@@ -1,0 +1,631 @@
+{
+  "milestone": "R200",
+  "as_of": "2026-11-07",
+  "state": "UNPUBLISHED_DRAFT_HARD_HOLD",
+  "branch": "mind-r200-memory-suggestion-commercial-proof-20261107",
+  "commercial_priority": "verified_paid_order_over_visits",
+  "affiliate_activation": "DISABLED",
+  "partner_approval": "UNVERIFIED",
+  "earning_url": null,
+  "approved_channels": null,
+  "earned_commission": null,
+  "verified_paid_orders": null,
+  "verified_owned_mind_sku": null,
+  "qualified_human_sessions": null,
+  "net_revenue_per_1000_qualified_humans": "NOT_COMPUTABLE",
+  "verified_product_checkout": false,
+  "existing_focus_url": "https://finalvestige.com/focus/",
+  "publisher_specific_partner_terms_available": false,
+  "sources": [
+    {
+      "id": "loftus1974",
+      "type": "primary_study",
+      "url": "https://doi.org/10.1016/S0022-5371(74)80011-3",
+      "note": "two auto-film experiments; wording affects speed and subsequent broken-glass report"
+    },
+    {
+      "id": "roediger1995",
+      "type": "primary_study",
+      "url": "https://doi.org/10.1037/0278-7393.21.4.803",
+      "note": "associative list false recall 40%/55% in different procedures, not population prevalence"
+    },
+    {
+      "id": "ama1985",
+      "type": "expert_committee",
+      "url": "https://doi.org/10.1001/jama.1985.03350370114035",
+      "note": "hypnotic recollection forensic reliability caution"
+    },
+    {
+      "id": "kihlstrom1997",
+      "type": "research_review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/9415925/",
+      "note": "hypnosis hypermnesia and false confidence context"
+    },
+    {
+      "id": "krass1989",
+      "type": "research_review",
+      "url": "https://doi.org/10.1002/acp.2350030105",
+      "note": "confidence and accuracy separable under hypnotic suggestion"
+    },
+    {
+      "id": "falsemem2021",
+      "type": "systematic_review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33586291/",
+      "note": "heterogeneous experimental inductions not product risk"
+    },
+    {
+      "id": "zahedi2024",
+      "type": "theory_review",
+      "url": "https://doi.org/10.1016/j.concog.2024.103730",
+      "note": "theoretical accounts of hypnotic suggestion, no single accepted mechanism"
+    },
+    {
+      "id": "maclean2010",
+      "type": "primary_full_text",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3132583/",
+      "note": "Retreat 1 recalibrated target no observed vigilance improvement; Retreat 2 fixed lengths vigilance change"
+    },
+    {
+      "id": "mrazek2013",
+      "type": "primary_study",
+      "url": "https://doi.org/10.1177/0956797612459659",
+      "note": "n=48 undergraduates two-week mindfulness vs nutrition education; 8 x 45min"
+    },
+    {
+      "id": "inspire3_catalog",
+      "type": "official_seller",
+      "url": "https://inspire3.com/",
+      "note": "brand inventory is seller statement not scientific proof"
+    },
+    {
+      "id": "zen12_exact",
+      "type": "official_seller",
+      "url": "https://zen12.com/hnp",
+      "note": "12 levels 48 MP3 4 audio styles, $87.99 on seller page, one-year stated guarantee"
+    },
+    {
+      "id": "zen12_about",
+      "type": "official_seller",
+      "url": "https://zen12.com/about",
+      "note": "seller brainwave mechanistic marketing, no independent validation"
+    },
+    {
+      "id": "total_focus_exact",
+      "type": "official_seller",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "note": "single 33min 47MB; seller shows $24.44 and 14-day guarantee; no checkout verified"
+    },
+    {
+      "id": "affiliate_portal",
+      "type": "official_public_partner",
+      "url": "https://affiliates.inspire3.com/",
+      "note": "public recruiting page not named account acceptance"
+    },
+    {
+      "id": "ftc_endorse",
+      "type": "regulatory_guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "note": "clear adjacent commission disclosure"
+    },
+    {
+      "id": "ftc_health",
+      "type": "regulatory_guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "note": "adequate substantiation for express/implied health effects"
+    },
+    {
+      "id": "focus_live",
+      "type": "fv_published",
+      "url": "https://finalvestige.com/focus/",
+      "note": "52 page free Focus with existing Dispatch list; not proof subscriber"
+    },
+    {
+      "id": "dispatch_live",
+      "type": "fv_published",
+      "url": "https://finalvestige.com/dispatch/",
+      "note": "existing one newsletter list, no additional form"
+    },
+    {
+      "id": "puysegur_live",
+      "type": "fv_published",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "note": "historical records not trial"
+    },
+    {
+      "id": "mesmerism_live",
+      "type": "fv_published",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "note": "historical 1784 commission investigation"
+    },
+    {
+      "id": "change_live",
+      "type": "fv_published",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "note": "published change-blindness investigation"
+    },
+    {
+      "id": "issue171",
+      "type": "governance",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "note": "Mind ownership"
+    },
+    {
+      "id": "issue820",
+      "type": "governance",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "note": "conversion measure acceptance"
+    },
+    {
+      "id": "praxxis_r199",
+      "type": "independent_review",
+      "url": "https://docs.google.com/document/d/1uK7cZdMv44dkKwDDGILUTCrI2zw3iA0cN5VzdLmF5C8/edit",
+      "note": "MacLean/Mrazek specificity review"
+    }
+  ],
+  "claims": [
+    {
+      "id": "wording_speed",
+      "statement": "Post-event wording changed accident-speed judgments",
+      "source_ids": [
+        "loftus1974"
+      ],
+      "decision": "SUPPORT_SPECIFIC",
+      "limits": "Controlled auto-film questions, not general misinformation prevalence"
+    },
+    {
+      "id": "broken_glass",
+      "statement": "Participants later reported broken glass absent from film after verb manipulation",
+      "source_ids": [
+        "loftus1974"
+      ],
+      "decision": "SUPPORT_SPECIFIC",
+      "limits": "Report at follow-up, not proof of vivid internal sensory experience"
+    },
+    {
+      "id": "drm40_55",
+      "statement": "False critical-item recall reported 40% in one task and 55% in another",
+      "source_ids": [
+        "roediger1995"
+      ],
+      "decision": "SUPPORT_SPECIFIC",
+      "limits": "Study procedure rates, not people or recovered memories"
+    },
+    {
+      "id": "hypnotic_memory",
+      "statement": "Hypnotically refreshed memories may be unreliable",
+      "source_ids": [
+        "ama1985",
+        "kihlstrom1997"
+      ],
+      "decision": "SUPPORT_SCOPED",
+      "limits": "Mainly memory enhancement forensic context, not all hypnosis outcomes"
+    },
+    {
+      "id": "confidence_vs_truth",
+      "statement": "Confidence in recall can increase without proportionate accuracy",
+      "source_ids": [
+        "krass1989",
+        "kihlstrom1997"
+      ],
+      "decision": "SUPPORT_SCOPED",
+      "limits": "Not every confident report false"
+    },
+    {
+      "id": "memory_review_rates",
+      "statement": "2021 false-memory lab induction review found heterogeneous outcomes",
+      "source_ids": [
+        "falsemem2021"
+      ],
+      "decision": "SUPPORT_SCOPED",
+      "limits": "DO NOT quote as consumer audio incidence"
+    },
+    {
+      "id": "puysegur",
+      "statement": "Puységur source files trace somnambulism history",
+      "source_ids": [
+        "puysegur_live"
+      ],
+      "decision": "HISTORICAL_CONTEXT",
+      "limits": "Not therapeutic proof"
+    },
+    {
+      "id": "theory_debate",
+      "statement": "Competing mechanisms of hypnosis remain under debate",
+      "source_ids": [
+        "zahedi2024"
+      ],
+      "decision": "SUPPORT_REVIEW",
+      "limits": "Do not treat hypnosis as categorically ineffective"
+    },
+    {
+      "id": "maclean_retreat_1",
+      "statement": "Retreat 1 trained n=30 vs wait list n=30; target length was recalibrated",
+      "source_ids": [
+        "maclean2010"
+      ],
+      "decision": "SUPPORT_WITH_LIMIT",
+      "limits": "No observed vigilance reduction in Retreat 1; discrimination improved"
+    },
+    {
+      "id": "maclean_retreat_2",
+      "statement": "Retreat 2 fixed target and saw vigilance improvement among later-trained n=27 completers",
+      "source_ids": [
+        "maclean2010"
+      ],
+      "decision": "SUPPORT_WITH_LIMIT",
+      "limits": "Not product-specific; perceptual demand may explain"
+    },
+    {
+      "id": "mrazek_intervention",
+      "statement": "48 undergrads compared 2wk mindfulness course vs nutrition course",
+      "source_ids": [
+        "mrazek2013"
+      ],
+      "decision": "SUPPORT_PRIMARY",
+      "limits": "Eight 45-minute classes plus daily practice; not MP3"
+    },
+    {
+      "id": "mrazek_mediation",
+      "statement": "Mind wandering mediated gains in higher-baseline-wandering subgroup",
+      "source_ids": [
+        "mrazek2013"
+      ],
+      "decision": "SUPPORT_WITH_LIMIT",
+      "limits": "Modified GRE comprehension and WMC in lab"
+    },
+    {
+      "id": "zen12_inventory",
+      "statement": "Zen12 Premium seller advertises 12 levels and 48 MP3",
+      "source_ids": [
+        "zen12_exact"
+      ],
+      "decision": "SELLER_ONLY",
+      "limits": "No independent delivery test"
+    },
+    {
+      "id": "zen12_styles",
+      "statement": "Zen12 seller advertises four listening styles",
+      "source_ids": [
+        "zen12_exact"
+      ],
+      "decision": "SELLER_ONLY",
+      "limits": "Actual audio not tested"
+    },
+    {
+      "id": "zen12_price",
+      "statement": "Seller page displayed promotional USD 87.99 for Premium on Nov 7",
+      "source_ids": [
+        "zen12_exact"
+      ],
+      "decision": "SELLER_DISPLAY_ONLY",
+      "limits": "Final checkout/tax/availability not verified"
+    },
+    {
+      "id": "zen12_refund",
+      "statement": "Seller advertises one-year money-back guarantee",
+      "source_ids": [
+        "zen12_exact"
+      ],
+      "decision": "SELLER_ONLY",
+      "limits": "Refund terms and fulfillment untested"
+    },
+    {
+      "id": "zen12_equivalence",
+      "statement": "12 minutes Zen12 equals one hour meditation",
+      "source_ids": [
+        "zen12_exact",
+        "ftc_health"
+      ],
+      "decision": "EXCLUDE_UNSUBSTANTIATED",
+      "limits": "No validated product-specific study"
+    },
+    {
+      "id": "zen12_neural",
+      "statement": "Zen12 automatically alters brainwaves to induce deep states",
+      "source_ids": [
+        "zen12_about",
+        "ftc_health"
+      ],
+      "decision": "EXCLUDE_UNSUBSTANTIATED",
+      "limits": "Mechanism not shown on exact branded audio"
+    },
+    {
+      "id": "zen12_health",
+      "statement": "Zen12 improves physical or mental health",
+      "source_ids": [
+        "zen12_exact",
+        "ftc_health"
+      ],
+      "decision": "EXCLUDE_UNSUBSTANTIATED",
+      "limits": "Product-specific medical support absent"
+    },
+    {
+      "id": "total_focus_inventory",
+      "statement": "Total Focus seller describes 33min and 47MB MP3",
+      "source_ids": [
+        "total_focus_exact"
+      ],
+      "decision": "SELLER_ONLY",
+      "limits": "File not independently downloaded"
+    },
+    {
+      "id": "total_focus_price",
+      "statement": "Total Focus single-item seller page displayed USD 24.44",
+      "source_ids": [
+        "total_focus_exact"
+      ],
+      "decision": "SELLER_DISPLAY_ONLY",
+      "limits": "Bundle differs, no final checkout"
+    },
+    {
+      "id": "total_focus_refund",
+      "statement": "Seller claims 14-day refund guarantee",
+      "source_ids": [
+        "total_focus_exact"
+      ],
+      "decision": "SELLER_ONLY",
+      "limits": "Refund execution unverified"
+    },
+    {
+      "id": "total_focus_concentration",
+      "statement": "Total Focus produces 100% concentration",
+      "source_ids": [
+        "total_focus_exact",
+        "ftc_health"
+      ],
+      "decision": "EXCLUDE_UNSUBSTANTIATED",
+      "limits": "No adequate branded product efficacy support"
+    },
+    {
+      "id": "brainwave_shots",
+      "statement": "Inspire3 catalog describes Brainwave Shots as 15min audio",
+      "source_ids": [
+        "inspire3_catalog"
+      ],
+      "decision": "SELLER_ONLY",
+      "limits": "Exact offer page/price/terms not audited; no presell"
+    },
+    {
+      "id": "affiliate_approval",
+      "statement": "FV individually accepted by Inspire3",
+      "source_ids": [
+        "affiliate_portal",
+        "issue171"
+      ],
+      "decision": "UNKNOWN_HARD_HOLD",
+      "limits": "Require authenticated named approval"
+    },
+    {
+      "id": "affiliate_url",
+      "statement": "FV has account-issued permitted earning URL",
+      "source_ids": [
+        "affiliate_portal"
+      ],
+      "decision": "UNKNOWN_HARD_HOLD",
+      "limits": "No invented link"
+    },
+    {
+      "id": "affiliate_terms",
+      "statement": "FV approved for website, social and email channels",
+      "source_ids": [
+        "affiliate_portal"
+      ],
+      "decision": "UNKNOWN_HARD_HOLD",
+      "limits": "Must authenticate each channel"
+    },
+    {
+      "id": "owned_sku",
+      "statement": "FV has live rights-cleared Mind Payhip SKU",
+      "source_ids": [
+        "issue820"
+      ],
+      "decision": "UNKNOWN",
+      "limits": "Authenticated inventory/checkout unavailable"
+    },
+    {
+      "id": "focus_leads",
+      "statement": "Visible PDF confirms an authorized subscriber",
+      "source_ids": [
+        "focus_live",
+        "issue820"
+      ],
+      "decision": "REJECT_INFERENCE",
+      "limits": "Server-confirmed Jetpack record essential"
+    },
+    {
+      "id": "paid_sales",
+      "statement": "Click or checkout initiation proves paid sale",
+      "source_ids": [
+        "issue820"
+      ],
+      "decision": "REJECT_INFERENCE",
+      "limits": "Merchant confirmation/refund/fees required"
+    },
+    {
+      "id": "ftc_disclosure",
+      "statement": "Commercial CTA should have plain adjacent earnings disclosure",
+      "source_ids": [
+        "ftc_endorse"
+      ],
+      "decision": "REQUIRED",
+      "limits": "Visible without interaction; no affiliate label only"
+    },
+    {
+      "id": "performance_test",
+      "statement": "Optional video increases paid conversion",
+      "source_ids": [
+        "issue820"
+      ],
+      "decision": "UNTESTED_HYPOTHESIS",
+      "limits": "A/B not live; no sample or randomized traffic"
+    }
+  ],
+  "release_gates": [
+    {
+      "id": "fv_named_inspire3_acceptance",
+      "state": "OPEN",
+      "owner": "Founder/Mind"
+    },
+    {
+      "id": "authorized_website_channel",
+      "state": "OPEN",
+      "owner": "Founder/Mind"
+    },
+    {
+      "id": "authorized_social_channel",
+      "state": "OPEN",
+      "owner": "Founder/Mind"
+    },
+    {
+      "id": "authorized_email_channel",
+      "state": "OPEN",
+      "owner": "Founder/Mind"
+    },
+    {
+      "id": "issued_zen12_earning_url",
+      "state": "OPEN",
+      "owner": "Founder/Mind"
+    },
+    {
+      "id": "current_affiliate_creative_rights",
+      "state": "OPEN",
+      "owner": "Founder/Mind"
+    },
+    {
+      "id": "signed_tracking_terms",
+      "state": "OPEN",
+      "owner": "Founder/Mind"
+    },
+    {
+      "id": "commission_statement_and_payout_evidence",
+      "state": "OPEN",
+      "owner": "Founder/Mind"
+    },
+    {
+      "id": "zen12_current_checkout_test",
+      "state": "OPEN",
+      "owner": "Commerce/Analytics"
+    },
+    {
+      "id": "zen12_refund_terms_review",
+      "state": "OPEN",
+      "owner": "Commerce/Analytics"
+    },
+    {
+      "id": "zen12_legal_disclosures",
+      "state": "OPEN",
+      "owner": "Founder/Mind"
+    },
+    {
+      "id": "owned_mind_sku_inventory",
+      "state": "OPEN",
+      "owner": "Commerce/Analytics"
+    },
+    {
+      "id": "owned_mind_sku_rights",
+      "state": "OPEN",
+      "owner": "Commerce/Analytics"
+    },
+    {
+      "id": "owned_mind_sku_checkout",
+      "state": "OPEN",
+      "owner": "Commerce/Analytics"
+    },
+    {
+      "id": "owned_mind_sku_fulfillment",
+      "state": "OPEN",
+      "owner": "Commerce/Analytics"
+    },
+    {
+      "id": "jetpack_authoritative_confirmed_signup",
+      "state": "OPEN",
+      "owner": "Founder/Mind"
+    },
+    {
+      "id": "grok_unique_asset_ids",
+      "state": "OPEN",
+      "owner": "Grok/Praxxis"
+    },
+    {
+      "id": "grok_approved_destination",
+      "state": "OPEN",
+      "owner": "Grok/Praxxis"
+    },
+    {
+      "id": "site_qa_mobile_browser",
+      "state": "OPEN",
+      "owner": "Site QA/Claude"
+    },
+    {
+      "id": "site_qa_wcag",
+      "state": "OPEN",
+      "owner": "Site QA/Claude"
+    },
+    {
+      "id": "performance_budget_mobile",
+      "state": "OPEN",
+      "owner": "Site QA/Claude"
+    },
+    {
+      "id": "video_render_rights_captions",
+      "state": "OPEN",
+      "owner": "Site QA/Claude"
+    },
+    {
+      "id": "creator_qa",
+      "state": "OPEN",
+      "owner": "Grok/Praxxis"
+    },
+    {
+      "id": "founder_release_approval",
+      "state": "OPEN",
+      "owner": "Founder/Mind"
+    },
+    {
+      "id": "merchant_paid_transaction_feed",
+      "state": "OPEN",
+      "owner": "Commerce/Analytics"
+    },
+    {
+      "id": "deduped_refund_fee_ledger",
+      "state": "OPEN",
+      "owner": "Commerce/Analytics"
+    },
+    {
+      "id": "qualified_human_denominator",
+      "state": "OPEN",
+      "owner": "Founder/Mind"
+    },
+    {
+      "id": "thirty_day_cohort_sufficient_sample",
+      "state": "OPEN",
+      "owner": "Founder/Mind"
+    }
+  ],
+  "prospective_disclosure": "If you purchase through this link, Final Vestige may earn a commission at no additional cost to you.",
+  "attribution_contract": {
+    "qualifying_campaign_keys": [
+      "utm_source",
+      "utm_medium",
+      "utm_campaign",
+      "utm_content"
+    ],
+    "utm_content": "Grok-issued asset_id only",
+    "event_names": [
+      "campaign_landing",
+      "article_to_resource_click",
+      "affiliate_outbound",
+      "confirmed_signup_authoritative",
+      "merchant_confirmed_paid_order",
+      "merchant_confirmed_affiliate_sale",
+      "refund",
+      "fee"
+    ],
+    "outbound_is_sale": false,
+    "leads_by_page_state": false,
+    "retain_pii": false,
+    "seven_day_cohort": true,
+    "thirty_day_cohort": true,
+    "revenue_rule": "ONLY merchant verified received gross less refunds, platform/payment fees, chargebacks and attributable costs; absent numerator/denominator = NOT_COMPUTABLE"
+  }
+}
