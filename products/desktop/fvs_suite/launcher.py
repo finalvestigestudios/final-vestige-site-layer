@@ -9,7 +9,21 @@ from .offline_network import install_offline_guard
 
 def launch(app_id: str) -> None:
     # All six packaged EXEs: fail before GUI or smoke if offline guard fails.
-    install_offline_guard()
+    # Audit-hook initialization can fail with private filesystem paths in the
+    # exception message or traceback. Fail CLOSED without printing/chaining it.
+    # Do not trap BaseException: KeyboardInterrupt and SystemExit retain their
+    # normal interpreter semantics.
+    guard_ready = False
+    try:
+        install_offline_guard()
+        guard_ready = True
+    except Exception:
+        pass
+    # Exit *outside* the handler: otherwise __context__ retains private data.
+    if not guard_ready:
+        raise SystemExit(
+            "Final Vestige Labs security startup failed; no private diagnostics printed"
+        )
     args = sys.argv[1:]
     if args == ["--smoke-test"]:
         # Smoke failures may contain private financial paths, invoice IDs, or
