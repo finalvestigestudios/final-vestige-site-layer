@@ -108,10 +108,11 @@ We can honor an extraordinary report without becoming its advertising department
 4. Brashier, N. M. & Marsh, E. J. (2020). “Judging Truth,” *Annual Review of Psychology* 71, 499–515. Publisher abstract reviewed. https://doi.org/10.1146/annurev-psych-010419-050807
 5. Brashier, N. M., Eliseev, E. D. & Marsh, E. J. (2020). “An Initial Accuracy Focus Prevents Illusory Truth,” *Cognition* 194, 104054. Published abstract reviewed; conditional knowledge caveat is essential. https://pubmed.ncbi.nlm.nih.gov/31473395/
 6. Fazio, L. K. & Sherry, C. L. (2020). “The Effect of Repetition on Truth Judgments Across Development,” *Psychological Science* 31, 1150–1160. Publisher abstract reviewed; three group sample counts. https://pubmed.ncbi.nlm.nih.gov/32857670/
-7. “Repetition Increases Both the Perceived Truth and Fakeness of Information: An Ecological Account.” *Cognition* (2020), PubMed abstract reviewed. https://pubmed.ncbi.nlm.nih.gov/33007659/
+7. Corneille, O., Mierop, A. & Unkelbach, C. (2020). “Repetition Increases Both the Perceived Truth and Fakeness of Information: An Ecological Account.” *Cognition*. Abstract-level scope: whether statements appeared as fake news on social media; see corrigendum [12]. https://pubmed.ncbi.nlm.nih.gov/33007659/
 8. Final Vestige archival interpretation and current published routes: https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/ and https://finalvestige.com/2026/11/02/mesmerism/ . These are secondary editorial routes, not primary experiments.
 9. Seller's exact Zen12 Premium page (features/policies and unverified efficacy statements), accessed 7 November 2026: https://zen12.com/hnp
 10. FTC (2023), “FTC’s Endorsement Guides: What People Are Asking,” affiliate disclosure FAQ. https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking
 11. FTC (2022), *Health Products Compliance Guidance*. https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance
+12. Corneille, Mierop & Unkelbach (corrigendum, published 2022): original programming confounds and two preregistered robustness studies supporting principal results. https://doi.org/10.1016/j.cognition.2021.104996
 
 **Editorial status:** ORIGINAL DRAFT ONLY. No clinical advice, implied testimonial, merchant authorization, live route, or paid conversion.
