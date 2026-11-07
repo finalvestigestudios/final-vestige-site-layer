@@ -183,6 +183,16 @@ class R180ReviewTests(unittest.TestCase):
     def test_duplicate_source_ids_in_claim(self):
         self.data[5]['claims'][0]['source_ids']=['nchfp-jerky']*2
         with self.assertRaises(ValueError):self.report()
+    def test_fabricated_secondary_clearance_flags_rejected(self):
+        for index,key in ((5,'source_alias_equivalence_approved'),
+                          (5,'human_checked_links'),(4,'commercial_offer_verified'),
+                          (4,'founder_publication_authorized'),
+                          (3,'human_source_equivalence_review_complete'),
+                          (2,'independent_qd_pass')):
+            with self.subTest(flag=key):
+                fixture_data=fixture()
+                fixture_data[index][key]=True
+                with self.assertRaises(ValueError):gate.reconcile(*fixture_data)
     def test_missing_checkout_fails_closed(self):
         with tempfile.TemporaryDirectory() as directory:
             a=gate.inspect_repo(Path(directory))
