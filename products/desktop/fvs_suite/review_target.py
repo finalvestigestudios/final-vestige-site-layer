@@ -30,3 +30,23 @@ def watch_auto_review_target(variables, report_slot: list[str | None]):
     for variable in variables:
         variable.trace_add("write", invalidate)
     return invalidate
+
+
+def revalidate_or_revoke(authorize, clear_sensitive_view) -> bool:
+    """Recheck a premium entitlement; scrub the visible review on denial.
+
+    Revalidation is required *after* long-running modal file/password dialogs
+    as well as on entry to an operation. The viewer is only a UI protection:
+    entitlement signature validation still belongs to the trusted verifier.
+    The denial path never reflects license content, paths or exception text.
+    """
+    if not callable(authorize) or not callable(clear_sensitive_view):
+        raise ValueError("Invalid premium authorization callbacks")
+    try:
+        result = authorize()
+        if result is False:
+            raise ValueError("Premium entitlement denied")
+    except (ValueError, OSError, UnicodeError):
+        clear_sensitive_view()
+        return False
+    return True
