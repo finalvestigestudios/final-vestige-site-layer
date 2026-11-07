@@ -36,7 +36,7 @@ ok(/Puységur/.test(art)&&/1784/.test(art),"historical bridge");
 ok(/not.*clinical|not.*treatment/i.test(art),"nonclinical exercise limits");
 ok(art.split(/\s+/).length>=1800,"article substantive");
 ok(/https:\/\/eprints.bournemouth.ac.uk\/31277\//.test(art),"source direct");
-ok(/$87\.99/.test(a)&&/November 7, 2026/.test(a),"seller price dated not fixed future");
+ok(a.includes("$87.99")&&a.includes("November 7, 2026"),"seller price dated not fixed future");
 ok(/not a checked-out total/i.test(a),"checkout not inferred");
 ok(matrix.sources.length>=18&&matrix.claims.length>=30&&matrix.gates.length>=25,"matrix coverage");
 const sourceIds=new Set(matrix.sources.map(s=>s.id));
