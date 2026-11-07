@@ -28,7 +28,7 @@ After the retreat, the intensive-training group showed a reduced attentional bli
 
 The primary source is [Slagter and colleagues, *Mental Training Affects Distribution of Limited Brain Resources*, PLOS Biology (2007)](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.0050138), DOI [10.1371/journal.pbio.0050138](https://doi.org/10.1371/journal.pbio.0050138). The paper describes the exact group schedules, testing procedure, analysis and qualifications.
 
-This is genuinely interesting evidence about training and attention. It is also very easy to over-sell.
+This is genuinely interesting evidence about training and attention. It was not a test of Zen12. It is also very easy to over-sell.
 
 The retreat was intensive, the groups were not randomly assigned to a blinded audio-product trial, and the neural measure is not itself a proof of improved everyday functioning. Retreat participants were exposed to many things besides meditation technique: expectations, sleep and routine changes, intensive instruction, a social setting, and weeks of uninterrupted practice. These ingredients are difficult to separate. P3b is a useful correlate, not a receipt proving that a particular psychological mechanism has been purchased.
 
