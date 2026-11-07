@@ -1,0 +1,351 @@
+{
+  "schema": "finalvestige.mind.r181.offer_evidence_go_nogo.v1",
+  "reviewed_at_local": "2026-11-06T17:50:00-08:00",
+  "status": "UNPUBLISHED_AFFILIATE_HARD_HOLD",
+  "source_scope": "public pages / publisher abstracts / GitHub Issue #171 and #820; no authenticated partner, Payhip or merchant transaction",
+  "product": "Zen12 Premium (the 12-level 48-MP3 package, NOT Beginner or Advanced)",
+  "product_public_price_display": "$87.99 observed on https://zen12.com/ (Nov 6 2026); earlier conflicting $87 report; final checkout not verified",
+  "checkout_currency_fees_taxes_unknown": true,
+  "affiliate_acceptance_verified": false,
+  "verified_affiliate_earning_url": null,
+  "allowed_channel_terms_verified": false,
+  "licensed_creatives_verified": false,
+  "enabled_purchase_cta": false,
+  "verified_owned_paid_mind_product": null,
+  "verified_paid_orders": null,
+  "realized_net_revenue_usd": null,
+  "qualified_human_sessions": null,
+  "sources": [
+    {
+      "id": "I171",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171"
+    },
+    {
+      "id": "I820",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820"
+    },
+    {
+      "id": "I818",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/818"
+    },
+    {
+      "id": "INV",
+      "url": "https://doi.org/10.1068/p281059"
+    },
+    {
+      "id": "SIM",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3563049/"
+    },
+    {
+      "id": "RAD",
+      "url": "https://doi.org/10.1177/0956797613479386"
+    },
+    {
+      "id": "CHO",
+      "url": "https://www.lunduniversity.lu.se/publication/c579a9b6-1b4a-4572-932e-0ff15f9832b4"
+    },
+    {
+      "id": "INS",
+      "url": "https://inspire3.com/"
+    },
+    {
+      "id": "ZEN",
+      "url": "https://zen12.com/"
+    },
+    {
+      "id": "AFF",
+      "url": "https://affiliates.inspire3.com/"
+    },
+    {
+      "id": "HYP",
+      "url": "https://hypnosislive.com/"
+    },
+    {
+      "id": "BRA",
+      "url": "https://brainwaveshots.com/"
+    },
+    {
+      "id": "FTC1",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking"
+    },
+    {
+      "id": "FTC2",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+    },
+    {
+      "id": "FVI",
+      "url": "https://finalvestige.com/focus/"
+    },
+    {
+      "id": "FVP",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+    },
+    {
+      "id": "FVC",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/"
+    },
+    {
+      "id": "META",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37205669/"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "statement": "Zen12 Premium lists 12 levels and 48 MP3s",
+      "evidence_status": "SELLER_LISTING_ONLY",
+      "source_id": "ZEN",
+      "rule": "May describe as seller-listed; not product-tested"
+    },
+    {
+      "id": "C02",
+      "statement": "Premium describes 12-minute sessions and four listening styles",
+      "evidence_status": "SELLER_LISTING_ONLY",
+      "source_id": "ZEN",
+      "rule": "Use accurate format, not effectiveness"
+    },
+    {
+      "id": "C03",
+      "statement": "Premium lists Quick Start Guide, User Manual, Lifetime Support, bonuses, audio level guides and 1-hour training call",
+      "evidence_status": "SELLER_LISTING_ONLY",
+      "source_id": "ZEN",
+      "rule": "Do not guarantee fulfillment without receipt or access"
+    },
+    {
+      "id": "C04",
+      "statement": "Premium displayed $87.99 on the public page at review",
+      "evidence_status": "DATED_SELLER_DISPLAY_NOT_CHECKOUT",
+      "source_id": "ZEN",
+      "rule": "Exclude fixed CTA price until checkout, currency, taxes, upsells verified; conflicting earlier $87 observation"
+    },
+    {
+      "id": "C05",
+      "statement": "Premium advertises a 1-year money-back guarantee",
+      "evidence_status": "SELLER_ADVERTISEMENT_NOT_FULFILLED_REFUND",
+      "source_id": "ZEN",
+      "rule": "Do not call risk-free or confirmed refund right"
+    },
+    {
+      "id": "C06",
+      "statement": "Zen12 equals one hour of deep meditation in 12 minutes",
+      "evidence_status": "UNSUBSTANTIATED_PRODUCT_EFFICACY",
+      "source_id": "ZEN",
+      "rule": "PROHIBITED as FV conclusion"
+    },
+    {
+      "id": "C07",
+      "statement": "Zen12 audio makes brainwaves follow pulses and improves focus/health",
+      "evidence_status": "UNSUBSTANTIATED_PRODUCT_EFFICACY",
+      "source_id": "ZEN",
+      "rule": "PROHIBITED; product-specific credible clinical evidence required"
+    },
+    {
+      "id": "C08",
+      "statement": "Inspire3 homepage identifies Zen12, Hypnosis Live, Brainwave Shots",
+      "evidence_status": "SELLER_CATALOG_FACT",
+      "source_id": "INS",
+      "rule": "True catalog relationship, not approved affiliate rights"
+    },
+    {
+      "id": "C09",
+      "statement": "Public Inspire3 site says publisher commission 60%+",
+      "evidence_status": "PUBLIC_MARKETING_NOT_ACCOUNT_TERMS",
+      "source_id": "AFF",
+      "rule": "Never quote as FV payout or economic forecast"
+    },
+    {
+      "id": "C10",
+      "statement": "A public Inspire3 publisher program exists",
+      "evidence_status": "PUBLIC_PORTAL_VERIFIED",
+      "source_id": "AFF",
+      "rule": "Does NOT equal FV account acceptance, allowed social/email channels or issued tracking URL"
+    },
+    {
+      "id": "C11",
+      "statement": "Hypnosis Live advertises 200+ hypnosis audios, diverse topics",
+      "evidence_status": "SELLER_CATALOG_ONLY",
+      "source_id": "HYP",
+      "rule": "Do not imply clinical outcomes or link Zen12 guarantee"
+    },
+    {
+      "id": "C12",
+      "statement": "Brainwave Shots lists multiple 15-minute themed audio products",
+      "evidence_status": "SELLER_CATALOG_ONLY",
+      "source_id": "BRA",
+      "rule": "Individual product claims, returns, access, price need specific verification"
+    },
+    {
+      "id": "C13",
+      "statement": "In 1999 Simons/Chabris found detection depends on task and similarity",
+      "evidence_status": "PRIMARY_RESEARCH_ABSTRACT",
+      "source_id": "INV",
+      "rule": "Describes task-specific inattentional blindness; not product study"
+    },
+    {
+      "id": "C14",
+      "statement": "2010 familiar viewers detected gorilla but not necessarily other changes",
+      "evidence_status": "PRIMARY_OPEN_ACCESS_FULL_TEXT",
+      "source_id": "SIM",
+      "rule": "Do not generalize that training worsens attention"
+    },
+    {
+      "id": "C15",
+      "statement": "2013 radiologists sample n24; 83% did not report unexpected gorilla",
+      "evidence_status": "PRIMARY_RESEARCH_ABSTRACT",
+      "source_id": "RAD",
+      "rule": "Do not interpret as medical error rate"
+    },
+    {
+      "id": "C16",
+      "statement": "2005 face-choice outcome swap sometimes went unnoticed",
+      "evidence_status": "PRIMARY_RESEARCH_ABSTRACT",
+      "source_id": "CHO",
+      "rule": "Different paradigm; not evidence of hypnosis effectiveness"
+    },
+    {
+      "id": "C17",
+      "statement": "2023 EEG/binaural-beat systematic review findings were mixed",
+      "evidence_status": "INDEPENDENT_REVIEW_NOT_ZEN12",
+      "source_id": "META",
+      "rule": "Not a product trial; avoid casual proof of entrainment"
+    },
+    {
+      "id": "C18",
+      "statement": "Disclose material affiliation clearly and conspicuously near CTA",
+      "evidence_status": "FTC_GUIDANCE",
+      "source_id": "FTC1",
+      "rule": "Plain-language close-to-link disclosure; linked footer alone insufficient"
+    },
+    {
+      "id": "C19",
+      "statement": "Objective health-related claims need adequate substantiation",
+      "evidence_status": "FTC_GUIDANCE",
+      "source_id": "FTC2",
+      "rule": "Exclude unsupported medical, mental health, cognitive claims"
+    },
+    {
+      "id": "C20",
+      "statement": "The Focus Fieldbook uses an existing Jetpack signup",
+      "evidence_status": "PRIOR_ISSUE_RECORD_NOT_LIVE_QA",
+      "source_id": "I171",
+      "rule": "Reuse one lead destination; email delivery still unverified"
+    },
+    {
+      "id": "C21",
+      "statement": "Final Vestige currently accepted for Inspire3 publisher program",
+      "evidence_status": "NOT_VERIFIED",
+      "source_id": "AFF",
+      "rule": "DO NOT activate any earning link"
+    },
+    {
+      "id": "C22",
+      "statement": "Owned Payhip Mind SKU is currently rights-cleared and sellable",
+      "evidence_status": "NOT_VERIFIED",
+      "source_id": "I820",
+      "rule": "Do not invent SKU/price, sales or checkout"
+    },
+    {
+      "id": "C23",
+      "statement": "Verified human sessions, signed up leads, merchant paid sales and net revenue",
+      "evidence_status": "NOT_AVAILABLE",
+      "source_id": "I820",
+      "rule": "Unknown, not zero; no estimated payouts"
+    },
+    {
+      "id": "C24",
+      "statement": "Official affiliate creative/swipe usage license permits FV placement",
+      "evidence_status": "NOT_VERIFIED",
+      "source_id": "AFF",
+      "rule": "Do not reuse seller creatives or count official imagery as licensed"
+    }
+  ],
+  "gates": [
+    {
+      "id": "G01",
+      "name": "Named FV publisher approval and account rights",
+      "state": "HARD_HOLD",
+      "owner": "Founder/Commerce",
+      "evidence_required": "Authenticated dashboard terms, account name and approval date"
+    },
+    {
+      "id": "G02",
+      "name": "Zen12-specific affiliate link supplied and allowed",
+      "state": "HARD_HOLD",
+      "owner": "Founder/Commerce",
+      "evidence_required": "Exact issued URL, product offer and allowed destination/medium"
+    },
+    {
+      "id": "G03",
+      "name": "Explicit social/video/email channel permissions",
+      "state": "HARD_HOLD",
+      "owner": "Founder/Commerce",
+      "evidence_required": "Authentic current partner terms plus permitted channels"
+    },
+    {
+      "id": "G04",
+      "name": "Merchant checkout price, currency, upsells and refund terms",
+      "state": "UNVERIFIED",
+      "owner": "Commerce",
+      "evidence_required": "Dated controlled checkout+terms review without committing funds"
+    },
+    {
+      "id": "G05",
+      "name": "FV-owned paid Mind product, rights and fulfillment",
+      "state": "UNVERIFIED",
+      "owner": "Commerce",
+      "evidence_required": "Authenticated Payhip SKU, listed price, purchase path and license"
+    },
+    {
+      "id": "G06",
+      "name": "Approved creative and claim use",
+      "state": "HARD_HOLD",
+      "owner": "Mind/Legal",
+      "evidence_required": "Written media license and product-claim support where appropriate"
+    },
+    {
+      "id": "G07",
+      "name": "Three genuine Grok asset IDs and placement",
+      "state": "UNOBSERVABLE",
+      "owner": "Praxxis/Grok",
+      "evidence_required": "Immutable URLs/IDs/dates/rights/CTA and platform mapping TASK-008"
+    },
+    {
+      "id": "G08",
+      "name": "Existing single Focus signup confirmation",
+      "state": "UNTESTED",
+      "owner": "Site QA/Dispatch",
+      "evidence_required": "Authorized consent and welcome-message test"
+    },
+    {
+      "id": "G09",
+      "name": "Real-browser 360/390/768/1440 WCAG, keyboard, no-JS, performance",
+      "state": "UNTESTED",
+      "owner": "Site QA/Claude",
+      "evidence_required": "Staging screenshots, axe and mobile performance receipts"
+    },
+    {
+      "id": "G10",
+      "name": "Founder commercial publication and production approval",
+      "state": "HARD_HOLD",
+      "owner": "Founder",
+      "evidence_required": "Explicit approval of exact revision"
+    },
+    {
+      "id": "G11",
+      "name": "Merchant paid order or approved paid commission evidence",
+      "state": "UNOBSERVABLE",
+      "owner": "Commerce",
+      "evidence_required": "Merchant source-of-truth settlement/report with refunds/fees"
+    },
+    {
+      "id": "G12",
+      "name": "Qualified-human campaign attribution and denominator",
+      "state": "UNOBSERVABLE",
+      "owner": "Claude/Growth",
+      "evidence_required": "Consented first-party 7/30-day actual session and source record"
+    }
+  ],
+  "commerce_release_decision": "NO GO: no seller earning URL or live affiliate activation; source citation to zen12.com remains informational",
+  "no_duplicate_jetpack_form": true,
+  "not_a_product_trial": true
+}
