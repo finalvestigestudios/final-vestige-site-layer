@@ -28,13 +28,13 @@
       "id": "feng2019",
       "url": "https://doi.org/10.3389/fnins.2019.01029",
       "type": "peer-reviewed primary: full text",
-      "note": "324 Mandarin-speaking twins, 9 stimuli, 150 retests, r=.55, small explained variance; not deterministic."
+      "note": "324 Mandarin-speaking twins, 9 stimuli, 150 retests, r=.55; 5.5% r-squared from combined co-twin correlation, NOT heritability. MZ/DZ correlations not significantly different; genetic/shared environment unseparated."
     },
     {
       "id": "marian2018",
       "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5977076/",
       "type": "peer-reviewed primary: full text",
-      "note": "Under studied conditions bilinguals showed more audiovisual fusion."
+      "note": "51 young adults: 17 English monolinguals, 18 early/16 late Korean-English bilinguals; both bilingual groups showed more fusion in QUIET only, not significantly different in NOISE; self-reported English proficiency; association not cause."
     },
     {
       "id": "slagt2007",
@@ -238,18 +238,18 @@
       "source_ids": [
         "feng2019"
       ],
-      "assertion": "5.5 percent explained variance",
+      "assertion": "Combined co-twin correlation r-squared ≈5.5%; not heritability",
       "decision": "source-grounded",
-      "limitations": "No simple inheritance or individual prediction."
+      "limitations": "MZ and DZ correlations did not significantly differ; genes and shared environment not separable."
     },
     {
       "id": "lang",
       "source_ids": [
         "marian2018"
       ],
-      "assertion": "Bilingual participants reported more fusion in tested design",
+      "assertion": "Korean-English bilingual groups reported more fusion than English monolinguals in QUIET, no significant group difference in NOISE",
       "decision": "source-grounded",
-      "limitations": "Depends on participants, language, syllables."
+      "limitations": "51 young adults; self-reported English proficiency; noncausal result."
     },
     {
       "id": "not_diagnostic",
