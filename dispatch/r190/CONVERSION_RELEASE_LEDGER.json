@@ -1,0 +1,126 @@
+{
+  "schema": "fv-dispatch-release-gates-v190",
+  "recorded_utc": "2026-11-07T17:31:38Z",
+  "status": "NO_SEND_NO_PUBLISH_NO_MERGE",
+  "master_campaign": {
+    "issue": 174,
+    "pr": 175,
+    "immutable_reference_head": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+    "original_issues_unchanged": true,
+    "editorial": 4,
+    "commercial": 2
+  },
+  "current_wp_read_only": {
+    "site": "https://finalvestige.com",
+    "newsletter_enabled": true,
+    "new_post_auto_mail": false,
+    "format": "full",
+    "sender": "Final Vestige Studios",
+    "reply_to": "no-reply",
+    "counted_subscribers": 3,
+    "confirmed_counter": 3,
+    "unconfirmed_requests": 2,
+    "suppressed": 0,
+    "actual_email_subscribed_eligible": null,
+    "recent_send_status": "five recent posts never_sent_opted_out",
+    "welcome_configured": true,
+    "welcome_received": null,
+    "as_of": "2026-11-07T17:31:38Z",
+    "counts_are_not_additive": true
+  },
+  "compliance_proof": {
+    "named_publisher_postal_address_verified": false,
+    "native_jetpack_email_preview_verified": false,
+    "received_mime_verified": false,
+    "working_recipient_unsubscribe_verified": false,
+    "subscribed_consent_eligibility_verified": false,
+    "provider_confirmed_fieldbook_delivery_verified": false,
+    "founder_campaign_release_approval": false
+  },
+  "merchant": {
+    "zen12": {
+      "exact_official_sales_page": "https://zen12.com/hnp",
+      "seller_markets": "12 levels; 48 MP3 Premium recordings; 12-minute/hour equivalence is seller claim",
+      "named_fv_acceptance_verified": false,
+      "email_channel_permission_verified": false,
+      "approved_earning_url_verified": false,
+      "approved_creative_verified": false,
+      "price_refund_checkout_verified": false,
+      "live_approved_vetted_guide_verified": false,
+      "release": "HOLD_MERCHANT"
+    },
+    "total_focus": {
+      "exact_official_sales_page": "https://hypnosislive.com/mental-skills/total-focus",
+      "seller_markets": "33 min, 47 MB; current page shows single-item $24.44/$29.95 and bundle alternatives; checkout unverified",
+      "named_fv_acceptance_verified": false,
+      "email_channel_permission_verified": false,
+      "approved_earning_url_verified": false,
+      "approved_creative_verified": false,
+      "refund_claim_implementation_verified": false,
+      "live_approved_vetted_guide_verified": false,
+      "release": "HOLD_MERCHANT"
+    }
+  },
+  "issues": [
+    {
+      "n": 1,
+      "kind": "editorial",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "status": "HOLD_UNSENT"
+    },
+    {
+      "n": 2,
+      "kind": "editorial",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "status": "HOLD_UNSENT",
+      "note": "same CTA as 01; R190 Clever Hans is a separate optional alternative ONLY"
+    },
+    {
+      "n": 3,
+      "kind": "commercial",
+      "url": null,
+      "expected_guide": "zen12",
+      "status": "HOLD_MERCHANT"
+    },
+    {
+      "n": 4,
+      "kind": "editorial",
+      "url": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/",
+      "status": "HOLD_UNSENT"
+    },
+    {
+      "n": 5,
+      "kind": "commercial",
+      "url": null,
+      "expected_guide": "hypnosis_live_total_focus",
+      "status": "HOLD_MERCHANT"
+    },
+    {
+      "n": 6,
+      "kind": "editorial",
+      "url": "https://finalvestige.com/focus/",
+      "status": "HOLD_UNSENT",
+      "note": "CTA risks asking an existing Fieldbook recipient to resubscribe"
+    }
+  ],
+  "conversion": {
+    "priority": "realized net revenue per 1000 qualified human sessions",
+    "metric_value": null,
+    "verified_paid_orders": null,
+    "verified_net_revenue": null,
+    "verified_qualified_human_sessions": null,
+    "experimental_results": null,
+    "manual_or_fake_values_forbidden": true,
+    "only_after_independently_reconciled_orders_fees_refunds": true
+  },
+  "production_changes": {
+    "wordpress": false,
+    "email_sent": false,
+    "subscribers_changed": false,
+    "merchant_links_activated": false,
+    "analytics_scripts": false,
+    "social_content": false,
+    "payments": false,
+    "homepage_pr49": false
+  }
+}
