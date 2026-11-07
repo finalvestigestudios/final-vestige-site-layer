@@ -63,11 +63,11 @@ const checks=[
  [s=>noFalseClaims(s),s=>s+" guaranteed to cure anxiety"],
 ];
 for(const [validator,mutate] of checks){for(const s of [a,b,hub]){if(!validator(s))throw Error("invalid test seed");if(validator(mutate(s)))throw Error("mutation escaped");negative++}}
-const failSources=structuredClone(matrix);failSources.claims[0].source_ids.push("MADE_UP");
+const failSources=JSON.parse(JSON.stringify(matrix));failSources.claims[0].source_ids.push("MADE_UP");
 ok(!failSources.claims.every(c=>c.source_ids.every(id=>sourceIds.has(id))),"invalid source caught");
-const failGates=structuredClone(matrix);failGates.gates[0].status="VERIFIED";
+const failGates=JSON.parse(JSON.stringify(matrix));failGates.gates[0].status="VERIFIED";
 ok(!failGates.gates.every(g=>g.status==="OPEN"),"premature activation caught");
-const failMoney=structuredClone(matrix);failMoney.realized_net_revenue_per_1000_qualified_humans=0;
+const failMoney=JSON.parse(JSON.stringify(matrix));failMoney.realized_net_revenue_per_1000_qualified_humans=0;
 ok(failMoney.realized_net_revenue_per_1000_qualified_humans!=="NOT_COMPUTABLE","zero false report caught");
 negative+=3;
 console.log("R201 STATIC: "+passed+"/"+passed+" assertions PASS; "+negative+"/"+negative+" unsafe mutations rejected. NOT browser, CI, partner, checkout or paid-sale proof.");
