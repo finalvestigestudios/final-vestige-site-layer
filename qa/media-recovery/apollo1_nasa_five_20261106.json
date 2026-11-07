@@ -200,7 +200,27 @@
     "slot": "434:3",
     "problem": "NASA image KSC-20170124-PH_KLS01_0164 visually depicts a large white Apollo spacecraft mockup and gallery; WordPress ALT and caption describe it as the original three-part Block I hatch. NASA catalog discusses the whole exhibit, but the photo itself is NOT a close image of the original hatch.",
     "proposed_action": "Editorial signoff to change ALT/caption to tribute mockup; or substitute an individually verified photograph of actual Block I hatch. No automatic block or image rewrite.",
-    "different_second_hatch_image": "434:5 is KSC-20170124-PH_KLS01_0090, a separate photo of the redesigned hatch exhibit. Never interchange."
+    "different_second_hatch_image": "434:5 is KSC-20170124-PH_KLS01_0090, a separate photo of the redesigned hatch exhibit. Never interchange.",
+    "primary_source_replacement_candidate": {
+      "authority": "NASA Kennedy (official NASA Kennedy Flickr publisher account)",
+      "official_photo_id": "KSC-2017-0124-PH_KLS01-0129",
+      "catalog_page_url": "https://www.flickr.com/photos/nasakennedy/32553514565/",
+      "item_caption_verified": "Three-part hatch that was in place on Apollo 1 spacecraft, displayed at Kennedy Space Center tribute opened January 2017",
+      "date_photographed": "2017-01-24",
+      "date_uploaded": "2017-01-27",
+      "photo_credit": "NASA/Kim Shiflett",
+      "rights_notice": "Flickr item says Some rights reserved; link to NASA policy. Interpret exact Creative Commons licensing before reuse; rights clearance HOLD.",
+      "relationship_to_published": "DIFFERENT_NASA_PHOTO_SUBJECT_EXACT_ORIGINAL_BLOCK_I_HATCH; NOT_SAME_BINARY_AS_PUBLISHED_MOCKUP",
+      "identity_confidence": "PRIMARY_NASA_CAPTION_SUBJECT_CONFIRMED_NO_BINARY_COMPARISON",
+      "native_pixel_dimensions": null,
+      "provisional_preview_pixels": null,
+      "live_guest_browser_status": null,
+      "hash_verified": false,
+      "rights_cleared": false,
+      "rehosting_authorized": false,
+      "derivative_generation_authorized": false,
+      "wp_replacement_authorized": false
+    }
   },
   "site_baseline": {
     "earlier_post_count": 61,
