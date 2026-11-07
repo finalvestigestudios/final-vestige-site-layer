@@ -12,7 +12,7 @@ These are catalog-pixel calculations, NOT resized/downloaded assets and NOT proo
 | Image slot | Catalog / provenance | Catalog native px | **Conditional** <=960px no-upscale | Rights / chronology gate |
 | --- | --- | ---: | ---: | --- |
 | 367:0 | [Recovered weapon, US Navy](https://commons.wikimedia.org/wiki/File:Palomares_H-Bomb_Incident.jpg), first-party rendition | 425×329 | **425×329** | Commons government-work indicator; first-party derivative binary identity unverified |
-| 367:1 | [Operation Chrome Dome route](https://commons.wikimedia.org/wiki/File:Operation_Chrome_Dome_route.jpg) | 1475×923 | **960×601** | CC BY-SA 2.5; original creator/uploader Emt147, linked license/credit review; preserve legible map labels |
+| 367:1 | [Operation Chrome Dome route](https://commons.wikimedia.org/wiki/File:Operation_Chrome_Dome_route.jpg) | 1475×923 | **960×601** | CC BY-SA 2.5; original uploader Emt147 and 2021 higher-resolution revision by Hohum; linked license/credit/adaptation review; preserve legible map labels |
 | 367:2 | [USS Skill](https://commons.wikimedia.org/wiki/File:USS_Skill_(MSO-471)_operating_off_the_coast_of_Spain,_in_February_1966_(428-NPC-36556).jpg) | 1227×898 | **960×703** | Navy 428-NPC-36556 / NARA 85011; item attribution and exact rendition |
 | 367:3 | [Alvin lowered, February 21 1966](https://commons.wikimedia.org/wiki/File:Zoeken_naar_H_bom_in_Spanje,_de_Alvin_wordt_te_water_gelaten,_Bestanddeelnr_918-8161.jpg) | 3440×2453 | **960×685** | Netherlands National Archives/Anefo 918-8161; Commons CC0, preserve archive credit |
 | 367:4 | [Naval Undersea Museum CURV I](https://navalunderseamuseum.org/petrel-helmet/) | **Unknown** | **HOLD** | Museum official subject/custodian; no assumed permission to download, cache or rehost |
