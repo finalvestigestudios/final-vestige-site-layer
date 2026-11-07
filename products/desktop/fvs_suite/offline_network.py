@@ -56,14 +56,28 @@ def install_offline_guard() -> None:
     global _ENABLED
     if _ENABLED:
         return
-    sys.addaudithook(_reject_network)
+    # Neither addaudithook() nor sys.audit() may expose the original failure:
+    # audit hooks supplied by extensions may put confidential paths in errors.
+    # Raise the fixed diagnostic OUTSIDE the except block to avoid retaining
+    # the sensitive exception in __context__, even under programmatic callers.
+    registered = False
+    try:
+        sys.addaudithook(_reject_network)
+        registered = True
+    except Exception:
+        pass
+    if not registered:
+        raise RuntimeError("Offline network guard could not be installed")
+
     # CPython may silently drop a hook when an earlier hook raises RuntimeError
     # during registration. Confirm our exact hook actually received an event.
+    confirmed = False
     try:
         sys.audit("fvs.offline.guard_probe")
     except _OfflineGuardProbe:
-        _ENABLED = True
-        return
+        confirmed = True
     except Exception:
-        raise RuntimeError("Offline network guard could not be installed") from None
-    raise RuntimeError("Offline network guard could not be installed")
+        pass
+    if not confirmed:
+        raise RuntimeError("Offline network guard could not be installed")
+    _ENABLED = True
