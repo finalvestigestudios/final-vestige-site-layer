@@ -26,13 +26,13 @@
       "id": "ouija_field_2018",
       "url": "https://doi.org/10.1007/s11097-018-9585-8",
       "kind": "peer reviewed study",
-      "scope": "eye tracking Ouija session vs intentional spelling"
+      "scope": "same participants across ordinary Ouija and intentional spelling conditions; observational eye tracking"
     },
     {
       "id": "hypnotic_motor_2013",
       "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3804629/",
       "kind": "open access experimental study",
-      "scope": "15 highly suggestible participants; not mass-market recordings"
+      "scope": "33 screened, 15 scanned, 11 analyzed, 7 SMA connectivity; not a branded recording"
     },
     {
       "id": "hypnosis_review_2013",
@@ -123,6 +123,12 @@
       "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
       "kind": "internal revenue coordination",
       "scope": "paid-proof KPI"
+    },
+    {
+      "id": "issue818",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/818",
+      "kind": "founder business charter",
+      "scope": "commercial revenue priority and current merchant-verification requirements"
     }
   ],
   "claim_decisions": [
@@ -156,10 +162,10 @@
     },
     {
       "id": "motor_fmri",
-      "claim": "Hypnotic suggestions of involuntary motor control studied in 15 selected participants",
+      "claim": "Deeley 2013 screened 33, scanned 15 highly suggestible volunteers, analyzed 11 for main imaging and 7 for supplementary motor-area connectivity",
       "decision": "SUPPORTED_STUDY_DETAIL",
       "source_id": "hypnotic_motor_2013",
-      "limit": "not a consumer MP3 trial"
+      "limit": "selected population; imaging and connectivity denominators differ; no consumer MP3 tested"
     },
     {
       "id": "zen_catalog",

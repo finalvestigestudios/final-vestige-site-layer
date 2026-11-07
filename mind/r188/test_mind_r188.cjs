@@ -59,7 +59,7 @@ function validate(f){
  ck("hub existing Focus not new signup",f.hub?.includes("https://finalvestige.com/focus/")&&!/<form\b/i.test(f.hub));
  ck("hub correct published Mesmerism slug",f.hub?.includes("https://finalvestige.com/2026/11/02/mesmerism/")&&!f.hub.includes("mesmerism-franklins-1784-commission/"));
  ck("A native disabled CTA",/<button\b(?=[^>]*\sdisabled(?:\s|=|>))[^>]*>Purchase option unavailable/g.test(f.A||""));
- ck("B native disabled CTA",/<button[^>]+disabled[^>]*>Purchase option unavailable/.test(f.B||""));
+ ck("B native disabled CTA",/<button\b(?=[^>]*\sdisabled(?:\s|=|>))[^>]*>Purchase option unavailable/g.test(f.B||""));
  for(const name of ["A","B"]){
   const s=f[name]||"";
   const i=s.indexOf("Affiliate disclosure (prospective)");
@@ -103,6 +103,7 @@ const mutations=[
  ["iframe injection",a=>{a.B+="<iframe src='x'></iframe>"}],
  ["tracking link",a=>{a.B+="<a href='https://www.awin1.com/test'>Earn</a>"}],
  ["button enabled",a=>{a.A=a.A.replace("disabled aria-disabled","aria-disabled")}],
+  ["B button enabled",a=>{a.B=a.B.replace("disabled aria-disabled","aria-disabled")}],
  ["both native buttons enabled",a=>{a.A=a.A.replace("disabled aria-disabled","aria-disabled");a.B=a.B.replace("disabled aria-disabled","aria-disabled")}],
  ["near disclosure missing",a=>{a.B=a.B.replace("Affiliate disclosure (prospective)","Commercial details")}],
  ["fixed unverified price",a=>{a.A=a.A.replace("Public presentations have varied.","$87.99 Public presentations have varied.")}],

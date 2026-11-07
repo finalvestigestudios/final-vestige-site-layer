@@ -1,0 +1,351 @@
+{
+  "milestone": "R190",
+  "as_of": "2026-11-07",
+  "scope": "UNPUBLISHED | no checkout, no affiliate link, no live CMS write",
+  "article_path": "mind/r190/the-recording-is-not-the-experiment-SELF-HYPNOSIS-EVIDENCE-UNPUBLISHED.md",
+  "sources": [
+    {
+      "id": "hypnosis_apps_2025",
+      "url": "https://doi.org/10.1080/00207144.2024.2434085",
+      "kind": "peer-reviewed app marketplace systematic review",
+      "limits": "679 found, 168 included; 34 reported training; 13 evidence-based claim; four reported clinical trial; no Inspire3 evaluation"
+    },
+    {
+      "id": "hypnosis_pain_2026",
+      "url": "https://doi.org/10.1002/ejp.70369",
+      "kind": "2026 peer-reviewed open-access systematic review",
+      "limits": "106 eligible studies; 57/4572 outlier-adjusted main comparison; pain, not attention; first published 2026-09-02"
+    },
+    {
+      "id": "hypnosis_pain_2025",
+      "url": "https://doi.org/10.3390/jcm14134661",
+      "kind": "2025 systematic review",
+      "limits": "12 RCTs, differing acute/chronic conclusions and methods"
+    },
+    {
+      "id": "deeley_2013",
+      "url": "https://doi.org/10.1371/journal.pone.0078324",
+      "kind": "primary fMRI experiment",
+      "limits": "33 screened, 15 scanned, 11 main analysis, seven connectivity; participant-selected and no consumer recording"
+    },
+    {
+      "id": "inspire3",
+      "url": "https://inspire3.com/",
+      "kind": "official merchant catalog",
+      "limits": "Brand inventory, marketing not clinical evidence"
+    },
+    {
+      "id": "zen12",
+      "url": "https://zen12.com/hnp",
+      "kind": "official exact Zen12 offer",
+      "limits": "Premium 12 levels/48 MP3; public offer price and guarantee representations; not verified checkout"
+    },
+    {
+      "id": "total_focus",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "kind": "official exact Hypnosis Live product",
+      "limits": "33-minute 47MB J.A. Amos recording; public price $24.44 near $29.95 and bundles; no fulfilled checkout"
+    },
+    {
+      "id": "affiliate",
+      "url": "https://affiliates.inspire3.com/",
+      "kind": "public partner portal",
+      "limits": "Affiliate program exists; not named FV acceptance"
+    },
+    {
+      "id": "ftc_endorse",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "kind": "regulator guidance",
+      "limits": "Adjacent clear disclosure and honest evidence-based statements"
+    },
+    {
+      "id": "ftc_health",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "kind": "regulator guidance",
+      "limits": "Competent scientific evidence for health/mental claims; no indirect halo"
+    },
+    {
+      "id": "issue171",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "kind": "owner editorial charter",
+      "limits": "Research vs commerce separation; independent Mind archive"
+    },
+    {
+      "id": "issue820",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "kind": "owner measurement contract",
+      "limits": "first-party asset_id -> qualified sessions -> confirmed paid sale -> realized net revenue"
+    },
+    {
+      "id": "issue818",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/818",
+      "kind": "founder commercial charter",
+      "limits": "Revenue priority and legitimacy of paid conversion"
+    },
+    {
+      "id": "fieldbook",
+      "url": "https://finalvestige.com/focus/",
+      "kind": "established first-party resource",
+      "limits": "Free existing Focus Fieldbook and Jetpack funnel; no paid SKU implication"
+    },
+    {
+      "id": "puys",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "kind": "existing historical publication",
+      "limits": "Historical record, not evidence of branded hypnosis efficacy"
+    }
+  ],
+  "claims": [
+    {
+      "id": "apps_scope",
+      "claim": "168 of 679 hypnosis apps met inclusion criteria; only four reported clinical-trial inclusion",
+      "decision": "SUPPORTED_SCOPE_LIMITED",
+      "source_id": "hypnosis_apps_2025",
+      "limit": "Reporting not independently established efficacy; no Inspire3 sample inference"
+    },
+    {
+      "id": "apps_training",
+      "claim": "34 included apps indicated hypnosis training; 13 made evidence-based claims",
+      "decision": "SUPPORTED_SCOPE_LIMITED",
+      "source_id": "hypnosis_apps_2025",
+      "limit": "Publisher-report only; categories not mutually exclusive"
+    },
+    {
+      "id": "pain_main",
+      "claim": "2026 meta after outlier removal found pain SMD -0.33, 57 RCTs n=4,572",
+      "decision": "SUPPORTED_SCOPE_LIMITED",
+      "source_id": "hypnosis_pain_2026",
+      "limit": "Pain vs non-active controls; not cognitive improvement; heterogeneity remains"
+    },
+    {
+      "id": "pain_active",
+      "claim": "2026 review found no clear superiority over relaxation, education or CBT",
+      "decision": "SUPPORTED_SCOPE_LIMITED",
+      "source_id": "hypnosis_pain_2026",
+      "limit": "Outcome pain intensity; no general equivalence across all settings"
+    },
+    {
+      "id": "audio_subgroup",
+      "claim": "Nine audio/tape studies had SMD -0.33 with CI crossing zero in non-active comparison",
+      "decision": "SUPPORTED_SCOPE_LIMITED",
+      "source_id": "hypnosis_pain_2026",
+      "limit": "Underpowered subgroup; no equivalence claim and no brand transfer"
+    },
+    {
+      "id": "pain_conflict",
+      "claim": "2025 review of 12 trials differs in acute/chronic pattern from larger 2026 synthesis",
+      "decision": "SUPPORTED_CONTEXT",
+      "source_id": "hypnosis_pain_2025",
+      "limit": "Methodologically different analyses; no branded product result"
+    },
+    {
+      "id": "fmri_n",
+      "claim": "33 screened, 15 scanned, 11 final analyzed, seven connectivity in Deeley 2013",
+      "decision": "SUPPORTED_METHODS",
+      "source_id": "deeley_2013",
+      "limit": "Selected suggestible subjects; not a consumer audio trial"
+    },
+    {
+      "id": "zen_spec",
+      "claim": "Zen12 Premium advertises 12 levels / 48 MP3s / one-year refund guarantee",
+      "decision": "SELLER_DESCRIPTION_ONLY",
+      "source_id": "zen12",
+      "limit": "Product fulfillment and guarantee performance not independently checked"
+    },
+    {
+      "id": "zen_price",
+      "claim": "Zen12 Premium publicly displays $87.99 on 2026-11-07",
+      "decision": "PUBLIC_PAGE_OBSERVATION_ONLY",
+      "source_id": "zen12",
+      "limit": "Not final taxed checkout or discount guarantee; do not promote fixed price"
+    },
+    {
+      "id": "zen_equivalence",
+      "claim": "12 minutes of Zen12 equals one hour advanced meditation",
+      "decision": "WITHHELD_NO_PRODUCT_SPECIFIC_PROOF",
+      "source_id": "zen12",
+      "limit": "General science cannot establish vendor-specific equivalence"
+    },
+    {
+      "id": "zen_mental",
+      "claim": "Zen12 reliably cures stress/anxiety or improves health/focus",
+      "decision": "WITHHELD_NO_PRODUCT_SPECIFIC_PROOF",
+      "source_id": "zen12",
+      "limit": "Do not transfer clinical or general meditation findings"
+    },
+    {
+      "id": "total_spec",
+      "claim": "Hypnosis Live Total Focus listed as 33 minutes / 47 MB; J.A. Amos credited",
+      "decision": "SELLER_DESCRIPTION_ONLY",
+      "source_id": "total_focus",
+      "limit": "No verification of delivered file or product rights"
+    },
+    {
+      "id": "total_price",
+      "claim": "Total Focus listing shows $24.44 and $29.95 comparison plus bundles",
+      "decision": "PUBLIC_PAGE_OBSERVATION_ONLY",
+      "source_id": "total_focus",
+      "limit": "Different price presentations; final cart unknown"
+    },
+    {
+      "id": "total_results",
+      "claim": "Total Focus reprograms brain or delivers limitless concentration",
+      "decision": "WITHHELD_NO_PRODUCT_SPECIFIC_PROOF",
+      "source_id": "total_focus",
+      "limit": "No independent branded recording efficacy found in inspected literature"
+    },
+    {
+      "id": "hypnosis_apps_transfer",
+      "claim": "2025 app marketplace data establishes Total Focus effectiveness",
+      "decision": "REJECTED_INVALID_INFERENCE",
+      "source_id": "hypnosis_apps_2025",
+      "limit": "App categorization is not an RCT or evaluation of this recording"
+    },
+    {
+      "id": "partner_program",
+      "claim": "An Inspire3 affiliate portal exists",
+      "decision": "SUPPORTED_PORTAL_ONLY",
+      "source_id": "affiliate",
+      "limit": "No Final Vestige named publisher acceptance inferred"
+    },
+    {
+      "id": "named_approval",
+      "claim": "Final Vestige approved for website/social/email promotion and link attribution",
+      "decision": "UNKNOWN",
+      "source_id": "affiliate",
+      "limit": "Requires authenticated publisher agreement, channel terms, ID and official earning URL"
+    },
+    {
+      "id": "fieldbook",
+      "claim": "Seven Day Focus Fieldbook is existing free lead resource",
+      "decision": "SUPPORTED_PREVIOUSLY_LIVE",
+      "source_id": "fieldbook",
+      "limit": "No price, no new form or list; independent delivery QA pending"
+    },
+    {
+      "id": "affiliate_click_sale",
+      "claim": "affiliate_outbound proves a commission or paid customer",
+      "decision": "REJECTED_METRIC_CONFUSION",
+      "source_id": "issue820",
+      "limit": "Network sale and settled commissions require external merchant proof"
+    },
+    {
+      "id": "paid_kpi",
+      "claim": "Realized net revenue per thousand human sessions is currently measurable",
+      "decision": "NOT_COMPUTABLE",
+      "source_id": "issue820",
+      "limit": "Merchant financial reconciliation and qualified human denominator unavailable"
+    },
+    {
+      "id": "disclosure",
+      "claim": "Material affiliate connection should be disclosed beside active recommendations",
+      "decision": "REQUIRED_EDITORIAL_SAFEGUARD",
+      "source_id": "ftc_endorse",
+      "limit": "Footer or disclosure page by itself inadequate"
+    },
+    {
+      "id": "health",
+      "claim": "Branded mental or health efficacy needs specific scientific substantiation",
+      "decision": "REQUIRED_SAFEGUARD",
+      "source_id": "ftc_health",
+      "limit": "General meditation evidence does not substitute for vendor-specific tests"
+    }
+  ],
+  "gates": [
+    {
+      "id": "partner_named",
+      "status": "HARD_HOLD",
+      "owner": "Founder / Mind",
+      "required_evidence": "Authenticated FV publisher approval with legal identity"
+    },
+    {
+      "id": "channels_terms",
+      "status": "HARD_HOLD",
+      "owner": "Founder / Mind",
+      "required_evidence": "Permitted web/social/email placements, creative restrictions, earned link format"
+    },
+    {
+      "id": "offer_url",
+      "status": "HARD_HOLD",
+      "owner": "Founder / Mind",
+      "required_evidence": "Authorized earning URL from partner portal and tracking validation"
+    },
+    {
+      "id": "fallback_payhip",
+      "status": "UNKNOWN",
+      "owner": "Commerce",
+      "required_evidence": "Actual rights-cleared purchasable Mind SKU, owner rights, receipt, delivery and refunds"
+    },
+    {
+      "id": "buyer_checkout",
+      "status": "NOT_TESTED",
+      "owner": "Founder / Commerce",
+      "required_evidence": "Private test of exact final buyer price, return terms and merchant delivery with consent"
+    },
+    {
+      "id": "source_review",
+      "status": "DRAFT_REVIEW_NEEDED",
+      "owner": "Independent QA",
+      "required_evidence": "Confirm 2026 paper denominators and regulatory disclosures"
+    },
+    {
+      "id": "a11y",
+      "status": "NOT_TESTED",
+      "owner": "Site QA",
+      "required_evidence": "360/390/768/1440 keyboard screenreader noJS reduced motion actual browser"
+    },
+    {
+      "id": "video",
+      "status": "NOT_RENDERED",
+      "owner": "Grok / Mind",
+      "required_evidence": "Original optional 30-45s MP4, poster and captions, content rights, no autoplay"
+    },
+    {
+      "id": "assets",
+      "status": "MISSING",
+      "owner": "Grok / Praxxis",
+      "required_evidence": "Actual media asset IDs, timestamp, link placement and rights from TASK-008"
+    },
+    {
+      "id": "attribution",
+      "status": "NOT_TESTED",
+      "owner": "Claude / Analytics",
+      "required_evidence": "Reuse consent-conscious first-party tracking; no duplicate scripts or PII"
+    },
+    {
+      "id": "list",
+      "status": "NOT_TESTED",
+      "owner": "Site QA / Dispatch",
+      "required_evidence": "Guest confirmed signup, existing Jetpack welcome message; no duplicate list"
+    },
+    {
+      "id": "payments",
+      "status": "MISSING",
+      "owner": "Founder / Commerce",
+      "required_evidence": "Verified orders, paid affiliate commissions, refunds, fees, actual settlement"
+    },
+    {
+      "id": "release",
+      "status": "HARD_HOLD",
+      "owner": "Founder",
+      "required_evidence": "Explicit publish/merge/affiliate/traffic approvals with site QA"
+    }
+  ],
+  "named_final_vestige_approval": null,
+  "permitted_channels": null,
+  "affiliate_url": null,
+  "affiliate_activation": false,
+  "verified_payhip_mind_sku": null,
+  "verified_affiliate_sales": null,
+  "verified_paid_orders": null,
+  "received_commissions": null,
+  "verified_refunds_fees": null,
+  "realized_net_revenue": null,
+  "qualified_human_sessions": null,
+  "net_revenue_per_1000_humans": null,
+  "cta_state": "NATIVE_DISABLED",
+  "ab_state": "SOURCE_CONCEPT_ONLY",
+  "tracking_state": "SPEC_ONLY",
+  "prospective_disclosure": "If you purchase through this link, Final Vestige may earn a commission at no additional cost to you. Our research conclusions remain independent.",
+  "notes": "A click, checkout intention, email opt-in or bot-tainted session is not a paid order."
+}
