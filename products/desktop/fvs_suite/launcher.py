@@ -5,9 +5,12 @@ import sys
 import traceback
 
 from . import __version__
+from .offline_network import install_offline_guard
 
 
 def launch(app_id: str) -> None:
+    # All six packaged EXEs: fail before GUI or smoke if offline guard fails.
+    install_offline_guard()
     args = sys.argv[1:]
     if args == ["--smoke-test"]:
         try:
