@@ -6,9 +6,9 @@
 The engineer extracted the **actual HTML, CSS and JS embedded in the pinned private WordPress Playground MU-plugin**, verified the ZIP's SHA-256 and the plugin's recorded PHP custody hash, and rendered the complete seven-chapter visitor experience in disconnected Chromium. This is **actual packaged source**, NOT an operating WordPress/Assembler site, live Page 6 or a hosted staging environment.
 
 Pinned review ZIP SHA-256: 9833800a112027b17dfec154358d7b630e258feb581820b749ca26ab88ffe69d (from #1393).
-Extracted HTML 50,742 bytes, SHA-256 baf26bcaddbf1b86b90f0065e1d68fbd856be03027ecd9d14ebc0ada60a21b1d.
-Extracted CSS 71,874 bytes, SHA-256 2a085ef8a1878818ff16f515679396cbdf7e6b307955011f7fc7353014bb50b2.
-Extracted JS 15,270 bytes, SHA-256 a95c37eb75ac2c7a22cf00f13d3a10bd958bc63d22fa3c4584557714565e7aef.
+Extracted HTML 50,938 bytes, SHA-256 baf26bcaddbf1b86b90f0065e1d68fbd856be03027ecd9d14ebc0ada60a21b1d.
+Extracted CSS 71,882 bytes, SHA-256 2a085ef8a1878818ff16f515679396cbdf7e6b307955011f7fc7353014bb50b2.
+Extracted JS 15,272 bytes, SHA-256 a95c37eb75ac2c7a22cf00f13d3a10bd958bc63d22fa3c4584557714565e7aef.
 The first five CSS module blob SHA values match GitHub at PR #1461; bundled reading-trail CSS and JS contain concatenation/separators, so the entire package (rather than each standalone file) is the attested source.
 
 ## Executed evidence — offline only
