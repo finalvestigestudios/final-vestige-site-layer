@@ -54,7 +54,7 @@ def test(blueprint, dest):
                         page.add_script_tag(content=js)
                     assert page.evaluate("document.documentElement.scrollWidth <= innerWidth + 1")
                     for chapter in CHAPTERS[1:]:
-                        page.evaluate('id => document.querySelector(\`.fv-hf__chapter-nav a[href="#\${id}"]\`).click()', chapter)
+                        page.evaluate("""id => document.querySelector('.fv-hf__chapter-nav a[href="#' + id + '"]').click()""", chapter)
                         page.wait_for_timeout(30)
                         dims = page.evaluate('''id => {
                           const r=document.getElementById(id).getBoundingClientRect(),
@@ -67,7 +67,7 @@ def test(blueprint, dest):
                                          pass_clearance=(dims["clearance"] >= 12 and
                                                          dims["hash"] == "#" + chapter)))
                     if width == 390 and not with_js:
-                        page.evaluate('document.querySelector(".fv-hf__chapter-nav a[href=\'#fv-hf-evidence\']").click()')
+                        page.evaluate("""() => document.querySelector('.fv-hf__chapter-nav a[href="#fv-hf-evidence"]').click()""")
                         page.wait_for_timeout(50)
                         page.screenshot(path=str(dest / (kind + "_390x667_evidence.png")))
                     page.close()
