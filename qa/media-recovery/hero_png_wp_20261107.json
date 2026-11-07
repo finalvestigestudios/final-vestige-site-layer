@@ -1,0 +1,195 @@
+{
+  "schema": "fv-hero-png-wp-metadata-v1",
+  "audit_date": "2026-11-07",
+  "method": "read-only WordPress edit post and media metadata; NOT visitor-browser observation",
+  "reported_broken_42": "UNVERIFIED",
+  "claimed_76pct_wire_reduction": "UNMEASURED",
+  "visitor_http": null,
+  "visitor_transfer_bytes": null,
+  "rights": "HOLD",
+  "alpha": "UNKNOWN",
+  "production_changed": false,
+  "original_storage_bytes": 13267538,
+  "rows": [
+    {
+      "slot": "34:0",
+      "post": 34,
+      "media": 39,
+      "post_url": "https://finalvestige.com/2026/08/16/the-morning-san-francisco-lost-its-water/",
+      "original_src": "https://finalvestige.com/wp-content/uploads/2026/08/bceca0bd-a16f-44f7-be08-16376fbf08ca.png",
+      "original_bytes": 2892087,
+      "mime": "image/png",
+      "native_px": [
+        1672,
+        941
+      ],
+      "stored_html_px": [
+        1024,
+        576
+      ],
+      "cms_subsizes": 0,
+      "stored_srcset": false,
+      "stored_alt": "Firefighters and horse-drawn fire engines on a ruined San Francisco street during the 1906 fires",
+      "figcaption": "AI-assisted historical reconstruction of San Francisco firefighters confronting the 1906 firestorm after earthquake damage disrupted the city’s water system.",
+      "media_alt_reconstruction": true,
+      "media_title_reconstruction": true,
+      "proposed_preview": [
+        960,
+        540
+      ],
+      "derivative_created": false,
+      "guest_http": null,
+      "guest_current_src": null,
+      "guest_encoded_bytes": null,
+      "guest_decode": null,
+      "rights_hold": true,
+      "visual_hold": true,
+      "download": false,
+      "wp_write": false
+    },
+    {
+      "slot": "35:0",
+      "post": 35,
+      "media": 40,
+      "post_url": "https://finalvestige.com/2026/08/16/the-boat-that-refused-to-die/",
+      "original_src": "https://finalvestige.com/wp-content/uploads/2026/08/377e08da-e121-4f57-9174-1548343402b3.png",
+      "original_bytes": 2552136,
+      "mime": "image/png",
+      "native_px": [
+        1672,
+        941
+      ],
+      "stored_html_px": [
+        1024,
+        576
+      ],
+      "cms_subsizes": 0,
+      "stored_srcset": false,
+      "stored_alt": "Shackleton and crew in a small lifeboat crossing icy seas during the Endurance expedition",
+      "figcaption": "AI-assisted historical reconstruction of Shackleton’s six-man James Caird voyage across the Southern Ocean in 1916.",
+      "media_alt_reconstruction": true,
+      "media_title_reconstruction": true,
+      "proposed_preview": [
+        960,
+        540
+      ],
+      "derivative_created": false,
+      "guest_http": null,
+      "guest_current_src": null,
+      "guest_encoded_bytes": null,
+      "guest_decode": null,
+      "rights_hold": true,
+      "visual_hold": true,
+      "download": false,
+      "wp_write": false
+    },
+    {
+      "slot": "36:0",
+      "post": 36,
+      "media": 41,
+      "post_url": "https://finalvestige.com/2026/08/16/the-city-that-went-underground/",
+      "original_src": "https://finalvestige.com/wp-content/uploads/2026/08/a44f673d-a8a8-4c83-9f29-7e24dd55156b.png",
+      "original_bytes": 2498247,
+      "mime": "image/png",
+      "native_px": [
+        1672,
+        941
+      ],
+      "stored_html_px": [
+        1024,
+        576
+      ],
+      "cms_subsizes": 0,
+      "stored_srcset": false,
+      "stored_alt": "Civilians sheltering inside a cave during the Siege of Vicksburg",
+      "figcaption": "AI-assisted historical reconstruction of civilians sheltering in hand-dug caves during the Siege of Vicksburg in 1863.",
+      "media_alt_reconstruction": true,
+      "media_title_reconstruction": true,
+      "proposed_preview": [
+        960,
+        540
+      ],
+      "derivative_created": false,
+      "guest_http": null,
+      "guest_current_src": null,
+      "guest_encoded_bytes": null,
+      "guest_decode": null,
+      "rights_hold": true,
+      "visual_hold": true,
+      "download": false,
+      "wp_write": false
+    },
+    {
+      "slot": "37:0",
+      "post": 37,
+      "media": 42,
+      "post_url": "https://finalvestige.com/2026/08/16/how-petra-made-water-flow-through-stone/",
+      "original_src": "https://finalvestige.com/wp-content/uploads/2026/08/c1237ffd-4a47-4988-8254-e3b021069e72.png",
+      "original_bytes": 2488823,
+      "mime": "image/png",
+      "native_px": [
+        1672,
+        941
+      ],
+      "stored_html_px": [
+        1024,
+        576
+      ],
+      "cms_subsizes": 0,
+      "stored_srcset": false,
+      "stored_alt": "Reconstruction of Petra’s water channels and reservoir system in the ancient desert city",
+      "figcaption": "AI-assisted historical reconstruction of Nabataean water channels, reservoirs, and gravity-fed distribution at Petra.",
+      "media_alt_reconstruction": true,
+      "media_title_reconstruction": true,
+      "proposed_preview": [
+        960,
+        540
+      ],
+      "derivative_created": false,
+      "guest_http": null,
+      "guest_current_src": null,
+      "guest_encoded_bytes": null,
+      "guest_decode": null,
+      "rights_hold": true,
+      "visual_hold": true,
+      "download": false,
+      "wp_write": false
+    },
+    {
+      "slot": "38:0",
+      "post": 38,
+      "media": 43,
+      "post_url": "https://finalvestige.com/2026/08/16/the-cisterns-beneath-san-francisco/",
+      "original_src": "https://finalvestige.com/wp-content/uploads/2026/08/01340c2e-1165-4ca0-aa96-87398a83d13a.png",
+      "original_bytes": 2836245,
+      "mime": "image/png",
+      "native_px": [
+        1672,
+        941
+      ],
+      "stored_html_px": [
+        1024,
+        576
+      ],
+      "cms_subsizes": 0,
+      "stored_srcset": false,
+      "stored_alt": "Firefighters drawing emergency water from an underground cistern in post-earthquake San Francisco",
+      "figcaption": "AI-assisted historical reconstruction of firefighters accessing underground emergency water infrastructure in San Francisco after the 1906 disaster.",
+      "media_alt_reconstruction": true,
+      "media_title_reconstruction": true,
+      "proposed_preview": [
+        960,
+        540
+      ],
+      "derivative_created": false,
+      "guest_http": null,
+      "guest_current_src": null,
+      "guest_encoded_bytes": null,
+      "guest_decode": null,
+      "rights_hold": true,
+      "visual_hold": true,
+      "download": false,
+      "wp_write": false
+    }
+  ]
+}
