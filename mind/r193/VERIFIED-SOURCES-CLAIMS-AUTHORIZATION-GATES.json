@@ -166,7 +166,7 @@
       "id": "vol48",
       "source_id": "drew_full",
       "decision": "VERIFIED_RESEARCH",
-      "statement": "Gorilla bounding volume approx 48x average nodule volume"
+      "statement": "Gorilla rectangular bounding box >7,400 mm3 versus reported mean nodule volume 153 mm3, approximately 48-fold; the nodules are not described as bounding boxes"
     },
     {
       "id": "nodule55",
