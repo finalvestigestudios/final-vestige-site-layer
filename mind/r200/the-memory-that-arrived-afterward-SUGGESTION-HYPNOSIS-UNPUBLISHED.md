@@ -16,7 +16,7 @@ That distinction is unusually important when a product promises to explore the p
 
 ## What the scientists actually manipulated
 
-The two Loftus–Palmer experiments did different jobs. The first measured speed estimates in response to alternative verbs. The second followed some participants a week later and asked about broken glass. The misleading wording was an experimentally controlled variable; the later report was the outcome. The published result is not evidence that anyone literally saw nonexistent glass at the original screening. It concerns what people later *said they remembered* in a setting where language had intervened. [1]
+The two Loftus–Palmer experiments did different jobs. The first measured speed estimates in response to alternative verbs. The second used a separate sample of 150 students: 50 heard “smashed,” 50 “hit,” and 50 received no speed question. A week later, those students were asked about broken glass, which was absent from the film. The misleading wording was an experimentally controlled variable; the later report was the outcome. The published result is not evidence that anyone literally saw nonexistent glass at the original screening. It concerns what people later *said they remembered* in a setting where language had intervened. [1]
 
 That gap is not pedantry. Without it, an article turns a finding about reports and memory reconstruction into a claim about the contents of consciousness in the moment. A witness might make an inference, accommodate an interviewer, confuse later information with earlier observation, or experience a changed recollection. Experiments can compare responses, but identifying the exact internal path from each question to each answer can require additional measures.
 
@@ -84,7 +84,7 @@ This makes the buyer's most useful question wonderfully ordinary: what, exactly,
 
 ## A five-minute source test, not a recovered-memory exercise
 
-For an entirely nonclinical demonstration, write a short factual paragraph about an ordinary invented scene—say, a blue coat hanging beside a door, a lamp lit on a desk, and three envelopes on a shelf. Keep a copy and set it aside. Write a second version that changes exactly one detail. A day later, give the first version and an open-ended question to a willing adult friend, then compare their account with the original text. If your friend has not agreed to be part of the activity, do not administer it.
+For an entirely nonclinical demonstration, write a short factual paragraph about an ordinary invented scene—say, a blue coat hanging beside a door, a lamp lit on a desk, and three envelopes on a shelf. Keep an unchanged copy, close it, and without looking write down what you think the paragraph said. The next day, compare your own notes with the preserved paragraph. Circle any detail you inferred rather than actually recorded. This exercise demonstrates the value of an unchanged original; it does not test suggestion or another person’s memory.
 
 The purpose is to discover why a record made *before* an interview matters. It is not a scientifically controlled test of how suggestible your friend is. It should not be used to make claims about trauma, medical history, abuse, or legal testimony. Do not deliberately implant distressing scenarios or insist that a person's account reveals something about their character.
 
@@ -106,7 +106,7 @@ At the time of this draft, Final Vestige-specific Inspire3 affiliate acceptance,
 
 What makes false-memory research unsettling is not that people are foolish. It is that normal cognitive systems can construct convincing accounts when later information fits what they already understand. Remembering is both useful and reconstructive. That is why direct records matter and why questions themselves deserve scrutiny.
 
-The traffic film, the absent list-word, the nineteenth-century mesmerist report and the modern hypnosis review are not versions of one giant experiment. They belong to different disciplines, methods and historical moments. Placing them together makes a narrower but sturdier point: a strong feeling of remembering is evidence of a present experience, not proof of every past event that experience appears to describe.
+The traffic film, the absent list-word, the eighteenth-century Puységur account and the modern hypnosis review are not versions of one giant experiment. They belong to different disciplines, methods and historical moments. Placing them together makes a narrower but sturdier point: a strong feeling of remembering is evidence of a present experience, not proof of every past event that experience appears to describe.
 
 The investigator's craft is to preserve the earliest available record, distinguish observation from later suggestion, and admit the point at which the evidence stops.
 
@@ -124,7 +124,7 @@ The consumer's version of that craft is almost identical. Preserve the seller's 
 6. American Medical Association Council on Scientific Affairs (1985), *Scientific status of refreshing recollection by the use of hypnosis*, *JAMA* 253(13), 1918–1923. Forensic and evidentiary warning, not proof that all hypnosis is ineffective. https://doi.org/10.1001/jama.1985.03350370114035
 7. Kihlstrom, J. F. (1997), *Hypnosis, memory and amnesia*, *Philosophical Transactions of the Royal Society B*. Distinguishes posthypnotic amnesia from alleged memory enhancement. https://pubmed.ncbi.nlm.nih.gov/9415925/
 8. Krass, J., Kinoshita, S. & McConkey, K. M. (1989), *Hypnotic memory and confident reporting*, *Applied Cognitive Psychology*. Reviews confidence–accuracy dissociation. https://doi.org/10.1002/acp.2350030105
-9. Systematic review (2021), *Induction of false beliefs and false memories in laboratory studies*, experiment types highly heterogeneous; no precise consumer-audio incidence can be inferred. https://pubmed.ncbi.nlm.nih.gov/33586291/
+9. Muschalla, Beate & Schönborn, Fabian (2021), *Induction of false beliefs and false memories in laboratory studies*, systematic review of heterogeneous laboratory procedures; no precise consumer-audio incidence can be inferred. https://pubmed.ncbi.nlm.nih.gov/33586291/
 10. Inspire3, official product catalog; sales claims are seller representations. https://inspire3.com/
 11. Zen12 Premium, official sales page https://zen12.com/hnp ; Hypnosis Live Total Focus, exact individual sales page https://hypnosislive.com/mental-skills/total-focus ; both consulted 7 November 2026; no checkout or refund test performed.
 12. Final Vestige, *Seven Day Focus Fieldbook*, existing single lead-magnet route; landing text says 52 pages, free with Dispatch subscription. https://finalvestige.com/focus/

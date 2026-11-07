@@ -1,0 +1,681 @@
+{
+  "milestone": "R201",
+  "date": "2026-11-07",
+  "scope": "mind_and_perception_only",
+  "status": "DRAFT_ONLY_NOT_LIVE",
+  "affiliate_activation": "DISABLED",
+  "individual_partner_approval": "UNVERIFIED",
+  "channel_approval": null,
+  "earning_link": null,
+  "approved_creatives": null,
+  "verified_owned_mind_sku": null,
+  "verified_checkout": null,
+  "partner_reported_paid_conversions": null,
+  "confirmed_orders": null,
+  "qualified_human_sessions": null,
+  "realized_net_revenue_per_1000_qualified_humans": "NOT_COMPUTABLE",
+  "sources": [
+    {
+      "id": "S01",
+      "type": "review",
+      "url": "https://eprints.bournemouth.ac.uk/31277/",
+      "note": "Eason & Parris 2019; 22 RCTs; self-directed skill and audio-only distinction"
+    },
+    {
+      "id": "S02",
+      "type": "review",
+      "url": "https://doi.org/10.1016/j.concog.2024.103730",
+      "note": "Zahedi Lynn Sommer 2024 hypnotic suggestion theories"
+    },
+    {
+      "id": "S03",
+      "type": "review",
+      "url": "https://doi.org/10.1016/j.jpsychires.2023.12.009",
+      "note": "Williams et al 2024 brief mindfulness audio, small evidence pool, limited attention evidence"
+    },
+    {
+      "id": "S04",
+      "type": "historical",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "note": "Puységur historical text and archival limitations"
+    },
+    {
+      "id": "S05",
+      "type": "historical",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "note": "1784 commission historical source investigation"
+    },
+    {
+      "id": "S06",
+      "type": "seller",
+      "url": "https://inspire3.com/",
+      "note": "official brand catalog not brand-specific efficacy"
+    },
+    {
+      "id": "S07",
+      "type": "seller",
+      "url": "https://zen12.com/hnp",
+      "note": "exact seller Premium inventory pricing and refund statements checked Nov 7"
+    },
+    {
+      "id": "S08",
+      "type": "seller",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "note": "exact 33 min / 47MB single product, single price, advertised refund"
+    },
+    {
+      "id": "S09",
+      "type": "seller",
+      "url": "https://brainwaveshots.com/",
+      "note": "separate brand; feature claims not clinical proof"
+    },
+    {
+      "id": "S10",
+      "type": "recruitment",
+      "url": "https://affiliates.inspire3.com/",
+      "note": "public recruitment program, NOT publisher-specific approval"
+    },
+    {
+      "id": "S11",
+      "type": "regulator",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "note": "FTC near-link commission disclosure"
+    },
+    {
+      "id": "S12",
+      "type": "regulator",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "note": "FTC substantiation of health claims"
+    },
+    {
+      "id": "S13",
+      "type": "historical",
+      "url": "https://doi.org/10.1001/jama.1985.03350370114035",
+      "note": "AMA 1985 memory testimony caveat"
+    },
+    {
+      "id": "S14",
+      "type": "review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/9415925/",
+      "note": "Kihlstrom 1997 hypnosis and memory"
+    },
+    {
+      "id": "S15",
+      "type": "existing_fv",
+      "url": "https://finalvestige.com/focus/",
+      "note": "one existing free 52-page focus + Dispatch subscription route"
+    },
+    {
+      "id": "S16",
+      "type": "existing_fv",
+      "url": "https://finalvestige.com/dispatch/",
+      "note": "one newsletter and welcome path"
+    },
+    {
+      "id": "S17",
+      "type": "governance",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "note": "Mind scope and release gates"
+    },
+    {
+      "id": "S18",
+      "type": "governance",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "note": "qualified human conversion source of truth"
+    },
+    {
+      "id": "S19",
+      "type": "governance",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/174",
+      "note": "Dispatch separate ownership"
+    },
+    {
+      "id": "S20",
+      "type": "independent_review",
+      "url": "https://docs.google.com/document/d/1uK7cZdMv44dkKwDDGILUTCrI2zw3iA0cN5VzdLmF5C8/edit",
+      "note": "Praxxis R200 independent corrections"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "statement": "22 RCTs qualified for 2019 self-hypnosis review",
+      "decision": "SUPPORTED_SCOPED",
+      "source_ids": [
+        "S01"
+      ],
+      "limits": "Not a branded product trial"
+    },
+    {
+      "id": "C02",
+      "statement": "Taught self-directed skill and repeated practice may matter",
+      "decision": "SUPPORTED_REVIEW",
+      "source_ids": [
+        "S01"
+      ],
+      "limits": "Review-level pattern, not causal head to head"
+    },
+    {
+      "id": "C03",
+      "statement": "Audio-only hetero-hypnosis frequently found no effect in reviewed trials",
+      "decision": "SUPPORTED_SCOPED",
+      "source_ids": [
+        "S01"
+      ],
+      "limits": "Not all audio products ineffective"
+    },
+    {
+      "id": "C04",
+      "statement": "All self-hypnosis protocols improve everyone",
+      "decision": "EXCLUDE",
+      "source_ids": [
+        "S01"
+      ],
+      "limits": "Different populations and interventions"
+    },
+    {
+      "id": "C05",
+      "statement": "Hypnotic suggestions have multiple theoretical accounts",
+      "decision": "SUPPORTED_SCOPED",
+      "source_ids": [
+        "S02"
+      ],
+      "limits": "Mechanism unsettled"
+    },
+    {
+      "id": "C06",
+      "statement": "Hypnosis and meditation are identical",
+      "decision": "EXCLUDE",
+      "source_ids": [
+        "S01",
+        "S02",
+        "S03"
+      ],
+      "limits": "Not interchangeably studied"
+    },
+    {
+      "id": "C07",
+      "statement": "Brief mindfulness audio may change state anxiety or mindfulness in selected small trials",
+      "decision": "SUPPORTED_SCOPED",
+      "source_ids": [
+        "S03"
+      ],
+      "limits": "Not equivalent to Zen12 or Total Focus"
+    },
+    {
+      "id": "C08",
+      "statement": "Brief mindfulness audio consistently improves measured attention",
+      "decision": "EXCLUDE",
+      "source_ids": [
+        "S03"
+      ],
+      "limits": "Attention evidence limited"
+    },
+    {
+      "id": "C09",
+      "statement": "Puységur eighteenth-century reports are historical sources",
+      "decision": "HISTORICAL",
+      "source_ids": [
+        "S04"
+      ],
+      "limits": "Not magnetic fluid efficacy"
+    },
+    {
+      "id": "C10",
+      "statement": "1784 commission investigated expectation and animal magnetism",
+      "decision": "HISTORICAL",
+      "source_ids": [
+        "S05"
+      ],
+      "limits": "Not modern consumer clinical trial"
+    },
+    {
+      "id": "C11",
+      "statement": "Inspire3 lists Zen12 Hypnosis Live Brainwave Shots as distinct brands",
+      "decision": "SELLER_CATALOG",
+      "source_ids": [
+        "S06"
+      ],
+      "limits": "Corporate taxonomy only"
+    },
+    {
+      "id": "C12",
+      "statement": "Zen12 Premium described as 12 levels and 48 MP3 recordings",
+      "decision": "SELLER_ONLY",
+      "source_ids": [
+        "S07"
+      ],
+      "limits": "Fulfillment not tested"
+    },
+    {
+      "id": "C13",
+      "statement": "Zen12 Premium described as four listening styles",
+      "decision": "SELLER_ONLY",
+      "source_ids": [
+        "S07"
+      ],
+      "limits": "Audio not tested"
+    },
+    {
+      "id": "C14",
+      "statement": "Zen12 Premium page displayed $87.99 on 2026-11-07",
+      "decision": "SELLER_PAGE_DATED",
+      "source_ids": [
+        "S07"
+      ],
+      "limits": "Final checkout tax and local currency not independently verified"
+    },
+    {
+      "id": "C15",
+      "statement": "Zen12 advertises a one-year money-back guarantee",
+      "decision": "SELLER_ONLY",
+      "source_ids": [
+        "S07"
+      ],
+      "limits": "Execution and full terms not tested"
+    },
+    {
+      "id": "C16",
+      "statement": "Zen12 12 minutes equals an hour of meditation",
+      "decision": "EXCLUDE_UNSUBSTANTIATED",
+      "source_ids": [
+        "S07",
+        "S12"
+      ],
+      "limits": "No product-specific independent effect evidence"
+    },
+    {
+      "id": "C17",
+      "statement": "Zen12 automatically reprograms brainwaves / treats anxiety",
+      "decision": "EXCLUDE_UNSUBSTANTIATED",
+      "source_ids": [
+        "S07",
+        "S12"
+      ],
+      "limits": "Do not inherit health and mechanism claims"
+    },
+    {
+      "id": "C18",
+      "statement": "Total Focus single seller page advertises 33-minute 47-MB audio",
+      "decision": "SELLER_ONLY",
+      "source_ids": [
+        "S08"
+      ],
+      "limits": "No file audit"
+    },
+    {
+      "id": "C19",
+      "statement": "Total Focus seller single-file price displayed $24.44 Nov 7",
+      "decision": "SELLER_PAGE_DATED",
+      "source_ids": [
+        "S08"
+      ],
+      "limits": "Not bundle, no final checkout"
+    },
+    {
+      "id": "C20",
+      "statement": "Total Focus seller advertises 14-day refund",
+      "decision": "SELLER_ONLY",
+      "source_ids": [
+        "S08"
+      ],
+      "limits": "Refund processing untested"
+    },
+    {
+      "id": "C21",
+      "statement": "Total Focus improves concentration or treats mental health",
+      "decision": "EXCLUDE_UNSUBSTANTIATED",
+      "source_ids": [
+        "S08",
+        "S12"
+      ],
+      "limits": "No product-specific trial reviewed"
+    },
+    {
+      "id": "C22",
+      "statement": "Brainwave Shots sells 15-minute audio format",
+      "decision": "SELLER_ONLY",
+      "source_ids": [
+        "S06",
+        "S09"
+      ],
+      "limits": "No item-specific test"
+    },
+    {
+      "id": "C23",
+      "statement": "Brainwave Shots reliably increases performance",
+      "decision": "EXCLUDE_UNSUBSTANTIATED",
+      "source_ids": [
+        "S06",
+        "S12"
+      ],
+      "limits": "Catalog marketing not measured outcomes"
+    },
+    {
+      "id": "C24",
+      "statement": "Hypnotically refreshed memories may have reliability problems",
+      "decision": "SUPPORTED_SCOPED",
+      "source_ids": [
+        "S13",
+        "S14"
+      ],
+      "limits": "Forensic scope, not an incidence estimate for audio"
+    },
+    {
+      "id": "C25",
+      "statement": "Ordinary commercial relaxation audio inevitably creates false memories",
+      "decision": "EXCLUDE",
+      "source_ids": [
+        "S13",
+        "S14"
+      ],
+      "limits": "No such branded product evidence"
+    },
+    {
+      "id": "C26",
+      "statement": "One free 52-page Focus Fieldbook route exists",
+      "decision": "PUBLISHED_ROUTE",
+      "source_ids": [
+        "S15",
+        "S16"
+      ],
+      "limits": "Does not prove confirmed lead or welcome delivery"
+    },
+    {
+      "id": "C27",
+      "statement": "Public Inspire3 portal confirms FV approval",
+      "decision": "REJECT",
+      "source_ids": [
+        "S10"
+      ],
+      "limits": "Recruitment website is not a named acceptance"
+    },
+    {
+      "id": "C28",
+      "statement": "Final Vestige has an issued active affiliate link",
+      "decision": "UNVERIFIED",
+      "source_ids": [
+        "S10",
+        "S17"
+      ],
+      "limits": "Never construct or guess tracking URL"
+    },
+    {
+      "id": "C29",
+      "statement": "FV-owned paid Mind SKU available to checkout",
+      "decision": "UNVERIFIED",
+      "source_ids": [
+        "S17"
+      ],
+      "limits": "No authenticated seller inventory and rights verified"
+    },
+    {
+      "id": "C30",
+      "statement": "Outbound affiliate click equals a paid commission",
+      "decision": "REJECT",
+      "source_ids": [
+        "S18"
+      ],
+      "limits": "Reconcile merchant reporting separately"
+    },
+    {
+      "id": "C31",
+      "statement": "Affiliate disclosure should be near earning link",
+      "decision": "REGULATORY",
+      "source_ids": [
+        "S11"
+      ],
+      "limits": "Not only in global disclosure page"
+    },
+    {
+      "id": "C32",
+      "statement": "Named branded psychological claims require adequate substantiation",
+      "decision": "REGULATORY",
+      "source_ids": [
+        "S12"
+      ],
+      "limits": "Express and implied claims"
+    },
+    {
+      "id": "C33",
+      "statement": "No purchaser data or verified net revenue available",
+      "decision": "UNVERIFIED_METRICS",
+      "source_ids": [
+        "S18"
+      ],
+      "limits": "No zero assumption; NOT_COMPUTABLE"
+    }
+  ],
+  "gates": [
+    {
+      "id": "G01",
+      "name": "Named Inspire3 account acceptance",
+      "status": "OPEN",
+      "owner": "Mind/Commerce",
+      "proof_required": true
+    },
+    {
+      "id": "G02",
+      "name": "Product specific partner eligibility",
+      "status": "OPEN",
+      "owner": "Mind/Commerce",
+      "proof_required": true
+    },
+    {
+      "id": "G03",
+      "name": "Website promotional rights",
+      "status": "OPEN",
+      "owner": "Mind/Commerce",
+      "proof_required": true
+    },
+    {
+      "id": "G04",
+      "name": "TikTok promotional rights",
+      "status": "OPEN",
+      "owner": "Mind/Commerce",
+      "proof_required": true
+    },
+    {
+      "id": "G05",
+      "name": "YouTube promotional rights",
+      "status": "OPEN",
+      "owner": "Mind/Commerce",
+      "proof_required": true
+    },
+    {
+      "id": "G06",
+      "name": "Email promotional rights",
+      "status": "OPEN",
+      "owner": "Mind/Commerce",
+      "proof_required": true
+    },
+    {
+      "id": "G07",
+      "name": "Account issued earning URL",
+      "status": "OPEN",
+      "owner": "Mind/Commerce",
+      "proof_required": true
+    },
+    {
+      "id": "G08",
+      "name": "Tracking and attribution terms",
+      "status": "OPEN",
+      "owner": "Mind/Commerce",
+      "proof_required": true
+    },
+    {
+      "id": "G09",
+      "name": "Permitted creative assets and copyright",
+      "status": "OPEN",
+      "owner": "Mind/Commerce",
+      "proof_required": true
+    },
+    {
+      "id": "G10",
+      "name": "Verified checkout final charges and currency",
+      "status": "OPEN",
+      "owner": "Mind/Commerce",
+      "proof_required": true
+    },
+    {
+      "id": "G11",
+      "name": "Digital delivery and format",
+      "status": "OPEN",
+      "owner": "Mind/Commerce",
+      "proof_required": true
+    },
+    {
+      "id": "G12",
+      "name": "Actual refund terms and process",
+      "status": "OPEN",
+      "owner": "Mind/Commerce",
+      "proof_required": true
+    },
+    {
+      "id": "G13",
+      "name": "FTC near-CTA disclosure reviewed",
+      "status": "OPEN",
+      "owner": "Mind/Commerce",
+      "proof_required": true
+    },
+    {
+      "id": "G14",
+      "name": "No unsupported health or cognitive claims",
+      "status": "OPEN",
+      "owner": "Mind/Commerce",
+      "proof_required": true
+    },
+    {
+      "id": "G15",
+      "name": "Founder approval for commercial activation",
+      "status": "OPEN",
+      "owner": "Founder",
+      "proof_required": true
+    },
+    {
+      "id": "G16",
+      "name": "Pilot paid SKU authenticated if fallback",
+      "status": "OPEN",
+      "owner": "Mind/Commerce",
+      "proof_required": true
+    },
+    {
+      "id": "G17",
+      "name": "Owned SKU IP rights checked",
+      "status": "OPEN",
+      "owner": "Mind/Commerce",
+      "proof_required": true
+    },
+    {
+      "id": "G18",
+      "name": "Owned SKU price checkout returns checked",
+      "status": "OPEN",
+      "owner": "Mind/Commerce",
+      "proof_required": true
+    },
+    {
+      "id": "G19",
+      "name": "Authoritative Jetpack confirmed lead",
+      "status": "OPEN",
+      "owner": "Claude/Site QA",
+      "proof_required": true
+    },
+    {
+      "id": "G20",
+      "name": "Actual Grok asset IDs and published URLs",
+      "status": "OPEN",
+      "owner": "Grok/Praxxis",
+      "proof_required": true
+    },
+    {
+      "id": "G21",
+      "name": "No duplicate measurement code",
+      "status": "OPEN",
+      "owner": "Claude/Site QA",
+      "proof_required": true
+    },
+    {
+      "id": "G22",
+      "name": "First party campaign source correctness",
+      "status": "OPEN",
+      "owner": "Claude/Site QA",
+      "proof_required": true
+    },
+    {
+      "id": "G23",
+      "name": "No-PII or fingerprinting policy",
+      "status": "OPEN",
+      "owner": "Mind/Commerce",
+      "proof_required": true
+    },
+    {
+      "id": "G24",
+      "name": "Mobile keyboard and reduced motion browser QA",
+      "status": "OPEN",
+      "owner": "Claude/Site QA",
+      "proof_required": true
+    },
+    {
+      "id": "G25",
+      "name": "Lighthouse and performance on real browser",
+      "status": "OPEN",
+      "owner": "Claude/Site QA",
+      "proof_required": true
+    },
+    {
+      "id": "G26",
+      "name": "Commission or order receipts",
+      "status": "OPEN",
+      "owner": "Mind/Commerce",
+      "proof_required": true
+    },
+    {
+      "id": "G27",
+      "name": "Fees refunds payouts and dates reconciled",
+      "status": "OPEN",
+      "owner": "Mind/Commerce",
+      "proof_required": true
+    },
+    {
+      "id": "G28",
+      "name": "Qualified human session denominator",
+      "status": "OPEN",
+      "owner": "Mind/Commerce",
+      "proof_required": true
+    },
+    {
+      "id": "G29",
+      "name": "Founder publication approval",
+      "status": "OPEN",
+      "owner": "Founder",
+      "proof_required": true
+    }
+  ],
+  "prospective_disclosure": "If Final Vestige later offers an authorized earning link and you purchase through it, Final Vestige may receive a commission at no additional cost to you. No earning link is active on this draft.",
+  "ab_test": {
+    "a": "text guide",
+    "b": "identical guide + unrendered optional original 42s video concept",
+    "live_exposure": false,
+    "metric": "merchant_verified_net_revenue_per_1000_qualified_human_sessions",
+    "method": "randomize only after release and traffic, report tiny sample uncertainty"
+  },
+  "attribution": {
+    "allowed_parameters": [
+      "utm_source",
+      "utm_medium",
+      "utm_campaign",
+      "utm_content"
+    ],
+    "grok_asset_id": "UNRECONCILED",
+    "events": [
+      "qualified_campaign_landing",
+      "article_to_focus_click",
+      "confirmed_signup_authoritative",
+      "conditional_affiliate_outbound",
+      "merchant_confirmed_order",
+      "reconciled_net_revenue"
+    ],
+    "pii_allowed": false,
+    "first_party_only": true
+  }
+}
