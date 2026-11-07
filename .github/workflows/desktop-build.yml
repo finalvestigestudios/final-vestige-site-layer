@@ -620,6 +620,12 @@ jobs:
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_review_evidence_fault_r249.py'
           python -W error -m unittest discover -s products/desktop/tests -p 'test_review_ui_fault_wiring_r249.py'
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_review_ui_fault_wiring_r249.py'
+      - name: R250 premium output custody and real-source Tk callbacks (normal and -OO)
+        run: |
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_review_output_custody_r250.py'
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_review_output_custody_r250.py'
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_review_ui_output_fault_r250.py'
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_review_ui_output_fault_r250.py'
       - name: Verify full normal/optimized source provenance and six smokes (R57)
         run: |
           mkdir -p "$RUNNER_TEMP/fvs-source"
@@ -1814,6 +1820,18 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R249 Windows UI evidence normal FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_review_ui_fault_wiring_r249.py'
           if ($LASTEXITCODE -ne 0) { throw "R249 Windows UI evidence optimized FAILED" }
+      - name: R250 Windows premium output custody and UI callbacks (normal and -OO)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_review_output_custody_r250.py'
+          if ($LASTEXITCODE -ne 0) { throw "R250 Windows output custody normal FAILED" }
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_review_output_custody_r250.py'
+          if ($LASTEXITCODE -ne 0) { throw "R250 Windows output custody optimized FAILED" }
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_review_ui_output_fault_r250.py'
+          if ($LASTEXITCODE -ne 0) { throw "R250 Windows output GUI normal FAILED" }
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_review_ui_output_fault_r250.py'
+          if ($LASTEXITCODE -ne 0) { throw "R250 Windows output GUI optimized FAILED" }
       - name: Verify full normal/optimized source suite before packaging (R57)
         shell: pwsh
         run: |
