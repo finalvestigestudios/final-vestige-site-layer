@@ -16,7 +16,7 @@ function verify(files) {
   check("2013 expert n24 and 83% reported correctly",/Twenty-four radiologists/.test(article)&&/83%/.test(article));
   check("choice blindness separate research",article.includes("10.1126/science.1111709")||article.includes("16210542"));
   check("no article purchasing button",!/<button/i.test(article));
-  check("article research-to-product inferential boundary",article.includes("not a clinical trial")&&article.includes("did not test Zen12"));
+  check("article research-to-product inferential boundary",article.includes("not a clinical trial")&&article.includes("no responsible article can claim that Zen12"));
   check("claim register includes 18 source links",matrix.sources.length>=18);
   check("claim register includes at least 24 decisions",matrix.claims.length>=24);
   check("claim register includes 12 gates",matrix.gates.length>=12);
