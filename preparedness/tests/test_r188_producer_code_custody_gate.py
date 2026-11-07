@@ -29,7 +29,7 @@ def mock_tree(root: Path):
 
 class ProducerAdmission(unittest.TestCase):
     def test_count(self):
-        self.assertEqual(len(r188.PINS), 15)
+        self.assertEqual(len(r188.PINS), 16)
 
     def test_production_pins_are_hex(self):
         self.assertTrue(all(len(s) == 40 and s == s.lower() for s in r188.PINS.values()))
@@ -77,8 +77,8 @@ class ProducerAdmission(unittest.TestCase):
             pins=dict(pins);pins.pop('tools/build.py')
             # The synthetic override is test-only. Production calls MUST use
             # hardcoded PINS; ensure it never uses mutable external manifests.
-            self.assertEqual(len(r188.PINS),15)
-            self.assertEqual(r188.verify(root,pins)['producer_count'],14)
+            self.assertEqual(len(r188.PINS),16)
+            self.assertEqual(r188.verify(root,pins)['producer_count'],15)
 
 
 def add_mutations():
