@@ -20,8 +20,8 @@ Original inspected article metadata Git blobs: `safe-jerky-dehydration` `50b365e
 ## Testing / remaining checks
 
 - `python -m py_compile` on the exact validator and test files: **PASS**.
-- `python -I -m unittest discover -s preparedness/tests -p 'test_r180*.py' -v`: **73/73 PASS**, 0 skipped, in a **synthetic** 35-article / 385-relationship fixture. Includes **52 independent reviewer-state mutation cases**: 11 family records × 2 corruptions and 10 jerky claim records × 3 corruptions. Malicious links, source-citation swaps, missing claims, altered article custody, fake approvals, stable digest and CLI invalid-input tests also exercised.
-- Committed code blob identities checked against exact local tested bytes: validator `f349eb14cf1bd271e8d70123e78a6bf90d3bf0c8`, tests `f4c60b19d85dbfa35d6df69a85f3a711dc33cd6d`.
+- `python -I -m unittest discover -s preparedness/tests -p 'test_r180*.py' -v`: **74/74 PASS**, 0 skipped, in a **synthetic** 35-article / 385-relationship fixture. Includes **52 independent reviewer-state mutation cases**: 11 family records × 2 corruptions and 10 jerky claim records × 3 corruptions. Six additional secondary false-clearance subcases, malicious links, source-citation swaps, missing claims, altered article custody, fake approvals, stable digest and CLI invalid-input tests also exercised.
+- Committed code blob identities checked against exact local tested bytes: validator `92a92c8122df81fb53ce0a859464638722bde595`, tests `dd6a93f10d6d24347a5600f7ca9e8761b4b1cc6b`.
 - `git ls-remote https://github.com/finalvestigestudios/final-vestige-site-layer.git HEAD` failed in local container with **Could not resolve host: github.com**. Full checkout, original `validate.py` / `build.py` / full `preparedness/tests`, authentic R176/R178/R179/R180 Python runs, WordPress export/browser/print/privacy QA and independent QD are **NOT EXECUTED**. An intentionally incomplete-checkout CLI returned `INVALID_HARD_HOLD`, exit 2.
 
 Full trusted checkout runbook (intentional exit-2 gates are NOT a build success claim):
