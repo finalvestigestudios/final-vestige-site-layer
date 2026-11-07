@@ -14,6 +14,7 @@ import unicodedata
 from pathlib import Path
 
 from .csv_snapshot import _same_path_descriptor_signature
+from .premium_link_custody import open_inventory_stream
 
 # Source CSV imports have a 64 MiB cap; finished reports can be larger.
 MAX_INPUT_BYTES = 64 * 1024 * 1024
@@ -49,13 +50,15 @@ def _hash_regular(path: Path, maximum: int) -> tuple[str, tuple[int, int, int, i
     flags = (os.O_RDONLY | getattr(os, "O_BINARY", 0)
              | getattr(os, "O_NOFOLLOW", 0) | getattr(os, "O_NONBLOCK", 0))
     try:
-        descriptor = os.open(path, flags)
+        # Reuse the leak-safe inventory stream adoption from premium verification.
+        # An interrupted or failed fdopen must not leave private evidence open.
+        stream = open_inventory_stream(path, flags)
     except FileNotFoundError:
         raise FileNotFoundError("Inventory evidence file is missing") from None
-    except OSError:
+    except Exception:
         raise ValueError("Cannot safely open inventory evidence") from None
     try:
-        with os.fdopen(descriptor, "rb") as stream:
+        with stream:
             opened = os.fstat(stream.fileno())
             if not stat.S_ISREG(opened.st_mode) or not _same_path_descriptor_signature(before, opened):
                 raise ValueError("Inventory evidence changed while opening")
