@@ -62,7 +62,7 @@ function verify(files) {
   check("Hub has four distinct streams",(hub.match(/class="card"/g)||[]).length===4);
   check("Hub is not a second signup",!/<form\b|<script\b/i.test(hub));
   check("Hub contains 3 live editorial/Focus routes",hub.includes("/2026/11/02/change-blindness/")&&hub.includes("/free-resources/puysegurs-animal-magnetism-files/")&&hub.includes("/focus/"));
-  check("Hub release remains editorial-only",hub.includes("Unpublished prototype")&&hub.includes("no extra signup form"));
+  check("Hub release remains editorial-only",hub.includes("Unpublished prototype")&&/no extra signup form/i.test(hub));
   check("Plan declares merchant gate",plan.includes("affiliate approval, promotional terms")&&plan.includes("UNVERIFIED"));
   check("Plan has three creator paths",plan.includes("Thatcher")&&plan.includes("gorilla")&&plan.includes("audio library"));
   check("Plan respects revenue distinction",plan.includes("NOT COMPUTABLE")&&plan.includes("Outbound clicks, starts, signups"));
