@@ -614,6 +614,12 @@ jobs:
         run: |
           python -W error -m unittest discover -s products/desktop/tests -p 'test_review_auth_proof_r248.py'
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_review_auth_proof_r248.py'
+      - name: R249 premium evidence fail-closed and GUI handlers (normal and -OO)
+        run: |
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_review_evidence_fault_r249.py'
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_review_evidence_fault_r249.py'
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_review_ui_fault_wiring_r249.py'
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_review_ui_fault_wiring_r249.py'
       - name: Verify full normal/optimized source provenance and six smokes (R57)
         run: |
           mkdir -p "$RUNNER_TEMP/fvs-source"
@@ -1796,6 +1802,18 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R248 normal premium proof FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_review_auth_proof_r248.py'
           if ($LASTEXITCODE -ne 0) { throw "R248 optimized premium proof FAILED" }
+      - name: R249 Windows premium evidence fault regressions (normal and -OO)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_review_evidence_fault_r249.py'
+          if ($LASTEXITCODE -ne 0) { throw "R249 Windows source evidence normal FAILED" }
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_review_evidence_fault_r249.py'
+          if ($LASTEXITCODE -ne 0) { throw "R249 Windows source evidence optimized FAILED" }
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_review_ui_fault_wiring_r249.py'
+          if ($LASTEXITCODE -ne 0) { throw "R249 Windows UI evidence normal FAILED" }
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_review_ui_fault_wiring_r249.py'
+          if ($LASTEXITCODE -ne 0) { throw "R249 Windows UI evidence optimized FAILED" }
       - name: Verify full normal/optimized source suite before packaging (R57)
         shell: pwsh
         run: |
