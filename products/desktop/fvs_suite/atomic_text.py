@@ -95,18 +95,33 @@ def publish_text(destination: str | Path, contents: str) -> Path:
         else:
             raise FileExistsError("Text report destination already exists")
         # Do not place customer file names into temporary directory entries.
-        descriptor, temporary = tempfile.mkstemp(
-            prefix=".fvs-text-", suffix=".partial", dir=target.parent)
+        try:
+            descriptor, temporary = tempfile.mkstemp(
+                prefix=".fvs-text-", suffix=".partial", dir=target.parent)
+        except Exception as fault:
+            # Unexpected staging-creation exceptions can contain private
+            # customer paths. Keep native OS errors/errno intact for the
+            # existing privacy translator below; preserve MemoryError.
+            if isinstance(fault, (OSError, MemoryError)):
+                raise
+            raise ValueError("Text report staging could not be created") from None
         try:
             # fdopen can fail before it assumes ownership; close the raw fd in
             # that case. The outer finally removes the unpublished staging file.
             try:
                 stream = os.fdopen(descriptor, "wb")
-            except BaseException:
+            except BaseException as fault:
                 try:
                     os.close(descriptor)
                 except OSError:
                     pass
+                # fdopen does not own the raw FD when adoption fails. Routine
+                # non-OS exceptions may include private file paths in their
+                # messages; never expose them to Tk/CLI diagnostics. Keep OS
+                # errno via the outer translator and propagate interruptions.
+                if isinstance(fault, Exception) and not isinstance(
+                        fault, (OSError, MemoryError)):
+                    raise ValueError("Text report staging could not be opened") from None
                 raise
             with stream:
                 # Buffered I/O normally accepts the entire write, but a short
