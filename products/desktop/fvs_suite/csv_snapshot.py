@@ -65,13 +65,22 @@ def read_csv_snapshot(path: str | Path, maximum: int) -> bytes:
              | getattr(os, "O_NOFOLLOW", 0) | getattr(os, "O_NONBLOCK", 0))
     try:
         descriptor = os.open(source, flags)
-    except OSError:
+    except Exception:
+        # Never surface private customer paths from a failed OS open.
         raise ValueError("Cannot safely open CSV input") from None
     try:
         try:
             stream = os.fdopen(descriptor, "rb")
-        except OSError:
-            os.close(descriptor)
+        except BaseException as exc:
+            # fdopen may fail before taking ownership of the raw descriptor.
+            # Close it for both ordinary failures and interrupts, retaining
+            # the original interrupt while redacting routine error messages.
+            try:
+                os.close(descriptor)
+            except OSError:
+                pass  # Already closed; do not replace the original failure.
+            if isinstance(exc, Exception) and not isinstance(exc, MemoryError):
+                raise ValueError("Cannot read CSV input") from None
             raise
         with stream:
             opened = os.fstat(stream.fileno())
