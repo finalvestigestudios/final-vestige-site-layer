@@ -6,7 +6,13 @@ import tempfile
 import unittest
 from unittest.mock import patch
 
-import r184_report_admission_gate as gate
+import importlib.util
+
+ROOT = Path(__file__).resolve().parents[1]
+SPEC = importlib.util.spec_from_file_location("preparedness_r184_gate", ROOT / "tools" / "r184_report_admission_gate.py")
+assert SPEC is not None and SPEC.loader is not None
+gate = importlib.util.module_from_spec(SPEC)
+SPEC.loader.exec_module(gate)
 
 
 def make_fixture(root: Path) -> list[str]:
