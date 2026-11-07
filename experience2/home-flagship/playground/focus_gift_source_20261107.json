@@ -1,0 +1,6 @@
+{
+  "page_id": 1579,
+  "modified": "2026-11-05T17:44:02",
+  "source_note": "Read-only WordPress.com Page 1579 exact fvf-gift-v2; no subscriber, credentials, or analytics data",
+  "script": "(function(){var g=document.getElementById('fvf-gift');if(!g){return;}\nvar bad=['invalid_email','error','blocked_email','opted_out','blocked'];\nfunction show(){g.hidden=false;}\nvar q=null;try{q=new URLSearchParams(window.location.search).get('subscribe');}catch(e){}\nif(q){if(bad.indexOf(q)<0){show();}}\nvar c=document.querySelector('.wp-block-jetpack-subscriptions__container');\nfunction check(){if(c){if(/\\bis-subscriber\\b/.test(c.className)){show();}}}\ncheck();if(c){if(window.MutationObserver){new MutationObserver(check).observe(c,{attributes:true,attributeFilter:['class']});}}})();"
+}
