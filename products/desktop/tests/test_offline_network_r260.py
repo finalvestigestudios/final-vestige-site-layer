@@ -120,6 +120,22 @@ class OfflineNetworkR260Tests(unittest.TestCase):
         ''')
         self.assertEqual(result.returncode, 0, result.stderr)
 
+    def test_silent_hook_suppression_fails_before_gui(self):
+        # A previous audit hook can silently suppress sys.addaudithook.
+        result = child('''
+            import sys, types
+            from fvs_suite import offline_network as guard
+            from fvs_suite.launcher import launch
+            guard.sys.addaudithook = lambda hook: None
+            sys.argv = ['LedgerDiffLite.exe']
+            sys.modules['fvs_suite.app'] = types.SimpleNamespace(run=lambda app: (_ for _ in ()).throw(RuntimeError('GUI LOADED')))
+            try: launch('ledger')
+            except RuntimeError as exc:
+                if str(exc) != 'Offline network guard could not be installed': raise
+            else: raise RuntimeError('guard bypassed')
+        ''')
+        self.assertEqual(result.returncode, 0, result.stderr)
+
     def test_all_six_real_launch_entries_enforce_block_before_gui(self):
         for app in APPS:
             with self.subTest(app=app):
