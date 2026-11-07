@@ -12,6 +12,7 @@ import json
 import os
 from pathlib import Path
 from urllib.parse import urlparse
+from verify_archival_provenance import classify_source, verify_receipt
 
 CHAPTERS = ("fv-hf-title", "fv-hf-chronicle", "fv-hf-evidence",
             "fv-hf-inquiry", "fv-hf-method-title", "fv-hf-observer", "fv-hf-mind-title")
@@ -66,8 +67,20 @@ def read_semantics(page):
       const f=[...document.querySelectorAll('a[href="https://finalvestige.com/focus/"]')];
       const img=[...document.querySelectorAll('[data-fv-archive-img]')];
       const ids=%s;
+      // Actual first-screen CTA hit targets; read-only, no clicks or signup submissions.
+      const focusFirstScreen=f.map(a=>{
+        const r=a.getBoundingClientRect(), style=getComputedStyle(a);
+        const visible=r.width>=24 && r.height>=24 && r.bottom>0 && r.top<innerHeight &&
+          r.right>0 && r.left<innerWidth && style.visibility!=='hidden' &&
+          style.display!=='none' && Number(style.opacity)>0 && style.pointerEvents!=='none';
+        const x=Math.max(0,Math.min(innerWidth-1,r.left+r.width/2));
+        const y=Math.max(0,Math.min(innerHeight-1,r.top+Math.min(r.height/2,22)));
+        const hit=visible?document.elementFromPoint(x,y):null;
+        return {in_first_screen:!!visible,hit_clear:!!(visible&&hit&&(hit===a||a.contains(hit))),
+          width:r.width,height:r.height,label:(a.textContent||'').trim().slice(0,80)};
+      });
       return {wordpress_shell:inSite,root:!!root,chapters:ids.map(id=>!!document.getElementById(id)),
-        record_count:items.length,focus_links:f.length,image_count:img.length,
+        record_count:items.length,focus_links:f.length,focus_first_screen:focusFirstScreen,image_count:img.length,
         archive_sources:img.map(x=>({src:x.getAttribute('src'),current:x.currentSrc,alt:x.getAttribute('alt'),
           complete:x.complete,naturalWidth:x.naturalWidth,loading:x.loading})),
         overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth,
@@ -84,9 +97,12 @@ def assert_semantics(data, require_wp=True):
     failures=[]
     if require_wp and not data['wordpress_shell']: failures.append('not an actual WordPress shell')
     if not data['root']: failures.append('flagship root missing')
-    if not all(data['chapters']): failures.append('one or more of seven chapters missing')
+    if len(data['chapters']) != len(CHAPTERS) or not all(data['chapters']):
+        failures.append('one or more of seven chapters missing')
     if data['record_count'] != 72: failures.append('72 historical records not preserved')
     if data['focus_links'] < 5: failures.append('Focus Fieldbook navigation incomplete')
+    if not any(t.get('in_first_screen') and t.get('hit_clear') for t in data.get('focus_first_screen', [])):
+        failures.append('no visible, unobstructed first-screen Focus CTA')
     if data['image_count'] != 2: failures.append('archival image count changed')
     if data['overflow'] > 1: failures.append('document horizontally overflows')
     if not data['has_review_label']: failures.append('unpublished/non-live marker missing')
@@ -172,8 +188,11 @@ def run(url, output, authorized_host, axe_path):
                                     errs.append(f'archive {index}: no observed network response for {current}')
                                 else:
                                     body=matching.body()
-                                    fmt='WEBP' if index==0 else 'JPEG'
-                                    evidence.setdefault('transfer',[]).append(verify_image_bytes(body,fmt))
+                                    approved=classify_source(img.get_attribute('src'),current,index)
+                                    decoded=verify_image_bytes(body,approved['format'])
+                                    receipt=verify_receipt(approved,decoded,matching.status,
+                                                           matching.headers.get('content-type',''))
+                                    evidence.setdefault('transfer',[]).append(receipt)
                             except Exception as e: errs.append(f'archive {index} bytes: {str(e)[:170]}')
                     if axe_path and width in (390,1440) and js:
                         try:
@@ -227,10 +246,15 @@ def self_test():
         except ValueError:checks.append(True)
         else:checks.append(False)
     model={'wordpress_shell':True,'root':True,'chapters':[True]*7,'record_count':72,
-           'focus_links':5,'image_count':2,'overflow':0,'has_review_label':True,
+           'focus_links':5,'focus_first_screen':[{'in_first_screen':True,'hit_clear':True}],
+           'image_count':2,'overflow':0,'has_review_label':True,
            'source_actions':3,'archive_sources':[{'src':'https://finalvestige.com/wp-content/uploads/a.webp','alt':'A'},
            {'src':'https://finalvestige.com/wp-content/uploads/b.jpg','alt':'B'}]}
     checks.append(assert_semantics(model)==[])
+    for focus in ([],[{'in_first_screen':True,'hit_clear':False}],
+                  [{'in_first_screen':False,'hit_clear':True}]):
+        checks.append(any('unobstructed first-screen Focus CTA' in f for f in
+                          assert_semantics({**model,'focus_first_screen':focus})))
     for key,val in [('record_count',71),('focus_links',4),('wordpress_shell',False),('has_review_label',False),('overflow',12),('image_count',3),('source_actions',2)]:
         m={**model,key:val};checks.append(bool(assert_semantics(m)))
     print(json.dumps({'selftest_pass':sum(checks),'total':len(checks),'staging_run':False},indent=2))
