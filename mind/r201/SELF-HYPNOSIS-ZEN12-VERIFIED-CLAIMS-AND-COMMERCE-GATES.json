@@ -19,7 +19,7 @@
       "id": "S01",
       "type": "review",
       "url": "https://eprints.bournemouth.ac.uk/31277/",
-      "note": "Eason & Parris 2019; 22 RCTs; self-directed skill and audio-only distinction"
+      "note": "Eason (Adam D.) and Parris (Benjamin A.) 2019: 22 qualifying RCTs, 17 pooled; heterogeneity, possible publication bias, study-size and training confounding; no powered causal moderator analysis."
     },
     {
       "id": "S02",
@@ -31,7 +31,7 @@
       "id": "S03",
       "type": "review",
       "url": "https://doi.org/10.1016/j.jpsychires.2023.12.009",
-      "note": "Williams et al 2024 brief mindfulness audio, small evidence pool, limited attention evidence"
+      "note": "Williams et al. 2024: 5 trials (4 RCT, 1 nonrandomized), 277 high-anxiety adults; high risk of bias, low certainty; attention outcomes not pooled, no product-specific evidence."
     },
     {
       "id": "S04",
@@ -153,7 +153,7 @@
       "source_ids": [
         "S01"
       ],
-      "limits": "Review-level pattern, not causal head to head"
+      "limits": "22 qualified, 17 pooled; review pattern only, confounded and not powered for causal between-method comparison; successful studies could combine recording plus independent practice"
     },
     {
       "id": "C03",
@@ -200,7 +200,7 @@
       "source_ids": [
         "S03"
       ],
-      "limits": "Not equivalent to Zen12 or Total Focus"
+      "limits": "Five small studies; high risk of bias, low certainty; not equivalent to Zen12, Total Focus or any specific vendor"
     },
     {
       "id": "C08",
@@ -209,7 +209,7 @@
       "source_ids": [
         "S03"
       ],
-      "limits": "Attention evidence limited"
+      "limits": "Measured attention could not be pooled; high risk of bias, low certainty"
     },
     {
       "id": "C09",

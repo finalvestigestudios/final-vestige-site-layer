@@ -86,7 +86,7 @@ This makes the buyer's most useful question wonderfully ordinary: what, exactly,
 
 For an entirely nonclinical demonstration, write a short factual paragraph about an ordinary invented scene—say, a blue coat hanging beside a door, a lamp lit on a desk, and three envelopes on a shelf. Keep an unchanged copy, close it, and without looking write down what you think the paragraph said. The next day, compare your own notes with the preserved paragraph. Circle any detail you inferred rather than actually recorded. This exercise demonstrates the value of an unchanged original; it does not test suggestion or another person’s memory.
 
-The purpose is to discover why a record made *before* an interview matters. It is not a scientifically controlled test of how suggestible your friend is. It should not be used to make claims about trauma, medical history, abuse, or legal testimony. Do not deliberately implant distressing scenarios or insist that a person's account reveals something about their character.
+The purpose is to see why an unchanged original record matters when comparing later descriptions. This solitary exercise does not test another person's memory or scientifically measure suggestibility. It should not be used to make claims about trauma, medical history, abuse, or legal testimony. Do not deliberately implant distressing scenarios or insist that a person's account reveals something about their character.
 
 A still safer solitary variation is to record the exact wording of a commercial claim and return to it the next day. Ask whether the claim described an outcome tested on the exact product, or merely cited the existence of general research. This is an evidence-reading exercise rather than an attempt to influence anyone else's memory.
 

@@ -1,0 +1,563 @@
+{
+  "milestone": "R202",
+  "date": "2026-11-07",
+  "scope": "FV Mind and Perception only",
+  "state": "UNPUBLISHED_SOURCE_CONTROLLED_DRAFT",
+  "affiliate_activation": "HARD_HOLD",
+  "merchant_record_authentication": "NOT_PERFORMED",
+  "individual_publisher_approval": null,
+  "authorized_earning_url": null,
+  "verified_checkout_total": null,
+  "owned_mind_payhip_product": null,
+  "partner_paid_conversions": null,
+  "confirmed_jetpack_leads": null,
+  "qualified_human_sessions": null,
+  "net_realized_revenue_per_1000_qhs": "NOT_COMPUTABLE",
+  "pricing_disclaimer": "Seller shows $87.99 Premium; price changes and taxes possible; no checkout verification",
+  "sources": [
+    {
+      "id": "S01",
+      "type": "primary_abstract",
+      "url": "https://doi.org/10.1016/S0022-5371(77)80012-1",
+      "note": "Hasher Goldstein Toppino 1977: truth ratings of repeated vs fresh statements over three sessions two weeks apart"
+    },
+    {
+      "id": "S02",
+      "type": "primary_abstract",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26301795/",
+      "note": "Fazio Brashier Payne Marsh 2015 knowledge neglect"
+    },
+    {
+      "id": "S03",
+      "type": "primary_abstract",
+      "url": "https://doi.org/10.1525/collabra.347",
+      "note": "Fazio 2020 measures prior knowledge before repeat exposure"
+    },
+    {
+      "id": "S04",
+      "type": "review_abstract",
+      "url": "https://doi.org/10.1146/annurev-psych-010419-050807",
+      "note": "Brashier Marsh 2020 Judging Truth framework"
+    },
+    {
+      "id": "S05",
+      "type": "primary_abstract",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31473395/",
+      "note": "Brashier Eliseev Marsh 2020 four accuracy focus experiments, conditional prior knowledge"
+    },
+    {
+      "id": "S06",
+      "type": "primary_abstract",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/32857670/",
+      "note": "Fazio Sherry 2020 preregistered developmental sample 24/24/32"
+    },
+    {
+      "id": "S07",
+      "type": "primary_abstract",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33007659/",
+      "note": "Context-dependent truth and fakeness repetition effects"
+    },
+    {
+      "id": "S08",
+      "type": "seller_current",
+      "url": "https://zen12.com/hnp",
+      "note": "Zen12 Premium seller description, 12 levels 48 MP3 four styles, 1-year guarantee, displayed $87.99 at 2026-11-07; NOT a checked-out price or proved efficacy"
+    },
+    {
+      "id": "S09",
+      "type": "vendor_catalog",
+      "url": "https://inspire3.com/",
+      "note": "Official Inspire3 catalog: Zen12 Hypnosis Live Brainwave Shots and other products"
+    },
+    {
+      "id": "S10",
+      "type": "public_partner_landing",
+      "url": "https://affiliates.inspire3.com/",
+      "note": "Recruitment/public login only, no FV publisher-specific authorization/terms or link"
+    },
+    {
+      "id": "S11",
+      "type": "regulator",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "note": "FTC commission disclosure near recommendation and linked control"
+    },
+    {
+      "id": "S12",
+      "type": "regulator",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "note": "FTC objective psychological/health benefit claims require competent and reliable evidence"
+    },
+    {
+      "id": "S13",
+      "type": "FV_live",
+      "url": "https://finalvestige.com/focus/",
+      "note": "Existing Focus Fieldbook public page; lead confirmation needs authoritative Jetpack records"
+    },
+    {
+      "id": "S14",
+      "type": "FV_live",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "note": "Published Change Blindness investigation"
+    },
+    {
+      "id": "S15",
+      "type": "FV_live",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "note": "Published Mesmerism investigation"
+    },
+    {
+      "id": "S16",
+      "type": "FV_published_not_independently_live_fetched",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "note": "Listed in Issue 171 and prior checks; this run web open returned an internal error; link state should be independently browser-checked"
+    },
+    {
+      "id": "S17",
+      "type": "review_accepted_manuscript",
+      "url": "https://eprints.bournemouth.ac.uk/31277/4/Eason%20and%20Parris%20in%20press.pdf",
+      "note": "Eason & Parris 2019: 22 RCTs, 17 pooled; heterogeneous and confounded; reviewed in Praxxis TASK-008 with author correction"
+    },
+    {
+      "id": "S18",
+      "type": "review_abstract",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38215647/",
+      "note": "Williams 2024: five small studies in elevated-anxiety adults, low-certainty and high risk bias; attention not pooled; abstract-level"
+    },
+    {
+      "id": "S19",
+      "type": "project_governance",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "note": "Mind editorial and commercial governance"
+    },
+    {
+      "id": "S20",
+      "type": "business_governance",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "note": "Verified paid conversion measurement governance"
+    },
+    {
+      "id": "S21",
+      "type": "pending_offer",
+      "url": "https://finalvestige.com/collection/",
+      "note": "Public collection is not proof of any live, rights-cleared, purchasable Mind Payhip SKU"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "statement": "Repeated statements can be judged truer than nonrepeated statements in controlled tasks",
+      "decision": "SUPPORTED_SCOPED",
+      "source_ids": [
+        "S01",
+        "S04"
+      ],
+      "limits": "Validity judgments, not actual truth or purchases"
+    },
+    {
+      "id": "C02",
+      "statement": "The 1977 study used three sessions separated by two weeks",
+      "decision": "SUPPORTED_ABSTRACT",
+      "source_ids": [
+        "S01"
+      ],
+      "limits": "Study-specific schedule"
+    },
+    {
+      "id": "C03",
+      "statement": "Knowledge may be available without being consulted in a truth judgment",
+      "decision": "SUPPORTED_SCOPED",
+      "source_ids": [
+        "S02",
+        "S03"
+      ],
+      "limits": "Not that knowledge is useless or people lack reasoning"
+    },
+    {
+      "id": "C04",
+      "statement": "A 2020 Fazio paper assessed prior knowledge before manipulation",
+      "decision": "SUPPORTED_ABSTRACT",
+      "source_ids": [
+        "S03"
+      ],
+      "limits": "Cleaner causal inference about repetition, not purchase intent"
+    },
+    {
+      "id": "C05",
+      "statement": "Fluency alone explains every truth judgment",
+      "decision": "EXCLUDE",
+      "source_ids": [
+        "S04"
+      ],
+      "limits": "Broader framework includes base rates, feelings and consistency with memory"
+    },
+    {
+      "id": "C06",
+      "statement": "Accuracy focus eliminated illusion in every reader and context",
+      "decision": "EXCLUDE",
+      "source_ids": [
+        "S05"
+      ],
+      "limits": "Conditional on relevant knowledge in study"
+    },
+    {
+      "id": "C07",
+      "statement": "2020 developmental sample included 24 5-year-olds, 24 10-year-olds, and 32 adults",
+      "decision": "SUPPORTED_ABSTRACT",
+      "source_ids": [
+        "S06"
+      ],
+      "limits": "Small groups, not global prevalence"
+    },
+    {
+      "id": "C08",
+      "statement": "Repetition invariably convinces people a claim is factual",
+      "decision": "EXCLUDE",
+      "source_ids": [
+        "S07"
+      ],
+      "limits": "Judgment task context can also increase perceived fakeness"
+    },
+    {
+      "id": "C09",
+      "statement": "Puységur reports are sources for eighteenth-century suggestion history",
+      "decision": "HISTORICAL_SCOPED",
+      "source_ids": [
+        "S16",
+        "S15"
+      ],
+      "limits": "Not proof of magnetic fluid or branded self-help results"
+    },
+    {
+      "id": "C10",
+      "statement": "Zen12 Premium seller advertises 12 levels, 48 MP3 recordings and four styles",
+      "decision": "SELLER_DESCRIBED",
+      "source_ids": [
+        "S08"
+      ],
+      "limits": "No actual purchase/fulfillment"
+    },
+    {
+      "id": "C11",
+      "statement": "Zen12 seller currently advertises a one-year money-back guarantee",
+      "decision": "SELLER_DESCRIBED",
+      "source_ids": [
+        "S08"
+      ],
+      "limits": "Refund execution unverified"
+    },
+    {
+      "id": "C12",
+      "statement": "Zen12 seller page showed promotional $87.99 figure on 2026-11-07",
+      "decision": "SELLER_DESCRIBED_NOT_CHECKOUT",
+      "source_ids": [
+        "S08"
+      ],
+      "limits": "Not validated checkout, jurisdiction, tax, total charge, or refund"
+    },
+    {
+      "id": "C13",
+      "statement": "Zen12 twelve minutes is scientifically equivalent to an hour's meditation",
+      "decision": "EXCLUDE_UNSUBSTANTIATED",
+      "source_ids": [
+        "S08",
+        "S12"
+      ],
+      "limits": "Seller-only claim; no qualifying product-specific equivalence substantiation"
+    },
+    {
+      "id": "C14",
+      "statement": "Zen12 audio guarantees psychological health improvement",
+      "decision": "EXCLUDE_UNSUBSTANTIATED",
+      "source_ids": [
+        "S08",
+        "S12"
+      ],
+      "limits": "No competent reliable named-program evidence established"
+    },
+    {
+      "id": "C15",
+      "statement": "The Inspire3 catalog describes Hypnosis Live and Brainwave Shots as separate products",
+      "decision": "VENDOR_DESCRIBED",
+      "source_ids": [
+        "S09"
+      ],
+      "limits": "No commingling products or policies"
+    },
+    {
+      "id": "C16",
+      "statement": "Public Inspire3 affiliate page establishes publisher-specific approval for FV",
+      "decision": "EXCLUDE_UNVERIFIED",
+      "source_ids": [
+        "S10"
+      ],
+      "limits": "Recruitment marketing is not an account-level authorization"
+    },
+    {
+      "id": "C17",
+      "statement": "FV may insert earning link before written permission and channel rights",
+      "decision": "BLOCKED",
+      "source_ids": [
+        "S10",
+        "S19"
+      ],
+      "limits": "Must verify specific identity, product, link, channel and terms"
+    },
+    {
+      "id": "C18",
+      "statement": "FTC asks material relationships to be disclosed near endorsements and earning links",
+      "decision": "SUPPORTED_REGULATOR",
+      "source_ids": [
+        "S11"
+      ],
+      "limits": "Clear language with proximity; footer alone inadequate"
+    },
+    {
+      "id": "C19",
+      "statement": "FTC expects product-relevant substantiation for objective health benefit claims",
+      "decision": "SUPPORTED_REGULATOR",
+      "source_ids": [
+        "S12"
+      ],
+      "limits": "General meditation literature does not prove named product"
+    },
+    {
+      "id": "C20",
+      "statement": "Focus fieldbook is available through existing public Focus route",
+      "decision": "OBSERVED_PUBLIC",
+      "source_ids": [
+        "S13"
+      ],
+      "limits": "PDF display not proof of confirmed Jetpack signup"
+    },
+    {
+      "id": "C21",
+      "statement": "Grok video clicks can be treated as merchant-confirmed sales",
+      "decision": "EXCLUDE",
+      "source_ids": [
+        "S20"
+      ],
+      "limits": "Event classes must be kept distinct"
+    },
+    {
+      "id": "C22",
+      "statement": "Verified FV-owned Payhip Mind SKU is live, licensed and purchasable",
+      "decision": "UNKNOWN_NOT_VERIFIED",
+      "source_ids": [
+        "S21"
+      ],
+      "limits": "Requires exact authenticated SKU, rights, checkout, refund terms and fulfillment"
+    },
+    {
+      "id": "C23",
+      "statement": "R201 self-hypnosis review included 22 trials of which 17 were pooled",
+      "decision": "SUPPORTED_REVIEW_SCOPED",
+      "source_ids": [
+        "S17"
+      ],
+      "limits": "Five lacked usable data, confounding prevents causal training moderator"
+    },
+    {
+      "id": "C24",
+      "statement": "Review proved hypnosis training method caused superior outcomes",
+      "decision": "EXCLUDE",
+      "source_ids": [
+        "S17"
+      ],
+      "limits": "Heterogeneity, publication bias, study-size and training confounding"
+    },
+    {
+      "id": "C25",
+      "statement": "Brief mindfulness audio studies provide strong product-specific attentional efficacy evidence",
+      "decision": "EXCLUDE",
+      "source_ids": [
+        "S18"
+      ],
+      "limits": "Five small high-anxiety studies, bias/low certainty, attention not pooled"
+    },
+    {
+      "id": "C26",
+      "statement": "Realized revenue per 1,000 qualified human sessions is currently computable",
+      "decision": "EXCLUDE_UNVERIFIED",
+      "source_ids": [
+        "S20"
+      ],
+      "limits": "No authenticated seller conversion, fees/refunds or qualified-human denominator"
+    }
+  ],
+  "gates": [
+    {
+      "id": "G01",
+      "gate": "Named FV publisher acceptance",
+      "owner": "Founder / Mind",
+      "category": "AFFILIATE_HOLD",
+      "status": "OPEN"
+    },
+    {
+      "id": "G02",
+      "gate": "Product and channel specific agreement including organic social and email rights",
+      "owner": "Founder / Mind",
+      "category": "AFFILIATE_HOLD",
+      "status": "OPEN"
+    },
+    {
+      "id": "G03",
+      "gate": "Issued account-specific Zen12 earning URL and allowed link format",
+      "owner": "Founder / Mind",
+      "category": "AFFILIATE_HOLD",
+      "status": "OPEN"
+    },
+    {
+      "id": "G04",
+      "gate": "Permission for approved creatives/swipe and original derivative copy",
+      "owner": "Founder / Mind",
+      "category": "AFFILIATE_HOLD",
+      "status": "OPEN"
+    },
+    {
+      "id": "G05",
+      "gate": "Actual checkout price including taxes/jurisdiction",
+      "owner": "Commerce",
+      "category": "CHECKOUT_HOLD",
+      "status": "OPEN"
+    },
+    {
+      "id": "G06",
+      "gate": "Actual buyer-access/fulfillment evidence",
+      "owner": "Commerce",
+      "category": "CHECKOUT_HOLD",
+      "status": "OPEN"
+    },
+    {
+      "id": "G07",
+      "gate": "Refund policy terms and process evidenced from merchant account",
+      "owner": "Commerce",
+      "category": "CHECKOUT_HOLD",
+      "status": "OPEN"
+    },
+    {
+      "id": "G08",
+      "gate": "Privacy compliant merchant conversion reporting arrangement",
+      "owner": "Commerce / Analytics",
+      "category": "REVENUE_HOLD",
+      "status": "OPEN"
+    },
+    {
+      "id": "G09",
+      "gate": "Merchant-confirmed paid affiliate conversions and settlement",
+      "owner": "Commerce",
+      "category": "REVENUE_HOLD",
+      "status": "OPEN"
+    },
+    {
+      "id": "G10",
+      "gate": "Authenticated owned Payhip SKU under FV control",
+      "owner": "Commerce",
+      "category": "OWNED_PRODUCT_HOLD",
+      "status": "OPEN"
+    },
+    {
+      "id": "G11",
+      "gate": "FV rights and license for owned Mind product",
+      "owner": "Commerce",
+      "category": "OWNED_PRODUCT_HOLD",
+      "status": "OPEN"
+    },
+    {
+      "id": "G12",
+      "gate": "Owned product price, tax, checkout, returns, fulfillment",
+      "owner": "Commerce",
+      "category": "OWNED_PRODUCT_HOLD",
+      "status": "OPEN"
+    },
+    {
+      "id": "G13",
+      "gate": "Grok real public asset IDs and approved destination URLs",
+      "owner": "Grok / Praxxis",
+      "category": "ACQUISITION_HOLD",
+      "status": "OPEN"
+    },
+    {
+      "id": "G14",
+      "gate": "First-party campaign attribution without duplicate scripts",
+      "owner": "Claude / Site QA",
+      "category": "MEASUREMENT_HOLD",
+      "status": "OPEN"
+    },
+    {
+      "id": "G15",
+      "gate": "Qualified human session definition validated",
+      "owner": "Claude / Analytics",
+      "category": "MEASUREMENT_HOLD",
+      "status": "OPEN"
+    },
+    {
+      "id": "G16",
+      "gate": "Authoritative Jetpack confirmed lead reconciliation",
+      "owner": "Claude / Site QA",
+      "category": "LEAD_HOLD",
+      "status": "OPEN"
+    },
+    {
+      "id": "G17",
+      "gate": "Verified order/refund/fees net revenue ledger",
+      "owner": "Commerce",
+      "category": "REVENUE_HOLD",
+      "status": "OPEN"
+    },
+    {
+      "id": "G18",
+      "gate": "Text-vs-video A/B experiment preregistration and sample threshold",
+      "owner": "Mind / Site QA",
+      "category": "EXPERIMENT_HOLD",
+      "status": "OPEN"
+    },
+    {
+      "id": "G19",
+      "gate": "Optional rendered film, captions, poster, mobile video performance",
+      "owner": "Grok / Creative / QA",
+      "category": "MEDIA_HOLD",
+      "status": "OPEN"
+    },
+    {
+      "id": "G20",
+      "gate": "WCAG 2.2 AA live browser evaluation 360/390/768/1440/1920",
+      "owner": "Site QA",
+      "category": "RELEASE_HOLD",
+      "status": "OPEN"
+    },
+    {
+      "id": "G21",
+      "gate": "Founder production release approval",
+      "owner": "Founder",
+      "category": "RELEASE_HOLD",
+      "status": "OPEN"
+    },
+    {
+      "id": "G22",
+      "gate": "Review original R202 research and seller language independently",
+      "owner": "Praxxis / Site QA",
+      "category": "EDITORIAL_HOLD",
+      "status": "OPEN"
+    }
+  ],
+  "experiment": {
+    "A": "Existing R201 text-only guide, corrected in this branch",
+    "B": "Existing R201 guide with optional static unrendered 42-second storyboard/poster/transcript and optional R202 WebVTT draft",
+    "independent_variable": "Presence of optional 42-second film only",
+    "primary_endpoint": "Merchant-confirmed net revenue per 1000 qualified-human sessions after refunds/fees",
+    "secondary_endpoints": [
+      "confirmed orders/customers",
+      "paid conversion rate",
+      "confirmed Jetpack leads where independently verified"
+    ],
+    "treatment_status": "DO_NOT_RUN_BEFORE_APPROVAL",
+    "link_status": "DISABLED_NO_ACCOUNT_EARNING_LINK"
+  },
+  "privacy": {
+    "no_pii": true,
+    "tracking_script_added": false,
+    "attribution_limited_to": "approved first-party aggregate asset_id and campaign tags",
+    "affiliate_click_distinct_from_paid_sale": true
+  },
+  "review_note": "Source descriptions from publisher abstracts/current official merchant/FTC/public FV pages; not a full-text systematic review or audit of private buyer records."
+}
