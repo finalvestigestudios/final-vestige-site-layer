@@ -1,0 +1,351 @@
+{
+  "schema_version": "fv.media-eastland-214.v1",
+  "created_date": "2026-11-07",
+  "post_id": 214,
+  "article": "The Lifeboats Never Left the Deck",
+  "article_url": "https://finalvestige.com/2026/08/18/the-lifeboats-never-left-the-deck/",
+  "wp_read": {
+    "method": "wpcom_mcp_posts_get",
+    "context": "edit",
+    "read_only": true,
+    "modified": "2026-11-02T21:39:34",
+    "reference_count": 6,
+    "all_inline_img_tags_lack_explicit_dimensions": true
+  },
+  "inventory": {
+    "reference": "qa/media-recovery/parts/07.json",
+    "baseline_date": "2026-10-30",
+    "historical_posts": 61,
+    "historical_inline_images": 355,
+    "historical_external_origin_refs": 288,
+    "site_qa_external_count_historic": 286,
+    "post_inventory_unchanged_after_recheck": true
+  },
+  "performance": {
+    "guest_browser_measured": false,
+    "reduced_transfer_76_percent_measured": false,
+    "reported_42_broken_guest_verified": false,
+    "large_wp_originals_over_1_5MiB": 13,
+    "large_wp_originals_storage_bytes": 43522829,
+    "wire_bytes": null,
+    "source_optimization_claim": false
+  },
+  "production": {
+    "wordpress_writes": 0,
+    "image_downloads_or_copies": 0,
+    "media_cached": 0,
+    "home_design_changes": 0,
+    "spend_usd": 0
+  },
+  "priority": "P2 archival fidelity; Site QA 6 P0 visitor-image queue remains higher priority",
+  "sources_retrieved_method": "catalog HTML primary institution and Commons metadata; exact original image requests inaccessible to web retriever",
+  "slots": [
+    {
+      "key": "214:0",
+      "slot": 0,
+      "stored_source_url": "https://cdn.loc.gov/service/pnp/ggbain/19600/19622v.jpg",
+      "stored_alt": "SS Eastland lying on its side beside the Chicago River wharf after capsizing on July 24, 1915.",
+      "source_kind": "external_loc_direct",
+      "wp_post_modified": "2026-11-02T21:39:34",
+      "stored_html_width": null,
+      "stored_html_height": null,
+      "actual_browser": {
+        "verified": false,
+        "final_url": null,
+        "http_status": null,
+        "mime": null,
+        "decode_ok": null,
+        "natural_width": null,
+        "natural_height": null,
+        "transferred_bytes": null,
+        "screenshot": null
+      },
+      "retriever": {
+        "method": "web.open",
+        "observed": "viewer_inaccessible",
+        "origin_http_status": null,
+        "origin_content_type": null,
+        "causality": "Web retriever could not fetch exact image URL; not a guest-browser failure"
+      },
+      "authoritative_candidate": {
+        "catalog_url": "https://www.loc.gov/pictures/item/2014699553/marc/",
+        "institution": "Library of Congress",
+        "identity": "ggbain.19622; LCCN 2014699553; Eastland overturned 7/24/15",
+        "relationship": "catalog match by identifier or Commons file title, not tested binary pixel match",
+        "credit": "Bain News Service, Library of Congress",
+        "rights_note": "LOC Bain collection: no known restrictions, not a grant of permissions",
+        "source_note": "Primary LOC MARC page identifies the exact ggbain.19622 digital ID. Delivered JPEG binary geometry not verified.",
+        "original_master_px": null,
+        "related_master_px": null,
+        "derivative_960_px": null
+      },
+      "rights_review_complete": false,
+      "source_binary_verified": false,
+      "visual_parity_verified": false,
+      "can_cache": false,
+      "can_upload_wp": false,
+      "can_rewrite_block": false
+    },
+    {
+      "key": "214:1",
+      "slot": 1,
+      "stored_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Wreck_of_the_Eastland,_Chicago,_1915.jpg",
+      "stored_alt": "Panoramic view of the overturned Eastland and rescue activity along the Chicago River in 1915.",
+      "source_kind": "commons_redirect",
+      "wp_post_modified": "2026-11-02T21:39:34",
+      "stored_html_width": null,
+      "stored_html_height": null,
+      "actual_browser": {
+        "verified": false,
+        "final_url": null,
+        "http_status": null,
+        "mime": null,
+        "decode_ok": null,
+        "natural_width": null,
+        "natural_height": null,
+        "transferred_bytes": null,
+        "screenshot": null
+      },
+      "retriever": {
+        "method": "web.open",
+        "observed": "viewer_inaccessible",
+        "origin_http_status": null,
+        "origin_content_type": null,
+        "causality": "Web retriever could not fetch exact image URL; not a guest-browser failure"
+      },
+      "authoritative_candidate": {
+        "catalog_url": "https://www.loc.gov/item/2007661460/",
+        "institution": "Library of Congress / Commons catalog",
+        "identity": "pan.6a04191; Kaufmann, Weimer & Fabry Co. panorama",
+        "relationship": "catalog match by identifier or Commons file title, not tested binary pixel match",
+        "credit": "Kaufmann, Weimer & Fabry Co.; Library of Congress",
+        "rights_note": "US pre-1931 publication public-domain claim on Commons; LOC 1915 copyright deposit; recheck exact edition",
+        "source_note": "Unusually wide panorama; cannot crop to 16:9 without losing evidence. Metadata 29 July 1915 is deposit/publication, not necessarily exposure date.",
+        "original_master_px": {
+          "width": 2475,
+          "height": 662
+        },
+        "related_master_px": null,
+        "derivative_960_px": {
+          "width": 960,
+          "height": 257,
+          "status": "conditional_by_catalog"
+        }
+      },
+      "rights_review_complete": false,
+      "source_binary_verified": false,
+      "visual_parity_verified": false,
+      "can_cache": false,
+      "can_upload_wp": false,
+      "can_rewrite_block": false
+    },
+    {
+      "key": "214:2",
+      "slot": 2,
+      "stored_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/EastlandKenosha.jpg",
+      "stored_alt": "The tug Kenosha alongside the overturned Eastland, rescuing survivors from the exposed hull in the Chicago River.",
+      "source_kind": "commons_redirect",
+      "wp_post_modified": "2026-11-02T21:39:34",
+      "stored_html_width": null,
+      "stored_html_height": null,
+      "actual_browser": {
+        "verified": false,
+        "final_url": null,
+        "http_status": null,
+        "mime": null,
+        "decode_ok": null,
+        "natural_width": null,
+        "natural_height": null,
+        "transferred_bytes": null,
+        "screenshot": null
+      },
+      "retriever": {
+        "method": "web.open",
+        "observed": "viewer_inaccessible",
+        "origin_http_status": null,
+        "origin_content_type": null,
+        "causality": "Web retriever could not fetch exact image URL; not a guest-browser failure"
+      },
+      "authoritative_candidate": {
+        "catalog_url": "https://commons.wikimedia.org/wiki/File:EastlandKenosha.jpg",
+        "institution": "Chicago Daily News negatives / Commons",
+        "identity": "DN-0064936; tug Kenosha rescue scene",
+        "relationship": "catalog match by identifier or Commons file title, not tested binary pixel match",
+        "credit": "Chicago Daily News photographer; Chicago Historical Society / Commons",
+        "rights_note": "Commons US public-domain claim, verify rights and source credit",
+        "source_note": "Commons 2012 revision cropped prior 500×397 image to 475×381; must not upscale or assume exact uncropped master.",
+        "original_master_px": {
+          "width": 475,
+          "height": 381
+        },
+        "related_master_px": null,
+        "derivative_960_px": {
+          "width": 475,
+          "height": 381,
+          "status": "no_upscale_keep_original"
+        }
+      },
+      "rights_review_complete": false,
+      "source_binary_verified": false,
+      "visual_parity_verified": false,
+      "can_cache": false,
+      "can_upload_wp": false,
+      "can_rewrite_block": false
+    },
+    {
+      "key": "214:3",
+      "slot": 3,
+      "stored_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Helen_Repa_Eastland_Disaster_photo.png?width=1280",
+      "stored_alt": "Western Electric nurse Helen Repa assisting a victim after the Eastland disaster in Chicago.",
+      "source_kind": "commons_redirect",
+      "wp_post_modified": "2026-11-02T21:39:34",
+      "stored_html_width": null,
+      "stored_html_height": null,
+      "actual_browser": {
+        "verified": false,
+        "final_url": null,
+        "http_status": null,
+        "mime": null,
+        "decode_ok": null,
+        "natural_width": null,
+        "natural_height": null,
+        "transferred_bytes": null,
+        "screenshot": null
+      },
+      "retriever": {
+        "method": "web.open",
+        "observed": "viewer_inaccessible",
+        "origin_http_status": null,
+        "origin_content_type": null,
+        "causality": "Web retriever could not fetch exact image URL; not a guest-browser failure"
+      },
+      "authoritative_candidate": {
+        "catalog_url": "https://commons.wikimedia.org/wiki/File:Helen_Repa_Eastland_Disaster_photo.png",
+        "institution": "1915 newspaper / Commons",
+        "identity": "1915 newspaper portrait of nurse Helen Repa helping victim",
+        "relationship": "catalog match by identifier or Commons file title, not tested binary pixel match",
+        "credit": "Unknown newspaper photographer, 1915; Commons",
+        "rights_note": "Commons US pre-1931 public-domain designation; newspaper publication and source provenance require verification",
+        "source_note": "Commons dates item 4 August 1915—publication date distinct from July 24 disaster date; avoid calling this image shot on August 4.",
+        "original_master_px": {
+          "width": 1786,
+          "height": 920
+        },
+        "related_master_px": null,
+        "derivative_960_px": {
+          "width": 960,
+          "height": 495,
+          "status": "conditional_by_catalog"
+        }
+      },
+      "rights_review_complete": false,
+      "source_binary_verified": false,
+      "visual_parity_verified": false,
+      "can_cache": false,
+      "can_upload_wp": false,
+      "can_rewrite_block": false
+    },
+    {
+      "key": "214:4",
+      "slot": 4,
+      "stored_source_url": "https://cdn.loc.gov/service/pnp/ggbain/19600/19623v.jpg",
+      "stored_alt": "Rescuers attempting to revive a victim of the Eastland disaster in Chicago in July 1915.",
+      "source_kind": "external_loc_direct",
+      "wp_post_modified": "2026-11-02T21:39:34",
+      "stored_html_width": null,
+      "stored_html_height": null,
+      "actual_browser": {
+        "verified": false,
+        "final_url": null,
+        "http_status": null,
+        "mime": null,
+        "decode_ok": null,
+        "natural_width": null,
+        "natural_height": null,
+        "transferred_bytes": null,
+        "screenshot": null
+      },
+      "retriever": {
+        "method": "web.open",
+        "observed": "viewer_inaccessible",
+        "origin_http_status": null,
+        "origin_content_type": null,
+        "causality": "Web retriever could not fetch exact image URL; not a guest-browser failure"
+      },
+      "authoritative_candidate": {
+        "catalog_url": "https://www.loc.gov/pictures/item/2014699554/",
+        "institution": "Library of Congress / Bain",
+        "identity": "ggbain.19623; LCCN 2014699554; Reviving EASTLAND victim",
+        "relationship": "catalog match by identifier or Commons file title, not tested binary pixel match",
+        "credit": "Bain News Service, Library of Congress",
+        "rights_note": "LOC Bain no-known-restrictions description; recheck rights and original format per use",
+        "source_note": "Commons related digitization says '1910' despite EASTLAND victim title; likely conflicting inherited catalog chronology. Exact LOC delivered JPEG size/geometry unmeasured; 4153×5697 is a distinct full-size Commons master, NOT verified dimensions of published v JPEG.",
+        "original_master_px": null,
+        "related_master_px": {
+          "width": 4153,
+          "height": 5697
+        },
+        "derivative_960_px": null
+      },
+      "rights_review_complete": false,
+      "source_binary_verified": false,
+      "visual_parity_verified": false,
+      "can_cache": false,
+      "can_upload_wp": false,
+      "can_rewrite_block": false
+    },
+    {
+      "key": "214:5",
+      "slot": 5,
+      "stored_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Photograph_of_The_Eastland_(upside_down)_on_Chicago_River,_Chicago._-_NARA_-_281841.jpg?width=1280",
+      "stored_alt": "National Archives photograph of the overturned Eastland in the Chicago River after the 1915 disaster.",
+      "source_kind": "commons_redirect",
+      "wp_post_modified": "2026-11-02T21:39:34",
+      "stored_html_width": null,
+      "stored_html_height": null,
+      "actual_browser": {
+        "verified": false,
+        "final_url": null,
+        "http_status": null,
+        "mime": null,
+        "decode_ok": null,
+        "natural_width": null,
+        "natural_height": null,
+        "transferred_bytes": null,
+        "screenshot": null
+      },
+      "retriever": {
+        "method": "web.open",
+        "observed": "viewer_inaccessible",
+        "origin_http_status": null,
+        "origin_content_type": null,
+        "causality": "Web retriever could not fetch exact image URL; not a guest-browser failure"
+      },
+      "authoritative_candidate": {
+        "catalog_url": "https://www.archives.gov/chicago/highlights/eastland",
+        "institution": "National Archives and Records Administration",
+        "identity": "NARA Identifier 281841; overturned Eastland after rescue/recovery",
+        "relationship": "catalog match by identifier or Commons file title, not tested binary pixel match",
+        "credit": "U.S. National Archives; photographer uncredited",
+        "rights_note": "Commons labels US-government public domain; NARA custody does not alone prove unknown photographer was federal employee; rights review HOLD",
+        "source_note": "NARA states image is after the rescue/recovery mission, not an immediate moment of rescue. Do not imply all people visible are rescuers.",
+        "original_master_px": {
+          "width": 3000,
+          "height": 2402
+        },
+        "related_master_px": null,
+        "derivative_960_px": {
+          "width": 960,
+          "height": 769,
+          "status": "conditional_by_catalog"
+        }
+      },
+      "rights_review_complete": false,
+      "source_binary_verified": false,
+      "visual_parity_verified": false,
+      "can_cache": false,
+      "can_upload_wp": false,
+      "can_rewrite_block": false
+    }
+  ]
+}
