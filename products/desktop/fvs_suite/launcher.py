@@ -29,7 +29,7 @@ def launch(app_id: str) -> None:
     args = sys.argv[1:]
     if args == ["--smoke-test"]:
         # Smoke failures may contain private financial paths, invoice IDs, or
-        # source data in their exception text *and* chained traceback. Never
+        # source data in the exception text *and* chained traceback. Never
         # print or chain them into CI logs or an operator's terminal.
         successful = False
         try:
