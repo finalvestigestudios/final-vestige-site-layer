@@ -1,0 +1,31 @@
+{
+  "source": "Read-only WordPress.com wpcom_mcp_pages_get, wpcom_site=256784396, Page 6; inspected 2026-11-07 UTC. Public content-derived summary; no subscribers, user records, tokens or private database exported.",
+  "page_id": 6,
+  "status": "publish",
+  "modified": "2026-11-05T12:07:24",
+  "scan": {
+    "characters": 171183,
+    "chapters": {
+      "fv-hf-evidence": true,
+      "fv-hf-title": true,
+      "fv-hf-chronicle": true,
+      "fv-hf-inquiry": true,
+      "fv-hf-method-title": true,
+      "fv-hf-observer": true,
+      "fv-hf-mind-title": true
+    },
+    "margin_records": 72,
+    "margin_before_hero": true,
+    "focus_hrefs": 4,
+    "images_total": 8,
+    "image_media": {
+      "s67-19766.webp": 2,
+      "Franklinexpeditionnote.jpg": 2,
+      "edit-017-v02-nypl-5003296-original.jpg": 1
+    },
+    "image_cdn": 8,
+    "image_src_hosts": [
+      "i0.wp.com"
+    ]
+  }
+}
