@@ -65,6 +65,12 @@ HTML_BAD=[
  '<div style="background:url(https://example.test/track)">x</div>',
  '<link href="https://example.test/css.css" rel="stylesheet">',
  '<script src="/beacon.js"></script>',
+ '<svg><rect fill="url(https://example.test/track)"/></svg>',
+ '<svg><rect stroke="url(/path.svg)"/></svg>',
+ '<svg><rect filter="url(//external.test/f)"/></svg>',
+ '<svg><rect clip-path="url(data:image/svg+xml,a)"/></svg>',
+ '<svg><rect mask="url(http://external.test/m)"/></svg>',
+ '<table background="https://example.test/b"></table>',
 ]
 HTML_OK=[
  '<p>Hello</p>',
@@ -77,6 +83,7 @@ HTML_OK=[
  '<button type="button" onclick="window.print()">Print</button>',
  '<style>@media print{.x{display:block}}</style>',
  '<svg><use href="#local"/><image xlink:href="#local"/></svg>',
+ '<svg><rect stroke="url(#local)" fill="url(#local)"/></svg>',
 ]
 class Cases(unittest.TestCase):
     pass
