@@ -17,7 +17,7 @@ VARIANT_BLOB = 'f7091ba1383a5c9438ef893d62bf35d18a6e2462'
 REGEX = r' srcset="[^"]+" sizes="[^"]+"(?= loading="lazy" decoding="async" data-fv-archive-img)'
 
 def git_blob(data):
-    return hashlib.sha1(b'blob '+str(len(data)).encode()+b'\\0'+data).hexdigest()
+    return hashlib.sha1(b'blob '+str(len(data)).encode()+b'\0'+data).hexdigest()
 
 def derive(raw):
     if git_blob(raw)!=BASE_BLOB: raise ValueError('Exact source changed: refuse stale/mutated Blueprint')
@@ -28,7 +28,7 @@ def derive(raw):
     if count != 2 or len(re.findall(r'<img[^>]+data-fv-archive-img>',src))!=2:
         raise ValueError('Exactly two expected archival images not found')
     bp['steps'][2]['data']=fixed
-    out=(json.dumps(bp,ensure_ascii=False,indent=2)+'\\n').encode()
+    out=(json.dumps(bp,ensure_ascii=False,indent=2)+'\n').encode()
     if git_blob(out)!=VARIANT_BLOB: raise ValueError('Derived preview has unexpected bytes')
     return out
 
@@ -45,7 +45,7 @@ def build(raw,dest):
     dest=Path(dest);dest.mkdir(parents=True,exist_ok=True)
     zip_path=dest/(slug+'.zip')
     with ZipFile(zip_path,'w') as z:
-        for name,content in [('blueprint_first_party_variant.json',generated),('launch_review.html',doc),('source_manifest.json',(json.dumps(manifest,indent=2)+'\\n').encode())]:
+        for name,content in [('blueprint_first_party_variant.json',generated),('launch_review.html',doc),('source_manifest.json',(json.dumps(manifest,indent=2)+'\n').encode())]:
             info=ZipInfo(name,(2026,11,7,6,0,0));info.compress_type=ZIP_DEFLATED
             z.writestr(info,content)
     return {'zip':str(zip_path),'source_blob':BASE_BLOB,'variant_blob':VARIANT_BLOB,'output_bytes':zip_path.stat().st_size,
