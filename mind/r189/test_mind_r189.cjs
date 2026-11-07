@@ -46,7 +46,7 @@ function verify(f){
  ck("no investigation affiliate recommendation",f.article?.includes("There is no affiliate recommendation or compensated product link"));
  ck("prior headline precision",f.priorArticle?.startsWith("# The Sentence That Felt Truer the Second Time"));
  ck("poster describes two wave paths",f.B?.includes("two wave paths")&&!f.B.includes("three sound waves entering a listening room"));
- ck("R188 test uses native disabled attribute",f.priorTest?.includes("both native buttons enabled")&&f.priorTest.includes("\\sdisabled"));
+ ck("R188 test uses native disabled attribute for A/B separately",f.priorTest?.includes("both native buttons enabled")&&f.priorTest.includes("B button enabled")&&(f.priorTest.match(/\\sdisabled/g)||[]).length>=2);
  for(const key of ["hub","A","B"]){
    const s=f[key]||"";
    ck(key+" no JS",!/<script\b/i.test(s));
