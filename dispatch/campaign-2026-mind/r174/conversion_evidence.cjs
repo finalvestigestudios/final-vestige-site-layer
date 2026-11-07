@@ -5,7 +5,7 @@ const forbidPrivate = (input) => {
   const serialized = JSON.stringify(input);
   if (!serialized || serialized.length > 200000) throw new Error('invalid evidence bundle');
   const forbidden = /"(?:email|email_address|recipient|ip_address|full_name|phone|cookie|password|api_key|auth_token|subscriber_id|hashed_email)"\s*:/i;
-  if (forbidden.test(serialized)) throw new Error('private or identifying field prohibited');
+  if (forbidden.test(serialized) || /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}/i.test(serialized)) throw new Error('private or identifying field prohibited');
 };
 function uniqueRefs(rows) {
   const seen = new Set();
@@ -38,7 +38,7 @@ function evaluate(bundle) {
   if (bundle.merchant?.earning_url_approved !== true) blockers.push('EARNING_URL_UNVERIFIED');
   if (bundle.merchant?.price_and_refund_terms_checked !== true) blockers.push('CHECKOUT_TERMS_UNVERIFIED');
   const sessions = bundle.sessions || [], orders = bundle.orders || [];
-  uniqueRefs(sessions); uniqueRefs(orders);
+  uniqueRefs([...sessions,...orders]);
   let qualified = 0;
   for (const s of sessions) {
     if (!isIntegerNonnegative(s.human_qualified_sessions)) throw new Error('invalid session count');
