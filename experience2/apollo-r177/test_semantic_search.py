@@ -3,15 +3,27 @@ Unit tests of stage-only source integrity. Browser QA is separate and mandatory.
 """
 from __future__ import annotations
 import hashlib
+import importlib.util
 import unittest
 from pathlib import Path
 from stage_semantic_search import build, sha, blob, ORIGINAL_JS_GIT_BLOB
-ROOT=Path(__file__).resolve().parents[1]
+HERE=Path(__file__).resolve().parent
+ROOT=HERE.parent
 
 def inputs():
-    orig=(ROOT/'src/source-ledger-original.js').read_bytes()
-    new=(ROOT/'src/source-ledger-semantic-search.js').read_bytes()
-    html=(ROOT/'evidence/R176-SOURCE-DERIVED-FRAGMENT-NOT-EXACT-WP.html').read_bytes()
+    # A full repository checkout uses actual source-pinned R174 -> R176 logic.
+    canonical_js=ROOT/'research-desk/assets/source-ledger.js'
+    orig=(canonical_js if canonical_js.exists() else HERE/'source-ledger-original.js').read_bytes()
+    new=(HERE/'source-ledger-semantic-search.js').read_bytes()
+    r174=ROOT/'apollo-r174/research-desk-provenance-candidate-UNPUBLISHED.html'
+    r176_transform=ROOT/'apollo-r176/catalog_semantics.py'
+    if r174.exists() and r176_transform.exists():
+        spec=importlib.util.spec_from_file_location('r176_catalog_semantics',r176_transform)
+        mod=importlib.util.module_from_spec(spec);spec.loader.exec_module(mod)
+        html=mod.integrate(r174.read_text(encoding='utf8'))[0].encode('utf8')
+    else:
+        # Local archive QA fixture ONLY; does not substitute for canonical source CI.
+        html=(ROOT/'evidence/R176-SOURCE-DERIVED-FRAGMENT-NOT-EXACT-WP.html').read_bytes()
     return orig,new,html
 
 class SemanticSearchStagingGates(unittest.TestCase):
