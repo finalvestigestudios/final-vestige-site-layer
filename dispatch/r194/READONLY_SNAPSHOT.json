@@ -1,0 +1,56 @@
+{
+  "schema": "fv-r194-evidence-v1",
+  "as_of": "2026-11-07T21:34:08Z",
+  "state": "HOLD_UNSENT",
+  "master_sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "parent_pr": 1473,
+  "newsletter": {
+    "enabled": true,
+    "auto_new_post_send": false,
+    "content_mode": "full",
+    "counted_subscribers": 3,
+    "confirmed_counter": 3,
+    "unconfirmed_requests": 2,
+    "suppressed": 0,
+    "wpcom_followers": 3,
+    "email_only_followers": 0,
+    "authoritative_unique_email_eligible": null,
+    "welcome_configured": true,
+    "welcome_received_verified": false,
+    "actual_jetpack_email_preview_verified": false,
+    "valid_fv_postal_footer_verified": false,
+    "functional_unsubscribe_verified": false,
+    "counts_are_additive": false
+  },
+  "offer": {
+    "name": "Zen12 Premium",
+    "draft_issue": 3,
+    "partner_accepted_for_fv": null,
+    "permitted_email_marketing": null,
+    "issued_earning_link": null,
+    "published_guide": null,
+    "verified_checkout_refund_terms": null
+  },
+  "allocation": [
+    "editorial",
+    "editorial",
+    "commercial",
+    "editorial",
+    "commercial",
+    "editorial"
+  ],
+  "founder_send_approval": false,
+  "settled_paid_orders": null,
+  "qualified_human_sessions": null,
+  "realized_net_revenue": null,
+  "evidence_urls": [
+    "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/174",
+    "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/175",
+    "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/201",
+    "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/1467",
+    "https://zen12.com/hnp",
+    "https://hypnosislive.com/mental-skills/total-focus",
+    "https://affiliates.inspire3.com/",
+    "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business"
+  ]
+}
