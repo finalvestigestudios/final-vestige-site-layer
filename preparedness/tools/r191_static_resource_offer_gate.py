@@ -33,6 +33,8 @@ TYPE_OFFER={'product','offer','aggregateoffer','individualproduct','someproducts
 OFFER_KEYS={'offers','price','pricecurrency','availability','inventorylevel','eligiblequantity','eligibletransactionvolume','merchant','seller','pricevaliduntil','checkouturl'}
 MEDIA_KEYS={'src','srcset','poster','data','cite','background','xlink:href','href','action','formaction'}
 MEDIA_TAGS={'audio','video','track','source','picture','image','use','feimage','foreignobject','object','embed','iframe','img','input','script','link','form'}
+SVG_STYLES={'fill','stroke','filter','clip-path','mask','marker-start','marker-mid',
+            'marker-end','cursor'}
 
 
 def css_unescape(src: str) -> str:
@@ -93,6 +95,12 @@ class Screen(HTMLParser):
                 self._capture='jsonld';self._buffer=[];self.jsonld_blocks+=1
         if 'style' in attrs:
             self.errors.extend('inline-style: '+e for e in css_errors(attrs['style'] or ''))
+        # SVG presentation attributes can fetch an external URL without a
+        # CSS style element or an href/src. Existing fill=url(#fw-pat) passes.
+        for key in SVG_STYLES.intersection(attrs):
+            self.errors.extend('SVG-style '+key+': '+e for e in css_errors(attrs[key] or ''))
+        if attrs.get('background'):
+            self.errors.append('unreviewed HTML background resource')
         if tag in MEDIA_TAGS:
             for key in MEDIA_KEYS:
                 if key not in attrs or not attrs[key]:continue
