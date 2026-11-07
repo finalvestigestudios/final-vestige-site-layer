@@ -20,7 +20,7 @@ function checks(f){
  const s=d?.source_links||[],c=d?.claim_decisions||[],g=d?.release_gates||[],ids=new Set(s.map(v=>v.id));
  const gate=id=>g.find(v=>v.id===id);
  ok(f.article.split(/\s+/).length>=2000,'original article >= 2000 words');
- for(const t of ['20 of twenty-four','twelve of the twenty','547 milliseconds','239 slices','five','48 times','2013','1999','Puységur','not a validated','UNPUBLISHED'])
+ for(const t of ['twenty of twenty-four','twelve of the twenty','547 milliseconds','239 slices','five','48 times','2013','1999','Puységur','not a validated','UNPUBLISHED'])
    ok(f.article.toLowerCase().includes(t.toLowerCase()),'science narrative term '+t);
  for(const u of ['https://pmc.ncbi.nlm.nih.gov/articles/PMC3964612/','https://doi.org/10.1068/p281059','https://finalvestige.com/2026/11/02/mesmerism/','https://finalvestige.com/focus/'])
    ok(f.article.includes(u),'source linked '+u);
@@ -51,7 +51,7 @@ function checks(f){
  ok(!/href=["'](?:https:\/\/(?:www\.)?(?:zen12|hypnosislive|affiliates\.inspire3)\.)/i.test(f.hub),'no merchant or affiliate earning destination in hub');
  ok(/noindex,nofollow/.test(f.hub),'unpublished design noindex');
  ok(!/\.com\/mind\/r193|github\.com\/.*\/blob\/.*r193/i.test(f.hub),'no Github draft as published editorial route');
- ok(f.plan.includes('Focus false-positive')||f.plan.includes('Focus false-positive'.toLowerCase())||f.plan.includes('Focus false-positive'.toUpperCase())||f.plan.includes('Focus false-positive'.replace('false-positive','false-positive'))||f.plan.includes('Focus false-positive'.replace('false-positive','false-positive'))||f.plan.includes('Focus false-positive'.replace('false-positive','false-positive'))||f.plan.includes('Focus false-positive'.replace('false-positive','false-positive'))||/Focus false-positive/i.test(f.plan),'Focus source gate heading');
+ ok(/Focus false-positive/i.test(f.plan),'Focus source gate heading');
  ok(f.plan.includes('?subscribe=')&&f.plan.includes('is-subscriber'),'focus bypass correctly documented');
  ok(f.plan.includes('utm_content={REAL_GROK_ASSET_ID}'),'real creator asset requirement');
  ok(f.plan.includes('Grok owns original')&&f.plan.includes('Praxxis independently'),'creator ownership protected');
