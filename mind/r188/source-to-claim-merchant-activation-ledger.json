@@ -1,0 +1,355 @@
+{
+  "milestone": "R188",
+  "checked_at": "2026-11-07",
+  "state": "BUILT_UNPUBLISHED",
+  "commercial_decision": "HARD_HOLD",
+  "affiliate_activation": false,
+  "named_fv_publisher_approval": null,
+  "permitted_promotional_channels": null,
+  "affiliate_earning_url": null,
+  "approved_creatives": null,
+  "verified_owned_payhip_mind_sku": null,
+  "real_checkout_price": null,
+  "merchant_confirmed_purchases": null,
+  "paid_affiliate_commissions": null,
+  "qualified_human_sessions": null,
+  "realized_net_revenue": null,
+  "source_links": [
+    {
+      "id": "ins",
+      "url": "https://inspire3.com/",
+      "kind": "seller_catalog",
+      "boundary": "Categories only; outcome language is seller advertising"
+    },
+    {
+      "id": "aff",
+      "url": "https://affiliates.inspire3.com/",
+      "kind": "generic_partner_portal",
+      "boundary": "Program exists; named FV account approval, payment rights, earnings, channel rights unknown"
+    },
+    {
+      "id": "zen",
+      "url": "https://zen12.com/hnp",
+      "kind": "exact_seller_offer",
+      "boundary": "Premium describes 12 levels, 48 MP3 recordings and a seller-advertised 1-year refund; checkout not tested"
+    },
+    {
+      "id": "hyp",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "kind": "exact_seller_offer",
+      "boundary": "Seller lists 33 minutes and 47 MB; return and checkout fulfillment unverified"
+    },
+    {
+      "id": "brain",
+      "url": "https://brainwaveshots.com/",
+      "kind": "seller_domain",
+      "boundary": "Not an authenticated exact SKU or approved promotion"
+    },
+    {
+      "id": "ftce",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "kind": "regulatory_guidance",
+      "boundary": "Clearly and conspicuously disclose material connection at recommendation"
+    },
+    {
+      "id": "ftch",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "kind": "regulatory_guidance",
+      "boundary": "Require competent reliable scientific evidence for health claims"
+    },
+    {
+      "id": "h77",
+      "url": "https://doi.org/10.1016/S0022-5371(77)80012-1",
+      "kind": "primary_research",
+      "boundary": "Repetition increased subjective validity judgments"
+    },
+    {
+      "id": "f15",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26301795/",
+      "kind": "primary_research",
+      "boundary": "Knowledge did not entirely protect subjective truth ratings against repetition"
+    },
+    {
+      "id": "d10",
+      "url": "https://doi.org/10.1177/1088868309352251",
+      "kind": "systematic_review",
+      "boundary": "51-study review of repetition induced truth judgment effects"
+    },
+    {
+      "id": "w87",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/3612492/",
+      "kind": "primary_research",
+      "boundary": "Wegner thought suppression design, not merchant outcome data"
+    },
+    {
+      "id": "field",
+      "url": "https://finalvestige.com/focus/",
+      "kind": "first_party_live_resource",
+      "boundary": "Free 52-page workbook, existing Jetpack list; not merchant SKU"
+    },
+    {
+      "id": "puy",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "kind": "first_party_historical_resource",
+      "boundary": "Existing historical research; not effectiveness data"
+    },
+    {
+      "id": "change",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "kind": "first_party_investigation",
+      "boundary": "Existing organic topic, no commercial implication"
+    },
+    {
+      "id": "editorial",
+      "url": "https://finalvestige.com/editorial-standards/",
+      "kind": "first_party_disclosure",
+      "boundary": "Research integrity reference"
+    },
+    {
+      "id": "disclosure",
+      "url": "https://finalvestige.com/affiliate-disclosure/",
+      "kind": "first_party_disclosure",
+      "boundary": "General policy; insufficient by itself beside CTA"
+    }
+  ],
+  "claim_decisions": [
+    {
+      "id": "zen_premium_files",
+      "claim": "Zen12 Premium seller lists 12 levels and 48 MP3s",
+      "source_id": "zen",
+      "decision": "SELLER_SPECIFICATION_NOT_FULFILLMENT_PROOF"
+    },
+    {
+      "id": "zen_listening_styles",
+      "claim": "Four listening styles per Zen12 level described",
+      "source_id": "zen",
+      "decision": "SELLER_SPECIFICATION_NOT_PERSONALLY_TESTED"
+    },
+    {
+      "id": "zen_guarantee",
+      "claim": "Zen12 advertises 1-year money-back guarantee",
+      "source_id": "zen",
+      "decision": "SELLER_POLICY_NOT_REDEMPTION_VERIFIED"
+    },
+    {
+      "id": "zen_public_price",
+      "claim": "Zen12 public page may display $87.99",
+      "source_id": "zen",
+      "decision": "VOLATILE_PUBLIC_SNAPSHOT_NOT_CHECKOUT_PRICE"
+    },
+    {
+      "id": "zen_one_hour_claim",
+      "claim": "One-hour meditation equivalence in 12 minutes",
+      "source_id": "zen",
+      "decision": "WITHHELD_NO_PRODUCT_SPECIFIC_INDEPENDENT_SUBSTANTIATION"
+    },
+    {
+      "id": "zen_mental_health",
+      "claim": "Reduced anxiety and health improvement advertised",
+      "source_id": "zen",
+      "decision": "WITHHELD_NO_PRODUCT_SPECIFIC_INDEPENDENT_SUBSTANTIATION"
+    },
+    {
+      "id": "zen_brainwave",
+      "claim": "Guaranteed deep brainwave entrainment",
+      "source_id": "zen",
+      "decision": "WITHHELD_NOT_PROVEN_FOR_SKU"
+    },
+    {
+      "id": "hyp_minutes",
+      "claim": "Total Focus advertised 33 minutes",
+      "source_id": "hyp",
+      "decision": "SELLER_SPECIFICATION"
+    },
+    {
+      "id": "hyp_bytes",
+      "claim": "Total Focus advertised 47 MB",
+      "source_id": "hyp",
+      "decision": "SELLER_SPECIFICATION"
+    },
+    {
+      "id": "hyp_guarantee",
+      "claim": "Total Focus advertises 14-day refund on seller page",
+      "source_id": "hyp",
+      "decision": "SELLER_POLICY_NOT_REDEMPTION_VERIFIED"
+    },
+    {
+      "id": "hyp_price",
+      "claim": "Total Focus public price varies by observed page",
+      "source_id": "hyp",
+      "decision": "WITHHOLD_FIXED_PRICE_UNTIL_AUTHENTIC_CHECKOUT"
+    },
+    {
+      "id": "hyp_perfect_focus",
+      "claim": "100% concentration and work performance claims",
+      "source_id": "hyp",
+      "decision": "WITHHELD_NO_PRODUCT_SPECIFIC_PROOF"
+    },
+    {
+      "id": "brain_exact",
+      "claim": "Brainwave Shots product and offer-specific details",
+      "source_id": "brain",
+      "decision": "UNKNOWN_NOT_SELLER_VERIFIED_EXACT_SKU"
+    },
+    {
+      "id": "publisher_approval",
+      "claim": "Final Vestige Inspire3 affiliate acceptance",
+      "source_id": "aff",
+      "decision": "UNKNOWN_NOT_PROVEN"
+    },
+    {
+      "id": "social_rights",
+      "claim": "Final Vestige can promote on TikTok/YouTube/social",
+      "source_id": "aff",
+      "decision": "UNKNOWN_NOT_PROVEN"
+    },
+    {
+      "id": "email_rights",
+      "claim": "Final Vestige can send commission-linked Dispatch issue",
+      "source_id": "aff",
+      "decision": "UNKNOWN_NOT_PROVEN"
+    },
+    {
+      "id": "approved_url",
+      "claim": "Specific authorized merchant earning link",
+      "source_id": "aff",
+      "decision": "UNKNOWN_LINK_MUST_REMAIN_NULL"
+    },
+    {
+      "id": "commission",
+      "claim": "Generic portal advertised rates as FV earned payouts",
+      "source_id": "aff",
+      "decision": "PROHIBITED_DO_NOT_PROJECT_PAYOUT"
+    },
+    {
+      "id": "owned_mind",
+      "claim": "Paid FV Payhip Mind SKU is actively purchasable",
+      "source_id": "field",
+      "decision": "UNKNOWN_FIELD_BOOK_IS_FREE"
+    },
+    {
+      "id": "prior_knowledge",
+      "claim": "Knowledge doesn't fully eliminate repeated-claim truth rating effect",
+      "source_id": "f15",
+      "decision": "SUPPORTS_SPECIFIC_EXPERIMENTS_NOT_ALL_CONTEXTS"
+    },
+    {
+      "id": "repeated_truth",
+      "claim": "Frequency increased judged validity in original study",
+      "source_id": "h77",
+      "decision": "SUPPORTS_RATING_PATTERN_NOT_INDIVIDUAL_CERTAINTY"
+    },
+    {
+      "id": "meta",
+      "claim": "Study comparison methods differ in magnitude",
+      "source_id": "d10",
+      "decision": "SUPPORTS_META_ANALYSIS_NOT_MARKETING_CAUSALITY"
+    },
+    {
+      "id": "endorsement",
+      "claim": "Financial relationship disclosed near relevant offer",
+      "source_id": "ftce",
+      "decision": "REQUIRED_CONDITIONAL_AFFILIATE"
+    },
+    {
+      "id": "health",
+      "claim": "Medical/mental claims independently substantiated before promotion",
+      "source_id": "ftch",
+      "decision": "NOT_SATISFIED_FOR_EFFICACY"
+    }
+  ],
+  "release_gates": [
+    {
+      "id": "named_affiliate_acceptance",
+      "status": "BLOCKED",
+      "owner": "Founder/Mind",
+      "evidence_required": "Authenticated named FV publisher acceptance and status"
+    },
+    {
+      "id": "partner_channels",
+      "status": "BLOCKED",
+      "owner": "Founder/Mind",
+      "evidence_required": "Approved website, TikTok, YouTube and Dispatch channels individually"
+    },
+    {
+      "id": "actual_earning_url",
+      "status": "BLOCKED",
+      "owner": "Founder/Mind",
+      "evidence_required": "Approved URL and attribution terms; don't invent from public pages"
+    },
+    {
+      "id": "approved_creatives",
+      "status": "UNKNOWN",
+      "owner": "Founder/Mind",
+      "evidence_required": "Account-specific creative rights and prohibited traffic terms"
+    },
+    {
+      "id": "current_exact_sku",
+      "status": "PARTIAL",
+      "owner": "Mind",
+      "evidence_required": "Official exact Zen12 and Total Focus descriptions verified; no merchant checkout"
+    },
+    {
+      "id": "pricing_policy_checkout",
+      "status": "BLOCKED",
+      "owner": "Founder/Commerce",
+      "evidence_required": "Signed-out live checkout final price, tax/fees, delivery, return policy"
+    },
+    {
+      "id": "owned_payhip_paid_mind_sku",
+      "status": "UNKNOWN",
+      "owner": "Founder/Commerce",
+      "evidence_required": "Rights-cleared SKU plus real checkout fulfillment and refund terms"
+    },
+    {
+      "id": "article_scientific_review",
+      "status": "NOT_TESTED",
+      "owner": "Mind/QA",
+      "evidence_required": "Independent source/editorial QA and corrections"
+    },
+    {
+      "id": "accessibility_real_browser",
+      "status": "NOT_TESTED",
+      "owner": "Site QA",
+      "evidence_required": "360/390/768/1440 keyboard screenreader contrast focus and CWV"
+    },
+    {
+      "id": "campaign_asset_ids",
+      "status": "BLOCKED",
+      "owner": "Grok/Praxxis",
+      "evidence_required": "Actual public media URL, immutable asset ID, rights packet, placements"
+    },
+    {
+      "id": "focus_opt_in",
+      "status": "NOT_TESTED",
+      "owner": "Site QA/Dispatch",
+      "evidence_required": "Consentful signed-out confirmation and existing welcome delivery"
+    },
+    {
+      "id": "merchant_paid_proof",
+      "status": "BLOCKED",
+      "owner": "Commerce",
+      "evidence_required": "Receipts / partner settlement, returns/fees, reconciliation"
+    },
+    {
+      "id": "founder_release",
+      "status": "BLOCKED",
+      "owner": "Founder",
+      "evidence_required": "Explicit live approval for each WordPress/revenue release"
+    },
+    {
+      "id": "affiliate_live",
+      "status": "BLOCKED",
+      "owner": "Founder",
+      "evidence_required": "All other merchant eligibility, tracking, QA and release gates pass"
+    }
+  ],
+  "notes": [
+    "Public affiliate portal advertises rates to prospects; DO NOT cite those as FV commissions, payment terms or guaranteed EPC.",
+    "Gmail search November 7: no clearly qualifying named FV acceptance, promotional messages are not authorization.",
+    "No Payhip integration/merchant login established; neither created nor invented products.",
+    "SEO/social click is not a paid conversion; no paid or lead performance reported.",
+    "All efficacy claims not supported by product-specific independent trials are omitted.",
+    "Generic footer disclosure alone is inadequate; do contextual near-CTA copy after activation."
+  ]
+}
