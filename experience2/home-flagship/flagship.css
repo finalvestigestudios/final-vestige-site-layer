@@ -257,3 +257,13 @@
 @media (max-width: 600px) {
   .fv-hf .fv-hf__text-link--focus { width: 100%; }
 }
+
+/* EX2 conversion-first 320px short-screen composition: get the primary
+   evidence-room action inside the first viewport while retaining both the
+   archival headline and its complete descriptive copy, without overlays. */
+@media (max-width: 360px) and (max-height: 640px) {
+  .fv-hf .fv-hf__opening-inner { padding-top: 6px; }
+  .fv-hf .fv-hf__opening h1 { margin-block: 10px; }
+  .fv-hf .fv-hf__opening-dek { font-size: 16px; line-height: 1.45; }
+  .fv-hf .fv-hf__opening-actions { margin-top: 8px; }
+}
