@@ -50,8 +50,8 @@ class Guards(unittest.TestCase):
         self.assertIsNone(att["realized_net_revenue"])
         self.assertEqual(att["net_revenue_per_1000_qualified_sessions"],"NOT_COMPUTABLE")
     def test_same_one_primary_cta(self):
-        self.assertEqual(self.h.count('href="'+self.j["cta"]["url"]+'"'),1)
-        self.assertEqual(self.p.count("\n"+self.j["cta"]["url"]+"\n"),1)
+        self.assertEqual(self.h.count("Explore the Lycurgus Cup evidence →</a>"),1)
+        self.assertEqual(self.p.count("EXPLORE THE EVIDENCE"),1)
     def test_all_unresolved_permissions(self):
         self.assertEqual(self.j["commercial"]["affiliate_approval"],"UNVERIFIED")
         self.assertEqual(self.j["commercial"]["email_permission"],"UNVERIFIED")
