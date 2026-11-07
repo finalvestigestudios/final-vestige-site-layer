@@ -1,0 +1,34 @@
+"use strict";
+const assert=require("node:assert/strict");
+const {validate}=require("./validate_skyway_287_origin_migration_20261107.cjs");
+const baseline=require("./skyway_287_origin_migration_20261107.json");
+const clone=()=>JSON.parse(JSON.stringify(baseline));
+const checks=[];
+function check(label,fn){fn();checks.push(label);}
+check("baseline six-source audit accepted",()=>assert.equal(validate(baseline).valid,true));
+function reject(label,mutate){check(label,()=>{const v=clone();mutate(v);const r=validate(v);assert.equal(r.valid,false,label);assert.ok(r.errors.length>0);});}
+reject("reject invented browser 404",x=>x.images[5].retrieval_observation.guest_browser_http_status=404);
+reject("reject invented browser decode failure",x=>x.images[5].retrieval_observation.guest_browser_decoded=false);
+reject("reject invented browser transfer",x=>x.images[5].retrieval_observation.guest_browser_transfer_bytes=400000);
+reject("reject invented guest currentSrc",x=>x.images[5].retrieval_observation.guest_browser_current_src=x.images[5].stored_src);
+reject("reject promoted viewer success to 200",x=>x.images[0].retrieval_observation.viewer_reported_http_status=200);
+reject("reject changed observed 404 to 200",x=>x.images[5].retrieval_observation.viewer_reported_http_status=200);
+reject("reject silently rewritten WordPress source",x=>x.images[5].stored_src=x.candidates[0].candidate_url);
+reject("reject reordered source slots",x=>x.images.reverse());
+reject("reject blanket rights clearance",x=>x.controls.copyright_clearance_granted=true);
+reject("reject WP media uploads",x=>x.controls.wp_upload_authorized=true);
+reject("reject guest browser tested claim",x=>x.controls.guest_browser_tested=true);
+reject("reject 42-broken confirmation",x=>x.controls.reported_broken_42_confirmed=true);
+reject("reject 76-percent measured claim",x=>x.controls.claimed_transfer_reduction_76_percent_measured=true);
+reject("reject premature candidate republication",x=>x.candidates[0].reuse_approved=true);
+reject("reject no-upscale off",x=>x.images[5].restoration.no_upscale=false);
+reject("reject invented derivative dimensions",x=>x.candidates[0].conditional_preview_dimensions={width:960,height:690});
+reject("reject false identical archival image",x=>x.candidates[1].kind="same_image");
+reject("reject missing Florida Memory record identity",x=>x.candidates[1].record_id="other");
+reject("reject wrong migrated CDN destination",x=>x.candidates[0].candidate_url="https://example.com/photo.jpg");
+reject("reject omitted URL retrieval evidence",x=>x.images[5].retrieval_observation.source_ref="");
+reject("reject source count change",x=>x.images.pop());
+reject("reject positive production changes",x=>x.controls.production_changes=true);
+reject("reject misleading native browser claim",x=>x.retrieval_methodology.chrome_logged_out_verified=true);
+console.log(checks.length+" skyway media-recovery regression cases PASS");
+module.exports={checks};
