@@ -1,0 +1,8 @@
+'use strict';
+const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
+const {validate}=require('./validate_tang_274_20261107.cjs');
+const original=JSON.parse(fs.readFileSync(path.join(__dirname,'tang_274_seven_primary_catalog_20261107.json'),'utf8'));
+test('valid documented source audit',()=>assert.deepEqual(validate(original),[]));
+const cases=[
+['invent visitor 200',a=>a.rows[0].visitor_browser_http_status=200],['invent visitor broken',a=>a.rows[1].visitor_broken=true],['invent wire bytes',a=>a.rows[2].wire_bytes=1000],['invent image hash',a=>a.rows[2].image_binary_sha256='fake'],['license bypass',a=>a.rows[3].cache_authorized=true],['WP edit',a=>a.rows[4].wordpress_write_authorized=true],['unsafely size disputed crop',a=>a.rows[5].conditional_preview_960px={width:960,height:774}],['conceal crop variant',a=>a.rows[5].navy_catalog.other_catalog_variant.high_download_pixel_metadata=[6102,4918]],['upscale',a=>a.rows[6].conditional_preview_960px.width=1280],['erase ALT',a=>a.rows[0].alt=''],['swap source',a=>a.rows[1].exact_wp_original_src='https://example.com/a.jpg'],['swap catalog',a=>a.rows[2].navy_catalog.identifier='NH 45641'],['allow CMS globally',a=>a.policy.wordpress_mutations=true],['claim 76% measured',a=>a.metrics.claimed_76_percent_wire_reduction=76],['claim 42 broken proven',a=>a.metrics.reported_42_broken='CONFIRMED'],['wrong post',a=>a.post.id=275],['delete image',a=>a.rows.pop()],['invent HTML dimensions',a=>a.rows[4].declared_dimensions=[960,640]],['remove rights hold',a=>a.rows[2].rights_status='CLEARED']];
+for(const [name,mutate] of cases)test('fail closed: '+name,()=>{const a=structuredClone(original);mutate(a);assert.ok(validate(a).length>0);});

@@ -1,0 +1,25 @@
+# Media recovery — USS Tang post 274: seven source URLs and archival crop risk (Nov 7, 2026 PT)
+
+**Scope:** read-only live WordPress post 274, modified 2026-11-02T21:39:50; zero production edits. [Machine-readable seven-image manifest](../qa/media-recovery/tang_274_seven_primary_catalog_20261107.json) retains every exact stored URL, ALT, caption, 7 archival catalog links, original high-download pixel metadata, conditional 960px widths, separate retriever error classification and rights HOLD. No image bytes were downloaded or cached.
+
+**Source breakdown:** 7/7 images have no intrinsic HTML dimensions; 3 load from Navy domain, 2 from Wikimedia and 2 from commercial publishers (Warfare History Network, WarHistoryOnline). Their actual visitor currentSrc and bytes may change after Jetpack rewriting. This audit concerns the previously inventoried seven slots, not seven new sites/images.
+
+| Slot | Navy item | High-download catalog size | Conditional no-upscale preview | Caveat |
+|---|---|---|---|---|
+| 274:0 | [NH 42273](https://www.history.navy.mil/content/history/nhhc/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/NH-42000/nh-42273-uss-tang--ss-306-.html) | 5782×3672 | 960×610 | Mare Island ship image; original binary unverified |
+| 274:1 | [80-G-227987](https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nara-series/80-g/80-G-220000/80-g-227987-uss-tang--ss-306-.html) | 4908×5948 | 960×1163 | O’Kane with 22 airmen; original binary unverified |
+| 274:2 | [NH 84498](https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/NH-84000/NH-84498.html) | 6216×4876 | 960×753 | Navy identifies TWO torpedoes, upper Mark 18-2, lower Mark 16-1; earlier work already flagged incomplete ALT |
+| 274:3 | [NH 45641](https://www.history.navy.mil/content/history/nhhc/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/NH-45000/NH-45641.html) | 4520×5080 | 960×1079 | A. L. Rosenkotter, USS V-5 Momsen escape lung 1930; commercial rendition is unverified match |
+| 274:4 | [80-G-344565](https://www.history.navy.mil/content/history/museums/nmusn/explore/photography/wwii/wwii-pacific/japanese-surrender/allied-prisoners-of-war/80-g-344565.html) | 1464×1938 | 960×1271 | O’Kane liberation portrait, official release Sept. 24, 1945 |
+| 274:5 | [80-G-227991](https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nara-series/80-g/80-G-220000/80-G-227991.html) | 6102×4918 | **HOLD** | [Other Navy museum catalog](https://www.history.navy.mil/content/history/museums/nmusn/explore/photography/aircraft-us/aircraft-usn-o/os2u-kingfisher/80-g-227991.html) shows 2867×1896 — 17.95% relative aspect discrepancy; verify crop and identity before derivative |
+| 274:6 | [80-G-227989](https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nara-series/80-g/80-G-220000/80-G-227989.html) | 6060×4926 | 960×780 | Same scene as WarHistoryOnline caption, but actual binary/crop unverified |
+
+The Navy [photograph archive](https://www.history.navy.mil/our-collections/photography.html) states most—not all—photos are public domain. Examine each item’s rights section, the creator, and commercially hosted rendition before localizing. Retain archival identifiers and credited provenance, and do not upscale/crop historical imagery. These computed sizes are based on **catalog metadata, not decoded image binaries**, and do not establish safe production derivatives.
+
+**Retriever distinction:** text-media `web.open` returned wrapper 502 on 274:1 and unclassified internal-error wrappers on commercial image sources 274:3 and 274:6. No actual publisher-origin HTTP, logged-out Chrome status, naturalWidth, transfer bytes or screenshot was captured. Do not count them as broken. Four other sources were not fetched in this run.
+
+**Next safe action:** Site QA PR #154 retains the six P0 slots 285:5, 285:2, 287:5, 418:1, 418:2, 407:1. Do not duplicate its browser collector. Once real guest failure is proven, match binary to official catalog and specific rights, then stage aspect-preserving max-960px previews (except held 274:5), native checksum, visual comparison, credits, reversible WordPress Media Library upload mapping, and cold transferred-byte before/after evidence using existing PR #183 comparator. No post block rewrite or WordPress write approved.
+
+**Historical metrics:** 61-post/355-inline-image first census is frozen Oct 30, later 66/361 is a different timestamp; the alleged 42 broken remain **unverified**, 76% transfer reduction **unmeasured**, and 13 WordPress originals >1.5 MiB total **43,522,829 stored bytes**, not visitor-transfer bytes. Production images repaired: zero; WordPress writes/downloads/cache/homepage design changes/additional spending: zero.
+
+**Offline check:** `node qa/media-recovery/validate_tang_274_20261107.cjs && node --test qa/media-recovery/test_tang_274_20261107.cjs`. Native Node/Chromium CI still require independent confirmation.
