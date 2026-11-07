@@ -37,4 +37,6 @@ t('30-day cohorts supported',()=>{let b=base();b.cohort_days=30;assert.equal(eva
 t('other cohorts prohibited',()=>{let b=base();b.cohort_days=10;assert.throws(()=>evaluate(b),/cohort/)});
 t('no false cross-asset sales attribution',()=>{let b=base();b.sessions=[s];b.orders=[{...o,asset_id:'yt_mind_OTHER'}];b.session_report_complete=true;b.settlement_report_complete=true;assert.equal(evaluate(b).net_per_1000_qualified_sessions_usd,null)});
 t('no browser-inferred asset attribution',()=>{let b=base();b.sessions=[s];b.orders=[{...o,asset_attribution_verified:false}];b.session_report_complete=true;b.settlement_report_complete=true;assert.equal(evaluate(b).attributed_settled_orders,0)});
+t('reject disguised email inside notes',()=>{let b=base();b.note='contact someone@example.com';assert.throws(()=>evaluate(b),/private/)});
+t('reject one proof reused across sessions and orders',()=>{let b=base();b.sessions=[s];b.orders=[{...o,evidence_ref:s.evidence_ref}];assert.throws(()=>evaluate(b),/duplicate/)});
 console.log(tests+' native Node assertions PASS');
