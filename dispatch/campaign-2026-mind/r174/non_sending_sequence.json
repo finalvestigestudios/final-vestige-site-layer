@@ -1,0 +1,105 @@
+{
+  "schema": "fv_dispatch_r174_draft_non_sending_2026_11_06",
+  "status": "HOLD_UNSENT",
+  "source": "PR #175 original six issue manifest, no manuscript substitutions",
+  "delivery": "Jetpack newsletter only; no new list/platform; weekly cadence proposed, no schedule",
+  "issue_mix": {
+    "editorial": [
+      1,
+      2,
+      4,
+      6
+    ],
+    "commercial": [
+      3,
+      5
+    ]
+  },
+  "marketing_hypotheses": [
+    {
+      "audience": "history-led social readers",
+      "intent": "source trails and investigations",
+      "path": "Grok historical asset -> original investigation -> /dispatch/ -> confirmed opt-in -> editorial 01/02/04",
+      "caveat": "No automatic persona assignment, no PII or new segment/list."
+    },
+    {
+      "audience": "attention-curious readers",
+      "intent": "practical, modest focus routine",
+      "path": "Grok Mind asset -> /focus/ -> provider-confirmed opt-in -> 52-page Fieldbook welcome -> editorial 01/06",
+      "caveat": "Welcome receipt unknown; free PDF access does not equal consent."
+    },
+    {
+      "audience": "potential meditation-audio buyers",
+      "intent": "optional independent product evaluation",
+      "path": "existing subscriber -> source-led 03 -> approved live Zen12 guide -> verified permitted earning link -> independently reported paid settlement",
+      "caveat": "Every commercial step remains disabled; no merchant email permission or live guide verified."
+    }
+  ],
+  "utm_contract": {
+    "social": "utm_source=<actual_social_platform>&utm_medium=organic_social&utm_campaign=<topic_cluster>_pilot_2026_11&utm_content=<unique_asset_id>",
+    "newsletter": "utm_source=dispatch&utm_medium=email&utm_campaign=mind_pilot_2026_11&utm_content=issue_0N",
+    "guard": "examples only; URLs must not be activated without engineering/consent/merchant QA"
+  },
+  "confirmed_signup": "Only a provider-confirmed email-eligible change with admissible private status proof counts, never a visual success panel, WordPress follower count, PDF download, or email submit click.",
+  "issues": [
+    {
+      "issue": 1,
+      "kind": "editorial",
+      "subject": "The mind is not a camera",
+      "preheader": "What an old record can teach us about the difference between seeing and knowing.",
+      "destination": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "cta_state": "SOURCE_DRAFT_ONLY"
+    },
+    {
+      "issue": 2,
+      "kind": "editorial",
+      "subject": "Before hypnosis had a name",
+      "preheader": "The eighteenth-century witnesses who left behind a problem of proof.",
+      "destination": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "cta_state": "SOURCE_DRAFT_ONLY_REPEATED_CTA"
+    },
+    {
+      "issue": 3,
+      "kind": "commercial-review-pending",
+      "subject": "The twelve-minute meditation question",
+      "preheader": "An honest way to evaluate a short audio practice before you spend anything.",
+      "destination": null,
+      "cta_state": "BLOCKED_MIND_STUDIO_LIVE_APPROVED_ZEN12_GUIDE"
+    },
+    {
+      "issue": 4,
+      "kind": "editorial",
+      "subject": "Fourteen seconds. A much longer explanation.",
+      "preheader": "Apollo 1, the surviving record, and why a tidy cause can mislead.",
+      "destination": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/",
+      "cta_state": "SOURCE_DRAFT_ONLY"
+    },
+    {
+      "issue": 5,
+      "kind": "commercial-review-pending",
+      "subject": "Before you press play on a hypnosis audio",
+      "preheader": "Three questions that matter more than an impressive promise.",
+      "destination": null,
+      "cta_state": "BLOCKED_MIND_STUDIO_LIVE_APPROVED_HYPNOSIS_GUIDE"
+    },
+    {
+      "issue": 6,
+      "kind": "editorial",
+      "subject": "What did seven days of attention reveal?",
+      "preheader": "A small experiment, a useful notebook, and no miracle claims.",
+      "destination": "https://finalvestige.com/focus/",
+      "cta_state": "SOURCE_DRAFT_ONLY_ALREADY_RECEIVED_FIELD_BOOK_RISK"
+    }
+  ],
+  "real_revenue": "Unknown: no complete qualified-human session reporting + verified offer-specific paid settlements with reliable attribution. Do not substitute zero.",
+  "approvals": {
+    "founder_send_authorization": false,
+    "affiliate_email_permission_verified": false,
+    "live_guides_verified": false,
+    "authorized_earning_link_verified": false,
+    "postal_address_verified": false,
+    "optout_verified": false,
+    "actual_jetpack_preview_verified": false,
+    "welcome_receipt_verified": false
+  }
+}
