@@ -23,7 +23,7 @@ His paper makes an unusually useful historical artifact: the construction of the
 
 There are at least two ways to stage the conflict. Ask people to *read the words*, ignoring the ink. Or ask them to *name the ink*, ignoring the words. Those are not symmetrical tasks for adults fluent in the language of the experiment.
 
-Stroop's original paper reported an important asymmetry. In one comparison, reading 100 color words printed in incongruent inks was about **2.3 seconds, or 5.6 percent,** slower than reading the corresponding words in black. The paper characterized that difference as not reliable. When the task instead required naming the ink of 100 incongruent color words, performance took about **47.0 seconds, or 74.3 percent,** longer than naming the colors of comparison patches. These are results from that reported setup—not a universal delay, not a modern norm, and not a prediction of how a particular visitor will perform on a phone. [1]
+Stroop's original paper reported an important asymmetry. In one comparison, reading 100 color words printed in incongruent inks was about **2.3 seconds, or 5.6 percent,** slower than reading the corresponding words in black. The paper characterized that difference as not reliable. When the task instead required naming the ink of 100 incongruent color words, the **error-adjusted mean difference for naming 100 incongruent ink colors was 47.0 seconds (74.3 percent)** compared with naming comparison color patches in Experiment 2 (adjusted means 110.3 versus 63.3 seconds; unadjusted means 108.7 versus 63.0 seconds). These are results from that reported setup—not a universal delay, not a modern norm, and not a prediction of how a particular visitor will perform on a phone. [1]
 
 That contrast tells us something more valuable than “multitasking is impossible.” The unwanted meaning of a familiar written word can interfere with naming its visible color, even when the observer intends to ignore the word. It does not follow that no other task can be carried out alongside reading, or that all aspects of attention work in the same way.
 
@@ -33,7 +33,7 @@ This point is easy to lose in social media, where a single sheet of colored text
 
 ## The 1991 review: an effect becomes a research field
 
-By 1991, psychologist Colin M. MacLeod was able to survey approximately half a century of work and about 400 Stroop-related studies. His integrative review isolated eighteen empirical findings that a satisfactory theory needed to explain. This was a major shift from one striking task to a substantial research program. [2]
+By 1991, psychologist Colin M. MacLeod was able to survey approximately half a century of work and approximately 400 Stroop-related studies. His integrative review isolated eighteen empirical findings that a satisfactory theory needed to explain. This was a major shift from one striking task to a substantial research program. [2]
 
 Early interpretations often contrasted an automatic reading response with a less practiced color-naming response. That is a useful introduction, but as MacLeod emphasized, neither a simple race between two independent channels nor a one-line account of reading “automaticity” captured the full pattern. Meaning, competing responses, task instructions, practice and selective attention interact.
 
@@ -47,7 +47,7 @@ This means even a seemingly precise number such as “you were delayed by 600 mi
 
 ## A modern brain scan does not settle the argument
 
-A 2024 meta-analysis of Stroop-type neuroimaging work included **133 experiments** and examined where activation patterns converged across versions of the task. Its authors reported that classic color-word incongruence frequently recruited areas of a broader multiple-demand network. But they also found differences across task types and stimulus materials; different tasks that look superficially similar do not necessarily test identical mechanisms. [4]
+A meta-analysis first published online on 12 September 2024 and appearing in a 2025 journal issue included **133 neuroimaging experiments across 115 studies** of Stroop-type tasks and examined where activation patterns converged across versions of the task. Its authors reported that classic color-word incongruence frequently recruited areas of a broader multiple-demand network. But they also found differences across task types and stimulus materials; different tasks that look superficially similar do not necessarily test identical mechanisms. [4]
 
 This is a useful counterweight to an unfortunate style of science marketing: the image of a lit-up brain region presented as proof that a purchasable recording can “rewire” attention. A group-level imaging association during a conflict task is not a demonstration that listening to a commercial MP3 improves performance, changes a disease outcome, or causes durable cognitive enhancement.
 
@@ -65,7 +65,7 @@ You can explore this contrast without buying anything, installing a tracking app
 
 **Pass two: the competing dimension.** Say the visible *ink color* of each word in your mismatched set. Do not read the letters aloud. Are you tempted to name the printed word? Does the instruction feel different? There is no universal pass/fail experience.
 
-**Pass three: change the instruction.** With the same conflicting printed words, read the *letters* aloud while trying to ignore their ink. Notice how changing the required response changes which information counts as an obstacle. Compare your impressions with the asymmetry in Stroop's 1935 report without turning your own observations into an experimental replication.
+**Pass three: change the instruction.** With the same conflicting printed words, read the *words* aloud while trying to ignore their ink. Notice how changing the required response changes which information counts as an obstacle. Compare your impressions with the asymmetry in Stroop's 1935 report without turning your own observations into an experimental replication.
 
 A home demo lacks standardized materials, controlled order, appropriate sample sizes and calibrated timing. Its purpose is to make a question visible, not to establish an ability score. If color differentiation is inaccessible, try an analogous interference exercise using a different well-practiced verbal response and a competing instruction, while recognizing that it is *not* the classic color-word Stroop paradigm. A colleague can describe the paper's method instead of administering it as a performance test. Never use a poor result to speculate about a child's ability, a neurological condition, or a person's attention disorder.
 
@@ -77,7 +77,7 @@ A participant might get faster after several rounds. That observation does not, 
 
 The more accurate promise of this exercise is modest: it can make an otherwise invisible competition between instructions and habitual responses easier to discuss. It can teach us to ask what counts as a fair comparison. Those are educational values, not a warranty on attention.
 
-Researchers have also developed emotional Stroop, numerical Stroop and other forms of stimulus-response conflict. Their shared label should not conceal important differences. A 2021 review of clinical use warned that emotional versions may introduce mechanisms unlike the response conflict in the original color-word setup. [5] The meaning of a “Stroop result” depends on the exact variant.
+Researchers have also developed emotional Stroop, numerical Stroop and other forms of stimulus-response conflict. Their shared label should not conceal important differences. A 2021 review of clinical applications discussed emotional-word color-naming tasks and warned that emotional-word color-naming versions may involve mechanisms distinct from response conflict in the original color-word setup. [5] The meaning of a “Stroop result” depends on the exact variant.
 
 For someone who is already worried about concentration, this is not a substitute for qualified professional evaluation. For someone who wants a better workflow, it is a useful reminder that seeing relevant information and choosing an appropriate response are distinct parts of acting on it.
 
@@ -107,10 +107,10 @@ A color word can try to tell you what to say. The evidence tells you what the ex
 
 ### Sources and evidence boundaries
 
-1. Stroop, J. R. (1935). **Studies of interference in serial verbal reactions.** *Journal of Experimental Psychology, 18*(6), 643–662. Original record and quantitative abstract: https://doi.org/10.1037/h0054651 . The specific 47.0-second/74.3-percent and 2.3-second/5.6-percent results are study-specific, not diagnostic norms.
+1. Stroop, J. R. (1935). **Studies of interference in serial verbal reactions.** *Journal of Experimental Psychology, 18*(6), 643–662. Original record and quantitative abstract: https://doi.org/10.1037/h0054651 . The Experiment 2 47.0-second/74.3-percent error-adjusted mean difference per 100 responses, and the Experiment 1 2.3-second/5.6-percent comparison, are study-specific, not diagnostic norms.
 2. MacLeod, C. M. (1991). **Half a century of research on the Stroop effect: An integrative review.** *Psychological Bulletin, 109*(2), 163–203. https://doi.org/10.1037/0033-2909.109.2.163 . Review, not a product trial.
 3. Salo, R., Henik, A., & Robertson, L. C. (2001). **Interpreting Stroop interference: An analysis of differences between task versions.** *Neuropsychology, 15*(4), 462–471. https://pubmed.ncbi.nlm.nih.gov/11761035/ . Experimental comparisons of task design.
-4. **Not All Stroop-Type Tasks Are Alike: Assessing the Impact of Stimulus Material, Task Design, and Cognitive Demand via Meta-analyses Across Neuroimaging Studies.** (2024). Primary full text: https://pmc.ncbi.nlm.nih.gov/articles/PMC12602573/ . Meta-analysis of 133 neuroimaging experiments, not proof of branded audio outcomes.
+4. **Not All Stroop-Type Tasks Are Alike: Assessing the Impact of Stimulus Material, Task Design, and Cognitive Demand via Meta-analyses Across Neuroimaging Studies.** (2024). Primary full text: https://pmc.ncbi.nlm.nih.gov/articles/PMC12602573/ . Meta-analysis of 133 neuroimaging experiments across 115 studies, online September 2024 / 2025 issue; not exclusively classic color-word tasks and not proof of branded audio outcomes.
 5. **Stimulus-Response Conflict Tasks and Their Use in Clinical Psychology.** (2021). https://www.mdpi.com/1660-4601/18/20/10657 . Review distinguishing classic and emotional conflict tasks.
 6. Inspire3's official product catalog https://inspire3.com/ and **exact seller** Zen12 page https://zen12.com/hnp . Descriptions and benefits are vendor marketing, not independently validated product efficacy.
 
