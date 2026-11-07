@@ -1,0 +1,437 @@
+{
+  "milestone": "R192",
+  "date": "2026-11-07",
+  "branch": "mind-r192-rubber-hand-conversion-proof-20261107",
+  "status": "UNPUBLISHED_NO_AFFILIATE_ACTIVATION",
+  "source_links": [
+    {
+      "id": "paper1998",
+      "url": "https://doi.org/10.1038/35784",
+      "note": "Primary 1998 rubber-hand correspondence; accessible abstract",
+      "kind": "PRIMARY_ABSTRACT"
+    },
+    {
+      "id": "paper2005",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/15709864/",
+      "note": "Primary Tsakiris/Haggard 2005 abstract",
+      "kind": "PRIMARY_ABSTRACT"
+    },
+    {
+      "id": "paper2011",
+      "url": "https://doi.org/10.1371/journal.pone.0021659",
+      "note": "Open Rohde/Di Luca/Ernst 2011 study",
+      "kind": "PRIMARY_OPEN"
+    },
+    {
+      "id": "paper2004",
+      "url": "https://www.psy.ox.ac.uk/publication/19214",
+      "note": "Oxford researcher record of 2004 Ehrsson et al Science paper",
+      "kind": "PRIMARY_UNIVERSITY_RECORD"
+    },
+    {
+      "id": "inspire3",
+      "url": "https://inspire3.com/",
+      "note": "Official product-family descriptions; seller claims only",
+      "kind": "SELLER"
+    },
+    {
+      "id": "zen12",
+      "url": "https://zen12.com/hnp",
+      "note": "Exact Zen12 public sales page, observed 2026-11-07; price may vary",
+      "kind": "SELLER"
+    },
+    {
+      "id": "hypnosis",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "note": "Exact Total Focus seller sales listing; claims are not independent studies",
+      "kind": "SELLER"
+    },
+    {
+      "id": "affiliate",
+      "url": "https://affiliates.inspire3.com/",
+      "note": "Public network homepage, NOT proof of named publisher approval",
+      "kind": "SELLER_PUBLIC"
+    },
+    {
+      "id": "ftcendorse",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "note": "FTC clear/conspicuous adjacent affiliate disclosure guidance",
+      "kind": "REGULATOR"
+    },
+    {
+      "id": "ftchealth",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "note": "FTC substantiation of health/efficacy claims",
+      "kind": "REGULATOR"
+    },
+    {
+      "id": "focus",
+      "url": "https://finalvestige.com/focus/",
+      "note": "Established Focus Fieldbook; independent signup/delivery test remains separate",
+      "kind": "FV_ROUTE_ISSUE171"
+    },
+    {
+      "id": "puys",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "note": "Existing primary-source-oriented historical archive",
+      "kind": "FV_ROUTE_ISSUE171"
+    },
+    {
+      "id": "change",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "note": "Published investigation per prior WP verification",
+      "kind": "FV_ROUTE_PRIOR_QA"
+    },
+    {
+      "id": "disclosure",
+      "url": "https://finalvestige.com/affiliate-disclosure/",
+      "note": "Existing disclosure page; does not substitute for near-link language",
+      "kind": "FV_ROUTE_ISSUE171"
+    },
+    {
+      "id": "standards",
+      "url": "https://finalvestige.com/editorial-standards/",
+      "note": "Existing editorial standards page",
+      "kind": "FV_ROUTE_ISSUE171"
+    },
+    {
+      "id": "r188a",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/blob/7adad5a09774f6df7b4fe3123964fc7c22671b64/mind/r188/zen12-variant-A-independent-text-UNPUBLISHED.html",
+      "note": "Source-controlled A guide, no JS, no active earning link",
+      "kind": "GIT_SOURCE"
+    },
+    {
+      "id": "r188b",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/blob/7adad5a09774f6df7b4fe3123964fc7c22671b64/mind/r188/zen12-variant-B-optional-42s-storyboard-UNPUBLISHED.html",
+      "note": "B guide, poster/transcript storyboard only, no MP4",
+      "kind": "GIT_SOURCE"
+    },
+    {
+      "id": "issue171",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "note": "Mind authoritative editorial/release rules",
+      "kind": "ISSUE"
+    },
+    {
+      "id": "issue820",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "note": "First-party funnel and qualified human attribution charter",
+      "kind": "ISSUE"
+    },
+    {
+      "id": "issue818",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/818",
+      "note": "Conversion-first business charter",
+      "kind": "ISSUE"
+    }
+  ],
+  "claim_decisions": [
+    {
+      "id": "rubber_1998",
+      "source_id": "paper1998",
+      "claim": "1998 experiment described integration of vision, touch and proprioception",
+      "decision": "SUPPORT_WITH_SCOPE",
+      "limitation": "No universal response rate"
+    },
+    {
+      "id": "rubber_2005",
+      "source_id": "paper2005",
+      "claim": "Four experiments tested body constraints and synchronized touch",
+      "decision": "SUPPORT_WITH_SCOPE",
+      "limitation": "Do not call synchrony sufficient alone"
+    },
+    {
+      "id": "drift_2011",
+      "source_id": "paper2011",
+      "claim": "Ownership reports and perceived hand location may diverge",
+      "decision": "SUPPORT_WITH_SCOPE",
+      "limitation": "Measures are not interchangeable"
+    },
+    {
+      "id": "imaging_2004",
+      "source_id": "paper2004",
+      "claim": "Premotor-region imaging signal correlated with illusion experience",
+      "decision": "SUPPORT_WITH_SCOPE",
+      "limitation": "Correlation not brain ownership switch"
+    },
+    {
+      "id": "history_puys",
+      "source_id": "puys",
+      "claim": "Puységur primary-history bridge exists",
+      "decision": "SUPPORT_HISTORICAL",
+      "limitation": "Not evidence of magnetism"
+    },
+    {
+      "id": "zen_audio",
+      "source_id": "zen12",
+      "claim": "Premium presented as 12 levels and 48 MP3s",
+      "decision": "SELLER_DESCRIPTION_ONLY",
+      "limitation": "Independently confirm before sale recommendation"
+    },
+    {
+      "id": "zen_duration",
+      "source_id": "zen12",
+      "claim": "Seller describes sessions of 12 minutes",
+      "decision": "SELLER_DESCRIPTION_ONLY",
+      "limitation": "Not proof of equivalent meditation time"
+    },
+    {
+      "id": "zen_equiv",
+      "source_id": "zen12",
+      "claim": "One hour of meditation in 12 minutes",
+      "decision": "REJECT_UNSUBSTANTIATED_FOR_BRAND",
+      "limitation": "No product-specific independent comparative trial"
+    },
+    {
+      "id": "zen_cure",
+      "source_id": "ftchealth",
+      "claim": "Any treatment/cure claims for Zen12",
+      "decision": "REJECT_NO_SUPPORT",
+      "limitation": "Requires competent reliable scientific evidence"
+    },
+    {
+      "id": "zen_refunds",
+      "source_id": "zen12",
+      "claim": "Seller advertises one-year money-back guarantee",
+      "decision": "SELLER_ASSERTION_ONLY",
+      "limitation": "Refund fulfillment not independently verified"
+    },
+    {
+      "id": "zen_price",
+      "source_id": "zen12",
+      "claim": "Premium page observed $87.99 (discount display) on 2026-11-07",
+      "decision": "OBSERVATION_NOT_FINAL_PRICE",
+      "limitation": "Checkout, taxes, promos and terms not independently verified"
+    },
+    {
+      "id": "total_focus",
+      "source_id": "hypnosis",
+      "claim": "Total Focus seller describes 33-minute/47 MB recording",
+      "decision": "SELLER_DESCRIPTION_ONLY",
+      "limitation": "Not evidence of psychological efficacy"
+    },
+    {
+      "id": "inspire_catalog",
+      "source_id": "inspire3",
+      "claim": "Inspire3 lists Zen12, Hypnosis Live, Brainwave Shots",
+      "decision": "SELLER_CATALOG_ONLY",
+      "limitation": "No independent product test implied"
+    },
+    {
+      "id": "inspire_approve",
+      "source_id": "affiliate",
+      "claim": "Public portal offers affiliate enrollment",
+      "decision": "NOT_PROOF_OF_NAMED_APPROVAL",
+      "limitation": "Personal account acceptance, channels and URL still unverified"
+    },
+    {
+      "id": "affiliate_disclosure",
+      "source_id": "ftcendorse",
+      "claim": "Commission material connection disclosed next to purchasing link",
+      "decision": "REQUIRED_IF_LINK_ENABLED",
+      "limitation": "Disclosure page alone inadequate"
+    },
+    {
+      "id": "health_rule",
+      "source_id": "ftchealth",
+      "claim": "Psychological/health outcome marketing requires adequate substantiation",
+      "decision": "REQUIRED",
+      "limitation": "Avoid unsupported benefits"
+    },
+    {
+      "id": "focus_single",
+      "source_id": "focus",
+      "claim": "One published Focus Fieldbook and Jetpack pathway per issue #171",
+      "decision": "EXISTING_ROUTE_NO_DUPLICATE_FORM",
+      "limitation": "Actual new guest delivery test pending"
+    },
+    {
+      "id": "pub_change",
+      "source_id": "change",
+      "claim": "Change Blindness article is previously verified canonical",
+      "decision": "INTERNAL_NAVIGATION",
+      "limitation": "Do not link unpublished draft URL as live"
+    },
+    {
+      "id": "merchant_a",
+      "source_id": "r188a",
+      "claim": "Source-controlled A text guide has disabled merchant control",
+      "decision": "SOURCE_TESTABLE_ONLY",
+      "limitation": "Not rendered/browser/released"
+    },
+    {
+      "id": "merchant_b",
+      "source_id": "r188b",
+      "claim": "Source-controlled B optional film concept is 42 seconds",
+      "decision": "SOURCE_TESTABLE_ONLY",
+      "limitation": "No MP4, no measured outcome"
+    },
+    {
+      "id": "qualified_utm",
+      "source_id": "issue820",
+      "claim": "UTM asset_id source proposed; real Grok asset IDs absent",
+      "decision": "UNVERIFIED_MEASUREMENT",
+      "limitation": "Cannot assign traffic to invented asset"
+    },
+    {
+      "id": "affiliate_click",
+      "source_id": "issue820",
+      "claim": "Outbound affiliate_click is not a paid conversion",
+      "decision": "DISTINCT_NON_REVENUE_EVENT",
+      "limitation": "Do not report as commission"
+    },
+    {
+      "id": "paid_kpi",
+      "source_id": "issue818",
+      "claim": "Net revenue per 1,000 qualified humans",
+      "decision": "NOT_COMPUTABLE_MISSING_PAID_AND_DENOMINATOR",
+      "limitation": "No settled/verified sales and qualified cohort"
+    },
+    {
+      "id": "merchant_rights",
+      "source_id": "issue171",
+      "claim": "Approved commercial link requires named publisher permission",
+      "decision": "HARD_HOLD",
+      "limitation": "No activation of any earning URL"
+    },
+    {
+      "id": "experiment",
+      "source_id": "r188b",
+      "claim": "Text guide vs optional video treatment is only a hypothesis",
+      "decision": "HYPOTHESIS_NOT_TESTED",
+      "limitation": "No allocation or effect-size claim"
+    },
+    {
+      "id": "source_separation",
+      "source_id": "standards",
+      "claim": "Investigations not repurposed as sponsored outcomes",
+      "decision": "REQUIRED_EDITORIAL",
+      "limitation": "Separate buyer guide and factual history"
+    }
+  ],
+  "release_gates": [
+    {
+      "id": "publisher_named_acceptance",
+      "status": "BLOCKED",
+      "owner": "Founder / Mind",
+      "proof_needed": "Authenticated finalvestige-specific approved publisher account"
+    },
+    {
+      "id": "affiliate_channels",
+      "status": "BLOCKED",
+      "owner": "Founder / Mind",
+      "proof_needed": "Exact permitted website, email and social channels from terms"
+    },
+    {
+      "id": "authorized_url",
+      "status": "BLOCKED",
+      "owner": "Founder / Mind",
+      "proof_needed": "Earning link generated and tested in named publisher portal"
+    },
+    {
+      "id": "approved_creative",
+      "status": "UNKNOWN",
+      "owner": "Founder / Mind",
+      "proof_needed": "Exact permissible current creative and representation guidelines"
+    },
+    {
+      "id": "product_features",
+      "status": "SELLER_OBSERVED_ONLY",
+      "owner": "Mind",
+      "proof_needed": "Vendor page and version recorded; no scientific efficacy inheritance"
+    },
+    {
+      "id": "refund_checkout",
+      "status": "UNVERIFIED",
+      "owner": "Commerce",
+      "proof_needed": "Guest checkout totals, refund fulfillment and fulfillment terms"
+    },
+    {
+      "id": "fv_owned_mind_sku",
+      "status": "UNKNOWN",
+      "owner": "Commerce",
+      "proof_needed": "Currently live Payhip rights-cleared SKU, price, returns, fulfillment"
+    },
+    {
+      "id": "focus_guest_welcome",
+      "status": "NOT_TESTED",
+      "owner": "Site QA / Dispatch",
+      "proof_needed": "Independent consented guest confirmation/delivery validation"
+    },
+    {
+      "id": "grok_ids",
+      "status": "UNKNOWN",
+      "owner": "Grok / Praxxis",
+      "proof_needed": "Published immutable asset IDs, rights, URLs and approved destination"
+    },
+    {
+      "id": "merchant_paid_orders",
+      "status": "NOT_VERIFIED",
+      "owner": "Commerce",
+      "proof_needed": "Authoritative paid orders/commissions/fees/refunds"
+    },
+    {
+      "id": "qualified_human_sessions",
+      "status": "NOT_VERIFIED",
+      "owner": "Analytics",
+      "proof_needed": "Deduplicated privacy-safe qualified session denominator"
+    },
+    {
+      "id": "paid_net_1k",
+      "status": "NOT_COMPUTABLE",
+      "owner": "Commerce / Analytics",
+      "proof_needed": "Net cash-based revenue per 1k qualified humans"
+    },
+    {
+      "id": "video_file",
+      "status": "NOT_RENDERED",
+      "owner": "Mind / media owner",
+      "proof_needed": "Accessible optional MP4, captions, transcript and poster"
+    },
+    {
+      "id": "browser_a11y",
+      "status": "NOT_TESTED",
+      "owner": "Site QA",
+      "proof_needed": "360/390/768/1440 real device keyboard/AT and WCAG 2.2 AA"
+    },
+    {
+      "id": "performance",
+      "status": "NOT_TESTED",
+      "owner": "Site QA",
+      "proof_needed": "No-autoplay, optional lazy video load, CWV/Lighthouse"
+    },
+    {
+      "id": "cms_release",
+      "status": "BLOCKED",
+      "owner": "Founder / release owner",
+      "proof_needed": "Separate approval; no live WP/nav/merge/deploy"
+    },
+    {
+      "id": "newsletter_change",
+      "status": "BLOCKED",
+      "owner": "Dispatch owner",
+      "proof_needed": "Do not replace Jetpack welcome or mail draft without approval"
+    }
+  ],
+  "specific_offer": "Zen12 Premium — conditional only, no validated FV earning URL",
+  "high_intent_audience": "Visitors comparing meditation audio with free, shorter routines who are asking what the evidence actually establishes",
+  "commercial_rule": "No impression, affiliate_click, email subscriber or checkout start counts as a verified paid order.",
+  "exclusions": [
+    "no merchant tracking URL",
+    "no invented affiliate acceptance",
+    "no endorsed product experience",
+    "no guaranteed clinical or mental outcomes",
+    "no invented Payhip SKUs",
+    "no duplication of Jetpack Focus list"
+  ],
+  "controls": {
+    "affiliate_earning_link_enabled": false,
+    "merchant_cta_enabled": false,
+    "published_to_wordpress": false,
+    "additional_signup_form": false,
+    "paid_vendor": false,
+    "video_autoplay": false,
+    "approved_to_merge": false
+  },
+  "provenance_note": "Public seller, regulator and primary-research pages consulted on 2026-11-07. Private partner account and Payhip merchant dashboard not authenticated. Public seller observations are not final checkout/return proof."
+}

@@ -45,7 +45,7 @@ The next experiment is more troubling because the stakes feel different. In 2012
 
 The published abstract reports that **69% of participants failed to detect at least one of two reversals**. Participants sometimes offered arguments supporting the apparent position that contradicted their initial answer. [3] This is a study-specific statistic, not a percentage of the public that can be persuaded of anything.
 
-Here the distinction between perception and interpretation grows important. A respondent might remember the underlying issue quite well, yet take an altered mark or answer as a trustworthy reminder of what they previously wrote. Once that displayed outcome is accepted as a premise, the search for reasons can begin in the wrong place.
+Here the distinction between perception and interpretation grows important. In the paper survey, a concealed slip was removed to reveal wording with the opposite meaning while the participant's written rating stayed in place; the manipulation changed what that rating appeared to endorse, not the location of the respondent's mark. A respondent might remember the underlying issue quite well, yet take the transformed printed statement and unchanged mark as a trustworthy reminder of what they had answered. Once that displayed outcome is accepted as a premise, the search for reasons can begin in the wrong place.
 
 These researchers suggest flexibility and retrospective justification in expressed attitudes. They did not show that every political belief is weak, that debate never changes minds, or that moral views can be rewritten at will. The survey involved particular participants, questions and manipulations. Its scope should stay attached to those methods.
 
