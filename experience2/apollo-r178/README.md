@@ -1,0 +1,21 @@
+# Apollo Experience 2.0 — R178 nested/dynamic Research Desk assets (STAGING HOLD)
+
+**Actual code, not a release:** replacement-only PHP adapter candidate for draft Research Desk #158; stacked on R177 #1329. No changes to original #158, frozen homepage #49, WordPress, merchant systems, Grok, or Praxxis work. Governance: #150, #818, #820.
+
+## Verified defect / proposed correction
+
+Original PR #158 PHP blob `d1879a90101b5475990132369178f42743f4b57c` only enqueues CSS and JS when top-level singular `post_content` directly contains `[fv_ex2_research_desk]`. This can miss a shortcode rendered through a synced/reusable block, nested dynamic block, or other evaluated context. The records may render without styling and optional search. WP docs distinguish early stylesheet output from later shortcode-time JS enqueues: https://developer.wordpress.org/reference/hooks/wp_enqueue_scripts/ and https://developer.wordpress.org/reference/functions/wp_enqueue_script/.
+
+**R178 source-controlled staging candidate:** `research-desk-adapter.php` is a replacement for `experience2/research-desk/final-vestige-ex2-research-desk.php` **only after separate staging review.** Register handles at `init`; preflight direct top-level shortcode in `wp_enqueue_scripts`; lazily enqueue CSS and footer JS when the shortcode actually renders. If the head has already printed and CSS is not done, output **one same-origin stylesheet link** before the reviewed content. Prevent duplicate ID/aria-control collisions by linking a second shortcode invocation to the first. Missing template still falls back to the original Apollo investigation. Unrelated pages enqueue neither CSS nor JS. No new tracking, forms, affiliate copy, invented geographic data or NASA-rights clearance claims.
+
+**Assets are not bundled with this overlay.** Retain existing reviewed CSS/template (or separately approved R176 source-custody transform). The intended JS is R177's `source-ledger-semantic-search.js` replacing—not co-loading—the original `assets/source-ledger.js`. Because the PHP uses `__FILE__` for same-origin URL paths, copying it as a separately active plugin under `apollo-r178/` would be incorrect. Do not activate or deploy it. Only the installed replacement path may be assessed in approved staging.
+
+## Executable tests and evidence
+
+Run `php -l experience2/apollo-r178/research-desk-adapter.php` and `for s in preflight nested early absent double missing; do php experience2/apollo-r178/qa/php_contract.php "$s"; done`. The PHP contract uses **synthetic markup and WordPress API mocks**; it does not instantiate WordPress. In the R178 evidence archive, a second real PHP CLI harness exercised 11 checks across six paths. A real Chromium fixture test used browser-routed exact local JS/CSS assets in 14 contexts at 320, 360, 390, 768, 1440 and 1920px: 198 assertions, 6/6 repeat screenshot hashes, JS and CSS asset requests verified, keyboard/touch, no-JS, reduced motion, forced colors and fixture-only LCP/CLS recorded. The archive is reproducible and identifies its artificial six-record source-derived fixture. No live-URL transport or NASA image fetch was tested.
+
+## Explicit release HOLD
+
+Require the **actual R174→R176 historical template**, source SHA pins, genuine installed WordPress/Assembler and synced/dynamic-block lifecycle tests, late stylesheet CSP/flash/FOUC and cache checks, axe-core and manual assistive technologies, actual NASA media and rights review, real-page Core Web Vitals, exact-head CI and QD, and founder approval. Chrome mocked-route passes are not WP acceptance. No production release, affiliate activation, email, social post, merchant transaction or spend is authorized.
+
+**Conversion:** Proposed high-intent educator segment → Grok Apollo long-form (publication/asset ID unverified) → source-grounded Research Desk → one nonintrusive “Read original investigation” CTA → **hypothetical** future rights-cleared classroom dossier only after validated product/checkout. No verified sellable matching SKU, leads, qualified human sessions, paid orders, partner commissions, refunds/fees or net revenue; the #820 seven/thirty-day net revenue per 1,000 qualified human sessions KPI is not computable. Grok owns videos and distribution; Praxxis owns external review; Claude owns production code, analytics and commerce.
