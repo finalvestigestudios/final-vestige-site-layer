@@ -1,15 +1,19 @@
 import io
 import json
+import os
 import unittest
 from pathlib import Path
 from zipfile import ZipFile, ZIP_DEFLATED
 from local_cli_bundle import pack, sha, BP_HASH
 
-SOURCE = Path('/mnt/data/fv_run14/FV_EX2_FOCUS_FIRST_SCREEN_REVIEW_ONLY.zip')
+SOURCE = Path(os.environ.get('FV_EX2_REVIEW_ZIP', 'review-only-source.zip'))
 
 class BundleTests(unittest.TestCase):
     @classmethod
-    def setUpClass(cls): cls.src=SOURCE.read_bytes()
+    def setUpClass(cls):
+        if not SOURCE.is_file():
+            raise RuntimeError('Provide exact PR #1379 source ZIP via FV_EX2_REVIEW_ZIP (fail closed)')
+        cls.src=SOURCE.read_bytes()
     def test_repeatable_compact(self):
         a, _ = pack(self.src); b, _ = pack(self.src)
         self.assertEqual(a,b)
