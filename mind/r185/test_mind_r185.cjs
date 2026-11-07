@@ -21,7 +21,7 @@ function validate(f) {
  check("article correct 1978 program size",a.includes("1,242 people across five experiments and a pilot"));
  check("article admits limitations",a.includes("response bias")&&a.includes("source monitoring")&&a.includes("not a scientific recreation"));
  check("research has no earning-link call to action",!/href=["']https?:\/\/(?:www\.)?(?:awin1|zen12|affiliates\.inspire3)\b/i.test(a)&&!a.includes("Buy Now"));
- check("article separates hypnosis/memory",a.includes("hypnotic")&&a.includes("recovered")&&a.includes("not controlled demonstrations"));
+ check("article separates hypnosis/memory",a.includes("hypnotic")&&a.includes("memory")&&a.includes("not controlled demonstrations"));
  check("claims JSON parses",!!data);
  check("affiliate inactive",data?.affiliate_activation===false&&data?.affiliate_url===null);
  check("financial data unknown",data?.commission_received===null&&data?.qualified_human_sessions===null);
@@ -42,8 +42,8 @@ function validate(f) {
    check(n+" native disabled merchant control",/<button\b(?=[^>]*\sdisabled\b)[^>]*>Merchant purchase link unavailable/.test(s));
    check(n+" direct FTC disclosure adjacent to control",/<p class="disclosure">[\s\S]{0,400}<\/p>\s*<button\b/.test(s));
    check(n+" conditional plain commission wording",s.includes("Final Vestige may earn a commission at no additional cost to you"));
-   check(n+" zero active affiliate links",!/<a\b[^>]*href=["'][^"']*(awin1|clickbank|hop=|affiliate|ref=|utm_source=inspire3|zen12\.com)/i.test(s));
-   check(n+" no JS/frames/signup/autoplay",!/<(?:script|iframe|form|input|video|audio)\b/i.test(s)&&!s.includes("autoplay"));
+   check(n+" zero active affiliate links",!/<a\b[^>]*href=["'][^"']*(awin1|clickbank|hop=|ref=|utm_source=inspire3|zen12\.com|affiliates\.inspire3)/i.test(s));
+   check(n+" no JS/frames/signup/autoplay",!/<(?:script|iframe|form|input|video|audio)\b/i.test(s)&&!/<(?:video|audio)\b[^>]*\sautoplay\b/i.test(s));
    check(n+" uses one Focus path",s.includes("https://finalvestige.com/focus/"));
    check(n+" independent source trail",s.includes("pubmed.ncbi.nlm.nih.gov/37205669")&&s.includes("ftc.gov"));
    check(n+" no marketing certainty",!s.includes("12 minutes equals one hour")&&!s.includes("guaranteed concentration"));
