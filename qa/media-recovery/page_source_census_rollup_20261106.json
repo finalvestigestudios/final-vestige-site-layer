@@ -1,0 +1,158 @@
+{
+  "schema": "fv-complete-published-page-census-summary-v1",
+  "date": "2026-11-06",
+  "method": "Authenticated CMS pages.list and individual edit-source read of all 83 published pages, then strict bounded validator. No visitor browser HTTP, image decode, cold bytes, CSS/JS/featured media rendering captured.",
+  "shard_paths": [
+    {
+      "path": "qa/media-recovery/page_source_census_20261106_part01.json",
+      "blob_sha": "16ab42313e79b575f7a973b9c5fa1a2f8905ae9f"
+    },
+    {
+      "path": "qa/media-recovery/page_source_census_20261106_part02.json",
+      "blob_sha": "a1a7f2847cc1d831bc36b83e37196791a8c92ec3"
+    },
+    {
+      "path": "qa/media-recovery/page_source_census_20261106_part03.json",
+      "blob_sha": "da900113bf3571fd7a37faeea1328b735ff2eaac"
+    },
+    {
+      "path": "qa/media-recovery/page_source_census_20261106_part04.json",
+      "blob_sha": "43350f5c872465c2f44a8f78bd61012bd3610bbf"
+    },
+    {
+      "path": "qa/media-recovery/page_source_census_20261106_part05.json",
+      "blob_sha": "f0ad86289593aa4adbedaba4ff7319559705a09a"
+    },
+    {
+      "path": "qa/media-recovery/page_source_census_20261106_part06.json",
+      "blob_sha": "492f4c330b23bc578e642e1dd7d23df47b212f51"
+    },
+    {
+      "path": "qa/media-recovery/page_source_census_20261106_part07.json",
+      "blob_sha": "e2f88b4409b8811b40dc62e8c0dfdfa743d89ab8"
+    }
+  ],
+  "counts": {
+    "pages": 83,
+    "pages_with_inline": 8,
+    "images": 20,
+    "distinct_src": 17,
+    "offsite_sources": 8,
+    "without_declared_dimensions": 10
+  },
+  "external_image_slots": [
+    {
+      "page_id": 2089,
+      "page_url": "https://finalvestige.com/cold-case-mystery-games/",
+      "slot": "2089:0",
+      "src": "https://www.awin1.com/cshow.php?s=4959313&v=46005&q=620613&r=3055117",
+      "source_class": "affiliate_dynamic",
+      "stored_width": null,
+      "stored_height": null,
+      "browser_status": null,
+      "rights_hold": true
+    },
+    {
+      "page_id": 2088,
+      "page_url": "https://finalvestige.com/mini-museum-history-collectibles/",
+      "slot": "2088:0",
+      "src": "https://www.awin1.com/cshow.php?s=4236132&v=89949&q=552988&r=3055117",
+      "source_class": "affiliate_dynamic",
+      "stored_width": null,
+      "stored_height": null,
+      "browser_status": null,
+      "rights_hold": true
+    },
+    {
+      "page_id": 1484,
+      "page_url": "https://finalvestige.com/podcast/the-textbook-found-open-in-the-ruins/",
+      "slot": "1484:0",
+      "src": "https://drive.google.com/thumbnail?id=1V8rMf0ovXiJbJLLq77uLwfMHghlH7sMM&sz=w1600",
+      "source_class": "google_drive_thumbnail",
+      "stored_width": null,
+      "stored_height": null,
+      "browser_status": null,
+      "rights_hold": true
+    },
+    {
+      "page_id": 1484,
+      "page_url": "https://finalvestige.com/podcast/the-textbook-found-open-in-the-ruins/",
+      "slot": "1484:1",
+      "src": "https://upload.wikimedia.org/wikipedia/commons/9/9c/New_London_School_before_explosion.webp",
+      "source_class": "commons_direct",
+      "stored_width": null,
+      "stored_height": null,
+      "browser_status": null,
+      "rights_hold": true
+    },
+    {
+      "page_id": 1484,
+      "page_url": "https://finalvestige.com/podcast/the-textbook-found-open-in-the-ruins/",
+      "slot": "1484:2",
+      "src": "https://upload.wikimedia.org/wikipedia/commons/3/3c/New_London_School_explosion.jpg",
+      "source_class": "commons_direct",
+      "stored_width": null,
+      "stored_height": null,
+      "browser_status": null,
+      "rights_hold": true
+    },
+    {
+      "page_id": 1484,
+      "page_url": "https://finalvestige.com/podcast/the-textbook-found-open-in-the-ruins/",
+      "slot": "1484:3",
+      "src": "https://upload.wikimedia.org/wikipedia/commons/9/95/New_London_School_Explosion_Memorial.jpg",
+      "source_class": "commons_direct",
+      "stored_width": null,
+      "stored_height": null,
+      "browser_status": null,
+      "rights_hold": true
+    },
+    {
+      "page_id": 78,
+      "page_url": "https://finalvestige.com/collection/",
+      "slot": "78:2",
+      "src": "https://us.suunto.com/cdn/shop/files/SS014891000-Suunto-MC-2-G-USGS-MIRROR-COMPASS-perspective-view-01_297f0046-bf9a-4f3c-893c-ad50a6346ef9.png?v=1778238838&width=1390",
+      "source_class": "external_origin",
+      "stored_width": null,
+      "stored_height": null,
+      "browser_status": null,
+      "rights_hold": true
+    },
+    {
+      "page_id": 78,
+      "page_url": "https://finalvestige.com/collection/",
+      "slot": "78:3",
+      "src": "https://www.awin1.com/cshow.php?s=4959313&v=46005&q=620613&r=3055117",
+      "source_class": "affiliate_dynamic",
+      "stored_width": null,
+      "stored_height": null,
+      "browser_status": null,
+      "rights_hold": true
+    }
+  ],
+  "duplicate_offsite_urls": [
+    {
+      "page_id": 78,
+      "page_url": "https://finalvestige.com/collection/",
+      "slot": "78:3",
+      "src": "https://www.awin1.com/cshow.php?s=4959313&v=46005&q=620613&r=3055117",
+      "source_class": "affiliate_dynamic",
+      "stored_width": null,
+      "stored_height": null,
+      "browser_status": null,
+      "rights_hold": true
+    }
+  ],
+  "historical_post_cohort_separate": {
+    "published_articles": 66,
+    "stored_inline_refs": 361,
+    "external_origin_refs": 294
+  },
+  "external_sources_are_not_confirmed_broken": true,
+  "broken_42_browser_verified": null,
+  "measured_76pct_cold_image_savings": null,
+  "oversize_originals_still_unmeasured_cold_transfer": 13,
+  "wordpress_writes": 0,
+  "third_party_image_downloads": 0,
+  "third_party_caches": 0
+}

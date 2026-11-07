@@ -1,0 +1,122 @@
+{
+  "schema": "fv-page-source-image-shard-v1",
+  "captured_date": "2026-11-06",
+  "method": "Authenticated read-only WordPress page get(edit); stored HTML <img> only, no browser, no image requests or production changes.",
+  "page_list_count": 83,
+  "offset": 24,
+  "page_rows": 12,
+  "errors": [],
+  "reported_42_broken_browser_verified": null,
+  "measured_76_percent_saving": null,
+  "production_writes": 0,
+  "rows": [
+    {
+      "id": 1148,
+      "url": "https://finalvestige.com/archive-shelf/",
+      "modified": "2026-11-02T21:41:11",
+      "title": "Archive Shelf",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": []
+    },
+    {
+      "id": 1127,
+      "url": "https://finalvestige.com/the-enumerators-block/",
+      "modified": "2026-11-02T21:41:09",
+      "title": "The Enumerator’s Block",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": []
+    },
+    {
+      "id": 1125,
+      "url": "https://finalvestige.com/the-builders-trace/",
+      "modified": "2026-11-02T21:41:08",
+      "title": "The Builder’s Trace",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": []
+    },
+    {
+      "id": 1124,
+      "url": "https://finalvestige.com/the-year-in-the-wood/",
+      "modified": "2026-10-29T14:00:07",
+      "title": "The Year in the Wood",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": []
+    },
+    {
+      "id": 1123,
+      "url": "https://finalvestige.com/the-paper-witness/",
+      "modified": "2026-11-02T21:41:06",
+      "title": "The Paper Witness",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": []
+    },
+    {
+      "id": 1122,
+      "url": "https://finalvestige.com/the-missing-caption/",
+      "modified": "2026-11-03T14:46:51",
+      "title": "The Missing Caption",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": []
+    },
+    {
+      "id": 1121,
+      "url": "https://finalvestige.com/the-lost-itinerary/",
+      "modified": "2026-10-29T14:07:57",
+      "title": "The Lost Itinerary",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": []
+    },
+    {
+      "id": 1120,
+      "url": "https://finalvestige.com/the-working-order/",
+      "modified": "2026-11-02T21:41:01",
+      "title": "The Working Order",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": []
+    },
+    {
+      "id": 1119,
+      "url": "https://finalvestige.com/the-living-record/",
+      "modified": "2026-10-29T14:17:37",
+      "title": "The Living Record",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": []
+    },
+    {
+      "id": 1060,
+      "url": "https://finalvestige.com/the-open-account/",
+      "modified": "2026-11-02T21:41:00",
+      "title": "The Open Account",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": []
+    },
+    {
+      "id": 1057,
+      "url": "https://finalvestige.com/the-night-map/",
+      "modified": "2026-10-29T14:15:16",
+      "title": "The Night Map",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": []
+    },
+    {
+      "id": 1054,
+      "url": "https://finalvestige.com/the-old-line/",
+      "modified": "2026-11-02T21:40:58",
+      "title": "The Old Line",
+      "status": "publish",
+      "featured_media_id": 0,
+      "images": []
+    }
+  ]
+}

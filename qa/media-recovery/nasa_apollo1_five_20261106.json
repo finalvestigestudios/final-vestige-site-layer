@@ -1,0 +1,224 @@
+{
+  "schema": "fv-media-nasa-apollo1-v1",
+  "observed_date": "2026-11-06",
+  "article": {
+    "post_id": 434,
+    "url": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/",
+    "status": "publish",
+    "read_method": "WordPress post get edit-context, read-only"
+  },
+  "scope": {
+    "inline_images": 6,
+    "first_party_images": 1,
+    "external_nasa_images": 5,
+    "stored_html_width_height_present": 6,
+    "catalog_records_found": 5
+  },
+  "evidence_convention": {
+    "catalog_page": "independently retrieved NASA HTML metadata, not guest-browser verification",
+    "web_retriever": "HTML/image retrieval observations, not raw HTTP status or naturalWidth",
+    "wordpress": "stored editor image source, not rendered runtime src"
+  },
+  "rights": {
+    "policy_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+    "rule": "NASA-created editorial imagery generally usable with attribution, no NASA endorsement, verify individual image rights and recognizable people before commercial-promotional use",
+    "item_level_clearance": "REVIEW_REQUIRED_BEFORE_CACHE_OR_REPUBLICATION",
+    "allowed_automatic_localization": false
+  },
+  "performance": {
+    "legacy_post_cohort": 61,
+    "current_post_cohort": 66,
+    "alleged_broken": 42,
+    "guest_browser_verified_broken": null,
+    "proposed_transfer_savings_percent": 76,
+    "measured_transfer_savings_percent": null,
+    "oversize_wordpress_originals_count": 13,
+    "oversize_storage_bytes": 43522829,
+    "source_bytes_downloaded": null
+  },
+  "first_party_guard": {
+    "src": "https://finalvestige.com/wp-content/uploads/2026/08/s67-19766.webp",
+    "id": "S67-19766",
+    "publisher_record": "https://www.nasa.gov/image-detail/apollo-1-crew-honored/",
+    "stored_dimensions": [
+      1041,
+      810
+    ],
+    "include_in_external_recovery": false
+  },
+  "images": [
+    {
+      "key": "434:1",
+      "stored_src": "https://images-assets.nasa.gov/image/S67-15717/S67-15717~large.jpg",
+      "nasa_id": "S67-15717",
+      "nasa_catalog_url": "https://www.nasa.gov/image-detail/amf-s67-15717/",
+      "publisher_metadata_native_dimensions": [
+        1514,
+        1920
+      ],
+      "stored_html_dimensions": [
+        1514,
+        1920
+      ],
+      "conditional_preview_dimensions": [
+        960,
+        1217
+      ],
+      "caption_credit": "NASA / Johnson Space Center",
+      "subject": "Spacecraft 012 in preflight processing, photographed January 3, 1967",
+      "source_retrieval": {
+        "catalog_page_retrieved": true,
+        "stored_image_web_retriever": "rendered_as_image",
+        "browser_http_status": null,
+        "browser_natural_width": null,
+        "browser_natural_height": null,
+        "browser_cold_transfer_bytes": null,
+        "visitor_broken": null
+      },
+      "rights_state": "REVIEW_REQUIRED",
+      "binary_hash_match": null,
+      "derivative_asset_url": null,
+      "wordpress_publish_approved": false
+    },
+    {
+      "key": "434:2",
+      "stored_src": "https://images-assets.nasa.gov/image/S66-58038/S66-58038~large.jpg",
+      "nasa_id": "S66-58038",
+      "nasa_catalog_url": "https://www.nasa.gov/image-detail/amf-s66-58038/",
+      "publisher_metadata_native_dimensions": [
+        1920,
+        1546
+      ],
+      "stored_html_dimensions": [
+        1920,
+        1546
+      ],
+      "conditional_preview_dimensions": [
+        960,
+        773
+      ],
+      "caption_credit": "NASA / Johnson Space Center",
+      "subject": "Crew entering altitude-chamber spacecraft during training, October 18, 1966",
+      "source_retrieval": {
+        "catalog_page_retrieved": true,
+        "stored_image_web_retriever": "web_retriever_internal_error",
+        "browser_http_status": null,
+        "browser_natural_width": null,
+        "browser_natural_height": null,
+        "browser_cold_transfer_bytes": null,
+        "visitor_broken": null
+      },
+      "rights_state": "REVIEW_REQUIRED",
+      "binary_hash_match": null,
+      "derivative_asset_url": null,
+      "wordpress_publish_approved": false
+    },
+    {
+      "key": "434:3",
+      "stored_src": "https://images-assets.nasa.gov/image/KSC-20170124-PH_KLS01_0164/KSC-20170124-PH_KLS01_0164~large.jpg",
+      "nasa_id": "KSC-20170124-PH_KLS01_0164",
+      "nasa_catalog_url": "https://www.nasa.gov/image-detail/amf-ksc-20170124-ph_kls01_0164/",
+      "publisher_metadata_native_dimensions": [
+        1920,
+        1280
+      ],
+      "stored_html_dimensions": [
+        1920,
+        1280
+      ],
+      "conditional_preview_dimensions": [
+        960,
+        640
+      ],
+      "caption_credit": "NASA / Kim Shiflett",
+      "subject": "Original Block I three-part hatch tribute, photographed January 24, 2017",
+      "source_retrieval": {
+        "catalog_page_retrieved": true,
+        "stored_image_web_retriever": "web_retriever_internal_error",
+        "browser_http_status": null,
+        "browser_natural_width": null,
+        "browser_natural_height": null,
+        "browser_cold_transfer_bytes": null,
+        "visitor_broken": null
+      },
+      "rights_state": "REVIEW_REQUIRED",
+      "binary_hash_match": null,
+      "derivative_asset_url": null,
+      "wordpress_publish_approved": false
+    },
+    {
+      "key": "434:4",
+      "stored_src": "https://images-assets.nasa.gov/image/S67-21294/S67-21294~large.jpg",
+      "nasa_id": "S67-21294",
+      "nasa_catalog_url": "https://www.nasa.gov/image-detail/amf-s67-21294/",
+      "publisher_metadata_native_dimensions": [
+        1920,
+        1297
+      ],
+      "stored_html_dimensions": [
+        1920,
+        1297
+      ],
+      "conditional_preview_dimensions": [
+        960,
+        649
+      ],
+      "caption_credit": "NASA / Johnson Space Center",
+      "subject": "Interior of damaged Apollo Spacecraft 012 on January 28, 1967",
+      "source_retrieval": {
+        "catalog_page_retrieved": true,
+        "stored_image_web_retriever": "web_retriever_internal_error",
+        "browser_http_status": null,
+        "browser_natural_width": null,
+        "browser_natural_height": null,
+        "browser_cold_transfer_bytes": null,
+        "visitor_broken": null
+      },
+      "rights_state": "REVIEW_REQUIRED",
+      "binary_hash_match": null,
+      "derivative_asset_url": null,
+      "wordpress_publish_approved": false
+    },
+    {
+      "key": "434:5",
+      "stored_src": "https://images-assets.nasa.gov/image/KSC-20170124-PH_KLS01_0090/KSC-20170124-PH_KLS01_0090~large.jpg",
+      "nasa_id": "KSC-20170124-PH_KLS01_0090",
+      "nasa_catalog_url": "https://www.nasa.gov/image-detail/amf-ksc-20170124-ph_kls01_0090/",
+      "publisher_metadata_native_dimensions": [
+        1280,
+        1920
+      ],
+      "stored_html_dimensions": [
+        1280,
+        1920
+      ],
+      "conditional_preview_dimensions": [
+        960,
+        1440
+      ],
+      "caption_credit": "NASA / Kim Shiflett",
+      "subject": "Redesigned Apollo hatch tribute, photographed January 24, 2017",
+      "source_retrieval": {
+        "catalog_page_retrieved": true,
+        "stored_image_web_retriever": "web_retriever_internal_error",
+        "browser_http_status": null,
+        "browser_natural_width": null,
+        "browser_natural_height": null,
+        "browser_cold_transfer_bytes": null,
+        "visitor_broken": null
+      },
+      "rights_state": "REVIEW_REQUIRED",
+      "binary_hash_match": null,
+      "derivative_asset_url": null,
+      "wordpress_publish_approved": false
+    }
+  ],
+  "release": {
+    "wordPress_writes": 0,
+    "asset_downloads": 0,
+    "third_party_caches": 0,
+    "production_repairs": 0,
+    "homepage_design_changes": 0,
+    "subscription_spend_usd": 0
+  }
+}

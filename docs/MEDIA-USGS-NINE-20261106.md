@@ -1,0 +1,11 @@
+# Nine original USGS image sources: independent verification (2026-11-06)
+
+**Read-only finding:** For eight images in Final Vestige post 407 (Hebgen Lake) and one in post 418 (1946 Hilo tsunami), verified nine USGS primary-source catalog pages. Every page labels its photograph **Public Domain** and links an **Original** image that **rendered** in the independent web image retriever. Seven of those links are exactly the same URL as the stored WordPress image source. Eight stored sources rendered in the retriever. These are **not** real guest-browser origin HTTP/network statuses.
+
+**407:1 anomaly:** The stored source `s3fs-public/img7535.jpg` returned an **unsupported octet-stream/binary wrapper**; the USGS catalog's original `s3fs-public/thumbnails/image/img7535.jpg` rendered. It is NOT a confirmed visitor-facing HTTP 400 or broken image. Site QA PR #154 should inspect that one in its existing browser collector before any replacement. **418:5** uses a different `styles/full_width` derivative URL than the USGS Original; **both rendered**, so do not swap unnecessarily.
+
+Credits/chronology: **J. R. Stacy** (407:1); **Professor William B. Hall** (407:2, August 21 1959); **Mrs. Steven W. Nile** (407:3, October 18 1959); **John Brandow** (407:6, 1970 photograph, *not* 1959); **Mike Poland** (407:7, 2023 photograph); Hilo 1946 photographer **unknown**. The erupting Sapphire Pool of 1959 is not interchangeable with a current quiet-pool photograph.
+
+The machine audit contains nine exact stored/canonical URLs, retriever outcomes, item-level Public Domain labels, credits, HOLD flags, and null **actual-browser statuses and transfer bytes**. Three posts' images have stored HTML dimensions yielding **conditional 960×674**, **960×684**, and **960×723** previews (407:2/3/7). These ratios are not natural image pixel measurements. The other six lack verified pixel sizes; no automatic enlargement, caching, or WordPress writes permitted. Staging only after observed browser failure, item-level rights/identity and image/caption comparison.
+
+Historical 61 posts/355 image slots; current 66 posts/361 slots. **Reported 42 broken unverified; 76% reduction unmeasured; 13 oversized WP originals totaling 43,522,829 stored bytes, not visitor network bytes.** No production image changed.

@@ -1,0 +1,634 @@
+{
+  "schema": "fv-media-navy-fifteen-v1",
+  "as_of_local": "2026-11-06",
+  "method": "Current WordPress posts.get(edit) read-only plus Naval History and Heritage Command official catalog search-result records; no public guest-browser network capture",
+  "articles": [
+    {
+      "post_id": 274,
+      "post_url": "https://finalvestige.com/2026/08/19/twenty-four-feet-from-air-uss-tang/",
+      "last_modified": "2026-11-02T21:39:50",
+      "published_image_count": 7,
+      "navy_image_count": 3
+    },
+    {
+      "post_id": 280,
+      "post_url": "https://finalvestige.com/2026/08/19/the-sledgehammers-broke-first-uss-pueblo/",
+      "last_modified": "2026-11-02T21:39:55",
+      "published_image_count": 6,
+      "navy_image_count": 6
+    },
+    {
+      "post_id": 288,
+      "post_url": "https://finalvestige.com/2026/08/19/the-bearing-was-right-honda-point/",
+      "last_modified": "2026-08-19T14:37:40",
+      "published_image_count": 6,
+      "navy_image_count": 2
+    },
+    {
+      "post_id": 370,
+      "post_url": "https://finalvestige.com/2026/08/19/the-lines-were-in-the-fire-west-loch/",
+      "last_modified": "2026-11-02T21:40:07",
+      "published_image_count": 8,
+      "navy_image_count": 4
+    }
+  ],
+  "records": [
+    {
+      "key": "274:1",
+      "post_id": 274,
+      "post_url": "https://finalvestige.com/2026/08/19/twenty-four-feet-from-air-uss-tang/",
+      "published_src": "https://www.history.navy.mil/content/history/nhhc/research/library/online-reading-room/title-list-alphabetically/u/united-states-submarine-losses/tang-ss-306/_jcr_content/body/media_asset_3/image.img.jpg/1485804525424.jpg",
+      "published_alt": "Richard O'Kane with twenty-two American aircrewmen rescued by USS Tang off Truk in May 1944.",
+      "published_width": null,
+      "published_height": null,
+      "source_catalog": {
+        "review": "PHOTO_ITEM_IDENTITY_PENDING",
+        "accession": null,
+        "url": null,
+        "high_master_pixels": null,
+        "credit": null,
+        "identity_and_chronology_note": "Navy-hosted URL but no individually verified catalog item identity",
+        "variant_masters": []
+      },
+      "guest_browser": {
+        "http_status": null,
+        "current_src": null,
+        "natural_width": null,
+        "natural_height": null,
+        "encoded_bytes": null,
+        "broken": null
+      },
+      "safe_960px_preview_candidate": null,
+      "rights": {
+        "status": "HOLD_ITEM_LEVEL",
+        "permission_to_cache": false,
+        "permission_to_rehost": false,
+        "attribution_review_required": true
+      },
+      "word_press_write_authorized": false
+    },
+    {
+      "key": "274:2",
+      "post_id": 274,
+      "post_url": "https://finalvestige.com/2026/08/19/twenty-four-feet-from-air-uss-tang/",
+      "published_src": "https://www.history.navy.mil/content/history/nhhc/browse-by-topic/exploration-and-innovation/navy-torpedoes/_jcr_content/body/media_asset_1279725910/image.img.jpg/1701176168705.jpg",
+      "published_alt": "Mark 18-2 electric submarine torpedo photographed by the U.S. Navy during World War II.",
+      "published_width": null,
+      "published_height": null,
+      "source_catalog": {
+        "review": "PHOTO_ITEM_IDENTITY_PENDING",
+        "accession": null,
+        "url": null,
+        "high_master_pixels": null,
+        "credit": null,
+        "identity_and_chronology_note": "Navy-hosted URL but no individually verified catalog item identity",
+        "variant_masters": []
+      },
+      "guest_browser": {
+        "http_status": null,
+        "current_src": null,
+        "natural_width": null,
+        "natural_height": null,
+        "encoded_bytes": null,
+        "broken": null
+      },
+      "safe_960px_preview_candidate": null,
+      "rights": {
+        "status": "HOLD_ITEM_LEVEL",
+        "permission_to_cache": false,
+        "permission_to_rehost": false,
+        "attribution_review_required": true
+      },
+      "word_press_write_authorized": false
+    },
+    {
+      "key": "274:4",
+      "post_id": 274,
+      "post_url": "https://finalvestige.com/2026/08/19/twenty-four-feet-from-air-uss-tang/",
+      "published_src": "https://www.history.navy.mil/bin/imageDownload?image=%2Fcontent%2Fdam%2Fmuseums%2Fnmusn%2FPhotography%2FNARA+II%2F80-G%2F80-G-300000%2F80-G-344565.tif&rendition=cq5dam.web.1280.1280.jpeg",
+      "published_alt": "USS Tang commander Richard O'Kane after liberation from Japanese captivity in September 1945.",
+      "published_width": null,
+      "published_height": null,
+      "source_catalog": {
+        "review": "ITEM_IDENTIFIED_ON_OFFICIAL_NHHC_CATALOG_PAGE_BINARY_MATCH_UNCHECKED",
+        "accession": "80-G-344565",
+        "url": "https://www.history.navy.mil/content/history/museums/nmusn/explore/photography/wwii/wwii-pacific/japanese-surrender/allied-prisoners-of-war/80-g-344565.html",
+        "high_master_pixels": {
+          "width": 1464,
+          "height": 1938
+        },
+        "credit": "Official U.S. Navy; National Archives",
+        "identity_and_chronology_note": "1945 freed POW Richard O'Kane portrait, not sinking-day image",
+        "variant_masters": []
+      },
+      "guest_browser": {
+        "http_status": null,
+        "current_src": null,
+        "natural_width": null,
+        "natural_height": null,
+        "encoded_bytes": null,
+        "broken": null
+      },
+      "safe_960px_preview_candidate": {
+        "width": 960,
+        "height": 1271,
+        "derived_from": "official_high_resolution_catalog_entry",
+        "not_actual_download_dimensions": true
+      },
+      "rights": {
+        "status": "HOLD_ITEM_LEVEL",
+        "permission_to_cache": false,
+        "permission_to_rehost": false,
+        "attribution_review_required": true
+      },
+      "word_press_write_authorized": false
+    },
+    {
+      "key": "280:0",
+      "post_id": 280,
+      "post_url": "https://finalvestige.com/2026/08/19/the-sledgehammers-broke-first-uss-pueblo/",
+      "published_src": "https://www.history.navy.mil/content/history/museums/nmusn/explore/photography/ships-us/ships-usn-p/uss-pueblo-ager-2/428-gx-usn-1129207/_jcr_content/mediaitem/image.img.jpg/1504112093611.jpg",
+      "published_alt": "USS Pueblo underway off San Diego in October 1967, three months before its capture by North Korea.",
+      "published_width": null,
+      "published_height": null,
+      "source_catalog": {
+        "review": "ITEM_IDENTIFIED_ON_OFFICIAL_NHHC_CATALOG_PAGE_BINARY_MATCH_UNCHECKED",
+        "accession": "428-GX-USN-1129207",
+        "url": "https://www.history.navy.mil/content/history/museums/nmusn/explore/photography/ships-us/ships-usn-p/uss-pueblo-ager-2/428-gx-usn-1129207.html",
+        "high_master_pixels": {
+          "width": 3263,
+          "height": 2244
+        },
+        "credit": "Official U.S. Navy; PHCS J. M. Lahr; National Archives",
+        "identity_and_chronology_note": "Pueblo at San Diego on 1967-10-19",
+        "variant_masters": []
+      },
+      "guest_browser": {
+        "http_status": null,
+        "current_src": null,
+        "natural_width": null,
+        "natural_height": null,
+        "encoded_bytes": null,
+        "broken": null
+      },
+      "safe_960px_preview_candidate": {
+        "width": 960,
+        "height": 660,
+        "derived_from": "official_high_resolution_catalog_entry",
+        "not_actual_download_dimensions": true
+      },
+      "rights": {
+        "status": "HOLD_ITEM_LEVEL",
+        "permission_to_cache": false,
+        "permission_to_rehost": false,
+        "attribution_review_required": true
+      },
+      "word_press_write_authorized": false
+    },
+    {
+      "key": "280:1",
+      "post_id": 280,
+      "post_url": "https://finalvestige.com/2026/08/19/the-sledgehammers-broke-first-uss-pueblo/",
+      "published_src": "https://www.history.navy.mil/content/history/nhhc/research/histories/ship-histories/danfs/p/pueblo-iii/_jcr_content/body/media_asset_1086930325/image.img.jpg/1514467381634.jpg",
+      "published_alt": "A USS Pueblo sailor drawing coffee in the ship's mess during 1967.",
+      "published_width": null,
+      "published_height": null,
+      "source_catalog": {
+        "review": "PHOTO_ITEM_IDENTITY_PENDING",
+        "accession": null,
+        "url": null,
+        "high_master_pixels": null,
+        "credit": null,
+        "identity_and_chronology_note": "Navy-hosted URL but no individually verified catalog item identity",
+        "variant_masters": []
+      },
+      "guest_browser": {
+        "http_status": null,
+        "current_src": null,
+        "natural_width": null,
+        "natural_height": null,
+        "encoded_bytes": null,
+        "broken": null
+      },
+      "safe_960px_preview_candidate": null,
+      "rights": {
+        "status": "HOLD_ITEM_LEVEL",
+        "permission_to_cache": false,
+        "permission_to_rehost": false,
+        "attribution_review_required": true
+      },
+      "word_press_write_authorized": false
+    },
+    {
+      "key": "280:2",
+      "post_id": 280,
+      "post_url": "https://finalvestige.com/2026/08/19/the-sledgehammers-broke-first-uss-pueblo/",
+      "published_src": "https://www.history.navy.mil/bin/imageDownload?image=%2Fcontent%2Fdam%2Fnhhc%2Four-collections%2Fphotography%2Fimages%2FNH+75000%2FNH+75561&rendition=cq5dam.web.1280.1280.jpeg",
+      "published_alt": "Interior mess and living space aboard USS Pueblo before the 1968 seizure.",
+      "published_width": null,
+      "published_height": null,
+      "source_catalog": {
+        "review": "ITEM_IDENTIFIED_ON_OFFICIAL_NHHC_CATALOG_PAGE_BINARY_MATCH_UNCHECKED",
+        "accession": "NH 75561",
+        "url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/NH-75000/NH-75561.html",
+        "high_master_pixels": null,
+        "credit": "NHHC",
+        "identity_and_chronology_note": "Pueblo 1967 mess, 1280x1280 medium is rendition bound, not true aspect",
+        "variant_masters": []
+      },
+      "guest_browser": {
+        "http_status": null,
+        "current_src": null,
+        "natural_width": null,
+        "natural_height": null,
+        "encoded_bytes": null,
+        "broken": null
+      },
+      "safe_960px_preview_candidate": null,
+      "rights": {
+        "status": "HOLD_ITEM_LEVEL",
+        "permission_to_cache": false,
+        "permission_to_rehost": false,
+        "attribution_review_required": true
+      },
+      "word_press_write_authorized": false
+    },
+    {
+      "key": "280:3",
+      "post_id": 280,
+      "post_url": "https://finalvestige.com/2026/08/19/the-sledgehammers-broke-first-uss-pueblo/",
+      "published_src": "https://www.history.navy.mil/content/history/nhhc/our-collections/photography/numerical-list-of-images/nara-series/80-g-k/80-G-K-60000/K-64683/_jcr_content/mediaitem/image.img.jpg/1459314791691.jpg",
+      "published_alt": "Released USS Pueblo crewmen at Panmunjom in December 1968.",
+      "published_width": null,
+      "published_height": null,
+      "source_catalog": {
+        "review": "ITEM_IDENTIFIED_ON_OFFICIAL_NHHC_CATALOG_PAGE_BINARY_MATCH_UNCHECKED",
+        "accession": "K-64683",
+        "url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nara-series/80-g-k/80-G-K-60000/K-64683.html",
+        "high_master_pixels": {
+          "width": 6184,
+          "height": 4978
+        },
+        "credit": "Official U.S. Navy",
+        "identity_and_chronology_note": "One released sailor checking in at Korean DMZ, 1968-12-23",
+        "variant_masters": []
+      },
+      "guest_browser": {
+        "http_status": null,
+        "current_src": null,
+        "natural_width": null,
+        "natural_height": null,
+        "encoded_bytes": null,
+        "broken": null
+      },
+      "safe_960px_preview_candidate": {
+        "width": 960,
+        "height": 773,
+        "derived_from": "official_high_resolution_catalog_entry",
+        "not_actual_download_dimensions": true
+      },
+      "rights": {
+        "status": "HOLD_ITEM_LEVEL",
+        "permission_to_cache": false,
+        "permission_to_rehost": false,
+        "attribution_review_required": true
+      },
+      "word_press_write_authorized": false
+    },
+    {
+      "key": "280:4",
+      "post_id": 280,
+      "post_url": "https://finalvestige.com/2026/08/19/the-sledgehammers-broke-first-uss-pueblo/",
+      "published_src": "https://www.history.navy.mil/content/history/nhhc/research/histories/ship-histories/danfs/b/banner-ii/_jcr_content/body/media_asset/image.img.jpg",
+      "published_alt": "USS Banner, sister ship of USS Pueblo, after the Pueblo incident prompted changes to the intelligence-ship program.",
+      "published_width": null,
+      "published_height": null,
+      "source_catalog": {
+        "review": "PHOTO_ITEM_IDENTITY_PENDING",
+        "accession": null,
+        "url": null,
+        "high_master_pixels": null,
+        "credit": null,
+        "identity_and_chronology_note": "Navy-hosted URL but no individually verified catalog item identity",
+        "variant_masters": []
+      },
+      "guest_browser": {
+        "http_status": null,
+        "current_src": null,
+        "natural_width": null,
+        "natural_height": null,
+        "encoded_bytes": null,
+        "broken": null
+      },
+      "safe_960px_preview_candidate": null,
+      "rights": {
+        "status": "HOLD_ITEM_LEVEL",
+        "permission_to_cache": false,
+        "permission_to_rehost": false,
+        "attribution_review_required": true
+      },
+      "word_press_write_authorized": false
+    },
+    {
+      "key": "280:5",
+      "post_id": 280,
+      "post_url": "https://finalvestige.com/2026/08/19/the-sledgehammers-broke-first-uss-pueblo/",
+      "published_src": "https://www.history.navy.mil/content/history/nhhc/our-collections/photography/numerical-list-of-images/nara-series/80-g-k/80-G-K-60000/K-64728/_jcr_content/mediaitem/image.img.jpg/1424360116159.jpg",
+      "published_alt": "USS Pueblo crewmen eating after their release from North Korean captivity in December 1968.",
+      "published_width": null,
+      "published_height": null,
+      "source_catalog": {
+        "review": "ITEM_IDENTIFIED_ON_OFFICIAL_NHHC_CATALOG_PAGE_BINARY_MATCH_UNCHECKED",
+        "accession": "K-64728",
+        "url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nara-series/80-g-k/80-G-K-60000/K-64728.html",
+        "high_master_pixels": null,
+        "credit": "Official U.S. Navy",
+        "identity_and_chronology_note": "Crew eating at UN advance camp on 1968-12-23",
+        "variant_masters": []
+      },
+      "guest_browser": {
+        "http_status": null,
+        "current_src": null,
+        "natural_width": null,
+        "natural_height": null,
+        "encoded_bytes": null,
+        "broken": null
+      },
+      "safe_960px_preview_candidate": null,
+      "rights": {
+        "status": "HOLD_ITEM_LEVEL",
+        "permission_to_cache": false,
+        "permission_to_rehost": false,
+        "attribution_review_required": true
+      },
+      "word_press_write_authorized": false
+    },
+    {
+      "key": "288:0",
+      "post_id": 288,
+      "post_url": "https://finalvestige.com/2026/08/19/the-bearing-was-right-honda-point/",
+      "published_src": "https://www.history.navy.mil/content/history/nhhc/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/NH-69000/NH-69586/_jcr_content/mediaitem/image.img.jpg/1438378291110.jpg",
+      "published_alt": "U.S. Navy destroyers wrecked along the California coast at Honda Point after the September 8, 1923 disaster.",
+      "published_width": null,
+      "published_height": null,
+      "source_catalog": {
+        "review": "ITEM_IDENTIFIED_ON_OFFICIAL_NHHC_CATALOG_PAGE_BINARY_MATCH_UNCHECKED",
+        "accession": "NH 69586",
+        "url": "https://www.history.navy.mil/content/history/nhhc/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/NH-69000/NH-69586.html",
+        "high_master_pixels": {
+          "width": 6256,
+          "height": 4862
+        },
+        "credit": "Courtesy Naval Historical Foundation / Admiral William V. Pratt Collection",
+        "identity_and_chronology_note": "DONATED IMAGE: government host does not establish public domain",
+        "variant_masters": []
+      },
+      "guest_browser": {
+        "http_status": null,
+        "current_src": null,
+        "natural_width": null,
+        "natural_height": null,
+        "encoded_bytes": null,
+        "broken": null
+      },
+      "safe_960px_preview_candidate": {
+        "width": 960,
+        "height": 746,
+        "derived_from": "official_high_resolution_catalog_entry",
+        "not_actual_download_dimensions": true
+      },
+      "rights": {
+        "status": "HOLD_ITEM_LEVEL",
+        "permission_to_cache": false,
+        "permission_to_rehost": false,
+        "attribution_review_required": true
+      },
+      "word_press_write_authorized": false
+    },
+    {
+      "key": "288:2",
+      "post_id": 288,
+      "post_url": "https://finalvestige.com/2026/08/19/the-bearing-was-right-honda-point/",
+      "published_src": "https://www.history.navy.mil/content/history/nhhc/our-collections/photography/technology/communications/radio/ug-21--us-naval-california-radio-station-collection/mare-island-naval-radio-station/ug-21-01-02-mare-island-naval-radio/jcr%3Acontent/mediaitem/image.img.jpg/1564510769845.jpg",
+      "published_alt": "Early U.S. Navy radio station equipment in California, similar to the shore direction-finding infrastructure used in 1923.",
+      "published_width": null,
+      "published_height": null,
+      "source_catalog": {
+        "review": "PHOTO_ITEM_IDENTITY_PENDING",
+        "accession": null,
+        "url": null,
+        "high_master_pixels": null,
+        "credit": null,
+        "identity_and_chronology_note": "Navy-hosted URL but no individually verified catalog item identity",
+        "variant_masters": []
+      },
+      "guest_browser": {
+        "http_status": null,
+        "current_src": null,
+        "natural_width": null,
+        "natural_height": null,
+        "encoded_bytes": null,
+        "broken": null
+      },
+      "safe_960px_preview_candidate": null,
+      "rights": {
+        "status": "HOLD_ITEM_LEVEL",
+        "permission_to_cache": false,
+        "permission_to_rehost": false,
+        "attribution_review_required": true
+      },
+      "word_press_write_authorized": false
+    },
+    {
+      "key": "370:0",
+      "post_id": 370,
+      "post_url": "https://finalvestige.com/2026/08/19/the-lines-were-in-the-fire-west-loch/",
+      "published_src": "https://www.history.navy.mil/bin/imageDownload?image=%2Fcontent%2Fdam%2Fnhhc%2Four-collections%2Fphotography%2Fimages%2F80-G-270000%2F80-G-276907&rendition=cq5dam.web.1280.1280.jpeg",
+      "published_alt": "Aerial view of Pearl Harbor's West Loch on May 21, 1944, showing burning LSTs at berths T-8 and T-9 while other landing ships maneuver away.",
+      "published_width": null,
+      "published_height": null,
+      "source_catalog": {
+        "review": "ITEM_IDENTIFIED_ON_OFFICIAL_NHHC_CATALOG_PAGE_BINARY_MATCH_UNCHECKED",
+        "accession": "80-G-276907",
+        "url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nara-series/80-g/80-G-270000/80-G-276907.html",
+        "high_master_pixels": {
+          "width": 4320,
+          "height": 4530
+        },
+        "credit": "Official U.S. Navy; National Archives",
+        "identity_and_chronology_note": "Actual West Loch explosions, May 21 1944, not generic Pearl Harbor aerial",
+        "variant_masters": []
+      },
+      "guest_browser": {
+        "http_status": null,
+        "current_src": null,
+        "natural_width": null,
+        "natural_height": null,
+        "encoded_bytes": null,
+        "broken": null
+      },
+      "safe_960px_preview_candidate": {
+        "width": 960,
+        "height": 1007,
+        "derived_from": "official_high_resolution_catalog_entry",
+        "not_actual_download_dimensions": true
+      },
+      "rights": {
+        "status": "HOLD_ITEM_LEVEL",
+        "permission_to_cache": false,
+        "permission_to_rehost": false,
+        "attribution_review_required": true
+      },
+      "word_press_write_authorized": false
+    },
+    {
+      "key": "370:1",
+      "post_id": 370,
+      "post_url": "https://finalvestige.com/2026/08/19/the-lines-were-in-the-fire-west-loch/",
+      "published_src": "https://www.history.navy.mil/bin/imageDownload?image=%2Fcontent%2Fdam%2Fnhhc%2Four-collections%2Fphotography%2Fimages%2F80-G-200000%2F80-G-202485&rendition=cq5dam.web.1280.1280.jpeg",
+      "published_alt": "U.S. Marines wading ashore from USS LST-353 at Empress Augusta Bay, Bougainville, on November 6, 1943.",
+      "published_width": null,
+      "published_height": null,
+      "source_catalog": {
+        "review": "ITEM_IDENTIFIED_ON_OFFICIAL_NHHC_CATALOG_PAGE_BINARY_MATCH_UNCHECKED",
+        "accession": "80-G-202485",
+        "url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/80-G-202000/80-G-202485.html",
+        "high_master_pixels": null,
+        "credit": "Official U.S. Navy; National Archives",
+        "identity_and_chronology_note": "OFFICIAL CONFLICT: catalog high 5860x4890 vs museum high 2851x2280 (4.35% aspect drift); geometry HOLD",
+        "variant_masters": [
+          {
+            "catalog_url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/80-G-202000/80-G-202485.html",
+            "width": 5860,
+            "height": 4890
+          },
+          {
+            "catalog_url": "https://www.history.navy.mil/content/history/museums/nmusn/explore/photography/wwii/wwii-pacific/south-southwestern-pacific/bougainville-campaign/bougainville-land-campaign/80-g-202485.html",
+            "width": 2851,
+            "height": 2280
+          }
+        ]
+      },
+      "guest_browser": {
+        "http_status": null,
+        "current_src": null,
+        "natural_width": null,
+        "natural_height": null,
+        "encoded_bytes": null,
+        "broken": null
+      },
+      "safe_960px_preview_candidate": null,
+      "rights": {
+        "status": "HOLD_ITEM_LEVEL",
+        "permission_to_cache": false,
+        "permission_to_rehost": false,
+        "attribution_review_required": true
+      },
+      "word_press_write_authorized": false
+    },
+    {
+      "key": "370:3",
+      "post_id": 370,
+      "post_url": "https://finalvestige.com/2026/08/19/the-lines-were-in-the-fire-west-loch/",
+      "published_src": "https://www.history.navy.mil/bin/imageDownload?image=%2Fcontent%2Fdam%2Fnhhc%2Four-collections%2Fphotography%2Fimages%2F80-G-270000%2F80-G-276940&rendition=cq5dam.web.1280.1280.jpeg",
+      "published_alt": "Burned-out USS LST-39 grounded near the Pearl Harbor Naval Ammunition Depot on May 22, 1944.",
+      "published_width": null,
+      "published_height": null,
+      "source_catalog": {
+        "review": "ITEM_IDENTIFIED_ON_OFFICIAL_NHHC_CATALOG_PAGE_BINARY_MATCH_UNCHECKED",
+        "accession": "80-G-276940",
+        "url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nara-series/80-g/80-G-270000/80-G-276940.html",
+        "high_master_pixels": {
+          "width": 6254,
+          "height": 5002
+        },
+        "credit": "Official U.S. Navy; National Archives",
+        "identity_and_chronology_note": "LST-39 burned-out, photographed May 22, 1944",
+        "variant_masters": []
+      },
+      "guest_browser": {
+        "http_status": null,
+        "current_src": null,
+        "natural_width": null,
+        "natural_height": null,
+        "encoded_bytes": null,
+        "broken": null
+      },
+      "safe_960px_preview_candidate": {
+        "width": 960,
+        "height": 768,
+        "derived_from": "official_high_resolution_catalog_entry",
+        "not_actual_download_dimensions": true
+      },
+      "rights": {
+        "status": "HOLD_ITEM_LEVEL",
+        "permission_to_cache": false,
+        "permission_to_rehost": false,
+        "attribution_review_required": true
+      },
+      "word_press_write_authorized": false
+    },
+    {
+      "key": "370:4",
+      "post_id": 370,
+      "post_url": "https://finalvestige.com/2026/08/19/the-lines-were-in-the-fire-west-loch/",
+      "published_src": "https://www.history.navy.mil/bin/imageDownload?image=%2Fcontent%2Fdam%2Fnhhc%2Four-collections%2Fphotography%2Fimages%2FSC-400000%2FSC-427947&rendition=cq5dam.web.1280.1280.jpeg",
+      "published_alt": "Firefighters working aboard a destroyed landing ship in West Loch on the morning after the 1944 explosions.",
+      "published_width": null,
+      "published_height": null,
+      "source_catalog": {
+        "review": "ITEM_IDENTIFIED_ON_OFFICIAL_NHHC_CATALOG_PAGE_BINARY_MATCH_UNCHECKED",
+        "accession": "SC 427947",
+        "url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nara-series/sc-series/SC-400000/SC-427947.html",
+        "high_master_pixels": {
+          "width": 6084,
+          "height": 4942
+        },
+        "credit": "U.S. Army Signal Corps; National Archives",
+        "identity_and_chronology_note": "Fighting fires on May 22; CGC Woodbine probable, LST-480 tentative",
+        "variant_masters": []
+      },
+      "guest_browser": {
+        "http_status": null,
+        "current_src": null,
+        "natural_width": null,
+        "natural_height": null,
+        "encoded_bytes": null,
+        "broken": null
+      },
+      "safe_960px_preview_candidate": {
+        "width": 960,
+        "height": 780,
+        "derived_from": "official_high_resolution_catalog_entry",
+        "not_actual_download_dimensions": true
+      },
+      "rights": {
+        "status": "HOLD_ITEM_LEVEL",
+        "permission_to_cache": false,
+        "permission_to_rehost": false,
+        "attribution_review_required": true
+      },
+      "word_press_write_authorized": false
+    }
+  ],
+  "totals": {
+    "published_posts_examined": 4,
+    "navy_img_references": 15,
+    "official_catalog_accession_matches": 10,
+    "pending_individual_catalog_identity": 5,
+    "catalog_master_pixel_geometry_candidates": 7,
+    "conflicting_80_G_202485_high_res_variants": 2
+  },
+  "caveats": {
+    "visitor_confirmed_broken_images": null,
+    "reported_42_broken_images_unverified": true,
+    "claimed_76_percent_wire_reduction_unmeasured": true,
+    "production_images_repaired": 0,
+    "wordpress_writes": 0,
+    "third_party_image_downloads": 0,
+    "third_party_image_caches": 0,
+    "additional_spend_usd": 0
+  },
+  "official_archive_policy": "https://www.history.navy.mil/our-collections/photography.html",
+  "preview_policy": "max 960px wide, preserve actual source aspect, never upscale; catalogue master aspect is provisional, not binary-verified"
+}

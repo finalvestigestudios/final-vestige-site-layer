@@ -1,0 +1,22 @@
+'use strict';
+const assert=require('node:assert/strict'),test=require('node:test'),fs=require('node:fs');
+const {validate}=require('./validate_featured_plus_oversize_20261106.cjs');
+const seed=JSON.parse(fs.readFileSync(__dirname+'/featured_plus_oversize_20261106.json','utf8'));
+test('CMS snapshot passes',()=>assert.equal(validate(seed).ok,true,JSON.stringify(validate(seed).errors)));
+function reject(n,f){test(n,()=>{const d=JSON.parse(JSON.stringify(seed));f(d);assert.equal(validate(d).ok,false,n);});}
+reject('old 61 posts',x=>x.cohort.posts=61);
+reject('missing featured',x=>x.featured.pop());
+reject('duplicate featured',x=>x.featured[0].media_id=x.featured[1].media_id);
+reject('offsite substituted source',x=>x.featured[0].source_url='https://bad.example/i.jpg');
+reject('fake HTTP 404',x=>x.featured[0].guest_http_status=404);
+reject('fake cold bytes',x=>x.featured[0].cold_transfer_bytes=500);
+reject('fake broken total',x=>x.reported_42_broken_verified=true);
+reject('fake 76% saved',x=>x.reported_76pct_wire_saving_measured=true);
+reject('rights not cleared',x=>x.featured[0].rights_clearance='CLEARED');
+reject('CMS writes forbidden',x=>x.wordpress_writes=1);
+reject('960/no upscale',x=>x.featured[0].preview_max_width=961);
+reject('aspect-ratio guard',x=>x.featured[0].preview_height_at_max_width++);
+reject('oversize sum changed',x=>x.oversize[0].original_storage_bytes++);
+reject('featured relation removed',x=>x.oversize.find(y=>y.featured_on.length>0).featured_on=[]);
+reject('duplicate oversized',x=>x.oversize.push(JSON.parse(JSON.stringify(x.oversize[0]))));
+reject('fake guest placement',x=>x.featured[0].featured_metadata_only=false);
