@@ -1,0 +1,617 @@
+{
+  "milestone": "R199",
+  "date": "2026-11-07",
+  "lane": "Mind & Perception ONLY",
+  "state": "UNPUBLISHED_DRAFT_HARD_HOLD",
+  "base_sha": "7e9659abb6e9687f1be0d97c95c7e27231144736",
+  "branch": "mind-r199-wandering-mind-purchase-gates-20261107",
+  "main_offer": "Zen12 Premium conditional — not an active endorsement",
+  "seller_premium_price_observed_usd": 87.99,
+  "price_source": "Seller page 2026-11-07 only; not checkout-confirmed",
+  "merchant_offer_url_for_editorial_verification": "https://zen12.com/hnp",
+  "affiliate_earning_url": null,
+  "authoritative_affiliate_approval": null,
+  "approved_promotional_channels": null,
+  "approved_creatives": null,
+  "owned_payhip_mind_sku": null,
+  "verified_checkout": null,
+  "confirmed_jetpack_leads": null,
+  "grok_asset_ids": null,
+  "qualified_human_sessions": null,
+  "actual_paid_orders": null,
+  "received_commissions": null,
+  "refunds_fees": null,
+  "net_revenue_per_1000_qualified_humans": "NOT_COMPUTABLE",
+  "sources": [
+    {
+      "id": "killingsworth2010",
+      "type": "primary_abstract",
+      "url": "https://doi.org/10.1126/science.1192439",
+      "note": "Smartphone experience sampling; self-selected; associative"
+    },
+    {
+      "id": "smallwood2015",
+      "type": "research_review",
+      "url": "https://doi.org/10.1146/annurev-psych-010814-015331",
+      "note": "Mind-wandering includes costs and future planning"
+    },
+    {
+      "id": "maclean2010",
+      "type": "primary_full_text",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3132583/",
+      "note": "N=60 30/30 training-first wait-list comparison; 5h/day for 3 months"
+    },
+    {
+      "id": "mrazek2013",
+      "type": "primary_abstract",
+      "url": "https://doi.org/10.1177/0956797612459659",
+      "note": "Randomized 2-week mindfulness course; task-specific outcomes"
+    },
+    {
+      "id": "ingendoh2023",
+      "type": "systematic_review_full_text",
+      "url": "https://doi.org/10.1371/journal.pone.0286023",
+      "note": "14 EEG studies, inconsistent evidence"
+    },
+    {
+      "id": "farias2020",
+      "type": "systematic_review_full_text",
+      "url": "https://doi.org/10.1111/acps.13225",
+      "note": "83 studies, heterogeneous adverse-event reports"
+    },
+    {
+      "id": "zen12",
+      "type": "official_seller",
+      "url": "https://zen12.com/hnp",
+      "note": "Seller-page specifications, displayed Premium offer and one-year guarantee; checkout untested"
+    },
+    {
+      "id": "inspire3",
+      "type": "official_seller",
+      "url": "https://inspire3.com/",
+      "note": "Catalog, Zen12 brand"
+    },
+    {
+      "id": "inspire3_affiliates",
+      "type": "official_partner_public",
+      "url": "https://affiliates.inspire3.com/",
+      "note": "Public signup, not publisher approval, payout claims not FV terms"
+    },
+    {
+      "id": "ftc_endorse",
+      "type": "regulatory_guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "note": "Clear/conspicuous disclosure adjacent to endorsement"
+    },
+    {
+      "id": "ftc_health",
+      "type": "regulatory_guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "note": "Product claims require adequate substantiation"
+    },
+    {
+      "id": "focus_live",
+      "type": "fv_live",
+      "url": "https://finalvestige.com/focus/",
+      "note": "52-page fieldbook public; no authoritative subscriber confirmation inferred"
+    },
+    {
+      "id": "puysegur",
+      "type": "fv_live_historical",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "note": "Historically grounded record, not clinical trial"
+    },
+    {
+      "id": "mesmerism",
+      "type": "fv_live",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "note": "Published historical article; reported live route in earlier evidence"
+    },
+    {
+      "id": "change_blindness",
+      "type": "fv_live",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "note": "Published article; verify live before release"
+    },
+    {
+      "id": "issue171",
+      "type": "internal_governance",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "note": "Main Mind editorial governance"
+    },
+    {
+      "id": "issue820",
+      "type": "internal_governance",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "note": "Conversion and human-traffic provenance"
+    },
+    {
+      "id": "praxxis_r197",
+      "type": "independent_qa_comment",
+      "url": "https://docs.google.com/document/d/1uK7cZdMv44dkKwDDGILUTCrI2zw3iA0cN5VzdLmF5C8/edit",
+      "note": "Independent review: Marian quiet/noise; Feng r² and heredity caution"
+    },
+    {
+      "id": "praxxis_r198",
+      "type": "independent_qa_comment",
+      "url": "https://docs.google.com/document/d/1uK7cZdMv44dkKwDDGILUTCrI2zw3iA0cN5VzdLmF5C8/edit",
+      "note": "Independent review: Chee subset; Basu CI heterogeneity"
+    },
+    {
+      "id": "basu2023",
+      "type": "meta_analysis",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35842538/",
+      "note": "Pooled effect .4033, confidence interval and heterogeneity from reviewer full-text audit"
+    },
+    {
+      "id": "chee2024",
+      "type": "systematic_review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38458383/",
+      "note": "31 auditory-modality studies; one binaural-beat study"
+    }
+  ],
+  "claims": [
+    {
+      "id": "wandering_assoc",
+      "statement": "Mind-wandering associated with lower momentary self-rated happiness",
+      "source_ids": [
+        "killingsworth2010"
+      ],
+      "decision": "SUPPORTED_ASSOCIATION_NOT_CAUSAL",
+      "limits": "Self-selecting smartphone sample; no treatment"
+    },
+    {
+      "id": "wandering_benefit",
+      "statement": "Mind-wandering may have some future-planning/creative functions",
+      "source_ids": [
+        "smallwood2015"
+      ],
+      "decision": "SUPPORTED_AS_REVIEW",
+      "limits": "Not every wandering thought is productive"
+    },
+    {
+      "id": "meditation_3m",
+      "statement": "Training-first 30 vs wait-list 30 approx 5h/day x3 months",
+      "source_ids": [
+        "maclean2010"
+      ],
+      "decision": "SUPPORTED_AS_PRIMARY_TRIAL",
+      "limits": "Not a 12-minute branded audio trial"
+    },
+    {
+      "id": "lab_vigilance",
+      "statement": "Selected sustained-attention and discrimination outcomes improved",
+      "source_ids": [
+        "maclean2010"
+      ],
+      "decision": "SUPPORTED_SPECIFIC_ENDPOINT",
+      "limits": "Not proof of generalized health outcomes"
+    },
+    {
+      "id": "meditation_2w",
+      "statement": "Two-week mindfulness course studied in randomized design",
+      "source_ids": [
+        "mrazek2013"
+      ],
+      "decision": "SUPPORTED_AS_ABSTRACT",
+      "limits": "Course differs from passive MP3"
+    },
+    {
+      "id": "mrazek_results",
+      "statement": "GRE/working-memory measures improved; distracting thoughts decreased",
+      "source_ids": [
+        "mrazek2013"
+      ],
+      "decision": "SUPPORTED_SPECIFIC_ENDPOINT",
+      "limits": "Study does not establish commercial-recording efficacy"
+    },
+    {
+      "id": "brain_entrain_eeg",
+      "statement": "2023 EEG systematic review finds inconsistent entrainment",
+      "source_ids": [
+        "ingendoh2023"
+      ],
+      "decision": "SUPPORTED_AS_REVIEW",
+      "limits": "Mechanism review does not test product enjoyment"
+    },
+    {
+      "id": "meditation_adverse",
+      "statement": "Unwanted experiences may occur in meditation research",
+      "source_ids": [
+        "farias2020"
+      ],
+      "decision": "SUPPORTED_WITH_CAUTION",
+      "limits": "Reported adverse events and prevalence vary substantially by design"
+    },
+    {
+      "id": "zen12_12levels",
+      "statement": "Premium marketed as twelve levels",
+      "source_ids": [
+        "zen12"
+      ],
+      "decision": "SELLER_ONLY",
+      "limits": "No fulfillment verified"
+    },
+    {
+      "id": "zen12_48mp3",
+      "statement": "Premium seller advertises 48 MP3 recordings",
+      "source_ids": [
+        "zen12"
+      ],
+      "decision": "SELLER_ONLY",
+      "limits": "No content delivery verified"
+    },
+    {
+      "id": "zen12_4styles",
+      "statement": "Four listed styles: guided/music/nature/white noise",
+      "source_ids": [
+        "zen12"
+      ],
+      "decision": "SELLER_ONLY",
+      "limits": "Exact files not tested"
+    },
+    {
+      "id": "zen12_12minutes",
+      "statement": "Seller advertises 12-minute sessions",
+      "source_ids": [
+        "zen12"
+      ],
+      "decision": "SELLER_ONLY",
+      "limits": "Timing of product not independently timed"
+    },
+    {
+      "id": "zen12_guarantee",
+      "statement": "One-year money-back guarantee advertised",
+      "source_ids": [
+        "zen12"
+      ],
+      "decision": "SELLER_ONLY",
+      "limits": "Real refund process/terms untested"
+    },
+    {
+      "id": "zen12_price_page",
+      "statement": "Page showed $87.99 promotional Premium figure Nov 7 2026",
+      "source_ids": [
+        "zen12"
+      ],
+      "decision": "SELLER_DISPLAYED_UNCONFIRMED_CHECKOUT",
+      "limits": "Not enduring offer, taxes, fees, region or settled charge"
+    },
+    {
+      "id": "zen12_equiv",
+      "statement": "Twelve minutes is scientifically equivalent to one hour advanced meditation",
+      "source_ids": [
+        "zen12"
+      ],
+      "decision": "EXCLUDE_UNSUBSTANTIATED",
+      "limits": "No validated equivalence outcome/brand trial"
+    },
+    {
+      "id": "zen12_auto",
+      "statement": "Brain automatically enters deep meditation from recording",
+      "source_ids": [
+        "zen12"
+      ],
+      "decision": "EXCLUDE_UNSUBSTANTIATED",
+      "limits": "No brand-specific mechanistic evidence"
+    },
+    {
+      "id": "zen12_health",
+      "statement": "Zen12 improves physical/mental health or anxiety",
+      "source_ids": [
+        "zen12",
+        "ftc_health"
+      ],
+      "decision": "EXCLUDE_UNSUBSTANTIATED",
+      "limits": "Proportionate product-specific proof absent"
+    },
+    {
+      "id": "zen12_focus",
+      "statement": "Zen12 Premium specifically improves concentration",
+      "source_ids": [
+        "zen12",
+        "maclean2010"
+      ],
+      "decision": "EXCLUDE_UNSUBSTANTIATED",
+      "limits": "MacLean tested intensive training not this MP3"
+    },
+    {
+      "id": "inspire3_public",
+      "statement": "An Inspire3 public affiliate signup portal exists",
+      "source_ids": [
+        "inspire3_affiliates"
+      ],
+      "decision": "SUPPORTED_PUBLIC",
+      "limits": "Not account acceptance"
+    },
+    {
+      "id": "inspire3_approved",
+      "statement": "Final Vestige individually approved for Inspire3",
+      "source_ids": [
+        "inspire3_affiliates",
+        "issue171"
+      ],
+      "decision": "UNKNOWN_HARD_HOLD",
+      "limits": "Require authenticated publisher approval and permitted channels"
+    },
+    {
+      "id": "inspire3_url",
+      "statement": "Account-issued trackable affiliate URL exists",
+      "source_ids": [
+        "inspire3_affiliates"
+      ],
+      "decision": "UNKNOWN_HARD_HOLD",
+      "limits": "Do not invent earning links"
+    },
+    {
+      "id": "inspire3_terms",
+      "statement": "Commission/net payout terms apply to this publisher",
+      "source_ids": [
+        "inspire3_affiliates"
+      ],
+      "decision": "UNKNOWN_HARD_HOLD",
+      "limits": "Public program claims not individual account terms"
+    },
+    {
+      "id": "verified_creatives",
+      "statement": "Creative/swipe rights granted to Final Vestige",
+      "source_ids": [
+        "inspire3_affiliates"
+      ],
+      "decision": "UNKNOWN_HARD_HOLD",
+      "limits": "No reuse of merchant ads without permission"
+    },
+    {
+      "id": "merchant_checkout",
+      "statement": "Final consumer totals/returns tested and satisfactory",
+      "source_ids": [
+        "zen12"
+      ],
+      "decision": "UNKNOWN_HARD_HOLD",
+      "limits": "No authenticated checkout/returns verification"
+    },
+    {
+      "id": "fv_owned",
+      "statement": "Eligible rights-cleared FV-owned Payhip Mind SKU exists",
+      "source_ids": [
+        "issue171",
+        "issue820"
+      ],
+      "decision": "UNKNOWN_HARD_HOLD",
+      "limits": "Authenticate SKU/rights/download/checkout before alternate pilot"
+    },
+    {
+      "id": "focus_view",
+      "statement": "Visible download means confirmed Jetpack subscription",
+      "source_ids": [
+        "focus_live",
+        "issue820"
+      ],
+      "decision": "REJECT_INFERENCE",
+      "limits": "Client-side state is not authoritative subscriber confirmation"
+    },
+    {
+      "id": "focus_confirmed",
+      "statement": "Confirmed Jetpack subscriber attributed to current cohort",
+      "source_ids": [
+        "focus_live",
+        "issue820"
+      ],
+      "decision": "UNKNOWN",
+      "limits": "Requires authoritative consent-safe confirmation"
+    },
+    {
+      "id": "grok_ids",
+      "statement": "Three published Grok asset IDs and approved target URLs verified",
+      "source_ids": [
+        "issue820"
+      ],
+      "decision": "UNKNOWN",
+      "limits": "Do not invent media URLs/asset IDs"
+    },
+    {
+      "id": "human_sessions",
+      "statement": "Qualified human traffic denominator verified",
+      "source_ids": [
+        "issue820"
+      ],
+      "decision": "UNKNOWN",
+      "limits": "Views not unique qualified human sessions"
+    },
+    {
+      "id": "affiliate_outbound",
+      "statement": "Affiliate click = paid sale",
+      "source_ids": [
+        "issue820"
+      ],
+      "decision": "REJECT_INFERENCE",
+      "limits": "Separate events and merchant verified conversion"
+    },
+    {
+      "id": "paid_orders",
+      "statement": "Net revenue from real paid orders reconciled",
+      "source_ids": [
+        "issue820"
+      ],
+      "decision": "UNKNOWN",
+      "limits": "Orders, fees, refunds, payouts absent"
+    },
+    {
+      "id": "ftc_adjacent",
+      "statement": "Disclose prospective financial connection next to earning CTA",
+      "source_ids": [
+        "ftc_endorse"
+      ],
+      "decision": "REQUIRED_TEST",
+      "limits": "Visible plain-language disclosure, not only footer"
+    },
+    {
+      "id": "ftc_healthy",
+      "statement": "Health outcome claims supported by precise product evidence",
+      "source_ids": [
+        "ftc_health"
+      ],
+      "decision": "REQUIRED_TEST",
+      "limits": "Withhold unsupported health promises"
+    },
+    {
+      "id": "ab_lift",
+      "statement": "Optional film B improves net revenue vs A",
+      "source_ids": [
+        "issue820"
+      ],
+      "decision": "UNTESTED_HYPOTHESIS",
+      "limits": "Both variants unpublished/disabled; no traffic test"
+    }
+  ],
+  "gates": [
+    {
+      "id": "authoritative_inspire3_publisher_acceptance",
+      "passed": false,
+      "evidence": null
+    },
+    {
+      "id": "approved_promotional_channels",
+      "passed": false,
+      "evidence": null
+    },
+    {
+      "id": "assigned_earning_link",
+      "passed": false,
+      "evidence": null
+    },
+    {
+      "id": "verified_tracking_terms",
+      "passed": false,
+      "evidence": null
+    },
+    {
+      "id": "rights_to_approved_creatives",
+      "passed": false,
+      "evidence": null
+    },
+    {
+      "id": "checkout_total_and_currency",
+      "passed": false,
+      "evidence": null
+    },
+    {
+      "id": "verified_refund_terms",
+      "passed": false,
+      "evidence": null
+    },
+    {
+      "id": "product_specific_efficacy_review",
+      "passed": false,
+      "evidence": null
+    },
+    {
+      "id": "founder_commercial_release_approval",
+      "passed": false,
+      "evidence": null
+    },
+    {
+      "id": "founder_wordpress_release_approval",
+      "passed": false,
+      "evidence": null
+    },
+    {
+      "id": "accessible_browser_360",
+      "passed": false,
+      "evidence": null
+    },
+    {
+      "id": "accessible_browser_390",
+      "passed": false,
+      "evidence": null
+    },
+    {
+      "id": "accessible_browser_768",
+      "passed": false,
+      "evidence": null
+    },
+    {
+      "id": "accessible_browser_1440",
+      "passed": false,
+      "evidence": null
+    },
+    {
+      "id": "screen_reader_review",
+      "passed": false,
+      "evidence": null
+    },
+    {
+      "id": "native_node_tests",
+      "passed": false,
+      "evidence": null
+    },
+    {
+      "id": "hosted_ci_checks",
+      "passed": false,
+      "evidence": null
+    },
+    {
+      "id": "mobile_cwv_lighthouse",
+      "passed": false,
+      "evidence": null
+    },
+    {
+      "id": "original_film_rendered_and_captioned",
+      "passed": false,
+      "evidence": null
+    },
+    {
+      "id": "media_and_voice_rights_verified",
+      "passed": false,
+      "evidence": null
+    },
+    {
+      "id": "single_jetpack_flow_confirmed",
+      "passed": false,
+      "evidence": null
+    },
+    {
+      "id": "actual_grok_asset_ids",
+      "passed": false,
+      "evidence": null
+    },
+    {
+      "id": "human_session_denominator_verified",
+      "passed": false,
+      "evidence": null
+    },
+    {
+      "id": "merchant_paid_conversion_data",
+      "passed": false,
+      "evidence": null
+    },
+    {
+      "id": "refunds_and_fees_reconciled",
+      "passed": false,
+      "evidence": null
+    },
+    {
+      "id": "owned_product_rights_checkout_alternative",
+      "passed": false,
+      "evidence": null
+    },
+    {
+      "id": "affiliate_disclosure_qa",
+      "passed": false,
+      "evidence": null
+    },
+    {
+      "id": "no_duplicate_tracking",
+      "passed": false,
+      "evidence": null
+    }
+  ],
+  "status_contract": {
+    "built": "Local GitHub draft",
+    "tested": "Source/logic checks only",
+    "live": false,
+    "verified_sales": false
+  },
+  "read_only_sources_note": "Public sites/GitHub/Praxxis Docs. No merchant account or WordPress writes.",
+  "release_decision": "HARD_HOLD"
+}

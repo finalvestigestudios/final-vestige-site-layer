@@ -28,13 +28,13 @@
       "id": "review_2023",
       "type": "peer_review",
       "url": "https://pubmed.ncbi.nlm.nih.gov/35842538/",
-      "note": "Basu & Banerjee 2023; 15 studies/31 effect sizes, pooled g .40; conflicting attention and memory effects"
+      "note": "Basu & Banerjee 2023; 15 studies/31 effects, pooled Hedges g≈.4033 (95% CI .1389–.6677), I²≈76.91%, substantial heterogeneity; some conflicting task outcomes; NOT branded-product evidence."
     },
     {
       "id": "review_2024",
       "type": "peer_review",
       "url": "https://pubmed.ncbi.nlm.nih.gov/38458383/",
-      "note": "Chee et al. 2024; 31 studies; arousal/cognitive relations mixed or insufficient"
+      "note": "Chee et al. 2024; 31 studies across several auditory modalities, only ONE binaural-beats study. Focus on autonomic arousal and cognitive performance, NOT EEG entrainment; evidence mixed/insufficient."
     },
     {
       "id": "zen12",
@@ -163,21 +163,21 @@
     },
     {
       "id": "effect_2023",
-      "statement": "15-study cognitive review found pooled g≈.40",
+      "statement": "15-study/31-effect cognitive review pooled g≈.4033, 95% CI .1389–.6677, I²≈76.91%",
       "source_ids": [
         "review_2023"
       ],
       "decision": "SUPPORTED_AS_REVIEW_REPORT",
-      "limits": "Mixed studies; no matched commercial SKU"
+      "limits": "Substantial heterogeneity and uncertainty; mixed studies; no matched commercial SKU"
     },
     {
       "id": "effect_2024",
-      "statement": "Review finds mixed/inadequate physiology-cognition linkage",
+      "statement": "31-study multiple-auditory-modality review (ONE binaural study) reports mixed/insufficient autonomic arousal–cognition evidence",
       "source_ids": [
         "review_2024"
       ],
       "decision": "SUPPORTED_AS_REVIEW_REPORT",
-      "limits": "Does not exclude every individual subjective response"
+      "limits": "NOT 31 binaural trials and NOT EEG entrainment; does not exclude subjective response"
     },
     {
       "id": "sku_48",
@@ -356,7 +356,7 @@
       "source_ids": [
         "issue820"
       ],
-      "decision": "UNKNOWN_AWAIT_P RAXXIS",
+      "decision": "UNKNOWN_AWAIT_PRAXXIS",
       "limits": "Never fabricate IDs or claim social posts live"
     },
     {
