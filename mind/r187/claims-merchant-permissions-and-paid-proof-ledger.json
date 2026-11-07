@@ -1,0 +1,310 @@
+{
+  "milestone": "R187",
+  "checked_at": "2026-11-06/07 PT; official public pages and latest connected GitHub/Praxxis handoff inspected",
+  "editorial_status": "BUILT_UNPUBLISHED_REVIEW_REQUIRED",
+  "commercial_status": "HARD_HOLD",
+  "affiliate_activation": false,
+  "affiliate_earning_url": null,
+  "named_fv_publisher_approval": null,
+  "permitted_promotional_channels": null,
+  "verified_owned_payhip_mind_sku": null,
+  "merchant_confirmed_purchases": null,
+  "independently_paid_affiliate_commissions": null,
+  "qualified_human_sessions": null,
+  "realized_net_revenue": null,
+  "evidence": [
+    {
+      "id": "catalog",
+      "url": "https://inspire3.com/",
+      "kind": "official_seller_catalog",
+      "scope": "product categories seller descriptions, not scientific substantiation"
+    },
+    {
+      "id": "affiliate",
+      "url": "https://affiliates.inspire3.com/",
+      "kind": "public_affiliate_portal",
+      "scope": "program existence not named FV approval or individual tracking link"
+    },
+    {
+      "id": "hypnosis",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "kind": "exact_seller_offer",
+      "scope": "33-min, 47 MB and narrator seller-listed; merchant promises NOT tested"
+    },
+    {
+      "id": "zen12",
+      "url": "https://zen12.com/hnp",
+      "kind": "exact_seller_offer",
+      "scope": "Premium twelve levels and 48 MP3s, publicly advertised guarantee; price snapshots conflict with prior renders"
+    },
+    {
+      "id": "brainwaves",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+      "kind": "peer_reviewed_systematic_review",
+      "scope": "14 EEG binaural-beat studies; not Zen12, not Hypnosis Live"
+    },
+    {
+      "id": "apa",
+      "url": "https://www.apa.org/topics/psychotherapy/hypnosis",
+      "kind": "professional_science_overview",
+      "scope": "definition, theoretical debate, clinical context not seller endorsement"
+    },
+    {
+      "id": "apps",
+      "url": "https://doi.org/10.1080/00207144.2024.2434085",
+      "kind": "peer_reviewed_systematic_review",
+      "scope": "168 hypnosis apps in sample, not Total Focus MP3"
+    },
+    {
+      "id": "clinical",
+      "url": "https://doi.org/10.1080/00207144.2025.2528232",
+      "kind": "peer_reviewed_scoping_review",
+      "scope": "16 RCTs across distinct clinical interventions, not MP3 product"
+    },
+    {
+      "id": "pain",
+      "url": "https://doi.org/10.1016/j.neubiorev.2022.104591",
+      "kind": "peer_reviewed_systematic_review",
+      "scope": "specific pain trials, not concentration product"
+    },
+    {
+      "id": "ftc-endorse",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "kind": "regulator",
+      "scope": "clear conspicuous material connection disclosures"
+    },
+    {
+      "id": "ftc-health",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "kind": "regulator",
+      "scope": "appropriate substantiation for claimed benefits"
+    },
+    {
+      "id": "focus",
+      "url": "https://finalvestige.com/focus/",
+      "kind": "existing_free_first_party_offer",
+      "scope": "52-page fieldbook and existing single Jetpack/Dispatch subscription path"
+    },
+    {
+      "id": "puys",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "kind": "existing_historical_archive",
+      "scope": "historical records only"
+    },
+    {
+      "id": "mesmer",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "kind": "existing_live_investigation",
+      "scope": "bridge historical suggestion"
+    },
+    {
+      "id": "blinds",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "kind": "existing_live_investigation",
+      "scope": "reader attention; no product-performance claim"
+    },
+    {
+      "id": "task",
+      "url": "https://docs.google.com/document/d/1_dqcJeqxbvYb1prGxy0nSWTsHu8p0PSRsDB_NPNbL48/edit",
+      "kind": "creator_coordination",
+      "scope": "Grok owns production; media IDs and rights packet still not confirmed"
+    }
+  ],
+  "claim_decisions": [
+    {
+      "claim": "Inspire3 offers Zen12/Hypnosis Live",
+      "decision": "SELLER_IDENTIFIED",
+      "source": "catalog",
+      "action": "descriptive only"
+    },
+    {
+      "claim": "Total Focus is a seller-described 33-min 47-MB downloadable MP3",
+      "decision": "SELLER_DESCRIPTION",
+      "source": "hypnosis",
+      "action": "attribute; fulfillment not checked"
+    },
+    {
+      "claim": "J. A. Amos is listed as author/narrator",
+      "decision": "SELLER_DESCRIPTION",
+      "source": "hypnosis",
+      "action": "no credential inference"
+    },
+    {
+      "claim": "Total Focus confers limitless concentration",
+      "decision": "UNSUPPORTED_OMIT",
+      "source": "hypnosis",
+      "action": "no buyer-facing claim"
+    },
+    {
+      "claim": "Total Focus reprograms the brain",
+      "decision": "UNSUPPORTED_OMIT",
+      "source": "hypnosis",
+      "action": "no buyer-facing claim"
+    },
+    {
+      "claim": "Total Focus delivers a verified 14-day refund",
+      "decision": "NOT_TESTED",
+      "source": "hypnosis",
+      "action": "only describe advertised terms with caveat"
+    },
+    {
+      "claim": "Total Focus public price is stable",
+      "decision": "CONTRADICTED_BY_SNAPSHOTS",
+      "source": "hypnosis",
+      "action": "omit amount; final checkout not checked"
+    },
+    {
+      "claim": "Zen12 Premium describes twelve levels and 48 MP3 recordings",
+      "decision": "SELLER_DESCRIPTION",
+      "source": "zen12",
+      "action": "attribute to seller"
+    },
+    {
+      "claim": "Zen12 guarantees 1 hour meditation benefits in 12 minutes",
+      "decision": "UNSUPPORTED_OMIT",
+      "source": "zen12",
+      "action": "reject equivalence"
+    },
+    {
+      "claim": "Zen12 delivers focus or clinical outcomes",
+      "decision": "UNSUPPORTED_OMIT",
+      "source": "zen12",
+      "action": "no product-specific efficacy studies"
+    },
+    {
+      "claim": "Zen12 has proven refund fulfillment",
+      "decision": "NOT_TESTED",
+      "source": "zen12",
+      "action": "do not imply confirmed"
+    },
+    {
+      "claim": "14 EEG binaural-beat studies: 5 supportive, 8 contradictory, 1 mixed",
+      "decision": "SUPPORTED_REVIEW_SCOPE",
+      "source": "brainwaves",
+      "action": "background only, not an intervention outcome"
+    },
+    {
+      "claim": "168 of 679 hypnosis apps met a 2025 review inclusion screen",
+      "decision": "SUPPORTED_REVIEW_SCOPE",
+      "source": "apps",
+      "action": "not merchant rating"
+    },
+    {
+      "claim": "Only 4 included hypnosis apps reported inclusion in a clinical efficacy trial",
+      "decision": "SUPPORTED_REVIEW_SCOPE",
+      "source": "apps",
+      "action": "not a Total Focus app/MP3 inference"
+    },
+    {
+      "claim": "16 RCTs of clinical hypnosis for chronic illness were mapped",
+      "decision": "SUPPORTED_REVIEW_SCOPE",
+      "source": "clinical",
+      "action": "not product efficacy"
+    },
+    {
+      "claim": "APA Division 30 defines hypnosis in focused attention and suggestion terms",
+      "decision": "SUPPORTED_CONTEXT",
+      "source": "apa",
+      "action": "no guarantee of recording effect"
+    },
+    {
+      "claim": "Existing Focus Fieldbook is 52 pages, free through established Jetpack list",
+      "decision": "LIVE_FIRST_PARTY_DESCRIPTION",
+      "source": "focus",
+      "action": "preserve single signup flow"
+    },
+    {
+      "claim": "Public affiliate program means FV is an approved affiliate",
+      "decision": "FALSE_DO_NOT_INFER",
+      "source": "affiliate",
+      "action": "named acceptance pending"
+    },
+    {
+      "claim": "Affiliate clicks equal paid affiliate sales",
+      "decision": "FALSE",
+      "source": "affiliate",
+      "action": "separate event types"
+    },
+    {
+      "claim": "Named affiliate link/allowed channels are verified",
+      "decision": "NOT_VERIFIED",
+      "source": "affiliate",
+      "action": "no purchase CTA"
+    }
+  ],
+  "gates": [
+    {
+      "id": "named_approval",
+      "state": "BLOCKED",
+      "owner": "founder_mind",
+      "evidence_required": "publisher-specific account approval screenshot or official portal record"
+    },
+    {
+      "id": "approved_channels",
+      "state": "BLOCKED",
+      "owner": "founder_mind",
+      "evidence_required": "website, email, TikTok, YouTube permitted formats and disclosure rules"
+    },
+    {
+      "id": "authorized_earning_link",
+      "state": "BLOCKED",
+      "owner": "founder_mind",
+      "evidence_required": "approved merchant destination and link structure; no guessing"
+    },
+    {
+      "id": "seller_checkout_total",
+      "state": "UNKNOWN",
+      "owner": "commerce",
+      "evidence_required": "approved non-purchasing final checkout inspection"
+    },
+    {
+      "id": "refund_terms",
+      "state": "UNKNOWN",
+      "owner": "commerce",
+      "evidence_required": "current authoritative checkout refund policy; fulfillment not implied"
+    },
+    {
+      "id": "owned_payhip_sku",
+      "state": "UNKNOWN",
+      "owner": "commerce",
+      "evidence_required": "authenticated live SKU, rights, availability, price, delivery and return policy"
+    },
+    {
+      "id": "video_media_asset",
+      "state": "NOT_TESTED",
+      "owner": "mind",
+      "evidence_required": "original rendered 30-45s playable captioned video; static storyboard only"
+    },
+    {
+      "id": "a11y_ux",
+      "state": "NOT_TESTED",
+      "owner": "qa",
+      "evidence_required": "real browser 360,390,768,1440,1920; WCAG 2.2 AA; reduced-motion keyboard"
+    },
+    {
+      "id": "consent_analytics",
+      "state": "NOT_TESTED",
+      "owner": "claude_engineering",
+      "evidence_required": "existing first-party logs and lawful consent; no duplicate scripts"
+    },
+    {
+      "id": "grok_media_id",
+      "state": "UNKNOWN",
+      "owner": "grok_praxxis",
+      "evidence_required": "published asset_id URL rights and permitted CTA placement"
+    },
+    {
+      "id": "confirmed_paid_purchase",
+      "state": "BLOCKED",
+      "owner": "commerce",
+      "evidence_required": "settled order or merchant independently reported paid commission"
+    },
+    {
+      "id": "founder_release_approval",
+      "state": "BLOCKED",
+      "owner": "founder",
+      "evidence_required": "explicit approval after qa, no production changes now"
+    }
+  ],
+  "highest_priority_next_action": "Authenticate actual currently sellable FV-owned Payhip Mind SKU OR named Inspire3 partner acceptance; only then test qualified paid-conversion with release approval."
+}
