@@ -290,7 +290,7 @@ def sources_block(lib: Library, order: list[str], meta: dict) -> str:
 
 def review_block(meta: dict) -> str:
     st = meta["status"]
-    safety = meta.get("safety_review", {"state": "not-required"})
+    safety = meta.get("safety_review", {"state": "pending"})
     # Metadata records the author's historical label, NOT an independent approval.
     # These strings also appear in unpublished WordPress-ready drafts; no reader
     # must mistake an ambiguous legacy label for an independent QD/safety PASS.
