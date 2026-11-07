@@ -23,15 +23,15 @@ const tests=[
 ['merchant efficacy remains marked seller claim',()=>assert.match(html,/seller's statement, not independently verified/)],
 ['vendor feature descriptions have identified official source',()=>assert.equal(ledger.commercial_product.official_page,'https://zen12.com/')],
 ['no current price appears as an email claim',()=>{assert.ok(!md.includes('$87.99'));assert.ok(!html.includes('$87.99'))}],
-['no active affiliate link in either email candidate format',()=>{for(const s of [md,html,txt])assert.doesNotMatch(s,/https?:\\/\\/(?:www\\.)?(?:zen12|affiliates\\.inspire3|hypnosislive)\\.com\\/[^\\s<>]*\\?(?:[^\\s<>]*)?/i)}],
+['no active affiliate link in either email candidate format',()=>{for(const s of [md,html,txt])assert.doesNotMatch(s,/https?:\/\/(?:www\.)?(?:zen12|affiliates\.inspire3|hypnosislive)\.com\/[^\s<>]*\?(?:[^\s<>]*)?/i)}],
 ['commercial CTA is visibly noninteractive in rendered reviewer',()=>{assert.match(html,/INACTIVE GUIDE CTA/);assert.match(html,/aria-disabled="true"/);assert.doesNotMatch(html,/<a[^>]+href="[^"]*APPROVED_ZEN12/)}],
 ['only one planned primary offer CTA',()=>assert.equal((html.match(/INACTIVE GUIDE CTA/g)||[]).length,1)],
 ['near-offer disclosure visible in HTML',()=>{const a=html.indexOf('INACTIVE GUIDE CTA'),b=html.indexOf('Commercial disclosure:');assert.ok(b>a&&b-a<700)}],
 ['plain text commercial disclosure present immediately after CTA',()=>{const a=txt.indexOf('PRIMARY CTA'),b=txt.indexOf('COMMERCIAL DISCLOSURE');assert.ok(b>a&&b-a<250)}],
 ['both variants and ledger remain unsent',()=>{assert.match(txt,/UNSENT INTERNAL REVIEW/);assert.equal(ledger.status,'HOLD_UNSENT')}],
-['physical mailing address verification is mandatory',()=>{assert.match(html,/\\[\\[VALID_POSTAL_ADDRESS_REQUIRED\\]\\]/);assert.equal(ledger.legal.physical_postal_address,'NOT_VERIFIED')}],
-['unsubscribe rendered and functional verification is mandatory',()=>{assert.match(html,/\\[\\[JETPACK_UNSUBSCRIBE_LINK_MUST_BE_VERIFIED\\]\\]/);assert.equal(ledger.legal.real_footer_opt_out,'NOT_VERIFIED')}],
-['no script, form, or tracking pixels in HTML',()=>{assert.doesNotMatch(html,/<(?:script|form|iframe|input)\\b/i);assert.doesNotMatch(html,/analytics\\.js|gtag\\(|pixel\\./i)}],
+['physical mailing address verification is mandatory',()=>{assert.match(html,/\[\[VALID_POSTAL_ADDRESS_REQUIRED\]\]/);assert.equal(ledger.legal.physical_postal_address,'NOT_VERIFIED')}],
+['unsubscribe rendered and functional verification is mandatory',()=>{assert.match(html,/\[\[JETPACK_UNSUBSCRIBE_LINK_MUST_BE_VERIFIED\]\]/);assert.equal(ledger.legal.real_footer_opt_out,'NOT_VERIFIED')}],
+['no script, form, or tracking pixels in HTML',()=>{assert.doesNotMatch(html,/<(?:script|form|iframe|input)\b/i);assert.doesNotMatch(html,/analytics\.js|gtag\(|pixel\./i)}],
 ['HTML uses accessible language and email table layout',()=>{assert.match(html,/<html lang="en">/);assert.match(html,/role="presentation"/);assert.match(html,/<h1/)}],
 ['subscriber figures must not be summed',()=>{const s=ledger.provider_provenance;assert.equal(s.subscribers_total,3);assert.equal(s.subscribers_confirmed,3);assert.equal(s.unconfirmed,2);assert.equal(s.confirmed_subscriber_receipt_count,'UNKNOWN')}],
 ['Focus visual success is not a confirmed subscription',()=>{assert.equal(ledger.landing_page_provenance.focus_source_script_shows_gift_for_unrecognized_subscribe_query,true);assert.equal(ledger.landing_page_provenance.focus_confirmation_provider_status,'NOT_VERIFIED')}],
@@ -43,7 +43,7 @@ const tests=[
 ['campaign activity remains entirely false',()=>{assert.ok(Object.values(ledger.release_attestations).every(x=>x===false));assert.equal(ledger.legal.posts_published,false);assert.equal(ledger.legal.email_test_authorized,false)}],
 ['no inferred paid sales from website traffic or email opens',()=>{assert.equal(ledger.attribution.paid_sales,'NOT_VERIFIED');assert.equal(ledger.attribution.net_revenue_per_1000,'NOT_COMPUTABLE')}],
 ['email campaign attribution is proposed only, not injected',()=>{assert.equal(ledger.attribution.email_utm.utm_source,'dispatch');assert.equal(ledger.attribution.utm_links_in_active_email,false)}],
-['no private subscriber email addresses in proof packet',()=>{assert.equal(ledger.privacy.subscriber_email_addresses_in_package,false);assert.doesNotMatch(JSON.stringify(ledger),/[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}/)}],
+['no private subscriber email addresses in proof packet',()=>{assert.equal(ledger.privacy.subscriber_email_addresses_in_package,false);assert.doesNotMatch(JSON.stringify(ledger),/[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}/)}],
 ['fail-closed commercial classification even if content is educational',()=>assert.equal(ledger.legal.commercial_primary_purpose_review_required,true)]
 ];
 for(const [name,fn] of tests)test(name,fn);
