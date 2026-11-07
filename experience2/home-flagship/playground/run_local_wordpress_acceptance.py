@@ -9,13 +9,14 @@ from datetime import datetime, timezone
 import hashlib
 import json
 import os
+import socket
 from pathlib import Path
 import shutil
 import subprocess
 import sys
 import tempfile
 import time
-from urllib.error import URLError
+from urllib.error import URLError, HTTPError
 from urllib.parse import urlsplit
 from urllib.request import build_opener, HTTPRedirectHandler
 from zipfile import ZipFile
@@ -69,6 +70,39 @@ class NoRedirect(HTTPRedirectHandler):
         raise ValueError('LOOPBACK_REDIRECT_REFUSED')
 
 
+def refuse_occupied_port(port):
+    """Fail closed before spawning npm if another process already owns review port."""
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
+        sock.settimeout(0.3)
+        if sock.connect_ex(('127.0.0.1', port)) == 0:
+            raise RuntimeError('REVIEW_PORT_ALREADY_IN_USE: refuse ambiguous local server')
+
+
+def wordpress_rest_identity(url, opener):
+    """Read-only second origin/WordPress check, not a cryptographic attestation."""
+    rest_url = url + 'wp-json/'
+    try:
+        with opener.open(rest_url, timeout=2) as response:
+            if response.status != 200:
+                return None
+            if 'application/json' not in response.headers.get('Content-Type', '').lower():
+                return None
+            payload = json.loads(response.read(65537))
+    except (URLError, HTTPError, OSError, ValueError, json.JSONDecodeError):
+        return None
+    if not isinstance(payload, dict):
+        return None
+    namespaces = payload.get('namespaces')
+    if not isinstance(namespaces, list) or 'wp/v2' not in namespaces:
+        return None
+    # An imported production URL must never qualify as isolated WordPress.
+    base = url.rstrip('/')
+    if not isinstance(payload.get('url'), str) or payload['url'].rstrip('/') != base:
+        return None
+    return {'wordpress_rest_api': True, 'rest_url': rest_url,
+            'wp_v2_namespace': True, 'local_site_url_matched': True}
+
+
 def ready(url, timeout_seconds, process):
     # Probe loopback only; do not follow redirects to the live site.
     p = urlsplit(url)
@@ -84,8 +118,13 @@ def ready(url, timeout_seconds, process):
             with opener.open(url, timeout=2) as response:
                 body = response.read(2000000).decode('utf-8', errors='replace')
                 if response.status == 200 and 'data-fv-home-flagship' in body and 'wp-site-blocks' in body:
-                    return {'http_status':200,'wordpress_shell_detected':True,'flagship_root_detected':True}
-                last = 'HTTP_'+str(response.status)+'_WP_SHELL_OR_FLAGSHIP_MISSING'
+                    identity = wordpress_rest_identity(url, opener)
+                    if identity:
+                        return {'http_status':200,'wordpress_shell_detected':True,
+                                'flagship_root_detected':True, **identity}
+                    last = 'WORDPRESS_REST_IDENTITY_MISSING_OR_MISMATCHED'
+                else:
+                    last = 'HTTP_'+str(response.status)+'_WP_SHELL_OR_FLAGSHIP_MISSING'
         except (URLError,TimeoutError,OSError,ValueError) as exc:
             last = type(exc).__name__+': '+str(exc)[:90]
         time.sleep(.7)
@@ -97,6 +136,8 @@ def execute(bundle, output, audit, axe, port, timeout):
         raise ValueError('PORT_OUTSIDE_REVIEW_RANGE_9400_TO_9499')
     if not audit.is_file():
         raise ValueError('EXISTING_NATIVE_WORDPRESS_ADMISSION_SCRIPT_MISSING')
+    # Avoid accepting somebody else's server as the WordPress we intend to launch.
+    refuse_occupied_port(port)
     npx = shutil.which('npx')
     if not npx:
         raise RuntimeError('NPX_NOT_INSTALLED')
