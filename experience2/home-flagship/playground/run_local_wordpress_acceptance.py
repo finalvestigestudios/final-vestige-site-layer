@@ -24,6 +24,11 @@ from zipfile import ZipFile
 BUNDLE_SHA256 = '9833800a112027b17dfec154358d7b630e258feb581820b749ca26ab88ffe69d'
 SOURCE_BLUEPRINT = '300c79f7936d7fdf58294bb96e7b0cd1ebc0b349cdf4d2c4d13e5ec52000b23f'
 ASSEMBLER_COMMIT = '75faa8a1e0367a37c2638250a3c9ed0a0f8c0b7f'
+# Fixed environment for reproducible source QA; not a claim of WordPress.com host parity.
+# Validated against official CLI / core release docs on 2026-11-07.
+PLAYGROUND_CLI_VERSION = '3.1.55'
+WORDPRESS_CORE_VERSION = '7.1.4'
+PLAYGROUND_PHP_VERSION = '8.3'
 ALLOW_FILES = {'blueprint.json', 'SOURCE_CUSTODY.json', 'REVIEW.txt',
                'mu-plugins/fv-ex2-playground-review.php',
                'mu-plugins/fv-ex2-private-browser-receipt.php'}
@@ -131,6 +136,23 @@ def ready(url, timeout_seconds, process):
     raise TimeoutError('LOCAL_WORDPRESS_NOT_READY_'+last)
 
 
+def playground_launch_command(npx, port, url, bundle):
+    """Return immutable, auditable release-pinned CLI invocation.
+
+    Do not silently track latest CLI/core/PHP: a fresh release can modify output
+    without any change to the source commit. Distinct host parity is not claimed.
+    """
+    p = urlsplit(url)
+    if p.scheme != 'http' or p.hostname != '127.0.0.1' or p.path != '/' or p.port != port:
+        raise ValueError('REFUSE_NON_LOOPBACK_LAUNCH')
+    if port not in range(9400, 9500):
+        raise ValueError('REFUSE_PORT_OUTSIDE_REVIEW_RANGE')
+    return [npx, '--yes', f'@wp-playground/cli@{PLAYGROUND_CLI_VERSION}',
+            'server', f'--port={port}', f'--site-url={url}',
+            f'--wp={WORDPRESS_CORE_VERSION}', f'--php={PLAYGROUND_PHP_VERSION}',
+            f'--blueprint={bundle.resolve()}']
+
+
 def execute(bundle, output, audit, axe, port, timeout):
     if not (9400 <= port <= 9499):
         raise ValueError('PORT_OUTSIDE_REVIEW_RANGE_9400_TO_9499')
@@ -143,14 +165,16 @@ def execute(bundle, output, audit, axe, port, timeout):
         raise RuntimeError('NPX_NOT_INSTALLED')
     output.mkdir(parents=True,exist_ok=True)
     url = f'http://127.0.0.1:{port}/'
-    cmd = [npx,'--yes','@wp-playground/cli@latest','server',f'--port={port}',
-           f'--site-url={url}',f'--blueprint={bundle.resolve()}']
+    cmd = playground_launch_command(npx, port, url, bundle)
     result = {'scope':'isolated WordPress CLI; NOT WordPress.com production',
               'generated_utc':datetime.now(timezone.utc).isoformat(),
               'release':'HOLD','url':url,'command':cmd[1:-1]+['--blueprint=[PINNED_ZIP]'],
               'axe':str(axe) if axe else 'ABSENT_REQUIRES_HOLD',
               'wordpress':'NOT_VERIFIED','admission':'NOT_RUN',
-              'commercial_outcomes':'NOT_MEASURED', 'host_parity':'NOT_TESTED'}
+              'commercial_outcomes':'NOT_MEASURED', 'host_parity':'NOT_TESTED',
+              'runtime_pins':{'playground_cli':PLAYGROUND_CLI_VERSION,
+                              'wordpress_core':WORDPRESS_CORE_VERSION,
+                              'php':PLAYGROUND_PHP_VERSION}}
     # Keep all writes in a fresh temporary working directory, NOT repository or WP prod.
     with tempfile.TemporaryDirectory(prefix='fv-ex2-wp-local-') as sandbox:
         with (output/'local_cli.log').open('w') as log:
