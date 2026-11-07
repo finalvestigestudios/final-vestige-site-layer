@@ -1,0 +1,521 @@
+{
+  "schema": "fv.mind.offer_gate.r182.v1",
+  "reviewed_date": "2026-11-06",
+  "status": "UNPUBLISHED_HARD_HOLD",
+  "offer_priority": "Zen12 Premium only as authorized affiliate; if not approved no product CTA",
+  "product_category": "audio-library convenience; no promised clinical cognitive financial result",
+  "offer_url_informational": "https://zen12.com/",
+  "affiliate_acceptance_verified": false,
+  "allowed_channel_terms_verified": false,
+  "verified_affiliate_earning_url": null,
+  "enabled_purchase_cta": false,
+  "verified_owned_paid_mind_product": null,
+  "merchant_checkout_charge_usd": null,
+  "advertised_seller_price_usd_observed": 87.99,
+  "seller_price_observation_is_final_charge": false,
+  "advertised_guarantee_refund_execution_verified": false,
+  "published_grok_asset_ids": null,
+  "qualified_human_sessions": null,
+  "verified_paid_orders": null,
+  "received_affiliate_commissions_usd": null,
+  "realized_net_revenue_usd": null,
+  "live_wordpress_write": false,
+  "existing_focus_jetpack_only": true,
+  "product_claims_not_derived_from_psychology_papers": true,
+  "sources": [
+    {
+      "id": "S01",
+      "url": "https://inspire3.com/",
+      "kind": "primary_seller_catalog",
+      "verified_at": "2026-11-06",
+      "note": "Brands by Inspire3; promotional efficacy unsubstantiated"
+    },
+    {
+      "id": "S02",
+      "url": "https://zen12.com/",
+      "kind": "exact_product_page",
+      "verified_at": "2026-11-06",
+      "note": "Premium 12 levels, 48 MP3s, listed $87.99, seller advertised one-year guarantee; not checkout"
+    },
+    {
+      "id": "S03",
+      "url": "https://zen12.com/secret/",
+      "kind": "alternative_seller_sales_page",
+      "verified_at": "2026-11-06",
+      "note": "Coupon/urgency variant; not an authorized FV creative or verified checkout"
+    },
+    {
+      "id": "S04",
+      "url": "https://affiliates.inspire3.com/",
+      "kind": "public_publisher_portal",
+      "verified_at": "2026-11-06",
+      "note": "Shows program exists; not FV publisher login or channel permission"
+    },
+    {
+      "id": "S05",
+      "url": "https://hypnosislive.com/self-growth/be-more-centered",
+      "kind": "distinct_seller_product",
+      "verified_at": "2026-11-06",
+      "note": "35-minute self-hypnosis session, separate offer and seller outcomes"
+    },
+    {
+      "id": "S06",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "kind": "distinct_seller_product",
+      "verified_at": "2026-11-06",
+      "note": "15 and 30-minute Focus Shot options; seller guarantees and brain claims not independently tested"
+    },
+    {
+      "id": "S07",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "kind": "official_guidance",
+      "verified_at": "2026-11-06",
+      "note": "Material connections must be clearly conspicuously disclosed"
+    },
+    {
+      "id": "S08",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "kind": "official_guidance",
+      "verified_at": "2026-11-06",
+      "note": "Health benefit claims must have adequate substantiation"
+    },
+    {
+      "id": "S09",
+      "url": "https://doi.org/10.1068/p090483",
+      "kind": "original_study",
+      "verified_at": "2026-11-06",
+      "note": "Thompson 1980 Thatcher effect"
+    },
+    {
+      "id": "S10",
+      "url": "https://doi.org/10.1068/p260225",
+      "kind": "original_study",
+      "verified_at": "2026-11-06",
+      "note": "Lewis/Johnston 1997 configural disruption speeded judgment"
+    },
+    {
+      "id": "S11",
+      "url": "https://doi.org/10.1068/p7755",
+      "kind": "original_study",
+      "verified_at": "2026-11-06",
+      "note": "Psalta/Andrews 2014 face expression study"
+    },
+    {
+      "id": "S12",
+      "url": "https://doi.org/10.1177/0956797613501521",
+      "kind": "original_study",
+      "verified_at": "2026-11-06",
+      "note": "Psalta et al. 2013/14 fMRI adaptation"
+    },
+    {
+      "id": "S13",
+      "url": "https://doi.org/10.1068/p6048",
+      "kind": "original_study",
+      "verified_at": "2026-11-06",
+      "note": "Mondloch/Maurer 2008 related composite-face study"
+    },
+    {
+      "id": "S14",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3563049/",
+      "kind": "original_study",
+      "verified_at": "2026-11-06",
+      "note": "Simons 2010 self-reported familiarity; n64 analyzed; other-event comparison not significant"
+    },
+    {
+      "id": "S15",
+      "url": "https://finalvestige.com/focus/",
+      "kind": "fv_live_reader_asset",
+      "verified_at": "2026-11-06",
+      "note": "Existing free Fieldbook and one Jetpack/Dispatch pathway; not a paid item"
+    },
+    {
+      "id": "S16",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "kind": "fv_live_article",
+      "verified_at": "2026-11-06",
+      "note": "Existing published bridge to attention, not product efficacy"
+    },
+    {
+      "id": "S17",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "kind": "fv_live_historical_archive",
+      "verified_at": "2026-11-06",
+      "note": "Existing historical bridge; current-public web fetch intermittent, CMS verified in previous run"
+    },
+    {
+      "id": "S18",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "kind": "fv_governance",
+      "verified_at": "2026-11-06",
+      "note": "Presell lane, founder release gates and no affiliate activation"
+    },
+    {
+      "id": "S19",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "kind": "fv_governance",
+      "verified_at": "2026-11-06",
+      "note": "Verified-revenue-first campaign contract"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "product": "Zen12 Premium",
+      "claim": "12 levels, 48 MP3 recordings",
+      "source_ids": [
+        "S02"
+      ],
+      "evidence_status": "SELLER_FEATURE",
+      "allowed_copy": "Seller describes twelve levels and 48 MP3 recordings",
+      "release_gate": "ALLOW_AS_SELLER_DESCRIPTION"
+    },
+    {
+      "id": "C02",
+      "product": "Zen12 Premium",
+      "claim": "four listening styles per level",
+      "source_ids": [
+        "S02"
+      ],
+      "evidence_status": "SELLER_FEATURE",
+      "allowed_copy": "Four styles per level as seller describes",
+      "release_gate": "ALLOW_AS_SELLER_DESCRIPTION"
+    },
+    {
+      "id": "C03",
+      "product": "Zen12 Premium",
+      "claim": "12-minute session format",
+      "source_ids": [
+        "S02"
+      ],
+      "evidence_status": "SELLER_FEATURE",
+      "allowed_copy": "Seller describes twelve-minute sessions",
+      "release_gate": "ALLOW_AS_SELLER_DESCRIPTION"
+    },
+    {
+      "id": "C04",
+      "product": "Zen12 Premium",
+      "claim": "advertised $87.99 at public Premium listing on Nov 6",
+      "source_ids": [
+        "S02"
+      ],
+      "evidence_status": "SELLER_DISPLAY_NOT_CHECKOUT",
+      "allowed_copy": "Dated seller public display; current checkout amount unknown",
+      "release_gate": "DONOT_ADVERTISE_FIXED_CHARGE"
+    },
+    {
+      "id": "C05",
+      "product": "Zen12 Premium",
+      "claim": "one-year refund guarantee",
+      "source_ids": [
+        "S02"
+      ],
+      "evidence_status": "SELLER_POLICY_NOT_TESTED",
+      "allowed_copy": "Seller advertises a one-year guarantee; fulfillment unverified",
+      "release_gate": "QUALIFIED_SELLER_ONLY"
+    },
+    {
+      "id": "C06",
+      "product": "Zen12 Premium",
+      "claim": "an hour of meditation in twelve minutes",
+      "source_ids": [
+        "S02"
+      ],
+      "evidence_status": "UNSUBSTANTIATED_PRODUCT_EFFICACY",
+      "allowed_copy": "No established equivalence for this exact product",
+      "release_gate": "PROHIBITED_PROMOTIONAL_CLAIM"
+    },
+    {
+      "id": "C07",
+      "product": "Zen12 Premium",
+      "claim": "meditates for you or proven brain changes",
+      "source_ids": [
+        "S02"
+      ],
+      "evidence_status": "UNSUBSTANTIATED_PRODUCT_EFFICACY",
+      "allowed_copy": "No adequate product-specific evidence verified",
+      "release_gate": "PROHIBITED_PROMOTIONAL_CLAIM"
+    },
+    {
+      "id": "C08",
+      "product": "Zen12 Premium",
+      "claim": "anxiety, depression, cognition or health improvement",
+      "source_ids": [
+        "S02",
+        "S08"
+      ],
+      "evidence_status": "UNSUBSTANTIATED_PRODUCT_EFFICACY",
+      "allowed_copy": "Do not claim treatment or guaranteed psychological benefits",
+      "release_gate": "PROHIBITED_PROMOTIONAL_CLAIM"
+    },
+    {
+      "id": "C09",
+      "product": "Zen12 Premium",
+      "claim": "training call, guides, lifetime support",
+      "source_ids": [
+        "S02"
+      ],
+      "evidence_status": "SELLER_FEATURE",
+      "allowed_copy": "Seller lists these; current fulfillment and accessibility unknown",
+      "release_gate": "QUALIFIED_SELLER_ONLY"
+    },
+    {
+      "id": "C10",
+      "product": "Zen12 Premium",
+      "claim": "discounted secret coupon price",
+      "source_ids": [
+        "S03"
+      ],
+      "evidence_status": "VARIABLE_SELLER_COPY",
+      "allowed_copy": "Do not adopt coupon prices, deadlines or scarcity",
+      "release_gate": "PROHIBITED_UNVERIFIED"
+    },
+    {
+      "id": "C11",
+      "product": "Hypnosis Live: Be More Centered",
+      "claim": "35-minute audio offer",
+      "source_ids": [
+        "S05"
+      ],
+      "evidence_status": "SELLER_FEATURE",
+      "allowed_copy": "Seller lists 35-minute track; not interchangeable with Zen12",
+      "release_gate": "ALLOW_SEPARATE_REVIEW_ONLY"
+    },
+    {
+      "id": "C12",
+      "product": "Hypnosis Live: Be More Centered",
+      "claim": "guaranteed mental-health improvement",
+      "source_ids": [
+        "S05",
+        "S08"
+      ],
+      "evidence_status": "UNSUBSTANTIATED_PRODUCT_EFFICACY",
+      "allowed_copy": "No independent product trial verified",
+      "release_gate": "PROHIBITED_PROMOTIONAL_CLAIM"
+    },
+    {
+      "id": "C13",
+      "product": "Brainwave Shots: Focus Shot",
+      "claim": "15/30 minute versions",
+      "source_ids": [
+        "S06"
+      ],
+      "evidence_status": "SELLER_FEATURE",
+      "allowed_copy": "Seller describes both variants, not Zen12's format",
+      "release_gate": "ALLOW_SEPARATE_REVIEW_ONLY"
+    },
+    {
+      "id": "C14",
+      "product": "Brainwave Shots: Focus Shot",
+      "claim": "enhanced focus for four hours or entire day",
+      "source_ids": [
+        "S06",
+        "S08"
+      ],
+      "evidence_status": "UNSUBSTANTIATED_PRODUCT_EFFICACY",
+      "allowed_copy": "Duration benefit lacks independently verified product-specific proof",
+      "release_gate": "PROHIBITED_PROMOTIONAL_CLAIM"
+    },
+    {
+      "id": "C15",
+      "product": "Inspire3 partner program",
+      "claim": "public portal with earning opportunity",
+      "source_ids": [
+        "S04"
+      ],
+      "evidence_status": "PUBLIC_PROGRAM_ONLY",
+      "allowed_copy": "An affiliate program exists; FV approval unverified",
+      "release_gate": "HARD_HOLD"
+    },
+    {
+      "id": "C16",
+      "product": "FV affiliate access",
+      "claim": "named publisher acceptance and tracking URL",
+      "source_ids": [
+        "S04",
+        "S18"
+      ],
+      "evidence_status": "NOT_VERIFIED",
+      "allowed_copy": "No eligible earning link should be activated",
+      "release_gate": "HARD_HOLD"
+    },
+    {
+      "id": "C17",
+      "product": "FV digital Mind SKU",
+      "claim": "owned rights-cleared paid Payhip product",
+      "source_ids": [
+        "S19"
+      ],
+      "evidence_status": "NOT_VERIFIED",
+      "allowed_copy": "Do not claim saleable owned Mind SKU",
+      "release_gate": "HARD_HOLD"
+    },
+    {
+      "id": "C18",
+      "product": "FTC disclosures",
+      "claim": "clear conspicuous near link",
+      "source_ids": [
+        "S07"
+      ],
+      "evidence_status": "OFFICIAL_GUIDANCE",
+      "allowed_copy": "Adjacent conditional disclosure in inactive preview; recheck if activated",
+      "release_gate": "PASS_SOURCE_REVIEW_ONLY"
+    },
+    {
+      "id": "C19",
+      "product": "Thatcher illusion",
+      "claim": "orientation dependence of locally altered facial features",
+      "source_ids": [
+        "S09",
+        "S10",
+        "S11"
+      ],
+      "evidence_status": "PEER_REVIEWED_NONPRODUCT",
+      "allowed_copy": "Valid as face-perception context; cannot infer audio efficacy",
+      "release_gate": "ALLOW_EDITORIAL_ONLY"
+    },
+    {
+      "id": "C20",
+      "product": "Mind archive historical bridge",
+      "claim": "Puységur supports contextual history of suggestion",
+      "source_ids": [
+        "S17"
+      ],
+      "evidence_status": "HISTORICAL_CONTEXT_NOT_EFFICACY",
+      "allowed_copy": "History supports discussion, not commercial mechanism",
+      "release_gate": "ALLOW_EDITORIAL_ONLY"
+    },
+    {
+      "id": "C21",
+      "product": "Focused attendance to expected gorilla",
+      "claim": "less detection of other events caused by familiarity",
+      "source_ids": [
+        "S14"
+      ],
+      "evidence_status": "NOT_SUPPORTED_CAUSALLY",
+      "allowed_copy": "2010 numerical difference not significant; familiarity not randomized",
+      "release_gate": "PROHIBITED_CAUSAL_INFERENCE"
+    },
+    {
+      "id": "C22",
+      "product": "Focus Fieldbook",
+      "claim": "52-page free resource, same Jetpack subscriber list",
+      "source_ids": [
+        "S15"
+      ],
+      "evidence_status": "LIVE_SELLER_OWNED_RESOURCE",
+      "allowed_copy": "Only existing lead funnel; do not claim a paid order",
+      "release_gate": "ALLOW_NONCOMMERCIAL_CTA"
+    },
+    {
+      "id": "C23",
+      "product": "Visitor attribution",
+      "claim": "outbound click equals sale",
+      "source_ids": [
+        "S19"
+      ],
+      "evidence_status": "FALSE_METRIC_EQUIVALENCE",
+      "allowed_copy": "Merchant report and reconciliation required for paid conversion",
+      "release_gate": "PROHIBITED_REVENUE_CLAIM"
+    }
+  ],
+  "gates": [
+    {
+      "id": "G01",
+      "step": "Inspire3 publisher authentication",
+      "state": "HARD_HOLD",
+      "required": "Named Final Vestige account approval in partner dashboard or email",
+      "owner": "Founder/Mind"
+    },
+    {
+      "id": "G02",
+      "step": "Allowed promotion channels",
+      "state": "HARD_HOLD",
+      "required": "Written site, organic social and email channel permissions and creative limits",
+      "owner": "Founder/Mind"
+    },
+    {
+      "id": "G03",
+      "step": "Approved trackable earning URL",
+      "state": "HARD_HOLD",
+      "required": "Exact partner issued link plus current tracking terms",
+      "owner": "Founder/Mind"
+    },
+    {
+      "id": "G04",
+      "step": "Checkout amount and refund terms",
+      "state": "UNVERIFIED",
+      "required": "Current sale summary, currency, terms and independent guest checkout or authoritative merchant terms",
+      "owner": "Commerce"
+    },
+    {
+      "id": "G05",
+      "step": "Product-specific psychological efficacy",
+      "state": "HARD_HOLD",
+      "required": "Competent and reliable adequate evidence for each proposed objective benefit",
+      "owner": "Editorial/QA"
+    },
+    {
+      "id": "G06",
+      "step": "Owned FV Mind saleable SKU",
+      "state": "UNKNOWN",
+      "required": "Authenticated Payhip product rights, payments, returns, delivery and purchaser proof",
+      "owner": "Commerce"
+    },
+    {
+      "id": "G07",
+      "step": "Actual creator asset mapping",
+      "state": "UNKNOWN",
+      "required": "Public immutable Grok media IDs, approved captions and proper links in TASK-008",
+      "owner": "Grok/Praxxis"
+    },
+    {
+      "id": "G08",
+      "step": "One Jetpack lead confirmation",
+      "state": "UNVERIFIED",
+      "required": "Consented guest confirmation and existing welcome delivery without new list",
+      "owner": "QA/Dispatch"
+    },
+    {
+      "id": "G09",
+      "step": "Reproducible source tests",
+      "state": "OPEN_QA",
+      "required": "Readback and assertions of exact GitHub source, plus native Node CI",
+      "owner": "Mind/QA"
+    },
+    {
+      "id": "G10",
+      "step": "Accessible rendering and performance",
+      "state": "OPEN_QA",
+      "required": "Real browser 360/390/768/1440, reduced motion, keyboard, HTML validation and CWV",
+      "owner": "Site QA"
+    },
+    {
+      "id": "G11",
+      "step": "Editorial and founder release",
+      "state": "HARD_HOLD",
+      "required": "Separate founder approval for live CMS/nav, affiliate activation and film",
+      "owner": "Founder/Claude"
+    },
+    {
+      "id": "G12",
+      "step": "Confirmed paid sale and settlement",
+      "state": "UNVERIFIED",
+      "required": "Merchant reports paid orders plus fees/refunds or received affiliate commission",
+      "owner": "Commerce"
+    },
+    {
+      "id": "G13",
+      "step": "Qualified human denominator",
+      "state": "UNKNOWN",
+      "required": "Deduplicated privacy-safe sessions keyed by Grok asset ID in 7/30-day cohorts",
+      "owner": "Analytics/Claude"
+    },
+    {
+      "id": "G14",
+      "step": "Reconciled realized net revenue",
+      "state": "UNKNOWN",
+      "required": "Net received less uncounted refunds, fees and variable costs; avoid double subtract",
+      "owner": "Commerce/Analytics"
+    }
+  ]
+}

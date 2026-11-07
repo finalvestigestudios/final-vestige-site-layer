@@ -35,9 +35,9 @@ Perhaps the most revealing moment arrives after the footage stops. A person who 
 
 A decade later, Simons posed an ingenious question. Suppose people already know the gorilla trick. Are they now ready for other unexpected changes? In a 2010 study published in *i-Perception*, observers watched a revised video in which a gorilla appeared **and** a curtain changed color **and** one of the players left the scene. [2]
 
-Prior familiarity helped people spot the event they anticipated: the gorilla. Yet participants with relevant foreknowledge were slightly less likely to notice the other unexpected happenings. The paper's central point was narrow but consequential. Knowing that an unexpected event *might* occur did not provide a general protective shield against other surprises in this task.
+Prior familiarity helped people spot the anticipated gorilla. In the analyzed sample of 64 viewers (23 who reported familiarity and 41 who did not), four familiar viewers and twelve unfamiliar viewers noticed at least one of the other unexpected changes. **The difference between these groups was not statistically significant.** Familiarity was reported, not randomly assigned, so the numerical contrast cannot establish that prior knowledge *caused* people to miss something else. The narrower supported conclusion is that familiarity with the gorilla did not demonstrate a general detection advantage for other changes in this task.
 
-There is no paradox once attention is understood as a limited allocation. A warned viewer may direct more resources toward detecting a gorilla-shaped oddity; that very expectation can leave something else relatively unattended. It is not proof that warnings always backfire. It is evidence against a too-simple promise that telling people to pay attention will make them broadly vigilant.
+There is no paradox once attention is understood as a limited allocation. One possible explanation is that someone expecting a gorilla allocates attention to gorilla-shaped events rather than to other changes. **That allocation mechanism was not experimentally established by the familiarity comparison.** It is not proof that warnings backfire; at most, this study challenges an overbroad promise that familiarity necessarily yields vigilance for other unexpected events.
 
 For Final Vestige readers, this is an editorial lesson as well as a psychological one. An investigation might train itself so thoroughly on an expected forgery, villain, or sensational explanation that it misses a quieter change in the evidence. Confirmation checks should therefore be assigned to multiple hypotheses: What did we expect? What else shifted? What would count against our favored interpretation?
 
@@ -97,7 +97,7 @@ For that reason, the research narrative is deliberately free of commercial recom
 
 ## What the unseen gorilla leaves us
 
-The three gorilla studies tell a more interesting story than the slogan *you see less than you think*. Selective attention permits expertise. Expertise does not abolish surprise. Familiarity with a famous trick can make people notice the familiar trick while missing different changes. A gaze can point toward an object without an observer later reporting it. Those observations do not make every witness useless or every perception false.
+The three gorilla studies tell a more interesting story than the slogan *you see less than you think*. Selective attention permits expertise. Expertise does not abolish surprise. Familiarity with a famous trick was associated with noticing the familiar trick, but did not demonstrate an advantage for detecting different changes; numerical differences on those other changes were not significant. A gaze can point toward an object without an observer later reporting it. Those observations do not make every witness useless or every perception false.
 
 They ask for a better kind of confidence—confidence in a method that can be checked and corrected, rather than in the feeling that nothing important could have escaped notice.
 
