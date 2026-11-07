@@ -7,6 +7,8 @@ from __future__ import annotations
 
 import ast
 import copy
+import hashlib
+import json
 import sys
 import tempfile
 import unittest
@@ -191,6 +193,13 @@ class ReportCompletionGuiR251(unittest.TestCase):
                 ('evidence-manifest', 'txt'))]
             for file in files:
                 file.write_text('synthetic evidence\n', encoding='utf-8')
+            lines = ["SHA-256 file inventory. Hashes do not certify accuracy or compliance.\n"]
+            lines += [f"source-{index}.csv\t" + "a" * 64 + "\n" for index in range(3)]
+            for report in files[:-1]:
+                label = json.dumps(report.name, ensure_ascii=True)[1:-1]
+                digest = hashlib.sha256(report.read_bytes()).hexdigest()
+                lines.append(f"{label}\t{digest}\n")
+            files[-1].write_text("".join(lines), encoding="ascii")
             selected, _, events = self._execute(
                 lambda *a: files, premium=True, authorize=True, output_folder=temp)
             self.assertEqual(selected, [str(files[0])])
