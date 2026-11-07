@@ -9,6 +9,7 @@ from .scroll_access import ScrollableForm
 from .ui_errors import safe_error_message
 from .report_completion import confirm_report_files
 from .review_target import clear_auto_review_target, watch_auto_review_target
+from .premium_launch_proof import has_verified_premium_proof
 
 APPS = {
     "ledger": ("LedgerDiff Lite", ["Left ledger CSV", "Right ledger CSV"], engine.ledger_diff, False),
@@ -31,39 +32,49 @@ def _select_premium_entitlement(root, product):
             "The premium tools remain unavailable for customer data.",
             parent=root)
         return None
-    installed = license.installed_license_path(product)
     try:
-        license.verify_license(installed, product)
-        return installed
-    except (license.EntitlementError, OSError, UnicodeError):
+        installed = license.installed_license_path(product)
+        proof = license.verify_license(installed, product)
+        if has_verified_premium_proof(proof, product, license.Entitlement):
+            return installed
+    except Exception:
+        # No verifier exception or local license path is shown to the user.
+        pass
+    try:
         chosen = filedialog.askopenfilename(
             parent=root, title="Select signed Final Vestige premium entitlement",
             filetypes=[("Signed entitlement", "*.fvslicense")])
-        if not chosen:
-            return None
-        try:
-            license.verify_license(chosen, product)
+    except Exception:
+        chosen = None
+    if not chosen:
+        return None
+    try:
+        proof = license.verify_license(chosen, product)
+        if has_verified_premium_proof(proof, product, license.Entitlement):
             return Path(chosen)
-        except (license.EntitlementError, OSError, UnicodeError):
-            messagebox.showerror(
-                "Premium entitlement rejected",
-                "This entitlement is invalid, expired, or not issued for this product.",
-                parent=root)
-            return None
+    except Exception:
+        pass
+    messagebox.showerror(
+        "Premium entitlement rejected",
+        "This entitlement is invalid, expired, or not issued for this product.",
+        parent=root)
+    return None
 
 
 def _require_current_premium_entitlement(root, product, source):
     from . import offline_entitlement as license
     try:
-        license.verify_license(source, product)
-        return True
-    except (license.EntitlementError, OSError, UnicodeError):
-        messagebox.showerror(
-            "Premium entitlement required",
-            "This product's entitlement can no longer be verified. "
-            "No report or review action was performed.",
-            parent=root)
-        return False
+        proof = license.verify_license(source, product)
+        if has_verified_premium_proof(proof, product, license.Entitlement):
+            return True
+    except Exception:
+        pass
+    messagebox.showerror(
+        "Premium entitlement required",
+        "This product's entitlement can no longer be verified. "
+        "No report or review action was performed.",
+        parent=root)
+    return False
 
 
 def _ledger_stacked_rows(input_count):
