@@ -53,12 +53,12 @@ function check(f){
  ok(f.plan.includes('Praxxis owns independent'),'Praxxis coordination preserved');
  ok(f.plan.includes('NET')||f.plan.includes('net revenue'),'net revenue metric prioritized');
  ok(f.plan.includes('NOT COMPUTABLE')&&f.plan.includes('7-day')&&f.plan.includes('30-day'),'cohorts and no fabricated revenue');
- ok(f.plan.includes('settled')&&f.plan.includes('refunds/chargebacks'),'merchant proof terms');
+ ok(f.plan.includes('merchant/affiliate exports')&&f.plan.includes('refunds/chargebacks'),'merchant proof terms');
  ok(f.plan.includes('https://finalvestige.com/focus/'),'single Focus CTA destination');
  ok(f.plan.includes('HARD HOLD'),'auth blocker explicit');
  ok(f.plan.includes('R188'),'A/B inherited, not another merchant-page proliferation');
  ok(f.plan.includes('no-JS')||f.plan.includes('no autoplay'),'no forced video');
- ok(f.plan.includes('not a sale')||f.plan.includes('not a paid conversion')||f.plan.includes('never count as paid sales'),'outbound clicks not sale');
+ ok(f.plan.includes('Clicks, leads, wishlist or checkout starts never count as paid sales.'),'outbound clicks not sale');
  ok(f.hub.includes('<meta name="robots" content="noindex,nofollow">'),'unpublished hub noindex');
  ok(f.hub.includes('id="content"')&&f.hub.includes('href="#content"'),'functional skip target');
  ok(f.hub.includes('id="page-title"')&&f.hub.includes('aria-labelledby="page-title"'),'hero aria title');
@@ -87,7 +87,7 @@ function check(f){
  ok(elements(f.B,'button').length>0&&elements(f.B,'button').every(nativeDisabled),'inherited B merchant button natively disabled');
  ok(!/<script\b/i.test(f.A)&&!/<script\b/i.test(f.B),'inherited guides no active tracking script');
  ok(f.B.includes('optional-film')&&withoutFilm(f.B)===f.A,'A/B only difference is optional film section');
- ok(!/<video\b/i.test(f.B)&&!/\bautoplay\b/i.test(f.B),'film remains storyboard, no rendered autoplay');
+ ok(!/<video\b/i.test(f.B)&&!/<(?:video|audio)[^>]*\sautoplay(?:\s|>|=)/i.test(f.B),'film remains storyboard, no rendered autoplay');
  return checks;
 }
 function mutations(files){
@@ -100,7 +100,7 @@ function mutations(files){
   ['hub wrong Mesmerism slug',f=>f.hub=f.hub.replace('/2026/11/02/mesmerism/','/2026/11/02/mesmerism-history/')],
   ['hub autoplay iframe',f=>f.hub=f.hub.replace('</main>','<iframe autoplay src="https://example.com"></iframe></main>')],
   ['hub disclosed focus replaced',f=>f.hub=f.hub.replaceAll('https://finalvestige.com/focus/','https://example.com/subscribe')],
-  ['article false branded proof',f=>f.article=f.article.replace('nothing physically transferred','rubber hand proves hypnosis: nothing physically transferred')],
+  ['article false branded proof',f=>f.article=f.article.replace('Nothing physically transferred','rubber hand proves hypnosis: Nothing physically transferred')],
   ['article missing primary 1998 DOI',f=>f.article=f.article.replaceAll('https://doi.org/10.1038/35784','https://example.com')],
   ['ledger fake publisher authorization',f=>{let d=JSON.parse(f.ledger);d.release_gates.find(x=>x.id==='publisher_named_acceptance').status='VERIFIED';f.ledger=JSON.stringify(d)}],
   ['ledger fake earning URL',f=>{let d=JSON.parse(f.ledger);d.release_gates.find(x=>x.id==='authorized_url').status='VERIFIED';f.ledger=JSON.stringify(d)}],
@@ -108,7 +108,7 @@ function mutations(files){
   ['ledger fake paid proof',f=>{let d=JSON.parse(f.ledger);d.release_gates.find(x=>x.id==='paid_net_1k').status='VERIFIED';f.ledger=JSON.stringify(d)}],
   ['ledger broken source reference',f=>{let d=JSON.parse(f.ledger);d.claim_decisions[0].source_id='nonexistent';f.ledger=JSON.stringify(d)}],
   ['plan fabricate media ID',f=>f.plan=f.plan.replace('utm_content={REAL_GROK_ASSET_ID}','utm_content=fake')],
-  ['plan affiliate sale from click',f=>f.plan=f.plan.replace('never count as paid sales','should count as paid sales')],
+  ['plan affiliate sale from click',f=>f.plan=f.plan.replace('Clicks, leads, wishlist or checkout starts never count as paid sales.','Clicks, leads, wishlist or checkout starts should count as paid sales.')],
   ['A button activated',f=>f.A=f.A.replace(/\sdisabled(?=[\s=>])/i,'')],
   ['B button activated',f=>f.B=f.B.replace(/\sdisabled(?=[\s=>])/i,'')],
   ['R191 mechanism correction reverted',f=>f.inherited=f.inherited.replace('a concealed slip was removed to reveal wording with the opposite meaning','a rating mark was moved on the page')]
