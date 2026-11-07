@@ -39,13 +39,13 @@
       "id": "maclean2010",
       "type": "primary_full_text",
       "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3132583/",
-      "note": "N=60 30/30 training-first wait-list comparison; 5h/day for 3 months"
+      "note": "Experienced meditators; 30 training first and 30 waiting; 5h/day x3mo; Retreat 1 recalibrated target difficulty and no observed vigilance gain; Retreat 2 fixed target lengths and reduced vigilance decrement in 27 complete cases"
     },
     {
       "id": "mrazek2013",
-      "type": "primary_abstract",
+      "type": "primary_full_text_reviewed",
       "url": "https://doi.org/10.1177/0956797612459659",
-      "note": "Randomized 2-week mindfulness course; task-specific outcomes"
+      "note": "48 undergraduates randomized mindfulness versus nutrition; 8 x 45m classes + 10m outside daily; modified GRE comprehension/working memory; statistical mediation in higher baseline-wandering group"
     },
     {
       "id": "ingendoh2023",
@@ -176,16 +176,16 @@
         "maclean2010"
       ],
       "decision": "SUPPORTED_AS_PRIMARY_TRIAL",
-      "limits": "Not a 12-minute branded audio trial"
+      "limits": "Experienced residential retreat meditators, not general public or a 12-minute audio product"
     },
     {
       "id": "lab_vigilance",
-      "statement": "Selected sustained-attention and discrimination outcomes improved",
+      "statement": "Retreat 1 discrimination improved without detected vigilance reduction when target difficulty recalibrated; Retreat 2 fixed-target n=27 showed reduced vigilance decrement",
       "source_ids": [
         "maclean2010"
       ],
       "decision": "SUPPORTED_SPECIFIC_ENDPOINT",
-      "limits": "Not proof of generalized health outcomes"
+      "limits": "Authors linked vigilance pattern to reduced perceptual demands, not compelling direct vigilance enhancement; no commercial audio"
     },
     {
       "id": "meditation_2w",
@@ -198,12 +198,12 @@
     },
     {
       "id": "mrazek_results",
-      "statement": "GRE/working-memory measures improved; distracting thoughts decreased",
+      "statement": "Modified GRE comprehension/working memory improved in experiment, reduced wandering statistically mediated performance in higher baseline wandering subgroup",
       "source_ids": [
         "mrazek2013"
       ],
       "decision": "SUPPORTED_SPECIFIC_ENDPOINT",
-      "limits": "Study does not establish commercial-recording efficacy"
+      "limits": "48 undergraduates, nutrition comparator; eight 45m sessions plus 10m daily outside practice; not commercial MP3, full GRE or general health outcome"
     },
     {
       "id": "brain_entrain_eeg",
