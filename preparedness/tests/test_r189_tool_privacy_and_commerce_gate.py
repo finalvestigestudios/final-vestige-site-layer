@@ -61,6 +61,16 @@ class Gate(unittest.TestCase):
         self.assertIs(packet['merchant_offer_verified'], False)
         self.assertIs(packet['publication_authorized'], False)
 
+    def test_native_builder_print_button_accepted_in_all_draft_exports(self):
+        # Real build_article() adds two user-initiated print buttons to every
+        # WordPress draft. A denylist rejecting them makes R189 fail even on
+        # an otherwise authentic export. Preserve those exact harmless calls.
+        button = '<button type="button" class="pa-btn pa-btn--ghost" onclick="window.print()">Print this guide</button>'
+        for name in r.TOOLS:
+            f = self.prep/'build/wp'/f'{name}.html'
+            f.write_text(f.read_text().replace('</script>', '</script>'+button+button), encoding='utf-8')
+        self.assertHold()
+
     def test_baseline(self):
         self.assertHold()
 
@@ -171,6 +181,14 @@ MALICIOUS_HTML = [
  '<a href="//unknown.test">Go</a>',
  '<button onclick="send()">Go</button>',
  '<form enctype="multipart/form-data" onsubmit="return false">',
+ # Exact native-builder print control is allowed, never a generic onclick pass.
+ '<button type="button" class="pa-btn pa-btn--ghost" onclick="window.print();fetch(1)">Print</button>',
+ '<button type="button" class="pa-btn pa-btn--ghost" onclick="alert(1)">Print</button>',
+ '<button type="submit" class="pa-btn pa-btn--ghost" onclick="window.print()">Print</button>',
+ '<button type="button" class="pa-btn pa-btn--other" onclick="window.print()">Print</button>',
+ '<a type="button" class="pa-btn pa-btn--ghost" onclick="window.print()">Print</a>',
+ '<button type="button" class="pa-btn pa-btn--ghost" onclick="window.print()" onmouseover="exfil()">Print</button>',
+ '<button type="button" class="pa-btn pa-btn--ghost" onclick="window.print();">Print</button>',
 ]
 
 
