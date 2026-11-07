@@ -24,7 +24,7 @@ HOLD='DRAFT_HARD_HOLD'
 INVALID='INVALID_HARD_HOLD'
 PINS={
     'r190_atomic_native_privacy_preflight.py':'cbf52dda1de707d17e516f4cd22432e1b0e20ea9',
-    'r191_static_resource_offer_gate.py':'0e51defb8b15f5b3f6512f71f21173b5db92f50a',
+    'r191_static_resource_offer_gate.py':'cdad014b96dfa803ae14c1860971209351db5db1',
 }
 
 
