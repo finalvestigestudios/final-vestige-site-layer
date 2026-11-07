@@ -69,7 +69,7 @@ function mutations(f){
  ["invent sale","matrix",s=>s.replace('"verified_merchant_orders": null','"verified_merchant_orders": 2')],
  ["invent denominator","matrix",s=>s.replace('"qualified_human_sessions": null','"qualified_human_sessions": 23')],
  ["invent money","matrix",s=>s.replace('"realized_net_revenue": null','"realized_net_revenue": 300')],
- ["delete source","article",s=>s.replace("3612492/","0000000/")],
+ ["delete source","article",s=>s.replace(/3612492\//g,"0000000/")],
  ["erase caveat","article",s=>s.replace("no affiliate recommendation","paid recommendation")],
  ["revert date","errata",s=>s.replace("More than fifty years later","Forty-eight years later")],
  ["erase primary source","errata",s=>s.replace("LoftusPalmer_ReconstructionAuto_JVLVB1974.pdf","missing.pdf")],
