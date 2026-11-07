@@ -57,13 +57,13 @@ class EntitlementRevocationR247Tests(unittest.TestCase):
         with self.assertRaisesRegex(RuntimeError, "UI scrub failed"):
             revalidate_or_revoke(lambda: False, scrub)
 
-    def test_unexpected_programmer_error_not_misclassified_as_license_denial(self):
+    def test_unexpected_verifier_error_denies_and_scrubs(self):
         events = []
         def unexpected():
             raise TypeError("Programmer error")
-        with self.assertRaises(TypeError):
-            revalidate_or_revoke(unexpected, lambda: events.append("scrub"))
-        self.assertEqual(events, [])
+        self.assertFalse(revalidate_or_revoke(
+            unexpected, lambda: events.append("scrub")))
+        self.assertEqual(events, ["scrub"])
 
     def test_noncallable_callbacks_fail_before_loading_customer_data(self):
         for authorize, scrub in ((None, lambda: None), (lambda: None, None),
