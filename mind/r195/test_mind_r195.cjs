@@ -68,7 +68,7 @@ function evaluate(f){
  ok(nativeDisabled(f.A)&&nativeDisabled(f.B),'inherited both A/B purchase controls disabled');
  ok(/42.second|42s|00:42|42-second/i.test(f.B),'inherited B optional-film concept');
  ok(/more than 7,400 mm³/.test(f.prior193)&&/153 mm³/.test(f.prior193),'R193 correct nodule actual volume / gorilla bounding box');
- ok(!/mean nodule bounding volume/.test(f.prior193),'R193 avoid unsupported nodule bounding volumes');
+ ok(!/mean nodule bounding volume|nodules' mean bounding volumes/.test(f.prior193),'R193 avoid unsupported nodule bounding volumes');
  ok(/gaze dwell time/.test(f.prior193),'R193 mean dwell not single gaze fixation');
  ok(/Thatcherization.*deliberate manipulation/.test(f.prior194),'R194 Thatcherization distinct from illusion');
  ok(/does not establish a separate familiar-face-identity explanation/.test(f.prior194),'R194 1997 inference removed');
