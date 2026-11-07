@@ -75,7 +75,7 @@ const tests=[
   ],
   [
     "excess record",
-    "x=>x.records.push(clone(x.records[0]))"
+    "x=>x.records.push(JSON.parse(JSON.stringify(x.records[0])))"
   ],
   [
     "missing attribution gate",
