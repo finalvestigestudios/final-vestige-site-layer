@@ -7,6 +7,7 @@ from .keyboard_access import install_shortcuts
 from .form_layout import standard_stacked_rows
 from .scroll_access import ScrollableForm
 from .ui_errors import safe_error_message
+from .report_completion import confirm_report_files
 from .review_target import clear_auto_review_target, watch_auto_review_target
 
 APPS = {
@@ -235,12 +236,16 @@ def run(app_id):
                                      invoice_window.get().strip()))
             else:
                 outputs = action(*args, output.get().strip())
-        except (ValueError, OSError, UnicodeError) as exc:
+            outputs = confirm_report_files(outputs)
+        except Exception as exc:
+            # Engines can fail after writing a destination. Never announce
+            # success or auto-select stale premium evidence; leave files for
+            # explicit human inspection, without echoing private paths.
             detail = safe_error_message(exc, operation="generate")
-            status.set("Failed: " + detail)
-            messagebox.showerror("Review input files", detail, parent=root)
+            status.set("Failed: " + detail + " Inspect the output folder before retrying.")
+            messagebox.showerror("Review input files", detail + "\n\nInspect the output folder before retrying.", parent=root)
             return
-        last_report[0] = str(outputs[0]) if outputs else None
+        last_report[0] = str(outputs[0]) if premium else None
         names = ", ".join(p.name for p in outputs)
         status.set("Created: " + names)
         messagebox.showinfo("Review reports", "Saved in: " + output.get() + "\n\n" + names, parent=root)
