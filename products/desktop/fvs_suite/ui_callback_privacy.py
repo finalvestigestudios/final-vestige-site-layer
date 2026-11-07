@@ -16,6 +16,7 @@ CALLBACK_MESSAGE = (
     "No compliance decision was made. Review your local output files before retrying."
 )
 FALLBACK_MESSAGE = "Final Vestige Labs action failed; private diagnostics suppressed\n"
+INSTALL_MESSAGE = "Final Vestige Labs callback protection failed; private diagnostics suppressed"
 
 
 def install_callback_privacy(root, *, invalidate_review=None) -> None:
@@ -42,4 +43,14 @@ def install_callback_privacy(root, *, invalidate_review=None) -> None:
             except Exception:
                 pass
 
-    root.report_callback_exception = report_callback_exception
+    # Silently discarded assignments retain Tk's default path-leaking handler.
+    # Require identity readback before exposing any financial GUI callbacks.
+    ready = False
+    try:
+        root.report_callback_exception = report_callback_exception
+        ready = root.report_callback_exception is report_callback_exception
+    except Exception:
+        pass
+    # Raise OUTSIDE the handler: do not retain private OS error context.
+    if not ready:
+        raise RuntimeError(INSTALL_MESSAGE)
