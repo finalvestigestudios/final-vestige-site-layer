@@ -1,0 +1,19 @@
+FINAL VESTIGE DISPATCH R174 — INTERNAL PLAIN-TEXT REVIEWER
+STATUS: ALL SIX HOLD_UNSENT. ISSUES 03 AND 05 HOLD_MERCHANT.
+
+FOCUS → DISPATCH: counts 3 counted/3 confirmed/2 unconfirmed (nonadditive). Eligibility and received welcome unknown. Browser success does not confirm a subscription.
+
+01 EDITORIAL — The mind is not a camera. Puységur source trail.
+02 EDITORIAL — Before hypnosis had a name. Repeats 01 destination; optional alternative requires founder approval.
+03 COMMERCIAL RESERVED — The twelve-minute meditation question. Zen12 first-party guide and earning URL NOT APPROVED/LIVE. No active CTA.
+04 EDITORIAL — Fourteen seconds. A much longer explanation. Apollo 1 evidence trail.
+05 COMMERCIAL RESERVED — Before you press play on a hypnosis audio. Hypnosis Live email approval/guide/URL NOT VERIFIED. No active CTA.
+06 EDITORIAL — What did seven days of attention reveal? Existing subscriber may already have Fieldbook. No substitution approved.
+
+COMMERCIAL DISCLOSURE REQUIRED BESIDE QUALIFYING OFFER (after approval): If you buy through a link in the independent guide, Final Vestige may earn a commission at no additional cost to you.
+
+MANDATORY RELEASE PROOFS: provider email-eligible recipients, actual delivered welcome, native Jetpack preview/received commercial MIME, real publisher postal address, functional opt-out, merchant acceptance AND permission for email, legal current offer, live guide, exact permitted earning URL, final founder approval. Automattic's address does not substitute for FV's.
+
+PRIMARY KPI: independently verified realized net revenue per 1,000 qualified human sessions (7/30-day cohorts); UNKNOWN until complete source-to-purchase and refund/fee evidence. Never equate newsletter opens, CTA clicks, affiliate clicks, signups, or pending orders to sales.
+
+This is an offline reviewer, NOT an email, sender, or published campaign. Sources and reproducible proof: README.md and test_conversion_evidence.cjs in R174; original six drafts unchanged in PR #175.
