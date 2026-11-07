@@ -7,6 +7,7 @@ from .keyboard_access import install_shortcuts
 from .form_layout import standard_stacked_rows
 from .scroll_access import ScrollableForm
 from .ui_errors import safe_error_message
+from .ui_callback_privacy import install_callback_privacy
 from .report_completion import confirm_report_files
 from .review_target import clear_auto_review_target, watch_auto_review_target
 from .premium_launch_proof import has_verified_premium_proof
@@ -100,6 +101,10 @@ def run(app_id):
     if app_id not in APPS: raise ValueError("Unknown application")
     title, labels, action, premium = APPS[app_id]
     root = tk.Tk()
+    # Tk's default callback handler prints raw private exception tracebacks.
+    # Install a redacted per-root fallback before any event is scheduled.
+    last_report = [None]
+    install_callback_privacy(root, invalidate_review=lambda: clear_auto_review_target(last_report))
     entitlement_source = None
     if premium:
         root.withdraw()
@@ -135,7 +140,6 @@ def run(app_id):
         frame.columnconfigure(1, weight=0)
     selected = [tk.StringVar() for _ in labels]
     input_controls = []
-    last_report = [None]
     for index, label in enumerate(labels):
         label_row, entry_row, browse_row = layout["inputs"][index]
         ui_label(frame, text=label).grid(
