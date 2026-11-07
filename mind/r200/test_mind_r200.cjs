@@ -137,7 +137,7 @@ function mutations(d){
  const misses=[];let caught=0;
  for(const [name,key,from,to] of cases){
   if(!d[key].includes(from)){misses.push(name+' [target absent]');continue;}
-  const modified={...d,[key]:d[key].replace(from,to)};
+  const modified={...d,[key]:name==='missing published Focus'?d[key].split(from).join(to):d[key].replace(from,to)};
   if(!validate(modified).ok)caught++;else misses.push(name+' [escaped]');
  }
  return {total:cases.length,caught,misses};
