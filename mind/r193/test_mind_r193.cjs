@@ -77,7 +77,7 @@ function mutationProbe(f){
  ['invent_revenue',{ledger:f.ledger.replace('"id": "net_1k",\n      "status": "NOT_COMPUTABLE"','"id": "net_1k",\n      "status": "PROFITABLE"')}],
  ['treat_gift_as_signup',{ledger:f.ledger.replace('"id": "focus_confirmed_lead",\n      "status": "NOT_VERIFIED"','"id": "focus_confirmed_lead",\n      "status": "CONFIRMED"')}],
  ['remove_creator_id_guard',{plan:f.plan.replace('utm_content={REAL_GROK_ASSET_ID}','utm_content=fictional_123')}],
- ['no_source_gorilla',{article:f.article.replace('https://pmc.ncbi.nlm.nih.gov/articles/PMC3964612/','http://untrusted.test/paper')}],
+ ['no_source_gorilla',{article:f.article.replaceAll('https://pmc.ncbi.nlm.nih.gov/articles/PMC3964612/','http://untrusted.test/paper')}],
  ['remove_inherited_B_film',{B:f.B.replace('optional-film','other-film')}],
  ['remove_unpublished_status',{hub:f.hub.replace('noindex,nofollow','index,follow')}],
  ['remove_draft_governance',{ledger:f.ledger.replace('"id": "cms_release",\n      "status": "BLOCKED"','"id": "cms_release",\n      "status": "APPROVED"')}]
