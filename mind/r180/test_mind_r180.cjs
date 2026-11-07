@@ -89,7 +89,7 @@ const mutationCases=[
 ['forge owned SKU',claimName,s=>s.replace('"Payhip_owned_mind_product_verified": false','"Payhip_owned_mind_product_verified": true')],
 ['remove research source',articleName,s=>s.replace('pubmed.ncbi.nlm.nih.gov/23538911','example.invalid/not-published')],
 ['remove historical link',articleName,s=>s.replace('Puységur','Nothing').replace(/Puységur/g,'Nothing')],
-['remove net unknown language',planName,s=>s.replace('NOT COMPUTABLE','UNKNOWN')],
+['remove net unknown language',planName,s=>s.replaceAll('NOT COMPUTABLE','UNKNOWN')],
 ['add tracking script hub',hubName,s=>s.replace('</body>','<script src="https://tracking.example/js"></script></body>')],
 ['remove article firewall',articleName,s=>s.replace('commercial: none','commercial: paid')],
 ['duplicate form A',Aname,s=>s.replace('</main>','<form action="/subscribe"></form></main>')]
