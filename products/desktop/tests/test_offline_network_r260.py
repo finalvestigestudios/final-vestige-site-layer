@@ -114,8 +114,9 @@ class OfflineNetworkR260Tests(unittest.TestCase):
             sys.argv = ['LedgerDiffLite.exe']
             sys.modules['fvs_suite.app'] = types.SimpleNamespace(run=lambda app: (_ for _ in ()).throw(AssertionError('GUI LOADED')))
             try: launch('ledger')
-            except RuntimeError as exc:
-                if str(exc) != 'disabled': raise
+            except SystemExit as exc:
+                if str(exc) != 'Final Vestige Labs security startup failed; no private diagnostics printed': raise
+                if exc.__cause__ is not None or exc.__context__ is not None: raise RuntimeError('private context retained')
             else: raise AssertionError('guard bypassed')
         ''')
         self.assertEqual(result.returncode, 0, result.stderr)
@@ -130,8 +131,9 @@ class OfflineNetworkR260Tests(unittest.TestCase):
             sys.argv = ['LedgerDiffLite.exe']
             sys.modules['fvs_suite.app'] = types.SimpleNamespace(run=lambda app: (_ for _ in ()).throw(RuntimeError('GUI LOADED')))
             try: launch('ledger')
-            except RuntimeError as exc:
-                if str(exc) != 'Offline network guard could not be installed': raise
+            except SystemExit as exc:
+                if str(exc) != 'Final Vestige Labs security startup failed; no private diagnostics printed': raise
+                if exc.__cause__ is not None or exc.__context__ is not None: raise RuntimeError('private context retained')
             else: raise RuntimeError('guard bypassed')
         ''')
         self.assertEqual(result.returncode, 0, result.stderr)
