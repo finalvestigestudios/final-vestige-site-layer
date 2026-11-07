@@ -7,7 +7,9 @@ from pathlib import Path
 import tempfile
 import unittest
 
-PATH = Path(__file__).with_name('r188_producer_code_custody_gate.py')
+PATH = Path(__file__).resolve().parents[1] / 'tools/r188_producer_code_custody_gate.py'
+if not PATH.is_file():
+    PATH = Path(__file__).with_name('r188_producer_code_custody_gate.py')
 spec = util.spec_from_file_location('r188_producer_code_custody_gate', PATH)
 assert spec is not None and spec.loader is not None
 r188 = util.module_from_spec(spec)
