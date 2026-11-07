@@ -29,7 +29,7 @@ class Admission(unittest.TestCase):
             with ZipFile(target,"w",compression=ZIP_DEFLATED) as z:
                 for name,body in files.items():
                     z.writestr(name,body)
-            with self.assertRaises((ValueError,Exception)):
+            with self.assertRaises(ValueError):
                 bridge.admit_bundle(target)
 
     def test_exact_source_and_manifest(self):
