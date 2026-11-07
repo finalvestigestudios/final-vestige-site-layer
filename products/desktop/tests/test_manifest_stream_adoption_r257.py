@@ -35,7 +35,8 @@ class ManifestStreamAdoptionR257(unittest.TestCase):
 
         with (patch('fvs_suite.premium_link_custody.os.open', side_effect=traced_open),
               patch('fvs_suite.premium_link_custody.os.fdopen', side_effect=fault)):
-            with self.assertRaises(type(fault)) if isinstance(fault, BaseException) and not isinstance(fault, Exception) else self.assertRaises(ValueError) as caught:
+            expected = type(fault) if not isinstance(fault, Exception) else ValueError
+            with self.assertRaises(expected) as caught:
                 subject._hash_regular(self.source, subject.MAX_INPUT_BYTES)
         self.assertEqual(len(opened), 1)
         with self.assertRaises(OSError):
