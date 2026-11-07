@@ -13,6 +13,7 @@ import stat
 import unicodedata
 from pathlib import Path
 
+from .csv_snapshot import _same_path_descriptor_signature
 from .manifest_guard import MAX_REPORT_BYTES, _hash_regular
 
 _HEADER = "SHA-256 file inventory. Hashes do not certify accuracy or compliance."
@@ -41,14 +42,16 @@ def _read_bounded_inventory(path: Path) -> str:
         with os.fdopen(descriptor, "rb") as stream:
             opened = os.fstat(stream.fileno())
             if (not stat.S_ISREG(opened.st_mode)
-                    or _signature(opened) != _signature(before)):
+                    or not _same_path_descriptor_signature(before, opened)):
                 raise ValueError("Premium inventory changed while opening")
             raw = stream.read(_MAX_MANIFEST_BYTES + 1)
             finished = os.fstat(stream.fileno())
             if (len(raw) != before.st_size
                     or _signature(finished) != _signature(opened)):
                 raise ValueError("Premium inventory changed while reading")
-        if _signature(path.lstat()) != _signature(before):
+        after = path.lstat()
+        if (_signature(after) != _signature(before)
+                or not _same_path_descriptor_signature(after, finished)):
             raise ValueError("Premium inventory was replaced")
         return raw.decode("ascii", errors="strict")
     except (OSError, UnicodeError):
@@ -100,9 +103,26 @@ def verify_premium_inventory(paths: tuple[Path, ...], app_id: str) -> None:
         if folded in decoded_names:
             raise ValueError("Ambiguous premium inventory names")
         decoded_names.add(folded)
+    report_snapshots: list[tuple[Path, tuple[int, int, int, int, int]]] = []
     for path, entry in zip(reports, rows[-count:]):
         # Inventory writer JSON-escapes a *basename* and writes lowercase SHA.
         expected_name = json.dumps(path.name, ensure_ascii=True)[1:-1]
-        digest, _ = _hash_regular(path, MAX_REPORT_BYTES)
+        digest, signature = _hash_regular(path, MAX_REPORT_BYTES)
         if entry != f"{expected_name}\t{digest}":
             raise ValueError("Premium report does not match evidence inventory")
+        report_snapshots.append((path, signature))
+
+    # Reports can take time to hash. Recheck every published file and directory
+    # after hashing, so late edits are not implicitly selected for review.
+    # This remains point-in-time verification, not a durable filesystem lock.
+    if _read_bounded_inventory(manifest) != content:
+        raise ValueError("Premium inventory changed while reports were verified")
+    try:
+        for path, signature in report_snapshots:
+            current = path.lstat()
+            if not stat.S_ISREG(current.st_mode) or _signature(current) != signature:
+                raise ValueError("Premium report changed during package verification")
+        if set(manifest.parent.iterdir()) != set(paths):
+            raise ValueError("Premium evidence package changed during verification")
+    except OSError:
+        raise ValueError("Cannot recheck premium evidence package") from None
