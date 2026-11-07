@@ -52,6 +52,7 @@ function run(d){
  check(h.includes('max-width:780px')&&h.includes('max-width:400px'),'mobile CSS breakpoints present');
  check(j.affiliate_earning_url===null&&j.authoritative_affiliate_approval===null,'no invented affiliate approval');
  check(j.owned_payhip_mind_sku===null&&j.actual_paid_orders===null,'no invented purchase or SKU');
+ check(j.confirmed_jetpack_leads===null,'no invented subscriber confirmations');
  check(j.net_revenue_per_1000_qualified_humans==='NOT_COMPUTABLE','not zero KPI');
  check(Array.isArray(j.sources)&&j.sources.length>=18,'source register size');
  check(Array.isArray(j.claims)&&j.claims.length>=25,'claim matrix size');
