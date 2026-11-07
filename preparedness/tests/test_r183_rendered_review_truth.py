@@ -150,6 +150,33 @@ class TestR183ReviewTruth(unittest.TestCase):
     def test_review_record_heading_present(self):
         self.assertIn("Review record</h2>", build.review_block(meta()))
 
+    def test_authentic_35_metadata_custody_and_rendered_review_records(self):
+        """Trusted-repository integration; requires all original 35 metadata files.
+
+        Never silently skip if the checkout is incomplete. A passing case does
+        not decide whether any source or safety claim is factually correct.
+        """
+        import hashlib
+        import json
+        roster_path = ROOT / "review" / "r178" / "safety_state_roster.json"
+        roster = json.loads(roster_path.read_text(encoding="utf-8"))
+        self.assertEqual(roster["schema"], "fv-preparedness-r178-35-safety-state-custody-v1")
+        self.assertEqual(len(roster["articles"]), 35)
+        for item in roster["articles"]:
+            with self.subTest(slug=item["slug"]):
+                p = ROOT / "content" / "articles" / (item["slug"] + ".meta.json")
+                raw = p.read_bytes()
+                h = hashlib.sha1(b"blob " + str(len(raw)).encode("ascii") + b"\\0" + raw).hexdigest()
+                self.assertEqual(h, item["meta_git_blob"])
+                original = json.loads(raw.decode("utf-8"))
+                self.assertEqual(original["slug"], item["slug"])
+                self.assertEqual(original["safety_review"]["state"], item["recorded_state"])
+                self.assertEqual(original["status"]["publish"], "draft")
+                rendered = build.review_block(original)
+                self.assertIn("independent QD", rendered)
+                self.assertNotIn("<dd>Approved by ", rendered)
+                self.assertNotIn("<dd>Not required for this topic.</dd>", rendered)
+
 def slate_test(slug):
     def case(self):
         state = ("approved" if slug in APPROVED else
