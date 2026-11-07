@@ -1,0 +1,440 @@
+{
+  "schema": "fv.mind.r194.claims.v1",
+  "as_of": "2026-11-07",
+  "status": "UNPUBLISHED_SOURCE_REVIEW_NO_MERCHANT_ACTIVATION",
+  "precedence": "Do not treat historical experiments, seller promotional copy, or a public affiliate portal as actual product efficacy or publisher approval.",
+  "sources": [
+    {
+      "id": "thompson1980",
+      "url": "https://doi.org/10.1068/p090483",
+      "kind": "PRIMARY_PUBLISHER_RECORD",
+      "access": "bibliography/publisher",
+      "subject": "Original Thatcher demonstration"
+    },
+    {
+      "id": "bartlett1993",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/8354050/",
+      "kind": "PRIMARY_PUBMED_ABSTRACT",
+      "access": "abstract",
+      "subject": "Three face-distortion studies"
+    },
+    {
+      "id": "lewis1997",
+      "url": "https://doi.org/10.1068/p260225",
+      "kind": "PRIMARY_PUBLISHER_ABSTRACT",
+      "access": "abstract",
+      "subject": "Speeded response; photographic negatives"
+    },
+    {
+      "id": "lewis2001",
+      "url": "https://doi.org/10.1068/p3174",
+      "kind": "PRIMARY_PUBLISHER_ABSTRACT",
+      "access": "abstract",
+      "subject": "Rotation-angle response profile"
+    },
+    {
+      "id": "drew2013",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3964612/",
+      "kind": "PRIMARY_FULL",
+      "access": "full",
+      "subject": "Expert radiologist inattentional blindness"
+    },
+    {
+      "id": "inspire3",
+      "url": "https://inspire3.com/",
+      "kind": "OFFICIAL_SELLER",
+      "access": "public",
+      "subject": "Catalogue and branded efficacy assertions"
+    },
+    {
+      "id": "zen12",
+      "url": "https://zen12.com/hnp",
+      "kind": "EXACT_OFFICIAL_OFFER",
+      "access": "public",
+      "subject": "Zen12 level/format/marketing claims"
+    },
+    {
+      "id": "aff",
+      "url": "https://affiliates.inspire3.com/",
+      "kind": "OFFICIAL_PUBLIC_AFFILIATE_PORTAL",
+      "access": "public",
+      "subject": "Program advertised generally, not named eligibility"
+    },
+    {
+      "id": "ftc_disclosure",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "kind": "REGULATOR",
+      "access": "public",
+      "subject": "Conspicuous near-link affiliate disclosure"
+    },
+    {
+      "id": "ftc_health",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "kind": "REGULATOR",
+      "access": "public",
+      "subject": "Product-specific support for health and performance benefits"
+    },
+    {
+      "id": "focus",
+      "url": "https://finalvestige.com/focus/",
+      "kind": "LIVE_OWNED_RESOURCE",
+      "access": "public",
+      "subject": "Single 52-page Focus Fieldbook / Jetpack resource"
+    },
+    {
+      "id": "change",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "kind": "LIVE_OWNED_EDITORIAL",
+      "access": "public",
+      "subject": "Existing live public landing"
+    },
+    {
+      "id": "puysegur",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "kind": "LIVE_OWNED_ARCHIVE_FROM_ISSUE_171",
+      "access": "partially_accessible_in_current_web_read",
+      "subject": "Historical reference not modern efficacy evidence"
+    },
+    {
+      "id": "github171",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "kind": "OWNED_GOVERNANCE",
+      "access": "authenticated",
+      "subject": "Mind scope, authorization rules"
+    },
+    {
+      "id": "github820",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "kind": "OWNED_GOVERNANCE",
+      "access": "authenticated",
+      "subject": "Qualified-human and paid-sale attribution"
+    },
+    {
+      "id": "r193qa",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171#issuecomment-6707927745",
+      "kind": "OWNED_RESEARCH_RECORD",
+      "access": "authenticated",
+      "subject": "Prior sprint source review"
+    },
+    {
+      "id": "grokdrive",
+      "url": "https://docs.google.com/document/d/1_dqcJeqxbvYb1prGxy0nSWTsHu8p0PSRsDB_NPNbL48/edit",
+      "kind": "INTERNAL_COORDINATION",
+      "access": "authenticated",
+      "subject": "Creator ownership and media-ID missing proofs"
+    }
+  ],
+  "claims": [
+    {
+      "id": "r194_thatcher_origin",
+      "claim": "Thompson published 'Margaret Thatcher: A New Illusion' in 1980, Perception 9:483–484.",
+      "source_ids": [
+        "thompson1980"
+      ],
+      "decision": "SUPPORTED_BIBLIOGRAPHY",
+      "scope": "historical"
+    },
+    {
+      "id": "r194_mouth",
+      "claim": "The Thatcher illusion involves eyes and mouth locally inverted within a face.",
+      "source_ids": [
+        "thompson1980",
+        "bartlett1993"
+      ],
+      "decision": "SUPPORTED_RESEARCH",
+      "scope": "specific visual stimulus"
+    },
+    {
+      "id": "r194_bartlett",
+      "claim": "Inversion reduced apparent grotesqueness for Thatcherized and spatially distorted stimuli but not grotesque-expression stimuli in Bartlett & Searcy's three studies.",
+      "source_ids": [
+        "bartlett1993"
+      ],
+      "decision": "SUPPORTED_ABSTRACT",
+      "scope": "these stimuli and measures"
+    },
+    {
+      "id": "r194_lewis97",
+      "claim": "Speeded detection slower for globally inverted faces; negatives also hindered performance.",
+      "source_ids": [
+        "lewis1997"
+      ],
+      "decision": "SUPPORTED_ABSTRACT",
+      "scope": "experiment only"
+    },
+    {
+      "id": "r194_lewis01",
+      "claim": "Rotation-angle pattern suggests gradual rather than abrupt loss of configural information.",
+      "source_ids": [
+        "lewis2001"
+      ],
+      "decision": "SUPPORTED_ABSTRACT",
+      "scope": "reaction-time design"
+    },
+    {
+      "id": "r194_universal",
+      "claim": "Every observer must fail and all people become fooled at a single rotation angle.",
+      "source_ids": [
+        "lewis2001"
+      ],
+      "decision": "REJECT_UNSUPPORTED_GENERALIZATION"
+    },
+    {
+      "id": "r193_dwell",
+      "claim": "Among non-reporters who looked at the gorilla location, gaze dwell averaged 547ms; not necessarily one uninterrupted fixation.",
+      "source_ids": [
+        "drew2013"
+      ],
+      "decision": "SUPPORTED_PRIMARY_FULL_WITH_PRECISION"
+    },
+    {
+      "id": "r193_volume",
+      "claim": "The gorilla's rectangular bounding volume was approximately 48 times the mean nodule bounding volume.",
+      "source_ids": [
+        "drew2013"
+      ],
+      "decision": "SUPPORTED_PRIMARY_FULL_WITH_PRECISION"
+    },
+    {
+      "id": "zen12_levels",
+      "claim": "Seller describes 12 levels, 48 MP3s in 4 listening styles, 12-minute sessions.",
+      "source_ids": [
+        "zen12"
+      ],
+      "decision": "SELLER_DESCRIBED_FEATURE_NOT_INDEPENDENTLY_TESTED"
+    },
+    {
+      "id": "zen12_hour",
+      "claim": "Twelve minutes of Zen12 equals one hour of advanced meditation.",
+      "source_ids": [
+        "zen12",
+        "ftc_health"
+      ],
+      "decision": "SELLER_CLAIM_NO_BRANDED_PRODUCT_EVIDENCE_HARD_HOLD"
+    },
+    {
+      "id": "zen12_health",
+      "claim": "Zen12 provides stress relief, improved cognitive performance or health benefits.",
+      "source_ids": [
+        "zen12",
+        "ftc_health"
+      ],
+      "decision": "SELLER_CLAIM_UNSUBSTANTIATED_FOR_BRANDED_PRODUCT_OMIT"
+    },
+    {
+      "id": "zen12_refund",
+      "claim": "Advertised guarantee corresponds to verified refund execution and current terms.",
+      "source_ids": [
+        "zen12"
+      ],
+      "decision": "UNVERIFIED_MERCHANT_FULFILLMENT"
+    },
+    {
+      "id": "affiliate_program",
+      "claim": "Public Inspire3 portal advertises an affiliate network.",
+      "source_ids": [
+        "aff"
+      ],
+      "decision": "SUPPORTED_PUBLIC_ONLY"
+    },
+    {
+      "id": "named_approval",
+      "claim": "Final Vestige is an accepted Inspire3 publisher authorized to promote Zen12 by site/email/social.",
+      "source_ids": [
+        "aff",
+        "github171"
+      ],
+      "decision": "UNVERIFIED_HARD_HOLD"
+    },
+    {
+      "id": "qualified_lead",
+      "claim": "Visible Focus download or ?subscribe= query proves confirmed opt-in.",
+      "source_ids": [
+        "focus",
+        "github820"
+      ],
+      "decision": "REJECT_INVALID_EVENT"
+    },
+    {
+      "id": "sale",
+      "claim": "Affiliate click or checkout start proves paid sale or received commission.",
+      "source_ids": [
+        "github820"
+      ],
+      "decision": "REJECT_UNVERIFIED"
+    },
+    {
+      "id": "net_revenue",
+      "claim": "Net realized revenue per 1000 qualified-human sessions is measurable with current evidence.",
+      "source_ids": [
+        "github820"
+      ],
+      "decision": "NOT_COMPUTABLE"
+    },
+    {
+      "id": "price",
+      "claim": "A single exact publicly advertised Zen12 price always equals final checkout charge.",
+      "source_ids": [
+        "zen12"
+      ],
+      "decision": "UNVERIFIED_CHECKOUT_PRICE_OMIT"
+    },
+    {
+      "id": "self_report",
+      "claim": "Final Vestige writers personally used, tested or benefited from Zen12.",
+      "source_ids": [
+        "github171"
+      ],
+      "decision": "FORBIDDEN_NO_PRODUCT_TRIAL"
+    },
+    {
+      "id": "email",
+      "claim": "New Mind product guide may be sent by Dispatch without release approval or channel permission.",
+      "source_ids": [
+        "github171",
+        "aff"
+      ],
+      "decision": "FORBIDDEN_NO_AUTHORIZATION"
+    }
+  ],
+  "gates": [
+    {
+      "id": "publisher_acceptance",
+      "pass": false,
+      "owner": "Founder/Mind",
+      "required": "Account-level FV publisher approval; immutable evidence"
+    },
+    {
+      "id": "allowed_channels",
+      "pass": false,
+      "owner": "Founder/Mind",
+      "required": "Actual promotional permissions for website/social/Dispatch"
+    },
+    {
+      "id": "earning_url",
+      "pass": false,
+      "owner": "Founder/Mind",
+      "required": "Unique authorized product URL from authenticated affiliate account"
+    },
+    {
+      "id": "merchant_price",
+      "pass": false,
+      "owner": "Founder/Commerce",
+      "required": "Buyer-visible final checkout charge and taxes"
+    },
+    {
+      "id": "merchant_refunds",
+      "pass": false,
+      "owner": "Founder/Commerce",
+      "required": "Current terms and refund handling test/evidence"
+    },
+    {
+      "id": "product_specific_support",
+      "pass": false,
+      "owner": "Mind/Independent QA",
+      "required": "Independent adequate support or remove benefit claims"
+    },
+    {
+      "id": "payhip_owned_candidate",
+      "pass": false,
+      "owner": "Founder/Commerce",
+      "required": "Existing rights-cleared paid Mind SKU, verified checkout & fulfillment"
+    },
+    {
+      "id": "grok_media_identity",
+      "pass": false,
+      "owner": "Grok/Praxxis",
+      "required": "Actual platform post URL, immutable asset_id and rights"
+    },
+    {
+      "id": "approved_social_destination",
+      "pass": false,
+      "owner": "Grok/Founder",
+      "required": "Approved live non-draft canonical topic URL, allowed link placement"
+    },
+    {
+      "id": "focus_confirmed_lead",
+      "pass": false,
+      "owner": "Claude/Site QA/Dispatch",
+      "required": "Authoritative Jetpack confirmed opt-in and consent; not PDF visibility"
+    },
+    {
+      "id": "ab_film_render",
+      "pass": false,
+      "owner": "Mind/QA",
+      "required": "Captioned 30–45s original playable asset with file-size/UX test"
+    },
+    {
+      "id": "real_browser_wcag",
+      "pass": false,
+      "owner": "Site QA",
+      "required": "Actual 360/390/768/1440px keyboard/contrast screen-reader WCAG tests"
+    },
+    {
+      "id": "real_performance",
+      "pass": false,
+      "owner": "Site QA/Claude",
+      "required": "Actual network Lighthouse/CWV and no-JS tests"
+    },
+    {
+      "id": "native_ci",
+      "pass": false,
+      "owner": "GitHub/QA",
+      "required": "Exact head CI and native Node after source test"
+    },
+    {
+      "id": "merchant_paid_order",
+      "pass": false,
+      "owner": "Founder/Commerce",
+      "required": "Merchant-confirmed actual order, not affiliate click"
+    },
+    {
+      "id": "net_settlement",
+      "pass": false,
+      "owner": "Founder/Commerce",
+      "required": "Commission received/orders less refunds/fees"
+    },
+    {
+      "id": "qualified_sessions",
+      "pass": false,
+      "owner": "Analytics/Claude",
+      "required": "Verified 7/30-day human denominator with real asset IDs"
+    },
+    {
+      "id": "founder_release",
+      "pass": false,
+      "owner": "Founder",
+      "required": "Separate explicit publication/merchant release"
+    }
+  ],
+  "privacy": {
+    "UTM_fields": [
+      "utm_source",
+      "utm_medium=organic_social",
+      "utm_campaign",
+      "utm_content=REAL_ASSET_ID_ONLY"
+    ],
+    "prohibited": [
+      "email",
+      "visitor_identifier",
+      "ip_address",
+      "cross_site_fingerprint",
+      "test_subscribe_query_as_lead"
+    ],
+    "events": [
+      "campaign_landing",
+      "article_to_resource_click",
+      "affiliate_outbound",
+      "confirmed_signup_JETPACK_ONLY_IF_AUTHENTIC",
+      "merchant_confirmed_paid_order_EXTERNAL_ONLY"
+    ],
+    "no_new_script": true
+  },
+  "offer": "Zen12 Premium, conditional only",
+  "offer_status": "HARD_HOLD",
+  "alternate_owned_offer": "UNKNOWN_NOT_YET_AUTHENTICATED",
+  "paid_orders_verified": null,
+  "commission_received_verified": null,
+  "verified_qualified_humans": null,
+  "net_revenue_per_1000_qualified_humans": "NOT_COMPUTABLE"
+}
