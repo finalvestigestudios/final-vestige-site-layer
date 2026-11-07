@@ -82,7 +82,7 @@ class ChromiumReceiptTests(unittest.TestCase):
         (cls.outdir/'offline_chromium_results.json').write_text(json.dumps(cls.results,indent=2)+'\n')
         cls.browser.close();cls.pw.stop()
 
-    def scan(self,width=390,mutate=None,js=True,reduced=False,shot=None):
+    def scan(self,width=390,mutate=None,js=True,reduced=False,shot=None,force_button=False):
         source=self.fixture if mutate is None else mutate(self.fixture)
         ctx=self.browser.new_context(viewport={'width':width,'height':667 if width<=390 else 900},java_script_enabled=js,reduced_motion='reduce' if reduced else 'no-preference',accept_downloads=True)
         page=ctx.new_page()
@@ -95,10 +95,13 @@ class ChromiumReceiptTests(unittest.TestCase):
             self.assertTrue(page.locator('#fv-hf-mind-title').is_visible())
             ctx.close();return None
         self.assertTrue(page.locator('#fv-ex2-download').is_disabled())
-        page.locator('#fv-ex2-run').click()
+        if force_button: page.evaluate("document.getElementById('fv-ex2-run').click()")
+        else: page.locator('#fv-ex2-run').click()
         data=json.loads(page.locator('#fv-ex2-receipt-output').inner_text())
         self.assertTrue(page.locator('#fv-ex2-download').is_enabled())
-        with page.expect_download() as d: page.locator('#fv-ex2-download').click()
+        with page.expect_download() as d:
+            if force_button: page.evaluate("document.getElementById('fv-ex2-download').click()")
+            else: page.locator('#fv-ex2-download').click()
         download=d.value
         self.assertEqual(download.suggested_filename,'fv-ex2-isolated-browser-receipt.json')
         file=Path(self.outdir/f'receipt_{width}_{"tamper" if mutate else "intact"}.json')
@@ -107,6 +110,7 @@ class ChromiumReceiptTests(unittest.TestCase):
         self.assertFalse(data['release_authorized'])
         self.assertIn('actual_response_bytes',data['not_qualified'])
         self.assertIn('axe_WCAG_2_2_AA',data['not_qualified'])
+        self.assertEqual(len(data['first_screen_focus_hit_tests']),data['focus_destinations'])
         if shot:
             page.locator('#fv-ex2-receipt').screenshot(path=str(self.outdir/shot))
         self.results.append({'width':width,'mutated':bool(mutate),'status':data['assessment'],'blockers':data['blockers'],'wp_shell_observed':data['wp_shell_observed']})
@@ -122,6 +126,8 @@ class ChromiumReceiptTests(unittest.TestCase):
                 self.assertTrue(d['wp_shell_observed'])
                 self.assertEqual(len(d['image_observations']),2)
                 self.assertIn('ARCHIVAL_IMAGE_NOT_DECODED_MAY_BE_LAZY',d['blockers'])
+                self.assertNotIn('NO_USABLE_FIRST_SCREEN_FOCUS_ACTION',d['blockers'])
+                self.assertNotIn('FOCUS_FIRST_SCREEN_POINTER_OCCLUDED',d['blockers'])
                 self.assertEqual(d['assessment'],'LOCAL_VIEWPORT_BLOCKED')
     def test_missing_wordpress_shell(self):
         d=self.scan(390,lambda x:x.replace('class="wp-site-blocks"','class="not-wordpress"',1))
@@ -137,6 +143,41 @@ class ChromiumReceiptTests(unittest.TestCase):
         self.assertTrue(d['prefers_reduced_motion'])
     def test_no_js_content(self):
         self.assertIsNone(self.scan(390,js=False))
+    def test_first_screen_primary_focus_geometry(self):
+        for w in (320, 360, 390, 768, 1440):
+            with self.subTest(width=w):
+                d=self.scan(w)
+                visible=[x for x in d['first_screen_focus_hit_tests'] if x['pointer_hit_test_pass']]
+                self.assertGreaterEqual(len(visible),1)
+                self.assertGreaterEqual(max(x['rect_css_px']['height'] for x in visible),44)
+                self.assertNotIn('FOCUS_FIRST_SCREEN_POINTER_OCCLUDED',d['blockers'])
+    def test_full_screen_overlay_fails_closed(self):
+        def overlay(html):
+            extra='<div id="blocking-overlay" style="position:fixed;inset:0;z-index:2147483647;background:rgba(0,0,0,.8)"></div>'
+            return html.replace('</body>',extra+'</body>')
+        d=self.scan(390,overlay,force_button=True)
+        self.assertIn('NO_USABLE_FIRST_SCREEN_FOCUS_ACTION',d['blockers'])
+        self.assertIn('FOCUS_FIRST_SCREEN_POINTER_OCCLUDED',d['blockers'])
+    def test_banner_overlay_is_detected_even_if_other_cta_visible(self):
+        def overlay(html):
+            extra='<div id="blocking-banner" style="position:fixed;left:0;right:0;top:0;height:190px;z-index:2147483647;background:#222"></div>'
+            return html.replace('</body>',extra+'</body>')
+        d=self.scan(390,overlay)
+        self.assertIn('FOCUS_FIRST_SCREEN_POINTER_OCCLUDED',d['blockers'])
+        self.assertNotIn('NO_USABLE_FIRST_SCREEN_FOCUS_ACTION',d['blockers'])
+    def test_hidden_mobile_first_cta_fails(self):
+        def hidden(html):
+            return html.replace('</style>', '.fv-hf__mast-cta{opacity:0!important;pointer-events:none!important}</style>', 1)
+        d=self.scan(320,hidden)
+        self.assertIn('NO_USABLE_FIRST_SCREEN_FOCUS_ACTION',d['blockers'])
+    def test_receipt_only_no_navigation_or_network(self):
+        self.assertIn('document.elementFromPoint',PLUGIN.decode())
+        self.assertIn('window.scrollTo(previousScrollX, previousScrollY)',PLUGIN.decode())
+        for disallowed in ['fetch(', 'sendBeacon','location.assign','location.href =','a.click();']:
+            if disallowed == 'a.click();':
+                # Download button intentionally triggers a local Blob URL, not a Focus click.
+                continue
+            self.assertNotIn(disallowed,PLUGIN.decode())
 
 
 if __name__=='__main__':unittest.main(verbosity=2)

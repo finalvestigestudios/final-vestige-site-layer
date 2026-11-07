@@ -2,7 +2,7 @@
 /**
  * Plugin Name: FV EX2 Isolated Browser Evidence Receipt
  * Description: Review-only local WordPress Playground viewport/evidence report; NOT a release or accessibility certification.
- * Version: 0.1.0
+ * Version: 0.2.0
  * License: Internal non-production review only.
  */
 if (!defined('ABSPATH')) { exit; }
@@ -40,6 +40,40 @@ add_action('wp_footer', static function () {
           resource_timing_entry: Boolean(perf), transfer_bytes: 'UNVERIFIED_CROSS_ORIGIN',
           declared_alt_present: Boolean((img.getAttribute('alt') || '').trim())};
       };
+      // Capture first-screen CTA geometry from scroll position 0, independent of
+      // the reviewer's location at the bottom of this very long page. A brief
+      // local scroll is restored; this code never follows or clicks an offer.
+      const inspectFirstScreenFocus = focus => {
+        const previousScrollY = window.scrollY;
+        const previousScrollX = window.scrollX;
+        const previousBehavior = document.documentElement.style.scrollBehavior;
+        const observations = [];
+        try {
+          document.documentElement.style.scrollBehavior = 'auto';
+          window.scrollTo(0, 0);
+          for (const a of focus) {
+            const r = a.getBoundingClientRect();
+            const style = getComputedStyle(a);
+            const visible = r.width >= 24 && r.height >= 24 &&
+              r.bottom > 0 && r.top < innerHeight && r.right > 0 && r.left < innerWidth &&
+              style.display !== 'none' && style.visibility !== 'hidden' &&
+              Number(style.opacity) > 0 && style.pointerEvents !== 'none';
+            // Inset the hit-testing coordinates so narrow decorative borders
+            // cannot create false negatives. A child of the anchor is a hit.
+            const x = Math.min(innerWidth - 1, Math.max(0, r.left + r.width / 2));
+            const y = Math.min(innerHeight - 1, Math.max(0, r.top + Math.min(r.height / 2, 22)));
+            const hit = visible ? document.elementFromPoint(x, y) : null;
+            const clickable = Boolean(visible && hit && (a === hit || a.contains(hit)));
+            observations.push({visible_in_first_screen: Boolean(visible), pointer_hit_test_pass: clickable,
+              rect_css_px:{x:Math.round(r.left),y:Math.round(r.top),width:Math.round(r.width),height:Math.round(r.height)},
+              visible_label:(a.textContent || '').trim().slice(0,90)});
+          }
+        } finally {
+          window.scrollTo(previousScrollX, previousScrollY);
+          document.documentElement.style.scrollBehavior = previousBehavior;
+        }
+        return observations;
+      };
       const capture = () => {
         const root = document.querySelector('[data-fv-home-flagship]');
         const wpShell = Boolean(document.querySelector('.wp-site-blocks'));
@@ -52,6 +86,7 @@ add_action('wp_footer', static function () {
         const margins = root.querySelectorAll('.fv-margin-strip__item').length;
         const documentOverflow = Math.max(0, document.documentElement.scrollWidth - document.documentElement.clientWidth);
         const focusBounds = focus.map(a => {const r = a.getBoundingClientRect(); return {height_css_px:Math.round(r.height*100)/100, width_css_px:Math.round(r.width*100)/100};});
+        const firstScreenFocus = inspectFirstScreenFocus(focus);
         const blockers = [];
         if (!wpShell) blockers.push('NOT_WORDPRESS_SHELL');
         if (chapters.some(x=>!x.present)) blockers.push('MISSING_CHAPTER');
@@ -63,6 +98,8 @@ add_action('wp_footer', static function () {
         if (images.some(x => !x.loaded)) blockers.push('ARCHIVAL_IMAGE_NOT_DECODED_MAY_BE_LAZY');
         if (documentOverflow > 1) blockers.push('HORIZONTAL_OVERFLOW');
         if (focusBounds.some(x => x.height_css_px < 24 || x.width_css_px < 24)) blockers.push('FOCUS_TARGET_UNDERSIZED');
+        if (!firstScreenFocus.some(x => x.pointer_hit_test_pass && x.rect_css_px.height >= 44)) blockers.push('NO_USABLE_FIRST_SCREEN_FOCUS_ACTION');
+        if (firstScreenFocus.some(x => x.visible_in_first_screen && !x.pointer_hit_test_pass)) blockers.push('FOCUS_FIRST_SCREEN_POINTER_OCCLUDED');
         const data = {kind:'FV_EX2_LOCAL_BROWSER_RECEIPT_V1', release_authorized:false,
           assessment:blockers.length ? 'LOCAL_VIEWPORT_BLOCKED' : 'LOCAL_VIEWPORT_STRUCTURAL_PASS_ONLY',
           environment:'ISOLATED_WORDPRESS_PLAYGROUND_EXPECTED_NOT_WPCOM_PRODUCTION',
@@ -70,9 +107,11 @@ add_action('wp_footer', static function () {
           viewport_css_px:{width:innerWidth,height:innerHeight},pixel_ratio:devicePixelRatio,
           prefers_reduced_motion:matchMedia('(prefers-reduced-motion: reduce)').matches,
           wp_shell_observed:wpShell,chapters,margins_count:margins,focus_destinations:focus.length,
-          focus_button_dimensions:focusBounds,image_observations:images,horizontal_overflow_css_px:documentOverflow,
+          focus_button_dimensions:focusBounds,first_screen_focus_hit_tests:firstScreenFocus,
+          image_observations:images,horizontal_overflow_css_px:documentOverflow,
           blockers,not_qualified:['actual_response_bytes','axe_WCAG_2_2_AA','Lighthouse_CWV','keyboard_and_touch_parity','no_JS','Jetpack_signup','paid_orders','verified_net_revenue','WordPress_com_host_parity'],
-          privacy:'NO_NETWORK_TRANSMISSION_OR_PERSISTENT_STORAGE_BY_RECEIPT_CODE'};
+          privacy:'NO_NETWORK_TRANSMISSION_OR_PERSISTENT_STORAGE_BY_RECEIPT_CODE',
+          first_screen_test_scope:'DOM hit-test only; not an actual conversion or mobile-user usability study'};
         return data;
       };
       runButton.addEventListener('click',() => {

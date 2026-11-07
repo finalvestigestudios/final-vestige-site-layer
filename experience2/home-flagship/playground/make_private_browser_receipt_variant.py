@@ -14,7 +14,7 @@ from zipfile import ZipFile, ZipInfo, ZIP_DEFLATED
 
 SOURCE_BLOB = '137c74a476005684a28f5ff9a36e75c6b03268f7'
 ASSEMBLER_SHA = '75faa8a1e0367a37c2638250a3c9ed0a0f8c0b7f'
-PLUGIN_SHA256 = '57bdfac3aebdf508e3484d8a2197ef31f4e97be27f583e8fc93909d47d40e4dd'
+PLUGIN_SHA256 = 'a58e144fd8e9e584681b7edceb667a4a5b0ca303e49b6902299b941d0a95a9fc'
 PLUGIN_PATH = '/wordpress/wp-content/mu-plugins/fv-ex2-private-browser-receipt.php'
 MARKER = 'FV_EX2_LOCAL_PLAYGROUND_2026_11_05_V1'
 
@@ -59,7 +59,7 @@ def write_bundle(source_path, plugin_path, output):
       'theme_commit':ASSEMBLER_SHA,'native_wordpress_tested':False,'image_transfer_bytes_verified':False,
       'release_authorized':False,'origin':'isolated WordPress Playground only',
       'excluded_private_data':['user tables','subscribers','production database','secrets'],
-      'instrumentation':'none; one click local JSON receipt; no telemetry or sales claims'}
+      'instrumentation':'none; one click local JSON receipt; first-screen Focus pointer obstruction probe; no telemetry or sales claims'}
     url='https://playground.wordpress.net/#'+base64.b64encode(raw).decode('ascii')
     launch = f'''<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>FV EX2 WordPress review + browser receipt</title><style>body{{background:#0b1212;color:#e9dcca;margin:0;padding:1rem;min-height:100vh;display:grid;place-items:center;font:17px/1.6 system-ui}}main{{max-width:700px;border:1px solid #c2a371;padding:clamp(1rem,4vw,3rem)}}h1{{font:normal 2.4rem Georgia,serif}}a{{display:inline-block;max-width:100%;min-height:44px;padding:.9rem 1rem;background:#d4ad73;color:#111;font-weight:bold;overflow-wrap:anywhere}}a:focus-visible{{outline:3px solid white;outline-offset:3px}}</style><main><h1>Experience the evidence. Verify the experience.</h1><p>This <strong>private review-only</strong> package imports the exact-source seven-chapter candidate into an isolated WordPress Playground and adds an on-page evidence receipt at the bottom. It cannot certify WordPress.com hosting, actual image transfer bytes, WCAG 2.2 AA, Lighthouse, Jetpack signups or paid orders.</p><p><a href="{html.escape(url,quote=True)}" target="_blank" rel="noopener noreferrer">Open isolated WordPress review ↗</a></p><p>After WordPress starts, scroll to the bottom and select <strong>Capture this viewport</strong>, then <strong>Download JSON receipt</strong>. Repeat at mobile and desktop widths. If the page fails to load or the receipt is absent, report FAIL—not PASS.</p><small>Not for public hosting · no production changes · no paid services · no account or subscriber data.</small></main></html>'''
     output = Path(output)
