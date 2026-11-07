@@ -1,0 +1,306 @@
+{
+  "schema": "fv-media-palomares367-v1",
+  "date": "2026-11-07",
+  "method": "read-only WordPress editor content and archival HTML catalog, no actual image requests",
+  "article": {
+    "id": 367,
+    "title": "They Found the Bomb Twice",
+    "url": "https://finalvestige.com/2026/08/19/they-found-the-bomb-twice-palomares/",
+    "modified": "2026-10-29T17:34:27",
+    "status": "publish"
+  },
+  "historical_census": {
+    "posts": 61,
+    "inline": 355,
+    "external": 288
+  },
+  "fresh_prior_census": {
+    "posts": 66,
+    "inline": 361,
+    "external": 294
+  },
+  "reported_42_broken": "UNVERIFIED",
+  "claimed_76_percent_transfer_reduction": "UNMEASURED",
+  "site_qa_pr": 154,
+  "production_writes": 0,
+  "asset_downloads": 0,
+  "spend": 0,
+  "rows": [
+    {
+      "slot": "367:0",
+      "published_src": "https://finalvestige.com/wp-content/uploads/2026/08/Palomares_H-Bomb_Incident.jpg",
+      "published_alt": "The recovered Palomares nuclear weapon aboard USS Petrel after its recovery from the Mediterranean in April 1966.",
+      "published_caption": "The recovered Palomares weapon aboard USS Petrel after the April 1966 recovery.U.S. NAVY HISTORICAL PHOTOGRAPH · PUBLIC-DOMAIN UNDERLYING WORK · Source record ↗",
+      "html_dimensions": [
+        425,
+        329
+      ],
+      "html_srcset": null,
+      "kind": "first_party",
+      "catalog_url": "https://commons.wikimedia.org/wiki/File:Palomares_H-Bomb_Incident.jpg",
+      "catalog_master_px": [
+        425,
+        329
+      ],
+      "preview_max_960_px": [
+        425,
+        329
+      ],
+      "archive_note": "US Navy Commons, first-party binary unverified",
+      "rights_label": "PD US Navy",
+      "requested_width_px": null,
+      "request_exceeds_master": false,
+      "rights_review": "HOLD",
+      "binary_match_verified": false,
+      "rehost_authorized": false,
+      "actual_guest_http": null,
+      "actual_guest_current_src": null,
+      "actual_guest_decode_px": null,
+      "actual_guest_encoded_bytes": null,
+      "actual_guest_broken": null
+    },
+    {
+      "slot": "367:1",
+      "published_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Operation_Chrome_Dome_route.jpg?width=1280",
+      "published_alt": "Map of the eastern Operation Chrome Dome airborne-alert route showing refueling tracks near Spain.",
+      "published_caption": "The eastern portion of the Operation Chrome Dome airborne-alert route, including refueling tracks near Spain. CC BY-SA 2.5.",
+      "html_dimensions": null,
+      "html_srcset": null,
+      "kind": "third_party",
+      "catalog_url": "https://commons.wikimedia.org/wiki/File:Operation_Chrome_Dome_route.jpg",
+      "catalog_master_px": [
+        1475,
+        923
+      ],
+      "preview_max_960_px": [
+        960,
+        601
+      ],
+      "archive_note": "Commons Emt147 author, attribution/SA review",
+      "rights_label": "CC BY-SA 2.5",
+      "requested_width_px": 1280,
+      "request_exceeds_master": false,
+      "rights_review": "HOLD",
+      "binary_match_verified": false,
+      "rehost_authorized": false,
+      "actual_guest_http": null,
+      "actual_guest_current_src": null,
+      "actual_guest_decode_px": null,
+      "actual_guest_encoded_bytes": null,
+      "actual_guest_broken": null
+    },
+    {
+      "slot": "367:2",
+      "published_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/USS_Skill_(MSO-471)_operating_off_the_coast_of_Spain%2C_in_February_1966_(428-NPC-36556).jpg?width=1280",
+      "published_alt": "USS Skill operating off Spain in February 1966 as part of the Palomares search task force.",
+      "published_caption": "USS Skill operating off Spain during the Palomares search in February 1966. U.S. Navy / National Archives; public domain.",
+      "html_dimensions": null,
+      "html_srcset": null,
+      "kind": "third_party",
+      "catalog_url": "https://commons.wikimedia.org/wiki/File:USS_Skill_(MSO-471)_operating_off_the_coast_of_Spain,_in_February_1966_(428-NPC-36556).jpg",
+      "catalog_master_px": [
+        1227,
+        898
+      ],
+      "preview_max_960_px": [
+        960,
+        703
+      ],
+      "archive_note": "US Navy film 428-NPC-36556, NARA 85011",
+      "rights_label": "USN public-domain indicator",
+      "requested_width_px": 1280,
+      "request_exceeds_master": true,
+      "rights_review": "HOLD",
+      "binary_match_verified": false,
+      "rehost_authorized": false,
+      "actual_guest_http": null,
+      "actual_guest_current_src": null,
+      "actual_guest_decode_px": null,
+      "actual_guest_encoded_bytes": null,
+      "actual_guest_broken": null
+    },
+    {
+      "slot": "367:3",
+      "published_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Zoeken_naar_H_bom_in_Spanje%2C_de_Alvin_wordt_te_water_gelaten%2C_Bestanddeelnr_918-8161.jpg?width=1280",
+      "published_alt": "The submersible Alvin being lowered into the Mediterranean during the 1966 search for the missing Palomares nuclear weapon.",
+      "published_caption": "Alvin being lowered during the search for the missing bomb, February 21, 1966. Nationaal Archief/Anefo; CC0.",
+      "html_dimensions": null,
+      "html_srcset": null,
+      "kind": "third_party",
+      "catalog_url": "https://commons.wikimedia.org/wiki/File:Zoeken_naar_H_bom_in_Spanje,_de_Alvin_wordt_te_water_gelaten,_Bestanddeelnr_918-8161.jpg",
+      "catalog_master_px": [
+        3440,
+        2453
+      ],
+      "preview_max_960_px": [
+        960,
+        685
+      ],
+      "archive_note": "Dutch Nationaal Archief Anefo 918-8161, 1966-02-21",
+      "rights_label": "CC0",
+      "requested_width_px": 1280,
+      "request_exceeds_master": false,
+      "rights_review": "HOLD",
+      "binary_match_verified": false,
+      "rehost_authorized": false,
+      "actual_guest_http": null,
+      "actual_guest_current_src": null,
+      "actual_guest_decode_px": null,
+      "actual_guest_encoded_bytes": null,
+      "actual_guest_broken": null
+    },
+    {
+      "slot": "367:4",
+      "published_src": "https://navalunderseamuseum.org/wp-content/uploads/2016/03/CURV-I-H-Bomb-Recovery-300x243.jpg",
+      "published_alt": "CURV I remotely operated recovery vehicle aboard USS Petrel during the Palomares operation.",
+      "published_caption": "CURV I aboard USS Petrel during the Palomares operation. U.S. Naval Undersea Museum historical image.",
+      "html_dimensions": null,
+      "html_srcset": null,
+      "kind": "third_party",
+      "catalog_url": "https://navalunderseamuseum.org/petrel-helmet/",
+      "catalog_master_px": null,
+      "preview_max_960_px": null,
+      "archive_note": "US Naval Undersea Museum official CURV I image",
+      "rights_label": "Rights unspecified",
+      "requested_width_px": null,
+      "request_exceeds_master": false,
+      "rights_review": "HOLD",
+      "binary_match_verified": false,
+      "rehost_authorized": false,
+      "actual_guest_http": null,
+      "actual_guest_current_src": null,
+      "actual_guest_decode_px": null,
+      "actual_guest_encoded_bytes": null,
+      "actual_guest_broken": null
+    },
+    {
+      "slot": "367:5",
+      "published_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/428-GX-_USN_118930_(26941557635).jpg?width=1280",
+      "published_alt": "Carl Brashear preparing to dive from USS Hunley in 1971 after returning to Navy diving with an artificial leg.",
+      "published_caption": "Carl Brashear preparing to dive from USS Hunley in 1971 after returning to active diving with an artificial leg. Official U.S. Navy photograph; public domain.",
+      "html_dimensions": null,
+      "html_srcset": null,
+      "kind": "third_party",
+      "catalog_url": "https://commons.wikimedia.org/wiki/File:428-GX-_USN_118930_(26941557635).jpg",
+      "catalog_master_px": [
+        1854,
+        2464
+      ],
+      "preview_max_960_px": [
+        960,
+        1276
+      ],
+      "archive_note": "US Navy 428-GX-USN 118930; PHC A.J. Walker 1971-04-22",
+      "rights_label": "USN public-domain indicator",
+      "requested_width_px": 1280,
+      "request_exceeds_master": false,
+      "rights_review": "HOLD",
+      "binary_match_verified": false,
+      "rehost_authorized": false,
+      "actual_guest_http": null,
+      "actual_guest_current_src": null,
+      "actual_guest_decode_px": null,
+      "actual_guest_encoded_bytes": null,
+      "actual_guest_broken": null
+    },
+    {
+      "slot": "367:6",
+      "published_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/1966_Palomares_B-52_crash_-_recovered_H-bomb.jpg?width=1280",
+      "published_alt": "U.S. Navy personnel aboard USS Petrel after recovery of the Palomares hydrogen bomb, with CURV visible in the background.",
+      "published_caption": "The recovered weapon aboard USS Petrel, with CURV in the background. U.S. Navy; public domain.",
+      "html_dimensions": null,
+      "html_srcset": null,
+      "kind": "third_party",
+      "catalog_url": "https://commons.wikimedia.org/wiki/File:1966_Palomares_B-52_crash_-_recovered_H-bomb.jpg",
+      "catalog_master_px": [
+        662,
+        374
+      ],
+      "preview_max_960_px": [
+        662,
+        374
+      ],
+      "archive_note": "US Navy Petrel recovery, CURV background",
+      "rights_label": "USN public-domain indicator",
+      "requested_width_px": 1280,
+      "request_exceeds_master": true,
+      "rights_review": "HOLD",
+      "binary_match_verified": false,
+      "rehost_authorized": false,
+      "actual_guest_http": null,
+      "actual_guest_current_src": null,
+      "actual_guest_decode_px": null,
+      "actual_guest_encoded_bytes": null,
+      "actual_guest_broken": null
+    },
+    {
+      "slot": "367:7",
+      "published_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Palomares_barrels.jpg?width=1280",
+      "published_alt": "Barrels of contaminated soil collected at Palomares in 1966 for shipment to the United States.",
+      "published_caption": "Barrels of contaminated soil prepared for removal from Palomares in 1966. U.S. Air Force; public domain.",
+      "html_dimensions": null,
+      "html_srcset": null,
+      "kind": "third_party",
+      "catalog_url": "https://commons.wikimedia.org/wiki/File:Palomares_barrels.jpg",
+      "catalog_master_px": [
+        500,
+        252
+      ],
+      "preview_max_960_px": [
+        500,
+        252
+      ],
+      "archive_note": "USAF source via older Brookings reproduction",
+      "rights_label": "USAF public-domain indicator",
+      "requested_width_px": 1280,
+      "request_exceeds_master": true,
+      "rights_review": "HOLD",
+      "binary_match_verified": false,
+      "rehost_authorized": false,
+      "actual_guest_http": null,
+      "actual_guest_current_src": null,
+      "actual_guest_decode_px": null,
+      "actual_guest_encoded_bytes": null,
+      "actual_guest_broken": null
+    },
+    {
+      "slot": "367:8",
+      "published_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Recovered_Mk_28RI_bomb.JPG?width=1280",
+      "published_alt": "The damaged Mark 28 nuclear weapon recovered from the Mediterranean and displayed aboard USS Petrel after the Palomares search.",
+      "published_caption": "The recovered Mark 28 weapon aboard USS Petrel, showing the missing tail fins and damaged false nose. U.S. Navy; public domain.",
+      "html_dimensions": null,
+      "html_srcset": null,
+      "kind": "third_party",
+      "catalog_url": "https://commons.wikimedia.org/wiki/File:Recovered_Mk_28RI_bomb.JPG",
+      "catalog_master_px": [
+        617,
+        461
+      ],
+      "preview_max_960_px": [
+        617,
+        461
+      ],
+      "archive_note": "US Navy closeup from legacy NAWCWPNS original",
+      "rights_label": "USN public-domain indicator",
+      "requested_width_px": 1280,
+      "request_exceeds_master": true,
+      "rights_review": "HOLD",
+      "binary_match_verified": false,
+      "rehost_authorized": false,
+      "actual_guest_http": null,
+      "actual_guest_current_src": null,
+      "actual_guest_decode_px": null,
+      "actual_guest_encoded_bytes": null,
+      "actual_guest_broken": null
+    }
+  ],
+  "summary": {
+    "inline": 9,
+    "third_party": 8,
+    "unsized": 8,
+    "commons_requests_1280": 7,
+    "requested_larger_than_catalog": 4,
+    "known_catalog_geometry": 8,
+    "confirmed_guest_failures": null
+  }
+}
