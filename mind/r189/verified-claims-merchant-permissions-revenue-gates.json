@@ -1,0 +1,398 @@
+{
+  "milestone": "R189",
+  "as_of": "2026-11-07",
+  "scope": "UNPUBLISHED SOURCE-CONTROLLED EVIDENCE REGISTER",
+  "reference_pr": "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/1384",
+  "source_links": [
+    {
+      "id": "study_pendulum_1976",
+      "url": "https://doi.org/10.1080/00221309.1976.9710871",
+      "kind": "peer reviewed abstract",
+      "scope": "1976 Easton Shor; 60 subjects; pendulum photo experiments"
+    },
+    {
+      "id": "history_ideomotor_2011",
+      "url": "https://doi.org/10.1080/00029157.2011.10401754",
+      "kind": "historical review",
+      "scope": "Chevreul/Carpenter and ideomotor interpretation"
+    },
+    {
+      "id": "ouija_2012",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/22377138/",
+      "kind": "peer reviewed abstract",
+      "scope": "Ouija response 65% vs volitional 50% under reported-guessing condition"
+    },
+    {
+      "id": "ouija_field_2018",
+      "url": "https://doi.org/10.1007/s11097-018-9585-8",
+      "kind": "peer reviewed study",
+      "scope": "eye tracking Ouija session vs intentional spelling"
+    },
+    {
+      "id": "hypnotic_motor_2013",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3804629/",
+      "kind": "open access experimental study",
+      "scope": "15 highly suggestible participants; not mass-market recordings"
+    },
+    {
+      "id": "hypnosis_review_2013",
+      "url": "https://doi.org/10.1038/nrn3538",
+      "kind": "peer reviewed review",
+      "scope": "mechanisms of suggestion; not any branded audio efficacy"
+    },
+    {
+      "id": "inspire3",
+      "url": "https://inspire3.com/",
+      "kind": "official seller",
+      "scope": "official brand catalog"
+    },
+    {
+      "id": "zen12",
+      "url": "https://zen12.com/hnp",
+      "kind": "official exact seller page",
+      "scope": "advertised 12 levels/48 MP3; outcomes unverified"
+    },
+    {
+      "id": "total_focus",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "kind": "official exact seller page",
+      "scope": "advertised 33 min/47MB, price presentation nonuniform"
+    },
+    {
+      "id": "affiliate",
+      "url": "https://affiliates.inspire3.com/",
+      "kind": "public program portal",
+      "scope": "program exists; FV acceptance not shown"
+    },
+    {
+      "id": "ftc_endorsement",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "kind": "US regulator",
+      "scope": "material connection clear proximate disclosure"
+    },
+    {
+      "id": "ftc_health",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "kind": "US regulator",
+      "scope": "health-related claim substantiation standards"
+    },
+    {
+      "id": "puys",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "kind": "published FV editorial route, prior WP verified",
+      "scope": "historical investigation, not clinical trial"
+    },
+    {
+      "id": "mesmer",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "kind": "published FV canonical, WP verified",
+      "scope": "Mesmerism historical bridge"
+    },
+    {
+      "id": "change",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "kind": "published FV canonical, WP verified",
+      "scope": "social intent matching"
+    },
+    {
+      "id": "focus",
+      "url": "https://finalvestige.com/focus/",
+      "kind": "published FV, prior WP verified",
+      "scope": "one Jetpack Focus Fieldbook lead funnel"
+    },
+    {
+      "id": "disclosure",
+      "url": "https://finalvestige.com/affiliate-disclosure/",
+      "kind": "FV published editorial policy",
+      "scope": "general disclosure not a substitute for adjacent"
+    },
+    {
+      "id": "standards",
+      "url": "https://finalvestige.com/editorial-standards/",
+      "kind": "FV editorial policy",
+      "scope": "standards for commercial separation"
+    },
+    {
+      "id": "issue171",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "kind": "internal canonical workstream",
+      "scope": "governance, releases"
+    },
+    {
+      "id": "issue820",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "kind": "internal revenue coordination",
+      "scope": "paid-proof KPI"
+    }
+  ],
+  "claim_decisions": [
+    {
+      "id": "ideomotor_physical",
+      "claim": "Ideomotor actions can generate observable movement without consciously commanded swinging",
+      "decision": "SUPPORTED_GENERAL_EXPERIMENT",
+      "source_id": "study_pendulum_1976",
+      "limit": "Do not assert every pendulum motion has this cause"
+    },
+    {
+      "id": "pendulum_n60",
+      "claim": "Easton and Shor studied 60 college participants",
+      "decision": "SUPPORTED_STUDY_DETAIL",
+      "source_id": "study_pendulum_1976",
+      "limit": "specific experiment only"
+    },
+    {
+      "id": "ouija_guess",
+      "claim": "65% vs 50% reported guessing-condition results",
+      "decision": "SUPPORTED_STUDY_DETAIL",
+      "source_id": "ouija_2012",
+      "limit": "no supernatural interpretation or universal predictive accuracy"
+    },
+    {
+      "id": "field_gaze",
+      "claim": "Ouija group looked ahead to produced letters less than intentional spelling group",
+      "decision": "SUPPORTED_STUDY_DETAIL",
+      "source_id": "ouija_field_2018",
+      "limit": "field sample context"
+    },
+    {
+      "id": "motor_fmri",
+      "claim": "Hypnotic suggestions of involuntary motor control studied in 15 selected participants",
+      "decision": "SUPPORTED_STUDY_DETAIL",
+      "source_id": "hypnotic_motor_2013",
+      "limit": "not a consumer MP3 trial"
+    },
+    {
+      "id": "zen_catalog",
+      "claim": "Zen12 seller advertises twelve levels, four styles per level, 48 MP3",
+      "decision": "SELLER_DESCRIPTION_ONLY",
+      "source_id": "zen12",
+      "limit": "actual deliverable/fulfillment unpurchased"
+    },
+    {
+      "id": "zen_equivalence",
+      "claim": "Twelve minutes audio equals one hour advanced meditation",
+      "decision": "WITHHELD_NO_PRODUCT_SPECIFIC_EVIDENCE",
+      "source_id": "zen12",
+      "limit": "never transfer meditation research"
+    },
+    {
+      "id": "zen_health",
+      "claim": "Zen12 reduces stress, improves health or focus",
+      "decision": "WITHHELD_NO_PRODUCT_SPECIFIC_EVIDENCE",
+      "source_id": "zen12",
+      "limit": "health claims need appropriate scientific substantiation"
+    },
+    {
+      "id": "zen_guarantee",
+      "claim": "Seller advertises a one-year money-back guarantee",
+      "decision": "SELLER_DESCRIPTION_NOT_REFUND_VERIFIED",
+      "source_id": "zen12",
+      "limit": "conditions/fulfillment untested"
+    },
+    {
+      "id": "zen_price",
+      "claim": "Publicly shown Zen12 price equals actual checkout price",
+      "decision": "UNKNOWN_UNVERIFIED_CHECKOUT",
+      "source_id": "zen12",
+      "limit": "prior public page observations conflict; do not assert fixed price"
+    },
+    {
+      "id": "total_format",
+      "claim": "Total Focus seller describes 33-min, 47MB download",
+      "decision": "SELLER_DESCRIPTION_ONLY",
+      "source_id": "total_focus",
+      "limit": "product not purchased"
+    },
+    {
+      "id": "total_focus",
+      "claim": "Total Focus produces limitless focus or reprograms brain",
+      "decision": "WITHHELD_NO_PRODUCT_SPECIFIC_EVIDENCE",
+      "source_id": "total_focus",
+      "limit": "seller headline is not substantiation"
+    },
+    {
+      "id": "total_price",
+      "claim": "Total Focus public prices reflect final checkout",
+      "decision": "UNKNOWN_UNVERIFIED_CHECKOUT",
+      "source_id": "total_focus",
+      "limit": "multiple public offer presentations observed"
+    },
+    {
+      "id": "affiliate_exists",
+      "claim": "Inspire3 publicly hosts a partner portal",
+      "decision": "SUPPORTED_PORTAL_EXISTS_ONLY",
+      "source_id": "affiliate",
+      "limit": "does not prove FV-specific acceptance"
+    },
+    {
+      "id": "affiliate_eligibility",
+      "claim": "Final Vestige accepted publisher for website, social and email",
+      "decision": "UNKNOWN_NAMED_APPROVAL_NOT_FOUND",
+      "source_id": "affiliate",
+      "limit": "requires authenticated account or contract"
+    },
+    {
+      "id": "commission",
+      "claim": "Earned commission or sale from affiliate click",
+      "decision": "WITHHELD_NO_SETTLEMENT_REPORT",
+      "source_id": "issue820",
+      "limit": "outbound click never equals paid conversion"
+    },
+    {
+      "id": "payhip",
+      "claim": "Specific FV-owned rights-cleared sellable Mind Payhip SKU",
+      "decision": "UNKNOWN_NO_AUTHENTICATED_SKU",
+      "source_id": "issue818",
+      "limit": "must check signed-in storefront+files+rights+checkout"
+    },
+    {
+      "id": "focus",
+      "claim": "Existing free Fieldbook is one lead pathway",
+      "decision": "SUPPORTED_PRIOR_LIVE_ROUTE",
+      "source_id": "focus",
+      "limit": "not a paid SKU"
+    },
+    {
+      "id": "privacy",
+      "claim": "asset_id and campaign contain no viewer identifiers",
+      "decision": "DESIGN_REQUIREMENT",
+      "source_id": "issue820",
+      "limit": "exclude emails, IPs, click IDs or sensitive traits"
+    },
+    {
+      "id": "ftc",
+      "claim": "A clear commission disclosure must be adjacent to real recommendation links",
+      "decision": "REGULATOR_GUIDANCE",
+      "source_id": "ftc_endorsement",
+      "limit": "do not rely on footer alone"
+    },
+    {
+      "id": "content",
+      "claim": "Puységur source archive not clinical evidence for consumer audio",
+      "decision": "EDITORIAL_METHOD_LIMIT",
+      "source_id": "puys",
+      "limit": "history is not efficacy"
+    },
+    {
+      "id": "ab",
+      "claim": "Adding optional video improves sales",
+      "decision": "UNTESTED_HYPOTHESIS",
+      "source_id": "issue171",
+      "limit": "keep only with stable paid conversion verification"
+    }
+  ],
+  "release_gates": [
+    {
+      "id": "named_partner_acceptance",
+      "status": "BLOCKED",
+      "owner": "Founder/Mind",
+      "evidence_needed": "signed-in approval for Final Vestige legal publisher"
+    },
+    {
+      "id": "approved_web_social_email_channels",
+      "status": "BLOCKED",
+      "owner": "Founder/Mind",
+      "evidence_needed": "terms show allowed channels and disclosure"
+    },
+    {
+      "id": "approved_tracking_url",
+      "status": "BLOCKED",
+      "owner": "Founder/Mind",
+      "evidence_needed": "verified exact authorized URL, no invented link"
+    },
+    {
+      "id": "merchant_checkout_and_refunds",
+      "status": "UNKNOWN",
+      "owner": "Founder/Commerce",
+      "evidence_needed": "signed-out cart price, delivery and refund terms"
+    },
+    {
+      "id": "own_mind_sku_rights",
+      "status": "UNKNOWN",
+      "owner": "Founder/Commerce",
+      "evidence_needed": "Payhip product live+seller rights+delivery+support"
+    },
+    {
+      "id": "optional_video_render",
+      "status": "NOT_TESTED",
+      "owner": "Mind/Grok",
+      "evidence_needed": "optional MP4, poster, captions transcript, low payload; Grok owns publication"
+    },
+    {
+      "id": "native_disabled_regression",
+      "status": "SOURCE_TEST_PENDING",
+      "owner": "Mind/Site QA",
+      "evidence_needed": "fix false positive and mutation paired negative test"
+    },
+    {
+      "id": "real_browser_a11y",
+      "status": "NOT_TESTED",
+      "owner": "Site QA",
+      "evidence_needed": "360/390/768/1440, WCAG 2.2 AA keyboard, AT, no JS"
+    },
+    {
+      "id": "real_browser_cwv",
+      "status": "NOT_TESTED",
+      "owner": "Site QA",
+      "evidence_needed": "Lighthouse offline/staging, payload target and no autoplay"
+    },
+    {
+      "id": "real_grok_assets",
+      "status": "UNKNOWN",
+      "owner": "Grok/Praxxis",
+      "evidence_needed": "immutable platform IDs and exact source rights"
+    },
+    {
+      "id": "first_party_attribution",
+      "status": "NOT_TESTED",
+      "owner": "Claude/Analytics",
+      "evidence_needed": "reuse consent-aware scripts; no new scripts"
+    },
+    {
+      "id": "focus_confirmed_delivery",
+      "status": "UNKNOWN",
+      "owner": "Site QA/Dispatch",
+      "evidence_needed": "verified Jetpack lead delivered without duplicate list"
+    },
+    {
+      "id": "paid_partner_or_payhip_orders",
+      "status": "UNKNOWN",
+      "owner": "Commerce",
+      "evidence_needed": "merchant-record order customer refund fee settlement evidence"
+    },
+    {
+      "id": "paid_kpi",
+      "status": "NOT_COMPUTABLE",
+      "owner": "Analytics",
+      "evidence_needed": "7/30-day qualified human denominators and recognized net revenue"
+    },
+    {
+      "id": "founder_release",
+      "status": "BLOCKED",
+      "owner": "Founder",
+      "evidence_needed": "explicit approve PR release, content, CTA and costs"
+    }
+  ],
+  "named_fv_publisher_approval": null,
+  "permitted_promotional_channels": null,
+  "affiliate_earning_url": null,
+  "affiliate_activation": false,
+  "verified_owned_payhip_mind_sku": null,
+  "merchant_confirmed_purchases": null,
+  "affiliate_network_confirmed_sales": null,
+  "paid_affiliate_commissions": null,
+  "realized_net_revenue": null,
+  "qualified_human_sessions": null,
+  "merchants_reconciled": false,
+  "prohibited_assertions": [
+    "we bought or tested audio",
+    "audio replaces one hour meditation",
+    "guaranteed hypnosis benefits",
+    "fixed checkout price",
+    "commission paid",
+    "approved partner",
+    "zero net revenue per 1000 sessions"
+  ],
+  "disclosure_prototype": "If you purchase through this link, Final Vestige may earn a commission at no additional cost to you. Editorial conclusions are independent of commission eligibility.",
+  "review_note": "Only conditionally show disclosure + active merchant link after actual acceptance/terms, QA, and founder approval. Until then there is a disabled purchase control in R188 A/B and no commercial outbound link."
+}

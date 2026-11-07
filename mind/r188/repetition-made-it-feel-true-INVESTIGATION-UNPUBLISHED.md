@@ -1,4 +1,4 @@
-# The Sentence That Became True Because You Heard It Twice
+# The Sentence That Felt Truer the Second Time
 **Mind & Perception Archive · Investigation draft · November 7, 2026 · UNPUBLISHED**
 
 *The claim had not changed. Neither had the evidence. But after the second encounter, it began to sound more believable.*
