@@ -24,7 +24,8 @@ BOOT = "Final Vestige Labs security startup failed; no private diagnostics print
 def isolate(source: str):
     env = os.environ.copy()
     env["PYTHONPATH"] = str(ROOT) + os.pathsep + env.get("PYTHONPATH", "")
-    return subprocess.run([sys.executable, "-c", textwrap.dedent(source)],
+    return subprocess.run([sys.executable, *(("-OO",) if sys.flags.optimize >= 2 else ()),
+                           "-c", textwrap.dedent(source)],
                           env=env, capture_output=True, text=True,
                           check=False, timeout=15)
 
@@ -115,9 +116,9 @@ import sys, threading
 from fvs_suite.background_privacy import (install_background_privacy,
     _main_exception, _thread_exception, _unraisable_exception)
 install_background_privacy(); install_background_privacy()
-assert sys.excepthook is _main_exception
-assert threading.excepthook is _thread_exception
-assert sys.unraisablehook is _unraisable_exception
+if sys.excepthook is not _main_exception: raise RuntimeError("main hook missing")
+if threading.excepthook is not _thread_exception: raise RuntimeError("thread hook missing")
+if sys.unraisablehook is not _unraisable_exception: raise RuntimeError("unraisable hook missing")
 ''')
         self.assertEqual(result.returncode, 0, result.stderr)
 
@@ -146,8 +147,8 @@ b.sys = Reject()
 try:
     b.install_background_privacy()
 except RuntimeError as e:
-    assert str(e) == b.INSTALL_DIAGNOSTIC
-    assert e.__cause__ is None and e.__context__ is None
+    if str(e) != b.INSTALL_DIAGNOSTIC: raise RuntimeError("diagnostic mismatch")
+    if e.__cause__ is not None or e.__context__ is not None: raise RuntimeError("retained private cause")
 else: raise AssertionError('installer unexpectedly allowed startup')
 ''')
         self.assertEqual(result.returncode, 0, result.stderr)
@@ -163,7 +164,8 @@ class Drop:
         if name != 'excepthook': object.__setattr__(self, name, value)
 b.sys = Drop()
 try: b.install_background_privacy()
-except RuntimeError as e: assert str(e) == b.INSTALL_DIAGNOSTIC
+except RuntimeError as e:
+    if str(e) != b.INSTALL_DIAGNOSTIC: raise RuntimeError("diagnostic mismatch")
 else: raise AssertionError('discarded privacy hook accepted')
 ''')
         self.assertEqual(result.returncode, 0, result.stderr)
