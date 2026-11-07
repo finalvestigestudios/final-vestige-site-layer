@@ -13,6 +13,7 @@ import os
 from pathlib import Path
 from urllib.parse import urlparse
 from verify_archival_provenance import classify_source, verify_receipt
+from request_boundary import admit_request
 
 CHAPTERS = ("fv-hf-title", "fv-hf-chronicle", "fv-hf-evidence",
             "fv-hf-inquiry", "fv-hf-method-title", "fv-hf-observer", "fv-hf-mind-title")
@@ -128,17 +129,24 @@ def run(url, output, authorized_host, axe_path):
                 ctx=browser.new_context(viewport={'width':width,'height':height},java_script_enabled=js,reduced_motion='reduce' if width==390 else 'no-preference')
                 page=ctx.new_page(); errors=[]; responses={}
                 page.on('pageerror',lambda exc: errors.append(str(exc)))
-                # Refuse a cross-origin top-frame redirect before it can load production.
-                def gate_navigation(route):
+                # Fail closed on *all* unexpected outbound requests. A staged
+                # preview must not call live APIs, merchants, beacons or trackers.
+                # Only this isolated WP origin + the two reviewed archive image
+                # origins/derivatives are permitted; redirects are rechecked.
+                def gate_network(route):
                     req=route.request
-                    if req.is_navigation_request() and req.frame == page.main_frame:
-                        try: admit_url(req.url, authorized_host)
-                        except ValueError:
-                            errors.append('blocked unsafe main-frame navigation: '+req.url)
-                            route.abort()
-                            return
+                    try:
+                        admit_request(req.url, url, navigation=(
+                            req.is_navigation_request() and req.frame == page.main_frame))
+                    except ValueError as exc:
+                        # Do not copy URL query strings (possible tokens) to QA logs.
+                        host=urlparse(req.url).hostname or 'opaque'
+                        errors.append('blocked unexpected browser request: '+host+
+                                      ' ('+str(exc)+')')
+                        route.abort()
+                        return
                     route.continue_()
-                page.route('**/*', gate_navigation)
+                page.route('**/*', gate_network)
                 def capture(resp):
                     if any(tag in resp.url for tag in IMAGES):
                         responses[resp.url]=resp
