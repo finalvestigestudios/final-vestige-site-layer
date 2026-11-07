@@ -16,7 +16,7 @@ import sys
 import unittest
 
 SCHEMA = "fvs-unittest-provenance-v2"
-MAX_TEST_MODULES = 256
+MAX_TEST_MODULES = 512
 MAX_TEST_CASES = 20000
 
 DIAG_PREFIX = "FVS_TEST_DIAG:"

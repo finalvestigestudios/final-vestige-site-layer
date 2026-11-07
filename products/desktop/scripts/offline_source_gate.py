@@ -24,7 +24,7 @@ import source_smoke_gate as source_gate
 import unittest_provenance as source_test_inventory
 from report_evidence import prepare_report_path, publish_report
 
-MAX_TEST_FILES = 256
+MAX_TEST_FILES = 512
 
 DIAG_PREFIX = "FVS_TEST_DIAG:"
 DIAG_SCHEMA = "fvs-offline-failure-modules-v1"
