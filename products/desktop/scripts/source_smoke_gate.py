@@ -23,7 +23,7 @@ APPS = (
     ("ProcureGuardStudioPro", "procurement"),
 )
 MAX_SOURCE_BYTES = 16 * 1024 * 1024
-MAX_SOURCE_FILES = 256
+MAX_SOURCE_FILES = 512
 _READ_SIZE = 64 * 1024
 
 
