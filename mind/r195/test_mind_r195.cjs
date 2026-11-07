@@ -25,7 +25,7 @@ function evaluate(f){
  for(const s of ['10.1037/h0054651','10.1037/0033-2909.109.2.163','11761035','PMC12602573','47.0 seconds','74.3 percent','2.3 seconds','5.6 percent'])
    ok(f.article.includes(s),'primary evidence '+s);
  ok(/EDITORIAL FIREWALL/.test(f.article)&&/no affiliate earning URL/i.test(f.article),'scientific editorial separation');
- ok(/NOT a modern clinical evaluation/i.test(f.article)||/not a modern clinical evaluation/i.test(f.article),'Puységur not evidence of modern efficacy');
+ ok(/neither archive is a modern clinical evaluation/i.test(f.article),'Puységur not evidence of modern efficacy');
  ok(/the existing Dispatch subscription system/i.test(f.article),'preserve single newsletter');
  ok(/https:\/\/finalvestige\.com\/focus\//.test(f.article),'optional existing Focus');
  ok(!/awin1\.com\/cread|[?&]refid=|[?&]affiliate_id=/i.test(f.article),'no earning URLs in investigation');
