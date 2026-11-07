@@ -20,7 +20,7 @@ function checks(f){
  const s=d?.source_links||[],c=d?.claim_decisions||[],g=d?.release_gates||[],ids=new Set(s.map(v=>v.id));
  const gate=id=>g.find(v=>v.id===id);
  ok(f.article.split(/\s+/).length>=2000,'original article >= 2000 words');
- for(const t of ['twenty of twenty-four','twelve of the twenty','547 milliseconds','239 slices','five','48 times','2013','1999','Puységur','not a validated','UNPUBLISHED'])
+ for(const t of ['twenty of twenty-four','twelve of the twenty','547 milliseconds','239 slices','five','48-fold comparison','2013','1999','Puységur','not a validated','UNPUBLISHED'])
    ok(f.article.toLowerCase().includes(t.toLowerCase()),'science narrative term '+t);
  for(const u of ['https://pmc.ncbi.nlm.nih.gov/articles/PMC3964612/','https://doi.org/10.1068/p281059','https://finalvestige.com/2026/11/02/mesmerism/','https://finalvestige.com/focus/'])
    ok(f.article.includes(u),'source linked '+u);
