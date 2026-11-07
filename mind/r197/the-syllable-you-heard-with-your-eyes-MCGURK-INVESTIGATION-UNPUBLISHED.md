@@ -54,7 +54,7 @@ A true McGurk test requires **synchronized audiovisual speech recordings** with 
 
 You can still explore the logic of the experiment at a desk. Take a piece of paper and draw two columns headed “What the recorder physically contains” and “What an observer reports.” In the first column write “audio = ba; video articulation = ga.” In the second write three *possible* reports: “ba,” “ga,” and “da.” None of these words is an outcome you just measured. They are placeholders for alternative perceptual reports.
 
-Now add a third column, “What would distinguish the possibilities?” You might write: play the audio **without** the face; show congruent audiovisual speech; compare mismatch conditions; ask participants to respond without giving the expected answer away. If you had licensed recordings and participant consent, these would be meaningful controls. With paper alone, the exercise demonstrates **experimental reasoning**, not an illusion or its prevalence.
+Now add a third column, “What would distinguish the possibilities?” You might write: play the audio **without** the face; show congruent audiovisual speech; compare mismatch conditions; ask participants to respond without giving the expected answer away. If you had licensed recordings and participant consent, these would be meaningful controls. With paper alone, the exercise demonstrates **experimental reasoning**, not an illusion or its prevalence. **This is not a working audiovisual test.**
 
 This separation is useful because it prevents a small conceptual trick from masquerading as an experiment. Reading “ba + ga = da” is not hearing **da**. Reporting how *you think* you would respond to a hypothetical video is not empirical evidence about what you actually perceive.
 
