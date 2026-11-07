@@ -87,13 +87,13 @@ The most consequential word in this body of research may not be *smashed*. It ma
 
 A responsible historian asks which document supports the claim. A responsible researcher asks which result supports the inference. And a responsible reader can ask of a memory: where did that detail come from?
 
-In 1974, the cars in the film were fixed. The interviewing language was not. Forty-eight years later, when people argue about what a photograph shows, a witness said or a recording proves, that difference still matters. Evidence is what lets us notice when the explanation has acquired a detail the original record never contained.
+In 1974, the cars in the film were fixed. The interviewing language was not. More than fifty years later, when people argue about what a photograph shows, a witness said or a recording proves, that difference still matters. Evidence is what lets us notice when the explanation has acquired a detail the original record never contained.
 
 **Editorial boundary:** This is an investigation, not a product endorsement. Independent product guidance belongs in a separately disclosed commerce guide. No medical advice, memory-recovery instruction or claims of a purchasable benefit are implied.
 
 ## Source trail and verification notes
 
-1. Loftus, E. F., & Palmer, J. C. (1974). *Reconstruction of automobile destruction: An example of the interaction between language and memory*. Journal of Verbal Learning and Verbal Behavior 13(5), 585–589. Primary article DOI: https://doi.org/10.1016/S0022-5371(74)80011-3 — abstract directly documents the verb, speed estimates, delayed broken glass.
+1. Loftus, E. F., & Palmer, J. C. (1974). *Reconstruction of automobile destruction: An example of the interaction between language and memory*. Journal of Verbal Learning and Verbal Behavior 13(5), 585–589. Primary article DOI: https://doi.org/10.1016/S0022-5371(74)80011-3 ; accessible full primary text https://bpb-us-e2.wpmucdn.com/faculty.sites.uci.edu/dist/c/571/files/2024/08/LoftusPalmer_ReconstructionAuto_JVLVB1974.pdf — review original Experiment I/II methods and broken-glass Table 2 before publication.
 2. Loftus, E. F., Miller, D. G., & Burns, H. J. (1978). *Semantic integration of verbal information into a visual memory*. Journal of Experimental Psychology: Human Learning and Memory 4(1), 19–31. Primary indexed abstract https://pubmed.ncbi.nlm.nih.gov/621467/ — 1,242 across five experiments plus pilot; not a single-n study.
 3. Johnson, M. K., Hashtroudi, S., & Lindsay, D. S. (1993). *Source monitoring*. Psychological Bulletin 114(1), 3–28. https://pubmed.ncbi.nlm.nih.gov/8346328/
 4. O'Donnell et al. (2023). *Experimental and meta-analytic evidence that source variability of misinformation does not increase eyewitness suggestibility independently of repetition of misinformation*. Indexed abstract https://pubmed.ncbi.nlm.nih.gov/37691811/
@@ -101,4 +101,4 @@ In 1974, the cars in the film were fixed. The interviewing language was not. For
 6. Lynn, S. J., Kirsch, I., Terhune, D. B., & Green, J. P. (2020). *Myths and misconceptions about hypnosis and suggestion*. https://doi.org/10.1002/acp.3730
 7. Contextual Final Vestige archive: https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/ ; source orientation: https://finalvestige.com/editorial-standards/
 
-*Limit: Some primary full texts are paywalled; the quoted numerical details in this draft rely on the accessible article abstracts or published experiment reporting. Claims beyond those sources require further full-text review before release.*
+*Limit: The 1974 original full text is linked above for editorial source checking (including Experiment II, Table 2). Other sources may be accessible only as abstracts, and no commercial benefit follows from the memory research.*
