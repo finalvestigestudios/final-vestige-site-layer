@@ -1,0 +1,21 @@
+# West Loch post 370: archival photo integrity & safe image delivery | Nov 7, 2026
+
+**Draft evidence only. No WordPress writes, production fixes, third-party downloads/caches, subscriptions, or homepage work.**
+
+Authenticated read-only WordPress inspection of [The Lines Were in the Fire](https://finalvestige.com/2026/08/19/the-lines-were-in-the-fire-west-loch/) (last modified 2026-11-02T21:40:07) found **8 live stored inline images**: **4 external NHHC imageDownload URLs** and **4 Final Vestige uploads**. **8/8 lack explicit HTML width/height**. The new JSON contains all 8 exact URLs, current ALTs, primary catalog links, credits, historical chronology, and null HTTP/decoded pixels/wire bytes.
+
+Primary Navy catalog evidence:
+- 80-G-276907 aerial view of the burning West Loch LSTs: catalog high TIFF 4320×4530 -> conditional 960×1007.
+- **80-G-202485**, Bougainville LST-353 (Nov 6 1943): two OFFICIAL Navy sources disagree: [National Museum](https://www.history.navy.mil/content/history/museums/nmusn/explore/photography/wwii/wwii-pacific/south-southwestern-pacific/bougainville-campaign/bougainville-land-campaign/80-g-202485.html) high TIFF **2851×2280**, [NHHC image catalog](https://www.history.navy.mil/content/history/nhhc/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/80-G-202000/80-G-202485.html) high TIFF **5860×4890**. Conditional previews differ **960×768** and **960×801**. **Automated derivative is BLOCKED until scan/crop is visually resolved.**
+- 80-G-276940, May 22 burned-out LST-39: TIFF 6254×5002 -> 960×768.
+- SC 427947, May 22 firefighting: TIFF 6084×4942 -> 960×780; Navy says wreck *may be* LST-480, not certainly.
+- 80-G-276945, LST-480 again aflame May 23: TIFF 6286×5018 -> 960×766; this photograph is already locally served.
+- Local image credited SC 185701 in FV has LST-480 prominent in caption; the Navy's [West Loch account](https://www.history.navy.mil/browse-by-topic/wars-conflicts-and-operations/world-war-ii/1944/west-loch.html) identifies **LST-39** as the primary subject. Possible differing framing: hold editorial correction pending exact-photo visual comparison. Slot 6 source catalog unconfirmed, and slot 7 DPAA memorial headstone dates to 2024, not 1944.
+
+**Important sizing:** NHHC's catalog labels its medium JPEG as “1280×1280.” That label does not prove published dynamic image is a square crop or that it requests 1280 bytes/pixels at runtime. High-TIFF dimensions are **catalog scan geometry, not proven published JPEG natural dimensions**. Preview numbers are conditional and no bytes were converted.
+
+**Next evidence and staging handoff:** Site QA #154 owns the existing guest Chrome collector and P0 queue; feed logged-out full-scroll post370 image `currentSrc`, redirect, real HTTP status/MIME, network Image request ID, `naturalWidth/Height`, screenshot, cache state and CDP encodedDataLength into existing PR #1395, without a duplicate collector. Begin with external 370:0/1/3/4, but do not displace the six current P0 slots. If a browser failure is proved, editorial/rights reviewer confirms exact source, public-domain applicability/attribution, composition and pixels, then independently authorizes a <=min(960px, master width), aspect-preserving derivative. Only THEN stage in WordPress with stable alt/caption, explicit dimensions, reversible source snapshot, desktop/mobile visual checks, and matched cold-transfer/CDP LCP/CLS measurement. No blind Gutenberg block rewrite. 
+
+**76%-claim methodology:** compare total browser `Network.loadingFinished.encodedDataLength` for actual Image requests on matched, full-scroll, no-cache before/after pages. Formula = (baseline - candidate) / baseline. Report both request coverage and missing images; a broken 0-byte image baseline is a restored-content outcome, not performance savings. 13 oversized originals = **43,522,829 Media Library stored bytes**, not wire bytes. Historical 61 posts / 355 images baseline differs from later 66 / 361. The alleged 42 browser-broken images and 76% reduction remain UNVERIFIED/UNMEASURED.
+
+Native Node QA: `node --test qa/media-recovery/test_west_loch_370_20261107.cjs`. No uploads, pages, CDN settings or visual design modified.
