@@ -33,12 +33,12 @@ CSS_BAD=[
  'background: element(#id)',
  'background:url(foo',
  'background:url(#foo',
- 'background: u\72l(https://example.test/a)',
- 'background:u\000072l(https://example.test/a)',
- '@im\70ort url(#x)',
+ 'background: u\\72l(https://example.test/a)',
+ 'background:u\\000072l(https://example.test/a)',
+ '@im\\70ort url(#x)',
  'background:url(&#104;ttps://example.test/a)',
  'background:url(\"https://example.test/a\")',
- 'background:url(\'https://example.test/a\')',
+ 'background: url(\'https://example.test/a\')',
  'background:url(#fake?query=1)',
 ]
 HTML_BAD=[
