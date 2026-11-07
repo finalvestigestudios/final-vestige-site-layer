@@ -1,0 +1,30 @@
+# Image integrity / external-source recovery: Lady Be Good — WP post 278
+**Verified 2026-11-07. Draft-only; zero WP production writes, external image downloads, rehosting, homepage design changes, or spend.**
+
+## Live WordPress crosswalk
+Authenticated read-only WP post 278, modified **2026-11-02T21:39:52**, contains **7/7 exact original image URLs** from the October 30 frozen 61-post, 355-image source inventory part 04 (blob **6df3251e5a67a971d87a516a1ba4a0cc32f51f96**). All seven lack native HTML width/height declarations in the stored post. Actual visitor layout shift is not established.
+
+## Exact original URL status observations — web retriever, NOT guest HTTP
+Slots 278:0–6 respectively produced: **wrapper 403; wrapper 403; image rendered; wrapper 502; image rendered; image rendered; wrapper 403**. This is not a live guest-browser failure rate, origin HTTP code set, or proof of a CDN outage. Machine-readable per-slot URLs are in [audit](../qa/media-recovery/lady_be_good_278_source_audit_20261107.json). Actual origin HTTP, logged-out CDP request status, MIME, currentSrc, naturalWidth and transferred bytes remain **null**.
+
+## Two priority historical-visual mismatches
+**278:5 NARA wreckage view:** The exact published [National Archives blog image](https://unwritten-record.blogs.archives.gov/wp-content/uploads/sites/6/2017/06/111-c-17240-scaled.jpg) visibly depicts aircraft wreckage without any apparent investigators; the article ALT currently describes **military investigators examining** the aircraft. Flag as editorial review pending a full-resolution image comparison; do **not** rewrite the Gutenberg post automatically. The [NARA institutional article](https://unwritten-record.blogs.archives.gov/2017/06/16/lost-and-found-the-story-of-lady-be-good-and-her-crew/) gives an Operation Climax record ID **111-CC-17240**, but filename is **111-c-17240-scaled.jpg**; preserve the apparent source identifier discrepancy until catalog verified.
+
+**278:3 Army canteen:** Original media source is https://qmmuseum.army.mil/assets/img/aotm/2012/09_M1910_canteen_1.jpg and web wrapper returned 502. The [official U.S. Army Quartermaster account](https://qmmuseum.army.mil/research/history-heritage/mortuary-affairs/The-Lady-Be-Good-Story.html) discusses recovered crew artifacts, but does not conclusively link **that particular M1910 canteen photograph** to crew belongings. The image may depict an illustrative canteen type. DO NOT assert exact artifact provenance without an item record or museum confirmation; no replacement is licensed or approved.
+
+## Primary-source crosswalk and conservative image weights
+**278:1:** Official [USAF Museum crew photo](https://www.nationalmuseum.af.mil/Upcoming/Photos/igphoto/2000572755/) confirms exact VIRIN **050606-F-1234P-012**. Gallery labels public-domain/cleared release with creator credit and [DoD reuse limitations](https://www.dimoc.mil/resources/limitations/). The gallery's original-file display size is **not** guest-browsed transferred bytes. Native delivered pixels not yet verified.
+
+**278:2:** Exact [Commons USAF original](https://commons.wikimedia.org/wiki/File:0000050606-F-1234P-014.jpg) is cataloged **1800×1192 px** (~208 KB archival original). Conditional no-crop 960px width yields **960×636 px**. Original file size is not a real user-journey transfer measurement. Commons cites PD-USAF; retain creator and check specific terms before independent hosting.
+
+**278:4:** A privately hosted Toner diary scan rendered. NARA's [Lady Be Good archival guide](https://unwritten-record.blogs.archives.gov/2017/06/16/lost-and-found-the-story-of-lady-be-good-and-her-crew/) lists two related diary photograph IDs **342-B-ND-075-4-163133AC** and **342-B-ND-075-4-163134AC** but the exact diary leaf is not verified. Neither is automatically a replacement and private scan reuse rights are not granted.
+
+**278:0, 278:6** USAF photo originals and **278:5** NARA exact image have institutional contexts but item-by-item rights/photograph geometry not yet verified. Army canteen exact identity and rights also HOLD. For **six of seven images**, source-native pixel dimensions are unverified: calculate a <=960px derivative only after validating binary dimensions, preserve aspect and never upscale, crop annotations or replace an archival subject with a merely related image.
+
+## Scope of safe restoration and QA coordination
+Site QA [PR #154](https://github.com/finalvestigestudios/final-vestige-site-layer/pull/154) and existing [guest-browser evidence #1395](https://github.com/finalvestigestudios/final-vestige-site-layer/pull/1395) own the single CDP/browser collector. Complete P0 queue **285:5, 285:2, 287:5, 418:1, 418:2, 407:1** before post 278. Then capture guest Chrome 360/1440px and full scroll: currentSrc, CDP request URL+ID+final status/redirect+MIME, naturalWidth/decode failure, cache flags, screenshot, real encodedDataLength and exact visual contents. Only a confirmed missing/incorrect image with per-item rights cleared can enter **isolated WordPress Media staging**. In staging: create licensed 960px-or-smaller responsive derivative, preserve image/caption attribution and correct editorial ALT separately, compare cold-browser bytes against unchanged baseline, check cropping/CLS/LCP, and retain rollback ID and old source. No automated live block rewrites.
+
+**Frozen 61/355 inventory ≠ later 66-post cohort.** The 42 alleged broken remain **unverified by visitor browser**; 76% sitewide actual-wire savings remain **unmeasured**. Thirteen oversized WordPress original files total **43,522,829 stored bytes**, not visitor bytes. This sprint repairs **zero** production images and spends **$0**.
+
+## Repeatable safety gate
+Run `node qa/media-recovery/validate_lady_be_good_278_20261107.cjs` and `node qa/media-recovery/test_lady_be_good_278_20261107.cjs`. In isolated Node-compatible V8, 27/27 clean and unsafe-mutation checks passed using exact code later read back byte-for-byte from committed GitHub blobs. Full native CI and real browser verification are still pending.
