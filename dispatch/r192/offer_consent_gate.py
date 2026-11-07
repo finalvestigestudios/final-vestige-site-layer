@@ -74,6 +74,8 @@ def paid_conversion(record):
 def safe_revenue_report(records, qualified_sessions, denominator_ref):
     if type(qualified_sessions) is not int or qualified_sessions <= 0 or not proof_ok(denominator_ref):
         return {'status': 'NOT_COMPUTABLE', 'reason': 'unverified qualified-human denominator'}
+    if not records:
+        return {'status': 'NOT_COMPUTABLE', 'reason': 'no independently reconciled zero-sales or settlement evidence'}
     unique = {}
     for r in records:
         if not paid_conversion(r):
