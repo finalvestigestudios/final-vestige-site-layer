@@ -69,7 +69,7 @@ ok('plan explicitly keeps hold',files.plan.includes('HARD HOLD'));
 ok('no forced external resources',!/<iframe|<object|<embed/i.test(files.a+files.b+files.hub));
 // Deliberately unsafe mutations: ensure the contract checks that matter would catch these.
 let mutations=0;function rejected(label,mutant,validator){assert.ok(!validator(mutant),label+' should be rejected');mutations++}
-rejected('activated link',files.a.replace('disabled aria-describedby','aria-describedby'),s=/<button[^>]+disabled/.test(s));
+rejected('activated link',files.a.replace('disabled aria-describedby','aria-describedby'),s=>/<button[^>]+disabled/.test(s));
 rejected('suppress disclosure',files.a.replace('Affiliate disclosure:','Affiliate notice:'),s=>s.includes('Affiliate disclosure:'));
 rejected('removed free option',files.a.replaceAll('https://finalvestige.com/focus/','/nothing'),s=>s.includes('https://finalvestige.com/focus/'));
 rejected('new newsletter form',files.a+'<form></form>',s=>!/<form\b/i.test(s));
