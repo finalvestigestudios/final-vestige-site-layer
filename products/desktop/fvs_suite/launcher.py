@@ -5,6 +5,7 @@ import sys
 
 from . import __version__
 from .offline_network import install_offline_guard
+from .background_privacy import install_background_privacy
 
 
 def launch(app_id: str) -> None:
@@ -16,6 +17,7 @@ def launch(app_id: str) -> None:
     guard_ready = False
     try:
         install_offline_guard()
+        install_background_privacy()
         guard_ready = True
     except Exception:
         pass
@@ -27,7 +29,7 @@ def launch(app_id: str) -> None:
     args = sys.argv[1:]
     if args == ["--smoke-test"]:
         # Smoke failures may contain private financial paths, invoice IDs, or
-        # source data in their exception text *and* chained traceback. Never
+        # source data in the exception text *and* chained traceback. Never
         # print or chain them into CI logs or an operator's terminal.
         successful = False
         try:
