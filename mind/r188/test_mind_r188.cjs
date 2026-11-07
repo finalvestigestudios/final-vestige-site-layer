@@ -43,6 +43,7 @@ function validate(f){
  ck("historical context labeled interpretive",intro.includes("an error to rewrite"));
  ck("article denies product evidence transfer",intro.includes("neither 1977 trivia experiments nor 2015 truth-rating studies")||intro.includes("Neither 1977 trivia experiments nor 2015 truth-rating studies"));
  ck("article points to one free Focus resource",intro.includes("https://finalvestige.com/focus/"));
+ ck("article correct published Mesmerism slug",intro.includes("https://finalvestige.com/2026/11/02/mesmerism/")&&!intro.includes("mesmerism-franklins-1784-commission/"));
  ck("article not an affiliate advertisement",!intro.includes("affiliate earning URL")&&!intro.includes("I used Zen12"));
  const html=["hub","A","B"];
  for(const name of html){
@@ -56,6 +57,7 @@ function validate(f){
  }
  ck("hub 4 distinct streams",["Perception & attention","History of suggestion","Practice & reflection","Tools under review"].every(x=>f.hub?.includes(x)));
  ck("hub existing Focus not new signup",f.hub?.includes("https://finalvestige.com/focus/")&&!/<form\b/i.test(f.hub));
+ ck("hub correct published Mesmerism slug",f.hub?.includes("https://finalvestige.com/2026/11/02/mesmerism/")&&!f.hub.includes("mesmerism-franklins-1784-commission/"));
  ck("A native disabled CTA",/<button[^>]+disabled[^>]*>Purchase option unavailable/.test(f.A||""));
  ck("B native disabled CTA",/<button[^>]+disabled[^>]*>Purchase option unavailable/.test(f.B||""));
  for(const name of ["A","B"]){
@@ -107,6 +109,7 @@ const mutations=[
  ["film injected into control",a=>{a.A=a.A.replace("<section aria-labelledby=\"questions\">","<section id=\"optional-film\"></section><section aria-labelledby=\"questions\">")}],
  ["invented creator role",a=>{a.oldplan=a.oldplan.replace("Grok owns original social content creation","Grok and Praxxis jointly own content")}],
  ["white bear regression",a=>{a.whitebear=a.whitebear.replace("explicitly instructed to think about it from the outset","permitted to think about it from the outset")}],
+ ["wrong live internal link",a=>{a.hub=a.hub.replace("https://finalvestige.com/2026/11/02/mesmerism/","https://finalvestige.com/2026/11/02/mesmerism-franklins-1784-commission/")}],
  ["legacy film regression",a=>{a.oldfilm=a.oldfilm.replace("Both groups were told to think of the bear.","Both groups could think of the bear.")}],
  ["focus signup duplicated",a=>{a.A+="<form><input /></form>"}]
 ];
