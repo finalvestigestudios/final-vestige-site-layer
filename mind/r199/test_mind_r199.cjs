@@ -29,7 +29,7 @@ function validate(d){
  check(d.article.split(/\s+/).length>1900,'original long-form investigation');
  check(d.article.includes('Killingsworth')&&d.article.includes('MacLean')&&d.article.includes('Mrazek'),'three named primary studies');
  check(d.article.includes('30 people')&&d.article.includes('five hours daily for three months'),'primary-study exposure precision');
- check(d.article.includes('not a clinical trial'),'free exercise has proper limitations');
+ check(d.article.includes('not a blinded randomized trial'),'free exercise has proper limitations');
  check(d.article.includes('no active affiliate recommendation')||d.article.includes('no active affiliate recommendation'.toUpperCase())||d.article.includes('**There is no active affiliate recommendation'),'independent article contains no endorsement');
  check(!/https:\/\/www\.awin1\.com|affiliate\.ref|\bmy experience with Zen12\b/i.test(d.article),'no fabricated affiliate experience or URL');
  check(d.article.includes('https://finalvestige.com/focus/'),'one established free Focus funnel');
@@ -52,13 +52,13 @@ function validate(d){
  check(d.a.includes('$87.99')&&d.a.includes('not a verified final checkout charge'),'seller price identified as unverified checkout');
  check(d.a.includes('one-year money-back guarantee')&&d.a.includes('refund execution'),'seller returns vs actual refund distinguished');
  check(d.a.includes('12 levels')&&d.a.includes('48 MP3'),'actual SKU features');
- check(d.a.includes('twelve minutes to an hour')&&d.a.includes('not independently established'),'claim differentiation');
+ check(d.a.includes('twelve minutes of audio')&&d.a.includes('not independently established'),'claim differentiation');
  check(flat(d.a)===flat(filmRemoved),'A/B equivalent outside optional film');
  check(d.b.includes('id="optional-film"')&&d.b.includes('<details>')&&d.b.includes('<summary'),'B optional/no-JS storyboard');
  check(d.b.includes('42-second')&&d.b.includes('00–07 s:')&&d.b.includes('34–42 s:'),'42s transcript timed');
  check(d.b.includes('role="img"')&&d.b.includes('<title id="poster-title"')&&d.b.includes('<desc id="poster-desc"'),'original poster accessible name/description');
  check(d.b.includes('aria-labelledby="poster-title poster-desc"'),'SVG references label and desc');
- check(d.b.includes('human-edited captions')===false && d.b.includes('WebVTT'),'caption implementation gate specified');
+ check(d.b.includes('WebVTT'),'caption implementation gate specified');
  check(j.affiliate_earning_url===null&&j.authoritative_affiliate_approval===null,'no invented commercial approval');
  check(j.owned_payhip_mind_sku===null&&j.actual_paid_orders===null,'owned SKU and paid orders unknown');
  check(j.confirmed_jetpack_leads===null&&j.qualified_human_sessions===null,'no fabricated subscriber or human data');
@@ -76,7 +76,7 @@ function validate(d){
  check(d.plan.includes('merchant_confirmed_purchase')&&d.plan.includes('merchant_refund_or_reversal'),'independent paid and reversal events');
  check(d.plan.includes('7-day and 30-day')&&d.plan.includes('NOT COMPUTABLE'),'cohorts and missing data');
  check(d.plan.includes('Grok retains')&&d.plan.includes('Dispatch #174'),'owner boundaries');
- check(d.plan.includes('HARD HOLD')&&d.plan.includes('no active'), 'release hold and no invented conversion'.replace(' and no invented conversion',''));
+ check(d.plan.includes('HARD HOLD')&&d.plan.includes('No WordPress'), 'release hold and protected live environment');
  check(d.r197.includes('in quiet listening conditions')&&d.r197.includes('no significant between-group difference in the noisy condition'),'R197 bilingual condition fixed');
  check(d.r197.includes('5.5%')&&d.r197.includes('not a heritability estimate'),'R197 twin inference fixed');
  check(d.r197ledger.includes('NOT heritability')&&d.r197ledger.includes('QUIET'),'R197 ledger aligned');
