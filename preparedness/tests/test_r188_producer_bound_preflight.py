@@ -40,7 +40,7 @@ class WrapperAdmission(unittest.TestCase):
             prep,pins=synthetic_tree(Path(d))
             receipt=wrapper.preflight(Path(d),synthetic_pins=pins)
             self.assertEqual(receipt['state'],wrapper.HOLD)
-            self.assertTrue(receipt['native_build_verified'])
+            self.assertTrue(receipt['native_structural_checks_complete'])
             self.assertFalse(receipt['publication_authorized'])
 
     def test_bad_native_receipt_remains_invalid(self):
@@ -48,7 +48,7 @@ class WrapperAdmission(unittest.TestCase):
             _,pins=synthetic_tree(Path(d),wrapper.INVALID)
             receipt=wrapper.preflight(Path(d),synthetic_pins=pins)
             self.assertEqual(receipt['state'],wrapper.INVALID)
-            self.assertFalse(receipt['native_build_verified'])
+            self.assertFalse(receipt['native_structural_checks_complete'])
 
     def test_spurious_release_fails(self):
         with tempfile.TemporaryDirectory() as d:
