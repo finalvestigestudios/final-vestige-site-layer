@@ -38,7 +38,7 @@ A sentence may also be familiar because it appears in a source you trust. Trust 
 Here is a subtle warning about catchphrases: **short, polished slogans are not necessarily false**. A simple sentence may convey a true fact accurately. The problem begins when presentation becomes a substitute for checking what it claims.
 
 ## A way to slow down the first encounter
-A 2020 paper by Nadia Brashier, Emmaline Drew Eliseev and Elizabeth Marsh reported four experiments in which an initial focus on accuracy reduced later illusory-truth effects when participants possessed relevant knowledge. Their intervention invited readers to behave more like fact checkers at the outset instead of treating words merely as interesting or easy to read. The protection was **conditional**: it was observed when relevant knowledge was available, not a universal antidote against falsehood. [5]
+A 2020 paper by Nadia Brashier, Emmaline Drew Eliseev and Elizabeth Marsh reported four experiments in which initially **rating statements for truth, rather than interest**, reduced later illusory-truth effects when participants possessed relevant knowledge. This was a laboratory manipulation of initial evaluation, **not** a trial of web searches, source-ledger worksheets or real-world fact-checking routines. The protection was **conditional**: it appeared where relevant knowledge was available, not as a universal antidote. [5]
 
 The timing matters. When first encountering a claim, we can ask for its source before our memory has filed it away as familiar. That single habit does not guarantee better decisions, but it changes the question from “Have I heard this?” to “How would I verify this?”
 
