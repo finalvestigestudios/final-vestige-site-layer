@@ -1,0 +1,29 @@
+THE DISPATCH · OPTIONAL ISSUE 06 · UNSENT
+Subject: A forgotten lesson from the man who measured forgetting
+Preheader: Ebbinghaus kept a record. The careful part was what he refused to assume.
+
+In 1885, Hermann Ebbinghaus published an unusual kind of investigation. Rather than wait for a memory to fail and then describe the feeling, he tried to measure what remained.
+
+He built lists of deliberately meaningless syllables and practiced learning them under controlled conditions. Later, he returned to the same lists. He asked not only whether he could recall them perfectly, but how much work it took to learn them again. Less work the second time was evidence that something survived even when ready recall had faded.
+
+That is an important distinction. Not being able to produce an answer on command does not necessarily mean that nothing remains.
+
+His 1885 book, available in a 1913 English translation, describes 163 learning-and-relearning double tests conducted in 1879 and 1880. The delays included about twenty minutes, an hour, nine hours and intervals as long as thirty-one days. He also investigated time-of-day effects and openly described problems that complicated comparison.
+
+The most interesting part is not the famous forgetting curve. It is the caution in the record. Ebbinghaus tested himself. His careful observations were not a representative sample of everyone else's memory, and he knew that ordinary life was difficult to hold constant during months of trials. Those limitations belong in the story.
+
+Here is a small exercise you can do without buying anything: choose one modest task you want to repeat. Write down when you started, what you actually did, what interrupted you and what you remember unaided the following day. Then compare your memory with the notes. You are keeping a personal observation log—not duplicating an experiment or testing a treatment.
+
+The difference between an impression and a preserved record matters to our historical investigations, too. We may remember a story vividly while missing an important piece of it. Sources let us check where that first impression ends and where the surviving evidence begins.
+
+Our published Change Blindness investigation examines another kind of gap: what attention can miss in the moment. Change blindness is not the same phenomenon Ebbinghaus investigated, but it offers a second reason to check an apparently complete account against something outside our own certainty.
+
+Read the Change Blindness investigation: https://finalvestige.com/2026/11/02/change-blindness/
+
+Primary sources: Hermann Ebbinghaus, Memory (1885), translated 1913. Chapter III (experimental methods): https://www.yorku.ca/pclassic/Ebbinghaus/memory3.htm
+Chapter VII (relearning, 163 double tests, limitations): https://www.yorku.ca/pclassic/Ebbinghaus/memory7.htm
+Author preface (self-experiment and individual significance): https://www.yorku.ca/pclassic/Ebbinghaus/memorypref.htm
+These are historical research sources, NOT substantiation of consumer audio benefits.
+
+UNSENT. REAL JETPACK RENDER AND LEGAL FOOTER NOT VERIFIED.
+[[VALID_FV_POSTAL_ADDRESS_REQUIRED]] | [[ACTUAL_JETPACK_UNSUBSCRIBE_REQUIRED]]
