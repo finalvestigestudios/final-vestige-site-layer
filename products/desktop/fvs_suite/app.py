@@ -247,7 +247,8 @@ def run(app_id):
                                      invoice_window.get().strip()))
             else:
                 outputs = action(*args, output.get().strip())
-            outputs = confirm_report_files(outputs)
+            outputs = confirm_report_files(
+                outputs, folder=output.get().strip(), app_id=app_id)
         except Exception as exc:
             # Engines can fail after writing a destination. Never announce
             # success or auto-select stale premium evidence; leave files for
