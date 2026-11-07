@@ -1,0 +1,1980 @@
+{
+  "schema": "fv-featured-plus-oversize-cms-source-v1",
+  "captured_at_utc": "2026-11-07T00:30:14.846Z",
+  "as_of_pacific_date": "2026-11-06",
+  "method": "Authenticated WordPress READ ONLY: pages.list/posts.list/media.list, NOT browser or origin HTTP testing",
+  "site": "https://finalvestige.com",
+  "cohort": {
+    "pages": 83,
+    "posts": 66,
+    "published_objects": 149,
+    "media_images": 116,
+    "featured_refs": 25,
+    "featured_unique": 25,
+    "featured_oversize": 7,
+    "oversize_originals": 13,
+    "oversize_original_storage_bytes": 43522829,
+    "oversize_threshold_exclusive": 1572864
+  },
+  "featured": [
+    {
+      "media_id": 2104,
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/11/fv-social-preview-1200x630-1.jpg",
+      "original_filename": "2026/11/fv-social-preview-1200x630-1.jpg",
+      "original_storage_bytes": 238903,
+      "mime_type": "image/jpeg",
+      "attached_post_id": null,
+      "alt_text": "Final Vestige Studios archival brand graphic featuring a three-stone cairn and historical research artifacts",
+      "native_width_metadata": 1200,
+      "native_height_metadata": 630,
+      "preview_max_width": 960,
+      "preview_height_at_max_width": 504,
+      "sizes_reported": [
+        {
+          "name": "medium",
+          "width": 300,
+          "height": 158,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/11/fv-social-preview-1200x630-1.jpg?fit=300%2C158&ssl=1"
+        },
+        {
+          "name": "large",
+          "width": 1024,
+          "height": 538,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/11/fv-social-preview-1200x630-1.jpg?fit=1024%2C538&ssl=1"
+        },
+        {
+          "name": "thumbnail",
+          "width": 150,
+          "height": 150,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/11/fv-social-preview-1200x630-1.jpg?resize=150%2C150&ssl=1"
+        },
+        {
+          "name": "medium_large",
+          "width": 768,
+          "height": 403,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/11/fv-social-preview-1200x630-1.jpg?fit=768%2C403&ssl=1"
+        },
+        {
+          "name": "full",
+          "width": 1200,
+          "height": 630,
+          "virtual": false,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/11/fv-social-preview-1200x630-1.jpg?fit=1200%2C630&ssl=1"
+        }
+      ],
+      "rights_clearance": "HOLD_ITEM_LEVEL",
+      "guest_http_status": null,
+      "guest_browser_image_decoded": null,
+      "cold_transfer_bytes": null,
+      "production_upload_allowed": false,
+      "visual_approval": false,
+      "post_id": 6,
+      "post_type": "page",
+      "post_title": "Home",
+      "post_url": "https://finalvestige.com/",
+      "post_modified": "2026-11-05T12:07:24",
+      "featured_metadata_only": true
+    },
+    {
+      "media_id": 39,
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/bceca0bd-a16f-44f7-be08-16376fbf08ca.png",
+      "original_filename": "2026/08/bceca0bd-a16f-44f7-be08-16376fbf08ca.png",
+      "original_storage_bytes": 2892087,
+      "mime_type": "image/png",
+      "attached_post_id": 34,
+      "alt_text": "AI-assisted historical reconstruction of firefighters and horse-drawn fire engines on a ruined San Francisco street during the April 1906 fires",
+      "native_width_metadata": 1672,
+      "native_height_metadata": 941,
+      "preview_max_width": 960,
+      "preview_height_at_max_width": 540,
+      "sizes_reported": [],
+      "rights_clearance": "HOLD_ITEM_LEVEL",
+      "guest_http_status": null,
+      "guest_browser_image_decoded": null,
+      "cold_transfer_bytes": null,
+      "production_upload_allowed": false,
+      "visual_approval": false,
+      "post_id": 34,
+      "post_type": "post",
+      "post_title": "The Morning San Francisco Lost Its Water",
+      "post_url": "https://finalvestige.com/2026/08/16/the-morning-san-francisco-lost-its-water/",
+      "post_modified": "2026-10-29T21:19:13",
+      "featured_metadata_only": true
+    },
+    {
+      "media_id": 40,
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/377e08da-e121-4f57-9174-1548343402b3.png",
+      "original_filename": "2026/08/377e08da-e121-4f57-9174-1548343402b3.png",
+      "original_storage_bytes": 2552136,
+      "mime_type": "image/png",
+      "attached_post_id": 35,
+      "alt_text": "AI-assisted historical reconstruction of Shackleton's six-man James Caird voyage across the Southern Ocean in 1916",
+      "native_width_metadata": 1672,
+      "native_height_metadata": 941,
+      "preview_max_width": 960,
+      "preview_height_at_max_width": 540,
+      "sizes_reported": [],
+      "rights_clearance": "HOLD_ITEM_LEVEL",
+      "guest_http_status": null,
+      "guest_browser_image_decoded": null,
+      "cold_transfer_bytes": null,
+      "production_upload_allowed": false,
+      "visual_approval": false,
+      "post_id": 35,
+      "post_type": "post",
+      "post_title": "The Boat That Refused to Die",
+      "post_url": "https://finalvestige.com/2026/08/16/the-boat-that-refused-to-die/",
+      "post_modified": "2026-10-29T17:07:04",
+      "featured_metadata_only": true
+    },
+    {
+      "media_id": 41,
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/a44f673d-a8a8-4c83-9f29-7e24dd55156b.png",
+      "original_filename": "2026/08/a44f673d-a8a8-4c83-9f29-7e24dd55156b.png",
+      "original_storage_bytes": 2498247,
+      "mime_type": "image/png",
+      "attached_post_id": 36,
+      "alt_text": "AI-assisted historical reconstruction of civilians sheltering in hand-dug caves during the Siege of Vicksburg in 1863",
+      "native_width_metadata": 1672,
+      "native_height_metadata": 941,
+      "preview_max_width": 960,
+      "preview_height_at_max_width": 540,
+      "sizes_reported": [],
+      "rights_clearance": "HOLD_ITEM_LEVEL",
+      "guest_http_status": null,
+      "guest_browser_image_decoded": null,
+      "cold_transfer_bytes": null,
+      "production_upload_allowed": false,
+      "visual_approval": false,
+      "post_id": 36,
+      "post_type": "post",
+      "post_title": "The City That Went Underground",
+      "post_url": "https://finalvestige.com/2026/08/16/the-city-that-went-underground/",
+      "post_modified": "2026-10-29T17:07:30",
+      "featured_metadata_only": true
+    },
+    {
+      "media_id": 42,
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/c1237ffd-4a47-4988-8254-e3b021069e72.png",
+      "original_filename": "2026/08/c1237ffd-4a47-4988-8254-e3b021069e72.png",
+      "original_storage_bytes": 2488823,
+      "mime_type": "image/png",
+      "attached_post_id": 37,
+      "alt_text": "AI-assisted historical reconstruction of Nabataean water channels, reservoirs and gravity-fed water infrastructure at Petra",
+      "native_width_metadata": 1672,
+      "native_height_metadata": 941,
+      "preview_max_width": 960,
+      "preview_height_at_max_width": 540,
+      "sizes_reported": [],
+      "rights_clearance": "HOLD_ITEM_LEVEL",
+      "guest_http_status": null,
+      "guest_browser_image_decoded": null,
+      "cold_transfer_bytes": null,
+      "production_upload_allowed": false,
+      "visual_approval": false,
+      "post_id": 37,
+      "post_type": "post",
+      "post_title": "How Petra Made Water Flow Through Stone",
+      "post_url": "https://finalvestige.com/2026/08/16/how-petra-made-water-flow-through-stone/",
+      "post_modified": "2026-10-29T17:07:17",
+      "featured_metadata_only": true
+    },
+    {
+      "media_id": 43,
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/01340c2e-1165-4ca0-aa96-87398a83d13a.png",
+      "original_filename": "2026/08/01340c2e-1165-4ca0-aa96-87398a83d13a.png",
+      "original_storage_bytes": 2836245,
+      "mime_type": "image/png",
+      "attached_post_id": 38,
+      "alt_text": "AI-assisted historical reconstruction of firefighters drawing emergency water from an underground cistern after the 1906 San Francisco disaster",
+      "native_width_metadata": 1672,
+      "native_height_metadata": 941,
+      "preview_max_width": 960,
+      "preview_height_at_max_width": 540,
+      "sizes_reported": [],
+      "rights_clearance": "HOLD_ITEM_LEVEL",
+      "guest_http_status": null,
+      "guest_browser_image_decoded": null,
+      "cold_transfer_bytes": null,
+      "production_upload_allowed": false,
+      "visual_approval": false,
+      "post_id": 38,
+      "post_type": "post",
+      "post_title": "The Cisterns Beneath San Francisco",
+      "post_url": "https://finalvestige.com/2026/08/16/the-cisterns-beneath-san-francisco/",
+      "post_modified": "2026-10-29T17:06:51",
+      "featured_metadata_only": true
+    },
+    {
+      "media_id": 175,
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/Boston_Elevated_Railway_after_the_Molasses_Flood_January_1919_from_the_City_of_Boston_Archives_-_9800-018-031.jpg",
+      "original_filename": "2026/08/Boston_Elevated_Railway_after_the_Molasses_Flood_January_1919_from_the_City_of_Boston_Archives_-_9800-018-031.jpg",
+      "original_storage_bytes": 589336,
+      "mime_type": "image/jpeg",
+      "attached_post_id": 101,
+      "alt_text": "Wreckage in Boston’s North End after the Great Molasses Flood of January 1919, with damaged elevated-rail infrastructure and tank debris.",
+      "native_width_metadata": 1920,
+      "native_height_metadata": 1180,
+      "preview_max_width": 960,
+      "preview_height_at_max_width": 590,
+      "sizes_reported": [
+        {
+          "name": "medium",
+          "width": 300,
+          "height": 184,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/Boston_Elevated_Railway_after_the_Molasses_Flood_January_1919_from_the_City_of_Boston_Archives_-_9800-018-031.jpg?fit=300%2C184&ssl=1"
+        },
+        {
+          "name": "large",
+          "width": 1024,
+          "height": 629,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/Boston_Elevated_Railway_after_the_Molasses_Flood_January_1919_from_the_City_of_Boston_Archives_-_9800-018-031.jpg?fit=1024%2C629&ssl=1"
+        },
+        {
+          "name": "thumbnail",
+          "width": 150,
+          "height": 150,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/Boston_Elevated_Railway_after_the_Molasses_Flood_January_1919_from_the_City_of_Boston_Archives_-_9800-018-031.jpg?resize=150%2C150&ssl=1"
+        },
+        {
+          "name": "medium_large",
+          "width": 768,
+          "height": 472,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/Boston_Elevated_Railway_after_the_Molasses_Flood_January_1919_from_the_City_of_Boston_Archives_-_9800-018-031.jpg?fit=768%2C472&ssl=1"
+        },
+        {
+          "name": "1536x1536",
+          "width": 1536,
+          "height": 944,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/Boston_Elevated_Railway_after_the_Molasses_Flood_January_1919_from_the_City_of_Boston_Archives_-_9800-018-031.jpg?fit=1536%2C944&ssl=1"
+        },
+        {
+          "name": "full",
+          "width": 1920,
+          "height": 1180,
+          "virtual": false,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/Boston_Elevated_Railway_after_the_Molasses_Flood_January_1919_from_the_City_of_Boston_Archives_-_9800-018-031.jpg?fit=1920%2C1180&ssl=1"
+        }
+      ],
+      "rights_clearance": "HOLD_ITEM_LEVEL",
+      "guest_http_status": null,
+      "guest_browser_image_decoded": null,
+      "cold_transfer_bytes": null,
+      "production_upload_allowed": false,
+      "visual_approval": false,
+      "post_id": 101,
+      "post_type": "post",
+      "post_title": "Six Inches of Water",
+      "post_url": "https://finalvestige.com/2026/08/17/six-inches-of-water-boston-molasses-flood/",
+      "post_modified": "2026-10-29T18:26:05",
+      "featured_metadata_only": true
+    },
+    {
+      "media_id": 110,
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/sscentralamerica-1.jpg",
+      "original_filename": "2026/08/sscentralamerica-1.jpg",
+      "original_storage_bytes": 167188,
+      "mime_type": "image/jpeg",
+      "attached_post_id": 108,
+      "alt_text": "1857 illustration of the side-wheel steamship SS Central America at sea",
+      "native_width_metadata": 640,
+      "native_height_metadata": 342,
+      "preview_max_width": 640,
+      "preview_height_at_max_width": 342,
+      "sizes_reported": [],
+      "rights_clearance": "HOLD_ITEM_LEVEL",
+      "guest_http_status": null,
+      "guest_browser_image_decoded": null,
+      "cold_transfer_bytes": null,
+      "production_upload_allowed": false,
+      "visual_approval": false,
+      "post_id": 108,
+      "post_type": "post",
+      "post_title": "The Richest Ship Couldn’t Buy Another Hour",
+      "post_url": "https://finalvestige.com/2026/08/17/the-richest-ship-couldnt-buy-another-hour/",
+      "post_modified": "2026-08-25T18:54:29",
+      "featured_metadata_only": true
+    },
+    {
+      "media_id": 177,
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/USS_Wandank_AT-26_and_USS_Falcon_ASR-2.jpg",
+      "original_filename": "2026/08/USS_Wandank_AT-26_and_USS_Falcon_ASR-2.jpg",
+      "original_storage_bytes": 211856,
+      "mime_type": "image/jpeg",
+      "attached_post_id": 139,
+      "alt_text": "USS Wandank and USS Falcon positioned over the sunken USS Squalus during rescue operations in May 1939",
+      "native_width_metadata": 728,
+      "native_height_metadata": 529,
+      "preview_max_width": 728,
+      "preview_height_at_max_width": 529,
+      "sizes_reported": [
+        {
+          "name": "medium",
+          "width": 300,
+          "height": 218,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/USS_Wandank_AT-26_and_USS_Falcon_ASR-2.jpg?fit=300%2C218&ssl=1"
+        },
+        {
+          "name": "thumbnail",
+          "width": 150,
+          "height": 150,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/USS_Wandank_AT-26_and_USS_Falcon_ASR-2.jpg?resize=150%2C150&ssl=1"
+        },
+        {
+          "name": "full",
+          "width": 728,
+          "height": 529,
+          "virtual": false,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/USS_Wandank_AT-26_and_USS_Falcon_ASR-2.jpg?fit=728%2C529&ssl=1"
+        }
+      ],
+      "rights_clearance": "HOLD_ITEM_LEVEL",
+      "guest_http_status": null,
+      "guest_browser_image_decoded": null,
+      "cold_transfer_bytes": null,
+      "production_upload_allowed": false,
+      "visual_approval": false,
+      "post_id": 139,
+      "post_type": "post",
+      "post_title": "The Rescue Machine Nobody Had Ever Needed",
+      "post_url": "https://finalvestige.com/2026/08/17/the-rescue-machine-nobody-had-ever-needed/",
+      "post_modified": "2026-09-08T02:51:01",
+      "featured_metadata_only": true
+    },
+    {
+      "media_id": 143,
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/service-pnp-ppmsca-34000-34001v.jpg",
+      "original_filename": "2026/08/service-pnp-ppmsca-34000-34001v.jpg",
+      "original_storage_bytes": 252786,
+      "mime_type": "image/jpeg",
+      "attached_post_id": 142,
+      "alt_text": "Overloaded steamboat Sultana at Helena, Arkansas, crowded with Union soldiers on April 26, 1865",
+      "native_width_metadata": 1024,
+      "native_height_metadata": 627,
+      "preview_max_width": 960,
+      "preview_height_at_max_width": 588,
+      "sizes_reported": [
+        {
+          "name": "medium",
+          "width": 300,
+          "height": 184,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/service-pnp-ppmsca-34000-34001v.jpg?fit=300%2C184&ssl=1"
+        },
+        {
+          "name": "thumbnail",
+          "width": 150,
+          "height": 150,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/service-pnp-ppmsca-34000-34001v.jpg?resize=150%2C150&ssl=1"
+        },
+        {
+          "name": "medium_large",
+          "width": 768,
+          "height": 470,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/service-pnp-ppmsca-34000-34001v.jpg?fit=768%2C470&ssl=1"
+        },
+        {
+          "name": "full",
+          "width": 1024,
+          "height": 627,
+          "virtual": false,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/service-pnp-ppmsca-34000-34001v.jpg?fit=1024%2C627&ssl=1"
+        }
+      ],
+      "rights_clearance": "HOLD_ITEM_LEVEL",
+      "guest_http_status": null,
+      "guest_browser_image_decoded": null,
+      "cold_transfer_bytes": null,
+      "production_upload_allowed": false,
+      "visual_approval": false,
+      "post_id": 142,
+      "post_type": "post",
+      "post_title": "Almost Home",
+      "post_url": "https://finalvestige.com/2026/08/17/almost-home-sultana-disaster/",
+      "post_modified": "2026-09-08T10:07:17",
+      "featured_metadata_only": true
+    },
+    {
+      "media_id": 148,
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/Vajont_Dam_landslide.jpg",
+      "original_filename": "2026/08/Vajont_Dam_landslide.jpg",
+      "original_storage_bytes": 115238,
+      "mime_type": "image/jpeg",
+      "attached_post_id": 146,
+      "alt_text": "Vajont Dam standing intact below the massive Mount Toc landslide after the October 1963 disaster",
+      "native_width_metadata": 800,
+      "native_height_metadata": 550,
+      "preview_max_width": 800,
+      "preview_height_at_max_width": 550,
+      "sizes_reported": [
+        {
+          "name": "medium",
+          "width": 300,
+          "height": 206,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/Vajont_Dam_landslide.jpg?fit=300%2C206&ssl=1"
+        },
+        {
+          "name": "thumbnail",
+          "width": 150,
+          "height": 150,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/Vajont_Dam_landslide.jpg?resize=150%2C150&ssl=1"
+        },
+        {
+          "name": "medium_large",
+          "width": 768,
+          "height": 528,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/Vajont_Dam_landslide.jpg?fit=768%2C528&ssl=1"
+        },
+        {
+          "name": "full",
+          "width": 800,
+          "height": 550,
+          "virtual": false,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/Vajont_Dam_landslide.jpg?fit=800%2C550&ssl=1"
+        }
+      ],
+      "rights_clearance": "HOLD_ITEM_LEVEL",
+      "guest_http_status": null,
+      "guest_browser_image_decoded": null,
+      "cold_transfer_bytes": null,
+      "production_upload_allowed": false,
+      "visual_approval": false,
+      "post_id": 146,
+      "post_type": "post",
+      "post_title": "The Dam That Didn’t Fail",
+      "post_url": "https://finalvestige.com/2026/08/17/the-dam-that-didnt-fail-vajont/",
+      "post_modified": "2026-11-02T21:37:02",
+      "featured_metadata_only": true
+    },
+    {
+      "media_id": 152,
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/GVP-00264.jpg",
+      "original_filename": "2026/08/GVP-00264.jpg",
+      "original_storage_bytes": 227114,
+      "mime_type": "image/jpeg",
+      "attached_post_id": null,
+      "alt_text": "Lake Nyos in Cameroon after the August 1986 carbon dioxide release, with reddish water and wave damage along the shore",
+      "native_width_metadata": 1024,
+      "native_height_metadata": 684,
+      "preview_max_width": 960,
+      "preview_height_at_max_width": 641,
+      "sizes_reported": [
+        {
+          "name": "medium",
+          "width": 300,
+          "height": 200,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/GVP-00264.jpg?fit=300%2C200&ssl=1"
+        },
+        {
+          "name": "thumbnail",
+          "width": 150,
+          "height": 150,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/GVP-00264.jpg?resize=150%2C150&ssl=1"
+        },
+        {
+          "name": "medium_large",
+          "width": 768,
+          "height": 513,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/GVP-00264.jpg?fit=768%2C513&ssl=1"
+        },
+        {
+          "name": "full",
+          "width": 1024,
+          "height": 684,
+          "virtual": false,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/GVP-00264.jpg?fit=1024%2C684&ssl=1"
+        }
+      ],
+      "rights_clearance": "HOLD_ITEM_LEVEL",
+      "guest_http_status": null,
+      "guest_browser_image_decoded": null,
+      "cold_transfer_bytes": null,
+      "production_upload_allowed": false,
+      "visual_approval": false,
+      "post_id": 151,
+      "post_type": "post",
+      "post_title": "They Taught the Lake to Breathe",
+      "post_url": "https://finalvestige.com/2026/08/17/they-taught-the-lake-to-breathe/",
+      "post_modified": "2026-08-28T02:11:36",
+      "featured_metadata_only": true
+    },
+    {
+      "media_id": 159,
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/Galveston_Texas._Galveston_Grade_raising_Pumping_in_the_filling._6838566304.jpg",
+      "original_filename": "2026/08/Galveston_Texas._Galveston_Grade_raising_Pumping_in_the_filling._6838566304.jpg",
+      "original_storage_bytes": 527637,
+      "mime_type": "image/jpeg",
+      "attached_post_id": 156,
+      "alt_text": "Raised buildings in Galveston while dredged sand and water are pumped beneath them during the city’s grade-raising project, circa 1904 to 1910",
+      "native_width_metadata": 1000,
+      "native_height_metadata": 642,
+      "preview_max_width": 960,
+      "preview_height_at_max_width": 616,
+      "sizes_reported": [
+        {
+          "name": "medium",
+          "width": 300,
+          "height": 193,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/Galveston_Texas._Galveston_Grade_raising_Pumping_in_the_filling._6838566304.jpg?fit=300%2C193&ssl=1"
+        },
+        {
+          "name": "thumbnail",
+          "width": 150,
+          "height": 150,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/Galveston_Texas._Galveston_Grade_raising_Pumping_in_the_filling._6838566304.jpg?resize=150%2C150&ssl=1"
+        },
+        {
+          "name": "medium_large",
+          "width": 768,
+          "height": 493,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/Galveston_Texas._Galveston_Grade_raising_Pumping_in_the_filling._6838566304.jpg?fit=768%2C493&ssl=1"
+        },
+        {
+          "name": "full",
+          "width": 1000,
+          "height": 642,
+          "virtual": false,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/Galveston_Texas._Galveston_Grade_raising_Pumping_in_the_filling._6838566304.jpg?fit=1000%2C642&ssl=1"
+        }
+      ],
+      "rights_clearance": "HOLD_ITEM_LEVEL",
+      "guest_http_status": null,
+      "guest_browser_image_decoded": null,
+      "cold_transfer_bytes": null,
+      "production_upload_allowed": false,
+      "visual_approval": false,
+      "post_id": 156,
+      "post_type": "post",
+      "post_title": "They Lifted the City",
+      "post_url": "https://finalvestige.com/2026/08/17/they-lifted-the-city-galveston/",
+      "post_modified": "2026-11-02T21:39:27",
+      "featured_metadata_only": true
+    },
+    {
+      "media_id": 171,
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/IMG_3479.jpeg",
+      "original_filename": "2026/08/IMG_3479.jpeg",
+      "original_storage_bytes": 704922,
+      "mime_type": "image/jpeg",
+      "attached_post_id": 166,
+      "alt_text": "St. Francis Dam and reservoir in San Francisquito Canyon in February 1927, one year before the catastrophic failure",
+      "native_width_metadata": 1400,
+      "native_height_metadata": 738,
+      "preview_max_width": 960,
+      "preview_height_at_max_width": 506,
+      "sizes_reported": [
+        {
+          "name": "medium",
+          "width": 300,
+          "height": 158,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/IMG_3479.jpeg?fit=300%2C158&ssl=1"
+        },
+        {
+          "name": "large",
+          "width": 1024,
+          "height": 540,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/IMG_3479.jpeg?fit=1024%2C540&ssl=1"
+        },
+        {
+          "name": "thumbnail",
+          "width": 150,
+          "height": 150,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/IMG_3479.jpeg?resize=150%2C150&ssl=1"
+        },
+        {
+          "name": "medium_large",
+          "width": 768,
+          "height": 405,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/IMG_3479.jpeg?fit=768%2C405&ssl=1"
+        },
+        {
+          "name": "full",
+          "width": 1400,
+          "height": 738,
+          "virtual": false,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/IMG_3479.jpeg?fit=1400%2C738&ssl=1"
+        }
+      ],
+      "rights_clearance": "HOLD_ITEM_LEVEL",
+      "guest_http_status": null,
+      "guest_browser_image_decoded": null,
+      "cold_transfer_bytes": null,
+      "production_upload_allowed": false,
+      "visual_approval": false,
+      "post_id": 166,
+      "post_type": "post",
+      "post_title": "They Checked the Dam That Morning",
+      "post_url": "https://finalvestige.com/2026/08/18/they-checked-the-dam-that-morning/",
+      "post_modified": "2026-11-02T21:39:29",
+      "featured_metadata_only": true
+    },
+    {
+      "media_id": 1240,
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/fv-camp-century-pm2a-featured-1200x630-1.webp",
+      "original_filename": "2026/08/fv-camp-century-pm2a-featured-1200x630-1.webp",
+      "original_storage_bytes": 37182,
+      "mime_type": "image/webp",
+      "attached_post_id": 290,
+      "alt_text": "U.S. Army cutaway drawing of the PM-2A nuclear power plant installed at Camp Century beneath the Greenland ice sheet, circa 1960–1961.",
+      "native_width_metadata": 1200,
+      "native_height_metadata": 630,
+      "preview_max_width": 960,
+      "preview_height_at_max_width": 504,
+      "sizes_reported": [
+        {
+          "name": "medium",
+          "width": 300,
+          "height": 158,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/fv-camp-century-pm2a-featured-1200x630-1.webp?fit=300%2C158&ssl=1"
+        },
+        {
+          "name": "large",
+          "width": 1024,
+          "height": 538,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/fv-camp-century-pm2a-featured-1200x630-1.webp?fit=1024%2C538&ssl=1"
+        },
+        {
+          "name": "thumbnail",
+          "width": 150,
+          "height": 150,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/fv-camp-century-pm2a-featured-1200x630-1.webp?resize=150%2C150&ssl=1"
+        },
+        {
+          "name": "medium_large",
+          "width": 768,
+          "height": 403,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/fv-camp-century-pm2a-featured-1200x630-1.webp?fit=768%2C403&ssl=1"
+        },
+        {
+          "name": "full",
+          "width": 1200,
+          "height": 630,
+          "virtual": false,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/fv-camp-century-pm2a-featured-1200x630-1.webp?fit=1200%2C630&ssl=1"
+        }
+      ],
+      "rights_clearance": "HOLD_ITEM_LEVEL",
+      "guest_http_status": null,
+      "guest_browser_image_decoded": null,
+      "cold_transfer_bytes": null,
+      "production_upload_allowed": false,
+      "visual_approval": false,
+      "post_id": 290,
+      "post_type": "post",
+      "post_title": "The City Kept Moving",
+      "post_url": "https://finalvestige.com/2026/08/19/the-city-kept-moving-camp-century/",
+      "post_modified": "2026-11-02T21:40:03",
+      "featured_metadata_only": true
+    },
+    {
+      "media_id": 389,
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/vasa-01-2020.jpg",
+      "original_filename": "2026/08/vasa-01-2020.jpg",
+      "original_storage_bytes": 2822969,
+      "mime_type": "image/jpeg",
+      "attached_post_id": 299,
+      "alt_text": "The preserved 1628 warship Vasa inside the Vasa Museum in Stockholm, showing the tall upperworks above the hull.",
+      "native_width_metadata": 2147,
+      "native_height_metadata": 1417,
+      "preview_max_width": 960,
+      "preview_height_at_max_width": 634,
+      "sizes_reported": [
+        {
+          "name": "medium",
+          "width": 300,
+          "height": 198,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/vasa-01-2020.jpg?fit=300%2C198&ssl=1"
+        },
+        {
+          "name": "large",
+          "width": 1024,
+          "height": 676,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/vasa-01-2020.jpg?fit=1024%2C676&ssl=1"
+        },
+        {
+          "name": "thumbnail",
+          "width": 150,
+          "height": 150,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/vasa-01-2020.jpg?resize=150%2C150&ssl=1"
+        },
+        {
+          "name": "medium_large",
+          "width": 768,
+          "height": 507,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/vasa-01-2020.jpg?fit=768%2C507&ssl=1"
+        },
+        {
+          "name": "1536x1536",
+          "width": 1536,
+          "height": 1014,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/vasa-01-2020.jpg?fit=1536%2C1014&ssl=1"
+        },
+        {
+          "name": "2048x2048",
+          "width": 2048,
+          "height": 1352,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/vasa-01-2020.jpg?fit=2048%2C1352&ssl=1"
+        },
+        {
+          "name": "full",
+          "width": 2147,
+          "height": 1417,
+          "virtual": false,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/vasa-01-2020.jpg?fit=2147%2C1417&ssl=1"
+        }
+      ],
+      "rights_clearance": "HOLD_ITEM_LEVEL",
+      "guest_http_status": null,
+      "guest_browser_image_decoded": null,
+      "cold_transfer_bytes": null,
+      "production_upload_allowed": false,
+      "visual_approval": false,
+      "post_id": 299,
+      "post_type": "post",
+      "post_title": "Thirty Men Were Enough",
+      "post_url": "https://finalvestige.com/2026/08/19/thirty-men-were-enough-vasa/",
+      "post_modified": "2026-11-02T21:40:05",
+      "featured_metadata_only": true
+    },
+    {
+      "media_id": 381,
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/s960_4.jpg",
+      "original_filename": "2026/08/s960_4.jpg",
+      "original_storage_bytes": 136362,
+      "mime_type": "image/jpeg",
+      "attached_post_id": 330,
+      "alt_text": "Windscale Pile 1 and Pile 2 in 1951 with their distinctive filter galleries mounted at the tops of the ventilation chimneys.",
+      "native_width_metadata": 960,
+      "native_height_metadata": 640,
+      "preview_max_width": 960,
+      "preview_height_at_max_width": 640,
+      "sizes_reported": [
+        {
+          "name": "medium",
+          "width": 300,
+          "height": 200,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/s960_4.jpg?fit=300%2C200&ssl=1"
+        },
+        {
+          "name": "thumbnail",
+          "width": 150,
+          "height": 150,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/s960_4.jpg?resize=150%2C150&ssl=1"
+        },
+        {
+          "name": "medium_large",
+          "width": 768,
+          "height": 512,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/s960_4.jpg?fit=768%2C512&ssl=1"
+        },
+        {
+          "name": "full",
+          "width": 960,
+          "height": 640,
+          "virtual": false,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/s960_4.jpg?fit=960%2C640&ssl=1"
+        }
+      ],
+      "rights_clearance": "HOLD_ITEM_LEVEL",
+      "guest_http_status": null,
+      "guest_browser_image_decoded": null,
+      "cold_transfer_bytes": null,
+      "production_upload_allowed": false,
+      "visual_approval": false,
+      "post_id": 330,
+      "post_type": "post",
+      "post_title": "The Filter Was at the Top",
+      "post_url": "https://finalvestige.com/2026/08/19/the-filter-was-at-the-top-windscale/",
+      "post_modified": "2026-08-30T01:56:40",
+      "featured_metadata_only": true
+    },
+    {
+      "media_id": 481,
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/Palomares_H-Bomb_Incident.jpg",
+      "original_filename": "2026/08/Palomares_H-Bomb_Incident.jpg",
+      "original_storage_bytes": 29633,
+      "mime_type": "image/jpeg",
+      "attached_post_id": 367,
+      "alt_text": "The recovered Palomares nuclear weapon aboard USS Petrel after its recovery from the Mediterranean in April 1966.",
+      "native_width_metadata": 425,
+      "native_height_metadata": 329,
+      "preview_max_width": 425,
+      "preview_height_at_max_width": 329,
+      "sizes_reported": [
+        {
+          "name": "medium",
+          "width": 300,
+          "height": 232,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/Palomares_H-Bomb_Incident.jpg?fit=300%2C232&ssl=1"
+        },
+        {
+          "name": "thumbnail",
+          "width": 150,
+          "height": 150,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/Palomares_H-Bomb_Incident.jpg?resize=150%2C150&ssl=1"
+        },
+        {
+          "name": "full",
+          "width": 425,
+          "height": 329,
+          "virtual": false,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/Palomares_H-Bomb_Incident.jpg?fit=425%2C329&ssl=1"
+        }
+      ],
+      "rights_clearance": "HOLD_ITEM_LEVEL",
+      "guest_http_status": null,
+      "guest_browser_image_decoded": null,
+      "cold_transfer_bytes": null,
+      "production_upload_allowed": false,
+      "visual_approval": false,
+      "post_id": 367,
+      "post_type": "post",
+      "post_title": "They Found the Bomb Twice",
+      "post_url": "https://finalvestige.com/2026/08/19/they-found-the-bomb-twice-palomares/",
+      "post_modified": "2026-10-29T17:34:27",
+      "featured_metadata_only": true
+    },
+    {
+      "media_id": 478,
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/GVP-10804.jpg",
+      "original_filename": "2026/08/GVP-10804.jpg",
+      "original_storage_bytes": 431030,
+      "mime_type": "image/jpeg",
+      "attached_post_id": 413,
+      "alt_text": "Stone prison cell in Saint-Pierre associated with survivor Louis-Auguste Cyparis after the 1902 eruption of Mount Pelée.",
+      "native_width_metadata": 1024,
+      "native_height_metadata": 686,
+      "preview_max_width": 960,
+      "preview_height_at_max_width": 643,
+      "sizes_reported": [
+        {
+          "name": "medium",
+          "width": 300,
+          "height": 201,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/GVP-10804.jpg?fit=300%2C201&ssl=1"
+        },
+        {
+          "name": "thumbnail",
+          "width": 150,
+          "height": 150,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/GVP-10804.jpg?resize=150%2C150&ssl=1"
+        },
+        {
+          "name": "medium_large",
+          "width": 768,
+          "height": 515,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/GVP-10804.jpg?fit=768%2C515&ssl=1"
+        },
+        {
+          "name": "full",
+          "width": 1024,
+          "height": 686,
+          "virtual": false,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/GVP-10804.jpg?fit=1024%2C686&ssl=1"
+        }
+      ],
+      "rights_clearance": "HOLD_ITEM_LEVEL",
+      "guest_http_status": null,
+      "guest_browser_image_decoded": null,
+      "cold_transfer_bytes": null,
+      "production_upload_allowed": false,
+      "visual_approval": false,
+      "post_id": 413,
+      "post_type": "post",
+      "post_title": "The Cell Was Built to Hold a Man",
+      "post_url": "https://finalvestige.com/2026/08/20/the-cell-was-built-to-hold-a-man-mount-pelee/",
+      "post_modified": "2026-10-29T15:30:32",
+      "featured_metadata_only": true
+    },
+    {
+      "media_id": 477,
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/Catastrophe_de_Courrieres_-_Les_13_premiers_heros_rescapes_apres_20_jours_dans_la_mine.jpg",
+      "original_filename": "2026/08/Catastrophe_de_Courrieres_-_Les_13_premiers_heros_rescapes_apres_20_jours_dans_la_mine.jpg",
+      "original_storage_bytes": 782586,
+      "mime_type": "image/jpeg",
+      "attached_post_id": 425,
+      "alt_text": "Survivors of the Courrières mine disaster after thirteen men emerged following twenty days underground in 1906.",
+      "native_width_metadata": 1204,
+      "native_height_metadata": 791,
+      "preview_max_width": 960,
+      "preview_height_at_max_width": 631,
+      "sizes_reported": [
+        {
+          "name": "medium",
+          "width": 300,
+          "height": 197,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/Catastrophe_de_Courrieres_-_Les_13_premiers_heros_rescapes_apres_20_jours_dans_la_mine.jpg?fit=300%2C197&ssl=1"
+        },
+        {
+          "name": "large",
+          "width": 1024,
+          "height": 673,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/Catastrophe_de_Courrieres_-_Les_13_premiers_heros_rescapes_apres_20_jours_dans_la_mine.jpg?fit=1024%2C673&ssl=1"
+        },
+        {
+          "name": "thumbnail",
+          "width": 150,
+          "height": 150,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/Catastrophe_de_Courrieres_-_Les_13_premiers_heros_rescapes_apres_20_jours_dans_la_mine.jpg?resize=150%2C150&ssl=1"
+        },
+        {
+          "name": "medium_large",
+          "width": 768,
+          "height": 505,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/Catastrophe_de_Courrieres_-_Les_13_premiers_heros_rescapes_apres_20_jours_dans_la_mine.jpg?fit=768%2C505&ssl=1"
+        },
+        {
+          "name": "full",
+          "width": 1204,
+          "height": 791,
+          "virtual": false,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/Catastrophe_de_Courrieres_-_Les_13_premiers_heros_rescapes_apres_20_jours_dans_la_mine.jpg?fit=1204%2C791&ssl=1"
+        }
+      ],
+      "rights_clearance": "HOLD_ITEM_LEVEL",
+      "guest_http_status": null,
+      "guest_browser_image_decoded": null,
+      "cold_transfer_bytes": null,
+      "production_upload_allowed": false,
+      "visual_approval": false,
+      "post_id": 425,
+      "post_type": "post",
+      "post_title": "The Word Came Out of the Mine",
+      "post_url": "https://finalvestige.com/2026/08/20/the-word-came-out-of-the-mine-courrieres/",
+      "post_modified": "2026-10-30T01:08:21",
+      "featured_metadata_only": true
+    },
+    {
+      "media_id": 476,
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/archivalidaho432_sm.jpg",
+      "original_filename": "2026/08/archivalidaho432_sm.jpg",
+      "original_storage_bytes": 90157,
+      "mime_type": "image/jpeg",
+      "attached_post_id": 428,
+      "alt_text": "Ed Pulaski at the mine tunnel associated with the shelter of his firefighting crew during the Big Burn of 1910.",
+      "native_width_metadata": 623,
+      "native_height_metadata": 900,
+      "preview_max_width": 623,
+      "preview_height_at_max_width": 900,
+      "sizes_reported": [
+        {
+          "name": "medium",
+          "width": 208,
+          "height": 300,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/archivalidaho432_sm.jpg?fit=208%2C300&ssl=1"
+        },
+        {
+          "name": "thumbnail",
+          "width": 150,
+          "height": 150,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/archivalidaho432_sm.jpg?resize=150%2C150&ssl=1"
+        },
+        {
+          "name": "full",
+          "width": 623,
+          "height": 900,
+          "virtual": false,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/archivalidaho432_sm.jpg?fit=623%2C900&ssl=1"
+        }
+      ],
+      "rights_clearance": "HOLD_ITEM_LEVEL",
+      "guest_http_status": null,
+      "guest_browser_image_decoded": null,
+      "cold_transfer_bytes": null,
+      "production_upload_allowed": false,
+      "visual_approval": false,
+      "post_id": 428,
+      "post_type": "post",
+      "post_title": "The Way Out Was Underground",
+      "post_url": "https://finalvestige.com/2026/08/20/the-way-out-was-underground-ed-pulaski-1910/",
+      "post_modified": "2026-10-29T18:28:59",
+      "featured_metadata_only": true
+    },
+    {
+      "media_id": 475,
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/News03a.jpg",
+      "original_filename": "2026/08/News03a.jpg",
+      "original_storage_bytes": 86402,
+      "mime_type": "image/jpeg",
+      "attached_post_id": 431,
+      "alt_text": "Frank, Alberta, after the 1903 Frank Slide, with limestone debris from Turtle Mountain covering part of the settlement.",
+      "native_width_metadata": 824,
+      "native_height_metadata": 508,
+      "preview_max_width": 824,
+      "preview_height_at_max_width": 508,
+      "sizes_reported": [
+        {
+          "name": "medium",
+          "width": 300,
+          "height": 185,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/News03a.jpg?fit=300%2C185&ssl=1"
+        },
+        {
+          "name": "thumbnail",
+          "width": 150,
+          "height": 150,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/News03a.jpg?resize=150%2C150&ssl=1"
+        },
+        {
+          "name": "medium_large",
+          "width": 768,
+          "height": 473,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/News03a.jpg?fit=768%2C473&ssl=1"
+        },
+        {
+          "name": "full",
+          "width": 824,
+          "height": 508,
+          "virtual": false,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/News03a.jpg?fit=824%2C508&ssl=1"
+        }
+      ],
+      "rights_clearance": "HOLD_ITEM_LEVEL",
+      "guest_http_status": null,
+      "guest_browser_image_decoded": null,
+      "cold_transfer_bytes": null,
+      "production_upload_allowed": false,
+      "visual_approval": false,
+      "post_id": 431,
+      "post_type": "post",
+      "post_title": "The Mountain Buried the Door",
+      "post_url": "https://finalvestige.com/2026/08/20/the-mountain-buried-the-door-frank-slide/",
+      "post_modified": "2026-10-29T18:42:26",
+      "featured_metadata_only": true
+    },
+    {
+      "media_id": 474,
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/Franklinexpeditionnote.jpg",
+      "original_filename": "2026/08/Franklinexpeditionnote.jpg",
+      "original_storage_bytes": 466043,
+      "mime_type": "image/jpeg",
+      "attached_post_id": 433,
+      "alt_text": "The Victory Point note from the Franklin expedition, with the original 1847 message in the center and the 1848 update written around its margins.",
+      "native_width_metadata": 960,
+      "native_height_metadata": 1526,
+      "preview_max_width": 960,
+      "preview_height_at_max_width": 1526,
+      "sizes_reported": [
+        {
+          "name": "medium",
+          "width": 189,
+          "height": 300,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/Franklinexpeditionnote.jpg?fit=189%2C300&ssl=1"
+        },
+        {
+          "name": "large",
+          "width": 644,
+          "height": 1024,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/Franklinexpeditionnote.jpg?fit=644%2C1024&ssl=1"
+        },
+        {
+          "name": "thumbnail",
+          "width": 150,
+          "height": 150,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/Franklinexpeditionnote.jpg?resize=150%2C150&ssl=1"
+        },
+        {
+          "name": "medium_large",
+          "width": 768,
+          "height": 1221,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/Franklinexpeditionnote.jpg?fit=768%2C1221&ssl=1"
+        },
+        {
+          "name": "full",
+          "width": 960,
+          "height": 1526,
+          "virtual": false,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/Franklinexpeditionnote.jpg?fit=960%2C1526&ssl=1"
+        }
+      ],
+      "rights_clearance": "HOLD_ITEM_LEVEL",
+      "guest_http_status": null,
+      "guest_browser_image_decoded": null,
+      "cold_transfer_bytes": null,
+      "production_upload_allowed": false,
+      "visual_approval": false,
+      "post_id": 433,
+      "post_type": "post",
+      "post_title": "All Well Was Written First",
+      "post_url": "https://finalvestige.com/2026/08/20/all-well-was-written-first-franklin-expedition/",
+      "post_modified": "2026-11-02T21:37:26",
+      "featured_metadata_only": true
+    },
+    {
+      "media_id": 473,
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/s67-19766.webp",
+      "original_filename": "2026/08/s67-19766.webp",
+      "original_storage_bytes": 78346,
+      "mime_type": "image/webp",
+      "attached_post_id": 434,
+      "alt_text": "Apollo 1 astronauts Gus Grissom, Ed White and Roger Chaffee near Launch Complex 34 during training in January 1967.",
+      "native_width_metadata": 1041,
+      "native_height_metadata": 810,
+      "preview_max_width": 960,
+      "preview_height_at_max_width": 747,
+      "sizes_reported": [
+        {
+          "name": "medium",
+          "width": 300,
+          "height": 233,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/s67-19766.webp?fit=300%2C233&ssl=1"
+        },
+        {
+          "name": "large",
+          "width": 1024,
+          "height": 797,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/s67-19766.webp?fit=1024%2C797&ssl=1"
+        },
+        {
+          "name": "thumbnail",
+          "width": 150,
+          "height": 150,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/s67-19766.webp?resize=150%2C150&ssl=1"
+        },
+        {
+          "name": "medium_large",
+          "width": 768,
+          "height": 598,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/s67-19766.webp?fit=768%2C598&ssl=1"
+        },
+        {
+          "name": "full",
+          "width": 1041,
+          "height": 810,
+          "virtual": false,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/s67-19766.webp?fit=1041%2C810&ssl=1"
+        }
+      ],
+      "rights_clearance": "HOLD_ITEM_LEVEL",
+      "guest_http_status": null,
+      "guest_browser_image_decoded": null,
+      "cold_transfer_bytes": null,
+      "production_upload_allowed": false,
+      "visual_approval": false,
+      "post_id": 434,
+      "post_type": "post",
+      "post_title": "The Hatch Opened Inward",
+      "post_url": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/",
+      "post_modified": "2026-11-03T22:12:30",
+      "featured_metadata_only": true
+    },
+    {
+      "media_id": 1257,
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/edit-017-v01-malbone-tunnel-generalpunger-original.jpg",
+      "original_filename": "2026/08/edit-017-v01-malbone-tunnel-generalpunger-original.jpg",
+      "original_storage_bytes": 4798395,
+      "mime_type": "image/jpeg",
+      "attached_post_id": null,
+      "alt_text": "View into the Malbone Street Tunnel from the southbound platform at Prospect Park, showing the surviving curved tunnel alignment.",
+      "native_width_metadata": 4000,
+      "native_height_metadata": 3000,
+      "preview_max_width": 960,
+      "preview_height_at_max_width": 720,
+      "sizes_reported": [
+        {
+          "name": "medium",
+          "width": 300,
+          "height": 225,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/edit-017-v01-malbone-tunnel-generalpunger-original.jpg?fit=300%2C225&ssl=1"
+        },
+        {
+          "name": "large",
+          "width": 1024,
+          "height": 768,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/edit-017-v01-malbone-tunnel-generalpunger-original.jpg?fit=1024%2C768&ssl=1"
+        },
+        {
+          "name": "thumbnail",
+          "width": 150,
+          "height": 150,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/edit-017-v01-malbone-tunnel-generalpunger-original.jpg?resize=150%2C150&ssl=1"
+        },
+        {
+          "name": "medium_large",
+          "width": 768,
+          "height": 576,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/edit-017-v01-malbone-tunnel-generalpunger-original.jpg?fit=768%2C576&ssl=1"
+        },
+        {
+          "name": "1536x1536",
+          "width": 1536,
+          "height": 1152,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/edit-017-v01-malbone-tunnel-generalpunger-original.jpg?fit=1536%2C1152&ssl=1"
+        },
+        {
+          "name": "2048x2048",
+          "width": 2048,
+          "height": 1536,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/edit-017-v01-malbone-tunnel-generalpunger-original.jpg?fit=2048%2C1536&ssl=1"
+        },
+        {
+          "name": "full",
+          "width": 4000,
+          "height": 3000,
+          "virtual": false,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/edit-017-v01-malbone-tunnel-generalpunger-original.jpg?fit=4000%2C3000&ssl=1"
+        }
+      ],
+      "rights_clearance": "HOLD_ITEM_LEVEL",
+      "guest_http_status": null,
+      "guest_browser_image_decoded": null,
+      "cold_transfer_bytes": null,
+      "production_upload_allowed": false,
+      "visual_approval": false,
+      "post_id": 621,
+      "post_type": "post",
+      "post_title": "Six Miles an Hour",
+      "post_url": "https://finalvestige.com/2026/08/23/six-miles-an-hour-malbone-street-wreck/",
+      "post_modified": "2026-09-09T12:03:35",
+      "featured_metadata_only": true
+    }
+  ],
+  "oversize": [
+    {
+      "media_id": 388,
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/vasa-modell-2020.jpg",
+      "original_filename": "2026/08/vasa-modell-2020.jpg",
+      "original_storage_bytes": 8176362,
+      "mime_type": "image/jpeg",
+      "attached_post_id": 299,
+      "alt_text": "Painted one-tenth-scale reconstruction of Vasa showing how the heavily armed warship likely appeared in 1628.",
+      "native_width_metadata": 4256,
+      "native_height_metadata": 2832,
+      "preview_max_width": 960,
+      "preview_height_at_max_width": 639,
+      "sizes_reported": [
+        {
+          "name": "medium",
+          "width": 300,
+          "height": 200,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/vasa-modell-2020.jpg?fit=300%2C200&ssl=1"
+        },
+        {
+          "name": "large",
+          "width": 1024,
+          "height": 681,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/vasa-modell-2020.jpg?fit=1024%2C681&ssl=1"
+        },
+        {
+          "name": "thumbnail",
+          "width": 150,
+          "height": 150,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/vasa-modell-2020.jpg?resize=150%2C150&ssl=1"
+        },
+        {
+          "name": "medium_large",
+          "width": 768,
+          "height": 511,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/vasa-modell-2020.jpg?fit=768%2C511&ssl=1"
+        },
+        {
+          "name": "1536x1536",
+          "width": 1536,
+          "height": 1022,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/vasa-modell-2020.jpg?fit=1536%2C1022&ssl=1"
+        },
+        {
+          "name": "2048x2048",
+          "width": 2048,
+          "height": 1363,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/vasa-modell-2020.jpg?fit=2048%2C1363&ssl=1"
+        },
+        {
+          "name": "full",
+          "width": 4256,
+          "height": 2832,
+          "virtual": false,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/vasa-modell-2020.jpg?fit=4256%2C2832&ssl=1"
+        }
+      ],
+      "rights_clearance": "HOLD_ITEM_LEVEL",
+      "guest_http_status": null,
+      "guest_browser_image_decoded": null,
+      "cold_transfer_bytes": null,
+      "production_upload_allowed": false,
+      "visual_approval": false,
+      "featured_on": []
+    },
+    {
+      "media_id": 1258,
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/edit-017-v02-nypl-5003296-original.jpg",
+      "original_filename": "2026/08/edit-017-v02-nypl-5003296-original.jpg",
+      "original_storage_bytes": 5553669,
+      "mime_type": "image/jpeg",
+      "attached_post_id": null,
+      "alt_text": "1903 map of the Brooklyn Rapid Transit street railway and rapid-transit network.",
+      "native_width_metadata": 5667,
+      "native_height_metadata": 3831,
+      "preview_max_width": 960,
+      "preview_height_at_max_width": 649,
+      "sizes_reported": [
+        {
+          "name": "medium",
+          "width": 300,
+          "height": 203,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/edit-017-v02-nypl-5003296-original.jpg?fit=300%2C203&ssl=1"
+        },
+        {
+          "name": "large",
+          "width": 1024,
+          "height": 692,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/edit-017-v02-nypl-5003296-original.jpg?fit=1024%2C692&ssl=1"
+        },
+        {
+          "name": "thumbnail",
+          "width": 150,
+          "height": 150,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/edit-017-v02-nypl-5003296-original.jpg?resize=150%2C150&ssl=1"
+        },
+        {
+          "name": "medium_large",
+          "width": 768,
+          "height": 519,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/edit-017-v02-nypl-5003296-original.jpg?fit=768%2C519&ssl=1"
+        },
+        {
+          "name": "1536x1536",
+          "width": 1536,
+          "height": 1038,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/edit-017-v02-nypl-5003296-original.jpg?fit=1536%2C1038&ssl=1"
+        },
+        {
+          "name": "2048x2048",
+          "width": 2048,
+          "height": 1384,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/edit-017-v02-nypl-5003296-original.jpg?fit=2048%2C1384&ssl=1"
+        },
+        {
+          "name": "full",
+          "width": 5667,
+          "height": 3831,
+          "virtual": false,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/edit-017-v02-nypl-5003296-original.jpg?fit=5667%2C3831&ssl=1"
+        }
+      ],
+      "rights_clearance": "HOLD_ITEM_LEVEL",
+      "guest_http_status": null,
+      "guest_browser_image_decoded": null,
+      "cold_transfer_bytes": null,
+      "production_upload_allowed": false,
+      "visual_approval": false,
+      "featured_on": []
+    },
+    {
+      "media_id": 1257,
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/edit-017-v01-malbone-tunnel-generalpunger-original.jpg",
+      "original_filename": "2026/08/edit-017-v01-malbone-tunnel-generalpunger-original.jpg",
+      "original_storage_bytes": 4798395,
+      "mime_type": "image/jpeg",
+      "attached_post_id": null,
+      "alt_text": "View into the Malbone Street Tunnel from the southbound platform at Prospect Park, showing the surviving curved tunnel alignment.",
+      "native_width_metadata": 4000,
+      "native_height_metadata": 3000,
+      "preview_max_width": 960,
+      "preview_height_at_max_width": 720,
+      "sizes_reported": [
+        {
+          "name": "medium",
+          "width": 300,
+          "height": 225,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/edit-017-v01-malbone-tunnel-generalpunger-original.jpg?fit=300%2C225&ssl=1"
+        },
+        {
+          "name": "large",
+          "width": 1024,
+          "height": 768,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/edit-017-v01-malbone-tunnel-generalpunger-original.jpg?fit=1024%2C768&ssl=1"
+        },
+        {
+          "name": "thumbnail",
+          "width": 150,
+          "height": 150,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/edit-017-v01-malbone-tunnel-generalpunger-original.jpg?resize=150%2C150&ssl=1"
+        },
+        {
+          "name": "medium_large",
+          "width": 768,
+          "height": 576,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/edit-017-v01-malbone-tunnel-generalpunger-original.jpg?fit=768%2C576&ssl=1"
+        },
+        {
+          "name": "1536x1536",
+          "width": 1536,
+          "height": 1152,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/edit-017-v01-malbone-tunnel-generalpunger-original.jpg?fit=1536%2C1152&ssl=1"
+        },
+        {
+          "name": "2048x2048",
+          "width": 2048,
+          "height": 1536,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/edit-017-v01-malbone-tunnel-generalpunger-original.jpg?fit=2048%2C1536&ssl=1"
+        },
+        {
+          "name": "full",
+          "width": 4000,
+          "height": 3000,
+          "virtual": false,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/edit-017-v01-malbone-tunnel-generalpunger-original.jpg?fit=4000%2C3000&ssl=1"
+        }
+      ],
+      "rights_clearance": "HOLD_ITEM_LEVEL",
+      "guest_http_status": null,
+      "guest_browser_image_decoded": null,
+      "cold_transfer_bytes": null,
+      "production_upload_allowed": false,
+      "visual_approval": false,
+      "featured_on": [
+        {
+          "id": 621,
+          "url": "https://finalvestige.com/2026/08/23/six-miles-an-hour-malbone-street-wreck/"
+        }
+      ]
+    },
+    {
+      "media_id": 39,
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/bceca0bd-a16f-44f7-be08-16376fbf08ca.png",
+      "original_filename": "2026/08/bceca0bd-a16f-44f7-be08-16376fbf08ca.png",
+      "original_storage_bytes": 2892087,
+      "mime_type": "image/png",
+      "attached_post_id": 34,
+      "alt_text": "AI-assisted historical reconstruction of firefighters and horse-drawn fire engines on a ruined San Francisco street during the April 1906 fires",
+      "native_width_metadata": 1672,
+      "native_height_metadata": 941,
+      "preview_max_width": 960,
+      "preview_height_at_max_width": 540,
+      "sizes_reported": [],
+      "rights_clearance": "HOLD_ITEM_LEVEL",
+      "guest_http_status": null,
+      "guest_browser_image_decoded": null,
+      "cold_transfer_bytes": null,
+      "production_upload_allowed": false,
+      "visual_approval": false,
+      "featured_on": [
+        {
+          "id": 34,
+          "url": "https://finalvestige.com/2026/08/16/the-morning-san-francisco-lost-its-water/"
+        }
+      ]
+    },
+    {
+      "media_id": 43,
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/01340c2e-1165-4ca0-aa96-87398a83d13a.png",
+      "original_filename": "2026/08/01340c2e-1165-4ca0-aa96-87398a83d13a.png",
+      "original_storage_bytes": 2836245,
+      "mime_type": "image/png",
+      "attached_post_id": 38,
+      "alt_text": "AI-assisted historical reconstruction of firefighters drawing emergency water from an underground cistern after the 1906 San Francisco disaster",
+      "native_width_metadata": 1672,
+      "native_height_metadata": 941,
+      "preview_max_width": 960,
+      "preview_height_at_max_width": 540,
+      "sizes_reported": [],
+      "rights_clearance": "HOLD_ITEM_LEVEL",
+      "guest_http_status": null,
+      "guest_browser_image_decoded": null,
+      "cold_transfer_bytes": null,
+      "production_upload_allowed": false,
+      "visual_approval": false,
+      "featured_on": [
+        {
+          "id": 38,
+          "url": "https://finalvestige.com/2026/08/16/the-cisterns-beneath-san-francisco/"
+        }
+      ]
+    },
+    {
+      "media_id": 389,
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/vasa-01-2020.jpg",
+      "original_filename": "2026/08/vasa-01-2020.jpg",
+      "original_storage_bytes": 2822969,
+      "mime_type": "image/jpeg",
+      "attached_post_id": 299,
+      "alt_text": "The preserved 1628 warship Vasa inside the Vasa Museum in Stockholm, showing the tall upperworks above the hull.",
+      "native_width_metadata": 2147,
+      "native_height_metadata": 1417,
+      "preview_max_width": 960,
+      "preview_height_at_max_width": 634,
+      "sizes_reported": [
+        {
+          "name": "medium",
+          "width": 300,
+          "height": 198,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/vasa-01-2020.jpg?fit=300%2C198&ssl=1"
+        },
+        {
+          "name": "large",
+          "width": 1024,
+          "height": 676,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/vasa-01-2020.jpg?fit=1024%2C676&ssl=1"
+        },
+        {
+          "name": "thumbnail",
+          "width": 150,
+          "height": 150,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/vasa-01-2020.jpg?resize=150%2C150&ssl=1"
+        },
+        {
+          "name": "medium_large",
+          "width": 768,
+          "height": 507,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/vasa-01-2020.jpg?fit=768%2C507&ssl=1"
+        },
+        {
+          "name": "1536x1536",
+          "width": 1536,
+          "height": 1014,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/vasa-01-2020.jpg?fit=1536%2C1014&ssl=1"
+        },
+        {
+          "name": "2048x2048",
+          "width": 2048,
+          "height": 1352,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/vasa-01-2020.jpg?fit=2048%2C1352&ssl=1"
+        },
+        {
+          "name": "full",
+          "width": 2147,
+          "height": 1417,
+          "virtual": false,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/vasa-01-2020.jpg?fit=2147%2C1417&ssl=1"
+        }
+      ],
+      "rights_clearance": "HOLD_ITEM_LEVEL",
+      "guest_http_status": null,
+      "guest_browser_image_decoded": null,
+      "cold_transfer_bytes": null,
+      "production_upload_allowed": false,
+      "visual_approval": false,
+      "featured_on": [
+        {
+          "id": 299,
+          "url": "https://finalvestige.com/2026/08/19/thirty-men-were-enough-vasa/"
+        }
+      ]
+    },
+    {
+      "media_id": 40,
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/377e08da-e121-4f57-9174-1548343402b3.png",
+      "original_filename": "2026/08/377e08da-e121-4f57-9174-1548343402b3.png",
+      "original_storage_bytes": 2552136,
+      "mime_type": "image/png",
+      "attached_post_id": 35,
+      "alt_text": "AI-assisted historical reconstruction of Shackleton's six-man James Caird voyage across the Southern Ocean in 1916",
+      "native_width_metadata": 1672,
+      "native_height_metadata": 941,
+      "preview_max_width": 960,
+      "preview_height_at_max_width": 540,
+      "sizes_reported": [],
+      "rights_clearance": "HOLD_ITEM_LEVEL",
+      "guest_http_status": null,
+      "guest_browser_image_decoded": null,
+      "cold_transfer_bytes": null,
+      "production_upload_allowed": false,
+      "visual_approval": false,
+      "featured_on": [
+        {
+          "id": 35,
+          "url": "https://finalvestige.com/2026/08/16/the-boat-that-refused-to-die/"
+        }
+      ]
+    },
+    {
+      "media_id": 41,
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/a44f673d-a8a8-4c83-9f29-7e24dd55156b.png",
+      "original_filename": "2026/08/a44f673d-a8a8-4c83-9f29-7e24dd55156b.png",
+      "original_storage_bytes": 2498247,
+      "mime_type": "image/png",
+      "attached_post_id": 36,
+      "alt_text": "AI-assisted historical reconstruction of civilians sheltering in hand-dug caves during the Siege of Vicksburg in 1863",
+      "native_width_metadata": 1672,
+      "native_height_metadata": 941,
+      "preview_max_width": 960,
+      "preview_height_at_max_width": 540,
+      "sizes_reported": [],
+      "rights_clearance": "HOLD_ITEM_LEVEL",
+      "guest_http_status": null,
+      "guest_browser_image_decoded": null,
+      "cold_transfer_bytes": null,
+      "production_upload_allowed": false,
+      "visual_approval": false,
+      "featured_on": [
+        {
+          "id": 36,
+          "url": "https://finalvestige.com/2026/08/16/the-city-that-went-underground/"
+        }
+      ]
+    },
+    {
+      "media_id": 42,
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/c1237ffd-4a47-4988-8254-e3b021069e72.png",
+      "original_filename": "2026/08/c1237ffd-4a47-4988-8254-e3b021069e72.png",
+      "original_storage_bytes": 2488823,
+      "mime_type": "image/png",
+      "attached_post_id": 37,
+      "alt_text": "AI-assisted historical reconstruction of Nabataean water channels, reservoirs and gravity-fed water infrastructure at Petra",
+      "native_width_metadata": 1672,
+      "native_height_metadata": 941,
+      "preview_max_width": 960,
+      "preview_height_at_max_width": 540,
+      "sizes_reported": [],
+      "rights_clearance": "HOLD_ITEM_LEVEL",
+      "guest_http_status": null,
+      "guest_browser_image_decoded": null,
+      "cold_transfer_bytes": null,
+      "production_upload_allowed": false,
+      "visual_approval": false,
+      "featured_on": [
+        {
+          "id": 37,
+          "url": "https://finalvestige.com/2026/08/16/how-petra-made-water-flow-through-stone/"
+        }
+      ]
+    },
+    {
+      "media_id": 382,
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/vasa-med-gamla-och-nya-stottor_vasa-with-old-and-new-supports.jpg",
+      "original_filename": "2026/08/vasa-med-gamla-och-nya-stottor_vasa-with-old-and-new-supports.jpg",
+      "original_storage_bytes": 2318980,
+      "mime_type": "image/jpeg",
+      "attached_post_id": 299,
+      "alt_text": "Vasa inside the museum with old and new support structures used to reduce continuing deformation of the historic hull.",
+      "native_width_metadata": 1800,
+      "native_height_metadata": 1200,
+      "preview_max_width": 960,
+      "preview_height_at_max_width": 640,
+      "sizes_reported": [
+        {
+          "name": "medium",
+          "width": 300,
+          "height": 200,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/vasa-med-gamla-och-nya-stottor_vasa-with-old-and-new-supports.jpg?fit=300%2C200&ssl=1"
+        },
+        {
+          "name": "large",
+          "width": 1024,
+          "height": 683,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/vasa-med-gamla-och-nya-stottor_vasa-with-old-and-new-supports.jpg?fit=1024%2C683&ssl=1"
+        },
+        {
+          "name": "thumbnail",
+          "width": 150,
+          "height": 150,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/vasa-med-gamla-och-nya-stottor_vasa-with-old-and-new-supports.jpg?resize=150%2C150&ssl=1"
+        },
+        {
+          "name": "medium_large",
+          "width": 768,
+          "height": 512,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/vasa-med-gamla-och-nya-stottor_vasa-with-old-and-new-supports.jpg?fit=768%2C512&ssl=1"
+        },
+        {
+          "name": "1536x1536",
+          "width": 1536,
+          "height": 1024,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/vasa-med-gamla-och-nya-stottor_vasa-with-old-and-new-supports.jpg?fit=1536%2C1024&ssl=1"
+        },
+        {
+          "name": "full",
+          "width": 1800,
+          "height": 1200,
+          "virtual": false,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/vasa-med-gamla-och-nya-stottor_vasa-with-old-and-new-supports.jpg?fit=1800%2C1200&ssl=1"
+        }
+      ],
+      "rights_clearance": "HOLD_ITEM_LEVEL",
+      "guest_http_status": null,
+      "guest_browser_image_decoded": null,
+      "cold_transfer_bytes": null,
+      "production_upload_allowed": false,
+      "visual_approval": false,
+      "featured_on": []
+    },
+    {
+      "media_id": 482,
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/050e21e0-7b54-4f9a-ba0b-7f594657af05.png",
+      "original_filename": "2026/08/050e21e0-7b54-4f9a-ba0b-7f594657af05.png",
+      "original_storage_bytes": 2293016,
+      "mime_type": "image/png",
+      "attached_post_id": null,
+      "alt_text": "",
+      "native_width_metadata": 1672,
+      "native_height_metadata": 941,
+      "preview_max_width": 960,
+      "preview_height_at_max_width": 540,
+      "sizes_reported": [
+        {
+          "name": "medium",
+          "width": 300,
+          "height": 169,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/050e21e0-7b54-4f9a-ba0b-7f594657af05.png?fit=300%2C169&ssl=1"
+        },
+        {
+          "name": "large",
+          "width": 1024,
+          "height": 576,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/050e21e0-7b54-4f9a-ba0b-7f594657af05.png?fit=1024%2C576&ssl=1"
+        },
+        {
+          "name": "thumbnail",
+          "width": 150,
+          "height": 150,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/050e21e0-7b54-4f9a-ba0b-7f594657af05.png?resize=150%2C150&ssl=1"
+        },
+        {
+          "name": "medium_large",
+          "width": 768,
+          "height": 432,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/050e21e0-7b54-4f9a-ba0b-7f594657af05.png?fit=768%2C432&ssl=1"
+        },
+        {
+          "name": "1536x1536",
+          "width": 1536,
+          "height": 864,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/050e21e0-7b54-4f9a-ba0b-7f594657af05.png?fit=1536%2C864&ssl=1"
+        },
+        {
+          "name": "full",
+          "width": 1672,
+          "height": 941,
+          "virtual": false,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/050e21e0-7b54-4f9a-ba0b-7f594657af05.png?fit=1672%2C941&ssl=1"
+        }
+      ],
+      "rights_clearance": "HOLD_ITEM_LEVEL",
+      "guest_http_status": null,
+      "guest_browser_image_decoded": null,
+      "cold_transfer_bytes": null,
+      "production_upload_allowed": false,
+      "visual_approval": false,
+      "featured_on": []
+    },
+    {
+      "media_id": 405,
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/The20Water20Resilience20Field20Manual.png",
+      "original_filename": "2026/08/The20Water20Resilience20Field20Manual.png",
+      "original_storage_bytes": 2201573,
+      "mime_type": "image/png",
+      "attached_post_id": 85,
+      "alt_text": "Cover of The Water Resilience Field Manual, Expanded First Edition 2026.",
+      "native_width_metadata": 1122,
+      "native_height_metadata": 1402,
+      "preview_max_width": 960,
+      "preview_height_at_max_width": 1200,
+      "sizes_reported": [
+        {
+          "name": "medium",
+          "width": 240,
+          "height": 300,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/The20Water20Resilience20Field20Manual.png?fit=240%2C300&ssl=1"
+        },
+        {
+          "name": "large",
+          "width": 819,
+          "height": 1024,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/The20Water20Resilience20Field20Manual.png?fit=819%2C1024&ssl=1"
+        },
+        {
+          "name": "thumbnail",
+          "width": 150,
+          "height": 150,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/The20Water20Resilience20Field20Manual.png?resize=150%2C150&ssl=1"
+        },
+        {
+          "name": "medium_large",
+          "width": 768,
+          "height": 960,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/The20Water20Resilience20Field20Manual.png?fit=768%2C960&ssl=1"
+        },
+        {
+          "name": "full",
+          "width": 1122,
+          "height": 1402,
+          "virtual": false,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/The20Water20Resilience20Field20Manual.png?fit=1122%2C1402&ssl=1"
+        }
+      ],
+      "rights_clearance": "HOLD_ITEM_LEVEL",
+      "guest_http_status": null,
+      "guest_browser_image_decoded": null,
+      "cold_transfer_bytes": null,
+      "production_upload_allowed": false,
+      "visual_approval": false,
+      "featured_on": []
+    },
+    {
+      "media_id": 293,
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/ne.png",
+      "original_filename": "2026/08/ne.png",
+      "original_storage_bytes": 2090327,
+      "mime_type": "image/png",
+      "attached_post_id": null,
+      "alt_text": "Bryan Rhodes, founder and editor of Final Vestige",
+      "native_width_metadata": 1122,
+      "native_height_metadata": 1402,
+      "preview_max_width": 960,
+      "preview_height_at_max_width": 1200,
+      "sizes_reported": [
+        {
+          "name": "medium",
+          "width": 240,
+          "height": 300,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/ne.png?fit=240%2C300&ssl=1"
+        },
+        {
+          "name": "large",
+          "width": 819,
+          "height": 1024,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/ne.png?fit=819%2C1024&ssl=1"
+        },
+        {
+          "name": "thumbnail",
+          "width": 150,
+          "height": 150,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/ne.png?resize=150%2C150&ssl=1"
+        },
+        {
+          "name": "medium_large",
+          "width": 768,
+          "height": 960,
+          "virtual": true,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/ne.png?fit=768%2C960&ssl=1"
+        },
+        {
+          "name": "full",
+          "width": 1122,
+          "height": 1402,
+          "virtual": false,
+          "source_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/ne.png?fit=1122%2C1402&ssl=1"
+        }
+      ],
+      "rights_clearance": "HOLD_ITEM_LEVEL",
+      "guest_http_status": null,
+      "guest_browser_image_decoded": null,
+      "cold_transfer_bytes": null,
+      "production_upload_allowed": false,
+      "visual_approval": false,
+      "featured_on": []
+    }
+  ],
+  "guest_browser_verified": false,
+  "reported_42_broken_verified": false,
+  "reported_76pct_wire_saving_measured": false,
+  "wordpress_writes": 0,
+  "homepage_design_writes": 0,
+  "additional_spend_usd": 0,
+  "limitations": [
+    "Featured media metadata is NOT evidence that a visitor actually loaded an image.",
+    "Original WordPress storage bytes are NOT actual delivered bytes.",
+    "Virtual WordPress thumbnail variants not independently fetched/decoded.",
+    "The 13 oversized non-featured files are NOT automatically unused.",
+    "Rights/attribution and staged visual parity must precede any source substitution."
+  ]
+}
