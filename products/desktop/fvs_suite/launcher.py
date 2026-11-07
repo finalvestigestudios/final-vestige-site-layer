@@ -48,5 +48,19 @@ def launch(app_id: str) -> None:
     if args:
         raise SystemExit("Unsupported arguments. Use --version or --smoke-test.")
 
-    from .app import run
-    run(app_id)
+    # Synchronous GUI imports and entrypoint failures can expose customer
+    # paths, ledger IDs or financial rows in interpreter tracebacks.
+    # Keep only a fixed failure diagnostic at the executable entry boundary.
+    # Raising OUTSIDE the except also prevents private exception retention in
+    # SystemExit.__context__. Preserve KeyboardInterrupt and SystemExit.
+    gui_finished = False
+    try:
+        from .app import run
+        run(app_id)
+        gui_finished = True
+    except Exception:
+        pass
+    if not gui_finished:
+        raise SystemExit(
+            "Final Vestige Labs application failed; no private diagnostics printed"
+        )
