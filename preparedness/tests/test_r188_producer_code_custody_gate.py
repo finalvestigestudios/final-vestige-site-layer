@@ -63,6 +63,14 @@ class ProducerAdmission(unittest.TestCase):
             with self.assertRaisesRegex(ValueError,'missing or symlinked'):
                 r188.verify(Path(d)/'no-such-root',{'tools/a.py':'0'*40})
 
+    def test_symlink_tools_directory(self):
+        with tempfile.TemporaryDirectory() as d:
+            root,pins=mock_tree(Path(d))
+            target=root/'tools'; other=root/'outside'
+            target.rename(other); target.symlink_to(other, target_is_directory=True)
+            with self.assertRaisesRegex(ValueError,'tools directory'):
+                r188.verify(root,pins)
+
     def test_invalid_roster(self):
         with tempfile.TemporaryDirectory() as d:
             root,_ = mock_tree(Path(d))
