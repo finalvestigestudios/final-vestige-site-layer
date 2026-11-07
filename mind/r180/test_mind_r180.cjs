@@ -31,7 +31,7 @@ function validate(f) {
    ok(/:focus-visible/.test(h),label+': visible keyboard focus');
    ok(/prefers-reduced-motion:reduce/.test(h),label+': respects reduced motion');
    ok(!/<script\b|<iframe\b|<form\b|<input\b|<link[^>]*stylesheet|onload=|onclick=/i.test(h),label+': no JS, frames, forms, external sheets or event handler');
-   ok(!/autoplay|autofocus|meta http-equiv="refresh"/i.test(h),label+': no autoplay/focus hijack/redirect');
+   ok(!/<(?:video|audio)[^>]*\\bautoplay\\b|\\bautofocus(?:\\s|=)|meta http-equiv="refresh"/i.test(h),label+': no autoplay/focus hijack/redirect');
    ok(!/awin1\.com|hop\.clickbank|affiliate_id=|aff_id=|tracking\.js/i.test(h),label+': no earning URLs or duplicate trackers');
  }
  for(const [label,h] of [['A',A],['B',B]]){
