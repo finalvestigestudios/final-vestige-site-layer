@@ -1,0 +1,142 @@
+{
+  "schema": "fv-preparedness-r194-seven-delta-citation-custody-v1",
+  "issue": 136,
+  "coordination_issue": 820,
+  "business_charter": 818,
+  "created_on": "2026-11-07",
+  "state": "DRAFT_HARD_HOLD",
+  "publication_authorized": false,
+  "independent_qd_pass": false,
+  "medical_safety_verified": false,
+  "source_claims_human_approved": false,
+  "merchant_offer_verified": false,
+  "description": "Pinned historical-crosswalk vs current Claude contributor evidence. Complete full-body and metadata Git blobs preserved; all claim/source changes remain human pending. Not a cherry-pick or publication certificate.",
+  "articles": [
+    {
+      "cluster": "hist-field",
+      "slug": "navigation-before-gps",
+      "human_source_review": "PENDING",
+      "qualified_safety_review": "PENDING",
+      "frozen": {
+        "body_blob": "64c6b2c7004bc5549eea5a47d9095183e7436750",
+        "meta_blob": "40c83419760bc7bd0c4c574304e65b773b4a8423",
+        "citations": 47
+      },
+      "observed": {
+        "body_blob": "49beb68339a6b85b07d686c0cfb9fe1d88b8de4f",
+        "meta_blob": "40c83419760bc7bd0c4c574304e65b773b4a8423",
+        "citations": 47
+      }
+    },
+    {
+      "cluster": "hist-field",
+      "slug": "pioneer-supply-chains-failed",
+      "human_source_review": "PENDING",
+      "qualified_safety_review": "PENDING",
+      "frozen": {
+        "body_blob": "1332df3540a903fdecdb3527fb22347d57968fb0",
+        "meta_blob": "fcb42c440e3b7aad5eeecfd4e0c974a5d04a9cec",
+        "citations": 57
+      },
+      "observed": {
+        "body_blob": "3643c50b43ca7ba6c1d9bc439e7c78730503b80f",
+        "meta_blob": "8789c77dcc2be717f09ce0fbd340a04319aaf223",
+        "citations": 63
+      }
+    },
+    {
+      "cluster": "hist-food",
+      "slug": "pemmican-and-dried-meats",
+      "human_source_review": "PENDING",
+      "qualified_safety_review": "PENDING",
+      "frozen": {
+        "body_blob": "0b3319cc85ea2bc6d069b46d13a40e12ddbd5bc5",
+        "meta_blob": "03d3824e07fe51931671d0ddc7aa8c85eda58435",
+        "citations": 46
+      },
+      "observed": {
+        "body_blob": "1febc8929f8b90c81a3fcef1e46a2811778b7e06",
+        "meta_blob": "c19f68f2ac0988a8d0959e2d05b8ace8f9511348",
+        "citations": 46
+      }
+    },
+    {
+      "cluster": "hist-food",
+      "slug": "pioneer-travel-rations",
+      "human_source_review": "PENDING",
+      "qualified_safety_review": "PENDING",
+      "frozen": {
+        "body_blob": "058c90b763d8cd6dec0731a7b0a9cee4dd5a57c7",
+        "meta_blob": "7191acba55d63dc405ad9c2003d66193276da89f",
+        "citations": 39
+      },
+      "observed": {
+        "body_blob": "a658481d828dc4c5ba85f296adbfbee0514f0611",
+        "meta_blob": "521e56a3f18d8b211920529a88a3c3b86eb332d7",
+        "citations": 39
+      }
+    },
+    {
+      "cluster": "hist-home",
+      "slug": "pickling-fermentation-old-recipes",
+      "human_source_review": "PENDING",
+      "qualified_safety_review": "PENDING",
+      "frozen": {
+        "body_blob": "17f5da8a998e6b9b38695a2ef6716c6f336f31c4",
+        "meta_blob": "4b955811459017df83a28704aaf1e69ddb036c29",
+        "citations": 42
+      },
+      "observed": {
+        "body_blob": "1869e37626b7463da45763d60202bd5ac0bd7700",
+        "meta_blob": "da97f42fcabbd05dc513d26c6af289bbeb8816f3",
+        "citations": 49
+      }
+    },
+    {
+      "cluster": "hist-home",
+      "slug": "root-cellars-cool-storage",
+      "human_source_review": "PENDING",
+      "qualified_safety_review": "PENDING",
+      "frozen": {
+        "body_blob": "e28548b4e5014f36ffd12becb9261ae696480efa",
+        "meta_blob": "705e1157f9394b615ecb74ffd25be8500453e18a",
+        "citations": 37
+      },
+      "observed": {
+        "body_blob": "7f375c32d74f2828b4912f5692abc44483e4629a",
+        "meta_blob": "c3b7425711c3953c2d6cac9eb2aabe21a6717285",
+        "citations": 42
+      }
+    },
+    {
+      "cluster": "hist-home",
+      "slug": "sanitation-before-germ-theory",
+      "human_source_review": "PENDING",
+      "qualified_safety_review": "PENDING",
+      "frozen": {
+        "body_blob": "15852c158708270d72d5f9723d90e5cb6083a766",
+        "meta_blob": "0dad1731adc3c88aac65baceaa9aa09112e5eb5b",
+        "citations": 47
+      },
+      "observed": {
+        "body_blob": "02090fc1b773fd79f08a7ba754b6125844c37eab",
+        "meta_blob": "3294cd9fcf59496c9ece9342e67b0d57d2ed5523",
+        "citations": 48
+      }
+    }
+  ],
+  "source_fragments": {
+    "hist-field": {
+      "frozen": "4f369122cc0e230ee39654c215f18ffc79b5cc85",
+      "observed": "6b65e0aaa777b4c5ebc57fbeade0386b4ab6c32f"
+    },
+    "hist-food": {
+      "frozen": "d10628342fea5f177a8d1be00dd906d0c9c7850e",
+      "observed": "c1856c998c6c728f0de72221e5654a238df994a9"
+    },
+    "hist-home": {
+      "frozen": "6460d4b0734991675c889f28be2f73a19e3c42c0",
+      "observed": "8d85fd868508c5caba14a839d119d55f31f14f72"
+    }
+  }
+}
