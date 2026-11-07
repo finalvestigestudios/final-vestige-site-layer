@@ -1,0 +1,391 @@
+{
+  "round": "R185",
+  "date_checked": "2026-11-06",
+  "scope": "Unpublished /mind/ and precise Zen12 Premium offer; no commerce activation",
+  "affiliate_activation": false,
+  "affiliate_url": null,
+  "commission_received": null,
+  "qualified_human_sessions": null,
+  "products": [
+    {
+      "id": "zen12-premium",
+      "role": "conditional pilot",
+      "seller": "Inspire3 / Zen12",
+      "exact_offer_page": "https://zen12.com/hnp",
+      "catalog": "https://inspire3.com/",
+      "audience": "People seeking a structured 12-minute audio routine; not people seeking medical treatment",
+      "seller_features": [
+        "12 progressive levels",
+        "48 MP3 files",
+        "four listening styles are described on page",
+        "quick-start guide and manual",
+        "seller-advertised one-year money-back guarantee"
+      ],
+      "observed_price": "Page snapshots/retrievals displayed $87 and $87.99. Neither is verified final checkout cost.",
+      "merchant_checkout_verified": false,
+      "refund_fulfillment_verified": false,
+      "affiliates": "https://affiliates.inspire3.com/",
+      "publisher_acceptance": "UNVERIFIED",
+      "promotional_channel_rights": "UNVERIFIED",
+      "approved_creatives": "UNVERIFIED",
+      "earning_url": "WITHHELD"
+    },
+    {
+      "id": "hypnosislive-total-focus",
+      "role": "editorial comparison only",
+      "seller": "Inspire3 / Hypnosis Live",
+      "exact_offer_page": "https://hypnosislive.com/mental-skills/total-focus",
+      "seller_features": [
+        "33 minute, 47 MB audio file per seller",
+        "advertised 14-day refund policy"
+      ],
+      "observed_price": "Promotional page showed $2 and strike-through $22.95 in retrieved text; not verified checkout or stable quote.",
+      "affiliates": "https://affiliates.inspire3.com/",
+      "publisher_acceptance": "UNVERIFIED",
+      "earning_url": "WITHHELD"
+    },
+    {
+      "id": "brainwave-shots",
+      "role": "catalog mention only",
+      "seller": "Inspire3",
+      "exact_offer_page": "https://brainwaveshots.com/",
+      "seller_features": [
+        "seller markets short brainwave-audio products"
+      ],
+      "claim_detail_status": "UNVERIFIED exact SKU; do not prepare targeted buyer CTA",
+      "earning_url": "WITHHELD"
+    }
+  ],
+  "sources": [
+    {
+      "id": "S01",
+      "url": "https://inspire3.com/",
+      "type": "seller catalog",
+      "date_accessed": "2026-11-06"
+    },
+    {
+      "id": "S02",
+      "url": "https://zen12.com/hnp",
+      "type": "exact seller offer",
+      "date_accessed": "2026-11-06"
+    },
+    {
+      "id": "S03",
+      "url": "https://affiliates.inspire3.com/",
+      "type": "public partner enrollment page, not account authorization",
+      "date_accessed": "2026-11-06"
+    },
+    {
+      "id": "S04",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "type": "exact seller listing",
+      "date_accessed": "2026-11-06"
+    },
+    {
+      "id": "S05",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "type": "regulator disclosure",
+      "date_accessed": "2026-11-06"
+    },
+    {
+      "id": "S06",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "type": "regulator health/efficacy claims",
+      "date_accessed": "2026-11-06"
+    },
+    {
+      "id": "S07",
+      "url": "https://doi.org/10.1016/S0022-5371(74)80011-3",
+      "type": "primary 1974 memory study"
+    },
+    {
+      "id": "S08",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/621467/",
+      "type": "primary indexed 1978 memory experiments"
+    },
+    {
+      "id": "S09",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/8346328/",
+      "type": "1993 source-monitoring review"
+    },
+    {
+      "id": "S10",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37691811/",
+      "type": "2023 misinformation repetition meta-analyses"
+    },
+    {
+      "id": "S11",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/9415925/",
+      "type": "hypnosis/memory caution"
+    },
+    {
+      "id": "S12",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+      "type": "2023 14-study EEG systematic review"
+    },
+    {
+      "id": "S13",
+      "url": "https://finalvestige.com/focus/",
+      "type": "existing lead funnel, reported in canonical issue #171"
+    },
+    {
+      "id": "S14",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "type": "existing editorial archive, reported in issue #171"
+    },
+    {
+      "id": "S15",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "type": "publisher requirements and release constraints"
+    }
+  ],
+  "claim_decisions": [
+    {
+      "claim": "Zen12 Premium contains 12 levels and 48 downloadable MP3 recordings",
+      "verdict": "SELLER_DESCRIBED_FEATURE_ONLY",
+      "source_ids": [
+        "S02"
+      ],
+      "allowed": "Seller describes Premium as containing 12 levels and 48 MP3 recordings."
+    },
+    {
+      "claim": "Zen12 has four listening styles",
+      "verdict": "SELLER_DESCRIBED_FEATURE_ONLY",
+      "source_ids": [
+        "S02"
+      ],
+      "allowed": "Seller describes four styles per level."
+    },
+    {
+      "claim": "Zen12 returns the full purchase price for any reason within one year",
+      "verdict": "ADVERTISED_POLICY_NOT_TESTED",
+      "source_ids": [
+        "S02"
+      ],
+      "allowed": "Seller advertises a one-year money-back guarantee; fulfillment unverified."
+    },
+    {
+      "claim": "Zen12 Premium costs $87 or $87.99",
+      "verdict": "NOT_APPROVED_FOR_FIXED_PRICE_COPY",
+      "source_ids": [
+        "S02"
+      ],
+      "allowed": "Confirm final price and terms on the merchant checkout, if authorized."
+    },
+    {
+      "claim": "Twelve minutes of Zen12 equals an hour of meditation",
+      "verdict": "UNSUBSTANTIATED_PRODUCT_EFFICACY_CLAIM",
+      "source_ids": [
+        "S02",
+        "S06"
+      ],
+      "allowed": "Omit."
+    },
+    {
+      "claim": "Zen12 automatically changes brainwaves and improves focus, anxiety, health",
+      "verdict": "UNSUBSTANTIATED_PRODUCT_EFFICACY_CLAIM",
+      "source_ids": [
+        "S02",
+        "S12",
+        "S06"
+      ],
+      "allowed": "Omit; reviewed EEG literature does not test this commercial product."
+    },
+    {
+      "claim": "Binaural beat entrainment is conclusively established",
+      "verdict": "CONTRADICTED_BY_MIXED_REVIEW",
+      "source_ids": [
+        "S12"
+      ],
+      "allowed": "In a 2023 review, findings across 14 EEG studies were inconsistent."
+    },
+    {
+      "claim": "Inspire3 offers an affiliate program",
+      "verdict": "PUBLIC_PROGRAM_CONFIRMED",
+      "source_ids": [
+        "S03"
+      ],
+      "allowed": "A public affiliate portal exists; no publisher acceptance established."
+    },
+    {
+      "claim": "Final Vestige is an approved affiliate and can link in emails",
+      "verdict": "NO_ACCOUNT_OR_CHANNEL_PROOF",
+      "source_ids": [
+        "S03",
+        "S15"
+      ],
+      "allowed": "Do not assert, activate link, or add commerce CTA."
+    },
+    {
+      "claim": "Hypnosis Live Total Focus 33 min/47 MB",
+      "verdict": "SELLER_DESCRIBED_FEATURE_ONLY",
+      "source_ids": [
+        "S04"
+      ],
+      "allowed": "Product page lists 33-minute, 47MB recording."
+    },
+    {
+      "claim": "Hypnosis Live offer has genuine 91% discount and urgency",
+      "verdict": "PROMO_UNVERIFIED",
+      "source_ids": [
+        "S04"
+      ],
+      "allowed": "Omit sale prices, urgency and countdowns."
+    },
+    {
+      "claim": "Hypnosis Live improves focus or memory",
+      "verdict": "UNSUBSTANTIATED_PRODUCT_EFFICACY_CLAIM",
+      "source_ids": [
+        "S04",
+        "S06"
+      ],
+      "allowed": "Omit."
+    },
+    {
+      "claim": "Memory experiment supports commercial audio benefits",
+      "verdict": "INVALID_INFERENCE",
+      "source_ids": [
+        "S07",
+        "S08",
+        "S06"
+      ],
+      "allowed": "Historical memory research is unrelated to product effectiveness."
+    },
+    {
+      "claim": "Affiliate disclosure in footer is sufficient",
+      "verdict": "REJECT",
+      "source_ids": [
+        "S05"
+      ],
+      "allowed": "A plain commission disclosure must appear near each relevant earning link."
+    },
+    {
+      "claim": "A 42-second video increases sales",
+      "verdict": "UNTESTED_HYPOTHESIS",
+      "source_ids": [
+        "S15"
+      ],
+      "allowed": "Test after authorization; do not forecast uplift."
+    },
+    {
+      "claim": "Outbound click proves purchase or commission",
+      "verdict": "REJECT",
+      "source_ids": [
+        "S15"
+      ],
+      "allowed": "Only merchant-confirmed paid transaction/settlement counts as paid outcome."
+    },
+    {
+      "claim": "FV has active rights-cleared Payhip Mind SKU",
+      "verdict": "UNKNOWN",
+      "source_ids": [
+        "S15"
+      ],
+      "allowed": "Inventory, rights, price, refunds, checkout and fulfillment must be verified first."
+    }
+  ],
+  "activation_gates": [
+    {
+      "id": "G01",
+      "criterion": "Publisher-specific Inspire3 acceptance for FV",
+      "state": "HARD_HOLD",
+      "proof": null,
+      "owner": "Founder/Mind"
+    },
+    {
+      "id": "G02",
+      "criterion": "Allowed editorial, web, social, email channels and approved creatives",
+      "state": "HARD_HOLD",
+      "proof": null,
+      "owner": "Founder/Mind"
+    },
+    {
+      "id": "G03",
+      "criterion": "Approved unique earning URL and link terms",
+      "state": "HARD_HOLD",
+      "proof": null,
+      "owner": "Founder/Mind"
+    },
+    {
+      "id": "G04",
+      "criterion": "Price and all taxes/checkout terms verified current",
+      "state": "UNVERIFIED",
+      "proof": null,
+      "owner": "Commerce"
+    },
+    {
+      "id": "G05",
+      "criterion": "Refund guarantee terms and actual fulfillment verified",
+      "state": "UNVERIFIED",
+      "proof": null,
+      "owner": "Commerce"
+    },
+    {
+      "id": "G06",
+      "criterion": "Alternative rights-cleared live FV-owned Mind SKU plus pricing",
+      "state": "UNKNOWN",
+      "proof": null,
+      "owner": "Commerce"
+    },
+    {
+      "id": "G07",
+      "criterion": "FTC near-link disclosure and unsupported-claim block tests",
+      "state": "SOURCE_TESTED",
+      "proof": "R185 source tests; real browser pending",
+      "owner": "Mind/QA"
+    },
+    {
+      "id": "G08",
+      "criterion": "Actual original 42s video/MP4/captions/keyboard performance",
+      "state": "NOT_BUILT",
+      "proof": null,
+      "owner": "Mind/QA"
+    },
+    {
+      "id": "G09",
+      "criterion": "Native real-browser WCAG 2.2 AA & performance testing",
+      "state": "NOT_TESTED",
+      "proof": null,
+      "owner": "Site QA"
+    },
+    {
+      "id": "G10",
+      "criterion": "Existing Focus Jetpack confirmation and welcome verified",
+      "state": "UNVERIFIED",
+      "proof": null,
+      "owner": "Site QA/Dispatch"
+    },
+    {
+      "id": "G11",
+      "criterion": "Grok actual asset ID, allowed CTA, media source/rights",
+      "state": "PENDING",
+      "proof": null,
+      "owner": "Praxxis/Grok"
+    },
+    {
+      "id": "G12",
+      "criterion": "Paid verified commission or owned-product payment, net fees/refunds",
+      "state": "NOT_COMPUTABLE",
+      "proof": null,
+      "owner": "Commerce/Growth"
+    },
+    {
+      "id": "G13",
+      "criterion": "Explicit founder production release approval",
+      "state": "HARD_HOLD",
+      "proof": null,
+      "owner": "Founder"
+    }
+  ],
+  "test_policy": {
+    "no_partner_url_before_verification": true,
+    "no_merchant_purchase_buttons_enabled": true,
+    "consent_sensitive_analytics": false,
+    "no_personal_data_sent_to_affiliate_as_query_params": true,
+    "no_new_email_forms": true,
+    "no_promotional_countdowns": true,
+    "primary_kpi": "realized_net_revenue_per_1000_qualified_human_sessions",
+    "status": "NOT_COMPUTABLE"
+  },
+  "owner_boundary": "Mind presell and evidence only; Grok media production, Dispatch issue writing, Claude production code, QA approval and founder release separate."
+}
