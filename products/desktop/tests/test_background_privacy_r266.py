@@ -30,7 +30,7 @@ def isolate(source: str):
 
 
 def script_for(app: str, failure: str) -> str:
-    return f''' 
+    return f'''
 import sys, types, threading, gc
 from fvs_suite.launcher import launch
 SECRET = {SECRET!r}
