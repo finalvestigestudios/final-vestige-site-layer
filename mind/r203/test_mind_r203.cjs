@@ -6,7 +6,7 @@ const fs=require('node:fs');const path=require('node:path');const assert=require
 const root=path.resolve(__dirname,'../..');
 const get=p=>fs.readFileSync(path.join(root,p),'utf8');
 const dir='mind/r203/';
-const paths={article:dir+'the-decision-they-switched-choice-blindness-UNPUBLISHED.md',hub:dir+'mind-archive-four-stream-WP-PREVIEW-UNPUBLISHED.html',a:dir+'zen12-decision-record-A-TEXT-UNPUBLISHED.html',b:dir+'zen12-decision-record-B-OPTIONAL-42S-UNPUBLISHED.html',matrix:dir+'CHOICE-BLINDNESS-ZEN12-SOURCE-CLAIM-AUTHORIZATION-MATRIX.json',plan:dir+'ONE-OFFER-CHOICE-TO-REVENUE-AB-ACCEPTANCE.md',r201:'mind/r201/self-hypnosis-the-skill-versus-the-recording-UNPUBLISHED.md',r202:'mind/r202/the-claim-you-heard-twice-ILLUSORY-TRUTH-UNPUBLISHED.md'};
+const paths={article:dir+'the-decision-they-switched-choice-blindness-UNPUBLISHED.md',hub:dir+'mind-archive-four-stream-WP-PREVIEW-UNPUBLISHED.html',a:dir+'zen12-decision-record-A-TEXT-UNPUBLISHED.html',b:dir+'zen12-decision-record-B-OPTIONAL-42S-UNPUBLISHED.html',matrix:dir+'CHOICE-BLINDNESS-ZEN12-SOURCE-CLAIM-AUTHORIZATION-MATRIX.json',plan:dir+'ONE-OFFER-CHOICE-TO-REVENUE-AB-ACCEPTANCE.md',captions:dir+'zen12-optional-choice-film-42s-UNRENDERED.vtt',r201:'mind/r201/self-hypnosis-the-skill-versus-the-recording-UNPUBLISHED.md',r202:'mind/r202/the-claim-you-heard-twice-ILLUSORY-TRUTH-UNPUBLISHED.md'};
 const files=Object.fromEntries(Object.entries(paths).map(([key,p])=>[key,get(p)]));
 const checks=[];function ok(label,condition){assert.ok(condition,label);checks.push(label)}
 const matrix=JSON.parse(files.matrix);
@@ -31,7 +31,7 @@ ok('Puységur route',files.article.includes('puysegurs-animal-magnetism-files'))
 ok('source list includes FTC',files.article.includes('health-products-compliance-guidance'));
 ok('no merchant endorsement in investigation',!files.article.includes('href="https://zen12.com/hnp'));
 ok('A/B research text invariant',files.a.slice(files.a.indexOf('<section><h2>The decision')).split('</main>')[0]===files.b.slice(files.b.indexOf('<section><h2>The decision')).split('</main>')[0]);
-ok('film concept only in B',!files.a.includes('id="optional-film"')&&files.b.includes('id="optional-film"'));
+ok('original WebVTT draft present',files.captions.startsWith('WEBVTT'));ok('42-second caption end',files.captions.includes('00:00:42.000'));ok('captions marked unrendered',files.captions.includes('NOT RENDERED'));ok('film concept only in B',!files.a.includes('id="optional-film"')&&files.b.includes('id="optional-film"'));
 ok('film nonplaying disclaimer',files.b.includes('not playable'));
 ok('film has textual transcript',files.b.includes('<details><summary>Full 42-second storyboard'));
 ok('static poster described',files.b.includes('role="img"')&&files.b.includes('aria-label='));
