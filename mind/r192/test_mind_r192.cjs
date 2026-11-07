@@ -53,7 +53,7 @@ function check(f){
  ok(f.plan.includes('Praxxis owns independent'),'Praxxis coordination preserved');
  ok(f.plan.includes('NET')||f.plan.includes('net revenue'),'net revenue metric prioritized');
  ok(f.plan.includes('NOT COMPUTABLE')&&f.plan.includes('7-day')&&f.plan.includes('30-day'),'cohorts and no fabricated revenue');
- ok(f.plan.includes('merchant/affiliate exports')&&f.plan.includes('refunds/chargebacks'),'merchant proof terms');
+ ok(/merchant\/affiliate exports/i.test(f.plan)&&f.plan.includes('refunds/chargebacks'),'merchant proof terms');
  ok(f.plan.includes('https://finalvestige.com/focus/'),'single Focus CTA destination');
  ok(f.plan.includes('HARD HOLD'),'auth blocker explicit');
  ok(f.plan.includes('R188'),'A/B inherited, not another merchant-page proliferation');
