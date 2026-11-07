@@ -15,7 +15,7 @@ The [2013 primary paper](https://pmc.ncbi.nlm.nih.gov/articles/PMC3964612/) supp
 
 ## The experiment behind the headline
 
-A standard CT scan is a series of images, usually explored by scrolling. The final experimental scan in Drew and colleagues' study contained **239 slices**. The gorilla appeared across **five** of them, its opacity rising and then falling to avoid a sudden, attention-grabbing onset. It was positioned near a nodule. The gorilla's **rectangular bounding volume** was approximately **48 times** the mean nodule bounding volume in the images; this is a bounding-box comparison, not a measure of how much anatomical tissue was occupied.
+A standard CT scan is a series of images, usually explored by scrolling. The final experimental scan in Drew and colleagues' study contained **239 slices**. The gorilla appeared across **five** of them, its opacity rising and then falling to avoid a sudden, attention-grabbing onset. It was positioned near a nodule. The gorilla was enclosed by a **rectangular bounding box of more than 7,400 mm³**, while the mean measured nodule volume was **153 mm³**—a roughly **48-fold comparison** between the gorilla's bounding box and the nodules' reported mean volumes. The paper does **not** describe the nodule volumes as bounding boxes, and neither figure means the gorilla occupied that amount of anatomical tissue.
 
 Participants were told to identify and click on nodules. Nine radiologists were tested in Boston and fifteen at a professional meeting in Louisville. An eye-tracking apparatus recorded where they looked. The participants could move through the scans freely within the research protocol.
 
