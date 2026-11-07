@@ -7,9 +7,12 @@ import tempfile
 import unittest
 
 HERE=Path(__file__).resolve().parent
+TOOLS=HERE.parent/'tools'
+if not (TOOLS/'r188_producer_code_custody_gate.py').is_file():
+    TOOLS=HERE
 
 def load(name):
-    spec=util.spec_from_file_location(name,HERE/(name+'.py'))
+    spec=util.spec_from_file_location(name,TOOLS/(name+'.py'))
     module=util.module_from_spec(spec);spec.loader.exec_module(module);return module
 
 gate=load('r188_producer_code_custody_gate')
@@ -18,7 +21,7 @@ wrapper=load('r188_producer_bound_preflight')
 
 def synthetic_tree(root, state='DRAFT_HARD_HOLD', bad_approvals=False):
     prep=root/'preparedness';tools=prep/'tools';tools.mkdir(parents=True)
-    source=(HERE/'r188_producer_code_custody_gate.py').read_bytes()
+    source=(TOOLS/'r188_producer_code_custody_gate.py').read_bytes()
     (tools/'r188_producer_code_custody_gate.py').write_bytes(source)
     paths=['tools/'+f'p{i}.py' for i in range(15)]
     pins={}
