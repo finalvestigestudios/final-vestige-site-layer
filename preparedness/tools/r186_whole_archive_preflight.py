@@ -12,6 +12,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+from importlib import util as import_util
 from pathlib import Path
 import re
 import shutil
@@ -133,6 +134,19 @@ def check_census(preparedness: Path, inventory: dict) -> dict:
             'distinct_draft_canonicals': len(routes), 'published': 0}
 
 
+def load_sibling(name: str):
+    """Load pinned local tool modules without relying on sys.path under python -I."""
+    path = Path(__file__).resolve().with_name(name + '.py')
+    if not path.is_file() or path.is_symlink():
+        raise ImportError('missing trusted sibling module: ' + name)
+    spec = import_util.spec_from_file_location('_fv_preparedness_' + name, path)
+    if spec is None or spec.loader is None:
+        raise ImportError('invalid sibling module: ' + name)
+    module = import_util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
 def preflight(repo: Path, timeout: int = 300) -> dict:
     """Native execution in one temporary copy; no original files are changed."""
     packet = {'schema': SCHEMA, 'state': INVALID, 'checks': [],
@@ -140,7 +154,9 @@ def preflight(repo: Path, timeout: int = 300) -> dict:
               'merchant_offer_verified': False, 'verified_paid_orders': None,
               'qualified_human_sessions': None, 'realized_net_revenue': None}
     try:
-        from r176_native_review_preflight import inventory, run_command, assess
+        native = load_sibling('r176_native_review_preflight')
+        strict = load_sibling('r187_receipt_contract_gate')
+        inventory, run_command, assess = native.inventory, native.run_command, native.assess
         if not (10 <= timeout <= 1200) or not repo.is_dir() or repo.is_symlink():
             raise ValueError('trusted repository or timeout unavailable')
         source = repo / 'preparedness'
@@ -168,7 +184,14 @@ def preflight(repo: Path, timeout: int = 300) -> dict:
             for label, file, *extra in GATES:
                 argv = ('preparedness/tools/'+file, '--repo', '.', *extra)
                 run = run_command(label, argv, staged, timeout)
-                packet['checks'].append(verify_gate(label, run))
+                decision = verify_gate(label, run)
+                if decision['status'] == 'STRUCTURAL_HOLD':
+                    try:
+                        strict.verify_contract(label, json.loads(run['stdout']))
+                    except (ValueError, TypeError, KeyError) as exc:
+                        decision['status'] = 'FAIL'
+                        decision['reason'] = 'R187 receipt contract: ' + str(exc)[:170]
+                packet['checks'].append(decision)
             if inventory(staged/'preparedness') != before:
                 raise ValueError('a native command modified staged source inputs')
         if inventory(source) != before:
