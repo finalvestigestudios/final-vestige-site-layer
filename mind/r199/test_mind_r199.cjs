@@ -112,7 +112,7 @@ function mutations(base){
  ];
  let detected=0,notDetected=[];for(const [label,key,from,to] of cases){
    if(!base[key].includes(from)){notDetected.push(label+':missing mutation target');continue}
-   const mutated={...base,[key]:base[key].replace(from,to)};
+   const mutated={...base,[key]:label==='missing UTM'?base[key].split(from).join(to):base[key].replace(from,to)};
    if(!validate(mutated).ok)detected++;else notDetected.push(label+':escaped');
  }
  return {count:cases.length,detected,notDetected};
