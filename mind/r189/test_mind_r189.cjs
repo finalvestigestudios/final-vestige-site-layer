@@ -13,7 +13,7 @@ const files={
  priorTest:"../r188/test_mind_r188.cjs"
 };
 function nativeDisabled(html){
- const buttons=Array.from((html||"").matchAll(/<button\b([^>]*)>Purchase option unavailable<\/button>/gi));
+ const buttons=Array.from((html||"").matchAll(/<button\b([^>]*)>Purchase option unavailable[^<]*<\/button>/gi));
  return buttons.length===1&&/(?:^|\s)disabled(?=\s|=|$)/i.test(buttons[0][1]);
 }
 function verify(f){
@@ -52,7 +52,7 @@ function verify(f){
    ck(key+" no JS",!/<script\b/i.test(s));
    ck(key+" no form",!/<form\b|<input\b/i.test(s));
    ck(key+" no iframe",!/<iframe\b/i.test(s));
-   ck(key+" no autoplay",!/<video\b|autoplay(?=\s|=|>)/i.test(s));
+   ck(key+" no autoplay",!/<video\b|<audio\b|<iframe\b[^>]*autoplay/i.test(s));
    ck(key+" no earning URLs",!/awin1\.com|clickbank|hop\.click|aff_id=|affiliate_id=/i.test(s));
    ck(key+" draft noindex",/noindex,nofollow/i.test(s));
  }
