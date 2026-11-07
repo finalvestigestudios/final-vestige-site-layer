@@ -291,14 +291,27 @@ def sources_block(lib: Library, order: list[str], meta: dict) -> str:
 def review_block(meta: dict) -> str:
     st = meta["status"]
     safety = meta.get("safety_review", {"state": "not-required"})
+    # Metadata records the author's historical label, NOT an independent approval.
+    # These strings also appear in unpublished WordPress-ready drafts; no reader
+    # must mistake an ambiguous legacy label for an independent QD/safety PASS.
     if safety["state"] == "approved":
-        s_txt = f"Approved by {esc(safety['reviewer'])} on {fmt_date(safety['date'])}"
+        s_txt = (
+            f"Historical label recorded as approved by {esc(safety['reviewer'])} "
+            f"on {fmt_date(safety['date'])}. "
+            "This label has not been independently verified. "
+            "Human source/safety review and independent QD are still required before publication."
+        )
     elif safety["state"] == "pending":
-        s_txt = "Pending. A human safety review is required before this page can be published."
+        s_txt = "Pending. Human source/safety review and independent QD are required before publication."
+    elif safety["state"] == "not-required":
+        s_txt = (
+            "Historically marked not required for topic-specific safety review. "
+            "Editorial source review and independent QD are still required before publication."
+        )
     else:
-        s_txt = "Not required for this topic."
+        s_txt = "Unrecognized safety-review state. Independent source/safety review and QD are required before publication."
     rows = [
-        ("Editorial status", {"drafted": "Drafted; editor read-through pending", "reviewed": "Reviewed"}.get(st["editorial"], st["editorial"])),
+        ("Editorial status", {"drafted": "Drafted; editor read-through pending", "reviewed": "Editorially reviewed (not independent safety or QD approval)"}.get(st["editorial"], st["editorial"])),
         ("Safety review", s_txt),
         ("Last source check", fmt_date(meta["last_checked"])),
         ("Recheck when", meta.get("recheck", "Any source above changes, or at the latest 12 months after the last check.")),
@@ -331,6 +344,7 @@ def build_article(lib: Library, slug: str) -> dict:
     chips = [f'<li class="pa-chip pa-chip--gold pa-chip--dup">{esc(track["label"])}</li>', f'<li class="pa-chip pa-chip--dup">{esc(sec["label"])}</li>']
     if meta["status"]["publish"] != "published":
         chips.append('<li class="pa-chip pa-chip--warn">Draft: not public</li>')
+        chips.append('<li class="pa-chip pa-chip--warn">Independent safety/source and QD verification pending</li>')
     if meta.get("safety_review", {}).get("state") == "pending":
         chips.append('<li class="pa-chip pa-chip--warn">Safety review pending</li>')
     for t in meta.get("tags", []):
@@ -383,7 +397,9 @@ def render_card(lib: Library, meta: dict) -> str:
     draft = ' · <span>Draft</span>' if meta["status"]["publish"] != "published" else ""
     mins = meta.get("read_minutes") or max(1, round(word_count(meta["_body"]) / WORDS_PER_MINUTE))
     hay = " ".join([meta["title"], meta["dek"], " ".join(meta.get("tags", []))]).lower()
-    verify = "reviewed" if meta.get("safety_review", {}).get("state") in ("approved", "not-required") and meta["status"]["editorial"] == "reviewed" else "pending"
+    # Legacy approved/not-required flags cannot give the public index a "reviewed" badge.
+    # A future independent, signed acceptance mechanism must make that decision explicitly.
+    verify = "pending"
     return (
         f'<li class="pa-card" data-section="{meta["section"]}" data-track="{meta["track"]}" data-verify="{verify}" data-text="{esc(hay)}">'
         f'<p class="pa-card-track">{esc(track["label"])}</p><h3><a href="{lib.url_path(meta["slug"])}">{esc(meta["title"])}</a></h3>'
