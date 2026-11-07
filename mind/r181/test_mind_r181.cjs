@@ -47,7 +47,7 @@ function verify(files) {
   }
   check("B is poster-only no pretend playable video",b.includes('id="optional-film"')&&b.includes("non-playing storyboard")&&!/<video\b/i.test(b));
   check("A lacks extra optional film",!a.includes('id="optional-film"'));
-  check("A and B otherwise identical",b.replace(/<section class="section" id="optional-film"[\s\S]*?<\/section>\n/,"")===a);
+  check("A and B otherwise identical",b.replace(/<section class="section" id="optional-film"[\s\S]*?<\/section>\n/,"\n")===a);
   check("mind hub has all four streams",["Perception & Attention","History of Suggestion","Practice & Reflection","Tools Under Review"].every(k=>hub.includes(k)));
   check("hub no duplicate list or script",!/<form\b|<script\b|<iframe\b/i.test(hub));
   check("hub labels new article unpublished",hub.includes("NEW research draft, not linked as published"));
