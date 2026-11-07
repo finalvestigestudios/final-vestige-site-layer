@@ -1,0 +1,123 @@
+{
+  "schema": "fv-preparedness-r181-contributor-intake-v1",
+  "repo": "finalvestigestudios/final-vestige-site-layer",
+  "state": "DRAFT_HARD_HOLD",
+  "publication_authorized": false,
+  "independent_qd_pass": false,
+  "observed_date_utc": "2026-11-07",
+  "evidence_lineage": "GH connected refs and tree at exact R180 head; source uses/citation count from R179/R180 pinned review record, NOT complete fresh native build",
+  "branches": [
+    {
+      "ref": "claude/prep-start-bbfeb8",
+      "sha": "2122d856fce9f64887c16df3d52e64be9f59a55b",
+      "ahead": 0,
+      "behind": 0,
+      "status": "identical"
+    },
+    {
+      "ref": "claude/prep-food-ccdc55",
+      "sha": "f911ff7a655de8d81535ea86ec3d65a49ee76648",
+      "ahead": 0,
+      "behind": 0,
+      "status": "identical"
+    },
+    {
+      "ref": "claude/prep-shelter-5e1e0e",
+      "sha": "5daeaf2dd5ab71806a6b73c91edfb1d8df5da976",
+      "ahead": 0,
+      "behind": 0,
+      "status": "identical"
+    },
+    {
+      "ref": "claude/prep-health-837444",
+      "sha": "d5ef5bafd68361434dd1cc9209915b8e8a4eaf17",
+      "ahead": 0,
+      "behind": 0,
+      "status": "identical"
+    },
+    {
+      "ref": "claude/prep-hist-field-9db767",
+      "sha": "4e5caf812727953aa45e3bda2d382f2c67b6a09c",
+      "ahead": 0,
+      "behind": 0,
+      "status": "identical"
+    },
+    {
+      "ref": "claude/prep-hist-food-b81f19",
+      "sha": "67e116e536c7410bed30f8f3b1bb8c166f3c223d",
+      "ahead": 0,
+      "behind": 0,
+      "status": "identical"
+    },
+    {
+      "ref": "claude/prep-hist-home-0e0e38",
+      "sha": "7504a5f099594d635e3dd7332a33a2e1346c43a2",
+      "ahead": 0,
+      "behind": 0,
+      "status": "identical"
+    }
+  ],
+  "review_prs": [
+    {
+      "number": 157,
+      "head_sha": "7d1ae6b8ef93d10cfb6810987672360885e9c1aa",
+      "base_sha": "10f58fed1ba808056813064ca5f9680589db8da1",
+      "state": "open",
+      "draft": true,
+      "merged": false,
+      "files": [
+        "preparedness/content/articles/household-emergency-plan.body.html",
+        "preparedness/content/articles/three-day-kit.body.html",
+        "preparedness/sources/fragments/start.json",
+        "preparedness/taxonomy.json",
+        "preparedness/tests/test_preparedness.py"
+      ]
+    },
+    {
+      "number": 169,
+      "head_sha": "e9cd7766dac59d47ab467d8945269b9146c2aef5",
+      "base_sha": "4b009361277ea1d4617b368f5d45104c7318b284",
+      "state": "open",
+      "draft": true,
+      "merged": false,
+      "files": [
+        "preparedness/tests/test_preparedness.py"
+      ]
+    },
+    {
+      "number": 973,
+      "head_sha": "4d40996a559b0124d74a9bb3bdcd481ad1992aa8",
+      "base_sha": "e9cd7766dac59d47ab467d8945269b9146c2aef5",
+      "state": "open",
+      "draft": true,
+      "merged": false,
+      "files": [
+        "preparedness/tests/test_preparedness.py"
+      ]
+    }
+  ],
+  "corpus": {
+    "branch_sha": "532198896128e612e88b3bee36c6368cb825e58b",
+    "article_meta": 35,
+    "article_bodies": 35,
+    "source_uses": 385,
+    "citation_occurrences": 2000,
+    "all_draft": true,
+    "unique_urls": true,
+    "qualified_safety_review": false,
+    "independent_qd_pass": false,
+    "publication_authorized": false
+  },
+  "funnel": {
+    "audience": "caregivers_school_pickup_reunification",
+    "free_guide": "household-emergency-plan",
+    "optional_tool": "family-reunification-card",
+    "paid_sku": null,
+    "verified_paid_preparedness_sku": false,
+    "paid_checkout_enabled": false,
+    "grok_asset_id": null,
+    "published_destination": null,
+    "verified_orders": null,
+    "net_revenue_usd": null
+  }
+}
