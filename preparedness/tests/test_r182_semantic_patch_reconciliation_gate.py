@@ -9,7 +9,7 @@ import sys
 import tempfile
 import unittest
 
-MODULE_PATH = Path(__file__).with_name('r182_semantic_patch_reconciliation_gate.py')
+MODULE_PATH = Path(__file__).resolve().parents[1] / 'tools' / 'r182_semantic_patch_reconciliation_gate.py'
 spec = importlib.util.spec_from_file_location('r182_gate', MODULE_PATH)
 gate = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(gate)
