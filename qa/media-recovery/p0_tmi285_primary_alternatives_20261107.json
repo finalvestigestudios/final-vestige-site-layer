@@ -1,0 +1,153 @@
+{
+  "schema": "fv-p0-tmi285-source-alternatives-v1",
+  "as_of": "2026-11-07",
+  "source": "Authenticated WordPress edit-context read only + primary catalog pages + independent web retrieval wrapper; no browser observations",
+  "scope": {
+    "fresh_posts_read": 1,
+    "image_slots": 2,
+    "p0_other_slots_not_modified": [
+      "287:5",
+      "418:1",
+      "418:2",
+      "407:1"
+    ],
+    "site_qa_owner": "PR #154",
+    "existing_worklist": "docs/IMAGE-WEIGHT-WORKLIST.md in PR #183"
+  },
+  "metrics": {
+    "visitor_confirmed_broken": 0,
+    "origin_http_observations": 0,
+    "visitor_image_bytes_measured": 0,
+    "achieved_savings_percent": null,
+    "claimed_42_broken": "UNVERIFIED",
+    "claimed_76pct_saving": "UNMEASURED",
+    "wordpress_writes": 0,
+    "media_downloads": 0
+  },
+  "slots": [
+    {
+      "post_id": 285,
+      "article_url": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+      "wp_modified": "2026-11-02T21:39:59",
+      "browser": {
+        "checked": false,
+        "http_status": null,
+        "final_url": null,
+        "natural_width": null,
+        "natural_height": null,
+        "encoded_bytes": null,
+        "request_id": null,
+        "visually_broken": null
+      },
+      "production_action": "HOLD",
+      "binary_downloaded": false,
+      "uploaded_to_wp": false,
+      "rights_clearance": "HOLD",
+      "slot": "285:2",
+      "src": "https://blog.ucsusa.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+      "alt": "Three Mile Island control panel showing dense rows of gauges, lights and switches.",
+      "caption": "A TMI control panel illustrates the interface problem: each light and gauge represented part of the machine, but operators still had to infer the machine’s overall physical state.",
+      "retriever": {
+        "method": "web.run.open",
+        "date": "2026-11-07",
+        "tool_reported_status": 500,
+        "description": "tool wrapper reports redirect to blog.ucs.org unavailable; not origin or visitor status",
+        "redirect_target": "https://blog.ucs.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg"
+      },
+      "candidates": [
+        {
+          "id": "commission-1979-control-panel",
+          "role": "period-primary-document-subject-alternative-not-binary-match",
+          "catalog_url": "https://commons.wikimedia.org/wiki/File:TMI-2_control_panel.png",
+          "master_px": [
+            604,
+            590
+          ],
+          "proposed_preview_px": [
+            604,
+            590
+          ],
+          "rights_claim": "Commons identifies 1979 federal President's Commission report image as public domain; its Commons rendition was retouched and needs individual modification-rights review.",
+          "rights_review": "REQUIRED",
+          "binary_match_verified": false,
+          "rehosting_approved": false,
+          "editorial_swap_approved": false,
+          "historical_integrity_note": "Control panel shows emergency-feedwater indicator lights partly obscured by maintenance tags. Original is credited to a 1979 federal report, p.97. Not proven same image or crop as UCS.",
+          "proposed_credit": "U.S. President's Commission on the Accident at Three Mile Island, The Need for Change: The Legacy of TMI (1979), p.97; Commons rendition contributors where required"
+        }
+      ]
+    },
+    {
+      "post_id": 285,
+      "article_url": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+      "wp_modified": "2026-11-02T21:39:59",
+      "browser": {
+        "checked": false,
+        "http_status": null,
+        "final_url": null,
+        "natural_width": null,
+        "natural_height": null,
+        "encoded_bytes": null,
+        "request_id": null,
+        "visually_broken": null
+      },
+      "production_action": "HOLD",
+      "binary_downloaded": false,
+      "uploaded_to_wp": false,
+      "rights_clearance": "HOLD",
+      "slot": "285:5",
+      "src": "https://images.saymedia-content.com/.image/ar_16:9,c_fill,cs_srgb,fl_progressive,q_auto:eco,w_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg",
+      "alt": "Aerial view of the Three Mile Island nuclear generating station on the Susquehanna River.",
+      "caption": "Three Mile Island from the air. The public emergency outside the plant and the physical damage inside the reactor differed sharply in scale.",
+      "retriever": {
+        "method": "web.run.open",
+        "date": "2026-11-07",
+        "tool_reported_status": 404,
+        "description": "tool wrapper 404; not origin or visitor status",
+        "redirect_target": null
+      },
+      "candidates": [
+        {
+          "id": "commons-2010-publisher-photo",
+          "role": "publisher-caption-correlated-creator-source-not-binary-match",
+          "catalog_url": "https://commons.wikimedia.org/wiki/File:Three_mile_island_062010.jpg",
+          "master_px": [
+            819,
+            614
+          ],
+          "proposed_preview_px": [
+            819,
+            614
+          ],
+          "rights_claim": "Commons creator Marque1313 explicitly dedicates the self-photographed image to public domain; confirm actual binary and crop.",
+          "rights_review": "REQUIRED",
+          "binary_match_verified": false,
+          "rehosting_approved": false,
+          "editorial_swap_approved": false,
+          "historical_integrity_note": "Publisher's HubPages article credits a June 6, 2010 Wikimedia PD photo of Three Mile Island. That does not prove it is the same binary embedded here. Say Media URL requests an ar_16:9 c_fill transformation whereas catalog source is 819x614 (near 4:3). Do not upscale or silently recreate that crop; 2010 is not 1979.",
+          "proposed_credit": "Marque1313, Three mile island 062010.jpg, Wikimedia Commons (2010), PD dedication"
+        },
+        {
+          "id": "doe-1979-color-aerial",
+          "role": "same-location-1979-period-alternative-not-same-photograph",
+          "catalog_url": "https://commons.wikimedia.org/wiki/File:Three_Mile_Island_(color).jpg",
+          "master_px": [
+            2592,
+            2488
+          ],
+          "proposed_preview_px": [
+            960,
+            921
+          ],
+          "rights_claim": "Wikimedia identifies original work as an official-duty U.S. Department of Energy 1979 photograph, public domain; review Commons adjustments/source chain.",
+          "rights_review": "REQUIRED",
+          "binary_match_verified": false,
+          "rehosting_approved": false,
+          "editorial_swap_approved": false,
+          "historical_integrity_note": "Historically contemporaneous 1979 catalog image, but a DIFFERENT composition from the 2010 publisher image; requires explicit editorial approval, not a like-for-like URL substitution.",
+          "proposed_credit": "U.S. Department of Energy, Three Mile Island (color), 1979; original Commons file record"
+        }
+      ]
+    }
+  ]
+}
