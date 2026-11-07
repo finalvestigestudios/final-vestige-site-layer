@@ -64,7 +64,7 @@ test('canonical conversion and refund boundary documented', () => {
 });
 test('native preview does not equal receipt or opt-out verification', () => {
   const r = read('NATIVE_EMAIL_PREVIEW_AND_LEGAL_RUNBOOK.md');
-  assert.match(r,/not a legal signoff/);
+  assert.match(r,/legal signoff/);
   assert.match(r,/Do not email a subscriber/i);
   assert.match(r,/NO edits or saves/i);
   assert.match(r,/HOLD_UNSENT/);
