@@ -17,6 +17,7 @@ import json
 from pathlib import Path
 import re
 import stat
+from urllib.parse import unquote
 
 SCHEMA='fv-preparedness-r191-resource-offer-boundary-v1'
 HOLD='DRAFT_HARD_HOLD'
@@ -91,12 +92,52 @@ def css_errors(css: str) -> list[str]:
     return errors
 
 
+
+# R193: JSON-LD is only one form of commercial structured data. Microdata,
+# RDFa and OpenGraph meta properties can imply a price/offer without JSON-LD.
+# Treat these as unapproved commercial claims, not verified product evidence.
+COMMERCIAL_TERMS = TYPE_OFFER | OFFER_KEYS | {
+    'hasoffercatalog', 'potentialaction', 'purchaseurl', 'saleprice',
+    'salesprice', 'paymentaccepted', 'acceptedpaymentmethod',
+}
+
+def structured_tail(value: str) -> str:
+    """Conservative final vocabulary token for schema URLs, CURIEs and RDFa."""
+    if not isinstance(value, str):
+        return ''
+    normalized = unquote(unescape(value)).strip().rstrip('/')
+    normalized = normalized.partition('?')[0]
+    return normalized.rsplit('#', 1)[-1].rsplit('/', 1)[-1].rsplit(':', 1)[-1].lower()
+
+def markup_offer_errors(tag: str, attrs: dict) -> list[str]:
+    """Block non-JSON-LD commerce claims on the six unpublished tools."""
+    errors = []
+    for key in ('itemtype', 'typeof'):
+        raw = attrs.get(key)
+        if raw and any(structured_tail(token) in TYPE_OFFER for token in raw.split()):
+            errors.append('unapproved microdata/RDFa commerce type: ' + key)
+    for key in ('itemprop', 'property', 'rel'):
+        raw = attrs.get(key)
+        if raw and any(structured_tail(token) in COMMERCIAL_TERMS
+                       for token in raw.split()):
+            errors.append('unapproved microdata/RDFa commerce property: ' + key)
+    if tag == 'meta':
+        for key in ('name', 'property', 'http-equiv'):
+            raw = attrs.get(key)
+            if not raw:
+                continue
+            value = unquote(unescape(raw)).strip().lower()
+            if (value.startswith(('product:', 'og:price:', 'commerce:'))
+                    or structured_tail(value) in COMMERCIAL_TERMS):
+                errors.append('unapproved product/price meta declaration: ' + key)
+    return errors
+
 def offer_errors(obj: object) -> list[str]:
     errors=[]
     if isinstance(obj,dict):
         typ=obj.get('@type',[])
         types=typ if isinstance(typ,list) else [typ]
-        if any(isinstance(t,str) and (t.rsplit('/',1)[-1].rsplit('#',1)[-1].lower() in TYPE_OFFER) for t in types):
+        if any(isinstance(t,str) and (structured_tail(t) in TYPE_OFFER) for t in types):
             errors.append('commercial structured-data type')
         if any(isinstance(k,str) and k.lower() in OFFER_KEYS for k in obj):
             errors.append('unapproved structured-data offer claim')
@@ -122,6 +163,7 @@ class Screen(HTMLParser):
         if len(names)!=len(set(names)):
             self.errors.append('duplicate HTML attributes on '+tag)
         attrs=dict(attrs)
+        self.errors.extend(markup_offer_errors(tag, attrs))
         if tag in ('style','script'):
             if tag == 'style':
                 self._capture='css';self._buffer=[];self.css_blocks+=1
