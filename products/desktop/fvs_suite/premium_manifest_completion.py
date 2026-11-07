@@ -15,6 +15,7 @@ from pathlib import Path
 
 from .csv_snapshot import _same_path_descriptor_signature
 from .manifest_guard import MAX_REPORT_BYTES, _hash_regular
+from .premium_link_custody import open_inventory_stream, require_single_link
 
 _HEADER = "SHA-256 file inventory. Hashes do not certify accuracy or compliance."
 _HEX = re.compile(r"[0-9a-f]{64}\Z", re.ASCII)
@@ -36,20 +37,23 @@ def _read_bounded_inventory(path: Path) -> str:
         if (not stat.S_ISREG(before.st_mode)
                 or not 0 < before.st_size <= _MAX_MANIFEST_BYTES):
             raise ValueError("Invalid premium evidence inventory")
+        require_single_link(before)
         flags = (os.O_RDONLY | getattr(os, "O_BINARY", 0)
                  | getattr(os, "O_NOFOLLOW", 0) | getattr(os, "O_NONBLOCK", 0))
-        descriptor = os.open(path, flags)
-        with os.fdopen(descriptor, "rb") as stream:
+        with open_inventory_stream(path, flags) as stream:
             opened = os.fstat(stream.fileno())
+            require_single_link(opened)
             if (not stat.S_ISREG(opened.st_mode)
                     or not _same_path_descriptor_signature(before, opened)):
                 raise ValueError("Premium inventory changed while opening")
             raw = stream.read(_MAX_MANIFEST_BYTES + 1)
             finished = os.fstat(stream.fileno())
+            require_single_link(finished)
             if (len(raw) != before.st_size
                     or _signature(finished) != _signature(opened)):
                 raise ValueError("Premium inventory changed while reading")
         after = path.lstat()
+        require_single_link(after)
         if (_signature(after) != _signature(before)
                 or not _same_path_descriptor_signature(after, finished)):
             raise ValueError("Premium inventory was replaced")
@@ -107,6 +111,10 @@ def verify_premium_inventory(paths: tuple[Path, ...], app_id: str) -> None:
     for path, entry in zip(reports, rows[-count:]):
         # Inventory writer JSON-escapes a *basename* and writes lowercase SHA.
         expected_name = json.dumps(path.name, ensure_ascii=True)[1:-1]
+        try:
+            require_single_link(path.lstat())
+        except OSError:
+            raise ValueError("Cannot inspect premium report link custody") from None
         digest, signature = _hash_regular(path, MAX_REPORT_BYTES)
         if entry != f"{expected_name}\t{digest}":
             raise ValueError("Premium report does not match evidence inventory")
@@ -120,6 +128,7 @@ def verify_premium_inventory(paths: tuple[Path, ...], app_id: str) -> None:
     try:
         for path, signature in report_snapshots:
             current = path.lstat()
+            require_single_link(current)
             if not stat.S_ISREG(current.st_mode) or _signature(current) != signature:
                 raise ValueError("Premium report changed during package verification")
         if set(manifest.parent.iterdir()) != set(paths):

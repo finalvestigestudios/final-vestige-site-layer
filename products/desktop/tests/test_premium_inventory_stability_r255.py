@@ -154,7 +154,8 @@ class PremiumInventoryStabilityR255(unittest.TestCase):
         return SimpleNamespace(st_dev=original.st_dev, st_ino=original.st_ino,
                                st_size=original.st_size, st_mode=original.st_mode,
                                st_mtime_ns=original.st_mtime_ns,
-                               st_ctime_ns=original.st_ctime_ns+987654321)
+                               st_ctime_ns=original.st_ctime_ns+987654321,
+                               st_nlink=original.st_nlink)
 
     def test_windows_path_descriptor_ctime_discrepancy_permitted(self):
         paths = self.create()
