@@ -1,0 +1,244 @@
+{
+  "schema": "fv-apollo1-nasa5-visual-integrity-20261106-v1",
+  "snapshot_source": "authenticated read-only WordPress post 434 context=edit",
+  "snapshot_local_date": "2026-11-06",
+  "post": {
+    "id": 434,
+    "title": "The Hatch Opened Inward",
+    "permalink": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/",
+    "modified": "2026-11-03T22:12:30",
+    "published_image_count": 6,
+    "external_nasa_images": 5,
+    "first_party_image_source": "https://finalvestige.com/wp-content/uploads/2026/08/s67-19766.webp"
+  },
+  "method": "NASA catalog pages read in publisher site, two images seen in web image viewer; no guest browser/HTTP origin/byte verification",
+  "records": [
+    {
+      "key": "434:1",
+      "exact_current_src": "https://images-assets.nasa.gov/image/S67-15717/S67-15717~large.jpg",
+      "alt_in_wordpress": "Apollo Command and Service Module 012 during preflight processing before the Apollo 1 launch-pad fire.",
+      "published_html_pixels": [
+        1514,
+        1920
+      ],
+      "nasa_catalog_id": "S67-15717",
+      "nasa_catalog_url": "https://www.nasa.gov/image-detail/amf-s67-15717/",
+      "catalog_reported_pixels": [
+        1514,
+        1920
+      ],
+      "source_credit": "NASA/JSC",
+      "catalog_subject": "Apollo 012 preflight processing Jan 3 1967",
+      "candidate_preview_pixels": [
+        960,
+        1217
+      ],
+      "geometry_basis": "NASA catalog displayed pixel dimensions match WP HTML, but binary not measured",
+      "retriever_image_rendered": false,
+      "guest_browser_status": null,
+      "origin_http_status": null,
+      "guest_current_src": null,
+      "decoded_pixels": null,
+      "cold_wire_bytes": null,
+      "confirmed_broken": null,
+      "binary_hash": null,
+      "publisher_binary_identity_verified": false,
+      "rights_approval": "HOLD",
+      "can_download_rehost": false,
+      "can_change_wp": false,
+      "visual_integrity": "NOT_VISUALLY_INSPECTED",
+      "editorial_approval": false
+    },
+    {
+      "key": "434:2",
+      "exact_current_src": "https://images-assets.nasa.gov/image/S66-58038/S66-58038~large.jpg",
+      "alt_in_wordpress": "The Apollo 1 crew preparing to enter a command module during preflight training in 1966.",
+      "published_html_pixels": [
+        1920,
+        1546
+      ],
+      "nasa_catalog_id": "S66-58038",
+      "nasa_catalog_url": "https://www.nasa.gov/image-detail/amf-s66-58038/",
+      "catalog_reported_pixels": [
+        1920,
+        1546
+      ],
+      "source_credit": "NASA/JSC",
+      "catalog_subject": "Apollo 1 crew altitude chamber training Oct 18 1966",
+      "candidate_preview_pixels": [
+        960,
+        773
+      ],
+      "geometry_basis": "NASA catalog displayed pixel dimensions match WP HTML, but binary not measured",
+      "retriever_image_rendered": false,
+      "guest_browser_status": null,
+      "origin_http_status": null,
+      "guest_current_src": null,
+      "decoded_pixels": null,
+      "cold_wire_bytes": null,
+      "confirmed_broken": null,
+      "binary_hash": null,
+      "publisher_binary_identity_verified": false,
+      "rights_approval": "HOLD",
+      "can_download_rehost": false,
+      "can_change_wp": false,
+      "visual_integrity": "NOT_VISUALLY_INSPECTED",
+      "editorial_approval": false
+    },
+    {
+      "key": "434:3",
+      "exact_current_src": "https://images-assets.nasa.gov/image/KSC-20170124-PH_KLS01_0164/KSC-20170124-PH_KLS01_0164~large.jpg",
+      "alt_in_wordpress": "Apollo 1 tribute displaying the original three-part Block I hatch associated with the command module fire.",
+      "published_html_pixels": [
+        1920,
+        1280
+      ],
+      "nasa_catalog_id": "KSC-20170124-PH_KLS01_0164",
+      "nasa_catalog_url": "https://www.nasa.gov/image-detail/amf-ksc-20170124-ph_kls01_0164/",
+      "catalog_reported_pixels": [
+        1920,
+        1280
+      ],
+      "source_credit": "NASA/Kim Shiflett",
+      "catalog_subject": "Apollo 1 tribute large white spacecraft mockup Jan 24 2017, NOT photograph isolating original three-part hatch",
+      "candidate_preview_pixels": [
+        960,
+        640
+      ],
+      "geometry_basis": "NASA catalog displayed pixel dimensions match WP HTML, but binary not measured",
+      "retriever_image_rendered": true,
+      "guest_browser_status": null,
+      "origin_http_status": null,
+      "guest_current_src": null,
+      "decoded_pixels": null,
+      "cold_wire_bytes": null,
+      "confirmed_broken": null,
+      "binary_hash": null,
+      "publisher_binary_identity_verified": false,
+      "rights_approval": "HOLD",
+      "can_download_rehost": false,
+      "can_change_wp": false,
+      "visual_integrity": "CONFIRMED_SOURCE_PHOTO_SUBJECT_MISMATCH_WITH_PUBLISHED_ALT",
+      "editorial_approval": false
+    },
+    {
+      "key": "434:4",
+      "exact_current_src": "https://images-assets.nasa.gov/image/S67-21294/S67-21294~large.jpg",
+      "alt_in_wordpress": "Interior of Apollo Command Module 012 after the January 27, 1967 fire, showing severe heat and fire damage.",
+      "published_html_pixels": [
+        1920,
+        1297
+      ],
+      "nasa_catalog_id": "S67-21294",
+      "nasa_catalog_url": "https://www.nasa.gov/image-detail/amf-s67-21294/",
+      "catalog_reported_pixels": [
+        1920,
+        1297
+      ],
+      "source_credit": "NASA/JSC",
+      "catalog_subject": "Apollo 012 fire damage interior Jan 28 1967",
+      "candidate_preview_pixels": [
+        960,
+        649
+      ],
+      "geometry_basis": "NASA catalog displayed pixel dimensions match WP HTML, but binary not measured",
+      "retriever_image_rendered": false,
+      "guest_browser_status": null,
+      "origin_http_status": null,
+      "guest_current_src": null,
+      "decoded_pixels": null,
+      "cold_wire_bytes": null,
+      "confirmed_broken": null,
+      "binary_hash": null,
+      "publisher_binary_identity_verified": false,
+      "rights_approval": "HOLD",
+      "can_download_rehost": false,
+      "can_change_wp": false,
+      "visual_integrity": "NOT_VISUALLY_INSPECTED",
+      "editorial_approval": false
+    },
+    {
+      "key": "434:5",
+      "exact_current_src": "https://images-assets.nasa.gov/image/KSC-20170124-PH_KLS01_0090/KSC-20170124-PH_KLS01_0090~large.jpg",
+      "alt_in_wordpress": "Redesigned unified Apollo hatch developed after the Apollo 1 fire to open outward within seconds.",
+      "published_html_pixels": [
+        1280,
+        1920
+      ],
+      "nasa_catalog_id": "KSC-20170124-PH_KLS01_0090",
+      "nasa_catalog_url": "https://www.nasa.gov/image-detail/amf-ksc-20170124-ph_kls01_0090/",
+      "catalog_reported_pixels": [
+        1280,
+        1920
+      ],
+      "source_credit": "NASA/Kim Shiflett",
+      "catalog_subject": "Apollo tribute redesigned hatch display Jan 24 2017",
+      "candidate_preview_pixels": [
+        960,
+        1440
+      ],
+      "geometry_basis": "NASA catalog displayed pixel dimensions match WP HTML, but binary not measured",
+      "retriever_image_rendered": true,
+      "guest_browser_status": null,
+      "origin_http_status": null,
+      "guest_current_src": null,
+      "decoded_pixels": null,
+      "cold_wire_bytes": null,
+      "confirmed_broken": null,
+      "binary_hash": null,
+      "publisher_binary_identity_verified": false,
+      "rights_approval": "HOLD",
+      "can_download_rehost": false,
+      "can_change_wp": false,
+      "visual_integrity": "INSPECTED_DISTINCT_HATCH_DISPLAY",
+      "editorial_approval": false
+    }
+  ],
+  "rights_guidance": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+  "editorial_finding": {
+    "priority": "P1_AFTER_EXISTING_P0_FAILURES",
+    "slot": "434:3",
+    "problem": "NASA image KSC-20170124-PH_KLS01_0164 visually depicts a large white Apollo spacecraft mockup and gallery; WordPress ALT and caption describe it as the original three-part Block I hatch. NASA catalog discusses the whole exhibit, but the photo itself is NOT a close image of the original hatch.",
+    "proposed_action": "Editorial signoff to change ALT/caption to tribute mockup; or substitute an individually verified photograph of actual Block I hatch. No automatic block or image rewrite.",
+    "different_second_hatch_image": "434:5 is KSC-20170124-PH_KLS01_0090, a separate photo of the redesigned hatch exhibit. Never interchange.",
+    "primary_source_replacement_candidate": {
+      "authority": "NASA Kennedy (official NASA Kennedy Flickr publisher account)",
+      "official_photo_id": "KSC-2017-0124-PH_KLS01-0129",
+      "catalog_page_url": "https://www.flickr.com/photos/nasakennedy/32553514565/",
+      "item_caption_verified": "Three-part hatch that was in place on Apollo 1 spacecraft, displayed at Kennedy Space Center tribute opened January 2017",
+      "date_photographed": "2017-01-24",
+      "date_uploaded": "2017-01-27",
+      "photo_credit": "NASA/Kim Shiflett",
+      "rights_notice": "Flickr item says Some rights reserved; link to NASA policy. Interpret exact Creative Commons licensing before reuse; rights clearance HOLD.",
+      "relationship_to_published": "DIFFERENT_NASA_PHOTO_SUBJECT_EXACT_ORIGINAL_BLOCK_I_HATCH; NOT_SAME_BINARY_AS_PUBLISHED_MOCKUP",
+      "identity_confidence": "PRIMARY_NASA_CAPTION_SUBJECT_CONFIRMED_NO_BINARY_COMPARISON",
+      "native_pixel_dimensions": null,
+      "provisional_preview_pixels": null,
+      "live_guest_browser_status": null,
+      "hash_verified": false,
+      "rights_cleared": false,
+      "rehosting_authorized": false,
+      "derivative_generation_authorized": false,
+      "wp_replacement_authorized": false
+    }
+  },
+  "site_baseline": {
+    "earlier_post_count": 61,
+    "earlier_inline_images": 355,
+    "latest_post_count": 66,
+    "latest_inline_images": 361,
+    "claimed_broken_42": "NOT_BROWSER_VERIFIED",
+    "claimed_76pct_wire_savings": "NOT_MEASURED",
+    "over_1_5MiB_wp_originals": 13,
+    "original_stored_bytes": 43522829
+  },
+  "permissions": {
+    "max_preview_width": 960,
+    "no_upscale": true,
+    "wp_writes": false,
+    "image_downloads": false,
+    "cache": false,
+    "rehost": false,
+    "spend_usd": 0
+  }
+}
