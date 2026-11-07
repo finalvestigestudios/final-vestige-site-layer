@@ -56,7 +56,7 @@ function evaluate(bundle) {
     for (const key of ['gross_commission_cents','refund_cents','fees_cents']) if (!isIntegerNonnegative(o[key])) throw new Error('amounts must be integer nonnegative cents');
     settledOrders++;
     const value = o.gross_commission_cents - o.refund_cents - o.fees_cents;
-    if (o.campaign_attribution_verified === true && sessions.some(s => s.utm_campaign === o.utm_campaign)) {
+    if (o.campaign_attribution_verified === true && o.asset_attribution_verified === true && sessions.some(s => s.utm_campaign === o.utm_campaign && s.asset_id === o.asset_id)) {
       attributedOrders++; netCents += value;
     } else {
       unattributedOrders++;
