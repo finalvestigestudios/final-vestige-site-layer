@@ -31,7 +31,7 @@ ok(!/<video[^>]*autoplay/i.test(b),"no forced playback");
 ok((a.match(/class="btn" href="https:\/\/finalvestige.com\/focus\/"/g)||[]).length===1,"one primary Focus CTA guide");
 ok((hub.match(/https:\/\/finalvestige.com\/focus\//g)||[]).length===2,"existing Focus in hub only");
 ok(/2019/.test(art)&&/22 randomized controlled trials/i.test(art),"self hypnosis RCT review scoped");
-ok(/audio.*someone else/i.test(art),"audio versus taught distinction");
+ok(/recordings of hypnosis delivered by someone else/i.test(art),"audio versus taught distinction");
 ok(/Puységur/.test(art)&&/1784/.test(art),"historical bridge");
 ok(/not.*clinical|not.*treatment/i.test(art),"nonclinical exercise limits");
 ok(art.split(/\s+/).length>=1800,"article substantive");
