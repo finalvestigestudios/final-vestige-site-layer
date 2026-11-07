@@ -15,7 +15,7 @@ The [2013 primary paper](https://pmc.ncbi.nlm.nih.gov/articles/PMC3964612/) supp
 
 ## The experiment behind the headline
 
-A standard CT scan is a series of images, usually explored by scrolling. The final experimental scan in Drew and colleagues' study contained **239 slices**. The gorilla appeared across **five** of them, its opacity rising and then falling to avoid a sudden, attention-grabbing onset. It was positioned near a nodule. The approximate volume of the figure was **48 times** the mean nodule volume in the images.
+A standard CT scan is a series of images, usually explored by scrolling. The final experimental scan in Drew and colleagues' study contained **239 slices**. The gorilla appeared across **five** of them, its opacity rising and then falling to avoid a sudden, attention-grabbing onset. It was positioned near a nodule. The gorilla's **rectangular bounding volume** was approximately **48 times** the mean nodule bounding volume in the images; this is a bounding-box comparison, not a measure of how much anatomical tissue was occupied.
 
 Participants were told to identify and click on nodules. Nine radiologists were tested in Boston and fifteen at a professional meeting in Louisville. An eye-tracking apparatus recorded where they looked. The participants could move through the scans freely within the research protocol.
 
@@ -23,7 +23,7 @@ After the final scan, investigators asked whether anything had seemed different,
 
 On average, radiologists who missed the gorilla spent **5.8 seconds** viewing the slices in which it appeared. Across the search they encountered those slices more than once. That is a long time compared with a fleeting television frame, but the task involved moving through complicated medical images in search of something else.
 
-Then came the eye-tracking result: **twelve of the twenty who missed the gorilla fixated its location** when it was present. Those twelve spent an average of **547 milliseconds** looking there. Eye position is not identical to attention, recognition, or conscious report. But it provides unusual evidence that the critical location was available to their sight without producing an acknowledged sighting of the figure.
+Then came the eye-tracking result: **twelve of the twenty who missed the gorilla fixated its location** when it was present. Those twelve had a mean **547 milliseconds of gaze dwell time at the gorilla location**; the reported measure should not be construed as one uninterrupted fixation. Eye position is not identical to attention, recognition, or conscious report. But it provides unusual evidence that the critical location was available to their sight without producing an acknowledged sighting of the figure.
 
 That separation is the heart of the investigation. A ray of light reaching the eye does not automatically become a meaningful item in awareness.
 
