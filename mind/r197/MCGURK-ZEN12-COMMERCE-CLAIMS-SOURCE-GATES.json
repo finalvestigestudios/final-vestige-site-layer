@@ -1,0 +1,629 @@
+{
+  "milestone": "R197",
+  "date": "2026-11-07",
+  "lane": "Final Vestige Mind & Perception only",
+  "state": "BUILT_ARTIFACTS_PENDING_QA_UNPUBLISHED_COMMERCIAL_HARD_HOLD",
+  "pilot_offer": "Zen12 Premium conditional; NOT approved/activated",
+  "affiliate_earning_url": null,
+  "authoritative_affiliate_approval": null,
+  "owned_payhip_mind_sku": null,
+  "actual_paid_orders": null,
+  "received_commissions": null,
+  "net_revenue_per_1000_qualified_humans": "NOT_COMPUTABLE",
+  "source_review_note": "Primary scientific sources + exact seller pages/FTC, public partner signup only. Public sales prices and guarantees are seller display—not verified checkout, terms or results.",
+  "sources": [
+    {
+      "id": "mcgurk1976",
+      "url": "https://doi.org/10.1038/264746a0",
+      "type": "peer-reviewed primary: abstract",
+      "note": "Auditory ba dubbed with visual ga, reported fused syllable; reversed dubbing yielded different responses."
+    },
+    {
+      "id": "brown2018",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30418995/",
+      "type": "peer-reviewed primary: abstract",
+      "note": "Individual susceptibility variation; visual place-of-articulation extraction relationship; not general cognitive scores."
+    },
+    {
+      "id": "feng2019",
+      "url": "https://doi.org/10.3389/fnins.2019.01029",
+      "type": "peer-reviewed primary: full text",
+      "note": "324 Mandarin-speaking twins, 9 stimuli, 150 retests, r=.55, small explained variance; not deterministic."
+    },
+    {
+      "id": "marian2018",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5977076/",
+      "type": "peer-reviewed primary: full text",
+      "note": "Under studied conditions bilinguals showed more audiovisual fusion."
+    },
+    {
+      "id": "slagt2007",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1865565/",
+      "type": "peer-reviewed primary: full text",
+      "note": "Intensive 3-month retreat, 17 self-selected retreat vs 23 briefly trained controls, nonrandom."
+    },
+    {
+      "id": "chun1995",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/7707027/",
+      "type": "peer-reviewed primary: abstract",
+      "note": "Attentional blink seven experiments, not seven conditions."
+    },
+    {
+      "id": "grassi2021",
+      "url": "https://doi.org/10.3758/s13428-020-01457-6",
+      "type": "peer-reviewed primary: replication",
+      "note": "Two experiments underlying one FLoRA replication record; variability in timing, accuracy, lag-one."
+    },
+    {
+      "id": "inspire",
+      "url": "https://inspire3.com/",
+      "type": "seller catalog",
+      "note": "Lists Zen12, Hypnosis Live and Brainwave Shots; do not adopt its psychological outcomes."
+    },
+    {
+      "id": "zen12",
+      "url": "https://zen12.com/hnp",
+      "type": "exact seller offer",
+      "note": "Premium: 12 levels, 48 MP3, four styles and advertised one-year refund; page prices displayed but checkout and refunds unverified."
+    },
+    {
+      "id": "hypnosis",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "type": "exact seller offer",
+      "note": "Total Focus 33 minutes and 47 MB; 14-day advertised seller refund; price and outcome claims not independently verified."
+    },
+    {
+      "id": "brainwave",
+      "url": "https://brainwaveshots.com/",
+      "type": "seller catalog",
+      "note": "Lists Focus Shot, Brain Power Shot; does not prove branded efficacy or affiliate authorization."
+    },
+    {
+      "id": "affiliate",
+      "url": "https://affiliates.inspire3.com/",
+      "type": "public partner portal",
+      "note": "Open affiliate application and advertised commission marketing, not a publisher-specific accepted account/issued earning URL."
+    },
+    {
+      "id": "ftc_endorse",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "type": "regulatory",
+      "note": "Clear conspicuous near-link commission disclosure; 'affiliate link' alone may be unclear."
+    },
+    {
+      "id": "ftc_health",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "type": "regulatory",
+      "note": "Product-relevant evidence required for objective health/psychological outcomes; no evidence inheritance."
+    },
+    {
+      "id": "focus",
+      "url": "https://finalvestige.com/focus/",
+      "type": "observed published page",
+      "note": "52-page Seven Day Focus Fieldbook, sole existing newsletter funnel."
+    },
+    {
+      "id": "dispatch",
+      "url": "https://finalvestige.com/dispatch/",
+      "type": "observed published page",
+      "note": "Single established Dispatch subscription; native authority determines confirmed leads."
+    },
+    {
+      "id": "puys",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "type": "issue-171 attested published archive",
+      "note": "Historical archive; direct web fetch intermittently unavailable, no independent live verification this sprint."
+    },
+    {
+      "id": "mesmer",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "type": "issue-171 attested published investigation",
+      "note": "Historical 1784 commission editorial link; direct web fetch intermittently unavailable."
+    },
+    {
+      "id": "change",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "type": "issue-171 attested published investigation",
+      "note": "Published article reported by issue, no guarantee current URL response."
+    },
+    {
+      "id": "issue171",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "type": "internal source of truth",
+      "note": "Editorial lane, release holds and issue coordination."
+    },
+    {
+      "id": "issue820",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "type": "internal source of truth",
+      "note": "Traffic quality and conversion evidence contract."
+    },
+    {
+      "id": "pr188",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/1384",
+      "type": "prior unpublished source",
+      "note": "A/B text only vs optional 42-second unrendered concept; disabled controls."
+    },
+    {
+      "id": "r196_review",
+      "url": "https://docs.google.com/document/d/1uK7cZdMv44dkKwDDGILUTCrI2zw3iA0cN5VzdLmF5C8/edit",
+      "type": "independent internal QA",
+      "note": "Praxxis requested Slagter nonrandom group details, seven experiments, replication nuances; corrections applied R197."
+    }
+  ],
+  "claims": [
+    {
+      "id": "physical_audio",
+      "source_ids": [
+        "mcgurk1976"
+      ],
+      "assertion": "Audio ba paired with visual ga in original experiment",
+      "decision": "source-grounded",
+      "limitations": "Only particular recording and stimuli."
+    },
+    {
+      "id": "fusion",
+      "source_ids": [
+        "mcgurk1976"
+      ],
+      "assertion": "Some observers reported fused da with mismatch",
+      "decision": "source-grounded",
+      "limitations": "Not all people or syllables."
+    },
+    {
+      "id": "reverse_dubbing",
+      "source_ids": [
+        "mcgurk1976"
+      ],
+      "assertion": "Reverse mismatch yielded different compound reports",
+      "decision": "source-grounded",
+      "limitations": "Do not simplify as the same da on both pairings."
+    },
+    {
+      "id": "audio_remains",
+      "source_ids": [
+        "mcgurk1976"
+      ],
+      "assertion": "Physical soundtrack does not change when reported syllable changes",
+      "decision": "methodological inference",
+      "limitations": "Requires controls to establish physically recorded source."
+    },
+    {
+      "id": "variation",
+      "source_ids": [
+        "brown2018"
+      ],
+      "assertion": "Large interindividual McGurk susceptibility variance",
+      "decision": "source-grounded",
+      "limitations": "Cannot diagnose cognition."
+    },
+    {
+      "id": "vis_skill",
+      "source_ids": [
+        "brown2018"
+      ],
+      "assertion": "Visual articulation extraction related to susceptibility",
+      "decision": "source-grounded-association",
+      "limitations": "Correlational, not causal training effect."
+    },
+    {
+      "id": "no_gencognition",
+      "source_ids": [
+        "brown2018"
+      ],
+      "assertion": "No reported relation to tested attention, WM, speed measures",
+      "decision": "source-grounded",
+      "limitations": "Not a broad proof that cognition never matters."
+    },
+    {
+      "id": "twin_sample",
+      "source_ids": [
+        "feng2019"
+      ],
+      "assertion": "324 twins, 9 stimuli, 150 retested",
+      "decision": "source-grounded",
+      "limitations": "Native Mandarin-speaking cohort."
+    },
+    {
+      "id": "retest",
+      "source_ids": [
+        "feng2019"
+      ],
+      "assertion": "Two-year retest correlation r=0.55",
+      "decision": "source-grounded",
+      "limitations": "Subset; no universal stability."
+    },
+    {
+      "id": "family_variance",
+      "source_ids": [
+        "feng2019"
+      ],
+      "assertion": "5.5 percent explained variance",
+      "decision": "source-grounded",
+      "limitations": "No simple inheritance or individual prediction."
+    },
+    {
+      "id": "lang",
+      "source_ids": [
+        "marian2018"
+      ],
+      "assertion": "Bilingual participants reported more fusion in tested design",
+      "decision": "source-grounded",
+      "limitations": "Depends on participants, language, syllables."
+    },
+    {
+      "id": "not_diagnostic",
+      "source_ids": [
+        "brown2018"
+      ],
+      "assertion": "McGurk susceptibility is not a test of superior focus or mental health",
+      "decision": "editorial constraint",
+      "limitations": "Avoid implied health or cognitive diagnosis."
+    },
+    {
+      "id": "slagt_groups",
+      "source_ids": [
+        "slagt2007"
+      ],
+      "assertion": "17 self-selected experienced retreat vs 23 brief-practice controls",
+      "decision": "source-grounded",
+      "limitations": "3-month, 10-12h/day; NONrandom."
+    },
+    {
+      "id": "slagt_outcome",
+      "source_ids": [
+        "slagt2007"
+      ],
+      "assertion": "Reduced AB in retreat vs control related to P3b measure",
+      "decision": "source-grounded-association",
+      "limitations": "Not a Zen12 efficacy trial."
+    },
+    {
+      "id": "chun7",
+      "source_ids": [
+        "chun1995"
+      ],
+      "assertion": "Chun and Potter reported seven experiments",
+      "decision": "source-grounded",
+      "limitations": "Corrects inherited 'seven experimental conditions'."
+    },
+    {
+      "id": "replication2",
+      "source_ids": [
+        "grassi2021"
+      ],
+      "assertion": "FLoRA's one record references two replication experiments",
+      "decision": "source-grounded",
+      "limitations": "Avoid blanket failure or success claims."
+    },
+    {
+      "id": "inspire_catalog",
+      "source_ids": [
+        "inspire"
+      ],
+      "assertion": "Inspire3 lists several mind-audio offers",
+      "decision": "seller-description",
+      "limitations": "Not scientific endorsement."
+    },
+    {
+      "id": "zen_specs",
+      "source_ids": [
+        "zen12"
+      ],
+      "assertion": "Premium advertises 12 levels, 48 MP3, four styles",
+      "decision": "seller-description",
+      "limitations": "No independent fulfillment or purchasing test."
+    },
+    {
+      "id": "zen_guarantee",
+      "source_ids": [
+        "zen12"
+      ],
+      "assertion": "Seller advertises one-year refund guarantee",
+      "decision": "seller-description",
+      "limitations": "Refund terms/processing untested; no promise from FV."
+    },
+    {
+      "id": "zen_equiv",
+      "source_ids": [
+        "zen12"
+      ],
+      "assertion": "Seller claims 12 minutes delivers benefits of hour of advanced meditation",
+      "decision": "UNSUBSTANTIATED - DO NOT ADOPT",
+      "limitations": "No independent branded-product equivalence trial seen."
+    },
+    {
+      "id": "zen_health",
+      "source_ids": [
+        "zen12"
+      ],
+      "assertion": "Seller claims cognitive, stress, health benefits",
+      "decision": "UNSUBSTANTIATED - DO NOT ADOPT",
+      "limitations": "FTC product-specific claim support required."
+    },
+    {
+      "id": "zen_price",
+      "source_ids": [
+        "zen12"
+      ],
+      "assertion": "Seller displays public prices/promotions",
+      "decision": "OBSERVED_PUBLIC_NOT_VERIFIED_CHECKOUT",
+      "limitations": "Do not present final payable price or savings on presell."
+    },
+    {
+      "id": "hyp_specs",
+      "source_ids": [
+        "hypnosis"
+      ],
+      "assertion": "Total Focus described as 33 minutes/47MB",
+      "decision": "seller-description",
+      "limitations": "Not firsthand playback or delivery evidence."
+    },
+    {
+      "id": "hyp_focus",
+      "source_ids": [
+        "hypnosis"
+      ],
+      "assertion": "Total Focus branded focus/brain reprogramming outcomes",
+      "decision": "UNSUBSTANTIATED - DO NOT ADOPT",
+      "limitations": "No exact SKU independent controlled proof."
+    },
+    {
+      "id": "brainwave_claims",
+      "source_ids": [
+        "brainwave"
+      ],
+      "assertion": "Brainwave Shots catalog offers many mood/health/performance titles",
+      "decision": "seller-description",
+      "limitations": "Titles are not clinical efficacy data."
+    },
+    {
+      "id": "publisher",
+      "source_ids": [
+        "affiliate"
+      ],
+      "assertion": "Public affiliate program exists",
+      "decision": "public-only",
+      "limitations": "Does not verify named FV acceptance, channels, link, commission."
+    },
+    {
+      "id": "mail_review",
+      "source_ids": [
+        "issue171"
+      ],
+      "assertion": "Bounded Gmail review found promotional seller email rather than affiliate acceptance",
+      "decision": "partial-negative",
+      "limitations": "Search limited; not definitive account verification."
+    },
+    {
+      "id": "paidsku",
+      "source_ids": [
+        "issue820"
+      ],
+      "assertion": "No authenticated rights-cleared paid FV Mind SKU",
+      "decision": "UNKNOWN",
+      "limitations": "Public search cannot prove absence or test checkout."
+    },
+    {
+      "id": "focus_landing",
+      "source_ids": [
+        "focus"
+      ],
+      "assertion": "Fieldbook is free 52-page existing offer",
+      "decision": "live-page-verified",
+      "limitations": "Gift visibility != confirmed subscription."
+    },
+    {
+      "id": "jetpack_confirm",
+      "source_ids": [
+        "issue820"
+      ],
+      "assertion": "Authenticated Jetpack subscriber record required",
+      "decision": "required-verification",
+      "limitations": "Never treat client-side PDF as confirmed lead."
+    },
+    {
+      "id": "FTC_disclosure",
+      "source_ids": [
+        "ftc_endorse"
+      ],
+      "assertion": "Prospective near-link plain English disclosure",
+      "decision": "required-when-active",
+      "limitations": "No earning link activation yet."
+    },
+    {
+      "id": "FTC_health",
+      "source_ids": [
+        "ftc_health"
+      ],
+      "assertion": "Marketing claims require adequate product-specific substantiation",
+      "decision": "required",
+      "limitations": "A paper on general meditation not product proof."
+    },
+    {
+      "id": "ab_state",
+      "source_ids": [
+        "pr188"
+      ],
+      "assertion": "Existing text/video A/B draft and optional 42s concept",
+      "decision": "SOURCE_CONTROL_ONLY",
+      "limitations": "No media rendered, no live randomized human test."
+    },
+    {
+      "id": "net_kpi",
+      "source_ids": [
+        "issue820"
+      ],
+      "assertion": "Net revenue per 1000 qualified human sessions",
+      "decision": "NOT_COMPUTABLE",
+      "limitations": "No matched paid orders, attribution, refunds, fees, eligible sessions."
+    }
+  ],
+  "release_gates": [
+    {
+      "id": "affiliate_named_approval",
+      "owner": "Founder/Mind",
+      "acceptance": "Written named FV account approval",
+      "status": "OPEN",
+      "evidence": "NONE"
+    },
+    {
+      "id": "affiliate_channels",
+      "owner": "Founder/Mind",
+      "acceptance": "Permitted website, social and email channels",
+      "status": "OPEN",
+      "evidence": "NONE"
+    },
+    {
+      "id": "affiliate_tracking",
+      "owner": "Founder/Mind",
+      "acceptance": "Account-issued earning URL and link/attribution policy",
+      "status": "OPEN",
+      "evidence": "NONE"
+    },
+    {
+      "id": "affiliate_creative",
+      "owner": "Founder/Mind",
+      "acceptance": "Approved creative and permitted usage rights",
+      "status": "OPEN",
+      "evidence": "NONE"
+    },
+    {
+      "id": "affiliate_products",
+      "owner": "Founder/Mind",
+      "acceptance": "Exact qualifying products and compensation terms",
+      "status": "OPEN",
+      "evidence": "NONE"
+    },
+    {
+      "id": "merchant_checkout",
+      "owner": "Commerce",
+      "acceptance": "Authenticated user-visible price/taxes/delivery verified",
+      "status": "OPEN",
+      "evidence": "NONE"
+    },
+    {
+      "id": "merchant_refund",
+      "owner": "Commerce",
+      "acceptance": "Terms and fulfillment/refund process verified",
+      "status": "OPEN",
+      "evidence": "NONE"
+    },
+    {
+      "id": "product_claim_substantiation",
+      "owner": "Mind QA",
+      "acceptance": "Branded objective claims have adequate direct evidence or deleted",
+      "status": "OPEN",
+      "evidence": "PARTIAL: unsafe claims withheld"
+    },
+    {
+      "id": "ownedSKU_rights",
+      "owner": "Commerce",
+      "acceptance": "Rights-cleared FV-owned paid Mind SKU",
+      "status": "OPEN",
+      "evidence": "NONE"
+    },
+    {
+      "id": "ownedSKU_listing",
+      "owner": "Commerce",
+      "acceptance": "Current public priced SKU and checkout path",
+      "status": "OPEN",
+      "evidence": "NONE"
+    },
+    {
+      "id": "ownedSKU_delivery",
+      "owner": "Commerce",
+      "acceptance": "Successful authorized order/fulfillment test",
+      "status": "OPEN",
+      "evidence": "NONE"
+    },
+    {
+      "id": "published_article",
+      "owner": "Editor",
+      "acceptance": "Founder/editorial approval and live verified article",
+      "status": "OPEN",
+      "evidence": "NONE"
+    },
+    {
+      "id": "mind_release",
+      "owner": "Founder/Claude",
+      "acceptance": "Approved live Mind hub, browser QA and navigation",
+      "status": "OPEN",
+      "evidence": "NONE"
+    },
+    {
+      "id": "video_rights",
+      "owner": "Grok",
+      "acceptance": "Original licensed video, captions, transcript and 30-45s file",
+      "status": "OPEN",
+      "evidence": "NONE"
+    },
+    {
+      "id": "video_test",
+      "owner": "Site QA",
+      "acceptance": "Real-browser playback + opt-in controls",
+      "status": "OPEN",
+      "evidence": "NONE"
+    },
+    {
+      "id": "grok_asset_ids",
+      "owner": "Grok/Praxxis",
+      "acceptance": "Actual published asset_id links and accepted UTM plan",
+      "status": "OPEN",
+      "evidence": "NONE"
+    },
+    {
+      "id": "privacy",
+      "owner": "Site QA",
+      "acceptance": "Consent/legal review and no duplicate tracking scripts",
+      "status": "OPEN",
+      "evidence": "NONE"
+    },
+    {
+      "id": "lead_proof",
+      "owner": "Site QA/Dispatch",
+      "acceptance": "Confirmed subscriber backed by Jetpack authority",
+      "status": "OPEN",
+      "evidence": "NONE"
+    },
+    {
+      "id": "paid_order",
+      "owner": "Commerce",
+      "acceptance": "Merchant-confirmed purchased order, not click",
+      "status": "OPEN",
+      "evidence": "NONE"
+    },
+    {
+      "id": "net_revenue",
+      "owner": "Commerce",
+      "acceptance": "Settled amounts, fees, refunds, reversals",
+      "status": "OPEN",
+      "evidence": "NONE"
+    },
+    {
+      "id": "qualified_sessions",
+      "owner": "Analytics",
+      "acceptance": "Human-traffic definition and trusted cohort denominator",
+      "status": "OPEN",
+      "evidence": "NONE"
+    },
+    {
+      "id": "QA_browser",
+      "owner": "Site QA",
+      "acceptance": "360/390/768/1440 keyboard, SR, contrast, no-JS, performance",
+      "status": "OPEN",
+      "evidence": "NONE"
+    },
+    {
+      "id": "release",
+      "owner": "Founder",
+      "acceptance": "Explicit required publish/deploy/affiliate activation approval",
+      "status": "OPEN",
+      "evidence": "NONE"
+    }
+  ],
+  "disclosure_proposed": "If you purchase through this link, Final Vestige may earn a commission at no additional cost to you.",
+  "disclosure_status": "Prospective copy only; no active paid earning URL",
+  "research_separation": "Perception investigation has no buying recommendation; merchant data appears only in separated reviews.",
+  "evidence_caution": "No publisher approval/commission/confirmed subscriber/paid order assertion inferred from public pages or email promotions."
+}

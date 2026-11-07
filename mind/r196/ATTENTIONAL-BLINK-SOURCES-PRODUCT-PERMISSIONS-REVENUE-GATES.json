@@ -22,7 +22,7 @@
       "id": "chun1995",
       "url": "https://pubmed.ncbi.nlm.nih.gov/7707027/",
       "type": "primary-abstract",
-      "note": "7 experimental conditions, 200–500 ms T2 deficit and two-stage interpretation"
+      "note": "7 experiments, 200–500 ms T2 deficit and two-stage interpretation"
     },
     {
       "id": "olivers2007",
@@ -40,7 +40,7 @@
       "id": "slagter2007",
       "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1865565/",
       "type": "primary-full-text",
-      "note": "3-month intensive meditation training, AB task and EEG; not Zen12 study"
+      "note": "17 experienced self-selected retreat meditators (3 months, 10–12h/day) vs 23 meditation-naïve brief-practice controls; nonrandom comparison; no commercial audio"
     },
     {
       "id": "martens2006",
@@ -52,7 +52,7 @@
       "id": "originalreplication",
       "url": "https://forrt.org/flora-replication-atlas/doi/10.1037/0096-1523.18.3.849/",
       "type": "replication-index",
-      "note": "Replication atlas summarizes one mixed-recorded replication, not universal invalidation"
+      "note": "FLoRA indexed record; underlying Grassi et al. 2021 paper reports two replications with timing/accuracy/lag-1 differences, not blanket disconfirmation"
     },
     {
       "id": "inspirecatalog",
@@ -143,6 +143,18 @@
       "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/1435",
       "type": "independent-review-target",
       "note": "QA corrections implemented on isolated R196 branch, not original PR"
+    },
+    {
+      "id": "grassi2021",
+      "url": "https://doi.org/10.3758/s13428-020-01457-6",
+      "type": "primary-replication",
+      "note": "Two replication experiments underlying one FLoRA record; nuanced mixed timing/lag-1 findings"
+    },
+    {
+      "id": "praxxisQA196",
+      "url": "https://docs.google.com/document/d/1uK7cZdMv44dkKwDDGILUTCrI2zw3iA0cN5VzdLmF5C8/edit",
+      "type": "independent-QA",
+      "note": "Praxxis read-back R196 science precision review, nonrandom retreat and 7 experiments"
     }
   ],
   "claims": [
@@ -207,7 +219,7 @@
       ],
       "assertion": "Intensive training associated with reduced AB and P3b change",
       "decision": "study-supported",
-      "limitations": "3-month intensity; not commercial audio"
+      "limitations": "17 self-selected intensive retreat meditators (3 months, 10–12h/day) vs 23 meditation-naïve controls with brief instruction/practice; nonrandom, not branded audio"
     },
     {
       "id": "interindividual",
@@ -225,7 +237,7 @@
       ],
       "assertion": "Replication index records mixed finding",
       "decision": "index-report",
-      "limitations": "Not independently read full replication; avoid universal claim"
+      "limitations": "The FLoRA entry indexes Grassi et al.'s two replication experiments; one reported timing/accuracy/lag-1 deviations; do not assert universal failure"
     },
     {
       "id": "puys_scope",
