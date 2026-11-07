@@ -1,0 +1,583 @@
+{
+  "milestone": "R203",
+  "dated": "2026-11-07",
+  "status": "UNPUBLISHED_NOT_LIVE",
+  "category": "Mind & Perception",
+  "source_count": 19,
+  "claim_count": 31,
+  "open_gate_count": 30,
+  "sources": [
+    {
+      "id": "S01",
+      "title": "Johansson et al 2005 original choice-blindness experiment",
+      "url": "https://www.lunduniversity.lu.se/publication/c579a9b6-1b4a-4572-932e-0ff15f9832b4",
+      "evidence_level": "university publication + abstract"
+    },
+    {
+      "id": "S02",
+      "title": "Hall et al 2010 supermarket jam/tea experiment",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/20637455/",
+      "evidence_level": "PubMed abstract"
+    },
+    {
+      "id": "S03",
+      "title": "Hall Johansson Strandberg 2012 moral survey",
+      "url": "https://portal.research.lu.se/en/publications/lifting-the-veil-of-morality-choice-blindness-and-attitude-revers/",
+      "evidence_level": "university abstract"
+    },
+    {
+      "id": "S04",
+      "title": "Hall et al 2013 political questionnaire",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23593244/",
+      "evidence_level": "PubMed abstract"
+    },
+    {
+      "id": "S05",
+      "title": "McLaughlin Somerville 2013 pension portfolio experiment",
+      "url": "https://www.cambridge.org/core/journals/judgment-and-decision-making/article/choice-blindness-in-financial-decision-making/74173A560D9294AE9A8D51FAF3A70FA6",
+      "evidence_level": "publisher full-text original 2013 issue"
+    },
+    {
+      "id": "S06",
+      "title": "Lund University Choice Blindness Lab bibliography",
+      "url": "https://www.lucs.lu.se/research/choice-blindness-lab/publications/",
+      "evidence_level": "research-group bibliography, not independent replication"
+    },
+    {
+      "id": "S07",
+      "title": "Zen12 Premium EXACT seller page",
+      "url": "https://zen12.com/hnp",
+      "evidence_level": "official seller primary commerce claims accessed 2026-11-07"
+    },
+    {
+      "id": "S08",
+      "title": "Inspire3 public catalog",
+      "url": "https://inspire3.com/",
+      "evidence_level": "official corporate seller page"
+    },
+    {
+      "id": "S09",
+      "title": "Inspire3 public partner recruitment (not individual acceptance)",
+      "url": "https://affiliates.inspire3.com/",
+      "evidence_level": "public portal; private account unverified"
+    },
+    {
+      "id": "S10",
+      "title": "FTC Endorsements FAQ",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "evidence_level": "government primary compliance"
+    },
+    {
+      "id": "S11",
+      "title": "FTC Health Products Compliance Guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "evidence_level": "government primary compliance"
+    },
+    {
+      "id": "S12",
+      "title": "Final Vestige live focus",
+      "url": "https://finalvestige.com/focus/",
+      "evidence_level": "live first-party resource, signup success not independently confirmed"
+    },
+    {
+      "id": "S13",
+      "title": "Final Vestige live Change Blindness",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "evidence_level": "live FV investigation"
+    },
+    {
+      "id": "S14",
+      "title": "Final Vestige live Mesmerism",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "evidence_level": "live FV investigation"
+    },
+    {
+      "id": "S15",
+      "title": "Final Vestige Puységur historical files",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "evidence_level": "published according to GitHub issue; web page inaccessible in present public fetch"
+    },
+    {
+      "id": "S16",
+      "title": "Corneille et al 2022 corrigendum to repetition research",
+      "url": "https://doi.org/10.1016/j.cognition.2021.104996",
+      "evidence_level": "doi metadata + independent Praxxis document review"
+    },
+    {
+      "id": "S17",
+      "title": "Brashier Eliseev Marsh conditional accuracy-focus intervention",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31473395/",
+      "evidence_level": "PubMed indexed + independent Praxxis review"
+    },
+    {
+      "id": "S18",
+      "title": "Williams et al 2024 brief audio mindfulness review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38215647/",
+      "evidence_level": "PubMed indexed, high bias, attention not pooled in prior reviewer analysis"
+    },
+    {
+      "id": "S19",
+      "title": "Lund University choice blindness original DOI",
+      "url": "https://doi.org/10.1126/science.1111709",
+      "evidence_level": "original paper doi"
+    }
+  ],
+  "claims": [
+    {
+      "id": "CB01",
+      "statement": "Choice blindness was named and demonstrated for switched face choices in 2005",
+      "decision": "supported within original experimental scope",
+      "source_ids": [
+        "S01",
+        "S19"
+      ],
+      "limit": "laboratory face preferences only"
+    },
+    {
+      "id": "CB02",
+      "statement": "Nobody notices when an outcome is swapped",
+      "decision": "exclude",
+      "source_ids": [
+        "S01",
+        "S02"
+      ],
+      "limit": "detection occurs and rates depend on study conditions"
+    },
+    {
+      "id": "CB03",
+      "statement": "In supermarket jam/tea study at most a third manipulated trials detected",
+      "decision": "supported as abstract-level report",
+      "source_ids": [
+        "S02"
+      ],
+      "limit": "not a general consumer statistic"
+    },
+    {
+      "id": "CB04",
+      "statement": "69 percent missed at least one of two moral-survey reversals",
+      "decision": "supported for study design",
+      "source_ids": [
+        "S03"
+      ],
+      "limit": "not 69% morally manipulable"
+    },
+    {
+      "id": "CB05",
+      "statement": "2013 political study proves reliable election manipulation",
+      "decision": "exclude",
+      "source_ids": [
+        "S04"
+      ],
+      "limit": "context-specific experimental responses not field effectiveness"
+    },
+    {
+      "id": "CB06",
+      "statement": "2013 pension choice study has 98 usable records",
+      "decision": "supported",
+      "source_ids": [
+        "S05"
+      ],
+      "limit": "hypothetical portfolio not real pension transaction"
+    },
+    {
+      "id": "CB07",
+      "statement": "Pension study proved actual portfolio money was moved",
+      "decision": "exclude",
+      "source_ids": [
+        "S05"
+      ],
+      "limit": "no real invested portfolio in experiment"
+    },
+    {
+      "id": "CB08",
+      "statement": "Pension study detected at most 37.2% of manipulated trials across conditions",
+      "decision": "supported within sample and counting",
+      "source_ids": [
+        "S05"
+      ],
+      "limit": "not probability for all investors"
+    },
+    {
+      "id": "CB09",
+      "statement": "Choice blindness is identical to change blindness",
+      "decision": "exclude",
+      "source_ids": [
+        "S01",
+        "S13"
+      ],
+      "limit": "choice/action/feedback and visual scene change differ"
+    },
+    {
+      "id": "CB10",
+      "statement": "Choice blindness validates clinical hypnosis",
+      "decision": "exclude",
+      "source_ids": [
+        "S01",
+        "S03"
+      ],
+      "limit": "no therapy study"
+    },
+    {
+      "id": "CB11",
+      "statement": "Paper purchase decision record is a proven debiasing treatment",
+      "decision": "exclude",
+      "source_ids": [
+        "S01",
+        "S05"
+      ],
+      "limit": "proposed editorial aid, not experimentally validated"
+    },
+    {
+      "id": "CB12",
+      "statement": "Puységur documents establish modern hypnotic audio efficacy",
+      "decision": "exclude",
+      "source_ids": [
+        "S15"
+      ],
+      "limit": "historical primary/secondary account, not audio trial"
+    },
+    {
+      "id": "Z01",
+      "statement": "Zen12 Premium seller lists twelve levels and forty-eight MP3s",
+      "decision": "seller-reported inventory",
+      "source_ids": [
+        "S07"
+      ],
+      "limit": "not independently verified delivery"
+    },
+    {
+      "id": "Z02",
+      "statement": "Zen12 seller describes four styles",
+      "decision": "seller-reported product description",
+      "source_ids": [
+        "S07"
+      ],
+      "limit": "actual files uninspected"
+    },
+    {
+      "id": "Z03",
+      "statement": "Zen12 seller displayed $87.99 on 2026-11-07",
+      "decision": "dated seller-page observation only",
+      "source_ids": [
+        "S07"
+      ],
+      "limit": "not verified checkout cost; prices may change"
+    },
+    {
+      "id": "Z04",
+      "statement": "Zen12 seller advertises one-year money back guarantee",
+      "decision": "seller-reported policy",
+      "source_ids": [
+        "S07"
+      ],
+      "limit": "not independently verified refund eligibility or processing"
+    },
+    {
+      "id": "Z05",
+      "statement": "Twelve minutes of Zen12 equals an hour of meditation",
+      "decision": "unsupported product-specific efficacy claim: exclude",
+      "source_ids": [
+        "S07",
+        "S11"
+      ],
+      "limit": "marketing assertion without adequate branded trials"
+    },
+    {
+      "id": "Z06",
+      "statement": "Zen12 automatically treats anxiety or clinical disorders",
+      "decision": "unsupported health claim: exclude",
+      "source_ids": [
+        "S07",
+        "S11"
+      ],
+      "limit": "never promise treatment"
+    },
+    {
+      "id": "Z07",
+      "statement": "Inspire3 public catalog links to Zen12",
+      "decision": "supported corporate listing",
+      "source_ids": [
+        "S08"
+      ],
+      "limit": "does not establish commercial partner status"
+    },
+    {
+      "id": "Z08",
+      "statement": "Public Inspire3 recruitment confirms FV-specific approval",
+      "decision": "exclude",
+      "source_ids": [
+        "S09"
+      ],
+      "limit": "private partner account acceptance unverified"
+    },
+    {
+      "id": "Z09",
+      "statement": "FV commission rate and cookie duration are X",
+      "decision": "unknown: do not state",
+      "source_ids": [
+        "S09"
+      ],
+      "limit": "no account-specific terms"
+    },
+    {
+      "id": "Z10",
+      "statement": "FV owns an issued Zen12 earning URL",
+      "decision": "unverified: hard hold",
+      "source_ids": [
+        "S09"
+      ],
+      "limit": "no link to publish"
+    },
+    {
+      "id": "FTC01",
+      "statement": "FTC requires clear conspicuous material relationship disclosure",
+      "decision": "supported",
+      "source_ids": [
+        "S10"
+      ],
+      "limit": "near earning link; not footer-only"
+    },
+    {
+      "id": "FTC02",
+      "statement": "General meditation research substitutes for product-specific health proof",
+      "decision": "exclude",
+      "source_ids": [
+        "S11"
+      ],
+      "limit": "must assess implied and express claim and evidence"
+    },
+    {
+      "id": "FOCUS01",
+      "statement": "Existing free Focus Fieldbook is on /focus/",
+      "decision": "supported first-party page",
+      "source_ids": [
+        "S12"
+      ],
+      "limit": "does not prove a signup was confirmed"
+    },
+    {
+      "id": "FOCUS02",
+      "statement": "PDF appeared so email subscriber confirmed",
+      "decision": "exclude",
+      "source_ids": [
+        "S12"
+      ],
+      "limit": "must verify authoritative Jetpack backend"
+    },
+    {
+      "id": "TRACK01",
+      "statement": "Outbound affiliate click counts as a sale",
+      "decision": "exclude",
+      "source_ids": [
+        "S10"
+      ],
+      "limit": "merchant transaction confirmation required"
+    },
+    {
+      "id": "TRACK02",
+      "statement": "Viewcount equals qualified human sessions",
+      "decision": "exclude",
+      "source_ids": [
+        "S12"
+      ],
+      "limit": "bot/internal traffic and person identity quality unresolved"
+    },
+    {
+      "id": "EDITOR01",
+      "statement": "Corneille 2020 repetition study's fakeness question was factual truth",
+      "decision": "corrected: inappropriate conflation",
+      "source_ids": [
+        "S16"
+      ],
+      "limit": "2022 corrigendum and fake-news-on-social-media measure now disclosed"
+    },
+    {
+      "id": "EDITOR02",
+      "statement": "Brashier 2020 tested the FV source-check ledger",
+      "decision": "exclude",
+      "source_ids": [
+        "S17"
+      ],
+      "limit": "tested initial truth vs interest ratings, not web searches"
+    },
+    {
+      "id": "EDITOR03",
+      "statement": "Williams 2024 pooled attention outcomes to prove benefit",
+      "decision": "exclude",
+      "source_ids": [
+        "S18"
+      ],
+      "limit": "attention nonpoolable, high bias and low certainty"
+    }
+  ],
+  "commerce_gates": [
+    {
+      "id": "G01",
+      "gate": "verified named FV publisher acceptance",
+      "status": "OPEN"
+    },
+    {
+      "id": "G02",
+      "gate": "verified allowed website content channel",
+      "status": "OPEN"
+    },
+    {
+      "id": "G03",
+      "gate": "verified allowed organic social channel",
+      "status": "OPEN"
+    },
+    {
+      "id": "G04",
+      "gate": "verified allowed email marketing channel",
+      "status": "OPEN"
+    },
+    {
+      "id": "G05",
+      "gate": "account-issued Zen12 tracking URL",
+      "status": "OPEN"
+    },
+    {
+      "id": "G06",
+      "gate": "authorized link format and parameter policy",
+      "status": "OPEN"
+    },
+    {
+      "id": "G07",
+      "gate": "authenticated commission/refund/attribution terms",
+      "status": "OPEN"
+    },
+    {
+      "id": "G08",
+      "gate": "approved creative/swipe license if used",
+      "status": "OPEN"
+    },
+    {
+      "id": "G09",
+      "gate": "latest exact merchant page re-read before release",
+      "status": "OPEN"
+    },
+    {
+      "id": "G10",
+      "gate": "actual checkout tax and total verification",
+      "status": "OPEN"
+    },
+    {
+      "id": "G11",
+      "gate": "product delivery/fulfillment verification",
+      "status": "OPEN"
+    },
+    {
+      "id": "G12",
+      "gate": "refund eligibility and evidence review",
+      "status": "OPEN"
+    },
+    {
+      "id": "G13",
+      "gate": "product-specific efficacy support for any objective benefit claim",
+      "status": "OPEN"
+    },
+    {
+      "id": "G14",
+      "gate": "near-link FTC disclosure present in all responsive modes",
+      "status": "OPEN"
+    },
+    {
+      "id": "G15",
+      "gate": "no invented experience or endorsements",
+      "status": "OPEN"
+    },
+    {
+      "id": "G16",
+      "gate": "founder approval of copy and channel",
+      "status": "OPEN"
+    },
+    {
+      "id": "G17",
+      "gate": "founder production release approval",
+      "status": "OPEN"
+    },
+    {
+      "id": "G18",
+      "gate": "independent Site QA keyboard/zoom/a11y checks",
+      "status": "OPEN"
+    },
+    {
+      "id": "G19",
+      "gate": "real mobile viewport screenshots 360/390/768/1440/1920",
+      "status": "OPEN"
+    },
+    {
+      "id": "G20",
+      "gate": "native Node and browser test execution",
+      "status": "OPEN"
+    },
+    {
+      "id": "G21",
+      "gate": "CI on exact final commit",
+      "status": "OPEN"
+    },
+    {
+      "id": "G22",
+      "gate": "optional video rights and caption playback proof",
+      "status": "OPEN"
+    },
+    {
+      "id": "G23",
+      "gate": "CWV/LCP checks before optional media",
+      "status": "OPEN"
+    },
+    {
+      "id": "G24",
+      "gate": "existing Jetpack confirmed lead verification",
+      "status": "OPEN"
+    },
+    {
+      "id": "G25",
+      "gate": "Grok actual asset IDs and live destinations",
+      "status": "OPEN"
+    },
+    {
+      "id": "G26",
+      "gate": "privacy-safe first-party event review with Claude",
+      "status": "OPEN"
+    },
+    {
+      "id": "G27",
+      "gate": "verified merchant purchase or commission report",
+      "status": "OPEN"
+    },
+    {
+      "id": "G28",
+      "gate": "refund/fee reconciliation before net-revenue KPI",
+      "status": "OPEN"
+    },
+    {
+      "id": "G29",
+      "gate": "FV-owned Payhip eligible Mind SKU/rights/checkout verification",
+      "status": "OPEN"
+    },
+    {
+      "id": "G30",
+      "gate": "no new subscription system or duplicate analytics scripts",
+      "status": "OPEN"
+    }
+  ],
+  "owned_payhip_mind_fallback": {
+    "state": "UNVERIFIED",
+    "reason": "No authenticated sellable rights-cleared Mind SKU plus checkout/terms independently verified"
+  },
+  "inspire3_publisher": {
+    "state": "UNVERIFIED",
+    "basis": "Public catalog/portal and bounded Gmail searches do not establish FV-specific account approval; private portal not accessed"
+  },
+  "revenue": {
+    "verified_paid_orders": null,
+    "affiliate_paid_commissions": null,
+    "qualified_human_sessions": null,
+    "net_revenue_per_1000_qualified_sessions": null,
+    "status": "NOT_COMPUTABLE_MISSING_DENOMINATOR_AND_CONFIRMED_TRANSACTIONS"
+  },
+  "allowed": "sourced independent editorial draft, existing free Focus route, inactive accessible commerce controls",
+  "prohibited": "active affiliate URL, invented price or efficacy, published WP, duplicate mailing lists or analytics, spam, fabricated attributable sales",
+  "revision_note": "R203 carries Praxxis reviewer corrections into R201 reader copy and R202 illusory truth wording/corrigendum. Applied corrections in isolated branch only."
+}
