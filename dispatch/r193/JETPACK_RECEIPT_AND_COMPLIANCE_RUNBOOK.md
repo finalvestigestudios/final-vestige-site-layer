@@ -1,0 +1,22 @@
+# R193 — Genuine Jetpack evidence and CAN-SPAM release procedure (read-only until separately approved)
+
+### Observed November 7, 2026, 20:35 UTC
+Connected WordPress Newsletter reports enabled=true, new-post send default OFF, full-content email, From name Final Vestige Studios, reply-to no-reply, welcome CONTENT includes the 52-page Focus Fieldbook URL. Five latest posts are never_sent_opted_out. Counts: headline total=3, confirmed=3, unconfirmed=2, suppressed=0; these counters are **not additive** and do not reveal actual email-eligible recipients. The "email-only follower" category (previously 0) is not a substitute for **Email subscription = Subscribed**. /dispatch/ and /focus/ exist as published pages; /focus/ displays the download panel on client-side state, not independent confirmation.
+
+### The one missing authoritative consent diagnostic
+In the WordPress Subscriber tab, apply **Email subscription = Subscribed**. Record only date, provider, count, status definitions and private evidence reference with PII redacted. Separately record Not subscribed (Reader-only), Not confirmed, Bounced and Emails paused counts if the UI offers aggregate filters. Do not export contact lists, share email addresses or fabricate the count when the API cannot filter. Confirm exact opt-in transition and lawful marketing consent provenance before eligibility can be claimed. Whether a confirmation request was mailed does not prove the reader clicked it.
+
+### Welcome receipt and native email preview
+Configured welcome text is NOT proof that a subscribed person received the final PDF. The October 25 connected Gmail request for confirmation is a different message; no final welcome was found in the bounded Gmail search. A genuine **received** MIME copy and provider delivery record must be inspected only for an authorized test recipient. No sending or test sends in this run.
+
+WordPress's official newsletter editor provides **Preview email** for desktop/tablet/mobile after a per-post send toggle is enabled in an unpublished editor. No accessible connected tool exposes that native preview. No editor draft, post creation or toggle is authorized in this run. This run's static table-based HTML is a reviewer design, not a native preview, nor an email client receipt. Native post title generally becomes email subject; a standalone Jetpack preheader field has not been verified. Current email_content_format is **full**, which supersedes dated "excerpt" notes; do not silently change settings.
+
+When specifically authorized in the future, inspect both actual native preview and separately approved received test: subject, line wraps, 320/390px layout, keyboard accessibility where supported, only one commercial CTA, clear adjacent commission disclosure, all research links, absence of hidden tracking pixels, recipient-specific unsubscribe actually shown and functioning for a designated test recipient, valid **Final Vestige-owned** postal address printed in the commercial message, From/Reply-To accuracy and whether the welcome PDF link works. Do not test opt-out on a real subscriber without explicit permission. Seller London address or Automattic address is not the Final Vestige publisher address.
+
+### Product-specific release documentary proofs (not present)
+Mind must privately verify named publisher affiliate acceptance, explicit permission to promote the selected Zen12 Premium offer **by email**, approved earning URL/format and creatives, current checkout total, refund and guarantee terms, actual live buyer guide, claim boundaries, and disclosures at the eventual merchant link. A public affiliate network home page and its claimed EPC or commission do not qualify. Keep private proof references opaque, not recipient/account PII in GitHub.
+
+### Final gate
+Only founder's subsequent **explicit final approval of creative, exact audience, dates and sending** permits any message. All six remain HOLD_UNSENT; both commercial slots further HOLD_MERCHANT. No WordPress settings, subscribers, posts, ads, tracking, list, affiliate links or payments changed here.
+
+Official sources: https://wordpress.com/support/newsletter/email-appearance/ (reviewed October 6, 2026); https://wordpress.com/support/subscribers/ (reviewed November 4, 2026); https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business ; https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking .
