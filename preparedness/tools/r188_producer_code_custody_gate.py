@@ -37,6 +37,7 @@ PINS = {
     'tools/r182_semantic_patch_reconciliation_gate.py': 'a2730ac6d221f387ca790e7f81f9981da0d25e23',
     'tools/r184_report_admission_gate.py': 'f55fc67280d7ceb81cbc50323171e50c64ed667d',
     'tools/r185_tool_custody_gate.py': 'fd9665aeaa18f57476e119da06ae60f56fd764c5',
+    'tools/r186_whole_archive_preflight.py': 'e18a7f4018c3f366a3dd551285faa3f61a7aea7c',
     'tools/r187_receipt_contract_gate.py': '8d423aa65b8dd60941579babee707bc8b226b369',
 }
 PINNED_PARENT_SHA = 'c881583358c485dcc02ca69e6cc275cd395a287a'
