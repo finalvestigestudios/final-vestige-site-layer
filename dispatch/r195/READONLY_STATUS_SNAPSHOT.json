@@ -1,0 +1,31 @@
+{
+  "as_of_utc": "2026-11-07T22:38:42Z",
+  "provenance": "authenticated WordPress read-only connector; separate public merchant/source review",
+  "newsletter_enabled": true,
+  "email_new_posts_by_default": false,
+  "email_content_format": "full",
+  "welcome_fieldbook_configured": true,
+  "subscribers": {
+    "total": 3,
+    "confirmed_counter": 3,
+    "unconfirmed_requests": 2,
+    "suppressed": 0,
+    "nonadditive": true
+  },
+  "followers": {
+    "wpcom": 3,
+    "email_only": 0,
+    "partial": false
+  },
+  "email_eligible_unique_count": null,
+  "received_fieldbook_welcome": null,
+  "verified_publisher_postal_address": null,
+  "verified_received_jetpack_unsubscribe": null,
+  "verified_inspire3_email_promotion_permission": null,
+  "zen12_warmup_guide_live": false,
+  "total_focus_warmup_guide_live": false,
+  "verified_paid_orders": null,
+  "qualified_human_sessions": null,
+  "net_revenue_per_1000": null,
+  "note": "Null means unverified, not zero. No subscriber personal data obtained."
+}
