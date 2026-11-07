@@ -105,7 +105,7 @@ async def run(base:str,original:str,improved:str,css:str,out:Path):
     report={'verdict':'OFFLINE_CHROMIUM_PASS_NOT_WORDPRESS_ACCEPTANCE','assertions':asserts,
       'baseline_confirmed_defect':'Searching catalog caution yields 0 / 6 with original verified JS',
       'replacement_verified_behavior':'Catalog caution 1/6, photograph provenance 6/6, no-result 0/6, reset 6/6',
-      'widths':WIDTHS,'browser_contexts':16,'reproducible_screenshots':matched,
+      'widths':WIDTHS,'browser_contexts':15,'reproducible_screenshots':matched,
       'screenshot_sha256':hashes,'page_errors':errors,'network_requests':network_calls,
       'fixture_LCP_CLS_NOT_REAL_SITE':performances,'genuine_axe_core':'NOT_RUN',
       'assisted_screen_reader':'NOT_RUN','wordpress_staging':'NOT_TESTED','real_media_delivery':'NOT_TESTED',
