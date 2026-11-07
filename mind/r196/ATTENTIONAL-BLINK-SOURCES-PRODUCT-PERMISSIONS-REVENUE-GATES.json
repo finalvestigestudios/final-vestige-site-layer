@@ -1,0 +1,548 @@
+{
+  "milestone": "R196",
+  "date": "2026-11-07",
+  "status": "BUILT_SOURCE_REVIEW_ONLY_UNPUBLISHED_NO_SALES",
+  "primary_pilot_offer": "Zen12 Premium (conditional and NOT authorized)",
+  "existing_owned_option": "No verifiable rights-cleared sellable FV Mind SKU; STOP alternative paid activation",
+  "affiliate_earning_url": null,
+  "publisher_acceptance": "NOT_VERIFIED",
+  "paid_order_count": null,
+  "received_affiliate_commissions": null,
+  "verified_net_revenue_per_1000_qualified_humans": "NOT_COMPUTABLE",
+  "verified_confirmed_jetpack_subscribers_from_this_pilot": null,
+  "source_access_note": "Science primary abstracts and Slagter full text; merchant sales page and public affiliate portal only; never imply authenticated affiliate account or checkout.",
+  "sources": [
+    {
+      "id": "raymond1992",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/1500880/",
+      "type": "primary-abstract",
+      "note": "1992 original target/probe RSVP, specific 180–450 ms interval"
+    },
+    {
+      "id": "chun1995",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/7707027/",
+      "type": "primary-abstract",
+      "note": "7 experimental conditions, 200–500 ms T2 deficit and two-stage interpretation"
+    },
+    {
+      "id": "olivers2007",
+      "url": "https://doi.org/10.1111/j.1467-8721.2007.00466.x",
+      "type": "peer-reviewed-review",
+      "note": "Temporal attention review: lag-1 sparing/benefits qualify simple blackout story"
+    },
+    {
+      "id": "dux2009",
+      "url": "https://doi.org/10.3758/APP.71.8.1683",
+      "type": "peer-reviewed-review",
+      "note": "Competing theoretical accounts and evidence"
+    },
+    {
+      "id": "slagter2007",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1865565/",
+      "type": "primary-full-text",
+      "note": "3-month intensive meditation training, AB task and EEG; not Zen12 study"
+    },
+    {
+      "id": "martens2006",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/16989545/",
+      "type": "primary-abstract",
+      "note": "Individual variation; some participants do not blink in paradigm"
+    },
+    {
+      "id": "originalreplication",
+      "url": "https://forrt.org/flora-replication-atlas/doi/10.1037/0096-1523.18.3.849/",
+      "type": "replication-index",
+      "note": "Replication atlas summarizes one mixed-recorded replication, not universal invalidation"
+    },
+    {
+      "id": "inspirecatalog",
+      "url": "https://inspire3.com/",
+      "type": "seller-catalog",
+      "note": "Lists Zen12, Hypnosis Live, Brainwave Shots; benefit copy is vendor-origin"
+    },
+    {
+      "id": "zen12offer",
+      "url": "https://zen12.com/hnp",
+      "type": "exact-public-seller-offer",
+      "note": "Premium 12 levels/48 MP3, user guide, 1-year advertised guarantee, public displayed price; no checkout proof"
+    },
+    {
+      "id": "totalfocusoffer",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "type": "separate-seller-offer",
+      "note": "Separate Total Focus downloadable product, not equal to Zen12"
+    },
+    {
+      "id": "affiliateportal",
+      "url": "https://affiliates.inspire3.com/",
+      "type": "public-application-page",
+      "note": "Open application, seller promises earnings; NOT FV acceptance or terms"
+    },
+    {
+      "id": "ftcendorse",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "type": "regulator-guidance",
+      "note": "Adjacent explicit material connection required"
+    },
+    {
+      "id": "ftchealth",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "type": "regulator-guidance",
+      "note": "Competent reliable specific scientific substantiation"
+    },
+    {
+      "id": "fieldbook",
+      "url": "https://finalvestige.com/focus/",
+      "type": "observed-live-site",
+      "note": "52-page Focus workbook; same Jetpack/Dispatch, confirmation status separate"
+    },
+    {
+      "id": "dispatch",
+      "url": "https://finalvestige.com/dispatch/",
+      "type": "observed-live-site",
+      "note": "Existing free Dispatch subscription"
+    },
+    {
+      "id": "puys",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "type": "reported-live-archive",
+      "note": "153 rows/16 dossiers per FV issue #171; web currently sometimes cache errors"
+    },
+    {
+      "id": "mesmerism",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "type": "reported-live-article",
+      "note": "1784 commission history"
+    },
+    {
+      "id": "change",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "type": "reported-live-article",
+      "note": "Published topic aligned to existing creator"
+    },
+    {
+      "id": "issue171",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "type": "coordination",
+      "note": "Lane owner and approval gates"
+    },
+    {
+      "id": "issue820",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "type": "coordination",
+      "note": "Net-revenue funnel and attribution definitions"
+    },
+    {
+      "id": "pr188",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/1384",
+      "type": "source-controlled-design",
+      "note": "Existing disabled A/B pages; 42-second unrendered storyboard"
+    },
+    {
+      "id": "qaR195",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/1435",
+      "type": "independent-review-target",
+      "note": "QA corrections implemented on isolated R196 branch, not original PR"
+    }
+  ],
+  "claims": [
+    {
+      "id": "blink_time",
+      "source_ids": [
+        "raymond1992"
+      ],
+      "assertion": "Probe detection degraded in a 270ms interval starting 180ms after target",
+      "decision": "supported-task-specific",
+      "limitations": "Not universal momentary blindness"
+    },
+    {
+      "id": "blink_conditional",
+      "source_ids": [
+        "raymond1992"
+      ],
+      "assertion": "Blank interval or removing T1 identification changes deficit",
+      "decision": "supported-task-specific",
+      "limitations": "Task causality inferred from experimental manipulation"
+    },
+    {
+      "id": "two_target_window",
+      "source_ids": [
+        "chun1995"
+      ],
+      "assertion": "T2 identification impaired in a typical 200–500ms window",
+      "decision": "supported-task-specific",
+      "limitations": "T1 correct conditional; specific RSVP studies"
+    },
+    {
+      "id": "two_stage_model",
+      "source_ids": [
+        "chun1995"
+      ],
+      "assertion": "Two-stage explanation proposed for consolidation",
+      "decision": "research-model",
+      "limitations": "Alternative explanations exist"
+    },
+    {
+      "id": "lag1",
+      "source_ids": [
+        "olivers2007"
+      ],
+      "assertion": "Succeeding targets can be spared at lag one",
+      "decision": "review-supported",
+      "limitations": "Depends on paradigm and conditions"
+    },
+    {
+      "id": "multi_models",
+      "source_ids": [
+        "dux2009"
+      ],
+      "assertion": "Attentional blink has several competing mechanisms",
+      "decision": "review-supported",
+      "limitations": "Avoid 'brain shuts down' simplification"
+    },
+    {
+      "id": "training_task",
+      "source_ids": [
+        "slagter2007"
+      ],
+      "assertion": "Intensive training associated with reduced AB and P3b change",
+      "decision": "study-supported",
+      "limitations": "3-month intensity; not commercial audio"
+    },
+    {
+      "id": "interindividual",
+      "source_ids": [
+        "martens2006"
+      ],
+      "assertion": "Participants differ and some show no AB",
+      "decision": "study-supported",
+      "limitations": "No clinical norms or diagnosis"
+    },
+    {
+      "id": "replication",
+      "source_ids": [
+        "originalreplication"
+      ],
+      "assertion": "Replication index records mixed finding",
+      "decision": "index-report",
+      "limitations": "Not independently read full replication; avoid universal claim"
+    },
+    {
+      "id": "puys_scope",
+      "source_ids": [
+        "puys"
+      ],
+      "assertion": "Puységur records concern 18c historical testimony",
+      "decision": "archive-historical",
+      "limitations": "Not modern clinical trial"
+    },
+    {
+      "id": "franklin_scope",
+      "source_ids": [
+        "mesmerism"
+      ],
+      "assertion": "Mesmerism research distinguishes observed outcomes from magnetic mechanism",
+      "decision": "archive-historical",
+      "limitations": "Not proof of commercial audio"
+    },
+    {
+      "id": "fieldbook_scope",
+      "source_ids": [
+        "fieldbook"
+      ],
+      "assertion": "Fieldbook publicly described as free 52-page workbook",
+      "decision": "public-route-observed",
+      "limitations": "Authoritative Jetpack confirmed lead unknown"
+    },
+    {
+      "id": "focus_lead_proxy",
+      "source_ids": [
+        "issue820"
+      ],
+      "assertion": "Gift/PDF visible means confirmed opted-in lead",
+      "decision": "FALSE_UNSAFE_PROXY",
+      "limitations": "Do not report confirmed_signup from client state"
+    },
+    {
+      "id": "vendor_catalog",
+      "source_ids": [
+        "inspirecatalog"
+      ],
+      "assertion": "Zen12 Hypnosis Live and Brainwave Shots are Inspire3 offerings",
+      "decision": "seller-catalog-supported",
+      "limitations": "Not scientific support"
+    },
+    {
+      "id": "zen12_feature",
+      "source_ids": [
+        "zen12offer"
+      ],
+      "assertion": "Premium describes 12 progressive levels and 48 MP3",
+      "decision": "seller-described-feature",
+      "limitations": "Delivery not independently purchased"
+    },
+    {
+      "id": "zen12_guarantee",
+      "source_ids": [
+        "zen12offer"
+      ],
+      "assertion": "Advertised 1-year money-back guarantee",
+      "decision": "seller-advertised-term",
+      "limitations": "Actual conditions/settled refund unverified"
+    },
+    {
+      "id": "zen12_price",
+      "source_ids": [
+        "zen12offer"
+      ],
+      "assertion": "Public price displayed",
+      "decision": "seller-price-observation",
+      "limitations": "Checkout final total/currency tax/discount not independently verified; no price in draft offer"
+    },
+    {
+      "id": "zen12_equivalence",
+      "source_ids": [
+        "zen12offer"
+      ],
+      "assertion": "12 minutes equal 1 hour deep meditation",
+      "decision": "UNSUBSTANTIATED_SELLER_CLAIM",
+      "limitations": "Do not use as benefit CTA"
+    },
+    {
+      "id": "zen12_focus",
+      "source_ids": [
+        "zen12offer"
+      ],
+      "assertion": "Recordings produce sustained better concentration or health",
+      "decision": "UNSUBSTANTIATED_SELLER_CLAIM",
+      "limitations": "No product-specific controlled evidence supplied"
+    },
+    {
+      "id": "totalfocus_specs",
+      "source_ids": [
+        "totalfocusoffer"
+      ],
+      "assertion": "Total Focus is separate 33-minute 47MB audio seller SKU",
+      "decision": "seller-described-feature",
+      "limitations": "Not independent delivery evidence"
+    },
+    {
+      "id": "program_exists",
+      "source_ids": [
+        "affiliateportal"
+      ],
+      "assertion": "Public Inspire3 affiliate application exists",
+      "decision": "verified-public",
+      "limitations": "Does not mean FV account approved"
+    },
+    {
+      "id": "program_payout",
+      "source_ids": [
+        "affiliateportal"
+      ],
+      "assertion": "Public landing advertises commissions",
+      "decision": "seller-marketing-not-FV-terms",
+      "limitations": "Never assert FV commission rate or entitlement"
+    },
+    {
+      "id": "fv_publisher",
+      "source_ids": [
+        "affiliateportal"
+      ],
+      "assertion": "Named Final Vestige affiliate acceptance exists",
+      "decision": "NOT_VERIFIED",
+      "limitations": "Targeted Gmail search yielded no named approval; authenticated account needed"
+    },
+    {
+      "id": "fv_earning",
+      "source_ids": [
+        "affiliateportal"
+      ],
+      "assertion": "Approved tracking URL issued to FV",
+      "decision": "NOT_VERIFIED",
+      "limitations": "No earning URL may be activated"
+    },
+    {
+      "id": "approved_creative",
+      "source_ids": [
+        "affiliateportal"
+      ],
+      "assertion": "Publisher's specific creative permissions/swipes approved",
+      "decision": "NOT_VERIFIED",
+      "limitations": "Public assets not automatically reusable"
+    },
+    {
+      "id": "product_eff_transference",
+      "source_ids": [
+        "ftchealth"
+      ],
+      "assertion": "General attentional blink experiment proves Zen12 efficacy",
+      "decision": "NOT_SUPPORTED",
+      "limitations": "Requires product-specific substantiation"
+    },
+    {
+      "id": "disclosure_close",
+      "source_ids": [
+        "ftcendorse"
+      ],
+      "assertion": "Potential material connection disclosed beside future CTA",
+      "decision": "required-prospective",
+      "limitations": "A distant policy page is insufficient"
+    },
+    {
+      "id": "grok_ids",
+      "source_ids": [
+        "issue820"
+      ],
+      "assertion": "Three exact published Grok asset IDs reconciled",
+      "decision": "NOT_VERIFIED",
+      "limitations": "Do not invent media IDs"
+    },
+    {
+      "id": "payhip_sku",
+      "source_ids": [
+        "issue820"
+      ],
+      "assertion": "Owned paid Mind SKU with authenticated pricing returns delivery",
+      "decision": "NOT_VERIFIED",
+      "limitations": "Gmail search not product fulfillment proof"
+    },
+    {
+      "id": "verified_orders",
+      "source_ids": [
+        "issue820"
+      ],
+      "assertion": "Outbound clicks equal completed paid orders",
+      "decision": "FALSE_UNSAFE_PROXY",
+      "limitations": "Merchant-paid settlement and refund/fee reconciliation needed"
+    }
+  ],
+  "gates": [
+    {
+      "id": "named_partner_approval",
+      "owner": "Founder/Mind",
+      "proof_needed": "Authenticated named acceptance + date",
+      "passed": false
+    },
+    {
+      "id": "allowed_channel",
+      "owner": "Founder/Mind",
+      "proof_needed": "Terms for organic/social/email websites",
+      "passed": false
+    },
+    {
+      "id": "issued_earning_url",
+      "owner": "Founder/Mind",
+      "proof_needed": "Publisher-issued link and tracking rules",
+      "passed": false
+    },
+    {
+      "id": "approved_creatives",
+      "owner": "Founder/Mind",
+      "proof_needed": "Actual licensed approved swipe/images if used",
+      "passed": false
+    },
+    {
+      "id": "exact_offer_accuracy",
+      "owner": "Mind/QA",
+      "proof_needed": "Real SKU, checkout terms cross-check",
+      "passed": false
+    },
+    {
+      "id": "product_specific_claim_proof",
+      "owner": "Mind/QA",
+      "proof_needed": "No unsupported health/psychological promise",
+      "passed": false
+    },
+    {
+      "id": "refund_payment",
+      "owner": "Commerce",
+      "proof_needed": "Checkout total/refund policy/fulfillment proof",
+      "passed": false
+    },
+    {
+      "id": "owned_sku",
+      "owner": "Commerce",
+      "proof_needed": "Actual saleable FV Mind SKU and licensed contents",
+      "passed": false
+    },
+    {
+      "id": "owned_checkout",
+      "owner": "Commerce",
+      "proof_needed": "Signed-out checkout/delivery/fee/refund proof",
+      "passed": false
+    },
+    {
+      "id": "cta_disabled",
+      "owner": "Site QA",
+      "proof_needed": "Controls continue natively disabled until release",
+      "passed": false
+    },
+    {
+      "id": "disclosure_accessibility",
+      "owner": "Site QA",
+      "proof_needed": "Adjacent clear disclosure read by assistive tech",
+      "passed": false
+    },
+    {
+      "id": "video_rendered",
+      "owner": "Mind/Site QA",
+      "proof_needed": "Optional captioned 42-second asset, poster/transcript",
+      "passed": false
+    },
+    {
+      "id": "ab_equal_content",
+      "owner": "Mind/Site QA",
+      "proof_needed": "A and B same text aside from optional video",
+      "passed": false
+    },
+    {
+      "id": "browser_360_390_768_1440",
+      "owner": "Site QA",
+      "proof_needed": "Real browser keyboard/touch/WCAG evidence",
+      "passed": false
+    },
+    {
+      "id": "no_duplicate_measurement",
+      "owner": "Claude/Analytics",
+      "proof_needed": "Inspect exact existing scripts and consent",
+      "passed": false
+    },
+    {
+      "id": "grok_media_ids",
+      "owner": "Grok/Praxxis",
+      "proof_needed": "Real post ID, approved destination, dated metadata",
+      "passed": false
+    },
+    {
+      "id": "confirmed_signup",
+      "owner": "Claude/Site QA",
+      "proof_needed": "Provider confirmed Jetpack opt-in, not client gift",
+      "passed": false
+    },
+    {
+      "id": "authoritative_orders",
+      "owner": "Commerce",
+      "proof_needed": "Merchant paid order/commission and reversals",
+      "passed": false
+    },
+    {
+      "id": "qualified_denominator",
+      "owner": "Analytics",
+      "proof_needed": "Verified qualified humans in 7/30 day cohorts",
+      "passed": false
+    },
+    {
+      "id": "founder_release",
+      "owner": "Founder",
+      "proof_needed": "Separate publication/commercial activation approval",
+      "passed": false
+    },
+    {
+      "id": "ci_native",
+      "owner": "Site QA",
+      "proof_needed": "Full-checkout Node + CI + WP assembly/QA",
+      "passed": false
+    }
+  ]
+}
