@@ -56,7 +56,14 @@ def build():
             'fv-ex2-apollo-r194.php':php.encode()}
     for name,data in assets.items():
         path=DIST/name;path.parent.mkdir(parents=True,exist_ok=True);path.write_bytes(data)
-    parent_shim=(PARENT/'wp-render-shim-r193.php').read_text().replace('r193','r194').replace('R193','R194')
+    shim=(PARENT/'wp-render-shim-r193.php')
+    if shim.exists():
+        parent_shim=shim.read_text().replace('r193','r194').replace('R193','R194')
+    else:
+        # R193's builder does not emit a shim; its QA gate does. The full
+        # GitHub ancestry includes this pinned, independent R191 QA source.
+        base_shim=HERE.parent/'apollo-r191'/'qa'/'wp_render_shim.php'
+        parent_shim=base_shim.read_text().replace('r191','r194').replace('R191','R194')
     (DIST/'wp-render-shim-r194.php').write_text(parent_shim)
     ledger={
       'release':'r194','parent':'R193 draft PR #1433 / cb9dbcc8ffa1fbaf9f57f8a1a37a770361570d12',
