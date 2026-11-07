@@ -28,7 +28,7 @@ ok(!a.includes('id="optional-film"')&&b.includes('id="optional-film"'),"film B o
 ok(b.includes("viewBox=")&&b.includes("<title id=\"poster-title\"")&&b.includes("<desc id=\"poster-desc\""),"accessible original SVG poster");
 ok(b.includes("00–07")&&b.includes("37–42")&&b.includes("transcript"),"42s timed transcript");
 ok(!/<video[^>]*autoplay/i.test(b),"no forced playback");
-ok((a.match(/https:\/\/finalvestige.com\/focus\//g)||[]).length===1,"one Focus CTA guide");
+ok((a.match(/class="btn" href="https:\/\/finalvestige.com\/focus\/"/g)||[]).length===1,"one primary Focus CTA guide");
 ok((hub.match(/https:\/\/finalvestige.com\/focus\//g)||[]).length===2,"existing Focus in hub only");
 ok(/2019/.test(art)&&/22 randomized controlled trials/i.test(art),"self hypnosis RCT review scoped");
 ok(/audio.*someone else/i.test(art),"audio versus taught distinction");
