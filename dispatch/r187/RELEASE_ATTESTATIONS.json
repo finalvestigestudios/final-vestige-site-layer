@@ -1,0 +1,56 @@
+{
+  "snapshot_utc": "2026-11-07T14:37:30Z",
+  "status": "ALL_SIX_HOLD_UNSENT",
+  "master_pr": 175,
+  "readiness_pr": 201,
+  "base_pr": 1418,
+  "mix": {
+    "editorial": 4,
+    "commercial_pending": 2
+  },
+  "original_manuscripts_unchanged": true,
+  "optional_lind_issue_04_replacement_approved": false,
+  "wordpress": {
+    "newsletter_enabled": true,
+    "auto_send": false,
+    "format": "full",
+    "sender": "Final Vestige Studios",
+    "reply_to": "no-reply",
+    "total": 3,
+    "confirmed": 3,
+    "unconfirmed": 2,
+    "suppressed": 0,
+    "verified_email_eligible": null,
+    "welcome_configured": true,
+    "welcome_received_verified": false,
+    "recent_five_opted_out": true
+  },
+  "commercial": {
+    "specific_partner_account_approved": false,
+    "email_channel_permission": false,
+    "authorized_earning_link": null,
+    "approved_live_guide": null,
+    "independent_product_efficacy_verified": false,
+    "verified_checkout_terms": false,
+    "verified_refund_execution": false
+  },
+  "footer": {
+    "actual_jetpack_rendered_preview": false,
+    "valid_final_vestige_postal_in_email": false,
+    "functional_unsubscribe_in_received_mail": false
+  },
+  "funnel": {
+    "provider_confirmed_signup_evidence": false,
+    "actual_grok_asset_id": null,
+    "qualified_human_sessions": null,
+    "independently_reported_settled_orders": null,
+    "refunds_and_fees": null,
+    "net_revenue_per_1000": null
+  },
+  "approval": {
+    "content_audience_schedule": false,
+    "send_authorized": false,
+    "wordpress_post_authorized": false,
+    "merchant_activation_authorized": false
+  }
+}
