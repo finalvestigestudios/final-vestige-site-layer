@@ -34,14 +34,14 @@ test('no fabricated revenue or paid sales',()=>{
 });
 test('source-led optional letter truthful and with one destination',()=>{
  const md=file('02_OPTIONAL_CLEVER_HANS_UNSENT.md'),html=file('02_EMAIL_SAFE_OFFLINE_REVIEW.html'),txt=file('02_PLAINTEXT_REVIEW.txt');
- for(const body of [md,txt,html]){assert.match(body,/The horse that knew when to stop/);assert.match(body,/finalvestige.com\\/2026\\/11\\/02\\/mesmerism/);assert.match(body,/DO NOT SEND|UNSENT/);}
+ for(const body of [md,txt,html]){assert.match(body,/The horse that knew when to stop/);assert.match(body,/finalvestige.com\/2026\/11\/02\/mesmerism/);assert.match(body,/DO NOT SEND|UNSENT/);}
  assert.match(md,/98%/);assert.match(md,/8%/);assert.match(md,/Pfungst/);assert.match(md,/1911/);
  assert.match(html,/role="presentation"/);assert.match(html,/lang="en"/);assert.match(html,/max-width:600px/);
 });
 test('unsendable footers are not substituted by platform addresses',()=>{
  for(const text of [file('02_OPTIONAL_CLEVER_HANS_UNSENT.md'),file('02_PLAINTEXT_REVIEW.txt'),file('02_EMAIL_SAFE_OFFLINE_REVIEW.html')]){
- assert.match(text,/\\[\\[VALID_POSTAL_ADDRESS_REQUIRED\\]\\]/);assert.match(text,/\\[\\[JETPACK_UNSUBSCRIBE_LINK_MUST_BE_VERIFIED\\]\\]/);
- assert.doesNotMatch(text,/(https?:\\/\\/)?(www\\.)?awin1\\.com\\/cread/);
+ assert.match(text,/\[\[VALID_POSTAL_ADDRESS_REQUIRED\]\]/);assert.match(text,/\[\[JETPACK_UNSUBSCRIBE_LINK_MUST_BE_VERIFIED\]\]/);
+ assert.doesNotMatch(text,/(https?:\/\/)?(www\.)?awin1\.com\/cread/);
  }
 });
 test('no production writes represented',()=>{
