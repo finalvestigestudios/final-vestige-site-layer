@@ -68,7 +68,7 @@ function mutations(f){
  ["invent revenue","evidence",s=>s.replace('"realized_net_revenue": null','"realized_net_revenue": 100')],
  ["invent denominator","evidence",s=>s.replace('"qualified_human_sessions": null','"qualified_human_sessions": 2000')],
  ["invent owned SKU","evidence",s=>s.replace('"verified_owned_payhip_mind_sku": null','"verified_owned_payhip_mind_sku": "made-up"')],
- ["remove source","guide",s=>s.replace("10.1080/00207144.2024.2434085","MISSING-DOI")],
+ ["remove source","guide",s=>s.replace(/10\.1080\/00207144\.2024\.2434085/g,"MISSING-DOI")],
  ["restore misleading white bear protocol","whitebear",s=>s.replace("instruction to think about the white bear","permission to think about the white bear")],
  ["erase real FTC href","B",s=>s.replace("ftcs-endorsement-guides-what-people-are-asking","wrong-ftc-reference")],
  ["false poster alt","B",s=>s.replace("there is no white bear depicted","there is a depicted white bear")],
