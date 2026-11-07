@@ -7,6 +7,7 @@ from .keyboard_access import install_shortcuts
 from .form_layout import standard_stacked_rows
 from .scroll_access import ScrollableForm
 from .ui_errors import safe_error_message
+from .review_target import clear_auto_review_target, watch_auto_review_target
 
 APPS = {
     "ledger": ("LedgerDiff Lite", ["Left ledger CSV", "Right ledger CSV"], engine.ledger_diff, False),
@@ -210,6 +211,8 @@ def run(app_id):
     ui_label(frame, textvariable=status, wraplength=690).grid(
         row=status_row, column=0, columnspan=3, sticky="w", pady=(18, 8))
     def execute():
+        # Failed retries must not leave a previous exception report auto-selected.
+        clear_auto_review_target(last_report)
         if premium and not _require_current_premium_entitlement(root, app_id, entitlement_source):
             return
         if any(not p.get().strip() for p in selected):
@@ -282,6 +285,18 @@ def run(app_id):
     ui_label(frame, text=hint, wraplength=700).grid(
         row=hint_row, column=0, columnspan=3,
         sticky="w", pady=(6, 0))
+    if premium:
+        # Any source, output, policy, or optional mapping edit invalidates the
+        # implicit latest report. Earlier reports remain explicitly browseable
+        # in the entitlement-checked human review window.
+        review_inputs = [*selected, output, rules]
+        if ledger_columns:
+            review_inputs.extend(ledger_columns)
+        if ledger_amount_columns:
+            review_inputs.extend(ledger_amount_columns)
+        if invoice_window is not None:
+            review_inputs.append(invoice_window)
+        watch_auto_review_target(review_inputs, last_report)
     install_shortcuts(root, input_controls, (output_entry, output_browse),
                       generate_button, review=review_button,
                       invoice_window=invoice_window_entry,
