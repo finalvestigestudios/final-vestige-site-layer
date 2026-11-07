@@ -6,6 +6,8 @@ payments. A source path is evidence navigation, never compliance approval.
 from __future__ import annotations
 
 import ast
+import hashlib
+import json
 import os
 import sys
 import tempfile
@@ -55,7 +57,20 @@ class ReportDestinationCustodyR253(unittest.TestCase):
         prefix, layout = PREMIUM[app]
         package = self.output / (prefix + BUNDLE_STAMP)
         package.mkdir()
-        return [self.artifact(package, stem, ext) for stem, ext in layout]
+        files = [self.artifact(package, stem, ext) for stem, ext in layout]
+        # The real premium publisher inventories source files first, then
+        # reports in their returned order. Keep inherited R253 fixtures honest.
+        report_lines = [
+            f"{json.dumps(p.name, ensure_ascii=True)[1:-1]}\t"
+            f"{hashlib.sha256(p.read_bytes()).hexdigest()}\n"
+            for p in files[:-1]
+        ]
+        source_lines = [f"source-{i}.csv\t" + "a" * 64 + "\n" for i in range(3)]
+        files[-1].write_text(
+            "SHA-256 file inventory. Hashes do not certify accuracy or compliance.\n"
+            + "".join(source_lines + report_lines), encoding="ascii"
+        )
+        return files
 
     def verify(self, files, app):
         return confirm_report_files(files, folder=str(self.output), app_id=app)
