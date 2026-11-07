@@ -13,10 +13,11 @@ function validate(x){
  let legacy=0;
  for(let i=0;i<(x.rows||[]).length;i++){
   const r=x.rows[i],tag="slot"+i;if(!r){bad(tag);continue}
-  if(r.slot!=="432:"+i||r.article_url!==x.post.url||r.published_alt!==undefined&&!r.published_alt)bad(tag+":identity");
+  if(r.slot!=="432:"+i||r.article_url!==x.post.url||typeof r.published_alt!=="string"||!r.published_alt)bad(tag+":identity");
   if(r.published_source_url!=="https://www.floridamemory.com"+paths[i])bad(tag+":src");
   let c=r.official_catalog||{};
-  if(c.id!==ids[i]||c.url!=="https://floridamemory.com/items/show/"+nums[i]||c.title?.length<8||c.date!==dates[i]||c.record_image_path!==paths[i]||c.catalog_search_verified!==true||c.catalog_http_status!==null||c.original_binary_match!==null)bad(tag+":catalog");
+  if(c.id!==ids[i]||c.url!=="https://floridamemory.com/items/show/"+nums[i]||typeof c.title!=="string"||c.title.length<8||c.date!==dates[i]||c.record_image_path!==paths[i]||c.catalog_search_verified!==true||c.catalog_http_status!==null||c.original_binary_match!==null)bad(tag+":catalog");
+  if(typeof r.published_anchor_url!=="string"||!(r.published_anchor_url.startsWith("https://floridamemory.com/")||r.published_anchor_url.startsWith("https://www.floridamemory.com/")))bad(tag+":anchor-host");
   const exact=pathOf(r.published_anchor_url)==="/items/show/"+nums[i];
   if(r.deep_link_status!==(exact?"EXACT_ITEM_LINK":"LEGACY_GENERIC_LINK"))bad(tag+":anchor");
   if(!exact)legacy++;
