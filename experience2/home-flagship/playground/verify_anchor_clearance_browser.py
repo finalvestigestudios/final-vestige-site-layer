@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Native fragment-link clearance in the exact EX2 Playground Blueprint.
+"""Native chapter-heading clearance in the exact EX2 Playground Blueprint.
 Offline Chromium source test only: NOT WordPress/Assembler, axe, Lighthouse or Jetpack.
 """
 import argparse
@@ -53,11 +53,14 @@ def test(blueprint, dest):
                     if with_js:
                         page.add_script_tag(content=js)
                     assert page.evaluate("document.documentElement.scrollWidth <= innerWidth + 1")
-                    for chapter in CHAPTERS[1:]:
+                    for chapter in CHAPTERS:
+                        page.evaluate("window.scrollTo(0, document.documentElement.scrollHeight / 2)")
                         page.evaluate("""id => document.querySelector('.fv-hf__chapter-nav a[href="#' + id + '"]').click()""", chapter)
                         page.wait_for_timeout(30)
                         dims = page.evaluate('''id => {
-                          const r=document.getElementById(id).getBoundingClientRect(),
+                          const t=document.getElementById(id);
+                          const h=t.matches("h1,h2,h3") ? t : (t.querySelector("h1,h2,h3") || t);
+                          const r=h.getBoundingClientRect(),
                                 n=document.querySelector(".fv-hf__chapter-nav").getBoundingClientRect();
                           return {y:r.top, navBottom:n.bottom, hash:location.hash,
                                   clearance:r.top-n.bottom};
@@ -81,7 +84,7 @@ def test(blueprint, dest):
               "limits": "Exact HTML/CSS/JS static Chromium only; media intentionally blocked; no WP shell.",
               **receipts}
     (dest / "anchor_clearance_receipt.json").write_text(json.dumps(result, indent=2))
-    assert receipts["before"]["failed"] > 0, "negative control failed to reproduce overlap"
+    assert receipts["before"]["failed"] > 0, "negative control failed to reproduce hidden headings"
     assert receipts["after"]["failed"] == 0, "native chapter target occluded"
     print(json.dumps({key: {k: v for k, v in val.items() if k != "results"} for key, val in receipts.items()}, indent=2))
 
