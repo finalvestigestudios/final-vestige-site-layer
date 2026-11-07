@@ -1,9 +1,10 @@
-"""Fail closed on CPython-mediated network activity in all six desktop apps.
+"""Fail closed on CPython-mediated network and child-process activity in all apps.
 
 The suite is an offline financial tool: it has no justified network runtime
 operation, including loopback sockets, DNS lookups, or browser requests. The
 process-global CPython audit hook is intentionally not removable at runtime.
-This is defense in depth, not an OS firewall against untrusted native code.
+Block audited child-process creation too: a shell can otherwise bypass the
+Python socket fence. This is defense in depth, not an OS sandbox.
 """
 from __future__ import annotations
 
@@ -24,6 +25,16 @@ _BLOCKED_EVENTS = frozenset({
 })
 
 
+# External child processes can make their own network requests without the
+# parent's CPython audit hook. Never delegate local customer data to shells,
+# file-association handlers, or child interpreters. These are CPython's public
+# audit event names on the supported Windows/POSIX source-test platforms.
+_BLOCKED_PROCESS_EVENTS = frozenset({
+    "subprocess.Popen", "os.system", "os.spawn", "os.posix_spawn",
+    "os.exec", "os.fork", "os.forkpty", "os.startfile", "os.startfile/2",
+})
+
+
 def _reject_network(event: str, args: tuple[object, ...]) -> None:
     # Never format args: event payloads can contain confidential client data,
     # local paths, credentials, and hostnames. Deny ALL socket transports,
@@ -32,6 +43,8 @@ def _reject_network(event: str, args: tuple[object, ...]) -> None:
         raise _OfflineGuardProbe()
     if event in _BLOCKED_EVENTS:
         raise PermissionError("Network access is disabled for Final Vestige Labs")
+    if event in _BLOCKED_PROCESS_EVENTS:
+        raise PermissionError("External process launch is disabled for Final Vestige Labs")
 
 
 def install_offline_guard() -> None:
