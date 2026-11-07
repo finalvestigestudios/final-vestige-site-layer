@@ -606,6 +606,10 @@ jobs:
         run: |
           python -W error -m unittest discover -s products/desktop/tests -p 'test_review_target_r246.py'
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_review_target_r246.py'
+      - name: R247 fail-closed premium review entitlement revocation (normal and -OO)
+        run: |
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_review_revocation_r247.py'
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_review_revocation_r247.py'
       - name: Verify full normal/optimized source provenance and six smokes (R57)
         run: |
           mkdir -p "$RUNNER_TEMP/fvs-source"
@@ -1772,6 +1776,14 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R246 normal premium review target FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_review_target_r246.py'
           if ($LASTEXITCODE -ne 0) { throw "R246 optimized premium review target FAILED" }
+      - name: R247 Windows premium review entitlement revocation (normal and -OO)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_review_revocation_r247.py'
+          if ($LASTEXITCODE -ne 0) { throw "R247 normal premium entitlement revocation FAILED" }
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_review_revocation_r247.py'
+          if ($LASTEXITCODE -ne 0) { throw "R247 optimized premium entitlement revocation FAILED" }
       - name: Verify full normal/optimized source suite before packaging (R57)
         shell: pwsh
         run: |
