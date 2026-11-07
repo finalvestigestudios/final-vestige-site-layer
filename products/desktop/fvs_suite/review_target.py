@@ -33,20 +33,21 @@ def watch_auto_review_target(variables, report_slot: list[str | None]):
 
 
 def revalidate_or_revoke(authorize, clear_sensitive_view) -> bool:
-    """Recheck a premium entitlement; scrub the visible review on denial.
+    """Require affirmative offline proof; scrub the visible review on denial.
 
-    Revalidation is required *after* long-running modal file/password dialogs
-    as well as on entry to an operation. The viewer is only a UI protection:
-    entitlement signature validation still belongs to the trusted verifier.
-    The denial path never reflects license content, paths or exception text.
+    Every ordinary verifier failure, missing proof and proof-boolean error is
+    a denial. No verifier error details escape to the UI or diagnostic output.
+    The verifier remains authoritative; this wrapper cannot validate a license.
+    If the UI scrub itself fails, its exception is deliberately not concealed.
     """
     if not callable(authorize) or not callable(clear_sensitive_view):
         raise ValueError("Invalid premium authorization callbacks")
     try:
-        result = authorize()
-        if result is False:
-            raise ValueError("Premium entitlement denied")
-    except (ValueError, OSError, UnicodeError):
+        permitted = bool(authorize())
+    except Exception:
+        # A verifier dependency/programming failure must not leave previously
+        # loaded customer evidence visible or authorize a privileged action.
+        permitted = False
+    if not permitted:
         clear_sensitive_view()
-        return False
-    return True
+    return permitted

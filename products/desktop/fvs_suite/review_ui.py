@@ -21,8 +21,11 @@ def open_review_window(parent: tk.Misc, product: str, report_path: str | None = 
         raise ValueError("Review window is only available for premium products")
     if authorize is None:
         raise ValueError("Premium review requires a verified entitlement callback")
-    # Before constructing any data-consuming controls, revalidate the license.
-    authorize()
+    # Require affirmative, privacy-safe proof BEFORE constructing the window.
+    # A verifier returning None/False or unexpectedly failing must not open
+    # a workbench on an unverified premium entitlement.
+    if not revalidate_or_revoke(authorize, lambda: None):
+        raise ValueError("Premium entitlement denied")
 
     window = tk.Toplevel(parent)
     window.title("Final Vestige Labs — Human Exception Review")
