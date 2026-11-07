@@ -1,0 +1,183 @@
+{
+  "schema": "fv-mind-commercial-gates-v184",
+  "date_checked": "2026-11-06",
+  "branch": "mind-r184-attentional-blink-merchant-proof-20261106",
+  "product_focus": "Zen12 Premium",
+  "advertising_activation": false,
+  "partner": {
+    "publisher_named_approval": "UNVERIFIED",
+    "promotional_channels": "UNVERIFIED",
+    "authorized_earning_url": null,
+    "commissions": null,
+    "contact_method": "Authenticated Inspire3 affiliate account or written agreement required",
+    "public_program_url": "https://affiliates.inspire3.com/"
+  },
+  "owned_fallback": {
+    "payhip_inventory_authenticated": false,
+    "rights_manifest": "UNVERIFIED",
+    "sku": null,
+    "checkout_verified": false,
+    "settled_orders": null,
+    "decision": "NO QUALIFIED PAID MIND SKU VALIDATED — evaluate inventory first"
+  },
+  "merchant": {
+    "seller_home": "https://inspire3.com/",
+    "exact_offer": "https://zen12.com/",
+    "observed_date": "2026-11-06",
+    "premium_mp3s": 48,
+    "levels": 12,
+    "styles": 4,
+    "price_seen_on_public_page": "$87.99 as displayed on public page; prior observation $87; not checkout verification",
+    "pricing_status": "PUBLIC_OBSERVATION_ONLY",
+    "advertised_return": "1-year money-back guarantee as seller claim only",
+    "refund_tested": false,
+    "verified_creatives_or_swipe": false
+  },
+  "claims": [
+    {
+      "id": "Z01",
+      "statement": "Zen12 Premium has 12 levels and 48 MP3s",
+      "source": "https://zen12.com/",
+      "status": "SELLER_INVENTORY",
+      "allowed_copy": "Seller describes 12 levels and 48 MP3s",
+      "must_not_say": "Independently inspected all recordings"
+    },
+    {
+      "id": "Z02",
+      "statement": "Four listening styles",
+      "source": "https://zen12.com/",
+      "status": "SELLER_INVENTORY",
+      "allowed_copy": "Seller lists music, guided, nature and white-noise formats",
+      "must_not_say": "Fits everyone"
+    },
+    {
+      "id": "Z03",
+      "statement": "12 minutes equals one hour of meditation",
+      "source": "https://zen12.com/",
+      "status": "UNSUBSTANTIATED_PRODUCT_EFFICACY",
+      "allowed_copy": "Seller advertises the equivalence, which is not independently verified",
+      "must_not_say": "Proven equivalent"
+    },
+    {
+      "id": "Z04",
+      "statement": "Purchased Zen12 improves memory or attentional blink",
+      "source": "https://doi.org/10.1371/journal.pbio.0050138",
+      "status": "NOT_SUPPORTED",
+      "allowed_copy": "No product-specific evidence reviewed",
+      "must_not_say": "Training result transfers to product"
+    },
+    {
+      "id": "Z05",
+      "statement": "Zen12 reduces anxiety or provides medical/mental-health benefit",
+      "source": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "status": "DO_NOT_USE_UNSUBSTANTIATED",
+      "allowed_copy": "Do not assert health efficacy",
+      "must_not_say": "Treats anxiety"
+    },
+    {
+      "id": "Z06",
+      "statement": "Price and guarantee",
+      "source": "https://zen12.com/",
+      "status": "SELLER_DATE_OBSERVATION_ONLY",
+      "allowed_copy": "Check total and seller terms at checkout when purchasing enabled",
+      "must_not_say": "Fixed checkout price or refunds verified"
+    },
+    {
+      "id": "Z07",
+      "statement": "Publisher approved affiliate",
+      "source": "https://affiliates.inspire3.com/",
+      "status": "NOT_VERIFIED",
+      "allowed_copy": "Public affiliate program exists",
+      "must_not_say": "FV approved"
+    },
+    {
+      "id": "Z08",
+      "statement": "Commissionable transaction occurred",
+      "source": null,
+      "status": "NOT_VERIFIED",
+      "allowed_copy": "No verified commission record",
+      "must_not_say": "Affiliate click equals commission"
+    },
+    {
+      "id": "A01",
+      "statement": "Attentional blink short lag in RSVP",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/1500880/",
+      "status": "PRIMARY_STUDY_CONTEXT_DEPENDENT",
+      "allowed_copy": "Task-specific reporting deficit",
+      "must_not_say": "Eyes stop seeing"
+    },
+    {
+      "id": "A02",
+      "statement": "Three months of intensive meditation affected attentional blink",
+      "source": "https://doi.org/10.1371/journal.pbio.0050138",
+      "status": "PRIMARY_STUDY_LIMITED",
+      "allowed_copy": "Study observed change in 17 retreat trainees versus 23 comparators",
+      "must_not_say": "12-minute track identical"
+    }
+  ],
+  "gates": [
+    {
+      "id": "G01",
+      "name": "Publisher-specific signed acceptance",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "G02",
+      "name": "Permitted website/email/social channels",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "G03",
+      "name": "Authorized final earning link",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "G04",
+      "name": "Seller checkout total and tax/terms",
+      "status": "UNVERIFIED"
+    },
+    {
+      "id": "G05",
+      "name": "Seller return/refund practice",
+      "status": "UNVERIFIED"
+    },
+    {
+      "id": "G06",
+      "name": "Independent product-specific health/brain claim evidence",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "G07",
+      "name": "Rights-cleared FV paid Mind Payhip item",
+      "status": "UNKNOWN"
+    },
+    {
+      "id": "G08",
+      "name": "Live guide release approval",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "G09",
+      "name": "Guest mobile and no-JS QA",
+      "status": "UNTESTED"
+    },
+    {
+      "id": "G10",
+      "name": "Verified purchase and paid net revenue",
+      "status": "NOT_COMPUTABLE"
+    }
+  ],
+  "metrics": {
+    "qualified_human_sessions": null,
+    "verified_paid_sales": null,
+    "verified_affiliate_commissions": null,
+    "refunds": null,
+    "fees": null,
+    "realized_net_revenue": null,
+    "net_revenue_per_1000_qualified_human_sessions": null,
+    "measurement_rule": "net_1000 = 1000 * (settled_receipts + verified_paid_commissions - refunds - chargebacks - unreconciled_fees) / qualified_human_sessions; avoid double deduction if settlement net already reflects a component"
+  },
+  "no_live_cms_writes": true,
+  "no_extra_email_forms": true,
+  "no_paid_saas": true
+}
