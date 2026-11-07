@@ -153,7 +153,10 @@ def slate_status(lib: "Library", slug: str) -> str:
         return "not-started"
     if meta["status"]["publish"] == "published":
         return "published"
-    return "safety-approved-draft" if meta["safety_review"]["state"] == "approved" else "drafted-pending-safety-review"
+    # Historical safety labels ('approved', 'not-required') are NOT independent
+    # clearance. Machine-readable build reports must never imply otherwise.
+    # R184: keep every unpublished article in the same pending review bucket.
+    return "drafted-pending-safety-review"
 
 
 def write_lf(path: Path, text: str) -> None:
