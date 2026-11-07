@@ -1,0 +1,405 @@
+{
+  "milestone": "R191",
+  "as_of": "2026-11-07",
+  "status": "DRAFT_UNPUBLISHED_NO_AFFILIATE_ACTIVATION",
+  "source_links": [
+    {
+      "id": "choice_2005",
+      "url": "https://doi.org/10.1126/science.1111709",
+      "kind": "peer_reviewed_primary",
+      "scope": "Swapped face selection, manipulated intention/outcome, introspective reasons"
+    },
+    {
+      "id": "choice_2005_lund",
+      "url": "https://portal.research.lu.se/en/publications/failure-to-detect-mismatches-between-intention-and-outcome-in-a-s/",
+      "kind": "institutional_abstract",
+      "scope": "University-hosted primary research abstract"
+    },
+    {
+      "id": "choice_2010",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/20637455/",
+      "kind": "peer_reviewed_primary_abstract",
+      "scope": "Jam/tea swapped samples; no more than one-third overall detected"
+    },
+    {
+      "id": "choice_2012",
+      "url": "https://doi.org/10.1371/journal.pone.0045457",
+      "kind": "peer_reviewed_primary",
+      "scope": "Self-transforming moral survey; 69% failed to detect >=1 of two reversals"
+    },
+    {
+      "id": "ftc_endorse",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "kind": "regulator",
+      "scope": "Clear conspicuous nearby material-connection disclosures"
+    },
+    {
+      "id": "ftc_health",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "kind": "regulator",
+      "scope": "Health efficacy claim substantiation and product-specific limits"
+    },
+    {
+      "id": "inspire",
+      "url": "https://inspire3.com/",
+      "kind": "seller_catalog",
+      "scope": "Product categories and slogans; not product efficacy"
+    },
+    {
+      "id": "affiliate",
+      "url": "https://affiliates.inspire3.com/",
+      "kind": "public_partner_portal",
+      "scope": "Public program pitch, not individual contractual acceptance"
+    },
+    {
+      "id": "zen12",
+      "url": "https://zen12.com/hnp",
+      "kind": "exact_seller_offer",
+      "scope": "Premium listing: twelve levels, 48 MP3, advertised guarantee; checkout unverified"
+    },
+    {
+      "id": "totalfocus",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "kind": "exact_seller_offer",
+      "scope": "Seller describes 33-minute 47MB recording; checkout unverified"
+    },
+    {
+      "id": "brainshots",
+      "url": "https://brainwaveshots.com/",
+      "kind": "seller_link",
+      "scope": "Catalog-level route, exact specific offer not revalidated; no presell authorization"
+    },
+    {
+      "id": "puys",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "kind": "published_first_party",
+      "scope": "Historical sources, not proof of magnetic cures"
+    },
+    {
+      "id": "mesmer",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "kind": "published_first_party",
+      "scope": "Historical investigation"
+    },
+    {
+      "id": "change",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "kind": "published_first_party",
+      "scope": "Live editorial destination"
+    },
+    {
+      "id": "focus",
+      "url": "https://finalvestige.com/focus/",
+      "kind": "published_first_party",
+      "scope": "Existing free Fieldbook and single Jetpack funnel"
+    },
+    {
+      "id": "standards",
+      "url": "https://finalvestige.com/editorial-standards/",
+      "kind": "published_first_party",
+      "scope": "Editorial source/provenance policy"
+    },
+    {
+      "id": "disclosure",
+      "url": "https://finalvestige.com/affiliate-disclosure/",
+      "kind": "published_first_party",
+      "scope": "General notice cannot substitute near-link wording"
+    },
+    {
+      "id": "issue171",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "kind": "internal_governance",
+      "scope": "Mind governance and merchant approval gates"
+    },
+    {
+      "id": "issue818",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/818",
+      "kind": "internal_business_charter",
+      "scope": "Demand-first owned-products requirement"
+    },
+    {
+      "id": "issue820",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "kind": "internal_measurement",
+      "scope": "Qualified-human to settled-revenue acceptance"
+    }
+  ],
+  "claim_decisions": [
+    {
+      "id": "choice_faces",
+      "claim": "Face-choice substitutions can go undetected and receive post-hoc rationalizations",
+      "decision": "SUPPORTED_STUDY_BOUND",
+      "source_id": "choice_2005",
+      "limit": "Lab procedure; not universal preference instability"
+    },
+    {
+      "id": "choice_jam",
+      "claim": "At most a third of manipulated supermarket jam/tea trials were detected overall",
+      "decision": "SUPPORTED_STUDY_BOUND",
+      "source_id": "choice_2010",
+      "limit": "Overall manipulated-trial statistic; not a general buyer deception rate"
+    },
+    {
+      "id": "choice_69",
+      "claim": "2012 moral survey: 69% did not catch at least one of two reversals",
+      "decision": "SUPPORTED_STUDY_BOUND",
+      "source_id": "choice_2012",
+      "limit": "Specific survey method; no extrapolation to electorate"
+    },
+    {
+      "id": "choice_hypnosis",
+      "claim": "Choice blindness studies prove commercial hypnosis audio changes decisions",
+      "decision": "REJECT_UNSUPPORTED_GENERALIZATION",
+      "source_id": "choice_2005",
+      "limit": "The studies did not test consumer recordings"
+    },
+    {
+      "id": "seller_catalog",
+      "claim": "Inspire3 lists Zen12, Brainwave Shots and Hypnosis Live",
+      "decision": "SELLER_DESCRIBES_ONLY",
+      "source_id": "inspire",
+      "limit": "Do not inherit broad website efficacy slogans"
+    },
+    {
+      "id": "zen_contents",
+      "claim": "Zen12 Premium seller describes twelve levels and forty-eight MP3 files",
+      "decision": "SELLER_DESCRIBES_ONLY",
+      "source_id": "zen12",
+      "limit": "No purchased fulfillment audit"
+    },
+    {
+      "id": "zen_guarantee",
+      "claim": "Zen12 seller advertises a one-year guarantee",
+      "decision": "SELLER_DESCRIBES_ONLY",
+      "source_id": "zen12",
+      "limit": "Final checkout conditions/refund processing untested"
+    },
+    {
+      "id": "zen_price",
+      "claim": "Zen12 public display price is final tax-inclusive checkout price",
+      "decision": "UNKNOWN_CHECKOUT_NOT_TESTED",
+      "source_id": "zen12",
+      "limit": "No buyer session or merchant receipt"
+    },
+    {
+      "id": "zen_hour",
+      "claim": "Zen12 twelve minutes equals one hour of advanced meditation",
+      "decision": "REJECT_NO_BRAND_SPECIFIC_PROOF",
+      "source_id": "zen12",
+      "limit": "Seller slogan is not independent trial evidence"
+    },
+    {
+      "id": "zen_health",
+      "claim": "Zen12 delivers specific clinical attention, anxiety or health outcomes",
+      "decision": "REJECT_NO_BRAND_SPECIFIC_PROOF",
+      "source_id": "ftc_health",
+      "limit": "Do not infer from unrelated studies"
+    },
+    {
+      "id": "total_format",
+      "claim": "Total Focus official seller describes 33 minutes / 47MB",
+      "decision": "SELLER_DESCRIBES_ONLY",
+      "source_id": "totalfocus",
+      "limit": "No product download or performance testing"
+    },
+    {
+      "id": "total_focus_benefit",
+      "claim": "Total Focus clinically guarantees improved concentration",
+      "decision": "REJECT_NO_BRAND_SPECIFIC_PROOF",
+      "source_id": "totalfocus",
+      "limit": "No product-specific adequate evidence inspected"
+    },
+    {
+      "id": "brainshots_benefit",
+      "claim": "Brainwave Shots reliably changes task performance",
+      "decision": "REJECT_NO_BRAND_SPECIFIC_PROOF",
+      "source_id": "inspire",
+      "limit": "General seller slogan alone insufficient"
+    },
+    {
+      "id": "merchant_program",
+      "claim": "Inspire3 hosts a public affiliate portal",
+      "decision": "SUPPORTED_PORTAL_EXISTS_ONLY",
+      "source_id": "affiliate",
+      "limit": "Does not prove Final Vestige accepted"
+    },
+    {
+      "id": "publisher_approval",
+      "claim": "FV approved for website, social and email use",
+      "decision": "UNKNOWN_MISSING_NAMED_AUTHORIZATION",
+      "source_id": "issue171",
+      "limit": "Require authenticated named contract and channel terms"
+    },
+    {
+      "id": "publisher_link",
+      "claim": "Exact official approved FV earnings URL available",
+      "decision": "UNKNOWN_NO_AUTHORIZED_EARNING_URL",
+      "source_id": "issue171",
+      "limit": "No link may be invented, activated, cloaked or guessed"
+    },
+    {
+      "id": "publisher_commission",
+      "claim": "Any outbound click is a confirmed commission",
+      "decision": "REJECT_EVENT_CONFUSION",
+      "source_id": "issue820",
+      "limit": "Need independently reported accepted paid conversion"
+    },
+    {
+      "id": "owned_product",
+      "claim": "A live rights-cleared payable FV Mind SKU is verified",
+      "decision": "UNKNOWN_PAYHIP_NOT_AUTHENTICATED",
+      "source_id": "issue818",
+      "limit": "SKU, price, merchant, delivery, returns and rights needed"
+    },
+    {
+      "id": "free_fieldbook",
+      "claim": "The Fieldbook is published and free with established funnel",
+      "decision": "SUPPORTED_PRIOR_VERIFIED_ROUTE",
+      "source_id": "focus",
+      "limit": "Not a paid order or verified delivered email"
+    },
+    {
+      "id": "historic_mesmer",
+      "claim": "Puységur archive establishes a historical witness record",
+      "decision": "SUPPORTED_EDITORIAL_CONTEXT",
+      "source_id": "puys",
+      "limit": "Not clinical substantiation"
+    },
+    {
+      "id": "near_link",
+      "claim": "Every earning CTA needs an unmistakable proximate disclosure",
+      "decision": "FTC_GUIDANCE",
+      "source_id": "ftc_endorse",
+      "limit": "Footer or phrase affiliate link by itself insufficient"
+    },
+    {
+      "id": "health_claims",
+      "claim": "Health efficacy claims require appropriate reliable scientific proof",
+      "decision": "FTC_GUIDANCE",
+      "source_id": "ftc_health",
+      "limit": "Must match exact advertised outcome/product"
+    },
+    {
+      "id": "consent",
+      "claim": "Do not collect audience health state or identifying details for campaign attribution",
+      "decision": "DESIGN_PRIVACY_REQUIREMENT",
+      "source_id": "issue820",
+      "limit": "Use aggregate, consent-compliant pre-existing measurements"
+    },
+    {
+      "id": "video_uplift",
+      "claim": "Adding a 42-second optional video improves confirmed revenue",
+      "decision": "UNTESTED_HYPOTHESIS",
+      "source_id": "issue171",
+      "limit": "No public A/B traffic or statistical estimate"
+    },
+    {
+      "id": "paid_metric",
+      "claim": "Net revenue per thousand human sessions has been observed",
+      "decision": "NOT_COMPUTABLE_UNVERIFIED_DENOMINATOR_AND_ORDERS",
+      "source_id": "issue820",
+      "limit": "Need qualified sessions + settled payments less refunds/fees"
+    }
+  ],
+  "release_gates": [
+    {
+      "id": "publisher_named_acceptance",
+      "status": "BLOCKED",
+      "owner": "Founder / Mind",
+      "evidence_needed": "Signed-in named Inspire3 approval and affiliate agreement"
+    },
+    {
+      "id": "channels_allowed",
+      "status": "BLOCKED",
+      "owner": "Founder / Mind",
+      "evidence_needed": "Written website/video/email/pin/link restrictions"
+    },
+    {
+      "id": "authorized_url",
+      "status": "BLOCKED",
+      "owner": "Founder / Mind",
+      "evidence_needed": "Exact product-specific authorized tracking URL"
+    },
+    {
+      "id": "creative_rights",
+      "status": "UNKNOWN",
+      "owner": "Founder / Mind",
+      "evidence_needed": "Approved swipe/asset permissions or use all-original"
+    },
+    {
+      "id": "own_payhip_mind_sku",
+      "status": "UNKNOWN",
+      "owner": "Commerce",
+      "evidence_needed": "Authenticated live SKU, source rights, checkout and delivery"
+    },
+    {
+      "id": "checkout_and_refunds",
+      "status": "NOT_TESTED",
+      "owner": "Commerce",
+      "evidence_needed": "Signed-out merchant checkout, order terms, refund processing"
+    },
+    {
+      "id": "native_disabled_ctas",
+      "status": "SOURCE_TESTABLE_ONLY",
+      "owner": "Mind / QA",
+      "evidence_needed": "Both A+B show natively disabled controls; actual browser QA pending"
+    },
+    {
+      "id": "disclosure_position",
+      "status": "SOURCE_TESTABLE_ONLY",
+      "owner": "Mind / QA",
+      "evidence_needed": "Exact proximate text; activated links prohibited"
+    },
+    {
+      "id": "optional_film",
+      "status": "NOT_RENDERED",
+      "owner": "Mind / Grok",
+      "evidence_needed": "Original 30–45s captioned MP4, opt-in play only"
+    },
+    {
+      "id": "a11y_browser",
+      "status": "NOT_TESTED",
+      "owner": "Site QA",
+      "evidence_needed": "360/390/768/1440 keyboard, reduced motion, AT"
+    },
+    {
+      "id": "performance_browser",
+      "status": "NOT_TESTED",
+      "owner": "Site QA",
+      "evidence_needed": "Native browser CWV/Lighthouse and low bytes"
+    },
+    {
+      "id": "live_post_ids",
+      "status": "UNKNOWN",
+      "owner": "Grok / Praxxis",
+      "evidence_needed": "Actual immutable media URLs/asset IDs and rights"
+    },
+    {
+      "id": "first_party_measurement",
+      "status": "NOT_TESTED",
+      "owner": "Claude / Analytics",
+      "evidence_needed": "Existing consent-compliant events, no duplicate scripts"
+    },
+    {
+      "id": "confirmed_lead",
+      "status": "UNVERIFIED",
+      "owner": "Dispatch / Site QA",
+      "evidence_needed": "Provider accepted+confirmed record, not click"
+    },
+    {
+      "id": "net_revenue_cohorts",
+      "status": "NOT_COMPUTABLE",
+      "owner": "Commerce / Analytics",
+      "evidence_needed": "7/30 day qualified-human denominator and settled payments minus fees/refunds"
+    },
+    {
+      "id": "release",
+      "status": "BLOCKED",
+      "owner": "Founder",
+      "evidence_needed": "Explicit approval for CMS/nav/marketing/earning links/deploy"
+    }
+  ],
+  "verification_method": "Official seller descriptions and regulator pages inspected Nov 7; no authenticated partner or buyer checkout. Scientific claims bounded to inspected primary abstracts and PLOS article.",
+  "prior_pr": "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/1398",
+  "pricing_note": "Any seller-site prices are observations only; no fixed checkout price, payout or guarantee represented as fulfilled."
+}

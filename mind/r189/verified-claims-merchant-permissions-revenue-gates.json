@@ -155,7 +155,7 @@
     },
     {
       "id": "field_gaze",
-      "claim": "Ouija group looked ahead to produced letters less than intentional spelling group",
+      "claim": "The same participants looked ahead to produced letters less during Ouija sessions than during intentional spelling conditions",
       "decision": "SUPPORTED_STUDY_DETAIL",
       "source_id": "ouija_field_2018",
       "limit": "field sample context"
