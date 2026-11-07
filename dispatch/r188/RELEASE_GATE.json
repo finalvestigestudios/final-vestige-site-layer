@@ -1,0 +1,57 @@
+{
+  "identity": "r188-20261107",
+  "master_175_head": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "readiness_201_head": "ef53e5a17046e3dff5a4a7e3b0f4c8fbce9cd6f6",
+  "base_r187_head": "756c9f0bebb6f1ae373a1eb41eb2bbbf3aff37ad",
+  "pilot": {
+    "editorial": 4,
+    "commercial_reserved": 2,
+    "replacement_authorized": false
+  },
+  "jetpack_read_only_2026_11_07_15_38_UTC": {
+    "enabled": true,
+    "send_by_default": false,
+    "full_content": true,
+    "total": 3,
+    "confirmed": 3,
+    "unconfirmed": 2,
+    "suppressed": 0,
+    "subscriber_categories_additive": false,
+    "email_eligible": "UNVERIFIED",
+    "welcome_configured": true,
+    "welcome_received": "UNVERIFIED",
+    "native_preview": "UNVERIFIED"
+  },
+  "merchant": [
+    {
+      "offer": "Zen12 Premium",
+      "exact_page": "https://zen12.com/hnp",
+      "seller_describes": "12 levels, 48 MP3s, four styles; 12-minute listening",
+      "unsupported_seller_claim": "1 hour's meditation benefit in 12 minutes",
+      "partner_approved": "UNVERIFIED",
+      "email_promotion_allowed": "UNVERIFIED",
+      "approved_earning_link": "UNVERIFIED",
+      "warmup_guide_live": "UNVERIFIED",
+      "final_checkout_and_refund_execution": "UNVERIFIED",
+      "release": "HOLD_MERCHANT"
+    },
+    {
+      "offer": "Hypnosis Live Total Focus",
+      "exact_page": "https://hypnosislive.com/mental-skills/total-focus",
+      "seller_describes": "33 minutes, 47 MB",
+      "unsupported_seller_claim": "100% concentration and brain reprogramming",
+      "partner_approved": "UNVERIFIED",
+      "email_promotion_allowed": "UNVERIFIED",
+      "approved_earning_link": "UNVERIFIED",
+      "warmup_guide_live": "UNVERIFIED",
+      "final_checkout_and_refund_execution": "UNVERIFIED",
+      "release": "HOLD_MERCHANT"
+    }
+  ],
+  "fv_postal_address": "UNVERIFIED",
+  "functional_jetpack_unsubscribe": "UNVERIFIED",
+  "founder_final_release_approval": false,
+  "send_status": "HOLD_UNSENT",
+  "verified_sales": "UNOBSERVED_NOT_ZERO",
+  "realized_net_revenue_per_1000_sessions": "NOT_COMPUTABLE"
+}
