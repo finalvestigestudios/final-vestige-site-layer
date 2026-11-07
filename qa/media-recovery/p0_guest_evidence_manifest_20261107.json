@@ -1,0 +1,227 @@
+{
+  "schema": "fv-media-p0-evidence-acceptance-v1",
+  "as_of": "2026-11-07",
+  "retrieval": "WordPress posts.get context=edit, read only 2026-11-07",
+  "original_61_post_image_slots": 355,
+  "current_66_post_image_slots": 361,
+  "legacy_42_broken": "UNVERIFIED",
+  "claimed_76pct_wire_savings": "UNMEASURED",
+  "big_wordpress_originals": {
+    "count": 13,
+    "stored_bytes": 43522829,
+    "browser_bytes": null
+  },
+  "wordpress_writes": 0,
+  "image_downloads": 0,
+  "rights_approved": 0,
+  "site_qa_pr": 154,
+  "media_worklist_pr": 183,
+  "rows": [
+    {
+      "slot": "285:5",
+      "post_id": 285,
+      "page_url": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+      "wp_modified": "2026-11-02T21:39:59",
+      "published_src": "https://images.saymedia-content.com/.image/ar_16:9,c_fill,cs_srgb,fl_progressive,q_auto:eco,w_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg",
+      "browser_http_status": null,
+      "visitor_broken": null,
+      "visitor_current_src": null,
+      "visitor_natural_px": null,
+      "visitor_transfer_bytes": null,
+      "external_wrapper_status": null,
+      "rights_clearance": "HOLD",
+      "production_action": "HOLD",
+      "candidates": [
+        {
+          "catalog_url": "https://commons.wikimedia.org/wiki/File:Three_mile_island_062010.jpg",
+          "relationship": "publisher-caption-correlated / original crop unverified",
+          "master_px": [
+            819,
+            614
+          ],
+          "conditional_preview_px": [
+            819,
+            614
+          ],
+          "rights_review": "HOLD",
+          "binary_identity_verified": false,
+          "rehosting_authorized": false,
+          "note": "2010 scene, publisher requests forced 16:9 crop; do not upscale."
+        },
+        {
+          "catalog_url": "https://commons.wikimedia.org/wiki/File:Three_Mile_Island_(color).jpg",
+          "relationship": "different 1979 DOE aerial / editorial alternative",
+          "master_px": [
+            2592,
+            2488
+          ],
+          "conditional_preview_px": [
+            960,
+            921
+          ],
+          "rights_review": "HOLD",
+          "binary_identity_verified": false,
+          "rehosting_authorized": false,
+          "note": "Different historic period and composition; separate editorial approval."
+        }
+      ]
+    },
+    {
+      "slot": "285:2",
+      "post_id": 285,
+      "page_url": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+      "wp_modified": "2026-11-02T21:39:59",
+      "published_src": "https://blog.ucsusa.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+      "browser_http_status": null,
+      "visitor_broken": null,
+      "visitor_current_src": null,
+      "visitor_natural_px": null,
+      "visitor_transfer_bytes": null,
+      "external_wrapper_status": null,
+      "rights_clearance": "HOLD",
+      "production_action": "HOLD",
+      "candidates": [
+        {
+          "catalog_url": "https://commons.wikimedia.org/wiki/File:TMI-2_control_panel.png",
+          "relationship": "1979 commission control panel / pixel equivalence unverified",
+          "master_px": [
+            604,
+            590
+          ],
+          "conditional_preview_px": [
+            604,
+            590
+          ],
+          "rights_review": "HOLD",
+          "binary_identity_verified": false,
+          "rehosting_authorized": false,
+          "note": "Retouched Commons rendition; original NRC/UCS image needs same-scene comparison."
+        }
+      ]
+    },
+    {
+      "slot": "287:5",
+      "post_id": 287,
+      "page_url": "https://finalvestige.com/2026/08/19/the-warning-was-a-man-waving-sunshine-skyway/",
+      "wp_modified": "2026-11-02T21:40:01",
+      "published_src": "https://stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+      "browser_http_status": null,
+      "visitor_broken": null,
+      "visitor_current_src": null,
+      "visitor_natural_px": null,
+      "visitor_transfer_bytes": null,
+      "external_wrapper_status": null,
+      "rights_clearance": "HOLD",
+      "production_action": "HOLD",
+      "candidates": [
+        {
+          "catalog_url": "https://media.stpetecatalyst.com/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+          "relationship": "same publisher filename at relocated host",
+          "master_px": null,
+          "conditional_preview_px": null,
+          "rights_review": "HOLD",
+          "binary_identity_verified": false,
+          "rehosting_authorized": false,
+          "note": "Publisher credit University Press of Florida; no rehosting permission."
+        },
+        {
+          "catalog_url": "https://www.floridamemory.com/items/show/131903",
+          "relationship": "different bridge photograph / editorial alternative",
+          "master_px": null,
+          "conditional_preview_px": null,
+          "rights_review": "HOLD",
+          "binary_identity_verified": false,
+          "rehosting_authorized": false,
+          "note": "K894127 shows old/new bridges; not same 1980 wreckage scene."
+        }
+      ]
+    },
+    {
+      "slot": "418:1",
+      "post_id": 418,
+      "page_url": "https://finalvestige.com/2026/08/20/the-lighthouse-was-gone-at-dawn-1946-tsunami/",
+      "wp_modified": "2026-08-28T03:11:08",
+      "published_src": "https://media.defense.gov/2021/Mar/30/2002610812/1920/1080/0/210330-G-DE713-0002.JPG",
+      "browser_http_status": null,
+      "visitor_broken": null,
+      "visitor_current_src": null,
+      "visitor_natural_px": null,
+      "visitor_transfer_bytes": null,
+      "external_wrapper_status": null,
+      "rights_clearance": "HOLD",
+      "production_action": "HOLD",
+      "candidates": [
+        {
+          "catalog_url": "https://www.history.uscg.mil/Our-Collections/Photos/igphoto/2002905913/",
+          "relationship": "matching USCG VIRIN 210330-G-DE713-0002",
+          "master_px": null,
+          "conditional_preview_px": null,
+          "rights_review": "HOLD",
+          "binary_identity_verified": false,
+          "rehosting_authorized": false,
+          "note": "Original image binary, rights, native dimensions pending."
+        }
+      ]
+    },
+    {
+      "slot": "418:2",
+      "post_id": 418,
+      "page_url": "https://finalvestige.com/2026/08/20/the-lighthouse-was-gone-at-dawn-1946-tsunami/",
+      "wp_modified": "2026-08-28T03:11:08",
+      "published_src": "https://www.history.uscg.mil/Portals/6/5_%20Scotch_Cap_debris2_1946.jpg",
+      "browser_http_status": null,
+      "visitor_broken": null,
+      "visitor_current_src": null,
+      "visitor_natural_px": null,
+      "visitor_transfer_bytes": null,
+      "external_wrapper_status": null,
+      "rights_clearance": "HOLD",
+      "production_action": "HOLD",
+      "candidates": [
+        {
+          "catalog_url": "https://nationalcoastguardmuseum.org/articles/scotch-cap-lighthouse/",
+          "relationship": "same named 1946 debris scene / exact binary unknown",
+          "master_px": [
+            600,
+            463
+          ],
+          "conditional_preview_px": [
+            600,
+            463
+          ],
+          "rights_review": "HOLD",
+          "binary_identity_verified": false,
+          "rehosting_authorized": false,
+          "note": "600x463 museum preview only; NOAA 1964 label is historically wrong."
+        }
+      ]
+    },
+    {
+      "slot": "407:1",
+      "post_id": 407,
+      "page_url": "https://finalvestige.com/2026/08/20/the-lake-wasnt-there-yesterday-hebgen/",
+      "wp_modified": "2026-10-29T18:30:30",
+      "published_src": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/img7535.jpg",
+      "browser_http_status": null,
+      "visitor_broken": null,
+      "visitor_current_src": null,
+      "visitor_natural_px": null,
+      "visitor_transfer_bytes": null,
+      "external_wrapper_status": null,
+      "rights_clearance": "HOLD",
+      "production_action": "HOLD",
+      "candidates": [
+        {
+          "catalog_url": "https://www.usgs.gov/media/images/hebgen-lake-fault-scarp-1959-0",
+          "relationship": "official USGS catalog of same published source",
+          "master_px": null,
+          "conditional_preview_px": null,
+          "rights_review": "HOLD",
+          "binary_identity_verified": false,
+          "rehosting_authorized": false,
+          "note": "USGS J. R. Stacy; octet-stream retrieval wrapper error is not HTTP 400 proof."
+        }
+      ]
+    }
+  ]
+}
