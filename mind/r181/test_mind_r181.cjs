@@ -86,8 +86,9 @@ function mutations(files) {
     f=>({...f,article:f.article.replace("83%","100%")}),
     f=>({...f,b:f.b.replace('id="optional-film"','id="fake-film"')})
   ];
-  const caught=m.filter(fn=>verify(fn(files)).failures.length>0).length;
-  return {caught,total:m.length,all_detected:caught===m.length};
+  const detected=m.map((fn,i)=>({index:i+1,caught:verify(fn(files)).failures.length>0}));
+  const caught=detected.filter(x=>x.caught).length;
+  return {caught,total:m.length,all_detected:caught===m.length,missed:detected.filter(x=>!x.caught).map(x=>x.index)};
 }
 if(typeof module !== "undefined") module.exports={verify,mutations};
 if(typeof require!=="undefined" && require.main===module){
