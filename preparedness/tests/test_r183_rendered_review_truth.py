@@ -166,7 +166,7 @@ class TestR183ReviewTruth(unittest.TestCase):
             with self.subTest(slug=item["slug"]):
                 p = ROOT / "content" / "articles" / (item["slug"] + ".meta.json")
                 raw = p.read_bytes()
-                h = hashlib.sha1(b"blob " + str(len(raw)).encode("ascii") + b"\\0" + raw).hexdigest()
+                h = hashlib.sha1(b"blob " + str(len(raw)).encode("ascii") + b"\0" + raw).hexdigest()
                 self.assertEqual(h, item["meta_git_blob"])
                 original = json.loads(raw.decode("utf-8"))
                 self.assertEqual(original["slug"], item["slug"])
