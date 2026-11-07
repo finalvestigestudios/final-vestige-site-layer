@@ -21,7 +21,7 @@ function run(d){
  let j={};try{j=JSON.parse(d.claims)}catch(e){check(false,'JSON decode')}
  check(a.trim().split(/\s+/).length>=2000,'substantive article');
  check(a.includes('ORIGINAL INVESTIGATION')&&a.includes('UNPUBLISHED'),'editorial release label');
- for(const s of ['The sound that isn\'t in either ear','mechanism','2019','2023','2024','Puységur','14 published','five','eight','one mixed','NO affiliate links'])check(a.toLowerCase().includes(s.toLowerCase()),'article scope '+s);
+ for(const s of ['The sound that isn\'t in either ear','mechanism','2019','2023','2024','Puységur','fourteen published','five','eight','one had mixed results','NO affiliate links'])check(a.toLowerCase().includes(s.toLowerCase()),'article scope '+s);
  for(const url of ['https://pubmed.ncbi.nlm.nih.gov/37205669/','https://pubmed.ncbi.nlm.nih.gov/30073406/','https://pubmed.ncbi.nlm.nih.gov/35842538/','https://pubmed.ncbi.nlm.nih.gov/38458383/']) check(a.includes(url),'research source '+url);
  check(a.includes('https://finalvestige.com/focus/'),'existing Focus route');
  check(a.includes('https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/'),'historical source bridge');
