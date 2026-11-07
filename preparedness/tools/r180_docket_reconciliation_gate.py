@@ -26,7 +26,11 @@ DOCKETS = {
 SAFETY_FALSE = ('independent_qd_pass', 'publication_authorized',
                 'qualified_food_safety_review', 'human_qualified_safety_approval',
                 'qualified_safety_review', 'medical_safety_approved',
-                'human_source_equivalence_review_complete')
+                'human_source_equivalence_review_complete',
+                'source_alias_equivalence_approved', 'human_checked_links',
+                'founder_publication_authorized', 'qualified_food_safety',
+                'independent_qd', 'url_equivalence', 'source_claim_scope',
+                'commercial_offer_verified')
 IMPACT = ('pemmican-and-dried-meats', 'pioneer-travel-rations', 'safe-jerky-dehydration')
 
 
