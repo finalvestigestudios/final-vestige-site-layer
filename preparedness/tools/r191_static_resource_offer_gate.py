@@ -46,10 +46,39 @@ def css_unescape(src: str) -> str:
     return CSS_BACKSLASH.sub(replace,src)
 
 
+def css_strip_comments(src: str) -> tuple[str, bool]:
+    """Normalize CSS comments before checking token-spliced remote resource rules.
+
+    Preserve comment markers in quoted strings. Reject malformed boundaries.
+    This is conservative static screening, never browser-privacy acceptance.
+    """
+    out=[]; i=0; quote=None; bad=False
+    while i < len(src):
+        c=src[i]
+        if quote is not None:
+            out.append(c)
+            if c=='\\' and i+1<len(src):
+                i+=1;out.append(src[i])
+            elif c==quote:quote=None
+            i+=1;continue
+        if c in ('"',"'"):
+            quote=c;out.append(c);i+=1;continue
+        if src.startswith('/*',i):
+            end=src.find('*/',i+2)
+            if end<0: bad=True;break
+            i=end+2;continue
+        if src.startswith('*/',i):bad=True
+        out.append(c);i+=1
+    if quote is not None:bad=True
+    return ''.join(out),bad
+
+
 def css_errors(css: str) -> list[str]:
     """Fail closed on CSS loads, including CSS escape and entity spellings."""
-    clean=css_unescape(unescape(css))
+    decoded=css_unescape(unescape(css))
+    clean,comment_error=css_strip_comments(decoded)
     errors=[]
+    if comment_error:errors.append('malformed CSS comment/string boundary')
     if CSS_UNSAFE.search(clean):
         errors.append('CSS import/font/remote-resource capable construct')
     # A malformed url() with no closing ')' is still suspicious.
@@ -87,6 +116,11 @@ class Screen(HTMLParser):
         self.jsonld_blocks=0
 
     def handle_starttag(self,tag,attrs):
+        # Browser HTML parsing usually keeps the first repeated attribute;
+        # dict(attrs) keeps the last and could hide a remote CSS/SVG resource.
+        names=[key for key,_ in attrs]
+        if len(names)!=len(set(names)):
+            self.errors.append('duplicate HTML attributes on '+tag)
         attrs=dict(attrs)
         if tag in ('style','script'):
             if tag == 'style':
