@@ -31,7 +31,7 @@ Zen12 also advertises that twelve minutes of listening equals an hour of meditat
 This is a reflective exercise, not a controlled experiment or a method of measuring brainwaves. If it does not appeal to you, skip it entirely.
 
 ## Affiliate and release status
-Final Vestige has **not verified its own named Inspire3 affiliate authorization, approved promotion channels, tracking URL, commission statements, or resulting commissions**. Therefore the preview purchase control is disabled and has no merchant or affiliate destination. If and only if the agreement and URL are verified and a release approved, any future earning link must be accompanied immediately by: **“If you purchase through this link, Final Vestige may earn a commission at no additional cost to you.”** This is a prospective disclosure, not a claim that our current link earns anything.
+Final Vestige has **not verified its own named Inspire3 affiliate authorization, approved promotion channels, tracking URL, commission statements, or resulting commissions**. Therefore the preview purchase control is disabled and has no merchant or affiliate destination. If and only if the agreement and URL are verified and a release approved, any future earning link must be accompanied immediately by: **“If you purchase through this link, Final Vestige may earn a commission at no additional cost to you.”** This is a prospective disclosure, not a claim that our current link earns anything. No earning link is active.
 
 The independent science and history articles remain free regardless of commercial partnerships. The [seller's own public product page](https://zen12.com/) is included as a **non-affiliate information source**, not as an activated purchasing recommendation.
 
