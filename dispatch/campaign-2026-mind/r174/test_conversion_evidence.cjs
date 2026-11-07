@@ -6,7 +6,7 @@ const base=()=>({ cohort_days:7,issue_mix:{editorial:[1,2,4,6],commercial:[3,5]}
   merchant:{approved_for_publisher_email:false,live_approved_guide:false,earning_url_approved:false,price_and_refund_terms_checked:false},
   sessions:[],orders:[],session_report_complete:false,settlement_report_complete:false});
 const s={evidence_ref:'source-001',utm_source:'youtube',utm_medium:'organic_social',utm_campaign:'mind_pilot_2026_11',asset_id:'yt_mind_001',human_qualified_sessions:200,is_provider_qualified:true};
-const o={evidence_ref:'order-001',source:'independent_merchant_report',status:'settled',gross_commission_cents:2000,refund_cents:2500,fees_cents:200,campaign_attribution_verified:true,utm_campaign:'mind_pilot_2026_11'};
+const o={evidence_ref:'order-001',source:'independent_merchant_report',status:'settled',gross_commission_cents:2000,refund_cents:2500,fees_cents:200,campaign_attribution_verified:true,asset_attribution_verified:true,asset_id:'yt_mind_001',utm_campaign:'mind_pilot_2026_11'};
 let tests=0;function t(name,fn){fn();tests++;console.log('PASS '+name)}
 t('no SEND ever',()=>assert.equal(evaluate(base()).gate,'HOLD_UNSENT'));
 t('hold merchant even if permissions appear positive',()=>{let b=base();Object.keys(b.merchant).forEach(k=>b.merchant[k]=true);assert.equal(evaluate(b).commercial_gate,'HOLD_MERCHANT')});
@@ -35,4 +35,6 @@ t('zero is allowed only for complete reporting with real sessions',()=>{let b=ba
 t('invalid cent values rejected',()=>{let b=base();b.orders=[{...o,fees_cents:0.1}];assert.throws(()=>evaluate(b),/integer/)});
 t('30-day cohorts supported',()=>{let b=base();b.cohort_days=30;assert.equal(evaluate(b).gate,'HOLD_UNSENT')});
 t('other cohorts prohibited',()=>{let b=base();b.cohort_days=10;assert.throws(()=>evaluate(b),/cohort/)});
+t('no false cross-asset sales attribution',()=>{let b=base();b.sessions=[s];b.orders=[{...o,asset_id:'yt_mind_OTHER'}];b.session_report_complete=true;b.settlement_report_complete=true;assert.equal(evaluate(b).net_per_1000_qualified_sessions_usd,null)});
+t('no browser-inferred asset attribution',()=>{let b=base();b.sessions=[s];b.orders=[{...o,asset_attribution_verified:false}];b.session_report_complete=true;b.settlement_report_complete=true;assert.equal(evaluate(b).attributed_settled_orders,0)});
 console.log(tests+' native Node assertions PASS');
