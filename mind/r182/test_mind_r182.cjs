@@ -101,7 +101,7 @@ function mutateTests(files) {
     ["r181 counts removed",x=>{x.r181=x.r181.replace("four familiar viewers and twelve unfamiliar viewers","everyone noticed");}],
     ["article source removed",x=>{x.article=x.article.replace("10.1068/p090483","DOI-removed");}],
     ["hub duplicate signup",x=>{x.hub=x.hub.replace("</body>",'<form action="#">Join</form></body>');}],
-    ["Plan denies null metrics",x=>{x.plan=x.plan.replace("NOT COMPUTABLE","zero earnings");}],
+    ["Plan denies null metrics",x=>{x.plan=x.plan.replace(/NOT COMPUTABLE/g,"zero earnings");}],
     ["Negative net hidden",x=>{x.matrix.live_wordpress_write=true;}]
   ];
   const results=mutants.map(([name,mutate])=>{const copy={...files,matrix:JSON.parse(typeof files.matrix==="string"?files.matrix:JSON.stringify(files.matrix))};mutate(copy);return {name,detected:!verify(copy).pass};});
