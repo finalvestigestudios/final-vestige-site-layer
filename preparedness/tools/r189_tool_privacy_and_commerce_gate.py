@@ -109,7 +109,19 @@ class Surface(HTMLParser):
             if k in ('href', 'src', 'action', 'formaction', 'data-href') and v and bad_url(v):
                 self.errors.append('merchant/unsafe outbound destination')
             if k.startswith('on') and k != 'onsubmit':
-                self.errors.append('unreviewed inline event handler')
+                # The native article/tool builder injects an explicit local-only
+                # print button into every generated WordPress draft. R189's
+                # original broad denylist rejected all authentic exports here.
+                # Only the exact user-initiated window.print() button is safe
+                # to admit; all other handlers, variants and combined actions
+                # remain blocked (including extra semicolon/call text).
+                local_print = (tag == 'button' and k == 'onclick'
+                               and v == 'window.print()'
+                               and a.get('type') == 'button'
+                               and set((a.get('class') or '').split()) ==
+                                   {'pa-btn', 'pa-btn--ghost'})
+                if not local_print:
+                    self.errors.append('unreviewed inline event handler')
             if k in ('src', 'srcset') and v and ('://' in v or v.startswith('//')):
                 self.errors.append('externally loading media')
         if tag == 'a' and a.get('rel') and 'sponsored' in a['rel'].lower().split():
