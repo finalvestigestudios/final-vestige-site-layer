@@ -47,6 +47,7 @@ check(/--mint:/.test(hub)&&/--gold:/.test(hub),"controlled palette");
 check(/<button class="cta" type="button" disabled/.test(hub),"native disabled CTA");
 check(nativeDisabled(hub)&&nativeDisabled(variantA)&&nativeDisabled(variantB),"no purchasable earning controls");
 check(disclosureNear(hub)&&disclosureNear(variantA)&&disclosureNear(variantB),"commission disclosure adjacent before button");
+check(/may earn a commission at no additional cost to you/.test(hub),"draft prospective disclosure includes no-extra-cost wording");
 check(!/<script\b|<iframe\b|<form\b/i.test(hub),"no scripts embeds forms");
 check(!/autoplay/i.test(hub),"no autoplay");
 check(!/href=["']https?:\/\/[^"']*(?:zen12\.com|affiliates\.inspire3\.com|payhip\.com)/.test(hub),"no merchant earning/presell link");
