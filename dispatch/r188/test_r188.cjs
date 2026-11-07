@@ -1,0 +1,14 @@
+"use strict";
+const {test}=require("node:test"),assert=require("node:assert/strict"),fs=require("node:fs"),p=require("node:path");
+const pathTo=n=>p.join(__dirname,n);
+const md=fs.readFileSync(pathTo("ISSUE02_REVIEW.md"),"utf8"),txt=fs.readFileSync(pathTo("ISSUE02_PLAINTEXT.txt"),"utf8"),html=fs.readFileSync(pathTo("ISSUE02_REVIEW.html"),"utf8"),g=JSON.parse(fs.readFileSync(pathTo("RELEASE_GATE.json"),"utf8")),r=fs.readFileSync(pathTo("RELEASE_AND_ATTRIBUTION.md"),"utf8");
+test("subject and preheader match",()=>{for(const x of [md,txt,html]){assert.ok(x.includes("The broken glass nobody saw"));assert.ok(x.includes("A 1974 experiment shows"))}});
+test("three content formats link to published first-party CTA",()=>{for(const x of [md,txt,html])assert.ok(x.includes("https://finalvestige.com/2026/11/02/change-blindness/"))});
+test("primary evidence is correctly linked",()=>{for(const x of [md,txt,html])assert.ok(x.includes("10.1016/S0022-5371(74)80011-3"))});
+test("safe markup and no earning links",()=>{assert.ok(html.includes("role=\"presentation\""));assert.ok(html.includes('lang="en"'));for(const x of [md,txt,html]){assert.ok(!x.includes("awin1.com"));assert.ok(!x.includes("hop.click"));assert.ok(!x.includes("zen12.com"))}});
+test("full legal release hard stops remain",()=>{for(const x of [md,txt,html])for(const t of ["[[VALID_FV_POSTAL_ADDRESS_REQUIRED]]","[[ACTUAL_JETPACK_UNSUBSCRIBE_MUST_BE_VERIFIED]]","[[FOUNDER_SEND_APPROVAL_REQUIRED]]"])assert.ok(x.includes(t))});
+test("source-control does not reallocate 4:2 pilot",()=>{assert.equal(g.pilot.editorial,4);assert.equal(g.pilot.commercial_reserved,2);assert.equal(g.pilot.replacement_authorized,false)});
+test("source of truth never infers email eligibility",()=>{assert.equal(g.jetpack_read_only_2026_11_07_15_38_UTC.email_eligible,"UNVERIFIED");assert.equal(g.jetpack_read_only_2026_11_07_15_38_UTC.subscriber_categories_additive,false)});
+test("merchant acceptance and email permission are held",()=>{for(const m of g.merchant){assert.equal(m.partner_approved,"UNVERIFIED");assert.equal(m.email_promotion_allowed,"UNVERIFIED");assert.equal(m.approved_earning_link,"UNVERIFIED");assert.equal(m.release,"HOLD_MERCHANT")}});
+test("no invented sales or sends",()=>{assert.equal(g.verified_sales,"UNOBSERVED_NOT_ZERO");assert.equal(g.realized_net_revenue_per_1000_sessions,"NOT_COMPUTABLE");assert.equal(g.send_status,"HOLD_UNSENT");assert.equal(g.founder_final_release_approval,false)});
+test("release document has explicit consent provenance and partners",()=>{assert.ok(r.includes("provider-authoritative email status is Subscribed"));assert.ok(r.includes("Mind #171"));assert.ok(r.includes("Claude / Focus #129"));assert.ok(r.includes("HOLD_UNSENT"))});
