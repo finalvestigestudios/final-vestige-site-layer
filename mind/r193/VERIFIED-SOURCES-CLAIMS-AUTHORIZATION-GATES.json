@@ -1,0 +1,437 @@
+{
+  "milestone": "R193",
+  "date": "2026-11-07",
+  "branch": "mind-r193-invisible-gorilla-conversion-integrity-20261107",
+  "status": "DRAFT_UNPUBLISHED_NO_MERCHANT_ACTIVATION",
+  "source_links": [
+    {
+      "id": "drew_full",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3964612/",
+      "kind": "PRIMARY_FULL",
+      "note": "Drew, Võ and Wolfe 2013 experiment; CT/radiologist counts and limitations"
+    },
+    {
+      "id": "drew_doi",
+      "url": "https://doi.org/10.1177/0956797613479386",
+      "kind": "PRIMARY_PUBLISHER",
+      "note": "2013 article publication and abstract"
+    },
+    {
+      "id": "simons",
+      "url": "https://doi.org/10.1068/p281059",
+      "kind": "PRIMARY_PUBLISHER",
+      "note": "Simons and Chabris 1999 inattentional blindness"
+    },
+    {
+      "id": "apa",
+      "url": "https://www.apa.org/monitor/apr01/blindness.html",
+      "kind": "SECONDARY",
+      "note": "Mack and Rock historical work"
+    },
+    {
+      "id": "wp_puysegur",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "kind": "FIRST_PARTY_LIVE",
+      "note": "WP read-only verified published page 1377"
+    },
+    {
+      "id": "wp_change",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "kind": "FIRST_PARTY_LIVE",
+      "note": "WP read-only verified published post 1922"
+    },
+    {
+      "id": "wp_mesmer",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "kind": "FIRST_PARTY_LIVE",
+      "note": "WP published post 1924 canonical"
+    },
+    {
+      "id": "wp_focus",
+      "url": "https://finalvestige.com/focus/",
+      "kind": "FIRST_PARTY_LIVE",
+      "note": "WP read-only verified published page 1579, not proof of opt-in"
+    },
+    {
+      "id": "wp_editorial",
+      "url": "https://finalvestige.com/editorial-standards/",
+      "kind": "FIRST_PARTY",
+      "note": "Editorial standards route reported in canonical issue"
+    },
+    {
+      "id": "wp_affiliate",
+      "url": "https://finalvestige.com/affiliate-disclosure/",
+      "kind": "FIRST_PARTY",
+      "note": "General disclosure, insufficient alone at earning link"
+    },
+    {
+      "id": "inspire",
+      "url": "https://inspire3.com/",
+      "kind": "SELLER",
+      "note": "Official Inspire3 product family"
+    },
+    {
+      "id": "zen",
+      "url": "https://zen12.com/hnp",
+      "kind": "SELLER",
+      "note": "Exact Zen12 sales claims and product description"
+    },
+    {
+      "id": "total",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "kind": "SELLER",
+      "note": "Exact 33-minute Total Focus listing"
+    },
+    {
+      "id": "portal",
+      "url": "https://affiliates.inspire3.com/",
+      "kind": "PROGRAM_PUBLIC",
+      "note": "Public signup only; no FV authorization"
+    },
+    {
+      "id": "ftc_endorse",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "kind": "REGULATOR",
+      "note": "Endorsement disclosure guidance"
+    },
+    {
+      "id": "ftc_health",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "kind": "REGULATOR",
+      "note": "Health-related claims need appropriate support"
+    },
+    {
+      "id": "issue171",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "kind": "GOVERNANCE",
+      "note": "Mind lane constraints"
+    },
+    {
+      "id": "issue820",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "kind": "GOVERNANCE",
+      "note": "Conversion-first attribution and focus loophole report"
+    },
+    {
+      "id": "issue818",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/818",
+      "kind": "GOVERNANCE",
+      "note": "Business charter"
+    },
+    {
+      "id": "r188",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/1384",
+      "kind": "SOURCE_DRAFT",
+      "note": "Inherited unpublished Zen12 A/B and 42s storyboard"
+    },
+    {
+      "id": "r192",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/1413",
+      "kind": "SOURCE_DRAFT",
+      "note": "Inherited hub and product gate pilot"
+    }
+  ],
+  "claim_decisions": [
+    {
+      "id": "exp24",
+      "source_id": "drew_full",
+      "decision": "VERIFIED_RESEARCH",
+      "statement": "24 radiologists searched 5 chest CT scans in 2013; last contained artificial unexpected gorilla"
+    },
+    {
+      "id": "exp20",
+      "source_id": "drew_full",
+      "decision": "VERIFIED_RESEARCH",
+      "statement": "20/24 did not report gorilla; conditional sample finding"
+    },
+    {
+      "id": "fixation12",
+      "source_id": "drew_full",
+      "decision": "VERIFIED_RESEARCH",
+      "statement": "12/20 missed-gorilla radiologists fixated its location while present"
+    },
+    {
+      "id": "fixation547",
+      "source_id": "drew_full",
+      "decision": "VERIFIED_RESEARCH",
+      "statement": "Mean fixation 547ms among the missers who fixated the target"
+    },
+    {
+      "id": "slice239",
+      "source_id": "drew_full",
+      "decision": "VERIFIED_RESEARCH",
+      "statement": "Last CT 239 slices and gorilla spanned 5 with fading opacity"
+    },
+    {
+      "id": "vol48",
+      "source_id": "drew_full",
+      "decision": "VERIFIED_RESEARCH",
+      "statement": "Gorilla bounding volume approx 48x average nodule volume"
+    },
+    {
+      "id": "nodule55",
+      "source_id": "drew_full",
+      "decision": "VERIFIED_EXPERIMENT_ONLY",
+      "statement": "Expert nodule detection 55% in task; NEVER clinical diagnostic rate"
+    },
+    {
+      "id": "novice12",
+      "source_id": "drew_full",
+      "decision": "VERIFIED_EXPERIMENT_ONLY",
+      "statement": "Naive nodule detection about 12%, confounded comparison"
+    },
+    {
+      "id": "visible88",
+      "source_id": "drew_full",
+      "decision": "VERIFIED_EXPERIMENT_ONLY",
+      "statement": "Explicitly cued 12-person control near 88% correct"
+    },
+    {
+      "id": "study_not_medical",
+      "source_id": "drew_full",
+      "decision": "REJECT_GENERALIZATION",
+      "statement": "Cannot extrapolate to errors of medical practice"
+    },
+    {
+      "id": "1999",
+      "source_id": "simons",
+      "decision": "VERIFIED_ABSTRACT",
+      "statement": "Original dynamic-event inattentional blindness study"
+    },
+    {
+      "id": "1950_history",
+      "source_id": "apa",
+      "decision": "CONTEXT_ONLY",
+      "statement": "Secondary review of earlier Mack/Rock experiments"
+    },
+    {
+      "id": "puysegur",
+      "source_id": "wp_puysegur",
+      "decision": "LIVE_ROUTE_VERIFIED",
+      "statement": "Published historical bridge, not proof of animal magnetism efficacy"
+    },
+    {
+      "id": "change",
+      "source_id": "wp_change",
+      "decision": "LIVE_ROUTE_VERIFIED",
+      "statement": "Published distinct change blindness investigation"
+    },
+    {
+      "id": "mesmer",
+      "source_id": "wp_mesmer",
+      "decision": "LIVE_ROUTE_VERIFIED",
+      "statement": "Published exact /2026/11/02/mesmerism/ permalink"
+    },
+    {
+      "id": "focus_live",
+      "source_id": "wp_focus",
+      "decision": "LIVE_ROUTE_VERIFIED",
+      "statement": "Focus landing published and single existing Jetpack list preserved"
+    },
+    {
+      "id": "focus_bypass",
+      "source_id": "issue820",
+      "decision": "SOURCE_REVIEW_FINDING",
+      "statement": "?subscribe= arbitrary value or is-subscriber class can show gift; visible gift NOT confirmed opt-in"
+    },
+    {
+      "id": "seller_zen",
+      "source_id": "zen",
+      "decision": "SELLER_ONLY",
+      "statement": "12 levels, 48 MP3 and 12-minutes-as-hour claims are seller descriptions, not study results"
+    },
+    {
+      "id": "zen_equiv",
+      "source_id": "zen",
+      "decision": "REJECT_UNSUBSTANTIATED",
+      "statement": "No independent branded efficacy or one-hour equivalence substantiation"
+    },
+    {
+      "id": "seller_total",
+      "source_id": "total",
+      "decision": "SELLER_ONLY",
+      "statement": "Total Focus 33 minute, 47MB inventory, not performance evidence"
+    },
+    {
+      "id": "portal_public",
+      "source_id": "portal",
+      "decision": "PUBLIC_ONLY",
+      "statement": "Public affiliate program exists; publisher-specific acceptance unproven"
+    },
+    {
+      "id": "named_auth",
+      "source_id": "issue171",
+      "decision": "UNKNOWN_HARD_HOLD",
+      "statement": "No FV-specific acceptance, earning URL, channel permissions authenticated"
+    },
+    {
+      "id": "owned_sku",
+      "source_id": "issue171",
+      "decision": "UNKNOWN_HARD_HOLD",
+      "statement": "No Mind-specific Payhip SKU verified with rights, price, checkout and delivery"
+    },
+    {
+      "id": "ftc_near",
+      "source_id": "ftc_endorse",
+      "decision": "REQUIRED",
+      "statement": "Clear conspicuous near-link disclosure for material commission connection"
+    },
+    {
+      "id": "health",
+      "source_id": "ftc_health",
+      "decision": "REQUIRED",
+      "statement": "No branded health or mental benefit claim without adequate product-specific support"
+    },
+    {
+      "id": "click",
+      "source_id": "issue820",
+      "decision": "NON_REVENUE_EVENT",
+      "statement": "affiliate_outbound click is not verified commission or sale"
+    },
+    {
+      "id": "net",
+      "source_id": "issue818",
+      "decision": "NOT_COMPUTABLE",
+      "statement": "No verified paid order, fees/refunds and qualified-human denominator"
+    }
+  ],
+  "release_gates": [
+    {
+      "id": "publisher_named_acceptance",
+      "status": "BLOCKED",
+      "owner": "Founder/Mind",
+      "requires": "Authenticated publisher approval for FV"
+    },
+    {
+      "id": "affiliate_channels",
+      "status": "BLOCKED",
+      "owner": "Founder/Mind",
+      "requires": "Precise allowed website and email channels, promo assets"
+    },
+    {
+      "id": "authorized_url",
+      "status": "BLOCKED",
+      "owner": "Founder/Mind",
+      "requires": "Named earning URL and link terms"
+    },
+    {
+      "id": "merchant_checkout",
+      "status": "UNKNOWN",
+      "owner": "Founder/Commerce",
+      "requires": "Final price, tax, returns, chargeback, delivery"
+    },
+    {
+      "id": "fv_owned_mind_sku",
+      "status": "UNKNOWN",
+      "owner": "Founder/Commerce",
+      "requires": "Verified rights-cleared Payhip SKU and fulfillment"
+    },
+    {
+      "id": "focus_confirmed_lead",
+      "status": "NOT_VERIFIED",
+      "owner": "Claude/Site QA",
+      "requires": "Actual confirmed Jetpack signup, not visible gift/unrestricted query param"
+    },
+    {
+      "id": "grok_media_ids",
+      "status": "UNKNOWN",
+      "owner": "Grok/Praxxis",
+      "requires": "Actual media ID, post time, rights, approved CTA route"
+    },
+    {
+      "id": "a_b_video",
+      "status": "NOT_RENDERED",
+      "owner": "Mind/QA",
+      "requires": "42s storyboard not playable original film"
+    },
+    {
+      "id": "browser_accessibility",
+      "status": "NOT_TESTED",
+      "owner": "Site QA",
+      "requires": "320/360/390/768/1440, keyboard, screen reader, reduced motion"
+    },
+    {
+      "id": "paid_orders",
+      "status": "NOT_VERIFIED",
+      "owner": "Commerce",
+      "requires": "Merchant-authoritative independently reconciled purchases"
+    },
+    {
+      "id": "settled_commissions",
+      "status": "NOT_VERIFIED",
+      "owner": "Commerce",
+      "requires": "Merchant confirmed paid affiliate earnings not clicks"
+    },
+    {
+      "id": "net_1k",
+      "status": "NOT_COMPUTABLE",
+      "owner": "Commerce/Growth",
+      "requires": "Paid revenue net of fees/refunds per qualified sessions"
+    },
+    {
+      "id": "cms_release",
+      "status": "BLOCKED",
+      "owner": "Founder/Claude",
+      "requires": "Founder approval and editorial QA before live writes"
+    },
+    {
+      "id": "grok_publishing",
+      "status": "BLOCKED",
+      "owner": "Grok/Founder",
+      "requires": "No creative queue/publish takeover"
+    },
+    {
+      "id": "dispatch",
+      "status": "BLOCKED",
+      "owner": "Dispatch/Founder",
+      "requires": "No email changes or send, #174 ownership"
+    },
+    {
+      "id": "javascript_analytics",
+      "status": "BLOCKED",
+      "owner": "Claude/Founder",
+      "requires": "No new scripts, duplicate analytics or cookies"
+    },
+    {
+      "id": "test_payment",
+      "status": "NOT_TESTED",
+      "owner": "Commerce/QA",
+      "requires": "No approved synthetic paid checkout trial"
+    },
+    {
+      "id": "affiliate_disclosure",
+      "status": "SOURCE_TESTABLE_ONLY",
+      "owner": "Mind/Site QA",
+      "requires": "Near CTA prospective disclosure required after approval"
+    },
+    {
+      "id": "single_jetpack",
+      "status": "PRESERVED",
+      "owner": "Mind/Dispatch",
+      "requires": "One existing Focus form/list, no duplicate"
+    },
+    {
+      "id": "branch_review",
+      "status": "BUILT_NOT_LIVE",
+      "owner": "Mind",
+      "requires": "Unpublished isolated draft and source-level checks only"
+    }
+  ],
+  "controls": {
+    "affiliate_earning_link_enabled": false,
+    "merchant_cta_enabled": false,
+    "additional_signup_form": false,
+    "published_to_wordpress": false,
+    "paid_vendor": false,
+    "video_autoplay": false,
+    "approved_to_merge": false
+  },
+  "experiment": {
+    "existing_A": "mind/r188/zen12-variant-A-independent-text-UNPUBLISHED.html",
+    "existing_B": "mind/r188/zen12-variant-B-optional-42s-storyboard-UNPUBLISHED.html",
+    "difference": "B-only 42s optional poster/transcript concept; no MP4, no randomization, no live traffic",
+    "conversion_metric": "NET revenue per 1000 verified qualified-human sessions, NOT COMPUTABLE"
+  },
+  "focus_finding": "WP /focus/ content and Issue #820 identify query-value visible-gift bypass; cannot count displayed gift or downloaded PDF as confirmed consent",
+  "note": "All research/seller sources read 2026-11-07; no authenticated Inspire3 portal nor Payhip merchant. No seller statements adopted as proof of branded effects."
+}
