@@ -1,0 +1,47 @@
+{
+  "run": "R196",
+  "as_of_utc": "2026-11-07T23:37:50Z",
+  "site": "https://finalvestige.com",
+  "source": "Authenticated read-only WordPress newsletter status/settings and Jetpack followers",
+  "site_can_send": true,
+  "newsletter": {
+    "enabled": true,
+    "email_new_posts_by_default": false,
+    "email_content_format": "full",
+    "total_counter": 3,
+    "confirmed_counter": 3,
+    "unconfirmed_requests_counter": 2,
+    "suppressed_counter": 0,
+    "paid_counter": 0,
+    "recent_post_email_status": "never_sent_opted_out",
+    "welcome_message_configured": true,
+    "actual_welcome_received": null,
+    "actual_email_eligible_recipients": null
+  },
+  "followers": {
+    "wpcom": 3,
+    "email_only": 0,
+    "partial": false,
+    "not_additive_to_newsletter": true
+  },
+  "third_party": {
+    "inspire3_named_publisher_approval": "UNVERIFIED",
+    "email_channel_permission": "UNVERIFIED",
+    "account_issued_earning_link": "UNVERIFIED",
+    "product_efficacy": "UNVERIFIED",
+    "actual_sales": "UNVERIFIED"
+  },
+  "release": {
+    "issues_01_02_04_06": "HOLD_UNSENT",
+    "issues_03_05": "HOLD_MERCHANT",
+    "founder_final_send_approval": false,
+    "valid_FV_postal_address_verified": false,
+    "received_native_Jetpack_unsubscribe_verified": false,
+    "received_native_Jetpack_preview_verified": false
+  },
+  "reporting": {
+    "qualified_human_sessions": null,
+    "independently_reconciled_orders": null,
+    "net_revenue_per_1000_qualified_human_sessions": "NOT_COMPUTABLE"
+  }
+}
