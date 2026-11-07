@@ -1,0 +1,304 @@
+{
+  "schema": "fv-navy-five-gap-closure-v1",
+  "captured_on": "2026-11-06",
+  "scope": "Five previously unassigned Navy photograph slots from source-only fifteen-row ledger (NOT new distinct image refs)",
+  "baseline": {
+    "ledger_repo_path": "qa/media-recovery/navy_fifteen_primary_catalog_20261106.json",
+    "ledger_blob_sha": "fda8819e86771cfd03a55a9ff252618127b0e420",
+    "slots_from_prior": 5,
+    "prior_fifteen_total": 15,
+    "original_site_posts": 66,
+    "original_site_inline_images": 361,
+    "reported_broken_images": 42,
+    "visitor_verified_broken_count": null,
+    "claimed_savings_percent": 76,
+    "measured_savings_percent": null,
+    "oversize_wp_originals": 13,
+    "oversize_wp_storage_bytes": 43522829
+  },
+  "policy": {
+    "max_preview_width": 960,
+    "no_upscale": true,
+    "wordpress_writes_allowed": false,
+    "downloads_allowed": false,
+    "third_party_cache_allowed": false,
+    "publication_allowed": false,
+    "rights_policy_url": "https://www.history.navy.mil/our-collections/photography.html"
+  },
+  "results": {
+    "official_item_candidates": 4,
+    "exact_binary_verified": 0,
+    "unmatched_originals": 1
+  },
+  "records": [
+    {
+      "slot": "274:1",
+      "post_id": 274,
+      "post_url": "https://finalvestige.com/2026/08/19/twenty-four-feet-from-air-uss-tang/",
+      "original_src": "https://www.history.navy.mil/content/history/nhhc/research/library/online-reading-room/title-list-alphabetically/u/united-states-submarine-losses/tang-ss-306/_jcr_content/body/media_asset_3/image.img.jpg/1485804525424.jpg",
+      "original_alt": "Richard O'Kane with twenty-two American aircrewmen rescued by USS Tang off Truk in May 1944.",
+      "original_html_dimensions": [
+        null,
+        null
+      ],
+      "primary_candidate": {
+        "catalog_id": "80-G-227987",
+        "catalog_url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nara-series/80-g/80-G-220000/80-g-227987-uss-tang--ss-306-.html",
+        "high_master_pixels": [
+          4908,
+          5948
+        ],
+        "preview_candidate": {
+          "width": 960,
+          "height": 1163,
+          "basis": "official_catalog_high_master_metadata_ONLY",
+          "delivered_crop_confirmed": false,
+          "output_generated": false
+        },
+        "identity_review": "SUBJECT_AND_CAPTION_MATCH__PUBLISHED_BINARY_UNCHECKED"
+      },
+      "alternatives": [],
+      "official_catalog_evidence": "Official catalog: O'Kane with 22 rescued aircrewmen off Truk, photographed on return to Pearl Harbor in May 1944; published original embedded in broader Submarine Losses page.",
+      "visual_integrity_note": "Do not substitute another Tang rescue or May 1944 photo without visual comparison.",
+      "rights": {
+        "clearance": "HOLD_ITEM_LEVEL",
+        "credit_note": "Official U.S. Navy Photograph; National Archives collection. Credit U.S. Navy / National Archives; item-level republication check required.",
+        "can_cache": false,
+        "can_rehost": false
+      },
+      "evidence": {
+        "catalog_method": "official_NHHC_search_index_and_catalog_text",
+        "catalog_http_status": null,
+        "published_origin_http_status": null,
+        "guest_http_status": null,
+        "guest_current_src": null,
+        "guest_natural_pixels": null,
+        "guest_cold_wire_bytes": null,
+        "visitor_broken": null,
+        "exact_binary_match": false
+      },
+      "actions": {
+        "downloaded": false,
+        "resized": false,
+        "cached": false,
+        "wordpress_written": false,
+        "approved": false
+      }
+    },
+    {
+      "slot": "274:2",
+      "post_id": 274,
+      "post_url": "https://finalvestige.com/2026/08/19/twenty-four-feet-from-air-uss-tang/",
+      "original_src": "https://www.history.navy.mil/content/history/nhhc/browse-by-topic/exploration-and-innovation/navy-torpedoes/_jcr_content/body/media_asset_1279725910/image.img.jpg/1701176168705.jpg",
+      "original_alt": "Mark 18-2 electric submarine torpedo photographed by the U.S. Navy during World War II.",
+      "original_html_dimensions": [
+        null,
+        null
+      ],
+      "primary_candidate": {
+        "catalog_id": "NH 84498",
+        "catalog_url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/NH-84000/NH-84498.html",
+        "high_master_pixels": [
+          6216,
+          4876
+        ],
+        "preview_candidate": {
+          "width": 960,
+          "height": 753,
+          "basis": "official_catalog_high_master_metadata_ONLY",
+          "delivered_crop_confirmed": false,
+          "output_generated": false
+        },
+        "identity_review": "SUBJECT_MATCH__PUBLISHED_BINARY_UNCHECKED"
+      },
+      "alternatives": [],
+      "official_catalog_evidence": "NHHC catalog shows TWO torpedoes at Newport Torpedo Station in WWII: upper Mark 18-2 electric and lower Mark 16-1 chemical. Published ALT mentions only Mark 18-2.",
+      "visual_integrity_note": "Potential editorial framing/ALT omission: photograph may show Mark 16-1 below; inspect original image before adjusting ALT, crop or caption.",
+      "rights": {
+        "clearance": "HOLD_ITEM_LEVEL",
+        "credit_note": "NHHC catalog lists copyright owner NHHC but that is not unconditional permission; item-level check required.",
+        "can_cache": false,
+        "can_rehost": false
+      },
+      "evidence": {
+        "catalog_method": "official_NHHC_search_index_and_catalog_text",
+        "catalog_http_status": null,
+        "published_origin_http_status": null,
+        "guest_http_status": null,
+        "guest_current_src": null,
+        "guest_natural_pixels": null,
+        "guest_cold_wire_bytes": null,
+        "visitor_broken": null,
+        "exact_binary_match": false
+      },
+      "actions": {
+        "downloaded": false,
+        "resized": false,
+        "cached": false,
+        "wordpress_written": false,
+        "approved": false
+      }
+    },
+    {
+      "slot": "280:1",
+      "post_id": 280,
+      "post_url": "https://finalvestige.com/2026/08/19/the-sledgehammers-broke-first-uss-pueblo/",
+      "original_src": "https://www.history.navy.mil/content/history/nhhc/research/histories/ship-histories/danfs/p/pueblo-iii/_jcr_content/body/media_asset_1086930325/image.img.jpg/1514467381634.jpg",
+      "original_alt": "A USS Pueblo sailor drawing coffee in the ship's mess during 1967.",
+      "original_html_dimensions": [
+        null,
+        null
+      ],
+      "primary_candidate": {
+        "catalog_id": "NH 75559",
+        "catalog_url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/NH-75000/NH-75559.html",
+        "high_master_pixels": null,
+        "preview_candidate": null,
+        "identity_review": "SUBJECT_AND_COMPOSITION_MATCH__PUBLISHED_BINARY_UNCHECKED"
+      },
+      "alternatives": [],
+      "official_catalog_evidence": "NHHC description specifically identifies a Pueblo crewmember drawing a cup of coffee in the ship's messing spaces in 1967.",
+      "visual_integrity_note": "Catalog 1280x1280 is MED rendition slot designation, not confirmed native pixel geometry; do not infer square photo or a 960x960 replacement.",
+      "rights": {
+        "clearance": "HOLD_ITEM_LEVEL",
+        "credit_note": "NHHC photograph; credit catalog and photo ID; independently check reuse.",
+        "can_cache": false,
+        "can_rehost": false
+      },
+      "evidence": {
+        "catalog_method": "official_NHHC_search_index_and_catalog_text",
+        "catalog_http_status": null,
+        "published_origin_http_status": null,
+        "guest_http_status": null,
+        "guest_current_src": null,
+        "guest_natural_pixels": null,
+        "guest_cold_wire_bytes": null,
+        "visitor_broken": null,
+        "exact_binary_match": false
+      },
+      "actions": {
+        "downloaded": false,
+        "resized": false,
+        "cached": false,
+        "wordpress_written": false,
+        "approved": false
+      }
+    },
+    {
+      "slot": "280:4",
+      "post_id": 280,
+      "post_url": "https://finalvestige.com/2026/08/19/the-sledgehammers-broke-first-uss-pueblo/",
+      "original_src": "https://www.history.navy.mil/content/history/nhhc/research/histories/ship-histories/danfs/b/banner-ii/_jcr_content/body/media_asset/image.img.jpg",
+      "original_alt": "USS Banner, sister ship of USS Pueblo, after the Pueblo incident prompted changes to the intelligence-ship program.",
+      "original_html_dimensions": [
+        null,
+        null
+      ],
+      "primary_candidate": null,
+      "alternatives": [
+        {
+          "item_id": "NH 68705",
+          "url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/NH-68000/NH-68705.html",
+          "master": [
+            6312,
+            4750
+          ],
+          "date": "1969-05-12",
+          "preview_candidate": null,
+          "review": "SUBJECT_ONLY_NOT_MATCHED"
+        },
+        {
+          "item_id": "NH 68710-KN",
+          "url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/NH-68000/NH-68710-KN.html",
+          "master": [
+            6258,
+            4806
+          ],
+          "date": "1969-05-12",
+          "preview_candidate": null,
+          "review": "SUBJECT_ONLY_NOT_MATCHED"
+        }
+      ],
+      "official_catalog_evidence": "Navy DANFS Banner II source is an actual published URL, but no item accession was established for its image. NHHC 1969 images show sister ship USS Banner, not established as binary or composition identical.",
+      "visual_integrity_note": "NH 68705 port bow and NH 68710-KN port broadside are competing SUBJECT ONLY alternatives taken 12 May 1969; do not claim depiction in 1968, crop-match or replace without visual/chronology and rights review.",
+      "rights": {
+        "clearance": "HOLD_ITEM_LEVEL",
+        "credit_note": "NHHC catalog includes courtesy USS Banner (1969); review reuse and photographer provenance individually.",
+        "can_cache": false,
+        "can_rehost": false
+      },
+      "evidence": {
+        "catalog_method": "official_NHHC_search_index_and_catalog_text",
+        "catalog_http_status": null,
+        "published_origin_http_status": null,
+        "guest_http_status": null,
+        "guest_current_src": null,
+        "guest_natural_pixels": null,
+        "guest_cold_wire_bytes": null,
+        "visitor_broken": null,
+        "exact_binary_match": false
+      },
+      "actions": {
+        "downloaded": false,
+        "resized": false,
+        "cached": false,
+        "wordpress_written": false,
+        "approved": false
+      }
+    },
+    {
+      "slot": "288:2",
+      "post_id": 288,
+      "post_url": "https://finalvestige.com/2026/08/19/the-bearing-was-right-honda-point/",
+      "original_src": "https://www.history.navy.mil/content/history/nhhc/our-collections/photography/technology/communications/radio/ug-21--us-naval-california-radio-station-collection/mare-island-naval-radio-station/ug-21-01-02-mare-island-naval-radio/jcr%3Acontent/mediaitem/image.img.jpg/1564510769845.jpg",
+      "original_alt": "Early U.S. Navy radio station equipment in California, similar to the shore direction-finding infrastructure used in 1923.",
+      "original_html_dimensions": [
+        null,
+        null
+      ],
+      "primary_candidate": {
+        "catalog_id": "UG 21-01.02",
+        "catalog_url": "https://www.history.navy.mil/our-collections/photography/technology/communications/radio/ug-21--us-naval-california-radio-station-collection/mare-island-naval-radio-station/ug-21-01-02-mare-island-naval-radio.html",
+        "high_master_pixels": [
+          2197,
+          2773
+        ],
+        "preview_candidate": {
+          "width": 960,
+          "height": 1212,
+          "basis": "official_catalog_high_master_metadata_ONLY",
+          "delivered_crop_confirmed": false,
+          "output_generated": false
+        },
+        "identity_review": "PHOTO_ITEM_PATH_AND_SUBJECT_MATCH__PUBLISHED_BINARY_UNCHECKED"
+      },
+      "alternatives": [],
+      "official_catalog_evidence": "NHHC catalog UG 21-01.02 identifies radio equipment and machinery in Building 115 of Electrical School at Mare Island Naval Radio Station, donated/found-in-collection glass negative.",
+      "visual_integrity_note": "The equipment photo is not contemporaneous proof of the specific 1923 Honda Point radio/DF incident; alt says 'similar' and must not be upgraded to exact evidence. Note source path encoded literal jcr%3Acontent.",
+      "rights": {
+        "clearance": "HOLD_ITEM_LEVEL",
+        "credit_note": "NHHC 'found in collection' glass negative: government website alone is not individual rights release.",
+        "can_cache": false,
+        "can_rehost": false
+      },
+      "evidence": {
+        "catalog_method": "official_NHHC_search_index_and_catalog_text",
+        "catalog_http_status": null,
+        "published_origin_http_status": null,
+        "guest_http_status": null,
+        "guest_current_src": null,
+        "guest_natural_pixels": null,
+        "guest_cold_wire_bytes": null,
+        "visitor_broken": null,
+        "exact_binary_match": false
+      },
+      "actions": {
+        "downloaded": false,
+        "resized": false,
+        "cached": false,
+        "wordpress_written": false,
+        "approved": false
+      }
+    }
+  ]
+}
