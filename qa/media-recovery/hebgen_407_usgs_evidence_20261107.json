@@ -1,0 +1,286 @@
+{
+  "schema": "fv.media.hebgen407.source_and_catalog.v1",
+  "as_of": "2026-11-07",
+  "post_id": 407,
+  "page_url": "https://finalvestige.com/2026/08/20/the-lake-wasnt-there-yesterday-hebgen/",
+  "wp_modified_at_source_snapshot": "2026-10-29T18:30:30",
+  "scope": "Eight USGS-hosted stored external images from immutable media recovery census, not a fresh live CMS/browser read",
+  "evidence_provenance": {
+    "inventory_pr": 183,
+    "inventory_blob": "48e1ebf07207e948ba5802e714eb39659d2e1c1d",
+    "site_qa_pr": 154,
+    "guest_adapter_pr": 1395,
+    "worklist_pr": 183
+  },
+  "status_summary": {
+    "source_urls_checked": 8,
+    "viewer_rendered_eventually": 7,
+    "retriever_unsupported_type": 1,
+    "confirmed_guest_browser_broken": null,
+    "claimed_42_broken_verified": false,
+    "claim_76_percent_measured": false
+  },
+  "performance": {
+    "historic_post_cohort": 61,
+    "historic_source_image_refs": 355,
+    "later_post_cohort": 66,
+    "later_source_image_refs": 361,
+    "oversized_wp_originals": 13,
+    "oversized_wp_originals_stored_bytes": 43522829,
+    "visitor_image_transfer_bytes": null,
+    "measured_savings_pct": null
+  },
+  "restrictions": {
+    "no_wordpress_writes": true,
+    "no_media_downloads_or_cache": true,
+    "no_image_derivatives_generated": true,
+    "no_production_release": true,
+    "no_rights_assumptions": true,
+    "max_preview_width_px": 960,
+    "no_upscale": true
+  },
+  "images": [
+    {
+      "slot": "407:0",
+      "source_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/vhp_img317.jpg",
+      "source_inventory_snapshot": "2026-10-30",
+      "source_inventory_blob": "48e1ebf07207e948ba5802e714eb39659d2e1c1d",
+      "viewer": {
+        "date": "2026-11-07",
+        "method": "web.open / official USGS catalog click",
+        "observation": "rendered_image",
+        "viewer_ref": "turn446901view0",
+        "retriever_wrapper_error_code": null,
+        "origin_http_status": null,
+        "guest_browser_http_status": null,
+        "guest_decode_ok": null,
+        "wire_bytes": null
+      },
+      "primary_record_url": "https://www.usgs.gov/media/images/earthquake-damage-1959-hebgen-lake-event-yellowstone-plateau",
+      "catalog_rights_note": "catalog_public_domain; author_not_item_verified",
+      "rights_gate": "HOLD",
+      "exact_binary_identity_confirmed": false,
+      "allowed_to_download_or_cache": false,
+      "wp_media_id": null,
+      "stored_declared_geometry_px": null,
+      "provisional_resize_from_stored_geometry_px": null,
+      "native_source_geometry_px": null,
+      "approved_960px_derivative_px": null,
+      "note": "Site and USGS catalog show Grace Miller house at Hebgen Lake; native pixels not verified."
+    },
+    {
+      "slot": "407:1",
+      "source_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/img7535.jpg",
+      "source_inventory_snapshot": "2026-10-30",
+      "source_inventory_blob": "48e1ebf07207e948ba5802e714eb39659d2e1c1d",
+      "viewer": {
+        "date": "2026-11-07",
+        "method": "web.open / official USGS catalog click",
+        "observation": "unsupported_content_type",
+        "viewer_ref": "turn446901view1",
+        "retriever_wrapper_error_code": 400,
+        "origin_http_status": null,
+        "guest_browser_http_status": null,
+        "guest_decode_ok": null,
+        "wire_bytes": null
+      },
+      "primary_record_url": "https://www.usgs.gov/media/images/hebgen-lake-fault-scarp-1959-0",
+      "catalog_rights_note": "catalog_public_domain; photo_credit_J_R_Stacy",
+      "rights_gate": "HOLD",
+      "exact_binary_identity_confirmed": false,
+      "allowed_to_download_or_cache": false,
+      "wp_media_id": null,
+      "stored_declared_geometry_px": null,
+      "provisional_resize_from_stored_geometry_px": null,
+      "native_source_geometry_px": null,
+      "approved_960px_derivative_px": null,
+      "note": "Web retriever rejects original as binary/octet-stream; USGS official medium rendition renders, not proof of browser failure. Photo credited to J. R. Stacy."
+    },
+    {
+      "slot": "407:2",
+      "source_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/media/images/EarthquakeLake1.jpg",
+      "source_inventory_snapshot": "2026-10-30",
+      "source_inventory_blob": "48e1ebf07207e948ba5802e714eb39659d2e1c1d",
+      "viewer": {
+        "date": "2026-11-07",
+        "method": "web.open / official USGS catalog click",
+        "observation": "rendered_image",
+        "viewer_ref": "turn446901view2",
+        "retriever_wrapper_error_code": null,
+        "origin_http_status": null,
+        "guest_browser_http_status": null,
+        "guest_decode_ok": null,
+        "wire_bytes": null
+      },
+      "primary_record_url": "https://www.usgs.gov/media/images/view-madison-slide-august-21-1959-rapidly-filling-earthquake-lake",
+      "catalog_rights_note": "catalog_public_domain; external_academic_photo_credit_W_B_Hall",
+      "rights_gate": "HOLD",
+      "exact_binary_identity_confirmed": false,
+      "allowed_to_download_or_cache": false,
+      "wp_media_id": null,
+      "stored_declared_geometry_px": [
+        1024,
+        719
+      ],
+      "provisional_resize_from_stored_geometry_px": [
+        960,
+        674
+      ],
+      "native_source_geometry_px": null,
+      "approved_960px_derivative_px": null,
+      "note": "Aug 21, 1959 slide view; photo credit Professor William B. Hall of Montana School of Mines, not assume federal authorship."
+    },
+    {
+      "slot": "407:3",
+      "source_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/media/images/EarthquakeLake3.jpg",
+      "source_inventory_snapshot": "2026-10-30",
+      "source_inventory_blob": "48e1ebf07207e948ba5802e714eb39659d2e1c1d",
+      "viewer": {
+        "date": "2026-11-07",
+        "method": "web.open / official USGS catalog click",
+        "observation": "rendered_on_official_catalog_retry",
+        "viewer_ref": "turn547649view0",
+        "retriever_wrapper_error_code": null,
+        "origin_http_status": null,
+        "guest_browser_http_status": null,
+        "guest_decode_ok": null,
+        "wire_bytes": null
+      },
+      "primary_record_url": "https://www.usgs.gov/media/images/dragline-working-lower-outlet-channel-earthquake-lake-october-18-1959",
+      "catalog_rights_note": "catalog_public_domain; external_private_photo_credit_Mrs_Steven_W_Nile",
+      "rights_gate": "HOLD",
+      "exact_binary_identity_confirmed": false,
+      "allowed_to_download_or_cache": false,
+      "wp_media_id": null,
+      "stored_declared_geometry_px": [
+        1024,
+        730
+      ],
+      "provisional_resize_from_stored_geometry_px": [
+        960,
+        684
+      ],
+      "native_source_geometry_px": null,
+      "approved_960px_derivative_px": null,
+      "note": "Direct web.open unavailable, but clicking official USGS Original rendered the same URL; credit Mrs. Steven W. Nile."
+    },
+    {
+      "slot": "407:4",
+      "source_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/thumbnails/image/img7536.jpg",
+      "source_inventory_snapshot": "2026-10-30",
+      "source_inventory_blob": "48e1ebf07207e948ba5802e714eb39659d2e1c1d",
+      "viewer": {
+        "date": "2026-11-07",
+        "method": "web.open / official USGS catalog click",
+        "observation": "rendered_image",
+        "viewer_ref": "turn446901view4",
+        "retriever_wrapper_error_code": null,
+        "origin_http_status": null,
+        "guest_browser_http_status": null,
+        "guest_decode_ok": null,
+        "wire_bytes": null
+      },
+      "primary_record_url": "https://www.usgs.gov/media/images/rockslide-damage-golden-gate-area-near-mammoth-hot-springs",
+      "catalog_rights_note": "catalog_public_domain; author_not_item_verified",
+      "rights_gate": "HOLD",
+      "exact_binary_identity_confirmed": false,
+      "allowed_to_download_or_cache": false,
+      "wp_media_id": null,
+      "stored_declared_geometry_px": null,
+      "provisional_resize_from_stored_geometry_px": null,
+      "native_source_geometry_px": null,
+      "approved_960px_derivative_px": null,
+      "note": "1959 earthquake rockslide at Golden Gate near Mammoth Hot Springs."
+    },
+    {
+      "slot": "407:5",
+      "source_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/thumbnails/image/img7538.jpg",
+      "source_inventory_snapshot": "2026-10-30",
+      "source_inventory_blob": "48e1ebf07207e948ba5802e714eb39659d2e1c1d",
+      "viewer": {
+        "date": "2026-11-07",
+        "method": "web.open / official USGS catalog click",
+        "observation": "rendered_image",
+        "viewer_ref": "turn446901view5",
+        "retriever_wrapper_error_code": null,
+        "origin_http_status": null,
+        "guest_browser_http_status": null,
+        "guest_decode_ok": null,
+        "wire_bytes": null
+      },
+      "primary_record_url": "https://www.usgs.gov/media/images/sapphire-pool-upper-geyser-basin-erupting-after-1959-hebg",
+      "catalog_rights_note": "catalog_public_domain; author_not_item_verified",
+      "rights_gate": "HOLD",
+      "exact_binary_identity_confirmed": false,
+      "allowed_to_download_or_cache": false,
+      "wp_media_id": null,
+      "stored_declared_geometry_px": null,
+      "provisional_resize_from_stored_geometry_px": null,
+      "native_source_geometry_px": null,
+      "approved_960px_derivative_px": null,
+      "note": "Sapphire Pool photographed erupting after 1959 quake."
+    },
+    {
+      "slot": "407:6",
+      "source_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/thumbnails/image/img7537.jpg",
+      "source_inventory_snapshot": "2026-10-30",
+      "source_inventory_blob": "48e1ebf07207e948ba5802e714eb39659d2e1c1d",
+      "viewer": {
+        "date": "2026-11-07",
+        "method": "web.open / official USGS catalog click",
+        "observation": "rendered_image",
+        "viewer_ref": "turn446901view6",
+        "retriever_wrapper_error_code": null,
+        "origin_http_status": null,
+        "guest_browser_http_status": null,
+        "guest_decode_ok": null,
+        "wire_bytes": null
+      },
+      "primary_record_url": "https://www.usgs.gov/media/images/seismic-geyser-eruption-1970",
+      "catalog_rights_note": "catalog_public_domain; photo_credit_John_Brandow_USGS",
+      "rights_gate": "HOLD",
+      "exact_binary_identity_confirmed": false,
+      "allowed_to_download_or_cache": false,
+      "wp_media_id": null,
+      "stored_declared_geometry_px": null,
+      "provisional_resize_from_stored_geometry_px": null,
+      "native_source_geometry_px": null,
+      "approved_960px_derivative_px": null,
+      "note": "Seismic Geyser eruption 1970 (not contemporaneous with 1959 earthquake), photo John Brandow USGS."
+    },
+    {
+      "slot": "407:7",
+      "source_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/media/images/Quake%20lake%20and%20slide%2020230627.jpg",
+      "source_inventory_snapshot": "2026-10-30",
+      "source_inventory_blob": "48e1ebf07207e948ba5802e714eb39659d2e1c1d",
+      "viewer": {
+        "date": "2026-11-07",
+        "method": "web.open / official USGS catalog click",
+        "observation": "rendered_image",
+        "viewer_ref": "turn446901view7",
+        "retriever_wrapper_error_code": null,
+        "origin_http_status": null,
+        "guest_browser_http_status": null,
+        "guest_decode_ok": null,
+        "wire_bytes": null
+      },
+      "primary_record_url": "https://www.usgs.gov/media/images/earthquake-lake-and-madison-slide",
+      "catalog_rights_note": "catalog_public_domain; photo_credit_Mike_Poland_USGS",
+      "rights_gate": "HOLD",
+      "exact_binary_identity_confirmed": false,
+      "allowed_to_download_or_cache": false,
+      "wp_media_id": null,
+      "stored_declared_geometry_px": [
+        1024,
+        771
+      ],
+      "provisional_resize_from_stored_geometry_px": [
+        960,
+        723
+      ],
+      "native_source_geometry_px": null,
+      "approved_960px_derivative_px": null,
+      "note": "June 27 2023 contemporary landscape; credit USGS Mike Poland. Preserve 2023 date."
+    }
+  ]
+}
