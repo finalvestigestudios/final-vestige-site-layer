@@ -20,6 +20,7 @@ from urllib.parse import urlsplit
 from zipfile import ZipFile
 
 from verify_integrated_playground import CHAPTERS, read_semantics, assert_semantics, verify_image_bytes
+from verify_archival_provenance import classify_source, verify_receipt
 
 BLOB = "137c74a476005684a28f5ff9a36e75c6b03268f7"
 PARENT = "37bc943c08204867809a0b3c80540fa534fb005f"
@@ -147,17 +148,29 @@ def run(bundle, output, axe_js=None, timeout_ms=120000, chromium=None):
             report["wordpress"] = "PASS"
             tab.screenshot(path=str(output.parent/"playground_wordpress_390.png"), full_page=True)
             images = []
-            for img in wp.locator("[data-fv-archive-img]").all():
+            for index, img in enumerate(wp.locator("[data-fv-archive-img]").all()):
                 img.scroll_into_view_if_needed(timeout=5000)
                 img.evaluate("e => e.loading='eager'")
                 tab.wait_for_timeout(850)
+                original = img.get_attribute("src") or ""
                 src = img.evaluate("e => e.currentSrc || e.src")
+                # The browser may select a Jetpack/Photon CDN derivative from srcset.
+                # A decodable image is insufficient: bind source, currentSrc,
+                # media ID, dimensions, HTTP status and response content-type.
+                provenance = classify_source(original, src, index)
                 response = next((r for r in responses if r.url == src), None)
                 if not response:
                     raise RuntimeError("Missing actual image HTTP response: "+src)
-                fmt = "WEBP" if "s67-19766.webp" in src else "JPEG"
-                images.append({"src":src, **verify_image_bytes(response.body(), fmt)})
-            report["images"] = images
+                receipt = verify_image_bytes(response.body(), provenance["format"])
+                images.append({"url":src, **verify_receipt(
+                    provenance, receipt, response.status,
+                    response.headers.get("content-type", ""))})
+            report["image_receipts"] = images
+            report["first_party_image_transfers"] = (
+                "PASS" if len(images) == 2 and all(x["first_party"] for x in images)
+                else "NOT_VERIFIED_CDN_SELECTED")
+            report["image_provenance"] = "PASS_EXACT_MEDIA_IDS_AND_BYTES"
+            report["images"] = "PASS_BYTES_AND_PROVENANCE"
             if not axe_js or not Path(axe_js).is_file():
                 raise RuntimeError("Official axe-core library absent; cannot claim WCAG acceptance")
             wp.add_script_tag(path=str(axe_js))
@@ -169,7 +182,10 @@ def run(bundle, output, axe_js=None, timeout_ms=120000, chromium=None):
             if axe["violations"] or axe["incomplete"]:
                 raise RuntimeError("WCAG axe violations or incomplete checks")
             report["status"] = "PARTIAL"
-            report["reason"] = "WordPress/asset/axe tests passed; no-JS, Safari, CWV, Jetpack and QD gates remain."
+            report["reason"] = ("WordPress/image bytes/axe verified in isolated Playground; "
+                "first-party image transfer, no-JS, Safari, CWV, Jetpack and QD remain gated"
+                if report["first_party_image_transfers"] != "PASS"
+                else "WordPress/first-party image bytes/axe verified; no-JS, Safari, CWV, Jetpack and QD remain gated")
             browser.close()
     except Exception as exc:
         report["status"] = "FAIL"
