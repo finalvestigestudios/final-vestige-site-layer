@@ -73,3 +73,34 @@ def verify_receipt(source, received, status, content_type):
             and received.get("bytes", 0) >= 1024):
         raise ValueError("Missing transferred image byte/hash evidence")
     return {**source, "transfer_bytes": received["bytes"], "sha256": received["sha256"]}
+
+
+def verify_image_bytes(body, expected_format):
+    """Decode *actual HTTP response bytes* into a receipt for verify_receipt.
+
+    This cannot prove copyright clearance, NASA endorsement or that the media
+    matches its historic caption. An image tag, a mock, and WordPress media
+    metadata are not substitutes for actual browser response.body() bytes.
+    """
+    import hashlib
+    from io import BytesIO
+    if expected_format not in ('WEBP', 'JPEG'):
+        raise ValueError('Unknown allowed archival image encoding')
+    if not isinstance(body, bytes) or len(body) < 1024:
+        raise ValueError('Missing or implausibly small transferred image bytes')
+    try:
+        from PIL import Image, UnidentifiedImageError
+    except ImportError as e:
+        raise RuntimeError('Pillow image decoder unavailable: image admission HOLD') from e
+    try:
+        with Image.open(BytesIO(body)) as image:
+            if image.format != expected_format:
+                raise ValueError('Encoded image format does not match expected media')
+            width, height = image.size
+            if min(width, height) < 1 or width * height > 12000000:
+                raise ValueError('Unreasonable decoded archival dimensions')
+            image.load()  # reject truncated/corrupted data rather than just headers
+    except (OSError, ValueError, UnidentifiedImageError) as e:
+        raise ValueError('Cannot decode approved image bytes: ' + str(e)) from e
+    return dict(format=expected_format, width=width, height=height,
+                bytes=len(body), sha256=hashlib.sha256(body).hexdigest())
