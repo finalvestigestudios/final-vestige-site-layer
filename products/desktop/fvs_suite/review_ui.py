@@ -142,6 +142,15 @@ def open_review_window(parent: tk.Misc, product: str, report_path: str | None = 
                 "Review evidence changed", safe_error_message(exc, operation="report"),
                 parent=window)
             return False
+        except Exception:
+            # Unexpected engine/identity faults must not leave customer rows
+            # selected or display private exception/filename diagnostics.
+            _reset_report_view()
+            messagebox.showerror(
+                "Review evidence changed",
+                "Review evidence could not be reverified. The selection was cleared; reopen the report.",
+                parent=window)
+            return False
         return True
 
     def load_report(path):
@@ -155,6 +164,13 @@ def open_review_window(parent: tk.Misc, product: str, report_path: str | None = 
                 "Cannot open review queue", safe_error_message(exc, operation="report"),
                 parent=window)
             return
+        except Exception:
+            _reset_report_view()
+            messagebox.showerror(
+                "Cannot open review queue",
+                "Review verification stopped unexpectedly. The selection was cleared.",
+                parent=window)
+            return
         report_text.set(str(selection.report_path))
         try:
             display()
@@ -162,6 +178,12 @@ def open_review_window(parent: tk.Misc, product: str, report_path: str | None = 
             _reset_report_view()
             messagebox.showerror("Review evidence changed",
                                  safe_error_message(exc, operation="report"), parent=window)
+        except Exception:
+            _reset_report_view()
+            messagebox.showerror(
+                "Review evidence changed",
+                "Review display could not be verified. The selection was cleared.",
+                parent=window)
 
     def choose_report():
         if not _authorized():
@@ -207,6 +229,16 @@ def open_review_window(parent: tk.Misc, product: str, report_path: str | None = 
             messagebox.showerror(
                 "Review state changed" if recorded else "Review not recorded",
                 safe_error_message(exc, operation="review"), parent=window)
+            return
+        except Exception:
+            _reset_report_view()
+            # The append might have committed before the unexpected failure;
+            # never imply the action is safe to repeat without journal review.
+            messagebox.showerror(
+                "Review outcome requires inspection",
+                "Review processing stopped unexpectedly. The selection was cleared. "
+                "Inspect the local review journal before attempting this action again.",
+                parent=window)
             return
         status_text.set("Human review action recorded locally. No payment or grant action authorized.")
         rationale.delete("1.0", "end")
