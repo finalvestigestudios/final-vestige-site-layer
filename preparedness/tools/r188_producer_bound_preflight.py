@@ -35,7 +35,7 @@ def preflight(repo: Path, timeout: int = 300, *, synthetic_pins=None) -> dict:
     """
     packet = {'schema': SCHEMA, 'state': INVALID,
               'publication_authorized': False, 'independent_qd_pass': False,
-              'merchant_offer_verified': False, 'native_build_verified': False,
+              'merchant_offer_verified': False, 'native_structural_checks_complete': False,
               'checks': [], 'source_pin_baseline':
                   'c881583358c485dcc02ca69e6cc275cd395a287a'}
     try:
@@ -62,7 +62,7 @@ def preflight(repo: Path, timeout: int = 300, *, synthetic_pins=None) -> dict:
         if packet['state'] == INVALID:
             packet['blocker'] = 'R186 native build/validation/safety custody incomplete'
         else:
-            packet['native_build_verified'] = True  # structural executions ONLY, not safety approval.
+            packet['native_structural_checks_complete'] = True  # structural executions ONLY, not safety approval.
     except (OSError, ValueError, TypeError, KeyError, ImportError, AttributeError) as exc:
         packet['blocker'] = str(exc)[:300]
     return packet
