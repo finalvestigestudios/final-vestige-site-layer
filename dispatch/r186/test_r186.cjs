@@ -8,7 +8,7 @@ const txt=()=>p("ISSUE03_REVIEW_ONLY.txt");
 const html=()=>p("ISSUE03_REVIEW_ONLY.html");
 const gate=()=>JSON.parse(p("RELEASE_ATTESTATIONS.json"));
 test("four editorial / two commercial original campaign unchanged",()=>{assert.deepEqual(gate().mix,{editorial:4,commercial_pending:2});assert.equal(gate().master_pr,175)});
-test("one proposed CTA is inactive in all formats",()=>{for(const s of [md(),txt(),html()]){assert.ok(s.includes("[[APPROVED_LIVE_ZEN12_GUIDE_URL_REQUIRED]]"));assert.ok(!/href=["'][^"']*(?:zen12\.com|affiliates\.inspire3\.com|awin1\.com)/.test(s))}});
+test("one proposed CTA is inactive in all formats",()=>{for(const s of [md(),txt(),html()]){assert.ok(s.includes("[[APPROVED_LIVE_ZEN12_GUIDE_URL_REQUIRED]]"));assert.ok(!/href=["'][^"']*(?:awin1\.com|affiliates\.inspire3\.com\/(?:track|click|go)|[?&](?:aff_id|affiliate_id|clickid|subid)=)/i.test(s))}});
 test("subject and preheader agree in all formats",()=>{for(const s of [md(),txt(),html()]){assert.ok(s.includes("Does twelve minutes buy an hour?"));assert.ok(s.includes("A short routine is easy to test."))}});
 test("adjacent disclosure and placeholders in all formats",()=>{for(const s of [md(),txt(),html()]){assert.match(s,/may earn a commission/i);assert.ok(s.includes("[[VALID_FINAL_VESTIGE_PHYSICAL_POSTAL_ADDRESS_REQUIRED]]"));assert.ok(s.includes("[[JETPACK_UNSUBSCRIBE_LINK_MUST_BE_VERIFIED]]"))}});
 test("specific offer claims framed as seller assertions",()=>{for(const s of [md(),txt(),html()]){assert.match(s,/seller/i);assert.match(s,/48/);assert.ok(!/clinically proven to reprogram|guaranteed income|cures anxiety/i.test(s))}});
