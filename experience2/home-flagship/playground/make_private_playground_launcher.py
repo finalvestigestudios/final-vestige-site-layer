@@ -10,7 +10,7 @@ import json
 from pathlib import Path
 from zipfile import ZipFile, ZipInfo, ZIP_DEFLATED
 
-BLOB = "455c6cccbf8a00e6ecc4c2524775010d7ee1762c"
+BLOB = "137c74a476005684a28f5ff9a36e75c6b03268f7"
 ASSEMBLER = "75faa8a1e0367a37c2638250a3c9ed0a0f8c0b7f"
 CHAPTERS = ("fv-hf-title", "fv-hf-chronicle", "fv-hf-evidence", "fv-hf-inquiry",
             "fv-hf-method-title", "fv-hf-observer", "fv-hf-mind-title")
