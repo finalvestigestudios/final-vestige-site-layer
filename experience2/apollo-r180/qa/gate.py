@@ -49,6 +49,8 @@ async def inspect(browser,a,width,js=True):
    violations=await page.evaluate('async()=>{const r=await axe.run(document.querySelector("[data-fvx-ledger]"),{runOnly:{type:"tag",values:["wcag2a","wcag2aa","wcag21aa","wcag22aa"]}});return r.violations.map(x=>x.id)}')
    checks['genuine_axe_zero_violations']=not violations
   else: checks['axe_not_applicable_without_javascript']=True
+ await page.add_style_tag(content='input{caret-color:transparent!important}')
+ await page.evaluate('document.activeElement && document.activeElement.blur()')
  path=a.output/('no-js' if not js else str(width));shot=path.with_suffix('.png')
  await page.screenshot(path=str(shot),full_page=True,animations='disabled')
  result={'width':width,'javascript':js,'checks':checks,'errors':errors,
