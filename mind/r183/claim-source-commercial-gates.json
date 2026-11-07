@@ -1,0 +1,252 @@
+{
+  "schema": "fv.mind.r183.eligibility.v1",
+  "reviewed_date": "2026-11-06",
+  "status": "UNPUBLISHED_HARD_HOLD",
+  "seller": "Inspire3",
+  "offer": "Zen12 Premium",
+  "merchant_product_page": "https://zen12.com/",
+  "merchant_claims_marked_as_seller_only": true,
+  "affiliate_acceptance_verified": false,
+  "approved_promotional_channels_verified": false,
+  "approved_swipe_creatives_verified": false,
+  "approved_earning_url": null,
+  "checkout_total_verified": false,
+  "refund_execution_verified": false,
+  "rights_cleared_paid_fv_mind_sku": null,
+  "live_wordpress_write": false,
+  "purchase_cta_enabled": false,
+  "qualified_human_sessions": null,
+  "confirmed_leads": null,
+  "affiliate_clicks": null,
+  "verified_paid_orders": null,
+  "received_commissions_usd": null,
+  "net_revenue_usd": null,
+  "sources": [
+    {
+      "id": "I1",
+      "url": "https://inspire3.com/",
+      "use": "Seller catalog and offer taxonomy; efficacy language not adopted."
+    },
+    {
+      "id": "I2",
+      "url": "https://zen12.com/",
+      "use": "Exact Premium inventory: 12 levels, four audio styles, 48 MP3s, advertised extras, seller-only $87.99 Nov 6 display and one-year guarantee."
+    },
+    {
+      "id": "I3",
+      "url": "https://affiliates.inspire3.com/",
+      "use": "Public publisher invitation, NOT Final Vestige acceptance, rights or tracking."
+    },
+    {
+      "id": "I4",
+      "url": "https://hypnosislive.com/",
+      "use": "Distinct self-hypnosis catalog; unsupported guarantees and urgency not repeated."
+    },
+    {
+      "id": "I5",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "use": "Distinct Focus Shot commercial offer; product-specific evidence required."
+    },
+    {
+      "id": "F1",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "use": "Adjacent, clear, conspicuous connection disclosure."
+    },
+    {
+      "id": "F2",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "use": "Health claim substantiation and net impression."
+    },
+    {
+      "id": "P1",
+      "url": "https://doi.org/10.1207/s15516709cog2605_1",
+      "use": "Rozenblit/Keil 2002 explanation-depth original."
+    },
+    {
+      "id": "P2",
+      "url": "https://doi.org/10.1177/0956797612464058",
+      "use": "Fernbach et al. 2013 explanation-study; policy not purchase."
+    },
+    {
+      "id": "P3",
+      "url": "https://doi.org/10.1371/journal.pone.0286023",
+      "use": "2023 review of 14 EEG binaural studies, inconsistent; not brand-specific."
+    },
+    {
+      "id": "P4",
+      "url": "https://doi.org/10.1068/p7755",
+      "use": "2014 Thatcher feature-only qualification for inherited article."
+    },
+    {
+      "id": "L1",
+      "url": "https://finalvestige.com/focus/",
+      "use": "Existing free 52-page Focus Fieldbook and one signup."
+    },
+    {
+      "id": "L2",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "use": "Published Mind-adjacent original investigation."
+    },
+    {
+      "id": "L3",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "use": "Published archival bridge."
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "text": "Premium is advertised as 12 levels/48 MP3 recordings",
+      "class": "SELLER_DESCRIBED",
+      "source": "I2",
+      "allowed": true
+    },
+    {
+      "id": "C02",
+      "text": "Four styles per level: music/guided/nature/white noise",
+      "class": "SELLER_DESCRIBED",
+      "source": "I2",
+      "allowed": true
+    },
+    {
+      "id": "C03",
+      "text": "Seller page displayed $87.99 on 2026-11-06",
+      "class": "DATED_SELLER_OBSERVATION",
+      "source": "I2",
+      "allowed_only_as_observation": true,
+      "checkout_total_unverified": true
+    },
+    {
+      "id": "C04",
+      "text": "One-year refund guarantee offered",
+      "class": "SELLER_PROMISE",
+      "source": "I2",
+      "allowed_only_attributed": true,
+      "fulfillment_unverified": true
+    },
+    {
+      "id": "C05",
+      "text": "An hour of meditation equivalent to 12 minutes",
+      "class": "SELLER_EFFICACY",
+      "source": "I2",
+      "adopt": false,
+      "product_level_evidence": "NOT_ESTABLISHED"
+    },
+    {
+      "id": "C06",
+      "text": "Instant medical or mental health benefit",
+      "class": "SELLER_EFFICACY",
+      "source": "I2",
+      "adopt": false,
+      "product_level_evidence": "NOT_ESTABLISHED"
+    },
+    {
+      "id": "C07",
+      "text": "Binaural EEG entrainment research consistently supports outcomes",
+      "class": "REJECT",
+      "source": "P3",
+      "adopt": false,
+      "reason": "14-study review inconsistent, not Zen12-specific"
+    },
+    {
+      "id": "C08",
+      "text": "Public Inspire3 affiliate portal approves FV",
+      "class": "REJECT",
+      "source": "I3",
+      "adopt": false,
+      "reason": "No named account verification"
+    },
+    {
+      "id": "C09",
+      "text": "Hypnosis Live and Brainwave Shots share Zen12 claims",
+      "class": "REJECT",
+      "source": "I4",
+      "adopt": false,
+      "reason": "Distinct products and features"
+    },
+    {
+      "id": "C10",
+      "text": "Explanatory-depth experiments prove a buyer will change behavior",
+      "class": "REJECT",
+      "source": "P2",
+      "adopt": false,
+      "reason": "Policy study not commerce intervention"
+    },
+    {
+      "id": "C11",
+      "text": "Existing Focus Fieldbook is free with the current Dispatch list",
+      "class": "LIVE_EDITORIAL",
+      "source": "L1",
+      "allowed": true
+    },
+    {
+      "id": "C12",
+      "text": "FV has confirmed Mind-specific Payhip orders or affiliate commissions",
+      "class": "UNOBSERVABLE",
+      "allowed": false,
+      "reason": "No authenticated merchant record"
+    }
+  ],
+  "gates": [
+    {
+      "name": "named_affiliate_acceptance",
+      "state": "HARD_HOLD",
+      "owner": "Founder/Mind",
+      "proof": "Authenticated publisher acceptance"
+    },
+    {
+      "name": "channels_and_creatives",
+      "state": "HARD_HOLD",
+      "owner": "Founder/Mind",
+      "proof": "Written allowed channels / actual approved asset"
+    },
+    {
+      "name": "earning_url",
+      "state": "HARD_HOLD",
+      "owner": "Founder/Mind",
+      "proof": "Exact account-associated tracking URL"
+    },
+    {
+      "name": "checkout_refund",
+      "state": "UNVERIFIED",
+      "owner": "Commerce",
+      "proof": "Dated final terms / order review"
+    },
+    {
+      "name": "paid_owned_mind_sku",
+      "state": "UNVERIFIED",
+      "owner": "Commerce",
+      "proof": "Payhip listing, rights, live checkout, refund policy"
+    },
+    {
+      "name": "grok_media_ids",
+      "state": "UNVERIFIED",
+      "owner": "Praxxis/Grok",
+      "proof": "Published immutable asset + URL"
+    },
+    {
+      "name": "existing_jetpack_confirmation",
+      "state": "UNVERIFIED",
+      "owner": "QA/Dispatch",
+      "proof": "Consented test welcome delivery"
+    },
+    {
+      "name": "first_party_events",
+      "state": "UNTESTED",
+      "owner": "Claude/QA",
+      "proof": "Consent reviewed privacy-safe event telemetry"
+    },
+    {
+      "name": "realized_net_per_1000",
+      "state": "NOT_COMPUTABLE",
+      "owner": "Commerce/Growth",
+      "proof": "Settlements and qualified-human sessions"
+    },
+    {
+      "name": "founder_release",
+      "state": "HARD_HOLD",
+      "owner": "Founder",
+      "proof": "Explicit production release approval"
+    }
+  ]
+}
