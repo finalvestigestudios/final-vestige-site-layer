@@ -12,6 +12,7 @@ from .evidence_vault import restore_evidence, seal_evidence
 from .audit_display import visible_review_row
 from .ui_errors import safe_error_message
 from .review_queue_load import ReviewQueue
+from .review_target import revalidate_or_revoke
 
 
 def open_review_window(parent: tk.Misc, product: str, report_path: str | None = None,
@@ -84,17 +85,24 @@ def open_review_window(parent: tk.Misc, product: str, report_path: str | None = 
     button_row.grid(row=5, column=0, sticky="w", pady=(10, 2))
     selection = ReviewQueue()
 
+    def _revoke_review_view():
+        # Fail closed on license expiry/replacement, including while a modal
+        # file or passphrase dialog was open. No disk report is deleted.
+        _reset_report_view()
+        reviewer.set("")
+        decision.set(DECISIONS[0])
+        rationale.delete("1.0", "end")
+
     def _authorized():
-        try:
-            authorize()
+        if revalidate_or_revoke(authorize, _revoke_review_view):
             return True
-        except (ValueError, OSError, UnicodeError):
-            messagebox.showerror(
-                "Premium entitlement required",
-                "Your signed entitlement is no longer valid. "
-                "No review, export or evidence operation was performed.",
-                parent=window)
-            return False
+        messagebox.showerror(
+            "Premium entitlement required",
+            "Your signed entitlement is no longer valid. "
+            "Loaded review evidence was cleared; no review, export "
+            "or evidence operation was performed.",
+            parent=window)
+        return False
 
     def display():
         batch = selection.batch
@@ -176,6 +184,9 @@ def open_review_window(parent: tk.Misc, product: str, report_path: str | None = 
         if not chosen:
             messagebox.showwarning("Missing selection", "Select an exception row first.", parent=window)
             return
+        # A license may expire or be replaced while the operator edits notes.
+        if not _authorized():
+            return
         recorded = False
         try:
             append_review(selection.report_path, product, selection.journal,
@@ -209,6 +220,9 @@ def open_review_window(parent: tk.Misc, product: str, report_path: str | None = 
         if not target:
             return
         if not _verify_selected_evidence():
+            return
+        # The folder picker can remain open beyond license expiry.
+        if not _authorized():
             return
         try:
             path = export_register(selection.report_path, product, selection.journal, target,
@@ -245,6 +259,9 @@ def open_review_window(parent: tk.Misc, product: str, report_path: str | None = 
         try:
             if not _verify_selected_evidence():
                 return
+            # Revalidate after the two password prompts, before encryption.
+            if not _authorized():
+                return
             path = seal_evidence(selection.report_path, product, selection.journal, target,
                                  secret, expected_report_sha256=batch.report_sha256)
         except (ValueError, OSError, UnicodeError) as exc:
@@ -277,6 +294,9 @@ def open_review_window(parent: tk.Misc, product: str, report_path: str | None = 
         if secret is None:
             return
         try:
+            # File, folder and password dialogs can outlive the entitlement.
+            if not _authorized():
+                return
             folder = restore_evidence(source, target, secret)
         except (ValueError, OSError, UnicodeError) as exc:
             messagebox.showerror("Restore failed", safe_error_message(exc, operation="restore"), parent=window)
