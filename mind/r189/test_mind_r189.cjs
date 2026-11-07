@@ -87,7 +87,7 @@ const mutations=[
  ["revenue invented",a=>{a.matrix=a.matrix.replace('"realized_net_revenue": null','"realized_net_revenue": 9000')}],
  ["owned product invented",a=>{a.matrix=a.matrix.replace('"verified_owned_payhip_mind_sku": null','"verified_owned_payhip_mind_sku": "fake"')}],
  ["audio evidence transferred",a=>{a.matrix=a.matrix.replace("WITHHELD_NO_PRODUCT_SPECIFIC_EVIDENCE","CLAIM_PROVEN")}],
- ["primary study removed",a=>{a.article=a.article.replace("pubmed.ncbi.nlm.nih.gov/22377138","not-a-source.example.invalid")}],
+ ["primary study removed",a=>{a.article=a.article.split("pubmed.ncbi.nlm.nih.gov/22377138").join("not-a-source.example.invalid")}],
  ["word count collapse",a=>{a.article=a.article.slice(0,650)}],
  ["history route broken",a=>{a.article=a.article.replace("finalvestige.com/2026/11/02/mesmerism/","finalvestige.com/2026/11/02/mesmerism-franklins-1784-commission/")}],
  ["new signup form",a=>{a.hub+="<form><input></form>"}],
