@@ -50,7 +50,7 @@ function validate(f){
  check("video only static 42-second optional",f.B.includes("00:37–00:42")&&f.B.includes("No playback, autoplay")&&f.B.includes('id="optional-film"'));
  check("hub 4 streams",["PERCEPTION & ATTENTION","HISTORY OF SUGGESTION","PRACTICE & REFLECTION","TOOLS UNDER REVIEW"].every(t=>f.hub.includes(t)));
  check("hub no live route claim",f.hub.includes("NOT A LIVE WORDPRESS ROUTE")&&f.hub.includes("No new subscribe form"));
- check("Grok ownership explicit",f.plan.includes("Grok and Praxxis own")&&f.plan.includes("actual_immutable_asset_id"));
+ check("Grok ownership explicit",f.plan.includes("Grok owns original social content creation")&&f.plan.includes("Praxxis independently researches")&&f.plan.includes("actual_immutable_asset_id"));
  check("merchant sale separate from click",f.plan.includes("affiliate_click")&&f.plan.includes("merchant_confirmed_purchase")&&f.plan.includes("NOT COMPUTABLE"));
  check("release approval withheld",f.plan.includes("DO NOT publish or merge")&&f.plan.includes("explicit founder release"));
  return {tested:tests.length,passed:tests.length-failed.length,failed};
