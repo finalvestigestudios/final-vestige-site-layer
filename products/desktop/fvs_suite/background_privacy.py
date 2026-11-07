@@ -1,6 +1,7 @@
-"""Redact uncaught background-thread and unraisable Python exceptions.
+"""Redact uncaught main-thread, background-thread and unraisable Python errors.
 
-CPython's default ``threading.excepthook`` and ``sys.unraisablehook`` print
+CPython's default ``sys.excepthook``, ``threading.excepthook`` and
+``sys.unraisablehook`` print
 exception objects and tracebacks. Those may include private financial paths,
 invoice identifiers and source data. Install before importing any GUI module.
 No customer payloads, exception objects, or traceback objects are retained.
@@ -11,6 +12,7 @@ from __future__ import annotations
 import sys
 import threading
 
+MAIN_DIAGNOSTIC = "Final Vestige Labs uncaught error; private diagnostics suppressed\n"
 THREAD_DIAGNOSTIC = "Final Vestige Labs background task failed; private diagnostics suppressed\n"
 UNRAISABLE_DIAGNOSTIC = "Final Vestige Labs cleanup failed; private diagnostics suppressed\n"
 INSTALL_DIAGNOSTIC = "Private background diagnostics could not be installed"
@@ -22,6 +24,13 @@ def _write_fixed(message: str) -> None:
     except Exception:
         # Never call default hooks or print a private exception on fallback.
         pass
+
+
+def _main_exception(_exc_type: object, _exc_value: object, _exc_traceback: object) -> None:
+    # Unhandled main-thread exceptions are routed here by CPython.
+    # Never inspect, stringify or retain a private exception or traceback.
+    # SystemExit is intercepted by the interpreter before this hook.
+    _write_fixed(MAIN_DIAGNOSTIC)
 
 
 def _thread_exception(_args: object) -> None:
@@ -41,7 +50,7 @@ def _unraisable_exception(_args: object) -> None:
 
 
 def install_background_privacy() -> None:
-    """Install both hooks idempotently, or deny startup if either fails.
+    """Install all three hooks idempotently, or deny startup if any fails.
 
     This function must run on the main thread, before the GUI and financial
     inputs. If a hook assignment is rejected or silently discarded, fail
@@ -51,8 +60,10 @@ def install_background_privacy() -> None:
     try:
         threading.excepthook = _thread_exception
         sys.unraisablehook = _unraisable_exception
+        sys.excepthook = _main_exception
         ready = (threading.excepthook is _thread_exception
-                 and sys.unraisablehook is _unraisable_exception)
+                 and sys.unraisablehook is _unraisable_exception
+                 and sys.excepthook is _main_exception)
     except Exception:
         pass
     if not ready:
