@@ -36,7 +36,7 @@ def run(out):
    if opt.get('zoom'):page.evaluate('document.querySelector("main").style.zoom=2')
    regs=get_named_regions(page);ax[label]=regs
    for name in NAMES:check(label,'CDP accessible region: '+name,name in regs)
-   check(label,'all aria-labelledby IDREFs resolve',page.evaluate('''() => [...document.querySelectorAll('[aria-labelledby]')].every(e => e.getAttribute('aria-labelledby').split(/\s+/).every(id => document.getElementById(id)))'''))
+   check(label,'all aria-labelledby IDREFs resolve',page.evaluate(r'''() => [...document.querySelectorAll('[aria-labelledby]')].every(e => e.getAttribute('aria-labelledby').split(/\s+/).every(id => document.getElementById(id)))'''))
    check(label,'one contextual free investigation action',page.locator('.fv-apollo-atlas a.cta').count()==1)
    check(label,'four chronology entries',page.locator('.fv-apollo-atlas .rail li').count()==4)
    check(label,'four NASA source records',page.locator('.fv-apollo-atlas .source-card').count()==4)
