@@ -1,0 +1,539 @@
+{
+  "run": "R198",
+  "date": "2026-11-07",
+  "status": "UNPUBLISHED_HARD_HOLD",
+  "affiliate_earning_url": null,
+  "authoritative_affiliate_approval": null,
+  "approved_promotional_channels": null,
+  "approved_creatives": null,
+  "owned_payhip_mind_sku": null,
+  "actual_paid_orders": null,
+  "confirmed_jetpack_leads": null,
+  "qualified_human_sessions": null,
+  "net_revenue_per_1000_qualified_humans": "NOT_COMPUTABLE",
+  "sources": [
+    {
+      "id": "review_eeg",
+      "type": "peer_review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+      "note": "Ingendoh et al., PLOS ONE 2023; 14 EEG studies; 5 consistent, 8 contradictory, 1 mixed"
+    },
+    {
+      "id": "review_2019",
+      "type": "peer_review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30073406/",
+      "note": "Garcia-Argibay et al. 2019; 22 studies, 35 effect sizes, overall g .45; heterogeneous endpoints"
+    },
+    {
+      "id": "review_2023",
+      "type": "peer_review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35842538/",
+      "note": "Basu & Banerjee 2023; 15 studies/31 effect sizes, pooled g .40; conflicting attention and memory effects"
+    },
+    {
+      "id": "review_2024",
+      "type": "peer_review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38458383/",
+      "note": "Chee et al. 2024; 31 studies; arousal/cognitive relations mixed or insufficient"
+    },
+    {
+      "id": "zen12",
+      "type": "seller",
+      "url": "https://zen12.com/hnp",
+      "note": "Exact merchant Zen12 page; seller-described 12 levels 48 MP3 and advertised guarantee/equivalence"
+    },
+    {
+      "id": "inspire3",
+      "type": "seller",
+      "url": "https://inspire3.com/",
+      "note": "Parent catalog product categories and merchant-owned claims"
+    },
+    {
+      "id": "affiliate",
+      "type": "merchant_affiliate_portal",
+      "url": "https://affiliates.inspire3.com/",
+      "note": "Public affiliate portal; NOT specific FV approval/terms"
+    },
+    {
+      "id": "ftc_disclosure",
+      "type": "regulator",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "note": "Clear proximate commission disclosure; generic affiliate label inadequate"
+    },
+    {
+      "id": "ftc_health",
+      "type": "regulator",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "note": "Adequate claim substantiation needed for health or implied benefit"
+    },
+    {
+      "id": "focus",
+      "type": "fv_live",
+      "url": "https://finalvestige.com/focus/",
+      "note": "Live 52-page free Focus Fieldbook existing Jetpack/Dispatch path; backend confirmation not verified"
+    },
+    {
+      "id": "dispatch",
+      "type": "fv_live",
+      "url": "https://finalvestige.com/dispatch/",
+      "note": "Existing Dispatch; do not duplicate"
+    },
+    {
+      "id": "puysegur",
+      "type": "fv_live",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "note": "Source-dossier bridge for history of suggestion"
+    },
+    {
+      "id": "mesmerism",
+      "type": "fv_live",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "note": "Published independent Mesmer/1784 commission"
+    },
+    {
+      "id": "change",
+      "type": "fv_live",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "note": "Published visual perception experiment"
+    },
+    {
+      "id": "editorial",
+      "type": "fv_live",
+      "url": "https://finalvestige.com/editorial-standards/",
+      "note": "Live editorial controls"
+    },
+    {
+      "id": "affiliate_disclosure",
+      "type": "fv_live",
+      "url": "https://finalvestige.com/affiliate-disclosure/",
+      "note": "General disclosure; does NOT replace adjacent CTA disclosure"
+    },
+    {
+      "id": "issue171",
+      "type": "governance",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "note": "Founder governance and release gates"
+    },
+    {
+      "id": "issue820",
+      "type": "governance",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "note": "Verified paid revenue contract; not clicks"
+    },
+    {
+      "id": "zenA",
+      "type": "draft",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/blob/d84053eb9d4a73228956cc5ea9804899f91c0ad0/mind/r188/zen12-variant-A-independent-text-UNPUBLISHED.html",
+      "note": "Existing disabled text-only A/B variant"
+    },
+    {
+      "id": "zenB",
+      "type": "draft",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/blob/d84053eb9d4a73228956cc5ea9804899f91c0ad0/mind/r188/zen12-variant-B-optional-42s-storyboard-UNPUBLISHED.html",
+      "note": "Existing disabled + optional UNRENDERED 42s video concept"
+    }
+  ],
+  "claims": [
+    {
+      "id": "beat_mechanism",
+      "statement": "Separate headphone tones yield beat percept",
+      "source_ids": [
+        "review_eeg"
+      ],
+      "decision": "SUPPORTED_AS_GENERAL_PERCEPT",
+      "limits": "Audio-perception account not branded product proof"
+    },
+    {
+      "id": "beat_eeg",
+      "statement": "Binaural beat reliably entrains EEG activity",
+      "source_ids": [
+        "review_eeg"
+      ],
+      "decision": "MIXED_DO_NOT_GENERALIZE",
+      "limits": "5/14 consistent, 8/14 contradictory, 1/14 mixed"
+    },
+    {
+      "id": "effect_2019",
+      "statement": "22-study review found pooled g≈.45",
+      "source_ids": [
+        "review_2019"
+      ],
+      "decision": "SUPPORTED_AS_REVIEW_REPORT",
+      "limits": "Not guaranteed change or Zen12 effect"
+    },
+    {
+      "id": "effect_2023",
+      "statement": "15-study cognitive review found pooled g≈.40",
+      "source_ids": [
+        "review_2023"
+      ],
+      "decision": "SUPPORTED_AS_REVIEW_REPORT",
+      "limits": "Mixed studies; no matched commercial SKU"
+    },
+    {
+      "id": "effect_2024",
+      "statement": "Review finds mixed/inadequate physiology-cognition linkage",
+      "source_ids": [
+        "review_2024"
+      ],
+      "decision": "SUPPORTED_AS_REVIEW_REPORT",
+      "limits": "Does not exclude every individual subjective response"
+    },
+    {
+      "id": "sku_48",
+      "statement": "Zen12 Premium includes 48 MP3 in 12 levels",
+      "source_ids": [
+        "zen12"
+      ],
+      "decision": "SELLER_DESCRIBED_NOT_FULFILLMENT_VERIFIED",
+      "limits": "Final download and file integrity not observed"
+    },
+    {
+      "id": "sku_bonus",
+      "statement": "Zen12 advertises guide/manual/support/bonus materials",
+      "source_ids": [
+        "zen12"
+      ],
+      "decision": "SELLER_DESCRIBED_ONLY",
+      "limits": "No authenticated product download"
+    },
+    {
+      "id": "sku_guarantee",
+      "statement": "Zen12 advertises one-year money-back guarantee",
+      "source_ids": [
+        "zen12"
+      ],
+      "decision": "SELLER_DESCRIBED_ONLY",
+      "limits": "Actual terms and refund redemption untested"
+    },
+    {
+      "id": "sku_price",
+      "statement": "Current Zen12 checkout total and tax",
+      "source_ids": [
+        "zen12"
+      ],
+      "decision": "UNKNOWN_DO_NOT_QUOTE",
+      "limits": "Public price display not full checkout"
+    },
+    {
+      "id": "zen_equiv",
+      "statement": "12 minutes equals one hour meditation",
+      "source_ids": [
+        "zen12",
+        "review_eeg"
+      ],
+      "decision": "UNSUBSTANTIATED_PRODUCT_SPECIFIC_WITHHOLD",
+      "limits": "No direct controlled comparison for exact Zen12 SKU"
+    },
+    {
+      "id": "zen_health",
+      "statement": "Zen12 improves health, concentration, anxiety reliably",
+      "source_ids": [
+        "zen12",
+        "ftc_health"
+      ],
+      "decision": "UNSUBSTANTIATED_PRODUCT_SPECIFIC_WITHHOLD",
+      "limits": "Do not imply medical/clinical outcome"
+    },
+    {
+      "id": "brainwave_shots",
+      "statement": "Brainwave Shots enhances performance from 15-minute shot",
+      "source_ids": [
+        "inspire3"
+      ],
+      "decision": "SELLER_EFFICACY_CLAIM_UNSUBSTANTIATED",
+      "limits": "Not considered a vetted conversion offer"
+    },
+    {
+      "id": "hypnosis_live",
+      "statement": "Hypnosis Live guarantees results",
+      "source_ids": [
+        "inspire3"
+      ],
+      "decision": "SELLER_EFFICACY_CLAIM_UNSUBSTANTIATED",
+      "limits": "Not independently substantiated for named SKU"
+    },
+    {
+      "id": "publisher",
+      "statement": "FV-specific Inspire3 publisher acceptance",
+      "source_ids": [
+        "affiliate",
+        "issue171"
+      ],
+      "decision": "NOT_VERIFIED_HARD_HOLD",
+      "limits": "Gmail promotional correspondence not approval"
+    },
+    {
+      "id": "affiliate_url",
+      "statement": "FV issued tracking link and approved channels",
+      "source_ids": [
+        "affiliate",
+        "issue171"
+      ],
+      "decision": "NOT_VERIFIED_HARD_HOLD",
+      "limits": "No active referral URL, no cloaking"
+    },
+    {
+      "id": "creatives",
+      "statement": "Approved ad creatives and email/social permissions",
+      "source_ids": [
+        "affiliate",
+        "issue171"
+      ],
+      "decision": "NOT_VERIFIED_HARD_HOLD",
+      "limits": "No authenticated portal access provided"
+    },
+    {
+      "id": "owned_sku",
+      "statement": "Current rights-cleared, saleable FV Mind Payhip SKU",
+      "source_ids": [
+        "issue171"
+      ],
+      "decision": "NOT_VERIFIED_HARD_HOLD",
+      "limits": "No public search equals dashboard proof"
+    },
+    {
+      "id": "focus_route",
+      "statement": "Existing /focus/ is live 52-page free signup pathway",
+      "source_ids": [
+        "focus",
+        "dispatch"
+      ],
+      "decision": "PUBLIC_LIVE_ONLY",
+      "limits": "Do not create duplicate subscriber list"
+    },
+    {
+      "id": "focus_lead",
+      "statement": "Download revelation proves a confirmed subscriber",
+      "source_ids": [
+        "focus",
+        "issue820"
+      ],
+      "decision": "FALSE_DO_NOT_USE",
+      "limits": "Backend opt-in needed; ?subscribe= or CSS alone is insufficient"
+    },
+    {
+      "id": "affiliate_click",
+      "statement": "Outbound earning-link tap counts as paid conversion",
+      "source_ids": [
+        "issue820"
+      ],
+      "decision": "FALSE_DO_NOT_USE",
+      "limits": "Separate from merchant confirmed sale"
+    },
+    {
+      "id": "paid_orders",
+      "statement": "Verified FV confirmed purchases/commission receipts",
+      "source_ids": [
+        "issue820"
+      ],
+      "decision": "UNKNOWN_NOT_COMPUTABLE",
+      "limits": "No authoritative settlement ledger"
+    },
+    {
+      "id": "disclosure",
+      "statement": "Commission relationship near any future earning link",
+      "source_ids": [
+        "ftc_disclosure",
+        "affiliate_disclosure"
+      ],
+      "decision": "REQUIRED",
+      "limits": "Plain-language disclosure at same CTA, not footer alone"
+    },
+    {
+      "id": "research_separation",
+      "statement": "Perception experiments establish Zen12 outcomes",
+      "source_ids": [
+        "review_eeg",
+        "zen12"
+      ],
+      "decision": "FALSE_NO_EXTRAPOLATION",
+      "limits": "Keep research separate from commercial offer"
+    },
+    {
+      "id": "social_ids",
+      "statement": "Grok published Mind asset IDs/URLs verified",
+      "source_ids": [
+        "issue820"
+      ],
+      "decision": "UNKNOWN_AWAIT_P RAXXIS",
+      "limits": "Never fabricate IDs or claim social posts live"
+    },
+    {
+      "id": "experiment",
+      "statement": "A/B variant B improves paid conversion",
+      "source_ids": [
+        "zenA",
+        "zenB",
+        "issue820"
+      ],
+      "decision": "UNTESTED_HYPOTHESIS",
+      "limits": "No video asset or randomized authorized traffic"
+    },
+    {
+      "id": "privacy",
+      "statement": "Tracking uses hashed personal identifiers",
+      "source_ids": [
+        "issue820"
+      ],
+      "decision": "NOT_APPROVED_NO_PII",
+      "limits": "No new analytics scripts or user-level cookies"
+    },
+    {
+      "id": "money",
+      "statement": "Net revenue / 1,000 qualified humans computable",
+      "source_ids": [
+        "issue820"
+      ],
+      "decision": "NO_DENOMINATOR_OR_SETTLEMENT",
+      "limits": "Not computable != 0"
+    }
+  ],
+  "release_gates": [
+    {
+      "id": "G01",
+      "label": "Named FV publisher contract and approval",
+      "status": "OPEN",
+      "evidence": "NOT_VERIFIED"
+    },
+    {
+      "id": "G02",
+      "label": "Approved promotional channels and compliant creative",
+      "status": "OPEN",
+      "evidence": "NOT_VERIFIED"
+    },
+    {
+      "id": "G03",
+      "label": "Issued earning URL without cloaking",
+      "status": "OPEN",
+      "evidence": "NOT_VERIFIED"
+    },
+    {
+      "id": "G04",
+      "label": "Exact Zen12 checkout total taxes upsell path",
+      "status": "OPEN",
+      "evidence": "NOT_VERIFIED"
+    },
+    {
+      "id": "G05",
+      "label": "Refund terms fulfillment checked independently",
+      "status": "OPEN",
+      "evidence": "NOT_VERIFIED"
+    },
+    {
+      "id": "G06",
+      "label": "Owned Payhip eligible SKU verified with rights",
+      "status": "OPEN",
+      "evidence": "NOT_VERIFIED"
+    },
+    {
+      "id": "G07",
+      "label": "No copied unlicensed artwork or customer reviews",
+      "status": "OPEN",
+      "evidence": "NOT_VERIFIED"
+    },
+    {
+      "id": "G08",
+      "label": "No product-specific medical efficacy assertion",
+      "status": "OPEN",
+      "evidence": "NOT_VERIFIED"
+    },
+    {
+      "id": "G09",
+      "label": "Near-link FTC disclosure reviewer signoff",
+      "status": "OPEN",
+      "evidence": "NOT_VERIFIED"
+    },
+    {
+      "id": "G10",
+      "label": "Actual video MP4/VTT/transcript if B tested",
+      "status": "OPEN",
+      "evidence": "NOT_VERIFIED"
+    },
+    {
+      "id": "G11",
+      "label": "Native disabled controls until activated",
+      "status": "OPEN",
+      "evidence": "NOT_VERIFIED"
+    },
+    {
+      "id": "G12",
+      "label": "Real keyboard/no-JS/forced-colors verification",
+      "status": "OPEN",
+      "evidence": "NOT_VERIFIED"
+    },
+    {
+      "id": "G13",
+      "label": "360 390 768 1440 1920 visual tests",
+      "status": "OPEN",
+      "evidence": "NOT_VERIFIED"
+    },
+    {
+      "id": "G14",
+      "label": "Lighthouse CWV measurement and budget",
+      "status": "OPEN",
+      "evidence": "NOT_VERIFIED"
+    },
+    {
+      "id": "G15",
+      "label": "Jetpack double opt-in backend proof",
+      "status": "OPEN",
+      "evidence": "NOT_VERIFIED"
+    },
+    {
+      "id": "G16",
+      "label": "Grok actual asset IDs and approved landing URLs",
+      "status": "OPEN",
+      "evidence": "NOT_VERIFIED"
+    },
+    {
+      "id": "G17",
+      "label": "First-party consent/data minimization approval",
+      "status": "OPEN",
+      "evidence": "NOT_VERIFIED"
+    },
+    {
+      "id": "G18",
+      "label": "Native analytics not duplicated",
+      "status": "OPEN",
+      "evidence": "NOT_VERIFIED"
+    },
+    {
+      "id": "G19",
+      "label": "Real merchant-reported confirmed paid order",
+      "status": "OPEN",
+      "evidence": "NOT_VERIFIED"
+    },
+    {
+      "id": "G20",
+      "label": "Commission settlement and refund/fee reconciliation",
+      "status": "OPEN",
+      "evidence": "NOT_VERIFIED"
+    },
+    {
+      "id": "G21",
+      "label": "7-day qualified human attribution cohort",
+      "status": "OPEN",
+      "evidence": "NOT_VERIFIED"
+    },
+    {
+      "id": "G22",
+      "label": "30-day qualified human attribution cohort",
+      "status": "OPEN",
+      "evidence": "NOT_VERIFIED"
+    },
+    {
+      "id": "G23",
+      "label": "Founder editorial/commercial activation permission",
+      "status": "OPEN",
+      "evidence": "NOT_VERIFIED"
+    },
+    {
+      "id": "G24",
+      "label": "Site QA final review and production approval",
+      "status": "OPEN",
+      "evidence": "NOT_VERIFIED"
+    }
+  ],
+  "notes": "All vendor benefit statements are attributed seller claims, not product-specific efficacy. Public affiliate portal is not publisher acceptance; email search 2026-11-07 did not confirm acceptance. Zero live writes."
+}
