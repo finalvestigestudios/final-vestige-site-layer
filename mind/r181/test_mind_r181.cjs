@@ -14,6 +14,7 @@ function verify(files) {
   check("1999 primary DOI",article.includes("10.1068/p281059"));
   check("2010 primary open text",article.includes("PMC3563049"));
   check("2013 expert n24 and 83% reported correctly",/Twenty-four radiologists/.test(article)&&/83%/.test(article));
+  check("expert experiment not recast as certain failure",!article.includes("100%"));
   check("choice blindness separate research",article.includes("10.1126/science.1111709")||article.includes("16210542"));
   check("no article purchasing button",!/<button/i.test(article));
   check("article research-to-product inferential boundary",article.includes("not a clinical trial")&&article.includes("no responsible article can claim that Zen12"));
@@ -83,7 +84,7 @@ function mutations(files) {
     f=>({...f,matrix:f.matrix.replace('"verified_owned_paid_mind_product": null','"verified_owned_paid_mind_product": "test"')}),
     f=>({...f,plan:f.plan.replace("Do not censor a negative numerator","Convert negative numerator to zero")}),
     f=>({...f,article:f.article.replace("10.1068/p281059","wrong citation")}),
-    f=>({...f,article:f.article.replace("83%","100%")}),
+    f=>({...f,article:f.article.replace(/83%/g,"100%")}),
     f=>({...f,b:f.b.replace('id="optional-film"','id="fake-film"')})
   ];
   const detected=m.map((fn,i)=>({index:i+1,caught:verify(fn(files)).failures.length>0}));
