@@ -116,4 +116,9 @@ def confirm_report_files(outputs: object, *, folder: str | Path | None = None,
     confirmed = tuple(checked)
     if folder is not None:
         _confirm_output_placement(confirmed, folder, app_id)
+        if app_id in _PREMIUM_REPORTS:
+            # Bind the returned report bytes to their published SHA inventory.
+            # A valid filename/bundle alone is not sufficient review evidence.
+            from .premium_manifest_completion import verify_premium_inventory
+            verify_premium_inventory(confirmed, app_id)
     return confirmed
