@@ -1,0 +1,246 @@
+{
+  "schema": "fv.media-recovery.278.v1",
+  "audit_date": "2026-11-07",
+  "method": "Authenticated read-only WordPress; frozen media inventory; official catalogs; web.open wrapper checks",
+  "post": {
+    "id": 278,
+    "url": "https://finalvestige.com/2026/08/19/they-walked-beyond-the-search-lady-be-good/",
+    "title": "They Walked Beyond the Search",
+    "modified": "2026-11-02T21:39:52"
+  },
+  "frozen": {
+    "posts": 61,
+    "img_refs": 355,
+    "blob_sha": "6df3251e5a67a971d87a516a1ba4a0cc32f51f96"
+  },
+  "sitewide_status": {
+    "alleged_broken_42": "unverified",
+    "claimed_transfer_reduction_76_percent": "unmeasured",
+    "thirteen_large_original_stored_bytes": 43522829
+  },
+  "production_writes": false,
+  "downloaded_media": false,
+  "site_qa_browser_collector_duplicated": false,
+  "images": [
+    {
+      "key": "278:0",
+      "source_url": "https://media.defense.gov/2007/Jan/25/2000519451/-1/-1/0/070125-F-0000Z-099.JPG",
+      "source_host": "media.defense.gov",
+      "alt": "The B-24D Lady Be Good lying largely intact in the Libyan Desert after its discovery.",
+      "stored_width": null,
+      "stored_height": null,
+      "independent_retriever": {
+        "outcome": "wrapper_403",
+        "method": "web.open wrapper",
+        "origin_http_status": null,
+        "guest_browser_http_status": null,
+        "natural_width": null,
+        "transferred_bytes": null
+      },
+      "candidate": {
+        "catalog_url": "https://www.nationalmuseum.af.mil/Visit/Museum-Exhibits/Fact-Sheets/Display/Article/196178/lady-be-good/",
+        "relationship": "USAF related archive; exact gallery photo not independently matched",
+        "rights": "USAF photo; item-specific DoD limitations",
+        "exact_image_match": false,
+        "copy_approved": false
+      },
+      "catalog_original_dimensions": null,
+      "conditional_preview": {
+        "width": null,
+        "height": null
+      },
+      "fidelity_warning": "Original reported 403 in independent retrieval wrapper, NOT in guest browser",
+      "release": "HOLD",
+      "wp_attachment_id": null
+    },
+    {
+      "key": "278:1",
+      "source_url": "https://media.defense.gov/2006/May/30/2000572755/2000/2000/0/050606-F-1234P-012.JPG",
+      "source_host": "media.defense.gov",
+      "alt": "The nine members of the Lady Be Good crew posed in front of a B-24 before the 1943 mission.",
+      "stored_width": null,
+      "stored_height": null,
+      "independent_retriever": {
+        "outcome": "wrapper_403",
+        "method": "web.open wrapper",
+        "origin_http_status": null,
+        "guest_browser_http_status": null,
+        "natural_width": null,
+        "transferred_bytes": null
+      },
+      "candidate": {
+        "catalog_url": "https://www.nationalmuseum.af.mil/Upcoming/Photos/igphoto/2000572755/",
+        "relationship": "Exact official U.S. Air Force crew photograph VIRIN 050606-F-1234P-012",
+        "rights": "Museum declares public domain/cleared with credit and DoD limitations",
+        "exact_image_match": true,
+        "copy_approved": false
+      },
+      "catalog_original_dimensions": null,
+      "conditional_preview": {
+        "width": null,
+        "height": null
+      },
+      "fidelity_warning": "Official gallery confirms crew; exposure date not separately established",
+      "release": "HOLD",
+      "wp_attachment_id": null
+    },
+    {
+      "key": "278:2",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/4/49/0000050606-F-1234P-014.jpg",
+      "source_host": "upload.wikimedia.org",
+      "alt": "The preserved wreck of Lady Be Good in the Libyan Desert.",
+      "stored_width": null,
+      "stored_height": null,
+      "independent_retriever": {
+        "outcome": "retriever_rendered",
+        "method": "web.open wrapper",
+        "origin_http_status": null,
+        "guest_browser_http_status": null,
+        "natural_width": null,
+        "transferred_bytes": null
+      },
+      "candidate": {
+        "catalog_url": "https://commons.wikimedia.org/wiki/File:0000050606-F-1234P-014.jpg",
+        "relationship": "Exact USAF original via Commons file catalog",
+        "rights": "Commons PD-U.S. Air Force, preserve credit and DoD-use review",
+        "exact_image_match": true,
+        "copy_approved": false
+      },
+      "catalog_original_dimensions": {
+        "width": 1800,
+        "height": 1192
+      },
+      "conditional_preview": {
+        "width": 960,
+        "height": 636
+      },
+      "fidelity_warning": "Historical airplane wreckage and scattered parts; 960×636 maximum conditional preview",
+      "release": "HOLD",
+      "wp_attachment_id": null
+    },
+    {
+      "key": "278:3",
+      "source_url": "https://qmmuseum.army.mil/assets/img/aotm/2012/09_M1910_canteen_1.jpg",
+      "source_host": "qmmuseum.army.mil",
+      "alt": "The Model 1910 canteen recovered from the Lady Be Good crew's desert trail.",
+      "stored_width": null,
+      "stored_height": null,
+      "independent_retriever": {
+        "outcome": "wrapper_502",
+        "method": "web.open wrapper",
+        "origin_http_status": null,
+        "guest_browser_http_status": null,
+        "natural_width": null,
+        "transferred_bytes": null
+      },
+      "candidate": {
+        "catalog_url": "https://qmmuseum.army.mil/research/history-heritage/mortuary-affairs/The-Lady-Be-Good-Story.html",
+        "relationship": "U.S. Army museum historical article; specific M1910 canteen identity NOT VERIFIED",
+        "rights": "No item-level license established",
+        "exact_image_match": false,
+        "copy_approved": false
+      },
+      "catalog_original_dimensions": null,
+      "conditional_preview": {
+        "width": null,
+        "height": null
+      },
+      "fidelity_warning": "DO NOT assert that this specific M1910 canteen photo is a recovered Lady Be Good artifact",
+      "release": "HOLD",
+      "wp_attachment_id": null
+    },
+    {
+      "key": "278:4",
+      "source_url": "https://www.ladybegood.net/diaries/full/Toner_Diary2%20.jpg",
+      "source_host": "www.ladybegood.net",
+      "alt": "A page from Robert Toner's diary recovered with members of the Lady Be Good crew.",
+      "stored_width": null,
+      "stored_height": null,
+      "independent_retriever": {
+        "outcome": "retriever_rendered",
+        "method": "web.open wrapper",
+        "origin_http_status": null,
+        "guest_browser_http_status": null,
+        "natural_width": null,
+        "transferred_bytes": null
+      },
+      "candidate": {
+        "catalog_url": "https://unwritten-record.blogs.archives.gov/2017/06/16/lost-and-found-the-story-of-lady-be-good-and-her-crew/",
+        "relationship": "Related NARA diary photographs 342-B-ND-075-4-163133AC / 163134AC, not proven same leaf",
+        "rights": "Privately hosted diary scan rights unknown",
+        "exact_image_match": false,
+        "copy_approved": false
+      },
+      "catalog_original_dimensions": null,
+      "conditional_preview": {
+        "width": null,
+        "height": null
+      },
+      "fidelity_warning": "Privately hosted Toner diary page rendered; archival photographs are related, not approved exact substitutes",
+      "release": "HOLD",
+      "wp_attachment_id": null
+    },
+    {
+      "key": "278:5",
+      "source_url": "https://unwritten-record.blogs.archives.gov/wp-content/uploads/sites/6/2017/06/111-c-17240-scaled.jpg",
+      "source_host": "unwritten-record.blogs.archives.gov",
+      "alt": "U.S. military investigators examining the Lady Be Good wreck in the Libyan Desert.",
+      "stored_width": null,
+      "stored_height": null,
+      "independent_retriever": {
+        "outcome": "retriever_rendered",
+        "method": "web.open wrapper",
+        "origin_http_status": null,
+        "guest_browser_http_status": null,
+        "natural_width": null,
+        "transferred_bytes": null
+      },
+      "candidate": {
+        "catalog_url": "https://unwritten-record.blogs.archives.gov/2017/06/16/lost-and-found-the-story-of-lady-be-good-and-her-crew/",
+        "relationship": "Exact NARA-hosted image URL; 111-c-17240 filename vs NARA text ID 111-CC-17240 requires cross-check",
+        "rights": "NARA item-level copyright assessment needed",
+        "exact_image_match": false,
+        "copy_approved": false
+      },
+      "catalog_original_dimensions": null,
+      "conditional_preview": {
+        "width": null,
+        "height": null
+      },
+      "fidelity_warning": "Visual mismatch: exact NARA image shows wreckage with no visible investigators, but published ALT says investigators examining aircraft",
+      "release": "HOLD",
+      "wp_attachment_id": null
+    },
+    {
+      "key": "278:6",
+      "source_url": "https://media.defense.gov/2006/Jun/02/2000554420/-1/-1/0/060530-F-1234S-041.JPG",
+      "source_host": "media.defense.gov",
+      "alt": "Search and recovery personnel working around Lady Be Good in the Libyan Desert.",
+      "stored_width": null,
+      "stored_height": null,
+      "independent_retriever": {
+        "outcome": "wrapper_403",
+        "method": "web.open wrapper",
+        "origin_http_status": null,
+        "guest_browser_http_status": null,
+        "natural_width": null,
+        "transferred_bytes": null
+      },
+      "candidate": {
+        "catalog_url": "https://www.nationalmuseum.af.mil/Visit/Museum-Exhibits/Fact-Sheets/Display/Article/196178/lady-be-good/",
+        "relationship": "USAF subject record; photo ID 2000554420 not independently matched",
+        "rights": "USAF photographer credit and DoD item-level rights review pending",
+        "exact_image_match": false,
+        "copy_approved": false
+      },
+      "catalog_original_dimensions": null,
+      "conditional_preview": {
+        "width": null,
+        "height": null
+      },
+      "fidelity_warning": "Original 403 only in retriever, never verified guest-browser failure",
+      "release": "HOLD",
+      "wp_attachment_id": null
+    }
+  ]
+}
