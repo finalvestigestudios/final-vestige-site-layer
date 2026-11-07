@@ -97,7 +97,8 @@ def assert_semantics(data, require_wp=True):
     failures=[]
     if require_wp and not data['wordpress_shell']: failures.append('not an actual WordPress shell')
     if not data['root']: failures.append('flagship root missing')
-    if not all(data['chapters']): failures.append('one or more of seven chapters missing')
+    if len(data['chapters']) != len(CHAPTERS) or not all(data['chapters']):
+        failures.append('one or more of seven chapters missing')
     if data['record_count'] != 72: failures.append('72 historical records not preserved')
     if data['focus_links'] < 5: failures.append('Focus Fieldbook navigation incomplete')
     if not any(t.get('in_first_screen') and t.get('hit_clear') for t in data.get('focus_first_screen', [])):
