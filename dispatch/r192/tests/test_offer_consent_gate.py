@@ -53,6 +53,8 @@ class R192Tests(unittest.TestCase):
         self.assertEqual(safe_revenue_report([self.sale()],100,'')['status'],'NOT_COMPUTABLE')
     def test_no_implicit_zero_sales(self):
         self.assertEqual(safe_revenue_report([],0,REF)['status'],'NOT_COMPUTABLE')
+    def test_empty_order_input_does_not_fabricate_zero_revenue(self):
+        self.assertEqual(safe_revenue_report([],100,REF)['status'],'NOT_COMPUTABLE')
     def test_duplicate_sale_fails_closed(self):
         r=self.sale();self.assertEqual(safe_revenue_report([r,r],100,REF)['status'],'NOT_COMPUTABLE')
     def test_synthetic_math_review_only(self):
