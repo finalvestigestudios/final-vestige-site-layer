@@ -12,6 +12,7 @@ from .evidence_vault import restore_evidence, seal_evidence
 from .audit_display import visible_review_row
 from .ui_errors import safe_error_message
 from .review_queue_load import ReviewQueue
+from .review_io import perform_custodied_output
 from .review_target import revalidate_or_revoke
 
 
@@ -260,10 +261,23 @@ def open_review_window(parent: tk.Misc, product: str, report_path: str | None = 
         if not _authorized():
             return
         try:
-            path = export_register(selection.report_path, product, selection.journal, target,
-                                   expected_report_sha256=batch.report_sha256)
+            path = perform_custodied_output(
+                lambda: export_register(selection.report_path, product, selection.journal, target,
+                                        expected_report_sha256=batch.report_sha256),
+                _reset_report_view)
         except (ValueError, OSError, UnicodeError) as exc:
-            messagebox.showerror("Export failed", safe_error_message(exc, operation="export"), parent=window)
+            messagebox.showerror(
+                "Export needs inspection",
+                safe_error_message(exc, operation="export") +
+                " The review selection was invalidated. Inspect the chosen folder before retrying.",
+                parent=window)
+            return
+        except Exception:
+            messagebox.showerror(
+                "Export needs inspection",
+                "Review register output could not be verified. The selection was invalidated. "
+                "Inspect the chosen folder for an incomplete output before retrying.",
+                parent=window)
             return
         status_text.set(f"Human review register exported: {path.name}")
         messagebox.showinfo("Register created", str(path), parent=window)
@@ -297,10 +311,23 @@ def open_review_window(parent: tk.Misc, product: str, report_path: str | None = 
             # Revalidate after the two password prompts, before encryption.
             if not _authorized():
                 return
-            path = seal_evidence(selection.report_path, product, selection.journal, target,
-                                 secret, expected_report_sha256=batch.report_sha256)
+            path = perform_custodied_output(
+                lambda: seal_evidence(selection.report_path, product, selection.journal, target,
+                                      secret, expected_report_sha256=batch.report_sha256),
+                _reset_report_view)
         except (ValueError, OSError, UnicodeError) as exc:
-            messagebox.showerror("Encrypted backup failed", safe_error_message(exc, operation="backup"), parent=window)
+            messagebox.showerror(
+                "Encrypted backup needs inspection",
+                safe_error_message(exc, operation="backup") +
+                " The review selection was invalidated. Inspect the chosen folder before retrying.",
+                parent=window)
+            return
+        except Exception:
+            messagebox.showerror(
+                "Encrypted backup needs inspection",
+                "The encrypted output could not be verified. The selection was invalidated. "
+                "Inspect the chosen folder for an incomplete archive before retrying.",
+                parent=window)
             return
         finally:
             secret = confirm = None
@@ -332,9 +359,21 @@ def open_review_window(parent: tk.Misc, product: str, report_path: str | None = 
             # File, folder and password dialogs can outlive the entitlement.
             if not _authorized():
                 return
-            folder = restore_evidence(source, target, secret)
+            folder = perform_custodied_output(
+                lambda: restore_evidence(source, target, secret), _reset_report_view)
         except (ValueError, OSError, UnicodeError) as exc:
-            messagebox.showerror("Restore failed", safe_error_message(exc, operation="restore"), parent=window)
+            messagebox.showerror(
+                "Restore needs inspection",
+                safe_error_message(exc, operation="restore") +
+                " The review selection was invalidated. Inspect the chosen folder before retrying.",
+                parent=window)
+            return
+        except Exception:
+            messagebox.showerror(
+                "Restore needs inspection",
+                "Restored evidence could not be verified. The selection was invalidated. "
+                "Inspect the chosen folder for incomplete plaintext before retrying.",
+                parent=window)
             return
         finally:
             secret = None
