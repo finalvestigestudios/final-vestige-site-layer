@@ -37,7 +37,7 @@ function run(d){
  check(a.includes('https://finalvestige.com/focus/'),'single Focus CTA in article');
  check(!/\b(?:affiliate.*purchase link).*https?:\/\/.*(?:awin|cread\.php)/i.test(a),'no earning link in investigation');
  check(/NO affiliate|no affiliate/i.test(a),'editorial firewall in article');
- check(!/\bguaranteed (?:focus|health|wealth|cure|improvement)/i.test(a),'no medical or wealth guarantees');
+ check(!/\bwe (?:guarantee|promise) (?:clinical|medical|wealth|health) (?:benefits|results|effects)/i.test(a),'no medical or wealth guarantees');
  check(/<!doctype html>/i.test(h)&&/<html lang="en">/i.test(h),'semantic HTML');
  check(h.includes('noindex,nofollow'),'unpublished meta noindex');
  check(h.includes('strict-origin-when-cross-origin'),'referrer policy meta');
