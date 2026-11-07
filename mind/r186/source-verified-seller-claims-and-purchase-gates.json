@@ -1,0 +1,349 @@
+{
+  "round": "R186",
+  "date_checked_local": "2026-11-06 to 2026-11-07 PT (seller pages fetched on run)",
+  "status": "UNPUBLISHED / HARD HOLD",
+  "affiliate_activation": false,
+  "affiliate_earning_url": null,
+  "verified_merchant_orders": null,
+  "qualified_human_sessions": null,
+  "realized_net_revenue": null,
+  "evidence": [
+    {
+      "id": "seller_catalog",
+      "url": "https://inspire3.com/",
+      "kind": "official_seller_catalog",
+      "scope": "identifies brands; advertised science claim not adopted"
+    },
+    {
+      "id": "zen_premium",
+      "url": "https://zen12.com/hnp",
+      "kind": "exact_official_offer",
+      "observed": "Premium 12 levels/48 MP3, $87.99 on public page; not paid checkout",
+      "scope": "seller-described only"
+    },
+    {
+      "id": "aff_portal",
+      "url": "https://affiliates.inspire3.com/",
+      "kind": "official_public_portal",
+      "scope": "generic availability and generic commission marketing not publisher authorization"
+    },
+    {
+      "id": "focus_offer",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "kind": "exact_official_offer",
+      "observed": "33 mins,47 MB; $24.44 visible price and $29.95 comparison; advertised 14-day refund",
+      "scope": "seller-description not final charge/refund performance"
+    },
+    {
+      "id": "ftc_disclosure",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "kind": "official_regulatory_guidance"
+    },
+    {
+      "id": "ftc_health",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "kind": "official_regulatory_guidance"
+    },
+    {
+      "id": "wegner87",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/3612492/",
+      "kind": "primary_research",
+      "scope": "thought suppression lab; NOT product study"
+    },
+    {
+      "id": "wegner93",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/8295117/",
+      "kind": "primary_research",
+      "scope": "cognitive load/mood laboratory; NOT product study"
+    },
+    {
+      "id": "wegner94",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/8121959/",
+      "kind": "theoretical_primary"
+    },
+    {
+      "id": "review2000",
+      "url": "https://doi.org/10.1146/annurev.psych.51.1.59",
+      "kind": "review",
+      "scope": "thought suppression literature; not audio product evidence"
+    },
+    {
+      "id": "focusfieldbook",
+      "url": "https://finalvestige.com/focus/",
+      "kind": "existing_live_resource",
+      "scope": "52-page fieldbook/one existing Jetpack list"
+    },
+    {
+      "id": "puys",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "kind": "existing_live_historical_resource",
+      "scope": "historical source claims"
+    },
+    {
+      "id": "ftc_editorial",
+      "url": "https://finalvestige.com/editorial-standards/",
+      "kind": "existing_live_policy"
+    },
+    {
+      "id": "creator_task",
+      "url": "https://docs.google.com/document/d/1_dqcJeqxbvYb1prGxy0nSWTsHu8p0PSRsDB_NPNbL48/edit",
+      "kind": "creator_coordination_source"
+    },
+    {
+      "id": "loftus74",
+      "url": "https://bpb-us-e2.wpmucdn.com/faculty.sites.uci.edu/dist/c/571/files/2024/08/LoftusPalmer_ReconstructionAuto_JVLVB1974.pdf",
+      "kind": "primary_source_link_added_to_r185",
+      "scope": "not an independent PDF reanalysis this sprint"
+    }
+  ],
+  "claims": [
+    {
+      "id": "zen_catalog",
+      "claim": "Zen12 is an Inspire3 product",
+      "status": "SUPPORTED_SELLER",
+      "source_id": "seller_catalog"
+    },
+    {
+      "id": "zen_count",
+      "claim": "Premium is described as 12 levels and 48 MP3s",
+      "status": "SELLER_DESCRIPTION",
+      "source_id": "zen_premium"
+    },
+    {
+      "id": "zen_formats",
+      "claim": "Premium uses four 12-minute formats across its levels",
+      "status": "SELLER_DESCRIPTION",
+      "source_id": "zen_premium"
+    },
+    {
+      "id": "zen_price",
+      "claim": "Public offer displayed $87.99 at this retrieval",
+      "status": "TIME_BOUND_OBSERVATION_NOT_CHECKOUT",
+      "source_id": "zen_premium"
+    },
+    {
+      "id": "zen_refund",
+      "claim": "Premium advertises 1-year money-back guarantee",
+      "status": "SELLER_CLAIM_NOT_TESTED",
+      "source_id": "zen_premium"
+    },
+    {
+      "id": "zen_speed",
+      "claim": "One hour of advanced meditation results in 12 minutes",
+      "status": "UNSUBSTANTIATED_OMIT",
+      "source_id": "zen_premium"
+    },
+    {
+      "id": "zen_brain",
+      "claim": "Audio proven to entrain brain into meditative state",
+      "status": "UNSUBSTANTIATED_OMIT",
+      "source_id": "zen_premium"
+    },
+    {
+      "id": "zen_health",
+      "claim": "Zen12 produces health or anxiety improvement",
+      "status": "UNSUBSTANTIATED_OMIT",
+      "source_id": "ftc_health"
+    },
+    {
+      "id": "zen_performance",
+      "claim": "Zen12 raises focus and creativity",
+      "status": "UNSUBSTANTIATED_OMIT",
+      "source_id": "zen_premium"
+    },
+    {
+      "id": "zen_support",
+      "claim": "Seller advertises lifetime support",
+      "status": "SELLER_DESCRIPTION_NOT_TESTED",
+      "source_id": "zen_premium"
+    },
+    {
+      "id": "focus_length",
+      "claim": "Total Focus described as 33 minutes and 47 MB",
+      "status": "SELLER_DESCRIPTION",
+      "source_id": "focus_offer"
+    },
+    {
+      "id": "focus_price",
+      "claim": "Total Focus public page currently displayed $24.44 ($29.95 comparison)",
+      "status": "TIME_BOUND_OBSERVATION_NOT_CHECKOUT",
+      "source_id": "focus_offer"
+    },
+    {
+      "id": "focus_refund",
+      "claim": "14-day refund is advertised",
+      "status": "SELLER_CLAIM_NOT_TESTED",
+      "source_id": "focus_offer"
+    },
+    {
+      "id": "focus_effect",
+      "claim": "Total Focus permanently changes concentration or wealth/work prospects",
+      "status": "UNSUBSTANTIATED_OMIT",
+      "source_id": "focus_offer"
+    },
+    {
+      "id": "focus_testimonial",
+      "claim": "Quoted customers establish typical results",
+      "status": "UNSUBSTANTIATED_OMIT",
+      "source_id": "ftc_disclosure"
+    },
+    {
+      "id": "white_bear",
+      "claim": "Wegner 1987 suppression-first order associated with later rebound",
+      "status": "SUPPORTED_IN_LAB_ONLY",
+      "source_id": "wegner87"
+    },
+    {
+      "id": "white_bear_all",
+      "claim": "Thought suppression always backfires",
+      "status": "OVERBROAD_OMIT",
+      "source_id": "wegner87"
+    },
+    {
+      "id": "load",
+      "claim": "A 1993 mood control experiment observed opposite-direction change under digit-rehearsal load",
+      "status": "SUPPORTED_EXPERIMENTAL_CONTEXT",
+      "source_id": "wegner93"
+    },
+    {
+      "id": "publisher",
+      "claim": "Final Vestige approved Inspire3 publisher",
+      "status": "NOT_VERIFIED_HARD_HOLD",
+      "source_id": "aff_portal"
+    },
+    {
+      "id": "channels",
+      "claim": "Social/email marketing authorized for FV",
+      "status": "NOT_VERIFIED_HARD_HOLD",
+      "source_id": "aff_portal"
+    },
+    {
+      "id": "creative",
+      "claim": "Official creative/swipe usable without separate approval",
+      "status": "NOT_VERIFIED_HARD_HOLD",
+      "source_id": "aff_portal"
+    },
+    {
+      "id": "rate",
+      "claim": "FV commission rate or EPC",
+      "status": "NOT_VERIFIED_OMIT",
+      "source_id": "aff_portal"
+    },
+    {
+      "id": "payhip",
+      "claim": "A Final Vestige rights-cleared live paid Mind SKU is purchasable",
+      "status": "NOT_VERIFIED",
+      "source_id": "focusfieldbook"
+    },
+    {
+      "id": "verified_sales",
+      "claim": "Any FV paid order or Inspire3 commission is confirmed",
+      "status": "NOT_VERIFIED",
+      "source_id": "creator_task"
+    },
+    {
+      "id": "focus_signup",
+      "claim": "Existing Focus form exists",
+      "status": "PUBLIC_LIVE_OBSERVATION_NOT_CONFIRMED_SUBSCRIBE",
+      "source_id": "focusfieldbook"
+    },
+    {
+      "id": "revenue_1000",
+      "claim": "Revenue per 1k qualified humans can be reported",
+      "status": "NOT_COMPUTABLE",
+      "source_id": "creator_task"
+    },
+    {
+      "id": "disclosure",
+      "claim": "Material affiliate connection must be disclosed close to purchasing link",
+      "status": "SUPPORTED_FTC",
+      "source_id": "ftc_disclosure"
+    }
+  ],
+  "gates": [
+    {
+      "id": "publisher_identity",
+      "owner": "Founder/Mind",
+      "state": "BLOCKED",
+      "need": "named publisher acceptance under Final Vestige or its legal publisher"
+    },
+    {
+      "id": "channel_terms",
+      "owner": "Founder/Mind",
+      "state": "BLOCKED",
+      "need": "email/social/website permitted channels and creative restrictions"
+    },
+    {
+      "id": "earning_link",
+      "owner": "Founder/Mind",
+      "state": "BLOCKED",
+      "need": "authorized earning link format, merchant approved offer"
+    },
+    {
+      "id": "checkout",
+      "owner": "Commerce",
+      "state": "UNKNOWN",
+      "need": "approved read-only confirmation of present final checkout total and return terms"
+    },
+    {
+      "id": "owned_payhip",
+      "owner": "Commerce",
+      "state": "UNKNOWN",
+      "need": "named owned Mind SKU rights, active priced Payhip checkout, delivery, returns"
+    },
+    {
+      "id": "sales_proof",
+      "owner": "Commerce/Growth",
+      "state": "BLOCKED",
+      "need": "merchant paid order/commission and refunds/fees including settlement"
+    },
+    {
+      "id": "qualified_humans",
+      "owner": "Analytics/Growth",
+      "state": "BLOCKED",
+      "need": "privacy-safe confirmed human denominator by campaign with source and confidence"
+    },
+    {
+      "id": "asset_id",
+      "owner": "Praxxis/Grok",
+      "state": "BLOCKED",
+      "need": "actual published social post ID/url/timestamp/rightful media sourcing"
+    },
+    {
+      "id": "focus_delivery",
+      "owner": "Site QA/Dispatch",
+      "state": "NOT_TESTED",
+      "need": "consented guest signup plus welcome proof; no duplicate subscribers"
+    },
+    {
+      "id": "browser",
+      "owner": "Site QA",
+      "state": "NOT_TESTED",
+      "need": "360 390 768 1440 1920, keyboard, AA, no JS, Lighthouse"
+    },
+    {
+      "id": "release",
+      "owner": "Founder",
+      "state": "BLOCKED",
+      "need": "explicit production/commercial approval after gates"
+    }
+  ],
+  "no_claims": [
+    "commission rate",
+    "affiliate cookie",
+    "merchant payouts",
+    "health benefit",
+    "wealth benefit",
+    "fixed checkout price",
+    "discount urgency",
+    "verified paid purchase",
+    "consumer experience"
+  ],
+  "metadata": {
+    "github_issue": 171,
+    "coordination_issue": 820,
+    "dispatch_issue": 174,
+    "version": "R186",
+    "prior_qa_correction": "R185 date 48 → >50 years; primary Loch-Palmer source URL added"
+  }
+}
