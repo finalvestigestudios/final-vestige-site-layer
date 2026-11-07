@@ -116,7 +116,7 @@ class ReportCompletionGuiR251(unittest.TestCase):
         run = next(n for n in tree.body if isinstance(n, ast.FunctionDef) and n.name == 'run')
         cls.callback = next(n for n in run.body if isinstance(n, ast.FunctionDef) and n.name == 'execute')
 
-    def _execute(self, action, *, premium=False, authorize=True):
+    def _execute(self, action, *, premium=False, authorize=True, output_folder=None):
         events = []
         statuses = []
         selected_report = ['old-report.csv']
@@ -132,7 +132,7 @@ class ReportCompletionGuiR251(unittest.TestCase):
             'root': object(), 'app_id': 'grants' if premium else 'spend',
             'entitlement_source': object(),
             'selected': [SimpleNamespace(get=lambda: 'synthetic-input.csv')],
-            'output': SimpleNamespace(get=lambda: 'synthetic-output'),
+            'output': SimpleNamespace(get=lambda: output_folder if output_folder is not None else 'synthetic-output'),
             'action': action,
             'safe_error_message': safe_error_message,
             'confirm_report_files': confirm_report_files,
@@ -168,9 +168,9 @@ class ReportCompletionGuiR251(unittest.TestCase):
 
     def test_valid_output_generates_success(self):
         with tempfile.TemporaryDirectory() as temp:
-            file = Path(temp) / 'report.csv'
+            file = Path(temp) / 'spend-map-20261107-005400-123456.csv'
             file.write_text('id\nA\n', encoding='utf-8')
-            selected, status, events = self._execute(lambda *a: [file])
+            selected, status, events = self._execute(lambda *a: [file], output_folder=temp)
             self.assertEqual(selected, [None])  # free apps never select premium reviews
             self.assertTrue(status[0].startswith('Created: '))
             self.assertEqual([e[0] for e in events], ['info'])
@@ -184,10 +184,16 @@ class ReportCompletionGuiR251(unittest.TestCase):
 
     def test_generated_reports_attested_before_premium_selection(self):
         with tempfile.TemporaryDirectory() as temp:
-            file = Path(temp) / 'report.csv'
-            file.write_text('id\nA\n', encoding='utf-8')
-            selected, _, events = self._execute(lambda *a: [file], premium=True, authorize=True)
-            self.assertEqual(selected, [str(file)])
+            bundle = Path(temp) / ('grant-evidence-20261107T085400Z-' + 'a' * 32)
+            bundle.mkdir()
+            files = [bundle / f'{stem}-20261107-005400-123456.{suffix}' for stem, suffix in (
+                ('grant-audit-exceptions', 'csv'), ('grant-budget-check', 'csv'),
+                ('evidence-manifest', 'txt'))]
+            for file in files:
+                file.write_text('synthetic evidence\n', encoding='utf-8')
+            selected, _, events = self._execute(
+                lambda *a: files, premium=True, authorize=True, output_folder=temp)
+            self.assertEqual(selected, [str(files[0])])
             self.assertEqual(events[0][0], 'info')
 
 
