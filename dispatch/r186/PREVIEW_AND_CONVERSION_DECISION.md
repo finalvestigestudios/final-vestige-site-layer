@@ -1,0 +1,40 @@
+# R186 — Decision memo: what would actually create a legitimate paid customer?
+**Status: draft, fail closed, 2026-11-07.** Master PR #175, gates #201, stacked PR #1410; coordination #174 / #171 / #129 / #820. This addition is NOT new live content, not a duplicate subscriber list, not a social production brief, and not an authorization to send.
+
+## Highest-leverage finding, not another content-volume target
+The official seller page https://zen12.com/hnp still explicitly advertises *12 minutes equaling one hour*, twelve levels and 48 Premium MP3s, four styles, and a 1-year money-back **seller promise**. The equivalence and benefits are not demonstrated by the sales page. The specific Total Focus page https://hypnosislive.com/mental-skills/total-focus advertises 33 minutes / 47MB, suggests exceptional focus effects, and describes a 14-day seller refund promise. Neither public page verifies Final Vestige's named affiliate account, email-channel permission, purchase fulfillment, commission settlement, or performance claims. DO NOT copy vendor testimonials or assume an attractive offer is eligible.
+
+The original draft Issue 03 is already decent educational copy. This optional R186 variant is deliberately *not* a replacement: it narrows the commercial intent to one buyer question and a three-day routine test, with only one prospective link to a **currently unapproved/non-live first-party evaluation guide**, and a conspicuous adjacent disclosure. It avoids asking an existing subscriber to subscribe again to retrieve the welcome Fieldbook. Founder review is mandatory before any substitution.
+
+## Existing site facts verified by read-only WordPress connector at 2026-11-07 13:38 UTC
+- Dispatch page ID 523 published; native Jetpack subscriptions block, copy says check email to confirm, no observed successful submission; Focus page ID 1579 published. Its client-side panel must not be used as proof of an opt-in.
+- Editorial Standards ID 17: primary/official records first, uncertainty visible, no AI as a historical source, and transparent commercial ties.
+- Jetpack status: subscriptions true, site_can_send true, default new-post email false, full-content rendering configured. Five recent posts explicitly never emailed. Welcome configured with 52-page Fieldbook, but actual receipt NOT verified.
+- Counters: total/confirmed 3, unconfirmed 2, suppressed 0. These are NONADDITIVE; confirmed may include WordPress.com Reader followers rather than email-eligible recipients. Actual provider email-subscription eligibility aggregate UNKNOWN. Do not report 3 sends or 3 deliverable addresses.
+- Commercial email footer actual Final Vestige physical mailing address and unsubscribe action unverified. A vendor's or Automattic's postal address does NOT qualify as FV's. Email preview requires inspecting actual Jetpack-generated output (in WordPress post editor, read-only View > Email preview if offered); static HTML and plain text in this PR are not that output.
+
+## Specific operational gating questions (binary, proof required)
+1. **Merchant identity and channel**: privately inspect the named FV publisher account/acceptance and written permission covering email. Record private opaque evidence reference only. Public Inspire3 portal is not sufficient.
+2. **Link/guide**: Mind Studio #171 certifies publicly LIVE exact Zen12 pre-sell guide, seller page terms/claims, permitted earning URL, adjacent disclosure and correct link format. Draft /mind/ and unpublished PRs DO NOT satisfy.
+3. **Audience/consent**: Claude #129 retrieves aggregate `Email Subscription = Subscribed` (not WordPress.com followers), plus opt-in provenance and any suppression state, without publishing addresses or creating a test subscriber. If backend data unavailable, UNKNOWN rather than estimating.
+4. **Actual welcome**: authorized pre-existing received MIME or a separately explicitly approved controlled test confirms both arrival and working 52-page Fieldbook link; mere configured copy is insufficient.
+5. **Native email**: from a read-only WordPress editor view, inspect *actual* email preview and screenshot subject, preheader, footer, publisher postal address, unsubscribe; verify links and keyboard accessible presentation. Do not toggle post-to-email setting, save an edit, send test messages, or publish to access preview.
+6. **Founder sign-off**: explicit final text, destination, audience, schedule, sender identity, postal and unsub, plus permission to email. Draft-campaign approval != send approval.
+
+## One-offer journey and attribution (PROPOSED; not installed)
+Grok immutable `asset_id` (from shared TASK-008; never fabricated) + `utm_source=tiktok|youtube|...`, `utm_medium=organic_social`, `utm_campaign=mind_pilot_2026_11`, `utm_content=<real_asset_id>` → signed-out Focus/Dispatch lander → actual provider-confirmed `confirmed_signup` (emit at most once per provider subscription event; deduplicate by private, non-PII event ID) → Jetpack welcomed subscriber → editorial Issues 01/02 → conditional Issue 03 guide CTA (`utm_source=dispatch&utm_medium=email&utm_campaign=dispatch_pilot_2026_11&utm_content=issue03_zen12_guide`, only on **approved** actual guide path) → partner-reported **settled** order → fees/refunds → net revenue. Preserve campaign source first touch when permitted; last click need not overwrite it. No personal identifiers or unverified IDs in URL query parameters. `affiliate_outbound` is not a paid order. No duplicate tracking scripts.
+
+**Segmentation/progression hypothesis:** People arriving from perception-history content may prefer archival editorial and are not assumed Zen12 prospects. Only a self-selected audience that has actively engaged with focus/meditation material is a prospective match for an optional detailed product comparison; absence of consent to commercial email, unverified partner terms, or non-live guide = zero sends. Do not tag or profile individual subscribers absent verified opt-in and approved implementation. With a tiny list, do not run statistical A/B tests or claim measured lifts.
+
+## Conversion owner / next proof
+| Offer → funnel | Blocker | Change or experiment | PASS/FAIL or evidence | Owner |
+|---|---|---|---|---|
+| Zen12 → paid first-party guide journey | FV named acceptance/email terms/earning URL unverified | privately check merchant permission, approved partner material | HOLD_MERCHANT, source portal is not named approval | Mind #171 |
+| Focus → confirmed lead | client UI may show success with query text | provider event + email subscription eligible aggregate (non-PII) | UNKNOWN, no real submit authorized | Claude #129 |
+| Confirmed lead → welcome | configured text is not received MIME | inspect existing authorized receipt | UNKNOWN | Dispatch |
+| Draft issue → delivered and compliant | native mail/postal/unsub not verified | inspect read-only WordPress native preview, then separately authorized acceptance test | UNKNOWN | Dispatch / founder |
+| Guide visit → settled paid buyer | no verified partner payout or qualified-session denominator | reconcile real merchant payout, refund/fees and cohort/source | NOT COMPUTABLE | Commerce / Praxxis #820 |
+
+**Revenue KPI:** 7/30-day cohort net realized revenue per 1,000 independently qualified human sessions = 1,000 × (settled gross − refunds − merchant/platform fees) / independently measured qualified-human sessions. If any input missing, null / NOT COMPUTABLE; do not reinterpret zero reports as zero purchases.
+
+**Sources:** https://finalvestige.com/editorial-standards/ ; https://finalvestige.com/dispatch/ ; https://finalvestige.com/focus/ ; https://zen12.com/hnp ; https://hypnosislive.com/mental-skills/total-focus ; https://affiliates.inspire3.com/ ; https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business ; https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking ; https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance ; https://wordpress.com/support/newsletter-email-design/ .
