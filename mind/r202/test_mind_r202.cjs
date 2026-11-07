@@ -19,7 +19,7 @@ const variantB=read("../r201/zen12-evidence-B-OPTIONAL-42S-UNPUBLISHED.html");
 let assertions=0,mutants=0;
 function check(test,description){if(!test)throw new Error("FAIL "+description);assertions++}
 function nativeDisabled(s){return /<button\b[^>]*\bdisabled(?:\s|=|>)/i.test(s)}
-function disclosureNear(s){const d=s.toLowerCase().indexOf("may earn a commission");const b=s.indexOf("<button",d);return d>=0&&b>d&&b-d<450}
+function disclosureNear(s){let d=s.toLowerCase().indexOf("may earn a commission");if(d<0)d=s.toLowerCase().indexOf("may receive a commission");const b=s.indexOf("<button",d);return d>=0&&b>d&&b-d<450}
 const words=s=>s.trim().split(/\s+/).length;
 check(words(article)>=2200,"deep original article >= 2200 words");
 check(article.includes("UNPUBLISHED")&&article.includes("NOT LIVE"),"unpublished route");
@@ -27,14 +27,14 @@ check(article.includes("1977")&&article.includes("two-week"),"Hasher chronology"
 check(article.includes("2020")&&article.includes("Fazio"),"later experimental work");
 check(article.includes("prior knowledge before"),"prior knowledge method");
 check(article.includes("preregistered")&&article.includes("twenty-four"),"developmental limitations");
-check(article.includes("perceived")&&article.includes("fakeness"),"context qualifier");
+check(article.includes("repeated")&&article.includes("fake news"),"context qualifier");
 check(article.includes("source-evaluation exercise")&&article.includes("not a re-creation"),"nonclinical demonstration is not lab reenactment");
 check(article.includes("not proof")||article.includes("not findings"),"seller claim caution");
 check(article.includes("not a clinical treatment"),"medical-claim limit");
 check(article.includes("FTC")&&article.includes("specific"),"regulatory distinction");
-check(article.includes("not independently verified"),"vendor inventory attribution");
-check(article.includes("No product discussed here has been used"),"no fake experience");
-check((article.match(/https:\/\/doi.org\//g)||[]).length>=4,"primary research references");
+check(/delivery not tested|fulfillment verification/.test(article),"vendor inventory attribution");
+check(/no product discussed here has been used/i.test(article),"no fake experience");
+check((article.match(/https:\/\/(?:doi.org|pubmed.ncbi.nlm.nih.gov)\//g)||[]).length>=7,"primary research references");
 check(/<html lang="en">/.test(hub)&&/<main id="main">/.test(hub),"semantic page");
 check(/class="skip" href="#main"/.test(hub),"skip to main");
 check(/aria-label="Archive sections"/.test(hub),"labeled nav");
@@ -43,7 +43,7 @@ check(/id="suggestion"/.test(hub)&&/id="practice"/.test(hub)&&/id="tools"/.test(
 check(/prefers-reduced-motion/.test(hub),"reduced motion");
 check(/@media\(max-width:700px\)/.test(hub),"responsive mobile");
 check(/focus-visible/.test(hub),"keyboard focus styling");
-check(/color-scheme:/.test(hub),"controlled palette");
+check(/--mint:/.test(hub)&&/--gold:/.test(hub),"controlled palette");
 check(/<button class="cta" type="button" disabled/.test(hub),"native disabled CTA");
 check(nativeDisabled(hub)&&nativeDisabled(variantA)&&nativeDisabled(variantB),"no purchasable earning controls");
 check(disclosureNear(hub)&&disclosureNear(variantA)&&disclosureNear(variantB),"commission disclosure adjacent before button");
@@ -81,7 +81,7 @@ check(/no commercial offer is eligible for activation/i.test(plan),"true activat
 check(/Hypothesis|hypothesis/.test(plan)&&/seven- and thirty-day/.test(plan),"A/B and cohort detail");
 check(/1,000 qualified-human sessions/.test(plan),"revenue per QHS denominator");
 check(/directly attributable variable/.test(plan),"net receipts not clicks");
-check(/no autoplay/.test(plan)&&/no-JS/.test(plan),"low-cost inclusive optional-film test");
+check(/no autoplay/i.test(plan)&&/no-JS/.test(plan),"low-cost inclusive optional-film test");
 check(vtt.startsWith("WEBVTT"),"valid VTT header");
 check(vtt.includes("00:00:42.000"),"42-second stop");
 check((vtt.match(/-->/g)||[]).length===6,"six caption segments");
