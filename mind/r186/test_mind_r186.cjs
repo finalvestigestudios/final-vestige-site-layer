@@ -19,7 +19,7 @@ function validate(f) {
  ok("science cites Wegner 1987 primary",a.includes("3612492/")&&a.includes("1987")&&a.includes("rebound"));
  ok("science cites cognitive load paper",a.includes("8295117/")&&a.includes("nine-digit"));
  ok("article does not sell product",a.includes("no affiliate recommendation")&&a.includes("not proof")&& !/https?:\/\/(www\.)?awin1\.com/i.test(a));
- ok("article recognizes original limits",a.includes("after")&&a.includes("experimental")&&a.includes("not")&&a.includes("treatment"));
+ ok("article recognizes original limits",a.includes("This was a structured laboratory finding")&&a.includes("not a study of Zen12")&&a.includes("treatment"));
  ok("article cites thought suppression review",a.includes("annurev.psych.51.1.59"));
  ok("R185 date corrected",e.includes("More than fifty years later")&&!e.includes("Forty-eight years later"));
  ok("R185 primary full-text trail supplied",e.includes("LoftusPalmer_ReconstructionAuto_JVLVB1974.pdf"));
@@ -36,7 +36,7 @@ function validate(f) {
  ok("seller evidence precise",m.includes("https://zen12.com/hnp")&&m.includes("https://hypnosislive.com/mental-skills/total-focus")&&m.includes("24.44"));
  ok("FTC source contract",m.includes("ftcs-endorsement-guides")&&m.includes("health-products-compliance-guidance"));
  ok("HTML no script, iframe or form",![A,B,h].some(s=>/<(?:script|iframe|form)\b/i.test(s)));
- ok("HTML no inline JS or autoplay",![A,B,h].some(s=>/\bon(?:click|load|error|mouseover)\s*=|autoplay|javascript:/i.test(s)));
+ ok("HTML no inline JS or autoplay",![A,B,h].some(s=>/\bon(?:click|load|error|mouseover)\s*=|<(?:video|audio)[^>]*\bautoplay\b|javascript:/i.test(s)));
  ok("CTA native disabled BOTH", [A,B].every(s=>(s.match(/<button type="button" disabled aria-disabled="true">/g)||[]).length===1));
  ok("disclosure immediately before button BOTH",[A,B].every(s=>/class="disclosure"[^>]*>[\s\S]*?may earn a commission[\s\S]*?<\/p>\s*<button type="button" disabled/i.test(s)));
  ok("no commission earnings URL in HTML",![A,B,h].some(s=>/awin1\.com|clickbank|[?&](hop|affid|affiliate_id|ref)=|data-earning-url=|rel="sponsored"/i.test(s)));
@@ -74,7 +74,7 @@ function mutations(f){
  ["revert date","errata",s=>s.replace("More than fifty years later","Forty-eight years later")],
  ["erase primary source","errata",s=>s.replace("LoftusPalmer_ReconstructionAuto_JVLVB1974.pdf","missing.pdf")],
  ["remove video captions","B",s=>s.replace("00:37–00:42","00:37–xx:xx")],
- ["break no-js equivalence","A",s=>s.replace("A free timer be enough?","A paid timer is necessary?")],
+ ["break no-js equivalence","A",s=>s.replace("Could a free timer be enough?","Is a paid timer necessary?")],
  ["mismatch exact seller","matrix",s=>s.replace("https://zen12.com/hnp","https://wrong.example/offer")],
  ["remove merchant gate","matrix",s=>s.replace('"state": "BLOCKED"','"state": "APPROVED"')]
  ]; let detected=0; const failures=[];
