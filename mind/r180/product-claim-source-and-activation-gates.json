@@ -1,0 +1,487 @@
+{
+  "schema": "finalvestige.mind.r180.verified_claims.v1",
+  "review_date": "2026-11-06",
+  "status": "DRAFT_UNPUBLISHED_COMMERCIAL_HARD_HOLD",
+  "seller_claims_are_not_independent_evidence": true,
+  "merchant_publisher_acceptance": "NOT_VERIFIED",
+  "affiliate_earning_url": null,
+  "commercial_cta_active": false,
+  "Payhip_owned_mind_product_verified": false,
+  "paid_sales_verified": false,
+  "realized_net_revenue": null,
+  "qualified_human_sessions": null,
+  "sources": [
+    {
+      "id": "S01",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "type": "governance",
+      "scope": "Mind pillar, live inventory and release boundaries",
+      "checked_on": "2026-11-06",
+      "qualification": "SOURCE_SCOPE_ONLY"
+    },
+    {
+      "id": "S02",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "type": "governance",
+      "scope": "Paid conversion-first measurement and creator journey",
+      "checked_on": "2026-11-06",
+      "qualification": "SOURCE_SCOPE_ONLY"
+    },
+    {
+      "id": "S03",
+      "url": "https://inspire3.com/",
+      "type": "seller_company",
+      "scope": "Lists Zen12, Hypnosis Live, Brainwave Shots; product outcomes originate with seller",
+      "checked_on": "2026-11-06",
+      "qualification": "SELLER_REPRESENTATION_ONLY"
+    },
+    {
+      "id": "S04",
+      "url": "https://zen12.com/",
+      "type": "seller_exact_offer",
+      "scope": "Zen12 Premium seller-described 12 levels/48 MP3/4 styles; 12 minutes; advertised warranty; inconsistent public displayed prices",
+      "checked_on": "2026-11-06",
+      "qualification": "SELLER_REPRESENTATION_ONLY"
+    },
+    {
+      "id": "S05",
+      "url": "https://affiliates.inspire3.com/",
+      "type": "seller_public_affiliate_portal",
+      "scope": "A public program and advertised general payout terms, NOT Final Vestige acceptance",
+      "checked_on": "2026-11-06",
+      "qualification": "SELLER_REPRESENTATION_ONLY"
+    },
+    {
+      "id": "S06",
+      "url": "https://hypnosislive.com/catalog",
+      "type": "seller_catalog",
+      "scope": "Hypnosis Live catalog includes multiple independent MP3/bundle offers; distinct from Zen12",
+      "checked_on": "2026-11-06",
+      "qualification": "SELLER_REPRESENTATION_ONLY"
+    },
+    {
+      "id": "S07",
+      "url": "https://hypnosislive.com/personal-improvement/lucid-dreaming-mastery",
+      "type": "seller_specific_offer",
+      "scope": "Specific 40-minute audio and seller's 14-day refund promise; not Zen12's one-year guarantee",
+      "checked_on": "2026-11-06",
+      "qualification": "SELLER_REPRESENTATION_ONLY"
+    },
+    {
+      "id": "S08",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "type": "seller_specific_offer",
+      "scope": "Seller-described 15/30-minute Focus Shot, seller testimonials/efficacy and refund statements unverified",
+      "checked_on": "2026-11-06",
+      "qualification": "SELLER_REPRESENTATION_ONLY"
+    },
+    {
+      "id": "S09",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/21782031/",
+      "type": "original_research",
+      "scope": "Hasenkamp 2012 n=14 attention-phase fMRI model; no Zen12 intervention",
+      "checked_on": "2026-11-06",
+      "qualification": "SOURCE_SCOPE_ONLY"
+    },
+    {
+      "id": "S10",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3290768/",
+      "type": "original_research",
+      "scope": "Hasenkamp/Barsalou 2012 resting connectivity observational",
+      "checked_on": "2026-11-06",
+      "qualification": "SOURCE_SCOPE_ONLY"
+    },
+    {
+      "id": "S11",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23538911/",
+      "type": "original_research",
+      "scope": "Mrazek et al. 2013 randomized 2-week class study; nonproduct",
+      "checked_on": "2026-11-06",
+      "qualification": "SOURCE_SCOPE_ONLY"
+    },
+    {
+      "id": "S12",
+      "url": "https://doi.org/10.1016/j.concog.2016.08.017",
+      "type": "review",
+      "scope": "Lao et al. 2016 18 studies; no consistent objective attention/executive improvements",
+      "checked_on": "2026-11-06",
+      "qualification": "SOURCE_SCOPE_ONLY"
+    },
+    {
+      "id": "S13",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+      "type": "review",
+      "scope": "2023 EEG binaural beat entrainment review 5 support/8 contradictory/1 mixed; not Zen12",
+      "checked_on": "2026-11-06",
+      "qualification": "SOURCE_SCOPE_ONLY"
+    },
+    {
+      "id": "S14",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "type": "regulatory",
+      "scope": "Adjacent conspicuous material-connection disclosures; no unfounded product endorsement",
+      "checked_on": "2026-11-06",
+      "qualification": "SOURCE_SCOPE_ONLY"
+    },
+    {
+      "id": "S15",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "type": "regulatory",
+      "scope": "Scientific substantiation needed for express and implied health benefits",
+      "checked_on": "2026-11-06",
+      "qualification": "SOURCE_SCOPE_ONLY"
+    },
+    {
+      "id": "S16",
+      "url": "https://finalvestige.com/focus/",
+      "type": "existing_first_party",
+      "scope": "Existing 52-page Focus Fieldbook via the same Jetpack/Dispatch funnel; not a paid offer",
+      "checked_on": "2026-11-06",
+      "qualification": "SOURCE_SCOPE_ONLY"
+    },
+    {
+      "id": "S17",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "type": "existing_first_party",
+      "scope": "Published research landing; editorial intent ≠ buying intent",
+      "checked_on": "2026-11-06",
+      "qualification": "SOURCE_SCOPE_ONLY"
+    },
+    {
+      "id": "S18",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "type": "existing_first_party",
+      "scope": "Historical archive, not efficacy evidence",
+      "checked_on": "2026-11-06",
+      "qualification": "SOURCE_SCOPE_ONLY"
+    },
+    {
+      "id": "S19",
+      "url": "https://finalvestige.com/collection/",
+      "type": "existing_first_party",
+      "scope": "Public product collection does not authenticate Payhip Mind SKU/checkout/rights",
+      "checked_on": "2026-11-06",
+      "qualification": "SOURCE_SCOPE_ONLY"
+    },
+    {
+      "id": "S20",
+      "url": "https://www.psychologicalscience.org/news/releases/brief-mindfulness-training-may-boost-test-scores-working-memory.html",
+      "type": "institutional_study_explanation",
+      "scope": "48 students, 45 min 4 times/week for 2 weeks; result not to be universalized",
+      "checked_on": "2026-11-06",
+      "qualification": "SOURCE_SCOPE_ONLY"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "statement": "Premium consists of 12 levels",
+      "source_id": "S04",
+      "classification": "ATTRIBUTED_SELLER_FORMAT",
+      "decision": "ALLOW_ATTRIBUTED"
+    },
+    {
+      "id": "C02",
+      "statement": "Premium has 48 MP3s and four advertised styles",
+      "source_id": "S04",
+      "classification": "ATTRIBUTED_SELLER_FORMAT",
+      "decision": "ALLOW_ATTRIBUTED"
+    },
+    {
+      "id": "C03",
+      "statement": "Each session is advertised as twelve minutes",
+      "source_id": "S04",
+      "classification": "ATTRIBUTED_SELLER_FORMAT",
+      "decision": "ALLOW_ATTRIBUTED_NO_EQUIVALENCE"
+    },
+    {
+      "id": "C04",
+      "statement": "Public seller advertises one-year guarantee",
+      "source_id": "S04",
+      "classification": "UNVERIFIED_POLICY",
+      "decision": "DESCRIBE_SELLER_PROMISE_ONLY_NOT_FULFILLMENT"
+    },
+    {
+      "id": "C05",
+      "statement": "Final Premium checkout is $87.00",
+      "source_id": "S04",
+      "classification": "CONFLICTING_UNVERIFIED",
+      "decision": "BLOCK_FINAL_PRICE"
+    },
+    {
+      "id": "C06",
+      "statement": "Final Premium checkout is $87.99",
+      "source_id": "S04",
+      "classification": "CONFLICTING_UNVERIFIED",
+      "decision": "BLOCK_FINAL_PRICE"
+    },
+    {
+      "id": "C07",
+      "statement": "Twelve minutes produces the benefits of an hour",
+      "source_id": "S04",
+      "classification": "SELLER_EFFICACY_CLAIM",
+      "decision": "BLOCK_PRODUCT_OUTCOME"
+    },
+    {
+      "id": "C08",
+      "statement": "Zen12 audio treats anxiety, insomnia or disease",
+      "source_id": "S15",
+      "classification": "UNSUBSTANTIATED_HEALTH",
+      "decision": "BLOCK"
+    },
+    {
+      "id": "C09",
+      "statement": "Zen12 proven to improve standardized attention test scores",
+      "source_id": "S11",
+      "classification": "FALSE_RESEARCH_TRANSFER",
+      "decision": "BLOCK"
+    },
+    {
+      "id": "C10",
+      "statement": "Mrazek training involved a 2-week class not Zen12",
+      "source_id": "S11",
+      "classification": "RESEARCH_FACT",
+      "decision": "ALLOW_WITH_DESIGN"
+    },
+    {
+      "id": "C11",
+      "statement": "2012 fMRI paper observed phases using 14 practitioners",
+      "source_id": "S09",
+      "classification": "RESEARCH_FACT",
+      "decision": "ALLOW_WITH_LIMITS"
+    },
+    {
+      "id": "C12",
+      "statement": "Resting connectivity study proves practice caused brain rewiring",
+      "source_id": "S10",
+      "classification": "CAUSAL_OVERREACH",
+      "decision": "BLOCK"
+    },
+    {
+      "id": "C13",
+      "statement": "2016 systematic review consistently proved attentional gains",
+      "source_id": "S12",
+      "classification": "FALSE_REVIEW_INFERENCE",
+      "decision": "BLOCK"
+    },
+    {
+      "id": "C14",
+      "statement": "2016 review found limited objective support for attention/executive improvement",
+      "source_id": "S12",
+      "classification": "REVIEW_RESULT",
+      "decision": "ALLOW_WITH_SCOPE"
+    },
+    {
+      "id": "C15",
+      "statement": "Binaural beats established entrainment across all EEG studies",
+      "source_id": "S13",
+      "classification": "CONTRADICTS_REVIEW",
+      "decision": "BLOCK"
+    },
+    {
+      "id": "C16",
+      "statement": "Zen12 product-specific EEG entrainment is independently proven",
+      "source_id": "S13",
+      "classification": "UNSUPPORTED_PRODUCT_EFFICACY",
+      "decision": "BLOCK"
+    },
+    {
+      "id": "C17",
+      "statement": "Inspire3 public affiliate program exists",
+      "source_id": "S05",
+      "classification": "PUBLIC_COMPANY_FACT",
+      "decision": "ALLOW_NO_APPROVAL_INFERENCE"
+    },
+    {
+      "id": "C18",
+      "statement": "Final Vestige approved as Inspire3 publisher",
+      "source_id": "S05",
+      "classification": "UNKNOWN_NAMED_ACCEPTANCE",
+      "decision": "BLOCK_ACTIVATION"
+    },
+    {
+      "id": "C19",
+      "statement": "Final Vestige can promote Zen12 in TikTok/YouTube/email",
+      "source_id": "S05",
+      "classification": "UNKNOWN_CHANNEL_RIGHTS",
+      "decision": "BLOCK_ACTIVATION"
+    },
+    {
+      "id": "C20",
+      "statement": "Publisher-specific earning link and tracking terms verified",
+      "source_id": "S05",
+      "classification": "UNKNOWN_PARTNER_LINK",
+      "decision": "BLOCK_ACTIVATION"
+    },
+    {
+      "id": "C21",
+      "statement": "Inspire3 advertised payouts are FV's actual commissions",
+      "source_id": "S05",
+      "classification": "INVALID_FINANCIAL_INFERENCE",
+      "decision": "BLOCK"
+    },
+    {
+      "id": "C22",
+      "statement": "Hypnosis Live specific item advertises 14-day refund",
+      "source_id": "S07",
+      "classification": "SELLER_POLICY_DISTINCT",
+      "decision": "ALLOW_ATTRIBUTED_ONLY_NOT_FULFILLMENT"
+    },
+    {
+      "id": "C23",
+      "statement": "Hypnosis Live terms apply to Zen12 Premium",
+      "source_id": "S07",
+      "classification": "CROSS_PRODUCT_MISATTRIBUTION",
+      "decision": "BLOCK"
+    },
+    {
+      "id": "C24",
+      "statement": "Focus Shot is advertised as 15/30-minute audio",
+      "source_id": "S08",
+      "classification": "SELLER_FORMAT",
+      "decision": "ALLOW_ATTRIBUTED"
+    },
+    {
+      "id": "C25",
+      "statement": "Focus Shot produces guaranteed four-hour concentration",
+      "source_id": "S08",
+      "classification": "UNSUPPORTED_PRODUCT_EFFICACY",
+      "decision": "BLOCK"
+    },
+    {
+      "id": "C26",
+      "statement": "52-page Focus Fieldbook already offered as free signup",
+      "source_id": "S16",
+      "classification": "FIRST_PARTY_DESCRIPTIVE",
+      "decision": "ALLOW_NO_NEW_LIST"
+    },
+    {
+      "id": "C27",
+      "statement": "Published change-blindness article proves Zen12 efficacy",
+      "source_id": "S17",
+      "classification": "FALSE_INFERENCE",
+      "decision": "BLOCK"
+    },
+    {
+      "id": "C28",
+      "statement": "Zen12 merchant sale equals FV affiliate net revenue",
+      "source_id": "S02",
+      "classification": "INVALID_ACCOUNTING",
+      "decision": "BLOCK"
+    },
+    {
+      "id": "C29",
+      "statement": "An outbound merchant click confirms paid conversion",
+      "source_id": "S02",
+      "classification": "INVALID_ATTRIBUTION",
+      "decision": "BLOCK"
+    },
+    {
+      "id": "C30",
+      "statement": "FV-owned Payhip Mind SKU is proven sellable",
+      "source_id": "S19",
+      "classification": "UNKNOWN_INVENTORY_RIGHTS_CHECKOUT",
+      "decision": "BLOCK_UNTIL_AUTHENTICATED"
+    },
+    {
+      "id": "C31",
+      "statement": "FTC near-link affiliate disclosure required for material connection",
+      "source_id": "S14",
+      "classification": "DISCLOSURE",
+      "decision": "REQUIRE_FUTURE_ACTIVE_LINK"
+    },
+    {
+      "id": "C32",
+      "statement": "Medical outcomes may be inherited from broad meditation research",
+      "source_id": "S15",
+      "classification": "HEALTH_CLAIM_OVERREACH",
+      "decision": "BLOCK"
+    }
+  ],
+  "gates": [
+    {
+      "id": "partner_named_acceptance",
+      "status": "CLOSED",
+      "owner": "Founder/Mind",
+      "evidence_to_open": "Partner dashboard approval record identifying publisher"
+    },
+    {
+      "id": "exact_product_in_partner_catalog",
+      "status": "CLOSED",
+      "owner": "Founder/Mind",
+      "evidence_to_open": "Approved Premium product campaign and current tracking scope"
+    },
+    {
+      "id": "authorized_earning_link",
+      "status": "CLOSED",
+      "owner": "Founder/Mind",
+      "evidence_to_open": "Actual eligible earning destination; no invented URLs"
+    },
+    {
+      "id": "organic_social_channel_permission",
+      "status": "CLOSED",
+      "owner": "Founder/Mind",
+      "evidence_to_open": "Terms for TikTok/YouTube/website"
+    },
+    {
+      "id": "email_channel_permission",
+      "status": "CLOSED",
+      "owner": "Founder/Mind + Dispatch",
+      "evidence_to_open": "Written email-promotion rights (Dispatch #174)"
+    },
+    {
+      "id": "exact_checkout_pricing_refund",
+      "status": "CLOSED",
+      "owner": "Founder/Commerce",
+      "evidence_to_open": "Dated tier-specific checkout and applicable refund terms"
+    },
+    {
+      "id": "creative_rights",
+      "status": "CLOSED",
+      "owner": "Founder/Mind",
+      "evidence_to_open": "Rights for every merchant asset if ever used (current designs original)"
+    },
+    {
+      "id": "Payhip_paid_mind_fallback",
+      "status": "UNKNOWN",
+      "owner": "Commerce",
+      "evidence_to_open": "SKU ID, rights manifest, active price, checkout, delivery, returns, seller account"
+    },
+    {
+      "id": "Grok_media_asset_ids",
+      "status": "UNKNOWN",
+      "owner": "Praxxis/Grok",
+      "evidence_to_open": "Actual posted media ID, URL, caption, consent/rights, live destination"
+    },
+    {
+      "id": "confirmed_lead_from_existing_list",
+      "status": "UNKNOWN",
+      "owner": "QA/Dispatch",
+      "evidence_to_open": "Approved observed consent and welcome flow without additional list"
+    },
+    {
+      "id": "paid_sales_evidence",
+      "status": "UNKNOWN",
+      "owner": "Founder/Commerce",
+      "evidence_to_open": "Settled Payhip order or verified affiliate paid commission statement"
+    },
+    {
+      "id": "qualified_human_session_denominator",
+      "status": "UNKNOWN",
+      "owner": "Claude/QA",
+      "evidence_to_open": "Deduped qualified sessions with immutable campaign IDs"
+    },
+    {
+      "id": "draft_browser_qa",
+      "status": "CLOSED",
+      "owner": "Site QA",
+      "evidence_to_open": "Keyboard, 360/390/768/1440/1920, WCAG, real mobile, Lighthouse, no-JS"
+    },
+    {
+      "id": "founder_release_approval",
+      "status": "CLOSED",
+      "owner": "Founder",
+      "evidence_to_open": "Explicit approval for any live navigation/CMS, affiliate activation, analytics or posting"
+    }
+  ]
+}
