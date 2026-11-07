@@ -25,8 +25,10 @@ def good(label):
                       for slug in ('household-emergency-plan', 'three-day-kit')
                       for stage in ('source', 'wordpress_draft')]
     if label == 'r178':
-        v['legacy_approved_unverified'] = ['making-water-safer','salt-beef-pork-ships']
-        v['not_required_editorial_hold'] = ['a','b','c','d']
+        v['legacy_approved_unverified'] = ['making-water-safer','salt-beef-salt-pork-age-of-sail']
+        v['not_required_editorial_hold'] = [
+            'navigation-before-gps','pioneer-supply-chains-failed',
+            'root-cellars-cool-storage','sanitation-before-germ-theory']
     if label == 'r182':
         v['qa_prs'] = dict(gate.QA_HEADS)
         v['content_custody_sha256'] = 'a'*64
