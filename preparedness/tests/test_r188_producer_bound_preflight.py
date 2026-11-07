@@ -28,7 +28,9 @@ def synthetic_tree(root, state='DRAFT_HARD_HOLD', bad_approvals=False):
     for p in paths:
         data=f'# synthetic {p}\n'.encode();(prep/p).write_bytes(data);pins[p]=gate.git_blob(data)
     code=f"def preflight(repo, timeout):\n    return {{'state':'{state}', 'publication_authorized':{bad_approvals}, 'independent_qd_pass':False,'checks':[]}}\n"
-    (tools/'r186_whole_archive_preflight.py').write_text(code)
+    runner=tools/'r186_whole_archive_preflight.py'
+    runner.write_text(code)
+    pins['tools/r186_whole_archive_preflight.py']=gate.git_blob(runner.read_bytes())
     return prep,pins
 
 
