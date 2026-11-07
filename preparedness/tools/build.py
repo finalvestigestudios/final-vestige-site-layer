@@ -297,7 +297,7 @@ def review_block(meta: dict) -> str:
     if safety["state"] == "approved":
         s_txt = (
             f"Historical label recorded as approved by {esc(safety['reviewer'])} "
-            f"on {fmt_date(safety['date'])}. "
+            f"on {esc(fmt_date(safety['date']))}. "
             "This label has not been independently verified. "
             "Human source/safety review and independent QD are still required before publication."
         )
