@@ -121,9 +121,12 @@ def verify_contract(label: str, receipt: dict) -> None:
             } or any(x.get('structural_status') != 'REVIEW_HOLD' for x in rows)):
             raise ValueError('r177: four safety/source and export observations required')
     elif label == 'r178':
-        if (len(receipt.get('legacy_approved_unverified', [])) != 2 or
-            len(receipt.get('not_required_editorial_hold', [])) != 4):
-            raise ValueError('r178: six historical review exceptions missing')
+        if (receipt.get('legacy_approved_unverified') != [
+                'making-water-safer', 'salt-beef-salt-pork-age-of-sail'] or
+            receipt.get('not_required_editorial_hold') != [
+                'navigation-before-gps', 'pioneer-supply-chains-failed',
+                'root-cellars-cool-storage', 'sanitation-before-germ-theory']):
+            raise ValueError('r178: six exact historical review exceptions missing')
     elif label == 'r182':
         if receipt.get('qa_prs') != QA_HEADS:
             raise ValueError('r182: unpinned independent PR identities')
