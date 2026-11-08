@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Positive and adversarial real-PHP tests of exact import preflight and both MU guards."""
+"""Positive and adversarial real-PHP tests of the exact import preflight and both MU guards."""
 import io,json,subprocess,tempfile,unittest,zipfile
 from pathlib import Path
 from playground_web_admission import build,digest,PARENT_SHA
