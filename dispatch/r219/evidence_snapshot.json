@@ -1,0 +1,25 @@
+{
+  "date_utc": "2026-11-08T22:33:54+00:00",
+  "source": "WordPress.com authenticated read-only Jetpack Newsletter and follower connectors",
+  "site": "finalvestige.com",
+  "newsletter": {"enabled": true, "can_send_technically": true, "new_posts_email_by_default": false, "content_format": "full", "reply_to": "no-reply", "categories_enabled": false},
+  "reported_counts_nonadditive": {"total": 3, "confirmed": 3, "unconfirmed": 2, "suppressed": 0, "wpcom_followers": 3, "email_followers": 0},
+  "email_eligible_recipients": null,
+  "recent_post_email_status": "five recent posts never_sent_opted_out",
+  "welcome_message_configured": true,
+  "final_welcome_actually_received": null,
+  "received_legal_footer_unsubscribe_validated": null,
+  "named_affiliate_email_permission": null,
+  "merchant_paid_settlement_verified": null,
+  "qualified_human_sessions_denominator": null,
+  "net_revenue_per_1000_qualified_sessions": null,
+  "canonical_six_edition_release": "HOLD_UNSENT",
+  "commercial_03_05_release": "HOLD_MERCHANT",
+  "source_links": [
+    "https://wordpress.com/support/newsletter-settings/",
+    "https://wordpress.com/support/newsletter/email-appearance/",
+    "https://wordpress.com/support/newsletter/disable-newsletter-emails/",
+    "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business",
+    "https://zen12.com/hnp"
+  ]
+}
