@@ -18,7 +18,7 @@ R279 added a mandatory native Windows Defender scan and pinned its report's byte
 
 ## Local test evidence and scope
 
-The **exact committed Git blobs** of the new helper and test file were tested on **Linux Python 3.13.5** from a minimal local checkout with a small shim implementing the same strict R273 JSON decoder policy (the full R273 repository file was not present locally). Git blob SHAs:
+The **exact committed Git blobs** of the new helper and test file were tested on **Linux Python 3.13.5** from a minimal local checkout with **the byte-exact committed R273 strict JSON decoder dependency** (Git blob `9de54dd6b6d9f0f2f07298fe90ebeaa77bf0ade4`). Git blob SHAs:
 
 - Helper: `c076ffee53bfb2aadd96394382310152fa828f74`
 - Tests: `53261b5e6b98b4c2d206aaa27712c1b170906ccc`
@@ -34,7 +34,7 @@ python -m compileall -q [new helper and tests]
     PASS
 ```
 
-**26 method executions passed.** These exercise only the focused JSON/receipt semantics using synthetic R9 and Defender records. They **do not** establish full-repository compatibility, integrated private-runner acceptance, a genuine Defender scan, live EXE smoke testing, QD approval, or entitlement protection. The R273 dependency used locally was a minimal policy-equivalent shim, not its full byte-identical committed file. The runner and workflow changes have not been executed end to end.
+**26 method executions passed.** These exercise only the focused JSON/receipt semantics using synthetic R9 and Defender records. They **do not** establish full-repository compatibility, integrated private-runner acceptance, a genuine Defender scan, live EXE smoke testing, QD approval, or entitlement protection. The R273 decoder used locally was verified against its complete committed Git blob. The runner and workflow changes have not been executed end to end.
 
 ## Hard release gates and next action
 
