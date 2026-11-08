@@ -33,8 +33,8 @@ def fixture():
         for idx,sid in enumerate(order,1):
             s=s.replace('{{cite:'+sid+'}}',f'<sup class="pa-cite"><a href="#src-{idx}">[{idx}]</a></sup>')
         sources=''.join(f'<li id="src-{idx}"><a href="{SOURCES[sid]}">{sid}</a></li>' for idx,sid in enumerate(order,1))
-        inner=(f'<div class="pa pa-article"><header><span>Draft: not public</span>'
-               f'<span>Safety review pending</span></header><div class="pa-shell"><div class="pa-body">{s}</div></div>'
+        inner=(f'<div class="pa pa-article"><header><ul class="pa-chips"><li>Draft: not public</li>'
+               f'<li>Safety review pending</li></ul></header><div class="pa-shell"><div class="pa-body">{s}</div></div>'
                f'<section class="pa-sources"><ol>{sources}</ol></section>'
                '<section class="pa-review">Pending. A human safety review is required before this page can be published.</section></div>')
         rendered[n]={'wp':('<!-- wp:html -->'+inner+'<!-- /wp:html -->').encode(),
@@ -77,6 +77,21 @@ class TestGate(unittest.TestCase):
         self.assertIn('draft/safety',' '.join(out['errors']))
     def test_unapproved_safety_label_removed(self):
         d,b,r=fixture();r[7]['wp']=r[7]['wp'].replace(b'Safety review pending',b'Safe for everyone')
+        self.assertEqual(g.evaluate(d,b,r)['state'],g.INVALID)
+    def test_hidden_warning_rejected_in_chips(self):
+        d,b,r=fixture();r[7]['wp']=r[7]['wp'].replace(b'<li>Draft: not public</li>',b'<li hidden>Draft: not public</li>')
+        out=g.evaluate(d,b,r);self.assertEqual(out['state'],g.INVALID,out)
+    def test_script_only_review_warning_rejected(self):
+        d,b,r=fixture();r[20]['preview']=r[20]['preview'].replace(b'A human safety review is required',b'<script>A human safety review is required</script>')
+        self.assertEqual(g.evaluate(d,b,r)['state'],g.INVALID)
+    def test_warning_forged_outside_scope_rejected(self):
+        d,b,r=fixture();r[20]['wp']=r[20]['wp'].replace(b'Draft: not public',b'Missing draft').replace(b'<!-- wp:html -->',b'<!-- wp:html -->Draft: not public')
+        self.assertEqual(g.evaluate(d,b,r)['state'],g.INVALID)
+    def test_hidden_review_section_rejected(self):
+        d,b,r=fixture();r[20]['wp']=r[20]['wp'].replace(b'<section class="pa-review">',b'<section class="pa-review" style="display: none">')
+        self.assertEqual(g.evaluate(d,b,r)['state'],g.INVALID)
+    def test_duplicate_chips_scope_rejected(self):
+        d,b,r=fixture();r[7]['wp']=r[7]['wp'].replace(b'</header>',b'<ul class="pa-chips"><li>Draft: not public</li><li>Safety review pending</li></ul></header>')
         self.assertEqual(g.evaluate(d,b,r)['state'],g.INVALID)
     def test_malicious_script_in_body(self):
         d,b,r=fixture();r[7]['wp']=r[7]['wp'].replace(b'<div class="pa-body">',b'<div class="pa-body"><script>alert(1)</script>')
