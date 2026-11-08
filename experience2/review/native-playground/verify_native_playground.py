@@ -22,9 +22,15 @@ def allowed_origin(raw):
         raise ValueError('PLAYGROUND_REQUIRES_HTTPS')
     return raw.rstrip('/')
 
+class RefuseRedirects(urllib.request.HTTPRedirectHandler):
+    """Never follow even a same-host redirect during admission, much less production."""
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        raise ValueError('REDIRECT_REFUSED_DURING_NATIVE_PREFLIGHT')
+
 def fetch(url, limit=3_000_000):
     request=urllib.request.Request(url,headers={'User-Agent':'FV-EX2-ReadOnly-StagingQA/1.0'})
-    with urllib.request.urlopen(request,timeout=12) as r:
+    opener=urllib.request.build_opener(RefuseRedirects())
+    with opener.open(request,timeout=12) as r:
         body=r.read(limit+1)
         if len(body)>limit: raise ValueError('RESPONSE_EXCEEDS_QA_LIMIT')
         return r.status,dict(r.headers),body
@@ -62,6 +68,21 @@ async def browser_gate(origin, axe, output, report):
                     ctx=await browser.new_context(viewport={'width':width,'height':height},java_script_enabled=js,reduced_motion='reduce')
                     page=await ctx.new_page()
                     page.on('pageerror',lambda e,rec=entry:rec['errors'].append(str(e)[:300]))
+                    # A local WordPress site must NEVER navigate to a public URL.
+                    # Read-only archival image GETs remain allowed for transfer review;
+                    # cross-origin navigations and unsafe HTTP methods are blocked.
+                    async def admission_route(route,rec=entry):
+                        req=route.request
+                        dest=urllib.parse.urlsplit(req.url)
+                        home=urllib.parse.urlsplit(origin)
+                        same_host=(dest.scheme, dest.netloc)==(home.scheme, home.netloc)
+                        unsafe_method=req.method.upper() not in ('GET','HEAD','OPTIONS')
+                        if not same_host and (req.is_navigation_request() or unsafe_method):
+                            rec['errors'].append('EXTERNAL_NAVIGATION_OR_WRITE_REFUSED: '+req.url[:180])
+                            await route.abort()
+                        else:
+                            await route.continue_()
+                    await ctx.route('**/*',admission_route)
                     try:
                         response=await page.goto(origin+'/',wait_until='domcontentloaded',timeout=18000)
                         await page.wait_for_timeout(600)
@@ -124,7 +145,36 @@ def run_self_test():
         assert len(x['blockers'])==3 and not any(v.get('pass') for v in x['tests'].values())
         n+=3
     finally:server.shutdown();server.server_close()
-    return {'pass':n,'fail':0,'scope':'isolation/false-WordPress fail-closed; actual WordPress unavailable'}
+    # Regression: the OLD urllib.request.urlopen implementation silently followed
+    # 301/302/307/308 into a second server. Native preflight must not leak requests.
+    hits=[]
+    class Target(BaseHTTPRequestHandler):
+        def do_GET(self):
+            hits.append(self.path)
+            self.send_response(200);self.end_headers();self.wfile.write(b'never fetch')
+        def log_message(self,*args):pass
+    target=ThreadingHTTPServer(('127.0.0.1',0),Target)
+    target_thread=Thread(target=target.serve_forever,daemon=True);target_thread.start()
+    class Redirector(BaseHTTPRequestHandler):
+        def do_GET(self):
+            self.send_response(int(self.path.strip('/') or '302'))
+            self.send_header('Location','http://127.0.0.1:'+str(target.server_port)+'/forbidden')
+            self.end_headers()
+        def log_message(self,*args):pass
+    source=ThreadingHTTPServer(('127.0.0.1',0),Redirector)
+    source_thread=Thread(target=source.serve_forever,daemon=True);source_thread.start()
+    try:
+        for code in (301,302,307,308):
+            try:fetch('http://127.0.0.1:'+str(source.server_port)+'/'+str(code))
+            except ValueError as e:
+                assert 'REDIRECT_REFUSED' in str(e);n+=1
+            else:raise AssertionError('REDIRECT_FOLLOWED_'+str(code))
+        assert not hits,'Native admission leaked request to redirected host'
+        n+=1
+    finally:
+        source.shutdown();source.server_close()
+        target.shutdown();target.server_close()
+    return {'pass':n,'fail':0,'scope':'origin, fake-WP and redirect negative controls; native WordPress not exercised'}
 
 if __name__=='__main__':
     ap=argparse.ArgumentParser();ap.add_argument('--origin');ap.add_argument('--axe-js');ap.add_argument('--out',default='native-wp-evidence');ap.add_argument('--self-test',action='store_true');args=ap.parse_args()
