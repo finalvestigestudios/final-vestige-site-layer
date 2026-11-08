@@ -55,7 +55,14 @@
       "claimed_meditation_equivalence_verified": false,
       "advertised_one_year_guarantee": "SELLER_ONLY",
       "public_price_observations_conflict": true,
-      "checkout_price_verified": false
+      "checkout_price_verified": false,
+      "observed_public_offer": {
+        "as_of": "2026-11-08T02:35Z",
+        "direct_seller_page_display_usd": 87.99,
+        "older_mind_handoff_display_usd": 87,
+        "source": "https://zen12.com/hnp",
+        "note": "Advertising display, NOT verified checkout/cart price or authorization."
+      }
     },
     "total_focus": {
       "seller_url": "https://hypnosislive.com/mental-skills/total-focus",
@@ -64,7 +71,14 @@
       "advertised_refund_days": 14,
       "seller_product_outcomes_independently_proven": false,
       "public_price_observations_conflict": true,
-      "checkout_price_verified": false
+      "checkout_price_verified": false,
+      "observed_public_offer": {
+        "as_of": "2026-11-08T02:35Z",
+        "direct_seller_page_display_usd": 24.44,
+        "search_index_display_usd": 17.95,
+        "source": "https://hypnosislive.com/mental-skills/total-focus",
+        "note": "Different public source snapshots, neither verified cart/checkout price."
+      }
     }
   },
   "merchant": {
