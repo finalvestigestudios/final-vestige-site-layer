@@ -169,7 +169,13 @@ def append_verified_event(path: str | Path, data: bytes, limit: int,
         _regular(ending, limit, "Review journal")
         if ending.st_size != verified.st_size + len(data):
             raise ValueError("Review journal size changed during append")
-        _same_path(target, ending, "Review journal")
+        # A pathname can still refer to the same inode after a rival writer
+        # grows or rewrites it between final fstat and lstat. Compare the
+        # observed pathname metadata with the pinned descriptor snapshot;
+        # Windows ctime may legitimately differ across those API views.
+        final_path = _same_path(target, ending, "Review journal")
+        if not _same_path_descriptor_signature(final_path, ending):
+            raise ValueError("Review journal path changed during append")
     finally:
         os.close(descriptor)
         # An indeterminate empty journal is review evidence, not disposable.
