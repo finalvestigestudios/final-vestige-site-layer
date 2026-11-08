@@ -58,7 +58,8 @@ function check(obj){
   const sources=d.sources||[],claims=d.claims||[];
   const sourceIds=sources.map(s=>s.id),claimIds=claims.map(c=>c.id);
   if(new Set(sourceIds).size!==sourceIds.length||sources.some(x=>!/^https:\/\//.test(x.url)))e.push(key+':source-validation');
-  if(new Set(claimIds).size!==claimIds.length||claims.length<(key==='matrix'?36:25))e.push(key+':claims-complete-and-unique');
+  if(new Set(claimIds).size!==claimIds.length||claims.length!==(key==='matrix'?37:25))e.push(key+':claims-complete-and-unique');
+  for(const [id,status] of Object.entries(lockedStatuses)){ if(key==='matrix' || Number(id.slice(1))<=25){ const row=claims.find(c=>c.id===id); if(!row || row.status!==status)e.push(key+':mandatory-claim-'+id); } }
   for(const c of claims){
     if(!Array.isArray(c.source_ids)||!c.source_ids.length||c.source_ids.some(id=>!sourceIds.includes(id)))e.push(key+':unlinked-claim-'+c.id);
     if(!c.status||!c.limit||!c.statement)e.push(key+':incomplete-claim-'+c.id);
