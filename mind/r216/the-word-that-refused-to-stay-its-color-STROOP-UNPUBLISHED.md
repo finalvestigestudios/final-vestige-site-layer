@@ -3,7 +3,7 @@
 
 **FINAL VESTIGE STUDIOS / MIND & PERCEPTION — UNPUBLISHED RESEARCH DRAFT — 8 November 2026**  
 **Editorial status:** Research-first, independently sourced; not a medical test or commercial endorsement. This article must not receive an invented public WordPress URL.  
-**Evidence trail:** [S1]–[S6] at the end. **Source terms:** experiment, study record, secondary synthesis and contemporary official guidance are explicitly distinguished.
+**Evidence trail:** [S1]–[S9] at the end. **Source terms:** experiment, study record, secondary synthesis and contemporary official guidance are explicitly distinguished.
 
 Try a small act of disobedience: look at the word **BLUE** printed in red ink, and say *red* instead of *blue*. Nobody is ordering you to be mistaken. Nobody has switched the page. Yet something very familiar moves first. Your eyes deliver the ink; years of reading reach for the word. For a fraction of a second, the two are rivals.
 
@@ -19,15 +19,15 @@ The original materials were not a glowing app, an animated hypnotic spiral or a 
 
 In the main comparisons, the researcher set incongruent color words against controls. The important controls were not merely a page of matching color words. Stroop also used words printed in black and colors presented separately from conflicting words. His central comparison separated **the job of reading** from **the job of naming a printed color**.
 
-The asymmetry is striking. In the paper's summary, reading one hundred incongruently colored words took only 2.3 seconds longer than reading the same words in black—an increase of 5.6 percent that Stroop did **not** regard as reliable. Naming the ink of one hundred conflicting color words, by contrast, added 47 seconds—74.3 percent relative to naming colors presented without those words. Those are figures from Stroop's particular tasks and historical sample, not modern universal constants [S1].
+The asymmetry is striking. In the paper's summary, reading one hundred incongruently colored words took only 2.3 seconds longer than reading the same words in black—an increase of 5.6 percent that Stroop did **not** regard as reliable. Naming the ink of one hundred conflicting color words, by contrast, added 47 seconds—74.3 percent relative to naming colors presented without those words. These are **error-adjusted means** from Experiment 2: 110.3 seconds versus 63.3 seconds per hundred responses; unadjusted means were 108.7 versus 63.0 seconds. Those are figures from Stroop's particular tasks and historical sample, not modern universal constants [S1].
 
 The difference helps explain why an everyday exercise can feel almost absurd. If you are told to read, the letters supply the expected answer. If you are told to name the ink, the same letters provide a competing answer you have spent years becoming exceptionally good at producing. A habitual response does not need an argument to intrude.
 
-The published paper described assistance from roughly three hundred college students across its work. That should not be flattened into a claim that each experiment had exactly three hundred participants in every condition. The methods and tables differ. Nor should a historical college-student sample be treated as representative of every language, age or circumstance [S1].
+Experiment 1 enrolled 70 college undergraduates, and Experiment 2 used 100 students. The practice experiment recruited 32 undergraduates, of whom three were excluded from final analysis (two for schedule irregularities and one for a color-vision difficulty). Different methods and tables must not be collapsed into a single universal sample. Nor should a historical college-student sample be treated as representative of every language, age or circumstance [S1].
 
 ### Eight days, two hundred reactions a day
 
-Stroop did not stop when he found interference. He also examined practice. He reported eight days of practice with two hundred color-naming responses each day. Performance improved; interference decreased. But it was not eliminated. Repeated exposure changed the relationship between task and response without making the conflict vanish [S1].
+Stroop did not stop when he found interference. He also examined practice. He reported eight days of practice with two hundred color-naming responses per practice session during a fourteen-test-day schedule. Performance improved; interference decreased, but did not vanish. The paper also reported increased interference when participants subsequently returned to reading the words; adaptation changed the balance of competing habits rather than erasing the conflict. Repeated exposure changed the relationship between task and response without making the conflict vanish [S1].
 
 It is tempting to turn that result into a modern promotional sentence: train your attention and become immune to distraction. That sentence reaches far past the experiment. The intervention was practice on a particular visual-verbal task. Improvement on that task does not automatically transfer to paying bills, reading a difficult chapter, resisting a notification, treating anxiety or responding better to a meditation app.
 
@@ -41,7 +41,7 @@ By 1991, Colin M. MacLeod could review more than fifty years of experiments. His
 
 A familiar explanation says that reading is automatic while color naming is controlled. This captures a useful intuition but is incomplete. Skilled reading can intrude even when it is not the goal, yet the balance of conflict depends on what participants are asked to do, the stimuli they see, the language they know, practice, response method and timing. The surrounding task matters.
 
-If the word is written in a language someone cannot read, the competition is no longer the same. If a person has difficulty distinguishing a color, the apparent result may say more about that perceptual limitation than about response control. If the display is slow, the participant has time to prepare an answer. If the task includes hundreds of trials with carefully measured reaction times, it is no longer the same as a six-word internet card.
+If the word is written in a language someone cannot read, the competition is no longer the same. If a person has difficulty distinguishing a color, the apparent result may say more about that perceptual limitation than about response control. Changing the relative onset of a word and its ink-color information can alter the measured interference; response timing is not just a matter of whether a display feels slow. If the task includes hundreds of trials with carefully measured reaction times, it is no longer the same as a six-word internet card.
 
 This matters because colorful social demonstrations routinely borrow the legitimacy of laboratory studies while leaving their controls behind. They can convey the *idea* of interference. They should not be sold as equivalent clinical or cognitive assessments.
 
@@ -95,7 +95,7 @@ Stroop had a simpler discipline. Give people an instruction. Arrange a conflict.
 
 ### Source trail and evidence limits
 
-- **[S1] Primary experiment:** J. Ridley Stroop (1935), *Studies of Interference in Serial Verbal Reactions*, *Journal of Experimental Psychology* 18, 643–662. Full historical transcription hosted by York University: https://psychclassics.yorku.ca/Stroop/ . Verify historic sample description, controls, 47.0-second / 74.3-percent result and eight-day practice in the original. This is a study of serial verbal reactions, not a consumer audio trial.
+- **[S1] Primary experiment:** J. Ridley Stroop (1935), *Studies of Interference in Serial Verbal Reactions*, *Journal of Experimental Psychology* 18, 643–662. Full historical transcription hosted by York University: https://psychclassics.yorku.ca/Stroop/ . Verify separate N=70 and N=100 experiments, error-adjusted 110.3-versus-63.3-second color-naming means, and eight practice sessions within the fourteen-test-day schedule in the original. This is a study of serial verbal reactions, not a consumer audio trial.
 - **[S2] Publisher bibliographic record:** https://doi.org/10.1037/h0054651 . The primary study's article identifier; do not confuse different study groups with a universal single N.
 - **[S3] Review, not a direct product trial:** Colin M. MacLeod (1991), *Half a century of research on the Stroop effect: An integrative review*, *Psychological Bulletin* 109, 163–203. https://doi.org/10.1037/0033-2909.109.2.163 ; institutional bibliography https://www.mpi.nl/publications/item2355497/half-century-research-stroop-effect-integrative-review .
 - **[S4] Theory, not merchant efficacy evidence:** Botvinick et al. (2001), *Conflict monitoring and cognitive control*, *Psychological Review* 108(3), 624–652. https://doi.org/10.1037/0033-295X.108.3.624 . Proposed a framework; not a validation of any paid training.
