@@ -22,7 +22,7 @@ In 2010, Erik Reichle, Andrew Reineberg and Jonathan Schooler published a study 
 
 Eyes do not travel through prose like a scanner smoothly sweeping a sheet. They pause, jump, return, and pause again. The distribution and timing of those pauses change with words, syntax and the reader's evolving understanding.
 
-During reported mindless reading, the investigators found a different pattern. Fixations tended to last longer and were less influenced by the lexical and linguistic properties that ordinarily guide reading. Eye movements just before participants caught themselves mind-wandering were especially erratic.
+This was a small study of **four undergraduate readers**, with repeated eye-movement observations from those people—not a large, independently sampled population. During reported mindless reading, the investigators found a different pattern. Fixations tended to last longer and were less influenced by the lexical and linguistic properties that ordinarily guide reading. Eye movements just before participants caught themselves mind-wandering were especially erratic.
 
 What made the experiment compelling was the separation of a visible behavior from the mental process we assume it represents. A gaze moving across a page is an observable event. Comprehending the page is another. The first does not guarantee the second.
 
@@ -40,23 +40,23 @@ The important question is whether that internal activity is compatible with what
 
 In a 2011 review, Jonathan Schooler and colleagues described two processes that illuminate this distinction. One is **perceptual decoupling**: attention becomes less closely coupled to information coming from the environment while internally generated thought takes precedence. The other is **meta-awareness**: becoming explicitly aware of what one's consciousness is occupied with.
 
-They are not identical events. The mind can wander before the person has noticed that it wandered. Conversely, becoming aware of the wandering can interrupt it.
+They are not identical events. The mind can wander before the person has noticed that it wandered. Conversely, becoming aware of the wandering may allow a return to the task, but noticing is not itself proof that the wandering has ended.
 
 This distinction matters when we describe a person as “distracted.” It is easy to picture a flashing phone or a door slamming. Yet the competing stimulus may have no external existence. A memory, a worry or a daydream can displace the page without making a sound.
 
-It also explains why the invitation to “just pay attention” feels so inadequate. The person is often unable to report the lapse at the moment it begins. If noticing were guaranteed, the lapse would already be ending.
+It also explains why the invitation to “just pay attention” feels so inadequate. The person is often unable to report the lapse at the moment it begins. Even when noticing occurs, the thought can persist; detection and successful redirection are separate questions.
 
 **Research review:** Schooler, Smallwood, Christoff, Handy, Reichle & Sayette, “Meta-awareness, perceptual decoupling and the wandering mind,” *Trends in Cognitive Sciences* 15 (2011), 319–326, DOI https://doi.org/10.1016/j.tics.2011.05.006; indexed at https://pubmed.ncbi.nlm.nih.gov/21684189/.
 
 ## The phone study that almost became a slogan
 
-In 2010, Matthew Killingsworth and Daniel Gilbert reported another remarkable experiment. Instead of asking people to perform a single task in a laboratory, the researchers used a smartphone application to sample participants' current activities, thoughts and emotional states during ordinary life.
+In 2010, Matthew Killingsworth and Daniel Gilbert reported a large **observational experience-sampling study**, not an experiment assigning anyone to wander. Instead of asking people to perform a single task in a laboratory, the researchers used a smartphone application to sample participants' current activities, thoughts and emotional states during ordinary life.
 
 The study gathered observations from 2,250 adults. Its most memorable finding was that people reported thoughts unrelated to their present activity during 46.9 percent of sampled moments.
 
 This is often paraphrased as though scientists established that the average human brain is “off task” for exactly half the day. They did not. The percentage describes reported states at sampled moments in a particular self-selected participant group, using a particular question and measurement system. It is not a biological constant, a diagnosis, or a personal benchmark.
 
-The researchers also found an association between mind-wandering and lower momentary happiness. A later mood rating following an earlier wandering report helped them investigate the time ordering of those measures, but an observational phone-sampling design cannot settle every possible causal explanation. People experiencing unpleasant circumstances might wander because they are unhappy; some wandering might intensify an unpleasant state; both mechanisms and others may operate.
+The researchers also found an association between mind-wandering and lower momentary happiness. Their time-lag analysis found that earlier mind-wandering predicted a later lower happiness report, while the reverse association—current unhappiness predicting subsequent wandering—was not statistically significant in their analysis. That pattern is suggestive, but an observational phone-sampling design cannot eliminate confounding, selection effects or every other causal explanation.
 
 It would be equally misleading to conclude from this study that imagination, planning or daydreaming is inherently harmful. The study is a reminder that our immediate experience is not always fully directed by the world before us.
 
@@ -66,15 +66,15 @@ The popular headline flattened a complicated finding into a moral judgment: wand
 
 ## The overlooked word in a meditation experiment: acceptance
 
-In a 2016 paper, Emily Lindsay and colleagues asked a different question. Could several days of brief training change how frequently people reported mind-wandering during a sustained attention task—and did the content of that training matter?
+In research first published online in November 2016 and appearing in *Emotion* in 2017, **Hayley A. Rahl, Emily K. Lindsay and colleagues** asked whether three days of specific mindfulness instruction could affect performance on a sustained-attention task. The outcome here was **behavioral task discrimination**, not a count of how often participants said their minds had wandered.
 
-The research randomized **147 healthy young adults** among four conditions: mindfulness instruction involving both attention monitoring and acceptance; monitoring-only mindfulness instruction; relaxation training; and an active reading-control condition.
+The researchers randomized **147 healthy young adults** to four conditions: attention monitoring plus acceptance, attention monitoring alone, relaxation, and a control that listened to neutral reading passages. Five were excluded, leaving **142 participants in the analyses**. Each group received **three approximately 20-minute prerecorded instruction sessions**, one per day; the experiment was not a purchase or product trial.
 
-Participants then completed a six-minute Sustained Attention to Response Task after the third day's training. The monitoring-plus-acceptance group showed the lowest reported mind-wandering compared with the other conditions, including a significant difference from the monitoring-only mindfulness group.
+After the third session, participants performed a six-minute Sustained Attention to Response Task (SART). Researchers analyzed discrimination between frequent go and infrequent no-go stimuli as their behavioral measure. The monitoring-plus-acceptance group performed significantly better than monitoring-only (**p = .03**) and the reading control (**p = .003**), but **not significantly better than relaxation (p = .19)**. Neither SART discrimination nor these between-group comparisons should be rewritten as participants reporting fewer wandering episodes.
 
 That is a meaningful experiment. It is not a controlled test of Zen12, Hypnosis Live, Brainwave Shots, or any commercial recording offered by Inspire3.
 
-The intervention was not “play twelve minutes of this particular audio and automatically receive one hour of training.” It was a **three-day instructional manipulation** involving distinct components, tested in a defined population on a specific laboratory measure. Nor does a reduction in task-caught mind-wandering establish enduring improvements in work, academic performance, psychiatric symptoms or daily life.
+The intervention was not “play twelve minutes of this particular audio and automatically receive one hour of training.” It was a **three-day instructional manipulation** involving distinct components, tested in a defined population on a specific laboratory measure. Nor does improved behavioral discrimination on this SART establish enduring improvements in work, academic performance, psychiatric symptoms or daily life. The design did **not** include an acceptance-only arm, and the proposed emotion-regulation mechanism was **not directly tested**.
 
 The word *acceptance* is especially revealing. The intervention did not merely ask people to detect a distracted thought. It taught a manner of responding to experience. Monitoring and responding are separable skills. The study offers evidence about those training components under its conditions, not about a proprietary sound frequency.
 
@@ -92,7 +92,7 @@ Read the first passage as usual. If you catch your thoughts leaving the page, pl
 
 When finished, cover the page and write three specific facts or claims you remember.
 
-After a short break, read the second passage in the same way, then write three facts or claims without looking. Switch the order of the two passages on a future occasion if you want to compare them again.
+After a short break, read the second passage in the same way, then write three facts or claims without looking. If you repeat the exercise, use **fresh unfamiliar passages of comparable length and difficulty** and alternate which condition or time slot comes first; rereading the same passages confounds recall with familiarity.
 
 You may find the second attempt easier. You may find it worse. You may catch more lapses precisely because you have become more alert to them. A higher number of marks can signify better detection, not less attention. The passages are not genuinely equivalent; practice and interest may differ; the method depends on your own awareness and recall. No causal conclusion is warranted from one person's two trials.
 
@@ -142,10 +142,10 @@ Before buying an explanation, notice what the evidence actually explains.
 
 ### Source and limitations ledger (research checked 7 November 2026)
 
-1. Reichle ED, Reineberg AE, Schooler JW. “Eye Movements During Mindless Reading.” *Psychological Science*. 2010;21(9):1300–1310. https://doi.org/10.1177/0956797610378686 — empirical eye movement study; abstract and metadata reviewed; no generalizable individual diagnosis.
+1. Reichle ED, Reineberg AE, Schooler JW. “Eye Movements During Mindless Reading.” *Psychological Science*. 2010;21(9):1300–1310. https://doi.org/10.1177/0956797610378686 — **four undergraduate participants**, repeated observations; small-sample eye movement study, no generalizable individual diagnosis.
 2. Schooler JW et al. “Meta-awareness, perceptual decoupling and the wandering mind.” *Trends in Cognitive Sciences*. 2011;15(7):319–326. https://pubmed.ncbi.nlm.nih.gov/21684189/ — conceptual/review account, not a commercial-intervention test.
 3. Killingsworth MA, Gilbert DT. “A Wandering Mind Is an Unhappy Mind.” *Science*. 2010;330(6006):932. https://doi.org/10.1126/science.1192439 — nonrandomized experience sampling, self-selected participant limitations and interpretation caveats.
-4. Lindsay EK et al. “Brief mindfulness meditation training reduces mind wandering: The critical role of acceptance.” *Emotion*. https://pubmed.ncbi.nlm.nih.gov/27819445/ — randomized three-day training, four arms, N=147; not a trial of any merchant audio.
+4. **Rahl HA**, Lindsay EK, Pacilio LE, Brown KW, Creswell JD. “Brief mindfulness meditation training reduces mind wandering: The critical role of acceptance.” *Emotion* 17(2):224–230 (2017; online Nov 7 2016). https://pubmed.ncbi.nlm.nih.gov/27819445/ and full text https://pmc.ncbi.nlm.nih.gov/articles/PMC5329004/ — 147 randomized, 142 analyzed; 3 × 20-minute recordings; SART discrimination, not self-report frequency; no merchant audio tested.
 5. Zen12 official Premium seller page: https://zen12.com/hnp — product scope and promotional terms are seller claims; checkout, refunds and effect sizes not independently confirmed.
 6. Inspire3 official catalog: https://inspire3.com/ — merchant classification and product links, not evidence of efficacy.
 7. FTC, *Health Products Compliance Guidance*: https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance — objective health/product claims require adequate substantiation for the specific representation.
