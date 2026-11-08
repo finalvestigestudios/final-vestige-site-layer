@@ -44,7 +44,7 @@ def _directory(path: Path):
 
 
 def _relative_components(path: str) -> tuple[str, ...]:
-    if not isinstance(path, str) or not path or '\' in path:
+    if not isinstance(path, str) or not path or '\\' in path:
         raise GuardViolation('invalid relative source path')
     parsed = PurePosixPath(path)
     parts = parsed.parts
