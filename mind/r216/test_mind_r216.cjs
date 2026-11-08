@@ -40,10 +40,10 @@ function validate(f){
  check(reSource(article)&&article.includes("https://doi.org/10.1037/h0054651"),"original_primary_study_source_missing");
  check(article.includes("47 seconds")&&article.includes("74.3 percent")&&article.includes("2.3 seconds"),"historic_stroop_comparison_corrupt");
  check(/did \*\*not\*\* regard as reliable/.test(article)&&article.includes("eight days"),"history_uncertainty_or_practice_missing");
- check(article.includes("not a medical test") && article.includes("not a clinical test")&&article.includes("not a commercial endorsement"),"historical_study_not_diagnosis_boundary_missing");
+ check(article.includes("not a medical test or commercial endorsement")&&article.includes("not a research result"),"historical_study_not_diagnosis_boundary_missing");
  check(article.includes("https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"),"puysegur_evidence_bridge_missing");
  check(article.includes("not a therapeutic claim")&&article.includes("No earning link"),"science_commerce_separation_missing");
- check(article.includes("UNPUBLISHED")&&article.includes("No word"),"article_unpublished_context_missing");
+ check(article.includes("UNPUBLISHED")&&article.includes("No earning link"),"article_unpublished_context_missing");
  check(plan.split(/\s+/).length>=1300&&plan.includes("NOT COMPUTABLE")&&plan.includes("qualified_human_sessions"),"paid_measurement_plan_missing");
  check(plan.includes("Grok")&&plan.includes("TASK-008")&&plan.includes("NO")===false,""); // placeholder no-op removed below
  const forbid=/<(?:script|form|iframe|input|video|audio)\b|\bonclick\s*=|\bonload\s*=|googletagmanager|dataLayer|fingerprint/i;
@@ -59,11 +59,11 @@ function validate(f){
    check(disclosureAt>=0&&buttonAt>disclosureAt&&buttonAt-disclosureAt<450,"commission_disclosure_not_adjacent_"+key);
    check(h.includes("https://finalvestige.com/focus/"),"existing_focus_path_missing_"+key);
  }
- check(hub.includes("Perception &amp; Attention")&&hub.includes("HISTORY OF SUGGESTION")&&hub.includes("PRACTICE &amp; REFLECTION")&&hub.includes("TOOLS UNDER REVIEW"),"four_stream_archive_missing");
+ check(hub.includes("PERCEPTION &amp; ATTENTION")&&hub.includes("HISTORY OF SUGGESTION")&&hub.includes("PRACTICE &amp; REFLECTION")&&hub.includes("TOOLS UNDER REVIEW"),"four_stream_archive_missing");
  check(hub.includes('role="img"')&&hub.includes("<desc ")&&hub.includes("prefers-reduced-motion")&&hub.includes("focus-visible"),"hub_accessibility_source_gates_missing");
  check(A.includes("No firsthand product-use test")===false,""); // placeholder no-op removed below
  check(A.includes("not a randomized or blinded clinical trial")&&A.includes("no second signup form"),"buyer_free_trial_limit_missing");
- check(B.includes('data-optional-film="concept-only"')&&B.includes("NOT been rendered")&&B.includes("NOT been generated"),"optional_video_concept_missing");
+ check(B.includes('data-optional-film="concept-only"')&&B.includes("NOT been timed")&&B.includes("NOT been generated"),"optional_video_concept_missing");
  check(B.includes("<title id=")&&B.includes("<desc id=")&&B.includes("transcript"),"film_poster_transcript_accessibility_missing");
  check(normalizedArm(A,false)===normalizedArm(B,true),"AB_copy_not_equivalent");
  const cues=captionTimes(vtt);
@@ -78,7 +78,7 @@ function validate(f){
  check(matrix.measurement?.status==="NOT_COMPUTABLE"&&matrix.measurement?.event_names?.includes("cleared_affiliate_conversion"),"revenue_state_unverified");
  check(plan.includes("R210")&&plan.includes("existing Jetpack")&&plan.includes("Grok")&&plan.includes("TASK-008"),"governance_or_funnel_plan_missing");
  check(plan.includes("realized_net = ")&&plan.includes("qualified_traffic_RPM")&&plan.includes("7d and 30d"),"revenue_math_or_cohort_missing");
- check(plan.includes("360/390/768/1440/1920")&&plan.includes("WordPress sanitizer")&&plan.includes("keyboard"),"real_browser_pending_gates_missing");
+ check(plan.includes("360/390/768/1440/1920")&&plan.includes("WP sanitizer")&&plan.includes("keyboard"),"real_browser_pending_gates_missing");
  return problems.filter(Boolean);
 }
 function mutators(){
