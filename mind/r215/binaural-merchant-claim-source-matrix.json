@@ -159,7 +159,7 @@
       "id": "S22",
       "title": "Melnichuk, Cooper & Hawk 2025 Scientific Reports randomized/within-person study",
       "url": "https://doi.org/10.1038/s41598-025-88517-z",
-      "scope": "80 undergraduates 16 settings two visits; EEG entrainment conditional, vigilance decrement not reduced",
+      "scope": "80 randomized; 12 did not complete second visit plus 4 performance exclusions; final 64 analyzed, 16 configurations, EEG/attention; no reduced vigilance decrement",
       "category": "research"
     },
     {
@@ -399,12 +399,12 @@
     },
     {
       "id": "C25",
-      "claim": "2025 EEG and vigilance trial 80 undergraduates randomized among 16 configurations",
+      "claim": "2025 trial randomized 80 undergraduates among 16 configurations; 64 analyzed after 16 exclusions",
       "status": "SUPPORTED_PRIMARY",
       "source_ids": [
         "S22"
       ],
-      "limit": "Two-visit within-person comparison; small parameter cells"
+      "limit": "12 missed second visit and four low task performance; two-visit within-person design, small configuration cells"
     },
     {
       "id": "C26",
