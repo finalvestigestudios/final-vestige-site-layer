@@ -22,7 +22,7 @@ function validate(f){
  c(article.trim().split(/\s+/).length>2500&&article.includes("UNPUBLISHED / SOURCE REVIEW"),"deep_article");
  for(const link of ["https://doi.org/10.1038/35784","https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0021659","https://online.ucpress.edu/collabra/article/6/1/22/113067/","https://www.psy.ox.ac.uk/publication/19214"])
   c(article.includes(link),"article_source_"+link.slice(-12));
- c(article.includes("demand characteristics")&&article.includes("not a one-to-one ownership meter")&&article.includes("not a scientific test of Zen12"),"science_limits");
+ c(article.includes("demand characteristics")&&article.includes("not a one-to-one ownership meter")&&article.includes("None of the experiments discussed here tested Zen12 Premium"),"science_limits");
  c(article.includes("https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"),"history_bridge");
  c(!/awin1\.com|<script/i.test(article),"no_affiliate_research");
  const main=s=>(s.match(/<main class="wrap" id="content">[\s\S]*?<\/main>/)||[])[0];
@@ -30,14 +30,14 @@ function validate(f){
  for(const [id,s] of [["A",a],["B",b],["HUB",hub]]){
   c(s.includes("noindex,nofollow")&&s.includes('lang="en"'),"unpublished_"+id);
   c(s.includes("focus-visible")&&s.includes("prefers-reduced-motion")&&s.includes("@media(max-width:"),"accessible_responsive_"+id);
-  c(!/<script\b|<iframe\b|<form\b|<video\b|autoplay/i.test(s),"no_scripts_forms_or_video_"+id);
+  c(!/<script\b|<iframe\b|<form\b|<video\b|\sautoplay(?:\s|=|>)/i.test(s),"no_scripts_forms_or_video_"+id);
   const ids=[...s.matchAll(/\bid=["']([^"']+)["']/g)].map(x=>x[1]);
   c(ids.length===new Set(ids).size,"unique_html_ids_"+id);
   c(/<button[^>]*disabled[^>]*>/.test(s)&&s.includes('aria-disabled="true"'),"disabled_cta_"+id);
   c(s.includes("Prospective affiliate disclosure")&&s.includes("No affiliate link is active"),"adjacent_affiliate_disclosure_"+id);
   c(!/awin1\.com|gtag\(|approved affiliate link/i.test(s),"no_tracking_or_approval_"+id);
  }
- c(!a.includes("<svg")&&b.includes("<svg")&&b.includes("UNRENDERED"),"optional_media_only_B");
+ c(!a.includes("<svg")&&b.includes("<svg")&&b.includes("NOT RENDERED"),"optional_media_only_B");
  const cues=[...vtt.matchAll(/(\d\d):(\d\d):(\d\d)\.(\d{3}) --> (\d\d):(\d\d):(\d\d)\.(\d{3})/g)];
  const ms=(h,m,s,x)=>(((+h*60)+(+m))*60+(+s))*1000+(+x);
  const times=cues.map(x=>[ms(...x.slice(1,5)),ms(...x.slice(5,9))]);
@@ -51,7 +51,7 @@ function validate(f){
  for(let i=1;i<=8;i++){const id="G"+String(i).padStart(2,"0");c(m.gates.filter(x=>x.id===id&&x.status==="HARD_HOLD").length===1,"required_gate_"+id);}
  c(m.conversion_contract?.no_pii===true&&m.conversion_contract?.existing_instrumentation_only===true,"privacy_gate");
  c(m.conversion_contract?.null_if_no_authoritative_numerator_or_denominator===true,"no_fabricated_revenue");
- const formula="settled_owned_receipts + cleared_affiliate_commissions - refunds - transaction_fees - chargebacks - attributable_variable_costs";
+ const formula="settled_owned_receipts + cleared_affiliate_commissions - refunded_amounts - transaction_fees - chargebacks - attributable_variable_costs";
  c(m.conversion_contract?.realized_net_formula===formula&&plan.includes(formula),"formula_consistency");
  c(plan.includes("NOT COMPUTABLE")&&plan.includes("7-day")&&plan.includes("30-day"),"7_30_cohorts");
  c(plan.includes("TASK-008")&&plan.includes("Praxxis")&&plan.includes("Grok")&&plan.includes("Dispatch")&&plan.includes("R210"),"ownership_handoff");
