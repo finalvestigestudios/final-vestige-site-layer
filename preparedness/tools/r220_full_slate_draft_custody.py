@@ -27,6 +27,9 @@ R221_AUTHORITY_BLOB = '88a8d37955957b4e1cba7a73e73ed4ee1e2fe0d1'
 # R222 pins the renderer, source registers/fragments, CSS and nine inline scripts.
 R222_BUNDLE_PATH = 'tools/r222_producer_source_bundle_gate.py'
 R222_BUNDLE_BLOB = 'bd57ef0caba7ad68381fa6a22af64aff4d486c84'
+# R226 all-41-export browser-semantics and visible citation/review HOLD gate.
+R226_DOM_PATH = 'tools/r226_export_browser_custody.py'
+R226_DOM_BLOB = '84fbbd23d3ec146221d335537fdc7a433452b5ca'
 # These are independently observed R219 integration Git blobs, not certified text.
 # Missing entries MUST match the older R200 original exactly.
 INTEGRATED_DIFFS = {
@@ -200,7 +203,7 @@ def verify_originals(root: Path, articles: list[dict]) -> tuple[list[dict], dict
     return status, {f'{n}:{sid}': count for (n, sid), count in exceptions.items()}
 
 
-def verify_render(root: Path, articles: list[dict], report: dict, library, builder) -> dict:
+def verify_render(root: Path, articles: list[dict], report: dict, library, builder, dom_guard) -> dict:
     actual = report.get('articles')
     if type(actual) is not list or len(actual) != 41:
         raise ValueError('expected 41 individual article/tool build-report entries')
@@ -242,6 +245,12 @@ def verify_render(root: Path, articles: list[dict], report: dict, library, build
                 raise ValueError('published article disallowed')
             if 'Independent safety/source and QD verification pending' not in page:
                 raise ValueError('mandatory warning absent in ' + mode + ':' + slug)
+            # HTML string parity alone cannot prove sources remain navigable/visible.
+            # Enforce actual fragment identities, article-origin URLs, review visibility
+            # and duplicate-id/attribute rejection in BOTH export formats.
+            dom_result = dom_guard.verify_export(page, order, meta, library, expected)
+            if dom_result.get('state') != HOLD:
+                raise ValueError('unexpected browser-semantics safety state: ' + slug)
     if report.get('release_evidence', {}).get('wordpress_publication_performed') is not False:
         raise ValueError('WordPress publication flag must remain false')
     if report.get('release_evidence', {}).get('independent_qa_verified') is not False:
@@ -347,10 +356,13 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
             if tools_path.is_symlink() or not tools_path.is_dir():
                 raise ValueError('untrusted tools directory')
             build = load_frozen_builder(root, bundle)
+            dom_guard = load_frozen_gate(root, R226_DOM_PATH, R226_DOM_BLOB,
+                                         'fv_preparedness_r226_browser_gate',
+                                         ('verify_export',))
             library = build.Library(root=root)
             authority.verify_routes(roster, library)
             report = strict_object(safe_read(root, 'build/build-report.json'))
-            result['render'] = verify_render(root, roster, report, library, build)
+            result['render'] = verify_render(root, roster, report, library, build, dom_guard)
             # Repeat source custody after building the rendered-corpus view.
             # A file replaced after preflight cannot silently inherit its pin.
             bundle.check_bundle(root, safe_read)
