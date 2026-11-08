@@ -56,7 +56,7 @@ class StrictReceiptTests(unittest.TestCase):
         self.rejected(b'{"test_count":-Infinity}')
 
     def test_invalid_utf8_rejected(self):
-        self.rejected(b'{"x":"\\xff"}')
+        self.rejected(b'{"x":"' + bytes([0xff]) + b'"}')
 
     def test_private_path_not_reflected_in_error(self):
         secret = b'C:/private/customer/payroll-2026.csv'
