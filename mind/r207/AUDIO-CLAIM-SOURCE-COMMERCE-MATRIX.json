@@ -2,13 +2,13 @@
   "milestone": "R207",
   "checked_local_date": "2026-11-07",
   "state": "UNPUBLISHED_NO_MERCHANT_ACTIVATION",
-  "reading_depth": "primary publisher abstracts; full open article for Mestry; direct seller product copy; no authenticated merchant account",
+  "reading_depth": "Full open Vasilev 2018 PMC Table 2 independently checked Nov 7, 2026; direct official offer & FTC; merchant account not authenticated",
   "sources": [
     {
       "id": "R01",
-      "url": "https://doi.org/10.1177/1745691617747398",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6139986/",
       "kind": "peer-reviewed 2018 Bayesian meta-analysis",
-      "scope": "Vasilev et al, 65 studies; reading, not branded audio"
+      "scope": "65 total studies; comprehension n=54 g=-0.21 95% CrI [-0.30,-0.13], speed n=13 and proofreading n=7 have 95% CrIs including 0; noise comprehension CrI [-0.33,0.002]"
     },
     {
       "id": "R02",
@@ -92,12 +92,12 @@
   "claims": [
     {
       "id": "A01",
-      "claim": "Auditory background sound tends to impair reading slightly in pooled evidence",
+      "claim": "Pooled reading comprehension outcome of 54 studies: g=-0.21 (95% CrI [-0.30,-0.13])",
       "decision": "SUPPORTED_WITH_QUALIFICATION",
       "source_ids": [
         "R01"
       ],
-      "limit": "Meta-analysis of 65 studies, heterogeneous tasks; no prediction for a particular individual"
+      "limit": "65 studies total; 13 speed and 7 proofreading studies separately; their 95% CrIs include 0. No inference to all sounds/tasks/individuals."
     },
     {
       "id": "A02",
@@ -106,7 +106,7 @@
       "source_ids": [
         "R01"
       ],
-      "limit": "Not all sounds equally distracting; no branded comparisons"
+      "limit": "Intelligible speech and lyrical music can have larger comprehension effects, but nonlyrical music effects near zero and noise CrI crossed zero; moderator associations observational"
     },
     {
       "id": "A03",
