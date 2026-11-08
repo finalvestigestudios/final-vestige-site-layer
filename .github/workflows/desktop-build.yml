@@ -43,6 +43,10 @@ jobs:
         run: |
           python -W error -m unittest discover -s products/desktop/tests -p 'test_offline_windows_report_custody_r271.py'
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_offline_windows_report_custody_r271.py'
+      - name: R272 isolated packaging entrypoint imports (normal and -OO)
+        run: |
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_isolated_packaging_entrypoints_r272.py'
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_isolated_packaging_entrypoints_r272.py'
       - name: R162 immutable CI action custody and strict tests (normal and -OO)
         run: |
           python products/desktop/ci_action_pin_guard.py .github/workflows/desktop-build.yml
@@ -698,6 +702,13 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R271 normal report custody FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_offline_windows_report_custody_r271.py'
           if ($LASTEXITCODE -ne 0) { throw "R271 optimized report custody FAILED" }
+      - name: R272 private Windows packaging CLI import preflight (normal and -OO)
+        shell: pwsh
+        run: |
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_isolated_packaging_entrypoints_r272.py'
+          if ($LASTEXITCODE -ne 0) { throw "R272 normal isolated import gate FAILED" }
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_isolated_packaging_entrypoints_r272.py'
+          if ($LASTEXITCODE -ne 0) { throw "R272 optimized isolated import gate FAILED" }
       - name: R162 immutable CI action custody and strict tests (normal and -OO)
         shell: pwsh
         run: |
