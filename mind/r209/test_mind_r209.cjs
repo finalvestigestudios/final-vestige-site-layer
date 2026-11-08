@@ -87,7 +87,7 @@ function run(files){
  validatePage(files[P.A],"A");validatePage(files[P.B],"B");
  check(filmRemoved(files[P.A])===filmRemoved(files[P.B]),"identical factual/commerce copy A vs B");
  check(files[P.VTT].startsWith("WEBVTT"),"new captions are WEBVTT");
- check((files[P.VTT].match(/\\d\\d:\\d\\d:\\d\\d\\.\\d{3} -->/g)||[]).length===5,"new captions contain five cues");
+ check((files[P.VTT].match(/\d\d:\d\d:\d\d\.\d{3} -->/g)||[]).length===5,"new captions contain five cues");
  check(files[P.VTT].includes("No one tested Zen12 itself."),"new captions match optional-film scientific caveat");
  check(files[P.B].includes("No one tested Zen12 itself."),"new B transcript matches VTT");
  check(files[P.VTT].includes("00:00:33.000 --> 00:00:42.000"),"42-second timing");
