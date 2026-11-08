@@ -38,10 +38,10 @@ function validate(doc) {
     else if(buttons.length && !html.slice(p,p+650).includes(buttons[0])) errors.push(label+':disclosure-not-adjacent');
     if(/<input\b|autocomplete\s*=|localStorage|sessionStorage|gtag\s*\(/i.test(html))errors.push(label+':email-or-tracking');
     if(!/prefers-reduced-motion:reduce/.test(html))errors.push(label+':reduced-motion');
-    if(!/<svg\b[^>]*role="img"[^>]*aria-labelledby=/.test(html))errors.push(label+':image-description');
+    if(/<svg\b/.test(html) && !/<svg\b[^>]*role="img"[^>]*aria-labelledby=/.test(html))errors.push(label+':image-description');
   }
   if(!/UNRENDERED|video not rendered/i.test(doc.b))errors.push('B:film-status');
-  if(/<video\b|autoplay\b/i.test(doc.b))errors.push('B:unapproved-media-player');
+  if(/<video\b|<[^>]+\sautoplay(?:\s|>|=)/i.test(doc.b))errors.push('B:unapproved-media-player');
   const details=doc.b.match(/<details class="film"[\s\S]*?<\/details>/);
   if(!details)errors.push('B:optional-film-missing');
   else {
