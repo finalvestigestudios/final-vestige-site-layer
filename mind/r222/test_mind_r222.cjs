@@ -45,7 +45,7 @@ function validate(f){
  ok(poster.includes('role="img"')&&poster.includes("<desc")&&poster.includes("TWELVE MINUTES"),"poster_alt");
  ok(hub.includes("Puységur")&&hub.includes("PR #172")&&hub.includes("Change Blindness")&&hub.includes("Thatcher"),"hub_four_stream");
  ok(hub.includes('<svg')&&hub.includes('role="img"')&&hub.includes('<desc'),"hub_art_description");
- ok(b.includes("42-second")&&b.includes("narration")&&b.includes("UNRENDERED".toLowerCase())===false===false || b.includes("UNRENDERED"),"film_explicit_unrendered");
+ ok(b.includes("42-second")&&b.includes("narration")&&/not rendered|unrendered/i.test(b),"film_explicit_unrendered");
  ok(!a.includes('<section class="film reading"')&&b.includes('<section class="film reading"'),"ab_film_only_difference");
  ok(extractGuide(a).length>4000&&extractGuide(a)===extractGuide(b),"ab_same_core_claims");
  ok(normalizeB(b)===a,"ab_exact_except_optional_film_and_label");
