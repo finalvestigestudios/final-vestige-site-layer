@@ -494,7 +494,7 @@
       "fee",
       "chargeback"
     ],
-    "realized_net_formula": "settled_owned_receipts + cleared_affiliate_commissions - refunds - transaction_fees - chargebacks - attributable_variable_costs",
+    "realized_net_formula": "settled_owned_receipts + cleared_affiliate_commissions - refunded_amounts - transaction_fees - chargebacks - attributable_variable_costs",
     "kpi": "1000 * realized_net_revenue / qualified_human_sessions",
     "cohorts_days": [
       7,
