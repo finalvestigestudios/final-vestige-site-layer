@@ -4,6 +4,7 @@ from pathlib import Path
 from tkinter import filedialog, messagebox, ttk
 from . import engine
 from .keyboard_access import install_shortcuts
+from .action_gate import ActionGate
 from .form_layout import standard_stacked_rows
 from .scroll_access import ScrollableForm
 from .ui_errors import safe_error_message
@@ -100,6 +101,7 @@ def _ledger_stacked_rows(input_count):
 def run(app_id):
     if app_id not in APPS: raise ValueError("Unknown application")
     title, labels, action, premium = APPS[app_id]
+    action_gate = ActionGate()
     root = tk.Tk()
     # Tk's default callback handler prints raw private exception tracebacks.
     # Install a redacted per-root fallback before any event is scheduled.
@@ -265,7 +267,10 @@ def run(app_id):
         names = ", ".join(p.name for p in outputs)
         status.set("Created: " + names)
         messagebox.showinfo("Review reports", "Saved in: " + output.get() + "\n\n" + names, parent=root)
-    generate_button = ttk.Button(frame, text="Generate review report", command=execute)
+    # A nested Tk modal loop can dispatch a second Generate/Review while the
+    # first command still owns its report or review workflow.
+    generate_button = ttk.Button(frame, text="Generate review report",
+                                 command=lambda: action_gate.run(execute))
     generate_row = layout["generate"]
     generate_button.grid(row=generate_row, column=0, columnspan=3, sticky="w", pady=(8, 16))
     review_button = None
@@ -284,7 +289,7 @@ def run(app_id):
                 status.set("Review unavailable: " + detail)
                 messagebox.showerror("Cannot open review", detail, parent=root)
         review_button = ttk.Button(frame, text="Review exceptions (human only)…",
-                                   command=open_exception_review)
+                                   command=lambda: action_gate.run(open_exception_review))
         review_button.grid(row=layout["review"], column=0, columnspan=3, sticky="w")
     disclaimer_row = layout["disclaimer"]
     ui_label(frame, text="No AI model is used in this preview. All flags follow deterministic rules.",
