@@ -51,13 +51,13 @@ class KeyboardAccessR44(unittest.TestCase):
                                  self.generate, review=self.review if premium else None)
 
     def test_single_input_acceptance(self):
-        self.assertEqual(len(self.bind(1)), 6)
+        self.assertEqual(len(self.bind(1)), 10)
 
     def test_two_input_acceptance(self):
-        self.assertEqual(len(self.bind(2)), 8)
+        self.assertEqual(len(self.bind(2)), 16)
 
     def test_three_input_acceptance(self):
-        self.assertEqual(len(self.bind(3)), 10)
+        self.assertEqual(len(self.bind(3)), 22)
 
     def test_four_inputs_rejected(self):
         with self.assertRaises(ValueError):
@@ -136,7 +136,7 @@ class KeyboardAccessR44(unittest.TestCase):
     def test_binding_is_toplevel_only(self):
         self.bind()
         self.assertFalse(hasattr(self.root, "bind_all"))
-        self.assertEqual(len(self.root.bindings), 10)
+        self.assertEqual(len(self.root.bindings), 22)
 
     def test_shortcut_order_deterministic(self):
         first = self.bind(2)
