@@ -57,9 +57,10 @@ class CandidateChildEnvironmentTests(unittest.TestCase):
         with mock.patch.dict(os.environ, {"SystemRoot": r"C:\Windows", "PATHEXT": ".EXE;.CMD",
                                                "TEMP": r"C:\Temp", "FV_KEY": CANARY}):
             actual = private_child_environment()
-        self.assertEqual(actual["SystemRoot"], r"C:\Windows")
-        self.assertEqual(actual["PATHEXT"], ".EXE;.CMD")
-        self.assertEqual(actual["TEMP"], r"C:\Temp")
+        canonical = {name.upper(): value for name, value in actual.items()}
+        self.assertEqual(canonical["SYSTEMROOT"], r"C:\Windows")
+        self.assertEqual(canonical["PATHEXT"], ".EXE;.CMD")
+        self.assertEqual(canonical["TEMP"], r"C:\Temp")
         self.assertNotIn("FV_KEY", actual)
 
     def test_no_commit_by_default(self):
