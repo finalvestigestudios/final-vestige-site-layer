@@ -113,9 +113,15 @@ class ReceiptGate(unittest.TestCase):
         self.data[gate.A7+'.meta.json']=j(m);self.check_invalid()
 
     def test_rewording_held_citation_requires_new_adjudication(self):
+        # Verify the intact synthetic baseline against its OWN exact pins first;
+        # production pins never match this synthetic fixture and would give a
+        # false-positive test regardless of the intended rewording.
+        pins={path:gate.blob_sha(data) for path,data in self.data.items()}
+        self.assertEqual(gate.evaluate(self.data,expected=pins)['state'],gate.HOLD)
         p=gate.A7+'.body.html';self.data[p]=self.data[p].replace(b'Water heater',b'Fuel tank')
-        before={p:gate.PINS[p] for p in gate.PINS}
-        self.assertEqual(gate.evaluate(self.data,expected=before)['state'],gate.INVALID)
+        result=gate.evaluate(self.data,expected=pins)
+        self.assertEqual(result['state'],gate.INVALID)
+        self.assertTrue(any('source blob drift' in err for err in result['errors']))
 
     def test_removed_cdc_citation_rejected(self):
         p=gate.A7+'.body.html';self.data[p]=self.data[p].replace(b'{{cite:cdc-find-clean-water}}',b'',1)
