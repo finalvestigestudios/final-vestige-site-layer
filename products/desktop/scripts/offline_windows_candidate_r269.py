@@ -18,6 +18,13 @@ import subprocess
 import sys
 import tempfile
 
+# -I excludes the script directory: trust only this resolved Git-owned helper
+# location, never a caller-controlled cwd or PYTHONPATH.
+SCRIPTS = Path(__file__).resolve().parent
+if str(SCRIPTS) not in sys.path:
+    sys.path.insert(0, str(SCRIPTS))
+from strict_source_receipt_r273 import loads_strict_receipt
+
 APPS = (
     "LedgerDiffLite", "InvoiceTwinScout", "SpendMapLite", "PolicyDeltaDesk",
     "GrantAuditStudioPro", "ProcureGuardStudioPro",
@@ -98,7 +105,7 @@ def _source_receipt_sha256(path: Path) -> str:
                 or _stat_identity(opened) != _stat_identity(finished)
                 or _stat_identity(before) != _stat_identity(path.lstat())):
             raise CandidateBuildRejected(ERROR)
-        receipt = json.loads(data)
+        receipt = loads_strict_receipt(data)
         expected = {"schema", "scope", "released", "qd_approved",
                     "windows_executables_verified", "premium_download_authorized",
                     "normal_unittest", "optimized_unittest", "unittest_provenance",
