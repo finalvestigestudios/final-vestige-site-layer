@@ -27,6 +27,8 @@ function runTests(validate,source){
  ['misrepresent_wrapper',a=>a.records[1].original_retrieval.wrapper_http_code=404],
  ['duplicate_record',a=>a.records[1].image_key='418:1'],
  ['change_frozen_census',a=>a.prior_p0_ledger.git_blob_sha='deadbeef'],
+ ['wrong_primary_name_policy',a=>a.records[0].item.name_variants.editorial_decision='CHANGE_ALT_TO_PETTIT'],
+ ['invent_other_post_caption',a=>a.records[1].stored_alt='a different event'],
  ['unverified_release',a=>a.records[0].candidate.wordpress_action='REPLACE_NOW']
  ];
  for(const [n,f] of cases)check(n,f);
