@@ -73,6 +73,11 @@ jobs:
         run: |
           python -W error -m unittest discover -s products/desktop/tests -p 'test_candidate_child_environment_r278.py'
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_candidate_child_environment_r278.py'
+      - name: R279 private native Defender gate bridge (normal and -OO)
+        run: |
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_native_defender_bridge_r279.py'
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_native_defender_bridge_r279.py'
+          python -I products/desktop/scripts/defender_candidate_scan_r111.py --help > /dev/null
       - name: R162 immutable CI action custody and strict tests (normal and -OO)
         run: |
           python products/desktop/ci_action_pin_guard.py .github/workflows/desktop-build.yml
@@ -782,6 +787,16 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R278 normal credential privacy FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_candidate_child_environment_r278.py'
           if ($LASTEXITCODE -ne 0) { throw "R278 optimized credential privacy FAILED" }
+      - name: R279 private native Defender gate bridge (normal and -OO)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_native_defender_bridge_r279.py'
+          if ($LASTEXITCODE -ne 0) { throw "R279 native candidate bridge tests FAILED" }
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_native_defender_bridge_r279.py'
+          if ($LASTEXITCODE -ne 0) { throw "R279 optimized native bridge tests FAILED" }
+          python -I products/desktop/scripts/defender_candidate_scan_r111.py --help | Out-Null
+          if ($LASTEXITCODE -ne 0) { throw "R279 isolated Defender imports FAILED" }
       - name: R162 immutable CI action custody and strict tests (normal and -OO)
         shell: pwsh
         run: |
