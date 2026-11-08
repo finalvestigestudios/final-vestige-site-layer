@@ -33,7 +33,12 @@ function validate(f){
   c(!/<script\b|<iframe\b|<form\b|<video\b|\sautoplay(?:\s|=|>)/i.test(s),"no_scripts_forms_or_video_"+id);
   const ids=[...s.matchAll(/\bid=["']([^"']+)["']/g)].map(x=>x[1]);
   c(ids.length===new Set(ids).size,"unique_html_ids_"+id);
-  c(/<button[^>]*\sdisabled(?:\s|>)/.test(s)&&s.includes('aria-disabled="true"'),"disabled_cta_"+id);
+  // Check EVERY button, not merely the presence of one disabled example.
+  // Legitimate links to primary research or the merchant's public source description are not checkout activations.
+  const buttons=[...s.matchAll(/<button\\b([^>]*)>/gi)].map(x=>x[1]);
+  c(buttons.length>=1&&buttons.every(attrs=>/\\sdisabled(?:\\s|=|$)/i.test(" "+attrs)&&/\\saria-disabled\\s*=\\s*["']true["']/i.test(" "+attrs)),"all_buttons_natively_disabled_"+id);
+  c(!/\\son[a-z]+\\s*=|\\sformaction\\s*=|\\sdata-(?:redirect|checkout|affiliate|purchase|href)\\s*=/i.test(s),"no_inline_handlers_or_commerce_redirects_"+id);
+  c(!/<(?:a|area)\\b[^>]*href\\s*=\\s*["'][^"']*(?:awin1\\.com|checkout|\\/order|[?&](?:aff|affiliate|ref|subid|clickref)=)/i.test(s),"no_checkout_affiliate_links_"+id);
   c(s.includes("Prospective affiliate disclosure")&&s.includes("No affiliate link is active"),"adjacent_affiliate_disclosure_"+id);
   c(!/awin1\.com|gtag\(|approved affiliate link/i.test(s),"no_tracking_or_approval_"+id);
  }
@@ -85,6 +90,14 @@ function run(f){
  attempt("enable_A",x=>x.a=x.a.replace('type="button" disabled','type="button"'));
  attempt("enable_B",x=>x.b=x.b.replace('type="button" disabled','type="button"'));
  attempt("enable_hub",x=>x.hub=x.hub.replace('disabled type="button"','type="button"'));
+ attempt("append_enabled_HUB_button",x=>x.hub=x.hub.replace("</main>","<button type='button'>Unauthorized checkout</button></main>"));
+ attempt("append_enabled_A_button",x=>x.a=x.a.replace("</main>","<button>Go to merchant</button></main>"));
+ attempt("append_enabled_B_button",x=>x.b=x.b.replace("</main>","<button>Go to merchant</button></main>"));
+ attempt("enabled_with_inline_click",x=>x.hub=x.hub.replace("</main>","<button onclick='window.location.assign(\\"https://seller.invalid\\")' disabled aria-disabled=\\"true\\">Go</button></main>"));
+ attempt("svg_inline_onload",x=>x.b=x.b.replace("<svg","<svg onload='alert(1)'"));
+ attempt("button_data_redirect",x=>x.a=x.a.replace("<button","<button data-checkout='https://seller.invalid'"));
+ attempt("dynamic_formaction",x=>x.hub=x.hub.replace("<button","<button formaction='https://seller.invalid'"));
+ attempt("unapproved_checkout_anchor",x=>x.hub=x.hub.replace("</main>","<a href='https://seller.invalid/checkout?ref=fraud'>Pay</a></main>"));
  attempt("remove_A_disclosure",x=>x.a=x.a.replace("Prospective affiliate disclosure","Product information"));
  attempt("remove_B_disclosure",x=>x.b=x.b.replace("Prospective affiliate disclosure","Product information"));
  attempt("inject_script",x=>x.b=x.b.replace("</body>","<script src='https://test.invalid/tracker.js'></script></body>"));
