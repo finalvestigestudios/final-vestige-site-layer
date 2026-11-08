@@ -72,7 +72,7 @@ function validateFilm(s,v){
 }
 function validateGuide(s){
  check(/UNPUBLISHED/.test(s),"guide unpublished");
- check(/five reported results consistent/.test(s),"EEG nuance");
+ check(/five reported results consistent/i.test(s),"EEG nuance");
  check(/nonrandomized/i.test(s),"retreat design caveat");
  check(/We have not bought, listened to, or medically tested/.test(s),"no firsthand claims");
  check(/no active affiliate earning link/i.test(s),"no affiliate active");
