@@ -2,6 +2,7 @@
 const assert=require('node:assert/strict');
 const {test}=require('node:test');
 const {adjudicate,sourceRows,ORDER}=require('./adjudicate_p0_guest_evidence_v1.cjs');
+const {assessRun}=require('./image_census_coverage_core.cjs');
 const copy=x=>JSON.parse(JSON.stringify(x));
 const link=k=>'https://example.org/historic-'+k.replace(':','-')+'.jpg';
 function sources(){
@@ -26,16 +27,24 @@ function loadedSlot(k){let u=link(k);return {
 };}
 function netLoaded(k){return {request_id:'req'+k,url:link(k),status:200,mime_type:'image/jpeg',encoded_data_length:700,
  was_cached:false,from_disk_cache:false,from_service_worker:false,error:null};}
+function sealRun(run){
+ const evidence=assessRun(run.pages,run.requested_pages);
+ run.status=evidence.complete?'complete_browser_image_census':'partial_or_complete_browser_evidence';
+ run.verified_pages=run.pages.filter(p=>p.page_result==='inspected_browser').length;
+ run.image_census_coverage=evidence;
+ run.confirmed_broken_count=evidence.confirmed_broken_count;
+ return run;
+}
 function browser(){
  const ids=[...new Set(ORDER.map(k=>Number(k.split(':')[0])))];
- return {schema_version:1,probe_version:4,mode:'priority',viewport:'390x844',
+ return sealRun({schema_version:1,probe_version:4,mode:'priority',viewport:'390x844',
  requested_pages:ids.length,run_profile:{cache_disabled:true,service_worker_bypassed:true},
- image_census_coverage:{complete:true},pages:ids.map(id=>{
+ pages:ids.map(id=>{
   const keys=ORDER.filter(k=>Number(k.split(':')[0])===id);
   return {post_id:id,url:'https://finalvestige.com/p/'+id,page_result:'inspected_browser',
   scroll_coverage:{complete:true,state:'full_height_scanned'},stored_image_count:keys.length,
   stored_images:keys.map(loadedSlot),network_images:keys.map(netLoaded),screenshots:[]};
- })};
+ })});
 }
 function bork(run,k,kind='http'){
  const p=run.pages.find(p=>p.post_id===Number(k.split(':')[0])),s=p.stored_images.find(x=>x.image_key===k),
@@ -46,7 +55,7 @@ function bork(run,k,kind='http'){
  if(kind==='network'){s.http_status=null;n.status=null;n.error='net::ERR_CONNECTION_RESET';s.network_failure=n.error;s.visual_failure_kind='network_error';}
  if(kind==='decode'){s.http_status=200;n.status=200;s.loaded_network_proof_verified=true;s.visual_failure_kind='image_decode_failure';}
 }
-function runTest(mutEarly,mutLater,mutRun){let [a,b]=sources(),r=browser();mutEarly?.(a);mutLater?.(b);mutRun?.(r);return adjudicate(a,b,r);}
+function runTest(mutEarly,mutLater,mutRun){let [a,b]=sources(),r=browser();mutEarly?.(a);mutLater?.(b);mutRun?.(r);return adjudicate(a,b,sealRun(r));}
 test('without guest probe: six exact URLs + rights HOLD + null browser statuses',()=>{
  const [a,b]=sources(),r=adjudicate(a,b);
  assert.equal(r.guest_capture_present,false);assert.equal(r.known_broken_slots,0);
@@ -77,16 +86,16 @@ test('wrapper errors alone never create browser failures',()=>{
  assert.equal(r.rows.find(x=>x.image_key==='418:1').visitor_http_status,null);
 });
 for(const [name,mut,reason] of [
- ['partial scroll',r=>r.pages[0].scroll_coverage.complete=false,'page_unverified_or_partial'],
+ ['partial scroll',r=>r.pages[0].scroll_coverage.complete=false,'guest_census_unverified_or_partial'],
  ['wrong page origin',r=>r.pages[0].url='https://attacker.example/post','page_unverified_or_partial'],
  ['uncached proof missing',r=>delete r.pages[0].network_images[0].was_cached,'cdp_network_proof_incomplete_or_conflicted'],
  ['request ID mismatch',r=>r.pages[0].stored_images[0].request_id='bogus','cdp_network_proof_incomplete_or_conflicted'],
  ['network status disagreement',r=>r.pages[0].network_images[0].status=404,'cdp_network_proof_incomplete_or_conflicted'],
  ['network byte mismatch',r=>r.pages[0].network_images[0].encoded_data_length=250,'cdp_network_proof_incomplete_or_conflicted'],
- ['visitor supplied stored URL mismatch',r=>r.pages[0].stored_images[0].stored_url='https://another.example/historic.jpg','image_identity_or_decode_unresolved'],
- ['DOM src mismatch',r=>r.pages[0].stored_images[0].current_src='https://another.example/historic.jpg','image_identity_or_decode_unresolved'],
- ['unknown intrinsically decoded status',r=>r.pages[0].stored_images[0].result='decoded_without_verified_response','image_identity_or_decode_unresolved'],
- ['duplicate slot',r=>r.pages[0].stored_images.push(copy(r.pages[0].stored_images[0])),'page_unverified_or_partial']
+ ['visitor supplied stored URL mismatch',r=>r.pages[0].stored_images[0].stored_url='https://another.example/historic.jpg','guest_census_unverified_or_partial'],
+ ['DOM src mismatch',r=>r.pages[0].stored_images[0].current_src='https://another.example/historic.jpg','guest_census_unverified_or_partial'],
+ ['unknown intrinsically decoded status',r=>r.pages[0].stored_images[0].result='decoded_without_verified_response','guest_census_unverified_or_partial'],
+ ['duplicate slot',r=>r.pages[0].stored_images.push(copy(r.pages[0].stored_images[0])),'guest_census_unverified_or_partial']
 ])test(name+' fails closed',()=>{
  const result=runTest(null,null,mut);assert.equal(result.p0_census_complete,false);assert.equal(result.confirmed_broken_count,null);
  assert.equal(result.rows[0].visitor_classification,'PENDING_GUEST_BROWSER');assert.equal(result.rows[0].reason,reason);
@@ -113,4 +122,41 @@ test('a captured screenshot alone cannot force a release',()=>{
 });
 test('only a different same-subject photograph is not a proven replacement',()=>{
  const r=runTest();assert.ok(r.rows.every(x=>x.rights_release==='HOLD'));
+});
+
+test('partial collector status cannot certify apparently loaded P0 images',()=>{
+ const [a,b]=sources(),r=browser();r.status='all_pages_unverified';
+ const out=adjudicate(a,b,r);
+ assert.equal(out.guest_capture_valid,false);assert.equal(out.p0_census_complete,false);
+ assert.equal(out.confirmed_broken_count,null);
+});
+test('aggregate COMPLETE flag cannot hide a zero-width slot',()=>{
+ const [a,b]=sources(),r=browser();r.pages[0].stored_images[0].natural_width=0;
+ const out=adjudicate(a,b,r);
+ assert.equal(out.guest_capture_valid,false);assert.equal(out.confirmed_broken_count,null);
+});
+test('fabricated verified page count fails closed',()=>{
+ const [a,b]=sources(),r=browser();r.verified_pages=1;
+ assert.equal(adjudicate(a,b,r).guest_capture_valid,false);
+});
+test('explicit incomplete global census cannot be called valid',()=>{
+ const [a,b]=sources(),r=browser();r.image_census_coverage.complete=false;
+ assert.equal(adjudicate(a,b,r).p0_census_complete,false);
+});
+test('fabricated broken count is rejected even with six loaded images',()=>{
+ const [a,b]=sources(),r=browser();r.confirmed_broken_count=1;r.image_census_coverage.confirmed_broken_count=1;
+ assert.equal(adjudicate(a,b,r).guest_capture_valid,false);
+});
+test('unresolved non-P0 image prevents complete browser census claim',()=>{
+ const [a,b]=sources(),r=browser();
+ r.pages[0].stored_images.push({...loadedSlot('285:99'),natural_width:0});
+ r.pages[0].stored_image_count++;
+ const out=adjudicate(a,b,r);
+ assert.equal(out.p0_census_complete,false);assert.equal(out.guest_capture_valid,false);
+});
+test('fabricated broken screenshot on a loaded image is not proven',()=>{
+ const [a,b]=sources(),r=browser();
+ r.pages[0].screenshots=[{image_key:'285:5',result:'captured',filename:'broken-285-285-5.png',current_src:link('285:5')}];
+ const out=adjudicate(a,b,r);
+ assert.equal(out.p0_census_complete,true);assert.equal(out.rows[0].screenshot_proven,false);
 });
