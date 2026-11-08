@@ -1,5 +1,5 @@
 {
-  "schema_version": "r224-1",
+  "schema_version": "r224-2-r225-QA-corrected",
   "created_at": "2026-11-08",
   "lane": "mind_only",
   "release": "UNPUBLISHED_HARD_HOLD",
@@ -394,12 +394,12 @@
     },
     {
       "id": "C28",
-      "statement": "Slagter EEG P3b reduction associated with smaller blink in intensive group",
+      "statement": "Slagter (2007) found selective P3b reduction in the intensive-practice group, but the P3b-change versus detection-change association pooled practitioners and novices",
       "status": "independent_research_context_specific",
       "source_ids": [
         "S17"
       ],
-      "limit": "EEG correlate not proof of audio entrainment efficacy"
+      "limit": "Nonrandom groups; main usable EEG comparison 10 practitioners/12 novices, distinct from behavioral samples; no evidence for Zen12 or audio entrainment"
     },
     {
       "id": "C29",
@@ -594,5 +594,6 @@
     "issued_earning_link": "NOT_AUTHENTICATED",
     "web_social_email_permission": "NOT_AUTHENTICATED",
     "note": "Public generic program claims, including prospective compensation, are not owner-specific agreement or actual earned commission."
-  }
+  },
+  "revision_note": "R225 independent Praxxis QA repair: exact claim C28 grouped-versus-pooled distinction; C37 mandatory identity/status regression lock added in R224 source validator. Original PR #1625 unchanged."
 }
