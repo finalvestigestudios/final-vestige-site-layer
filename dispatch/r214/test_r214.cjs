@@ -27,7 +27,7 @@ function check() {
   assert.equal(h[3],p[1]);n++;
   assert.match(h[2],/display:none!important/);n++;
   assert.match(h[2],/mso-hide:all/);n++;
-  assert.equal(b.replace(h[0],h[1]),a,'modified existing copy: '+file);n++;
+  assert.equal(b.replace(h[0],h[1].trimEnd()),a,'modified existing copy: '+file);n++;
   assert.equal((b.match(/data-fv-review-preheader=/g)||[]).length,1);n++;
   assert.match(b,/REVIEW ONLY · UNSENT · NOT APPROVED/);n++;
   assert.match(b,/\[\[VALID_FINAL_VESTIGE_POSTAL_ADDRESS_REQUIRED\]\]/);n++;
