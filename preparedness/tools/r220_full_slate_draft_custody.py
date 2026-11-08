@@ -9,6 +9,7 @@ review remain separate mandatory gates.
 from __future__ import annotations
 
 import argparse
+import importlib.util
 import hashlib
 import json
 import re
@@ -20,6 +21,9 @@ HOLD = 'DRAFT_HARD_HOLD'
 INVALID = 'INVALID_HARD_HOLD'
 MANIFEST_PATH = 'audits/r200_seven_cluster_35_article_frozen_custody.json'
 MANIFEST_BLOB = '5822f9dfde21d1f3bdfc26658769d852c639438c'
+# R221 authenticated module: 35 frozen routes + 6 tools + 2026-11-08 taxonomy.
+R221_AUTHORITY_PATH = 'tools/r221_frozen_route_tool_authority.py'
+R221_AUTHORITY_BLOB = '88a8d37955957b4e1cba7a73e73ed4ee1e2fe0d1'
 # These are independently observed R219 integration Git blobs, not certified text.
 # Missing entries MUST match the older R200 original exactly.
 INTEGRATED_DIFFS = {
@@ -243,6 +247,20 @@ def verify_render(root: Path, articles: list[dict], report: dict, library, build
             'channel_files_verified': 2 * len(by_slug), 'canonical_routes': len(seen_routes)}
 
 
+def load_r221_authority(root: Path):
+    """Import only the exact read-only R221 authority bytes pinned by this gate."""
+    source = safe_read(root, R221_AUTHORITY_PATH)
+    if git_blob(source) != R221_AUTHORITY_BLOB:
+        raise ValueError('R221 frozen-authority module identity mismatch')
+    spec = importlib.util.spec_from_file_location(
+        'fv_preparedness_r221_frozen_authority', root / R221_AUTHORITY_PATH)
+    if spec is None or spec.loader is None:
+        raise ValueError('R221 module cannot be loaded')
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
 def audit(root: Path, *, verify_exports: bool = True) -> dict:
     result = {'schema': SCHEMA, 'state': INVALID, 'issue': 136, 'conversion_issue': 820,
               'publication_authorized': False, 'independent_qd_pass': False,
@@ -254,6 +272,8 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
         if git_blob(original) != MANIFEST_BLOB:
             raise ValueError('frozen manifest identity changed')
         roster = verify_roster(strict_object(original))
+        authority = load_r221_authority(root)
+        result['authorities'] = authority.verify_authorities(root, roster, safe_read)
         status, exceptions = verify_originals(root, roster)
         result['articles'] = status
         result['source_exceptions'] = exceptions
@@ -266,6 +286,7 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
             try:
                 import build
                 library = build.Library(root=root)
+                authority.verify_routes(roster, library)
                 report = strict_object(safe_read(root, 'build/build-report.json'))
                 result['render'] = verify_render(root, roster, report, library, build)
             finally:
