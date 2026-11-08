@@ -1,0 +1,75 @@
+{
+  "schema": "fv.dispatch.r108.received-mail-proof.v1",
+  "observed_utc": "2026-11-04T07:39:27Z",
+  "original_master": {
+    "pull_request": 175,
+    "sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+    "editorial": 4,
+    "commercial_reserved": 2,
+    "modified": false
+  },
+  "stacked_source": {
+    "pull_request": 903,
+    "sha": "d942e8916f22d36d37dc0e3f1c437e51437a5258"
+  },
+  "production_read_only": {
+    "jetpack_newsletter_enabled": true,
+    "auto_send_new_posts": false,
+    "email_format": "excerpt",
+    "welcome_fieldbook_pdf_configured": true,
+    "post_delivery_last_five": "never_sent_opted_out",
+    "newsletter_subscriber_aggregates": {
+      "total": 2,
+      "confirmed": 2,
+      "unconfirmed": 2,
+      "suppressed": 0
+    },
+    "email_eligible_recipients": null,
+    "reader_followers_separately_last_observed": 2,
+    "email_followers_separately_last_observed": 0,
+    "received_welcome_proof": false,
+    "received_campaign_proof": false,
+    "native_jetpack_preview_proof": false,
+    "actual_unsubscribe_operation_proof": false
+  },
+  "gated_proof": {
+    "subscriber_confirmation_transition": false,
+    "valid_final_vestige_postal_address_verified": false,
+    "actual_received_full_email_with_footer": false,
+    "unsubscribe_suppression_independently_verified": false,
+    "final_publisher_creative_approval": false,
+    "founder_send_approval": false,
+    "named_inspire3_affiliate_approval": false,
+    "explicit_email_channel_permission": false,
+    "authorized_product_urls": false,
+    "approved_live_zen12_guide": false,
+    "approved_live_total_focus_guide": false,
+    "verified_merchant_customer_privacy_terms": false,
+    "verified_paid_fv_sku_for_mind_audience": false,
+    "merchant_confirmed_order_reporting": false
+  },
+  "funnel": {
+    "confirmed_signup_event_observable": false,
+    "grok_real_asset_id_observed": false,
+    "verified_qualified_human_sessions": null,
+    "verified_confirmed_paid_orders": null,
+    "merchant_net_fees_refunds": null,
+    "net_revenue_per_1000_qualified_humans": null,
+    "cohorts_days": [
+      7,
+      30
+    ],
+    "note": "null means unknown/unobservable, not zero or failure"
+  },
+  "assertions": {
+    "no_email_send": true,
+    "no_new_subscriber": true,
+    "no_new_list": true,
+    "no_wp_write": true,
+    "no_affiliate_link_live": true,
+    "no_payment_action": true
+  },
+  "decision": "HOLD_UNSENT",
+  "issue03": "HOLD_MERCHANT",
+  "issue05": "HOLD_MERCHANT"
+}

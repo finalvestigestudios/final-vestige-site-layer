@@ -1,0 +1,72 @@
+{
+  "date_utc": "2026-11-01",
+  "master_issue": 174,
+  "merchant_issue": 171,
+  "master_pr": 175,
+  "parent_pr": 416,
+  "release_gate_pr": 201,
+  "legacy_issue05": {
+    "canonical_unchanged": true,
+    "active_fieldbook_link": "https://finalvestige.com/focus/",
+    "inert_planned_buyer_guide": "[[APPROVED_HYPNOSIS_LIVE_WARMUP_GUIDE_URL_REQUIRED]]",
+    "editorial_promotional_cta_count": 2,
+    "analysis": "The free Fieldbook and the separate Total Focus guide are competing reader actions; NIH citation is a research source, not promotional action."
+  },
+  "candidate_issue05": {
+    "canonical_replacement_approved": false,
+    "proposed_action_count": 1,
+    "proposed_action": "[[APPROVED_HYPNOSIS_LIVE_WARMUP_GUIDE_URL_REQUIRED]]",
+    "action_live": false,
+    "merchant_href_count": 0,
+    "earning_links_active": 0,
+    "near_guide_affiliate_disclosure": true,
+    "merchant_email_permission": "NOT_VERIFIED",
+    "live_vetted_guide": "NOT_VERIFIED",
+    "actual_jetpack_email": "NOT_VERIFIED",
+    "offer_prices_in_email": false
+  },
+  "verified_official_offer": {
+    "url": "https://hypnosislive.com/mental-skills/total-focus",
+    "advertised_duration_minutes": 33,
+    "advertised_file_size_mb": 47,
+    "concentration_reprogramming_claims": "SELLER REPRESENTATIONS NOT PRODUCT-SPECIFICALLY VERIFIED",
+    "public_display_price_variation": "Live opened page $2 vs $29.95 reference; separate indexed snapshot $17.95 vs $22.95 reference; neither is final verified checkout price",
+    "current_checkout_terms": "NOT_VERIFIED",
+    "current_refund_application": "NOT_VERIFIED"
+  },
+  "research": {
+    "nih": "https://www.nccih.nih.gov/health/hypnosis",
+    "historical": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "research_does_not_prove_commercial_product_effect": true
+  },
+  "newsletter_2026_11_01_0731_utc": {
+    "subscriptions": true,
+    "auto_new_post_emails": false,
+    "content_format": "excerpt",
+    "reply_to": "no-reply",
+    "recent_sends": 0,
+    "subscriber_total": 2,
+    "confirmed": 2,
+    "unconfirmed": 2,
+    "unique_consent_eligible": "UNKNOWN",
+    "configured_52_page_welcome": true,
+    "welcome_receipt": "NOT_VERIFIED"
+  },
+  "controls": {
+    "postal": "NOT_VERIFIED",
+    "real_unsubscribe": "NOT_VERIFIED",
+    "partner_specific_email_rights": "NOT_VERIFIED",
+    "approved_active_affiliate_url": "NOT_VERIFIED",
+    "final_founder_campaign_send_approval": false
+  },
+  "all_six": "HOLD_UNSENT",
+  "issue03": "HOLD_MERCHANT",
+  "issue05": "HOLD_MERCHANT",
+  "official_sources": [
+    "https://hypnosislive.com/mental-skills/total-focus",
+    "https://www.nccih.nih.gov/health/hypnosis",
+    "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business",
+    "https://wordpress.com/support/newsletter/email-appearance/",
+    "https://inspire3.com/"
+  ]
+}

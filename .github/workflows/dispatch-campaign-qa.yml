@@ -1,0 +1,56 @@
+name: Dispatch Campaign QA (draft safety)
+
+on:
+  pull_request:
+    paths:
+      - "dispatch/campaign-2026-mind/**"
+      - ".github/workflows/dispatch-campaign-qa.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  local-content-safety:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout exact PR head SHA
+        uses: actions/checkout@v4
+        with:
+          # actions/checkout defaults to the synthetic PR merge commit on pull_request.
+          # Explicitly test the submitted source identity, not an unlabeled merge.
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+      - name: Independently checkout original PR175 head for six native tests
+        uses: actions/checkout@v4
+        with:
+          ref: d57ccdba3aee8f065e143e101c2945f4f3d01647
+          path: .pinned-pr175-source-review
+          persist-credentials: false
+      - name: Assert exact head was checked out
+        shell: bash
+        env:
+          EXPECTED_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          set -euo pipefail
+          actual="$(git rev-parse HEAD)"
+          if [ "$actual" != "$EXPECTED_SHA" ]; then
+            echo "::error::Checkout mismatch: expected $EXPECTED_SHA, actual $actual"
+            exit 1
+          fi
+          echo "EXACT_PR_HEAD_VERIFIED=$actual"
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Run full offline campaign guard tests
+        run: python -I -m unittest discover -s dispatch/campaign-2026-mind/tests -v
+      - name: Verify preview JS syntax
+        run: node --check dispatch/campaign-2026-mind/tools/build_previews.cjs
+      - name: Verify snapshots were regenerated from the actual exact PR files
+        run: node dispatch/campaign-2026-mind/tools/build_previews.cjs --check

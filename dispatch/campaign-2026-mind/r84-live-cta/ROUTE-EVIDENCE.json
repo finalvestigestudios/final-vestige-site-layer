@@ -1,0 +1,149 @@
+{
+  "schema": "fv-dispatch-r84-issue01-route-proof-v1",
+  "evidence_mode": "READ_ONLY_AUTHENTICATED_WORDPRESS_METADATA",
+  "observed_on_utc_date": "2026-11-03",
+  "source_control": {
+    "issue": 174,
+    "companion": 171,
+    "master_pr": 175,
+    "first_gate_pr": 201,
+    "stacked_parent_pr": 735,
+    "parent_sha": "0e7de337dcd1e87fee7caf053f8223e343ca3f05"
+  },
+  "site": "https://finalvestige.com",
+  "campaign": {
+    "mix": {
+      "editorial": [
+        "01",
+        "02",
+        "04",
+        "06"
+      ],
+      "commercial_reserved": [
+        "03",
+        "05"
+      ]
+    },
+    "release": "HOLD_UNSENT",
+    "founder_final_creative_approval": false,
+    "founder_send_approval": false,
+    "newsletter_test_send_approved": false,
+    "mail_scheduled": false,
+    "commercial_permissions_verified": false
+  },
+  "live_pages": {
+    "change_blindness": {
+      "post_id": 1922,
+      "title": "Change Blindness: Why You Miss Big Changes Right in Front of You",
+      "slug": "change-blindness",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "status": "publish",
+      "newsletter_status": "never_sent_opted_out",
+      "contains_source_link": "https://link.springer.com/article/10.3758/BF03208840",
+      "contains_interactive_flicker_test": true,
+      "interactive_test_requires_browser": true,
+      "original_lab_test_reproduction": false
+    },
+    "missing_caption": {
+      "page_id": 1122,
+      "title": "The Missing Caption",
+      "url": "https://finalvestige.com/the-missing-caption/",
+      "status": "publish"
+    },
+    "puysegur": {
+      "page_id": 1377,
+      "title": "Puységur’s Animal Magnetism Files",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "status": "publish"
+    },
+    "apollo": {
+      "post_id": 434,
+      "title": "The Hatch Opened Inward",
+      "url": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/",
+      "status": "publish"
+    },
+    "focus": {
+      "page_id": 1579,
+      "url": "https://finalvestige.com/focus/",
+      "status": "publish"
+    },
+    "dispatch": {
+      "page_id": 523,
+      "url": "https://finalvestige.com/dispatch/",
+      "status": "publish"
+    }
+  },
+  "issue01_cta_options": [
+    {
+      "version": "PR175_MASTER",
+      "subject": "The mind is not a camera",
+      "destination": "https://finalvestige.com/the-missing-caption/",
+      "status": "PUBLISHED_FIRST_PARTY",
+      "editorial_logic": "photographic provenance and archive-method bridge",
+      "approval": "ORIGINAL_DRAFT_ONLY"
+    },
+    {
+      "version": "R80_UNAPPROVED_ALTERNATE",
+      "subject": "The person changed. The conversation went on.",
+      "destination": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "status": "PUBLISHED_FIRST_PARTY",
+      "editorial_logic": "next-week historical narrative bridge, but not the named experiment itself",
+      "approval": "NOT_APPROVED"
+    },
+    {
+      "version": "R84_CANDIDATE",
+      "subject": "The person changed. The conversation went on.",
+      "destination": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "status": "PUBLISHED_FIRST_PARTY",
+      "editorial_logic": "immediately match the Simons/Levin study and visit an original explanatory demonstration",
+      "approval": "NOT_APPROVED"
+    }
+  ],
+  "issue01_proposed": {
+    "subject": "The person changed. The conversation went on.",
+    "preheader_status": "UNVERIFIED_JETPACK_CONTROL",
+    "preheader": "In a 1998 field experiment, an unnoticed substitution exposed a gap in what we register.",
+    "custom_excerpt_status": "REVIEW_ONLY_NOT_IN_WORDPRESS",
+    "custom_excerpt": "In a 1998 field experiment, people were asked for directions, briefly interrupted by a moving door, and sometimes missed a change of speaker. That finding is not a verdict on all eyewitnesses. Our newly published evidence guide explains the result and includes an original demonstration you can try.",
+    "single_cta_text": "Explore the change-blindness evidence and demo",
+    "single_cta_url": "https://finalvestige.com/2026/11/02/change-blindness/",
+    "primary_study": "https://doi.org/10.3758/BF03208840",
+    "evidence_description": "Simons and Levin 1998 real-world interaction, first experiment roughly half detected substitution; does not imply a general population rate",
+    "demonstrated_product_effectiveness": false,
+    "affiliate_offer": false
+  },
+  "channel": {
+    "jetpack_enabled": true,
+    "auto_email_new_posts": false,
+    "email_content_format": "excerpt",
+    "welcome_52_page_fieldbook_configured": true,
+    "welcome_received_verified": false,
+    "subscriber_counts": {
+      "total": 2,
+      "confirmed": 2,
+      "unconfirmed": 2
+    },
+    "followers": {
+      "email": 0,
+      "wpcom": 2
+    },
+    "eligible_recipients": "UNKNOWN",
+    "real_received_jetpack_email_verified": false,
+    "publisher_postal_verified": false,
+    "unsubscribe_rendered_and_tested": false
+  },
+  "commercial_holds": {
+    "slot03_zen12_email_permission": false,
+    "slot03_approved_live_guide": false,
+    "slot05_total_focus_email_permission": false,
+    "slot05_approved_live_guide": false,
+    "approved_earning_urls": false
+  },
+  "analysis_not_publication": true,
+  "actual_outbound_campaign_emails_sent": 0,
+  "performance": {
+    "email_opens": "UNOBSERVED",
+    "email_clicks": "UNOBSERVED",
+    "affiliate_sales": "UNOBSERVED"
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "schema": 1,
+  "as_of_utc": "2026-11-02T10:37:00Z",
+  "status": "RESEARCH_ONLY_NOT_AFFILIATE_LICENSE",
+  "sources": [
+    "https://zen12.com/hnp",
+    "https://zen12.com/about",
+    "https://zen12.com/research",
+    "https://zen12.com/getstarted",
+    "https://hypnosislive.com/mental-skills/total-focus",
+    "https://affiliates.inspire3.com/",
+    "https://inspire3.com/privacy/",
+    "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking"
+  ],
+  "publisher_specific_partner_approval": false,
+  "allowed_email_marketing_verified": false,
+  "approved_tracking_url": null,
+  "approved_merchant_creative": false,
+  "offers": [
+    {
+      "issue": 3,
+      "name": "Zen12",
+      "official_landing": "https://zen12.com/hnp",
+      "format_descriptions": [
+        "Seller advertises 12-minute audio session format",
+        "Seller describes 12-level full program and 4 listening styles",
+        "Seller advertises 48 MP3s in full library, package-tier differences require buyer-level checkout verification"
+      ],
+      "claims_not_independently_proven": [
+        "12 minutes delivers benefits of an hour of meditation",
+        "brainwave audio automatically produces deep meditation",
+        "guaranteed stress/health/cognition benefits"
+      ],
+      "refund": "One-year seller promise on offer page, eligibility/fulfillment not validated",
+      "checkout": "Current price/discount/countdown, tier terms, mobile phone requirement and actual refund outcome NOT VERIFIED",
+      "buyer_privacy": "Mobile phone input observed; optional versus mandatory NOT VERIFIED; privacy terms mention possible contact/data sharing",
+      "guide_url": null,
+      "merchant_url": null,
+      "permission_email": false,
+      "creative_rights": false,
+      "release": "HOLD_MERCHANT"
+    },
+    {
+      "issue": 5,
+      "name": "Hypnosis Live Total Focus",
+      "official_landing": "https://hypnosislive.com/mental-skills/total-focus",
+      "format_descriptions": [
+        "Seller displays one 33-minute 47 MB recording",
+        "Seller page attributes creation to J.A. Amos and offers a preview"
+      ],
+      "claims_not_independently_proven": [
+        "reprogramming the brain through the specific audio",
+        "100 percent focus, superior work performance",
+        "particular concentration/wealth/health outcomes"
+      ],
+      "refund": "14-day seller promise on product page, purchase eligibility/fulfillment not validated",
+      "checkout": "Multiple different prices seen on separate captures ($17.95 and $24.44), any effective price or bundle price NOT VERIFIED; never quote a discount",
+      "buyer_privacy": "Affiliate reporting/purchaser-data handling NOT VERIFIED",
+      "guide_url": null,
+      "merchant_url": null,
+      "permission_email": false,
+      "creative_rights": false,
+      "release": "HOLD_MERCHANT"
+    }
+  ],
+  "notes": "General public recruitment claims including 60%+ affiliate commissions are vendor marketing, not publisher-specific terms. They are excluded from email copy. No product audio was independently tested. Do not insert a literal or redirected merchant CTA."
+}

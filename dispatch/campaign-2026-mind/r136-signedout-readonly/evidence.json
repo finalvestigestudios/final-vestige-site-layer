@@ -1,0 +1,108 @@
+{
+  "run": "R136",
+  "observed_utc": "2026-11-05T11:32:30Z",
+  "owner_issue": 174,
+  "workstream": "Dispatch/Focus consent and first-party acquisition",
+  "release": "HOLD_UNSENT",
+  "candidate_pr_base": 1079,
+  "verified_wordpress": {
+    "newsletter_enabled": true,
+    "new_post_email_default": false,
+    "email_content_format": "excerpt",
+    "site_can_send": true,
+    "from_name": "Final Vestige",
+    "welcome_configured_fieldbook_pages": 52,
+    "total_reported": 3,
+    "confirmed_reported": 3,
+    "unconfirmed_reported": 2,
+    "suppressed": 0,
+    "paid": 0,
+    "imported_last_24h": 1,
+    "counters_nonadditive": true,
+    "eligible_email_recipients": null,
+    "actual_welcome_receipt": null,
+    "last_five_post_notifications": "never_sent_opted_out",
+    "dispatch_page_id": 523,
+    "focus_page_id": 1579,
+    "cms_subscribe_projection": "same-page anchors, visitor modal/form NOT proven",
+    "actual_signed_out_browser": "NOT_TESTED_LIVE_ENVIRONMENT_BLOCKED"
+  },
+  "native_python_qa": {
+    "tests": 25,
+    "tests_passed": 25,
+    "offline_chromium_fixture_cases": 6,
+    "offline_chromium_cases_observed": 6,
+    "live_browser_cases_attempted": 2,
+    "live_browser_results": [
+      "NOT_TESTED_LIVE",
+      "NOT_TESTED_LIVE"
+    ],
+    "note": "Exact-source Git blob SHA verified for script and test; no real visitor status proven"
+  },
+  "fixtures": [
+    {
+      "fixture": "visible_labeled",
+      "result": "VISIBLE_LABELED_FORM_NOT_SIGNUP_PROOF"
+    },
+    {
+      "fixture": "same_page_only",
+      "result": "SAME_PAGE_ANCHOR_ONLY_PENDING_NATIVE_VALIDATION"
+    },
+    {
+      "fixture": "safe_modal",
+      "result": "VISIBLE_FORM_AFTER_SAFE_MODAL_ACTION_NOT_SIGNUP_PROOF"
+    },
+    {
+      "fixture": "no_op_button",
+      "result": "NO_VISIBLE_SIGNUP_FORM_VERIFIED"
+    },
+    {
+      "fixture": "hidden_email",
+      "result": "SAME_PAGE_ANCHOR_ONLY_PENDING_NATIVE_VALIDATION"
+    },
+    {
+      "fixture": "no_block",
+      "result": "NO_SUBSCRIBE_BLOCK_DETECTED"
+    }
+  ],
+  "no_mutations": {
+    "emails_sent": 0,
+    "contacted_subscribers": 0,
+    "subscriber_imports": 0,
+    "wordpress_changes": 0,
+    "tracking_scripts_added": 0,
+    "merchant_links_activated": 0
+  },
+  "merchant_gate": {
+    "issue03": "HOLD_MERCHANT",
+    "issue05": "HOLD_MERCHANT",
+    "named_affiliate_acceptance": null,
+    "email_promotion_permission": null,
+    "earning_link": null,
+    "guide_live_approval": null,
+    "zen12_offer": "Zen12 Premium, seller-described 12 levels / 48 MP3; $87.99 shown, checkout unverified",
+    "total_focus_offer": "Total Focus, 33 min / 47 MB; $24.44 shown, checkout unverified",
+    "claims": "All performance statements seller representations, not independent proof",
+    "official_sources": [
+      "https://zen12.com/hnp",
+      "https://hypnosislive.com/mental-skills/total-focus",
+      "https://affiliates.inspire3.com/"
+    ]
+  },
+  "required_email_gate": {
+    "fv_owned_valid_physical_postal_address": null,
+    "rendered_unsubscribe": null,
+    "actual_received_jetpack_message": null,
+    "single_primary_cta_rendered": null,
+    "subject_and_preheader_native": null,
+    "privacy_safe_confirmed_signup": null
+  },
+  "business_metrics": {
+    "qualified_human_sessions": null,
+    "confirmed_paid_orders": null,
+    "independently_confirmed_paid_affiliate_orders": null,
+    "refunds_and_fees": null,
+    "net_revenue_per_1000_qualified_human_sessions": null,
+    "notes": "No inventing sales or relying on counts of clicks/submissions"
+  }
+}

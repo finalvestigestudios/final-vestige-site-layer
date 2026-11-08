@@ -1,0 +1,34 @@
+FINAL VESTIGE STUDIOS — THE DISPATCH
+OFFLINE REVIEW ONLY · UNSENT · NO SENDING APPROVAL
+
+Subject: The mind is not a camera
+Preheader: A stranger changed mid-conversation. The evidence lesson starts in the archives.
+
+A stranger stops you on a campus walkway and asks for directions. As you explain, two people carry a door between you. The door passes. You continue talking—except the person on the other side is no longer the person who asked.
+
+That was the setup of a 1998 field experiment by psychologists Daniel Simons and Daniel Levin. In their first experiment, only about half of the pedestrians noticed that the questioner had been replaced. The people were interacting in the real world, not watching a flickering screen. Their attention had a job to do, and a substantial change still escaped some of them.
+
+It's a striking result, but it doesn't prove that any particular witness is mistaken. Nor can a single experiment tell us how accurate every memory is. It establishes something narrower and more useful: looking at a scene does not guarantee that we encode every detail of it.
+
+An archive gives us a related problem. Imagine finding an unidentified photograph: a street corner, a sign, three people outside a shop. The urge to name the town and date from a familiar-looking storefront is strong. Yet visual resemblance is a lead, not a provenance record. The original negative, a catalog card, the next frame on the roll, or a contemporary city directory may tell a different story.
+
+Here's a small method you can borrow this week:
+
+- Describe: Write down three things directly visible in an image, without explaining them.
+- Separate: Mark two tempting identifications as hypotheses rather than facts.
+- Check: Name one independent record that could confirm or challenge the strongest hypothesis.
+
+We use that distinction in our published research manual, The Missing Caption. It treats an old photograph as four linked records: the image, the physical or digital object, its catalog entry, and the neighboring archival context. None should be allowed to impersonate the others.
+
+Explore the photographic-evidence method: The Missing Caption (https://finalvestige.com/the-missing-caption/).
+
+The research behind the opening: Simons and Levin, Failure to detect changes to people during a real-world interaction (1998) (https://doi.org/10.3758/BF03208840). The reported detection rate belongs to their studied conditions; it is not a universal percentage for eyewitness error.
+
+Next week, we'll visit an older record: the 1784 accounts of Puységur's magnetic somnambulism, where the questions about observation and interpretation become stranger still.
+
+
+---
+Pre-send compliance block — remove/replace ONLY after legal and rendered-email QA.
+Sender: Final Vestige Studios. Physical mailing address: `[[VALID_POSTAL_ADDRESS_REQUIRED]]`. Unsubscribe: `[[JETPACK_UNSUBSCRIBE_LINK_MUST_BE_VERIFIED]]`. These placeholders intentionally prevent sending.
+
+Offline artifact only; actual WordPress delivery/footer and address not verified.

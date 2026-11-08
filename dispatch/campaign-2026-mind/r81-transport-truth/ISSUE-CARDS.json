@@ -1,0 +1,136 @@
+{
+  "package": "r81-native-excerpt-transport-truth",
+  "review_only": true,
+  "status": "HOLD_UNSENT",
+  "master_pr": 175,
+  "parent_pr": 715,
+  "issues": [
+    174,
+    171
+  ],
+  "source_head": "9703803023c4a28e834234845fcb813ff6994cb7",
+  "mix": {
+    "editorial": [
+      "01",
+      "02",
+      "04",
+      "06"
+    ],
+    "commercial_reserved": [
+      "03",
+      "05"
+    ]
+  },
+  "transmission_model": "WordPress Jetpack excerpt-mode; custom excerpts are editorial proposals, not configured in CMS; automatic full-letter delivery NOT established",
+  "custom_preheader_supported": "UNVERIFIED",
+  "merchant_permissions": "UNVERIFIED",
+  "commercial_destinations_published": false,
+  "release_gates": {
+    "founder_final_creative_approval": false,
+    "founder_send_approval": false,
+    "legitimate_publisher_postal_address_verified": false,
+    "actual_email_eligible_recipients_verified": false,
+    "native_jetpack_received_email_verified": false,
+    "actual_unsubscribe_verified": false,
+    "plaintext_html_mime_verified": false,
+    "wordPress_custom_excerpt_saved_and_previewed": false,
+    "zen12_approved_guide_published": false,
+    "total_focus_approved_guide_published": false,
+    "zen12_affiliate_acceptance_and_email_permission": false,
+    "total_focus_affiliate_acceptance_and_email_permission": false,
+    "merchant_link_format_verified": false,
+    "privacy_process_for_customer_data_approved": false
+  },
+  "production_snapshot": {
+    "verified_utc": "2026-11-03T03:33:08Z",
+    "site": "https://finalvestige.com",
+    "newsletter_enabled": true,
+    "automatic_new_post_emails": false,
+    "email_content_format": "excerpt",
+    "from_name": "Final Vestige",
+    "reply_to": "no-reply",
+    "recent_sends": 0,
+    "counts": {
+      "newsletter_total": 2,
+      "newsletter_confirmed": 2,
+      "newsletter_unconfirmed": 2,
+      "followers_email": 0,
+      "followers_wpcom": 2
+    },
+    "eligible_recipients": "UNKNOWN",
+    "welcome_52_page_fieldbook_configured": true,
+    "welcome_actual_receipt_verified": false,
+    "dispatch_page_published": true,
+    "focus_page_published": true,
+    "dispatch_signup_mentions_possible_affiliate_recommendations": false,
+    "focus_signup_mentions_possible_affiliate_recommendations": true
+  },
+  "cards": [
+    {
+      "id": "01",
+      "kind": "editorial",
+      "subject": "The person changed. The conversation went on.",
+      "preheader": "A sidewalk experiment challenges what any witness notices.",
+      "excerpt": "In a 1998 field experiment, a conversation continued after the person asking for directions was replaced. That result does not establish how every eyewitness behaves. It asks a more useful question: what did this particular witness have a chance to notice? Follow the source, then the inference.",
+      "source_file": "r80-editorial-bridge/01-the-conversation-continued.md",
+      "destination": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "cta": "Read the archival evidence",
+      "primary_source": "https://doi.org/10.3758/BF03208840"
+    },
+    {
+      "id": "02",
+      "kind": "editorial",
+      "subject": "A sleeping witness, a letter, and a 1784 puzzle",
+      "preheader": "A surviving document is evidence of a claim, not its explanation.",
+      "excerpt": "Puységur reported an unusual encounter on May 4, 1784, and described it in a letter dated May 8. The source is worth reading; his interpretation is not independent proof of animal magnetism. Follow the chronology and see what the written record actually supports.",
+      "source_file": "r80-editorial-bridge/02-the-letter-and-the-witness.md",
+      "destination": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "cta": "Examine Puységur's documented account",
+      "primary_source": "https://catalogue.bnf.fr/ark:/12148/cb31160297p"
+    },
+    {
+      "id": "03",
+      "kind": "commercial_reserved",
+      "subject": "The twelve-minute question: practice first, purchase later",
+      "preheader": "A free observation exercise before considering meditation audio.",
+      "excerpt": "Commercial disclosure: Final Vestige may earn a commission if you later buy through a qualifying link in an approved guide. No buying link is active. Twelve minutes can reveal whether a routine fits your schedule; they cannot prove that Zen12 produces its advertised brainwave results. Here's what to check first.",
+      "source_file": "r79-proof-first-editions/03-zen12.md",
+      "destination": null,
+      "cta": "RESERVED — independent Zen12 guide unpublished; no active link",
+      "primary_source": "https://zen12.com/hnp"
+    },
+    {
+      "id": "04",
+      "kind": "editorial",
+      "subject": "Apollo 1: one spark was never the whole story",
+      "preheader": "The 1967 inquiry could not isolate one ignition source.",
+      "excerpt": "Apollo 1's fire killed three astronauts during a ground test on January 27, 1967. The review board could not conclusively identify the first ignition source. It did document an oxygen-rich environment, an escape-obstructing hatch, and rescue failures. The system, not merely the spark, explains the danger.",
+      "source_file": "r79-proof-first-editions/04-apollo-1.md",
+      "destination": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/",
+      "cta": "Read the Apollo 1 investigation",
+      "primary_source": "https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/"
+    },
+    {
+      "id": "05",
+      "kind": "commercial_reserved",
+      "subject": "A focus recording isn't proof of better focus",
+      "preheader": "What a 33-minute MP3 can tell you, and what it cannot.",
+      "excerpt": "Commercial disclosure: Final Vestige may earn a commission if you later buy through a qualifying link in an approved guide. No buying link is active. Total Focus is advertised as a 33-minute hypnosis recording. Its format is described by the seller; the promised concentration gains are not independently established for this recording.",
+      "source_file": "r79-proof-first-editions/05-total-focus.md",
+      "destination": null,
+      "cta": "RESERVED — independent Total Focus guide unpublished; no active link",
+      "primary_source": "https://hypnosislive.com/mental-skills/total-focus"
+    },
+    {
+      "id": "06",
+      "kind": "editorial",
+      "subject": "Your focus log should include the boring days",
+      "preheader": "Seven ordinary observations can be worth recording.",
+      "excerpt": "An honest focus log keeps the missed sessions and quiet days, not just the moments that feel transformative. Try three fields for one week: time attempted, interruption noticed, and one next adjustment. This is a record of your routine, not proof that any product improves the brain.",
+      "source_file": "r80-editorial-bridge/06-the-boring-days.md",
+      "destination": "https://finalvestige.com/focus/",
+      "cta": "Read the free Focus Fieldbook",
+      "primary_source": "https://finalvestige.com/editorial-standards/"
+    }
+  ]
+}

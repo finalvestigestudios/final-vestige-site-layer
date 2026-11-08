@@ -1,0 +1,66 @@
+{
+  "id": "fv-dispatch-mind-launch-2026-10-30",
+  "status": "DRAFT_UNSENT_NO_SCHEDULING",
+  "issues": [
+    {
+      "number": 1,
+      "slug": "the-mind-is-not-a-camera",
+      "subject": "The mind is not a camera",
+      "preheader": "A stranger changed mid-conversation. The evidence lesson starts in the archives.",
+      "kind": "editorial",
+      "editorial_cta": "https://finalvestige.com/the-missing-caption/",
+      "publish_state": "hold",
+      "merchant_affiliate_url": null
+    },
+    {
+      "number": 2,
+      "slug": "before-hypnosis-had-a-name",
+      "subject": "Before hypnosis had a name",
+      "preheader": "In 1784, a young man slept and spoke. His witness drew a startling conclusion.",
+      "kind": "editorial",
+      "editorial_cta": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "publish_state": "hold",
+      "merchant_affiliate_url": null
+    },
+    {
+      "number": 3,
+      "slug": "the-twelve-minute-question",
+      "subject": "The twelve-minute meditation question",
+      "preheader": "An honest way to evaluate a short audio practice before you spend anything.",
+      "kind": "commercial-review-pending",
+      "editorial_cta": "[[APPROVED_ZEN12_WARMUP_GUIDE_URL_REQUIRED]]",
+      "publish_state": "hold",
+      "merchant_affiliate_url": null
+    },
+    {
+      "number": 4,
+      "slug": "the-hatch-and-the-spark",
+      "subject": "Seventeen seconds. A much longer explanation.",
+      "preheader": "NASA's Apollo 1 findings, and why a tidy explanation can mislead.",
+      "kind": "editorial",
+      "editorial_cta": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/",
+      "publish_state": "hold",
+      "merchant_affiliate_url": null
+    },
+    {
+      "number": 5,
+      "slug": "before-you-press-play",
+      "subject": "Before you press play on a hypnosis audio",
+      "preheader": "A free three-minute check, then a clearer look at the claims.",
+      "kind": "commercial-review-pending",
+      "editorial_cta": "[[APPROVED_HYPNOSIS_LIVE_WARMUP_GUIDE_URL_REQUIRED]]",
+      "publish_state": "hold",
+      "merchant_affiliate_url": null
+    },
+    {
+      "number": 6,
+      "slug": "the-evidence-log",
+      "subject": "What did seven days of attention reveal?",
+      "preheader": "A small experiment, a useful notebook, and no miracle claims.",
+      "kind": "editorial",
+      "editorial_cta": "https://finalvestige.com/focus/",
+      "publish_state": "hold",
+      "merchant_affiliate_url": null
+    }
+  ]
+}

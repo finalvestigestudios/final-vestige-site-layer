@@ -1,0 +1,73 @@
+{
+  "edition": 4,
+  "status": "UNSENT_OPTIONAL_REVIEW",
+  "canonical_issue_04_unchanged": true,
+  "founder_approved_replacement": false,
+  "mix": {
+    "editorial": 4,
+    "commercial_reserved": 2
+  },
+  "primary_cta": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/",
+  "affiliate_urls": [],
+  "email_promotion_permissions_verified": false,
+  "postal_address_verified": false,
+  "unsubscribe_delivered_verified": false,
+  "subscriber_eligibility_verified": false,
+  "founder_final_send_approval": false,
+  "claims": [
+    {
+      "claim": "23:31:04.7 GMT first reported fire; cabin rupture approximately 23:31:19",
+      "type": "measured/reconstructed chronology",
+      "source": "https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/",
+      "qualification": "Interval approximately fourteen seconds; NOT full fire duration"
+    },
+    {
+      "claim": "First stage approximately fifteen seconds after verbal report",
+      "type": "Review Board estimate",
+      "source": "https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/",
+      "qualification": "Different temporal interval from unknown ignition start"
+    },
+    {
+      "claim": "100% oxygen at 16.7 psia in ground-test command module",
+      "type": "Board finding",
+      "source": "https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/",
+      "qualification": "Do not conflate with planned orbital pressure"
+    },
+    {
+      "claim": "At least 29 psia at rupture",
+      "type": "instrument-supported Board conclusion",
+      "source": "https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/",
+      "qualification": "Sensors had upper-range limits; estimate based on additional data"
+    },
+    {
+      "claim": "Electrical arc most probable, no conclusively identified ignition source",
+      "type": "Board determination",
+      "source": "https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/",
+      "qualification": "No proven specific wire and no sabotage inference"
+    },
+    {
+      "claim": "Six conditions including oxygen, combustibles, wiring, coolant, egress and rescue",
+      "type": "Board finding",
+      "source": "https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/",
+      "qualification": "Separate cause from hazards and system-level failures"
+    },
+    {
+      "claim": "Approximately five minutes to open all hatches after report",
+      "type": "Board chronology",
+      "source": "https://www.nasa.gov/missions/apollo/apollo-1/apollo-204-review-board-summary/",
+      "qualification": "Approximate not a stopwatch"
+    },
+    {
+      "claim": "Published WordPress post 434",
+      "type": "authenticated WP read-only",
+      "source": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/",
+      "qualification": "CTA target confirmed published; not proof of inbox click"
+    },
+    {
+      "claim": "Business address and received unsubscribe unverified",
+      "type": "release hold",
+      "source": "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business",
+      "qualification": "No sending approval"
+    }
+  ]
+}

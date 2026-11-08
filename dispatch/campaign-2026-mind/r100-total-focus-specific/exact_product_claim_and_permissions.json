@@ -1,0 +1,121 @@
+{
+  "schema": "fv-dispatch-exact-offer-r100-v1",
+  "date_observed": "2026-11-03",
+  "issue": 5,
+  "source_master_pr": 175,
+  "source_master_sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "parent_draft_pr": 845,
+  "campaign_state": "HOLD_UNSENT",
+  "merchant_state": "HOLD_MERCHANT",
+  "mix": {
+    "editorial": [
+      1,
+      2,
+      4,
+      6
+    ],
+    "commercial_reserved": [
+      3,
+      5
+    ]
+  },
+  "exact_product": "Hypnosis Live / Total Focus",
+  "seller": "Inspire3",
+  "sku_or_partner_tracking_id_verified": false,
+  "approved_affiliate_merchant_url": null,
+  "approved_live_buyer_guide_url": null,
+  "proposed_subject": "The recording is 33 minutes. What does that prove?",
+  "proposed_preheader": "An exact product listing, a historical lesson, and five checks before spending.",
+  "native_preheader_field_verified": false,
+  "email_excerpts": {
+    "commercial_first_350_char_candidate": "Commercial note: A future guide might contain a commission-earning link; no earning link is active. Hypnosis Live lists Total Focus as a 33-minute, 47 MB audio download. These describe what is sold, not independent proof of its concentration claims. Its 14-day refund policy has a limit of five sessions per customer per twelve months.",
+    "source": "official Total Focus exact page, FAQ and Inspire3 Terms; disclosure is plain and at front; this is only a candidate, not actual Jetpack MIME"
+  },
+  "sources": [
+    {
+      "key": "total_focus",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "claims": [
+        "Title Total Focus",
+        "Seller-listed 33 minutes and 47 MB",
+        "written/recorded by J.A. Amos",
+        "seller promises concentration gains"
+      ],
+      "limitations": "Seller's efficacy language not established by product-specific independent evidence."
+    },
+    {
+      "key": "faq",
+      "url": "https://hypnosislive.com/faq",
+      "claims": [
+        "MP3 purchase/delivery",
+        "Seller 14-day refund claim",
+        "Seller 5-session maximum refunds per year",
+        "Generic most sessions 40min and typical $22.95"
+      ],
+      "limitations": "Generic duration/price do not replace exact SKU; actual future checkout and refund performance unverified."
+    },
+    {
+      "key": "terms",
+      "url": "https://inspire3.com/terms/",
+      "claims": [
+        "Hypnosis Live seller-stated 14-day refund",
+        "Five album refunds per customer per 12-month period",
+        "Possible manually processed PayPal refunds for card payments after 90 days in general terms"
+      ],
+      "limitations": "These are published seller policies, not execution evidence or current checkout acceptance."
+    },
+    {
+      "key": "privacy",
+      "url": "https://inspire3.com/privacy/",
+      "claims": [
+        "May pass referred purchaser name, email, purchase items to an affiliate",
+        "May send SMS marketing when mobile number provided"
+      ],
+      "limitations": "This is potential policy, not verified data actually sent to Final Vestige."
+    },
+    {
+      "key": "affiliate_portal",
+      "url": "https://affiliates.inspire3.com/",
+      "claims": [
+        "Seller has public affiliate sign-up and special links"
+      ],
+      "limitations": "Public signup not named partner acceptance, email-channel authorization, exact-SKU or link rights."
+    },
+    {
+      "key": "ftc",
+      "url": "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business",
+      "claims": [
+        "Covered commercial email needs truthful sender and subjects, publisher postal address and opt-out",
+        "Opt-outs honored within 10 business days; mechanism available at least 30 days"
+      ],
+      "limitations": "Statutory guide, not a finding of compliance for this unsent campaign."
+    }
+  ],
+  "comparison_observations": {
+    "prior_page_observation": "R99 source memo reported Total Focus $24.44 list $29.95; general FAQ typical $22.95.",
+    "other_web_search_snapshot": "Search-engine cached result returned $17.95 and $22.95; not a live checkout guarantee.",
+    "current_official_page": "Nov 3 directly opened page showed $24.44 and $29.95; these values are deliberately excluded from copy.",
+    "decision": "No price, percent off, scarcity or universal refund guarantee published. Do not infer why snapshots differ."
+  },
+  "blocked_permissions": {
+    "named_final_vestige_affiliate_acceptance": false,
+    "exact_sku_email_promotion_permission": false,
+    "approved_partner_deep_link": false,
+    "approved_merchant_creatives": false,
+    "aggregate_only_purchaser_reporting_contract": false,
+    "exact_guide_live_and_approved": false,
+    "current_checkout_terms_verified": false,
+    "publisher_postal_address_verified": false,
+    "received_jetpack_email_footer_verified": false,
+    "unsubscribe_functional_verified": false,
+    "eligible_audience_reconciled": false,
+    "founder_final_campaign_send_approval": false
+  },
+  "private_gmail_search": "2026-11-03 targeted Gmail searches Oct 1 onward found no matching Zen12/Total Focus named affiliate acceptance; vendor promotional emails are not permission, and search absence is not global absence.",
+  "excerpt_delivery_mode": "excerpt",
+  "new_post_default_send": false,
+  "verified_sender_email_or_postal": null,
+  "verified_eligible_recipients": null,
+  "sent_count_this_run": 0,
+  "qa_scope": "preview only, not real Jetpack email or product efficacy test"
+}

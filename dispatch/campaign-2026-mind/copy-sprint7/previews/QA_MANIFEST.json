@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "status": "DRAFT_NOT_ACTUAL_JETPACK_EMAIL",
+  "source_commit": "62b792ceae4a2e5fef33fff3d7a05153c4ba40f1",
+  "issue_count": 2,
+  "files_added": 5,
+  "guards": {
+    "original_campaign_unchanged": true,
+    "no_merchant_checkout_links": true,
+    "no_javascript": true,
+    "includes_commercial_disclosures": true,
+    "links_to_approved_live_guides": false,
+    "verified_business_postal_address": false,
+    "received_test_email": false,
+    "founder_send_approval": false
+  },
+  "limitations": "HTML previews generated from exact GitHub candidate markdown, not from WordPress. No actual recipient, sender, optout, MIME, or mobile email-client confirmation."
+}

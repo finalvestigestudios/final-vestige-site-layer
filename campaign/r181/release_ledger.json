@@ -1,0 +1,63 @@
+{
+  "as_of_utc": "2026-11-07T08:34:11Z",
+  "source_issue": 174,
+  "companion_issues": [
+    171,
+    129,
+    820
+  ],
+  "original_pr": 175,
+  "readiness_pr": 201,
+  "stacked_parent_pr": 1375,
+  "original_manuscripts_changed": false,
+  "cms_or_email_modified": false,
+  "allocation": {
+    "editorial": [
+      1,
+      2,
+      4,
+      6
+    ],
+    "commercial_hold": [
+      3,
+      5
+    ]
+  },
+  "jetpack": {
+    "subscriptions_enabled": true,
+    "new_post_auto_email": false,
+    "content_format": "full",
+    "counted": 3,
+    "confirmed": 3,
+    "unconfirmed_nonadditive": 2,
+    "wpcom_followers": 3,
+    "legacy_email_followers": 0,
+    "actually_email_eligible": null,
+    "welcome_configured": true,
+    "welcome_receipt_proved": false,
+    "recent_five_post_emails": "never_sent_opted_out"
+  },
+  "proofs": {
+    "native_editor_preview_captured": false,
+    "received_real_mail_inspected": false,
+    "real_unsubscribe_function_tested": false,
+    "fv_publisher_postal_attested": false,
+    "signedout_confirmed_signup": false,
+    "named_affiliate_email_authorization": false,
+    "approved_live_merchant_guide": false,
+    "paid_merchant_conversion_proved": false,
+    "actual_human_traffic_denominator": false,
+    "founder_final_campaign_approval": false
+  },
+  "revenue_per_1000_qualified_humans": null,
+  "issue_statuses": [
+    "HOLD_UNSENT",
+    "HOLD_UNSENT",
+    "HOLD_UNSENT+HOLD_MERCHANT",
+    "HOLD_UNSENT",
+    "HOLD_UNSENT+HOLD_MERCHANT",
+    "HOLD_UNSENT"
+  ],
+  "new_optional_issue_02_cta": "https://finalvestige.com/2026/11/02/mesmerism/",
+  "note": "4:2 draft untouched. Preview only. No mail/subscriber/CMS write. No real conversion evidence."
+}

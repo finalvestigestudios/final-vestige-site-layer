@@ -1,0 +1,61 @@
+{
+  "status": "HOLD_UNSENT_OPTIONAL_ED02",
+  "source_parent_sha": "a9f523fdbc2b6b43cd6760cae03245d4b16a3b92",
+  "canonical_issue_02_unchanged": true,
+  "founder_approved_substitution": false,
+  "wordpress_post_created": false,
+  "email_sent": false,
+  "actual_email_receipt": false,
+  "subscriber_eligibility_verified": false,
+  "postal_address_verified": false,
+  "unsubscribe_verified": false,
+  "subject": "The book he did not want everyone to read",
+  "proposed_preview": "Puységur wanted witnesses, not just believers. The 1784 record explains why.",
+  "story_word_count": 668,
+  "primary_cta_url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+  "primary_cta_wp_page": 1377,
+  "commercial_slots_in_original_pilot": [
+    3,
+    5
+  ],
+  "commerce_links": 0,
+  "source_notes": [
+    {
+      "claim": "28 Dec 1784 asked fifty magnetizers to reproduce",
+      "source": "https://doi.org/10.1002/jhbs.21974",
+      "limit": "proposed condition, no fifty successful replications attested"
+    },
+    {
+      "claim": "May 4 event described in a May 8 letter",
+      "source": "https://www.circee.org/puysegur-memoires-pour-servir-a-l-histoire-du-magnetisme-animal-1784/",
+      "limit": "source-based historical reading, original scan pages not independently collated"
+    },
+    {
+      "claim": "1784 Mémoires had a contemporaneous edition",
+      "source": "https://books.google.com/books/about/M%C3%A9moires_pour_servir_%C3%A0_l_histoire_et.html?id=Z-UTDh6VtG8C",
+      "limit": "bibliographic proof only"
+    },
+    {
+      "claim": "Wellcome 1784 Détail des cures a distinct book",
+      "source": "https://wellcomecollection.org/works/es4ayp6q",
+      "limit": "bibliography, not proof of Victor outcome"
+    },
+    {
+      "claim": "later hypnotism influenced by Puységur",
+      "source": "https://cswr.hds.harvard.edu/news/2026/07/13/artificial-somnambulism-and-hypnotism",
+      "limit": "historical interpretation, not medical proof"
+    },
+    {
+      "claim": "1784 commissioners' Mesmer inquiry did not replicate Victor encounter",
+      "source": "https://doi.org/10.1002/jhbs.21974",
+      "limit": "distinct investigations, no overclaim"
+    }
+  ],
+  "sources": [
+    "https://books.google.com/books/about/M%C3%A9moires_pour_servir_%C3%A0_l_histoire_et.html?id=Z-UTDh6VtG8C",
+    "https://doi.org/10.1002/jhbs.21974",
+    "https://cswr.hds.harvard.edu/news/2026/07/13/artificial-somnambulism-and-hypnotism",
+    "https://wellcomecollection.org/works/es4ayp6q",
+    "https://www.circee.org/puysegur-memoires-pour-servir-a-l-histoire-du-magnetisme-animal-1784/"
+  ]
+}

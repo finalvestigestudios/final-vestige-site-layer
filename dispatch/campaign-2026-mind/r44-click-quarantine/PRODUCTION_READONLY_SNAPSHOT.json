@@ -1,0 +1,44 @@
+{
+  "as_of_utc": "2026-11-01T14:39:18Z",
+  "source": "authenticated WordPress read-only newsletter status/settings and pages",
+  "site": "finalvestige.com",
+  "newsletter": {
+    "enabled": true,
+    "site_can_send": true,
+    "email_new_posts_by_default": false,
+    "format": "excerpt",
+    "featured_image_in_email": true,
+    "post_date_in_email": true,
+    "reply_to": "no-reply",
+    "from_name": "Final Vestige",
+    "recent_sends": [],
+    "recent_sends_semantics": "no reported recent sends, lifetime unknown",
+    "welcome_52_page_focus_fieldbook_configured": true,
+    "welcome_received_verification": false
+  },
+  "subscriber_counters": {
+    "total": 2,
+    "confirmed": 2,
+    "unconfirmed": 2,
+    "eligible_unique_recipients": "UNKNOWN",
+    "nonadditive": true
+  },
+  "published_pages": {
+    "dispatch": 523,
+    "focus": 1579,
+    "editorial_standards": 17
+  },
+  "commerce": {
+    "zen12_email_promotion_rights_verified": false,
+    "total_focus_email_promotion_rights_verified": false,
+    "accepted_affiliate_account_for_both_verified": false,
+    "merchant_link_verified": false,
+    "published_approved_guides": false
+  },
+  "mail_compliance": {
+    "valid_fv_postal_address_verified": false,
+    "actual_received_email_unsubscribe_verified": false,
+    "real_received_jetpack_preview": false
+  },
+  "founder_release_approval": false
+}

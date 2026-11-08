@@ -1,0 +1,13 @@
+FV DISPATCH R68 — ORIGINAL-VS-STACKED PROVENANCE (OFFLINE; NOT AN EMAIL)
+November 2, 2026. Six source files; all six Git blob SHA changed since PR #175.
+The newer stack PR #628 is not founder-approved final copy.
+01 The mind is not a camera — 2,099 → 3,197 characters. Title unchanged; now cites 1998 Simons/Levin.
+02 Before hypnosis had a name — 2,229 → 3,790 characters. Title unchanged; specific 1784 scene added.
+03 The twelve-minute meditation question — 2,516 → 4,254 chars. Title unchanged. Commercial, no email rights/guide.
+04 Fourteen seconds → Seventeen seconds. A much longer explanation. 1,963 → 3,992 chars. NASA documented 17.1-second radio span, NOT continuous speech/fire duration.
+05 Before you press play on a hypnosis audio — 2,494 → 4,119 chars. Title unchanged. Now specifically Total Focus; commercial holds.
+06 What did seven days of attention reveal? — 1,989 → 4,023 chars. Title unchanged; 2002 diary study added.
+Current Jetpack excerpt mode, auto-send off. Two confirmed, two unconfirmed and two total are NONADDITIVE diagnostics; actual eligible audience unknown. Welcome configured, actual receipt unknown. No real Jetpack MIME, unsubscribe or publisher address verified. Merchant-specific EMAIL promotion rights and live buyer guides unavailable.
+RELEASE: ALL SIX HOLD_UNSENT. 03/05 additional HOLD_MERCHANT.
+No drafts replaced, no WordPress write, mail, test mail, list import, merchant contact or tracking activation.
+See manifest.json, editorial-diff.md and delivery-evidence.md. No subscriber PII.

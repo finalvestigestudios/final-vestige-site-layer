@@ -1,0 +1,36 @@
+{
+  "as_of_utc": "2026-11-07T18:39:43Z",
+  "scope": "WordPress read-only aggregates, no subscriber PII",
+  "newsletter": {
+    "enabled": true,
+    "default_email_new_posts": false,
+    "content_format": "full",
+    "sender": "Final Vestige Studios",
+    "reply_to": "no-reply",
+    "fieldbook_welcome_configured": true,
+    "received_welcome_verified": false
+  },
+  "newsletter_diagnostic_counts": {
+    "total": 3,
+    "confirmed": 3,
+    "unconfirmed": 2,
+    "suppressed": 0
+  },
+  "jetpack_stats_followers": {
+    "total": 3,
+    "email_only": 0,
+    "wordpress_com": 3,
+    "comment": 0,
+    "partial": false
+  },
+  "email_eligible_recipients": null,
+  "interpretation": "Stats email_only=0 is not proof none of the three WordPress.com followers receives email. Do not add unconfirmed to totals.",
+  "authoritative_next_step": "Filter Jetpack Newsletter > Subscribers by Email subscription=Subscribed; obtain aggregate; exclude bounced, paused and not-sending without accessing identities.",
+  "founder_final_approval": false,
+  "commercial_email_permission": null,
+  "verified_received_jetpack_footer": null,
+  "merchant_order_verified": null,
+  "qualified_human_sessions": null,
+  "all_six_sends": "HOLD_UNSENT",
+  "commercial_issue_03_05": "HOLD_MERCHANT"
+}

@@ -1,0 +1,80 @@
+{
+  "status": "HOLD_UNSENT_OPTIONAL_ED06",
+  "canonical_six_issues_unchanged": true,
+  "founder_approved_substitution": false,
+  "source_parent_sha": "dd150154139d34c757fb111702c3ef1f180ca136",
+  "kind": "editorial",
+  "original_campaign_commercial_slots": [
+    3,
+    5
+  ],
+  "story_word_count": 727,
+  "subject": "He saw the fire. Then he went back to bed.",
+  "proposed_preheader_not_jetpack_native": "A diary from 1666 shows why seeing, hearing and recording are three different things.",
+  "proposed_custom_excerpt_not_installed": "A fire, a mistaken first impression, and a 1666 witness's diary. What a seven-day focus log can learn from historical evidence.",
+  "primary_cta_url": "https://finalvestige.com/focus/",
+  "primary_cta_wordpress_page_id": 1579,
+  "affiliate_links": 0,
+  "wordpress_post_created": false,
+  "email_sent": false,
+  "actual_jetpack_email_preview": false,
+  "real_received_email": false,
+  "consent_eligible_audience_reconciled": false,
+  "mailing_address_verified": false,
+  "unsubscribe_verified": false,
+  "sources": [
+    {
+      "label": "Pepys diary selections, 2 and 4 September 1666 — The National Archives",
+      "url": "https://www.nationalarchives.gov.uk/education/resources/great-fire-of-london-examine-the-evidence/extracts-from-samuel-pepys-diary/"
+    },
+    {
+      "label": "Evelyn diary selections — The National Archives",
+      "url": "https://www.nationalarchives.gov.uk/education/resources/great-fire-of-london-examine-the-evidence/extracts-from-john-evelyns-diary/"
+    },
+    {
+      "label": "Original shorthand diary artefact — Pepys Library / Great Fire collection",
+      "url": "https://www.fireoflondon.org.uk/browse-the-collection/extract-samuel-pepyss-diary/"
+    },
+    {
+      "label": "Stone et al., BMJ (2002), patient paper-diary timing",
+      "url": "https://www.bmj.com/content/324/7347/1193"
+    },
+    {
+      "label": "NIH NCCIH, Meditation and Mindfulness: Effectiveness and Safety",
+      "url": "https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety"
+    }
+  ],
+  "evidence": [
+    {
+      "claim": "Pepys described waking around 3 a.m., looking at a fire and returning to bed on September 2, 1666",
+      "source": 0,
+      "scope": "historical firsthand diary extract; no claim exact writing hour"
+    },
+    {
+      "claim": "Pepys distinguished material reported by Jane, the Lieutenant and sights observed on the riverside",
+      "source": 0,
+      "scope": "attributed to narrator; reported house loss and origin not independently verified"
+    },
+    {
+      "claim": "John Evelyn recorded the fire from another location",
+      "source": 1,
+      "scope": "second eyewitness perspective; no exact temporal synchronization claim"
+    },
+    {
+      "claim": "Pepys Library holds an original 1666 entry in shorthand",
+      "source": 2,
+      "scope": "artefact record; reproduction image not used because permission required"
+    },
+    {
+      "claim": "Stone et al BMJ 2002 reported 90% vs 11% paper diary compliance in a 30-minute window; 20% for wider window",
+      "source": 3,
+      "scope": "forty paper subjects; 40 electronic; not a meditation trial or population memory falsehood rate"
+    },
+    {
+      "claim": "NCCIH describes a varied body of mindfulness/meditation evidence and potential negative effects",
+      "source": 4,
+      "scope": "does not establish any specific commercial recording or seven-day personal result"
+    }
+  ],
+  "render_model": "STANDALONE_REVIEW_ONLY_NEITHER_GUTENBERG_POST_NOR_RECEIVED_JETPACK_EMAIL"
+}

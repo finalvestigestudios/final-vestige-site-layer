@@ -1,0 +1,71 @@
+{
+  "sprint": "dispatch-r14",
+  "snapshot_utc": "2026-10-31T07:38:31Z",
+  "source_issue": 174,
+  "product_issue": 171,
+  "origin_pr": 175,
+  "parent_pr": 261,
+  "prior_parent_head": "f142e0a2f788ce41e23ca677819c142eab6bac58",
+  "wordpress": {
+    "site_id": 256784396,
+    "dispatch_page_id": 523,
+    "focus_page_id": 1579,
+    "newsletter_enabled": true,
+    "new_post_automatic_sending": false,
+    "email_content_format": "excerpt",
+    "welcome_fieldbook_configured": true,
+    "welcome_received_verified": false,
+    "subscriber_summary": {
+      "total": 2,
+      "confirmed": 2,
+      "unconfirmed": 2,
+      "suppressed": 0
+    },
+    "counts_reconciled": false,
+    "recent_sends": 0
+  },
+  "private_merchant": {
+    "account_acceptance_verified": false,
+    "email_marketing_permission_verified": false,
+    "approved_affiliate_link_verified": false,
+    "approved_creative_verified": false,
+    "price_refund_terms_verified_for_email": false
+  },
+  "editorial": {
+    "issues": 6,
+    "editorial": 4,
+    "commercial": 2,
+    "unpublished_commercial_warmup_routes": 2,
+    "original_issue_copies_modified": false,
+    "send_authorized": false
+  },
+  "browse": {
+    "live_browser_test_performed": false,
+    "live_browser_test_blocker": "environment blocks navigations even to loopback and cannot resolve public hostname",
+    "synthetic_chromium_tests_passed": 8,
+    "synthetic_chromium_tests_failed": 0,
+    "tests_are_not_proof_of_public_signup": true
+  },
+  "hosted_ci_parent": {
+    "run_id": 41177595807,
+    "status": "completed",
+    "conclusion": "failure",
+    "job_id": 124468261871,
+    "job_name": "local-content-safety",
+    "job_logs_status": "404 BlobNotFound",
+    "step_details_visible": false,
+    "specific_failure_diagnosed": false
+  },
+  "compliance": {
+    "valid_fv_business_postal_address_verified": false,
+    "real_received_email_unsubscribe_verified": false,
+    "received_newsletter_mime_verified": false
+  },
+  "all_editions": "HOLD_UNSENT",
+  "issues_03_05": "HOLD_MERCHANT",
+  "no_test_send": true,
+  "no_wordpress_write": true,
+  "no_subscriber_contact": true,
+  "no_affiliate_link_enabled": true,
+  "no_homepage_change": true
+}

@@ -1,0 +1,61 @@
+{
+  "schema": "fv-dispatch-attribution-v1",
+  "status": "ALL_UNSENT_NO_DATA",
+  "operating_model": "Existing Jetpack newsletter only. No new tracking installed. Aggregate-only manual import later, after actual authorized sends.",
+  "editions": [
+    {
+      "issue": "01",
+      "subject": "The mind is not a camera",
+      "kind": "editorial",
+      "state": "HOLD_UNSENT",
+      "guide_url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "merchant_affiliate_url": null,
+      "tracking": "PROPOSED_OFFLINE_NOT_DEPLOYED"
+    },
+    {
+      "issue": "02",
+      "subject": "Before hypnosis had a name",
+      "kind": "editorial",
+      "state": "HOLD_UNSENT",
+      "guide_url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "merchant_affiliate_url": null,
+      "tracking": "PROPOSED_OFFLINE_NOT_DEPLOYED"
+    },
+    {
+      "issue": "03",
+      "subject": "The twelve-minute meditation question",
+      "kind": "commercial_review_pending",
+      "state": "HOLD_UNSENT",
+      "guide_url": null,
+      "merchant_affiliate_url": null,
+      "tracking": "PROPOSED_OFFLINE_NOT_DEPLOYED"
+    },
+    {
+      "issue": "04",
+      "subject": "Seventeen seconds. A much longer explanation.",
+      "kind": "editorial",
+      "state": "HOLD_UNSENT",
+      "guide_url": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/",
+      "merchant_affiliate_url": null,
+      "tracking": "PROPOSED_OFFLINE_NOT_DEPLOYED"
+    },
+    {
+      "issue": "05",
+      "subject": "Before you press play on a hypnosis audio",
+      "kind": "commercial_review_pending",
+      "state": "HOLD_UNSENT",
+      "guide_url": null,
+      "merchant_affiliate_url": null,
+      "tracking": "PROPOSED_OFFLINE_NOT_DEPLOYED"
+    },
+    {
+      "issue": "06",
+      "subject": "What did seven days of attention reveal?",
+      "kind": "editorial",
+      "state": "HOLD_UNSENT",
+      "guide_url": "https://finalvestige.com/focus/",
+      "merchant_affiliate_url": null,
+      "tracking": "PROPOSED_OFFLINE_NOT_DEPLOYED"
+    }
+  ]
+}

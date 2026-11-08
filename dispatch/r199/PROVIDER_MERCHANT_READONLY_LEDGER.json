@@ -1,0 +1,107 @@
+{
+  "version": "r199-2026-11-07",
+  "evidence_level": "READ_ONLY_PROVIDER_AND_PUBLIC_PAGES",
+  "release": "HOLD_UNSENT",
+  "commercial_issue_release": "HOLD_MERCHANT",
+  "date_utc": "2026-11-08",
+  "campaign": {
+    "master_pr": 175,
+    "master_sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+    "readiness_pr": 201,
+    "prior_draft_pr": 1510,
+    "issues": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "editorial": [
+      1,
+      2,
+      4,
+      6
+    ],
+    "commercial": [
+      3,
+      5
+    ],
+    "original_manuscripts_modified": false
+  },
+  "jetpack": {
+    "subscriptions": true,
+    "email_new_posts_by_default": false,
+    "email_content_format": "full",
+    "from_name": "Final Vestige Studios",
+    "reply_to": "no-reply",
+    "subscriber_total": 3,
+    "confirmed_counter": 3,
+    "unconfirmed_requests": 2,
+    "suppressed_counter": 0,
+    "claimed_email_eligible": null,
+    "actual_welcome_receipt": null,
+    "actual_dispatch_mime": null,
+    "newsletter_sends": 0,
+    "as_of": "2026-11-08T02:32:32Z",
+    "source": "connected WordPress newsletter status and get_settings"
+  },
+  "product_review": {
+    "zen12": {
+      "seller_url": "https://zen12.com/hnp",
+      "premium_levels": 12,
+      "mp3_recordings": 48,
+      "styles_per_level": 4,
+      "claimed_meditation_equivalence_verified": false,
+      "advertised_one_year_guarantee": "SELLER_ONLY",
+      "public_price_observations_conflict": true,
+      "checkout_price_verified": false,
+      "observed_public_offer": {
+        "as_of": "2026-11-08T02:35Z",
+        "direct_seller_page_display_usd": 87.99,
+        "older_mind_handoff_display_usd": 87,
+        "source": "https://zen12.com/hnp",
+        "note": "Advertising display, NOT verified checkout/cart price or authorization."
+      }
+    },
+    "total_focus": {
+      "seller_url": "https://hypnosislive.com/mental-skills/total-focus",
+      "seller_duration_minutes": 33,
+      "seller_download_mb": 47,
+      "advertised_refund_days": 14,
+      "seller_product_outcomes_independently_proven": false,
+      "public_price_observations_conflict": true,
+      "checkout_price_verified": false,
+      "observed_public_offer": {
+        "as_of": "2026-11-08T02:35Z",
+        "direct_seller_page_display_usd": 24.44,
+        "search_index_display_usd": 17.95,
+        "source": "https://hypnosislive.com/mental-skills/total-focus",
+        "note": "Different public source snapshots, neither verified cart/checkout price."
+      }
+    }
+  },
+  "merchant": {
+    "named_fv_affiliate_approval": false,
+    "email_channel_permission": false,
+    "approved_creative": false,
+    "issued_earning_url": false,
+    "checkout_and_refund_validated": false,
+    "guide_live_and_approved": false
+  },
+  "compliance": {
+    "business_postal_address_verifiably_rendered": false,
+    "real_received_email_footer": false,
+    "unsubscribe_functionally_verified": false,
+    "founder_final_campaign_approval": false
+  },
+  "analytics": {
+    "confirmed_signup_authoritatively_observed": false,
+    "verified_paid_orders": null,
+    "settled_refunds_fees_reconciled": false,
+    "qualified_human_sessions": null,
+    "net_per_1000_qhs": null
+  },
+  "privacy": "Do not add or export email addresses, recipient hashes, unsubscribe tokens or real provider IDs into GitHub.",
+  "no_live_changes": true
+}

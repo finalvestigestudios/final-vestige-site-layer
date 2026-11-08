@@ -1,0 +1,89 @@
+{
+  "schema": 1,
+  "review_date_utc": "2026-11-02",
+  "evidence_scope": "Read-only official public seller webpages and FTC/WordPress guidance; no affiliate account access or authenticated checkout",
+  "site": "https://finalvestige.com",
+  "publisher_email_rights_verified": false,
+  "affiliate_landing": "https://affiliates.inspire3.com/",
+  "affiliate_landing_finding": "Public recruitment names Zen12 among the operator's brands and advertises a program; this is NOT evidence that Final Vestige was admitted or granted named-product email rights.",
+  "external_references": {
+    "ftc_primary_purpose": "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business",
+    "ftc_endorsements": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "ftc_health_products": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+    "wordpress_excerpt": "https://wordpress.com/support/newsletter-settings/",
+    "wordpress_preview": "https://wordpress.com/support/newsletter/email-appearance/",
+    "wordpress_recipients": "https://wordpress.com/support/subscribers/"
+  },
+  "products": {
+    "Zen12": {
+      "official_page": "https://zen12.com/hnp",
+      "official_checkout_candidate": "https://zen12.com/getstarted",
+      "official_seller_descriptors": [
+        "Seller describes 12-minute downloadable audio practice",
+        "Twelve progressive levels are advertised",
+        "Four listening styles are advertised",
+        "Seller advertises a 48-MP3 full-library configuration"
+      ],
+      "vendor_only_claims_not_independently_proven_for_this_sku": [
+        "A 12-minute session has effects equivalent to one hour of advanced meditation",
+        "Audio pulses automatically create deep meditation",
+        "Brainwave entrainment yields claimed health and cognitive benefits"
+      ],
+      "current_price_for_dispatch_copy": null,
+      "checkout_coupon_geography_personalization_verified": false,
+      "final_checkout_verified": false,
+      "refund_applies_to_current_cart_verified": false,
+      "public_refund_appearance": "Seller page displays a one-year money-back representation. Eligibility and actual current cart terms require confirmation.",
+      "final_vestige_accepted": false,
+      "specific_email_channel_permission": false,
+      "approved_earning_url": false,
+      "approved_creative_rights": false,
+      "approved_live_first_party_guide": false,
+      "permitted_reader_claims": [
+        "The seller offers short audio sessions and describes several listening styles; neither product-specific equivalence nor results are established as independently proven."
+      ],
+      "tracked_affiliate_link": null,
+      "readiness": "HOLD_MERCHANT"
+    },
+    "Total Focus": {
+      "official_page": "https://hypnosislive.com/mental-skills/total-focus",
+      "official_seller_descriptors": [
+        "The seller describes an MP3 self-hypnosis session",
+        "The public page states 33 minutes and 47 MB",
+        "The page credits J.A. Amos as writer/recorder"
+      ],
+      "vendor_only_claims_not_independently_proven_for_this_sku": [
+        "Audio will reprogram the brain",
+        "Concentration gains are guaranteed or on demand",
+        "Product reliably improves productivity or career results"
+      ],
+      "conflicting_public_page_observations": [
+        "2026-11-02 direct open displayed an advertised $2 with crossed-out $29.95",
+        "An independently indexed cached result displayed $17.95 against $22.95; capture age was older and not the same live checkout"
+      ],
+      "price_note": "Do NOT claim an A/B test, active universal discount, personalized pricing or checkout amount based on these two captures. Public pricing is insufficiently stable as an email claim.",
+      "current_price_for_dispatch_copy": null,
+      "final_checkout_verified": false,
+      "refund_applies_to_current_cart_verified": false,
+      "public_refund_appearance": "Seller's page displays a 14-day refund representation; no completed checkout terms verified.",
+      "final_vestige_accepted": false,
+      "specific_email_channel_permission": false,
+      "approved_earning_url": false,
+      "approved_creative_rights": false,
+      "approved_live_first_party_guide": false,
+      "tracked_affiliate_link": null,
+      "readiness": "HOLD_MERCHANT"
+    }
+  },
+  "audit_guards": {
+    "reported_unique_eligible_subscribers": null,
+    "old_2_2_2_diagnostic": "total 2, confirmed 2, unconfirmed 2; do not add counts or infer eligible audience",
+    "do_not_send": true,
+    "do_not_schedule": true,
+    "do_not_publish": true,
+    "do_not_activate_commercial_links": true,
+    "no_legal_certification": true,
+    "fee_or_platform_authorized": false,
+    "first_party_destination_requires_live_and_approved": true
+  }
+}

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive"><title>Dispatch / MIME integrity / reviewer-only</title>
+<style>
+:root{color-scheme:dark}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#090b0b;color:#f4efe6;font:16px/1.65 system-ui,-apple-system,Segoe UI,sans-serif}main{max-width:1100px;margin:auto;padding:clamp(22px,5vw,62px) clamp(16px,4vw,42px) 82px}
+.kicker{color:#d9b57b;letter-spacing:.18em;font-weight:700;text-transform:uppercase;font-size:12px}.hero{border-bottom:1px solid #514b40;padding-bottom:32px}h1{font:400 clamp(35px,5vw,67px)/1.09 Georgia,serif;letter-spacing:-.025em;max-width:18ch;margin:12px 0}h2{font:400 29px/1.18 Georgia,serif;margin:0 0 12px}h3{font-size:17px;letter-spacing:.02em;margin:0 0 9px}p{color:#d8d2c7;max-width:75ch}.pill{display:inline-block;background:#48321d;color:#ffe4b2;border:1px solid #ca9e61;border-radius:99px;font-size:12px;font-weight:700;letter-spacing:.08em;padding:7px 13px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}.panel{min-width:0;background:#151716;border:1px solid #47433c;padding:25px;border-radius:3px}.bad{border-left:4px solid #d19775}.good{border-left:4px solid #c2d5ac}.label{font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:#d9b57b;font-weight:700;margin:0 0 10px}.example{background:#090b0b;border:1px solid #3b3a37;padding:17px;font:14px/1.7 ui-monospace,Consolas,monospace;overflow-wrap:anywhere;white-space:pre-wrap}.note{font-size:14px;color:#b8b0a2}.row{margin-top:42px}.result{font-weight:700;color:#f0c591}.strong{color:#e4eeca}.gates{margin-top:45px;padding:24px;border:1px solid #aa8053;background:#261e17}.gates h2{color:#ffe0ad}ul{padding-left:1.4em}li{margin:.6em 0;color:#d8d2c7}footer{border-top:1px solid #514b40;margin-top:56px;padding-top:18px;font-size:13px;color:#bdb5a8}a{color:#e9c895;text-decoration-thickness:1px;text-underline-offset:3px}:focus-visible{outline:3px solid #ffe099;outline-offset:4px}
+@media(max-width:720px){.grid{grid-template-columns:1fr}.panel{padding:19px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style></head><body><main>
+<header class="hero"><p class="kicker">Final Vestige Studios / The Dispatch / independent QA</p>
+<h1>What the other email actually says.</h1>
+<p>A plaintext body can carry a disclosure, a mailing address, and an unsubscribe link while the HTML rendition silently omits them. The earlier inspector could report a reassuring result anyway. R73 fixes that blind spot.</p>
+<span class="pill">SYNTHETIC REVIEW · HOLD_UNSENT · NO EMAIL SENT</span></header>
+<section class="row" aria-labelledby="one"><h2 id="one">01 / An unrelated link is not an unsubscribe.</h2><div class="grid">
+<div class="panel bad"><p class="label">False positive in older inspector</p><div class="example">Unsubscribe anytime.
+Read the full investigation:
+https://finalvestige.com/focus/</div><p class="note">The word “unsubscribe” and a separate HTTPS link were previously sufficient to claim a possible plaintext opt-out.</p></div>
+<div class="panel good"><p class="label">R73 corrected interpretation</p><p class="result">No labeled plaintext opt-out destination detected.</p><div class="example">Unsubscribe: https://unsubscribe.example.invalid/u/SYNTHETIC_ONLY</div><p class="note">The second block only illustrates linked syntax. It is not a real unsubscribe endpoint or proof the mechanism functions.</p></div></div></section>
+<section class="row" aria-labelledby="two"><h2 id="two">02 / Two renditions, one missing address.</h2><div class="grid"><div class="panel"><p class="label">Plaintext MIME alternative</p><div class="example">Research first.
+P.O. Box 123, Example City, CA 90000
+Unsubscribe: https://unsubscribe.example.invalid/u/SYNTHETIC_ONLY</div><p class="note">The illustrative postal address is fictional. It is NOT Final Vestige's verified mailing address.</p></div>
+<div class="panel bad"><p class="label">HTML MIME alternative</p><div class="example">&lt;main&gt;
+  &lt;p&gt;Research first.&lt;/p&gt;
+  &lt;a&gt;Unsubscribe&lt;/a&gt;
+&lt;/main&gt;</div><p class="result">HOLD: Publisher address missing in HTML rendition.</p><p class="note">The parser must not combine fragments of two different alternatives to construct imaginary compliance.</p></div></div></section>
+<section class="row" aria-labelledby="three"><h2 id="three">03 / A commercial disclosure must survive the format switch.</h2><div class="grid"><div class="panel"><p class="label">Plaintext candidate</p><div class="example">Potential recommendation: Zen12.
+Final Vestige may receive a commission
+from an optional qualifying purchase.
+No active earning link.</div><p class="note">This illustrative text is not approved merchant promotional material.</p></div>
+<div class="panel bad"><p class="label">HTML candidate — missing key sentence</p><div class="example">&lt;p&gt;Zen12 is a twelve-minute audio
+product.&lt;/p&gt;
+&lt;p&gt;Continue to the review.&lt;/p&gt;</div><p class="result">HOLD: Commission disclosure missing early in HTML.</p><p class="note">Even if the plaintext alternative passes, HTML-first recipients might never see a disclosure. Both versions require editorial review.</p></div></div></section>
+<section class="row" aria-labelledby="four"><h2 id="four">04 / A one-click header is not a functioning one-click unsubscribe.</h2><div class="grid"><div class="panel bad"><p class="label">Unsupported claim</p><div class="example">List-Unsubscribe-Post:
+  List-Unsubscribe=One-Click
+
+List-Unsubscribe:
+  &lt;mailto:remove@example.invalid&gt;</div><p class="result">No HTTPS one-click destination accompanies this declaration.</p></div>
+<div class="panel good"><p class="label">Better syntax, still not verified</p><div class="example">List-Unsubscribe:
+  &lt;https://unsubscribe.example.invalid/u/SYNTHETIC_ONLY&gt;
+List-Unsubscribe-Post:
+  List-Unsubscribe=One-Click</div><p class="note">Even this syntactic candidate requires separate authorized functional verification. A static reviewer cannot make that assertion.</p></div></div></section>
+<section class="gates" aria-labelledby="five"><h2 id="five">Production gates do not move.</h2>
+<ul><li>All six issues are <strong>HOLD_UNSENT</strong>; issues 03/05 additionally <strong>HOLD_MERCHANT</strong>.</li><li>The site's Jetpack newsletter remains in excerpt mode; no post, setting, recipient or welcome was touched.</li><li>A genuinely received Jetpack message, publisher-owned qualified postal address and tested unsubscribe remain absent.</li><li>Commercial guides and product-specific email authorization remain unapproved; none of these examples is an earning link.</li><li>R73 catches syntactic mismatches. It cannot establish legal sufficiency, product efficacy, subscriber consent or actual delivery.</li></ul></section>
+<footer><p>Reviewer-only evidence. All example addresses and tokens above are deliberately fabricated; no subscriber data or mail is present. Based on authenticated WordPress read-only checks on November 2, 2026. See <code>INTEGRITY_AUDIT_AND_RELEASE_HANDOFF.md</code> and original draft PR #175 / issue #174 for source history.</p></footer></main></body></html>

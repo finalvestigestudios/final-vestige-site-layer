@@ -1,0 +1,93 @@
+{
+  "schema": "fv.dispatch.release-proof.r205",
+  "as_of_utc": "2026-11-08T08:39:38Z",
+  "repository_issue": 174,
+  "master_pr": 175,
+  "master_head": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "readiness_pr": 201,
+  "previous_pr": 1550,
+  "mode": "DRAFT_NOT_APPROVED",
+  "counts": {
+    "jetpack_total": 3,
+    "jetpack_confirmed_counter": 3,
+    "jetpack_unconfirmed_counter": 2,
+    "stats_wpcom": 3,
+    "stats_email_only": 0,
+    "eligible_subscriber_count": null,
+    "nonadditive": true
+  },
+  "jetpack": {
+    "subscriptions_enabled": true,
+    "auto_new_post_send": false,
+    "send_count_verified_campaign": 0,
+    "email_format": "full",
+    "welcome_message_configured": true,
+    "received_welcome_verified": false,
+    "received_commercial_email_verified": false,
+    "valid_publisher_physical_address_verified": false,
+    "functional_unsubscribe_verified": false
+  },
+  "proofs": {
+    "explicit_final_founder_approval": false,
+    "recipients_confirmed_provider_eligible": false,
+    "channel_email_affiliate_permission": false,
+    "partner_acceptance_named": false,
+    "issued_earning_url": false,
+    "merchant_current_price_checkout_verified": false,
+    "merchant_refund_checkout_verified": false,
+    "approved_live_zen12_guide": false,
+    "approved_live_total_focus_guide": false,
+    "product_effectiveness_independently_proven": false,
+    "merchant_paid_conversion_reconciled": false,
+    "qualified_human_session_denominator": false
+  },
+  "issues": [
+    {
+      "id": "01",
+      "category": "editorial",
+      "cta": "existing_history_article",
+      "hold": "HOLD_UNSENT"
+    },
+    {
+      "id": "02",
+      "category": "editorial",
+      "cta": "existing_history_article",
+      "hold": "HOLD_UNSENT"
+    },
+    {
+      "id": "03",
+      "category": "commercial",
+      "offer": "Zen12 Premium",
+      "cta": "unpublished_mind_guide",
+      "hold": "HOLD_MERCHANT_AND_SEND"
+    },
+    {
+      "id": "04",
+      "category": "editorial",
+      "cta": "existing_history_article",
+      "hold": "HOLD_UNSENT"
+    },
+    {
+      "id": "05",
+      "category": "commercial",
+      "offer": "Hypnosis Live Total Focus",
+      "cta": "unpublished_mind_guide",
+      "hold": "HOLD_MERCHANT_AND_SEND"
+    },
+    {
+      "id": "06",
+      "category": "editorial",
+      "cta": "focus_signup_in_master",
+      "proposed_fix": "published_change_blindness_investigation",
+      "hold": "HOLD_UNSENT"
+    }
+  ],
+  "merchant_sources": {
+    "zen12": "https://zen12.com/hnp",
+    "total_focus": "https://hypnosislive.com/mental-skills/total-focus",
+    "total_focus_faq": "https://hypnosislive.com/faq",
+    "inspire3": "https://affiliates.inspire3.com/"
+  },
+  "source_status": "READ_ONLY_SNAPSHOTS_NOT_SEND_ELIGIBILITY",
+  "conversion_kpi": "NOT_COMPUTABLE"
+}

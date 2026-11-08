@@ -1,0 +1,29 @@
+# Evidence-based seller-destination friction audit — 2026-11-08 (READ-ONLY)
+
+## Primary offer: Zen12 — merchant path ≠ Final Vestige subscriber or sale
+Official product page inspected: https://zen12.com/hnp (public, November 8 2026). Seller describes **12 levels**, **4 recording styles per level**, **48 Premium MP3s**, approximately 12-minute sessions, and a one-year money-back guarantee. The public Premium display was $87.99 in this read; older seller retrievals yielded $87. **Neither is a verified charged checkout price, rebate, or permitted affiliate claim.** Omit prices from emails until checkout + affiliate permissions are verified. Seller's 'hour of meditation in twelve minutes', assured mental benefits, brain reprogramming / entrainment equivalence, and medical-style claims are promotional representations; no independent product-specific trial was verified. Do not launder general meditation evidence into product effectiveness.
+
+**New conversion-risk finding:** Later on this very product page the seller includes a 'free Zen12 MP3' offer asking for first name and email and stating 'You will receive our newsletter' (see lower-page Free Zen12 Audio section). This is a **merchant-controlled list**. When a Final Vestige reader reaches it, they may leave the FV warm-up journey and become a merchant subscriber instead, even without a paid purchase. Never double-count that as FV newsletter consent. No clicks, registrations, sales, redirects or commissions have been observed. Mind owner must record the account-issued tracking behavior and permitted entry route; do NOT remove seller disclosures or imply redirect ownership. Compare approved checkout vs popup destination once authorization exists, without activating links now.
+
+**Message/objection map, usable in Issue 03 only after approval:**
+- Reader motivation: a short, repeatable practice, not a promise of instant brain upgrades.
+- Describable product: 12 progressive levels / four styles / 48 Premium MP3 files as advertised by seller.
+- Legitimate objection: what do the audio files contain, can I download/use them, what are current refunds, and is this more useful than free alternatives?
+- What we cannot promise: proof the branded product equals an hour of meditation, reduces diagnosed stress, boosts memory, or outperforms free self-guided practice.
+- Ethical bridge: 'We reviewed the seller's formats and separated claims from evidence. See the independent guide before deciding whether to buy.' Pair with near-CTA disclosure if/when a qualifying FV affiliate link is approved.
+- CTA destination: LIVE, final Mind-owned source-vetted guide ONLY after CMS + merchant EMAIL rights + tracking link; current inactive placeholder in original canonical issue remains untouched.
+
+## Secondary reserved commercial slot: Total Focus
+Specific official page: https://hypnosislive.com/mental-skills/total-focus (November 8). Seller describes a **33-minute, 47 MB** MP3, public display **$24.44** and separate bundle pricing. Format is verifiable as a seller description; promised 'limitless' concentration and workplace results are NOT independently established. Official FAQ: https://hypnosislive.com/faq -> refund request within 14 days, *maximum of five sessions refunded per year*, separate processing time. The merchant offers an additional bundle/cart path; an initial product-page 'Add to Cart' is not a confirmed paid order. Do not call the advertised discount a real saving without verifying a prior price/checkout and other offers.
+
+**Message/objection map, Issue 05:** 'What is actually delivered? A downloadable 33-minute MP3 according to seller. What would success mean? Do not claim tested efficacy. What does a refund cover? Fourteen-day request window, five refunded sessions per year according to FAQ; current complete checkout and policy unknown.' If no merchant EMAIL channel approval or LIVE vetted guide, do not include a merchant CTA or sender-side sales language.
+
+## Program vs publisher permission
+Generic portal https://affiliates.inspire3.com/ advertises affiliates using a **special assigned link**, commissions and monthly payments, but proves NOTHING about a Final Vestige account, email channel rights, issued URL, allowed creative or actual commission. Targeted connected Gmail queries in this run found zero matching named approval/welcome messages for the bounded expressions searched. Absence in one mailbox is not evidence none exists in a partner dashboard. Treat all as UNVERIFIED.
+
+## Highest-conversion route
+Social Grok asset with verified real posted URL/asset_id -> appropriate *live historical investigation* -> optional same existing /focus/ opt-in -> authoritative confirmed Jetpack subscription (one list) -> existing Fieldbook welcome confirmed as delivered -> research-grounded editorial sequence -> one vetted source-backed Zen12 buyer guide -> explicit, adjacent commission disclosure -> approved account-issued link -> merchant independently reconciled paid order/cleared commission -> refunds, fees -> realized net per 1,000 qualified human sessions. A link click or seller newsletter form is NOT a sale.
+
+Do not infer a causal sales effect from tiny list counts. Existing WP provider counters 3/3/2 are nonadditive. Segmentation is a *hypothesis*, not a behavioral or health label. If a real high-intent audience is not observed, keep commercial slots on hold rather than manufacture urgency.
+
+Source confidence: public page/FAQ assertions = READ on seller pages; merchant verification of account-specific permission = MISSING; final receipt/delivery = MISSING; gross/net revenue and channel attribution = MISSING. Additional policy: FTC https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business ; https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking .

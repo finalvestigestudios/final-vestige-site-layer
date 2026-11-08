@@ -1,0 +1,105 @@
+{
+  "run": "R131",
+  "checked_utc": "2026-11-05T06:30:50Z",
+  "original_master_sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "original_manifest_blob_sha": "86df98ad8a84e583ff5df64ddbf8c0eaa1335b00",
+  "current_stacked_parent_sha": "cfe1edf1772b4e4c11a428ab8c9ea196ae55ddbf",
+  "wordpress_email_format": "excerpt",
+  "wordpress_new_post_auto_send": false,
+  "observed_subscribers_nonadditive": {
+    "total": 3,
+    "confirmed": 3,
+    "unconfirmed": 2,
+    "email_eligible": null
+  },
+  "observed_welcome_configured": true,
+  "actual_received_email_verified": false,
+  "email_rendering_model": "estimated first 55 words and first 350 characters, from official docs, not Jetpack",
+  "source_docs": [
+    "https://wordpress.com/support/newsletter-settings/",
+    "https://jetpack.com/support/newsletter/customize-the-newsletter-experience/",
+    "https://wordpress.com/support/newsletter/email-appearance/"
+  ],
+  "source_note": "Tested current original master Markdown, not WordPress draft posts or mail. Custom post excerpts and actual native email may differ. These are approximations, not evidence of mail delivery.",
+  "issue_results": [
+    {
+      "number": 1,
+      "kind": "editorial",
+      "git_blob_sha": "039b452b5cb7cd6dc2fed6fac4d2dd77fa9d49c8",
+      "target_found": true,
+      "cta_in_55_word_model": false,
+      "cta_in_350_char_model": false,
+      "disclosure_in_55_word_model": null,
+      "disclosure_in_350_char_model": null,
+      "guide_inert": false,
+      "original_word_count": 207
+    },
+    {
+      "number": 2,
+      "kind": "editorial",
+      "git_blob_sha": "faa207ab7deafd86460d36f8c17fe62d392d0e14",
+      "target_found": true,
+      "cta_in_55_word_model": false,
+      "cta_in_350_char_model": false,
+      "disclosure_in_55_word_model": null,
+      "disclosure_in_350_char_model": null,
+      "guide_inert": false,
+      "original_word_count": 220
+    },
+    {
+      "number": 3,
+      "kind": "commercial-review-pending",
+      "git_blob_sha": "aeeef34efea0cc281f69901488e4501fea851245",
+      "target_found": true,
+      "cta_in_55_word_model": false,
+      "cta_in_350_char_model": false,
+      "disclosure_in_55_word_model": false,
+      "disclosure_in_350_char_model": false,
+      "guide_inert": true,
+      "original_word_count": 278
+    },
+    {
+      "number": 4,
+      "kind": "editorial",
+      "git_blob_sha": "89635bfb9c8d1ff17297a59b6b5b5b2a176934ca",
+      "target_found": true,
+      "cta_in_55_word_model": false,
+      "cta_in_350_char_model": false,
+      "disclosure_in_55_word_model": null,
+      "disclosure_in_350_char_model": null,
+      "guide_inert": false,
+      "original_word_count": 176
+    },
+    {
+      "number": 5,
+      "kind": "commercial-review-pending",
+      "git_blob_sha": "a9dfaa450ba025a7b5113ade8a294d6dbad778dc",
+      "target_found": true,
+      "cta_in_55_word_model": false,
+      "cta_in_350_char_model": false,
+      "disclosure_in_55_word_model": false,
+      "disclosure_in_350_char_model": false,
+      "guide_inert": true,
+      "original_word_count": 245
+    },
+    {
+      "number": 6,
+      "kind": "editorial",
+      "git_blob_sha": "004d558df6376d2ad6f4f79a4581e8d2c444e355",
+      "target_found": true,
+      "cta_in_55_word_model": false,
+      "cta_in_350_char_model": false,
+      "disclosure_in_55_word_model": null,
+      "disclosure_in_350_char_model": null,
+      "guide_inert": false,
+      "original_word_count": 202
+    }
+  ],
+  "summary": {
+    "cta_missing_in_both_models": 6,
+    "commercial_disclosure_missing_in_both_models": 2,
+    "release": "HOLD_ALL_UNSENT",
+    "commercial_extra_hold": "HOLD_MERCHANT",
+    "net_revenue_per_1000_qualified_sessions": "NOT_COMPUTABLE"
+  }
+}

@@ -1,0 +1,35 @@
+'use strict';
+const assert=require('node:assert/strict');
+const fs=require('node:fs');
+const path=require('node:path');
+const {audit,wordCount}=require('./guard.cjs');
+const fixture=JSON.parse(fs.readFileSync(path.join(__dirname,'excerpt_candidates.json'),'utf8'));
+const clone=x=>JSON.parse(JSON.stringify(x));
+let n=0;
+function test(label, f) { f();n++;process.stdout.write('PASS '+n+' '+label+'\n'); }
+function mutate(f) { const x=clone(fixture);f(x);return audit(x); }
+test('six original slots accepted in HOLD only',()=>{const r=audit(fixture);assert.equal(r.ok,true,r.failures.join('; '));assert.equal(r.send_ready,false)});
+test('4:2 original editorial/commercial allocation',()=>assert.deepEqual(fixture.issues.filter(x=>x.kind==='commercial-review-pending').map(x=>x.number),[3,5]));
+test('each proposed excerpt <=300 characters',()=>assert.equal(fixture.issues.every(x=>x.excerpt.length<=300),true));
+test('each proposed excerpt <=55 words',()=>assert.equal(fixture.issues.every(x=>wordCount(x.excerpt)<=55),true));
+test('all six proposed action texts visible',()=>assert.equal(fixture.issues.every(x=>x.excerpt.toLowerCase().includes(x.primary_action.toLowerCase())),true));
+test('two commercial excerpts disclose prospectively',()=>assert.equal(fixture.issues.filter(x=>x.commercial_disclosure).length,2));
+test('commercial guides have null links',()=>assert.equal(fixture.issues.filter(x=>x.commercial_disclosure).every(x=>x.source_url===null),true));
+test('render proof is explicitly false',()=>assert.equal(fixture.native_render_proven,false));
+test('paid conversions are not attested',()=>assert.equal(audit(fixture).monetization_verified,false));
+test('reject simulated founder authorization',()=>assert.equal(mutate(x=>x.founder_final_approval=true).ok,false));
+test('reject asserted native inbox render',()=>assert.equal(mutate(x=>x.native_render_proven=true).ok,false));
+test('reject affiliate approval assertion',()=>assert.equal(mutate(x=>x.merchant_approved=true).ok,false));
+test('reject claimed email-promotion rights',()=>assert.equal(mutate(x=>x.partner_email_permission_verified=true).ok,false));
+test('reject fabricated reachable subscriber count',()=>assert.equal(mutate(x=>x.recipient_eligible_count=3).ok,false));
+test('reject activated commercial guide',()=>assert.equal(mutate(x=>x.issues[2].source_url='https://zen12.com/').ok,false));
+test('reject hidden commercial disclosure',()=>assert.equal(mutate(x=>x.issues[4].excerpt=x.issues[4].excerpt.replace(x.issues[4].commercial_disclosure,'')).ok,false));
+test('reject invalid 4:2 allocation',()=>assert.equal(mutate(x=>x.issues[3].kind='commercial-review-pending').ok,false));
+test('reject CTA absent from excerpt',()=>assert.equal(mutate(x=>x.issues[0].primary_action='Buy now').ok,false));
+test('reject long custom excerpt',()=>assert.equal(mutate(x=>x.issues[0].excerpt+=' More words.'.repeat(100)).ok,false));
+test('reject direct merchant URL in excerpt',()=>assert.equal(mutate(x=>x.issues[2].excerpt+=' https://zen12.com/').ok,false));
+test('reject fake earnings assurance',()=>assert.equal(mutate(x=>x.issues[2].excerpt='Clinically proven results. '+x.issues[2].excerpt).ok,false));
+test('reject missing physical-address proof',()=>assert.equal(mutate(x=>x.valid_fv_postal_address_verified=true).ok,false));
+test('reject missing unsubscribe proof',()=>assert.equal(mutate(x=>x.unsubscribe_render_verified=true).ok,false));
+test('reject draft status upgrade',()=>assert.equal(mutate(x=>x.status='READY_TO_SEND').ok,false));
+process.stdout.write('PASS: '+n+' offline structural tests; NO native Jetpack preview, email or purchase evidence.\n');

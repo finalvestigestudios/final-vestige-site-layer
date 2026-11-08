@@ -1,0 +1,37 @@
+FINAL VESTIGE STUDIOS — DISPATCH R84 / ISSUE 01 ROUTE REVIEW
+HOLD_UNSENT · REVIEW ONLY · NOT A REAL JETPACK EMAIL
+
+NEW AUTHENTICATED LIVE POST
+WordPress post #1922, publish: Change Blindness: Why You Miss Big Changes Right in Front of You
+https://finalvestige.com/2026/11/02/change-blindness/
+The post covers the Simons/Levin study with scholarly sources and an original interactive flicker illustration (not the original experiment).
+This is a browser demonstration. It does not work inside an excerpt email.
+Post #1922 was listed as never_sent_opted_out; that status is limited to this post.
+
+CTA ALTERNATIVES — DO NOT ALTER THE ORIGINAL WITHOUT APPROVAL
+Master PR #175 / photo provenance angle -> The Missing Caption (published)
+https://finalvestige.com/the-missing-caption/
+Optional R80 / 1998 door-swap angle -> Puysegur files (published)
+https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/
+Optional R84 / same 1998 door-swap angle -> Change Blindness post (published)
+https://finalvestige.com/2026/11/02/change-blindness/
+Recommend the R84 route only IF founder selects the R80 topic angle.
+
+OPTIONAL SUBJECT: The person changed. The conversation went on.
+PLANNING PREHEADER (UNVERIFIED AS A NATIVE JETPACK FEATURE):
+In a 1998 field experiment, an unnoticed substitution exposed a gap in what we register.
+PROPOSED EXCERPT — NOT SET IN WORDPRESS:
+In a 1998 field experiment, people were asked for directions, briefly interrupted by a moving door, and sometimes missed a change of speaker. That finding is not a verdict on all eyewitnesses. Our newly published evidence guide explains the result and includes an original demonstration you can try.
+
+A stranger asks for directions; workers carry a door through your conversation; afterward the questioner is another person. Simons and Levin's 1998 first experiment reported about half detected the substitution. It does NOT establish a general rate of eyewitness failure.
+Try a no-cost personal observation exercise: list five objects in a room before entering and then check. This is not a validated scientific test.
+One primary CTA: Explore the change-blindness evidence and demo
+https://finalvestige.com/2026/11/02/change-blindness/
+Primary scholarly source: https://doi.org/10.3758/BF03208840
+
+CAMPAIGN: 01/02/04/06 editorial; 03/05 commercial reserved, both HOLD_MERCHANT.
+All six HOLD_UNSENT. No real email, WordPress draft, preview or test send has occurred.
+No Final Vestige postal address, real delivered unsubscribe, proven eligible list, received MIME, welcome receipt, merchant email permission or founder final send authorization.
+WordPress newsletter ON; new-post auto-email OFF; excerpt mode; actual eligible count UNKNOWN.
+No merchant link, price, promise, synthetic email analytics, subscriber identity or tracking in this reviewer.
+Read https://github.com/finalvestigestudios/final-vestige-site-layer/issues/174

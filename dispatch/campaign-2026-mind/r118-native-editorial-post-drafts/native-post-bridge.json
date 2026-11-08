@@ -1,0 +1,258 @@
+{
+  "version": "2026-11-04-R118-native-editorial-post-bridge-v1",
+  "master_pr": 175,
+  "master_commit": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "parent_pr": 962,
+  "parent_commit": "39f00a8701ac22903188e4831e6623c81b724e86",
+  "readonly_published_site_checks": "Newsletter enabled; automatic new-post send OFF; excerpt format; five latest post notifications opted out",
+  "wordpress_site_blog_id": 256784396,
+  "observed_subscribers": {
+    "reported_total": 2,
+    "confirmed": 2,
+    "unconfirmed": 2,
+    "verified_email_reachable": null
+  },
+  "welcome": {
+    "configured": true,
+    "delivered_to_inbox": "NOT_VERIFIED"
+  },
+  "fieldbook": {
+    "media_id": 1737,
+    "mime_type": "application/pdf",
+    "registered_file_size_bytes": 599946,
+    "source_url": "https://finalvestige.com/wp-content/uploads/2026/10/Final_Vestige_Seven_Day_Focus_Fieldbook_Complete_Edition.pdf",
+    "public_download_verified": false,
+    "page_count_independently_verified": false
+  },
+  "transport": {
+    "no_sends": true,
+    "no_wordpress_writes": true,
+    "no_draft_posts_created": true,
+    "no_merchant_links_activated": true,
+    "source_attribution_unknown": true
+  },
+  "publisher_postal_address_verified": false,
+  "unsubscribe_operational_verified": false,
+  "merchant_email_permission_verified": false,
+  "realized_revenue": null,
+  "net_revenue_per_1000_qualified_human_sessions": null,
+  "mix": {
+    "editorial": 4,
+    "commercial_reserved": 2
+  },
+  "issues": [
+    {
+      "edition": 1,
+      "allocation": "editorial",
+      "original_subject": "The mind is not a camera",
+      "post_title_candidate": "The mind is not a camera",
+      "original_preheader_candidate": "What an old record can teach us about the difference between seeing and knowing.",
+      "excerpt": "A witness can be sincere and still miss a crucial detail. In this Dispatch, we use a documented historical account to ask what seeing can—and cannot—prove. Follow the source trail, not a neat conclusion.",
+      "source_path": "dispatch/campaign-2026-mind/issues/01-the-mind-is-not-a-camera.md",
+      "source_blob_sha": "039b452b5cb7cd6dc2fed6fac4d2dd77fa9d49c8",
+      "master_commit": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+      "release": "HOLD_UNSENT",
+      "merchant_release": null,
+      "wordpress_state": "NOT_CREATED",
+      "native_email_preview": "NOT_VERIFIED",
+      "received_email": "NOT_VERIFIED",
+      "legal_postal_and_opt_out": "NOT_VERIFIED",
+      "email_approval": "NOT_VERIFIED",
+      "verified_paid_orders": null,
+      "blocked": [
+        "founder_send_approval",
+        "native_jetpack_email_preview",
+        "received_email_and_unsubscribe",
+        "publisher_postal_address"
+      ],
+      "draft_candidate": {
+        "post_status": "draft",
+        "send_subscription": false,
+        "not_wordpress_api_ready": true,
+        "post_title": "The mind is not a camera",
+        "custom_excerpt": "A witness can be sincere and still miss a crucial detail. In this Dispatch, we use a documented historical account to ask what seeing can—and cannot—prove. Follow the source trail, not a neat conclusion.",
+        "gutenberg_content": "<!-- wp:paragraph --><p>Before we investigate an old photograph, we ask a simple question: what does the photograph actually show?</p><!-- /wp:paragraph -->\n\n<!-- wp:paragraph --><p>It's a useful question for the mind, too.</p><!-- /wp:paragraph -->\n\n<!-- wp:paragraph --><p>We tend to trust the feeling of having seen something. But the impression in our memory is not the same thing as a complete record. Context, expectation and attention all matter. That doesn't make an experience worthless. It makes the explanation worth examining.</p><!-- /wp:paragraph -->\n\n<!-- wp:paragraph --><p>At Final Vestige, we usually begin with a physical trace: a map, a letter, an official report. This new series follows the same method into a less tangible archive—the history of perception and suggestion.</p><!-- /wp:paragraph -->\n\n<!-- wp:paragraph --><p>Our first stop is the eighteenth-century files surrounding the Marquis de Puységur. They capture descriptions of unusual states, confident claims and witnesses attempting to understand what they saw. The extraordinary part isn't that every claim must be true; it's that the documentary record lets us follow how people reached their conclusions.</p><!-- /wp:paragraph -->\n\n<!-- wp:paragraph --><p><strong>A question to carry with you this week:</strong> When you describe something surprising, can you separate the event you observed from the explanation you attached to it?</p><!-- /wp:paragraph -->\n\n<!-- wp:paragraph --><p><strong>Open the primary-source trail:</strong> <a href=\"https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/\">Puységur's Animal Magnetism Files</a>.</p><!-- /wp:paragraph -->\n\n<!-- wp:paragraph --><p>We'll keep the findings, the doubts and the useful tools in plain sight. That's the point of The Dispatch.</p><!-- /wp:paragraph -->",
+        "links": [
+          "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+        ],
+        "original_editorial_body": "Before we investigate an old photograph, we ask a simple question: what does the photograph actually show?\n\nIt's a useful question for the mind, too.\n\nWe tend to trust the feeling of having seen something. But the impression in our memory is not the same thing as a complete record. Context, expectation and attention all matter. That doesn't make an experience worthless. It makes the explanation worth examining.\n\nAt Final Vestige, we usually begin with a physical trace: a map, a letter, an official report. This new series follows the same method into a less tangible archive—the history of perception and suggestion.\n\nOur first stop is the eighteenth-century files surrounding the Marquis de Puységur. They capture descriptions of unusual states, confident claims and witnesses attempting to understand what they saw. The extraordinary part isn't that every claim must be true; it's that the documentary record lets us follow how people reached their conclusions.\n\n**A question to carry with you this week:** When you describe something surprising, can you separate the event you observed from the explanation you attached to it?\n\n**Open the primary-source trail:** [Puységur's Animal Magnetism Files](https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/).\n\nWe'll keep the findings, the doubts and the useful tools in plain sight. That's the point of The Dispatch."
+      }
+    },
+    {
+      "edition": 2,
+      "allocation": "editorial",
+      "original_subject": "Before hypnosis had a name",
+      "post_title_candidate": "Before hypnosis had a name",
+      "original_preheader_candidate": "The eighteenth-century witnesses who left behind a problem of proof.",
+      "excerpt": "Before modern hypnosis came reports of unusual behavior under suggestion. Puységur's records tell us what witnesses said—not necessarily why it happened. This Dispatch separates testimony, interpretation, and unanswered questions.",
+      "source_path": "dispatch/campaign-2026-mind/issues/02-before-hypnosis-had-a-name.md",
+      "source_blob_sha": "faa207ab7deafd86460d36f8c17fe62d392d0e14",
+      "master_commit": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+      "release": "HOLD_UNSENT",
+      "merchant_release": null,
+      "wordpress_state": "NOT_CREATED",
+      "native_email_preview": "NOT_VERIFIED",
+      "received_email": "NOT_VERIFIED",
+      "legal_postal_and_opt_out": "NOT_VERIFIED",
+      "email_approval": "NOT_VERIFIED",
+      "verified_paid_orders": null,
+      "blocked": [
+        "founder_send_approval",
+        "native_jetpack_email_preview",
+        "received_email_and_unsubscribe",
+        "publisher_postal_address"
+      ],
+      "draft_candidate": {
+        "post_status": "draft",
+        "send_subscription": false,
+        "not_wordpress_api_ready": true,
+        "post_title": "Before hypnosis had a name",
+        "custom_excerpt": "Before modern hypnosis came reports of unusual behavior under suggestion. Puységur's records tell us what witnesses said—not necessarily why it happened. This Dispatch separates testimony, interpretation, and unanswered questions.",
+        "gutenberg_content": "<!-- wp:paragraph --><p>In 1785, a reader encountering Puységur's accounts would have found something that still feels startling: observers trying to describe behavior for which they didn't have a comfortable explanation.</p><!-- /wp:paragraph -->\n\n<!-- wp:paragraph --><p>It is tempting to pick a side immediately. Either the witnesses discovered a remarkable force—or they were fooled. But that shortcut skips the most interesting part: what survived on paper, who said it, how close they were to the events and where the record leaves us unable to decide.</p><!-- /wp:paragraph -->\n\n<!-- wp:paragraph --><p>Those questions matter now. Hypnosis and suggestion are discussed in entirely different vocabulary today, yet marketing still sometimes leaps from a person's report of an experience to sweeping claims about what a technique can accomplish.</p><!-- /wp:paragraph -->\n\n<!-- wp:paragraph --><p>The document doesn't authorize that leap. It gives us something better: the opportunity to examine it.</p><!-- /wp:paragraph -->\n\n<!-- wp:paragraph --><p><strong>Three questions for any astonishing claim:</strong></p><!-- /wp:paragraph -->\n\n<!-- wp:list --><ul class=\"wp-block-list\"><li>What is the strongest firsthand source?</li><li>What was directly observed, rather than inferred?</li><li>What result would change our interpretation?</li></ul><!-- /wp:list -->\n\n<!-- wp:paragraph --><p>We assembled a detailed resource with historical references, source rows and cases, including the limitations of the evidence. It isn't a recommendation to use historical treatments. It is a way to read extraordinary accounts carefully.</p><!-- /wp:paragraph -->\n\n<!-- wp:paragraph --><p><strong>Read the file:</strong> <a href=\"https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/\">Puységur's Animal Magnetism Files</a>.</p><!-- /wp:paragraph -->\n\n<!-- wp:paragraph --><p>Next, we'll turn from historical testimony to a very practical question: can a short, deliberate routine help you make space for attention?</p><!-- /wp:paragraph -->",
+        "links": [
+          "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+        ],
+        "original_editorial_body": "In 1785, a reader encountering Puységur's accounts would have found something that still feels startling: observers trying to describe behavior for which they didn't have a comfortable explanation.\n\nIt is tempting to pick a side immediately. Either the witnesses discovered a remarkable force—or they were fooled. But that shortcut skips the most interesting part: what survived on paper, who said it, how close they were to the events and where the record leaves us unable to decide.\n\nThose questions matter now. Hypnosis and suggestion are discussed in entirely different vocabulary today, yet marketing still sometimes leaps from a person's report of an experience to sweeping claims about what a technique can accomplish.\n\nThe document doesn't authorize that leap. It gives us something better: the opportunity to examine it.\n\n**Three questions for any astonishing claim:**\n\n- What is the strongest firsthand source?\n- What was directly observed, rather than inferred?\n- What result would change our interpretation?\n\nWe assembled a detailed resource with historical references, source rows and cases, including the limitations of the evidence. It isn't a recommendation to use historical treatments. It is a way to read extraordinary accounts carefully.\n\n**Read the file:** [Puységur's Animal Magnetism Files](https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/).\n\nNext, we'll turn from historical testimony to a very practical question: can a short, deliberate routine help you make space for attention?"
+      }
+    },
+    {
+      "edition": 3,
+      "allocation": "commercial-review-pending",
+      "original_subject": "The twelve-minute meditation question",
+      "post_title_candidate": "The twelve-minute meditation question",
+      "original_preheader_candidate": "An honest way to evaluate a short audio practice before you spend anything.",
+      "excerpt": "Can twelve minutes make a routine easier? That's a fair question. A seller's claims about audio effectiveness are a different matter. This Dispatch examines Zen12 without treating its promises as proof. If you buy through a qualifying guide link, Final Vestige may earn a commission.",
+      "source_path": "dispatch/campaign-2026-mind/issues/03-the-twelve-minute-question.md",
+      "source_blob_sha": "aeeef34efea0cc281f69901488e4501fea851245",
+      "master_commit": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+      "release": "HOLD_UNSENT",
+      "merchant_release": "HOLD_MERCHANT",
+      "wordpress_state": "NOT_CREATED",
+      "native_email_preview": "NOT_VERIFIED",
+      "received_email": "NOT_VERIFIED",
+      "legal_postal_and_opt_out": "NOT_VERIFIED",
+      "email_approval": "NOT_VERIFIED",
+      "verified_paid_orders": null,
+      "blocked": [
+        "merchant_approval",
+        "affiliate_email_permission",
+        "approved_live_first_party_guide",
+        "current_offer_terms",
+        "founder_send_approval",
+        "actual_footer"
+      ],
+      "draft_candidate": null
+    },
+    {
+      "edition": 4,
+      "allocation": "editorial",
+      "original_subject": "Fourteen seconds. A much longer explanation.",
+      "post_title_candidate": "Apollo 1: what the fire record actually says",
+      "original_preheader_candidate": "Apollo 1, the surviving record, and why a tidy cause can mislead.",
+      "excerpt": "Apollo 1 wasn't explained by one spark or one number. NASA's investigation describes an oxygen-rich cabin, hazardous materials, and a hatch that complicated escape. The official record warrants a careful reading; the ignition source was not conclusively identified.",
+      "source_path": "dispatch/campaign-2026-mind/issues/04-the-hatch-and-the-spark.md",
+      "source_blob_sha": "89635bfb9c8d1ff17297a59b6b5b5b2a176934ca",
+      "master_commit": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+      "release": "HOLD_UNSENT",
+      "merchant_release": null,
+      "wordpress_state": "NOT_CREATED",
+      "native_email_preview": "NOT_VERIFIED",
+      "received_email": "NOT_VERIFIED",
+      "legal_postal_and_opt_out": "NOT_VERIFIED",
+      "email_approval": "NOT_VERIFIED",
+      "verified_paid_orders": null,
+      "blocked": [
+        "founder_send_approval",
+        "native_jetpack_email_preview",
+        "received_email_and_unsubscribe",
+        "publisher_postal_address",
+        "unsourced_original_14_second_subject"
+      ],
+      "draft_candidate": {
+        "post_status": "draft",
+        "send_subscription": false,
+        "not_wordpress_api_ready": true,
+        "post_title": "Apollo 1: what the fire record actually says",
+        "custom_excerpt": "Apollo 1 wasn't explained by one spark or one number. NASA's investigation describes an oxygen-rich cabin, hazardous materials, and a hatch that complicated escape. The official record warrants a careful reading; the ignition source was not conclusively identified.",
+        "gutenberg_content": "<!-- wp:paragraph --><p>A good explanation is often shorter than the evidence it rests on. Sometimes it's too short.</p><!-- /wp:paragraph -->\n\n<!-- wp:paragraph --><p>The Apollo 1 fire is often compressed into a sentence about an electrical spark. The surviving official findings tell a harder story: an oxygen-rich ground-test environment, combustible material, vulnerable wiring, emergency escape constraints and choices in the design and test process.</p><!-- /wp:paragraph -->\n\n<!-- wp:paragraph --><p>The investigators could identify dangerous conditions without conclusively identifying the exact first arc. That distinction matters. Unknown doesn't mean nothing was learned. It means the boundary between evidence and inference has to stay visible.</p><!-- /wp:paragraph -->\n\n<!-- wp:paragraph --><p>Our investigation, <strong>The Hatch Opened Inward</strong>, follows that boundary through records and hardware. It also shows why the redesigned hatch became one of the event's clearest physical traces.</p><!-- /wp:paragraph -->\n\n<!-- wp:paragraph --><p><strong>Read the investigation:</strong> <a href=\"https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/\">The Hatch Opened Inward</a>.</p><!-- /wp:paragraph -->\n\n<!-- wp:paragraph --><p>There is a connection to the mind here, too: we like stories with one obvious cause. The record often refuses to cooperate.</p><!-- /wp:paragraph -->\n\n<!-- wp:paragraph --><p>This is what The Dispatch will continue to do—move between history, science and the strange edges of human experience, without asking you to trade curiosity for certainty.</p><!-- /wp:paragraph -->",
+        "links": [
+          "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/"
+        ],
+        "original_editorial_body": "A good explanation is often shorter than the evidence it rests on. Sometimes it's too short.\n\nThe Apollo 1 fire is often compressed into a sentence about an electrical spark. The surviving official findings tell a harder story: an oxygen-rich ground-test environment, combustible material, vulnerable wiring, emergency escape constraints and choices in the design and test process.\n\nThe investigators could identify dangerous conditions without conclusively identifying the exact first arc. That distinction matters. Unknown doesn't mean nothing was learned. It means the boundary between evidence and inference has to stay visible.\n\nOur investigation, **The Hatch Opened Inward**, follows that boundary through records and hardware. It also shows why the redesigned hatch became one of the event's clearest physical traces.\n\n**Read the investigation:** [The Hatch Opened Inward](https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/).\n\nThere is a connection to the mind here, too: we like stories with one obvious cause. The record often refuses to cooperate.\n\nThis is what The Dispatch will continue to do—move between history, science and the strange edges of human experience, without asking you to trade curiosity for certainty."
+      }
+    },
+    {
+      "edition": 5,
+      "allocation": "commercial-review-pending",
+      "original_subject": "Before you press play on a hypnosis audio",
+      "post_title_candidate": "Before you press play on a hypnosis audio",
+      "original_preheader_candidate": "Three questions that matter more than an impressive promise.",
+      "excerpt": "An audio recording's format is easy to describe. Its promised results deserve separate scrutiny. Here are questions to ask before considering Hypnosis Live Total Focus. If you buy through a qualifying guide link, Final Vestige may earn a commission.",
+      "source_path": "dispatch/campaign-2026-mind/issues/05-before-you-press-play.md",
+      "source_blob_sha": "a9dfaa450ba025a7b5113ade8a294d6dbad778dc",
+      "master_commit": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+      "release": "HOLD_UNSENT",
+      "merchant_release": "HOLD_MERCHANT",
+      "wordpress_state": "NOT_CREATED",
+      "native_email_preview": "NOT_VERIFIED",
+      "received_email": "NOT_VERIFIED",
+      "legal_postal_and_opt_out": "NOT_VERIFIED",
+      "email_approval": "NOT_VERIFIED",
+      "verified_paid_orders": null,
+      "blocked": [
+        "merchant_approval",
+        "affiliate_email_permission",
+        "approved_live_first_party_guide",
+        "current_offer_terms",
+        "founder_send_approval",
+        "actual_footer"
+      ],
+      "draft_candidate": null
+    },
+    {
+      "edition": 6,
+      "allocation": "editorial",
+      "original_subject": "What did seven days of attention reveal?",
+      "post_title_candidate": "What did seven days of attention reveal?",
+      "original_preheader_candidate": "A small experiment, a useful notebook, and no miracle claims.",
+      "excerpt": "A notebook can't prove a method works for everyone. It can help you notice which habits are sustainable. This Dispatch shows how to review a week's attention notes without miracle claims, then return to your free Fieldbook—without signing up twice.",
+      "source_path": "dispatch/campaign-2026-mind/issues/06-the-evidence-log.md",
+      "source_blob_sha": "004d558df6376d2ad6f4f79a4581e8d2c444e355",
+      "master_commit": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+      "release": "HOLD_UNSENT",
+      "merchant_release": null,
+      "wordpress_state": "NOT_CREATED",
+      "native_email_preview": "NOT_VERIFIED",
+      "received_email": "NOT_VERIFIED",
+      "legal_postal_and_opt_out": "NOT_VERIFIED",
+      "email_approval": "NOT_VERIFIED",
+      "verified_paid_orders": null,
+      "blocked": [
+        "founder_send_approval",
+        "native_jetpack_email_preview",
+        "received_email_and_unsubscribe",
+        "publisher_postal_address",
+        "pdf_public_bytes_and_received_welcome_unverified"
+      ],
+      "draft_candidate": {
+        "post_status": "draft",
+        "send_subscription": false,
+        "not_wordpress_api_ready": true,
+        "post_title": "What did seven days of attention reveal?",
+        "custom_excerpt": "A notebook can't prove a method works for everyone. It can help you notice which habits are sustainable. This Dispatch shows how to review a week's attention notes without miracle claims, then return to your free Fieldbook—without signing up twice.",
+        "gutenberg_content": "<!-- wp:paragraph --><p>After a week of trying to concentrate differently, it's easy to be left with one of two impressions: it changed everything, or it changed nothing.</p><!-- /wp:paragraph -->\n\n<!-- wp:paragraph --><p>Neither impression is very useful without a record.</p><!-- /wp:paragraph -->\n\n<!-- wp:paragraph --><p>A more practical question is what actually happened. Which days did you follow through? How long did you practice? When did you get interrupted? What made it easier to start the next day?</p><!-- /wp:paragraph -->\n\n<!-- wp:paragraph --><p>Those observations aren't a medical result or proof that one technique is superior. They're simply better information for choosing what you'll keep doing.</p><!-- /wp:paragraph -->\n\n<!-- wp:paragraph --><p>Our <strong>Seven Day Focus Fieldbook — Complete Edition</strong> was built for this kind of deliberate practice: a short starting routine, seven guided days, an obstacle playbook and a thirty-day log. It's free, and you don't need to buy an audio program to use it.</p><!-- /wp:paragraph -->\n\n<!-- wp:paragraph --><p><strong>Open the free Fieldbook:</strong> <a href=\"https://finalvestige.com/wp-content/uploads/2026/10/Final_Vestige_Seven_Day_Focus_Fieldbook_Complete_Edition.pdf\">Seven Day Focus Fieldbook</a>.</p><!-- /wp:paragraph -->\n\n<!-- wp:paragraph --><p>As we expand the Mind &amp; Perception Archive, we'll keep putting the underlying sources where readers can check them. You'll also continue receiving the historical investigations and unexpected discoveries you came to Final Vestige for.</p><!-- /wp:paragraph -->\n\n<!-- wp:paragraph --><p>If a product ever appears here, we'll say when it's a commercial recommendation, what we're basing it on and what remains uncertain. The work comes first.</p><!-- /wp:paragraph -->",
+        "links": [
+          "https://finalvestige.com/wp-content/uploads/2026/10/Final_Vestige_Seven_Day_Focus_Fieldbook_Complete_Edition.pdf"
+        ],
+        "original_editorial_body": "After a week of trying to concentrate differently, it's easy to be left with one of two impressions: it changed everything, or it changed nothing.\n\nNeither impression is very useful without a record.\n\nA more practical question is what actually happened. Which days did you follow through? How long did you practice? When did you get interrupted? What made it easier to start the next day?\n\nThose observations aren't a medical result or proof that one technique is superior. They're simply better information for choosing what you'll keep doing.\n\nOur **Seven Day Focus Fieldbook — Complete Edition** was built for this kind of deliberate practice: a short starting routine, seven guided days, an obstacle playbook and a thirty-day log. It's free, and you don't need to buy an audio program to use it.\n\n**Open the free Fieldbook:** [Seven Day Focus Fieldbook](https://finalvestige.com/wp-content/uploads/2026/10/Final_Vestige_Seven_Day_Focus_Fieldbook_Complete_Edition.pdf).\n\nAs we expand the Mind & Perception Archive, we'll keep putting the underlying sources where readers can check them. You'll also continue receiving the historical investigations and unexpected discoveries you came to Final Vestige for.\n\nIf a product ever appears here, we'll say when it's a commercial recommendation, what we're basing it on and what remains uncertain. The work comes first."
+      }
+    }
+  ],
+  "sources": [
+    "https://finalvestige.com/editorial-standards/",
+    "https://jetpack.com/support/newsletter/",
+    "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business",
+    "https://zen12.com/hnp",
+    "https://hypnosislive.com/mental-skills/total-focus"
+  ]
+}

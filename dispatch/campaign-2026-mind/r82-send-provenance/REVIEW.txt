@@ -1,0 +1,51 @@
+FINAL VESTIGE / THE DISPATCH — R82 EVIDENCE REVIEW
+Recorded: 2026-11-03 05:03 UTC
+Status: ALL SIX HOLD_UNSENT. Issues 03/05 additionally HOLD_MERCHANT.
+This is NOT a real received email, newsletter send, mailing-list audit or legal approval.
+
+MATERIAL CHANGE
+The earlier recent_sends=[] snapshot has changed. WordPress Jetpack now
+returns five recent published, NON-CAMPAIGN posts with status
+"never_sent_opted_out". All report a false send_subscription flag,
+dispatched_at=null, and null recipient/sent/bounce/block counts.
+
+FIVE RETURNED EVENTS — 2026-11-03 UTC
+1926 | 04:54:10 | Crystal Skulls: What the Evidence Says About Their Age
+1924 | 04:52:58 | Mesmerism: What Franklin's 1784 Commission Actually Found
+1922 | 04:51:39 | Change Blindness: Why You Miss Big Changes Right in Front of You
+1920 | 04:50:12 | The Lycurgus Cup: The Roman Glass That Changes Color
+1917 | 04:48:54 | The Piri Reis Map: What the 1513 Chart Actually Shows
+
+INTERPRETATION
+Zero dispatches in THE FIVE RETURNED RECORDS, NOT zero all-time sends.
+site_can_send=true is an infrastructure flag, not proof anyone received mail.
+Automatic new-post email setting remains OFF. Email format is EXCERPT.
+The 52-page Fieldbook welcome is configured, NOT proven received.
+No final newsletter or test email has been authorized.
+
+COUNTER CONTRADICTION
+Jetpack diagnostics: total 2, confirmed 2, unconfirmed 2, suppressed 0.
+WordPress followers: total 2, email 0, wpcom 2, partial false.
+Actual email-eligible audience UNKNOWN. Never sum these counters or infer
+recipient identities. Inspect native subscriber classifications PRIVATELY.
+
+NEXT REAL-WORLD GATES
+1. Verified valid Final Vestige publisher postal address, not Automattic's.
+2. Functional delivered commercial-email unsubscribe, HTML and plaintext.
+3. Explicitly approved native editor preview and separate real received test.
+4. Private aggregate-only email-eligible audience reconciliation.
+5. Mind #171 publishes approved buyer guides; merchant-specific acceptance,
+   exact affiliate links, email-channel rights, terms and disclosures VERIFIED.
+6. Final founder approval for actual send, copy, audience and schedule.
+
+CAMPAIGN MIX PRESERVED
+01,02,04,06 editorial; 03 Zen12 / 05 Total Focus commercial-reserved.
+No active affiliate destination; no test or campaign send; no CMS/setting change.
+
+SOURCE LINKS
+Master evidence: https://github.com/finalvestigestudios/final-vestige-site-layer/issues/174
+Mind affiliate owner: https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171
+Original six: https://github.com/finalvestigestudios/final-vestige-site-layer/pull/175
+Parent: https://github.com/finalvestigestudios/final-vestige-site-layer/pull/721
+FTC: https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business
+WordPress: https://wordpress.com/support/newsletter/email-appearance/

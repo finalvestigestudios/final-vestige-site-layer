@@ -1,0 +1,20 @@
+{
+  "status": "UNSENT_REVIEW_ONLY",
+  "as_of_utc": "2026-11-07T04:32:06Z",
+  "canonical_campaign": {"pr": 175, "sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647", "allocation": {"editorial": [1,2,4,6], "commercial_reserved": [3,5]}, "rewrite_approved": false},
+  "alternate": {"issue": 6, "purpose": "replace duplicate Fieldbook/signup-oriented CTA with new published evidence investigation", "approved_substitution": false,
+    "primary_cta": "https://finalvestige.com/2026/11/02/change-blindness/", "cta_live_page": true,
+    "primary_source": "https://doi.org/10.3758/BF03208840", "source_status": "publisher abstract inspected 2026-11-06",
+    "preheader_transport_verified": false},
+  "provider": {"newsletter_enabled": true, "new_post_automatic_sends": false, "format": "full", "reported_total": 3, "reported_confirmed": 3, "reported_unconfirmed": 2, "counts_are_additive": false, "email_eligible_population_verified": false,
+    "welcome_contains_fieldbook_url": true, "welcome_received_verified": false, "native_jetpack_email_preview_verified": false,
+    "subscriber_status_verified_privately": false, "postal_address_verified_in_received_email": false,
+    "unsubscribe_verified_in_received_email": false},
+  "merchant": {"selected_offer": "Zen12 Premium (hypothesis)", "email_channel_allowed_for_fv": false, "named_account_approval": false,
+    "approved_earning_link": false, "approved_live_independent_guide": false,
+    "current_checkout_price_verified": false, "refund_fulfillment_verified": false,
+    "vendor_benefit_claim_independently_proven": false, "paid_commissions_reported": false},
+  "attribution_contract": {"entry": "grok asset_id + utm_source + utm_campaign to page view", "confirmed_signup": "native provider confirmation only; not success-panel reveal", "click": "first-party landing CTA, not sale", "sale": "settled Payhip order or merchant transaction reported independently and net of refunds/fees", "cohorts_days": [7,30], "dedupe": "provider event ID with pseudonymous per-provider key", "revenue_per_1000_qualified_sessions": null},
+  "release": {"status": "HOLD_UNSENT", "marketing_03_05": "HOLD_MERCHANT", "reason": "final approval, native email rendering, valid publisher postal address, opt-out, confirmed recipient eligibility and merchant authorization unverified"},
+  "sources": ["https://doi.org/10.3758/BF03208840", "https://finalvestige.com/2026/11/02/change-blindness/", "https://zen12.com/", "https://affiliates.inspire3.com/", "https://jetpack.com/support/newsletter/", "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business"]
+}

@@ -1,0 +1,171 @@
+{
+  "schema_version": "r139.1",
+  "as_of_utc": "2026-11-05T14:30:29Z",
+  "source_provenance": "read-only GitHub #174, #171, WordPress native settings/status and post ID 434, NASA original board HTML and NASA SMA account; DOI/checkout not inferred",
+  "campaign": {
+    "issue_count": 6,
+    "editorial_slots": [
+      1,
+      2,
+      4,
+      6
+    ],
+    "commercial_hold_slots": [
+      3,
+      5
+    ],
+    "approved_for_sending": false,
+    "publication_authorized": false,
+    "new_list_allowed": false,
+    "send_cadence_approved": false
+  },
+  "native_wordpress": {
+    "site": "https://finalvestige.com",
+    "blog_id": 256784396,
+    "newsletter_enabled": true,
+    "site_can_send": true,
+    "email_new_posts_by_default": false,
+    "email_content_format": "excerpt",
+    "welcome_configured": true,
+    "welcome_received_verified": false,
+    "pdf_delivery_verified": false,
+    "confirmed_email_recipients_verified": false,
+    "import_provenance_verified": false,
+    "subscriber_totals": {
+      "total": 3,
+      "confirmed": 3,
+      "unconfirmed": 2,
+      "imported_last_24h": 1,
+      "nonadditive": true
+    },
+    "post_id_434": {
+      "slug": "the-hatch-opened-inward-apollo-1",
+      "status": "publish",
+      "url": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/",
+      "verified_by": "WordPress native posts.get read 2026-11-05"
+    }
+  },
+  "claims": [
+    {
+      "id": "apollo-date-and-crew",
+      "assertion": "Jan 27 1967 crew Gus Grissom, Ed White, Roger Chaffee died during ground test",
+      "source": "https://sma.nasa.gov/sma-disciplines/accllp/apollo-1",
+      "certainty": "official-record"
+    },
+    {
+      "id": "apollo-atmosphere",
+      "assertion": "sealed command module pressurized with 100 percent oxygen",
+      "source": "https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/",
+      "certainty": "board-finding"
+    },
+    {
+      "id": "apollo-ignition",
+      "assertion": "exact fire initiator not conclusively identified; electrical arc considered most probable",
+      "source": "https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/",
+      "certainty": "likely-not-proven"
+    },
+    {
+      "id": "apollo-system-hazards",
+      "assertion": "board named six conditions including oxygen, combustible material, wiring, coolant plumbing and escape/rescue issues",
+      "source": "https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/",
+      "certainty": "board-finding"
+    },
+    {
+      "id": "apollo-hatch",
+      "assertion": "three-piece hatch took 90 seconds under ideal conditions and was impossible to open at increased cabin pressure",
+      "source": "https://sma.nasa.gov/sma-disciplines/accllp/apollo-1",
+      "certainty": "nasa-summary-not-fire-timing"
+    },
+    {
+      "id": "apollo-death-cause",
+      "assertion": "toxic gas inhalation/asphyxia rather than necessarily fatal burns",
+      "source": "https://sma.nasa.gov/sma-disciplines/accllp/apollo-1",
+      "certainty": "nasa-summary"
+    },
+    {
+      "id": "native-preview",
+      "assertion": "Jetpack supports editor Preview email before publication; received test email is separate and is not authorized",
+      "source": "https://jetpack.com/support/newsletter/",
+      "certainty": "product-documentation"
+    },
+    {
+      "id": "native-excerpt",
+      "assertion": "Jetpack excerpt may be 350 characters in one configuration; WordPress.com documents a 55-word variant; editor preview determines actual behaviour",
+      "source": "https://jetpack.com/support/newsletter/customize-the-newsletter-experience/",
+      "alternate_source": "https://wordpress.com/support/newsletter-settings/",
+      "certainty": "configuration-dependant"
+    },
+    {
+      "id": "subscriber-confirmation",
+      "assertion": "WordPress.com account holders may bypass separate confirmation email; subscriber status from dashboard not sufficient to assert eligible recipients",
+      "source": "https://jetpack.com/support/newsletter/customize-the-newsletter-experience/",
+      "certainty": "platform-documentation"
+    }
+  ],
+  "cta_destination_contract": [
+    {
+      "issue": 1,
+      "type": "editorial",
+      "destination": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "status": "url-listed-in-master-175-no-native-preview"
+    },
+    {
+      "issue": 2,
+      "type": "editorial",
+      "destination": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "status": "url-listed-in-master-175-no-native-preview"
+    },
+    {
+      "issue": 3,
+      "type": "commercial-reserved",
+      "destination": null,
+      "status": "HOLD_MERCHANT_NO_LIVE_GUIDE"
+    },
+    {
+      "issue": 4,
+      "type": "editorial",
+      "destination": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/",
+      "status": "verified-published-post-not-email-preview"
+    },
+    {
+      "issue": 5,
+      "type": "commercial-reserved",
+      "destination": null,
+      "status": "HOLD_MERCHANT_NO_LIVE_GUIDE"
+    },
+    {
+      "issue": 6,
+      "type": "editorial",
+      "destination": "https://finalvestige.com/focus/",
+      "status": "verified-published-page-not-email-preview"
+    }
+  ],
+  "release_attestations": {
+    "actual_signed_out_signup": false,
+    "native_eligible_recipient_ledger": false,
+    "import_origin_and_consent": false,
+    "received_fieldbook_welcome": false,
+    "pdf_retrieved_and_52_pages_verified": false,
+    "native_jetpack_email_preview": false,
+    "fv_valid_postal_address": false,
+    "functioning_unsubscribe": false,
+    "merchant_named_acceptance": false,
+    "merchant_email_promotion_rights": false,
+    "exact_earning_link": false,
+    "same_sku_guides_live": false,
+    "reported_paid_orders": false,
+    "settled_net_revenue": false,
+    "founder_final_approval": false
+  },
+  "revenue_kpi": {
+    "net_revenue_per_1000_qualified_sessions": null,
+    "reason": "independently verified paid orders/net commissions and qualified human denominator unavailable; null is not zero"
+  },
+  "links": {
+    "issue174": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/174",
+    "issue171": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+    "issue820": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+    "original_pr175": "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/175",
+    "guard_pr201": "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/201"
+  }
+}

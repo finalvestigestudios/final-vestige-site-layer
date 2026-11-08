@@ -1,0 +1,35 @@
+"use strict";
+const assert=require("node:assert/strict");
+const m=require("./recipient_contract.cjs"),original=require("./observed_2026-11-05.json");
+let passed=0;function run(name,fn){fn();passed++;console.log("PASS "+name);}
+function changed(f){let s=JSON.parse(JSON.stringify(original));f(s);return s;}
+run("3 reported not 5",()=>assert.equal(m.audit(original).reported_total,3));
+run("0 legacy is not zero eligible",()=>assert.equal(m.audit(original).verified_email_eligible_aggregate,null));
+run("WordPress followers not automatically ineligible",()=>assert.equal(m.audit(original).wpcom_follower_necessarily_ineligible,false));
+run("unconfirmed distinct from total",()=>assert.equal(m.audit(original).newsletter_counts_additive,false));
+run("no event invented from import",()=>assert.equal(m.audit(original).verified_confirmed_signup_events,null));
+run("no welcome invented",()=>assert.equal(m.audit(original).verified_welcome_receipts,null));
+run("no paid sale invented",()=>assert.equal(m.audit(original).verified_paid_orders,null));
+run("reject PII",()=>assert.throws(()=>m.audit(changed(x=>x.email="private@example.net"))));
+run("reject nested subscriber PII",()=>assert.throws(()=>m.audit(changed(x=>x.newsletter.private={email:"reader@example.invalid"}))));
+run("reject mismatched site",()=>assert.throws(()=>m.audit(changed(x=>x.followers.site="other.com"))));
+run("reject forged provider",()=>assert.throws(()=>m.audit(changed(x=>x.newsletter.provider="fake"))));
+run("reject partial stats",()=>assert.throws(()=>m.audit(changed(x=>x.followers.partial=true))));
+run("reject negative count",()=>assert.throws(()=>m.audit(changed(x=>x.newsletter.counts.confirmed=-1))));
+run("reject float count",()=>assert.throws(()=>m.audit(changed(x=>x.followers.counts.email=0.2))));
+run("reject missing status categories",()=>assert.throws(()=>m.audit(changed(x=>x.authoritative_email_status_counts={provider:"native_subscribers_email_status",observed_utc:"2026-11-05T01:33:00Z",audited_scope:"full_site",counts:{Subscribed:1}}))));
+run("accept synthetic native aggregate but still HOLD",()=>{let x=changed(x=>x.authoritative_email_status_counts={provider:"native_subscribers_email_status",observed_utc:"2026-11-05T01:33:00Z",audited_scope:"full_site",counts:Object.fromEntries(m.STATUSES.map(k=>[k,k==="Subscribed"?1:0]))});assert.equal(m.audit(x).verified_email_eligible_aggregate,1);assert.equal(m.audit(x).release,"HOLD_ALL_UNSENT");});
+run("reject status with email",()=>assert.throws(()=>m.audit(changed(x=>x.authoritative_email_status_counts={provider:"native_subscribers_email_status",observed_utc:"2026-11-05T01:33:00Z",audited_scope:"full_site",email:"x@y.z",counts:Object.fromEntries(m.STATUSES.map(k=>[k,0]))}))));
+run("4 editorial 2 commercial",()=>assert.equal(m.review(m.sequence()).commercial_reserved,2));
+run("no merchant URLs",()=>assert.ok(m.sequence().every(x=>x.merchant_url===null)));
+run("commercial pending first party guides",()=>assert.ok([2,4].every(i=>m.sequence()[i].cta_preview===null)));
+run("editorial tagged URLs unique",()=>assert.equal(new Set(m.sequence().filter(x=>x.cta_preview).map(x=>x.cta_preview)).size,4));
+run("issue 6 existing subscriber loop",()=>assert.equal(m.sequence()[5].repeat_signup_review,true));
+run("reject merchant domain",()=>assert.throws(()=>m.tag("https://zen12.com/hnp",3)));
+run("reject PII URL",()=>assert.throws(()=>m.tag("https://finalvestige.com/focus/?email=x",1)));
+run("reject placeholder",()=>assert.throws(()=>m.tag("[[APPROVED_GUIDE_URL]]",3)));
+run("reject activated affiliate",()=>assert.throws(()=>m.review(m.sequence().map((x,i)=>i===2?{...x,merchant_url:"https://zen12.com/hnp"}:x))));
+run("reject fake sent",()=>assert.throws(()=>m.review(m.sequence().map((x,i)=>i===0?{...x,claimed_delivered:true}:x))));
+run("reject changed mix",()=>assert.throws(()=>m.review(m.sequence().map((x,i)=>i===2?{...x,kind:"editorial"}:x))));
+run("always fail closed",()=>assert.equal(m.decision(m.audit(original)).send,false));
+console.log(JSON.stringify({pass:passed,failed:0,real_jetpack_received_email:false,real_order:false}));

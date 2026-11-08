@@ -1,0 +1,81 @@
+FINAL VESTIGE · DISPATCH R72 · SIX EXCERPT CANDIDATES
+HOLD_UNSENT — OFFLINE REVIEW ONLY; NOT A WORDPRESS OR RECEIVED EMAIL
+
+ISSUE 01 / editorial
+Subject: The mind is not a camera
+Preheader PLANNING TEXT (not guaranteed Jetpack): A door crossed the path of a conversation. What changed was not always seen.
+CUSTOM EXCERPT PROPOSAL:
+A researcher asked a stranger for directions. Workers carried a door between them, and the person asking changed. In a 1998 field study, some people did not notice. That is not a universal verdict on eyewitnesses. It is an invitation to check what was visible, what a witness actually reported, and what later readers inferred. Our Missing Caption investigation makes the same distinction with photographs: a confident label is not the same thing as a reliable record. Compare the image and its caption before you decide what the evidence proves.
+Future single CTA: https://finalvestige.com/the-missing-caption/
+Review notes: 1998 Simons–Levin study; avoid generalized failure-rate claims.
+Source references:
+https://doi.org/10.3758/BF03208840
+
+----------------------------------------
+
+ISSUE 02 / editorial
+Subject: Before hypnosis had a name
+Preheader PLANNING TEXT (not guaranteed Jetpack): One encounter in 1784. Two accounts of its duration. A larger question about proof.
+CUSTOM EXCERPT PROPOSAL:
+On May 4, 1784, Puységur reported visiting a sick young man; his account appeared in a letter dated May 8. Later descriptions of the encounter do not agree neatly about its duration. More importantly, the surviving text records what its author believed happened—not independent proof that animal magnetism healed anyone. Read the source as a historian would: separate the reported behavior, the explanation attached to it, and the evidence that would test that explanation. Our Puységur archive preserves the unsettling question without pretending the mechanism was established.
+Future single CTA: https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/
+Review notes: First-edition digitized copy and CIRCEE cross-check locate May 4 report within May 8 letter, but exact printed page image/OCR has not been independently inspected; do not imply proven treatment.
+Source references:
+https://archive.org/details/mmoirespourservi00chas
+https://www.circee.org/puysegur-memoires-pour-servir-a-l-histoire-du-magnetisme-animal-1784/
+https://catalogue.bnf.fr/ark:/12148/cb31160297p
+
+----------------------------------------
+
+ISSUE 03 / commercial-review-pending
+Subject: The twelve-minute meditation question
+Preheader PLANNING TEXT (not guaranteed Jetpack): A practical twelve-minute check—and the questions a paid audio should answer.
+CUSTOM EXCERPT PROPOSAL:
+Potential commercial recommendation: this edition evaluates Zen12, a paid meditation-audio product. If we later publish an approved guide with an earning link, Final Vestige may receive a commission from a qualifying purchase. No affiliate approval or email-promotion permission has been verified; no buying link is active. Before considering a product, try twelve ordinary minutes without special audio. Record whether you finished, what interrupted you, and whether the routine fits your day. The seller describes different audio formats and packages, but its claim that twelve minutes equals an hour of meditation is not independently established for Zen12.
+Future single CTA: DISABLED — unpublished buyer guide; merchant approval unknown
+Review notes: Reserved commercial slot only; guide is unpublished; cross-program swipe rights unavailable; near-offer notice required on any later link.
+Source references:
+https://zen12.com/
+https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety
+https://inspire3.com/privacy/
+
+----------------------------------------
+
+ISSUE 04 / editorial
+Subject: Seventeen seconds. A much longer explanation.
+Preheader PLANNING TEXT (not guaranteed Jetpack): Apollo 1's recorded radio interval is not a stopwatch for the fire.
+CUSTOM EXCERPT PROPOSAL:
+The Apollo 1 radio record covers about 17.1 seconds between the crew's first fire report and final transmission. Of that span, 10.3 seconds contain transmissions and 6.8 seconds are silent. Those numbers do not measure the fire's entire duration, nor do they identify the exact ignition source. NASA's investigators documented the hazardous cabin atmosphere, material choices, and hatch design while acknowledging what the evidence could not settle. The larger explanation is a chain of conditions, not a single dramatic sound bite. Read the archive with the distinction in mind.
+Future single CTA: https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/
+Review notes: Original PR #175 said fourteen; stacked R71 says seventeen; founder must approve exact subject; optional clearer subject is Apollo 1: why one spark was never the whole story.
+Source references:
+https://www.nasa.gov/wp-content/uploads/static/history/Apollo204/invest.html
+
+----------------------------------------
+
+ISSUE 05 / commercial-review-pending
+Subject: Before you press play on a hypnosis audio
+Preheader PLANNING TEXT (not guaranteed Jetpack): A free concentration check and the refund conditions to examine before paying.
+CUSTOM EXCERPT PROPOSAL:
+Potential commercial recommendation: this edition examines Hypnosis Live's Total Focus recording. If we later publish an approved guide with an earning link, Final Vestige may receive a commission. No affiliate approval or permission to market this recording by email has been verified; no purchase link is active. The seller describes a 33-minute audio, but claims about instantly sharper concentration are not independent product evidence. Start with a free three-minute task and record interruptions rather than imagined results. Before any purchase, inspect the seller's 14-day refund terms, including its stated limit of five refunded albums per twelve months.
+Future single CTA: DISABLED — unpublished buyer guide; merchant approval unknown
+Review notes: Merchant FAQ says five-session refund maximum; checkout terms and postal/footer still unverified; no earning link.
+Source references:
+https://hypnosislive.com/mental-skills/total-focus
+https://hypnosislive.com/faq
+https://inspire3.com/terms/
+https://www.nccih.nih.gov/health/hypnosis
+
+----------------------------------------
+
+ISSUE 06 / editorial
+Subject: What did seven days of attention reveal?
+Preheader PLANNING TEXT (not guaranteed Jetpack): A useful notebook records gaps as well as successes.
+CUSTOM EXCERPT PROPOSAL:
+A notebook can preserve observations—or manufacture a tidy story after the fact. In a 2002 diary-compliance study, researchers compared participants' stated recordkeeping with electronic timestamps. The results belong to that study's context, not to every person's memory. Our seven-day practice asks for something humbler: write when you began a task, what interrupted you, and what you actually completed. If you miss a day, mark the gap rather than filling it with a plausible memory. The free Focus Fieldbook supplies a way to keep that honest record without promising transformation.
+Future single CTA: https://finalvestige.com/focus/
+Review notes: Stone 2002 clinical sample is not a universal deception rate and not a Fieldbook efficacy study.
+Source references:
+https://www.bmj.com/content/324/7347/1193
+
+No WordPress writes, sends, signups, subscriber PII, tracking or approved commercial recommendations.

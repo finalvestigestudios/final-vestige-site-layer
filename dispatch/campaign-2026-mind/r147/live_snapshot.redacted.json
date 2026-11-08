@@ -1,0 +1,44 @@
+{
+  "observed": "2026-11-05T22:34:58Z",
+  "source": "authenticated WP newsletter status/get_settings and published Focus/Dispatch page stored content",
+  "newsletter": {
+    "enabled": true,
+    "auto_send_default": false,
+    "format": "full",
+    "from": "Final Vestige Studios",
+    "reply_to": "no-reply",
+    "recent_five": "never_sent_opted_out"
+  },
+  "reported_subscribers": {
+    "total": 3,
+    "confirmed": 3,
+    "unconfirmed": 2,
+    "import_last24h": 0,
+    "additive": false,
+    "email_eligible_verified": false
+  },
+  "focus": {
+    "page_id": 1579,
+    "modified": "2026-11-03T14:36:15",
+    "stored_js_query_logic": "if(q){if(bad.indexOf(q)<0){show();}}",
+    "literal_form_in_editor_body": false,
+    "jetpack_dynamic_subscribe_block": true,
+    "ui_gift_is_not_native_confirmation": true
+  },
+  "dispatch": {
+    "page_id": 523,
+    "published": true
+  },
+  "fieldbook": {
+    "registered_wp_media_id": 1737,
+    "registered_bytes": 599946,
+    "received_welcome_verified": false,
+    "http_file_verified": false
+  },
+  "proof": {
+    "actual_confirmed_signup_events": null,
+    "affiliate_authorization": false,
+    "qualified_orders": null,
+    "net_revenue_per_1000_qualified_sessions": null
+  }
+}

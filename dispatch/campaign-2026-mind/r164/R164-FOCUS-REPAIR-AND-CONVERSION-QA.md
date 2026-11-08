@@ -1,0 +1,32 @@
+# Dispatch R164 — Source-controlled Focus consent-integrity repair (DRAFT)
+2026-11-06 · Dispatch #174 · Focus #129 · Mind #171 · Conversion #820 · parent draft PR #1266 at fe0e1b85b4e4592fb4bef45c8aa290936871817a.
+
+## Observed live configuration (READ ONLY, 2026-11-06 15:32 UTC)
+WordPress page #1579 (last modified 2026-11-05) contains exactly one native Jetpack subscriptions Gutenberg block, one hidden Fieldbook download panel, and `script#fvf-gift-v2`. The script reveals the gift if `?subscribe=` is any non-error truthy value or the subscriptions container has `is-subscriber`. Neither condition proves native email subscription, consent or welcome delivery. The panel's `data-fv-location="after_signup"` also creates an attribution ambiguity. The exact 52-page PDF URL appears once in the raw page content; the patch preserves that link and the entire original Jetpack block.
+
+## New deliverable / concrete patch
+`focus_gift_hardening.cjs` accepts **only raw WP Gutenberg page edit content**, never WordPress credentials. It fails closed if the original script/panel, media URL, tracking selector or singleton Jetpack block differs from the inspected source. It removes untrusted URL/CSS success inference, labels the PDF clearly as a **public free download separate from subscription**, changes `after_signup` to `public_fieldbook`, preserves the real 52-page URL and native form, and introduces no new signup list, tracking pixel, merchant URL, send or CMS write. This patch is a candidate for **Claude/Site QA review**, not a live WordPress change. Any true post-confirmation-only gift gate would require a provider-authenticated server-side determination, not another browser query string.
+
+**Observed actual issue is a UI/analytics truth defect, not proof that the Jetpack form fails**. Visitors may already download a public PDF without subscribing. Count `focus_pdf_click` only as download intent, never as `confirmed_signup`. A valid provider-native `Email subscription=Subscribed` status plus consent/eligibility deduplication is required to record a confirmed signup; welcome delivery requires separate received evidence.
+
+## Tests
+Independent **full-source read-only check** on the exact current WordPress #1579 raw Gutenberg content (31,876 characters, modified 2026-11-05T17:44:02) evaluated the committed transformer in V8: PASS. Proposed output 31,477 characters; one Jetpack block and one gift panel preserved; one existing PDF link preserved; legacy URL/CSS-based detector removed; truthful `public_fieldbook` location substituted. **This is a transformation preview in memory, NOT a WordPress write or a live interactive browser test.**
+
+Native Node v22.16.0 `node --test test_focus_gift_hardening.cjs`: **24/24 passed** on exact Git blob-matching source/test code. 10 named fail-closed drift mutations tested. The tests use a faithful fixture of the WordPress script and gift panel; **not** a live browser signup or delivery test. Separate static HTML offline reviewer passes Chromium widths 320,390,768,1440 with zero horizontal overflow (local QA package only), but this cannot prove live WordPress or inbox rendering. No real emails or tests by mail were sent.
+
+## Latest subscriber and commercial gates
+Authenticated Jetpack 2026-11-06 15:32 UTC: newsletter enabled, auto-new-post email OFF, `email_content_format=full`, `reply_to=no-reply`, total=3, confirmed=3, unconfirmed=2; reported categories overlap. Five recent posts are explicitly `never_sent_opted_out`. **Actual email-eligible recipients UNKNOWN**; individual provider `Email subscription` statuses must be checked without exposing addresses. Welcome contains the verified 52-page PDF URL; **actual received welcome UNKNOWN**.
+
+Source: exact Zen12 https://zen12.com/ describes 12 levels, four options per level and 48 MP3s, and advertises one-year refund and "hour in 12 minutes" effects. The latter are **seller promotional claims**, not independent evidence; checkout price/refund fulfillment unknown. #171 reports the buyer guide not live, named FV affiliate acceptance, permission to promote specifically by EMAIL and approved earning URL all unverified. Total Focus is a separate pending offer. Issues 03/05 remain HOLD_MERCHANT; original 4 editorial/2 commercial allocation and #175 six manuscripts unchanged. FTC https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business requires valid FV postal address and usable unsubscribe in qualifying commercial sends; not verified in actual delivered email. Automattic's address is NOT FV's mailing address.
+
+## Conversion-first next actions — OFFER → STEP → BLOCKER → CHANGE → EVIDENCE → OWNER
+1. Fieldbook → public download/lead: arbitrary query and CSS masquerade as signup → proposed truth-safe gift/telemetry patch → **24 native tests PASS, NOT LIVE** → Claude/Site QA.
+2. Dispatch → eligible follower: overlapping totals → private provider-native per-recipient Email subscription reconciliation → **UNKNOWN** → Dispatch.
+3. Dispatch → received welcome: configured link not receipt → inspect already-authorized received message read-only → **UNKNOWN** → Dispatch.
+4. Dispatch → newsletter: actual Jetpack sender/postal/unsubscribe not seen → **non-sending** native preview plus separate authorized received-email check → **HOLD** → Dispatch/Claude.
+5. Zen12 → paying customer: account acceptance, EMAIL permission, approved guide and earning URL absent → source-of-truth partner verification → **HOLD_MERCHANT** → Mind #171.
+6. Customer → revenue: no independent settled receipts, attributable qualified-human sessions, refunds and fees → reconcile actual net paid revenue, not clicks or merchant retail order value → **NOT COMPUTABLE** → Commerce/Praxxis.
+
+When a creator has a real Grok `asset_id`, carry it as `utm_content` with verified platform `utm_source` and a consistent campaign; later approved email links use source=dispatch, medium=email, unique issue ID. No inventing creator IDs or new tracking scripts. Only provider-confirmed, deduplicated `confirmed_signup` and independently settled FV sales/commissions count. Measure 7/30-day cohorts and realized net revenue per 1,000 qualified human sessions only when source data exist.
+
+**Release: ALL SIX HOLD_UNSENT; #03/#05 ADDITIONAL HOLD_MERCHANT.** No WordPress writes, newsletter/test-email sends, social posting, subscriber exports/changes, affiliate activation or spending. Parent homepage PR #49 untouched; founder retains release approval.

@@ -1,0 +1,128 @@
+{
+  "review": "R121_CANONICAL_EDITORIAL_SELECTION_REQUIRED",
+  "date": "2026-11-04",
+  "master": {
+    "pr": 175,
+    "sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647"
+  },
+  "stacked": {
+    "pr": 981,
+    "sha": "a11f350e3e8c30c1a6910ab1be34f2811c259755"
+  },
+  "status": "ALL_HOLD_UNSENT",
+  "commercial_issues": [
+    3,
+    5
+  ],
+  "affiliate_authorized": false,
+  "merchants_purchasable_for_FV": false,
+  "source_of_subscriber_drift": "UNKNOWN",
+  "authenticated_wp_snapshot": {
+    "utc": "2026-11-04T20:32:04Z",
+    "total": 3,
+    "confirmed": 3,
+    "unconfirmed": 2,
+    "imported_last_24h": 1,
+    "reachable": null,
+    "welcome_received": null,
+    "automatic_post_email": false,
+    "email_format": "excerpt"
+  },
+  "paid_orders": null,
+  "realized_net_revenue": null,
+  "net_revenue_per_1000_qualified_sessions": null,
+  "rows": [
+    {
+      "issue": 1,
+      "path": "dispatch/campaign-2026-mind/issues/01-the-mind-is-not-a-camera.md",
+      "kind": "editorial",
+      "original_blob": "039b452b5cb7cd6dc2fed6fac4d2dd77fa9d49c8",
+      "stacked_blob": "2a573f6b7043c101ece49703f2dd1262ec2b0ee6",
+      "original_subject": "The mind is not a camera",
+      "stacked_subject": "The mind is not a camera",
+      "original_preheader": "What an old record can teach us about the difference between seeing and knowing.",
+      "stacked_preheader": "A stranger changed mid-conversation. The evidence lesson starts in the archives.",
+      "editorial_finding": "Simons/Levin 1998 DOI supported; do not generalize pedestrian detection rates to all eyewitnesses.",
+      "source_changed": true,
+      "release": "HOLD_UNSENT"
+    },
+    {
+      "issue": 2,
+      "path": "dispatch/campaign-2026-mind/issues/02-before-hypnosis-had-a-name.md",
+      "kind": "editorial",
+      "original_blob": "faa207ab7deafd86460d36f8c17fe62d392d0e14",
+      "stacked_blob": "fb8cf1503acb2338a4884cac58b7c3b2cec95af7",
+      "original_subject": "Before hypnosis had a name",
+      "stacked_subject": "Before hypnosis had a name",
+      "original_preheader": "The eighteenth-century witnesses who left behind a problem of proof.",
+      "stacked_preheader": "In 1784, a young man slept and spoke. His witness drew a startling conclusion.",
+      "editorial_finding": "May 4, 1784 and Victor Race are precise: Wellcome catalogue establishes publication not incident. Verify dated primary/scholarly account.",
+      "source_changed": true,
+      "release": "HOLD_UNSENT"
+    },
+    {
+      "issue": 3,
+      "path": "dispatch/campaign-2026-mind/issues/03-the-twelve-minute-question.md",
+      "kind": "commercial-review-pending",
+      "original_blob": "aeeef34efea0cc281f69901488e4501fea851245",
+      "stacked_blob": "b86572c15d05316801a007c00e9a2689a5de27c3",
+      "original_subject": "The twelve-minute meditation question",
+      "stacked_subject": "The twelve-minute meditation question",
+      "original_preheader": "An honest way to evaluate a short audio practice before you spend anything.",
+      "stacked_preheader": "An honest way to evaluate a short audio practice before you spend anything.",
+      "editorial_finding": "Zen12 free 1+9+2 routine useful; official package descriptions are seller features; email approval and live guide absent.",
+      "source_changed": true,
+      "release": "HOLD_UNSENT"
+    },
+    {
+      "issue": 4,
+      "path": "dispatch/campaign-2026-mind/issues/04-the-hatch-and-the-spark.md",
+      "kind": "editorial",
+      "original_blob": "89635bfb9c8d1ff17297a59b6b5b5b2a176934ca",
+      "stacked_blob": "7de77ccdc312e5bdf77a9aaa355c3a9ba4efa2c8",
+      "original_subject": "Fourteen seconds. A much longer explanation.",
+      "stacked_subject": "Seventeen seconds. A much longer explanation.",
+      "original_preheader": "Apollo 1, the surviving record, and why a tidy cause can mislead.",
+      "stacked_preheader": "NASA's Apollo 1 findings, and why a tidy explanation can mislead.",
+      "editorial_finding": "NASA: 17.1 seconds is elapsed first-to-last transmission interval; actual speech totals 10.3 seconds with 6.8 seconds of radio silence. Original 14 seconds unsupported.",
+      "source_changed": true,
+      "release": "HOLD_UNSENT"
+    },
+    {
+      "issue": 5,
+      "path": "dispatch/campaign-2026-mind/issues/05-before-you-press-play.md",
+      "kind": "commercial-review-pending",
+      "original_blob": "a9dfaa450ba025a7b5113ade8a294d6dbad778dc",
+      "stacked_blob": "a62a74c6cc2a3722048ff801ccba6212a6cdb397",
+      "original_subject": "Before you press play on a hypnosis audio",
+      "stacked_subject": "Before you press play on a hypnosis audio",
+      "original_preheader": "Three questions that matter more than an impressive promise.",
+      "stacked_preheader": "A free three-minute check, then a clearer look at the claims.",
+      "editorial_finding": "Total Focus seller lists 33-minute 47-MB audio; manuscript lacks direct official product-specific citation. No permitted email promotion or live guide.",
+      "source_changed": true,
+      "release": "HOLD_UNSENT"
+    },
+    {
+      "issue": 6,
+      "path": "dispatch/campaign-2026-mind/issues/06-the-evidence-log.md",
+      "kind": "editorial",
+      "original_blob": "004d558df6376d2ad6f4f79a4581e8d2c444e355",
+      "stacked_blob": "94b2e31594f0cdea1ec49f654429fa5f3a7b89c6",
+      "original_subject": "What did seven days of attention reveal?",
+      "stacked_subject": "What did seven days of attention reveal?",
+      "original_preheader": "A small experiment, a useful notebook, and no miracle claims.",
+      "stacked_preheader": "A small experiment, a useful notebook, and no miracle claims.",
+      "editorial_finding": "Already-subscribed reader is directed to /focus/ signup landing; direct verified Fieldbook PDF should be tested instead. PDF receipt and page count unverified.",
+      "source_changed": true,
+      "release": "HOLD_UNSENT"
+    }
+  ],
+  "official_sources": {
+    "nasa": "https://www.nasa.gov/wp-content/uploads/static/history/Apollo204/invest.html",
+    "simons": "https://doi.org/10.3758/BF03208840",
+    "diary": "https://www.bmj.com/content/324/7347/1193",
+    "hypnosis_product": "https://hypnosislive.com/mental-skills/total-focus",
+    "zen12": "https://zen12.com/",
+    "ftc": "https://search.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business"
+  }
+}

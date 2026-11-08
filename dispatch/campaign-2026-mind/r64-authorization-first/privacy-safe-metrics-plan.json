@@ -1,0 +1,79 @@
+{
+  "schema": 1,
+  "mode": "DISABLED_UNTIL_EXPLICIT_FOUNDER_AND_PARTNER_APPROVAL",
+  "data_collection_active": false,
+  "external_pixel": false,
+  "external_sdk": false,
+  "subscriber_export": false,
+  "personal_user_ids": false,
+  "new_mailing_list": false,
+  "new_paid_service": false,
+  "merchant_outbound_links_active": false,
+  "pilot_mix": {
+    "editorial": [
+      1,
+      2,
+      4,
+      6
+    ],
+    "commercial_reserved": [
+      3,
+      5
+    ],
+    "cadence": "weekly draft only; no date or send authorized"
+  },
+  "definitions": [
+    {
+      "name": "send_attempts",
+      "source": "Jetpack send confirmation for specifically authorized issue",
+      "status": "NOT_OBSERVED"
+    },
+    {
+      "name": "eligible_recipients",
+      "source": "private WordPress eligible email cohort",
+      "status": "UNKNOWN"
+    },
+    {
+      "name": "delivered",
+      "source": "provider delivery data where available, not assumed from send",
+      "status": "UNKNOWN"
+    },
+    {
+      "name": "opens",
+      "source": "Jetpack aggregate report where available; privacy/Apple Mail effects; not individual proof",
+      "status": "UNKNOWN"
+    },
+    {
+      "name": "first_party_cta_clicks",
+      "source": "only approved privacy-minimal aggregate first-party analytics, no user tokens",
+      "status": "DISABLED"
+    },
+    {
+      "name": "guide_to_merchant_clicks",
+      "source": "first-party aggregate event only after partner URL/channel approval",
+      "status": "DISABLED"
+    },
+    {
+      "name": "affiliate_orders",
+      "source": "actual partner dashboard validated purchase report only",
+      "status": "UNVERIFIED"
+    },
+    {
+      "name": "unsubscribes",
+      "source": "aggregate Jetpack provider result only",
+      "status": "UNKNOWN"
+    }
+  ],
+  "permitted_coarse_source_tags": [
+    "dispatch-01",
+    "dispatch-02",
+    "dispatch-03",
+    "dispatch-04",
+    "dispatch-05",
+    "dispatch-06"
+  ],
+  "source_tag_activation": "DISABLED",
+  "small_list_rule": "At ~2 confirmed records there is no defensible statistical A/B inference, audience segmentation or conversion lift claim.",
+  "reporting": "When and only when sends are approved, separate observed/unknown/estimated. Do not report a 0 when an outcome was not measured.",
+  "privacy": "No addresses, full referrer URLs, cookies, device fingerprint, unique query tokens or raw purchase IDs in public output."
+}

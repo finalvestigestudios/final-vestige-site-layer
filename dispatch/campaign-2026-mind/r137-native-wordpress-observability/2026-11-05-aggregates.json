@@ -1,0 +1,67 @@
+{
+  "provenance": "2026-11-05 12:32 UTC; WordPress authenticated read-only newsletter.get_settings + newsletter.status; site 256784396",
+  "site_url": "https://finalvestige.com",
+  "source_operations": [
+    "newsletter.get_settings",
+    "newsletter.status"
+  ],
+  "settings_as_of": "2026-11-05T12:32:30+00:00",
+  "status_as_of": "2026-11-05T12:32:36+00:00",
+  "settings": {
+    "subscriptions": true,
+    "email_new_posts_by_default": false,
+    "email_content_format": "excerpt",
+    "from_name": "Final Vestige",
+    "reply_to": "no-reply",
+    "welcome_link_set": true,
+    "welcome_received": null
+  },
+  "subscribers": {
+    "total": 3,
+    "confirmed": 3,
+    "unconfirmed": 2,
+    "suppressed": 0,
+    "paid": 0,
+    "imported_last_24h": 1,
+    "native_email_eligible_count": null
+  },
+  "recent_post_notification_states": [
+    {
+      "post_id": 1926,
+      "status": "never_sent_opted_out"
+    },
+    {
+      "post_id": 1924,
+      "status": "never_sent_opted_out"
+    },
+    {
+      "post_id": 1922,
+      "status": "never_sent_opted_out"
+    },
+    {
+      "post_id": 1920,
+      "status": "never_sent_opted_out"
+    },
+    {
+      "post_id": 1917,
+      "status": "never_sent_opted_out"
+    }
+  ],
+  "media_asset": {
+    "id": 1737,
+    "title": "Seven Day Focus Fieldbook — Complete Edition",
+    "mime_type": "application/pdf",
+    "size_bytes": 599946,
+    "url": "https://finalvestige.com/wp-content/uploads/2026/10/Final_Vestige_Seven_Day_Focus_Fieldbook_Complete_Edition.pdf",
+    "download_verified": false,
+    "pages_verified": false
+  },
+  "trusted_output": {
+    "subscriber_count_interpretation": "NON_ADDITIVE",
+    "import_counter_interpretation": "REQUIRES_PRIVATE_WP_RECONCILIATION_NOT_AN_ACTOR_IDENTIFICATION",
+    "actual_welcome_receipt": "UNVERIFIED",
+    "send_release": "HOLD_UNSENT",
+    "commercial_03_05": "HOLD_MERCHANT",
+    "actual_revenue": "UNKNOWN"
+  }
+}

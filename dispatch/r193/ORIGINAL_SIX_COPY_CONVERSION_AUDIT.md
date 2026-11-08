@@ -1,0 +1,23 @@
+# R193 — Conversion-first editorial review of original draft PR #175 (read-only)
+
+**Original exact HEAD:** d57ccdba3aee8f065e143e101c2945f4f3d01647. Six manuscript blob hashes, manifest and committed original Python suite matched connector hashes after locally reconstructing exact source bytes. **Native Python suite 6/6 PASSED** on November 7. This is not a Git clone, but source identities match Git hashes 8/8. No master manuscript, #201 readiness or frozen homepage PR #49 changed.
+
+| Original issue | What works | Concrete risk / corrective hypothesis | Decision |
+|---|---|---|---|
+| 01: The mind is not a camera | clear evidence-first brand framing | same Puységur destination as issue 02; no direct published perception experiment linked in email | KEEP DRAFT, optionally strengthen later |
+| 02: Before hypnosis had a name | historically grounded skeptical frame | consecutive Puységur CTA creates repetition and little differentiation | editorial substitution optional, not approved |
+| 03: Twelve-minute meditation | avoids accepting hour-equivalence; immediate free exercise | Zen12 guide URL is token, not live; generic rather than specific Premium 12-level/48-MP3 buyer question; secondary Fieldbook CTA repeats welcome for subscribers | HARD HOLD; optional R193 candidate is a source-led alternative, NOT substituted |
+| 04: Apollo 1 | historical investigation preserves the identity | "fourteen seconds" and technical causal description should be cross-checked with the NASA original before send | HOLD until independent source check |
+| 05: Hypnosis audio | useful buyer-evaluation objections | generic Hypnosis Live catalog rather than exact Total Focus 33-minute/47-MB offer; guide not live; email promo rights not verified | HARD HOLD |
+| 06: Focus evidence log | humble after-use note, no miracles | subscriber received Fieldbook link in configured welcome; driving back to /focus/ signup asks again for what they already got | keep original, optional editorial CTA after approval |
+
+**Major factual/legal review:** Current live Jetpack mode FULL (dated earlier runbook says excerpt). Separately entered email preheader may not appear in native Jetpack; WordPress uses post title for subject. No actual native preview, tested unsubscribe footer or valid owned postal address. Counter total=3, confirmed=3, unconfirmed=2 is nonadditive; actual email eligible unknown. An earlier confirmation-request email does not show a final welcome. Public Inspire3 affiliate page establishes neither account approval nor email marketing permission. Zen12 Premium seller offers 12 levels and 48 MP3 in four styles, advertises hour-equivalence and one-year guarantee; advertised 87.99 Premium page price is NOT verified checkout/refund in this campaign and is omitted from email. Total Focus seller advertises 33 minutes, 47 MB and a 14-day promise; seller outcomes unverified. No trusted settled orders or qualified human denominator; do not report revenue=0 or fake A/B lift.
+
+## OFFER → STEP → BLOCKER → CHANGE/EXPERIMENT → PASS/FAIL → OWNER
+1. **Zen12 Premium → offer guide:** account rights, email channel authorization, live buyer guide absent → get named publisher-specific partner approval; use only Mind-owned vetted live guide; FAIL / HOLD_MERCHANT → Mind #171 + Founder.
+2. **Focus → confirmed lead:** client-side success and headline counts are not provider proof → read aggregate Email subscription=Subscribed plus deduplicated confirmation transition; UNKNOWN / HOLD → Claude/Focus #129.
+3. **Confirmed subscriber → Fieldbook:** actual welcome receipt unverified → authorized received email/PDF verification without sending now; UNKNOWN → Dispatch.
+4. **Dispatch → compliant mail:** native preview, verified publisher postal address, working recipient opt-out absent → authorized no-send native preview then separately approved test; FAIL / HOLD → Dispatch/QA.
+5. **Buyer → independently settled paid order:** no merchant order/fees/refund and no qualified denominator → reconcile 7/30-day settled evidence; NOT COMPUTABLE → Commerce/Praxxis #820.
+
+**Conversion hypothesis only:** Better answer one high-intent customer's question — whether a structured, varied audio library adds value over free audio — than promise results. Optional R193 Issue03 focuses precisely on Premium *format* and the unpaid alternative, with one disabled guide CTA and a near-CTA disclosure. No buyer behavior, CTR, sales or actual difference has been observed.

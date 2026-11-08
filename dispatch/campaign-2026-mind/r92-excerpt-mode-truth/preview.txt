@@ -1,0 +1,47 @@
+FINAL VESTIGE DISPATCH / R92 STATIC EXCERPT REVIEW
+NOT A RECEIVED JETPACK EMAIL. ALL SIX HOLD_UNSENT.
+WordPress 'Read more' would point at a future WordPress post, not automatically at the related article/guide.
+
+ISSUE 01 / editorial
+SUBJECT CANDIDATE: The person changed. The conversation went on.
+PLANNING PREHEADER (unverified): A street conversation, a surprising substitution, and the limits of a witness's attention.
+CUSTOM EXCERPT CANDIDATE: In a street conversation, researchers exchanged the person asking directions. Many participants did not report the change. This finding concerns attention in a particular experiment; it does not establish that all witnesses are unreliable. Try separating what you noticed from what you inferred. Our investigation follows the research, its limits, and a demonstration you can explore.
+RELATED LIVE RESEARCH: https://finalvestige.com/2026/11/02/change-blindness/
+RELEASE: HOLD_UNSENT
+
+ISSUE 02 / editorial
+SUBJECT CANDIDATE: The witness slept. Who verified the story?
+PLANNING PREHEADER (unverified): Puységur's eighteenth-century accounts preserve testimony, not automatic proof.
+CUSTOM EXCERPT CANDIDATE: Puységur's eighteenth-century files describe unusual behavior and witnesses searching for an explanation. But what, exactly, did those witnesses observe? Was anything independently corroborated? The Franklin commission's inquiry into animal magnetism was not a replication of Puységur's reported case. Follow the original source trail, and try a three-column test: observation, corroboration, inference.
+RELATED LIVE RESEARCH: https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/
+RELEASE: HOLD_UNSENT
+
+ISSUE 03 / commercial-review-pending
+SUBJECT CANDIDATE: Twelve minutes is a starting point, not a shortcut.
+PLANNING PREHEADER (unverified): An evidence-first meditation routine before any product recommendation.
+CUSTOM EXCERPT CANDIDATE: Commercial note: A future independently reviewed guide may include a qualifying link that earns Final Vestige a commission. No purchase link is active. Twelve quiet minutes may be manageable for your schedule. Zen12 markets short-session meditation audio, but equivalence to a full hour of meditation is a seller claim, not an established result for this course. We are checking the specific package, privacy and evidence before recommending it.
+RELATED LIVE RESEARCH: NONE — COMMERCIAL GUIDE UNPUBLISHED
+RELEASE: HOLD_UNSENT + HOLD_MERCHANT
+
+ISSUE 04 / editorial
+SUBJECT CANDIDATE: The hatch was not the first failure.
+PLANNING PREHEADER (unverified): Apollo 1's official findings describe a chain of hazards, not one tidy answer.
+CUSTOM EXCERPT CANDIDATE: Apollo 1 cannot be explained responsibly by naming a single spark. The Review Board identified an oxygen-rich environment, combustible materials, wiring hazards, and obstacles to escape. It could not establish the precise ignition source. Our investigation follows how multiple conditions made the fire catastrophic, and why a good historical explanation must preserve what remains uncertain.
+RELATED LIVE RESEARCH: https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/
+RELEASE: HOLD_UNSENT
+
+ISSUE 05 / commercial-review-pending
+SUBJECT CANDIDATE: Before buying a focus recording, check the evidence.
+PLANNING PREHEADER (unverified): Three buying questions for the specific Total Focus hypnosis audio, without inflated promises.
+CUSTOM EXCERPT CANDIDATE: Commercial note: A future independently reviewed guide may include a qualifying link that earns Final Vestige a commission. No purchase link is active. Hypnosis Live markets Total Focus as a concentration recording, but the seller's claims are not independent proof of a specific outcome. Before choosing any audio, check the exact recording, the evidence, the current purchase terms and the privacy implications. Our product-specific evaluation is not yet approved or published.
+RELATED LIVE RESEARCH: NONE — COMMERCIAL GUIDE UNPUBLISHED
+RELEASE: HOLD_UNSENT + HOLD_MERCHANT
+
+ISSUE 06 / editorial
+SUBJECT CANDIDATE: Seven days of focus: what actually changed?
+PLANNING PREHEADER (unverified): Try a five-field evidence log instead of trusting a vague impression.
+CUSTOM EXCERPT CANDIDATE: A week of focus practice may feel transformative, frustrating, or ordinary. Rather than relying on that impression, record five things each day: whether you started, minutes practiced, interruptions, conditions that helped or hindered, and one adjustment to test. That log cannot prove medical or neurological benefits. Our free Focus Fieldbook offers a place to begin.
+RELATED LIVE RESEARCH: https://finalvestige.com/focus/
+RELEASE: HOLD_UNSENT
+
+No valid FV postal address or functional delivered unsubscribe has been verified. No partner email marketing approval. No sending.

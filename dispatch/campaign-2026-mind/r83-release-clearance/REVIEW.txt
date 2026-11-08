@@ -1,0 +1,38 @@
+R83 — FINAL VESTIGE DISPATCH / FOUNDER CLEARANCE DESK
+REVIEW ONLY — NO EMAIL, TEST SEND, POST OR MERCHANT LINK AUTHORIZED
+2 November 2026 (21:35 PT) / verified WordPress 3 November 2026 05:35Z
+
+Six-issue editorial pilot: 01,02,04,06 editorial; 03 Zen12 and 05 Total Focus commercial reserved.
+Release: ALL SIX HOLD_UNSENT. Both commercial slots additionally HOLD_MERCHANT.
+Auto email on new posts: OFF. Jetpack delivery: excerpt. Sender label: Final Vestige. Reply-to: no-reply.
+52-page Fieldbook welcome: CONFIGURED, RECEIPT UNVERIFIED.
+
+The discrepancy is real:
+Newsletter diagnostics: total 2 / confirmed 2 / unconfirmed 2.
+Follower stats: total 2 / email 0 / WordPress.com 2.
+Do NOT add counts or infer a recipient denominator; eligible audience UNKNOWN.
+Five recent published non-campaign posts 1917,1920,1922,1924,1926 each opted out and not emailed.
+This does NOT prove zero all-time sends or future delivery.
+
+Live /dispatch/ signup promises investigations and archive finds and lacks a note about occasional disclosed earning recommendations. Live /focus/ already includes that caveat. Same list; propose review-only copy alignment, never publish without approval.
+
+Independent commercial claim check:
+03: Zen12 advertises twelve-minute audio and unverified hour-equivalence/health effects. https://zen12.com/hnp
+05: Total Focus seller describes 33min/47MB and extraordinary concentration; performance not independently proven. https://hypnosislive.com/mental-skills/total-focus
+Both: partner acceptance, email permission, approved earning URLs, full checkout/refund, and live approved buyer guides UNKNOWN/UNVERIFIED.
+Buyer PII may be shared with referring affiliates: https://inspire3.com/privacy/
+
+Urgent founder-specific clearance actions:
+1. Qualifying Final Vestige publisher physical mailing address (not Automattic's or Inspire3's).
+2. Private native Email Subscribed/Sending filtered counts; aggregate attestation only.
+3. Separate permission to create a native, nonpublished editor preview, then separate permission for a controlled owned-inbox actual test email (never assume this authorization).
+4. Independently documented product-specific partner email permissions and approved live guides from Mind Studio.
+5. Final creative, recipient, timing, footer, unsub and SEND approval per issue.
+
+Source: https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business
+WordPress preview: https://wordpress.com/support/newsletter/email-appearance/
+Editorial Standards: https://finalvestige.com/editorial-standards/
+Original master https://github.com/finalvestigestudios/final-vestige-site-layer/pull/175 ; release gate https://github.com/finalvestigestudios/final-vestige-site-layer/pull/201 ;
+prior https://github.com/finalvestigestudios/final-vestige-site-layer/pull/732 ; owner https://github.com/finalvestigestudios/final-vestige-site-layer/issues/174 .
+
+No real inbox evidence, no sending or scheduling, no WordPress writes, no affiliate activations, no new costs.

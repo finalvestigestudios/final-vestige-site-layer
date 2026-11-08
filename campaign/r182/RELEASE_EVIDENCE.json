@@ -1,0 +1,51 @@
+{
+  "as_of_utc": "2026-11-07T09:37:22Z",
+  "provenance": "authenticated WordPress read-only + controlled Gmail searches",
+  "original_pr": 175,
+  "original_head": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "stacked_parent_pr": 1382,
+  "original_six_changed": false,
+  "issue_mix": {
+    "editorial": 4,
+    "commercial_drafts": 2
+  },
+  "newsletter_enabled": true,
+  "auto_send": false,
+  "email_format": "full",
+  "counted_subscribers": 3,
+  "confirmed_subscribers": 3,
+  "unconfirmed_nonadditive": 2,
+  "wpcom_followers": 3,
+  "legacy_email_only_followers": 0,
+  "actual_email_eligible": null,
+  "welcome_configured": true,
+  "received_welcome_proven": false,
+  "last_five_post_sends": "never_sent_opted_out",
+  "gmail_exact_welcome_matches": 0,
+  "all_sends": "HOLD_UNSENT",
+  "affiliate_drafts": "HOLD_MERCHANT",
+  "verified_net_revenue_per_1000": null,
+  "proofs": {
+    "signed_out_provider_confirmed_signup": false,
+    "actual_email_eligible": false,
+    "real_welcome_receipt": false,
+    "authorized_native_editor_email_preview": false,
+    "finalvestige_physical_postal_address": false,
+    "functional_received_unsubscribe": false,
+    "named_inspire3_acceptance": false,
+    "partner_email_channel_permission": false,
+    "live_approved_merchant_guide": false,
+    "authorized_affiliate_url": false,
+    "settled_paid_order": false,
+    "qualified_human_denominator": false,
+    "founder_final_send_approval": false
+  },
+  "prohibitions": [
+    "No mail/test send",
+    "No subscriber import/write",
+    "No WordPress settings/pages/posts edits",
+    "No merchant activation",
+    "No paid tracking claims",
+    "No launch"
+  ]
+}

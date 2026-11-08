@@ -1,0 +1,211 @@
+{
+  "schema": 1,
+  "status": "ALL_UNVERIFIED_NO_SEND_AUTHORIZATION",
+  "source_rule": "Only opaque internal ticket/review receipt references, never subscriber names/emails, product account tokens or physical street addresses",
+  "shared": {
+    "confirmed_unique_consented_audience": {
+      "verified": false,
+      "private_evidence_reference": null,
+      "reviewer_role": null
+    },
+    "newsletter_sender_and_per_post_toggle_reviewed": {
+      "verified": false,
+      "private_evidence_reference": null,
+      "reviewer_role": null
+    },
+    "full_vs_excerpt_delivery_decision_approved": {
+      "verified": false,
+      "private_evidence_reference": null,
+      "reviewer_role": null
+    },
+    "actual_jetpack_post_preview_reviewed": {
+      "verified": false,
+      "private_evidence_reference": null,
+      "reviewer_role": null
+    },
+    "founder_authorized_received_test_verified": {
+      "verified": false,
+      "private_evidence_reference": null,
+      "reviewer_role": null
+    },
+    "final_vestige_postal_address_in_received_commercial_mail": {
+      "verified": false,
+      "private_evidence_reference": null,
+      "reviewer_role": null
+    },
+    "functional_opt_out_in_received_mail": {
+      "verified": false,
+      "private_evidence_reference": null,
+      "reviewer_role": null
+    },
+    "final_content_audience_date_approval": {
+      "verified": false,
+      "private_evidence_reference": null,
+      "reviewer_role": null
+    }
+  },
+  "issues": {
+    "1": {
+      "independent_source_check": {
+        "verified": false,
+        "private_evidence_reference": null,
+        "reviewer_role": null
+      },
+      "actual_cta_destination_reviewed": {
+        "verified": false,
+        "private_evidence_reference": null,
+        "reviewer_role": null
+      },
+      "mobile_subject_and_body_reviewed": {
+        "verified": false,
+        "private_evidence_reference": null,
+        "reviewer_role": null
+      }
+    },
+    "2": {
+      "independent_source_check": {
+        "verified": false,
+        "private_evidence_reference": null,
+        "reviewer_role": null
+      },
+      "actual_cta_destination_reviewed": {
+        "verified": false,
+        "private_evidence_reference": null,
+        "reviewer_role": null
+      },
+      "mobile_subject_and_body_reviewed": {
+        "verified": false,
+        "private_evidence_reference": null,
+        "reviewer_role": null
+      }
+    },
+    "3": {
+      "independent_source_check": {
+        "verified": false,
+        "private_evidence_reference": null,
+        "reviewer_role": null
+      },
+      "actual_cta_destination_reviewed": {
+        "verified": false,
+        "private_evidence_reference": null,
+        "reviewer_role": null
+      },
+      "mobile_subject_and_body_reviewed": {
+        "verified": false,
+        "private_evidence_reference": null,
+        "reviewer_role": null
+      },
+      "inspire3_account_product_acceptance": {
+        "verified": false,
+        "private_evidence_reference": null,
+        "reviewer_role": null
+      },
+      "specific_email_marketing_permission": {
+        "verified": false,
+        "private_evidence_reference": null,
+        "reviewer_role": null
+      },
+      "product_page_and_merchant_terms_checked": {
+        "verified": false,
+        "private_evidence_reference": null,
+        "reviewer_role": null
+      },
+      "approved_tracking_destination_and_link_rules": {
+        "verified": false,
+        "private_evidence_reference": null,
+        "reviewer_role": null
+      },
+      "final_vestige_guide_published_and_accessible": {
+        "verified": false,
+        "private_evidence_reference": null,
+        "reviewer_role": null
+      },
+      "product_claims_evidence_and_disclosure_checked": {
+        "verified": false,
+        "private_evidence_reference": null,
+        "reviewer_role": null
+      }
+    },
+    "4": {
+      "independent_source_check": {
+        "verified": false,
+        "private_evidence_reference": null,
+        "reviewer_role": null
+      },
+      "actual_cta_destination_reviewed": {
+        "verified": false,
+        "private_evidence_reference": null,
+        "reviewer_role": null
+      },
+      "mobile_subject_and_body_reviewed": {
+        "verified": false,
+        "private_evidence_reference": null,
+        "reviewer_role": null
+      }
+    },
+    "5": {
+      "independent_source_check": {
+        "verified": false,
+        "private_evidence_reference": null,
+        "reviewer_role": null
+      },
+      "actual_cta_destination_reviewed": {
+        "verified": false,
+        "private_evidence_reference": null,
+        "reviewer_role": null
+      },
+      "mobile_subject_and_body_reviewed": {
+        "verified": false,
+        "private_evidence_reference": null,
+        "reviewer_role": null
+      },
+      "inspire3_account_product_acceptance": {
+        "verified": false,
+        "private_evidence_reference": null,
+        "reviewer_role": null
+      },
+      "specific_email_marketing_permission": {
+        "verified": false,
+        "private_evidence_reference": null,
+        "reviewer_role": null
+      },
+      "product_page_and_merchant_terms_checked": {
+        "verified": false,
+        "private_evidence_reference": null,
+        "reviewer_role": null
+      },
+      "approved_tracking_destination_and_link_rules": {
+        "verified": false,
+        "private_evidence_reference": null,
+        "reviewer_role": null
+      },
+      "final_vestige_guide_published_and_accessible": {
+        "verified": false,
+        "private_evidence_reference": null,
+        "reviewer_role": null
+      },
+      "product_claims_evidence_and_disclosure_checked": {
+        "verified": false,
+        "private_evidence_reference": null,
+        "reviewer_role": null
+      }
+    },
+    "6": {
+      "independent_source_check": {
+        "verified": false,
+        "private_evidence_reference": null,
+        "reviewer_role": null
+      },
+      "actual_cta_destination_reviewed": {
+        "verified": false,
+        "private_evidence_reference": null,
+        "reviewer_role": null
+      },
+      "mobile_subject_and_body_reviewed": {
+        "verified": false,
+        "private_evidence_reference": null,
+        "reviewer_role": null
+      }
+    }
+  }
+}

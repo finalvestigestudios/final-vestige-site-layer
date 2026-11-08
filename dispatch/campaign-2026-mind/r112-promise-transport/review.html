@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dispatch | Subscriber Promise & Transport QA — Unsent R112</title>
+<style>
+:root{color-scheme:dark;--bg:#101210;--panel:#1b201c;--ink:#f3f1e7;--muted:#b3beb7;--accent:#d9bc83;--line:#536058;--warn:#f3d09d}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 system-ui,-apple-system,Segoe UI,sans-serif}
+main{max-width:1120px;margin:auto;padding:clamp(22px,4vw,52px)}h1,h2,h3{line-height:1.22;letter-spacing:-.02em}h1{font:400 clamp(2.4rem,5vw,4rem)/1.12 Georgia,serif}h2{font:400 clamp(1.65rem,3vw,2.25rem)/1.2 Georgia,serif;margin:0 0 .7em}
+h3{font-size:1.12rem;margin:0 0 .4em}p{max-width:78ch}a{color:var(--accent);text-underline-offset:4px}a:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+.eyebrow{color:var(--accent);text-transform:uppercase;font-size:.8rem;letter-spacing:.15em;font-weight:700}
+.sub{max-width:75ch;color:var(--muted)}.banner{padding:14px 20px;background:#332b1c;border:1px solid var(--warn);margin:25px 0 35px;border-radius:4px;color:#fff5e6}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,315px),1fr));gap:14px}.card{border:1px solid var(--line);border-radius:4px;padding:22px;background:var(--panel)}.card p{margin:.4em 0;color:var(--muted)}
+.status{color:var(--warn);font-weight:700}.number{font:400 2.35rem/1.3 Georgia,serif;color:var(--accent)}.fine{font-size:.86rem;color:var(--muted)}
+section{padding:33px 0;border-top:1px solid var(--line)}blockquote{margin:12px 0 0;border-left:3px solid var(--accent);padding:12px 20px;background:var(--panel);max-width:80ch}
+table{border-collapse:collapse;width:100%;font-size:.93rem}th,td{text-align:left;border:1px solid var(--line);padding:10px;vertical-align:top}th{background:#253028}caption{text-align:left;color:var(--muted);padding:0 0 12px}
+@media(max-width:640px){.scroll{overflow-x:auto}table{min-width:680px}main{padding:18px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+@media print{body{background:#fff;color:#171917}.card,blockquote{background:#fff;color:#171917}.sub,.fine{color:#333}}
+</style></head>
+<body><main>
+<header><p class="eyebrow">Final Vestige Studios • Independent Draft QA</p><h1>The promise in the signup form<br>and the message in the inbox</h1>
+<p class="sub">A source-linked, privacy-safe release board. These are review candidates, not a production newsletter preview, consent transaction, checkout or permission to email anyone.</p>
+<div class="banner" role="status"><strong>HOLD_UNSENT — all six editions.</strong> Issues 03 and 05: HOLD_MERCHANT. No live changes, mail, new list or purchase.</div></header>
+<section aria-labelledby="proof"><h2 id="proof">What the existing platform actually shows</h2><div class="grid">
+<div class="card"><h3>Newsletter</h3><p class="number">ON</p><p>Jetpack enabled; automatic email for a new post <strong>OFF</strong>. Current rendering setting: <strong>excerpt</strong>.</p></div>
+<div class="card"><h3>Known count semantics</h3><p class="number">2 / 2 / 2</p><p>Native total / confirmed / unconfirmed. These are <strong>not additive</strong>; email-reachable audience remains unknown.</p></div>
+<div class="card"><h3>Last five post events</h3><p class="status">Not sent</p><p>Each record explicitly opted out. This does not establish an all-time send count.</p></div>
+<div class="card"><h3>Welcome proof</h3><p class="status">Configured ≠ received</p><p>The Fieldbook PDF is in WordPress welcome settings. No matching received welcome found in the mailbox searched.</p></div>
+</div><p class="fine">Source: authenticated WordPress newsletter status/settings at 2026-11-04 11:31 UTC; /dispatch/, /focus/ and Editorial Standards read-only.</p></section>
+<section aria-labelledby="risk"><h2 id="risk">The material expectation gap</h2>
+<div class="grid"><div class="card"><h3>What Dispatch currently implies</h3>
+<blockquote>“New investigations and archive finds by email, when we publish them.”</blockquote>
+<p>Visitors may reasonably expect automatic publication-triggered emails, which are intentionally disabled.</p></div>
+<div class="card"><h3>What WordPress can substantiate</h3><p>Its newsletter can be manually sent with separate approval, but current new-post default is disabled; the last five posts were not emailed.</p><p><strong>Decision:</strong> correct the expectation if the newsletter remains selective. Do not turn on automatic emails to match a sentence.</p></div></div></section>
+<section aria-labelledby="candidate"><h2 id="candidate">Candidate consent and promise paragraph — NOT LIVE</h2>
+<p class="fine">The following is replacement copy for human review; it does not update the public website or the welcome message.</p>
+<blockquote><p>The Dispatch is our occasional research newsletter: original investigations, sources worth checking, and practical notes from the archive. Publishing an article on the website does not automatically email everyone. We send an edition only after it has been reviewed for readers. Your welcome message is intended to include the free 52-page Seven Day Focus Fieldbook. Occasionally, an optional, clearly marked recommendation may earn Final Vestige a commission if you purchase. No purchase is required. Unsubscribe whenever you choose.</p></blockquote>
+<p>Copy review: historical evidence mission preserved; optional commissions disclosed at signup; no unverified weekly promise; free gift retained; delivery still requires genuine recipient evidence.</p></section>
+<section aria-labelledby="routes"><h2 id="routes">Six-issue destination truth table</h2>
+<div class="scroll"><table><caption>Four native published editorial destinations verified via connected WordPress; two commercial URLs intentionally absent.</caption><thead><tr><th scope="col">Issue</th><th scope="col">Destination</th><th scope="col">Source state</th><th scope="col">Release</th></tr></thead><tbody>
+<tr><td>01 — Perception</td><td><a href="https://finalvestige.com/the-missing-caption/">The Missing Caption</a></td><td>Published page</td><td>HOLD_UNSENT</td></tr>
+<tr><td>02 — Suggestion</td><td><a href="https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/">Puységur Files</a></td><td>Published page</td><td>HOLD_UNSENT</td></tr>
+<tr><td>03 — Zen12</td><td>Independent first-party guide required</td><td>Not approved live</td><td>HOLD_MERCHANT</td></tr>
+<tr><td>04 — Apollo 1</td><td><a href="https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/">The Hatch Opened Inward</a></td><td>Published post</td><td>HOLD_UNSENT</td></tr>
+<tr><td>05 — Total Focus</td><td>Separate reviewed first-party guide required</td><td>Not approved live</td><td>HOLD_MERCHANT</td></tr>
+<tr><td>06 — Focus Log</td><td><a href="https://finalvestige.com/focus/">Seven Day Focus Fieldbook</a></td><td>Published page</td><td>HOLD_UNSENT</td></tr>
+</tbody></table></div></section>
+<section aria-labelledby="next"><h2 id="next">What would change the release decision?</h2>
+<div class="grid"><div class="card"><h3>1. Consent and fieldbook</h3><p>Native subscriber confirmation and separate deliverability evidence; inspect a legitimately received welcome and successful PDF access. No new subscriber or test email without permission.</p></div>
+<div class="card"><h3>2. Transport and law</h3><p>Exact subject/preheader and excerpt seen in a genuine Jetpack email; validated Final Vestige mailing address and functional unsubscribe/suppression workflow.</p></div>
+<div class="card"><h3>3. Commercial acceptance</h3><p>Named affiliate permission for email, accepted product, approved guide, permissible no-PII tracking, honest offer claims and reviewed buyer terms.</p></div>
+<div class="card"><h3>4. Realized paid revenue</h3><p>Merchant-confirmed orders/commissions less refunds and fees. A signup, pageview or click never equals a verified sale.</p></div></div></section>
+<footer><p class="fine">Source documents: <a href="https://github.com/finalvestigestudios/final-vestige-site-layer/issues/174">Dispatch #174</a> · <a href="https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171">Mind #171</a> · <a href="https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820">Conversion #820</a> · <a href="https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business">FTC CAN-SPAM</a> · <a href="https://zen12.com/hnp">Zen12 seller page (claim-source only)</a> · <a href="https://inspire3.com/privacy/">Inspire3 privacy policy</a>. No commercial checkout links. Historical source claims remain subject to original master editorial QA.</p>
+</footer></main></body></html>

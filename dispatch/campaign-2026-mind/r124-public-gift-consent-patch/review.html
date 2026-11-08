@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="dark"><title>FV Dispatch R124 — Focus consent truth review</title>
+<style>
+:root{font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:#090a0a;color:#f4efe6}*{box-sizing:border-box}
+body{margin:0;line-height:1.6}a{color:#dbc08a}a:focus-visible{outline:3px solid #edc779;outline-offset:4px}
+main{max-width:1160px;margin:auto;padding:clamp(1rem,4vw,3rem)}.eyebrow{letter-spacing:.2em;font-size:.78rem;color:#dfbc7d;text-transform:uppercase}
+h1,h2{font-family:Georgia,serif;line-height:1.15}h1{font-size:clamp(2rem,4vw,3.7rem);max-width:870px}h2{font-size:1.55rem;margin-top:0}
+.lede{max-width:850px;font-size:1.1rem;color:#c6c0b5}.hold{border:1px solid #aa744e;padding:1rem 1.2rem;background:#211712;color:#ffdcbd}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.2rem;margin:2rem 0}.card{border:1px solid #403a31;background:#141515;padding:clamp(1.2rem,3vw,2rem);min-width:0}
+.before{border-top:5px solid #e08b66}.after{border-top:5px solid #b8b76e}
+.kicker{font-weight:700;letter-spacing:.09em;text-transform:uppercase;font-size:.76rem;color:#e3c88d}
+.pill{border:1px solid #70634c;display:inline-block;border-radius:10rem;padding:.2rem .65rem;font-size:.75rem}
+.example{padding:1rem;border:1px dashed #766a57;margin:1.2rem 0}
+.fake-button{display:inline-block;padding:.7rem 1rem;border:1px solid #c9a86e;color:#f4efe6;background:#392f22;text-decoration:none;font-weight:700;word-break:break-word}
+.fake-button[aria-disabled="true"]{cursor:not-allowed;opacity:.8}.detail{color:#bab2a6}.warn{color:#e9ae96}.good{color:#cddeaa}
+table{width:100%;border-collapse:collapse}th,td{padding:.75rem;border-bottom:1px solid #423e37;text-align:left;vertical-align:top;overflow-wrap:anywhere}th{color:#e6c48b}
+small{font-size:.9rem}.sub{font-size:.82rem;color:#c2b8a8}footer{margin-top:3rem;padding-top:1rem;border-top:1px solid #403a31}
+@media(max-width:700px){.grid{grid-template-columns:1fr}table{display:block;overflow-x:auto}main{padding:1rem}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important}}
+</style></head>
+<body><main>
+<p class="eyebrow">Final Vestige Studios · The Dispatch · R124</p>
+<h1>Make the free Fieldbook honest.<br>Keep newsletter consent separate.</h1>
+<p class="lede">Proposed correction to the existing Focus funnel. The PDF is already public; a revealed download button is not a confirmed email subscription. This is a read-only static reviewer, not a rendered WordPress page or a subscriber test.</p>
+<p class="hold"><strong>HOLD — UNSENT AND UNPUBLISHED.</strong> Founder approval required for any WordPress production change. No email, live merchant link, signup form, script, pixel, or order action exists in this document. Four editorial / two commercial newsletter slots remain reserved, not scheduled.</p>
+<div class="grid" aria-label="Before and proposed after">
+<section class="card before" aria-labelledby="before"><p class="kicker">Current observed logic</p><h2 id="before">A download shown by URL or CSS</h2>
+<p>The live Focus page hides its public download panel until a query value or CSS token triggers a JavaScript reveal. These UI signals are <strong>not</strong> authoritative evidence of native confirmation.</p>
+<div class="example"><span class="pill">Example only</span><p class="warn">?subscribe=foo → show gift</p><span class="fake-button" aria-disabled="true">Download the Fieldbook</span><p class="sub">Even an arbitrary URL can display the button. The existing FAQ tells readers to confirm first, and suggests signing up again on mobile.</p></div>
+<p><strong>Risks:</strong> false lead attribution; repeated signup attempts; unnecessary friction for existing subscribers; misleading “after_signup” analytics location.</p></section>
+<section class="card after" aria-labelledby="after"><p class="kicker">Proposed release candidate</p><h2 id="after">A free public download plus a separate opt-in</h2>
+<p>The same PDF button is available to all readers without client-side eligibility theater. A clear newsletter invitation is separate and managed by the existing WordPress block.</p>
+<div class="example"><span class="pill">Visual specimen only</span><p class="good">Free public Fieldbook download</p><span class="fake-button" aria-disabled="true">Download the Fieldbook (inert preview)</span><p class="sub">Downloading does not subscribe you. To join Dispatch, use the native form and follow WordPress's confirmation instructions if prompted.</p></div>
+<p><strong>What changes:</strong> accessibility role, disclosure truth, five signup CTA labels, two FAQ paragraphs and one diagnostic location. The WordPress native subscribe block and public PDF URL are preserved.</p></section>
+</div>
+<section class="card" aria-labelledby="verification"><h2 id="verification">Acceptance matrix — do not confuse evidence types</h2>
+<table><thead><tr><th scope="col">Signal</th><th scope="col">What it actually establishes</th><th scope="col">Lead status</th></tr></thead>
+<tbody><tr><td>PDF panel revealed; PDF click</td><td>Public content was offered or opened, not consent</td><td>Not a confirmed lead</td></tr>
+<tr><td>Subscribe CTA click</td><td>Visitor expressed interest; no native confirmation</td><td>Not a confirmed lead</td></tr>
+<tr><td>WordPress total 3, confirmed 3, unconfirmed 2</td><td>Three aggregate reported confirmed; counts are not additive</td><td>Origin and email reachability unknown</td></tr>
+<tr><td>WordPress followers: 3 WP.com, 0 email</td><td>Separate follower classifications, not a list of recipients</td><td>Reachability unknown</td></tr>
+<tr><td>Authoritative native confirmation + consent + opaque dedup</td><td>Potentially legitimate confirmed_signup event</td><td>Requires private validation</td></tr>
+<tr><td>Received welcome with PDF and working unsubscribe</td><td>In-the-wild transport/compliance evidence</td><td>Not observed</td></tr>
+<tr><td>Verified settled merchant order less fees/refunds</td><td>Realized revenue, if independently authenticated</td><td>Not observed</td></tr>
+</tbody></table>
+</section>
+<section class="card" style="margin-top:1.2rem" aria-labelledby="route"><h2 id="route">One reader, one trustworthy path to purchase</h2><p>Existing Grok asset with genuine ID → qualified reader on <code>/focus/</code> → optional separate WordPress signup → native confirmed consent → configured Fieldbook welcome → editorial Dispatch → <em>only when individually approved</em> Zen12 guide → named partner-authorized merchant checkout → settled, refunded/fee-adjusted transaction.</p><p>Do not count link clicks, downloads or native “confirmed” aggregates as paid customers. Realized net revenue per 1,000 qualified human sessions is <strong>NOT COMPUTABLE</strong> without both an authoritative denominator and settled purchase reporting. No fabricated A/B result with a tiny audience.</p>
+<p class="hold"><strong>Commercial holds:</strong> Issue 03 Zen12 and Issue 05 Total Focus have no verified Final Vestige email-promotion permission, approved source links/creatives or live buyer guides. All six issues remain <strong>HOLD_UNSENT</strong>; 03/05 additionally <strong>HOLD_MERCHANT</strong>. Valid publisher mailing address and a genuinely functional Jetpack unsubscribe in a received email are not verified.</p></section>
+<footer><small>Evidence: <a href="https://github.com/finalvestigestudios/final-vestige-site-layer/issues/174">Dispatch #174</a>; <a href="https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171">Mind #171</a>; <a href="https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business">FTC CAN-SPAM compliance</a>. This file is static, has no network trackers and makes no subscriber or commerce calls.</small></footer>
+</main></body></html>

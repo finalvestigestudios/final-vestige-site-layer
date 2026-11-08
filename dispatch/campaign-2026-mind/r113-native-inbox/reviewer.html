@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Dispatch — Native Inbox Transport Decision (UNSENT)</title>
+<style>
+:root{color-scheme:dark;--bg:#121513;--panel:#1a201d;--ink:#eff3ec;--muted:#bbc8bd;--line:#455a4b;--gold:#e6c786;--alert:#f5ad9c}
+*{box-sizing:border-box}body{background:var(--bg);color:var(--ink);font:17px/1.55 system-ui,-apple-system,Segoe UI,sans-serif;margin:0}main{max-width:1040px;margin:auto;padding:2rem 1.2rem 5rem}
+h1,h2,h3{font-family:Georgia,serif;font-weight:normal;line-height:1.13}h1{font-size:clamp(2.4rem,6vw,4.8rem);margin:.35rem 0 1rem}h2{font-size:2rem}h3{font-size:1.3rem;margin:0 0 .5rem}
+.eyebrow{text-transform:uppercase;letter-spacing:.19em;font-size:.78rem;color:var(--gold);font-weight:700}
+.warning{padding:1rem 1.2rem;border:2px solid var(--alert);background:#331e1b;margin:1.7rem 0}
+.warning strong,.hold{color:#ffcabd}.lead{max-width:65ch;font-size:1.15rem;color:var(--muted)}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}.card{border:1px solid var(--line);background:var(--panel);padding:1.25rem;min-width:0}
+.card p{margin:.4rem 0;overflow-wrap:anywhere}.pill{display:inline-block;padding:.2rem .55rem;border:1px solid var(--alert);border-radius:1rem;font-size:.74rem;font-weight:700;color:#ffcabd}
+.label{font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;color:var(--gold)}.muted{color:var(--muted)}
+a{color:var(--gold);overflow-wrap:anywhere}a:focus-visible{outline:3px solid white;outline-offset:4px}
+.timeline{display:grid;gap:.8rem;padding:0;list-style:none}.timeline li{border-left:3px solid var(--gold);padding:.4rem 1rem;background:var(--panel)}
+footer{margin-top:3rem;border-top:1px solid var(--line);padding-top:1rem;color:var(--muted)}
+@media(max-width:680px){.cards{grid-template-columns:1fr}main{padding:1.2rem 1rem 3rem}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+</style></head><body><main>
+<p class="eyebrow">Final Vestige Studios / The Dispatch / R113</p>
+<h1>What will the inbox actually say?</h1>
+<p class="lead">A source-controlled transport review, <strong>not</strong> a live WordPress email rendering. Six original subjects are mapped to the real WordPress rule: the email subject is the post title. The requested preheaders remain unverified in native transport.</p>
+<div class="warning" role="note"><strong>HOLD — NO SEND AUTHORIZED.</strong> This is an offline reviewer. No emails, signup submissions, WordPress drafts, paid offers, external analytics, or subscriber interactions are present.</div>
+<section aria-labelledby="semantics"><h2 id="semantics">Three distinct layers</h2>
+<ol class="timeline">
+<li><strong>Post title → email subject.</strong> Documented by WordPress. Exact selected creative/version must be locked before release.</li>
+<li><strong>Custom excerpt → shortened body.</strong> Current WordPress configuration sends excerpt mode. The full research manuscript, link placement, sources and disclosures are not automatically in the delivered body.</li>
+<li><strong>Preheader is not established.</strong> A draft preheader in the campaign manifest is not proof of an independently editable native inbox preview field.</li>
+</ol></section>
+<section aria-labelledby="issues"><h2 id="issues">Original six-subject transport ledger</h2><div class="cards">
+<article class="card"><p class="label">01 / Editorial</p><h3>The mind is not a camera</h3><p class="muted">Draft preheader: What an old record can teach us about the difference between seeing and knowing.</p><p class="hold"><span class="pill">HOLD_UNSENT</span> Native preview and received-email evidence missing.</p></article>
+<article class="card"><p class="label">02 / Editorial</p><h3>Before hypnosis had a name</h3><p class="muted">Draft preheader: The eighteenth-century witnesses who left behind a problem of proof.</p><p class="hold"><span class="pill">HOLD_UNSENT</span> Native preview and received-email evidence missing.</p></article>
+<article class="card"><p class="label">03 / Commercial reserved</p><h3>The twelve-minute meditation question</h3><p class="muted">Draft preheader: An honest way to evaluate a short audio practice before you spend anything.</p><p class="hold"><span class="pill">HOLD_MERCHANT</span> First-party guide, email rights, near-offer excerpt disclosure and purchase attribution unverified.</p></article>
+<article class="card"><p class="label">04 / Editorial</p><h3>Fourteen seconds. A much longer explanation.</h3><p class="muted">Draft preheader: Apollo 1, the surviving record, and why a tidy cause can mislead.</p><p class="hold"><span class="pill">HOLD_UNSENT</span> Historical subject variation must be adjudicated; native preview missing.</p></article>
+<article class="card"><p class="label">05 / Commercial reserved</p><h3>Before you press play on a hypnosis audio</h3><p class="muted">Draft preheader: Three questions that matter more than an impressive promise.</p><p class="hold"><span class="pill">HOLD_MERCHANT</span> Seller-specific offer permissions, first-party guide and near-offer disclosure unverified.</p></article>
+<article class="card"><p class="label">06 / Editorial</p><h3>What did seven days of attention reveal?</h3><p class="muted">Draft preheader: A small experiment, a useful notebook, and no miracle claims.</p><p class="hold"><span class="pill">HOLD_UNSENT</span> Actual Focus Fieldbook welcome receipt unverified.</p></article>
+</div></section>
+<section aria-labelledby="verification"><h2 id="verification">Evidence before approval</h2>
+<p>WordPress native desktop, tablet and mobile editor previews; a separately authorized <strong>received</strong> MIME sample with plaintext/HTML and actual publisher-address/unsubscribe verification; no exposed identities or personalized tokens; exact approved creative, two product/channel authorizations, and independently verified paid order/fees/refunds before reporting net revenue.</p>
+<p>Verified subscriber reachability: <strong>unknown</strong>. Confirmed=2 and unconfirmed=2 are not additive. Verified orders and net revenue per 1,000 qualified-human sessions: <strong>not computable</strong>.</p>
+</section><footer><p>This is a <strong>static editorial/QA reviewer</strong>, not a simulated email claim. No forms, external fonts, scripts, trackers, merchant links or test-email dispatch.</p>
+<p>Official references: <a href="https://wordpress.com/support/newsletter/send-newsletter-emails/">native subject/send</a> · <a href="https://wordpress.com/support/newsletter-settings/">excerpt &amp; welcome settings</a> · <a href="https://wordpress.com/support/newsletter/email-appearance/">native editor preview</a> · <a href="https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business">CAN-SPAM</a>.</p>
+</footer></main></body></html>

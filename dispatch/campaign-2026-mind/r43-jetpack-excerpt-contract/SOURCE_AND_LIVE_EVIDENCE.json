@@ -1,0 +1,51 @@
+{
+  "name": "R43_PROVIDER_EXCERPT_CONTRACT",
+  "observed_utc": "2026-11-01T13:37:41Z",
+  "site": "finalvestige.com",
+  "documentation": {
+    "wordPress_generic": {
+      "last_reviewed": "2026-10-06",
+      "method": "first 55 words when generic excerpt omitted",
+      "url": "https://wordpress.com/support/excerpts/"
+    },
+    "jetpack_newsletter": {
+      "last_updated": "2026-10-28",
+      "method": "first 350 characters of post when excerpt field empty",
+      "url": "https://jetpack.com/support/newsletter/customize-the-newsletter-experience/"
+    }
+  },
+  "observed_site": {
+    "subscriptions": true,
+    "email_new_posts_by_default": false,
+    "email_content_format": "excerpt",
+    "featured_image_in_email": true,
+    "post_date_in_email": true,
+    "reply_to": "no-reply",
+    "from_name": "Final Vestige",
+    "welcome_message_configured": true,
+    "recent_sends_reported_count": 0
+  },
+  "counts": {
+    "total": 2,
+    "confirmed": 2,
+    "unconfirmed": 2,
+    "interpretation": "nonadditive, eligible unique recipients unknown"
+  },
+  "approvals": {
+    "final_founder_send": false,
+    "verified_business_postal_footer": false,
+    "unsubscribe_in_received_email": false,
+    "native_jetpack_email_received": false,
+    "private_eligible_audience_review": false,
+    "approved_partner_zen12_email_promotion": false,
+    "approved_partner_total_focus_email_promotion": false,
+    "approved_commercial_guides_live": false
+  },
+  "permissions": {
+    "wordpress_writes": false,
+    "test_sends": false,
+    "actual_sends": false,
+    "affiliate_urls": false
+  },
+  "report_is_offline": true
+}

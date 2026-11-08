@@ -1,0 +1,72 @@
+{
+  "schema_version": "fv-podcast-publish/v1",
+  "mode": "release",
+  "package_id": "POD-001-FINAL-V1.3",
+  "release_payload_sha256": "c14b2df0f1c91beb126f65190e2bb1a8d37151f973f4dcc148cadf255b23f67e",
+  "publication_authority": "FOUNDER_EXPLICIT_PUBLISH_2026-09-19",
+  "qd": {
+    "exact_master": "PASS",
+    "artwork_rights": "PASS",
+    "release_copy": "PASS"
+  },
+  "master": {
+    "url": "https://drive.usercontent.google.com/download?id=1Mg6qDcK7yacliwI3jYBdd6Bk-5c1Wj6s&export=download&confirm=t",
+    "sha256": "3a922c33a02731689670e9253a25e187098b2a3792036d0103011b5ce705741a",
+    "bytes": 40771052,
+    "filename": "POD-001_New-London_podcast_master_candidate_v2.mp3",
+    "mime": "audio/mpeg"
+  },
+  "artwork": {
+    "url": "https://drive.usercontent.google.com/download?id=1sBfX_gFViCZ2yLfF9QK1ZMga3ulPEBzS&export=download&confirm=t",
+    "sha256": "0ca8ee9a29795c08a7696d5c7b61b06af9a5d72ffda27242409ed633c7a40f4a",
+    "bytes": 536879,
+    "filename": "FV_POD-001_Episode-Art_3000x3000_FINAL.png",
+    "mime": "image/png"
+  },
+  "chapters": [
+    {
+      "title": "The textbook in the ruins",
+      "start_time": "00:00"
+    },
+    {
+      "title": "New London and the oil field",
+      "start_time": "02:06"
+    },
+    {
+      "title": "The last class period",
+      "start_time": "06:35"
+    },
+    {
+      "title": "Roughly three hundred",
+      "start_time": "10:07"
+    },
+    {
+      "title": "Reconstructing the evidence",
+      "start_time": "13:30"
+    },
+    {
+      "title": "What changed after New London",
+      "start_time": "19:44"
+    },
+    {
+      "title": "What survived",
+      "start_time": "24:20"
+    }
+  ],
+  "metadata": {
+    "title": "The Textbook Found Open in the Ruins | New London, 1937",
+    "description": "On March 18, 1937, New London Consolidated School in East Texas exploded shortly after three in the afternoon. Hundreds were killed, though surviving official and institutional records still disagree on the exact toll.\n\nWhen federal investigator David J. Price examined the wreckage, one object stood out: a student chemistry textbook found open to a section titled “Explosions and Explosive Mixtures.” The detail was uncanny. The investigation itself was more disciplined. Price could strongly support an ignition sequence involving accumulated combustible gas beneath the first floor and an electrical flash near a portable sanding machine. What he could not establish definitely was where the gas had come from.\n\nThis episode follows the evidence beneath the school floor: the hidden underfloor space, the morning match-striking evidence, the probable ignition path, and the limits of the federal finding. It also traces what followed—odorization, gas-warning practice, and the creation of Texas’s engineering-registration system.\n\nFinal Vestige keeps the uncertainty visible. Where the record conflicts, we say so. Where it stops, we stop.\n\nTranscript, sources, documents, maps, and companion material:\nhttps://finalvestige.com/podcast/the-textbook-found-open-in-the-ruins/\n\nFinal Vestige Podcast:\nhttps://finalvestige.com/podcast/",
+    "summary": "Federal investigator David J. Price could explain how combustible gas beneath New London School probably ignited. He could not prove how the gas got there. This episode follows the evidence—and the warning system that came after.",
+    "artist": "Final Vestige Studios",
+    "explicit": false,
+    "private": false,
+    "episode_number": 1,
+    "episode_type": "full",
+    "custom_url": "https://finalvestige.com/podcast/the-textbook-found-open-in-the-ruins/",
+    "tags": "New London, Texas, 1937, school explosion, natural gas, engineering failure, public safety, odorization, David J. Price, archival investigation"
+  },
+  "retry_marker": "final-release-after-waveform-floor-calibration-2026-09-22",
+  "replace_media": false,
+  "supersede_existing_private": false,
+  "create_with_media_legacy": false
+}

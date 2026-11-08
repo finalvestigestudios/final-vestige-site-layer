@@ -1,0 +1,7 @@
+# R200 evidence-first Dispatch delivery — reviewer only
+
+Branch stacked on R199 PR #1517 at 2da30fe876f71b54185af154f48f53f12873dc58. References Issue #174, #171, #129, #820; avoids frozen homepage #49. Nine new isolated files. Original six messages and 4 editorial / 2 commercial allocation untouched. Unapproved alternative Issue 01 is provided in Markdown, plaintext and static email-safe HTML with one live context-aligned CTA. Source-based James (1890) / Simons-Levin (1998) record; no product claims.
+
+Operational outputs: read-only subscriber/Focus consent diagnosis, canonical event and 7/30 day revenue measurement specification, seller/permission evidence request packet, JSON manifest with UNKNOWN rather than fabricated zero, and a synthetic CJS unit-test module. Offline test command: node --test dispatch/r200/tests/r200_gate.test.cjs . The tests use fake records; do not claim actual verified orders or confirmation. Native Jetpack preview, footer, unsubscribe and actual welcome receipt remain unverified. Real merchant email eligibility remains unverified. No sends, test emails, list writes, WordPress posts, settings changes, affiliate links, tracking deployments, or paid spend.
+
+Original #175 native Python suite independently re-executed this sprint: 6/6 tests pass and all eight archived source Git-blob hashes match the exact unchanged master PR head. No hosted CI is claimed unless run results exist. Founder approval required for every future actual send.

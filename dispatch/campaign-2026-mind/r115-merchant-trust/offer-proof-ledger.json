@@ -1,0 +1,99 @@
+{
+  "schema_version": "r115",
+  "as_of_utc": "2026-11-04T14:29:42Z",
+  "status": "REVIEW_ONLY_NO_RELEASE",
+  "campaign": {
+    "canonical_pr": 175,
+    "original_head": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+    "readiness_pr": 201,
+    "parent_pr": 944,
+    "slots": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "editorial": [
+      1,
+      2,
+      4,
+      6
+    ],
+    "commercial_reserved": [
+      3,
+      5
+    ]
+  },
+  "wp_readonly": {
+    "subscriptions": true,
+    "email_new_posts_by_default": false,
+    "email_content_format": "excerpt",
+    "reported_total": 2,
+    "reported_confirmed": 2,
+    "reported_unconfirmed": 2,
+    "followers_email": 0,
+    "followers_wpcom": 2,
+    "reachable_email_recipients": null,
+    "welcome_configured": true,
+    "welcome_received": null,
+    "latest_five_post_sends": "never_sent_opted_out"
+  },
+  "merchant": {
+    "zen12": {
+      "official_url": "https://zen12.com/hnp",
+      "seller_features": [
+        "12 levels",
+        "48 MP3s in Premium",
+        "four formats per level"
+      ],
+      "effectiveness_verified": false,
+      "affiliate_accepted": null,
+      "email_marketing_permission": null,
+      "exact_tracking_link": null,
+      "independent_guide_live": false,
+      "checkout_price_verified": null,
+      "refund_at_checkout_verified": null,
+      "purchaser_data_reporting_approved": null
+    },
+    "total_focus": {
+      "official_url": "https://hypnosislive.com/mental-skills/total-focus",
+      "seller_features": [
+        "33 minutes",
+        "47 MB",
+        "single downloadable audio listing"
+      ],
+      "seller_advertised_refund": "14 days; controlling terms require fresh verification",
+      "effectiveness_verified": false,
+      "affiliate_accepted": null,
+      "email_marketing_permission": null,
+      "exact_tracking_link": null,
+      "independent_guide_live": false,
+      "checkout_price_verified": null,
+      "refund_at_checkout_verified": null,
+      "purchaser_data_reporting_approved": null
+    }
+  },
+  "compliance": {
+    "physical_fv_postal_address_verified": false,
+    "received_unsubscribe_verified": false,
+    "confirmed_eligible_recipient_count": null,
+    "received_email_preview_verified": false,
+    "precise_native_subject_preheader_verified": false,
+    "founder_final_send_approval": false
+  },
+  "attribution": {
+    "source": "grok_asset_id_only_after_source_attestation",
+    "confirmed_signup": "WP-native email status and consent, deduped",
+    "email_click": "not a sale",
+    "affiliate_outbound": "not a sale",
+    "paid_order": "merchant-confirmed only",
+    "realized_net_per_1000_qualified_humans": null,
+    "qualified_sessions": null,
+    "paid_orders": null
+  },
+  "all_six": "HOLD_UNSENT",
+  "commercial_issues": "HOLD_MERCHANT",
+  "no_live_actions": true
+}

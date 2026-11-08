@@ -1,0 +1,67 @@
+{
+  "schema": "fv-dispatch-received-email-proof-v1",
+  "as_of_utc": "2026-10-30T23:31:18Z",
+  "campaign_issue": 174,
+  "status": "ALL_SIX_HOLD",
+  "approved_test_email": false,
+  "real_received_email_verified": false,
+  "real_wordpress_preview_verified": false,
+  "subscriber_consent_cohort_reconciled": false,
+  "founder_business_postal_address_verified": false,
+  "unsubscribe_function_verified": false,
+  "partner_email_marketing_permission_verified": false,
+  "founder_final_send_approved": false,
+  "site_read_only": {
+    "newsletter_enabled": true,
+    "site_can_send": true,
+    "email_new_posts_by_default": false,
+    "email_content_format": "excerpt",
+    "recent_sends": 0,
+    "subscribers": {
+      "total": 2,
+      "confirmed": 2,
+      "unconfirmed": 2,
+      "imported_last_24h": 1
+    },
+    "warning": "Subscriber categories are internally inconsistent; no unique deliverable count can be inferred"
+  },
+  "editions": [
+    {
+      "number": 1,
+      "type": "editorial",
+      "status": "HOLD_NO_RECEIVED_EMAIL"
+    },
+    {
+      "number": 2,
+      "type": "editorial",
+      "status": "HOLD_NO_RECEIVED_EMAIL"
+    },
+    {
+      "number": 3,
+      "type": "commercial-review-pending",
+      "status": "HOLD_NO_RECEIVED_EMAIL"
+    },
+    {
+      "number": 4,
+      "type": "editorial",
+      "status": "HOLD_NO_RECEIVED_EMAIL"
+    },
+    {
+      "number": 5,
+      "type": "commercial-review-pending",
+      "status": "HOLD_NO_RECEIVED_EMAIL"
+    },
+    {
+      "number": 6,
+      "type": "editorial",
+      "status": "HOLD_NO_RECEIVED_EMAIL"
+    }
+  ],
+  "sources": [
+    "https://wordpress.com/support/newsletter/email-appearance/",
+    "https://wordpress.com/support/newsletter-settings/",
+    "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business",
+    "https://finalvestige.com/editorial-standards/",
+    "https://finalvestige.com/affiliate-disclosure/"
+  ]
+}

@@ -1,0 +1,43 @@
+# THE DISPATCH — OPTIONAL ISSUE 05 (R189)
+
+> **UNSENT / UNAPPROVED / COMMERCIAL HOLD.** Optional review candidate only, not a replacement of any founder-approved six-issue draft. Do not publish or email.
+
+**Subject:** The table moved. The hands said they hadn't.
+
+**Preheader proposal:** Faraday's 1853 test shows how to question a convincing experience.
+
+**Type:** commercial-review-pending
+
+---
+
+The table moved. The people touching it insisted they hadn't pushed it.
+
+In 1853, fashionable table-turning demonstrations attracted explanations ranging from magnetism to forces nobody could name. Michael Faraday had a narrower question: **which moved first—the table or the hands?**
+
+He placed layers of material beneath the participants' hands. Sliding cards and a pointer made tiny sideways movements observable. His conclusion was less theatrical than a turning table: the hands exerted sideways pressure before the table followed. When participants watched the pointer and corrected their pressure, Faraday reported that the table-turning effect ceased.
+
+The important distinction isn't that the participants were lying. Faraday described them as earnest and cooperative. His apparatus showed how a sincerely reported experience and the explanation attached to it could be different things.
+
+A nineteenth-century experiment doesn't settle what a modern recording will do to your attention. But it gives us a useful method for judging a promise: **identify what you can observe, and ask what would show the claimed cause was responsible.**
+
+Consider **Total Focus**, a downloadable hypnosis session sold by Hypnosis Live. Its current public product page describes a **33-minute, 47-MB** audio file. The seller also advertises dramatically improved concentration, including an absolute-sounding “100%” claim. Those are **seller promises, not outcomes Final Vestige independently demonstrated for this product**.
+
+Before deciding to pay for any concentration audio, try an ordinary, no-cost observation. On three comparable days, choose one task and record its start time, interruptions, and completion. If you later try an audio product, keep recording the same things. This is not a blinded clinical trial, and it can't establish medical efficacy. It can help you distinguish a strong feeling from useful evidence about your own routine.
+
+**One prospective next step — CURRENTLY WITHHELD:** Read Final Vestige's independent Total Focus buyer guide, **only once its evidence review and publication have been approved**. That guide isn't live. Therefore this draft has **no clickable offer CTA and no merchant earning link**.
+
+**Commercial disclosure — adjacent to prospective offer:** If you purchase through a qualifying link in a future Final Vestige guide, Final Vestige may earn a commission. No such link is active in this draft.
+
+**Research and merchant sources** (citations, not purchase CTAs):
+- Faraday, *Experimental Investigation Table-moving* (contemporary 1853 source): https://pmc.ncbi.nlm.nih.gov/articles/PMC10444352/
+- Faraday's collected table-turning writings (reproduction): https://en.wikisource.org/wiki/Experimental_Researches_in_Chemistry_and_Physics/Table-turning
+- Modern historical analysis of Faraday's apparatus: https://link.springer.com/chapter/10.1007/978-3-031-52954-2_6
+- Hypnosis Live Total Focus product page (**vendor source; not independent efficacy evidence**): https://hypnosislive.com/mental-skills/total-focus
+
+**Editorial boundary:** Faraday's experiment is an example of a physical control, **not evidence for or against modern hypnosis efficacy**. Final Vestige has not used, purchased, tested, or independently validated this audio.
+
+---
+
+**MANDATORY HARD-STOP FOOTER — NOT VERIFIED AND NOT SENDABLE**
+
+Sender: Final Vestige Studios. Valid publisher postal address: `[[VALID_FV_POSTAL_ADDRESS_REQUIRED]]`. Actual rendered unsubscribe: `[[GENUINE_JETPACK_UNSUBSCRIBE_MUST_BE_VERIFIED]]`. Merchant email authorization, consent audience, received welcome, native Jetpack rendering, and explicit founder final approval all UNVERIFIED.

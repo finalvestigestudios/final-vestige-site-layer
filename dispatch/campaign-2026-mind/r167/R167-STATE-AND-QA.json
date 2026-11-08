@@ -1,0 +1,55 @@
+{
+  "date_utc": "2026-11-06T18:31:00Z",
+  "workstream": "Dispatch receiving evidence/consent QA",
+  "source_prs": {
+    "canonical_six": 175,
+    "per_issue_gate": 201,
+    "predecessor": 1284,
+    "mind_offer": 1286
+  },
+  "wordPress_read_only": {
+    "newsletter_enabled": true,
+    "site_can_send": true,
+    "auto_new_post_emails": false,
+    "email_format": "full",
+    "sender": "Final Vestige Studios",
+    "reply_to": "no-reply",
+    "counts": {
+      "total": 3,
+      "confirmed": 3,
+      "unconfirmed": 2,
+      "suppressed": 0
+    },
+    "counts_are_additive": false,
+    "native_email_eligible_recipients": null,
+    "actual_welcome_received": null,
+    "received_jetpack_mime": null
+  },
+  "partner": {
+    "named_inspire3_approval": null,
+    "email_permission": null,
+    "earning_url": null,
+    "current_final_checkout": null,
+    "settled_affiliate_sales": null
+  },
+  "revenue": {
+    "net_per_1000_qualified_human_sessions": null,
+    "status": "NOT_COMPUTABLE",
+    "negative_net_must_remain_negative": true
+  },
+  "tests": {
+    "python_native_pass": 16,
+    "python_native_failed": 0,
+    "browser_actual": false,
+    "real_email_preview": false,
+    "live_signup": false,
+    "settlement": false
+  },
+  "release": "HOLD_UNSENT",
+  "commercial_03_05": "HOLD_MERCHANT",
+  "site_modified": false,
+  "mail_sent": false,
+  "subscribers_modified": false,
+  "grok_queue_modified": false,
+  "paid_spend": false
+}

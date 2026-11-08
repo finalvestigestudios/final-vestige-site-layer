@@ -1,0 +1,96 @@
+{
+  "campaign_state": "DRAFT_UNSENT",
+  "original_master_sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "observation_utc": "2026-11-03T15:33:02Z",
+  "mode": "excerpt",
+  "email_new_posts_by_default": false,
+  "native_preview_requires_editor_send_toggle": true,
+  "preview_toggle_authorized": false,
+  "send_or_publish_authorized": false,
+  "aggregates": {
+    "newsletter_total": 2,
+    "newsletter_confirmed": 2,
+    "newsletter_unconfirmed": 2,
+    "stats_email": 0,
+    "stats_wpcom": 2
+  },
+  "recipient_count": null,
+  "evidence": {
+    "qualified_final_vestige_postal_address": {
+      "verified": false,
+      "proof_ref": null
+    },
+    "native_jetpack_email_preview": {
+      "verified": false,
+      "proof_ref": null
+    },
+    "actual_received_mime_and_optout": {
+      "verified": false,
+      "proof_ref": null
+    },
+    "eligible_subscriber_count_reconciled_privately": {
+      "verified": false,
+      "proof_ref": null
+    },
+    "final_founder_campaign_approval": {
+      "verified": false,
+      "proof_ref": null
+    },
+    "fv_account_affiliate_acceptance": {
+      "verified": false,
+      "proof_ref": null
+    },
+    "product_specific_email_permission": {
+      "verified": false,
+      "proof_ref": null
+    },
+    "approved_link_and_creative": {
+      "verified": false,
+      "proof_ref": null
+    },
+    "approved_published_warmup_guide": {
+      "verified": false,
+      "proof_ref": null
+    },
+    "current_merchant_checkout_and_refund_terms": {
+      "verified": false,
+      "proof_ref": null
+    },
+    "product_claims_and_buyer_privacy_review": {
+      "verified": false,
+      "proof_ref": null
+    }
+  },
+  "issues": [
+    {
+      "number": 1,
+      "kind": "editorial",
+      "cta_live": false
+    },
+    {
+      "number": 2,
+      "kind": "editorial",
+      "cta_live": false
+    },
+    {
+      "number": 3,
+      "kind": "commercial",
+      "cta_live": false
+    },
+    {
+      "number": 4,
+      "kind": "editorial",
+      "cta_live": false
+    },
+    {
+      "number": 5,
+      "kind": "commercial",
+      "cta_live": false
+    },
+    {
+      "number": 6,
+      "kind": "editorial",
+      "cta_live": false
+    }
+  ]
+}

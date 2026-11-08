@@ -1,0 +1,93 @@
+{
+  "schema": "fv_dispatch_r87_public_operational_snapshot_v1",
+  "observed_utc": "2026-11-03T09:36:43Z",
+  "readonly": true,
+  "site": "finalvestige.com",
+  "first_party_evidence": {
+    "dispatch": {
+      "page_id": 523,
+      "status": "publish",
+      "modified": "2026-10-29T15:35:02",
+      "shows_affiliate_expectations": false,
+      "mentions_52_page_fieldbook": true,
+      "mentions_unsubscribe": true,
+      "uses_existing_jetpack_subscription": true
+    },
+    "focus": {
+      "page_id": 1579,
+      "status": "publish",
+      "modified": "2026-10-30T09:13:31",
+      "shows_affiliate_expectations": true,
+      "mentions_52_page_fieldbook": true,
+      "mentions_unsubscribe": true,
+      "uses_existing_jetpack_subscription": true
+    },
+    "editorial_standards": {
+      "page_id": 17,
+      "status": "publish",
+      "requires_source_vs_inference": true,
+      "requires_commercial_separation": true
+    }
+  },
+  "public_consent_copy": {
+    "dispatch": "Unsubscribe anytime. Privacy Policy",
+    "focus": "Some emails may include recommendations that earn us a commission. Unsubscribe anytime."
+  },
+  "jetpack": {
+    "subscriptions": true,
+    "site_can_send": true,
+    "email_new_posts_by_default": false,
+    "email_content_format": "excerpt",
+    "reply_to": "no-reply",
+    "welcome_fieldbook_configured": true,
+    "actual_welcome_receipt_verified": false,
+    "verified_jetpack_received_eml": false,
+    "verified_sender_postal_in_received_email": false,
+    "verified_unsubscribe_functionality": false
+  },
+  "audience": {
+    "newsletter_total": 2,
+    "newsletter_confirmed": 2,
+    "newsletter_unconfirmed": 2,
+    "other_endpoint_email_followers": 0,
+    "other_endpoint_wpcom_followers": 2,
+    "recipient_count_verified": false,
+    "classification_conflict": true
+  },
+  "recent_posts": {
+    "post_ids": [
+      1926,
+      1924,
+      1922,
+      1920,
+      1917
+    ],
+    "statuses": [
+      "never_sent_opted_out",
+      "never_sent_opted_out",
+      "never_sent_opted_out",
+      "never_sent_opted_out",
+      "never_sent_opted_out"
+    ],
+    "proof_of_all_time_zero_sends": false
+  },
+  "campaign": {
+    "issues": 6,
+    "editorial": 4,
+    "commercial_reservations": [
+      3,
+      5
+    ],
+    "marketing_authorization_verified": false,
+    "merchant_email_channel_authorization_verified": false,
+    "approved_commercial_guides_live": false,
+    "founder_final_send_approval": false
+  },
+  "sources": [
+    "https://finalvestige.com/dispatch/",
+    "https://finalvestige.com/focus/",
+    "https://finalvestige.com/editorial-standards/",
+    "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/174",
+    "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171"
+  ]
+}

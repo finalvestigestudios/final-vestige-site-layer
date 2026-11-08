@@ -1,0 +1,43 @@
+FINAL VESTIGE DISPATCH — R87 — DRAFT STATIC REVIEW ONLY
+NO EMAIL SENT. NO WORDPRESS/NEWSLETTER CHANGES. NOT A REAL JETPACK PREVIEW.
+
+ONE LIST, TWO DIFFERENT SIGNUP PROMISES
+
+DISPATCH: live page #523 currently describes new investigations, archive finds,
+and the free Fieldbook, but no potential affiliate product recommendations.
+
+DRAFT ADDITION TO /dispatch/ (not approved):
+What you’ll receive: The Dispatch sends occasional original investigations,
+archive finds, and evidence-led Mind & Perception reports. Some editions may
+include an optional product guide; if you purchase through a qualifying link
+in one of those guides, Final Vestige may earn a commission. The 52-page
+Focus Fieldbook is free, and no purchase is required to subscribe. You can
+unsubscribe anytime.
+
+FOCUS: live page #1579 already says some messages may recommend products
+which earn a commission. Optional consistent revision (not approved):
+Get the free 52-page Seven Day Focus Fieldbook and join The Dispatch, our
+occasional email with new investigations, archive finds, and evidence-led
+Mind & Perception reports. Some editions may include optional product guides;
+if you purchase through a qualifying link in a guide, Final Vestige may earn
+a commission. The Fieldbook requires no purchase. Unsubscribe anytime.
+Privacy Policy.
+
+OPTIONAL WELCOME COPY ADDITION (not approved, not installed):
+We'll share original investigations, archive finds, and occasional Mind &
+Perception research. Some future editions may include an optional product
+guide. Where a qualifying affiliate link appears, we’ll disclose that Final
+Vestige may earn a commission. The Fieldbook is free and buying anything
+is never required.
+
+RELEASE: 01/02/04/06 HOLD_UNSENT; 03/05 HOLD_UNSENT + HOLD_MERCHANT.
+Subscriber eligibility UNKNOWN. No publisher postal/footer, real received mail,
+unsubscribe test or partner EMAIL permission established. Founder final send
+approval ABSENT. Original manuscript mix (4 editorial + 2 commercial) intact.
+
+References:
+https://finalvestige.com/dispatch/
+https://finalvestige.com/focus/
+https://finalvestige.com/editorial-standards/
+https://github.com/finalvestigestudios/final-vestige-site-layer/issues/174
+https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business

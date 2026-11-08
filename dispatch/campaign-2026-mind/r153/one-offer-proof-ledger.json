@@ -1,0 +1,113 @@
+{
+  "schema": "fv-dispatch-r153-proof-ledger-v1",
+  "snapshot_utc": "2026-11-06T04:37:02Z",
+  "status": "DRAFT_REVIEW_ONLY_NO_SEND",
+  "master_campaign_pr": 175,
+  "qa_reference_pr": 201,
+  "previous_dispatch_head": "ebda38d019fc45fe9a4575c665e38a82bb046dfd",
+  "business_priority": "settled net revenue per 1000 verified qualified-human sessions; unknown when evidence missing",
+  "wordpress_authenticated": {
+    "newsletter_enabled": true,
+    "automatic_new_post_email": false,
+    "email_body_format": "full",
+    "sender_name": "Final Vestige Studios",
+    "reply_to": "no-reply",
+    "reported_total": 3,
+    "reported_confirmed": 3,
+    "reported_unconfirmed": 2,
+    "email_only_followers": 0,
+    "wordpress_com_followers": 3,
+    "eligible_recipients": null,
+    "verified_new_signups": null,
+    "received_welcomes": null,
+    "fieldbook_download_receipts": null,
+    "subscriber_count_warning": "Not confirmed is not part of counted subscriber total; WP.com followers can be email subscribed. Only native Email subscription=Subscribed status establishes current eligibility."
+  },
+  "one_offer_hypothesis": {
+    "name": "Zen12 Premium",
+    "status": "NOT_APPROVED_NOT_SELLABLE_BY_FV_EMAIL",
+    "official_seller_url": "https://zen12.com/?no-popup=1",
+    "merchant_feature_statement": "12 levels, four sound styles per level, 48 MP3s, twelve-minute audio sessions described by seller",
+    "seller_display_price_usd_2026_11_05": 87.99,
+    "checkout_price_verified": false,
+    "refund_terms_independently_verified": false,
+    "vendor_claim_12_minutes_equals_one_hour_proven": false,
+    "mind_guide_source": "mind/r159/zen12-second-signal-buyer-bridge-UNPUBLISHED.html",
+    "mind_draft_pr": 1198,
+    "mind_guide_live_url": null,
+    "active_earning_url": null,
+    "named_partner_acceptance_verified": false,
+    "email_channel_permission_verified": false,
+    "specific_product_promotion_approved": false,
+    "first_party_buyer_guide_live": false,
+    "merchant_checkout_verified": false,
+    "independent_claim_check_pass": false,
+    "valid_business_postal_address_in_received_email": false,
+    "native_unsubscribe_rendered_and_functional": false,
+    "native_recipient_eligibility_verified": false,
+    "founder_final_send_approval": false
+  },
+  "commercial_secondary": {
+    "issue": 5,
+    "seller": "Hypnosis Live Total Focus",
+    "status": "HOLD_MERCHANT",
+    "approval_or_link": null
+  },
+  "six_issue_pilot": [
+    {
+      "issue": 1,
+      "kind": "editorial",
+      "subject": "The mind is not a camera",
+      "cta_state": "focus_page_live_but_signup_unverified",
+      "approved_alternative": false,
+      "send": "HOLD_UNSENT"
+    },
+    {
+      "issue": 2,
+      "kind": "editorial",
+      "cta_state": "source_archive_live",
+      "send": "HOLD_UNSENT"
+    },
+    {
+      "issue": 3,
+      "kind": "commercial_draft",
+      "offer": "Zen12 Premium",
+      "cta_state": "independent_guide_unpublished_earning_url_missing",
+      "send": "HOLD_UNSENT_AND_HOLD_MERCHANT"
+    },
+    {
+      "issue": 4,
+      "kind": "editorial",
+      "cta_state": "verify_specific_archival_page_before_send",
+      "send": "HOLD_UNSENT"
+    },
+    {
+      "issue": 5,
+      "kind": "commercial_draft",
+      "offer": "Hypnosis Live Total Focus",
+      "cta_state": "buyer_guide_unpublished_earning_url_missing",
+      "send": "HOLD_UNSENT_AND_HOLD_MERCHANT"
+    },
+    {
+      "issue": 6,
+      "kind": "editorial",
+      "cta_state": "focus_page_live_but_delivery_unverified",
+      "send": "HOLD_UNSENT"
+    }
+  ],
+  "event_definitions": {
+    "confirmed_signup": "native provider event transition + Email subscription=Subscribed + appropriate consent; prior verified WP.com account may skip new confirmation email; only independently audited transitions count",
+    "offer_guide_click": "not a purchase",
+    "merchant_paid_order": "independent merchant/checkout record required",
+    "affiliate_conversion": "partner settlement/report required",
+    "net_revenue_per_1000_qualified_human_sessions": null
+  },
+  "grok_social_asset_ids": [],
+  "paid_orders_verified": null,
+  "affiliate_commissions_settled": null,
+  "realized_net_revenue": null,
+  "qualified_human_sessions": null,
+  "user_message_sent": false,
+  "wordPress_posts_modified": false,
+  "new_analytics_scripts": false
+}

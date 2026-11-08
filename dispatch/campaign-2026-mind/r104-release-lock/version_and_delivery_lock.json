@@ -1,0 +1,131 @@
+{
+  "status": "HOLD_UNSENT",
+  "founder_version_selection": null,
+  "founder_send_approval": false,
+  "selected_issues": {},
+  "original_ref": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "inherited_ref": "b40c6cc5784175e743ccd99381bfee191e693deb",
+  "original_pr": 175,
+  "origin_master_copy_changes_pr": 178,
+  "newest_inherited_pr": 872,
+  "original": {
+    "manifest_sha": "86df98ad8a84e583ff5df64ddbf8c0eaa1335b00",
+    "issues": [
+      {
+        "file": "01-the-mind-is-not-a-camera.md",
+        "sha": "039b452b5cb7cd6dc2fed6fac4d2dd77fa9d49c8"
+      },
+      {
+        "file": "02-before-hypnosis-had-a-name.md",
+        "sha": "faa207ab7deafd86460d36f8c17fe62d392d0e14"
+      },
+      {
+        "file": "03-the-twelve-minute-question.md",
+        "sha": "aeeef34efea0cc281f69901488e4501fea851245"
+      },
+      {
+        "file": "04-the-hatch-and-the-spark.md",
+        "sha": "89635bfb9c8d1ff17297a59b6b5b5b2a176934ca"
+      },
+      {
+        "file": "05-before-you-press-play.md",
+        "sha": "a9dfaa450ba025a7b5113ade8a294d6dbad778dc"
+      },
+      {
+        "file": "06-the-evidence-log.md",
+        "sha": "004d558df6376d2ad6f4f79a4581e8d2c444e355"
+      }
+    ]
+  },
+  "inherited": {
+    "manifest_sha": "2fe3c10a26cb2c9e2406e8444a5734eabb21f209",
+    "issues": [
+      {
+        "file": "01-the-mind-is-not-a-camera.md",
+        "sha": "2a573f6b7043c101ece49703f2dd1262ec2b0ee6"
+      },
+      {
+        "file": "02-before-hypnosis-had-a-name.md",
+        "sha": "fb8cf1503acb2338a4884cac58b7c3b2cec95af7"
+      },
+      {
+        "file": "03-the-twelve-minute-question.md",
+        "sha": "b86572c15d05316801a007c00e9a2689a5de27c3"
+      },
+      {
+        "file": "04-the-hatch-and-the-spark.md",
+        "sha": "7de77ccdc312e5bdf77a9aaa355c3a9ba4efa2c8"
+      },
+      {
+        "file": "05-before-you-press-play.md",
+        "sha": "a62a74c6cc2a3722048ff801ccba6212a6cdb397"
+      },
+      {
+        "file": "06-the-evidence-log.md",
+        "sha": "94b2e31594f0cdea1ec49f654429fa5f3a7b89c6"
+      }
+    ]
+  },
+  "current_jetpack": {
+    "as_of": "2026-11-04T02:33:56Z",
+    "enabled": true,
+    "auto_send": false,
+    "mode": "excerpt",
+    "subscriber_total": 2,
+    "confirmed": 2,
+    "unconfirmed": 2,
+    "email_followers": 0,
+    "wpcom_followers": 2,
+    "verified_email_eligible": null,
+    "fieldbook_welcome_configured": true,
+    "welcome_received": false
+  },
+  "required_evidence": {
+    "affiliate_zen12_email_permission": false,
+    "affiliate_total_focus_email_permission": false,
+    "live_zen12_warmup_guide": false,
+    "live_total_focus_warmup_guide": false,
+    "valid_final_vestige_postal_address": false,
+    "received_real_jetpack_mime": false,
+    "working_unsubscribe": false,
+    "verified_subscriber_eligibility": false,
+    "founder_exact_version_selection": false,
+    "founder_final_send_approval": false
+  },
+  "commerce_slots": [
+    3,
+    5
+  ],
+  "editorial_slots": [
+    1,
+    2,
+    4,
+    6
+  ],
+  "claim_and_system_notes": [
+    "7/7 PR175 master source blobs differ from inherited PR178+ revisions; founder has not selected final issues.",
+    "Issue 04 original subject says Fourteen seconds; inherited revision says Seventeen seconds; optional R103 alternative says The test they called nonhazardous.",
+    "Current Jetpack excerpt delivery does not send a complete manuscript; preheader is not a verified independent Jetpack field.",
+    "Total/confirmed/unconfirmed 2/2/2, separate follower email=0 wpcom=2; eligible audience unknown.",
+    "Five recent delivery events were opted-out non-sends; no six-issue campaign has been sent.",
+    "/dispatch/ lacks /focus/ prospective commission recommendation description.",
+    "Official vendor claims are not product-specific proof; Total Focus seller page shows 33 min/47 MB, prices vary across snapshots.",
+    "No consent, legal postal, real email receipt, merchant link format or email permission confirmed."
+  ],
+  "metrics": {
+    "sends": null,
+    "delivered": null,
+    "opens": null,
+    "clicks": null,
+    "conversions": null,
+    "ab_results": null
+  },
+  "sources": [
+    "https://wordpress.com/support/newsletter-settings/",
+    "https://wordpress.com/support/newsletter/email-appearance/",
+    "https://search.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business",
+    "https://hypnosislive.com/mental-skills/total-focus",
+    "https://inspire3.com/",
+    "https://finalvestige.com/editorial-standards/"
+  ]
+}

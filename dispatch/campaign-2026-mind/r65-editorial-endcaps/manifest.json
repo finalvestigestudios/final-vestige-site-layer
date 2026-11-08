@@ -1,0 +1,67 @@
+{
+  "schema": 1,
+  "title": "R65 editorial-endcaps and delivery-contract review",
+  "status": "HOLD_UNSENT",
+  "as_of_utc": "2026-11-02T11:32:12Z",
+  "source_master_pr": 175,
+  "source_gate_pr": 201,
+  "parent_pr": 608,
+  "mix": {
+    "editorial": 4,
+    "commercial_reserved": 2
+  },
+  "alternatives": [
+    {
+      "issue": 1,
+      "status": "OPTIONAL_FOUNDER_REVIEW_UNAPPROVED",
+      "subject": "The mind is not a camera",
+      "preheader_planning_only": "A man was replaced in the middle of a conversation. What did the witness miss?",
+      "cta": "https://finalvestige.com/the-missing-caption/",
+      "affiliate_url": null
+    },
+    {
+      "issue": 6,
+      "status": "OPTIONAL_FOUNDER_REVIEW_UNAPPROVED",
+      "subject": "What did seven days of attention reveal?",
+      "preheader_planning_only": "The difference between a good intention and a record you can check.",
+      "cta": "https://finalvestige.com/focus/",
+      "affiliate_url": null
+    }
+  ],
+  "current_newsletter_settings": {
+    "subscriptions": true,
+    "email_new_posts_by_default": false,
+    "email_content_format": "excerpt",
+    "welcome_configured": true,
+    "welcome_receipt_verified": false,
+    "recent_sends_returned": 0
+  },
+  "subscribed_counts": {
+    "total": 2,
+    "confirmed": 2,
+    "unconfirmed": 2,
+    "suppressed": 0,
+    "distinct_email_eligible_unknown": true
+  },
+  "pending_proofs": {
+    "publisher_postal_address": false,
+    "jetpack_received_email": false,
+    "unsub_works": false,
+    "test_send_authorized": false,
+    "commercial_email_permission": false,
+    "named_affiliate_approval": false,
+    "commercial_guides_published_approved": false,
+    "founder_final_send_approval": false
+  },
+  "issues_release": [
+    "HOLD_UNSENT",
+    "HOLD_UNSENT",
+    "HOLD_UNSENT_HOLD_MERCHANT",
+    "HOLD_UNSENT",
+    "HOLD_UNSENT_HOLD_MERCHANT",
+    "HOLD_UNSENT"
+  ],
+  "analytics_collection_enabled": false,
+  "affiliate_links_active": false,
+  "tracking_pixels_active": false
+}

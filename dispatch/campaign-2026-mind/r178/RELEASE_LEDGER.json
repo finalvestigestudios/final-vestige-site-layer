@@ -1,0 +1,142 @@
+{
+  "schema": "fv_dispatch_r178_review_only_v1",
+  "as_of_utc": "2026-11-07T05:29:41Z",
+  "status": "UNSENT_REVIEW_ONLY",
+  "replaces_original": false,
+  "original_issue": "04",
+  "category": "editorial",
+  "campaign_ratio": {
+    "editorial": 4,
+    "commercial_held": 2
+  },
+  "subject": "The cup that changed colors without changing",
+  "proposed_preheader": "Roman glass looks green or red in different light. The evidence is in the conditions.",
+  "cta": {
+    "type": "FIRST_PARTY_EDITORIAL",
+    "label": "Explore the Lycurgus Cup evidence",
+    "url": "https://finalvestige.com/2026/11/02/lycurgus-cup/",
+    "live_route_confirmed_by": "WordPress search post ID 1920; publish status existing",
+    "email_clicked_observed": false
+  },
+  "sources": [
+    {
+      "name": "British Museum — The Lycurgus Cup (collection partner presentation)",
+      "url": "https://artsandculture.google.com/asset/the-lycurgus-cup/aQG7BXUoa7xwug"
+    },
+    {
+      "name": "University of Sheffield — recreation of Roman dichroic glass (2026)",
+      "url": "https://sheffield.ac.uk/news/technician-cracks-1600-year-old-mystery-replicate-roman-masterpiece"
+    },
+    {
+      "name": "Final Vestige — The Lycurgus Cup investigation (published 2026-11-02)",
+      "url": "https://finalvestige.com/2026/11/02/lycurgus-cup/"
+    }
+  ],
+  "claim_bounds": [
+    {
+      "claim": "Roman cup appears jade-green in reflected light and red when transmitted",
+      "evidence": "British Museum collection presentation",
+      "confidence": "SOURCE_SUPPORTED"
+    },
+    {
+      "claim": "Small gold/silver particles contribute to dichroism",
+      "evidence": "British Museum collection description and Sheffield research communication",
+      "confidence": "SOURCE_SUPPORTED"
+    },
+    {
+      "claim": "Sheffield recreated the optical effect in a modern glass formulation in Oct 2026",
+      "evidence": "University of Sheffield press release",
+      "confidence": "SOURCE_SUPPORTED_AS_ANNOUNCEMENT"
+    },
+    {
+      "claim": "Roman artisans had complete scientific understanding or current method recreated the identical Roman procedure",
+      "evidence": "none",
+      "confidence": "UNVERIFIED_DO_NOT_ASSERT"
+    }
+  ],
+  "subscriber_provider_snapshot": {
+    "newsletter_enabled": true,
+    "new_post_auto_email": false,
+    "email_content_format": "full",
+    "total": 3,
+    "confirmed": 3,
+    "unconfirmed": 2,
+    "counts_additive": false,
+    "eligible_recipients": "UNKNOWN",
+    "welcome_configured": true,
+    "welcome_received": "UNVERIFIED",
+    "source": "Connected WordPress newsletter status and settings at 2026-11-07T05:29Z"
+  },
+  "commercial": {
+    "affiliate_approval": "UNVERIFIED",
+    "email_permission": "UNVERIFIED",
+    "merchant_earning_url": null,
+    "product_price": null,
+    "offer_cta_activated": false,
+    "issue03_hold": true,
+    "issue05_hold": true
+  },
+  "release": {
+    "founder_final_send_approval": false,
+    "post_published": false,
+    "email_or_test_sent": false,
+    "postal_address_in_rendered_email": "UNVERIFIED",
+    "unsubscribe_in_rendered_email": "UNVERIFIED",
+    "native_jetpack_preview": "UNVERIFIED",
+    "actual_email_eligible_recipients": "UNKNOWN",
+    "decision": "HOLD_UNSENT"
+  },
+  "attribution": {
+    "hypothesis": "Grok object-history viewers may convert to investigation readers; this is an editorial step, NOT proof of buyers.",
+    "email_campaign": "fv_dispatch_pilot_2026_11",
+    "email_content": "issue04_lycurgus",
+    "grok_asset_id": null,
+    "confirmed_signup_event_definition": "Native provider status confirmed with consent, deduplicated by opaque ID and first transition; UI success alone is insufficient",
+    "qualified_human_sessions": null,
+    "verified_paid_orders": null,
+    "realized_net_revenue": null,
+    "net_revenue_per_1000_qualified_sessions": "NOT_COMPUTABLE"
+  },
+  "priorities": [
+    {
+      "offer": "Focus Fieldbook",
+      "step": "confirmed signup",
+      "blocker": "Live /focus/ success panel can be client-side without provider confirmation",
+      "change": "Claude/Site QA verify signed-out provider state and repair",
+      "pass_fail": "UNVERIFIED",
+      "owner": "Claude / Site QA"
+    },
+    {
+      "offer": "Dispatch",
+      "step": "welcome delivery",
+      "blocker": "Configured message is not evidence of receipt",
+      "change": "Read native delivery evidence only; no test send",
+      "pass_fail": "UNVERIFIED",
+      "owner": "Dispatch"
+    },
+    {
+      "offer": "Zen12 Premium",
+      "step": "offer consideration",
+      "blocker": "Named affiliate acceptance, email channel permission and approved live guide absent",
+      "change": "Mind Studio obtain partner/guide evidence",
+      "pass_fail": "HOLD_MERCHANT",
+      "owner": "Mind & Affiliate Studio"
+    },
+    {
+      "offer": "Dispatch email",
+      "step": "legitimate recipient",
+      "blocker": "Valid publisher postal address/unsubscribe/native rendering unknown",
+      "change": "Founder legal identity + genuine non-sending native preview",
+      "pass_fail": "HOLD_UNSENT",
+      "owner": "Founder / Dispatch"
+    },
+    {
+      "offer": "Qualified customer",
+      "step": "settled paid order",
+      "blocker": "No independently reported attribution/settlements",
+      "change": "Commerce reconciliation by asset and cohorts",
+      "pass_fail": "NOT_COMPUTABLE",
+      "owner": "Commerce / Praxxis"
+    }
+  ]
+}

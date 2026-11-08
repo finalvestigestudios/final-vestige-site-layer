@@ -1,0 +1,92 @@
+{
+  "run": "R116",
+  "as_of_utc": "2026-11-04T15:47:00Z",
+  "status": "LOCAL_ONLY_HOLD",
+  "source_master": {
+    "pull_request": 175,
+    "commit": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+    "original_six_md_blob_hashes": [
+      "039b452b5cb7cd6dc2fed6fac4d2dd77fa9d49c8",
+      "faa207ab7deafd86460d36f8c17fe62d392d0e14",
+      "aeeef34efea0cc281f69901488e4501fea851245",
+      "89635bfb9c8d1ff17297a59b6b5b5b2a176934ca",
+      "a9dfaa450ba025a7b5113ade8a294d6dbad778dc",
+      "004d558df6376d2ad6f4f79a4581e8d2c444e355"
+    ],
+    "original_test_blob": "fd7f05e30092a7ec82090993dc5d7d0e23755c8e",
+    "manifest_blob": "86df98ad8a84e583ff5df64ddbf8c0eaa1335b00",
+    "native_python_tests": {
+      "passed": 6,
+      "failed": 0
+    }
+  },
+  "new_source": {
+    "builder_blob": "fa58b68106246b9c12046e9d2d7b6a97d259a8a5",
+    "native_test_blob": "91de77a544911375efcb780672ac7259a9fe1a1f",
+    "native_python_tests": {
+      "passed": 22,
+      "failed": 0
+    },
+    "preview_outputs": {
+      "html": 6,
+      "plaintext": 6,
+      "index": 1,
+      "audit_json": 1,
+      "email_sends": 0
+    }
+  },
+  "chromium": {
+    "render_method": "offline page.set_content, NOT WordPress actual",
+    "browser": "system Chromium headless",
+    "widths_px": [
+      320,
+      360,
+      390,
+      768,
+      1440
+    ],
+    "issues": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "checks_per_case": [
+      "no horizontal overflow",
+      "hold banner present",
+      "no scripts/forms/iframes/images",
+      "no merchant links"
+    ],
+    "initial_failures": 18,
+    "initial_failure_cause": "unbroken placeholder tokens at narrow widths",
+    "fix": "anywhere word break and fixed-width inner table layout",
+    "rerun_cases": 30,
+    "rerun_failed": 0,
+    "screenshot_cases": [
+      {
+        "issue": 3,
+        "width": 390
+      },
+      {
+        "issue": 3,
+        "width": 1440
+      }
+    ]
+  },
+  "production": {
+    "wordpress_writes": 0,
+    "newsletter_sends": 0,
+    "subscriber_actions": 0,
+    "merchant_activation": 0,
+    "real_received_email_verified": false,
+    "real_buyer_paid_order_verified": false,
+    "hosted_ci_verified": false
+  },
+  "limitations": [
+    "offline preview does not verify Jetpack excerpt content, native subject/preheader, MIME headers or actual received footer",
+    "brand-specific postal address and functioning opt-out remain unverified",
+    "affiliate acceptance/email-channel permission and qualified paid order evidence unavailable"
+  ]
+}

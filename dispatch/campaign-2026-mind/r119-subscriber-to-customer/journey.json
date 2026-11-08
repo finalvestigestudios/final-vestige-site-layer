@@ -1,0 +1,179 @@
+{
+  "schema": "FV_DISPATCH_R119_2026_11_04",
+  "status": "INTERNAL_PREVIEW_ONLY_ALL_EMAILS_HOLD",
+  "master_pr": 175,
+  "master_sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "parent_pr": 968,
+  "parent_sha": "4e7609f500d2b68e01d0e1c2e3aee4901c950b05",
+  "source_issue": 174,
+  "wordpress": {
+    "site": "finalvestige.com",
+    "blog_id": 256784396,
+    "settings_observed_utc": "2026-11-04T18:33:09Z",
+    "newsletter_enabled": true,
+    "send_new_posts_default": false,
+    "email_format": "excerpt",
+    "reply_to": "no-reply",
+    "from_name": "Final Vestige",
+    "counts": {
+      "total": 2,
+      "confirmed": 2,
+      "unconfirmed": 2,
+      "suppressed": 0
+    },
+    "last_five": "never_sent_opted_out",
+    "reachable": null,
+    "welcome_received": null,
+    "fieldbook_public_pdf_verified": false,
+    "jetpack_native_preview_verified": false,
+    "actual_received_test_verified": false,
+    "publisher_postal_verified": false,
+    "unsubscribe_working_verified": false
+  },
+  "identity": {
+    "offer_policy": "ONE_APPROVED_OFFER_ONLY",
+    "candidate": "Zen12 (PROVISIONAL NOT APPROVED)",
+    "kind": "affiliate_under_review",
+    "verification": "NOT VERIFIED",
+    "approved_guide": null,
+    "approved_tracking_url": null,
+    "merchant_email_permission": null,
+    "affiliate_acceptance": null,
+    "checkout_price_refund": null,
+    "settled_transactions": null
+  },
+  "attribution": {
+    "publisher_source": "dispatch",
+    "medium": "email",
+    "campaign": "dispatch_mind_pilot_2026_11",
+    "content_pattern": "issue_0[1-6]",
+    "required_grok_entry": "immutable_asset_id + platform permalink + approved UTM route",
+    "confirmed_signup": "Authoritative native WP email subscription transition with consent; count once per opaque platform subscription key",
+    "paid_order": "independently reported settled purchase (merchant or Payhip), net of documented fees/refunds",
+    "net_per_1000": "NOT_COMPUTABLE_NO_QUALIFIED_HUMAN_SESSIONS_OR_SETTLED_ORDERS",
+    "privacy": "No subscriber email, IP, phone, raw purchase identity or tokens in git or public analytics"
+  },
+  "stage_hypothesis": [
+    {
+      "stage": "S0",
+      "required": "Consent + WP confirmed EMAIL-subscription state + observed welcome delivery",
+      "next": "Free 52-page Focus Fieldbook (one list; do not enroll twice)",
+      "gate": "BLOCKED_REACHABILITY_AND_RECEIPT"
+    },
+    {
+      "stage": "S1",
+      "source_edition": 1,
+      "required": "S0 verified and founder-approved editorial issue",
+      "next": "Evidence-first Puységur historical file, single first-party CTA",
+      "gate": "HOLD_UNSENT"
+    },
+    {
+      "stage": "S2",
+      "source_edition": 2,
+      "required": "S1 context; no behavioral profiling or automatic follow-up",
+      "next": "Source-critical suggestion history article, single first-party CTA",
+      "gate": "HOLD_UNSENT"
+    },
+    {
+      "stage": "S3",
+      "source_edition": 3,
+      "required": "Documented channel permissions, named merchant acceptance, published approved buyer guide, clear commission disclosure, compliant opted-in commercial audience and founder sign-off",
+      "next": "One vetted first-party Zen12 guide ONLY, no direct unauthorized affiliate link",
+      "gate": "HOLD_MERCHANT_AND_LEGAL"
+    }
+  ],
+  "editions": [
+    {
+      "n": 1,
+      "kind": "editorial",
+      "subject": "The mind is not a camera",
+      "destination": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "offer": false
+    },
+    {
+      "n": 2,
+      "kind": "editorial",
+      "subject": "Before hypnosis had a name",
+      "destination": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "offer": false
+    },
+    {
+      "n": 3,
+      "kind": "commercial-review-pending",
+      "subject": "The twelve-minute meditation question",
+      "destination": null,
+      "offer": true
+    },
+    {
+      "n": 4,
+      "kind": "editorial",
+      "subject": "Fourteen seconds. A much longer explanation.",
+      "subject_safety": "BLOCK_ORIGINAL_14_SECONDS",
+      "safe_candidate": "Apollo 1: what the fire record actually says",
+      "destination": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/",
+      "offer": false
+    },
+    {
+      "n": 5,
+      "kind": "commercial-review-pending",
+      "subject": "Before you press play on a hypnosis audio",
+      "destination": null,
+      "offer": true
+    },
+    {
+      "n": 6,
+      "kind": "editorial",
+      "subject": "What did seven days of attention reveal?",
+      "destination": "https://finalvestige.com/focus/",
+      "subscribed_user_optimal_candidate": "Direct Fieldbook PDF only after successful retrieval confirmed",
+      "offer": false
+    }
+  ],
+  "merchant_sources": [
+    {
+      "url": "https://zen12.com/hnp",
+      "role": "official seller page, format and seller assertions only"
+    },
+    {
+      "url": "https://zen12.com/secret/",
+      "role": "conditional promotional page, not verified checkout price"
+    },
+    {
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "role": "official seller page, not independent efficacy proof"
+    },
+    {
+      "url": "https://affiliates.inspire3.com/",
+      "role": "public program portal, not FV account approval"
+    },
+    {
+      "url": "https://inspire3.com/privacy/",
+      "role": "merchant may share identifying buyer data with affiliates; require privacy-safe reporting"
+    }
+  ],
+  "compliance_sources": [
+    "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business",
+    "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "https://wordpress.com/support/newsletter/email-appearance/",
+    "https://wordpress.com/support/newsletter/disable-newsletter-emails/"
+  ],
+  "ownership": {
+    "founder": "Final release, postal address, consent and spending approvals",
+    "dispatch": "Consent, welcome received proof, source-tagged newsletter CTA, compliance review",
+    "mind": "Affiliations, named email permission, merchant claim/guide review",
+    "claude": "Native WordPress editor/browsers, conversion analytics, commerce engineering",
+    "praxxis_grok": "Existing creator asset/UTM task, no content changes"
+  },
+  "forbidden": [
+    "send_email",
+    "send_test_email",
+    "publish_post",
+    "create_wp_draft",
+    "import_subscriber",
+    "change_settings",
+    "activate_merchant_link",
+    "create_tracking_pixels",
+    "fake_metrics",
+    "new_list_or_platform"
+  ]
+}

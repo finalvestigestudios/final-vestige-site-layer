@@ -1,0 +1,29 @@
+{
+  "as_of_utc": "2026-11-01T18:32:35Z",
+  "source": "authenticated WordPress.com newsletter.status/get_settings; no subscriber identities",
+  "website": "https://finalvestige.com",
+  "email_new_posts_by_default": false,
+  "newsletter_enabled": true,
+  "can_send": true,
+  "email_content_format": "excerpt",
+  "featured_image_in_email": true,
+  "post_date_in_email": true,
+  "from_name": "Final Vestige",
+  "reply_to": "no-reply",
+  "welcome_fieldbook_52_pages_configured": true,
+  "welcome_receipt_verified": false,
+  "recent_sends_reported": [],
+  "zero_lifetime_sends_not_established": true,
+  "counters": {
+    "total": 2,
+    "confirmed": 2,
+    "unconfirmed": 2
+  },
+  "unique_eligible_people": null,
+  "actual_received_jetpack_mime": false,
+  "physical_address_verified": false,
+  "unsubscribe_verified": false,
+  "commercial_email_permitted": false,
+  "live_guides_for_03_05": false,
+  "final_founder_send_approval": false
+}

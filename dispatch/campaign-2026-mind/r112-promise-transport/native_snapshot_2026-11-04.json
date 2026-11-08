@@ -1,0 +1,74 @@
+{
+  "schema": "fv-dispatch-r112-native-evidence-v1",
+  "captured_utc": "2026-11-04T11:31:39Z",
+  "observed": {
+    "site": "finalvestige.com",
+    "newsletter_enabled": true,
+    "site_can_send": true,
+    "new_post_auto_email_default": false,
+    "email_content_format": "excerpt",
+    "from_name": "Final Vestige",
+    "reply_to": "no-reply",
+    "recent_five_notifications": "all_never_sent_opted_out",
+    "reported_total": 2,
+    "reported_confirmed": 2,
+    "reported_unconfirmed": 2,
+    "reported_suppressed": 0,
+    "qualifying_email_reachable_recipients": null,
+    "welcome_fieldbook_pdf": "configured_only_not_received",
+    "actual_welcome_received": null,
+    "live_focus_post_status": "publish",
+    "live_dispatch_post_status": "publish",
+    "focus_contains_future_commission_language": true,
+    "dispatch_contains_future_commission_language": false,
+    "dispatch_promise_excerpt": "New investigations and archive finds by email, when we publish them.",
+    "welcome_promise_excerpt": "You'll hear from us when there's a new Final Vestige investigation or a worthwhile find from the archives.",
+    "approved_publisher_physical_address": null,
+    "actual_unsubscribe_effectiveness": null,
+    "partner_email_marketing_permission": null,
+    "verified_affiliate_link": null,
+    "verified_paid_affiliate_sales": null
+  },
+  "verified_published_destinations": [
+    {
+      "edition": 1,
+      "status": "publish",
+      "source": "connected_wordpress_published_destination",
+      "url": "https://finalvestige.com/the-missing-caption/"
+    },
+    {
+      "edition": 2,
+      "status": "publish",
+      "source": "connected_wordpress_published_destination",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+    },
+    {
+      "edition": 4,
+      "status": "publish",
+      "source": "connected_wordpress_published_destination",
+      "url": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/"
+    },
+    {
+      "edition": 6,
+      "status": "publish",
+      "source": "connected_wordpress_published_destination",
+      "url": "https://finalvestige.com/focus/"
+    }
+  ],
+  "searched_connected_gmail_as_of_utc": "2026-11-04T11:32:00Z",
+  "found_subscription_confirmation_2026_10_25": true,
+  "found_matching_received_fieldbook_welcome": false,
+  "found_qualifying_inspire3_affiliate_approval_email": false,
+  "gmail_result_limitation": "Search result absence cannot prove non-delivery to another mailbox or lack of merchant approval elsewhere.",
+  "research": [
+    "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business",
+    "https://zen12.com/hnp",
+    "https://inspire3.com/privacy/",
+    "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/174",
+    "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+    "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820"
+  ],
+  "privacy": "Counts and public site references only; no emails, names, identifiers, hashes, IPs, message IDs, personalized or unsubscribe links.",
+  "campaign_state": "HOLD_UNSENT",
+  "commercial_03_05": "HOLD_MERCHANT"
+}

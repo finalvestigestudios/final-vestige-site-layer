@@ -1,0 +1,86 @@
+{
+  "mode": "LOCAL_SYNTHETIC_NOT_LIVE",
+  "cases": 16,
+  "results": [
+    {
+      "fixture": "old",
+      "subscribe_token": "ABSENT",
+      "gift_visible": false
+    },
+    {
+      "fixture": "old",
+      "subscribe_token": "success",
+      "gift_visible": true
+    },
+    {
+      "fixture": "old",
+      "subscribe_token": "pending",
+      "gift_visible": true
+    },
+    {
+      "fixture": "old",
+      "subscribe_token": "false",
+      "gift_visible": true
+    },
+    {
+      "fixture": "old",
+      "subscribe_token": "unsubscribed",
+      "gift_visible": true
+    },
+    {
+      "fixture": "old",
+      "subscribe_token": "invalid_email",
+      "gift_visible": false
+    },
+    {
+      "fixture": "old",
+      "subscribe_token": "garbage",
+      "gift_visible": true
+    },
+    {
+      "fixture": "old",
+      "subscribe_token": "pending+native_UI_marker",
+      "gift_visible": true
+    },
+    {
+      "fixture": "new",
+      "subscribe_token": "ABSENT",
+      "gift_visible": false
+    },
+    {
+      "fixture": "new",
+      "subscribe_token": "success",
+      "gift_visible": true
+    },
+    {
+      "fixture": "new",
+      "subscribe_token": "pending",
+      "gift_visible": false
+    },
+    {
+      "fixture": "new",
+      "subscribe_token": "false",
+      "gift_visible": false
+    },
+    {
+      "fixture": "new",
+      "subscribe_token": "unsubscribed",
+      "gift_visible": false
+    },
+    {
+      "fixture": "new",
+      "subscribe_token": "invalid_email",
+      "gift_visible": false
+    },
+    {
+      "fixture": "new",
+      "subscribe_token": "garbage",
+      "gift_visible": false
+    },
+    {
+      "fixture": "new",
+      "subscribe_token": "pending+native_UI_marker",
+      "gift_visible": true
+    }
+  ]
+}

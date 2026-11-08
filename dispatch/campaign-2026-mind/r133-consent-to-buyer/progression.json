@@ -1,0 +1,74 @@
+{
+  "status": "DRAFT_UNSENT_NO_SCHEDULING",
+  "canonical_pr": 175,
+  "canonical_sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "stacked_on_pr": 1058,
+  "stack_sha": "273ce4992050610da1de07e51814e59c09fa85a4",
+  "original_4_editorial_2_commercial_preserved": true,
+  "not_autoresponder": true,
+  "new_campaign": false,
+  "send_authorized": false,
+  "schedule": null,
+  "from_existing_jetpack_only": true,
+  "source_wp_time": "2026-11-05T08:30:59Z",
+  "wp": {
+    "enabled": true,
+    "auto_post_email": false,
+    "format": "excerpt",
+    "reported_total": 3,
+    "reported_confirmed": 3,
+    "reported_unconfirmed": 2,
+    "email_reachable": null,
+    "received_welcome": null
+  },
+  "event": "confirmed_signup",
+  "event_proof": "native WordPress status + consent provenance, deduplicate per subscriber lifecycle in private backend; do not expose raw PII",
+  "never_infer_signup_from": [
+    "page_view",
+    "query_parameter",
+    "form_click",
+    "download",
+    "import",
+    "WordPress.com follower",
+    "email_open"
+  ],
+  "segments": "hypotheses based only on voluntary topical selections with consent; no individual profiling or automated sends",
+  "native_email_render_verified": false,
+  "received_email_verified": false,
+  "legal_fv_postal_verified": false,
+  "unsub_function_verified": false,
+  "merchant_accepted": false,
+  "email_marketing_permission_verified": false,
+  "affiliate_link_verified": false,
+  "guide_live": false,
+  "verified_net_revenue": null,
+  "issues": [
+    {
+      "slot": 1,
+      "kind": "editorial",
+      "subject": "What went missing between two pictures?",
+      "preheader": "How to examine an attention failure without exaggerating the science.",
+      "action": "Read the change-blindness investigation",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/?utm_source=dispatch&utm_medium=email&utm_campaign=mind_pilot_2026_11&utm_content=dispatch_issue_01",
+      "send": "HOLD_UNSENT"
+    },
+    {
+      "slot": 2,
+      "kind": "editorial",
+      "subject": "A sincere witness can still mistake a cause",
+      "preheader": "The surviving Puységur records and the discipline of separating fact from explanation.",
+      "action": "Investigate the Puységur source trail",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/?utm_source=dispatch&utm_medium=email&utm_campaign=mind_pilot_2026_11&utm_content=dispatch_issue_02",
+      "send": "HOLD_UNSENT"
+    },
+    {
+      "slot": 3,
+      "kind": "commercial-review-pending",
+      "subject": "Before buying twelve minutes of meditation",
+      "preheader": "Try a free baseline, then examine the seller's separate claims and consent.",
+      "action": "Read the independent Zen12 buyer guide — INACTIVE",
+      "url": null,
+      "send": "HOLD_UNSENT"
+    }
+  ]
+}

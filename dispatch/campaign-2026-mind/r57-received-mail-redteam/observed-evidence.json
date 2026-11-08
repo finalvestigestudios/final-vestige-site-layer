@@ -1,0 +1,104 @@
+{
+  "schema": "fv-dispatch-r57-read-only-evidence-v1",
+  "observation_date_utc": "2026-11-02",
+  "evidence_status": "HUMAN_RELEASE_BLOCKED",
+  "canonical": {
+    "editorial": [
+      1,
+      2,
+      4,
+      6
+    ],
+    "conditional_commercial": [
+      3,
+      5
+    ],
+    "all_six": "HOLD_UNSENT"
+  },
+  "production_snapshot": {
+    "site_id": 256784396,
+    "newsletter_enabled": true,
+    "can_technically_send": true,
+    "automatic_post_email": false,
+    "email_content_format": "excerpt",
+    "sender_display": "Final Vestige",
+    "reply_to": "no-reply",
+    "welcome_fieldbook_configured": true,
+    "welcome_received_message_verified": false,
+    "subscriber_counters": {
+      "total": 2,
+      "confirmed": 2,
+      "unconfirmed": 2,
+      "suppressed": 0
+    },
+    "eligible_unique_email_recipients_verified": false,
+    "recent_sends_reported": [],
+    "as_of": "2026-11-02T03:38:25Z"
+  },
+  "subscriber_semantics": {
+    "total_includes_not_confirmed": false,
+    "source": "https://wordpress.com/support/subscribers/",
+    "recipient_eligibility": "NOT_ESTABLISHED"
+  },
+  "official_named_offers": [
+    {
+      "issue": 3,
+      "product": "Zen12",
+      "exact_official_url": "https://zen12.com/hnp",
+      "observed_seller_format": "12-minute MP3 sessions; 12 levels and four styles; tier-dependent 24 or 48 MP3s",
+      "unproven_claim": "12 minutes is equivalent to an hour of advanced meditation; automatic brainwave effects and personal outcomes",
+      "price_and_checkout_verified": false,
+      "refund_enforcement_verified": false,
+      "partner_email_permission_verified": false,
+      "approved_affiliate_link_verified": false,
+      "approved_published_guide_verified": false,
+      "source_classification": "SELLER_DESCRIPTION_NOT_INDEPENDENT_EFFICACY"
+    },
+    {
+      "issue": 5,
+      "product": "Hypnosis Live Total Focus",
+      "exact_official_url": "https://hypnosislive.com/mental-skills/total-focus",
+      "observed_seller_format": "33-minute / 47-MB MP3",
+      "unproven_claim": "100% razor-sharp focus on demand, brain reprogramming and job performance gains",
+      "observed_live_page_prices_at_snapshot": "$2 / $29.95 displayed on live seller page; indexed older snapshot displayed different prices",
+      "observed_refund_page_copy": "14-day seller-stated money-back policy",
+      "price_and_checkout_verified": false,
+      "refund_enforcement_verified": false,
+      "partner_email_permission_verified": false,
+      "approved_affiliate_link_verified": false,
+      "approved_published_guide_verified": false,
+      "source_classification": "SELLER_DESCRIPTION_NOT_INDEPENDENT_EFFICACY"
+    }
+  ],
+  "compliance_requirements": {
+    "verified_final_vestige_physical_address": false,
+    "actual_received_unsubscribe_rendering": false,
+    "functional_unsubscribe": false,
+    "actual_received_jetpack_preview": false,
+    "founder_final_sending_approval": false
+  },
+  "authorizations": {
+    "subscriber_contact": false,
+    "merchant_contact": false,
+    "email_sending": false,
+    "test_sending": false,
+    "wordpress_writes": false,
+    "affiliate_activation": false
+  },
+  "measurement": {
+    "open_rate": null,
+    "click_through_rate": null,
+    "purchases": null,
+    "experiments": null,
+    "sales": null
+  },
+  "official_compliance_sources": [
+    "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business",
+    "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking"
+  ],
+  "governing_issues": [
+    "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/174",
+    "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171"
+  ],
+  "no_release_or_send_authority_from_this_file": true
+}

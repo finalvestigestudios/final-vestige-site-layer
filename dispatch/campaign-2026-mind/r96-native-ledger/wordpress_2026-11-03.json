@@ -1,0 +1,77 @@
+{
+  "evidence_date": "2026-11-03T18:36:42Z",
+  "source": "wordpress_authenticated_read_only",
+  "newsletter_settings": {
+    "subscriptions": true,
+    "site_can_send": true,
+    "email_new_posts_by_default": false,
+    "email_content_format": "excerpt",
+    "reply_to": "no-reply",
+    "from_name": "Final Vestige",
+    "welcome_fieldbook_configured": true,
+    "welcome_delivered_verified": false
+  },
+  "newsletter_counts": {
+    "total": 2,
+    "confirmed": 2,
+    "unconfirmed": 2,
+    "suppressed": 0,
+    "paid": 0,
+    "imported_last_24h": 0
+  },
+  "follower_stats": {
+    "total": 2,
+    "email": 0,
+    "wpcom": 2,
+    "comment": 0,
+    "partial": false
+  },
+  "last_five_delivery_records": [
+    {
+      "post_id": 1926,
+      "status": "never_sent_opted_out",
+      "dispatched_at": null,
+      "recipients": null
+    },
+    {
+      "post_id": 1924,
+      "status": "never_sent_opted_out",
+      "dispatched_at": null,
+      "recipients": null
+    },
+    {
+      "post_id": 1922,
+      "status": "never_sent_opted_out",
+      "dispatched_at": null,
+      "recipients": null
+    },
+    {
+      "post_id": 1920,
+      "status": "never_sent_opted_out",
+      "dispatched_at": null,
+      "recipients": null
+    },
+    {
+      "post_id": 1917,
+      "status": "never_sent_opted_out",
+      "dispatched_at": null,
+      "recipients": null
+    }
+  ],
+  "unverified_real_world_proofs": {
+    "merchant_email_permission": false,
+    "approved_published_guides": false,
+    "qualified_recipients_reconciled": false,
+    "received_jetpack_message": false,
+    "functional_unsubscribe_in_received_message": false,
+    "publisher_postal_in_received_message": false,
+    "welcome_delivery_receipt": false,
+    "founder_final_approval": false
+  },
+  "audit_notes": [
+    "The five listed WordPress delivery objects are all opted-out event records, not successful subscriber sends.",
+    "Newsletter total/confirmed/unconfirmed overlap or conflict; never sum these categories.",
+    "0 reported email followers and 2 WordPress.com followers are separate audience statistics, not an authenticated export of eligible recipient addresses.",
+    "Site can send is capability, not campaign consent; sender display and configured welcome are not received-message evidence."
+  ]
+}

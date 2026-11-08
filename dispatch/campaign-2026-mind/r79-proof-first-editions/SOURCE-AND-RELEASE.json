@@ -1,0 +1,94 @@
+{
+  "campaign": "Final Vestige Dispatch original PR #175; R79 reviewer-only optional editions",
+  "date": "2026-11-02",
+  "status": "HOLD_UNSENT",
+  "original_issues_changed": false,
+  "founder_mix": {
+    "editorial": 4,
+    "commercial_reserved": 2
+  },
+  "versions": [
+    {
+      "slot": 4,
+      "file": "04-apollo-1.md",
+      "kind": "editorial",
+      "decision": "REVIEW_ONLY",
+      "claimed_evidence": "NASA investigation concludes ignition source not determined; oxygen/hatch/rescue vulnerabilities documented",
+      "sources": [
+        "https://sma.nasa.gov/sma-disciplines/accllp/apollo-1",
+        "https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/"
+      ],
+      "cta_status": "PUBLISHED_SOURCE_DESTINATION_NOT_SEND_APPROVED",
+      "offer": false
+    },
+    {
+      "slot": 3,
+      "file": "03-zen12.md",
+      "kind": "commercial_reservation",
+      "decision": "HOLD_MERCHANT",
+      "claimed_evidence": "seller claims track lengths, levels, product variants; independent product-specific efficacy not substantiated",
+      "sources": [
+        "https://zen12.com/hnp",
+        "https://zen12.com/about",
+        "https://zen12.com/research",
+        "https://inspire3.com/privacy/"
+      ],
+      "cta_status": "UNPUBLISHED_GUIDE_NO_LINK",
+      "offer": true
+    },
+    {
+      "slot": 5,
+      "file": "05-total-focus.md",
+      "kind": "commercial_reservation",
+      "decision": "HOLD_MERCHANT",
+      "claimed_evidence": "seller describes 33min 47MB MP3 J.A. Amos; extraordinary efficacy claims not independently confirmed",
+      "sources": [
+        "https://hypnosislive.com/mental-skills/total-focus",
+        "https://inspire3.com/privacy/"
+      ],
+      "cta_status": "UNPUBLISHED_GUIDE_NO_LINK",
+      "offer": true
+    }
+  ],
+  "channel_evidence": {
+    "jetpack_enabled": true,
+    "auto_new_posts_email": false,
+    "email_format": "excerpt",
+    "wordpress_settings_timestamp": "2026-11-03T01:34:37Z",
+    "status_timestamp": "2026-11-03T01:34:34Z",
+    "status_counts": {
+      "total": 2,
+      "confirmed": 2,
+      "unconfirmed": 2,
+      "suppressed": 0
+    },
+    "followers_endpoint": {
+      "total": 2,
+      "email": 0,
+      "wpcom": 2,
+      "partial": false
+    },
+    "true_email_eligible_audience": null,
+    "confirmed_fieldbook_delivery": false,
+    "genuine_received_email": false,
+    "test_email_authorized": false,
+    "verified_publisher_postal": false,
+    "functional_unsubscribe_verified": false,
+    "founder_final_send_approval": false,
+    "zen12_email_permission": false,
+    "total_focus_email_permission": false,
+    "zen12_published_guide": false,
+    "total_focus_published_guide": false,
+    "active_affiliate_link": false,
+    "actual_send_count": 0
+  },
+  "authority": {
+    "original": "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/175",
+    "per_issue_gate": "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/201",
+    "latest_parent": "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/702",
+    "mind": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+    "owner": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/174",
+    "wordpress_docs": "https://wordpress.com/support/newsletter/email-appearance/",
+    "legal": "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business"
+  }
+}

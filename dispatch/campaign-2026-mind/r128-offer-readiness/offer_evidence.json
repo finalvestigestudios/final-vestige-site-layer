@@ -1,0 +1,125 @@
+{
+  "schema": "FV_DISPATCH_R128_INERT",
+  "observed_utc": "2026-11-05T03:33:57Z",
+  "base_campaign": "fbd69f61a6bde8de71573d3f55412245a39e58c8",
+  "master": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "status": "HOLD_ALL_UNSENT",
+  "allocation": {
+    "editorial": [
+      1,
+      2,
+      4,
+      6
+    ],
+    "commercial": [
+      3,
+      5
+    ]
+  },
+  "wordpress": {
+    "newsletter_enabled": true,
+    "auto_new_post_emails": false,
+    "email_content_format": "excerpt",
+    "total": 3,
+    "confirmed": 3,
+    "unconfirmed": 2,
+    "email_follower_count": 0,
+    "wpcom_follower_count": 3,
+    "actual_email_eligibility_verified": false,
+    "welcome_received_verified": false,
+    "actual_preview_received_verified": false,
+    "pdf_media_id": 1737,
+    "pdf_metadata_bytes": 599946,
+    "pdf_open_and_pages_verified": false
+  },
+  "legal": {
+    "publisher_address_verified": false,
+    "rendered_opt_out_verified": false,
+    "founder_approval": false
+  },
+  "offers": [
+    {
+      "issue": 3,
+      "product": "Zen12 Premium",
+      "priority": "primary_candidate",
+      "source": "https://zen12.com/hnp",
+      "description": "Seller advertises 12 levels, four audio styles, Premium 48 MP3 files",
+      "visible_price": "$87.99",
+      "price_classification": "merchant_display_only_checkout_unverified",
+      "refund": "Seller advertises 1 year; purchaser terms unverified",
+      "unsupported_claims": [
+        "12 minutes provides one hour of meditation benefits",
+        "brainwave sound automatically creates deep meditation"
+      ],
+      "research": "https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety",
+      "audience": "Reader deliberately comparing paid meditation audio with a free practice; not general illusion viewers",
+      "one_guide_cta": "Read independent Zen12 buyer guide [INERT UNPUBLISHED]",
+      "near_offer_disclosure": "If you buy through an earning link on the linked guide, Final Vestige may earn a commission.",
+      "guide_url": null,
+      "merchant_affiliate_url": null,
+      "guide_live_verified": false,
+      "named_partner_approved": false,
+      "email_marketing_allowed": false,
+      "approved_creative_verified": false,
+      "tracking_format_verified": false,
+      "refund_at_checkout_verified": false,
+      "independent_product_efficacy_verified": false,
+      "merchant_paid_sale_verified": false
+    },
+    {
+      "issue": 5,
+      "product": "Hypnosis Live Total Focus",
+      "priority": "secondary_reserved",
+      "source": "https://hypnosislive.com/mental-skills/total-focus",
+      "faq": "https://hypnosislive.com/faq",
+      "description": "Seller advertises one 33-minute 47-MB audio recording",
+      "visible_price": "$17.95",
+      "price_classification": "merchant_display_only_checkout_unverified",
+      "refund": "Seller advertises 14 days; FAQ describes a five-session-per-year refund limit, not checkout verified",
+      "unsupported_claims": [
+        "recording reprograms the brain",
+        "100% concentration on demand"
+      ],
+      "research": "https://www.nccih.nih.gov/health/hypnosis",
+      "audience": "Reader explicitly comparing one guided focus recording with a free task routine",
+      "one_guide_cta": "Read independent Total Focus evidence guide [INERT UNPUBLISHED]",
+      "near_offer_disclosure": "If you buy through an earning link on the linked guide, Final Vestige may earn a commission.",
+      "guide_url": null,
+      "merchant_affiliate_url": null,
+      "guide_live_verified": false,
+      "named_partner_approved": false,
+      "email_marketing_allowed": false,
+      "approved_creative_verified": false,
+      "tracking_format_verified": false,
+      "refund_at_checkout_verified": false,
+      "independent_product_efficacy_verified": false,
+      "merchant_paid_sale_verified": false
+    }
+  ],
+  "editorial_friction": [
+    {
+      "issue": 1,
+      "problem": "Prove latest /the-missing-caption/ destination is live before any email"
+    },
+    {
+      "issue": 4,
+      "problem": "The 17.1 seconds is transmission interval, not total fire duration"
+    },
+    {
+      "issue": 5,
+      "problem": "Current email has two reader-action invitations: Fieldbook and pending buyer guide; choose one primary CTA"
+    },
+    {
+      "issue": 6,
+      "problem": "Returning subscriber currently directed to signup-oriented /focus/; prefer verified direct Fieldbook access"
+    }
+  ],
+  "actual_paid_orders": null,
+  "net_revenue_per_1000_qualified_sessions": null,
+  "verification_sources": [
+    "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/174",
+    "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+    "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business",
+    "https://wordpress.com/support/subscribers/"
+  ]
+}

@@ -1,0 +1,36 @@
+FINAL VESTIGE STUDIOS | THE DISPATCH
+OFFLINE COPY REVIEW ONLY — DO NOT SEND, PUBLISH OR SCHEDULE
+Candidate source-tightening for canonical Issue 04; NOT an approved replacement.
+
+SUBJECT: Seventeen seconds. A much longer explanation.
+PREHEADER (planning only; not a verified Jetpack field): NASA recorded two transmissions, a silence, and more unanswered questions.
+
+THE 17.1-SECOND WINDOW
+
+The first crew report of the Apollo 1 fire began at 23:31:04.7 GMT on January 27, 1967. The last voice transmission ended at 23:31:21.8. Those are seventeen point one seconds apart. But the radio record contains only 10.3 seconds of actual speech, divided into two transmissions by a 6.8-second silence.
+
+NASA's Apollo 204 Review Board analyzed the tape, but the final transmission was too garbled for a definitive transcript or speaker identification. Those timestamps tell us when a fire was reported, not when it ignited, how the astronauts experienced it, or the exact moment any particular system failed.
+
+The investigators could document a chain of hazards without recovering one indisputable initiating spark. The cabin had been pressurized with pure oxygen at 16.7 pounds per square inch absolute. Combustible materials were present. Rising pressure made the inward-opening hatch impossible to open in time. The unfueled pad test had been treated as less hazardous, with rescue provisions ill-suited to a sudden cabin fire.
+
+A short timeline is emotionally powerful. It becomes more useful when it points us toward the records that the timeline alone cannot contain: engineering assumptions, materials, hatch geometry, emergency procedures and the report's uncertainty about ignition.
+
+Here is the research habit we take from it: place a time-stamped observation in one column, the investigators' interpretation in another, and the unresolved question in a third. Precision about the first column must not turn into certainty about the other two.
+
+Read the original Final Vestige investigation:
+https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/
+
+Source notes (not secondary CTAs):
+NASA Apollo 204 Review Board, Investigation and Analysis:
+https://www.nasa.gov/wp-content/uploads/static/history/Apollo204/invest.html
+NASA Apollo 1 Safety Case Study:
+https://sma.nasa.gov/sma-disciplines/accllp/apollo-1
+
+The first and last voice timestamps mark a 17.1-second span, NOT the full duration of the fire or 17.1 seconds of continuous transmission. This is an optional edit of a historical draft, not a commercial product recommendation.
+
+MANDATORY HOLD BLOCK — DO NOT INCLUDE UNVERIFIED DATA IN A SEND:
+Publisher mailing address: [[VALID_POSTAL_ADDRESS_REQUIRED]]
+Actual Jetpack unsubscribe link: [[JETPACK_UNSUBSCRIBE_LINK_MUST_BE_VERIFIED]]
+Original received Jetpack email: NOT VERIFIED
+Subscriber eligibility: NOT VERIFIED
+Founder final send approval: NOT GRANTED

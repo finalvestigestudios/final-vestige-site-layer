@@ -1,0 +1,44 @@
+{
+  "id": "dispatch-r127-wordpress-native-consent-two-paths",
+  "state": "OFFLINE_DRAFT_NO_SEND",
+  "master_pr": 175,
+  "gate_pr": 201,
+  "parent_pr": 1019,
+  "issues": [
+    174,
+    171,
+    129,
+    820
+  ],
+  "live_observed_utc": "2026-11-05T02:34:13Z",
+  "newsletter_counts": {
+    "total": 3,
+    "confirmed": 3,
+    "unconfirmed": 2
+  },
+  "email_reachable": null,
+  "actual_welcome_receipt": null,
+  "publisher_postal_verified": false,
+  "unsub_render_verified": false,
+  "affiliate_email_permission_verified": false,
+  "verified_paid_orders": null,
+  "net_per_1000_sessions": null,
+  "reserved_offer_slots": [
+    3,
+    5
+  ],
+  "editorial_slots": [
+    1,
+    2,
+    4,
+    6
+  ],
+  "canonical_sources": [
+    "https://wordpress.com/support/newsletter-settings/",
+    "https://wordpress.com/support/subscribers/",
+    "https://jetpack.com/support/newsletter/",
+    "https://jetpack.com/support/newsletter/customize-the-newsletter-experience/",
+    "https://zen12.com/hnp",
+    "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business"
+  ]
+}

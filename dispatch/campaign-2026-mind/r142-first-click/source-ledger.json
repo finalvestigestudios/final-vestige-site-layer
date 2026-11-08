@@ -1,0 +1,84 @@
+{
+  "wordpress": [
+    {
+      "id": 1922,
+      "type": "post",
+      "status": "published",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/"
+    },
+    {
+      "id": 1377,
+      "type": "page",
+      "status": "published",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+    },
+    {
+      "id": 434,
+      "type": "post",
+      "status": "published",
+      "url": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/"
+    },
+    {
+      "id": 523,
+      "type": "page",
+      "status": "published",
+      "url": "https://finalvestige.com/dispatch/"
+    },
+    {
+      "id": 1579,
+      "type": "page",
+      "status": "published",
+      "url": "https://finalvestige.com/focus/"
+    },
+    {
+      "id": 1737,
+      "type": "media",
+      "registered": true,
+      "mime": "application/pdf",
+      "size_bytes": 599946,
+      "url": "https://finalvestige.com/wp-content/uploads/2026/10/Final_Vestige_Seven_Day_Focus_Fieldbook_Complete_Edition.pdf",
+      "download_verified": false
+    }
+  ],
+  "sources": [
+    {
+      "claim": "Change detection impaired by blank interruptions",
+      "url": "https://doi.org/10.1111/j.1467-9280.1997.tb00427.x",
+      "source_type": "1997 scientific study abstract"
+    },
+    {
+      "claim": "Person substitution during a real-world encounter can go unnoticed",
+      "url": "https://doi.org/10.3758/BF03208840",
+      "source_type": "1998 scientific study abstract"
+    },
+    {
+      "claim": "Publisher editorial and correction standards",
+      "url": "https://finalvestige.com/editorial-standards/",
+      "source_type": "published FV policy"
+    },
+    {
+      "claim": "Postal address, legitimate opt-out and nondeceptive subjects required for applicable commercial mail",
+      "url": "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business",
+      "source_type": "FTC official regulation guide"
+    },
+    {
+      "claim": "Zen12 seller page; not proven effectiveness/affiliate authority",
+      "url": "https://zen12.com/hnp",
+      "source_type": "merchant sales"
+    },
+    {
+      "claim": "Total Focus exact SKU; seller claims only",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "source_type": "merchant sales"
+    },
+    {
+      "claim": "Public affiliate portal not named FV approval",
+      "url": "https://affiliates.inspire3.com/",
+      "source_type": "merchant affiliate portal"
+    }
+  ],
+  "no_email_addresses": true,
+  "partner_authorization_verified": false,
+  "real_paid_orders": null,
+  "real_net_revenue": null
+}

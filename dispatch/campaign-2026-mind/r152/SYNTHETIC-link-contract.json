@@ -1,0 +1,24 @@
+{
+  "status": "SYNTHETIC_EXAMPLES_ONLY_NOT_PUBLISHED",
+  "actual_grok_posts": [],
+  "actual_email_sends": [],
+  "real_human_sessions": null,
+  "actual_confirmed_signup_events": null,
+  "verified_paid_orders": null,
+  "net_revenue_per_1000_qualified_sessions": null,
+  "url_examples": [
+    {
+      "owner": "Grok",
+      "source": "youtube",
+      "target": "Focus",
+      "url": "https://finalvestige.com/focus/?utm_source=youtube&utm_medium=organic_social&utm_campaign=perception_pilot_2026_11&utm_content=yt_change_001"
+    },
+    {
+      "owner": "Dispatch",
+      "issue": "02",
+      "target": "Puységur",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/?utm_source=dispatch&utm_medium=email&utm_campaign=dispatch_mind_pilot_2026_11&utm_content=issue_02"
+    }
+  ],
+  "policy": "NO_NEW_SCRIPT_OR_LIST_AND_NO_EMAIL_SEND; examples are not approved links"
+}

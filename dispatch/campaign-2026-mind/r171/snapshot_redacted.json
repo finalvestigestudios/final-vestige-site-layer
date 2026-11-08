@@ -1,0 +1,53 @@
+{
+  "as_of_utc": "2026-11-06T22:34:00Z",
+  "newsletter_settings": {
+    "subscriptions": true,
+    "email_new_posts_by_default": false,
+    "email_content_format": "full",
+    "from_name": "Final Vestige Studios",
+    "reply_to": "no-reply",
+    "welcome_message": "Seven Day Focus Fieldbook: https://finalvestige.com/wp-content/uploads/2026/10/Final_Vestige_Seven_Day_Focus_Fieldbook_Complete_Edition.pdf"
+  },
+  "newsletter_status": {
+    "subscribers": {
+      "total": 3,
+      "confirmed": 3,
+      "unconfirmed": 2,
+      "suppressed": 0
+    },
+    "recent_sends": [
+      {
+        "post_id": 1926,
+        "status": "never_sent_opted_out"
+      },
+      {
+        "post_id": 1924,
+        "status": "never_sent_opted_out"
+      },
+      {
+        "post_id": 1922,
+        "status": "never_sent_opted_out"
+      },
+      {
+        "post_id": 1920,
+        "status": "never_sent_opted_out"
+      },
+      {
+        "post_id": 1917,
+        "status": "never_sent_opted_out"
+      }
+    ]
+  },
+  "pages": {
+    "dispatch": {
+      "id": 523,
+      "raw": "<!-- wp:jetpack/subscriptions {\"showSubscribersTotal\":false,\"submitButtonText\":\"Subscribe\"} /-->",
+      "rendered": "<a href=\"https://finalvestige.com/?post_type=page&#038;p=523\">Subscribe</a>"
+    },
+    "focus": {
+      "id": 1579,
+      "raw": "<script id=\"fvf-gift-v2\">var q=new URLSearchParams(window.location.search).get('subscribe');if(q){if(bad.indexOf(q)<0){show();}}var c=document.querySelector('.wp-block-jetpack-subscriptions__container');if(/\\bis-subscriber\\b/.test(c.className)){show();}new MutationObserver(check);</script>"
+    }
+  },
+  "proof": {}
+}

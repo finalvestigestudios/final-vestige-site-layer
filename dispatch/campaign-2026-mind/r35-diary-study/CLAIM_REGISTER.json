@@ -1,0 +1,118 @@
+{
+  "campaign": "fv-dispatch-mind-launch-2026-10-30",
+  "audit_revision": "R35",
+  "as_of_utc": "2026-11-01",
+  "release_state": "HOLD_UNSENT",
+  "artifact_scope": "OFFLINE_REVIEW_ONLY",
+  "source_policy": "Historical conclusions require source corroboration; vendor claims are not independent efficacy evidence; no affiliate permissions are inferred.",
+  "verified_wp_read_only": {
+    "newsletter_enabled": true,
+    "automatic_new_post_email": false,
+    "email_content_format": "excerpt",
+    "recent_sends_count": 0,
+    "counts": {
+      "total": 2,
+      "confirmed": 2,
+      "unconfirmed": 2
+    },
+    "unique_eligible_recipients": null,
+    "welcome_configured": true,
+    "welcome_received": false,
+    "welcome_received_note": "NOT VERIFIED, not proven false",
+    "observed_as_of": "2026-11-01T04:34:12Z"
+  },
+  "release_blocks": [
+    "founder_explicit_final_campaign_approval",
+    "genuine_jetpack_received_email",
+    "functional_unsubscribe_in_received_email",
+    "valid_final_vestige_commercial_physical_postal_address",
+    "actual_eligible_opted_in_recipients_reconciled",
+    "published_authorized_merchant_guide_destinations",
+    "product_specific_inspire3_email_channel_permission_and_links"
+  ],
+  "issue_claims": [
+    {
+      "issue": 1,
+      "kind": "editorial",
+      "risk": "LOW",
+      "core_claim": "Only about half of pedestrians detected real-world person switch under the 1998 study conditions.",
+      "source_url": "https://doi.org/10.3758/BF03208840",
+      "source_type": "peer_reviewed_primary",
+      "boundary": "Not a universal rate of witness or memory error.",
+      "cta": "https://finalvestige.com/the-missing-caption/",
+      "editorial_action": "Keep scope-limiting sentence."
+    },
+    {
+      "issue": 2,
+      "kind": "editorial",
+      "risk": "MEDIUM",
+      "core_claim": "Puységur reported a May 4 1784 episode with Victor Race; Franklin-era inquiry tested Mesmer's claims but not the same incident.",
+      "source_url": "https://www.circee.org/puysegur-memoires-pour-servir-a-l-histoire-du-magnetisme-animal-1784/",
+      "secondary_source_url": "https://wellcomecollection.org/works/es4ayp6q",
+      "source_type": "historical_source_commentary_and_catalogue",
+      "boundary": "Puységur's statements are historical testimony, not independently verified treatments or proof of magnetic fluid.",
+      "cta": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "editorial_action": "Maintain 1784 documents distinction and original-account attribution."
+    },
+    {
+      "issue": 3,
+      "kind": "commercial-review-pending",
+      "risk": "HIGH",
+      "core_claim": "Seller currently describes four listening formats and distinct Zen12 package tiers; 12-min-equivalence and brain-state results are unverified seller assertions.",
+      "source_url": "https://zen12.com/about",
+      "secondary_source_url": "https://zen12.com/",
+      "source_type": "official_seller_sales_page_NOT_independent_efficacy_evidence",
+      "boundary": "Package tier, currency, checkout, device formats, purchase terms and partner email rights must be checked before promotion.",
+      "cta": null,
+      "editorial_action": "HOLD_MERCHANT; no earning link or published guide yet; no evergreen price/savings/countdown claims."
+    },
+    {
+      "issue": 4,
+      "kind": "editorial",
+      "risk": "LOW",
+      "core_claim": "17.1 seconds elapsed between first fire report transmission start at 23:31:04.7 and final transmission end at 23:31:21.8; only 10.3 seconds of radio speech in two segments separated by a 6.8 second gap.",
+      "source_url": "https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/",
+      "source_type": "official_primary_report",
+      "boundary": "Elapsed 17.1 seconds is not fire ignition time, uninterrupted transmission time, or final moment of consciousness.",
+      "cta": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/",
+      "editorial_action": "Consider future note clarifying 10.3s of actual speech if concise; no urgent correction to current draft."
+    },
+    {
+      "issue": 5,
+      "kind": "commercial-review-pending",
+      "risk": "HIGH",
+      "core_claim": "Seller lists Total Focus as 33-min/47 MB audio, with promotional efficacy and price claims that change with checkout context.",
+      "source_url": "https://hypnosislive.com/mental-skills/total-focus",
+      "secondary_source_url": "https://www.nccih.nih.gov/health/hypnosis",
+      "source_type": "official_seller_sales_page_plus_general_science_NOT_product_validation",
+      "boundary": "NIH research on hypnosis is not specific evidence for Total Focus; quoted prices and refunds require purchase-session verification, not only seller landing page.",
+      "cta": null,
+      "editorial_action": "HOLD_MERCHANT; never quote dynamic prices, unverified benefits or generic swipe email permission."
+    },
+    {
+      "issue": 6,
+      "kind": "editorial",
+      "risk": "MEDIUM",
+      "core_claim": "Stone et al. 2002 reported 90% self-reported timing compliance vs 11% binder-open/close timing compliance for paper diaries, based on 30-minute windows (40 paper participants); 40 used electronic diaries.",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC111114/",
+      "source_type": "open_access_primary_2002_BMJ",
+      "boundary": "Photosensors measure binder open/close, not exact moment of writing or subjective honesty. Not a meditation-efficacy experiment.",
+      "cta": "https://finalvestige.com/focus/",
+      "editorial_action": "REVIEW_CANDIDATE: replace shorthand 'entries met window' with explicitly operationalized binder-open/close measure; candidate not approved for substitution."
+    }
+  ],
+  "review_candidate": {
+    "issue": 6,
+    "title": "What did seven days of attention reveal?",
+    "state": "HOLD_EDITORIAL_REVIEW",
+    "replaces_canonical": false,
+    "format_files": [
+      "ISSUE_06_REVIEW_CANDIDATE.md",
+      "ISSUE_06_REVIEW_CANDIDATE.html",
+      "ISSUE_06_REVIEW_CANDIDATE.txt"
+    ],
+    "editorial_cta": "https://finalvestige.com/focus/",
+    "commercial_links": 0,
+    "actual_subscriber_email_delivery": false
+  }
+}

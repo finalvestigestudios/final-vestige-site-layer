@@ -1,0 +1,77 @@
+{
+  "schema": "fv.dispatch.r149.guest-firstmile/1",
+  "observed_at_utc": "2026-11-06T00:36:20Z",
+  "read_only": true,
+  "release": "HOLD_ALL_UNSENT",
+  "wordpress": {
+    "newsletter_enabled": true,
+    "site_can_send": true,
+    "email_new_posts_by_default": false,
+    "email_content_format": "full",
+    "from_name": "Final Vestige Studios",
+    "reply_to": "no-reply",
+    "newsletter_categories_enabled": false,
+    "subscribers_diagnostic": {
+      "total": 3,
+      "confirmed": 3,
+      "unconfirmed": 2,
+      "imported_last_24h": 0,
+      "do_not_add_counts": true,
+      "actual_eligible_recipients": "UNKNOWN"
+    },
+    "recent_post_email_status": "never_sent_opted_out",
+    "welcome_template_contains_fieldbook": true,
+    "actual_welcome_delivery": "UNKNOWN"
+  },
+  "browser": {
+    "signed_out_actual_dom": "NOT_TESTED",
+    "rest_dispatch_view": "SELF_LINK_REPRESENTATION_DISCREPANCY_NOT_PROVEN_GUEST_FAILURE",
+    "focus_url_success_is_not_native_confirmation": true,
+    "fixture_case_count": 4,
+    "fixture_viewports": [
+      320,
+      390,
+      768,
+      1440
+    ],
+    "fixture_browser_cases": 16,
+    "fixture_browser_checks": "16/16 classified",
+    "native_browser_test_cases": "17/17 passed",
+    "fixture_evidence_only": true
+  },
+  "commercial": {
+    "editorial_issues": [
+      1,
+      2,
+      4,
+      6
+    ],
+    "merchant_hold_issues": [
+      3,
+      5
+    ],
+    "issue3": "Zen12 Premium",
+    "issue5": "Hypnosis Live Total Focus",
+    "named_affiliate_acceptance": "UNKNOWN",
+    "email_promo_permissions": "UNKNOWN",
+    "earning_links": "UNKNOWN",
+    "offer_guides_publication": "UNKNOWN",
+    "actual_checkout_refund": "UNKNOWN",
+    "valid_fv_address_in_received_mail": "UNKNOWN",
+    "functional_unsubscribe_in_received_mail": "UNKNOWN"
+  },
+  "metrics": {
+    "confirmed_signup_from_native_provider": "UNKNOWN",
+    "actual_received_welcome": "UNKNOWN",
+    "independently_settled_paid_orders": "UNKNOWN",
+    "net_revenue_per_1000_qualified_human_sessions": null,
+    "reason": "No independently validated denominator/numerator"
+  },
+  "references": {
+    "master_pr": "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/175",
+    "qa_pr": "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/201",
+    "parent_pr": "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/1168",
+    "focus_fix_pr": "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/1079",
+    "issue": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/174"
+  }
+}

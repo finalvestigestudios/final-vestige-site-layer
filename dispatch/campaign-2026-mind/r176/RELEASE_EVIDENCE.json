@@ -1,0 +1,137 @@
+{
+  "schema": "fv_dispatch_r176_evidence_gate_v1",
+  "as_of_local": "2026-11-06 19:28 PST",
+  "status": "HOLD_UNSENT",
+  "merchant_status": "HOLD_MERCHANT",
+  "candidate_is_approved": false,
+  "canonical_campaign": {
+    "pr": 175,
+    "inherited_draft_pr": 1341,
+    "editorial": 4,
+    "commercial": 2,
+    "canonical_copy_changed": false,
+    "r176_is_optional_candidate": true
+  },
+  "provider_provenance": {
+    "source": "authenticated WordPress Jetpack newsletter status/get_settings read-only",
+    "as_of_utc": "2026-11-07T03:28:57+00:00",
+    "subscribers_total": 3,
+    "subscribers_confirmed": 3,
+    "unconfirmed": 2,
+    "wordPress_followers_email_eligible": "UNKNOWN",
+    "confirmed_subscriber_receipt_count": "UNKNOWN",
+    "welcome_delivered": "UNKNOWN",
+    "newsletter_enabled": true,
+    "auto_send_new_posts": false,
+    "email_content_format": "full",
+    "sender_display": "Final Vestige Studios",
+    "recent_send_count": 0,
+    "real_jetpack_preview": "NOT_OBTAINED"
+  },
+  "landing_page_provenance": {
+    "dispatch_page_id": 523,
+    "dispatch_stored_jetpack_subscription_block": true,
+    "dispatch_api_view_email_input": false,
+    "dispatch_guest_page_form": "NOT_TESTED",
+    "focus_page_id": 1579,
+    "focus_api_view_email_input": true,
+    "focus_source_script_shows_gift_for_unrecognized_subscribe_query": true,
+    "focus_confirmation_provider_status": "NOT_VERIFIED",
+    "focus_guest_submission": "NOT_TESTED",
+    "focus_gift_delivery_receipt": "NOT_VERIFIED"
+  },
+  "commercial_product": {
+    "product": "Zen12 Premium",
+    "official_page": "https://zen12.com/",
+    "official_page_reviewed": "2026-11-06",
+    "verified_as_seller_descriptions": {
+      "levels": 12,
+      "audio_mp3_count": 48,
+      "formats": [
+        "relaxation music",
+        "guided meditation",
+        "sounds of nature",
+        "white noise"
+      ],
+      "seller_money_back_promise": "1 year",
+      "public_page_showing_price": "$87.99"
+    },
+    "no_email_price_claim": true,
+    "not_verified": [
+      "actual checkout total",
+      "refund process/execution",
+      "independent equivalence of twelve minutes and one hour",
+      "medical results",
+      "Final Vestige affiliate account acceptance",
+      "email-channel promotion permission",
+      "approved earning URL",
+      "approved creative use",
+      "live FV independent presell guide",
+      "merchant paid conversion reports"
+    ]
+  },
+  "research": [
+    {
+      "claim": "Meditation evidence varies by practice and research quality; not proof of product-specific benefits",
+      "source": "https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety/"
+    },
+    {
+      "claim": "Seller describes Premium library, formats, refund and time-equivalence marketing",
+      "source": "https://zen12.com/"
+    },
+    {
+      "claim": "Commercial mail primary purpose, valid sender address, conspicuous opt-out",
+      "source": "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business"
+    },
+    {
+      "claim": "Only a new published WP post triggers a Jetpack newsletter; preview email separate from test email",
+      "source": "https://jetpack.com/support/newsletter/"
+    },
+    {
+      "claim": "Actual subscribes require confirmation; visual gift panel not proof",
+      "source": "https://jetpack.com/support/subscribe-to-a-site/"
+    }
+  ],
+  "legal": {
+    "commercial_primary_purpose_review_required": true,
+    "physical_postal_address": "NOT_VERIFIED",
+    "real_footer_opt_out": "NOT_VERIFIED",
+    "preheader_delivery": "NOT_VERIFIED",
+    "native_jetpack_preview": "NOT_OBTAINED",
+    "subscriber_permitted_email_count": "UNKNOWN",
+    "email_send_approved": false,
+    "posts_published": false,
+    "email_test_authorized": false,
+    "affiliate_links_activated": false
+  },
+  "attribution": {
+    "confirmed_signup_event": "NOT_EMITTED_OR_VERIFIED",
+    "signup_dedup": "PROPOSED_TEST_ONLY",
+    "campaign": "fv_dispatch_mind_2026_11",
+    "email_utm": {
+      "utm_source": "dispatch",
+      "utm_medium": "email",
+      "utm_campaign": "fv_dispatch_mind_2026_11",
+      "utm_content": "issue_03"
+    },
+    "inherited_social_asset_id": "UNKNOWN_NOT_LINKED",
+    "paid_sales": "NOT_VERIFIED",
+    "net_revenue_per_1000": "NOT_COMPUTABLE",
+    "utm_links_in_active_email": false
+  },
+  "release_attestations": {
+    "founder_final_send_approval": false,
+    "merchant_named_email_permission": false,
+    "approved_live_guide": false,
+    "legal_postal_and_unsub": false,
+    "actual_native_email_preview": false,
+    "recipient_status_reconciled": false,
+    "reliable_paid_sale_reporting": false
+  },
+  "privacy": {
+    "subscriber_email_addresses_in_package": false,
+    "new_tracking_code": false,
+    "new_list": false,
+    "new_platform": false
+  }
+}

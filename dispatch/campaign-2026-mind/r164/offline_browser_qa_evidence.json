@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "type": "OFFLINE_REVIEWER_ONLY_NOT_WORDPRESS_NOT_EMAIL",
+  "results": [
+    {
+      "viewport": 320,
+      "horizontal_overflow": false,
+      "aria_region_count": 1,
+      "local_hash_only_cta": true,
+      "noindex": true
+    },
+    {
+      "viewport": 390,
+      "horizontal_overflow": false,
+      "aria_region_count": 1,
+      "local_hash_only_cta": true,
+      "noindex": true
+    },
+    {
+      "viewport": 768,
+      "horizontal_overflow": false,
+      "aria_region_count": 1,
+      "local_hash_only_cta": true,
+      "noindex": true
+    },
+    {
+      "viewport": 1440,
+      "horizontal_overflow": false,
+      "aria_region_count": 1,
+      "local_hash_only_cta": true,
+      "noindex": true
+    }
+  ]
+}

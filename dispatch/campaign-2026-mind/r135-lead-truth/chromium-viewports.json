@@ -1,0 +1,33 @@
+{
+  "mode": "OFFLINE_BROWSER_ONLY",
+  "results": [
+    {
+      "width": 320,
+      "scrollWidth": 320,
+      "headings": 1,
+      "links": 3,
+      "no_horizontal_overflow": true
+    },
+    {
+      "width": 390,
+      "scrollWidth": 390,
+      "headings": 1,
+      "links": 3,
+      "no_horizontal_overflow": true
+    },
+    {
+      "width": 768,
+      "scrollWidth": 768,
+      "headings": 1,
+      "links": 3,
+      "no_horizontal_overflow": true
+    },
+    {
+      "width": 1440,
+      "scrollWidth": 1440,
+      "headings": 1,
+      "links": 3,
+      "no_horizontal_overflow": true
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "id": "fv-dispatch-mind-launch-2026-10-30",
+  "status": "DRAFT_UNSENT_NO_SCHEDULING",
+  "channel": "existing WordPress.com/Jetpack newsletter for finalvestige.com",
+  "verified_live_site": {
+    "newsletter_enabled": true,
+    "can_send": true,
+    "email_new_posts_by_default": false,
+    "recent_sends": 0,
+    "welcome": "52-page Focus Fieldbook already set",
+    "subscriber_semantics": "WordPress total=2, confirmed=2, unconfirmed=2; unconfirmed excluded from total; actual opted-in email-eligible audience remains unverified"
+  },
+  "cadence_proposal": "one issue each week, dates not set and NO sends authorized",
+  "publisher": "Final Vestige Studios",
+  "mix": {
+    "editorial": 4,
+    "commercial_review_pending": 2
+  },
+  "gate_checks": [
+    "Explicit user approval of final creative, audience and schedule",
+    "WordPress newsletter subscriber status and welcome / double opt-in checked",
+    "Physical mailing address included in rendered commercial email",
+    "Functional unsubscribe link in rendered commercial email",
+    "Partner email-promotion terms and tracking URLs approved for relevant offers",
+    "Specific seller claims independently reviewed; prices/terms current",
+    "Commercial disclosures visible adjacent to links",
+    "New Mind/Zen12/Hypnosis guide pages actually live and functional before linking",
+    "Plain-text and mobile renders approved, no misleading subject lines",
+    "Deliverability and privacy compliance check; small list means no statistically meaningful A/B testing"
+  ],
+  "issues": [
+    {
+      "number": 1,
+      "slug": "the-mind-is-not-a-camera",
+      "subject": "The mind is not a camera",
+      "preheader": "A stranger changed mid-conversation. The evidence lesson starts in the archives.",
+      "kind": "editorial",
+      "editorial_cta": "https://finalvestige.com/the-missing-caption/",
+      "publish_state": "hold",
+      "merchant_affiliate_url": null
+    },
+    {
+      "number": 2,
+      "slug": "before-hypnosis-had-a-name",
+      "subject": "Before hypnosis had a name",
+      "preheader": "In 1784, a young man slept and spoke. His witness drew a startling conclusion.",
+      "kind": "editorial",
+      "editorial_cta": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "publish_state": "hold",
+      "merchant_affiliate_url": null
+    },
+    {
+      "number": 3,
+      "slug": "the-twelve-minute-question",
+      "subject": "The twelve-minute meditation question",
+      "preheader": "An honest way to evaluate a short audio practice before you spend anything.",
+      "kind": "commercial-review-pending",
+      "editorial_cta": "[[APPROVED_ZEN12_WARMUP_GUIDE_URL_REQUIRED]]",
+      "publish_state": "hold",
+      "merchant_affiliate_url": null
+    },
+    {
+      "number": 4,
+      "slug": "the-hatch-and-the-spark",
+      "subject": "Seventeen seconds. A much longer explanation.",
+      "preheader": "NASA's Apollo 1 findings, and why a tidy explanation can mislead.",
+      "kind": "editorial",
+      "editorial_cta": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/",
+      "publish_state": "hold",
+      "merchant_affiliate_url": null
+    },
+    {
+      "number": 5,
+      "slug": "before-you-press-play",
+      "subject": "Before you press play on a hypnosis audio",
+      "preheader": "A free three-minute check, then a clearer look at the claims.",
+      "kind": "commercial-review-pending",
+      "editorial_cta": "[[APPROVED_HYPNOSIS_LIVE_WARMUP_GUIDE_URL_REQUIRED]]",
+      "publish_state": "hold",
+      "merchant_affiliate_url": null
+    },
+    {
+      "number": 6,
+      "slug": "the-evidence-log",
+      "subject": "What did seven days of attention reveal?",
+      "preheader": "A small experiment, a useful notebook, and no miracle claims.",
+      "kind": "editorial",
+      "editorial_cta": "https://finalvestige.com/focus/",
+      "publish_state": "hold",
+      "merchant_affiliate_url": null
+    }
+  ]
+}

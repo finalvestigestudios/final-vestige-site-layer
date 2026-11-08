@@ -1,0 +1,136 @@
+{
+  "schema": "fv.dispatch.confirmed_signup_and_revenue.v1",
+  "status": "DRAFT_ONLY_HOLD_UNSENT",
+  "date_utc": "2026-11-04",
+  "source_campaign": {
+    "pull_request": 175,
+    "head_sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+    "editorial": 4,
+    "commercial_reserved": 2,
+    "version_selection": "UNAPPROVED"
+  },
+  "base_qa_pr": 884,
+  "ownership": {
+    "dispatch": "consent_and_nurture",
+    "claude": "site_tracking_and_checkout",
+    "grok": "social_assets",
+    "mind_studio": "merchant_and_offer_eligibility",
+    "founder": "publishing_spending_and_sending"
+  },
+  "source_to_lead": {
+    "approved_entry": "https://finalvestige.com/focus/",
+    "companion": "https://finalvestige.com/dispatch/",
+    "first_party_list": "Jetpack_existing_only",
+    "source_medium": "organic_social",
+    "required_utm": [
+      "utm_source",
+      "utm_medium",
+      "utm_campaign",
+      "utm_content"
+    ],
+    "utm_content": "immutable_grok_asset_id",
+    "raw_email_in_analytics": false
+  },
+  "authoritative_confirmed_signup": {
+    "event": "confirmed_signup",
+    "allowed_source": "jetpack_authoritative_transition",
+    "required_transition": "not_confirmed_to_confirmed",
+    "deduplication_scope": "site_id_plus_internal_subscription_id",
+    "deduplication_site": "first_party_only_no_identifier_export",
+    "count_from_form_submit": false,
+    "count_from_page_view": false,
+    "count_from_confirmation_email_open": false,
+    "count_from_dashboard_total": false,
+    "observed_unique_confirmations": null
+  },
+  "observed_state": {
+    "site_can_send": true,
+    "new_post_auto_email": false,
+    "email_content_format": "excerpt",
+    "welcome_fieldbook_configured": true,
+    "welcome_received_proven": false,
+    "newsletter_total": 2,
+    "newsletter_confirmed": 2,
+    "newsletter_unconfirmed": 2,
+    "email_followers": 0,
+    "wpcom_followers": 2,
+    "reachable_recipient_count": null,
+    "current_confirmed_signup_events": null,
+    "real_received_newsletter": false,
+    "valid_publisher_postal": false,
+    "functional_unsubscribe": false
+  },
+  "revenue_offer": {
+    "one_offer_id": null,
+    "offer_status": "NO_RIGHTS_AND_PAYMENT_VERIFIED_OFFER_SELECTED",
+    "seller_permission_email": false,
+    "published_guide": false,
+    "merchant_outbound_url": null,
+    "payhip_order_access_verified": false,
+    "paid_orders_reported": null,
+    "refunds_and_fees_reported": null,
+    "realized_net_revenue": null
+  },
+  "issue_routing": [
+    {
+      "issue": 1,
+      "kind": "editorial",
+      "purpose": "historical_or_attention_article",
+      "state": "HOLD"
+    },
+    {
+      "issue": 2,
+      "kind": "editorial",
+      "purpose": "archive_evidence",
+      "state": "HOLD"
+    },
+    {
+      "issue": 3,
+      "kind": "commercial_reserved",
+      "purpose": "one_vetted_zen12_guide_if_approved",
+      "state": "HOLD_MERCHANT"
+    },
+    {
+      "issue": 4,
+      "kind": "editorial",
+      "purpose": "historical_investigation",
+      "state": "HOLD"
+    },
+    {
+      "issue": 5,
+      "kind": "commercial_reserved",
+      "purpose": "hypnosis_guide_if_approved",
+      "state": "HOLD_MERCHANT"
+    },
+    {
+      "issue": 6,
+      "kind": "editorial",
+      "purpose": "direct_existing_fieldbook",
+      "state": "HOLD"
+    }
+  ],
+  "reporting": {
+    "cohorts_days": [
+      7,
+      30
+    ],
+    "primary_kpi": "realized_net_revenue_per_1000_qualified_human_sessions",
+    "qualified_human_sessions": null,
+    "confirmed_paid_orders": null,
+    "paid_conversion_rate": null,
+    "lead_to_paid_conversion": null,
+    "net_revenue_per_1000": null,
+    "no_estimated_grok_attribution": true,
+    "no_clicks_as_sales": true,
+    "no_tiny_sample_ab_claims": true
+  },
+  "release": {
+    "founder_approved_exact_creative": false,
+    "founder_approved_audience": false,
+    "founder_approved_send": false,
+    "merchant_permission": false,
+    "verified_native_email": false,
+    "address_and_unsubscribe": false,
+    "result": "HOLD_UNSENT"
+  }
+}

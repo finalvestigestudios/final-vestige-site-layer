@@ -1,0 +1,13 @@
+{
+  "synthetic_fixture": true,
+  "genuine_received_mail": false,
+  "fv_postal_line_observed": false,
+  "fv_postal_address_verified": false,
+  "unsubscribe_worked": false,
+  "provider_email_eligible": false,
+  "welcome_received": false,
+  "founder_final_approval": false,
+  "merchant_email_permission": false,
+  "merchant_earning_link": false,
+  "NOTE": "ALL FALSE by default. Keep actual private addresses and subscriber data out of repository. This is not evidence."
+}

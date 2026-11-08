@@ -1,0 +1,33 @@
+FINAL VESTIGE STUDIOS — THE DISPATCH
+OFFLINE REVIEW ONLY · UNSENT · NO SENDING APPROVAL
+
+Subject: Seventeen seconds. A much longer explanation.
+Preheader: NASA's Apollo 1 findings, and why a tidy explanation can mislead.
+
+The surviving recording is precise about one thing. At 23:31:04.7 GMT on January 27, 1967, the first of Apollo 1's final two crew transmissions began. At 23:31:21.8, the second ended. Between those timestamps: 17.1 seconds.
+
+Seventeen seconds is an arresting headline. It is also a trap for anyone who mistakes a precise number for a complete explanation. Those timestamps mark the first recorded crew report of fire and the end of the last transmission. They do not establish the instant of ignition, the time each astronaut lost consciousness, or a single cause of the catastrophe. The Apollo 204 Review Board specifically cautioned that the last voice transmission was garbled and that confident speaker identification was not possible.
+
+The evidence grows more difficult—and more useful—when we put three kinds of record beside one another.
+
+The clock. The board reconstructed the radio traffic, electrical readings, pressure changes and gaps between transmissions. The timeline is a set of observations, not a verbatim screenplay. Where a voice was unclear, the report preserved competing interpretations rather than silently selecting the neatest line.
+
+The conditions. The ground test used a 100-percent oxygen atmosphere at 16.7 pounds per square inch absolute. Combustible materials were present near possible ignition sources. The command-module hatch opened inward; rising internal pressure made immediate escape impossible. These were interacting hazards, not one isolated bad component.
+
+The conclusion. The board considered an electrical arc the most probable initiator. It also stated that no single ignition source was conclusively identified. That isn't a contradiction. Investigators can establish serious design and procedural failures even when a particular spark cannot be recovered from the wreckage.
+
+The distinction reaches far beyond aerospace history. A witness can remember a phrase clearly and misplace its timing. A photograph can show an outcome without revealing its cause. A technical report can measure an event to the tenth of a second and still leave the central mechanism uncertain. Good investigations make that uncertainty legible.
+
+Our Apollo 1 investigation follows the inward-opening hatch through the hardware, the inquiry and the redesign. It is a story about what the surviving evidence can establish—not a shortcut to a satisfying villain.
+
+Read the investigation: The Hatch Opened Inward (https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/).
+
+Primary records: Apollo 204 Review Board's analysis and transmission timings (https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/) and its Findings, Determinations and Recommendations (https://www.nasa.gov/wp-content/uploads/static/history/Apollo204/find.html). NASA's Apollo 1 safety case study (https://sma.nasa.gov/sma-disciplines/accllp/apollo-1) provides additional context. These references support the account; they are not separate commercial invitations.
+
+The Dispatch will keep returning to this method, whether the record is a damaged spacecraft, a disputed photograph or a claim about the human mind: know what was measured, what was inferred, and where the evidence stops.
+
+---
+Pre-send compliance block — remove/replace ONLY after legal and rendered-email QA.
+Sender: Final Vestige Studios. Physical mailing address: `[[VALID_POSTAL_ADDRESS_REQUIRED]]`. Unsubscribe: `[[JETPACK_UNSUBSCRIBE_LINK_MUST_BE_VERIFIED]]`. These placeholders intentionally prevent sending.
+
+Offline artifact only; actual WordPress delivery/footer and address not verified.

@@ -1,0 +1,142 @@
+{
+  "schema_version": "r72-custom-excerpt-review-v1",
+  "created_on": "2026-11-02",
+  "source_branch_parent": "d7b267f390542b12a4d05513ce5af1d3b17af4b4",
+  "production_observed_utc": "2026-11-02T18:30:39Z",
+  "release_state": "HOLD_UNSENT",
+  "future_email_approved": false,
+  "future_email_scheduled": false,
+  "headnote": "Reviewer candidate custom excerpts, NOT installed WordPress excerpts, NOT confirmed Jetpack inbox text and NOT an approved canonical substitution.",
+  "channel": {
+    "platform": "Existing WordPress.com Jetpack, one original subscriber list",
+    "email_content_format": "excerpt",
+    "new_post_auto_send": false,
+    "preheader_editable_control": "NOT_VERIFIED",
+    "received_email": "NOT_VERIFIED",
+    "unsubscribe_functional": "NOT_VERIFIED",
+    "publisher_physical_address": "NOT_VERIFIED",
+    "welcome_receipt": "NOT_VERIFIED",
+    "reported_counts": {
+      "total": 2,
+      "confirmed": 2,
+      "unconfirmed": 2,
+      "send_eligible": "UNKNOWN"
+    },
+    "recent_sends": 0
+  },
+  "commercial_permissions": {
+    "zen12_email": "UNVERIFIED",
+    "total_focus_email": "UNVERIFIED",
+    "specific_affiliate_acceptance": "UNVERIFIED",
+    "affiliate_earning_url": "UNVERIFIED",
+    "affiliate_creative_rights": "UNVERIFIED",
+    "buyer_guide_published": false,
+    "private_buyer_data_processing_plan_approved": false
+  },
+  "draft_manifest_notes": "The original PR #175 and R71 stacked drafts diverge in wording; R72 neither alters nor adopts any of them.",
+  "editions": [
+    {
+      "number": 1,
+      "kind": "editorial",
+      "subject": "The mind is not a camera",
+      "preheader_intent": "A door crossed the path of a conversation. What changed was not always seen.",
+      "intro": "A researcher asked a stranger for directions. Workers carried a door between them, and the person asking changed. In a 1998 field study, some people did not notice. That is not a universal verdict on eyewitnesses. It is an invitation to check what was visible, what a witness actually reported, and what later readers inferred. Our Missing Caption investigation makes the same distinction with photographs: a confident label is not the same thing as a reliable record. Compare the image and its caption before you decide what the evidence proves.",
+      "planned_cta": "https://finalvestige.com/the-missing-caption/",
+      "guide_url": null,
+      "source_urls": [
+        "https://doi.org/10.3758/BF03208840"
+      ],
+      "notes": "1998 Simons–Levin study; avoid generalized failure-rate claims.",
+      "send_approved": false,
+      "production_excerpt_installed": false,
+      "original_full_manuscript_modified": false
+    },
+    {
+      "number": 2,
+      "kind": "editorial",
+      "subject": "Before hypnosis had a name",
+      "preheader_intent": "One encounter in 1784. Two accounts of its duration. A larger question about proof.",
+      "intro": "On May 4, 1784, Puységur reported visiting a sick young man; his account appeared in a letter dated May 8. Later descriptions of the encounter do not agree neatly about its duration. More importantly, the surviving text records what its author believed happened—not independent proof that animal magnetism healed anyone. Read the source as a historian would: separate the reported behavior, the explanation attached to it, and the evidence that would test that explanation. Our Puységur archive preserves the unsettling question without pretending the mechanism was established.",
+      "planned_cta": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "guide_url": null,
+      "source_urls": [
+        "https://archive.org/details/mmoirespourservi00chas",
+        "https://www.circee.org/puysegur-memoires-pour-servir-a-l-histoire-du-magnetisme-animal-1784/",
+        "https://catalogue.bnf.fr/ark:/12148/cb31160297p"
+      ],
+      "notes": "First-edition digitized copy and CIRCEE cross-check locate May 4 report within May 8 letter, but exact printed page image/OCR has not been independently inspected; do not imply proven treatment.",
+      "send_approved": false,
+      "production_excerpt_installed": false,
+      "original_full_manuscript_modified": false
+    },
+    {
+      "number": 3,
+      "kind": "commercial-review-pending",
+      "subject": "The twelve-minute meditation question",
+      "preheader_intent": "A practical twelve-minute check—and the questions a paid audio should answer.",
+      "intro": "Potential commercial recommendation: this edition evaluates Zen12, a paid meditation-audio product. If we later publish an approved guide with an earning link, Final Vestige may receive a commission from a qualifying purchase. No affiliate approval or email-promotion permission has been verified; no buying link is active. Before considering a product, try twelve ordinary minutes without special audio. Record whether you finished, what interrupted you, and whether the routine fits your day. The seller describes different audio formats and packages, but its claim that twelve minutes equals an hour of meditation is not independently established for Zen12.",
+      "planned_cta": null,
+      "guide_url": null,
+      "source_urls": [
+        "https://zen12.com/",
+        "https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety",
+        "https://inspire3.com/privacy/"
+      ],
+      "notes": "Reserved commercial slot only; guide is unpublished; cross-program swipe rights unavailable; near-offer notice required on any later link.",
+      "send_approved": false,
+      "production_excerpt_installed": false,
+      "original_full_manuscript_modified": false
+    },
+    {
+      "number": 4,
+      "kind": "editorial",
+      "subject": "Seventeen seconds. A much longer explanation.",
+      "preheader_intent": "Apollo 1's recorded radio interval is not a stopwatch for the fire.",
+      "intro": "The Apollo 1 radio record covers about 17.1 seconds between the crew's first fire report and final transmission. Of that span, 10.3 seconds contain transmissions and 6.8 seconds are silent. Those numbers do not measure the fire's entire duration, nor do they identify the exact ignition source. NASA's investigators documented the hazardous cabin atmosphere, material choices, and hatch design while acknowledging what the evidence could not settle. The larger explanation is a chain of conditions, not a single dramatic sound bite. Read the archive with the distinction in mind.",
+      "planned_cta": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/",
+      "guide_url": null,
+      "source_urls": [
+        "https://www.nasa.gov/wp-content/uploads/static/history/Apollo204/invest.html"
+      ],
+      "notes": "Original PR #175 said fourteen; stacked R71 says seventeen; founder must approve exact subject; optional clearer subject is Apollo 1: why one spark was never the whole story.",
+      "send_approved": false,
+      "production_excerpt_installed": false,
+      "original_full_manuscript_modified": false
+    },
+    {
+      "number": 5,
+      "kind": "commercial-review-pending",
+      "subject": "Before you press play on a hypnosis audio",
+      "preheader_intent": "A free concentration check and the refund conditions to examine before paying.",
+      "intro": "Potential commercial recommendation: this edition examines Hypnosis Live's Total Focus recording. If we later publish an approved guide with an earning link, Final Vestige may receive a commission. No affiliate approval or permission to market this recording by email has been verified; no purchase link is active. The seller describes a 33-minute audio, but claims about instantly sharper concentration are not independent product evidence. Start with a free three-minute task and record interruptions rather than imagined results. Before any purchase, inspect the seller's 14-day refund terms, including its stated limit of five refunded albums per twelve months.",
+      "planned_cta": null,
+      "guide_url": null,
+      "source_urls": [
+        "https://hypnosislive.com/mental-skills/total-focus",
+        "https://hypnosislive.com/faq",
+        "https://inspire3.com/terms/",
+        "https://www.nccih.nih.gov/health/hypnosis"
+      ],
+      "notes": "Merchant FAQ says five-session refund maximum; checkout terms and postal/footer still unverified; no earning link.",
+      "send_approved": false,
+      "production_excerpt_installed": false,
+      "original_full_manuscript_modified": false
+    },
+    {
+      "number": 6,
+      "kind": "editorial",
+      "subject": "What did seven days of attention reveal?",
+      "preheader_intent": "A useful notebook records gaps as well as successes.",
+      "intro": "A notebook can preserve observations—or manufacture a tidy story after the fact. In a 2002 diary-compliance study, researchers compared participants' stated recordkeeping with electronic timestamps. The results belong to that study's context, not to every person's memory. Our seven-day practice asks for something humbler: write when you began a task, what interrupted you, and what you actually completed. If you miss a day, mark the gap rather than filling it with a plausible memory. The free Focus Fieldbook supplies a way to keep that honest record without promising transformation.",
+      "planned_cta": "https://finalvestige.com/focus/",
+      "guide_url": null,
+      "source_urls": [
+        "https://www.bmj.com/content/324/7347/1193"
+      ],
+      "notes": "Stone 2002 clinical sample is not a universal deception rate and not a Fieldbook efficacy study.",
+      "send_approved": false,
+      "production_excerpt_installed": false,
+      "original_full_manuscript_modified": false
+    }
+  ]
+}

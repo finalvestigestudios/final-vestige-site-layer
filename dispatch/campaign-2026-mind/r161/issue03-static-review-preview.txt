@@ -1,0 +1,31 @@
+FINAL VESTIGE STUDIOS / THE DISPATCH
+REVIEWER-ONLY ISSUE 03 ALTERNATIVE — NOT APPROVED / NOT SENT
+
+SUBJECT: Zen12 Premium: what 48 recordings cannot promise
+PREHEADER: Twelve levels, four listening styles—and a sensible way to compare the offer.
+
+A sales page can tell you what comes in a box. It cannot tell you what will happen in your mind.
+
+When we examine a historical document, we separate what the record says from what someone hopes it proves. A meditation-audio advertisement deserves the same courtesy.
+
+Zen12's seller describes twelve levels of recordings, with music, guided meditation, nature sounds or white noise at each level. The Premium library is advertised as 48 MP3 files around twelve-minute sessions. These are product-format descriptions, not evidence of a specific result.
+
+The seller also claims that a short session can yield the benefit of a much longer meditation. We have not verified product-specific evidence for that equivalence. We have not tested the one-year guarantee or final checkout terms.
+
+The Seven Day Focus Fieldbook offered free to new subscribers lets you try a consistent routine, log interruptions and decide whether a structured audio format sounds useful—without buying anything. If you do compare Zen12 Premium, check current checkout price, included files and refund conditions before deciding.
+
+ONE PRIMARY CTA — INACTIVE:
+[[APPROVED_LIVE_ZEN12_PRESELL_GUIDE_URL_REQUIRED]]
+
+COMMERCIAL DISCLOSURE (beside CTA): This edition evaluates a paid meditation product. If you later buy through a qualifying link in our vetted guide, Final Vestige may earn a commission. The Fieldbook requires no purchase. Affiliate acceptance, permission to promote by email, earning link and published guide are not yet verified.
+
+SOURCES (reviewer reference only):
+https://zen12.com/?no-popup=1
+https://finalvestige.com/editorial-standards/
+https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking
+
+HARD STOP — genuine sender/footer QA still missing:
+Final Vestige publisher address: [[VALID_POSTAL_ADDRESS_REQUIRED]]
+Jetpack unsubscribe: [[JETPACK_UNSUBSCRIBE_LINK_MUST_BE_VERIFIED]]
+
+This is a locally reviewable text mockup, NOT a real received Jetpack email. Never send, schedule, publish, replace canonical Issue 03 or substitute for final founder approval.
