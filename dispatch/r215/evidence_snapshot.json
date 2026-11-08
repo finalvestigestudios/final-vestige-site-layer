@@ -1,0 +1,88 @@
+{
+  "schema": "fv-dispatch-r215-evidence-v1",
+  "as_of": "2026-11-08T18:31:01Z",
+  "source_of_truth": {
+    "github_master_pr": 175,
+    "master_head": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+    "last_preview_pr": 1617,
+    "last_preview_head": "ebc53ca5e4f7c829de576af71da9c530d9f561be",
+    "issue_174": true,
+    "companion_171": true,
+    "editorial_standards_checked": true,
+    "dispatch_live_page_id": 523,
+    "focus_live_page_id": 1579
+  },
+  "wordpress_read_only": {
+    "subscriptions_enabled": true,
+    "email_new_posts_by_default": false,
+    "email_content_format": "full",
+    "from_name": "Final Vestige Studios",
+    "reply_to": "no-reply",
+    "welcome_contains_52page_fieldbook_link": true,
+    "welcome_receipt_verified": false,
+    "counts": {
+      "total": 3,
+      "confirmed": 3,
+      "unconfirmed": 2,
+      "suppressed": 0,
+      "paid": 0
+    },
+    "follower_counters": {
+      "wpcom": 3,
+      "email_only": 0
+    },
+    "subscriber_counters_additive": false,
+    "email_eligible_count": null,
+    "last_five_posts_delivery": "never_sent_opted_out"
+  },
+  "provider_preview": {
+    "wordpress_help_reviewed": "2026-10-06",
+    "help_page": "https://wordpress.com/support/newsletter/email-appearance/",
+    "requires_post_send_toggle_on_per_docs": true,
+    "other_help": "https://wordpress.com/support/newsletter-email-design/",
+    "published_post_view_email_preview_described": true,
+    "actual_preview_verified": false,
+    "actual_received_message": false,
+    "founder_approval_for_wordpress_draft": false,
+    "founder_approval_for_test_send": false,
+    "prior_unqualified_preview_off_assertion_retracted": true
+  },
+  "merchant": {
+    "zen12": {
+      "official_page": "https://zen12.com/hnp",
+      "email_rights_verified": false,
+      "affiliate_link_verified": false,
+      "buyer_guide_published": false,
+      "seller_claims_not_product_efficacy_proof": true
+    },
+    "total_focus": {
+      "official_page": "https://hypnosislive.com/mental-skills/total-focus",
+      "faq": "https://hypnosislive.com/faq",
+      "email_rights_verified": false,
+      "affiliate_link_verified": false,
+      "buyer_guide_published": false,
+      "seller_claims_not_product_efficacy_proof": true
+    }
+  },
+  "qa": {
+    "canonical_git_blob_match": "8/8",
+    "canonical_native_python": "6/6",
+    "new_r215_native_node_assertions": "48/48",
+    "new_r215_committed_source_blobs_match_local_native_tested": true,
+    "provider_rendering": "NOT_VERIFIED",
+    "actual_delivery": "NOT_VERIFIED",
+    "publisher_postal": "NOT_VERIFIED",
+    "unsubscribe": "NOT_VERIFIED",
+    "paid_orders": "NOT_VERIFIED",
+    "qualified_human_sessions": "NOT_VERIFIED"
+  },
+  "release": {
+    "all": "HOLD_UNSENT",
+    "issues_03_05": "HOLD_MERCHANT",
+    "net_rev_per_1000": "NOT_COMPUTABLE",
+    "commercial_links_enabled": 0,
+    "email_sent": 0,
+    "wordpress_mutations": 0,
+    "external_spend": 0
+  }
+}
