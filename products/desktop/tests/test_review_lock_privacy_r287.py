@@ -56,13 +56,29 @@ class ReviewLockExceptionCustodyR287(unittest.TestCase):
         self.assertFalse(self.lock.exists())
 
     def test_missing_lock_rejects_and_preserves_missing_state(self):
-        with self.assertRaises(ValueError) as caught:
-            with exclusive_review_lock(self.journal) as verify:
-                self.lock.unlink()
-                verify()
+        if os.name == "nt":
+            # A Windows-held descriptor may forbid unlinking the lock file.
+            # Model a missing pathname observation without changing evidence.
+            real_lstat = os.lstat
+            missing = {"active": False}
+            def vanished(path, *args, **kwargs):
+                if Path(path) == self.lock and missing["active"]:
+                    raise FileNotFoundError(2, "PRIVATE MISSING", str(path))
+                return real_lstat(path, *args, **kwargs)
+            with patch("fvs_suite.review_lock.os.lstat", side_effect=vanished):
+                with self.assertRaises(ValueError) as caught:
+                    with exclusive_review_lock(self.journal) as verify:
+                        missing["active"] = True
+                        verify()
+            self.assertTrue(self.lock.is_file(), "unverified lock left for manual review")
+        else:
+            with self.assertRaises(ValueError) as caught:
+                with exclusive_review_lock(self.journal) as verify:
+                    self.lock.unlink()
+                    verify()
+            self.assertFalse(self.lock.exists())
         self.assert_private_safe(caught.exception,
                                  "Review writer lock disappeared; inspect journal before retrying")
-        self.assertFalse(self.lock.exists())
         self.assertFalse(self.journal.exists())
 
     def test_lstat_denied_does_not_retain_path_or_unlink(self):
