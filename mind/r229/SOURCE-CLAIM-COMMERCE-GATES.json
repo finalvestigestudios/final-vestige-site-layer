@@ -1,0 +1,396 @@
+{
+  "sprint": "R229",
+  "date": "2026-11-08",
+  "state": "UNPUBLISHED_HARD_HOLD",
+  "sources": [
+    {
+      "id": "R01",
+      "type": "REVIEW_OPEN",
+      "url": "https://doi.org/10.1371/journal.pone.0286023",
+      "notes": "14 EEG studies; 5 support, 8 contradictory, 1 mixed; heterogeneous"
+    },
+    {
+      "id": "R02",
+      "type": "EXPERIMENT_OPEN",
+      "url": "https://doi.org/10.1038/s41598-025-88517-z",
+      "notes": "2025 N=80, parameter-dependent attention and EEG outcomes; no retail product tested"
+    },
+    {
+      "id": "R03",
+      "type": "REVIEW_OPEN",
+      "url": "https://doi.org/10.1016/j.ijpsycho.2024.112328",
+      "notes": "31 studies, mixed/insufficient autonomic arousal and cognition evidence"
+    },
+    {
+      "id": "R04",
+      "type": "CLINICAL_REVIEW_ABSTRACT",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40989974/",
+      "notes": "2025 dental context, bias and domain transfer concern"
+    },
+    {
+      "id": "S01",
+      "type": "OFFICIAL_CATALOG",
+      "url": "https://inspire3.com/",
+      "notes": "seller describes Zen12, Brainwave Shots and Hypnosis Live"
+    },
+    {
+      "id": "S02",
+      "type": "EXACT_SELLER_OFFER",
+      "url": "https://zen12.com/hnp",
+      "notes": "12 levels / 48 MP3 / 4 styles / advertised 1-year guarantee"
+    },
+    {
+      "id": "S03",
+      "type": "EXACT_SELLER_OFFER",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "notes": "15 and 30-minute audio, bonus versions, quick start and seller guarantee; efficacy not independently verified"
+    },
+    {
+      "id": "S04",
+      "type": "EXACT_SELLER_OFFER",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "notes": "33-min/47MB Total Focus; seller focus claims not adopted"
+    },
+    {
+      "id": "F01",
+      "type": "FTC",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "notes": "material connections must be clear/conspicuous"
+    },
+    {
+      "id": "F02",
+      "type": "FTC",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "notes": "health-benefit claims need competent and reliable substantiation"
+    },
+    {
+      "id": "V01",
+      "type": "LIVE_FREE_RESOURCE",
+      "url": "https://finalvestige.com/focus/",
+      "notes": "existing 52-page fieldbook/Dispatch, one list; signup acceptance needs provider proof"
+    },
+    {
+      "id": "V02",
+      "type": "LIVE_ARCHIVE",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "notes": "historical primary-source interpretation, not efficacy"
+    },
+    {
+      "id": "V03",
+      "type": "LIVE_EDITORIAL",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "notes": "existing investigation"
+    },
+    {
+      "id": "V04",
+      "type": "LIVE_EDITORIAL",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "notes": "existing 1784 historical investigation"
+    },
+    {
+      "id": "G01",
+      "type": "ISSUE",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "notes": "ownership and release gates"
+    },
+    {
+      "id": "G02",
+      "type": "ISSUE",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "notes": "commercial revenue acceptance"
+    }
+  ],
+  "claims": [
+    {
+      "id": "B01",
+      "statement": "Two different tones can produce a perceived binaural beat",
+      "status": "SUPPORTED_PERCEPTUAL_PHENOMENON",
+      "evidence": [
+        "R01"
+      ]
+    },
+    {
+      "id": "B02",
+      "statement": "Fourteen-study 2023 review: five supportive, eight contrary, one mixed",
+      "status": "REVIEW_BOUNDED",
+      "evidence": [
+        "R01"
+      ]
+    },
+    {
+      "id": "B03",
+      "statement": "2025 parameter-dependent EEG and general attention results in 80 students",
+      "status": "PRIMARY_BOUNDED",
+      "evidence": [
+        "R02"
+      ]
+    },
+    {
+      "id": "B04",
+      "statement": "2025 experiment did not prevent vigilance decrement",
+      "status": "PRIMARY_BOUNDED",
+      "evidence": [
+        "R02"
+      ]
+    },
+    {
+      "id": "B05",
+      "statement": "2024 review: mixed/insufficient auditory arousal-cognition linkage",
+      "status": "REVIEW_BOUNDED",
+      "evidence": [
+        "R03"
+      ]
+    },
+    {
+      "id": "B06",
+      "statement": "Clinical improvements in some dental trials generalize to consumer audio",
+      "status": "TRANSFER_NOT_SUPPORTED",
+      "evidence": [
+        "R04"
+      ]
+    },
+    {
+      "id": "S01",
+      "statement": "Zen12: 12 levels, 48 MP3s, 4 listening styles",
+      "status": "SELLER_DESCRIBED_ONLY",
+      "evidence": [
+        "S02"
+      ]
+    },
+    {
+      "id": "S02",
+      "statement": "Zen12 advertised one-year refund promise",
+      "status": "SELLER_PROMISE_UNVERIFIED_FULFILLMENT",
+      "evidence": [
+        "S02"
+      ]
+    },
+    {
+      "id": "S03",
+      "statement": "Zen12 creates one hour's meditation benefits in 12 minutes",
+      "status": "PRODUCT_EFFICACY_UNSUBSTANTIATED",
+      "evidence": [
+        "S02",
+        "R01"
+      ]
+    },
+    {
+      "id": "S04",
+      "statement": "Zen12 final checkout price and returns",
+      "status": "CHECKOUT_NOT_VERIFIED",
+      "evidence": [
+        "S02"
+      ]
+    },
+    {
+      "id": "S05",
+      "statement": "Brainwave Shots Focus Shot includes 15 and 30 min versions, extras",
+      "status": "SELLER_DESCRIBED_ONLY",
+      "evidence": [
+        "S03"
+      ]
+    },
+    {
+      "id": "S06",
+      "statement": "Focus Shot instantly creates perfect concentration",
+      "status": "PRODUCT_EFFICACY_UNSUBSTANTIATED",
+      "evidence": [
+        "S03",
+        "R02"
+      ]
+    },
+    {
+      "id": "S07",
+      "statement": "Hypnosis Live Total Focus is a single 33-min audio",
+      "status": "SELLER_DESCRIBED_ONLY",
+      "evidence": [
+        "S04"
+      ]
+    },
+    {
+      "id": "S08",
+      "statement": "Total Focus reprograms brain or guarantees concentration",
+      "status": "PRODUCT_EFFICACY_UNSUBSTANTIATED",
+      "evidence": [
+        "S04"
+      ]
+    },
+    {
+      "id": "A01",
+      "statement": "Final Vestige named Inspire3 publisher acceptance",
+      "status": "UNVERIFIED_HARD_HOLD",
+      "evidence": [
+        "G01"
+      ]
+    },
+    {
+      "id": "A02",
+      "statement": "Final Vestige approved social/website/email channels",
+      "status": "UNVERIFIED_HARD_HOLD",
+      "evidence": [
+        "G01"
+      ]
+    },
+    {
+      "id": "A03",
+      "statement": "Account-issued earnings URL, tracking/cookie terms",
+      "status": "UNVERIFIED_HARD_HOLD",
+      "evidence": [
+        "G01"
+      ]
+    },
+    {
+      "id": "A04",
+      "statement": "Payhip owned sellable Mind SKU, rights and payout",
+      "status": "UNVERIFIED_HARD_HOLD",
+      "evidence": [
+        "G02"
+      ]
+    },
+    {
+      "id": "A05",
+      "statement": "Provider-confirmed Focus lead, not URL success message",
+      "status": "UNVERIFIED_HARD_HOLD",
+      "evidence": [
+        "V01",
+        "G02"
+      ]
+    },
+    {
+      "id": "A06",
+      "statement": "Verified merchant-paid order/cleared commission and net revenue",
+      "status": "UNVERIFIED_HARD_HOLD",
+      "evidence": [
+        "G02"
+      ]
+    },
+    {
+      "id": "A07",
+      "statement": "Disclosure must be immediately adjacent to earning link",
+      "status": "FTC_REQUIREMENT",
+      "evidence": [
+        "F01"
+      ]
+    },
+    {
+      "id": "A08",
+      "statement": "Medical and cognitive benefit claims require adequate substantiation",
+      "status": "FTC_REQUIREMENT",
+      "evidence": [
+        "F02"
+      ]
+    },
+    {
+      "id": "A09",
+      "statement": "Published three Grok IDs for Mind topics",
+      "status": "NOT_VERIFIED",
+      "evidence": [
+        "G02"
+      ]
+    },
+    {
+      "id": "A10",
+      "statement": "Optional 42-second film exists as playable rendered media",
+      "status": "NOT_RENDERED",
+      "evidence": [
+        "G01"
+      ]
+    }
+  ],
+  "release_gates": [
+    {
+      "id": "named_partner_approval",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "authorized_website_channel",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "authorized_social_channel",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "authorized_email_channel",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "account_issued_link",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "cookie_and_tracking_terms",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "commission_settlement_terms",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "merchant_checkout_total",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "merchant_refund_conditions",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "creative_usage_rights",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "product_specific_benefit_substantiation",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "founder_release_approval",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "qa_accessibility_browser",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "qa_security_and_privacy",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "merchant_sale_reconciliation",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "owned_product_rights_and_checkout",
+      "status": "HARD_HOLD",
+      "evidence": null
+    }
+  ],
+  "commerce": {
+    "activated": false,
+    "affiliate_earning_url": null,
+    "first_party_tracking_script_added": false,
+    "lead_form_added": false,
+    "paid_orders": "UNKNOWN",
+    "cleared_commissions": "UNKNOWN",
+    "net_revenue_per_1000_qualified_sessions": "NOT_COMPUTABLE"
+  },
+  "safety": {
+    "seller_claims_are_not_efficacy_proof": true,
+    "editorial_independence": true,
+    "no_merchant_active_links": true
+  }
+}
