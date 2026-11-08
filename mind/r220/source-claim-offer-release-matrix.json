@@ -23,8 +23,8 @@
     },
     {
       "id": "W04",
-      "evidence_level": "METHOD_QUESTION_ONLY",
-      "title": "Repp 1992 induction vs illusion five experiments",
+      "evidence_level": "PUBLISHER_ABSTRACT_FINDINGS",
+      "title": "Repp 1992 five experiments: early small-context effect, final three negative",
       "url": "https://doi.org/10.3758/BF03205070"
     },
     {
@@ -166,12 +166,12 @@
     },
     {
       "id": "C06",
-      "statement": "Repp tested induction-versus-phonological explanations in five experiments",
-      "status": "METHOD_QUESTION_ONLY",
+      "statement": "Repp's initial two tests weakly favored auditory induction with potential context confounding; last three better-controlled experiments did not",
+      "status": "PUBLISHER_ABSTRACT_SUPPORTED_WITH_LIMITS",
       "source_ids": [
         "W04"
       ],
-      "limits": "No finding attributed from title alone"
+      "limits": "Publisher abstract; bounded to fricative/noise and experiment stimuli; not a universal null result"
     },
     {
       "id": "C07",

@@ -1,5 +1,5 @@
 ---
-title: "The Syllable That Wasn't There"
+title: "The Sound Removed from the Playback"
 subtitle: "A cough, a vanished consonant, and the ear's unfinished work"
 status: "UNPUBLISHED | source-controlled Mind & Perception investigation"
 slug_proposed: "phonemic-restoration-missing-speech-sounds"
@@ -8,7 +8,7 @@ research_date: "2026-11-08"
 release: "HARD HOLD | no CMS record and no public slug"
 ---
 
-# The Syllable That Wasn't There
+# The Sound Removed from the Playback
 
 *What the brain does when a sound vanishes from speech—and why hearing a complete sentence is not the same as possessing a complete recording.*
 
@@ -78,7 +78,7 @@ In 1992, Bruno H. Repp posed the distinction directly in the title of a research
 
 Why test that? Because two explanations can produce superficially similar reports. One predicts that the auditory system perceptually organizes an interrupted signal as a continuing sound, with consequences for the noise itself. Another allows the listener to complete a higher-level speech representation while the acoustic appearance of the noise remains comparatively separate.
 
-The paper is important here as an example of a sharper question, not as permission to declare that its five experiments settled every theoretical dispute. The accessible published description identifies what was tested; a review of its full analyses would be needed before presenting precise numerical conclusions or a final verdict about the mechanism.
+The abstract reports a bounded pattern: the first two experiments showed small apparent support for auditory induction, potentially explainable by variations in acoustic context. Three later experiments using better-controlled, more varied stimuli did **not** support that prediction. Repp instead favored a distinction between phonological completion and an apparent auditory restoration in these circumstances, while noting that the replacement noise itself affected phoneme identification. This is evidence about the tested stimuli and acoustic judgments, not a universal demonstration that auditory induction never occurs. [4]
 
 That is one of the obligations of responsible research writing. A title that poses a provocative question is not an answer to it. A popular summary that leaps from *investigated* to *proved* would be doing the very reconstruction this article warns against.
 
@@ -153,7 +153,7 @@ That question does not spoil the wonder. It makes the wonder worth keeping.
 1. **Richard M. Warren (1970),** “Perceptual restoration of missing speech sounds,” *Science* 167(3917):392–393, published Jan. 23, 1970. Original indexed abstract: https://pubmed.ncbi.nlm.nih.gov/5409744/ ; DOI https://doi.org/10.1126/science.167.3917.392 . Verified proposition: masked replacement can produce reported restoration; silence easier to locate. **Abstract-level review**; no invented participant counts or exact test sentences.
 2. **Warren & Obusek (1971),** “Speech perception and phonemic restorations,” *Perception & Psychophysics* 9:358–362. DOI https://doi.org/10.3758/BF03212667 . Abstract at https://www.mendeley.com/catalogue/cd1bbe1c-1bd8-341f-b148-8dd0954c1ad4/ . Verified proposition: prior/subsequent context and interruption localization were studied; **abstract-level**, not a complete methods audit.
 3. **Arthur G. Samuel (1981),** “The role of bottom-up confirmation in the phonemic restoration illusion,” *Journal of Experimental Psychology: Human Perception and Performance* 7(5):1124–1131. Original indexed abstract https://pubmed.ncbi.nlm.nih.gov/6457110/ ; DOI https://doi.org/10.1037//0096-1523.7.5.1124 . Verified: replacement acoustics and phoneme class mattered. No invented effect sizes.
-4. **Bruno H. Repp (1992),** “Perceptual restoration of a ‘missing’ speech sound: Auditory induction or illusion?” *Perception & Psychophysics* 51:14–32. DOI https://doi.org/10.3758/BF03205070 . **Question and methods only**: five-experiment research, no claimed numerical results or resolved mechanism.
+4. **Bruno H. Repp (1992),** “Perceptual restoration of a ‘missing’ speech sound: Auditory induction or illusion?” *Perception & Psychophysics* 51:14–32. DOI https://doi.org/10.3758/BF03205070 . **Publisher abstract findings inspected**: first two experiments small context-sensitive support for auditory induction; later three better-controlled experiments negative; the author's interpretation favors illusory auditory restoration within tested limits. No invented effect sizes.
 5. **Inspire3**, official catalog https://inspire3.com/ . **Merchant source**, not independently validated clinical evidence or FV affiliate approval.
 6. **Zen12**, exact Premium offer https://zen12.com/hnp (accessed Nov. 8, 2026). **Merchant source** for formats and advertised guarantee; checkout, fulfilment, refund execution, earnings URL and individual publisher eligibility **unverified**. Claim equating twelve minutes with an hour of advanced meditation **not independently supported**.
 7. **Chee et al. (2024),** “The effects of music and auditory stimulation on autonomic arousal, cognition and attention: A systematic review,” *International Journal of Psychophysiology*. Indexed abstract https://pubmed.ncbi.nlm.nih.gov/38458383/ . Thirty-one studies, mixed/insufficient findings; **not a Zen12 trial**.

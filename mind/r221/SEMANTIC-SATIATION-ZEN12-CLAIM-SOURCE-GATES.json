@@ -1,0 +1,691 @@
+{
+  "schema_version": "FV_MIND_R221_v1",
+  "review_date": "2026-11-08",
+  "status": "UNPUBLISHED_SOURCE_ONLY_NO_CMS_NO_PARTNER_AUTH",
+  "sources": [
+    {
+      "id": "W01",
+      "evidence_level": "PRIMARY_ABSTRACT",
+      "title": "Warren 1970 original phonemic restoration",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/5409744/"
+    },
+    {
+      "id": "W02",
+      "evidence_level": "PRIMARY_ABSTRACT",
+      "title": "Warren and Obusek 1971 follow-up",
+      "url": "https://doi.org/10.3758/BF03212667"
+    },
+    {
+      "id": "W03",
+      "evidence_level": "PRIMARY_ABSTRACT",
+      "title": "Samuel 1981 acoustic and context interactions",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/6457110/"
+    },
+    {
+      "id": "W04",
+      "evidence_level": "PUBLISHER_ABSTRACT_FINDINGS",
+      "title": "Repp 1992 five experiments: early small-context effect, final three negative",
+      "url": "https://doi.org/10.3758/BF03205070"
+    },
+    {
+      "id": "R01",
+      "evidence_level": "SYSTEMATIC_REVIEW_ABSTRACT",
+      "title": "Chee and colleagues 2024 auditory stimulation, arousal and cognition",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38458383/"
+    },
+    {
+      "id": "M01",
+      "evidence_level": "SELLER_CATALOG",
+      "title": "Inspire3 official products",
+      "url": "https://inspire3.com/"
+    },
+    {
+      "id": "M02",
+      "evidence_level": "SELLER_EXACT_OFFER",
+      "title": "Zen12 Premium advertised format, package, prices and refund",
+      "url": "https://zen12.com/hnp"
+    },
+    {
+      "id": "M03",
+      "evidence_level": "SELLER_EXACT_OFFER",
+      "title": "Hypnosis Live Total Focus separate offer",
+      "url": "https://hypnosislive.com/mental-skills/total-focus"
+    },
+    {
+      "id": "M04",
+      "evidence_level": "SELLER_POLICY",
+      "title": "Hypnosis Live FAQ and restrictions",
+      "url": "https://hypnosislive.com/faq"
+    },
+    {
+      "id": "F01",
+      "evidence_level": "FTC_GUIDANCE",
+      "title": "FTC 2023 Endorsement Guides FAQ",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking"
+    },
+    {
+      "id": "F02",
+      "evidence_level": "FTC_GUIDANCE",
+      "title": "FTC Health Products Compliance Guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+    },
+    {
+      "id": "V01",
+      "evidence_level": "FV_EXISTING_LIVE",
+      "title": "Published Seven Day Focus Fieldbook, existing list",
+      "url": "https://finalvestige.com/focus/"
+    },
+    {
+      "id": "V02",
+      "evidence_level": "FV_EXISTING_CONTEXT",
+      "title": "Puységur Animal Magnetism Files",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+    },
+    {
+      "id": "V03",
+      "evidence_level": "FV_EXISTING_CONTEXT",
+      "title": "Published Change Blindness",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/"
+    },
+    {
+      "id": "V04",
+      "evidence_level": "FV_EXISTING_CONTEXT",
+      "title": "Published Mesmerism",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/"
+    },
+    {
+      "id": "G01",
+      "evidence_level": "GOVERNANCE",
+      "title": "Mind Issue 171",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171"
+    },
+    {
+      "id": "G02",
+      "evidence_level": "GOVERNANCE",
+      "title": "Commercial conversion Issue 820",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820"
+    },
+    {
+      "id": "G03",
+      "evidence_level": "GOVERNANCE",
+      "title": "Dispatch Issue 174",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/174"
+    },
+    {
+      "id": "G04",
+      "evidence_level": "PREVIOUS_SOURCE_QA",
+      "title": "Praxxis R219 review and correction request",
+      "url": "https://docs.google.com/document/d/1uK7cZdMv44dkKwDDGILUTCrI2zw3iA0cN5VzdLmF5C8/edit"
+    },
+    {
+      "id": "S01",
+      "evidence_level": "PRIMARY_ABSTRACT",
+      "title": "Balota & Black 1997 semantic satiation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/9099071/"
+    },
+    {
+      "id": "S02",
+      "evidence_level": "PRIMARY_ABSTRACT",
+      "title": "Pilotti, Antrobus & Duff 1997 speaker adaptation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/9184482/"
+    },
+    {
+      "id": "S03",
+      "evidence_level": "PRIMARY_FULL_TEXT",
+      "title": "2017 N400 semantic satiation experiment",
+      "url": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2017.02117/full"
+    },
+    {
+      "id": "S04",
+      "evidence_level": "PRIMARY_ABSTRACT",
+      "title": "Pilotti & Khurshid 2004 auditory/AV satiation",
+      "url": "https://doi.org/10.2466/pms.98.3.999-1016"
+    },
+    {
+      "id": "S05",
+      "evidence_level": "MODEL_PUBLISHER_ABSTRACT",
+      "title": "Zhang and colleagues 2024 deep learning model",
+      "url": "https://doi.org/10.1038/s42003-024-06162-0"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "statement": "In 1970 Warren replaced a speech sound with cough/tone",
+      "status": "PRIMARY_ABSTRACT_SUPPORTED",
+      "source_ids": [
+        "W01"
+      ],
+      "limits": "Experiment abstract; no exact sentence or invented sample"
+    },
+    {
+      "id": "C02",
+      "statement": "Listeners experienced the missing sound despite physical replacement",
+      "status": "PRIMARY_ABSTRACT_SUPPORTED",
+      "source_ids": [
+        "W01"
+      ],
+      "limits": "Qualitative result; no prevalence invented"
+    },
+    {
+      "id": "C03",
+      "statement": "Silence makes gap location clearer than noise replacement",
+      "status": "PRIMARY_ABSTRACT_SUPPORTED",
+      "source_ids": [
+        "W01"
+      ],
+      "limits": "Relative demonstration, not universal"
+    },
+    {
+      "id": "C04",
+      "statement": "1971 work tested influence of earlier and later linguistic context",
+      "status": "PRIMARY_ABSTRACT_SUPPORTED",
+      "source_ids": [
+        "W02"
+      ],
+      "limits": "No invented sample/effect size"
+    },
+    {
+      "id": "C05",
+      "statement": "Samuel found restoration varied with class and acoustics of replacement",
+      "status": "PRIMARY_ABSTRACT_SUPPORTED",
+      "source_ids": [
+        "W03"
+      ],
+      "limits": "Noise / tone / brief silence distinctions in original abstract"
+    },
+    {
+      "id": "C06",
+      "statement": "Repp's initial two tests weakly favored auditory induction with potential context confounding; last three better-controlled experiments did not",
+      "status": "PUBLISHER_ABSTRACT_SUPPORTED_WITH_LIMITS",
+      "source_ids": [
+        "W04"
+      ],
+      "limits": "Publisher abstract; bounded to fricative/noise and experiment stimuli; not a universal null result"
+    },
+    {
+      "id": "C07",
+      "statement": "2024 systematic review included 31 music/noise/binaural-beat studies",
+      "status": "REVIEW_ABSTRACT_SUPPORTED",
+      "source_ids": [
+        "R01"
+      ],
+      "limits": "Not a Zen12 intervention study"
+    },
+    {
+      "id": "C08",
+      "statement": "Review concluded arousal-cognition relation mixed/insufficient",
+      "status": "REVIEW_ABSTRACT_SUPPORTED",
+      "source_ids": [
+        "R01"
+      ],
+      "limits": "Does not prove Zen12 efficacy or inefficacy"
+    },
+    {
+      "id": "C09",
+      "statement": "Inspire3 catalog lists Zen12, Hypnosis Live and Brainwave Shots",
+      "status": "SELLER_DESCRIBED",
+      "source_ids": [
+        "M01"
+      ],
+      "limits": "Does not establish FV account approval"
+    },
+    {
+      "id": "C10",
+      "statement": "Zen12 Premium publicly lists 12 levels and 48 MP3 tracks",
+      "status": "SELLER_DESCRIBED",
+      "source_ids": [
+        "M02"
+      ],
+      "limits": "Delivery unverified"
+    },
+    {
+      "id": "C11",
+      "statement": "Zen12 publicly lists guided, nature, music and white noise styles",
+      "status": "SELLER_DESCRIBED",
+      "source_ids": [
+        "M02"
+      ],
+      "limits": "Do not infer outcomes"
+    },
+    {
+      "id": "C12",
+      "statement": "Zen12 currently publicly advertises a one-year money-back guarantee",
+      "status": "SELLER_DESCRIBED",
+      "source_ids": [
+        "M02"
+      ],
+      "limits": "Actual fulfillment and checkout terms unverified"
+    },
+    {
+      "id": "C13",
+      "statement": "Zen12 page displays $87.99 promotional Premium offer on 2026-11-08",
+      "status": "DISPLAY_ONLY_NOT_CHECKOUT",
+      "source_ids": [
+        "M02"
+      ],
+      "limits": "No final total/taxes/currency/eligibility verified; NOT quoted in live copy"
+    },
+    {
+      "id": "C14",
+      "statement": "Zen12 12-minutes-equals-one-hour-advanced-meditation assertion",
+      "status": "SELLER_CLAIM_NOT_SUBSTANTIATED",
+      "source_ids": [
+        "M02",
+        "R01"
+      ],
+      "limits": "Do not present as fact; non-product-specific studies insufficient"
+    },
+    {
+      "id": "C15",
+      "statement": "Zen12 treats anxiety or cures attentional deafness",
+      "status": "CLAIM_PROHIBITED_NO_PRODUCT_PROOF",
+      "source_ids": [
+        "M02",
+        "F02"
+      ],
+      "limits": "No product-specific substantiation supplied"
+    },
+    {
+      "id": "C16",
+      "statement": "Exact Hypnosis Live Total Focus publicly states 33min/47MB",
+      "status": "SELLER_DESCRIBED_NOT_PROMOTED",
+      "source_ids": [
+        "M03"
+      ],
+      "limits": "Different product; no cross-promotional substitution"
+    },
+    {
+      "id": "C17",
+      "statement": "Hypnosis Live Total Focus 14-day seller refund promise and FAQ restrictions",
+      "status": "SELLER_DESCRIBED_NOT_CHECKOUT",
+      "source_ids": [
+        "M03",
+        "M04"
+      ],
+      "limits": "Not independently tested; no unconditional risk-free claim"
+    },
+    {
+      "id": "C18",
+      "statement": "FTC disclosure material connections clearly near earning recommendations",
+      "status": "COMPLIANCE_GUIDANCE",
+      "source_ids": [
+        "F01"
+      ],
+      "limits": "Disclosures contextual, not a blanket safe harbor"
+    },
+    {
+      "id": "C19",
+      "statement": "Health/benefit advertising claims require appropriate substantiation",
+      "status": "COMPLIANCE_GUIDANCE",
+      "source_ids": [
+        "F02"
+      ],
+      "limits": "Even implied efficacy cannot inherit unrelated experiment"
+    },
+    {
+      "id": "C20",
+      "statement": "Existing Fieldbook uses one existing signup route",
+      "status": "PUBLISHED_ROUTE",
+      "source_ids": [
+        "V01"
+      ],
+      "limits": "Confirmation/individual newsletter delivery not proven"
+    },
+    {
+      "id": "C21",
+      "statement": "Puységur archival source is historical context not clinical evidence",
+      "status": "HISTORICAL_LIMIT",
+      "source_ids": [
+        "V02"
+      ],
+      "limits": "Do not apply historical reports as product claims"
+    },
+    {
+      "id": "C22",
+      "statement": "There is named FV Inspire3 approval and account earning link",
+      "status": "UNVERIFIED_HARD_HOLD",
+      "source_ids": [
+        "G01",
+        "M01"
+      ],
+      "limits": "No named approval found in targeted Gmail; private dashboard not accessed"
+    },
+    {
+      "id": "C23",
+      "statement": "There is an authenticated paid FV-owned Mind Payhip SKU",
+      "status": "UNVERIFIED_HARD_HOLD",
+      "source_ids": [
+        "G02"
+      ],
+      "limits": "No authenticated SKU/checkout/rights/returns; do not substitute invented product"
+    },
+    {
+      "id": "C24",
+      "statement": "R220 article is public and approved for Grok media",
+      "status": "NOT_TRUE",
+      "source_ids": [
+        "G01"
+      ],
+      "limits": "Source-only no live slug; do not post"
+    },
+    {
+      "id": "C25",
+      "statement": "Affiliate click is independently verified paid sale",
+      "status": "INVALID_INFERENCE",
+      "source_ids": [
+        "G02"
+      ],
+      "limits": "Merchant-confirmed settled/cleared conversion required"
+    },
+    {
+      "id": "N01",
+      "statement": "Balota & Black 1997 reported four experiments; young/old semantic task differences",
+      "status": "PRIMARY_ABSTRACT_SUPPORTED",
+      "source_ids": [
+        "S01"
+      ],
+      "limits": "The first two experiments did not yield the same old-adult pattern"
+    },
+    {
+      "id": "N02",
+      "statement": "Balota & Black's third rhyme and fourth unrelated-prime controls were negative",
+      "status": "PRIMARY_ABSTRACT_SUPPORTED",
+      "source_ids": [
+        "S01"
+      ],
+      "limits": "Disfavors generic task fatigue alone; not no-effect-in-all-tasks"
+    },
+    {
+      "id": "N03",
+      "statement": "Pilotti 1997 same-speaker repetitions versus multiple voices differed",
+      "status": "PRIMARY_ABSTRACT_SUPPORTED",
+      "source_ids": [
+        "S02"
+      ],
+      "limits": "Authors favor acoustic adaptation; attention strategy alternative"
+    },
+    {
+      "id": "N04",
+      "statement": "Pilotti 2004 2/15/30 repetitions under auditory and AV conditions",
+      "status": "PRIMARY_ABSTRACT_SUPPORTED",
+      "source_ids": [
+        "S04"
+      ],
+      "limits": "Different modality and designs from Balota; abstract reviewed"
+    },
+    {
+      "id": "N05",
+      "statement": "2017 EEG study analyzed 25 people after one artifact exclusion",
+      "status": "FULL_TEXT_SUPPORTED",
+      "source_ids": [
+        "S03"
+      ],
+      "limits": "Young Swedish speakers; not all populations"
+    },
+    {
+      "id": "N06",
+      "statement": "2017 experiment measured reduced N400 semantic relatedness response at 30 vs 3 repetitions",
+      "status": "FULL_TEXT_SUPPORTED",
+      "source_ids": [
+        "S03"
+      ],
+      "limits": "Source localization exploratory; not a product trial"
+    },
+    {
+      "id": "N07",
+      "statement": "2024 study proposed bottom-up mechanisms using deep learning models",
+      "status": "PUBLISHER_ABSTRACT_ONLY",
+      "source_ids": [
+        "S05"
+      ],
+      "limits": "Simulation is not human trial, not Zen12 validation"
+    },
+    {
+      "id": "N08",
+      "statement": "Repeat-a-word exercise in investigation is informal observation",
+      "status": "EDITORIAL_BOUNDARY",
+      "source_ids": [
+        "S01",
+        "S03"
+      ],
+      "limits": "No randomized trials, timed decisions or EEG"
+    },
+    {
+      "id": "N09",
+      "statement": "Zen12 product-specific 12 minutes equals one hour of advanced meditation",
+      "status": "SELLER_CLAIM_NOT_SUBSTANTIATED",
+      "source_ids": [
+        "M02",
+        "F02"
+      ],
+      "limits": "Do not present equivalence as fact"
+    },
+    {
+      "id": "N10",
+      "statement": "Zen12 Premium displayed $87.99 public promo on November 8, not verified checkout",
+      "status": "DISPLAY_ONLY_NOT_CHECKOUT",
+      "source_ids": [
+        "M02"
+      ],
+      "limits": "Price changes; no authenticated purchase/fees"
+    },
+    {
+      "id": "N11",
+      "statement": "No authenticated named FV Inspire3 approval, channel permission, URL or settlement",
+      "status": "UNVERIFIED",
+      "source_ids": [
+        "G01",
+        "G02"
+      ],
+      "limits": "Gmail general promotional mail does not establish acceptance"
+    },
+    {
+      "id": "N12",
+      "statement": "Actual confirmed paid orders or cleared commissions from this candidate",
+      "status": "UNVERIFIED",
+      "source_ids": [
+        "G02"
+      ],
+      "limits": "Do not turn click or lead into purchase"
+    },
+    {
+      "id": "N13",
+      "statement": "Original R210 A/B experiment remains frozen and the 42s video unrendered",
+      "status": "NOT_LIVE",
+      "source_ids": [
+        "G01"
+      ],
+      "limits": "R221 alternate copy candidates are not assigned or tested"
+    },
+    {
+      "id": "N14",
+      "statement": "Shared profile YouTube link does not prove specific Shorts asset attribution",
+      "status": "DATA_CAUSAL_BOUNDARY",
+      "source_ids": [
+        "G02"
+      ],
+      "limits": "Use channel_profile only after approval, not fictitious asset ID"
+    }
+  ],
+  "gates": [
+    {
+      "id": "G01",
+      "requirement": "named Inspire3 publisher approval",
+      "status": "HARD_HOLD",
+      "evidence": "unverified; preserve restriction"
+    },
+    {
+      "id": "G02",
+      "requirement": "permitted publisher website channel",
+      "status": "HARD_HOLD",
+      "evidence": "unverified; preserve restriction"
+    },
+    {
+      "id": "G03",
+      "requirement": "specific authorized promotional destinations",
+      "status": "HARD_HOLD",
+      "evidence": "unverified; preserve restriction"
+    },
+    {
+      "id": "G04",
+      "requirement": "account-issued earning URL",
+      "status": "HARD_HOLD",
+      "evidence": "unverified; preserve restriction"
+    },
+    {
+      "id": "G05",
+      "requirement": "product-level proof review",
+      "status": "HARD_HOLD",
+      "evidence": "unverified; preserve restriction"
+    },
+    {
+      "id": "G06",
+      "requirement": "exact merchant checkout and refund terms",
+      "status": "HARD_HOLD",
+      "evidence": "unverified; preserve restriction"
+    },
+    {
+      "id": "G07",
+      "requirement": "founder commercial publication approval",
+      "status": "HARD_HOLD",
+      "evidence": "unverified; preserve restriction"
+    },
+    {
+      "id": "G08",
+      "requirement": "independent merchant paid-conversion evidence",
+      "status": "HARD_HOLD",
+      "evidence": "unverified; preserve restriction"
+    },
+    {
+      "id": "G09",
+      "requirement": "FV-owned Payhip Mind SKU rights/ownership",
+      "status": "UNKNOWN",
+      "evidence": "unverified; preserve restriction"
+    },
+    {
+      "id": "G10",
+      "requirement": "owned product price/returns",
+      "status": "UNKNOWN",
+      "evidence": "unverified; preserve restriction"
+    },
+    {
+      "id": "G11",
+      "requirement": "owned product actual checkout and delivery",
+      "status": "UNKNOWN",
+      "evidence": "unverified; preserve restriction"
+    },
+    {
+      "id": "G12",
+      "requirement": "verified Grok media asset IDs and rights",
+      "status": "UNKNOWN",
+      "evidence": "unverified; preserve restriction"
+    },
+    {
+      "id": "G13",
+      "requirement": "approved no-script tracking implementation",
+      "status": "UNKNOWN",
+      "evidence": "unverified; preserve restriction"
+    },
+    {
+      "id": "G14",
+      "requirement": "validated Jetpack/Focus confirmation",
+      "status": "UNKNOWN",
+      "evidence": "unverified; preserve restriction"
+    },
+    {
+      "id": "G15",
+      "requirement": "real-browser a11y/performance/CMS sanitization",
+      "status": "OPEN_REVIEW",
+      "evidence": "unverified; preserve restriction"
+    },
+    {
+      "id": "G16",
+      "requirement": "net-revenue cohort reconciliation",
+      "status": "UNKNOWN",
+      "evidence": "unverified; preserve restriction"
+    }
+  ],
+  "offer": {
+    "product": "Zen12 Premium",
+    "exact_public_offer": "https://zen12.com/hnp",
+    "named_approval_verified": false,
+    "allowed_channels_verified": false,
+    "authorized_earning_url": null,
+    "activation_allowed": false,
+    "sales_report_verified": false,
+    "final_checkout_verified": false,
+    "refund_fulfillment_verified": false,
+    "exact_official_offer": "https://zen12.com/hnp",
+    "price_checkout_confirmed": false,
+    "settled_commissions_confirmed": false
+  },
+  "alternative_owned": {
+    "product_id": null,
+    "rights_verified": false,
+    "checkout_verified": false,
+    "price_verified": false,
+    "refund_terms_verified": false,
+    "activation_allowed": false,
+    "rights_cleared": false
+  },
+  "conversion_contract": {
+    "first_party_campaign_fields": [
+      "utm_source",
+      "utm_medium",
+      "utm_campaign",
+      "utm_content",
+      "asset_id"
+    ],
+    "no_pii": true,
+    "no_fingerprinting": true,
+    "new_tracking_script_allowed": false,
+    "existing_jetpack_list_only": true,
+    "events": [
+      "qualified_landing",
+      "article_to_focus_click",
+      "confirmed_lead_if_provider_reports",
+      "affiliate_click_if_authorized",
+      "merchant_confirmed_paid_conversion",
+      "cleared_commission",
+      "refund",
+      "fee",
+      "chargeback"
+    ],
+    "affiliate_click_is_paid_sale": false,
+    "net_per_1000_human_sessions": "(settled_owned_receipts + cleared_affiliate_commissions - refunded_amounts - transaction_fees - chargebacks - attributable_variable_costs)/qualified_human_sessions*1000",
+    "data_status": "NOT_COMPUTABLE_without_merchant_and_human_denom",
+    "source_only": true,
+    "cohorts": [
+      "7-day",
+      "30-day"
+    ],
+    "event_funnel": [
+      "verified_asset_id qualified_human_session",
+      "relevant landing_visit",
+      "relevant cta_click",
+      "provider_confirmed_lead",
+      "merchant_confirmed_paid_order or cleared_commission",
+      "refunds and fees",
+      "realized_net_revenue"
+    ],
+    "channel_profile_not_specific_asset": true,
+    "consent_required": true
+  },
+  "experiment": {
+    "canonical_existing": "mind/r210/",
+    "type": "A text-only vs B text-plus-optional-42-second-original-film",
+    "state": "UNPUBLISHED; B UNRENDERED; not randomized; no commercial activation",
+    "primary_metric": "net_revenue_per_1000_qualified_human_sessions",
+    "privacy": "first-party aggregate cohort; no personal visitor identifiers"
+  },
+  "r221_experiment": {
+    "A": "R221 text guide (UNPUBLISHED)",
+    "B": "R221 identical buyer guide plus original poster/transcript/VTT 42s concept (UNRENDERED)",
+    "baseline": "R210 original A/B frozen",
+    "active": false,
+    "paid_conversions": null,
+    "primary_metric": "net realized revenue per 1000 qualified human sessions",
+    "tiny_sample_warning": true
+  }
+}
