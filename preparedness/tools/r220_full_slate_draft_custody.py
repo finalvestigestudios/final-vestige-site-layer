@@ -14,6 +14,7 @@ import hashlib
 import json
 import re
 import sys
+import types
 from pathlib import Path
 
 SCHEMA = 'fv-preparedness-r220-full-slate-draft-custody-v1'
@@ -278,6 +279,39 @@ def load_r222_bundle(root: Path):
     spec.loader.exec_module(module)
     return module
 
+
+def load_frozen_builder(root: Path, bundle):
+    """Bind the executable producer to the verified R222 Git blob, not sys.modules.
+
+    The preflight bundle scan is necessary but not sufficient: ``import build``
+    can reuse an unrelated module already cached in sys.modules. Compile the
+    original bytes re-read after preflight into a private namespace instead.
+    Re-check the file once the module is initialized to detect any replacement
+    during loading. This grants no publishing, safety or source approval.
+    """
+    relative = 'tools/build.py'
+    pin = bundle.PINNED.get(relative)
+    if type(pin) is not str or re.fullmatch(r'[0-9a-f]{40}', pin) is None:
+        raise ValueError('untrusted producer receipt')
+    raw = safe_read(root, relative)
+    if git_blob(raw) != pin:
+        raise ValueError('producer changed between preflight and execution')
+    filename = str(root / relative)
+    producer = types.ModuleType('fv_preparedness_custody_bound_build')
+    producer.__file__ = filename
+    producer.__package__ = None
+    try:
+        exec(compile(raw, filename, 'exec', dont_inherit=True), producer.__dict__)
+    except (SyntaxError, UnicodeError) as exc:
+        raise ValueError('frozen producer cannot be compiled') from exc
+    if git_blob(safe_read(root, relative)) != pin:
+        raise ValueError('producer changed during module binding')
+    for name in ('Library', 'resolve_tokens', 'word_count'):
+        if not callable(getattr(producer, name, None)):
+            raise ValueError('frozen producer lacks required API: ' + name)
+    return producer
+
+
 def audit(root: Path, *, verify_exports: bool = True) -> dict:
     result = {'schema': SCHEMA, 'state': INVALID, 'issue': 136, 'conversion_issue': 820,
               'publication_authorized': False, 'independent_qd_pass': False,
@@ -302,15 +336,17 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
             tools_path = root / 'tools'
             if tools_path.is_symlink() or not tools_path.is_dir():
                 raise ValueError('untrusted tools directory')
-            sys.path.insert(0, str(tools_path))
-            try:
-                import build
-                library = build.Library(root=root)
-                authority.verify_routes(roster, library)
-                report = strict_object(safe_read(root, 'build/build-report.json'))
-                result['render'] = verify_render(root, roster, report, library, build)
-            finally:
-                sys.path.remove(str(tools_path))
+            build = load_frozen_builder(root, bundle)
+            library = build.Library(root=root)
+            authority.verify_routes(roster, library)
+            report = strict_object(safe_read(root, 'build/build-report.json'))
+            result['render'] = verify_render(root, roster, report, library, build)
+            # Repeat source custody after building the rendered-corpus view.
+            # A file replaced after preflight cannot silently inherit its pin.
+            bundle.check_bundle(root, safe_read)
+            authority.verify_authorities(root, roster, safe_read)
+            verify_originals(root, roster)
+            result['postrender_custody_recheck'] = 'DRAFT_HARD_HOLD'
         result['reconciliation'] = {'frozen_articles': 35,
                                     'integrated_changes_held_for_review': sum(
                                         x['changed_since_original'] for x in status),
