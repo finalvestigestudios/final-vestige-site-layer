@@ -55,5 +55,15 @@
     "tests_failed": 0,
     "files_git_oid_match": 8
   },
-  "release": "HOLD_UNSENT_AND_NO_WORDPRESS_WRITES"
+  "release": "HOLD_UNSENT_AND_NO_WORDPRESS_WRITES",
+  "reviewer_board": {
+    "path": "dispatch/r216/reviewer_board.html",
+    "sha": "60d467c540478248bb2891239669ce4f0aca2413",
+    "source_assertions_passed": 22,
+    "source_assertions_failed": 0,
+    "static_only": true,
+    "chromium": "NOT_TESTED",
+    "assistive_technology": "NOT_TESTED",
+    "no_forms_or_scripts": true
+  }
 }
