@@ -21,12 +21,12 @@ function run(read){
   const m=JSON.parse(f.matrix), old=JSON.parse(f.oldMatrix);
   let passed=0;const failed=[],items=[];
   function t(label,condition){let ok=false;try{ok=!!(typeof condition==='function'?condition():condition)}catch(e){failed.push(label+': '+String(e));return}if(ok)passed++;else failed.push(label);items.push({label,ok})}
-  const ids=s=>[...s.matchAll(/\\bid="([^"]+)"/g)].map(x=>x[1]);
+  const ids=s=>[...s.matchAll(/\bid="([^"]+)"/g)].map(x=>x[1]);
   const fragments=s=>{let x=new Set(ids(s));return [...s.matchAll(/href="#([^"]+)"/g)].every(y=>x.has(y[1]))};
-  const safe=s=>!/<script\\b|<iframe\\b|<form\\b|<input\\b|<video\\b|on(?:click|load|submit)\\s*=|@import\\b|(?:awin1|clickbank)\\.com/i.test(s);
-  const disabled=s=>/\\b<button[^>]*\\bdisabled\\b[^>]*>/.test(s)&&!/<a[^>]*\\b(?:href="https?:\\/\\/(?:zen12|inspire3|affiliates\\.inspire3)|rel="sponsored")/i.test(s);
+  const safe=s=>!/<script\b|<iframe\b|<form\b|<input\b|<video\b|on(?:click|load|submit)\s*=|@import\b|(?:awin1|clickbank)\.com/i.test(s);
+  const disabled=s=>/\b<button[^>]*\bdisabled\b[^>]*>/.test(s)&&!/<a[^>]*\b(?:href="https?:\/\/(?:zen12|inspire3|affiliates\.inspire3)|rel="sponsored")/i.test(s);
   const doc=f.article,hub=f.hub,A=f.A,B=f.B,p=f.prior;
-  t('article sufficient length',doc.split(/\\s+/).length>1900);
+  t('article sufficient length',doc.split(/\s+/).length>1900);
   for(const s of ['Thompson','Lewis','Johnston','Wong','Twedt','Sheinberg','Gauthier','1980','1997','2010','face','cars','buildings','bikes','letter','inverted','configural','NOT WordPress','UNPUBLISHED'])
     t('article contains '+s,doc.toLowerCase().includes(s.toLowerCase()));
   for(const doi of ['10.1068/p090483','10.1068/p260225','10.1068/p6659','10.1068/p3174'])
@@ -36,7 +36,7 @@ function run(read){
   t('article credits full text limitation',/full text restricted/i.test(doc));
   t('article identifies historical source not treatment',/Puységur/i.test(doc)&&/not.*(proof|commercial therapy)/i.test(doc));
   for(const id of ['research','history','practice','tools','main','hold-reason'])t('hub id '+id,hub.includes('id="'+id+'"'));
-  t('hub has one main', (hub.match(/<main\\b/g)||[]).length===1);
+  t('hub has one main', (hub.match(/<main\b/g)||[]).length===1);
   t('hub unique ids',ids(hub).length===new Set(ids(hub)).size);
   t('hub fragments resolve',fragments(hub));
   t('hub no tracking/third party media/form',safe(hub));
@@ -44,7 +44,7 @@ function run(read){
   t('hub near disclosure',hub.indexOf('Prospective affiliate disclosure')>0&&Math.abs(hub.indexOf('Prospective affiliate disclosure')-hub.indexOf('<button class="off"'))<700);
   t('hub focus single existing route',hub.includes('https://finalvestige.com/focus/'));
   t('hub no live Thatcher destination',hub.includes('NO PUBLIC URL')||hub.includes('no public link'));
-  t('hub no-JS content',!/<script\\b/.test(hub)&&hub.includes('<h1>'));
+  t('hub no-JS content',!/<script\b/.test(hub)&&hub.includes('<h1>'));
   t('hub keyboard focus',hub.includes(':focus-visible'));
   t('hub reduced motion',hub.includes('prefers-reduced-motion'));
   t('hub CSS responsive',hub.includes('@media(max-width:760px)'));
@@ -77,22 +77,22 @@ function run(read){
   t('A acknowledges noncausal moderators',A.includes('observational moderators'));
   t('B acknowledges noncausal moderators',B.includes('observational moderators'));
   t('both guides price provenance',A.includes('may have truncated cents')&&B.includes('may have truncated cents'));
-  t('B figure contains caption',/<figure[^>]*>[\\s\\S]*?<figcaption[^>]*>[\\s\\S]*?<\\/figcaption><\\/figure>/.test(B));
+  t('B figure contains caption',/<figure[^>]*>[\s\S]*?<figcaption[^>]*>[\s\S]*?<\/figcaption><\/figure>/.test(B));
   t('B poster description matches line',B.includes('line angles')&&!B.includes('fixed golden vertical line'));
-  t('B film unrendered',!/<video\\b/.test(B)&&B.includes('Not produced or playable'));
+  t('B film unrendered',!/<video\b/.test(B)&&B.includes('Not produced or playable'));
   t('caption file is draft only',f.vtt.includes('WEBVTT'));
   t('plan is conversion-first',f.plan.includes('NOT COMPUTABLE')&&f.plan.includes('merchant_confirmed_purchase'));
   t('plan preserves Grok ownership',f.plan.includes('Grok retains'));
   t('plan preserves CMS governance',f.plan.includes('PR #49')&&f.plan.includes('PR #172')&&!f.plan.includes('deploy now'));
   t('plan no paid SaaS',f.plan.includes('duplicate scripts')||f.plan.includes('duplicate'));
   let detected=0;let mutations=[
-    [hub.replace(/\\bdisabled\\b/,'data-disabled'),s=>!disabled(s)],
+    [hub.replace(/\bdisabled\b/,'data-disabled'),s=>!disabled(s)],
     [hub.replace(/Prospective affiliate disclosure/g,'Prospective information'),s=>!s.includes('Prospective affiliate disclosure')],
     [hub.replace('href="#tools"','href="#missing_tools"'),s=>!fragments(s)],
     [hub.replace('id="tools"','id="research"'),s=>ids(s).length!==new Set(ids(s)).size],
     [hub.replace('<h1>','<div>'),s=>!s.includes('<h1>')],
-    [A.replace(/\\bdisabled\\b/,'data-disabled'),s=>!disabled(s)],
-    [B.replace(/\\bdisabled\\b/,'data-disabled'),s=>!disabled(s)],
+    [A.replace(/\bdisabled\b/,'data-disabled'),s=>!disabled(s)],
+    [B.replace(/\bdisabled\b/,'data-disabled'),s=>!disabled(s)],
     [B.replace('10.1037/cns0000173','10.1037/WRONG'),s=>!s.includes('10.1037/cns0000173')],
     [A.replace('may have truncated cents','guaranteed price'),s=>!s.includes('may have truncated cents')],
     [p.replace('21 were retained','27 were retained'),s=>!s.includes('21 were retained')],
