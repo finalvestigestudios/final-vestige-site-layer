@@ -15,7 +15,8 @@ const P={
  R208:"mind/r208/the-second-thing-you-didnt-see-ATTENTIONAL-BLINK-UNPUBLISHED.md",
  R208M:"mind/r208/ATTENTIONAL-BLINK-ZEN12-SOURCE-CLAIM-COMMERCE-GATES.json",
  R207B:"mind/r207/zen12-B-OPTIONAL-42S-UNPUBLISHED.html",
- R207V:"mind/r207/zen12-optional-film-UNRENDERED.vtt"
+ R207V:"mind/r207/zen12-optional-film-UNRENDERED.vtt",
+ VTT:"mind/r209/zen12-optional-42s-UNRENDERED.vtt"
 };
 function check(test,message){assert.ok(test,message);}
 function filmRemoved(s){return s.replace(/<section class="band" id="optional-film"[\s\S]*?<\/section>/,"").replace(/<title>[\s\S]*?<\/title>/,"<title>normalized</title>");}
@@ -85,6 +86,11 @@ function validateGuide(s){
 function run(files){
  validatePage(files[P.A],"A");validatePage(files[P.B],"B");
  check(filmRemoved(files[P.A])===filmRemoved(files[P.B]),"identical factual/commerce copy A vs B");
+ check(files[P.VTT].startsWith("WEBVTT"),"new captions are WEBVTT");
+ check((files[P.VTT].match(/\\d\\d:\\d\\d:\\d\\d\\.\\d{3} -->/g)||[]).length===5,"new captions contain five cues");
+ check(files[P.VTT].includes("No one tested Zen12 itself."),"new captions match optional-film scientific caveat");
+ check(files[P.B].includes("No one tested Zen12 itself."),"new B transcript matches VTT");
+ check(files[P.VTT].includes("00:00:33.000 --> 00:00:42.000"),"42-second timing");
  validateMatrix(files[P.M]);validateScience(files[P.R208],files[P.R208M]);
  validateFilm(files[P.R207B],files[P.R207V]);validateGuide(files[P.guide]);
  check(files[P.plan].includes("NOT COMPUTABLE"),"never turn absent income into zero");
@@ -108,6 +114,7 @@ const mutators=[
  [P.R207V,s=>s.replace("Across 65 studies, the clearest pooled cost concerned reading comprehension; other outcomes were less certain.","Sixty-five reading studies found small average costs from sound, especially intelligible words and lyrics.")],
  [P.R207B,s=>s.replace("Across 65 studies, the clearest pooled cost concerned reading comprehension; other outcomes were less certain.","Sixty-five reading studies found small average costs from sound, especially intelligible words and lyrics.")],
  [P.guide,s=>s.replace("We have not bought, listened to, or medically tested","We have bought, listened to, and medically tested")],
+ [P.VTT,s=>s.replace("No one tested Zen12 itself.","Zen12 scientifically proved!")],
  [P.plan,s=>s.replaceAll("NOT COMPUTABLE","$0")]
 ];
 try{
