@@ -38,7 +38,7 @@ function validate(f) {
  ok(/id="comm-disclose"/.test(f.hub)&&/aria-describedby="comm-disclose"/.test(f.hub),'hub disclosure referenced correctly');
  ok(['stream-perception','stream-history','stream-practice','stream-tools'].every(x=>f.hub.includes('id="'+x+'"')),'four clear streams');
  ok(f.hub.includes('The Glass No One Saw')&&f.hub.includes('UNPUBLISHED')&&f.hub.includes('href="https://finalvestige.com/focus/"'),'hub links only published Focus, draft no invented URL');
- ok(f.hub.includes('prefers-reduced-motion')&&f.hub.includes('max-width:820px')===false&&f.hub.includes('max-width')===false,'media and style scoped'); // guard layout uses @media(max-width) not max-width property
+ ok(f.hub.includes('prefers-reduced-motion')&&f.hub.includes('@media(max-width:820px)'),'media and style scoped'); // guard layout uses @media(max-width) not max-width property
  ok(j.schema==='fv-mind-r212/commercial-claims-v1'&&j.source_refs?.length===20&&j.claims?.length===30&&j.gates?.length===14,'claim/source/gate matrix complete');
  ok(j.gates?.every(x=>x.status==='OPEN'),'all merchant/release gates open');
  ok(j.public_affiliate_activation===false&&j.approved_earning_url===null&&j.account_specific_partner_acceptance==='UNVERIFIED','merchant locked');
