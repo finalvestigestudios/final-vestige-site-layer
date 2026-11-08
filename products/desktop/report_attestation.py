@@ -17,6 +17,14 @@ import sys
 from datetime import datetime, timedelta
 from pathlib import Path
 
+
+# Python -I deliberately omits the script directory from sys.path. Resolve
+# only this Git-owned desktop module directory, not cwd or PYTHONPATH, so the
+# private runner's isolated child commands can import local verification code.
+DESKTOP = Path(__file__).resolve().parent
+if str(DESKTOP) not in sys.path:
+    sys.path.insert(0, str(DESKTOP))
+
 import release_gate as gate
 
 MAX_REPORT_BYTES = 64 * 1024
