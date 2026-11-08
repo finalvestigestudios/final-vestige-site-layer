@@ -9,6 +9,8 @@ from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'tools'))
 import r220_full_slate_draft_custody as gate
+import r226_export_browser_custody as dom_gate
+import r227_inert_context_citation_hold as inert_gate
 
 HEADS = {key: 'abcdef1'[i] * 40 for i, key in enumerate(
     ('start', 'shelter', 'food', 'health', 'hist-field', 'hist-food', 'hist-home'))}
@@ -130,7 +132,10 @@ class SyntheticRenderTests(unittest.TestCase):
             for slug in cls.allslugs:
                 (cls.root / 'build' / mode / f'{slug}.html').write_text(
                     '<header>Independent safety/source and QD verification pending</header>'
-                    '<div class="pa-body" id="pa-main">hello x</div>')
+                    '<div class="pa-body" id="pa-main">hello x</div>'
+                    '<section class="pa-sources"><h2>Sources and verification</h2><ol></ol></section>'
+                    '<section class="pa-review"><h2>Review record</h2>'
+                    '<p>Independent source and safety review pending.</p></section>')
         cls.entries = {}
         for slug in cls.allslugs:
             cls.entries[slug] = {'slug': slug,
@@ -159,10 +164,60 @@ class SyntheticRenderTests(unittest.TestCase):
         cls.tmp.cleanup()
 
     def check(self, report=None):
-        return gate.verify_render(self.root, self.articles, report or self.report, self.lib, self.builder)
+        return gate.verify_render(self.root, self.articles, report or self.report,
+                                  self.lib, self.builder, dom_gate, inert_gate)
 
     def test_positive_synthetic_render(self):
         self.assertEqual(self.check()['channel_files_verified'], 82)
+
+    def test_both_guards_execute_for_every_channel(self):
+        # The old fixture did not pass either new guard, causing TypeError before
+        # the 82 truncation regressions could exercise their intended assertions.
+        with patch.object(dom_gate, 'verify_export', wraps=dom_gate.verify_export) as d, \
+             patch.object(inert_gate, 'verify_inert_contexts',
+                          wraps=inert_gate.verify_inert_contexts) as n:
+            self.assertEqual(self.check()['channel_files_verified'], 82)
+            self.assertEqual(d.call_count, 82)
+            self.assertEqual(n.call_count, 82)
+
+    def test_rendered_source_inside_template_rejected(self):
+        path = self.root / 'build' / 'wp' / 'article-1.html'
+        original = path.read_text()
+        try:
+            page = original.replace('<section class="pa-sources">',
+                                    '<template><section class="pa-sources">')
+            page = page.replace('</ol></section>', '</ol></section></template>')
+            path.write_text(page)
+            with self.assertRaisesRegex(ValueError, 'R227 conditional DOM'):
+                self.check()
+        finally:
+            path.write_text(original)
+
+    def test_only_noscript_warning_rejected(self):
+        path = self.root / 'build' / 'preview' / 'article-2.html'
+        original = path.read_text()
+        try:
+            page = original.replace(
+                '<header>Independent safety/source and QD verification pending</header>',
+                '<noscript><header>Independent safety/source and QD verification pending</header></noscript>')
+            path.write_text(page)
+            with self.assertRaisesRegex(ValueError, 'R227 conditional DOM'):
+                self.check()
+        finally:
+            path.write_text(original)
+
+    def test_closed_details_review_rejected(self):
+        path = self.root / 'build' / 'wp' / 'article-3.html'
+        original = path.read_text()
+        try:
+            page = original.replace('<section class="pa-review">',
+                                    '<details><section class="pa-review">')
+            page = page.replace('</p></section>', '</p></section></details>')
+            path.write_text(page)
+            with self.assertRaisesRegex(ValueError, 'R227 conditional DOM'):
+                self.check()
+        finally:
+            path.write_text(original)
 
     def test_missing_build_report_row(self):
         r = copy.deepcopy(self.report); r['articles'].pop()

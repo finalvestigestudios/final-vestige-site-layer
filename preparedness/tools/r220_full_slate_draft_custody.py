@@ -30,6 +30,9 @@ R222_BUNDLE_BLOB = 'bd57ef0caba7ad68381fa6a22af64aff4d486c84'
 # R226 all-41-export browser-semantics and visible citation/review HOLD gate.
 R226_DOM_PATH = 'tools/r226_export_browser_custody.py'
 R226_DOM_BLOB = '84fbbd23d3ec146221d335537fdc7a433452b5ca'
+# R227 catches markup inert to HTML reading or conditional on JS/open state.
+R227_INERT_PATH = 'tools/r227_inert_context_citation_hold.py'
+R227_INERT_BLOB = '0a15ea6fdfe60009d97fbbe4340aa5b03d111285'
 # These are independently observed R219 integration Git blobs, not certified text.
 # Missing entries MUST match the older R200 original exactly.
 INTEGRATED_DIFFS = {
@@ -203,7 +206,7 @@ def verify_originals(root: Path, articles: list[dict]) -> tuple[list[dict], dict
     return status, {f'{n}:{sid}': count for (n, sid), count in exceptions.items()}
 
 
-def verify_render(root: Path, articles: list[dict], report: dict, library, builder, dom_guard) -> dict:
+def verify_render(root: Path, articles: list[dict], report: dict, library, builder, dom_guard, inert_guard) -> dict:
     actual = report.get('articles')
     if type(actual) is not list or len(actual) != 41:
         raise ValueError('expected 41 individual article/tool build-report entries')
@@ -251,6 +254,12 @@ def verify_render(root: Path, articles: list[dict], report: dict, library, build
             dom_result = dom_guard.verify_export(page, order, meta, library, expected)
             if dom_result.get('state') != HOLD:
                 raise ValueError('unexpected browser-semantics safety state: ' + slug)
+            # R226 does not identify inert <template>/<noscript>, closed <details>,
+            # closed <dialog>, or browser parser recovery that can conceal a source.
+            # Enforce an independent exact-byte read-only companion for all 82 files.
+            inert_result = inert_guard.verify_inert_contexts(page, order)
+            if inert_result.get('state') != HOLD or inert_result.get('release_authorized') is not False:
+                raise ValueError('unexpected conditional-visibility safety state: ' + slug)
     if report.get('release_evidence', {}).get('wordpress_publication_performed') is not False:
         raise ValueError('WordPress publication flag must remain false')
     if report.get('release_evidence', {}).get('independent_qa_verified') is not False:
@@ -359,10 +368,13 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
             dom_guard = load_frozen_gate(root, R226_DOM_PATH, R226_DOM_BLOB,
                                          'fv_preparedness_r226_browser_gate',
                                          ('verify_export',))
+            inert_guard = load_frozen_gate(root, R227_INERT_PATH, R227_INERT_BLOB,
+                                           'fv_preparedness_r227_inert_gate',
+                                           ('verify_inert_contexts',))
             library = build.Library(root=root)
             authority.verify_routes(roster, library)
             report = strict_object(safe_read(root, 'build/build-report.json'))
-            result['render'] = verify_render(root, roster, report, library, build, dom_guard)
+            result['render'] = verify_render(root, roster, report, library, build, dom_guard, inert_guard)
             # Repeat source custody after building the rendered-corpus view.
             # A file replaced after preflight cannot silently inherit its pin.
             bundle.check_bundle(root, safe_read)
