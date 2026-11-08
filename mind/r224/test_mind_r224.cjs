@@ -72,7 +72,7 @@ function check(obj){
  if(!/153 source rows and 16 dossiers/.test(obj.oldMatrix.claims.find(c=>c.id==='C20')?.statement||''))e.push('oldMatrix:source-provenance');
  if(!/2,855-word|2855-word|2,855 word/.test(obj.plan))e.push('plan:research-size');
  if(!/ZERO OR NEGATIVE/.test(obj.plan)||!/NOT COMPUTABLE/.test(obj.plan))e.push('plan:zero-negative-net');
- if(!/SV9m07PFTYk/.test(obj.plan)||!/NOT.*three authenticated/.test(obj.plan))e.push('plan:creator-reconciliation');
+ if(!/SV9m07PFTYk/.test(obj.plan)||!/not three authenticated/i.test(obj.plan))e.push('plan:creator-reconciliation');
  if(!/UNPUBLISHED_RESEARCH_DRAFT/.test(obj.art)||!/PLoS Biology|PLOS Biology/.test(obj.art))e.push('art:research-sources');
  if(obj.art.split(/\s+/).length<2300)e.push('art:substance');
  if(!/does not|do not|not evidence/i.test(obj.art))e.push('art:caution');
