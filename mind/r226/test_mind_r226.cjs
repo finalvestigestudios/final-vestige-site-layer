@@ -37,7 +37,7 @@ function check(f){
   if(!/<meta\s+name=["']robots["']\s+content=["']noindex,nofollow["']/i.test(h))fail(k+' must remain unpublished noindex');
   if(/<script\b|<iframe\b|<form\b|<input\b|<video\b|<audio\b|<source\b|<object\b|<embed\b/i.test(h))fail(k+' added external script, form, or playable media');
   if(/\bon\w+\s*=/i.test(h)||/javascript\s*:/i.test(h))fail(k+' event handler or JS URL');
-  if(/(?:affiliate|awin1|clickbank|payhip|checkout|cart)[^\n]{0,100}href\s*=|href\s*=\s*["']?[^\s"'>]*(?:awin1|affiliates\.inspire3|checkout|clickbank|payhip)/i.test(h))fail(k+' suspicious commercial/earning href');
+  if(/href\s*=\s*["']?[^\s"'<>]*(?:awin1|affiliates\.inspire3|checkout|clickbank|payhip)/i.test(h))fail(k+' suspicious commercial/earning href');
   const bt=tags(h,'button');if(bt.length!==1)fail(k+' changed number of merchant controls');
   for(const t of bt){const a=attrs(t);if(!('disabled' in a)||a['aria-disabled']!=='true'||a.type!=='button'||'onclick' in a||'formaction' in a||'data-checkout' in a)fail(k+' enabled or hijacked commercial button')}
   const words=h.slice(Math.max(0,h.indexOf('<div class="offer"')),h.indexOf('</aside>')>0?h.indexOf('</aside>'):h.length);
