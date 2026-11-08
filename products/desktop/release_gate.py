@@ -17,6 +17,14 @@ import time
 from datetime import datetime, timezone
 from pathlib import Path
 
+
+# Python -I deliberately omits the script directory from sys.path. Resolve
+# only this Git-owned desktop module directory, not cwd or PYTHONPATH, so the
+# private runner's isolated child commands can import local verification code.
+DESKTOP = Path(__file__).resolve().parent
+if str(DESKTOP) not in sys.path:
+    sys.path.insert(0, str(DESKTOP))
+
 from pe_image_guard import PEFormatError, verify_amd64_pe
 from report_evidence import ReportEvidenceError, prepare_report_path, publish_report
 from candidate_guard import (
