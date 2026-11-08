@@ -1,0 +1,28 @@
+'use strict';
+const assert=require('node:assert/strict');
+const {eligibleAggregate,releaseGate,measuredRevenue}=require('../r199_cohort_gate.cjs');
+const sample=()=>({provenance:'provider_filtered_email_subscribed_aggregate',observed_at:'2026-11-08T02:30:00Z',deduplicated_eligible:2,excludes_unsubscribed:true,excludes_suppressed:true,excludes_paused:true,dispatch_marketing_consent_verified:true});
+const cohort=()=>({window:'7d',start:'2026-11-01T00:00:00Z',end:'2026-11-08T00:00:00Z',campaign:'mind_pilot_2026_11'});
+const session=()=>({independently_audited:true,deduplicated:true,qualified_humans:25,campaign:'mind_pilot_2026_11',cohort_start:cohort().start,cohort_end:cohort().end});
+const merchant=()=>({independently_reconciled:true,complete_order_coverage:true,refund_window_closed:true,fees_reconciled:true,campaign:'mind_pilot_2026_11',cohort_start:cohort().start,cohort_end:cohort().end,orders:[{private_order_key:'synthetic:1',settlement_verified:true,campaign:'mind_pilot_2026_11',gross_usd:30,refunds_usd:5,fees_usd:2}]});
+let n=0;
+function t(name,fn){fn();n++;console.log('PASS '+name);}
+t('status counters cannot prove subscriber eligibility',()=>assert.equal(eligibleAggregate({total:3,confirmed:3,unconfirmed:2}).state,'HOLD'));
+t('zero email-only followers cannot establish eligibility',()=>assert.equal(eligibleAggregate({...sample(),reader_followers_only:true}).state,'HOLD'));
+t('CSS success never confirms consent',()=>assert.equal(eligibleAggregate({...sample(),browser_success_only:true}).state,'HOLD'));
+t('suppressed/paused exclusion required',()=>assert.equal(eligibleAggregate({...sample(),excludes_paused:false}).state,'HOLD'));
+t('consent scope required',()=>assert.equal(eligibleAggregate({...sample(),dispatch_marketing_consent_verified:false}).state,'HOLD'));
+t('provider aggregate is only an aggregate, not send permission',()=>assert.equal(eligibleAggregate(sample()).not_approval_to_send,true));
+t('founder approval absent always holds',()=>assert.equal(releaseGate({issue_number:1,subscriber:sample()}).state,'HOLD'));
+t('commercial offer cannot release without merchant',()=>assert.equal(releaseGate({issue_number:3,subscriber:sample(),founder:{issue_number:3,final_specific_send_authorized:true,approved_at:'2026-11-08T02:30:00Z'},native:{actual_received_jetpack_mime:true,publisher_identity_checked:true,final_vestige_physical_address_visible:true,unsub_visible:true,unsub_function_test_authorized_and_passed:true,html_and_plaintext_received_checked:true}}).state,'HOLD'));
+t('empty purchase report is not confirmed zero',()=>assert.equal(measuredRevenue({cohort:cohort(),session_report:session(),merchant_report:{...merchant(),orders:[]}}).state,'NOT_COMPUTABLE'));
+t('explicit full zero-order report is computable synthetic example',()=>assert.equal(measuredRevenue({cohort:cohort(),session_report:session(),merchant_report:{...merchant(),orders:[],explicit_zero_orders_attested:true}}).net_usd,0));
+t('synth settled paid sale net of refunds and fees',()=>assert.equal(measuredRevenue({cohort:cohort(),session_report:session(),merchant_report:merchant()}).net_usd,23));
+t('qualified-human denominator, not views',()=>assert.equal(measuredRevenue({cohort:cohort(),session_report:{...session(),independently_audited:false},merchant_report:merchant()}).state,'NOT_COMPUTABLE'));
+t('hold if refund window not closed',()=>assert.equal(measuredRevenue({cohort:cohort(),session_report:session(),merchant_report:{...merchant(),refund_window_closed:false}}).state,'NOT_COMPUTABLE'));
+t('hold if 7d/30d windows mismatch',()=>assert.equal(measuredRevenue({cohort:{...cohort(),window:'30d'},session_report:{...session(),cohort_end:'2026-12-08T00:00:00Z'},merchant_report:merchant()}).state,'NOT_COMPUTABLE'));
+t('hold duplicate orders',()=>assert.equal(measuredRevenue({cohort:cohort(),session_report:session(),merchant_report:{...merchant(),orders:[...merchant().orders,...merchant().orders]}}).state,'NOT_COMPUTABLE'));
+t('hold unsafe live order identifiers',()=>assert.equal(measuredRevenue({cohort:cohort(),session_report:session(),merchant_report:{...merchant(),orders:[{...merchant().orders[0],private_order_key:'private-live-order'}]}}).state,'NOT_COMPUTABLE'));
+t('hold if a merchant report is not independently reconciled',()=>assert.equal(measuredRevenue({cohort:cohort(),session_report:session(),merchant_report:{...merchant(),independently_reconciled:false}}).state,'NOT_COMPUTABLE'));
+t('tiny synthetic sample warning',()=>assert.equal(measuredRevenue({cohort:cohort(),session_report:session(),merchant_report:merchant()}).tiny_sample,true));
+console.log(n+' synthetic tests passed; NOT real provider, merchant, or browser evidence.');
