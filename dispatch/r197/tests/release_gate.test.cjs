@@ -41,12 +41,20 @@ test("empty sales cannot be silently reported as zero",()=>{
   assert.equal(revenuePerThousand({orders:[],qualified_human_sessions:10,qualified_human_sessions_verified:true,order_ledger_reconciled:true,refunds_fees_reconciled:true}),null);
 });
 test("verified zero and verified nonzero revenue remain distinct",()=>{
-  const ok={orders:[],qualified_human_sessions:100,qualified_human_sessions_verified:true,order_ledger_reconciled:true,refunds_fees_reconciled:true,zero_orders_independently_verified:true,cohort_days:7};
+  const ok={orders:[],qualified_human_sessions:100,qualified_human_sessions_verified:true,order_ledger_reconciled:true,refunds_fees_reconciled:true,zero_orders_independently_verified:true,zero_orders_source:"merchant_report:no_settlements_vetted",reconciliation_source:"merchant_report:reconciled_qhs_refunds",cohort_days:7};
   assert.equal(revenuePerThousand(ok).net_revenue_usd,0);
-  assert.equal(revenuePerThousand({...ok,orders:[{settled_net_usd:12,independently_verified:true}],zero_orders_independently_verified:false}).revenue_per_1000_qualified_human_sessions_usd,120);
+  assert.equal(revenuePerThousand({...ok,orders:[{settled_net_usd:12,independently_verified:true,merchant_report_ref:"merchant-report-order-001"}],zero_orders_independently_verified:false}).revenue_per_1000_qualified_human_sessions_usd,120);
 });
 test("clicks and revenue data gaps cannot fill checkout ledger",()=>{
   assert.equal(revenuePerThousand({affiliate_clicks:15,email_clicks:3,qualified_human_sessions:100}),null);
-  assert.equal(revenuePerThousand({orders:[{settled_net_usd:12,independently_verified:false}],qualified_human_sessions:100,qualified_human_sessions_verified:true,order_ledger_reconciled:true,refunds_fees_reconciled:true}),null);
+  assert.equal(revenuePerThousand({orders:[{settled_net_usd:12,independently_verified:false}],qualified_human_sessions:100,qualified_human_sessions_verified:true,order_ledger_reconciled:true,refunds_fees_reconciled:true,reconciliation_source:"merchant_report:reconciled"}),null);
 });
 test("invalid issue numbers fail closed",()=>{for(const i of [0,7,null])assert.throws(()=>releaseAssessment(BASE,i));});
+
+test("cohort and statement proof cannot be omitted",()=>{
+ const base={orders:[],qualified_human_sessions:100,qualified_human_sessions_verified:true,order_ledger_reconciled:true,refunds_fees_reconciled:true,zero_orders_independently_verified:true,zero_orders_source:"merch_report:zero",reconciliation_source:"merch_report:reconciled",cohort_days:7};
+ assert.equal(revenuePerThousand({...base,cohort_days:null}),null);
+ assert.equal(revenuePerThousand({...base,reconciliation_source:""}),null);
+ assert.equal(revenuePerThousand({...base,zero_orders_source:""}),null);
+ assert.equal(revenuePerThousand({...base,orders:[{settled_net_usd:10,independently_verified:true}]}),null);
+});
