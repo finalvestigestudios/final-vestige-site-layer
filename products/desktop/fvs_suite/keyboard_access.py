@@ -93,6 +93,31 @@ def install_shortcuts(root, inputs, output, generate, *, review=None,
             return "break"
         return handle
 
-    for sequence, operation in actions.items():
-        root.bind(sequence, make_handler(operation), add="+")
+    # Tk's additive bind would execute Generate/Review twice if this helper
+    # were called again for the same window (e.g. during UI reconstruction).
+    # Reject before changing existing bindings, including preexisting app keys.
+    if getattr(root, "_fvs_shortcuts_installed", False):
+        raise ValueError("Keyboard shortcuts already installed for this window")
+    installed: list[tuple[str, str | None]] = []
+    try:
+        for sequence, operation in actions.items():
+            # Tk returns the unique callback id; it lets us roll back only
+            # OUR newly added function without erasing a preexisting handler.
+            callback_id = root.bind(sequence, make_handler(operation), add="+")
+            installed.append((sequence, callback_id))
+    except Exception:
+        rollback_incomplete = False
+        for sequence, callback_id in reversed(installed):
+            if not callback_id or not callable(getattr(root, "unbind", None)):
+                rollback_incomplete = True
+                continue
+            try:
+                root.unbind(sequence, callback_id)
+            except Exception:
+                rollback_incomplete = True
+        if rollback_incomplete:
+            # An uncertain partial registration must never be installed over.
+            root._fvs_shortcuts_installed = True
+        raise
+    root._fvs_shortcuts_installed = True
     return tuple(actions)
