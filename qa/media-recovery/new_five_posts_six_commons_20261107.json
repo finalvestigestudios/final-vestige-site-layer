@@ -1,0 +1,249 @@
+{
+  "schema": "fv-new-5-posts-6-commons-v1",
+  "date": "2026-11-07",
+  "evidence": "authenticated WordPress posts.get(edit) raw text, catalog HTML open; NO JPEG downloaded, NO guest browser",
+  "baseline": {
+    "posts": 61,
+    "inline_src": 355,
+    "date": "2026-10-30"
+  },
+  "current": {
+    "posts": 66,
+    "inline_src": 361,
+    "date": "2026-11-07",
+    "draft_pr": 1402
+  },
+  "posts": [
+    {
+      "id": 1926,
+      "count": 1
+    },
+    {
+      "id": 1924,
+      "count": 1
+    },
+    {
+      "id": 1922,
+      "count": 0
+    },
+    {
+      "id": 1920,
+      "count": 2
+    },
+    {
+      "id": 1917,
+      "count": 2
+    }
+  ],
+  "older_61_post_srcs_full_diff_verified": false,
+  "claimed_broken_42": "UNVERIFIED",
+  "claimed_76_percent_wire_saving": "UNMEASURED",
+  "wire_before": null,
+  "wire_after": null,
+  "no_wp_write": true,
+  "no_asset_download": true,
+  "no_third_party_cache": true,
+  "no_homepage_change": true,
+  "no_spend": true,
+  "no_new_browser_probe": true,
+  "rows": [
+    {
+      "key": "1926:0",
+      "post_id": 1926,
+      "slot": 0,
+      "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Crystal%20Skull%20British%20Museum%2026072013%2005.jpg?width=900",
+      "alt": "A life-sized skull carved from clear rock crystal, seen from above and the front, resting on a clear stand in a museum display.",
+      "file_page": "https://commons.wikimedia.org/wiki/File:Crystal_Skull_British_Museum_26072013_05.jpg",
+      "image_orig_catalog_px": [
+        1436,
+        2001
+      ],
+      "source_requested_width": 900,
+      "preview_max_960_px": [
+        960,
+        1338
+      ],
+      "catalog_html_opened": true,
+      "catalog_credit": "Vassil",
+      "catalog_license": "CC0 1.0",
+      "subject": "museum photograph",
+      "html_width_attr": null,
+      "html_height_attr": null,
+      "source_origin_http": null,
+      "guest_chrome_http": null,
+      "guest_decode": null,
+      "wire_encoded_bytes": null,
+      "map_zoom_original_link_required": false,
+      "rights_review_complete": false,
+      "attribution_review_complete": false,
+      "cache_approved": false,
+      "wp_upload_approved": false,
+      "wp_post_edit_approved": false
+    },
+    {
+      "key": "1924:0",
+      "post_id": 1924,
+      "slot": 0,
+      "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/%22Le%20Baquet%20de%20Mesmer%22%20Wellcome%20M0006352.jpg?width=900",
+      "alt": "An engraving titled Le Baquet de Mesmer showing a woman seated at a large wooden tub with iron rods rising from it, held by the hand by a man in a wig while two other people stand beside her.",
+      "file_page": "https://commons.wikimedia.org/wiki/File:\"Le_Baquet_de_Mesmer\"_Wellcome_M0006352.jpg",
+      "image_orig_catalog_px": [
+        2988,
+        3538
+      ],
+      "source_requested_width": 900,
+      "preview_max_960_px": [
+        960,
+        1137
+      ],
+      "catalog_html_opened": true,
+      "catalog_credit": "Wellcome Collection",
+      "catalog_license": "CC BY 4.0",
+      "subject": "engraving",
+      "html_width_attr": null,
+      "html_height_attr": null,
+      "source_origin_http": null,
+      "guest_chrome_http": null,
+      "guest_decode": null,
+      "wire_encoded_bytes": null,
+      "map_zoom_original_link_required": false,
+      "rights_review_complete": false,
+      "attribution_review_complete": false,
+      "cache_approved": false,
+      "wp_upload_approved": false,
+      "wp_post_edit_approved": false
+    },
+    {
+      "key": "1920:0",
+      "post_id": 1920,
+      "slot": 0,
+      "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Front%20of%204th%20century%20CE%20Roman%20Lycurgus%20Cup%2C%20British%20Museum%20%281958%2C1202.1%29.jpg?width=1280",
+      "alt": "The Lycurgus Cup, a late Roman cage cup of greenish glass with a figural frieze cut in open work, shown in the British Museum.",
+      "file_page": "https://commons.wikimedia.org/wiki/File:Front_of_4th_century_CE_Roman_Lycurgus_Cup,_British_Museum_(1958,1202.1).jpg",
+      "image_orig_catalog_px": [
+        2720,
+        3649
+      ],
+      "source_requested_width": 1280,
+      "preview_max_960_px": [
+        960,
+        1288
+      ],
+      "catalog_html_opened": true,
+      "catalog_credit": "Chappsnet",
+      "catalog_license": "CC BY 4.0",
+      "subject": "museum photograph",
+      "html_width_attr": null,
+      "html_height_attr": null,
+      "source_origin_http": null,
+      "guest_chrome_http": null,
+      "guest_decode": null,
+      "wire_encoded_bytes": null,
+      "map_zoom_original_link_required": false,
+      "rights_review_complete": false,
+      "attribution_review_complete": false,
+      "cache_approved": false,
+      "wp_upload_approved": false,
+      "wp_post_edit_approved": false
+    },
+    {
+      "key": "1920:1",
+      "post_id": 1920,
+      "slot": 1,
+      "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Top%20view%20of%20the%20famed%20Lycurgus%20Cup%20in%20the%20British%20Museum%2C%20showing%20the%20glass%20both%20green%20and%20ruby%20red.jpg?width=1280",
+      "alt": "Top view of the Lycurgus Cup in a British Museum display, with the glass showing both green and ruby red depending on how the light passes through it.",
+      "file_page": "https://commons.wikimedia.org/wiki/File:Top_view_of_the_famed_Lycurgus_Cup_in_the_British_Museum,_showing_the_glass_both_green_and_ruby_red.jpg",
+      "image_orig_catalog_px": [
+        3024,
+        4032
+      ],
+      "source_requested_width": 1280,
+      "preview_max_960_px": [
+        960,
+        1280
+      ],
+      "catalog_html_opened": true,
+      "catalog_credit": "Chappsnet",
+      "catalog_license": "CC BY 4.0",
+      "subject": "museum photograph",
+      "html_width_attr": null,
+      "html_height_attr": null,
+      "source_origin_http": null,
+      "guest_chrome_http": null,
+      "guest_decode": null,
+      "wire_encoded_bytes": null,
+      "map_zoom_original_link_required": false,
+      "rights_review_complete": false,
+      "attribution_review_complete": false,
+      "cache_approved": false,
+      "wp_upload_approved": false,
+      "wp_post_edit_approved": false
+    },
+    {
+      "key": "1917:0",
+      "post_id": 1917,
+      "slot": 0,
+      "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Piri%20reis%20world%20map%2001.jpg?width=1280",
+      "alt": "The surviving fragment of the 1513 Piri Reis world map: parchment with the Atlantic Ocean, the coasts of Europe, Africa and South America, compass roses, and annotations in Ottoman Turkish.",
+      "file_page": "https://commons.wikimedia.org/wiki/File:Piri_reis_world_map_01.jpg",
+      "image_orig_catalog_px": [
+        1964,
+        2619
+      ],
+      "source_requested_width": 1280,
+      "preview_max_960_px": [
+        960,
+        1280
+      ],
+      "catalog_html_opened": true,
+      "catalog_credit": "Piri Reis / Topkapi Palace",
+      "catalog_license": "PD-art",
+      "subject": "detail-heavy historic map",
+      "html_width_attr": null,
+      "html_height_attr": null,
+      "source_origin_http": null,
+      "guest_chrome_http": null,
+      "guest_decode": null,
+      "wire_encoded_bytes": null,
+      "map_zoom_original_link_required": true,
+      "rights_review_complete": false,
+      "attribution_review_complete": false,
+      "cache_approved": false,
+      "wp_upload_approved": false,
+      "wp_post_edit_approved": false
+    },
+    {
+      "key": "1917:1",
+      "post_id": 1917,
+      "slot": 1,
+      "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Cantino%20planisphere%20%281502%29.jpg?width=1280",
+      "alt": "The 1502 Cantino planisphere, a Portuguese world chart showing the world as Europeans knew it after the first voyages to the Americas, Africa and India, with a vertical line near the left edge.",
+      "file_page": "https://commons.wikimedia.org/wiki/File:Cantino_planisphere_(1502).jpg",
+      "image_orig_catalog_px": [
+        10643,
+        4998
+      ],
+      "source_requested_width": 1280,
+      "preview_max_960_px": [
+        960,
+        451
+      ],
+      "catalog_html_opened": true,
+      "catalog_credit": "Biblioteca Estense Universitaria, Modena",
+      "catalog_license": "PD-mechanical scan",
+      "subject": "detail-heavy historic map",
+      "html_width_attr": null,
+      "html_height_attr": null,
+      "source_origin_http": null,
+      "guest_chrome_http": null,
+      "guest_decode": null,
+      "wire_encoded_bytes": null,
+      "map_zoom_original_link_required": true,
+      "rights_review_complete": false,
+      "attribution_review_complete": false,
+      "cache_approved": false,
+      "wp_upload_approved": false,
+      "wp_post_edit_approved": false
+    }
+  ]
+}
