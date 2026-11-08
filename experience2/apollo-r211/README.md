@@ -1,39 +1,41 @@
-# Apollo Experience 2.0 R211 — photo-date precision and source custody (DRAFT / STAGING HOLD)
+# Apollo Experience 2.0 R211 — NASA photo/report cross-check (DRAFT / STAGING HOLD)
 
-**Scope:** isolated `experience2/apollo-r211/`, stacked on the **exact** R210 commit `c417f6063a5ba480fc7783bd62f021c6b3e5c1a8` (draft PR #1559). Do not alter homepage PR #49, original Research Desk PR #158, WordPress content/settings, social posts, emails, checkout, analytics or paid services. This code does not deploy.
+**Scope:** isolated `experience2/apollo-r211/`, stacked on exact R210 SHA `c417f6063a5ba480fc7783bd62f021c6b3e5c1a8`, draft PR #1559. No modification of homepage PR #49, original Research Desk PR #158, WordPress production/staging content/settings, affiliate offers, emails, social distribution or measurement scripts.
 
-## Actual historical defect corrected
+## Source evidence and final correction
 
-The R210 source ledger and chronology repeatedly presented NASA archival photo **S67-15717 as a photo dated 3 January 1967**. NASA's Apollo 1 gallery catalogs S67-15717 only as **"(1967)"**, without a day. NASA's **separate Review Board narrative** dates the command module's removal from the altitude chamber to **3 January 1967**. The two facts must not be silently merged.
+NASA's S67-15717 **image-detail page** has two separate date surfaces: caption `S67-15717 (1967)` and explicit metadata **`Taken January 3, 1967`**. The original Apollo R210 date was accurate; an initial R211 staging idea relied only on the year-only caption, but a second direct-page review revealed the day-specific Taken field. This prototype's final source custody retains Jan 3 as the photo date and cites the **image-detail Taken field**, not just the gallery caption. Separately, the Apollo 204 Review Board report dates **command-module altitude-chamber removal** to January 3. They corroborate the date but **do not establish that the photograph depicts chamber removal**, the exact sequence of operations, or fire conditions.
 
-Primary records:
-- NASA photo: https://www.nasa.gov/image-detail/amf-s67-15717/
-- NASA image gallery (shows **S67-15717 (1967)**): https://www.nasa.gov/gallery/apollo-1/
-- NASA Review Board, pre-accident test history (states chamber removal Jan 3): https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/
-- NASA advertising guidelines / promotion restrictions: https://www.nasa.gov/nasa-brand-center/advertising-guidelines/
+Primary sources (checked 2026-11-08):
+- NASA photo catalog image detail, `Taken January 3, 1967`: https://www.nasa.gov/image-detail/amf-s67-15717/
+- NASA Apollo 1 image gallery, year-only caption: https://www.nasa.gov/gallery/apollo-1/
+- NASA Apollo 204 Review Board, January 3 chamber removal: https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/
+- NASA advertising/nonendorsement limits: https://www.nasa.gov/nasa-brand-center/advertising-guidelines/
 
-R211 preserves the **Jan 3 dated preparation milestone**, replaces its misleading photo-day evidence link with a **Board record link**, provides the year-only photo link separately, adds an explicit document/photo-date distinction, corrects the gallery and custody explanations, and corrects BOTH machine-readable source-record and custody-ledger dates to year precision. No archival image is copied or commercially licensed by this change. No speculative map pins or relationship edges.
+R211 adds both direct NASA citations, an accessible chronological **date-source cross-check**, corrects the gallery/custody explanation, and machine-readable source-record and custody-ledger metadata with explicit independent `date_source_url` and `event_source_url`. No new media embedding, fictional geographic pins/edges, extra JavaScript or paid CTA.
 
-## Exact-source reproduction
+## Source reproduction
 
-R210 staging assets must be supplied from the independent R210 source package or reproducibly built equivalent. The builder hard-fails if **R210 `manifest.json` SHA-256 differs from `ff13886f46237b08e71d6b68cb13f8d712941cea6e99b1130c7e8de9736a3e7b`** or if any manifest-pinned file differs. The parent is **not** the public main branch: don't suggest a clean main-to-production merge.
+R210 generated stage assets are required. Hard SHA-256 pin: R210 `manifest.json` must be `ff13886f46237b08e71d6b68cb13f8d712941cea6e99b1130c7e8de9736a3e7b`; each R210 asset must also match its manifest. Generated R211 `dist/` is excluded from commits.
 
 ```sh
 export FV_APOLLO_R210_DIST=/absolute/path/to/R210/dist
 python3 experience2/apollo-r211/build_r211.py
 php -l experience2/apollo-r211/dist/fv-ex2-apollo-r211.php
-python3 experience2/apollo-r211/qa/gate_r211.py /tmp/apollo-r211-evidence-A
-python3 experience2/apollo-r211/qa/gate_r211.py /tmp/apollo-r211-evidence-B
+python3 experience2/apollo-r211/qa/gate_r211.py /tmp/apollo-r211-A
+python3 experience2/apollo-r211/qa/gate_r211.py /tmp/apollo-r211-B
 ```
 
-All files under R211 `dist/` are generated and deliberately **not committed**. Each output is hash-pinned in its deterministic manifest. The real browser tests use Chromium/Playwright with the PHP shortcode shim, 11 contexts per run (320/360/390/768/1440/1920, no JS, touch, reduced-motion, forced colors and simulated CSS zoom). Capture is taken **before** touch interactions so touch hover state does not contaminate deterministic screenshot evidence. Tests include keyboard link/disclosure activation, print-visible closed answer guide and date note, fail-open late shortcode, six adversarial mutations, no overflow or browser errors, and buffered PerformanceObserver LCP/CLS (fixture only).
+## Actual local test scope and limits
 
-**Limits:** browser `set_content` is **not** installed WordPress/Assembler, an actual live or staging URL, an external link browser test, or production Core Web Vitals. Simulated CSS zoom is not OS/browser zoom. Genuine axe-core, NVDA/VoiceOver, installed WordPress staging acceptance, GitHub-hosted exact-head CI, independent QA and founder approval are **NOT VERIFIED**. The known inherited R198 canonical source-chain discrepancy remains **NOT RECONCILED**. These are release HOLD gates, not implicit PASSES.
+The real Playwright/Chromium 144 test suite uses PHP shortcode-shim HTML, 11 browser contexts per run from **320 to 1920px**, keyboard/Enter and native disclosures, touch, JavaScript-off, reduced motion, forced colors, 200%-CSS-zoom simulation, closed-answer print visibility and late-render fail-open fallback. It captures screenshots **before** touch interactions to prevent nondeterministic touch-hover state. The fixture-only buffered PerformanceObserver records LCP and CLS. Negative-mutation checks guard false photo-date claims, missing proof, duplicate CTA, dead fragment, fabricated geo and false NASA endorsement.
 
-## One aligned source-to-revenue hypothesis
+**Do not equate fixture tests with installed WordPress/Assembler, live link navigation, real 200% browser zoom or production CWV.** Genuine axe-core, NVDA/VoiceOver, installed staging/shortcode acceptance, exact-head CI, independent QA, canonical R198 chain reconstruction and founder release authorization remain **NOT VERIFIED**. No media commercialization rights are approved.
 
-Grok's *future confirmed* Apollo long-form documentary → Apollo Evidence Atlas → accurate source custody / source-comparison lesson → **Read original investigation** (one nonintrusive free CTA) → **proposed** teacher-ready evidence dossier ONLY AFTER buyer demand, NASA-commercial-rights review, verified SKU, price, merchant checkout/fulfillment and founder approval.
+## Conversion-first lane
 
-The educator dossier remains a hypothesis, **not a purchasable product**. No UTM campaign/asset ID or proven social link, confirmed subscriber, paid checkout, merchant-confirmed order, affiliate commission, refund data or realized net revenue is established here. Preserve Claude analytics ownership (#820), Grok distribution and Praxxis creator QA (TASK-008). Do not add or duplicate measurement scripts. Core KPI, **net revenue per 1,000 qualified human sessions**, is currently **not computable**. Only merchant-verified orders less refunds/fees count as net revenue.
+Grok (once a real asset ID and publication link are verified) → Apollo Atlas → independently sourced photo/Board date clarification → source-comparison exercise → **Read original investigation** (the existing free CTA) → proposed educator dossier **only after** teacher demand, rights, an actual approved SKU, checkout/fulfillment and founder approval. The proposed dossier is **not presently for sale**. This branch adds no new paid CTA, no affiliate links, no marketing scripts, and no asserted conversions. Net revenue per 1,000 qualified human sessions is **NOT COMPUTABLE** without source-of-truth qualified sessions and merchant-confirmed paid orders less refunds/fees.
 
-**Release gate: STAGING HOLD.** Never deploy or approve use of NASA media commercially based on this source correction alone.
+Grok owns content/distribution; Praxxis owns creator QA and TASK-008; Claude owns production website/analytics; founder retains release/spend approval. Cross-reference engineering #150, business measurement #820 and charter #818.
+
+**Release gate: STAGING HOLD.**
