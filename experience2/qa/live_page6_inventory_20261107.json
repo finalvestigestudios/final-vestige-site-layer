@@ -1,0 +1,32 @@
+{
+  "kind": "FV_READ_ONLY_WORDPRESS_PAGE_6_INVENTORY_V1",
+  "source": "WORDPRESS_PAGES_GET_READ_ONLY",
+  "source_read_utc": "2026-11-08T03:08:41Z",
+  "wp_page_id": 6,
+  "wp_status": "publish",
+  "wp_slug": "home",
+  "wp_modified": "2026-11-05T12:07:24",
+  "wp_content_utf8_sha256": "685911178ae68ca9dfbd8f47f5903ef57f76ac4b52e886d8287416304c98794b",
+  "chapter_ids": [
+    "fv-hf-title",
+    "fv-hf-chronicle",
+    "fv-hf-evidence",
+    "fv-hf-inquiry",
+    "fv-hf-method-title",
+    "fv-hf-observer",
+    "fv-hf-mind-title"
+  ],
+  "margins_count": 72,
+  "focus_link_count": 4,
+  "hero_folio_present": true,
+  "flagship_present": true,
+  "archive_images": [
+    "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/s67-19766.webp?resize=1041%2C810&#038;ssl=1",
+    "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/Franklinexpeditionnote.jpg?resize=960%2C1526&#038;ssl=1",
+    "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/edit-017-v02-nypl-5003296-original.jpg?fit=1024%2C692&amp;ssl=1"
+  ],
+  "notes": [
+    "Derived from read-only WordPress Page 6 structured content; complete HTML, user records and configuration not committed.",
+    "The NYPL map is publicly present, unlike the isolated preview; rights remain under independent review."
+  ]
+}
