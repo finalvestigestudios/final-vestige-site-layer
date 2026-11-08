@@ -1,5 +1,5 @@
 ---
-title: "The Man in the Suit Who Was Never Seen"
+title: "The Figure Some Viewers Missed"
 status: UNPUBLISHED_RESEARCH_DRAFT
 date_researched: 2026-11-08
 pillar: "Mind & Perception / Perception & Attention"
@@ -8,15 +8,15 @@ commerce: NONE_IN_INVESTIGATION
 summary: "What the invisible gorilla experiments actually show about attention, expertise, and the temptation to sell concentration."
 ---
 
-# The Man in the Suit Who Was Never Seen
+# The Figure Some Viewers Missed
 
 *An extraordinary absence can occur in a perfectly ordinary field of view.*
 
-The experiment lasts less than a minute. Two teams move around a small space, passing basketballs while a camera watches. The viewer is asked to perform a task that sounds almost embarrassingly simple: count one team's passes. The players move quickly. The ball changes hands. The count must be kept in mind.
+The widely circulated chest-thumping basketball demonstration runs for about 62 seconds. Two teams move around a small space, passing basketballs while a camera watches. The viewer is asked to perform a task that sounds almost embarrassingly simple: count one team's passes. The players move quickly. The ball changes hands. The count must be kept in mind.
 
 Then an uninvited figure enters.
 
-In the best-known version, someone wearing a gorilla costume walks into the middle of the action, faces the camera, beats their chest, and leaves. The figure isn't hidden in a corner or flashed for a single frame. It occupies the scene for several seconds. The surprise is not that the figure appears. The surprise is that many people, sincerely and without any apparent impairment of eyesight, later say it did not.
+In the best-known demonstration, a woman wearing a gorilla costume walks into the action, faces the camera, beats her chest, and leaves. The figure remains visible for about nine seconds; it is not true that every participant misses her. In an additional-observer check described by the researchers, six of twelve noticed the unexpected figure. The figure isn't hidden in a corner or flashed for a single frame. It occupies the scene for several seconds. The surprise is not that the figure appears. The surprise is that many people, sincerely and without any apparent impairment of eyesight, later say it did not.
 
 This is the uncomfortable opening of an inquiry into *inattentional blindness*. It raises an even more uncomfortable question: when we fail to notice something, how much should we trust the confidence of our later explanation? And if attention is so selective, what can a commercial recording reasonably claim to change?
 
@@ -56,7 +56,7 @@ The awkwardness is that the observer often feels as though the whole scene was a
 
 ## The expert and the enormous gorilla
 
-In 2013, Trafton Drew, Melissa Võ and Jeremy Wolfe asked whether professional expertise would close that opening. They recruited 24 radiologists to search computed-tomography lung scans for nodules. In the final case, researchers inserted a drawing of a gorilla. According to the study abstract, it was roughly 48 times the size of an average nodule. Eighty-three percent of the radiologists failed to report it. Eye tracking showed that many of those who missed the figure had looked at its location. [3]
+In 2013, Trafton Drew, Melissa Võ and Jeremy Wolfe asked whether professional expertise would close that opening. They recruited 24 radiologists to search computed-tomography lung scans for nodules. In the final case, researchers inserted a drawing of a gorilla. The authors described a roughly 48-fold *volume* comparison: the rectangular bounding volume around the inserted gorilla exceeded 7,400 mm³, compared with a 153 mm³ average nodule volume; this was not a claim that the figure was 48 times taller. Eighty-three percent of the radiologists failed to report it. Eye tracking showed that many of those who missed the figure had looked at its location. [3]
 
 This finding is easy to abuse. It does **not** show that radiologists routinely miss dangerous lung abnormalities at the same rate, that their professional training is ineffective, or that all medical scans should be treated as suspect. The gorilla was a deliberately unexpected, task-irrelevant insertion; the study was not an evaluation of actual diagnostic quality.
 
@@ -86,7 +86,7 @@ If the second reader spots a date conflict the first misses, there is no paradox
 
 Final Vestige's investigation of the eighteenth-century animal-magnetism movement raises a related but distinct problem. The stories surrounding the Marquis de Puységur include observers who reported remarkable behavior and drew elaborate explanations from it. The surviving record is evidence that claims were made, observations were recorded and interpretations circulated. It does not independently demonstrate the invisible force those observers proposed. [5]
 
-The connection is a matter of *evidence discipline*, not a claim that nineteenth-century witnesses were unknowingly performing the modern gorilla experiment. In both settings, a careful investigator asks what the observer was instructed to notice, what could have escaped notice, what other explanations remain possible and which conclusions go beyond the record.
+The connection is a matter of *evidence discipline*, not a claim that eighteenth-century witnesses in the Puységur circle were unknowingly performing the modern gorilla experiment. In both settings, a careful investigator asks what the observer was instructed to notice, what could have escaped notice, what other explanations remain possible and which conclusions go beyond the record.
 
 The archive gains credibility by preserving those differences. A striking report is the beginning of inquiry, not a license to choose the most captivating explanation.
 
