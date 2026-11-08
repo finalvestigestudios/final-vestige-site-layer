@@ -93,7 +93,7 @@ function run(f){
  mutate("publish_meditation_equivalence",x=>edit(x,o=>o.claims.find(c=>c.id==="C14").status="PRODUCT_PROVEN"));
  mutate("equate_click_sale",x=>edit(x,o=>o.conversion_contract.affiliate_click_is_paid_sale=true));
  mutate("enable_fingerprinting",x=>edit(x,o=>o.conversion_contract.no_fingerprinting=false));
- mutate("remove_campaign_proof",x=>x.plan=x.plan.replace("TASK-008","UNKNOWN"));
+ mutate("remove_campaign_proof",x=>x.plan=x.plan.replaceAll("TASK-008","UNKNOWN"));
  mutate("remove_QA_repair",x=>x.priorTest=x.priorTest.replace("add_unquoted_checkout_anchor","removed"));
  mutate("remove_R219_correct_name",x=>x.priorArticle=x.priorArticle.replace("Katharine Molloy","Katie Molloy"));
  return {baseline,detected:tests.filter(z=>z[1]).length,total:tests.length,missing:tests.filter(z=>!z[1]).map(z=>z[0]),passed:baseline.length===0&&tests.every(z=>z[1])};
