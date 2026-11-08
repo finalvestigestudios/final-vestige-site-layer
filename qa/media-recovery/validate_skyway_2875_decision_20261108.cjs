@@ -4,6 +4,8 @@ function fail(s){throw Error('Skyway recovery HOLD: '+s)}
 function verify(a){
  if(!a||a.schema!=='fv-skyway-2875-candidate-decision-v1'||a.source_p0_image_key!=='287:5'||a.article_id!==287)fail('identity');
  if(a.published_original_source_url!=='https://stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg')fail('source drift');
+ if(a.article_url!=='https://finalvestige.com/2026/08/19/the-warning-was-a-man-waving-sunshine-skyway/'||a.published_original_alt_claim!=='The old Sunshine Skyway wreckage and the later bridge replacement in Tampa Bay.')fail('frozen article/ALT mismatch');
+ if(a.frozen_source_blob_sha!=='49183f66f880f7c4dfd363acca906876877f2e5e')fail('frozen provenance changed');
  if(a.visitor_browser_http_status!==null||a.visitor_browser_natural_dimensions!==null||a.visitor_browser_transferred_bytes!==null||a.visitor_broken!==null)fail('fabricated browser proof');
  if(a.reported_42_broken!=='UNVERIFIED'||a.reported_76_percent_transfer_reduction!=='UNMEASURED')fail('unverified sitewide claims');
  for(const k of ['replacement_authorized','wordpress_write_authorized','image_downloaded','site_qa_collector_modified','homepage_modified'])if(a[k]!==false)fail('unsafe action '+k);
