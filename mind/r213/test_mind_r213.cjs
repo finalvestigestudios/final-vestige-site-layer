@@ -50,7 +50,7 @@ function validate(f){
  check(/no direct|no raw IP|no raw email/i.test(p),'privacy contract');
  check(/42-second|42 second|42s/i.test(p),'optional 42sec video hypothesis');
  check(/HARD HOLD/.test(p),'no release');
- check(prev.includes('Forty-five')&&prev.includes('16 of 50')&&prev.includes('7 of 50')&&prev.includes('6 of 50'),'corrected 1974 full primary methods');
+ check(prev.toLowerCase().includes('forty-five')&&prev.includes('16 of 50')&&prev.includes('7 of 50')&&prev.includes('6 of 50'),'corrected 1974 full primary methods');
  check(prev.includes('N=129')&&prev.includes('N=195')&&prev.includes('75%')&&prev.includes('41%'),'corrected 1978 primary conditions');
  check(prev.includes('first')&&prev.includes('own words')&&prev.includes('NONCANONICAL'),'initial free account and duplicate status');
  check(old.source_refs?.filter(x=>x.url==='UNVERIFIED').length===2,'old matrix 2 placeholders');
@@ -85,7 +85,7 @@ const cases=[
  ['invent conversion','matrix',x=>x.replace('"current_kpi": "NOT_COMPUTABLE_NOT_ZERO"','"current_kpi": "REVENUE_PROVEN"')],
  ['remove campaign map','plan',x=>x.replace('TASK-008','UNRECONCILED_QUEUE')],
  ['remove film test requirement','plan',x=>x.replaceAll('42-second','forty-two seconds').replaceAll('42sec','fortytwo').replaceAll('42s','many')],
- ['restore false memory experiment','previous',x=>x.replace('Forty-five students','Uncounted students')],
+ ['restore false memory experiment','previous',x=>x.replace('forty-five students','Uncounted students')],
  ['undo 1978 recognition precision','previous',x=>x.replace('75%','unverified proportion')],
  ['restore wrong currency','previousMatrix',x=>x.replace('CONFLICTING_SELLER_PUBLIC_DISPLAY','PUBLIC_DISPLAY_ONLY')],
  ['activate inherited A CTA','variantA',x=>x.replace(/(<button\b[^>]*?)\bdisabled\b/i,'$1')],
