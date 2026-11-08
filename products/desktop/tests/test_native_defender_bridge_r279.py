@@ -122,7 +122,7 @@ class NativeDefenderBridgeTests(unittest.TestCase):
     def test_no_distribution_or_malware_certification_claim(self):
         self.assertIn("no distribution", module.SUCCESS)
         self.assertIn("no release authorized", module.ERROR)
-        self.assertIn("no remediation", module.SUCCESS.lower())
+        self.assertIn("no-remediation", module.SUCCESS.lower())
 
     def test_defender_help_cli_loads_under_python_isolation(self):
         # Real Linux/Windows Python process, but NO AV scan or exe execution.
