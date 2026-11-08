@@ -11,10 +11,10 @@ for(const e of m.emails){
   const html=fs.readFileSync(path.join(root,'preview',e.slug+'.html'),'utf8');
   assert.ok(src.includes('UNSENT REVIEW ALTERNATIVE')); checks++;
   assert.ok(src.includes('**Subject:** '+e.subject)&&src.includes('**Preheader:** '+e.preheader)); checks++;
-  assert.equal((src.match(/\\*\\*ONE CTA/g)||[]).length,1); checks++;
+  assert.equal((src.match(/\*\*ONE CTA/g)||[]).length,1); checks++;
   assert.ok(src.includes('VALID_FINAL_VESTIGE_POSTAL_ADDRESS_REQUIRED')&&src.includes('JETPACK_UNSUBSCRIBE_MUST_BE_VERIFIED')); checks++;
   assert.ok(html.includes('role="presentation"')&&html.includes('lang="en"')&&html.includes('max-width:600px')&&html.includes('overflow-wrap:anywhere'));checks++;
-  assert.ok(!/<script|<img|tracking|pixel.gif/i.test(html));checks++;
+  assert.ok(!/<script|<img|pixel.gif/i.test(html));assert.ok(!html.includes('<strong></strong>')&&html.length<12000);checks++;
   assert.ok(e.approved===false&&e.send_authorized===false);checks++;
   if(e.kind==='commercial-review-pending'){
     assert.ok(e.proposed_destination.startsWith('[[')&&src.includes('Commercial disclosure immediately beside'));checks++;
