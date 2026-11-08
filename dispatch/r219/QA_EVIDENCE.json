@@ -1,0 +1,24 @@
+{
+  "run_date_utc": "2026-11-08",
+  "scope": "Offline R219 static review_board.html only, NOT Jetpack email/native WordPress/merchant production",
+  "local_board_git_blob_sha1": "237a63c3736d9e52f3c9a306973f05e145a70281",
+  "github_board_git_blob_sha1": "237a63c3736d9e52f3c9a306973f05e145a70281",
+  "browser": "headless Chromium /usr/bin/chromium through Python Playwright",
+  "method": "page.set_content of local HTML bytes; file:// blocked by administrator",
+  "viewport_checks": [
+    {"width": 320, "height": 740, "zoom": 1, "overflow": false, "keyboard_tab_first_link": true, "pass": true},
+    {"width": 360, "height": 740, "zoom": 1, "overflow": false, "keyboard_tab_first_link": true, "pass": true},
+    {"width": 390, "height": 844, "zoom": 1, "overflow": false, "keyboard_tab_first_link": true, "pass": true},
+    {"width": 768, "height": 1024, "zoom": 1, "overflow": false, "keyboard_tab_first_link": true, "pass": true},
+    {"width": 1024, "height": 768, "zoom": 1, "overflow": false, "keyboard_tab_first_link": true, "pass": true},
+    {"width": 1440, "height": 900, "zoom": 1, "overflow": false, "keyboard_tab_first_link": true, "pass": true},
+    {"width": 390, "height": 844, "zoom": 2, "overflow": false, "keyboard_tab_first_link": true, "pass": true}
+  ],
+  "static_assertions": {"four_cards": true, "zero_scripts": true, "zero_forms": true, "zero_inputs": true, "zero_merchant_links": true, "visible_hold_banner": true},
+  "native_python_unittest": {"tests_run": 17, "failures": 0, "errors": 0},
+  "canonical_pr175_guard_logic": {"v8_equivalent_conditions_checked": 6, "passed": 6, "native_python_on_exact_pr175": false},
+  "legal_footer_received_qa": false,
+  "native_jetpack_rendered_email": false,
+  "actual_paid_orders_or_commissions_verified": false,
+  "final_release": "HOLD_UNSENT"
+}
