@@ -58,6 +58,7 @@ function check(f){
  for(const u of ['https://eprints.bournemouth.ac.uk/31277/','https://pubmed.ncbi.nlm.nih.gov/36526937/','https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/'])if(!f.article.includes(u))fail('article missing primary/historical evidence '+u);
  if(!/no affiliate endorsement|no referral link|no price recommendation/i.test(f.article))fail('article editorial-commerce separation absent');
  for(const s of ['SV9m07PFTYk','NOT_COMPUTABLE','confirmed_focus_subscriber','affiliate_outbound','merchant_confirmed_paid_sale','1000*N/Q'])if(!f.plan.includes(s))fail('conversion attribution acceptance missing '+s);
+ if(/PAID_SALE_INFERRED|GUARANTEED_REVENUE|CLICK_IS_SALE/.test(f.plan))fail('invented paid sales from funnel events');
  return [...new Set(e)];
 }
 function mutationCases(f){
