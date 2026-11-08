@@ -1,0 +1,78 @@
+{
+  "case": "Dispatch R202 — read-only Focus source + independent non-sending Issue03",
+  "observed_at_utc": "2026-11-08T05:31:40Z",
+  "source_refs": {
+    "original_campaign_pr": "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/175",
+    "readiness_pr": "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/201",
+    "previous_dispatch_pr": "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/1532",
+    "dispatch_issue": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/174",
+    "mind_issue": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+    "conversion_issue": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820"
+  },
+  "observed_wp": {
+    "site": "https://finalvestige.com",
+    "newsletter_enabled": true,
+    "auto_send_new_posts": false,
+    "content_format": "full",
+    "total_counter": 3,
+    "confirmed_counter": 3,
+    "unconfirmed_counter": 2,
+    "suppressed_counter": 0,
+    "counts_additive": false,
+    "eligible_email_subscribers": null,
+    "welcome_configured": true,
+    "welcome_received_verified": false,
+    "recent_campaign_sends": 0,
+    "published_pages": {
+      "dispatch": 523,
+      "focus": 1579,
+      "editorial_standards": 17
+    }
+  },
+  "focus_source_finding": {
+    "source_only": true,
+    "unsafe_query_to_gift_visibility": true,
+    "unsafe_css_class_to_gift_visibility": true,
+    "server_confirmed_subscription_from_ui": false,
+    "runtime_subscribe_form_working": null,
+    "category": "MEASUREMENT_AND_UI_STATE_AMBIGUITY"
+  },
+  "commercial": {
+    "provisional_offer": "Zen12 Premium",
+    "catalog_evidence": "https://zen12.com/hnp",
+    "partner_portal": "https://affiliates.inspire3.com/",
+    "named_fv_approval": false,
+    "email_promotion_permission": false,
+    "earning_url_verified": false,
+    "guide_live_and_approved": false,
+    "merchant_claims_independently_proven": false,
+    "reconciled_purchases": null,
+    "qualified_human_sessions": null,
+    "net_revenue_per_1000_qualified_humans": null
+  },
+  "email_compliance": {
+    "real_jetpack_preview": false,
+    "received_mail": false,
+    "publisher_postal_verified": false,
+    "functional_unsubscribe_verified": false,
+    "founder_send_approval": false
+  },
+  "pilot": {
+    "draft_all_six_hold": true,
+    "four_editorial": 4,
+    "two_commercial_hold": [
+      3,
+      5
+    ],
+    "original_files_mutated": false
+  },
+  "qa": {
+    "exact_github_sourced_v8_cjs_tests_pass": 40,
+    "exact_github_sourced_v8_cjs_tests_fail": 0,
+    "native_node_new_suite": false,
+    "native_python_original_suite_pass": 6,
+    "browser_renderer": false,
+    "real_inbox_test": false
+  },
+  "release": "HOLD_UNSENT; Issues 03/05 HOLD_MERCHANT"
+}
