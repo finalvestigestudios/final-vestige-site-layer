@@ -149,7 +149,7 @@ header('X-Robots-Tag: noindex, nofollow');
    forged=urllib.request.Request(origin+'/fv-ex2-review/',headers={'Host':'finalvestige.com'})
    try:urllib.request.urlopen(forged,timeout=2);raise AssertionError('FORGED_HOST_ACCEPTED')
    except urllib.error.HTTPError as e:assert e.code==403
-   return {'http_admission':'PASS','assertions':16,'local_host':True,
+   return {'http_admission':'PASS','assertions':14,'local_host':True,
            'home_http_status':code,'rendered_bytes':len(body),
            'sha256':hashlib.sha256(body).hexdigest(),'actual_wordpress_core':False,
            'native_chromium_navigation':'NOT_TESTED','image_transfer':'NOT_VERIFIED',
