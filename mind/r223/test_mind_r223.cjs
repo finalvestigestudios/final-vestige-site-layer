@@ -33,7 +33,7 @@ function validate(doc) {
       if(!/aria-disabled="true"/i.test(btn)) errors.push(label+':aria-disabled');
       if(/\s(on\w+|formaction|href|data-url)\s*=/i.test(btn)) errors.push(label+':activated-button-attr');
     }
-    const p=html.indexOf('Affiliate disclosure:');
+    const p=html.toLowerCase().indexOf('affiliate disclosure:');
     if(p<0) errors.push(label+':missing-disclosure');
     else if(buttons.length && !html.slice(p,p+650).includes(buttons[0])) errors.push(label+':disclosure-not-adjacent');
     if(/<input\b|autocomplete\s*=|localStorage|sessionStorage|gtag\s*\(/i.test(html))errors.push(label+':email-or-tracking');
