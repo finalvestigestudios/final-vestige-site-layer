@@ -30,9 +30,12 @@ const lockedStatuses={
  C28:'independent_research_context_specific',C29:'independent_review',
  C30:'replicated_core_with_variation',C31:'meta_analysis_general_not_product',
  C32:'meta_analysis_general_not_product',C33:'unsupported_product_specific_benefit_DO_NOT_ADOPT',
- C34:'independent_research_abstract',C35:'reported_public_id_independent_handoff',C36:'UNVERIFIED_HARD_HOLD'
+ C34:'independent_research_abstract',C35:'reported_public_id_independent_handoff',C36:'UNVERIFIED_HARD_HOLD',C37:'public_affiliate_portal_not_publisher_permission'
 };
 function check(obj){
+ if(/relative chance statement|37\\.9-percentage-point gap/.test(obj.oldArt))return ['oldArt:unproven-model-interpretation'];
+ const c28=obj.matrix.claims.find(c=>c.id==='C28');
+ if(!c28||!/pooled practitioners and novices/.test(c28.statement||''))return ['matrix:C28-EEG-pooled-correlation'];
  const e=[], m=obj.matrix;
  for(const [label,html] of [['hub',obj.hub],['A',obj.a],['B',obj.b]]){
   if(/<\s*(?:script|form|input|iframe|video|audio|source)\b/i.test(html))e.push(label+':no-unapproved-embeds-or-forms');
@@ -91,6 +94,10 @@ function check(obj){
 }
 const clone=x=>JSON.parse(JSON.stringify(x));
 const cases=[
+ ['invent C37 publisher approval',d=>{d.matrix.claims.find(x=>x.id==='C37').status='VERIFIED_APPROVAL';}],
+ ['rename C37 approval row',d=>{d.matrix.claims.find(x=>x.id==='C37').id='C37_approved';}],
+ ['replace corrected C28 with intensive-only correlation',d=>{d.matrix.claims.find(x=>x.id==='C28').statement='Slagter intensive group P3b correlation alone';}],
+ ['restore unsupported logistic effect interpretation',d=>{d.oldArt+=' This is a relative chance statement';}],
  ['approve seller claim C06',d=>{d.matrix.claims.find(x=>x.id==='C06').status='independent_research';}],
  ['fabricate clinical claim C07',d=>{d.matrix.claims.find(x=>x.id==='C07').status='clinically_proven';}],
  ['fabricate brain effect C08',d=>{d.matrix.claims.find(x=>x.id==='C08').status='scientifically_verified';}],
