@@ -29,9 +29,9 @@ def check(h):
  g(all(v[1:] in sc.ids for v in sc.hrefs if v.startswith('#')),'Broken fragment link')
  g(BOARD in sc.hrefs and PHOTO in sc.hrefs,'Required NASA custody links missing')
  g(sc.hrefs.count(FREE)==1 and h.count('class="cta"')==1,'Primary CTA contract')
- g('Open NASA 3 January 1967 spacecraft processing photograph' not in h,'False photo date')
- g('catalog year 1967' in h and 'exact exposure day is not established' in h,'Date precision note missing')
- g(h.count('datetime="1967-01-03"')>=2 and 'datetime="1967"' in h,'Event/year semantics missing')
+ g('Taken January 3, 1967' in h and 'Source-date cross-check:' in h,'Verified photo and Board date explanation missing')
+ g('Matching dates do not establish' in h and 'not the pictured action or ignition' in h,'Corroboration limitation missing')
+ g(h.count('datetime="1967-01-03"')>=3,'Event and photo datetime semantics missing')
  g(h.count('class="fv-apollo-date-precision"')==1,'Source precision callout missing')
  g(h.count('<details')==12 and h.count('id="fv-apollo-source-test"')==1,'Evidence features altered')
  g('NASA does not endorse Final Vestige' in h and 'NASA endorses Final Vestige' not in h,'Rights boundary missing or misleading')
@@ -47,10 +47,10 @@ def run(out):
  for n,d in m['files'].items():g(sha((D/n).read_bytes())==d,'Tampered generated file '+n)
  sr=json.loads((D/'source-records.json').read_text())
  r=next(x for x in sr if x['source_id']=='S67-15717')
- g(r['date']=='1967' and r['date_precision']=='year' and r['event_date']=='1967-01-03','Structured dates')
+ g(r['date']=='1967-01-03' and r['date_precision']=='day' and r['date_source_url']==PHOTO and r['event_date']=='1967-01-03','Structured date sources')
  ledger=json.loads((D/'custody-ledger.json').read_text())
  r=next(x for x in ledger['records'] if x['id']=='S67-15717')
- g(r['date']=='1967' and r['date_precision']=='year' and r['event_source_url']==BOARD,'Ledger custody')
+ g(r['date']=='1967-01-03' and r['date_precision']=='day' and r['date_source_url']==PHOTO and r['event_source_url']==BOARD,'Ledger custody')
  g(subprocess.run(['php','-l',str(D/'fv-ex2-apollo-r211.php')],capture_output=True).returncode==0,'PHP lint')
  def php(mode):return json.loads(subprocess.check_output(['php',str(D/'wp-render-shim-r211.php'),str(D/'fv-ex2-apollo-r211.php'),mode],text=True))
  norm,late,printed=(php(k) for k in ['normal','late','printed'])
@@ -59,7 +59,7 @@ def run(out):
  g(not printed['fallback'],'Shim printed')
  html=norm['html'];check(html)
  negatives={
-   'photo_claim':html.replace('exact exposure day is not established','date is proven January 3',1),
+   'photo_claim':html.replace('Taken January 3, 1967','Taken January 4, 1967',1),
    'lost_precision_note':html.replace('class="fv-apollo-date-precision"','class="removed"',1),
    'dead_fragment':html.replace('href="#fv-apollo-source-test"','href="#missing"',1),
    'duplicate_cta':html.replace('</footer>','<a class="cta" href="'+FREE+'">extra</a></footer>',1),
@@ -68,7 +68,7 @@ def run(out):
  }
  # Date precision negative is validated by explicit invariant, not dangerous regex over all prose.
  def check_precision(h):
-  check(h);g('exact exposure day is not established' in h,'Exact-day disclaimer removed')
+  check(h);g('Taken January 3, 1967' in h and 'Taken January 4, 1967' not in h,'Photo Taken claim mutated')
  rejected=[]
  for k,h in negatives.items():
   try:check_precision(h)
