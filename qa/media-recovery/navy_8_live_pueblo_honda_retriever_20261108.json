@@ -1,0 +1,422 @@
+{
+  "schema": "fv-navy-eight-pueblo-honda-source-20261108-v1",
+  "date_local": "2026-11-08",
+  "methodology": "Live read-only WordPress post raw content (IDs 280,288) plus exact web.open URL retrieval; web retriever failures are NOT origin HTTP or cold guest-browser status. Catalog KB are archive-displayed rendition descriptions, not measured visitor wire bytes.",
+  "source_snapshot": {
+    "source_posts": 61,
+    "source_images": 355,
+    "parts": [
+      {
+        "path": "qa/media-recovery/parts/01.json",
+        "blob_sha": "948bc1b65b42799aa40cfdb810ddf6ffd80886b6"
+      },
+      {
+        "path": "qa/media-recovery/parts/02.json",
+        "blob_sha": "48e1ebf07207e948ba5802e714eb39659d2e1c1d"
+      },
+      {
+        "path": "qa/media-recovery/parts/03.json",
+        "blob_sha": "49183f66f880f7c4dfd363acca906876877f2e5e"
+      },
+      {
+        "path": "qa/media-recovery/parts/04.json",
+        "blob_sha": "6df3251e5a67a971d87a516a1ba4a0cc32f51f96"
+      },
+      {
+        "path": "qa/media-recovery/parts/05.json",
+        "blob_sha": "9b16b828342a9ac338f3e65610fd3d8d508355e9"
+      },
+      {
+        "path": "qa/media-recovery/parts/06.json",
+        "blob_sha": "0f3dfe398a76838049cebba7cb773d5c5a0c8c69"
+      },
+      {
+        "path": "qa/media-recovery/parts/07.json",
+        "blob_sha": "21095161e633aba093b74c0ead9936c9f6186d00"
+      },
+      {
+        "path": "qa/media-recovery/parts/08.json",
+        "blob_sha": "5659ec243c188928be3f89c0f96354b660608ca2"
+      }
+    ]
+  },
+  "counts": {
+    "posts_live_read": 2,
+    "live_sources_readback": 8,
+    "web_retriever_nonrender": 8,
+    "web_retriever_timeout": 5,
+    "web_retriever_bad_gateway": 2,
+    "web_retriever_inaccessible": 1,
+    "verified_catalog_accessions": 6,
+    "private_courtesy_rights_hold": 1,
+    "guest_broken_confirmed": null,
+    "reported_42_broken_guest_confirmed": false,
+    "reported_76_percent_wire_savings_measured": false,
+    "oversize_wp_originals_gt_1500000": 15,
+    "oversize_wp_stored_original_bytes": 47096779
+  },
+  "rights_policy": "https://www.history.navy.mil/our-collections/photography.html",
+  "rows": [
+    {
+      "slot": "280:0",
+      "post_id": 280,
+      "post_url": "https://finalvestige.com/2026/08/19/the-sledgehammers-broke-first-uss-pueblo/",
+      "post_modified": "2026-11-02T21:39:55",
+      "published_source_url": "https://www.history.navy.mil/content/history/museums/nmusn/explore/photography/ships-us/ships-usn-p/uss-pueblo-ager-2/428-gx-usn-1129207/_jcr_content/mediaitem/image.img.jpg/1504112093611.jpg",
+      "live_wp_exact_source_confirmed": true,
+      "published_alt_snapshot": "USS Pueblo underway off San Diego in October 1967, three months before its capture by North Korea.",
+      "web_retriever": {
+        "date": "2026-11-08",
+        "method": "web.open",
+        "result": "TIMEOUT_FETCHING",
+        "tool_error_code": 400,
+        "http_status_origin": null,
+        "http_status_guest": null,
+        "decoded_px_guest": null,
+        "transfer_bytes_guest": null,
+        "verified_broken_in_guest": null
+      },
+      "authoritative_candidate": {
+        "catalog_url": "https://www.history.navy.mil/content/history/museums/nmusn/explore/photography/ships-us/ships-usn-p/uss-pueblo-ager-2/428-gx-usn-1129207.html",
+        "accession": "428-GX-USN-1129207",
+        "medium_1280x1280_catalog_kb": 215,
+        "medium_catalog_size_is_not_measured_wire_bytes": true,
+        "archive_credit": "Official US Navy photograph; National Archives",
+        "rights_status": "PENDING_ITEM_LEVEL_RIGHTS_CONFIRMATION",
+        "primary_source_match_assurance": "ACCESSION_AND_SCENE_METADATA_ONLY",
+        "original_image_sha256": null,
+        "native_dimensions_px": null,
+        "derivative_dimensions_px": null,
+        "max_derivative_width_px": 960,
+        "no_upscale": true,
+        "attribution_required": true,
+        "permission_to_rehost_confirmed": false,
+        "editor_release_approval": false
+      },
+      "actions": {
+        "binary_download": false,
+        "cache": false,
+        "wp_media": false,
+        "wp_post": false,
+        "homepage": false
+      }
+    },
+    {
+      "slot": "280:1",
+      "post_id": 280,
+      "post_url": "https://finalvestige.com/2026/08/19/the-sledgehammers-broke-first-uss-pueblo/",
+      "post_modified": "2026-11-02T21:39:55",
+      "published_source_url": "https://www.history.navy.mil/content/history/nhhc/research/histories/ship-histories/danfs/p/pueblo-iii/_jcr_content/body/media_asset_1086930325/image.img.jpg/1514467381634.jpg",
+      "live_wp_exact_source_confirmed": true,
+      "published_alt_snapshot": "A USS Pueblo sailor drawing coffee in the ship's mess during 1967.",
+      "web_retriever": {
+        "date": "2026-11-08",
+        "method": "web.open",
+        "result": "TIMEOUT_FETCHING",
+        "tool_error_code": 400,
+        "http_status_origin": null,
+        "http_status_guest": null,
+        "decoded_px_guest": null,
+        "transfer_bytes_guest": null,
+        "verified_broken_in_guest": null
+      },
+      "authoritative_candidate": {
+        "catalog_url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/NH-75000/NH-75559.html",
+        "accession": "NH 75559",
+        "medium_1280x1280_catalog_kb": 133,
+        "medium_catalog_size_is_not_measured_wire_bytes": true,
+        "archive_credit": "NHHC photograph",
+        "rights_status": "PENDING_ITEM_LEVEL_RIGHTS_CONFIRMATION",
+        "primary_source_match_assurance": "ACCESSION_AND_SCENE_METADATA_ONLY",
+        "original_image_sha256": null,
+        "native_dimensions_px": null,
+        "derivative_dimensions_px": null,
+        "max_derivative_width_px": 960,
+        "no_upscale": true,
+        "attribution_required": true,
+        "permission_to_rehost_confirmed": false,
+        "editor_release_approval": false
+      },
+      "actions": {
+        "binary_download": false,
+        "cache": false,
+        "wp_media": false,
+        "wp_post": false,
+        "homepage": false
+      }
+    },
+    {
+      "slot": "280:2",
+      "post_id": 280,
+      "post_url": "https://finalvestige.com/2026/08/19/the-sledgehammers-broke-first-uss-pueblo/",
+      "post_modified": "2026-11-02T21:39:55",
+      "published_source_url": "https://www.history.navy.mil/bin/imageDownload?image=%2Fcontent%2Fdam%2Fnhhc%2Four-collections%2Fphotography%2Fimages%2FNH+75000%2FNH+75561&rendition=cq5dam.web.1280.1280.jpeg",
+      "live_wp_exact_source_confirmed": true,
+      "published_alt_snapshot": "Interior mess and living space aboard USS Pueblo before the 1968 seizure.",
+      "web_retriever": {
+        "date": "2026-11-08",
+        "method": "web.open",
+        "result": "TIMEOUT_FETCHING",
+        "tool_error_code": 400,
+        "http_status_origin": null,
+        "http_status_guest": null,
+        "decoded_px_guest": null,
+        "transfer_bytes_guest": null,
+        "verified_broken_in_guest": null
+      },
+      "authoritative_candidate": {
+        "catalog_url": "https://www.history.navy.mil/content/history/nhhc/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/NH-75000/NH-75561.html",
+        "accession": "NH 75561",
+        "medium_1280x1280_catalog_kb": 152,
+        "medium_catalog_size_is_not_measured_wire_bytes": true,
+        "archive_credit": "NHHC photograph",
+        "rights_status": "PENDING_ITEM_LEVEL_RIGHTS_CONFIRMATION",
+        "primary_source_match_assurance": "ACCESSION_AND_SCENE_METADATA_ONLY",
+        "original_image_sha256": null,
+        "native_dimensions_px": null,
+        "derivative_dimensions_px": null,
+        "max_derivative_width_px": 960,
+        "no_upscale": true,
+        "attribution_required": true,
+        "permission_to_rehost_confirmed": false,
+        "editor_release_approval": false
+      },
+      "actions": {
+        "binary_download": false,
+        "cache": false,
+        "wp_media": false,
+        "wp_post": false,
+        "homepage": false
+      }
+    },
+    {
+      "slot": "280:3",
+      "post_id": 280,
+      "post_url": "https://finalvestige.com/2026/08/19/the-sledgehammers-broke-first-uss-pueblo/",
+      "post_modified": "2026-11-02T21:39:55",
+      "published_source_url": "https://www.history.navy.mil/content/history/nhhc/our-collections/photography/numerical-list-of-images/nara-series/80-g-k/80-G-K-60000/K-64683/_jcr_content/mediaitem/image.img.jpg/1459314791691.jpg",
+      "live_wp_exact_source_confirmed": true,
+      "published_alt_snapshot": "Released USS Pueblo crewmen at Panmunjom in December 1968.",
+      "web_retriever": {
+        "date": "2026-11-08",
+        "method": "web.open",
+        "result": "TIMEOUT_FETCHING",
+        "tool_error_code": 400,
+        "http_status_origin": null,
+        "http_status_guest": null,
+        "decoded_px_guest": null,
+        "transfer_bytes_guest": null,
+        "verified_broken_in_guest": null
+      },
+      "authoritative_candidate": {
+        "catalog_url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nara-series/80-g-k/80-G-K-60000/K-64683.html",
+        "accession": "K-64683",
+        "medium_1280x1280_catalog_kb": 144,
+        "medium_catalog_size_is_not_measured_wire_bytes": true,
+        "archive_credit": "Official US Navy photograph",
+        "rights_status": "PENDING_ITEM_LEVEL_RIGHTS_CONFIRMATION",
+        "primary_source_match_assurance": "ACCESSION_AND_SCENE_METADATA_ONLY",
+        "original_image_sha256": null,
+        "native_dimensions_px": null,
+        "derivative_dimensions_px": null,
+        "max_derivative_width_px": 960,
+        "no_upscale": true,
+        "attribution_required": true,
+        "permission_to_rehost_confirmed": false,
+        "editor_release_approval": false
+      },
+      "actions": {
+        "binary_download": false,
+        "cache": false,
+        "wp_media": false,
+        "wp_post": false,
+        "homepage": false
+      }
+    },
+    {
+      "slot": "280:4",
+      "post_id": 280,
+      "post_url": "https://finalvestige.com/2026/08/19/the-sledgehammers-broke-first-uss-pueblo/",
+      "post_modified": "2026-11-02T21:39:55",
+      "published_source_url": "https://www.history.navy.mil/content/history/nhhc/research/histories/ship-histories/danfs/b/banner-ii/_jcr_content/body/media_asset/image.img.jpg",
+      "live_wp_exact_source_confirmed": true,
+      "published_alt_snapshot": "USS Banner, sister ship of USS Pueblo, after the Pueblo incident prompted changes to the intelligence-ship program.",
+      "web_retriever": {
+        "date": "2026-11-08",
+        "method": "web.open",
+        "result": "NOT_ACCESSIBLE_IN_TOOL",
+        "tool_error_code": null,
+        "http_status_origin": null,
+        "http_status_guest": null,
+        "decoded_px_guest": null,
+        "transfer_bytes_guest": null,
+        "verified_broken_in_guest": null
+      },
+      "authoritative_candidate": {
+        "catalog_url": null,
+        "accession": null,
+        "medium_1280x1280_catalog_kb": null,
+        "medium_catalog_size_is_not_measured_wire_bytes": true,
+        "archive_credit": "Exact asset catalog not verified; published source is Navy DANFS Banner II",
+        "rights_status": "PENDING_ITEM_LEVEL_RIGHTS_CONFIRMATION",
+        "primary_source_match_assurance": "UNVERIFIED",
+        "original_image_sha256": null,
+        "native_dimensions_px": null,
+        "derivative_dimensions_px": null,
+        "max_derivative_width_px": 960,
+        "no_upscale": true,
+        "attribution_required": true,
+        "permission_to_rehost_confirmed": false,
+        "editor_release_approval": false
+      },
+      "actions": {
+        "binary_download": false,
+        "cache": false,
+        "wp_media": false,
+        "wp_post": false,
+        "homepage": false
+      }
+    },
+    {
+      "slot": "280:5",
+      "post_id": 280,
+      "post_url": "https://finalvestige.com/2026/08/19/the-sledgehammers-broke-first-uss-pueblo/",
+      "post_modified": "2026-11-02T21:39:55",
+      "published_source_url": "https://www.history.navy.mil/content/history/nhhc/our-collections/photography/numerical-list-of-images/nara-series/80-g-k/80-G-K-60000/K-64728/_jcr_content/mediaitem/image.img.jpg/1424360116159.jpg",
+      "live_wp_exact_source_confirmed": true,
+      "published_alt_snapshot": "USS Pueblo crewmen eating after their release from North Korean captivity in December 1968.",
+      "web_retriever": {
+        "date": "2026-11-08",
+        "method": "web.open",
+        "result": "TIMEOUT_FETCHING",
+        "tool_error_code": 400,
+        "http_status_origin": null,
+        "http_status_guest": null,
+        "decoded_px_guest": null,
+        "transfer_bytes_guest": null,
+        "verified_broken_in_guest": null
+      },
+      "authoritative_candidate": {
+        "catalog_url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nara-series/80-g-k/80-G-K-60000/K-64728.html",
+        "accession": "K-64728",
+        "medium_1280x1280_catalog_kb": 124,
+        "medium_catalog_size_is_not_measured_wire_bytes": true,
+        "archive_credit": "Official US Navy photograph",
+        "rights_status": "PENDING_ITEM_LEVEL_RIGHTS_CONFIRMATION",
+        "primary_source_match_assurance": "ACCESSION_AND_SCENE_METADATA_ONLY",
+        "original_image_sha256": null,
+        "native_dimensions_px": null,
+        "derivative_dimensions_px": null,
+        "max_derivative_width_px": 960,
+        "no_upscale": true,
+        "attribution_required": true,
+        "permission_to_rehost_confirmed": false,
+        "editor_release_approval": false
+      },
+      "actions": {
+        "binary_download": false,
+        "cache": false,
+        "wp_media": false,
+        "wp_post": false,
+        "homepage": false
+      }
+    },
+    {
+      "slot": "288:0",
+      "post_id": 288,
+      "post_url": "https://finalvestige.com/2026/08/19/the-bearing-was-right-honda-point/",
+      "post_modified": "2026-08-19T14:37:40",
+      "published_source_url": "https://www.history.navy.mil/content/history/nhhc/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/NH-69000/NH-69586/_jcr_content/mediaitem/image.img.jpg/1438378291110.jpg",
+      "live_wp_exact_source_confirmed": true,
+      "published_alt_snapshot": "U.S. Navy destroyers wrecked along the California coast at Honda Point after the September 8, 1923 disaster.",
+      "web_retriever": {
+        "date": "2026-11-08",
+        "method": "web.open",
+        "result": "BAD_GATEWAY",
+        "tool_error_code": 502,
+        "http_status_origin": null,
+        "http_status_guest": null,
+        "decoded_px_guest": null,
+        "transfer_bytes_guest": null,
+        "verified_broken_in_guest": null
+      },
+      "authoritative_candidate": {
+        "catalog_url": "https://www.history.navy.mil/content/history/nhhc/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/NH-69000/NH-69586.html",
+        "accession": "NH 69586",
+        "medium_1280x1280_catalog_kb": 279,
+        "medium_catalog_size_is_not_measured_wire_bytes": true,
+        "archive_credit": "Courtesy Naval Historical Foundation; Collection Admiral William V Pratt; NHHC collection",
+        "rights_status": "COURTESY_PRIVATE_COLLECTION_VERIFY_ITEM_RIGHTS",
+        "primary_source_match_assurance": "ACCESSION_AND_SCENE_METADATA_ONLY",
+        "original_image_sha256": null,
+        "native_dimensions_px": null,
+        "derivative_dimensions_px": null,
+        "max_derivative_width_px": 960,
+        "no_upscale": true,
+        "attribution_required": true,
+        "permission_to_rehost_confirmed": false,
+        "editor_release_approval": false
+      },
+      "actions": {
+        "binary_download": false,
+        "cache": false,
+        "wp_media": false,
+        "wp_post": false,
+        "homepage": false
+      }
+    },
+    {
+      "slot": "288:2",
+      "post_id": 288,
+      "post_url": "https://finalvestige.com/2026/08/19/the-bearing-was-right-honda-point/",
+      "post_modified": "2026-08-19T14:37:40",
+      "published_source_url": "https://www.history.navy.mil/content/history/nhhc/our-collections/photography/technology/communications/radio/ug-21--us-naval-california-radio-station-collection/mare-island-naval-radio-station/ug-21-01-02-mare-island-naval-radio/jcr%3Acontent/mediaitem/image.img.jpg/1564510769845.jpg",
+      "live_wp_exact_source_confirmed": true,
+      "published_alt_snapshot": "Early U.S. Navy radio station equipment in California, similar to the shore direction-finding infrastructure used in 1923.",
+      "web_retriever": {
+        "date": "2026-11-08",
+        "method": "web.open",
+        "result": "BAD_GATEWAY",
+        "tool_error_code": 502,
+        "http_status_origin": null,
+        "http_status_guest": null,
+        "decoded_px_guest": null,
+        "transfer_bytes_guest": null,
+        "verified_broken_in_guest": null
+      },
+      "authoritative_candidate": {
+        "catalog_url": null,
+        "accession": null,
+        "medium_1280x1280_catalog_kb": null,
+        "medium_catalog_size_is_not_measured_wire_bytes": true,
+        "archive_credit": "Published Navy radio page path; exact catalog not independently inspected",
+        "rights_status": "PENDING_ITEM_LEVEL_RIGHTS_CONFIRMATION",
+        "primary_source_match_assurance": "UNVERIFIED",
+        "original_image_sha256": null,
+        "native_dimensions_px": null,
+        "derivative_dimensions_px": null,
+        "max_derivative_width_px": 960,
+        "no_upscale": true,
+        "attribution_required": true,
+        "permission_to_rehost_confirmed": false,
+        "editor_release_approval": false
+      },
+      "actions": {
+        "binary_download": false,
+        "cache": false,
+        "wp_media": false,
+        "wp_post": false,
+        "homepage": false
+      }
+    }
+  ],
+  "release": {
+    "all_candidates_hold": true,
+    "wordpress_writes": 0,
+    "binary_downloads": 0,
+    "cached_assets": 0,
+    "homepage_changes": 0,
+    "subscription_spend_usd": 0,
+    "requires_site_qa_browser_verification": true
+  }
+}
