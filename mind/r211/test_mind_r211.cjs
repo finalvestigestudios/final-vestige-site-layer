@@ -96,7 +96,7 @@ function mutationSuite(origin){
  ['enable identity tracking',x=>{const j=JSON.parse(x.matrix);j.measurement_contract.direct_identity_tracking=true;x.matrix=JSON.stringify(j)}],
  ['enable third-party scripts',x=>{const j=JSON.parse(x.matrix);j.measurement_contract.third_party_new_scripts=true;x.matrix=JSON.stringify(j)}],
  ['strip no-PII rule',x=>{const j=JSON.parse(x.matrix);j.measurement_contract.privacy='record personal identities in attribution';x.matrix=JSON.stringify(j)}],
- ['remove direct source for illusory truth',x=>x.article=x.article.replace('https://pubmed.ncbi.nlm.nih.gov/26301795/','https://example.invalid/missing')],
+ ['remove direct source for illusory truth',x=>x.article=x.article.replaceAll('https://pubmed.ncbi.nlm.nih.gov/26301795/','https://example.invalid/missing')],
  ['rewrite eighteenth-century heading',x=>x.article=x.article.replace('## An eighteenth-century shadow: Puységur','## A nineteenth-century shadow: Puységur')]
  ];
  let rejected=0;const misses=[];
