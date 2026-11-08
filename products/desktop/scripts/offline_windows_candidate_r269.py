@@ -26,6 +26,7 @@ if str(SCRIPTS) not in sys.path:
 from strict_source_receipt_r273 import loads_strict_receipt
 from source_build_binding_r275 import verify_source_binding
 from source_smoke_receipt_r276 import valid_source_smoke_records
+from candidate_child_environment_r278 import private_child_environment
 
 APPS = (
     "LedgerDiffLite", "InvoiceTwinScout", "SpendMapLite", "PolicyDeltaDesk",
@@ -222,13 +223,9 @@ def _private_windows_report_sha256(path: Path) -> str:
 
 def _run_child(argv: list[str], cwd: Path, timeout: int) -> int:
     """Never let paths, customer data, or process logs reach terminal/CI."""
-    env = os.environ.copy()
-    env["PYTHONNOUSERSITE"] = "1"
-    env["PYTHONDONTWRITEBYTECODE"] = "1"
-    env["PIP_NO_INDEX"] = "1"  # no installation/downloading in this runner
     try:
         result = subprocess.run(
-            argv, cwd=cwd, env=env, stdin=subprocess.DEVNULL,
+            argv, cwd=cwd, env=private_child_environment(), stdin=subprocess.DEVNULL,
             stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
             shell=False, check=False, timeout=timeout,
         )
