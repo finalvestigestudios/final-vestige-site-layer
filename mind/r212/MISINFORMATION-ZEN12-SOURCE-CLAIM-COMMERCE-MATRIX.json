@@ -1,0 +1,546 @@
+{
+  "schema": "fv-mind-r212/commercial-claims-v1",
+  "checked_date": "2026-11-08",
+  "status": "SOURCE_CONTROLLED_DRAFT_ONLY",
+  "public_affiliate_activation": false,
+  "approved_earning_url": null,
+  "account_specific_partner_acceptance": "UNVERIFIED",
+  "authorized_product": "NONE_VERIFIED",
+  "existing_jetpack_focus_only": true,
+  "source_refs": [
+    {
+      "id": "E01",
+      "type": "original_abstract",
+      "title": "Loftus & Palmer 1974 crash-word study",
+      "url": "https://doi.org/10.1016/S0022-5371(74)80011-3",
+      "review_scope": "journal abstract, no raw data or full method audit"
+    },
+    {
+      "id": "E02",
+      "type": "bibliography",
+      "title": "ERIC 1974 publication record",
+      "url": "https://eric.ed.gov/?id=EJ112718",
+      "review_scope": "metadata only; not independent replication"
+    },
+    {
+      "id": "E03",
+      "type": "original_abstract",
+      "title": "Loftus Miller Burns 1978 slides, five experiments plus pilot",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/621467/",
+      "review_scope": "abstract; aggregate N=1242; no condition-level reconstruction"
+    },
+    {
+      "id": "E04",
+      "type": "review_abstract",
+      "title": "Loftus 2005 misinformation effect retrospective",
+      "url": "https://doi.org/10.1101/lm.94705",
+      "review_scope": "review abstract; boundary on mechanisms and warnings"
+    },
+    {
+      "id": "E05",
+      "type": "historical_original",
+      "title": "Coué 1922 English edition",
+      "url": "https://www.gutenberg.org/files/27203/27203-h/27203-h.htm",
+      "review_scope": "1922 NY English text: separate historical testimony from author instructions"
+    },
+    {
+      "id": "E06",
+      "type": "original_experiment",
+      "title": "Wood et al 2009 self-statement experiment",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/19493324/",
+      "review_scope": "abstract and complete text reviewed in R211 corrections; not Coué"
+    },
+    {
+      "id": "E07",
+      "type": "original_abstract",
+      "title": "Fazio et al 2015 illusory-truth experiment",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26301795/",
+      "review_scope": "abstract; no medicinal or commercial inference"
+    },
+    {
+      "id": "E08",
+      "type": "live_fv",
+      "title": "Puységur's Animal Magnetism Files",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "review_scope": "historical editorial source archive, not experimental proof"
+    },
+    {
+      "id": "E09",
+      "type": "live_fv",
+      "title": "Mesmerism: Franklin's commission",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "review_scope": "live investigation"
+    },
+    {
+      "id": "E10",
+      "type": "live_fv",
+      "title": "Change Blindness: flicker and door",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "review_scope": "live investigation"
+    },
+    {
+      "id": "E11",
+      "type": "live_fv",
+      "title": "Seven Day Focus Fieldbook",
+      "url": "https://finalvestige.com/focus/",
+      "review_scope": "existing free 52-page offer; signup visibility not subscriber proof"
+    },
+    {
+      "id": "E12",
+      "type": "seller_catalog",
+      "title": "Inspire3 official brands",
+      "url": "https://inspire3.com/",
+      "review_scope": "seller-descriptions, not proof of efficacy or FV account eligibility"
+    },
+    {
+      "id": "E13",
+      "type": "seller_offer",
+      "title": "Zen12 Premium exact sales page",
+      "url": "https://zen12.com/hnp",
+      "review_scope": "seller describes 12 levels, 48 MP3, four styles, one-year guarantee; public number is NOT authenticated checkout"
+    },
+    {
+      "id": "E14",
+      "type": "seller_offer",
+      "title": "Hypnosis Live Total Focus",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "review_scope": "seller 33-min 47-MB; 14-day guarantee contextualized by FAQ"
+    },
+    {
+      "id": "E15",
+      "type": "seller_terms",
+      "title": "Hypnosis Live FAQ",
+      "url": "https://hypnosislive.com/faq",
+      "review_scope": "seller says maximum five refunded sessions per year; no actual refund verified"
+    },
+    {
+      "id": "E16",
+      "type": "affiliate_public",
+      "title": "Inspire3 affiliate portal",
+      "url": "https://affiliates.inspire3.com/",
+      "review_scope": "program existence only, not account-specific approval"
+    },
+    {
+      "id": "E17",
+      "type": "regulator",
+      "title": "FTC endorsement staff FAQ",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "review_scope": "clear conspicuous relationship disclosure next to recommendation"
+    },
+    {
+      "id": "E18",
+      "type": "regulator",
+      "title": "FTC Health Products Compliance Guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "review_scope": "competent and reliable product-specific support for implied health claims"
+    },
+    {
+      "id": "E19",
+      "type": "commerce",
+      "title": "Public Payhip Mind SKU",
+      "url": "UNVERIFIED",
+      "review_scope": "no authenticated rights, price, refund, checkout or delivery evidence"
+    },
+    {
+      "id": "E20",
+      "type": "attribution",
+      "title": "Grok live social asset_id",
+      "url": "UNVERIFIED",
+      "review_scope": "TASK-008 read; no exact approved asset-to-page mapping confirmed"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "statement": "The word in a question about a filmed crash influenced later speed estimates",
+      "status": "SUPPORTED_ABSTRACT",
+      "basis": [
+        "E01"
+      ],
+      "caveat": "do not imply brain trace overwrite"
+    },
+    {
+      "id": "C02",
+      "statement": "Later absent-glass yes/no responses differed between smashed and hit wording",
+      "status": "SUPPORTED_ABSTRACT",
+      "basis": [
+        "E01"
+      ],
+      "caveat": "yes/no report not direct readout of memory trace"
+    },
+    {
+      "id": "C03",
+      "statement": "The 1974 effect proves people always believe leading questions",
+      "status": "EXCLUDE",
+      "basis": [
+        "E01"
+      ],
+      "caveat": "overgeneralization"
+    },
+    {
+      "id": "C04",
+      "statement": "The 1978 slides experiments totaled 1242 across five experiments plus a pilot",
+      "status": "SUPPORTED_ABSTRACT",
+      "basis": [
+        "E03"
+      ],
+      "caveat": "do not treat per-condition sample as known"
+    },
+    {
+      "id": "C05",
+      "statement": "1978 misleading verbal information reduced recognition accuracy on two test types",
+      "status": "SUPPORTED_ABSTRACT",
+      "basis": [
+        "E03"
+      ],
+      "caveat": "recognition differences not universal trace loss"
+    },
+    {
+      "id": "C06",
+      "statement": "Misinformation effects may depend on conditions and warnings are limited",
+      "status": "REVIEW_ABSTRACT",
+      "basis": [
+        "E04"
+      ],
+      "caveat": "not all individuals or warnings"
+    },
+    {
+      "id": "C07",
+      "statement": "Loftus's work proves Puységur's witnesses were deceived",
+      "status": "EXCLUDE",
+      "basis": [
+        "E04",
+        "E08"
+      ],
+      "caveat": "no retrospective individual diagnosis"
+    },
+    {
+      "id": "C08",
+      "statement": "Coué used 20 knots for morning/evening counting in 1922 English edition",
+      "status": "HISTORICAL_SOURCE",
+      "basis": [
+        "E05"
+      ],
+      "caveat": "instructions not clinical results"
+    },
+    {
+      "id": "C09",
+      "statement": "Puységur's case material dates to eighteenth-century 1780s",
+      "status": "HISTORICAL_SOURCE",
+      "basis": [
+        "E08"
+      ],
+      "caveat": "not nineteenth"
+    },
+    {
+      "id": "C10",
+      "statement": "Wood self-statements tested Coué's exact method",
+      "status": "EXCLUDE",
+      "basis": [
+        "E05",
+        "E06"
+      ],
+      "caveat": "different procedures/outcomes/populations"
+    },
+    {
+      "id": "C11",
+      "statement": "Wood experiments included 249 survey, 68 repetition comparison, 116 analyzed online",
+      "status": "RESEARCH_FULL_TEXT_REVIEWED",
+      "basis": [
+        "E06"
+      ],
+      "caveat": "undergraduate and selection restrictions, immediate mood/state self-esteem"
+    },
+    {
+      "id": "C12",
+      "statement": "Repeated statements can influence perceived truth under study conditions",
+      "status": "ABSTRACT_SCOPE",
+      "basis": [
+        "E07"
+      ],
+      "caveat": "not proof that repetition changes medical outcomes"
+    },
+    {
+      "id": "C13",
+      "statement": "Inspire3 lists Zen12, Hypnosis Live and Brainwave Shots",
+      "status": "SELLER_CATALOG",
+      "basis": [
+        "E12"
+      ],
+      "caveat": "product existence not efficacy"
+    },
+    {
+      "id": "C14",
+      "statement": "Zen12 Premium lists twelve levels and 48 MP3 files in four styles",
+      "status": "SELLER_DESCRIPTION",
+      "basis": [
+        "E13"
+      ],
+      "caveat": "unverified fulfillment"
+    },
+    {
+      "id": "C15",
+      "statement": "Twelve minutes of Zen12 equals one hour of advanced meditation",
+      "status": "SELLER_EFFICACY_CLAIM_EXCLUDE",
+      "basis": [
+        "E13"
+      ],
+      "caveat": "no independently identified product-specific comparative clinical evidence"
+    },
+    {
+      "id": "C16",
+      "statement": "Zen12 guarantees anxiety relief, lasting concentration or medical benefits",
+      "status": "SELLER_EFFICACY_CLAIM_EXCLUDE",
+      "basis": [
+        "E13"
+      ],
+      "caveat": "no adequate product-specific substantiation established"
+    },
+    {
+      "id": "C17",
+      "statement": "Zen12 Premium seller advertises one-year money-back guarantee",
+      "status": "SELLER_TERMS_ONLY",
+      "basis": [
+        "E13"
+      ],
+      "caveat": "no actual refund processed, final checkout unverified"
+    },
+    {
+      "id": "C18",
+      "statement": "Zen12 page displayed 87.99 USD promotional Premium figure on Nov 8",
+      "status": "PUBLIC_DISPLAY_ONLY",
+      "basis": [
+        "E13"
+      ],
+      "caveat": "not a promise of price, taxes, geography, upgrades or actual checkout"
+    },
+    {
+      "id": "C19",
+      "statement": "Total Focus seller lists 33 minutes, 47MB and 14-day refund",
+      "status": "SELLER_DESCRIPTION",
+      "basis": [
+        "E14"
+      ],
+      "caveat": "seller FAQ says maximum five refunded sessions/year E15"
+    },
+    {
+      "id": "C20",
+      "statement": "Total Focus users receive unlimited refunds",
+      "status": "EXCLUDE",
+      "basis": [
+        "E15"
+      ],
+      "caveat": "explicit five-session yearly restriction"
+    },
+    {
+      "id": "C21",
+      "statement": "Final Vestige's individual Inspire3 publisher acceptance is established",
+      "status": "UNVERIFIED_HARD_HOLD",
+      "basis": [
+        "E16"
+      ],
+      "caveat": "bounded Gmail search 2026-11-08 found no qualifying acceptance"
+    },
+    {
+      "id": "C22",
+      "statement": "An issued Final Vestige Zen12 earning URL and channel permissions exist",
+      "status": "UNVERIFIED_HARD_HOLD",
+      "basis": [
+        "E16"
+      ],
+      "caveat": "no account dashboard or signed terms authenticated"
+    },
+    {
+      "id": "C23",
+      "statement": "FTC disclosure link in footer alone is adequate next to affiliate link",
+      "status": "EXCLUDE",
+      "basis": [
+        "E17"
+      ],
+      "caveat": "clear conspicuous adjacent plain language preferred"
+    },
+    {
+      "id": "C24",
+      "statement": "Medical benefit claim may rely on unrelated general meditation evidence",
+      "status": "EXCLUDE",
+      "basis": [
+        "E18"
+      ],
+      "caveat": "needs adequate product-specific substantiation"
+    },
+    {
+      "id": "C25",
+      "statement": "Visible Focus subscription CTA proves confirmed subscriber",
+      "status": "UNVERIFIED",
+      "basis": [
+        "E11"
+      ],
+      "caveat": "must use authoritative Jetpack provider evidence"
+    },
+    {
+      "id": "C26",
+      "statement": "Outbound affiliate click proves a paid sale",
+      "status": "FALSE_EXCLUDE",
+      "basis": [
+        "E16"
+      ],
+      "caveat": "paid referral confirmed only from authorized merchant report"
+    },
+    {
+      "id": "C27",
+      "statement": "Current Mind Payhip product purchase is rights-clear and sellable",
+      "status": "UNVERIFIED",
+      "basis": [
+        "E19"
+      ],
+      "caveat": "owner SKU, terms, checkout, delivery absent"
+    },
+    {
+      "id": "C28",
+      "statement": "Grok media ID and matching authorized destination already reconciled",
+      "status": "UNVERIFIED",
+      "basis": [
+        "E20"
+      ],
+      "caveat": "no invented source/UTM media IDs"
+    },
+    {
+      "id": "C29",
+      "statement": "A video version will convert better than text-only guide",
+      "status": "UNTESTED_HYPOTHESIS",
+      "basis": [
+        "E13"
+      ],
+      "caveat": "randomized paid-conversion A/B needed; not a claim"
+    },
+    {
+      "id": "C30",
+      "statement": "Changing a memory report establishes a reliable way to reprogram the brain for money",
+      "status": "EXCLUDE",
+      "basis": [
+        "E01",
+        "E03",
+        "E18"
+      ],
+      "caveat": "neither product nor financial proof"
+    }
+  ],
+  "gates": [
+    {
+      "id": "G01",
+      "requirement": "authenticated named FV Inspire3 publisher acceptance",
+      "owner": "Founder/Mind",
+      "status": "OPEN"
+    },
+    {
+      "id": "G02",
+      "requirement": "specific website / social / email channel permissions",
+      "owner": "Founder/Mind",
+      "status": "OPEN"
+    },
+    {
+      "id": "G03",
+      "requirement": "account-issued approved earning URL and tracking rules",
+      "owner": "Founder/Mind",
+      "status": "OPEN"
+    },
+    {
+      "id": "G04",
+      "requirement": "campaign product offer matched to exact merchant landing",
+      "owner": "Mind/QA",
+      "status": "OPEN"
+    },
+    {
+      "id": "G05",
+      "requirement": "seller final checkout currency/tax/upsell",
+      "owner": "Commerce",
+      "status": "OPEN"
+    },
+    {
+      "id": "G06",
+      "requirement": "refund terms and actual processing independently reviewed",
+      "owner": "Commerce",
+      "status": "OPEN"
+    },
+    {
+      "id": "G07",
+      "requirement": "paid attribution/settlement/refunds/fees reporting contract",
+      "owner": "Commerce/Analytics",
+      "status": "OPEN"
+    },
+    {
+      "id": "G08",
+      "requirement": "rights-cleared sellable paid FV Mind SKU verified",
+      "owner": "Commerce",
+      "status": "OPEN"
+    },
+    {
+      "id": "G09",
+      "requirement": "live creator asset ID, source and approved article match",
+      "owner": "Praxxis/Grok",
+      "status": "OPEN"
+    },
+    {
+      "id": "G10",
+      "requirement": "Jetpack authenticated lead and single existing welcome maintained",
+      "owner": "Claude/QA",
+      "status": "OPEN"
+    },
+    {
+      "id": "G11",
+      "requirement": "native real-browser 360/390/768/1440/1920 WCAG/a11y QA",
+      "owner": "Site QA",
+      "status": "OPEN"
+    },
+    {
+      "id": "G12",
+      "requirement": "real video render / captions / no-JS / CWV test",
+      "owner": "Site QA",
+      "status": "OPEN"
+    },
+    {
+      "id": "G13",
+      "requirement": "explicit founder release approval for commercial CTA",
+      "owner": "Founder",
+      "status": "OPEN"
+    },
+    {
+      "id": "G14",
+      "requirement": "7/30d actual paid settlements and human-session denominator",
+      "owner": "Commerce/Analytics",
+      "status": "OPEN"
+    }
+  ],
+  "measurement_contract": {
+    "no_direct_identity_tracking": true,
+    "no_new_third_party_scripts": true,
+    "no_duplicate_forms": true,
+    "asset_id": "UNVERIFIED_DO_NOT_INVENT",
+    "allowed_utm_keys": [
+      "utm_source",
+      "utm_medium",
+      "utm_campaign",
+      "utm_content"
+    ],
+    "events": [
+      "qualified_human_session",
+      "landing_view",
+      "relevant_cta_click",
+      "provider_confirmed_lead_if_available",
+      "affiliate_click_if_authorized",
+      "merchant_paid_order_confirmed",
+      "affiliate_commission_cleared",
+      "fees_refunds_chargebacks_reconciled"
+    ],
+    "no_pii": true,
+    "retention": "short aggregated 7/30 day cohort counts, no raw IP/email/fingerprint/full referrer/order ID",
+    "paid_conversion_not_outbound_click": true,
+    "metric": "settled_owned_cash_plus_cleared_commissions_minus_refunds_chargebacks_fees_per_1000_qualified_human_sessions",
+    "kpi_current": "NOT_COMPUTABLE_NOT_ZERO",
+    "cohorts": [
+      7,
+      30
+    ],
+    "small_sample_caution": "<30 paid orders per variant: directional only; report missing merchant attribution"
+  }
+}
