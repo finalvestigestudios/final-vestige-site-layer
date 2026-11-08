@@ -1,0 +1,502 @@
+{
+  "schema_version": "FV_MIND_R219_v1",
+  "review_date": "2026-11-08",
+  "scope": "Research + presell controls, unpublished; no live CMS, analytics or affiliate activation",
+  "sources": [
+    {
+      "id": "S01",
+      "type": "PRIMARY_FULL",
+      "title": "Macdonald & Lavie (2011), three laboratory experiments",
+      "url": "https://link.springer.com/article/10.3758/s13414-011-0144-4"
+    },
+    {
+      "id": "S02",
+      "type": "PRIMARY_ABSTRACT",
+      "title": "Dalton & Fraenkel (2012), sustained auditory gorilla",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/22726569/"
+    },
+    {
+      "id": "S03",
+      "type": "PRIMARY_ABSTRACT_INSTITUTION",
+      "title": "Raveh & Lavie (2015), auditory sensitivity across visual load",
+      "url": "https://discovery.ucl.ac.uk/id/eprint/1454101/"
+    },
+    {
+      "id": "S04",
+      "type": "PRIMARY_ABSTRACT_INSTITUTION",
+      "title": "Molloy et al (2015), MEG and detection",
+      "url": "https://eprints.ncl.ac.uk/222363"
+    },
+    {
+      "id": "S05",
+      "type": "SELLER_CATALOG",
+      "title": "Official Inspire3 product catalog",
+      "url": "https://inspire3.com/"
+    },
+    {
+      "id": "S06",
+      "type": "SELLER_EXACT_OFFER",
+      "title": "Exact Zen12 Premium public offer, checked Nov 8 2026",
+      "url": "https://zen12.com/hnp"
+    },
+    {
+      "id": "S07",
+      "type": "FTC_GUIDANCE",
+      "title": "FTC endorsement guides FAQ",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking"
+    },
+    {
+      "id": "S08",
+      "type": "FTC_GUIDANCE",
+      "title": "FTC Health Products Compliance Guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+    },
+    {
+      "id": "S09",
+      "type": "EXISTING_FV",
+      "title": "Seven Day Focus Fieldbook, published existing capture",
+      "url": "https://finalvestige.com/focus/"
+    },
+    {
+      "id": "S10",
+      "type": "EXISTING_FV",
+      "title": "Puységur Animal Magnetism Files, published historical source",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+    },
+    {
+      "id": "S11",
+      "type": "EXISTING_FV",
+      "title": "Published Change Blindness investigation",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/"
+    },
+    {
+      "id": "S12",
+      "type": "EXISTING_FV",
+      "title": "Published Mesmerism investigation",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/"
+    },
+    {
+      "id": "S13",
+      "type": "GOVERNANCE",
+      "title": "Mind issue #171",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171"
+    },
+    {
+      "id": "S14",
+      "type": "GOVERNANCE",
+      "title": "Revenue attribution issue #820",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820"
+    },
+    {
+      "id": "S15",
+      "type": "SOURCE_QA",
+      "title": "R218 previous authorization validator",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/blob/22fa74a8f1450f3fa045351409f006dfbbd94050/mind/r218/test_mind_r218.cjs"
+    },
+    {
+      "id": "S16",
+      "type": "SOURCE_PREVIOUS",
+      "title": "R204 prior rubber hand manuscript",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/blob/22fa74a8f1450f3fa045351409f006dfbbd94050/mind/r204/when-the-hand-on-the-table-feels-like-yours-RUBBER-HAND-UNPUBLISHED.md"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "visual cross discrimination varies perceptual load",
+      "status": "PRIMARY_SUPPORTED",
+      "source_ids": [
+        "S01"
+      ],
+      "limits": "high vs low load defined by arm length vs color; not daily stress"
+    },
+    {
+      "id": "C02",
+      "claim": "2011 experiment 1 participants aware 21/28 low and 7/28 high",
+      "status": "PRIMARY_SUPPORTED",
+      "source_ids": [
+        "S01"
+      ],
+      "limits": "seventh critical and eighth attentive control; selected lab group"
+    },
+    {
+      "id": "C03",
+      "claim": "2011 max 79% miss in high load",
+      "status": "PRIMARY_SUPPORTED_BOUNDED",
+      "source_ids": [
+        "S01"
+      ],
+      "limits": "max across tested conditions, not population rate"
+    },
+    {
+      "id": "C04",
+      "claim": "the tone was a short stimulus embedded in white noise",
+      "status": "PRIMARY_SUPPORTED",
+      "source_ids": [
+        "S01"
+      ],
+      "limits": "timing and headphone setup, not proof of missed alarms in normal life"
+    },
+    {
+      "id": "C05",
+      "claim": "auditory gorilla can be unnoticed for 19 seconds",
+      "status": "PRIMARY_ABSTRACT_SUPPORTED",
+      "source_ids": [
+        "S02"
+      ],
+      "limits": "not a universal rate; accessible abstract only"
+    },
+    {
+      "id": "C06",
+      "claim": "2015 Raveh four experiments including 50-percent tone-present condition",
+      "status": "PRIMARY_ABSTRACT_SUPPORTED",
+      "source_ids": [
+        "S03"
+      ],
+      "limits": "not trial-reported rates invented"
+    },
+    {
+      "id": "C07",
+      "claim": "auditory sensitivity can diminish with high visual load",
+      "status": "PRIMARY_ABSTRACT_SUPPORTED",
+      "source_ids": [
+        "S03"
+      ],
+      "limits": "lab effect; not clinical hearing loss"
+    },
+    {
+      "id": "C08",
+      "claim": "2015 Molloy MEG early auditory responses altered about 100 ms",
+      "status": "PRIMARY_ABSTRACT_SUPPORTED",
+      "source_ids": [
+        "S04"
+      ],
+      "limits": "neural signals interpreted narrowly; not zero hearing"
+    },
+    {
+      "id": "C09",
+      "claim": "P3 response and detection also reduced",
+      "status": "PRIMARY_ABSTRACT_SUPPORTED",
+      "source_ids": [
+        "S04"
+      ],
+      "limits": "association not full mechanism proof"
+    },
+    {
+      "id": "C10",
+      "claim": "Puységur links are historical context only",
+      "status": "HISTORICAL_CONTEXT",
+      "source_ids": [
+        "S10"
+      ],
+      "limits": "not hypnosis efficacy evidence"
+    },
+    {
+      "id": "C11",
+      "claim": "Focus page existing 52-page workbook and Jetpack lead path",
+      "status": "PUBLISHED_FV_PAGE",
+      "source_ids": [
+        "S09"
+      ],
+      "limits": "live page verified; individual signup confirmation not independently observed"
+    },
+    {
+      "id": "C12",
+      "claim": "Inspire3 catalog identifies Zen12, Hypnosis Live and Brainwave Shots",
+      "status": "SELLER_DESCRIBED",
+      "source_ids": [
+        "S05"
+      ],
+      "limits": "no FV-specific approval"
+    },
+    {
+      "id": "C13",
+      "claim": "Zen12 Premium lists 12 levels and 48 MP3 tracks",
+      "status": "SELLER_DESCRIBED",
+      "source_ids": [
+        "S06"
+      ],
+      "limits": "not independently delivered/tested"
+    },
+    {
+      "id": "C14",
+      "claim": "Zen12 lists four audio styles",
+      "status": "SELLER_DESCRIBED",
+      "source_ids": [
+        "S06"
+      ],
+      "limits": "not independently tested"
+    },
+    {
+      "id": "C15",
+      "claim": "Zen12 advertises 1-year refund",
+      "status": "SELLER_DESCRIBED_UNVERIFIED_FULFILLMENT",
+      "source_ids": [
+        "S06"
+      ],
+      "limits": "subject to actual seller checkout and refund processing; no FV transaction performed"
+    },
+    {
+      "id": "C16",
+      "claim": "Zen12 displays promotional $87.99 on its public page Nov 8 2026",
+      "status": "SELLER_DISPLAY_NOT_FINAL_PRICE",
+      "source_ids": [
+        "S06"
+      ],
+      "limits": "dynamic offer, checkout/taxes/currency/final amount unverified; never assert payable price"
+    },
+    {
+      "id": "C17",
+      "claim": "twelve minutes equals one-hour benefit claim",
+      "status": "SELLER_UNSUBSTANTIATED_OMITTED",
+      "source_ids": [
+        "S06",
+        "S08"
+      ],
+      "limits": "no independently verified product-specific trial"
+    },
+    {
+      "id": "C18",
+      "claim": "Zen12 treats anxiety or clinical symptoms",
+      "status": "UNSUPPORTED_OMITTED",
+      "source_ids": [
+        "S06",
+        "S08"
+      ],
+      "limits": "never imply a clinical outcome"
+    },
+    {
+      "id": "C19",
+      "claim": "Macdonald Lavie findings establish effectiveness of Zen12",
+      "status": "INVALID_INFERENCE_OMITTED",
+      "source_ids": [
+        "S01",
+        "S06"
+      ],
+      "limits": "lab attentional finding is not commercial audio evaluation"
+    },
+    {
+      "id": "C20",
+      "claim": "FTC material connections must be clear and conspicuous",
+      "status": "REGULATORY_GUIDANCE",
+      "source_ids": [
+        "S07"
+      ],
+      "limits": "place explicit plain disclosure near the particular earning link"
+    },
+    {
+      "id": "C21",
+      "claim": "FTC benefits and health assertions require appropriate substantiation",
+      "status": "REGULATORY_GUIDANCE",
+      "source_ids": [
+        "S08"
+      ],
+      "limits": "do not inherit seller claims"
+    },
+    {
+      "id": "C22",
+      "claim": "FV publisher eligibility and issued Inspire3 earning URL",
+      "status": "NOT_VERIFIED",
+      "source_ids": [
+        "S05",
+        "S13"
+      ],
+      "limits": "private acceptance/partner term evidence not obtained"
+    },
+    {
+      "id": "C23",
+      "claim": "FV-owned sellable Mind SKU rights checkout and returns",
+      "status": "NOT_VERIFIED",
+      "source_ids": [
+        "S14"
+      ],
+      "limits": "no credible SKU purchase claim; requires commerce attestation"
+    },
+    {
+      "id": "C24",
+      "claim": "R218 control validator only checked at least one disabled button",
+      "status": "REPRODUCED_CORRECTED",
+      "source_ids": [
+        "S15"
+      ],
+      "limits": "R219 fixes all-button check and handler/checkout mutations"
+    },
+    {
+      "id": "C25",
+      "claim": "R204 already researches rubber-hand illusion",
+      "status": "REPOSITORY_VERIFIED",
+      "source_ids": [
+        "S16"
+      ],
+      "limits": "R218 should be noncanonical supplementary; avoid duplicate live slug"
+    },
+    {
+      "id": "C26",
+      "claim": "Affiliate click is not paid commission",
+      "status": "CONVERSION_DEFINITION",
+      "source_ids": [
+        "S14"
+      ],
+      "limits": "cleared merchant statement required"
+    },
+    {
+      "id": "C27",
+      "claim": "Qualified-human denominator not confirmed",
+      "status": "NOT_VERIFIED",
+      "source_ids": [
+        "S14"
+      ],
+      "limits": "7/30-day net revenue per 1000 NOT COMPUTABLE until authoritative numerator/denominator"
+    }
+  ],
+  "gates": [
+    {
+      "id": "G01",
+      "name": "FV named affiliate publisher acceptance",
+      "status": "HARD_HOLD",
+      "owner": "Founder / Mind"
+    },
+    {
+      "id": "G02",
+      "name": "Specific website/channel promotional rights",
+      "status": "HARD_HOLD",
+      "owner": "Founder / Mind"
+    },
+    {
+      "id": "G03",
+      "name": "Specific social/creator channel promotional rights",
+      "status": "HARD_HOLD",
+      "owner": "Founder / Mind"
+    },
+    {
+      "id": "G04",
+      "name": "Email/Dispatch promotional rights",
+      "status": "HARD_HOLD",
+      "owner": "Founder / Dispatch"
+    },
+    {
+      "id": "G05",
+      "name": "Approved account-issued earning URL",
+      "status": "HARD_HOLD",
+      "owner": "Founder / Mind"
+    },
+    {
+      "id": "G06",
+      "name": "Exact offer checkout/returns agreement and delivery",
+      "status": "HARD_HOLD",
+      "owner": "Founder / Commerce"
+    },
+    {
+      "id": "G07",
+      "name": "Settled commission and refund/fee reporting access",
+      "status": "HARD_HOLD",
+      "owner": "Commerce / Analytics"
+    },
+    {
+      "id": "G08",
+      "name": "Founder written release approval",
+      "status": "HARD_HOLD",
+      "owner": "Founder"
+    },
+    {
+      "id": "G09",
+      "name": "No actual WordPress CMS or site/browser validation",
+      "status": "UNKNOWN",
+      "owner": "Claude / Site QA"
+    },
+    {
+      "id": "G10",
+      "name": "No rendered 42s film or accessibility playback review",
+      "status": "UNKNOWN",
+      "owner": "Media / Site QA"
+    },
+    {
+      "id": "G11",
+      "name": "No authenticated Payhip owned Mind SKU",
+      "status": "UNKNOWN",
+      "owner": "Commerce"
+    },
+    {
+      "id": "G12",
+      "name": "No reconciled actual Grok media IDs",
+      "status": "UNKNOWN",
+      "owner": "Praxxis / Grok"
+    },
+    {
+      "id": "G13",
+      "name": "No authoritative confirmed Jetpack campaign optin",
+      "status": "UNKNOWN",
+      "owner": "Claude / Jetpack"
+    },
+    {
+      "id": "G14",
+      "name": "No qualified-human sessions plus cleared orders ledger",
+      "status": "UNKNOWN",
+      "owner": "Commerce / Analytics"
+    },
+    {
+      "id": "G15",
+      "name": "Editorial canonical dedup and scientific QA",
+      "status": "OPEN_REVIEW",
+      "owner": "Mind / Independent QA"
+    },
+    {
+      "id": "G16",
+      "name": "No authenticated partner creative/swipe permissions",
+      "status": "UNKNOWN",
+      "owner": "Founder / Mind"
+    }
+  ],
+  "offer": {
+    "id": "zen12-premium",
+    "merchant": "Inspire3",
+    "exact_public_offer": "https://zen12.com/hnp",
+    "named_approval_verified": false,
+    "affiliate_url": null,
+    "permissions_verified": [],
+    "checkout_total_verified": null,
+    "settlement_terms_verified": false,
+    "activation_allowed": false,
+    "advertised_public_offer_not_final": "2026-11-08 listing appears $87.99; final buyer total not verified"
+  },
+  "conversion_contract": {
+    "events": [
+      "qualified_human_session_estimate",
+      "mind_article_visit",
+      "focus_cta_click",
+      "focus_confirmed_optin",
+      "presell_cta_view",
+      "affiliate_click",
+      "merchant_paid_order_verified",
+      "affiliate_commission_cleared",
+      "refund_or_chargeback_verified"
+    ],
+    "no_pii": true,
+    "new_tracking_script_allowed": false,
+    "existing_instrumentation_only": true,
+    "join_keys": [
+      "utm_campaign",
+      "utm_content",
+      "asset_id_if_real"
+    ],
+    "no_fabricated_asset_ids": true,
+    "affiliate_click_is_paid_sale": false,
+    "realized_net_formula": "settled_owned_receipts + cleared_affiliate_commissions - refunded_amounts - transaction_fees - chargebacks - attributable_variable_costs",
+    "net_per_1000_qualified_human_sessions": "NOT COMPUTABLE",
+    "observation_period_days": [
+      7,
+      30
+    ],
+    "null_if_no_authoritative_numerator_or_denominator": true
+  },
+  "governance": {
+    "research_vs_commerce_separate": true,
+    "existing_jetpack_focus_only": true,
+    "grok_posting_owner": "Grok",
+    "praxxis_research_qa": "Praxxis",
+    "website_engineering_owner": "Claude",
+    "commercial_release_owner": "Founder",
+    "r210_canonical_ab_preserved": true,
+    "previous_r204_r218_duplicates_unpublished": true
+  }
+}
