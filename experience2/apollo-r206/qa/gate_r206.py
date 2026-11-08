@@ -115,6 +115,10 @@ def main(out:Path):
             for term in ['What were the test conditions?','How might the fire have started?','Can a photograph settle the cause?','Read original investigation']:
                 assert any(term in str(n.get('name',{}).get('value','')) for n in ax),name+' AX tree missing '+term
             assert not errors,(name,errors)
+            if name=='390':
+                pg.emulate_media(media='print')
+                assert all(pg.locator('.fv-apollo-confidence-answer').nth(i).is_visible() for i in range(3)), 'closed disclosures hidden on print'
+                pg.emulate_media(media='screen')
             # Stable baseline screenshot after expanding state tested above.
             pg.evaluate('''() => {location.hash='';document.activeElement.blur();document.querySelectorAll('details[open]').forEach(el=>el.removeAttribute('open'));scrollTo(0,0)}''')
             pg.wait_for_timeout(220)
