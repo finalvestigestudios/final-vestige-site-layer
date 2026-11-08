@@ -79,6 +79,7 @@ function runMutations(original){
   ['new signup',b=>b[REQUIRED[1]]+='<form><input type="email"></form>'],
   ['third party analytics',b=>b[REQUIRED[1]]+='<script src="https://tracker.example/file.js"></script>'],
   ['remove scientific trial',b=>b[REQUIRED[0]]=b[REQUIRED[0]].replace(/10\.1038\/s41598-025-88517-z/g,'')],
+  ['erase analyzed sample distinction',b=>b[REQUIRED[0]]=b[REQUIRED[0]].replace(/64 participants in the analyzed sample/g,'80 participants in the analyzed sample')],
   ['remove disputed entrainment review',b=>b[REQUIRED[0]]=b[REQUIRED[0]].replace(/10\.1371\/journal\.pone\.0286023/g,'')],
   ['remove five-caption timing',b=>b[REQUIRED[3]]=b[REQUIRED[3]].replace('00:00:42.000','00:00:41.000')],
   ['pretend publicly live',b=>{const m=JSON.parse(b[REQUIRED[4]]);m.status='LIVE';b[REQUIRED[4]]=JSON.stringify(m)}],
