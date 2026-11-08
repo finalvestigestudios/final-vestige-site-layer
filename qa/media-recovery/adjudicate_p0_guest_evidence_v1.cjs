@@ -6,7 +6,7 @@
  */
 const fs=require('node:fs');
 const {sameSource}=require('./browser_probe_core.cjs');
-const {proofKind}=require('./image_census_coverage_core.cjs');
+const {proofKind,assessRun}=require('./image_census_coverage_core.cjs');
 const ORDER=['285:5','285:2','287:5','418:1','418:2','407:1'];
 const safeInt=x=>Number.isSafeInteger(x)&&x>=0;
 const validHttps=s=>{try{const u=new URL(s);return u.protocol==='https:'&&!u.username&&!u.password&&!!u.hostname}catch{return false}};
@@ -50,12 +50,23 @@ function sourceRows(early,later){
  return ORDER.map(k=>byKey.get(k));
 }
 function pageEvidence(run){
- if(!isObject(run)||run.probe_version<3||!['priority','all'].includes(run.mode)||
+ // A partial, failed or internally inconsistent collector run cannot certify even
+ // six apparently-loaded P0 slots. Recalculate the census from underlying DOM proofs.
+ if(!isObject(run)||run.status!=='complete_browser_image_census'||run.probe_version<3||!['priority','all'].includes(run.mode)||
     !['390x844','1440x900'].includes(run.viewport)||
     !isObject(run.run_profile)||run.run_profile.cache_disabled!==true||
     run.run_profile.service_worker_bypassed!==true||!Array.isArray(run.pages)||
-    !safeInt(run.requested_pages)||run.pages.length!==run.requested_pages||
-    !isObject(run.image_census_coverage))return null;
+    !safeInt(run.requested_pages)||run.requested_pages===0||run.pages.length!==run.requested_pages||
+    run.verified_pages!==run.requested_pages||!isObject(run.image_census_coverage)||
+    run.image_census_coverage.complete!==true||
+    !safeInt(run.image_census_coverage.confirmed_broken_count)||
+    run.confirmed_broken_count!==run.image_census_coverage.confirmed_broken_count)return null;
+ const recomputed=assessRun(run.pages,run.requested_pages);
+ if(!recomputed.complete||recomputed.confirmed_broken_count!==run.confirmed_broken_count||
+    recomputed.known_broken_count!==run.image_census_coverage.known_broken_count||
+    recomputed.observed_pages!==run.image_census_coverage.observed_pages||
+    recomputed.complete_pages!==run.image_census_coverage.complete_pages||
+    recomputed.requested_pages!==run.image_census_coverage.requested_pages)return null;
  const map=new Map();
  for(const p of run.pages){
   if(!safeInt(p?.post_id)||map.has(p.post_id))return null;
@@ -102,7 +113,7 @@ function adjudicate(early,later,run=null){
   const base={...s,visitor_classification:'PENDING_GUEST_BROWSER',visitor_http_status:null,
    visitor_request_url:null,visitor_request_id:null,visitor_decode_px:null,visitor_encoded_bytes:null,
    screenshot_proven:false,replacement_authorized:false,wordPress_write_authorized:false,
-   media_cache_authorized:false,rights_release:'HOLD',reason:'no_matching_complete_guest_browser_evidence'};
+   media_cache_authorized:false,rights_release:'HOLD',reason:run===null?'no_guest_capture':'guest_census_unverified_or_partial'};
   if(!pages)return base;
   const p=pages.get(s.post_id);
   if(!p||p.page_result!=='inspected_browser'||p.scroll_coverage?.complete!==true||
@@ -117,7 +128,7 @@ function adjudicate(early,later,run=null){
   const n=validateNetwork(v,p,kind);
   if(!n)return {...base,reason:'cdp_network_proof_incomplete_or_conflicted'};
   const screenshots=Array.isArray(p.screenshots)?p.screenshots:[];
-  const screenshot=screenshots.some(x=>x?.image_key===s.image_key&&x.result==='captured'&&
+  const screenshot=kind==='broken'&&screenshots.some(x=>x?.image_key===s.image_key&&x.result==='captured'&&
     x.current_src===v.current_src&&/^broken-\d+-\d+-\d+\.png$/.test(x.filename||''));
   return {...base,visitor_classification:kind==='broken'?'BROWSER_CONFIRMED_BROKEN':'BROWSER_VERIFIED_LOADED',
    visitor_http_status:safeInt(n.status)?n.status:null,visitor_request_url:n.url,
