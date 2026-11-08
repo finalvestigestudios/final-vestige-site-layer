@@ -46,7 +46,7 @@ There are multiple sources of uncertainty. A brief flash is difficult to count w
 
 A 2014 investigation by Abadi and Murphy probed stimulus arrangements and response bias. The authors reported that apparent robustness and the balance of fission and fusion depended in part on the visual–auditory pairings and response options. A report gathered from a forced set of choices has to be interpreted differently from one elicited with richer alternatives. [4]
 
-Another 2014 paper examined visual sensitivity and auditory parameters. It emphasized both the salience of signals and uncertainty about rapid stimuli, cautioning against a single universal account of the illusion. The researchers also noted that the cortical activity observed during illusory percepts differs from activity evoked by real flashes. The fact that the effect is scientifically interesting is not permission to treat a subjective report as proof of literal additional light. [5]
+Another 2014 paper examined visual sensitivity and auditory parameters. It emphasized both the salience of signals and uncertainty about rapid stimuli, cautioning against a single universal account of the illusion. The authors discussed earlier neural studies reporting that cortical activity during illusory percepts differs from activity evoked by real flashes. Their own 2014 study was behavioral; it did not record EEG. The fact that the effect is scientifically interesting is not permission to treat a subjective report as proof of literal additional light. [5]
 
 ## Attention affects the experiment, but not in the way an ad might suggest
 
@@ -98,12 +98,12 @@ We keep the buying decision in an independent guide rather than placing a commis
 
 ## Source trail and scope
 
-1. Shams, Kamitani & Shimojo (2000), “What you see is what you hear,” *Nature* 408:788. [Original article/abstract](https://doi.org/10.1038/35048669). Original short paper and abstract; no raw participant data.
+1. Shams, Kamitani & Shimojo (2000), “What you see is what you hear,” *Nature* 408:788. [Original article/abstract](https://doi.org/10.1038/35048669). Original article metadata and abstract; no raw participant data.
 2. Shams, Kamitani & Shimojo (2002), “Visual illusion induced by sound,” *Cognitive Brain Research* 14:147–152. [PubMed abstract](https://pubmed.ncbi.nlm.nih.gov/12063138/). Describes two experiments and an approximately 100 ms interaction window.
 3. Mishra et al. (2007), “Early Cross-Modal Interactions in Auditory and Visual Cortex Underlie a Sound-Induced Visual Illusion.” [Full text](https://pmc.ncbi.nlm.nih.gov/articles/PMC2905511/). N=34, EEG-based correlates; not an audio-product intervention.
 4. Abadi & Murphy (2014), “Phenomenology of the sound-induced flash illusion,” *Experimental Brain Research*. [PubMed abstract](https://pubmed.ncbi.nlm.nih.gov/24691756/). Stimulus set, fission/fusion and response conditions.
-5. “Visual sensitivity is a stronger determinant of illusory processes than auditory cue parameters in the sound-induced flash illusion” (2014). [Full text](https://pmc.ncbi.nlm.nih.gov/articles/PMC4070624/). Signal salience and uncertainty discussion.
-6. Mishra, Martínez & Hillyard (2010), “Effect of attention on early cortical processes associated with the sound-induced extra flash illusion,” *Journal of Cognitive Neuroscience*. [PubMed abstract](https://pubmed.ncbi.nlm.nih.gov/19583464/). N=15 frequent illusion perceivers, spatial attention manipulation.
+5. Kumpik, Roberts, King & Bizley (2014), “Visual sensitivity is a stronger determinant of illusory processes than auditory cue parameters in the sound-induced flash illusion,” *Journal of Vision* 14(7):12. [Full text](https://pmc.ncbi.nlm.nih.gov/articles/PMC4070624/). Signal salience and uncertainty discussion.
+6. Mishra, Martínez & Hillyard (2010), “Effect of attention on early cortical processes associated with the sound-induced extra flash illusion,” *Journal of Cognitive Neuroscience*. [PubMed abstract](https://pubmed.ncbi.nlm.nih.gov/19583464/). N=15 selected frequent illusion perceivers (at least half of screening trials); ten had also participated in the 2007 study, so samples are not wholly independent; spatial attention manipulation.
 7. DeLoss, Pierce & Andersen (2013), “Multisensory integration, aging, and the sound-induced flash illusion,” *Psychology and Aging*. [PubMed abstract](https://pubmed.ncbi.nlm.nih.gov/23978009/). Age comparisons, attention task.
 8. [Puységur Animal Magnetism Files](https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/) (Final Vestige published historical resource); historical rather than biomedical evidence.
 9. [Zen12 Premium seller offer](https://zen12.com/hnp) (merchant description; no purchase verified).
