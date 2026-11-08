@@ -24,6 +24,9 @@ MANIFEST_BLOB = '5822f9dfde21d1f3bdfc26658769d852c639438c'
 # R221 authenticated module: 35 frozen routes + 6 tools + 2026-11-08 taxonomy.
 R221_AUTHORITY_PATH = 'tools/r221_frozen_route_tool_authority.py'
 R221_AUTHORITY_BLOB = '88a8d37955957b4e1cba7a73e73ed4ee1e2fe0d1'
+# R222 pins the renderer, source registers/fragments, CSS and nine inline scripts.
+R222_BUNDLE_PATH = 'tools/r222_producer_source_bundle_gate.py'
+R222_BUNDLE_BLOB = '31ee5604ccff115ded6b856ec175fa82776e08eb'
 # These are independently observed R219 integration Git blobs, not certified text.
 # Missing entries MUST match the older R200 original exactly.
 INTEGRATED_DIFFS = {
@@ -261,6 +264,20 @@ def load_r221_authority(root: Path):
     return module
 
 
+
+def load_r222_bundle(root: Path):
+    """Pin the R222 gate itself before checking any mutable build dependencies."""
+    source = safe_read(root, R222_BUNDLE_PATH)
+    if git_blob(source) != R222_BUNDLE_BLOB:
+        raise ValueError('R222 producer/source custody gate identity mismatch')
+    spec = importlib.util.spec_from_file_location(
+        'fv_preparedness_r222_source_bundle', root / R222_BUNDLE_PATH)
+    if spec is None or spec.loader is None:
+        raise ValueError('R222 bundle gate cannot be loaded')
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
 def audit(root: Path, *, verify_exports: bool = True) -> dict:
     result = {'schema': SCHEMA, 'state': INVALID, 'issue': 136, 'conversion_issue': 820,
               'publication_authorized': False, 'independent_qd_pass': False,
@@ -274,6 +291,9 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
         roster = verify_roster(strict_object(original))
         authority = load_r221_authority(root)
         result['authorities'] = authority.verify_authorities(root, roster, safe_read)
+        # Fail before importing or executing the mutable WordPress producer.
+        bundle = load_r222_bundle(root)
+        result['producer_sources'] = bundle.check_bundle(root, safe_read)
         status, exceptions = verify_originals(root, roster)
         result['articles'] = status
         result['source_exceptions'] = exceptions
