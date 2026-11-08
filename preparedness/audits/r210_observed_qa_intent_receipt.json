@@ -1,0 +1,110 @@
+{
+  "schema": "fv-preparedness-r210-observed-start-qa-receipt-v1",
+  "observed_date_utc": "2026-11-08",
+  "issue": 136,
+  "conversion_issue": 820,
+  "state": "DRAFT_HARD_HOLD",
+  "publication_authorized": false,
+  "independent_qd_pass": false,
+  "medically_safe": false,
+  "native_build_executed": false,
+  "frozen_heads": {
+    "start": "2122d856fce9f64887c16df3d52e64be9f59a55b",
+    "food": "f911ff7a655de8d81535ea86ec3d65a49ee76648",
+    "shelter": "5daeaf2dd5ab71806a6b73c91edfb1d8df5da976",
+    "health": "d5ef5bafd68361434dd1cc9209915b8e8a4eaf17",
+    "hist_field": "4e5caf812727953aa45e3bda2d382f2c67b6a09c",
+    "hist_food": "67e116e536c7410bed30f8f3b1bb8c166f3c223d",
+    "hist_home": "7504a5f099594d635e3dd7332a33a2e1346c43a2"
+  },
+  "qa_prs": {
+    "157": {
+      "base_sha": "10f58fed1ba808056813064ca5f9680589db8da1",
+      "head_sha": "7d1ae6b8ef93d10cfb6810987672360885e9c1aa",
+      "draft": true
+    },
+    "169": {
+      "base_sha": "4b009361277ea1d4617b368f5d45104c7318b284",
+      "head_sha": "e9cd7766dac59d47ab467d8945269b9146c2aef5",
+      "draft": true
+    },
+    "973": {
+      "base_sha": "e9cd7766dac59d47ab467d8945269b9146c2aef5",
+      "head_sha": "4d40996a559b0124d74a9bb3bdcd481ad1992aa8",
+      "draft": true
+    }
+  },
+  "current_start_files": [
+    {
+      "path": "preparedness/content/articles/household-emergency-plan.body.html",
+      "blob_sha": "8ca5c261dba56eeaf79c445332381a74867233de",
+      "cites": 57,
+      "semantic_anchor_checks": {
+        "simulated_drill": true,
+        "explicit_no_breaker": true,
+        "critical_refrigeration_alarms_medical": true,
+        "obsolete_unsafe_drill_absent": true
+      },
+      "review": "human_editor_review_required"
+    },
+    {
+      "path": "preparedness/content/articles/three-day-kit.body.html",
+      "blob_sha": "ef5463ca668166766ca3d868908bc0bcb6040a23",
+      "cites": 75,
+      "semantic_anchor_checks": {
+        "fema_december_2023": true,
+        "ready_power_citation": true,
+        "interim_use_replacement_plan": true,
+        "doctor_pharmacist": true,
+        "older_blanket_discard_absent": true
+      },
+      "review": "qualified_medication_review_required"
+    },
+    {
+      "path": "preparedness/sources/fragments/start.json",
+      "blob_sha": "29574c328cbab0548e6e5d4a026694857d56b6b4",
+      "redcross_publisher_kind": "nonprofit",
+      "review": "publisher_source_review_required"
+    },
+    {
+      "path": "preparedness/taxonomy.json",
+      "blob_sha": "eea601e53e16e36cd4fc890876bc249b39632370",
+      "slate_count": 35,
+      "four_start_safety_gates_true": true,
+      "four_start_status": "not-started",
+      "review": "human_safety_gate_pending"
+    },
+    {
+      "path": "preparedness/tests/test_preparedness.py",
+      "blob_sha": "dd1e7bc35cc83da6174c56464583cbbadfd6751f",
+      "qa157_negative_test_carried": false,
+      "original_fixture_shared_write_risk": true,
+      "review": "qa_rebase_pending"
+    }
+  ],
+  "unresolved": {
+    "citation_occurrences": 3,
+    "affected_articles": [
+      7,
+      20
+    ],
+    "historical_source_conflicts": 7,
+    "qa_test_rebases": [
+      157,
+      169,
+      973
+    ],
+    "native_outputs_unverified": 41
+  },
+  "commercial": {
+    "candidate": "Legacy Triage",
+    "public_listing": "https://payhip.com/b/n1RhV",
+    "displayed_price_usd": 19,
+    "paid_order_verified": false,
+    "fulfillment_verified": false,
+    "seller_rights_verified": false,
+    "grok_asset_id_verified": false,
+    "attributed_qualified_sessions_verified": false,
+    "realized_net_revenue": null
+  }
+}
