@@ -86,13 +86,13 @@ function run(read){
   t('plan preserves CMS governance',f.plan.includes('PR #49')&&f.plan.includes('PR #172')&&!f.plan.includes('deploy now'));
   t('plan no paid SaaS',f.plan.includes('duplicate scripts')||f.plan.includes('duplicate'));
   let detected=0;let mutations=[
-    [hub.replace(/\bdisabled\b/,'data-disabled'),s=>!disabled(s)],
+    [hub.replace(/(<button[^>]*?)\bdisabled\b/,'$1data-disabled'),s=>!disabled(s)],
     [hub.replace(/Prospective affiliate disclosure/g,'Prospective information'),s=>!s.includes('Prospective affiliate disclosure')],
     [hub.replace('href="#tools"','href="#missing_tools"'),s=>!fragments(s)],
     [hub.replace('id="tools"','id="research"'),s=>ids(s).length!==new Set(ids(s)).size],
     [hub.replace('<h1>','<div>'),s=>!s.includes('<h1>')],
-    [A.replace(/\bdisabled\b/,'data-disabled'),s=>!disabled(s)],
-    [B.replace(/\bdisabled\b/,'data-disabled'),s=>!disabled(s)],
+    [A.replace(/(<button[^>]*?)\bdisabled\b/,'$1data-disabled'),s=>!disabled(s)],
+    [B.replace(/(<button[^>]*?)\bdisabled\b/,'$1data-disabled'),s=>!disabled(s)],
     [B.replace('10.1037/cns0000173','10.1037/WRONG'),s=>!s.includes('10.1037/cns0000173')],
     [A.replace('may have truncated cents','guaranteed price'),s=>!s.includes('may have truncated cents')],
     [p.replace('21 were retained','27 were retained'),s=>!s.includes('21 were retained')],
