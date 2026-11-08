@@ -1,0 +1,517 @@
+{
+  "version": "R210",
+  "date_local": "2026-11-07",
+  "workstream": "FV Mind & Perception only",
+  "state": "UNPUBLISHED_NOT_ACTIVATED",
+  "source_review_scope": "Public seller page, legal guidance, cited primary studies; product checkout and named partner account not accessible",
+  "studies_not_products": true,
+  "affiliate_activation": false,
+  "offers": [
+    {
+      "key": "zen12-premium",
+      "role": "conditional_pilot_only",
+      "seller_url_for_editorial_provenance": "https://zen12.com/hnp",
+      "merchant_link_publication": "WITHHELD",
+      "price": "NOT_VERIFIED_AT_CHECKOUT",
+      "returns": "ONE_YEAR_ADVERTISED_UNVERIFIED",
+      "commission": "UNVERIFIED",
+      "publisher_acceptance": "UNVERIFIED"
+    },
+    {
+      "key": "hypnosis-live",
+      "role": "not_selected",
+      "exact_offer_page": "NOT_VERIFIED_IN_R210",
+      "commercial_activation": false
+    },
+    {
+      "key": "brainwave-shots",
+      "role": "not_selected",
+      "exact_offer_page": "NOT_VERIFIED_IN_R210",
+      "commercial_activation": false
+    },
+    {
+      "key": "FV-owned-Mind-Payhip-SKU",
+      "role": "possible_fallback",
+      "rights_and_checkout": "NOT_VERIFIED",
+      "commercial_activation": false
+    }
+  ],
+  "sources": [
+    {
+      "id": "S01",
+      "kind": "primary_study",
+      "title": "Reichle et al 2010 — Eye Movements During Mindless Reading",
+      "url": "https://doi.org/10.1177/0956797610378686"
+    },
+    {
+      "id": "S02",
+      "kind": "review",
+      "title": "Schooler et al 2011 — Meta-awareness and perceptual decoupling",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/21684189/"
+    },
+    {
+      "id": "S03",
+      "kind": "primary_study",
+      "title": "Killingsworth and Gilbert 2010 — Experience sampling",
+      "url": "https://doi.org/10.1126/science.1192439"
+    },
+    {
+      "id": "S04",
+      "kind": "primary_trial",
+      "title": "Lindsay et al — Brief mindfulness and acceptance trial",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/27819445/"
+    },
+    {
+      "id": "S05",
+      "kind": "seller",
+      "title": "Zen12 official Premium seller page",
+      "url": "https://zen12.com/hnp"
+    },
+    {
+      "id": "S06",
+      "kind": "seller",
+      "title": "Inspire3 official product catalog",
+      "url": "https://inspire3.com/"
+    },
+    {
+      "id": "S07",
+      "kind": "seller_public_program",
+      "title": "Inspire3 public affiliate portal: not account-specific approval",
+      "url": "https://affiliates.inspire3.com/"
+    },
+    {
+      "id": "S08",
+      "kind": "regulator",
+      "title": "FTC endorsement guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking"
+    },
+    {
+      "id": "S09",
+      "kind": "regulator",
+      "title": "FTC health products compliance guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+    },
+    {
+      "id": "S10",
+      "kind": "live_owned",
+      "title": "Final Vestige Focus Fieldbook",
+      "url": "https://finalvestige.com/focus/"
+    },
+    {
+      "id": "S11",
+      "kind": "live_owned",
+      "title": "Final Vestige Puységur historic source archive",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+    },
+    {
+      "id": "S12",
+      "kind": "live_owned",
+      "title": "Final Vestige published Mesmerism investigation",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/"
+    },
+    {
+      "id": "S13",
+      "kind": "live_owned",
+      "title": "Final Vestige published Change Blindness investigation",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/"
+    },
+    {
+      "id": "S14",
+      "kind": "policy",
+      "title": "Final Vestige Affiliate Disclosure",
+      "url": "https://finalvestige.com/affiliate-disclosure/"
+    },
+    {
+      "id": "S15",
+      "kind": "policy",
+      "title": "Final Vestige Editorial Standards",
+      "url": "https://finalvestige.com/editorial-standards/"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "statement": "Eye movements can continue during mindless reading with reduced linguistic modulation",
+      "status": "SUPPORTED_IN_STUDY_CONTEXT",
+      "basis": [
+        "S01"
+      ],
+      "publication": "article",
+      "caveat": "Experimental reading context, not diagnosis"
+    },
+    {
+      "id": "C02",
+      "statement": "Mind-wandering may involve perceptual decoupling and delayed meta-awareness",
+      "status": "SUPPORTED_AS_REVIEW_FRAMEWORK",
+      "basis": [
+        "S02"
+      ],
+      "publication": "article",
+      "caveat": "Conceptual framework, not universal causal proof"
+    },
+    {
+      "id": "C03",
+      "statement": "A particular smartphone experience-sampling cohort reported off-task thought at 46.9% of sampled moments",
+      "status": "SUPPORTED_IN_COHORT",
+      "basis": [
+        "S03"
+      ],
+      "publication": "article",
+      "caveat": "Not a population-wide constant"
+    },
+    {
+      "id": "C04",
+      "statement": "Mind-wandering causes unhappiness in all people",
+      "status": "EXCLUDE_CAUSAL_OVERCLAIM",
+      "basis": [
+        "S03"
+      ],
+      "publication": "neither",
+      "caveat": "Observational associations cannot settle all directions of causality"
+    },
+    {
+      "id": "C05",
+      "statement": "147 young adults randomized to 4 conditions for brief 3-day training",
+      "status": "SUPPORTED_IN_STUDY_CONTEXT",
+      "basis": [
+        "S04"
+      ],
+      "publication": "article",
+      "caveat": "Not the Zen12 product or general long-term clinical endpoint"
+    },
+    {
+      "id": "C06",
+      "statement": "Monitoring-plus-acceptance group had lower lab-task mind-wandering than monitoring only",
+      "status": "SUPPORTED_IN_STUDY_CONTEXT",
+      "basis": [
+        "S04"
+      ],
+      "publication": "article_and_guide",
+      "caveat": "Experimental instructions and SART outcome; no audio-product inference"
+    },
+    {
+      "id": "C07",
+      "statement": "Zen12 Premium offers 12 levels and 48 MP3s",
+      "status": "SELLER_REPRESENTATION_ONLY",
+      "basis": [
+        "S05"
+      ],
+      "publication": "commercial_guide",
+      "caveat": "No independently verified fulfillment or file audit"
+    },
+    {
+      "id": "C08",
+      "statement": "Zen12 includes four audio listening styles",
+      "status": "SELLER_REPRESENTATION_ONLY",
+      "basis": [
+        "S05"
+      ],
+      "publication": "commercial_guide",
+      "caveat": "Exact audio content not independently listened to or verified"
+    },
+    {
+      "id": "C09",
+      "statement": "Zen12 advertises a one-year guarantee",
+      "status": "SELLER_REPRESENTATION_ONLY",
+      "basis": [
+        "S05"
+      ],
+      "publication": "commercial_guide",
+      "caveat": "Full terms and actual refund performance not verified"
+    },
+    {
+      "id": "C10",
+      "statement": "Zen12 offers the benefits of one hour of advanced meditation in 12 minutes",
+      "status": "UNSUBSTANTIATED_FOR_SPECIFIC_PRODUCT_EXCLUDE",
+      "basis": [
+        "S05",
+        "S09"
+      ],
+      "publication": "quoted_as_disputed_seller_claim_only",
+      "caveat": "No product-specific substantiation reviewed"
+    },
+    {
+      "id": "C11",
+      "statement": "Zen12 causes instant anxiety relief",
+      "status": "UNSUBSTANTIATED_HEALTH_CLAIM_EXCLUDE",
+      "basis": [
+        "S05",
+        "S09"
+      ],
+      "publication": "neither",
+      "caveat": "Seller wording does not establish clinical efficacy"
+    },
+    {
+      "id": "C12",
+      "statement": "Zen12 improves concentration or creativity versus a free timer",
+      "status": "NOT_ESTABLISHED_EXCLUDE",
+      "basis": [
+        "S05",
+        "S04"
+      ],
+      "publication": "neither",
+      "caveat": "No verified head-to-head Zen12 study"
+    },
+    {
+      "id": "C13",
+      "statement": "Zen12 Premium price is a fixed and verified checkout total",
+      "status": "UNVERIFIED_EXCLUDE",
+      "basis": [
+        "S05"
+      ],
+      "publication": "neither",
+      "caveat": "Public promotional display fluctuated in prior snapshots; taxes/checkout unknown"
+    },
+    {
+      "id": "C14",
+      "statement": "Publisher-specific Inspire3 affiliate approval has been received",
+      "status": "UNVERIFIED_HARD_HOLD",
+      "basis": [
+        "S07"
+      ],
+      "publication": "neither",
+      "caveat": "Public sign-up portal is not an approval letter"
+    },
+    {
+      "id": "C15",
+      "statement": "Inspire3 permitted channels include email, social, site and disclosures under named FV agreement",
+      "status": "UNVERIFIED_HARD_HOLD",
+      "basis": [
+        "S07"
+      ],
+      "publication": "neither",
+      "caveat": "Private signed terms absent"
+    },
+    {
+      "id": "C16",
+      "statement": "Issued Final Vestige tracking URL and attribution windows have been verified",
+      "status": "UNVERIFIED_HARD_HOLD",
+      "basis": [
+        "S07"
+      ],
+      "publication": "neither",
+      "caveat": "No issued earning link or channel rules"
+    },
+    {
+      "id": "C17",
+      "statement": "A prominent near-control disclosure is required upon commercial activation",
+      "status": "SUPPORTED_COMPLIANCE_REQUIREMENT",
+      "basis": [
+        "S08"
+      ],
+      "publication": "commercial_guide",
+      "caveat": "Exact layout must undergo final review on every device"
+    },
+    {
+      "id": "C18",
+      "statement": "Health-related efficacy claims require competent and reliable relevant evidence",
+      "status": "SUPPORTED_COMPLIANCE_REQUIREMENT",
+      "basis": [
+        "S09"
+      ],
+      "publication": "article_and_guide",
+      "caveat": "Product-specific application; avoid implied guarantees"
+    },
+    {
+      "id": "C19",
+      "statement": "The public Focus Fieldbook provides an existing free route",
+      "status": "LIVE_ROUTE_VERIFIED",
+      "basis": [
+        "S10"
+      ],
+      "publication": "hub_and_guide",
+      "caveat": "An accessible landing page is not authoritative confirmed lead"
+    },
+    {
+      "id": "C20",
+      "statement": "Published Puységur and Mesmerism content provides historical context",
+      "status": "LIVE_ROUTE_VERIFIED",
+      "basis": [
+        "S11",
+        "S12"
+      ],
+      "publication": "hub_and_article",
+      "caveat": "Historical reporting does not prove clinical hypnosis claims"
+    },
+    {
+      "id": "C21",
+      "statement": "Affiliate outbound click proves a commission or sale",
+      "status": "FALSE_NEVER_COUNT_AS_SALE",
+      "basis": [
+        "S07"
+      ],
+      "publication": "attribution_spec",
+      "caveat": "Require independent merchant settlement and refunds"
+    },
+    {
+      "id": "C22",
+      "statement": "Net revenue per 1000 qualified sessions is computable from currently verified data",
+      "status": "NOT_COMPUTABLE",
+      "basis": [],
+      "publication": "attribution_spec",
+      "caveat": "No authenticated cohort denominator or settled merchant receipts"
+    }
+  ],
+  "gates": [
+    {
+      "id": "G01",
+      "kind": "affiliate_account",
+      "status": "OPEN",
+      "requirement": "Partner dashboard or signed correspondence naming Final Vestige publisher acceptance",
+      "owner": "Founder / Mind",
+      "blocks": [
+        "earning_link",
+        "commercial_activation"
+      ]
+    },
+    {
+      "id": "G02",
+      "kind": "permissions",
+      "status": "OPEN",
+      "requirement": "Partner channel-specific website, social and email permissions; no assumption from public affiliate page",
+      "owner": "Founder / Mind",
+      "blocks": [
+        "earning_link",
+        "campaign_activation"
+      ]
+    },
+    {
+      "id": "G03",
+      "kind": "url",
+      "status": "OPEN",
+      "requirement": "Issued, unmodified merchant earning URL, allowed redirect/UTM rules, expiration and attribution window",
+      "owner": "Founder / Mind",
+      "blocks": [
+        "earning_link"
+      ]
+    },
+    {
+      "id": "G04",
+      "kind": "buyer_terms",
+      "status": "OPEN",
+      "requirement": "Current plan-specific checkout price, eligibility, taxes/fees, fulfillment/refund terms verified against final checkout and contract",
+      "owner": "Commerce",
+      "blocks": [
+        "price_claim",
+        "promotion"
+      ]
+    },
+    {
+      "id": "G05",
+      "kind": "product_efficacy",
+      "status": "OPEN",
+      "requirement": "Independent product-matched competent evidence if any objective cognitive/health claims are proposed; otherwise omit",
+      "owner": "Mind / QA",
+      "blocks": [
+        "efficacy_claim"
+      ]
+    },
+    {
+      "id": "G06",
+      "kind": "owned_product_fallback",
+      "status": "OPEN",
+      "requirement": "Authenticate rights-cleared, currently sellable FV-owned Mind Payhip SKU and purchase/refund terms before fallback",
+      "owner": "Commerce",
+      "blocks": [
+        "owned_product_purchase"
+      ]
+    },
+    {
+      "id": "G07",
+      "kind": "creator_asset",
+      "status": "OPEN",
+      "requirement": "Grok/Praxxis TASK-008 reconcile posted immutable asset_id, platform URL, hook, channel, creative rights and destination",
+      "owner": "Grok / Praxxis",
+      "blocks": [
+        "campaign_attribution"
+      ]
+    },
+    {
+      "id": "G08",
+      "kind": "lead",
+      "status": "OPEN",
+      "requirement": "Jetpack-authoritative opt-in confirmation for cohort; do not duplicate existing Focus welcome or list",
+      "owner": "Claude / Site QA",
+      "blocks": [
+        "confirmed_lead_reporting"
+      ]
+    },
+    {
+      "id": "G09",
+      "kind": "paid_order",
+      "status": "OPEN",
+      "requirement": "Merchant-confirmed settled paid orders or cleared affiliate commissions reconciled with refunds/chargebacks/fees",
+      "owner": "Commerce / Analytics",
+      "blocks": [
+        "conversion_reporting"
+      ]
+    },
+    {
+      "id": "G10",
+      "kind": "qualified_sessions",
+      "status": "OPEN",
+      "requirement": "Consent-respecting aggregated human-session denominator linked only to approved campaign asset_id/utm, spam filtered",
+      "owner": "Claude / Analytics",
+      "blocks": [
+        "revenue_per_1000"
+      ]
+    },
+    {
+      "id": "G11",
+      "kind": "release",
+      "status": "OPEN",
+      "requirement": "Founder production approval + Site QA actual-browser a11y/UX + CSP/performance review + publisher legal copy",
+      "owner": "Founder / Site QA",
+      "blocks": [
+        "publishing",
+        "merging",
+        "deployment"
+      ]
+    },
+    {
+      "id": "G12",
+      "kind": "video",
+      "status": "OPEN",
+      "requirement": "Original rights-cleared 42-second video rendered and audited for captions/transcript/poster, opt-in/no-autoplay, mobile performance",
+      "owner": "Grok / Site QA",
+      "blocks": [
+        "live_B_variant"
+      ]
+    }
+  ],
+  "events": {
+    "landing_visit": {
+      "status": "SPEC_ONLY",
+      "definition": "aggregate qualified human session with consent and canonical asset_id/utm_campaign; no IP/device fingerprint"
+    },
+    "relevant_cta_click": {
+      "status": "SPEC_ONLY",
+      "definition": "internal click to existing Focus or evidence guide, not a sale"
+    },
+    "lead_confirmed": {
+      "status": "NOT_VERIFIED",
+      "definition": "Jetpack authoritative opt-in from existing list, where consent and lawful aggregate reporting permit"
+    },
+    "merchant_outbound_click": {
+      "status": "DISABLED",
+      "definition": "future gated disclosed earning-link activation, never commission or purchase"
+    },
+    "paid_order_confirmed": {
+      "status": "NOT_VERIFIED",
+      "definition": "merchant-authoritative unique paid transaction id counted only once; never use client-side purchase pixel as evidence"
+    },
+    "affiliate_commission_cleared": {
+      "status": "NOT_VERIFIED",
+      "definition": "independent partner confirmed cleared and attributable commission only"
+    },
+    "refund_fee_reconciliation": {
+      "status": "NOT_VERIFIED",
+      "definition": "merchant reported returns, fee offsets, chargebacks and cancellation adjustments"
+    }
+  },
+  "revenue_formula": "realized_net_revenue = settled_FV_owned_cash_receipts + cleared_affiliate_commissions - refunds - chargebacks - processor_fees - attributable_merchant_fees; KPI = 1000 * realized_net_revenue / qualified_human_sessions (only where denominator>0 and authoritative inputs exist)",
+  "net_revenue_per_1000_sessions": null,
+  "reason_not_computable": "Authoritative cleared revenue, refunds, fees and qualified-human denominator missing; NULL, never 0",
+  "references_date_checked": "2026-11-07",
+  "release_decision": "HARD_HOLD"
+}
