@@ -45,7 +45,11 @@ class OptionalShortcutsR224(unittest.TestCase):
     def test_one_input_no_optional_shortcuts(self):
         root, calls, fields, output, generate, review = controls(1)
         bindings = install_shortcuts(root, fields, output, generate)
+        # R226 added both Num Lock modes of keypad 1; preserve the exact
+        # binding contract rather than the obsolete pre-keypad six-key list.
         self.assertEqual(bindings, ("<Alt-Key-1>", "<Control-Key-1>",
+                                    "<Alt-Key-KP_1>", "<Control-Key-KP_1>",
+                                    "<Alt-Key-KP_End>", "<Control-Key-KP_End>",
                                     "<Alt-Key-o>", "<Control-Key-o>",
                                     "<Alt-Key-g>", "<Control-Return>"))
         self.assertFalse(calls)
