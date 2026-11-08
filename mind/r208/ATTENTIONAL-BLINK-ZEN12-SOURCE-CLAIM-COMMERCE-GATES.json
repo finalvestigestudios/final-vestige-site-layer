@@ -26,10 +26,10 @@
     },
     {
       "id": "R07",
-      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1865565/",
+      "url": "https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.0050138",
       "type": "full primary paper",
       "checked": "2026-11-07",
-      "scope": "Slagter et al 2007 3 months retreat 17 practitioner recruits, 23 control recruits, AB/P3b. Not Zen12"
+      "scope": "Full PLOS primary methods/results: nonrandomized retreat (17) versus instructed novices (23); separate EEG analysis samples; pooled correlation across both groups"
     },
     {
       "id": "RA18",
@@ -151,7 +151,7 @@
       "source_ids": [
         "R07"
       ],
-      "limit": "17 practitioners recruited and 23 matched controls; small nonstandard fully randomized comparison; intensive retreat not commercial recordings"
+      "limit": "NONRANDOMIZED, self-selected 17 experienced practitioners vs 23 meditation-naïve comparison participants with a 1-hour class and brief assigned home practice; retreat 10–12 hours/day for three months included Vipassana and metta; EEG subsamples 10/12 main and 14/20 expanded no-blink; P3b–behavior correlation pooled both groups. Not an audio-product trial."
     },
     {
       "id": "AB05",
@@ -291,6 +291,16 @@
         "M3"
       ],
       "limit": "Merchant confirmation and settled amounts needed"
+    },
+    {
+      "id": "AB19",
+      "claim": "R196 is the preferred unpublished canonical attentional-blink investigation; R208 is supplementary and no duplicate public route is approved",
+      "decision": "EDITORIAL_CANONICAL_DECISION",
+      "source_ids": [
+        "R07",
+        "R07P"
+      ],
+      "limit": "Requires founder and independent editorial QA before CMS route; neither article published"
     }
   ],
   "authorization_gates": [
