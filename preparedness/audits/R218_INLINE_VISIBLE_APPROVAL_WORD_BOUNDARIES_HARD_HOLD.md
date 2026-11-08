@@ -23,7 +23,7 @@ git hash-object preparedness/tests/test_r218_visible_assurances.py
 # d7eb969e7f7f040d41a0a287f7c8cb76050510fd
 ```
 
-176 adversarial cases are distinct combinations of **22 mutations** × **two disclosure sections** × **two held articles (#7/#20)** × **WordPress/preview**; six baseline tests. Each mutation recomputes the matching synthetic parent digest first, proving the error is content semantics rather than stale receipt. Positive drafts stay held, never approved. Missing checkout means inherited R217 107 cases, full native validation/build, 35 authentic articles/41 outputs, genuine theme/browser/CSS/AT, independent QD and human source checks **not executed in this environment**.
+176 adversarial cases are distinct combinations of **22 mutations** × **two disclosure sections** × **two held articles (#7/#20)** × **WordPress/preview**; six baseline tests. Each mutation recomputes the matching synthetic parent digest first, proving the error is content semantics rather than stale receipt. Positive drafts stay held, never approved. The inherited R217 test file was independently reassembled byte-for-byte against GitHub blob `b9df5e9e24f594a06775c6db3b26f4e84237d85d`; running both R217 and R218 suites together completed **289/289 PASS in 0.269 seconds** (107 inherited + 182 new). No complete native checkout; full native validation/build, 35 authentic articles/41 outputs, real theme/browser/CSS/AT, independent QD and human source checks **not executed in this environment**.
 
 ### Branch and independent QA identity check, 2026-11-08
 
@@ -65,3 +65,13 @@ python -I -m unittest discover -s preparedness/tests -v
 python -I preparedness/tools/audit_integration.py --require-release-ready
 # EXPECT HARD HOLD until source/citation/safety/independent QD gates are resolved
 ```
+
+### Post-commit compatibility execution (same final Python blobs)
+```sh
+# In isolated local reconstructed checkout with verified R217 inherited test source:
+python -I -m unittest discover -s preparedness/tests -p 'test_r21*.py' -q
+# Ran 289 tests in 0.269s — OK (107 original R217 + 182 R218)
+git hash-object preparedness/tests/test_r217_transport_semantics_guard.py
+# b9df5e9e24f594a06775c6db3b26f4e84237d85d — matches inherited GitHub source
+```
+This adds no new production claim: all 289 are isolated synthetic tests; the complete authenticated repository and original 35/41 native integration remain unavailable.
