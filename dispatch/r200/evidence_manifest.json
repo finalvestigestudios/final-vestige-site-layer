@@ -1,0 +1,56 @@
+{
+  "observation_utc": "2026-11-08T03:36:11Z",
+  "status": "SOURCE_ONLY_NOT_LIVE",
+  "stack": {
+    "original_master_pr": 175,
+    "current_master_head": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+    "base_pr": 1517,
+    "base_head": "2da30fe876f71b54185af154f48f53f12873dc58"
+  },
+  "preserved_pilot": {
+    "editorial": [
+      1,
+      2,
+      4,
+      6
+    ],
+    "commercial": [
+      3,
+      5
+    ],
+    "send_status": "HOLD_UNSENT",
+    "commercial_status": "HOLD_MERCHANT"
+  },
+  "wordPress": {
+    "diagnostic_total": 3,
+    "diagnostic_confirmed": 3,
+    "unconfirmed_requests": 2,
+    "actual_email_eligible": null,
+    "provider_confirmed_signup_events": null,
+    "welcome_configured": true,
+    "verified_welcome_received": null,
+    "auto_new_post_email": false,
+    "email_format": "full",
+    "native_render_verified": false,
+    "valid_fv_postal_address_verified": false,
+    "unsubscribe_verified": false
+  },
+  "merchant": {
+    "named_fv_email_rights": false,
+    "account_earning_url": false,
+    "live_guide": false,
+    "settlement_evidence": false
+  },
+  "paid": {
+    "qualified_human_sessions": null,
+    "settled_paid_orders": null,
+    "revenue_per_1000_qualified_sessions": null,
+    "status": "NOT_COMPUTABLE"
+  },
+  "optional_editorial": {
+    "subject": "The part of the room your mind edits out",
+    "preheader": "In 1890, William James described attention as selection, not a complete recording.",
+    "cta": "https://finalvestige.com/2026/11/02/change-blindness/",
+    "approved": false
+  }
+}
