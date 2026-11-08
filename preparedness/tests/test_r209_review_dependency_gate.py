@@ -25,8 +25,8 @@ def fixture():
     for i,slug in enumerate(names,1):
         cluster=clusters[(i-1)%7]
         oid=f'{i:040x}'
-        if slug=='household-emergency-plan':oid=mod.REVIEW_PRS['157']['files']['preparedness/content/articles/household-emergency-plan.body.html'][0]
-        if slug=='three-day-kit':oid=mod.REVIEW_PRS['157']['files']['preparedness/content/articles/three-day-kit.body.html'][0]
+        if slug=='household-emergency-plan':oid='8ca5c261dba56eeaf79c445332381a74867233de'
+        if slug=='three-day-kit':oid='ef5463ca668166766ca3d868908bc0bcb6040a23'
         rows.append({'n':i,'slug':slug,'section':'start-here' if i<=4 else 'food',
             'route':f'/preparedness/{"start-here" if i<=4 else "food"}/{slug}/',
             'source_cluster':cluster,'branch_sha':mod.FROZEN_HEADS[cluster],
@@ -67,13 +67,15 @@ class TestR209Custody(unittest.TestCase):
         r=mod.audit(self.m,self.o)
         self.assertEqual(r['state'],mod.HOLD)
         self.assertTrue(all(x['candidate_oid'] is None for x in r['articles']))
-    def test_qa_proposed_body_still_unreviewed(self):
+    def test_stale_qa_head_cannot_replace_later_article_revision(self):
         self.c['household-emergency-plan']=mod.REVIEW_PRS['157']['files']['preparedness/content/articles/household-emergency-plan.body.html'][1]
-        r=mod.audit(self.m,self.o,self.c)
-        self.assertEqual(r['state'],mod.HOLD)
-        self.assertEqual(next(x for x in r['articles'] if x['slug']=='household-emergency-plan')['status'],
-                         'INDEPENDENT_QA_PROPOSAL_NOT_APPROVED')
-        self.assertFalse(r['independent_qd_pass'])
+        self.assert_invalid()
+    def test_six_stale_qa_file_bases_require_three_way_review(self):
+        out=mod.audit(self.m,self.o,self.c)
+        self.assertEqual(out['state'],mod.HOLD)
+        self.assertEqual(out['summary']['stale_qa_base_file_witnesses'],6)
+        self.assertTrue(all(not x['auto_merge_authorized'] for x in out['qa_base_drift']))
+        self.assertEqual({x['pr'] for x in out['qa_base_drift']},{157,169})
     def test_foreign_body_must_fail_even_if_40char(self):
         self.c['household-emergency-plan']='f'*40
         self.assert_invalid()
