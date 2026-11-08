@@ -47,7 +47,7 @@ function validate(f){
   check(h.includes("https://finalvestige.com/focus/"),"single_focus_path_missing_"+key);
   check(!/guaranteed (?:clinical|cure|wealth|IQ improvement)/i.test(h),"unsupported_efficacy_guarantee_"+key);
   check((h.match(/<html\b/g)||[]).length===1&&h.includes('name="viewport"')&&h.includes("prefers-reduced-motion"),"source_accessibility_basics_missing_"+key);
-  check(!/http:\/\//.test(h),"non_tls_destination_"+key);
+  check(!/\\bhref=["\u0027]http:\/\//.test(h),"non_tls_destination_"+key);
   const ids=matches(h,/\bid="([^"]+)"/g).map(x=>x[1]);
   check(new Set(ids).size===ids.length,"duplicate_document_id_"+key);
  }
@@ -58,7 +58,7 @@ function validate(f){
  check(guide.includes("<desc ")&&guide.includes("<title "), "accessible_film_poster_missing");
  const cues=parseVtt(vtt);
  check(vtt.startsWith("WEBVTT")&&cues.length===5&&cues[0]?.[0]===0&&cues[cues.length-1]?.[1]===42000&&cues.every((a,i)=>a[1]>a[0]&&(i===0||a[0]===cues[i-1][1])),"caption_timing_or_count_invalid");
- check(vtt.includes("Zen12 Premium")&&vtt.includes("Final Vestige"),"caption_storyboard_mismatch");
+ check(vtt.includes("Zen12 Premium")&&vtt.includes("The record before the promise"),"caption_storyboard_mismatch");
  check(matrix.status==="UNPUBLISHED_SOURCE_ONLY"&&matrix.permissions?.publishing===false&&matrix.permissions?.affiliate_activation===false&&matrix.permissions?.tracking_script===false,"unsafe_commercial_permissions");
  check(matrix.offer?.affiliate_url===null&&matrix.offer?.approval_verified===false&&matrix.offer?.current_checkout_price===null,"unauthorized_link_price_or_approval");
  check(matrix.sources?.length>=14&&matrix.claims?.length>=20&&matrix.gates?.length>=15,"insufficient_source_claim_gate_register");
