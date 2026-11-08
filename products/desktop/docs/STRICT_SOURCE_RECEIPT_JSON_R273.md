@@ -16,7 +16,7 @@ Examples reproduced with the actual Python JSON library locally:
 
 - `products/desktop/scripts/strict_source_receipt_r273.py`: private, data-independent decoder with unique-key enforcement at **every JSON object depth**, nonstandard constant rejection, invalid input rejection and a fixed error diagnostic, without retaining a customer path in a chained exception.
 - `products/desktop/scripts/offline_windows_candidate_r269.py`: uses the strict decoder **before** checking the existing source receipt's exact schema, test provenance, six smoke results and file/checksum custody. Trusts only the script directory resolved from its own `__file__` under `python -I`, not cwd or `PYTHONPATH`. All existing 40 child commands and Windows acceptance requirements remain intact.
-- `products/desktop/tests/test_strict_source_receipt_r273.py`: **16 focused decoder tests** covering valid receipts, nested/escaped duplicates, NaN/Infinity, malformed input, path-private failure, and optimized interpreter semantics.
+- `products/desktop/tests/test_strict_source_receipt_r273.py`: **17 focused decoder tests** covering valid receipts, nested/escaped duplicates, NaN/Infinity, malformed input, deeply nested recursion, path-private failure, and optimized interpreter semantics.
 - `products/desktop/tests/test_source_receipt_integration_r273.py`: **8 repository integration tests** against the actual R269–R273 runner and existing R270 receipt fixture, including an isolated CLI import preflight. These need an actual checkout/CI to execute and are NOT represented as locally passed.
 - `.github/workflows/desktop-build.yml`: new explicit normal and `-OO` gates for both modules on **Ubuntu source-tests** and **Windows build** jobs, without uploading or publishing premium artifacts.
 
@@ -26,9 +26,9 @@ The new decoder is **not** a digital signature, release gate by itself, or a sub
 
 - Environment: Linux, CPython **3.13.5**, synthetic JSON only.
 - Baseline Python decoder ambiguity: **3/3 examples reproduced** above.
-- Exact committed decoder blob SHA-1: `5e3b7c5d978d6b3df2881f6f026ac7a519a120f4`.
-- Exact committed test blob SHA-1: `19381fdc4c9878ed8e46b759f8254f1b84763354`.
-- Local commands on those exact files: `python -W error -m unittest discover -s products/desktop/tests -p 'test_strict_source_receipt_r273.py'` = **16/16 PASS**; `python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_strict_source_receipt_r273.py'` = **16/16 PASS**; **32/32 focused decoder method executions**, compileall PASS.
+- Exact committed decoder blob SHA-1: `6573efa690c287f3e931cbca011b4e8ca93b1f73`.
+- Exact committed test blob SHA-1: `c2d7d83b97b80598917ef6817c05fc12ad9e8a55`.
+- Local commands on those exact files: `python -W error -m unittest discover -s products/desktop/tests -p 'test_strict_source_receipt_r273.py'` = **17/17 PASS**; `python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_strict_source_receipt_r273.py'` = **17/17 PASS**; **34/34 focused decoder method executions**, compileall PASS.
 - **Not executed locally:** the 8 added runner integration tests, the inherited full repository suite, hosted Ubuntu/Windows jobs, native six EXE builds, Defender or GUI/accessibility inspection. The GitHub repository is private and not network-cloneable in the Linux execution sandbox; running synthetic decoder tests is not equivalent to running the full committed runner.
 - Previous R272 Actions run #42445253471 (2026-11-08 UTC) reported both jobs failed with **zero recorded steps**. A new run for R273 must be checked separately; do not interpret workflow creation as execution.
 
