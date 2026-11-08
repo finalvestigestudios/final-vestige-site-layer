@@ -1,6 +1,6 @@
 # THE DISPATCH — ISSUE 05 (R203 optional alternative, never approved)
 **STATUS: DRAFT — DO NOT EMAIL, PUBLISH OR REPLACE MASTER #175**
-**Subject:** A 1843 book and a modern focus recording
+**Subject:** An 1843 book and a modern focus recording
 **Preheader:** What James Braid could document, and what a seller still needs to prove.
 **Primary CTA:** [[APPROVED_LIVE_TOTAL_FOCUS_BUYER_GUIDE_URL_REQUIRED]] — INACTIVE
 **Type:** COMMERCIAL CANDIDATE, founder approval + partner email permission required
