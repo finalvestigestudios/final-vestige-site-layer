@@ -1,0 +1,562 @@
+{
+  "schema": "fv-mind-r211/claims-v1",
+  "checked_local_date": "2026-11-07",
+  "workstream": "Mind & Perception ONLY",
+  "status": "UNPUBLISHED_CLAIMS_REVIEW",
+  "public_commerce_activation": false,
+  "commercial_design": "Zen12 remains existing conditional primary A/B pilot; Total Focus provenance is comparison-only; no new presell activation",
+  "source_refs": [
+    {
+      "id": "H01",
+      "kind": "primary_history",
+      "title": "Coué 1922, complete English edition",
+      "url": "https://www.gutenberg.org/files/27203/27203-h/27203-h.htm",
+      "review_scope": "public source; read/editorial evidence only; seller pages are not transaction proofs"
+    },
+    {
+      "id": "H02",
+      "kind": "primary_history_scan",
+      "title": "1922 scanned edition page index",
+      "url": "https://en.wikisource.org/wiki/Index:Cou%C3%A9_-_Self_Mastery_Through_Conscious_Autosuggestion_%281922%29.djvu",
+      "review_scope": "public source; read/editorial evidence only; seller pages are not transaction proofs"
+    },
+    {
+      "id": "P01",
+      "kind": "primary_experiment",
+      "title": "Wood et al 2009 positive self-statements",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/19493324/",
+      "review_scope": "public source; read/editorial evidence only; seller pages are not transaction proofs"
+    },
+    {
+      "id": "P02",
+      "kind": "review",
+      "title": "Kirsch 2023 hypnotic expectancy review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36638224/",
+      "review_scope": "public source; read/editorial evidence only; seller pages are not transaction proofs"
+    },
+    {
+      "id": "P03",
+      "kind": "primary_trial",
+      "title": "Rahl et al 2017 acceptance/monitoring trial",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5329004/",
+      "review_scope": "public source; read/editorial evidence only; seller pages are not transaction proofs"
+    },
+    {
+      "id": "P04",
+      "kind": "primary_study",
+      "title": "Reichle et al 2010 mindless reading N=4",
+      "url": "https://doi.org/10.1177/0956797610378686",
+      "review_scope": "public source; read/editorial evidence only; seller pages are not transaction proofs"
+    },
+    {
+      "id": "P05",
+      "kind": "primary_study",
+      "title": "Killingsworth/Gilbert 2010 experience-sampling",
+      "url": "https://doi.org/10.1126/science.1192439",
+      "review_scope": "public source; read/editorial evidence only; seller pages are not transaction proofs"
+    },
+    {
+      "id": "S01",
+      "kind": "seller_catalog",
+      "title": "Inspire3 product catalog",
+      "url": "https://inspire3.com/",
+      "review_scope": "public source; read/editorial evidence only; seller pages are not transaction proofs"
+    },
+    {
+      "id": "S02",
+      "kind": "seller_offer",
+      "title": "Zen12 Premium exact landing",
+      "url": "https://zen12.com/hnp",
+      "review_scope": "public source; read/editorial evidence only; seller pages are not transaction proofs"
+    },
+    {
+      "id": "S03",
+      "kind": "seller_offer",
+      "title": "Hypnosis Live Total Focus exact item",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "review_scope": "public source; read/editorial evidence only; seller pages are not transaction proofs"
+    },
+    {
+      "id": "S04",
+      "kind": "seller_terms",
+      "title": "Hypnosis Live FAQ returns restriction",
+      "url": "https://hypnosislive.com/faq",
+      "review_scope": "public source; read/editorial evidence only; seller pages are not transaction proofs"
+    },
+    {
+      "id": "S05",
+      "kind": "seller_public_affiliate",
+      "title": "Inspire3 public affiliate portal",
+      "url": "https://affiliates.inspire3.com/",
+      "review_scope": "public source; read/editorial evidence only; seller pages are not transaction proofs"
+    },
+    {
+      "id": "F01",
+      "kind": "ftc_staff",
+      "title": "FTC Endorsement Guides staff FAQ",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "review_scope": "public source; read/editorial evidence only; seller pages are not transaction proofs"
+    },
+    {
+      "id": "F02",
+      "kind": "ftc_guidance",
+      "title": "FTC Health Products Compliance Guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "review_scope": "public source; read/editorial evidence only; seller pages are not transaction proofs"
+    },
+    {
+      "id": "V01",
+      "kind": "live_first_party",
+      "title": "Existing free Focus Fieldbook",
+      "url": "https://finalvestige.com/focus/",
+      "review_scope": "public source; read/editorial evidence only; seller pages are not transaction proofs"
+    },
+    {
+      "id": "V02",
+      "kind": "live_first_party",
+      "title": "Puységur's Animal Magnetism Files",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "review_scope": "public source; read/editorial evidence only; seller pages are not transaction proofs"
+    },
+    {
+      "id": "V03",
+      "kind": "live_first_party",
+      "title": "Change Blindness published",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "review_scope": "public source; read/editorial evidence only; seller pages are not transaction proofs"
+    },
+    {
+      "id": "V04",
+      "kind": "live_first_party",
+      "title": "Mesmerism published",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "review_scope": "public source; read/editorial evidence only; seller pages are not transaction proofs"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "statement": "Coué's English 1922 book prescribed a counting string with twenty knots and phrase repetitions morning and night",
+      "status": "HISTORICAL_SOURCE_ESTABLISHED",
+      "basis": [
+        "H01",
+        "H02"
+      ],
+      "placement": "History",
+      "caveat": "Instruction is not a measure of efficacy"
+    },
+    {
+      "id": "C02",
+      "statement": "Coué said his patients' illnesses were routinely cured by suggestion",
+      "status": "HISTORICAL_AUTHOR_CLAIM_NOT_VERIFIED",
+      "basis": [
+        "H01"
+      ],
+      "placement": "History contextual only",
+      "caveat": "Cases/letters not independent trials; do not endorse medical effects"
+    },
+    {
+      "id": "C03",
+      "statement": "Coué separated will from imagination in his account of suggestion",
+      "status": "HISTORICAL_SOURCE_ESTABLISHED",
+      "basis": [
+        "H01"
+      ],
+      "placement": "History",
+      "caveat": "His proposed mechanism is not established physiology"
+    },
+    {
+      "id": "C04",
+      "statement": "Wood and colleagues 2009 found repeating positive self-statements could backfire among some low-self-esteem participants",
+      "status": "STUDY_CONTEXT_ESTABLISHED",
+      "basis": [
+        "P01"
+      ],
+      "placement": "History evidence commentary",
+      "caveat": "Different phrase and design from Coué/merchant programs"
+    },
+    {
+      "id": "C05",
+      "statement": "Wood's positive self-statements study demonstrates every autosuggestion practice is harmful",
+      "status": "FALSE_EXTENSION_EXCLUDE",
+      "basis": [
+        "P01"
+      ],
+      "placement": "Neither",
+      "caveat": "Different populations and tasks; no universal claim"
+    },
+    {
+      "id": "C06",
+      "statement": "Kirsch discusses expectancy as part of hypnosis and psychotherapy",
+      "status": "REVIEW_INTERPRETATION",
+      "basis": [
+        "P02"
+      ],
+      "placement": "History commentary only",
+      "caveat": "Review does not prove specific recordings"
+    },
+    {
+      "id": "C07",
+      "statement": "Rahl et al randomized 147 adults; 142 included in analysis; SART discrimination measured following three recorded trainings",
+      "status": "STUDY_CONTEXT_ESTABLISHED",
+      "basis": [
+        "P03"
+      ],
+      "placement": "Corrected R210 article and guides",
+      "caveat": "Three 20-minute instruction sessions; not Zen12"
+    },
+    {
+      "id": "C08",
+      "statement": "Monitoring + acceptance beat relaxation significantly on Rahl's SART",
+      "status": "CONTRADICTED_EXCLUDE",
+      "basis": [
+        "P03"
+      ],
+      "placement": "Neither",
+      "caveat": "p=.19 versus relaxation; did beat monitoring only p=.03 and reading p=.003"
+    },
+    {
+      "id": "C09",
+      "statement": "Reichle's mindless-reading eye tracking included four undergraduates",
+      "status": "STUDY_CONTEXT_ESTABLISHED",
+      "basis": [
+        "P04"
+      ],
+      "placement": "Corrected R210",
+      "caveat": "Repeated observations not N-independent participants"
+    },
+    {
+      "id": "C10",
+      "statement": "Zen12 Premium seller describes twelve levels and 48 MP3s across four styles",
+      "status": "SELLER_DESCRIPTION_ONLY",
+      "basis": [
+        "S02"
+      ],
+      "placement": "Commercial review with qualifier",
+      "caveat": "No independently observed delivered files"
+    },
+    {
+      "id": "C11",
+      "statement": "Zen12 buyer will pay a specific stated promotional amount",
+      "status": "NOT_VERIFIED_EXCLUDE",
+      "basis": [
+        "S02"
+      ],
+      "placement": "Neither",
+      "caveat": "Inconsistent dated public price extractions; unknown cause; no live checkout amount"
+    },
+    {
+      "id": "C12",
+      "statement": "Zen12 seller advertises a one-year money-back guarantee",
+      "status": "SELLER_DESCRIPTION_ONLY",
+      "basis": [
+        "S02"
+      ],
+      "placement": "Commercial review with qualifier",
+      "caveat": "No independent guarantee fulfillment/refund processing verified"
+    },
+    {
+      "id": "C13",
+      "statement": "Twelve minutes of Zen12 is clinically equivalent to an hour of advanced meditation",
+      "status": "PRODUCT_SPECIFIC_PROOF_ABSENT_EXCLUDE",
+      "basis": [
+        "S01",
+        "S02",
+        "F02"
+      ],
+      "placement": "Neither",
+      "caveat": "Seller assertion; no adequately matched independent trial examined"
+    },
+    {
+      "id": "C14",
+      "statement": "Zen12 reduces medical symptoms, improves IQ, guarantees wealth or permanently rewires the brain",
+      "status": "PRODUCT_SPECIFIC_PROOF_ABSENT_EXCLUDE",
+      "basis": [
+        "S01",
+        "S02",
+        "F02"
+      ],
+      "placement": "Neither",
+      "caveat": "No medical or financial guarantees"
+    },
+    {
+      "id": "C15",
+      "statement": "Hypnosis Live Total Focus seller page describes one downloadable hypnosis session, 33 minutes and 47 MB",
+      "status": "SELLER_DESCRIPTION_ONLY",
+      "basis": [
+        "S03"
+      ],
+      "placement": "Comparison guide provenance",
+      "caveat": "Neither duration nor file size establishes focus performance"
+    },
+    {
+      "id": "C16",
+      "statement": "Hypnosis Live Total Focus may be advertised as guaranteed 100% concentration",
+      "status": "PRODUCT_SPECIFIC_PROOF_ABSENT_EXCLUDE",
+      "basis": [
+        "S03",
+        "F02"
+      ],
+      "placement": "Neither",
+      "caveat": "Promotional slogan unsubstantiated"
+    },
+    {
+      "id": "C17",
+      "statement": "Total Focus page advertises 14-day satisfaction/refund period",
+      "status": "SELLER_DESCRIPTION_ONLY",
+      "basis": [
+        "S03"
+      ],
+      "placement": "Comparison guide with qualification",
+      "caveat": "Must include FAQ restriction"
+    },
+    {
+      "id": "C18",
+      "statement": "Hypnosis Live FAQ limits refunds to at most five sessions per year",
+      "status": "SELLER_DESCRIPTION_ONLY",
+      "basis": [
+        "S04"
+      ],
+      "placement": "Comparison guide adjacent to 14-day statement",
+      "caveat": "Eligibility, actual policy and checkout not independently transacted"
+    },
+    {
+      "id": "C19",
+      "statement": "Total Focus current checkout price, taxes, order restrictions, final delivery verified",
+      "status": "UNVERIFIED_EXCLUDE",
+      "basis": [
+        "S03"
+      ],
+      "placement": "Neither",
+      "caveat": "No authenticated checkout or purchase; public displayed amounts may differ"
+    },
+    {
+      "id": "C20",
+      "statement": "Final Vestige is individually approved for Inspire3 affiliate tracking",
+      "status": "UNVERIFIED_HARD_HOLD",
+      "basis": [
+        "S05"
+      ],
+      "placement": "Never until proof",
+      "caveat": "Public program portal is not named acceptance"
+    },
+    {
+      "id": "C21",
+      "statement": "Inspire3 website/email/social channels allow FV promotion and issued link",
+      "status": "UNVERIFIED_HARD_HOLD",
+      "basis": [
+        "S05"
+      ],
+      "placement": "Never until proof",
+      "caveat": "Separate channel permissions and tracking terms required"
+    },
+    {
+      "id": "C22",
+      "statement": "FV has actually experienced Zen12 or Total Focus recordings",
+      "status": "FALSE_TESTIMONIAL_EXCLUDE",
+      "basis": [
+        "F01"
+      ],
+      "placement": "Neither",
+      "caveat": "No purchase, listening or product test authenticated"
+    },
+    {
+      "id": "C23",
+      "statement": "An affiliate outbound click is a paid affiliate sale",
+      "status": "FALSE_EQUIVALENCE_EXCLUDE",
+      "basis": [
+        "F01"
+      ],
+      "placement": "Neither",
+      "caveat": "Commission only when independently confirmed and cleared"
+    },
+    {
+      "id": "C24",
+      "statement": "Existing free Focus Fieldbook is 52 pages via existing subscriber mechanism",
+      "status": "PUBLIC_PAGE_DESCRIPTION",
+      "basis": [
+        "V01"
+      ],
+      "placement": "Optional editorial route",
+      "caveat": "Page view or click is not provider-confirmed signup"
+    },
+    {
+      "id": "C25",
+      "statement": "One specific paid FV Mind Payhip SKU is rights-cleared, in stock and accepting purchases",
+      "status": "UNVERIFIED_HARD_HOLD",
+      "basis": [],
+      "placement": "Neither",
+      "caveat": "No authenticated Mind SKU, license, checkout and delivery records"
+    },
+    {
+      "id": "C26",
+      "statement": "An original 42-second concept film raises verified merchant sales relative to text-only",
+      "status": "UNTESTED_HYPOTHESIS",
+      "basis": [],
+      "placement": "Experiment proposal only",
+      "caveat": "No rendered video, randomized traffic, partner authorization, verified purchase or sample"
+    }
+  ],
+  "buyer_objections": [
+    {
+      "question": "Is there evidence for the branded result?",
+      "answer": "Not substantiated by the independent sources checked. General studies and historical texts are not branded efficacy tests."
+    },
+    {
+      "question": "What do I get?",
+      "answer": "Zen12 and Total Focus features are quoted as seller descriptions; verify downloads directly with seller before payment."
+    },
+    {
+      "question": "What will I pay?",
+      "answer": "Final checkout amount and taxes not verified; do not publish observed promotional numbers as actual price."
+    },
+    {
+      "question": "Can I get a refund?",
+      "answer": "Zen12 advertises one year; Total Focus page 14 days while merchant FAQ adds five-refunded-sessions-per-year limit. Review full policy and checkout."
+    },
+    {
+      "question": "Is there a free alternative?",
+      "answer": "A simple timer, private observations and the existing free Focus Fieldbook; not an equivalent clinical intervention."
+    }
+  ],
+  "gates": [
+    {
+      "id": "G01",
+      "requirement": "named_FV_affiliate_acceptance",
+      "status": "OPEN",
+      "owner": "Founder / Mind"
+    },
+    {
+      "id": "G02",
+      "requirement": "website_social_email_permissions",
+      "status": "OPEN",
+      "owner": "Founder / Mind"
+    },
+    {
+      "id": "G03",
+      "requirement": "issued_account_earning_link_and_tracking_rules",
+      "status": "OPEN",
+      "owner": "Founder / Mind"
+    },
+    {
+      "id": "G04",
+      "requirement": "current_checkout_price_total_taxes_and_geography",
+      "status": "OPEN",
+      "owner": "Commerce"
+    },
+    {
+      "id": "G05",
+      "requirement": "complete_refund_terms_and_actual_refund_performance",
+      "status": "OPEN",
+      "owner": "Commerce"
+    },
+    {
+      "id": "G06",
+      "requirement": "product_fulfillment_and_rights",
+      "status": "OPEN",
+      "owner": "Commerce"
+    },
+    {
+      "id": "G07",
+      "requirement": "FV_owned_paid_Mind_Payhip_sku_license_checkout_verified",
+      "status": "OPEN",
+      "owner": "Commerce"
+    },
+    {
+      "id": "G08",
+      "requirement": "published_Grok_asset_id_link_rights_match",
+      "status": "OPEN",
+      "owner": "Grok / Praxxis"
+    },
+    {
+      "id": "G09",
+      "requirement": "single_Jetpack_confirmed_optin_evidence",
+      "status": "OPEN",
+      "owner": "Claude / Site QA"
+    },
+    {
+      "id": "G10",
+      "requirement": "real_merchant_paid_order_or_cleared_commission",
+      "status": "OPEN",
+      "owner": "Commerce"
+    },
+    {
+      "id": "G11",
+      "requirement": "qualified_human_sessions_denominator",
+      "status": "OPEN",
+      "owner": "Claude / Analytics"
+    },
+    {
+      "id": "G12",
+      "requirement": "refunds_chargebacks_fees_reconciliation",
+      "status": "OPEN",
+      "owner": "Commerce"
+    },
+    {
+      "id": "G13",
+      "requirement": "rendered_opt_in_film_captions_actual_a11y_qa",
+      "status": "OPEN",
+      "owner": "Media / Site QA"
+    },
+    {
+      "id": "G14",
+      "requirement": "founder_release_approval_and_approved_CMS_draft",
+      "status": "OPEN",
+      "owner": "Founder / Claude"
+    },
+    {
+      "id": "G15",
+      "requirement": "full_browser_mobile_keyboard_wCAG_cwv_security",
+      "status": "OPEN",
+      "owner": "Site QA"
+    },
+    {
+      "id": "G16",
+      "requirement": "independent_editorial_accuracy_and_no_ai_voice_review",
+      "status": "OPEN",
+      "owner": "Praxxis / Editorial"
+    }
+  ],
+  "focus_capture": {
+    "provider": "existing Jetpack/Dispatch",
+    "single_list": true,
+    "duplicate_forms": false,
+    "welcomemessage_preserved": true,
+    "provider_confirmed_subscriptions": "UNVERIFIED"
+  },
+  "measurement_contract": {
+    "events": [
+      "qualified_human_session",
+      "article_landing",
+      "resource_cta_click",
+      "provider_confirmed_lead_if_available",
+      "affiliate_outbound_click_if_authorized",
+      "merchant_confirmed_paid_order",
+      "affiliate_commission_cleared",
+      "refund_chargeback_fee_reconciled"
+    ],
+    "allowed_utm_keys": [
+      "utm_source",
+      "utm_medium",
+      "utm_campaign",
+      "utm_content"
+    ],
+    "grok_asset_id": "UNKNOWN_NO_INVENTED_MEDIA_IDS",
+    "direct_identity_tracking": false,
+    "third_party_new_scripts": false,
+    "cohorts_days": [
+      7,
+      30
+    ],
+    "privacy": "Aggregated daily cohort counts, consent respecting, no PII, no IP, no fingerprint, no full query strings; restricted merchant dedupe outside page analytics",
+    "kpi_formula": "(settled owned-product cash receipts + cleared affiliate commissions - refunds - chargebacks - transaction fees)*1000/qualified human sessions",
+    "kpi_current": "NOT_COMPUTABLE",
+    "kpi_not_zero": true,
+    "click_not_sale": true,
+    "lead_not_sale": true
+  },
+  "disclosure_draft": "If you purchase through an approved link, Final Vestige may earn a commission at no additional cost to you.",
+  "disclosure_placement": "immediately preceding or beside the specific off-site purchasing CTA; always visible (not tooltip, footer-only or checkbox)",
+  "commercial_link": "NONE_ACTIVE",
+  "release": "HARD_HOLD"
+}
