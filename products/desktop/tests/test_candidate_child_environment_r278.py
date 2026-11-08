@@ -4,6 +4,7 @@ No Windows binaries are built by these tests. All secrets are synthetic canaries
 """
 from __future__ import annotations
 
+import ast
 import os
 from pathlib import Path
 import subprocess
@@ -108,6 +109,49 @@ class CandidateChildEnvironmentTests(unittest.TestCase):
                                     stdin=subprocess.DEVNULL, stdout=subprocess.DEVNULL,
                                     stderr=subprocess.DEVNULL, check=False, timeout=10)
         self.assertEqual(actual.returncode, 0)
+
+    def actual_runner_function(self):
+        # Compile the real Git-owned runner function directly from its AST.
+        # Tests its production subprocess invocation without importing its
+        # complete Windows-only packaging/dependency chain.
+        path = (Path(__file__).resolve().parents[1] / "scripts" /
+                "offline_windows_candidate_r269.py")
+        tree = ast.parse(path.read_text(encoding="utf-8"), filename=str(path))
+        functions = [node for node in tree.body
+                     if isinstance(node, ast.FunctionDef) and node.name == "_run_child"]
+        self.assertEqual(len(functions), 1)
+        subset = ast.Module(body=functions, type_ignores=[])
+        scope = {"os": os, "subprocess": subprocess, "Path": Path,
+                 "private_child_environment": private_child_environment}
+        exec(compile(subset, str(path), "exec"), scope)
+        return scope["_run_child"]
+
+    def test_actual_runner_executes_real_child_without_secret(self):
+        runner = self.actual_runner_function()
+        with tempfile.TemporaryDirectory() as tmp:
+            witness = Path(tmp) / "witness.py"
+            witness.write_text("import os,sys\nsys.exit(1 if "
+                               + repr(CANARY) + " in os.environ.values() else 0)\n",
+                               encoding="utf-8")
+            with mock.patch.dict(os.environ, {key: CANARY for key in SECRET_KEYS}):
+                self.assertEqual(runner([sys.executable, "-I", str(witness)], Path(tmp), 10), 0)
+
+    def test_actual_runner_suppresses_logs_and_disables_shell(self):
+        runner = self.actual_runner_function()
+        with mock.patch.object(subprocess, "run") as call:
+            call.return_value.returncode = 0
+            self.assertEqual(runner([sys.executable, "-I", "-c", "pass"], Path.cwd(), 5), 0)
+        kwargs = call.call_args.kwargs
+        self.assertIs(kwargs["shell"], False)
+        self.assertEqual(kwargs["stdout"], subprocess.DEVNULL)
+        self.assertEqual(kwargs["stderr"], subprocess.DEVNULL)
+        self.assertEqual(kwargs["stdin"], subprocess.DEVNULL)
+        self.assertNotIn("GITHUB_TOKEN", kwargs["env"])
+
+    def test_actual_runner_masks_operating_system_errors(self):
+        runner = self.actual_runner_function()
+        with mock.patch.object(subprocess, "run", side_effect=OSError(CANARY)):
+            self.assertEqual(runner(["missing"], Path.cwd(), 5), 1)
 
     def test_real_private_runner_uses_explicit_environment_builder(self):
         # Tests source contract against the committed runner; no import of the
