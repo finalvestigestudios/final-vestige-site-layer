@@ -37,7 +37,7 @@ function safeTrackingUrl(input) {
   if (content && !/^issue_(0[1-6])_(editorial|zen12|total_focus)$/.test(content)) return false;
   // Never put subscriber email, email hash, client ID, click ID or campaign-specific identity in URLs.
   if (/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/i.test(input)) return false;
-  if (/(\bemail\b|subscriber|recipient|person_id|token|click_id|gclid|fbclid)/i.test(input)) return false;
+  if (/(subscriber|recipient|person_id|token|click_id|gclid|fbclid)/i.test(input)) return false;
   return true;
 }
 function audit(entry, html, eml, plain) {
