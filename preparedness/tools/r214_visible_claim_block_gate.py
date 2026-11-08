@@ -208,6 +208,5 @@ def main(argv=None):
     print(json.dumps(result,sort_keys=True,indent=2,ensure_ascii=False))
     return 2 if result['state']==HOLD else 3
 
-
 if __name__=='__main__':
     raise SystemExit(main())
