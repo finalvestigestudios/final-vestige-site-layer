@@ -2,14 +2,14 @@
 title: "The Glass No One Saw: How a Question Changes the Witness"
 subtitle: "The 1974 car-crash experiment, the 1978 slide studies, and the difference between a memory report and a surviving record"
 stream: "Perception & Attention / History of Suggestion"
-status: "UNPUBLISHED — editorial investigation, not commerce"
+status: "UNPUBLISHED / NONCANONICAL — retained research companion; R185 proposed canonical crash investigation"
 date: "2026-11-08"
 proposed_slug: "WITHHELD — no public destination"
 ---
 
 # The Glass No One Saw: How a Question Changes the Witness
 
-*There was no broken glass in the film. A week later, some people remembered it.*
+*There was no broken glass in the film. A week later, some people reported seeing it.*
 
 That is the detail that has kept a psychology experiment alive for more than half a century. Not the cars. Not their speed. A small object that was absent from the screen and present in a later answer.
 
@@ -29,15 +29,15 @@ The first experiment used short films of car accidents. After watching, particip
 
 Those are not merely five synonyms in the context of a crash. They suggest different intensities. We hear *smashed* and picture something violent. *Contacted* can sound scarcely more consequential than a touch.
 
-The researchers found that participants given the stronger verb tended to estimate higher speeds. The published abstract explicitly reports this effect. The standard retelling identifies forty-five student participants in the first experiment, but we treat detailed secondary summaries as a lower level of evidence than the journal article and do not pretend our present reading is a full reanalysis of its individual observations.
+The original full paper documents forty-five students, nine assigned to each verb, and seven films of traffic accidents. The questionnaires first asked participants to give their own account of what they had seen, and *then* asked specific questions. Mean reported speeds ranged from 40.8 mph for *smashed* to 31.8 mph for *contacted*, with *hit* at 34.0 mph. The change in wording influenced subsequent estimates; the study did not prove that every observer's stored image changed. These are published group means, not a reanalysis of individual records. [1974 primary full text](https://bpb-us-e2.wpmucdn.com/faculty.sites.uci.edu/dist/c/571/files/2024/08/LoftusPalmer_ReconstructionAuto_JVLVB1974.pdf).
 
-The central experimental choice matters more than a memorized numerical ranking. A participant was not simply asked “What happened?” and allowed to describe the scene from scratch. A participant was directed toward a speed estimate, with a verb that carried a suggestion about the severity of the collision.
+The crucial experimental variation came **after** an initial free account of the scene: participants were then directed toward a speed estimate by a question with a verb carrying a suggestion about the collision's severity. The unprompted account and the later manipulated question should never be conflated.
 
 There are several ways that could matter. The word may alter how the event is later represented. It may also bias the estimate in the moment: someone might infer that a crash described as *smashed* was probably fast, whether or not their visual recollection changed. The response alone does not settle which mechanism occurred.
 
 That distinction is not pedantry. It is the difference between documenting an effect on an answer and claiming to know precisely what happened inside memory.
 
-**The source:** Loftus and Palmer (1974), *Journal of Verbal Learning and Verbal Behavior*, 13(5), 585–589. [Original journal abstract and DOI](https://doi.org/10.1016/S0022-5371(74)80011-3); [ERIC bibliographic record](https://eric.ed.gov/?id=EJ112718). The journal abstract establishes two experiments, the manipulated verbs and the direction of the result. It is not a full participant-level dataset.
+**The source:** Loftus and Palmer (1974), *Journal of Verbal Learning and Verbal Behavior*, 13(5), 585–589. [Original journal abstract and DOI](https://doi.org/10.1016/S0022-5371(74)80011-3); [ERIC bibliographic record](https://eric.ed.gov/?id=EJ112718). The linked original paper gives the methods and tabulated group results; no raw participant-level dataset was inspected.
 
 ## The return visit
 
@@ -47,7 +47,7 @@ After seeing a traffic-accident film, participants were asked a question about t
 
 The film contained none.
 
-The paper reports that people who had received the stronger verb were more likely to answer yes. Secondary reporting gives the much-repeated proportions as roughly 32 percent for *smashed*, 14 percent for *hit* and 12 percent for the no-speed-question group. Those percentages are context-specific observations from this experiment, not a global estimate of how often human memory invents events.
+The original full text reports a **separate sample of 150 students**, fifty per condition. Participants first described the accident in their own words and then received the speed question (*smashed*, *hit*, or no speed question). One week later, without seeing the film again, **16 of 50** in the *smashed* group, **7 of 50** in the *hit* group and **6 of 50** controls answered yes when asked about glass that was absent. Those are **32%, 14% and 12%**, respectively, in this study, not universal rates of mistaken memory. The first experiment's speed data must not be interchanged with these later reports.
 
 A difference of that kind matters precisely because the later question seems mundane. Nobody was told to imagine shards on a road for a week. The misleading ingredient was embedded in language that looked like a normal follow-up question.
 
@@ -61,9 +61,9 @@ The appropriate conclusion is sharper and more modest: wording supplied after an
 
 Four years later, Loftus, David G. Miller and Helen J. Burns approached the problem using sequences of slides rather than accident films. Their 1978 paper examined the integration of verbal information into visual memory.
 
-The researchers showed a slide sequence depicting an automobile-pedestrian accident. After viewing, participants encountered information that was consistent with the scene, misleading about it or irrelevant. The researchers then measured recognition. The paper's [PubMed abstract](https://pubmed.ncbi.nlm.nih.gov/621467/) reports a total of 1,242 participants across five experiments and a pilot study, and lower recognition accuracy after misleading information on both yes/no and two-alternative forced-choice tests.
+The researchers showed slide sequences depicting an automobile-pedestrian accident. The [complete original paper](https://bpb-us-e2.wpmucdn.com/faculty.sites.uci.edu/dist/c/571/files/2024/08/LoftusMillerBurns_StopYield_JEP-HLM78.pdf) reports **1,242 participants across a pilot and five experiments**, not 1,242 in each condition. The **pilot (N=129)** used yes/no recognition; **Experiment I (N=195)** used a forced-choice picture test. In that experiment, participants who received consistent post-event information chose the correct picture 75% of the time, compared with 41% after misleading information. Outcomes and procedures varied across experiments; not every experiment used every post-event information condition or both response formats. The [PubMed abstract](https://pubmed.ncbi.nlm.nih.gov/621467/) summarizes the combined finding that misinformation reduced recognition accuracy across the tested procedures.
 
-The stop-sign-versus-yield-sign example associated with this research is memorable for a reason. A road sign is a discrete object. A witness can be shown one sign, then later questioned in terms that imply the other. If misinformation makes the wrong alternative more likely to be chosen, the observer has not recovered an untouched record merely by trying harder to remember.
+The stop-sign-versus-yield-sign example associated with this research is memorable for a reason. A road sign is a discrete object. A witness can be shown one sign, then later questioned in terms that imply the other. If misleading information makes the wrong alternative more likely to be chosen under these conditions, an observed recognition response is not simply an untouched copy of the original event. These experiments did **not** manipulate the amount of effort participants invested in remembering.
 
 But that does not license the conclusion that every false recognition report results from permanent destruction of the original memory. Questions of competing traces, source confusion, retrieval and decision bias have remained research questions.
 
@@ -91,7 +91,7 @@ A sound editorial method is more work than the slogan “memory is unreliable.�
 
 ## What thirty years of work added
 
-In a 2005 review, Elizabeth Loftus looked back on decades of research under the title “Planting misinformation in the human mind.” The [review abstract](https://doi.org/10.1101/lm.94705) defines the misinformation effect as reduced memory performance after exposure to misleading post-event information. It also notes that researchers have studied conditions that increase or reduce vulnerability, the limitations of warnings, and competing explanations of what happens to an original memory.
+In a 2005 review, Elizabeth Loftus looked back on decades of research under the title “Planting misinformation in the human mind.” The [2005 review](https://doi.org/10.1101/lm.94705) defines the misinformation effect as reduced memory performance after exposure to misleading post-event information. It also notes that researchers have studied conditions that increase or reduce vulnerability, the limitations of warnings, and competing explanations of what happens to an original memory.
 
 That retrospective is useful because it keeps us from turning a classic demonstration into a law without exceptions. Participants do not always accept a misleading suggestion. Warnings sometimes help, though not without qualifications. An observed recognition error does not by itself decide the status of every earlier trace.
 
@@ -165,12 +165,12 @@ There was, however, a record of the question. That second record is what made th
 
 ## Source ledger and evidentiary limits — reviewed 8 November 2026
 
-1. **Original experimental article (journal abstract):** Elizabeth F. Loftus and John C. Palmer, “Reconstruction of automobile destruction: An example of the interaction between language and memory,” *Journal of Verbal Learning and Verbal Behavior* 13(5):585–589 (1974), [DOI](https://doi.org/10.1016/S0022-5371(74)80011-3). The abstract establishes two experiments, differing verbs, a speed-estimate effect and the later absent-glass result; no raw individual-level records inspected.
+1. **Original experimental article (full text and journal abstract):** Elizabeth F. Loftus and John C. Palmer, “Reconstruction of automobile destruction: An example of the interaction between language and memory,” *Journal of Verbal Learning and Verbal Behavior* 13(5):585–589 (1974), [DOI](https://doi.org/10.1016/S0022-5371(74)80011-3). [Complete five-page primary article](https://bpb-us-e2.wpmucdn.com/faculty.sites.uci.edu/dist/c/571/files/2024/08/LoftusPalmer_ReconstructionAuto_JVLVB1974.pdf) checked for first free accounts, group sizes, seven films and Table 2. No participant-level data inspected.
 2. **Independent bibliographic record:** [ERIC EJ112718](https://eric.ed.gov/?id=EJ112718). Confirms authorship and publication; it is not an independent experiment.
-3. **1978 original experimental abstract:** Loftus, Miller and Burns, “Semantic integration of verbal information into a visual memory,” *Journal of Experimental Psychology: Human Learning and Memory* 4(1):19–31, [PubMed PMID 621467](https://pubmed.ncbi.nlm.nih.gov/621467/). Five experiments and a pilot; total N=1,242; measures and study conclusion at abstract scope. Detailed sign-example conditions were not reconstructed from original full text here.
-4. **Review (abstract scope):** Elizabeth F. Loftus, “Planting misinformation in the human mind: A 30-year investigation of the malleability of memory,” *Learning & Memory* 12:361–366 (2005), [DOI](https://doi.org/10.1101/lm.94705). Explains scope, moderators, warnings and unresolved mechanisms; this is a review, not product clinical testing.
+3. **1978 original experimental paper (full text and abstract):** Loftus, Miller and Burns, “Semantic integration of verbal information into a visual memory,” *Journal of Experimental Psychology: Human Learning and Memory* 4(1):19–31, [PubMed PMID 621467](https://pubmed.ncbi.nlm.nih.gov/621467/). [Original 13-page paper](https://bpb-us-e2.wpmucdn.com/faculty.sites.uci.edu/dist/c/571/files/2024/08/LoftusMillerBurns_StopYield_JEP-HLM78.pdf) reviewed: pilot N=129; Experiment I N=195, picture choice 75% vs 41% following consistent vs misleading information; 1,242 total across pilot plus five experiments. No raw records were reanalyzed.
+4. **Review (review article / published text):** Elizabeth F. Loftus, “Planting misinformation in the human mind: A 30-year investigation of the malleability of memory,” *Learning & Memory* 12:361–366 (2005), [DOI](https://doi.org/10.1101/lm.94705). Published review discusses scope, moderators, warnings, and disputed mechanisms; not a new intervention trial or product evidence.
 5. **Historical comparison:** Final Vestige [Puységur's Animal Magnetism Files](https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/) and published [Mesmerism](https://finalvestige.com/2026/11/02/mesmerism/), cited for historical source-reading, not causal proof or commercial efficacy.
 6. **Seller context only:** [Inspire3](https://inspire3.com/) and exact [Zen12 Premium offer](https://zen12.com/hnp); seller-feature and marketing claims only. No purchase, affiliate approval or first-person use established.
 7. **Compliance:** FTC [Endorsement Guides staff Q&A](https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking) and [Health Products Compliance Guidance](https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance); all merchant-benefit statements withheld from independent conclusions.
 
-**Editorial status:** Unpublished. No affiliate link, testimonial, price, clinical claim, diagnosis, invented social asset ID or live URL. This manuscript deliberately separates science, historical comparison and commerce.
+**Editorial status:** UNPUBLISHED, NONCANONICAL research companion. The earlier [R185 manuscript](https://github.com/finalvestigestudios/final-vestige-site-layer/blob/bdb00a491779b49a2cb2246c616448f5b64fa1b4/mind/r185/the-question-that-changed-the-crash-INVESTIGATION-UNPUBLISHED.md) is proposed as the canonical crash/leading-question article, with R200 reserved for the distinct hypnosis/memory question; do not create a competing R212 public slug. Unpublished. No affiliate link, testimonial, price, clinical claim, diagnosis, invented social asset ID or live URL. This manuscript deliberately separates science, historical comparison and commerce.
