@@ -56,6 +56,9 @@ def build():
     html=html.replace(old,new,1)
     # Remove unused legacy rules; retain all scoped component behaviors.
     css='\n'.join(line for line in css.split('\n') if '.fv-apollo-reading-lab' not in line)
+    # Native closed details hide their contents during print in Chromium.
+    # Make the R209 teaching answer guide printable even when left closed.
+    css+='\n@media print{.fv-apollo-atlas .fv-apollo-lesson-key::details-content{content-visibility:visible!important;display:block!important}}\n'
     parsed=Links();parsed.feed(html)
     require(len(parsed.ids)==len(set(parsed.ids)),'Duplicate IDs')
     require(all(i in parsed.ids for i in parsed.labels),'ARIA reference broken')
