@@ -37,13 +37,13 @@ for(const invalid of [1,480,null,undefined,-1,'0',NaN,Infinity]) {
 }
 test('unresolved loaded geometry fails site-wide census even when other pages are sound',()=>{
  const p=page(loaded());p.stored_images[0].natural_height=0;
- const p2=page(broken());p2.post_id=287;
+ const p2=page(broken());p2.post_id=287;p2.stored_images[0].image_key='287:5';
  const out=assessRun([p,p2],2);
  assert.equal(out.complete,false);assert.equal(out.confirmed_broken_count,null);
 });
 test('unresolved broken geometry fails site-wide census even when other pages are sound',()=>{
  const p=page(broken());p.stored_images[0].natural_height=480;
- const p2=page(loaded());p2.post_id=287;
+ const p2=page(loaded());p2.post_id=287;p2.stored_images[0].image_key='287:5';
  const out=assessRun([p,p2],2);
  assert.equal(out.complete,false);assert.equal(out.confirmed_broken_count,null);
 });
@@ -55,7 +55,7 @@ test('valid page with no inline images remains complete',()=>{
 });
 test('fully populated, consistent run remains complete',()=>{
  const p=page(loaded());
- const p2=page(broken());p2.post_id=287;
+ const p2=page(broken());p2.post_id=287;p2.stored_images[0].image_key='287:5';
  const out=assessRun([p,p2],2);
  assert.equal(out.complete,true);assert.equal(out.confirmed_broken_count,1);
 });
