@@ -1,0 +1,597 @@
+{
+  "schema": "fv-mind-r215/v1",
+  "checked_date": "2026-11-08",
+  "status": "UNPUBLISHED_SOURCE_ONLY",
+  "offer_decision": "ZEN12_PUBLIC_FEATURES_ONLY__AFFILIATE_AND_FV_PAID_SKU_HARD_HOLD",
+  "affiliate_url": null,
+  "authorized_outbound": false,
+  "prices_verified_at_checkout": false,
+  "claimed_revenue": null,
+  "source_registry": [
+    {
+      "id": "S01",
+      "category": "research",
+      "title": "Shams et al. 2000 Nature sound flash",
+      "url": "https://doi.org/10.1038/35048669",
+      "scope": "2000 published original abstract"
+    },
+    {
+      "id": "S02",
+      "category": "research",
+      "title": "Shams et al. 2002 visual illusion induced by sound",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/12063138/",
+      "scope": "2002 abstract two experiments ~100ms window"
+    },
+    {
+      "id": "S03",
+      "category": "research",
+      "title": "Mishra et al. 2007 cross modal ERP",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2905511/",
+      "scope": "2007 full text N=34; neural differences versus real flash"
+    },
+    {
+      "id": "S04",
+      "category": "research",
+      "title": "Abadi and Murphy 2014 phenomenology",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/24691756/",
+      "scope": "2014 abstract, response bias and stimulus confounds"
+    },
+    {
+      "id": "S05",
+      "category": "research",
+      "title": "Visual sensitivity SIFI 2014",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4070624/",
+      "scope": "2014 full text, uncertain mechanistic inference"
+    },
+    {
+      "id": "S06",
+      "category": "research",
+      "title": "Mishra et al. 2010 attention modulation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/19583464/",
+      "scope": "2010 abstract N15 selected frequent illusion perceivers"
+    },
+    {
+      "id": "S07",
+      "category": "research",
+      "title": "DeLoss et al. 2013 aging and SIFI",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23978009/",
+      "scope": "2013 abstract age differences and selective attention"
+    },
+    {
+      "id": "S08",
+      "category": "merchant_catalog",
+      "title": "Inspire3 product catalog",
+      "url": "https://inspire3.com/",
+      "scope": "public promotional brand descriptions only"
+    },
+    {
+      "id": "S09",
+      "category": "exact_offer",
+      "title": "Zen12 Premium original seller offer",
+      "url": "https://zen12.com/hnp",
+      "scope": "Public seller display $87 in web textual fetch on Nov 8, older $87.99 observation; conflicting snapshots, neither checkout/currency/tax confirmed"
+    },
+    {
+      "id": "S10",
+      "category": "affiliate_portal",
+      "title": "Inspire3 public affiliate program",
+      "url": "https://affiliates.inspire3.com/",
+      "scope": "public program existence only, 60%+ generic marketing not FV terms; omit all payout numbers from consumer page"
+    },
+    {
+      "id": "S11",
+      "category": "regulatory",
+      "title": "FTC Endorsement Guides Q&A",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "scope": "disclosure near recommendation and within videos where relevant"
+    },
+    {
+      "id": "S12",
+      "category": "regulatory",
+      "title": "FTC Health Products Compliance Guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "scope": "scientific substantiation relevant to product and claim"
+    },
+    {
+      "id": "S13",
+      "category": "published_free",
+      "title": "Seven Day Focus Fieldbook",
+      "url": "https://finalvestige.com/focus/",
+      "scope": "52-page existing resource; single Jetpack consent path; no signup testing"
+    },
+    {
+      "id": "S14",
+      "category": "published_history",
+      "title": "Puységur Animal Magnetism Files",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "scope": "existing historical source trail, live HTTP not independently fetched this run"
+    },
+    {
+      "id": "S15",
+      "category": "published_mind",
+      "title": "Change Blindness",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "scope": "existing published article per current site indexed homepage; page fetch unavailable"
+    },
+    {
+      "id": "S16",
+      "category": "published_mind",
+      "title": "Mesmerism",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "scope": "existing published article per current homepage; page fetch unavailable"
+    },
+    {
+      "id": "S17",
+      "category": "exact_offer",
+      "title": "Hypnosis Live Total Focus",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "scope": "seller's single session 33min/47MB from prior verification; not checkout-confirmed this run"
+    },
+    {
+      "id": "S18",
+      "category": "merchant_terms",
+      "title": "Hypnosis Live refund FAQ",
+      "url": "https://hypnosislive.com/faq",
+      "scope": "merchant stated 14 day return qualified by maximum five session refunds per year; prior verification"
+    },
+    {
+      "id": "S19",
+      "category": "proposal_existing",
+      "title": "R210 A text-only source guide",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/blob/c6fc177e57db483b9068f657c29b93bd1da9f325/mind/r210/zen12-mindless-reading-A-TEXT-UNPUBLISHED.html",
+      "scope": "source only; not a published URL or live test"
+    },
+    {
+      "id": "S20",
+      "category": "proposal_existing",
+      "title": "R210 B optional video guide",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/blob/c6fc177e57db483b9068f657c29b93bd1da9f325/mind/r210/zen12-mindless-reading-B-OPTIONAL-42S-UNPUBLISHED.html",
+      "scope": "source only; video concept unrendered"
+    },
+    {
+      "id": "S21",
+      "title": "Ingendoh, Posny & Heine 2023 PLOS ONE systematic EEG review",
+      "url": "https://doi.org/10.1371/journal.pone.0286023",
+      "scope": "Fourteen eligible: 5 support, 8 contradict, 1 mixed; highly heterogeneous",
+      "category": "research"
+    },
+    {
+      "id": "S22",
+      "title": "Melnichuk, Cooper & Hawk 2025 Scientific Reports randomized/within-person study",
+      "url": "https://doi.org/10.1038/s41598-025-88517-z",
+      "scope": "80 undergraduates 16 settings two visits; EEG entrainment conditional, vigilance decrement not reduced",
+      "category": "research"
+    },
+    {
+      "id": "S23",
+      "title": "Brainwave Shots official seller FAQ",
+      "url": "https://brainwaveshots.com/faq",
+      "scope": "15/30 minute files, one-year return with one-refund-per-six-month limit and >10-item download qualification",
+      "category": "merchant_terms"
+    },
+    {
+      "id": "S24",
+      "title": "Brainwave Shots official Focus Shot landing",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "scope": "Seller advertising, not independently proven focus effects",
+      "category": "exact_offer"
+    },
+    {
+      "id": "S25",
+      "title": "Site-wide commercial truthfulness charter #818",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/818",
+      "scope": "Demand/rights/revenue evidence first",
+      "category": "context"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "One flash with two beeps can generate a two-flash perceptual report",
+      "status": "SUPPORTED_CONDITIONAL",
+      "source_ids": [
+        "S01",
+        "S02"
+      ],
+      "limit": "Certain tested timing/stimuli/observers; not universal"
+    },
+    {
+      "id": "C02",
+      "claim": "2002 experiment studied approximately 100ms interaction window",
+      "status": "SUPPORTED_CONTEXT",
+      "source_ids": [
+        "S02"
+      ],
+      "limit": "Not a recipe for brain entrainment"
+    },
+    {
+      "id": "C03",
+      "claim": "2007 EEG had 34 participants and differential real/illusory patterns",
+      "status": "SUPPORTED_CONTEXT",
+      "source_ids": [
+        "S03"
+      ],
+      "limit": "No product comparison"
+    },
+    {
+      "id": "C04",
+      "claim": "2010 attention study involved 15 frequent illusion responders",
+      "status": "SUPPORTED_CONTEXT",
+      "source_ids": [
+        "S06"
+      ],
+      "limit": "Selected sample, no enduring outcome"
+    },
+    {
+      "id": "C05",
+      "claim": "Sound-induced flash is a general diagnostic of intelligence",
+      "status": "EXCLUDE",
+      "source_ids": [
+        "S04",
+        "S05"
+      ],
+      "limit": "No individual diagnosis"
+    },
+    {
+      "id": "C06",
+      "claim": "Perceptual illusion proves Zen12 meditation benefits",
+      "status": "EXCLUDE",
+      "source_ids": [
+        "S01",
+        "S12"
+      ],
+      "limit": "Different outcomes, different product"
+    },
+    {
+      "id": "C07",
+      "claim": "Zen12 Premium seller describes 12 levels and 48 MP3s",
+      "status": "SELLER_DESCRIBED",
+      "source_ids": [
+        "S09"
+      ],
+      "limit": "Seller features, fulfillment not verified"
+    },
+    {
+      "id": "C08",
+      "claim": "Zen12 seller advertises four listening styles",
+      "status": "SELLER_DESCRIBED",
+      "source_ids": [
+        "S09"
+      ],
+      "limit": "No firsthand listening"
+    },
+    {
+      "id": "C09",
+      "claim": "Zen12 advertises one-year guarantee",
+      "status": "SELLER_DESCRIBED_NOT_CHECKOUT",
+      "source_ids": [
+        "S09"
+      ],
+      "limit": "Read final conditions and checkout before release"
+    },
+    {
+      "id": "C10",
+      "claim": "12 min Zen12 equals one hour advanced meditation",
+      "status": "UNSUBSTANTIATED_EXCLUDE",
+      "source_ids": [
+        "S09",
+        "S12"
+      ],
+      "limit": "Seller promotional equivalence lacks product-specific adequate substantiation here"
+    },
+    {
+      "id": "C11",
+      "claim": "Zen12 cures anxiety or improves brain function",
+      "status": "UNSUBSTANTIATED_EXCLUDE",
+      "source_ids": [
+        "S09",
+        "S12"
+      ],
+      "limit": "No product-specific clinical substantiation reviewed"
+    },
+    {
+      "id": "C12",
+      "claim": "Zen12 public display price varies across observations",
+      "status": "CONFLICTING_SELLER_SNAPSHOTS",
+      "source_ids": [
+        "S09"
+      ],
+      "limit": "Current retrieved $87 vs older $87.99, no checkout/currency/taxes verified; omit numeric price in consumer CTA"
+    },
+    {
+      "id": "C13",
+      "claim": "Public affiliate portal proves FV accepted",
+      "status": "FALSE_EXCLUDE",
+      "source_ids": [
+        "S10"
+      ],
+      "limit": "Approval, format and channels private"
+    },
+    {
+      "id": "C14",
+      "claim": "FV account-specific earning link has been issued",
+      "status": "UNVERIFIED_HOLD",
+      "source_ids": [],
+      "limit": "No authenticated evidence; never invent"
+    },
+    {
+      "id": "C15",
+      "claim": "FV may send affiliate promotions to Jetpack Dispatch",
+      "status": "UNVERIFIED_HOLD",
+      "source_ids": [],
+      "limit": "Need named EMAIL rights plus consent, do not edit or send"
+    },
+    {
+      "id": "C16",
+      "claim": "Verified existing Payhip Mind owned SKU is sellable",
+      "status": "UNVERIFIED_HOLD",
+      "source_ids": [],
+      "limit": "Need seller rights, listing, return, taxes, checkout"
+    },
+    {
+      "id": "C17",
+      "claim": "Merchant outbound click is a paid order",
+      "status": "FALSE_EXCLUDE",
+      "source_ids": [
+        "S10"
+      ],
+      "limit": "Separate first-party event from cleared affiliate statement"
+    },
+    {
+      "id": "C18",
+      "claim": "Confirmed opt-in can be inferred from /focus/ click",
+      "status": "FALSE_EXCLUDE",
+      "source_ids": [
+        "S13"
+      ],
+      "limit": "Provider confirmation required, don't duplicate form"
+    },
+    {
+      "id": "C19",
+      "claim": "R210 A/B optional video is proven to improve sales",
+      "status": "NOT_TESTED",
+      "source_ids": [
+        "S19",
+        "S20"
+      ],
+      "limit": "Neither variant live; video unrendered"
+    },
+    {
+      "id": "C20",
+      "claim": "Disclosures must be clear near promotional recommendations",
+      "status": "FTC_GUIDANCE",
+      "source_ids": [
+        "S11"
+      ],
+      "limit": "Review full net impression and all formats"
+    },
+    {
+      "id": "C21",
+      "claim": "Fictional creator video asset_id is acceptable measurement",
+      "status": "FALSE_EXCLUDE",
+      "source_ids": [],
+      "limit": "Require posted media record from Grok/Praxxis"
+    },
+    {
+      "id": "C22",
+      "claim": "Net revenue/1000 human sessions is already measured",
+      "status": "NOT_COMPUTABLE",
+      "source_ids": [],
+      "limit": "No qualified denominator and reconciled merchant ledger"
+    },
+    {
+      "id": "C23",
+      "claim": "Binaural beats are perceived when distinct tones are presented separately to ears",
+      "status": "SUPPORTED_PHENOMENON",
+      "source_ids": [
+        "S21"
+      ],
+      "limit": "Does not show product benefits"
+    },
+    {
+      "id": "C24",
+      "claim": "2023 systematic review 14 studies: five supportive, eight contradictory, one mixed",
+      "status": "SUPPORTED_REVIEW",
+      "source_ids": [
+        "S21"
+      ],
+      "limit": "Methods heterogeneous; no product trial"
+    },
+    {
+      "id": "C25",
+      "claim": "2025 EEG and vigilance trial 80 undergraduates randomized among 16 configurations",
+      "status": "SUPPORTED_PRIMARY",
+      "source_ids": [
+        "S22"
+      ],
+      "limit": "Two-visit within-person comparison; small parameter cells"
+    },
+    {
+      "id": "C26",
+      "claim": "2025 stimulation removed the sustained-attention vigilance decrement",
+      "status": "FALSE_EXCLUDE",
+      "source_ids": [
+        "S22"
+      ],
+      "limit": "No significant reduction in within-task decline"
+    },
+    {
+      "id": "C27",
+      "claim": "2025 stimulation showed frequency-specific EEG entrainment and limited average performance benefit",
+      "status": "SUPPORTED_CONDITIONAL",
+      "source_ids": [
+        "S22"
+      ],
+      "limit": "Do not convert electrical measures or subset findings into general cognition guarantee"
+    },
+    {
+      "id": "C28",
+      "claim": "Zen12 uses the exact lab-tested binaural waveform and parameters",
+      "status": "UNVERIFIED_EXCLUDE",
+      "source_ids": [
+        "S09",
+        "S22"
+      ],
+      "limit": "The public offer describes audio pulses, not a verified trial-identical protocol"
+    },
+    {
+      "id": "C29",
+      "claim": "Brainwave Shots FAQ advertises one-year returns with restrictions",
+      "status": "SELLER_DESCRIBED_POLICY",
+      "source_ids": [
+        "S23"
+      ],
+      "limit": "One per six months and >10 item order download limit; do NOT transfer to Zen12"
+    },
+    {
+      "id": "C30",
+      "claim": "Brainwave Shots product-proven hours-long boost to concentration",
+      "status": "UNSUBSTANTIATED_EXCLUDE",
+      "source_ids": [
+        "S24",
+        "S12"
+      ],
+      "limit": "Seller advertising alone not adequate evidence for this actual product"
+    },
+    {
+      "id": "C31",
+      "claim": "FV named Inspire3 approval and issued link are verified",
+      "status": "UNVERIFIED_HOLD",
+      "source_ids": [
+        "S10"
+      ],
+      "limit": "Public program not account approval; Gmail search marketing-only; private dashboard unknown"
+    },
+    {
+      "id": "C32",
+      "claim": "R210 A/B proves optional film improves merchant-confirmed paid sales",
+      "status": "NOT_TESTED",
+      "source_ids": [
+        "S19",
+        "S20"
+      ],
+      "limit": "Film unrendered, page unpublished, no A/B live visitors or paid merchant orders"
+    }
+  ],
+  "gates": [
+    {
+      "id": "G01",
+      "gate": "Named FV publisher acceptance for Inspire3",
+      "status": "HOLD",
+      "owner": "Founder/Mind"
+    },
+    {
+      "id": "G02",
+      "gate": "Website promotional permission",
+      "status": "HOLD",
+      "owner": "Founder/Mind"
+    },
+    {
+      "id": "G03",
+      "gate": "Social promotional permission",
+      "status": "HOLD",
+      "owner": "Founder/Mind"
+    },
+    {
+      "id": "G04",
+      "gate": "EMAIL promotional permission",
+      "status": "HOLD",
+      "owner": "Founder/Dispatch"
+    },
+    {
+      "id": "G05",
+      "gate": "Approved source-to-link format and final actual URL",
+      "status": "HOLD",
+      "owner": "Founder/Mind"
+    },
+    {
+      "id": "G06",
+      "gate": "Official approved creatives and rights audit",
+      "status": "HOLD",
+      "owner": "Founder/Mind"
+    },
+    {
+      "id": "G07",
+      "gate": "Checkout amount and tax/location confirmation",
+      "status": "HOLD",
+      "owner": "Commerce"
+    },
+    {
+      "id": "G08",
+      "gate": "Actual returns and fulfillment/terms",
+      "status": "HOLD",
+      "owner": "Commerce"
+    },
+    {
+      "id": "G09",
+      "gate": "Current named payout, attribution window and reporting terms",
+      "status": "HOLD",
+      "owner": "Commerce"
+    },
+    {
+      "id": "G10",
+      "gate": "Right-cleared sellable FV Mind Payhip SKU",
+      "status": "UNKNOWN",
+      "owner": "Commerce"
+    },
+    {
+      "id": "G11",
+      "gate": "Native browser 360 390 768 1440 1920 WCAG review",
+      "status": "OPEN",
+      "owner": "Site QA"
+    },
+    {
+      "id": "G12",
+      "gate": "WordPress content sanitization and nonlive staging preview",
+      "status": "OPEN",
+      "owner": "Claude/Site QA"
+    },
+    {
+      "id": "G13",
+      "gate": "Actual caption sync/media load and no-JS check",
+      "status": "OPEN",
+      "owner": "Site QA"
+    },
+    {
+      "id": "G14",
+      "gate": "Actual posted Grok asset_id campaign link destination",
+      "status": "UNKNOWN",
+      "owner": "Grok/Praxxis"
+    },
+    {
+      "id": "G15",
+      "gate": "Confirmed Jetpack opt-in / welcome provider receipt",
+      "status": "UNKNOWN",
+      "owner": "Claude/Site QA"
+    },
+    {
+      "id": "G16",
+      "gate": "Qualified human sessions 7/30 day denominator",
+      "status": "UNKNOWN",
+      "owner": "Analytics"
+    },
+    {
+      "id": "G17",
+      "gate": "Confirmed orders/cleared commissions refunds and fees",
+      "status": "UNKNOWN",
+      "owner": "Commerce"
+    },
+    {
+      "id": "G18",
+      "gate": "Founder explicit release approval",
+      "status": "HOLD",
+      "owner": "Founder"
+    }
+  ],
+  "artifact_status": "UNPUBLISHED_SOURCE_ONLY",
+  "publisher_acceptance_verified": false,
+  "approved_channels": [],
+  "verified_paid_orders": null,
+  "qualified_human_sessions": null,
+  "revenue_per_1000_qualified_human_sessions": null,
+  "new_tracking_scripts": false,
+  "direct_identity_tracking": false,
+  "duplicate_focus_form": false,
+  "copy_review_only": true,
+  "frozen_ab": "R210_TEXT_ONLY_VS_OPTIONAL_UNRENDERED_42S"
+}
