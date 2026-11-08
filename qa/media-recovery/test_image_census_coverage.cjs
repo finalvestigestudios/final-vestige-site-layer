@@ -6,13 +6,13 @@ function slot(i,kind='loaded'){
   current_src_identity_verified:true,network_final_identity_verified:true,
   loaded_network_proof_verified:true,transfer_bytes:800,
   complete:true,request_url:'https://example.org/'+i+'.jpg',
-  result:'loaded_in_probe_browser',verified_broken_in_browser:false,natural_width:960,http_status:200,
+  result:'loaded_in_probe_browser',verified_broken_in_browser:false,natural_width:960,natural_height:540,http_status:200,
   network_failure:null,visual_failure_kind:null,response_mime_type:'image/jpeg'};
  if(kind==='broken'){s.result='confirmed_broken_in_probe_browser';s.verified_broken_in_browser=true;
-  s.natural_width=0;s.http_status=404;s.visual_failure_kind='http_error';}
+  s.natural_width=0;s.natural_height=0;s.http_status=404;s.visual_failure_kind='http_error';}
  if(kind==='error-html'){s.result='confirmed_broken_in_probe_browser';s.verified_broken_in_browser=true;
-  s.natural_width=0;s.http_status=200;s.visual_failure_kind='non_image_error_payload';s.response_mime_type='text/html';}
- if(kind==='pending'){s.result='pending_lazy_or_incomplete';s.verified_broken_in_browser=null;s.complete=false;s.natural_width=0;}
+  s.natural_width=0;s.natural_height=0;s.http_status=200;s.visual_failure_kind='non_image_error_payload';s.response_mime_type='text/html';}
+ if(kind==='pending'){s.result='pending_lazy_or_incomplete';s.verified_broken_in_browser=null;s.complete=false;s.natural_width=0;s.natural_height=0;}
  return s;
 }
 function page(id=268,items=[slot(0)]){return {post_id:id,page_result:'inspected_browser',
