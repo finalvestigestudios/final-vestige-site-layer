@@ -75,12 +75,52 @@ def _owned(path: Path, baseline: os.stat_result,
         raise ValueError("Review writer lock changed; inspect journal before retrying")
 
 
+def _safe_fstat(fd: int) -> os.stat_result:
+    """Keep private filesystem diagnostics out of descriptor checks."""
+    info = None
+    try:
+        info = os.fstat(fd)
+    except OSError:
+        pass
+    if info is None:
+        raise ValueError("Review writer lock descriptor cannot be inspected; inspect before retrying")
+    return info
+
+
+def _safe_fsync(fd: int) -> None:
+    """Reject uncertain durability without retaining a raw OS exception."""
+    failed = False
+    try:
+        os.fsync(fd)
+    except OSError:
+        failed = True
+    if failed:
+        raise ValueError("Review writer lock cannot be synced; inspect before retrying")
+
+
+def _safe_close(fd: int) -> None:
+    """A failed close leaves the lock for manual investigation."""
+    failed = False
+    try:
+        os.close(fd)
+    except OSError:
+        failed = True
+    if failed:
+        raise ValueError("Review writer lock descriptor cannot be closed; inspect before retrying")
+
+
 def _write_all(fd: int, data: bytes) -> None:
     position = 0
     while position < len(data):
-        count = os.write(fd, data[position:])
-        if count <= 0:
-            raise OSError("Review writer lock was not fully written")
+        count = 0
+        failed = False
+        try:
+            count = os.write(fd, data[position:])
+        except OSError:
+            failed = True
+        # Do not accept zero progress or anomalously large byte counts.
+        if failed or count <= 0 or count > len(data) - position:
+            raise ValueError("Review writer lock cannot be written; inspect before retrying")
         position += count
 
 
@@ -102,14 +142,14 @@ def exclusive_review_lock(journal: str | Path) -> Iterator[Callable[[], None]]:
     issued = False
     baseline = None
     try:
-        info = os.fstat(fd)
+        info = _safe_fstat(fd)
         if not stat.S_ISREG(info.st_mode) or info.st_nlink != 1 or info.st_size != 0:
             raise ValueError("New review lock is not a unique empty regular file")
         if os.name == "posix" and info.st_mode & 0o077:
             raise ValueError("Review lock must be private to its owner")
         _write_all(fd, f"pid={os.getpid()}\n".encode("ascii"))
-        os.fsync(fd)
-        baseline = os.fstat(fd)
+        _safe_fsync(fd)
+        baseline = _safe_fstat(fd)
         # Keep the first pathname identity for same-view ctime drift detection.
         # No successful writer is admitted before both views are checked.
         path_baseline = _safe_lstat(target)
@@ -117,19 +157,26 @@ def exclusive_review_lock(journal: str | Path) -> Iterator[Callable[[], None]]:
         issued = True
 
         def assert_owned() -> None:
-            _owned(target, baseline, path_baseline)
-            current = os.fstat(fd)
-            if (_identity(current) != _identity(baseline)
-                    or current.st_size != baseline.st_size
-                    or current.st_mtime_ns != baseline.st_mtime_ns
-                    or current.st_ctime_ns != baseline.st_ctime_ns
-                    or current.st_nlink != 1):
-                raise ValueError("Review writer lock descriptor changed; inspect before retrying")
+            nonlocal issued
+            try:
+                _owned(target, baseline, path_baseline)
+                current = _safe_fstat(fd)
+                if (_identity(current) != _identity(baseline)
+                        or current.st_size != baseline.st_size
+                        or current.st_mtime_ns != baseline.st_mtime_ns
+                        or current.st_ctime_ns != baseline.st_ctime_ns
+                        or current.st_nlink != 1):
+                    raise ValueError("Review writer lock descriptor changed; inspect before retrying")
+            except ValueError:
+                # A descriptor-check failure makes cleanup uncertain even if
+                # the pathname *still* resembles our original lock.
+                issued = False
+                raise
 
         yield assert_owned
         assert_owned()
     finally:
-        os.close(fd)
+        _safe_close(fd)
         # Only remove a lock which is *still exactly ours*. An altered,
         # disappeared, or substituted lock is left untouched for investigation.
         if issued and baseline is not None:

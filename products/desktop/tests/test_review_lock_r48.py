@@ -146,7 +146,7 @@ class PremiumReviewLockTests(unittest.TestCase):
 
     def test_sync_failure_never_admits_writer(self):
         with patch("fvs_suite.review_lock.os.fsync", side_effect=OSError("disk failure")):
-            with self.assertRaises(OSError):
+            with self.assertRaisesRegex(ValueError, "Review writer lock cannot be synced"):
                 with exclusive_review_lock(self.journal):
                     self.fail("unsafe lock was accepted")
         # An indeterminate lock remains: conservative manual review.
