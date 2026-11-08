@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""R211: correct year-only NASA photo dating vs a dated Board milestone.
+"""R211: independently cross-check NASA photo Taken date and Review Board event date.
 
 Read-only, deterministic staging builder. No WordPress, network, payments or analytics.
 """
@@ -28,24 +28,24 @@ def build():
         must(sha((BASE/path).read_bytes())==digest,'Modified R210 artifact: '+path)
     html=(BASE/'templates/atlas-fragment.html').read_text()
     old='<a href="#fv-apollo-photo-prep">Spacecraft preparation</a>'
-    html=swap(html,old,'<a href="#fv-apollo-photo-prep">Module leaves altitude chamber</a>')
+    html=swap(html,old,'<a href="#fv-apollo-photo-prep">Spacecraft preparation</a>')
     html=swap(html,'NASA photo S67-15717: command/service module processing, not fire evidence.',
-      'The Review Board dates the chamber removal to 3 January. NASA catalogs photo S67-15717 to 1967 only; its exact exposure day is not established.')
+      'NASA photo S67-15717 states Taken January 3, 1967. The Review Board separately dates command-module chamber removal to January 3. The photograph does not establish that it captures the removal itself.')
     html=swap(html,'<a class="fv-apollo-rail-source" href="'+PHOTO+'" aria-describedby="fv-apollo-rail-note-photo-and-history" rel="noopener noreferrer" data-source-id="S67-15717">Open NASA 3 January 1967 spacecraft processing photograph</a>',
-      '<a class="fv-apollo-rail-source" href="'+BOARD+'" aria-describedby="fv-apollo-rail-note-photo-and-history" data-source-id="Apollo 204 Review Board">Verify January 3 chamber removal in the NASA Review Board report</a> · <a href="'+PHOTO+'" aria-describedby="fv-apollo-rail-note-photo-and-history" data-source-id="S67-15717">View NASA photograph S67-15717 (catalog year 1967)</a>')
+      '<a class="fv-apollo-rail-source" href="'+BOARD+'" aria-describedby="fv-apollo-rail-note-photo-and-history" data-source-id="Apollo 204 Review Board">Verify January 3 chamber removal in the NASA Review Board report</a> · <a href="'+PHOTO+'" aria-describedby="fv-apollo-rail-note-photo-and-history" data-source-id="S67-15717">Verify S67-15717 Taken January 3, 1967 in NASA photo catalog</a>')
     html=swap(html,'<h3>Spacecraft processing · 3 January 1967</h3><p><strong>What it establishes:</strong> A dated photograph of spacecraft 012 processing.</p>',
-      '<h3>Spacecraft processing · catalog year 1967</h3><p><strong>What it establishes:</strong> A photograph of spacecraft 012 processing. NASA catalogs it to 1967, without establishing a January 3 exposure date.</p><p><strong>Separate written record:</strong> The Review Board dates command-module chamber removal to <time datetime="1967-01-03">3 January 1967</time>. <a href="'+BOARD+'">Verify the preparation milestone in the Board report</a>.</p>')
+      '<h3>Spacecraft processing · photograph taken 3 January 1967</h3><p><strong>What it establishes:</strong> NASA identifies the processing photograph S67-15717 and its Taken date as 3 January 1967. This is not the same kind of record as a technical finding.</p><p><strong>Separate written record:</strong> The Review Board dates command-module chamber removal to <time datetime="1967-01-03">3 January 1967</time>. <a href="'+BOARD+'">Verify the preparation milestone in the Board report</a>.</p>')
     html=swap(html,'<strong>What it cannot prove:</strong> It is not a measurement of the January 27 cabin conditions.',
-      '<strong>What it cannot prove:</strong> It cannot date the photographed moment to 3 January or establish the January 27 cabin conditions.')
+      '<strong>What it cannot prove:</strong> The date does not prove that the image shows the chamber-removal operation, or establish January 27 cabin conditions.')
     html=swap(html,"<p>The spacecraft processing image is not a photograph of the cabin fire. The specific January 3 processing milestone comes from NASA's written history.</p>",
-      '<p>The NASA photograph shows spacecraft processing and is cataloged as 1967; the exact photo day is unverified. The separate January 3 chamber-removal milestone comes from the written Review Board report.</p>')
+      '<p>NASA catalogs S67-15717 with the Taken date January 3, 1967. The Review Board independently dates the removal from the altitude chamber to that day. Matching dates do not establish that the photograph shows the removal itself.</p>')
     html=swap(html,'<ol class="rail">',
-      '<p class="fv-apollo-date-precision"><strong>Source-date distinction:</strong> January 3 is a milestone verified in the Review Board text, not the confirmed exposure date of photograph S67-15717. The NASA photo catalog gives only <time datetime="1967">1967</time>.</p><ol class="rail">')
-    must('Open NASA 3 January 1967 spacecraft processing photograph' not in html,'Unsupported photographic date survived')
+      '<p class="fv-apollo-date-precision"><strong>Source-date cross-check:</strong> NASA lists the S67-15717 photograph as taken <time datetime="1967-01-03">3 January 1967</time>; the Apollo 204 Review Board separately dates chamber removal to that day. They corroborate a date, <strong>not the pictured action or ignition</strong>.</p><ol class="rail">')
+    must('Taken January 3, 1967' in html and 'Source-date cross-check:' in html,'Verified photo/Board dates not shown')
     must(html.count('class="cta"')==1 and html.count('<details')==12,'Evidence actions changed')
     must('data-lat' not in html and 'data-lng' not in html,'Fabricated geo')
     css=(BASE/'assets/atlas-scoped.css').read_text()+'''
-/* R211: distinguish event and photo date without implying archival rights. */
+/* R211: independently sourced photo/event dates without implying identical actions. */
 .fv-apollo-atlas .fv-apollo-date-precision{max-width:80ch;border-inline-start:3px solid currentColor;padding:.7rem 1rem;line-height:1.55;overflow-wrap:anywhere}
 .fv-apollo-atlas .fv-apollo-date-precision:focus-within{outline:2px solid currentColor;outline-offset:3px}
 @media print{.fv-apollo-atlas .fv-apollo-date-precision{break-inside:avoid;color:black!important}}
@@ -65,26 +65,26 @@ def build():
     sr=json.loads((BASE/'source-records.json').read_text())
     row=next(r for r in sr if r['source_id']=='S67-15717')
     must(row['date']=='1967-01-03','R210 metadata drift')
-    row.update({'date':'1967','date_precision':'year','event_date':'1967-01-03','event_source_url':BOARD,
-      'accessible_label':'Open NASA 1967 spacecraft processing photograph',
-      'limitation':'NASA photo catalog gives 1967 only; Jan 3 chamber removal is a separate Board-reported event'})
+    row.update({'date':'1967-01-03','date_precision':'day','date_source_url':PHOTO,'event_date':'1967-01-03','event_source_url':BOARD,
+      'accessible_label':'Open NASA spacecraft processing photograph taken 3 January 1967',
+      'limitation':'Photo Taken field is Jan 3; Board also reports Jan 3 chamber removal, but image cannot establish it depicts the removal' })
     generated['source-records.json']=(json.dumps(sr,indent=2,sort_keys=True)+'\n').encode()
     ledger=json.loads((BASE/'custody-ledger.json').read_text())
     row=next(r for r in ledger['records'] if r['id']=='S67-15717')
     must(row['date']=='1967-01-03','R210 ledger metadata drift')
-    row.update({'date':'1967','date_precision':'year', 'event_date':'1967-01-03', 'event_source_url':BOARD,
-      'label':'Spacecraft processing · catalog year 1967',
-      'supports':'Photo shows spacecraft processing, catalog year 1967; separate Review Board dates chamber removal to Jan 3.',
-      'does_not_support':'Photo does not independently establish January 3 exposure or January 27 cabin conditions.'})
-    ledger['notes']='S67-15717 catalog only asserts 1967; the Review Board separately confirms January 3 chamber removal. Never merge event and photo dates.'
+    row.update({'date':'1967-01-03','date_precision':'day', 'date_source_url':PHOTO, 'event_date':'1967-01-03', 'event_source_url':BOARD,
+      'label':'Spacecraft processing · NASA Taken date 3 January 1967',
+      'supports':'Photo Taken date Jan 3, 1967; separate Review Board reports chamber removal Jan 3.',
+      'does_not_support':'Photo does not prove it depicts chamber removal or establish January 27 cabin conditions.'})
+    ledger['notes']='NASA image-detail Taken date is January 3, 1967; Apollo Review Board separately dates chamber removal Jan 3. Matching dates do not prove matching depicted actions.'
     generated['custody-ledger.json']=(json.dumps(ledger,indent=2,sort_keys=True)+'\n').encode()
     audit=json.loads((BASE/'source-audit.json').read_text())
-    audit.update({'source':'rendered_R211_html','R211_photo_S67_15717_date_precision':'year-only',
-        'R211_board_preparation_event_date':'1967-01-03','R211_photo_exact_day':'NOT_ESTABLISHED',
-        'R211_date_claim_source':BOARD,'canonical_ancestry_from_R198':'NOT_RECONCILED'})
+    audit.update({'source':'rendered_R211_html','R211_photo_S67_15717_date_precision':'day (Taken field on NASA image-detail)',
+        'R211_board_preparation_event_date':'1967-01-03','R211_photo_taken_date':'1967-01-03',
+        'R211_date_claim_sources':[PHOTO,BOARD],'canonical_ancestry_from_R198':'NOT_RECONCILED'})
     generated['source-audit.json']=(json.dumps(audit,indent=2,sort_keys=True)+'\n').encode()
     manifest={'release':'r211','parent_manifest_sha256':PIN,'files':{k:sha(v) for k,v in sorted(generated.items())},
-      'NASA_photo_day_certified':False,'NASA_board_preparation_date_certified':True,
+      'NASA_photo_day_certified':True,'NASA_board_preparation_date_certified':True,
       'approved_purchase_offer':False,'media_commercial_rights_cleared':False,
       'upstream_R198_reconciled':False,'installed_WordPress_accepted':False,
       'axe_core_accepted':False,'release_gate':'STAGING HOLD / WordPress / CI / axe / ancestry / founder'}
