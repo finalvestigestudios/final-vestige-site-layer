@@ -49,6 +49,14 @@ def install_shortcuts(root, inputs, output, generate, *, review=None,
         widgets.extend(policy_rules)
     if ledger_headers is not None:
         widgets.extend(ledger_headers)
+    # The action buttons must not alias a source, Browse, output, optional
+    # control, or one another. Otherwise a focus/Browse mnemonic can execute
+    # Generate or gated Review unexpectedly. Reject before installing bindings.
+    actions_only = [generate] + ([review] if review is not None else [])
+    if (any(not callable(getattr(button, "invoke", None)) for button in actions_only)
+            or len({id(widget) for widget in (*widgets, *actions_only)})
+               != len(widgets) + len(actions_only)):
+        raise ValueError("Shortcut actions require independent command buttons")
     if len({id(widget) for widget in widgets}) != len(widgets):
         raise ValueError("Input and optional controls must be independent")
 
