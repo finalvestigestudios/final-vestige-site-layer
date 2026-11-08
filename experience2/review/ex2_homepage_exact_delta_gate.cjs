@@ -48,7 +48,7 @@ module.exports={review};
 if(require.main===module){
   const fs=require("node:fs");
   const argv=process.argv.slice(2);
-  if(argv.length!==3 || argv.some(x=>/^https?:\\/\\//i.test(x))){
+  if(argv.length!==3 || argv.some(x=>x.startsWith("http://")||x.startsWith("https://"))){
     console.error("Usage: node ex2_homepage_exact_delta_gate.cjs PRIVATE_HOME_EDIT.json PRIVATE_FOCUS_EDIT.json PRIVATE_CANDIDATE.txt");
     process.exit(2);
   }
