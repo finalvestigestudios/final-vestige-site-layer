@@ -150,7 +150,7 @@
       "source_ids": [
         "S02"
       ],
-      "limit": "not a general consumer statistic"
+      "limit": "Jam was tasted, tea smelled; detection included concurrent, retrospective and sensory-change reports; no universal consumer rate"
     },
     {
       "id": "CB04",
@@ -159,12 +159,12 @@
       "source_ids": [
         "S03"
       ],
-      "limit": "not 69% morally manipulable"
+      "limit": "69% missed at least one reversal; detection could mean correction of an apparently mistaken statement/rating relation, not identification of deception"
     },
     {
       "id": "CB05",
-      "statement": "2013 political study proves reliable election manipulation",
-      "decision": "exclude",
+      "statement": "2013 paper reports Swedish 2010 election fieldwork with immediate stated voting intentions; does not establish durable election conversion",
+      "decision": "supported only for study date/context; reject election-effectiveness extrapolation",
       "source_ids": [
         "S04"
       ],
@@ -190,12 +190,12 @@
     },
     {
       "id": "CB08",
-      "statement": "Pension study detected at most 37.2% of manipulated trials across conditions",
+      "statement": "Pension study aggregate detection bounds about 28.5–37.2% under assumptions, with dissimilar-condition upper bound 50%",
       "decision": "supported within sample and counting",
       "source_ids": [
         "S05"
       ],
-      "limit": "not probability for all investors"
+      "limit": "98 hypothetical portfolios; similar substitutions occurred first, dissimilar later, testing stopped after detection; upper estimates assumed early detectors would detect later unseen dissimilar swaps; not a clean similarity effect"
     },
     {
       "id": "CB09",
@@ -579,5 +579,5 @@
   },
   "allowed": "sourced independent editorial draft, existing free Focus route, inactive accessible commerce controls",
   "prohibited": "active affiliate URL, invented price or efficacy, published WP, duplicate mailing lists or analytics, spam, fabricated attributable sales",
-  "revision_note": "R203 carries Praxxis reviewer corrections into R201 reader copy and R202 illusory truth wording/corrigendum. Applied corrections in isolated branch only."
+  "revision_note": "R203 carries Praxxis reviewer corrections into R201 reader copy and R202 illusory truth wording/corrigendum. Applied corrections in isolated branch only. R204: incorporated Praxxis R203 full-text methods review: 2010 fieldwork versus 2013 election paper; jam taste versus tea smell and compound detection; moral survey rating/statement mismatch; pension order, stopping rule and assumption-dependent detection bounds. Source records are not independent study count."
 }

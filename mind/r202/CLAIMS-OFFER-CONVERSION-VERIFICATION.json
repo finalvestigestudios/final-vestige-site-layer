@@ -55,7 +55,7 @@
       "id": "S07",
       "type": "primary_abstract",
       "url": "https://pubmed.ncbi.nlm.nih.gov/33007659/",
-      "note": "Context-dependent truth and fakeness repetition effects"
+      "note": "Corneille and colleagues' contextual repetition findings concerned participants' judgments that claims had appeared as fake news on social media, NOT independently certified factual falsity. Original study had programming confounds; a 2022 corrigendum and two preregistered robustness studies must be considered: https://doi.org/10.1016/j.cognition.2021.104996 . This ledger is corrected by R204 after R203 article revision."
     },
     {
       "id": "S08",
@@ -210,12 +210,12 @@
     },
     {
       "id": "C08",
-      "statement": "Repetition invariably convinces people a claim is factual",
+      "statement": "Does repetition invariably increase factual truth? No. In Corneille's paradigm participants rated whether statements had appeared as fake news on social media; the measure is perceived fakeness, not verified factual accuracy.",
       "decision": "EXCLUDE",
       "source_ids": [
         "S07"
       ],
-      "limits": "Judgment task context can also increase perceived fakeness"
+      "limits": "The 2022 corrigendum disclosed programming confounds and preregistered robustness studies; cannot generalize to every statement, audience or actual misinformation."
     },
     {
       "id": "C09",
@@ -559,5 +559,5 @@
     "attribution_limited_to": "approved first-party aggregate asset_id and campaign tags",
     "affiliate_click_distinct_from_paid_sale": true
   },
-  "review_note": "Source descriptions from publisher abstracts/current official merchant/FTC/public FV pages; not a full-text systematic review or audit of private buyer records."
+  "review_note": "Source descriptions from publisher abstracts/current official merchant/FTC/public FV pages; not a full-text systematic review or audit of private buyer records. R204 ledger repair following Praxxis R203 audit: synchronize S07/C08 with corrected R202 reader text and 2022 corrigendum; no new product or merchant claim verified."
 }
