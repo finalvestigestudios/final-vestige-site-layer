@@ -1,0 +1,474 @@
+{
+  "milestone": "R208",
+  "dated": "2026-11-07",
+  "status": "UNPUBLISHED_NO_MERCHANT_ACTIVATION",
+  "sources": [
+    {
+      "id": "R92",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/1500880/",
+      "type": "primary abstract",
+      "checked": "2026-11-07",
+      "scope": "Raymond Shapiro Arnell 1992 RSVP probe, interval and blank control"
+    },
+    {
+      "id": "R95",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/7707027/",
+      "type": "primary abstract",
+      "checked": "2026-11-07",
+      "scope": "Chun Potter 1995 seven experiments, target 2 200–500ms, two stage proposal"
+    },
+    {
+      "id": "R09",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/19933555/",
+      "type": "review abstract",
+      "checked": "2026-11-07",
+      "scope": "Dux Marois 2009 theories of attentional blink"
+    },
+    {
+      "id": "R07",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1865565/",
+      "type": "full primary paper",
+      "checked": "2026-11-07",
+      "scope": "Slagter et al 2007 3 months retreat 17 practitioner recruits, 23 control recruits, AB/P3b. Not Zen12"
+    },
+    {
+      "id": "RA18",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6139986/",
+      "type": "full primary meta-analysis",
+      "checked": "2026-11-07",
+      "scope": "Vasilev Kirkby Angele comprehension 54/65 studies, speed 13 proofreading 7; caveats in R207 inherited correction"
+    },
+    {
+      "id": "RH15",
+      "url": "https://link.springer.com/article/10.3758/s13423-014-0705-3",
+      "type": "primary full text",
+      "checked": "2026-11-07",
+      "scope": "Mestry Thatcher ERP recruitment 23 typical, exclude 7, analyze 16, one prosopagnosia analyzed separately"
+    },
+    {
+      "id": "M1",
+      "url": "https://inspire3.com/",
+      "type": "merchant official",
+      "checked": "2026-11-07",
+      "scope": "product catalog; scientific language is merchant promotion only"
+    },
+    {
+      "id": "M2",
+      "url": "https://zen12.com/hnp",
+      "type": "merchant exact offer",
+      "checked": "2026-11-07",
+      "scope": "Premium 12 levels 48 MP3s 4 formats seller money-back one year and displayed $87.99, checkout unverified"
+    },
+    {
+      "id": "M3",
+      "url": "https://affiliates.inspire3.com/",
+      "type": "public affiliate portal",
+      "checked": "2026-11-07",
+      "scope": "shows program exists, NOT FV approval, channel consent, referral URL or settlement"
+    },
+    {
+      "id": "F1",
+      "url": "https://finalvestige.com/focus/",
+      "type": "public FV",
+      "checked": "2026-11-07",
+      "scope": "52 page free Fieldbook and existing Jetpack form; downloadable does not establish confirmed subscriber"
+    },
+    {
+      "id": "F2",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "type": "FV published link prior CMS verified",
+      "checked": "2026-11-07",
+      "scope": "a prior CMS-verified published page; anonymous page fetch inconsistent"
+    },
+    {
+      "id": "F3",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "type": "FV published link prior CMS verified",
+      "checked": "2026-11-07",
+      "scope": "historic Mesmerism editorial destination; direct fetch inconsistent"
+    },
+    {
+      "id": "F4",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "type": "FV published resource prior CMS verified",
+      "checked": "2026-11-07",
+      "scope": "Puységur historic files; direct anonymous fetch inconsistent"
+    },
+    {
+      "id": "G1",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "type": "FTC official guidance",
+      "checked": "2026-11-07",
+      "scope": "material connections disclosed clearly beside endorsement/purchase link; general footer alone inadequate"
+    },
+    {
+      "id": "G2",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "type": "FTC official guidance",
+      "checked": "2026-11-07",
+      "scope": "objective health benefit claim requires competent reliable scientific substantiation"
+    },
+    {
+      "id": "R07P",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/1527",
+      "type": "prior source-control branch",
+      "checked": "2026-11-07",
+      "scope": "R207 previous guides, article and source test; inherited source corrections proposed R208"
+    }
+  ],
+  "claims": [
+    {
+      "id": "AB01",
+      "claim": "Raymond 1992 probe detection dropped in a short post-target window under RSVP instructions",
+      "decision": "SUPPORTED_TASK_SPECIFIC",
+      "source_ids": [
+        "R92"
+      ],
+      "limit": "Depends on participant reporting T1 and target/probe stimulus; not literal absence of all vision"
+    },
+    {
+      "id": "AB02",
+      "claim": "Chun & Potter showed T2 reporting deficit around 200–500ms",
+      "decision": "SUPPORTED_TASK_SPECIFIC",
+      "source_ids": [
+        "R95"
+      ],
+      "limit": "Rapid visual target task, seven experiments, not everyday focus diagnosis"
+    },
+    {
+      "id": "AB03",
+      "claim": "Dux & Marois reviewed multiple theoretical accounts of blink bottleneck",
+      "decision": "SUPPORTED_REVIEW",
+      "source_ids": [
+        "R09"
+      ],
+      "limit": "Theoretical model not direct physiological confirmation"
+    },
+    {
+      "id": "AB04",
+      "claim": "Three-month intensive meditation retreat associated with reduced attentional blink and smaller T1 P3b",
+      "decision": "SUPPORTED_NARROW_SCOPE",
+      "source_ids": [
+        "R07"
+      ],
+      "limit": "17 practitioners recruited and 23 matched controls; small nonstandard fully randomized comparison; intensive retreat not commercial recordings"
+    },
+    {
+      "id": "AB05",
+      "claim": "Twelve minutes of Zen12 improves attentional blink",
+      "decision": "EXCLUDE_UNSUBSTANTIATED",
+      "source_ids": [
+        "R07",
+        "M2",
+        "G2"
+      ],
+      "limit": "No verified product-specific trial, cannot extrapolate long retreat to branded audio"
+    },
+    {
+      "id": "AB06",
+      "claim": "Twelve-minute Zen12 equivalent to hour of advanced meditation",
+      "decision": "EXCLUDE_UNSUBSTANTIATED",
+      "source_ids": [
+        "M2",
+        "G2"
+      ],
+      "limit": "Seller promotional claim unsupported by independent branded equivalence evidence"
+    },
+    {
+      "id": "AB07",
+      "claim": "Zen12 treats clinical anxiety, cognition, health or guarantees focus",
+      "decision": "EXCLUDE_UNSUBSTANTIATED",
+      "source_ids": [
+        "M2",
+        "G2"
+      ],
+      "limit": "No product-matched adequate clinical studies verified"
+    },
+    {
+      "id": "M01",
+      "claim": "Zen12 Premium publicly describes 12 levels 48 MP3 recordings four styles",
+      "decision": "SELLER_ONLY",
+      "source_ids": [
+        "M2"
+      ],
+      "limit": "Product fulfillment and features not tested"
+    },
+    {
+      "id": "M02",
+      "claim": "Zen12 Premium publicly advertises one-year refund guarantee",
+      "decision": "SELLER_ONLY",
+      "source_ids": [
+        "M2"
+      ],
+      "limit": "Refund eligibility, policy execution, checkout consumer protections not audited"
+    },
+    {
+      "id": "M03",
+      "claim": "Zen12 Premium price was publicly displayed $87.99 Nov 7",
+      "decision": "DATED_SELLER_DISPLAY",
+      "source_ids": [
+        "M2"
+      ],
+      "limit": "Not a verified final checkout cost; prior isolated $87 extraction disputed; do not guarantee price"
+    },
+    {
+      "id": "M04",
+      "claim": "FV-specific Inspire3 affiliate publisher acceptance",
+      "decision": "NOT_VERIFIED",
+      "source_ids": [
+        "M3"
+      ],
+      "limit": "Public portal is insufficient; bounded Gmail search yielded generic promos not credential evidence"
+    },
+    {
+      "id": "M05",
+      "claim": "Authenticated, rights-cleared sellable Payhip Mind SKU",
+      "decision": "NOT_VERIFIED",
+      "source_ids": [
+        "F1"
+      ],
+      "limit": "Existing Focus resource is free, not evidence of available paid SKU"
+    },
+    {
+      "id": "F01",
+      "claim": "Focus Fieldbook remains established free 52-page reader resource",
+      "decision": "PUBLIC_PAGE_CONFIRMED",
+      "source_ids": [
+        "F1"
+      ],
+      "limit": "Visible download doesn't prove opt-in; do not duplicate email pipeline"
+    },
+    {
+      "id": "F02",
+      "claim": "One auto-subscribed Dispatch lead per CTA click",
+      "decision": "REJECTED",
+      "source_ids": [
+        "F1"
+      ],
+      "limit": "Provider-confirmed opt-in required; outbound clicks are not leads"
+    },
+    {
+      "id": "G01",
+      "claim": "Future earning link may be used without beside-link disclosure",
+      "decision": "REJECTED",
+      "source_ids": [
+        "G1"
+      ],
+      "limit": "Material connection disclosure required clear and conspicuous by recommendation"
+    },
+    {
+      "id": "A01",
+      "claim": "Comprehension cost 54-study pool g=-0.21, 95% CrI [-0.30,-0.13]",
+      "decision": "SUPPORTED_NARROW_SCOPE",
+      "source_ids": [
+        "RA18"
+      ],
+      "limit": "65 studies total; speed 13 and proofreading 7 separate 95% intervals include zero; noise comprehension interval crosses zero"
+    },
+    {
+      "id": "Q01",
+      "claim": "Mestry 23 typical recruited means 23 analyzed",
+      "decision": "REJECTED_CORRECTED",
+      "source_ids": [
+        "RH15"
+      ],
+      "limit": "Seven typical excluded; 16 typical analyzed; one prosopagnosia participant analyzed separately"
+    },
+    {
+      "id": "R01",
+      "claim": "Affiliate_outbound_click proves affiliate sale or realized revenue",
+      "decision": "REJECTED",
+      "source_ids": [
+        "M3"
+      ],
+      "limit": "A click proves at most a recorded outbound navigation, not an attributed payment"
+    },
+    {
+      "id": "R02",
+      "claim": "A self-reported checkout start is a paid order",
+      "decision": "REJECTED",
+      "source_ids": [
+        "M3"
+      ],
+      "limit": "Merchant confirmation and settled amounts needed"
+    }
+  ],
+  "authorization_gates": [
+    {
+      "id": "merchant_acceptance",
+      "state": "OPEN",
+      "required_evidence": "Inspire3 account-specific publisher acceptance signed/visible"
+    },
+    {
+      "id": "approved_channels",
+      "state": "OPEN",
+      "required_evidence": "Specific TikTok/YouTube/website/Dispatch allowed"
+    },
+    {
+      "id": "issued_url",
+      "state": "OPEN",
+      "required_evidence": "Individual account-issued compliant earning URL verified"
+    },
+    {
+      "id": "merchant_terms",
+      "state": "OPEN",
+      "required_evidence": "Current offer terms/permitted copy/channel/creative checked"
+    },
+    {
+      "id": "current_checkout",
+      "state": "OPEN",
+      "required_evidence": "Current total price/currency/tax verified via merchant"
+    },
+    {
+      "id": "refund_proof",
+      "state": "OPEN",
+      "required_evidence": "Eligibility and return-policy application verified"
+    },
+    {
+      "id": "product_fulfillment",
+      "state": "OPEN",
+      "required_evidence": "Item and delivery independently verified"
+    },
+    {
+      "id": "product_efficacy",
+      "state": "OPEN",
+      "required_evidence": "Adequate product-specific substantiation if any outcome claim"
+    },
+    {
+      "id": "owned_sku",
+      "state": "OPEN",
+      "required_evidence": "Owned paid Mind SKU inventory ID and sale rights"
+    },
+    {
+      "id": "owned_checkout",
+      "state": "OPEN",
+      "required_evidence": "Payhip live checkout and fulfillment tested with permission"
+    },
+    {
+      "id": "privacy_data",
+      "state": "OPEN",
+      "required_evidence": "Existing consent and attribution implementation approved"
+    },
+    {
+      "id": "asset_mapping",
+      "state": "OPEN",
+      "required_evidence": "Actual Grok asset_id, platform and public post URLs"
+    },
+    {
+      "id": "source_qa",
+      "state": "OPEN",
+      "required_evidence": "Independent scientific review signed off"
+    },
+    {
+      "id": "accessibility",
+      "state": "OPEN",
+      "required_evidence": "Real 360/390/768/1440+ browser WCAG audit"
+    },
+    {
+      "id": "performance",
+      "state": "OPEN",
+      "required_evidence": "Real Lighthouse/CWV checks"
+    },
+    {
+      "id": "video_render",
+      "state": "OPEN",
+      "required_evidence": "Owned original film rendered, captions/playback audited"
+    },
+    {
+      "id": "merchant_reporting",
+      "state": "OPEN",
+      "required_evidence": "Verified paid orders & affiliate settlements/refunds/fees"
+    },
+    {
+      "id": "release_approval",
+      "state": "OPEN",
+      "required_evidence": "Founder production/affiliate/release approval"
+    }
+  ],
+  "offer": {
+    "id": "ZEN12_PREMIUM",
+    "intent": "Someone actively comparing structured meditation audio with a free twelve-minute routine",
+    "merchant": "Inspire3 / Zen12",
+    "official_offer": "https://zen12.com/hnp",
+    "seller_described_inventory": "12 levels / 48 MP3 / 4 styles; one-year guarantee",
+    "publisher_approved": false,
+    "affiliate_url": null,
+    "active_cta": false,
+    "price_state": "public seller display 87.99 USD on Nov 7; checkout not verified",
+    "owned_fallback": {
+      "status": "NOT_VERIFIED",
+      "product_id": null
+    }
+  },
+  "creator_funnel": [
+    {
+      "topic": "change blindness",
+      "video_hook": "What changed while you looked away?",
+      "actual_asset_id": null,
+      "post_url": null,
+      "article_url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "article_state": "PRIOR_PUBLISHED_CMS_VERIFIED",
+      "funnel": "article → existing Focus → OPTIONAL authorized offer"
+    },
+    {
+      "topic": "Mesmer & Puységur",
+      "video_hook": "Franklin tested a claim. What did he actually test?",
+      "actual_asset_id": null,
+      "post_url": null,
+      "article_url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "article_state": "PRIOR_PUBLISHED_CMS_VERIFIED",
+      "funnel": "article → Puységur files → existing Focus → OPTIONAL authorized offer"
+    },
+    {
+      "topic": "attentional blink",
+      "video_hook": "Why did the second letter vanish?",
+      "actual_asset_id": null,
+      "post_url": null,
+      "article_url": null,
+      "article_state": "UNPUBLISHED_SOURCE_ONLY",
+      "funnel": "No campaign link until editorial/publication approval"
+    }
+  ],
+  "measurement": {
+    "status": "NOT_COMPUTABLE",
+    "formula": "1000 * (settled_owned_product_receipts + cleared_affiliate_commissions - refunds - chargebacks - payment_fees - attributed_variable_costs) / qualified_human_sessions",
+    "cohorts": [
+      7,
+      30
+    ],
+    "chain": [
+      "qualified_human_campaign_landing_by_real_asset_id",
+      "article_read",
+      "focus_cta_click",
+      "provider_confirmed_signup_if_observable",
+      "merchant_outbound_click_if_authorized",
+      "merchant_confirmed_paid_conversion",
+      "settlement_confirmed",
+      "refunds_fees_reconciled",
+      "net_revenue_per_1000_qualified_human_sessions"
+    ],
+    "privacy": "No PII, no querystrings containing emails, do not add duplicate tracking scripts or cookies; consent and existing analytics review prerequisite",
+    "asset_ids_verified": false,
+    "confirmed_paid_orders": null,
+    "cleared_commissions": null,
+    "qualified_human_sessions": null
+  },
+  "experiment": {
+    "A": "text-only guide",
+    "B": "same core + optional 42s video concept, unrendered and nonautoplay",
+    "status": "DESIGNED_NOT_RUN",
+    "randomization": "first-party stable campaign-level deterministic split only after reviewed implementation; no redirect/JS dependency required",
+    "primary_success": "7/30-day realized net revenue per 1000 qualified human sessions",
+    "secondary": "verified paid conversion per session, confirmed Jetpack leads, sample warnings",
+    "stop": "If adverse speed/accessibility, unclear disclosure, invalid consent or merchant authorization, no release"
+  },
+  "scope_protections": [
+    "No changes outside mind/ on this branch",
+    "No homepage PR #49 or Issue #150 edits",
+    "No Mind hub PR #172 overwrite",
+    "No Dispatch #174 newsletter edits",
+    "No production CMS/nav/Jetpack writes",
+    "No Grok social posts or queue changes",
+    "No unapproved tracking/affiliate activation"
+  ]
+}
