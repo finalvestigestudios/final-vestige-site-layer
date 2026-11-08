@@ -99,6 +99,36 @@ class BrowserSemantics(unittest.TestCase):
     def test_unexpected_closer(self):
         self.assertRaises(ValueError, check, PAGE.replace('<main>', '</aside><main>'))
 
+    def test_wordpress_block_wrapper(self):
+        wp = '<!-- wp:html -->\n<style>.pa{color:#fff}</style>\n' + PAGE + '\n<!-- /wp:html -->'
+        self.assertEqual(check(wp)['state'], 'DRAFT_HARD_HOLD')
+
+    def test_preview_document_wrapper(self):
+        doc = '<!doctype html><html lang="en"><head><meta charset="utf-8"><style>.pa{}</style></head><body>' + PAGE + '</body></html>'
+        self.assertEqual(check(doc)['source_targets'], 1)
+
+    def test_fake_warning_only_in_script(self):
+        fake = PAGE.replace(WARNING, '<script>var text="'+G.WARNING+'";</script>')
+        self.assertRaises(ValueError, check, fake)
+
+    def test_fake_warning_only_in_style(self):
+        fake = PAGE.replace(WARNING, '<style>/* '+G.WARNING+' */</style>')
+        self.assertRaises(ValueError, check, fake)
+
+    def test_duplicate_review_section(self):
+        self.assertRaises(ValueError, check, PAGE.replace(REVIEW, REVIEW+REVIEW))
+
+    def test_duplicate_empty_source_section(self):
+        self.assertRaises(ValueError, check, PAGE.replace(REVIEW, '<section class="pa-sources"></section>'+REVIEW))
+
+    def test_two_citations_same_source(self):
+        two = PAGE.replace(BODY, BODY + BODY.replace('id="intro"', 'id="other"'))
+        expected = BODY + BODY.replace('id="intro"', 'id="other"')
+        self.assertEqual(check(two, expected)['citation_mentions'], 2)
+
+    def test_missing_citation_in_mutated_export(self):
+        self.assertRaises(ValueError, check, PAGE.replace('class="pa-cite"','class="foo"'))
+
 # Diverse independent DOM-level mutation regressions, not a single repeated assertion.
 for _idx, (_token, _replacement) in enumerate([
     ('class="pa-body" id="pa-main"','class="pa-body" id="pa-main" hidden'),
