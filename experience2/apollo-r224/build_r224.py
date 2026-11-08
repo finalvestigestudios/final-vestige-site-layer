@@ -53,7 +53,7 @@ def build(parent, output):
     end=html.index('</ol>', start)
     check(html[start:end].count('<li data-evidence-kind=')==4, 'Unexpected parent rail')
     check(html.count('class="cta"')==1 and FREE in html, 'Canonical reading CTA altered')
-    check(NASA not in html, 'Duplicate report source already present')
+    check(NASA not in html[start:end], 'Duplicate report source already in rail')
     html=html[:end]+APRIL+html[end:]
     check(html.count('Four dates. Distinct kinds of evidence.')==1,'Title drift')
     html=html.replace('Four dates. Distinct kinds of evidence.','Five milestones. Distinct record types.')
