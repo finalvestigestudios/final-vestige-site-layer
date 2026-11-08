@@ -142,6 +142,12 @@ function compareColdImageWire(before, after) {
     // This is only a geometry and caption guard, NOT visual/historical equivalence.
     for (const k of bkeys) {
       const x=bs.get(k), y=as.get(k);
+      // A matching slot key and ALT do not prove the same historical asset was
+      // measured twice. A source swap can fabricate large byte savings while
+      // preserving geometry; require the identical frozen published src.
+      // Explicitly approved media migrations need a separate provenance audit.
+      if (x.stored_url !== y.stored_url)
+        add(reasons,'published_original_changed_between_runs:'+k);
       if (typeof x.rendered_alt !== 'string' || typeof y.rendered_alt !== 'string' ||
           x.rendered_alt !== y.rendered_alt)
         add(reasons,'rendered_alt_changed_or_missing:'+k);
