@@ -84,3 +84,80 @@ async def verify(parent):
 if __name__=='__main__':
  ap=argparse.ArgumentParser();ap.add_argument('--parent',required=True,type=Path);args=ap.parse_args()
  n=asyncio.run(verify(args.parent.read_bytes()));print(json.dumps({'passed':n,'failed':0,'scope':'WP stubs + Chromium; no WordPress Core, media or Jetpack'}))
+
+# Companion HTTP admission: actual bundled PHP callbacks now execute on HTTP
+# GET, with explicit local-host and path denials. This remains WP-function stubs.
+def verify_local_http(parent):
+ import hashlib, socket, urllib.request, urllib.error, time
+ fixed,_,_=build(parent)
+ with tempfile.TemporaryDirectory(prefix='fv-ex2-php-http-') as d:
+  root=Path(d)
+  with zipfile.ZipFile(io.BytesIO(fixed)) as pack:
+   for source,dest in [('mu-plugins/fv-ex2-playground-review.php','home.php'),
+                       ('mu-plugins/fv-ex2-focus-local-route.php','route.php'),
+                       (RECEIPT,'receipt.php')]: (root/dest).write_bytes(pack.read(source))
+  with socket.socket() as s:
+   s.bind(('127.0.0.1',0));port=s.getsockname()[1]
+  host=f'127.0.0.1:{port}'
+  stub=STUB.replace('https://wpsandbox.wordpress.net/',f'http://{host}/')
+  for n,f in enumerate(('home.php','route.php','receipt.php'),1):
+   stub=stub.replace(f'$argv[{n}]',f"__DIR__.'/{f}'")
+  stub=stub.replace('file_put_contents($argv[4],','echo(')
+  prefix='''<?php
+$host=$_SERVER['HTTP_HOST']??'';
+if ($host!=='__HOST__') {http_response_code(403);exit('REVIEW_HOST_DENIED');}
+$path=parse_url($_SERVER['REQUEST_URI']??'/',PHP_URL_PATH);
+if ($path==='/fv-ex2-focus-review/') {
+ header('Content-Type: text/html; charset=utf-8');
+ header('Cache-Control: private, no-store');
+ header('X-Robots-Tag: noindex, nofollow');
+ echo '<!doctype html><html lang="en"><main><h1>Focus Fieldbook review only</h1><p>NOT a subscription or download confirmation.</p></main></html>';
+ exit;
+}
+if ($path!=='/fv-ex2-review/') {http_response_code(404);exit('REVIEW_PATH_DENIED');}
+header('Content-Type: text/html; charset=utf-8');
+header('Cache-Control: private, no-store');
+header('X-Robots-Tag: noindex, nofollow');
+'''.replace('__HOST__',host)
+  (root/'router.php').write_text(prefix+stub[5:])
+  server=subprocess.Popen(['php','-S',host,str(root/'router.php')],cwd=root,
+                          stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL)
+  try:
+   origin=f'http://{host}'
+   for attempt in range(80):
+    if server.poll() is not None:raise AssertionError('PHP_HTTP_SERVER_DIED')
+    try:
+     with urllib.request.urlopen(origin+'/fv-ex2-review/',timeout=2) as r:
+      body=r.read(); headers=dict(r.headers);code=r.status
+     break
+    except (urllib.error.URLError,TimeoutError):time.sleep(.05)
+   else:raise AssertionError('PHP_HTTP_UNAVAILABLE')
+   assert code==200 and b'data-fv-home-flagship' in body
+   assert body.count(b'class="fv-margin-strip__item"')==72
+   assert body.count(b'data-fv-ex2-isolated-focus="1"')==5
+   assert b'href="https://finalvestige.com/focus/"' not in body
+   assert b'id="fv-ex2-run"' in body
+   assert headers['X-Robots-Tag']=='noindex, nofollow'
+   assert 'no-store' in headers['Cache-Control']
+   with urllib.request.urlopen(origin+'/fv-ex2-focus-review/',timeout=2) as r:focus=r.read()
+   with urllib.request.urlopen(origin+'/fv-ex2-focus-review/?subscribe=anything',timeout=2) as r:spoof=r.read()
+   assert b'NOT a subscription or download confirmation.' in focus and spoof==focus
+   assert b'<form' not in focus and b'type="email"' not in focus
+   for path in ('/','/wp-admin/','/focus/','/wp-json/'):
+    try:urllib.request.urlopen(origin+path,timeout=2);raise AssertionError('UNEXPECTED_ROUTE_ACCEPTED '+path)
+    except urllib.error.HTTPError as e:assert e.code==404
+   forged=urllib.request.Request(origin+'/fv-ex2-review/',headers={'Host':'finalvestige.com'})
+   try:urllib.request.urlopen(forged,timeout=2);raise AssertionError('FORGED_HOST_ACCEPTED')
+   except urllib.error.HTTPError as e:assert e.code==403
+   return {'http_admission':'PASS','assertions':16,'local_host':True,
+           'home_http_status':code,'rendered_bytes':len(body),
+           'sha256':hashlib.sha256(body).hexdigest(),'actual_wordpress_core':False,
+           'native_chromium_navigation':'NOT_TESTED','image_transfer':'NOT_VERIFIED',
+           'jetpack':'NOT_TESTED','release':'HOLD'}
+  finally:
+   server.terminate()
+   try:server.wait(timeout=4)
+   except subprocess.TimeoutExpired:server.kill()
+
+if __name__=='__main__':
+ print(json.dumps(verify_local_http(args.parent.read_bytes()),sort_keys=True))
