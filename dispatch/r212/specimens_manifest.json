@@ -1,0 +1,100 @@
+{
+  "id": "fv-dispatch-r212-source-synced-mime-20261108",
+  "status": "UNSENT_OFFLINE_SPECIMENS_ONLY",
+  "source_master_pr": 175,
+  "source_master_sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "source_review_pr": 1597,
+  "source_review_sha": "fbf40155dbc895d164396b10b6ca9f721e5618f2",
+  "source_branch": "dispatch-r212-source-synced-mime-audit-20261108",
+  "description": "Offline MIME specimens for source-corrected R211 review alternatives. Never Jetpack-rendered; no messages sent.",
+  "editions": [
+    {
+      "issue": 1,
+      "slug": "01-when-the-person-changed",
+      "kind": "editorial",
+      "subject": "The stranger they didn't see change",
+      "preheader": "A 1998 street experiment asks how much attention can really hold.",
+      "markdown_path": "dispatch/r211/revisions/01-when-the-person-changed.md",
+      "html_path": "dispatch/r211/preview/01-when-the-person-changed.html",
+      "markdown_blob_sha": "8b07b98d8f5a6826d735f76bf2fb3680c61a16fc",
+      "html_blob_sha": "3148f1599714efa1decb188c40eae997892911ad",
+      "approved": false,
+      "send_authorized": false
+    },
+    {
+      "issue": 2,
+      "slug": "02-the-patient-and-the-witness",
+      "kind": "editorial",
+      "subject": "What Puységur's witnesses could actually know",
+      "preheader": "The reports began in 1784; their claims remain a different question.",
+      "markdown_path": "dispatch/r211/revisions/02-the-patient-and-the-witness.md",
+      "html_path": "dispatch/r211/preview/02-the-patient-and-the-witness.html",
+      "markdown_blob_sha": "2e68a27606a0adb2ce36279d519c08a40f76a341",
+      "html_blob_sha": "b68dd602830ae041cd27a416d9517644a19e700a",
+      "approved": false,
+      "send_authorized": false
+    },
+    {
+      "issue": 3,
+      "slug": "03-zen12-what-twelve-minutes-can-prove",
+      "kind": "commercial-review-pending",
+      "subject": "What twelve minutes can—and cannot—tell you",
+      "preheader": "A free observation exercise before considering Zen12's advertised audio library.",
+      "markdown_path": "dispatch/r211/revisions/03-zen12-what-twelve-minutes-can-prove.md",
+      "html_path": "dispatch/r211/preview/03-zen12-what-twelve-minutes-can-prove.html",
+      "markdown_blob_sha": "2310efa5d953e44b075388f319472aafffc860c1",
+      "html_blob_sha": "f5a69e65130554f44db055e0cb55b2df9616b451",
+      "approved": false,
+      "send_authorized": false
+    },
+    {
+      "issue": 4,
+      "slug": "04-apollo-one-why-the-record-matters",
+      "kind": "editorial",
+      "subject": "Apollo 1: the cause was bigger than a spark",
+      "preheader": "NASA documented the hazards but could not isolate the exact ignition point.",
+      "markdown_path": "dispatch/r211/revisions/04-apollo-one-why-the-record-matters.md",
+      "html_path": "dispatch/r211/preview/04-apollo-one-why-the-record-matters.html",
+      "markdown_blob_sha": "759fd722c9211dea396f11a6b11c2a4654a86e25",
+      "html_blob_sha": "dd660257b9b1b90822b344091cce788f0e1c26cf",
+      "approved": false,
+      "send_authorized": false
+    },
+    {
+      "issue": 5,
+      "slug": "05-total-focus-what-is-in-the-recording",
+      "kind": "commercial-review-pending",
+      "subject": "Before buying a hypnosis recording, read the terms",
+      "preheader": "Total Focus is a specific product. Its advertised benefits are not verified outcomes.",
+      "markdown_path": "dispatch/r211/revisions/05-total-focus-what-is-in-the-recording.md",
+      "html_path": "dispatch/r211/preview/05-total-focus-what-is-in-the-recording.html",
+      "markdown_blob_sha": "5382c891cb320d2d217b39079af029e499f108dc",
+      "html_blob_sha": "6b0b05d72b4b0a6181e0cce0617c5d3237e63c2d",
+      "approved": false,
+      "send_authorized": false
+    },
+    {
+      "issue": 6,
+      "slug": "06-the-notebook-is-not-the-verdict",
+      "kind": "editorial",
+      "subject": "The notebook is not the verdict",
+      "preheader": "What seven days of attention notes can help you decide—and what they can't.",
+      "markdown_path": "dispatch/r211/revisions/06-the-notebook-is-not-the-verdict.md",
+      "html_path": "dispatch/r211/preview/06-the-notebook-is-not-the-verdict.html",
+      "markdown_blob_sha": "b4997f7b26cae92e8edaa74e3aac1bff2436b02a",
+      "html_blob_sha": "16afce0c80d11ccffbe05aebf1bd2348b18b5c4b",
+      "approved": false,
+      "send_authorized": false
+    }
+  ],
+  "release": {
+    "named_merchant_email_permission": false,
+    "live_approved_buyers_guides": false,
+    "verified_eligible_subscribers": false,
+    "verified_received_welcome": false,
+    "verified_publisher_postal_address": false,
+    "working_native_unsubscribe": false,
+    "actual_native_email_preview": false,
+    "founder_final_send_approval": false
+  }
+}
