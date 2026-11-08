@@ -1,7 +1,7 @@
 ---
 title: "The Second Thing You Didn't See: Attentional Blink, Meditation, and the Limits of a Twelve-Minute Promise"
-proposed_slug: "attentional-blink-second-target-meditation-evidence"
-status: "UNPUBLISHED; NOT WordPress CMS content"
+proposed_slug: "NONE — supplemental research; do not create a second public attentional-blink route"
+status: "UNPUBLISHED; SUPPLEMENT TO CANONICAL R196; NOT WordPress CMS content"
 stream: "Mind & Perception / Perception & Attention"
 checked: "2026-11-07 America/Los_Angeles"
 commercial_status: "Independent investigation; no commercial endorsement or affiliate link"
@@ -50,13 +50,13 @@ There is another subtlety. Reporting failure is not exactly the same as absence 
 
 ## The meditation experiment people want to turn into an advertisement
 
-The story becomes especially interesting in 2007. Heleen Slagter and colleagues studied people undertaking three months of intensive Vipassana meditation training and a comparison group. In the published study, seventeen practitioners were recruited before a three-month retreat, alongside twenty-three matched controls who had no prior meditation experience [4]. Participants completed an attentional-blink task while researchers recorded electrical signals from the scalp.
+The story becomes especially interesting in 2007. Heleen Slagter and colleagues studied people undertaking three months of intensive Vipassana meditation training and a comparison group. In the published study, seventeen experienced practitioners self-selected into a three-month retreat involving roughly 10–12 hours of daily practice, alongside twenty-three meditation-naïve comparison participants [4]. The control group was not untreated: its members received a one-hour class and instructions for twenty minutes of daily meditation during the week before each testing session. Retreat training included Vipassana and metta practice; the groups were not randomized. Participants completed an attentional-blink task while researchers recorded electrical signals from the scalp.
 
-After the intensive training period, the practitioners showed a reduced attentional blink. Their responses to the first target also showed a smaller P3b event-related potential, a signal the authors treated as an index of resource allocation in the task. Within the trained group, people showing larger reductions in this first-target P3b generally showed larger reductions in attentional blink [4].
+After the intensive training period, the practitioners showed a reduced attentional blink. Their responses to the first target also showed a smaller P3b event-related potential, a signal the authors treated as an index of resource allocation in the task. Across the analyzed practitioners and novices, greater change in the first-target P3b was correlated with changes in second-target accuracy; that pooled correlation is not a within-practitioner estimate. The main blink-versus-no-blink EEG analysis used 10 practitioners and 12 novices, while a larger no-blink analysis used 14 and 20 respectively, rather than the full 17/23 behavioral sample.
 
 It is an intriguing combination: a behavioral change and a neural measure moved together in a way consistent with less capture by the first target. The finding suggests that aspects of attentional allocation are capable of changing with experience. But its meaning must be kept attached to its method.
 
-First, the training was **three months of intensive practice**, not a single twelve-minute listening session, a weekly recreational recording or a commercially branded brainwave file. Second, the sample was modest. Third, the groups were not an ordinary fully randomized comparison of interchangeable interventions. Interest in meditation, prior practice, retreat expectations and other characteristics complicate causal attribution. Fourth, P3b is an electrical signal associated with processing; it is not a meter of wisdom, mental health or a commercial product's 'brain power.'
+First, the training was **three months of intensive practice**, not a single twelve-minute listening session, a weekly recreational recording or a commercially branded brainwave file. Second, the sample was modest. Third, group assignment was not randomized: experienced practitioners chose an intensive retreat, while controls received brief instruction and a short home-practice request. Interest in meditation, prior practice, retreat expectations and other characteristics complicate causal attribution. Fourth, P3b is an electrical signal associated with processing; it is not a meter of wisdom, mental health or a commercial product's 'brain power.'
 
 An encouraging study is still a specific study. The most responsible use of its results is to invite further controlled investigation—not to stamp 'clinically proven' on a different object.
 
