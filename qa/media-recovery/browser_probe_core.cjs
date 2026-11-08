@@ -145,6 +145,10 @@ function classifyImages(stored,rendered,network,pageVerified){
   const finalNetworkIdentityVerified=!!(req&&r?.currentSrc&&sameSource(r.currentSrc,req.url));
   const finalRedirectIdentityUnverified=!!(req&&r?.currentSrc&&!finalNetworkIdentityVerified&&
    (req.url_aliases||[]).some(u=>sameSource(u,r.currentSrc)));
+  // Both a genuine failure and a healthy load need explicit cold-network proof.
+  // Missing cache flags are UNKNOWN, not evidence of a fresh origin request.
+  const freshNetworkProof=!!(req&&req.was_cached===false&&
+    req.from_disk_cache===false&&req.from_service_worker===false);
   // Successful HTTP does not imply a valid image: some publishers return 200 HTML/XML/JSON error bodies.
   // Require a completed, zero-width decode and a matching real CDP network response.
   const incompatibleResponse=!!(responseStatus>=200&&responseStatus<300&&responseMime&&
@@ -153,9 +157,9 @@ function classifyImages(stored,rendered,network,pageVerified){
   // Only accept an uncached, exact final CDP response for the completed currentSrc.
   const decodeFailure=!!(req&&finalNetworkIdentityVerified&&responseStatus===200&&
    responseMime&&responseMime.startsWith('image/')&&!reqError&&
-   r?.complete===true&&r.naturalWidth===0&&
+   r?.complete===true&&r.naturalWidth===0&&r.naturalHeight===0&&
    Number.isSafeInteger(req.encodedDataLength)&&req.encodedDataLength>0&&
-   req.was_cached!==true&&req.from_disk_cache!==true&&req.from_service_worker!==true);
+   freshNetworkProof);
   const domMapped=j.match==='exact_url_or_jetpack_origin'||j.match==='exact_url_unique_alt';
   const identityVerified=domMapped&&activeImageIdentity(s,r);
   // A redirect whose final CDP URL is not the displayed historical source cannot
@@ -163,6 +167,7 @@ function classifyImages(stored,rendered,network,pageVerified){
   // kinds, not only the successful-200 decode-failure branch.
   const visiblyBroken=!!(pageVerified&&r&&identityVerified&&finalNetworkIdentityVerified&&
    !finalRedirectIdentityUnverified&&r.complete===true&&r.naturalWidth===0&&
+   r.naturalHeight===0&&freshNetworkProof&&
    (reqError||(responseStatus!==null&&responseStatus>=400)||incompatibleResponse||decodeFailure));
   const failureKind=visiblyBroken?(reqError?'network_error':responseStatus>=400?'http_error':
    incompatibleResponse?'non_image_error_payload':decodeFailure?'image_decode_failure':null):null;
@@ -171,9 +176,10 @@ function classifyImages(stored,rendered,network,pageVerified){
   const loadedNetworkProof=!!(req&&finalNetworkIdentityVerified&&responseStatus===200&&
    responseMime&&responseMime.startsWith('image/')&&!reqError&&
    Number.isSafeInteger(req.encodedDataLength)&&req.encodedDataLength>0&&
-   req.was_cached!==true&&req.from_disk_cache!==true&&req.from_service_worker!==true);
+   freshNetworkProof);
   const verifiedLoaded=!!(pageVerified&&r&&identityVerified&&r.complete===true&&
-   r.naturalWidth>0&&loadedNetworkProof);
+   Number.isSafeInteger(r.naturalWidth)&&r.naturalWidth>0&&
+   Number.isSafeInteger(r.naturalHeight)&&r.naturalHeight>0&&loadedNetworkProof);
   let state='unverified';
   if(!pageVerified)state='page_not_verified';
   else if(!r)state='not_mapped';
@@ -238,7 +244,7 @@ function scopeArticleImageWire(slots,networkImages){
    matched++;
    if(!Number.isSafeInteger(bytes)||bytes<=0||n.status!==200||
      typeof n.mime_type!=='string'||!/^image\//i.test(n.mime_type)||
-     n.error||n.was_cached===true||n.from_disk_cache===true||n.from_service_worker===true)unmeasured++;
+     n.error||n.was_cached!==false||n.from_disk_cache!==false||n.from_service_worker!==false)unmeasured++;
    else article+=bytes;
   }else if(Number.isSafeInteger(bytes)&&bytes>=0)unattributed+=bytes;
  }
