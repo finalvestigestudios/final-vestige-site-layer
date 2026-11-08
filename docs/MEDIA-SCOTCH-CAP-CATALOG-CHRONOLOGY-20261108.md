@@ -1,0 +1,12 @@
+# Scotch Cap 418:2 — conflicting NOAA and Coast Guard catalog chronology (8 November 2026)
+
+**Scope:** Source/provenance exclusion record, *not* an authorized replacement or confirmed visitor-browser breakage. Independently reviewed two authoritative textual catalog pages.
+
+- Original published image slot `418:2` is `https://www.history.uscg.mil/Portals/6/5_%20Scotch_Cap_debris2_1946.jpg`. A November 4 independent retriever previously returned a **wrapper 403**; real HTTP origin, Chrome response, decoded pixels and transferred bytes remain unknown.
+- NOAA Ocean Exploration's [*Scotch Cap Lighthouse Debris* catalog](https://oceanexplorer.noaa.gov/multimedia/okeanos-explorations-seascape-alaska-ex2304-features-geology-media-lighthouse-debris/) states debris followed a **1964 tsunami**, with photo credit “D. Rosen, 2021, U.S. Coast Guard.” Its webpage advertises a 214.2 KB file, *not* independently downloaded/measured and with original pixel dimensions unknown.
+- The National Coast Guard Museum's [*Standing a deadly watch*](https://nationalcoastguardmuseum.org/articles/scotch-cap-lighthouse/) by David Rosen (2024-10-30) dates the lighthouse's destruction to **1 April 1946**, describes distinct surviving-debris photographs, and credits the U.S. Coast Guard.
+- **Reason to hold:** the NOAA catalog's 1964 wording conflicts with the 1946 event chronology. Without comparing the actual photographic pixels, the NOAA record cannot be declared the same image or used as an automatic substitute. It may be a cataloging error or a photo of surviving debris from another date; that question remains open. No claim is made that NOAA's binary is wrong or that Final Vestige has published it.
+
+**Safe editorial/engineering decision:** Keep this photo below the six P0 browser-evidence checks; preserve historical scene integrity, 1946 date, credits and captions. Require item-level rights, exact image ID, binary dimensions and a source-catalog correction/reconciliation before generating a derivative. Conditional width ≤960px without upscaling, original-resolution archive link if authorized, no WordPress upload/edit until visually/legally cleared. The Coast Guard Museum is only a *subject-level* alternative, not exact-photo proof.
+
+Machine audit: `qa/media-recovery/scotch_cap_418_catalog_date_conflict_20261108.json`. Fifteen fail-closed regression cases: `test_scotch_cap_418_catalog_date_conflict_20261108.cjs`. Read-only web catalog inspection only; no binary download or production modification.
