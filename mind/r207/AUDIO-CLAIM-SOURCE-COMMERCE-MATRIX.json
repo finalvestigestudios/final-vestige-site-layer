@@ -1,0 +1,352 @@
+{
+  "milestone": "R207",
+  "checked_local_date": "2026-11-07",
+  "state": "UNPUBLISHED_NO_MERCHANT_ACTIVATION",
+  "reading_depth": "primary publisher abstracts; full open article for Mestry; direct seller product copy; no authenticated merchant account",
+  "sources": [
+    {
+      "id": "R01",
+      "url": "https://doi.org/10.1177/1745691617747398",
+      "kind": "peer-reviewed 2018 Bayesian meta-analysis",
+      "scope": "Vasilev et al, 65 studies; reading, not branded audio"
+    },
+    {
+      "id": "R02",
+      "url": "https://doi.org/10.1177/0305735610376261",
+      "kind": "peer-reviewed meta-analysis 2010 online/2011 issue",
+      "scope": "Kämpfe et al, varied music tasks and outcomes"
+    },
+    {
+      "id": "R03",
+      "url": "https://doi.org/10.1518/001872001775992462",
+      "kind": "peer-reviewed 2001 review",
+      "scope": "Banbury et al, irrelevant sound/short-term memory"
+    },
+    {
+      "id": "R04",
+      "url": "https://link.springer.com/article/10.3758/s13423-014-0705-3",
+      "kind": "open primary full text",
+      "scope": "Mestry et al 2014 online/2015 issue, Thatcher orientation judgment; correction to inherited R206"
+    },
+    {
+      "id": "R05",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5858027/",
+      "kind": "open primary full text",
+      "scope": "Olson Jeyanesan Raz 2017(1) nix014; corrected inherited R205 citation"
+    },
+    {
+      "id": "M01",
+      "url": "https://inspire3.com/",
+      "kind": "seller",
+      "scope": "catalog, product inventory and seller claims"
+    },
+    {
+      "id": "M02",
+      "url": "https://zen12.com/hnp",
+      "kind": "seller",
+      "scope": "Premium 12 levels/48 MP3 and advertised one-year guarantee; public price display $87.99 Nov 7; checkout not audited"
+    },
+    {
+      "id": "M03",
+      "url": "https://affiliates.inspire3.com/",
+      "kind": "seller affiliate portal",
+      "scope": "application/portal exists, individual FV authorization unavailable"
+    },
+    {
+      "id": "F01",
+      "url": "https://finalvestige.com/focus/",
+      "kind": "published FV resource",
+      "scope": "52-page free fieldbook; UI is not provider-confirmed opt-in"
+    },
+    {
+      "id": "F02",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "kind": "published FV investigation",
+      "scope": "prior WP verified; direct anonymous fetch inconsistent"
+    },
+    {
+      "id": "F03",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "kind": "published FV investigation",
+      "scope": "prior WP verified; source mission historical"
+    },
+    {
+      "id": "F04",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "kind": "published FV historical resource",
+      "scope": "prior WP verified, no clinical endorsement"
+    },
+    {
+      "id": "G01",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "kind": "regulatory guidance",
+      "scope": "clear, conspicuous disclosure near referral"
+    },
+    {
+      "id": "G02",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "kind": "regulatory guidance",
+      "scope": "adequate product-specific support for psychological/health benefits"
+    }
+  ],
+  "claims": [
+    {
+      "id": "A01",
+      "claim": "Auditory background sound tends to impair reading slightly in pooled evidence",
+      "decision": "SUPPORTED_WITH_QUALIFICATION",
+      "source_ids": [
+        "R01"
+      ],
+      "limit": "Meta-analysis of 65 studies, heterogeneous tasks; no prediction for a particular individual"
+    },
+    {
+      "id": "A02",
+      "claim": "Intelligible speech and lyrical music often more distracting for reading",
+      "decision": "SUPPORTED_READING_CONTEXT",
+      "source_ids": [
+        "R01"
+      ],
+      "limit": "Not all sounds equally distracting; no branded comparisons"
+    },
+    {
+      "id": "A03",
+      "claim": "Background music has a universal positive cognitive effect",
+      "decision": "REJECTED",
+      "source_ids": [
+        "R02"
+      ],
+      "limit": "Meta-analysis has outcome-dependent positives and negatives"
+    },
+    {
+      "id": "A04",
+      "claim": "Irrelevant sound can disrupt short-term-memory task performance",
+      "decision": "SUPPORTED_TASK_SPECIFIC",
+      "source_ids": [
+        "R03"
+      ],
+      "limit": "Not evidence for branded product efficacy"
+    },
+    {
+      "id": "M01",
+      "claim": "Zen12 Premium official description: 12 levels and 48 MP3s",
+      "decision": "SELLER_DESCRIPTION_ONLY",
+      "source_ids": [
+        "M01",
+        "M02"
+      ],
+      "limit": "delivery not independent tested"
+    },
+    {
+      "id": "M02",
+      "claim": "Zen12 Premium one-year refund promise",
+      "decision": "SELLER_DESCRIPTION_ONLY",
+      "source_ids": [
+        "M02"
+      ],
+      "limit": "terms, execution and eligibility untested"
+    },
+    {
+      "id": "M03",
+      "claim": "12 minutes of Zen12 equals an hour of deep meditation",
+      "decision": "EXCLUDE_UNSUBSTANTIATED",
+      "source_ids": [
+        "M02",
+        "G02"
+      ],
+      "limit": "no matching product-specific adequate scientific trial verified"
+    },
+    {
+      "id": "M04",
+      "claim": "Zen12 cures or improves a condition",
+      "decision": "EXCLUDE_UNSUBSTANTIATED_HEALTH",
+      "source_ids": [
+        "M02",
+        "G02"
+      ],
+      "limit": "no clinical equivalence or approved health claims"
+    },
+    {
+      "id": "M05",
+      "claim": "Nov 7 merchant Premium price displayed $87.99",
+      "decision": "DATED_PUBLIC_SELLER_DISPLAY_ONLY",
+      "source_ids": [
+        "M02"
+      ],
+      "limit": "earlier $87 text extraction not reproduced; no verified final checkout or tax"
+    },
+    {
+      "id": "M06",
+      "claim": "Final Vestige is approved Inspire3 affiliate",
+      "decision": "NOT_AUTHENTICATED",
+      "source_ids": [
+        "M03"
+      ],
+      "limit": "public signup portal cannot establish individual acceptance"
+    },
+    {
+      "id": "F01",
+      "claim": "Focus Fieldbook is free 52-page guide",
+      "decision": "PUBLISHED_RESOURCE",
+      "source_ids": [
+        "F01"
+      ],
+      "limit": "successful opt-in/welcome requires authoritative provider confirmation"
+    },
+    {
+      "id": "G01",
+      "claim": "Footer disclosure enough for offsite earning link",
+      "decision": "REJECTED",
+      "source_ids": [
+        "G01"
+      ],
+      "limit": "affiliate disclosure required clearly adjacent to actual recommendation"
+    },
+    {
+      "id": "Q01",
+      "claim": "Thatcher ERP participants rated grotesqueness",
+      "decision": "CORRECTED_FALSE",
+      "source_ids": [
+        "R04"
+      ],
+      "limit": "they judged face orientation"
+    },
+    {
+      "id": "Q02",
+      "claim": "Olson 2017 Neuroscience of Consciousness 3(1) journal issue",
+      "decision": "CORRECTED_CITATION",
+      "source_ids": [
+        "R05"
+      ],
+      "limit": "correct 2017(1), nix014"
+    },
+    {
+      "id": "C01",
+      "claim": "Affiliate link click proves a paid sale or revenue",
+      "decision": "REJECTED",
+      "source_ids": [
+        "M03"
+      ],
+      "limit": "only verified order or settled partner payment can support revenue"
+    },
+    {
+      "id": "C02",
+      "claim": "Current owned rights-cleared Payhip Mind product is sellable",
+      "decision": "NOT_VERIFIED",
+      "source_ids": [
+        "F01"
+      ],
+      "limit": "free Focus asset is NOT evidence of an eligible paid owned SKU"
+    }
+  ],
+  "authorization_gates": [
+    {
+      "gate": "publisher_named_acceptance",
+      "state": "OPEN",
+      "owner": "Founder/Mind"
+    },
+    {
+      "gate": "issued_affiliate_url_and_terms",
+      "state": "OPEN",
+      "owner": "Founder/Mind"
+    },
+    {
+      "gate": "approved_site_social_email_placement",
+      "state": "OPEN",
+      "owner": "Founder/Mind"
+    },
+    {
+      "gate": "approved_creative_swipe_usage",
+      "state": "OPEN",
+      "owner": "Founder/Mind"
+    },
+    {
+      "gate": "current_checkout_price_currency_tax",
+      "state": "OPEN",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "gate": "actual_refund_policy_and_merchant_report",
+      "state": "OPEN",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "gate": "owned_rights_cleared_payhip_mind_sku",
+      "state": "OPEN",
+      "owner": "Commerce"
+    },
+    {
+      "gate": "grok_actual_media_ids_and_destinations",
+      "state": "OPEN",
+      "owner": "Grok/Praxxis"
+    },
+    {
+      "gate": "jetpack_confirmed_optin_and_welcome",
+      "state": "OPEN",
+      "owner": "Claude/SiteQA"
+    },
+    {
+      "gate": "verified_human_session_denominator",
+      "state": "OPEN",
+      "owner": "Claude/Analytics"
+    },
+    {
+      "gate": "cleared_commission_or_settled_order",
+      "state": "OPEN",
+      "owner": "Commerce"
+    },
+    {
+      "gate": "accessible_browser_and_founder_release",
+      "state": "OPEN",
+      "owner": "SiteQA/Founder"
+    }
+  ],
+  "creator_funnel": [
+    {
+      "topic": "change blindness",
+      "published_destination": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "optional_focus": "https://finalvestige.com/focus/",
+      "product": "Zen12 only after authorization; topic alone not product proof",
+      "asset_id": "UNVERIFIED"
+    },
+    {
+      "topic": "history of Mesmerism",
+      "published_destination": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "optional_focus": "https://finalvestige.com/focus/",
+      "product": "none attached to historical conclusion",
+      "asset_id": "UNVERIFIED"
+    },
+    {
+      "topic": "music versus silence reading",
+      "published_destination": null,
+      "draft": "mind/r207/the-song-that-stole-a-sentence-AUDIO-ATTENTION-UNPUBLISHED.md",
+      "optional_focus": "https://finalvestige.com/focus/",
+      "product": "Zen12 buying guide only after rights/release approval",
+      "asset_id": "NOT_SCHEDULED"
+    }
+  ],
+  "measurement": {
+    "chain": [
+      "qualified_human_session",
+      "campaign_landing",
+      "relevant_article_or_guide_click",
+      "confirmed_lead_provider_only",
+      "merchant_outbound_click_if_authorized",
+      "merchant_confirmed_paid_conversion",
+      "settled_commission",
+      "refunds_fees_chargebacks",
+      "realized_net_revenue"
+    ],
+    "utm": "utm_source=platform&utm_medium=organic_social&utm_campaign=mind_audio_2026_11&utm_content=grok_immutable_asset_id",
+    "pii": "NEVER collect mail addresses, raw IPs, fingerprinting, sensitive health data or user-specific tracking from this prototype",
+    "currency": "single named reporting currency",
+    "formula": "1000 * (settled_owned_product_receipts + cleared_affiliate_commissions - refunds - fees - chargebacks, no double count) / audited_qualified_human_sessions",
+    "order_count": "report separately; never add unitless orders to monetary commissions",
+    "cohorts": [
+      7,
+      30
+    ],
+    "status": "NOT_COMPUTABLE",
+    "reason": "human-session denominator, verified orders, settlements, fees and refunds unavailable"
+  },
+  "a_b": "A text-only versus B same guide with OPTIONAL 42s static film concept, transcript and draft captions; NOT a live playable film or true traffic experiment"
+}
