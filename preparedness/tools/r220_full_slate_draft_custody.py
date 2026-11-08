@@ -38,6 +38,20 @@ INTEGRATED_DIFFS = {
     33: 'd56df76647d2598f35cfd4609f91649cef063f12',
     34: 'ad158ee898f76d05bcb65c845b1e4a0e8103c660',
 }
+INTEGRATED_META_DIFFS = {
+     2: '1c69d5f1636a3a41631a5d93f11254d85cbe1b59',
+     6: '827d861eb3beebfd010ee98fcca764b23a2de90e',
+     7: '91c730bd1c7a61fa3140a86245c9bc0c88160c29',
+    12: 'be37b602d0b82593d438083dfc8a1e5ef595dd44',
+    13: 'ff1246dcbfb0dd0bc864977f815badb9ad4e7ed8',
+    14: 'cb559141d1e4a39debad16cf5cb796b746a01f19',
+    15: 'dcad79faa8e0e6f1aef6db03e9e6e9451e19d8d3',
+    20: 'ba840917f34634ccd634c488eeca4a8a6b3a8fe2',
+    21: '1c4c5396da703f3724b584c67e49e2128ab1f4c6',
+    24: '7191acba55d63dc405ad9c2003d66193276da89f',
+    25: '03d3824e07fe51931671d0ddc7aa8c85eda58435',
+    34: '4d2dc4958736e3c5257c65dda8ed016a473ac6be',
+}
 EXPECTED_EXCEPTIONS = {(7, 'cdc-find-clean-water'): 2,
                        (20, 'start-ready-plan'): 1}
 CITE = re.compile(r'\{\{cite:([a-z0-9-]+)\}\}')
@@ -134,7 +148,11 @@ def verify_originals(root: Path, articles: list[dict]) -> tuple[list[dict], dict
         expected = INTEGRATED_DIFFS.get(n, a['body_oid'])
         if actual != expected:
             raise ValueError(f'#{n} changed without reviewed custody receipt: {actual}')
-        meta = strict_object(safe_read(root, f'content/articles/{slug}.meta.json'))
+        meta_raw = safe_read(root, f'content/articles/{slug}.meta.json')
+        expected_meta = INTEGRATED_META_DIFFS.get(n, a['meta_oid'])
+        if git_blob(meta_raw) != expected_meta:
+            raise ValueError(f'#{n} metadata changed without custody receipt')
+        meta = strict_object(meta_raw)
         if (meta.get('n') != n or meta.get('slug') != slug
                 or meta.get('section') != a['section']
                 or meta.get('track') != a['track']
@@ -168,7 +186,7 @@ def verify_originals(root: Path, articles: list[dict]) -> tuple[list[dict], dict
                        'original_blob': a['body_oid'], 'integrated_blob': actual,
                        'changed_since_original': actual != a['body_oid'],
                        'citations': len(cited), 'sources': len(set(cited)),
-                       'links': len(linked), 'meta_blob': git_blob(safe_read(root, f'content/articles/{slug}.meta.json')),
+                       'links': len(linked), 'meta_blob': git_blob(meta_raw),
                        'route': a['route'], 'legacy_safety_label': safety['state']})
     if exceptions != EXPECTED_EXCEPTIONS:
         raise ValueError('source-use explanations changed; independently adjudicate: ' + str(exceptions))
