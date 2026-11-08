@@ -211,9 +211,6 @@ for _slug in [f'article-{i}' for i in range(1, 36)] + [f'tool-{i}' for i in rang
                 _render_mutation(_slug, _mode))
 
 
-if __name__ == '__main__':
-    unittest.main()
-
 class SyntheticOriginalsTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
@@ -267,3 +264,6 @@ for _n in range(1, 36):
             _mutate_original(_n, 'body'))
     setattr(SyntheticOriginalsTests, f'test_article_{_n:02d}_changed_metadata_blocked',
             _mutate_original(_n, 'meta'))
+
+if __name__ == '__main__':
+    unittest.main()
