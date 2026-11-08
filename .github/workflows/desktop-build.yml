@@ -57,6 +57,10 @@ jobs:
         run: |
           python -W error -m unittest discover -s products/desktop/tests -p 'test_strict_source_receipt_numbers_r274.py'
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_strict_source_receipt_numbers_r274.py'
+      - name: R275 bind tested source and tests to candidate checkout (normal and -OO)
+        run: |
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_source_build_binding_r275.py'
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_source_build_binding_r275.py'
       - name: R162 immutable CI action custody and strict tests (normal and -OO)
         run: |
           python products/desktop/ci_action_pin_guard.py .github/workflows/desktop-build.yml
@@ -737,6 +741,13 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R274 normal receipt numbers gate FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_strict_source_receipt_numbers_r274.py'
           if ($LASTEXITCODE -ne 0) { throw "R274 optimized receipt numbers gate FAILED" }
+      - name: R275 bind tested source and tests to candidate checkout (normal and -OO)
+        shell: pwsh
+        run: |
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_source_build_binding_r275.py'
+          if ($LASTEXITCODE -ne 0) { throw "R275 normal tested-source gate FAILED" }
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_source_build_binding_r275.py'
+          if ($LASTEXITCODE -ne 0) { throw "R275 optimized tested-source gate FAILED" }
       - name: R162 immutable CI action custody and strict tests (normal and -OO)
         shell: pwsh
         run: |
