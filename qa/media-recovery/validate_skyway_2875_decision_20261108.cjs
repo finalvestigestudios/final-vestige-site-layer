@@ -18,6 +18,9 @@ function verify(a){
   seenStatus.add(o.result);
  }
  if(seenStatus.size!==2)fail('missing original/relocated comparison');
+ const old=a.observations.find(o=>o.url==='https://stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg');
+ const relocated=a.observations.find(o=>o.url==='https://media.stpetecatalyst.com/uploads/2020/04/Skyway-Bridge-documentary.jpg');
+ if(!old||!relocated||old.result!=='404_NOT_FOUND_FROM_RETRIEVER'||relocated.result!=='IMAGE_RENDERED_FROM_RETRIEVER')fail('method-labelled observed URLs misassigned');
  if(!Array.isArray(a.candidates)||a.candidates.length!==4)fail('candidate count');
  for(const c of a.candidates){
   if(typeof c.candidate_id!=='string'||seenCandidate.has(c.candidate_id))fail('candidate identity');seenCandidate.add(c.candidate_id);
