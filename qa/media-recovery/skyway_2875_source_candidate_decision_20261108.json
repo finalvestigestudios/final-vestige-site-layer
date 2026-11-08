@@ -6,9 +6,9 @@
   "source_p0_image_key": "287:5",
   "source_provenance": "qa/media-recovery/p0_guest_browser_disposition_pending_20261105.json",
   "article_id": 287,
-  "article_url": "https://finalvestige.com/2026/08/19/the-bridge-was-still-there-sunshine-skyway/",
+  "article_url": "https://finalvestige.com/2026/08/19/the-warning-was-a-man-waving-sunshine-skyway/",
   "published_original_source_url": "https://stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg",
-  "published_original_alt_claim": "old wreckage and later bridge replacement",
+  "published_original_alt_claim": "The old Sunshine Skyway wreckage and the later bridge replacement in Tampa Bay.",
   "publisher_article_url": "https://stpetecatalyst.com/skyway-disaster-documentary-available-for-streaming/",
   "observations": [
     {
@@ -129,5 +129,8 @@
     "verify_native_pixel_dimensions_and_no_upscaling",
     "preserve_accessible_alt_and_caption_accuracy",
     "stage_only_with_release_approval_and_rollback_url"
-  ]
+  ],
+  "frozen_post_modified": "2026-10-29T18:42:40",
+  "frozen_source_blob_path": "qa/media-recovery/parts/03.json",
+  "frozen_source_blob_sha": "49183f66f880f7c4dfd363acca906876877f2e5e"
 }
