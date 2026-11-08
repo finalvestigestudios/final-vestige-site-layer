@@ -37,7 +37,7 @@
     }
   ],
   "policy_reference": "https://www.mediawiki.org/wiki/Help:Images/en",
-  "scope": "117? no; exact 118 Commons Special:Redirect/file source references",
+  "scope": "Exactly 118 Commons Special:Redirect/file URL references from historical 61-post, 355-image frozen stored source snapshot",
   "totals": {
     "historic_posts": 61,
     "historic_inline_image_refs": 355,
