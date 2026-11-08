@@ -23,11 +23,11 @@ Yet what we consciously notice has never been a simple inventory of everything o
 
 ## The cross on the screen
 
-The experiments used the same visual object in two ways. A cross had arms in different colors, and one arm was subtly longer than the other. In the easier condition participants judged which arm was blue. In the harder condition they had to judge which arm was longer. A colored label is relatively conspicuous; a small difference in length demands more discrimination.
+Experiment 1 tested two demands using the same visual object; related conditions in the later experiments altered the procedure. A cross had arms in different colors, and one arm was subtly longer than the other. In the easier condition participants judged which arm was blue. In the harder condition they had to judge which arm was longer. A colored label is relatively conspicuous; a small difference in length demands more discrimination.
 
 This is the operational meaning of *visual perceptual load* in the experiment. It isn't fatigue, emotional stress, or the complexity of a person's life. It is the defined difficulty of extracting a feature from briefly presented visual material.
 
-In Experiment 1, a cross appeared for 150 milliseconds. During the brief experimental sequence, a layer of white noise played through headphones. On the critical seventh trial, the researchers inserted a pure tone at the same time as the cross. Immediately afterward, participants were asked whether the sound had changed. The eighth trial served as an important control: pay attention to the sound rather than the cross. Participants who failed to detect the tone even in the sound-focused control were excluded under the study's rules. [1]
+In Experiment 1, a cross appeared for 150 milliseconds. During the brief experimental sequence, a layer of white noise played through headphones. On the critical seventh trial, the researchers inserted a pure tone at the same time as the cross. Immediately afterward, participants were asked whether the sound had changed. The eighth trial served as an important control: pay attention to the sound rather than the cross. The authors' exclusions included participants who failed the sound-focused control **and** those who did not meet the visual-task accuracy requirement; both are important to the study's interpretation. These exclusions reduce—but do not eliminate—alternative explanations. [1]
 
 Why does this detail matter? Without the control, a missed tone might mean the stimulus was simply too weak to be noticed through the experimental audio. The control doesn't prove that every participant had identical hearing in all circumstances, but it narrows the interpretation of a failure on the critical trial.
 
