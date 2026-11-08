@@ -160,3 +160,32 @@ test('fabricated broken screenshot on a loaded image is not proven',()=>{
  const out=adjudicate(a,b,r);
  assert.equal(out.p0_census_complete,true);assert.equal(out.rows[0].screenshot_proven,false);
 });
+
+test('cached 404 via service worker cannot certify fresh P0 origin breakage',()=>{
+ const r=runTest(null,null,p=>{bork(p,'287:5');p.pages.find(x=>x.post_id===287).network_images[0].from_service_worker=true});
+ assert.equal(r.rows.find(x=>x.image_key==='287:5').visitor_classification,'PENDING_GUEST_BROWSER');assert.equal(r.p0_census_complete,false);
+});
+test('cached 403 cannot certify fresh P0 origin breakage',()=>{
+ const r=runTest(null,null,p=>{bork(p,'418:1');p.pages.find(x=>x.post_id===418).network_images[0].was_cached=true});
+ assert.equal(r.rows.find(x=>x.image_key==='418:1').visitor_classification,'PENDING_GUEST_BROWSER');
+});
+test('disk-cached network error is not cold-source evidence',()=>{
+ const r=runTest(null,null,p=>{bork(p,'285:5','network');p.pages.find(x=>x.post_id===285).network_images[0].from_disk_cache=true});
+ assert.equal(r.rows.find(x=>x.image_key==='285:5').visitor_classification,'PENDING_GUEST_BROWSER');
+});
+test('missing cache boolean for broken HTTP image must HOLD',()=>{
+ const r=runTest(null,null,p=>{bork(p,'418:2');delete p.pages.find(x=>x.post_id===418).network_images[1].was_cached});
+ assert.equal(r.rows.find(x=>x.image_key==='418:2').visitor_classification,'PENDING_GUEST_BROWSER');
+});
+test('loaded claim with natural_height zero must HOLD',()=>{
+ const r=runTest(null,null,p=>{p.pages.find(x=>x.post_id===285).stored_images[0].natural_height=0});
+ assert.equal(r.rows.find(x=>x.image_key==='285:5').visitor_classification,'PENDING_GUEST_BROWSER');
+});
+test('broken claim with nonzero natural_height must HOLD',()=>{
+ const r=runTest(null,null,p=>{bork(p,'407:1');p.pages.find(x=>x.post_id===407).stored_images[0].natural_height=400});
+ assert.equal(r.rows.find(x=>x.image_key==='407:1').visitor_classification,'PENDING_GUEST_BROWSER');
+});
+test('real cold 404, 0x0 dimensions still proves browser breakage but never authorizes replacement',()=>{
+ const r=runTest(null,null,p=>bork(p,'287:5'));
+ assert.equal(r.rows.find(x=>x.image_key==='287:5').visitor_classification,'BROWSER_CONFIRMED_BROKEN');assert.equal(r.replacement_release_authorized,false);
+});
