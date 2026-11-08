@@ -1,0 +1,18 @@
+/* Experience 2.0 chapter trail: accessible no-script fallback.
+   A wider, complete chapter index is preferable to clipped keyboard targets
+   when script enhancement is unavailable; this modifies ONLY review source. */
+@media (max-width: 920px) {
+  .fv-hf .fv-hf__chapter-nav:not([data-fv-trail-enhanced]) {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: visible;
+    scroll-snap-type: none;
+    gap: 0;
+    justify-content: flex-start;
+  }
+  .fv-hf .fv-hf__chapter-nav:not([data-fv-trail-enhanced]) a {
+    flex: 1 1 130px;
+    min-width: 0;
+    white-space: normal;
+  }
+}
