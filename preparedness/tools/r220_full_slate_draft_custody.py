@@ -9,7 +9,6 @@ review remain separate mandatory gates.
 from __future__ import annotations
 
 import argparse
-import importlib.util
 import hashlib
 import json
 import re
@@ -251,33 +250,44 @@ def verify_render(root: Path, articles: list[dict], report: dict, library, build
             'channel_files_verified': 2 * len(by_slug), 'canonical_routes': len(seen_routes)}
 
 
-def load_r221_authority(root: Path):
-    """Import only the exact read-only R221 authority bytes pinned by this gate."""
-    source = safe_read(root, R221_AUTHORITY_PATH)
-    if git_blob(source) != R221_AUTHORITY_BLOB:
-        raise ValueError('R221 frozen-authority module identity mismatch')
-    spec = importlib.util.spec_from_file_location(
-        'fv_preparedness_r221_frozen_authority', root / R221_AUTHORITY_PATH)
-    if spec is None or spec.loader is None:
-        raise ValueError('R221 module cannot be loaded')
-    module = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(module)
+def load_frozen_gate(root: Path, relative: str, pin: str, module_name: str, required: tuple[str, ...]):
+    """Execute authenticated gate bytes, never an independently re-opened path.
+
+    Importlib loaders can read the file a *second* time after SHA inspection.
+    This binds the functions used for later validation to the bytes actually
+    checked and rejects any replacement during module execution.
+    """
+    if type(pin) is not str or re.fullmatch(r'[0-9a-f]{40}', pin) is None:
+        raise ValueError('malformed pinned gate identity: ' + relative)
+    raw = safe_read(root, relative)
+    if git_blob(raw) != pin:
+        raise ValueError('pinned gate changed before execution: ' + relative)
+    filename = str(root / relative)
+    module = types.ModuleType(module_name)
+    module.__file__ = filename
+    module.__package__ = None
+    try:
+        exec(compile(raw, filename, 'exec', dont_inherit=True), module.__dict__)
+    except (SyntaxError, UnicodeError) as exc:
+        raise ValueError('pinned gate cannot be compiled: ' + relative) from exc
+    if git_blob(safe_read(root, relative)) != pin:
+        raise ValueError('pinned gate changed during execution: ' + relative)
+    for api in required:
+        if not callable(getattr(module, api, None)):
+            raise ValueError('pinned gate missing required API: ' + api)
     return module
 
+
+def load_r221_authority(root: Path):
+    return load_frozen_gate(root, R221_AUTHORITY_PATH, R221_AUTHORITY_BLOB,
+                            'fv_preparedness_r221_frozen_authority',
+                            ('verify_authorities', 'verify_routes'))
 
 
 def load_r222_bundle(root: Path):
-    """Pin the R222 gate itself before checking any mutable build dependencies."""
-    source = safe_read(root, R222_BUNDLE_PATH)
-    if git_blob(source) != R222_BUNDLE_BLOB:
-        raise ValueError('R222 producer/source custody gate identity mismatch')
-    spec = importlib.util.spec_from_file_location(
-        'fv_preparedness_r222_source_bundle', root / R222_BUNDLE_PATH)
-    if spec is None or spec.loader is None:
-        raise ValueError('R222 bundle gate cannot be loaded')
-    module = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(module)
-    return module
+    return load_frozen_gate(root, R222_BUNDLE_PATH, R222_BUNDLE_BLOB,
+                            'fv_preparedness_r222_source_bundle',
+                            ('check_bundle',))
 
 
 def load_frozen_builder(root: Path, bundle):
