@@ -11,7 +11,16 @@ import hashlib
 import json
 from pathlib import Path
 import re
-import stat
+import importlib.util
+
+# Load the sibling guard by absolute tool path: importlib-based tests do not
+# necessarily place preparedness/tools on sys.path. Missing guard => fail closed.
+_guard_path = Path(__file__).with_name('r211_path_guard.py')
+_guard_spec = importlib.util.spec_from_file_location('fv_preparedness_r211_io_guard', _guard_path)
+if _guard_spec is None or _guard_spec.loader is None:
+    raise ImportError('required R211 I/O guard cannot be loaded')
+io_guard = importlib.util.module_from_spec(_guard_spec)
+_guard_spec.loader.exec_module(io_guard)
 
 HOLD = 'DRAFT_HARD_HOLD'
 INVALID = 'INVALID_HARD_HOLD'
@@ -123,15 +132,16 @@ def analyze(files: dict[str, bytes], *, expected_oids: dict[str, str] | None = N
         out['review_dispositions'].append(dict(pr=157, path=TAXONOMY,
             disposition='FOUR_START_HERE_GATES_PRESENT_NO_PUBLICATION_AUTHORITY',
             qa_head_auto_apply=False))
-        # The safety test case in PR #157 is not present in current author base.
-        # #169/#973 sandbox changes are also unmerged. Quarantine rather than patch.
+        # The exact named PR #157 test is absent, but existing GovernanceRegressionTests
+        # already contain negative publish-gate coverage. Semantic equivalence still
+        # requires independent review. #169/#973 remain separate and unmerged.
         need('def test_fragment_may_upgrade_a_placeholder_but_not_a_verified_source' in test,
              'core source test missing')
         need('def test_register_fragments_cannot_duplicate_ids' in test,
              'core duplicate-source test missing')
         out['pending_qa'] = [
-            dict(pr=157, path=TEST, issue='negative Start Here publish-gate test not carried forward',
-                disposition='TEST_MUST_BE_REBASED_IN_SYNTHETIC_SANDBOX', auto_apply=False),
+            dict(pr=157, path=TEST, issue='named QA test absent; existing negative governance coverage needs independent equivalence review',
+                disposition='SEMANTIC_TEST_EQUIVALENCE_REVIEW_PENDING', auto_apply=False),
             dict(pr=169, path=TEST, issue='test source fixture writes into shared tree',
                 disposition='ISOLATED_FIXTURE_REBASE_OUTSTANDING', auto_apply=False),
             dict(pr=973, path=TEST, issue='stacked final shared-tree fixture fix',
@@ -147,13 +157,11 @@ def analyze(files: dict[str, bytes], *, expected_oids: dict[str, str] | None = N
     return out
 
 def read_checkout(root: Path) -> dict[str,bytes]:
-    out = {}
-    for name in PINNED:
-        p = root / name
-        if p.is_symlink() or not p.is_file() or not stat.S_ISREG(p.stat().st_mode):
-            raise Violation('missing, symlink or non-file: ' + name)
-        out[name] = p.read_bytes()
-    return out
+    """Read through R211 descriptor-based, no-symlink source custody."""
+    try:
+        return io_guard.read_files(root, PINNED)
+    except io_guard.GuardViolation as exc:
+        raise Violation(str(exc)) from exc
 
 def main(argv=None):
     p=argparse.ArgumentParser(description='R210 fail-closed Start Here QA carry-forward preflight')
@@ -168,9 +176,14 @@ def main(argv=None):
             publication_authorized=False, independent_qd_pass=False,
             medically_safe=False, verified_paid_orders=None,
             realized_net_revenue=None, errors=[str(e)])
-    print(json.dumps(result, indent=2, sort_keys=True))
     if args.report:
-        args.report.write_text(json.dumps(result,indent=2,sort_keys=True)+'\n',encoding='utf-8')
+        try:
+            io_guard.write_new_report(args.report, args.checkout,
+                                      json.dumps(result, indent=2, sort_keys=True) + '\n')
+        except (io_guard.GuardViolation, OSError) as exc:
+            result['state'] = INVALID
+            result.setdefault('errors', []).append('report not written: ' + str(exc))
+    print(json.dumps(result, indent=2, sort_keys=True))
     return 2 if result['state']==HOLD else 3
 
 if __name__=='__main__':
