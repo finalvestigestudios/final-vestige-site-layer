@@ -72,7 +72,7 @@ function stripFilm(s){
  const start=s.indexOf('<section id="optional-film"');
  const end=s.indexOf('<section id="try"',start);
  assert(start>0&&end>start);
- return s.slice(0,start)+s.slice(end);
+ return s.slice(0,start)+'<!--OPTIONAL_FILM_SLOT-->'+s.slice(end);
 }
 check('A/B/hub semantic English noindex',()=>[a,b,hub].forEach(validateStatic));
 check('A guide disabled, disclosed, no affiliate links',()=>validateOffer(a));
