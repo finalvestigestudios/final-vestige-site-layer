@@ -1,0 +1,78 @@
+{
+  "date_utc": "2026-11-08",
+  "type": "AUTHENTICATED_SOURCE_V8_OFFLINE_NOT_NATIVE_WORDPRESS",
+  "tests_passed": 28,
+  "failed": 0,
+  "mutation_rejections": 10,
+  "source_meta": [
+    {
+      "page": "dispatch",
+      "id": 523,
+      "modified": "2026-11-05T20:01:31",
+      "original_characters": 6134,
+      "review_copy_characters": 6304,
+      "anchor_exactly_once": true,
+      "structural_counts_preserved": true,
+      "site_write": false
+    },
+    {
+      "page": "focus",
+      "id": 1579,
+      "modified": "2026-11-05T17:44:02",
+      "original_characters": 31876,
+      "review_copy_characters": 31934,
+      "anchor_exactly_once": true,
+      "structural_counts_preserved": true,
+      "site_write": false
+    }
+  ],
+  "native_node_test": {
+    "status": "PASS",
+    "tests_passed": 15,
+    "tests_failed": 0,
+    "command": "node --test test_consent_copy_contract.cjs",
+    "runtime": "Node.js (local container)",
+    "exact_git_blobs": {
+      "contract": "8e5dbb47849c69b8c86a5d8a4830a488414d69d9",
+      "tests": "ed38ec7b19a5a2dfee7b64d55eb52489305d0168",
+      "specs": "380df7648d31ccf3b9a688d7d782552fa072e125"
+    },
+    "verified_byte_identical": true
+  },
+  "actual_email_render": "NOT_TESTED",
+  "confirmed_signup": "PROVIDER_PRIVATE_UNKNOWN",
+  "released": false,
+  "issues": [
+    174,
+    171,
+    129,
+    820
+  ],
+  "parent_pr": 1622,
+  "canonical_original_test": {
+    "commit": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+    "tests_passed": 6,
+    "tests_failed": 0,
+    "files_git_oid_match": 8
+  },
+  "release": "HOLD_UNSENT_AND_NO_WORDPRESS_WRITES",
+  "reviewer_board": {
+    "path": "dispatch/r216/reviewer_board.html",
+    "sha": "60d467c540478248bb2891239669ce4f0aca2413",
+    "source_assertions_passed": 22,
+    "source_assertions_failed": 0,
+    "static_only": true,
+    "chromium": "NOT_TESTED",
+    "assistive_technology": "NOT_TESTED",
+    "no_forms_or_scripts": true
+  },
+  "followers_read_only": {
+    "checked": "2026-11-08",
+    "total": 3,
+    "email": 0,
+    "wpcom": 3,
+    "comment": 0,
+    "partial": false,
+    "warning": "Follower breakdown and newsletter-confirmed counters measure different sets; none alone establishes current email deliverability."
+  }
+}
