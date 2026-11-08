@@ -1,0 +1,490 @@
+{
+  "milestone": "R206",
+  "date_checked": "2026-11-07 PT",
+  "status": "UNPUBLISHED SOURCE-ONLY, COMMERCIAL HARD HOLD",
+  "scope": "Mind & Perception only",
+  "upstream": "R205 corrected same isolated branch",
+  "sources": [
+    {
+      "id": "S01",
+      "title": "Thompson 1980 original",
+      "url": "https://doi.org/10.1068/p090483",
+      "scope": "primary metadata and abstract access; full text restricted"
+    },
+    {
+      "id": "S02",
+      "title": "Lewis and Johnston 1997 configural speed",
+      "url": "https://doi.org/10.1068/p260225",
+      "scope": "primary publisher abstract"
+    },
+    {
+      "id": "S03",
+      "title": "Wong et al 2010 face vs other object categories",
+      "url": "https://doi.org/10.1068/p6659",
+      "scope": "primary publisher abstract"
+    },
+    {
+      "id": "S04",
+      "title": "Lewis 2001 orientation-angle study",
+      "url": "https://doi.org/10.1068/p3174",
+      "scope": "primary publisher abstract"
+    },
+    {
+      "id": "S05",
+      "title": "2014 Thatcher ERP paper",
+      "url": "https://doi.org/10.3758/s13423-014-0705-3",
+      "scope": "publisher abstract; no neural mechanism inferred"
+    },
+    {
+      "id": "S06",
+      "title": "Gauchou et al 2012 Ouija primary full text",
+      "url": "https://www2.psych.ubc.ca/~rensink/publications/download/Ouija-GRF.pdf",
+      "scope": "primary full text; 21 of 27 analyzed"
+    },
+    {
+      "id": "S07",
+      "title": "Olson et al 2017 pendulum primary full text",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5858027/",
+      "scope": "full text; 63/80 and 34/40 analyzed"
+    },
+    {
+      "id": "S08",
+      "title": "Moga and Dienes 2022 changed-procedure pendulum follow-up",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35184700/",
+      "scope": "primary abstract; detailed confederate claim not verified"
+    },
+    {
+      "id": "S09",
+      "title": "Eason and Parris 2019 self-hypnosis systematic review",
+      "url": "https://doi.org/10.1037/cns0000173",
+      "scope": "research abstract; moderator associations noncausal"
+    },
+    {
+      "id": "S10",
+      "title": "Inspire3 company catalog",
+      "url": "https://inspire3.com/",
+      "scope": "seller source; no proof of efficacy"
+    },
+    {
+      "id": "S11",
+      "title": "Exact Zen12 Premium landing page",
+      "url": "https://zen12.com/hnp",
+      "scope": "merchant Nov 7 2026 read; displayed $87.99 not validated checkout"
+    },
+    {
+      "id": "S12",
+      "title": "Inspire3 public affiliate portal",
+      "url": "https://affiliates.inspire3.com/",
+      "scope": "affiliate application existence, not approval"
+    },
+    {
+      "id": "S13",
+      "title": "FTC Endorsement FAQ",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "scope": "regulatory staff guidance"
+    },
+    {
+      "id": "S14",
+      "title": "FTC health claims guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "scope": "regulatory guidance"
+    },
+    {
+      "id": "S15",
+      "title": "Existing Focus Fieldbook route",
+      "url": "https://finalvestige.com/focus/",
+      "scope": "live page accessible Nov 7; Jetpack confirmation unverified"
+    },
+    {
+      "id": "S16",
+      "title": "Published Change Blindness post",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "scope": "published route from prior verified WP inventory, web fetch failed this run"
+    },
+    {
+      "id": "S17",
+      "title": "Published Mesmerism post",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "scope": "published route from prior verified WP inventory, web fetch failed this run"
+    },
+    {
+      "id": "S18",
+      "title": "Puységur Animal Magnetism Files",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "scope": "published page from prior verified WP inventory, web fetch failed this run"
+    },
+    {
+      "id": "S19",
+      "title": "Current Hypnosis Live Total Focus offer",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "scope": "seller offer, secondary; not current campaign"
+    },
+    {
+      "id": "S20",
+      "title": "Current Inspire3 Brainwave Shots offer catalog",
+      "url": "https://brainwaveshots.com/",
+      "scope": "seller offer, secondary; not current campaign"
+    }
+  ],
+  "source_count": 20,
+  "claims": [
+    {
+      "id": "T01",
+      "statement": "Thompson 1980 introduced local feature inversion within a rotated face",
+      "decision": "supported at publication level",
+      "source_ids": [
+        "S01"
+      ],
+      "limit": "mechanism not identified conclusively"
+    },
+    {
+      "id": "T02",
+      "statement": "1997 experiment found slower feature orientation judgments when faces inverted",
+      "decision": "supported by abstract",
+      "source_ids": [
+        "S02"
+      ],
+      "limit": "not a measure of IQ or brain health"
+    },
+    {
+      "id": "T03",
+      "statement": "Thatcher-like effects occur with nonface objects including cars and letter strings",
+      "decision": "supported by abstract",
+      "source_ids": [
+        "S03"
+      ],
+      "limit": "does not prove every category uses identical mechanisms"
+    },
+    {
+      "id": "T04",
+      "statement": "A uniquely face-specific Thatcher mechanism is established",
+      "decision": "REJECT",
+      "source_ids": [
+        "S03"
+      ],
+      "limit": "2010 study did not see evidence for a unique face-specific mechanism in this task"
+    },
+    {
+      "id": "T05",
+      "statement": "2001 rotation task favored gradual loss over sudden shift",
+      "decision": "supported at abstract scope",
+      "source_ids": [
+        "S04"
+      ],
+      "limit": "task-specific, no universal angle of transition"
+    },
+    {
+      "id": "T06",
+      "statement": "ERP scalp recordings prove brainwave-audio programs boost focus",
+      "decision": "REJECT",
+      "source_ids": [
+        "S05",
+        "S14"
+      ],
+      "limit": "unrelated stimulus, outcome and intervention"
+    },
+    {
+      "id": "T07",
+      "statement": "The Thatcher illusion diagnoses hypnotizability or mental health",
+      "decision": "REJECT",
+      "source_ids": [
+        "S01",
+        "S02",
+        "S03"
+      ],
+      "limit": "none of source studies validated diagnostic use"
+    },
+    {
+      "id": "Q01",
+      "statement": "2012 Ouija guessing result 65% vs 50% applies to 21 analyzed participants, with computer-selected explicit answers",
+      "decision": "supported in primary full text",
+      "source_ids": [
+        "S06"
+      ],
+      "limit": "not a pendulum experiment or universal result"
+    },
+    {
+      "id": "Q02",
+      "statement": "2017 first experiment analyzed 63 of 80; second 34 of 40, task faster in second",
+      "decision": "supported in full text",
+      "source_ids": [
+        "S07"
+      ],
+      "limit": "response-criterion bias is task-specific"
+    },
+    {
+      "id": "Q03",
+      "statement": "2022 changed-procedure pendulum study reproduced 2012 Ouija advantage",
+      "decision": "REJECT",
+      "source_ids": [
+        "S08"
+      ],
+      "limit": "summary reports no such replication"
+    },
+    {
+      "id": "M01",
+      "statement": "Inspire3 publicly lists Zen12, Hypnosis Live and Brainwave Shots",
+      "decision": "seller catalog supported",
+      "source_ids": [
+        "S10"
+      ],
+      "limit": "does not establish FV partner approval"
+    },
+    {
+      "id": "M02",
+      "statement": "Zen12 Premium seller advertises 12 levels, 48 MP3s, four listening formats",
+      "decision": "seller claim only",
+      "source_ids": [
+        "S11"
+      ],
+      "limit": "fulfillment not independently tested"
+    },
+    {
+      "id": "M03",
+      "statement": "Zen12 Premium seller advertises a one-year money-back guarantee",
+      "decision": "seller claim only",
+      "source_ids": [
+        "S11"
+      ],
+      "limit": "customer eligibility and actual refunds unverified"
+    },
+    {
+      "id": "M04",
+      "statement": "Nov 7 2026 retrieved Zen12 Premium page displayed $187.99 crossed out, $87.99 promotional",
+      "decision": "time-bound seller page observation",
+      "source_ids": [
+        "S11"
+      ],
+      "limit": "prior $87 text extraction not corroborated; final checkout unknown"
+    },
+    {
+      "id": "M05",
+      "statement": "12 minutes of Zen12 delivers an hour of advanced meditation or guaranteed medical benefits",
+      "decision": "REJECT as independent claim",
+      "source_ids": [
+        "S11",
+        "S14"
+      ],
+      "limit": "no adequate product-specific evidence reviewed"
+    },
+    {
+      "id": "M06",
+      "statement": "An Inspire3 affiliate program exists",
+      "decision": "publicly observable",
+      "source_ids": [
+        "S12"
+      ],
+      "limit": "not individual program acceptance"
+    },
+    {
+      "id": "M07",
+      "statement": "Final Vestige approved to promote Zen12 on website, TikTok and email with working earning URL",
+      "decision": "NOT VERIFIED",
+      "source_ids": [
+        "S12"
+      ],
+      "limit": "named publisher agreement, channel permissions, link and terms missing"
+    },
+    {
+      "id": "M08",
+      "statement": "Zen12 audio is clinically equivalent to self-hypnosis teaching trials",
+      "decision": "REJECT",
+      "source_ids": [
+        "S09",
+        "S14"
+      ],
+      "limit": "different interventions and no randomized branded comparison"
+    },
+    {
+      "id": "F01",
+      "statement": "Affiliate commission disclosure near actionable recommendation is required where material connection exists",
+      "decision": "supported",
+      "source_ids": [
+        "S13"
+      ],
+      "limit": "general footer disclosure insufficient"
+    },
+    {
+      "id": "F02",
+      "statement": "Unsubstantiated objective medical/psychological benefit claims should be excluded",
+      "decision": "supported",
+      "source_ids": [
+        "S14"
+      ],
+      "limit": "product-specific competent and reliable evidence necessary"
+    },
+    {
+      "id": "F03",
+      "statement": "Existing Focus route contains one fieldbook signup and Dispatch description",
+      "decision": "page observation",
+      "source_ids": [
+        "S15"
+      ],
+      "limit": "visible PDF and form are not confirmed successful subscriber outcome"
+    },
+    {
+      "id": "F04",
+      "statement": "Current publisher-paid orders, commissions, refunds, fees, qualified-human sessions measurable for Mind pilot",
+      "decision": "NOT VERIFIED",
+      "source_ids": [
+        "S15"
+      ],
+      "limit": "no merchant records or source-tagged sessions provided"
+    },
+    {
+      "id": "F05",
+      "statement": "Hypnosis Live and Brainwave Shots have proven FV-convertible approvals",
+      "decision": "NOT VERIFIED",
+      "source_ids": [
+        "S10",
+        "S19",
+        "S20"
+      ],
+      "limit": "secondary offers, exact product and authorization needed"
+    }
+  ],
+  "claim_count": 23,
+  "gates": [
+    {
+      "id": "inspire3_publisher_name",
+      "owner": "Founder/Mind",
+      "acceptance": "Authenticated Final Vestige acceptance from affiliate dashboard or signed email",
+      "status": "OPEN"
+    },
+    {
+      "id": "inspire3_approved_channels",
+      "owner": "Founder/Mind",
+      "acceptance": "Exact allowed website/social/email terms and creatives",
+      "status": "OPEN"
+    },
+    {
+      "id": "inspire3_tracking_url",
+      "owner": "Founder/Mind",
+      "acceptance": "Account-issued valid tracking URL; no cloaking",
+      "status": "OPEN"
+    },
+    {
+      "id": "inspire3_disclosure_terms",
+      "owner": "Founder/Mind",
+      "acceptance": "Written requirements for FTC disclosure and creative rules",
+      "status": "OPEN"
+    },
+    {
+      "id": "zen12_checkout_price",
+      "owner": "Founder/Commerce",
+      "acceptance": "Authenticated current checkout total/currency/taxes and upsell consent",
+      "status": "OPEN"
+    },
+    {
+      "id": "zen12_refund_performance",
+      "owner": "Founder/Commerce",
+      "acceptance": "Contract terms and tested independent refund support; do not assert outcome",
+      "status": "OPEN"
+    },
+    {
+      "id": "owned_payhip_eligible_mind_sku",
+      "owner": "Founder/Commerce",
+      "acceptance": "Authenticated owned rights-cleared current SKU and transaction-enabled checkout",
+      "status": "OPEN"
+    },
+    {
+      "id": "owned_payhip_paid_order",
+      "owner": "Founder/Commerce",
+      "acceptance": "Merchant-confirmed paid status net of refunds/fees",
+      "status": "OPEN"
+    },
+    {
+      "id": "grok_actual_asset_ids",
+      "owner": "Grok/Praxxis",
+      "acceptance": "Platform, post ID, hook, rights, published URL, approved landing page",
+      "status": "OPEN"
+    },
+    {
+      "id": "jetpack_confirmed_lead",
+      "owner": "Claude/Site QA",
+      "acceptance": "Authoritative confirmation and optional campaign-specific source without duplicate signup",
+      "status": "OPEN"
+    },
+    {
+      "id": "attribution_consent",
+      "owner": "Claude/Site QA",
+      "acceptance": "Approved first-party only, short retention, no PII in UTMs",
+      "status": "OPEN"
+    },
+    {
+      "id": "paid_affiliate_reconciliation",
+      "owner": "Founder/Commerce",
+      "acceptance": "Partner accepted-sale record, payout/adjustments/refunds, paid balance",
+      "status": "OPEN"
+    },
+    {
+      "id": "legitimate_human_denominator",
+      "owner": "Claude/Site QA",
+      "acceptance": "Bot/internal filtering method and confidence; cohort windows",
+      "status": "OPEN"
+    },
+    {
+      "id": "mobile_wcag22",
+      "owner": "Site QA",
+      "acceptance": "Real 360/390/768/1440 browser, zoom, keyboard, screen reader tests",
+      "status": "OPEN"
+    },
+    {
+      "id": "live_performance",
+      "owner": "Site QA",
+      "acceptance": "Lighthouse/real CWV on staged variant A and B; native lazy video poster",
+      "status": "OPEN"
+    },
+    {
+      "id": "original_42s_video",
+      "owner": "Grok/Media",
+      "acceptance": "Licensed original playable asset, poster, verified VTT transcript and size",
+      "status": "OPEN"
+    },
+    {
+      "id": "founder_release",
+      "owner": "Founder",
+      "acceptance": "Explicit approval to publish, track and activate merchant link",
+      "status": "OPEN"
+    }
+  ],
+  "gate_count": 17,
+  "offer": {
+    "focus": "Zen12 Premium informational guide only",
+    "seller_url": "https://zen12.com/hnp",
+    "seller_display_at_check": "$87.99 promotional / $187.99 struck-through; 2026-11-07 read; not checkout",
+    "disclosure": "If you purchase through a verified Final Vestige earning link in the future, we may earn a commission at no additional cost to you. There is no active earning link on this page.",
+    "outbound_link": null,
+    "cta_state": "disabled",
+    "partner_approval": "UNVERIFIED",
+    "payment_proof": "UNVERIFIED",
+    "owned_fallback": "Payhip Mind SKU not authenticated; no speculative product is declared sellable"
+  },
+  "funnel": {
+    "primary_metric": "realized net revenue per 1000 qualified-human sessions",
+    "formula": "(confirmed paid orders + cleared partner commission - refunds - fees) / qualified-human sessions * 1000; missing denominator => NOT COMPUTABLE",
+    "event_distinctions": [
+      "campaign_landing",
+      "article_to_resource_click",
+      "confirmed_signup",
+      "affiliate_click",
+      "merchant_confirmed_purchase",
+      "settled_commission",
+      "refund",
+      "fee"
+    ],
+    "cohorts_days": [
+      7,
+      30
+    ],
+    "revenue_state": "NOT COMPUTABLE",
+    "privacy": "No user email, name, persistent fingerprint or IP in UTM payload. No new script and no new signup list."
+  },
+  "source_limitations": [
+    "Original Thompson paper full text unavailable; cite metadata not inferred study counts",
+    "1997 and 2010 abstracts only; no invented effect sizes",
+    "Only public Inspire3 pages and bounded Gmail searched; partner dashboard not audited",
+    "This run's web search could load Focus but not three previous history article pages",
+    "All source-controlled previews are not WordPress CMS draft records"
+  ]
+}

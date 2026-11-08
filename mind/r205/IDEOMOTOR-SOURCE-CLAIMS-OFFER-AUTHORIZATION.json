@@ -1,6 +1,6 @@
 {
   "milestone": "R205",
-  "revised_on": "2026-11-07 PT",
+  "revised_on": "2026-11-07 PT — R206 correction addendum",
   "branch": "mind-r205-ideomotor-evidence-and-commercial-acceptance-20261107",
   "availability": "UNPUBLISHED SOURCE-ONLY; COMMERCIAL HARD HOLD",
   "sources": [
@@ -13,8 +13,8 @@
     {
       "id": "P02",
       "title": "2012 Gauchou Rensink Fels Ouija indirect knowledge",
-      "url": "https://pubmed.ncbi.nlm.nih.gov/22377138/",
-      "scope": "PubMed indexed abstract"
+      "url": "https://www2.psych.ubc.ca/~rensink/publications/download/Ouija-GRF.pdf",
+      "scope": "primary full text; 21 analyzed after six exclusions; explicit computer-selected responses"
     },
     {
       "id": "P03",
@@ -25,8 +25,8 @@
     {
       "id": "P04",
       "title": "2017 Olson Jeyanesan Raz pendulum detection",
-      "url": "https://digitalcommons.chapman.edu/psychology_articles/82/",
-      "scope": "university repository abstract"
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5858027/",
+      "scope": "primary open full text; 63/80 and 34/40 participants retained"
     },
     {
       "id": "P05",
@@ -86,7 +86,7 @@
       "id": "M02",
       "title": "Exact official Zen12 Premium offer",
       "url": "https://zen12.com/hnp",
-      "scope": "seller page, rendered text may be stale/dynamic, checkout not authenticated"
+      "scope": "seller page Nov 7 2026 shows $87.99; prior $87 extraction possibly rounded/truncated, neither is checkout"
     },
     {
       "id": "M03",
@@ -169,12 +169,12 @@
     },
     {
       "id": "ID04",
-      "statement": "2012 verbal guesses ~50% vs Ouija ~65% in designated condition",
+      "statement": "2012 Ouija result in selected guess subset: explicit computer-selected answers ~50% vs Ouija ~65%, n21 analyzed after six excluded from 27 recruited",
       "decision": "supported within study",
       "source_ids": [
         "P02"
       ],
-      "limit": "not universal implicit knowledge access"
+      "limit": "computer-selected yes/no and confidence (NOT spoken answers); narrow selected condition"
     },
     {
       "id": "ID05",
@@ -197,21 +197,21 @@
     },
     {
       "id": "ID07",
-      "statement": "2017 first study pendulum accuracy 53% verbal accuracy 57%",
+      "statement": "Olson 2017 experiment 1: 80 recruited, 63 analyzed; explicit responses 57% vs pendulum 53% correct",
       "decision": "supported university summary",
       "source_ids": [
         "P04"
       ],
-      "limit": "different bias metrics and sample"
+      "limit": "response criterion differences, not bias-free or enhanced cognition"
     },
     {
       "id": "ID08",
-      "statement": "2017 second study n40 reported bias difference",
+      "statement": "Olson 2017 experiment 2: 40 recruited, 34 analyzed; same task with faster presentations",
       "decision": "supported university summary",
       "source_ids": [
         "P04"
       ],
-      "limit": "not superiority in cognitive power"
+      "limit": "not an independent unrelated task"
     },
     {
       "id": "ID09",
@@ -713,5 +713,12 @@
     ],
     "storage": "no IP, name, email, fingerprint, cross-site ID, URL parameters containing PII or duplicate tracking scripts"
   },
-  "no_live_changes": true
+  "no_live_changes": true,
+  "r206_primary_source_qa": {
+    "Gauchou": "Primary full text 21 analyzed from 27; explicit computer selection",
+    "Olson": "2017 full text 63/80 and 34/40 analyzed; same task faster second stimulus",
+    "Moga": "Publisher summary only; no confederate-level assertion",
+    "Zen12": "2026-11-07 text displays $87.99, seller only; no checkout verification",
+    "reviewer": "Independent Praxxis review of R205 addressed on R206 isolated branch"
+  }
 }
