@@ -1,0 +1,504 @@
+{
+  "milestone": "R204",
+  "researched": "2026-11-07",
+  "repo_branch": "mind-r204-rubber-hand-evidence-and-commercial-gates-20261107",
+  "state": "SOURCE_CONTROLLED_NOT_LIVE",
+  "sources": [
+    {
+      "id": "S01",
+      "title": "Botvinick Cohen 1998",
+      "url": "https://doi.org/10.1038/35784",
+      "scope": "publisher abstract / restricted full text"
+    },
+    {
+      "id": "S02",
+      "title": "Rohde Di Luca Ernst 2011",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/21738756/",
+      "scope": "PubMed abstract; full text linked"
+    },
+    {
+      "id": "S03",
+      "title": "Holle et al 2011",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/24168532/",
+      "scope": "PubMed abstract"
+    },
+    {
+      "id": "S04",
+      "title": "Tosi Mentesana Romano 2023",
+      "url": "https://doi.org/10.1177/17470218231156849",
+      "scope": "publisher abstract; restricted full text"
+    },
+    {
+      "id": "S05",
+      "title": "Lush 2020",
+      "url": "https://doi.org/10.1525/collabra.325",
+      "scope": "open primary full text"
+    },
+    {
+      "id": "S06",
+      "title": "Ehrsson et al 2022",
+      "url": "https://www.nature.com/articles/s41467-022-28177-z",
+      "scope": "open primary reanalysis / Matters Arising; NOT new independent experiment"
+    },
+    {
+      "id": "S07",
+      "title": "Inspire3 official catalog",
+      "url": "https://inspire3.com/",
+      "scope": "seller product inventory not substantiation"
+    },
+    {
+      "id": "S08",
+      "title": "Zen12 exact offer",
+      "url": "https://zen12.com/hnp",
+      "scope": "seller offer page; price and actual checkout not authenticated"
+    },
+    {
+      "id": "S09",
+      "title": "Inspire3 public affiliate recruitment",
+      "url": "https://affiliates.inspire3.com/",
+      "scope": "recruitment page only; no FV-specific acceptance"
+    },
+    {
+      "id": "S10",
+      "title": "FTC endorsements Q&A",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "scope": "official disclosure guidance"
+    },
+    {
+      "id": "S11",
+      "title": "FTC Health Products Compliance Guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "scope": "official claims-substantiation guidance"
+    },
+    {
+      "id": "S12",
+      "title": "FV live change blindness",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "scope": "public published page read November 7"
+    },
+    {
+      "id": "S13",
+      "title": "FV live historical Puységur files",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "scope": "recorded as published in Issue #171; direct web read failed in this run"
+    },
+    {
+      "id": "S14",
+      "title": "FV Focus Fieldbook",
+      "url": "https://finalvestige.com/focus/",
+      "scope": "recorded as published Issue #171 and linked from live library; direct web read failed"
+    },
+    {
+      "id": "S15",
+      "title": "FV live Mesmerism",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "scope": "site indexed published content; do not imply presently audited full text"
+    }
+  ],
+  "source_count": 15,
+  "claims": [
+    {
+      "id": "RH01",
+      "claim": "1998 rubber-hand correspondence describes integration of vision, touch and proprioception",
+      "decision": "SUPPORTED",
+      "source_ids": [
+        "S01"
+      ],
+      "limit": "publisher abstract only; do not invent individual sample count"
+    },
+    {
+      "id": "RH02",
+      "claim": "Proprioceptive drift automatically proves subjective ownership",
+      "decision": "REJECT",
+      "source_ids": [
+        "S02"
+      ],
+      "limit": "2011 experiments dissociate drift and ownership"
+    },
+    {
+      "id": "RH03",
+      "claim": "Holle's rotated hand produced drift without corresponding ownership ratings",
+      "decision": "SUPPORTED_WITH_SCOPE",
+      "source_ids": [
+        "S03"
+      ],
+      "limit": "two laboratory experiments, reported in abstract"
+    },
+    {
+      "id": "RH04",
+      "claim": "2023 Bayesian meta-analysis reported correlation of approximately .35",
+      "decision": "SUPPORTED_WITH_SCOPE",
+      "source_ids": [
+        "S04"
+      ],
+      "limit": "publisher abstract, not claim of equivalent measures"
+    },
+    {
+      "id": "RH05",
+      "claim": "All rubber-hand reports are hypnosis or imaginative suggestion",
+      "decision": "REJECT",
+      "source_ids": [
+        "S05",
+        "S06"
+      ],
+      "limit": "2020 demand challenge and 2022 reanalysis conflict; do not portray as resolved"
+    },
+    {
+      "id": "RH06",
+      "claim": "Ehrsson et al 2022 used 353 participants in a reanalysis",
+      "decision": "SUPPORTED",
+      "source_ids": [
+        "S06"
+      ],
+      "limit": "reanalysis of Lush study; not independent newly recruited sample"
+    },
+    {
+      "id": "RH07",
+      "claim": "Rubber-hand research proves product-specific Zen12 benefits",
+      "decision": "REJECT",
+      "source_ids": [
+        "S01",
+        "S08",
+        "S11"
+      ],
+      "limit": "no brand intervention in cited experiments"
+    },
+    {
+      "id": "Z01",
+      "claim": "Zen12 seller describes 12 levels and 48 MP3 tracks",
+      "decision": "SELLER_ONLY",
+      "source_ids": [
+        "S08"
+      ],
+      "limit": "not independently delivered or audited"
+    },
+    {
+      "id": "Z02",
+      "claim": "Zen12 seller lists 4 styles: music, guided, nature, white noise",
+      "decision": "SELLER_ONLY",
+      "source_ids": [
+        "S08"
+      ],
+      "limit": "style names extracted from page; files not inspected"
+    },
+    {
+      "id": "Z03",
+      "claim": "Zen12 claims 12 minutes equals one hour of meditation",
+      "decision": "EXCLUDE_UNSUBSTANTIATED",
+      "source_ids": [
+        "S08",
+        "S11"
+      ],
+      "limit": "no adequate product-specific evidence established"
+    },
+    {
+      "id": "Z04",
+      "claim": "Zen12 seller advertises 1-year money-back guarantee",
+      "decision": "SELLER_ONLY",
+      "source_ids": [
+        "S08"
+      ],
+      "limit": "refund eligibility, actual terms and processing unverified"
+    },
+    {
+      "id": "Z05",
+      "claim": "Zen12 Premium exact live price, taxes, currency and final charge",
+      "decision": "UNKNOWN",
+      "source_ids": [
+        "S08"
+      ],
+      "limit": "seller snapshot differs across crawls; do not state dollar price without current checkout"
+    },
+    {
+      "id": "AFF01",
+      "claim": "Inspire3 has a public affiliate recruitment portal",
+      "decision": "SUPPORTED_PUBLIC",
+      "source_ids": [
+        "S07",
+        "S09"
+      ],
+      "limit": "individual FV acceptance and earning URL not established"
+    },
+    {
+      "id": "AFF02",
+      "claim": "FV is authorized to promote Zen12 for commission in organic and email",
+      "decision": "UNVERIFIED_HOLD",
+      "source_ids": [
+        "S09"
+      ],
+      "limit": "publisher dashboard and specific channel terms required"
+    },
+    {
+      "id": "FTC01",
+      "claim": "Disclosure should be clear and proximate to actual affiliate earning link",
+      "decision": "SUPPORTED",
+      "source_ids": [
+        "S10"
+      ],
+      "limit": "near-button prospective disclosure is NOT activation"
+    },
+    {
+      "id": "FTC02",
+      "claim": "Health-related efficacy claims require adequate product-specific competent reliable evidence",
+      "decision": "SUPPORTED",
+      "source_ids": [
+        "S11"
+      ],
+      "limit": "seller claims alone insufficient"
+    },
+    {
+      "id": "PER01",
+      "claim": "A confirmed affiliate_click is a paid conversion",
+      "decision": "REJECT",
+      "source_ids": [
+        "S10"
+      ],
+      "limit": "click, sale, confirmed settlement separate events"
+    },
+    {
+      "id": "PER02",
+      "claim": "Rubber-hand paper diagram diagnoses individual suggestibility",
+      "decision": "REJECT",
+      "source_ids": [
+        "S01",
+        "S05"
+      ],
+      "limit": "nonclinical reasoning exercise, not a standardized test"
+    },
+    {
+      "id": "OWN01",
+      "claim": "FV owned product exists with verified right-to-sell Mind SKU and working checkout",
+      "decision": "UNKNOWN_HOLD",
+      "source_ids": [
+        "S14"
+      ],
+      "limit": "merchant inventory/account not authenticated"
+    }
+  ],
+  "claim_count": 19,
+  "gates": [
+    {
+      "id": "publisher_identity_and_approval",
+      "status": "OPEN",
+      "pass_evidence": null
+    },
+    {
+      "id": "partner_channel_organic_social",
+      "status": "OPEN",
+      "pass_evidence": null
+    },
+    {
+      "id": "partner_channel_email",
+      "status": "OPEN",
+      "pass_evidence": null
+    },
+    {
+      "id": "issued_account_link",
+      "status": "OPEN",
+      "pass_evidence": null
+    },
+    {
+      "id": "allowed_creatives_and_copy",
+      "status": "OPEN",
+      "pass_evidence": null
+    },
+    {
+      "id": "affiliate_disclosure_live_review",
+      "status": "OPEN",
+      "pass_evidence": null
+    },
+    {
+      "id": "exact_merchant_checkout",
+      "status": "OPEN",
+      "pass_evidence": null
+    },
+    {
+      "id": "seller_price_taxes_currency",
+      "status": "OPEN",
+      "pass_evidence": null
+    },
+    {
+      "id": "refund_policy_live",
+      "status": "OPEN",
+      "pass_evidence": null
+    },
+    {
+      "id": "seller_product_specific_efficacy",
+      "status": "OPEN",
+      "pass_evidence": null
+    },
+    {
+      "id": "merchant_paid_conversion_reconciliation",
+      "status": "OPEN",
+      "pass_evidence": null
+    },
+    {
+      "id": "merchant_refunds_fees_settlements",
+      "status": "OPEN",
+      "pass_evidence": null
+    },
+    {
+      "id": "owned_product_rights",
+      "status": "OPEN",
+      "pass_evidence": null
+    },
+    {
+      "id": "owned_product_live_payhip_sku",
+      "status": "OPEN",
+      "pass_evidence": null
+    },
+    {
+      "id": "owned_product_checkout_and_delivery",
+      "status": "OPEN",
+      "pass_evidence": null
+    },
+    {
+      "id": "Grok_actual_asset_ids",
+      "status": "OPEN",
+      "pass_evidence": null
+    },
+    {
+      "id": "first_party_unique_campaign_visits",
+      "status": "OPEN",
+      "pass_evidence": null
+    },
+    {
+      "id": "confirmed_subscriptions_from_jetpack",
+      "status": "OPEN",
+      "pass_evidence": null
+    },
+    {
+      "id": "consented_attribution_policy",
+      "status": "OPEN",
+      "pass_evidence": null
+    },
+    {
+      "id": "A_B_randomization_design",
+      "status": "OPEN",
+      "pass_evidence": null
+    },
+    {
+      "id": "A_B_guardrails_and_interaction",
+      "status": "OPEN",
+      "pass_evidence": null
+    },
+    {
+      "id": "real_mobile_browser_WCAG",
+      "status": "OPEN",
+      "pass_evidence": null
+    },
+    {
+      "id": "real_browser_security_and_Lighthouse",
+      "status": "OPEN",
+      "pass_evidence": null
+    },
+    {
+      "id": "optional_video_export_caption_sync",
+      "status": "OPEN",
+      "pass_evidence": null
+    },
+    {
+      "id": "site_QA_review",
+      "status": "OPEN",
+      "pass_evidence": null
+    },
+    {
+      "id": "homepage_art_coordination",
+      "status": "OPEN",
+      "pass_evidence": null
+    },
+    {
+      "id": "founder_release_approval",
+      "status": "OPEN",
+      "pass_evidence": null
+    },
+    {
+      "id": "WP_production_authorization",
+      "status": "OPEN",
+      "pass_evidence": null
+    }
+  ],
+  "open_gate_count": 28,
+  "creator_to_offer_fits": [
+    {
+      "topic": "Change blindness / door swap",
+      "social_status": "GROK_ASSET_ID_NOT_RECONCILED",
+      "public_article": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "next": "https://finalvestige.com/focus/",
+      "offer": "none unless contextual and verified",
+      "owner": "Grok/Praxxis"
+    },
+    {
+      "topic": "Mesmer/Franklin/Puységur and suggestion",
+      "social_status": "GROK_ASSET_ID_NOT_RECONCILED",
+      "public_article": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "next": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "offer": "Zen12 independent guide only if approved and context genuinely fits",
+      "owner": "Grok/Praxxis"
+    },
+    {
+      "topic": "Rubber hand: does the fake hand feel real?",
+      "social_status": "CONCEPT_ONLY_NOT_POSTED",
+      "public_article": null,
+      "source_draft": "mind/r204/when-the-hand-on-the-table-feels-like-yours-RUBBER-HAND-UNPUBLISHED.md",
+      "next": "https://finalvestige.com/focus/",
+      "offer": "DO NOT route to unpublished link or product",
+      "owner": "Grok/Praxxis"
+    }
+  ],
+  "offer_priority": {
+    "initial": "Zen12 Premium",
+    "status": "HARD_HOLD_NO_ACCOUNT_ACCEPTANCE",
+    "fallback": "existing FV owned Payhip Mind product",
+    "fallback_status": "UNKNOWN_NOT_AUTHENTICATED_DO_NOT_FABRICATE",
+    "public_offer": "https://zen12.com/hnp",
+    "affiliate_url": null,
+    "commission": null,
+    "checkout_verified": false,
+    "merchant_settled_sales": null,
+    "price_to_publish": null,
+    "returns": "seller advertised 1 year; actual eligibility and processing not independently verified"
+  },
+  "experiment": {
+    "control": "mind/r203/zen12-decision-record-A-TEXT-UNPUBLISHED.html",
+    "variant": "mind/r203/zen12-decision-record-B-OPTIONAL-42S-UNPUBLISHED.html",
+    "difference": "only optional 42-second film poster, storyboard, transcript (NOT rendered playable video)",
+    "randomized": false,
+    "traffic": false,
+    "outcome": "paid net revenue per 1000 qualified human sessions, once merchant and denominator confirmed",
+    "secondary": "lead to confirmed paid customer, never clicks as sale"
+  },
+  "attribution": {
+    "events": [
+      "campaign_landing",
+      "article_to_focus_click",
+      "confirmed_signup_if_jetpack_supports",
+      "affiliate_click_if_approved",
+      "merchant_confirmed_paid_sale",
+      "refund_adjustment"
+    ],
+    "utm_params": [
+      "utm_source",
+      "utm_medium",
+      "utm_campaign",
+      "utm_content"
+    ],
+    "utm_content": "Grok immutable asset_id, not invented",
+    "personal_data": "none in new spec",
+    "storage": "reuse existing approved site measurement; no new scripts/live tracking"
+  },
+  "gmail_search": {
+    "query": "(Inspire3 OR Zen12 OR HypnosisLive OR \"Hypnosis Live\") (affiliate OR partner OR approval OR accepted) newer_than:90d -in:spam -in:trash",
+    "results": 0,
+    "interpretation": "non-detection in connected Gmail is NOT proof no account acceptance exists"
+  },
+  "limitations": [
+    "R204 sources reviewed as noted, not a systematic review",
+    "2022 Nature paper is a reanalysis of 2020 data, not independent replication",
+    "Product formats are seller claims",
+    "Pricing from public cached captures is inconsistent and not an authenticated checkout",
+    "Published website inventory not fully re-audited, no live CMS write",
+    "Affiliate approval and paid commerce remain unverified"
+  ],
+  "release": "HARD_HOLD"
+}
