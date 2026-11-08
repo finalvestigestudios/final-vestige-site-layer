@@ -40,6 +40,26 @@ def fixture(left='Fresh water is different from heating-system water and should 
             'medically_safe':False,'review_complete':False}
     return docket,{7:b7,20:b20}
 
+def dossier_for_bodies(bodies):
+    """Repin exactly the synthetic bytes to isolate HTML checks, not SHA drift."""
+    docket,_=fixture()
+    claims=[]
+    for article,source in ((7,S7),(20,S20)):
+        body=bodies[article];marker=('{{cite:'+source+'}}').encode()
+        start=0;occ=0
+        while True:
+            position=body.find(marker,start)
+            if position<0:break
+            occ+=1
+            claims.append({'article':article,'citation_occurrence':occ,'source_id':source,
+                           'source_url':'https://example.org/'+source,
+                           'body_git_blob_sha1':r.blob_sha(body),
+                           'source_start_byte':position,'source_end_byte':position+len(marker),
+                           'receipt_sha256':hashlib.sha256(f'{article}-{occ}-{source}'.encode()).hexdigest()})
+            start=position+1
+    docket['claims']=claims
+    return docket
+
 class TestR214(unittest.TestCase):
     def test_intact_held_not_approved(self):
         d,b=fixture();z=r.evaluate_from_docket(d,b)
@@ -98,6 +118,41 @@ class TestR214(unittest.TestCase):
     def test_reject_unclosed_claim_block(self):
         d,b=fixture();bad=b[20].replace(b'</p>',b'')
         self.assertEqual(r.evaluate_from_docket(d,{7:b[7],20:bad})['state'],r.INVALID)
+    def test_reject_attribute_claim_with_matching_synthetic_blobs(self):
+        d,b=fixture();marker=('{{cite:'+S7+'}}').encode()
+        changed=dict(b);changed[7]=b[7].replace(marker,b'<i data-cite="'+marker+b'"></i>',1)
+        d=dossier_for_bodies(changed)
+        z=r.evaluate_from_docket(d,changed)
+        self.assertEqual(z['state'],r.INVALID)
+        self.assertIn('attribute',str(z['errors']))
+    def test_reject_comment_claim_with_matching_synthetic_blobs(self):
+        d,b=fixture();marker=('{{cite:'+S7+'}}').encode()
+        changed=dict(b);changed[7]=b[7].replace(marker,b'<!-- '+marker+b' -->',1)
+        d=dossier_for_bodies(changed)
+        z=r.evaluate_from_docket(d,changed)
+        self.assertEqual(z['state'],r.INVALID)
+        self.assertIn('comment',str(z['errors']))
+    def test_reject_hidden_claim_with_matching_synthetic_blobs(self):
+        d,b=fixture();marker=('{{cite:'+S7+'}}').encode()
+        changed=dict(b);changed[7]=b[7].replace(marker,b'<span aria-hidden="true">'+marker+b'</span>',1)
+        d=dossier_for_bodies(changed)
+        z=r.evaluate_from_docket(d,changed)
+        self.assertEqual(z['state'],r.INVALID)
+        self.assertIn('not anchored to visible',str(z['errors']))
+    def test_reject_script_claim_with_matching_synthetic_blobs(self):
+        d,b=fixture();marker=('{{cite:'+S7+'}}').encode()
+        changed=dict(b);changed[7]=b[7].replace(marker,b'<script>'+marker+b'</script>',1)
+        d=dossier_for_bodies(changed)
+        z=r.evaluate_from_docket(d,changed)
+        self.assertEqual(z['state'],r.INVALID)
+        self.assertIn('not anchored to visible',str(z['errors']))
+    def test_reject_unclosed_claim_with_matching_synthetic_blobs(self):
+        d,b=fixture();changed=dict(b);changed[20]=b[20].replace(b'</p>',b'',1)
+        d=dossier_for_bodies(changed)
+        z=r.evaluate_from_docket(d,changed)
+        self.assertEqual(z['state'],r.INVALID)
+        self.assertIn('mismatched HTML nesting',str(z['errors']))
+
     def test_reject_nonbyte_sources(self):
         d,b=fixture();b[20]=b[20].decode()
         self.assertEqual(r.evaluate_from_docket(d,b)['state'],r.INVALID)
