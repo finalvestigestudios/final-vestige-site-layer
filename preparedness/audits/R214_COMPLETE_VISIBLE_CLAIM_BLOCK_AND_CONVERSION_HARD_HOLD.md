@@ -10,13 +10,13 @@ R213's held-citation docket uses a 320-byte window on either side of each citati
 - New preparedness/tools/r214_visible_claim_block_gate.py imports the authenticated R212/R213 HOLD result only in its CLI, and pure evaluate_from_docket() verifies original Git blob bytes, unique receipt SHA-256, marker byte span, and three exact occurrences (Article 7 twice, Article 20 once).
 - HTMLParser identifies the smallest fully closed P, LI, heading, table-cell, blockquote or figcaption containing the source citation, rather than arbitrary 320-byte context. Returns raw-block byte boundaries, SHA-256 of the exact raw block, Unicode-decoded human-readable claim text and a second SHA-256. It explicitly detects a citation hidden in an HTML comment/attribute or an unclosed/misaligned block and remains INVALID_HARD_HOLD.
 - No source-verification, review, QD, medical-safety, commerce or publication state can become true. On valid frozen originals CLI prints a docket and returns exit 2 = DRAFT_HARD_HOLD; invalid returns exit 3. Neither state is a PASS.
-- New preparedness/tests/test_r214_visible_claim_block_gate.py has 85 discoverable Python unittest tests, including 70 individually discoverable synthetic claim-text or exact-byte-span corruptions. All asserted intact baseline HOLD first and then required INVALID after mutation; 15 additional tests cover full-block boundaries, hidden/unclosed markup, Unicode, HTML entities, determinism, invalid approval states, duplicate receipts and reader input.
+- New preparedness/tests/test_r214_visible_claim_block_gate.py has 90 discoverable Python unittest tests, including 70 individually discoverable synthetic claim-text or exact-byte-span corruptions. All asserted intact baseline HOLD first and then required INVALID after mutation; 20 additional tests cover full-block boundaries, hidden/unclosed markup, Unicode, HTML entities, determinism, invalid approval states, duplicate receipts and reader input.
 - Existing 35 original articles, seven contributor branch heads, source register, WordPress exports, and prior QA branches untouched.
 
 ## Exact local execution (2026-11-08)
-python -I -m unittest discover -s preparedness/tests -p 'test_r214*.py' -q => 85/85 PASS.
+python -I -m unittest discover -s preparedness/tests -p 'test_r214*.py' -q => 90/90 PASS.
 python -m py_compile preparedness/tools/r214_visible_claim_block_gate.py preparedness/tests/test_r214_visible_claim_block_gate.py => PASS.
-Exact Git blobs matching the locally tested files: tool 368776765f08cc4886fad331cea16ecbbb0e5768; test ec2e363e3a2b5b6db01854e76c89372c10f4c81a.
+Exact Git blobs matching the locally tested files: tool 368776765f08cc4886fad331cea16ecbbb0e5768; test 5e4dbee5f4980be2ba1dccb10fecc58a8c3cc868.
 Tests are synthetic, not real-authored 35-article integration, native validation/build or independent review.
 
 ## Source custody and independent QA
@@ -49,3 +49,6 @@ Only merchant-confirmed paid orders/cleared affiliate conversions less fees/refu
 4. Keep independent QD, qualified safety editorial review and founder release approval as separate non-scriptable gates.
 
 DRAFT / HARD HOLD is final; no approval or public changes.
+
+## Final independent test integrity correction
+Five added R214 negative cases repin deliberately modified synthetic bodies and rebuild the exact citation spans BEFORE execution, ensuring failures are attributable to hidden markup, HTML attributes, comments, script-only citations or broken nesting—not merely stale blob fingerprints. Each checks the specific rejection reason. Final exact-code total: 90/90 Python unittests PASS and Python compilation PASS, final test blob 5e4dbee5f4980be2ba1dccb10fecc58a8c3cc868. Current home lead is separate draft PR #1568 HEAD e8176caa9d3d1dcc5bd47f0cf6dd1b5d16d11ebf. No real-body/native-source approval established.
