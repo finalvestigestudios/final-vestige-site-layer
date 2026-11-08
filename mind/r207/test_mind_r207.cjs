@@ -39,7 +39,7 @@ test('all three HTML previews language marked English',()=>[a,b,hub].forEach(x=>
 test('source-only previews carry noindex',()=>[a,b,hub].forEach(x=>assert.match(x,/<meta name="robots" content="noindex,nofollow">/)));
 test('A guide remains natively disabled and near-disclosed',()=>guideCompliant(a));
 test('B guide remains natively disabled and near-disclosed',()=>guideCompliant(b));
-test('Mind archive hub has disabled CTA and adjacent disclosure',()=>{assert.match(hub,/<button\\b[^>]*\\bdisabled\\b/);assert.match(hub,/may earn a commission at no additional cost to you/);});
+test('Mind archive hub has disabled CTA and adjacent disclosure',()=>{assert.match(hub,/<button\b[^>]*\bdisabled\b/);assert.match(hub,/may earn a commission at no additional cost to you/);});
 test('no active scripts, forms, remote media or affiliate earning refs',()=>[a,b,hub].forEach(noActiveMarkup));
 test('B film has one optional section',()=>assert(clipStart>0&&clipEnd>clipStart));
 test('A/B all commercial guide core is identical',()=>assert.equal((b.slice(0,clipStart)+b.slice(clipEnd)).replace(' — optional film',''),a));
