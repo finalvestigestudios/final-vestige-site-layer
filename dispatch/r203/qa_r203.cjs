@@ -20,7 +20,7 @@ function validate(files) {
     check(s.includes(subject),"subject_missing_"+kind);
     check(/33.minute|33 mins/i.test(s),"product_length_missing_"+kind);
     check(/47.MB/i.test(s),"file_size_missing_"+kind);
-    check(/five (?:refunded )?sessions per year|five.refunds.per.year/i.test(s),"refund_limit_missing_"+kind);
+    check(/five (?:refunded )?sessions per year/i.test(s),"refund_limit_missing_"+kind);
     check(/not (?:independently )?test(?:ed)?|not yet independently tested|we have not tested/i.test(s),"product_test_boundary_missing_"+kind);
     check(/commission/i.test(s),"commercial_disclosure_missing_"+kind);
     check(/(?:HOLD|INACTIVE|NOT VERIFIED)/i.test(s),"release_hard_stop_missing_"+kind);
