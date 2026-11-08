@@ -136,6 +136,12 @@
       "url": "https://doi.org/10.1111/j.1467-9280.1997.tb00689.x",
       "type": "original_experiment_priming_abstract",
       "reviewed": "2026-11-08"
+    },
+    {
+      "id": "S23",
+      "url": "https://affiliates.inspire3.com/",
+      "type": "official_public_affiliate_portal_login_approval_not_inferred",
+      "reviewed": "2026-11-08"
     }
   ],
   "claims": [
@@ -469,6 +475,15 @@
         "S13"
       ],
       "limit": "public product hints not complete rights/checkout/fulfillment audit"
+    },
+    {
+      "id": "C37",
+      "statement": "Inspire3 official affiliate portal offers registration/login but gives no proof this FV publisher is approved or permitted to use its creative assets",
+      "status": "public_affiliate_portal_not_publisher_permission",
+      "source_ids": [
+        "S23"
+      ],
+      "limit": "private account status, issued links, permitted placements and swipe/creative rights require authenticated records"
     }
   ],
   "gates": [
@@ -571,5 +586,13 @@
       7,
       30
     ]
+  },
+  "partner_verification": {
+    "public_login_and_registration_visible": true,
+    "named_FV_acceptance": "NOT_AUTHENTICATED",
+    "approved_creatives": "NOT_AUTHENTICATED",
+    "issued_earning_link": "NOT_AUTHENTICATED",
+    "web_social_email_permission": "NOT_AUTHENTICATED",
+    "note": "Public generic program claims, including prospective compensation, are not owner-specific agreement or actual earned commission."
   }
 }
