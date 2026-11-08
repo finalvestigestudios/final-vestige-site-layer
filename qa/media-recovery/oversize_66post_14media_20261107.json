@@ -1,0 +1,448 @@
+{
+  "schema": "fv-oversize-66-post-14-media-20261107",
+  "source": "WordPress authenticated read-only media.list pages 1-2; posts.list 1 and 66 posts.get context=edit",
+  "date": "2026-11-07",
+  "cohort": {
+    "published_posts": 66,
+    "published_inline_img_src": 361,
+    "image_media_items": 118,
+    "oversize_threshold_bytes_exclusive": 1572864,
+    "oversize_items": 14,
+    "oversize_stored_original_bytes": 45553777
+  },
+  "prior_captured_cohort": {
+    "image_media_items": 113,
+    "oversize_items": 13,
+    "oversize_stored_original_bytes": 43522829
+  },
+  "new_media_id": 2148,
+  "scope_note": "Source-only WordPress raw post bodies + featured_media; no web page, draft, templates, CSS or script references checked. Filename match includes Vasa Jetpack original basename; old 61-post comparator used strict full src URL.",
+  "posts_checked": [
+    1926,
+    1924,
+    1922,
+    1920,
+    1917,
+    621,
+    434,
+    433,
+    432,
+    431,
+    428,
+    425,
+    418,
+    413,
+    407,
+    370,
+    367,
+    330,
+    299,
+    292,
+    291,
+    290,
+    289,
+    288,
+    287,
+    285,
+    283,
+    280,
+    279,
+    278,
+    277,
+    276,
+    274,
+    269,
+    268,
+    258,
+    257,
+    256,
+    255,
+    254,
+    253,
+    252,
+    221,
+    220,
+    219,
+    218,
+    217,
+    216,
+    215,
+    214,
+    213,
+    211,
+    190,
+    166,
+    156,
+    151,
+    146,
+    142,
+    139,
+    108,
+    101,
+    38,
+    37,
+    36,
+    35,
+    34
+  ],
+  "media": [
+    {
+      "id": 2148,
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/11/1927-caernarvon-levee-explosion-noaa-archive.jpg",
+      "original_bytes": 2030948,
+      "width": 1821,
+      "height": 1190,
+      "mime_type": "image/jpeg",
+      "attachment_parent_id": null,
+      "published_raw_inline_post_ids": [],
+      "featured_post_id": null,
+      "source_match_method": "no match in 66 published raw post img src + featured",
+      "wp_subsizes_metadata_present": true,
+      "conditional_max_960": {
+        "width": 960,
+        "height": 627
+      },
+      "rights_approved": false,
+      "rehost_approved": false,
+      "guest_http_status": null,
+      "browser_decoded": null,
+      "visitor_transfer_bytes": null,
+      "authority": "https://www.noaa.gov/noaa-collections/photo-library/wea00739jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:1927_Mississippi_Flood_Blowing_Levee.jpg",
+      "rights_note": "NOAA archive Steve Nicklas; Commons marks US-government public domain, Wisekwai cropped scan; verify edition/crop and attribution before new derivative."
+    },
+    {
+      "id": 1258,
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/edit-017-v02-nypl-5003296-original.jpg",
+      "original_bytes": 5553669,
+      "width": 5667,
+      "height": 3831,
+      "mime_type": "image/jpeg",
+      "attachment_parent_id": null,
+      "published_raw_inline_post_ids": [
+        621
+      ],
+      "featured_post_id": null,
+      "source_match_method": "stored exact original img src",
+      "wp_subsizes_metadata_present": true,
+      "conditional_max_960": {
+        "width": 960,
+        "height": 649
+      },
+      "rights_approved": false,
+      "rehost_approved": false,
+      "guest_http_status": null,
+      "browser_decoded": null,
+      "visitor_transfer_bytes": null,
+      "rights_note": "NYPL archive; primary record rights/identity needs review."
+    },
+    {
+      "id": 1257,
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/edit-017-v01-malbone-tunnel-generalpunger-original.jpg",
+      "original_bytes": 4798395,
+      "width": 4000,
+      "height": 3000,
+      "mime_type": "image/jpeg",
+      "attachment_parent_id": null,
+      "published_raw_inline_post_ids": [
+        621
+      ],
+      "featured_post_id": 621,
+      "source_match_method": "stored exact original img src",
+      "wp_subsizes_metadata_present": true,
+      "conditional_max_960": {
+        "width": 960,
+        "height": 720
+      },
+      "rights_approved": false,
+      "rehost_approved": false,
+      "guest_http_status": null,
+      "browser_decoded": null,
+      "visitor_transfer_bytes": null,
+      "rights_note": "Published caption says GeneralPunger CC BY-SA 4.0; preserve attribution and share-alike duties."
+    },
+    {
+      "id": 482,
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/050e21e0-7b54-4f9a-ba0b-7f594657af05.png",
+      "original_bytes": 2293016,
+      "width": 1672,
+      "height": 941,
+      "mime_type": "image/png",
+      "attachment_parent_id": null,
+      "published_raw_inline_post_ids": [],
+      "featured_post_id": null,
+      "source_match_method": "no match in 66 published raw post img src + featured",
+      "wp_subsizes_metadata_present": true,
+      "conditional_max_960": {
+        "width": 960,
+        "height": 540
+      },
+      "rights_approved": false,
+      "rehost_approved": false,
+      "guest_http_status": null,
+      "browser_decoded": null,
+      "visitor_transfer_bytes": null,
+      "rights_note": "Orphan *in post-only scan*; pages/drafts/templates unexamined."
+    },
+    {
+      "id": 405,
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/The20Water20Resilience20Field20Manual.png",
+      "original_bytes": 2201573,
+      "width": 1122,
+      "height": 1402,
+      "mime_type": "image/png",
+      "attachment_parent_id": 85,
+      "published_raw_inline_post_ids": [],
+      "featured_post_id": null,
+      "source_match_method": "no match in 66 published raw post img src + featured",
+      "wp_subsizes_metadata_present": true,
+      "conditional_max_960": {
+        "width": 960,
+        "height": 1200
+      },
+      "rights_approved": false,
+      "rehost_approved": false,
+      "guest_http_status": null,
+      "browser_decoded": null,
+      "visitor_transfer_bytes": null,
+      "rights_note": "Former Water Resilience field-manual artwork, check pages/drafts before removal."
+    },
+    {
+      "id": 389,
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/vasa-01-2020.jpg",
+      "original_bytes": 2822969,
+      "width": 2147,
+      "height": 1417,
+      "mime_type": "image/jpeg",
+      "attachment_parent_id": 299,
+      "published_raw_inline_post_ids": [
+        299
+      ],
+      "featured_post_id": 299,
+      "source_match_method": "stored Jetpack src basename",
+      "wp_subsizes_metadata_present": true,
+      "conditional_max_960": {
+        "width": 960,
+        "height": 634
+      },
+      "rights_approved": false,
+      "rehost_approved": false,
+      "guest_http_status": null,
+      "browser_decoded": null,
+      "visitor_transfer_bytes": null,
+      "rights_note": "Anneli Karlsson photographic credit; rights approval pending."
+    },
+    {
+      "id": 388,
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/vasa-modell-2020.jpg",
+      "original_bytes": 8176362,
+      "width": 4256,
+      "height": 2832,
+      "mime_type": "image/jpeg",
+      "attachment_parent_id": 299,
+      "published_raw_inline_post_ids": [
+        299
+      ],
+      "featured_post_id": null,
+      "source_match_method": "stored Jetpack src basename",
+      "wp_subsizes_metadata_present": true,
+      "conditional_max_960": {
+        "width": 960,
+        "height": 639
+      },
+      "rights_approved": false,
+      "rehost_approved": false,
+      "guest_http_status": null,
+      "browser_decoded": null,
+      "visitor_transfer_bytes": null,
+      "rights_note": "Karolina Kristensson photographic credit; rights approval pending."
+    },
+    {
+      "id": 382,
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/vasa-med-gamla-och-nya-stottor_vasa-with-old-and-new-supports.jpg",
+      "original_bytes": 2318980,
+      "width": 1800,
+      "height": 1200,
+      "mime_type": "image/jpeg",
+      "attachment_parent_id": 299,
+      "published_raw_inline_post_ids": [
+        299
+      ],
+      "featured_post_id": null,
+      "source_match_method": "stored Jetpack src basename",
+      "wp_subsizes_metadata_present": true,
+      "conditional_max_960": {
+        "width": 960,
+        "height": 640
+      },
+      "rights_approved": false,
+      "rehost_approved": false,
+      "guest_http_status": null,
+      "browser_decoded": null,
+      "visitor_transfer_bytes": null,
+      "rights_note": "Anneli Karlsson photographic credit; rights approval pending."
+    },
+    {
+      "id": 293,
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/ne.png",
+      "original_bytes": 2090327,
+      "width": 1122,
+      "height": 1402,
+      "mime_type": "image/png",
+      "attachment_parent_id": null,
+      "published_raw_inline_post_ids": [],
+      "featured_post_id": null,
+      "source_match_method": "no match in 66 published raw post img src + featured",
+      "wp_subsizes_metadata_present": true,
+      "conditional_max_960": {
+        "width": 960,
+        "height": 1200
+      },
+      "rights_approved": false,
+      "rehost_approved": false,
+      "guest_http_status": null,
+      "browser_decoded": null,
+      "visitor_transfer_bytes": null,
+      "rights_note": "Founder-profile picture, no deletion; check pages/templates."
+    },
+    {
+      "id": 43,
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/01340c2e-1165-4ca0-aa96-87398a83d13a.png",
+      "original_bytes": 2836245,
+      "width": 1672,
+      "height": 941,
+      "mime_type": "image/png",
+      "attachment_parent_id": 38,
+      "published_raw_inline_post_ids": [
+        38
+      ],
+      "featured_post_id": 38,
+      "source_match_method": "stored exact original img src",
+      "wp_subsizes_metadata_present": false,
+      "conditional_max_960": {
+        "width": 960,
+        "height": 540
+      },
+      "rights_approved": false,
+      "rehost_approved": false,
+      "guest_http_status": null,
+      "browser_decoded": null,
+      "visitor_transfer_bytes": null
+    },
+    {
+      "id": 42,
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/c1237ffd-4a47-4988-8254-e3b021069e72.png",
+      "original_bytes": 2488823,
+      "width": 1672,
+      "height": 941,
+      "mime_type": "image/png",
+      "attachment_parent_id": 37,
+      "published_raw_inline_post_ids": [
+        37
+      ],
+      "featured_post_id": 37,
+      "source_match_method": "stored exact original img src",
+      "wp_subsizes_metadata_present": false,
+      "conditional_max_960": {
+        "width": 960,
+        "height": 540
+      },
+      "rights_approved": false,
+      "rehost_approved": false,
+      "guest_http_status": null,
+      "browser_decoded": null,
+      "visitor_transfer_bytes": null
+    },
+    {
+      "id": 41,
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/a44f673d-a8a8-4c83-9f29-7e24dd55156b.png",
+      "original_bytes": 2498247,
+      "width": 1672,
+      "height": 941,
+      "mime_type": "image/png",
+      "attachment_parent_id": 36,
+      "published_raw_inline_post_ids": [
+        36
+      ],
+      "featured_post_id": 36,
+      "source_match_method": "stored exact original img src",
+      "wp_subsizes_metadata_present": false,
+      "conditional_max_960": {
+        "width": 960,
+        "height": 540
+      },
+      "rights_approved": false,
+      "rehost_approved": false,
+      "guest_http_status": null,
+      "browser_decoded": null,
+      "visitor_transfer_bytes": null
+    },
+    {
+      "id": 40,
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/377e08da-e121-4f57-9174-1548343402b3.png",
+      "original_bytes": 2552136,
+      "width": 1672,
+      "height": 941,
+      "mime_type": "image/png",
+      "attachment_parent_id": 35,
+      "published_raw_inline_post_ids": [
+        35
+      ],
+      "featured_post_id": 35,
+      "source_match_method": "stored exact original img src",
+      "wp_subsizes_metadata_present": false,
+      "conditional_max_960": {
+        "width": 960,
+        "height": 540
+      },
+      "rights_approved": false,
+      "rehost_approved": false,
+      "guest_http_status": null,
+      "browser_decoded": null,
+      "visitor_transfer_bytes": null
+    },
+    {
+      "id": 39,
+      "source_url": "https://finalvestige.com/wp-content/uploads/2026/08/bceca0bd-a16f-44f7-be08-16376fbf08ca.png",
+      "original_bytes": 2892087,
+      "width": 1672,
+      "height": 941,
+      "mime_type": "image/png",
+      "attachment_parent_id": 34,
+      "published_raw_inline_post_ids": [
+        34
+      ],
+      "featured_post_id": 34,
+      "source_match_method": "stored exact original img src",
+      "wp_subsizes_metadata_present": false,
+      "conditional_max_960": {
+        "width": 960,
+        "height": 540
+      },
+      "rights_approved": false,
+      "rehost_approved": false,
+      "guest_http_status": null,
+      "browser_decoded": null,
+      "visitor_transfer_bytes": null
+    }
+  ],
+  "performance_and_release": {
+    "reported_broken_count_42_verified": false,
+    "reported_76_percent_wire_reduction_verified": false,
+    "measured_wire_delta_percent": null,
+    "guest_broken_count": null,
+    "rights_clearance": false,
+    "uploads": 0,
+    "post_writes": 0,
+    "image_downloads": 0,
+    "homepage_changes": 0,
+    "spend_usd": 0
+  },
+  "workflow": [
+    "P0: Site QA #154 guest-Chrome six external slots (285:5 285:2 287:5 418:1 418:2 407:1).",
+    "P1: 5 no-subsize 1672x941 PNG hero posts 34-38, measure guest cold bytes and visual legibility before conditional 960x540.",
+    "P1: post 621 direct JPEG originals, respect historic/copyright provenance.",
+    "P1: post 299 Jetpack fit=1024 Vasa photographs, don't confuse stored original bytes with transfer.",
+    "HOLD: records 2148/482/405/293 unmatched only in published post raw scan; never auto-delete."
+  ]
+}
