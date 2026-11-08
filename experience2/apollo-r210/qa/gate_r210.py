@@ -94,6 +94,12 @@ def run(out:Path,require_axe:bool=False):
  with sync_playwright() as pw:
   browser=pw.chromium.launch(headless=True,executable_path='/usr/bin/chromium',args=['--no-sandbox'])
   browser_ver=browser.version
+  print_ctx=browser.new_context(viewport={'width':390,'height':900})
+  print_page=print_ctx.new_page();print_page.set_content(document,wait_until='domcontentloaded')
+  print_page.emulate_media(media='print')
+  guard(print_page.locator('.fv-apollo-lesson-key>div p').first.is_visible(),'Closed lesson answers hidden when printed')
+  guard(print_page.locator('.fv-apollo-print-custody').is_visible(),'Printed source index hidden')
+  print_ctx.close()
   for label,width,opts in cases:
    ctx=browser.new_context(viewport={'width':width,'height':900},**opts)
    page=ctx.new_page();errors=[];page.on('pageerror',lambda e:errors.append(str(e)))
@@ -142,7 +148,7 @@ def run(out:Path,require_axe:bool=False):
   'genuine_axe_core':{'status':'PASS' if axe_cases else 'NOT_EXECUTED','cases':axe_cases,'reason':None if axe_cases else 'No authenticated local axe-core script available; manual AT tests also pending'},
   'installed_wordpress':'NOT_TESTED','full_canonical_ancestry':'NOT_RECONCILED',
   'production_lcp_cls':'NOT_MEASURED','browser_navigation_to_staging':'NOT_TESTED (environment blocks localhost/external navigation)',
-  'wp_simulation':'PHP function shim only','paid_conversion':'NOT_VERIFIED'}
+  'print_closed_disclosure_reveals_answer':True,'wp_simulation':'PHP function shim only','paid_conversion':'NOT_VERIFIED'}
  (out/'receipt.json').write_text(json.dumps(receipt,sort_keys=True,indent=2)+'\n')
  return receipt
 
