@@ -1,0 +1,152 @@
+{
+  "schema": "fv-live-cms-3-p0-source-bridges-v1",
+  "date_utc": "2026-11-08",
+  "method": {
+    "cms": "WordPress posts_get edit read-only; ids 418,287,407",
+    "retriever": "web.open source/secondary image 2026-11-08; codes are tool-wrapper outcomes, not origin or visitor HTTP",
+    "binary_downloaded": false,
+    "visitor_chrome": false
+  },
+  "baseline": {
+    "historic_posts": 61,
+    "historic_images": 355,
+    "expanded_posts": 66,
+    "expanded_images": 361,
+    "reported_broken_42": "UNVERIFIED",
+    "measured_76pct_reduction": false,
+    "oversize_wp_decimal_mb_count": 15,
+    "oversize_original_storage_bytes": 47096779,
+    "measured_visitor_broken": null,
+    "measured_visitor_image_transfer_bytes": null
+  },
+  "permissions": {
+    "cms_write": false,
+    "media_cache": false,
+    "image_rehost": false,
+    "publish": false,
+    "homepage_edit": false,
+    "spend": false
+  },
+  "rows": [
+    {
+      "key": "418:2",
+      "post": 418,
+      "post_url": "https://finalvestige.com/2026/08/20/the-lighthouse-was-gone-at-dawn-1946-tsunami/",
+      "status": "publish",
+      "modified": "2026-08-28T03:11:08",
+      "original": "https://www.history.uscg.mil/Portals/6/5_%20Scotch_Cap_debris2_1946.jpg",
+      "alt": "Broken concrete and debris where Scotch Cap Lighthouse stood after the April 1, 1946 tsunami.",
+      "retriever": {
+        "code": 403,
+        "meaning": "tool_wrapped_forbidden",
+        "origin_http": false,
+        "visitor_http": false
+      },
+      "candidate": {
+        "url": "https://www.lighthousefriends.com/Scotch_Cap_debris2_1946.jpg",
+        "host": "lighthousefriends.com",
+        "evidence": "IMAGE_DISPLAYED_SAME_BASENAME",
+        "catalog": "https://www.lighthousefriends.com/light.asp?ID=1780",
+        "official_comparison": "https://nationalcoastguardmuseum.org/articles/scotch-cap-lighthouse/",
+        "credit": "Lighthousefriends credits Coast Guard Museum Northwest; National Coast Guard Museum credits U.S. Coast Guard for 1946 aftermath photographs",
+        "binary_match": false,
+        "rights_status": "HOLD",
+        "license_proven": false,
+        "scene_note": "Secondary-host image depicts coastal-bluff rubble; same basename but original binary/crop not compared. NOAA separately captions a Scotch Cap debris scene as 1964—do not substitute."
+      },
+      "visitor_http_status": null,
+      "visitor_current_src": null,
+      "visitor_natural_px": null,
+      "visitor_transfer_bytes": null,
+      "visitor_broken": null,
+      "source_binary_sha256": null,
+      "derive": {
+        "max_width": 960,
+        "no_upscale": true,
+        "native_px": null,
+        "target_px": null
+      },
+      "cache_or_wp_edit_authorized": false
+    },
+    {
+      "key": "287:5",
+      "post": 287,
+      "post_url": "https://finalvestige.com/2026/08/19/the-warning-was-a-man-waving-sunshine-skyway/",
+      "status": "publish",
+      "modified": "2026-11-02T21:40:01",
+      "original": "https://stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+      "alt": "The old Sunshine Skyway wreckage and the later bridge replacement in Tampa Bay.",
+      "retriever": {
+        "code": 404,
+        "meaning": "tool_wrapped_not_found",
+        "origin_http": false,
+        "visitor_http": false
+      },
+      "candidate": {
+        "url": "https://media.stpetecatalyst.com/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+        "host": "media.stpetecatalyst.com",
+        "evidence": "IMAGE_DISPLAYED_SAME_PUBLISHER_FILENAME",
+        "catalog": "https://stpetecatalyst.com/",
+        "official_comparison": null,
+        "credit": "Original publisher credits University Press of Florida",
+        "binary_match": false,
+        "rights_status": "HOLD",
+        "license_proven": false,
+        "scene_note": "Visible replacement candidate shows 1980 bridge destruction, not completed replacement; published ALT needs separately authorized editorial review."
+      },
+      "visitor_http_status": null,
+      "visitor_current_src": null,
+      "visitor_natural_px": null,
+      "visitor_transfer_bytes": null,
+      "visitor_broken": null,
+      "source_binary_sha256": null,
+      "derive": {
+        "max_width": 960,
+        "no_upscale": true,
+        "native_px": null,
+        "target_px": null
+      },
+      "cache_or_wp_edit_authorized": false
+    },
+    {
+      "key": "407:1",
+      "post": 407,
+      "post_url": "https://finalvestige.com/2026/08/20/the-lake-wasnt-there-yesterday-hebgen/",
+      "status": "publish",
+      "modified": "2026-10-29T18:30:30",
+      "original": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/img7535.jpg",
+      "alt": "Fresh fault scarp near Hebgen Lake produced by the August 1959 earthquake.",
+      "retriever": {
+        "code": 400,
+        "meaning": "tool_unsupported_octet_stream",
+        "origin_http": false,
+        "visitor_http": false
+      },
+      "candidate": {
+        "url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/thumbnails/image/img7535.jpg",
+        "host": "d9-wret.s3.us-west-2.amazonaws.com",
+        "evidence": "PRIOR_VIEWER_RENDERED_LATEST_TOOL_INACCESSIBLE",
+        "catalog": "https://www.usgs.gov/media/images/hebgen-lake-fault-scarp-1959",
+        "official_comparison": "https://www.usgs.gov/media/images/hebgen-lake-fault-scarp-1959",
+        "credit": "J. R. Stacy / U.S. Geological Survey; item-level public domain catalog",
+        "binary_match": false,
+        "rights_status": "ITEM_PD_SOURCE_BINARY_HOLD",
+        "license_proven": true,
+        "scene_note": "Catalog identifies 1959 fault scarp; unsupported wrapper content type does not imply browser failure."
+      },
+      "visitor_http_status": null,
+      "visitor_current_src": null,
+      "visitor_natural_px": null,
+      "visitor_transfer_bytes": null,
+      "visitor_broken": null,
+      "source_binary_sha256": null,
+      "derive": {
+        "max_width": 960,
+        "no_upscale": true,
+        "native_px": null,
+        "target_px": null
+      },
+      "cache_or_wp_edit_authorized": false
+    }
+  ]
+}
