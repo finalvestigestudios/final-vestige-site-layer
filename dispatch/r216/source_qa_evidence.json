@@ -65,5 +65,14 @@
     "chromium": "NOT_TESTED",
     "assistive_technology": "NOT_TESTED",
     "no_forms_or_scripts": true
+  },
+  "followers_read_only": {
+    "checked": "2026-11-08",
+    "total": 3,
+    "email": 0,
+    "wpcom": 3,
+    "comment": 0,
+    "partial": false,
+    "warning": "Follower breakdown and newsletter-confirmed counters measure different sets; none alone establishes current email deliverability."
   }
 }
