@@ -45,7 +45,7 @@ CSS='''
 @media(max-width:850px){.fv-apollo-atlas .fv-apollo-confidence-list{grid-template-columns:minmax(0,1fr)}}
 @media(forced-colors:active){.fv-apollo-atlas .fv-apollo-confidence-list details{border-color:CanvasText}.fv-apollo-atlas .fv-apollo-confidence-status{color:CanvasText}}
 @media(prefers-reduced-motion:reduce){.fv-apollo-atlas .fv-apollo-confidence-list *{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
-@media print{.fv-apollo-atlas .fv-apollo-confidence-list{display:block}.fv-apollo-atlas .fv-apollo-confidence-list li{break-inside:avoid;margin-bottom:1rem}.fv-apollo-atlas .fv-apollo-confidence-list details{color:#111!important;background:#fff!important}.fv-apollo-atlas .fv-apollo-confidence-list .fv-apollo-confidence-answer{display:block!important}.fv-apollo-atlas .fv-apollo-confidence-list a{color:#111!important;text-decoration:underline!important}.fv-apollo-atlas .fv-apollo-confidence-list a::after{content:' [' attr(href) ']';overflow-wrap:anywhere;font-size:.7em}}
+@media print{.fv-apollo-atlas .fv-apollo-confidence-list details::details-content{content-visibility:visible!important;display:block!important}.fv-apollo-atlas .fv-apollo-confidence-list{display:block}.fv-apollo-atlas .fv-apollo-confidence-list li{break-inside:avoid;margin-bottom:1rem}.fv-apollo-atlas .fv-apollo-confidence-list details{color:#111!important;background:#fff!important}.fv-apollo-atlas .fv-apollo-confidence-list .fv-apollo-confidence-answer{display:block!important}.fv-apollo-atlas .fv-apollo-confidence-list a{color:#111!important;text-decoration:underline!important}.fv-apollo-atlas .fv-apollo-confidence-list a::after{content:' [' attr(href) ']';overflow-wrap:anywhere;font-size:.7em}}
 '''
 
 def build()->dict:
