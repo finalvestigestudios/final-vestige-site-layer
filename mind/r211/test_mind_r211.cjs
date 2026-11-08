@@ -30,6 +30,7 @@ function validate(f){
  check(f.guide.includes('not purchased, listened')&&f.guide.includes('an authenticated Inspire3 publisher authorization')&&f.guide.includes('No earning link'),'non testimonial and gated sales');
  check(f.guide.includes('https://zen12.com/hnp')&&f.guide.includes('48 MP3'),'actual merchant offer not invented');
  check(f.hub.includes('UNPUBLISHED')&&f.hub.includes('href="https://finalvestige.com/focus/"'),'hub source-only with Focus');
+ check(f.hub.includes('No subscriber is counted here'),'hub does not invent a confirmed lead');
  check(['stream-perception','stream-history','stream-practice','stream-tools'].every(x=>f.hub.includes('id="'+x+'"')),'four streams present');
  check(/<svg[\s\S]*?<title[\s\S]*?<desc/.test(f.hub),'original accessible SVG title description');
  check(/@media\(max-width:820px\)/.test(f.hub) && /prefers-reduced-motion/.test(f.hub),'responsive and reduced motion stylesheet');
