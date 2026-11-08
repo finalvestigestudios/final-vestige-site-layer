@@ -38,7 +38,7 @@ function validate(x) {
  ok(x.b.includes('aria-labelledby="poster-title poster-desc"')&&x.b.includes('Read the full proposed 42-second narration')&&x.b.includes('No autoplay'),'optional B poster, transcript, opt-in audio status');
  ok(x.vtt.startsWith('WEBVTT')&&x.vtt.includes('00:00:00.000 --> 00:00:07.000')&&x.vtt.includes('00:00:33.000 --> 00:00:42.000'),'42-second caption plan');
  ok(!x.a.includes('<svg class="poster"')&&x.b.includes('<svg class="poster"'),'video module only in B');
- ok(x.hub.includes('UNPUBLISHED')&&x.hub.includes('no live commercial link'.replace('live commercial','active commercial'))===false?true:true,'placeholder'); // subsequent exact checks enforce real guardrails
+ ok(x.hub.includes('Commerce is separate from the investigation.')&&x.hub.includes('no active commercial link'),'hub must explicitly separate commerce from investigation');
  ok(x.hub.includes('No public URL assigned') && !x.hub.includes('href="https://finalvestige.com/mind/"'),'hub must not invent unpublished Mind route');
  ok(!/<(?:script|iframe|form|input|button)\b/i.test(x.hub),'no new signup/affiliate script in hub');
  for(const u of ['https://finalvestige.com/focus/','https://finalvestige.com/2026/11/02/change-blindness/','https://finalvestige.com/2026/11/02/mesmerism/'])ok(x.hub.includes(u),'known live hub link missing '+u);
@@ -68,7 +68,7 @@ function run(bundle) {
  ['fabricate affiliate approval', {...bundle,matrix:bundle.matrix.replace('"publisher_acceptance": "UNVERIFIED"','"publisher_acceptance": "VERIFIED"')}],
  ['fabricate net revenue 0', {...bundle,matrix:bundle.matrix.replace('"net_revenue_per_1000_sessions": null','"net_revenue_per_1000_sessions": 0')}],
  ['convert settlement event to verified', {...bundle,matrix:bundle.matrix.replace('"affiliate_commission_cleared": {\n      "status": "NOT_VERIFIED"','"affiliate_commission_cleared": {\n      "status": "VERIFIED"')}],
- ['remove critical study source', {...bundle,article:bundle.article.replace('https://doi.org/10.1177/0956797610378686','https://unknown.invalid')}],
+ ['remove critical study source', {...bundle,article:bundle.article.replaceAll('https://doi.org/10.1177/0956797610378686','https://unknown.invalid')}],
  ['insert invented public URL', {...bundle,hub:bundle.hub.replace('No public URL assigned','href="https://finalvestige.com/mind/"')}],
  ['disable video accessibility', {...bundle,b:bundle.b.replace('Read the full proposed 42-second narration','Read more')+'<video autoplay src="elsewhere.mp4"></video>'}],
  ['erase VTT final cue', {...bundle,vtt:bundle.vtt.replace('00:00:33.000 --> 00:00:42.000','00:00:33.000 --> 00:00:40.000')}],
