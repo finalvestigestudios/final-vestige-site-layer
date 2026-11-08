@@ -7,8 +7,8 @@ const EXPECTED_GATES=["named_publisher_approval","permitted_website_channel","pe
 const REQUIRED_SOURCES=["S01","S02","S03","S04","S05","S06","S07","S08","S09","S10","S11","S12","S13","S14","S15","S16","S17","S18","S19","S20"];
 const REQUIRED_STUDIES=['https://doi.org/10.1068/p281059','https://doi.org/10.1177/0956797613479386','https://pmc.ncbi.nlm.nih.gov/articles/PMC3563049/'];
 const tags=(html,name)=>[...html.matchAll(new RegExp('<'+name+'\\b[^>]*>','gi'))].map(x=>x[0]);
-const attrs=t=>{let a={};const rx=/([\\w:-]+)(?:\\s*=\\s*(?:"([^"]*)"|'([^']*)'|([^\\s>]+)))?/g;const s=t.replace(/^<\\w+\\b/i,'').replace(/>$/,'');let m;while((m=rx.exec(s)))a[m[1].toLowerCase()]=m[2]??m[3]??m[4]??'';return a};
-const sansVideo=s=>s.replace(/<!-- OPTIONAL_FILM_START -->[\\s\\S]*?<!-- OPTIONAL_FILM_END -->/g,'');
+const attrs=t=>{let a={};const rx=/([\w:-]+)(?:\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s>]+)))?/g;const s=t.replace(/^<\w+\b/i,'').replace(/>$/,'');let m;while((m=rx.exec(s)))a[m[1].toLowerCase()]=m[2]??m[3]??m[4]??'';return a};
+const sansVideo=s=>s.replace(/<!-- OPTIONAL_FILM_START -->[\s\S]*?<!-- OPTIONAL_FILM_END -->/g,'');
 function check(f){
  const errs=[],bad=s=>errs.push(s);let data;
  try{data=JSON.parse(f.matrix)}catch(e){return ['invalid JSON']}
@@ -22,23 +22,23 @@ function check(f){
  for(const [id,status] of Object.entries(EXPECTED_CLAIMS)){const r=(data.claims||[]).filter(c=>c.id===id);if(r.length!==1||r[0].status!==status||!r[0].source_ids?.length||r[0].source_ids.some(s=>!src.has(s)))bad('claim identity/status/provenance '+id)}
  for(const [key,html]of [['a',f.a],['b',f.b],['hub',f.hub]]){
   if(!/<html lang="en"/.test(html)||!/<meta name="viewport"/.test(html)||!/<meta name="robots" content="noindex,nofollow"/.test(html))bad(key+' noindex/access');
-  if(/<script\\b|<iframe\\b|<form\\b|<input\\b|<video\\b|<audio\\b|<source\\b|<object\\b|<embed\\b/i.test(html))bad(key+' external player/form/script');
-  if(/\\bon\\w+\\s*=|javascript\\s*:/i.test(html))bad(key+' event handler');
-  if(/href\\s*=\\s*["']?[^\\s"'<>]*(?:zen12\\.com|inspire3\\.com|hypnosislive\\.com|awin1|checkout|payhip|clickbank)/i.test(html))bad(key+' commercial link active');
+  if(/<script\b|<iframe\b|<form\b|<input\b|<video\b|<audio\b|<source\b|<object\b|<embed\b/i.test(html))bad(key+' external player/form/script');
+  if(/\bon\w+\s*=|javascript\s*:/i.test(html))bad(key+' event handler');
+  if(/href\s*=\s*["']?[^\s"'<>]*(?:zen12\.com|inspire3\.com|hypnosislive\.com|awin1|checkout|payhip|clickbank)/i.test(html))bad(key+' commercial link active');
   const bs=tags(html,'button');
   if(bs.length!==1)bad(key+' button count');
   for(const t of bs){const a=attrs(t);if(a.type!=='button'||!('disabled' in a)||a['aria-disabled']!=='true'||'formaction' in a||'onclick' in a)bad(key+' button activation')}
   if(!/may earn a commission at no extra cost/i.test(html))bad(key+' near-button disclosure removed');
   const bp=html.indexOf('<button');const dc=html.lastIndexOf('may earn a commission',bp);if(dc<0||bp-dc>950)bad(key+' disclosure too far from CTA');
-  if(!/https:\/\/finalvestige\\.com\/focus\//.test(html))bad(key+' missing existing Focus');
+  if(!/https:\/\/finalvestige\.com\/focus\//.test(html))bad(key+' missing existing Focus');
   if(!/prefers-reduced-motion/.test(html)||!/focus-visible/.test(html))bad(key+' a11y source');
-  if(/target\\s*=\\s*["']?_blank/i.test(html))bad(key+' external tab');
-  if(/<a\\b[^>]*href\\s*=\\s*["']?\\s*(?:http:|\/\/)/i.test(html))bad(key+' insecure link');
-  const ids=[...html.matchAll(/\\bid="([^"]+)"/g)].map(m=>m[1]);if(new Set(ids).size!==ids.length)bad(key+' repeated ID');
+  if(/target\s*=\s*["']?_blank/i.test(html))bad(key+' external tab');
+  if(/<a\b[^>]*href\s*=\s*["']?\s*(?:http:|\/\/)/i.test(html))bad(key+' insecure link');
+  const ids=[...html.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1]);if(new Set(ids).size!==ids.length)bad(key+' repeated ID');
  }
  if(!f.b.includes('<!-- OPTIONAL_FILM_START -->')||f.a.includes('<!-- OPTIONAL_FILM_START -->')||sansVideo(f.b)!==f.a)bad('AB parity/optional only');
  if(!f.b.includes('no playable video')&&!f.b.includes('not a playable video'))bad('film falsely playable');
- const cues=[...f.vtt.matchAll(/(\\d\\d:\\d\\d:\\d\\d\\.\\d{3}) --> (\\d\\d:\\d\\d:\\d\\d\\.\\d{3})\n([^\n]+)/g)];
+ const cues=[...f.vtt.matchAll(/(\d\d:\d\d:\d\d\.\d{3}) --> (\d\d:\d\d:\d\d\.\d{3})\n([^\n]+)/g)];
  if(cues.length!==5)bad('missing captions');
  let t=0;const seconds=s=>{let x=s.split(':');return Number(x[0])*3600+Number(x[1])*60+Number(x[2])};
  for(const c of cues){if(seconds(c[1])!==t||!f.b.includes(c[3]))bad('caption continuity/transcript');t=seconds(c[2])}if(t!==42)bad('film duration mismatch');
