@@ -14,6 +14,46 @@ from typing import Callable, Iterator
 from .csv_snapshot import _same_path_descriptor_signature
 
 
+def _safe_lstat(path: Path) -> os.stat_result:
+    """Return lock metadata or reject without retaining a private-path error."""
+    failure = None
+    try:
+        info = os.lstat(path)
+    except FileNotFoundError:
+        failure = "Review writer lock disappeared; inspect journal before retrying"
+    except OSError:
+        failure = "Review writer lock cannot be inspected; inspect before retrying"
+    if failure is not None:
+        # Outside the handler: no original OSError survives in __context__.
+        raise ValueError(failure)
+    return info
+
+
+def _create_private_lock(path: Path, flags: int) -> int:
+    """Reject lock collisions and filesystem failures without retaining paths."""
+    failure = None
+    try:
+        fd = os.open(path, flags, 0o600)
+    except FileExistsError:
+        failure = "Review journal locked; inspect the existing lock before retrying"
+    except OSError:
+        failure = "Review writer lock cannot be created; inspect local permissions"
+    if failure is not None:
+        raise ValueError(failure)
+    return fd
+
+
+def _remove_owned_lock(path: Path) -> None:
+    """Never expose sensitive lock paths when final unlink is denied."""
+    failed = False
+    try:
+        os.unlink(path)
+    except OSError:
+        failed = True
+    if failed:
+        raise ValueError("Review writer lock cleanup failed; inspect before retrying")
+
+
 def _identity(info: os.stat_result) -> tuple[int, int]:
     return info.st_dev, info.st_ino
 
@@ -21,10 +61,7 @@ def _identity(info: os.stat_result) -> tuple[int, int]:
 def _owned(path: Path, baseline: os.stat_result,
            path_baseline: os.stat_result) -> None:
     """Reject loss, replacement, aliasing, or modification of our lock."""
-    try:
-        now = os.lstat(path)
-    except FileNotFoundError as exc:
-        raise ValueError("Review writer lock disappeared; inspect journal before retrying") from exc
+    now = _safe_lstat(path)
     # Cross-view Windows descriptor/path creation-time values can disagree.
     # Compare all portable fields across views, then the *complete* path
     # signature against its own original pathname observation. Descriptor
@@ -61,10 +98,7 @@ def exclusive_review_lock(journal: str | Path) -> Iterator[Callable[[], None]]:
              | getattr(os, "O_NOFOLLOW", 0)
              | getattr(os, "O_CLOEXEC", 0)
              | getattr(os, "O_BINARY", 0))
-    try:
-        fd = os.open(target, flags, 0o600)
-    except FileExistsError as exc:
-        raise ValueError("Review journal locked; inspect the existing lock before retrying") from exc
+    fd = _create_private_lock(target, flags)
     issued = False
     baseline = None
     try:
@@ -78,7 +112,7 @@ def exclusive_review_lock(journal: str | Path) -> Iterator[Callable[[], None]]:
         baseline = os.fstat(fd)
         # Keep the first pathname identity for same-view ctime drift detection.
         # No successful writer is admitted before both views are checked.
-        path_baseline = os.lstat(target)
+        path_baseline = _safe_lstat(target)
         _owned(target, baseline, path_baseline)
         issued = True
 
@@ -104,4 +138,4 @@ def exclusive_review_lock(journal: str | Path) -> Iterator[Callable[[], None]]:
             except ValueError:
                 pass
             else:
-                os.unlink(target)
+                _remove_owned_lock(target)
