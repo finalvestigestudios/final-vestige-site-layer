@@ -7,6 +7,7 @@ substituted code or bibliography after the original article bodies were frozen.
 from __future__ import annotations
 
 import hashlib
+import re
 from pathlib import Path
 
 # Git blob identifiers were read from the exact R221 head on 2026-11-08.
@@ -19,8 +20,8 @@ PINNED = {
     'sources/fragments/food.json': 'a1f73c8170932d6b3192e9cd506686d516d23d30',
     'sources/fragments/health.json': 'cc29c439372b9d49debf78e63020ffe4d62baeb8',
     'sources/fragments/hist-field.json': '3dafa9425f3829c0be2e6fea00889aff95124031',
-    'sources/fragments/hist-food.json': 'd10628342fea5f177a8d1be00ddc7a9c2003d661',
-    'sources/fragments/hist-home.json': '8d85fd868508c5caba14a839d119d55f31f14f',
+    'sources/fragments/hist-food.json': 'd10628342fea5f177a8d1be00dd906d0c9c7850e',
+    'sources/fragments/hist-home.json': '8d85fd868508c5caba14a839d119d55f31f14f72',
     'sources/fragments/shelter.json': '2a3f1a7ddeab2782add875be1e0e378513504aa1',
     'sources/fragments/start.json': '96140d6d1872588e5d20d9052445c9157e88934d',
     'tools/fire_worksheet.js': '7bfd283205c68ec1cbd9666cb63051c332ba23ac',
@@ -46,6 +47,13 @@ def check_bundle(root: Path, safe_read) -> dict:
     require a fresh frozen manifest and qualified independent review, not a
     rewritten hash in a generated build report. A successful check is HOLD.
     """
+    # Reject malformed receipts before any synthetic mutation or filesystem read.
+    # Passing synthetic fixtures alone is never proof that these hard-coded
+    # receipts match the authentic archive; the real-checkout test proves that.
+    if len(PINNED) != 20 or any(
+            type(value) is not str or re.fullmatch(r'[0-9a-f]{40}', value) is None
+            for value in PINNED.values()):
+        raise ValueError('producer/source pin list must contain 20 valid 40-hex Git OIDs')
     required = {
         'sources/fragments': {Path(p).name for p in PINNED if p.startswith('sources/fragments/')},
         'tools': {Path(p).name for p in PINNED if p.startswith('tools/') and p.endswith('.js')},
