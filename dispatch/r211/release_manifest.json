@@ -1,0 +1,113 @@
+{
+  "id": "dispatch-r211-source-anchored-amendments-2026-11-08",
+  "status": "UNSENT_REVIEW_ALTERNATIVES_ONLY",
+  "source_master_pr": 175,
+  "original_master_sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "base_review_pr": 1590,
+  "base_sha": "247ea11b9fd0fee366f3d317f2667f2ff8aefa25",
+  "allocation": {
+    "editorial": [
+      1,
+      2,
+      4,
+      6
+    ],
+    "commercial_pending": [
+      3,
+      5
+    ]
+  },
+  "emails": [
+    {
+      "issue": 1,
+      "slug": "01-when-the-person-changed",
+      "kind": "editorial",
+      "subject": "The stranger they didn't see change",
+      "preheader": "A 1998 street experiment asks how much attention can really hold.",
+      "only_primary_cta": "Read the Change Blindness investigation",
+      "proposed_destination": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "approved": false,
+      "send_authorized": false
+    },
+    {
+      "issue": 2,
+      "slug": "02-the-patient-and-the-witness",
+      "kind": "editorial",
+      "subject": "What Puységur's witnesses could actually know",
+      "preheader": "The reports began in 1784; their claims remain a different question.",
+      "only_primary_cta": "Examine the Puységur source archive",
+      "proposed_destination": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "approved": false,
+      "send_authorized": false
+    },
+    {
+      "issue": 3,
+      "slug": "03-zen12-what-twelve-minutes-can-prove",
+      "kind": "commercial-review-pending",
+      "subject": "What twelve minutes can—and cannot—tell you",
+      "preheader": "A free observation exercise before considering Zen12's advertised audio library.",
+      "only_primary_cta": "Read the independent Zen12 evidence guide",
+      "proposed_destination": "[[APPROVED_LIVE_ZEN12_GUIDE_URL_REQUIRED]]",
+      "approved": false,
+      "send_authorized": false
+    },
+    {
+      "issue": 4,
+      "slug": "04-apollo-one-why-the-record-matters",
+      "kind": "editorial",
+      "subject": "Apollo 1: the cause was bigger than a spark",
+      "preheader": "NASA documented the hazards but could not isolate the exact ignition point.",
+      "only_primary_cta": "Investigate The Hatch Opened Inward",
+      "proposed_destination": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/",
+      "approved": false,
+      "send_authorized": false
+    },
+    {
+      "issue": 5,
+      "slug": "05-total-focus-what-is-in-the-recording",
+      "kind": "commercial-review-pending",
+      "subject": "Before buying a hypnosis recording, read the terms",
+      "preheader": "Total Focus is a specific product. Its advertised benefits are not verified outcomes.",
+      "only_primary_cta": "Review the independent Total Focus buyer guide",
+      "proposed_destination": "[[APPROVED_LIVE_TOTAL_FOCUS_GUIDE_URL_REQUIRED]]",
+      "approved": false,
+      "send_authorized": false
+    },
+    {
+      "issue": 6,
+      "slug": "06-the-notebook-is-not-the-verdict",
+      "kind": "editorial",
+      "subject": "The notebook is not the verdict",
+      "preheader": "What seven days of attention notes can help you decide—and what they can't.",
+      "only_primary_cta": "Open the Fieldbook PDF without signing up again",
+      "proposed_destination": "https://finalvestige.com/wp-content/uploads/2026/10/Final_Vestige_Seven_Day_Focus_Fieldbook_Complete_Edition.pdf",
+      "approved": false,
+      "send_authorized": false
+    }
+  ],
+  "release": {
+    "valid_fv_postal": false,
+    "rendered_native_unsubscribe": false,
+    "eligible_subscribers": false,
+    "received_welcome": false,
+    "merchant_named_acceptance": false,
+    "merchant_email_permission": false,
+    "issued_earning_url": false,
+    "live_independent_buyers_guides": false,
+    "verified_settled_sales": false,
+    "founder_final_approval": false
+  },
+  "provider_snapshot": "2026-11-08 14:31Z: WordPress status total 3 confirmed 3 unconfirmed 2 nonadditive; followers WordPress.com 3 email-only 0; actual provider eligible count not available; full body ON / auto new-post send OFF",
+  "direct_pdf_media_metadata": "WP media 1737 application/pdf filesize 599946; HTTP not tested",
+  "sources": [
+    "https://doi.org/10.3758/BF03208840",
+    "https://doi.org/10.1002/jhbs.21974",
+    "https://zen12.com/hnp",
+    "https://hypnosislive.com/mental-skills/total-focus",
+    "https://hypnosislive.com/faq",
+    "https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/",
+    "https://www.nasa.gov/wp-content/uploads/static/history/Apollo204/seamans.html",
+    "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business",
+    "https://wordpress.com/support/newsletter/email-appearance/"
+  ]
+}

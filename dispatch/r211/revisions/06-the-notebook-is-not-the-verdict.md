@@ -1,0 +1,37 @@
+# THE DISPATCH — R211 REVIEW ALTERNATIVE 06
+
+> **UNSENT REVIEW ALTERNATIVE — NOT CANONICAL / NOT APPROVED FOR EMAIL.**
+
+**Subject:** The notebook is not the verdict
+
+**Preheader:** What seven days of attention notes can help you decide—and what they can't.
+
+**Content type:** editorial
+
+---
+
+A week of attention notes can produce two temptations: declare the routine a revelation or dismiss it because life kept interrupting.
+
+Neither conclusion is quite fair to the evidence.
+
+Write down what you actually know. How many sessions did you attempt? How many did you finish? What interruptions did you record? What changed about the difficulty of getting started? Those facts will be less dramatic than a transformation story, but they'll be much more useful when you decide what to repeat.
+
+Then write down what the notebook cannot tell you. A week without a comparison group does not establish that a paid audio product improves concentration. One person's experience does not measure what would happen to everybody. And an entry made after the fact may be a memory, not an exact timestamp.
+
+The Seven Day Focus Fieldbook gives you room to record those distinctions, with a thirty-day follow-up log and questions for assessing audio claims. It's a practical record, not a clinical test and not a sales funnel you have to enter twice.
+
+If you already receive The Dispatch, you shouldn't have to submit another subscription request to open the workbook. The same PDF is linked in the configured welcome email. The direct file is the most appropriate destination for an existing reader.
+
+**ONE CTA:** Open the Fieldbook PDF without signing up again — https://finalvestige.com/wp-content/uploads/2026/10/Final_Vestige_Seven_Day_Focus_Fieldbook_Complete_Edition.pdf
+
+**Sources:** Final Vestige WordPress media asset 1737, titled *Seven Day Focus Fieldbook — Complete Edition* (provider metadata: application/pdf, 599,946 bytes); NIH NCCIH meditation evidence overview, https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety/ .
+
+**Pre-release check:** WordPress media metadata is verified, but the direct PDF HTTP response and file-open experience have NOT yet been independently tested.
+
+The point of keeping notes isn't to make life behave like an experiment. It's to know which conclusions your notes actually support.
+
+---
+PRE-SEND GATE — NOT PART OF APPROVED SENDING COPY.
+Sender: Final Vestige Studios. Valid publisher postal address: [[VALID_FINAL_VESTIGE_POSTAL_ADDRESS_REQUIRED]].
+Actual rendered Jetpack unsubscribe: [[JETPACK_UNSUBSCRIBE_MUST_BE_VERIFIED]].
+No actual received email, permission, or founder sign-off has been verified.
