@@ -38,6 +38,8 @@ class CandidatePlanTests(unittest.TestCase):
         if "release_gate.py" in argv[2]:
             report = Path(argv[-1])
             report.write_text('{"synthetic":"not a real release report"}', encoding="ascii")
+        if "defender_candidate_scan_r111.py" in argv[2]:
+            Path(argv[-1]).write_text('{"synthetic":"not a real Defender scan"}', encoding="ascii")
         return 0
 
     def test_exact_six_unique_apps_in_order(self):
@@ -49,7 +51,7 @@ class CandidatePlanTests(unittest.TestCase):
     def test_full_command_plan_never_uploads_or_publishes(self):
         module._execute_plan(self.root, self.run, "python.exe", self.runner)
         commands = [x[0] for x in self.calls]
-        self.assertEqual(len(commands), 3 + 6 * 5 + 7, 40)
+        self.assertEqual(len(commands), 3 + 6 * 5 + 10, 43)
         self.assertIn("offline_source_gate.py", commands[0][2])
         self.assertEqual(commands[1][3], "capture")
         self.assertEqual(commands[2][3], "capture")
@@ -60,6 +62,11 @@ class CandidatePlanTests(unittest.TestCase):
                             "--clean" in c and "--noconfirm" in c for c in builds))
         self.assertEqual(len([c for c in commands if "release_gate.py" in c[2]]), 1)
         self.assertEqual(len([c for c in commands if "report_attestation.py" in c[2]]), 1)
+        scans = [c for c in commands if "defender_candidate_scan_r111.py" in c[2]]
+        self.assertEqual(len(scans), 1)
+        self.assertIn("--expected-r9-sha256", scans[0])
+        self.assertIn("--report", scans[0])
+        self.assertGreater(commands.index(scans[0]), next(i for i, c in enumerate(commands) if "report_attestation.py" in c[2]))
         self.assertTrue(all("curl" not in " ".join(c).lower() and
                             "upload" not in " ".join(c).lower() for c in commands))
         self.assertTrue(all(cwd == self.root for _, cwd, _ in self.calls))
