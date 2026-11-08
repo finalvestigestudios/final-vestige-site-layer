@@ -1,0 +1,717 @@
+{
+  "milestone": "R205",
+  "revised_on": "2026-11-07 PT",
+  "branch": "mind-r205-ideomotor-evidence-and-commercial-acceptance-20261107",
+  "availability": "UNPUBLISHED SOURCE-ONLY; COMMERCIAL HARD HOLD",
+  "sources": [
+    {
+      "id": "P01",
+      "title": "1976 Easton Shor Chevreul pendulum controlled lab, abstract",
+      "url": "https://doi.org/10.1080/00221309.1976.9710871",
+      "scope": "publisher summary"
+    },
+    {
+      "id": "P02",
+      "title": "2012 Gauchou Rensink Fels Ouija indirect knowledge",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/22377138/",
+      "scope": "PubMed indexed abstract"
+    },
+    {
+      "id": "P03",
+      "title": "2022 Moga Dienes nonreplication using pendulum",
+      "url": "https://doi.org/10.1080/00029157.2021.2010641",
+      "scope": "publisher summary and discussion excerpt"
+    },
+    {
+      "id": "P04",
+      "title": "2017 Olson Jeyanesan Raz pendulum detection",
+      "url": "https://digitalcommons.chapman.edu/psychology_articles/82/",
+      "scope": "university repository abstract"
+    },
+    {
+      "id": "P05",
+      "title": "2018 online / 2019 issue Andersen et al paired Ouija visual prediction",
+      "url": "https://doi.org/10.1007/s11097-018-9585-8",
+      "scope": "open primary article"
+    },
+    {
+      "id": "P06",
+      "title": "2011 Shenefelt historical ideomotor review",
+      "url": "https://doi.org/10.1080/00029157.2011.10401754",
+      "scope": "historical review abstract"
+    },
+    {
+      "id": "P07",
+      "title": "2020 Lynn Kirsch Terhune Green hypnosis myths review",
+      "url": "https://doi.org/10.1002/acp.3730",
+      "scope": "review abstract"
+    },
+    {
+      "id": "P08",
+      "title": "2024 Zahedi Lynn Sommer theories review",
+      "url": "https://doi.org/10.1016/j.concog.2024.103730",
+      "scope": "review summary"
+    },
+    {
+      "id": "P09",
+      "title": "Lush 2020 distinct Collabra expectancy study",
+      "url": "https://doi.org/10.1525/collabra.325",
+      "scope": "full paper"
+    },
+    {
+      "id": "P10",
+      "title": "Lush et al Nature Communications 2020 n353",
+      "url": "https://doi.org/10.1038/s41467-020-18591-6",
+      "scope": "open original RHI dataset"
+    },
+    {
+      "id": "P11",
+      "title": "Ehrsson et al 2022 same-data reanalysis",
+      "url": "https://www.nature.com/articles/s41467-022-28177-z",
+      "scope": "open Matters Arising"
+    },
+    {
+      "id": "P12",
+      "title": "Lush Seth 2022 published reply",
+      "url": "https://doi.org/10.1038/s41467-022-28178-y",
+      "scope": "open scholarly reply"
+    },
+    {
+      "id": "M01",
+      "title": "Official Inspire3 catalog",
+      "url": "https://inspire3.com/",
+      "scope": "seller corporate page"
+    },
+    {
+      "id": "M02",
+      "title": "Exact official Zen12 Premium offer",
+      "url": "https://zen12.com/hnp",
+      "scope": "seller page, rendered text may be stale/dynamic, checkout not authenticated"
+    },
+    {
+      "id": "M03",
+      "title": "Official Hypnosis Live Total Focus offer",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "scope": "seller primary page; secondary offer not active"
+    },
+    {
+      "id": "M04",
+      "title": "Public Inspire3 affiliate portal",
+      "url": "https://affiliates.inspire3.com/",
+      "scope": "public recruitment; NOT account approval"
+    },
+    {
+      "id": "F01",
+      "title": "FTC endorsement and disclosure FAQ",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "scope": "FTC official guidance"
+    },
+    {
+      "id": "F02",
+      "title": "FTC Health Products Compliance Guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "scope": "FTC official guidance"
+    },
+    {
+      "id": "FV01",
+      "title": "Puységur historic files",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "scope": "authenticated WordPress published page metadata, scientific text not re-reviewed"
+    },
+    {
+      "id": "FV02",
+      "title": "Published Mesmerism investigation",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "scope": "authenticated WordPress search published post"
+    },
+    {
+      "id": "FV03",
+      "title": "Published Change Blindness investigation",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "scope": "previous authenticated publication and Issue #171"
+    },
+    {
+      "id": "FV04",
+      "title": "Existing Focus Fieldbook route",
+      "url": "https://finalvestige.com/focus/",
+      "scope": "Issue #171 live route; confirmed subscriber data unavailable"
+    }
+  ],
+  "source_count": 22,
+  "claims": [
+    {
+      "id": "ID01",
+      "statement": "Tiny hand movements can amplify a hand-held pendulum oscillation",
+      "decision": "supported within mechanism, not supernatural inference",
+      "source_ids": [
+        "P01",
+        "P06"
+      ],
+      "limit": "motion alone does not identify intention"
+    },
+    {
+      "id": "ID02",
+      "statement": "Easton/Shor studied 60 college students and quantified pendulum movement",
+      "decision": "supported in publisher abstract",
+      "source_ids": [
+        "P01"
+      ],
+      "limit": "not population prevalence or hypnosis trial"
+    },
+    {
+      "id": "ID03",
+      "statement": "Chevreul and Carpenter historically studied ideomotor accounts",
+      "decision": "historical review, not direct original-source audit",
+      "source_ids": [
+        "P06"
+      ],
+      "limit": "no claim of magnetism"
+    },
+    {
+      "id": "ID04",
+      "statement": "2012 verbal guesses ~50% vs Ouija ~65% in designated condition",
+      "decision": "supported within study",
+      "source_ids": [
+        "P02"
+      ],
+      "limit": "not universal implicit knowledge access"
+    },
+    {
+      "id": "ID05",
+      "statement": "2022 pendulum study replicated the Ouija advantage",
+      "decision": "REJECT",
+      "source_ids": [
+        "P02",
+        "P03"
+      ],
+      "limit": "method changed; negative replication"
+    },
+    {
+      "id": "ID06",
+      "statement": "2022 pendulum/verbal guessing at chance without advantage",
+      "decision": "supported within publisher text",
+      "source_ids": [
+        "P03"
+      ],
+      "limit": "not conclusive falsification across all protocols"
+    },
+    {
+      "id": "ID07",
+      "statement": "2017 first study pendulum accuracy 53% verbal accuracy 57%",
+      "decision": "supported university summary",
+      "source_ids": [
+        "P04"
+      ],
+      "limit": "different bias metrics and sample"
+    },
+    {
+      "id": "ID08",
+      "statement": "2017 second study n40 reported bias difference",
+      "decision": "supported university summary",
+      "source_ids": [
+        "P04"
+      ],
+      "limit": "not superiority in cognitive power"
+    },
+    {
+      "id": "ID09",
+      "statement": "Ouija conference eye-tracking study appeared online 2018 and journal 2019",
+      "decision": "supported",
+      "source_ids": [
+        "P05"
+      ],
+      "limit": "conference field participants, paired agency"
+    },
+    {
+      "id": "ID10",
+      "statement": "Ouija observed sequence proves spirits",
+      "decision": "REJECT",
+      "source_ids": [
+        "P05",
+        "P06"
+      ],
+      "limit": "no evidence of external source"
+    },
+    {
+      "id": "ID11",
+      "statement": "Historical animal magnetism proves modern hypnosis audio effects",
+      "decision": "REJECT",
+      "source_ids": [
+        "FV01",
+        "P06"
+      ],
+      "limit": "historical connection only"
+    },
+    {
+      "id": "ID12",
+      "statement": "Ideomotor trials are product-specific Zen12 or Hypnosis Live tests",
+      "decision": "REJECT",
+      "source_ids": [
+        "P02",
+        "P03",
+        "M02",
+        "M03"
+      ],
+      "limit": "none tested named consumer programs"
+    },
+    {
+      "id": "ID13",
+      "statement": "Free written prediction/measurement checklist is experimentally proven therapy",
+      "decision": "REJECT",
+      "source_ids": [
+        "P01",
+        "P04"
+      ],
+      "limit": "editorial reasoning exercise only"
+    },
+    {
+      "id": "RHI01",
+      "statement": "Lush solo 2020 Collabra and Lush et al 2020 Nat Comms are same dataset",
+      "decision": "REJECT",
+      "source_ids": [
+        "P09",
+        "P10"
+      ],
+      "limit": "separate experiments and participants"
+    },
+    {
+      "id": "RHI02",
+      "statement": "2022 Ehrsson reanalysis used same n353 Nature Communications RHI participants",
+      "decision": "supported",
+      "source_ids": [
+        "P10",
+        "P11"
+      ],
+      "limit": "NOT independent replication; S1–S3 includes touch and ownership"
+    },
+    {
+      "id": "RHI03",
+      "statement": "Difference score association rho -0.066 p .219 proves suggestion absent",
+      "decision": "REJECT",
+      "source_ids": [
+        "P11",
+        "P12"
+      ],
+      "limit": "non-significance applies to specific comparison, disagreement remains"
+    },
+    {
+      "id": "Z01",
+      "statement": "Zen12 seller describes 12 levels and 48 MP3 recordings",
+      "decision": "SELLER_DESCRIPTION_ONLY",
+      "source_ids": [
+        "M02"
+      ],
+      "limit": "not independently delivered/used"
+    },
+    {
+      "id": "Z02",
+      "statement": "Zen12 seller describes four listening styles and 12-minute sessions",
+      "decision": "SELLER_DESCRIPTION_ONLY",
+      "source_ids": [
+        "M02"
+      ],
+      "limit": "format not efficacy"
+    },
+    {
+      "id": "Z03",
+      "statement": "Zen12 advertised one-year money-back guarantee",
+      "decision": "SELLER_POLICY_ONLY",
+      "source_ids": [
+        "M02"
+      ],
+      "limit": "checkout conditions and refund performance not validated"
+    },
+    {
+      "id": "Z04",
+      "statement": "Current exact Zen12 checkout amount can be quoted confidently",
+      "decision": "UNKNOWN_DO_NOT_PUBLISH_PRICE",
+      "source_ids": [
+        "M02"
+      ],
+      "limit": "public extracted listing currently $87 while prior dated R199-R203 drafts state $87.99; currency/taxes/offer/checkout unresolved"
+    },
+    {
+      "id": "Z05",
+      "statement": "Zen12 12 minutes equals one hour of meditation",
+      "decision": "REJECT_UNSUPPORTED_PRODUCT_CLAIM",
+      "source_ids": [
+        "M02",
+        "F02"
+      ],
+      "limit": "comparative efficacy not established by specific trials"
+    },
+    {
+      "id": "Z06",
+      "statement": "Zen12 recording treats anxiety, trauma, ADHD or health conditions",
+      "decision": "REJECT_UNSUPPORTED_HEALTH",
+      "source_ids": [
+        "M02",
+        "F02"
+      ],
+      "limit": "medical claim requires appropriate product-specific proof"
+    },
+    {
+      "id": "Z07",
+      "statement": "Hypnosis Live Total Focus seller lists 33min/47MB",
+      "decision": "SELLER_DESCRIPTION_ONLY",
+      "source_ids": [
+        "M03"
+      ],
+      "limit": "no independent review of file"
+    },
+    {
+      "id": "Z08",
+      "statement": "Total Focus guarantees 100% concentration",
+      "decision": "REJECT_UNSUPPORTED_PRODUCT_CLAIM",
+      "source_ids": [
+        "M03",
+        "F02"
+      ],
+      "limit": "not evidenced; price varies in public snapshots"
+    },
+    {
+      "id": "AUTH01",
+      "statement": "Inspire3 public affiliate portal proves FV was accepted",
+      "decision": "REJECT",
+      "source_ids": [
+        "M04"
+      ],
+      "limit": "private dashboard or named confirmation needed"
+    },
+    {
+      "id": "AUTH02",
+      "statement": "Affiliate public marketing establishes FV-specific payout rates, cookie and allowed email",
+      "decision": "REJECT",
+      "source_ids": [
+        "M04"
+      ],
+      "limit": "do not claim personalized commission terms"
+    },
+    {
+      "id": "FTC01",
+      "statement": "Material affiliate relationship must be clear and close to recommendation",
+      "decision": "supported",
+      "source_ids": [
+        "F01"
+      ],
+      "limit": "requires adjacent human-readable disclosure"
+    },
+    {
+      "id": "FTC02",
+      "statement": "General studies of hypnosis substantiate branded health benefit claims",
+      "decision": "REJECT",
+      "source_ids": [
+        "F02",
+        "P07"
+      ],
+      "limit": "intervention-specific independent evidence necessary"
+    },
+    {
+      "id": "FOCUS01",
+      "statement": "Focus Fieldbook is an existing optional free route",
+      "decision": "supported published destination",
+      "source_ids": [
+        "FV04"
+      ],
+      "limit": "not proof of confirmed opt-in"
+    },
+    {
+      "id": "FOCUS02",
+      "statement": "Jetpack client-side PDF shown confirms email signup",
+      "decision": "REJECT",
+      "source_ids": [
+        "FV04"
+      ],
+      "limit": "needs authoritative backend confirmation"
+    },
+    {
+      "id": "REV01",
+      "statement": "Affiliate outbound click equals a commission",
+      "decision": "REJECT",
+      "source_ids": [
+        "M04"
+      ],
+      "limit": "merchant-confirmed paid conversion and settlement required"
+    },
+    {
+      "id": "REV02",
+      "statement": "Net revenue/1000 human sessions is computable now",
+      "decision": "UNKNOWN_NOT_COMPUTABLE",
+      "source_ids": [
+        "M04",
+        "FV04"
+      ],
+      "limit": "paid orders, fees, refunds and eligible human denominator unavailable"
+    }
+  ],
+  "claim_count": 32,
+  "gates": [
+    {
+      "id": "G01",
+      "requirement": "publisher acceptance for Final Vestige",
+      "status": "OPEN",
+      "evidence": null
+    },
+    {
+      "id": "G02",
+      "requirement": "affiliate account ownership and identity",
+      "status": "OPEN",
+      "evidence": null
+    },
+    {
+      "id": "G03",
+      "requirement": "Zen12 offer eligible in signed agreement",
+      "status": "OPEN",
+      "evidence": null
+    },
+    {
+      "id": "G04",
+      "requirement": "organic-social channel permitted",
+      "status": "OPEN",
+      "evidence": null
+    },
+    {
+      "id": "G05",
+      "requirement": "email/Jetpack channel permitted",
+      "status": "OPEN",
+      "evidence": null
+    },
+    {
+      "id": "G06",
+      "requirement": "account-issued tracking URL format",
+      "status": "OPEN",
+      "evidence": null
+    },
+    {
+      "id": "G07",
+      "requirement": "attribution cookie window",
+      "status": "OPEN",
+      "evidence": null
+    },
+    {
+      "id": "G08",
+      "requirement": "allowed paid/unpaid creatives and approved language",
+      "status": "OPEN",
+      "evidence": null
+    },
+    {
+      "id": "G09",
+      "requirement": "merchant current final checkout price",
+      "status": "OPEN",
+      "evidence": null
+    },
+    {
+      "id": "G10",
+      "requirement": "merchant checkout tax and currency",
+      "status": "OPEN",
+      "evidence": null
+    },
+    {
+      "id": "G11",
+      "requirement": "refund policy terms exact and enforceable",
+      "status": "OPEN",
+      "evidence": null
+    },
+    {
+      "id": "G12",
+      "requirement": "independent branded health claims substantiation or deletion",
+      "status": "OPEN",
+      "evidence": null
+    },
+    {
+      "id": "G13",
+      "requirement": "editorial outside reviewer accepted",
+      "status": "OPEN",
+      "evidence": null
+    },
+    {
+      "id": "G14",
+      "requirement": "copyright and creative-rights approval",
+      "status": "OPEN",
+      "evidence": null
+    },
+    {
+      "id": "G15",
+      "requirement": "founder commercial release approval",
+      "status": "OPEN",
+      "evidence": null
+    },
+    {
+      "id": "G16",
+      "requirement": "founder website publish approval",
+      "status": "OPEN",
+      "evidence": null
+    },
+    {
+      "id": "G17",
+      "requirement": "WordPress QA on draft/staging",
+      "status": "OPEN",
+      "evidence": null
+    },
+    {
+      "id": "G18",
+      "requirement": "browser WCAG 2.2 AA QA",
+      "status": "OPEN",
+      "evidence": null
+    },
+    {
+      "id": "G19",
+      "requirement": "no-JS verification",
+      "status": "OPEN",
+      "evidence": null
+    },
+    {
+      "id": "G20",
+      "requirement": "Core Web Vitals mobile validation",
+      "status": "OPEN",
+      "evidence": null
+    },
+    {
+      "id": "G21",
+      "requirement": "first-party campaign IDs from Grok",
+      "status": "OPEN",
+      "evidence": null
+    },
+    {
+      "id": "G22",
+      "requirement": "actual approved landing destination from Grok",
+      "status": "OPEN",
+      "evidence": null
+    },
+    {
+      "id": "G23",
+      "requirement": "Jetpack confirmed subscription evidence",
+      "status": "OPEN",
+      "evidence": null
+    },
+    {
+      "id": "G24",
+      "requirement": "Payhip owned Mind SKU license and rights",
+      "status": "OPEN",
+      "evidence": null
+    },
+    {
+      "id": "G25",
+      "requirement": "Payhip authenticated live checkout",
+      "status": "OPEN",
+      "evidence": null
+    },
+    {
+      "id": "G26",
+      "requirement": "merchant confirmed paid affiliate sale",
+      "status": "OPEN",
+      "evidence": null
+    },
+    {
+      "id": "G27",
+      "requirement": "affiliate fees and refunds",
+      "status": "OPEN",
+      "evidence": null
+    },
+    {
+      "id": "G28",
+      "requirement": "qualified-human denominator",
+      "status": "OPEN",
+      "evidence": null
+    },
+    {
+      "id": "G29",
+      "requirement": "7/30 day cohort reconciliation",
+      "status": "OPEN",
+      "evidence": null
+    },
+    {
+      "id": "G30",
+      "requirement": "video poster captions and playback verified",
+      "status": "OPEN",
+      "evidence": null
+    },
+    {
+      "id": "G31",
+      "requirement": "Dispatch #174 channel approval",
+      "status": "OPEN",
+      "evidence": null
+    },
+    {
+      "id": "G32",
+      "requirement": "site QA #126 acceptance",
+      "status": "OPEN",
+      "evidence": null
+    }
+  ],
+  "gate_count": 32,
+  "all_gates_open": true,
+  "lead_offer": {
+    "name": "Zen12 Premium",
+    "merchant": "Inspire3",
+    "exact_page": "https://zen12.com/hnp",
+    "specific_partner_acceptance": null,
+    "issued_affiliate_url": null,
+    "allowed_channels": null,
+    "personal_commission_terms": null,
+    "final_checkout_price": null,
+    "refund_validation": null,
+    "brand_specific_outcome_trials": null,
+    "merchant_confirmed_orders": null,
+    "net_revenue": null,
+    "paid_purchase_cta": "DISABLED",
+    "fallback_owned_mind_product": "NOT AUTHENTICATED"
+  },
+  "offer_discrepancy": "Older R199-R203 drafts reported seller displayed $87.99. Independently accessible seller-page text consulted R205 displays $87 Premium. Without controlled same-session checkout and currency/terms verification do not claim either as paid checkout price.",
+  "creator_to_offer_fits": [
+    {
+      "topic": "change blindness",
+      "destination": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "status": "published",
+      "hook_for_grok": "A visual change can go missing even while we stare; show the primary experiment",
+      "asset_id": null,
+      "offer": "optional /focus/ only; Zen12 guide only after approval"
+    },
+    {
+      "topic": "mesmerism / Puységur",
+      "destination": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "status": "published",
+      "hook_for_grok": "What Franklin's commission did and did not find in 1784",
+      "asset_id": null,
+      "offer": "historical files, Focus optional, no direct health claim"
+    },
+    {
+      "topic": "ideomotor pendulum",
+      "destination": null,
+      "status": "unpublished R205 draft",
+      "hook_for_grok": "The pendulum moves: watch what happens when prediction is separated from measurement",
+      "asset_id": null,
+      "offer": "no live CTA until approved article route; independent Zen12 pre-sell separate"
+    }
+  ],
+  "experiment": {
+    "A": "evidence-led text only",
+    "B": "identical guide + optional static poster/storyboard 42s video concept and WebVTT",
+    "status": "UNRENDERED, UNPUBLISHED, NOT RANDOMIZED",
+    "traffic": false,
+    "conversion": null,
+    "primary_endpoint": "7/30-day independently confirmed net revenue per 1000 qualified human sessions, not CTA clicks",
+    "randomization": "consented or privacy-safe first-party at session level only if site QA and founder approve",
+    "guardrails": [
+      "no JS required for reading",
+      "no play/autoplay until source video exists",
+      "no active commercial link until account approval",
+      "no inferred medical outcomes",
+      "no PII event payloads"
+    ]
+  },
+  "event_contract": {
+    "campaign_landing": "first-party recognized human session + real Grok asset_id, UTM source/medium/campaign/content where available",
+    "article_to_fieldbook_click": "navigation only, not confirmed lead",
+    "confirmed_signup": "Jetpack authoritative confirmed opt-in only",
+    "affiliate_click": "only if verified earning link active; not a sale",
+    "merchant_paid_conversion": "private merchant-confirmed order/settled commission only",
+    "net_revenue_per_1000": "(settled gross proceeds - refunds - processing and affiliate fees) * 1000 / qualified-human sessions; unknown until components verified",
+    "cohorts": [
+      "7 days",
+      "30 days"
+    ],
+    "storage": "no IP, name, email, fingerprint, cross-site ID, URL parameters containing PII or duplicate tracking scripts"
+  },
+  "no_live_changes": true
+}

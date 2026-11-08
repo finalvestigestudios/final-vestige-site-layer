@@ -1,7 +1,7 @@
 {
   "milestone": "R204",
-  "researched": "2026-11-07",
-  "repo_branch": "mind-r204-rubber-hand-evidence-and-commercial-gates-20261107",
+  "researched": "2026-11-07 (R205 independent provenance QA correction)",
+  "repo_branch": "mind-r205-ideomotor-evidence-and-commercial-acceptance-20261107",
   "state": "SOURCE_CONTROLLED_NOT_LIVE",
   "sources": [
     {
@@ -30,15 +30,15 @@
     },
     {
       "id": "S05",
-      "title": "Lush 2020",
+      "title": "Lush solo-author Collabra 2020 expectancy study (distinct, small sample)",
       "url": "https://doi.org/10.1525/collabra.325",
-      "scope": "open primary full text"
+      "scope": "open original Collabra article; expectation/prediction design, NOT 353-person dataset"
     },
     {
       "id": "S06",
       "title": "Ehrsson et al 2022",
       "url": "https://www.nature.com/articles/s41467-022-28177-z",
-      "scope": "open primary reanalysis / Matters Arising; NOT new independent experiment"
+      "scope": "reanalysis of Lush et al 2020 Nature Communications sample n=353; composite S1-S3 referred-touch + ownership; not independent sample"
     },
     {
       "id": "S07",
@@ -93,9 +93,21 @@
       "title": "FV live Mesmerism",
       "url": "https://finalvestige.com/2026/11/02/mesmerism/",
       "scope": "site indexed published content; do not imply presently audited full text"
+    },
+    {
+      "id": "S16",
+      "title": "Lush et al 2020 Nature Communications phenomenological control and rubber hand",
+      "url": "https://doi.org/10.1038/s41467-020-18591-6",
+      "scope": "open primary 2020 study, 353-participant RHI dataset later reanalyzed by Ehrsson"
+    },
+    {
+      "id": "S17",
+      "title": "Lush and Seth 2022 reply to Ehrsson on expectancy controls",
+      "url": "https://doi.org/10.1038/s41467-022-28178-y",
+      "scope": "open published scientific reply, same dataset and disagreement"
     }
   ],
-  "source_count": 15,
+  "source_count": 17,
   "claims": [
     {
       "id": "RH01",
@@ -139,18 +151,22 @@
       "decision": "REJECT",
       "source_ids": [
         "S05",
-        "S06"
+        "S16",
+        "S06",
+        "S17"
       ],
-      "limit": "2020 demand challenge and 2022 reanalysis conflict; do not portray as resolved"
+      "limit": "Solo-author Collabra expectation study is DISTINCT from Lush et al Nature Communications n=353 study; Ehrsson reanalysis and Lush/Seth reply disagree about subtraction control, no definitive single cause."
     },
     {
       "id": "RH06",
-      "claim": "Ehrsson et al 2022 used 353 participants in a reanalysis",
+      "claim": "Ehrsson et al 2022 reanalyzed the same Lush et al 2020 n=353 sample using synchronous-minus-asynchronous S1-S3 composite (referred touch + ownership), rho -0.066, p .219",
       "decision": "SUPPORTED",
       "source_ids": [
-        "S06"
+        "S16",
+        "S06",
+        "S17"
       ],
-      "limit": "reanalysis of Lush study; not independent newly recruited sample"
+      "limit": "not independent replication; nonsignificant association is specific to composite/difference-score contrast, not proof that all expectancy effects are absent; Lush/Seth question control"
     },
     {
       "id": "RH07",
@@ -273,9 +289,30 @@
         "S14"
       ],
       "limit": "merchant inventory/account not authenticated"
+    },
+    {
+      "id": "RH08",
+      "claim": "The solo-authored Collabra 2020 Lush study and the 353-person Nature Communications 2020 study are the same participant dataset",
+      "decision": "REJECT",
+      "source_ids": [
+        "S05",
+        "S16",
+        "S06"
+      ],
+      "limit": "separate samples, papers and designs; 2022 exchange reanalyses the 2020 Nature Communications sample"
+    },
+    {
+      "id": "RH09",
+      "claim": "The 2022 scholarly reply disputes that asynchronous-condition subtraction neutralizes expectation differences",
+      "decision": "SUPPORTED_AS_ARGUMENT_NOT_PROOF",
+      "source_ids": [
+        "S17",
+        "S06"
+      ],
+      "limit": "published dispute, not experimentally settled mechanistic verdict"
     }
   ],
-  "claim_count": 19,
+  "claim_count": 21,
   "gates": [
     {
       "id": "publisher_identity_and_approval",
