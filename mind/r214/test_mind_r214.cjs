@@ -37,10 +37,12 @@ function validate(bundle){
  must(guide.includes('<details')&&guide.includes('42-second film concept')&&guide.includes('Transcript'),'optional media transcript');
  must(!guide.includes('<video')&&!/\bautoplay\s*=/.test(guide)&&guide.includes('not rendered'),'media strictly concept only');
  must(vtt.startsWith('WEBVTT')&&vtt.includes('00:00:42.000')&&(vtt.match(/-->/g)||[]).length===5,'caption concept timing & five cues');
- must(matrix.artifact_status!=='LIVE'&&matrix.authorized_outbound===false&&matrix.affiliate_url===null,'matrix authorization hard hold');
+ must(matrix.status==='UNPUBLISHED_SOURCE_ONLY'&&matrix.artifact_status!=='LIVE'&&matrix.authorized_outbound===false&&matrix.affiliate_url===null,'matrix exact unpublished status and authorization hard hold');
  must(matrix.claimed_revenue===null&&matrix.prices_verified_at_checkout===false,'no fake revenue or price');
  must(Array.isArray(matrix.claims)&&matrix.claims.length>=20,'sufficient source claim ledger');
- must(Array.isArray(matrix.gates)&&matrix.gates.filter(g=>g.status==='HOLD'||g.status==='UNKNOWN').length>=10,'unresolved commercial gates');
+ const expectedGateIds=['G01','G02','G03','G04','G05','G06','G07','G08','G09','G10','G18'];const gateById=new Map((matrix.gates||[]).map(g=>[g.id,g]));
+ must(Array.isArray(matrix.gates)&&new Set(matrix.gates.map(g=>g.id)).size===matrix.gates.length,'unique commercial gate IDs');
+ for(const id of expectedGateIds)must(gateById.has(id)&&['HOLD','UNKNOWN'].includes(gateById.get(id).status),'required unresolved release gate '+id);
  const ids=new Set((matrix.source_registry||[]).map(v=>v.id));for(const c of matrix.claims||[])for(const i of c.source_ids||[])must(ids.has(i),'unknown claim source '+c.id+'/'+i);
  must((matrix.source_registry||[]).every(x=>/^https:\/\//.test(x.url)),'all public source links full https');
  must(plan.includes('NOT COMPUTABLE')&&plan.includes('qualified_human_sessions')&&plan.includes('settled_owned_receipts'),'explicit revenue contract');
@@ -72,7 +74,10 @@ function runMutations(original){
  ['remove VTT',b=>b[REQUIRED[3]]=b[REQUIRED[3]].replace(/-->/g,'')],
  ['invent creator existing post',b=>b[REQUIRED[8]]=b[REQUIRED[8]].replace('Candidate creator topic about an unnoticed scene change (NO authenticated Grok post or asset ID yet)',"Grok's existing video about an unnoticed scene change")],
  ['old author wrong',b=>b[REQUIRED[6]]=b[REQUIRED[6]].replace('Violet A. Brown','Valerie Brown')],
- ['old year wrong',b=>b[REQUIRED[7]]=b[REQUIRED[7]].replace('2022 JASA review','2023 JASA review')]
+ ['old year wrong',b=>b[REQUIRED[7]]=b[REQUIRED[7]].replace('2022 JASA review','2023 JASA review')],
+ ['mark article live',b=>{const m=JSON.parse(b[REQUIRED[4]]);m.status='LIVE';b[REQUIRED[4]]=JSON.stringify(m)}],
+ ['delete founder gate G18',b=>{const m=JSON.parse(b[REQUIRED[4]]);m.gates=m.gates.filter(g=>g.id!=='G18');b[REQUIRED[4]]=JSON.stringify(m)}],
+ ['approve founder gate without approval',b=>{const m=JSON.parse(b[REQUIRED[4]]);m.gates.find(g=>g.id==='G18').status='PASS';b[REQUIRED[4]]=JSON.stringify(m)}]
  ];
  const results=[];for(const [label,mutate] of mutants){const bundle={...original};mutate(bundle);const violations=validate(bundle);results.push({label,rejected:violations.length>0,violations:violations.slice(0,2)})}return results;
 }
