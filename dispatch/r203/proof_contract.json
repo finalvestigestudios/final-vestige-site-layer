@@ -1,0 +1,104 @@
+{
+  "schema_version": "dispatch-r203-v1",
+  "as_of_utc": "2026-11-08T06:32:22Z",
+  "data_policy": "aggregate only; no subscriber PII, email addresses, tokens, or actual offer URL",
+  "newsletter_status": {
+    "enabled": true,
+    "automatic_new_posts": false,
+    "email_content_format": "full",
+    "reply_to": "no-reply",
+    "counts": {
+      "total": 3,
+      "confirmed": 3,
+      "unconfirmed": 2,
+      "suppressed": 0
+    },
+    "counts_additive": false,
+    "email_eligible_exact": null,
+    "welcome_configured": true,
+    "welcome_received_proven": false,
+    "recent_campaign_sends": 0
+  },
+  "release_approvals": {
+    "founder_final_creative": false,
+    "founder_sending": false,
+    "final_recipient_eligibility": false,
+    "approved_sender_postal_address": false,
+    "native_email_preview_inspected": false,
+    "received_email_html_and_plaintext_verified": false,
+    "operational_opt_out_verified": false,
+    "allowed_promotion_consent_verified": false
+  },
+  "merchant": {
+    "zen12": {
+      "publisher_approved": false,
+      "email_channel_permission": false,
+      "account_earning_link_verified": false,
+      "approved_live_guide": false,
+      "final_checkout_terms_verified": false,
+      "product_efficacy_independent": false
+    },
+    "total_focus": {
+      "publisher_approved": false,
+      "email_channel_permission": false,
+      "account_earning_link_verified": false,
+      "approved_live_guide": false,
+      "final_checkout_terms_verified": false,
+      "product_efficacy_independent": false,
+      "seller_refund_ceiling": "FAQ max 5 sessions/year; not independent proof"
+    }
+  },
+  "issues": [
+    {
+      "issue": 1,
+      "kind": "editorial",
+      "release_state": "HOLD_UNSENT",
+      "merchant_state": null
+    },
+    {
+      "issue": 2,
+      "kind": "editorial",
+      "release_state": "HOLD_UNSENT",
+      "merchant_state": null
+    },
+    {
+      "issue": 3,
+      "kind": "commercial_review_pending",
+      "release_state": "HOLD_UNSENT",
+      "merchant_state": "HOLD_MERCHANT"
+    },
+    {
+      "issue": 4,
+      "kind": "editorial",
+      "release_state": "HOLD_UNSENT",
+      "merchant_state": null
+    },
+    {
+      "issue": 5,
+      "kind": "commercial_review_pending",
+      "release_state": "HOLD_UNSENT",
+      "merchant_state": "HOLD_MERCHANT"
+    },
+    {
+      "issue": 6,
+      "kind": "editorial",
+      "release_state": "HOLD_UNSENT",
+      "merchant_state": null
+    }
+  ],
+  "revenue": {
+    "verified_settled_orders": null,
+    "verified_net_commissions": null,
+    "qualified_human_sessions": null,
+    "net_revenue_per_1000_qualified_human_sessions": "NOT_COMPUTABLE"
+  },
+  "source_urls": [
+    "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/174",
+    "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+    "https://zen12.com/hnp",
+    "https://hypnosislive.com/mental-skills/total-focus",
+    "https://hypnosislive.com/faq",
+    "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business",
+    "https://wordpress.com/support/newsletter/email-appearance/"
+  ]
+}
