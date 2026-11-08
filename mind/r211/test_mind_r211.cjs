@@ -52,7 +52,7 @@ function validate(f){
  check((prev.claims||[]).find(c=>c.id==='C05')?.statement.includes('Rahl') &&
        (prev.claims||[]).find(c=>c.id==='C06')?.caveat.includes('acceptance-only'),'inherited R210 matrix corrected');
  check((prev.claims||[]).find(c=>c.id==='C13')?.caveat.includes('unresolved')===false,'avoid unsupported price fluctuation causality');
- check((j.source_refs||[]).length===18 && (j.claims||[]).length===26 && (j.gates||[]).length===16,'matrix source claim gate counts');
+ check((j.source_refs||[]).length===19 && (j.claims||[]).length===27 && (j.gates||[]).length===16,'matrix source claim gate counts');
  check((j.gates||[]).every(g=>g.status==='OPEN'),'no false gate clearance');
  check(j.public_commerce_activation===false && j.commercial_link==='NONE_ACTIVE' && j.release==='HARD_HOLD','affiliate hard hold');
  check((j.claims||[]).find(c=>c.id==='C18')?.statement.includes('five sessions'),'Total Focus refund caveat in machine source');
@@ -61,7 +61,9 @@ function validate(f){
  check(j.measurement_contract?.kpi_current==='NOT_COMPUTABLE' && j.measurement_contract?.click_not_sale===true && j.measurement_contract?.lead_not_sale===true,'truthful paid conversion measurement');
  check((j.measurement_contract?.cohorts_days||[]).join('/')==='7/30','cohorts defined');
  check(f.plan.includes('TASK-008')&&f.plan.includes('qualified_human_session')&&f.plan.includes('NOT COMPUTABLE'),'creator-to-revenue acceptance complete');
- check(f.plan.includes('no fingerprinting')&&f.plan.includes('No name, email')===false,'privacy safe');
+ check(f.plan.includes('no fingerprinting') && f.plan.includes('no name, email, raw IP') && j.measurement_contract?.direct_identity_tracking===false && j.measurement_contract?.third_party_new_scripts===false && /no PII, no IP, no fingerprint/i.test(j.measurement_contract?.privacy||''),'privacy-safe data contract and no new scripts');
+ check(f.article.includes('## An eighteenth-century shadow: Puységur')&&f.article.includes('pubmed.ncbi.nlm.nih.gov/26301795/')&&f.article.includes('116 analyzed'),'reviewed Coué chronology, truth study, Wood samples');
+ check((j.source_refs||[]).find(s=>s.id==='P06')?.url==='https://pubmed.ncbi.nlm.nih.gov/26301795/' && (j.claims||[]).find(c=>c.id==='C27')?.status==='ABSTRACT_SCOPE_EVIDENCE','illusory-truth source ledger bound');
  check(!/https?:\/\/(?:www\.)?(?:awin1\.com|clickbank\.net)\/[^\s\"]+/.test(f.guide),'no fabricated earning URL');
  return errors;
 }
@@ -90,7 +92,12 @@ function mutationSuite(origin){
  ['introduce second paid signup',x=>x.hub=x.hub.replace('No subscriber is counted here','A subscriber is confirmed here')],
  ['omit human source / conversion plan',x=>x.plan=x.plan.replace('qualified_human_session','impression_only')],
  ['erase first-author correction',x=>x.r210article=x.r210article.replace('Hayley A. Rahl','Emily Lindsay')],
- ['deny N4 research',x=>x.r210article=x.r210article.replace('**four undergraduate readers**','**four hundred readers**')]
+ ['deny N4 research',x=>x.r210article=x.r210article.replace('**four undergraduate readers**','**four hundred readers**')],
+ ['enable identity tracking',x=>{const j=JSON.parse(x.matrix);j.measurement_contract.direct_identity_tracking=true;x.matrix=JSON.stringify(j)}],
+ ['enable third-party scripts',x=>{const j=JSON.parse(x.matrix);j.measurement_contract.third_party_new_scripts=true;x.matrix=JSON.stringify(j)}],
+ ['strip no-PII rule',x=>{const j=JSON.parse(x.matrix);j.measurement_contract.privacy='record personal identities in attribution';x.matrix=JSON.stringify(j)}],
+ ['remove direct source for illusory truth',x=>x.article=x.article.replaceAll('https://pubmed.ncbi.nlm.nih.gov/26301795/','https://example.invalid/missing')],
+ ['rewrite eighteenth-century heading',x=>x.article=x.article.replace('## An eighteenth-century shadow: Puységur','## A nineteenth-century shadow: Puységur')]
  ];
  let rejected=0;const misses=[];
  for(const [label,mutate] of cases){

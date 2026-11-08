@@ -15,7 +15,7 @@ It had twenty knots in it.
 
 In the instructions printed in Émile Coué's *Self Mastery Through Conscious Autosuggestion*, the knots served as a counter. A person was to close their eyes, repeat a general sentence twenty times in the morning and again at night, and use the string to keep the count without giving the counting much thought. The words were familiar even to people who have never opened the book: a promise that every day, in every respect, the speaker was getting better.
 
-The book was published in New York in 1922. Its practice was intended for ordinary mornings and bedtimes, not a laboratory. Coué wanted the act to become almost mechanical. The knot was a small piece of equipment for a very large claim.
+The cited work is the **1922 New York English edition**, rather than a photograph of a French first edition. Its practice was intended for ordinary mornings and bedtimes, not a laboratory. Coué wanted the act to become almost mechanical. The knot was a small piece of equipment for a very large claim.
 
 The object matters because it lets us see exactly what was being prescribed. Not a vague instruction to think positively. A particular phrase, a prescribed number of repetitions, a time of day, a manner of speaking, and an account of what the mind was supposed to do in response.
 
@@ -29,7 +29,7 @@ Coué opened his book by describing autosuggestion as something both newly misun
 
 His examples range from everyday confidence to serious illness. That range is the problem as well as the historical interest. A claim that words may change expectation is different from the assertion that words can cure damaged organs. The latter requires medical evidence of a kind that the book's stories and instructions do not supply.
 
-The English edition includes a table of contents that is itself instructive. After Coué's theoretical discussion come principles, observations, proposals for education, a survey of sessions, and letters from people treated by his method. The arrangement makes the practice feel accumulated and tested. There are many incidents, many voices, many pages.
+The 1922 New York English edition includes a table of contents that is itself instructive. Coué's own expository chapters sit beside observations, reports and testimonial material attributed to other contributors. Authorship and evidentiary status differ: a patient's letter, a practitioner's report and Coué's instructions are not interchangeable primary evidence of a cure. The arrangement makes the practice feel accumulated and tested. There are many incidents, many voices, many pages.
 
 But a long collection of accounts is not necessarily a comparison. It can tell us what people reported and believed; it does not tell us what would have happened to similar people who did not receive the suggestion, what diagnoses were verified, or which disappointing results were never recorded.
 
@@ -51,7 +51,7 @@ In the book, Coué also made striking claims about the unconscious acting on org
 
 The right historical question is not whether Coué secretly discovered modern neuroscience. It is what his published instructions actually proposed, how he tried to make them credible, and which parts have survived as cultural common sense.
 
-## A nineteenth-century shadow: Puységur
+## An eighteenth-century shadow: Puységur
 
 Final Vestige's [Puységur's Animal Magnetism Files](https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/) follows a different historical chapter: accounts of magnetic sleep, rapport, apparent obedience, consent, cure stories and witness testimony in the late eighteenth century. The archive identifies the historical sources and the limits of what those sources can establish.
 
@@ -83,11 +83,11 @@ Coué's book is valuable as historical evidence of what was taught and reported.
 
 One especially useful modern comparison concerns **positive self-statements**, not Coué's own protocol.
 
-In 2009, Joanne V. Wood, W. Q. Elaine Perunovic and John W. Lee investigated the effects of repeating a positive statement. Their paper, *Positive self-statements: Power for some, peril for others*, reported experiments in which such statements could make some participants with low self-esteem feel worse rather than better. Limited favorable responses appeared in participants with high self-esteem.
+In 2009, Joanne V. Wood, W. Q. Elaine Perunovic and John W. Lee examined positive self-statements in undergraduate samples. Their publication first reports a 249-person survey, then a 68-person experiment comparing sixteen repetitions of a self-statement over four minutes with a control condition, and a separate online experiment with 116 analyzed participants comparing positive-only focus with mixed true/not-true focus. The immediate measures concerned mood and state self-esteem, not treatment outcomes or long-term change. The paper reports that repeating the statement could leave some low-self-esteem participants feeling worse; benefits for high-self-esteem participants were not consistently significant in every experiment. The sampled and excluded populations also constrain generalization, including reported exclusion of East Asian participants. These bounds matter before anyone turns a brief laboratory finding into an audience-wide rule.
 
 That does **not** mean Coué's exact twenty-knot ritual was tested and disproved. The population, wording, outcomes and context differ. But it cuts against the broad commercial assumption that repeating a reassuring sentence must be universally harmless, helpful or effective.
 
-The paper also raises a more subtle possibility. If a repeated phrase is far from what a person actually believes, it may call attention to the discrepancy instead of resolving it. An affirmation can become an argument with oneself.
+The paper also raises a more subtle possibility. One possible interpretation is that a phrase inconsistent with what a person believes can foreground that discrepancy. This is a tentative account of the results, not a mechanism experimentally settled by the paper, and not a claim about every affirmation. An encouraging sentence can become an argument with oneself.
 
 The investigators did not test every form of suggestion, every history of mental illness, every audio program or every length of practice. The finding is a warning against overgeneralization, not a universal prohibition on kind self-talk.
 
@@ -95,7 +95,7 @@ The investigators did not test every form of suggestion, every history of mental
 
 ## The other problem with an encouraging sentence
 
-A sentence can feel increasingly familiar through repetition without becoming more true. Research on the illusory-truth effect examines how familiarity can influence truth judgments under particular experimental conditions. It does not tell us that every affirmation creates false belief, nor does it establish the efficacy of a therapy.
+A sentence can feel increasingly familiar through repetition without becoming more true. In experiments by Fazio, Brashier, Payne and Marsh (2015), repeated statements were judged more likely to be true under specified laboratory conditions, including when people had relevant prior knowledge. The research concerns judged truth of presented statements; it does **not** establish that self-affirmations change illness, or that anyone who repeats a phrase must come to believe it. [Primary study abstract: Fazio and colleagues, 2015](https://pubmed.ncbi.nlm.nih.gov/26301795/).
 
 Still, it suggests an editorial rule worth keeping: **repetition and verification are separate actions**.
 
@@ -146,10 +146,11 @@ Whether the repetitions produced the promised cures is the question the book did
 ### Source ledger and limits — research checked 7 November 2026
 
 1. **Original historical work:** Émile Coué, *Self Mastery Through Conscious Autosuggestion*, 1922 English edition, complete [Project Gutenberg transcription](https://www.gutenberg.org/files/27203/27203-h/27203-h.htm) and [page-level 1922 scan index](https://en.wikisource.org/wiki/Index:Cou%C3%A9_-_Self_Mastery_Through_Conscious_Autosuggestion_%281922%29.djvu). Supports what was prescribed and claimed; not independent clinical validation. Gutenberg text notes editorial changes.
-2. **Primary experimental study:** Wood JV, Perunovic WQE, Lee JW. “Positive self-statements: Power for some, peril for others.” *Psychological Science* (2009). [PMID 19493324](https://pubmed.ncbi.nlm.nih.gov/19493324/). Studies specified positive self-statements, not the complete Coué ritual or commercial audio.
-3. **Review/interpretive comparison:** Kirsch I, “Clinical hypnosis as a nondeceptive placebo: empirically derived techniques,” *American Journal of Clinical Hypnosis* (2023). [PMID 36638224](https://pubmed.ncbi.nlm.nih.gov/36638224/). Conceptual clinical review of expectancy; cannot establish branded-product effects.
-4. **Historical archive:** Final Vestige's [Puységur's Animal Magnetism Files](https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/), a source-led archive of eighteenth-century accounts. Context and historical comparison only.
-5. **Official product provenance:** [Inspire3 catalog](https://inspire3.com/), [Zen12 Premium](https://zen12.com/hnp), [Hypnosis Live Total Focus](https://hypnosislive.com/mental-skills/total-focus), [Hypnosis Live FAQ](https://hypnosislive.com/faq). Product terms are seller assertions; actual checkout and account authorization unverified.
-6. **Compliance:** [FTC Endorsement Guides staff Q&A](https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking) and [Health Products Compliance Guidance](https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance). No fabricated experience, health guarantee, undisclosed earning relationship or speculative commission.
+2. **Primary experimental study:** Wood JV, Perunovic WQE, Lee JW. “Positive self-statements: Power for some, peril for others.” *Psychological Science* (2009). [PMID 19493324](https://pubmed.ncbi.nlm.nih.gov/19493324/). Studies specified immediate self-statement tasks in undergraduate samples (249 survey, 68 in the repeated-statement experiment, 116 analyzed in the online experiment), not the complete Coué ritual, long-term clinical outcomes or commercial audio. The article's detailed procedural reading uses the [full research paper](https://www.uni-muenster.de/imperia/md/content/psyifp/aeechterhoff/wintersemester2011-12/seminarthemenfelderdersozialpsychologie/04_wood_etal_selfstatements_psychscience2009.pdf); interpret the PubMed abstract more narrowly.
+3. **Additional primary cognitive experiment:** Fazio LK, Brashier NM, Payne BK, Marsh EJ (2015). “Knowledge does not protect against illusory truth.” *Journal of Experimental Psychology: General*, [PubMed 26301795](https://pubmed.ncbi.nlm.nih.gov/26301795/), abstract-level check. Supports narrow repeated-statement truth-judgment observations, not medical or branded-product claims.
+4. **Review/interpretive comparison:** Kirsch I, “Clinical hypnosis as a nondeceptive placebo: empirically derived techniques,” *American Journal of Clinical Hypnosis* (2023). [PMID 36638224](https://pubmed.ncbi.nlm.nih.gov/36638224/). Conceptual clinical review of expectancy; cannot establish branded-product effects.
+5. **Historical archive: Final Vestige's [Puységur's Animal Magnetism Files](https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/), a source-led archive of eighteenth-century accounts. Context and historical comparison only.
+6. **Official product provenance: [Inspire3 catalog](https://inspire3.com/), [Zen12 Premium](https://zen12.com/hnp), [Hypnosis Live Total Focus](https://hypnosislive.com/mental-skills/total-focus), [Hypnosis Live FAQ](https://hypnosislive.com/faq). Product terms are seller assertions; actual checkout and account authorization unverified.
+7. **Compliance: [FTC Endorsement Guides staff Q&A](https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking) and [Health Products Compliance Guidance](https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance). No fabricated experience, health guarantee, undisclosed earning relationship or speculative commission.
 
 **Editorial separation:** This is an unpublished historical investigation. It contains no earning link, personal product experience, medical advice, diagnosis, price claim or endorsement. Any product decision guide remains separate, gated and clearly disclosed.

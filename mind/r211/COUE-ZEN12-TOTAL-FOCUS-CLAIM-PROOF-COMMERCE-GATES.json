@@ -1,6 +1,6 @@
 {
-  "schema": "fv-mind-r211/claims-v1",
-  "checked_local_date": "2026-11-07",
+  "schema": "fv-mind-r211/claims-v1-corrected-r212",
+  "checked_local_date": "2026-11-08",
   "workstream": "Mind & Perception ONLY",
   "status": "UNPUBLISHED_CLAIMS_REVIEW",
   "public_commerce_activation": false,
@@ -9,7 +9,7 @@
     {
       "id": "H01",
       "kind": "primary_history",
-      "title": "Coué 1922, complete English edition",
+      "title": "Coué, 1922 New York English edition and separately attributed observations/testimonials",
       "url": "https://www.gutenberg.org/files/27203/27203-h/27203-h.htm",
       "review_scope": "public source; read/editorial evidence only; seller pages are not transaction proofs"
     },
@@ -25,14 +25,14 @@
       "kind": "primary_experiment",
       "title": "Wood et al 2009 positive self-statements",
       "url": "https://pubmed.ncbi.nlm.nih.gov/19493324/",
-      "review_scope": "public source; read/editorial evidence only; seller pages are not transaction proofs"
+      "review_scope": "PubMed abstract and research paper full-text inspected; 249 survey, 68 statement-v-control, 116 analyzed online; undergraduate samples, immediate mood/state self-esteem outcomes; exclusions restrict generalization; NOT Coué protocol"
     },
     {
       "id": "P02",
       "kind": "review",
       "title": "Kirsch 2023 hypnotic expectancy review",
       "url": "https://pubmed.ncbi.nlm.nih.gov/36638224/",
-      "review_scope": "public source; read/editorial evidence only; seller pages are not transaction proofs"
+      "review_scope": "abstract level only, conceptual review; no product-specific efficacy substantiation"
     },
     {
       "id": "P03",
@@ -131,6 +131,13 @@
       "title": "Mesmerism published",
       "url": "https://finalvestige.com/2026/11/02/mesmerism/",
       "review_scope": "public source; read/editorial evidence only; seller pages are not transaction proofs"
+    },
+    {
+      "id": "P06",
+      "kind": "primary_experiment",
+      "title": "Fazio, Brashier, Payne and Marsh 2015, knowledge and illusory-truth ratings",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26301795/",
+      "review_scope": "indexed abstract only; repeated statement perceived-truth judgments, not autosuggestion/clinical outcome"
     }
   ],
   "claims": [
@@ -147,13 +154,13 @@
     },
     {
       "id": "C02",
-      "statement": "Coué said his patients' illnesses were routinely cured by suggestion",
+      "statement": "The 1922 English edition contains historical cure accounts spanning multiple conditions and separately attributed observations and testimonials",
       "status": "HISTORICAL_AUTHOR_CLAIM_NOT_VERIFIED",
       "basis": [
         "H01"
       ],
       "placement": "History contextual only",
-      "caveat": "Cases/letters not independent trials; do not endorse medical effects"
+      "caveat": "Accounts are not independent trials; do not infer a measured routine cure rate, product efficacy, or verified diagnosis"
     },
     {
       "id": "C03",
@@ -173,7 +180,7 @@
         "P01"
       ],
       "placement": "History evidence commentary",
-      "caveat": "Different phrase and design from Coué/merchant programs"
+      "caveat": "249-person survey, 68-person 16-repetition comparison, 116 analyzed online experiment; immediate mood/state self-esteem, undergraduate selection; distinct from Coué and branded audio, effect not uniformly significant"
     },
     {
       "id": "C05",
@@ -395,6 +402,16 @@
       "basis": [],
       "placement": "Experiment proposal only",
       "caveat": "No rendered video, randomized traffic, partner authorization, verified purchase or sample"
+    },
+    {
+      "id": "C27",
+      "statement": "Fazio et al 2015 reported an illusory-truth effect on truth judgments in specified experiments, including cases of prior knowledge",
+      "status": "ABSTRACT_SCOPE_EVIDENCE",
+      "basis": [
+        "P06"
+      ],
+      "placement": "Coué article, narrow editorial comparison only",
+      "caveat": "No evidence that repeated Coué phrasing cures conditions or that Zen12 induces clinically effective belief"
     }
   ],
   "buyer_objections": [
