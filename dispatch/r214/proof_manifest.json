@@ -1,0 +1,127 @@
+{
+  "schema": "fv-dispatch-r214-preheader-source-proof-v1",
+  "run_date_local": "2026-11-08",
+  "verification_method": "authenticated GitHub fetch_file exact blobs + independent V8 source assertions",
+  "upstream_prs": [
+    175,
+    201,
+    1597,
+    1609
+  ],
+  "read_only_wordpress": {
+    "as_of": "2026-11-08T17:38:58+00:00",
+    "newsletter_enabled": true,
+    "auto_send_new_posts": false,
+    "email_format": "full",
+    "dashboard_total": 3,
+    "dashboard_confirmed": 3,
+    "unconfirmed_requests": 2,
+    "follower_breakdown_wpcom": 3,
+    "follower_breakdown_email_only": 0,
+    "eligible_recipients": "UNKNOWN",
+    "welcome_configured": true,
+    "welcome_received_verified": false
+  },
+  "qa": {
+    "exact_github_source_assertions": {
+      "passed": 79,
+      "total": 79
+    },
+    "original_master_python_tests": {
+      "passed": 6,
+      "total": 6,
+      "execution": "native Python 2026-11-08 17:40 UTC on R206 local archive",
+      "identity_check": "all eight original campaign manifest + issue files + test SHA1 Git blob match PR #175 at exact original head; README absent from archive"
+    },
+    "native_node_new_script": {
+      "syntax_verified": true,
+      "executed": false
+    },
+    "github_ci_run_verified": false,
+    "native_jetpack_email_preview": false,
+    "real_received_email_verified": false,
+    "postal_address_verified": false,
+    "unsubscribe_function_verified": false,
+    "merchant_email_permission_verified": false,
+    "reconciled_paid_orders_verified": false
+  },
+  "decisions": {
+    "all_issues": "HOLD_UNSENT",
+    "issues_03_05": "HOLD_MERCHANT",
+    "net_revenue_per_1000_qualified_human_sessions": "NOT_COMPUTABLE"
+  },
+  "issues": [
+    {
+      "issue": "01",
+      "type": "editorial_draft_hold",
+      "source_path": "dispatch/r211/preview/01-when-the-person-changed.html",
+      "source_blob_sha": "3148f1599714efa1decb188c40eae997892911ad",
+      "review_path": "dispatch/r214/preview/01-when-the-person-changed.html",
+      "review_blob_sha": "5c47dcb6431661a6eb60b7f565c3fde94c66066b",
+      "first_body_preheader_inserted": true,
+      "source_content_preserved_except_one_presentation_preheader": true,
+      "merchant_release_allowed": false,
+      "send_allowed": false
+    },
+    {
+      "issue": "02",
+      "type": "editorial_draft_hold",
+      "source_path": "dispatch/r211/preview/02-the-patient-and-the-witness.html",
+      "source_blob_sha": "b68dd602830ae041cd27a416d9517644a19e700a",
+      "review_path": "dispatch/r214/preview/02-the-patient-and-the-witness.html",
+      "review_blob_sha": "2df9bb93fa4e29f6502650b4fd60842dbcb4ff9d",
+      "first_body_preheader_inserted": true,
+      "source_content_preserved_except_one_presentation_preheader": true,
+      "merchant_release_allowed": false,
+      "send_allowed": false
+    },
+    {
+      "issue": "03",
+      "type": "commercial_draft_hold",
+      "source_path": "dispatch/r211/preview/03-zen12-what-twelve-minutes-can-prove.html",
+      "source_blob_sha": "f5a69e65130554f44db055e0cb55b2df9616b451",
+      "review_path": "dispatch/r214/preview/03-zen12-what-twelve-minutes-can-prove.html",
+      "review_blob_sha": "6736ca76f173bf41de3c637f7acd550f86807cf4",
+      "first_body_preheader_inserted": true,
+      "source_content_preserved_except_one_presentation_preheader": true,
+      "merchant_release_allowed": false,
+      "send_allowed": false
+    },
+    {
+      "issue": "04",
+      "type": "editorial_draft_hold",
+      "source_path": "dispatch/r211/preview/04-apollo-one-why-the-record-matters.html",
+      "source_blob_sha": "dd660257b9b1b90822b344091cce788f0e1c26cf",
+      "review_path": "dispatch/r214/preview/04-apollo-one-why-the-record-matters.html",
+      "review_blob_sha": "0d40923d0138c62f9ffb6ab175aad2dabb5f7aae",
+      "first_body_preheader_inserted": true,
+      "source_content_preserved_except_one_presentation_preheader": true,
+      "merchant_release_allowed": false,
+      "send_allowed": false
+    },
+    {
+      "issue": "05",
+      "type": "commercial_draft_hold",
+      "source_path": "dispatch/r211/preview/05-total-focus-what-is-in-the-recording.html",
+      "source_blob_sha": "6b0b05d72b4b0a6181e0cce0617c5d3237e63c2d",
+      "review_path": "dispatch/r214/preview/05-total-focus-what-is-in-the-recording.html",
+      "review_blob_sha": "cae6676a67fa982a6960312d5a70a859ca9f8b9e",
+      "first_body_preheader_inserted": true,
+      "source_content_preserved_except_one_presentation_preheader": true,
+      "merchant_release_allowed": false,
+      "send_allowed": false
+    },
+    {
+      "issue": "06",
+      "type": "editorial_draft_hold",
+      "source_path": "dispatch/r211/preview/06-the-notebook-is-not-the-verdict.html",
+      "source_blob_sha": "16afce0c80d11ccffbe05aebf1bd2348b18b5c4b",
+      "review_path": "dispatch/r214/preview/06-the-notebook-is-not-the-verdict.html",
+      "review_blob_sha": "4ff46e577d607aabc5db0bdc6c898acef6601d08",
+      "first_body_preheader_inserted": true,
+      "source_content_preserved_except_one_presentation_preheader": true,
+      "merchant_release_allowed": false,
+      "send_allowed": false
+    }
+  ]
+}
