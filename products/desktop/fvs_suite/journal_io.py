@@ -7,12 +7,34 @@ filesystem adversaries or a guarantee that a file stays immutable afterward.
 """
 from __future__ import annotations
 
+from functools import wraps
 import os
 from pathlib import Path
 import stat
 from typing import Callable
 
 from .csv_snapshot import _same_path_descriptor_signature
+
+
+def _redact_os_errors(message: str):
+    """Drop sensitive OS-error paths from messages and exception chains.
+
+    Raise only after leaving the handler: ``from None`` still retains
+    ``__context__`` and can expose a financial evidence pathname to callers.
+    Ordinary domain ValueErrors and interrupts are not translated.
+    """
+    def decorate(func):
+        @wraps(func)
+        def guarded(*args, **kwargs):
+            failed = False
+            try:
+                return func(*args, **kwargs)
+            except OSError:
+                failed = True
+            if failed:
+                raise ValueError(message)
+        return guarded
+    return decorate
 
 
 def _regular(info: os.stat_result, limit: int, kind: str) -> None:
@@ -38,10 +60,13 @@ def _unchanged(before: os.stat_result, after: os.stat_result) -> bool:
 
 
 def _same_path(path: Path, descriptor: os.stat_result, kind: str) -> os.stat_result:
+    missing = False
     try:
         current = os.lstat(path)
-    except FileNotFoundError as exc:
-        raise ValueError(f"{kind} path changed during access") from exc
+    except FileNotFoundError:
+        missing = True
+    if missing:
+        raise ValueError(f"{kind} path changed during access")
     if (not stat.S_ISREG(current.st_mode) or current.st_nlink != 1
             or _identity(current) != _identity(descriptor)):
         raise ValueError(f"{kind} path changed during access")
@@ -54,6 +79,7 @@ def _flags(base: int) -> int:
     return base | getattr(os, "O_BINARY", 0) | getattr(os, "O_NOFOLLOW", 0) | getattr(os, "O_CLOEXEC", 0)
 
 
+@_redact_os_errors("Review evidence cannot be read; inspect local input permissions")
 def read_regular_bytes(path: str | Path, limit: int, kind: str) -> bytes:
     """Read at most ``limit`` bytes from a stable, non-aliased regular file.
 
@@ -84,6 +110,7 @@ def read_regular_bytes(path: str | Path, limit: int, kind: str) -> bytes:
         os.close(descriptor)
 
 
+@_redact_os_errors("Review journal I/O failed; inspect journal before retrying")
 def append_verified_event(path: str | Path, data: bytes, limit: int,
                           verify: Callable[[], None]) -> None:
     """Append one validated JSONL event without following replaced journal paths.
@@ -110,6 +137,7 @@ def append_verified_event(path: str | Path, data: bytes, limit: int,
     descriptor = os.open(target, _flags(flags), 0o600)
     created = first is None
     wrote = False
+    path_baseline = None
     try:
         before = os.fstat(descriptor)
         _regular(before, limit, "Review journal")
@@ -144,14 +172,15 @@ def append_verified_event(path: str | Path, data: bytes, limit: int,
         _same_path(target, ending, "Review journal")
     finally:
         os.close(descriptor)
-        # Never leave an empty new journal after a pre-write verification error.
-        # Do not remove a file that a concurrent actor has replaced or edited.
-        if created and not wrote:
+        # An indeterminate empty journal is review evidence, not disposable.
+        # Unlink only the same *unchanged pathname snapshot* established before
+        # validation; do not rely on inode + zero size alone.
+        if created and not wrote and path_baseline is not None:
             try:
                 current = os.lstat(target)
                 if (stat.S_ISREG(current.st_mode)
-                    and _identity(current) == _identity(before)
-                    and current.st_size == 0):
+                    and current.st_size == 0
+                    and _unchanged(path_baseline, current)):
                     os.unlink(target)
-            except (FileNotFoundError, UnboundLocalError):
+            except FileNotFoundError:
                 pass
