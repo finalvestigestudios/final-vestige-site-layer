@@ -33,7 +33,7 @@ function validate(f){
   c(!/<script\b|<iframe\b|<form\b|<video\b|\sautoplay(?:\s|=|>)/i.test(s),"no_scripts_forms_or_video_"+id);
   const ids=[...s.matchAll(/\bid=["']([^"']+)["']/g)].map(x=>x[1]);
   c(ids.length===new Set(ids).size,"unique_html_ids_"+id);
-  c(/<button[^>]*disabled[^>]*>/.test(s)&&s.includes('aria-disabled="true"'),"disabled_cta_"+id);
+  c(/<button[^>]*\sdisabled(?:\s|>)/.test(s)&&s.includes('aria-disabled="true"'),"disabled_cta_"+id);
   c(s.includes("Prospective affiliate disclosure")&&s.includes("No affiliate link is active"),"adjacent_affiliate_disclosure_"+id);
   c(!/awin1\.com|gtag\(|approved affiliate link/i.test(s),"no_tracking_or_approval_"+id);
  }
@@ -90,11 +90,11 @@ function run(f){
  attempt("inject_script",x=>x.b=x.b.replace("</body>","<script src='https://test.invalid/tracker.js'></script></body>"));
  attempt("inject_new_email_form",x=>x.hub=x.hub.replace("</main>","<form><input type='email'></form></main>"));
  attempt("force_autoplay",x=>x.b=x.b.replace("</main>","<video autoplay></video></main>"));
- attempt("AB_copy_not_identical",x=>x.b=x.b.replace("forty-eight MP3 recordings","forty-seven MP3 recordings"));
+ attempt("AB_copy_not_identical",x=>x.b=x.b.replaceAll("forty-eight MP3 recordings","forty-seven MP3 recordings"));
  attempt("break_VTT_end",x=>x.vtt=x.vtt.replace("00:00:42.000","00:00:43.000"));
  attempt("break_VTT_gap",x=>x.vtt=x.vtt.replace("00:00:26.000 --> 00:00:35.000","00:00:27.000 --> 00:00:35.000"));
  attempt("remove_handoff",x=>x.plan=x.plan.replaceAll("TASK-008","unknown"));
- attempt("change_r217_p",x=>x.inheritedArticle=x.inheritedArticle.replace("p = .93","p = .03"));
+ attempt("change_r217_p",x=>x.inheritedArticle=x.inheritedArticle.replaceAll("p = .93","p = .03"));
  attempt("erase_r217_matrix",x=>{const o=JSON.parse(x.inheritedMatrix);o.claims.find(c=>c.id==="C03").limits="No methods";x.inheritedMatrix=JSON.stringify(o)});
  return {baseline,caught:mutations.filter(x=>x.detected).length,total:mutations.length,mutations,pass:baseline.length===0&&mutations.every(x=>x.detected)};
 }
