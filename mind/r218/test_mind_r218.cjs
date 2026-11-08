@@ -22,7 +22,7 @@ function validate(f){
  c(article.trim().split(/\s+/).length>2500&&article.includes("UNPUBLISHED / SOURCE REVIEW"),"deep_article");
  for(const link of ["https://doi.org/10.1038/35784","https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0021659","https://online.ucpress.edu/collabra/article/6/1/22/113067/","https://www.psy.ox.ac.uk/publication/19214"])
   c(article.includes(link),"article_source_"+link.slice(-12));
- c(article.includes("demand characteristics")&&article.includes("not a one-to-one ownership meter")&&article.includes("None of the experiments discussed here tested Zen12 Premium"),"science_limits");
+ c(article.includes("demand characteristics")&&article.includes("as if it were a one-to-one ownership meter")&&article.includes("None of the experiments discussed here tested Zen12 Premium"),"science_limits");
  c(article.includes("https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"),"history_bridge");
  c(!/awin1\.com|<script/i.test(article),"no_affiliate_research");
  const main=s=>(s.match(/<main class="wrap" id="content">[\s\S]*?<\/main>/)||[])[0];
