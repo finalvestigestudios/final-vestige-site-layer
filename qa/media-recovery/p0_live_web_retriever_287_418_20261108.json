@@ -1,0 +1,83 @@
+{
+  "schema": "fv-source-wrapper-p0-20261108-v1",
+  "observed_date_utc": "2026-11-08",
+  "method": "Independent public text/image web.open retrieval; no direct origin HTTP headers, no CDP, no binary download",
+  "original_wordpress_p0_ledger": {
+    "path": "qa/media-recovery/p0_guest_browser_disposition_pending_20261105.json",
+    "git_blob_sha": "9bf9a973fce37a546f8c3e79ecd0c34345eb2457"
+  },
+  "scope": "Exact original source 287:5, same-publisher relocation candidate, original 418:2",
+  "production_writes": 0,
+  "guest_browser_verified": false,
+  "guest_origin_http_statuses_known": 0,
+  "rights_clearances_granted": 0,
+  "rows": [
+    {
+      "image_key": "287:5",
+      "role": "published_original",
+      "url": "https://stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+      "observation": "WEB_OPEN_FETCH_404",
+      "web_tool_status": 404,
+      "real_origin_http_status": null,
+      "guest_browser_http_status": null,
+      "browser_decode": null,
+      "transferred_bytes": null,
+      "exact_image_hash": null,
+      "reference": "turn884100view0",
+      "rights_release": "HOLD",
+      "cache_authorized": false,
+      "wordpress_write_authorized": false
+    },
+    {
+      "image_key": "287:5",
+      "role": "publisher_relocation_candidate",
+      "url": "https://media.stpetecatalyst.com/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+      "observation": "WEB_OPEN_IMAGE_RENDERED",
+      "web_tool_status": null,
+      "real_origin_http_status": null,
+      "guest_browser_http_status": null,
+      "browser_decode": null,
+      "transferred_bytes": null,
+      "exact_image_hash": null,
+      "reference": "turn884100view1",
+      "source_article": "https://stpetecatalyst.com/skyway-disaster-documentary-available-for-streaming/",
+      "source_article_published": "2020-04-10",
+      "source_article_credit": "University Press of Florida",
+      "same_photograph_binary_proven": false,
+      "rights_release": "HOLD",
+      "original_dimensions_px": null,
+      "conditional_max_width_px": 960,
+      "derivative_height_px": null,
+      "no_upscale": true,
+      "cache_authorized": false,
+      "wordpress_write_authorized": false
+    },
+    {
+      "image_key": "418:2",
+      "role": "published_original",
+      "url": "https://www.history.uscg.mil/Portals/6/5_%20Scotch_Cap_debris2_1946.jpg",
+      "observation": "WEB_OPEN_FETCH_403",
+      "web_tool_status": 403,
+      "real_origin_http_status": null,
+      "guest_browser_http_status": null,
+      "browser_decode": null,
+      "transferred_bytes": null,
+      "exact_image_hash": null,
+      "reference": "turn884100view2",
+      "rights_release": "HOLD",
+      "source_event_year": 1946,
+      "chronology_ambiguous_noaa_candidate": true,
+      "cache_authorized": false,
+      "wordpress_write_authorized": false
+    }
+  ],
+  "policy": {
+    "claims_about_42_broken": "UNVERIFIED",
+    "claimed_76_percent_reduction": "UNMEASURED",
+    "priority_guest_cdp_before_candidate_rewrite": true,
+    "media_rehosting_allowed": false,
+    "visual_integrity_review_required": true,
+    "homepage_design_owner_unaffected": true,
+    "subscription_spend_usd": 0
+  }
+}
