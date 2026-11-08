@@ -1,0 +1,507 @@
+{
+  "schema_version": "fv-mind-r218-1",
+  "review_date": "2026-11-08",
+  "scope": "UNPUBLISHED Mind & Perception editorial, Zen12 eligibility and conversion experiment",
+  "evidence_limits": "Public seller pages and published abstracts only; no actual affiliate account, checkout, product use, film, customer transaction or live A/B tested",
+  "offer": {
+    "id": "zen12-premium",
+    "named_approval_verified": false,
+    "affiliate_link": null,
+    "approved_channel_rights": [],
+    "checkout_price_verified": null,
+    "refund_fulfillment_verified": false,
+    "commission_cleared_verified": false,
+    "activation_allowed": false
+  },
+  "sources": [
+    {
+      "id": "S01",
+      "type": "PRIMARY_ABSTRACT",
+      "title": "Botvinick Cohen, 1998 Nature rubber hand",
+      "url": "https://doi.org/10.1038/35784"
+    },
+    {
+      "id": "S02",
+      "type": "PRIMARY_FULL_TEXT",
+      "title": "Rohde Di Luca Ernst, 2011 PLOS drift/ownership",
+      "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0021659"
+    },
+    {
+      "id": "S03",
+      "type": "INSTITUTIONAL_ABSTRACT",
+      "title": "Ehrsson Spence Passingham, 2004 premotor",
+      "url": "https://www.psy.ox.ac.uk/publication/19214"
+    },
+    {
+      "id": "S04",
+      "type": "PRIMARY_INDEXED_ABSTRACT",
+      "title": "Uncertainty based inference, 2022",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36165441/"
+    },
+    {
+      "id": "S05",
+      "type": "PRIMARY_FULL_TEXT",
+      "title": "Lush 2020 demand characteristics",
+      "url": "https://online.ucpress.edu/collabra/article/6/1/22/113067/Demand-Characteristics-Confound-the-Rubber-Hand"
+    },
+    {
+      "id": "S06",
+      "type": "PUBLISHED_FV",
+      "title": "Puységur Animal Magnetism Files",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+    },
+    {
+      "id": "S07",
+      "type": "PUBLISHED_FV",
+      "title": "Change blindness investigation",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/"
+    },
+    {
+      "id": "S08",
+      "type": "PUBLISHED_FV",
+      "title": "Mesmerism investigation",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/"
+    },
+    {
+      "id": "S09",
+      "type": "PUBLISHED_FV_FREE",
+      "title": "Seven Day Focus Fieldbook",
+      "url": "https://finalvestige.com/focus/"
+    },
+    {
+      "id": "S10",
+      "type": "SELLER_CATALOG",
+      "title": "Inspire3 product catalog",
+      "url": "https://inspire3.com/"
+    },
+    {
+      "id": "S11",
+      "type": "SELLER_EXACT_PAGE",
+      "title": "Zen12 Premium official offer",
+      "url": "https://zen12.com/hnp"
+    },
+    {
+      "id": "S12",
+      "type": "SELLER_EXACT_PAGE",
+      "title": "Hypnosis Live Total Focus",
+      "url": "https://hypnosislive.com/mental-skills/total-focus"
+    },
+    {
+      "id": "S13",
+      "type": "SELLER_FAQ",
+      "title": "Hypnosis Live returns FAQ",
+      "url": "https://hypnosislive.com/faq"
+    },
+    {
+      "id": "S14",
+      "type": "FTC_GUIDANCE",
+      "title": "FTC endorsement guides FAQ",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking"
+    },
+    {
+      "id": "S15",
+      "type": "FTC_GUIDANCE",
+      "title": "FTC health claims substantiation guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+    },
+    {
+      "id": "S16",
+      "type": "GOVERNANCE",
+      "title": "Mind affiliate issue",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171"
+    },
+    {
+      "id": "S17",
+      "type": "GOVERNANCE",
+      "title": "FV conversion and attribution issue",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820"
+    },
+    {
+      "id": "S18",
+      "type": "GOVERNANCE",
+      "title": "FV business charter",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/818"
+    },
+    {
+      "id": "S19",
+      "type": "GOVERNANCE",
+      "title": "Dispatch coordination",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/174"
+    },
+    {
+      "id": "S20",
+      "type": "FROZEN_EXPERIMENT",
+      "title": "R210 original unrendered A/B",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/tree/10a5ebf055bc657c60302dd8f7f79f4bdf0566ee/mind/r210"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "Original 1998 report describes altered referral of tactile sensation to an artificial limb",
+      "status": "SUPPORTED_NARROW",
+      "source_ids": [
+        "S01"
+      ],
+      "limits": "Abstract available; do not fabricate incidence rates or precise sample counts."
+    },
+    {
+      "id": "C02",
+      "claim": "Visual, tactile and proprioceptive signals can conflict in a rubber hand protocol",
+      "status": "SUPPORTED_NARROW",
+      "source_ids": [
+        "S01",
+        "S02"
+      ],
+      "limits": "Experiment-specific. Not a universal description of normal ownership."
+    },
+    {
+      "id": "C03",
+      "claim": "Proprioceptive drift is not a one-to-one ownership proxy",
+      "status": "SUPPORTED_NARROW",
+      "source_ids": [
+        "S02"
+      ],
+      "limits": "Rohde conditions and measurement protocol required."
+    },
+    {
+      "id": "C04",
+      "claim": "Premotor cortex activity was associated with reported rubber-hand ownership",
+      "status": "SUPPORTED_NARROW",
+      "source_ids": [
+        "S03"
+      ],
+      "limits": "Neural correlate, not a whole-self localization or clinical result."
+    },
+    {
+      "id": "C05",
+      "claim": "A 2022 psychophysical study favored a causal-inference account of ownership under manipulated visual noise",
+      "status": "SUPPORTED_NARROW",
+      "source_ids": [
+        "S04"
+      ],
+      "limits": "Model comparison in study, not proof all experiences use one process."
+    },
+    {
+      "id": "C06",
+      "claim": "Lush 2020 found expectancy patterns challenging common ownership rating controls",
+      "status": "SUPPORTED_METHODS_CRITIQUE",
+      "source_ids": [
+        "S05"
+      ],
+      "limits": "Quasi-experiment tests demand characteristics, not falsification of all previous studies."
+    },
+    {
+      "id": "C07",
+      "claim": "Puységur archives provide historical context for reported suggestion",
+      "status": "SUPPORTED_HISTORY_CONTEXT",
+      "source_ids": [
+        "S06"
+      ],
+      "limits": "No validation of animal magnetism as treatment."
+    },
+    {
+      "id": "C08",
+      "claim": "Change blindness article and Focus page are established published destinations",
+      "status": "SUPPORTED_LIVE_ROUTE",
+      "source_ids": [
+        "S07",
+        "S09"
+      ],
+      "limits": "Live visited via web 2026-11-08, provider success for opt-in unverified."
+    },
+    {
+      "id": "C09",
+      "claim": "Inspire3 markets Zen12 and Hypnosis Live as related products",
+      "status": "SELLER_CATALOG_ONLY",
+      "source_ids": [
+        "S10"
+      ],
+      "limits": "Seller relationship not evidence of named FV affiliate approval."
+    },
+    {
+      "id": "C10",
+      "claim": "Zen12 Premium merchant describes 12 levels",
+      "status": "SELLER_DESCRIPTION_ONLY",
+      "source_ids": [
+        "S11"
+      ],
+      "limits": "Buyer delivery never audited."
+    },
+    {
+      "id": "C11",
+      "claim": "Zen12 Premium merchant describes 48 MP3s",
+      "status": "SELLER_DESCRIPTION_ONLY",
+      "source_ids": [
+        "S11"
+      ],
+      "limits": "No independent download/test."
+    },
+    {
+      "id": "C12",
+      "claim": "Zen12 seller offers four listening styles",
+      "status": "SELLER_DESCRIPTION_ONLY",
+      "source_ids": [
+        "S11"
+      ],
+      "limits": "Verify exact package at checkout."
+    },
+    {
+      "id": "C13",
+      "claim": "Zen12 seller advertises one-year money-back",
+      "status": "SELLER_DESCRIPTION_ONLY",
+      "source_ids": [
+        "S11"
+      ],
+      "limits": "Refund exceptions, execution and jurisdiction unverified."
+    },
+    {
+      "id": "C14",
+      "claim": "Zen12 seller asserts twelve minutes is equivalent to one hour's advanced meditation",
+      "status": "SELLER_UNSUBSTANTIATED_OMITTED",
+      "source_ids": [
+        "S11",
+        "S15"
+      ],
+      "limits": "Do not assert or imply as FV-verified efficacy."
+    },
+    {
+      "id": "C15",
+      "claim": "Zen12 health and cognitive efficacy claims",
+      "status": "PRODUCT_SPECIFIC_SUBSTANTIATION_MISSING",
+      "source_ids": [
+        "S11",
+        "S15"
+      ],
+      "limits": "No relevant independent product-specific controlled study established."
+    },
+    {
+      "id": "C16",
+      "claim": "Displayed Zen12 Premium promotional price establishes final payable amount",
+      "status": "UNVERIFIED_OMITTED",
+      "source_ids": [
+        "S11"
+      ],
+      "limits": "Website displayed price Nov 8; does not authenticate checkout/currency/taxes/fees."
+    },
+    {
+      "id": "C17",
+      "claim": "Hypnosis Live Total Focus seller describes a 33-minute 47 MB download",
+      "status": "SELLER_DESCRIPTION_ONLY",
+      "source_ids": [
+        "S12"
+      ],
+      "limits": "Other Hypnosis Live products have different features; do not substitute generic copy."
+    },
+    {
+      "id": "C18",
+      "claim": "Hypnosis Live advertises 14-day refund with FAQ limits",
+      "status": "SELLER_DESCRIPTION_ONLY",
+      "source_ids": [
+        "S12",
+        "S13"
+      ],
+      "limits": "FAQ caps refunded sessions annually; cannot generalize to Zen12 or claim zero risk."
+    },
+    {
+      "id": "C19",
+      "claim": "Affiliate disclosure should be beside any active buying recommendation",
+      "status": "SUPPORTED_POLICY",
+      "source_ids": [
+        "S14",
+        "S16"
+      ],
+      "limits": "Only prospective disclosure while inactive; require merchant-specific active review."
+    },
+    {
+      "id": "C20",
+      "claim": "FV has named Inspire3 acceptance and permitted website/social/email channels",
+      "status": "UNKNOWN_HARD_HOLD",
+      "source_ids": [
+        "S10",
+        "S16"
+      ],
+      "limits": "Gmail marketing messages do not establish publisher authorization; private portal not accessed."
+    },
+    {
+      "id": "C21",
+      "claim": "Partner-issued tracking URL and cleared commission data available",
+      "status": "UNKNOWN_HARD_HOLD",
+      "source_ids": [
+        "S16",
+        "S17"
+      ],
+      "limits": "No identifier, link or merchant-ledger evidence verified."
+    },
+    {
+      "id": "C22",
+      "claim": "FV-owned paid Mind SKU rights and checkout established",
+      "status": "UNKNOWN",
+      "source_ids": [
+        "S17",
+        "S18"
+      ],
+      "limits": "Public inventory does not prove rights, payment processing or refund fulfillment."
+    },
+    {
+      "id": "C23",
+      "claim": "Video version improves settled paid conversion over text-only guide",
+      "status": "EXPERIMENT_UNTESTED",
+      "source_ids": [
+        "S20"
+      ],
+      "limits": "R218 variants are source-only; zero randomized paid observations."
+    },
+    {
+      "id": "C24",
+      "claim": "Merchant email opt-in is a confirmed FV lead",
+      "status": "FALSE_EXCLUDED",
+      "source_ids": [
+        "S09",
+        "S11"
+      ],
+      "limits": "Merchant newsletter distinct from existing Jetpack confirmed opt-in."
+    },
+    {
+      "id": "C25",
+      "claim": "Rubber hand illusion establishes named audio-product efficacy",
+      "status": "UNSUPPORTED_OMITTED",
+      "source_ids": [
+        "S01",
+        "S11",
+        "S15"
+      ],
+      "limits": "Research cannot be transposed to Zen12 or Hypnosis Live."
+    },
+    {
+      "id": "C26",
+      "claim": "No-JS disabled CTA prevents authorizing affiliate redirects in this source version",
+      "status": "SOURCE_CONTROLLED_ONLY",
+      "source_ids": [
+        "S16"
+      ],
+      "limits": "Browser/WordPress sanitization still untested."
+    }
+  ],
+  "gates": [
+    {
+      "id": "G01",
+      "criterion": "Named Final Vestige publisher accepted by Inspire3",
+      "owner": "FOUNDER_MIND",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "G02",
+      "criterion": "Website affiliate promotion explicitly permitted",
+      "owner": "FOUNDER_MIND",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "G03",
+      "criterion": "Social/TikTok promotional channel explicitly permitted",
+      "owner": "FOUNDER_GROK",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "G04",
+      "criterion": "Email/Jetpack channel expressly permitted if used",
+      "owner": "FOUNDER_DISPATCH",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "G05",
+      "criterion": "Account-issued earning URL and redirect terms privately authenticated",
+      "owner": "FOUNDER_MIND",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "G06",
+      "criterion": "Exact SKU, checkout total/currency/taxes and refund policy authenticated",
+      "owner": "COMMERCE",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "G07",
+      "criterion": "Commission attribution/settlement/refunds verified",
+      "owner": "COMMERCE",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "G08",
+      "criterion": "Founder commercial/publication release in writing",
+      "owner": "FOUNDER",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "G09",
+      "criterion": "Original source-specific efficacy evidence for proposed health claims",
+      "owner": "MIND_QA",
+      "status": "UNKNOWN"
+    },
+    {
+      "id": "G10",
+      "criterion": "Real browser mobile, keyboard, screen reader and no-JS checks",
+      "owner": "SITE_QA",
+      "status": "UNKNOWN"
+    },
+    {
+      "id": "G11",
+      "criterion": "42s playable rights-cleared film caption quality and perf budgets",
+      "owner": "MEDIA_QA",
+      "status": "UNKNOWN"
+    },
+    {
+      "id": "G12",
+      "criterion": "Grok real published media IDs/hook/rights reconciled",
+      "owner": "PRAXXIS_GROK",
+      "status": "UNKNOWN"
+    },
+    {
+      "id": "G13",
+      "criterion": "Active existing Jetpack confirmed signups observable",
+      "owner": "CLAUDE_SITE_QA",
+      "status": "UNKNOWN"
+    },
+    {
+      "id": "G14",
+      "criterion": "Ledger paid orders/refunds/fees and qualified humans available",
+      "owner": "COMMERCE_ANALYTICS",
+      "status": "UNKNOWN"
+    },
+    {
+      "id": "G15",
+      "criterion": "Single Mind canonical article/slug approved vs existing drafts",
+      "owner": "EDITORIAL",
+      "status": "OPEN"
+    },
+    {
+      "id": "G16",
+      "criterion": "R210 video/text A/B not changed without experiment governance",
+      "owner": "MIND_QA",
+      "status": "OPEN"
+    }
+  ],
+  "conversion_contract": {
+    "events": [
+      "qualified_human_session_estimate",
+      "landing_view",
+      "relevant_cta_click",
+      "focus_confirmed_optin",
+      "affiliate_click",
+      "owned_order_paid",
+      "affiliate_commission_cleared",
+      "refund",
+      "fee",
+      "chargeback"
+    ],
+    "realized_net_formula": "settled_owned_receipts + cleared_affiliate_commissions - refunds - transaction_fees - chargebacks - attributable_variable_costs",
+    "kpi": "1000 * realized_net_revenue / qualified_human_sessions",
+    "cohorts_days": [
+      7,
+      30
+    ],
+    "null_if_no_authoritative_numerator_or_denominator": true,
+    "no_pii": true,
+    "existing_instrumentation_only": true
+  }
+}
