@@ -46,6 +46,7 @@ class ExposureReader(HTMLParser):
         self.scopes = {x:0 for x in SCOPES}
         self.src_ids = []
         self.src_links = {}
+        self.current_source = None
         self.scope_text = {x:[] for x in SCOPES}
         self.anchors = 0
 
@@ -92,11 +93,19 @@ class ExposureReader(HTMLParser):
             if ((d.get('target') or '').lower()=='_blank' and
                 not {'noopener','noreferrer'}.issubset(set((d.get('rel') or '').lower().split()))):
                 self.errors.append('external new-tab link missing rel protections')
+            if self._inside('pa-sources'):
+                if self.current_source is None:
+                    self.errors.append('bibliography link outside numbered source entry')
+                elif self.current_source in self.src_links:
+                    self.errors.append('duplicate bibliography link within source entry')
+                else:
+                    self.src_links[self.current_source] = h
             self.anchors += 1
         if self._inside('pa-sources') and tag=='li':
             ident = d.get('id') or ''
             if SOURCE_ID.fullmatch(ident):
-                self.src_ids.append(int(ident[4:]))
+                self.current_source = int(ident[4:])
+                self.src_ids.append(self.current_source)
             else:
                 self.errors.append('bibliography li missing numbered source id')
         if tag=='base':
@@ -118,6 +127,8 @@ class ExposureReader(HTMLParser):
             self.errors.append(f'mismatched end tag: {tag}')
             return
         self.stack.pop()
+        if tag=='li' and self.current_source is not None:
+            self.current_source = None
 
     def handle_data(self,data):
         if self.stack and self.stack[-1]['concealed']:
@@ -138,6 +149,8 @@ class ExposureReader(HTMLParser):
                 self.errors.append(f'{s} must occur once; found {count}')
         if self.src_ids != list(range(1,len(self.src_ids)+1)) or not self.src_ids:
             self.errors.append('source bibliography ids missing, duplicate or out of order')
+        if set(self.src_ids)!=set(self.src_links):
+            self.errors.append('one HTTPS anchor required for each numbered bibliography source')
         for s in ('pa-body','pa-sources','pa-chips','pa-review'):
             if not ' '.join(self.scope_text[s]).strip():
                 self.errors.append(f'{s} has no visible source/notice text')
