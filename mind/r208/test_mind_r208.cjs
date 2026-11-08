@@ -82,7 +82,7 @@ check('A/B identical core after optional film removed',()=>assert.equal(stripFil
 check('optional original poster has title, desc, alt role',()=>{for(const p of ['<svg','<title id="poster-title">','<desc id="poster-desc">','role="img"','<figcaption>'])assert(b.includes(p));});
 check('optional film 42s captions are real timed cues',()=>validateVTT(vtt));
 check('video still unrendered; static poster only',()=>{assert.match(b,/NOT RENDERED/);assert.doesNotMatch(b,/<video\b|<iframe\b/);});
-check('article substantial and contains primary sources',()=>{assert(article.split(/\s+/).length>2400);for(const s of ['1500880','7707027','19933555','PMC1865565','NOT PUBLISHED'])assert(article.includes(s));});
+check('article substantial and contains primary sources',()=>{assert(article.split(/\s+/).length>2400);for(const s of ['1500880','7707027','19933555','PMC1865565','UNPUBLISHED'])assert(article.includes(s));});
 check('article maintains independent commercial status',()=>{assert.doesNotMatch(article,/awin1\.com|clickref=|aff_id=/);assert.match(article,/independent buying guide/i);});
 check('source ledger every claim resolves and 18 gates open',()=>validateMatrix(m));
 check('plan contains conversion prioritized evidence not clicks as orders',()=>{for(const s of ['OFFER','FUNNEL STEP','#820','#171','#150','#172','#174','NOT COMPUTABLE','settled_owned_product_receipts','qualified_human_sessions','privacy'])assert(plan.toLowerCase().includes(s.toLowerCase()));});
