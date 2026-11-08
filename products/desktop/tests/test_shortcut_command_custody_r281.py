@@ -153,5 +153,18 @@ class ShortcutCommandCustodyR281(unittest.TestCase):
         self.assertEqual(fields[0][1].events, ["invoke"])
 
 
+    def test_keypad_and_optional_shortcut_counts_for_all_six(self):
+        expected = {"LedgerDiffLite": 20, "InvoiceTwinScout": 11,
+                    "SpendMapLite": 10, "PolicyDeltaDesk": 16,
+                    "GrantAuditStudioPro": 23, "ProcureGuardStudioPro": 25}
+        for app, count in expected.items():
+            with self.subTest(app=app):
+                root, fields, output, generate, _, kw = fixture(app)
+                installed = install_shortcuts(root, fields, output, generate, **kw)
+                self.assertEqual(len(installed), count)
+                self.assertEqual(len(root.bindings), count)
+                self.assertEqual(len(set(installed)), count)
+
+
 if __name__ == "__main__":
     unittest.main()
