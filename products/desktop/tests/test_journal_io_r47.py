@@ -67,7 +67,8 @@ class DescriptorJournalR47Tests(unittest.TestCase):
         self.journal.write_bytes(self.first)
         with self.assertRaises(ValueError):
             read_regular_bytes(self.journal, len(self.first) - 1, "Journal")
-        with self.assertRaises(FileNotFoundError):
+        # Privacy boundary: missing customer paths are never retained in a raw OS error.
+        with self.assertRaisesRegex(ValueError, "Review evidence cannot be read"):
             read_regular_bytes(self.root / "absent", 128, "Journal")
 
     def test_link_alias_cannot_read_or_extend(self):
@@ -215,7 +216,7 @@ class DescriptorJournalR47Tests(unittest.TestCase):
     def test_failed_fsync_leaves_detectable_but_not_silent_journal(self):
         self.journal.write_bytes(self.first)
         with patch("fvs_suite.journal_io.os.fsync", side_effect=OSError("disk error")):
-            with self.assertRaises(OSError):
+            with self.assertRaisesRegex(ValueError, "Review journal I/O failed"):
                 append_verified_event(self.journal, self.second, 128, lambda: None)
         # An append may have reached the OS before fsync failed: do not claim it
         # was rolled back, and never manufacture a success acknowledgment.
