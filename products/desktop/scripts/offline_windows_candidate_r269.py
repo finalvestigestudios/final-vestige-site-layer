@@ -25,6 +25,7 @@ if str(SCRIPTS) not in sys.path:
     sys.path.insert(0, str(SCRIPTS))
 from strict_source_receipt_r273 import loads_strict_receipt
 from source_build_binding_r275 import verify_source_binding
+from source_smoke_receipt_r276 import valid_source_smoke_records
 
 APPS = (
     "LedgerDiffLite", "InvoiceTwinScout", "SpendMapLite", "PolicyDeltaDesk",
@@ -156,9 +157,9 @@ def _source_receipt_sha256(path: Path, *, checkout_root: Path | None = None) -> 
                 or not smoke["source_inventory"]):
             raise CandidateBuildRejected(ERROR)
         results = smoke.get("application_results")
-        if (type(results) is not list or len(results) != 6
-                or [item.get("app") if type(item) is dict else None for item in results] != list(APPS)
-                or any(item.get("result") != "PASS" for item in results)):
+        # A PASS label alone is insufficient: verify the exact engine, complete
+        # canonical fields and positive bounded synthetic-output provenance.
+        if not valid_source_smoke_records(results):
             raise CandidateBuildRejected(ERROR)
         if checkout_root is not None:
             # Bind the full source/test inventory to *current checkout bytes*,
