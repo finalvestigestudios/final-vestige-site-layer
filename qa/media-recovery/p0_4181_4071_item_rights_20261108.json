@@ -37,7 +37,15 @@
         "by": "U.S. Coast Guard",
         "reported_download_mb": 0.04,
         "method": "search_indexed_primary_catalog",
-        "catalog_page_direct_open": "WEB_RETRIEVER_403"
+        "catalog_page_direct_open": "WEB_RETRIEVER_403",
+        "name_variants": {
+          "official_photo_caption": "Anthony Pettit",
+          "official_2021_uscg_remembrance_roll": "Chief Boatswain Anthony L. Petit",
+          "national_coast_guard_museum_2024_roll": "Chief Boatswain Anthony L. Petit",
+          "documented_conflict": "USCG photo caption and obituary roster in same institutional story disagree on spelling",
+          "editorial_decision": "DO_NOT_AUTOCORRECT_PUBLISHED_ALT"
+        },
+        "official_history_url": "https://www.history.uscg.mil/Research/THE-LONG-BLUE-LINE/Article/2866442/the-long-blue-line-standing-a-deadly-watch-75-years-agofinal-hours-of-scotch-ca/"
       },
       "rights": {
         "item_statement": "photo considered public domain and cleared for release",
@@ -55,7 +63,12 @@
         "exact_scene_match_approved": false,
         "cache_or_upload_authorized": false,
         "wordpress_action": "HOLD_BROWSER_AND_BINARY_IDENTITY"
-      }
+      },
+      "frozen_post_source": {
+        "path": "qa/media-recovery/parts/01.json",
+        "blob_sha": "948bc1b65b42799aa40cfdb810ddf6ffd80886b6"
+      },
+      "stored_alt": "Chief Boatswain’s Mate Anthony L. Petit, officer in charge of Scotch Cap Lighthouse when the 1946 tsunami killed its five-man crew."
     },
     {
       "image_key": "407:1",
@@ -106,7 +119,12 @@
         "exact_scene_match_approved": false,
         "cache_or_upload_authorized": false,
         "wordpress_action": "HOLD_BROWSER_AND_NATIVE_GEOMETRY"
-      }
+      },
+      "frozen_post_source": {
+        "path": "qa/media-recovery/parts/02.json",
+        "blob_sha": "48e1ebf07207e948ba5802e714eb39659d2e1c1d"
+      },
+      "stored_alt": "Fresh fault scarp near Hebgen Lake produced by the August 1959 earthquake."
     }
   ]
 }
