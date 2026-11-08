@@ -17,6 +17,14 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
+# python -I omits script and parent folders. Trust only these resolved
+# Git-owned paths, never an ambient PYTHONPATH or caller working directory.
+SCRIPTS = Path(__file__).resolve().parent
+DESKTOP = SCRIPTS.parent
+for directory in (DESKTOP, SCRIPTS):
+    if str(directory) not in sys.path:
+        sys.path.insert(0, str(directory))
+
 import release_gate as gate
 import defender_engine_custody_r112 as custody
 import defender_environment_r113 as environment
@@ -119,9 +127,14 @@ def health_check(scanner: Path, *, runner=None) -> None:
 
 
 def scan_one(scanner: Path, candidate: Path, *, runner=None) -> None:
-    """MpCmdRun's synchronous custom file scan must exit zero."""
+    """Scan without remediation; a zero exit is not malware certification.
+
+    Microsoft documents that an ordinary zero exit can also mean a threat
+    was remediated. Forbid remediation to avoid a silent, destructive success.
+    """
     _run_quiet(
-        [str(scanner), "-Scan", "-ScanType", "3", "-File", str(candidate)],
+        [str(scanner), "-Scan", "-ScanType", "3", "-File", str(candidate),
+         "-DisableRemediation"],
         timeout=360, runner=runner,
     )
 

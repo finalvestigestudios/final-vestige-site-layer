@@ -72,6 +72,8 @@ class SourceReceiptCustodyTests(unittest.TestCase):
             self.assertEqual(Path(argv[4]), self.receipt)
         if "release_gate.py" in argv[2]:
             Path(argv[-1]).write_text('{"synthetic":"not real Windows evidence"}', encoding="ascii")
+        if "defender_candidate_scan_r111.py" in argv[2]:
+            Path(argv[-1]).write_text('{"synthetic":"not real Defender evidence"}', encoding="ascii")
         return 0
 
     def test_valid_six_app_receipt_has_stable_digest(self):
@@ -159,7 +161,7 @@ class SourceReceiptCustodyTests(unittest.TestCase):
 
     def test_candidate_plan_passes_with_retained_source_receipt(self):
         module._execute_plan(self.root, self.session, "python.exe", self.runner)
-        self.assertEqual(len(self.calls), 40)
+        self.assertEqual(len(self.calls), 43)
         self.assertEqual(self.calls[0][2].split("/")[-1], "offline_source_gate.py")
         self.assertTrue(self.receipt.is_file())
         self.assertEqual(len([cmd for cmd in self.calls if "PyInstaller" in cmd]), 6)
@@ -182,7 +184,7 @@ class SourceReceiptCustodyTests(unittest.TestCase):
         with self.assertRaises(module.CandidateBuildRejected):
             module._execute_plan(self.root, self.session, "python.exe", evil_runner)
         self.assertEqual(original["unittest_provenance"]["test_count"], 18)
-        self.assertEqual(len(self.calls), 40)
+        self.assertEqual(len(self.calls), 43)
 
     def test_failure_of_source_suite_blocks_all_other_steps(self):
         def fail_first(argv, cwd, timeout):

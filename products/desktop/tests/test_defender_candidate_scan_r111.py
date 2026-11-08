@@ -158,7 +158,8 @@ class DefenderR111(unittest.TestCase):
             return ZERO
         av.scan_one(Path("C:/Windows Defender/MpCmdRun.exe"), name, runner=runner)
         self.assertEqual(calls[0][0][1:5], ["-Scan", "-ScanType", "3", "-File"])
-        self.assertEqual(calls[0][0][-1], str(name))
+        self.assertEqual(calls[0][0][-2], str(name))
+        self.assertEqual(calls[0][0][-1], "-DisableRemediation")
         self.assertIs(calls[0][1]["shell"], False)
         self.assertEqual(calls[0][1]["timeout"], 360)
         self.assertEqual(calls[0][1]["stdout"], subprocess.DEVNULL)
@@ -172,7 +173,8 @@ class DefenderR111(unittest.TestCase):
             args.extend(command)
             return ZERO
         av.scan_one(Path("C:/Defender/MpCmdRun.exe"), bad, runner=runner)
-        self.assertEqual(args[-1], str(bad))
+        self.assertEqual(args[-2], str(bad))
+        self.assertEqual(args[-1], "-DisableRemediation")
         self.assertNotIn("powershell.exe", args)
 
     def test_nonzero_defender_exit_denied(self):

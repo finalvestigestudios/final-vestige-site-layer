@@ -36,7 +36,8 @@ ROOT = Path(__file__).resolve().parents[3]
 ERROR = "REJECTED: private Windows candidate build did not complete; no release authorized"
 SUCCESS = (
     "PASS: six local Windows candidates passed offline source, SHA-256, PE and "
-    "executable smoke/attestation gates; PRIVATE/QD HOLD — no distribution authorized"
+    "executable smoke/attestation and Defender no-remediation scan gates; "
+    "PRIVATE/QD HOLD — no distribution or malware certification authorized"
 )
 MAX_SOURCE_RECEIPT_BYTES = 1024 * 1024
 MAX_WINDOWS_REPORT_BYTES = 64 * 1024
@@ -251,6 +252,7 @@ def _execute_plan(root: Path, run_dir: Path, python: str, runner=_run_child) -> 
     source_manifest = run_dir / "build-inputs.json"
     tool_manifest = run_dir / "toolchain-inputs.json"
     report = run_dir / "offline-candidate-evidence.json"
+    defender_report = run_dir / "defender-candidate-evidence.json"
     executable = str(python)
 
     def check(args: list[str], *, timeout: int = 1800) -> None:
@@ -293,9 +295,23 @@ def _execute_plan(root: Path, run_dir: Path, python: str, runner=_run_child) -> 
                  "--expected-report-sha256", report_hash))
     check(script(scripts / "build_input_guard.py", "check", source_manifest))
     check(script(scripts / "toolchain_guard.py", "check", tool_manifest))
-    # Same-run double pin: an attest-then-replace report must never become a
-    # successful private candidate. This does not authorize distribution.
+    # Native, no-remediation Defender scans are mandatory in the private
+    # candidate pipeline, not a separate optional manual action. The scanner
+    # independently verifies the pinned R9 Windows smoke report, binary
+    # hashes, signed active Defender health, six custom scans, and local
+    # history/exclusion observations. It never authorizes release.
+    check(script(scripts / "defender_candidate_scan_r111.py", dist, report,
+                 "--expected-r9-sha256", report_hash, "--report", defender_report),
+          timeout=3600)
+    # Custody of the native Defender evidence is checked at completion;
+    # merely returning zero without creating a real receipt is insufficient.
+    defender_hash = _private_windows_report_sha256(defender_report)
+    check(script(scripts / "build_input_guard.py", "check", source_manifest))
+    check(script(scripts / "toolchain_guard.py", "check", tool_manifest))
+    # Same-run double pins: altered source, R9 or Defender evidence must never
+    # become a successful private candidate. None authorizes distribution.
     if (_private_windows_report_sha256(report) != report_hash
+            or _private_windows_report_sha256(defender_report) != defender_hash
             or _source_receipt_sha256(source_receipt, checkout_root=binding_root) != source_receipt_pin):
         raise CandidateBuildRejected(ERROR)
 

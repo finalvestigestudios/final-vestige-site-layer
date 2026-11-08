@@ -34,9 +34,13 @@ def source_receipt():
             "schema": "fvs-source-smoke-v1", "scope": "PYTHON_SOURCE_ONLY_NOT_WINDOWS_BINARY_VERIFICATION",
             "source_inventory": [{"path": "products/desktop/fvs_suite/smoke.py", "sha256": "4" * 64}],
             "released": False, "qd_approved": False, "all_six_passed": True,
+            "commit": "",
             "application_results": [
-                {"app": name, "result": "PASS", "engine": name.lower(),
-                 "synthetic_output_count": 1} for name in module.APPS
+                {"app": name, "result": "PASS", "engine": engine,
+                 "synthetic_output_count": 1}
+                for name, engine in zip(module.APPS, (
+                    "ledger", "invoices", "spend", "policy", "grants", "procurement"
+                ))
             ],
         },
     }
@@ -63,6 +67,8 @@ class WindowsEvidenceCustodyR271Tests(unittest.TestCase):
 
     def runner(self, argv, cwd, timeout):
         self.calls.append(tuple(argv))
+        if "defender_candidate_scan_r111.py" in argv[2]:
+            Path(argv[-1]).write_text('{"synthetic":"no Defender scan performed"}', encoding="ascii")
         return 0
 
     def test_valid_report_digest_stable_and_exact(self):
@@ -150,7 +156,7 @@ class WindowsEvidenceCustodyR271Tests(unittest.TestCase):
 
     def test_plan_six_binaries_and_unchanged_stage_count(self):
         module._execute_plan(self.root, self.run, 'python.exe', self.runner)
-        self.assertEqual(len(self.calls), 40)
+        self.assertEqual(len(self.calls), 43)
         self.assertEqual(sum('PyInstaller' in cmd for cmd in self.calls), 6)
         self.assertEqual(sum('report_attestation.py' in cmd[2] for cmd in self.calls), 1)
         att = next(cmd for cmd in self.calls if 'report_attestation.py' in cmd[2])
@@ -165,7 +171,7 @@ class WindowsEvidenceCustodyR271Tests(unittest.TestCase):
             return result
         with self.assertRaises(module.CandidateBuildRejected):
             module._execute_plan(self.root, self.run, 'python.exe', rewrite_after_attestation)
-        self.assertEqual(len(self.calls), 40)
+        self.assertEqual(len(self.calls), 43)
 
     def test_attestation_then_report_unlink_fails_closed(self):
         def unlink_after_attestation(argv, cwd, timeout):
@@ -175,7 +181,7 @@ class WindowsEvidenceCustodyR271Tests(unittest.TestCase):
             return result
         with self.assertRaises(module.CandidateBuildRejected):
             module._execute_plan(self.root, self.run, 'python.exe', unlink_after_attestation)
-        self.assertEqual(len(self.calls), 40)
+        self.assertEqual(len(self.calls), 43)
 
     def test_attestation_then_report_symlink_fails_closed(self):
         alternate = self.run / 'alternate'
@@ -191,7 +197,7 @@ class WindowsEvidenceCustodyR271Tests(unittest.TestCase):
                 module._execute_plan(self.root, self.run, 'python.exe', swap_after_attestation)
         except (OSError, NotImplementedError):
             self.skipTest('symlink unavailable')
-        self.assertEqual(len(self.calls), 40)
+        self.assertEqual(len(self.calls), 43)
 
     def test_parent_no_longer_calls_path_read_bytes_on_report(self):
         with mock.patch.object(Path, 'read_bytes', side_effect=RuntimeError('should not call read_bytes')):
