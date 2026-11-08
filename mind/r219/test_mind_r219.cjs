@@ -86,7 +86,7 @@ function run(f){
  mutate("break_caption_end",x=>x.vtt=x.vtt.replace("00:00:42.000","00:00:43.000"));
  mutate("break_caption_gap",x=>x.vtt=x.vtt.replace("00:00:17.000 -->","00:00:18.000 -->"));
  mutate("remove_merchant_disclosure",x=>x.a=x.a.replace("Prospective affiliate disclosure","Some text"));
- mutate("missing_primary_citation",x=>x.article=x.article.replace("10.3758/s13414-011-0144-4","removed"));
+ mutate("missing_primary_citation",x=>x.article=x.article.replaceAll("10.3758/s13414-011-0144-4","removed"));
  mutate("reduce_article",x=>x.article=x.article.slice(0,2000));
  mutate("erase_science_limits",x=>x.article=x.article.replace("No reasonable reading of the evidence allows that shortcut","Unsupported shortcut"));
  mutate("enable_affiliate",x=>j(x,o=>o.offer.activation_allowed=true));
