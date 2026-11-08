@@ -48,15 +48,19 @@ function revenuePerThousand(record) {
   if (!record || record.order_ledger_reconciled!==true
       || record.refunds_fees_reconciled!==true
       || record.qualified_human_sessions_verified!==true
+      || ![7,30].includes(record.cohort_days)
+      || !record.reconciliation_source || typeof record.reconciliation_source!=="string"
+      || record.reconciliation_source.trim().length<12
       || !Number.isSafeInteger(record.qualified_human_sessions)
       || record.qualified_human_sessions<=0
       || !Array.isArray(record.orders)
       || !record.orders.every(o=>o && typeof o.settled_net_usd==="number"
-          && Number.isFinite(o.settled_net_usd) && o.independently_verified===true)) return null;
-  if (record.orders.length===0 && record.zero_orders_independently_verified!==true) return null;
+          && Number.isFinite(o.settled_net_usd) && o.independently_verified===true
+          && typeof o.merchant_report_ref==="string" && o.merchant_report_ref.length>=12)) return null;
+  if (record.orders.length===0 && (!record.zero_orders_independently_verified || !record.zero_orders_source)) return null;
   const net=record.orders.reduce((sum,o)=>sum+o.settled_net_usd,0);
   return {net_revenue_usd:Math.round(net*100)/100,
     revenue_per_1000_qualified_human_sessions_usd:Math.round((net*1000/record.qualified_human_sessions)*100)/100,
-    denominator:record.qualified_human_sessions,cohort_days:record.cohort_days===30?30:record.cohort_days===7?7:null};
+    denominator:record.qualified_human_sessions,cohort_days:record.cohort_days};
 }
 module.exports={REQUIRED_COMMON,REQUIRED_MERCHANT,releaseAssessment,confirmedSignup,revenuePerThousand};
