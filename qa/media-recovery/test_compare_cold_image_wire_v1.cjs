@@ -89,6 +89,26 @@ test('Jetpack numeric fit for a first-party image stays eligible after independe
  assert.equal(r.visual_parity_verified,false);
 });
 
+// These intentionally change BOTH the stored URL and every associated successful
+// CDP request so each individual capture remains internally consistent. The
+// *cross-run* provenance identity is the missing safeguard.
+function replaceImageSource(run, src) {
+ const s=run.pages[0].stored_images[0], n=run.pages[0].network_images[0];
+ s.stored_url=src;s.current_src=src;s.request_url=src;n.url=src;
+}
+hold('same ALT and geometry cannot disguise a different candidate historical photo',null,
+ a=>replaceImageSource(a,'https://finalvestige.com/wp-content/uploads/2026/08/unrelated-photo.png'),
+ 'published_original_changed_between_runs:34:0');
+hold('different baseline source with valid independent CDP responses cannot pass', 
+ b=>replaceImageSource(b,'https://finalvestige.com/wp-content/uploads/2026/08/older-scene.jpg'),
+ null,'published_original_changed_between_runs:34:0');
+hold('new external publisher source must not masquerade as compression savings',null,
+ a=>replaceImageSource(a,'https://archives.example.org/different-period-photo.jpg'),
+ 'published_original_changed_between_runs:34:0');
+hold('source alias pointing to the same origin with distinct stored URL requires provenance review',null,
+ a=>replaceImageSource(a,'https://finalvestige.com/wp-content/uploads/2026/08/test-v2.png'),
+ 'published_original_changed_between_runs:34:0');
+
 function withZeroImagePost(run) {
  const row=copy(run.pages[0]);
  row.post_id=1922;
