@@ -102,7 +102,7 @@ class DraftReader(HTMLParser):
 def evaluate(dossier, originals, rendered):
     """A structurally sound transport stays HOLD. Any discrepancy stays INVALID HOLD.
 
-    \`rendered\`: {7: {'wp': bytes, 'preview': bytes}, 20: ...}.
+    rendered: {7: {'wp': bytes, 'preview': bytes}, 20: ...}.
     No source URLs or content are fetched or modified here.
     """
     try:
