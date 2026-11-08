@@ -33,8 +33,8 @@ function guideCompliant(html) {
   const q=html.indexOf('<button',p);
   assert(p>=0 && q>=0 && q-p<500,'adjacent disclosure within 500 chars of button');
 }
-function validateCaptions(txt){ assert.match(txt,/^WEBVTT\\s/m); assert.match(txt,/00:00:42\\.000/); const cues=[...txt.matchAll(/(\\d{2}:\\d{2}:\\d{2}\\.\\d{3}) --> (\\d{2}:\\d{2}:\\d{2}\\.\\d{3})/g)];assert(cues.length>=2,'timed caption cues');}
-function validateCommerceMatrix(x){ assert(x.authorization_gates.length>0); x.authorization_gates.forEach(g=>assert.equal(g.state,'OPEN'));assert.equal(x.measurement.status,'NOT_COMPUTABLE');assert.match(x.measurement.formula,/settled_owned_product_receipts/);assert.match(x.measurement.formula,/cleared_affiliate_commissions/);assert.doesNotMatch(x.measurement.formula,/confirmed_paid_orders\\s*\\+/); }
+function validateCaptions(txt){ assert.match(txt,/^WEBVTT\s/m); assert.match(txt,/00:00:42\.000/); const cues=[...txt.matchAll(/(\d{2}:\d{2}:\d{2}\.\d{3}) --> (\d{2}:\d{2}:\d{2}\.\d{3})/g)];assert(cues.length>=2,'timed caption cues');}
+function validateCommerceMatrix(x){ assert(x.authorization_gates.length>0); x.authorization_gates.forEach(g=>assert.equal(g.state,'OPEN'));assert.equal(x.measurement.status,'NOT_COMPUTABLE');assert.match(x.measurement.formula,/settled_owned_product_receipts/);assert.match(x.measurement.formula,/cleared_affiliate_commissions/);assert.doesNotMatch(x.measurement.formula,/confirmed_paid_orders\s*\+/); }
 const clipStart=b.indexOf('<section id="optional-film">');
 const clipEnd=b.indexOf('<section id="why">',clipStart);
 test('all three HTML previews language marked English',()=>[a,b,hub].forEach(x=>assert.match(x,/<html lang="en">/)));
