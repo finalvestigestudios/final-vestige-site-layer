@@ -29,6 +29,7 @@ SUCCESS = (
     "executable smoke/attestation gates; PRIVATE/QD HOLD — no distribution authorized"
 )
 MAX_SOURCE_RECEIPT_BYTES = 1024 * 1024
+MAX_WINDOWS_REPORT_BYTES = 64 * 1024
 
 
 class CandidateBuildRejected(RuntimeError):
@@ -156,6 +157,49 @@ def _source_receipt_sha256(path: Path) -> str:
         raise CandidateBuildRejected(ERROR) from None
 
 
+def _private_windows_report_sha256(path: Path) -> str:
+    """Hash a bounded native Windows evidence file without following links.
+
+    An ordinary Path.read_bytes after lstat could follow a swapped link. Pin
+    the descriptor/path identity before and after reading, and recheck the
+    same evidence after the independent attestation and final custody gates.
+    This is same-run custody, *not* a signature or post-run tamper defense.
+    """
+    try:
+        before = path.lstat()
+        if (not stat.S_ISREG(before.st_mode) or before.st_nlink != 1
+                or not 0 < before.st_size <= MAX_WINDOWS_REPORT_BYTES):
+            raise CandidateBuildRejected(ERROR)
+        flags = os.O_RDONLY | getattr(os, "O_NOFOLLOW", 0) | getattr(os, "O_BINARY", 0)
+        descriptor = os.open(path, flags)
+        try:
+            opened = os.fstat(descriptor)
+            # Windows path and descriptor ctime/mode views can differ, but
+            # every identity field must remain unchanged *within* each view.
+            def comparable(info):
+                return (info.st_dev, info.st_ino, info.st_nlink,
+                        info.st_size, info.st_mtime_ns)
+            if (not stat.S_ISREG(opened.st_mode) or opened.st_nlink != 1
+                    or comparable(opened) != comparable(before)):
+                raise CandidateBuildRejected(ERROR)
+            data = bytearray()
+            while len(data) <= MAX_WINDOWS_REPORT_BYTES:
+                chunk = os.read(descriptor, min(65536, MAX_WINDOWS_REPORT_BYTES + 1 - len(data)))
+                if not chunk:
+                    break
+                data.extend(chunk)
+            finished = os.fstat(descriptor)
+        finally:
+            os.close(descriptor)
+        if (len(data) != before.st_size or len(data) > MAX_WINDOWS_REPORT_BYTES
+                or _stat_identity(opened) != _stat_identity(finished)
+                or _stat_identity(before) != _stat_identity(path.lstat())):
+            raise CandidateBuildRejected(ERROR)
+        return hashlib.sha256(data).hexdigest()
+    except (OSError, ValueError, TypeError):
+        raise CandidateBuildRejected(ERROR) from None
+
+
 def _run_child(argv: list[str], cwd: Path, timeout: int) -> int:
     """Never let paths, customer data, or process logs reach terminal/CI."""
     env = os.environ.copy()
@@ -218,21 +262,16 @@ def _execute_plan(root: Path, run_dir: Path, python: str, runner=_run_child) -> 
     check(script(scripts / "build_input_guard.py", "check", source_manifest))
     check(script(scripts / "toolchain_guard.py", "check", tool_manifest))
     check(script(desktop / "release_gate.py", dist, "--smoke", "--report", report), timeout=1200)
-    # Bind the independent recheck to bytes observed after the real six-EXE
-    # smoke, but do not imply that an in-memory pin proves historical execution.
-    try:
-        evidence_info = report.lstat()
-        if (not stat.S_ISREG(evidence_info.st_mode) or evidence_info.st_nlink != 1
-                or not 0 < evidence_info.st_size <= 64 * 1024):
-            raise CandidateBuildRejected(ERROR)
-        report_hash = hashlib.sha256(report.read_bytes()).hexdigest()
-    except (OSError, ValueError):
-        raise CandidateBuildRejected(ERROR) from None
+    # Preserve the exact native six-EXE evidence inspected by attestation.
+    report_hash = _private_windows_report_sha256(report)
     check(script(desktop / "report_attestation.py", report, dist,
                  "--expected-report-sha256", report_hash))
     check(script(scripts / "build_input_guard.py", "check", source_manifest))
     check(script(scripts / "toolchain_guard.py", "check", tool_manifest))
-    if _source_receipt_sha256(source_receipt) != source_receipt_pin:
+    # Same-run double pin: an attest-then-replace report must never become a
+    # successful private candidate. This does not authorize distribution.
+    if (_private_windows_report_sha256(report) != report_hash
+            or _source_receipt_sha256(source_receipt) != source_receipt_pin):
         raise CandidateBuildRejected(ERROR)
 
 
