@@ -49,6 +49,14 @@ function assessPage(x){
  if(!Array.isArray(x.stored_images)||items.length!==expected)errors.push('stored_slot_count_mismatch');
  if(x.page_result!=='inspected_browser'||x.scroll_coverage?.complete!==true||x.scroll_coverage?.state!=='full_height_scanned')errors.push('page_or_scroll_not_verified');
  const seen=new Set(),unresolved=[];let loaded=0,broken=0;
+ // Bind stored source slots to this article whenever its post ID is available.
+ // The early per-page probe can omit post_id; final assessRun always supplies it.
+ if(Number.isSafeInteger(x.post_id)&&x.post_id>0){
+  for(const v of items){
+   if(key(v?.image_key)&&v.image_key.split(':')[0]!==String(x.post_id))
+    errors.push('source_slot_post_mismatch');
+  }
+ }
  for(const v of items){
   const k=v?.image_key;
   if(!key(k)||seen.has(k))errors.push('invalid_or_duplicate_slot_key');
