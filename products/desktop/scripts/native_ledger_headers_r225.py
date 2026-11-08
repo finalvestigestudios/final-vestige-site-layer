@@ -34,7 +34,8 @@ def main():
         generate.pack()
         keys = install_shortcuts(root, inputs, (output, output_picker), generate,
                                  ledger_headers=tuple(headers))
-        if len(keys) != 12 or callbacks:
+        # R226 added eight keypad aliases to the legacy 12 shortcuts.
+        if len(keys) != 20 or callbacks:
             raise RuntimeError("R225 shortcut installation mutated the GUI")
         root.update()
         root.focus_force()
