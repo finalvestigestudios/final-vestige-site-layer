@@ -22,3 +22,10 @@ Focused isolated check against a transcription of the R276 helper reproduced the
 ### Release gate
 
 No Windows PE was created, signed, Defender-scanned, smoke-tested, accessibility-validated, made available for download, or QD/founder-approved. First restore runnable Actions or use the already committed trusted Windows 11 x64 offline candidate pipeline, collect six native executable attestations and hashes in a private access-controlled directory, perform manual screen-reader/keyboard/high-DPI checks and gated premium entitlement verification. **Never merge to production or publish until independent QD and founder approval.**
+
+
+## Additional executed extracted-runner integration (Linux)
+
+After the initial commit, the **committed** R277 integration test module was re-created locally with its exact Git blob SHA `3d75c288fb7bcbfb9c6592576f78903b79844126`. The R276 validator helper was also byte-exact to Git blob `364c35f0d7ede1b16653fe0fb0b565221fb1a09f`, and the strict R273/R274 JSON decoder to `9de54dd6b6d9f0f2f07298fe90ebeaa77bf0ade4`. The private candidate runner's `_source_receipt_sha256` function and the corrected fixture were **extracted/transcribed** from the connected source; the local runner is **not** the complete GitHub file, and the full source binding hook was replaced by a test-only stub that intentionally cannot run (the 13 tests call without `checkout_root`).
+
+In that explicit partial checkout: **13/13 R277 integration methods PASS normal**, **13/13 PASS optimized `-OO`**, with warnings-as-errors and Python `compileall` PASS. The test file and two helper files match their committed Git blob hashes; the extracted runner and fixture do not claim full-file hash identity. Combined with the separately executed 15 normal/15 optimized isolated schema probes, **56 local method executions passed** across two differently scoped harnesses. **Neither represents a full-repository source suite or native Windows executable validation.**
