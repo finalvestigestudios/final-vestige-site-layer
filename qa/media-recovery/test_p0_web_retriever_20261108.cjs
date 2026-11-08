@@ -1,0 +1,21 @@
+'use strict';
+const {test}=require('node:test'),assert=require('node:assert/strict');
+const {validate}=require('./validate_p0_web_retriever_20261108.cjs');
+const source=require('./p0_live_web_retriever_287_418_20261108.json');
+const clone=()=>JSON.parse(JSON.stringify(source));
+const reject=(fn)=>{const x=clone();fn(x);assert.equal(validate(x).valid,false);};
+test('actual three-row web-wrapper audit passes without guest claims',()=>{
+ const r=validate(source);assert.equal(r.valid,true);assert.equal(r.checked_rows,3);
+});
+test('different original URL is rejected',()=>reject(x=>x.rows[0].url='https://example.org/invalid.jpg'));
+test('wrapper HTTP changed to fake successful status rejected',()=>reject(x=>x.rows[0].web_tool_status=200));
+test('wrapper status asserted as guest browser HTTP rejected',()=>reject(x=>x.rows[2].guest_browser_http_status=403));
+test('wrapper result asserted as origin HTTP rejected',()=>reject(x=>x.rows[0].real_origin_http_status=404));
+test('relocated publisher candidate called exact binary without hash rejected',()=>reject(x=>x.rows[1].same_photograph_binary_proven=true));
+test('unsourced original image dimensions rejected',()=>reject(x=>x.rows[1].original_dimensions_px=[1000,667]));
+test('premature cached-image authorization rejected',()=>reject(x=>x.rows[1].cache_authorized=true));
+test('unapproved WordPress upload rejected',()=>reject(x=>x.rows[1].wordpress_write_authorized=true));
+test('photographer/publisher credit lost rejected',()=>reject(x=>x.rows[1].source_article_credit=null));
+test('false 42 broken count certification rejected',()=>reject(x=>x.policy.claims_about_42_broken='VERIFIED'));
+test('false measured 76 percent claim rejected',()=>reject(x=>x.policy.claimed_76_percent_reduction='MEASURED'));
+test('source batch with missing result rejected',()=>reject(x=>x.rows.pop()));
