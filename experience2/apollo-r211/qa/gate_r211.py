@@ -85,6 +85,7 @@ def run(out):
    p=c.new_page();errors=[];p.on('pageerror',lambda e:errors.append(str(e)))
    p.set_content(page_html,wait_until='domcontentloaded')
    if name=='768-zoom':p.evaluate('document.body.style.zoom="200%"')
+   p.screenshot(path=str(out/(name+'.png')),full_page=True,animations='disabled')  # Capture pristine state; touch-hover is timing-dependent
    g(p.locator('.fv-apollo-date-precision').count()==1,'Browser precision note')
    g(p.locator('.fv-apollo-atlas .cta').count()==1,'Browser CTA')
    g(p.locator('.fv-apollo-lesson').count()==1,'Browser lesson')
@@ -98,8 +99,13 @@ def run(out):
     key.locator('summary').tap();g(not key.evaluate('(e)=>e.open'),'Touch close')
    g(p.evaluate('document.documentElement.scrollWidth<=document.documentElement.clientWidth+1'),'Horizontal overflow '+name)
    g(not errors,'Page error '+str(errors))
-   metrics=p.evaluate('''() => ({lcp_ms:(performance.getEntriesByType('largest-contentful-paint').slice(-1)[0]?.startTime??null),cls:null,fixture_only:true})''') if opts.get('java_script_enabled',True) else {'fixture_only':True,'reason':'no-JS'}
-   p.screenshot(path=str(out/(name+'.png')),full_page=True,animations='disabled')
+   metrics=p.evaluate('''async () => {
+     let lcp=null,cls=0;
+     try {new PerformanceObserver(list=>{const e=list.getEntries();if(e.length)lcp=e[e.length-1].startTime}).observe({type:'largest-contentful-paint',buffered:true})}catch(e){}
+     try {new PerformanceObserver(list=>{for(const e of list.getEntries())if(!e.hadRecentInput)cls+=e.value}).observe({type:'layout-shift',buffered:true})}catch(e){}
+     await new Promise(r=>setTimeout(r,140));
+     return {lcp_ms:lcp,cls,fixture_only:true};
+   }''') if opts.get('java_script_enabled',True) else {'fixture_only':True,'reason':'no-JS'}
    evidence.append({'name':name,'width':width,'screenshot_sha256':sha((out/(name+'.png')).read_bytes()),'metrics':metrics})
    c.close()
   c=br.new_context(viewport={'width':390,'height':900});p=c.new_page();p.set_content(page_html);p.emulate_media(media='print')
