@@ -1,0 +1,51 @@
+# Dispatch R212 — deterministic six-issue MIME + plaintext reviewer package
+
+**HOLD_UNSENT / NO DISTRIBUTION.** This is a source-synchronized **offline review format** for the six R211 *alternatives* in draft PR #1597, not a new campaign or a replacement of founder-approved master draft PR #175. This branch is stacked on exact R211 SHA fbf40155dbc895d164396b10b6ca9f721e5618f2. Founder allocation remains four editorial (01/02/04/06) and two commercial **reserved, NOT AUTHORIZED** (03/05). The founder's homepage PR #49, independent readiness #201, Mind #171, WordPress settings, subscribers, and website have not been modified.
+
+## Why this work instead of another email?
+Prior drafts had HTML reviewer pages and Markdown manuscripts, but no source-fingerprinted, inspectable multipart/alternative fixtures. Many failures occur between writing an email and delivering it: truncation, subject encoding, text/HTML inconsistency, invisible disclosure, malformed MIME or a claimed unsubscribe button with no working link. This package makes the exact intended six stories inspectable in plaintext and as a structured offline email without using WordPress, SMTP, lists, or any external marketing platform.
+
+## Contents and reproducibility
+- Six complete UTF-8 plaintext review assets in specimens/01.txt–06.txt. These reflect the R211 review manuscripts, including subjects, preheaders, single primary CTA, original sources, near-offer disclosures, and conspicuous unsent/legal placeholders.
+- Six RFC-style multipart/alternative .eml examples in specimens/01.eml–06.eml. They encode actual original R211 HTML as the HTML part and the matching text as the plaintext part. Header subjects use folded UTF-8 RFC 2047 base64 encoded words. Bodies use 76-column base64 lines. They include a visible X-FV-Release-State: HOLD_UNSENT marker and reserved .invalid sender/recipient domains. **Do not import these as a distribution list or send them.**
+- A manifest fingerprinting each R211 source Markdown and HTML file by exact Git blob SHA. The deterministic native Node renderer is tools/build_mime_reviews.cjs. From repository root, run: node dispatch/r212/tools/build_mime_reviews.cjs . Use the --write switch only if intentionally regenerating a review set. Source changes cause a hard failure until the fingerprint ledger has been reviewed.
+- Native structural QA tool: node dispatch/r212/tools/test_mime_reviews.cjs . It tests 4:2 allocation, release flags, body parity after MIME decode, reserved domains, UTF-8 alternatives, disclosure and inactive commercial CTAs. Local HTML previews remain the already committed R211 preview pages. These tests **cannot** establish a successfully delivered Jetpack email, functional unsubscribe, inbox placement, accessibility in specific mail clients, or consent.
+
+## Copy/preview review: all six subjects are specific but none is final-approved
+| Issue | Subject length (Unicode characters) | Preheader length | Decision |
+| --- | ---: | ---: | --- |
+| 01 | 35 | 65 | Editorial, sourced change blindness; safe to inspect; delivery HOLD |
+| 02 | 45 | 68 | Historical testimony and 1784; delivery HOLD |
+| 03 | 43 | 80 | Zen12 vendor-only claims, one inactive guide CTA, near-link disclosure; HOLD_MERCHANT |
+| 04 | 43 | 75 | Apollo 1: avoid assigning exact ignition point or time of death; delivery HOLD |
+| 05 | 50 | 85 | Total Focus format, merchant claims and five-session refund qualification; HOLD_MERCHANT |
+| 06 | 31 | 75 | Existing Dispatch subscriber goes to direct PDF, not repeat signup; delivery HOLD |
+
+Preheaders longer than 70 characters are not automatically unlawful, but many devices will clip them; actual rendering needs native WordPress preview and real mail-client QA. Subject line hygiene is source-level, not an A/B result. None of these subjects promises a proved product-specific effect.
+
+## Most important new source-of-truth delivery finding
+The Jetpack Newsletter support page (updated November 4, 2026) expressly states its **Preview email** and **Send test email** controls appear for unpublished posts regardless of whether the per-post "Send this post to subscribers" toggle is on or off. Therefore the native **visual preview** can be inspected without first enabling newsletter distribution; it is not necessary to turn on automatic sending or change newsletter settings. The separately maintained WordPress.com email-appearance help describes preview steps with the toggle on; the Jetpack-specific 2026-11-04 update is more relevant to the existing Jetpack-connected setup. This finding does **not** authorize creating or saving a WordPress draft, toggling a setting, or sending a test message. The current connector has no confirmed native preview action. See https://jetpack.com/support/newsletter/ and https://wordpress.com/support/newsletter/email-appearance/.
+
+## Current verified WordPress consent/delivery state — November 8, 2026, 15:35 UTC (read-only)
+Newsletter is enabled; automatic new-post email is disabled; FULL email content; sender "Final Vestige Studios"; reply-to NO-REPLY; configured welcome includes the 52-page Focus Fieldbook. Five recent post diagnostics say "never_sent_opted_out", NOT five successful sends. Total=3, confirmed=3, unconfirmed=2 **are nonadditive counters**; the separate follower breakdown reports WordPress.com=3, email-only=0. It does **not** establish a deduplicated currently email-eligible recipient count. Actual welcome receipt and functional opt-out remain unverified. Public /dispatch/ page promises investigations/archives/Fieldbook but does not disclose occasional affiliate recommendations as clearly as /focus/; proposed consistent signup wording remains review-only, not published.
+
+## Merchant facts and commercial HOLD
+- Official seller Zen12 page: https://zen12.com/hnp . The seller advertises twelve progressive levels and 48 Premium MP3 recordings. Its claims that twelve minutes produces an hour's meditation benefits and broad therapeutic effects remain **seller promises, not independently established product-specific evidence**. No pricing, guarantee performance, conversion or rights clearance is asserted here.
+- Official Total Focus page: https://hypnosislive.com/mental-skills/total-focus . Seller describes 33 minutes/47 MB. Its advertised concentration or NLP brain-reprogramming claims are not independently established. Seller FAQ https://hypnosislive.com/faq limits refunds to FIVE sessions per year despite a general 14-day guarantee. Checkout amounts, practical eligibility, tax and refund administration have not been independently verified.
+- Public Inspire3 and seller sites do NOT demonstrate an approved Final Vestige publisher account, issued account-specific earning URL, actual partner acceptance, allowed email channel, approved promotional creatives or a legitimate live buyer-guide route. Dedicated Mind #171 owns merchant/guide acceptance. No active affiliate links were created.
+
+## Privacy-safe conversion contract; no production analytics deployed
+Grok creator asset_id and utm_content originate only in Grok's actual publication inventory; Claude owns permitted site instrumentation. The prospective sequence is: qualified-human tagged creator visit → Focus page → provider-confirmed unique subscription (ONE confirmed_signup per provider-confirmed recipient, including any legitimate WordPress.com authenticated confirmation path) → Fieldbook welcome reception → editorial value → opted-in Dispatch email → source-tagged approved Final Vestige buyer guide click → independently verified partner outbound → confirmed paid order/settled commission → net after refunds and fees. An opened email, download, merchant newsletter signup, tracked click, checkout start or follower count is NOT a paid order. Use 7-day and 30-day cohorts and disclose tiny denominators; no subscriber email, email hash or individual identity is exported to campaign URLs.
+Proposed email-to-guide tags (NOT ACTIVE): utm_source=dispatch; utm_medium=email; utm_campaign=dispatch_pilot_2026_11; utm_content=issue_03_zen12 or issue_05_total_focus. Avoid per-recipient UTM, plaintext identifiers, tracking pixels, duplicate scripts, or premature A/B statistics. KPI: **realized net revenue per 1,000 qualified-human sessions**, presently **NOT COMPUTABLE** from available evidence.
+
+## Release blocker acceptance checklist (each must be proved outside this package)
+1. Confirm provider-confirmed, unsubscribed-excluded eligible audience, reconcile WordPress.com followers vs email-only status; do not expose addresses in issue comments.
+2. Inspect an existing authorized genuine welcome specimen and Fieldbook download receipt; source-level configuration alone is not delivery.
+3. Obtain named publisher acceptance, written EMAIL promotion permission, issued earning link and current checked merchant checkout/terms; Mind Studio must publish and QA the real independent guides for both commercial issues or keep those issues held.
+4. Provide a **valid Final Vestige Studios physical postal address** and inspect real Jetpack-rendered footer, sender identity and functional unsubscribe; Automattic's or the merchant's address cannot substitute. FTC https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business .
+5. Capture a genuine native WordPress editor preview, and only after specific founder authorization a real received test email; inspect mobile, dark/light, keyboard, screen readers and email clients.
+6. Require the founder's **final campaign-specific approval** of exact content, audience, schedule and release. Existing approval covers draft production ONLY.
+7. Reconcile actual orders/affiliate settlement reports with refunds, fees and qualified-human 7/30d denominators; until then net revenue/1,000 cannot be reported.
+
+## Ownership and immutable boundaries
+Dispatch owns consent/copy/attribution QA and these offline fixtures; Mind #171 owns merchant permission and presell pages; Claude owns WordPress/editor and analytics production; Grok owns social creation/distribution and asset IDs; Praxxis coordinates outcomes to #820; founder retains release/spending/sending authority. No emails, including tests, were sent; no subscriptions, setting, posts, links or live commerce were modified.
