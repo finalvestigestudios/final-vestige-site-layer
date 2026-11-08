@@ -1,0 +1,112 @@
+{
+  "schema": "fv-p0-4181-4071-item-rights-and-media-path-v1",
+  "audited_on": "2026-11-08",
+  "prior_p0_ledger": {
+    "path": "qa/media-recovery/p0_guest_browser_disposition_pending_20261105.json",
+    "git_blob_sha": "9bf9a973fce37a546f8c3e79ecd0c34345eb2457"
+  },
+  "evidence_type": "read_only_public_catalog_and_web_wrapper_retrieval_not_guest_browser",
+  "historical_42_broken": "NOT_GUEST_VERIFIED",
+  "claimed_76pct_wire_reduction": "UNMEASURED",
+  "verified_guest_broken_total": null,
+  "production_repaired": 0,
+  "assets_downloaded": 0,
+  "wordpress_writes": 0,
+  "publication_authorized": false,
+  "records": [
+    {
+      "image_key": "418:1",
+      "post_id": 418,
+      "original_stored_src": "https://media.defense.gov/2021/Mar/30/2002610812/1920/1080/0/210330-G-DE713-0002.JPG",
+      "original_retrieval": {
+        "method": "web.open_retriever",
+        "date": "2026-11-08",
+        "wrapper_http_code": 403,
+        "wrapper_result": "FORBIDDEN",
+        "is_origin_http": false,
+        "is_guest_browser_http": false,
+        "guest_http": null,
+        "guest_decode": null,
+        "guest_bytes": null
+      },
+      "item": {
+        "primary_catalog": "https://www.history.uscg.mil/Our-Collections/Photos/igphoto/2002905913/",
+        "alternative_catalog": "https://www.history.uscg.mil/US-Coast-Guard-Photo-Gallery/igphoto/2002905913/",
+        "official_virin": "210330-G-DE713-0002.JPG",
+        "catalog_identifies": "Service photo of Anthony Pettit, Chief Petty Officer at Scotch Cap station; NOT lighthouse debris",
+        "by": "U.S. Coast Guard",
+        "reported_download_mb": 0.04,
+        "method": "search_indexed_primary_catalog",
+        "catalog_page_direct_open": "WEB_RETRIEVER_403"
+      },
+      "rights": {
+        "item_statement": "photo considered public domain and cleared for release",
+        "credit_required": "U.S. Coast Guard",
+        "rights_gate": "ITEM_CATALOG_PD_CLEAR_RELEASE_SUBJECT_TO_DOD_REUSE_GUIDANCE",
+        "reuse_limits": "No implied Coast Guard/DoD endorsement; observe personnel, insignia, trademark and attribution restrictions"
+      },
+      "candidate": {
+        "relationship": "OFFICIAL_VIRIN_SAME_FILENAME_NOT_BINARY_MATCH",
+        "original_px": null,
+        "proposed_px": null,
+        "max_long_edge_px": 960,
+        "no_upscale": true,
+        "binary_sha256": null,
+        "exact_scene_match_approved": false,
+        "cache_or_upload_authorized": false,
+        "wordpress_action": "HOLD_BROWSER_AND_BINARY_IDENTITY"
+      }
+    },
+    {
+      "image_key": "407:1",
+      "post_id": 407,
+      "original_stored_src": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/img7535.jpg",
+      "original_retrieval": {
+        "method": "web.open_retriever",
+        "date": "2026-11-08",
+        "wrapper_http_code": 400,
+        "wrapper_result": "UNSUPPORTED_BINARY_OCTET_STREAM",
+        "is_origin_http": false,
+        "is_guest_browser_http": false,
+        "guest_http": null,
+        "guest_decode": null,
+        "guest_bytes": null
+      },
+      "item": {
+        "primary_catalog": "https://www.usgs.gov/media/images/hebgen-lake-fault-scarp-1959",
+        "candidate_image_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/thumbnails/image/img7535.jpg",
+        "catalog_identifies": "Hebgen Lake fault scarp in 1959",
+        "by": "J. R. Stacy (USGS)",
+        "date": "1959 (approx.)",
+        "catalog_usage": "Public Domain",
+        "candidate_web_viewer": "RENDERED",
+        "candidate_web_viewer_display_px": [
+          1000,
+          1000
+        ],
+        "native_px_verified": false
+      },
+      "rights": {
+        "item_statement": "USGS catalog Sources/Usage: Public Domain",
+        "credit_required": "J. R. Stacy / U.S. Geological Survey",
+        "rights_gate": "USGS_ITEM_PD_CATALOG_VERIFY_ASSET_BINARY",
+        "reuse_limits": "Preserve source credit and 1959 dating; same-scene comparison before substitution"
+      },
+      "candidate": {
+        "relationship": "SAME_USGS_RECORD_ALTERNATE_THUMBNAIL_PATH_NOT_BINARY_VERIFIED",
+        "original_px": null,
+        "proposed_px": [
+          960,
+          960
+        ],
+        "proposed_px_is_conditional": true,
+        "max_long_edge_px": 960,
+        "no_upscale": true,
+        "binary_sha256": null,
+        "exact_scene_match_approved": false,
+        "cache_or_upload_authorized": false,
+        "wordpress_action": "HOLD_BROWSER_AND_NATIVE_GEOMETRY"
+      }
+    }
+  ]
+}
