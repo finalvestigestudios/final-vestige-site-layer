@@ -24,7 +24,7 @@ function validate(bundle){
  must(article.includes('UNPUBLISHED')&&article.includes('WITHHELD'),'article never supplies public live destination');
  for(const s of ['10.1371/journal.pone.0286023','10.1038/s41598-025-88517-z','zen12.com/hnp','14 eligible','one mixed'])must(article.includes(s),'scientific manuscript evidence missing '+s);
  must(article.includes('did **not** prevent performance from declining'),'2025 vigilance decrement caveat');
- must(article.includes('not a randomized or blinded experiment')||article.includes('not a blinded trial'),'free task caveat');
+ must(article.includes('This tiny self-observation exercise cannot demonstrate neural entrainment'),'free task caveat');
  must(!/affiliate[_ -]?ref=|affiliate_link=|tracking_id=/i.test(article),'article may not embed sale tracking');
  const merchant=/<a\b[^>]*href\s*=\s*["']https?:\/\/(?:www\.)?(?:zen12|hypnosislive|brainwaveshots|affiliates\.inspire3)\./i;
  for(const [kind,h] of [['hub',hub],['guide',guide]]){
