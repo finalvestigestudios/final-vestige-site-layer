@@ -150,12 +150,12 @@
     },
     {
       "id": "C03",
-      "claim": "Stroop reported 47 seconds / 74.3% added for color naming under one historic comparison",
+      "claim": "In Stroop Experiment 2 (N=100), the error-adjusted mean difference was 47.0 s (110.3 versus 63.3 seconds per 100 responses), about 74.3%; unadjusted means were 108.7 and 63.0 s",
       "source_ids": [
         "S01"
       ],
       "status": "SUPPORTED_NARROW",
-      "note": "Article: do not generalize effect size"
+      "note": "Experiment 1 N=70 separately; do not generalize sample size, task effects or transfer."
     },
     {
       "id": "C04",
@@ -516,5 +516,10 @@
     "spend": false
   },
   "core_control": "natively disabled button; immediately adjacent prospective affiliate commission disclosure; no href or event handler",
-  "original_film": "42-second poster/transcript/VTT concept only; no MP4 or playback"
+  "original_film": "42-second poster/transcript/VTT concept only; no MP4 or playback",
+  "editorial_duplicate_risk": {
+    "canonical_candidate": "mind/r195/the-word-that-fought-the-color-STROOP-INVESTIGATION-UNPUBLISHED.md",
+    "r216_role": "supporting noncanonical research and practice notes",
+    "decision": "Do not publish a second Stroop-targeting public URL without editorial consolidation"
+  }
 }

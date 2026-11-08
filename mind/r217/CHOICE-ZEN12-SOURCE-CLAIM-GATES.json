@@ -1,0 +1,484 @@
+{
+  "schema_version": "fv-mind-r217-1",
+  "date_checked": "2026-11-08",
+  "status": "UNPUBLISHED_SOURCE_ONLY",
+  "scope": "Mind/Perception research and Zen12 prospective guide only",
+  "offer": {
+    "id": "zen12-premium",
+    "merchant": "Inspire3 / Zen12",
+    "source": "S11",
+    "affiliate_url": null,
+    "approval_verified": false,
+    "current_checkout_price": null,
+    "return_terms_verified": false,
+    "commission_terms_verified": false,
+    "affiliate_allowed": false,
+    "product_earnings_claims": false
+  },
+  "sources": [
+    {
+      "id": "S01",
+      "type": "original_experiment",
+      "title": "Johansson et al. 2005 Science",
+      "url": "https://doi.org/10.1126/science.1111709"
+    },
+    {
+      "id": "S02",
+      "type": "institutional_record",
+      "title": "Lund University choice blindness",
+      "url": "https://portal.research.lu.se/en/publications/failure-to-detect-mismatches-between-intention-and-outcome-in-a-s/"
+    },
+    {
+      "id": "S03",
+      "type": "original_experiment",
+      "title": "Hall et al. 2010 marketplace",
+      "url": "https://doi.org/10.1016/j.cognition.2010.06.010"
+    },
+    {
+      "id": "S04",
+      "type": "original_experiment",
+      "title": "Hall et al. 2013 political survey",
+      "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0060554"
+    },
+    {
+      "id": "S05",
+      "type": "independent_experiment",
+      "title": "Taya et al. 2014 choice blindness",
+      "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0108515"
+    },
+    {
+      "id": "S06",
+      "type": "official_archival_context",
+      "title": "FV Puységur Animal Magnetism Files",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+    },
+    {
+      "id": "S07",
+      "type": "published_editorial",
+      "title": "FV Change Blindness",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/"
+    },
+    {
+      "id": "S08",
+      "type": "published_editorial",
+      "title": "FV Mesmerism",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/"
+    },
+    {
+      "id": "S09",
+      "type": "published_free_funnel",
+      "title": "FV Seven Day Focus Fieldbook",
+      "url": "https://finalvestige.com/focus/"
+    },
+    {
+      "id": "S10",
+      "type": "official_product_catalog",
+      "title": "Inspire3 catalog",
+      "url": "https://inspire3.com/"
+    },
+    {
+      "id": "S11",
+      "type": "official_seller_claims",
+      "title": "Zen12 Premium exact merchant page",
+      "url": "https://zen12.com/hnp"
+    },
+    {
+      "id": "S12",
+      "type": "official_guidance",
+      "title": "FTC endorsement guides FAQ",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking"
+    },
+    {
+      "id": "S13",
+      "type": "official_guidance",
+      "title": "FTC health products claims",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+    },
+    {
+      "id": "S14",
+      "type": "governance",
+      "title": "FV Mind Issue #171",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171"
+    },
+    {
+      "id": "S15",
+      "type": "governance",
+      "title": "FV conversion Issue #820",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820"
+    },
+    {
+      "id": "S16",
+      "type": "research_baseline",
+      "title": "Frozen R210 A/B research",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/tree/10a5ebf055bc657c60302dd8f7f79f4bdf0566ee/mind/r210"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "Choice blindness was experimentally observed following manipulated face choices",
+      "status": "SUPPORTED_NARROW",
+      "source_ids": [
+        "S01",
+        "S02"
+      ],
+      "limits": "The effect pertains to specified experimental trials, not every real-world decision."
+    },
+    {
+      "id": "C02",
+      "claim": "Preference explanations can describe a substituted outcome",
+      "status": "SUPPORTED_NARROW",
+      "source_ids": [
+        "S01"
+      ],
+      "limits": "Do not interpret as evidence that the person was lying or that a memory was erased."
+    },
+    {
+      "id": "C03",
+      "claim": "Marketplace jam/tea research included covertly switched samples",
+      "status": "SUPPORTED_NARROW",
+      "source_ids": [
+        "S03"
+      ],
+      "limits": "No more than one-third of manipulated trials detected overall per published abstract."
+    },
+    {
+      "id": "C04",
+      "claim": "A political-survey manipulation was tested in Sweden",
+      "status": "SUPPORTED_NARROW",
+      "source_ids": [
+        "S04"
+      ],
+      "limits": "Context-specific experimental results; no partisan generalization or voter targeting advice."
+    },
+    {
+      "id": "C05",
+      "claim": "Independent computerized choice-blindness research examined detection and preferences",
+      "status": "SUPPORTED_NARROW",
+      "source_ids": [
+        "S05"
+      ],
+      "limits": "Follow-up and response timing are separate outcomes; long-term change not guaranteed."
+    },
+    {
+      "id": "C06",
+      "claim": "Puységur is a historical source trail rather than modern efficacy proof",
+      "status": "SUPPORTED_HISTORICAL_CONTEXT",
+      "source_ids": [
+        "S06"
+      ],
+      "limits": "Avoid validating animal magnetism as treatment."
+    },
+    {
+      "id": "C07",
+      "claim": "Change Blindness and Mesmerism are published FV editorial bridges",
+      "status": "SUPPORTED_PUBLISHED_ROUTE",
+      "source_ids": [
+        "S07",
+        "S08"
+      ],
+      "limits": "Linked locations checked via earlier site archive; final browser link test pending."
+    },
+    {
+      "id": "C08",
+      "claim": "Seven Day Focus Fieldbook uses existing published path",
+      "status": "SUPPORTED_PUBLISHED_ROUTE",
+      "source_ids": [
+        "S09"
+      ],
+      "limits": "Single Jetpack/Dispatch path; provider-confirmed signup not inferred."
+    },
+    {
+      "id": "C09",
+      "claim": "Inspire3 lists Zen12 as a family product",
+      "status": "SELLER_CATALOG_ONLY",
+      "source_ids": [
+        "S10"
+      ],
+      "limits": "Catalog does not confirm FV approval or product efficacy."
+    },
+    {
+      "id": "C10",
+      "claim": "Zen12 Premium seller describes twelve levels",
+      "status": "SELLER_DESCRIPTION_ONLY",
+      "source_ids": [
+        "S11"
+      ],
+      "limits": "Not an audited curriculum or results guarantee."
+    },
+    {
+      "id": "C11",
+      "claim": "Zen12 Premium seller describes 48 MP3s",
+      "status": "SELLER_DESCRIPTION_ONLY",
+      "source_ids": [
+        "S11"
+      ],
+      "limits": "Not independently downloaded/verified."
+    },
+    {
+      "id": "C12",
+      "claim": "Zen12 offers four listening styles",
+      "status": "SELLER_DESCRIPTION_ONLY",
+      "source_ids": [
+        "S11"
+      ],
+      "limits": "Actual content/device compatibility unverified."
+    },
+    {
+      "id": "C13",
+      "claim": "Seller advertises a one-year money-back promise",
+      "status": "SELLER_DESCRIPTION_ONLY",
+      "source_ids": [
+        "S11"
+      ],
+      "limits": "Refund scope, exclusions and fulfillment unverified."
+    },
+    {
+      "id": "C14",
+      "claim": "Seller asserts 12 minutes equals 1 hour of advanced meditation",
+      "status": "SELLER_UNSUBSTANTIATED_OMITTED",
+      "source_ids": [
+        "S11",
+        "S13"
+      ],
+      "limits": "Do not repeat as FV-supported outcome or insert in positive hero."
+    },
+    {
+      "id": "C15",
+      "claim": "Product has medical or mental-health efficacy",
+      "status": "UNSUBSTANTIATED_OMITTED",
+      "source_ids": [
+        "S13"
+      ],
+      "limits": "Do not present benefits as established; no product-specific support verified."
+    },
+    {
+      "id": "C16",
+      "claim": "Current payable checkout price/terms",
+      "status": "UNKNOWN",
+      "source_ids": [
+        "S11"
+      ],
+      "limits": "A public price is not proof of checkout or transaction."
+    },
+    {
+      "id": "C17",
+      "claim": "FV Inspire3 partner acceptance and channel rights",
+      "status": "UNKNOWN",
+      "source_ids": [
+        "S10",
+        "S14"
+      ],
+      "limits": "Gmail search yielded no qualifying approval correspondence; dashboard not accessed."
+    },
+    {
+      "id": "C18",
+      "claim": "Near-button prospective affiliate disclosure is needed before any activation",
+      "status": "SUPPORTED_POLICY",
+      "source_ids": [
+        "S12",
+        "S14"
+      ],
+      "limits": "At activation revise tense to direct material-connection disclosure."
+    },
+    {
+      "id": "C19",
+      "claim": "Verified paid affiliate commission/sale",
+      "status": "UNKNOWN",
+      "source_ids": [
+        "S15"
+      ],
+      "limits": "Merchant-side cleared conversion not available."
+    },
+    {
+      "id": "C20",
+      "claim": "Text-only versus optional 42-second film is a test hypothesis",
+      "status": "EXPERIMENT_NOT_TESTED",
+      "source_ids": [
+        "S16"
+      ],
+      "limits": "R210 original arm isolation preserved; R217 guide is copy candidate, not extra arm."
+    },
+    {
+      "id": "C21",
+      "claim": "An eligible FV-owned Mind product has an authenticated Payhip checkout",
+      "status": "UNKNOWN",
+      "source_ids": [
+        "S15"
+      ],
+      "limits": "No rights-cleared SKU/payment/refund ledger verified here."
+    }
+  ],
+  "gates": [
+    {
+      "id": "G01",
+      "criterion": "Named FV Inspire3 affiliate account acceptance",
+      "owner": "FOUNDER_MIND",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "G02",
+      "criterion": "Approved website promotional channel",
+      "owner": "FOUNDER_MIND",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "G03",
+      "criterion": "Approved social/TikTok channel",
+      "owner": "FOUNDER_MIND_GROK",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "G04",
+      "criterion": "Approved email/Dispatch channel",
+      "owner": "FOUNDER_DISPATCH",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "G05",
+      "criterion": "Account-issued earning URL and redirect chain",
+      "owner": "FOUNDER_MIND",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "G06",
+      "criterion": "Approved creative usage and attribution terms",
+      "owner": "FOUNDER_MIND",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "G07",
+      "criterion": "Checkout exact currency, amount and refunds",
+      "owner": "COMMERCE",
+      "status": "UNKNOWN"
+    },
+    {
+      "id": "G08",
+      "criterion": "Verified FV-owned rights-cleared Mind SKU fallback",
+      "owner": "COMMERCE",
+      "status": "UNKNOWN"
+    },
+    {
+      "id": "G09",
+      "criterion": "Existing Jetpack confirmed opt-in per relevant cohort",
+      "owner": "CLAUDE_QA",
+      "status": "UNKNOWN"
+    },
+    {
+      "id": "G10",
+      "criterion": "Actual Grok published asset IDs and channel rights",
+      "owner": "PRAXXIS_GROK",
+      "status": "UNKNOWN"
+    },
+    {
+      "id": "G11",
+      "criterion": "Founder production publication/release approval",
+      "owner": "FOUNDER",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "G12",
+      "criterion": "Real browser WP sanitization / Lighthouse / accessibility",
+      "owner": "CLAUDE_QA",
+      "status": "OPEN"
+    },
+    {
+      "id": "G13",
+      "criterion": "Settled merchant order or cleared commission and refunds/fees",
+      "owner": "COMMERCE_ANALYTICS",
+      "status": "UNKNOWN"
+    },
+    {
+      "id": "G14",
+      "criterion": "Founder approval of campaign attribution implementation and privacy",
+      "owner": "FOUNDER_CLAUDE",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "G15",
+      "criterion": "Rendered optional video captions/audio rights, performance",
+      "owner": "GROK_QA",
+      "status": "OPEN"
+    },
+    {
+      "id": "G16",
+      "criterion": "Source and editorial duplication resolution",
+      "owner": "MIND_EDITOR",
+      "status": "OPEN"
+    }
+  ],
+  "permissions": {
+    "publishing": false,
+    "affiliate_activation": false,
+    "tracking_script": false,
+    "email_send": false,
+    "social_posting": false,
+    "paid_spend": false,
+    "merge": false
+  },
+  "first_party_attribution": {
+    "status": "SPEC_ONLY_NOT_INSTALLED",
+    "permitted": {
+      "utm_source": "validated_campaign_label",
+      "utm_campaign": "allowlisted_campaign_label",
+      "asset_id": "non_personal_creator_asset_id",
+      "page_id": "content_id",
+      "event_name": "allowlisted_event_name"
+    },
+    "forbidden": [
+      "emails",
+      "phone",
+      "IP storage",
+      "device fingerprints",
+      "unconsented tracking",
+      "unapproved third-party SDK"
+    ],
+    "events": [
+      "qualified_human_session",
+      "landing_view",
+      "relevant_cta_click",
+      "affiliate_click",
+      "focus_confirmed_optin",
+      "owned_order_paid",
+      "affiliate_commission_cleared",
+      "refund",
+      "fee",
+      "chargeback"
+    ],
+    "identity": "aggregate session cohort only; no stable individual cross-device identity",
+    "sale_evidence": "merchant confirmed only, never inferred from click"
+  },
+  "measurement": {
+    "status": "NOT_COMPUTABLE",
+    "reporting_windows_days": [
+      7,
+      30
+    ],
+    "net_revenue_per_1000_qualified_human_sessions": null,
+    "orders_verified": null,
+    "affiliate_commission_cleared": null,
+    "refunds": null,
+    "fees": null,
+    "qualified_human_sessions": null,
+    "unit": "settled currency after fees/refunds/chargebacks",
+    "formula": "1000 * (settled_owned_receipts + cleared_affiliate_commissions - refunds - fees - chargebacks) / verified_qualified_human_sessions",
+    "tiny_sample_warning": true
+  },
+  "editorial": {
+    "r195_canonical_stroop_candidate": true,
+    "r216_stroop_supporting_copy": true,
+    "r217_choice_blindness_independent_topic": true,
+    "r210_ab_preserved": true,
+    "new_ab_arm_activated": false,
+    "source_article_has_no_affiliate": true
+  },
+  "proof": {
+    "public_sources_checked": true,
+    "gmail_search_checked": true,
+    "partner_dashboard_checked": false,
+    "checkout_checked": false,
+    "wordpress_draft_created": false,
+    "real_browser_tested": false,
+    "actual_sale_tested": false
+  }
+}
