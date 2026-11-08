@@ -99,7 +99,7 @@ const mutators=[
  [P.A,s=>s.replace(" disabled aria-describedby"," aria-describedby")],
  [P.B,s=>s.replace(" disabled aria-describedby"," aria-describedby")],
  [P.A,s=>s.replace("Final Vestige may earn a commission at no additional cost to you","(disclosure deleted)")],
- [P.B,s=>s.replace("no playable or rendered video","now a live playable video")],
+ [P.B,s=>s.replace("not a playable or rendered video","a playable video is now live")],
  [P.A,s=>s.replace('<meta name="robots" content="noindex,nofollow">',"")],
  [P.M,s=>s.replace('"NO_AUTHENTICATED_FV_PUBLISHER_APPROVAL"','"APPROVED"')],
  [P.M,s=>s.replace('"status": "OPEN"','"status": "CLOSED"')],
