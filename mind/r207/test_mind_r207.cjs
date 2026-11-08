@@ -81,6 +81,6 @@ rejectMutant('unapproved active video',()=>noActiveMarkup(b+'<video controls pre
 rejectMutant('missing required noindex',()=>assert.match(a.replace('noindex,nofollow','index,follow'),/<meta name="robots" content="noindex,nofollow">/));
 rejectMutant('invalid captions',()=>validateCaptions(vtt.replace('WEBVTT','BROKEN')));
 rejectMutant('invented closed merchant gate',()=>validateCommerceMatrix({...m,authorization_gates:m.authorization_gates.map((g,i)=>i===0?{...g,state:'CLOSED'}:g)}));
-rejectMutant('wrong revenue order count units',()=>assert.doesNotMatch('confirmed_paid_orders + cleared_affiliate_commissions',/confirmed_paid_orders\s*\+/));
+rejectMutant('wrong revenue order count units',()=>validateCommerceMatrix({...m,measurement:{...m.measurement,formula:'confirmed_paid_orders + cleared_affiliate_commissions'}}));
 rejectMutant('fabricated net revenue',()=>validateCommerceMatrix({...m,measurement:{...m.measurement,status:'VERIFIED_REVENUE'}}));
 process.stdout.write('R207 PASS '+count+' assertions; '+mutations+' unsafe changes detected. Source only: NOT browser/CI/WordPress/checkout/paid proof.\n');
