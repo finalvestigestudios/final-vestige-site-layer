@@ -1,0 +1,306 @@
+{
+  "milestone": "R209",
+  "date": "2026-11-07 PT",
+  "state": "DRAFT_NO_CMS_OR_AFFILIATE_ACTIVATION",
+  "merchant_account_status": "NO_AUTHENTICATED_FV_PUBLISHER_APPROVAL",
+  "source_ids": {
+    "S01": "https://zen12.com/hnp",
+    "S02": "https://inspire3.com/",
+    "S03": "https://affiliates.inspire3.com/",
+    "S04": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+    "S05": "https://doi.org/10.1080/18387357.2024.2374759",
+    "S06": "https://pubmed.ncbi.nlm.nih.gov/38458383/",
+    "S07": "https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.0050138",
+    "S08": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "S09": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+    "S10": "https://finalvestige.com/focus/",
+    "S11": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "S12": "https://finalvestige.com/2026/11/02/change-blindness/",
+    "S13": "https://finalvestige.com/2026/11/02/mesmerism/",
+    "S14": "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/1534"
+  },
+  "claims": [
+    {
+      "id": "01",
+      "claim": "Premium: 12 levels, 48 MP3 recordings, four formats",
+      "status": "SELLER_DESCRIPTION_ONLY",
+      "sources": [
+        "S01"
+      ],
+      "limit": "Do not claim fulfillment personally verified"
+    },
+    {
+      "id": "02",
+      "claim": "One-year money-back guarantee advertised",
+      "status": "SELLER_DESCRIPTION_ONLY",
+      "sources": [
+        "S01"
+      ],
+      "limit": "Exact current checkout and refund honor untested"
+    },
+    {
+      "id": "03",
+      "claim": "Cached seller text $87 versus previously observed $87.99",
+      "status": "INCONSISTENT_DATED_SELLER_EXTRACTION",
+      "sources": [
+        "S01"
+      ],
+      "limit": "Do not assert live checkout price or claim price changed"
+    },
+    {
+      "id": "04",
+      "claim": "Twelve minutes equals one hour of advanced meditation",
+      "status": "EXCLUDE_UNSUBSTANTIATED",
+      "sources": [
+        "S01",
+        "S09"
+      ],
+      "limit": "No verified branded controlled equivalence research"
+    },
+    {
+      "id": "05",
+      "claim": "Automatic deep meditation or clinical symptom treatment",
+      "status": "EXCLUDE_UNSUBSTANTIATED",
+      "sources": [
+        "S01",
+        "S09"
+      ],
+      "limit": "Product-specific efficacy/safety evidence unavailable"
+    },
+    {
+      "id": "06",
+      "claim": "Binaural beats produce a perceptual beat effect",
+      "status": "SCIENTIFIC_BACKGROUND",
+      "sources": [
+        "S04"
+      ],
+      "limit": "Does not imply medical or neurological benefit"
+    },
+    {
+      "id": "07",
+      "claim": "Fourteen EEG studies: five support, eight contradict, one mixed",
+      "status": "SUPPORTED_WITH_LIMITATIONS",
+      "sources": [
+        "S04"
+      ],
+      "limit": "Protocols/EEG methods heterogeneous; not a Zen12 test"
+    },
+    {
+      "id": "08",
+      "claim": "Twelve RCTs of BB for nonclinical stress: eight at least one positive, four none",
+      "status": "SUPPORTED_WITH_LIMITATIONS",
+      "sources": [
+        "S05"
+      ],
+      "limit": "Study/reporting limitations, not product-specific"
+    },
+    {
+      "id": "09",
+      "claim": "31-study auditory-stimulation/autonomic review",
+      "status": "SUPPORTED_WITH_LIMITATIONS",
+      "sources": [
+        "S06"
+      ],
+      "limit": "Multiple audio categories, not 31 binaural-beat trials"
+    },
+    {
+      "id": "10",
+      "claim": "Slagter intensive retreat observed reduced attentional blink",
+      "status": "SUPPORTED_NARROW_NONRANDOMIZED",
+      "sources": [
+        "S07"
+      ],
+      "limit": "17/23 behavioral; 10/12 and 14/20 EEG subsamples; pooled P3b-behavior correlation, mixed retreat practices"
+    },
+    {
+      "id": "11",
+      "claim": "Zen12 improves attentional blink or cognition",
+      "status": "EXCLUDE_UNSUBSTANTIATED",
+      "sources": [
+        "S01",
+        "S07"
+      ],
+      "limit": "No product-matched trial"
+    },
+    {
+      "id": "12",
+      "claim": "Public affiliate program exists",
+      "status": "SUPPORTED_PUBLIC_PORTAL",
+      "sources": [
+        "S03"
+      ],
+      "limit": "No authorization for this FV account"
+    },
+    {
+      "id": "13",
+      "claim": "FV affiliate agreement, channel rights, approved creatives, issued tracking URL",
+      "status": "AUTHORIZATION_UNKNOWN",
+      "sources": [
+        "S03"
+      ],
+      "limit": "Founder must verify authenticated approval before any link activation"
+    },
+    {
+      "id": "14",
+      "claim": "Existing Focus Fieldbook free resource",
+      "status": "ESTABLISHED_PATH_PRIOR_CMS_VERIFICATION",
+      "sources": [
+        "S10"
+      ],
+      "limit": "Public web fetch inconsistent; not evidence of a confirmed subscriber"
+    },
+    {
+      "id": "15",
+      "claim": "FTC clearly disclosed compensated endorsement",
+      "status": "POLICY_REQUIREMENT",
+      "sources": [
+        "S08"
+      ],
+      "limit": "Prospective disclosure adjacent to disabled CTA, retest with active link if ever authorized"
+    },
+    {
+      "id": "16",
+      "claim": "FTC product health claims must be substantiated",
+      "status": "POLICY_REQUIREMENT",
+      "sources": [
+        "S09"
+      ],
+      "limit": "Exclude unsupported clinical or cognitive promises"
+    },
+    {
+      "id": "17",
+      "claim": "FV-owned rights-cleared paid Mind SKU with confirmed checkout",
+      "status": "NOT_VERIFIED",
+      "sources": [
+        "S10"
+      ],
+      "limit": "No paid-Mind product can be assumed from free fieldbook"
+    },
+    {
+      "id": "18",
+      "claim": "Grok immutable video/media IDs and approved destination mapping",
+      "status": "PENDING_CREATOR_HANDOFF",
+      "sources": [
+        "S12",
+        "S13"
+      ],
+      "limit": "Do not invent published media IDs"
+    },
+    {
+      "id": "19",
+      "claim": "Verified cleared commissions, confirmed paid orders and qualified-human denominator",
+      "status": "NOT_VERIFIED",
+      "sources": [
+        "S03"
+      ],
+      "limit": "Net revenue per 1k human sessions NOT COMPUTABLE"
+    },
+    {
+      "id": "20",
+      "claim": "R196 canonical attentional-blink article; R208 supplementary",
+      "status": "EDITORIAL_DUPLICATE_CONTROL",
+      "sources": [
+        "S14"
+      ],
+      "limit": "One proposed public route only, pending founder/QA signoff"
+    }
+  ],
+  "release_gates": [
+    {
+      "id": "AUTH1",
+      "condition": "FV publisher ID acceptance and allowed website/social/email channels",
+      "status": "OPEN",
+      "owner": "Founder/Mind"
+    },
+    {
+      "id": "AUTH2",
+      "condition": "Approved creative terms, direct commission referral URL and disclosure policy",
+      "status": "OPEN",
+      "owner": "Founder/Mind"
+    },
+    {
+      "id": "COM1",
+      "condition": "Verified Payhip owned paid Mind SKU, rights and checkout OR authorized affiliate",
+      "status": "OPEN",
+      "owner": "Commerce"
+    },
+    {
+      "id": "COM2",
+      "condition": "Merchant checkout total and real applicable refund policy",
+      "status": "OPEN",
+      "owner": "Commerce"
+    },
+    {
+      "id": "QA1",
+      "condition": "Independent source/claims review and single canonical attentional-blink route",
+      "status": "OPEN",
+      "owner": "Praxxis/Mind"
+    },
+    {
+      "id": "QA2",
+      "condition": "Actual browser WCAG 2.2 AA, mobile, no-JS and Lighthouse evidence",
+      "status": "OPEN",
+      "owner": "SiteQA/Claude"
+    },
+    {
+      "id": "MEDIA1",
+      "condition": "Real rights-cleared optional MP4 <45s with captions, poster and transcript",
+      "status": "OPEN",
+      "owner": "Media"
+    },
+    {
+      "id": "ATTR1",
+      "condition": "Use existing authorized first-party event pipeline; no duplicate scripts; consent controls",
+      "status": "OPEN",
+      "owner": "Claude/Analytics"
+    },
+    {
+      "id": "ATTR2",
+      "condition": "Actual immutable Grok asset IDs, human-session cohorts, authentic paid merchant reports",
+      "status": "OPEN",
+      "owner": "Praxxis/Grok/Commerce"
+    },
+    {
+      "id": "REL1",
+      "condition": "Founder release approval before CMS/nav/affiliate/social email or deployment",
+      "status": "OPEN",
+      "owner": "Founder"
+    }
+  ],
+  "experiment": {
+    "hypothesis": "At equal source, price, offer and CTA language, original optional 42s film may change verified paid conversion relative to text-only variant; never assume outcome.",
+    "A": "mind/r209/zen12-proof-A-TEXT-UNPUBLISHED.html",
+    "B": "mind/r209/zen12-proof-B-OPTIONAL-42S-UNRENDERED.html",
+    "what_is_constant": "All offer, evidence, free alternative, objection, disclosure, accessibility and CTA text identical; only optional film section differs",
+    "status": "DESIGN_ONLY_NOT_RANDOMIZED_NOT_LIVE",
+    "commercial_cta": "NATIVE_DISABLED; NO_EARNING_URL",
+    "metrics": [
+      "qualified_human_session",
+      "landing_visit",
+      "relevant_CTA_click",
+      "confirmed_Jetpack_lead_if_applicable",
+      "affiliate_click_not_paid_sale",
+      "merchant_confirmed_paid_purchase",
+      "cleared_affiliate_commission",
+      "settled_gross",
+      "refunds",
+      "fees",
+      "net_revenue_per_1000_qualified_humans"
+    ],
+    "cohorts": "7/30 days; small-denominator warnings; refrain from ROI when no audited conversion data",
+    "privacy": "No emails/names/IP addresses in event payloads; honor consent/DNT policy; no fingerprinting; no new script"
+  },
+  "page_ownership": {
+    "mind_hub": "Inherit source-controlled R208 four-stream /mind/ preview and canonical PR #172; do not duplicate CMS or touch existing approved hub",
+    "original_article": "mind/r209/zen12-the-evidence-not-the-promise-BUYERS-FIELD-GUIDE-UNPUBLISHED.md",
+    "canonical_attentional_blink": "mind/r196/the-second-target-that-vanished-ATTENTIONAL-BLINK-UNPUBLISHED.md",
+    "supplement": "mind/r208/the-second-thing-you-didnt-see-ATTENTIONAL-BLINK-UNPUBLISHED.md",
+    "protected": [
+      "PR #49",
+      "PR #172",
+      "Issue #150",
+      "Issue #174",
+      "existing Jetpack/Focus welcome"
+    ]
+  }
+}
