@@ -44,7 +44,7 @@ def loads_strict_receipt(data: bytes | bytearray) -> object:
             parse_constant=_reject_nonstandard_constant,
         )
         parsed = True
-    except (ValueError, TypeError, UnicodeError):
+    except (ValueError, TypeError, UnicodeError, RecursionError):
         # Do not retain a decoder exception containing a private path or row.
         pass
     if not parsed:
