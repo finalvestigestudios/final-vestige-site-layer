@@ -64,7 +64,7 @@ function validate(f){
  check(A.includes("No firsthand product-use test")===false,""); // placeholder no-op removed below
  check(A.includes("not a randomized or blinded clinical trial")&&A.includes("no second signup form"),"buyer_free_trial_limit_missing");
  check(B.includes('data-optional-film="concept-only"')&&B.includes("NOT been timed")&&B.includes("NOT been generated"),"optional_video_concept_missing");
- check(B.includes("<title id=")&&B.includes("<desc id=")&&B.includes("transcript"),"film_poster_transcript_accessibility_missing");
+ check(B.includes("<title id=")&&B.includes("<desc id=")&&B.includes("Original time-coded narration / transcript"),"film_poster_transcript_accessibility_missing");
  check(normalizedArm(A,false)===normalizedArm(B,true),"AB_copy_not_equivalent");
  const cues=captionTimes(vtt);
  check(vtt.startsWith("WEBVTT")&&cues.length===5&&cues[0]?.[0]===0&&cues[4]?.[1]===42000&&cues.every((x,i)=>x[1]>x[0]&&(i===0||cues[i-1][1]===x[0])),"VTT_cues_or_duration_invalid");
