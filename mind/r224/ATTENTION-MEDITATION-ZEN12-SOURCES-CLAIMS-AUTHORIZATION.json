@@ -1,0 +1,598 @@
+{
+  "schema_version": "r224-1",
+  "created_at": "2026-11-08",
+  "lane": "mind_only",
+  "release": "UNPUBLISHED_HARD_HOLD",
+  "sources": [
+    {
+      "id": "S01",
+      "url": "https://inspire3.com/",
+      "type": "merchant_catalog",
+      "reviewed": "2026-11-08"
+    },
+    {
+      "id": "S02",
+      "url": "https://zen12.com/hnp",
+      "type": "exact_merchant_sales_page",
+      "reviewed": "2026-11-08"
+    },
+    {
+      "id": "S03",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "type": "official_regulatory_guidance",
+      "reviewed": "2026-11-08"
+    },
+    {
+      "id": "S04",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "type": "official_regulatory_guidance",
+      "reviewed": "2026-11-08"
+    },
+    {
+      "id": "S05",
+      "url": "https://wellcomecollection.org/works/k532hmn2",
+      "type": "archival_catalog_original_1852",
+      "reviewed": "2026-11-08"
+    },
+    {
+      "id": "S06",
+      "url": "https://link.springer.com/article/10.1007/s11097-018-9585-8",
+      "type": "peer_reviewed_original_2018_2019",
+      "reviewed": "2026-11-08"
+    },
+    {
+      "id": "S07",
+      "url": "https://doi.org/10.1080/00029157.2011.10401754",
+      "type": "historical_secondary_review_abstract",
+      "reviewed": "2026-11-08"
+    },
+    {
+      "id": "S08",
+      "url": "https://finalvestige.com/focus/",
+      "type": "published_owned_resource",
+      "reviewed": "2026-11-08"
+    },
+    {
+      "id": "S09",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "type": "published_owned_article",
+      "reviewed": "2026-11-08"
+    },
+    {
+      "id": "S10",
+      "url": "https://finalvestige.com/explore/",
+      "type": "published_owned_navigation_puysegur_listing",
+      "reviewed": "2026-11-08"
+    },
+    {
+      "id": "S11",
+      "url": "https://finalvestige.com/dispatch/",
+      "type": "existing_single_subscriber_path",
+      "reviewed": "2026-11-08"
+    },
+    {
+      "id": "S12",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "type": "project_authority",
+      "reviewed": "2026-11-08"
+    },
+    {
+      "id": "S13",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "type": "conversion_authority",
+      "reviewed": "2026-11-08"
+    },
+    {
+      "id": "S14",
+      "url": "https://docs.google.com/document/d/1_dqcJeqxbvYb1prGxy0nSWTsHu8p0PSRsDB_NPNbL48/edit",
+      "type": "internal_grok_handoff",
+      "reviewed": "2026-11-08"
+    },
+    {
+      "id": "S15",
+      "url": "https://docs.google.com/document/d/1uK7cZdMv44dkKwDDGILUTCrI2zw3iA0cN5VzdLmF5C8/edit",
+      "type": "internal_praxxis_handoff",
+      "reviewed": "2026-11-08"
+    },
+    {
+      "id": "S16",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "type": "historical_archive_direct_page_review_reported_2026-11-08",
+      "reviewed": "2026-11-08",
+      "limit": "Praxxis subsequent direct page read: 153 rows, 16 dossiers; no underlying scan-by-scan audit"
+    },
+    {
+      "id": "S17",
+      "url": "https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.0050138",
+      "type": "peer_reviewed_full_text_intensive_meditation_attentional_blink",
+      "reviewed": "2026-11-08"
+    },
+    {
+      "id": "S18",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/20025902/",
+      "type": "peer_reviewed_attention_review",
+      "reviewed": "2026-11-08"
+    },
+    {
+      "id": "S19",
+      "url": "https://doi.org/10.3758/s13428-020-01457-6",
+      "type": "replication_experimental_summary",
+      "reviewed": "2026-11-08"
+    },
+    {
+      "id": "S20",
+      "url": "https://doi.org/10.1080/17437199.2023.2248222",
+      "type": "meta_analysis_111_RCT",
+      "reviewed": "2026-11-08"
+    },
+    {
+      "id": "S21",
+      "url": "https://doi.org/10.1002/acp.70056",
+      "type": "meta_analysis_tertiary_students_2025",
+      "reviewed": "2026-11-08"
+    },
+    {
+      "id": "S22",
+      "url": "https://doi.org/10.1111/j.1467-9280.1997.tb00689.x",
+      "type": "original_experiment_priming_abstract",
+      "reviewed": "2026-11-08"
+    },
+    {
+      "id": "S23",
+      "url": "https://affiliates.inspire3.com/",
+      "type": "official_public_affiliate_portal_login_approval_not_inferred",
+      "reviewed": "2026-11-08"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "statement": "Zen12 Premium includes 12 levels",
+      "status": "merchant_description_only",
+      "source_ids": [
+        "S02"
+      ],
+      "limit": "not independently delivered"
+    },
+    {
+      "id": "C02",
+      "statement": "Zen12 Premium offers 48 MP3 recordings",
+      "status": "merchant_description_only",
+      "source_ids": [
+        "S02"
+      ],
+      "limit": "not independently delivered"
+    },
+    {
+      "id": "C03",
+      "statement": "Four styles: guided, music, nature, white noise",
+      "status": "merchant_description_only",
+      "source_ids": [
+        "S02"
+      ],
+      "limit": "not independently delivered"
+    },
+    {
+      "id": "C04",
+      "statement": "Advertised full-year money-back promise",
+      "status": "merchant_description_only",
+      "source_ids": [
+        "S02"
+      ],
+      "limit": "checkout rules and fulfillment unverified"
+    },
+    {
+      "id": "C05",
+      "statement": "Public page displays Premium promotional $87.99 on 2026-11-08",
+      "status": "observed_public_not_checkout",
+      "source_ids": [
+        "S02"
+      ],
+      "limit": "do not claim final charge"
+    },
+    {
+      "id": "C06",
+      "statement": "Twelve minutes equals one hour advanced meditation",
+      "status": "unsupported_product_specific_benefit_DO_NOT_ADOPT",
+      "source_ids": [
+        "S02",
+        "S04"
+      ],
+      "limit": "merchant headline unsubstantiated"
+    },
+    {
+      "id": "C07",
+      "statement": "Zen12 treats anxiety or improves health",
+      "status": "unsupported_product_specific_health_claim_DO_NOT_ADOPT",
+      "source_ids": [
+        "S02",
+        "S04"
+      ],
+      "limit": "clinical substantiation unavailable"
+    },
+    {
+      "id": "C08",
+      "statement": "Zen12 improves creativity, focus or cognition",
+      "status": "unsupported_product_specific_performance_claim_DO_NOT_ADOPT",
+      "source_ids": [
+        "S02",
+        "S04"
+      ],
+      "limit": "appropriate product-specific trials not verified"
+    },
+    {
+      "id": "C09",
+      "statement": "Inspire3 offers Zen12, Hypnosis Live, Brainwave Shots",
+      "status": "merchant_catalog_statement",
+      "source_ids": [
+        "S01"
+      ],
+      "limit": "not partner permission"
+    },
+    {
+      "id": "C10",
+      "statement": "Affiliate recommendations need conspicuous disclosure by link",
+      "status": "regulatory_guidance",
+      "source_ids": [
+        "S03"
+      ],
+      "limit": "final rendered context must be tested"
+    },
+    {
+      "id": "C11",
+      "statement": "Health benefits require competent reliable scientific support",
+      "status": "regulatory_guidance",
+      "source_ids": [
+        "S04"
+      ],
+      "limit": "depends on precise claims/context"
+    },
+    {
+      "id": "C12",
+      "statement": "Carpenter 1852 Royal Institution paper and metadata",
+      "status": "archival_catalog_verified",
+      "source_ids": [
+        "S05"
+      ],
+      "limit": "catalog not full text verification"
+    },
+    {
+      "id": "C13",
+      "statement": "2018/2019 Ouija field study 40 participants",
+      "status": "independent_research",
+      "source_ids": [
+        "S06"
+      ],
+      "limit": "convenience sample"
+    },
+    {
+      "id": "C14",
+      "statement": "2018/2019 analysis 176 responses:33 deliberate/143 ordinary",
+      "status": "independent_research",
+      "source_ids": [
+        "S06"
+      ],
+      "limit": "response counts not sample size"
+    },
+    {
+      "id": "C15",
+      "statement": "2018/2019 ordinary responses 67 meaningful 76 otherwise",
+      "status": "independent_research",
+      "source_ids": [
+        "S06"
+      ],
+      "limit": "author classification"
+    },
+    {
+      "id": "C16",
+      "statement": "Gaze less predictive when natural vs deliberate spelling",
+      "status": "independent_research",
+      "source_ids": [
+        "S06"
+      ],
+      "limit": "proxy not direct force measure"
+    },
+    {
+      "id": "C17",
+      "statement": "Belief correlates with reported agency",
+      "status": "independent_research_noncausal",
+      "source_ids": [
+        "S06"
+      ],
+      "limit": "not randomized"
+    },
+    {
+      "id": "C18",
+      "statement": "FV Focus guide is published and 52 pages",
+      "status": "verified_live",
+      "source_ids": [
+        "S08"
+      ],
+      "limit": "provider-confirmed subscription unverified"
+    },
+    {
+      "id": "C19",
+      "statement": "Published Change Blindness article is linked",
+      "status": "verified_live",
+      "source_ids": [
+        "S09"
+      ],
+      "limit": "currently links may point to different existing offers"
+    },
+    {
+      "id": "C20",
+      "statement": "Puységur page displays 153 source rows and 16 dossiers on 2026-11-08 (Praxxis direct page read)",
+      "status": "verified_live_summary",
+      "source_ids": [
+        "S16",
+        "S12"
+      ],
+      "limit": "page inventory verified in independent handoff; underlying scans not individually audited"
+    },
+    {
+      "id": "C21",
+      "statement": "Affiliate application approved for FV",
+      "status": "UNVERIFIED_HARD_HOLD",
+      "source_ids": [
+        "S12"
+      ],
+      "limit": "private partner dashboard required"
+    },
+    {
+      "id": "C22",
+      "statement": "Authorized tracking link and channels",
+      "status": "UNVERIFIED_HARD_HOLD",
+      "source_ids": [
+        "S12"
+      ],
+      "limit": "never invent earning URL"
+    },
+    {
+      "id": "C23",
+      "statement": "Rights-cleared sellable FV-owned Mind product",
+      "status": "UNVERIFIED_HARD_HOLD",
+      "source_ids": [
+        "S13"
+      ],
+      "limit": "authenticated Payhip inventory needed"
+    },
+    {
+      "id": "C24",
+      "statement": "Focus URL query-string ready flag proves lead",
+      "status": "FALSE_DO_NOT_COUNT",
+      "source_ids": [
+        "S13"
+      ],
+      "limit": "provider record mandatory"
+    },
+    {
+      "id": "C25",
+      "statement": "Paid commission, net/1000 qualified sessions",
+      "status": "NOT_COMPUTABLE",
+      "source_ids": [
+        "S13"
+      ],
+      "limit": "no settled order, fees or denominator"
+    },
+    {
+      "id": "C26",
+      "statement": "Slagter et al. intensive retreat involved 17 practitioners, 23 novices, three months",
+      "status": "independent_research_context_specific",
+      "source_ids": [
+        "S17"
+      ],
+      "limit": "not randomized consumer MP3 trial"
+    },
+    {
+      "id": "C27",
+      "statement": "Attentional-blink target interval in Slagter study 336 versus 672 milliseconds",
+      "status": "independent_research_context_specific",
+      "source_ids": [
+        "S17"
+      ],
+      "limit": "lab task, not general attention score"
+    },
+    {
+      "id": "C28",
+      "statement": "Slagter EEG P3b reduction associated with smaller blink in intensive group",
+      "status": "independent_research_context_specific",
+      "source_ids": [
+        "S17"
+      ],
+      "limit": "EEG correlate not proof of audio entrainment efficacy"
+    },
+    {
+      "id": "C29",
+      "statement": "Attentional blink often reduces T2 report at 200-500 ms, lag-one sparing complicates shutter metaphor",
+      "status": "independent_review",
+      "source_ids": [
+        "S18"
+      ],
+      "limit": "timing and effect depend on design"
+    },
+    {
+      "id": "C30",
+      "statement": "Two preregistered replications recovered core blink but differed in timing and sparing",
+      "status": "replicated_core_with_variation",
+      "source_ids": [
+        "S19"
+      ],
+      "limit": "not identically reproduced numeric effects"
+    },
+    {
+      "id": "C31",
+      "statement": "Mindfulness meta-analysis 111 RCTs n=9538: mixed attention effects and null results in other domains",
+      "status": "meta_analysis_general_not_product",
+      "source_ids": [
+        "S20"
+      ],
+      "limit": "heterogeneous interventions cannot certify Zen12"
+    },
+    {
+      "id": "C32",
+      "statement": "2025 student review 26 trials, 17 pooled, low certainty and mixed cognitive outcomes",
+      "status": "meta_analysis_general_not_product",
+      "source_ids": [
+        "S21"
+      ],
+      "limit": "population and risk-of-bias restrictions"
+    },
+    {
+      "id": "C33",
+      "statement": "Zen12 audio equivalent to intensive retreat or one hour meditation",
+      "status": "unsupported_product_specific_benefit_DO_NOT_ADOPT",
+      "source_ids": [
+        "S02",
+        "S17",
+        "S20"
+      ],
+      "limit": "no direct trial of Zen12 established"
+    },
+    {
+      "id": "C34",
+      "statement": "Unreported second targets can show priming in some experiments",
+      "status": "independent_research_abstract",
+      "source_ids": [
+        "S22"
+      ],
+      "limit": "not proof of full unconscious understanding"
+    },
+    {
+      "id": "C35",
+      "statement": "Published Grok media ID SV9m07PFTYk is public YouTube Mesmerism related, not internal creator asset_id",
+      "status": "reported_public_id_independent_handoff",
+      "source_ids": [
+        "S14",
+        "S15"
+      ],
+      "limit": "direct article path/mobile tap and publisher campaign not independently confirmed"
+    },
+    {
+      "id": "C36",
+      "statement": "FV-owned Mind-specific rights-cleared and publicly sellable SKU has not been authenticated",
+      "status": "UNVERIFIED_HARD_HOLD",
+      "source_ids": [
+        "S13"
+      ],
+      "limit": "public product hints not complete rights/checkout/fulfillment audit"
+    },
+    {
+      "id": "C37",
+      "statement": "Inspire3 official affiliate portal offers registration/login but gives no proof this FV publisher is approved or permitted to use its creative assets",
+      "status": "public_affiliate_portal_not_publisher_permission",
+      "source_ids": [
+        "S23"
+      ],
+      "limit": "private account status, issued links, permitted placements and swipe/creative rights require authenticated records"
+    }
+  ],
+  "gates": [
+    {
+      "id": "account_acceptance",
+      "status": "HARD_HOLD",
+      "evidence_needed": "named FV account accepted with screenshot/date"
+    },
+    {
+      "id": "permission_social",
+      "status": "HARD_HOLD",
+      "evidence_needed": "social channel authorization written"
+    },
+    {
+      "id": "permission_email",
+      "status": "HARD_HOLD",
+      "evidence_needed": "newsletter authorization written"
+    },
+    {
+      "id": "issued_earning_url",
+      "status": "HARD_HOLD",
+      "evidence_needed": "account-issued verified link"
+    },
+    {
+      "id": "affiliate_tracking_terms",
+      "status": "HARD_HOLD",
+      "evidence_needed": "parameters, attribution window, disallowed placements"
+    },
+    {
+      "id": "merchant_checkout_final",
+      "status": "HARD_HOLD",
+      "evidence_needed": "price/taxes/currency/checkout observed"
+    },
+    {
+      "id": "merchant_refund_conditions",
+      "status": "HARD_HOLD",
+      "evidence_needed": "full terms verified incl refund request process"
+    },
+    {
+      "id": "merchant_creative_rights",
+      "status": "HARD_HOLD",
+      "evidence_needed": "creative/reuse rights verified or original only"
+    },
+    {
+      "id": "claim_substantiation",
+      "status": "HARD_HOLD",
+      "evidence_needed": "specific claims support, unsupported removed"
+    },
+    {
+      "id": "affiliate_disclosure_rendered",
+      "status": "HARD_HOLD",
+      "evidence_needed": "actual CMS/mobile disclosure adjacent"
+    },
+    {
+      "id": "video_render_and_captions",
+      "status": "HARD_HOLD",
+      "evidence_needed": "file with matching transcript and caption playback"
+    },
+    {
+      "id": "browser_a11y_performance",
+      "status": "HARD_HOLD",
+      "evidence_needed": "mobile keyboard, no-js, LCP, reduced motion"
+    },
+    {
+      "id": "site_qa_and_founder_release",
+      "status": "HARD_HOLD",
+      "evidence_needed": "signed-off review; no implicit approval"
+    },
+    {
+      "id": "published_guide",
+      "status": "HARD_HOLD",
+      "evidence_needed": "public route only after approval"
+    },
+    {
+      "id": "independent_paid_conversion",
+      "status": "HARD_HOLD",
+      "evidence_needed": "settled order or partner-paid commission"
+    },
+    {
+      "id": "qualified_human_denominator",
+      "status": "HARD_HOLD",
+      "evidence_needed": "consented privacy safe 7/30 cohorts"
+    }
+  ],
+  "verification_note": "Public seller evidence is not affiliate-account or checkout evidence. Gmail query on 2026-11-08 returned marketing, no qualifying named acceptance. Account-only authorization unresolved. Never treat no messages as proof of rejection.",
+  "privacy": "No PII, no extra trackers or signup forms. CTA disabled.",
+  "qa_note": "Independent provenance correction; the original R223 draft PR stays untouched.",
+  "parent_study": "R223 commercial register; refreshed independent evidence R224",
+  "scope_note": "Seller catalog claims vs product-specific effects separated. Source checks do not certify checkout, eligibility or commercial outcome.",
+  "conversion_measurement": {
+    "qualified_humans": "not_reconciled",
+    "focus_confirmed_leads": "not_reconciled",
+    "outbound_affiliate_clicks": "not_reconciled",
+    "merchant_confirmed_paid_orders": "not_reconciled",
+    "paid_commission": "not_reconciled",
+    "refunds_and_fees": "not_reconciled",
+    "net_revenue_per_1000": "NOT_COMPUTABLE",
+    "rule": "net per 1000 = 1000 * verified realized net revenue / qualified-human sessions; numerator may be zero or negative, denominator must be >0 and both independently auditable",
+    "cohorts_days": [
+      7,
+      30
+    ]
+  },
+  "partner_verification": {
+    "public_login_and_registration_visible": true,
+    "named_FV_acceptance": "NOT_AUTHENTICATED",
+    "approved_creatives": "NOT_AUTHENTICATED",
+    "issued_earning_link": "NOT_AUTHENTICATED",
+    "web_social_email_permission": "NOT_AUTHENTICATED",
+    "note": "Public generic program claims, including prospective compensation, are not owner-specific agreement or actual earned commission."
+  }
+}
