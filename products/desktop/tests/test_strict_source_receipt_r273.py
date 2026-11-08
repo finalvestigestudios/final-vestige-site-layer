@@ -65,6 +65,9 @@ class StrictReceiptTests(unittest.TestCase):
         self.assertNotIn(secret.decode(), str(caught.exception))
         self.assertIsNone(caught.exception.__context__)
 
+    def test_recursion_depth_rejected_without_traceback(self):
+        self.rejected(b"[" * 10000 + b"0" + b"]" * 10000)
+
     def test_non_byte_inputs_rejected(self):
         for bad in ('{}', {}, None, [], memoryview(b'{}')):
             with self.subTest(type=type(bad).__name__):
