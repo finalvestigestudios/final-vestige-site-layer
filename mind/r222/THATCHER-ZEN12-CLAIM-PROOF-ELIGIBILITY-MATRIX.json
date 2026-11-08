@@ -1,0 +1,513 @@
+{
+  "schema": "FV_MIND_R222_CLAIM_PROOF_RELEASE_v1",
+  "date": "2026-11-08",
+  "mode": "DRAFT_UNPUBLISHED_NO_AFFILIATE_ACTIVATION",
+  "sources": [
+    {
+      "id": "S01",
+      "type": "PRIMARY_PUBLISHER_METADATA",
+      "title": "Peter Thompson, Margaret Thatcher: A New Illusion (1980)",
+      "url": "https://doi.org/10.1068/p090483",
+      "limit": "Restricted original; bibliography independently inspected"
+    },
+    {
+      "id": "S02",
+      "type": "PUBLISHER_ABSTRACT",
+      "title": "Rakover, When Inversion Fails (1999)",
+      "url": "https://doi.org/10.1068/p2774",
+      "limit": "Publisher abstract only"
+    },
+    {
+      "id": "S03",
+      "type": "PUBLISHER_ABSTRACT",
+      "title": "Wong et al., face versus nonface objects (2010)",
+      "url": "https://doi.org/10.1068/p6659",
+      "limit": "Publisher abstract supports multiple nonface categories"
+    },
+    {
+      "id": "S04",
+      "type": "OPEN_FULL_TEXT",
+      "title": "Dahl et al., Thatcher illusion in humans and monkeys (2010)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2982021/",
+      "limit": "Open primary research"
+    },
+    {
+      "id": "S05",
+      "type": "PUBMED_ABSTRACT",
+      "title": "Cornes et al., perceptual and decisional factors (2011)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/21639673/",
+      "limit": "Abstract only"
+    },
+    {
+      "id": "S06",
+      "type": "PUBLISHER_ABSTRACT",
+      "title": "Psalta et al., fMRI expression processing (2013 online)",
+      "url": "https://doi.org/10.1177/0956797613501521",
+      "limit": "Publisher abstract; not therapy"
+    },
+    {
+      "id": "S07",
+      "type": "ABSTRACT_OPEN_LINK",
+      "title": "2016 eye-tracking face familiarity study",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5077119/",
+      "limit": "Search abstract confirmed; full page intermittently access challenged"
+    },
+    {
+      "id": "S08",
+      "type": "SELLER_CATALOG",
+      "title": "Inspire3 homepage catalog",
+      "url": "https://inspire3.com/",
+      "limit": "Seller copy, efficacy claims not independently accepted"
+    },
+    {
+      "id": "S09",
+      "type": "SELLER_PREMIUM_OFFER",
+      "title": "Zen12 exact Premium offer page",
+      "url": "https://zen12.com/hnp",
+      "limit": "Observed November 8; public price not checkout evidence"
+    },
+    {
+      "id": "S10",
+      "type": "FTC_GUIDANCE",
+      "title": "Endorsement and affiliate disclosure guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "limit": "Material relationship disclosure adjacent to recommendation"
+    },
+    {
+      "id": "S11",
+      "type": "FTC_GUIDANCE",
+      "title": "Health Products Compliance Guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "limit": "Product-specific scientific support required for health claims"
+    },
+    {
+      "id": "S12",
+      "type": "FV_VERIFIED_PUBLIC",
+      "title": "Seven Day Focus Fieldbook",
+      "url": "https://finalvestige.com/focus/",
+      "limit": "Existing 52-page download and single Jetpack pathway; provider confirmation unverified"
+    },
+    {
+      "id": "S13",
+      "type": "FV_PUBLISHED_CONTEXT",
+      "title": "Puységur Animal Magnetism Files",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "limit": "Historical bridge, route from Issue 171, public fetch inconsistent"
+    },
+    {
+      "id": "S14",
+      "type": "FV_PUBLISHED_CONTEXT",
+      "title": "Change Blindness article",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "limit": "Public route from Issue 171; web fetch intermittent"
+    },
+    {
+      "id": "S15",
+      "type": "FV_PUBLISHED_CONTEXT",
+      "title": "Mesmerism article",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "limit": "Public route from Issue 171; web fetch intermittent"
+    },
+    {
+      "id": "S16",
+      "type": "GOVERNANCE",
+      "title": "Mind editorial and affiliate Issue #171",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "limit": "Source-of-truth authorization safety"
+    },
+    {
+      "id": "S17",
+      "type": "GOVERNANCE",
+      "title": "Revenue attribution Issue #820",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "limit": "Source-of-truth economic acceptance"
+    },
+    {
+      "id": "S18",
+      "type": "GOVERNANCE",
+      "title": "Business charter Issue #818",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/818",
+      "limit": "Conversion priority"
+    },
+    {
+      "id": "S19",
+      "type": "GOVERNANCE",
+      "title": "Focus confirmation integrity Issue #820 comment",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820#issuecomment-6724517348",
+      "limit": "URL query parameter can display ready UI without confirmed provider lead"
+    },
+    {
+      "id": "S20",
+      "type": "GOVERNANCE",
+      "title": "Prior Mind R221 draft PR #1612",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/1612",
+      "limit": "Frozen A/B baseline R210, inherited draft only"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "Thompson published the named illusion in 1980",
+      "category": "SOURCE_METADATA",
+      "status": "SUPPORTED",
+      "source_id": "S01",
+      "note": "No copyrighted figure reused"
+    },
+    {
+      "id": "C02",
+      "claim": "Local feature inversion and global inversion differ",
+      "category": "MECHANISM_DESCRIPTION",
+      "status": "SUPPORTED_WITH_LIMITS",
+      "source_id": "S01",
+      "note": "Describe geometry; source original full text restricted"
+    },
+    {
+      "id": "C03",
+      "claim": "The illusion can make distortions less salient under inversion",
+      "category": "EXPERIMENTAL_PHENOMENON",
+      "status": "SUPPORTED",
+      "source_id": "S01",
+      "note": "Not guaranteed in every viewer"
+    },
+    {
+      "id": "C04",
+      "claim": "A holistic-only explanation is sufficient",
+      "category": "THEORY",
+      "status": "NOT_ESTABLISHED",
+      "source_id": "S03",
+      "note": "Comparative nonface evidence complicates interpretation"
+    },
+    {
+      "id": "C05",
+      "claim": "Thatcher-like effects occur with cars/buildings/bikes/letters",
+      "category": "EXPERIMENTAL_ABSTRACT",
+      "status": "SUPPORTED_ABSTRACT",
+      "source_id": "S03",
+      "note": "Do not claim faces and objects identical"
+    },
+    {
+      "id": "C06",
+      "claim": "Face effect was not exceptionally large in Wong study",
+      "category": "EXPERIMENTAL_ABSTRACT",
+      "status": "SUPPORTED_ABSTRACT",
+      "source_id": "S03",
+      "note": "Scope to measured task"
+    },
+    {
+      "id": "C07",
+      "claim": "Grotesqueness and identification are equivalent outcomes",
+      "category": "METHOD",
+      "status": "REJECTED",
+      "source_id": "S05",
+      "note": "Subjective rating distinct from identification"
+    },
+    {
+      "id": "C08",
+      "claim": "Cornes tested faces and churches and reported decisional factors",
+      "category": "EXPERIMENTAL_ABSTRACT",
+      "status": "SUPPORTED_ABSTRACT",
+      "source_id": "S05",
+      "note": "Avoid fabricated sample counts"
+    },
+    {
+      "id": "C09",
+      "claim": "Dahl et al. investigated humans and rhesus monkeys",
+      "category": "OPEN_PRIMARY",
+      "status": "SUPPORTED",
+      "source_id": "S04",
+      "note": "Avoid inferring animal subjective feelings"
+    },
+    {
+      "id": "C10",
+      "claim": "Psalta reported orientation-dependent superior temporal sulcus adaptation response",
+      "category": "NEUROIMAGING_ABSTRACT",
+      "status": "SUPPORTED_ABSTRACT",
+      "source_id": "S06",
+      "note": "Not clinical diagnosis or behavior change"
+    },
+    {
+      "id": "C11",
+      "claim": "Familiarity universally increases Thatcherization sensitivity",
+      "category": "EXPERIMENTAL",
+      "status": "NOT_ESTABLISHED",
+      "source_id": "S07",
+      "note": "2016 nuance and different response measures"
+    },
+    {
+      "id": "C12",
+      "claim": "Zen12 Premium advertised twelve levels and 48 MP3s",
+      "category": "SELLER_FEATURE",
+      "status": "SELLER_DESCRIBED_ONLY",
+      "source_id": "S09",
+      "note": "Not delivery-verified"
+    },
+    {
+      "id": "C13",
+      "claim": "Zen12 Premium offers four listening styles",
+      "category": "SELLER_FEATURE",
+      "status": "SELLER_DESCRIBED_ONLY",
+      "source_id": "S09",
+      "note": "Guided, nature, music, white noise"
+    },
+    {
+      "id": "C14",
+      "claim": "Zen12 advertises one-year money-back guarantee",
+      "category": "SELLER_POLICY",
+      "status": "SELLER_DESCRIBED_ONLY",
+      "source_id": "S09",
+      "note": "Return processing unverified"
+    },
+    {
+      "id": "C15",
+      "claim": "Zen12 publicly displayed $87.99 on November 8",
+      "category": "SELLER_PRICING",
+      "status": "PUBLIC_DISPLAY_ONLY",
+      "source_id": "S09",
+      "note": "Do not assert final checkout price"
+    },
+    {
+      "id": "C16",
+      "claim": "Twelve minutes of Zen12 equal one hour advanced meditation",
+      "category": "EFFICACY",
+      "status": "UNSUBSTANTIATED_PRODUCT_SPECIFIC",
+      "source_id": "S09",
+      "note": "DO NOT USE as proven claim"
+    },
+    {
+      "id": "C17",
+      "claim": "Zen12 reliably treats anxiety/depression/attention disorders",
+      "category": "MEDICAL_EFFICACY",
+      "status": "PROHIBITED_UNSUBSTANTIATED",
+      "source_id": "S11",
+      "note": "No adequate product-specific clinical evidence"
+    },
+    {
+      "id": "C18",
+      "claim": "Perception experiments prove brainwave audio benefits",
+      "category": "CAUSAL_BRIDGE",
+      "status": "REJECTED",
+      "source_id": "S03",
+      "note": "Studies test perception, not Zen12"
+    },
+    {
+      "id": "C19",
+      "claim": "General meditation literature proves this commercial audio works",
+      "category": "CAUSAL_BRIDGE",
+      "status": "REJECTED",
+      "source_id": "S11",
+      "note": "Product-specific substantiation absent"
+    },
+    {
+      "id": "C20",
+      "claim": "Public seller catalog proves FV affiliate authorization",
+      "category": "AFFILIATE_PERMISSION",
+      "status": "REJECTED",
+      "source_id": "S08",
+      "note": "Named publisher approval is separate private evidence"
+    },
+    {
+      "id": "C21",
+      "claim": "FTC says disclosure should be clear near affiliate link",
+      "category": "COMPLIANCE",
+      "status": "SUPPORTED",
+      "source_id": "S10",
+      "note": "Future active link subject to release approval"
+    },
+    {
+      "id": "C22",
+      "claim": "Existing /focus/ serves a single Jetpack/Dispatch pathway",
+      "category": "LIVE_FV_ROUTE",
+      "status": "PUBLICLY_OBSERVED_WITH_LIMITS",
+      "source_id": "S12",
+      "note": "Do not create a second form"
+    },
+    {
+      "id": "C23",
+      "claim": "Focus ready UI equals provider-confirmed lead",
+      "category": "ATTRIBUTION",
+      "status": "REJECTED",
+      "source_id": "S19",
+      "note": "Explicit query-string spoofing evidence"
+    },
+    {
+      "id": "C24",
+      "claim": "Affiliate outbound click equals paid commission",
+      "category": "ATTRIBUTION",
+      "status": "REJECTED",
+      "source_id": "S17",
+      "note": "Merchant reconciliation needed"
+    },
+    {
+      "id": "C25",
+      "claim": "No active affiliate purchase link in R222 draft",
+      "category": "SOURCE_CONTROL_STATUS",
+      "status": "BUILT_SOURCE_CHECK_REQUIRED",
+      "source_id": "S16",
+      "note": "No permissions yet"
+    },
+    {
+      "id": "C26",
+      "claim": "R222 film is rendered, playable, or browser tested",
+      "category": "MEDIA_STATUS",
+      "status": "FALSE_NOT_RENDERED",
+      "source_id": "S20",
+      "note": "Only poster transcript and VTT concept"
+    },
+    {
+      "id": "C27",
+      "claim": "Existing owned Payhip Mind SKU is verified sellable",
+      "category": "COMMERCE_ELIGIBILITY",
+      "status": "UNVERIFIED",
+      "source_id": "S18",
+      "note": "Catalog rights checkout fees returns missing"
+    },
+    {
+      "id": "C28",
+      "claim": "Grok asset IDs for proposed three topics are verified",
+      "category": "SOCIAL_ATTRIBUTION",
+      "status": "UNVERIFIED",
+      "source_id": "S17",
+      "note": "Only candidates; request verification via existing TASK-008"
+    },
+    {
+      "id": "C29",
+      "claim": "Presently realized net per 1000 qualified sessions can be computed",
+      "category": "REVENUE",
+      "status": "NOT_COMPUTABLE",
+      "source_id": "S17",
+      "note": "No verified denominator and settled transactions"
+    },
+    {
+      "id": "C30",
+      "claim": "Inversion illusion is a diagnostic assessment",
+      "category": "HEALTH_DIAGNOSTIC",
+      "status": "UNSUPPORTED",
+      "source_id": "S01",
+      "note": "Do not imply mental health or cognitive diagnosis"
+    }
+  ],
+  "release_gates": [
+    {
+      "id": "G01",
+      "name": "Named Final Vestige Inspire3 affiliate account approved",
+      "status": "HARD_HOLD",
+      "owner": "Founder / Mind",
+      "proof": "NOT PROVIDED / NO CLAIM OF PASS"
+    },
+    {
+      "id": "G02",
+      "name": "Verified product-specific social channel permission",
+      "status": "HARD_HOLD",
+      "owner": "Founder / Mind",
+      "proof": "NOT PROVIDED / NO CLAIM OF PASS"
+    },
+    {
+      "id": "G03",
+      "name": "Verified product-specific email promotion permission",
+      "status": "HARD_HOLD",
+      "owner": "Founder / Dispatch",
+      "proof": "NOT PROVIDED / NO CLAIM OF PASS"
+    },
+    {
+      "id": "G04",
+      "name": "Account-issued authentic tracked earning URL",
+      "status": "HARD_HOLD",
+      "owner": "Founder / Mind",
+      "proof": "NOT PROVIDED / NO CLAIM OF PASS"
+    },
+    {
+      "id": "G05",
+      "name": "Verified affiliate creative/swipe reuse permission and restrictions",
+      "status": "HARD_HOLD",
+      "owner": "Founder / Mind",
+      "proof": "NOT PROVIDED / NO CLAIM OF PASS"
+    },
+    {
+      "id": "G06",
+      "name": "Final checkout total and purchasing terms independently verified",
+      "status": "HARD_HOLD",
+      "owner": "Commerce",
+      "proof": "NOT PROVIDED / NO CLAIM OF PASS"
+    },
+    {
+      "id": "G07",
+      "name": "Return/refund implementation and customer support terms verified",
+      "status": "HARD_HOLD",
+      "owner": "Commerce",
+      "proof": "NOT PROVIDED / NO CLAIM OF PASS"
+    },
+    {
+      "id": "G08",
+      "name": "Merchant commission settlement and paid reconciliation available",
+      "status": "HARD_HOLD",
+      "owner": "Commerce",
+      "proof": "NOT PROVIDED / NO CLAIM OF PASS"
+    },
+    {
+      "id": "G09",
+      "name": "Specific founder consent to production release",
+      "status": "HARD_HOLD",
+      "owner": "Founder",
+      "proof": "NOT PROVIDED / NO CLAIM OF PASS"
+    },
+    {
+      "id": "G10",
+      "name": "WordPress sanitized preview and WCAG 2.2 AA browser audit",
+      "status": "NOT_TESTED",
+      "owner": "Site QA",
+      "proof": "NOT PROVIDED / NO CLAIM OF PASS"
+    },
+    {
+      "id": "G11",
+      "name": "Native mobile performance 360/390/768/1440 and CWV audit",
+      "status": "NOT_TESTED",
+      "owner": "Site QA",
+      "proof": "NOT PROVIDED / NO CLAIM OF PASS"
+    },
+    {
+      "id": "G12",
+      "name": "Original short MP4 rendered, captions and transcript synced",
+      "status": "NOT_BUILT",
+      "owner": "Mind / Media QA",
+      "proof": "NOT PROVIDED / NO CLAIM OF PASS"
+    },
+    {
+      "id": "G13",
+      "name": "R210 single pre-registered A/B allocation and conversion design",
+      "status": "HOLD_UNTIL_ELIGIBLE",
+      "owner": "Mind / Claude",
+      "proof": "NOT PROVIDED / NO CLAIM OF PASS"
+    },
+    {
+      "id": "G14",
+      "name": "Real Grok asset_id/date/link/consent verified through TASK-008",
+      "status": "PENDING",
+      "owner": "Praxxis / Grok",
+      "proof": "NOT PROVIDED / NO CLAIM OF PASS"
+    },
+    {
+      "id": "G15",
+      "name": "Focus verified Jetpack lead confirmation, not URL spoof",
+      "status": "BLOCKED_PROVIDER",
+      "owner": "Claude / Site QA",
+      "proof": "NOT PROVIDED / NO CLAIM OF PASS"
+    },
+    {
+      "id": "G16",
+      "name": "Settled orders/refunds/fees and human-session denominator reconciled",
+      "status": "NOT_COMPUTABLE",
+      "owner": "Commerce / Claude",
+      "proof": "NOT PROVIDED / NO CLAIM OF PASS"
+    }
+  ],
+  "verification_notes": [
+    "Research publisher metadata and abstracts checked 2026-11-08; some original articles restricted and limitations recorded.",
+    "Inspire3 official catalog and exact Premium page publicly viewed; product pricing public display, not checkout.",
+    "Gmail targeted search did not disclose named publisher approval; no authenticated affiliate dashboard inspected.",
+    "Web fetches for some existing public FV links intermittent, as distinguished from Issue #171 inventory.",
+    "No actual conversion, partner commission, UTM asset attribution or Jetpack confirmed lead can be inferred."
+  ],
+  "primary_kpi": "realized_net_revenue_per_1000_qualified_human_sessions",
+  "primary_kpi_status": "NOT_COMPUTABLE",
+  "commerce_activation": "HARD_HOLD"
+}
