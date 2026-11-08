@@ -31,9 +31,9 @@
     },
     {
       "id": "S05",
-      "title": "2014 Thatcher ERP paper",
+      "title": "Mestry, Menneer, Wenger, Benikos, McCarthy & Donnelly, The Role of Configurality in the Thatcher Illusion: An ERP Study",
       "url": "https://doi.org/10.3758/s13423-014-0705-3",
-      "scope": "publisher abstract; no neural mechanism inferred"
+      "scope": "Full open publisher article, first published 8 August 2014; Psychonomic Bulletin & Review 22(2), 445–452 (2015). Participants judged whole-face upright/inverted orientation; ERP components are not direct grotesqueness ratings. Authors discuss both perceptual and decisional factors."
     },
     {
       "id": "S06",
@@ -462,7 +462,7 @@
   },
   "funnel": {
     "primary_metric": "realized net revenue per 1000 qualified-human sessions",
-    "formula": "(confirmed paid orders + cleared partner commission - refunds - fees) / qualified-human sessions * 1000; missing denominator => NOT COMPUTABLE",
+    "formula": "1000 * (settled owned-product receipts + cleared affiliate commissions - refunds - fees - chargebacks, all in one stated reporting currency and counted once) / audited qualified-human sessions; missing denominator or settlements => NOT COMPUTABLE. Confirmed paid orders are a separate count, not money.",
     "event_distinctions": [
       "campaign_landing",
       "article_to_resource_click",
