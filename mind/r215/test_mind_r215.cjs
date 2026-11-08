@@ -24,6 +24,7 @@ function validate(bundle){
  must(article.includes('UNPUBLISHED')&&article.includes('WITHHELD'),'article never supplies public live destination');
  for(const s of ['10.1371/journal.pone.0286023','10.1038/s41598-025-88517-z','zen12.com/hnp','14 eligible','one mixed'])must(article.includes(s),'scientific manuscript evidence missing '+s);
  must(article.includes('did **not** prevent performance from declining'),'2025 vigilance decrement caveat');
+ must(article.includes('64 participants in the analyzed sample')&&article.includes('Twelve did not finish')&&article.includes('four others were excluded'),'2025 sample accounting 80 randomized, 64 analyzed');
  must(article.includes('This tiny self-observation exercise cannot demonstrate neural entrainment'),'free task caveat');
  must(!/affiliate[_ -]?ref=|affiliate_link=|tracking_id=/i.test(article),'article may not embed sale tracking');
  const merchant=/<a\b[^>]*href\s*=\s*["']https?:\/\/(?:www\.)?(?:zen12|hypnosislive|brainwaveshots|affiliates\.inspire3)\./i;
@@ -54,6 +55,7 @@ function validate(bundle){
  must(m.frozen_ab==='R210_TEXT_ONLY_VS_OPTIONAL_UNRENDERED_42S','frozen two-arm true video-only comparison');
  must(Array.isArray(m.source_registry)&&m.source_registry.length>=25,'source registry coverage');
  must(Array.isArray(m.claims)&&m.claims.length>=32,'source claim coverage');
+ must((m.claims||[]).some(c=>c.id==='C25'&&c.claim.includes('64 analyzed')),'primary study attrition must be captured in matrix');
  const ids=new Set((m.source_registry||[]).map(s=>s.id));
  for(const c of m.claims||[])for(const id of c.source_ids||[])must(ids.has(id),'dangling claim '+c.id+' source '+id);
  must((m.source_registry||[]).every(s=>/^https:\/\//.test(s.url)),'source URLs fully qualified');
