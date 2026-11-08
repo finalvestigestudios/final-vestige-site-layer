@@ -77,7 +77,7 @@ function run(f){
  mutate("remove_free_exercise_limit",x=>x.article=x.article.replace("not a phonemic-restoration test","actual phonemic test"));
  mutate("make_experience_claim",x=>x.article+="\n commission earned");
  mutate("activate_button",x=>x.hub=x.hub.replace(' disabled aria-disabled="true"',""));
- mutate("remove_native_disabled_only",x=>x.hub=x.hub.replace(/\sdisabled(?=\s|=|>)/i,""));
+ mutate("remove_native_disabled_only",x=>x.hub=x.hub.replace('type="button" disabled aria-disabled="true"','type="button" aria-disabled="true"'));
  mutate("append_active_button",x=>x.hub=x.hub.replace("</main>","<button>Pay</button></main>"));
  mutate("unquoted_checkout_link",x=>x.hub=x.hub.replace("</main>","<a href=https://bad.invalid/checkout?ref=yes>Pay</a></main>"));
  mutate("inline_handler",x=>x.hub=x.hub.replace("<button","<button onclick='alert(1)'"));
