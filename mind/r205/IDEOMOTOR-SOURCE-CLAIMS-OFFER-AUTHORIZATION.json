@@ -86,7 +86,7 @@
       "id": "M02",
       "title": "Exact official Zen12 Premium offer",
       "url": "https://zen12.com/hnp",
-      "scope": "seller page Nov 7 2026 shows $87.99; prior $87 extraction possibly rounded/truncated, neither is checkout"
+      "scope": "Official seller Nov 7 2026 directly observable Premium display $87.99 (struck through $187.99); older R205 text extraction reported $87, not reproduced by subsequent direct reads. Neither observation is final checkout, tax or currency validation."
     },
     {
       "id": "M03",
@@ -328,7 +328,7 @@
       "source_ids": [
         "M02"
       ],
-      "limit": "public extracted listing currently $87 while prior dated R199-R203 drafts state $87.99; currency/taxes/offer/checkout unresolved"
+      "limit": "Primary Nov 7 direct seller-page read displays Premium $87.99; older R205 text extraction $87 remains historical discrepancy, not a verified checkout figure. Cause not established."
     },
     {
       "id": "Z05",
@@ -657,7 +657,7 @@
     "paid_purchase_cta": "DISABLED",
     "fallback_owned_mind_product": "NOT AUTHENTICATED"
   },
-  "offer_discrepancy": "Older R199-R203 drafts reported seller displayed $87.99. Independently accessible seller-page text consulted R205 displays $87 Premium. Without controlled same-session checkout and currency/terms verification do not claim either as paid checkout price.",
+  "offer_discrepancy": "Dated provenance: older R205 public text extraction reported $87; independent direct seller-page reads Nov 7 and Praxxis Nov 8 reported Premium $87.99 with struck-through $187.99. No causal explanation established, and neither observation proves checkout, currency/tax or refund enforcement.",
   "creator_to_offer_fits": [
     {
       "topic": "change blindness",
