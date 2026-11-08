@@ -214,7 +214,6 @@ for _slug in [f'article-{i}' for i in range(1, 36)] + [f'tool-{i}' for i in rang
 if __name__ == '__main__':
     unittest.main()
 
-
 class SyntheticOriginalsTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
