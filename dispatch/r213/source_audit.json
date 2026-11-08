@@ -1,0 +1,124 @@
+{
+  "schema": "fv-dispatch-inbox-source-audit-v1",
+  "captured_local": "2026-11-08 08:35 America/Los_Angeles",
+  "r212_exact_source_head": "fe592c637fe25fbb8a2add53c21d09dde9bdace7",
+  "source_audit_only": true,
+  "explicitly_not": [
+    "native WordPress email preview",
+    "received email",
+    "inbox snippet",
+    "subscriber list export",
+    "functional unsubscribe",
+    "affiliate partner acceptance",
+    "actual paid sales"
+  ],
+  "allocation": {
+    "editorial": [
+      1,
+      2,
+      4,
+      6
+    ],
+    "commercial_held": [
+      3,
+      5
+    ]
+  },
+  "diagnostics": {
+    "as_of": "2026-11-08T16:36:47+00:00",
+    "newsletter_enabled": true,
+    "new_post_email_default": false,
+    "email_content_format": "full",
+    "subscriber_counter": {
+      "total": 3,
+      "confirmed": 3,
+      "unconfirmed_requests": 2
+    },
+    "separate_followers": {
+      "wpcom": 3,
+      "email_only": 0
+    },
+    "unique_eligible_email_recipients": null,
+    "welcome_received": null,
+    "authoritative_partner_email_permission": false,
+    "valid_publisher_postal_verified": false,
+    "functional_jetpack_unsubscribe_verified": false,
+    "founder_final_send_approval": false
+  },
+  "release": "HOLD_UNSENT",
+  "source_first_visible_preheader_successes": 0,
+  "issues": [
+    {
+      "issue": 1,
+      "kind": "editorial",
+      "source": "dispatch/r211/preview/01-when-the-person-changed.html",
+      "verified_blob_sha": "3148f1599714efa1decb188c40eae997892911ad",
+      "subject": "The stranger they didn't see change",
+      "declared_preheader": "A 1998 street experiment asks how much attention can really hold.",
+      "first_source_visible_110_chars": "FINAL VESTIGE STUDIOS · THE DISPATCH REVIEW ONLY · UNSENT · NOT APPROVED The stranger they didn't see change A",
+      "declared_preheader_is_first_visible": false,
+      "status": "HOLD_UNSENT",
+      "commercial_hold": false
+    },
+    {
+      "issue": 2,
+      "kind": "editorial",
+      "source": "dispatch/r211/preview/02-the-patient-and-the-witness.html",
+      "verified_blob_sha": "b68dd602830ae041cd27a416d9517644a19e700a",
+      "subject": "What Puységur's witnesses could actually know",
+      "declared_preheader": "The reports began in 1784; their claims remain a different question.",
+      "first_source_visible_110_chars": "FINAL VESTIGE STUDIOS · THE DISPATCH REVIEW ONLY · UNSENT · NOT APPROVED What Puységur's witnesses could actua",
+      "declared_preheader_is_first_visible": false,
+      "status": "HOLD_UNSENT",
+      "commercial_hold": false
+    },
+    {
+      "issue": 3,
+      "kind": "commercial-review-pending",
+      "source": "dispatch/r211/preview/03-zen12-what-twelve-minutes-can-prove.html",
+      "verified_blob_sha": "f5a69e65130554f44db055e0cb55b2df9616b451",
+      "subject": "What twelve minutes can—and cannot—tell you",
+      "declared_preheader": "A free observation exercise before considering Zen12's advertised audio library.",
+      "first_source_visible_110_chars": "FINAL VESTIGE STUDIOS · THE DISPATCH REVIEW ONLY · UNSENT · NOT APPROVED What twelve minutes can—and cannot—te",
+      "declared_preheader_is_first_visible": false,
+      "status": "HOLD_UNSENT",
+      "commercial_hold": true
+    },
+    {
+      "issue": 4,
+      "kind": "editorial",
+      "source": "dispatch/r211/preview/04-apollo-one-why-the-record-matters.html",
+      "verified_blob_sha": "dd660257b9b1b90822b344091cce788f0e1c26cf",
+      "subject": "Apollo 1: the cause was bigger than a spark",
+      "declared_preheader": "NASA documented the hazards but could not isolate the exact ignition point.",
+      "first_source_visible_110_chars": "FINAL VESTIGE STUDIOS · THE DISPATCH REVIEW ONLY · UNSENT · NOT APPROVED Apollo 1: the cause was bigger than a",
+      "declared_preheader_is_first_visible": false,
+      "status": "HOLD_UNSENT",
+      "commercial_hold": false
+    },
+    {
+      "issue": 5,
+      "kind": "commercial-review-pending",
+      "source": "dispatch/r211/preview/05-total-focus-what-is-in-the-recording.html",
+      "verified_blob_sha": "6b0b05d72b4b0a6181e0cce0617c5d3237e63c2d",
+      "subject": "Before buying a hypnosis recording, read the terms",
+      "declared_preheader": "Total Focus is a specific product. Its advertised benefits are not verified outcomes.",
+      "first_source_visible_110_chars": "FINAL VESTIGE STUDIOS · THE DISPATCH REVIEW ONLY · UNSENT · NOT APPROVED Before buying a hypnosis recording, r",
+      "declared_preheader_is_first_visible": false,
+      "status": "HOLD_UNSENT",
+      "commercial_hold": true
+    },
+    {
+      "issue": 6,
+      "kind": "editorial",
+      "source": "dispatch/r211/preview/06-the-notebook-is-not-the-verdict.html",
+      "verified_blob_sha": "16afce0c80d11ccffbe05aebf1bd2348b18b5c4b",
+      "subject": "The notebook is not the verdict",
+      "declared_preheader": "What seven days of attention notes can help you decide—and what they can't.",
+      "first_source_visible_110_chars": "FINAL VESTIGE STUDIOS · THE DISPATCH REVIEW ONLY · UNSENT · NOT APPROVED The notebook is not the verdict What ",
+      "declared_preheader_is_first_visible": false,
+      "status": "HOLD_UNSENT",
+      "commercial_hold": false
+    }
+  ]
+}
