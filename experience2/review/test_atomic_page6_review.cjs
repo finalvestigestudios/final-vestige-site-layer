@@ -54,3 +54,14 @@ for(const [name,mutate] of cases){
     assert.throws(()=>assemble(change.h,change.f,change.options||safe),/HOLD:/);
   });
 }
+
+// Unlike the synthetic preservation tests above, these exercise the native
+// crypto path rather than overriding hashFn with a test-only return value.
+test('native SHA-256 gate rejects synthetic source without a pinned digest',()=>{
+  assert.throws(()=>assemble(home(),focus()),/HOLD: exact homepage SHA mismatch/);
+});
+test('native SHA-256 implementation matches known UTF-8 vector',()=>{
+  const crypto=require('node:crypto');
+  assert.equal(crypto.createHash('sha256').update('abc','utf8').digest('hex'),
+    'ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad');
+});
