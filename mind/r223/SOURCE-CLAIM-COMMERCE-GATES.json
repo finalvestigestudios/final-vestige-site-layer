@@ -1,0 +1,419 @@
+{
+  "schema_version": "r223-1",
+  "created_at": "2026-11-08",
+  "lane": "mind_only",
+  "release": "UNPUBLISHED_HARD_HOLD",
+  "sources": [
+    {
+      "id": "S01",
+      "url": "https://inspire3.com/",
+      "type": "merchant_catalog",
+      "reviewed": "2026-11-08"
+    },
+    {
+      "id": "S02",
+      "url": "https://zen12.com/hnp",
+      "type": "exact_merchant_sales_page",
+      "reviewed": "2026-11-08"
+    },
+    {
+      "id": "S03",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "type": "official_regulatory_guidance",
+      "reviewed": "2026-11-08"
+    },
+    {
+      "id": "S04",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "type": "official_regulatory_guidance",
+      "reviewed": "2026-11-08"
+    },
+    {
+      "id": "S05",
+      "url": "https://wellcomecollection.org/works/k532hmn2",
+      "type": "archival_catalog_original_1852",
+      "reviewed": "2026-11-08"
+    },
+    {
+      "id": "S06",
+      "url": "https://link.springer.com/article/10.1007/s11097-018-9585-8",
+      "type": "peer_reviewed_original_2018_2019",
+      "reviewed": "2026-11-08"
+    },
+    {
+      "id": "S07",
+      "url": "https://doi.org/10.1080/00029157.2011.10401754",
+      "type": "historical_secondary_review_abstract",
+      "reviewed": "2026-11-08"
+    },
+    {
+      "id": "S08",
+      "url": "https://finalvestige.com/focus/",
+      "type": "published_owned_resource",
+      "reviewed": "2026-11-08"
+    },
+    {
+      "id": "S09",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "type": "published_owned_article",
+      "reviewed": "2026-11-08"
+    },
+    {
+      "id": "S10",
+      "url": "https://finalvestige.com/explore/",
+      "type": "published_owned_navigation_puysegur_listing",
+      "reviewed": "2026-11-08"
+    },
+    {
+      "id": "S11",
+      "url": "https://finalvestige.com/dispatch/",
+      "type": "existing_single_subscriber_path",
+      "reviewed": "2026-11-08"
+    },
+    {
+      "id": "S12",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "type": "project_authority",
+      "reviewed": "2026-11-08"
+    },
+    {
+      "id": "S13",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "type": "conversion_authority",
+      "reviewed": "2026-11-08"
+    },
+    {
+      "id": "S14",
+      "url": "https://docs.google.com/document/d/1_dqcJeqxbvYb1prGxy0nSWTsHu8p0PSRsDB_NPNbL48/edit",
+      "type": "internal_grok_handoff",
+      "reviewed": "2026-11-08"
+    },
+    {
+      "id": "S15",
+      "url": "https://docs.google.com/document/d/1uK7cZdMv44dkKwDDGILUTCrI2zw3iA0cN5VzdLmF5C8/edit",
+      "type": "internal_praxxis_handoff",
+      "reviewed": "2026-11-08"
+    },
+    {
+      "id": "S16",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "type": "historical_archive_direct_fetch_unavailable",
+      "reviewed": "2026-11-08"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "statement": "Zen12 Premium includes 12 levels",
+      "status": "merchant_description_only",
+      "source_ids": [
+        "S02"
+      ],
+      "limit": "not independently delivered"
+    },
+    {
+      "id": "C02",
+      "statement": "Zen12 Premium offers 48 MP3 recordings",
+      "status": "merchant_description_only",
+      "source_ids": [
+        "S02"
+      ],
+      "limit": "not independently delivered"
+    },
+    {
+      "id": "C03",
+      "statement": "Four styles: guided, music, nature, white noise",
+      "status": "merchant_description_only",
+      "source_ids": [
+        "S02"
+      ],
+      "limit": "not independently delivered"
+    },
+    {
+      "id": "C04",
+      "statement": "Advertised full-year money-back promise",
+      "status": "merchant_description_only",
+      "source_ids": [
+        "S02"
+      ],
+      "limit": "checkout rules and fulfillment unverified"
+    },
+    {
+      "id": "C05",
+      "statement": "Public page displays Premium promotional $87.99 on 2026-11-08",
+      "status": "observed_public_not_checkout",
+      "source_ids": [
+        "S02"
+      ],
+      "limit": "do not claim final charge"
+    },
+    {
+      "id": "C06",
+      "statement": "Twelve minutes equals one hour advanced meditation",
+      "status": "unsupported_product_specific_benefit_DO_NOT_ADOPT",
+      "source_ids": [
+        "S02",
+        "S04"
+      ],
+      "limit": "merchant headline unsubstantiated"
+    },
+    {
+      "id": "C07",
+      "statement": "Zen12 treats anxiety or improves health",
+      "status": "unsupported_product_specific_health_claim_DO_NOT_ADOPT",
+      "source_ids": [
+        "S02",
+        "S04"
+      ],
+      "limit": "clinical substantiation unavailable"
+    },
+    {
+      "id": "C08",
+      "statement": "Zen12 improves creativity, focus or cognition",
+      "status": "unsupported_product_specific_performance_claim_DO_NOT_ADOPT",
+      "source_ids": [
+        "S02",
+        "S04"
+      ],
+      "limit": "appropriate product-specific trials not verified"
+    },
+    {
+      "id": "C09",
+      "statement": "Inspire3 offers Zen12, Hypnosis Live, Brainwave Shots",
+      "status": "merchant_catalog_statement",
+      "source_ids": [
+        "S01"
+      ],
+      "limit": "not partner permission"
+    },
+    {
+      "id": "C10",
+      "statement": "Affiliate recommendations need conspicuous disclosure by link",
+      "status": "regulatory_guidance",
+      "source_ids": [
+        "S03"
+      ],
+      "limit": "final rendered context must be tested"
+    },
+    {
+      "id": "C11",
+      "statement": "Health benefits require competent reliable scientific support",
+      "status": "regulatory_guidance",
+      "source_ids": [
+        "S04"
+      ],
+      "limit": "depends on precise claims/context"
+    },
+    {
+      "id": "C12",
+      "statement": "Carpenter 1852 Royal Institution paper and metadata",
+      "status": "archival_catalog_verified",
+      "source_ids": [
+        "S05"
+      ],
+      "limit": "catalog not full text verification"
+    },
+    {
+      "id": "C13",
+      "statement": "2018/2019 Ouija field study 40 participants",
+      "status": "independent_research",
+      "source_ids": [
+        "S06"
+      ],
+      "limit": "convenience sample"
+    },
+    {
+      "id": "C14",
+      "statement": "2018/2019 analysis 176 responses:33 deliberate/143 ordinary",
+      "status": "independent_research",
+      "source_ids": [
+        "S06"
+      ],
+      "limit": "response counts not sample size"
+    },
+    {
+      "id": "C15",
+      "statement": "2018/2019 ordinary responses 67 meaningful 76 otherwise",
+      "status": "independent_research",
+      "source_ids": [
+        "S06"
+      ],
+      "limit": "author classification"
+    },
+    {
+      "id": "C16",
+      "statement": "Gaze less predictive when natural vs deliberate spelling",
+      "status": "independent_research",
+      "source_ids": [
+        "S06"
+      ],
+      "limit": "proxy not direct force measure"
+    },
+    {
+      "id": "C17",
+      "statement": "Belief correlates with reported agency",
+      "status": "independent_research_noncausal",
+      "source_ids": [
+        "S06"
+      ],
+      "limit": "not randomized"
+    },
+    {
+      "id": "C18",
+      "statement": "FV Focus guide is published and 52 pages",
+      "status": "verified_live",
+      "source_ids": [
+        "S08"
+      ],
+      "limit": "provider-confirmed subscription unverified"
+    },
+    {
+      "id": "C19",
+      "statement": "Published Change Blindness article is linked",
+      "status": "verified_live",
+      "source_ids": [
+        "S09"
+      ],
+      "limit": "currently links may point to different existing offers"
+    },
+    {
+      "id": "C20",
+      "statement": "Puységur archive recorded by Explore as 153 source rows and 16 cases",
+      "status": "verified_live_summary",
+      "source_ids": [
+        "S10",
+        "S12"
+      ],
+      "limit": "direct page could not be retrieved"
+    },
+    {
+      "id": "C21",
+      "statement": "Affiliate application approved for FV",
+      "status": "UNVERIFIED_HARD_HOLD",
+      "source_ids": [
+        "S12"
+      ],
+      "limit": "private partner dashboard required"
+    },
+    {
+      "id": "C22",
+      "statement": "Authorized tracking link and channels",
+      "status": "UNVERIFIED_HARD_HOLD",
+      "source_ids": [
+        "S12"
+      ],
+      "limit": "never invent earning URL"
+    },
+    {
+      "id": "C23",
+      "statement": "Rights-cleared sellable FV-owned Mind product",
+      "status": "UNVERIFIED_HARD_HOLD",
+      "source_ids": [
+        "S13"
+      ],
+      "limit": "authenticated Payhip inventory needed"
+    },
+    {
+      "id": "C24",
+      "statement": "Focus URL query-string ready flag proves lead",
+      "status": "FALSE_DO_NOT_COUNT",
+      "source_ids": [
+        "S13"
+      ],
+      "limit": "provider record mandatory"
+    },
+    {
+      "id": "C25",
+      "statement": "Paid commission, net/1000 qualified sessions",
+      "status": "NOT_COMPUTABLE",
+      "source_ids": [
+        "S13"
+      ],
+      "limit": "no settled order, fees or denominator"
+    }
+  ],
+  "gates": [
+    {
+      "id": "account_acceptance",
+      "status": "HARD_HOLD",
+      "evidence_needed": "named FV account accepted with screenshot/date"
+    },
+    {
+      "id": "permission_social",
+      "status": "HARD_HOLD",
+      "evidence_needed": "social channel authorization written"
+    },
+    {
+      "id": "permission_email",
+      "status": "HARD_HOLD",
+      "evidence_needed": "newsletter authorization written"
+    },
+    {
+      "id": "issued_earning_url",
+      "status": "HARD_HOLD",
+      "evidence_needed": "account-issued verified link"
+    },
+    {
+      "id": "affiliate_tracking_terms",
+      "status": "HARD_HOLD",
+      "evidence_needed": "parameters, attribution window, disallowed placements"
+    },
+    {
+      "id": "merchant_checkout_final",
+      "status": "HARD_HOLD",
+      "evidence_needed": "price/taxes/currency/checkout observed"
+    },
+    {
+      "id": "merchant_refund_conditions",
+      "status": "HARD_HOLD",
+      "evidence_needed": "full terms verified incl refund request process"
+    },
+    {
+      "id": "merchant_creative_rights",
+      "status": "HARD_HOLD",
+      "evidence_needed": "creative/reuse rights verified or original only"
+    },
+    {
+      "id": "claim_substantiation",
+      "status": "HARD_HOLD",
+      "evidence_needed": "specific claims support, unsupported removed"
+    },
+    {
+      "id": "affiliate_disclosure_rendered",
+      "status": "HARD_HOLD",
+      "evidence_needed": "actual CMS/mobile disclosure adjacent"
+    },
+    {
+      "id": "video_render_and_captions",
+      "status": "HARD_HOLD",
+      "evidence_needed": "file with matching transcript and caption playback"
+    },
+    {
+      "id": "browser_a11y_performance",
+      "status": "HARD_HOLD",
+      "evidence_needed": "mobile keyboard, no-js, LCP, reduced motion"
+    },
+    {
+      "id": "site_qa_and_founder_release",
+      "status": "HARD_HOLD",
+      "evidence_needed": "signed-off review; no implicit approval"
+    },
+    {
+      "id": "published_guide",
+      "status": "HARD_HOLD",
+      "evidence_needed": "public route only after approval"
+    },
+    {
+      "id": "independent_paid_conversion",
+      "status": "HARD_HOLD",
+      "evidence_needed": "settled order or partner-paid commission"
+    },
+    {
+      "id": "qualified_human_denominator",
+      "status": "HARD_HOLD",
+      "evidence_needed": "consented privacy safe 7/30 cohorts"
+    }
+  ],
+  "verification_note": "Public seller evidence is not affiliate-account or checkout evidence. Gmail query on 2026-11-08 returned marketing, no qualifying named acceptance. Account-only authorization unresolved. Never treat no messages as proof of rejection.",
+  "privacy": "No PII, no extra trackers or signup forms. CTA disabled."
+}
