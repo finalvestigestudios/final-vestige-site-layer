@@ -1,0 +1,35 @@
+# THE DISPATCH — R211 REVIEW ALTERNATIVE 03
+
+> **UNSENT REVIEW ALTERNATIVE — NOT CANONICAL / NOT APPROVED FOR EMAIL.**
+
+**Subject:** What twelve minutes can—and cannot—tell you
+
+**Preheader:** A free observation exercise before considering Zen12's advertised audio library.
+
+**Content type:** commercial-review-pending
+
+---
+
+A twelve-minute routine has one clear advantage: it asks for twelve minutes. That's an observation about the calendar, not proof that a recording produces the results on its sales page.
+
+If you want to examine the habit itself, try two short sessions without buying anything. Before each session, write what you intend to do afterward. When the time is over, note whether you completed the session, whether you became distracted, and whether you started the next task. You will have a small record of your own experience, not a controlled trial of meditation's effectiveness.
+
+Zen12 is a product we're examining because its format fits that question. On its official sales page, the seller describes twelve progressive levels, several listening styles, and a Premium collection of 48 MP3 recordings. It also advertises a one-year return promise and claims that twelve minutes can confer benefits comparable to an hour of meditation.
+
+Those are **seller representations**. A product-specific equivalence between twelve minutes and one hour has not been independently established for our review. The NIH's discussion of meditation research concerns broader practices and cannot be transferred wholesale to this product.
+
+Before we'd recommend a paid program, a reader deserves the current checkout terms, what each audio file actually contains, refund qualifications, the evidence for claims, and a genuinely optional free alternative.
+
+**Commercial disclosure immediately beside the proposed CTA:** If you purchase through a qualifying link inside a future approved guide, Final Vestige may earn a commission. No link is live and no purchase is necessary for the exercise above.
+
+**ONE CTA — INACTIVE, NOT FOR DISTRIBUTION:** Read the independent Zen12 evidence guide — [[APPROVED_LIVE_ZEN12_GUIDE_URL_REQUIRED]]
+
+**Sources:** Official Zen12 merchant sales page, https://zen12.com/hnp ; NIH NCCIH meditation evidence and safety, https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety/ ; FTC health-claim standards, https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance .
+
+**HOLD:** No verified Final Vestige affiliate acceptance, email-channel permission, issued earning URL, live buyer guide, authenticated checkout, or verified refund performance. No active product link.
+
+---
+PRE-SEND GATE — NOT PART OF APPROVED SENDING COPY.
+Sender: Final Vestige Studios. Valid publisher postal address: [[VALID_FINAL_VESTIGE_POSTAL_ADDRESS_REQUIRED]].
+Actual rendered Jetpack unsubscribe: [[JETPACK_UNSUBSCRIBE_MUST_BE_VERIFIED]].
+No actual received email, permission, or founder sign-off has been verified.
