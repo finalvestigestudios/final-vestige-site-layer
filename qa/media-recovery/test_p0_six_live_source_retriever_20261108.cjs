@@ -33,6 +33,11 @@ const changes=[
 ['production writes',a=>a.release.wordpress_writes=1],
 ['spent subscription',a=>a.release.spend_usd=10],
 ['false completion',a=>a.release.guest_browser_verification=true],
-['broken frozen provenance',a=>a.frozen_git_source.blob_sha='no']
+['broken frozen provenance',a=>a.frozen_git_source.blob_sha='no'],
+['plausible HTTPS published photo substitution',a=>a.rows[0].published_src='https://fake.example.org/plausible.jpg'],
+['plausible HTTPS archival candidate substitution',a=>a.rows[1].candidate.url='https://fake.example.org/replacement.jpg'],
+['altered wrapper result semantics',a=>a.rows[3].wrapper.tool_result='SUCCESS'],
+['falsified public-domain rights label',a=>a.rows[2].candidate.rights_evidence='PUBLIC_DOMAIN'],
+['alternate article permalink',a=>a.rows[2].post_url='https://finalvestige.com/unrelated/']
 ];
 for(const [n,f] of changes)test('fail closed: '+n,()=>{const a=JSON.parse(JSON.stringify(base));f(a);assert.ok(validate(a).length>0,n);});
