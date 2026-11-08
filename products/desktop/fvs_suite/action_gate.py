@@ -1,28 +1,38 @@
 """Single-flight custody for report-generation and human-review UI commands.
 
-Tk's nested modal event loops can dispatch another button command before the
-first finishes. The same gate is shared between Generate and premium Review,
-so neither can re-enter or overlap the other's report/review workflow.
-No paths, financial values, exceptions or approvals are retained or logged.
+Nested Tk modal loops and future worker-thread entrypoints must never start
+concurrent report or review actions. The same per-window gate is shared by
+Generate and premium Review. Rejected calls are never queued; no financial
+values, paths, exceptions, or approval decisions are retained or logged.
 """
 from __future__ import annotations
 
 from collections.abc import Callable
+from threading import Lock
 
 
 class ActionGate:
-    """Reject overlapping commands; always unlock after success or failure."""
+    """Reject concurrent or reentrant commands without blocking their caller."""
 
     def __init__(self) -> None:
+        self._claim = Lock()
+        # Retain the existing diagnostic state; the lock, never this bool,
+        # decides admission. Plain check-then-set is racy across threads.
         self._active = False
 
     def run(self, command: Callable[[], object]) -> bool:
-        """Execute once, return False if already busy; never queue an action."""
-        if self._active:
+        """Execute once if idle; return False immediately while busy.
+
+        The lock is intentionally held for the *whole* callback, including
+        nested Tk events. Its nonblocking acquisition keeps a second GUI
+        command from waiting behind an export and later executing silently.
+        """
+        if not self._claim.acquire(blocking=False):
             return False
         self._active = True
         try:
             command()
         finally:
             self._active = False
+            self._claim.release()
         return True
