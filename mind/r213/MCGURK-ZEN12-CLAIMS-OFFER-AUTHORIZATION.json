@@ -1,0 +1,593 @@
+{
+  "schema": "fv-mind-r213/claims-authorization-2026-11-08",
+  "checked_date": "2026-11-08",
+  "artifact_status": "UNPUBLISHED_SOURCE_CONTROL_ONLY",
+  "selected_eligible_offer": "NONE_ACCOUNT_VERIFIED",
+  "commercial_activated": false,
+  "affiliate_url": null,
+  "source_registry": [
+    {
+      "id": "S01",
+      "kind": "primary_original",
+      "title": "McGurk & MacDonald 1976 original article abstract",
+      "url": "https://doi.org/10.1038/264746a0",
+      "scope": "Published 1976 Nature abstract inspected; no participant records"
+    },
+    {
+      "id": "S02",
+      "kind": "primary_followup",
+      "title": "Basu Mallick et al 2015 McGurk variability study",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25802068/",
+      "scope": "Article abstract and PMC report checked; first experiment N=165, year retest N=40, forced-choice influence"
+    },
+    {
+      "id": "S03",
+      "kind": "primary_followup",
+      "title": "Brown et al 2018 individual differences",
+      "url": "https://doi.org/10.1371/journal.pone.0207160",
+      "scope": "Published study abstract checked; correlational lipreading relationship"
+    },
+    {
+      "id": "S04",
+      "kind": "peer_reviewed_synthesis",
+      "title": "Audiovisual speech perception: Moving beyond McGurk",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9894660/",
+      "scope": "2023 critical review; artificial incongruent syllables limit natural-speech generalization"
+    },
+    {
+      "id": "S05",
+      "kind": "investigator_retrospective",
+      "title": "MacDonald 2018 retrospective",
+      "url": "https://doi.org/10.1163/22134808-00002548",
+      "scope": "Historical coauthor account; not independent new replication"
+    },
+    {
+      "id": "S06",
+      "kind": "primary_followup",
+      "title": "Munhall et al 1996 timing study",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/8935896/",
+      "scope": "Abstract scope timing manipulation; no claims about meditation audio"
+    },
+    {
+      "id": "S07",
+      "kind": "external_demo",
+      "title": "UPF Multisensory Research Group McGurk demonstration",
+      "url": "https://www.upf.edu/web/mrg/mcgurk_1",
+      "scope": "External unembedded demonstration; licensing not cleared for copying"
+    },
+    {
+      "id": "S08",
+      "kind": "live_history",
+      "title": "Puységur Animal Magnetism Files",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "scope": "Documented published route in Issue #171; current web direct fetch inaccessible"
+    },
+    {
+      "id": "S09",
+      "kind": "live_history",
+      "title": "Mesmerism investigation",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "scope": "Previously verified published route; current web direct fetch inaccessible"
+    },
+    {
+      "id": "S10",
+      "kind": "live_perception",
+      "title": "Change Blindness investigation",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "scope": "Previously verified published route; current web direct fetch inaccessible"
+    },
+    {
+      "id": "S11",
+      "kind": "existing_free",
+      "title": "Seven Day Focus Fieldbook",
+      "url": "https://finalvestige.com/focus/",
+      "scope": "Existing 52-page optional resource, single established Jetpack funnel; no current authenticated signup verification"
+    },
+    {
+      "id": "S12",
+      "kind": "merchant_catalog",
+      "title": "Inspire3 official product catalog",
+      "url": "https://inspire3.com/",
+      "scope": "Public merchant representations, not independent product efficacy"
+    },
+    {
+      "id": "S13",
+      "kind": "merchant_exact_offer",
+      "title": "Zen12 official exact Premium offer page",
+      "url": "https://zen12.com/hnp",
+      "scope": "Public retrieval shows 12 levels/48 MP3/4 styles/advertised 1-year refund; public price shows $87 in cached snapshot; prior reports $87.99, checkout unverified"
+    },
+    {
+      "id": "S14",
+      "kind": "merchant_exact_offer",
+      "title": "Hypnosis Live Total Focus",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "scope": "Seller lists 33 mins/47 MB; displayed $17.95 sale, $22.95 strikethrough; cannot certify currency code or checkout"
+    },
+    {
+      "id": "S15",
+      "kind": "merchant_terms",
+      "title": "Hypnosis Live FAQ",
+      "url": "https://hypnosislive.com/faq",
+      "scope": "Seller FAQ: request refund within 14 days, annual cap five sessions; processing not verified"
+    },
+    {
+      "id": "S16",
+      "kind": "merchant_affiliate_public",
+      "title": "Inspire3 affiliate program",
+      "url": "https://affiliates.inspire3.com/",
+      "scope": "Public marketing page only; not proof of signed FV account agreement, channel permissions or issued tracking link"
+    },
+    {
+      "id": "S17",
+      "kind": "regulatory",
+      "title": "FTC endorsement guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "scope": "Disclosure of material connection near earning recommendation"
+    },
+    {
+      "id": "S18",
+      "kind": "regulatory",
+      "title": "FTC Health Products Compliance Guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "scope": "Adequate scientific support for express and implied health claims; guide is guidance, not legal safe harbor"
+    },
+    {
+      "id": "S19",
+      "kind": "primary_original",
+      "title": "Loftus & Palmer 1974 full text",
+      "url": "https://bpb-us-e2.wpmucdn.com/faculty.sites.uci.edu/dist/c/571/files/2024/08/LoftusPalmer_ReconstructionAuto_JVLVB1974.pdf",
+      "scope": "PDF text/full primary paper examined; browser screenshot attempts failed; distinct N=45/N=150 and free accounts before specific questions"
+    },
+    {
+      "id": "S20",
+      "kind": "primary_original",
+      "title": "Loftus Miller Burns 1978 full text",
+      "url": "https://bpb-us-e2.wpmucdn.com/faculty.sites.uci.edu/dist/c/571/files/2024/08/LoftusMillerBurns_StopYield_JEP-HLM78.pdf",
+      "scope": "PDF text inspected; screenshot attempts failed; N=1242 overall, pilot N=129 and Exp I N=195"
+    }
+  ],
+  "claims": [
+    {
+      "id": "P01",
+      "claim": "Sight can alter the perceived syllable in audiovisual mismatches",
+      "status": "SUPPORTED_PRIMARY",
+      "source_ids": [
+        "S01",
+        "S02"
+      ],
+      "caveat": "Effect in lab, not all listeners/stimuli"
+    },
+    {
+      "id": "P02",
+      "claim": "Visual /ga/ with auditory /ba/ can produce reported /da/",
+      "status": "SUPPORTED_PRIMARY",
+      "source_ids": [
+        "S01"
+      ],
+      "caveat": "Illustrative asymmetric pairing, not universal response"
+    },
+    {
+      "id": "P03",
+      "claim": "Listeners report /da/ in 100% of cases",
+      "status": "EXCLUDE",
+      "source_ids": [
+        "S02"
+      ],
+      "caveat": "Individual range 0–100% across stimuli"
+    },
+    {
+      "id": "P04",
+      "claim": "Forced choice increases McGurk report by approx 18 percentage points",
+      "status": "SUPPORTED_CONDITIONAL",
+      "source_ids": [
+        "S02"
+      ],
+      "caveat": "Task method effect, not brain improvement"
+    },
+    {
+      "id": "P05",
+      "claim": "McGurk performance is valid general attention or intelligence test",
+      "status": "EXCLUDE",
+      "source_ids": [
+        "S03",
+        "S04"
+      ],
+      "caveat": "No evidence to diagnose individuals"
+    },
+    {
+      "id": "P06",
+      "claim": "McGurk response predicts everyday audiovisual speech ability",
+      "status": "NOT_ESTABLISHED",
+      "source_ids": [
+        "S04"
+      ],
+      "caveat": "Special mismatches differ from congruent natural conversation"
+    },
+    {
+      "id": "P07",
+      "claim": "Temporal asynchrony sometimes permits effect",
+      "status": "SUPPORTED_CONDITIONAL",
+      "source_ids": [
+        "S06"
+      ],
+      "caveat": "Experimental specific timing, no blanket claim"
+    },
+    {
+      "id": "P08",
+      "claim": "Inspire3 owns Zen12 and Hypnosis Live product brands",
+      "status": "SELLER_DOCUMENTED",
+      "source_ids": [
+        "S12"
+      ],
+      "caveat": "Catalog identity only"
+    },
+    {
+      "id": "P09",
+      "claim": "Zen12 Premium seller lists 12 levels and 48 MP3 across 4 styles",
+      "status": "SELLER_DOCUMENTED",
+      "source_ids": [
+        "S13"
+      ],
+      "caveat": "Listing not checkout fulfillment proof"
+    },
+    {
+      "id": "P10",
+      "claim": "Zen12 12 minutes reliably equals 60 minutes of meditation",
+      "status": "UNSUBSTANTIATED_EXCLUDE",
+      "source_ids": [
+        "S13",
+        "S18"
+      ],
+      "caveat": "Seller assertion absent product-specific comparator"
+    },
+    {
+      "id": "P11",
+      "claim": "Zen12 guarantees anxiety treatment, focus improvements or health changes",
+      "status": "UNSUBSTANTIATED_EXCLUDE",
+      "source_ids": [
+        "S13",
+        "S18"
+      ],
+      "caveat": "No product-specific adequate evidence seen"
+    },
+    {
+      "id": "P12",
+      "claim": "Zen12 merchant advertises one-year refund guarantee",
+      "status": "SELLER_DOCUMENTED",
+      "source_ids": [
+        "S13"
+      ],
+      "caveat": "Actual processed refund, restrictions, region unverified"
+    },
+    {
+      "id": "P13",
+      "claim": "Zen12 public page consistently displays confirmed $87.99 checkout",
+      "status": "CONFLICTING_EXCLUDE",
+      "source_ids": [
+        "S13"
+      ],
+      "caveat": "Current retrievable page $87, prior log $87.99; price and ISO currency at checkout unverified"
+    },
+    {
+      "id": "P14",
+      "claim": "Hypnosis Live Total Focus seller lists 33 min 47 MB",
+      "status": "SELLER_DOCUMENTED",
+      "source_ids": [
+        "S14"
+      ],
+      "caveat": "No purchase or efficacy verification"
+    },
+    {
+      "id": "P15",
+      "claim": "Hypnosis Live Total Focus seller page shows $17.95 promotional display",
+      "status": "SELLER_PUBLIC_DISPLAY_ONLY",
+      "source_ids": [
+        "S14"
+      ],
+      "caveat": "Screenshot not authenticated checkout, no ISO currency code verified"
+    },
+    {
+      "id": "P16",
+      "claim": "Hypnosis Live unconditional lifetime risk-free guarantee",
+      "status": "MISLEADING_EXCLUDE",
+      "source_ids": [
+        "S14",
+        "S15"
+      ],
+      "caveat": "14 days, five sessions refunded per year per FAQ"
+    },
+    {
+      "id": "P17",
+      "claim": "Hypnosis Live NLP/hypnosis recording gives razor-sharp concentration",
+      "status": "UNSUBSTANTIATED_EXCLUDE",
+      "source_ids": [
+        "S14",
+        "S18"
+      ],
+      "caveat": "Merchant copy, not independent product trial"
+    },
+    {
+      "id": "P18",
+      "claim": "Public Inspire3 program existence proves FV accepted partner",
+      "status": "FALSE_EXCLUDE",
+      "source_ids": [
+        "S16"
+      ],
+      "caveat": "No named account approval or account-issued URL"
+    },
+    {
+      "id": "P19",
+      "claim": "Specific FV website/social/email promotions are authorized",
+      "status": "UNVERIFIED_HARD_HOLD",
+      "source_ids": [
+        "S16"
+      ],
+      "caveat": "Require private account agreement channel permissions"
+    },
+    {
+      "id": "P20",
+      "claim": "An outbound click proves paid sale or commission",
+      "status": "FALSE_EXCLUDE",
+      "source_ids": [],
+      "caveat": "Merchant record plus settlement required"
+    },
+    {
+      "id": "P21",
+      "claim": "The free Focus Fieldbook is existing capture path",
+      "status": "DOCUMENTED_PRIOR_SITE",
+      "source_ids": [
+        "S11"
+      ],
+      "caveat": "Do not add new signup or replace welcome; confirmed opt-in still unverified"
+    },
+    {
+      "id": "P22",
+      "claim": "R212 is unique canonical crash article",
+      "status": "FALSE_DUPLICATE",
+      "source_ids": [
+        "S19",
+        "S20"
+      ],
+      "caveat": "R185 proposed canonical; R212 noncanonical, R200 hypnosis memory separate"
+    },
+    {
+      "id": "P23",
+      "claim": "R212 first experiment omitted free accounts",
+      "status": "FALSE_CORRECTED",
+      "source_ids": [
+        "S19"
+      ],
+      "caveat": "Both 1974 experiments solicited unprompted description before specific questions"
+    },
+    {
+      "id": "P24",
+      "claim": "R212 full-text primary sample and glass counts",
+      "status": "SUPPORTED_PRIMARY",
+      "source_ids": [
+        "S19"
+      ],
+      "caveat": "Exp I 45, Exp II 150; glass yes=16/50,7/50,6/50"
+    },
+    {
+      "id": "P25",
+      "claim": "1978 recognition pilot and Exp I are same test",
+      "status": "FALSE_CORRECTED",
+      "source_ids": [
+        "S20"
+      ],
+      "caveat": "Pilot yes/no N129, Exp I forced-choice N195 75% vs41%"
+    },
+    {
+      "id": "P26",
+      "claim": "Earning disclosure can live only in global policy page",
+      "status": "FALSE_EXCLUDE",
+      "source_ids": [
+        "S17"
+      ],
+      "caveat": "Adjacent plain-language disclosure by recommendation"
+    },
+    {
+      "id": "P27",
+      "claim": "McGurk effect proves the efficiency of meditation MP3",
+      "status": "FALSE_EXCLUDE",
+      "source_ids": [
+        "S01",
+        "S13",
+        "S18"
+      ],
+      "caveat": "Unrelated outcome/product"
+    },
+    {
+      "id": "P28",
+      "claim": "Reader's susceptibility diagnoses autism, hearing status or cognition",
+      "status": "FALSE_EXCLUDE",
+      "source_ids": [
+        "S03",
+        "S04"
+      ],
+      "caveat": "Illusion variations not medical diagnosis"
+    },
+    {
+      "id": "P29",
+      "claim": "Owned FV Payhip Mind SKU is purchasable now",
+      "status": "UNVERIFIED_HARD_HOLD",
+      "source_ids": [],
+      "caveat": "Require rights, live SKU, price, returns, delivery and verified settlement"
+    },
+    {
+      "id": "P30",
+      "claim": "Three Grok platform-specific published asset IDs verified",
+      "status": "UNVERIFIED_HARD_HOLD",
+      "source_ids": [],
+      "caveat": "TASK-008 has candidate topics, no actual verified media IDs"
+    },
+    {
+      "id": "P31",
+      "claim": "Commercial campaign has cleared commission and known refunds",
+      "status": "UNVERIFIED_HARD_HOLD",
+      "source_ids": [],
+      "caveat": "Missing merchant ledger/attribution"
+    },
+    {
+      "id": "P32",
+      "claim": "New third-party pixel required for attribution",
+      "status": "FALSE_EXCLUDE",
+      "source_ids": [],
+      "caveat": "Existing 1P/native only, consent and aggregation"
+    }
+  ],
+  "release_gates": [
+    {
+      "id": "G01",
+      "requirement": "PRIVATE named Final Vestige Inspire3 acceptance",
+      "owner": "Founder/Mind",
+      "status": "OPEN"
+    },
+    {
+      "id": "G02",
+      "requirement": "Written permitted WEBSITE/SOCIAL/EMAIL promotional channels and swipe rights",
+      "owner": "Founder/Mind",
+      "status": "OPEN"
+    },
+    {
+      "id": "G03",
+      "requirement": "Account-issued permitted tracking URL and tracking/redirect restrictions",
+      "owner": "Founder/Mind",
+      "status": "OPEN"
+    },
+    {
+      "id": "G04",
+      "requirement": "Exact Zen12 Premium merchant landing matched to approved URL",
+      "owner": "Mind/QA",
+      "status": "OPEN"
+    },
+    {
+      "id": "G05",
+      "requirement": "Final checkout currency and price/upsell/tax observation",
+      "owner": "Commerce",
+      "status": "OPEN"
+    },
+    {
+      "id": "G06",
+      "requirement": "Current refund restrictions and independent fulfillment observation",
+      "owner": "Commerce",
+      "status": "OPEN"
+    },
+    {
+      "id": "G07",
+      "requirement": "Authenticated Payhip owned Mind SKU, rights, price, returns, delivery",
+      "owner": "Commerce",
+      "status": "OPEN"
+    },
+    {
+      "id": "G08",
+      "requirement": "Existing Grok actual asset IDs/hooks/posted URLs/destination",
+      "owner": "Praxxis/Grok",
+      "status": "OPEN"
+    },
+    {
+      "id": "G09",
+      "requirement": "Existing Jetpack single-Focus confirmed opt-in and delivery provider state",
+      "owner": "Claude/Site QA",
+      "status": "OPEN"
+    },
+    {
+      "id": "G10",
+      "requirement": "Attribution event taxonomy without scripts/PII and 7/30d cohorts",
+      "owner": "Claude/Site QA",
+      "status": "OPEN"
+    },
+    {
+      "id": "G11",
+      "requirement": "Rendered optional 42sec video, poster, VTT, transcript, performance and keyboard QA",
+      "owner": "Site QA",
+      "status": "OPEN"
+    },
+    {
+      "id": "G12",
+      "requirement": "Actual native Node and desktop/mobile browser tests with screenshots",
+      "owner": "Site QA",
+      "status": "OPEN"
+    },
+    {
+      "id": "G13",
+      "requirement": "Merchant-confirmed paid order or separately cleared affiliate commission",
+      "owner": "Commerce",
+      "status": "OPEN"
+    },
+    {
+      "id": "G14",
+      "requirement": "Refunds/fees/chargebacks reconciliation & qualified human denominator",
+      "owner": "Commerce/Analytics",
+      "status": "OPEN"
+    },
+    {
+      "id": "G15",
+      "requirement": "Founder approval for any CMS, email, posting, activation or release",
+      "owner": "Founder",
+      "status": "OPEN"
+    }
+  ],
+  "unverified_placeholders": [
+    {
+      "kind": "private_inspire3_account",
+      "status": "UNKNOWN",
+      "public_url": null
+    },
+    {
+      "kind": "owned_payhip_mind_sku",
+      "status": "UNKNOWN",
+      "public_url": null
+    },
+    {
+      "kind": "actual_grok_asset_ids",
+      "status": "UNKNOWN",
+      "public_url": null
+    },
+    {
+      "kind": "confirmed_transactions",
+      "status": "UNKNOWN",
+      "public_url": null
+    }
+  ],
+  "verification_notes": [
+    "2026-11-08 targeted Gmail approval/acceptance search: zero qualifying messages; public Inspire3 promotional email messages exist but are not authorization. This is not a complete audit of private partner dashboards.",
+    "Web page cache can differ from merchant checkout; do not place prices/commissions/links in the commercial CTA.",
+    "Site live route status previously verified through Issue #171/WordPress; direct web fetch of some live FV URLs failed during this run. Do not claim independent current HTTP proof."
+  ],
+  "measurement": {
+    "events": [
+      "qualified_human_session",
+      "landing_view",
+      "relevant_cta_click",
+      "provider_confirmed_opt_in_if_observable",
+      "affiliate_outbound_click_if_authorized",
+      "merchant_paid_order_confirmed",
+      "affiliate_commission_cleared",
+      "refund_fee_chargeback_posted"
+    ],
+    "dedupe": "aggregate via consent-compatible native or first-party events; no raw IP/emails/fingerprints or order IDs; never mix click counts with purchases",
+    "utm_keys": [
+      "utm_source",
+      "utm_medium",
+      "utm_campaign",
+      "utm_content"
+    ],
+    "campaign_asset_id": "UNKNOWN_NOT_INVENTED",
+    "cohorts_days": [
+      7,
+      30
+    ],
+    "gross_vs_net": "net = settled owned receipts + cleared affiliate commissions - refunds - processing fees - chargebacks, with currency and transaction-period reconciliation",
+    "kpi": "net / qualified human sessions * 1000 only when numerator, denominator and comparable cohorts verified",
+    "current_kpi": "NOT_COMPUTABLE_NOT_ZERO",
+    "small_sample_warning": "<30 paid orders/variant: exploratory, do not infer A/B superiority"
+  },
+  "canonical_misinformation": {
+    "canonical_candidate": "R185",
+    "hypnosis_distinct": "R200",
+    "r212": "NONCANONICAL_COMPANION",
+    "no_extra_public_slug": true
+  }
+}
