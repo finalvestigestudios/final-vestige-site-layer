@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import importlib.util
+import json
 from pathlib import Path
 import tempfile
 import unittest
@@ -11,6 +12,8 @@ SCRIPT = Path(__file__).resolve().parents[1] / "scripts" / "offline_windows_cand
 spec = importlib.util.spec_from_file_location("r269_candidate", SCRIPT)
 module = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(module)
+
+from test_offline_windows_candidate_r270 import source_receipt  # synthetic receipt fixture
 
 
 class CandidatePlanTests(unittest.TestCase):
@@ -24,6 +27,9 @@ class CandidatePlanTests(unittest.TestCase):
         self.run = Path(self.temp.name) / "session"
         self.run.mkdir()
         self.calls = []
+        # R270 requires a retained source-suite receipt before any packaging.
+        (self.run / "source-suite-evidence.json").write_text(
+            json.dumps(source_receipt()), encoding="utf-8")
 
     def runner(self, argv, cwd, timeout):
         self.calls.append((argv, cwd, timeout))
