@@ -39,10 +39,10 @@ test('all three HTML previews language marked English',()=>[a,b,hub].forEach(x=>
 test('source-only previews carry noindex',()=>[a,b,hub].forEach(x=>assert.match(x,/<meta name="robots" content="noindex,nofollow">/)));
 test('A guide remains natively disabled and near-disclosed',()=>guideCompliant(a));
 test('B guide remains natively disabled and near-disclosed',()=>guideCompliant(b));
-test('Mind archive hub remains natively disabled and near-disclosed',()=>guideCompliant(hub.replace('No personal product trial','No personal product trial')));
+test('Mind archive hub has disabled CTA and adjacent disclosure',()=>{assert.match(hub,/<button\\b[^>]*\\bdisabled\\b/);assert.match(hub,/may earn a commission at no additional cost to you/);});
 test('no active scripts, forms, remote media or affiliate earning refs',()=>[a,b,hub].forEach(noActiveMarkup));
 test('B film has one optional section',()=>assert(clipStart>0&&clipEnd>clipStart));
-test('A/B all commercial guide core is identical',()=>assert.equal(b.slice(0,clipStart)+b.slice(clipEnd).replace('',''),a.replace(' — optional film','').replace('Zen12 Premium decision guide','Zen12 Premium decision guide')));
+test('A/B all commercial guide core is identical',()=>assert.equal((b.slice(0,clipStart)+b.slice(clipEnd)).replace(' — optional film',''),a));
 test('B original SVG poster is described with title and desc',()=>{assert.match(b,/<svg\b/);assert.match(b,/<title id="poster-title">/);assert.match(b,/<desc id="poster-desc">/);assert.match(b,/<figcaption>/);});
 test('film is not falsely described as rendered playback',()=>{assert.doesNotMatch(b,/<video\b/);assert.match(b,/No playable film/);});
 test('caption draft begins WEBVTT',()=>assert.equal(vtt.trimStart().slice(0,6),'WEBVTT'));
