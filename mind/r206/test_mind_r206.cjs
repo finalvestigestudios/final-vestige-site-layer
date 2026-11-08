@@ -24,7 +24,7 @@ function run(read){
   const ids=s=>[...s.matchAll(/\bid="([^"]+)"/g)].map(x=>x[1]);
   const fragments=s=>{let x=new Set(ids(s));return [...s.matchAll(/href="#([^"]+)"/g)].every(y=>x.has(y[1]))};
   const safe=s=>!/<script\b|<iframe\b|<form\b|<input\b|<video\b|on(?:click|load|submit)\s*=|@import\b|(?:awin1|clickbank)\.com/i.test(s);
-  const disabled=s=>/\b<button[^>]*\bdisabled\b[^>]*>/.test(s)&&!/<a[^>]*\b(?:href="https?:\/\/(?:zen12|inspire3|affiliates\.inspire3)|rel="sponsored")/i.test(s);
+  const disabled=s=>/<button[^>]*\bdisabled\b[^>]*>/.test(s)&&!/<a[^>]*\b(?:href="https?:\/\/(?:zen12|inspire3|affiliates\.inspire3)|rel="sponsored")/i.test(s);
   const doc=f.article,hub=f.hub,A=f.A,B=f.B,p=f.prior;
   t('article sufficient length',doc.split(/\s+/).length>1900);
   for(const s of ['Thompson','Lewis','Johnston','Wong','Twedt','Sheinberg','Gauthier','1980','1997','2010','face','cars','buildings','bikes','letter','inverted','configural','NOT WordPress','UNPUBLISHED'])
