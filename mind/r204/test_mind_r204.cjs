@@ -30,7 +30,7 @@ check('article 2011 measurement dispute',article.includes('21738756'));
 check('article 2020 demand critique',article.includes('10.1525/collabra.325'));
 check('article 2022 rebuttal',article.includes('s41467-022-28177-z'));
 check('article 2023 meta analytic qualifier',article.includes('0.35'));
-check('article avoids branding as evidence',article.includes('not evidence for Zen12')||article.includes('not evidence for Zen12'));
+check('article avoids branding as evidence',article.includes('do not establish the clinical efficacy'));
 check('article does not activate tracking',!/<script|utm_content=|aw(in1)?\.com\/cread/i.test(article));
 check('article distinguishes research from affiliate',article.includes('no affiliate earning link'));
 check('hub self-contained HTML',hub.startsWith('<!doctype html>'));
@@ -77,7 +77,7 @@ check('matrix no deployed A/B traffic',matrix.experiment.traffic===false&&matrix
 check('matrix creator fits contain no invented asset ID',matrix.creator_to_offer_fits.every(x=>!x.asset_id));
 check('matrix campaigns count',matrix.creator_to_offer_fits.length===3);
 check('plan price caveat',plan.includes('not sufficient to quote a firm checkout price'));
-check('plan 42 second not playable',plan.includes('NOT a rendered MP4'));
+check('plan 42 second not playable',plan.includes('not a rendered MP4'));
 check('plan no active merchant',plan.includes('natively disabled purchase controls'));
 check('plan explicit risk and objections',plan.includes('Objections, respectfully'));
 check('plan disclosure near CTA',plan.includes('may earn a commission at no additional cost to you'));
