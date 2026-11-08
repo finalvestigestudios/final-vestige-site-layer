@@ -42,9 +42,19 @@ function inspectRun(run, label, reasons) {
         !Array.isArray(p.article_wire_evidence_errors) || p.article_wire_evidence_errors.length !== 0 ||
         p.article_wire_attribution_mode !== 'strict_cdp_request_id')
       add(reasons, label+':article_wire_evidence_unverified:'+id);
-    if (!Array.isArray(p.stored_images) || !positive(p.stored_image_count) ||
-        p.stored_images.length !== p.stored_image_count || !Array.isArray(p.network_images)) {
+    if (!Array.isArray(p.stored_images) || !Number.isSafeInteger(p.stored_image_count) ||
+        p.stored_image_count < 0 || p.stored_images.length !== p.stored_image_count ||
+        !Array.isArray(p.network_images)) {
       add(reasons, label+':missing_image_slots_or_network:'+id);continue;
+    }
+    // A published article with zero inline image slots must remain in the cohort.
+    // It contributes exactly zero ARTICLE image bytes, not theme/logo network bytes.
+    // All other page, scroll, census, and CDP-evidence completeness gates still apply.
+    if (p.stored_image_count === 0) {
+      if (p.matched_article_network_requests !== 0 || p.article_image_wire_bytes_total !== 0)
+        add(reasons, label+':zero_image_post_forged_article_traffic:'+id);
+      row.computed=0;
+      continue;
     }
     const byId = new Map(), bound = new Set(); let sum = 0;
     for (const n of p.network_images) {
@@ -121,7 +131,10 @@ function compareColdImageWire(before, after) {
     const pairedSourceSetMatches=url(br.page.url) === url(ar.page.url) &&
       JSON.stringify(bkeys)===JSON.stringify(akeys);
     if (!pairedSourceSetMatches) add(reasons,'post_url_or_image_slot_set_changed:'+id);
-    if (!positive(br.computed) || !positive(ar.computed))add(reasons,'paired_bytes_unknown:'+id);
+    const verifiedEmptyPair = br.keys.size===0 && ar.keys.size===0 &&
+      br.computed===0 && ar.computed===0;
+    if (!verifiedEmptyPair && (!positive(br.computed) || !positive(ar.computed)))
+      add(reasons,'paired_bytes_unknown:'+id);
     baseline+=br.computed||0;candidate+=ar.computed||0;
     if (!pairedSourceSetMatches) continue;
     const bs=new Map(br.page.stored_images.map(s=>[s.image_key,s]));
@@ -154,6 +167,9 @@ function compareColdImageWire(before, after) {
         candidate_encoded_bytes:as.get(k).transfer_bytes,
         per_slot_bytes_not_additive_when_request_ids_shared:true}))});
   }
+  // A cohort consisting only of zero-image articles has no reduction denominator.
+  if (!positive(baseline) || !positive(candidate))
+    add(reasons,'paired_cohort_has_no_positive_image_bytes');
   const errors=unique(reasons);
   if (errors.length) return {schema:'fv-cold-image-wire-pair-v1',state:'HOLD',reasons:errors,
     paired_post_count:null,baseline_cdp_bytes:null,candidate_cdp_bytes:null,
