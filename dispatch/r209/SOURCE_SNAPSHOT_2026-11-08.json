@@ -1,0 +1,39 @@
+{
+  "snapshot_type": "read_only_aggregate_no_recipients",
+  "observed_utc": "2026-11-08T12:33:41Z",
+  "wordpress_site": "https://finalvestige.com",
+  "jetpack_status": {
+    "total_counter": 3,
+    "confirmed_counter": 3,
+    "unconfirmed_requests": 2,
+    "suppressed": 0,
+    "site_can_send_technical": true,
+    "recent_five_posts": "never_sent_opted_out",
+    "recent_campaign_sends_verified": 0
+  },
+  "jetpack_settings": {
+    "subscriptions": true,
+    "email_new_posts_by_default": false,
+    "email_content_format": "full",
+    "reply_to": "no-reply",
+    "from_name": "Final Vestige Studios",
+    "welcome_fieldbook_configured": true
+  },
+  "separate_followers_snapshot": {
+    "wpcom_followers": 3,
+    "email_only_followers": 0
+  },
+  "critical_unknowns": [
+    "provider_filtered_subscribed_eligible_unique_count",
+    "actual_received_welcome",
+    "actual_native_campaign_email_html_plaintext",
+    "founder_publisher_postal_address",
+    "functional_unsubscribe",
+    "affiliate_partner_named_email_channel_rights",
+    "affiliate_paid_orders",
+    "qualified_human_sessions"
+  ],
+  "privacy": "NO_ADDRESSES_OR_RECIPIENTS_EXPORTED",
+  "interpretation": "confirmed=3 and unconfirmed=2 are NONADDITIVE; cannot infer recipient eligibility, welcome delivery or a send",
+  "no_live_changes": true
+}
