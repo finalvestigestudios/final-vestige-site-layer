@@ -20,7 +20,7 @@ function validate(bundle){
  const must=(condition,msg)=>{if(!condition)e.push(msg);};
  must(article.split(/\s+/).length>2050,'deep article must exceed 2050 words');
  for(const doi of ['10.1038/35048669','12063138','PMC2905511','24691756','19583464','23978009'])must(article.includes(doi),'missing original article source '+doi);
- must(article.includes('UNPUBLISHED')&&article.includes('no new human-subject experiment')===false,'editorial status/source limits');
+ must(article.includes('UNPUBLISHED')&&article.includes('no new human-subject experiment'),'editorial status/source limits');
  must(article.includes('commercial audio recording')&&article.includes('not a diagnosis'),'science vs seller limits');
  must(!/\baffiliate[_ -]?ref=|utm_campaign=.+offer/i.test(article),'investigation independent of earning');
  for(const [name,h] of [['hub',hub],['guide',guide]]){
@@ -28,7 +28,7 @@ function validate(bundle){
   must(!/<a\b[^>]*href\s*=\s*["']https?:\/\/(?:www\.)?(?:zen12|hypnosislive|affiliates\.inspire3|brainwaveshots)/i.test(h),name+' no merchant hot links');
   must(/<button[^>]*\bdisabled\b/i.test(h),name+' merchant CTA native disabled');
   must(/may earn a commission at no additional cost to you/i.test(h),name+' commission disclosure');
-  must(h.indexOf('may earn a commission')<h.indexOf('disabled'),name+' disclosure precedes button');
+  must(/<p class="disclosure">[\s\S]*?<button[^>]*disabled/.test(h),name+' disclosure precedes button');
   must(h.includes('https://finalvestige.com/focus/'),name+' reuses existing Focus');
   must(!/localStorage|document\.cookie|gtag\(|fbq\(|pixel\(|affiliate_click\s*=/i.test(h),name+' does not collect identity/add tracking');
   must(h.includes('@media(max-width:') && h.includes('focus-visible'),name+' static responsive & keyboard evidence');
