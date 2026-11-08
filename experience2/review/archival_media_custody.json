@@ -1,0 +1,67 @@
+{
+  "review_date": "2026-11-08",
+  "review_basis": "Authenticated WordPress media API IDs 473,474,1258 + corresponding primary source records; not an asset-download audit",
+  "wp_site_id": 256784396,
+  "review_candidate": "EX2 protected Playground / PR 1626 lineage, inherited PR 1645",
+  "assets": [
+    {
+      "key": "apollo_1",
+      "wp_id": 473,
+      "in_preview": true,
+      "src": "https://finalvestige.com/wp-content/uploads/2026/08/s67-19766.webp",
+      "file": "s67-19766.webp",
+      "mime": "image/webp",
+      "bytes_wp_metadata": 78346,
+      "width": 1041,
+      "height": 810,
+      "alt_contains": "Apollo 1 astronauts",
+      "primary_evidence": "https://www.nasa.gov/image-detail/apollo-1-crew-honored/",
+      "rights_basis": "NASA photographic media reuse generally permitted under conditions; NASA credit, no endorsement, identifiable-person/advertising and third-party-rights restrictions; NOT a blanket NASA public-domain declaration.",
+      "rights_source": "https://www.nasa.gov/nasa-brand-center/",
+      "scope": "independent historical editorial; not merchant advertisement",
+      "status": "CONDITIONAL_EDITORIAL_REVIEW"
+    },
+    {
+      "key": "franklin_note",
+      "wp_id": 474,
+      "in_preview": true,
+      "src": "https://finalvestige.com/wp-content/uploads/2026/08/Franklinexpeditionnote.jpg",
+      "file": "Franklinexpeditionnote.jpg",
+      "mime": "image/jpeg",
+      "bytes_wp_metadata": 466043,
+      "width": 960,
+      "height": 1526,
+      "alt_contains": "Victory Point note",
+      "primary_evidence": "https://commons.wikimedia.org/wiki/File:Franklinexpeditionnote.jpg",
+      "museum_object": "https://www.rmg.co.uk/collections/objects/rmgc-object-504898",
+      "rights_basis": "Commons identifies the file as a public-domain 1869 printed reproduction; it is NOT a museum-issued photograph of the physical object.",
+      "rights_source": "https://commons.wikimedia.org/wiki/File:Franklinexpeditionnote.jpg",
+      "scope": "U.S. independent historical editorial and original source attribution",
+      "status": "SOURCE_RIGHTS_BASIS_DOCUMENTED"
+    },
+    {
+      "key": "nypl_map",
+      "wp_id": 1258,
+      "in_preview": false,
+      "src": "https://finalvestige.com/wp-content/uploads/2026/08/edit-017-v02-nypl-5003296-original.jpg",
+      "file": "edit-017-v02-nypl-5003296-original.jpg",
+      "mime": "image/jpeg",
+      "bytes_wp_metadata": 5553669,
+      "width": 5667,
+      "height": 3831,
+      "alt_contains": "Brooklyn Rapid Transit",
+      "primary_evidence": "https://old-digitalcollections.nypl.org/items/c745e730-d2a9-012f-5ecc-58d385a7bbd0",
+      "rights_basis": "NYPL believes its 1903 map is U.S. public domain, explicitly does not determine other countries; WP derivative identity and actual transmitted bytes are not established.",
+      "rights_source": "https://old-digitalcollections.nypl.org/items/c745e730-d2a9-012f-5ecc-58d385a7bbd0",
+      "scope": "U.S. editorial only; other jurisdictions not verified",
+      "status": "US_PD_SOURCE_BASIS_DOCUMENTED_DERIVATIVE_PENDING"
+    }
+  ],
+  "categorical_release_gates": {
+    "actual_first_party_image_transfer_bytes_verified": false,
+    "verified_exact_derivative_hashes": false,
+    "native_wordpress_assembler_rendered": false,
+    "lighthouse_and_axe_passed": false,
+    "founder_release_approved": false
+  }
+}
