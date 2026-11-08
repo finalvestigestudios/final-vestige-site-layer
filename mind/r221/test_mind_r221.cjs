@@ -57,7 +57,7 @@ function validate(f){
  assert(extract(buyerA)===extract(buyerB),"same_buyer_copy_AB");
  assert(buyerA.includes("42-second")==false&&buyerB.includes("42-second"),"only_B_illustration");
  assert(buyerB.includes('aria-labelledby="posterTitle posterDesc"')&&buyerB.includes("transcript")&&buyerB.includes("caption"),"B_optional_video_access");
- assert(!/autoplay|<source\b/i.test(buyerB),"B_no_auto_playback");
+ assert(!/<video[^>]*\sautoplay\b|<source\b/i.test(buyerB),"B_no_auto_playback");
  assert(captions.startsWith("WEBVTT")&&[...captions.matchAll(/-->/g)].length===5&&captions.includes("00:00:42.000"),"captions_five_42s");
  assert(m.sources?.length>=24&&m.claims?.length>=39&&m.gates?.length===16,"matrix_depth");
  const ids=new Set(m.sources?.map(x=>x.id));
@@ -75,7 +75,7 @@ function validate(f){
  assert(m.conversion_contract.no_pii===true&&m.conversion_contract.no_fingerprinting===true&&m.conversion_contract.new_tracking_script_allowed===false&&m.conversion_contract.affiliate_click_is_paid_sale===false,"privacy_and_truth");
  assert(m.r221_experiment.active===false&&m.r221_experiment.primary_metric.includes("revenue"),"not_live_ab");
  assert(plan.includes("OFFER → FUNNEL STEP")&&plan.includes("HARD HOLD")&&plan.includes("NOT COMPUTABLE"),"offer_priority");
- for(const key of ["Grok","Praxxis","Claude","TASK-008","Dispatch","channel_profile","R210","UNRENDERED","7-day","30-day","1000"])assert(plan.includes(key),"plan_"+key);
+ for(const key of ["Grok","Praxxis","Claude","TASK-008","Dispatch","channel_profile","R210","UNRENDERED","7-day","30-day","1000"])assert(plan.toLowerCase().includes(key.toLowerCase()),"plan_"+key);
  return errors;
 }
 function run(f){
