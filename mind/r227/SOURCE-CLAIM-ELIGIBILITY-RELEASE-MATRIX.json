@@ -1,0 +1,506 @@
+{
+  "schema_version": "mind_r227_evidence_v1",
+  "date": "2026-11-08",
+  "state": "UNPUBLISHED_NOT_AUTHORIZED",
+  "source_methods": "Public seller pages, primary study abstracts/full text where open, FTC, and connected GitHub/WordPress/Drive. No authenticated Inspire3 affiliate dashboard or merchant transactions. Public price snippets inconsistent, so no offer amount advertised.",
+  "sources": [
+    {
+      "id": "S01",
+      "url": "https://inspire3.com/",
+      "type": "OFFICIAL_SELLER_CATALOG",
+      "reviewed_on": "2026-11-08",
+      "method": "official/public web or connected issue; no private transaction proof"
+    },
+    {
+      "id": "S02",
+      "url": "https://zen12.com/hnp",
+      "type": "EXACT_ZEN12_PREMIUM_OFFER",
+      "reviewed_on": "2026-11-08",
+      "method": "official/public web or connected issue; no private transaction proof"
+    },
+    {
+      "id": "S03",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "type": "COMPARATOR_SELLER_OFFER",
+      "reviewed_on": "2026-11-08",
+      "method": "official/public web or connected issue; no private transaction proof"
+    },
+    {
+      "id": "S04",
+      "url": "https://hypnosislive.com/faq",
+      "type": "SELLER_REFUND_FAQ",
+      "reviewed_on": "2026-11-08",
+      "method": "official/public web or connected issue; no private transaction proof"
+    },
+    {
+      "id": "S05",
+      "url": "https://affiliates.inspire3.com/",
+      "type": "PUBLIC_AFFILIATE_PORTAL_NOT_ACCOUNT_APPROVAL",
+      "reviewed_on": "2026-11-08",
+      "method": "official/public web or connected issue; no private transaction proof"
+    },
+    {
+      "id": "S06",
+      "url": "https://doi.org/10.1068/p281059",
+      "type": "PRIMARY_1999_INATTENTIONAL_BLINDNESS",
+      "reviewed_on": "2026-11-08",
+      "method": "official/public web or connected issue; no private transaction proof"
+    },
+    {
+      "id": "S07",
+      "url": "https://doi.org/10.1016/0010-0285(75)90019-5",
+      "type": "PRIMARY_1975_SELECTIVE_LOOKING",
+      "reviewed_on": "2026-11-08",
+      "method": "official/public web or connected issue; no private transaction proof"
+    },
+    {
+      "id": "S08",
+      "url": "https://doi.org/10.1177/0956797613479386",
+      "type": "PRIMARY_2013_RADIOLOGISTS",
+      "reviewed_on": "2026-11-08",
+      "method": "official/public web or connected issue; no private transaction proof"
+    },
+    {
+      "id": "S09",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3563049/",
+      "type": "OPEN_PRIMARY_2010_MONKEY_BUSINESS",
+      "reviewed_on": "2026-11-08",
+      "method": "official/public web or connected issue; no private transaction proof"
+    },
+    {
+      "id": "S10",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36526937/",
+      "type": "PRIMARY_RECORDED_AUDIO_RCT",
+      "reviewed_on": "2026-11-08",
+      "method": "official/public web or connected issue; no private transaction proof"
+    },
+    {
+      "id": "S11",
+      "url": "https://eprints.bournemouth.ac.uk/31277/",
+      "type": "SYSTEMATIC_REVIEW_22_SELF_HYPNOSIS_RCTS",
+      "reviewed_on": "2026-11-08",
+      "method": "official/public web or connected issue; no private transaction proof"
+    },
+    {
+      "id": "S12",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "type": "FTC_ENDORSEMENT_GUIDANCE",
+      "reviewed_on": "2026-11-08",
+      "method": "official/public web or connected issue; no private transaction proof"
+    },
+    {
+      "id": "S13",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "type": "FTC_HEALTH_CLAIMS_GUIDANCE",
+      "reviewed_on": "2026-11-08",
+      "method": "official/public web or connected issue; no private transaction proof"
+    },
+    {
+      "id": "S14",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "type": "FV_HISTORICAL_ARCHIVE",
+      "reviewed_on": "2026-11-08",
+      "method": "official/public web or connected issue; no private transaction proof"
+    },
+    {
+      "id": "S15",
+      "url": "https://finalvestige.com/focus/",
+      "type": "FV_EXISTING_FOCUS_PATH",
+      "reviewed_on": "2026-11-08",
+      "method": "official/public web or connected issue; no private transaction proof"
+    },
+    {
+      "id": "S16",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "type": "FV_PUBLISHED_EDITORIAL",
+      "reviewed_on": "2026-11-08",
+      "method": "official/public web or connected issue; no private transaction proof"
+    },
+    {
+      "id": "S17",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "type": "FV_PUBLISHED_EDITORIAL",
+      "reviewed_on": "2026-11-08",
+      "method": "official/public web or connected issue; no private transaction proof"
+    },
+    {
+      "id": "S18",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "type": "EDITORIAL_CHARTER",
+      "reviewed_on": "2026-11-08",
+      "method": "official/public web or connected issue; no private transaction proof"
+    },
+    {
+      "id": "S19",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "type": "REVENUE_CONTRACT",
+      "reviewed_on": "2026-11-08",
+      "method": "official/public web or connected issue; no private transaction proof"
+    },
+    {
+      "id": "S20",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/174",
+      "type": "DISPATCH_OWNERSHIP",
+      "reviewed_on": "2026-11-08",
+      "method": "official/public web or connected issue; no private transaction proof"
+    }
+  ],
+  "claims": [
+    {
+      "id": "B01",
+      "statement": "1999 basketball monitoring showed missed unexpected figures in task-specific conditions",
+      "status": "PRIMARY_STUDY_BOUNDED",
+      "source_ids": [
+        "S06"
+      ]
+    },
+    {
+      "id": "B02",
+      "statement": "Detection varied with difficulty and object/task similarity",
+      "status": "PRIMARY_STUDY_BOUNDED",
+      "source_ids": [
+        "S06"
+      ]
+    },
+    {
+      "id": "B03",
+      "statement": "1975 superimposed scenes supported selective-looking limits",
+      "status": "HISTORICAL_PRIMARY_BOUNDED",
+      "source_ids": [
+        "S07"
+      ]
+    },
+    {
+      "id": "B04",
+      "statement": "2013 radiologists study used 24 observers and inserted oversized gorilla",
+      "status": "PRIMARY_STUDY_BOUNDED",
+      "source_ids": [
+        "S08"
+      ]
+    },
+    {
+      "id": "B05",
+      "statement": "Radiologist gorilla misses do not estimate routine diagnostic failures",
+      "status": "BOUNDARY_NOT_EXTRAPOLATE",
+      "source_ids": [
+        "S08"
+      ]
+    },
+    {
+      "id": "B06",
+      "statement": "2010 familiarity with gorilla did not generalize to other unexpected changes",
+      "status": "PRIMARY_STUDY_BOUNDED",
+      "source_ids": [
+        "S09"
+      ]
+    },
+    {
+      "id": "Z01",
+      "statement": "Zen12 Premium seller lists 12 levels",
+      "status": "SELLER_DESCRIBED_ONLY",
+      "source_ids": [
+        "S02"
+      ]
+    },
+    {
+      "id": "Z02",
+      "statement": "Zen12 Premium seller lists 48 MP3 files and four listening styles",
+      "status": "SELLER_DESCRIBED_ONLY",
+      "source_ids": [
+        "S02"
+      ]
+    },
+    {
+      "id": "Z03",
+      "statement": "Seller describes manuals, support, bonus materials and training call access",
+      "status": "SELLER_DESCRIBED_ONLY",
+      "source_ids": [
+        "S02"
+      ]
+    },
+    {
+      "id": "Z04",
+      "statement": "Seller advertises a one-year refund policy",
+      "status": "SELLER_PROMISE_NOT_FULFILLMENT_VERIFIED",
+      "source_ids": [
+        "S02"
+      ]
+    },
+    {
+      "id": "Z05",
+      "statement": "Final Zen12 price, currency, taxes, fees and checkout total not authenticated",
+      "status": "PRICE_AND_CHECKOUT_UNVERIFIED",
+      "source_ids": [
+        "S02",
+        "S19"
+      ]
+    },
+    {
+      "id": "Z06",
+      "statement": "Zen12 12-minutes-equals-hour product claim",
+      "status": "PRODUCT_SPECIFIC_EFFICACY_UNSUBSTANTIATED",
+      "source_ids": [
+        "S02",
+        "S13"
+      ]
+    },
+    {
+      "id": "Z07",
+      "statement": "Zen12 brainwave entrainment and automatic deep meditation claim",
+      "status": "PRODUCT_SPECIFIC_EFFICACY_UNSUBSTANTIATED",
+      "source_ids": [
+        "S02",
+        "S13"
+      ]
+    },
+    {
+      "id": "Z08",
+      "statement": "Zen12 clinical/cognitive/mental benefit claims",
+      "status": "PRODUCT_SPECIFIC_EFFICACY_UNSUBSTANTIATED",
+      "source_ids": [
+        "S02",
+        "S13"
+      ]
+    },
+    {
+      "id": "H01",
+      "statement": "Total Focus seller lists 33-minute/47 MB file",
+      "status": "SELLER_DESCRIBED_ONLY",
+      "source_ids": [
+        "S03"
+      ]
+    },
+    {
+      "id": "H02",
+      "statement": "Total Focus seller advertises 14-day refund period subject to policy",
+      "status": "SELLER_PROMISE_NOT_FULFILLMENT_VERIFIED",
+      "source_ids": [
+        "S03",
+        "S04"
+      ]
+    },
+    {
+      "id": "H03",
+      "statement": "Hypnosis Live product-specific concentration claims",
+      "status": "PRODUCT_SPECIFIC_EFFICACY_UNSUBSTANTIATED",
+      "source_ids": [
+        "S03",
+        "S13"
+      ]
+    },
+    {
+      "id": "R01",
+      "statement": "109-person cancer survivor study compared hypnosis and relaxation recordings",
+      "status": "INDEPENDENT_RCT_NOT_ZEN12",
+      "source_ids": [
+        "S10"
+      ]
+    },
+    {
+      "id": "R02",
+      "statement": "RCT showed no significant between-group post-treatment outcome difference",
+      "status": "INDEPENDENT_RCT_NOT_EQUIVALENCE",
+      "source_ids": [
+        "S10"
+      ]
+    },
+    {
+      "id": "R03",
+      "statement": "Review of 22 self-hypnosis RCTs was heterogeneous and not a Zen12 trial",
+      "status": "INDEPENDENT_REVIEW_NOT_ZEN12",
+      "source_ids": [
+        "S11"
+      ]
+    },
+    {
+      "id": "E01",
+      "statement": "FTC affiliate guidance calls for clear conspicuous material-connection disclosure",
+      "status": "GOVERNMENT_GUIDANCE",
+      "source_ids": [
+        "S12"
+      ]
+    },
+    {
+      "id": "E02",
+      "statement": "FTC health-related efficacy claims require competent reliable supporting evidence",
+      "status": "GOVERNMENT_GUIDANCE",
+      "source_ids": [
+        "S13"
+      ]
+    },
+    {
+      "id": "A01",
+      "statement": "Public affiliate program page does not verify named FV partnership acceptance",
+      "status": "PUBLISHER_APPROVAL_UNVERIFIED",
+      "source_ids": [
+        "S05",
+        "S18"
+      ]
+    },
+    {
+      "id": "A02",
+      "statement": "Issued affiliate URLs, channels and settlement terms unverified",
+      "status": "HARD_HOLD",
+      "source_ids": [
+        "S05",
+        "S18"
+      ]
+    },
+    {
+      "id": "F01",
+      "statement": "Existing free Fieldbook route is live but a displayed success state is not provider confirmation",
+      "status": "PROVIDER_CONFIRMED_LEADS_UNVERIFIED",
+      "source_ids": [
+        "S15",
+        "S19"
+      ]
+    },
+    {
+      "id": "F02",
+      "statement": "Rights-cleared sellable FV owned Mind Payhip SKU not authenticated",
+      "status": "OWNED_SALE_NOT_VERIFIED",
+      "source_ids": [
+        "S19"
+      ]
+    },
+    {
+      "id": "F03",
+      "statement": "No verified paid purchase/cleared affiliate commission and qualified denominator available",
+      "status": "REVENUE_NOT_COMPUTABLE",
+      "source_ids": [
+        "S19"
+      ]
+    },
+    {
+      "id": "G01",
+      "statement": "Grok creator asset_id/published destination not validated for this proposed story",
+      "status": "CREATOR_MATCH_UNVERIFIED",
+      "source_ids": [
+        "S19"
+      ]
+    },
+    {
+      "id": "D01",
+      "statement": "Jetpack Focus and Dispatch existing list must not be duplicated",
+      "status": "EXISTING_FUNNEL_PRESERVE",
+      "source_ids": [
+        "S15",
+        "S20"
+      ]
+    }
+  ],
+  "release_gates": [
+    {
+      "id": "named_publisher_approval",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_AUTHENTICATED",
+      "owner": "Mind/Founder"
+    },
+    {
+      "id": "permitted_website_channel",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_AUTHENTICATED",
+      "owner": "Mind/Founder"
+    },
+    {
+      "id": "permitted_social_channel",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_AUTHENTICATED",
+      "owner": "Mind/Founder"
+    },
+    {
+      "id": "permitted_email_channel",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_AUTHENTICATED",
+      "owner": "Mind/Founder"
+    },
+    {
+      "id": "issued_affiliate_earning_url",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_AUTHENTICATED",
+      "owner": "Mind/Founder"
+    },
+    {
+      "id": "commission_cookie_and_tracking_terms",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_AUTHENTICATED",
+      "owner": "Mind/Founder"
+    },
+    {
+      "id": "settlement_refund_reversal_terms",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_AUTHENTICATED",
+      "owner": "Mind/Founder"
+    },
+    {
+      "id": "exact_product_benefit_proof",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_AUTHENTICATED",
+      "owner": "Mind/Founder"
+    },
+    {
+      "id": "current_checkout_total",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_AUTHENTICATED",
+      "owner": "Mind/Founder"
+    },
+    {
+      "id": "seller_refund_terms_and_real_fulfillment",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_AUTHENTICATED",
+      "owner": "Mind/Founder"
+    },
+    {
+      "id": "owned_payhip_rights_cleared_mind_sku",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_AUTHENTICATED",
+      "owner": "Commerce"
+    },
+    {
+      "id": "owned_payhip_checkout_and_delivery",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_AUTHENTICATED",
+      "owner": "Commerce"
+    },
+    {
+      "id": "provider_confirmed_jetpack_leads",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_AUTHENTICATED",
+      "owner": "Claude/QA"
+    },
+    {
+      "id": "grok_asset_ids_post_urls_and_mobile_routes",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_AUTHENTICATED",
+      "owner": "Praxxis/Grok"
+    },
+    {
+      "id": "first_party_metrics_privacy_review",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_AUTHENTICATED",
+      "owner": "Mind/Founder"
+    },
+    {
+      "id": "founder_prod_release_approval",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_AUTHENTICATED",
+      "owner": "Founder"
+    }
+  ],
+  "commerce": {
+    "activated": false,
+    "publisher_approval_document": null,
+    "affiliate_earning_url": null,
+    "enabled_checkout_controls": 0,
+    "verified_paid_orders": null,
+    "cleared_commissions": null,
+    "qualified_human_sessions": null,
+    "net_revenue_per_1000_qualified_human_sessions": "NOT_COMPUTABLE"
+  },
+  "commercial_cta": {
+    "state": "DISABLED",
+    "disclosure": "If you eventually purchase through a link here, Final Vestige may earn a commission at no extra cost to you.",
+    "public_merchant_cta_url": null
+  },
+  "allowed_source_urls": "Seller URLs are evidence entries only; no activated referral, redirection, pixel, payout or price assertion."
+}
