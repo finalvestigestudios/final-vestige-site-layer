@@ -106,32 +106,7 @@ class RealCheckoutPinTests(unittest.TestCase):
         self.assertEqual(len(gate.PINNED), 20)
         for path, oid in gate.PINNED.items():
             with self.subTest(path=path):
-                self.assertRegex(oid, r'^[0-9a-f]{40}
-    def test(self):
-        p = self.root / path
-        original = p.read_bytes()
-        if mode == 'modified':
-            p.write_bytes(original + b' replaced')
-        elif mode == 'truncated':
-            p.write_bytes(original[:5])
-        elif mode == 'missing':
-            p.unlink()
-        elif mode == 'symlink':
-            replacement = self.root / 'replaced-data'
-            replacement.write_bytes(original)
-            p.unlink()
-            p.symlink_to(replacement)
-        with self.assertRaises(ValueError): self.check()
-    return test
-
-
-for idx, path in enumerate(gate.PINNED, 1):
-    for mode in ('modified', 'truncated', 'missing', 'symlink'):
-        setattr(FrozenSourceTests, f'test_{idx:02d}_{mode}', mutation(path, mode))
-
-
-if __name__ == '__main__': unittest.main()
-)
+                self.assertRegex(oid, r'^[0-9a-f]{40}$')
         self.assertEqual(gate.PINNED['sources/fragments/hist-food.json'],
                          'd10628342fea5f177a8d1be00dd906d0c9c7850e')
         self.assertEqual(gate.PINNED['sources/fragments/hist-home.json'],
