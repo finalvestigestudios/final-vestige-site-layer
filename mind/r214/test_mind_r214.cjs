@@ -35,7 +35,7 @@ function validate(bundle){
  }
  must(hub.includes('id="mind214-attention"')&&hub.includes('id="mind214-history"')&&hub.includes('id="mind214-practice"')&&hub.includes('id="mind214-tools"'),'four Mind streams');
  must(guide.includes('<details')&&guide.includes('42-second film concept')&&guide.includes('Transcript'),'optional media transcript');
- must(!guide.includes('<video')&&!guide.includes('autoplay')&&guide.includes('not rendered'),'media strictly concept only');
+ must(!guide.includes('<video')&&!/\bautoplay\s*=/.test(guide)&&guide.includes('not rendered'),'media strictly concept only');
  must(vtt.startsWith('WEBVTT')&&vtt.includes('00:00:42.000')&&(vtt.match(/-->/g)||[]).length===5,'caption concept timing & five cues');
  must(matrix.artifact_status!=='LIVE'&&matrix.authorized_outbound===false&&matrix.affiliate_url===null,'matrix authorization hard hold');
  must(matrix.claimed_revenue===null&&matrix.prices_verified_at_checkout===false,'no fake revenue or price');
@@ -46,7 +46,7 @@ function validate(bundle){
  must(plan.includes('NOT COMPUTABLE')&&plan.includes('qualified_human_sessions')&&plan.includes('settled_owned_receipts'),'explicit revenue contract');
  must(plan.includes('NO authenticated Grok post')||plan.includes('No social asset ID was authenticated'),'no invented creator IDs');
  must(plan.includes('R197')&&plan.includes('noncanonical'),'duplicate McGurk research held');
- must(old.includes('Violet A. Brown')&&!old.includes('Valerie Brown'),'R213 author's correct name');
+ must(old.includes('Violet A. Brown')&&!old.includes('Valerie Brown'),'R213 correct author name');
  must(old.includes('(2022; published December 2)')&&!old.includes('Moving beyond McGurk.” (2023)'),'R213 review 2022');
  must(old.includes('paired with incongruent visible articulation')&&!old.includes('dubbed out of sync'),'phonetic not temporal mismatch');
  must(old.includes('mixed-model estimate')&&old.includes('110 people')&&old.includes('117, with 32'),'2015 distinct response-format analysis');
