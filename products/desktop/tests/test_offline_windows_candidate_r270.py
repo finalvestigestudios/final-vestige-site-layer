@@ -32,11 +32,14 @@ def source_receipt():
         "source_smoke": {
             "schema": "fvs-source-smoke-v1", "scope": "PYTHON_SOURCE_ONLY_NOT_WINDOWS_BINARY_VERIFICATION",
             "source_inventory": [{"path": "products/desktop/fvs_suite/smoke.py", "sha256": "4" * 64}],
+            "commit": "",
             "released": False,
             "qd_approved": False, "all_six_passed": True,
             "application_results": [
-                {"app": name, "result": "PASS", "engine": name.lower(),
-                 "synthetic_output_count": 1} for name in module.APPS
+                {"app": name, "result": "PASS", "engine": engine,
+                 "synthetic_output_count": 1}
+                for name, engine in zip(module.APPS, (
+                    "ledger", "invoices", "spend", "policy", "grants", "procurement"))
             ],
         },
     }
