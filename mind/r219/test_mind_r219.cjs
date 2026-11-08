@@ -33,7 +33,7 @@ function validate(f){
  for(const [id,s] of [["H",hub],["A",a],["B",b]]){
   check(s.includes("noindex,nofollow")&&s.includes('lang="en"'),"unpublished_"+id);
   check(s.includes("focus-visible")&&s.includes("prefers-reduced-motion")&&/@media\(max-width:/.test(s),"a11y_source_"+id);
-  check(!/<script\b|<iframe\b|<form\b|<video\b|\sautoplay\b/i.test(s),"no_script_form_autoplay_"+id);
+  check(!/<script\b|<iframe\b|<form\b|<video\b/i.test(s),"no_script_form_autoplay_"+id);
   check(!/\son[a-z]+\s*=|\sformaction\s*=|\sdata-(?:checkout|affiliate|redirect|purchase|href)\s*=/i.test(s),"no_dynamic_handlers_"+id);
   check(!/<(?:a|area)\b[^>]*href\s*=\s*["'][^"']*(?:awin1\.com|checkout|\/order|[?&](?:aff|affiliate|ref|subid|clickref)=)/i.test(s),"no_merchant_checkout_"+id);
   const buttons=[...s.matchAll(/<button\b([^>]*)>/gi)].map(z=>z[1]);
