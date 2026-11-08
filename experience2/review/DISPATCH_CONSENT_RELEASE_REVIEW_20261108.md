@@ -14,8 +14,8 @@ Authenticated `context=edit` reads:
 
 1. Heading: `One email a week from Final Vestige.` → `New investigations, delivered when we publish.`
 2. Near-form copy: `Sent when we publish. Some emails may contain recommendations that earn us a commission. Unsubscribe anytime · About The Dispatch · Privacy Policy` (with existing link destinations and added existing /privacy-policy/).
-3. Increase the **specific near-form disclosure** rendered inline font size from 10px to 14px, preserving its existing font weight, color, letter spacing and spacing.
-4. Update the paired WordPress paragraph block metadata from 10px to 14px, keeping source and block editor synchronized.
+3. Increase the **specific near-form disclosure** rendered inline font size from 10px to 14px, reducing the previous 750 weight to 400 and 0.1em tracking to normal so the disclosure reads as body copy rather than shouty microcopy; preserve color and spacing.
+4. Update the paired WordPress paragraph block metadata from 10px/750/0.1em to 14px/400/normal, keeping source and block editor synchronized.
 
 Historical hero, Franklin folio, Apollo 1, NYPL map, 7 chapter IDs, 72 Margins, Jetpack block, 52-page Focus offer, its landing route, scripts, styles, imagery and all other source bytes are unchanged by the proposed review. No direct merchant links, affiliate claim, popup, measurement script or tracking parameter is added.
 
@@ -40,3 +40,7 @@ Admission checks exact page IDs, status, timestamps, source length, recorded SHA
 **Asset provenance remains unchanged:** WP media #473 Apollo 1 NASA image (78346 metadata bytes), #474 Franklin 1869 reproduction (466043 metadata bytes), #1258 NYPL 1903 BRT map (5553669 metadata bytes). Metadata does not prove transfer. NYPL item https://digitalcollections.nypl.org/items/c745e730-d2a9-012f-5ecc-58d385a7bbd0; NYPL's guidance for "no known U.S. copyright restrictions" does not certify other jurisdictions: https://qa-digitalcollections.nypl.org/about.
 
 **Release decision: HOLD.** No WordPress updates, theme/nav/settings writes, merges, deployments, subscribers, email sends, affiliate activation or paid services.
+
+## Post-commit small-screen typography refinement
+
+An isolated **synthetic** Chromium study of the form-area excerpt showed the first 14px treatment with inherited 750 weight and 0.1em letter spacing was visually overpowering. The revised candidate uses 14px regular-weight body-style disclosure and normal tracking, preserving the paragraph's antique gold/dark palette context. A separate 16-state fixture sweep (320/390/768/1440px × 100/200% CSS zoom × before/after) observed zero root overflow. **These are fragment fixtures, not native WordPress/Jetpack or real CWV measurements; visual staging remains HOLD.**
