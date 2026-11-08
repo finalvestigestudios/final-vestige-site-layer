@@ -1,5 +1,5 @@
 {
-  "schema_version": "r223-1",
+  "schema_version": "r223-2-qa-amended-on-r224-only",
   "created_at": "2026-11-08",
   "lane": "mind_only",
   "release": "UNPUBLISHED_HARD_HOLD",
@@ -97,8 +97,9 @@
     {
       "id": "S16",
       "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
-      "type": "historical_archive_direct_fetch_unavailable",
-      "reviewed": "2026-11-08"
+      "type": "historical_archive_direct_page_review_reported_2026-11-08",
+      "reviewed": "2026-11-08",
+      "limit": "Praxxis subsequent direct page read: 153 rows, 16 dossiers; no underlying scan-by-scan audit"
     }
   ],
   "claims": [
@@ -278,13 +279,13 @@
     },
     {
       "id": "C20",
-      "statement": "Puységur archive recorded by Explore as 153 source rows and 16 cases",
+      "statement": "Puységur page displays 153 source rows and 16 dossiers on 2026-11-08 (Praxxis direct page read)",
       "status": "verified_live_summary",
       "source_ids": [
-        "S10",
+        "S16",
         "S12"
       ],
-      "limit": "direct page could not be retrieved"
+      "limit": "page inventory verified in independent handoff; underlying scans not individually audited"
     },
     {
       "id": "C21",
@@ -415,5 +416,6 @@
     }
   ],
   "verification_note": "Public seller evidence is not affiliate-account or checkout evidence. Gmail query on 2026-11-08 returned marketing, no qualifying named acceptance. Account-only authorization unresolved. Never treat no messages as proof of rejection.",
-  "privacy": "No PII, no extra trackers or signup forms. CTA disabled."
+  "privacy": "No PII, no extra trackers or signup forms. CTA disabled.",
+  "qa_note": "Independent provenance correction; the original R223 draft PR stays untouched."
 }
