@@ -4,7 +4,9 @@
    Source components: PR #1529 hero and PR #1542 Dispatch.
    node atomic_page6_review.cjs --home home-edit.json --focus focus-edit.json --out new-review.html
 */
-const PIN='685911178ae68ca9dfbd8f47f5903ef57f76ac4b52e886d8287416304c98794b';
+// Independent SHA-256 of authenticated WordPress Page 6 context=edit raw source,
+// verified 2026-11-08 UTC. See PAGE6_SOURCE_SHA_RECONCILIATION_20261108.md.
+const PIN='1188d32a101896f12af9823dd7ca4b8a12b0c36684e82c069f23855a698e5669';
 const HOME_DATE='2026-11-05T12:07:24', FOCUS_DATE='2026-11-05T17:44:02';
 const CHAPTERS=['title','chronicle','evidence','inquiry','method-title','observer','mind-title'];
 const REPLACEMENTS=[
