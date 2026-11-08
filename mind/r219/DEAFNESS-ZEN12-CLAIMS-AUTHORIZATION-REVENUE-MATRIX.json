@@ -1,5 +1,5 @@
 {
-  "schema_version": "FV_MIND_R219_v1",
+  "schema_version": "FV_MIND_R219_R220_CORRECTED",
   "review_date": "2026-11-08",
   "scope": "Research + presell controls, unpublished; no live CMS, analytics or affiliate activation",
   "sources": [
@@ -11,19 +11,19 @@
     },
     {
       "id": "S02",
-      "type": "PRIMARY_ABSTRACT",
+      "type": "PRIMARY_ABSTRACT_AND_PRAXXIS_FULL_TEXT_QA",
       "title": "Dalton & Fraenkel (2012), sustained auditory gorilla",
       "url": "https://pubmed.ncbi.nlm.nih.gov/22726569/"
     },
     {
       "id": "S03",
-      "type": "PRIMARY_ABSTRACT_INSTITUTION",
+      "type": "PRIMARY_ABSTRACT_AND_PRAXXIS_FULL_TEXT_QA",
       "title": "Raveh & Lavie (2015), auditory sensitivity across visual load",
       "url": "https://discovery.ucl.ac.uk/id/eprint/1454101/"
     },
     {
       "id": "S04",
-      "type": "PRIMARY_ABSTRACT_INSTITUTION",
+      "type": "PRIMARY_ABSTRACT_AND_PRAXXIS_FULL_TEXT_QA",
       "title": "Molloy et al (2015), MEG and detection",
       "url": "https://eprints.ncl.ac.uk/222363"
     },
@@ -117,7 +117,7 @@
       "source_ids": [
         "S01"
       ],
-      "limits": "seventh critical and eighth attentive control; selected lab group"
+      "limits": "2011 Exp1 critical-trial detection among 28 participants per group, not repeated trial proportion; separate Exp2 high-load 19/24 miss (79%) and Exp3 distinct task"
     },
     {
       "id": "C03",
@@ -139,12 +139,12 @@
     },
     {
       "id": "C05",
-      "claim": "auditory gorilla can be unnoticed for 19 seconds",
+      "claim": "Auditory gorilla is a spoken male intrusion audible for 19 seconds; full-scene attentive repeat, not isolated sound",
       "status": "PRIMARY_ABSTRACT_SUPPORTED",
       "source_ids": [
         "S02"
       ],
-      "limits": "not a universal rate; accessible abstract only"
+      "limits": "Attentive replay involved COMPLETE auditory scene, male voice and unusual-events listening; not universal population rate; NOT isolated playback"
     },
     {
       "id": "C06",
@@ -153,7 +153,7 @@
       "source_ids": [
         "S03"
       ],
-      "limits": "not trial-reported rates invented"
+      "limits": "Exp2 auditory-response-first and Exp3 50% tone-present are different manipulations; signal sensitivity and criterion distinct"
     },
     {
       "id": "C07",
@@ -171,7 +171,7 @@
       "source_ids": [
         "S04"
       ],
-      "limits": "neural signals interpreted narrowly; not zero hearing"
+      "limits": "Separate MEG analyzed n=13 and behavioral analyzed n=10; not simultaneous individual auditory reports"
     },
     {
       "id": "C09",
@@ -180,7 +180,7 @@
       "source_ids": [
         "S04"
       ],
-      "limits": "association not full mechanism proof"
+      "limits": "Later MEG P3 and separate behavioral tone detection; cannot treat as one group"
     },
     {
       "id": "C10",

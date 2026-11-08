@@ -16,6 +16,11 @@ const htmlIDs=s=>[...s.matchAll(/\bid=["']([^"']+)["']/g)].map(m=>m[1]);
 const core=s=>(s.match(/<main id="content" class="wrap">[\s\S]*?<\/main>/)||[])[0];
 const duration=x=>{const a=x.split(":");return (Number(a[0])*3600+Number(a[1])*60+Number(a[2]))*1000};
 const strip=s=>s.replace(/<[^>]+>/g," ").replace(/\s+/g," ").trim();
+const anchorHrefs=s=>[...s.matchAll(/<(?:a|area)\b([^>]*)>/gi)].map(z=>{
+ const m=z[1].match(/\bhref\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s"'=<>]+))/i);
+ return m ? (m[1]??m[2]??m[3]) : null;
+}).filter(Boolean);
+const commerceHref=h=>/(?:awin1\.com|(?:^|[\/?&])(?:checkout|order|cart)(?:[\/?&=#]|$)|[?&](?:aff|affiliate|ref|subid|clickref)=)/i.test(h);
 function validate(f){
  const bad=[],check=(p,id)=>{if(!p)bad.push(id)};
  for(const k of Object.keys(PATHS))check(typeof f[k]==="string"&&f[k].length>200,"exists_"+k);
@@ -25,7 +30,9 @@ function validate(f){
  check(article.split(/\s+/).length>=2400,"article_depth");
  for(const url of ["10.3758/s13414-011-0144-4","10.1016/j.cognition.2012.05.012","1454101","222363"])
   check(article.includes(url),"source_article_"+url);
- check(article.includes("21 of 28")&&article.includes("seven of 28")&&article.includes("79 percent"),"lab_counts");
+ check(article.includes("21 of 28")&&article.includes("seven of 28")&&article.includes("79 percent")&&article.includes("19 of 24 participants")&&article.includes("critical trial"),"lab_counts");
+ check(article.includes("Katharine Molloy")&&article.includes("13 MEG participants")&&article.includes("10 behavioral participants"),"independent_QA_neural");
+ check(article.includes("complete scene")&&article.includes("different experimental manipulations"),"independent_QA_design");
  check(article.includes("2012")&&article.includes("nineteen seconds")&&article.includes("2015"),"historical_dates");
  check(article.includes("No reasonable reading of the evidence allows that shortcut")&&article.includes("not a diagnostic test"),"claims_and_limits");
  check(!/<script\b|awin1\.com|affiliate link is active/i.test(article),"research_independent");
@@ -35,7 +42,7 @@ function validate(f){
   check(s.includes("focus-visible")&&s.includes("prefers-reduced-motion")&&/@media\(max-width:/.test(s),"a11y_source_"+id);
   check(!/<script\b|<iframe\b|<form\b|<video\b/i.test(s),"no_script_form_autoplay_"+id);
   check(!/\son[a-z]+\s*=|\sformaction\s*=|\sdata-(?:checkout|affiliate|redirect|purchase|href)\s*=/i.test(s),"no_dynamic_handlers_"+id);
-  check(!/<(?:a|area)\b[^>]*href\s*=\s*["'][^"']*(?:awin1\.com|checkout|\/order|[?&](?:aff|affiliate|ref|subid|clickref)=)/i.test(s),"no_merchant_checkout_"+id);
+  check(!anchorHrefs(s).some(commerceHref),"no_merchant_checkout_"+id);
   const buttons=[...s.matchAll(/<button\b([^>]*)>/gi)].map(z=>z[1]);
   check(buttons.length>=1&&buttons.every(attrs=>/\sdisabled(?:\s|=|$)/i.test(" "+attrs)&&/\saria-disabled\s*=\s*["']true["']/i.test(" "+attrs)),"every_button_disabled_"+id);
   const ids=htmlIDs(s);check(ids.length===new Set(ids).size,"unique_ids_"+id);
@@ -54,7 +61,11 @@ function validate(f){
  check(m.sources?.length>=16&&m.claims?.length>=27&&m.gates?.length===16,"matrix_depth");
  const ids=new Set(m.sources?.map(x=>x.id));check(ids.size===m.sources?.length&&m.claims?.every(x=>x.source_ids?.every(q=>ids.has(q))),"source_ids_integrity");
  check(m.offer?.activation_allowed===false&&m.offer?.affiliate_url===null&&m.offer?.named_approval_verified===false,"commerce_hard_hold");
- for(let i=1;i<=8;i++){let id="G"+String(i).padStart(2,"0");check(m.gates?.filter(x=>x.id===id&&x.status==="HARD_HOLD").length===1,"gate_"+id)}
+ for(let i=1;i<=16;i++){
+  let id="G"+String(i).padStart(2,"0");
+  let expected=i<=8?"HARD_HOLD":i===15?"OPEN_REVIEW":"UNKNOWN";
+  check(m.gates?.filter(x=>x.id===id&&x.status===expected).length===1,"gate_"+id);
+ }
  check(m.gates?.length===new Set(m.gates?.map(x=>x.id)).size,"unique_gates");
  check(m.claims?.find(x=>x.id==="C17")?.status==="SELLER_UNSUBSTANTIATED_OMITTED","no_1hr_claim");
  check(m.claims?.find(x=>x.id==="C19")?.status==="INVALID_INFERENCE_OMITTED","no_experiment_product_claim");
@@ -78,6 +89,7 @@ function run(f){
  mutate("add_formaction",x=>x.hub=x.hub.replace("<button","<button formaction='https://bad.invalid'"));
  mutate("add_redirect_data",x=>x.hub=x.hub.replace("<button","<button data-checkout='https://bad.invalid'"));
  mutate("add_checkout_anchor",x=>x.a=x.a.replace("</main>","<a href='https://bad.invalid/checkout?ref=bad'>Pay</a></main>"));
+ mutate("add_unquoted_checkout_anchor",x=>x.hub=x.hub.replace("</main>","<a href=https://bad.invalid/checkout?ref=bad>Pay</a></main>"));
  mutate("add_script",x=>x.b=x.b.replace("</body>","<script src='https://bad.invalid'></script></body>"));
  mutate("add_email_form",x=>x.hub=x.hub.replace("</main>","<form><input type='email'></form></main>"));
  mutate("break_A_B_core",x=>x.b=x.b.replace("forty-eight downloadable MP3","forty-seven downloadable MP3"));
@@ -95,6 +107,8 @@ function run(f){
  mutate("remove_G01",x=>j(x,o=>o.gates=o.gates.filter(z=>z.id!=="G01")));
  mutate("duplicate_G08",x=>j(x,o=>o.gates.push({...o.gates.find(z=>z.id==="G08")})));
  mutate("unhold_G05",x=>j(x,o=>o.gates.find(z=>z.id==="G05").status="OPEN"));
+ mutate("rename_G12",x=>j(x,o=>o.gates.find(z=>z.id==="G12").id="G99"));
+ mutate("unhold_G16",x=>j(x,o=>o.gates.find(z=>z.id==="G16").status="HARD_HOLD"));
  mutate("delete_source",x=>j(x,o=>o.sources=o.sources.filter(z=>z.id!=="S01")));
  mutate("endorse_1hr_claim",x=>j(x,o=>o.claims.find(z=>z.id==="C17").status="SUPPORTED"));
  mutate("allow_PII",x=>j(x,o=>o.conversion_contract.no_pii=false));
