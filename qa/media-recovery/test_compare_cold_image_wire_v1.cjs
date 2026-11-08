@@ -88,3 +88,84 @@ test('Jetpack numeric fit for a first-party image stays eligible after independe
  assert.equal(r.reduction_percent,76);
  assert.equal(r.visual_parity_verified,false);
 });
+
+function withZeroImagePost(run) {
+ const row=copy(run.pages[0]);
+ row.post_id=1922;
+ row.url='https://finalvestige.com/2026/11/07/change-blindness/';
+ row.stored_image_count=0;
+ row.stored_images=[];
+ row.network_images=[];
+ row.matched_article_network_requests=0;
+ row.article_image_wire_bytes_total=0;
+ run.pages.push(row);
+ run.requested_pages=run.pages.length;
+ run.verified_pages=run.pages.length;
+ return run;
+}
+function zeroPair(mutBefore,mutAfter) {
+ const b=withZeroImagePost(fixture()), a=withZeroImagePost(fixture(240));
+ mutBefore?.(b);mutAfter?.(a);
+ return compareColdImageWire(b,a);
+}
+test('zero-image pages remain in a matched site-wide cohort',()=>{
+ const r=zeroPair();
+ assert.equal(r.state,'LAB_PAIR_MEASURED');
+ assert.equal(r.post_count,2);
+ assert.equal(r.paired_post_count,2);
+ assert.equal(r.paired.find(p=>p.post_id===1922).image_slots,0);
+ assert.deepEqual(r.paired.find(p=>p.post_id===1922).sources,[]);
+ assert.equal(r.baseline_cdp_bytes,1000);
+ assert.equal(r.candidate_cdp_bytes,240);
+ assert.equal(r.reduction_percent,76);
+ assert.equal(r.sitewide_76_percent_claim_permitted,false);
+});
+test('zero-image page must be full-scroll and censused',()=>{
+ const r=zeroPair(b=>{b.pages[1].scroll_coverage.complete=false});
+ assert.equal(r.state,'HOLD');
+ assert.ok(r.reasons.some(s=>s.includes('page_or_scroll_unverified:1922')));
+});
+test('zero-image page cannot forge article transferred bytes',()=>{
+ const r=zeroPair(null,a=>{a.pages[1].article_image_wire_bytes_total=999});
+ assert.equal(r.state,'HOLD');
+ assert.ok(r.reasons.some(s=>s.includes('zero_image_post_forged_article_traffic:1922')));
+});
+test('zero-image page cannot forge article CDP matches',()=>{
+ const r=zeroPair(b=>{b.pages[1].matched_article_network_requests=1});
+ assert.equal(r.state,'HOLD');
+ assert.ok(r.reasons.some(s=>s.includes('zero_image_post_forged_article_traffic:1922')));
+});
+test('zero-image declared count must match the actual stored list',()=>{
+ const r=zeroPair(null,a=>{a.pages[1].stored_image_count=1});
+ assert.equal(r.state,'HOLD');
+ assert.ok(r.reasons.some(s=>s.includes('missing_image_slots_or_network:1922')));
+});
+test('new image on candidate zero-image page is not silently ignored',()=>{
+ const r=zeroPair(null,a=>{
+   a.pages[1].stored_image_count=1;
+   a.pages[1].stored_images=[{...copy(a.pages[0].stored_images[0]),image_key:'1922:0'}];
+ });
+ assert.equal(r.state,'HOLD');
+ assert.equal(r.sitewide_76_percent_claim_permitted,false);
+});
+test('missing zero-image page from candidate is a cohort mismatch',()=>{
+ const r=zeroPair(null,a=>{a.pages.pop();a.requested_pages=1;a.verified_pages=1});
+ assert.equal(r.state,'HOLD');
+ assert.ok(r.reasons.some(s=>s.includes('paired_post_set_incomplete')));
+});
+test('all-zero-image cohort has no mathematical reduction denominator',()=>{
+ const r=zeroPair(b=>{b.pages.splice(0,1);b.requested_pages=1;b.verified_pages=1},
+ a=>{a.pages.splice(0,1);a.requested_pages=1;a.verified_pages=1});
+ assert.equal(r.state,'HOLD');
+ assert.equal(r.reduction_percent,null);
+ assert.ok(r.reasons.some(s=>s.includes('paired_cohort_has_no_positive_image_bytes')));
+});
+test('zero-image articles do not attribute unrelated theme network requests',()=>{
+ const r=zeroPair(b=>{b.pages[1].network_images.push({
+   request_id:'theme_logo',url:'https://finalvestige.com/wp-content/uploads/2026/08/logo.png',
+   status:200,mime_type:'image/png',encoded_data_length:500,
+   was_cached:false,from_disk_cache:false,from_service_worker:false
+ })});
+ assert.equal(r.state,'LAB_PAIR_MEASURED');
+ assert.equal(r.baseline_cdp_bytes,1000);
+});
