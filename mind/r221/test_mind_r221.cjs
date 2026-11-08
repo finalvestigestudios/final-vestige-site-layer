@@ -37,7 +37,7 @@ function validate(f){
  assert(p.claims.find(c=>c.id==="C06")?.status==="PUBLISHER_ABSTRACT_SUPPORTED_WITH_LIMITS","prior_Repp_matrix");
  assert(hub.includes("<!doctype html>")&&hub.includes('lang="en"')&&hub.includes("noindex,nofollow"),"hub_unpublished");
  assert(hub.includes("PR #172")&&hub.includes("Puységur")&&hub.includes("The mind doesn't show its workings"),"hub_governance");
- assert(hub.includes('role="img"')&&hub.includes("diagramDesc")&&hub.includes("figcaption"),"hub_svg_access");
+ assert(hub.includes('role="img"')&&hub.includes("diagramDesc")&&/<desc\b[^>]*>[^<]+<\/desc>/i.test(hub)&&hub.includes("figcaption"),"hub_svg_access");
  assert(hub.includes("focus-visible")&&hub.includes("prefers-reduced-motion")&&hub.includes("@media(max-width:"),"hub_css_a11y");
  assert(hub.includes('href="#main"')&&hub.includes('id="main"'),"hub_skip");
  const allPages=[hub,buyerA,buyerB];
@@ -86,7 +86,7 @@ function run(f){
  check("truncate_article",x=>x.article=x.article.slice(0,850));
  check("remove_limitation",x=>x.article=x.article.replace("No purchase link is activated here.","Buy now"));
  check("invent_experience",x=>x.article+="\n commission earned");
- check("remove_svg_description",x=>x.hub=x.hub.replace("diagramDesc","not-described"));
+ check("remove_svg_description",x=>x.hub=x.hub.replace(/<desc[^>]*>[^<]+<\/desc>/i,""));
  check("remove_focus",x=>x.hub=x.hub.replaceAll("https://finalvestige.com/focus/","/unknown"));
  check("hub_native_disabled_only",x=>x.hub=x.hub.replace(/\sdisabled(?=\s|=|>)/i,""));
  check("hub_activate_extra_button",x=>x.hub=x.hub.replace("</main>","<button type='button'>Buy</button></main>"));
@@ -95,8 +95,8 @@ function run(f){
  check("hub_script",x=>x.hub=x.hub.replace("</body>","<script>t()</script></body>"));
  check("hub_extra_form",x=>x.hub=x.hub.replace("</main>","<form><input></form></main>"));
  check("hub_disclosure_removed",x=>x.hub=x.hub.replace("Prospective affiliate disclosure:","About this guide:"));
- check("buyerA_native_disabled_only",x=>x.buyerA=x.buyerA.replace(/\sdisabled(?=\s|=|>)/i,""));
- check("buyerB_native_disabled_only",x=>x.buyerB=x.buyerB.replace(/\sdisabled(?=\s|=|>)/i,""));
+ check("buyerA_native_disabled_only",x=>x.buyerA=x.buyerA.replace('<button type="button" disabled','<button type="button"'));
+ check("buyerB_native_disabled_only",x=>x.buyerB=x.buyerB.replace('<button type="button" disabled','<button type="button"'));
  check("buyerA_added_button",x=>x.buyerA=x.buyerA.replace("</main>","<button type='button'>buy</button></main>"));
  check("buyerB_affiliate_url",x=>x.buyerB=x.buyerB.replace("</main>","<a href=https://awin1.com/cread.php>go</a></main>"));
  check("buyerA_disclosure_removed",x=>x.buyerA=x.buyerA.replace("Prospective affiliate disclosure:","More information:"));
