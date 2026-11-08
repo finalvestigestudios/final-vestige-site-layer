@@ -213,3 +213,58 @@ for _slug in [f'article-{i}' for i in range(1, 36)] + [f'tool-{i}' for i in rang
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class SyntheticOriginalsTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.tmp = tempfile.TemporaryDirectory(prefix='fv-r220-originals-only-')
+        cls.root = Path(cls.tmp.name)
+        (cls.root / 'content' / 'articles').mkdir(parents=True)
+        cls.articles = sample_doc()['articles']
+        for a in cls.articles:
+            slug = a['slug']; n = a['n']
+            body = f'<section><h2>Evidence-preserved {n}</h2><p>Original text</p></section>'.encode()
+            meta = json.dumps({'n': n, 'slug': slug, 'section': a['section'],
+                               'track': a['track'], 'status': {'publish': 'draft'},
+                               'safety_review': {'state': 'pending'}, 'source_use': {}}).encode()
+            (cls.root / 'content' / 'articles' / f'{slug}.body.html').write_bytes(body)
+            (cls.root / 'content' / 'articles' / f'{slug}.meta.json').write_bytes(meta)
+            a['body_oid'] = gate.git_blob(body)
+            a['meta_oid'] = gate.git_blob(meta)
+
+    @classmethod
+    def tearDownClass(cls):
+        cls.tmp.cleanup()
+
+    def check(self):
+        with patch.object(gate, 'INTEGRATED_DIFFS', {}), \
+             patch.object(gate, 'INTEGRATED_META_DIFFS', {}), \
+             patch.object(gate, 'EXPECTED_EXCEPTIONS', {}):
+            return gate.verify_originals(self.root, self.articles)
+
+    def test_positive_complete_synthetic_originals(self):
+        status, missing = self.check()
+        self.assertEqual(len(status), 35)
+        self.assertEqual(missing, {})
+
+
+def _mutate_original(n, kind):
+    def check(self):
+        slug = f'article-{n}'
+        ext = 'body.html' if kind == 'body' else 'meta.json'
+        p = self.root / 'content' / 'articles' / f'{slug}.{ext}'
+        original = p.read_bytes()
+        try:
+            p.write_bytes(original + b' ')
+            with self.assertRaises(ValueError): self.check()
+        finally:
+            p.write_bytes(original)
+    return check
+
+
+for _n in range(1, 36):
+    setattr(SyntheticOriginalsTests, f'test_article_{_n:02d}_changed_body_blocked',
+            _mutate_original(_n, 'body'))
+    setattr(SyntheticOriginalsTests, f'test_article_{_n:02d}_changed_metadata_blocked',
+            _mutate_original(_n, 'meta'))
