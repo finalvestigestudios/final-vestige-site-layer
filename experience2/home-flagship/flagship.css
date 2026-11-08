@@ -257,3 +257,15 @@
 @media (max-width: 600px) {
   .fv-hf .fv-hf__text-link--focus { width: 100%; }
 }
+
+/* FV EX2 — compact short-phone first-screen composition.
+   Applies only when the browser has both a narrow layout AND a short viewport;
+   the rest of the cinematic archival folio and seven-chapter experience are unchanged. */
+@media (max-width: 360px) and (max-height: 700px) {
+  .fv-hf .fv-hf__masthead { gap: 8px 12px; padding-top: 8px; padding-bottom: 8px; }
+  .fv-hf .fv-hf__opening-inner { padding-top: 18px; }
+  .fv-hf .fv-hf__eyebrow { gap: 7px; }
+  .fv-hf .fv-hf__opening h1 { margin-top: 11px; margin-bottom: 10px; }
+  .fv-hf .fv-hf__opening-dek { font-size: 16px; line-height: 1.46; }
+  .fv-hf .fv-hf__opening-actions { margin-top: 9px; }
+}
