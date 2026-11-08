@@ -68,6 +68,7 @@ async def browser_gate(origin, axe, output, report):
                         entry['status']=response.status if response else None
                         markup=await page.content()
                         entry['checks']['wp_document']=response is not None and response.status==200 and 'wp-site-blocks' in markup and 'fv-home' in markup
+                        entry['checks']['active_assembler_theme']=await page.locator('body.wp-theme-assembler').count()==1
                         entry['checks']['chapters']=(await page.locator('.fv-hf__chapter-nav a').count()==7 and all([await page.locator('#'+i).count()==1 for i in CHAPTERS]))
                         entry['checks']['margins']=await page.locator('.fv-margin-strip__item').count()==72
                         entry['checks']['focus_links']=await page.locator('a[data-fv-ex2-isolated-focus="1"]').count()==5
