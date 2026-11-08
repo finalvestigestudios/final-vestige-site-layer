@@ -1,0 +1,520 @@
+{
+  "name": "FV MIND R216 — claims, source and commerce gates",
+  "date_checked": "2026-11-08",
+  "status": "UNPUBLISHED_NOT_SELLING",
+  "offer": "Zen12 Premium",
+  "public_seller_url": "https://zen12.com/hnp",
+  "official_catalog_url": "https://inspire3.com/",
+  "authority_statement": "Public pages verify only seller descriptions. Personal partner approval, exact earning URL, channel rights, checkout and paid conversions unverified.",
+  "sources": [
+    {
+      "id": "S01",
+      "type": "PRIMARY_HISTORICAL_EXPERIMENT",
+      "title": "J. Ridley Stroop, 1935, full text via York University",
+      "url": "https://psychclassics.yorku.ca/Stroop/"
+    },
+    {
+      "id": "S02",
+      "type": "PUBLISHER_RECORD",
+      "title": "Stroop, 1935, DOI registration",
+      "url": "https://doi.org/10.1037/h0054651"
+    },
+    {
+      "id": "S03",
+      "type": "RESEARCH_REVIEW",
+      "title": "Colin M. MacLeod, 1991, integrative review",
+      "url": "https://doi.org/10.1037/0033-2909.109.2.163"
+    },
+    {
+      "id": "S04",
+      "type": "RESEARCH_THEORY",
+      "title": "Botvinick et al., 2001, conflict monitoring model",
+      "url": "https://doi.org/10.1037/0033-295X.108.3.624"
+    },
+    {
+      "id": "S05",
+      "type": "RESEARCH_REVIEW",
+      "title": "Ingendoh, Posny and Heine, 2023, heterogeneous binaural-beat EEG evidence",
+      "url": "https://doi.org/10.1371/journal.pone.0286023"
+    },
+    {
+      "id": "S06",
+      "type": "PRIMARY_EXPERIMENT",
+      "title": "Melnichuk, Cooper and Hawk, 2025, vigilance study",
+      "url": "https://doi.org/10.1038/s41598-025-88517-z"
+    },
+    {
+      "id": "S07",
+      "type": "PUBLISHED_FV_HISTORICAL",
+      "title": "Puységur source archive",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+    },
+    {
+      "id": "S08",
+      "type": "PUBLISHED_FV_EDITORIAL",
+      "title": "Change Blindness investigation",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/"
+    },
+    {
+      "id": "S09",
+      "type": "PUBLISHED_FV_EDITORIAL",
+      "title": "Mesmerism investigation",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/"
+    },
+    {
+      "id": "S10",
+      "type": "PUBLISHED_FV_LEAD",
+      "title": "Seven Day Focus Fieldbook current free page",
+      "url": "https://finalvestige.com/focus/"
+    },
+    {
+      "id": "S11",
+      "type": "FTC_OFFICIAL_GUIDANCE",
+      "title": "FTC Endorsement Guides, affiliate disclosures",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking"
+    },
+    {
+      "id": "S12",
+      "type": "FTC_OFFICIAL_GUIDANCE",
+      "title": "FTC Health Products Compliance Guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+    },
+    {
+      "id": "S13",
+      "type": "OFFICIAL_SELLER_CATALOG",
+      "title": "Inspire3 company product catalog (manufacturer descriptions only)",
+      "url": "https://inspire3.com/"
+    },
+    {
+      "id": "S14",
+      "type": "EXACT_SELLER_OFFER",
+      "title": "Zen12 Premium public offer, inspected Nov 8; NOT verified checkout",
+      "url": "https://zen12.com/hnp"
+    },
+    {
+      "id": "S15",
+      "type": "PUBLIC_AFFILIATE_PORTAL",
+      "title": "Inspire3 general partner landing page; not account authorization",
+      "url": "https://affiliates.inspire3.com/"
+    },
+    {
+      "id": "S16",
+      "type": "ISSUE_GOVERNANCE",
+      "title": "Mind & affiliate Issue #171",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171"
+    },
+    {
+      "id": "S17",
+      "type": "ISSUE_GOVERNANCE",
+      "title": "Revenue and attribution Issue #820",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820"
+    },
+    {
+      "id": "S18",
+      "type": "BUSINESS_CHARTER",
+      "title": "Revenue validation charter #818",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/818"
+    },
+    {
+      "id": "S19",
+      "type": "PUBLISHED_FV_POLICY",
+      "title": "Final Vestige Affiliate Disclosure",
+      "url": "https://finalvestige.com/affiliate-disclosure/"
+    },
+    {
+      "id": "S20",
+      "type": "PUBLISHED_FV_POLICY",
+      "title": "Final Vestige Editorial Standards",
+      "url": "https://finalvestige.com/editorial-standards/"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "The original Stroop paper was published in 1935",
+      "source_ids": [
+        "S01",
+        "S02"
+      ],
+      "status": "SUPPORTED_NARROW",
+      "note": "Article"
+    },
+    {
+      "id": "C02",
+      "claim": "The study included distinct read-word and name-ink instructions and control materials",
+      "source_ids": [
+        "S01"
+      ],
+      "status": "SUPPORTED_NARROW",
+      "note": "Article"
+    },
+    {
+      "id": "C03",
+      "claim": "Stroop reported 47 seconds / 74.3% added for color naming under one historic comparison",
+      "source_ids": [
+        "S01"
+      ],
+      "status": "SUPPORTED_NARROW",
+      "note": "Article: do not generalize effect size"
+    },
+    {
+      "id": "C04",
+      "claim": "The 2.3 second word-reading difference was not reliable in Stroop's reported comparison",
+      "source_ids": [
+        "S01"
+      ],
+      "status": "SUPPORTED_NARROW",
+      "note": "Article"
+    },
+    {
+      "id": "C05",
+      "claim": "Eight days, 200 reactions/day practice reduced but did not eliminate interference",
+      "source_ids": [
+        "S01"
+      ],
+      "status": "SUPPORTED_NARROW",
+      "note": "Article"
+    },
+    {
+      "id": "C06",
+      "claim": "The original paper acknowledges roughly 300 college students overall, not an N for all sub-experiments",
+      "source_ids": [
+        "S01"
+      ],
+      "status": "SUPPORTED_NARROW",
+      "note": "Article"
+    },
+    {
+      "id": "C07",
+      "claim": "The Stroop effect is not a validated consumer audio-product test",
+      "source_ids": [
+        "S01",
+        "S03"
+      ],
+      "status": "LIMITATION",
+      "note": "Article"
+    },
+    {
+      "id": "C08",
+      "claim": "The theory of conflict monitoring supports interpreting all Stroop slowdown as a universal focus trait",
+      "source_ids": [
+        "S04"
+      ],
+      "status": "UNSUPPORTED_EXCLUDED",
+      "note": "Article disclaims"
+    },
+    {
+      "id": "C09",
+      "claim": "Historical Puységur testimony establishes efficacy of modern hypnosis or Zen12",
+      "source_ids": [
+        "S07"
+      ],
+      "status": "UNSUPPORTED_EXCLUDED",
+      "note": "Historical bridge"
+    },
+    {
+      "id": "C10",
+      "claim": "Focus Fieldbook is offered as a free 52-page practical resource with existing Dispatch subscription",
+      "source_ids": [
+        "S10"
+      ],
+      "status": "PUBLIC_SITE_OBSERVED",
+      "note": "One existing funnel"
+    },
+    {
+      "id": "C11",
+      "claim": "Inspire3 official catalog includes Zen12, Hypnosis Live and Brainwave Shots",
+      "source_ids": [
+        "S13"
+      ],
+      "status": "OFFICIAL_SELLER_DESCRIPTION",
+      "note": "No independent efficacy"
+    },
+    {
+      "id": "C12",
+      "claim": "Zen12 Premium seller page lists 12 levels, 48 MP3s and four styles",
+      "source_ids": [
+        "S14"
+      ],
+      "status": "OFFICIAL_SELLER_DESCRIPTION",
+      "note": "Not independently received/used"
+    },
+    {
+      "id": "C13",
+      "claim": "Seller advertises one-year refund guarantee",
+      "source_ids": [
+        "S14"
+      ],
+      "status": "OFFICIAL_SELLER_DESCRIPTION",
+      "note": "Refund processing, terms not transaction-verified"
+    },
+    {
+      "id": "C14",
+      "claim": "Zen12 twelve minutes equals one hour of advanced meditation",
+      "source_ids": [
+        "S14"
+      ],
+      "status": "UNSUPPORTED_EXCLUDED",
+      "note": "Seller claim; never endorse"
+    },
+    {
+      "id": "C15",
+      "claim": "Zen12 is proven to treat mental health conditions, increase IQ or prevent vigilance decline",
+      "source_ids": [
+        "S05",
+        "S06"
+      ],
+      "status": "UNSUPPORTED_EXCLUDED",
+      "note": "Do not imply efficacy from unrelated trials"
+    },
+    {
+      "id": "C16",
+      "claim": "Binaural-beat evidence in general confirms branded Zen12 product outcomes",
+      "source_ids": [
+        "S05",
+        "S06"
+      ],
+      "status": "UNSUPPORTED_EXCLUDED",
+      "note": "Different materials and outcomes"
+    },
+    {
+      "id": "C17",
+      "claim": "Exact buyer-facing price, tax, currency and payment terms are authenticated",
+      "source_ids": [
+        "S14"
+      ],
+      "status": "UNKNOWN_WITHHELD",
+      "note": "Seller display not checkout"
+    },
+    {
+      "id": "C18",
+      "claim": "The public Inspire3 affiliate portal proves Final Vestige account approval",
+      "source_ids": [
+        "S15"
+      ],
+      "status": "UNSUPPORTED_EXCLUDED",
+      "note": "Named approval unavailable"
+    },
+    {
+      "id": "C19",
+      "claim": "Final Vestige has an account-issued earnings URL and rights to email/social/site promotions",
+      "source_ids": [
+        "S15"
+      ],
+      "status": "UNKNOWN_WITHHELD",
+      "note": "Keep buttons disabled"
+    },
+    {
+      "id": "C20",
+      "claim": "Adjacent future-commission disclosure is necessary for any compensated recommendation",
+      "source_ids": [
+        "S11"
+      ],
+      "status": "FTC_GUIDANCE",
+      "note": "Both variants and hub"
+    },
+    {
+      "id": "C21",
+      "claim": "Product health benefits need appropriate independent substantiation",
+      "source_ids": [
+        "S12"
+      ],
+      "status": "FTC_GUIDANCE",
+      "note": "Avoid unsupported claims"
+    },
+    {
+      "id": "C22",
+      "claim": "A merchant outbound click demonstrates a settled affiliate commission",
+      "source_ids": [
+        "S17"
+      ],
+      "status": "UNSUPPORTED_EXCLUDED",
+      "note": "Separate event types"
+    },
+    {
+      "id": "C23",
+      "claim": "A submitted Focus form or article view is a provider-confirmed subscriber",
+      "source_ids": [
+        "S10",
+        "S17"
+      ],
+      "status": "UNSUPPORTED_EXCLUDED",
+      "note": "Use Jetpack authoritative confirmation"
+    },
+    {
+      "id": "C24",
+      "claim": "An eligible rights-cleared FV-owned Mind Payhip SKU is presently authenticated",
+      "source_ids": [
+        "S18"
+      ],
+      "status": "UNKNOWN_WITHHELD",
+      "note": "Commerce must identify SKU, terms, receipt"
+    },
+    {
+      "id": "C25",
+      "claim": "An optional 42-second film improves paid conversion",
+      "source_ids": [
+        "S17"
+      ],
+      "status": "HYPOTHESIS_UNTESTED",
+      "note": "Controlled same-copy A/B required"
+    },
+    {
+      "id": "C26",
+      "claim": "R216 A/B offer guide contains active earning URL or video playback",
+      "source_ids": [
+        "S16"
+      ],
+      "status": "FALSE_BY_SOURCE_INSPECTION",
+      "note": "Both disabled, video merely a concept"
+    }
+  ],
+  "gates": [
+    {
+      "id": "G01",
+      "criterion": "Final Vestige-specific partner acceptance signed/verified",
+      "owner": "FOUNDER_MIND",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "G02",
+      "criterion": "Exact authorized earning link and allowed website placement authenticated",
+      "owner": "FOUNDER_MIND",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "G03",
+      "criterion": "Social/email promotional rights verified with account-specific terms",
+      "owner": "FOUNDER_MIND_DISPATCH",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "G04",
+      "criterion": "Merchant checkout price, currency, delivery and refund wording corroborated",
+      "owner": "COMMERCE",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "G05",
+      "criterion": "Licensed/approved creative materials reviewed; no swipe copied",
+      "owner": "MIND",
+      "status": "OPEN"
+    },
+    {
+      "id": "G06",
+      "criterion": "Source-to-claim copyedit independent",
+      "owner": "SITE_QA",
+      "status": "OPEN"
+    },
+    {
+      "id": "G07",
+      "criterion": "Any optional film actually rendered, synced and licensed",
+      "owner": "MEDIA_QA",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "G08",
+      "criterion": "360/390/768/1440/1920 + keyboard/AT + WCAG2.2 AA QA on staging",
+      "owner": "SITE_QA",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "G09",
+      "criterion": "WordPress sanitizer/content security policy preview validated",
+      "owner": "CLAUDE_SITE_QA",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "G10",
+      "criterion": "Named FV-owned sellable Payhip Mind SKU with rights/terms if affiliate unavailable",
+      "owner": "COMMERCE",
+      "status": "UNKNOWN"
+    },
+    {
+      "id": "G11",
+      "criterion": "Founder release approval for relevant page and active CTA",
+      "owner": "FOUNDER",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "G12",
+      "criterion": "Verified Grok media IDs/URLs in existing TASK-008 for campaign attribution",
+      "owner": "PRAXXIS_GROK",
+      "status": "UNKNOWN"
+    },
+    {
+      "id": "G13",
+      "criterion": "Existing Jetpack confirmation/delivery reconciled without test signup",
+      "owner": "CLAUDE_QA",
+      "status": "UNKNOWN"
+    },
+    {
+      "id": "G14",
+      "criterion": "Consent and privacy basis for first-party campaign events documented",
+      "owner": "CLAUDE_PRIVACY",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "G15",
+      "criterion": "Actual merchant-reported orders, commissions, refunds, fees and timestamps",
+      "owner": "COMMERCE",
+      "status": "UNKNOWN"
+    },
+    {
+      "id": "G16",
+      "criterion": "Eligible qualified-human session denominator in comparable windows",
+      "owner": "ANALYTICS",
+      "status": "UNKNOWN"
+    },
+    {
+      "id": "G17",
+      "criterion": "R210 legacy canonical A/B overlap reconciled before selecting live arms",
+      "owner": "MIND_SITE_QA",
+      "status": "OPEN"
+    },
+    {
+      "id": "G18",
+      "criterion": "No overwrite of #49, #150, #172 or #174; no production writes",
+      "owner": "MIND",
+      "status": "ENFORCED"
+    }
+  ],
+  "measurement": {
+    "key_kpi": "net realized receipts and cleared commission less refunds/fees per 1000 qualified human sessions",
+    "status": "NOT_COMPUTABLE",
+    "why": "No independently reconciled paid transaction ledger and qualified-human session denominator",
+    "event_names": [
+      "campaign_landing",
+      "buyer_guide_view",
+      "article_to_resource_click",
+      "affiliate_outbound",
+      "confirmed_signup",
+      "merchant_confirmed_purchase",
+      "cleared_affiliate_conversion",
+      "refund",
+      "fee"
+    ],
+    "do_not_equate": [
+      "outbound click with sale",
+      "form interaction with confirmed subscriber",
+      "unknown with zero"
+    ],
+    "windows_days": [
+      7,
+      30
+    ]
+  },
+  "permissions": {
+    "publishing": false,
+    "affiliate_activation": false,
+    "newsletter_edit": false,
+    "new_list": false,
+    "paid_vendor": false,
+    "tracking_script": false,
+    "merge": false,
+    "deploy": false,
+    "spend": false
+  },
+  "core_control": "natively disabled button; immediately adjacent prospective affiliate commission disclosure; no href or event handler",
+  "original_film": "42-second poster/transcript/VTT concept only; no MP4 or playback"
+}
