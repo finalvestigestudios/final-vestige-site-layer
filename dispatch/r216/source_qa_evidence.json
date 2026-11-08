@@ -1,0 +1,40 @@
+{
+  "date_utc": "2026-11-08",
+  "type": "AUTHENTICATED_SOURCE_V8_OFFLINE_NOT_NATIVE_WORDPRESS",
+  "tests_passed": 28,
+  "failed": 0,
+  "mutation_rejections": 10,
+  "source_meta": [
+    {
+      "page": "dispatch",
+      "id": 523,
+      "modified": "2026-11-05T20:01:31",
+      "original_characters": 6134,
+      "review_copy_characters": 6304,
+      "anchor_exactly_once": true,
+      "structural_counts_preserved": true,
+      "site_write": false
+    },
+    {
+      "page": "focus",
+      "id": 1579,
+      "modified": "2026-11-05T17:44:02",
+      "original_characters": 31876,
+      "review_copy_characters": 31934,
+      "anchor_exactly_once": true,
+      "structural_counts_preserved": true,
+      "site_write": false
+    }
+  ],
+  "native_node_test": "PENDING",
+  "actual_email_render": "NOT_TESTED",
+  "confirmed_signup": "PROVIDER_PRIVATE_UNKNOWN",
+  "released": false,
+  "issues": [
+    174,
+    171,
+    129,
+    820
+  ],
+  "parent_pr": 1622
+}
