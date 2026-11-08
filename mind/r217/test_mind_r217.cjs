@@ -27,7 +27,7 @@ function validate(f){
  try{matrix=JSON.parse(f.matrix)}catch(e){return ["bad_matrix_json"];}
  check(countWords(article)>=2300&&article.includes("UNPUBLISHED INVESTIGATION"),"deep_unpublished_research_missing");
  check(article.includes("https://doi.org/10.1126/science.1111709")&&article.includes("https://doi.org/10.1016/j.cognition.2010.06.010")&&article.includes("https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0108515"),"critical_choice_primary_sources_missing");
- check(article.includes("not a replication, diagnosis")&&article.includes("do not repeat that deception")===false,""); // extra boundary handled separately
+ check(article.includes("Do not repeat that deception")&&article.includes("not a replication, diagnosis"),"covert_deception_boundary_missing");
  check(article.includes("**not a replication, diagnosis")||article.includes("not a replication, diagnosis"),"ethical_no_deception_boundary_missing");
  check(article.includes("**not** evidence of Zen12")||article.includes("The choice-blindness studies were not evaluations of Zen12"),"science_marketing_boundary_missing");
  check(article.includes("https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"),"historical_record_bridge_missing");
@@ -39,7 +39,7 @@ function validate(f){
  for(const key of ["hub","guide"])check(!forbidden.test(f[key]),"active_script_form_embed_or_tracker_"+key);
  for(const key of ["hub","guide"]){
   const h=f[key], btn=matches(h,/<button\b[^>]*>/gi);
-  check(btn.length>=1&&btn.every(m=>/\bdisabled\b/i.test(m[0])&&/type="button"/.test(m[0])),"unsafe_or_missing_disabled_button_"+key);
+  check(btn.length>=1&&btn.every(m=>/\sdisabled(?:\s|>)/i.test(m[0])&&/type="button"/.test(m[0])),"unsafe_or_missing_disabled_button_"+key);
   check(!/<a\b[^>]*href=["']https?:\/\/(?:www\.)?(?:zen12|inspire3|hypnosislive|brainwaveshots|affiliates\.inspire3)\./i.test(h),"active_merchant_href_"+key);
   const d=h.indexOf("If you purchase through an approved affiliate link");
   const b=h.search(/<button\b/);
@@ -47,7 +47,7 @@ function validate(f){
   check(h.includes("https://finalvestige.com/focus/"),"single_focus_path_missing_"+key);
   check(!/guaranteed (?:clinical|cure|wealth|IQ improvement)/i.test(h),"unsupported_efficacy_guarantee_"+key);
   check((h.match(/<html\b/g)||[]).length===1&&h.includes('name="viewport"')&&h.includes("prefers-reduced-motion"),"source_accessibility_basics_missing_"+key);
-  check(!/\\bhref=["\u0027]http:\/\//.test(h),"non_tls_destination_"+key);
+  check(!h.includes('href="http://')&&!h.includes("href='http://"),"non_tls_destination_"+key);
   const ids=matches(h,/\bid="([^"]+)"/g).map(x=>x[1]);
   check(new Set(ids).size===ids.length,"duplicate_document_id_"+key);
  }
