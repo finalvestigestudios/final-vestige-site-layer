@@ -8,7 +8,7 @@ function safe(d){
  return d.schema==='fv-scotch-cap-418-chronology-conflict-v1'&&d.image_key==='418:2'&&
   d.exact_published_original_src==='https://www.history.uscg.mil/Portals/6/5_%20Scotch_Cap_debris2_1946.jpg'&&
   d.direct_original_origin_http_status===null&&d.direct_original_guest_browser_http_status===null&&
-  d.earlier_retriever_wrapper_status===403&&d.earlier_wrapper_is_origin_http===false&&
+  d.earlier_external_retriever_wrapper_status===403&&d.earlier_wrapper_is_origin_http===false&&
   d.earlier_wrapper_is_guest_browser===false&&d.visitor_source_broken===null&&
   Array.isArray(c)&&c.length===2&&
   c.every(x=>x.original_pixel_width===null&&x.original_pixel_height===null&&
