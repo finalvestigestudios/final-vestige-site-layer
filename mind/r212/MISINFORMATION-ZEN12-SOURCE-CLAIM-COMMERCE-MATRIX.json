@@ -10,10 +10,10 @@
   "source_refs": [
     {
       "id": "E01",
-      "type": "original_abstract",
+      "type": "original_full_text",
       "title": "Loftus & Palmer 1974 crash-word study",
-      "url": "https://doi.org/10.1016/S0022-5371(74)80011-3",
-      "review_scope": "journal abstract, no raw data or full method audit"
+      "url": "https://bpb-us-e2.wpmucdn.com/faculty.sites.uci.edu/dist/c/571/files/2024/08/LoftusPalmer_ReconstructionAuto_JVLVB1974.pdf",
+      "review_scope": "Full primary 1974 paper, 45 students/7 films in Exp I; Exp II distinct 150 with 16/50,7/50,6/50 one-week glass reports; initial free description before specific questions; no raw individual-level data"
     },
     {
       "id": "E02",
@@ -24,17 +24,17 @@
     },
     {
       "id": "E03",
-      "type": "original_abstract",
+      "type": "original_full_text",
       "title": "Loftus Miller Burns 1978 slides, five experiments plus pilot",
-      "url": "https://pubmed.ncbi.nlm.nih.gov/621467/",
-      "review_scope": "abstract; aggregate N=1242; no condition-level reconstruction"
+      "url": "https://bpb-us-e2.wpmucdn.com/faculty.sites.uci.edu/dist/c/571/files/2024/08/LoftusMillerBurns_StopYield_JEP-HLM78.pdf",
+      "review_scope": "Original 1978 full text, 1242 overall pilot plus 5 experiments; pilot 129 yes/no and Exp I 195 forced-choice with 75% vs 41%; no single pooled per-condition inference"
     },
     {
       "id": "E04",
-      "type": "review_abstract",
+      "type": "review_full_text",
       "title": "Loftus 2005 misinformation effect retrospective",
       "url": "https://doi.org/10.1101/lm.94705",
-      "review_scope": "review abstract; boundary on mechanisms and warnings"
+      "review_scope": "2005 published retrospective: moderators, warnings, mechanisms; review not product evidence; individual raw data not inspected"
     },
     {
       "id": "E05",
@@ -136,37 +136,37 @@
     },
     {
       "id": "E19",
-      "type": "commerce",
+      "type": "unverified_placeholder",
       "title": "Public Payhip Mind SKU",
       "url": "UNVERIFIED",
-      "review_scope": "no authenticated rights, price, refund, checkout or delivery evidence"
+      "review_scope": "no authenticated rights, price, refund, checkout or delivery evidence; this is NOT one of the linked source documents"
     },
     {
       "id": "E20",
-      "type": "attribution",
+      "type": "unverified_placeholder",
       "title": "Grok live social asset_id",
       "url": "UNVERIFIED",
-      "review_scope": "TASK-008 read; no exact approved asset-to-page mapping confirmed"
+      "review_scope": "TASK-008 read; no exact approved asset-to-page mapping confirmed; this is NOT one of the linked source documents"
     }
   ],
   "claims": [
     {
       "id": "C01",
       "statement": "The word in a question about a filmed crash influenced later speed estimates",
-      "status": "SUPPORTED_ABSTRACT",
+      "status": "SUPPORTED_PRIMARY_FULL_TEXT",
       "basis": [
         "E01"
       ],
-      "caveat": "do not imply brain trace overwrite"
+      "caveat": "1974 Exp I 45 students/7 films; first unprompted description then wording manipulation; answer effect does not prove trace overwrite"
     },
     {
       "id": "C02",
       "statement": "Later absent-glass yes/no responses differed between smashed and hit wording",
-      "status": "SUPPORTED_ABSTRACT",
+      "status": "SUPPORTED_PRIMARY_FULL_TEXT",
       "basis": [
         "E01"
       ],
-      "caveat": "yes/no report not direct readout of memory trace"
+      "caveat": "Exp II separate N=150; one-week glass responses smashed 16/50, hit 7/50, controls 6/50; later yes/no report not direct memory trace"
     },
     {
       "id": "C03",
@@ -180,20 +180,20 @@
     {
       "id": "C04",
       "statement": "The 1978 slides experiments totaled 1242 across five experiments plus a pilot",
-      "status": "SUPPORTED_ABSTRACT",
+      "status": "SUPPORTED_PRIMARY_FULL_TEXT",
       "basis": [
         "E03"
       ],
-      "caveat": "do not treat per-condition sample as known"
+      "caveat": "1242 across pilot+five experiments; pilot 129, Exp I 195; do not treat as one condition"
     },
     {
       "id": "C05",
       "statement": "1978 misleading verbal information reduced recognition accuracy on two test types",
-      "status": "SUPPORTED_ABSTRACT",
+      "status": "SUPPORTED_PRIMARY_FULL_TEXT",
       "basis": [
         "E03"
       ],
-      "caveat": "recognition differences not universal trace loss"
+      "caveat": "1978 Exp I consistent 75% vs misleading 41% correct forced-choice; pilot yes/no design separate; no effort manipulation"
     },
     {
       "id": "C06",
@@ -307,12 +307,12 @@
     },
     {
       "id": "C18",
-      "statement": "Zen12 page displayed 87.99 USD promotional Premium figure on Nov 8",
-      "status": "PUBLIC_DISPLAY_ONLY",
+      "statement": "A retrieved Zen12 Premium merchant-page snapshot shows a '$187 $87' public price display; previous dated observations reported $87.99; public values conflict and neither establishes checkout price or currency code",
+      "status": "CONFLICTING_SELLER_PUBLIC_DISPLAY",
       "basis": [
         "E13"
       ],
-      "caveat": "not a promise of price, taxes, geography, upgrades or actual checkout"
+      "caveat": "No tested checkout, tax, upsell, location or ISO currency verified; omit price in CTA"
     },
     {
       "id": "C19",
@@ -542,5 +542,12 @@
       30
     ],
     "small_sample_caution": "<30 paid orders per variant: directional only; report missing merchant attribution"
+  },
+  "source_scope_note": "18 linked source URLs; E19 and E20 are explicitly unverified placeholders, NOT two verified sources. PDF screenshots unavailable in this environment, but full-text extracted source and prior independent human QA details were inspected; no raw data analysis.",
+  "canonical_editorial_decision": {
+    "crash_1974": "R185_PROPOSED_CANONICAL_UNPUBLISHED",
+    "hypnosis_memory": "R200_DISTINCT_READER_INTENT_UNPUBLISHED",
+    "r212": "RETAIN_AS_NONCANONICAL_RESEARCH_COMPANION_NO_SLUG",
+    "reason": "R212 substantially duplicates R185 and portions of R200; avoid SEO cannibalization and creator links to drafts"
   }
 }
