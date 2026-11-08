@@ -27,7 +27,7 @@ function audit(data,parent){
    if(!row.detail_risk||!row.catalog_credit_note||row.visual_detail_hold!==true||row.rights_attribution_and_publisher_review_required!==true||row.license_release_approved!==false||row.source_identity_pixel_match_verified!==false||row.cache_or_upload_authorized!==false||row.wordpress_write_authorized!==false||row.original_downloaded!==false||row.derivative_generated!==false)fail("release_gate");
    for(const field of ["guest_http_status","guest_current_src","guest_decoded_px","guest_cold_transfer_bytes","measured_transfer_savings_bytes","binary_sha256"]){if(row[field]!==null)fail("invented_"+field)}
  }
- if(small!==4||cc!==4||data.totals?.catalog_native_under_960!==small||data.totals?.cc_license_items!==cc||data.totals?.audited_exact_source_items!==8||data.totals?.detail_hold_items!==8||data.totals?.suggested_automatic_rewrites!==0||data.totals?.confirmed_guest_broken!==0)fail("totals");
+ if(small!==4||cc!==4||data.totals?.catalog_native_under_960!==small||data.totals?.cc_license_items!==cc||data.totals?.audited_exact_source_items!==8||data.totals?.detail_hold_items!==8||data.totals?.suggested_automatic_rewrites!==0||data.totals?.confirmed_guest_broken!==null)fail("totals");
  return e;
 }
 module.exports={audit};
