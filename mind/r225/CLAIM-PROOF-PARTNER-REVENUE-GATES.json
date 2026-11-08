@@ -1,0 +1,415 @@
+{
+  "schema_version": "mind-r225-1",
+  "created_at": "2026-11-08",
+  "scope": "MIND_ONLY_NO_PUBLICATION",
+  "commercial_release": "UNPUBLISHED_HARD_HOLD",
+  "offer": "Zen12 Premium on exact official merchant page",
+  "observation": "Seller page Nov 8 2026, not final checkout or individual publisher authorization",
+  "sources": [
+    {
+      "id": "M01",
+      "url": "https://inspire3.com/",
+      "type": "official_seller_catalog",
+      "review_date": "2026-11-08"
+    },
+    {
+      "id": "M02",
+      "url": "https://zen12.com/hnp",
+      "type": "exact_zen12_premium_sales_page",
+      "review_date": "2026-11-08"
+    },
+    {
+      "id": "M03",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "type": "government_endorsement_guidance",
+      "review_date": "2026-11-08"
+    },
+    {
+      "id": "M04",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "type": "government_health_claim_guidance",
+      "review_date": "2026-11-08"
+    },
+    {
+      "id": "R01",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/15994228/",
+      "type": "peer_reviewed_original_2005",
+      "review_date": "2026-11-08"
+    },
+    {
+      "id": "R02",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/16466414/",
+      "type": "peer_reviewed_original_2006",
+      "review_date": "2026-11-08"
+    },
+    {
+      "id": "R03",
+      "url": "https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.0050138",
+      "type": "peer_reviewed_original_retreat_2007",
+      "review_date": "2026-11-08"
+    },
+    {
+      "id": "R04",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10902202/",
+      "type": "mindfulness_meta_analysis_not_product_trial",
+      "review_date": "2026-11-08"
+    },
+    {
+      "id": "H01",
+      "url": "https://content.www.wellcomecollection.org/works/demkv24m",
+      "type": "original_1843_historical_book_catalog",
+      "review_date": "2026-11-08"
+    },
+    {
+      "id": "H02",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "type": "owned_live_historical_archive",
+      "review_date": "2026-11-08"
+    },
+    {
+      "id": "F01",
+      "url": "https://finalvestige.com/focus/",
+      "type": "owned_existing_free_fieldbook",
+      "review_date": "2026-11-08"
+    },
+    {
+      "id": "F02",
+      "url": "https://finalvestige.com/dispatch/",
+      "type": "owned_existing_newsletter",
+      "review_date": "2026-11-08"
+    },
+    {
+      "id": "F03",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "type": "owned_live_investigation",
+      "review_date": "2026-11-08"
+    },
+    {
+      "id": "F04",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "type": "owned_live_investigation",
+      "review_date": "2026-11-08"
+    },
+    {
+      "id": "P01",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "type": "founder_mind_charter",
+      "review_date": "2026-11-08"
+    },
+    {
+      "id": "P02",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "type": "conversion_measurement_authority",
+      "review_date": "2026-11-08"
+    },
+    {
+      "id": "P03",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/174",
+      "type": "dispatch_ownership",
+      "review_date": "2026-11-08"
+    }
+  ],
+  "claims": [
+    {
+      "id": "Z01",
+      "statement": "The Premium public offer advertises twelve progressive levels",
+      "status": "SELLER_FEATURE_NOT_DELIVERY_VERIFIED",
+      "source_ids": [
+        "M02"
+      ],
+      "limit": "Offer description is not independently authenticated fulfillment"
+    },
+    {
+      "id": "Z02",
+      "statement": "The Premium public offer lists 48 MP3 recordings, four audio formats",
+      "status": "SELLER_FEATURE_NOT_DELIVERY_VERIFIED",
+      "source_ids": [
+        "M02"
+      ],
+      "limit": "Downloaded file count, rights and contents not independently tested"
+    },
+    {
+      "id": "Z03",
+      "statement": "Premium includes bonus guides, support, an audio guide, and training-call access",
+      "status": "SELLER_FEATURE_NOT_DELIVERY_VERIFIED",
+      "source_ids": [
+        "M02"
+      ],
+      "limit": "Delivery and redemption of services unverified"
+    },
+    {
+      "id": "Z04",
+      "statement": "Premium public page displayed $87.99 promotional amount on 2026-11-08",
+      "status": "DATED_PUBLIC_PRICE_NOT_FINAL_CHECKOUT",
+      "source_ids": [
+        "M02"
+      ],
+      "limit": "Currency, taxes, fees and actual checkout amount unverified"
+    },
+    {
+      "id": "Z05",
+      "statement": "Seller advertises a one-year money-back guarantee",
+      "status": "SELLER_REFUND_PROMISE_NOT_FULFILLMENT_VERIFIED",
+      "source_ids": [
+        "M02"
+      ],
+      "limit": "Exact applicable transaction terms and refund behavior unverified"
+    },
+    {
+      "id": "Z06",
+      "statement": "The seller says twelve minutes equals an hour of advanced meditation",
+      "status": "UNSUBSTANTIATED_PRODUCT_SPECIFIC_DO_NOT_ADOPT",
+      "source_ids": [
+        "M02",
+        "M04"
+      ],
+      "limit": "No independently vetted exact-product outcome trial establishes a time equivalence"
+    },
+    {
+      "id": "Z07",
+      "statement": "The seller promotes stress, anxiety, focus, health and creativity benefits",
+      "status": "UNSUBSTANTIATED_PRODUCT_SPECIFIC_DO_NOT_ADOPT",
+      "source_ids": [
+        "M02",
+        "M04"
+      ],
+      "limit": "General meditation evidence is not Zen12-specific substantiation"
+    },
+    {
+      "id": "Z08",
+      "statement": "The seller attributes outcomes to brainwave entrainment",
+      "status": "UNSUBSTANTIATED_PRODUCT_SPECIFIC_DO_NOT_ADOPT",
+      "source_ids": [
+        "M02",
+        "M04"
+      ],
+      "limit": "No accepted product-level demonstration submitted"
+    },
+    {
+      "id": "S01",
+      "statement": "Raz 2005 reported targeted posthypnotic-suggestion changes on Stroop and imaging measures",
+      "status": "INDEPENDENT_TASK_SPECIFIC_EVIDENCE",
+      "source_ids": [
+        "R01"
+      ],
+      "limit": "Selected participants and laboratory protocol; no product efficacy inference"
+    },
+    {
+      "id": "S02",
+      "statement": "Raz 2006 compared suggestion given with vs without induction in a highly suggestible sample",
+      "status": "INDEPENDENT_TASK_SPECIFIC_EVIDENCE",
+      "source_ids": [
+        "R02"
+      ],
+      "limit": "Effect does not establish benefits of any consumer recording"
+    },
+    {
+      "id": "S03",
+      "statement": "Slagter 2007 studied intensive retreat meditation and attentional blink, not Zen12",
+      "status": "INDEPENDENT_INTERVENTION_OTHER_THAN_PRODUCT",
+      "source_ids": [
+        "R03"
+      ],
+      "limit": "Nonrandom groups, unequal exposure, varying EEG subsamples"
+    },
+    {
+      "id": "S04",
+      "statement": "Zainal and Newman review RCTs of mindfulness-based interventions, not this product",
+      "status": "INDEPENDENT_INTERVENTION_OTHER_THAN_PRODUCT",
+      "source_ids": [
+        "R04"
+      ],
+      "limit": "Comparison conditions and outcomes vary; not a Zen12 trial"
+    },
+    {
+      "id": "H01",
+      "statement": "1843 James Braid Neurypnology exists in the Wellcome Collection",
+      "status": "HISTORICAL_CATALOG_PROVENANCE_ONLY",
+      "source_ids": [
+        "H01"
+      ],
+      "limit": "Catalog is not firsthand verification of nineteenth-century cures"
+    },
+    {
+      "id": "H02",
+      "statement": "Published Puységur archive is an historical source trail",
+      "status": "PUBLISHED_EDITORIAL_ROUTE",
+      "source_ids": [
+        "H02",
+        "P01"
+      ],
+      "limit": "Does not substantiate an invisible fluid or modern product"
+    },
+    {
+      "id": "F01",
+      "statement": "One existing Focus Fieldbook capture path is published",
+      "status": "PUBLISHED_FUNNEL_ROUTE_NOT_CONFIRMED_LEAD",
+      "source_ids": [
+        "F01",
+        "P02"
+      ],
+      "limit": "UI query-state is not Jetpack provider confirmation"
+    },
+    {
+      "id": "F02",
+      "statement": "Dispatch is already established and owned by a separate studio",
+      "status": "PUBLISHED_EXISTING_FUNNEL_NO_DUPLICATION",
+      "source_ids": [
+        "F02",
+        "P03"
+      ],
+      "limit": "Do not modify newsletter or welcome message"
+    },
+    {
+      "id": "A01",
+      "statement": "A public affiliate website or seller catalog proves no publisher-specific acceptance",
+      "status": "PUBLISHER_ACCEPTANCE_NOT_VERIFIED",
+      "source_ids": [
+        "M01",
+        "P01"
+      ],
+      "limit": "Needs authenticated Final Vestige publisher account attestation"
+    },
+    {
+      "id": "A02",
+      "statement": "No account-issued earning URL, channel rights or approved swipe material has been independently authenticated",
+      "status": "EARNING_LINK_AND_PERMISSION_HARD_HOLD",
+      "source_ids": [
+        "P01",
+        "P02"
+      ],
+      "limit": "Seller catalog does not constitute a permitted promotion or payment contract"
+    },
+    {
+      "id": "A03",
+      "statement": "A rights-cleared currently sellable FV-owned Mind Payhip SKU was not authenticated in this sprint",
+      "status": "OWNED_MIND_SKU_UNVERIFIED",
+      "source_ids": [
+        "P01",
+        "P02"
+      ],
+      "limit": "Generic Payhip public search is not owner inventory, fulfillment or rights proof"
+    },
+    {
+      "id": "A04",
+      "statement": "Confirmed Focus lead requires authoritative Jetpack provider acceptance",
+      "status": "LEAD_ATTRIBUTION_UNVERIFIED",
+      "source_ids": [
+        "P02",
+        "F01"
+      ],
+      "limit": "Subscribe-success URL or click not a confirmed subscriber"
+    },
+    {
+      "id": "A05",
+      "statement": "Affiliate outbound clicks do not prove merchant-confirmed paid conversions",
+      "status": "PAID_CONVERSION_UNVERIFIED",
+      "source_ids": [
+        "P02"
+      ],
+      "limit": "Must reconcile independently reported cleared commissions/sales"
+    },
+    {
+      "id": "A06",
+      "statement": "Net revenue per thousand qualified-human sessions cannot be calculated with missing numerator and denominator",
+      "status": "NOT_COMPUTABLE",
+      "source_ids": [
+        "P02"
+      ],
+      "limit": "If evidence arrives, net numerator may be positive, zero, or negative"
+    },
+    {
+      "id": "X01",
+      "statement": "The option B 42-second video is a storyboard with captions; no MP4 produced",
+      "status": "UNRENDERED_NOT_LIVE",
+      "source_ids": [
+        "P01"
+      ],
+      "limit": "Cannot claim playback or completed video A/B testing"
+    }
+  ],
+  "gates": [
+    {
+      "id": "named_publisher_approval",
+      "status": "HARD_HOLD",
+      "evidence": "not independently authenticated for FV production release"
+    },
+    {
+      "id": "social_channel_permission",
+      "status": "HARD_HOLD",
+      "evidence": "not independently authenticated for FV production release"
+    },
+    {
+      "id": "email_channel_permission",
+      "status": "HARD_HOLD",
+      "evidence": "not independently authenticated for FV production release"
+    },
+    {
+      "id": "issued_earning_url",
+      "status": "HARD_HOLD",
+      "evidence": "not independently authenticated for FV production release"
+    },
+    {
+      "id": "tracking_and_payout_terms",
+      "status": "HARD_HOLD",
+      "evidence": "not independently authenticated for FV production release"
+    },
+    {
+      "id": "seller_creative_rights",
+      "status": "HARD_HOLD",
+      "evidence": "not independently authenticated for FV production release"
+    },
+    {
+      "id": "exact_checkout_price_and_terms",
+      "status": "HARD_HOLD",
+      "evidence": "not independently authenticated for FV production release"
+    },
+    {
+      "id": "refund_terms_and_process",
+      "status": "HARD_HOLD",
+      "evidence": "not independently authenticated for FV production release"
+    },
+    {
+      "id": "product_claim_independent_substantiation",
+      "status": "HARD_HOLD",
+      "evidence": "not independently authenticated for FV production release"
+    },
+    {
+      "id": "adjacent_FTC_disclosure",
+      "status": "HARD_HOLD",
+      "evidence": "not independently authenticated for FV production release"
+    },
+    {
+      "id": "commerce_button_or_link_release",
+      "status": "HARD_HOLD",
+      "evidence": "not independently authenticated for FV production release"
+    },
+    {
+      "id": "video_render_captions_transcript",
+      "status": "HARD_HOLD",
+      "evidence": "not independently authenticated for FV production release"
+    },
+    {
+      "id": "browser_mobile_a11y_performance",
+      "status": "HARD_HOLD",
+      "evidence": "not independently authenticated for FV production release"
+    },
+    {
+      "id": "WordPress_sanitization_and_link_QA",
+      "status": "HARD_HOLD",
+      "evidence": "not independently authenticated for FV production release"
+    },
+    {
+      "id": "founder_release_approval",
+      "status": "HARD_HOLD",
+      "evidence": "not independently authenticated for FV production release"
+    },
+    {
+      "id": "settled_revenue_and_qualified_human_data",
+      "status": "HARD_HOLD",
+      "evidence": "not independently authenticated for FV production release"
+    }
+  ],
+  "consent": "No PII, scripts, cookies, pixels, form additions or commercial redirects in this source-only sprint",
+  "test_instructions": "node mind/r225/test_mind_r225.cjs"
+}
