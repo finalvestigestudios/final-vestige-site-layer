@@ -24,6 +24,7 @@ SCRIPTS = Path(__file__).resolve().parent
 if str(SCRIPTS) not in sys.path:
     sys.path.insert(0, str(SCRIPTS))
 from strict_source_receipt_r273 import loads_strict_receipt
+from source_build_binding_r275 import verify_source_binding
 
 APPS = (
     "LedgerDiffLite", "InvoiceTwinScout", "SpendMapLite", "PolicyDeltaDesk",
@@ -70,7 +71,7 @@ def _stat_identity(info: os.stat_result) -> tuple[int, ...]:
             info.st_size, info.st_mtime_ns, info.st_ctime_ns)
 
 
-def _source_receipt_sha256(path: Path) -> str:
+def _source_receipt_sha256(path: Path, *, checkout_root: Path | None = None) -> str:
     """Require a bounded, untampered, native source-suite receipt for QD custody.
 
     Never trust a child's zero exit alone: source-suite tests and six source
@@ -159,6 +160,10 @@ def _source_receipt_sha256(path: Path) -> str:
                 or [item.get("app") if type(item) is dict else None for item in results] != list(APPS)
                 or any(item.get("result") != "PASS" for item in results)):
             raise CandidateBuildRejected(ERROR)
+        if checkout_root is not None:
+            # Bind the full source/test inventory to *current checkout bytes*,
+            # not only to the successful source-suite JSON. No public bypass.
+            verify_source_binding(checkout_root, receipt)
         return hashlib.sha256(data).hexdigest()
     except (OSError, ValueError, TypeError, KeyError, UnicodeError):
         raise CandidateBuildRejected(ERROR) from None
@@ -252,9 +257,17 @@ def _execute_plan(root: Path, run_dir: Path, python: str, runner=_run_child) -> 
 
     # Capture a verifiable source-suite receipt, not just an unrecorded exit 0.
     check(script(scripts / "offline_source_gate.py", "--report", source_receipt), timeout=3600)
-    source_receipt_pin = _source_receipt_sha256(source_receipt)
+    # Synthetic plan tests inject a fake runner and do not claim a real source
+    # suite; only the unreplaceable CLI's real child runner can build candidates.
+    binding_root = root if runner is _run_child else None
+    source_receipt_pin = _source_receipt_sha256(source_receipt, checkout_root=binding_root)
     check(script(scripts / "toolchain_guard.py", "capture", tool_manifest))
     check(script(scripts / "build_input_guard.py", "capture", source_manifest))
+    # Close the test-to-capture gap: a change after the test pass but before
+    # the build-input capture must still fail, rather than being blessed by
+    # a freshly captured build manifest of untested source.
+    if binding_root is not None:
+        _source_receipt_sha256(source_receipt, checkout_root=binding_root)
     for name in APPS:
         check(script(scripts / "toolchain_guard.py", "check", tool_manifest))
         check(script(scripts / "build_input_guard.py", "check", source_manifest))
@@ -278,7 +291,7 @@ def _execute_plan(root: Path, run_dir: Path, python: str, runner=_run_child) -> 
     # Same-run double pin: an attest-then-replace report must never become a
     # successful private candidate. This does not authorize distribution.
     if (_private_windows_report_sha256(report) != report_hash
-            or _source_receipt_sha256(source_receipt) != source_receipt_pin):
+            or _source_receipt_sha256(source_receipt, checkout_root=binding_root) != source_receipt_pin):
         raise CandidateBuildRejected(ERROR)
 
 
