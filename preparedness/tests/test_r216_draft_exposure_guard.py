@@ -176,6 +176,24 @@ class MutationTest(unittest.TestCase):
         self.assertEqual(o['state'],g.INVALID)
     def test_non_utf8_type(self):
         p,r=fixture();r[7]['wp']='text';self.assertEqual(g.evaluate(p,r)['state'],g.INVALID)
+    def test_missing_bibliography_anchor_rejected(self):
+        o=with_mutation(lambda s:s.replace('<a href="https://www.ready.gov/plan">Official source</a>', 'Official source'))
+        self.assertEqual(o['state'],g.INVALID,o)
+        self.assertIn('one HTTPS anchor', ' '.join(o['errors']))
+    def test_duplicate_bibliography_anchor_rejected(self):
+        o=with_mutation(lambda s:s.replace('Official source</a>','Official source</a><a href="https://www.ready.gov/plan">Other</a>'))
+        self.assertEqual(o['state'],g.INVALID,o)
+        self.assertIn('duplicate bibliography', ' '.join(o['errors']))
+    def test_uncontained_bibliography_anchor_rejected(self):
+        o=with_mutation(lambda s:s.replace('</ol></section>','</ol><a href="https://www.ready.gov/plan">Outside</a></section>'))
+        self.assertEqual(o['state'],g.INVALID,o)
+        self.assertIn('outside numbered', ' '.join(o['errors']))
+    def test_two_contiguous_source_entries_allowed_but_still_hold(self):
+        o=with_mutation(lambda s:s.replace('</ol></section>','<li id="src-2"><a href="https://www.cdc.gov/">CDC</a></li></ol></section>'))
+        self.assertEqual(o['state'],g.HOLD,o)
+    def test_second_source_id_gap_rejected(self):
+        o=with_mutation(lambda s:s.replace('</ol></section>','<li id="src-3"><a href="https://www.cdc.gov/">CDC</a></li></ol></section>'))
+        self.assertEqual(o['state'],g.INVALID,o)
     def test_hidden_body_ancestor_was_textual_parity_gap(self):
         o=with_mutation(lambda s:wrap_scope(s,'pa-body','<div aria-hidden="true">'))
         self.assertIn('pa-body concealed', ' '.join(o['errors']))
