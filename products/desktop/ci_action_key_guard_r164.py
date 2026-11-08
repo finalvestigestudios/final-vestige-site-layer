@@ -10,7 +10,7 @@ from __future__ import annotations
 
 import re
 
-MAX_WORKFLOW_BYTES = 128 * 1024
+from ci_workflow_budget_r292 import MAX_WORKFLOW_BYTES
 # Approved workflow has four step-list '- uses' entries and two nested
 # 'uses' entries after a step 'name'. Other shapes require human review.
 CANONICAL = re.compile(r"^(?: {6}- | {8})uses: [^\r\n]+$")
