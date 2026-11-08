@@ -1,0 +1,39 @@
+The Dispatch — optional Issue 05 | REVIEW ONLY / NOT FOR SENDING
+
+Subject: The voice you couldn't follow
+Preheader: A 1953 listening experiment, and one better question to ask before buying focus audio.
+Role: Optional commercial-review candidate for original issue 05; NOT founder-approved substitution.
+Status: HOLD_UNSENT + HOLD_MERCHANT. This is an editorial review artifact, not a WordPress post.
+
+In a room full of conversations, you can choose to follow one voice. That doesn't mean the other voices have stopped reaching your ears.
+
+In 1953, engineer E. Colin Cherry published experiments on what people could recognize when two spoken messages arrived together or separately at the two ears. His work was concerned with the physical problem of competing speech and the listener's ability to separate it. The paper was not a test of a meditation program, a hypnosis recording or anyone's ability to become permanently more productive.
+
+It's a revealing distinction. We can observe the limits of attention in a controlled listening task. We can't use that observation to certify the promises printed on a modern audio product's sales page.
+
+Still, there's a practical problem here worth taking seriously. If you've started a page three times because the room is busy, or lost the thread of a conversation while the television was on, you know that wanting to concentrate and being able to concentrate are different things.
+
+Before considering a paid audio tool, try a small experiment with no product involved. Pick a routine task you can perform safely. Work for twelve minutes in your usual environment. On another comparable day, try again with notifications silenced and fewer background conversations. Keep the task, the time and the record as similar as you can. Note interruptions, what you completed and what you couldn't easily compare.
+
+That is a personal observation log, not a clinical trial. A better session cannot tell you which single change caused the difference. But it gives you a clearer idea of the problem you're hoping to solve before you hand somebody your money.
+
+The specific recording under review: Hypnosis Live markets a download named Total Focus. Its public product page describes a 33-minute, 47-MB recording, written and recorded by J. A. Amos. It also makes strong promises about concentration and productivity and advertises a 14-day refund policy. Those are seller descriptions and promises, not independent proof that this particular recording improves attention or that a refund will be processed as described. Prices displayed by public search results and the directly retrieved seller page have differed; we will not print an unchecked price or implied savings.
+
+The responsible next step is an independently sourced reader guide: what is delivered, what the merchant actually claims, what remains untested, whether the format fits your needs, the live checkout and refund terms, and whether Final Vestige is authorized to recommend it via email. The Mind & Affiliate Studio owns that guide. It is not published or authorized as a commercial destination yet.
+
+Commercial disclosure — immediately next to the proposed guide: If you later purchase through a qualifying link on an approved Final Vestige guide, Final Vestige may receive a commission. No purchase is necessary to use the free observation exercise above.
+
+ONE PROSPECTIVE CTA — DISABLED, NOT A LIVE LINK: Read the independent Total Focus evaluation — GUIDE NOT LIVE / NO CLICKABLE DESTINATION
+
+Until the guide and merchant permissions are verified, this is deliberately a non-actionable reviewer label, not a link. It must NEVER be delivered to a subscriber in this state.
+
+Source trail (for editorial review; not additional sales CTAs)
+
+1. E. Colin Cherry, “Some Experiments on the Recognition of Speech, with One and with Two Ears,” Journal of the Acoustical Society of America 25 (1953), 975–979. Publisher abstract and bibliographic record: https://doi.org/10.1121/1.1907229 . The directly available abstract documents the experiment types, not the detailed behavioral percentages; no unsupported percentage has been supplied.
+2. Max Planck Institute publication record for Cherry (1953): https://www.mpi.nl/publications/item2309493/some-experiments-recognition-speech-one-and-two-ears .
+3. Seller source, Hypnosis Live, Total Focus: https://hypnosislive.com/mental-skills/total-focus (checked 2026-11-07; seller claims, not independent evidence).
+4. FTC CAN-SPAM guide: https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business .
+
+Unverified legal/delivery footer — hard stop: Sender: Final Vestige Studios. Valid publisher postal address: [[VALID_POSTAL_ADDRESS_REQUIRED]]. Genuine Jetpack-rendered operational unsubscribe: [[JETPACK_UNSUBSCRIBE_LINK_MUST_BE_VERIFIED]]. Do not replace either until actual received-email evidence, publisher address and opt-out functionality are independently verified.
+
+No send / no scheduling / no WordPress publish / no test message / no list changes / no earning links.
