@@ -14,6 +14,14 @@ import sys
 import tempfile
 from pathlib import Path
 
+
+# Python -I deliberately omits the script directory from sys.path. Resolve
+# only this Git-owned desktop module directory, not cwd or PYTHONPATH, so the
+# private runner's isolated child commands can import local verification code.
+DESKTOP = Path(__file__).resolve().parent
+if str(DESKTOP) not in sys.path:
+    sys.path.insert(0, str(DESKTOP))
+
 from candidate_guard import (
     CandidateGuardError, MAX_CHECKSUM_BYTES, MAX_EXE_BYTES,
     check_candidate_directory, read_checksum_candidate, sha256_candidate,
