@@ -141,6 +141,7 @@ def exclusive_review_lock(journal: str | Path) -> Iterator[Callable[[], None]]:
     fd = _create_private_lock(target, flags)
     issued = False
     baseline = None
+    completed = False
     try:
         info = _safe_fstat(fd)
         if not stat.S_ISREG(info.st_mode) or info.st_nlink != 1 or info.st_size != 0:
@@ -175,7 +176,19 @@ def exclusive_review_lock(journal: str | Path) -> Iterator[Callable[[], None]]:
 
         yield assert_owned
         assert_owned()
+        completed = True
     finally:
+        # A caller exception skips the post-yield check above. Verify the live
+        # descriptor *before* closing even on exceptional exits: pathname
+        # metadata alone cannot establish safe cleanup ownership.
+        closing_custody_lost = False
+        if issued:
+            try:
+                assert_owned()
+            except ValueError:
+                # assert_owned marks custody uncertain and disables cleanup.
+                # Preserve the caller's exception when a callback failed.
+                closing_custody_lost = True
         _safe_close(fd)
         # Only remove a lock which is *still exactly ours*. An altered,
         # disappeared, or substituted lock is left untouched for investigation.
@@ -186,3 +199,7 @@ def exclusive_review_lock(journal: str | Path) -> Iterator[Callable[[], None]]:
                 pass
             else:
                 _remove_owned_lock(target)
+        if closing_custody_lost and completed:
+            # A late failure after an otherwise successful operation must not
+            # be misreported as a successful human-review journal append.
+            raise ValueError("Review writer lock descriptor changed; inspect before retrying")
