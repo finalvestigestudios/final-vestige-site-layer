@@ -30,23 +30,35 @@ REVIEW_PRS = {
         'base_sha': '10f58fed1ba808056813064ca5f9680589db8da1',
         'head_sha': '7d1ae6b8ef93d10cfb6810987672360885e9c1aa',
         'files': {
-            'preparedness/content/articles/household-emergency-plan.body.html': ('8ca5c261dba56eeaf79c445332381a74867233de','6407a31a882211e62c00f4e07ec7dc4d5abf99c6'),
-            'preparedness/content/articles/three-day-kit.body.html': ('ef5463ca668166766ca3d868908bc0bcb6040a23','f578cdbae602c1ad58a9237c8dea0fd74c99f7da'),
-            'preparedness/sources/fragments/start.json': ('29574c328cbab0548e6e5d4a026694857d56b6b4','d5a5087042381227d840675d9eb08ddc375d21e8'),
-            'preparedness/taxonomy.json': ('eea601e53e16e36cd4fc890876bc249b39632370','d20ff18bc6f243e08796c0505981979a10fca2d9'),
-            'preparedness/tests/test_preparedness.py': ('dd1e7bc35cc83da6174c56464583cbbadfd6751f','32627489b7727d97ac54663d87ac8d112911c811'),
+            'preparedness/content/articles/household-emergency-plan.body.html': ('b28ddfbfef3738ed33b16b16b6dd4c6345c101c6','6407a31a882211e62c00f4e07ec7dc4d5abf99c6'),
+            'preparedness/content/articles/three-day-kit.body.html': ('3013e3b15f77667fb635d8a2ecd4a87b1df7b843','f578cdbae602c1ad58a9237c8dea0fd74c99f7da'),
+            'preparedness/sources/fragments/start.json': ('438e70f1fa5008bb8a1563447a65cd6653b82804','d5a5087042381227d840675d9eb08ddc375d21e8'),
+            'preparedness/taxonomy.json': ('bd9f8db8821bb0511f3e5b2a75a782373ccf415d','d20ff18bc6f243e08796c0505981979a10fca2d9'),
+            'preparedness/tests/test_preparedness.py': ('12fcb649a7357f91f6cc1ee3fff5c290074df797','32627489b7727d97ac54663d87ac8d112911c811'),
         },
     },
     '169': {
         'base_sha': '4b009361277ea1d4617b368f5d45104c7318b284',
         'head_sha': 'e9cd7766dac59d47ab467d8945269b9146c2aef5',
-        'files': {'preparedness/tests/test_preparedness.py': ('50926c2f77bf783a682a4d1ee25ed14de9ff7995','e80d622c2fd32bf6c9752e375c1208c1d47d8e7c')},
+        'files': {'preparedness/tests/test_preparedness.py': ('dd1e7bc35cc83da6174c56464583cbbadfd6751f','e80d622c2fd32bf6c9752e375c1208c1d47d8e7c')},
     },
     '973': {
         'base_sha': 'e9cd7766dac59d47ab467d8945269b9146c2aef5',
         'head_sha': '4d40996a559b0124d74a9bb3bdcd481ad1992aa8',
         'files': {'preparedness/tests/test_preparedness.py': ('e80d622c2fd32bf6c9752e375c1208c1d47d8e7c','a66aa6f76cbae869f1327ff06ea5f13fd3845a64')},
     },
+}
+# Current contributor snapshots differ from the older QA PR base snapshots.
+# Never cherry-pick those PR heads over the frozen originals without 3-way review.
+CONTRIBUTOR_BLOBS = {
+    '157': {
+        'preparedness/content/articles/household-emergency-plan.body.html': '8ca5c261dba56eeaf79c445332381a74867233de',
+        'preparedness/content/articles/three-day-kit.body.html': 'ef5463ca668166766ca3d868908bc0bcb6040a23',
+        'preparedness/sources/fragments/start.json': '29574c328cbab0548e6e5d4a026694857d56b6b4',
+        'preparedness/taxonomy.json': 'eea601e53e16e36cd4fc890876bc249b39632370',
+        'preparedness/tests/test_preparedness.py': 'dd1e7bc35cc83da6174c56464583cbbadfd6751f',
+    },
+    '169': {'preparedness/tests/test_preparedness.py': '50926c2f77bf783a682a4d1ee25ed14de9ff7995'},
 }
 REVIEW_CASES = (
     ('homemade-water-filters', 'cdc-find-clean-water', 2),
@@ -77,7 +89,7 @@ def audit(manifest, observations, candidate_oids=None):
                   source_safety_verified=False, medically_safe=False,
                   merchant_checkout_verified=False, verified_paid_orders=None,
                   realized_net_revenue=None, errors=[], articles=[], qa_requirements=[],
-                  source_exceptions=[], summary={})
+                  source_exceptions=[], qa_base_drift=[], summary={})
     try:
         need(type(manifest) is dict and manifest.get('schema') == 'fv-preparedness-r200-seven-cluster-35-article-frozen-custody-v1', 'wrong frozen manifest schema')
         need(manifest.get('issue')==136 and manifest.get('conversion_issue')==820 and manifest.get('state')==HOLD, 'wrong custody scope/state')
@@ -108,6 +120,14 @@ def audit(manifest, observations, candidate_oids=None):
             need(type(files) is dict and files == {k: list(v) for k,v in expected['files'].items()},'independent PR changed-path or blob drift: '+pr)
             result['qa_requirements'].append({'pr':int(pr), 'head_sha':expected['head_sha'],
                  'paths':sorted(files), 'decision':'PENDING_INDEPENDENT_REVIEW', 'merge_authorized':False})
+        for pr, current_files in CONTRIBUTOR_BLOBS.items():
+            for path, current_oid in sorted(current_files.items()):
+                qa_base_oid = REVIEW_PRS[pr]['files'][path][0]
+                if qa_base_oid != current_oid:
+                    result['qa_base_drift'].append({'pr':int(pr), 'path':path,
+                        'qa_base_oid':qa_base_oid, 'current_contributor_oid':current_oid,
+                        'resolution':'THREE_WAY_REVIEW_REQUIRED', 'auto_merge_authorized':False})
+        need(len(result['qa_base_drift'])==6, 'unexpected QA ancestor identity/overlap drift')
         need(REVIEW_PRS['973']['base_sha']==REVIEW_PRS['169']['head_sha'], 'broken fixture PR chain')
         for slug, sid, count in REVIEW_CASES:
             need(slug in slugs,'missing cited article '+slug)
@@ -126,12 +146,15 @@ def audit(manifest, observations, candidate_oids=None):
             else:
                 need(type(chosen) is str and SHA.fullmatch(chosen), 'invalid proposed article identity: '+slug)
                 if chosen==original: disposition='FROZEN_ORIGINAL_UNREVIEWED'
-                elif proposal is not None and chosen==proposal[1]: disposition='INDEPENDENT_QA_PROPOSAL_NOT_APPROVED'
+                elif proposal is not None and chosen==proposal[1]:
+                    need(proposal[0]==original, 'unrebased QA patch would replace later article revisions: '+slug)
+                    disposition='INDEPENDENT_QA_PROPOSAL_NOT_APPROVED'
                 else: raise Violation('unknown integration article blob (requires separate review): '+slug)
             result['articles'].append({'slug':slug,'original_oid':original,
                 'candidate_oid':chosen,'status':disposition,'safety_review':'PENDING'})
         result['summary']={'original_article_count':35,'export_targets_requiring_native_validation':41,
            'independent_qa_prs_preserved':3,'qa_changed_path_witnesses':7,
+           'stale_qa_base_file_witnesses':len(result['qa_base_drift']),
            'unexplained_citation_occurrences':3,'historical_shared_source_conflicts':7,
            'candidate_articles_supplied':candidate_oids is not None,
            'complete_native_build_or_qd_approved':False}
