@@ -27,6 +27,7 @@ from strict_source_receipt_r273 import loads_strict_receipt
 from source_build_binding_r275 import verify_source_binding
 from source_smoke_receipt_r276 import valid_source_smoke_records
 from candidate_child_environment_r278 import private_child_environment
+from defender_receipt_contract_r280 import require_defender_receipt
 
 APPS = (
     "LedgerDiffLite", "InvoiceTwinScout", "SpendMapLite", "PolicyDeltaDesk",
@@ -179,7 +180,7 @@ def _source_receipt_sha256(path: Path, *, checkout_root: Path | None = None) -> 
         raise CandidateBuildRejected(ERROR) from None
 
 
-def _private_windows_report_sha256(path: Path) -> str:
+def _private_windows_report_sha256(path: Path, *, validate=None) -> str:
     """Hash a bounded native Windows evidence file without following links.
 
     An ordinary Path.read_bytes after lstat could follow a swapped link. Pin
@@ -217,6 +218,10 @@ def _private_windows_report_sha256(path: Path) -> str:
                 or _stat_identity(opened) != _stat_identity(finished)
                 or _stat_identity(before) != _stat_identity(path.lstat())):
             raise CandidateBuildRejected(ERROR)
+        if validate is not None:
+            # Validate the exact descriptor-pinned bytes, not a second open
+            # vulnerable to a path swap between checksum and JSON parsing.
+            validate(bytes(data))
         return hashlib.sha256(data).hexdigest()
     except (OSError, ValueError, TypeError):
         raise CandidateBuildRejected(ERROR) from None
@@ -305,7 +310,36 @@ def _execute_plan(root: Path, run_dir: Path, python: str, runner=_run_child) -> 
           timeout=3600)
     # Custody of the native Defender evidence is checked at completion;
     # merely returning zero without creating a real receipt is insufficient.
-    defender_hash = _private_windows_report_sha256(defender_report)
+    if runner is _run_child:
+        # Only the non-injectable public CLI is allowed to establish a native
+        # acceptance claim. Fake plan runners retain their expressly synthetic
+        # receipt fixtures; those are NOT evidence of a Defender scan.
+        pinned_r9 = {}
+
+        def capture_attested_r9(raw: bytes) -> None:
+            try:
+                document = json.loads(raw)
+                if type(document) is not dict:
+                    raise CandidateBuildRejected(ERROR)
+                pinned_r9["record"] = document
+            except (ValueError, UnicodeError, TypeError, RecursionError):
+                raise CandidateBuildRejected(ERROR) from None
+
+        # R9 was validated by the prior independent attestation subprocess.
+        # Recheck exact, descriptor-pinned R9 bytes before consuming its
+        # six artifact digests in the Defender receipt contract.
+        if _private_windows_report_sha256(report, validate=capture_attested_r9) != report_hash:
+            raise CandidateBuildRejected(ERROR)
+
+        def check_defender_claims(raw: bytes) -> None:
+            require_defender_receipt(
+                raw, expected_r9_sha256=report_hash,
+                r9_evidence=pinned_r9["record"])
+
+        defender_hash = _private_windows_report_sha256(
+            defender_report, validate=check_defender_claims)
+    else:
+        defender_hash = _private_windows_report_sha256(defender_report)
     check(script(scripts / "build_input_guard.py", "check", source_manifest))
     check(script(scripts / "toolchain_guard.py", "check", tool_manifest))
     # Same-run double pins: altered source, R9 or Defender evidence must never
