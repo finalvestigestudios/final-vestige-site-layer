@@ -17,7 +17,7 @@ A second defect: the Windows candidate runner accepted extra unexpected keys in 
 
 ## Verification boundaries
 
-Focused isolated check against a copy of the byte-for-byte R276 helper reproduced the R270 fixture failure and confirmed that the canonical six-engine mapping passes. This does not prove the full R269/R270/R273 inherited suite or new R277 integration has executed: those require a complete trusted checkout and runnable Python. Run `python -W error -m unittest discover -s products/desktop/tests -p 'test_source_smoke_runner_integration_r277.py'` and the same with `-OO -W error`, then the whole desktop suite.
+Focused isolated check against a transcription of the R276 helper reproduced the R270 fixture failure and confirmed that the canonical six-engine mapping passes. An independently reconstructed outer-validator probe on Linux ran **15/15 PASS normal + 15/15 PASS `-OO` = 30/30 isolated checks**, with Python `compileall` passing. **These probes are NOT repository integration runs and are not proof that the newly committed test module passed**; the repository-integrated R277 tests remain pending on a complete checkout. This does not prove the full R269/R270/R273 inherited suite or new R277 integration has executed: those require a complete trusted checkout and runnable Python. Run `python -W error -m unittest discover -s products/desktop/tests -p 'test_source_smoke_runner_integration_r277.py'` and the same with `-OO -W error`, then the whole desktop suite.
 
 ### Release gate
 
