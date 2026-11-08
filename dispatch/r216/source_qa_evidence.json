@@ -26,7 +26,19 @@
       "site_write": false
     }
   ],
-  "native_node_test": "PENDING",
+  "native_node_test": {
+    "status": "PASS",
+    "tests_passed": 15,
+    "tests_failed": 0,
+    "command": "node --test test_consent_copy_contract.cjs",
+    "runtime": "Node.js (local container)",
+    "exact_git_blobs": {
+      "contract": "8e5dbb47849c69b8c86a5d8a4830a488414d69d9",
+      "tests": "ed38ec7b19a5a2dfee7b64d55eb52489305d0168",
+      "specs": "380df7648d31ccf3b9a688d7d782552fa072e125"
+    },
+    "verified_byte_identical": true
+  },
   "actual_email_render": "NOT_TESTED",
   "confirmed_signup": "PROVIDER_PRIVATE_UNKNOWN",
   "released": false,
@@ -36,5 +48,12 @@
     129,
     820
   ],
-  "parent_pr": 1622
+  "parent_pr": 1622,
+  "canonical_original_test": {
+    "commit": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+    "tests_passed": 6,
+    "tests_failed": 0,
+    "files_git_oid_match": 8
+  },
+  "release": "HOLD_UNSENT_AND_NO_WORDPRESS_WRITES"
 }
