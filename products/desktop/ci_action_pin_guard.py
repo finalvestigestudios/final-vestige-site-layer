@@ -15,7 +15,7 @@ import re
 from ci_action_key_guard_r164 import ActionKeyError, verify_action_key_shape
 import sys
 
-MAX_WORKFLOW_BYTES = 128 * 1024
+from ci_workflow_budget_r292 import MAX_WORKFLOW_BYTES
 APPROVED = {
     "actions/checkout": "08c6903cd8c0fde910a37f88322edcfb5dd907a8",  # v5.0.0 · node24
     "actions/setup-python": "e797f83bcb11b83ae66e0230d6156d7c80228e7c",  # v6.0.0 · node24
