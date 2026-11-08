@@ -20,8 +20,9 @@
     {
       "key": "hypnosis-live",
       "role": "not_selected",
-      "exact_offer_page": "NOT_VERIFIED_IN_R210",
-      "commercial_activation": false
+      "exact_offer_page": "https://hypnosislive.com/mental-skills/total-focus",
+      "commercial_activation": false,
+      "refund_discrepancy": "Seller Total Focus item advertises 14-day returns; FAQ adds maximum five sessions refunded per year; terms not buyer-verified"
     },
     {
       "key": "brainwave-shots",
@@ -40,7 +41,7 @@
     {
       "id": "S01",
       "kind": "primary_study",
-      "title": "Reichle et al 2010 — Eye Movements During Mindless Reading",
+      "title": "Reichle/Reineberg/Schooler 2010 — four-participant mindless reading study",
       "url": "https://doi.org/10.1177/0956797610378686"
     },
     {
@@ -58,8 +59,9 @@
     {
       "id": "S04",
       "kind": "primary_trial",
-      "title": "Lindsay et al — Brief mindfulness and acceptance trial",
-      "url": "https://pubmed.ncbi.nlm.nih.gov/27819445/"
+      "title": "Rahl, Lindsay, Pacilio, Brown & Creswell 2017 — 147 randomized / 142 analyzed, SART behavioral discrimination",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/27819445/",
+      "full_text_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5329004/"
     },
     {
       "id": "S05",
@@ -137,7 +139,7 @@
         "S01"
       ],
       "publication": "article",
-      "caveat": "Experimental reading context, not diagnosis"
+      "caveat": "Four undergraduate participants; repeated eye movements are not independent sample-size inflation"
     },
     {
       "id": "C02",
@@ -157,7 +159,7 @@
         "S03"
       ],
       "publication": "article",
-      "caveat": "Not a population-wide constant"
+      "caveat": "Experience sampling N=2250, 46.9% of sampled moments in self-selected cohort; not universal benchmark"
     },
     {
       "id": "C04",
@@ -167,27 +169,27 @@
         "S03"
       ],
       "publication": "neither",
-      "caveat": "Observational associations cannot settle all directions of causality"
+      "caveat": "Earlier wandering predicted later lower happiness; reverse lagged association not significant; nonrandomized, confounding remains possible"
     },
     {
       "id": "C05",
-      "statement": "147 young adults randomized to 4 conditions for brief 3-day training",
+      "statement": "Rahl et al randomized 147 adults to four 3-day 20-minute instruction arms; 142 analyzed; six-minute SART was behavioral discrimination",
       "status": "SUPPORTED_IN_STUDY_CONTEXT",
       "basis": [
         "S04"
       ],
       "publication": "article",
-      "caveat": "Not the Zen12 product or general long-term clinical endpoint"
+      "caveat": "Three recorded instructional sessions, not Zen12 or a lifetime outcome; not self-reported wandering"
     },
     {
       "id": "C06",
-      "statement": "Monitoring-plus-acceptance group had lower lab-task mind-wandering than monitoring only",
+      "statement": "Rahl monitoring-plus-acceptance outperformed monitoring-only (p=.03) and reading control (p=.003) on SART discrimination, not relaxation (p=.19)",
       "status": "SUPPORTED_IN_STUDY_CONTEXT",
       "basis": [
         "S04"
       ],
       "publication": "article_and_guide",
-      "caveat": "Experimental instructions and SART outcome; no audio-product inference"
+      "caveat": "No acceptance-only arm; putative emotion-regulation mediator not tested; not a commercial-product effect"
     },
     {
       "id": "C07",
@@ -260,7 +262,7 @@
         "S05"
       ],
       "publication": "neither",
-      "caveat": "Public promotional display fluctuated in prior snapshots; taxes/checkout unknown"
+      "caveat": "Prior dated public promotional price extractions are inconsistent for reasons not established; no verified checkout amount, fees or refund execution"
     },
     {
       "id": "C14",
@@ -512,6 +514,6 @@
   "revenue_formula": "realized_net_revenue = settled_FV_owned_cash_receipts + cleared_affiliate_commissions - refunds - chargebacks - processor_fees - attributable_merchant_fees; KPI = 1000 * realized_net_revenue / qualified_human_sessions (only where denominator>0 and authoritative inputs exist)",
   "net_revenue_per_1000_sessions": null,
   "reason_not_computable": "Authoritative cleared revenue, refunds, fees and qualified-human denominator missing; NULL, never 0",
-  "references_date_checked": "2026-11-07",
+  "references_date_checked": "2026-11-07 PT / R211 QA 2026-11-07 23:xx PT",
   "release_decision": "HARD_HOLD"
 }
