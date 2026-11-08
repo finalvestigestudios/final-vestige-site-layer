@@ -13,6 +13,7 @@ from html.parser import HTMLParser
 import json
 from pathlib import Path
 import re
+import unicodedata
 
 HOLD = 'DRAFT_HARD_HOLD'
 INVALID = 'INVALID_HARD_HOLD'
@@ -24,6 +25,12 @@ ASSURANCES = ('qd pass', 'medical safety verified', 'approved for publication',
 VOID = frozenset('area base br col embed hr img input link meta param source track wbr'.split())
 FRAGMENT = re.compile(r'^#[A-Za-z][\w:.-]*$')
 SOURCE = re.compile(r'^src-[1-9][0-9]*$')
+# Block tags create visible word boundaries; inline tags and comments do not.
+BLOCK_BREAKS = frozenset(('address article aside blockquote br dd div dl dt fieldset '
+                          'figcaption figure footer form h1 h2 h3 h4 h5 h6 header hr li '
+                          'main nav ol p pre section table tbody td th thead tr ul').split())
+# Default-ignorable characters can visually conceal otherwise forbidden words.
+IGNORABLES = str.maketrans('', '', '\u00ad\u200b\u200c\u200d\u2060\ufeff')
 
 
 def invalid(errors):
@@ -71,7 +78,7 @@ class SemanticsReader(HTMLParser):
                 self.errors.append('invalid fragment identifier: ' + repr(ref))
             else:
                 self.refs.append(ref[1:])
-        if tag == 'br':
+        if tag in BLOCK_BREAKS:
             for scope in self.visible:
                 if self._inside(scope):
                     self.visible[scope].append(' ')
@@ -86,6 +93,10 @@ class SemanticsReader(HTMLParser):
     def handle_endtag(self, tag):
         if tag in VOID:
             return
+        if tag in BLOCK_BREAKS:
+            for scope in self.visible:
+                if self._inside(scope):
+                    self.visible[scope].append(' ')
         if not self.stack or self.stack[-1]['tag'] != tag:
             self.errors.append('malformed tag closure: ' + tag)
         else:
@@ -116,7 +127,10 @@ class SemanticsReader(HTMLParser):
             elif SOURCE.fullmatch(ref) and not target['bibliography_li']:
                 self.errors.append('citation fragment hijack: #' + ref)
         for scope, chunks in self.visible.items():
-            normalized = ' '.join(' '.join(chunks).lower().split())
+            # Inline tags do not add whitespace: App<span>roved</span> renders Approved.
+            # Inserting a space per text node misses such false release assurances.
+            visible = unicodedata.normalize('NFKC', ''.join(chunks)).translate(IGNORABLES)
+            normalized = ' '.join(visible.casefold().split())
             if any(token in normalized for token in ASSURANCES):
                 self.errors.append('false publication/safety assurance in ' + scope)
         return self.errors
