@@ -32,6 +32,19 @@ class SmokeReceiptContractTests(unittest.TestCase):
         self.records[0]["synthetic_output_count"] = receipt.MAX_SYNTHETIC_OUTPUTS
         self.assertTrue(receipt.valid_source_smoke_records(self.records))
 
+    def test_previous_app_and_pass_only_gate_accepted_contradictory_evidence(self):
+        # Reproduce the exact R275 condition: it checked app/PASS but ignored
+        # engine identity and positive synthetic output provenance.
+        self.records[0]["engine"] = "procurement"
+        self.records[0]["synthetic_output_count"] = 0
+        app_order = [name for name, _engine in receipt.EXPECTED]
+        old_accepted = (type(self.records) is list and len(self.records) == 6
+                        and [item.get("app") if type(item) is dict else None
+                             for item in self.records] == app_order
+                        and not any(item.get("result") != "PASS" for item in self.records))
+        self.assertTrue(old_accepted)
+        self.rejected()
+
     def test_missing_engine_rejected(self):
         self.records[0].pop("engine")
         self.rejected()
