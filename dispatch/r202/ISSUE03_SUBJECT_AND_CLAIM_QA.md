@@ -1,5 +1,5 @@
 # Optional Issue 03 copy/conversion review — NON-SENDING
-Subject: **The twelve-minute claim has two clocks** (46 characters excluding punctuation? determine programmatically rather than claim a count).
+Subject: **The twelve-minute claim has two clocks** (38 characters).
 Preheader proposed: **Zen12 describes the recordings. The evidence should determine the conclusion.**
 Subject factual? Yes, refers to duration versus asserted outcome; no miracle or discount. Preheader is a copy proposal only, **not proof that Jetpack exposes a distinct preheader field**. On WordPress, the post title drives email subject. This alternative is not a founder-approved substitution of original #03.
 
