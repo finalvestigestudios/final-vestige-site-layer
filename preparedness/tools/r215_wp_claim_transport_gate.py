@@ -50,14 +50,21 @@ class DraftReader(HTMLParser):
         self.tags=[]; self.parts=[]; self.body_count=0; self.source_count=0
         self.body_at=None; self.sources_at=None; self.cite_at=None
         self.citations=[];self.hrefs={};self.current_source=None
-        self.errors=[];self.whole=[]
+        self.errors=[];self.hidden_stack=[]
+        self.chips_at=None;self.review_at=None;self.chips_count=0;self.review_count=0
+        self.chips_text=[];self.review_text=[]
     def handle_starttag(self,tag,attrs):
         a=dict(attrs);classes=set(a.get('class','').split())
         in_body=self.body_at is not None
+        is_hidden=('hidden' in a or a.get('aria-hidden','').lower()=='true' or
+                   bool(re.search(r'display\s*:\s*none|visibility\s*:\s*hidden',a.get('style',''),re.I)) or
+                   tag in {'script','style','template','noscript'})
+        inherited_hidden=bool(self.hidden_stack and self.hidden_stack[-1])
         if in_body and (tag in BLOCKED or 'hidden' in a or a.get('aria-hidden')=='true' or re.search(r'display\s*:\s*none|visibility\s*:\s*hidden',a.get('style',''),re.I)):
             self.errors.append('hidden or active content in rendered guide body')
         if tag not in VOID:
             self.tags.append(tag)
+            self.hidden_stack.append(is_hidden or inherited_hidden)
         depth=len(self.tags)
         if 'pa-body' in classes:
             if 'hidden' in a or a.get('aria-hidden')=='true' or re.search(r'display\s*:\s*none|visibility\s*:\s*hidden',a.get('style',''),re.I):
@@ -67,6 +74,10 @@ class DraftReader(HTMLParser):
             self.body_at=depth
         if 'pa-sources' in classes:
             self.source_count+=1;self.sources_at=depth
+        if 'pa-chips' in classes:
+            self.chips_count+=1;self.chips_at=depth
+        if 'pa-review' in classes:
+            self.review_count+=1;self.review_at=depth
         if self.body_at is not None and tag=='sup' and 'pa-cite' in classes:
             if self.cite_at is not None:self.errors.append('nested cite')
             self.cite_at=depth
@@ -90,10 +101,14 @@ class DraftReader(HTMLParser):
         if self.cite_at==depth:self.cite_at=None
         if self.body_at==depth:self.body_at=None
         if self.sources_at==depth:self.sources_at=None
+        if self.chips_at==depth:self.chips_at=None
+        if self.review_at==depth:self.review_at=None
         if tag=='li' and self.current_source is not None:self.current_source=None
-        self.tags.pop()
+        self.tags.pop();self.hidden_stack.pop()
     def handle_data(self,data):
-        self.whole.append(data)
+        if not (self.hidden_stack and self.hidden_stack[-1]):
+            if self.chips_at is not None:self.chips_text.append(data)
+            if self.review_at is not None:self.review_text.append(data)
         if self.body_at is not None and self.cite_at is None:self.parts.append(data)
     def guide_text(self):
         return ' '.join(' '.join(self.parts).split())
@@ -143,7 +158,9 @@ def evaluate(dossier, originals, rendered):
                 if type(raw) is not bytes or len(raw)>5_000_000:raise ValueError('invalid draft transport bytes')
                 doc=raw.decode('utf-8','strict')
                 rd=DraftReader();rd.feed(doc);rd.close()
-                if rd.errors or rd.body_count!=1 or rd.source_count!=1 or rd.body_at is not None or rd.sources_at is not None:
+                if (rd.errors or rd.body_count!=1 or rd.source_count!=1 or
+                    rd.chips_count!=1 or rd.review_count!=1 or
+                    rd.body_at is not None or rd.sources_at is not None or rd.chips_at is not None or rd.review_at is not None):
                     raise ValueError(channel+': malformed/missing body/sources: '+';'.join(rd.errors))
                 if rd.guide_text()!=expected:raise ValueError(channel+': authored reading depth or citation order lost')
                 citation_numbers=[order.index(s)+1 for s in CITE.findall(src)]
@@ -152,8 +169,9 @@ def evaluate(dossier, originals, rendered):
                     num=order.index(c['source_id'])+1
                     if rd.hrefs.get(num)!=c['source_url']:
                         raise ValueError(channel+': held citation source destination changed')
-                whole=' '.join(rd.whole)
-                if 'Draft: not public' not in whole or 'Safety review pending' not in whole or 'human safety review is required' not in whole:
+                chips=' '.join(rd.chips_text); review=' '.join(rd.review_text)
+                if ('Draft: not public' not in chips or 'Safety review pending' not in chips or
+                    'human safety review is required' not in review):
                     raise ValueError(channel+': missing explicit draft/safety warning')
                 digests[channel]=hashlib.sha256(raw).hexdigest()
             article_rows.append({'article':n,'original_blob_sha1':sha(original),
