@@ -1,0 +1,157 @@
+{
+  "schema": "fv-nhhc-two-unresolved-catalog-bridge-v1",
+  "date_local": "2026-11-08",
+  "methods": [
+    "Existing 2026-11-08 live WordPress source readback in navy_8_live_pueblo_honda_retriever_20261108.json",
+    "Read-only NHHC search catalog results; direct catalog open subsequently gave gateway errors/timeouts"
+  ],
+  "prior_audit_path": "qa/media-recovery/navy_8_live_pueblo_honda_retriever_20261108.json",
+  "prior_audit_blob_sha": "0fe22f816dce9776d447b3ddfc7d7aeeb75ccad0",
+  "baseline": {
+    "historical_posts": 61,
+    "historical_src_refs": 355,
+    "reported_broken_42_browser_verified": false,
+    "reported_wire_reduction_76_measured": false,
+    "large_wp_originals_gt_1500000_bytes": 15,
+    "large_wp_original_stored_bytes": 47096779
+  },
+  "rows": [
+    {
+      "slot": "280:4",
+      "post_id": 280,
+      "published_src": "https://www.history.navy.mil/content/history/nhhc/research/histories/ship-histories/danfs/b/banner-ii/_jcr_content/body/media_asset/image.img.jpg",
+      "original_alt": "USS Banner, sister ship of USS Pueblo, after the Pueblo incident prompted changes to the intelligence-ship program.",
+      "original_retriever_result": "NOT_ACCESSIBLE_IN_TOOL",
+      "guest_browser_http": null,
+      "guest_current_src": null,
+      "guest_natural_dimensions": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "original_exact_photo_identity_proven": false,
+      "source_context": {
+        "url": "https://www.history.navy.mil/research/histories/ship-histories/danfs/b/banner-ii.html",
+        "text": "DANFS Banner II (AKL-25), later redesignated AGER-1 in 1967; original page source image cannot be pixel-compared."
+      },
+      "catalog_candidates": [
+        {
+          "catalog_id": "NH 68705",
+          "url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/NH-68000/NH-68705.html",
+          "description": "Port-bow view of USS Banner, 12 May 1969",
+          "master_tiff_dimensions_px": [
+            6312,
+            4750
+          ],
+          "catalog_medium_jpeg_kb": 228,
+          "conditional_max_960_px": [
+            960,
+            722
+          ],
+          "relationship": "SAME_SHIP_DIFFERENT_PHOTO_UNTIL_VISUAL_MATCH",
+          "copyright_catalog_field": "Naval History and Heritage Command",
+          "credit": "Courtesy of USS BANNER, 1969"
+        },
+        {
+          "catalog_id": "NH 68703",
+          "url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/NH-68000/NH-68703.html",
+          "description": "Stern view of USS Banner, 12 May 1969",
+          "master_tiff_dimensions_px": [
+            4766,
+            6274
+          ],
+          "catalog_medium_jpeg_kb": 213,
+          "conditional_max_960_px": [
+            960,
+            1264
+          ],
+          "relationship": "SAME_SHIP_DIFFERENT_PHOTO_UNTIL_VISUAL_MATCH",
+          "copyright_catalog_field": "Naval History and Heritage Command",
+          "credit": "Courtesy of USS BANNER, 1969"
+        },
+        {
+          "catalog_id": "NH 68706",
+          "url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/NH-68000/NH-68706.html",
+          "description": "Bow view of USS Banner, 12 May 1969",
+          "master_tiff_dimensions_px": [
+            4846,
+            6194
+          ],
+          "catalog_medium_jpeg_kb": 232,
+          "conditional_max_960_px": [
+            960,
+            1227
+          ],
+          "relationship": "SAME_SHIP_DIFFERENT_PHOTO_UNTIL_VISUAL_MATCH",
+          "copyright_catalog_field": "Naval History and Heritage Command",
+          "credit": "Courtesy of USS BANNER, 1969"
+        }
+      ],
+      "release": {
+        "native_served_jpeg_dimensions_verified": false,
+        "image_binary_sha256": null,
+        "same_exact_image_verified": false,
+        "item_reuse_cleared": false,
+        "editor_approved": false,
+        "download": false,
+        "cache": false,
+        "wordpress_media_write": false,
+        "wordpress_post_write": false
+      }
+    },
+    {
+      "slot": "288:2",
+      "post_id": 288,
+      "published_src": "https://www.history.navy.mil/content/history/nhhc/our-collections/photography/technology/communications/radio/ug-21--us-naval-california-radio-station-collection/mare-island-naval-radio-station/ug-21-01-02-mare-island-naval-radio/jcr%3Acontent/mediaitem/image.img.jpg/1564510769845.jpg",
+      "original_alt": "Early U.S. Navy radio station equipment in California, similar to the shore direction-finding infrastructure used in 1923.",
+      "original_retriever_result": "BAD_GATEWAY",
+      "guest_browser_http": null,
+      "guest_current_src": null,
+      "guest_natural_dimensions": null,
+      "guest_transfer_bytes": null,
+      "guest_broken": null,
+      "original_exact_photo_identity_proven": false,
+      "source_context": {
+        "url": "https://www.history.navy.mil/our-collections/photography/technology/communications/radio/ug-21--us-naval-california-radio-station-collection/mare-island-naval-radio-station/ug-21-01-02-mare-island-naval-radio.html",
+        "text": "NHHC UG 21-01.02: equipment in building 115 of the Electrical School at Mare Island Naval Radio Station; no catalog date demonstrating 1923 or direction-finding use."
+      },
+      "catalog_candidates": [
+        {
+          "catalog_id": "UG 21-01.02",
+          "url": "https://www.history.navy.mil/our-collections/photography/technology/communications/radio/ug-21--us-naval-california-radio-station-collection/mare-island-naval-radio-station/ug-21-01-02-mare-island-naval-radio.html",
+          "description": "Radio equipment and machinery in building 115 of Electrical School, Mare Island Naval Radio Station",
+          "master_tiff_dimensions_px": [
+            2197,
+            2773
+          ],
+          "catalog_medium_jpeg_kb": 189,
+          "conditional_max_960_px": [
+            960,
+            1212
+          ],
+          "relationship": "CATALOG_PATH_MATCH_BINARY_UNVERIFIED",
+          "copyright_catalog_field": "Naval History and Heritage Command",
+          "credit": "UG 21 U.S. Naval California Radio Station Collection; donor: found in collection; original medium glass negative"
+        }
+      ],
+      "release": {
+        "native_served_jpeg_dimensions_verified": false,
+        "image_binary_sha256": null,
+        "same_exact_image_verified": false,
+        "item_reuse_cleared": false,
+        "editor_approved": false,
+        "download": false,
+        "cache": false,
+        "wordpress_media_write": false,
+        "wordpress_post_write": false
+      }
+    }
+  ],
+  "policy": {
+    "nhhc": "https://www.history.navy.mil/our-collections/photography.html",
+    "copyright_caution": "NHHC says the Photo Section does not confirm copyright; item-level clearance remains responsibility of reuser.",
+    "max_width": 960,
+    "upscale_permitted": false,
+    "image_rehosting_authorized": false,
+    "production_changes": 0,
+    "additional_spend_usd": 0
+  }
+}
