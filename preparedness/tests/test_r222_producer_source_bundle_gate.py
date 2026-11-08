@@ -6,7 +6,7 @@ from pathlib import Path
 from unittest.mock import patch
 
 HERE = Path(__file__).resolve().parent
-spec = importlib.util.spec_from_file_location('r222_bundle', HERE / 'r222_producer_source_bundle_gate.py')
+spec = importlib.util.spec_from_file_location('r222_bundle', HERE.parent / 'tools' / 'r222_producer_source_bundle_gate.py')
 gate = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(gate)
 
@@ -84,6 +84,80 @@ class FrozenSourceTests(unittest.TestCase):
             return self.safe_read(root, relative)
         with self.assertRaisesRegex(ValueError, 'read denied'):
             gate.check_bundle(self.root, broken)
+
+
+    def test_malformed_pin_receipt_rejected_before_filesystem_access(self):
+        key = 'sources/fragments/hist-food.json'
+        with patch.dict(gate.PINNED, {key: 'd10628342fea5f177a8d1be00dd906d0c9c78'}):
+            with self.assertRaisesRegex(ValueError, '40-hex Git OIDs'):
+                self.check()
+
+    def test_nonhex_pin_receipt_rejected_before_filesystem_access(self):
+        key = 'sources/fragments/hist-home.json'
+        with patch.dict(gate.PINNED, {key: 'z' * 40}):
+            with self.assertRaisesRegex(ValueError, '40-hex Git OIDs'):
+                self.check()
+
+
+class RealCheckoutPinTests(unittest.TestCase):
+    """Unpatched receipts MUST match actual repository bytes, not synthetic OIDs."""
+
+    def test_real_pin_shape_and_known_independently_reviewed_identities(self):
+        self.assertEqual(len(gate.PINNED), 20)
+        for path, oid in gate.PINNED.items():
+            with self.subTest(path=path):
+                self.assertRegex(oid, r'^[0-9a-f]{40}
+    def test(self):
+        p = self.root / path
+        original = p.read_bytes()
+        if mode == 'modified':
+            p.write_bytes(original + b' replaced')
+        elif mode == 'truncated':
+            p.write_bytes(original[:5])
+        elif mode == 'missing':
+            p.unlink()
+        elif mode == 'symlink':
+            replacement = self.root / 'replaced-data'
+            replacement.write_bytes(original)
+            p.unlink()
+            p.symlink_to(replacement)
+        with self.assertRaises(ValueError): self.check()
+    return test
+
+
+for idx, path in enumerate(gate.PINNED, 1):
+    for mode in ('modified', 'truncated', 'missing', 'symlink'):
+        setattr(FrozenSourceTests, f'test_{idx:02d}_{mode}', mutation(path, mode))
+
+
+if __name__ == '__main__': unittest.main()
+)
+        self.assertEqual(gate.PINNED['sources/fragments/hist-food.json'],
+                         'd10628342fea5f177a8d1be00dd906d0c9c7850e')
+        self.assertEqual(gate.PINNED['sources/fragments/hist-home.json'],
+                         '8d85fd868508c5caba14a839d119d55f31f14f72')
+
+    def test_real_checkout_bundle_matches_unpatched_receipts(self):
+        # Unlike the synthetic fixtures, this test does not monkeypatch PINNED.
+        # A checkout missing any original source fails rather than skipping.
+        root = HERE.parent
+
+        def strict_read(root_path, relative):
+            current = root_path
+            for segment in Path(relative).parts:
+                if segment in ('', '.', '..') or current.is_symlink():
+                    raise ValueError('unsafe checkout path: ' + relative)
+                current = current / segment
+            if current.is_symlink() or not current.is_file():
+                raise ValueError('missing/symlinked original: ' + relative)
+            return current.read_bytes()
+
+        evidence = gate.check_bundle(root, strict_read)
+        self.assertEqual(evidence['files_verified'], 20)
+        self.assertEqual(evidence['status'], 'DRAFT_HARD_HOLD')
+        self.assertFalse(evidence['source_reading_approved'])
+        self.assertFalse(evidence['independent_qd_pass'])
+        self.assertFalse(evidence['publication_authorized'])
 
 
 def mutation(path, mode):
