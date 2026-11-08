@@ -39,7 +39,7 @@ function validate(f){
  req(!/<form\b|<script\b|<iframe\b|<video\b/i.test(hub),"no_scripts_forms_video");
  req(!/\son[a-z]+\s*=|\sformaction\s*=|\sdata-(?:checkout|affiliate|redirect|purchase)\s*=/i.test(hub),"no_handlers");
  req(!hrefs(hub).some(isCommerce),"no_checkout_links");
- const buttons=tags(hub,"button");req(buttons.length===1&&buttons.every(s=>/\bdisabled(?:\s|=|$)/.test(s)&&/\baria-disabled="true"/.test(s)),"all_buttons_inactive");
+ const buttons=tags(hub,"button");req(buttons.length===1&&buttons.every(s=>/(?:^|\s)disabled(?=\s|=|$)/i.test(s)&&/\baria-disabled="true"/.test(s)),"all_buttons_inactive");
  req(hub.includes("Prospective affiliate disclosure:")&&hub.includes("No affiliate link is active."),"adjacent_disclosure");
  req(hub.includes("https://finalvestige.com/focus/")&&hub.includes("four-stream")===false,"reuse_focus");
  req(hub.includes("Mind hub proposal remains PR #172"),"canonical_hub");
@@ -53,6 +53,7 @@ function validate(f){
  }
  req(m.offer?.activation_allowed===false&&m.offer?.authorized_earning_url===null&&m.offer?.named_approval_verified===false,"offer_hard_hold");
  req(m.alternative_owned?.activation_allowed===false&&m.alternative_owned?.product_id===null,"no_invented_owned_sku");
+ req(m.claims?.find(x=>x.id==="C06")?.status==="PUBLISHER_ABSTRACT_SUPPORTED_WITH_LIMITS","R220_Repp_abstract_corrected");
  req(m.claims?.find(x=>x.id==="C14")?.status==="SELLER_CLAIM_NOT_SUBSTANTIATED","no_meditation_equivalence");
  req(m.claims?.find(x=>x.id==="C25")?.status==="INVALID_INFERENCE","no_click_as_sale");
  req(m.conversion_contract?.no_pii===true&&m.conversion_contract?.no_fingerprinting===true&&m.conversion_contract?.new_tracking_script_allowed===false,"privacy");
@@ -76,6 +77,7 @@ function run(f){
  mutate("remove_free_exercise_limit",x=>x.article=x.article.replace("not a phonemic-restoration test","actual phonemic test"));
  mutate("make_experience_claim",x=>x.article+="\n commission earned");
  mutate("activate_button",x=>x.hub=x.hub.replace(' disabled aria-disabled="true"',""));
+ mutate("remove_native_disabled_only",x=>x.hub=x.hub.replace(/\sdisabled(?=\s|=|>)/i,""));
  mutate("append_active_button",x=>x.hub=x.hub.replace("</main>","<button>Pay</button></main>"));
  mutate("unquoted_checkout_link",x=>x.hub=x.hub.replace("</main>","<a href=https://bad.invalid/checkout?ref=yes>Pay</a></main>"));
  mutate("inline_handler",x=>x.hub=x.hub.replace("<button","<button onclick='alert(1)'"));
@@ -91,6 +93,7 @@ function run(f){
  mutate("fabricate_url",x=>edit(x,o=>o.offer.authorized_earning_url="https://bad.invalid/aff"));
  mutate("invent_owned_sku",x=>edit(x,o=>o.alternative_owned.product_id="fake"));
  mutate("publish_meditation_equivalence",x=>edit(x,o=>o.claims.find(c=>c.id==="C14").status="PRODUCT_PROVEN"));
+ mutate("restore_wrong_Repp_scope",x=>edit(x,o=>o.claims.find(c=>c.id==="C06").status="METHOD_QUESTION_ONLY"));
  mutate("equate_click_sale",x=>edit(x,o=>o.conversion_contract.affiliate_click_is_paid_sale=true));
  mutate("enable_fingerprinting",x=>edit(x,o=>o.conversion_contract.no_fingerprinting=false));
  mutate("remove_campaign_proof",x=>x.plan=x.plan.replaceAll("TASK-008","UNKNOWN"));
