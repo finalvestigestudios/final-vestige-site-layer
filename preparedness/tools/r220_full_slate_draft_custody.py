@@ -26,7 +26,7 @@ R221_AUTHORITY_PATH = 'tools/r221_frozen_route_tool_authority.py'
 R221_AUTHORITY_BLOB = '88a8d37955957b4e1cba7a73e73ed4ee1e2fe0d1'
 # R222 pins the renderer, source registers/fragments, CSS and nine inline scripts.
 R222_BUNDLE_PATH = 'tools/r222_producer_source_bundle_gate.py'
-R222_BUNDLE_BLOB = '31ee5604ccff115ded6b856ec175fa82776e08eb'
+R222_BUNDLE_BLOB = 'bd57ef0caba7ad68381fa6a22af64aff4d486c84'
 # These are independently observed R219 integration Git blobs, not certified text.
 # Missing entries MUST match the older R200 original exactly.
 INTEGRATED_DIFFS = {
