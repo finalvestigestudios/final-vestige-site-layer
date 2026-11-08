@@ -1,0 +1,511 @@
+{
+  "sprint": "R228",
+  "date": "2026-11-08",
+  "state": "UNPUBLISHED_NOT_AUTHORIZED",
+  "commerce": {
+    "activated": false,
+    "affiliate_earning_url": null,
+    "publisher_approval_document": null,
+    "enabled_checkout_controls": 0,
+    "net_revenue_per_1000_qualified_human_sessions": "NOT_COMPUTABLE",
+    "confirmed_paid_orders": "UNKNOWN",
+    "verified_cleared_commissions": "UNKNOWN"
+  },
+  "sources": [
+    {
+      "id": "MC01",
+      "type": "PRIMARY_PUBLISHER_ABSTRACT",
+      "url": "https://www.nature.com/articles/264746a0",
+      "note": "1976 original audio/visual mismatch; publisher abstract only"
+    },
+    {
+      "id": "MC02",
+      "type": "PRIMARY_OPEN_TEXT",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4580505/",
+      "note": "2015 360 observers 20 stimuli and choice effects"
+    },
+    {
+      "id": "MC03",
+      "type": "PRIMARY_OPEN_TEXT",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6231656/",
+      "note": "2018 correlates of individual susceptibility"
+    },
+    {
+      "id": "MC04",
+      "type": "PRIMARY_OPEN_TEXT",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6787151/",
+      "note": "2019 study 324 monozygotic/dizygotic twins"
+    },
+    {
+      "id": "MC05",
+      "type": "SCHOLARLY_REVIEW_OPEN_TEXT",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9894660/",
+      "note": "2023 limitations of McGurk as measure of AV speech"
+    },
+    {
+      "id": "MC06",
+      "type": "PRIMARY_ABSTRACT",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33884572/",
+      "note": "2021 Getz et al response format effects"
+    },
+    {
+      "id": "FV01",
+      "type": "LIVE_EDITORIAL",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "note": "Published change blindness piece, distinct from McGurk and inattentional blindness"
+    },
+    {
+      "id": "FV02",
+      "type": "LIVE_EDITORIAL",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "note": "Published 1784 royal commission investigation"
+    },
+    {
+      "id": "FV03",
+      "type": "LIVE_HISTORICAL_ARCHIVE",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "note": "Published source-oriented testimony dossier, not treatment evidence"
+    },
+    {
+      "id": "FV04",
+      "type": "LIVE_FREE_RESOURCE",
+      "url": "https://finalvestige.com/focus/",
+      "note": "Existing 52-page Focus resource and existing Jetpack path"
+    },
+    {
+      "id": "FV05",
+      "type": "LIVE_JOURNAL_INVENTORY",
+      "url": "https://finalvestige.com/blog/",
+      "note": "Live journal currently displays 66 results; historic Issue #171 baseline was 61 posts"
+    },
+    {
+      "id": "SE01",
+      "type": "SELLER_CATALOG",
+      "url": "https://inspire3.com/",
+      "note": "Seller catalog product names; not verified effectiveness"
+    },
+    {
+      "id": "SE02",
+      "type": "SELLER_EXACT_OFFER",
+      "url": "https://zen12.com/hnp",
+      "note": "Seller lists Premium 12 levels, 48 MP3, four styles, advertised one-year guarantee"
+    },
+    {
+      "id": "SE03",
+      "type": "SELLER_PRODUCT_INFO",
+      "url": "https://zen12.com/about",
+      "note": "Seller makes unsupported accelerated meditation and brainwave statements; do not adopt"
+    },
+    {
+      "id": "SE04",
+      "type": "SELLER_PRODUCT",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "note": "Distinct Total Focus recording; no inferred Zen12 terms"
+    },
+    {
+      "id": "FT01",
+      "type": "US_GOVERNMENT_GUIDANCE",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "note": "Material connections and honest disclosures"
+    },
+    {
+      "id": "FT02",
+      "type": "US_GOVERNMENT_GUIDANCE",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "note": "Objective health claims need competent reliable scientific proof"
+    },
+    {
+      "id": "GH01",
+      "type": "PROJECT_ISSUE",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "note": "Mandate and release gates"
+    },
+    {
+      "id": "GH02",
+      "type": "PROJECT_ISSUE",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "note": "Revenue confirmation and attribution truth"
+    },
+    {
+      "id": "GH03",
+      "type": "PROJECT_ISSUE",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/174",
+      "note": "Dispatch separate email workstream"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "status": "PRIMARY_SUPPORTED_BOUNDED",
+      "source_ids": [
+        "MC01"
+      ],
+      "summary": "1976 mismatch can lead to fused syllable report"
+    },
+    {
+      "id": "C02",
+      "status": "PRIMARY_SUPPORTED_BOUNDED",
+      "source_ids": [
+        "MC02"
+      ],
+      "summary": "Fusion varies across participants and stimuli"
+    },
+    {
+      "id": "C03",
+      "status": "PRIMARY_SUPPORTED_BOUNDED",
+      "source_ids": [
+        "MC02"
+      ],
+      "summary": "Forced vs open-ended response can change reported rate"
+    },
+    {
+      "id": "C04",
+      "status": "PRIMARY_SUPPORTED_BOUNDED",
+      "source_ids": [
+        "MC03"
+      ],
+      "summary": "Measured lipreading skill relates to susceptibility, not general intelligence"
+    },
+    {
+      "id": "C05",
+      "status": "PRIMARY_SUPPORTED_BOUNDED",
+      "source_ids": [
+        "MC04"
+      ],
+      "summary": "Twin design found only small paired predictive value"
+    },
+    {
+      "id": "C06",
+      "status": "REVIEW_LIMITED",
+      "source_ids": [
+        "MC05"
+      ],
+      "summary": "AV speech enhancement not identical to incongruent fusion"
+    },
+    {
+      "id": "C07",
+      "status": "ABSTRACT_BOUNDED",
+      "source_ids": [
+        "MC06"
+      ],
+      "summary": "Same stimuli 10%-60% fusion under varied procedures"
+    },
+    {
+      "id": "C08",
+      "status": "LIVE_PAGE_PUBLIC",
+      "source_ids": [
+        "FV01"
+      ],
+      "summary": "Change Blindness live route exists; no McGurk live route"
+    },
+    {
+      "id": "C09",
+      "status": "HISTORICAL_EVIDENCE_ONLY",
+      "source_ids": [
+        "FV03"
+      ],
+      "summary": "Puységur source material not independently therapeutic proof"
+    },
+    {
+      "id": "C10",
+      "status": "LIVE_FREE_RESOURCE",
+      "source_ids": [
+        "FV04"
+      ],
+      "summary": "Focus is free existing 52 page pathway; no duplicate list"
+    },
+    {
+      "id": "C11",
+      "status": "SELLER_DESCRIBED_ONLY",
+      "source_ids": [
+        "SE02"
+      ],
+      "summary": "Zen12 Premium advertised as twelve levels"
+    },
+    {
+      "id": "C12",
+      "status": "SELLER_DESCRIBED_ONLY",
+      "source_ids": [
+        "SE02"
+      ],
+      "summary": "Premium advertised as 48 MP3 files"
+    },
+    {
+      "id": "C13",
+      "status": "SELLER_DESCRIBED_ONLY",
+      "source_ids": [
+        "SE02"
+      ],
+      "summary": "Premium advertised as four listening styles"
+    },
+    {
+      "id": "C14",
+      "status": "SELLER_PROMISE_UNVERIFIED_FULFILLMENT",
+      "source_ids": [
+        "SE02"
+      ],
+      "summary": "One-year refund advertised; fulfillment unauthenticated"
+    },
+    {
+      "id": "C15",
+      "status": "PRICE_CHECKOUT_UNVERIFIED",
+      "source_ids": [
+        "SE02"
+      ],
+      "summary": "Variable displayed promotional price; no final checkout proof"
+    },
+    {
+      "id": "C16",
+      "status": "PRODUCT_EFFECT_UNSUBSTANTIATED",
+      "source_ids": [
+        "SE03",
+        "FT02"
+      ],
+      "summary": "Twelve minutes equals one hour NOT substantiated for specific product"
+    },
+    {
+      "id": "C17",
+      "status": "PRODUCT_EFFECT_UNSUBSTANTIATED",
+      "source_ids": [
+        "SE03",
+        "FT02"
+      ],
+      "summary": "Audio product-specific anxiety/health effects NOT established"
+    },
+    {
+      "id": "C18",
+      "status": "PRODUCT_EFFECT_UNSUBSTANTIATED",
+      "source_ids": [
+        "SE03",
+        "FT02"
+      ],
+      "summary": "Brainwave entrainment consumer-outcome claims NOT verified"
+    },
+    {
+      "id": "C19",
+      "status": "SELLER_ONLY_DISTINCT",
+      "source_ids": [
+        "SE04"
+      ],
+      "summary": "Hypnosis Live Total Focus distinct seller listing; no equivalence"
+    },
+    {
+      "id": "C20",
+      "status": "ENDORSEMENT_COMPLIANCE",
+      "source_ids": [
+        "FT01"
+      ],
+      "summary": "Material earning link disclosure should be clear and adjacent"
+    },
+    {
+      "id": "C21",
+      "status": "CLAIM_COMPLIANCE",
+      "source_ids": [
+        "FT02"
+      ],
+      "summary": "Independent claims require product-specific relevant proof"
+    },
+    {
+      "id": "C22",
+      "status": "PUBLISHER_APPROVAL_UNVERIFIED",
+      "source_ids": [
+        "GH01"
+      ],
+      "summary": "Named affiliate approval NOT authenticated"
+    },
+    {
+      "id": "C23",
+      "status": "CHANNEL_PERMISSIONS_UNVERIFIED",
+      "source_ids": [
+        "GH01"
+      ],
+      "summary": "Social/email/website permissions NOT authenticated"
+    },
+    {
+      "id": "C24",
+      "status": "EARNING_LINK_NOT_ISSUED_VERIFIED",
+      "source_ids": [
+        "GH01"
+      ],
+      "summary": "No verified account-issued earning link"
+    },
+    {
+      "id": "C25",
+      "status": "OWNED_PAYHIP_SKU_UNVERIFIED",
+      "source_ids": [
+        "GH02"
+      ],
+      "summary": "No rights-cleared sellable Mind SKU validated"
+    },
+    {
+      "id": "C26",
+      "status": "PROVIDER_CONFIRMED_LEADS_UNVERIFIED",
+      "source_ids": [
+        "GH02"
+      ],
+      "summary": "Focus success URL indicator cannot prove real subscriber"
+    },
+    {
+      "id": "C27",
+      "status": "PAID_TRANSACTIONS_UNVERIFIED",
+      "source_ids": [
+        "GH02"
+      ],
+      "summary": "Clicks not authenticated purchases or cleared commission"
+    },
+    {
+      "id": "C28",
+      "status": "REVENUE_NOT_COMPUTABLE",
+      "source_ids": [
+        "GH02"
+      ],
+      "summary": "No authoritative seven/thirty day revenue and qualified session denominator"
+    },
+    {
+      "id": "C29",
+      "status": "CREATOR_IDS_UNVERIFIED",
+      "source_ids": [
+        "GH02"
+      ],
+      "summary": "Proposed creator to article map not three verified published posts"
+    },
+    {
+      "id": "C30",
+      "status": "DISPATCH_SEPARATE_UNSENT",
+      "source_ids": [
+        "GH03"
+      ],
+      "summary": "No email draft ownership or sends authorized"
+    },
+    {
+      "id": "C31",
+      "status": "VIDEO_NOT_RENDERED",
+      "source_ids": [
+        "GH01"
+      ],
+      "summary": "Optional 42-second storyboard not playable video"
+    }
+  ],
+  "release_gates": [
+    {
+      "id": "named_publisher_approval",
+      "status": "HARD_HOLD",
+      "notes": "Requires independently verifiable external evidence or explicit release authority; source-level check does not satisfy."
+    },
+    {
+      "id": "permitted_website_channel",
+      "status": "HARD_HOLD",
+      "notes": "Requires independently verifiable external evidence or explicit release authority; source-level check does not satisfy."
+    },
+    {
+      "id": "permitted_social_channel",
+      "status": "HARD_HOLD",
+      "notes": "Requires independently verifiable external evidence or explicit release authority; source-level check does not satisfy."
+    },
+    {
+      "id": "permitted_email_channel",
+      "status": "HARD_HOLD",
+      "notes": "Requires independently verifiable external evidence or explicit release authority; source-level check does not satisfy."
+    },
+    {
+      "id": "issued_affiliate_earning_url",
+      "status": "HARD_HOLD",
+      "notes": "Requires independently verifiable external evidence or explicit release authority; source-level check does not satisfy."
+    },
+    {
+      "id": "commission_cookie_and_tracking_terms",
+      "status": "HARD_HOLD",
+      "notes": "Requires independently verifiable external evidence or explicit release authority; source-level check does not satisfy."
+    },
+    {
+      "id": "settlement_refund_reversal_terms",
+      "status": "HARD_HOLD",
+      "notes": "Requires independently verifiable external evidence or explicit release authority; source-level check does not satisfy."
+    },
+    {
+      "id": "exact_product_benefit_proof",
+      "status": "HARD_HOLD",
+      "notes": "Requires independently verifiable external evidence or explicit release authority; source-level check does not satisfy."
+    },
+    {
+      "id": "current_checkout_total",
+      "status": "HARD_HOLD",
+      "notes": "Requires independently verifiable external evidence or explicit release authority; source-level check does not satisfy."
+    },
+    {
+      "id": "seller_refund_terms_and_real_fulfillment",
+      "status": "HARD_HOLD",
+      "notes": "Requires independently verifiable external evidence or explicit release authority; source-level check does not satisfy."
+    },
+    {
+      "id": "owned_payhip_rights_cleared_mind_sku",
+      "status": "HARD_HOLD",
+      "notes": "Requires independently verifiable external evidence or explicit release authority; source-level check does not satisfy."
+    },
+    {
+      "id": "owned_payhip_checkout_and_delivery",
+      "status": "HARD_HOLD",
+      "notes": "Requires independently verifiable external evidence or explicit release authority; source-level check does not satisfy."
+    },
+    {
+      "id": "provider_confirmed_jetpack_leads",
+      "status": "HARD_HOLD",
+      "notes": "Requires independently verifiable external evidence or explicit release authority; source-level check does not satisfy."
+    },
+    {
+      "id": "grok_asset_ids_post_urls_and_mobile_routes",
+      "status": "HARD_HOLD",
+      "notes": "Requires independently verifiable external evidence or explicit release authority; source-level check does not satisfy."
+    },
+    {
+      "id": "first_party_metrics_privacy_review",
+      "status": "HARD_HOLD",
+      "notes": "Requires independently verifiable external evidence or explicit release authority; source-level check does not satisfy."
+    },
+    {
+      "id": "founder_prod_release_approval",
+      "status": "HARD_HOLD",
+      "notes": "Requires independently verifiable external evidence or explicit release authority; source-level check does not satisfy."
+    }
+  ],
+  "measurement": {
+    "primary": "net_realized_revenue_per_1000_qualified_human_sessions",
+    "periods_days": [
+      7,
+      30
+    ],
+    "landing_event": "qualified_campaign_landing",
+    "outbound_event": "affiliate_outbound_NOT_SALE",
+    "lead_event": "provider_confirmed_signup_only",
+    "purchase_event": "merchant_confirmed_paid_order_or_cleared_partner_commission",
+    "net_definition": "settled_receipts_plus_cleared_commissions_minus_refunds_minus_platform_fees_and_chargebacks",
+    "denominator_state": "UNVERIFIED",
+    "actual_kpi": "NOT_COMPUTABLE",
+    "do_not_collect": [
+      "email",
+      "IP",
+      "full_query_string",
+      "user_agent_fingerprint"
+    ],
+    "collection": "reuse existing provider and first-party permitted UTM only; no duplicate analytics scripts"
+  },
+  "experiments": {
+    "comparison": "A text guide vs B same core guide + optional original 42-second film concept",
+    "currently_live": false,
+    "rendered_film": false,
+    "randomization_activated": false,
+    "metric": "merchant-verified paid conversion and realized net revenue, not click-only"
+  },
+  "governance": {
+    "never_modify": [
+      "PR #49",
+      "Mind PR #172",
+      "Issue #150",
+      "Jetpack welcome message",
+      "Grok TASK-008 production queue"
+    ],
+    "wordpress_live_writes": false,
+    "emails_sent": false,
+    "affiliate_links_activated": false
+  }
+}
