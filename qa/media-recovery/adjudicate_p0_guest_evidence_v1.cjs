@@ -86,13 +86,18 @@ function validateNetwork(slot,page,kind){
     slot.network_final_identity_verified!==true||slot.redirected_image_identity_unverified===true||
     n.status!==slot.http_status||String(n.mime_type||'').split(';')[0].trim().toLowerCase()!==
        String(slot.response_mime_type||'').split(';')[0].trim().toLowerCase())return null;
+ // Cached errors (including service-worker 404s) must not establish a fresh
+ // network-origin P0 failure. All cache indicators must explicitly be false.
+ if(n.was_cached!==false||n.from_disk_cache!==false||n.from_service_worker!==false)return null;
  if(kind==='loaded'){
-  if(n.status!==200||!/^image\//i.test(n.mime_type||'')||
+  if(!Number.isSafeInteger(slot.natural_width)||slot.natural_width<=0||
+     !Number.isSafeInteger(slot.natural_height)||slot.natural_height<=0||
+     n.status!==200||!/^image\//i.test(n.mime_type||'')||
      !Number.isSafeInteger(n.encoded_data_length)||n.encoded_data_length<=0||
      slot.transfer_bytes!==n.encoded_data_length||n.error||
      n.was_cached!==false||n.from_disk_cache!==false||n.from_service_worker!==false)return null;
  } else if(kind==='broken'){
-  if(slot.natural_width!==0)return null;
+  if(slot.natural_width!==0||slot.natural_height!==0)return null;
   const networkFailure=typeof n.error==='string'&&!!n.error.trim()&&
      slot.visual_failure_kind==='network_error'&&n.error===slot.network_failure;
   const httpError=safeInt(n.status)&&n.status>=400&&slot.visual_failure_kind==='http_error';
