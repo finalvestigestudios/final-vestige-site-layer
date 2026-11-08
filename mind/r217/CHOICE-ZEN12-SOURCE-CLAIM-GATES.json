@@ -135,12 +135,12 @@
     },
     {
       "id": "C03",
-      "claim": "Marketplace jam/tea research included covertly switched samples",
+      "claim": "Hall et al. 2010 examined choice blindness when tasting jam and smelling tea",
       "status": "SUPPORTED_NARROW",
       "source_ids": [
         "S03"
       ],
-      "limits": "No more than one-third of manipulated trials detected overall per published abstract."
+      "limits": "Two-ended containers inverted during initial sampling; approximately one-third detection combines concurrent, retrospective and sensory-change measures, not instant detection alone."
     },
     {
       "id": "C04",
@@ -153,12 +153,12 @@
     },
     {
       "id": "C05",
-      "claim": "Independent computerized choice-blindness research examined detection and preferences",
+      "claim": "Taya et al. 2014 found short-term preference differences that were not significant at later reassessment",
       "status": "SUPPORTED_NARROW",
       "source_ids": [
         "S05"
       ],
-      "limits": "Follow-up and response timing are separate outcomes; long-term change not guaranteed."
+      "limits": "25 of 32 returned 9–29 days later (mean 16.1); no trial-type effect at follow-up p=.93. Avoid persistence or permanent preference inference."
     },
     {
       "id": "C06",
