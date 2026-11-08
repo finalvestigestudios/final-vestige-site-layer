@@ -12,8 +12,32 @@ const FILES = {
 };
 const GATES = ['named_publisher_approval','permitted_website_channel','permitted_social_channel','permitted_email_channel','account_issued_earning_link','commission_tracking_terms','settlement_and_reversal_terms','exact_product_claim_proof','current_checkout_total','current_refund_terms_and_fulfillment','owned_payhip_rights_cleared_sku','owned_product_checkout_and_delivery','provider_confirmed_focus_lead','grok_asset_media_destination_reconciled','first_party_attribution_review','founder_release_approval'];
 const LOCKED_CLAIMS = {
- Z06:'UNSUBSTANTIATED_EXCLUDE_AS_BENEFIT',Z07:'UNSUBSTANTIATED_PRODUCT_CLAIM_EXCLUDE',Z08:'UNSUBSTANTIATED_PRODUCT_CLAIM_EXCLUDE',
- H04:'UNSUBSTANTIATED_PRODUCT_CLAIM_EXCLUDE',A01:'INDIVIDUAL_PERMISSION_UNVERIFIED',A02:'HARD_HOLD',F02:'OWNED_SALE_NOT_VERIFIED',F03:'SETTLEMENT_UNVERIFIED'
+ "Z01": "SELLER_DESCRIBED_ONLY",
+ "Z02": "SELLER_DESCRIBED_ONLY",
+ "Z03": "DATED_PUBLIC_AMOUNT_NOT_CHECKOUT",
+ "Z04": "SELLER_PROMISE_NOT_REDEMPTION_VERIFIED",
+ "Z05": "SELLER_DESCRIBED_ONLY",
+ "Z06": "UNSUBSTANTIATED_EXCLUDE_AS_BENEFIT",
+ "Z07": "UNSUBSTANTIATED_PRODUCT_CLAIM_EXCLUDE",
+ "Z08": "UNSUBSTANTIATED_PRODUCT_CLAIM_EXCLUDE",
+ "H01": "SELLER_DESCRIBED_ONLY",
+ "H02": "DATED_PUBLIC_AMOUNT_NOT_CHECKOUT",
+ "H03": "SELLER_POLICY_NOT_FULFILLMENT_VERIFIED",
+ "H04": "UNSUBSTANTIATED_PRODUCT_CLAIM_EXCLUDE",
+ "R01": "INDEPENDENT_REVIEW_LIMITED",
+ "R02": "INDEPENDENT_REVIEW_LIMITED",
+ "R03": "INDEPENDENT_RCT_NOT_PRODUCT",
+ "R04": "INDEPENDENT_RCT_NOT_PRODUCT",
+ "R05": "INDEPENDENT_RCT_NOT_PRODUCT",
+ "R06": "PROFESSIONAL_DEFINITION_NOT_PRODUCT_PROOF",
+ "R07": "THEORETICAL_REVIEW",
+ "E01": "GOVERNMENT_GUIDANCE",
+ "E02": "GOVERNMENT_GUIDANCE",
+ "A01": "INDIVIDUAL_PERMISSION_UNVERIFIED",
+ "A02": "HARD_HOLD",
+ "F01": "LIVE_PAGE_OBSERVABLE_PROVIDER_LEAD_UNVERIFIED",
+ "F02": "OWNED_SALE_NOT_VERIFIED",
+ "F03": "SETTLEMENT_UNVERIFIED"
 };
 const URLS = ['https://inspire3.com/','https://zen12.com/hnp','https://hypnosislive.com/mental-skills/total-focus','https://hypnosislive.com/faq','https://eprints.bournemouth.ac.uk/31277/','https://pubmed.ncbi.nlm.nih.gov/36526937/','https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance','https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking'];
 function tags(html,name){return Array.from(html.matchAll(new RegExp('<'+name+'\\b[^>]*>','gi')),m=>m[0])}
@@ -29,7 +53,7 @@ function check(f){
  const sources=new Map((m.sources||[]).map(x=>[x.id,x]));
  if(sources.size!==m.sources?.length||m.sources?.length<20)fail('source register missing or duplicated');
  for(const u of URLS)if(!m.sources.some(x=>x.url===u))fail('mandatory source missing: '+u);
- const ids=(m.claims||[]).map(x=>x.id);if(new Set(ids).size!==ids.length||ids.length<26)fail('claim count or duplicate');
+ const ids=(m.claims||[]).map(x=>x.id);if(new Set(ids).size!==ids.length||ids.length!==Object.keys(LOCKED_CLAIMS).length)fail('claim count or duplicate');
  for(const [id,state] of Object.entries(LOCKED_CLAIMS)){const arr=m.claims.filter(x=>x.id===id);if(arr.length!==1||arr[0].status!==state)fail('claim identity/status weakened '+id);if(!arr[0]?.source_ids?.length||arr[0].source_ids.some(s=>!sources.has(s)))fail('claim provenance '+id)}
  for(const c of m.claims)if(!c.source_ids?.length||c.source_ids.some(s=>!sources.has(s)))fail('invalid source reference '+c.id);
  for(const [k,h] of [['a',f.a],['b',f.b],['hub',f.hub]]){
@@ -80,6 +104,7 @@ function mutationCases(f){
   put('gate deleted '+id,'matrix',JSON.stringify(gone));
  }
  for(const [id] of Object.entries(LOCKED_CLAIMS)){const parsed=JSON.parse(f.matrix);parsed.claims.find(c=>c.id===id).status='VERIFIED_APPROVED';put('evidence fabricated '+id,'matrix',JSON.stringify(parsed))}
+ for(const [id] of Object.entries(LOCKED_CLAIMS)){const parsed=JSON.parse(f.matrix);parsed.claims=parsed.claims.filter(c=>c.id!==id);put('claim deleted '+id,'matrix',JSON.stringify(parsed)); const renamed=JSON.parse(f.matrix);renamed.claims.find(c=>c.id===id).id=id+'_RENAMED';put('claim renamed '+id,'matrix',JSON.stringify(renamed))}
  put('film removed','b',f.b.replace(/<!-- OPTIONAL_FILM_START -->[\s\S]*?<!-- OPTIONAL_FILM_END -->/,''));
  put('A/B drift','b',f.b.replace('twelve sequential levels','eleven sequential levels'));
  put('caption missing','vtt',f.vtt.replace('Try twelve quiet minutes for free. Then decide what a library is worth to you.',''));
