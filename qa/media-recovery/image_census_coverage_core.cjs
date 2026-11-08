@@ -12,6 +12,7 @@ function proofKind(v){
     !sameSource(v.stored_url,v.current_src)||v.complete!==true)return 'unresolved';
  if(v.result==='loaded_in_probe_browser'&&v.verified_broken_in_browser===false&&
     Number.isSafeInteger(v.natural_width)&&v.natural_width>0&&
+    Number.isSafeInteger(v.natural_height)&&v.natural_height>0&&
     v.http_status===200&&goodUrl(v.request_url)&&
     sameSource(v.current_src,v.request_url)&&
     v.loaded_network_proof_verified===true&&
@@ -20,7 +21,7 @@ function proofKind(v){
     Number.isSafeInteger(v.transfer_bytes)&&v.transfer_bytes>0&&
     v.redirected_image_identity_unverified!==true)return 'loaded';
  if(v.result==='confirmed_broken_in_probe_browser'&&v.verified_broken_in_browser===true&&
-    v.natural_width===0&&goodUrl(v.request_url)&&
+    v.natural_width===0&&v.natural_height===0&&goodUrl(v.request_url)&&
     v.network_final_identity_verified===true&&
     v.redirected_image_identity_unverified!==true&&
     sameSource(v.current_src,v.request_url)){
