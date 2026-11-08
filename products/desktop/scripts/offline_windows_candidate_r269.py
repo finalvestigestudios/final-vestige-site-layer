@@ -147,14 +147,21 @@ def _source_receipt_sha256(path: Path, *, checkout_root: Path | None = None) -> 
                        for item in inventory)):
             raise CandidateBuildRejected(ERROR)
         smoke = receipt["source_smoke"]
-        if (type(smoke) is not dict or smoke.get("schema") != "fvs-source-smoke-v1"
-                or smoke.get("all_six_passed") is not True
-                or smoke.get("released") is not False
-                or smoke.get("qd_approved") is not False):
-            raise CandidateBuildRejected(ERROR)
-        if (smoke.get("scope") != "PYTHON_SOURCE_ONLY_NOT_WINDOWS_BINARY_VERIFICATION"
-                or not isinstance(smoke.get("source_inventory"), list)
+        required_smoke = {"schema", "scope", "released", "qd_approved", "commit",
+                          "source_inventory", "application_results", "all_six_passed"}
+        if (type(smoke) is not dict or set(smoke) != required_smoke
+                or smoke["schema"] != "fvs-source-smoke-v1"
+                or smoke["all_six_passed"] is not True
+                or smoke["released"] is not False
+                or smoke["qd_approved"] is not False
+                or smoke["scope"] != "PYTHON_SOURCE_ONLY_NOT_WINDOWS_BINARY_VERIFICATION"
+                or type(smoke["source_inventory"]) is not list
                 or not smoke["source_inventory"]):
+            raise CandidateBuildRejected(ERROR)
+        commit = smoke["commit"]
+        if (type(commit) is not str or
+                (commit and (len(commit) not in (40, 64)
+                             or any(char not in "0123456789abcdef" for char in commit)))):
             raise CandidateBuildRejected(ERROR)
         results = smoke.get("application_results")
         # A PASS label alone is insufficient: verify the exact engine, complete
