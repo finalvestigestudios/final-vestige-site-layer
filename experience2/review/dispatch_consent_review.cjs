@@ -6,9 +6,9 @@ const NEW_H='New investigations, delivered when we publish.';
 const OLD_C='Unsubscribe anytime · <a href="/dispatch/">About The Dispatch</a>';
 const NEW_C='Sent when we publish. Some emails may contain recommendations that earn us a commission. Unsubscribe anytime · <a href="/dispatch/">About The Dispatch</a> · <a href="/privacy-policy/">Privacy Policy</a>';
 const OLD_STYLE='<p class="has-text-align-center" style="font-size:10px;font-weight:750;letter-spacing:0.1em;margin-top:18px">';
-const NEW_STYLE=OLD_STYLE.replace('font-size:10px','font-size:14px');
+const NEW_STYLE=OLD_STYLE.replace('font-size:10px','font-size:14px').replace('font-weight:750','font-weight:400').replace('letter-spacing:0.1em','letter-spacing:normal');
 const OLD_BLOCK='<!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"10px","fontWeight":"750","letterSpacing":"0.1em"},"spacing":{"margin":{"top":"18px"}}}} -->';
-const NEW_BLOCK=OLD_BLOCK.replace('"10px"','"14px"');
+const NEW_BLOCK=OLD_BLOCK.replace('"10px"','"14px"').replace('"750"','"400"').replace('"0.1em"','"normal"');
 const IDS=['fv-hf-title','fv-hf-chronicle','fv-hf-evidence','fv-hf-inquiry','fv-hf-method-title','fv-hf-observer','fv-hf-mind-title'];
 function check(cond,why){if(!cond)throw Error('HOLD: '+why);}
 function n(s,x){return s.split(x).length-1;}
