@@ -39,7 +39,7 @@ function validatePage(s,kind){
  check(/Ingendoh/.test(s)&&/Slagter/.test(s),"independent science");
  check(/finalvestige\.com\/focus/.test(s),"original Focus pathway");
  check(/subscribe before/.test(s)===false,"no subscription pressure");
- if(kind==="B"){check(/optional-film/.test(s),"B adds optional film");check(/Read the complete 42-second script/.test(s),"B transcript");check(/<svg/.test(s)&&/role="img"/.test(s),"B original accessible vector poster");check(/no playable or rendered video/.test(s),"B clearly unrendered");}
+ if(kind==="B"){check(/optional-film/.test(s),"B adds optional film");check(/Read the complete 42-second script/.test(s),"B transcript");check(/<svg/.test(s)&&/role="img"/.test(s),"B original accessible vector poster");check(/not a playable or rendered video/.test(s),"B clearly unrendered");}
  else{check(!/optional-film/.test(s),"A no film");}
 }
 function validateMatrix(raw){
