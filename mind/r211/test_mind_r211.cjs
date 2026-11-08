@@ -26,8 +26,8 @@ function validate(f){
  }
  check(/UNPUBLISHED/.test(f.article)&&/not product-specific evidence|not product-specific proof|not product-specific|not proof of|not evidence for/.test(f.article),'history and commerce separated');
  check(f.guide.includes('https://hypnosislive.com/mental-skills/total-focus')&&f.guide.includes('https://hypnosislive.com/faq'),'exact item plus FAQ');
- check(f.guide.includes('five refunded sessions per year')&&f.guide.includes('14-day'),'refund limit adjacent in guide');
- check(f.guide.includes('has not')&&f.guide.includes('authenticated Inspire3')&&f.guide.includes('No earning link'),'non testimonial and gated sales');
+ check(f.guide.includes('maximum of five sessions per year')&&f.guide.includes('14-day'),'refund limit adjacent in guide');
+ check(f.guide.includes('not purchased, listened')&&f.guide.includes('an authenticated Inspire3 publisher authorization')&&f.guide.includes('No earning link'),'non testimonial and gated sales');
  check(f.guide.includes('https://zen12.com/hnp')&&f.guide.includes('48 MP3'),'actual merchant offer not invented');
  check(f.hub.includes('UNPUBLISHED')&&f.hub.includes('href="https://finalvestige.com/focus/"'),'hub source-only with Focus');
  check(['stream-perception','stream-history','stream-practice','stream-tools'].every(x=>f.hub.includes('id="'+x+'"')),'four streams present');
@@ -81,7 +81,7 @@ function mutationSuite(origin){
  ['insert tracking script B',x=>x.b+='\n<script src="https://analytics.example.test/x.js"></script>'],
  ['duplicate Focus form',x=>x.hub+='\n<form><input name="email"/></form>'],
  ['remove SVG accessible title',x=>x.hub=x.hub.replace('<title id="knot-title">','<p id="knot-title">')],
- ['erase refund limitation',x=>x.guide=x.guide.replace('five refunded sessions per year','unlimited refunds')],
+ ['erase refund limitation',x=>x.guide=x.guide.replace('maximum of five sessions per year','unlimited refunds')],
  ['assert seller proof',x=>{const j=JSON.parse(x.matrix);j.claims.find(c=>c.id==='C13').status='PROVEN';x.matrix=JSON.stringify(j)}],
  ['invent partner approval',x=>{const j=JSON.parse(x.matrix);j.claims.find(c=>c.id==='C20').status='APPROVED';x.matrix=JSON.stringify(j)}],
  ['turn affiliate activation on',x=>{const j=JSON.parse(x.matrix);j.public_commerce_activation=true;x.matrix=JSON.stringify(j)}],
