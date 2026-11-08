@@ -1,0 +1,86 @@
+{
+  "status": "UNSENT_REVIEW_ONLY",
+  "baseline_source_sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "baseline_manifest_blob_sha": "86df98ad8a84e583ff5df64ddbf8c0eaa1335b00",
+  "review_base_pr": 1629,
+  "send_permitted": false,
+  "wordpress_posts_created": false,
+  "commercial_permission": false,
+  "wordpress_read_only_as_of": "2026-11-08T20:39:25Z",
+  "subscriber_counters": {
+    "total": 3,
+    "confirmed": 3,
+    "unconfirmed": 2,
+    "wpcom_followers": 3,
+    "email_only_followers": 0,
+    "eligible_recipients": null
+  },
+  "issues": [
+    {
+      "number": 1,
+      "kind": "editorial",
+      "subject": "The mind is not a camera",
+      "preheader": "What an old record can teach us about the difference between seeing and knowing.",
+      "destination": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "post_id": null,
+      "actual_native_preview": "NOT_TESTED",
+      "actual_inbox_preheader": "NOT_VERIFIED",
+      "status": "HOLD_UNSENT"
+    },
+    {
+      "number": 2,
+      "kind": "editorial",
+      "subject": "Before hypnosis had a name",
+      "preheader": "The eighteenth-century witnesses who left behind a problem of proof.",
+      "destination": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "post_id": null,
+      "actual_native_preview": "NOT_TESTED",
+      "actual_inbox_preheader": "NOT_VERIFIED",
+      "status": "HOLD_UNSENT"
+    },
+    {
+      "number": 3,
+      "kind": "commercial-review-pending",
+      "subject": "The twelve-minute meditation question",
+      "preheader": "An honest way to evaluate a short audio practice before you spend anything.",
+      "destination": "[[APPROVED_ZEN12_WARMUP_GUIDE_URL_REQUIRED]]",
+      "post_id": null,
+      "actual_native_preview": "NOT_TESTED",
+      "actual_inbox_preheader": "NOT_VERIFIED",
+      "status": "HOLD_UNSENT"
+    },
+    {
+      "number": 4,
+      "kind": "editorial",
+      "subject": "Fourteen seconds. A much longer explanation.",
+      "preheader": "Apollo 1, the surviving record, and why a tidy cause can mislead.",
+      "destination": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/",
+      "post_id": null,
+      "actual_native_preview": "NOT_TESTED",
+      "actual_inbox_preheader": "NOT_VERIFIED",
+      "status": "HOLD_UNSENT"
+    },
+    {
+      "number": 5,
+      "kind": "commercial-review-pending",
+      "subject": "Before you press play on a hypnosis audio",
+      "preheader": "Three questions that matter more than an impressive promise.",
+      "destination": "[[APPROVED_HYPNOSIS_LIVE_WARMUP_GUIDE_URL_REQUIRED]]",
+      "post_id": null,
+      "actual_native_preview": "NOT_TESTED",
+      "actual_inbox_preheader": "NOT_VERIFIED",
+      "status": "HOLD_UNSENT"
+    },
+    {
+      "number": 6,
+      "kind": "editorial",
+      "subject": "What did seven days of attention reveal?",
+      "preheader": "A small experiment, a useful notebook, and no miracle claims.",
+      "destination": "https://finalvestige.com/focus/",
+      "post_id": null,
+      "actual_native_preview": "NOT_TESTED",
+      "actual_inbox_preheader": "NOT_VERIFIED",
+      "status": "HOLD_UNSENT"
+    }
+  ]
+}
