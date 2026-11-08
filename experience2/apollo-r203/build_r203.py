@@ -81,7 +81,7 @@ def build() -> dict:
     }
     (DIST/'conversion-validation.json').write_text(json.dumps(plan,indent=2,sort_keys=True)+'\n',encoding='utf-8')
     manifest={'release':'r203','parent_head':'ad10ccf0c0df350fc5ba0bfa4986957c11370e5d',
-      'scope':'Remove residual prototype language and add free accessible NASA source comparison',
+      'scope':'Replace component jargon with reader-facing NASA evidence language and a concise source route',
       'files':{k:sha(v) for k,v in sorted(files.items())},
       'conversion_validation_sha256':sha((DIST/'conversion-validation.json').read_bytes()),
       'parent_manifest_sha256':sha((prior/'manifest.json').read_bytes()),
