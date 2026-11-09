@@ -11,6 +11,7 @@ from .review import labels_for_report, normalized_collision, price_exceeds_toler
 from .identity_inputs import normalize_key, parse_date as _parse_date_native
 from .audit_display import _escape_source_character
 from .csv_diagnostics import csv_input_error
+from .csv_parser_privacy import safe_csv_header, safe_csv_rows
 from .invoice_match import candidate_pairs, review_flags as invoice_review_flags
 from .csv_formula_guard import has_unescaped_formula_prefix
 from .csv_native_cell import native_report_text
@@ -199,10 +200,7 @@ def table(path, required, optional=(), *, include_headers=False, include_digest=
         # DictReader's enumerate() only counts logical records, and gives
         # incorrect audit citations after quoted newlines or blank lines.
         reader = csv.reader(f, strict=True)
-        try:
-            fieldnames = next(reader, None)
-        except (csv.Error, UnicodeError) as exc:
-            raise csv_input_error("bad_header") from None
+        fieldnames = safe_csv_header(reader)
         if not fieldnames: raise csv_input_error("missing_headers")
         if any("\x00" in name for name in fieldnames):
             raise csv_input_error("nul_header")
@@ -232,7 +230,7 @@ def table(path, required, optional=(), *, include_headers=False, include_digest=
         previous_end_line = reader.line_num
         row_count = 0
         try:
-            for values in reader:
+            for values in safe_csv_rows(reader):
                 # Count physical start lines, not the ordinal of parsed records.
                 source_line = previous_end_line + 1
                 previous_end_line = reader.line_num
@@ -250,8 +248,15 @@ def table(path, required, optional=(), *, include_headers=False, include_digest=
                 row = dict(zip(fieldnames, values))
                 out.append({"row":str(source_line),**{name:str(row.get(col) or "").strip()
                        for name,col in cols.items() if col}})
-        except (csv.Error, UnicodeError) as exc:
-            raise csv_input_error("bad_record", line=reader.line_num) from None
+        except (csv.Error, UnicodeError):
+            # Only errors from non-reader operations can reach this fallback.
+            # Raise after leaving the handler to discard raw private context.
+            row_parse_failed = True
+            failure_line = reader.line_num
+        else:
+            row_parse_failed = False
+        if row_parse_failed:
+            raise csv_input_error("bad_record", line=failure_line)
         # Hash precisely the bytes already parsed, not a later path read.
         # The caller can bind this value to a later evidence inventory.
         # Existing tuple return contracts remain unchanged for all callers.
