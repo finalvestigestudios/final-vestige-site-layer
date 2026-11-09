@@ -51,6 +51,9 @@ R234_EXPOSURE_BLOB = '316e5463cd41a067b6503fe7de115e1a1110d345'
 # R235 independently reconciles 244 source rows and all 32 crosswalk groups.
 R235_DOCKET_PATH = 'tools/r235_crosswalk_receipt_hold.py'
 R235_DOCKET_BLOB = 'cb5a45a6373d531a639fdce43ae29fc43aded171'
+# R236 distinguishes PRESENT author source-use explanations from three HELD claims.
+R236_PARITY_PATH = 'tools/r236_citation_source_parity_hold.py'
+R236_PARITY_BLOB = '78936188bcb636d638346348d51c5f44daf8e5e2'
 # These are independently observed R219 integration Git blobs, not certified text.
 # Missing entries MUST match the older R200 original exactly.
 INTEGRATED_DIFFS = {
@@ -83,8 +86,11 @@ INTEGRATED_META_DIFFS = {
     25: '03d3824e07fe51931671d0ddc7aa8c85eda58435',
     34: '4d2dc4958736e3c5257c65dda8ed016a473ac6be',
 }
-EXPECTED_EXCEPTIONS = {(7, 'cdc-find-clean-water'): 2,
-                       (20, 'start-ready-plan'): 1}
+# Authentic R235 HEAD: 35/35 integrated metadata files contain notes for every
+# cited ID. The historical three occurrences are still UNREVIEWED (R236), but
+# they are NOT *missing* source_use notes. Treating them as exceptions made the
+# originals-only audit fail incorrectly before the native build could run.
+EXPECTED_EXCEPTIONS = {}
 CITE = re.compile(r'\{\{cite:([a-z0-9-]+)\}\}')
 LINK = re.compile(r'\{\{link:([a-z0-9-]+)\|([^}]+)\}\}')
 TOKEN = re.compile(r'\{\{[^}]*\}\}')
@@ -405,6 +411,20 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
         status, exceptions = verify_originals(root, roster)
         result['articles'] = status
         result['source_exceptions'] = exceptions
+        parity_guard = load_frozen_gate(root, R236_PARITY_PATH, R236_PARITY_BLOB,
+                                        'fv_preparedness_r236_source_use_parity_gate',
+                                        ('audit_parity',))
+        parity = parity_guard.audit_parity(root, roster, safe_read)
+        if (parity.get('state') != HOLD or parity.get('article_count') != 35
+                or parity.get('unreviewed_original_occurrences') != 3
+                or parity.get('unreviewed_original_groups') != 2
+                or parity.get('source_use_missing_occurrences') != 0
+                or parity.get('release_authorized') is not False
+                or parity.get('independent_qd_pass') is not False
+                or parity.get('source_review_approved') is not False
+                or parity.get('medical_safety_verified') is not False):
+            raise ValueError('R236 source-use parity or editorial review HOLD changed')
+        result['citation_source_use_parity'] = parity
         if verify_exports:
             # Only imports the repository's own build code from its trusted tools path.
             tools_path = root / 'tools'
@@ -488,6 +508,8 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
             result['postrender_custody_recheck'] = 'DRAFT_HARD_HOLD'
         if git_blob(safe_read(root, R235_DOCKET_PATH)) != R235_DOCKET_BLOB:
             raise ValueError('R235 source-scope docket guard mutated during audit')
+        if git_blob(safe_read(root, R236_PARITY_PATH)) != R236_PARITY_BLOB:
+            raise ValueError('R236 citation-parity gate mutated during audit')
         result['reconciliation'] = {'frozen_articles': 35,
                                     'integrated_changes_held_for_review': sum(
                                         x['changed_since_original'] for x in status),
