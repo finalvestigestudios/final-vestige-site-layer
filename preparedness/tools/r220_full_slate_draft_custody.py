@@ -50,7 +50,7 @@ R234_EXPOSURE_PATH = 'tools/r234_auxiliary_draft_exposure_hold.py'
 R234_EXPOSURE_BLOB = '316e5463cd41a067b6503fe7de115e1a1110d345'
 # R235 independently reconciles 244 source rows and all 32 crosswalk groups.
 R235_DOCKET_PATH = 'tools/r235_crosswalk_receipt_hold.py'
-R235_DOCKET_BLOB = 'f772f96587b46eded0636b23202c2b4b50cf7236'
+R235_DOCKET_BLOB = 'cb5a45a6373d531a639fdce43ae29fc43aded171'
 # These are independently observed R219 integration Git blobs, not certified text.
 # Missing entries MUST match the older R200 original exactly.
 INTEGRATED_DIFFS = {
