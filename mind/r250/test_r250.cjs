@@ -81,7 +81,7 @@ function negativeCases(d){
  replace('preview',s=>s.replace('</main>','<button disabled>Second button</button></main>')),
  replace('preview',s=>s.replace('href="https://finalvestige.com/focus/"','href="javascript:alert(1)"')),
  replace('preview',s=>s.replace('No rendered or playable video exists','Video plays automatically')),
- replace('article',s=>s.replace('1,242','12,420')),
+ replace('article',s=>s.replaceAll('1,242','12,420')),
  replace('plan',s=>s.replace('utm_content=asset_id','made-up-tag')),
  replace('r248test',s=>s.replace('Full WebVTT clock validation','Missing timestamp validation')),
  replace('r248test',s=>s.replace('const cuePattern=/^(','const cuePattern=/^(\\')),
