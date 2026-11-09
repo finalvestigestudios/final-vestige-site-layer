@@ -1,0 +1,163 @@
+{
+  "schema": "fv-jetpack-upstream-reconciliation-v1",
+  "evidence_date_utc": "2026-11-09",
+  "scope": "FROZEN_2026_10_30_WP_EDITOR_SOURCE_AND_READ_ONLY_EXTERNAL_RETRIEVER_NOT_LIVE_BROWSER",
+  "source_custody": {
+    "inventory_branch": "qa/media-recovery-reviewed-20261030-1158",
+    "part_blob_sha": {
+      "01.json": "948bc1b65b42799aa40cfdb810ddf6ffd80886b6",
+      "02.json": "48e1ebf07207e948ba5802e714eb39659d2e1c1d",
+      "03.json": "49183f66f880f7c4dfd363acca906876877f2e5e",
+      "04.json": "6df3251e5a67a971d87a516a1ba4a0cc32f51f96",
+      "05.json": "9b16b828342a9ac338f3e65610fd3d8d508355e9",
+      "06.json": "0f3dfe398a76838049cebba7cb773d5c5a0c8c69",
+      "07.json": "21095161e633aba093b74c0ead9936c9f6186d00",
+      "08.json": "5659ec243c188928be3f89c0f96354b660608ca2"
+    },
+    "qa_csv_path": "qa/media/cms_image_census_20261030.csv",
+    "qa_csv_branch": "qa/media-source-dependency-20261029-2347",
+    "qa_csv_blob_sha": "76aa63ffaa299a6e6878edc1b66e637fa6f058ab",
+    "qa_classifier_blob_sha": "cdadab899abed4dfd222e75a5616a98390dca4ea"
+  },
+  "frozen_counts": {
+    "posts": 61,
+    "image_slots": 355,
+    "distinct_literal_urls": 353,
+    "first_party_direct": 60,
+    "first_party_jetpack_proxy": 7,
+    "offsite_generic_including_external_jetpack": 170,
+    "offsite_wikimedia_redirect": 118,
+    "frozen_qa_csv_offsite": 286,
+    "inventory_confirmed_offsite": 288,
+    "corrected_offsite_share_percent": 81.12676056338029,
+    "qa_csv_offsite_share_percent": 80.56338028169014
+  },
+  "caveat": "The original historical QA CSV generating logic and timing are not available; matching two-row variance and third-party upstream paths are evidence for reconciliation, not proof of the old generator's bug. CDN retrieval success is not visitor-browser proof.",
+  "first_party_proxy_slots": [
+    "299:0",
+    "299:1",
+    "299:2",
+    "299:3",
+    "299:4",
+    "299:5",
+    "299:7"
+  ],
+  "source_level_duplicate_urls": [
+    {
+      "slots": [
+        "291:2",
+        "291:5"
+      ],
+      "url": "https://cloudfront-us-east-1.images.arcpublishing.com/deseretnews/PLWPL72QKJB7BBFJWTXJWVK6QQ.JPG"
+    },
+    {
+      "slots": [
+        "213:2",
+        "213:6"
+      ],
+      "url": "https://fs-prod-nwcg.s3.us-gov-west-1.amazonaws.com/s3fs-public/2023-11/sr-mg-historical-map-race-pg5.jpg?VersionId=E03fTtNlZbsFr8cZyXxAMTHZfT8wEb4p"
+    }
+  ],
+  "discrepancy_rows": [
+    {
+      "slot": "291:0",
+      "post_id": 291,
+      "post_subject": "Teton Dam failure",
+      "source_url": "https://i0.wp.com/text-message.blogs.archives.gov/wp-content/uploads/sites/5/2016/05/teton_failing_fourth-scaled.jpg?ssl=1",
+      "cdn_transport_host": "i0.wp.com",
+      "upstream_host": "text-message.blogs.archives.gov",
+      "stored_source_kind": "external",
+      "post_qa_offsite_count": 5,
+      "post_custody_offsite_count": 6,
+      "retriever": {
+        "observed_on": "2026-11-09",
+        "method": "EXTERNAL_WEB_RETRIEVER_IMAGE_RENDER_NOT_HTTP_NOT_GUEST",
+        "result": "IMAGE_RENDERED",
+        "wrapper_code": null,
+        "origin_http": null,
+        "guest_http": null,
+        "decoded_px": null,
+        "actual_wire_bytes": null,
+        "visitor_broken": null
+      },
+      "primary_catalog_candidate": {
+        "url": "https://text-message.blogs.archives.gov/2016/05/31/the-unforgettable-calamity-40th-anniversary-of-the-teton-dam-failure/",
+        "authority": "NATIONAL_ARCHIVES_TEXTUAL_RECORDS_DIVISION",
+        "possible_photo_ids": [
+          "NAID 28894682",
+          "NAID 28894683",
+          "NAID 28894684",
+          "NAID 28894685"
+        ],
+        "accession_match_verified": false,
+        "rights_status": "ITEM_LEVEL_NARA_RESTRICTIONS_UNCHECKED",
+        "native_px": null,
+        "conditional_target_width_px": 960,
+        "conditional_target_height_px": null,
+        "upscale_permitted": false
+      },
+      "release": {
+        "download": false,
+        "cache": false,
+        "wordpress_write": false,
+        "post_rewrite": false
+      }
+    },
+    {
+      "slot": "285:1",
+      "post_id": 285,
+      "post_subject": "Three Mile Island control center",
+      "source_url": "https://i0.wp.com/www.squawkpoint.com/wp-content/uploads/2019/02/Three-Mile-Island-Control-Centre.jpg?ssl=1",
+      "cdn_transport_host": "i0.wp.com",
+      "upstream_host": "www.squawkpoint.com",
+      "stored_source_kind": "external",
+      "post_qa_offsite_count": 5,
+      "post_custody_offsite_count": 6,
+      "retriever": {
+        "observed_on": "2026-11-09",
+        "method": "EXTERNAL_WEB_RETRIEVER_IMAGE_RENDER_NOT_HTTP_NOT_GUEST",
+        "result": "IMAGE_RENDERED",
+        "wrapper_code": null,
+        "origin_http": null,
+        "guest_http": null,
+        "decoded_px": null,
+        "actual_wire_bytes": null,
+        "visitor_broken": null
+      },
+      "primary_catalog_candidate": {
+        "url": "https://www.flickr.com/photos/nrcgov/7447166686",
+        "authority": "OFFICIAL_NUCLEAR_REGULATORY_COMMISSION_PHOTO_CATALOG",
+        "exact_photo_match": false,
+        "editorial_alternative_only": true,
+        "rights_status": "ITEM_LEVEL_REPRODUCTION_NOT_REVIEWED",
+        "native_px": null,
+        "conditional_target_width_px": 960,
+        "conditional_target_height_px": null,
+        "upscale_permitted": false
+      },
+      "release": {
+        "download": false,
+        "cache": false,
+        "wordpress_write": false,
+        "post_rewrite": false
+      }
+    }
+  ],
+  "related_exact_archive_match": {
+    "slot": "285:0",
+    "source_url": "https://live.staticflickr.com/7278/7447166686_5d24dff6db_b.jpg",
+    "official_nrc_catalog": "https://www.flickr.com/photos/nrcgov/7447166686",
+    "photo_id_match": true,
+    "photo_binary_identical_verified": false,
+    "rights_status": "ITEM_LEVEL_CHECK_PENDING",
+    "reuse_authorized": false
+  },
+  "test_claims": {
+    "http_verified": false,
+    "browser_verified": false,
+    "broken_count_verified": false,
+    "transfer_reduction_76_percent_verified": false,
+    "rights_cleared": false
+  },
+  "next_action": "Site QA existing #154 guest CDP collector should verify slots 291:0 and 285:1 only after original six P0; record currentSrc/HTTP/decode/encoded bytes without treating tool image render as guest proof"
+}
