@@ -114,6 +114,53 @@ def _recheck_staged_bytes(path: str, owned: os.stat_result, payload: bytes) -> N
         raise OSError(errno.EIO, "Encrypted evidence staged name mutated")
 
 
+
+def _verify_published_bytes(target: Path, owned: os.stat_result, payload: bytes) -> None:
+    """Verify the *final* pathname after linking, not just its source stage.
+
+    A different regular file or symlink can replace the staged pathname after
+    the last prepublication check. The final descriptor, name and exact bytes
+    must still identify our original ciphertext. This is a postcondition, not a
+    lock against an adversary that continues mutating the directory afterward.
+    """
+    flags = os.O_RDONLY | getattr(os, "O_BINARY", 0) | getattr(os, "O_NOFOLLOW", 0)
+    fd = os.open(target, flags)
+    try:
+        initial = os.fstat(fd)
+        if not _same_stage_identity(initial, owned) or initial.st_size != len(payload):
+            raise OSError(errno.EIO, "Encrypted evidence final file identity changed")
+        offset = 0
+        while offset < len(payload):
+            expected = payload[offset:offset + _BLOCK]
+            if _read_exact(fd, len(expected)) != expected:
+                raise OSError(errno.EIO, "Encrypted evidence final bytes changed")
+            offset += len(expected)
+        if os.read(fd, 1) != b"":
+            raise OSError(errno.EIO, "Encrypted evidence final size changed")
+        final = os.fstat(fd)
+        if (not _same_stage_identity(final, owned) or final.st_size != len(payload)
+                or final.st_mtime_ns != initial.st_mtime_ns
+                or final.st_ctime_ns != initial.st_ctime_ns):
+            raise OSError(errno.EIO, "Encrypted evidence final file mutated")
+    finally:
+        os.close(fd)
+    named = os.lstat(target)
+    if (not _same_stage_identity(named, owned) or named.st_size != len(payload)
+            or named.st_mtime_ns != final.st_mtime_ns
+            or named.st_ctime_ns != final.st_ctime_ns):
+        raise OSError(errno.EIO, "Encrypted evidence final name changed")
+
+
+def _rollback_published_name(target: Path, observed: os.stat_result) -> None:
+    """Best-effort cleanup; never unlink a *detectably* replaced final name."""
+    try:
+        current = os.lstat(target)
+    except FileNotFoundError:
+        return
+    if (current.st_dev == observed.st_dev and current.st_ino == observed.st_ino
+            and stat.S_IFMT(current.st_mode) == stat.S_IFMT(observed.st_mode)):
+        os.unlink(target)
+
 def _publish(target: Path, payload: bytes) -> None:
     # Avoid accidental publication through a symlinked destination directory.
     folder = target.parent
@@ -159,6 +206,15 @@ def _publish(target: Path, payload: bytes) -> None:
             os.rename(temporary, target)
         else:
             os.link(temporary, target)
+        # The exclusive operation guarantees no clobber, but not which bytes
+        # were behind the stage name in the final race window. Fail closed if
+        # the published inode/contents do not match our verified ciphertext.
+        published = os.lstat(target)
+        try:
+            _verify_published_bytes(target, owned, payload)
+        except BaseException:
+            _rollback_published_name(target, published)
+            raise
     finally:
         if descriptor is not None:
             os.close(descriptor)
