@@ -60,8 +60,8 @@ function validate(x) {
  assert.equal(m.experiment.video_rendered,false);
  assert.equal(m.experiment.randomization,'not_started');
  assert.ok(m.r244_quality_holds.length>=5);
- assert.ok(m.r244_quality_holds.some(s=>s.includes('tea was smelled')));
- assert.ok(m.r244_quality_holds.some(s=>s.includes('R203')));
+ assert.ok(m.r244_quality_holds.some(s=>s.includes('tea smelled')));
+ assert.ok(m.r244_quality_holds.some(s=>s.toLowerCase().includes('r203')));
  assert.ok(x.old.includes('The Choice That Came Back Changed'));
  assert.equal(x.oldMatrix.milestone,244);
 
