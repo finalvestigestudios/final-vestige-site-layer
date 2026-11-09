@@ -1,0 +1,235 @@
+{
+  "date_utc": "2026-11-09",
+  "origin": "dispatch-r222-merchant-price-consent-reviews-20261108",
+  "method": "source-specific independent V8 assertions against latest GitHub-fetched R222 file blobs, not native Python/Node/Jetpack",
+  "test_count": 45,
+  "passed": 45,
+  "failed": [],
+  "source_blobs": [
+    {
+      "name": "ISSUE_03_ALT_UNSENT.md",
+      "sha": "46e3482b0d5b266e32d84f57fc5fb4daa1d989bd"
+    },
+    {
+      "name": "ISSUE_05_ALT_UNSENT.md",
+      "sha": "03f1883e5f1e4b8d51ff49a572f71c7ed6c5bcfd"
+    },
+    {
+      "name": "SOURCE_AND_RELEASE.md",
+      "sha": "377612f7b67826b7fe9c538fdf2cebae64254390"
+    },
+    {
+      "name": "CONSENT_TO_ONE_OFFER_SEQUENCE.md",
+      "sha": "9af82ed72ac23db341bcee1b145f009efc54866d"
+    },
+    {
+      "name": "CLAIM_MATRIX.json",
+      "sha": "442cc7f1c3eb6c45df0de1231e16e440cad55345"
+    },
+    {
+      "name": "PREVIEW_03_OFFLINE.html",
+      "sha": "4e7f28f1a836b860511d512080845093f7794100"
+    },
+    {
+      "name": "PREVIEW_03_PLAIN.txt",
+      "sha": "711cee1661e8c4424f1f69748f8c5c1bd304aac6"
+    },
+    {
+      "name": "PREVIEW_05_OFFLINE.html",
+      "sha": "9a75b9632debb219d4be91d2f1970fa3e72da3d7"
+    },
+    {
+      "name": "PREVIEW_05_PLAIN.txt",
+      "sha": "97035e56c5e754eac03ee9b1d69d249181796d9b"
+    },
+    {
+      "name": "OFFLINE_PREVIEW_QA.json",
+      "sha": "4b77e287111a553a0eebf817276e70df8802b9bd"
+    }
+  ],
+  "checks": [
+    {
+      "title": "exact two alternate letters",
+      "pass": true
+    },
+    {
+      "title": "10 added source evidence files",
+      "pass": true
+    },
+    {
+      "title": "no merchant acceptance attested",
+      "pass": true
+    },
+    {
+      "title": "two commercial issues retain HOLD_MERCHANT",
+      "pass": true
+    },
+    {
+      "title": "original four editorial slots explicitly preserved",
+      "pass": true
+    },
+    {
+      "title": "primary candidate Zen12 while Total Focus reserved",
+      "pass": true
+    },
+    {
+      "title": "public price conflict documented without claiming price rise",
+      "pass": true
+    },
+    {
+      "title": "merchant refund qualification documented",
+      "pass": true
+    },
+    {
+      "title": "provider-confirmed signup required",
+      "pass": true
+    },
+    {
+      "title": "explicit net revenue not computable",
+      "pass": true
+    },
+    {
+      "title": "source packet contains six independent and merchant URLs",
+      "pass": true
+    },
+    {
+      "title": "NCCIH specifically not product proof",
+      "pass": true
+    },
+    {
+      "title": "all 10 claim IDs unique",
+      "pass": true
+    },
+    {
+      "title": "all source IDs resolved",
+      "pass": true
+    },
+    {
+      "title": "seller income/clinical overpromise not permitted",
+      "pass": true
+    },
+    {
+      "title": "no stale checkout price in body of 2 candidates",
+      "pass": true
+    },
+    {
+      "title": "03 draft explicitly unapproved",
+      "pass": true
+    },
+    {
+      "title": "03 distinct preheader",
+      "pass": true
+    },
+    {
+      "title": "03 HTML hidden preheader appears before tables",
+      "pass": true
+    },
+    {
+      "title": "03 email-safe static table",
+      "pass": true
+    },
+    {
+      "title": "03 no script or remote image tracking",
+      "pass": true
+    },
+    {
+      "title": "03 no active merchant offer anchors",
+      "pass": true
+    },
+    {
+      "title": "03 source/product CTA intentionally inert",
+      "pass": true
+    },
+    {
+      "title": "03 compensation disclosure near CTA",
+      "pass": true
+    },
+    {
+      "title": "03 placeholder postal and unsubscribe",
+      "pass": true
+    },
+    {
+      "title": "03 subject and preheader present in HTML and plaintext",
+      "pass": true
+    },
+    {
+      "title": "03 real vendor source provided",
+      "pass": true
+    },
+    {
+      "title": "03 holder prevents sends",
+      "pass": true
+    },
+    {
+      "title": "03 raw approved link not activated",
+      "pass": true
+    },
+    {
+      "title": "03 no invented paid order",
+      "pass": true
+    },
+    {
+      "title": "05 draft explicitly unapproved",
+      "pass": true
+    },
+    {
+      "title": "05 distinct preheader",
+      "pass": true
+    },
+    {
+      "title": "05 HTML hidden preheader appears before tables",
+      "pass": true
+    },
+    {
+      "title": "05 email-safe static table",
+      "pass": true
+    },
+    {
+      "title": "05 no script or remote image tracking",
+      "pass": true
+    },
+    {
+      "title": "05 no active merchant offer anchors",
+      "pass": true
+    },
+    {
+      "title": "05 source/product CTA intentionally inert",
+      "pass": true
+    },
+    {
+      "title": "05 compensation disclosure near CTA",
+      "pass": true
+    },
+    {
+      "title": "05 placeholder postal and unsubscribe",
+      "pass": true
+    },
+    {
+      "title": "05 subject and preheader present in HTML and plaintext",
+      "pass": true
+    },
+    {
+      "title": "05 real vendor source provided",
+      "pass": true
+    },
+    {
+      "title": "05 holder prevents sends",
+      "pass": true
+    },
+    {
+      "title": "05 raw approved link not activated",
+      "pass": true
+    },
+    {
+      "title": "05 no invented paid order",
+      "pass": true
+    },
+    {
+      "title": "QA report accurately recognizes no real send",
+      "pass": true
+    }
+  ],
+  "production_tests": false,
+  "actual_received_email": false,
+  "affiliate_approval": false
+}
