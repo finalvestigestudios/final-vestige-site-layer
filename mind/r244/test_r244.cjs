@@ -136,7 +136,7 @@ bad("orphan source",v=>v.matrix.claims[0].source="NOT_A_SOURCE");
 bad("source removal",v=>v.matrix.sources.pop());
 bad("claims removal",v=>v.matrix.claims.pop());
 bad("false efficacy",v=>v.matrix.claims[6].status="verified_efficacy");
-bad("article journal scope",v=>v.article=v.article.replace("69%","every participant"));
+bad("article journal scope",v=>v.article=v.article.replaceAll("69%","every participant"));
 bad("article study citation",v=>v.article=v.article.replace("16210542","00000000"));
 bad("accounting double subtraction",v=>v.plan=v.plan.replace("not already netted","always subtracted"));
 bad("incremental costs missing",v=>v.plan=v.plan.replace("incremental attributable","all historical"));
