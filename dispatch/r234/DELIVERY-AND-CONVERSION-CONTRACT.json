@@ -1,0 +1,99 @@
+{
+  "schema": "fv.dispatch.r234.intent_delivery.v1",
+  "status": "HOLD_UNSENT",
+  "observed_on": "2026-11-09",
+  "jetpack": {
+    "subscribed": true,
+    "auto_new_post_emails": false,
+    "email_content_format": "full",
+    "native_email_requires_publishing_new_post": true,
+    "unpublished_post_native_email_preview_documented": true,
+    "live_inbox_preview_verified": false,
+    "send_test_email_authorized": false,
+    "post_creation_authorized": false,
+    "publication_authorized": false,
+    "subscriber_reachability_verified": false,
+    "actual_unsubscribe_verified": false,
+    "final_welcome_delivered_verified": false
+  },
+  "provider_counters_reported": {
+    "total": 3,
+    "confirmed": 3,
+    "unconfirmed_requests": 2,
+    "suppressed": 0,
+    "do_not_add_together": true,
+    "eligible_email_recipients": null
+  },
+  "cta_action_map": [
+    {
+      "issue": 1,
+      "kind": "editorial",
+      "primary_action": "historical_perception_read",
+      "destination": "https://finalvestige.com/the-missing-caption/",
+      "release": "HOLD_UNSENT"
+    },
+    {
+      "issue": 2,
+      "kind": "editorial",
+      "primary_action": "puysegur_evidence_read",
+      "destination": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "release": "HOLD_UNSENT"
+    },
+    {
+      "issue": 3,
+      "kind": "commercial-review-pending",
+      "primary_action": "zen12_buyer_guide_only",
+      "destination": null,
+      "offer_guide_live": false,
+      "merchant_approval_verified": false,
+      "email_permission_verified": false,
+      "affiliate_earning_url_verified": false,
+      "release": "HOLD_MERCHANT_AND_UNSENT"
+    },
+    {
+      "issue": 4,
+      "kind": "editorial",
+      "primary_action": "apollo_primary_evidence_read",
+      "destination": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/",
+      "release": "HOLD_UNSENT"
+    },
+    {
+      "issue": 5,
+      "kind": "commercial-review-pending",
+      "primary_action": "total_focus_buyer_guide_only",
+      "destination": null,
+      "offer_guide_live": false,
+      "merchant_approval_verified": false,
+      "email_permission_verified": false,
+      "affiliate_earning_url_verified": false,
+      "release": "HOLD_MERCHANT_AND_UNSENT"
+    },
+    {
+      "issue": 6,
+      "kind": "editorial",
+      "primary_action": "already_subscribed_fieldbook_access",
+      "destination": null,
+      "approved_existing_subscriber_pdf_link": false,
+      "release": "HOLD_UNSENT"
+    }
+  ],
+  "measurement": {
+    "qualified_social_sessions": "NOT_OBSERVABLE",
+    "confirmed_signup_event": "PROVIDER_CONFIRMED_EMAIL_SUBSCRIPTION_ONLY",
+    "signup_attempts_are_not_confirmed_leads": true,
+    "public_download_is_not_confirmation": true,
+    "affiliate_outbound_is_not_purchase": true,
+    "paid_sale_requirements": "independent_partner_or_merchant_settlement_and_refunds_fees",
+    "verified_paid_orders": null,
+    "realized_net_revenue_per_1000_qualified_sessions": null,
+    "no_pixel_or_script_added": true
+  },
+  "sources": [
+    "https://jetpack.com/support/newsletter/",
+    "https://wordpress.com/support/newsletter/send-newsletter-emails/",
+    "https://finalvestige.com/focus/",
+    "https://zen12.com/hnp",
+    "https://hypnosislive.com/mental-skills/total-focus",
+    "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business"
+  ]
+}
