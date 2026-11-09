@@ -11,10 +11,27 @@ if (!defined('FV_EX2_RD_VERSION')) {
     define('FV_EX2_RD_VERSION', '0.0.4-research');
 }
 
-/** Only trusted, bundled files are rendered; never accept shortcode HTML, URLs or code. */
+/** Asset custody is independent of the protected NASA HTML template. A changed
+ * stylesheet or script must never be enqueued merely because the HTML is sealed.
+ * Git blob checks prevent accidental/unreviewed drift, not hostile PHP edits.
+ */
+function fv_ex2_rd_trusted_asset(string $relative_path, string $expected_blob): bool {
+    $path = plugin_dir_path(__FILE__) . $relative_path;
+    if (!is_readable($path)) { return false; }
+    $bytes = file_get_contents($path);
+    if (!is_string($bytes) || $bytes === '') { return false; }
+    $actual_blob = sha1('blob ' . strlen($bytes) . "\0" . $bytes);
+    return hash_equals($expected_blob, $actual_blob);
+}
+
+/** Optional enhancements fail open: untrusted CSS/JS is skipped, NASA HTML stays readable. */
 function fv_ex2_rd_enqueue_assets(): void {
-    wp_enqueue_style('fv-ex2-research-desk', plugins_url('assets/source-ledger.css', __FILE__), array(), FV_EX2_RD_VERSION);
-    wp_enqueue_script('fv-ex2-research-desk', plugins_url('assets/source-ledger.js', __FILE__), array(), FV_EX2_RD_VERSION, true);
+    if (fv_ex2_rd_trusted_asset('assets/source-ledger.css', 'db531213e6f8dbaa44fba2885eefdd016dab93e3')) {
+        wp_enqueue_style('fv-ex2-research-desk', plugins_url('assets/source-ledger.css', __FILE__), array(), FV_EX2_RD_VERSION);
+    }
+    if (fv_ex2_rd_trusted_asset('assets/source-ledger.js', '32e757cc4dc8708397ff65ac21e89dd319781d78')) {
+        wp_enqueue_script('fv-ex2-research-desk', plugins_url('assets/source-ledger.js', __FILE__), array(), FV_EX2_RD_VERSION, true);
+    }
 }
 
 /** Early enqueue is a performance optimization, not a prerequisite for rendering. */
@@ -57,7 +74,7 @@ function fv_ex2_rd_shortcode($atts = array()): string {
     // never remote CSS or shortcode/user input. If unavailable, HTML stays readable.
     if (!$fallback_style_emitted && !wp_style_is('fv-ex2-research-desk', 'done')) {
         $css_path = plugin_dir_path(__FILE__) . 'assets/source-ledger.css';
-        if (is_readable($css_path)) {
+        if (fv_ex2_rd_trusted_asset('assets/source-ledger.css', 'db531213e6f8dbaa44fba2885eefdd016dab93e3')) {
             $css = file_get_contents($css_path);
             if (is_string($css) && $css !== '' && !preg_match('~</?\s*(?:script|style)\b|@import\b|url\s*\(~i', $css)) {
                 $markup = '<style id="fv-ex2-research-desk-late-style">' . $css . '</style>' . $markup;
