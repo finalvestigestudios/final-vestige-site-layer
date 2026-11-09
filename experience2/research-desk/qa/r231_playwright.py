@@ -71,7 +71,7 @@ def run(repo, out, axe_path=None):
           assert d["fakePins"]==0 and d["overflowPx"]<=1,d
           assert not seen,seen
           if js:
-            search=page.locator("[data-fvx-search]")
+            search=page.locator("input[data-fvx-search]")
             assert search.is_visible()
             search.fill("altitude-chamber")
             assert page.locator("[data-fvx-record]:visible").count()==1,"search failed to index new context"
