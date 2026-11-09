@@ -1,0 +1,40 @@
+# OPTIONAL REPLACEMENT CANDIDATE — ISSUE 05 (NOT APPROVED)
+
+**STATUS:** UNSENT DRAFT / HOLD_MERCHANT / DO NOT PUBLISH OR EMAIL
+**Subject:** Before you trust a focus recording, ask this
+**Preheader:** A 33-minute seller offer, a historical lesson, and a five-minute evidence check.
+**Content type:** commercial-review-pending (original 4 editorial / 2 commercial pilot preserved)
+**Attribution:** Unsent review specimen only; original issue 05 remains unchanged in PR #175.
+
+---
+
+In an archive, a witness can describe an experience precisely and still be wrong about what caused it. We keep both parts of the record: what someone reported, and what that report can establish.
+
+The same rule is useful when a recording promises to change your concentration. A reassuring voice, a pleasant session and a measurable improvement in your work are three different things. One does not automatically demonstrate the next.
+
+Start with a no-purchase comparison. Pick a small task you have put off. For five minutes, work in silence and record only two observations: whether you started, and how often you switched away. On another day, if you choose to try an audio recording, use a similar task and the same two observations. This is a personal note-taking exercise, not a controlled experiment or a clinical test. Differences in sleep, task difficulty and expectations make strong conclusions impossible.
+
+The product currently under editorial review is Hypnosis Live’s Total Focus. Its product page describes a 33-minute, 47-MB downloadable session. The seller says its hypnosis and NLP exercises can reprogram the brain and dramatically improve concentration. Those are seller claims; we have not located independent product-specific evidence establishing them.
+
+Evidence for hypnosis in certain clinical settings cannot be borrowed wholesale to establish that this particular retail audio improves everyday focus. The U.S. National Center for Complementary and Integrative Health describes findings across several conditions, with important limits and mixed or inconclusive results in some areas.
+
+Before paying, check the live seller page for the exact format and final checkout price, listen to the available sample, and read the refund conditions. The seller's public FAQ describes a 14-day request window and a limit of five refunded sessions in a year; actual transaction terms have not been independently validated.
+
+One useful decision rule: choose the recording only if you genuinely want a guided-audio experience, understand what you are buying, and would still consider it worth trying without the advertised concentration promises. Otherwise, the free planning exercise already gave you something you can use.
+
+**Commercial disclosure (prospective): If you buy through a qualifying link on our eventual review guide, Final Vestige may earn a commission. There is no approved offer link in this draft.**
+
+**READ THE INDEPENDENT TOTAL FOCUS GUIDE: [[APPROVED_TOTAL_FOCUS_WARMUP_GUIDE_URL_REQUIRED]]**
+
+This invitation is deliberately inactive. The guide does not yet have a verified published address. No Final Vestige affiliate email permission or earning link has been authenticated.
+
+### Source notes (editorial audit, not extra CTAs)
+- Product listing (seller descriptions, not efficacy evidence): https://hypnosislive.com/mental-skills/total-focus
+- Seller FAQ (refund and file-format claims): https://hypnosislive.com/faq
+- NIH/NCCIH overview of hypnosis evidence and limitations: https://www.nccih.nih.gov/health/hypnosis
+- Final Vestige historical source archive: https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/
+- FTC affiliate disclosure guidance: https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking
+- FTC CAN-SPAM guidance: https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business
+
+---
+**UNSENT / REVIEW ONLY. Sender: Final Vestige Studios. Publisher mailing address: [[VALID_POSTAL_ADDRESS_REQUIRED]]. Jetpack unsubscribe: [[JETPACK_UNSUBSCRIBE_LINK_MUST_BE_VERIFIED]]. NO email should be transmitted using this specimen.**
