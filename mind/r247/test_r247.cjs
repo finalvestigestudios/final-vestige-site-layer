@@ -71,7 +71,7 @@ function validate(data){
  check(disc>=0&&btn>disc&&btn-disc<600,'disclosure immediately preceding held CTA');
  check(h.includes('may earn a commission at no additional cost to you'),'FTC near-link language');
  check(h.includes('No affiliate tracking or payment link is active here'),'claims truthful');
- check(h.includes('existing Jetpack/Dispatch path')&&h.includes('No second signup'),'one approved funnel');
+ check(h.includes('approved Jetpack/Dispatch path')&&h.includes('No second signup'),'one approved funnel');
  check(!/href\s*=\s*["'][^"']*(zen12\.com|hypnosislive\.com|brainwaveshots\.com|inspire3\.com|awin1\.com|payhip\.com)/i.test(h),'no merchant link even informational');
  for(const found of h.matchAll(/<a\s+[^>]*href="([^"]+)"/gi)){
    const u=new URL(found[1]);
