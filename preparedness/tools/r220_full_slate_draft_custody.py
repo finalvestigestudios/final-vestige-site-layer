@@ -33,6 +33,9 @@ R226_DOM_BLOB = 'f261e785c47af9556c3fe3864bbbccb46c3890bc'
 # R227 catches markup inert to HTML reading or conditional on JS/open state.
 R227_INERT_PATH = 'tools/r227_inert_context_citation_hold.py'
 R227_INERT_BLOB = '8e7a4b8334f7166630d8f362da94b9d56afdbc85'
+# R230 independently rejects unsupported HTML tokenizer-mode changes.
+R230_TOKENIZER_PATH = 'tools/r230_html_tokenizer_state_hold.py'
+R230_TOKENIZER_BLOB = '94e0eb8d790df732f5ae79d8aa2fc8c41d9b3f8e'
 # These are independently observed R219 integration Git blobs, not certified text.
 # Missing entries MUST match the older R200 original exactly.
 INTEGRATED_DIFFS = {
@@ -206,7 +209,7 @@ def verify_originals(root: Path, articles: list[dict]) -> tuple[list[dict], dict
     return status, {f'{n}:{sid}': count for (n, sid), count in exceptions.items()}
 
 
-def verify_render(root: Path, articles: list[dict], report: dict, library, builder, dom_guard, inert_guard) -> dict:
+def verify_render(root: Path, articles: list[dict], report: dict, library, builder, dom_guard, inert_guard, tokenizer_guard) -> dict:
     actual = report.get('articles')
     if type(actual) is not list or len(actual) != 41:
         raise ValueError('expected 41 individual article/tool build-report entries')
@@ -251,6 +254,11 @@ def verify_render(root: Path, articles: list[dict], report: dict, library, build
             # HTML string parity alone cannot prove sources remain navigable/visible.
             # Enforce actual fragment identities, article-origin URLs, review visibility
             # and duplicate-id/attribute rejection in BOTH export formats.
+            # Reject browser tokenizer-mode divergence BEFORE interpreting citations.
+            tokenizer_result = tokenizer_guard.verify_tokenizer_states(page)
+            if (tokenizer_result.get('state') != HOLD or
+                    tokenizer_result.get('release_authorized') is not False):
+                raise ValueError('unexpected tokenizer safety state: ' + slug)
             dom_result = dom_guard.verify_export(page, order, meta, library, expected)
             if dom_result.get('state') != HOLD:
                 raise ValueError('unexpected browser-semantics safety state: ' + slug)
@@ -371,15 +379,20 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
             inert_guard = load_frozen_gate(root, R227_INERT_PATH, R227_INERT_BLOB,
                                            'fv_preparedness_r227_inert_gate',
                                            ('verify_inert_contexts',))
+            tokenizer_guard = load_frozen_gate(root, R230_TOKENIZER_PATH, R230_TOKENIZER_BLOB,
+                                               'fv_preparedness_r230_tokenizer_gate',
+                                               ('verify_tokenizer_states',))
             library = build.Library(root=root)
             authority.verify_routes(roster, library)
             report = strict_object(safe_read(root, 'build/build-report.json'))
-            result['render'] = verify_render(root, roster, report, library, build, dom_guard, inert_guard)
+            result['render'] = verify_render(root, roster, report, library, build, dom_guard, inert_guard, tokenizer_guard)
             # Repeat source custody after building the rendered-corpus view.
             # A file replaced after preflight cannot silently inherit its pin.
             bundle.check_bundle(root, safe_read)
             authority.verify_authorities(root, roster, safe_read)
             verify_originals(root, roster)
+            if git_blob(safe_read(root, R230_TOKENIZER_PATH)) != R230_TOKENIZER_BLOB:
+                raise ValueError('tokenizer guard mutated after render')
             result['postrender_custody_recheck'] = 'DRAFT_HARD_HOLD'
         result['reconciliation'] = {'frozen_articles': 35,
                                     'integrated_changes_held_for_review': sum(
