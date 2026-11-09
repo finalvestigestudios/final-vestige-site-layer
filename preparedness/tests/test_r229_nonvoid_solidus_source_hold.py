@@ -153,5 +153,26 @@ for index, tag in enumerate(NONVOID):
             setattr(NonVoidTrailingSolidus, title, reject_case)
 
 
+# HTML integration points under SVG/MathML re-enter HTML parsing, so the
+# mere presence of a foreign ancestor is not permission for <template/> etc.
+INTEGRATION = (
+    ('svg_foreignobject', '<svg><foreignObject>', '</foreignObject></svg>'),
+    ('svg_desc', '<svg><desc>', '</desc></svg>'),
+    ('svg_title', '<svg><title>', '</title></svg>'),
+    ('math_annotation', '<math><annotation-xml encoding="text/html">', '</annotation-xml></math>'),
+)
+for label, start, end in INTEGRATION:
+    for tag in ('template', 'script', 'style', 'p', 'div', 'textarea', 'plaintext'):
+        def integration_reject(self, start=start, end=end, tag=tag):
+            broken = PAGE.replace(SOURCE, start + '<' + tag + '/>' + end + SOURCE)
+            self.assert_hard_hold(broken)
+        setattr(NonVoidTrailingSolidus, 'test_html_integration_' + label + '_' + tag, integration_reject)
+    for foreign_tag in ('path', 'mi'):
+        def foreign_reject(self, start=start, end=end, tag=foreign_tag):
+            broken = PAGE.replace(SOURCE, start + '<' + tag + '/>' + end + SOURCE)
+            self.assert_hard_hold(broken)
+        setattr(NonVoidTrailingSolidus, 'test_foreign_name_in_html_' + label + '_' + foreign_tag, foreign_reject)
+
+
 if __name__ == '__main__':
     unittest.main()
