@@ -177,7 +177,7 @@
     },
     {
       "id": "SELLER_POLICY",
-      "statement": "Total Focus page advertises 14-day satisfaction refund; merchant may apply conditions",
+      "statement": "Total Focus merchant advertises refunds requested within 14 days, with an FAQ limit of no more than five refunded sessions per year; no actual refund verified",
       "source": "SELLER_FAQ",
       "classification": "SELLER_TERM_NOT_REFUND_VERIFIED"
     },
@@ -382,6 +382,7 @@
     "Puységur/Change Blindness/Focus direct fetch unavailable; preserve route but not assert new live state",
     "No actual Grok Mind media IDs, no first-party cohort denominator, no paid settlements",
     "Current canonical Zen12 A/B is UNPUBLISHED in R246; video is a non-playable transcript and poster concept",
-    "New 2026 clinical-pain meta-analysis may not substantiate ANY claimed focus/productivity benefit"
+    "New 2026 clinical-pain meta-analysis may not substantiate ANY claimed focus/productivity benefit",
+    "R247 overlaps an earlier R190 2026 review; canonical deduplication before publishing. Jones et al. 2024 review rated overall evidence certainty very low."
   ]
 }
