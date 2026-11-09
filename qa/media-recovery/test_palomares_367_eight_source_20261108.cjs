@@ -19,6 +19,7 @@ const tests=[
 ['bad 960px height',a=>{a.rows[0].conditional_max_width_960_px=[960,600]}],
 ['faked native size',a=>{a.rows[0].original_catalog_px=[960,601]}],
 ['museum size fabricated',a=>{a.rows[3].conditional_max_width_960_px=[960,778]}],
+['wrong catalog for Alvin',a=>{a.rows[2].source_catalog=a.rows[1].source_catalog}],
 ['wrong license for route map',a=>{a.rows[0].rights_classification='PUBLIC_DOMAIN'}],
 ['phantom rendered image',a=>{a.rows[1].retriever.outcome='IMAGE_RENDERED'}],
 ['faked wrapper 500',a=>{a.rows[1].retriever.wrapper_http_status=500}],
