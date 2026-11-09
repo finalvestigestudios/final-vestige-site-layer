@@ -21,21 +21,28 @@ class _VisibleText(HTMLParser):
         self.suppressed = 0
         self.words = []
         self.links = []
+        self.anchor_open = False
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
         if tag in {"style", "script", "head"}:
             self.suppressed += 1
         if tag == "a" and not self.suppressed:
+            self.anchor_open = True
             self.links.append((attrs.get("href") or "", attrs.get("aria-label") or ""))
 
     def handle_endtag(self, tag):
+        if tag == "a":
+            self.anchor_open = False
         if tag in {"style", "script", "head"}:
             self.suppressed = max(0, self.suppressed - 1)
 
     def handle_data(self, data):
         if not self.suppressed:
             self.words.append(data)
+            if self.anchor_open and self.links:
+                href, label = self.links[-1]
+                self.links[-1] = (href, label + " " + data)
 
 
 def _normalized(value):
