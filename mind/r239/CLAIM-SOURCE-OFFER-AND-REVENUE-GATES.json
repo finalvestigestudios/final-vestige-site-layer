@@ -18,7 +18,7 @@
       "id": "S01",
       "url": "https://doi.org/10.1177/0956797613479386",
       "description": "2013 original radiologist abstract",
-      "scope": "abstract_only"
+      "scope": "full_original_pdf_text_and_visual_checked_2026_11_09"
     },
     {
       "id": "S02",
@@ -30,7 +30,7 @@
       "id": "S03",
       "url": "https://doi.org/10.1068/i0386",
       "description": "2010 familiarity study",
-      "scope": "abstract_only"
+      "scope": "full_original_pdf_text_and_visual_checked_2026_11_09"
     },
     {
       "id": "S04",
@@ -108,15 +108,15 @@
     },
     {
       "id": "C02",
-      "text": "Most radiologists who missed the gorilla looked directly at its location",
+      "text": "Of 20 radiologists not reporting the gorilla, 12 directly fixated its location; 24/24 recognized it in a subsequent still",
       "source_id": "S01",
-      "status": "ABSTRACT_SUPPORTED_NOT_CAUSAL_EXPLANATION"
+      "status": "FULL_PAPER_P1850_RESULTS_SUPPORTED"
     },
     {
       "id": "C03",
-      "text": "The inserted image was 48 times average lung-nodule size",
+      "text": "The 48-fold comparison is volume of the gorilla-enclosing rectangular box (>7,400 mm³) versus average lung-nodule volume (153 mm³), not height or image area",
       "source_id": "S01",
-      "status": "ABSTRACT_SUPPORTED"
+      "status": "FULL_PAPER_P1849_METHODS_SUPPORTED"
     },
     {
       "id": "C04",
@@ -132,9 +132,9 @@
     },
     {
       "id": "C06",
-      "text": "2010 familiarity made known gorilla salient but not other unexpected changes",
+      "text": "2010 familiarity did not improve detection of other unexpected events; 4/23 familiar versus 12/41 unfamiliar noticed either, a nonsignificant between-group difference",
       "source_id": "S03",
-      "status": "ABSTRACT_SUPPORTED"
+      "status": "FULL_PAPER_RESULT_NONSIGNIFICANT"
     },
     {
       "id": "C07",
@@ -376,7 +376,8 @@
     "R211 vs R238 Coué autosuggestion",
     "R196 vs R236 attentional blink",
     "R237 vs live Mesmerism",
-    "Check other unpublished invisible-gorilla manuscripts before assigning canonical route"
+    "CONFIRMED R227 versus R239 gorilla manuscript overlap; canonical publication decision pending"
   ],
-  "release_approval": "HARD_HOLD"
+  "release_approval": "HARD_HOLD",
+  "source_method_update": "Full 2010 and 2013 paper text and relevant printed PDF pages visually inspected; no participant-level data accessed"
 }
