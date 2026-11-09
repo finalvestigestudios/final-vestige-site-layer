@@ -1,0 +1,28 @@
+# R230 — Focus gift visibility ≠ confirmed newsletter signup
+**2026-11-09 10:35 UTC. DRAFT ONLY.** Master Dispatch #174; Focus #129; Mind #171; conversion #820. Based on previous unsent Dispatch R229 PR #1731 exact parent `ebe9e80af76df3da21dab74a1bc1674c1a66021f`. No homepage PR #49, public WordPress content, subscribers, email, merchant links or analytics were changed.
+
+## Direct source observation
+- Authenticated WordPress **published Focus page ID 1579**, latest modified 2026-11-05, contains an inline script setting `#fvf-gift.hidden=false` whenever the `subscribe` URL query parameter is *any nonempty value other than* `invalid_email`, `error`, `blocked_email`, `opted_out`, `blocked`. It independently reveals the gift for a Jetpack widget container whose CSS class contains `is-subscriber`. The exact script is preserved as `live_focus_gift_20261109.js` and reproduced in native Node VM tests.
+- Read-only tests reproduce reveal on `?subscribe=arbitrary`, `?subscribe=unconfirmed`, `?subscribe=confirmed`, `?subscribe=%66oo` even without the subscriber CSS state; they do **not** prove WordPress generates those querystrings, a double opt-in failed, or any real recipient was falsely counted.
+- The resource PDF has a public URL. This is **not a demonstrated security breach** or proof of lost revenue. It is a risk of analytics or QA erroneously promoting gift visibility, a querystring, `focus_pdf_click`, or widget CSS to a verified subscription event. Exposing an already public free resource is not itself the same as creating a subscription.
+- Focus page also instructs an in-app browser visitor to “sign up again” when PDFs do not open. That **separate** issue already has proposed correction under R228 PR #1711. Do not duplicate the WordPress patch here.
+- Published Dispatch page **523** and Editorial Standards page **17** checked read-only; standards separate documentary sources from interpretation and require visible commercial disclosure.
+- Jetpack status `2026-11-09T10:35:32Z`: total **3**, confirmed counter **3**, unconfirmed requests **2**, suppressed **0**, recent 5 `never_sent_opted_out`. Newsletter settings `2026-11-09T10:35:33Z`: enabled, new-post emails off, full-content mode, configured 52-page Focus Fieldbook welcome, reply-to no-reply. **Email-eligible population unknown** and counters nonadditive.
+
+## Correct evidence boundary
+WordPress subscriber statuses include `Subscribed`, `Not subscribed` (Reader-only), `Not confirmed`, `Bounced`, `Emails paused`, `Not sending`. Only independently authenticated provider status and appropriate Dispatch consent can support a carefully deduplicated `confirmed_signup`. URL/UI state is non-authoritative. See https://wordpress.com/support/subscribers/ (reviewed 2026-11-04).
+`focus_measurement_contract.cjs` explicitly **fails closed** for all self-supplied records; it does NOT connect to production, verify an external provider, or install new tracking.
+
+## Owner decision / next measured step
+**Claude / Focus #129:** Stage a narrow rewrite of the gift-state signal or consciously treat the PDF as a publicly available resource; preserve functional WordPress opt-in and stop presenting arbitrary URL parameters as reliable status. Test true successful/failed/Reader-only flows only if approved, on mobile and desktop. R228 handles the repeat-signup copy change.
+**Dispatch #174:** Disallow conversion from `subscribe` URL, `is-subscriber` CSS, gift reveal or PDF click to `confirmed_signup`; actual inbox, publisher postal address and unsubscribe remain unverified. Verify provider-confirmed eligibility read-only without subscriber-identifying output or list export.
+**Mind #171:** Zen12 and Total Focus remain **HOLD_MERCHANT**: named FV affiliate approval, EMAIL promotion rights, issued earning link, published vetted guide, actual checkout and settlement not established. Merchant's separate free-audio/newsletter opt-in is not an FV lead or sale.
+**Praxxis / Commerce #820:** qualified Grok sessions → landing → CTA → provider-confirmed lead → independently settled order → refunds/fees → net revenue. No verified paid order or qualified human denominator here; revenue per 1,000 NOT COMPUTABLE.
+
+## Product and legal source check (November 9, 2026)
+Official Zen12 Premium seller page https://zen12.com/hnp lists 12 levels / 48 MP3s and a one-year *advertised* guarantee. “One hour in 12 minutes” is an **unverified merchant effectiveness assertion**, not independent product-specific evidence. Exact Total Focus listing https://hypnosislive.com/mental-skills/total-focus describes a 33-minute, 47-MB recording; standalone displayed $24.44 vs $29.95, bundle component $19.95, neither a verified final checkout total; brain reprogramming claims are likewise seller assertions. No merchant authorization inferred.
+
+FTC https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business requires truthful headers/subjects, applicable ad disclosure, FV's **valid postal address** and an effective unsubscribe. A seller's/Automattic's mailing address does not substitute for FV's. A native WordPress received-message preview is necessary before release but test sending still requires separate founder consent. WordPress docs: https://wordpress.com/support/newsletter/email-appearance/ .
+
+## Release
+All six newsletters **HOLD_UNSENT**; Issues 03 and 05 additionally **HOLD_MERCHANT**. Four editorial / two optional commercial issues unchanged. No test messages, subscriber mutations, postal address assumptions, WordPress writes, Grok posts, affiliate activations or spending.
