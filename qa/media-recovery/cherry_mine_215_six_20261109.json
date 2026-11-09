@@ -1,0 +1,359 @@
+{
+  "schema": "fv-media-cherry-215-catalog-custody-v1",
+  "audit_date_utc": "2026-11-09",
+  "scope": "Cherry Mine 215 archival/source-only audit. No actual visitor HTTP, bytes, failed images, copied binaries or publication approvals.",
+  "source_corpus": {
+    "posts": 61,
+    "inline_images": 355,
+    "external_origin_slots": 288,
+    "as_of": "2026-10-30",
+    "frozen_part": "qa/media-recovery/parts/06.json",
+    "frozen_blob_sha": "0f3dfe398a76838049cebba7cb773d5c5a0c8c69",
+    "post_id": 215,
+    "post_url": "https://finalvestige.com/2026/08/18/a-wall-in-the-dark/",
+    "modified_at_source": "2026-10-29T15:59:59"
+  },
+  "method": {
+    "exact_redirect_web_retriever": "All six exact stored Commons Special:Redirect/file URLs returned 'not accessible via this tool' on November 9; not a guest/origin HTTP code.",
+    "catalog_html_retrieval": "Five matching Commons file catalog pages successfully inspected. One page (215:3) inaccessible.",
+    "browser_guest_status": "UNMEASURED",
+    "image_transfer_bytes": "UNMEASURED",
+    "percent_76_savings": "UNMEASURED",
+    "sizing": "Catalog geometry only; conditional ≤960 pixels without upscaling, not decoded original binary or generated derivative"
+  },
+  "performance_context": {
+    "historical_reported_broken_42_browser_verified": false,
+    "claimed_76_percent_transfer_saving_verified": false,
+    "wp_originals_over_1500000_bytes": 15,
+    "stored_bytes_for_15": 47096779,
+    "stored_bytes_not_wire_bytes": true
+  },
+  "site_qa_owned_guest_queue": [
+    "285:5",
+    "285:2",
+    "287:5",
+    "418:1",
+    "418:2",
+    "407:1"
+  ],
+  "rows": [
+    {
+      "slot": "215:0",
+      "post_id": 215,
+      "post_url": "https://finalvestige.com/2026/08/18/a-wall-in-the-dark/",
+      "stored_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Cherry_Mine_disaster,_crowd_at_mouth_of_shaft.jpg?width=1280",
+      "original_alt": "Crowd gathered at the mouth of the Cherry Mine shaft during the November 1909 disaster in Illinois.",
+      "source_inventory_blob_sha": "0f3dfe398a76838049cebba7cb773d5c5a0c8c69",
+      "requested_redirect_width_px": 1280,
+      "retriever": {
+        "checked_utc_date": "2026-11-09",
+        "tool": "web.open",
+        "result": "TOOL_URL_NOT_ACCESSIBLE",
+        "actual_http_status": null
+      },
+      "catalog": {
+        "url": "https://commons.wikimedia.org/wiki/File:Cherry_Mine_disaster,_crowd_at_mouth_of_shaft.jpg",
+        "primary_catalog_url": "https://www.loc.gov/pictures/item/2014684365/",
+        "authority": "LIBRARY_OF_CONGRESS_BAIN_NEWS",
+        "accession": "LC-DIG-ggbain-04371",
+        "creator_credit": "Bain News Service",
+        "catalog_date_year": 1909,
+        "native_master_catalog_px": [
+          4811,
+          3367
+        ],
+        "conditional_max960_catalog_px": [
+          960,
+          672
+        ],
+        "rights_observation": "LOC no known publication restrictions, Commons US public-domain claim; individual release unapproved",
+        "scene_and_caption_gate": "Crowd at Cherry mine shaft, 1909. LOC Bain title comes from unverified caption-card data; cropping and image identity need inspection.",
+        "html_verified": true,
+        "binary_exact_match_verified": false
+      },
+      "visitor": {
+        "actual_http_status": null,
+        "final_url": null,
+        "mime": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "wire_bytes": null,
+        "was_cached": null,
+        "confirmed_broken": null
+      },
+      "release": {
+        "rights_cleared": false,
+        "full_resolution_inspection_passed": false,
+        "byte_identity_verified": false,
+        "download_authorized": false,
+        "cache_authorized": false,
+        "wordpress_upload_authorized": false,
+        "post_block_rewrite_authorized": false
+      }
+    },
+    {
+      "slot": "215:1",
+      "post_id": 215,
+      "post_url": "https://finalvestige.com/2026/08/18/a-wall-in-the-dark/",
+      "stored_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Cherry_Mine_fan_house_and_escape_shaft_postcard.jpg?width=1280",
+      "original_alt": "Ruins of the Cherry Mine fan house and escape shaft following the 1909 mine fire.",
+      "source_inventory_blob_sha": "0f3dfe398a76838049cebba7cb773d5c5a0c8c69",
+      "requested_redirect_width_px": 1280,
+      "retriever": {
+        "checked_utc_date": "2026-11-09",
+        "tool": "web.open",
+        "result": "TOOL_URL_NOT_ACCESSIBLE",
+        "actual_http_status": null
+      },
+      "catalog": {
+        "url": "https://commons.wikimedia.org/wiki/File:Cherry_Mine_fan_house_and_escape_shaft_postcard.jpg",
+        "primary_catalog_url": null,
+        "authority": "WIKIMEDIA_COMMONS_POSTCARD_ORIGINAL_CREATOR_UNKNOWN",
+        "accession": null,
+        "creator_credit": "Unknown maker; original 1910 postcard",
+        "catalog_date_year": 1910,
+        "native_master_catalog_px": [
+          600,
+          374
+        ],
+        "conditional_max960_catalog_px": [
+          600,
+          374
+        ],
+        "rights_observation": "Commons reports US public domain for 1910 postcard; independent rights review needed",
+        "scene_and_caption_gate": "1910 printed postcard depicts ruins following fire; NOT a 1909 event-time photograph. Source 1280px request exceeds 600px master; never upscale.",
+        "html_verified": true,
+        "binary_exact_match_verified": false
+      },
+      "visitor": {
+        "actual_http_status": null,
+        "final_url": null,
+        "mime": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "wire_bytes": null,
+        "was_cached": null,
+        "confirmed_broken": null
+      },
+      "release": {
+        "rights_cleared": false,
+        "full_resolution_inspection_passed": false,
+        "byte_identity_verified": false,
+        "download_authorized": false,
+        "cache_authorized": false,
+        "wordpress_upload_authorized": false,
+        "post_block_rewrite_authorized": false
+      }
+    },
+    {
+      "slot": "215:2",
+      "post_id": 215,
+      "post_url": "https://finalvestige.com/2026/08/18/a-wall-in-the-dark/",
+      "stored_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/A_miner%27s_family_at_dinner_-_DPLA_-_5f57daf0a0ca864c0d59173171a22547.jpg?width=1280",
+      "original_alt": "A mother and children seated at a dinner table after the Cherry Mine disaster while waiting for the miner in their family to return.",
+      "source_inventory_blob_sha": "0f3dfe398a76838049cebba7cb773d5c5a0c8c69",
+      "requested_redirect_width_px": 1280,
+      "retriever": {
+        "checked_utc_date": "2026-11-09",
+        "tool": "web.open",
+        "result": "TOOL_URL_NOT_ACCESSIBLE",
+        "actual_http_status": null
+      },
+      "catalog": {
+        "url": "https://commons.wikimedia.org/wiki/File:A_miner%27s_family_at_dinner_-_DPLA_-_5f57daf0a0ca864c0d59173171a22547.jpg",
+        "primary_catalog_url": "https://dp.la/item/5f57daf0a0ca864c0d59173171a22547",
+        "authority": "COLORADO_BOULDER_DPLA_CONTRIBUTION",
+        "accession": "DPLA:5f57daf0a0ca864c0d59173171a22547",
+        "creator_credit": "Burke & Atwell",
+        "catalog_date_year": 1910,
+        "native_master_catalog_px": [
+          1536,
+          1024
+        ],
+        "conditional_max960_catalog_px": [
+          960,
+          640
+        ],
+        "rights_observation": "University of Colorado Boulder statement: No Copyright - United States; other jurisdictions/permissions not warranted; item review HOLD",
+        "scene_and_caption_gate": "Catalog date March 1, 1910 and depicts mother/children at dinner waiting. Do not claim the photograph was made during 1909 underground rescue or invent identities.",
+        "html_verified": true,
+        "binary_exact_match_verified": false
+      },
+      "visitor": {
+        "actual_http_status": null,
+        "final_url": null,
+        "mime": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "wire_bytes": null,
+        "was_cached": null,
+        "confirmed_broken": null
+      },
+      "release": {
+        "rights_cleared": false,
+        "full_resolution_inspection_passed": false,
+        "byte_identity_verified": false,
+        "download_authorized": false,
+        "cache_authorized": false,
+        "wordpress_upload_authorized": false,
+        "post_block_rewrite_authorized": false
+      }
+    },
+    {
+      "slot": "215:3",
+      "post_id": 215,
+      "post_url": "https://finalvestige.com/2026/08/18/a-wall-in-the-dark/",
+      "stored_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/The_Appalling_Mine_Disaster_at_Cherry,_III._(1).png?width=1280",
+      "original_alt": "Contemporary 1909 illustrated account of the Cherry Mine disaster showing rescue activity around the mine.",
+      "source_inventory_blob_sha": "0f3dfe398a76838049cebba7cb773d5c5a0c8c69",
+      "requested_redirect_width_px": 1280,
+      "retriever": {
+        "checked_utc_date": "2026-11-09",
+        "tool": "web.open",
+        "result": "TOOL_URL_NOT_ACCESSIBLE",
+        "actual_http_status": null
+      },
+      "catalog": {
+        "url": "https://commons.wikimedia.org/wiki/File:The_Appalling_Mine_Disaster_at_Cherry,_III._(1).png",
+        "primary_catalog_url": null,
+        "authority": "UNVERIFIED_COMMONS_RECORD",
+        "accession": null,
+        "creator_credit": null,
+        "catalog_date_year": null,
+        "native_master_catalog_px": null,
+        "conditional_max960_catalog_px": null,
+        "rights_observation": "Item-level catalog and reuse status not independently verified",
+        "scene_and_caption_gate": "Canonical file-title URL inaccessible to independent web text retriever; no verified pixel geometry, historical illustration details or source/creator. Check possible 'III.' versus 'Ill.' wording visually.",
+        "html_verified": false,
+        "binary_exact_match_verified": false
+      },
+      "visitor": {
+        "actual_http_status": null,
+        "final_url": null,
+        "mime": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "wire_bytes": null,
+        "was_cached": null,
+        "confirmed_broken": null
+      },
+      "release": {
+        "rights_cleared": false,
+        "full_resolution_inspection_passed": false,
+        "byte_identity_verified": false,
+        "download_authorized": false,
+        "cache_authorized": false,
+        "wordpress_upload_authorized": false,
+        "post_block_rewrite_authorized": false
+      }
+    },
+    {
+      "slot": "215:4",
+      "post_id": 215,
+      "post_url": "https://finalvestige.com/2026/08/18/a-wall-in-the-dark/",
+      "stored_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Cherry_Mine_disaster,_mourners_and_coffins_LCCN2014684364.jpg?width=1280",
+      "original_alt": "Mourners and coffins at Cherry, Illinois, after the November 1909 mine disaster.",
+      "source_inventory_blob_sha": "0f3dfe398a76838049cebba7cb773d5c5a0c8c69",
+      "requested_redirect_width_px": 1280,
+      "retriever": {
+        "checked_utc_date": "2026-11-09",
+        "tool": "web.open",
+        "result": "TOOL_URL_NOT_ACCESSIBLE",
+        "actual_http_status": null
+      },
+      "catalog": {
+        "url": "https://commons.wikimedia.org/wiki/File:Cherry_Mine_disaster,_mourners_and_coffins_LCCN2014684364.jpg",
+        "primary_catalog_url": "https://www.loc.gov/pictures/item/2014684364/",
+        "authority": "LIBRARY_OF_CONGRESS_BAIN_NEWS",
+        "accession": "LCCN2014684364 / LC-DIG-ggbain-04370",
+        "creator_credit": "Bain News Service",
+        "catalog_date_year": null,
+        "native_master_catalog_px": [
+          1024,
+          747
+        ],
+        "conditional_max960_catalog_px": [
+          960,
+          700
+        ],
+        "rights_observation": "LOC Bain collection no known restrictions on publication, not blanket permission/rehost clearance",
+        "scene_and_caption_gate": "Bain title 'mourners and coffins' from unverified negative/card data; exact date not established; preserve scene.",
+        "html_verified": true,
+        "binary_exact_match_verified": false
+      },
+      "visitor": {
+        "actual_http_status": null,
+        "final_url": null,
+        "mime": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "wire_bytes": null,
+        "was_cached": null,
+        "confirmed_broken": null
+      },
+      "release": {
+        "rights_cleared": false,
+        "full_resolution_inspection_passed": false,
+        "byte_identity_verified": false,
+        "download_authorized": false,
+        "cache_authorized": false,
+        "wordpress_upload_authorized": false,
+        "post_block_rewrite_authorized": false
+      }
+    },
+    {
+      "slot": "215:5",
+      "post_id": 215,
+      "post_url": "https://finalvestige.com/2026/08/18/a-wall-in-the-dark/",
+      "stored_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Group_made_orphans_by_Cherry_Mine_disaster_where_400_men_were_entombed,_Nov._13,_1909,_Cherry,_Ill._-_Washington_Photo_Co._LCCN2011661524.jpg?width=1280",
+      "original_alt": "Children identified in a 1909 photograph as having been made orphans by the Cherry Mine disaster.",
+      "source_inventory_blob_sha": "0f3dfe398a76838049cebba7cb773d5c5a0c8c69",
+      "requested_redirect_width_px": 1280,
+      "retriever": {
+        "checked_utc_date": "2026-11-09",
+        "tool": "web.open",
+        "result": "TOOL_URL_NOT_ACCESSIBLE",
+        "actual_http_status": null
+      },
+      "catalog": {
+        "url": "https://commons.wikimedia.org/wiki/File:Group_made_orphans_by_Cherry_Mine_disaster_where_400_men_were_entombed,_Nov._13,_1909,_Cherry,_Ill._-_Washington_Photo_Co._LCCN2011661524.jpg",
+        "primary_catalog_url": "https://www.loc.gov/pictures/item/2011661524/",
+        "authority": "LIBRARY_OF_CONGRESS_RED_CROSS",
+        "accession": "LCCN2011661524 / LC-DIG-ds-01289",
+        "creator_credit": "Washington Photo Co.",
+        "catalog_date_year": 1909,
+        "native_master_catalog_px": [
+          8194,
+          5544
+        ],
+        "conditional_max960_catalog_px": [
+          960,
+          650
+        ],
+        "rights_observation": "LOC no known publication restrictions, Commons US public-domain claim; item-level approval HOLD",
+        "scene_and_caption_gate": "1909 historic title says 400 men 'entombed'—this is not verified death count; preserve original photo context and distinguish archival headline from asserted fatalities.",
+        "html_verified": true,
+        "binary_exact_match_verified": false
+      },
+      "visitor": {
+        "actual_http_status": null,
+        "final_url": null,
+        "mime": null,
+        "natural_width_px": null,
+        "natural_height_px": null,
+        "wire_bytes": null,
+        "was_cached": null,
+        "confirmed_broken": null
+      },
+      "release": {
+        "rights_cleared": false,
+        "full_resolution_inspection_passed": false,
+        "byte_identity_verified": false,
+        "download_authorized": false,
+        "cache_authorized": false,
+        "wordpress_upload_authorized": false,
+        "post_block_rewrite_authorized": false
+      }
+    }
+  ]
+}
