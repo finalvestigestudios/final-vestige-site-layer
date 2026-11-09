@@ -3,7 +3,7 @@
 // No network requests, asset copies, WordPress writes, or guest/browser claims.
 const fs = require('node:fs');
 const path = require('node:path');
-const PROXY_HOSTS = new Set(['i0.wp.com', 'i1.wp.com', 'i2.wp.com']);
+const PROXY_HOSTS = new Set(['i0.wp.com', 'i1.wp.com', 'i2.wp.com', 'i3.wp.com']);
 const EXPECTED = Object.freeze({ posts: 61, images: 355, offsite: 288, stored_qa_offsite: 286, other_offsite: 170, wikimedia_redirect: 118, first_party: 60, first_party_proxy: 7 });
 const EXPECTED_DIFFS = Object.freeze({ 285: 1, 291: 1 });
 const SOURCE_KINDS = new Set(['first_party','jetpack_proxy','external','wikimedia_redirect']);
