@@ -112,4 +112,76 @@ for i, name in enumerate(BEHAVIOR_ATTRS):
     def test(self,name=name): self.denied(f'<p {name}="unsafe">Source</p>','interactive/bypass')
     setattr(R243Markup,f'test_behavior_attribute_{i:02d}',test)
 
+
+# R244 regression family: the SVG 2 href attribute is a fetchable resource
+# reference on image, feImage, use and other non-anchor elements. Original R243
+# only blocked remote xlink:href, allowing https href to bypass the resource
+# check. These tests deliberately preserve authorized navigation links and
+# local same-document diagram fragments, but never approve publication.
+SVG_RESOURCE_ELEMENTS=('image', 'feImage', 'use', 'mpath', 'textPath',
+                       'tref', 'cursor', 'pattern', 'radialGradient')
+REMOTE_OR_UNREVIEWED_HREFS=(
+    'https://tracker.example/beacon.png',
+    'http://tracker.example/a.svg',
+    '/wp-content/uploads/unknown.png',
+    '../uploads/unknown.svg',
+    'images/unknown.svg',
+    'https&#58;//tracker.example/encoded.png',
+)
+for element_index, element in enumerate(SVG_RESOURCE_ELEMENTS):
+    for case_index, resource in enumerate(REMOTE_OR_UNREVIEWED_HREFS):
+        def test(self,element=element,resource=resource):
+            self.denied('<svg><'+element+' href="'+resource+'" /></svg>',
+                        'R244 nonnavigation href')
+        setattr(R243Markup,
+                f'test_r244_svg_href_{element_index:02d}_{case_index:02d}',test)
+
+
+class R244ResourceAndNavigation(unittest.TestCase):
+    def test_safe_fragment_pointers_stay_held(self):
+        for tag in SVG_RESOURCE_ELEMENTS:
+            with self.subTest(tag=tag):
+                out=gate.check_active_markup(
+                    '<svg><defs><path id="route" d="M0 0L3 3"/></defs><'
+                    +tag+' href="#route" /></svg>')
+                self.assertEqual(out['state'],'DRAFT_HARD_HOLD')
+                self.assertIs(out['release_authorized'],False)
+                self.assertIs(out['source_review_approved'],False)
+
+    def test_navigation_links_preserved_not_source_approved(self):
+        for dest in ('https://www.ready.gov/plan',
+                     '/preparedness/start-here/','#planning'):
+            with self.subTest(dest=dest):
+                out=gate.check_active_markup('<a href="'+dest+'">Read</a>')
+                self.assertEqual(out['raw_links'],1)
+                self.assertIs(out['release_authorized'],False)
+                self.assertIs(out['source_review_approved'],False)
+
+    def test_svg_link_is_navigation_only_when_anchor(self):
+        out=gate.check_active_markup(
+            '<svg><a href="https://www.ready.gov/plan">'
+            '<text>Source</text></a></svg>')
+        self.assertEqual(out['raw_links'],1)
+        self.assertIs(out['human_review_required'],True)
+
+    def test_non_svg_generic_href_also_denied(self):
+        with self.assertRaisesRegex(ValueError,'R244 nonnavigation href'):
+            gate.check_active_markup('<div href="https://tracker.example/i">Read</div>')
+
+    def test_xlink_relative_resource_denied(self):
+        with self.assertRaisesRegex(ValueError,'R244 nonnavigation href'):
+            gate.check_active_markup('<svg><use xlink:href="../other.svg#name"/></svg>')
+
+    def test_synthetic_full_roster_resource_injection_denied(self):
+        roster=[{'n':i,'slug':f'entry-{i:02d}'} for i in range(1,36)]
+        entries={f'content/articles/entry-{i:02d}.body.html':
+                 b'<p>Visible {{cite:ready-plan}}</p>' for i in range(1,36)}
+        audit=lambda: gate.audit_active_markup_custody(
+            None,roster,lambda root,path: entries[path])
+        self.assertEqual(audit()['citation_count'],35)
+        entries['content/articles/entry-19.body.html'] = (
+            b'<svg><image href="https://tracker.example/trace"/></svg>')
+        with self.assertRaisesRegex(ValueError,'R244 nonnavigation href'):
+            audit()
+
 if __name__ == '__main__': unittest.main()
