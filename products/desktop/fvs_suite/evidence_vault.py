@@ -23,6 +23,7 @@ from .exception_review import (
 from .review_identity import require_snapshot_match
 from .vault_decode_privacy import decrypt_evidence, parse_evidence_json, decode_evidence_b64
 from .vault_input_snapshot import read_vault_input
+from .vault_publish import publish_vault
 
 MAGIC = b"FVS-EVIDENCE-VAULT-v1\x00"
 SALT_SIZE = 16
@@ -132,18 +133,9 @@ def seal_evidence(report: str | Path, product: str, journal: str | Path,
     filename = ("fvs-" + product + "-" + datetime.now(timezone.utc).strftime(
         "%Y%m%d-%H%M%S") + "-" + secrets.token_hex(5) + ".fvault")
     target = destination / filename
-    created = False
-    try:
-        with target.open("xb") as stream:
-            created = True
-            stream.write(vault_bytes)
-            stream.flush()
-            os.fsync(stream.fileno())
-    except Exception:
-        if created:
-            target.unlink(missing_ok=True)
-        raise
-    return target
+    # Keep ciphertext private until a complete byte-verified, fsynced,
+    # no-clobber staging file can be exclusively published.
+    return publish_vault(target, vault_bytes)
 
 
 def restore_evidence(vault: str | Path, folder: str | Path, passphrase: str) -> Path:
