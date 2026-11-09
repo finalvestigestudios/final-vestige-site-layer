@@ -1,0 +1,358 @@
+{
+  "artifact": "MIND_R234_CLAIM_SOURCE_AUTHORIZATION",
+  "version": "1.0.0",
+  "date": "2026-11-08",
+  "status": "UNPUBLISHED_HARD_HOLD",
+  "method": "Seller pages were read, but descriptions are not efficacy evidence. Neither public affiliate portal nor consumer email proves publisher approval.",
+  "sources": [
+    {
+      "id": "S01",
+      "kind": "PRIMARY_ABSTRACT",
+      "label": "Wegner et al. 1987 thought suppression",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/3612492/",
+      "note": "abstract reviewed, full paper not reviewed"
+    },
+    {
+      "id": "S02",
+      "kind": "THEORETICAL",
+      "label": "Wegner 1994 ironic processes",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/8121959/",
+      "note": "bibliography and author manuscript noted"
+    },
+    {
+      "id": "S03",
+      "kind": "META_ANALYSIS",
+      "label": "Wang et al. 2020 31 studies",
+      "url": "https://doi.org/10.1177/1745691619898795",
+      "note": "journal abstract reviewed; individual studies not reanalyzed"
+    },
+    {
+      "id": "S04",
+      "kind": "SELLER",
+      "label": "Inspire3 brand catalog",
+      "url": "https://inspire3.com/",
+      "note": "seller statements only"
+    },
+    {
+      "id": "S05",
+      "kind": "SELLER",
+      "label": "Zen12 exact headline Premium seller",
+      "url": "https://zen12.com/hnp",
+      "note": "seller statements only; no checkout verification"
+    },
+    {
+      "id": "S06",
+      "kind": "SELLER",
+      "label": "Zen12 program features/about",
+      "url": "https://zen12.com/about",
+      "note": "seller statements only"
+    },
+    {
+      "id": "S07",
+      "kind": "FTC",
+      "label": "FTC Endorsement Guides",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "note": "guidance on affiliate placement"
+    },
+    {
+      "id": "S08",
+      "kind": "FTC",
+      "label": "FTC health claims substantiation",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "note": "product specific substantiation"
+    },
+    {
+      "id": "S09",
+      "kind": "OWNED_LIVE",
+      "label": "Focus Fieldbook one existing funnel",
+      "url": "https://finalvestige.com/focus/",
+      "note": "public route verified; provider subscriber attribution unknown"
+    },
+    {
+      "id": "S10",
+      "kind": "OWNED_LIVE",
+      "label": "Change Blindness published article",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "note": "public route verified"
+    },
+    {
+      "id": "S11",
+      "kind": "OWNED_LIVE",
+      "label": "Puységur archives public route",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "note": "Issue 171 confirms published; live retriever errored in this sprint; not individually reaudited"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "1987 experiment used 5-minute suppression and later expression periods",
+      "status": "SUPPORTED_ABSTRACT",
+      "sources": [
+        "S01"
+      ]
+    },
+    {
+      "id": "C02",
+      "claim": "1987 suppression followed by higher later white-bear thought frequency vs initial-express condition",
+      "status": "SUPPORTED_ABSTRACT",
+      "sources": [
+        "S01"
+      ]
+    },
+    {
+      "id": "C03",
+      "claim": "specific distracter reduced later preoccupation in second experiment",
+      "status": "SUPPORTED_ABSTRACT",
+      "sources": [
+        "S01"
+      ]
+    },
+    {
+      "id": "C04",
+      "claim": "Wegner 1994 offered a two-process theoretical account",
+      "status": "THEORETICAL_MODEL",
+      "sources": [
+        "S02"
+      ]
+    },
+    {
+      "id": "C05",
+      "claim": "2020 meta-analysis examined 31 studies",
+      "status": "SUPPORTED_ABSTRACT",
+      "sources": [
+        "S03"
+      ]
+    },
+    {
+      "id": "C06",
+      "claim": "rebound reported across cognitive-load conditions; immediate enhancement only with load",
+      "status": "SUPPORTED_ABSTRACT",
+      "sources": [
+        "S03"
+      ]
+    },
+    {
+      "id": "C07",
+      "claim": "Zen12 markets 12-minute audio sessions",
+      "status": "SELLER_ONLY",
+      "sources": [
+        "S05",
+        "S06"
+      ]
+    },
+    {
+      "id": "C08",
+      "claim": "Zen12 seller describes 12 progression levels",
+      "status": "SELLER_ONLY",
+      "sources": [
+        "S06"
+      ]
+    },
+    {
+      "id": "C09",
+      "claim": "seller describes 4 styles per level, 48 MP3 in Premium",
+      "status": "SELLER_ONLY",
+      "sources": [
+        "S05",
+        "S06"
+      ]
+    },
+    {
+      "id": "C10",
+      "claim": "Zen12's twelve minutes are equivalent to one hour of meditation",
+      "status": "UNSUBSTANTIATED_PRODUCT_CLAIM",
+      "sources": [
+        "S05"
+      ]
+    },
+    {
+      "id": "C11",
+      "claim": "Zen12 audio automatically induces deeper meditation and health outcomes",
+      "status": "UNSUBSTANTIATED_PRODUCT_CLAIM",
+      "sources": [
+        "S05",
+        "S06"
+      ]
+    },
+    {
+      "id": "C12",
+      "claim": "Zen12 checkout price/taxes are final, live and confirmed",
+      "status": "UNVERIFIED",
+      "sources": []
+    },
+    {
+      "id": "C13",
+      "claim": "seller guarantee fulfilled for FV reader",
+      "status": "UNVERIFIED",
+      "sources": [
+        "S05"
+      ]
+    },
+    {
+      "id": "C14",
+      "claim": "Final Vestige Inspire3 publisher account accepted",
+      "status": "NOT_AUTHENTICATED",
+      "sources": []
+    },
+    {
+      "id": "C15",
+      "claim": "FV issued commission URL + permitted channel/creative rights verified",
+      "status": "NOT_AUTHENTICATED",
+      "sources": []
+    },
+    {
+      "id": "C16",
+      "claim": "FV Payhip owned Mind SKU rights, checkout, refunds verified",
+      "status": "NOT_AUTHENTICATED",
+      "sources": []
+    },
+    {
+      "id": "C17",
+      "claim": "Focus signup success means provider-confirmed subscriber",
+      "status": "NOT_VERIFIED",
+      "sources": [
+        "S09"
+      ]
+    },
+    {
+      "id": "C18",
+      "claim": "affiliate outbound clicks imply merchant sale or cleared commission",
+      "status": "FALSE_CONFLATION",
+      "sources": []
+    },
+    {
+      "id": "C19",
+      "claim": "current qualified-human-session and settled-net-revenue ratio is computable",
+      "status": "NOT_COMPUTABLE",
+      "sources": []
+    }
+  ],
+  "gates": [
+    {
+      "id": "G01",
+      "gate": "named_publisher_acceptance",
+      "status": "HARD_HOLD",
+      "evidence": "Not independently authenticated in this sprint; page and earning controls disabled."
+    },
+    {
+      "id": "G02",
+      "gate": "offer_tier_approval",
+      "status": "HARD_HOLD",
+      "evidence": "Not independently authenticated in this sprint; page and earning controls disabled."
+    },
+    {
+      "id": "G03",
+      "gate": "channel_permissions",
+      "status": "HARD_HOLD",
+      "evidence": "Not independently authenticated in this sprint; page and earning controls disabled."
+    },
+    {
+      "id": "G04",
+      "gate": "issued_earning_url",
+      "status": "HARD_HOLD",
+      "evidence": "Not independently authenticated in this sprint; page and earning controls disabled."
+    },
+    {
+      "id": "G05",
+      "gate": "approved_merchant_creatives",
+      "status": "HARD_HOLD",
+      "evidence": "Not independently authenticated in this sprint; page and earning controls disabled."
+    },
+    {
+      "id": "G06",
+      "gate": "current_checkout_total",
+      "status": "HARD_HOLD",
+      "evidence": "Not independently authenticated in this sprint; page and earning controls disabled."
+    },
+    {
+      "id": "G07",
+      "gate": "refund_terms_fulfillment",
+      "status": "HARD_HOLD",
+      "evidence": "Not independently authenticated in this sprint; page and earning controls disabled."
+    },
+    {
+      "id": "G08",
+      "gate": "independent_benefit_substantiation",
+      "status": "HARD_HOLD",
+      "evidence": "Not independently authenticated in this sprint; page and earning controls disabled."
+    },
+    {
+      "id": "G09",
+      "gate": "claim_copy_review",
+      "status": "HARD_HOLD",
+      "evidence": "Not independently authenticated in this sprint; page and earning controls disabled."
+    },
+    {
+      "id": "G10",
+      "gate": "adjacent_ftc_disclosure",
+      "status": "HARD_HOLD",
+      "evidence": "Not independently authenticated in this sprint; page and earning controls disabled."
+    },
+    {
+      "id": "G11",
+      "gate": "consent_privacy_review",
+      "status": "HARD_HOLD",
+      "evidence": "Not independently authenticated in this sprint; page and earning controls disabled."
+    },
+    {
+      "id": "G12",
+      "gate": "native_regression_tests",
+      "status": "HARD_HOLD",
+      "evidence": "Not independently authenticated in this sprint; page and earning controls disabled."
+    },
+    {
+      "id": "G13",
+      "gate": "browser_wcag_performance",
+      "status": "HARD_HOLD",
+      "evidence": "Not independently authenticated in this sprint; page and earning controls disabled."
+    },
+    {
+      "id": "G14",
+      "gate": "real_video_and_captions",
+      "status": "HARD_HOLD",
+      "evidence": "Not independently authenticated in this sprint; page and earning controls disabled."
+    },
+    {
+      "id": "G15",
+      "gate": "founder_release_approval",
+      "status": "HARD_HOLD",
+      "evidence": "Not independently authenticated in this sprint; page and earning controls disabled."
+    },
+    {
+      "id": "G16",
+      "gate": "settled_revenue_reconciliation",
+      "status": "HARD_HOLD",
+      "evidence": "Not independently authenticated in this sprint; page and earning controls disabled."
+    }
+  ],
+  "visitor_measurement": {
+    "allowed_campaign_fields": [
+      "utm_source",
+      "utm_medium",
+      "utm_campaign",
+      "utm_content"
+    ],
+    "utm_content": "Grok asset_id only if explicitly verified in TASK-008",
+    "pii": "NO",
+    "client_script": "NONE",
+    "paid_conversion_authority": "Merchant/order ledger only",
+    "event_boundaries": [
+      "qualified_human_landing",
+      "article_to_focus_click",
+      "provider_confirmed_signup",
+      "affiliate_click",
+      "merchant_confirmed_order",
+      "cleared_commission",
+      "refund_fee_adjustment"
+    ],
+    "reporting": "suppress cells <20; missing values not zero; 7/30 day cohort only with denominators"
+  },
+  "ab_test": {
+    "hypothesis": "Original 42-second optional video might improve confirmed paid conversion among eligible visitor cohort",
+    "variant_A": "text only",
+    "variant_B": "text plus static film poster/transcript concept; video not rendered",
+    "exposure": "NOT_LIVE",
+    "evaluation": "net revenue per 1000 qualified human sessions, never CTR alone"
+  }
+}
