@@ -1,0 +1,432 @@
+{
+  "schema": "fv-usgs-eight-v1",
+  "audit_date": "2026-11-09",
+  "source_census_blob": "92a904c8da1ace1f972b2f00adf1a4847dde2b99",
+  "source_cohort": {
+    "posts": 61,
+    "image_references": 355,
+    "external_origins": 288
+  },
+  "counts": {
+    "researched_new": 8,
+    "tool_displayed": 7,
+    "tool_inaccessible": 1,
+    "guest_tested": 0,
+    "confirmed_broken": 0
+  },
+  "method": "Public independent image-renderer opened literal original URLs. Renderer result does not establish actual origin or visitor HTTP status, native image dimensions, download size, licensing or production health.",
+  "rows": [
+    {
+      "slot": "407:0",
+      "post_id": 407,
+      "post_url": "https://finalvestige.com/2026/08/20/the-lake-wasnt-there-yesterday-hebgen/",
+      "stored_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/vhp_img317.jpg",
+      "origin_host": "d9-wret.s3.us-west-2.amazonaws.com",
+      "retriever": {
+        "tool": "web.open exact original URL",
+        "ref": "turn688438view0",
+        "observed_on": "2026-11-09",
+        "observation": "IMAGE_RENDERED",
+        "origin_http": null,
+        "visitor_http": null
+      },
+      "authority": {
+        "candidate_catalog_url": "https://www.usgs.gov/media/images/earthquake-damage-1959-hebgen-lake-event-yellowstone-plateau",
+        "source": "U.S. Geological Survey",
+        "catalog_relation": "Related scene only: no same-photo/crop proof; attribution not established",
+        "exact_image_match": false,
+        "rights_approved": false,
+        "rights_review": "HOLD - item-specific copyright, credit and source identity"
+      },
+      "visual": {
+        "observed_scene": "1959 flooded building and earthquake-damaged road",
+        "crop_approved": false,
+        "caption_review_required": true
+      },
+      "sizing": {
+        "native_width": null,
+        "native_height": null,
+        "max_width": 960,
+        "output_width": null,
+        "output_height": null,
+        "upscale": false
+      },
+      "visitor": {
+        "natural_width": null,
+        "natural_height": null,
+        "cold_wire_bytes": null,
+        "confirmed_broken": null
+      },
+      "release": {
+        "download": false,
+        "cache": false,
+        "wordpress": false,
+        "rewrite": false,
+        "homepage": false
+      }
+    },
+    {
+      "slot": "407:2",
+      "post_id": 407,
+      "post_url": "https://finalvestige.com/2026/08/20/the-lake-wasnt-there-yesterday-hebgen/",
+      "stored_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/media/images/EarthquakeLake1.jpg",
+      "origin_host": "d9-wret.s3.us-west-2.amazonaws.com",
+      "retriever": {
+        "tool": "web.open exact original URL",
+        "ref": "turn688438view1",
+        "observed_on": "2026-11-09",
+        "observation": "IMAGE_RENDERED",
+        "origin_http": null,
+        "visitor_http": null
+      },
+      "authority": {
+        "candidate_catalog_url": "https://www.usgs.gov/media/images/view-madison-slide-august-21-1959-rapidly-filling-earthquake-lake",
+        "source": "U.S. Geological Survey",
+        "catalog_relation": "USGS 1959 context credited to William B. Hall, but original file identity unverified",
+        "exact_image_match": false,
+        "rights_approved": false,
+        "rights_review": "HOLD - item-specific copyright, credit and source identity"
+      },
+      "visual": {
+        "observed_scene": "Black-and-white Madison landslide and lake view",
+        "crop_approved": false,
+        "caption_review_required": true
+      },
+      "sizing": {
+        "native_width": null,
+        "native_height": null,
+        "max_width": 960,
+        "output_width": null,
+        "output_height": null,
+        "upscale": false
+      },
+      "visitor": {
+        "natural_width": null,
+        "natural_height": null,
+        "cold_wire_bytes": null,
+        "confirmed_broken": null
+      },
+      "release": {
+        "download": false,
+        "cache": false,
+        "wordpress": false,
+        "rewrite": false,
+        "homepage": false
+      }
+    },
+    {
+      "slot": "407:3",
+      "post_id": 407,
+      "post_url": "https://finalvestige.com/2026/08/20/the-lake-wasnt-there-yesterday-hebgen/",
+      "stored_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/media/images/EarthquakeLake3.jpg",
+      "origin_host": "d9-wret.s3.us-west-2.amazonaws.com",
+      "retriever": {
+        "tool": "web.open exact original URL",
+        "ref": "turn688438view2",
+        "observed_on": "2026-11-09",
+        "observation": "TOOL_INACCESSIBLE",
+        "origin_http": null,
+        "visitor_http": null
+      },
+      "authority": {
+        "candidate_catalog_url": "https://www.usgs.gov/observatories/yvo/news/1959-madison-slide-part-1-a-deadly-consequence-hebgen-lake-earthquake",
+        "source": "U.S. Geological Survey",
+        "catalog_relation": "Contextual official history only; no exact-photo match; inaccessible web wrapper is not guest failure",
+        "exact_image_match": false,
+        "rights_approved": false,
+        "rights_review": "HOLD - item-specific copyright, credit and source identity"
+      },
+      "visual": {
+        "observed_scene": "Source photo could not be rendered; image content unverified",
+        "crop_approved": false,
+        "caption_review_required": true
+      },
+      "sizing": {
+        "native_width": null,
+        "native_height": null,
+        "max_width": 960,
+        "output_width": null,
+        "output_height": null,
+        "upscale": false
+      },
+      "visitor": {
+        "natural_width": null,
+        "natural_height": null,
+        "cold_wire_bytes": null,
+        "confirmed_broken": null
+      },
+      "release": {
+        "download": false,
+        "cache": false,
+        "wordpress": false,
+        "rewrite": false,
+        "homepage": false
+      }
+    },
+    {
+      "slot": "407:4",
+      "post_id": 407,
+      "post_url": "https://finalvestige.com/2026/08/20/the-lake-wasnt-there-yesterday-hebgen/",
+      "stored_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/thumbnails/image/img7536.jpg",
+      "origin_host": "d9-wret.s3.us-west-2.amazonaws.com",
+      "retriever": {
+        "tool": "web.open exact original URL",
+        "ref": "turn688438view3",
+        "observed_on": "2026-11-09",
+        "observation": "IMAGE_RENDERED",
+        "origin_http": null,
+        "visitor_http": null
+      },
+      "authority": {
+        "candidate_catalog_url": "https://www.usgs.gov/observatories/yvo/news/1959-madison-slide-part-2-recovery-and-remediation",
+        "source": "U.S. Geological Survey",
+        "catalog_relation": "Official historical reference, not exact-photo accession",
+        "exact_image_match": false,
+        "rights_approved": false,
+        "rights_review": "HOLD - item-specific copyright, credit and source identity"
+      },
+      "visual": {
+        "observed_scene": "Rocky canyon road and debris scene",
+        "crop_approved": false,
+        "caption_review_required": true
+      },
+      "sizing": {
+        "native_width": null,
+        "native_height": null,
+        "max_width": 960,
+        "output_width": null,
+        "output_height": null,
+        "upscale": false
+      },
+      "visitor": {
+        "natural_width": null,
+        "natural_height": null,
+        "cold_wire_bytes": null,
+        "confirmed_broken": null
+      },
+      "release": {
+        "download": false,
+        "cache": false,
+        "wordpress": false,
+        "rewrite": false,
+        "homepage": false
+      }
+    },
+    {
+      "slot": "407:5",
+      "post_id": 407,
+      "post_url": "https://finalvestige.com/2026/08/20/the-lake-wasnt-there-yesterday-hebgen/",
+      "stored_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/thumbnails/image/img7538.jpg",
+      "origin_host": "d9-wret.s3.us-west-2.amazonaws.com",
+      "retriever": {
+        "tool": "web.open exact original URL",
+        "ref": "turn688438view4",
+        "observed_on": "2026-11-09",
+        "observation": "IMAGE_RENDERED",
+        "origin_http": null,
+        "visitor_http": null
+      },
+      "authority": {
+        "candidate_catalog_url": "https://www.usgs.gov/media/images/old-faithful-eruption",
+        "source": "U.S. Geological Survey",
+        "catalog_relation": "USGS candidate public-domain notice not proof this is the same image; contextual geyser",
+        "exact_image_match": false,
+        "rights_approved": false,
+        "rights_review": "HOLD - item-specific copyright, credit and source identity"
+      },
+      "visual": {
+        "observed_scene": "Geyser eruption; geothermal context, not direct 1959 quake damage",
+        "crop_approved": false,
+        "caption_review_required": true
+      },
+      "sizing": {
+        "native_width": null,
+        "native_height": null,
+        "max_width": 960,
+        "output_width": null,
+        "output_height": null,
+        "upscale": false
+      },
+      "visitor": {
+        "natural_width": null,
+        "natural_height": null,
+        "cold_wire_bytes": null,
+        "confirmed_broken": null
+      },
+      "release": {
+        "download": false,
+        "cache": false,
+        "wordpress": false,
+        "rewrite": false,
+        "homepage": false
+      }
+    },
+    {
+      "slot": "407:6",
+      "post_id": 407,
+      "post_url": "https://finalvestige.com/2026/08/20/the-lake-wasnt-there-yesterday-hebgen/",
+      "stored_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/thumbnails/image/img7537.jpg",
+      "origin_host": "d9-wret.s3.us-west-2.amazonaws.com",
+      "retriever": {
+        "tool": "web.open exact original URL",
+        "ref": "turn688438view5",
+        "observed_on": "2026-11-09",
+        "observation": "IMAGE_RENDERED",
+        "origin_http": null,
+        "visitor_http": null
+      },
+      "authority": {
+        "candidate_catalog_url": "https://www.usgs.gov/media/images/old-faithful-geyser-eruption-yellowstone-national-park",
+        "source": "U.S. Geological Survey",
+        "catalog_relation": "USGS reference not exact image identification; geothermal context only",
+        "exact_image_match": false,
+        "rights_approved": false,
+        "rights_review": "HOLD - item-specific copyright, credit and source identity"
+      },
+      "visual": {
+        "observed_scene": "Geyser/hydrothermal eruption; not direct 1959 quake damage",
+        "crop_approved": false,
+        "caption_review_required": true
+      },
+      "sizing": {
+        "native_width": null,
+        "native_height": null,
+        "max_width": 960,
+        "output_width": null,
+        "output_height": null,
+        "upscale": false
+      },
+      "visitor": {
+        "natural_width": null,
+        "natural_height": null,
+        "cold_wire_bytes": null,
+        "confirmed_broken": null
+      },
+      "release": {
+        "download": false,
+        "cache": false,
+        "wordpress": false,
+        "rewrite": false,
+        "homepage": false
+      }
+    },
+    {
+      "slot": "407:7",
+      "post_id": 407,
+      "post_url": "https://finalvestige.com/2026/08/20/the-lake-wasnt-there-yesterday-hebgen/",
+      "stored_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/media/images/Quake%20lake%20and%20slide%2020230627.jpg",
+      "origin_host": "d9-wret.s3.us-west-2.amazonaws.com",
+      "retriever": {
+        "tool": "web.open exact original URL",
+        "ref": "turn688438view6",
+        "observed_on": "2026-11-09",
+        "observation": "IMAGE_RENDERED",
+        "origin_http": null,
+        "visitor_http": null
+      },
+      "authority": {
+        "candidate_catalog_url": "https://www.usgs.gov/media/images/earthquake-lake-and-madison-slide",
+        "source": "U.S. Geological Survey",
+        "catalog_relation": "USGS record credits Mike Poland 2023 and reports Public Domain; exact binary/crop unverified",
+        "exact_image_match": false,
+        "rights_approved": false,
+        "rights_review": "HOLD - item-specific copyright, credit and source identity"
+      },
+      "visual": {
+        "observed_scene": "Present-day Earthquake Lake, photographed June 27 2023",
+        "crop_approved": false,
+        "caption_review_required": true
+      },
+      "sizing": {
+        "native_width": null,
+        "native_height": null,
+        "max_width": 960,
+        "output_width": null,
+        "output_height": null,
+        "upscale": false
+      },
+      "visitor": {
+        "natural_width": null,
+        "natural_height": null,
+        "cold_wire_bytes": null,
+        "confirmed_broken": null
+      },
+      "release": {
+        "download": false,
+        "cache": false,
+        "wordpress": false,
+        "rewrite": false,
+        "homepage": false
+      }
+    },
+    {
+      "slot": "418:5",
+      "post_id": 418,
+      "post_url": "https://finalvestige.com/2026/08/20/the-lighthouse-was-gone-at-dawn-1946-tsunami/",
+      "stored_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/styles/full_width/public/media/images/19460401_UNKNOWN_37-012_copy.jpg?itok=ASMRCahz",
+      "origin_host": "d9-wret.s3.us-west-2.amazonaws.com",
+      "retriever": {
+        "tool": "web.open exact original URL",
+        "ref": "turn688438view7",
+        "observed_on": "2026-11-09",
+        "observation": "IMAGE_RENDERED",
+        "origin_http": null,
+        "visitor_http": null
+      },
+      "authority": {
+        "candidate_catalog_url": "https://www.usgs.gov/media/images/damage-hilo-tsunami-struck-april-fools-day-1946",
+        "source": "U.S. Geological Survey",
+        "catalog_relation": "USGS record reports Public Domain with unknown original source; photograph appears to depict Hilo",
+        "exact_image_match": false,
+        "rights_approved": false,
+        "rights_review": "HOLD - item-specific copyright, credit and source identity"
+      },
+      "visual": {
+        "observed_scene": "April 1 1946 Hilo Hawaiʻi tsunami business district destruction; not Scotch Cap Alaska",
+        "crop_approved": false,
+        "caption_review_required": true
+      },
+      "sizing": {
+        "native_width": null,
+        "native_height": null,
+        "max_width": 960,
+        "output_width": null,
+        "output_height": null,
+        "upscale": false
+      },
+      "visitor": {
+        "natural_width": null,
+        "natural_height": null,
+        "cold_wire_bytes": null,
+        "confirmed_broken": null
+      },
+      "release": {
+        "download": false,
+        "cache": false,
+        "wordpress": false,
+        "rewrite": false,
+        "homepage": false
+      }
+    }
+  ],
+  "performance": {
+    "reported_reduction_percent": 76,
+    "measured_reduction_percent": null,
+    "originals_over_1500000_bytes": 15,
+    "stored_original_bytes": 47096779,
+    "stored_bytes_are_network_bytes": false
+  },
+  "site_qa": {
+    "owner_pr": 154,
+    "duplicate_collector": false,
+    "p0_first": [
+      "285:5",
+      "285:2",
+      "287:5",
+      "418:1",
+      "418:2",
+      "407:1"
+    ]
+  },
+  "release_approved": false
+}
