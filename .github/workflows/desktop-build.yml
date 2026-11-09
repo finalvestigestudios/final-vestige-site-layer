@@ -389,6 +389,10 @@ jobs:
         run: |
           python -W error -m unittest discover -s products/desktop/tests -p 'test_ci_job_mapping_r294.py'
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_ci_job_mapping_r294.py'
+      - name: R295 exact CI triggers and read-only token policy (30 tests; normal and -OO)
+        run: |
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_ci_event_permissions_r295.py'
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_ci_event_permissions_r295.py'
       - name: R227 shared six-app wheel event scope and bounded scrolling (12 methods; normal and -OO)
         run: |
           python -W error -m unittest discover -s products/desktop/tests -p 'test_wheel_access_r227.py'
@@ -865,6 +869,14 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R294 normal job-key guard FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_ci_job_mapping_r294.py'
           if ($LASTEXITCODE -ne 0) { throw "R294 optimized job-key guard FAILED" }
+      - name: R295 Windows trigger/token custody before packaging (30 tests; normal and -OO)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_ci_event_permissions_r295.py'
+          if ($LASTEXITCODE -ne 0) { throw "R295 normal trigger/token guard FAILED" }
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_ci_event_permissions_r295.py'
+          if ($LASTEXITCODE -ne 0) { throw "R295 optimized trigger/token guard FAILED" }
       - name: R271 Windows evidence report double-pin (normal and -OO)
         shell: pwsh
         run: |
