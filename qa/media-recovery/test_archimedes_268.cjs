@@ -34,3 +34,13 @@ const mutations=[
  ['misstate author/license',a=>a.rows[3].candidate.rights_status='COMMONS_PD_US_CLAIM']
 ];
 for(const [name,mut] of mutations)test(name,()=>{const a=clone();mut(a);assert.equal(validate(a).ok,false,name)});
+
+// Historical provenance text is evidence, not free-form editable approval metadata.
+for(const [name,mut] of [
+ ['grant rights by prose',a=>a.rows[2].candidate.rights_notes='PUBLIC DOMAIN APPROVED'],
+ ['promote candidate to exact pixel',a=>a.rows[3].candidate.relationship='EXACT_IMAGE_CONFIRMED'],
+ ['change project license context',a=>a.catalog_context.research_license='All project JPEGs public domain'],
+ ['add misleading 76-percentage to conclusions',a=>a.conclusions.measured_76_percent=true],
+ ['alter original WordPress snapshot post URL',a=>a.rows[4].post_url='https://finalvestige.com/fake/'],
+ ['alter reference to frozen Oct 30 source',a=>a.rows[0].source_snapshot_ref='future_wp_snapshot.json']
+]) test(name,()=>{const x=clone();mut(x);assert.equal(validate(x).ok,false,name)});
