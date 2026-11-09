@@ -42,6 +42,9 @@ R231_REPLAY_BLOB = 'baf540008487ce0bad02e3b0336f1af7c045f1b4'
 # R232 validates the generated landing + hub shells and exact output inventory.
 R232_AUXILIARY_PATH = 'tools/r232_auxiliary_export_custody_hold.py'
 R232_AUXILIARY_BLOB = 'd723f888dba57d8e280ac24003239e93e30cae65'
+# R233 freezes the optional content/hubs source bytes and directory membership.
+R233_HUB_INPUT_PATH = 'tools/r233_hub_input_custody_hold.py'
+R233_HUB_INPUT_BLOB = '668c74c1672d86e4defad5e14a95ab1924ca6aa2'
 # These are independently observed R219 integration Git blobs, not certified text.
 # Missing entries MUST match the older R200 original exactly.
 INTEGRATED_DIFFS = {
@@ -402,14 +405,30 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
             auxiliary_guard = load_frozen_gate(root, R232_AUXILIARY_PATH, R232_AUXILIARY_BLOB,
                                                 'fv_preparedness_r232_auxiliary_gate',
                                                 ('audit_auxiliary_exports',))
+            hub_input_guard = load_frozen_gate(root, R233_HUB_INPUT_PATH, R233_HUB_INPUT_BLOB,
+                                               'fv_preparedness_r233_hub_input_guard',
+                                               ('verify_hub_inputs',))
             library = build.Library(root=root)
             authority.verify_routes(roster, library)
             report = strict_object(safe_read(root, 'build/build-report.json'))
             result['render'] = verify_render(root, roster, report, library, build, dom_guard, inert_guard, tokenizer_guard, replay_guard)
+            # R233 freezes ALL optional editorial hub inputs BEFORE R232 invokes
+            # the authenticated builder, so matching regenerated exports cannot
+            # launder an altered or newly added hub into a replay PASS.
+            hubs_before = hub_input_guard.verify_hub_inputs(root)
+            if (hubs_before.get('state') != HOLD or hubs_before.get('release_authorized') is not False
+                    or hubs_before.get('independent_qd_pass') is not False
+                    or hubs_before.get('source_or_medical_safety_approved') is not False):
+                raise ValueError('unexpected frozen editorial hub input state')
+            result['hub_input_custody'] = hubs_before
             # R231 protects 41 × 2 article/tool files. R232 independently
             # audits landing, editorial hubs, all output filenames and
             # their build-report rows, including both delivery formats.
             auxiliary = auxiliary_guard.audit_auxiliary_exports(root, report, library, build, safe_read)
+            hubs_after = hub_input_guard.verify_hub_inputs(root)
+            if hubs_after != hubs_before:
+                raise ValueError('editorial hub source identity changed during replay')
+            result['hub_input_custody_postrender'] = hubs_after
             if (auxiliary.get('state') != HOLD or auxiliary.get('release_authorized') is not False
                     or auxiliary.get('independent_qd_pass') is not False
                     or auxiliary.get('source_or_medical_safety_approved') is not False):
@@ -426,6 +445,8 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
                 raise ValueError('exact-replay guard mutated after render')
             if git_blob(safe_read(root, R232_AUXILIARY_PATH)) != R232_AUXILIARY_BLOB:
                 raise ValueError('auxiliary-export guard mutated after render')
+            if git_blob(safe_read(root, R233_HUB_INPUT_PATH)) != R233_HUB_INPUT_BLOB:
+                raise ValueError('hub-input guard mutated after render')
             result['postrender_custody_recheck'] = 'DRAFT_HARD_HOLD'
         result['reconciliation'] = {'frozen_articles': 35,
                                     'integrated_changes_held_for_review': sum(
