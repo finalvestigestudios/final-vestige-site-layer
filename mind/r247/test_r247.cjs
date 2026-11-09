@@ -93,7 +93,7 @@ function validate(data){
 function mutations(data){
  let count=0;const failures=[];
  function attack(label,fn){const c=Object.assign({},data);fn(c);try{validate(c);failures.push(label)}catch(e){count++}}
- const edit=(key,find,repl)=>attack(key+' '+find.slice(0,40),d=>{check(d[key].includes(find),'attack target exists: '+find);d[key]=d[key].replace(find,repl)});
+ const edit=(key,find,repl)=>attack(key+' '+find.slice(0,40),d=>{check(d[key].includes(find),'attack target exists: '+find);d[key]=d[key].replaceAll(find,repl)});
  // Actual source and science edits
  for(const [a,b] of [
  ['fourteen studies','fourteen hundred studies'],['940 people','94000 people'],['−0.13','−1.3'],['−0.33','−3.3'],
