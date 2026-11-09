@@ -1,0 +1,32 @@
+# Dispatch R221 — VERIFIED-public-destination constraints, still UNSENT
+
+**Scope:** An isolated R221 audit of the existing Grok → Focus → Dispatch journey, stacked on [R220 PR #1656](https://github.com/finalvestigestudios/final-vestige-site-layer/pull/1656), master [Issue #174](https://github.com/finalvestigestudios/final-vestige-site-layer/issues/174). **Not** a new analytics SDK, newsletter, landing page, affiliate tracker, mailing platform, or recipient list. Homepage PR #49 remains frozen and untouched. Original four-editorial/two-commercial campaign [PR #175](https://github.com/finalvestigestudios/final-vestige-site-layer/pull/175) and readiness [PR #201](https://github.com/finalvestigestudios/final-vestige-site-layer/pull/201) remain authoritative and unchanged.
+
+## Material newly reproduced QA defect (old tool, not a live exploit)
+
+The exact R220 `dispatch/r220/origin_guard.py` accepted URLs to **/wp-admin/**, **/wp-login.php**, an unpublished **/mind/zen12-guide/**, encoded-path **/dispa%74ch/**, **/%2Ffocus/**, and traversal-like **/../focus/** as nominally owned social landing paths, provided they carried otherwise valid UTMs. Eight negative-path probes were executed locally against the exact R220 bundle; all eight were **accepted**. This does **not** prove a live tracking bug: the R220 guard is offline and always returns `verified_session=False` and `verified_paid_sale=False`. It does show why future attribution QA cannot accept *domain ownership alone* as destination qualification.
+
+R221's `destination_audit.py` only recognizes the **six independently checked published WordPress destinations** in this snapshot, requires exact unencoded paths, rejects arbitrary admin/unpublished routes, separates Grok/source/asset from Dispatch/email/issue tags, binds the four editorial editions to the manifest destination, and hard-stops both commercial editions even if a user substitutes a real published path. It never treats an asset-shaped token as an authenticated Grok post or URL approval as a human session, confirmed signup, paid order, or sending permission.
+
+## Source-of-truth: live WordPress, 2026-11-09 00:35 UTC
+
+Authenticated read-only pages and posts: Focus page 1579, Dispatch page 523, The Missing Caption page 1122, Puységur's Animal Magnetism Files page 1377, The Hatch Opened Inward post 434 and Change Blindness post 1922 are **published**. Neither proposed `/mind/zen12-guide/` nor `/mind/hypnosis-live-guide/` resolves to a WordPress post/page by slug. Publication alone is **not** merchant or campaign approval. Use issue 01 → The Missing Caption, 02 → Puységur, 04 → Apollo 1, 06 → Focus only for static route validation; editorial alignment/copy remains a founder review task.
+
+Newsletter readback: enabled; new-post auto-send **OFF**; FULL body; sender display **Final Vestige Studios**; reply-to no-reply; subscribe at end of posts and in site comments **ON**. Totals 3 confirmed/3 total + 2 unconfirmed requests, independent followers 3 WP.com and 0 email-only; **nonadditive**. Subscriber's exact active email eligibility, confirmed new transitions, welcome receipt, and actual email attribution **UNKNOWN**. Five posts show `never_sent_opted_out`. Configured welcome points to the 52-page Focus Fieldbook; that does **not** prove receipt. **No newsletter or test email** was sent or scheduled.
+
+## External offer truth, NOT marketing authorization
+
+- [Specific Zen12 merchant sales page](https://zen12.com/hnp) advertises 12 levels, 48 Premium MP3s and marketed brainwave benefits; its hour-equivalence/effectiveness remain **SELLER CLAIMS**, not independently verified effects, checkout totals, or FV rights.
+- [Specific Total Focus listing](https://hypnosislive.com/mental-skills/total-focus) lists 33 minutes / 47 MB and an advertised sale price. [Seller FAQ](https://hypnosislive.com/faq) gives refund limitations, including a five-session annual restriction. These are public page descriptions, **not** live checkout/refund verification.
+- [Inspire3 public affiliate portal](https://affiliates.inspire3.com/) advertises issued special links, but a public login page is **not** acceptance of Final Vestige, product-specific email permission, approved creative or an account-issued earning URL. Public affiliate/EPC/payout representations must not be treated as FV sales evidence. The portal's London contact address belongs to Inspire3; **it is not Final Vestige's physical mailing address**.
+- No live commercial warm-up guides, earning links, or merchant EMAIL-channel permissions are verified. Issues 03/05 remain **HOLD_MERCHANT** and all six remain **HOLD_UNSENT**.
+
+## Test and measurement
+
+`python3 -I -m unittest discover -s dispatch/r221 -p test_destination_audit.py -v` — **14/14 native tests PASS** on exact bytes confirmed by Git SHA-1 against GitHub; predecessor R220 suite **22/22 native tests PASS** separately from the user-provided R220 archive. The older tests passing is precisely why a new negative-path test was needed. Production browser/WordPress event instrumentation, real inbox/footer delivery, opt-out action, merchant approval and paid settlements remain untested.
+
+Unique original social asset ID + actual post URL + owner/rights/timestamp + mobile destination must be verified independently by **Grok/Praxxis** through existing TASK-008 (do not alter Grok's queue). In Dispatch use distinct `utm_source=dispatch&utm_medium=email&utm_campaign=<reviewed campaign>&utm_content=issue_XX` only after the issue is legitimately sent. A URL tagged for email **is not** proof a subscriber clicked it; the source must actually observe the click, without PII. Claude owns production analytics implementation/approved WordPress changes. The founder approves campaign release and spending.
+
+`confirmed_signup` requires a provider-authenticated eligible subscription transition, deduplicated; form attempts, PDF reveals, Reader follows and sitewide counter changes do not qualify. Realized net revenue = independently reconciled paid transactions or cleared affiliate commissions minus refunds/fees, and KPI is 1,000 × realized net revenue / independently qualified human sessions in 7- and 30-day cohorts. Both numerator and denominator remain **UNKNOWN, therefore NOT COMPUTABLE**, not zero.
+
+**No WordPress writes, subscriber access changes, test emails, sending, publishing, tracking scripts, social posts, purchases, or homepage modification.**
