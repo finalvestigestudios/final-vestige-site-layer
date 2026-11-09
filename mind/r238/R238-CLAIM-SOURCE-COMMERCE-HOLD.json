@@ -1,0 +1,310 @@
+{
+  "version": "R238",
+  "date": "2026-11-09",
+  "scope": "Mind & Perception",
+  "status": "SOURCE_CONTROLLED_UNPUBLISHED",
+  "merchant_activation": false,
+  "first_party_tracking_script_added": false,
+  "new_email_list_added": false,
+  "sources": [
+    {
+      "id": "H1",
+      "url": "https://www.gutenberg.org/files/78413/78413-h/78413-h.htm",
+      "type": "1785 commission translation",
+      "limitation": "primary witness account printed pp 56–59"
+    },
+    {
+      "id": "H2",
+      "url": "https://www.gutenberg.org/cache/epub/27203/pg27203-images.html",
+      "type": "1922 original Coué writing",
+      "limitation": "historical claims, not independent clinical proof"
+    },
+    {
+      "id": "S1",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23860312/",
+      "type": "2013 neuroscience review",
+      "limitation": "hypnotic suggestion, not retail MP3 testing"
+    },
+    {
+      "id": "S2",
+      "url": "https://doi.org/10.1016/j.neubiorev.2022.104591",
+      "type": "2022 systematic review",
+      "limitation": "9 RCTs/530 patients musculoskeletal or neuropathic chronic pain"
+    },
+    {
+      "id": "S3",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37253319/",
+      "type": "2023 systematic review",
+      "limitation": "four randomized chronic pelvic pain trials, no significant pooled pain/QOL difference"
+    },
+    {
+      "id": "S4",
+      "url": "https://www.nccih.nih.gov/health/hypnosis",
+      "type": "US government overview",
+      "limitation": "outcomes condition-specific"
+    },
+    {
+      "id": "M1",
+      "url": "https://inspire3.com/",
+      "type": "seller official brand",
+      "limitation": "not independent efficacy or affiliate authorization"
+    },
+    {
+      "id": "M2",
+      "url": "https://zen12.com/hnp",
+      "type": "seller exact offer",
+      "limitation": "Premium listing and seller refund claim; final cart/fulfillment untested"
+    },
+    {
+      "id": "M3",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "type": "seller exact offer",
+      "limitation": "file length and marketing not product-specific evidence"
+    },
+    {
+      "id": "M4",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "type": "seller exact offer",
+      "limitation": "33-min Total Focus format, no controlled effectiveness validation"
+    },
+    {
+      "id": "F1",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "type": "FTC",
+      "limitation": "commercial relationship near recommendation"
+    },
+    {
+      "id": "F2",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "type": "FTC",
+      "limitation": "competent scientific support for objective health claims"
+    },
+    {
+      "id": "FV1",
+      "url": "https://finalvestige.com/focus/",
+      "type": "FV existing free asset",
+      "limitation": "existing one Jetpack funnel; lead verification separate"
+    },
+    {
+      "id": "FV2",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "type": "FV existing investigation",
+      "limitation": "historical editorial overlap; avoid duplicate URL"
+    },
+    {
+      "id": "FV3",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "type": "FV historic source guide",
+      "limitation": "not efficacy evidence"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "text": "Jumelin touched the woman's upper abdomen during an intervening non-sham condition",
+      "source_id": "H1",
+      "status": "PRIMARY_HISTORICAL_SUPPORTED"
+    },
+    {
+      "id": "C02",
+      "text": "After hands-on/fainting condition, Jumelin was removed and sensations reported with no operation",
+      "source_id": "H1",
+      "status": "PRIMARY_HISTORICAL_SUPPORTED"
+    },
+    {
+      "id": "C03",
+      "text": "Coué promoted repeated autosuggestion and narrated cures",
+      "source_id": "H2",
+      "status": "PRIMARY_HISTORICAL_SUPPORTED_NOT_CURE_PROOF"
+    },
+    {
+      "id": "C04",
+      "text": "Hypnotic suggestion offers an experimental approach to attention and agency",
+      "source_id": "S1",
+      "status": "SECONDARY_REVIEW_SUPPORTED"
+    },
+    {
+      "id": "C05",
+      "text": "2022 hypnosis chronic pain review included 9 RCTs and 530 participants",
+      "source_id": "S2",
+      "status": "REVIEW_SUPPORTED_CONDITION_SPECIFIC"
+    },
+    {
+      "id": "C06",
+      "text": "2023 chronic pelvic pain pooled randomized comparisons lacked statistically significant pain/QOL improvement",
+      "source_id": "S3",
+      "status": "REVIEW_SUPPORTED_CONDITION_SPECIFIC"
+    },
+    {
+      "id": "C07",
+      "text": "NCCIH describes variable hypnosis research across conditions",
+      "source_id": "S4",
+      "status": "EVIDENCE_OVERVIEW_SUPPORTED"
+    },
+    {
+      "id": "C08",
+      "text": "Inspire3 lists Zen12, Hypnosis Live and other mind products",
+      "source_id": "M1",
+      "status": "SELLER_BRAND_DESCRIPTION"
+    },
+    {
+      "id": "C09",
+      "text": "Zen12 Premium described as 12 levels / 48 MP3s / 4 styles",
+      "source_id": "M2",
+      "status": "SELLER_PRODUCT_DESCRIPTION"
+    },
+    {
+      "id": "C10",
+      "text": "Zen12 advertises a one-year refund guarantee",
+      "source_id": "M2",
+      "status": "SELLER_CLAIM_REFUND_UNVERIFIED"
+    },
+    {
+      "id": "C11",
+      "text": "Zen12 produces an hour's meditation effects in 12 minutes",
+      "source_id": "M2",
+      "status": "UNSUBSTANTIATED_PRODUCT_OUTCOME"
+    },
+    {
+      "id": "C12",
+      "text": "Focus Shot seller lists 15- and 30-minute recordings",
+      "source_id": "M3",
+      "status": "SELLER_PRODUCT_DESCRIPTION"
+    },
+    {
+      "id": "C13",
+      "text": "Focus Shot produces hours of extreme concentration",
+      "source_id": "M3",
+      "status": "UNSUBSTANTIATED_PRODUCT_OUTCOME"
+    },
+    {
+      "id": "C14",
+      "text": "Total Focus seller lists a 33-minute MP3",
+      "source_id": "M4",
+      "status": "SELLER_PRODUCT_DESCRIPTION"
+    },
+    {
+      "id": "C15",
+      "text": "Total Focus ensures perfect focus or career advantage",
+      "source_id": "M4",
+      "status": "UNSUBSTANTIATED_PRODUCT_OUTCOME"
+    },
+    {
+      "id": "C16",
+      "text": "Material affiliate interest should be disclosed clearly near endorsements",
+      "source_id": "F1",
+      "status": "FTC_GUIDANCE"
+    },
+    {
+      "id": "C17",
+      "text": "Objective health marketing needs substantiation matched to claim",
+      "source_id": "F2",
+      "status": "FTC_GUIDANCE"
+    },
+    {
+      "id": "C18",
+      "text": "Seven Day Focus Fieldbook exists as an FV 52-page free offer",
+      "source_id": "FV1",
+      "status": "EXISTING_LIVE_RESOURCE_PROVIDER_CONFIRMATION_UNKNOWN"
+    },
+    {
+      "id": "C19",
+      "text": "Existing Mesmerism investigation covers the Jumelin demonstration",
+      "source_id": "FV2",
+      "status": "CANONICAL_EDITORIAL_OVERLAP"
+    },
+    {
+      "id": "C20",
+      "text": "Puységur files are a historical record resource",
+      "source_id": "FV3",
+      "status": "EDITORIAL_HISTORICAL_NOT_EFFICACY"
+    }
+  ],
+  "gates": [
+    {
+      "id": "named_publisher_approval",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "account_issued_tracking_url",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "authorized_website_channel",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "authorized_social_channel",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "authorized_email_channel",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "exact_product_tier",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "verified_live_checkout_terms",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "verified_refund_terms_and_fulfillment",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "seller_claims_and_creatives_permission",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "merchant_email_consent_screen_review",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "existing_jetpack_preservation",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "accessible_disclosed_cta_review",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "existing_privacy_safe_attribution_pipeline",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "grok_asset_ids_and_mobile_link_test",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "authoritative_paid_commission_record",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "founder_release_approval",
+      "status": "HARD_HOLD"
+    }
+  ],
+  "verified_affiliate_acceptance": null,
+  "account_issued_affiliate_url": null,
+  "actual_order_checkout_price": null,
+  "affiliate_commission": null,
+  "fv_owned_mind_payhip_product": "NOT_AUTHENTICATED",
+  "revenue": {
+    "qualified_human_sessions": null,
+    "confirmed_jetpack_leads": null,
+    "affiliate_clicks": null,
+    "confirmed_paid_orders": null,
+    "verified_paid_affiliate_conversions": null,
+    "refunded_amount": null,
+    "net_revenue_per_1000_qualified_human_sessions": null
+  },
+  "notes": [
+    "Status HOLD is not an assertion that a product fails",
+    "Do not equate click or email with purchase",
+    "Existing R237 A/B source controls have been corrected: no clickable Inspire3 root domain",
+    "R237 historical article headline/interval corrected on this branch",
+    "No live CMS/Jetpack/email/social/checkout changes"
+  ]
+}
