@@ -5,7 +5,7 @@ import json
 import unittest
 from pathlib import Path
 
-FILE = Path(__file__).with_name('r246_family_card_claim_custody_hold.py')
+FILE = Path(__file__).resolve().parents[1] / 'tools' / 'r246_family_card_claim_custody_hold.py'
 spec = importlib.util.spec_from_file_location('r246_gate', FILE)
 g = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(g)
