@@ -9,7 +9,6 @@ from __future__ import annotations
 import base64
 import hashlib
 import json
-import os
 import secrets
 from datetime import datetime, timezone
 from pathlib import Path
@@ -24,9 +23,8 @@ from .review_identity import require_snapshot_match
 from .vault_decode_privacy import decrypt_evidence, parse_evidence_json, decode_evidence_b64
 from .vault_input_snapshot import read_vault_input
 from .vault_publish import publish_vault
-from .vault_restore_cleanup import (
-    snapshot_new_file, snapshot_new_folder, rollback_owned_restore,
-)
+from .vault_restore_cleanup import rollback_owned_restore
+from .vault_restore_writer import make_private_restore_folder, write_private_restore_member
 
 MAGIC = b"FVS-EVIDENCE-VAULT-v1\x00"
 SALT_SIZE = 16
@@ -189,11 +187,10 @@ def restore_evidence(vault: str | Path, folder: str | Path, passphrase: str) -> 
         raise ValueError("Encrypted review journal digest mismatch")
     restored = destination / ("fvs-evidence-restored-" + datetime.now(timezone.utc).strftime(
         "%Y%m%d-%H%M%S") + "-" + secrets.token_hex(5))
-    restored.mkdir(mode=0o700)  # exclusive; no folder overwrite
+    # Folder creation and metadata faults must not expose customer paths.
+    owned_directory = make_private_restore_folder(restored)
     created = []
-    owned_directory = None
     try:
-        owned_directory = snapshot_new_folder(restored)
         report_file = restored / "exception-report.csv"
         files = [(report_file, data)]
         journal_file = restored / "exception-report.review.jsonl"
@@ -205,12 +202,7 @@ def restore_evidence(vault: str | Path, folder: str | Path, passphrase: str) -> 
             "journal_filename", "journal_sha256", "journal_present", "review_event_count")}
         files.append((metadata_file, (json.dumps(manifest, sort_keys=True, indent=2) + "\n").encode("utf-8")))
         for file, contents in files:
-            with file.open("xb") as stream:
-                # Capture OS identity before first plaintext byte is written.
-                created.append((file, snapshot_new_file(stream.fileno())))
-                stream.write(contents)
-                stream.flush()
-                os.fsync(stream.fileno())
+            write_private_restore_member(file, contents, created)
         batch = read_cases(report_file, payload["product"])
         if batch.report_sha256 != payload["report_sha256"]:
             raise ValueError("Restored exception report no longer matches its evidence digest")
@@ -220,7 +212,6 @@ def restore_evidence(vault: str | Path, folder: str | Path, passphrase: str) -> 
     except BaseException:
         # Even interruption must attempt rollback, but never delete a
         # detectably swapped pathname or hide the original failure.
-        if owned_directory is not None:
-            rollback_owned_restore(restored, owned_directory, created)
+        rollback_owned_restore(restored, owned_directory, created)
         raise
     return restored
