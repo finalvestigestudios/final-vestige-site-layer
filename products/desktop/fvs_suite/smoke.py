@@ -11,6 +11,7 @@ import tempfile
 from pathlib import Path
 
 from . import engine, evidence_vault, exception_review
+from .vault_smoke_scope import check_scoped_vault_roundtrip
 
 
 def _csv(folder: Path, name: str, fields: tuple[str, ...], rows: list[tuple[str, ...]]) -> str:
@@ -228,7 +229,9 @@ def run_smoke(app_id: str) -> list[Path]:
             passphrase = "Synthetic smoke-only passphrase 2026!"
             sealed = evidence_vault.seal_evidence(
                 outputs[0], "grants", journal, root, passphrase)
-            restored = evidence_vault.restore_evidence(sealed, root, passphrase)
+            restored = check_scoped_vault_roundtrip(
+                sealed, root, passphrase, "grants", outputs[0],
+                journal, evidence_vault.restore_evidence)
             restored_report = restored / "exception-report.csv"
             restored_journal = restored / "exception-report.review.jsonl"
             restored_batch = exception_review.read_cases(restored_report, "grants")
@@ -265,7 +268,9 @@ def run_smoke(app_id: str) -> list[Path]:
             passphrase = "Synthetic smoke-only passphrase 2026!"
             sealed = evidence_vault.seal_evidence(
                 outputs[0], "procurement", journal, root, passphrase)
-            restored = evidence_vault.restore_evidence(sealed, root, passphrase)
+            restored = check_scoped_vault_roundtrip(
+                sealed, root, passphrase, "procurement", outputs[0],
+                journal, evidence_vault.restore_evidence)
             restored_report = restored / "exception-report.csv"
             restored_journal = restored / "exception-report.review.jsonl"
             restored_batch = exception_review.read_cases(restored_report, "procurement")
