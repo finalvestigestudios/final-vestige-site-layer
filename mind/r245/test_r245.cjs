@@ -89,7 +89,7 @@ function validate(x) {
  assert.ok(disclosureAt>=0 && disclosureAt<buttonAt && buttonAt-disclosureAt<1100,'near-link disclosure');
  assert.ok(h.includes('may earn a commission at no additional cost'));
  assert.ok(h.includes('No affiliate purchase link is active here'));
- assert.ok(h.includes('merchant newsletter') && h.includes('Jetpack/Dispatch'));
+ assert.ok(h.includes("merchant's own newsletter") && h.includes('Jetpack/Dispatch'));
  assert.ok(h.includes('This does not start a new A/B allocation'));
  assert.ok(!/href\s*=\s*["']https?:\/\/(?:zen12|inspire3|brainwaveshots|hypnosislive)\./i.test(h));
 
