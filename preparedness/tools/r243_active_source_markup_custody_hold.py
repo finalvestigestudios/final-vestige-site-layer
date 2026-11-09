@@ -22,6 +22,7 @@ CITE = re.compile(r'\{\{cite:[a-z0-9]+(?:-[a-z0-9]+)*\}\}')
 ACTIVE_TAGS = frozenset(('script', 'iframe', 'object', 'embed', 'applet', 'form',
     'input', 'button', 'select', 'textarea', 'base', 'meta', 'link', 'portal',
     'frameset', 'frame', 'svg:script', 'foreignobject', 'animate',
+    'style', 'template', 'noscript', 'video', 'audio',
     'animatetransform', 'animatemotion', 'set'))
 ACTIVE_ATTRIBUTES = frozenset(('srcdoc', 'formaction', 'ping', 'autofocus',
     'form', 'formmethod', 'formenctype', 'formtarget', 'formnovalidate',
@@ -29,6 +30,8 @@ ACTIVE_ATTRIBUTES = frozenset(('srcdoc', 'formaction', 'ping', 'autofocus',
 URL_ATTRIBUTES = frozenset(('href', 'src', 'xlink:href', 'action', 'poster',
     'background', 'longdesc', 'cite', 'data', 'itemid', 'usemap'))
 ALLOWED_SCHEMES = frozenset(('https', 'http', 'mailto', 'tel'))
+REMOTE_RESOURCE_ATTRIBUTES = frozenset(('src', 'poster', 'background', 'data',
+    'xlink:href'))
 SCHEME = re.compile(r'^([a-z][a-z0-9+.-]*):', re.I)
 PERCENT_SCHEME = re.compile(r'^[a-z][a-z0-9+.-]*(?:%0[0-9adf]|%1[0-9a-f]|%2[0-9]|%3a)', re.I)
 DANGEROUS_STYLE = re.compile(r'(?:url\s*\(|@import\b|expression\s*\(|-moz-binding\b|\\)', re.I)
@@ -57,6 +60,8 @@ def safe_url(value: str, name: str) -> None:
     matched = SCHEME.match(url)
     if matched and matched.group(1).lower() not in ALLOWED_SCHEMES:
         raise ValueError('R243 executable or unreviewed URL scheme: ' + name)
+    if matched and name in REMOTE_RESOURCE_ATTRIBUTES:
+        raise ValueError('R243 unreviewed remote resource loading: ' + name)
     if '%' in url[:15] and ':' in html.unescape(url):
         raise ValueError('R243 ambiguous URL encoding: ' + name)
 
