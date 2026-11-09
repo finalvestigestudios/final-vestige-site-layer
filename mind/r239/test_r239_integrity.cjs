@@ -32,8 +32,10 @@ function integrity(m,expected,label){
  assert(m.gates.every(g=>g.status==='HARD_HOLD'),label+' hold all gates');
  assert.equal(m.commercial_activation??m.merchant_activation,false,label+' activation must remain false');
  assert.equal(('account_issued_affiliate_url' in m)?m.account_issued_affiliate_url:m.affiliate_link,null,label+' no earning link');
- assert.equal(m.revenue.net_revenue_per_1000_qualified_human_sessions,null,label+' revenue unknowable');
- assert.equal(('confirmed_paid_orders' in m.revenue)?m.revenue.confirmed_paid_orders:m.revenue.merchant_verified_paid_orders,null,label+' no invented paid orders');
+ const outcome=m.revenue||m.measurement;
+ assert(outcome,'revenue/measurement contract present');
+ assert.equal(outcome.net_revenue_per_1000_qualified_human_sessions,null,label+' revenue unknowable');
+ assert.equal(('confirmed_paid_orders' in outcome)?outcome.confirmed_paid_orders:outcome.merchant_verified_paid_orders,null,label+' no invented paid orders');
 }
 function inspectArticle(s){
  assert.equal(fnv32(s),'d430737c','original investigation exact research fingerprint');
@@ -84,7 +86,7 @@ for(const [label,original,expected] of [['R238',R238,EXPECTED.r238],['R239',R239
  ]){
   if(Object.prototype.hasOwnProperty.call(original,field)){const mutant={...original,[field]:edited};rejects(()=>integrity(mutant,expected,label+' '+field),label+'-'+field);}
  }
- const withSale=JSON.parse(JSON.stringify(original));withSale.revenue.net_revenue_per_1000_qualified_human_sessions=900;
+ const withSale=JSON.parse(JSON.stringify(original));(withSale.revenue||withSale.measurement).net_revenue_per_1000_qualified_human_sessions=900;
  rejects(()=>integrity(withSale,expected,label+' fabricated KPI'),label+'-money');
 }
 for(const [label,mutant] of [
