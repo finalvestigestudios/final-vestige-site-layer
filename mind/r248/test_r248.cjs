@@ -111,7 +111,11 @@ function check(data){
  assert.ok(section[0].includes('mind/r248/zen12-evidence-42sec.vtt'));
  const lines=data.vtt.trim().split(/\r?\n/);
  assert.equal(lines[0],'WEBVTT');
- const times=[...data.vtt.matchAll(/^(\d{2}):(\d{2}):(\d{2})\.(\d{3}) --> (\d{2}):(\d{2}):(\d{2})\.(\d{3})$/gm)].map(m=>[Number(m[3])*1000+Number(m[4]),Number(m[7])*1000+Number(m[8])]);
+ // Full WebVTT clock validation: never discard hours/minutes (Praxxis QA 2026-11-09).
+ const cuePattern=/^(\\d{2}):(\\d{2}):(\\d{2})\\.(\\d{3}) --> (\\d{2}):(\\d{2}):(\\d{2})\\.(\\d{3})$/gm;
+ const toMs=(h,m,s,ms)=>{const H=Number(h),M=Number(m),S=Number(s),MS=Number(ms);assert.ok(M<60&&S<60,'WebVTT clock range');return ((H*60+M)*60+S)*1000+MS;};
+ const times=[...data.vtt.matchAll(cuePattern)].map(m=>[toMs(...m.slice(1,5)),toMs(...m.slice(5,9))]);
+ assert.equal((data.vtt.match(/-->/g)||[]).length,times.length,'all WebVTT cue timestamps parsed');
  assert.equal(times.length,7,'seven captions');
  assert.equal(times[0][0],0);assert.equal(times.at(-1)[1],42000);
  for(let i=0;i<times.length;i++){assert.equal(times[i][1]-times[i][0],6000);if(i)assert.equal(times[i][0],times[i-1][1]);}
@@ -157,6 +161,9 @@ function negativeCases(d){
   ()=>tamper('B',s=>s.replace('<section id="short"','<section id="second-video"')),
   ()=>tamper('vtt',s=>s.replace('00:00:42.000','00:00:41.000')),
   ()=>tamper('vtt',s=>s.replace('00:00:06.000','00:00:07.000')),
+  ()=>tamper('vtt',s=>s.replace('00:00:06.000','00:01:06.000')),
+  ()=>tamper('vtt',s=>s.replace('00:00:42.000','01:00:42.000')),
+  ()=>tamper('vtt',s=>s.replace('00:00:12.000','00:61:12.000')),
   ()=>tamper('article',s=>s.replace('not a dose-conversion table','a dose-conversion table')),
   ()=>tamper('article',s=>s.replace('https://doi.org/10.1002/smi.3324','https://example.test')),
   ()=>tamper('plan',s=>s.replace('refunds/chargebacks NOT already included','refunds/chargebacks')),
