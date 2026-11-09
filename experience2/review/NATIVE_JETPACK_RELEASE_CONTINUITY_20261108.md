@@ -19,7 +19,7 @@ It hashes both input editor documents for custody; **do not commit user emails, 
 
 ## Reproduce safely
 ```bash
-python -m unittest -v experience2/review/test_native_signup_continuity.py
+python experience2/review/test_native_signup_continuity.py
 python experience2/review/verify_native_signup_continuity.py \
   --baseline /secure/public-page6-editor-content.html \
   --candidate /secure/proposed-page6-editor-content.html \
