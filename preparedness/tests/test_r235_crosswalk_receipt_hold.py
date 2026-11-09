@@ -39,7 +39,7 @@ class R235Tests(unittest.TestCase):
         for origin,path in self.paths.items():
             raw=json.dumps({'sources':getattr(self,origin)},sort_keys=True).encode()
             (self.root/path).write_bytes(raw)
-            self.doc['source_files'].append({'origin':origin,'path':path,
+            self.doc['source_files'].append({'origin':origin,'path':'preparedness/'+path,
                 'git_blob_sha':gate.git_blob(raw),'count':len(getattr(self,origin))})
         (self.root/'sources/crosswalk.json').write_text(json.dumps(self.doc),encoding='utf-8')
 
