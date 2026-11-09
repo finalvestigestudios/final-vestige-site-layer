@@ -1,0 +1,67 @@
+{
+  "images": [
+    {
+      "key": "213:0",
+      "post_id": 213,
+      "post_url": "https://finalvestige.com/2026/08/18/the-fire-he-lit-himself/",
+      "source_url": "https://research.fs.usda.gov/sites/default/files/2024-08/firelab-northface-manngulch-printable.jpg",
+      "alt": "Annotated view of the north slope of Mann Gulch showing the crew route, tool drop, Dodge escape fire, and firefighter locations.",
+      "width_px": 1024,
+      "height_px": 622
+    },
+    {
+      "key": "213:1",
+      "post_id": 213,
+      "post_url": "https://finalvestige.com/2026/08/18/the-fire-he-lit-himself/",
+      "source_url": "https://fs-prod-nwcg.s3.us-gov-west-1.amazonaws.com/s3fs-public/2023-11/sr-mg-fire-progression-map.jpg?VersionId=nXjGkeGzQeXNCaBmxg9oBNzb6As7WcRA",
+      "alt": "Topographic map showing the progression of the Mann Gulch Fire on August 5, 1949.",
+      "width_px": null,
+      "height_px": null
+    },
+    {
+      "key": "213:2",
+      "post_id": 213,
+      "post_url": "https://finalvestige.com/2026/08/18/the-fire-he-lit-himself/",
+      "source_url": "https://fs-prod-nwcg.s3.us-gov-west-1.amazonaws.com/s3fs-public/2023-11/sr-mg-historical-map-race-pg5.jpg?VersionId=E03fTtNlZbsFr8cZyXxAMTHZfT8wEb4p",
+      "alt": "Historical Mann Gulch diagram showing smokejumper movements, wind, fire positions, the tool drop, escape fire, and survivor locations.",
+      "width_px": null,
+      "height_px": null
+    },
+    {
+      "key": "213:3",
+      "post_id": 213,
+      "post_url": "https://finalvestige.com/2026/08/18/the-fire-he-lit-himself/",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Mann_Gulch_Fire%2C_1949._US_Forest_Service%2C_retrieval_of_victim%27s_bodies.jpg",
+      "alt": "U.S. Forest Service recovery crew carrying a victim from the steep Mann Gulch slope on August 6, 1949.",
+      "width_px": null,
+      "height_px": null
+    },
+    {
+      "key": "213:4",
+      "post_id": 213,
+      "post_url": "https://finalvestige.com/2026/08/18/the-fire-he-lit-himself/",
+      "source_url": "https://research.fs.usda.gov/sites/default/files/2024-02/firelab-nffl_chamber97_0.jpg",
+      "alt": "Researchers conducting an early controlled fire experiment in the combustion chamber at the Missoula Fire Sciences Laboratory.",
+      "width_px": null,
+      "height_px": null
+    },
+    {
+      "key": "213:5",
+      "post_id": 213,
+      "post_url": "https://finalvestige.com/2026/08/18/the-fire-he-lit-himself/",
+      "source_url": "https://research.fs.usda.gov/sites/default/files/2023-02/rmrs-firelabwindtunnel-courtesy-newyorktimes.jpg",
+      "alt": "Researchers observing a controlled wildfire experiment inside the Missoula Fire Sciences Laboratory wind tunnel and combustion chamber.",
+      "width_px": null,
+      "height_px": null
+    },
+    {
+      "key": "213:6",
+      "post_id": 213,
+      "post_url": "https://finalvestige.com/2026/08/18/the-fire-he-lit-himself/",
+      "source_url": "https://fs-prod-nwcg.s3.us-gov-west-1.amazonaws.com/s3fs-public/2023-11/sr-mg-historical-map-race-pg5.jpg?VersionId=E03fTtNlZbsFr8cZyXxAMTHZfT8wEb4p",
+      "alt": "Mann Gulch staff-ride map marking the location where Wag Dodge set his escape fire and where the crew continued toward the ridge.",
+      "width_px": null,
+      "height_px": null
+    }
+  ]
+}
