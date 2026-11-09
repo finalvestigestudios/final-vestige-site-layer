@@ -4,8 +4,8 @@
   "scope": "LIVE WP edit-content readback + independent web-retriever wrapper; no guest Chromium, origin HTTP or binary download",
   "frozen_census_ref": "65c214a1ae6e43534090584d56bbd783251e315c",
   "frozen_census_origin_parts": [
-    "qa/media-recovery/parts/04.json",
-    "qa/media-recovery/parts/05.json"
+    "qa/media-recovery/parts/02.json",
+    "qa/media-recovery/parts/04.json"
   ],
   "coordination": "Site QA PR #154 owns the guest browser collector; previous separate Navy 8-source batch remains unmodified",
   "count": 7,
