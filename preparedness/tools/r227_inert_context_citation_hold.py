@@ -26,6 +26,18 @@ CRITICAL = frozenset(('pa-body', 'pa-sources', 'pa-review', 'pa-cite'))
 CRITICAL_DESCENDANTS = frozenset(('pa-sources', 'pa-review', 'pa-cite'))
 
 
+# Conservative, known SVG/MathML foreign-content tags: unknown self-closing
+# names remain a HARD HOLD instead of guessing HTML namespace integration.
+FOREIGN_SELF_CLOSING = frozenset((
+    'svg', 'math', 'path', 'circle', 'rect', 'ellipse', 'line', 'polyline',
+    'polygon', 'use', 'g', 'defs', 'stop', 'lineargradient', 'radialgradient',
+    'clippath', 'mask', 'filter', 'fegaussianblur',
+    'mi', 'mn', 'mo', 'mrow', 'mspace'))
+# These SVG/MathML integration points can switch descendants back to HTML;
+# e.g. <svg><foreignObject><template/></foreignObject></svg> must be rejected.
+HTML_INTEGRATION_POINT = frozenset(('foreignobject', 'desc', 'title', 'annotation-xml'))
+
+
 class _Visibility(HTMLParser):
     def __init__(self):
         super().__init__(convert_charrefs=True)
@@ -52,8 +64,10 @@ class _Visibility(HTMLParser):
         # the opening frame so later source/review material cannot look visible.
         # Void HTML tags and foreign SVG/MathML self-closing tags are valid.
         tag = tag.lower()
-        foreign = tag in ('svg', 'math') or any(
-            frame['tag'] in ('svg', 'math') for frame in self.stack)
+        foreign = tag in FOREIGN_SELF_CLOSING and (
+            tag in ('svg', 'math') or (
+                any(f['tag'] in ('svg', 'math') for f in self.stack)
+                and not any(f['tag'] in HTML_INTEGRATION_POINT for f in self.stack)))
         self.handle_starttag(tag, attrs)
         if tag in VOID:
             return
