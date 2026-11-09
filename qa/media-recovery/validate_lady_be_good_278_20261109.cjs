@@ -14,6 +14,8 @@ function check(a){
  const problems=[];
  if(a?.schema!=="fv-media-lady-be-good-recovery-v1"||a?.post_id!==278)problems.push("schema/post");
  if(a?.rows?.length!==7)problems.push("seven slots");
+ if(a?.prior_independent_research?.git_blob_sha!=="cf69fc6666037488012cf9fd48bb204764904e00")problems.push("missed prior PR183 research");
+ if(a?.rows?.find(r=>r.slot==="278:6")?.catalog?.url!=="https://www.nationalmuseum.af.mil/Upcoming/Photos/igphoto/2000554420/")problems.push("USAF verified record regression");
  if(a?.measurements?.guest_measurement_performed!==false||a?.measurements?.original_reported_broken_42_verified!==false||a?.measurements?.transfer_reduction_76pct_measured!==false)problems.push("fabricated measurement");
  if(a?.source_inventory?.posts!==61||a?.source_inventory?.images!==355||a?.source_inventory?.offsite!==288)problems.push("frozen cohort");
  const seen=new Set();
