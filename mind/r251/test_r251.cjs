@@ -16,7 +16,7 @@ function read(root='.'){const out={};for(const [k,[p,hash]] of Object.entries(pi
 function check(d){
  const article=d.article;
  assert.ok(article.trim().split(/\s+/).length>=2500,'deep original long-form article');
- for(const phrase of ['The Hand That Wasn\'t Yours','Botvinick','Cohen','1998','Rohde','2011','Lush','2020','2018','2024','Puységur','proprioceptive drift','demand characteristics','not a commercial hypnosis claim','https://doi.org/10.1525/collabra.325'])assert.ok(article.includes(phrase),'article source: '+phrase);
+ for(const phrase of ['The Hand That Wasn\'t Yours','Botvinick','Cohen','1998','Rohde','2011','Lush','2020','2018','2024','Puységur','proprioceptive drift','demand characteristics','do not validate any commercial hypnosis recording','https://doi.org/10.1525/collabra.325'])assert.ok(article.includes(phrase),'article source: '+phrase);
  assert.ok(article.includes('UNPUBLISHED')&&article.includes('no affiliate endorsement')===false,'article is held and not falsely marketed');
  assert.ok(!/I (?:personally )?(?:used|tested|bought) (?:Zen12|Hypnosis Live)/i.test(article),'no invented product experience');
  assert.ok(!/meditation (?:cures|guarantees)|(?:guaranteed|proven) (?:wealth|focus|healing)/i.test(article),'no ungrounded benefit claim');
@@ -43,7 +43,7 @@ function check(d){
  const h=d.html;
  assert.ok(/^<!doctype html>/i.test(h)&&h.includes('<html lang="en">')&&h.includes('noindex,nofollow'),'accessible unpublished doc');
  assert.equal((h.match(/<h1\b/gi)||[]).length,1,'one H1');
- assert.ok(h.includes(':focus-visible')&&h.includes('prefers-reduced-motion')&&h.includes('360'),'responsive concepts + a11y');
+ assert.ok(h.includes(':focus-visible')&&h.includes('prefers-reduced-motion')&&h.includes('@media(max-width:760px)'),'responsive concepts + a11y');
  const buttons=[...h.matchAll(/<button\b[^>]*>/gi)];
  assert.equal(buttons.length,1,'only one held commerce control');
  assert.ok(/\sdisabled(?=\s|>)/i.test(buttons[0][0]),'native disabled attribute mandatory');
@@ -54,7 +54,7 @@ function check(d){
  assert.ok(h.includes('may earn a commission at no additional cost to you'),'FTC material connection explained');
  assert.ok(h.includes('No merchant URL is attached to a purchasing control'),'no activated checkout');
  assert.ok(h.includes('https://finalvestige.com/focus/'),'one existing Focus funnel');
- assert.ok(h.includes('UNPUBLISHED')&&h.includes('42-second')&&h.includes('not a rendered film'),'no fictitious live video');
+ assert.ok(h.includes('UNPUBLISHED')&&h.includes('42-second')&&h.includes('The film is presently only'),'no fictitious live video');
  assert.ok(!/<\s*(?:script|form|input|iframe|video|audio|source|track|embed|object|link|img)\b/i.test(h),'no executable/loaded widgets');
  assert.ok(!/\son[a-z][a-z0-9_-]*\s*=|javascript\s*:|data\s*:|@import|url\s*\(/i.test(h),'no remote assets/inline handlers');
  const ids=[...h.matchAll(/\bid="([^"]+)"/g)].map(x=>x[1]);
@@ -63,7 +63,7 @@ function check(d){
  assert.ok(h.includes('aria-labelledby="mind-viz-title mind-viz-desc"'),'SVG labelled by ID');
  for(const a of h.matchAll(/<a\b[^>]*href="([^"]+)"/g))assert.ok(/^https:\/\/(?:finalvestige\.com|www\.ftc\.gov)\/|^#(?:streams|fieldbook|buyers)$/.test(a[1]),'allowlist nonmerchant link: '+a[1]);
  const p=d.plan;
- for(const phrase of ['HARD_HOLD','NOT_COMPUTABLE','R185','R250','R236','R249','R248','OFFER → FUNNEL STEP','merchant-confirmed','utm_content','qualified human','refund','360, 390, 768, 1440, 1920','TASK-008','Grok','Founder'])assert.ok(p.includes(phrase),'plan completeness: '+phrase);
+ for(const phrase of ['HARD_HOLD','NOT_COMPUTABLE','R185','R250','R236','R249','R248','OFFER → FUNNEL STEP','merchant-reported affiliate conversion','utm_content','qualified human','refund','360, 390, 768, 1440, 1920','TASK-008','Grok','Founder'])assert.ok(p.includes(phrase),'plan completeness: '+phrase);
  assert.ok(p.includes('19 effect sizes across 12 studies'),'prior editorial QA correction preserved');
  return true;
 }
@@ -90,7 +90,7 @@ function negativeCases(d){
  change('html',s=>s.replace('id="hold-desc"','id="disclosure-note"')),
  change('html',s=>s.replace('href="https://finalvestige.com/focus/"','href="javascript:alert(1)"')),
  change('html',s=>s.replace('No merchant URL is attached to a purchasing control','Merchant link activated')),
- change('html',s=>s.replace('not a rendered film','now autoplaying')),
+ change('html',s=>s.replace('The film is presently only','Autoplay begins now')),
  change('article',s=>s.replaceAll('proprioceptive drift','intuitive event')),
  change('article',s=>s.replace('https://doi.org/10.1525/collabra.325','fake unsupported publication')),
  change('plan',s=>s.replace('19 effect sizes across 12 studies','19 independent studies'))
