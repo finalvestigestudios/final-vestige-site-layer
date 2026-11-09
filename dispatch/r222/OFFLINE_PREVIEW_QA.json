@@ -1,0 +1,44 @@
+{
+  "date_utc": "2026-11-09",
+  "type": "source-level-offline-specimen-check",
+  "branch": "dispatch-r222-merchant-price-consent-reviews-20261108",
+  "creator": "FV Dispatch",
+  "master": "PR #175",
+  "parent": "PR #1663",
+  "passed": true,
+  "metrics": [
+    {
+      "id": "03",
+      "source_blob_sha": "46e3482b0d5b266e32d84f57fc5fb4daa1d989bd",
+      "subject": "Twelve minutes isn't an hour",
+      "preheader": "Before paying for meditation audio, test the part no product can do for you.",
+      "paragraphs": 14,
+      "html_size": 5861,
+      "plaintext_size": 3982,
+      "active_merchant_links": false,
+      "scripts": false,
+      "preheader_first": true,
+      "has_legal_gate": true,
+      "has_both_disclosures": true
+    },
+    {
+      "id": "05",
+      "source_blob_sha": "03f1883e5f1e4b8d51ff49a572f71c7ed6c5bcfd",
+      "subject": "The question to ask before you press play",
+      "preheader": "One recording, an ambitious promise, and three details that change the purchase decision.",
+      "paragraphs": 15,
+      "html_size": 6010,
+      "plaintext_size": 4088,
+      "active_merchant_links": false,
+      "scripts": false,
+      "preheader_first": true,
+      "has_legal_gate": true,
+      "has_both_disclosures": true
+    }
+  ],
+  "native_jetpack_render": false,
+  "actual_sent_email": false,
+  "actual_checkout": false,
+  "affiliate_channel_permission": false,
+  "source_warning": "Offline specimens deliberately include disabled CTA and incomplete postal/unsubscribe tokens. Never send."
+}
