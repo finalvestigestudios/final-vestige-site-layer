@@ -18,7 +18,7 @@ function blob(b){return crypto.createHash('sha1').update('blob '+b.length+'\0').
 function read(root='.'){const d={};for(const [k,[p,sha]] of Object.entries(pins)){const b=fs.readFileSync(path.join(root,p));assert.equal(blob(b),sha,'Git blob '+k);d[k]=b.toString('utf8')}return d}
 function check(d){
  assert.ok(d.article.trim().split(/\s+/).length>=2650,'original long investigation');
- for(const w of ['The Broken Glass Nobody Saw','Loftus','1974','1978','1,242','2023','2019','Puységur','not a product','https://pubmed.ncbi.nlm.nih.gov/621467/','https://doi.org/10.3389/fpsyg.2023.1201674'])assert.ok(d.article.includes(w),'source '+w);
+ for(const w of ['The Broken Glass Nobody Saw','Loftus','1974','1978','1,242','2023','2019','Puységur','affiliate endorsement','https://pubmed.ncbi.nlm.nih.gov/621467/','https://doi.org/10.3389/fpsyg.2023.1201674'])assert.ok(d.article.includes(w),'source '+w);
  assert.ok(!/I (?:personally )?(?:used|tested|purchased) Zen12/i.test(d.article),'no fake trial');
  const m=JSON.parse(d.matrix);
  assert.equal(m.scope,'UNPUBLISHED_SOURCE_ONLY');assert.equal(m.release,'HARD_HOLD');
