@@ -1,0 +1,461 @@
+{
+  "version": "R235",
+  "date": "2026-11-08",
+  "status": "UNPUBLISHED_HARD_HOLD",
+  "scope": "mind_presell_only",
+  "sources": [
+    {
+      "id": "FV171",
+      "kind": "governance",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "limits": "Original Mind ownership and release gates"
+    },
+    {
+      "id": "FV820",
+      "kind": "governance",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "limits": "Conversion proof and attribution contract"
+    },
+    {
+      "id": "FV174",
+      "kind": "governance",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/174",
+      "limits": "Dispatch owns newsletters, not Mind"
+    },
+    {
+      "id": "SELLER",
+      "kind": "seller",
+      "url": "https://zen12.com/hnp",
+      "limits": "Exact Zen12 Premium public copy, pricing snapshots not checkout; free gift newsletter opt-in and skip"
+    },
+    {
+      "id": "CATALOG",
+      "kind": "seller",
+      "url": "https://inspire3.com/",
+      "limits": "Official catalog including Zen12, Hypnosis Live, Brainwave Shots"
+    },
+    {
+      "id": "HYPNOSIS",
+      "kind": "seller",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "limits": "Separate 33-minute 47 MB Total Focus format; current checkout not verified"
+    },
+    {
+      "id": "HYPNOSISFAQ",
+      "kind": "seller",
+      "url": "https://hypnosislive.com/faq",
+      "limits": "Refund language 14 days, five sessions per year, seller only"
+    },
+    {
+      "id": "WEGNER",
+      "kind": "research",
+      "url": "https://dtg.sites.fas.harvard.edu/DANWEGNER/pub/Wegner%2CSchneider%2CCarter%2C%26White%201987.pdf",
+      "limits": "Instructed expression period after suppression, expression-first comparison"
+    },
+    {
+      "id": "META2020",
+      "kind": "research",
+      "url": "https://doi.org/10.1177/1745691619898795",
+      "limits": "31-study meta-analysis; rebound across load conditions; immediate effect with added load"
+    },
+    {
+      "id": "BEATS2023",
+      "kind": "research",
+      "url": "https://doi.org/10.1371/journal.pone.0286023",
+      "limits": "14 studies: 5 supportive, 8 contradictory, one mixed"
+    },
+    {
+      "id": "SCHUMI",
+      "kind": "methods",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3113981/",
+      "limits": "Correct source for Schumi and Wittes 2011, noninferiority/equivalence"
+    },
+    {
+      "id": "NCCIH",
+      "kind": "government",
+      "url": "https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety",
+      "limits": "Meditation evidence and adverse effect caution"
+    },
+    {
+      "id": "FTCEND",
+      "kind": "regulator",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "limits": "Affiliate connection disclosures"
+    },
+    {
+      "id": "FTCHEALTH",
+      "kind": "regulator",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "limits": "Adequate scientific support for health claims"
+    },
+    {
+      "id": "FOCUS",
+      "kind": "site_readonly",
+      "url": "https://finalvestige.com/focus/",
+      "limits": "Existing Fieldbook live WP page, not proof of confirmed subscribers"
+    },
+    {
+      "id": "PUYSEGUR",
+      "kind": "site_readonly",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "limits": "Existing historical archive page, not product efficacy"
+    },
+    {
+      "id": "CHANGE",
+      "kind": "site_readonly",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "limits": "Published change-blindness flicker/door swap article"
+    },
+    {
+      "id": "MESMERISM",
+      "kind": "site_readonly",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "limits": "Published 1784 commission investigation"
+    }
+  ],
+  "claims": [
+    {
+      "id": "T01",
+      "statement": "Zen12 Premium is the exact named tier being described",
+      "status": "SELLER_DESCRIPTION",
+      "evidence": [
+        "SELLER"
+      ]
+    },
+    {
+      "id": "T02",
+      "statement": "Seller describes 12 levels, 48 MP3 recordings and four styles",
+      "status": "SELLER_DESCRIPTION",
+      "evidence": [
+        "SELLER"
+      ]
+    },
+    {
+      "id": "T03",
+      "statement": "Seller describes a one-year refund offer",
+      "status": "SELLER_POLICY_NOT_FULFILLMENT",
+      "evidence": [
+        "SELLER"
+      ]
+    },
+    {
+      "id": "T04",
+      "statement": "Public offer has an optional free-audio email form and states merchant newsletter subscription",
+      "status": "VISIBLE_SELLER_COPY_NOT_FLOW_TEST",
+      "evidence": [
+        "SELLER"
+      ]
+    },
+    {
+      "id": "T05",
+      "statement": "Public offer also displays a skip option for merchant free gift",
+      "status": "VISIBLE_SELLER_COPY_NOT_FLOW_TEST",
+      "evidence": [
+        "SELLER"
+      ]
+    },
+    {
+      "id": "T06",
+      "statement": "Actual consent checkbox defaults, responsive behavior and merchant email delivery are established",
+      "status": "NOT_TESTED_DO_NOT_ASSERT",
+      "evidence": [
+        "SELLER"
+      ]
+    },
+    {
+      "id": "T07",
+      "statement": "FV Jetpack confirmed lead is the same event as seller's free-audio opt-in",
+      "status": "FALSE_CONFLATION_DO_NOT_ASSERT",
+      "evidence": [
+        "FOCUS",
+        "SELLER"
+      ]
+    },
+    {
+      "id": "T08",
+      "statement": "Zen12 12-min equals 60-min benefits",
+      "status": "UNSUPPORTED_PRODUCT_EQUIVALENCE",
+      "evidence": [
+        "SELLER",
+        "SCHUMI",
+        "BEATS2023"
+      ]
+    },
+    {
+      "id": "T09",
+      "statement": "Audio brainwave stimulation produces verified Zen12-specific cognitive/clinical improvement",
+      "status": "UNSUPPORTED_PRODUCT_EFFICACY",
+      "evidence": [
+        "SELLER",
+        "BEATS2023",
+        "FTCHEALTH"
+      ]
+    },
+    {
+      "id": "T10",
+      "statement": "Binaural systematic review has 5 supportive, 8 contrary, 1 mixed results across 14 studies",
+      "status": "SUPPORTED_INDEPENDENT_REVIEW",
+      "evidence": [
+        "BEATS2023"
+      ]
+    },
+    {
+      "id": "T11",
+      "statement": "Wegner suppression group was explicitly instructed to express bear thoughts later",
+      "status": "SUPPORTED_ORIGINAL_METHOD",
+      "evidence": [
+        "WEGNER"
+      ]
+    },
+    {
+      "id": "T12",
+      "statement": "White bear task is a consumer clinical meditation or Zen12 trial",
+      "status": "FALSE_CONFLATION_DO_NOT_ASSERT",
+      "evidence": [
+        "WEGNER",
+        "SELLER"
+      ]
+    },
+    {
+      "id": "T13",
+      "statement": "2020 meta-analysis distinguishes post suppression rebound vs added-load immediate enhancement",
+      "status": "SUPPORTED_ABSTRACT",
+      "evidence": [
+        "META2020"
+      ]
+    },
+    {
+      "id": "T14",
+      "statement": "Meditation has zero adverse risks",
+      "status": "UNSUPPORTED_DO_NOT_ASSERT",
+      "evidence": [
+        "NCCIH"
+      ]
+    },
+    {
+      "id": "T15",
+      "statement": "Hypnosis Live Total Focus is distinct 33-min 47 MB seller described product",
+      "status": "SELLER_DESCRIPTION",
+      "evidence": [
+        "HYPNOSIS"
+      ]
+    },
+    {
+      "id": "T16",
+      "statement": "Hypnosis Live 14-day five-refund-per-year is seller refund FAQ not Zen12 Premium guarantee",
+      "status": "SELLER_POLICY_NOT_FULFILLMENT",
+      "evidence": [
+        "HYPNOSISFAQ",
+        "SELLER"
+      ]
+    },
+    {
+      "id": "T17",
+      "statement": "FV named Inspire3 publisher accepted and account-issued URL verified",
+      "status": "NOT_AUTHENTICATED_HOLD",
+      "evidence": [
+        "FV171"
+      ]
+    },
+    {
+      "id": "T18",
+      "statement": "Commercial email channel and social creative permissions verified",
+      "status": "NOT_AUTHENTICATED_HOLD",
+      "evidence": [
+        "FV171",
+        "FV174"
+      ]
+    },
+    {
+      "id": "T19",
+      "statement": "FV original Mind Payhip SKU with rights and live checkout verified",
+      "status": "NOT_AUTHENTICATED_HOLD",
+      "evidence": [
+        "FV820"
+      ]
+    },
+    {
+      "id": "T20",
+      "statement": "Merchant checkout price, tax, currency and refund processing independently verified",
+      "status": "NOT_AUTHENTICATED_HOLD",
+      "evidence": [
+        "SELLER"
+      ]
+    },
+    {
+      "id": "T21",
+      "statement": "Settled merchant conversion and cleared commission are known",
+      "status": "NOT_AUTHENTICATED_HOLD",
+      "evidence": [
+        "FV820"
+      ]
+    },
+    {
+      "id": "T22",
+      "statement": "Qualified human session denominator is known",
+      "status": "NOT_AUTHENTICATED_HOLD",
+      "evidence": [
+        "FV820"
+      ]
+    },
+    {
+      "id": "T23",
+      "statement": "Net revenue per 1000 qualified human sessions is established",
+      "status": "NOT_COMPUTABLE",
+      "evidence": [
+        "FV820"
+      ]
+    },
+    {
+      "id": "T24",
+      "statement": "Prospective affiliate disclosure will be adjacent to any released earning link",
+      "status": "MANDATORY_FUTURE_CONTROL",
+      "evidence": [
+        "FTCEND"
+      ]
+    },
+    {
+      "id": "T25",
+      "statement": "Publisher earning-link activation requires founder permission and independently verified channels",
+      "status": "MANDATORY_FUTURE_CONTROL",
+      "evidence": [
+        "FV171",
+        "FV820"
+      ]
+    }
+  ],
+  "gates": [
+    {
+      "id": "G01",
+      "name": "publisher_verified",
+      "status": "HARD_HOLD",
+      "proof": "NONE_AUTHENTICATED"
+    },
+    {
+      "id": "G02",
+      "name": "permitted_web",
+      "status": "HARD_HOLD",
+      "proof": "NONE_AUTHENTICATED"
+    },
+    {
+      "id": "G03",
+      "name": "permitted_organic_social",
+      "status": "HARD_HOLD",
+      "proof": "NONE_AUTHENTICATED"
+    },
+    {
+      "id": "G04",
+      "name": "permitted_email",
+      "status": "HARD_HOLD",
+      "proof": "NONE_AUTHENTICATED"
+    },
+    {
+      "id": "G05",
+      "name": "issued_earning_url",
+      "status": "HARD_HOLD",
+      "proof": "NONE_AUTHENTICATED"
+    },
+    {
+      "id": "G06",
+      "name": "creative_claim_permissions",
+      "status": "HARD_HOLD",
+      "proof": "NONE_AUTHENTICATED"
+    },
+    {
+      "id": "G07",
+      "name": "exact_product_tier",
+      "status": "HARD_HOLD",
+      "proof": "NONE_AUTHENTICATED"
+    },
+    {
+      "id": "G08",
+      "name": "merchant_checkout",
+      "status": "HARD_HOLD",
+      "proof": "NONE_AUTHENTICATED"
+    },
+    {
+      "id": "G09",
+      "name": "refund_terms_current",
+      "status": "HARD_HOLD",
+      "proof": "NONE_AUTHENTICATED"
+    },
+    {
+      "id": "G10",
+      "name": "refund_fulfillment_evidence",
+      "status": "HARD_HOLD",
+      "proof": "NONE_AUTHENTICATED"
+    },
+    {
+      "id": "G11",
+      "name": "FV_approved_owned_Mind_SKU_alternative",
+      "status": "HARD_HOLD",
+      "proof": "NONE_AUTHENTICATED"
+    },
+    {
+      "id": "G12",
+      "name": "creator_asset_authentication",
+      "status": "HARD_HOLD",
+      "proof": "NONE_AUTHENTICATED"
+    },
+    {
+      "id": "G13",
+      "name": "provider_confirmed_Focus_lead",
+      "status": "HARD_HOLD",
+      "proof": "NONE_AUTHENTICATED"
+    },
+    {
+      "id": "G14",
+      "name": "confirmed_merchant_paid_order",
+      "status": "HARD_HOLD",
+      "proof": "NONE_AUTHENTICATED"
+    },
+    {
+      "id": "G15",
+      "name": "cleared_commission_net_of_fees_refunds",
+      "status": "HARD_HOLD",
+      "proof": "NONE_AUTHENTICATED"
+    },
+    {
+      "id": "G16",
+      "name": "founder_commercial_release",
+      "status": "HARD_HOLD",
+      "proof": "NONE_AUTHENTICATED"
+    }
+  ],
+  "conversion_contract": {
+    "stages": [
+      "qualified_human_landing",
+      "relevant_cta_click",
+      "provider_confirmed_lead_where_applicable",
+      "affiliate_click_separate",
+      "independently_confirmed_paid_order",
+      "cleared_commission_or_net_payhip_revenue",
+      "refunds_fees_net"
+    ],
+    "qualified_count": "UNVERIFIED",
+    "paid_orders": "UNVERIFIED",
+    "net_revenue_1000": "NOT_COMPUTABLE",
+    "utm": [
+      "utm_source",
+      "utm_medium",
+      "utm_campaign",
+      "utm_content=asset_id"
+    ],
+    "privacy": "FIRST_PARTY_NO_PII_NO_EXTRA_SCRIPT"
+  },
+  "pilot": {
+    "audience": "people with mental chatter evaluating twelve-minute meditation-audio format",
+    "offer": "Zen12 Premium, not authorized",
+    "A": "existing R234 text guide",
+    "B": "same text plus original optional 42s video concept UNRENDERED",
+    "randomization": "NOT_LIVE",
+    "primary_outcome": "realized_net_revenue_per_1000_qualified_human_sessions",
+    "secondary_outcomes": [
+      "merchant_confirmed_purchase_rate",
+      "provider_confirmed_lead_to_customer_rate"
+    ],
+    "pricing": "DO_NOT_QUOTE_NONFINAL_PRICE",
+    "merchant_optin": "SEPARATE_FROM_FV_JETPACK"
+  },
+  "approval": "FOUNDER_RELEASE_NOT_GRANTED"
+}
