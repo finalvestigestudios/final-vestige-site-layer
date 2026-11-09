@@ -28,6 +28,8 @@ const mutants=[
  ["duplicated slot",a=>a.rows[1]=structuredClone(a.rows[0])],
  ["canteen overclaim review removed",a=>a.rows[3].catalog.scene_note="Definitely the recovered canteen"],
  ["NARA alt review removed",a=>a.rows[5].catalog.scene_note="Existing ALT accurate"],
+ ["missing PR183 prior audit",a=>a.prior_independent_research.git_blob_sha="different"],
+ ["verified USAF 278:6 catalog dropped",a=>a.rows[6].catalog.url=null],
  ["method recast as browser",a=>a.rows[0].retrieval.method="CHROMIUM"],
  ["unknown guest cache changed",a=>a.rows[2].visitor.cache_state=false]
 ];
