@@ -1,0 +1,252 @@
+{
+  "schema": "fv-boston-molasses-101-four-commons-v1",
+  "snapshot_date": "2026-10-30",
+  "researched_date": "2026-11-09",
+  "source_inventory": {
+    "path": "qa/media-recovery/offsite_upstream_288_20261109.json",
+    "blob_sha": "92a904c8da1ace1f972b2f00adf1a4847dde2b99",
+    "slots": 355,
+    "external_origin_slots": 288,
+    "posts": 61
+  },
+  "scope": "Exact original October 30 stored image URLs plus 2026-11-09 external catalog/retriever evidence. NOT current live guest/browser verification.",
+  "post_id": 101,
+  "post_url": "https://finalvestige.com/2026/08/17/six-inches-of-water-boston-molasses-flood/",
+  "summary": {
+    "rows": 4,
+    "previously_individually_researched_in_pr1703_and_1723": 0,
+    "web_viewer_images_rendered": 4,
+    "guest_http_verified": 0,
+    "catalog_960_no_upscale_count": 4,
+    "source_below_960_count": 2,
+    "rights_classes": 4
+  },
+  "primary_archive_context": {
+    "url": "https://content.boston.gov/news/100-years-ago-today-molasses-crashes-through-bostons-north-end",
+    "kind": "CITY_OF_BOSTON_ARCHIVES_CONTEXTUAL_HISTORICAL_PHOTOS",
+    "same_image_match": false,
+    "rights_for_alternative_verified": false,
+    "note": "Official City of Boston archival collection contextual photo candidates. Not replacements for the four different existing source images without exact scene and rights review."
+  },
+  "rows": [
+    {
+      "slot": "101:1",
+      "post_id": 101,
+      "post_url": "https://finalvestige.com/2026/08/17/six-inches-of-water-boston-molasses-flood/",
+      "exact_stored_url": "https://upload.wikimedia.org/wikipedia/commons/5/59/North_End_molasses_tank.jpg",
+      "delivery_host": "upload.wikimedia.org",
+      "origin_host": "upload.wikimedia.org",
+      "external_viewer": {
+        "source": "WEB_IMAGE_VIEWER_NOT_GUEST_BROWSER",
+        "observation": "IMAGE_DISPLAYED",
+        "http_status": null,
+        "mime": null,
+        "transferred_bytes": null
+      },
+      "commons_candidate": {
+        "catalog_url": "https://commons.wikimedia.org/wiki/File:North_End_molasses_tank.jpg",
+        "title": "North End molasses tank before the 1919 disaster",
+        "source_claim": "WIKIMEDIA_FILE_RECORD",
+        "creator_credit": "The Bostonian Society",
+        "claimed_license": "PD_US_HISTORICAL_COMMONS_CLAIM",
+        "item_date": "PRE_1919_01_15",
+        "catalog_original_dimensions_px": [
+          417,
+          327
+        ],
+        "conditional_no_upscale_960px": [
+          417,
+          327
+        ],
+        "binary_sha256": null,
+        "original_binary_exact_match": false,
+        "rights_review_complete": false,
+        "historical_scene_note": "Pre-disaster tank photo; never caption as wreckage. Bostonian Society provenance, Commons U.S.-public-domain assertion; do not infer worldwide rights.",
+        "visual_legibility_gate": "small historical original; no upscaling"
+      },
+      "guest_browser": {
+        "current_src": null,
+        "http_status": null,
+        "decoded_width": null,
+        "decoded_height": null,
+        "wire_bytes": null,
+        "broken": null
+      },
+      "release": {
+        "asset_download": false,
+        "cache": false,
+        "wordpress_upload": false,
+        "post_rewrite": false,
+        "homepage_change": false,
+        "license_cleared": false,
+        "visually_approved": false
+      }
+    },
+    {
+      "slot": "101:2",
+      "post_id": 101,
+      "post_url": "https://finalvestige.com/2026/08/17/six-inches-of-water-boston-molasses-flood/",
+      "exact_stored_url": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Boston_molasses_detail_map.png",
+      "delivery_host": "upload.wikimedia.org",
+      "origin_host": "upload.wikimedia.org",
+      "external_viewer": {
+        "source": "WEB_IMAGE_VIEWER_NOT_GUEST_BROWSER",
+        "observation": "IMAGE_DISPLAYED",
+        "http_status": null,
+        "mime": null,
+        "transferred_bytes": null
+      },
+      "commons_candidate": {
+        "catalog_url": "https://commons.wikimedia.org/wiki/File:Boston_molasses_detail_map.png",
+        "title": "Modern reconstructed map of the molasses flood site",
+        "source_claim": "WIKIMEDIA_FILE_RECORD",
+        "creator_credit": "Wikimedia user IMeowbot",
+        "claimed_license": "PD_CREATOR_RELEASE_COMMONS",
+        "item_date": "2005_03_21",
+        "catalog_original_dimensions_px": [
+          874,
+          742
+        ],
+        "conditional_no_upscale_960px": [
+          874,
+          742
+        ],
+        "binary_sha256": null,
+        "original_binary_exact_match": false,
+        "rights_review_complete": false,
+        "historical_scene_note": "Modern reconstruction based on 1895/1915 city maps, NOT a 1919 contemporary map; preserve eight numbered annotations and labels.",
+        "visual_legibility_gate": "map labels and locations must remain readable; full-resolution tap/zoom preferred"
+      },
+      "guest_browser": {
+        "current_src": null,
+        "http_status": null,
+        "decoded_width": null,
+        "decoded_height": null,
+        "wire_bytes": null,
+        "broken": null
+      },
+      "release": {
+        "asset_download": false,
+        "cache": false,
+        "wordpress_upload": false,
+        "post_rewrite": false,
+        "homepage_change": false,
+        "license_cleared": false,
+        "visually_approved": false
+      }
+    },
+    {
+      "slot": "101:4",
+      "post_id": 101,
+      "post_url": "https://finalvestige.com/2026/08/17/six-inches-of-water-boston-molasses-flood/",
+      "exact_stored_url": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Boston_post-January_16%2C_1919%2C.jpg",
+      "delivery_host": "upload.wikimedia.org",
+      "origin_host": "upload.wikimedia.org",
+      "external_viewer": {
+        "source": "WEB_IMAGE_VIEWER_NOT_GUEST_BROWSER",
+        "observation": "IMAGE_DISPLAYED",
+        "http_status": null,
+        "mime": null,
+        "transferred_bytes": null
+      },
+      "commons_candidate": {
+        "catalog_url": "https://commons.wikimedia.org/wiki/File:Boston_post-January_16%2C_1919%2C.jpg",
+        "title": "Boston Post January 16, 1919 front page",
+        "source_claim": "WIKIMEDIA_FILE_RECORD",
+        "creator_credit": "Boston Post; original photographer unspecified",
+        "claimed_license": "PD_US_PRE_1931_COMMONS_CLAIM",
+        "item_date": "1919_01_16",
+        "catalog_original_dimensions_px": [
+          1127,
+          1435
+        ],
+        "conditional_no_upscale_960px": [
+          960,
+          1222
+        ],
+        "binary_sha256": null,
+        "original_binary_exact_match": false,
+        "rights_review_complete": false,
+        "historical_scene_note": "January 16 report is contemporaneous journalism, not a photograph of an actual molasses wave. Small newspaper text must remain inspectable.",
+        "visual_legibility_gate": "newsprint fine text; preserve access to full-resolution image"
+      },
+      "guest_browser": {
+        "current_src": null,
+        "http_status": null,
+        "decoded_width": null,
+        "decoded_height": null,
+        "wire_bytes": null,
+        "broken": null
+      },
+      "release": {
+        "asset_download": false,
+        "cache": false,
+        "wordpress_upload": false,
+        "post_rewrite": false,
+        "homepage_change": false,
+        "license_cleared": false,
+        "visually_approved": false
+      }
+    },
+    {
+      "slot": "101:6",
+      "post_id": 101,
+      "post_url": "https://finalvestige.com/2026/08/17/six-inches-of-water-boston-molasses-flood/",
+      "exact_stored_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Molasses_Flood_Historical_Marker.jpg/1280px-Molasses_Flood_Historical_Marker.jpg",
+      "delivery_host": "upload.wikimedia.org",
+      "origin_host": "upload.wikimedia.org",
+      "external_viewer": {
+        "source": "WEB_IMAGE_VIEWER_NOT_GUEST_BROWSER",
+        "observation": "IMAGE_DISPLAYED",
+        "http_status": null,
+        "mime": null,
+        "transferred_bytes": null
+      },
+      "commons_candidate": {
+        "catalog_url": "https://commons.wikimedia.org/wiki/File:Molasses_Flood_Historical_Marker.jpg",
+        "title": "Boston Molasses Flood historical plaque photographed in 2012",
+        "source_claim": "WIKIMEDIA_FILE_RECORD",
+        "creator_credit": "MLHalsey",
+        "claimed_license": "CC_BY_SA_3_0_UNPORTED",
+        "item_date": "2012_12_13",
+        "catalog_original_dimensions_px": [
+          3129,
+          2801
+        ],
+        "conditional_no_upscale_960px": [
+          960,
+          859
+        ],
+        "binary_sha256": null,
+        "original_binary_exact_match": false,
+        "rights_review_complete": false,
+        "historical_scene_note": "Modern 2012 plaque, NOT 1919 eyewitness imagery; credit MLHalsey, link CC BY-SA 3.0, specify modifications and satisfy share-alike for adaptations.",
+        "visual_legibility_gate": "plaque inscription must remain readable; full-resolution option if 960 thumbnail obscures letters"
+      },
+      "guest_browser": {
+        "current_src": null,
+        "http_status": null,
+        "decoded_width": null,
+        "decoded_height": null,
+        "wire_bytes": null,
+        "broken": null
+      },
+      "release": {
+        "asset_download": false,
+        "cache": false,
+        "wordpress_upload": false,
+        "post_rewrite": false,
+        "homepage_change": false,
+        "license_cleared": false,
+        "visually_approved": false
+      }
+    }
+  ],
+  "performance": {
+    "historical_broken_42_browser_verified": false,
+    "claimed_76pct_wire_reduction_measured": false,
+    "originals_over_1500000_bytes": 15,
+    "oversize_original_stored_bytes": 47096779,
+    "guest_wire_bytes": null
+  }
+}
