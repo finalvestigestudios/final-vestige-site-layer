@@ -12,7 +12,7 @@ function issues(f){
  check(m.sources?.length===19&&m.claims?.length===24&&m.gates?.length===16,"expected registry counts");
  check(m.gates.every(x=>x.status==="HARD_HOLD"&&x.proof==="NOT_AUTHENTICATED"),"all gates held");
  check(m.tracking.net_revenue_per_1000==="NOT_COMPUTABLE"&&m.experiment.state==="DRAFT_NOT_LIVE","no invented result");
- check(f.article.split(/\s+/).length>2400&&f.article.includes("336 milliseconds")&&f.article.includes("672 milliseconds")&&f.article.includes("17 participants"),"primary-method article");
+ check(f.article.split(/\s+/).length>2400&&f.article.includes("336 milliseconds")&&f.article.includes("672 milliseconds")&&f.article.includes("Seventeen participants"),"primary-method article");
  check(f.article.includes("https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.0050138")&&f.article.includes("https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0286023"),"research bibliography");
  check(f.article.includes("no merchant CTA")&&f.article.includes("no affiliate URL"),"article commerce separation");
  const p=f.preview;
