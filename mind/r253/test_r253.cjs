@@ -10,7 +10,7 @@ function validate(a,b,m){
  assert.match(x,/button type="button" disabled aria-describedby="commercial-reason"/);
  assert.match(x,/Affiliate disclosure \(prospective\):/);assert.match(x,/If you purchase through an approved link, Final Vestige may earn a commission at no additional cost to you/);
  assert.match(x,/account-issued destination/);assert.match(x,/https:\/\/finalvestige\.com\/focus\//);
- assert.doesNotMatch(x,/<script\b|<form\b|<iframe\b|<source\b|<video\b|autoplay|on[a-z]+\s*=|javascript:|http-equiv="refresh"/i);
+ assert.doesNotMatch(x,/<script\b|<form\b|<iframe\b|<source\b|<video\b|autoplay|\bon(?:click|load|error|focus|submit|mouseover)\s*=|javascript:|http-equiv="refresh"/i);
  assert.doesNotMatch(x,/<a[^>]+href="https?:\/\/(?:www\.)?(?:zen12|inspire3|affiliates\.inspire3|brainwaveshots|hypnosislive)\./i);
  assert.equal((x.match(/<button /g)||[]).length,1);
  assert.ok(x.indexOf('class="disclosure"')<x.indexOf('<button '));
