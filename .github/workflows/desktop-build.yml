@@ -229,6 +229,10 @@ jobs:
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_vault_product_gate_r312.py'
           python -W error -m unittest discover -s products/desktop/tests -p 'test_vault_product_integration_r312.py'
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_vault_product_integration_r312.py'
+      - name: R313 packaged premium vault scope smoke contract (normal and -OO)
+        run: |
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_vault_smoke_scope_r313.py'
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_vault_smoke_scope_r313.py'
       - name: R200 regression matrix runner self-tests (16 methods; normal and -OO)
         run: |
           python -m unittest discover -s products/desktop/tests -p 'test_recent_regression_gate_r200.py'
@@ -1261,6 +1265,14 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R312 AES-GCM normal failed" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_vault_product_integration_r312.py'
           if ($LASTEXITCODE -ne 0) { throw "R312 AES-GCM optimized failed" }
+      - name: R313 packaged premium vault scope smoke contract (normal and -OO)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_vault_smoke_scope_r313.py'
+          if ($LASTEXITCODE -ne 0) { throw "R313 scope smoke normal failed" }
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_vault_smoke_scope_r313.py'
+          if ($LASTEXITCODE -ne 0) { throw "R313 scope smoke optimized failed" }
       - name: R200 regression matrix runner self-tests (16 methods; normal and -OO)
         shell: pwsh
         run: |
