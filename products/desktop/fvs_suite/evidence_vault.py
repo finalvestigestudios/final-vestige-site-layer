@@ -26,6 +26,7 @@ from .vault_publish import publish_vault
 from .vault_restore_cleanup import rollback_owned_restore
 from .vault_restore_writer import make_private_restore_folder, write_private_restore_member
 from .vault_restore_verify import verify_private_restore_members
+from .vault_product_gate import require_restore_product
 
 MAGIC = b"FVS-EVIDENCE-VAULT-v1\x00"
 SALT_SIZE = 16
@@ -140,7 +141,8 @@ def seal_evidence(report: str | Path, product: str, journal: str | Path,
     return publish_vault(target, vault_bytes)
 
 
-def restore_evidence(vault: str | Path, folder: str | Path, passphrase: str) -> Path:
+def restore_evidence(vault: str | Path, folder: str | Path, passphrase: str,
+                     *, expected_product: str | None = None) -> Path:
     """Authenticate and restore evidence to a new exclusive private subfolder.
 
     Fails without writing plaintext on a bad password, altered ciphertext,
@@ -164,8 +166,10 @@ def restore_evidence(vault: str | Path, folder: str | Path, passphrase: str) -> 
         raise ValueError("Encrypted evidence has an unsupported schema")
     if type(payload["schema"]) is not int or payload["schema"] != 1:
         raise ValueError("Unsupported encrypted evidence format version")
-    if payload["product"] not in ("grants", "procurement"):
-        raise ValueError("Invalid premium evidence product")
+    # Match the authenticated archive to the already-entitled GUI workflow
+    # before creating any plaintext directory. Trusted unscoped API callers
+    # retain backward compatibility; this check does not grant entitlement.
+    require_restore_product(payload["product"], expected_product)
     if type(payload["journal_present"]) is not bool or type(payload["review_event_count"]) is not int:
         raise ValueError("Invalid encrypted evidence metadata")
     if not (0 <= payload["review_event_count"] <= 20_000):

@@ -360,7 +360,8 @@ def open_review_window(parent: tk.Misc, product: str, report_path: str | None = 
             if not _authorized():
                 return
             folder = perform_custodied_output(
-                lambda: restore_evidence(source, target, secret), _reset_report_view)
+                lambda: restore_evidence(source, target, secret, expected_product=product),
+                _reset_report_view)
         except (ValueError, OSError, UnicodeError) as exc:
             messagebox.showerror(
                 "Restore needs inspection",
