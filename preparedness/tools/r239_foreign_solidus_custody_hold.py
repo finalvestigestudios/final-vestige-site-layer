@@ -143,4 +143,3 @@ def audit_solidus_custody(root, roster, safe_read):
             'source_review_approved': False, 'medical_safety_verified': False,
             'human_review_required': True,
             'receipt_sha256': hashlib.sha256('\n'.join(receipts).encode()).hexdigest()}
-
