@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """EX2 read-only, anonymous, image-delivery acceptance probe.
 
-Never logs in, submits a form, modifies WP, or sends analytics. Production use
+Never logs in, submits a form, or modifies WP. Existing site analytics may
+count anonymous pageviews; this script installs no new analytics. Production use
 needs an internet-enabled browser: a synthetic mock test is not live evidence.
 Playwright request.sizes().responseBodySize is encoded response-body bytes (when
 available); len(response.body()) is decoded body bytes and is NOT wire size.
