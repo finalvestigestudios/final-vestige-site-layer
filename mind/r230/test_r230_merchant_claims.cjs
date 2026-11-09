@@ -40,6 +40,36 @@ const claimStates={
  A04:'UNVERIFIED_HARD_HOLD',A05:'UNVERIFIED_HARD_HOLD',A06:'UNVERIFIED_HARD_HOLD',
  A07:'FTC_REQUIREMENT',A08:'FTC_REQUIREMENT',A09:'NOT_VERIFIED',A10:'NOT_RENDERED'
 };
+const claimStatements={
+  "B01": "Two different tones can produce a perceived binaural beat",
+  "B02": "Fourteen-study 2023 review: five supportive, eight contrary, one mixed",
+  "B03": "2025: 80 randomized but 64 analyzed; gamma/340 Hz and white-noise detection effects from separate analyses, no significant overall treatment effect p=.385",
+  "B04": "2025: no robust overall vigilance-decrement reduction; pre-task subgroup slope p=.038 with no statistically significant individual-block contrasts; masking weakened EEG entrainment even where behavioral performance improved",
+  "B05": "2024: 31-study review spans multiple auditory modalities; only one binaural-beat study, indirect/mixed autonomic arousal–cognition results",
+  "B06": "Clinical improvements in some dental trials generalize to consumer audio",
+  "S01": "Zen12: 12 levels, 48 MP3s, 4 listening styles",
+  "S02": "Zen12 advertised one-year refund promise",
+  "S03": "Zen12 creates one hour's meditation benefits in 12 minutes",
+  "S04": "Zen12 final checkout price and returns",
+  "S05": "Brainwave Shots Focus Shot includes 15 and 30 min versions, extras",
+  "S06": "Focus Shot instantly creates perfect concentration",
+  "S07": "Hypnosis Live Total Focus is a single 33-min audio",
+  "S08": "Total Focus reprograms brain or guarantees concentration",
+  "A01": "Final Vestige named Inspire3 publisher acceptance",
+  "A02": "Final Vestige approved social/website/email channels",
+  "A03": "Account-issued earnings URL, tracking/cookie terms",
+  "A04": "Payhip owned sellable Mind SKU, rights and payout",
+  "A05": "Provider-confirmed Focus lead, not URL success message",
+  "A06": "Verified merchant-paid order/cleared commission and net revenue",
+  "A07": "Disclosure must be immediately adjacent to earning link",
+  "A08": "Medical and cognitive benefit claims require adequate substantiation",
+  "A09": "Published three Grok IDs for Mind topics",
+  "A10": "Optional 42-second film exists as playable rendered media"
+};
+const protectedSourceNotes={
+  "R02": "2025 trial: 80 initially randomized, 12 failed second visit + 4 performance excluded => 64 analyzed; distinct gamma/340Hz and white-noise average-detection interactions; no overall treatment effect (p=.385); before-task subgroup slope p=.038 but no significant individual block comparisons; white noise reduced EEG entrainment despite behavioral pattern; no retail audio.",
+  "R03": "31-study broad auditory review of music/noise/white-noise/binaural beats (only one binaural-beat study as independently reviewed); autonomic indices (cardiac/electrodermal/pupillary) not equivalent to EEG entrainment; indirect/mixed evidence."
+};
 const gateIDs=[
 'named_partner_approval','authorized_website_channel','authorized_social_channel',
 'authorized_email_channel','account_issued_link','cookie_and_tracking_terms',
@@ -56,10 +86,11 @@ ok(x.m.state==='UNPUBLISHED_HARD_HOLD','unpublished state');
 ok(x.m.sprint==='R229','source snapshot identity');
 eqIDs(x.m.sources,sourceURLs,'sources');
 for(const [id,url] of Object.entries(sourceURLs)){const s=x.m.sources.find(s=>s.id===id);ok(s?.url===url,'source URL '+id);}
+for(const [id,note] of Object.entries(protectedSourceNotes))ok(x.m.sources.find(s=>s.id===id)?.notes===note,'critical scientific source notes '+id);
 eqIDs(x.m.claims,claimStates,'claims');
 for(const [id,status] of Object.entries(claimStates)){const c=x.m.claims.find(c=>c.id===id);
 ok(c?.status===status,'claim status '+id);
-ok(typeof c?.statement==='string'&&c.statement.length>12,'claim statement '+id);
+ok(c?.statement===claimStatements[id],'claim statement '+id);
 ok(Array.isArray(c?.evidence)&&c.evidence.length>0&&c.evidence.every(e=>sourceURLs[e]),'claim refs '+id);}
 eqIDs(x.m.release_gates,gateIDs,'gates');
 for(const id of gateIDs){const g=x.m.release_gates.find(g=>g.id===id);ok(g?.status==='HARD_HOLD'&&g?.evidence===null,'gate hold '+id);}
@@ -116,11 +147,13 @@ for(const [id] of Object.entries(sourceURLs)){
 for(const [id] of Object.entries(claimStates)){
  probes.push(['false status '+id,x=>x.m.claims.find(c=>c.id===id).status='VERIFIED']);
  probes.push(['delete claim '+id,x=>x.m.claims=x.m.claims.filter(c=>c.id!==id)]);
+ probes.push(['rewrite claim statement '+id,x=>x.m.claims.find(c=>c.id===id).statement='Proven clinical efficacy for every buyer']);
 }
 for(const id of gateIDs){
  probes.push(['false gate '+id,x=>x.m.release_gates.find(g=>g.id===id).status='CLEARED']);
  probes.push(['duplicate gate '+id,x=>x.m.release_gates.push({...x.m.release_gates.find(g=>g.id===id)})]);
 }
+probes.push(['overclaim R02 source',x=>x.m.sources.find(s=>s.id==='R02').notes='80 completed two visits; guaranteed benefits'],['overclaim R03 source',x=>x.m.sources.find(s=>s.id==='R03').notes='31 direct binaural experiments proved focus']);
 probes.push(
 ['LIVE state',x=>x.m.state='LIVE'],
 ['activated commerce',x=>x.m.commerce.activated=true],
