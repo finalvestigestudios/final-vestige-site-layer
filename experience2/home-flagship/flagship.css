@@ -142,3 +142,24 @@
 .fv-hf .fv-hf__studio-controls button:hover:not([aria-pressed="true"]){border-color:#9d855e;color:#fff3d7;background:#1c211b}
 @media(hover:hover) and (prefers-reduced-motion:no-preference){.fv-hf__folio-note{transition:transform .42s cubic-bezier(.2,.7,.2,1),box-shadow .42s ease}.fv-hf__folio-arrival:hover .fv-hf__folio-note{transform:rotate(-2deg) translateY(-4px);box-shadow:7px 25px 57px rgba(0,0,0,.55)}}
 @media(max-width:600px){.fv-hf .fv-hf__studio{padding:10px 18px;align-items:flex-start}.fv-hf .fv-hf__studio-controls button{flex:1 1 auto;min-height:37px;padding:9px 10px}}
+
+/* Native, no-JS mobile wayfinding: the desktop masthead nav is hidden <=920px.
+   Keep investigations, Public Record and Library reachable without hiding Focus. */
+.fv-hf__mobile-menu{display:none}
+@media(max-width:920px){
+  .fv-hf__mobile-menu{display:block;position:relative;z-index:10;margin-left:auto;flex:0 0 auto}
+  .fv-hf__mobile-menu>summary{list-style:none;display:flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:9px 12px;border:1px solid #726042;color:#f1e8ce;background:#182424;font-size:12px;font-weight:700;cursor:pointer}
+  .fv-hf__mobile-menu>summary::-webkit-details-marker{display:none}
+  .fv-hf__mobile-menu[open]>summary{border-color:#e6c387;color:#e6c387}
+  .fv-hf__mobile-links{position:absolute;right:0;top:calc(100% + 8px);z-index:20;display:grid;width:min(260px,calc(100vw - 40px));padding:8px;border:1px solid #806b4a;background:#102020;box-shadow:0 18px 40px rgba(0,0,0,.6)}
+  .fv-hf__mobile-links a{min-height:44px;padding:12px 13px;display:flex;align-items:center;color:#f1e8ce;text-decoration:none;font-size:13px}
+  .fv-hf__mobile-links a:hover,.fv-hf__mobile-links a:focus-visible{background:#243735;color:#f7d99c}
+  .fv-hf__mast-cta{margin-left:0}
+}
+@media(max-width:560px){
+  .fv-hf__masthead{flex-wrap:wrap;justify-content:space-between;gap:8px 12px}
+  .fv-hf__mobile-menu{margin-left:auto}
+  .fv-hf__mast-cta{order:3;display:flex;align-items:center;justify-content:center;min-height:44px;flex:1 0 100%;text-align:center}
+  /* The open menu must never cover the high-intent Focus action at small widths. */
+  .fv-hf__mobile-links{top:calc(100% + 68px)}
+}
