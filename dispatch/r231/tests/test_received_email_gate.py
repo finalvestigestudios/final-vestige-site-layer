@@ -85,6 +85,17 @@ class Gate(unittest.TestCase):
         self.assertIn("Live unsubscribe operation and opt-out suppression after request",r["manual_checks_required"])
     def test_only_body_unsub_is_syntactic(self):
         self.assertTrue(self.check(fixture(optout=True,header=False))["checks"]["syntactic_optout_candidate"])
+    def test_unsubscribe_visible_anchor_with_opaque_tokenized_url(self):
+        msg = EmailMessage()
+        msg["From"]="publisher@example.invalid"
+        msg["Subject"]=SUBJECT
+        msg["Date"]=formatdate(localtime=False, usegmt=True)
+        msg["Message-ID"]=make_msgid(domain="example.invalid")
+        msg.set_content("Body " + ADDRESS)
+        msg.add_alternative('<html><body>' + ADDRESS + '<a href="https://example.invalid/manage?token=demo">Unsubscribe</a></body></html>', subtype="html")
+        r=self.check(msg.as_bytes())
+        self.assertTrue(r["checks"]["has_syntactically_valid_body_optout_url"])
+        self.assertEqual(r["state"], HOLD)
     def test_never_clears_affiliate(self):
         self.assertTrue(any("Affiliate acceptance" in x for x in self.check()["manual_checks_required"]))
     def test_never_clears_founder(self):
