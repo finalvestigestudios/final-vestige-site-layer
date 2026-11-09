@@ -1,0 +1,38 @@
+{
+  "version": "r239-2026-11-09",
+  "status": "HOLD_UNSENT_NOT_APPROVED",
+  "master_pr": 175,
+  "master_sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "parent_issue": 174,
+  "proposed_edition": 1,
+  "kind": "editorial",
+  "master_mix": {
+    "editorial": 4,
+    "commercial": 2
+  },
+  "subject": "The mind is not a camera. Here's the evidence.",
+  "preheader": "A 1997 experiment shows why large scene changes can escape attention.",
+  "cta": "https://finalvestige.com/2026/11/02/change-blindness/",
+  "source_links": [
+    "https://doi.org/10.1111/j.1467-9280.1997.tb00427.x",
+    "https://doi.org/10.1068/p281059"
+  ],
+  "merchant_affiliate_url": null,
+  "automatic_send": false,
+  "wordpress_publishing": false,
+  "approval": {
+    "founder_substitution": false,
+    "founder_campaign_release": false,
+    "provider_recipient_status_verified": false,
+    "verified_welcome_received": false,
+    "native_jetpack_preview": false,
+    "physical_address_verified": false,
+    "real_unsubscribe_verified": false,
+    "merchant_named_approval": false,
+    "merchant_email_rights": false,
+    "verified_paid_sale": false
+  },
+  "qualifying_event": "confirmed_signup",
+  "source_attribution_status": "NOT_VERIFIED",
+  "net_revenue_per_1000_qualified_sessions": null
+}
