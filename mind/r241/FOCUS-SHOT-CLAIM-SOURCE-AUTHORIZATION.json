@@ -1,0 +1,323 @@
+{
+  "milestone": 241,
+  "as_of": "2026-11-09",
+  "public_activation": false,
+  "product": "Brainwave Shots — Focus Shot",
+  "merchant_source": "https://brainwaveshots.com/focus-shot",
+  "sources": [
+    {
+      "id": "seller",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "kind": "MERCHANT"
+    },
+    {
+      "id": "catalog",
+      "url": "https://inspire3.com/",
+      "kind": "MERCHANT"
+    },
+    {
+      "id": "science_eeg",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10198548/",
+      "kind": "INDEPENDENT_RESEARCH"
+    },
+    {
+      "id": "science_attention",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35842538/",
+      "kind": "INDEPENDENT_RESEARCH"
+    },
+    {
+      "id": "science_flicker",
+      "url": "https://doi.org/10.1111/j.1467-9280.1997.tb00427.x",
+      "kind": "INDEPENDENT_RESEARCH"
+    },
+    {
+      "id": "ftc_affiliate",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "kind": "REGULATOR"
+    },
+    {
+      "id": "ftc_health",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "kind": "REGULATOR"
+    },
+    {
+      "id": "existing_article",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "kind": "LIVE_FV"
+    },
+    {
+      "id": "existing_focus",
+      "url": "https://finalvestige.com/focus/",
+      "kind": "LIVE_FV"
+    },
+    {
+      "id": "zen12",
+      "url": "https://zen12.com/hnp",
+      "kind": "MERCHANT"
+    },
+    {
+      "id": "totalfocus",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "kind": "MERCHANT"
+    }
+  ],
+  "claims": [
+    {
+      "id": "P01",
+      "statement": "Focus Shot provides 15 and 30 minute variants",
+      "status": "SELLER_DESCRIPTION",
+      "source_id": "seller",
+      "scope": "Not an independent file inspection"
+    },
+    {
+      "id": "P02",
+      "statement": "Package includes 15 and 30 min brainwave-only variants",
+      "status": "SELLER_DESCRIPTION",
+      "source_id": "seller",
+      "scope": "Contents not downloaded"
+    },
+    {
+      "id": "P03",
+      "statement": "Quick-start video and lifetime support advertised",
+      "status": "SELLER_DESCRIPTION",
+      "source_id": "seller",
+      "scope": "No support transaction tested"
+    },
+    {
+      "id": "P04",
+      "statement": "One-year refund is advertised",
+      "status": "SELLER_PROMISE",
+      "source_id": "seller",
+      "scope": "Actual merchant refund not tested"
+    },
+    {
+      "id": "P05",
+      "statement": "Headphones not required is stated",
+      "status": "SELLER_DESCRIPTION",
+      "source_id": "seller",
+      "scope": "Do not equate to binaural lab delivery"
+    },
+    {
+      "id": "P06",
+      "statement": "Full protocol described as alternating 12 and 18 Hz beta",
+      "status": "SELLER_TECHNICAL_CLAIM",
+      "source_id": "seller",
+      "scope": "No verified product waveform"
+    },
+    {
+      "id": "P07",
+      "statement": "Ambient mountain sounds and brown noise mix described",
+      "status": "SELLER_DESCRIPTION",
+      "source_id": "seller",
+      "scope": "Audio not inspected"
+    },
+    {
+      "id": "P08",
+      "statement": "A single listening yields 4 hours to a day of strong focus",
+      "status": "SELLER_EFFICACY_UNSUBSTANTIATED",
+      "source_id": "seller",
+      "scope": "No exact product controlled validation located"
+    },
+    {
+      "id": "P09",
+      "statement": "Product produces whole-brain thinking and effortless motivation",
+      "status": "SELLER_EFFICACY_UNSUBSTANTIATED",
+      "source_id": "seller",
+      "scope": "Do not adopt"
+    },
+    {
+      "id": "P10",
+      "statement": "Product is completely safe for everyone",
+      "status": "SELLER_SAFETY_UNSUBSTANTIATED",
+      "source_id": "seller",
+      "scope": "Do not adopt; no full-user safety evidence"
+    },
+    {
+      "id": "P11",
+      "statement": "2023 review includes 14 EEG studies; 5 support 8 oppose 1 mixed",
+      "status": "INDEPENDENT_GENERAL_REVIEW",
+      "source_id": "science_eeg",
+      "scope": "Not a test of Focus Shot"
+    },
+    {
+      "id": "P12",
+      "statement": "Basu Banerjee synthesis: 15 studies, 31 effect sizes, g=.40 overall",
+      "status": "INDEPENDENT_GENERAL_REVIEW",
+      "source_id": "science_attention",
+      "scope": "Not product-specific or a duration claim"
+    },
+    {
+      "id": "P13",
+      "statement": "The two reviews interrogate different endpoints",
+      "status": "METHOD_INFERENCE",
+      "source_id": "science_eeg",
+      "scope": "Also consult attention review"
+    },
+    {
+      "id": "P14",
+      "statement": "1997 flicker paradigm identifies limits of noticing changes",
+      "status": "INDEPENDENT_PRIMARY_RESEARCH",
+      "source_id": "science_flicker",
+      "scope": "Not product efficacy"
+    },
+    {
+      "id": "P15",
+      "statement": "Named FV Inspire3 publisher approval exists",
+      "status": "UNVERIFIED",
+      "source_id": "catalog",
+      "scope": "Requires private authenticated account proof"
+    },
+    {
+      "id": "P16",
+      "statement": "FV authorized earnings link with social and email permission exists",
+      "status": "UNVERIFIED",
+      "source_id": "catalog",
+      "scope": "No account-issued URL verified"
+    },
+    {
+      "id": "P17",
+      "statement": "Actual buyer checkout total and refunds verified",
+      "status": "UNVERIFIED",
+      "source_id": "seller",
+      "scope": "Public price not final cart"
+    },
+    {
+      "id": "P18",
+      "statement": "Settled attributable FV commission or paid order verified",
+      "status": "UNVERIFIED",
+      "source_id": "catalog",
+      "scope": "No independent settlement evidence"
+    },
+    {
+      "id": "P19",
+      "statement": "Existing free Focus Fieldbook is publicly available",
+      "status": "VERIFIED_PUBLIC_DESTINATION",
+      "source_id": "existing_focus",
+      "scope": "Jetpack provider-confirmed signup separate"
+    },
+    {
+      "id": "P20",
+      "statement": "Change Blindness article is published at known URL",
+      "status": "VERIFIED_PUBLIC_DESTINATION",
+      "source_id": "existing_article",
+      "scope": "Not a substitute for an unpublished gorilla investigation"
+    },
+    {
+      "id": "P21",
+      "statement": "FTC requires material affiliate connection near recommendation",
+      "status": "COMPLIANCE_GUIDANCE",
+      "source_id": "ftc_affiliate",
+      "scope": "Assess actual rendered prominence before release"
+    },
+    {
+      "id": "P22",
+      "statement": "Objective health claims need product-relevant adequate support",
+      "status": "COMPLIANCE_GUIDANCE",
+      "source_id": "ftc_health",
+      "scope": "Avoid unsupported medical and safety promises"
+    }
+  ],
+  "commercial_release_gates": [
+    {
+      "id": "named_publisher_acceptance",
+      "status": "HARD_HOLD",
+      "verified": false
+    },
+    {
+      "id": "issued_earning_url",
+      "status": "HARD_HOLD",
+      "verified": false
+    },
+    {
+      "id": "permitted_web_domain",
+      "status": "HARD_HOLD",
+      "verified": false
+    },
+    {
+      "id": "permitted_social_platforms",
+      "status": "HARD_HOLD",
+      "verified": false
+    },
+    {
+      "id": "permitted_email_marketing",
+      "status": "HARD_HOLD",
+      "verified": false
+    },
+    {
+      "id": "approved_creative_rights",
+      "status": "HARD_HOLD",
+      "verified": false
+    },
+    {
+      "id": "exact_product_specification",
+      "status": "HARD_HOLD",
+      "verified": false
+    },
+    {
+      "id": "product_specific_efficacy_claims",
+      "status": "HARD_HOLD",
+      "verified": false
+    },
+    {
+      "id": "checkout_price_and_payment",
+      "status": "HARD_HOLD",
+      "verified": false
+    },
+    {
+      "id": "refund_and_delivery",
+      "status": "HARD_HOLD",
+      "verified": false
+    },
+    {
+      "id": "close_disclosure",
+      "status": "HARD_HOLD",
+      "verified": false
+    },
+    {
+      "id": "founder_release_approval",
+      "status": "HARD_HOLD",
+      "verified": false
+    },
+    {
+      "id": "independent_browser_a11y",
+      "status": "HARD_HOLD",
+      "verified": false
+    },
+    {
+      "id": "privacy_safe_attribution",
+      "status": "HARD_HOLD",
+      "verified": false
+    },
+    {
+      "id": "confirmed_order_reporting",
+      "status": "HARD_HOLD",
+      "verified": false
+    },
+    {
+      "id": "net_revenue_reconciliation",
+      "status": "HARD_HOLD",
+      "verified": false
+    }
+  ],
+  "permission_evidence": {
+    "named_account": "UNVERIFIED",
+    "issued_url": null,
+    "site_permission": "UNVERIFIED",
+    "social_permission": "UNVERIFIED",
+    "email_permission": "UNVERIFIED",
+    "merchant_checkout": "UNVERIFIED",
+    "settled_commission": "UNVERIFIED"
+  },
+  "live_revenue": {
+    "qualified_human_sessions": null,
+    "orders": null,
+    "affiliate_confirmed_sales": null,
+    "gross": null,
+    "refunds": null,
+    "fees": null,
+    "incremental_costs": null,
+    "net_revenue_per_1000_qualified_sessions": null
+  },
+  "disclosure_template": "If you purchase through this approved link, Final Vestige may earn a commission at no additional cost to you.",
+  "classification_note": "Outbound clicks are not sales. Public seller page is not a verified authenticated checkout, efficacy study or affiliate approval."
+}
