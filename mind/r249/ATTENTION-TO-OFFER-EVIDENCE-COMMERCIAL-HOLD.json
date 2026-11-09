@@ -1,0 +1,427 @@
+{
+  "milestone": "R249",
+  "scope": "UNPUBLISHED_SOURCE_ONLY",
+  "as_of": "2026-11-09",
+  "parent_branch": "mind-r248-meditation-dose-honest-buyer-qa-20261109",
+  "release": "HARD_HOLD",
+  "source_of_truth": [
+    "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+    "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820"
+  ],
+  "primary_offer": {
+    "name": "Zen12 Premium",
+    "seller_url": "https://zen12.com/hnp",
+    "approval": "NOT_VERIFIED",
+    "account_earning_url": null,
+    "permitted_channels": null,
+    "final_checkout_price": null,
+    "approved_creatives": null,
+    "completed_orders": null
+  },
+  "owned_fallback": {
+    "sku": null,
+    "rights_clearance": null,
+    "payhip_checkout": null,
+    "refund_policy": null,
+    "fulfillment": null,
+    "status": "NO_CURRENT_MIND_PRODUCT_VERIFIED"
+  },
+  "canonical_experiment": {
+    "variants": [
+      "R248 exact text A",
+      "R248 same text plus OPTIONAL unrendered 42sec storyboard B"
+    ],
+    "state": "NOT_LIVE",
+    "paid_metric": "SETTLED_PAID_CONVERSIONS_ONLY"
+  },
+  "sources": [
+    {
+      "id": "RAY",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/1500880/",
+      "what": "Raymond et al 1992 primary study abstract and methods",
+      "provenance": "PRIMARY",
+      "checked": "2026-11-09",
+      "limitation": "Public material only; does not establish an actual sale or privately held partnership terms."
+    },
+    {
+      "id": "HOM",
+      "url": "https://doi.org/10.1080/02724980443000647",
+      "what": "Hommel and Akyurek lag-1 sparing order-memory cost",
+      "provenance": "PRIMARY",
+      "checked": "2026-11-09",
+      "limitation": "Public material only; does not establish an actual sale or privately held partnership terms."
+    },
+    {
+      "id": "OLI",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/16341546/",
+      "what": "Olivers and colleagues multiple-target sparing",
+      "provenance": "PRIMARY",
+      "checked": "2026-11-09",
+      "limitation": "Public material only; does not establish an actual sale or privately held partnership terms."
+    },
+    {
+      "id": "SLA",
+      "url": "https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.0050138",
+      "what": "Slagter et al 2007 full paper; 17 retreat 23 controls; 10-12h daily",
+      "provenance": "PRIMARY_FULL_TEXT",
+      "checked": "2026-11-09",
+      "limitation": "Public material only; does not establish an actual sale or privately held partnership terms."
+    },
+    {
+      "id": "ING",
+      "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0286023",
+      "what": "2023 PLOS ONE heterogeneous binaural-beat EEG systematic review",
+      "provenance": "SYSTEMATIC_REVIEW",
+      "checked": "2026-11-09",
+      "limitation": "Public material only; does not establish an actual sale or privately held partnership terms."
+    },
+    {
+      "id": "ZEN",
+      "url": "https://zen12.com/hnp",
+      "what": "Exact seller page for Zen12 Premium package, pitch, and advertised guarantee",
+      "provenance": "SELLER_NOT_INDEPENDENT",
+      "checked": "2026-11-09",
+      "limitation": "Public material only; does not establish an actual sale or privately held partnership terms."
+    },
+    {
+      "id": "I3",
+      "url": "https://inspire3.com/",
+      "what": "Official Inspire3 catalog showing distinct brands",
+      "provenance": "SELLER_NOT_INDEPENDENT",
+      "checked": "2026-11-09",
+      "limitation": "Public material only; does not establish an actual sale or privately held partnership terms."
+    },
+    {
+      "id": "AFF",
+      "url": "https://affiliates.inspire3.com/",
+      "what": "Public network sign-up and promotion; not named publisher approval",
+      "provenance": "PUBLIC_PROGRAM_ONLY",
+      "checked": "2026-11-09",
+      "limitation": "Public material only; does not establish an actual sale or privately held partnership terms."
+    },
+    {
+      "id": "BWF",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "what": "Specific seller Focus Shot format and four-hour efficacy pitch",
+      "provenance": "SELLER_NOT_INDEPENDENT",
+      "checked": "2026-11-09",
+      "limitation": "Public material only; does not establish an actual sale or privately held partnership terms."
+    },
+    {
+      "id": "HYF",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "what": "Specific seller Total Focus format, health and performance pitch",
+      "provenance": "SELLER_NOT_INDEPENDENT",
+      "checked": "2026-11-09",
+      "limitation": "Public material only; does not establish an actual sale or privately held partnership terms."
+    },
+    {
+      "id": "FTC1",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "what": "FTC endorsement/mat-connection requirements",
+      "provenance": "REGULATORY",
+      "checked": "2026-11-09",
+      "limitation": "Public material only; does not establish an actual sale or privately held partnership terms."
+    },
+    {
+      "id": "FTC2",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "what": "FTC health-related objective claim substantiation and disclosure",
+      "provenance": "REGULATORY",
+      "checked": "2026-11-09",
+      "limitation": "Public material only; does not establish an actual sale or privately held partnership terms."
+    },
+    {
+      "id": "FOCUS",
+      "url": "https://finalvestige.com/focus/",
+      "what": "Live 52-page Seven Day Focus Fieldbook established Jetpack/Dispatch flow",
+      "provenance": "FIRST_PARTY_LIVE",
+      "checked": "2026-11-09",
+      "limitation": "Public material only; does not establish an actual sale or privately held partnership terms."
+    },
+    {
+      "id": "ARCH",
+      "url": "https://finalvestige.com/archive/",
+      "what": "Live archive links to Change Blindness and Mesmerism investigations",
+      "provenance": "FIRST_PARTY_LIVE",
+      "checked": "2026-11-09",
+      "limitation": "Public material only; does not establish an actual sale or privately held partnership terms."
+    },
+    {
+      "id": "PUY",
+      "url": "https://finalvestige.com/explore/",
+      "what": "Explore link to Puységur's 153-row 16-case source dossier",
+      "provenance": "FIRST_PARTY_LIVE",
+      "checked": "2026-11-09",
+      "limitation": "Public material only; does not establish an actual sale or privately held partnership terms."
+    }
+  ],
+  "claims": [
+    {
+      "id": "RAY_WIND",
+      "statement": "RSVP second-target detection was impaired in a short post-target interval and conditional controls altered it",
+      "source": "RAY",
+      "classification": "DIRECT_PRIMARY",
+      "policy": "ALLOW_WITH_CONTEXT"
+    },
+    {
+      "id": "LAG",
+      "statement": "Lag-1 sparing and temporal-order errors complicate the fixed bottleneck story",
+      "source": "HOM",
+      "classification": "DIRECT_PRIMARY",
+      "policy": "ALLOW_WITH_CONTEXT"
+    },
+    {
+      "id": "MULTI",
+      "statement": "Consecutive target groups without distractors may escape a simplistic fixed-capacity blink model",
+      "source": "OLI",
+      "classification": "DIRECT_PRIMARY",
+      "policy": "ALLOW_WITH_CONTEXT"
+    },
+    {
+      "id": "SLA_N",
+      "statement": "2007 longitudinal groups comprised 17 retreat practitioners and 23 novice comparisons",
+      "source": "SLA",
+      "classification": "DIRECT_PRIMARY",
+      "policy": "ALLOW"
+    },
+    {
+      "id": "SLA_D",
+      "statement": "Retreat group practiced about ten to twelve hours each day for three months, not twelve minutes",
+      "source": "SLA",
+      "classification": "DIRECT_PRIMARY",
+      "policy": "ALLOW"
+    },
+    {
+      "id": "SLA_E",
+      "statement": "Second-target report improved more in retreat participants with first-target P3b attenuation",
+      "source": "SLA",
+      "classification": "DIRECT_PRIMARY",
+      "policy": "ALLOW_WITH_LIMITS"
+    },
+    {
+      "id": "SLA_LIMIT",
+      "statement": "Non-equivalent group exposure and self-selection limit causal and consumer generalization",
+      "source": "SLA",
+      "classification": "METHODOLOGICAL_ASSESSMENT",
+      "policy": "ALLOW_WITH_LIMITS"
+    },
+    {
+      "id": "ZEN_FMT",
+      "statement": "Seller advertises Zen12 Premium twelve levels, forty-eight MP3s and twelve-minute sessions",
+      "source": "ZEN",
+      "classification": "SELLER_FORMAT",
+      "policy": "ATTRIBUTE_TO_SELLER"
+    },
+    {
+      "id": "ZEN_EQ",
+      "statement": "Seller claims twelve-minute sessions have benefits of an hour of meditation",
+      "source": "ZEN",
+      "classification": "PRODUCT_EFFICACY_UNSUBSTANTIATED",
+      "policy": "NEVER_ADOPT_AS_FACT"
+    },
+    {
+      "id": "ZEN_RETURN",
+      "statement": "Seller advertises a one-year refund guarantee but fulfillment and full checkout terms remain untested",
+      "source": "ZEN",
+      "classification": "SELLER_POLICY_UNTESTED",
+      "policy": "QUALIFY"
+    },
+    {
+      "id": "ING_SPLIT",
+      "statement": "2023 fourteen-study EEG review has five supportive, eight contrary and one mixed findings",
+      "source": "ING",
+      "classification": "SYSTEMATIC_REVIEW",
+      "policy": "ALLOW_WITH_LIMITS"
+    },
+    {
+      "id": "NO_BRIDGE",
+      "statement": "2007 intensive retreat findings and general EEG review cannot establish Zen12's named-product effectiveness",
+      "source": "SLA",
+      "classification": "INFERENCE_BOUNDARY",
+      "policy": "REQUIRE_IN_ARTICLE"
+    },
+    {
+      "id": "AFF_PROGRAM",
+      "statement": "Inspire3 public portal exists and markets commissions but provides no named Final Vestige acceptance",
+      "source": "AFF",
+      "classification": "PUBLIC_ONLY",
+      "policy": "NO_ACTIVATION"
+    },
+    {
+      "id": "AFF_PERMISSION",
+      "statement": "No private publisher dashboard or permitted channel terms authenticated in this run",
+      "source": "AFF",
+      "classification": "ACCOUNT_SPECIFIC_UNKNOWN",
+      "policy": "NO_ACTIVATION"
+    },
+    {
+      "id": "FTC_DISC",
+      "statement": "Clear conspicuous material connection disclosures needed adjacent to endorsements and recommendation links",
+      "source": "FTC1",
+      "classification": "REGULATORY",
+      "policy": "REQUIRE_NEAR_LINK"
+    },
+    {
+      "id": "FTC_HEALTH",
+      "statement": "Objective mental or health outcome claims need competent, reliable and context-appropriate substantiation",
+      "source": "FTC2",
+      "classification": "REGULATORY",
+      "policy": "DO_NOT_ASSERT_UNPROVEN"
+    },
+    {
+      "id": "FOCUS_52",
+      "statement": "Final Vestige's Focus page currently describes one existing fifty-two page Fieldbook and Dispatch opt-in",
+      "source": "FOCUS",
+      "classification": "FIRST_PARTY_LIVE",
+      "policy": "KEEP_SINGLE_FUNNEL"
+    },
+    {
+      "id": "BWF_FAIL",
+      "statement": "Focus Shot seller says audio leads to multiple hours of intense concentration; no product-specific validation inspected",
+      "source": "BWF",
+      "classification": "SELLER_EFFICACY_UNSUBSTANTIATED",
+      "policy": "NEVER_ADOPT_AS_FACT"
+    },
+    {
+      "id": "HYP_FAIL",
+      "statement": "Total Focus seller advertises productivity and concentration outcomes; no product-specific validation inspected",
+      "source": "HYF",
+      "classification": "SELLER_EFFICACY_UNSUBSTANTIATED",
+      "policy": "NEVER_ADOPT_AS_FACT"
+    }
+  ],
+  "gates": [
+    {
+      "id": "G01",
+      "requirement": "Named Final Vestige partner account acceptance",
+      "status": "HARD_HOLD",
+      "verified": false,
+      "evidence": null
+    },
+    {
+      "id": "G02",
+      "requirement": "Account-issued Zen12 Premium earning URL",
+      "status": "HARD_HOLD",
+      "verified": false,
+      "evidence": null
+    },
+    {
+      "id": "G03",
+      "requirement": "Authorized website distribution channel",
+      "status": "HARD_HOLD",
+      "verified": false,
+      "evidence": null
+    },
+    {
+      "id": "G04",
+      "requirement": "Authorized social platform promotion terms",
+      "status": "HARD_HOLD",
+      "verified": false,
+      "evidence": null
+    },
+    {
+      "id": "G05",
+      "requirement": "Authorized email/Dispatch promotional channel",
+      "status": "HARD_HOLD",
+      "verified": false,
+      "evidence": null
+    },
+    {
+      "id": "G06",
+      "requirement": "Approved creative, copy and disclosure requirements",
+      "status": "HARD_HOLD",
+      "verified": false,
+      "evidence": null
+    },
+    {
+      "id": "G07",
+      "requirement": "Affiliate attribution duration and cookie terms",
+      "status": "HARD_HOLD",
+      "verified": false,
+      "evidence": null
+    },
+    {
+      "id": "G08",
+      "requirement": "Commission definition, exclusions and payout rules",
+      "status": "HARD_HOLD",
+      "verified": false,
+      "evidence": null
+    },
+    {
+      "id": "G09",
+      "requirement": "Seller final checkout amount and taxes proof",
+      "status": "HARD_HOLD",
+      "verified": false,
+      "evidence": null
+    },
+    {
+      "id": "G10",
+      "requirement": "Customer return eligibility and full terms verified",
+      "status": "HARD_HOLD",
+      "verified": false,
+      "evidence": null
+    },
+    {
+      "id": "G11",
+      "requirement": "Cookie/privacy consent review and no duplicate script",
+      "status": "HARD_HOLD",
+      "verified": false,
+      "evidence": null
+    },
+    {
+      "id": "G12",
+      "requirement": "Signed-out mobile and keyboard CTA acceptance",
+      "status": "HARD_HOLD",
+      "verified": false,
+      "evidence": null
+    },
+    {
+      "id": "G13",
+      "requirement": "Actual lead attribution from existing Jetpack",
+      "status": "HARD_HOLD",
+      "verified": false,
+      "evidence": null
+    },
+    {
+      "id": "G14",
+      "requirement": "Real paid order/affiliate settlement provider evidence",
+      "status": "HARD_HOLD",
+      "verified": false,
+      "evidence": null
+    },
+    {
+      "id": "G15",
+      "requirement": "Refunds fees and marginal costs independently reconciled",
+      "status": "HARD_HOLD",
+      "verified": false,
+      "evidence": null
+    },
+    {
+      "id": "G16",
+      "requirement": "Founder production release approval",
+      "status": "HARD_HOLD",
+      "verified": false,
+      "evidence": null
+    }
+  ],
+  "metrics": {
+    "qualified_human_sessions": null,
+    "landings": null,
+    "cta_clicks": null,
+    "provider_confirmed_leads": null,
+    "independently_confirmed_paid_orders": null,
+    "settled_commission": null,
+    "refunds": null,
+    "fees": null,
+    "incremental_costs": null,
+    "realized_net_revenue_per_1000_qualified_human_sessions": null,
+    "status": "NOT_COMPUTABLE"
+  },
+  "notes": [
+    "Public Inspire3 60%+ program marketing is NOT FV's verified rate or earning right; do not reuse payouts or EPC.",
+    "No affiliate URL, pixel, price or outcomes may be inferred from promotional Gmail.",
+    "Existing Fieldbook/Dispatch subscription path is single and must stay unchanged.",
+    "Commerce proof may require protected account access; never paste credentials or secrets into issues."
+  ]
+}
