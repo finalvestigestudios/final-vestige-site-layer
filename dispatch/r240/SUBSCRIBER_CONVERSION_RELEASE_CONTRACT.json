@@ -1,0 +1,70 @@
+{
+  "id": "FV_DISPATCH_R240_ISSUE06",
+  "status": "HOLD_UNSENT_NOT_ADOPTED",
+  "parent_campaign_pr": 175,
+  "master_issue": 174,
+  "source_commit": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "scope": "optional editorial revision of issue 06; original 4 editorial / 2 commercial unchanged",
+  "subject": "Seven days aren't a verdict",
+  "preheader": "Your notes beat a feeling. Reopen the Fieldbook without signing up again.",
+  "kind": "editorial",
+  "primary_cta": {
+    "type": "existing_subscriber_direct_download",
+    "destination": "https://finalvestige.com/wp-content/uploads/2026/10/Final_Vestige_Seven_Day_Focus_Fieldbook_Complete_Edition.pdf",
+    "publicly_accessible_by_design": true,
+    "no_repeat_opt_in": true,
+    "requires_attribution_qa": true
+  },
+  "commercial": {
+    "merchant_links": [],
+    "affiliate_commission_reported": false,
+    "affiliate_email_permission_verified": false,
+    "commercial_slots": [
+      3,
+      5
+    ],
+    "commercial_slots_hold": true
+  },
+  "measurement": {
+    "social_utm_source": "platform enum from Grok, never infer",
+    "social_utm_medium": "organic_social",
+    "social_utm_campaign": "topic_cluster_pilot_2026_11",
+    "social_utm_content": "unique_asset_id",
+    "newsletter_source": "dispatch",
+    "newsletter_medium": "email",
+    "newsletter_campaign": "dispatch_mind_pilot_2026_11",
+    "newsletter_content": "issue_06",
+    "canonical_confirmed_signup": "provider-confirmed status transition; deduplicated site-side opaque subscriber key, not browser button or ?subscribe parameter",
+    "deduplication": "count first verified provider transition per site+subscriber identity only; no exported PII",
+    "qualified_sessions": null,
+    "confirmed_leads": null,
+    "affiliate_paid_orders": null,
+    "net_revenue_per_1000_qualified_sessions": null,
+    "metric_status": "NOT_COMPUTABLE",
+    "no_sends": true
+  },
+  "release_gates": {
+    "founder_final_campaign_approval": false,
+    "subscriber_population_eligible_verified": false,
+    "genuine_jetpack_preview": false,
+    "genuine_welcome_receipt": false,
+    "publisher_postal_address_verified": false,
+    "rendered_unsubscribe_verified": false,
+    "actual_opt_out_verified": false,
+    "preheader_real_inbox_verified": false,
+    "affiliate_issues_partner_permission": false
+  },
+  "wordpress_live_settings_asof": "2026-11-09T20:36:41Z",
+  "last_known_subscriber_counters": {
+    "total": 3,
+    "confirmed": 3,
+    "unconfirmed": 2,
+    "actual_email_eligible": null
+  },
+  "proof_readonly_urls": [
+    "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/174",
+    "https://finalvestige.com/focus/",
+    "https://pubmed.ncbi.nlm.nih.gov/26479070/",
+    "https://jetpack.com/support/newsletter/"
+  ]
+}
