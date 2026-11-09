@@ -41,3 +41,54 @@
 @media(max-width:760px){.fv-ex2-ledger__grid{grid-template-columns:1fr}.fv-ex2-ledger__tools{align-items:stretch;flex-direction:column}.fv-ex2-ledger__tools input{width:100%}.fv-ex2-ledger__status{text-align:left}}
 @media(max-width:480px){.fv-ex2-ledger h1{font-size:clamp(55px,14vw,75px)}.fv-ex2-ledger__mast{flex-wrap:wrap}.fv-ex2-ledger__wrap{width:calc(100% - 36px)}.fv-ex2-ledger__card{padding:20px}}
 @media(prefers-reduced-motion:reduce){.fv-ex2-ledger *, .fv-ex2-ledger *::before,.fv-ex2-ledger *::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+/* R244: archival printing is evidence custody, not a screenshot of the dark UI. */
+@media print {
+  .fv-ex2-ledger {
+    background: #fff !important;
+    color: #111 !important;
+    font: 11pt/1.45 Georgia, serif !important;
+    isolation: auto;
+    print-color-adjust: economy;
+  }
+  .fv-ex2-ledger .fv-ex2-ledger__wrap { width: 100%; max-width: none; margin: 0; }
+  .fv-ex2-ledger .fv-ex2-ledger__mast,
+  .fv-ex2-ledger .fv-ex2-ledger__hero,
+  .fv-ex2-ledger .fv-ex2-ledger__footer { padding: 12px 0; color: #111 !important; }
+  .fv-ex2-ledger h1 { font: 26pt/1.15 Georgia, serif; margin: 8px 0; letter-spacing: normal; }
+  .fv-ex2-ledger .fv-ex2-ledger__grid { display: block; padding: 0; }
+  .fv-ex2-ledger .fv-ex2-ledger__card,
+  .fv-ex2-ledger [data-fvx-record][hidden] {
+    display: block !important;
+    break-inside: avoid;
+    page-break-inside: avoid;
+    background: #fff !important;
+    border: 1px solid #777;
+    padding: 12px;
+    margin: 0 0 12px;
+    color: #111 !important;
+  }
+  .fv-ex2-ledger .fv-ex2-ledger__card h2 { font: 17pt/1.2 Georgia, serif; margin: 4px 0; }
+  .fv-ex2-ledger .fv-ex2-ledger__boundary { background: #fff !important; border-left: 3px solid #555; padding: 7px 10px; }
+  .fv-ex2-ledger .fv-ex2-ledger__tools,
+  .fv-ex2-ledger .fv-ex2-ledger__empty { display: none !important; }
+  .fv-ex2-ledger .fv-ex2-ledger__fulltext { display: block !important; }
+  /* Native <details> hides content in its UA shadow tree when closed.
+     Chromium's ::details-content restores it for archival print without JS. */
+  .fv-ex2-ledger .fv-ex2-ledger__fulltext::details-content {
+    content-visibility: visible !important;
+    display: block !important;
+  }
+  .fv-ex2-ledger :is(p, span, strong, em, h1, h2, summary, a, div) {
+    color: #111 !important;
+  }
+  .fv-ex2-ledger .fv-ex2-ledger__recordlinks { display: block; }
+  .fv-ex2-ledger a[href^="https://"] { overflow-wrap: anywhere; text-decoration: underline; }
+  .fv-ex2-ledger a[href^="https://"]::after {
+    content: " <" attr(href) ">";
+    display: inline;
+    font: 8pt/1.4 ui-monospace, monospace;
+    overflow-wrap: anywhere;
+    word-break: break-all;
+    color: #222;
+  }
+}
