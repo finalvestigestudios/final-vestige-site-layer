@@ -1,0 +1,89 @@
+{
+  "version": "r226.1",
+  "date": "2026-11-09T05:38:27Z",
+  "source_head": "7bc70e7715052e72338c7af3a1e6567b90ae86a4",
+  "master_issue": 174,
+  "ready_to_send": false,
+  "release": "HOLD_UNSENT",
+  "merchant": "HOLD_MERCHANT",
+  "editorial": 4,
+  "commercial": 2,
+  "primary_purpose": "LEGAL_CLASSIFICATION_UNVERIFIED_CONSERVATIVE_COMMERCIAL_GATES_ALL",
+  "proofs": {
+    "real_jetpack_email": false,
+    "confirmed_eligible_recipients": false,
+    "received_welcome": false,
+    "valid_fv_postal_address": false,
+    "working_unsubscribe": false,
+    "founder_send_approval": false,
+    "merchant_email_permission": false,
+    "merchant_issued_earning_urls": false,
+    "merchant_checkout_terms": false,
+    "published_guide03": false,
+    "published_guide05": false,
+    "reconciled_paid_orders": false
+  },
+  "stats": {
+    "newsletter_total": 3,
+    "newsletter_confirmed": 3,
+    "unconfirmed_requests": 2,
+    "wpcom_followers": 3,
+    "email_followers": 0,
+    "eligible_email_recipients": null,
+    "qualified_human_sessions": null,
+    "realized_net_revenue": null
+  },
+  "issues": [
+    {
+      "id": 1,
+      "type": "editorial",
+      "subject": "The mind is not a camera",
+      "cta": "https://finalvestige.com/the-missing-caption/",
+      "risk": "received_footer_unknown"
+    },
+    {
+      "id": 2,
+      "type": "editorial",
+      "subject": "Before hypnosis had a name",
+      "cta": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "risk": "received_footer_unknown"
+    },
+    {
+      "id": 3,
+      "type": "commercial-review-pending",
+      "subject": "The twelve-minute meditation question",
+      "cta": null,
+      "risk": "merchant_rights_and_nonlive_guide"
+    },
+    {
+      "id": 4,
+      "type": "editorial",
+      "subject": "Seventeen seconds. A much longer explanation.",
+      "cta": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/",
+      "risk": "received_footer_unknown"
+    },
+    {
+      "id": 5,
+      "type": "commercial-review-pending",
+      "subject": "Before you press play on a hypnosis audio",
+      "cta": null,
+      "risk": "merchant_rights_nonlive_guide_secondary_focus_action"
+    },
+    {
+      "id": 6,
+      "type": "editorial",
+      "subject": "What did seven days of attention reveal?",
+      "cta": "https://finalvestige.com/focus/",
+      "risk": "existing_subscriber_repeat_signup"
+    }
+  ],
+  "sources": [
+    "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business",
+    "https://www.law.cornell.edu/cfr/text/16/316.3",
+    "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "https://wordpress.com/support/newsletter/email-appearance/",
+    "https://zen12.com/hnp",
+    "https://hypnosislive.com/mental-skills/total-focus",
+    "https://hypnosislive.com/faq"
+  ]
+}
