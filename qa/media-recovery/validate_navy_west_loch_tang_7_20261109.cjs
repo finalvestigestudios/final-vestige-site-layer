@@ -168,7 +168,7 @@ function validate(a){
  if(a.schema!=="fv-navy-seven-published-source-recovery-v1"||a.audit_date!=="2026-11-09"||a.count!==7)errors.push("root_scope");
  if(a.scope!=="LIVE WP edit-content readback + independent web-retriever wrapper; no guest Chromium, origin HTTP or binary download")errors.push("method_scope");
  if(a.frozen_census_ref!=="65c214a1ae6e43534090584d56bbd783251e315c")errors.push("baseline_sha");
- if(!same(a.frozen_census_origin_parts,["qa/media-recovery/parts/04.json","qa/media-recovery/parts/05.json"]))errors.push("source_parts");
+ if(!same(a.frozen_census_origin_parts,["qa/media-recovery/parts/02.json","qa/media-recovery/parts/04.json"]))errors.push("source_parts");
  if(typeof a.coordination!=="string"||!a.coordination.includes("Site QA PR #154"))errors.push("handoff");
  if(!Array.isArray(a.rows)||a.rows.length!==7)return {ok:false,errors:[...errors,"row_count"]};
  let n502=0,nina=0; const used=new Set();
