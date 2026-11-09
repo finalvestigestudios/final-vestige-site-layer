@@ -87,12 +87,16 @@ class VaultStageIdentityR305(unittest.TestCase):
                 try:
                     matches[0].symlink_to(protected)
                 except (OSError, NotImplementedError):
-                    os.rename(moved, matches[0])
-                    self.skipTest('symlink unavailable')
+                    # Windows runner accounts may lack symlink privilege.
+                    # Exercise the path-replacement invariant without a skip.
+                    matches[0].write_bytes(b'replacement')
             return original(fd)
         with patch.object(vault.os, 'close', side_effect=swap):
             self.redacted(lambda: vault.publish_vault(self.out, self.payload))
-        self.assertTrue(staged[0].is_symlink())
+        if staged[0].is_symlink():
+            self.assertEqual(staged[0].resolve(), protected)
+        else:
+            self.assertEqual(staged[0].read_bytes(), b'replacement')
         self.assertEqual(protected.read_bytes(), b'protected')
         self.assertEqual(moved.read_bytes(), self.payload)
 
@@ -106,17 +110,26 @@ class VaultStageIdentityR305(unittest.TestCase):
             self.redacted(lambda: vault.publish_vault(self.out, self.payload))
         self.assertFalse(self.stages())
 
-    def test_hardlink_alias_prepublication_rejected(self):
-        original = os.close
-        alias = self.folder / 'unexpected-link'
-        def alias_stage(fd):
-            paths = self.stages()
-            if paths and not alias.exists():
-                os.link(paths[0], alias)
-            return original(fd)
-        with patch.object(vault.os, 'close', side_effect=alias_stage):
+    def test_hardlink_count_prepublication_rejected(self):
+        # Simulate st_nlink=2 without requiring hardlink privileges on Windows.
+        original = os.lstat
+        seen = 0
+        def linked(path):
+            nonlocal seen
+            result = original(path)
+            if '.fvs-vault-' in str(path):
+                seen += 1
+                if seen > 1:
+                    class Fake:
+                        st_mode = result.st_mode
+                        st_dev = result.st_dev
+                        st_ino = result.st_ino
+                        st_nlink = 2
+                        st_size = result.st_size
+                    return Fake()
+            return result
+        with patch.object(vault.os, 'lstat', side_effect=linked):
             self.redacted(lambda: vault.publish_vault(self.out, self.payload))
-        self.assertEqual(alias.read_bytes(), self.payload)
         self.assertFalse(self.stages())
 
     def test_descriptor_identity_mismatch_rejected_before_link(self):
