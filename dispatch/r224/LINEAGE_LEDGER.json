@@ -1,0 +1,89 @@
+{
+  "schema": "fv.dispatch.lineage.v1",
+  "date_checked_utc": "2026-11-09T03:39:00Z",
+  "repository": "finalvestigestudios/final-vestige-site-layer",
+  "original_pr": 175,
+  "original_commit": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "revision_pr": 178,
+  "revision_commit": "aa2f0deff830589bc283b5770ccd451000a49dd2",
+  "review_pr": 1676,
+  "review_commit": "c8abb1b3394a8ec7c4f0e6add961c76fd91ad3d5",
+  "expected_change_set": "manifest plus six issue manuscripts; README and original test unchanged",
+  "origin_manuscripts_revised_on_stacked_branch": true,
+  "status": "COPY_LINEAGE_REVIEW_REQUIRED_NO_SEND",
+  "rows": [
+    {
+      "path": "dispatch/campaign-2026-mind/README.md",
+      "original_blob": "ead5c7eb4ee0e32368e463bcec6b42a6bccf6da6",
+      "stacked_blob": "ead5c7eb4ee0e32368e463bcec6b42a6bccf6da6",
+      "changed": false
+    },
+    {
+      "path": "dispatch/campaign-2026-mind/manifest.json",
+      "original_blob": "86df98ad8a84e583ff5df64ddbf8c0eaa1335b00",
+      "stacked_blob": "2fe3c10a26cb2c9e2406e8444a5734eabb21f209",
+      "changed": true
+    },
+    {
+      "path": "dispatch/campaign-2026-mind/tests/test_campaign.py",
+      "original_blob": "fd7f05e30092a7ec82090993dc5d7d0e23755c8e",
+      "stacked_blob": "fd7f05e30092a7ec82090993dc5d7d0e23755c8e",
+      "changed": false
+    },
+    {
+      "path": "dispatch/campaign-2026-mind/issues/01-the-mind-is-not-a-camera.md",
+      "original_blob": "039b452b5cb7cd6dc2fed6fac4d2dd77fa9d49c8",
+      "stacked_blob": "2a573f6b7043c101ece49703f2dd1262ec2b0ee6",
+      "changed": true
+    },
+    {
+      "path": "dispatch/campaign-2026-mind/issues/02-before-hypnosis-had-a-name.md",
+      "original_blob": "faa207ab7deafd86460d36f8c17fe62d392d0e14",
+      "stacked_blob": "fb8cf1503acb2338a4884cac58b7c3b2cec95af7",
+      "changed": true
+    },
+    {
+      "path": "dispatch/campaign-2026-mind/issues/03-the-twelve-minute-question.md",
+      "original_blob": "aeeef34efea0cc281f69901488e4501fea851245",
+      "stacked_blob": "b86572c15d05316801a007c00e9a2689a5de27c3",
+      "changed": true
+    },
+    {
+      "path": "dispatch/campaign-2026-mind/issues/04-the-hatch-and-the-spark.md",
+      "original_blob": "89635bfb9c8d1ff17297a59b6b5b5b2a176934ca",
+      "stacked_blob": "7de77ccdc312e5bdf77a9aaa355c3a9ba4efa2c8",
+      "changed": true
+    },
+    {
+      "path": "dispatch/campaign-2026-mind/issues/05-before-you-press-play.md",
+      "original_blob": "a9dfaa450ba025a7b5113ade8a294d6dbad778dc",
+      "stacked_blob": "a62a74c6cc2a3722048ff801ccba6212a6cdb397",
+      "changed": true
+    },
+    {
+      "path": "dispatch/campaign-2026-mind/issues/06-the-evidence-log.md",
+      "original_blob": "004d558df6376d2ad6f4f79a4581e8d2c444e355",
+      "stacked_blob": "94b2e31594f0cdea1ec49f654429fa5f3a7b89c6",
+      "changed": true
+    }
+  ],
+  "provider_observations": {
+    "as_of_utc": "2026-11-09T03:38:21Z",
+    "newsletter_enabled": true,
+    "auto_send_default": false,
+    "email_format": "full",
+    "subscriber_total": 3,
+    "subscriber_confirmed": 3,
+    "unconfirmed_requests": 2,
+    "wpcom_followers": 3,
+    "email_only_followers": 0,
+    "actual_email_eligible": "UNKNOWN",
+    "received_welcome": "NOT_VERIFIED",
+    "received_unsubscribe": "NOT_VERIFIED",
+    "publisher_postal_address": "NOT_VERIFIED",
+    "inspire3_finalvestige_email_permission": "NOT_VERIFIED",
+    "merchant_earning_url": "NOT_VERIFIED",
+    "settled_net_revenue": "NOT_COMPUTABLE"
+  },
+  "no_release_authorization": true
+}
