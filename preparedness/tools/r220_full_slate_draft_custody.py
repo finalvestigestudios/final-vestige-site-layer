@@ -79,6 +79,10 @@ R246_FAMILY_CARD_BLOB = '7c27ad9e9c6d5d0dd5917e57733285db48973812'
 # Parser checks source witnesses; DOM behavior and privacy remain unverified.
 R247_NOJS_CARD_PATH = 'tools/r247_nojs_card_semantics_custody_hold.py'
 R247_NOJS_CARD_BLOB = '60e073a5b3e6b0d4eaffc65b8010d3b2af7454b9'
+# R248 reconciles actual print-field disclosure with the authored minimal-only
+# and storage/no-JS copy, without changing the held source or declaring privacy.
+R248_FIELD_CROSSWALK_PATH = 'tools/r248_family_card_field_crosswalk_hold.py'
+R248_FIELD_CROSSWALK_BLOB = 'cd53368378bf89d365aba3d2175af78a0db08845'
 # These are independently observed R219 integration Git blobs, not certified text.
 # Missing entries MUST match the older R200 original exactly.
 INTEGRATED_DIFFS = {
@@ -570,6 +574,28 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
                     'merchant_approved'))):
             raise ValueError('R247 no-JS family card source-to-claim HOLD drift')
         result['nojs_family_card_claim_review_docket'] = nojs
+        # Field-by-field, reader-facing print disclosure is an independent
+        # unresolved claim scope; a hash match never means readers consented.
+        matrix_guard = load_frozen_gate(root, R248_FIELD_CROSSWALK_PATH,
+                                        R248_FIELD_CROSSWALK_BLOB,
+                                        'fv_preparedness_r248_field_crosswalk', ('audit',))
+        field_matrix = matrix_guard.audit(root, safe_read)
+        if (field_matrix.get('state') != HOLD or field_matrix.get('source_count') != 5
+                or field_matrix.get('full_field_count') != 13
+                or field_matrix.get('minimal_field_count') != 6
+                or field_matrix.get('minimal_excluded_field_count') != 7
+                or len(field_matrix.get('field_matrix', [])) != 13
+                or field_matrix.get('claimed_only_list_is_incomplete') is not True
+                or field_matrix.get('nojs_form_claim_is_contradicted') is not True
+                or field_matrix.get('privacy_claim_scope_requires_browser_review') is not True
+                or field_matrix.get('human_review_required') is not True
+                or any(field_matrix.get(key) is not False for key in (
+                    'reader_disclosure_approved', 'privacy_certified',
+                    'claims_adjudicated', 'medical_safety_verified',
+                    'source_review_approved', 'independent_qd_pass',
+                    'merchant_approved', 'release_authorized'))):
+            raise ValueError('R248 family-card field-disclosure HOLD drift')
+        result['family_card_field_disclosure_review_matrix'] = field_matrix
         if verify_exports:
             # Only imports the repository's own build code from its trusted tools path.
             tools_path = root / 'tools'
@@ -667,6 +693,8 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
             raise ValueError('R246 Article 15 / Tool 104 source-claim guard mutated during audit')
         if git_blob(safe_read(root, R247_NOJS_CARD_PATH)) != R247_NOJS_CARD_BLOB:
             raise ValueError('R247 no-JS card source-to-claim guard mutated during audit')
+        if git_blob(safe_read(root, R248_FIELD_CROSSWALK_PATH)) != R248_FIELD_CROSSWALK_BLOB:
+            raise ValueError('R248 family-card field crosswalk mutated during audit')
         result['reconciliation'] = {'frozen_articles': 35,
                                     'integrated_changes_held_for_review': sum(
                                         x['changed_since_original'] for x in status),
