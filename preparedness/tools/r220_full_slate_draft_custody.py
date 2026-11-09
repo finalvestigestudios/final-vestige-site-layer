@@ -39,6 +39,9 @@ R230_TOKENIZER_BLOB = '94e0eb8d790df732f5ae79d8aa2fc8c41d9b3f8e'
 # R231 byte-for-byte replay against independently pinned WordPress producer.
 R231_REPLAY_PATH = 'tools/r231_exact_export_replay_hold.py'
 R231_REPLAY_BLOB = 'baf540008487ce0bad02e3b0336f1af7c045f1b4'
+# R232 validates the generated landing + hub shells and exact output inventory.
+R232_AUXILIARY_PATH = 'tools/r232_auxiliary_export_custody_hold.py'
+R232_AUXILIARY_BLOB = 'd723f888dba57d8e280ac24003239e93e30cae65'
 # These are independently observed R219 integration Git blobs, not certified text.
 # Missing entries MUST match the older R200 original exactly.
 INTEGRATED_DIFFS = {
@@ -396,10 +399,22 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
             replay_guard = load_frozen_gate(root, R231_REPLAY_PATH, R231_REPLAY_BLOB,
                                             'fv_preparedness_r231_exact_replay_gate',
                                             ('verify_exact_export',))
+            auxiliary_guard = load_frozen_gate(root, R232_AUXILIARY_PATH, R232_AUXILIARY_BLOB,
+                                                'fv_preparedness_r232_auxiliary_gate',
+                                                ('audit_auxiliary_exports',))
             library = build.Library(root=root)
             authority.verify_routes(roster, library)
             report = strict_object(safe_read(root, 'build/build-report.json'))
             result['render'] = verify_render(root, roster, report, library, build, dom_guard, inert_guard, tokenizer_guard, replay_guard)
+            # R231 protects 41 × 2 article/tool files. R232 independently
+            # audits landing, editorial hubs, all output filenames and
+            # their build-report rows, including both delivery formats.
+            auxiliary = auxiliary_guard.audit_auxiliary_exports(root, report, library, build, safe_read)
+            if (auxiliary.get('state') != HOLD or auxiliary.get('release_authorized') is not False
+                    or auxiliary.get('independent_qd_pass') is not False
+                    or auxiliary.get('source_or_medical_safety_approved') is not False):
+                raise ValueError('unexpected auxiliary export custody state')
+            result['auxiliary_render'] = auxiliary
             # Repeat source custody after building the rendered-corpus view.
             # A file replaced after preflight cannot silently inherit its pin.
             bundle.check_bundle(root, safe_read)
@@ -409,6 +424,8 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
                 raise ValueError('tokenizer guard mutated after render')
             if git_blob(safe_read(root, R231_REPLAY_PATH)) != R231_REPLAY_BLOB:
                 raise ValueError('exact-replay guard mutated after render')
+            if git_blob(safe_read(root, R232_AUXILIARY_PATH)) != R232_AUXILIARY_BLOB:
+                raise ValueError('auxiliary-export guard mutated after render')
             result['postrender_custody_recheck'] = 'DRAFT_HARD_HOLD'
         result['reconciliation'] = {'frozen_articles': 35,
                                     'integrated_changes_held_for_review': sum(
