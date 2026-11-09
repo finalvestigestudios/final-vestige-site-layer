@@ -29,10 +29,10 @@ R222_BUNDLE_PATH = 'tools/r222_producer_source_bundle_gate.py'
 R222_BUNDLE_BLOB = 'bd57ef0caba7ad68381fa6a22af64aff4d486c84'
 # R226 all-41-export browser-semantics and visible citation/review HOLD gate.
 R226_DOM_PATH = 'tools/r226_export_browser_custody.py'
-R226_DOM_BLOB = 'be2e52870cdcea1cf8b7342ffe21005fc78ed34d'
+R226_DOM_BLOB = 'f261e785c47af9556c3fe3864bbbccb46c3890bc'
 # R227 catches markup inert to HTML reading or conditional on JS/open state.
 R227_INERT_PATH = 'tools/r227_inert_context_citation_hold.py'
-R227_INERT_BLOB = 'ecb9402b089940f83cce7befffa688ac2a4c9127'
+R227_INERT_BLOB = '8e7a4b8334f7166630d8f362da94b9d56afdbc85'
 # These are independently observed R219 integration Git blobs, not certified text.
 # Missing entries MUST match the older R200 original exactly.
 INTEGRATED_DIFFS = {
