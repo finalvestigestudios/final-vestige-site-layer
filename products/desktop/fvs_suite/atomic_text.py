@@ -36,18 +36,20 @@ def _report_bytes(contents: str) -> bytes:
     return encoded
 
 
-def _private_io_failure(exc: OSError) -> None:
+def _redacted_io_error(exc: OSError) -> OSError:
     """Keep customer paths and OS-supplied error text out of UI/log errors.
 
     Preserve native errno and its PermissionError/OSError classification while
     discarding filenames and potentially sensitive platform error strings.
-    Suppress exception chaining in ordinary tracebacks; never treat a failed
-    publication as a successful compliance decision.
+    Return a new exception built from allowlisted primitives only. The caller
+    must raise it AFTER the original handler exits: `from None` *inside* an
+    except handler hides __context__ in tracebacks but still retains private
+    exception objects for programmatic consumers.
     """
     if isinstance(exc, FileExistsError):
-        raise FileExistsError("Text report destination already exists") from None
+        return FileExistsError("Text report destination already exists")
     code = exc.errno if type(exc.errno) is int and exc.errno > 0 else errno.EIO
-    raise OSError(code, "Text report publication failed") from None
+    return OSError(code, "Text report publication failed")
 
 
 
@@ -95,6 +97,7 @@ def publish_text(destination: str | Path, contents: str) -> Path:
         else:
             raise FileExistsError("Text report destination already exists")
         # Do not place customer file names into temporary directory entries.
+        staging_failed = False
         try:
             descriptor, temporary = tempfile.mkstemp(
                 prefix=".fvs-text-", suffix=".partial", dir=target.parent)
@@ -104,10 +107,14 @@ def publish_text(destination: str | Path, contents: str) -> Path:
             # existing privacy translator below; preserve MemoryError.
             if isinstance(fault, (OSError, MemoryError)):
                 raise
+            staging_failed = True
+        if staging_failed:
+            # Not in the mkstemp exception handler; no private __context__.
             raise ValueError("Text report staging could not be created") from None
         try:
             # fdopen can fail before it assumes ownership; close the raw fd in
             # that case. The outer finally removes the unpublished staging file.
+            adoption_failed = False
             try:
                 stream = os.fdopen(descriptor, "wb")
             except BaseException as fault:
@@ -121,8 +128,12 @@ def publish_text(destination: str | Path, contents: str) -> Path:
                 # errno via the outer translator and propagate interruptions.
                 if isinstance(fault, Exception) and not isinstance(
                         fault, (OSError, MemoryError)):
-                    raise ValueError("Text report staging could not be opened") from None
-                raise
+                    adoption_failed = True
+                else:
+                    raise
+            if adoption_failed:
+                # Descriptor was closed above; finally removes staging path.
+                raise ValueError("Text report staging could not be opened") from None
             with stream:
                 # Buffered I/O normally accepts the entire write, but a short
                 # return is legal for some file-like objects and must never
@@ -154,4 +165,7 @@ def publish_text(destination: str | Path, contents: str) -> Path:
             except FileNotFoundError:
                 pass
     except OSError as exc:
-        _private_io_failure(exc)
+        redacted = _redacted_io_error(exc)
+    # No active exception handler: the confidential OSError (including its
+    # filename, traceback, and nested context) cannot survive in the output.
+    raise redacted from None
