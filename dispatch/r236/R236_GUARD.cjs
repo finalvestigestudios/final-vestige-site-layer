@@ -13,13 +13,16 @@ function inspect(files) {
   const subject="Before you trust a focus recording, ask this";
   const preheader="A 33-minute seller offer, a historical lesson, and a five-minute evidence check.";
   ok([md,txt,html].every(s=>s.includes(subject)), "subject not aligned in variants");
+  const actualTitle=(html.match(/<h1[^>]*>([^<]+)<\/h1>/i)||[])[1];
+  ok(actualTitle===subject, "HTML displayed heading must exactly match approved subject");
+  ok(md.includes("**Subject:** "+subject) && txt.includes("Subject: "+subject), "subject metadata must match exactly");
   ok(md.includes(preheader) && txt.includes(preheader), "preheader not aligned");
   ok((md.match(/APPROVED_TOTAL_FOCUS_WARMUP_GUIDE_URL_REQUIRED/g)||[]).length===1, "one inactive primary CTA in markdown");
   ok((txt.match(/APPROVED_TOTAL_FOCUS_WARMUP_GUIDE_URL_REQUIRED/g)||[]).length===1, "one inactive primary CTA in text");
   ok((html.match(/APPROVED_TOTAL_FOCUS_WARMUP_GUIDE_URL_REQUIRED/g)||[]).length===1, "one inactive primary CTA in HTML");
-  ok(md.indexOf("Commercial disclosure (prospective)") < md.indexOf("READ THE INDEPENDENT TOTAL FOCUS GUIDE"), "commercial disclosure precedes proposal CTA");
-  ok(txt.indexOf("Commercial disclosure (prospective)") < txt.indexOf("READ THE INDEPENDENT TOTAL FOCUS GUIDE"), "text disclosure precedes proposed CTA");
-  ok(html.indexOf("Commercial disclosure (prospective)") < html.indexOf("READ THE INDEPENDENT TOTAL FOCUS GUIDE"), "HTML disclosure precedes proposed CTA");
+  ok(md.includes("**Commercial disclosure (prospective):") && md.indexOf("Commercial disclosure (prospective)") < md.indexOf("READ THE INDEPENDENT TOTAL FOCUS GUIDE"), "explicit markdown commercial disclosure precedes proposal CTA");
+  ok(txt.includes("Commercial disclosure (prospective):") && txt.indexOf("Commercial disclosure (prospective)") < txt.indexOf("READ THE INDEPENDENT TOTAL FOCUS GUIDE"), "explicit plaintext disclosure precedes proposed CTA");
+  ok(html.includes("Commercial disclosure (prospective):") && html.indexOf("Commercial disclosure (prospective)") < html.indexOf("READ THE INDEPENDENT TOTAL FOCUS GUIDE"), "explicit HTML disclosure precedes proposed CTA");
   for (const s of [md,txt,html]) {
     ok(s.includes("VALID_POSTAL_ADDRESS_REQUIRED"),"missing physical-address hard stop");
     ok(s.includes("JETPACK_UNSUBSCRIBE_LINK_MUST_BE_VERIFIED"),"missing unsubscribe hard stop");
@@ -41,6 +44,7 @@ function inspect(files) {
   ok(!hrefs.some(x=>x.includes("APPROVED_")),"guide placeholder must not be a link");
   ok(evidence.includes("6/6 passed"),"master native evidence required");
   ok(evidence.includes("HOLD_MERCHANT") && evidence.includes("NOT COMPUTABLE"),"revenue/release caveats missing");
+  ok(!/\$\d[\d,]*(?:\.\d+)?\s*(?:PROFIT|REVENUE)|paid_orders\s*[:=]\s*[1-9]|realized_net_revenue\s*[:=]\s*[1-9]/i.test(evidence),"fabricated positive financial result");
   ok(evidence.includes("d57ccdba3aee8f065e143e101c2945f4f3d01647"),"original master head not pinned");
   return {passed:true,checks};
 }
