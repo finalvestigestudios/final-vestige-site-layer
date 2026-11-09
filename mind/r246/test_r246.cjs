@@ -96,7 +96,7 @@ function validate(x){
  check(x.guideB.includes('0–7 seconds:')&&x.guideB.includes('35–42:'),'42s transcript');
  check(stripVideo(x.guideA)===stripVideo(x.guideB),'strict A/B copy parity: only optional video section');
  check(x.plan.includes('net_revenue_per_1000_qualified')&&x.plan.includes('incremental_attributable_fees_and_platform_costs_not_already_net'),'net metric plan');
- check(x.plan.includes('NOT_COMPUTABLE') && x.plan.includes('No WordPress CMS/nav/settings writes'),'no fabricated outcomes/live changes');
+ check(x.plan.includes('metric status is `NOT_COMPUTABLE`') && x.plan.includes('No WordPress CMS/nav/settings writes'),'no fabricated outcomes/live changes');
  check(x.plan.includes('Grok produces/distributes')&&x.plan.includes('Dispatch'),'owner separation');
  return true;
 }
