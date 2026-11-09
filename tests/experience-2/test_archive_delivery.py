@@ -42,7 +42,7 @@ class Unit(unittest.TestCase):
         dom={'exists':True,'alt':'source description','naturalWidth':320,'naturalHeight':240,'complete':True,'display':'block','visibility':'visible','rectWidth':320}
         record={'status':200,'mime':'image/webp','decoded_body_bytes':120,'wire_body_bytes':110}
         self.assertEqual(classify(record,dom),[])
-        for field,value,flag in [('status',404,'HTTP_NOT_200'),('mime','text/html','NON_IMAGE_CONTENT_TYPE'),('decoded_body_bytes',0,'EMPTY_RESPONSE_BODY'),('wire_body_bytes',None,'WIRE_BYTES_NOT_MEASURED')]:
+        for field,value,flag in [('status',404,'HTTP_NOT_200'),('mime','text/html','NON_IMAGE_CONTENT_TYPE'),('decoded_body_bytes',0,'EMPTY_RESPONSE_BODY'),('wire_body_bytes',None,'WIRE_BYTES_NOT_MEASURED'),('wire_body_bytes',0,'WIRE_BYTES_NOT_MEASURED')]:
             r=dict(record);r[field]=value
             self.assertIn(flag,classify(r,dom))
         self.assertIn('NETWORK_RESPONSE_NOT_OBSERVED',classify(None,dom))
