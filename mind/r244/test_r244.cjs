@@ -98,7 +98,7 @@ function checkEditorial(a,p){
  assert.ok(p.includes("not already netted"));
  assert.ok(p.includes("aren't deducted twice"));
  assert.ok(p.includes("NOT_COMPUTABLE")&&p.includes("HARD_HOLD"));
- assert.ok(p.includes("Grok + Praxxis")&&p.includes("Claude + Site QA"));
+ assert.ok(p.includes("Grok + Praxxis")&&p.includes("Claude + Site QA")); assert.ok(p.includes("NOT verified published Grok videos"));
  assert.ok(p.includes("UNPUBLISHED")&&p.includes("PR #172")||p.includes("PR#172"));
  return true;
 }
