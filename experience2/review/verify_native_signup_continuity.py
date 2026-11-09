@@ -11,8 +11,8 @@ import json
 import re
 from pathlib import Path
 
-NATIVE = re.compile(r'<!--\\s*wp:jetpack/subscriptions(?:\\s+\\{[^\\n]*?\\})?\\s*/-->')
-MARGIN = re.compile(r'<span\\s+class="fv-margin-strip__item"\\s+style="--i:(\\d+)">(.*?)</span>', re.S)
+NATIVE = re.compile(r'<!--\s*wp:jetpack/subscriptions(?:\s+\{[^\n]*?\})?\s*/-->')
+MARGIN = re.compile(r'<span\s+class="fv-margin-strip__item"\s+style="--i:(\d+)">(.*?)</span>', re.S)
 MARGIN_STRIP = 'class="fv-margin-strip fv-margin-strip--rotator"'
 PREVIEW_ONLY = (
     '[fv_ex2_playground]', '/fv-ex2-focus-review/',
@@ -93,7 +93,7 @@ def main():
                      Path(args.candidate).read_text(encoding='utf-8'))
     output = json.dumps(result, indent=2, sort_keys=True)
     if args.out:
-        Path(args.out).write_text(output + '\\n', encoding='utf-8')
+        Path(args.out).write_text(output + '\n', encoding='utf-8')
     print(output)
     raise SystemExit(0 if not result['blockers'] else 2)
 
