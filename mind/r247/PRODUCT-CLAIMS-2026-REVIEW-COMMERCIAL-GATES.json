@@ -1,0 +1,387 @@
+{
+  "milestone": "R247",
+  "as_of": "2026-11-09",
+  "scope": "UNPUBLISHED_SOURCE_ONLY",
+  "commerce_release": "HARD_HOLD",
+  "product": "Hypnosis Live Total Focus (single 33-minute MP3) - exact offer; Zen12 Premium remains canonical primary experimental pilot in R246",
+  "sources": [
+    {
+      "id": "H1",
+      "kind": "independent_systematic_review",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13535766/",
+      "what": "Yim and Derbyshire Sep 2 2026; pain outcomes, passive and active comparators; no focus products tested"
+    },
+    {
+      "id": "H2",
+      "kind": "independent_systematic_review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39263007/",
+      "what": "Jones 2024 adjunctive hypnosis pain; comparison differs"
+    },
+    {
+      "id": "H3",
+      "kind": "independent_systematic_review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40649035/",
+      "what": "Yerzhan 2025 12 selected RCTs, acute vs chronic pain"
+    },
+    {
+      "id": "H4",
+      "kind": "independent_qualitative",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39284247/",
+      "what": "Eaton 2024 audio hypnosis vs relaxation participant reports; does not validate commercial recordings"
+    },
+    {
+      "id": "SELLER_TOTAL",
+      "kind": "merchant_exact_offer",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "what": "Total Focus specific format, advertised price and refund window; checkout not authenticated"
+    },
+    {
+      "id": "SELLER_FAQ",
+      "kind": "merchant_terms",
+      "url": "https://hypnosislive.com/faq",
+      "what": "advertised recording, refund and use terms; never tested"
+    },
+    {
+      "id": "SELLER_ZEN",
+      "kind": "merchant_exact_offer",
+      "url": "https://zen12.com/hnp",
+      "what": "Zen12 program structure; not interchangeable with task-start or Total Focus"
+    },
+    {
+      "id": "SELLER_FOCUS",
+      "kind": "merchant_exact_offer",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "what": "Focus Shot isochronic marketing and packages, not active for this guide"
+    },
+    {
+      "id": "I3",
+      "kind": "merchant_catalog",
+      "url": "https://inspire3.com/",
+      "what": "official portfolio and affiliate program route; no account acceptance proof"
+    },
+    {
+      "id": "FTC_A",
+      "kind": "regulatory",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "what": "disclosure near endorsement and earning URL"
+    },
+    {
+      "id": "FTC_H",
+      "kind": "regulatory",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "what": "substantiate objective health/product claims"
+    },
+    {
+      "id": "FVMES",
+      "kind": "existing_site",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "what": "historic 1784 source investigation; web fetch not direct-authenticated"
+    },
+    {
+      "id": "FVP",
+      "kind": "existing_site",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "what": "Puységur archive; direct fetch failed; route confirmed Issue171"
+    },
+    {
+      "id": "FVC",
+      "kind": "existing_site",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "what": "existing perception post; direct fetch failed"
+    },
+    {
+      "id": "FVFOCUS",
+      "kind": "existing_site",
+      "url": "https://finalvestige.com/focus/",
+      "what": "free 52-page fieldbook already in one Jetpack/Dispatch funnel"
+    },
+    {
+      "id": "TH_CRIT",
+      "kind": "independent_scientific_commentary",
+      "url": "https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2014.00289/full",
+      "what": "Rezlescu and Susilo 2014 critique fSTS interaction p=.058 and no cross-region interaction; should qualify inherited R246 article"
+    }
+  ],
+  "claims": [
+    {
+      "id": "REV_SCOPE",
+      "statement": "Yim and Derbyshire 2026 studied clinical pain, not focus-product outcomes",
+      "source": "H1",
+      "classification": "INDEPENDENT_SUPPORTED"
+    },
+    {
+      "id": "REV_STUDIES",
+      "statement": "106 eligible, 84 with effect sizes, main non-active pooled analysis 57 studies and 4572 participants",
+      "source": "H1",
+      "classification": "INDEPENDENT_SUPPORTED"
+    },
+    {
+      "id": "REV_PASSIVE",
+      "statement": "Post-treatment pain SMD -0.33 versus non-active controls; not a 33 percent improvement",
+      "source": "H1",
+      "classification": "INDEPENDENT_SUPPORTED_BOUNDED"
+    },
+    {
+      "id": "REV_CHANGE",
+      "statement": "Pre-post change SMD -0.31 not statistically significant",
+      "source": "H1",
+      "classification": "INDEPENDENT_SUPPORTED_BOUNDED"
+    },
+    {
+      "id": "REV_ACTIVE",
+      "statement": "14 studies n=940 compared hypnosis vs relaxation, SMD -0.13 CI -0.42 to 0.16 not significant",
+      "source": "H1",
+      "classification": "INDEPENDENT_SUPPORTED_BOUNDED"
+    },
+    {
+      "id": "REV_NOT_SUPERIOR",
+      "statement": "Review did not find consistent superiority over active relaxation, pain education or CBT",
+      "source": "H1",
+      "classification": "INDEPENDENT_SUPPORTED_BOUNDED"
+    },
+    {
+      "id": "REV_PRODUCT",
+      "statement": "The 2026 pain review demonstrates exact Total Focus focus/productivity benefit",
+      "source": "H1",
+      "classification": "NOT_SUPPORTED_FOR_PRODUCT"
+    },
+    {
+      "id": "ADJUNCT",
+      "statement": "2024 adjunctive synthesis pooled 70 studies 6078 adults, different comparison",
+      "source": "H2",
+      "classification": "INDEPENDENT_SUPPORTED_BOUNDED"
+    },
+    {
+      "id": "LIMITED_2025",
+      "statement": "2025 synthesis of 12 RCTs had differing acute/chronic outcomes; design not interchangeable",
+      "source": "H3",
+      "classification": "INDEPENDENT_SUPPORTED_BOUNDED"
+    },
+    {
+      "id": "QUAL",
+      "statement": "2024 audio intervention qualitative participants described themes in both groups; not product efficacy test",
+      "source": "H4",
+      "classification": "INDEPENDENT_SUPPORTED_BOUNDED"
+    },
+    {
+      "id": "SELLER_DURATION",
+      "statement": "Total Focus merchant describes 33-minute 47 MB audio written/recorded by J A Amos",
+      "source": "SELLER_TOTAL",
+      "classification": "SELLER_DESCRIPTION_NOT_INDEPENDENTLY_TESTED"
+    },
+    {
+      "id": "SELLER_RESULTS",
+      "statement": "Total Focus improves concentration on demand, productivity and career recognition",
+      "source": "SELLER_TOTAL",
+      "classification": "SELLER_UNSUBSTANTIATED_PRODUCT_SPECIFIC"
+    },
+    {
+      "id": "SELLER_POLICY",
+      "statement": "Total Focus page advertises 14-day satisfaction refund; merchant may apply conditions",
+      "source": "SELLER_FAQ",
+      "classification": "SELLER_TERM_NOT_REFUND_VERIFIED"
+    },
+    {
+      "id": "SELLER_PRICE",
+      "statement": "Any price shown on a seller offer page equals a paid final checkout and a valid discount",
+      "source": "SELLER_TOTAL",
+      "classification": "NOT_AUTHENTICATED_CART"
+    },
+    {
+      "id": "ZEN12",
+      "statement": "Zen12 Premium is twelve-level meditation library, separate from Total Focus",
+      "source": "SELLER_ZEN",
+      "classification": "SELLER_DESCRIPTION"
+    },
+    {
+      "id": "FOCUSSHOT",
+      "statement": "Focus Shot is separate product and seller claims hours of enhanced focus",
+      "source": "SELLER_FOCUS",
+      "classification": "SELLER_UNSUBSTANTIATED_PRODUCT_SPECIFIC"
+    },
+    {
+      "id": "FOCUS_ASSET",
+      "statement": "FV's Seven Day Focus Fieldbook is a free task-starting path not Zen12 therapy",
+      "source": "FVFOCUS",
+      "classification": "FV_EXISTING_ASSET"
+    },
+    {
+      "id": "FTC_PROX",
+      "statement": "Compensated endorsement must disclose plain-language material connection proximate to purchase link",
+      "source": "FTC_A",
+      "classification": "REGULATORY_GUIDANCE"
+    },
+    {
+      "id": "FTC_HEALTH",
+      "statement": "Objective health-related effectiveness claims need adequate substantiation",
+      "source": "FTC_H",
+      "classification": "REGULATORY_GUIDANCE"
+    },
+    {
+      "id": "TH_REVIEW",
+      "statement": "2014 independent critique challenges fSTS reported selectivity with p=.058 and missing cross-region test",
+      "source": "TH_CRIT",
+      "classification": "SCIENTIFIC_COMMENTARY_DISPUTES_INTERPRETATION"
+    },
+    {
+      "id": "AFFILIATE",
+      "statement": "Named FV affiliate approval or issued merchant URL proven by public catalog or promotional emails",
+      "source": "I3",
+      "classification": "NO_AUTHORIZATION_PROOF"
+    },
+    {
+      "id": "PUY",
+      "statement": "Puységur's historic archive proves recording can reprogram the brain",
+      "source": "FVP",
+      "classification": "HISTORICAL_RECORD_NOT_EFFICACY"
+    },
+    {
+      "id": "MIND_PRODUCT",
+      "statement": "One rights-cleared FV owned Mind Payhip SKU and working paid order verified",
+      "source": "FVFOCUS",
+      "classification": "NOT_VERIFIED"
+    },
+    {
+      "id": "ATTR",
+      "statement": "Unobserved outbound clicks prove paid conversions and settled commissions",
+      "source": "FTC_A",
+      "classification": "FALSE_DO_NOT_COUNT"
+    },
+    {
+      "id": "GROK",
+      "statement": "Confirmed asset IDs for existing three Mind videos in current handoff",
+      "source": "FVC",
+      "classification": "NOT_VERIFIED"
+    },
+    {
+      "id": "CLINIC",
+      "statement": "Clinical pain findings can be generalized to all mental/wealth/medical improvements",
+      "source": "H1",
+      "classification": "UNSUPPORTED_EXTRAPOLATION"
+    }
+  ],
+  "gates": [
+    {
+      "id": "named_FV_publisher_acceptance",
+      "state": "HARD_HOLD",
+      "verified": false,
+      "proof": null
+    },
+    {
+      "id": "account_issued_earning_URL",
+      "state": "HARD_HOLD",
+      "verified": false,
+      "proof": null
+    },
+    {
+      "id": "permitted_website_channels",
+      "state": "HARD_HOLD",
+      "verified": false,
+      "proof": null
+    },
+    {
+      "id": "permitted_social_channels",
+      "state": "HARD_HOLD",
+      "verified": false,
+      "proof": null
+    },
+    {
+      "id": "permitted_email_channels",
+      "state": "HARD_HOLD",
+      "verified": false,
+      "proof": null
+    },
+    {
+      "id": "verified_current_offer",
+      "state": "HARD_HOLD",
+      "verified": false,
+      "proof": null
+    },
+    {
+      "id": "verified_checkout_total_taxes",
+      "state": "HARD_HOLD",
+      "verified": false,
+      "proof": null
+    },
+    {
+      "id": "verified_refund_conditions",
+      "state": "HARD_HOLD",
+      "verified": false,
+      "proof": null
+    },
+    {
+      "id": "independent_claim_review",
+      "state": "HARD_HOLD",
+      "verified": false,
+      "proof": null
+    },
+    {
+      "id": "privacy_consent_attribution",
+      "state": "HARD_HOLD",
+      "verified": false,
+      "proof": null
+    },
+    {
+      "id": "mobile_a11y",
+      "state": "HARD_HOLD",
+      "verified": false,
+      "proof": null
+    },
+    {
+      "id": "WordPress_sanitization",
+      "state": "HARD_HOLD",
+      "verified": false,
+      "proof": null
+    },
+    {
+      "id": "reviewed_active_CTA",
+      "state": "HARD_HOLD",
+      "verified": false,
+      "proof": null
+    },
+    {
+      "id": "founder_release_approval",
+      "state": "HARD_HOLD",
+      "verified": false,
+      "proof": null
+    },
+    {
+      "id": "merchant_settled_reporting",
+      "state": "HARD_HOLD",
+      "verified": false,
+      "proof": null
+    },
+    {
+      "id": "valid_net_revenue_cohort",
+      "state": "HARD_HOLD",
+      "verified": false,
+      "proof": null
+    }
+  ],
+  "commerce_metrics": {
+    "qualified_human_sessions": null,
+    "asset_linked_campaign_landings": null,
+    "relevant_cta_clicks": null,
+    "provider_confirmed_leads": null,
+    "affiliate_clicks": null,
+    "merchant_confirmed_orders": null,
+    "settled_affiliate_commissions": null,
+    "settled_owned_gross": null,
+    "refunds": null,
+    "chargebacks": null,
+    "fees": null,
+    "incremental_costs": null,
+    "realized_net_revenue": null,
+    "net_revenue_per_1000_qualified": null,
+    "status": "NOT_COMPUTABLE"
+  },
+  "data_risks": [
+    "No publisher-specific authorization found in targeted latest Gmail search; absence is not rejection",
+    "No authenticated real merchant cart/refund action; seller prices may change",
+    "Live WordPress / 61 investigations count is prior Issue171 baseline, not rerun audited census",
+    "Puységur/Change Blindness/Focus direct fetch unavailable; preserve route but not assert new live state",
+    "No actual Grok Mind media IDs, no first-party cohort denominator, no paid settlements",
+    "Current canonical Zen12 A/B is UNPUBLISHED in R246; video is a non-playable transcript and poster concept",
+    "New 2026 clinical-pain meta-analysis may not substantiate ANY claimed focus/productivity benefit"
+  ]
+}

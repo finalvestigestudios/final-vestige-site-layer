@@ -20,8 +20,8 @@ const pins=Object.freeze({
  repairedMatrix:'ec38557f02139c7b6519dc160bb7bcb116ed21d9',
  repairedPlan:'be562ab2b35d712d887c1dec71330ab7a8ce747a',
  repairedTest:'a3425a4495e9149b757e0b42ed0e44090eca2602',
- article:'d18858147b41f837bd1b6b961a88111fb267c119',
- matrix:'5f904cf9a1db73dd3d496a52e568f689d6edc9c4',
+ article:'fe583b478c41aa3ebe7dddb8a05fdfb5a43ffea8',
+ matrix:'78f1ac986c9ba4e28dd0b4c3e5eb09185b564622',
  guideA:'f9a273234cecd4efe99e9530ab240eb6f3bf2efb',
  guideB:'2361fef3fca364cf18f4a22a78ba8c7483f3dd19',
  plan:'15d04c828f741805180d65b18d554dc59db2a7b6'
@@ -49,14 +49,14 @@ function validate(x){
  check(x.repairedTest.includes('on[a-z][a-z0-9_-]*') && x.repairedTest.includes('aria-describedby'),'R245 guard coverage repairs');
  const m=JSON.parse(x.matrix);
  check(m.release==='HARD_HOLD'&&m.source_scope==='UNPUBLISHED_ONLY','source scope');
- for(const [array,min] of [['sources',21],['claims',33],['gates',16]]){
+ for(const [array,min] of [['sources',22],['claims',34],['gates',16]]){
   check(Array.isArray(m[array])&&m[array].length===min,'matrix '+array+' count');
   check(new Set(m[array].map(z=>z.id)).size===min,'unique ids '+array);
  }
  const ids=new Set(m.sources.map(s=>s.id));
  for(const s of m.sources){
   check(/^https:\/\//.test(s.url),'source URL https');
-  check(['seller','primary_reprinted','primary_abstract','regulatory','existing_site'].includes(s.type),'source classification');
+  check(['seller','primary_reprinted','primary_abstract','regulatory','existing_site','secondary_commentary'].includes(s.type),'source classification');
  }
  for(const c of m.claims){
   check(ids.has(c.source),'claim with source '+c.id);
@@ -68,6 +68,9 @@ function validate(x){
  }
  check(m.claims.some(c=>c.id==='ZEN12_EQ'&&c.status.includes('UNSUBSTANTIATED')),'no product equivalence');
  check(m.claims.some(c=>c.id==='FV_PAYHIP'&&c.status==='NOT_VERIFIED'),'no unverified owned product activation');
+ check(m.claims.some(c=>c.id==='TH_CRITIQUE'&&c.status==='RESEARCH_CRITIQUE_BOUNDED'&&c.source==='TH_REZ'),'published competing fMRI interpretation');
+ check(m.sources.some(c=>c.id==='TH_REZ'&&c.url.includes('00289')),'2014 critique primary record');
+ check(a.includes('p = .058')&&a.includes('published 2014 commentary')&&a.includes('between-region interaction test'),'neuroimaging claim correctly qualified');
  check(m.gates.length===16 && m.test_hypothesis.video_rendered===false && m.test_hypothesis.actual_randomization===false,'A/B not live');
  for(const [key,variant] of [['guideA','A'],['guideB','B']]){
   const h=x[key];
