@@ -1,0 +1,384 @@
+{
+  "schema": "fv-navy-seven-published-source-recovery-v1",
+  "audit_date": "2026-11-09",
+  "scope": "LIVE WP edit-content readback + independent web-retriever wrapper; no guest Chromium, origin HTTP or binary download",
+  "frozen_census_ref": "65c214a1ae6e43534090584d56bbd783251e315c",
+  "frozen_census_origin_parts": [
+    "qa/media-recovery/parts/04.json",
+    "qa/media-recovery/parts/05.json"
+  ],
+  "coordination": "Site QA PR #154 owns the guest browser collector; previous separate Navy 8-source batch remains unmodified",
+  "count": 7,
+  "rows": [
+    {
+      "slot": "274:1",
+      "post_id": 274,
+      "post_url": "https://finalvestige.com/2026/08/19/twenty-four-feet-from-air-uss-tang/",
+      "post_modified": "2026-11-02T21:39:50",
+      "stored_src": "https://www.history.navy.mil/content/history/nhhc/research/library/online-reading-room/title-list-alphabetically/u/united-states-submarine-losses/tang-ss-306/_jcr_content/body/media_asset_3/image.img.jpg/1485804525424.jpg",
+      "live_wp_raw_src_verified": true,
+      "external_web_retriever": {
+        "checked_utc_date": "2026-11-09",
+        "method": "WEB_RETRIEVER_NOT_GUEST",
+        "outcome": "TOOL_WRAPPER_502",
+        "wrapper_code": 502,
+        "actual_origin_http": null,
+        "actual_guest_http": null,
+        "guest_decoded_px": null,
+        "guest_encoded_transfer_bytes": null,
+        "visitor_broken": null
+      },
+      "catalog": {
+        "accession": "80-G-227987",
+        "url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nara-series/80-g/80-G-220000/80-g-227987-uss-tang--ss-306-.html",
+        "authority": "NAVAL_HISTORY_AND_HERITAGE_COMMAND",
+        "medium_download_listed_kb": 303,
+        "high_tiff_catalog_px": [
+          4908,
+          5948
+        ],
+        "conditional_960_from_catalog_high_px": [
+          960,
+          1163
+        ],
+        "actual_medium_jpeg_px": null,
+        "exact_source_binary_verified": false,
+        "chronology": "MAY_1944_TRUK_AIRCREW_PEARL_HARBOR_RETURN",
+        "source_origin": "US_NAVY_PHOTO_NARA"
+      },
+      "rights": {
+        "primary_policy": "https://www.history.navy.mil/about-us/instructions-and-forms/obtain-duplications-of-records-and-photos.html",
+        "nara_policy": "https://www.archives.gov/research/still-pictures/permissions",
+        "item_specific_clearance": false,
+        "attribution_verified": false,
+        "license": null
+      },
+      "release": {
+        "download": false,
+        "cache": false,
+        "wordpress_upload": false,
+        "post_block_rewrite": false,
+        "public_use": false
+      }
+    },
+    {
+      "slot": "274:2",
+      "post_id": 274,
+      "post_url": "https://finalvestige.com/2026/08/19/twenty-four-feet-from-air-uss-tang/",
+      "post_modified": "2026-11-02T21:39:50",
+      "stored_src": "https://www.history.navy.mil/content/history/nhhc/browse-by-topic/exploration-and-innovation/navy-torpedoes/_jcr_content/body/media_asset_1279725910/image.img.jpg/1701176168705.jpg",
+      "live_wp_raw_src_verified": true,
+      "external_web_retriever": {
+        "checked_utc_date": "2026-11-09",
+        "method": "WEB_RETRIEVER_NOT_GUEST",
+        "outcome": "TOOL_WRAPPER_502",
+        "wrapper_code": 502,
+        "actual_origin_http": null,
+        "actual_guest_http": null,
+        "guest_decoded_px": null,
+        "guest_encoded_transfer_bytes": null,
+        "visitor_broken": null
+      },
+      "catalog": {
+        "accession": "NH-84498",
+        "url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/NH-84000/NH-84498.html",
+        "authority": "NAVAL_HISTORY_AND_HERITAGE_COMMAND",
+        "medium_download_listed_kb": 157,
+        "high_tiff_catalog_px": [
+          6216,
+          4876
+        ],
+        "conditional_960_from_catalog_high_px": [
+          960,
+          753
+        ],
+        "actual_medium_jpeg_px": null,
+        "exact_source_binary_verified": false,
+        "chronology": "WWII_TORPEDO_COMPARISON_MK18_2_AND_MK16_1",
+        "source_origin": "NHHC_COLLECTION"
+      },
+      "rights": {
+        "primary_policy": "https://www.history.navy.mil/about-us/instructions-and-forms/obtain-duplications-of-records-and-photos.html",
+        "nara_policy": "https://www.archives.gov/research/still-pictures/permissions",
+        "item_specific_clearance": false,
+        "attribution_verified": false,
+        "license": null
+      },
+      "release": {
+        "download": false,
+        "cache": false,
+        "wordpress_upload": false,
+        "post_block_rewrite": false,
+        "public_use": false
+      }
+    },
+    {
+      "slot": "274:4",
+      "post_id": 274,
+      "post_url": "https://finalvestige.com/2026/08/19/twenty-four-feet-from-air-uss-tang/",
+      "post_modified": "2026-11-02T21:39:50",
+      "stored_src": "https://www.history.navy.mil/bin/imageDownload?image=%2Fcontent%2Fdam%2Fmuseums%2Fnmusn%2FPhotography%2FNARA+II%2F80-G%2F80-G-300000%2F80-G-344565.tif&rendition=cq5dam.web.1280.1280.jpeg",
+      "live_wp_raw_src_verified": true,
+      "external_web_retriever": {
+        "checked_utc_date": "2026-11-09",
+        "method": "WEB_RETRIEVER_NOT_GUEST",
+        "outcome": "TOOL_WRAPPER_502",
+        "wrapper_code": 502,
+        "actual_origin_http": null,
+        "actual_guest_http": null,
+        "guest_decoded_px": null,
+        "guest_encoded_transfer_bytes": null,
+        "visitor_broken": null
+      },
+      "catalog": {
+        "accession": "80-G-344565",
+        "url": "https://www.history.navy.mil/content/history/museums/nmusn/explore/photography/wwii/wwii-pacific/japanese-surrender/allied-prisoners-of-war/80-g-344565.html",
+        "authority": "NAVAL_HISTORY_AND_HERITAGE_COMMAND",
+        "medium_download_listed_kb": 343,
+        "high_tiff_catalog_px": [
+          1464,
+          1938
+        ],
+        "conditional_960_from_catalog_high_px": [
+          960,
+          1271
+        ],
+        "actual_medium_jpeg_px": null,
+        "exact_source_binary_verified": false,
+        "chronology": "SEP_24_1945_RELEASED_O_KANE",
+        "source_origin": "US_NAVY_PHOTO_NARA"
+      },
+      "rights": {
+        "primary_policy": "https://www.history.navy.mil/about-us/instructions-and-forms/obtain-duplications-of-records-and-photos.html",
+        "nara_policy": "https://www.archives.gov/research/still-pictures/permissions",
+        "item_specific_clearance": false,
+        "attribution_verified": false,
+        "license": null
+      },
+      "release": {
+        "download": false,
+        "cache": false,
+        "wordpress_upload": false,
+        "post_block_rewrite": false,
+        "public_use": false
+      }
+    },
+    {
+      "slot": "370:0",
+      "post_id": 370,
+      "post_url": "https://finalvestige.com/2026/08/19/the-lines-were-in-the-fire-west-loch/",
+      "post_modified": "2026-11-02T21:40:07",
+      "stored_src": "https://www.history.navy.mil/bin/imageDownload?image=%2Fcontent%2Fdam%2Fnhhc%2Four-collections%2Fphotography%2Fimages%2F80-G-270000%2F80-G-276907&rendition=cq5dam.web.1280.1280.jpeg",
+      "live_wp_raw_src_verified": true,
+      "external_web_retriever": {
+        "checked_utc_date": "2026-11-09",
+        "method": "WEB_RETRIEVER_NOT_GUEST",
+        "outcome": "TOOL_WRAPPER_502",
+        "wrapper_code": 502,
+        "actual_origin_http": null,
+        "actual_guest_http": null,
+        "guest_decoded_px": null,
+        "guest_encoded_transfer_bytes": null,
+        "visitor_broken": null
+      },
+      "catalog": {
+        "accession": "80-G-276907",
+        "url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nara-series/80-g/80-G-270000/80-G-276907.html",
+        "authority": "NAVAL_HISTORY_AND_HERITAGE_COMMAND",
+        "medium_download_listed_kb": 239,
+        "high_tiff_catalog_px": [
+          4320,
+          4530
+        ],
+        "conditional_960_from_catalog_high_px": [
+          960,
+          1007
+        ],
+        "actual_medium_jpeg_px": null,
+        "exact_source_binary_verified": false,
+        "chronology": "MAY_21_1944_WEST_LOCH",
+        "source_origin": "US_NAVY_PHOTO_NARA"
+      },
+      "rights": {
+        "primary_policy": "https://www.history.navy.mil/about-us/instructions-and-forms/obtain-duplications-of-records-and-photos.html",
+        "nara_policy": "https://www.archives.gov/research/still-pictures/permissions",
+        "item_specific_clearance": false,
+        "attribution_verified": false,
+        "license": null
+      },
+      "release": {
+        "download": false,
+        "cache": false,
+        "wordpress_upload": false,
+        "post_block_rewrite": false,
+        "public_use": false
+      }
+    },
+    {
+      "slot": "370:1",
+      "post_id": 370,
+      "post_url": "https://finalvestige.com/2026/08/19/the-lines-were-in-the-fire-west-loch/",
+      "post_modified": "2026-11-02T21:40:07",
+      "stored_src": "https://www.history.navy.mil/bin/imageDownload?image=%2Fcontent%2Fdam%2Fnhhc%2Four-collections%2Fphotography%2Fimages%2F80-G-200000%2F80-G-202485&rendition=cq5dam.web.1280.1280.jpeg",
+      "live_wp_raw_src_verified": true,
+      "external_web_retriever": {
+        "checked_utc_date": "2026-11-09",
+        "method": "WEB_RETRIEVER_NOT_GUEST",
+        "outcome": "TOOL_INACCESSIBLE",
+        "wrapper_code": null,
+        "actual_origin_http": null,
+        "actual_guest_http": null,
+        "guest_decoded_px": null,
+        "guest_encoded_transfer_bytes": null,
+        "visitor_broken": null
+      },
+      "catalog": {
+        "accession": "80-G-202485",
+        "url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/80-G-202000/80-G-202485.html",
+        "authority": "NAVAL_HISTORY_AND_HERITAGE_COMMAND",
+        "medium_download_listed_kb": 214,
+        "high_tiff_catalog_px": [
+          5860,
+          4890
+        ],
+        "conditional_960_from_catalog_high_px": [
+          960,
+          801
+        ],
+        "actual_medium_jpeg_px": null,
+        "exact_source_binary_verified": false,
+        "chronology": "NOV_6_1943_BOUGAINVILLE_CONTEXT_NOT_WEST_LOCH",
+        "source_origin": "US_NAVY_PHOTO_NARA"
+      },
+      "rights": {
+        "primary_policy": "https://www.history.navy.mil/about-us/instructions-and-forms/obtain-duplications-of-records-and-photos.html",
+        "nara_policy": "https://www.archives.gov/research/still-pictures/permissions",
+        "item_specific_clearance": false,
+        "attribution_verified": false,
+        "license": null
+      },
+      "release": {
+        "download": false,
+        "cache": false,
+        "wordpress_upload": false,
+        "post_block_rewrite": false,
+        "public_use": false
+      }
+    },
+    {
+      "slot": "370:3",
+      "post_id": 370,
+      "post_url": "https://finalvestige.com/2026/08/19/the-lines-were-in-the-fire-west-loch/",
+      "post_modified": "2026-11-02T21:40:07",
+      "stored_src": "https://www.history.navy.mil/bin/imageDownload?image=%2Fcontent%2Fdam%2Fnhhc%2Four-collections%2Fphotography%2Fimages%2F80-G-270000%2F80-G-276940&rendition=cq5dam.web.1280.1280.jpeg",
+      "live_wp_raw_src_verified": true,
+      "external_web_retriever": {
+        "checked_utc_date": "2026-11-09",
+        "method": "WEB_RETRIEVER_NOT_GUEST",
+        "outcome": "TOOL_WRAPPER_502",
+        "wrapper_code": 502,
+        "actual_origin_http": null,
+        "actual_guest_http": null,
+        "guest_decoded_px": null,
+        "guest_encoded_transfer_bytes": null,
+        "visitor_broken": null
+      },
+      "catalog": {
+        "accession": "80-G-276940",
+        "url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nara-series/80-g/80-G-270000/80-G-276940.html",
+        "authority": "NAVAL_HISTORY_AND_HERITAGE_COMMAND",
+        "medium_download_listed_kb": 237,
+        "high_tiff_catalog_px": [
+          6254,
+          5002
+        ],
+        "conditional_960_from_catalog_high_px": [
+          960,
+          768
+        ],
+        "actual_medium_jpeg_px": null,
+        "exact_source_binary_verified": false,
+        "chronology": "MAY_22_1944_WEST_LOCH_AFTERMATH",
+        "source_origin": "US_NAVY_PHOTO_NARA"
+      },
+      "rights": {
+        "primary_policy": "https://www.history.navy.mil/about-us/instructions-and-forms/obtain-duplications-of-records-and-photos.html",
+        "nara_policy": "https://www.archives.gov/research/still-pictures/permissions",
+        "item_specific_clearance": false,
+        "attribution_verified": false,
+        "license": null
+      },
+      "release": {
+        "download": false,
+        "cache": false,
+        "wordpress_upload": false,
+        "post_block_rewrite": false,
+        "public_use": false
+      }
+    },
+    {
+      "slot": "370:4",
+      "post_id": 370,
+      "post_url": "https://finalvestige.com/2026/08/19/the-lines-were-in-the-fire-west-loch/",
+      "post_modified": "2026-11-02T21:40:07",
+      "stored_src": "https://www.history.navy.mil/bin/imageDownload?image=%2Fcontent%2Fdam%2Fnhhc%2Four-collections%2Fphotography%2Fimages%2FSC-400000%2FSC-427947&rendition=cq5dam.web.1280.1280.jpeg",
+      "live_wp_raw_src_verified": true,
+      "external_web_retriever": {
+        "checked_utc_date": "2026-11-09",
+        "method": "WEB_RETRIEVER_NOT_GUEST",
+        "outcome": "TOOL_INACCESSIBLE",
+        "wrapper_code": null,
+        "actual_origin_http": null,
+        "actual_guest_http": null,
+        "guest_decoded_px": null,
+        "guest_encoded_transfer_bytes": null,
+        "visitor_broken": null
+      },
+      "catalog": {
+        "accession": "SC-427947",
+        "url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nara-series/sc-series/SC-400000/SC-427947.html",
+        "authority": "NAVAL_HISTORY_AND_HERITAGE_COMMAND",
+        "medium_download_listed_kb": 256,
+        "high_tiff_catalog_px": [
+          6084,
+          4942
+        ],
+        "conditional_960_from_catalog_high_px": [
+          960,
+          780
+        ],
+        "actual_medium_jpeg_px": null,
+        "exact_source_binary_verified": false,
+        "chronology": "MAY_22_1944_WEST_LOCH_AFTERMATH",
+        "source_origin": "ARMY_SIGNAL_CORPS_NARA"
+      },
+      "rights": {
+        "primary_policy": "https://www.history.navy.mil/about-us/instructions-and-forms/obtain-duplications-of-records-and-photos.html",
+        "nara_policy": "https://www.archives.gov/research/still-pictures/permissions",
+        "item_specific_clearance": false,
+        "attribution_verified": false,
+        "license": null
+      },
+      "release": {
+        "download": false,
+        "cache": false,
+        "wordpress_upload": false,
+        "post_block_rewrite": false,
+        "public_use": false
+      }
+    }
+  ],
+  "known_limits": {
+    "source_urls_live_confirmed": 7,
+    "real_browser_status_count": 0,
+    "rehost_authorized_count": 0,
+    "catalog_same_binary_confirmed_count": 0,
+    "web_wrapper_502": 5,
+    "web_tool_inaccessible": 2,
+    "known_catalog_high_res_dimensions": 7,
+    "medium_jpeg_native_sizes_confirmed": 0,
+    "actual_76_pct_wire_savings_proven": false,
+    "reported_42_broken_guest_verified": false
+  },
+  "qa_next": "Collect currentSrc, network final HTTP/MIME, cold-cache provenance, decoded dimensions, bytes and screenshots in existing #154 collector, then item-specific rights/editorial approval"
+}
