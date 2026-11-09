@@ -13,7 +13,9 @@ EVENT={"provider":"Jetpack","authenticated_provider":True,"current_email_status"
        "deduplicated":True,"consent_for_dispatch":True,
        "attribution_evidence":"first_party_verified_source", "opaque_transition_id":"ab23ac1234227a8f"}
 PAID={"independently_verified_paid":True,"settled":True,"attributed_qualified_session":True,
-      "gross":"30.00","refunds":"0.00","fees":"2.40"}
+      "gross":"30.00","refunds":"0.00","fees":"2.40",
+      "currency":"USD","report_authoritative":True,"opaque_order_ref":"order_0001",
+      "partner_settlement_report_ref":"settled_batch_00001"}
 class CountTests(unittest.TestCase):
     def test_nonadditive(self):
         x=diagnose_counts(COUNTERS,FOLLOWERS)
@@ -41,6 +43,7 @@ class SignupTests(unittest.TestCase):
     def test_no_consent(self):self.assertFalse(confirmed_signup({**EVENT,"consent_for_dispatch":False}))
     def test_unlinked_utm(self):self.assertFalse(confirmed_signup({**EVENT,"attribution_evidence":"utm_only"}))
     def test_pii_fields_blocked(self):self.assertFalse(confirmed_signup({**EVENT,"email":"demo@example.org"}))
+    def test_camelcase_email_key_blocked(self):self.assertFalse(confirmed_signup({**EVENT,"emailAddress":"demo@example.org"}))
     def test_pii_in_token_blocked(self):self.assertFalse(confirmed_signup({**EVENT,"opaque_transition_id":"test@example.com"}))
 class ReleaseTests(unittest.TestCase):
     def test_every_issue_held(self):
@@ -61,5 +64,9 @@ class MoneyTests(unittest.TestCase):
     def test_no_settlements(self):self.assertIsNone(realized_revenue_per_1000(100,[]))
     def test_refunds_subtracted(self):self.assertEqual(realized_revenue_per_1000(100,[{**PAID,"refunds":"5.00"}]),Decimal("226.00"))
     def test_negative_net_allowed(self):self.assertEqual(realized_revenue_per_1000(100,[{**PAID,"refunds":"35.00"}]),Decimal("-74.00"))
+    def test_duplicate_order_double_count_blocked(self):self.assertIsNone(realized_revenue_per_1000(100,[PAID,PAID]))
+    def test_no_settlement_report(self):self.assertIsNone(realized_revenue_per_1000(100,[{**PAID,"report_authoritative":False}]))
+    def test_no_order_ref(self):self.assertIsNone(realized_revenue_per_1000(100,[{**PAID,"opaque_order_ref":""}]))
+    def test_unsupported_currency(self):self.assertIsNone(realized_revenue_per_1000(100,[{**PAID,"currency":"EUR"}]))
     def test_nan_rejected(self):self.assertIsNone(realized_revenue_per_1000(100,[{**PAID,"gross":"NaN"}]))
 if __name__=="__main__":unittest.main()
