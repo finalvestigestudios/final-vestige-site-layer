@@ -10,6 +10,16 @@ const EXPECTED={
   "367:7": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Palomares_barrels.jpg?width=1280",
   "367:8": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Recovered_Mk_28RI_bomb.JPG?width=1280"
 };
+const CATALOGS={
+  "367:1": "https://commons.wikimedia.org/wiki/File:Operation_Chrome_Dome_route.jpg",
+  "367:2": "https://commons.wikimedia.org/wiki/File:USS_Skill_(MSO-471)_operating_off_the_coast_of_Spain,_in_February_1966_(428-NPC-36556).jpg",
+  "367:3": "https://commons.wikimedia.org/wiki/File:Zoeken_naar_H_bom_in_Spanje,_de_Alvin_wordt_te_water_gelaten,_Bestanddeelnr_918-8161.jpg",
+  "367:4": "https://navalunderseamuseum.org/petrel-helmet/",
+  "367:5": "https://commons.wikimedia.org/wiki/File:428-GX-_USN_118930_(26941557635).jpg",
+  "367:6": "https://commons.wikimedia.org/wiki/File:1966_Palomares_B-52_crash_-_recovered_H-bomb.jpg",
+  "367:7": "https://commons.wikimedia.org/wiki/File:Palomares_barrels.jpg",
+  "367:8": "https://commons.wikimedia.org/wiki/File:Recovered_Mk_28RI_bomb.JPG"
+};
 const RIGHTS={
   "367:1": "CC_BY_SA_2_5",
   "367:2": "US_NAVY_PD_CLAIM_NARA_85011",
@@ -70,7 +80,7 @@ function validate(a){
     const k=r.slot;bad(!seen.has(k),'duplicate '+k);seen.add(k);
     bad(Object.hasOwn(EXPECTED,k),'unknown slot '+k);
     bad(r.post_id===367&&r.exact_live_wp_src===EXPECTED[k],'wrong live src '+k);
-    bad(typeof r.source_catalog==='string'&&r.source_catalog.startsWith('https://'),'catalog '+k);
+    bad(r.source_catalog===CATALOGS[k],'catalog identity '+k);
     bad(r.rights_classification===RIGHTS[k]&&typeof r.rights_observation==='string'&&r.rights_observation.length>25,'rights '+k);
     bad(r.source_identity_relation==='SAME_ARCHIVAL_FILE_TITLE_BUT_RENDERED_BINARY_UNVERIFIED','identity '+k);
     const expected=DIMENSIONS[k],actual=r.original_catalog_px,out=r.conditional_max_width_960_px;
