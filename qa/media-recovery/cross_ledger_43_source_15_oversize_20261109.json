@@ -1,0 +1,2232 @@
+{
+  "schema": "fv-cross-ledger-image-triage-v1",
+  "assembled_utc_date": "2026-11-09",
+  "scope": "OFFLINE JOIN OF PREVIOUSLY COMMITTED SOURCE AUDITS. NOT NEW BROWSER OR LIVE ORIGIN STATUS.",
+  "source_groups": [
+    {
+      "batch": "p0",
+      "n": 6,
+      "source_path": "qa/media-recovery/p0_six_live_source_retriever_20261108.json",
+      "source_blob_sha": "04df35ce25f99626c7b754c1d7eed0f3f006e3f4",
+      "source_ref": "95b00b8d3e49b5e6edc0206efc625d7b9d258715"
+    },
+    {
+      "batch": "florida",
+      "n": 7,
+      "source_path": "qa/media-recovery/florida_432_seven_web_redirect_20261109.json",
+      "source_blob_sha": "c0ec93d75ff6c7d1b655ea1ea1b42bc9c429106f",
+      "source_ref": "9cbadf738720d1b0bd9e1630a6fbb7af574b68d2"
+    },
+    {
+      "batch": "navy",
+      "n": 8,
+      "source_path": "qa/media-recovery/navy_8_live_pueblo_honda_retriever_20261108.json",
+      "source_blob_sha": "0fe22f816dce9776d447b3ddfc7d7aeeb75ccad0",
+      "source_ref": "65c214a1ae6e43534090584d56bbd783251e315c"
+    },
+    {
+      "batch": "palomares",
+      "n": 8,
+      "source_path": "qa/media-recovery/palomares_367_eight_source_20261108.json",
+      "source_blob_sha": "cb9f50e2410a8773bf282732e12cac5fe77251cf",
+      "source_ref": "cf7f88d5897e2f8af134b6b2b19bee50a367e006"
+    },
+    {
+      "batch": "archimedes",
+      "n": 10,
+      "source_path": "qa/media-recovery/archimedes_268_ten_sources_20261108.json",
+      "source_blob_sha": "f3c9a13c290c15d3b21f8a75656ed807dab058cc",
+      "source_ref": "2fb9bcd09120b26897546402bbcb97bea97b3b49"
+    },
+    {
+      "batch": "tmi",
+      "n": 4,
+      "source_path": "qa/media-recovery/tmi_285_four_offsite_20261108.json",
+      "source_blob_sha": "3b24bedaca914217c02e4d152d4f0822bbeb90ec",
+      "source_ref": "d54247a5592350097506307e7486907b29eb37e6"
+    }
+  ],
+  "historical_inventory": {
+    "posts": 61,
+    "img_tags": 355,
+    "reported_broken_42_guest_confirmed": false
+  },
+  "expanded_inventory": {
+    "posts": 66,
+    "img_tags": 361,
+    "mixed_date_source_census": true
+  },
+  "counts": {
+    "reviewed_sources": 43,
+    "p0": 6,
+    "p1": 37,
+    "verified_guest_broken": 0,
+    "verified_guest_loaded": 0,
+    "actual_guest_image_requests": 0,
+    "source_statuses_from_browser": 0,
+    "oversized_originals": 15,
+    "oversized_original_stored_bytes": 47096779,
+    "oversized_inline_matches": 11,
+    "oversized_inline_bytes": 38480915,
+    "proposed_76pct_wire_saving_proven": false
+  },
+  "statistics": {
+    "shared_florida_memory_redirect_wrapper_rows": 7,
+    "web_wrapper_4xx_5xx_rows": 20,
+    "known_catalog_rows": 38,
+    "conditional_960px_row_count": 15,
+    "oversized_no_subsizes_inline_rows": 5
+  },
+  "source_rows": [
+    {
+      "slot": "285:5",
+      "post_id": 285,
+      "batch": "p0",
+      "priority": "P0",
+      "stored_source_url": "https://images.saymedia-content.com/.image/ar_16:9,c_fill,cs_srgb,fl_progressive,q_auto:eco,w_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg",
+      "source_scope": "LIVE_WP_EDITOR_OR_PRIOR_LEDGER_AS_DESCRIBED",
+      "retriever": {
+        "method": "EXTERNAL_WEB_RETRIEVER_NOT_GUEST",
+        "result": "NOT_FOUND",
+        "wrapper_code": 404,
+        "origin_http": null,
+        "guest_http": null,
+        "guest_decoded_px": null,
+        "guest_wire_bytes": null,
+        "visitor_broken": null
+      },
+      "candidate": {
+        "catalog_url": "https://commons.wikimedia.org/wiki/File:Three_mile_island_062010.jpg",
+        "catalog_authority": "COMMONS_CATALOG_RECORD",
+        "rights_observation": "PD_SELF",
+        "native_px": [
+          819,
+          614
+        ],
+        "conditional_960px": [
+          819,
+          614
+        ],
+        "exact_binary_match": false,
+        "item_rights_cleared": false,
+        "visual_signoff": false
+      },
+      "release": {
+        "external_binary_download": false,
+        "cache": false,
+        "wordpress_media_upload": false,
+        "post_rewrite": false,
+        "homepage_change": false
+      },
+      "source_ledger": {
+        "path": "qa/media-recovery/p0_six_live_source_retriever_20261108.json",
+        "blob_sha": "04df35ce25f99626c7b754c1d7eed0f3f006e3f4"
+      }
+    },
+    {
+      "slot": "285:2",
+      "post_id": 285,
+      "batch": "p0",
+      "priority": "P0",
+      "stored_source_url": "https://blog.ucsusa.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+      "source_scope": "LIVE_WP_EDITOR_OR_PRIOR_LEDGER_AS_DESCRIBED",
+      "retriever": {
+        "method": "EXTERNAL_WEB_RETRIEVER_NOT_GUEST",
+        "result": "REDIRECT_TARGET_INACCESSIBLE",
+        "wrapper_code": 500,
+        "origin_http": null,
+        "guest_http": null,
+        "guest_decoded_px": null,
+        "guest_wire_bytes": null,
+        "visitor_broken": null
+      },
+      "candidate": {
+        "catalog_url": "https://blog.ucs.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+        "catalog_authority": "THIRD_PARTY_OR_PUBLISHER_REFERENCE",
+        "rights_observation": "UNKNOWN",
+        "native_px": null,
+        "conditional_960px": null,
+        "exact_binary_match": false,
+        "item_rights_cleared": false,
+        "visual_signoff": false
+      },
+      "release": {
+        "external_binary_download": false,
+        "cache": false,
+        "wordpress_media_upload": false,
+        "post_rewrite": false,
+        "homepage_change": false
+      },
+      "source_ledger": {
+        "path": "qa/media-recovery/p0_six_live_source_retriever_20261108.json",
+        "blob_sha": "04df35ce25f99626c7b754c1d7eed0f3f006e3f4"
+      }
+    },
+    {
+      "slot": "287:5",
+      "post_id": 287,
+      "batch": "p0",
+      "priority": "P0",
+      "stored_source_url": "https://stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+      "source_scope": "LIVE_WP_EDITOR_OR_PRIOR_LEDGER_AS_DESCRIBED",
+      "retriever": {
+        "method": "EXTERNAL_WEB_RETRIEVER_NOT_GUEST",
+        "result": "NOT_FOUND",
+        "wrapper_code": 404,
+        "origin_http": null,
+        "guest_http": null,
+        "guest_decoded_px": null,
+        "guest_wire_bytes": null,
+        "visitor_broken": null
+      },
+      "candidate": {
+        "catalog_url": "https://media.stpetecatalyst.com/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+        "catalog_authority": "THIRD_PARTY_OR_PUBLISHER_REFERENCE",
+        "rights_observation": "RIGHTS_UNVERIFIED",
+        "native_px": null,
+        "conditional_960px": null,
+        "exact_binary_match": false,
+        "item_rights_cleared": false,
+        "visual_signoff": false
+      },
+      "release": {
+        "external_binary_download": false,
+        "cache": false,
+        "wordpress_media_upload": false,
+        "post_rewrite": false,
+        "homepage_change": false
+      },
+      "source_ledger": {
+        "path": "qa/media-recovery/p0_six_live_source_retriever_20261108.json",
+        "blob_sha": "04df35ce25f99626c7b754c1d7eed0f3f006e3f4"
+      }
+    },
+    {
+      "slot": "418:1",
+      "post_id": 418,
+      "batch": "p0",
+      "priority": "P0",
+      "stored_source_url": "https://media.defense.gov/2021/Mar/30/2002610812/1920/1080/0/210330-G-DE713-0002.JPG",
+      "source_scope": "LIVE_WP_EDITOR_OR_PRIOR_LEDGER_AS_DESCRIBED",
+      "retriever": {
+        "method": "EXTERNAL_WEB_RETRIEVER_NOT_GUEST",
+        "result": "FORBIDDEN",
+        "wrapper_code": 403,
+        "origin_http": null,
+        "guest_http": null,
+        "guest_decoded_px": null,
+        "guest_wire_bytes": null,
+        "visitor_broken": null
+      },
+      "candidate": {
+        "catalog_url": "https://www.history.uscg.mil/Our-Collections/Photos/igphoto/2002905913/",
+        "catalog_authority": "OFFICIAL_PRIMARY_CATALOG",
+        "rights_observation": "USCG_PUBLIC_DOMAIN_RELEASE_CATALOG",
+        "native_px": null,
+        "conditional_960px": null,
+        "exact_binary_match": false,
+        "item_rights_cleared": false,
+        "visual_signoff": false
+      },
+      "release": {
+        "external_binary_download": false,
+        "cache": false,
+        "wordpress_media_upload": false,
+        "post_rewrite": false,
+        "homepage_change": false
+      },
+      "source_ledger": {
+        "path": "qa/media-recovery/p0_six_live_source_retriever_20261108.json",
+        "blob_sha": "04df35ce25f99626c7b754c1d7eed0f3f006e3f4"
+      }
+    },
+    {
+      "slot": "418:2",
+      "post_id": 418,
+      "batch": "p0",
+      "priority": "P0",
+      "stored_source_url": "https://www.history.uscg.mil/Portals/6/5_%20Scotch_Cap_debris2_1946.jpg",
+      "source_scope": "LIVE_WP_EDITOR_OR_PRIOR_LEDGER_AS_DESCRIBED",
+      "retriever": {
+        "method": "EXTERNAL_WEB_RETRIEVER_NOT_GUEST",
+        "result": "FORBIDDEN",
+        "wrapper_code": 403,
+        "origin_http": null,
+        "guest_http": null,
+        "guest_decoded_px": null,
+        "guest_wire_bytes": null,
+        "visitor_broken": null
+      },
+      "candidate": {
+        "catalog_url": "https://www.lighthousefriends.com/Scotch_Cap_debris2_1946.jpg",
+        "catalog_authority": "THIRD_PARTY_OR_PUBLISHER_REFERENCE",
+        "rights_observation": "RIGHTS_UNVERIFIED",
+        "native_px": null,
+        "conditional_960px": null,
+        "exact_binary_match": false,
+        "item_rights_cleared": false,
+        "visual_signoff": false
+      },
+      "release": {
+        "external_binary_download": false,
+        "cache": false,
+        "wordpress_media_upload": false,
+        "post_rewrite": false,
+        "homepage_change": false
+      },
+      "source_ledger": {
+        "path": "qa/media-recovery/p0_six_live_source_retriever_20261108.json",
+        "blob_sha": "04df35ce25f99626c7b754c1d7eed0f3f006e3f4"
+      }
+    },
+    {
+      "slot": "407:1",
+      "post_id": 407,
+      "batch": "p0",
+      "priority": "P0",
+      "stored_source_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/img7535.jpg",
+      "source_scope": "LIVE_WP_EDITOR_OR_PRIOR_LEDGER_AS_DESCRIBED",
+      "retriever": {
+        "method": "EXTERNAL_WEB_RETRIEVER_NOT_GUEST",
+        "result": "UNSUPPORTED_OCTET_STREAM",
+        "wrapper_code": 400,
+        "origin_http": null,
+        "guest_http": null,
+        "guest_decoded_px": null,
+        "guest_wire_bytes": null,
+        "visitor_broken": null
+      },
+      "candidate": {
+        "catalog_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/thumbnails/image/img7535.jpg",
+        "catalog_authority": "THIRD_PARTY_OR_PUBLISHER_REFERENCE",
+        "rights_observation": "USGS_PUBLIC_DOMAIN_CATALOG",
+        "native_px": null,
+        "conditional_960px": null,
+        "exact_binary_match": false,
+        "item_rights_cleared": false,
+        "visual_signoff": false
+      },
+      "release": {
+        "external_binary_download": false,
+        "cache": false,
+        "wordpress_media_upload": false,
+        "post_rewrite": false,
+        "homepage_change": false
+      },
+      "source_ledger": {
+        "path": "qa/media-recovery/p0_six_live_source_retriever_20261108.json",
+        "blob_sha": "04df35ce25f99626c7b754c1d7eed0f3f006e3f4"
+      }
+    },
+    {
+      "slot": "432:0",
+      "post_id": 432,
+      "batch": "florida",
+      "priority": "P1",
+      "stored_source_url": "https://www.floridamemory.com/fpc/prints/pr04493.jpg",
+      "source_scope": "LIVE_WP_EDITOR_OR_PRIOR_LEDGER_AS_DESCRIBED",
+      "retriever": {
+        "method": "EXTERNAL_WEB_RETRIEVER_NOT_GUEST",
+        "result": "REDIRECT_TARGET_INACCESSIBLE",
+        "wrapper_code": 500,
+        "origin_http": null,
+        "guest_http": null,
+        "guest_decoded_px": null,
+        "guest_wire_bytes": null,
+        "visitor_broken": null
+      },
+      "candidate": {
+        "catalog_url": "https://floridamemory.com/items/show/4144",
+        "catalog_authority": "OFFICIAL_PRIMARY_CATALOG",
+        "rights_observation": "ITEM_RIGHTS_NOT_ESTABLISHED",
+        "native_px": null,
+        "conditional_960px": null,
+        "exact_binary_match": false,
+        "item_rights_cleared": false,
+        "visual_signoff": false
+      },
+      "release": {
+        "external_binary_download": false,
+        "cache": false,
+        "wordpress_media_upload": false,
+        "post_rewrite": false,
+        "homepage_change": false
+      },
+      "source_ledger": {
+        "path": "qa/media-recovery/florida_432_seven_web_redirect_20261109.json",
+        "blob_sha": "c0ec93d75ff6c7d1b655ea1ea1b42bc9c429106f"
+      }
+    },
+    {
+      "slot": "432:1",
+      "post_id": 432,
+      "batch": "florida",
+      "priority": "P1",
+      "stored_source_url": "https://www.floridamemory.com/fpc/reference/rc17068.jpg",
+      "source_scope": "LIVE_WP_EDITOR_OR_PRIOR_LEDGER_AS_DESCRIBED",
+      "retriever": {
+        "method": "EXTERNAL_WEB_RETRIEVER_NOT_GUEST",
+        "result": "REDIRECT_TARGET_INACCESSIBLE",
+        "wrapper_code": 500,
+        "origin_http": null,
+        "guest_http": null,
+        "guest_decoded_px": null,
+        "guest_wire_bytes": null,
+        "visitor_broken": null
+      },
+      "candidate": {
+        "catalog_url": "https://floridamemory.com/items/show/38362",
+        "catalog_authority": "OFFICIAL_PRIMARY_CATALOG",
+        "rights_observation": "ITEM_RIGHTS_NOT_ESTABLISHED",
+        "native_px": null,
+        "conditional_960px": null,
+        "exact_binary_match": false,
+        "item_rights_cleared": false,
+        "visual_signoff": false
+      },
+      "release": {
+        "external_binary_download": false,
+        "cache": false,
+        "wordpress_media_upload": false,
+        "post_rewrite": false,
+        "homepage_change": false
+      },
+      "source_ledger": {
+        "path": "qa/media-recovery/florida_432_seven_web_redirect_20261109.json",
+        "blob_sha": "c0ec93d75ff6c7d1b655ea1ea1b42bc9c429106f"
+      }
+    },
+    {
+      "slot": "432:2",
+      "post_id": 432,
+      "batch": "florida",
+      "priority": "P1",
+      "stored_source_url": "https://www.floridamemory.com/fpc/reference/rc10673.jpg",
+      "source_scope": "LIVE_WP_EDITOR_OR_PRIOR_LEDGER_AS_DESCRIBED",
+      "retriever": {
+        "method": "EXTERNAL_WEB_RETRIEVER_NOT_GUEST",
+        "result": "REDIRECT_TARGET_INACCESSIBLE",
+        "wrapper_code": 500,
+        "origin_http": null,
+        "guest_http": null,
+        "guest_decoded_px": null,
+        "guest_wire_bytes": null,
+        "visitor_broken": null
+      },
+      "candidate": {
+        "catalog_url": "https://floridamemory.com/items/show/33289",
+        "catalog_authority": "OFFICIAL_PRIMARY_CATALOG",
+        "rights_observation": "ITEM_RIGHTS_NOT_ESTABLISHED",
+        "native_px": null,
+        "conditional_960px": null,
+        "exact_binary_match": false,
+        "item_rights_cleared": false,
+        "visual_signoff": false
+      },
+      "release": {
+        "external_binary_download": false,
+        "cache": false,
+        "wordpress_media_upload": false,
+        "post_rewrite": false,
+        "homepage_change": false
+      },
+      "source_ledger": {
+        "path": "qa/media-recovery/florida_432_seven_web_redirect_20261109.json",
+        "blob_sha": "c0ec93d75ff6c7d1b655ea1ea1b42bc9c429106f"
+      }
+    },
+    {
+      "slot": "432:3",
+      "post_id": 432,
+      "batch": "florida",
+      "priority": "P1",
+      "stored_source_url": "https://www.floridamemory.com/fpc/general/n031889.jpg",
+      "source_scope": "LIVE_WP_EDITOR_OR_PRIOR_LEDGER_AS_DESCRIBED",
+      "retriever": {
+        "method": "EXTERNAL_WEB_RETRIEVER_NOT_GUEST",
+        "result": "REDIRECT_TARGET_INACCESSIBLE",
+        "wrapper_code": 500,
+        "origin_http": null,
+        "guest_http": null,
+        "guest_decoded_px": null,
+        "guest_wire_bytes": null,
+        "visitor_broken": null
+      },
+      "candidate": {
+        "catalog_url": "https://floridamemory.com/items/show/141398",
+        "catalog_authority": "OFFICIAL_PRIMARY_CATALOG",
+        "rights_observation": "ITEM_RIGHTS_NOT_ESTABLISHED",
+        "native_px": null,
+        "conditional_960px": null,
+        "exact_binary_match": false,
+        "item_rights_cleared": false,
+        "visual_signoff": false
+      },
+      "release": {
+        "external_binary_download": false,
+        "cache": false,
+        "wordpress_media_upload": false,
+        "post_rewrite": false,
+        "homepage_change": false
+      },
+      "source_ledger": {
+        "path": "qa/media-recovery/florida_432_seven_web_redirect_20261109.json",
+        "blob_sha": "c0ec93d75ff6c7d1b655ea1ea1b42bc9c429106f"
+      }
+    },
+    {
+      "slot": "432:4",
+      "post_id": 432,
+      "batch": "florida",
+      "priority": "P1",
+      "stored_source_url": "https://www.floridamemory.com/fpc/reference/rc04344.jpg",
+      "source_scope": "LIVE_WP_EDITOR_OR_PRIOR_LEDGER_AS_DESCRIBED",
+      "retriever": {
+        "method": "EXTERNAL_WEB_RETRIEVER_NOT_GUEST",
+        "result": "REDIRECT_TARGET_INACCESSIBLE",
+        "wrapper_code": 500,
+        "origin_http": null,
+        "guest_http": null,
+        "guest_decoded_px": null,
+        "guest_wire_bytes": null,
+        "visitor_broken": null
+      },
+      "candidate": {
+        "catalog_url": "https://floridamemory.com/items/show/27848",
+        "catalog_authority": "OFFICIAL_PRIMARY_CATALOG",
+        "rights_observation": "ITEM_RIGHTS_NOT_ESTABLISHED",
+        "native_px": null,
+        "conditional_960px": null,
+        "exact_binary_match": false,
+        "item_rights_cleared": false,
+        "visual_signoff": false
+      },
+      "release": {
+        "external_binary_download": false,
+        "cache": false,
+        "wordpress_media_upload": false,
+        "post_rewrite": false,
+        "homepage_change": false
+      },
+      "source_ledger": {
+        "path": "qa/media-recovery/florida_432_seven_web_redirect_20261109.json",
+        "blob_sha": "c0ec93d75ff6c7d1b655ea1ea1b42bc9c429106f"
+      }
+    },
+    {
+      "slot": "432:5",
+      "post_id": 432,
+      "batch": "florida",
+      "priority": "P1",
+      "stored_source_url": "https://www.floridamemory.com/fpc/reference/rc07668.jpg",
+      "source_scope": "LIVE_WP_EDITOR_OR_PRIOR_LEDGER_AS_DESCRIBED",
+      "retriever": {
+        "method": "EXTERNAL_WEB_RETRIEVER_NOT_GUEST",
+        "result": "REDIRECT_TARGET_INACCESSIBLE",
+        "wrapper_code": 500,
+        "origin_http": null,
+        "guest_http": null,
+        "guest_decoded_px": null,
+        "guest_wire_bytes": null,
+        "visitor_broken": null
+      },
+      "candidate": {
+        "catalog_url": "https://floridamemory.com/items/show/30741",
+        "catalog_authority": "OFFICIAL_PRIMARY_CATALOG",
+        "rights_observation": "ITEM_RIGHTS_NOT_ESTABLISHED",
+        "native_px": null,
+        "conditional_960px": null,
+        "exact_binary_match": false,
+        "item_rights_cleared": false,
+        "visual_signoff": false
+      },
+      "release": {
+        "external_binary_download": false,
+        "cache": false,
+        "wordpress_media_upload": false,
+        "post_rewrite": false,
+        "homepage_change": false
+      },
+      "source_ledger": {
+        "path": "qa/media-recovery/florida_432_seven_web_redirect_20261109.json",
+        "blob_sha": "c0ec93d75ff6c7d1b655ea1ea1b42bc9c429106f"
+      }
+    },
+    {
+      "slot": "432:6",
+      "post_id": 432,
+      "batch": "florida",
+      "priority": "P1",
+      "stored_source_url": "https://www.floridamemory.com/fpc/msf/MSF-PB11548-001.jpg",
+      "source_scope": "LIVE_WP_EDITOR_OR_PRIOR_LEDGER_AS_DESCRIBED",
+      "retriever": {
+        "method": "EXTERNAL_WEB_RETRIEVER_NOT_GUEST",
+        "result": "REDIRECT_TARGET_INACCESSIBLE",
+        "wrapper_code": 500,
+        "origin_http": null,
+        "guest_http": null,
+        "guest_decoded_px": null,
+        "guest_wire_bytes": null,
+        "visitor_broken": null
+      },
+      "candidate": {
+        "catalog_url": "https://floridamemory.com/items/show/340182",
+        "catalog_authority": "OFFICIAL_PRIMARY_CATALOG",
+        "rights_observation": "ITEM_RIGHTS_NOT_ESTABLISHED",
+        "native_px": null,
+        "conditional_960px": null,
+        "exact_binary_match": false,
+        "item_rights_cleared": false,
+        "visual_signoff": false
+      },
+      "release": {
+        "external_binary_download": false,
+        "cache": false,
+        "wordpress_media_upload": false,
+        "post_rewrite": false,
+        "homepage_change": false
+      },
+      "source_ledger": {
+        "path": "qa/media-recovery/florida_432_seven_web_redirect_20261109.json",
+        "blob_sha": "c0ec93d75ff6c7d1b655ea1ea1b42bc9c429106f"
+      }
+    },
+    {
+      "slot": "280:0",
+      "post_id": 280,
+      "batch": "navy",
+      "priority": "P1",
+      "stored_source_url": "https://www.history.navy.mil/content/history/museums/nmusn/explore/photography/ships-us/ships-usn-p/uss-pueblo-ager-2/428-gx-usn-1129207/_jcr_content/mediaitem/image.img.jpg/1504112093611.jpg",
+      "source_scope": "LIVE_WP_EDITOR_OR_PRIOR_LEDGER_AS_DESCRIBED",
+      "retriever": {
+        "method": "EXTERNAL_WEB_RETRIEVER_NOT_GUEST",
+        "result": "TIMEOUT_FETCHING",
+        "wrapper_code": 400,
+        "origin_http": null,
+        "guest_http": null,
+        "guest_decoded_px": null,
+        "guest_wire_bytes": null,
+        "visitor_broken": null
+      },
+      "candidate": {
+        "catalog_url": "https://www.history.navy.mil/content/history/museums/nmusn/explore/photography/ships-us/ships-usn-p/uss-pueblo-ager-2/428-gx-usn-1129207.html",
+        "catalog_authority": "OFFICIAL_PRIMARY_CATALOG",
+        "rights_observation": "PENDING_ITEM_LEVEL_RIGHTS_CONFIRMATION",
+        "native_px": null,
+        "conditional_960px": null,
+        "exact_binary_match": false,
+        "item_rights_cleared": false,
+        "visual_signoff": false
+      },
+      "release": {
+        "external_binary_download": false,
+        "cache": false,
+        "wordpress_media_upload": false,
+        "post_rewrite": false,
+        "homepage_change": false
+      },
+      "source_ledger": {
+        "path": "qa/media-recovery/navy_8_live_pueblo_honda_retriever_20261108.json",
+        "blob_sha": "0fe22f816dce9776d447b3ddfc7d7aeeb75ccad0"
+      }
+    },
+    {
+      "slot": "280:1",
+      "post_id": 280,
+      "batch": "navy",
+      "priority": "P1",
+      "stored_source_url": "https://www.history.navy.mil/content/history/nhhc/research/histories/ship-histories/danfs/p/pueblo-iii/_jcr_content/body/media_asset_1086930325/image.img.jpg/1514467381634.jpg",
+      "source_scope": "LIVE_WP_EDITOR_OR_PRIOR_LEDGER_AS_DESCRIBED",
+      "retriever": {
+        "method": "EXTERNAL_WEB_RETRIEVER_NOT_GUEST",
+        "result": "TIMEOUT_FETCHING",
+        "wrapper_code": 400,
+        "origin_http": null,
+        "guest_http": null,
+        "guest_decoded_px": null,
+        "guest_wire_bytes": null,
+        "visitor_broken": null
+      },
+      "candidate": {
+        "catalog_url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/NH-75000/NH-75559.html",
+        "catalog_authority": "OFFICIAL_PRIMARY_CATALOG",
+        "rights_observation": "PENDING_ITEM_LEVEL_RIGHTS_CONFIRMATION",
+        "native_px": null,
+        "conditional_960px": null,
+        "exact_binary_match": false,
+        "item_rights_cleared": false,
+        "visual_signoff": false
+      },
+      "release": {
+        "external_binary_download": false,
+        "cache": false,
+        "wordpress_media_upload": false,
+        "post_rewrite": false,
+        "homepage_change": false
+      },
+      "source_ledger": {
+        "path": "qa/media-recovery/navy_8_live_pueblo_honda_retriever_20261108.json",
+        "blob_sha": "0fe22f816dce9776d447b3ddfc7d7aeeb75ccad0"
+      }
+    },
+    {
+      "slot": "280:2",
+      "post_id": 280,
+      "batch": "navy",
+      "priority": "P1",
+      "stored_source_url": "https://www.history.navy.mil/bin/imageDownload?image=%2Fcontent%2Fdam%2Fnhhc%2Four-collections%2Fphotography%2Fimages%2FNH+75000%2FNH+75561&rendition=cq5dam.web.1280.1280.jpeg",
+      "source_scope": "LIVE_WP_EDITOR_OR_PRIOR_LEDGER_AS_DESCRIBED",
+      "retriever": {
+        "method": "EXTERNAL_WEB_RETRIEVER_NOT_GUEST",
+        "result": "TIMEOUT_FETCHING",
+        "wrapper_code": 400,
+        "origin_http": null,
+        "guest_http": null,
+        "guest_decoded_px": null,
+        "guest_wire_bytes": null,
+        "visitor_broken": null
+      },
+      "candidate": {
+        "catalog_url": "https://www.history.navy.mil/content/history/nhhc/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/NH-75000/NH-75561.html",
+        "catalog_authority": "OFFICIAL_PRIMARY_CATALOG",
+        "rights_observation": "PENDING_ITEM_LEVEL_RIGHTS_CONFIRMATION",
+        "native_px": null,
+        "conditional_960px": null,
+        "exact_binary_match": false,
+        "item_rights_cleared": false,
+        "visual_signoff": false
+      },
+      "release": {
+        "external_binary_download": false,
+        "cache": false,
+        "wordpress_media_upload": false,
+        "post_rewrite": false,
+        "homepage_change": false
+      },
+      "source_ledger": {
+        "path": "qa/media-recovery/navy_8_live_pueblo_honda_retriever_20261108.json",
+        "blob_sha": "0fe22f816dce9776d447b3ddfc7d7aeeb75ccad0"
+      }
+    },
+    {
+      "slot": "280:3",
+      "post_id": 280,
+      "batch": "navy",
+      "priority": "P1",
+      "stored_source_url": "https://www.history.navy.mil/content/history/nhhc/our-collections/photography/numerical-list-of-images/nara-series/80-g-k/80-G-K-60000/K-64683/_jcr_content/mediaitem/image.img.jpg/1459314791691.jpg",
+      "source_scope": "LIVE_WP_EDITOR_OR_PRIOR_LEDGER_AS_DESCRIBED",
+      "retriever": {
+        "method": "EXTERNAL_WEB_RETRIEVER_NOT_GUEST",
+        "result": "TIMEOUT_FETCHING",
+        "wrapper_code": 400,
+        "origin_http": null,
+        "guest_http": null,
+        "guest_decoded_px": null,
+        "guest_wire_bytes": null,
+        "visitor_broken": null
+      },
+      "candidate": {
+        "catalog_url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nara-series/80-g-k/80-G-K-60000/K-64683.html",
+        "catalog_authority": "OFFICIAL_PRIMARY_CATALOG",
+        "rights_observation": "PENDING_ITEM_LEVEL_RIGHTS_CONFIRMATION",
+        "native_px": null,
+        "conditional_960px": null,
+        "exact_binary_match": false,
+        "item_rights_cleared": false,
+        "visual_signoff": false
+      },
+      "release": {
+        "external_binary_download": false,
+        "cache": false,
+        "wordpress_media_upload": false,
+        "post_rewrite": false,
+        "homepage_change": false
+      },
+      "source_ledger": {
+        "path": "qa/media-recovery/navy_8_live_pueblo_honda_retriever_20261108.json",
+        "blob_sha": "0fe22f816dce9776d447b3ddfc7d7aeeb75ccad0"
+      }
+    },
+    {
+      "slot": "280:4",
+      "post_id": 280,
+      "batch": "navy",
+      "priority": "P1",
+      "stored_source_url": "https://www.history.navy.mil/content/history/nhhc/research/histories/ship-histories/danfs/b/banner-ii/_jcr_content/body/media_asset/image.img.jpg",
+      "source_scope": "LIVE_WP_EDITOR_OR_PRIOR_LEDGER_AS_DESCRIBED",
+      "retriever": {
+        "method": "EXTERNAL_WEB_RETRIEVER_NOT_GUEST",
+        "result": "NOT_ACCESSIBLE_IN_TOOL",
+        "wrapper_code": null,
+        "origin_http": null,
+        "guest_http": null,
+        "guest_decoded_px": null,
+        "guest_wire_bytes": null,
+        "visitor_broken": null
+      },
+      "candidate": {
+        "catalog_url": null,
+        "catalog_authority": "NO_VERIFIED_CATALOG",
+        "rights_observation": "PENDING_ITEM_LEVEL_RIGHTS_CONFIRMATION",
+        "native_px": null,
+        "conditional_960px": null,
+        "exact_binary_match": false,
+        "item_rights_cleared": false,
+        "visual_signoff": false
+      },
+      "release": {
+        "external_binary_download": false,
+        "cache": false,
+        "wordpress_media_upload": false,
+        "post_rewrite": false,
+        "homepage_change": false
+      },
+      "source_ledger": {
+        "path": "qa/media-recovery/navy_8_live_pueblo_honda_retriever_20261108.json",
+        "blob_sha": "0fe22f816dce9776d447b3ddfc7d7aeeb75ccad0"
+      }
+    },
+    {
+      "slot": "280:5",
+      "post_id": 280,
+      "batch": "navy",
+      "priority": "P1",
+      "stored_source_url": "https://www.history.navy.mil/content/history/nhhc/our-collections/photography/numerical-list-of-images/nara-series/80-g-k/80-G-K-60000/K-64728/_jcr_content/mediaitem/image.img.jpg/1424360116159.jpg",
+      "source_scope": "LIVE_WP_EDITOR_OR_PRIOR_LEDGER_AS_DESCRIBED",
+      "retriever": {
+        "method": "EXTERNAL_WEB_RETRIEVER_NOT_GUEST",
+        "result": "TIMEOUT_FETCHING",
+        "wrapper_code": 400,
+        "origin_http": null,
+        "guest_http": null,
+        "guest_decoded_px": null,
+        "guest_wire_bytes": null,
+        "visitor_broken": null
+      },
+      "candidate": {
+        "catalog_url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nara-series/80-g-k/80-G-K-60000/K-64728.html",
+        "catalog_authority": "OFFICIAL_PRIMARY_CATALOG",
+        "rights_observation": "PENDING_ITEM_LEVEL_RIGHTS_CONFIRMATION",
+        "native_px": null,
+        "conditional_960px": null,
+        "exact_binary_match": false,
+        "item_rights_cleared": false,
+        "visual_signoff": false
+      },
+      "release": {
+        "external_binary_download": false,
+        "cache": false,
+        "wordpress_media_upload": false,
+        "post_rewrite": false,
+        "homepage_change": false
+      },
+      "source_ledger": {
+        "path": "qa/media-recovery/navy_8_live_pueblo_honda_retriever_20261108.json",
+        "blob_sha": "0fe22f816dce9776d447b3ddfc7d7aeeb75ccad0"
+      }
+    },
+    {
+      "slot": "288:0",
+      "post_id": 288,
+      "batch": "navy",
+      "priority": "P1",
+      "stored_source_url": "https://www.history.navy.mil/content/history/nhhc/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/NH-69000/NH-69586/_jcr_content/mediaitem/image.img.jpg/1438378291110.jpg",
+      "source_scope": "LIVE_WP_EDITOR_OR_PRIOR_LEDGER_AS_DESCRIBED",
+      "retriever": {
+        "method": "EXTERNAL_WEB_RETRIEVER_NOT_GUEST",
+        "result": "BAD_GATEWAY",
+        "wrapper_code": 502,
+        "origin_http": null,
+        "guest_http": null,
+        "guest_decoded_px": null,
+        "guest_wire_bytes": null,
+        "visitor_broken": null
+      },
+      "candidate": {
+        "catalog_url": "https://www.history.navy.mil/content/history/nhhc/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/NH-69000/NH-69586.html",
+        "catalog_authority": "OFFICIAL_PRIMARY_CATALOG",
+        "rights_observation": "COURTESY_PRIVATE_COLLECTION_VERIFY_ITEM_RIGHTS",
+        "native_px": null,
+        "conditional_960px": null,
+        "exact_binary_match": false,
+        "item_rights_cleared": false,
+        "visual_signoff": false
+      },
+      "release": {
+        "external_binary_download": false,
+        "cache": false,
+        "wordpress_media_upload": false,
+        "post_rewrite": false,
+        "homepage_change": false
+      },
+      "source_ledger": {
+        "path": "qa/media-recovery/navy_8_live_pueblo_honda_retriever_20261108.json",
+        "blob_sha": "0fe22f816dce9776d447b3ddfc7d7aeeb75ccad0"
+      }
+    },
+    {
+      "slot": "288:2",
+      "post_id": 288,
+      "batch": "navy",
+      "priority": "P1",
+      "stored_source_url": "https://www.history.navy.mil/content/history/nhhc/our-collections/photography/technology/communications/radio/ug-21--us-naval-california-radio-station-collection/mare-island-naval-radio-station/ug-21-01-02-mare-island-naval-radio/jcr%3Acontent/mediaitem/image.img.jpg/1564510769845.jpg",
+      "source_scope": "LIVE_WP_EDITOR_OR_PRIOR_LEDGER_AS_DESCRIBED",
+      "retriever": {
+        "method": "EXTERNAL_WEB_RETRIEVER_NOT_GUEST",
+        "result": "BAD_GATEWAY",
+        "wrapper_code": 502,
+        "origin_http": null,
+        "guest_http": null,
+        "guest_decoded_px": null,
+        "guest_wire_bytes": null,
+        "visitor_broken": null
+      },
+      "candidate": {
+        "catalog_url": null,
+        "catalog_authority": "NO_VERIFIED_CATALOG",
+        "rights_observation": "PENDING_ITEM_LEVEL_RIGHTS_CONFIRMATION",
+        "native_px": null,
+        "conditional_960px": null,
+        "exact_binary_match": false,
+        "item_rights_cleared": false,
+        "visual_signoff": false
+      },
+      "release": {
+        "external_binary_download": false,
+        "cache": false,
+        "wordpress_media_upload": false,
+        "post_rewrite": false,
+        "homepage_change": false
+      },
+      "source_ledger": {
+        "path": "qa/media-recovery/navy_8_live_pueblo_honda_retriever_20261108.json",
+        "blob_sha": "0fe22f816dce9776d447b3ddfc7d7aeeb75ccad0"
+      }
+    },
+    {
+      "slot": "367:1",
+      "post_id": 367,
+      "batch": "palomares",
+      "priority": "P1",
+      "stored_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Operation_Chrome_Dome_route.jpg?width=1280",
+      "source_scope": "LIVE_WP_EDITOR_OR_PRIOR_LEDGER_AS_DESCRIBED",
+      "retriever": {
+        "method": "EXTERNAL_WEB_RETRIEVER_NOT_GUEST",
+        "result": "URL_NOT_ACCESSIBLE_VIA_TOOL",
+        "wrapper_code": null,
+        "origin_http": null,
+        "guest_http": null,
+        "guest_decoded_px": null,
+        "guest_wire_bytes": null,
+        "visitor_broken": null
+      },
+      "candidate": {
+        "catalog_url": "https://commons.wikimedia.org/wiki/File:Operation_Chrome_Dome_route.jpg",
+        "catalog_authority": "COMMONS_CATALOG_RECORD",
+        "rights_observation": "CC_BY_SA_2_5",
+        "native_px": [
+          1475,
+          923
+        ],
+        "conditional_960px": [
+          960,
+          601
+        ],
+        "exact_binary_match": false,
+        "item_rights_cleared": false,
+        "visual_signoff": false
+      },
+      "release": {
+        "external_binary_download": false,
+        "cache": false,
+        "wordpress_media_upload": false,
+        "post_rewrite": false,
+        "homepage_change": false
+      },
+      "source_ledger": {
+        "path": "qa/media-recovery/palomares_367_eight_source_20261108.json",
+        "blob_sha": "cb9f50e2410a8773bf282732e12cac5fe77251cf"
+      }
+    },
+    {
+      "slot": "367:2",
+      "post_id": 367,
+      "batch": "palomares",
+      "priority": "P1",
+      "stored_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/USS_Skill_(MSO-471)_operating_off_the_coast_of_Spain%2C_in_February_1966_(428-NPC-36556).jpg?width=1280",
+      "source_scope": "LIVE_WP_EDITOR_OR_PRIOR_LEDGER_AS_DESCRIBED",
+      "retriever": {
+        "method": "EXTERNAL_WEB_RETRIEVER_NOT_GUEST",
+        "result": "URL_NOT_ACCESSIBLE_VIA_TOOL",
+        "wrapper_code": null,
+        "origin_http": null,
+        "guest_http": null,
+        "guest_decoded_px": null,
+        "guest_wire_bytes": null,
+        "visitor_broken": null
+      },
+      "candidate": {
+        "catalog_url": "https://commons.wikimedia.org/wiki/File:USS_Skill_(MSO-471)_operating_off_the_coast_of_Spain,_in_February_1966_(428-NPC-36556).jpg",
+        "catalog_authority": "COMMONS_CATALOG_RECORD",
+        "rights_observation": "US_NAVY_PD_CLAIM_NARA_85011",
+        "native_px": [
+          1227,
+          898
+        ],
+        "conditional_960px": [
+          960,
+          703
+        ],
+        "exact_binary_match": false,
+        "item_rights_cleared": false,
+        "visual_signoff": false
+      },
+      "release": {
+        "external_binary_download": false,
+        "cache": false,
+        "wordpress_media_upload": false,
+        "post_rewrite": false,
+        "homepage_change": false
+      },
+      "source_ledger": {
+        "path": "qa/media-recovery/palomares_367_eight_source_20261108.json",
+        "blob_sha": "cb9f50e2410a8773bf282732e12cac5fe77251cf"
+      }
+    },
+    {
+      "slot": "367:3",
+      "post_id": 367,
+      "batch": "palomares",
+      "priority": "P1",
+      "stored_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Zoeken_naar_H_bom_in_Spanje%2C_de_Alvin_wordt_te_water_gelaten%2C_Bestanddeelnr_918-8161.jpg?width=1280",
+      "source_scope": "LIVE_WP_EDITOR_OR_PRIOR_LEDGER_AS_DESCRIBED",
+      "retriever": {
+        "method": "EXTERNAL_WEB_RETRIEVER_NOT_GUEST",
+        "result": "URL_NOT_ACCESSIBLE_VIA_TOOL",
+        "wrapper_code": null,
+        "origin_http": null,
+        "guest_http": null,
+        "guest_decoded_px": null,
+        "guest_wire_bytes": null,
+        "visitor_broken": null
+      },
+      "candidate": {
+        "catalog_url": "https://commons.wikimedia.org/wiki/File:Zoeken_naar_H_bom_in_Spanje,_de_Alvin_wordt_te_water_gelaten,_Bestanddeelnr_918-8161.jpg",
+        "catalog_authority": "COMMONS_CATALOG_RECORD",
+        "rights_observation": "CC0_1_0_ARCHIVES_NL_918_8161",
+        "native_px": [
+          3440,
+          2453
+        ],
+        "conditional_960px": [
+          960,
+          685
+        ],
+        "exact_binary_match": false,
+        "item_rights_cleared": false,
+        "visual_signoff": false
+      },
+      "release": {
+        "external_binary_download": false,
+        "cache": false,
+        "wordpress_media_upload": false,
+        "post_rewrite": false,
+        "homepage_change": false
+      },
+      "source_ledger": {
+        "path": "qa/media-recovery/palomares_367_eight_source_20261108.json",
+        "blob_sha": "cb9f50e2410a8773bf282732e12cac5fe77251cf"
+      }
+    },
+    {
+      "slot": "367:4",
+      "post_id": 367,
+      "batch": "palomares",
+      "priority": "P1",
+      "stored_source_url": "https://navalunderseamuseum.org/wp-content/uploads/2016/03/CURV-I-H-Bomb-Recovery-300x243.jpg",
+      "source_scope": "LIVE_WP_EDITOR_OR_PRIOR_LEDGER_AS_DESCRIBED",
+      "retriever": {
+        "method": "EXTERNAL_WEB_RETRIEVER_NOT_GUEST",
+        "result": "IMAGE_RENDERED",
+        "wrapper_code": null,
+        "origin_http": null,
+        "guest_http": null,
+        "guest_decoded_px": null,
+        "guest_wire_bytes": null,
+        "visitor_broken": null
+      },
+      "candidate": {
+        "catalog_url": "https://navalunderseamuseum.org/petrel-helmet/",
+        "catalog_authority": "THIRD_PARTY_OR_PUBLISHER_REFERENCE",
+        "rights_observation": "RIGHTS_UNVERIFIED",
+        "native_px": null,
+        "conditional_960px": null,
+        "exact_binary_match": false,
+        "item_rights_cleared": false,
+        "visual_signoff": false
+      },
+      "release": {
+        "external_binary_download": false,
+        "cache": false,
+        "wordpress_media_upload": false,
+        "post_rewrite": false,
+        "homepage_change": false
+      },
+      "source_ledger": {
+        "path": "qa/media-recovery/palomares_367_eight_source_20261108.json",
+        "blob_sha": "cb9f50e2410a8773bf282732e12cac5fe77251cf"
+      }
+    },
+    {
+      "slot": "367:5",
+      "post_id": 367,
+      "batch": "palomares",
+      "priority": "P1",
+      "stored_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/428-GX-_USN_118930_(26941557635).jpg?width=1280",
+      "source_scope": "LIVE_WP_EDITOR_OR_PRIOR_LEDGER_AS_DESCRIBED",
+      "retriever": {
+        "method": "EXTERNAL_WEB_RETRIEVER_NOT_GUEST",
+        "result": "URL_NOT_ACCESSIBLE_VIA_TOOL",
+        "wrapper_code": null,
+        "origin_http": null,
+        "guest_http": null,
+        "guest_decoded_px": null,
+        "guest_wire_bytes": null,
+        "visitor_broken": null
+      },
+      "candidate": {
+        "catalog_url": "https://commons.wikimedia.org/wiki/File:428-GX-_USN_118930_(26941557635).jpg",
+        "catalog_authority": "COMMONS_CATALOG_RECORD",
+        "rights_observation": "US_NAVY_PD_CLAIM",
+        "native_px": [
+          1854,
+          2464
+        ],
+        "conditional_960px": [
+          960,
+          1276
+        ],
+        "exact_binary_match": false,
+        "item_rights_cleared": false,
+        "visual_signoff": false
+      },
+      "release": {
+        "external_binary_download": false,
+        "cache": false,
+        "wordpress_media_upload": false,
+        "post_rewrite": false,
+        "homepage_change": false
+      },
+      "source_ledger": {
+        "path": "qa/media-recovery/palomares_367_eight_source_20261108.json",
+        "blob_sha": "cb9f50e2410a8773bf282732e12cac5fe77251cf"
+      }
+    },
+    {
+      "slot": "367:6",
+      "post_id": 367,
+      "batch": "palomares",
+      "priority": "P1",
+      "stored_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/1966_Palomares_B-52_crash_-_recovered_H-bomb.jpg?width=1280",
+      "source_scope": "LIVE_WP_EDITOR_OR_PRIOR_LEDGER_AS_DESCRIBED",
+      "retriever": {
+        "method": "EXTERNAL_WEB_RETRIEVER_NOT_GUEST",
+        "result": "URL_NOT_ACCESSIBLE_VIA_TOOL",
+        "wrapper_code": null,
+        "origin_http": null,
+        "guest_http": null,
+        "guest_decoded_px": null,
+        "guest_wire_bytes": null,
+        "visitor_broken": null
+      },
+      "candidate": {
+        "catalog_url": "https://commons.wikimedia.org/wiki/File:1966_Palomares_B-52_crash_-_recovered_H-bomb.jpg",
+        "catalog_authority": "COMMONS_CATALOG_RECORD",
+        "rights_observation": "US_NAVY_PD_CLAIM_WITH_CROP",
+        "native_px": [
+          662,
+          374
+        ],
+        "conditional_960px": [
+          662,
+          374
+        ],
+        "exact_binary_match": false,
+        "item_rights_cleared": false,
+        "visual_signoff": false
+      },
+      "release": {
+        "external_binary_download": false,
+        "cache": false,
+        "wordpress_media_upload": false,
+        "post_rewrite": false,
+        "homepage_change": false
+      },
+      "source_ledger": {
+        "path": "qa/media-recovery/palomares_367_eight_source_20261108.json",
+        "blob_sha": "cb9f50e2410a8773bf282732e12cac5fe77251cf"
+      }
+    },
+    {
+      "slot": "367:7",
+      "post_id": 367,
+      "batch": "palomares",
+      "priority": "P1",
+      "stored_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Palomares_barrels.jpg?width=1280",
+      "source_scope": "LIVE_WP_EDITOR_OR_PRIOR_LEDGER_AS_DESCRIBED",
+      "retriever": {
+        "method": "EXTERNAL_WEB_RETRIEVER_NOT_GUEST",
+        "result": "URL_NOT_ACCESSIBLE_VIA_TOOL",
+        "wrapper_code": null,
+        "origin_http": null,
+        "guest_http": null,
+        "guest_decoded_px": null,
+        "guest_wire_bytes": null,
+        "visitor_broken": null
+      },
+      "candidate": {
+        "catalog_url": "https://commons.wikimedia.org/wiki/File:Palomares_barrels.jpg",
+        "catalog_authority": "COMMONS_CATALOG_RECORD",
+        "rights_observation": "US_AIR_FORCE_PD_CLAIM_THIRD_PARTY_ORIGIN",
+        "native_px": [
+          500,
+          252
+        ],
+        "conditional_960px": [
+          500,
+          252
+        ],
+        "exact_binary_match": false,
+        "item_rights_cleared": false,
+        "visual_signoff": false
+      },
+      "release": {
+        "external_binary_download": false,
+        "cache": false,
+        "wordpress_media_upload": false,
+        "post_rewrite": false,
+        "homepage_change": false
+      },
+      "source_ledger": {
+        "path": "qa/media-recovery/palomares_367_eight_source_20261108.json",
+        "blob_sha": "cb9f50e2410a8773bf282732e12cac5fe77251cf"
+      }
+    },
+    {
+      "slot": "367:8",
+      "post_id": 367,
+      "batch": "palomares",
+      "priority": "P1",
+      "stored_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Recovered_Mk_28RI_bomb.JPG?width=1280",
+      "source_scope": "LIVE_WP_EDITOR_OR_PRIOR_LEDGER_AS_DESCRIBED",
+      "retriever": {
+        "method": "EXTERNAL_WEB_RETRIEVER_NOT_GUEST",
+        "result": "URL_NOT_ACCESSIBLE_VIA_TOOL",
+        "wrapper_code": null,
+        "origin_http": null,
+        "guest_http": null,
+        "guest_decoded_px": null,
+        "guest_wire_bytes": null,
+        "visitor_broken": null
+      },
+      "candidate": {
+        "catalog_url": "https://commons.wikimedia.org/wiki/File:Recovered_Mk_28RI_bomb.JPG",
+        "catalog_authority": "COMMONS_CATALOG_RECORD",
+        "rights_observation": "US_NAVY_PD_CLAIM",
+        "native_px": [
+          617,
+          461
+        ],
+        "conditional_960px": [
+          617,
+          461
+        ],
+        "exact_binary_match": false,
+        "item_rights_cleared": false,
+        "visual_signoff": false
+      },
+      "release": {
+        "external_binary_download": false,
+        "cache": false,
+        "wordpress_media_upload": false,
+        "post_rewrite": false,
+        "homepage_change": false
+      },
+      "source_ledger": {
+        "path": "qa/media-recovery/palomares_367_eight_source_20261108.json",
+        "blob_sha": "cb9f50e2410a8773bf282732e12cac5fe77251cf"
+      }
+    },
+    {
+      "slot": "268:0",
+      "post_id": 268,
+      "batch": "archimedes",
+      "priority": "P1",
+      "stored_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Archimedes%20Palimpsest.jpg?width=1280",
+      "source_scope": "FROZEN_WP_SOURCE",
+      "retriever": {
+        "method": "EXTERNAL_WEB_RETRIEVER_NOT_GUEST",
+        "result": "TOOL_INACCESSIBLE",
+        "wrapper_code": null,
+        "origin_http": null,
+        "guest_http": null,
+        "guest_decoded_px": null,
+        "guest_wire_bytes": null,
+        "visitor_broken": null
+      },
+      "candidate": {
+        "catalog_url": "https://commons.wikimedia.org/wiki/File:Archimedes_Palimpsest.jpg",
+        "catalog_authority": "COMMONS_CATALOG_RECORD",
+        "rights_observation": "COMMONS_PD_US_CLAIM",
+        "native_px": [
+          665,
+          448
+        ],
+        "conditional_960px": [
+          665,
+          448
+        ],
+        "exact_binary_match": false,
+        "item_rights_cleared": false,
+        "visual_signoff": false
+      },
+      "release": {
+        "external_binary_download": false,
+        "cache": false,
+        "wordpress_media_upload": false,
+        "post_rewrite": false,
+        "homepage_change": false
+      },
+      "source_ledger": {
+        "path": "qa/media-recovery/archimedes_268_ten_sources_20261108.json",
+        "blob_sha": "f3c9a13c290c15d3b21f8a75656ed807dab058cc"
+      }
+    },
+    {
+      "slot": "268:1",
+      "post_id": 268,
+      "batch": "archimedes",
+      "priority": "P1",
+      "stored_source_url": "https://archimedespalimpsest.org/assets/img/imaging_x8.jpg",
+      "source_scope": "FROZEN_WP_SOURCE",
+      "retriever": {
+        "method": "EXTERNAL_WEB_RETRIEVER_NOT_GUEST",
+        "result": "WRAPPER_403",
+        "wrapper_code": null,
+        "origin_http": null,
+        "guest_http": null,
+        "guest_decoded_px": null,
+        "guest_wire_bytes": null,
+        "visitor_broken": null
+      },
+      "candidate": {
+        "catalog_url": "https://www.archimedespalimpsest.org/about/imaging/capture.php",
+        "catalog_authority": "THIRD_PARTY_OR_PUBLISHER_REFERENCE",
+        "rights_observation": "PROJECT_SITE_STATIC_RIGHTS_UNVERIFIED",
+        "native_px": null,
+        "conditional_960px": null,
+        "exact_binary_match": false,
+        "item_rights_cleared": false,
+        "visual_signoff": false
+      },
+      "release": {
+        "external_binary_download": false,
+        "cache": false,
+        "wordpress_media_upload": false,
+        "post_rewrite": false,
+        "homepage_change": false
+      },
+      "source_ledger": {
+        "path": "qa/media-recovery/archimedes_268_ten_sources_20261108.json",
+        "blob_sha": "f3c9a13c290c15d3b21f8a75656ed807dab058cc"
+      }
+    },
+    {
+      "slot": "268:2",
+      "post_id": 268,
+      "batch": "archimedes",
+      "priority": "P1",
+      "stored_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/002r-001v%20Arch13r%20Sinar%20uvblue%20norm8%20Euchologion%20up%20%289737603804%29.jpg?width=960",
+      "source_scope": "FROZEN_WP_SOURCE",
+      "retriever": {
+        "method": "EXTERNAL_WEB_RETRIEVER_NOT_GUEST",
+        "result": "TOOL_INACCESSIBLE",
+        "wrapper_code": null,
+        "origin_http": null,
+        "guest_http": null,
+        "guest_decoded_px": null,
+        "guest_wire_bytes": null,
+        "visitor_broken": null
+      },
+      "candidate": {
+        "catalog_url": "https://commons.wikimedia.org/wiki/File:002r-001v_Arch13r_Sinar_uvblue_norm8_Euchologion_up_(9737603804).jpg",
+        "catalog_authority": "COMMONS_CATALOG_RECORD",
+        "rights_observation": "COMMONS_CC_BY_2_0_PROJECT_CC_BY_3_0_CONFLICT",
+        "native_px": [
+          10880,
+          8160
+        ],
+        "conditional_960px": [
+          960,
+          720
+        ],
+        "exact_binary_match": false,
+        "item_rights_cleared": false,
+        "visual_signoff": false
+      },
+      "release": {
+        "external_binary_download": false,
+        "cache": false,
+        "wordpress_media_upload": false,
+        "post_rewrite": false,
+        "homepage_change": false
+      },
+      "source_ledger": {
+        "path": "qa/media-recovery/archimedes_268_ten_sources_20261108.json",
+        "blob_sha": "f3c9a13c290c15d3b21f8a75656ed807dab058cc"
+      }
+    },
+    {
+      "slot": "268:3",
+      "post_id": 268,
+      "batch": "archimedes",
+      "priority": "P1",
+      "stored_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/017r-016v%20Heiberg-UV-blue%20%289737623542%29.jpg?width=960",
+      "source_scope": "FROZEN_WP_SOURCE",
+      "retriever": {
+        "method": "EXTERNAL_WEB_RETRIEVER_NOT_GUEST",
+        "result": "TOOL_INACCESSIBLE",
+        "wrapper_code": null,
+        "origin_http": null,
+        "guest_http": null,
+        "guest_decoded_px": null,
+        "guest_wire_bytes": null,
+        "visitor_broken": null
+      },
+      "candidate": {
+        "catalog_url": "https://commons.wikimedia.org/wiki/File:017r-016v_Heiberg-UV-blue_(9737623542).jpg",
+        "catalog_authority": "COMMONS_CATALOG_RECORD",
+        "rights_observation": "COMMONS_CC_BY_2_0_PROJECT_CC_BY_3_0_CONFLICT",
+        "native_px": [
+          2040,
+          2720
+        ],
+        "conditional_960px": [
+          960,
+          1280
+        ],
+        "exact_binary_match": false,
+        "item_rights_cleared": false,
+        "visual_signoff": false
+      },
+      "release": {
+        "external_binary_download": false,
+        "cache": false,
+        "wordpress_media_upload": false,
+        "post_rewrite": false,
+        "homepage_change": false
+      },
+      "source_ledger": {
+        "path": "qa/media-recovery/archimedes_268_ten_sources_20261108.json",
+        "blob_sha": "f3c9a13c290c15d3b21f8a75656ed807dab058cc"
+      }
+    },
+    {
+      "slot": "268:4",
+      "post_id": 268,
+      "batch": "archimedes",
+      "priority": "P1",
+      "stored_source_url": "https://www.archimedespalimpsest.org/assets/img/imagecapture-capture2b.jpg",
+      "source_scope": "FROZEN_WP_SOURCE",
+      "retriever": {
+        "method": "EXTERNAL_WEB_RETRIEVER_NOT_GUEST",
+        "result": "WRAPPER_403",
+        "wrapper_code": null,
+        "origin_http": null,
+        "guest_http": null,
+        "guest_decoded_px": null,
+        "guest_wire_bytes": null,
+        "visitor_broken": null
+      },
+      "candidate": {
+        "catalog_url": "https://www.archimedespalimpsest.org/about/imaging/capture.php",
+        "catalog_authority": "THIRD_PARTY_OR_PUBLISHER_REFERENCE",
+        "rights_observation": "PROJECT_SITE_STATIC_RIGHTS_UNVERIFIED",
+        "native_px": null,
+        "conditional_960px": null,
+        "exact_binary_match": false,
+        "item_rights_cleared": false,
+        "visual_signoff": false
+      },
+      "release": {
+        "external_binary_download": false,
+        "cache": false,
+        "wordpress_media_upload": false,
+        "post_rewrite": false,
+        "homepage_change": false
+      },
+      "source_ledger": {
+        "path": "qa/media-recovery/archimedes_268_ten_sources_20261108.json",
+        "blob_sha": "f3c9a13c290c15d3b21f8a75656ed807dab058cc"
+      }
+    },
+    {
+      "slot": "268:5",
+      "post_id": 268,
+      "batch": "archimedes",
+      "priority": "P1",
+      "stored_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/017r-016v%20Arch07r%20Sinar%20pseudo%20no-veil%20%289734386225%29.jpg?width=960",
+      "source_scope": "FROZEN_WP_SOURCE",
+      "retriever": {
+        "method": "EXTERNAL_WEB_RETRIEVER_NOT_GUEST",
+        "result": "TOOL_INACCESSIBLE",
+        "wrapper_code": null,
+        "origin_http": null,
+        "guest_http": null,
+        "guest_decoded_px": null,
+        "guest_wire_bytes": null,
+        "visitor_broken": null
+      },
+      "candidate": {
+        "catalog_url": "https://commons.wikimedia.org/wiki/File:017r-016v_Arch07r_Sinar_pseudo_no-veil_(9734386225).jpg",
+        "catalog_authority": "COMMONS_CATALOG_RECORD",
+        "rights_observation": "COMMONS_CC_BY_2_0_PROJECT_CC_BY_3_0_CONFLICT",
+        "native_px": [
+          8160,
+          10880
+        ],
+        "conditional_960px": [
+          960,
+          1280
+        ],
+        "exact_binary_match": false,
+        "item_rights_cleared": false,
+        "visual_signoff": false
+      },
+      "release": {
+        "external_binary_download": false,
+        "cache": false,
+        "wordpress_media_upload": false,
+        "post_rewrite": false,
+        "homepage_change": false
+      },
+      "source_ledger": {
+        "path": "qa/media-recovery/archimedes_268_ten_sources_20261108.json",
+        "blob_sha": "f3c9a13c290c15d3b21f8a75656ed807dab058cc"
+      }
+    },
+    {
+      "slot": "268:6",
+      "post_id": 268,
+      "batch": "archimedes",
+      "priority": "P1",
+      "stored_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/028v-021r%20Arch08r%20XRF%20FeFront%20registered%20%289734104759%29.jpg?width=1280",
+      "source_scope": "FROZEN_WP_SOURCE",
+      "retriever": {
+        "method": "EXTERNAL_WEB_RETRIEVER_NOT_GUEST",
+        "result": "TOOL_INACCESSIBLE",
+        "wrapper_code": null,
+        "origin_http": null,
+        "guest_http": null,
+        "guest_decoded_px": null,
+        "guest_wire_bytes": null,
+        "visitor_broken": null
+      },
+      "candidate": {
+        "catalog_url": "https://commons.wikimedia.org/wiki/File:028v-021r_Arch08r_XRF_FeFront_registered_(9734104759).jpg",
+        "catalog_authority": "COMMONS_CATALOG_RECORD",
+        "rights_observation": "COMMONS_CC_BY_2_0_PROJECT_CC_BY_3_0_CONFLICT",
+        "native_px": [
+          8160,
+          10880
+        ],
+        "conditional_960px": [
+          960,
+          1280
+        ],
+        "exact_binary_match": false,
+        "item_rights_cleared": false,
+        "visual_signoff": false
+      },
+      "release": {
+        "external_binary_download": false,
+        "cache": false,
+        "wordpress_media_upload": false,
+        "post_rewrite": false,
+        "homepage_change": false
+      },
+      "source_ledger": {
+        "path": "qa/media-recovery/archimedes_268_ten_sources_20261108.json",
+        "blob_sha": "f3c9a13c290c15d3b21f8a75656ed807dab058cc"
+      }
+    },
+    {
+      "slot": "268:7",
+      "post_id": 268,
+      "batch": "archimedes",
+      "priority": "P1",
+      "stored_source_url": "https://archimedespalimpsest.org/assets/img/imaging_x12.jpg",
+      "source_scope": "FROZEN_WP_SOURCE",
+      "retriever": {
+        "method": "EXTERNAL_WEB_RETRIEVER_NOT_GUEST",
+        "result": "WRAPPER_403",
+        "wrapper_code": null,
+        "origin_http": null,
+        "guest_http": null,
+        "guest_decoded_px": null,
+        "guest_wire_bytes": null,
+        "visitor_broken": null
+      },
+      "candidate": {
+        "catalog_url": "https://www.archimedespalimpsest.org/about/imaging/capture.php",
+        "catalog_authority": "THIRD_PARTY_OR_PUBLISHER_REFERENCE",
+        "rights_observation": "PROJECT_SITE_STATIC_RIGHTS_UNVERIFIED",
+        "native_px": null,
+        "conditional_960px": null,
+        "exact_binary_match": false,
+        "item_rights_cleared": false,
+        "visual_signoff": false
+      },
+      "release": {
+        "external_binary_download": false,
+        "cache": false,
+        "wordpress_media_upload": false,
+        "post_rewrite": false,
+        "homepage_change": false
+      },
+      "source_ledger": {
+        "path": "qa/media-recovery/archimedes_268_ten_sources_20261108.json",
+        "blob_sha": "f3c9a13c290c15d3b21f8a75656ed807dab058cc"
+      }
+    },
+    {
+      "slot": "268:8",
+      "post_id": 268,
+      "batch": "archimedes",
+      "priority": "P1",
+      "stored_source_url": "https://archimedespalimpsest.org/assets/img/imaging_x9.jpg",
+      "source_scope": "FROZEN_WP_SOURCE",
+      "retriever": {
+        "method": "EXTERNAL_WEB_RETRIEVER_NOT_GUEST",
+        "result": "TOOL_INACCESSIBLE",
+        "wrapper_code": null,
+        "origin_http": null,
+        "guest_http": null,
+        "guest_decoded_px": null,
+        "guest_wire_bytes": null,
+        "visitor_broken": null
+      },
+      "candidate": {
+        "catalog_url": "https://www.archimedespalimpsest.org/about/imaging/capture.php",
+        "catalog_authority": "THIRD_PARTY_OR_PUBLISHER_REFERENCE",
+        "rights_observation": "PROJECT_SITE_STATIC_RIGHTS_UNVERIFIED",
+        "native_px": null,
+        "conditional_960px": null,
+        "exact_binary_match": false,
+        "item_rights_cleared": false,
+        "visual_signoff": false
+      },
+      "release": {
+        "external_binary_download": false,
+        "cache": false,
+        "wordpress_media_upload": false,
+        "post_rewrite": false,
+        "homepage_change": false
+      },
+      "source_ledger": {
+        "path": "qa/media-recovery/archimedes_268_ten_sources_20261108.json",
+        "blob_sha": "f3c9a13c290c15d3b21f8a75656ed807dab058cc"
+      }
+    },
+    {
+      "slot": "268:9",
+      "post_id": 268,
+      "batch": "archimedes",
+      "priority": "P1",
+      "stored_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/176r-173v%20Hype03r%20Sinar%20LED445-735%20pseudo%20%289734660151%29.jpg?width=960",
+      "source_scope": "FROZEN_WP_SOURCE",
+      "retriever": {
+        "method": "EXTERNAL_WEB_RETRIEVER_NOT_GUEST",
+        "result": "TOOL_INACCESSIBLE",
+        "wrapper_code": null,
+        "origin_http": null,
+        "guest_http": null,
+        "guest_decoded_px": null,
+        "guest_wire_bytes": null,
+        "visitor_broken": null
+      },
+      "candidate": {
+        "catalog_url": "https://commons.wikimedia.org/wiki/File:176r-173v_Hype03r_Sinar_LED445-735_pseudo_(9734660151).jpg",
+        "catalog_authority": "COMMONS_CATALOG_RECORD",
+        "rights_observation": "COMMONS_CC_BY_2_0_PROJECT_CC_BY_3_0_CONFLICT",
+        "native_px": [
+          6600,
+          9500
+        ],
+        "conditional_960px": [
+          960,
+          1382
+        ],
+        "exact_binary_match": false,
+        "item_rights_cleared": false,
+        "visual_signoff": false
+      },
+      "release": {
+        "external_binary_download": false,
+        "cache": false,
+        "wordpress_media_upload": false,
+        "post_rewrite": false,
+        "homepage_change": false
+      },
+      "source_ledger": {
+        "path": "qa/media-recovery/archimedes_268_ten_sources_20261108.json",
+        "blob_sha": "f3c9a13c290c15d3b21f8a75656ed807dab058cc"
+      }
+    },
+    {
+      "slot": "285:0",
+      "post_id": 285,
+      "batch": "tmi",
+      "priority": "P1",
+      "stored_source_url": "https://live.staticflickr.com/7278/7447166686_5d24dff6db_b.jpg",
+      "source_scope": "LIVE_WP_EDITOR_OR_PRIOR_LEDGER_AS_DESCRIBED",
+      "retriever": {
+        "method": "EXTERNAL_WEB_RETRIEVER_NOT_GUEST",
+        "result": "TOOL_403_FORBIDDEN",
+        "wrapper_code": null,
+        "origin_http": null,
+        "guest_http": null,
+        "guest_decoded_px": null,
+        "guest_wire_bytes": null,
+        "visitor_broken": null
+      },
+      "candidate": {
+        "catalog_url": null,
+        "catalog_authority": "NO_VERIFIED_CATALOG",
+        "rights_observation": "UNKNOWN",
+        "native_px": null,
+        "conditional_960px": null,
+        "exact_binary_match": false,
+        "item_rights_cleared": false,
+        "visual_signoff": false
+      },
+      "release": {
+        "external_binary_download": false,
+        "cache": false,
+        "wordpress_media_upload": false,
+        "post_rewrite": false,
+        "homepage_change": false
+      },
+      "source_ledger": {
+        "path": "qa/media-recovery/tmi_285_four_offsite_20261108.json",
+        "blob_sha": "3b24bedaca914217c02e4d152d4f0822bbeb90ec"
+      }
+    },
+    {
+      "slot": "285:1",
+      "post_id": 285,
+      "batch": "tmi",
+      "priority": "P1",
+      "stored_source_url": "https://i0.wp.com/www.squawkpoint.com/wp-content/uploads/2019/02/Three-Mile-Island-Control-Centre.jpg?ssl=1",
+      "source_scope": "LIVE_WP_EDITOR_OR_PRIOR_LEDGER_AS_DESCRIBED",
+      "retriever": {
+        "method": "EXTERNAL_WEB_RETRIEVER_NOT_GUEST",
+        "result": "RENDERED_VIA_WEB_RETRIEVER",
+        "wrapper_code": null,
+        "origin_http": null,
+        "guest_http": null,
+        "guest_decoded_px": null,
+        "guest_wire_bytes": null,
+        "visitor_broken": null
+      },
+      "candidate": {
+        "catalog_url": null,
+        "catalog_authority": "NO_VERIFIED_CATALOG",
+        "rights_observation": "UNKNOWN",
+        "native_px": null,
+        "conditional_960px": null,
+        "exact_binary_match": false,
+        "item_rights_cleared": false,
+        "visual_signoff": false
+      },
+      "release": {
+        "external_binary_download": false,
+        "cache": false,
+        "wordpress_media_upload": false,
+        "post_rewrite": false,
+        "homepage_change": false
+      },
+      "source_ledger": {
+        "path": "qa/media-recovery/tmi_285_four_offsite_20261108.json",
+        "blob_sha": "3b24bedaca914217c02e4d152d4f0822bbeb90ec"
+      }
+    },
+    {
+      "slot": "285:3",
+      "post_id": 285,
+      "batch": "tmi",
+      "priority": "P1",
+      "stored_source_url": "https://i.insider.com/5d5eb5f754c75f23dc72ed4c?auto=webp&format=jpeg&width=800",
+      "source_scope": "LIVE_WP_EDITOR_OR_PRIOR_LEDGER_AS_DESCRIBED",
+      "retriever": {
+        "method": "EXTERNAL_WEB_RETRIEVER_NOT_GUEST",
+        "result": "RENDERED_VIA_WEB_RETRIEVER",
+        "wrapper_code": null,
+        "origin_http": null,
+        "guest_http": null,
+        "guest_decoded_px": null,
+        "guest_wire_bytes": null,
+        "visitor_broken": null
+      },
+      "candidate": {
+        "catalog_url": null,
+        "catalog_authority": "NO_VERIFIED_CATALOG",
+        "rights_observation": "UNKNOWN",
+        "native_px": null,
+        "conditional_960px": null,
+        "exact_binary_match": false,
+        "item_rights_cleared": false,
+        "visual_signoff": false
+      },
+      "release": {
+        "external_binary_download": false,
+        "cache": false,
+        "wordpress_media_upload": false,
+        "post_rewrite": false,
+        "homepage_change": false
+      },
+      "source_ledger": {
+        "path": "qa/media-recovery/tmi_285_four_offsite_20261108.json",
+        "blob_sha": "3b24bedaca914217c02e4d152d4f0822bbeb90ec"
+      }
+    },
+    {
+      "slot": "285:4",
+      "post_id": 285,
+      "batch": "tmi",
+      "priority": "P1",
+      "stored_source_url": "https://images.pixels.com/images-medium-large-5/three-mile-island-damaged-reactor-core-nuclear-regulatory-commissionscience-photo-library.jpg",
+      "source_scope": "LIVE_WP_EDITOR_OR_PRIOR_LEDGER_AS_DESCRIBED",
+      "retriever": {
+        "method": "EXTERNAL_WEB_RETRIEVER_NOT_GUEST",
+        "result": "RENDERED_VIA_WEB_RETRIEVER",
+        "wrapper_code": null,
+        "origin_http": null,
+        "guest_http": null,
+        "guest_decoded_px": null,
+        "guest_wire_bytes": null,
+        "visitor_broken": null
+      },
+      "candidate": {
+        "catalog_url": "https://www.nrc.gov/education-regulatory-research/research/state-of-the-art-reactor-consequence-analyses-soarca/frequently-asked-questions",
+        "catalog_authority": "OFFICIAL_PRIMARY_CATALOG",
+        "rights_observation": "CATALOG_ASSERTS_PD_USGOV_NRC_DERIVATIVE_REVIEW",
+        "native_px": [
+          1772,
+          2623
+        ],
+        "conditional_960px": [
+          960,
+          1421
+        ],
+        "exact_binary_match": false,
+        "item_rights_cleared": false,
+        "visual_signoff": false
+      },
+      "release": {
+        "external_binary_download": false,
+        "cache": false,
+        "wordpress_media_upload": false,
+        "post_rewrite": false,
+        "homepage_change": false
+      },
+      "source_ledger": {
+        "path": "qa/media-recovery/tmi_285_four_offsite_20261108.json",
+        "blob_sha": "3b24bedaca914217c02e4d152d4f0822bbeb90ec"
+      }
+    }
+  ],
+  "oversized_media_rows": [
+    {
+      "media_id": 388,
+      "original_url": "https://finalvestige.com/wp-content/uploads/2026/08/vasa-modell-2020.jpg",
+      "stored_original_bytes": 8176362,
+      "native_px": [
+        4256,
+        2832
+      ],
+      "conditional_960px": [
+        960,
+        639
+      ],
+      "published_inline_post_ids": [
+        299
+      ],
+      "direct_inline_srcs": [
+        "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/vasa-modell-2020.jpg?fit=1024%2C681&ssl=1"
+      ],
+      "generated_subsizes": 7,
+      "rights_observation": "EDITORIAL_ONLY_MUSEUM_CREDIT_REQUIRED",
+      "browser_current_src": null,
+      "browser_transfer_bytes": null,
+      "derivative_authorized": false
+    },
+    {
+      "media_id": 1258,
+      "original_url": "https://finalvestige.com/wp-content/uploads/2026/08/edit-017-v02-nypl-5003296-original.jpg",
+      "stored_original_bytes": 5553669,
+      "native_px": [
+        5667,
+        3831
+      ],
+      "conditional_960px": [
+        960,
+        649
+      ],
+      "published_inline_post_ids": [
+        621
+      ],
+      "direct_inline_srcs": [
+        "https://finalvestige.com/wp-content/uploads/2026/08/edit-017-v02-nypl-5003296-original.jpg"
+      ],
+      "generated_subsizes": 7,
+      "rights_observation": "ITEM_LEVEL_REVIEW_REQUIRED",
+      "browser_current_src": null,
+      "browser_transfer_bytes": null,
+      "derivative_authorized": false
+    },
+    {
+      "media_id": 1257,
+      "original_url": "https://finalvestige.com/wp-content/uploads/2026/08/edit-017-v01-malbone-tunnel-generalpunger-original.jpg",
+      "stored_original_bytes": 4798395,
+      "native_px": [
+        4000,
+        3000
+      ],
+      "conditional_960px": [
+        960,
+        720
+      ],
+      "published_inline_post_ids": [
+        621
+      ],
+      "direct_inline_srcs": [
+        "https://finalvestige.com/wp-content/uploads/2026/08/edit-017-v01-malbone-tunnel-generalpunger-original.jpg"
+      ],
+      "generated_subsizes": 7,
+      "rights_observation": "ITEM_LEVEL_REVIEW_REQUIRED",
+      "browser_current_src": null,
+      "browser_transfer_bytes": null,
+      "derivative_authorized": false
+    },
+    {
+      "media_id": 39,
+      "original_url": "https://finalvestige.com/wp-content/uploads/2026/08/bceca0bd-a16f-44f7-be08-16376fbf08ca.png",
+      "stored_original_bytes": 2892087,
+      "native_px": [
+        1672,
+        941
+      ],
+      "conditional_960px": [
+        960,
+        540
+      ],
+      "published_inline_post_ids": [
+        34
+      ],
+      "direct_inline_srcs": [
+        "https://finalvestige.com/wp-content/uploads/2026/08/bceca0bd-a16f-44f7-be08-16376fbf08ca.png"
+      ],
+      "generated_subsizes": 0,
+      "rights_observation": "HISTORICAL_RECONSTRUCTION_CREATOR_LICENSE_UNVERIFIED",
+      "browser_current_src": null,
+      "browser_transfer_bytes": null,
+      "derivative_authorized": false
+    },
+    {
+      "media_id": 43,
+      "original_url": "https://finalvestige.com/wp-content/uploads/2026/08/01340c2e-1165-4ca0-aa96-87398a83d13a.png",
+      "stored_original_bytes": 2836245,
+      "native_px": [
+        1672,
+        941
+      ],
+      "conditional_960px": [
+        960,
+        540
+      ],
+      "published_inline_post_ids": [
+        38
+      ],
+      "direct_inline_srcs": [
+        "https://finalvestige.com/wp-content/uploads/2026/08/01340c2e-1165-4ca0-aa96-87398a83d13a.png"
+      ],
+      "generated_subsizes": 0,
+      "rights_observation": "HISTORICAL_RECONSTRUCTION_CREATOR_LICENSE_UNVERIFIED",
+      "browser_current_src": null,
+      "browser_transfer_bytes": null,
+      "derivative_authorized": false
+    },
+    {
+      "media_id": 389,
+      "original_url": "https://finalvestige.com/wp-content/uploads/2026/08/vasa-01-2020.jpg",
+      "stored_original_bytes": 2822969,
+      "native_px": [
+        2147,
+        1417
+      ],
+      "conditional_960px": [
+        960,
+        634
+      ],
+      "published_inline_post_ids": [
+        299
+      ],
+      "direct_inline_srcs": [
+        "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/vasa-01-2020.jpg?fit=1024%2C676&ssl=1"
+      ],
+      "generated_subsizes": 7,
+      "rights_observation": "ITEM_LEVEL_REVIEW_REQUIRED",
+      "browser_current_src": null,
+      "browser_transfer_bytes": null,
+      "derivative_authorized": false
+    },
+    {
+      "media_id": 40,
+      "original_url": "https://finalvestige.com/wp-content/uploads/2026/08/377e08da-e121-4f57-9174-1548343402b3.png",
+      "stored_original_bytes": 2552136,
+      "native_px": [
+        1672,
+        941
+      ],
+      "conditional_960px": [
+        960,
+        540
+      ],
+      "published_inline_post_ids": [
+        35
+      ],
+      "direct_inline_srcs": [
+        "https://finalvestige.com/wp-content/uploads/2026/08/377e08da-e121-4f57-9174-1548343402b3.png"
+      ],
+      "generated_subsizes": 0,
+      "rights_observation": "HISTORICAL_RECONSTRUCTION_CREATOR_LICENSE_UNVERIFIED",
+      "browser_current_src": null,
+      "browser_transfer_bytes": null,
+      "derivative_authorized": false
+    },
+    {
+      "media_id": 41,
+      "original_url": "https://finalvestige.com/wp-content/uploads/2026/08/a44f673d-a8a8-4c83-9f29-7e24dd55156b.png",
+      "stored_original_bytes": 2498247,
+      "native_px": [
+        1672,
+        941
+      ],
+      "conditional_960px": [
+        960,
+        540
+      ],
+      "published_inline_post_ids": [
+        36
+      ],
+      "direct_inline_srcs": [
+        "https://finalvestige.com/wp-content/uploads/2026/08/a44f673d-a8a8-4c83-9f29-7e24dd55156b.png"
+      ],
+      "generated_subsizes": 0,
+      "rights_observation": "HISTORICAL_RECONSTRUCTION_CREATOR_LICENSE_UNVERIFIED",
+      "browser_current_src": null,
+      "browser_transfer_bytes": null,
+      "derivative_authorized": false
+    },
+    {
+      "media_id": 42,
+      "original_url": "https://finalvestige.com/wp-content/uploads/2026/08/c1237ffd-4a47-4988-8254-e3b021069e72.png",
+      "stored_original_bytes": 2488823,
+      "native_px": [
+        1672,
+        941
+      ],
+      "conditional_960px": [
+        960,
+        540
+      ],
+      "published_inline_post_ids": [
+        37
+      ],
+      "direct_inline_srcs": [
+        "https://finalvestige.com/wp-content/uploads/2026/08/c1237ffd-4a47-4988-8254-e3b021069e72.png"
+      ],
+      "generated_subsizes": 0,
+      "rights_observation": "HISTORICAL_RECONSTRUCTION_CREATOR_LICENSE_UNVERIFIED",
+      "browser_current_src": null,
+      "browser_transfer_bytes": null,
+      "derivative_authorized": false
+    },
+    {
+      "media_id": 382,
+      "original_url": "https://finalvestige.com/wp-content/uploads/2026/08/vasa-med-gamla-och-nya-stottor_vasa-with-old-and-new-supports.jpg",
+      "stored_original_bytes": 2318980,
+      "native_px": [
+        1800,
+        1200
+      ],
+      "conditional_960px": [
+        960,
+        640
+      ],
+      "published_inline_post_ids": [
+        299
+      ],
+      "direct_inline_srcs": [
+        "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/vasa-med-gamla-och-nya-stottor_vasa-with-old-and-new-supports.jpg?fit=1024%2C683&ssl=1"
+      ],
+      "generated_subsizes": 6,
+      "rights_observation": "ITEM_LEVEL_REVIEW_REQUIRED",
+      "browser_current_src": null,
+      "browser_transfer_bytes": null,
+      "derivative_authorized": false
+    },
+    {
+      "media_id": 482,
+      "original_url": "https://finalvestige.com/wp-content/uploads/2026/08/050e21e0-7b54-4f9a-ba0b-7f594657af05.png",
+      "stored_original_bytes": 2293016,
+      "native_px": [
+        1672,
+        941
+      ],
+      "conditional_960px": [
+        960,
+        540
+      ],
+      "published_inline_post_ids": [],
+      "direct_inline_srcs": [],
+      "generated_subsizes": 6,
+      "rights_observation": "ITEM_LEVEL_REVIEW_REQUIRED",
+      "browser_current_src": null,
+      "browser_transfer_bytes": null,
+      "derivative_authorized": false
+    },
+    {
+      "media_id": 405,
+      "original_url": "https://finalvestige.com/wp-content/uploads/2026/08/The20Water20Resilience20Field20Manual.png",
+      "stored_original_bytes": 2201573,
+      "native_px": [
+        1122,
+        1402
+      ],
+      "conditional_960px": [
+        960,
+        1200
+      ],
+      "published_inline_post_ids": [],
+      "direct_inline_srcs": [],
+      "generated_subsizes": 5,
+      "rights_observation": "ITEM_LEVEL_REVIEW_REQUIRED",
+      "browser_current_src": null,
+      "browser_transfer_bytes": null,
+      "derivative_authorized": false
+    },
+    {
+      "media_id": 293,
+      "original_url": "https://finalvestige.com/wp-content/uploads/2026/08/ne.png",
+      "stored_original_bytes": 2090327,
+      "native_px": [
+        1122,
+        1402
+      ],
+      "conditional_960px": [
+        960,
+        1200
+      ],
+      "published_inline_post_ids": [],
+      "direct_inline_srcs": [],
+      "generated_subsizes": 5,
+      "rights_observation": "ITEM_LEVEL_REVIEW_REQUIRED",
+      "browser_current_src": null,
+      "browser_transfer_bytes": null,
+      "derivative_authorized": false
+    },
+    {
+      "media_id": 2148,
+      "original_url": "https://finalvestige.com/wp-content/uploads/2026/11/1927-caernarvon-levee-explosion-noaa-archive.jpg",
+      "stored_original_bytes": 2030948,
+      "native_px": [
+        1821,
+        1190
+      ],
+      "conditional_960px": [
+        960,
+        627
+      ],
+      "published_inline_post_ids": [],
+      "direct_inline_srcs": [],
+      "generated_subsizes": 6,
+      "rights_observation": "COMMONS_NOAA_PD_ASSERTION_CROP_REVIEW_REQUIRED",
+      "browser_current_src": null,
+      "browser_transfer_bytes": null,
+      "derivative_authorized": false
+    },
+    {
+      "media_id": 1714,
+      "original_url": "https://finalvestige.com/wp-content/uploads/2026/10/halifax-explosion-map.png",
+      "stored_original_bytes": 1543002,
+      "native_px": [
+        1280,
+        1280
+      ],
+      "conditional_960px": [
+        960,
+        960
+      ],
+      "published_inline_post_ids": [
+        269
+      ],
+      "direct_inline_srcs": [
+        "https://finalvestige.com/wp-content/uploads/2026/10/halifax-explosion-map.png"
+      ],
+      "generated_subsizes": 5,
+      "rights_observation": "ORIGINAL_MAP_AUTHOR_RIGHTS_UNVERIFIED",
+      "browser_current_src": null,
+      "browser_transfer_bytes": null,
+      "derivative_authorized": false
+    }
+  ],
+  "browser_handoff": {
+    "owner": "Site QA Draft PR #154, existing collector ONLY",
+    "first_slots": [
+      "285:5",
+      "285:2",
+      "287:5",
+      "418:1",
+      "418:2",
+      "407:1"
+    ],
+    "required_fields": [
+      "post_url",
+      "slot",
+      "stored_source_url",
+      "runtime_currentSrc",
+      "cold_request_id",
+      "uncached_origin_status",
+      "response_mime",
+      "redirect_chain",
+      "from_disk_cache",
+      "from_service_worker",
+      "naturalWidth",
+      "naturalHeight",
+      "encodedDataLength",
+      "desktop_mobile_screenshot"
+    ],
+    "conditional_release": "After actual logged-out browser failure and exact-item rights/attribution/visual equivalence proof; staging derivative only <=960px wide and no upscaling; explicit editorial and production write approval then rollback plan."
+  },
+  "policy": {
+    "all_candidate_rehosting_hold": true,
+    "all_wordpress_writes_hold": true,
+    "zero_new_binary_downloads": true,
+    "zero_homepage_edits": true,
+    "zero_subscription_spend": true,
+    "no_42_broken_claim": true,
+    "no_76pct_wire_claim": true
+  }
+}
