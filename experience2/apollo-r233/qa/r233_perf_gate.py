@@ -66,6 +66,13 @@ def run(dist, out):
                 summary.focus();page.keyboard.press('Enter')
                 assert parent.evaluate('(e)=>e.open') != before
                 summary.press('Enter')
+                if width<=390:
+                    summary.tap()
+                    assert parent.evaluate('(e)=>e.open') != before
+                    summary.tap()
+                # Fresh deterministic rendering after interactive/touch checks.
+                page.set_content(doc,wait_until='load')
+                page.wait_for_timeout(80)
                 page.evaluate('scrollTo(0,0)')
                 screenshot=out/f'{width}-{"js" if js else "nojs"}.png'
                 page.screenshot(path=str(screenshot),full_page=True,animations='disabled')
