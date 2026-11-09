@@ -72,5 +72,5 @@ const mutations=[
 for(const [name,mutate] of mutations){test(name,()=>{const c=mutant(contract);mutate(c);assert(problems(c,alternative,readme).length>0);});}
 test("legal footer alteration rejected",()=>assert(problems(contract,alternative.replace("[[VALID_POSTAL_ADDRESS_REQUIRED]]","a verified address"),readme).length>0));
 test("no activated offer placeholder",()=>assert(problems(contract,alternative.replace("[[APPROVED_ZEN12_WARMUP_GUIDE_URL_REQUIRED]]","https://example.invalid/offer"),readme).length>0));
-test("no removal of source",()=>assert(problems(contract,alternative.replace("https://zen12.com/hnp","https://example.invalid/seller"),readme).length>0));
+test("no removal of source",()=>assert(problems(contract,alternative.replaceAll("https://zen12.com/hnp","https://example.invalid/seller"),readme).length>0));
 console.log(checks+"/"+checks+" offline source-level Node checks passed; not an email delivery or WordPress test");
