@@ -19,7 +19,7 @@
       "id": "S02",
       "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3720035/",
       "type": "peer_reviewed_open",
-      "scope": "2013 updating / blanking description"
+      "scope": "2012 updating / blanking description"
     },
     {
       "id": "S03",
@@ -131,7 +131,7 @@
     },
     {
       "id": "S21",
-      "url": "https://www.lucs.lu/fileadmin/user_upload/lucs/2011/01/Hall-et-al.-2010-Magic-at-the-Marketplace-Choice-Blindness-for-the-Taste-of-Jam-and-the-Smell-of-Tea.pdf",
+      "url": "https://www.lucs.lu.se/fileadmin/user_upload/lucs/2011/01/Hall-et-al.-2010-Magic-at-the-Marketplace-Choice-Blindness-for-the-Taste-of-Jam-and-the-Smell-of-Tea.pdf",
       "type": "primary_pdf_not_analyzed_in_this_sprint",
       "scope": "Independent Praxxis correction; metadata only, not PDF analyzed"
     },
@@ -494,5 +494,11 @@
     "randomization": "not_started",
     "video_rendered": false,
     "pass_condition": "merchant-authorized paid conversion and net revenue proof, not CTA clicks"
-  }
+  },
+  "r245_canonical_corrections": [
+    "Tas/Moore/Hollingworth account source publication October 23 2012; blanking thresholds quoted there describe earlier work.",
+    "2021 presaccadic attention review authors Li, Hanning and Carrasco; duplicated footnote consolidated.",
+    "2020 form blanking: task-specific significant gain in saccade/spatiotopic condition, 15 participants; not a general improvement.",
+    "Lund University choice-blindness PDF hostname restored to www.lucs.lu.se."
+  ]
 }
