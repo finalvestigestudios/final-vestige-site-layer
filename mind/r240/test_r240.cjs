@@ -98,5 +98,5 @@ reject(()=>inspectOldPlan(text.oldplan.replace('**Collision confirmed:** R227','
 reject(()=>inspectGuide(text.guide+'\nhttps://hypnosislive.com/mental-skills/total-focus'),'unexpected merchant link');
 reject(()=>inspectNewPlan(''),'empty plan');
 reject(()=>inspectVtt(text.vtt.replace('00:00:42.000','00:00:41.000')),'caption end');
-assert.equal(rejected,69,'expected 56 individual identity mutations + 13 activation/content failures');
+assert.equal(rejected,73,'expected 56 individual identity mutations + 17 activation/content failures');
 console.log('PASS R240 source-level exact-fingerprint matrix/guide/html/plans, R239 full-paper corrections, R237 Zen12 A/B no-JS disabled controls and 42s captions; '+rejected+'/'+rejected+' dangerous synthetic changes rejected. No real browser/merchant/affiliate/sale verification.');
