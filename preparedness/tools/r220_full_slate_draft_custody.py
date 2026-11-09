@@ -89,6 +89,10 @@ R249_READER_COPY_PATH = 'tools/r249_reader_disclosure_preview_hold.py'
 R249_READER_COPY_BLOB = '7952b897d26e2496b371d9f4fab517cef1c7011d'
 R249_UNPUBLISHED_PREVIEW_PATH = 'audits/r249_family_card_reader_disclosure_draft.html'
 R249_UNPUBLISHED_PREVIEW_BLOB = 'ce5c363786deb0296f78598818af1fd7abefae65'
+# R250 checks R248's authenticated original print-field model against R249's
+# unapproved, visible reader copy. Source parity is NOT human/medical/QD approval.
+R250_SOURCE_READER_PATH = 'tools/r250_family_card_reader_source_alignment_hold.py'
+R250_SOURCE_READER_BLOB = 'c8149e31b44b6b37ce930dfc8a140560270f1f73'
 # These are independently observed R219 integration Git blobs, not certified text.
 # Missing entries MUST match the older R200 original exactly.
 INTEGRATED_DIFFS = {
@@ -621,6 +625,21 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
                     'commerce_approved', 'release_authorized'))):
             raise ValueError('R249 reader-preview citation/commerce HARD HOLD drift')
         result['unapproved_reader_copy_preview'] = preview
+        alignment_guard = load_frozen_gate(root, R250_SOURCE_READER_PATH,
+                                           R250_SOURCE_READER_BLOB,
+                                           'fv_preparedness_r250_source_reader', ('inspect',))
+        alignment = alignment_guard.inspect(
+            field_matrix, preview, safe_read(root, R249_UNPUBLISHED_PREVIEW_PATH).decode('utf-8', 'strict'))
+        if (alignment.get('state') != HOLD
+                or alignment.get('source_to_reader_six_field_parity') != 'OBSERVED_NOT_APPROVED'
+                or alignment.get('printed_shorter_fields') != 6
+                or alignment.get('human_review_required') is not True
+                or any(alignment.get(k) is not False for k in (
+                    'independent_qd_pass', 'source_review_approved',
+                    'privacy_certified', 'medical_safety_verified',
+                    'merchant_approved', 'release_authorized'))):
+            raise ValueError('R250 source-to-reader evidence HARD HOLD drift')
+        result['unapproved_reader_source_alignment'] = alignment
         if verify_exports:
             # Only imports the repository's own build code from its trusted tools path.
             tools_path = root / 'tools'
@@ -724,6 +743,8 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
             raise ValueError('R249 reader-preview guard changed during audit')
         if git_blob(safe_read(root, R249_UNPUBLISHED_PREVIEW_PATH)) != R249_UNPUBLISHED_PREVIEW_BLOB:
             raise ValueError('R249 reader-preview HTML changed during audit')
+        if git_blob(safe_read(root, R250_SOURCE_READER_PATH)) != R250_SOURCE_READER_BLOB:
+            raise ValueError('R250 source-to-reader guard changed during audit')
         result['reconciliation'] = {'frozen_articles': 35,
                                     'integrated_changes_held_for_review': sum(
                                         x['changed_since_original'] for x in status),
