@@ -33,7 +33,7 @@ function inspectMatrix(x){
 }
 function inspectGuide(s){
  assert(s.trim().split(/\s+/).length>=2000,'deep 2k buyer guide');
- for(const t of ['33-minute','47 MB','five sessions per year','14-day','no product-specific trial','product-specific','not independently established','may earn a commission','UNPUBLISHED'])assert(s.toLowerCase().includes(t.toLowerCase()),'guide missing '+t);
+ for(const t of ['33-minute','47 MB','five sessions per year','14-day','no product-specific trial','product-specific','not to state that it works as advertised','may earn a commission','UNPUBLISHED'])assert(s.toLowerCase().includes(t.toLowerCase()),'guide missing '+t);
  assert(!/https:\/\/(?:www\.)?(?:hypnosislive|zen12|inspire3|brainwaveshots|awin1)\.com/i.test(s),'no active seller URL in public-facing guide');
  assert(!/I (?:used|tested|purchased|listened to) (?:the |this )?(?:recording|product)/i.test(s),'no fake personal test');
 }
