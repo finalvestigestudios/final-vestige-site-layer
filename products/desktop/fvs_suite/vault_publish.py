@@ -24,6 +24,21 @@ def _sanitize_io(exc: OSError) -> OSError:
     return OSError(code, "Encrypted evidence publication failed")
 
 
+def _read_exact(fd: int, count: int) -> bytes:
+    """Read one verification block even when the OS returns valid short reads.
+
+    A premature EOF, non-byte result or overread is a verification failure, not
+    a reason to publish. The bounded block size caps transient read memory.
+    """
+    parts = bytearray()
+    while len(parts) < count:
+        chunk = os.read(fd, count - len(parts))
+        if type(chunk) is not bytes or not chunk or len(chunk) > count - len(parts):
+            raise OSError(errno.EIO, "Incomplete encrypted evidence staging read")
+        parts.extend(chunk)
+    return bytes(parts)
+
+
 def _write_and_verify(fd: int, payload: bytes) -> None:
     offset = 0
     while offset < len(payload):
@@ -37,7 +52,7 @@ def _write_and_verify(fd: int, payload: bytes) -> None:
     offset = 0
     while offset < len(payload):
         expected = payload[offset:offset + _BLOCK]
-        actual = os.read(fd, len(expected))
+        actual = _read_exact(fd, len(expected))
         if actual != expected:
             raise OSError(errno.EIO, "Encrypted evidence staging byte mismatch")
         offset += len(expected)
