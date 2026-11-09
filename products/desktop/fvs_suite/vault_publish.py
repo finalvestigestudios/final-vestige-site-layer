@@ -114,7 +114,6 @@ def _recheck_staged_bytes(path: str, owned: os.stat_result, payload: bytes) -> N
         raise OSError(errno.EIO, "Encrypted evidence staged name mutated")
 
 
-
 def _verify_published_bytes(target: Path, owned: os.stat_result, payload: bytes) -> None:
     """Verify the *final* pathname after linking, not just its source stage.
 
@@ -160,6 +159,7 @@ def _rollback_published_name(target: Path, observed: os.stat_result) -> None:
     if (current.st_dev == observed.st_dev and current.st_ino == observed.st_ino
             and stat.S_IFMT(current.st_mode) == stat.S_IFMT(observed.st_mode)):
         os.unlink(target)
+
 
 def _publish(target: Path, payload: bytes) -> None:
     # Avoid accidental publication through a symlinked destination directory.
