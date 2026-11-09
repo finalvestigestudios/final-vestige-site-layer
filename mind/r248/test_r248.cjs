@@ -113,7 +113,7 @@ function check(data){
  const lines=data.vtt.trim().split(/\r?\n/);
  assert.equal(lines[0],'WEBVTT');
  // Full WebVTT clock validation: never discard hours/minutes (Praxxis QA 2026-11-09).
- const cuePattern=/^(\\d{2}):(\\d{2}):(\\d{2})\\.(\\d{3}) --> (\\d{2}):(\\d{2}):(\\d{2})\\.(\\d{3})$/gm;
+ const cuePattern=/^(\d{2}):(\d{2}):(\d{2})\.(\d{3}) --> (\d{2}):(\d{2}):(\d{2})\.(\d{3})$/gm;
  const toMs=(h,m,s,ms)=>{const H=Number(h),M=Number(m),S=Number(s),MS=Number(ms);assert.ok(M<60&&S<60,'WebVTT clock range');return ((H*60+M)*60+S)*1000+MS;};
  const times=[...data.vtt.matchAll(cuePattern)].map(m=>[toMs(...m.slice(1,5)),toMs(...m.slice(5,9))]);
  assert.equal((data.vtt.match(/-->/g)||[]).length,times.length,'all WebVTT cue timestamps parsed');
