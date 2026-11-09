@@ -89,6 +89,11 @@ def browser_check(header, css, out=None):
                     summary.focus()
                     page.keyboard.press("Enter")
                     assert menu.get_attribute("open") is None
+                    # Native Space activation is essential for keyboard users.
+                    page.keyboard.press("Space")
+                    assert menu.get_attribute("open") is not None
+                    page.keyboard.press("Space")
+                    assert menu.get_attribute("open") is None
                 extent = page.evaluate(
                     '({scroll: document.documentElement.scrollWidth, '
                     'viewport: window.innerWidth})')
