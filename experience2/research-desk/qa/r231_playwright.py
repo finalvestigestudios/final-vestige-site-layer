@@ -44,7 +44,7 @@ def verify_dom(page, js):
 
 def run(repo, out, axe_path=None):
     repo=Path(repo).resolve();out=Path(out).resolve();out.mkdir(parents=True,exist_ok=True)
-    asset=repo/ROOT/"assets";style=(asset/"source-ledger.css").read_text()
+    asset=repo/ROOT/"assets";style=(asset/"source-ledger-r231.css").read_text()
     script=(asset/"source-ledger-r231.js").read_text()
     results={k:php_case(repo,k) for k in ("normal","duplicate","tampered")}
     assert all(x["status"]=="PASS" for x in results.values())
