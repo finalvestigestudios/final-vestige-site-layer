@@ -80,9 +80,9 @@ for(const [label,original,modified] of [
  ]){assert.notEqual(original,modified,'mutation must apply: '+label);rejects(()=>testArm(modified),label)}
 for(const [label,mutant] of [
  ['misleading-title',H.replace('# The Hand Absent During the Sham Trial','# The Hand That Never Touched Her')],
- ['hands-deleted',H.replace('Jumelin **applied his hands to her upper abdomen**','Jumelin did not approach')],
+ ['hands-deleted',H.replaceAll('Jumelin **applied his hands to her upper abdomen**','Jumelin did not approach')],
  ['faint-deleted',H.replace('she reported heat and then fainted','she felt fine')],
- ['sham-deleted',H.replace('no operation took place','a treatment took place')]
+ ['sham-deleted',H.replaceAll('no operation took place','a treatment took place')]
  ])rejects(()=>testHistory(mutant),label);
 for(const [label,mutant] of [
  ['activation',{...M,merchant_activation:true}],
