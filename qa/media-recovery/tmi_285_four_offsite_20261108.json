@@ -1,0 +1,139 @@
+{
+  "schema": "fv-tmi-285-non-p0-primary-map-20261108-v1",
+  "observed_date_utc": "2026-11-09",
+  "cms": {
+    "method": "wordpress_posts_get_context_edit_read_only",
+    "post_id": 285,
+    "title": "The Light Said Closed",
+    "status": "publish",
+    "modified": "2026-11-02T21:39:59",
+    "url": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+    "total_inline_images": 6,
+    "scope": "ONLY_SLOTS_0_1_3_4_P0_2_5_SEPARATE"
+  },
+  "web_method": "web.open exact published image URL; tool wrapper/render outcome, not origin HTTP or guest Chrome",
+  "source_references": [
+    "https://www.nrc.gov/education-regulatory-research/research/state-of-the-art-reactor-consequence-analyses-soarca/frequently-asked-questions",
+    "https://commons.wikimedia.org/wiki/File:Graphic_TMI-2_Core_End-State_Configuration.png",
+    "https://pixels.com/featured/three-mile-island-damaged-reactor-core-nuclear-regulatory-commissionscience-photo-library.html",
+    "https://www.energy.gov/management/historical-photographs"
+  ],
+  "rows": [
+    {
+      "slot": "285:0",
+      "published_src": "https://live.staticflickr.com/7278/7447166686_5d24dff6db_b.jpg",
+      "alt": "Operators and technical staff inside the Three Mile Island Unit 2 control room during the 1979 accident.",
+      "web_retriever": {
+        "tool": "web.open",
+        "observation": "TOOL_403_FORBIDDEN",
+        "origin_http": null,
+        "guest_http": null,
+        "guest_natural_width": null,
+        "guest_natural_height": null,
+        "guest_wire_bytes": null
+      },
+      "archival_candidate": {
+        "official_catalog_url": null,
+        "relationship": "NO_VERIFIED_SAME_IMAGE_PRIMARY_CATALOG",
+        "rights": "UNKNOWN",
+        "native_dimensions": null,
+        "conditional_max_width_960": null
+      },
+      "visual_caution": "1979_CREW_SCENE_NOT_AUTHENTICATED",
+      "release": "HOLD"
+    },
+    {
+      "slot": "285:1",
+      "published_src": "https://i0.wp.com/www.squawkpoint.com/wp-content/uploads/2019/02/Three-Mile-Island-Control-Centre.jpg?ssl=1",
+      "alt": "Wide view of the densely instrumented Three Mile Island Unit 2 control room.",
+      "web_retriever": {
+        "tool": "web.open",
+        "observation": "RENDERED_VIA_WEB_RETRIEVER",
+        "origin_http": null,
+        "guest_http": null,
+        "guest_natural_width": null,
+        "guest_natural_height": null,
+        "guest_wire_bytes": null
+      },
+      "archival_candidate": {
+        "official_catalog_url": null,
+        "relationship": "NO_VERIFIED_SAME_IMAGE_PRIMARY_CATALOG",
+        "rights": "UNKNOWN",
+        "native_dimensions": null,
+        "conditional_max_width_960": null
+      },
+      "visual_caution": "JETPACK_THIRD_PARTY_PROXY_NOT_FIRST_PARTY",
+      "release": "HOLD"
+    },
+    {
+      "slot": "285:3",
+      "published_src": "https://i.insider.com/5d5eb5f754c75f23dc72ed4c?auto=webp&format=jpeg&width=800",
+      "alt": "Technical personnel gathered inside the Three Mile Island control room during the 1979 accident response.",
+      "web_retriever": {
+        "tool": "web.open",
+        "observation": "RENDERED_VIA_WEB_RETRIEVER",
+        "origin_http": null,
+        "guest_http": null,
+        "guest_natural_width": null,
+        "guest_natural_height": null,
+        "guest_wire_bytes": null
+      },
+      "archival_candidate": {
+        "official_catalog_url": null,
+        "relationship": "NO_VERIFIED_SAME_IMAGE_PRIMARY_CATALOG",
+        "rights": "UNKNOWN",
+        "native_dimensions": null,
+        "conditional_max_width_960": null
+      },
+      "visual_caution": "PUBLIC_FIGURES_PICTURED_SCENE_DATE_TO_VERIFY",
+      "release": "HOLD"
+    },
+    {
+      "slot": "285:4",
+      "published_src": "https://images.pixels.com/images-medium-large-5/three-mile-island-damaged-reactor-core-nuclear-regulatory-commissionscience-photo-library.jpg",
+      "alt": "Reconstruction of the severely damaged Three Mile Island Unit 2 reactor core after the partial meltdown.",
+      "web_retriever": {
+        "tool": "web.open",
+        "observation": "RENDERED_VIA_WEB_RETRIEVER",
+        "origin_http": null,
+        "guest_http": null,
+        "guest_natural_width": null,
+        "guest_natural_height": null,
+        "guest_wire_bytes": null
+      },
+      "archival_candidate": {
+        "official_catalog_url": "https://www.nrc.gov/education-regulatory-research/research/state-of-the-art-reactor-consequence-analyses-soarca/frequently-asked-questions",
+        "commons_catalog_url": "https://commons.wikimedia.org/wiki/File:Graphic_TMI-2_Core_End-State_Configuration.png",
+        "relationship": "SAME_NRC_SCIENTIFIC_FIGURE_BINARY_CROP_AND_TEXT_NOT_VERIFIED",
+        "rights": "CATALOG_ASSERTS_PD_USGOV_NRC_DERIVATIVE_REVIEW",
+        "native_dimensions": [
+          1772,
+          2623
+        ],
+        "conditional_max_width_960": [
+          960,
+          1421
+        ]
+      },
+      "visual_caution": "ILLUSTRATION_LABELS_REQUIRE_AT_LEAST_AS_READABLE_AS_ORIGINAL",
+      "release": "HOLD"
+    }
+  ],
+  "aggregate": {
+    "source_slots": 4,
+    "rendered_by_web_retriever": 3,
+    "tool_forbidden": 1,
+    "confirmed_visitor_broken": null,
+    "confirmed_wire_bytes": null,
+    "sitewide_76_percent_savings_verified": false,
+    "reported_42_broken_verified": false
+  },
+  "rights_and_release": {
+    "all_replacements_hold": true,
+    "third_party_binary_downloads": 0,
+    "word_press_writes": 0,
+    "home_edits": 0,
+    "spend_usd": 0,
+    "no_scraping": true
+  }
+}
