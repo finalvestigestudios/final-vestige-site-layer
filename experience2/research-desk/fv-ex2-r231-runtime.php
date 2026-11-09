@@ -15,7 +15,7 @@ function fv_ex2_r231_assets(): void {
     // Register via enqueue; shortcode can be called from nested/reusable/dynamic blocks
     // after wp_enqueue_scripts has finished. No assumptions about post_content.
     wp_enqueue_style('fv-ex2-r231-ledger', plugins_url('assets/source-ledger.css', __FILE__), array(), FV_EX2_R231_VERSION);
-    wp_enqueue_script('fv-ex2-r231-ledger', plugins_url('assets/source-ledger.js', __FILE__), array(), FV_EX2_R231_VERSION, true);
+    wp_enqueue_script('fv-ex2-r231-ledger', plugins_url('assets/source-ledger-r231.js', __FILE__), array(), FV_EX2_R231_VERSION, true);
 }
 
 function fv_ex2_r231_preflight(): void {
@@ -69,7 +69,7 @@ function fv_ex2_r231_shortcode($atts = array()): string {
     // is rendered *after* footer processing; JS is optional and never required
     // to expose the six records. No inline script, storage, tracking, or fetch.
     if (did_action('wp_footer') && !wp_script_is('fv-ex2-r231-ledger', 'done') && !$late_js_emitted) {
-        $resources .= '<script defer src="' . esc_url(plugins_url('assets/source-ledger.js', __FILE__)) . '"></script>';
+        $resources .= '<script defer src="' . esc_url(plugins_url('assets/source-ledger-r231.js', __FILE__)) . '"></script>';
         $late_js_emitted = true;
     }
     return $resources . $html;
