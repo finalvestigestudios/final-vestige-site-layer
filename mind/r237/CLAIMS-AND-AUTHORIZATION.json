@@ -1,0 +1,366 @@
+{
+  "version": "R237",
+  "date": "2026-11-08",
+  "state": "UNPUBLISHED_SOURCE_CONTROLLED_NO_MERCHANT_LINK",
+  "sources": [
+    {
+      "id": "P01",
+      "type": "primary historical report",
+      "url": "https://www.gutenberg.org/files/78413/78413-h/78413-h.htm",
+      "limits": "1785 translation of August 1784 report; uncontrolled by modern standards"
+    },
+    {
+      "id": "P02",
+      "type": "historical paper",
+      "url": "https://doi.org/10.1002/jhbs.21974",
+      "limits": "Crabtree 2019; report interpretation not verification of medical clairvoyance"
+    },
+    {
+      "id": "P03",
+      "type": "historical narrative",
+      "url": "https://cswr.hds.harvard.edu/news/2026/07/13/artificial-somnambulism-and-hypnotism",
+      "limits": "Crabtree July 2026, uses Puységur primary history"
+    },
+    {
+      "id": "P04",
+      "type": "published site",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "limits": "Published Mesmerism investigation; canonical overlap review"
+    },
+    {
+      "id": "P05",
+      "type": "published site",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "limits": "Published Puységur source archive"
+    },
+    {
+      "id": "P06",
+      "type": "published site",
+      "url": "https://finalvestige.com/focus/",
+      "limits": "Existing one Focus Fieldbook and Jetpack/Dispatch list"
+    },
+    {
+      "id": "P07",
+      "type": "merchant catalog",
+      "url": "https://inspire3.com/",
+      "limits": "Official Inspire3 portfolio; seller-only descriptions"
+    },
+    {
+      "id": "P08",
+      "type": "exact seller offer",
+      "url": "https://zen12.com/hnp",
+      "limits": "Zen12 Premium 12 levels, 48 MP3, four styles, advertised refund, merchant opt-in; not cart proof"
+    },
+    {
+      "id": "P09",
+      "type": "seller explanation",
+      "url": "https://zen12.com/about",
+      "limits": "Claims of deep-state mechanisms not independent research"
+    },
+    {
+      "id": "P10",
+      "type": "public partner login",
+      "url": "https://affiliates.inspire3.com/",
+      "limits": "Public login does not confirm FV approval or account-issued link"
+    },
+    {
+      "id": "P11",
+      "type": "independent systematic review",
+      "url": "https://doi.org/10.1371/journal.pone.0286023",
+      "limits": "Mixed EEG binaural results; not exact product trial"
+    },
+    {
+      "id": "P12",
+      "type": "FTC endorsement guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "limits": "Clear material relationship close to earning link"
+    },
+    {
+      "id": "P13",
+      "type": "FTC health claim guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "limits": "Adequate scientific substantiation for health advertising"
+    },
+    {
+      "id": "P14",
+      "type": "governance",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "limits": "No unapproved CMS or affiliate activation"
+    },
+    {
+      "id": "P15",
+      "type": "governance",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "limits": "Qualified sessions to independently settled net revenue KPI"
+    },
+    {
+      "id": "P16",
+      "type": "governance",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/174",
+      "limits": "Dispatch editor independent; no duplicated welcome message"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "statement": "Historical report describes blindfolded no-treatment condition",
+      "status": "historically_documented",
+      "source_id": "P01"
+    },
+    {
+      "id": "C02",
+      "statement": "Jumelin was involved in the described woman trial",
+      "status": "historically_documented",
+      "source_id": "P01"
+    },
+    {
+      "id": "C03",
+      "statement": "The royal commission studied Mesmer himself in these trials",
+      "status": "FALSE_DO_NOT_CLAIM",
+      "source_id": "P01"
+    },
+    {
+      "id": "C04",
+      "statement": "All responding participants lied or pretended",
+      "status": "UNSUPPORTED_DO_NOT_CLAIM",
+      "source_id": "P01"
+    },
+    {
+      "id": "C05",
+      "statement": "Franklin's commission proved all future hypnosis therapies ineffective",
+      "status": "UNSUPPORTED_SCOPE",
+      "source_id": "P01"
+    },
+    {
+      "id": "C06",
+      "statement": "Puységur described altered states involving Victor Race",
+      "status": "HISTORICAL_TESTIMONY",
+      "source_id": "P02"
+    },
+    {
+      "id": "C07",
+      "statement": "Puységur established reliable clairvoyant medical diagnosis",
+      "status": "UNSUPPORTED_DO_NOT_CLAIM",
+      "source_id": "P02"
+    },
+    {
+      "id": "C08",
+      "statement": "Modern historical scholarship treats Puységur as psychological history",
+      "status": "HISTORICAL_INTERPRETATION",
+      "source_id": "P03"
+    },
+    {
+      "id": "C09",
+      "statement": "Published FV Mesmerism already discusses 1784 commission",
+      "status": "VERIFIED_WP_POST",
+      "source_id": "P04"
+    },
+    {
+      "id": "C10",
+      "statement": "FV Puységur archival page is public",
+      "status": "VERIFIED_WP_PAGE",
+      "source_id": "P05"
+    },
+    {
+      "id": "C11",
+      "statement": "FV free Seven Day Focus Fieldbook is public",
+      "status": "VERIFIED_WP_PAGE",
+      "source_id": "P06"
+    },
+    {
+      "id": "C12",
+      "statement": "Inspire3 lists multiple mind-audio product brands",
+      "status": "SELLER_CATALOG_ONLY",
+      "source_id": "P07"
+    },
+    {
+      "id": "C13",
+      "statement": "Exact Zen12 Premium seller lists twelve levels",
+      "status": "SELLER_SPECIFICATION",
+      "source_id": "P08"
+    },
+    {
+      "id": "C14",
+      "statement": "Exact Zen12 Premium seller lists 48 MP3s",
+      "status": "SELLER_SPECIFICATION",
+      "source_id": "P08"
+    },
+    {
+      "id": "C15",
+      "statement": "Exact Zen12 Premium page describes four audio styles",
+      "status": "SELLER_SPECIFICATION",
+      "source_id": "P08"
+    },
+    {
+      "id": "C16",
+      "statement": "Seller advertises one-year refund promise",
+      "status": "SELLER_PROMISE_NOT_FULFILLMENT",
+      "source_id": "P08"
+    },
+    {
+      "id": "C17",
+      "statement": "Seller public page displays discounted price",
+      "status": "OBSERVED_PUBLIC_NOT_FINAL_CHECKOUT",
+      "source_id": "P08"
+    },
+    {
+      "id": "C18",
+      "statement": "One Zen12 session reliably reproduces hour-long meditation benefits",
+      "status": "UNSUPPORTED_PRODUCT_EFFICACY",
+      "source_id": "P08"
+    },
+    {
+      "id": "C19",
+      "statement": "Zen12 produces proved health or income improvements",
+      "status": "UNSUPPORTED_DO_NOT_CLAIM",
+      "source_id": "P08"
+    },
+    {
+      "id": "C20",
+      "statement": "Zen12 free-audio opt-in includes merchant newsletter",
+      "status": "SELLER_CONSENT_NOTICE_ONLY",
+      "source_id": "P08"
+    },
+    {
+      "id": "C21",
+      "statement": "Merchant public affiliate login establishes named FV publisher approval",
+      "status": "FALSE_DO_NOT_CLAIM",
+      "source_id": "P10"
+    },
+    {
+      "id": "C22",
+      "statement": "Independent EEG literature proves Zen12's exact marketed benefits",
+      "status": "UNSUPPORTED_EXTRAPOLATION",
+      "source_id": "P11"
+    },
+    {
+      "id": "C23",
+      "statement": "Affiliate endorsements need conspicuous near-link disclosures",
+      "status": "FTC_GUIDANCE",
+      "source_id": "P12"
+    },
+    {
+      "id": "C24",
+      "statement": "Medical efficacy claims require robust appropriate substantiation",
+      "status": "FTC_GUIDANCE",
+      "source_id": "P13"
+    },
+    {
+      "id": "C25",
+      "statement": "Qualified clicks or Jetpack success screens equal net paid sales",
+      "status": "FALSE_DO_NOT_CLAIM",
+      "source_id": "P15"
+    }
+  ],
+  "gates": [
+    {
+      "id": "G01",
+      "name": "final_vestige_specific_affiliate_acceptance",
+      "status": "HARD_HOLD",
+      "proof": "NOT_AUTHENTICATED"
+    },
+    {
+      "id": "G02",
+      "name": "product_specific_partner_eligibility",
+      "status": "HARD_HOLD",
+      "proof": "NOT_AUTHENTICATED"
+    },
+    {
+      "id": "G03",
+      "name": "website_promotion_permission",
+      "status": "HARD_HOLD",
+      "proof": "NOT_AUTHENTICATED"
+    },
+    {
+      "id": "G04",
+      "name": "social_channel_permission",
+      "status": "HARD_HOLD",
+      "proof": "NOT_AUTHENTICATED"
+    },
+    {
+      "id": "G05",
+      "name": "email_channel_permission",
+      "status": "HARD_HOLD",
+      "proof": "NOT_AUTHENTICATED"
+    },
+    {
+      "id": "G06",
+      "name": "issued_tracking_url",
+      "status": "HARD_HOLD",
+      "proof": "NOT_AUTHENTICATED"
+    },
+    {
+      "id": "G07",
+      "name": "tracking_attribution_terms",
+      "status": "HARD_HOLD",
+      "proof": "NOT_AUTHENTICATED"
+    },
+    {
+      "id": "G08",
+      "name": "commission_earnings_and_settlement",
+      "status": "HARD_HOLD",
+      "proof": "NOT_AUTHENTICATED"
+    },
+    {
+      "id": "G09",
+      "name": "exact_checkout_currency_and_totals",
+      "status": "HARD_HOLD",
+      "proof": "NOT_AUTHENTICATED"
+    },
+    {
+      "id": "G10",
+      "name": "merchant_refund_actual_terms",
+      "status": "HARD_HOLD",
+      "proof": "NOT_AUTHENTICATED"
+    },
+    {
+      "id": "G11",
+      "name": "creative_and_medical_claim_permission",
+      "status": "HARD_HOLD",
+      "proof": "NOT_AUTHENTICATED"
+    },
+    {
+      "id": "G12",
+      "name": "privacy_and_consumer_consent",
+      "status": "HARD_HOLD",
+      "proof": "NOT_AUTHENTICATED"
+    },
+    {
+      "id": "G13",
+      "name": "FTC_near_link_disclosure_acceptance",
+      "status": "HARD_HOLD",
+      "proof": "NOT_AUTHENTICATED"
+    },
+    {
+      "id": "G14",
+      "name": "mobile_and_browser_accessibility",
+      "status": "HARD_HOLD",
+      "proof": "NOT_AUTHENTICATED"
+    },
+    {
+      "id": "G15",
+      "name": "independently_reportable_paid_affiliate_conversions",
+      "status": "HARD_HOLD",
+      "proof": "NOT_AUTHENTICATED"
+    },
+    {
+      "id": "G16",
+      "name": "founder_and_siteQA_release",
+      "status": "HARD_HOLD",
+      "proof": "NOT_AUTHENTICATED"
+    }
+  ],
+  "commercial_activation": false,
+  "merchant_opt_in": "Seller newsletter, separate from existing FV Jetpack/Dispatch",
+  "revenue": {
+    "qualified_human_sessions_7d": null,
+    "qualified_human_sessions_30d": null,
+    "settled_owned_gross_sales": null,
+    "cleared_affiliate_gross_commissions": null,
+    "incremental_refunds": null,
+    "incremental_fees": null,
+    "net_realized_revenue": null,
+    "net_revenue_per_1000_qualified_human_sessions": null,
+    "comment": "Not computable. Inputs must be gross-before-deduction; do not deduct fees/refunds already withheld. Clicks and seller email signups are not sales."
+  }
+}
