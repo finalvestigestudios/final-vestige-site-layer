@@ -36,6 +36,9 @@ R227_INERT_BLOB = '8e7a4b8334f7166630d8f362da94b9d56afdbc85'
 # R230 independently rejects unsupported HTML tokenizer-mode changes.
 R230_TOKENIZER_PATH = 'tools/r230_html_tokenizer_state_hold.py'
 R230_TOKENIZER_BLOB = '94e0eb8d790df732f5ae79d8aa2fc8c41d9b3f8e'
+# R231 byte-for-byte replay against independently pinned WordPress producer.
+R231_REPLAY_PATH = 'tools/r231_exact_export_replay_hold.py'
+R231_REPLAY_BLOB = 'baf540008487ce0bad02e3b0336f1af7c045f1b4'
 # These are independently observed R219 integration Git blobs, not certified text.
 # Missing entries MUST match the older R200 original exactly.
 INTEGRATED_DIFFS = {
@@ -209,7 +212,7 @@ def verify_originals(root: Path, articles: list[dict]) -> tuple[list[dict], dict
     return status, {f'{n}:{sid}': count for (n, sid), count in exceptions.items()}
 
 
-def verify_render(root: Path, articles: list[dict], report: dict, library, builder, dom_guard, inert_guard, tokenizer_guard) -> dict:
+def verify_render(root: Path, articles: list[dict], report: dict, library, builder, dom_guard, inert_guard, tokenizer_guard, replay_guard) -> dict:
     actual = report.get('articles')
     if type(actual) is not list or len(actual) != 41:
         raise ValueError('expected 41 individual article/tool build-report entries')
@@ -268,6 +271,14 @@ def verify_render(root: Path, articles: list[dict], report: dict, library, build
             inert_result = inert_guard.verify_inert_contexts(page, order)
             if inert_result.get('state') != HOLD or inert_result.get('release_authorized') is not False:
                 raise ValueError('unexpected conditional-visibility safety state: ' + slug)
+            # R231 catches exact-byte export mutations missed by parser-only gates:
+            # extra CSS, scripts, link rewrites, warnings and build-report drift.
+            # The pinned builder is replayed IN MEMORY; no file or CMS writes.
+            replay_result = replay_guard.verify_exact_export(page, mode, slug, meta, library, builder, row)
+            if (replay_result.get('state') != HOLD or
+                    replay_result.get('release_authorized') is not False or
+                    replay_result.get('exact_export_bytes') is not True):
+                raise ValueError('unexpected exact-replay safety state: ' + slug)
     if report.get('release_evidence', {}).get('wordpress_publication_performed') is not False:
         raise ValueError('WordPress publication flag must remain false')
     if report.get('release_evidence', {}).get('independent_qa_verified') is not False:
@@ -342,7 +353,7 @@ def load_frozen_builder(root: Path, bundle):
         raise ValueError('frozen producer cannot be compiled') from exc
     if git_blob(safe_read(root, relative)) != pin:
         raise ValueError('producer changed during module binding')
-    for name in ('Library', 'resolve_tokens', 'word_count'):
+    for name in ('Library', 'resolve_tokens', 'word_count', 'build_article', 'wp_wrap', 'preview_wrap'):
         if not callable(getattr(producer, name, None)):
             raise ValueError('frozen producer lacks required API: ' + name)
     return producer
@@ -382,10 +393,13 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
             tokenizer_guard = load_frozen_gate(root, R230_TOKENIZER_PATH, R230_TOKENIZER_BLOB,
                                                'fv_preparedness_r230_tokenizer_gate',
                                                ('verify_tokenizer_states',))
+            replay_guard = load_frozen_gate(root, R231_REPLAY_PATH, R231_REPLAY_BLOB,
+                                            'fv_preparedness_r231_exact_replay_gate',
+                                            ('verify_exact_export',))
             library = build.Library(root=root)
             authority.verify_routes(roster, library)
             report = strict_object(safe_read(root, 'build/build-report.json'))
-            result['render'] = verify_render(root, roster, report, library, build, dom_guard, inert_guard, tokenizer_guard)
+            result['render'] = verify_render(root, roster, report, library, build, dom_guard, inert_guard, tokenizer_guard, replay_guard)
             # Repeat source custody after building the rendered-corpus view.
             # A file replaced after preflight cannot silently inherit its pin.
             bundle.check_bundle(root, safe_read)
@@ -393,6 +407,8 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
             verify_originals(root, roster)
             if git_blob(safe_read(root, R230_TOKENIZER_PATH)) != R230_TOKENIZER_BLOB:
                 raise ValueError('tokenizer guard mutated after render')
+            if git_blob(safe_read(root, R231_REPLAY_PATH)) != R231_REPLAY_BLOB:
+                raise ValueError('exact-replay guard mutated after render')
             result['postrender_custody_recheck'] = 'DRAFT_HARD_HOLD'
         result['reconciliation'] = {'frozen_articles': 35,
                                     'integrated_changes_held_for_review': sum(
