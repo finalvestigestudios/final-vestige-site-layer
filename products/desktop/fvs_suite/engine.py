@@ -12,6 +12,7 @@ from .identity_inputs import normalize_key, parse_date as _parse_date_native
 from .audit_display import _escape_source_character
 from .csv_diagnostics import csv_input_error
 from .csv_parser_privacy import safe_csv_header, safe_csv_rows
+from .csv_path_privacy import checked_csv_path
 from .invoice_match import candidate_pairs, review_flags as invoice_review_flags
 from .csv_formula_guard import has_unescaped_formula_prefix
 from .csv_native_cell import native_report_text
@@ -188,8 +189,7 @@ def table(path, required, optional=(), *, include_headers=False, include_digest=
         override_amount = amount_column.strip().lower().replace(" ", "_")
         if re.fullmatch(r"[a-z_][a-z0-9_]{0,127}", override_amount) is None:
             raise ValueError("Invalid explicit ledger amount column")
-    p = Path(path)
-    if p.suffix.lower() != ".csv" or not p.is_file(): raise csv_input_error("select_file")
+    p = checked_csv_path(path)
     # Parse a verified single-descriptor snapshot: no source can change between
     # CSV header and row parsing, and symlinks/path swaps fail closed.
     from io import BytesIO, TextIOWrapper
