@@ -11,7 +11,7 @@ const pins={
  guide:['mind/r249/zen12-attentional-blink-presell-WP-PREVIEW-UNPUBLISHED.html','2a2900dca6b71e72fe0a5ea7d9ab599b2441bac3'],
  plan:['mind/r249/CONVERSION-OFFER-FUNNEL-ATTRIBUTION-ACCEPTANCE.md','9d6c26810dcba2a5fac91ee2f7d5f3daa3e8cde9'],
  correctedR248:['mind/r248/TWELVE-MINUTES-IS-A-DURATION-NOT-A-RESULT-UNPUBLISHED.md','648b26de43dd3832db0416fadbe63d621e813894'],
- correctedTest:['mind/r248/test_r248.cjs','b2d97b360bb45a4d468cea465efbafc75851bdc1']
+ correctedTest:['mind/r248/test_r248.cjs','c270327d69bc71e2cf27520a29f0c533f6347657']
 };
 function blob(bytes){return crypto.createHash('sha1').update('blob '+bytes.length+'\0').update(bytes).digest('hex');}
 function read(root='.'){let data={};for(let [key,[p,sha]] of Object.entries(pins)){let b=fs.readFileSync(path.join(root,p));assert.equal(blob(b),sha,'Git blob '+key);data[key]=b.toString('utf8');}return data;}
