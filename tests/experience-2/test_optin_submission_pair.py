@@ -2,8 +2,10 @@
 """Real offline Chromium checks; no real Jetpack signups and no network."""
 import asyncio
 import json
+import sys
 from pathlib import Path
 from playwright.async_api import async_playwright
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / 'tools' / 'experience-2'))
 from verify_optin_submission_pair import inspect_signup_pair
 
 HEAD = '<!doctype html><html lang="en"><head><meta name="viewport" content="width=device-width, initial-scale=1"></head><body style="margin:0;background:#121212;color:#fff;font-family:Arial">'
@@ -67,7 +69,8 @@ async def main():
     result={'environment':'SYNTHETIC_OFFLINE_CHROMIUM_NOT_HOSTED_QA', 'checks':len(observed),
             'passed':sum(x['expect']==x['got'] for x in observed), 'failed':[x for x in observed if x['expect']!=x['got']],
             'no_forms_filled_or_submitted':True,'no_subscriptions_verified':True, 'checks_detail':observed}
-    Path('/mnt/data/fv_sprint25/pair_receipt.json').write_text(json.dumps(result,indent=2)+'\n')
+    Path(__file__).resolve().parents[2].joinpath('docs/experience-2').mkdir(parents=True, exist_ok=True)
+    Path(__file__).resolve().parents[2].joinpath('docs/experience-2/local_signup_pair_receipt.json').write_text(json.dumps(result,indent=2)+'\n')
     print(json.dumps({k:result[k] for k in ('checks','passed','failed')}))
     if result['failed']: raise SystemExit(1)
 
