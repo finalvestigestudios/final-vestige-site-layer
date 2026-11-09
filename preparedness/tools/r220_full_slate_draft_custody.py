@@ -63,9 +63,10 @@ R238_VISIBILITY_BLOB = '694bbb23bcadb16169d783a0352b790f3629e4f6'
 # R239 rejects deceptive HTML non-void '/>' while allowing real SVG shapes.
 R239_SOLIDUS_PATH = 'tools/r239_foreign_solidus_custody_hold.py'
 R239_SOLIDUS_BLOB = '04b5f6e1ea20cf1039e129a155713ddac1033f82'
-# R240/R241 checks actual tokenized attribute boundaries; rejects browser-decoded visibility values without mistaking quoted descriptions for attributes.
+# R242 strengthens R240/R241: strict actual attribute separators, C0 rejection,
+# and parsed-value parity; still rejects decoded visibility values, with no author/QD approval.
 R240_ENTITY_ATTR_PATH = 'tools/r240_html_attribute_entity_custody_hold.py'
-R240_ENTITY_ATTR_BLOB = 'bfffb168a236abc4b4923e5113c362e36e30bf76'
+R240_ENTITY_ATTR_BLOB = '2deedb8df74badf6b149719f71bb43e515993054'
 # These are independently observed R219 integration Git blobs, not certified text.
 # Missing entries MUST match the older R200 original exactly.
 INTEGRATED_DIFFS = {
@@ -487,6 +488,7 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
             raise ValueError('R239 browser nonvoid solidus/source safety HOLD drift')
         result['browser_solidus_original_custody'] = solidus
         # Browsers decode character references inside HTML attribute values.
+        # R242 additionally rejects missing separators and parser-value drift.
         # R238's raw hidden-state regex alone misses aria-hidden="tr&#117;e"
         # and style="display:&#110;one"; never treat the citation as visible.
         entity_guard = load_frozen_gate(root, R240_ENTITY_ATTR_PATH, R240_ENTITY_ATTR_BLOB,

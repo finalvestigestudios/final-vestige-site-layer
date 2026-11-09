@@ -1,14 +1,16 @@
 #!/usr/bin/env python3
-"""R241 revision of R240: quote-aware, actual-attribute entity visibility guard.
+"""R242 revision of R240/R241: strict attribute boundaries and value parity.
 
 Fail closed on encoded aria-hidden/style/class/id values and ambiguous syntax.
 Unlike the original raw regex, text inside unrelated quoted attributes is not
-misidentified as another attribute. Syntactic custody, never human QD approval.
+misidentified as another attribute. R242 rejects missing separators, control
+characters and parser-value drift. Syntactic custody, never human QD approval.
 """
 from __future__ import annotations
 
 import hashlib
 import re
+from html import unescape
 from html.parser import HTMLParser
 
 HOLD = 'DRAFT_HARD_HOLD'
@@ -18,6 +20,8 @@ CHAR_REF = re.compile(r'&(?:\#[xX][0-9a-fA-F]+;?|\#[0-9]+;?|[A-Za-z][A-Za-z0-9]+
 TAG = re.compile(r'^\s*<\s*([A-Za-z][\w:-]*)\b', re.I)
 ATTR_NAME = re.compile(r'[^\s"\'<>/=]+')
 SAFE_SLUG = re.compile(r'[a-z0-9]+(?:-[a-z0-9]+)*\Z')
+HTML_SPACE = ' \t\r\n\f'
+DISALLOWED_C0 = frozenset(chr(i) for i in (*range(0,9), 11, *range(14,32), 127))
 
 
 def raw_attributes(raw: str, expected_tag: str) -> list[tuple[str, str | None]]:
@@ -27,13 +31,15 @@ def raw_attributes(raw: str, expected_tag: str) -> list[tuple[str, str | None]]:
     retains raw entities in values. Any divergence is a hard hold rather than
     trusting normalization of malformed or browser-ambiguous markup.
     """
+    if any(ch in DISALLOWED_C0 for ch in raw):
+        raise ValueError('R242 control character in HTML opening tag')
     match = TAG.match(raw)
     if match is None or match.group(1).lower() != expected_tag.lower():
         raise ValueError('R240/R241 malformed opening tag')
     pos = match.end()
     found: list[tuple[str, str | None]] = []
     while pos < len(raw):
-        while pos < len(raw) and raw[pos].isspace():
+        while pos < len(raw) and raw[pos] in HTML_SPACE:
             pos += 1
         if raw[pos:] == '>' or raw[pos:] == '/>':
             return found
@@ -42,12 +48,12 @@ def raw_attributes(raw: str, expected_tag: str) -> list[tuple[str, str | None]]:
             raise ValueError('R240/R241 invalid raw attribute boundary')
         name = name_match.group(0).lower()
         pos = name_match.end()
-        while pos < len(raw) and raw[pos].isspace():
+        while pos < len(raw) and raw[pos] in HTML_SPACE:
             pos += 1
         value: str | None = None
         if pos < len(raw) and raw[pos] == '=':
             pos += 1
-            while pos < len(raw) and raw[pos].isspace():
+            while pos < len(raw) and raw[pos] in HTML_SPACE:
                 pos += 1
             if pos == len(raw):
                 raise ValueError('R240/R241 missing attribute value')
@@ -58,16 +64,23 @@ def raw_attributes(raw: str, expected_tag: str) -> list[tuple[str, str | None]]:
                 if end < 0:
                     raise ValueError('R240/R241 unclosed quoted attribute')
                 value = raw[pos:end]
+                if '<' in value:
+                    raise ValueError('R242 malformed less-than in quoted HTML attribute')
                 pos = end + 1
             else:
                 start = pos
-                while pos < len(raw) and not raw[pos].isspace() and raw[pos] != '>':
+                while pos < len(raw) and not raw[pos] in HTML_SPACE and raw[pos] != '>':
                     if raw[pos] in ('"', "'", '<', '=', chr(96)):
                         raise ValueError('R240/R241 invalid unquoted attribute value')
                     pos += 1
                 if start == pos:
                     raise ValueError('R240/R241 blank unquoted attribute')
                 value = raw[start:pos]
+        # HTML requires a space before another attribute. HTMLParser
+        # tolerates 'title="x"aria-hidden="false"' and reports both names,
+        # so matching names alone is NOT a sufficient browser-safety test.
+        if pos < len(raw) and raw[pos] not in HTML_SPACE and raw[pos:] not in ('>', '/>'):
+            raise ValueError('R242 missing HTML attribute separator')
         found.append((name, value))
     raise ValueError('R240/R241 unterminated opening tag')
 
@@ -90,7 +103,9 @@ class AttributeEntityInspector(HTMLParser):
         tokens = raw_attributes(raw, tag)
         parsed_names = [name.lower() for name, _ in attrs]
         if [name for name, _ in tokens] != parsed_names:
-            raise ValueError('R240/R241 HTML parser/raw attribute mismatch')
+            raise ValueError('R242 HTML parser/raw attribute name mismatch')
+        if [(unescape(value) if value is not None else None) for _, value in tokens] != [value for _, value in attrs]:
+            raise ValueError('R242 HTML parser/raw attribute decoded value mismatch')
         for name in SENSITIVE:
             if parsed_names.count(name) > 1:
                 raise ValueError('R240/R241 ambiguous duplicate visibility attribute: ' + name)
