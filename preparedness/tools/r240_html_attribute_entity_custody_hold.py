@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-"""R242 revision of R240/R241: strict attribute boundaries and value parity.
+"""R245 revision of R240-R242: preserve valid valueless-attribute separators.
 
 Fail closed on encoded aria-hidden/style/class/id values and ambiguous syntax.
 Unlike the original raw regex, text inside unrelated quoted attributes is not
 misidentified as another attribute. R242 rejects missing separators, control
-characters and parser-value drift. Syntactic custody, never human QD approval.
+characters and parser-value drift. R245 preserves whitespace before a
+valueless attribute's next neighbor. Syntactic custody, never human approval.
 """
 from __future__ import annotations
 
@@ -47,7 +48,8 @@ def raw_attributes(raw: str, expected_tag: str) -> list[tuple[str, str | None]]:
         if name_match is None:
             raise ValueError('R240/R241 invalid raw attribute boundary')
         name = name_match.group(0).lower()
-        pos = name_match.end()
+        name_end = name_match.end()
+        pos = name_end
         while pos < len(raw) and raw[pos] in HTML_SPACE:
             pos += 1
         value: str | None = None
@@ -76,6 +78,12 @@ def raw_attributes(raw: str, expected_tag: str) -> list[tuple[str, str | None]]:
                 if start == pos:
                     raise ValueError('R240/R241 blank unquoted attribute')
                 value = raw[start:pos]
+        else:
+            # The whitespace after a valueless attribute belongs to the
+            # separator before its neighbor, not to a missing equals sign.
+            # Rewind for the strict adjacency check below. R242 otherwise
+            # falsely rejects valid `<p data-note class="visible">`.
+            pos = name_end
         # HTML requires a space before another attribute. HTMLParser
         # tolerates 'title="x"aria-hidden="false"' and reports both names,
         # so matching names alone is NOT a sufficient browser-safety test.
