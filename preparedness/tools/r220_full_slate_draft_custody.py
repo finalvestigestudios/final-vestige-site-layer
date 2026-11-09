@@ -63,10 +63,10 @@ R238_VISIBILITY_BLOB = '694bbb23bcadb16169d783a0352b790f3629e4f6'
 # R239 rejects deceptive HTML non-void '/>' while allowing real SVG shapes.
 R239_SOLIDUS_PATH = 'tools/r239_foreign_solidus_custody_hold.py'
 R239_SOLIDUS_BLOB = '04b5f6e1ea20cf1039e129a155713ddac1033f82'
-# R242 strengthens R240/R241: strict actual attribute separators, C0 rejection,
-# and parsed-value parity; still rejects decoded visibility values, with no author/QD approval.
+# R245 repairs R242's false rejection of separated valueless attributes,
+# retaining strict adjacency, C0, encoded visibility and value-parity holds.
 R240_ENTITY_ATTR_PATH = 'tools/r240_html_attribute_entity_custody_hold.py'
-R240_ENTITY_ATTR_BLOB = '2deedb8df74badf6b149719f71bb43e515993054'
+R240_ENTITY_ATTR_BLOB = '156f475b88c1e374e4626119ec1e9965474ec329'
 # R243 independently rejects authored executable HTML, event handlers,
 # unreviewed interactive forms, URL-scheme tricks and covert third-party loads.
 R243_ACTIVE_SOURCE_PATH = 'tools/r243_active_source_markup_custody_hold.py'
