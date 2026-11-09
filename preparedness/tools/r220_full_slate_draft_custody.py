@@ -63,9 +63,9 @@ R238_VISIBILITY_BLOB = '694bbb23bcadb16169d783a0352b790f3629e4f6'
 # R239 rejects deceptive HTML non-void '/>' while allowing real SVG shapes.
 R239_SOLIDUS_PATH = 'tools/r239_foreign_solidus_custody_hold.py'
 R239_SOLIDUS_BLOB = '04b5f6e1ea20cf1039e129a155713ddac1033f82'
-# R240 rejects browser-decoded character references in visibility-sensitive HTML attributes.
+# R240/R241 checks actual tokenized attribute boundaries; rejects browser-decoded visibility values without mistaking quoted descriptions for attributes.
 R240_ENTITY_ATTR_PATH = 'tools/r240_html_attribute_entity_custody_hold.py'
-R240_ENTITY_ATTR_BLOB = '123c8a7993029d65e6afa8f56aba5c5e18121afd'
+R240_ENTITY_ATTR_BLOB = 'bfffb168a236abc4b4923e5113c362e36e30bf76'
 # These are independently observed R219 integration Git blobs, not certified text.
 # Missing entries MUST match the older R200 original exactly.
 INTEGRATED_DIFFS = {
