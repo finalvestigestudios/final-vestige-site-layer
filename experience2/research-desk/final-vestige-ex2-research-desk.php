@@ -35,6 +35,14 @@ function fv_ex2_rd_shortcode($atts = array()): string {
     $markup = file_get_contents($path);
     if (!is_string($markup) || trim($markup) === '') { return $original; }
 
+    // R246: only the reviewed six-record NASA ledger may be presented as authoritative.
+    // The fixed Git blob ID is pinned to PR #158; edit the source only through editorial review.
+    // When source custody fails, show the existing free investigation instead of unverified claims.
+    $source_blob = sha1('blob ' . strlen($markup) . "\0" . $markup);
+    if (!hash_equals('403d128c57b9bc82dac7c619651689070edef86c', $source_blob)) {
+        return $original;
+    }
+
     // Shortcodes may occur in reusable patterns or dynamic blocks after wp_head.
     // Enqueue opportunistically; lack of JS must never conceal the six static records.
     fv_ex2_rd_enqueue_assets();
