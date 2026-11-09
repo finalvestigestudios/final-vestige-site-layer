@@ -1,0 +1,341 @@
+{
+  "schema": "fv-palomares-eight-source-recovery-v1",
+  "date_local": "2026-11-08",
+  "source": "Read-only WP posts_get edit post 367; public item catalogs; web.open eight exact URLs",
+  "source_custody": {
+    "post_id": 367,
+    "url": "https://finalvestige.com/2026/08/19/they-found-the-bomb-twice-palomares/",
+    "last_modified": "2026-10-29T17:34:27",
+    "status": "publish",
+    "live_wp_source_verified_utc_date": "2026-11-09",
+    "image_tags": 9,
+    "first_party_image_slots": [
+      "367:0"
+    ],
+    "external_image_slots": 8,
+    "frozen_source_file": "qa/media-recovery/parts/02.json",
+    "frozen_source_blob_sha": "48e1ebf07207e948ba5802e714eb39659d2e1c1d",
+    "frozen_snapshot_date": "2026-10-30",
+    "live_exact_src_match_frozen": true
+  },
+  "counts": {
+    "external_urls": 8,
+    "tool_url_not_accessible": 7,
+    "tool_rendered": 1,
+    "visitor_broken_confirmed": null,
+    "observed_image_transfer_bytes": null,
+    "reported_42_broken_verified": false,
+    "claimed_76_percent_weight_saving_measured": false,
+    "wordPress_originals_over_1_5_decimal_mb": 15,
+    "oversize_storage_bytes": 47096779
+  },
+  "cache_wp_plan": "HOLD: after per-item rights, same-photo/crop and genuine logged-out browser verification, generate <=960px no-upscale derivative in staging only; preserve credits and originals, compare desktop/mobile screenshots and request waterfall, map approved media ID to one exact src and obtain explicit publish approval; rollback to recorded original src.",
+  "release": {
+    "all_on_hold": true,
+    "external_binary_downloads": 0,
+    "cache_writes": 0,
+    "wordpress_writes": 0,
+    "homepage_changes": 0,
+    "spend_usd": 0
+  },
+  "rows": [
+    {
+      "slot": "367:1",
+      "post_id": 367,
+      "exact_live_wp_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Operation_Chrome_Dome_route.jpg?width=1280",
+      "source_catalog": "https://commons.wikimedia.org/wiki/File:Operation_Chrome_Dome_route.jpg",
+      "source_origin": "WIKIMEDIA_SPECIAL_REDIRECT",
+      "original_catalog_px": [
+        1475,
+        923
+      ],
+      "conditional_max_width_960_px": [
+        960,
+        601
+      ],
+      "no_upscale": true,
+      "rights_classification": "CC_BY_SA_2_5",
+      "rights_observation": "Author-built route map; CC BY-SA 2.5 with attribution, license link, change notice and share-alike conditions. Not a federal public-domain work.",
+      "visual_integrity_gate": "MAP_LEGIBILITY_REVIEW",
+      "source_identity_relation": "SAME_ARCHIVAL_FILE_TITLE_BUT_RENDERED_BINARY_UNVERIFIED",
+      "retriever": {
+        "date_local": "2026-11-08",
+        "method": "web.open",
+        "outcome": "URL_NOT_ACCESSIBLE_VIA_TOOL",
+        "wrapper_http_status": null,
+        "origin_http_status": null,
+        "guest_browser_http_status": null,
+        "guest_current_src": null,
+        "guest_natural_px": null,
+        "guest_transfer_bytes": null,
+        "guest_broken": null
+      },
+      "binary_sha256": null,
+      "rights_final_clearance": false,
+      "editor_approved": false,
+      "cache_authorized": false,
+      "wp_media_authorized": false,
+      "wp_post_authorized": false
+    },
+    {
+      "slot": "367:2",
+      "post_id": 367,
+      "exact_live_wp_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/USS_Skill_(MSO-471)_operating_off_the_coast_of_Spain%2C_in_February_1966_(428-NPC-36556).jpg?width=1280",
+      "source_catalog": "https://commons.wikimedia.org/wiki/File:USS_Skill_(MSO-471)_operating_off_the_coast_of_Spain,_in_February_1966_(428-NPC-36556).jpg",
+      "source_origin": "WIKIMEDIA_SPECIAL_REDIRECT",
+      "original_catalog_px": [
+        1227,
+        898
+      ],
+      "conditional_max_width_960_px": [
+        960,
+        703
+      ],
+      "no_upscale": true,
+      "rights_classification": "US_NAVY_PD_CLAIM_NARA_85011",
+      "rights_observation": "U.S. Navy film frame 428-NPC-36556; NARA NAID 85011; validate US federal-work status for this exact frame, credit and any collection restrictions.",
+      "visual_integrity_gate": "PHOTO_SCENE_REVIEW",
+      "source_identity_relation": "SAME_ARCHIVAL_FILE_TITLE_BUT_RENDERED_BINARY_UNVERIFIED",
+      "retriever": {
+        "date_local": "2026-11-08",
+        "method": "web.open",
+        "outcome": "URL_NOT_ACCESSIBLE_VIA_TOOL",
+        "wrapper_http_status": null,
+        "origin_http_status": null,
+        "guest_browser_http_status": null,
+        "guest_current_src": null,
+        "guest_natural_px": null,
+        "guest_transfer_bytes": null,
+        "guest_broken": null
+      },
+      "binary_sha256": null,
+      "rights_final_clearance": false,
+      "editor_approved": false,
+      "cache_authorized": false,
+      "wp_media_authorized": false,
+      "wp_post_authorized": false
+    },
+    {
+      "slot": "367:3",
+      "post_id": 367,
+      "exact_live_wp_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Zoeken_naar_H_bom_in_Spanje%2C_de_Alvin_wordt_te_water_gelaten%2C_Bestanddeelnr_918-8161.jpg?width=1280",
+      "source_catalog": "https://commons.wikimedia.org/wiki/File:Zoeken_naar_H_bom_in_Spanje,_de_Alvin_wordt_te_water_gelaten,_Bestanddeelnr_918-8161.jpg",
+      "source_origin": "WIKIMEDIA_SPECIAL_REDIRECT",
+      "original_catalog_px": [
+        3440,
+        2453
+      ],
+      "conditional_max_width_960_px": [
+        960,
+        685
+      ],
+      "no_upscale": true,
+      "rights_classification": "CC0_1_0_ARCHIVES_NL_918_8161",
+      "rights_observation": "Dutch National Archives Anefo accession 918-8161, CC0 dedication displayed on Commons; credit Nationaal Archief/Anefo and verify exact image identity.",
+      "visual_integrity_gate": "ARCHIVAL_CREDIT_REVIEW",
+      "source_identity_relation": "SAME_ARCHIVAL_FILE_TITLE_BUT_RENDERED_BINARY_UNVERIFIED",
+      "retriever": {
+        "date_local": "2026-11-08",
+        "method": "web.open",
+        "outcome": "URL_NOT_ACCESSIBLE_VIA_TOOL",
+        "wrapper_http_status": null,
+        "origin_http_status": null,
+        "guest_browser_http_status": null,
+        "guest_current_src": null,
+        "guest_natural_px": null,
+        "guest_transfer_bytes": null,
+        "guest_broken": null
+      },
+      "binary_sha256": null,
+      "rights_final_clearance": false,
+      "editor_approved": false,
+      "cache_authorized": false,
+      "wp_media_authorized": false,
+      "wp_post_authorized": false
+    },
+    {
+      "slot": "367:4",
+      "post_id": 367,
+      "exact_live_wp_src": "https://navalunderseamuseum.org/wp-content/uploads/2016/03/CURV-I-H-Bomb-Recovery-300x243.jpg",
+      "source_catalog": "https://navalunderseamuseum.org/petrel-helmet/",
+      "source_origin": "NAVAL_UNDERSEA_MUSEUM",
+      "original_catalog_px": null,
+      "conditional_max_width_960_px": null,
+      "no_upscale": true,
+      "rights_classification": "RIGHTS_UNVERIFIED",
+      "rights_observation": "U.S. Naval Undersea Museum story displays CURV I aboard USS Petrel; hosting/display alone is not publication permission.",
+      "visual_integrity_gate": "MUSEUM_ITEM_RIGHTS_REVIEW",
+      "source_identity_relation": "SAME_ARCHIVAL_FILE_TITLE_BUT_RENDERED_BINARY_UNVERIFIED",
+      "retriever": {
+        "date_local": "2026-11-08",
+        "method": "web.open",
+        "outcome": "IMAGE_RENDERED",
+        "wrapper_http_status": null,
+        "origin_http_status": null,
+        "guest_browser_http_status": null,
+        "guest_current_src": null,
+        "guest_natural_px": null,
+        "guest_transfer_bytes": null,
+        "guest_broken": null
+      },
+      "binary_sha256": null,
+      "rights_final_clearance": false,
+      "editor_approved": false,
+      "cache_authorized": false,
+      "wp_media_authorized": false,
+      "wp_post_authorized": false
+    },
+    {
+      "slot": "367:5",
+      "post_id": 367,
+      "exact_live_wp_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/428-GX-_USN_118930_(26941557635).jpg?width=1280",
+      "source_catalog": "https://commons.wikimedia.org/wiki/File:428-GX-_USN_118930_(26941557635).jpg",
+      "source_origin": "WIKIMEDIA_SPECIAL_REDIRECT",
+      "original_catalog_px": [
+        1854,
+        2464
+      ],
+      "conditional_max_width_960_px": [
+        960,
+        1276
+      ],
+      "no_upscale": true,
+      "rights_classification": "US_NAVY_PD_CLAIM",
+      "rights_observation": "Official Navy photo 428-GX-USN-118930 (1971), digitized or uploaded later; distinguish historical capture date from scan metadata.",
+      "visual_integrity_gate": "CHRONOLOGY_CHECK_1971_NOT_1966",
+      "source_identity_relation": "SAME_ARCHIVAL_FILE_TITLE_BUT_RENDERED_BINARY_UNVERIFIED",
+      "retriever": {
+        "date_local": "2026-11-08",
+        "method": "web.open",
+        "outcome": "URL_NOT_ACCESSIBLE_VIA_TOOL",
+        "wrapper_http_status": null,
+        "origin_http_status": null,
+        "guest_browser_http_status": null,
+        "guest_current_src": null,
+        "guest_natural_px": null,
+        "guest_transfer_bytes": null,
+        "guest_broken": null
+      },
+      "binary_sha256": null,
+      "rights_final_clearance": false,
+      "editor_approved": false,
+      "cache_authorized": false,
+      "wp_media_authorized": false,
+      "wp_post_authorized": false
+    },
+    {
+      "slot": "367:6",
+      "post_id": 367,
+      "exact_live_wp_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/1966_Palomares_B-52_crash_-_recovered_H-bomb.jpg?width=1280",
+      "source_catalog": "https://commons.wikimedia.org/wiki/File:1966_Palomares_B-52_crash_-_recovered_H-bomb.jpg",
+      "source_origin": "WIKIMEDIA_SPECIAL_REDIRECT",
+      "original_catalog_px": [
+        662,
+        374
+      ],
+      "conditional_max_width_960_px": [
+        662,
+        374
+      ],
+      "no_upscale": true,
+      "rights_classification": "US_NAVY_PD_CLAIM_WITH_CROP",
+      "rights_observation": "Commons notes 2013 lossless crop of former 666x374 image; confirm underlying US Navy photograph and visual crop before rehosting.",
+      "visual_integrity_gate": "CROP_INTEGRITY_REVIEW",
+      "source_identity_relation": "SAME_ARCHIVAL_FILE_TITLE_BUT_RENDERED_BINARY_UNVERIFIED",
+      "retriever": {
+        "date_local": "2026-11-08",
+        "method": "web.open",
+        "outcome": "URL_NOT_ACCESSIBLE_VIA_TOOL",
+        "wrapper_http_status": null,
+        "origin_http_status": null,
+        "guest_browser_http_status": null,
+        "guest_current_src": null,
+        "guest_natural_px": null,
+        "guest_transfer_bytes": null,
+        "guest_broken": null
+      },
+      "binary_sha256": null,
+      "rights_final_clearance": false,
+      "editor_approved": false,
+      "cache_authorized": false,
+      "wp_media_authorized": false,
+      "wp_post_authorized": false
+    },
+    {
+      "slot": "367:7",
+      "post_id": 367,
+      "exact_live_wp_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Palomares_barrels.jpg?width=1280",
+      "source_catalog": "https://commons.wikimedia.org/wiki/File:Palomares_barrels.jpg",
+      "source_origin": "WIKIMEDIA_SPECIAL_REDIRECT",
+      "original_catalog_px": [
+        500,
+        252
+      ],
+      "conditional_max_width_960_px": [
+        500,
+        252
+      ],
+      "no_upscale": true,
+      "rights_classification": "US_AIR_FORCE_PD_CLAIM_THIRD_PARTY_ORIGIN",
+      "rights_observation": "Commons credits USAF photograph but points to historical Brookings source; verify provenance and item attribution independently.",
+      "visual_integrity_gate": "DO_NOT_UPSCALE_500_PX",
+      "source_identity_relation": "SAME_ARCHIVAL_FILE_TITLE_BUT_RENDERED_BINARY_UNVERIFIED",
+      "retriever": {
+        "date_local": "2026-11-08",
+        "method": "web.open",
+        "outcome": "URL_NOT_ACCESSIBLE_VIA_TOOL",
+        "wrapper_http_status": null,
+        "origin_http_status": null,
+        "guest_browser_http_status": null,
+        "guest_current_src": null,
+        "guest_natural_px": null,
+        "guest_transfer_bytes": null,
+        "guest_broken": null
+      },
+      "binary_sha256": null,
+      "rights_final_clearance": false,
+      "editor_approved": false,
+      "cache_authorized": false,
+      "wp_media_authorized": false,
+      "wp_post_authorized": false
+    },
+    {
+      "slot": "367:8",
+      "post_id": 367,
+      "exact_live_wp_src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Recovered_Mk_28RI_bomb.JPG?width=1280",
+      "source_catalog": "https://commons.wikimedia.org/wiki/File:Recovered_Mk_28RI_bomb.JPG",
+      "source_origin": "WIKIMEDIA_SPECIAL_REDIRECT",
+      "original_catalog_px": [
+        617,
+        461
+      ],
+      "conditional_max_width_960_px": [
+        617,
+        461
+      ],
+      "no_upscale": true,
+      "rights_classification": "US_NAVY_PD_CLAIM",
+      "rights_observation": "Commons attributes U.S. Navy image with original NAVAIR page that may have moved; confirm exact-image identity and credit.",
+      "visual_integrity_gate": "DO_NOT_UPSCALE_617_PX",
+      "source_identity_relation": "SAME_ARCHIVAL_FILE_TITLE_BUT_RENDERED_BINARY_UNVERIFIED",
+      "retriever": {
+        "date_local": "2026-11-08",
+        "method": "web.open",
+        "outcome": "URL_NOT_ACCESSIBLE_VIA_TOOL",
+        "wrapper_http_status": null,
+        "origin_http_status": null,
+        "guest_browser_http_status": null,
+        "guest_current_src": null,
+        "guest_natural_px": null,
+        "guest_transfer_bytes": null,
+        "guest_broken": null
+      },
+      "binary_sha256": null,
+      "rights_final_clearance": false,
+      "editor_approved": false,
+      "cache_authorized": false,
+      "wp_media_authorized": false,
+      "wp_post_authorized": false
+    }
+  ]
+}
