@@ -1,0 +1,49 @@
+{
+  "version": "R227",
+  "review_only": true,
+  "send_authorized": false,
+  "publication_authorized": false,
+  "parent_issue": 174,
+  "affiliate_issue": 171,
+  "focus_issue": 129,
+  "conversion_issue": 820,
+  "original_campaign_pr": 175,
+  "readiness_pr": 201,
+  "prior_pr": 1698,
+  "base_commit": "f991759a3b34b66a8db524f2f44421c082426942",
+  "base_tree": "3a2a7a1a7ef2883eaddda408338d09e99d1a67f7",
+  "unchanged_mix": {
+    "editorial": 4,
+    "commercial": 2
+  },
+  "source_blobs": {
+    "05": "a62a74c6cc2a3722048ff801ccba6212a6cdb397",
+    "06": "94b2e31594f0cdea1ec49f654429fa5f3a7b89c6",
+    "manifest": "2fe3c10a26cb2c9e2406e8444a5734eabb21f209"
+  },
+  "edited_files_in_parent_campaign": 0,
+  "planned_editions": [
+    {
+      "number": 5,
+      "kind": "commercial-review-pending",
+      "primary_cta": "UNPUBLISHED_TOTAL_FOCUS_GUIDE_HARD_HOLD",
+      "buyer_permission": "NOT_VERIFIED",
+      "email_rights": "NOT_VERIFIED",
+      "price": "NOT_CHECKOUT_VERIFIED",
+      "footer": "NOT_VERIFIED"
+    },
+    {
+      "number": 6,
+      "kind": "editorial",
+      "primary_cta": "DIRECT_FOCUS_FIELDBOOK_PDF",
+      "attachment_id": 1737,
+      "media_mime": "application/pdf",
+      "bytes_in_wp": 599946,
+      "actual_download_inbox_mobile": "NOT_VERIFIED"
+    }
+  ],
+  "actual_eligible_recipient_count": null,
+  "provider_confirmed_signup_attribution": null,
+  "net_revenue_per_1000_qualified_human_sessions": null,
+  "reviewer_board_not_native_jetpack": true
+}
