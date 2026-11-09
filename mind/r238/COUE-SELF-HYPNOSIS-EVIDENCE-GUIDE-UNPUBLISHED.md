@@ -107,13 +107,13 @@ The next time a sales page promises mastery in minutes, ask a question a skeptic
 
 [7] U.S. NCCIH, *Hypnosis*: https://www.nccih.nih.gov/health/hypnosis
 
-[8] Official Inspire3 catalog, **seller description**: https://inspire3.com/
+[8] Inspire3 official catalog — **seller description only**. Exact URL archived as M1 in the nonpublic R238 machine-readable evidence register. No merchant destination linked from this manuscript.
 
-[9] Zen12 Premium, **seller description**: https://zen12.com/hnp
+[9] Zen12 Premium's exact offer page — **seller description only**. Exact URL in register M2; no outbound merchant or affiliate link in this draft.
 
-[10] Brainwave Shots — Focus Shot, **seller description**: https://brainwaveshots.com/focus-shot
+[10] Brainwave Shots — Focus Shot exact seller listing, **seller description only**. Exact URL in register M3; no outbound merchant link.
 
-[11] Hypnosis Live — Total Focus, **seller description**: https://hypnosislive.com/mental-skills/total-focus
+[11] Hypnosis Live — Total Focus exact seller listing, **seller description only**. Exact URL in register M4; no outbound merchant link.
 
 [12] FTC, *Health Products Compliance Guidance*: https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance
 
