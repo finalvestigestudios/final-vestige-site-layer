@@ -90,7 +90,10 @@ def visible_citations(body: str):
                     stop = closing_pattern.search(body, end + 1)
                     if not stop:
                         raise ValueError('R238 unterminated nonreader HTML element: ' + name)
-                    if '{{cite:' in body[end + 1:stop.start()]:
+                    payload = body[end + 1:stop.start()]
+                    if name == 'template' and re.search(r'<\s*template\b', payload, re.I):
+                        raise ValueError('R238 nested template requires independent browser review')
+                    if '{{cite:' in payload:
                         raise ValueError('R238 citation inside nonreader HTML element: ' + name)
                     i = stop.end()
                     continue
