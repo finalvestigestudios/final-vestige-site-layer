@@ -57,12 +57,12 @@ def audit_crosswalk(root: Path, safe_read) -> dict:
             raise ValueError('invalid source inventory record')
         origin, path = entry['origin'], entry['path']
         if (type(origin) is not str or type(path) is not str or origin in origin_set or
-                path in path_set or not path.startswith('sources/') or
+                path in path_set or not path.startswith('preparedness/sources/') or
                 type(entry['count']) is not int or entry['count'] < 0):
             raise ValueError('duplicate or unsafe source inventory')
         origin_set.add(origin)
         path_set.add(path)
-        raw = safe_read(root, path)
+        raw = safe_read(root, path.removeprefix('preparedness/'))
         if git_blob(raw) != entry['git_blob_sha']:
             raise ValueError('source Git identity drift: ' + path)
         sources = strict_json(raw).get('sources')
@@ -72,7 +72,7 @@ def audit_crosswalk(root: Path, safe_read) -> dict:
             if type(source) is not dict or not all(
                     type(source.get(k)) is str and source[k] for k in ('id', 'url')):
                 raise ValueError('invalid raw source')
-            rows.append({'origin': origin, 'source_file': 'preparedness/' + path,
+            rows.append({'origin': origin, 'source_file': path,
                          'row_index': index, 'source': source})
     if len(rows) != doc.get('raw_source_rows'):
         raise ValueError('raw source row census drift')
