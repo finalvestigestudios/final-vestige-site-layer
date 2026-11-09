@@ -1,6 +1,11 @@
 const fs=require('node:fs'),assert=require('node:assert/strict');
 const d=JSON.parse(fs.readFileSync(__dirname+'/contract.json','utf8'));
 let problems=[];
+const allowedTop=new Set(["as_of_utc","repository_ref","master_pr","master_issue","commercial_partner_issue","delivery","send_new_posts_default","newsletter_enabled","email_content_format","subscriber_counter_total","subscriber_counter_confirmed","unconfirmed_requests","actual_email_eligible_recipients","received_welcome_verified","postal_address_verified","real_unsubscribe_verified","native_preheader_control_verified","real_jetpack_preview_verified","all_six_release_state","partner_email_rights_verified","verified_paid_orders","qualified_human_sessions","realized_net_revenue_per_1000_humans","issues"]);
+if(Object.keys(d).some(k=>!allowedTop.has(k)))problems.push('unknown_contract_attestation');
+const allowedIssue=new Set(["number","slug","source_sha","subject","preheader","kind","cta","cta_status","native_preheader_verified","send_authorized","post_created","affiliate_permission_verified","affiliate_earning_url","realized_net_revenue"]);
+const allowedEditorial=new Set(["number","slug","source_sha","subject","preheader","kind","cta","cta_status","native_preheader_verified","send_authorized","post_created","affiliate_permission_verified","affiliate_earning_url","realized_net_revenue"]);
+if(d.issues?.some((x,i)=>Object.keys(x).some(k=>!([2,4].includes(i)?allowedIssue:allowedEditorial).has(k))))problems.push('unknown_issue_attestation');
 const expected=['2a573f6b7043c101ece49703f2dd1262ec2b0ee6','fb8cf1503acb2338a4884cac58b7c3b2cec95af7','b86572c15d05316801a007c00e9a2689a5de27c3','7de77ccdc312e5bdf77a9aaa355c3a9ba4efa2c8','a62a74c6cc2a3722048ff801ccba6212a6cdb397','94b2e31594f0cdea1ec49f654429fa5f3a7b89c6'];
 if(d.partner_email_rights_verified!==false||d.received_welcome_verified!==false||d.verified_paid_orders!==null||d.qualified_human_sessions!==null)problems.push('false consent/revenue claim');
 
