@@ -1,0 +1,571 @@
+{
+  "scope": "UNPUBLISHED_SOURCE_ONLY",
+  "version": "r251",
+  "reviewed_local_date": "2026-11-09",
+  "product": "Zen12 Premium exact merchant page https://zen12.com/hnp",
+  "release": "HARD_HOLD",
+  "source_count": 23,
+  "claim_count": 26,
+  "gate_count": 16,
+  "sources": [
+    {
+      "id": "S01",
+      "label": "Nature original 1998 rubber hand abstract",
+      "url": "https://www.nature.com/articles/35784",
+      "kind": "publisher-abstract"
+    },
+    {
+      "id": "S02",
+      "label": "Rohde et al. 2011 drift and ownership study",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/21738756/",
+      "kind": "abstract"
+    },
+    {
+      "id": "S03",
+      "label": "Lush 2020 demand characteristics full original study",
+      "url": "https://doi.org/10.1525/collabra.325",
+      "kind": "original-full-text"
+    },
+    {
+      "id": "S04",
+      "label": "Lush et al 2020 Nature Communications suggestion correlation",
+      "url": "https://doi.org/10.1038/s41467-020-18591-6",
+      "kind": "publisher-abstract"
+    },
+    {
+      "id": "S05",
+      "label": "Lush et al PubMed metadata",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/32978377/",
+      "kind": "abstract"
+    },
+    {
+      "id": "S06",
+      "label": "Rubber hand in hypnosis 2020 Scientific Reports",
+      "url": "https://www.nature.com/articles/s41598-020-62745-x",
+      "kind": "publisher-search-excerpt"
+    },
+    {
+      "id": "S07",
+      "label": "Body ownership and absence of touch 2018 full text",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6267689/",
+      "kind": "original-full-text"
+    },
+    {
+      "id": "S08",
+      "label": "Yamamoto 2024 bilateral illusion",
+      "url": "https://doi.org/10.1177/20416695241278277",
+      "kind": "publisher-abstract"
+    },
+    {
+      "id": "S09",
+      "label": "FTC 2023 endorsement guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "kind": "regulatory-guidance"
+    },
+    {
+      "id": "S10",
+      "label": "FTC health claims substantiation",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "kind": "regulatory-guidance"
+    },
+    {
+      "id": "S11",
+      "label": "Inspire3 official program catalog",
+      "url": "https://inspire3.com/",
+      "kind": "merchant"
+    },
+    {
+      "id": "S12",
+      "label": "Inspire3 public affiliate portal",
+      "url": "https://affiliates.inspire3.com/",
+      "kind": "merchant-public-portal"
+    },
+    {
+      "id": "S13",
+      "label": "Zen12 Premium exact official sale page",
+      "url": "https://zen12.com/hnp",
+      "kind": "merchant-exact-offer"
+    },
+    {
+      "id": "S14",
+      "label": "Final Vestige published change blindness",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "kind": "fv-live-article"
+    },
+    {
+      "id": "S15",
+      "label": "Final Vestige published Mesmerism",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "kind": "fv-live-article"
+    },
+    {
+      "id": "S16",
+      "label": "Final Vestige Puységur files",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "kind": "fv-existing-route-issue171"
+    },
+    {
+      "id": "S17",
+      "label": "Final Vestige Focus fieldbook",
+      "url": "https://finalvestige.com/focus/",
+      "kind": "fv-live-funnel"
+    },
+    {
+      "id": "S18",
+      "label": "Final Vestige Dispatch",
+      "url": "https://finalvestige.com/dispatch/",
+      "kind": "fv-live-funnel"
+    },
+    {
+      "id": "S19",
+      "label": "Final Vestige editorial standards",
+      "url": "https://finalvestige.com/editorial-standards/",
+      "kind": "fv-governance"
+    },
+    {
+      "id": "S20",
+      "label": "Final Vestige affiliate disclosure",
+      "url": "https://finalvestige.com/affiliate-disclosure/",
+      "kind": "fv-governance"
+    },
+    {
+      "id": "S21",
+      "label": "Final Vestige source-of-truth Issue171",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "kind": "github-governance"
+    },
+    {
+      "id": "S22",
+      "label": "FV commercial measurement Issue820",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "kind": "github-governance"
+    },
+    {
+      "id": "S23",
+      "label": "Previous R250 source-controlled branch",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/1791",
+      "kind": "github-source"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "statement": "Original rubber hand report (1998) describes referred tactile sensation and vision/touch/proprioception interaction",
+      "source": "S01",
+      "status": "SUPPORTED_BOUND_TO_ABSTRACT",
+      "policy": "EDITORIAL_ONLY"
+    },
+    {
+      "id": "C02",
+      "statement": "Rohde 2011 reports dissociation of drift and ownership under the measured conditions",
+      "source": "S02",
+      "status": "SUPPORTED_BOUND_TO_ABSTRACT",
+      "policy": "EDITORIAL_ONLY"
+    },
+    {
+      "id": "C03",
+      "statement": "Lush 2020 reports that expected questionnaire responses resemble illusion/control differences",
+      "source": "S03",
+      "status": "SUPPORTED_IN_STUDY",
+      "policy": "EDITORIAL_ONLY"
+    },
+    {
+      "id": "C04",
+      "statement": "Lush 2020 concludes demand characteristics may confound standard rubber hand controls",
+      "source": "S03",
+      "status": "AUTHOR_INTERPRETATION",
+      "policy": "ATTRIBUTED_ONLY"
+    },
+    {
+      "id": "C05",
+      "statement": "Lush et al 2020 reports sample sizes 156, 404, 353 and associations with phenomenological control",
+      "source": "S04",
+      "status": "SUPPORTED_IN_ABSTRACT",
+      "policy": "EDITORIAL_ONLY"
+    },
+    {
+      "id": "C06",
+      "statement": "Suggested ownership cannot be established by one proprioceptive drift number",
+      "source": "S02",
+      "status": "QUALIFIED_INTERPRETATION",
+      "policy": "EDITORIAL_ONLY"
+    },
+    {
+      "id": "C07",
+      "statement": "A hypnosis-context rubber-hand study exists but did not test Hypnosis Live or Zen12 recordings",
+      "source": "S06",
+      "status": "METHODOLOGY_BOUNDARY",
+      "policy": "EDITORIAL_ONLY"
+    },
+    {
+      "id": "C08",
+      "statement": "2018 two experiments had participant samples 63 and 15 and differing setups",
+      "source": "S07",
+      "status": "SUPPORTED_IN_FULL_TEXT",
+      "policy": "EDITORIAL_ONLY"
+    },
+    {
+      "id": "C09",
+      "statement": "2024 bilateral stimulation investigation reports unusual bilateral ownership outcomes in its protocol",
+      "source": "S08",
+      "status": "SUPPORTED_BOUND_TO_ABSTRACT",
+      "policy": "EDITORIAL_ONLY"
+    },
+    {
+      "id": "C10",
+      "statement": "Historical Puységur materials exist in FV's earlier source catalog, but live source retrieval did not complete",
+      "source": "S16",
+      "status": "PRIOR_ISSUE_SOURCE_ONLY",
+      "policy": "REVERIFY_BEFORE_PUBLISH"
+    },
+    {
+      "id": "C11",
+      "statement": "FV's public change-blindness article was available at its established canonical path November 9",
+      "source": "S14",
+      "status": "LIVE_PAGE_TEXT_VERIFIED",
+      "policy": "INTERNAL_LINK_ALLOWED"
+    },
+    {
+      "id": "C12",
+      "statement": "FV's /focus/ advertises a 52-page workbook with one existing Dispatch signup and welcome delivery",
+      "source": "S17",
+      "status": "PUBLIC_PAGE_DESCRIBES_FUTURE_DELIVERY",
+      "policy": "NO_DUPLICATE_LIST"
+    },
+    {
+      "id": "C13",
+      "statement": "Inspire3 catalog includes Zen12, Hypnosis Live, Brainwave Shots and other products",
+      "source": "S11",
+      "status": "SELLER_DESCRIPTION",
+      "policy": "ATTRIBUTED_ONLY"
+    },
+    {
+      "id": "C14",
+      "statement": "Zen12 Premium seller page displays 12 levels and 48 MP3s across four listening styles",
+      "source": "S13",
+      "status": "SELLER_DESCRIPTION",
+      "policy": "ATTRIBUTED_ONLY"
+    },
+    {
+      "id": "C15",
+      "statement": "Zen12 Premium seller page displayed $87.99 November 9 2026; actual cart/region/tax not checked",
+      "source": "S13",
+      "status": "SELLER_DISPLAYED_PRICE_UNVERIFIED_CHECKOUT",
+      "policy": "DO_NOT_ASSERT_FINAL_PRICE"
+    },
+    {
+      "id": "C16",
+      "statement": "Zen12 seller advertises a one-year money-back guarantee; refund fulfillment not tested",
+      "source": "S13",
+      "status": "SELLER_ADVERTISED_TERMS",
+      "policy": "DO_NOT_ASSERT_REFUND_HONORED"
+    },
+    {
+      "id": "C17",
+      "statement": "Zen12 seller claims 12 minutes gives one hour of meditation benefits; product-specific evidence not authenticated",
+      "source": "S13",
+      "status": "UNSUBSTANTIATED_SELLER_EFFICACY",
+      "policy": "DO_NOT_ASSERT_AS_FACT"
+    },
+    {
+      "id": "C18",
+      "statement": "The public Inspire3 affiliate portal offers registration and public commission marketing, not FV account acceptance",
+      "source": "S12",
+      "status": "PUBLIC_PORTAL_ONLY",
+      "policy": "DO_NOT_ASSERT_ACCOUNT_TERMS"
+    },
+    {
+      "id": "C19",
+      "statement": "FTC says affiliate earning relationships should be clearly disclosed near relevant recommendations",
+      "source": "S09",
+      "status": "REGULATORY_GUIDANCE",
+      "policy": "DISCLOSE_AT_LINK"
+    },
+    {
+      "id": "C20",
+      "statement": "FTC health claims demand scientifically adequate support tied to the precise advertised benefit",
+      "source": "S10",
+      "status": "REGULATORY_GUIDANCE",
+      "policy": "NO_UNSUPPORTED_EFFICACY"
+    },
+    {
+      "id": "C21",
+      "statement": "R248 source-controlled text A and optional-video B concepts are not published commercial experiments",
+      "source": "S23",
+      "status": "PRIOR_BRANCH_DESCRIPTION_NEEDS_EDITORIAL_REVIEW",
+      "policy": "NO_LIVE_AB"
+    },
+    {
+      "id": "C22",
+      "statement": "No authorized FV affiliate link was found in authenticated sources available for this run",
+      "source": "S21",
+      "status": "NO_AUTHENTICATED_APPROVAL_FOUND",
+      "policy": "HARD_HOLD_NOT_REJECTION"
+    },
+    {
+      "id": "C23",
+      "statement": "No FV-owned rights-cleared currently sellable Mind SKU was authenticated",
+      "source": "S22",
+      "status": "INVENTORY_AUTHENTICATION_MISSING",
+      "policy": "NO_FALLBACK_ACTIVATION"
+    },
+    {
+      "id": "C24",
+      "statement": "R185 and R250 crash-memory subjects overlap; editorial owner must pick canonical before public URL",
+      "source": "S23",
+      "status": "PRAXXIS_REVIEW_FINDING",
+      "policy": "CANONICAL_HOLD"
+    },
+    {
+      "id": "C25",
+      "statement": "R236 and R249 both concern attentional blink and need a canonical decision",
+      "source": "S23",
+      "status": "PRIOR_SPRINT_REVIEW_FINDING",
+      "policy": "CANONICAL_HOLD"
+    },
+    {
+      "id": "C26",
+      "statement": "Clicks and confirmed Jetpack leads are not verified paid sales",
+      "source": "S22",
+      "status": "BUSINESS_ACCOUNTING_DEFINITION",
+      "policy": "MEASURE_SEPARATELY"
+    }
+  ],
+  "gates": [
+    {
+      "id": "G01",
+      "name": "FV-named affiliate acceptance",
+      "status": "HARD_HOLD",
+      "verified": false,
+      "evidence": null,
+      "owner": "Founder + Mind Affiliate"
+    },
+    {
+      "id": "G02",
+      "name": "Publisher identity and account ownership",
+      "status": "HARD_HOLD",
+      "verified": false,
+      "evidence": null,
+      "owner": "Founder + Mind Affiliate"
+    },
+    {
+      "id": "G03",
+      "name": "Account-issued earning URL",
+      "status": "HARD_HOLD",
+      "verified": false,
+      "evidence": null,
+      "owner": "Founder + Mind Affiliate"
+    },
+    {
+      "id": "G04",
+      "name": "Website promotional channel permission",
+      "status": "HARD_HOLD",
+      "verified": false,
+      "evidence": null,
+      "owner": "Founder + Mind Affiliate"
+    },
+    {
+      "id": "G05",
+      "name": "TikTok/YouTube promotional channel permission",
+      "status": "HARD_HOLD",
+      "verified": false,
+      "evidence": null,
+      "owner": "Founder + Mind Affiliate"
+    },
+    {
+      "id": "G06",
+      "name": "Email promotional channel permission",
+      "status": "HARD_HOLD",
+      "verified": false,
+      "evidence": null,
+      "owner": "Founder + Mind Affiliate"
+    },
+    {
+      "id": "G07",
+      "name": "Partner attribution and reporting terms",
+      "status": "HARD_HOLD",
+      "verified": false,
+      "evidence": null,
+      "owner": "Founder + Mind Affiliate"
+    },
+    {
+      "id": "G08",
+      "name": "Merchant final cart and taxes",
+      "status": "HARD_HOLD",
+      "verified": false,
+      "evidence": null,
+      "owner": "Founder + Mind Affiliate"
+    },
+    {
+      "id": "G09",
+      "name": "Merchant refund eligibility and fulfillment",
+      "status": "HARD_HOLD",
+      "verified": false,
+      "evidence": null,
+      "owner": "Founder + Mind Affiliate"
+    },
+    {
+      "id": "G10",
+      "name": "Commission settlement and reversals",
+      "status": "HARD_HOLD",
+      "verified": false,
+      "evidence": null,
+      "owner": "Founder + Mind Affiliate"
+    },
+    {
+      "id": "G11",
+      "name": "Owned FV Mind SKU identity",
+      "status": "HARD_HOLD",
+      "verified": false,
+      "evidence": null,
+      "owner": "Founder + Commerce"
+    },
+    {
+      "id": "G12",
+      "name": "Owned SKU copyright/license clearance",
+      "status": "HARD_HOLD",
+      "verified": false,
+      "evidence": null,
+      "owner": "Founder + Commerce"
+    },
+    {
+      "id": "G13",
+      "name": "Owned SKU public checkout and digital fulfillment",
+      "status": "HARD_HOLD",
+      "verified": false,
+      "evidence": null,
+      "owner": "Founder + Commerce"
+    },
+    {
+      "id": "G14",
+      "name": "Owned SKU price, tax, support and refunds",
+      "status": "HARD_HOLD",
+      "verified": false,
+      "evidence": null,
+      "owner": "Founder + Commerce"
+    },
+    {
+      "id": "G15",
+      "name": "Independent WordPress/mobile/a11y/security QA",
+      "status": "HARD_HOLD",
+      "verified": false,
+      "evidence": null,
+      "owner": "Site QA + Claude"
+    },
+    {
+      "id": "G16",
+      "name": "Founder written release and publish approval",
+      "status": "HARD_HOLD",
+      "verified": false,
+      "evidence": null,
+      "owner": "Founder"
+    }
+  ],
+  "primary_offer": {
+    "offer_id": "inspire3_zen12_premium",
+    "merchant": "Inspire3 / Zen12",
+    "claim_url": "https://zen12.com/hnp",
+    "approval": "NOT_VERIFIED",
+    "account_earning_url": null,
+    "permitted_channels": null,
+    "net_commission": null,
+    "advertised_price_usd": 87.99,
+    "advertised_price_source": "S13",
+    "price_paid": null,
+    "refund_fulfillment": null,
+    "commission_terms": null,
+    "promotion_approval": null,
+    "cta_status": "NATIVE_DISABLED_ONLY",
+    "affiliation_disclosure": "Prospective affiliate disclosure: If you purchase through a future approved link, Final Vestige may earn a commission at no additional cost to you."
+  },
+  "owned_fallback": {
+    "sku": null,
+    "rights": null,
+    "live_checkout": null,
+    "price": null,
+    "fulfillment": null,
+    "refund_policy": null,
+    "commercial_activation": "NOT_AUTHORIZED"
+  },
+  "canonical": {
+    "r185_vs_r250_crash": "HOLD_ONE_CANONICAL",
+    "r236_vs_r249_blink": "HOLD_ONE_CANONICAL",
+    "r251_rubber_hand": "ORIGINAL_DRAFT_PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+    "r248_AB": "PRESERVE_UNCHANGED_UNPUBLISHED"
+  },
+  "creator_paths": [
+    {
+      "topic": "change blindness",
+      "destination": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "status": "LIVE_ARTICLE_CONFIRMED",
+      "grok_asset_id": null,
+      "source_campaign": null,
+      "verified_native_mobile_url": null
+    },
+    {
+      "topic": "mesmerism/Puységur",
+      "destination": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "supporting_file": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "status": "LIVE_MESMERISM_CONFIRMED_ARCHIVE_LINK_NEEDS_RECHECK",
+      "grok_asset_id": null,
+      "verified_native_mobile_url": null
+    },
+    {
+      "topic": "attentional blink",
+      "destination": null,
+      "status": "EDITORIAL_CANONICAL_HOLD",
+      "grok_asset_id": null,
+      "verified_native_mobile_url": null
+    }
+  ],
+  "metrics": {
+    "status": "NOT_COMPUTABLE",
+    "qualified_human_sessions_7d": null,
+    "qualified_human_sessions_30d": null,
+    "affiliate_clicks": null,
+    "provider_confirmed_leads": null,
+    "confirmed_paid_orders": null,
+    "merchant_reported_affiliate_conversions": null,
+    "cleared_commissions": null,
+    "refunds": null,
+    "chargebacks": null,
+    "fees": null,
+    "incremental_costs": null,
+    "net_revenue": null,
+    "net_revenue_per_1000_qualified_human_sessions": null
+  },
+  "privacy": {
+    "new_script": false,
+    "new_cookie": false,
+    "new_email_form": false,
+    "persist_pii": false,
+    "allowed_existing_events": [
+      "landing",
+      "resource_cta_click",
+      "affiliate_click_AFTER_APPROVAL",
+      "provider_confirmed_lead",
+      "merchant_confirmed_paid_order",
+      "settled_affiliate_commission"
+    ],
+    "internal_campaign_fields": [
+      "utm_source",
+      "utm_medium",
+      "utm_campaign",
+      "utm_content=AUTHENTIC_GROK_ASSET_ID",
+      "landing_path",
+      "offer_id",
+      "variant",
+      "date_bucket"
+    ],
+    "require_consent_and_authentication": true
+  },
+  "qa_limits": [
+    "Native Node full GitHub checkout unavailable in this environment",
+    "Browser WCAG/Lighthouse/CWV not tested",
+    "WordPress sanitizer not tested",
+    "Render and WebVTT playback not tested",
+    "Partner dashboard and affiliate links not authenticated",
+    "Paid order and settlement data unavailable",
+    "Grok asset IDs not verified"
+  ]
+}
