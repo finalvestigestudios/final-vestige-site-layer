@@ -72,8 +72,31 @@ def blueprint():
     }
 
 
+
+def validate_output_tree(out: Path):
+    """Fail before the builder or any write can traverse a reused staging output.
+
+    The directory mounted as a WordPress plugin may contain *only* the sealed PHP
+    entrypoint. Even a .txt copy of the preview HTML would be publicly requestable.
+    """
+    for directory in (out / 'plugin', out / 'plugin' / ZIPROOT):
+        if directory.is_symlink() or (directory.exists() and not directory.is_dir()):
+            raise ValueError(f'Unsafe staging output directory: {directory}')
+    for candidate in (out / 'sealed-review.zip', out / 'blueprint.json',
+                      out / 'receipt.json', out / 'plugin' / ZIPROOT / PLUGIN):
+        if candidate.is_symlink() or (candidate.exists() and not candidate.is_file()):
+            raise ValueError(f'Unsafe staging output file: {candidate}')
+    plugin_dir = out / 'plugin' / ZIPROOT
+    if plugin_dir.is_dir():
+        unexpected = sorted(p.name for p in plugin_dir.iterdir() if p.name != PLUGIN)
+        if unexpected:
+            raise ValueError('Unexpected potentially public files in mounted plugin directory: '
+                             + ', '.join(unexpected))
+
 def build(repo: Path, out: Path, expected: str):
     repo = repo.resolve(strict=True)
+    if out.is_symlink():
+        raise ValueError('Staging output must not be a symbolic link')
     out = out.resolve()
     source_root = repo / "experience2/home-flagship"
     if out == repo or repo in out.parents:
@@ -81,6 +104,7 @@ def build(repo: Path, out: Path, expected: str):
     if any(part in ("wp-content", "public_html") for part in out.parts):
         raise ValueError("Refusing to write a WordPress/webroot directory")
     paths = verify_checkout(repo, expected)
+    validate_output_tree(out)  # Before ZIP generation, mkdir or plugin extraction.
     out.mkdir(parents=True, exist_ok=True)
     zip_path = out / "sealed-review.zip"
     subprocess.run([sys.executable, str(repo / BUILDER), "--root", str(source_root),

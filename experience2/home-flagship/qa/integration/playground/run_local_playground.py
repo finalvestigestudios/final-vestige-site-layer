@@ -35,6 +35,13 @@ def prepare(out: Path, expected_head: str, executable=None):
     for d in (plugin_dir, plugin_dir.parent):
         if d.is_symlink():
             raise AdmissionError('Symlinked plugin directory')
+    # The entire directory is HTTP-mountable, not just the SHA-checked PHP file.
+    # Reject raw HTML, CSS, JS, .txt copies, hidden files and nested symlinks:
+    # any such file could disclose unpublished homepage source without auth.
+    unexpected = sorted(p.name for p in plugin_dir.iterdir() if p.name != PLUGIN_FILE)
+    if unexpected:
+        raise AdmissionError('Unsafe public files in sealed plugin mount: '
+                             + ', '.join(unexpected))
     receipt = json.loads(receipt_path.read_text(encoding='utf-8'))
     blueprint = json.loads(blueprint_path.read_text(encoding='utf-8'))
     if receipt.get('source_head') != expected_head or receipt.get('decision') != 'OFFLINE_PACKAGE_BUILT__NOT_WORDPRESS_ACCEPTED':
