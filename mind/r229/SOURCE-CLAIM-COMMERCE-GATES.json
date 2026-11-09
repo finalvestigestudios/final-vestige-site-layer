@@ -13,13 +13,13 @@
       "id": "R02",
       "type": "EXPERIMENT_OPEN",
       "url": "https://doi.org/10.1038/s41598-025-88517-z",
-      "notes": "2025 N=80, parameter-dependent attention and EEG outcomes; no retail product tested"
+      "notes": "2025 trial: 80 initially randomized, 12 failed second visit + 4 performance excluded => 64 analyzed; distinct gamma/340Hz and white-noise average-detection interactions; no overall treatment effect (p=.385); before-task subgroup slope p=.038 but no significant individual block comparisons; white noise reduced EEG entrainment despite behavioral pattern; no retail audio."
     },
     {
       "id": "R03",
       "type": "REVIEW_OPEN",
       "url": "https://doi.org/10.1016/j.ijpsycho.2024.112328",
-      "notes": "31 studies, mixed/insufficient autonomic arousal and cognition evidence"
+      "notes": "31-study broad auditory review of music/noise/white-noise/binaural beats (only one binaural-beat study as independently reviewed); autonomic indices (cardiac/electrodermal/pupillary) not equivalent to EEG entrainment; indirect/mixed evidence."
     },
     {
       "id": "R04",
@@ -119,7 +119,7 @@
     },
     {
       "id": "B03",
-      "statement": "2025 parameter-dependent EEG and general attention results in 80 students",
+      "statement": "2025: 80 randomized but 64 analyzed; gamma/340 Hz and white-noise detection effects from separate analyses, no significant overall treatment effect p=.385",
       "status": "PRIMARY_BOUNDED",
       "evidence": [
         "R02"
@@ -127,7 +127,7 @@
     },
     {
       "id": "B04",
-      "statement": "2025 experiment did not prevent vigilance decrement",
+      "statement": "2025: no robust overall vigilance-decrement reduction; pre-task subgroup slope p=.038 with no statistically significant individual-block contrasts; masking weakened EEG entrainment even where behavioral performance improved",
       "status": "PRIMARY_BOUNDED",
       "evidence": [
         "R02"
@@ -135,7 +135,7 @@
     },
     {
       "id": "B05",
-      "statement": "2024 review: mixed/insufficient auditory arousal-cognition linkage",
+      "statement": "2024: 31-study review spans multiple auditory modalities; only one binaural-beat study, indirect/mixed autonomic arousal–cognition results",
       "status": "REVIEW_BOUNDED",
       "evidence": [
         "R03"
@@ -391,6 +391,7 @@
   "safety": {
     "seller_claims_are_not_efficacy_proof": true,
     "editorial_independence": true,
-    "no_merchant_active_links": true
+    "no_merchant_active_links": true,
+    "review_note": "R230 independent scientific QD: do not imply all 80 completed visits, assert a proven gamma/340/white-noise combination, characterize a subgroup slope as robust overall vigilance prevention, equate EEG entrainment and behavior, or present 31 studies as 31 binaural trials. R215 overlaps R229; consolidate rather than create another public slug."
   }
 }
