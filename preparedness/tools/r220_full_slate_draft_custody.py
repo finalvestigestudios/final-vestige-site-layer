@@ -67,6 +67,10 @@ R239_SOLIDUS_BLOB = '04b5f6e1ea20cf1039e129a155713ddac1033f82'
 # and parsed-value parity; still rejects decoded visibility values, with no author/QD approval.
 R240_ENTITY_ATTR_PATH = 'tools/r240_html_attribute_entity_custody_hold.py'
 R240_ENTITY_ATTR_BLOB = '2deedb8df74badf6b149719f71bb43e515993054'
+# R243 independently rejects authored executable HTML, event handlers,
+# unreviewed interactive forms, URL-scheme tricks and covert third-party loads.
+R243_ACTIVE_SOURCE_PATH = 'tools/r243_active_source_markup_custody_hold.py'
+R243_ACTIVE_SOURCE_BLOB = '26913389a5e39d8afe8de13ecdb2fd8ece2535db'
 # These are independently observed R219 integration Git blobs, not certified text.
 # Missing entries MUST match the older R200 original exactly.
 INTEGRATED_DIFFS = {
@@ -504,6 +508,23 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
                 or entities.get('medical_safety_verified') is not False):
             raise ValueError('R240 encoded HTML attribute/source citation HOLD drift')
         result['decoded_html_attribute_custody'] = entities
+        # Raw authored markup can bypass the frozen citation-link resolver or
+        # introduce active remote loads even when citation tokens are visible.
+        # Inspect every original body BEFORE executing the WordPress producer.
+        active_guard = load_frozen_gate(root, R243_ACTIVE_SOURCE_PATH, R243_ACTIVE_SOURCE_BLOB,
+                                        'fv_preparedness_r243_authored_active_source_guard',
+                                        ('audit_active_markup_custody',))
+        active = active_guard.audit_active_markup_custody(root, roster, safe_read)
+        if (active.get('state') != HOLD or active.get('article_count') != 35
+                or active.get('citation_count') != 2000
+                or active.get('human_review_required') is not True
+                or active.get('release_authorized') is not False
+                or active.get('source_review_approved') is not False
+                or active.get('independent_qd_pass') is not False
+                or active.get('medical_safety_verified') is not False
+                or active.get('merchant_approved') is not False):
+            raise ValueError('R243 authored active-markup/source URL safety HOLD drift')
+        result['authored_active_markup_custody'] = active
         if verify_exports:
             # Only imports the repository's own build code from its trusted tools path.
             tools_path = root / 'tools'
@@ -595,6 +616,8 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
             raise ValueError('R239 browser solidus gate mutated during audit')
         if git_blob(safe_read(root, R240_ENTITY_ATTR_PATH)) != R240_ENTITY_ATTR_BLOB:
             raise ValueError('R240 encoded visibility attribute gate mutated during audit')
+        if git_blob(safe_read(root, R243_ACTIVE_SOURCE_PATH)) != R243_ACTIVE_SOURCE_BLOB:
+            raise ValueError('R243 authored active-markup/source guard mutated during audit')
         result['reconciliation'] = {'frozen_articles': 35,
                                     'integrated_changes_held_for_review': sum(
                                         x['changed_since_original'] for x in status),
