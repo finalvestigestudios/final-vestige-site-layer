@@ -45,7 +45,9 @@ function validate(data){
  check(a.includes('not a clinical')||a.includes('not medical advice'),'clinical caveat');
  const m=JSON.parse(data.matrix);
  check(m.scope==='UNPUBLISHED_SOURCE_ONLY'&&m.commerce_release==='HARD_HOLD','matrix scope');
- check(m.sources.length===16&&m.claims.length===26&&m.gates.length===16,'exact evidence record counts');\n check(new Set(m.gates.map(x=>x.id)).size===m.gates.length,'unique commerce gate IDs');\n check(m.claims.find(x=>x.id==='SELLER_POLICY').statement.includes('five refunded sessions per year'),'merchant FAQ refund cap');
+ check(m.sources.length===16&&m.claims.length===26&&m.gates.length===16,'exact evidence record counts');
+ check(new Set(m.gates.map(x=>x.id)).size===m.gates.length,'unique commerce gate IDs');
+ check(m.claims.find(x=>x.id==='SELLER_POLICY').statement.includes('five refunded sessions per year'),'merchant FAQ refund cap');
  const sources=new Set(m.sources.map(x=>x.id));
  check(sources.size===16 && new Set(m.claims.map(x=>x.id)).size===26,'unique evidence IDs');
  for(const x of m.sources)check(x.url.startsWith('https://')&&x.what.length>20,'actual source url/provenance '+x.id);
