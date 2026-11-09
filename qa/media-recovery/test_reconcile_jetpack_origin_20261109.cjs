@@ -15,6 +15,7 @@ test('generic Commons pages are not image-redirect class',()=>assert.equal(class
 test('prefix spoofing fails',()=>assert.equal(classifySource('https://i1.wp.com/finalvestige.com.evil.test/x').kind,'external'));
 test('first-party subdomain not implicitly trusted',()=>assert.equal(classifySource('https://cdn.finalvestige.com/x').kind,'external'));
 test('other proxy hosts are handled',()=>assert.equal(classifySource('https://i2.wp.com/www.finalvestige.com/x').kind,'jetpack_proxy'));
+test('i3 CDN shares upstream-origin semantics',()=>assert.equal(classifySource('https://i3.wp.com/elsewhere.gov/photo.jpg').kind,'external'));
 test('bad/missing source rejects',()=>{for(const s of ['',null,'abc','data:image/png;base64,a'])assert.throws(()=>classifySource(s));});
 test('corrects synthetic CSV offsite count',()=>{const r=reconcile([fx()],csv,{enforceFrozen:false});assert.equal(r.corrected_offsite,1);assert.equal(r.qa_offsite,0);assert.equal(r.differences[0].third_party_jetpack_slots[0].slot,'1:2');assert.equal(r.guest_http_verified,false);});
 test('default frozen baseline blocks unrelated fixture',()=>assert.throws(()=>reconcile([fx()],csv),/Frozen/));
