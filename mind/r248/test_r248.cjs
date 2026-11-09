@@ -32,7 +32,7 @@ const pins={
  r247html:'27637485f0ffa0e4391bff71a7b04168c9064ca6',
  r247matrix:'c17c2d010a8ae540bf9eb79ac7ef2113a7eab862',
  r247plan:'bbe3290c24bee041c00360a415761af754ddd5bf',
- r247test:'98af22d30f20e7139e96c5486d6556b8c04d06ad'
+ r247test:'2f3876a74bd6f04e9d01a244ccb563943ab33b55'
 };
 function gitBlob(buf){return crypto.createHash('sha1').update('blob '+buf.length+'\0').update(buf).digest('hex');}
 function read(root='.'){
