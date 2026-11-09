@@ -1,10 +1,10 @@
-# The Hand That Never Touched Her
+# The Hand Absent During the Sham Trial
 ### The 1784 experiment in expectation—and why a genuine sensation is not proof of an invisible mechanism
-**Final Vestige Studios | Mind & Perception | Historical Evidence Investigation | UNPUBLISHED source draft, November 8, 2026**
+**Final Vestige Studios | Mind & Perception | Historical Evidence Investigation | UNPUBLISHED; corrected 9 November 2026 following independent primary-source review. Legacy file name is not the approved title.**
 
-The hand was not there. The heat was.
+In the sham-condition trial, the operator was absent. The woman still reported heat.
 
-In Paris in 1784, a woman told investigators that warmth appeared wherever a physician directed his fingers. They wanted to know what would happen when she could not see the hands. They covered her eyes. The warmth no longer followed the alleged operator's movements. Then the doctor was taken away altogether. She was allowed to believe the procedure continued. And, according to the commissioners' report, the sensations continued too.
+In Paris in 1784, a woman reported warmth as physician Jumelin approached her with his hands. The commissioners covered her eyes: her reported sensations no longer followed the direction of his movements. **An intervening step cannot be erased:** they removed the blindfold, Jumelin **applied his hands to her upper abdomen**, and the woman became faint and fainted. Only after she recovered did they blindfold her again, remove Jumelin, request silence, and lead her to believe he was operating. She still reported symptoms when no operation took place. The commissioners' English translation printed this exact sequence on pages 56–57, and reported a later active-operation comparison. [1]
 
 It is a wonderfully unsettling record—not because it proves that someone had imagined a physical feeling, and certainly not because it proves she was dishonest. It unsettles a different assumption: that the vividness of an experience establishes the truth of the explanation offered for it.
 
@@ -34,7 +34,7 @@ At a session with Jumelin, the commissioners observed a series of people receivi
 
 When the operation moved near her stomach or back, she instead spoke of symptoms in her head and eyes. Without knowing where the hands were, her sensations stopped tracking their location.
 
-Then they repeated the experiment with the woman's eyes covered, with Jumelin removed and quiet maintained. She was led to believe magnetization was taking place. The report says the woman again experienced heat, pain and other sensations even though no operation had occurred.
+The blindfold was then **removed**. Jumelin **applied his hands to her upper abdomen** (called the “hypochonders” in the 1785 translation); she reported heat and then fainted. After her recovery, investigators **blindfolded her again, removed Jumelin and called for silence** while telling her the operation continued. She again reported heat and pain even though **no operation took place**. About fifteen minutes later he resumed operating near her stomach and back, without the matching increase of sensation that the alleged agent would predict. See printed pp. 56–58. [1]
 
 The crucial comparison was not between feeling and not feeling; the feeling was reported in both conditions. It was between **actual procedure and believed procedure**. An explanation involving an invisible fluid had lost the correspondence on which it depended. The subject's belief could be manipulated without manipulating the supposed agent. [1]
 
