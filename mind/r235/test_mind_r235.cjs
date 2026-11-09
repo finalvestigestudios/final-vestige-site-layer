@@ -25,7 +25,7 @@ function violations(f){
   ok((s.match(/<button\b[^>]*\bdisabled\b[^>]*>/gi)||[]).length===1,"disabled merchant CTA "+label);
   ok(/id="affiliate-disclosure"[\s\S]{0,410}<button\b[^>]*aria-describedby="affiliate-disclosure"/i.test(s),"adjacent disclosure "+label);
   ok(s.includes("commission at no additional cost to you"),"commission wording "+label);
-  ok(s.includes("merchant’s newsletter")&&s.includes("merchant signup must never be counted as a confirmed Final Vestige lead"),"seller list distinct "+label);
+  ok(s.includes("merchant’s newsletter")&&s.includes("merchant opt-in must never be counted as a confirmed Final Vestige lead"),"seller list distinct "+label);
   ok(s.includes("https://finalvestige.com/focus/"),"existing Focus "+label);
   ok(s.includes("prefers-reduced-motion:reduce")&&s.includes(":focus-visible"),"accessibility indicators "+label);
   ok(!/<\s*(?:script|form|iframe|video|audio|object|embed|base)\b/i.test(s),"no active code/media/forms "+label);
@@ -56,7 +56,7 @@ function exercise(f){
  ["enable B",v=>v.b=v.b.replace('type="button" disabled','type="button"')],
  ["remove disclosure",v=>v.a=v.a.replace('id="affiliate-disclosure"','id="gone"')],
  ["remove merchant consent",v=>v.b=v.b.replace("merchant’s newsletter","optional note")],
- ["mislabel merchant lead",v=>v.a=v.a.replace("merchant signup must never be counted as a confirmed Final Vestige lead","merchant signup counts as a lead")],
+ ["mislabel merchant lead",v=>v.a=v.a.replace("merchant opt-in must never be counted as a confirmed Final Vestige lead","merchant signup counts as a lead")],
  ["insert script",v=>v.a+='<script>alert(1)</script>'],
  ["insert form",v=>v.b+='<form><input type=email></form>'],
  ["merchant href",v=>v.a+='<a href=https://zen12.com/hnp>buy</a>'],
