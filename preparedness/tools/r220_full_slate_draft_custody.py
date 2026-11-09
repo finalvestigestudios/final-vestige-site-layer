@@ -57,6 +57,9 @@ R236_PARITY_BLOB = '78936188bcb636d638346348d51c5f44daf8e5e2'
 # R237 binds every citation occurrence to a deterministic review-only claim context.
 R237_CLAIM_DOCKET_PATH = 'tools/r237_citation_claim_context_hold.py'
 R237_CLAIM_DOCKET_BLOB = '30379a441948ed264871a4b2280a154b5a5167e0'
+# R238 catches cite markers buried in quoted HTML attributes and nonreader markup.
+R238_VISIBILITY_PATH = 'tools/r238_source_lexer_hold.py'
+R238_VISIBILITY_BLOB = '694bbb23bcadb16169d783a0352b790f3629e4f6'
 # These are independently observed R219 integration Git blobs, not certified text.
 # Missing entries MUST match the older R200 original exactly.
 INTEGRATED_DIFFS = {
@@ -445,6 +448,22 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
                 or claims.get('claim_evidence_adjudicated') is not False):
             raise ValueError('R237 per-occurrence claim/source review HOLD changed')
         result['claim_context_review_docket'] = claims
+        # R237's simple tag/attribute regex can mistake '>' inside a quoted
+        # attribute or HTML comment for the end of markup. Verify source-level
+        # visibility separately with an independently pinned quote-aware lexer.
+        visible_guard = load_frozen_gate(root, R238_VISIBILITY_PATH, R238_VISIBILITY_BLOB,
+                                         'fv_preparedness_r238_visible_source_gate',
+                                         ('audit_source_visibility',))
+        visibility = visible_guard.audit_source_visibility(root, roster, safe_read)
+        if (visibility.get('state') != HOLD or visibility.get('article_count') != 35
+                or visibility.get('citation_count') != 2000
+                or visibility.get('human_review_required') is not True
+                or visibility.get('release_authorized') is not False
+                or visibility.get('independent_qd_pass') is not False
+                or visibility.get('source_approved') is not False
+                or visibility.get('medical_safety_verified') is not False):
+            raise ValueError('R238 source citation visibility/source safety HOLD drift')
+        result['source_citation_visibility_custody'] = visibility
         if verify_exports:
             # Only imports the repository's own build code from its trusted tools path.
             tools_path = root / 'tools'
@@ -530,6 +549,8 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
             raise ValueError('R235 source-scope docket guard mutated during audit')
         if git_blob(safe_read(root, R236_PARITY_PATH)) != R236_PARITY_BLOB:
             raise ValueError('R236 citation-parity gate mutated during audit')
+        if git_blob(safe_read(root, R238_VISIBILITY_PATH)) != R238_VISIBILITY_BLOB:
+            raise ValueError('R238 source citation visibility gate mutated during audit')
         result['reconciliation'] = {'frozen_articles': 35,
                                     'integrated_changes_held_for_review': sum(
                                         x['changed_since_original'] for x in status),
