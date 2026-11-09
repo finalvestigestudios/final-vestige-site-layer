@@ -92,3 +92,29 @@
     color: #222;
   }
 }
+
+/* R245. Increase Research Desk evidence action targets without changing content or the print ledger. */
+.fv-ex2-ledger .fv-ex2-ledger__recordlinks a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 9px 8px;
+  touch-action: manipulation;
+}
+.fv-ex2-ledger .fv-ex2-ledger__fulltext summary {
+  min-height: 44px;
+  padding: 10px 4px;
+  touch-action: manipulation;
+}
+/* Paper citations must remain inline, with full URLs visible in print. */
+@media print {
+  .fv-ex2-ledger .fv-ex2-ledger__recordlinks a {
+    display: inline;
+    min-height: 0;
+    padding: 0;
+  }
+  .fv-ex2-ledger .fv-ex2-ledger__fulltext summary {
+    min-height: 0;
+    padding: 0;
+  }
+}
