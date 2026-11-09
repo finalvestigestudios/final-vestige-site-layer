@@ -27,13 +27,13 @@ assert.equal(m.revenue.net_revenue_per_1000_qualified_human_sessions,null);
 console.log('PASS R237 source-only: A/B content parity, inactive buttons, disclosures, 42s captions, 16 sources/25 claims/16 held gates. Browser and merchant not tested.');
 
 
-/* R237 frozen source-integrity regression: any modified article, buyer arm, hub,
+/* R239 reviewed refresh of inherited R237 frozen pins at prior R238 HEAD; any later modified article, buyer arm, hub,
    captions, matrix or revenue plan requires a separately reviewed pin refresh. */
 function fnv32(text){let h=2166136261;for(let i=0;i<text.length;i++){h=Math.imul((h^text.charCodeAt(i)),16777619)>>>0;}return h.toString(16).padStart(8,'0');}
 const expectedPins={
-  "THE-HAND-THAT-NEVER-TOUCHED-HER-UNPUBLISHED.md": "1be1accd",
-  "zen12-presell-A.html": "195cb95d",
-  "zen12-presell-B.html": "bdb2a2e6",
+  "THE-HAND-THAT-NEVER-TOUCHED-HER-UNPUBLISHED.md": "5eb3e6eb",
+  "zen12-presell-A.html": "1ad6e4c3",
+  "zen12-presell-B.html": "4b264450",
   "mind-hub-preview.html": "3e940ac7",
   "zen12-42s-concept.vtt": "fdd2559c",
   "CLAIMS-AND-AUTHORIZATION.json": "45b24f19",
