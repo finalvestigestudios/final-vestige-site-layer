@@ -87,4 +87,4 @@ for ix,(old,new) in enumerate((
     negative('structural_%02d'%ix, old,new)
 
 
-if __name__=='__main__':unittest.main()
+if __name__ == '__main__':unittest.main()
