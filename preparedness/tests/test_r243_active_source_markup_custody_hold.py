@@ -65,6 +65,12 @@ class R243Markup(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,'R243 executable or unreviewed'):
             audit()
 
+    def test_remote_resources_not_source_authorized(self):
+        for tag,attr in (('img','src'),('video','poster'),('svg:image','xlink:href'),
+                         ('object','data')):
+            with self.subTest(tag=tag,attr=attr):
+                self.denied(f'<{tag} {attr}="https://other.example/tracker"/>')
+
     def test_nonstring_inputs_rejected(self):
         with self.assertRaises(ValueError): gate.check_active_markup(b'<p>text</p>')
         with self.assertRaises(ValueError): gate.audit_active_markup_custody(None,[{}],lambda *_:b'')
@@ -73,7 +79,8 @@ class R243Markup(unittest.TestCase):
 # Each dynamic method independently checks a genuinely distinct mutation.
 ACTIVE_TAG_CASES=('form','input','button','iframe','object','embed','applet','base',
                    'meta','link','portal','script','textarea','select','foreignObject',
-                   'animate','animateTransform','animateMotion','set')
+                   'animate','animateTransform','animateMotion','set',
+                  'style','template','noscript','video','audio')
 for i, tag in enumerate(ACTIVE_TAG_CASES):
     def test(self, tag=tag): self.denied(f'<{tag} id="unsafe-{tag}">x</{tag}>','active authored')
     setattr(R243Markup,f'test_active_tag_{i:02d}_{tag.lower()}',test)
