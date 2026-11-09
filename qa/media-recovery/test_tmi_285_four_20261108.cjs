@@ -45,4 +45,4 @@ const mods=[
 ["null audit",a=>{a.cms=null;}],
 ];
 for(const [name,mut] of mods)ok(name,mut);
-console.log(done+"/"+done+" native Node regression checks passed");
+console.log(done+"/"+done+" regression checks passed (execute with Node for native validation)");
