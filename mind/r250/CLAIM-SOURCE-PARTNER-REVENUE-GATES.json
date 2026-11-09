@@ -1,0 +1,439 @@
+{
+  "version": "R250",
+  "date": "2026-11-09",
+  "scope": "UNPUBLISHED_SOURCE_ONLY",
+  "release": "HARD_HOLD",
+  "revision_scope": "mind/r248, mind/r249, mind/r250 only",
+  "primary_offer": {
+    "name": "Zen12 Premium",
+    "merchant": "Inspire3",
+    "approval": "NOT_VERIFIED",
+    "account_earning_url": null,
+    "permitted_channels": null,
+    "net_commission": null,
+    "price_paid": null,
+    "refund_fulfillment": null
+  },
+  "owned_fallback": {
+    "sku": null,
+    "rights": null,
+    "checkout_verified": false,
+    "actual_purchase_verified": false,
+    "fulfillment_verified": false,
+    "commercial_activation": "NOT_AUTHORIZED"
+  },
+  "sources": [
+    {
+      "id": "MEM74",
+      "url": "https://doi.org/10.1016/S0022-5371(74)80011-3",
+      "evidence": "Loftus & Palmer original 1974 paper; publisher abstract checked; full PDF not authenticated",
+      "access": "PUBLIC_READ_ONLY"
+    },
+    {
+      "id": "MEM78",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/621467/",
+      "evidence": "Loftus/Miller/Burns original 1978 experimental series abstract; 1242 across five studies and pilot",
+      "access": "PUBLIC_READ_ONLY"
+    },
+    {
+      "id": "MEM23",
+      "url": "https://doi.org/10.3389/fpsyg.2023.1201674",
+      "evidence": "O'Donnell et al 2023 open-access research; source variability separated from repetition",
+      "access": "PUBLIC_READ_ONLY"
+    },
+    {
+      "id": "COR19",
+      "url": "https://doi.org/10.1177/0093650219854600",
+      "evidence": "Walter/Tukachinsky 2019 meta-analysis; continued influence after correction, not identical to eyewitness recognition",
+      "access": "PUBLIC_READ_ONLY"
+    },
+    {
+      "id": "FVPUY",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "evidence": "Existing original historical file and archival dossiers; no modern efficacy transfer",
+      "access": "PUBLIC_READ_ONLY"
+    },
+    {
+      "id": "FVME",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "evidence": "Published historical commission and suggestion research",
+      "access": "PUBLIC_READ_ONLY"
+    },
+    {
+      "id": "FVCB",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "evidence": "Published perception article; source link, not an audio intervention result",
+      "access": "PUBLIC_READ_ONLY"
+    },
+    {
+      "id": "FVFO",
+      "url": "https://finalvestige.com/focus/",
+      "evidence": "Existing one-list 52-page Seven Day Focus Fieldbook free capture offer",
+      "access": "PUBLIC_READ_ONLY"
+    },
+    {
+      "id": "FVDI",
+      "url": "https://finalvestige.com/dispatch/",
+      "evidence": "Existing Jetpack newsletter and one welcome asset; no duplicated signup",
+      "access": "PUBLIC_READ_ONLY"
+    },
+    {
+      "id": "INSPIRE",
+      "url": "https://inspire3.com/",
+      "evidence": "Official merchant product catalog, marketing claims only",
+      "access": "PUBLIC_READ_ONLY"
+    },
+    {
+      "id": "ZENP",
+      "url": "https://zen12.com/hnp",
+      "evidence": "Exact Zen12 Premium sales page, seller-described 12 levels, 48 MP3s, one-year advertised guarantee",
+      "access": "PUBLIC_READ_ONLY"
+    },
+    {
+      "id": "BFS",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "evidence": "Exact Focus Shot official sales page; seller-described formats and outcome promises, not clinical validation",
+      "access": "PUBLIC_READ_ONLY"
+    },
+    {
+      "id": "FTCENDORSE",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "evidence": "FTC guidance, adjacent material-connection disclosure",
+      "access": "PUBLIC_READ_ONLY"
+    },
+    {
+      "id": "FTCHEALTH",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "evidence": "FTC product-specific claims substantiation standards",
+      "access": "PUBLIC_READ_ONLY"
+    },
+    {
+      "id": "FVDISC",
+      "url": "https://finalvestige.com/affiliate-disclosure/",
+      "evidence": "Existing general site policy; alone not substitute for adjacent disclosure",
+      "access": "PUBLIC_READ_ONLY"
+    },
+    {
+      "id": "ISSUE171",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "evidence": "Canonical editorial/affiliate remit and historical source inventory",
+      "access": "PUBLIC_READ_ONLY"
+    },
+    {
+      "id": "ISSUE820",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "evidence": "Commercial conversion and revenue acceptance requirements",
+      "access": "PUBLIC_READ_ONLY"
+    },
+    {
+      "id": "PR1784",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/1784",
+      "evidence": "Inherited R249 draft; source correction stacked, not merged",
+      "access": "PUBLIC_READ_ONLY"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "source": "MEM74",
+      "classification": "EXPERIMENTAL_OBSERVATION",
+      "statement": "Post-event verb changes influenced speed estimates in a 1974 accident-film task",
+      "policy": "CAN_REPORT_WITH_DESIGN_CAVEAT"
+    },
+    {
+      "id": "C02",
+      "source": "MEM74",
+      "classification": "EXPERIMENTAL_OBSERVATION",
+      "statement": "A delayed broken-glass question produced more affirmative reports in the forceful-verb condition although footage had no glass",
+      "policy": "CAN_REPORT_WITH_DESIGN_CAVEAT"
+    },
+    {
+      "id": "C03",
+      "source": "MEM78",
+      "classification": "PRIMARY_ABSTRACT",
+      "statement": "A total of 1242 participants in five experiments and a pilot encountered consistent, irrelevant or misleading postevent descriptions",
+      "policy": "CAN_REPORT_WITH_TOTAL_SAMPLE_CAVEAT"
+    },
+    {
+      "id": "C04",
+      "source": "MEM78",
+      "classification": "PRIMARY_ABSTRACT",
+      "statement": "Misleading postevent descriptions reduced recognition accuracy on yes-no and forced-choice tests",
+      "policy": "CAN_REPORT"
+    },
+    {
+      "id": "C05",
+      "source": "MEM23",
+      "classification": "PRIMARY_STUDY",
+      "statement": "Repeating misinformation increased suggestibility in experimental conditions; apparent source variability did not add effect under those tested comparisons",
+      "policy": "CAN_REPORT_BOUND_TO_STUDY"
+    },
+    {
+      "id": "C06",
+      "source": "MEM23",
+      "classification": "META_ANALYTIC",
+      "statement": "This paper reports a repetition meta-analysis k=19 and source variability meta-analysis k=8; do not imply independent participants are same in both",
+      "policy": "CAN_REPORT"
+    },
+    {
+      "id": "C07",
+      "source": "COR19",
+      "classification": "META_ANALYTIC_ABSTRACT",
+      "statement": "Continued-influence correction meta-analysis includes 32 studies and 6527 participants; not a false eyewitness-memory rate",
+      "policy": "CAN_REPORT_WITH_CONSTRUCT_DISTINCTION"
+    },
+    {
+      "id": "C08",
+      "source": "FVPUY",
+      "classification": "HISTORICAL_DOCUMENTATION",
+      "statement": "Puységur documentary files are historical claim records, not independent medical outcome evidence",
+      "policy": "CAN_REPORT"
+    },
+    {
+      "id": "C09",
+      "source": "FVME",
+      "classification": "HISTORICAL_DOCUMENTATION",
+      "statement": "1784 royal commission's Deslon-related tests should not be collapsed into Puységur's distinct case descriptions",
+      "policy": "CAN_REPORT"
+    },
+    {
+      "id": "C10",
+      "source": "ZENP",
+      "classification": "SELLER_FORMAT",
+      "statement": "Zen12 Premium is advertised as twelve levels containing 48 MP3s and support materials",
+      "policy": "LABEL_AS_SELLER_DESCRIPTION"
+    },
+    {
+      "id": "C11",
+      "source": "ZENP",
+      "classification": "SELLER_REFUND",
+      "statement": "The Zen12 offer advertises a one-year guarantee; independent refund experience and checkout terms not verified",
+      "policy": "LABEL_AS_SELLER_DESCRIPTION"
+    },
+    {
+      "id": "C12",
+      "source": "ZENP",
+      "classification": "SELLER_EFFICACY_UNVERIFIED",
+      "statement": "The seller markets an hour's meditation benefits in twelve minutes; no independently reviewed product-specific evidence authenticated",
+      "policy": "DO_NOT_ASSERT_AS_FACT"
+    },
+    {
+      "id": "C13",
+      "source": "BFS",
+      "classification": "SELLER_EFFICACY_UNVERIFIED",
+      "statement": "Focus Shot seller says minutes of listening create hours of focus; general brainwave literature cannot validate exact product",
+      "policy": "DO_NOT_ASSERT_AS_FACT"
+    },
+    {
+      "id": "C14",
+      "source": "INSPIRE",
+      "classification": "CATALOG_ONLY",
+      "statement": "Inspire3 public catalog lists mind audio brands; no FV named publisher approval inferred",
+      "policy": "CAN_REPORT_WITH_CONSTRAINT"
+    },
+    {
+      "id": "C15",
+      "source": "FTCENDORSE",
+      "classification": "REGULATORY",
+      "statement": "Material affiliate connection should be clear and conspicuous near an earning recommendation, not hidden in general policy",
+      "policy": "REQUIRED_ON_ACTIVATION"
+    },
+    {
+      "id": "C16",
+      "source": "FTCHEALTH",
+      "classification": "REGULATORY",
+      "statement": "Objective health-related or psychological benefit marketing needs adequate evidence relevant to the specific benefit and product",
+      "policy": "REQUIRED_FOR_OBJECTIVE_CLAIMS"
+    },
+    {
+      "id": "C17",
+      "source": "FVFO",
+      "classification": "LIVE_FUNNEL_CONTENT",
+      "statement": "One existing free 52-page Fieldbook offers a twelve-minute practice, seven days and a 30-day log; not a validated treatment",
+      "policy": "CAN_REPORT"
+    },
+    {
+      "id": "C18",
+      "source": "FVDI",
+      "classification": "LIVE_FUNNEL_CONTENT",
+      "statement": "Dispatch and Focus already share the approved Jetpack signup route and welcome; do not duplicate it",
+      "policy": "CAN_REPORT"
+    },
+    {
+      "id": "C19",
+      "source": "ISSUE820",
+      "classification": "MEASUREMENT",
+      "statement": "A named affiliate_outbound event is not a verified paid commission, and newsletter counts are not orders",
+      "policy": "REQUIRED_METRIC_SEPARATION"
+    },
+    {
+      "id": "C20",
+      "source": "ISSUE171",
+      "classification": "ACCOUNT_SPECIFIC_UNKNOWN",
+      "statement": "Final Vestige's signed-in Inspire3 approval, approved channels and account-issued earning URL are not authenticated",
+      "policy": "HARD_HOLD"
+    },
+    {
+      "id": "C21",
+      "source": "ISSUE820",
+      "classification": "REVENUE_UNKNOWN",
+      "statement": "Qualified-human denominator, settled merchant purchases, refunds, fees and net revenue are not independently reconciled",
+      "policy": "NOT_COMPUTABLE"
+    },
+    {
+      "id": "C22",
+      "source": "PR1784",
+      "classification": "SOURCE_QA",
+      "statement": "Inherited R248 cuePattern literal was overescaped; current R250 branch corrects ten tokens, subject to full exact-source suite",
+      "policy": "FIX_IMPLEMENTED_TEST_REQUIRED"
+    }
+  ],
+  "gates": [
+    {
+      "id": "publisher_identity_approved",
+      "status": "HARD_HOLD",
+      "verified": false,
+      "evidence": null,
+      "owner": "Founder/Mind"
+    },
+    {
+      "id": "product_is_affiliate_eligible",
+      "status": "HARD_HOLD",
+      "verified": false,
+      "evidence": null,
+      "owner": "Founder/Mind"
+    },
+    {
+      "id": "approved_website_channel",
+      "status": "HARD_HOLD",
+      "verified": false,
+      "evidence": null,
+      "owner": "Founder/Mind"
+    },
+    {
+      "id": "approved_social_channel",
+      "status": "HARD_HOLD",
+      "verified": false,
+      "evidence": null,
+      "owner": "Founder/Mind"
+    },
+    {
+      "id": "approved_email_channel",
+      "status": "HARD_HOLD",
+      "verified": false,
+      "evidence": null,
+      "owner": "Founder/Mind"
+    },
+    {
+      "id": "account_issued_earning_url",
+      "status": "HARD_HOLD",
+      "verified": false,
+      "evidence": null,
+      "owner": "Founder/Mind"
+    },
+    {
+      "id": "tracking_terms_and_disclosure",
+      "status": "HARD_HOLD",
+      "verified": false,
+      "evidence": null,
+      "owner": "Founder/Mind"
+    },
+    {
+      "id": "merchant_creative_rights",
+      "status": "HARD_HOLD",
+      "verified": false,
+      "evidence": null,
+      "owner": "Founder/Mind"
+    },
+    {
+      "id": "exact_checkout_price_tax",
+      "status": "HARD_HOLD",
+      "verified": false,
+      "evidence": null,
+      "owner": "Commerce/Mind"
+    },
+    {
+      "id": "refund_policy_eligibility",
+      "status": "HARD_HOLD",
+      "verified": false,
+      "evidence": null,
+      "owner": "Commerce/Mind"
+    },
+    {
+      "id": "delivery_test",
+      "status": "HARD_HOLD",
+      "verified": false,
+      "evidence": null,
+      "owner": "Commerce/Mind"
+    },
+    {
+      "id": "specific_claim_proof",
+      "status": "HARD_HOLD",
+      "verified": false,
+      "evidence": null,
+      "owner": "Commerce/Mind"
+    },
+    {
+      "id": "independent_site_qa",
+      "status": "HARD_HOLD",
+      "verified": false,
+      "evidence": null,
+      "owner": "Site QA/Founder"
+    },
+    {
+      "id": "founder_release_approval",
+      "status": "HARD_HOLD",
+      "verified": false,
+      "evidence": null,
+      "owner": "Site QA/Founder"
+    },
+    {
+      "id": "paid_transaction_verification",
+      "status": "HARD_HOLD",
+      "verified": false,
+      "evidence": null,
+      "owner": "Commerce/Analytics"
+    },
+    {
+      "id": "refund_fee_attribution_reconciliation",
+      "status": "HARD_HOLD",
+      "verified": false,
+      "evidence": null,
+      "owner": "Commerce/Analytics"
+    }
+  ],
+  "creator_assets": {
+    "published_asset_ids": null,
+    "original_media_urls": null,
+    "observed_native_mobile_links": null,
+    "owner": "Grok/Praxxis",
+    "source_docs": "TASK-008"
+  },
+  "metrics": {
+    "status": "NOT_COMPUTABLE",
+    "qualified_human_sessions": null,
+    "confirmed_leads": null,
+    "affiliate_clicks": null,
+    "verified_paid_orders": null,
+    "merchant_confirmed_commissions": null,
+    "refunds": null,
+    "chargebacks": null,
+    "incremental_fees": null,
+    "net_revenue": null,
+    "net_revenue_per_1000": null
+  },
+  "security": {
+    "no_live_links": true,
+    "no_javascript_or_tracking": true,
+    "no_new_signups": true,
+    "no_live_cms_writes": true,
+    "no_publish": true
+  },
+  "qa": {
+    "r248_clock_defect": "FIXED_SOURCE_IN_ISOLATED_BRANCH",
+    "r249_validator_pin": "UPDATED",
+    "native_node_full_checkout": "NOT_RUN",
+    "real_browser": "NOT_RUN",
+    "merchant_test": "NOT_RUN"
+  }
+}
