@@ -1,0 +1,454 @@
+{
+  "sprint": "R231",
+  "reviewed": "2026-11-08",
+  "draft_status": "UNPUBLISHED",
+  "evidence_sources": [
+    {
+      "id": "R01",
+      "type": "PRIMARY_OBSERVATIONAL",
+      "url": "https://dash.harvard.edu/entities/publication/73120378-d8a3-6bd4-e053-0100007fdf3b",
+      "limit": "Killingsworth and Gilbert 2010; experience sampling; association not causality",
+      "checked_date": "2026-11-08"
+    },
+    {
+      "id": "R02",
+      "type": "PRIMARY_EXPERIMENT",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26993740/",
+      "limit": "Seli et al 2016 distinguishes deliberate and spontaneous wandering",
+      "checked_date": "2026-11-08"
+    },
+    {
+      "id": "R03",
+      "type": "REVIEW",
+      "url": "https://doi.org/10.1146/annurev-psych-010814-015331",
+      "limit": "Smallwood/Schooler review, costs, benefits and meta-awareness",
+      "checked_date": "2026-11-08"
+    },
+    {
+      "id": "R04",
+      "type": "PRIMARY_EXPERIMENT",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/22941876/",
+      "limit": "Baird et al 2012 creativity incubation under one design",
+      "checked_date": "2026-11-08"
+    },
+    {
+      "id": "R05",
+      "type": "REPLICATION_SUMMARY",
+      "url": "https://forrt.org/flora-replication-atlas/doi/10.1177/0956797612446024/",
+      "limit": "2024 replication of 2012 incubation result recorded as failed; review original followup before sweeping inference",
+      "checked_date": "2026-11-08"
+    },
+    {
+      "id": "R06",
+      "type": "RCT",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23538911/",
+      "limit": "Mrazek et al 2013 instructor-led 2-week mindfulness course not retail recording",
+      "checked_date": "2026-11-08"
+    },
+    {
+      "id": "R07",
+      "type": "HEALTH_GUIDANCE",
+      "url": "https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety/",
+      "limit": "NCCIH risks/limits",
+      "checked_date": "2026-11-08"
+    },
+    {
+      "id": "S01",
+      "type": "SELLER_CATALOG",
+      "url": "https://inspire3.com/",
+      "limit": "Official Inspire3 commercial catalog and broad claims",
+      "checked_date": "2026-11-08"
+    },
+    {
+      "id": "S02",
+      "type": "SELLER_EXACT_ZEN12",
+      "url": "https://zen12.com/hnp",
+      "limit": "Zen12 Premium page 12 levels/48 MP3/4 styles/1-year advertised refund; 12-minute equivalence unsubstantiated",
+      "checked_date": "2026-11-08"
+    },
+    {
+      "id": "S03",
+      "type": "SELLER_EXACT_BRAINWAVE",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "limit": "Focus Shot 15/30 minute audio; seller performance claims not adopted",
+      "checked_date": "2026-11-08"
+    },
+    {
+      "id": "S04",
+      "type": "SELLER_EXACT_HYPNOSIS",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "limit": "Total Focus 33-minute audio; seller claims not adopted",
+      "checked_date": "2026-11-08"
+    },
+    {
+      "id": "F01",
+      "type": "FTC_ENDORSEMENTS",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "limit": "Honest endorsement; clearly disclose material connections close to CTA",
+      "checked_date": "2026-11-08"
+    },
+    {
+      "id": "F02",
+      "type": "FTC_HEALTH",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "limit": "Competent reliable scientific evidence for health-related claims",
+      "checked_date": "2026-11-08"
+    },
+    {
+      "id": "V01",
+      "type": "LIVE_FV_FOCUS",
+      "url": "https://finalvestige.com/focus/",
+      "limit": "52-page free fieldbook, current single Dispatch/Jetpack funnel",
+      "checked_date": "2026-11-08"
+    },
+    {
+      "id": "V02",
+      "type": "LIVE_FV_HISTORY",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "limit": "153 source rows/16 case dossiers reported in site inventory; independent full audit not re-performed",
+      "checked_date": "2026-11-08"
+    },
+    {
+      "id": "V03",
+      "type": "LIVE_FV_CHANGE",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "limit": "Existing actual flicker/door-swap article, not invisible gorilla",
+      "checked_date": "2026-11-08"
+    },
+    {
+      "id": "V04",
+      "type": "LIVE_FV_MESMER",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "limit": "Existing 1784 commission investigation",
+      "checked_date": "2026-11-08"
+    },
+    {
+      "id": "G01",
+      "type": "POLICY_SOURCE",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "limit": "Ownership and hard-hold requirements",
+      "checked_date": "2026-11-08"
+    },
+    {
+      "id": "G02",
+      "type": "MEASUREMENT_SOURCE",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "limit": "Source of truth revenue and capture verification",
+      "checked_date": "2026-11-08"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "statement": "Mind wandering frequently occurs away from the current task",
+      "status": "SUPPORTED_OBSERVATIONAL_NOT_CAUSAL",
+      "evidence": [
+        "R01"
+      ]
+    },
+    {
+      "id": "C02",
+      "statement": "Mind wandering always causes unhappiness",
+      "status": "NOT_ESTABLISHED",
+      "evidence": [
+        "R01",
+        "R03"
+      ]
+    },
+    {
+      "id": "C03",
+      "statement": "Deliberate and unintentional mind wandering are distinguishable",
+      "status": "SUPPORTED_EXPERIMENT_BOUNDED",
+      "evidence": [
+        "R02"
+      ]
+    },
+    {
+      "id": "C04",
+      "statement": "Mind wandering always impairs creative performance",
+      "status": "NOT_ESTABLISHED",
+      "evidence": [
+        "R03",
+        "R04",
+        "R05"
+      ]
+    },
+    {
+      "id": "C05",
+      "statement": "2012 creativity incubation study generalizes to all tasks",
+      "status": "NOT_ESTABLISHED_REPLICATION_CONCERN",
+      "evidence": [
+        "R04",
+        "R05"
+      ]
+    },
+    {
+      "id": "C06",
+      "statement": "A two-week instructed mindfulness course showed certain task improvements",
+      "status": "RCT_BOUNDED",
+      "evidence": [
+        "R06"
+      ]
+    },
+    {
+      "id": "C07",
+      "statement": "That two-week result demonstrates Zen12 retail product efficacy",
+      "status": "TRANSFER_NOT_SUPPORTED",
+      "evidence": [
+        "R06",
+        "S02"
+      ]
+    },
+    {
+      "id": "C08",
+      "statement": "Meditation has no adverse experiences or risks",
+      "status": "NOT_ESTABLISHED",
+      "evidence": [
+        "R07"
+      ]
+    },
+    {
+      "id": "C09",
+      "statement": "Zen12 Premium is described as 12 levels, 48 MP3, four styles",
+      "status": "SELLER_DESCRIBED_ONLY",
+      "evidence": [
+        "S02"
+      ]
+    },
+    {
+      "id": "C10",
+      "statement": "Zen12 seller advertises one-year refund guarantee",
+      "status": "SELLER_PROMISE_FULFILLMENT_UNVERIFIED",
+      "evidence": [
+        "S02"
+      ]
+    },
+    {
+      "id": "C11",
+      "statement": "Twelve minutes Zen12 equals benefits of an hour of meditation",
+      "status": "PRODUCT_EFFICACY_UNSUBSTANTIATED",
+      "evidence": [
+        "S02",
+        "R06"
+      ]
+    },
+    {
+      "id": "C12",
+      "statement": "Zen12 final checkout price, taxes and refund execution",
+      "status": "CHECKOUT_NOT_VERIFIED",
+      "evidence": [
+        "S02"
+      ]
+    },
+    {
+      "id": "C13",
+      "statement": "Brainwave Shots Focus Shot seller describes 15/30 minute recordings",
+      "status": "SELLER_DESCRIBED_ONLY",
+      "evidence": [
+        "S03"
+      ]
+    },
+    {
+      "id": "C14",
+      "statement": "Focus Shot guarantees productivity or EEG-translated cognition",
+      "status": "PRODUCT_EFFICACY_UNSUBSTANTIATED",
+      "evidence": [
+        "S03"
+      ]
+    },
+    {
+      "id": "C15",
+      "statement": "Total Focus seller describes one 33-minute hypnosis recording",
+      "status": "SELLER_DESCRIBED_ONLY",
+      "evidence": [
+        "S04"
+      ]
+    },
+    {
+      "id": "C16",
+      "statement": "Total Focus reprograms a brain or guarantees concentration",
+      "status": "PRODUCT_EFFICACY_UNSUBSTANTIATED",
+      "evidence": [
+        "S04"
+      ]
+    },
+    {
+      "id": "C17",
+      "statement": "Final Vestige Inspire3 affiliate acceptance and earning URL",
+      "status": "UNVERIFIED_HARD_HOLD",
+      "evidence": [
+        "G01"
+      ]
+    },
+    {
+      "id": "C18",
+      "statement": "Site social and email distribution authorized by partner",
+      "status": "UNVERIFIED_HARD_HOLD",
+      "evidence": [
+        "G01"
+      ]
+    },
+    {
+      "id": "C19",
+      "statement": "FV-owned rights-cleared current Mind Payhip SKU",
+      "status": "UNVERIFIED_HARD_HOLD",
+      "evidence": [
+        "G02"
+      ]
+    },
+    {
+      "id": "C20",
+      "statement": "Existing Focus website success UI equals Jetpack provider-confirmed lead",
+      "status": "NOT_ESTABLISHED",
+      "evidence": [
+        "V01",
+        "G02"
+      ]
+    },
+    {
+      "id": "C21",
+      "statement": "Any affiliate outbound click equals confirmed paid sale",
+      "status": "FALSE_AS_MEASUREMENT",
+      "evidence": [
+        "G02"
+      ]
+    },
+    {
+      "id": "C22",
+      "statement": "Editorial may rely on generalized medical evidence to promise retail product outcomes",
+      "status": "PROHIBITED_UNSUBSTANTIATED",
+      "evidence": [
+        "F02"
+      ]
+    },
+    {
+      "id": "C23",
+      "statement": "Each activated earning link needs nearby material relationship disclosure",
+      "status": "FTC_GUIDANCE",
+      "evidence": [
+        "F01"
+      ]
+    },
+    {
+      "id": "C24",
+      "statement": "Video variant is currently rendered and accessible for playback",
+      "status": "FALSE_UNRENDERED",
+      "evidence": [
+        "G01"
+      ]
+    },
+    {
+      "id": "C25",
+      "statement": "Three real Grok published assets are matched to this workstream",
+      "status": "NOT_VERIFIED",
+      "evidence": [
+        "G02"
+      ]
+    }
+  ],
+  "release_gates": [
+    {
+      "id": "named_partner_approval",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "authorized_website_channel",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "authorized_social_channel",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "authorized_email_channel",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "issued_affiliate_link",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "cookie_tracking_and_attribution_terms",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "settlement_and_paid_commission_terms",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "validated_checkout_price_tax_and_terms",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "verified_refund_exclusions_procedure",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "approved_creative_rights",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "product_specific_efficacy_claim_proof",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "site_qa_mobile_accessibility_security",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "founder_publication_release_approval",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "owned_product_rights_sku_checkout",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "provider_confirmed_focus_leads",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "merchant_confirmed_paid_revenue_reconciliation",
+      "status": "HARD_HOLD",
+      "evidence": null
+    }
+  ],
+  "commerce": {
+    "activated": false,
+    "approved_affiliate_earning_url": null,
+    "owned_mind_product_sku": null,
+    "tracked_affiliate_clicks": null,
+    "cleared_affiliate_commissions": null,
+    "confirmed_paid_orders": null,
+    "refunds_and_fees": null,
+    "qualified_human_sessions": null,
+    "net_revenue_per_1000_qualified_human_sessions": "NOT_COMPUTABLE"
+  },
+  "privacy": {
+    "new_tracking_script": false,
+    "duplicate_signup_form": false,
+    "third_party_embeds": false,
+    "active_merchant_links": false
+  },
+  "notes": [
+    "A verified public seller page is not proof of specific partner authorization.",
+    "Retail packages are separately reviewed by exact offer page; all efficacy is seller assertion until product-specific evidence exists.",
+    "Do not convert evidence absence into sales=0 or subscribers=0.",
+    "One Focus/Dispatch/Jetpack pathway remains intact."
+  ]
+}
