@@ -38,9 +38,21 @@ class _ExportDOM(HTMLParser):
         self.active_source: list[int] = []
 
     def handle_startendtag(self, tag, attrs):
+        # WHATWG: in HTML, <template/> and <script/> are OPEN elements, not
+        # empty elements. HTMLParser emits a synthetic start/end pair instead.
+        # Treat ambiguous non-void slash syntax as a hard error, and retain
+        # the opening frame so later source/review material cannot look visible.
+        # Void HTML tags and foreign SVG/MathML self-closing tags are valid.
+        tag = tag.lower()
+        foreign = tag in ('svg', 'math') or any(
+            frame['tag'] in ('svg', 'math') for frame in self.stack)
         self.handle_starttag(tag, attrs)
-        if tag.lower() not in VOID:
+        if tag in VOID:
+            return
+        if foreign:
             self.handle_endtag(tag)
+        else:
+            self.errors.append('non-void HTML trailing solidus: ' + tag)
 
     def handle_starttag(self, tag, attrs):
         tag = tag.lower()
