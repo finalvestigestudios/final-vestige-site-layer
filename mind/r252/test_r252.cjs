@@ -5,7 +5,7 @@
    Connector V8: pass four GitHub-retrieved exact source strings to runR252. */
 const PINS = Object.freeze({
 article:"2a7f884de4e8bc5ec04d88002c34cc9c74f76840",
-html:"4b436df50c166d1564d27c0519381aeb51b8e4f4",
+html:"6e875673bb8cb4edd3126acedbef6d18ca14eb6e",
 matrix:"5e13ab24ac65bddcfb5511fba3606d207d31de86",
 plan:"eb968d6d386a63738f4b84c0eab6d9b286f6649a"
 });
@@ -44,7 +44,7 @@ function validateR252(x){
  push(html.includes('id="hold-reason"')&&html.includes('https://finalvestige.com/focus/'),"HTML_EXISTING_FUNNEL");
  push(!/<input\b/i.test(html)&&!/<select\b/i.test(html),"HTML_NO_NEW_LEAD_CAPTURE");
  push(/12 levels, 48 downloadable MP3|12 levels and 48 MP3|12 levels\/48 MP3/i.test(html),"HTML_PREMIUM_OFFER_MATCH");
- push(html.includes("$87.99")&&/not.*checkout|not.*final charge|not checked/i.test(html),"HTML_PRICE_CAVEAT");
+ push(html.includes("$87.99")&&html.includes("Final charge, tax and discount eligibility remain unverified."),"HTML_PRICE_CAVEAT");
  push(html.includes("not been produced")||html.includes("not playable"),"HTML_NO_VIDEO_OVERCLAIM");
  push(matrix.schema_version==="fv-mind-claim-gates-r252-1","MATRIX_SCHEMA");
  push(matrix.status==="SOURCE_DRAFT_NO_COMMERCE","MATRIX_NOT_LIVE");
@@ -91,7 +91,7 @@ function mutationSuite(x){
  ["remove-index-block",y=>y.html=y.html.replace("noindex,nofollow","index,follow")],
  ["drop-svg-access",y=>y.html=y.html.replace('aria-labelledby="art-title art-desc"',"")],
  ["drop-responsive",y=>y.html=y.html.replace("max-width:720px","max-width:900px")],
- ["price-unchecked",y=>y.html=y.html.replaceAll("not authenticated checkout","confirmed checkout").replaceAll("not checked","certified")],
+ ["price-unchecked",y=>y.html=y.html.replace("Final charge, tax and discount eligibility remain unverified.","Final charge and tax have been verified.")],
  ["empty-claim-matrix",y=>y.matrix=JSON.stringify({...JSON.parse(y.matrix),claims:[]})],
  ["invent-gate-approved",y=>{const m=JSON.parse(y.matrix);m.gates[0].status="APPROVED";y.matrix=JSON.stringify(m)}],
  ["invent-commission",y=>{const m=JSON.parse(y.matrix);m.revenue.verified_settled_affiliate_commissions=98.5;y.matrix=JSON.stringify(m)}],
@@ -101,7 +101,7 @@ function mutationSuite(x){
  ["invalid-source-ref",y=>{const m=JSON.parse(y.matrix);m.claims[0].sources=["UNKNOWN_SOURCE"];y.matrix=JSON.stringify(m)}],
  ["duplicate-gate",y=>{const m=JSON.parse(y.matrix);m.gates[1].id=m.gates[0].id;y.matrix=JSON.stringify(m)}],
  ["bad-source-url",y=>{const m=JSON.parse(y.matrix);m.sources[0].url="http://tracking.test";y.matrix=JSON.stringify(m)}],
- ["erase-review-N",y=>y.article=y.article.replace("31,184","99")],
+ ["erase-review-N",y=>y.article=y.article.replaceAll("31,184","99")],
  ["erase-heterogeneity",y=>y.article=y.article.replaceAll("heterogeneity","uniformity")],
  ["erase-merchant-separation",y=>y.article=y.article.replace("not a purchase recommendation","a product recommendation")],
  ["erase-rubber-hand",y=>y.plan=y.plan.replace("R204 / R218 / R251","R251 alone")],
