@@ -50,6 +50,7 @@ function testGuide(s){
  }
  assert(s.split(/\s+/).length>1800,'research depth');
  assert(!s.includes('I personally tested Zen12'),'no fabricated experience');
+ assert(!/https:\/\/(?:www\.)?(?:inspire3\.com|zen12\.com|brainwaveshots\.com|hypnosislive\.com)/i.test(s),'no raw merchant/product URL in public-facing guide manuscript');
 }
 function testVtt(s){
  assert(s.startsWith('WEBVTT'),'caption format');
@@ -93,5 +94,6 @@ for(const [label,mutant] of [
  ['uncited-claim',{...M,claims:[...M.claims,{source_id:'UNKNOWN',status:'SELLER_PRODUCT_DESCRIPTION'}]}]
  ])rejects(()=>testMatrix(mutant),label);
 rejects(()=>testVtt(V.replace('00:00:42.000','00:00:41.000')),'caption-length');
-assert.equal(mutations,23,'synthetic mutations expected');
-console.log('PASS R238: source baseline, exact A/B parity, historic correction, merchant holds, source references, 42s captions; '+mutations+'/23 synthetic unsafe modifications rejected. NOT a browser/WordPress or commercial acceptance.');
+rejects(()=>testGuide(G+'\nSeller checkout: https://zen12.com/hnp'),'guide-merchant-link');
+assert.equal(mutations,24,'synthetic mutations expected');
+console.log('PASS R238: source baseline, exact A/B parity, historic correction, merchant holds, source references, 42s captions; '+mutations+'/24 synthetic unsafe modifications rejected. NOT a browser/WordPress or commercial acceptance.');
