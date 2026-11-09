@@ -1,0 +1,38 @@
+{
+  "as_of_utc": "2026-11-09T13:38:30Z",
+  "source_parent": "24021b6e27576d847eed037251830ad3b7b28536",
+  "status": "DRAFT_REVIEW_ONLY",
+  "issues": [
+    {
+      "number": 3,
+      "merchant": "Zen12",
+      "exact_official_page": "https://zen12.com/hnp",
+      "format": "12 levels, 48 Premium MP3s",
+      "unproven_claims": [
+        "12 minutes equals an hour of meditation benefits",
+        "medical/psychological efficacy"
+      ],
+      "partner_accepted": false,
+      "email_permission_verified": false,
+      "earning_link": null,
+      "guide_live": false
+    },
+    {
+      "number": 5,
+      "merchant": "Hypnosis Live Total Focus",
+      "exact_official_page": "https://hypnosislive.com/mental-skills/total-focus",
+      "terms": "https://hypnosislive.com/faq",
+      "format": "33-minute, 47-MB downloadable MP3",
+      "refund_note": "Seller FAQ: 14 days, at most five refunded sessions per year; checkout not authenticated",
+      "partner_accepted": false,
+      "email_permission_verified": false,
+      "earning_link": null,
+      "guide_live": false
+    }
+  ],
+  "recipient_eligibility": null,
+  "received_welcome_verified": false,
+  "received_jetpack_footer_verified": false,
+  "founder_release_approval": false,
+  "realized_net_revenue_per_1000_qualified_sessions": null
+}
