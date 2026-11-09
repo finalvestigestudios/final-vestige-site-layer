@@ -43,6 +43,8 @@ class LexerTests(unittest.TestCase):
     def test_visibility_hidden(self): self.check_reject('<p style="visibility:hidden">Invisible {{cite:ready-plan}}</p>')
     def test_inert(self): self.check_reject('<section inert>Hidden {{cite:ready-plan}}</section>')
     def test_template(self): self.check_reject('<template>Hidden {{cite:ready-plan}}</template>')
+    def test_nested_template_bypass(self): self.check_reject('<template><template>x</template>{{cite:ready-plan}}</template>', 'nested template')
+    def test_nested_template_without_citation_still_requires_review(self): self.check_reject('<template><template>x</template>y</template>', 'nested template')
     def test_svg_quote(self): self.check_reject('<svg title="x > {{cite:ready-plan}}">hi</svg>')
     def test_malformed_doctype(self): self.check_reject('<![CDATA[ > {{cite:ready-plan}}]]>')
     def test_nested_hidden(self): self.check_reject('<div hidden><p><b>Invisible {{cite:ready-plan}}</b></p></div>')
