@@ -1,0 +1,331 @@
+{
+  "milestone": 244,
+  "checked_on": "2026-11-09",
+  "scope": "UNPUBLISHED_SOURCE_ONLY",
+  "status": "HARD_HOLD",
+  "source_count": 15,
+  "claim_count": 20,
+  "gate_count": 16,
+  "sources": [
+    {
+      "id": "J05",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/16210542/",
+      "kind": "primary_abstract"
+    },
+    {
+      "id": "H10",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/20637455/",
+      "kind": "primary_abstract"
+    },
+    {
+      "id": "H12",
+      "url": "https://doi.org/10.1371/journal.pone.0045457",
+      "kind": "primary_open_paper"
+    },
+    {
+      "id": "FVCHANGE",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "kind": "published_editorial"
+    },
+    {
+      "id": "FVMESMER",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "kind": "published_editorial_link_scope_only"
+    },
+    {
+      "id": "FVFOCUS",
+      "url": "https://finalvestige.com/focus/",
+      "kind": "published_resource"
+    },
+    {
+      "id": "FVP",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "kind": "listed_but_page_fetch_failed"
+    },
+    {
+      "id": "I3",
+      "url": "https://inspire3.com/",
+      "kind": "seller_catalog"
+    },
+    {
+      "id": "ZEN",
+      "url": "https://zen12.com/hnp",
+      "kind": "seller_offer"
+    },
+    {
+      "id": "FOCUS",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "kind": "seller_offer"
+    },
+    {
+      "id": "FOCUSFAQ",
+      "url": "https://brainwaveshots.com/faq",
+      "kind": "seller_faq"
+    },
+    {
+      "id": "HYPNO",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "kind": "seller_offer"
+    },
+    {
+      "id": "HYPNOFAQ",
+      "url": "https://hypnosislive.com/faq",
+      "kind": "seller_faq"
+    },
+    {
+      "id": "FTCEND",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "kind": "regulatory_guidance"
+    },
+    {
+      "id": "FTCHEALTH",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "kind": "regulatory_guidance"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "product": "Choice blindness",
+      "claim": "Some participants explained secretly substituted face selection",
+      "source": "J05",
+      "status": "primary_abstract_observation"
+    },
+    {
+      "id": "C02",
+      "product": "Choice blindness",
+      "claim": "Detectability varies by manipulation; no universal rate inferred",
+      "source": "J05",
+      "status": "bounded_editorial_inference"
+    },
+    {
+      "id": "C03",
+      "product": "Choice blindness",
+      "claim": "Market jam/tea study detected no more than one-third of manipulated trials overall",
+      "source": "H10",
+      "status": "primary_abstract_observation"
+    },
+    {
+      "id": "C04",
+      "product": "Choice blindness",
+      "claim": "2012 survey: 69% failed to notice at least one of two reversed answers",
+      "source": "H12",
+      "status": "primary_study_observation"
+    },
+    {
+      "id": "C05",
+      "product": "Choice blindness",
+      "claim": "Experiments do not test audio, hypnosis, Zen12 or merchant purchases",
+      "source": "J05",
+      "status": "scope_exclusion"
+    },
+    {
+      "id": "C06",
+      "product": "Zen12",
+      "claim": "Twelve levels, 48 MP3s, four choices and twelve-minute sessions",
+      "source": "ZEN",
+      "status": "seller_description"
+    },
+    {
+      "id": "C07",
+      "product": "Zen12",
+      "claim": "One hour meditation equivalence to twelve-minute use",
+      "source": "ZEN",
+      "status": "not_independently_substantiated"
+    },
+    {
+      "id": "C08",
+      "product": "Zen12",
+      "claim": "A one-year refund promise is advertised; paid fulfillment not tested",
+      "source": "ZEN",
+      "status": "seller_promise_unverified_fulfillment"
+    },
+    {
+      "id": "C09",
+      "product": "Zen12",
+      "claim": "Optional merchant audio signup may add to separate merchant newsletter",
+      "source": "ZEN",
+      "status": "merchant_consent_not_browser_tested"
+    },
+    {
+      "id": "C10",
+      "product": "Focus Shot",
+      "claim": "15/30-minute files, ambient and sound-only versions; headphones not required",
+      "source": "FOCUS",
+      "status": "seller_description"
+    },
+    {
+      "id": "C11",
+      "product": "Focus Shot",
+      "claim": "Four-hour focus improvement from one listening",
+      "source": "FOCUS",
+      "status": "not_independently_substantiated"
+    },
+    {
+      "id": "C12",
+      "product": "Focus Shot",
+      "claim": "Seller FAQ one refund in six months and order-size download limit",
+      "source": "FOCUSFAQ",
+      "status": "seller_policy_not_fulfillment_tested"
+    },
+    {
+      "id": "C13",
+      "product": "Focus Shot",
+      "claim": "Isochronic seller method and epilepsy/wakefulness precaution",
+      "source": "FOCUSFAQ",
+      "status": "seller_technical_and_precaution_not_tested"
+    },
+    {
+      "id": "C14",
+      "product": "Total Focus",
+      "claim": "33-minute 47MB narrated hypnosis track",
+      "source": "HYPNO",
+      "status": "seller_description"
+    },
+    {
+      "id": "C15",
+      "product": "Total Focus",
+      "claim": "Productivity improvement from exact track",
+      "source": "HYPNO",
+      "status": "not_independently_substantiated"
+    },
+    {
+      "id": "C16",
+      "product": "Total Focus",
+      "claim": "14-day refund window and five-session annual cap",
+      "source": "HYPNOFAQ",
+      "status": "seller_policy_not_fulfillment_tested"
+    },
+    {
+      "id": "C17",
+      "product": "Ethics",
+      "claim": "Earning link material connection near recommendation",
+      "source": "FTCEND",
+      "status": "disclosure_requirement"
+    },
+    {
+      "id": "C18",
+      "product": "Ethics",
+      "claim": "Objective health benefits require adequate scientific support",
+      "source": "FTCHEALTH",
+      "status": "substantiation_requirement"
+    },
+    {
+      "id": "C19",
+      "product": "Audience",
+      "claim": "Existing Focus route and Jetpack/Dispatch must not be duplicated",
+      "source": "FVFOCUS",
+      "status": "funnel_verified_page_not_signup_event"
+    },
+    {
+      "id": "C20",
+      "product": "Revenue",
+      "claim": "An affiliate click is not a commission or settled order",
+      "source": "FTCEND",
+      "status": "internal_measurement_definition"
+    }
+  ],
+  "gates": [
+    {
+      "id": "named_publisher_acceptance",
+      "status": "HARD_HOLD",
+      "verified": false
+    },
+    {
+      "id": "issued_earning_url",
+      "status": "HARD_HOLD",
+      "verified": false
+    },
+    {
+      "id": "website_permission",
+      "status": "HARD_HOLD",
+      "verified": false
+    },
+    {
+      "id": "organic_social_permission",
+      "status": "HARD_HOLD",
+      "verified": false
+    },
+    {
+      "id": "email_permission",
+      "status": "HARD_HOLD",
+      "verified": false
+    },
+    {
+      "id": "approved_creatives_rights",
+      "status": "HARD_HOLD",
+      "verified": false
+    },
+    {
+      "id": "checkout_amount_confirmed",
+      "status": "HARD_HOLD",
+      "verified": false
+    },
+    {
+      "id": "refund_fulfillment_terms_verified",
+      "status": "HARD_HOLD",
+      "verified": false
+    },
+    {
+      "id": "paid_commission_terms",
+      "status": "HARD_HOLD",
+      "verified": false
+    },
+    {
+      "id": "independent_claim_substantiation_or_removal",
+      "status": "HARD_HOLD",
+      "verified": false
+    },
+    {
+      "id": "exact_product_match",
+      "status": "HARD_HOLD",
+      "verified": false
+    },
+    {
+      "id": "adjacent_disclosure_browser_checked",
+      "status": "HARD_HOLD",
+      "verified": false
+    },
+    {
+      "id": "no_duplicated_jetpack_list",
+      "status": "HARD_HOLD",
+      "verified": false
+    },
+    {
+      "id": "creator_asset_id_verified",
+      "status": "HARD_HOLD",
+      "verified": false
+    },
+    {
+      "id": "confirmed_order_or_commission_reporting",
+      "status": "HARD_HOLD",
+      "verified": false
+    },
+    {
+      "id": "founder_release_authorization",
+      "status": "HARD_HOLD",
+      "verified": false
+    }
+  ],
+  "commercial": {
+    "enabled": false,
+    "affiliate_url": null,
+    "named_partner_approval": null,
+    "paid_orders": null,
+    "cleared_commissions": null,
+    "qualified_human_sessions": null,
+    "net_revenue_per_1000": "NOT_COMPUTABLE",
+    "merchant_cart_tested": false,
+    "refund_issued_tested": false,
+    "owned_mind_sku_authenticated": false
+  },
+  "study_scope": {
+    "outcome": "decision/outcome mismatch and explanations",
+    "not_demonstrated": [
+      "commercial audio effectiveness",
+      "meditation equivalence",
+      "hypnosis persuasion",
+      "buyer conversion lift"
+    ]
+  }
+}
