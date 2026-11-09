@@ -1,6 +1,6 @@
 # Apollo Experience 2.0 R226 — ordered-link custody and reader journey
 
-**DRAFT / ISOLATED STAGING / NOT LIVE.** Parent: R225 draft PR #1657 at \`a5d173cb3b7d27668a8842ff7b58f056d15dfd35\`. Engineering charter #150; revenue and attribution coordination #820; business charter #818. Homepage PR #49 and Research Desk PR #158 are untouched.
+**DRAFT / ISOLATED STAGING / NOT LIVE.** Parent: R225 draft PR #1657 at `a5d173cb3b7d27668a8842ff7b58f056d15dfd35`. Engineering charter #150; revenue and attribution coordination #820; business charter #818. Homepage PR #49 and Research Desk PR #158 are untouched.
 
 ## Problem and change
 
@@ -12,18 +12,18 @@ This is an **acceptance gate**, not production runtime protection. R225's separa
 
 ## Reproduce
 
-Requires a byte-identical locally extracted **generated-r225** directory from the R225 staging archive, Python 3, Playwright Chromium, and /usr/bin/chromium. Verify \`generated-r225/manifest.json\` SHA-256 equals:
+Requires a byte-identical locally extracted **generated-r225** directory from the R225 staging archive, Python 3, Playwright Chromium, and /usr/bin/chromium. Verify `generated-r225/manifest.json` SHA-256 equals:
 
-\`4efaf0a57d38af349d44302905fbfdc8b8936ac8bbc04a2d7a61fb805ba93628\`
+`4efaf0a57d38af349d44302905fbfdc8b8936ac8bbc04a2d7a61fb805ba93628`
 
-\`\`\`bash
+```bash
 python experience2/apollo-r226/qa/ordered_custody_gate.py --dist generated-r225 --out qa-r226-A
 python experience2/apollo-r226/qa/ordered_custody_gate.py --dist generated-r225 --out qa-r226-B
-\`\`\`
+```
 
-Local executable Git blob (checked against GitHub): \`c9a2df16ac92fc6fad7f6954c19a070a7a3ee742\`. The ordered-link occurrence baseline SHA-256 is \`ea8d4809f5dacb836a7f74f91a7fe622de69aacb1d28fc52343b669c4ce73519\`.
+Local executable Git blob (checked against GitHub): `c9a2df16ac92fc6fad7f6954c19a070a7a3ee742`. The ordered-link occurrence baseline SHA-256 is `ea8d4809f5dacb836a7f74f91a7fe622de69aacb1d28fc52343b669c4ce73519`.
 
-Two independent local executions passed: 10 Chromium contexts per run (320, 390, 768, 1440, 1920px, JavaScript enabled/disabled, native keyboard/touch disclosure), zero observed overflow, **10/10 matching screenshot hashes** and byte-identical structured QA receipts. Local R226 supplementary expanded fixture testing also passed 14 contexts at 320–1920px and verified five additional semantic mutants; that supplementary code is **not committed** and cannot be represented as exact-HEAD validation. No live HTTP navigation was possible (\`ERR_BLOCKED_BY_ADMINISTRATOR\`).
+Two independent local executions passed: 10 Chromium contexts per run (320, 390, 768, 1440, 1920px, JavaScript enabled/disabled, native keyboard/touch disclosure), zero observed overflow, **10/10 matching screenshot hashes** and byte-identical structured QA receipts. Local R226 supplementary expanded fixture testing also passed 14 contexts at 320–1920px and verified five additional semantic mutants; that supplementary code is **not committed** and cannot be represented as exact-HEAD validation. No live HTTP navigation was possible (`ERR_BLOCKED_BY_ADMINISTRATOR`).
 
 ## Rights, source integrity and commercial objective
 
