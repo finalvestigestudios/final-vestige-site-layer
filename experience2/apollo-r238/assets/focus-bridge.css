@@ -1,0 +1,31 @@
+/* R238 — scoped skip-navigation focus continuity, staging only.
+ * The focus-only skip action is navigation, not a prose citation. Make its
+ * actual rendered hit box >=44x44 CSS pixels while keeping it off-screen
+ * until keyboard focus. No scripting, imagery, product CTA, or WP changes. */
+.fv-apollo-atlas .skip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-block-size: 44px;
+  min-inline-size: 44px;
+  padding: .65rem .8rem;
+  max-inline-size: calc(100vw - 32px);
+  overflow-wrap: anywhere;
+}
+.fv-apollo-atlas .skip:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 3px;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+@media (forced-colors: active) {
+  .fv-apollo-atlas .skip:focus-visible {
+    background: Highlight;
+    color: HighlightText;
+    outline-color: Highlight;
+    border: 2px solid HighlightText;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .fv-apollo-atlas .skip { transition: none !important; }
+}
