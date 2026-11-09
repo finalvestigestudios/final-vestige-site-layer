@@ -13,6 +13,7 @@ from urllib.parse import urlparse
 
 from playwright.async_api import async_playwright
 from verify_optin_viewport_geometry import inspect_optin_viewport
+from verify_optin_submission_pair import inspect_signup_pair
 
 ROUTES = ("/", "/focus/", "/dispatch/")
 WIDTHS = (320, 360, 390, 768, 1440, 1920)
@@ -52,6 +53,7 @@ async def examine(page, path, width, js, motion, out):
                 pass
         entry["email_fields_visible"] = visible
         entry["viewport_geometry"] = await inspect_optin_viewport(page)
+        entry["signup_pair"] = await inspect_signup_pair(page)
         entry["browser_form_visible"] = visible > 0
         entry["horizontal_overflow"] = await page.evaluate(
             "document.documentElement.scrollWidth > window.innerWidth + 2")
@@ -73,6 +75,8 @@ async def examine(page, path, width, js, motion, out):
             raise RuntimeError("NO_VISIBLE_EMAIL_INPUT_IN_GUEST_BROWSER")
         if js and path == "/focus/" and width <= 390 and entry["viewport_geometry"]["labeled_unobstructed_first_viewport"] == 0:
             raise RuntimeError("FOCUS_OPTIN_NOT_ACCESSIBLE_IN_FIRST_VIEWPORT")
+        if js and path == "/focus/" and width <= 390 and entry["signup_pair"]["main_document_pairs_ready"] == 0:
+            raise RuntimeError("FOCUS_OPTIN_NO_USABLE_SUBMIT_BUTTON_IN_SAME_FIRST_VIEWPORT")
         entry["status"] = "OBSERVED_IN_BROWSER"
     except Exception as e:
         entry["reason"] = str(e)[:250]
