@@ -27,7 +27,7 @@ function validate(a,c){
   if(r.origin_host==='cdn.loc.gov'){
    assert.equal(r.authority,'Library of Congress Prints & Photographs');
    assert.ok(r.canonical_catalog_candidate.endsWith(r.archival_locator+'/'));
-   assert.ok(/^(npcc\\.|ggbain\\.|pan\\.)/.test(r.archival_locator));
+   assert.ok(/^(npcc\.|ggbain\.|pan\.)/.test(r.archival_locator));
    assert.ok(r.stored_url.includes(r.archival_locator.split('.')[1]));
   }else if(r.origin_host==='images-assets.nasa.gov'){
    assert.equal(r.authority,'NASA');assert.ok(r.stored_url.includes('/'+r.archival_locator+'/'));
