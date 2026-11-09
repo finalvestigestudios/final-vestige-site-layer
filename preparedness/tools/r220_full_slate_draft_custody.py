@@ -48,6 +48,9 @@ R233_HUB_INPUT_BLOB = '668c74c1672d86e4defad5e14a95ab1924ca6aa2'
 # R234 independently checks draft card routes/badges and auxiliary outbound links.
 R234_EXPOSURE_PATH = 'tools/r234_auxiliary_draft_exposure_hold.py'
 R234_EXPOSURE_BLOB = '316e5463cd41a067b6503fe7de115e1a1110d345'
+# R235 independently reconciles 244 source rows and all 32 crosswalk groups.
+R235_DOCKET_PATH = 'tools/r235_crosswalk_receipt_hold.py'
+R235_DOCKET_BLOB = 'cb5a45a6373d531a639fdce43ae29fc43aded171'
 # These are independently observed R219 integration Git blobs, not certified text.
 # Missing entries MUST match the older R200 original exactly.
 INTEGRATED_DIFFS = {
@@ -384,6 +387,21 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
         # Fail before importing or executing the mutable WordPress producer.
         bundle = load_r222_bundle(root)
         result['producer_sources'] = bundle.check_bundle(root, safe_read)
+        # Docket is mechanical evidence ONLY: neither source equivalence nor
+        # independent QD/medical safety approval can be inferred from it.
+        docket_guard = load_frozen_gate(root, R235_DOCKET_PATH, R235_DOCKET_BLOB,
+                                        'fv_preparedness_r235_source_docket_gate',
+                                        ('audit_crosswalk',))
+        docket = docket_guard.audit_crosswalk(root, safe_read)
+        if (docket.get('state') != HOLD or docket.get('release_authorized') is not False
+                or docket.get('independent_qd_pass') is not False
+                or docket.get('source_or_medical_safety_approved') is not False
+                or docket.get('merchant_approved') is not False
+                or docket.get('raw_source_rows') != 244
+                or docket.get('shared_url_groups') != 32
+                or docket.get('pending_human_groups') != 32):
+            raise ValueError('R235 crosswalk source-scope review is not approved')
+        result['source_scope_docket'] = docket
         status, exceptions = verify_originals(root, roster)
         result['articles'] = status
         result['source_exceptions'] = exceptions
@@ -468,6 +486,8 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
             if git_blob(safe_read(root, R234_EXPOSURE_PATH)) != R234_EXPOSURE_BLOB:
                 raise ValueError('auxiliary exposure guard mutated after render')
             result['postrender_custody_recheck'] = 'DRAFT_HARD_HOLD'
+        if git_blob(safe_read(root, R235_DOCKET_PATH)) != R235_DOCKET_BLOB:
+            raise ValueError('R235 source-scope docket guard mutated during audit')
         result['reconciliation'] = {'frozen_articles': 35,
                                     'integrated_changes_held_for_review': sum(
                                         x['changed_since_original'] for x in status),
