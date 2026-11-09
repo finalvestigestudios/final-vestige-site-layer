@@ -1,0 +1,100 @@
+{
+  "schema": "fv.dispatch.r242.audience_truth.v1",
+  "status": "REVIEW_ONLY_HOLD_UNSENT",
+  "observed_utc": "2026-11-09T22:31:33Z",
+  "source": {
+    "master_pr": 175,
+    "master_sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+    "source_integrity_pr": 1800,
+    "master_issues": 6,
+    "editorial": 4,
+    "commercial_pending": 2,
+    "alternatives_adopted": false
+  },
+  "newsletter": {
+    "enabled": true,
+    "auto_email_new_posts": false,
+    "email_content_format": "full",
+    "welcome_configured": true,
+    "final_welcome_received": null,
+    "last_received_mime_checked": null
+  },
+  "jetpack_counts": {
+    "total": 3,
+    "confirmed": 3,
+    "unconfirmed_requests": 2,
+    "suppressed": 0,
+    "eligible_email_recipients": null,
+    "nonadditive": true,
+    "recent_opted_out_posts": 5,
+    "observed_utc": "2026-11-09T22:31:32Z"
+  },
+  "follower_breakdown": {
+    "total": 3,
+    "wpcom": 3,
+    "email": 0,
+    "comment": 0,
+    "partial": false,
+    "observed_utc": "2026-11-09T22:31:33Z",
+    "note": "Email count category is not a verified eligible-inbox count; Reader followers may receive email depending on preference."
+  },
+  "confirmation_contract": {
+    "event": "confirmed_signup",
+    "provider": "jetpack",
+    "required_provider_status": "Subscribed",
+    "needs_true_provider_transition": true,
+    "site_scope": "finalvestige.com",
+    "dedupe": "opaque site-scoped token; once per verified transition",
+    "pii_in_analytics": false,
+    "implementation": "NOT_INSTALLED",
+    "status": "NOT_VERIFIED"
+  },
+  "attribution": {
+    "grok": {
+      "medium": "organic_social",
+      "campaign": "<topic_cluster>_pilot_2026_11",
+      "content": "<VERIFIED_GROK_ASSET_ID>",
+      "status": "NOT_INSTALLED"
+    },
+    "dispatch": {
+      "source": "dispatch",
+      "medium": "email",
+      "campaign": "dispatch_pilot_2026_11",
+      "content": "issue_XX",
+      "status": "NOT_INSTALLED"
+    },
+    "no_duplicate_scripts": true
+  },
+  "commerce": {
+    "offer": "Zen12 Premium",
+    "source": "https://zen12.com/hnp",
+    "named_partner_approved": null,
+    "email_promotion_rights": null,
+    "issued_link": null,
+    "verified_guide_live": null,
+    "final_checkout_terms": null,
+    "settled_order_ledger": null,
+    "qualified_sessions_7d": null,
+    "qualified_sessions_30d": null,
+    "net_revenue_per_1000_status": "NOT_COMPUTABLE"
+  },
+  "release": {
+    "founder_final_approval": false,
+    "visible_fv_postal_address_verified": false,
+    "rendered_unsubscribe_verified": false,
+    "actual_received_mime_verified": false,
+    "source_revision_adopted": false,
+    "merchant_release": false,
+    "all_issues": "HOLD_UNSENT"
+  },
+  "sources": [
+    "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/174",
+    "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+    "https://wordpress.com/support/subscribers/",
+    "https://jetpack.com/support/newsletter/",
+    "https://zen12.com/hnp",
+    "https://hypnosislive.com/mental-skills/total-focus",
+    "https://hypnosislive.com/faq",
+    "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business"
+  ]
+}
