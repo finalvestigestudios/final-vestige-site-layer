@@ -1,0 +1,44 @@
+/* R234: scoped, progressive-enhancement-free evidence navigation target repairs.
+ * Whole-block links below are navigation controls, not in-text citation links.
+ * Keep the long-form source story intact; inline prose links retain normal flow.
+ */
+.fv-apollo-atlas .mast nav > a,
+.fv-apollo-atlas #fv-apollo-chronology .rail > li > a,
+.fv-apollo-atlas footer.end p.small > a {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: .65rem .65rem;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+/* Links placed in an expanded evidence card are independent source actions.
+ * Avoid changing arbitrary inline references in paragraphs or quoting records. */
+.fv-apollo-atlas #fv-apollo-evidence .plate > details > a,
+.fv-apollo-atlas #fv-apollo-gallery details > a {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding-block: .65rem;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+.fv-apollo-atlas .mast nav > a:focus-visible,
+.fv-apollo-atlas #fv-apollo-chronology .rail > li > a:focus-visible,
+.fv-apollo-atlas footer.end p.small > a:focus-visible,
+.fv-apollo-atlas #fv-apollo-evidence .plate > details > a:focus-visible,
+.fv-apollo-atlas #fv-apollo-gallery details > a:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 3px;
+}
+@media (forced-colors: active) {
+  .fv-apollo-atlas .mast nav > a:focus-visible,
+  .fv-apollo-atlas #fv-apollo-chronology .rail > li > a:focus-visible,
+  .fv-apollo-atlas footer.end p.small > a:focus-visible,
+  .fv-apollo-atlas #fv-apollo-evidence .plate > details > a:focus-visible,
+  .fv-apollo-atlas #fv-apollo-gallery details > a:focus-visible {
+    outline-color: Highlight;
+  }
+}
