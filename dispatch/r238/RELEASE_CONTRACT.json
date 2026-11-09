@@ -1,0 +1,37 @@
+{
+  "campaign": "fv-dispatch-mind-launch-2026-10-30",
+  "sprint": "R238",
+  "type": "OPTIONAL_EDITORIAL_ALTERNATIVE_UNSENT",
+  "original_master_pr": 175,
+  "original_master_sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "parent_issue": 174,
+  "mix": {
+    "editorial": 4,
+    "commercial_review_pending": 2
+  },
+  "edition": 2,
+  "subject": "The test that separated a sensation from its cause",
+  "preheader": "In 1784, investigators asked what happens when the subject doesn't know what's being done.",
+  "cta": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+  "source_urls": [
+    "https://www.gutenberg.org/files/78413/78413-h/78413-h.htm",
+    "https://wellcomecollection.org/works/enhgscmf",
+    "https://doi.org/10.1002/jhbs.21974"
+  ],
+  "primary_offer": "Zen12 Premium",
+  "offer_guide_published": false,
+  "final_merchant_email_permission_verified": false,
+  "final_affiliate_earning_url_verified": false,
+  "final_checkout_and_refund_verified": false,
+  "real_received_jetpack_preview_verified": false,
+  "physical_postal_address_verified": false,
+  "functional_unsubscribe_verified": false,
+  "subscriber_email_eligible_count_verified": false,
+  "confirmed_welcome_delivery_verified": false,
+  "founder_final_campaign_approval": false,
+  "send_enabled": false,
+  "affiliate_url": null,
+  "qualified_human_sessions": null,
+  "verified_paid_orders": null,
+  "net_revenue_per_1000_qualified_human_sessions": null
+}
