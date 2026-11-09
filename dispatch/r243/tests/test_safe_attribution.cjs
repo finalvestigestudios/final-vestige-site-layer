@@ -1,0 +1,34 @@
+"use strict";
+// Execute with: node --test dispatch/r243/tests/test_safe_attribution.cjs
+// No live data. Every test uses synthetic fixtures only.
+const {test}=require("node:test");
+const assert=require("node:assert/strict");
+const {scoreLedger}=require("../safe_attribution.cjs");
+const base=require("../fixtures/synthetic_ledger.json");
+const copy=()=>JSON.parse(JSON.stringify(base));
+const window=(x,d=7)=>scoreLedger(x).windows[d+"d"];
+test("synthetic 2 sessions only (never real)",()=>assert.equal(window(copy()).qualified_sessions,2));
+test("verified signup transition counted once",()=>assert.equal(window(copy()).confirmed_leads,1));
+test("synthetic independently reported paid order",()=>assert.equal(window(copy()).independently_reported_paid_orders,1));
+test("fee deducted",()=>assert.equal(window(copy()).reported_net_commission_minor,800));
+test("net per 1000 is minor currency units",()=>assert.equal(window(copy()).reported_net_per_1000_sessions_minor,400000));
+test("release always HOLD",()=>assert.equal(scoreLedger(copy()).release,"HOLD_UNSENT"));
+test("missing session reconciliation yields UNKNOWN",()=>{const x=copy();x.reconciliations.qualified_sessions_verified=false;assert.equal(window(x).qualified_sessions,null)});
+test("missing paid reporting yields UNKNOWN not zero",()=>{const x=copy();x.reconciliations.merchant_paid_reporting_reconciled=false;assert.equal(window(x).independently_reported_paid_orders,null)});
+test("missing linkage yields unknown attributed revenue",()=>{const x=copy();x.reconciliations.campaign_linkage_reconciled=false;assert.equal(window(x).reported_net_per_1000_sessions_minor,null)});
+test("unconfirmed request never a lead",()=>{const x=copy();x.confirmations[0].status="Not confirmed";assert.equal(window(x).confirmed_leads,0)});
+test("bot session excluded",()=>{const x=copy();x.sessions[0].human_review="bot";assert.equal(window(x).qualified_sessions,1)});
+test("click only is not paid",()=>{const x=copy();x.orders=[];assert.equal(window(x).independently_reported_paid_orders,0)});
+test("unverified order never sale",()=>{const x=copy();x.orders[0].verification="outbound_click";assert.equal(window(x).independently_reported_paid_orders,0)});
+test("pending order not sale",()=>{const x=copy();x.orders[0].status="pending";assert.equal(window(x).independently_reported_paid_orders,0)});
+test("purchase unlinked to cohort excluded",()=>{const x=copy();x.orders[0].attributed_session_id="outside";assert.equal(window(x).independently_reported_paid_orders,0)});
+test("merchant attribution proof required",()=>{const x=copy();x.orders[0].attribution_proof=null;assert.equal(window(x).independently_reported_paid_orders,0)});
+test("identical duplicate transaction counts once",()=>{const x=copy();x.orders.push(JSON.parse(JSON.stringify(x.orders[0])));assert.equal(window(x).independently_reported_paid_orders,1)});
+test("conflicting duplicate transaction rejected",()=>{const x=copy();const o=JSON.parse(JSON.stringify(x.orders[0]));o.commission_minor++;x.orders.push(o);assert.throws(()=>window(x),/conflicting_duplicate_paid_order/)});
+test("refund zeroes net not clicks",()=>{const x=copy();x.orders[0].refunds_minor=800;assert.equal(window(x).reported_net_commission_minor,0)});
+test("7 vs 30 day cohorts are distinct",()=>{const x=copy();x.sessions[0].at_utc="2026-10-25T12:00:00Z";assert.equal(window(x,7).qualified_sessions,1);assert.equal(window(x,30).qualified_sessions,2)});
+test("raw address rejected",()=>{const x=copy();x.street_address="private";assert.throws(()=>scoreLedger(x),/pii_key_forbidden/)});
+test("raw email rejected",()=>{const x=copy();x.email="test@example.com";assert.throws(()=>scoreLedger(x),/pii_key_forbidden/)});
+test("schema must be exact",()=>{const x=copy();x.schema="wrong";assert.throws(()=>scoreLedger(x),/schema_mismatch/)});
+test("tiny sample warning",()=>assert.equal(window(copy()).low_sample_warning,true));
+test("unknown denominator means uncomputable KPI",()=>{const x=copy();x.reconciliations.qualified_sessions_verified=false;assert.equal(window(x).reported_net_per_1000_sessions_minor,null)});

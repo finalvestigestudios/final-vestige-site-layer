@@ -1,0 +1,65 @@
+{
+  "schema": "fv.dispatch.revenue_evidence.v1",
+  "mode": "SYNTHETIC_ONLY",
+  "as_of_utc": "2026-11-09T23:00:00Z",
+  "reconciliations": {
+    "qualified_sessions_verified": true,
+    "email_provider_status_reconciled": true,
+    "merchant_paid_reporting_reconciled": true,
+    "campaign_linkage_reconciled": true
+  },
+  "sessions": [
+    {
+      "session_id": "sess_fake_001",
+      "provider_ref": "sessionproof001",
+      "at_utc": "2026-11-08T20:00:00Z",
+      "human_review": "verified_qualified_human",
+      "asset_id": "grok_fake001",
+      "utm_medium": "organic_social",
+      "utm_content": "grok_fake001"
+    },
+    {
+      "session_id": "sess_fake_002",
+      "provider_ref": "sessionproof002",
+      "at_utc": "2026-11-08T21:00:00Z",
+      "human_review": "verified_qualified_human",
+      "asset_id": "grok_fake002",
+      "utm_medium": "organic_social",
+      "utm_content": "grok_fake002"
+    }
+  ],
+  "confirmations": [
+    {
+      "opaque_subscriber_ref": "fake_subscriber001",
+      "provider_transition_ref": "transition_fake001",
+      "at_utc": "2026-11-08T21:30:00Z",
+      "provider": "jetpack",
+      "status": "Subscribed",
+      "transition": "confirmed",
+      "verification": "provider_verified",
+      "attributed_session_id": "sess_fake_001"
+    }
+  ],
+  "actions": [
+    {
+      "type": "affiliate_outbound",
+      "at_utc": "2026-11-08T21:01:00Z",
+      "attributed_session_id": "sess_fake_002"
+    }
+  ],
+  "orders": [
+    {
+      "transaction_ref": "fake_settlement001",
+      "provider": "affiliate_network",
+      "status": "settled",
+      "verification": "independently_reported_paid",
+      "proof_reference": "fake_partner_statement001",
+      "attribution_proof": "fake_clickid_join001",
+      "at_utc": "2026-11-09T15:00:00Z",
+      "attributed_session_id": "sess_fake_001",
+      "commission_minor": 1000,
+      "fees_minor": 200,
+      "refunds_minor": 0
+    }
+  ]
+}
