@@ -14,7 +14,7 @@ if (!defined('FV_EX2_R231_VERSION')) { define('FV_EX2_R231_VERSION', '0.0.5-r231
 function fv_ex2_r231_assets(): void {
     // Register via enqueue; shortcode can be called from nested/reusable/dynamic blocks
     // after wp_enqueue_scripts has finished. No assumptions about post_content.
-    wp_enqueue_style('fv-ex2-r231-ledger', plugins_url('assets/source-ledger.css', __FILE__), array(), FV_EX2_R231_VERSION);
+    wp_enqueue_style('fv-ex2-r231-ledger', plugins_url('assets/source-ledger-r231.css', __FILE__), array(), FV_EX2_R231_VERSION);
     wp_enqueue_script('fv-ex2-r231-ledger', plugins_url('assets/source-ledger-r231.js', __FILE__), array(), FV_EX2_R231_VERSION, true);
 }
 
@@ -62,7 +62,7 @@ function fv_ex2_r231_shortcode($atts = array()): string {
     // pattern), styles enqueued at render time miss the normal head printer.
     // A single external stylesheet link supplies the same approved static CSS.
     if (did_action('wp_head') && !wp_style_is('fv-ex2-r231-ledger', 'done') && !$late_css_emitted) {
-        $resources .= '<link rel="stylesheet" href="' . esc_url(plugins_url('assets/source-ledger.css', __FILE__)) . '" />';
+        $resources .= '<link rel="stylesheet" href="' . esc_url(plugins_url('assets/source-ledger-r231.css', __FILE__)) . '" />';
         $late_css_emitted = true;
     }
     // Normally JS is printed by WP in the footer. Only recover if a shortcode
