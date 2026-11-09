@@ -1,0 +1,511 @@
+{
+  "edition": "R232",
+  "created_at": "2026-11-08",
+  "scope": "mind/r232 only; source-controlled; not WP-published",
+  "affiliate_activation": "HARD_HOLD",
+  "seller_claims_are_not_own_endorsements": true,
+  "shop_authorization": "UNVERIFIED",
+  "pricing_note": "Public seller display only; no final checkout total or verified purchase; do not quote as current price on landing.",
+  "sources": [
+    {
+      "id": "ISSUE171",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "type": "governance",
+      "note": "GitHub Issue #171; ownership and publication hold",
+      "observed_date": null
+    },
+    {
+      "id": "ISSUE820",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "type": "governance",
+      "note": "Business conversion tracking, privacy and paid-order proof",
+      "observed_date": null
+    },
+    {
+      "id": "ZEN12",
+      "url": "https://zen12.com/hnp",
+      "type": "seller",
+      "note": "Exact Zen12 Premium public offer, observed November 8 2026; no checkout authentication",
+      "observed_date": "2026-11-08"
+    },
+    {
+      "id": "INSPIRE3",
+      "url": "https://inspire3.com/",
+      "type": "seller",
+      "note": "Official product catalog",
+      "observed_date": "2026-11-08"
+    },
+    {
+      "id": "AFFPORTAL",
+      "url": "https://affiliates.inspire3.com/",
+      "type": "seller",
+      "note": "Public application/login portal; does NOT prove Final Vestige publisher acceptance",
+      "observed_date": "2026-11-08"
+    },
+    {
+      "id": "FOCUSSHOT",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "type": "seller",
+      "note": "Focus Shot 15 and 30 minute recordings; price only as publicly displayed",
+      "observed_date": "2026-11-08"
+    },
+    {
+      "id": "TOTALFOCUS",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "type": "seller",
+      "note": "Total Focus seller page",
+      "observed_date": "2026-11-08"
+    },
+    {
+      "id": "HLFAQ",
+      "url": "https://hypnosislive.com/faq",
+      "type": "seller",
+      "note": "Hypnosis Live published refund FAQ",
+      "observed_date": "2026-11-08"
+    },
+    {
+      "id": "FTCED",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "type": "regulator",
+      "note": "FTC material relationship disclosure",
+      "observed_date": null
+    },
+    {
+      "id": "FTC_HEALTH",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "type": "regulator",
+      "note": "FTC appropriate objective health claim substantiation",
+      "observed_date": null
+    },
+    {
+      "id": "JAMA25",
+      "url": "https://doi.org/10.1001/jamanetworkopen.2024.54435",
+      "type": "peer_reviewed",
+      "note": "Different digital meditation RCT, not Zen12",
+      "observed_date": null
+    },
+    {
+      "id": "META24",
+      "url": "https://doi.org/10.1080/17437199.2023.2248222",
+      "type": "peer_reviewed",
+      "note": "111 mindfulness intervention RCT meta-analysis; not product specific",
+      "observed_date": null
+    },
+    {
+      "id": "BEAT23",
+      "url": "https://doi.org/10.1371/journal.pone.0286023",
+      "type": "peer_reviewed",
+      "note": "14 EEG studies: 5 supporting, 8 against, 1 mixed",
+      "observed_date": null
+    },
+    {
+      "id": "DIGITAL24",
+      "url": "https://doi.org/10.1111/nyas.15095",
+      "type": "peer_reviewed",
+      "note": "Digital mindfulness review; not Zen12",
+      "observed_date": null
+    },
+    {
+      "id": "NCCIH",
+      "url": "https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety/",
+      "type": "public_health",
+      "note": "Benefits and safety evidence with limitations",
+      "observed_date": null
+    },
+    {
+      "id": "FVFOCUS",
+      "url": "https://finalvestige.com/focus/",
+      "type": "first_party_live",
+      "note": "Existing free Fieldbook and Dispatch route; success message not provider-confirmed lead",
+      "observed_date": "2026-11-08"
+    },
+    {
+      "id": "FVEXPLORE",
+      "url": "https://finalvestige.com/explore/",
+      "type": "first_party_live",
+      "note": "Existing Explore to Puységur case material",
+      "observed_date": "2026-11-08"
+    },
+    {
+      "id": "FVCHANGE",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "type": "first_party_live",
+      "note": "Actual published flicker and door-swap article, NOT gorilla",
+      "observed_date": "2026-11-08"
+    },
+    {
+      "id": "EQUIVALENCE",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3181779/",
+      "type": "methods",
+      "note": "Equivalence and noninferiority statistical design primer",
+      "observed_date": null
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "Zen12 Premium page describes 12 levels, 48 MP3s and four listening styles",
+      "status": "verified_seller_description",
+      "evidence": [
+        "ZEN12"
+      ]
+    },
+    {
+      "id": "C02",
+      "claim": "Zen12 public Premium page shows $87.99 promotional figure on Nov 8, 2026",
+      "status": "observed_seller_display_not_checkout",
+      "evidence": [
+        "ZEN12"
+      ]
+    },
+    {
+      "id": "C03",
+      "claim": "Zen12 public Premium page advertises a 1-year money-back guarantee",
+      "status": "seller_policy_statement_not_fulfillment",
+      "evidence": [
+        "ZEN12"
+      ]
+    },
+    {
+      "id": "C04",
+      "claim": "Twelve minutes of Zen12 produces an hour of meditation benefits",
+      "status": "unsupported_product_specific_equivalence_do_not_assert",
+      "evidence": [
+        "ZEN12",
+        "JAMA25",
+        "META24",
+        "BEAT23"
+      ]
+    },
+    {
+      "id": "C05",
+      "claim": "Zen12 brainwave audio directly creates clinical cognitive or health improvements",
+      "status": "unsupported_product_specific_claim_do_not_assert",
+      "evidence": [
+        "ZEN12",
+        "BEAT23",
+        "FTC_HEALTH"
+      ]
+    },
+    {
+      "id": "C06",
+      "claim": "Zen12 music/guided/nature/white noise options are public seller-described choices",
+      "status": "verified_seller_description",
+      "evidence": [
+        "ZEN12"
+      ]
+    },
+    {
+      "id": "C07",
+      "claim": "Product-specific independent randomized equivalence trial for Zen12",
+      "status": "not_found_in_review_not_proof_of_absence",
+      "evidence": [
+        "ZEN12",
+        "BEAT23",
+        "META24"
+      ]
+    },
+    {
+      "id": "C08",
+      "claim": "Digital meditation workplace RCT supports some stress outcomes from a different product",
+      "status": "independent_non_product_evidence",
+      "evidence": [
+        "JAMA25"
+      ]
+    },
+    {
+      "id": "C09",
+      "claim": "JAMA adherence analysis was exploratory and not a randomized 12 versus 60 min trial",
+      "status": "supported_methodological_limitation",
+      "evidence": [
+        "JAMA25"
+      ]
+    },
+    {
+      "id": "C10",
+      "claim": "2024 meta-analysis covers 111 RCTs and 9538 participants",
+      "status": "independent_non_product_evidence",
+      "evidence": [
+        "META24"
+      ]
+    },
+    {
+      "id": "C11",
+      "claim": "2023 EEG review of 14 studies had 5 supportive 8 contrary 1 mixed",
+      "status": "independent_non_product_evidence",
+      "evidence": [
+        "BEAT23"
+      ]
+    },
+    {
+      "id": "C12",
+      "claim": "Meditation is risk-free for everyone",
+      "status": "not_supported_do_not_assert",
+      "evidence": [
+        "NCCIH"
+      ]
+    },
+    {
+      "id": "C13",
+      "claim": "Focus Shot offers 15- and 30-minute versions",
+      "status": "verified_seller_description",
+      "evidence": [
+        "FOCUSSHOT"
+      ]
+    },
+    {
+      "id": "C14",
+      "claim": "Focus Shot public page displays $17.99 November 8",
+      "status": "observed_seller_display_not_checkout",
+      "evidence": [
+        "FOCUSSHOT"
+      ]
+    },
+    {
+      "id": "C15",
+      "claim": "Focus Shot creates 4 hours to whole-day concentration benefits",
+      "status": "unsupported_product_specific_claim_do_not_assert",
+      "evidence": [
+        "FOCUSSHOT",
+        "FTC_HEALTH"
+      ]
+    },
+    {
+      "id": "C16",
+      "claim": "Total Focus page lists a 33-minute 47 MB recording",
+      "status": "verified_seller_description",
+      "evidence": [
+        "TOTALFOCUS"
+      ]
+    },
+    {
+      "id": "C17",
+      "claim": "Total Focus standalone page displays $24.44 November 8",
+      "status": "observed_seller_display_not_checkout",
+      "evidence": [
+        "TOTALFOCUS"
+      ]
+    },
+    {
+      "id": "C18",
+      "claim": "Hypnosis Live FAQ states 14-day refund, maximum five sessions per year",
+      "status": "seller_policy_statement_not_fulfillment",
+      "evidence": [
+        "HLFAQ"
+      ]
+    },
+    {
+      "id": "C19",
+      "claim": "Total Focus provides 100 percent concentration or guaranteed professional prospects",
+      "status": "unsupported_product_specific_claim_do_not_assert",
+      "evidence": [
+        "TOTALFOCUS",
+        "FTC_HEALTH"
+      ]
+    },
+    {
+      "id": "C20",
+      "claim": "Inspire3 public affiliate signup means Final Vestige is accepted and may promote",
+      "status": "false_public_registration_not_acceptance",
+      "evidence": [
+        "AFFPORTAL"
+      ]
+    },
+    {
+      "id": "C21",
+      "claim": "Final Vestige has a verified publisher-specific affiliate earning URL",
+      "status": "not_verified_hold",
+      "evidence": [
+        "AFFPORTAL",
+        "ISSUE171"
+      ]
+    },
+    {
+      "id": "C22",
+      "claim": "The existing /focus/ has a signup UI; a success URL state proves confirmed subscriber",
+      "status": "false_requires_jetpack_evidence",
+      "evidence": [
+        "FVFOCUS",
+        "ISSUE820"
+      ]
+    },
+    {
+      "id": "C23",
+      "claim": "An affiliate outbound click proves a paid or cleared commission",
+      "status": "false_requires_merchant_transaction",
+      "evidence": [
+        "ISSUE820"
+      ]
+    },
+    {
+      "id": "C24",
+      "claim": "Net revenue per 1000 qualified humans currently computable from verified orders and sessions",
+      "status": "not_computable_missing_denominator_numerator",
+      "evidence": [
+        "ISSUE820"
+      ]
+    },
+    {
+      "id": "C25",
+      "claim": "FTC affiliate endorsements require clear conspicuous material-connection disclosure",
+      "status": "supported_regulatory_guidance",
+      "evidence": [
+        "FTCED"
+      ]
+    },
+    {
+      "id": "C26",
+      "claim": "Objective health product claims require adequate evidence before dissemination",
+      "status": "supported_regulatory_guidance",
+      "evidence": [
+        "FTC_HEALTH"
+      ]
+    },
+    {
+      "id": "C27",
+      "claim": "The published FV Change Blindness story is the invisible gorilla experiment",
+      "status": "false_editorial_route_mismatch",
+      "evidence": [
+        "FVCHANGE"
+      ]
+    },
+    {
+      "id": "C28",
+      "claim": "Final Vestige's 52-page Focus Fieldbook is an established free live route",
+      "status": "first_party_live_offering",
+      "evidence": [
+        "FVFOCUS"
+      ]
+    },
+    {
+      "id": "C29",
+      "claim": "No affiliate purchase links are active in this R232 source pilot",
+      "status": "source_level_design_not_live",
+      "evidence": [
+        "ISSUE171"
+      ]
+    },
+    {
+      "id": "C30",
+      "claim": "The optional 42-second film is rendered and playable",
+      "status": "false_storyboard_only",
+      "evidence": [
+        "ISSUE171"
+      ]
+    }
+  ],
+  "gates": [
+    {
+      "id": "G01",
+      "name": "named_publisher_account_approved",
+      "status": "HARD_HOLD",
+      "proof": "not authenticated for this release; requires direct founder/merchant/engineering review"
+    },
+    {
+      "id": "G02",
+      "name": "allowed_website_promotion",
+      "status": "HARD_HOLD",
+      "proof": "not authenticated for this release; requires direct founder/merchant/engineering review"
+    },
+    {
+      "id": "G03",
+      "name": "allowed_social_promotion",
+      "status": "HARD_HOLD",
+      "proof": "not authenticated for this release; requires direct founder/merchant/engineering review"
+    },
+    {
+      "id": "G04",
+      "name": "allowed_email_promotion_if_used",
+      "status": "HARD_HOLD",
+      "proof": "not authenticated for this release; requires direct founder/merchant/engineering review"
+    },
+    {
+      "id": "G05",
+      "name": "issued_zen12_earning_url",
+      "status": "HARD_HOLD",
+      "proof": "not authenticated for this release; requires direct founder/merchant/engineering review"
+    },
+    {
+      "id": "G06",
+      "name": "approved_creatives_terms",
+      "status": "HARD_HOLD",
+      "proof": "not authenticated for this release; requires direct founder/merchant/engineering review"
+    },
+    {
+      "id": "G07",
+      "name": "affiliate_cookie_and_tracking_terms",
+      "status": "HARD_HOLD",
+      "proof": "not authenticated for this release; requires direct founder/merchant/engineering review"
+    },
+    {
+      "id": "G08",
+      "name": "commission_and_clawback_terms",
+      "status": "HARD_HOLD",
+      "proof": "not authenticated for this release; requires direct founder/merchant/engineering review"
+    },
+    {
+      "id": "G09",
+      "name": "payout_and_settlement_terms",
+      "status": "HARD_HOLD",
+      "proof": "not authenticated for this release; requires direct founder/merchant/engineering review"
+    },
+    {
+      "id": "G10",
+      "name": "price_and_checkout_currency_verified",
+      "status": "HARD_HOLD",
+      "proof": "not authenticated for this release; requires direct founder/merchant/engineering review"
+    },
+    {
+      "id": "G11",
+      "name": "refund_terms_exact_checkout",
+      "status": "HARD_HOLD",
+      "proof": "not authenticated for this release; requires direct founder/merchant/engineering review"
+    },
+    {
+      "id": "G12",
+      "name": "product_specific_claims_reviewed",
+      "status": "HARD_HOLD",
+      "proof": "not authenticated for this release; requires direct founder/merchant/engineering review"
+    },
+    {
+      "id": "G13",
+      "name": "affiliate_disclosure_accessibility",
+      "status": "HARD_HOLD",
+      "proof": "not authenticated for this release; requires direct founder/merchant/engineering review"
+    },
+    {
+      "id": "G14",
+      "name": "merchant_browser_mobile_flow",
+      "status": "HARD_HOLD",
+      "proof": "not authenticated for this release; requires direct founder/merchant/engineering review"
+    },
+    {
+      "id": "G15",
+      "name": "owner_editorial_release_approval",
+      "status": "HARD_HOLD",
+      "proof": "not authenticated for this release; requires direct founder/merchant/engineering review"
+    },
+    {
+      "id": "G16",
+      "name": "confirmed_order_reconciliation_and_analytics_consent",
+      "status": "HARD_HOLD",
+      "proof": "not authenticated for this release; requires direct founder/merchant/engineering review"
+    }
+  ],
+  "first_party_measurement": {
+    "campaign_landing": "existing permitted UTM/analytics; aggregate qualified humans only; no PII fingerprint",
+    "article_to_resource_click": "observed navigation is not a subscriber",
+    "affiliate_click": "do not create while approval missing; later distinct from merchant sale",
+    "confirmed_lead": "Jetpack authoritative confirmation only, not querystring",
+    "paid_order": "merchant confirmation with independent order reference and refund/fee reconciliation",
+    "net_revenue_per_1000": "1000*(verified_settled_revenue-refunds-fees)/qualified_human_sessions; undefined when either component unavailable; 7- and 30-day cohorts"
+  },
+  "permissions": {
+    "production_writes": false,
+    "commercial_link_activation": false,
+    "new_email_forms": false,
+    "new_tracking_scripts": false,
+    "publishing": false,
+    "spending": false
+  }
+}
