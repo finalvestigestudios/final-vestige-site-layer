@@ -155,7 +155,11 @@ class RestoreIntegrityR311(unittest.TestCase):
             h.write(b"abc");h.seek(0)
             with self.assertRaises(OSError):_read_exact(h.fileno(),4)
     def test_premature_close_errors_sanitized(self):
-        with patch("fvs_suite.vault_restore_verify.os.close",side_effect=OSError(errno.EIO,_PRIVATE)):
+        original_close = os.close
+        def close_then_error(fd):
+            original_close(fd)
+            raise OSError(errno.EIO, _PRIVATE)
+        with patch("fvs_suite.vault_restore_verify.os.close", side_effect=close_then_error):
             with self.assertRaises(ValueError) as caught:self.check()
         self.assertIsNone(caught.exception.__context__)
 
