@@ -59,6 +59,7 @@ function check(d){
  for(const w of ['HARD_HOLD','NOT_COMPUTABLE','OFFER → FUNNEL STEP','TASK-008','R236','R248','47 unsafe','affiliate_click','utm_content=asset_id','360, 390, 768, 1440, 1920','Founder'])assert.ok(p.includes(w),'plan '+w);
  const cue=d.r248test.split('\n').find(x=>x.includes('const cuePattern='));
  assert.ok(cue,'clock parser');
+ assert.ok(d.r248test.includes('Full WebVTT clock validation'),'clock validation narrative remains accurate');
  assert.ok(cue.includes('\\d{2}')&&cue.includes('\\.'),'actual regex must have digit and dot escapes');
  assert.ok(!cue.includes('\\\\d')&&!cue.includes('\\\\.'),'double escape regression');
  assert.ok(d.r249test.includes(pins.r248test[1]),'R249 pin accurate');
