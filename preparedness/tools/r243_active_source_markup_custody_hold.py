@@ -100,7 +100,17 @@ class ActiveMarkupInspector(HTMLParser):
             if key in URL_ATTRIBUTES:
                 safe_url(value, key)
                 self.url_attrs += 1
-                if key == 'href':
+                # SVG 2 places fetchable resource references in ordinary href,
+                # not just xlink:href. A generic non-anchor element can also
+                # acquire such behavior in embedded markup. Without a reviewed
+                # asset manifest, fail closed on every non-navigation href that
+                # is not a same-document fragment. This does not rewrite or
+                # approve original contributor citations or source records.
+                if key in ('href', 'xlink:href') and tag not in ('a', 'area'):
+                    reference = html.unescape(value).strip()
+                    if not re.fullmatch(r'#[A-Za-z_][\\w:.-]*', reference):
+                        raise ValueError('R244 nonnavigation href loads unreviewed resource: ' + tag)
+                if key == 'href' and tag in ('a', 'area'):
                     self.raw_links += 1
                     if SCHEME.match(value.strip()):
                         self.external_links += 1
