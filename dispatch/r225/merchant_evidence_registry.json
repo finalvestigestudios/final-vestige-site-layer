@@ -1,0 +1,145 @@
+{
+  "checked_utc": "2026-11-09T04:33:07Z",
+  "status": "HOLD_UNSENT",
+  "editorial_count": 4,
+  "commercial_count": 2,
+  "offers": [
+    {
+      "partner_acceptance_verified": false,
+      "email_permission_verified": false,
+      "checkout_verified": false,
+      "live_guide_verified": false,
+      "issued_earning_url": null,
+      "affiliate_clicks": null,
+      "confirmed_sales": null,
+      "realized_net_revenue": null,
+      "id": "zen12",
+      "issue_number": 3,
+      "official_sales_page": "https://zen12.com/hnp",
+      "merchant_free_audio_optin": "MERCHANT_NEWSLETTER_NOT_FV_LEAD",
+      "seller_assertions": [
+        {
+          "statement": "Premium library advertised as 48 MP3s across 12 levels",
+          "provenance": "merchant_claim_not_independently_verified"
+        },
+        {
+          "statement": "12-minute session advertised as equivalent to an hour of meditation",
+          "provenance": "merchant_claim_not_independently_verified"
+        },
+        {
+          "statement": "One-year money-back language displayed",
+          "provenance": "merchant_claim_not_independently_verified"
+        }
+      ],
+      "sources": [
+        "https://zen12.com/hnp",
+        "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking"
+      ]
+    },
+    {
+      "partner_acceptance_verified": false,
+      "email_permission_verified": false,
+      "checkout_verified": false,
+      "live_guide_verified": false,
+      "issued_earning_url": null,
+      "affiliate_clicks": null,
+      "confirmed_sales": null,
+      "realized_net_revenue": null,
+      "id": "total_focus",
+      "issue_number": 5,
+      "official_sales_page": "https://hypnosislive.com/mental-skills/total-focus",
+      "merchant_free_audio_optin": "NOT_OBSERVED_ON_EXACT_PAGE",
+      "seller_assertions": [
+        {
+          "statement": "Single Total Focus audio listing displays 33 minutes and 47 MB",
+          "provenance": "merchant_claim_not_independently_verified"
+        },
+        {
+          "statement": "Sales page shows $24.44 vs $29.95, whereas FAQ describes typical $22.95 sessions; final checkout unverified",
+          "provenance": "merchant_claim_not_independently_verified"
+        },
+        {
+          "statement": "FAQ says 14-day refund with no more than five sessions per year; final buyer terms unverified",
+          "provenance": "merchant_claim_not_independently_verified"
+        }
+      ],
+      "sources": [
+        "https://hypnosislive.com/mental-skills/total-focus",
+        "https://hypnosislive.com/faq"
+      ]
+    }
+  ],
+  "release_proofs": {
+    "named_fv_partner_acceptance": {
+      "verified": false,
+      "reference": null
+    },
+    "explicit_jetpack_email_marketing_permission": {
+      "verified": false,
+      "reference": null
+    },
+    "account_issued_earning_link": {
+      "verified": false,
+      "reference": null
+    },
+    "offer_specific_deep_link_permission": {
+      "verified": false,
+      "reference": null
+    },
+    "approved_creative_and_claim_rules": {
+      "verified": false,
+      "reference": null
+    },
+    "approved_live_independent_guide": {
+      "verified": false,
+      "reference": null
+    },
+    "price_and_currency_at_checkout": {
+      "verified": false,
+      "reference": null
+    },
+    "current_refund_terms_at_checkout": {
+      "verified": false,
+      "reference": null
+    },
+    "real_received_jetpack_html_and_plaintext": {
+      "verified": false,
+      "reference": null
+    },
+    "publisher_postal_address_in_real_email": {
+      "verified": false,
+      "reference": null
+    },
+    "working_unsubscribe_in_real_email": {
+      "verified": false,
+      "reference": null
+    },
+    "provider_confirmed_recipient_eligibility": {
+      "verified": false,
+      "reference": null
+    },
+    "founder_creative_audience_date_and_send_authorization": {
+      "verified": false,
+      "reference": null
+    }
+  },
+  "measurement": {
+    "source": "no independent order/commission ledger furnished",
+    "net_revenue_per_1000_qualified_sessions": "NOT_COMPUTABLE",
+    "qualified_human_sessions": null,
+    "settled_orders": null,
+    "refunds": null,
+    "fees": null
+  },
+  "disallowed_fv_actions": [
+    "send_email",
+    "send_test_email",
+    "publish_post",
+    "import_subscriber",
+    "create_signup_list",
+    "change_wordpress_settings",
+    "activate_affiliate",
+    "deploy_analytics",
+    "modify_social_queue"
+  ]
+}
