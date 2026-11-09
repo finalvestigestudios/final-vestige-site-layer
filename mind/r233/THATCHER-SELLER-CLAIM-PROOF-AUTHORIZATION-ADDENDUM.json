@@ -1,0 +1,254 @@
+{
+  "edition": "R233",
+  "date": "2026-11-08",
+  "scope": "Mind & Perception only; addendum to R232 commercial gates; NOT LIVE",
+  "branch": "mind-r233-thatcher-orientation-and-integrity-20261108",
+  "affiliate_active": false,
+  "merchant_cta_active": false,
+  "affiliate_partner_acceptance": "NOT_VERIFIED",
+  "source_of_truth": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+  "sources": [
+    {
+      "id": "THOMPSON1980",
+      "url": "https://doi.org/10.1068/p090483",
+      "type": "original_study",
+      "access": "journal metadata and abstract only"
+    },
+    {
+      "id": "PSALTA2014",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4191594/",
+      "type": "peer_reviewed",
+      "access": "full open text"
+    },
+    {
+      "id": "WONG2010",
+      "url": "https://doi.org/10.1068/p6659",
+      "type": "peer_reviewed",
+      "access": "abstract only"
+    },
+    {
+      "id": "PSALTA2013",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4298288/",
+      "type": "peer_reviewed",
+      "access": "full open manuscript"
+    },
+    {
+      "id": "FTC_ENDORSE",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "type": "regulatory",
+      "access": "full public guidance"
+    },
+    {
+      "id": "FTC_HEALTH",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "type": "regulatory",
+      "access": "full public guidance"
+    },
+    {
+      "id": "ZEN12_EXACT",
+      "url": "https://zen12.com/hnp",
+      "type": "merchant",
+      "access": "public seller offer; NOT authenticated checkout"
+    },
+    {
+      "id": "INSPIRE3",
+      "url": "https://inspire3.com/",
+      "type": "merchant",
+      "access": "public company catalogue, NOT partner permission"
+    },
+    {
+      "id": "FV_FOCUS",
+      "url": "https://finalvestige.com/focus/",
+      "type": "fv_published",
+      "access": "public landing; provider acceptance not checked"
+    },
+    {
+      "id": "FV_CHANGE",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "type": "fv_published",
+      "access": "public article, flicker and door experiment"
+    },
+    {
+      "id": "FV_EXPL",
+      "url": "https://finalvestige.com/explore/",
+      "type": "fv_published",
+      "access": "public link to Puységur archive"
+    },
+    {
+      "id": "FV_PUYSEGUR",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "type": "fv_published",
+      "access": "public archive index"
+    }
+  ],
+  "claims": [
+    {
+      "id": "T01",
+      "assertion": "Thompson introduced the Thatcher illusion in a 1980 Perception article",
+      "evidence": [
+        "THOMPSON1980"
+      ],
+      "result": "SUPPORTED_BIBLIOGRAPHICALLY"
+    },
+    {
+      "id": "T02",
+      "assertion": "Rotating the whole face reduces conspicuousness of locally rotated eyes and mouth in typical demonstrations",
+      "evidence": [
+        "THOMPSON1980",
+        "PSALTA2014"
+      ],
+      "result": "SUPPORTED_CONTEXT_DEPENDENT"
+    },
+    {
+      "id": "T03",
+      "assertion": "Orientation effect persists for isolated eye or mouth regions in a reported matching task",
+      "evidence": [
+        "PSALTA2014"
+      ],
+      "result": "SUPPORTED_TASK_SPECIFIC"
+    },
+    {
+      "id": "T04",
+      "assertion": "Thatcher-like inversion effects occur in several nonface categories in abstracted study",
+      "evidence": [
+        "WONG2010"
+      ],
+      "result": "SUPPORTED_ABSTRACT_ONLY"
+    },
+    {
+      "id": "T05",
+      "assertion": "STS fMRI adaptation contrast was orientation dependent in the described design",
+      "evidence": [
+        "PSALTA2013"
+      ],
+      "result": "SUPPORTED_TASK_SPECIFIC"
+    },
+    {
+      "id": "T06",
+      "assertion": "Illusion proves all brains cannot process inverted faces",
+      "evidence": [
+        "THOMPSON1980",
+        "PSALTA2014"
+      ],
+      "result": "OVERGENERALIZATION_REJECTED"
+    },
+    {
+      "id": "T07",
+      "assertion": "Thatcher illusion shows Zen12 improves focus or health",
+      "evidence": [
+        "PSALTA2014",
+        "FTC_HEALTH"
+      ],
+      "result": "UNSUPPORTED_REJECTED"
+    },
+    {
+      "id": "C01",
+      "assertion": "Zen12 seller advertises 12 levels, 48 MP3 files and four listening styles",
+      "evidence": [
+        "ZEN12_EXACT"
+      ],
+      "result": "SELLER_DESCRIPTION_ONLY"
+    },
+    {
+      "id": "C02",
+      "assertion": "12 minutes Zen12 equals one hour of meditation benefits",
+      "evidence": [
+        "ZEN12_EXACT",
+        "FTC_HEALTH"
+      ],
+      "result": "PRODUCT_SPECIFIC_SUPPORT_NOT_VERIFIED_DO_NOT_ASSERT"
+    },
+    {
+      "id": "C03",
+      "assertion": "Final Vestige is approved to earn Inspire3 affiliate commissions",
+      "evidence": [
+        "INSPIRE3"
+      ],
+      "result": "NOT_VERIFIED_HOLD"
+    },
+    {
+      "id": "C04",
+      "assertion": "The public seller discount equals a verified checkout price",
+      "evidence": [
+        "ZEN12_EXACT"
+      ],
+      "result": "NOT_VERIFIED_DO_NOT_QUOTE"
+    },
+    {
+      "id": "C05",
+      "assertion": "Jetpack Focus landing success implies provider-confirmed subscription",
+      "evidence": [
+        "FV_FOCUS"
+      ],
+      "result": "NOT_VERIFIED"
+    },
+    {
+      "id": "C06",
+      "assertion": "An affiliate outbound click is a paid affiliate sale",
+      "evidence": [
+        "FTC_ENDORSE"
+      ],
+      "result": "FALSE_DO_NOT_ASSERT"
+    },
+    {
+      "id": "C07",
+      "assertion": "Affiliate recommendations require nearby clear material relationship disclosures",
+      "evidence": [
+        "FTC_ENDORSE"
+      ],
+      "result": "SUPPORTED_COMPLIANCE_GUIDANCE"
+    }
+  ],
+  "gates": [
+    {
+      "id": "partner_named_approval",
+      "status": "HARD_HOLD",
+      "proof_required": "private Final Vestige publisher acceptance from authorized partner dashboard"
+    },
+    {
+      "id": "offer_channel_rights",
+      "status": "HARD_HOLD",
+      "proof_required": "explicit site/blog, organic TikTok/YouTube, and email permissions as applicable"
+    },
+    {
+      "id": "issued_earning_url",
+      "status": "HARD_HOLD",
+      "proof_required": "account-issued official tracked link and restrictions"
+    },
+    {
+      "id": "product_claim_review",
+      "status": "HARD_HOLD",
+      "proof_required": "dated source mapping, all unauthorized benefit statements removed"
+    },
+    {
+      "id": "price_refund_checkout",
+      "status": "HARD_HOLD",
+      "proof_required": "authenticated offer checkout + actual terms; refund limitations recorded"
+    },
+    {
+      "id": "conversion_attribution",
+      "status": "HARD_HOLD",
+      "proof_required": "cleared merchant-reported commission matched to campaign; no click-only claims"
+    },
+    {
+      "id": "editorial_QA",
+      "status": "HARD_HOLD",
+      "proof_required": "independent science/rights copy review and no co-mingled affiliate conclusions"
+    },
+    {
+      "id": "release_permission",
+      "status": "HARD_HOLD",
+      "proof_required": "founder authorization before any live CMS/email/social or commercial edit"
+    }
+  ],
+  "near_button_disclosure_prospective": "If you purchase through an approved link, Final Vestige may earn a commission at no additional cost to you. No earning link is currently active.",
+  "measurement_status": {
+    "qualified_human_sessions": "UNKNOWN",
+    "affiliate_click": "NOT_INSTRUMENTED",
+    "confirmed_jetpack_signup": "UNVERIFIED",
+    "merchant_confirmed_purchase": "UNVERIFIED",
+    "cleared_commission": "UNVERIFIED",
+    "refunds_fees": "UNVERIFIED",
+    "net_revenue_per_1000_qualified_sessions": "NOT_COMPUTABLE"
+  }
+}
