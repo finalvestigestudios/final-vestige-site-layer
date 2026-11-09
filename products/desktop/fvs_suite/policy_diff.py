@@ -15,6 +15,7 @@ from .unicode_hazards import is_visually_blank_filler
 from .policy_canonical import render_local_canonical_evidence
 from .policy_confusables import render_local_confusable_evidence
 from .policy_compatibility_custody import owned_nfkc_hunks
+from .policy_input_privacy import checked_policy_path, read_policy_snapshot, decode_policy_utf8
 
 MAX_POLICY_BYTES = 10 * 1024 * 1024
 MAX_POLICY_LINES = 50_000
@@ -24,24 +25,14 @@ _UNSAFE_TEXT = re.compile(r"[\x00-\x08\x0b\x0c\x0e-\x1f\x7f-\x9f\u2028\u2029\u20
 
 
 def _read_policy(path):
-    source = Path(path)
-    if source.suffix.lower() not in _ALLOWED_EXTENSIONS or not source.is_file():
-        raise ValueError("Policy comparison supports existing TXT, MD and CSV files")
-    # Reuse the suite's descriptor-owned, bounded and identity-checked snapshot
-    # guard rather than trusting a pathname that can be swapped during reading.
+    source = checked_policy_path(path, _ALLOWED_EXTENSIONS)
+    # The candidate preflight is not a file lock or authorization: the
+    # unchanged descriptor-owned snapshot rejects links, swaps and mutations.
     from .csv_snapshot import read_csv_snapshot
-    try:
-        raw = read_csv_snapshot(source, MAX_POLICY_BYTES)
-    except ValueError as exc:
-        if "exceeds" in str(exc):
-            raise ValueError("Policy file exceeds 10 MiB input limit") from None
-        raise ValueError("Policy input is not a stable regular file (links or concurrent changes are not accepted)") from None
+    raw = read_policy_snapshot(source, MAX_POLICY_BYTES, read_csv_snapshot)
     if b"\x00" in raw:
         raise ValueError("Policy input contains a NUL byte")
-    try:
-        body = raw.decode("utf-8-sig")
-    except UnicodeError as exc:
-        raise ValueError("Policy input must be valid UTF-8 text") from exc
+    body = decode_policy_utf8(raw)
     if _UNSAFE_TEXT.search(body) or "\ufeff" in body:
         raise ValueError("Policy input contains unsupported control characters")
     lines = body.splitlines(keepends=True)
