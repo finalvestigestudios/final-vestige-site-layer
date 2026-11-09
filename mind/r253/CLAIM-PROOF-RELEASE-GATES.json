@@ -1,0 +1,328 @@
+{
+  "version": "R253",
+  "date": "2026-11-09",
+  "scope": "Mind & Perception only; unpublished; no live WordPress, merchant link or new form",
+  "sources": [
+    {
+      "id": "S01",
+      "type": "official_seller",
+      "url": "https://inspire3.com/",
+      "summary": "Parent catalog lists Zen12 and other Inspire3 brands; general seller efficacy wording not adopted."
+    },
+    {
+      "id": "S02",
+      "type": "exact_offer",
+      "url": "https://zen12.com/hnp",
+      "summary": "On Nov 9 advertises Premium 12 levels, 48 MP3, 4 styles, displayed $87.99, year guarantee, unverified actual checkout."
+    },
+    {
+      "id": "S03",
+      "type": "program_portal",
+      "url": "https://affiliates.inspire3.com/",
+      "summary": "Generic application and special link model; not proof of FV acceptance, personal commission, paid transaction or permission."
+    },
+    {
+      "id": "S04",
+      "type": "independent_review",
+      "url": "https://doi.org/10.1371/journal.pone.0286023",
+      "summary": "14 heterogeneous binaural-beat EEG studies: 5 compatible, 8 contradictory, 1 mixed; not Zen12 or all types of guided sound."
+    },
+    {
+      "id": "S05",
+      "type": "government_guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "summary": "Disclose material connections conspicuously near any recommendation."
+    },
+    {
+      "id": "S06",
+      "type": "government_guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "summary": "Objective health and psychological efficacy claims require appropriate substantiation."
+    },
+    {
+      "id": "S07",
+      "type": "existing_live_funnel",
+      "url": "https://finalvestige.com/focus/",
+      "summary": "One 52-page Focus Fieldbook with established Jetpack/Dispatch consent and opt-in; no second form."
+    },
+    {
+      "id": "S08",
+      "type": "existing_live_investigation",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "summary": "Verified published change-blindness article."
+    },
+    {
+      "id": "S09",
+      "type": "existing_archive_reported",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "summary": "URL in issue #171; signed-out web fetch unavailable this run; require validation before public internal link."
+    },
+    {
+      "id": "S10",
+      "type": "published_inventory",
+      "url": "https://finalvestige.com/blog/",
+      "summary": "Journal currently displays 66 result rows; earlier issue #171 baseline was 61; counts reflect different dates."
+    },
+    {
+      "id": "S11",
+      "type": "government_evidence_review",
+      "url": "https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety",
+      "summary": "NIH NCCIH on heterogeneous general meditation research and safety; not a proprietary Zen12 study"
+    }
+  ],
+  "claims": [
+    {
+      "id": "P01",
+      "text": "Premium advertises 12 levels and 48 MP3",
+      "source_ids": [
+        "S02"
+      ],
+      "classification": "SELLER_FORMAT_ONLY",
+      "action": "USE_WITH_ATTRIBUTION"
+    },
+    {
+      "id": "P02",
+      "text": "Four versions each level music/guided/nature/white noise",
+      "source_ids": [
+        "S02"
+      ],
+      "classification": "SELLER_FORMAT_ONLY",
+      "action": "USE_WITH_ATTRIBUTION"
+    },
+    {
+      "id": "P03",
+      "text": "Premium displayed $87.99 Nov 9",
+      "source_ids": [
+        "S02"
+      ],
+      "classification": "SELLER_DISPLAY_ONLY",
+      "action": "DATED_ONLY_NO_CHECKOUT_PROMISE"
+    },
+    {
+      "id": "P04",
+      "text": "Premium advertises 1-year refund",
+      "source_ids": [
+        "S02"
+      ],
+      "classification": "SELLER_POLICY_ONLY",
+      "action": "DO_NOT_CLAIM_TESTED"
+    },
+    {
+      "id": "P05",
+      "text": "One hour meditation benefit in twelve minutes",
+      "source_ids": [
+        "S02",
+        "S04"
+      ],
+      "classification": "UNSUPPORTED_PRODUCT_OUTCOME",
+      "action": "EXCLUDE_FROM_EDITORIAL_ENDORSEMENT"
+    },
+    {
+      "id": "P06",
+      "text": "Sound automatically improves health/focus",
+      "source_ids": [
+        "S02",
+        "S04",
+        "S06"
+      ],
+      "classification": "UNSUPPORTED_PRODUCT_OUTCOME",
+      "action": "EXCLUDE_FROM_EDITORIAL_ENDORSEMENT"
+    },
+    {
+      "id": "P07",
+      "text": "Review has 14 EEG studies with mixed results",
+      "source_ids": [
+        "S04"
+      ],
+      "classification": "INDEPENDENT_REVIEW",
+      "action": "USE_WITH_LIMITS"
+    },
+    {
+      "id": "P08",
+      "text": "Review applies to exact Zen12 tracks",
+      "source_ids": [
+        "S04"
+      ],
+      "classification": "NOT_ESTABLISHED",
+      "action": "EXCLUDE"
+    },
+    {
+      "id": "P09",
+      "text": "FTC requires clear material-connection disclosure",
+      "source_ids": [
+        "S05"
+      ],
+      "classification": "FTC_GUIDANCE",
+      "action": "REQUIRED_NEAR_CTA"
+    },
+    {
+      "id": "P10",
+      "text": "FTC requires claim-specific substantiation",
+      "source_ids": [
+        "S06"
+      ],
+      "classification": "FTC_GUIDANCE",
+      "action": "NO_UNSUBSTANTIATED_CLAIMS"
+    },
+    {
+      "id": "P11",
+      "text": "One existing 52-page Focus Fieldbook funnel",
+      "source_ids": [
+        "S07"
+      ],
+      "classification": "LIVE_SITE_OBSERVATION",
+      "action": "PRESERVE"
+    },
+    {
+      "id": "P12",
+      "text": "FV Inspire3 affiliate approved",
+      "source_ids": [
+        "S03"
+      ],
+      "classification": "ACCOUNT_UNVERIFIED",
+      "action": "HARD_HOLD"
+    },
+    {
+      "id": "P13",
+      "text": "Authorized earning URL available",
+      "source_ids": [
+        "S03"
+      ],
+      "classification": "ACCOUNT_UNVERIFIED",
+      "action": "HARD_HOLD"
+    },
+    {
+      "id": "P14",
+      "text": "Paid affiliate commission confirmed",
+      "source_ids": [],
+      "classification": "RECONCILIATION_UNAVAILABLE",
+      "action": "UNKNOWN_NOT_ZERO"
+    },
+    {
+      "id": "P15",
+      "text": "Owned rights-cleared Mind SKU with settled orders",
+      "source_ids": [],
+      "classification": "TRANSACTION_UNVERIFIED",
+      "action": "UNKNOWN_NOT_ZERO"
+    },
+    {
+      "id": "P16",
+      "text": "Merchant guest checkout, refund process and final price tested",
+      "source_ids": [
+        "S02"
+      ],
+      "classification": "CART_NOT_TESTED",
+      "action": "HARD_HOLD"
+    },
+    {
+      "id": "P17",
+      "text": "General meditation evidence cannot substantiate exact Zen12 product effects",
+      "source_ids": [
+        "S11",
+        "S04"
+      ],
+      "classification": "INFERENCE_LIMITED",
+      "action": "USE_AS_EVIDENCE_BOUNDARY"
+    }
+  ],
+  "authorization_gates": [
+    {
+      "id": "named_publisher_approval",
+      "status": "HARD_HOLD",
+      "reason": "Not independently authenticated and/or release approval not granted"
+    },
+    {
+      "id": "issued_tracking_link",
+      "status": "HARD_HOLD",
+      "reason": "Not independently authenticated and/or release approval not granted"
+    },
+    {
+      "id": "web_promotion_permission",
+      "status": "HARD_HOLD",
+      "reason": "Not independently authenticated and/or release approval not granted"
+    },
+    {
+      "id": "social_promotion_permission",
+      "status": "HARD_HOLD",
+      "reason": "Not independently authenticated and/or release approval not granted"
+    },
+    {
+      "id": "email_promotion_permission",
+      "status": "HARD_HOLD",
+      "reason": "Not independently authenticated and/or release approval not granted"
+    },
+    {
+      "id": "creative_rights_approval",
+      "status": "HARD_HOLD",
+      "reason": "Not independently authenticated and/or release approval not granted"
+    },
+    {
+      "id": "actual_checkout_amount",
+      "status": "HARD_HOLD",
+      "reason": "Not independently authenticated and/or release approval not granted"
+    },
+    {
+      "id": "merchant_refund_terms_verified",
+      "status": "HARD_HOLD",
+      "reason": "Not independently authenticated and/or release approval not granted"
+    },
+    {
+      "id": "merchant_cookie_terms_verified",
+      "status": "HARD_HOLD",
+      "reason": "Not independently authenticated and/or release approval not granted"
+    },
+    {
+      "id": "attribution_terms_verified",
+      "status": "HARD_HOLD",
+      "reason": "Not independently authenticated and/or release approval not granted"
+    },
+    {
+      "id": "merchant_settlement_access",
+      "status": "HARD_HOLD",
+      "reason": "Not independently authenticated and/or release approval not granted"
+    },
+    {
+      "id": "privacy_consent_mapping",
+      "status": "HARD_HOLD",
+      "reason": "Not independently authenticated and/or release approval not granted"
+    },
+    {
+      "id": "no_duplicate_tracking",
+      "status": "HARD_HOLD",
+      "reason": "Not independently authenticated and/or release approval not granted"
+    },
+    {
+      "id": "browser_accessibility_qa",
+      "status": "HARD_HOLD",
+      "reason": "Not independently authenticated and/or release approval not granted"
+    },
+    {
+      "id": "founder_release_approval",
+      "status": "HARD_HOLD",
+      "reason": "Not independently authenticated and/or release approval not granted"
+    },
+    {
+      "id": "site_qa_engineering_release",
+      "status": "HARD_HOLD",
+      "reason": "Not independently authenticated and/or release approval not granted"
+    }
+  ],
+  "measured": {
+    "qualified_human_sessions": null,
+    "verified_leads": null,
+    "affiliate_clicks": null,
+    "settled_orders": null,
+    "cleared_commissions": null,
+    "refunds": null,
+    "platform_fees": null,
+    "net_revenue": null,
+    "net_revenue_per_1000_sessions": null
+  },
+  "status": {
+    "built": true,
+    "source_tested": true,
+    "live": false,
+    "verified_paid_conversion": false,
+    "source_test_method": "V8 read-only Node-compatible shim on 2026-11-09; not native Node, browser, CI or WordPress"
+  }
+}
