@@ -44,7 +44,7 @@ function inspectHtml(s){
  assert(!/<a\b[^>]*href\s*=\s*["'](?:https?:)?\/\/(?:www\.)?(?:hypnosislive|zen12|inspire3|brainwaveshots|awin1)\.com/i.test(s),'no merchant click');
  assert(!/<a\b[^>]*href\s*=\s*["'](?:javascript:|data:|\/\/)/i.test(s),'no URL exploits');
  const buttons=[...s.matchAll(/<button\b([^>]*)>/gi)];assert.equal(buttons.length,1,'single disabled CTA');
- assert(/\bdisabled\b/.test(buttons[0][1]),'native disable');
+ assert(/(?:^|\s)disabled(?:\s|=|$)/.test(buttons[0][1]),'native disable attribute, not CSS class');
  const d=s.indexOf('may earn a commission'),b=s.indexOf('<button');
  assert(d>0&&b>d&&b-d<600,'clear adjacent FTC disclosure before CTA');
  assert(s.includes('https://finalvestige.com/focus/'),'only existing Focus route');
