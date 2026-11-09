@@ -156,7 +156,7 @@ function negativeCases(d){
   ()=>tamper('vtt',s=>s.replace('00:00:06.000','00:00:07.000')),
   ()=>tamper('article',s=>s.replace('not a dose-conversion table','a dose-conversion table')),
   ()=>tamper('article',s=>s.replace('https://doi.org/10.1002/smi.3324','https://example.test')),
-  ()=>tamper('plan',s=>s.replace('NOT_COMPUTABLE','ZERO')),
+  ()=>tamper('plan',s=>s.replace('refunds/chargebacks NOT already included','refunds/chargebacks')),
   ()=>tamper('r247article',s=>s.replace('VERY LOW','HIGH')),
   ()=>tamper('r247html',s=>s.replace('five sessions per year','unlimited refunds'))
  );
