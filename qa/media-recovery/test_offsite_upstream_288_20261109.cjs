@@ -1,0 +1,13 @@
+"use strict";
+const {test}=require("node:test"), assert=require("node:assert/strict");
+const {validate}=require("./validate_offsite_upstream_288_20261109.cjs");
+const doc=require("./offsite_upstream_288_20261109.json");
+const copy=()=>JSON.parse(JSON.stringify(doc));
+test("frozen 288-source/80-upstream audit passes",()=>assert.deepEqual(validate(copy()),[]));
+test("source and archival URLs bound",()=>{let d=copy();d.rows[0].stored_url+="?false=1";assert.ok(validate(d).length);d=copy();d.rows.find(x=>x.candidate?.catalog_url).candidate.catalog_url="https://example.invalid";assert.ok(validate(d).length)});
+test("no fabricated visitor load, HTTP or bytes",()=>{for(const k of ["visitor_http","visitor_wire_bytes","visitor_dimensions","visitor_broken"]){const d=copy();d.rows[0][k]=200;assert.ok(validate(d).includes("invented_browser_observation"))}});
+test("all release or cache actions prohibited",()=>{for(const k of ["cache","mirror","wordpress_upload","block_rewrite"]){const d=copy();d.rows[0].release[k]=true;assert.ok(validate(d).includes("unapproved_release"))}});
+test("rights and dimensions stay on review hold",()=>{let d=copy();d.rows.find(x=>x.candidate).candidate.rights_cleared=true;assert.ok(validate(d).length);d=copy();d.rows.find(x=>x.candidate?.conditional_960_px).candidate.conditional_960_px=[1280,600];assert.ok(validate(d).length)});
+test("reject false savings and broken claims",()=>{for(const k of ["guest_broken_42_verified","transfer_saving_76pct_measured"]){const d=copy();d.counts[k]=true;assert.ok(validate(d).includes("unverified_totals"))}});
+test("proxy attribution distinguishes origin from delivery host",()=>{const p=doc.rows.filter(x=>x.delivery_host==="i0.wp.com");assert.equal(p.length,2);assert.ok(p.every(x=>x.origin_host!=="finalvestige.com"));assert.equal(doc.counts.wp_com_delivery,9)});
+test("rollups and unique research slot checks",()=>{let d=copy();d.groups[0].slots++;assert.ok(validate(d).includes("host_rollup"));assert.equal(doc.rows.filter(x=>x.researched).length,50);assert.equal(new Set(doc.rows.map(x=>x.slot)).size,288)});
