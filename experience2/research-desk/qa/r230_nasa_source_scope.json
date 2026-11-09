@@ -1,0 +1,65 @@
+{
+  "schema": "fv-research-desk-photo-scope-v1",
+  "audit_date": "2026-11-08",
+  "scope": "GitHub PR #158 six-record Research Desk URL/title source audit; not media permission review",
+  "technical_primary_source": "https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/",
+  "media_policy": "https://www.nasa.gov/nasa-brand-center/advertising-guidelines/",
+  "release": "STAGING_HOLD",
+  "finding": "NASA image page titles distinguish retrospective tribute/training imagery from Review Board technical findings. Do not imply photos prove telemetry, ignition or design changes.",
+  "records": [
+    {
+      "desk_record": 1,
+      "nasa_id": "S67-19766",
+      "photo_page": "https://www.nasa.gov/image-detail/apollo-1-crew-honored/",
+      "official_page_title": "Apollo 1 Crew Honored",
+      "technical_support": "NASA separate institutional reporting",
+      "photo_evidence_limit": "An archive/commemoration page does not itself establish the hazard determination.",
+      "rights_status": "NOT_REVIEWED_FOR_COMMERCIAL_REPRODUCTION"
+    },
+    {
+      "desk_record": 2,
+      "nasa_id": "S67-15717",
+      "photo_page": "https://www.nasa.gov/image-detail/amf-s67-15717/",
+      "official_page_title": "COMMAND MODULE (C/M) - SPACECRAFT (S/C) 012 C/M - APOLLO/SATURN (A/S) 204 PREPARATIONS - CAPE",
+      "technical_support": "Apollo 204 Review Board report",
+      "photo_evidence_limit": "A preparation photograph cannot establish quantitative cabin oxygen pressure.",
+      "rights_status": "NOT_REVIEWED_FOR_COMMERCIAL_REPRODUCTION"
+    },
+    {
+      "desk_record": 3,
+      "nasa_id": "S66-58038",
+      "photo_page": "https://www.nasa.gov/image-detail/amf-s66-58038/",
+      "official_page_title": "CHAMBER - ALTITUDE - APOLLO/SATURN (A/S)-204 - ASTRONAUT TRAINING - KSC",
+      "technical_support": "Apollo 204 Review Board report",
+      "photo_evidence_limit": "SOURCE SCOPE WARNING: NASA identifies this as altitude-chamber astronaut training, not a telemetry trace of the fire. Do not present this photograph as evidence for exact recorded pressure timings.",
+      "rights_status": "NOT_REVIEWED_FOR_COMMERCIAL_REPRODUCTION"
+    },
+    {
+      "desk_record": 4,
+      "nasa_id": "KSC-20170124-PH_KLS01_0164",
+      "photo_page": "https://www.nasa.gov/image-detail/amf-ksc-20170124-ph_kls01_0164/",
+      "official_page_title": "Apollo 1 Tribute",
+      "technical_support": "Apollo 204 Review Board report",
+      "photo_evidence_limit": "Retrospective tribute image (2017 ID), not contemporary fire footage or proof of hatch mechanics.",
+      "rights_status": "NOT_REVIEWED_FOR_COMMERCIAL_REPRODUCTION"
+    },
+    {
+      "desk_record": 5,
+      "nasa_id": "S67-21294",
+      "photo_page": "https://www.nasa.gov/image-detail/amf-s67-21294/",
+      "official_page_title": "COMMAND MODULE - APOLLO/SATURN MISSION 204 - SPACECRAFT 012 (FIRE)",
+      "technical_support": "Apollo 204 Review Board report",
+      "photo_evidence_limit": "Aftermath/spacecraft imagery alone does not isolate or prove a specific ignition source.",
+      "rights_status": "NOT_REVIEWED_FOR_COMMERCIAL_REPRODUCTION"
+    },
+    {
+      "desk_record": 6,
+      "nasa_id": "KSC-20170124-PH_KLS01_0090",
+      "photo_page": "https://www.nasa.gov/image-detail/amf-ksc-20170124-ph_kls01_0090/",
+      "official_page_title": "Apollo 1 Tribute",
+      "technical_support": "Apollo 204 Review Board report",
+      "photo_evidence_limit": "Retrospective tribute image, not proof of the post-fire engineering testing or new hatch design.",
+      "rights_status": "NOT_REVIEWED_FOR_COMMERCIAL_REPRODUCTION"
+    }
+  ]
+}
