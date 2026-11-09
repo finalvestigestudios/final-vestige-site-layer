@@ -1,0 +1,45 @@
+{
+  "scope": "AUTHENTICATED READ-ONLY PRODUCTION WORDPRESS EDITOR-CONTENT INVENTORY; NOT BROWSER QA",
+  "source": "wpcom_mcp_pages_get id=6 context=edit include_fields=id,slug,status,modified,content",
+  "site_id": 256784396,
+  "page_id": 6,
+  "page_modified": "2026-11-05T12:07:24",
+  "status": "publish",
+  "editor_chars": 150710,
+  "chapter_targets": [
+    "fv-hf-title",
+    "fv-hf-chronicle",
+    "fv-hf-evidence",
+    "fv-hf-inquiry",
+    "fv-hf-method-title",
+    "fv-hf-observer",
+    "fv-hf-mind-title"
+  ],
+  "margins_count": 72,
+  "native_jetpack_blocks": 1,
+  "img_tags": 4,
+  "focus_links": 4,
+  "dispatch_links": 1,
+  "checks": {
+    "published_page_6": true,
+    "seven_chapter_nav": true,
+    "all_seven_anchor_ids_exist_exactly_once": true,
+    "seventy_two_ordered_margin_records": true,
+    "native_jetpack_subscriptions_once": true,
+    "focus_and_dispatch_routes": true,
+    "no_private_playground_or_subscriber_spoof": true,
+    "nasa_franklin_nypl_primary_sources_linked": true,
+    "three_archival_images_present_in_editor": true,
+    "focus_cover_image_present": true
+  },
+  "passed": true,
+  "production_page_already_contains_full_seven_chapter_flagship": true,
+  "wordPress_personal_staging_clone": "NOT AVAILABLE; separate Playground is not production",
+  "cautions": [
+    "There is no evidence that this deployment has received founder approval or independent QD/CI PASS",
+    "This does not establish front-end JS, keyboard, image bytes, responsive viewport, axe, Lighthouse or Jetpack confirmation",
+    "Do not overwrite Page 6, PR #49 or Grok/Claude lanes",
+    "Audit existing live state; do not assume the seven-chapter home remains unpublished"
+  ],
+  "decision": "RECLASSIFY AS ALREADY-PUBLISHED / URGENT READ-ONLY POST-PUBLICATION QA; NO FURTHER LIVE EDITS"
+}
