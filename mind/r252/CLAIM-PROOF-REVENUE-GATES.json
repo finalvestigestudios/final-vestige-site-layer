@@ -1,0 +1,497 @@
+{
+  "schema_version": "fv-mind-claim-gates-r252-1",
+  "observed_date": "2026-11-09",
+  "status": "SOURCE_DRAFT_NO_COMMERCE",
+  "offer": "Zen12 Premium (not Beginner or Advanced)",
+  "offer_source_id": "M01",
+  "source_count": 20,
+  "claim_count": 24,
+  "gate_count": 16,
+  "sources": [
+    {
+      "id": "M01",
+      "url": "https://zen12.com/hnp",
+      "type": "seller-offer",
+      "asof": "2026-11-09",
+      "what": "Premium 12 levels/48 MP3/four styles; seller displays $87.99/advertised 1 year; checkout untested"
+    },
+    {
+      "id": "M02",
+      "url": "https://inspire3.com/",
+      "type": "seller-catalog",
+      "asof": "2026-11-09",
+      "what": "Parent catalog connects Zen12, Hypnosis Live and related offers; marketing not independent efficacy"
+    },
+    {
+      "id": "M03",
+      "url": "https://affiliates.inspire3.com/",
+      "type": "seller-affiliate-program",
+      "asof": "2026-11-09",
+      "what": "Public registration portal is not FV-specific acceptance"
+    },
+    {
+      "id": "M04",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "type": "government",
+      "asof": "2026-11-09",
+      "what": "Clear and conspicuous near-recommendation disclosure; no misleading endorsements"
+    },
+    {
+      "id": "M05",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "type": "government",
+      "asof": "2026-11-09",
+      "what": "Objective health claims must be truthful and appropriately substantiated"
+    },
+    {
+      "id": "R01",
+      "url": "https://doi.org/10.1016/S0022-5371(77)80012-1",
+      "type": "original-study",
+      "asof": "1977-02",
+      "what": "Hasher et al. three exposures/two-week gaps/repeated plausible propositions"
+    },
+    {
+      "id": "R02",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26301795/",
+      "type": "original-study",
+      "asof": "2015-10",
+      "what": "Fazio et al knowledge sometimes neglected despite knowledge availability"
+    },
+    {
+      "id": "R03",
+      "url": "https://doi.org/10.1037/xge0000465",
+      "type": "original-study",
+      "asof": "2018",
+      "what": "Pennycook et al repetition of fabricated news can increase rated accuracy; implausibility limits"
+    },
+    {
+      "id": "R04",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36871397/",
+      "type": "original-study",
+      "asof": "2023-07",
+      "what": "Vellani et al N=260 laboratory sharing choices, not field sales"
+    },
+    {
+      "id": "R05",
+      "url": "https://doi.org/10.1038/s41467-026-70041-x",
+      "type": "meta-analysis",
+      "asof": "2026-02-27",
+      "what": "Ye et al 182 studies/366 effects/N31184, adjusted g=.37 CI [.30,.44], heterogeneous"
+    },
+    {
+      "id": "R06",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34708397/",
+      "type": "systematic-map",
+      "asof": "2022-06",
+      "what": "Henderson et al 93 reports/181 studies, Western-university and protocol caveats"
+    },
+    {
+      "id": "R07",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37742428/",
+      "type": "original-study",
+      "asof": "2023-12",
+      "what": "Udry and Barber semantic coherence and perceived truth"
+    },
+    {
+      "id": "R08",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40618302/",
+      "type": "original-study",
+      "asof": "2025-07-06",
+      "what": "Wellons and Wahlheim attention to corrective details in misinformation reminders"
+    },
+    {
+      "id": "R09",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37944323/",
+      "type": "review",
+      "asof": "2023-12",
+      "what": "Prike/Ecker corrections nuanced, repeating a falsehood in a labelled correction not automatically harmful"
+    },
+    {
+      "id": "R10",
+      "url": "https://doi.org/10.1371/journal.pone.0286023",
+      "type": "systematic-review",
+      "asof": "2023-05-19",
+      "what": "Ingendoh 14 binaural-beat EEG studies, 5 compatible, 8 contradictory, 1 mixed; not Zen12 trial"
+    },
+    {
+      "id": "F01",
+      "url": "https://finalvestige.com/focus/",
+      "type": "first-party-existing",
+      "asof": "2026-11-09",
+      "what": "Existing one Seven Day Focus Fieldbook funnel; not a new form"
+    },
+    {
+      "id": "F02",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "type": "first-party-live",
+      "asof": "2026-11-09",
+      "what": "Live related investigation verified reachable"
+    },
+    {
+      "id": "F03",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "type": "first-party-reported",
+      "asof": "2026-11-09",
+      "what": "Published historical archive documented by Issue #171; live request returned error this run"
+    },
+    {
+      "id": "F04",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "type": "governance",
+      "asof": "2026-11-09",
+      "what": "Mind editorial and publisher authorization gate"
+    },
+    {
+      "id": "F05",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "type": "governance",
+      "asof": "2026-11-09",
+      "what": "Revenue measurement contract and qualified human denominators"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "Premium package has 12 levels and 48 MP3",
+      "classification": "seller-description",
+      "sources": [
+        "M01"
+      ],
+      "decision": "SHOW-ATTRIBUTED",
+      "limits": "Not proof of 48 working downloads"
+    },
+    {
+      "id": "C02",
+      "claim": "Four offered audio styles per level",
+      "classification": "seller-description",
+      "sources": [
+        "M01"
+      ],
+      "decision": "SHOW-ATTRIBUTED",
+      "limits": "Format, not superiority"
+    },
+    {
+      "id": "C03",
+      "claim": "12-minute sessions",
+      "classification": "seller-description",
+      "sources": [
+        "M01"
+      ],
+      "decision": "SHOW-ATTRIBUTED",
+      "limits": "Duration, not result"
+    },
+    {
+      "id": "C04",
+      "claim": "One year advertised refund",
+      "classification": "seller-description",
+      "sources": [
+        "M01"
+      ],
+      "decision": "SHOW-ATTRIBUTED-CAUTION",
+      "limits": "Fulfillment/refund exclusions not tested"
+    },
+    {
+      "id": "C05",
+      "claim": "$87.99 Premium seller displayed on Nov 9 2026",
+      "classification": "dated-seller-price",
+      "sources": [
+        "M01"
+      ],
+      "decision": "SHOW-DATED-NO-CHECKOUT-GUARANTEE",
+      "limits": "Final charge, tax and discounts unknown"
+    },
+    {
+      "id": "C06",
+      "claim": "12 mins equals one hour of meditation benefits",
+      "classification": "seller-efficacy",
+      "sources": [
+        "M01",
+        "R10"
+      ],
+      "decision": "EXCLUDE-AS-PROVEN",
+      "limits": "No product-specific independent substantiation"
+    },
+    {
+      "id": "C07",
+      "claim": "Automatic relaxation/brain change/health outcomes",
+      "classification": "seller-efficacy",
+      "sources": [
+        "M01",
+        "R10",
+        "M05"
+      ],
+      "decision": "EXCLUDE-AS-PROVEN",
+      "limits": "Mixed EEG literature not Zen12 clinical proof"
+    },
+    {
+      "id": "C08",
+      "claim": "Public Inspire3 affiliate registration exists",
+      "classification": "seller-program",
+      "sources": [
+        "M03"
+      ],
+      "decision": "PROVEN-PUBLIC-PROGRAM-ONLY",
+      "limits": "Does NOT verify FV approval"
+    },
+    {
+      "id": "C09",
+      "claim": "FV approved affiliate publisher",
+      "classification": "account-specific",
+      "sources": [
+        "M03"
+      ],
+      "decision": "UNKNOWN-HARD-HOLD",
+      "limits": "No authenticated publisher dashboard or acceptance"
+    },
+    {
+      "id": "C10",
+      "claim": "FV earning URL and web/social/email permissions",
+      "classification": "account-specific",
+      "sources": [
+        "F04"
+      ],
+      "decision": "UNKNOWN-HARD-HOLD",
+      "limits": "No URL may activate"
+    },
+    {
+      "id": "C11",
+      "claim": "Clear proximate affiliate disclosure required",
+      "classification": "government-guidance",
+      "sources": [
+        "M04"
+      ],
+      "decision": "MANDATORY-WHEN-LINK-ACTIVE",
+      "limits": "Current preview contains anticipatory disclosure with disabled button"
+    },
+    {
+      "id": "C12",
+      "claim": "Health claim needs suitable scientific support",
+      "classification": "government-guidance",
+      "sources": [
+        "M05"
+      ],
+      "decision": "MANDATORY",
+      "limits": "General study does not establish product outcome"
+    },
+    {
+      "id": "C13",
+      "claim": "Hasher 1977 repetition increased rated truth",
+      "classification": "research",
+      "sources": [
+        "R01"
+      ],
+      "decision": "SUPPORTED-BOUNDED",
+      "limits": "Plausible experimental statements, not any arbitrary advertising"
+    },
+    {
+      "id": "C14",
+      "claim": "Fazio 2015 knowledge sometimes neglected",
+      "classification": "research",
+      "sources": [
+        "R02"
+      ],
+      "decision": "SUPPORTED-BOUNDED",
+      "limits": "Not that expertise is worthless"
+    },
+    {
+      "id": "C15",
+      "claim": "Pennycook 2018 fake news headline familiarity",
+      "classification": "research",
+      "sources": [
+        "R03"
+      ],
+      "decision": "SUPPORTED-BOUNDED",
+      "limits": "Not every false claim or every real social post"
+    },
+    {
+      "id": "C16",
+      "claim": "Vellani 2023 repetition affects experimental sharing choices",
+      "classification": "research",
+      "sources": [
+        "R04"
+      ],
+      "decision": "SUPPORTED-BOUNDED",
+      "limits": "N260 choices not field data"
+    },
+    {
+      "id": "C17",
+      "claim": "Ye 2026 meta 182 studies/366 effects N31184 adjusted g.37 CI .30-.44",
+      "classification": "research",
+      "sources": [
+        "R05"
+      ],
+      "decision": "SUPPORTED-BOUNDED",
+      "limits": "Heterogeneous; no conversion effect"
+    },
+    {
+      "id": "C18",
+      "claim": "Henderson 2022 limitations and Western convenience samples",
+      "classification": "research",
+      "sources": [
+        "R06"
+      ],
+      "decision": "SUPPORTED-BOUNDED",
+      "limits": "Different review count from Ye 2026"
+    },
+    {
+      "id": "C19",
+      "claim": "Correction reminders can facilitate updating in specific task",
+      "classification": "research",
+      "sources": [
+        "R08",
+        "R09"
+      ],
+      "decision": "SUPPORTED-BOUNDED",
+      "limits": "Not universal remedy"
+    },
+    {
+      "id": "C20",
+      "claim": "Ingendoh 2023 14 studies: 5/8/1 mix",
+      "classification": "research",
+      "sources": [
+        "R10"
+      ],
+      "decision": "SUPPORTED-BOUNDED",
+      "limits": "Binaural beat EEG not a Zen12 study"
+    },
+    {
+      "id": "C21",
+      "claim": "One Focus Fieldbook path exists",
+      "classification": "first-party",
+      "sources": [
+        "F01",
+        "F04"
+      ],
+      "decision": "SUPPORTED-ROUTE-ONLY",
+      "limits": "Provider-confirmed leads not established"
+    },
+    {
+      "id": "C22",
+      "claim": "FV verified paid Zen12 commissions",
+      "classification": "transaction",
+      "sources": [
+        "F05"
+      ],
+      "decision": "UNKNOWN-NOT-ZERO",
+      "limits": "No settlement evidence"
+    },
+    {
+      "id": "C23",
+      "claim": "FV rights-cleared Mind Payhip SKU is sellable",
+      "classification": "commerce",
+      "sources": [
+        "F05"
+      ],
+      "decision": "UNKNOWN-HARD-HOLD",
+      "limits": "Authenticated inventory and exact SKU required"
+    },
+    {
+      "id": "C24",
+      "claim": "Published Grok asset ID maps to real mobile destination",
+      "classification": "creator",
+      "sources": [
+        "F05"
+      ],
+      "decision": "UNKNOWN",
+      "limits": "Praxxis must verify; do not invent IDs"
+    }
+  ],
+  "gates": [
+    {
+      "id": "named_fv_publisher_accepted",
+      "status": "HARD_HOLD",
+      "cleared_evidence": null
+    },
+    {
+      "id": "account_issued_tracking_url",
+      "status": "HARD_HOLD",
+      "cleared_evidence": null
+    },
+    {
+      "id": "website_channel_allowed",
+      "status": "HARD_HOLD",
+      "cleared_evidence": null
+    },
+    {
+      "id": "tiktok_channel_allowed",
+      "status": "HARD_HOLD",
+      "cleared_evidence": null
+    },
+    {
+      "id": "youtube_channel_allowed",
+      "status": "HARD_HOLD",
+      "cleared_evidence": null
+    },
+    {
+      "id": "email_channel_allowed",
+      "status": "HARD_HOLD",
+      "cleared_evidence": null
+    },
+    {
+      "id": "approved_creatives_terms",
+      "status": "HARD_HOLD",
+      "cleared_evidence": null
+    },
+    {
+      "id": "url_destination_and_cloaking_rules",
+      "status": "HARD_HOLD",
+      "cleared_evidence": null
+    },
+    {
+      "id": "accurate_exact_offer",
+      "status": "HARD_HOLD",
+      "cleared_evidence": null
+    },
+    {
+      "id": "final_checkout_price_tax",
+      "status": "HARD_HOLD",
+      "cleared_evidence": null
+    },
+    {
+      "id": "refund_policy_fulfillment",
+      "status": "HARD_HOLD",
+      "cleared_evidence": null
+    },
+    {
+      "id": "settlement_and_reversal_terms",
+      "status": "HARD_HOLD",
+      "cleared_evidence": null
+    },
+    {
+      "id": "product_specific_health_claims_filtered",
+      "status": "HARD_HOLD",
+      "cleared_evidence": null
+    },
+    {
+      "id": "near_cta_ftc_disclosure_review",
+      "status": "HARD_HOLD",
+      "cleared_evidence": null
+    },
+    {
+      "id": "founder_release_approval",
+      "status": "HARD_HOLD",
+      "cleared_evidence": null
+    },
+    {
+      "id": "independent_site_qa_and_commercial_reconciliation",
+      "status": "HARD_HOLD",
+      "cleared_evidence": null
+    }
+  ],
+  "revenue": {
+    "qualified_human_sessions": null,
+    "verified_paid_orders": null,
+    "verified_settled_affiliate_commissions": null,
+    "verified_net_revenue": null,
+    "net_revenue_per_1000_qualified_human_sessions": null,
+    "unit": "UNKNOWN_NOT_ZERO",
+    "reconciliation": "use 7d and 30d settled transactions, dedupe orders, count refunds/chargebacks/fees and incremental costs once only"
+  },
+  "notes": [
+    "Public registration and promotional emails do not equal account acceptance.",
+    "Seller advertised price is not authenticated checkout total.",
+    "No unapproved merchant earning URL, tracking pixels, newsletter forms or paid tools.",
+    "Official Puységur route returned a fetch error this run; do not pretend visual inspection.",
+    "The 2026 meta analysis describes general cognitive judgment, never Zen12 conversion."
+  ]
+}
