@@ -1,0 +1,145 @@
+{
+  "schema": "FV_DISPATCH_R222_2026-11-09",
+  "release": "HOLD_UNSENT",
+  "commercial_issues": {
+    "03": "HOLD_MERCHANT",
+    "05": "HOLD_MERCHANT"
+  },
+  "scope": "product-specific sourced claim scrutiny; not affiliate consent or sales proof",
+  "source": [
+    {
+      "id": "ZEN12_VENDOR",
+      "type": "vendor",
+      "url": "https://zen12.com/hnp",
+      "notes": "Three public tier descriptions; 12-minute sessions; advertised Premium 48 MP3s/12 levels; 1h-equivalence not independent evidence."
+    },
+    {
+      "id": "NCCIH_MEDITATION",
+      "type": "government research",
+      "url": "https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety/",
+      "notes": "Heterogeneous studies and mixed strength; not product-specific proof of Zen12."
+    },
+    {
+      "id": "TOTAL_FOCUS_VENDOR",
+      "type": "vendor",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "notes": "33-minute, 47MB MP3; ambitious outcome assertions; public price-display conflict by retrieval context."
+    },
+    {
+      "id": "HYPNOSIS_FAQ",
+      "type": "vendor terms",
+      "url": "https://hypnosislive.com/faq",
+      "notes": "14-day refund promise limited to five sessions/year; processing timing described."
+    },
+    {
+      "id": "FTC_SPAM",
+      "type": "government guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business",
+      "notes": "Requires truthful sender, valid physical address, acceptable and effective opt-out for commercial email."
+    },
+    {
+      "id": "FTC_AFFILIATES",
+      "type": "government guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "notes": "Financial relationship must be disclosed clearly and near endorsement/link."
+    }
+  ],
+  "claims": [
+    {
+      "id": "z12_session",
+      "offer": "zen12",
+      "claim": "12-minute session format",
+      "status": "SELLER_DESCRIBED",
+      "source_id": "ZEN12_VENDOR",
+      "may_use_in_draft": true
+    },
+    {
+      "id": "z12_premium",
+      "offer": "zen12",
+      "claim": "Premium advertised 48 MP3s across 12 levels",
+      "status": "SELLER_DESCRIBED",
+      "source_id": "ZEN12_VENDOR",
+      "may_use_in_draft": true
+    },
+    {
+      "id": "z12_equiv",
+      "offer": "zen12",
+      "claim": "12 minutes equivalent to 1 hour advanced meditation",
+      "status": "UNSUBSTANTIATED_VENDOR_PROMISE",
+      "source_id": "ZEN12_VENDOR",
+      "may_use_in_draft": false
+    },
+    {
+      "id": "z12_efficacy",
+      "offer": "zen12",
+      "claim": "Guaranteed stress reduction, brain reprogramming or improved focus",
+      "status": "UNSUBSTANTIATED_VENDOR_PROMISE",
+      "source_id": "ZEN12_VENDOR",
+      "may_use_in_draft": false
+    },
+    {
+      "id": "z12_price",
+      "offer": "zen12",
+      "claim": "Checkout total for Premium",
+      "status": "NOT_VERIFIED",
+      "source_id": "ZEN12_VENDOR",
+      "may_use_in_draft": false
+    },
+    {
+      "id": "focus_format",
+      "offer": "total-focus",
+      "claim": "33-minute / 47MB downloadable audio listing",
+      "status": "SELLER_DESCRIBED",
+      "source_id": "TOTAL_FOCUS_VENDOR",
+      "may_use_in_draft": true
+    },
+    {
+      "id": "focus_outcomes",
+      "offer": "total-focus",
+      "claim": "100 percent razor-sharp concentration or reprogramming",
+      "status": "UNSUBSTANTIATED_VENDOR_PROMISE",
+      "source_id": "TOTAL_FOCUS_VENDOR",
+      "may_use_in_draft": false
+    },
+    {
+      "id": "focus_refund",
+      "offer": "total-focus",
+      "claim": "14-day refund advertised, subject to five-session/year ceiling",
+      "status": "MERCHANT_TERMS_NOT_ACCOUNT_VERIFIED",
+      "source_id": "HYPNOSIS_FAQ",
+      "may_use_in_draft": true
+    },
+    {
+      "id": "focus_public_price_direct",
+      "offer": "total-focus",
+      "claim": "Direct render public listing displayed $24.44/$29.95 (2026-11-09 UTC)",
+      "status": "PUBLIC_DISPLAY_OBSERVATION_NOT_CHECKOUT",
+      "source_id": "TOTAL_FOCUS_VENDOR",
+      "may_use_in_draft": false
+    },
+    {
+      "id": "focus_public_price_indexed",
+      "offer": "total-focus",
+      "claim": "Indexed retrieval displayed $17.95/$22.95 (different crawl context)",
+      "status": "PUBLIC_DISPLAY_CONFLICT_NOT_CHECKOUT",
+      "source_id": "TOTAL_FOCUS_VENDOR",
+      "may_use_in_draft": false
+    }
+  ],
+  "attestations": {
+    "affiliate_account_accepted": false,
+    "email_marketing_authorized": false,
+    "approved_creatives_and_earning_urls": false,
+    "merchant_final_checkout_verified": false,
+    "published_guide_03": false,
+    "published_guide_05": false,
+    "verified_publisher_postal": false,
+    "verified_actual_unsubscribe": false,
+    "verified_jetpack_received_email": false,
+    "provider_verified_eligible_recipients": false,
+    "verified_fieldbook_welcome_receipt": false,
+    "founder_final_send_approval": false,
+    "reconciled_paid_orders": false,
+    "reconciled_net_revenue": false
+  }
+}
