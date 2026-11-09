@@ -153,7 +153,10 @@ def test_browser(html,css,out):
                         sums.first.focus()
                         page.keyboard.press('Enter')
                     else:
-                        sums.first.click()
+                        if width<=390:
+                            sums.first.tap()  # Real Playwright touch input in mobile contexts.
+                        else:
+                            sums.first.click()
                     check(sums.first.evaluate('(e)=>e.parentElement.open'),'native disclosure failed '+mode)
                     access='not_tested'
                     if js and width==390:
