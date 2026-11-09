@@ -15,6 +15,7 @@ from ci_gate_step_contract import GateStepError, verify_gate_step
 from ci_action_pin_guard import ActionPinError, verify_action_pins
 
 from ci_workflow_budget_r292 import MAX_WORKFLOW_BYTES
+from ci_job_mapping_r294 import JobMappingError, verify_job_mapping
 SOURCE_CMD = 'python products/desktop/scripts/offline_source_gate.py --report "$RUNNER_TEMP/fvs-source/offline-source-suite.json"'
 WINDOWS_CMD = 'python products/desktop/scripts/offline_source_gate.py'
 POLICY_CMD = 'python products/desktop/ci_source_contract.py .github/workflows/desktop-build.yml'
@@ -64,6 +65,11 @@ def _jobs(source: str) -> dict[str, str]:
             raise SourceContractError('Unrecognized CI job syntax')
     if set(blocks) != set(JOBS):
         raise SourceContractError('Unexpected desktop CI job configuration')
+    for name, lines in blocks.items():
+        try:
+            verify_job_mapping(name, lines)
+        except JobMappingError as exc:
+            raise SourceContractError('Unreviewed desktop CI job-level mapping') from exc
     return {name: '\n'.join(lines) for name, lines in blocks.items()}
 
 

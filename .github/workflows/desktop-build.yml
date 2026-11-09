@@ -385,6 +385,10 @@ jobs:
         run: |
           python -W error -m unittest discover -s products/desktop/tests -p 'test_ci_root_mapping_custody_r293.py'
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_ci_root_mapping_custody_r293.py'
+      - name: R294 job-level CI mapping and duplicate-step custody (23 tests; normal and -OO)
+        run: |
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_ci_job_mapping_r294.py'
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_ci_job_mapping_r294.py'
       - name: R227 shared six-app wheel event scope and bounded scrolling (12 methods; normal and -OO)
         run: |
           python -W error -m unittest discover -s products/desktop/tests -p 'test_wheel_access_r227.py'
@@ -853,6 +857,14 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R293 normal CI root custody FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_ci_root_mapping_custody_r293.py'
           if ($LASTEXITCODE -ne 0) { throw "R293 optimized CI root custody FAILED" }
+      - name: R294 Windows job-key custody before packaging (23 tests; normal and -OO)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_ci_job_mapping_r294.py'
+          if ($LASTEXITCODE -ne 0) { throw "R294 normal job-key guard FAILED" }
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_ci_job_mapping_r294.py'
+          if ($LASTEXITCODE -ne 0) { throw "R294 optimized job-key guard FAILED" }
       - name: R271 Windows evidence report double-pin (normal and -OO)
         shell: pwsh
         run: |
