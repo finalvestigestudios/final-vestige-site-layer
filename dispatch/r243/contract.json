@@ -1,0 +1,84 @@
+{
+  "schema": "fv.dispatch.r243.release_and_measurement.v1",
+  "observed_utc": "2026-11-09T23:33:16Z",
+  "status": "REVIEW_ONLY_ALL_SIX_HOLD_UNSENT",
+  "founder_final_campaign_approval": false,
+  "source": {
+    "master_pr": 175,
+    "master_head_sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+    "prior_readiness_pr": 201,
+    "prior_consent_pr": 1806,
+    "canonical_source_drift_pr": 1800,
+    "alternate_editions_adopted": false,
+    "editorial_issues": [
+      1,
+      2,
+      4,
+      6
+    ],
+    "commercial_issues": [
+      3,
+      5
+    ]
+  },
+  "jetpack": {
+    "newsletter_enabled": true,
+    "new_post_default_email": false,
+    "email_format": "full",
+    "sender_name": "Final Vestige Studios",
+    "reply_to": "no-reply",
+    "recipient_count": null,
+    "subscriber_totals": {
+      "total": 3,
+      "confirmed": 3,
+      "unconfirmed_requests": 2,
+      "suppressed": 0
+    },
+    "follower_breakdown": {
+      "wpcom": 3,
+      "email_only": 0
+    },
+    "recent_sends": "5_never_sent_opted_out",
+    "welcome_configured": true,
+    "welcome_delivered_verified": null,
+    "footer_postal_verified": null,
+    "footer_unsubscribe_verified": null
+  },
+  "merchant": {
+    "primary_offer": "Zen12 Premium",
+    "merchant_page": "https://zen12.com/hnp",
+    "named_account_approved": null,
+    "email_permission": null,
+    "earning_url_verified": null,
+    "buyer_guide_live": null,
+    "checkout_terms_verified": null,
+    "paid_sales_verified": null,
+    "secondary_slot": "Hypnosis Live Total Focus",
+    "secondary_slot_active": false
+  },
+  "analytics": {
+    "provider_confirmed_signup_reconciled": false,
+    "qualified_human_sessions_verified": false,
+    "campaign_linkage_verified": false,
+    "paid_order_reporting_verified": false,
+    "net_revenue_per_1000_qualified_sessions": null,
+    "ledger_fixture": "SYNTHETIC_ONLY_NEVER_REAL"
+  },
+  "preview": {
+    "native_editor_preview_verified": false,
+    "received_mime_verified": false,
+    "global_auto_email_was_changed": false,
+    "preview_requires_per_post_email_toggle": "documentation_says_yes",
+    "draft_creation_approved": false,
+    "send_test_approved": false,
+    "publication_approved": false
+  },
+  "source_urls": [
+    "https://wordpress.com/support/newsletter/email-appearance/",
+    "https://wordpress.com/support/newsletter/send-newsletter-emails/",
+    "https://wordpress.com/support/newsletter-settings/",
+    "https://zen12.com/hnp",
+    "https://hypnosislive.com/mental-skills/total-focus",
+    "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business"
+  ]
+}
