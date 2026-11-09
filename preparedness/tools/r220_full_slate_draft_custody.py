@@ -63,6 +63,9 @@ R238_VISIBILITY_BLOB = '694bbb23bcadb16169d783a0352b790f3629e4f6'
 # R239 rejects deceptive HTML non-void '/>' while allowing real SVG shapes.
 R239_SOLIDUS_PATH = 'tools/r239_foreign_solidus_custody_hold.py'
 R239_SOLIDUS_BLOB = '04b5f6e1ea20cf1039e129a155713ddac1033f82'
+# R240 rejects browser-decoded character references in visibility-sensitive HTML attributes.
+R240_ENTITY_ATTR_PATH = 'tools/r240_html_attribute_entity_custody_hold.py'
+R240_ENTITY_ATTR_BLOB = '123c8a7993029d65e6afa8f56aba5c5e18121afd'
 # These are independently observed R219 integration Git blobs, not certified text.
 # Missing entries MUST match the older R200 original exactly.
 INTEGRATED_DIFFS = {
@@ -483,6 +486,22 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
                 or solidus.get('medical_safety_verified') is not False):
             raise ValueError('R239 browser nonvoid solidus/source safety HOLD drift')
         result['browser_solidus_original_custody'] = solidus
+        # Browsers decode character references inside HTML attribute values.
+        # R238's raw hidden-state regex alone misses aria-hidden="tr&#117;e"
+        # and style="display:&#110;one"; never treat the citation as visible.
+        entity_guard = load_frozen_gate(root, R240_ENTITY_ATTR_PATH, R240_ENTITY_ATTR_BLOB,
+                                        'fv_preparedness_r240_attribute_entity_guard',
+                                        ('audit_attribute_entity_custody',))
+        entities = entity_guard.audit_attribute_entity_custody(root, roster, safe_read)
+        if (entities.get('state') != HOLD or entities.get('article_count') != 35
+                or entities.get('citation_count') != 2000
+                or entities.get('human_review_required') is not True
+                or entities.get('release_authorized') is not False
+                or entities.get('independent_qd_pass') is not False
+                or entities.get('source_review_approved') is not False
+                or entities.get('medical_safety_verified') is not False):
+            raise ValueError('R240 encoded HTML attribute/source citation HOLD drift')
+        result['decoded_html_attribute_custody'] = entities
         if verify_exports:
             # Only imports the repository's own build code from its trusted tools path.
             tools_path = root / 'tools'
@@ -572,6 +591,8 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
             raise ValueError('R238 source citation visibility gate mutated during audit')
         if git_blob(safe_read(root, R239_SOLIDUS_PATH)) != R239_SOLIDUS_BLOB:
             raise ValueError('R239 browser solidus gate mutated during audit')
+        if git_blob(safe_read(root, R240_ENTITY_ATTR_PATH)) != R240_ENTITY_ATTR_BLOB:
+            raise ValueError('R240 encoded visibility attribute gate mutated during audit')
         result['reconciliation'] = {'frozen_articles': 35,
                                     'integrated_changes_held_for_review': sum(
                                         x['changed_since_original'] for x in status),
