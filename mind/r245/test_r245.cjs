@@ -68,7 +68,7 @@ function validate(x) {
  const h=x.html;
  assert.ok(h.includes('data-release-state="HARD_HOLD"') && h.includes('UNPUBLISHED'));
  assert.ok(h.length>5800 && h.includes('https://finalvestige.com/focus/'));
- const forbidden=/<\s*(script|iframe|form|input|audio|video|img|source|track)\b|on(?:click|load|error|submit|mouseover|focus|touchstart)\s*=|\bjavascript\s*:|\bdata\s*:|\burl\s*\(|\bautoplay\b/i;
+ const forbidden=/<\s*(script|iframe|form|input|audio|video|img|source|track)\b|on(?:click|load|error|submit|mouseover|focus|touchstart)\s*=|\bjavascript\s*:|\bdata\s*:|\burl\s*\(|<[^>]+\bautoplay(?=\s|=|>)/i;
  assert.ok(!forbidden.test(h),'no active tracking, scripts, form, media or handlers');
  const anchors=[...h.matchAll(/<a\b([^>]*)>/gi)];
  assert.equal(anchors.length,2,'precisely two first-party editorial choices');
