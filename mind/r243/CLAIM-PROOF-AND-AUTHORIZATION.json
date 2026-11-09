@@ -1,0 +1,358 @@
+{
+  "milestone": 243,
+  "checked_on": "2026-11-09",
+  "status": "UNPUBLISHED_SOURCE_ONLY",
+  "inspire3_affiliate_status": "NOT_AUTHENTICATED",
+  "public_descriptions_not_efficacy": true,
+  "merchant_cart_tested": false,
+  "refund_paid_tested": false,
+  "owned_Mind_SKU_authenticated": false,
+  "source_count": 14,
+  "claim_count": 28,
+  "gate_count": 16,
+  "sources": [
+    {
+      "id": "I3",
+      "url": "https://inspire3.com/",
+      "type": "merchant_catalog"
+    },
+    {
+      "id": "Z",
+      "url": "https://zen12.com/hnp",
+      "type": "merchant_offer"
+    },
+    {
+      "id": "F",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "type": "merchant_offer"
+    },
+    {
+      "id": "FF",
+      "url": "https://brainwaveshots.com/faq",
+      "type": "merchant_faq"
+    },
+    {
+      "id": "T",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "type": "merchant_offer"
+    },
+    {
+      "id": "TF",
+      "url": "https://hypnosislive.com/faq",
+      "type": "merchant_faq"
+    },
+    {
+      "id": "D",
+      "url": "https://doi.org/10.3758/BF03208840",
+      "type": "primary_perception"
+    },
+    {
+      "id": "EEG",
+      "url": "https://doi.org/10.1371/journal.pone.0286023",
+      "type": "independent_review"
+    },
+    {
+      "id": "M",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35842538/",
+      "type": "independent_meta"
+    },
+    {
+      "id": "FTC1",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "type": "regulatory"
+    },
+    {
+      "id": "FTC2",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "type": "regulatory"
+    },
+    {
+      "id": "FVC",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "type": "published_fv"
+    },
+    {
+      "id": "FVM",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "type": "published_fv"
+    },
+    {
+      "id": "FVF",
+      "url": "https://finalvestige.com/focus/",
+      "type": "published_fv"
+    }
+  ],
+  "claims": [
+    {
+      "product": "Zen12",
+      "claim": "12 levels and 48 MP3s Premium",
+      "status": "seller_description",
+      "source": "Z"
+    },
+    {
+      "product": "Zen12",
+      "claim": "4 listening choices",
+      "status": "seller_description",
+      "source": "Z"
+    },
+    {
+      "product": "Zen12",
+      "claim": "12-minute recordings",
+      "status": "seller_description",
+      "source": "Z"
+    },
+    {
+      "product": "Zen12",
+      "claim": "one-hour equivalence",
+      "status": "not_independently_substantiated",
+      "source": "Z"
+    },
+    {
+      "product": "Zen12",
+      "claim": "one-year refund promise",
+      "status": "seller_policy_unfulfilled_test",
+      "source": "Z"
+    },
+    {
+      "product": "Zen12",
+      "claim": "Premium $87.99 display on 2026-11-09",
+      "status": "dated_display_not_cart",
+      "source": "Z"
+    },
+    {
+      "product": "Zen12",
+      "claim": "optional free-audio signup linked to merchant newsletter",
+      "status": "merchant_consent_not_tested",
+      "source": "Z"
+    },
+    {
+      "product": "Focus Shot",
+      "claim": "15/30-minute versions and brainwave-only alternatives",
+      "status": "seller_description",
+      "source": "F"
+    },
+    {
+      "product": "Focus Shot",
+      "claim": "no headphones required as seller-described",
+      "status": "seller_description",
+      "source": "F"
+    },
+    {
+      "product": "Focus Shot",
+      "claim": "15-minute focus sustained four hours or longer",
+      "status": "not_independently_substantiated",
+      "source": "F"
+    },
+    {
+      "product": "Focus Shot",
+      "claim": "one-year advertised guarantee",
+      "status": "seller_policy_unfulfilled_test",
+      "source": "F"
+    },
+    {
+      "product": "Focus Shot",
+      "claim": "one refund per six months",
+      "status": "merchant_faq",
+      "source": "FF"
+    },
+    {
+      "product": "Focus Shot",
+      "claim": "for orders over 10 items, downloaded less than half",
+      "status": "merchant_faq",
+      "source": "FF"
+    },
+    {
+      "product": "Focus Shot",
+      "claim": "seller describes isochronic tones, uninspected waveform",
+      "status": "merchant_technique_not_verified",
+      "source": "FF"
+    },
+    {
+      "product": "Focus Shot",
+      "claim": "seller says avoid use with epilepsy or when wakefulness required",
+      "status": "seller_precaution_not_medical_clearance",
+      "source": "FF"
+    },
+    {
+      "product": "Focus Shot",
+      "claim": "$17.99 sale and $22.99 reference price, optional bundle; no contradictory price proven",
+      "status": "dated_display_not_cart",
+      "source": "F"
+    },
+    {
+      "product": "Total Focus",
+      "claim": "33-minute 47 MB narrated session",
+      "status": "seller_description",
+      "source": "T"
+    },
+    {
+      "product": "Total Focus",
+      "claim": "productivity/cognitive enhancement",
+      "status": "not_independently_substantiated",
+      "source": "T"
+    },
+    {
+      "product": "Total Focus",
+      "claim": "14-day refund promise",
+      "status": "merchant_policy_unfulfilled_test",
+      "source": "TF"
+    },
+    {
+      "product": "Total Focus",
+      "claim": "maximum five refunded sessions per year",
+      "status": "merchant_faq",
+      "source": "TF"
+    },
+    {
+      "product": "Total Focus",
+      "claim": "$24.44 single-session display, separate bundle",
+      "status": "dated_display_not_cart",
+      "source": "T"
+    },
+    {
+      "product": "Science",
+      "claim": "2023 EEG review 14 studies: five supportive, eight contradictory, one mixed",
+      "status": "independent_review_only_not_sku",
+      "source": "EEG"
+    },
+    {
+      "product": "Science",
+      "claim": "Ingendoh et al. 2023 journal is PLOS ONE, not Frontiers in Psychiatry",
+      "status": "bibliography_correction",
+      "source": "EEG"
+    },
+    {
+      "product": "Science",
+      "claim": "binaural-beat meta is not product-specific",
+      "status": "extrapolation_not_supported",
+      "source": "M"
+    },
+    {
+      "product": "Ethics",
+      "claim": "affiliate relation clear and near future earning link",
+      "status": "compliance_requirement",
+      "source": "FTC1"
+    },
+    {
+      "product": "Ethics",
+      "claim": "objective benefit claims require adequate evidence",
+      "status": "compliance_requirement",
+      "source": "FTC2"
+    },
+    {
+      "product": "Conversion",
+      "claim": "commercial links disabled pending publisher acceptance",
+      "status": "release_hold",
+      "source": "FTC1"
+    },
+    {
+      "product": "Conversion",
+      "claim": "outbound clicks are not paid sales",
+      "status": "measurement_definition",
+      "source": "FTC1"
+    }
+  ],
+  "gates": [
+    {
+      "id": "named_publisher_acceptance",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "issued_earning_url",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "website_permission",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "organic_social_permission",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "email_permission",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "approved_creatives_rights",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "checkout_amount_confirmed",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "refund_fulfillment_terms_verified",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "paid_commission_terms",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "independent_claim_substantiation_or_removal",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "exact_product_match",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "adjacent_disclosure_browser_checked",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "no_duplicated_jetpack_list",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "creator_asset_id_verified",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "confirmed_order_or_commission_reporting",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "founder_release_authorization",
+      "status": "HARD_HOLD"
+    }
+  ],
+  "commercial": {
+    "enabled": false,
+    "affiliate_url": null,
+    "confirmed_orders": null,
+    "cleared_commissions": null,
+    "qualified_human_sessions": null,
+    "net_revenue_per_1000": "NOT_COMPUTABLE",
+    "revenue_is_not_zero_assumption": true
+  },
+  "qa_corrections": [
+    {
+      "id": "PLOS_JOURNAL",
+      "prior": "mind/r241/THE-FOUR-HOUR-FOCUS-PROMISE-UNPUBLISHED.md line 95 lists Frontiers in Psychiatry",
+      "correct": "Ingendoh et al. (2023) is PLOS ONE, doi:10.1371/journal.pone.0286023",
+      "status": "NEW_CORRECTED_EDITORIAL_DRAFT; INHERITED ORIGINAL UNCHANGED"
+    },
+    {
+      "id": "BWS_FAQ",
+      "correct": "isochronic seller-description; one refund per 6 months; over-ten-items less-than-half downloaded; epilepsy/wakefulness seller cautions",
+      "status": "DOCUMENTED"
+    },
+    {
+      "id": "HYP_FAQ",
+      "correct": "14-day period, at most five refunded sessions/year",
+      "status": "DOCUMENTED"
+    },
+    {
+      "id": "PRICE_WORDING",
+      "correct": "Focus Shot $17.99 sale vs $22.99 reference vs optional bundle, not documented discrepancy; cart unverified",
+      "status": "DOCUMENTED"
+    },
+    {
+      "id": "R242_ACCEPTANCE_PIN",
+      "correct": "Pin R242 acceptance artifact Git blob 338a6dff709ef76c53b8d667bca79235ee4ff576 in new suite",
+      "status": "TEST_REQUIRED"
+    }
+  ]
+}
