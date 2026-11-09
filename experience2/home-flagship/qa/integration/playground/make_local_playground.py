@@ -66,7 +66,7 @@ def blueprint():
             {"step": "defineWpConfigConsts", "consts": {
                 "WP_ENVIRONMENT_TYPE": "local", "FV_EX2_ALLOW_PREVIEW": True,
                 "DISALLOW_FILE_EDIT": True}},
-            {"step": "activatePlugin", "pluginPath": "/wordpress/wp-content/plugins/" + ZIPROOT + "/" + PLUGIN},
+            {"step": "activatePlugin", "pluginPath": ZIPROOT + "/" + PLUGIN},
             {"step": "runPHP", "code": php}
         ]
     }
