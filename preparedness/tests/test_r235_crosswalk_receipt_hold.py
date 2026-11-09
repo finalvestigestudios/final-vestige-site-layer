@@ -58,9 +58,13 @@ class R235Tests(unittest.TestCase):
 
     def test_trailing_slash_alias_preserves_distinct_reading(self):
         self.food[0]['url']='https://example.org/a/'
+        self.food[0]['id']='hist-food-s1'
         self.doc['groups'][0]['variants'][1]['source']['url']='https://example.org/a/'
-        self.doc['unique_source_urls']=3
+        self.doc['groups'][0]['variants'][1]['source']['id']='hist-food-s1'
+        self.doc['groups'][0]['identities'][1]['id']='hist-food-s1'
+        self.doc['unique_source_urls']=4
         self.doc['duplicate_url_groups']=0
+        self.doc['duplicate_id_groups']=0
         self.write()
         r=self.check()
         self.assertEqual(r['shared_url_groups'],1)
