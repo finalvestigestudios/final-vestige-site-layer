@@ -54,6 +54,9 @@ R235_DOCKET_BLOB = 'cb5a45a6373d531a639fdce43ae29fc43aded171'
 # R236 distinguishes PRESENT author source-use explanations from three HELD claims.
 R236_PARITY_PATH = 'tools/r236_citation_source_parity_hold.py'
 R236_PARITY_BLOB = '78936188bcb636d638346348d51c5f44daf8e5e2'
+# R237 binds every citation occurrence to a deterministic review-only claim context.
+R237_CLAIM_DOCKET_PATH = 'tools/r237_citation_claim_context_hold.py'
+R237_CLAIM_DOCKET_BLOB = '30379a441948ed264871a4b2280a154b5a5167e0'
 # These are independently observed R219 integration Git blobs, not certified text.
 # Missing entries MUST match the older R200 original exactly.
 INTEGRATED_DIFFS = {
@@ -425,6 +428,23 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
                 or parity.get('medical_safety_verified') is not False):
             raise ValueError('R236 source-use parity or editorial review HOLD changed')
         result['citation_source_use_parity'] = parity
+        # Every source citation receives its own anchored reading-context receipt.
+        # These snippets are review leads, NOT claim-support or safety approval.
+        claim_guard = load_frozen_gate(root, R237_CLAIM_DOCKET_PATH, R237_CLAIM_DOCKET_BLOB,
+                                       'fv_preparedness_r237_claim_context_gate',
+                                       ('audit_claim_contexts',))
+        claims = claim_guard.audit_claim_contexts(root, roster, safe_read)
+        if (claims.get('state') != HOLD or claims.get('article_count') != 35
+                or claims.get('citation_count') != 2000
+                or claims.get('original_hold_occurrences') != 3
+                or claims.get('human_review_required') is not True
+                or claims.get('release_authorized') is not False
+                or claims.get('independent_qd_pass') is not False
+                or claims.get('source_review_approved') is not False
+                or claims.get('medical_safety_verified') is not False
+                or claims.get('claim_evidence_adjudicated') is not False):
+            raise ValueError('R237 per-occurrence claim/source review HOLD changed')
+        result['claim_context_review_docket'] = claims
         if verify_exports:
             # Only imports the repository's own build code from its trusted tools path.
             tools_path = root / 'tools'
