@@ -175,3 +175,21 @@
   .fv-hf__mobile-links{left:0;right:auto;top:calc(100% + 68px);width:min(260px,calc(100vw - 24px))}
   .fv-hf__mast-cta{min-width:0;width:100%;padding:12px 9px;white-space:normal;overflow-wrap:anywhere}
 }
+
+/* Exact-source first-screen admission repair: optional art-direction review controls
+   must not precede the keyboard bypasses or fill the mobile opening viewport.
+   This compact native details/summary disclosure is for reviewers only; source
+   content, the three directions, and Focus links are unchanged. */
+.fv-hf .fv-hf__studio-controls{display:block;position:relative;flex:0 0 auto;margin-left:auto}
+.fv-hf .fv-hf__studio-controls>summary{list-style:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:8px 12px;border:1px solid #716044;color:#eee4d2;background:#1a201e;font:700 11px/1.2 var(--hf-sans);letter-spacing:0;cursor:pointer}
+.fv-hf .fv-hf__studio-controls>summary::-webkit-details-marker{display:none}
+.fv-hf .fv-hf__studio-controls[open]>summary{color:#f6d99d;border-color:#c7a66c}
+.fv-hf .fv-hf__studio-options{display:none;position:absolute;top:calc(100% + 7px);right:0;z-index:100;width:min(320px,calc(100vw - 24px));padding:10px;background:#131d1b;border:1px solid #8b7754;box-shadow:0 18px 40px rgba(0,0,0,.55)}
+.fv-hf .fv-hf__studio-controls[open] .fv-hf__studio-options{display:flex;flex-direction:column;gap:8px}
+.fv-hf .fv-hf__studio-options>button{min-height:44px;text-align:left;font-size:11px;color:#f2e8d7}
+.fv-hf .fv-hf__studio-options>button[aria-pressed="true"]{background:#c7a66c;color:#11150f;border-color:#c7a66c}
+@media(max-width:600px){.fv-hf .fv-hf__studio{flex-wrap:wrap;gap:6px 10px}.fv-hf .fv-hf__studio-controls{width:auto;margin-left:auto}.fv-hf .fv-hf__studio-controls>summary{min-height:44px;padding:8px 10px}.fv-hf .fv-hf__studio-options{right:0;width:min(290px,calc(100vw - 36px))}}
+@media(prefers-reduced-motion:reduce){.fv-hf .fv-hf__studio-options{transition:none}}
+/* Fix stylesheet-order conflict with chronicle.css: its later 920px nav rule
+   re-exposes desktop links underneath the new native mobile menu. */
+@media(max-width:920px){.fv-hf .fv-hf__nav{display:none}}
