@@ -52,3 +52,23 @@ test('fail closed: injected guest row status',()=>{const a=JSON.parse(JSON.strin
 test('fail closed: injected origin wrapper status',()=>{const a=JSON.parse(JSON.stringify(base));(a=>a.rows[2].wrapper.origin_status=404)(a);assert.ok(validate(a).length>0,'injected origin wrapper status');});
 test('fail closed: null row structured hold',()=>{const a=JSON.parse(JSON.stringify(base));(a=>a.rows[2]=null)(a);assert.ok(validate(a).length>0,'null row structured hold');});
 test('fail closed: array typed slot structured hold',()=>{const a=JSON.parse(JSON.stringify(base));(a=>a.rows[2].slot=['287:5'])(a);assert.ok(validate(a).length>0,'array typed slot structured hold');});
+
+// 15 strict trust-boundary guards; no production writes.
+const strictCases=[
+["root production published",a=>{a.production_published=true}],
+["root repaired images",a=>{a.production_repairs=6}],
+["root browser confirmed",a=>{a.visitor_browser_status='confirmed'}],
+["counts fabricated browser",a=>{a.counts.visitor_browser_confirmed_broken=42}],
+["counts fabricated transfer",a=>{a.counts.actual_wire_saved=0.76}],
+["release WP approval",a=>{a.release.allow_wp_publication=true}],
+["release caching approval",a=>{a.release.rights_cleared_for_cache=true}],
+["release transfer approval",a=>{a.release.actual_savings=0.76}],
+["source override",a=>{a.frozen_git_source.verified_live=true}],
+["source SHA substitution",a=>{a.frozen_git_source.blob_sha='a'.repeat(40)}],
+["method contradiction",a=>{a.method+='; confirmed 42 browser failures in Chrome'}],
+["method partial claim",a=>{a.method='These are neither origin nor guest browser HTTP'}],
+["missing root method",a=>{delete a.method}],
+["missing counts",a=>{delete a.counts.wrapper_nonrender}],
+["missing release",a=>{delete a.release.cache_writes}]
+];
+for(const [name,mutate] of strictCases)test('fail closed: '+name,()=>{const x=JSON.parse(JSON.stringify(base));mutate(x);assert.ok(validate(x).length>0,name);});
