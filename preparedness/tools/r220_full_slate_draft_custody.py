@@ -75,6 +75,10 @@ R243_ACTIVE_SOURCE_BLOB = 'fd44288b0009811f1812ede1d618f2290308ed7e'
 # witness docket. Observed mismatches remain HUMAN REVIEW REQUIRED, not PASS.
 R246_FAMILY_CARD_PATH = 'tools/r246_family_card_claim_custody_hold.py'
 R246_FAMILY_CARD_BLOB = '7c27ad9e9c6d5d0dd5917e57733285db48973812'
+# R247 preserves observed JavaScript-off form/blank fallback contradiction.
+# Parser checks source witnesses; DOM behavior and privacy remain unverified.
+R247_NOJS_CARD_PATH = 'tools/r247_nojs_card_semantics_custody_hold.py'
+R247_NOJS_CARD_BLOB = '60e073a5b3e6b0d4eaffc65b8010d3b2af7454b9'
 # These are independently observed R219 integration Git blobs, not certified text.
 # Missing entries MUST match the older R200 original exactly.
 INTEGRATED_DIFFS = {
@@ -549,6 +553,23 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
                 or family_claims.get('merchant_approved') is not False):
             raise ValueError('R246 Article 15 / Tool 104 source-to-claim review HOLD changed')
         result['family_card_claim_review_docket'] = family_claims
+        # Independent Article 15 / Tool 104 JS-off source-to-interface claim check.
+        # Its fixed no-JS/print witnesses are unresolved editorial work, not QA PASS.
+        nojs_guard = load_frozen_gate(root, R247_NOJS_CARD_PATH, R247_NOJS_CARD_BLOB,
+                                      'fv_preparedness_r247_nojs_card_guard', ('audit',))
+        nojs = nojs_guard.audit(root, safe_read)
+        if (nojs.get('state') != HOLD or nojs.get('source_count') != 4
+                or nojs.get('nojs_block_count') != 3 or nojs.get('blank_fallback_field_count') != 13
+                or nojs.get('held_witness_count') != 5
+                or nojs.get('nojs_copy_conflicts_with_hidden_form') is not True
+                or nojs.get('minimal_identifier_disclosure_requires_review') is not True
+                or nojs.get('human_review_required') is not True
+                or any(nojs.get(k) is not False for k in (
+                    'nojs_browser_print_verified', 'privacy_certified', 'claims_adjudicated',
+                    'source_review_approved', 'independent_qd_pass', 'release_authorized',
+                    'merchant_approved'))):
+            raise ValueError('R247 no-JS family card source-to-claim HOLD drift')
+        result['nojs_family_card_claim_review_docket'] = nojs
         if verify_exports:
             # Only imports the repository's own build code from its trusted tools path.
             tools_path = root / 'tools'
@@ -644,6 +665,8 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
             raise ValueError('R243 authored active-markup/source guard mutated during audit')
         if git_blob(safe_read(root, R246_FAMILY_CARD_PATH)) != R246_FAMILY_CARD_BLOB:
             raise ValueError('R246 Article 15 / Tool 104 source-claim guard mutated during audit')
+        if git_blob(safe_read(root, R247_NOJS_CARD_PATH)) != R247_NOJS_CARD_BLOB:
+            raise ValueError('R247 no-JS card source-to-claim guard mutated during audit')
         result['reconciliation'] = {'frozen_articles': 35,
                                     'integrated_changes_held_for_review': sum(
                                         x['changed_since_original'] for x in status),
