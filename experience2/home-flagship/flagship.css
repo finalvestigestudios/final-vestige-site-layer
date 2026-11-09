@@ -163,3 +163,15 @@
   /* The open menu must never cover the high-intent Focus action at small widths. */
   .fv-hf__mobile-links{top:calc(100% + 68px)}
 }
+
+/* EX2 review: preserve the direct Focus action's tappable height across
+   tablet widths, and prevent clipping at extreme browser zoom/reflow. */
+.fv-hf__mast-cta{display:inline-flex;align-items:center;justify-content:center;min-height:44px}
+@media(max-width:280px){
+  .fv-hf__masthead{padding-inline:12px;gap:8px}
+  .fv-hf__brand{white-space:normal;min-width:0;max-width:100%;overflow-wrap:anywhere}
+  .fv-hf__mobile-menu{flex:1 0 100%;margin-left:0;min-width:0}
+  .fv-hf__mobile-menu>summary{width:100%}
+  .fv-hf__mobile-links{left:0;right:auto;top:calc(100% + 68px);width:min(260px,calc(100vw - 24px))}
+  .fv-hf__mast-cta{min-width:0;width:100%;padding:12px 9px;white-space:normal;overflow-wrap:anywhere}
+}
