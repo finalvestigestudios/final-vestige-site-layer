@@ -83,6 +83,12 @@ R247_NOJS_CARD_BLOB = '60e073a5b3e6b0d4eaffc65b8010d3b2af7454b9'
 # and storage/no-JS copy, without changing the held source or declaring privacy.
 R248_FIELD_CROSSWALK_PATH = 'tools/r248_family_card_field_crosswalk_hold.py'
 R248_FIELD_CROSSWALK_BLOB = 'cd53368378bf89d365aba3d2175af78a0db08845'
+# R249 separately authenticates an UNAPPROVED plain-language preview:
+# no scripts, merchant links, forms, or misleading minimal-card claims.
+R249_READER_COPY_PATH = 'tools/r249_reader_disclosure_preview_hold.py'
+R249_READER_COPY_BLOB = '7952b897d26e2496b371d9f4fab517cef1c7011d'
+R249_UNPUBLISHED_PREVIEW_PATH = 'audits/r249_family_card_reader_disclosure_draft.html'
+R249_UNPUBLISHED_PREVIEW_BLOB = 'ce5c363786deb0296f78598818af1fd7abefae65'
 # These are independently observed R219 integration Git blobs, not certified text.
 # Missing entries MUST match the older R200 original exactly.
 INTEGRATED_DIFFS = {
@@ -596,6 +602,25 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
                     'merchant_approved', 'release_authorized'))):
             raise ValueError('R248 family-card field-disclosure HOLD drift')
         result['family_card_field_disclosure_review_matrix'] = field_matrix
+        # An editorial option is NOT a source correction or approval. Authenticate
+        # its exact preview bytes, then separately inspect its visible copy.
+        if git_blob(safe_read(root, R249_UNPUBLISHED_PREVIEW_PATH)) != R249_UNPUBLISHED_PREVIEW_BLOB:
+            raise ValueError('R249 unpublished reader-preview identity changed')
+        preview_guard = load_frozen_gate(root, R249_READER_COPY_PATH,
+                                        R249_READER_COPY_BLOB,
+                                        'fv_preparedness_r249_reader_copy', ('audit',))
+        preview = preview_guard.audit(root, safe_read)
+        if (preview.get('state') != HOLD or preview.get('printed_full_fields') != 13
+                or preview.get('printed_shorter_fields') != 6
+                or preview.get('excluded_shorter_fields') != 7
+                or preview.get('visible_free_destinations') != ['/preparedness/']
+                or preview.get('human_review_required') is not True
+                or any(preview.get(k) is not False for k in (
+                    'source_and_medical_safety_approved', 'browser_print_verified',
+                    'privacy_certified', 'independent_qd_pass',
+                    'commerce_approved', 'release_authorized'))):
+            raise ValueError('R249 reader-preview citation/commerce HARD HOLD drift')
+        result['unapproved_reader_copy_preview'] = preview
         if verify_exports:
             # Only imports the repository's own build code from its trusted tools path.
             tools_path = root / 'tools'
@@ -695,6 +720,10 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
             raise ValueError('R247 no-JS card source-to-claim guard mutated during audit')
         if git_blob(safe_read(root, R248_FIELD_CROSSWALK_PATH)) != R248_FIELD_CROSSWALK_BLOB:
             raise ValueError('R248 family-card field crosswalk mutated during audit')
+        if git_blob(safe_read(root, R249_READER_COPY_PATH)) != R249_READER_COPY_BLOB:
+            raise ValueError('R249 reader-preview guard changed during audit')
+        if git_blob(safe_read(root, R249_UNPUBLISHED_PREVIEW_PATH)) != R249_UNPUBLISHED_PREVIEW_BLOB:
+            raise ValueError('R249 reader-preview HTML changed during audit')
         result['reconciliation'] = {'frozen_articles': 35,
                                     'integrated_changes_held_for_review': sum(
                                         x['changed_since_original'] for x in status),
