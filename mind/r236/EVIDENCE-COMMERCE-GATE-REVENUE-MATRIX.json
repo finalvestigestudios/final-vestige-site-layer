@@ -1,0 +1,484 @@
+{
+  "version": "R236",
+  "date": "2026-11-08",
+  "scope": "mind_attentional_blink_zen12_presell_only",
+  "state": "SOURCE_DRAFT_NO_CMS_NO_AFFILIATE_RELEASE",
+  "sources": [
+    {
+      "id": "S01",
+      "type": "primary_research",
+      "url": "https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.0050138",
+      "limit": "Slagter 2007 full text: 17 retreat/23 novice; timing; selective samples; nonrandom group selection"
+    },
+    {
+      "id": "S02",
+      "type": "peer_reviewed_abstract",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17469971/",
+      "limit": "Vachon et al 2007 task-set and lag-1 sparing"
+    },
+    {
+      "id": "S03",
+      "type": "peer_reviewed_abstract",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/16341546/",
+      "limit": "Olivers et al 2007 role of targets/distractors"
+    },
+    {
+      "id": "S04",
+      "type": "systematic_review",
+      "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0286023",
+      "limit": "Ingendoh 2023 14 EEG binaural studies; mixed/contradictory"
+    },
+    {
+      "id": "S05",
+      "type": "seller_catalog",
+      "url": "https://inspire3.com/",
+      "limit": "Inspire3 product categories, not independent proof"
+    },
+    {
+      "id": "S06",
+      "type": "seller_exact_offer",
+      "url": "https://zen12.com/hnp",
+      "limit": "Zen12 Premium 12 levels/48 MP3/four styles/one-year refund advertised; email opt-in; displayed prices not confirmed checkout"
+    },
+    {
+      "id": "S07",
+      "type": "seller_product_explanation",
+      "url": "https://zen12.com/about",
+      "limit": "Seller's stronger efficacy and equivalence assertions; not adoptable as fact"
+    },
+    {
+      "id": "S08",
+      "type": "ftc_endorsements",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "limit": "Clear conspicuous adjacent disclosure near earned link; no fake use experience"
+    },
+    {
+      "id": "S09",
+      "type": "ftc_health",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "limit": "Competent and reliable substantiation for health-related efficacy claims"
+    },
+    {
+      "id": "S10",
+      "type": "governance",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "limit": "Mind boundaries; no CMS publishing or commercial release without approval"
+    },
+    {
+      "id": "S11",
+      "type": "governance",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "limit": "Net revenue / qualified sessions key business outcome"
+    },
+    {
+      "id": "S12",
+      "type": "site_live_unverified_tool_fetch",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "limit": "Documented published flicker/door-swap investigation; current public fetch unavailable"
+    },
+    {
+      "id": "S13",
+      "type": "site_live_unverified_tool_fetch",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "limit": "Documented published Mesmerism source trail; current public fetch unavailable"
+    },
+    {
+      "id": "S14",
+      "type": "site_live_unverified_tool_fetch",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "limit": "Documented Puységur historical archive; current public fetch unavailable"
+    },
+    {
+      "id": "S15",
+      "type": "site_live_unverified_tool_fetch",
+      "url": "https://finalvestige.com/focus/",
+      "limit": "Existing optional Focus Fieldbook single-list resource; current public fetch unavailable"
+    },
+    {
+      "id": "S16",
+      "type": "independent_prev_work",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/1700",
+      "limit": "R235 source-only Zen12 buyer/consent guide + inherited A/B; draft and unmerged"
+    },
+    {
+      "id": "S17",
+      "type": "internal_owner",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/174",
+      "limit": "Dispatch separate editorial/issue owner"
+    },
+    {
+      "id": "S18",
+      "type": "internal_owner",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/150",
+      "limit": "Homepage ownership; no changes"
+    },
+    {
+      "id": "S19",
+      "type": "partner_public_only",
+      "url": "https://affiliates.inspire3.com/",
+      "limit": "Public portal does not authenticate FV-specific permissions"
+    }
+  ],
+  "claims": [
+    {
+      "id": "AB01",
+      "claim": "First and second digit separated 336 ms or 672 ms in Slagter task",
+      "classification": "INDEPENDENT_SUPPORTED",
+      "sources": [
+        "S01"
+      ],
+      "decision": "Use as study method only"
+    },
+    {
+      "id": "AB02",
+      "claim": "17 practitioner retreat participants trained 10-12 hours/day for three months",
+      "classification": "INDEPENDENT_SUPPORTED",
+      "sources": [
+        "S01"
+      ],
+      "decision": "Do not describe as 12-minute recording"
+    },
+    {
+      "id": "AB03",
+      "claim": "23 comparison novices had one-hour class and 20 minutes daily for one week before testing",
+      "classification": "INDEPENDENT_SUPPORTED",
+      "sources": [
+        "S01"
+      ],
+      "decision": "Incomparable intensity; no randomized audio-product trial"
+    },
+    {
+      "id": "AB04",
+      "claim": "All 17 practitioners vs 16/23 novices improved short-interval T2 report on retest",
+      "classification": "INDEPENDENT_SUPPORTED",
+      "sources": [
+        "S01"
+      ],
+      "decision": "Do not generalize to commercial buyers"
+    },
+    {
+      "id": "AB05",
+      "claim": "Group by interval by session behavioral interaction F(1,38)=4.5 p=.040",
+      "classification": "INDEPENDENT_SUPPORTED",
+      "sources": [
+        "S01"
+      ],
+      "decision": "Specific task and analytic comparison"
+    },
+    {
+      "id": "AB06",
+      "claim": "Retreat group had self-selection and prior meditation experience",
+      "classification": "INDEPENDENT_SUPPORTED",
+      "sources": [
+        "S01"
+      ],
+      "decision": "Selection bias; limits causality"
+    },
+    {
+      "id": "AB07",
+      "claim": "Smaller P3b to first target implies Zen12 achieves clinical improvement",
+      "classification": "UNSUPPORTED_CONFLATION",
+      "sources": [
+        "S01",
+        "S06"
+      ],
+      "decision": "Never use in sales pitch"
+    },
+    {
+      "id": "AB08",
+      "claim": "Lag-1 sparing and distractor manipulations complicate fixed bottleneck theory",
+      "classification": "INDEPENDENT_SUPPORTED",
+      "sources": [
+        "S02",
+        "S03"
+      ],
+      "decision": "Lab findings not life coaching claims"
+    },
+    {
+      "id": "AB09",
+      "claim": "Training in three-month retreat equals daily 12-minute MP3 program",
+      "classification": "UNSUPPORTED_EQUIVALENCE",
+      "sources": [
+        "S01",
+        "S06"
+      ],
+      "decision": "Prohibit"
+    },
+    {
+      "id": "Z01",
+      "claim": "Inspire3 lists Zen12, Brainwave Shots and Hypnosis Live",
+      "classification": "SELLER_DESCRIPTION",
+      "sources": [
+        "S05"
+      ],
+      "decision": "No approval inferred"
+    },
+    {
+      "id": "Z02",
+      "claim": "Exact Zen12 Premium page advertises 12 levels, 48 MP3s and four styles",
+      "classification": "SELLER_DESCRIPTION",
+      "sources": [
+        "S06"
+      ],
+      "decision": "Re-check at release checkout"
+    },
+    {
+      "id": "Z03",
+      "claim": "Zen12 Premium seller advertises one-year refund guarantee",
+      "classification": "SELLER_POLICY_NOT_FULFILLMENT",
+      "sources": [
+        "S06"
+      ],
+      "decision": "No tested refund or order terms"
+    },
+    {
+      "id": "Z04",
+      "claim": "Zen12 12 minutes produce same benefit as 60 minutes",
+      "classification": "UNSUPPORTED_PRODUCT_EFFICACY",
+      "sources": [
+        "S06",
+        "S07",
+        "S01"
+      ],
+      "decision": "Exclude benefit promise"
+    },
+    {
+      "id": "Z05",
+      "claim": "Zen12 reliably improves stress, anxiety, creativity or productivity",
+      "classification": "UNSUPPORTED_PRODUCT_EFFICACY",
+      "sources": [
+        "S06",
+        "S07",
+        "S04"
+      ],
+      "decision": "Exclude medical and psychological claims"
+    },
+    {
+      "id": "Z06",
+      "claim": "2023 systematic review found five supporting, eight contrary and one mixed EEG entrainment studies",
+      "classification": "INDEPENDENT_SUPPORTED",
+      "sources": [
+        "S04"
+      ],
+      "decision": "EEG not product benefit"
+    },
+    {
+      "id": "Z07",
+      "claim": "Merchant free-audio flow mentions newsletter and optional skip",
+      "classification": "VISIBLE_SELLER_COPY_ONLY",
+      "sources": [
+        "S06"
+      ],
+      "decision": "Not Jetpack subscriber; browser/consent not tested"
+    },
+    {
+      "id": "Z08",
+      "claim": "Displayed public promotional price is final buyer price",
+      "classification": "NOT_AUTHENTICATED",
+      "sources": [
+        "S06"
+      ],
+      "decision": "No advertised price until checkout evidence"
+    },
+    {
+      "id": "C01",
+      "claim": "Final Vestige's named publisher affiliate eligibility and earning URL established",
+      "classification": "NOT_AUTHENTICATED",
+      "sources": [
+        "S10",
+        "S19"
+      ],
+      "decision": "Do not activate"
+    },
+    {
+      "id": "C02",
+      "claim": "FV-owned Payhip Mind SKU rights, checkout, fulfillment, returns and settlement established",
+      "classification": "NOT_AUTHENTICATED",
+      "sources": [
+        "S11"
+      ],
+      "decision": "Do not claim owned product eligible"
+    },
+    {
+      "id": "C03",
+      "claim": "Outbound affiliate click is a settled paid commission",
+      "classification": "FALSE_EQUIVALENCE",
+      "sources": [
+        "S11"
+      ],
+      "decision": "Events must be distinct"
+    },
+    {
+      "id": "C04",
+      "claim": "Marketing emails can use merchant affiliate URLs before permission",
+      "classification": "NOT_AUTHORIZED",
+      "sources": [
+        "S08",
+        "S17"
+      ],
+      "decision": "Hold email rights independently"
+    },
+    {
+      "id": "C05",
+      "claim": "Adjacent affiliate disclosure and truly disabled link required",
+      "classification": "RELEASE_REQUIREMENT",
+      "sources": [
+        "S08",
+        "S10"
+      ],
+      "decision": "No live earning links now"
+    },
+    {
+      "id": "C06",
+      "claim": "Jetpack visible success UI establishes provider-confirmed lead",
+      "classification": "FALSE_EQUIVALENCE",
+      "sources": [
+        "S11",
+        "S15"
+      ],
+      "decision": "Provider authoritative confirmation only"
+    },
+    {
+      "id": "C07",
+      "claim": "Prospective A/B test comparing A copy vs A copy + optional video has paid-conversion evidence",
+      "classification": "NOT_TESTED_LIVE",
+      "sources": [
+        "S16",
+        "S11"
+      ],
+      "decision": "Pre-register cohort before approval"
+    }
+  ],
+  "gates": [
+    {
+      "id": "publisher_named_approval",
+      "status": "HARD_HOLD",
+      "proof": "NOT_AUTHENTICATED",
+      "owner": "FOUNDER_AND_MIND"
+    },
+    {
+      "id": "publisher_active_status",
+      "status": "HARD_HOLD",
+      "proof": "NOT_AUTHENTICATED",
+      "owner": "FOUNDER_AND_MIND"
+    },
+    {
+      "id": "specific_zen12_promotion_permission",
+      "status": "HARD_HOLD",
+      "proof": "NOT_AUTHENTICATED",
+      "owner": "FOUNDER_AND_MIND"
+    },
+    {
+      "id": "website_channel_permission",
+      "status": "HARD_HOLD",
+      "proof": "NOT_AUTHENTICATED",
+      "owner": "FOUNDER_AND_MIND"
+    },
+    {
+      "id": "social_channel_permission",
+      "status": "HARD_HOLD",
+      "proof": "NOT_AUTHENTICATED",
+      "owner": "FOUNDER_AND_MIND"
+    },
+    {
+      "id": "email_channel_permission",
+      "status": "HARD_HOLD",
+      "proof": "NOT_AUTHENTICATED",
+      "owner": "FOUNDER_AND_MIND"
+    },
+    {
+      "id": "issued_earning_url",
+      "status": "HARD_HOLD",
+      "proof": "NOT_AUTHENTICATED",
+      "owner": "FOUNDER_AND_MIND"
+    },
+    {
+      "id": "link_destination_review",
+      "status": "HARD_HOLD",
+      "proof": "NOT_AUTHENTICATED",
+      "owner": "FOUNDER_AND_MIND"
+    },
+    {
+      "id": "settlement_terms",
+      "status": "HARD_HOLD",
+      "proof": "NOT_AUTHENTICATED",
+      "owner": "FOUNDER_AND_MIND"
+    },
+    {
+      "id": "payment_and_tax_eligibility",
+      "status": "HARD_HOLD",
+      "proof": "NOT_AUTHENTICATED",
+      "owner": "FOUNDER_AND_MIND"
+    },
+    {
+      "id": "seller_checkout_amount",
+      "status": "HARD_HOLD",
+      "proof": "NOT_AUTHENTICATED",
+      "owner": "COMMERCE_AND_QA"
+    },
+    {
+      "id": "refund_term_checkout_consistency",
+      "status": "HARD_HOLD",
+      "proof": "NOT_AUTHENTICATED",
+      "owner": "COMMERCE_AND_QA"
+    },
+    {
+      "id": "consumer_fulfillment",
+      "status": "HARD_HOLD",
+      "proof": "NOT_AUTHENTICATED",
+      "owner": "COMMERCE_AND_QA"
+    },
+    {
+      "id": "product_claims_approved",
+      "status": "HARD_HOLD",
+      "proof": "NOT_AUTHENTICATED",
+      "owner": "COMMERCE_AND_QA"
+    },
+    {
+      "id": "founder_commercial_release_approval",
+      "status": "HARD_HOLD",
+      "proof": "NOT_AUTHENTICATED",
+      "owner": "FOUNDER"
+    },
+    {
+      "id": "independent_revenue_reconciliation",
+      "status": "HARD_HOLD",
+      "proof": "NOT_AUTHENTICATED",
+      "owner": "FOUNDER_AND_MIND"
+    }
+  ],
+  "experiment": {
+    "baseline": "R234 inherited A text-only purchase guide",
+    "challenger": "R234 inherited B same buyer text + optional 42s caption/transcript storyboard",
+    "state": "DRAFT_NOT_LIVE",
+    "target": "verified paid commission, not click-through",
+    "assignment": "No live randomization; future approved session-level equal allocation with consent-aware anonymous cohort and cache safety",
+    "stopping_rules": "Hold if disclosure, accessibility, claims, partner terms, tracking or mobile performance fail; do not peep at tiny samples",
+    "media": "R234 B remains UNRENDERED"
+  },
+  "tracking": {
+    "script_injection": "PROHIBITED",
+    "qualified_human_sessions": "UNKNOWN",
+    "grok_asset_id": "MISSING_AUTHENTICATION",
+    "utm_campaign": "MISSING_AUTHENTICATION",
+    "event_names": [
+      "campaign_landing",
+      "article_to_focus_click",
+      "provider_confirmed_lead",
+      "affiliate_click",
+      "merchant_confirmed_sale",
+      "refund",
+      "settled_commission"
+    ],
+    "privacy": "No PII, no fingerprints, no query-string email, no third-party pixel; reuse Claude-approved existing first-party events only",
+    "net_revenue_per_1000": "NOT_COMPUTABLE",
+    "revenue_components": "Cleared gross commissions + settled owned sales - confirmed refunds - transaction/processing fees - attributable direct costs, divided by qualified-human sessions * 1000; use seven/thirty-day cohorts"
+  },
+  "source_limitations": [
+    "Public FV pages cannot currently be independently fetched by this web client; prior GitHub inventory and issue records identify routes, not new 200/visual verification",
+    "Named affiliate acceptance not demonstrated by promotional email; public affiliate page is not proof",
+    "Current Payhip Mind SKU/rights/settlement not authenticated",
+    "No native browser, customer checkout or actual product-use test",
+    "Unrendered optional video is a storyboard, not deployed media"
+  ]
+}
