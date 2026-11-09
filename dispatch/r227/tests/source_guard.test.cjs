@@ -9,7 +9,7 @@ const root=path.resolve(__dirname,'..');
 const parent=path.resolve(root,'..','campaign-2026-mind');
 const read=p=>fs.readFileSync(p,'utf8');
 const r=f=>read(path.join(root,f));
-const blob=s=>{const b=Buffer.from(s,'utf8');return crypto.createHash('sha1').update(Buffer.from('blob '+b.length+'\\0')).update(b).digest('hex')};
+const blob=s=>{const b=Buffer.from(s,'utf8');return crypto.createHash('sha1').update(Buffer.from('blob '+b.length+' ')).update(Buffer.from([0])).update(b).digest('hex')};
 const lock=JSON.parse(r('SOURCE_LOCK.json'));
 const c05=r('alternates/05-before-you-press-play-subscriber-safe.md'), c06=r('alternates/06-evidence-log-direct-pdf.md');
 const originals=[
