@@ -60,6 +60,9 @@ R237_CLAIM_DOCKET_BLOB = '30379a441948ed264871a4b2280a154b5a5167e0'
 # R238 catches cite markers buried in quoted HTML attributes and nonreader markup.
 R238_VISIBILITY_PATH = 'tools/r238_source_lexer_hold.py'
 R238_VISIBILITY_BLOB = '694bbb23bcadb16169d783a0352b790f3629e4f6'
+# R239 rejects deceptive HTML non-void '/>' while allowing real SVG shapes.
+R239_SOLIDUS_PATH = 'tools/r239_foreign_solidus_custody_hold.py'
+R239_SOLIDUS_BLOB = '04b5f6e1ea20cf1039e129a155713ddac1033f82'
 # These are independently observed R219 integration Git blobs, not certified text.
 # Missing entries MUST match the older R200 original exactly.
 INTEGRATED_DIFFS = {
@@ -464,6 +467,22 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
                 or visibility.get('medical_safety_verified') is not False):
             raise ValueError('R238 source citation visibility/source safety HOLD drift')
         result['source_citation_visibility_custody'] = visibility
+        # R238 must not mistake <div hidden/> for a closed div; browsers
+        # keep non-void HTML elements open despite the trailing solidus.
+        # Preserve genuine diagram SVG <rect/>/<path/> foreign syntax.
+        solidus_guard = load_frozen_gate(root, R239_SOLIDUS_PATH, R239_SOLIDUS_BLOB,
+                                         'fv_preparedness_r239_nonvoid_html_guard',
+                                         ('audit_solidus_custody',))
+        solidus = solidus_guard.audit_solidus_custody(root, roster, safe_read)
+        if (solidus.get('state') != HOLD or solidus.get('article_count') != 35
+                or solidus.get('citation_count') != 2000
+                or solidus.get('human_review_required') is not True
+                or solidus.get('release_authorized') is not False
+                or solidus.get('independent_qd_pass') is not False
+                or solidus.get('source_review_approved') is not False
+                or solidus.get('medical_safety_verified') is not False):
+            raise ValueError('R239 browser nonvoid solidus/source safety HOLD drift')
+        result['browser_solidus_original_custody'] = solidus
         if verify_exports:
             # Only imports the repository's own build code from its trusted tools path.
             tools_path = root / 'tools'
@@ -551,6 +570,8 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
             raise ValueError('R236 citation-parity gate mutated during audit')
         if git_blob(safe_read(root, R238_VISIBILITY_PATH)) != R238_VISIBILITY_BLOB:
             raise ValueError('R238 source citation visibility gate mutated during audit')
+        if git_blob(safe_read(root, R239_SOLIDUS_PATH)) != R239_SOLIDUS_BLOB:
+            raise ValueError('R239 browser solidus gate mutated during audit')
         result['reconciliation'] = {'frozen_articles': 35,
                                     'integrated_changes_held_for_review': sum(
                                         x['changed_since_original'] for x in status),
