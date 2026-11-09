@@ -42,11 +42,21 @@ class StageTests(unittest.TestCase):
         self.assertEqual(b['steps'][0]['consts']['WP_ENVIRONMENT_TYPE'],'local')
         self.assertTrue(b['steps'][0]['consts']['FV_EX2_ALLOW_PREVIEW'])
         self.assertEqual(b['steps'][1]['step'],'activatePlugin')
+        self.assertEqual(b['steps'][1]['pluginPath'], f"{m.ZIPROOT}/{m.PLUGIN}")
         self.assertIn("'post_status'=>'private'",b['steps'][2]['code'])
         self.assertNotIn('finalvestige.com',json.dumps(b))
         self.assertIn('NOT_RUN',(out/'receipt.json').read_text())
         with zipfile.ZipFile(out/'sealed-review.zip') as z:
             self.assertEqual(len(z.namelist()),3)
+    def test_blueprint_uses_documented_plugin_file_path(self):
+        # Playground accepts an absolute plugin DIRECTORY or plugin entry FILE
+        # relative to wp-content/plugins. An absolute PHP file is not allowed.
+        step = m.blueprint()['steps'][1]
+        self.assertEqual(step['step'], 'activatePlugin')
+        self.assertEqual(step['pluginPath'], f'{m.ZIPROOT}/{m.PLUGIN}')
+        self.assertFalse(step['pluginPath'].startswith('/'))
+        self.assertTrue(step['pluginPath'].endswith('.php'))
+
     def test_wrong_head_fails_closed(self):
         with self.assertRaisesRegex(ValueError,'HEAD mismatch'):m.build(self.repo,self.base/'out','0'*40)
     def test_dirty_source_fails_closed(self):
