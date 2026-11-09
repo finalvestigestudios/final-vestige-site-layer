@@ -62,7 +62,7 @@ def classify(record, dom):
         errors.append("NON_IMAGE_CONTENT_TYPE")
     if (record.get("decoded_body_bytes") or 0) <= 0:
         errors.append("EMPTY_RESPONSE_BODY")
-    if record.get("wire_body_bytes") is None or record.get("wire_body_bytes", -1) < 0:
+    if record.get("wire_body_bytes") is None or record.get("wire_body_bytes", -1) <= 0:
         errors.append("WIRE_BYTES_NOT_MEASURED")
     if record.get("request_failed"):
         errors.append("REQUEST_FAILED")
