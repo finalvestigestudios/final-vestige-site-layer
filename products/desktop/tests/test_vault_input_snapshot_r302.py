@@ -116,15 +116,23 @@ class VaultInputSnapshotR302Tests(unittest.TestCase):
                                 "Cannot read journal source")
 
     def test_path_swap_after_descriptor_open_detected(self):
-        real_open = os.open
-        def swap(path, flags):
-            fd = real_open(path, flags)
-            self.path.unlink()
-            self.path.write_bytes(self.payload)
-            return fd
-        with mock.patch.object(snapshot.os, "open", side_effect=swap):
+        # Synthetic metadata swap works on Windows too: a Windows process may
+        # refuse unlinking a file while an open descriptor owns it.
+        from types import SimpleNamespace
+        real_metadata = snapshot._metadata
+        calls = 0
+        def swapped(path, label):
+            nonlocal calls
+            calls += 1
+            info = real_metadata(path, label)
+            if calls == 2:
+                return SimpleNamespace(st_dev=info.st_dev, st_ino=info.st_ino + 1,
+                    st_size=info.st_size, st_mtime_ns=info.st_mtime_ns,
+                    st_ctime_ns=info.st_ctime_ns, st_mode=info.st_mode)
+            return info
+        with mock.patch.object(snapshot, "_metadata", side_effect=swapped):
             self.assert_private(lambda: snapshot.read_vault_input(self.path, 100, "Report"),
-                                "Report changed while opening")
+                                "Report path changed during reading")
 
     def test_file_growth_during_read_detected(self):
         real_read = os.read
