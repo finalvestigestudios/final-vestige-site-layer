@@ -59,7 +59,7 @@ R237_CLAIM_DOCKET_PATH = 'tools/r237_citation_claim_context_hold.py'
 R237_CLAIM_DOCKET_BLOB = '30379a441948ed264871a4b2280a154b5a5167e0'
 # R238 catches cite markers buried in quoted HTML attributes and nonreader markup.
 R238_VISIBILITY_PATH = 'tools/r238_source_lexer_hold.py'
-R238_VISIBILITY_BLOB = '1a0c7bbdf7a51a382ca036da5830ebeaf0195560'
+R238_VISIBILITY_BLOB = '694bbb23bcadb16169d783a0352b790f3629e4f6'
 # These are independently observed R219 integration Git blobs, not certified text.
 # Missing entries MUST match the older R200 original exactly.
 INTEGRATED_DIFFS = {
