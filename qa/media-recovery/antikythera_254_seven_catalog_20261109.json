@@ -1,0 +1,345 @@
+{
+  "schema": "fv-antikythera-source-audit-v1",
+  "run_date_utc": "2026-11-09",
+  "historical_census": "61 posts; 355 image slots; 288 upstream external image slots",
+  "source_fixture": {
+    "path": "qa/media-recovery/parts/05.json",
+    "ref": "qa/media-recovery-reviewed-20261030-1158",
+    "git_blob_sha": "9b16b828342a9ac338f3e65610fd3d8d508355e9"
+  },
+  "counts": {
+    "audited_slots": 7,
+    "distinct_sources": 7,
+    "web_retriever_inaccessible": 7,
+    "guest_verified_broken": 0,
+    "rights_metadata_conflicts": 1,
+    "measured_wire_reduction_percent": null,
+    "source_images_copied": 0
+  },
+  "context_only_museum_url": "https://antikythera-mechanism.namuseum.gr/en/",
+  "context_is_replacement_image": false,
+  "records": [
+    {
+      "slot": "254:0",
+      "post_id": 254,
+      "post_url": "https://finalvestige.com/2026/08/18/the-lump-had-gears/",
+      "stored_original_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Anticythera%20shipwreck.%20Standard%20diving%20dress.jpg?width=1280",
+      "stored_alt": "A sponge diver and crew using early surface-supplied diving equipment during the first Antikythera wreck campaigns.",
+      "fixture_sha": "9b16b828342a9ac338f3e65610fd3d8d508355e9",
+      "candidate": {
+        "catalog_url": "https://commons.wikimedia.org/wiki/File:Anticythera_shipwreck._Standard_diving_dress.jpg",
+        "catalog_authority": "WIKIMEDIA_CURRENT_ORIGINAL_FILE_CATALOG",
+        "catalog_native_px": [
+          1968,
+          1500
+        ],
+        "conditional_max_960_no_upscale": [
+          960,
+          732
+        ],
+        "photographer": "Unknown",
+        "license_observed": "CC-BY-SA-3.0",
+        "scene_temporal_integrity": "1901 dive crew; not an image of the mechanism",
+        "catalog_matched_to_redirect_filename": true,
+        "binary_or_crop_match_verified": false,
+        "item_rights_cleared": false,
+        "alt_caption_approved": false
+      },
+      "retrieval": {
+        "method": "WEB_OPEN_ORIGINAL_SPECIAL_REDIRECT",
+        "outcome": "TOOL_INACCESSIBLE",
+        "tool_wrapper_status": null,
+        "origin_http": null,
+        "guest_http": null,
+        "guest_current_src": null,
+        "guest_mime": null,
+        "guest_decoded_px": null,
+        "guest_transfer_bytes": null,
+        "visitor_broken": null
+      },
+      "release": {
+        "download": false,
+        "cache": false,
+        "wordpress_upload": false,
+        "post_rewrite": false,
+        "homepage_change": false
+      }
+    },
+    {
+      "slot": "254:1",
+      "post_id": 254,
+      "post_url": "https://finalvestige.com/2026/08/18/the-lump-had-gears/",
+      "stored_original_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Antikes%20Wrack%20von%20Antikythera%2003.jpg?width=1280",
+      "stored_alt": "Greek officials, sailors and sponge divers aboard the naval vessel Mykali during recovery of the Antikythera wreck in 1900 to 1901.",
+      "fixture_sha": "9b16b828342a9ac338f3e65610fd3d8d508355e9",
+      "candidate": {
+        "catalog_url": "https://commons.wikimedia.org/wiki/File:Antikes_Wrack_von_Antikythera_03.jpg",
+        "catalog_authority": "WIKIMEDIA_CURRENT_ORIGINAL_FILE_CATALOG",
+        "catalog_native_px": [
+          783,
+          800
+        ],
+        "conditional_max_960_no_upscale": [
+          783,
+          800
+        ],
+        "photographer": "Unknown",
+        "license_observed": "PD-MARK/US-PD-STATUS-NEEDS-REVIEW",
+        "scene_temporal_integrity": "Crew aboard Mykali, winter 1900–1901",
+        "catalog_matched_to_redirect_filename": true,
+        "binary_or_crop_match_verified": false,
+        "item_rights_cleared": false,
+        "alt_caption_approved": false
+      },
+      "retrieval": {
+        "method": "WEB_OPEN_ORIGINAL_SPECIAL_REDIRECT",
+        "outcome": "TOOL_INACCESSIBLE",
+        "tool_wrapper_status": null,
+        "origin_http": null,
+        "guest_http": null,
+        "guest_current_src": null,
+        "guest_mime": null,
+        "guest_decoded_px": null,
+        "guest_transfer_bytes": null,
+        "visitor_broken": null
+      },
+      "release": {
+        "download": false,
+        "cache": false,
+        "wordpress_upload": false,
+        "post_rewrite": false,
+        "homepage_change": false
+      }
+    },
+    {
+      "slot": "254:2",
+      "post_id": 254,
+      "post_url": "https://finalvestige.com/2026/08/18/the-lump-had-gears/",
+      "stored_original_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Mechanism%20of%20Antikythera%2C%20150-100%20BC%2C%20NAMA%2C%20191435.jpg?width=1280",
+      "stored_alt": "Corroded bronze fragment of the Antikythera Mechanism showing surviving gear wheels in the National Archaeological Museum in Athens.",
+      "fixture_sha": "9b16b828342a9ac338f3e65610fd3d8d508355e9",
+      "candidate": {
+        "catalog_url": "https://commons.wikimedia.org/wiki/File:Mechanism_of_Antikythera,_150-100_BC,_NAMA,_191435.jpg",
+        "catalog_authority": "WIKIMEDIA_CURRENT_ORIGINAL_FILE_CATALOG",
+        "catalog_native_px": [
+          5472,
+          3648
+        ],
+        "conditional_max_960_no_upscale": [
+          960,
+          640
+        ],
+        "photographer": "Zde",
+        "license_observed": "CC-BY-SA-4.0",
+        "scene_temporal_integrity": "Modern 2019 museum photograph, not original discovery photo",
+        "catalog_matched_to_redirect_filename": true,
+        "binary_or_crop_match_verified": false,
+        "item_rights_cleared": false,
+        "alt_caption_approved": false
+      },
+      "retrieval": {
+        "method": "WEB_OPEN_ORIGINAL_SPECIAL_REDIRECT",
+        "outcome": "TOOL_INACCESSIBLE",
+        "tool_wrapper_status": null,
+        "origin_http": null,
+        "guest_http": null,
+        "guest_current_src": null,
+        "guest_mime": null,
+        "guest_decoded_px": null,
+        "guest_transfer_bytes": null,
+        "visitor_broken": null
+      },
+      "release": {
+        "download": false,
+        "cache": false,
+        "wordpress_upload": false,
+        "post_rewrite": false,
+        "homepage_change": false
+      }
+    },
+    {
+      "slot": "254:3",
+      "post_id": 254,
+      "post_url": "https://finalvestige.com/2026/08/18/the-lump-had-gears/",
+      "stored_original_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Antikythera%20Fragment%20A%20%28Front%29.webp?width=1280",
+      "stored_alt": "Front of Fragment A of the Antikythera Mechanism, showing corroded bronze and surviving mechanical structure.",
+      "fixture_sha": "9b16b828342a9ac338f3e65610fd3d8d508355e9",
+      "candidate": {
+        "catalog_url": "https://commons.wikimedia.org/wiki/File:Antikythera_Fragment_A_(Front).webp",
+        "catalog_authority": "WIKIMEDIA_CURRENT_ORIGINAL_FILE_CATALOG",
+        "catalog_native_px": [
+          3648,
+          3648
+        ],
+        "conditional_max_960_no_upscale": [
+          960,
+          960
+        ],
+        "photographer": "Logg Tandy",
+        "license_observed": "CC-BY-4.0-PAGE/CC-BY-SA-4.0-EXIF-AND-SDC-CONFLICT",
+        "scene_temporal_integrity": "Modern 2025 fragment photograph; annotated gears require legibility",
+        "catalog_matched_to_redirect_filename": true,
+        "binary_or_crop_match_verified": false,
+        "item_rights_cleared": false,
+        "alt_caption_approved": false
+      },
+      "retrieval": {
+        "method": "WEB_OPEN_ORIGINAL_SPECIAL_REDIRECT",
+        "outcome": "TOOL_INACCESSIBLE",
+        "tool_wrapper_status": null,
+        "origin_http": null,
+        "guest_http": null,
+        "guest_current_src": null,
+        "guest_mime": null,
+        "guest_decoded_px": null,
+        "guest_transfer_bytes": null,
+        "visitor_broken": null
+      },
+      "release": {
+        "download": false,
+        "cache": false,
+        "wordpress_upload": false,
+        "post_rewrite": false,
+        "homepage_change": false
+      }
+    },
+    {
+      "slot": "254:4",
+      "post_id": 254,
+      "post_url": "https://finalvestige.com/2026/08/18/the-lump-had-gears/",
+      "stored_original_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Fragments%20of%20the%20Antikythera%20Mechanism.jpg?width=1280",
+      "stored_alt": "The three principal surviving fragments of the Antikythera Mechanism displayed together.",
+      "fixture_sha": "9b16b828342a9ac338f3e65610fd3d8d508355e9",
+      "candidate": {
+        "catalog_url": "https://commons.wikimedia.org/wiki/File:Fragments_of_the_Antikythera_Mechanism.jpg",
+        "catalog_authority": "WIKIMEDIA_CURRENT_ORIGINAL_FILE_CATALOG",
+        "catalog_native_px": [
+          786,
+          435
+        ],
+        "conditional_max_960_no_upscale": [
+          786,
+          435
+        ],
+        "photographer": "Therese Clutario",
+        "license_observed": "CC-BY-2.0",
+        "scene_temporal_integrity": "2008 image updated with later crop and color adjustment; depicts three fragments",
+        "catalog_matched_to_redirect_filename": true,
+        "binary_or_crop_match_verified": false,
+        "item_rights_cleared": false,
+        "alt_caption_approved": false
+      },
+      "retrieval": {
+        "method": "WEB_OPEN_ORIGINAL_SPECIAL_REDIRECT",
+        "outcome": "TOOL_INACCESSIBLE",
+        "tool_wrapper_status": null,
+        "origin_http": null,
+        "guest_http": null,
+        "guest_current_src": null,
+        "guest_mime": null,
+        "guest_decoded_px": null,
+        "guest_transfer_bytes": null,
+        "visitor_broken": null
+      },
+      "release": {
+        "download": false,
+        "cache": false,
+        "wordpress_upload": false,
+        "post_rewrite": false,
+        "homepage_change": false
+      }
+    },
+    {
+      "slot": "254:5",
+      "post_id": 254,
+      "post_url": "https://finalvestige.com/2026/08/18/the-lump-had-gears/",
+      "stored_original_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Reconstruction%20of%20the%20Antikythera%20mechanism%20%287751351552%29.jpg?width=1280",
+      "stored_alt": "Modern physical reconstruction of the Antikythera Mechanism showing how a complete geared astronomical device may have appeared.",
+      "fixture_sha": "9b16b828342a9ac338f3e65610fd3d8d508355e9",
+      "candidate": {
+        "catalog_url": "https://commons.wikimedia.org/wiki/File:Reconstruction_of_the_Antikythera_mechanism_(7751351552).jpg",
+        "catalog_authority": "WIKIMEDIA_CURRENT_ORIGINAL_FILE_CATALOG",
+        "catalog_native_px": [
+          2736,
+          3648
+        ],
+        "conditional_max_960_no_upscale": [
+          960,
+          1280
+        ],
+        "photographer": "marsupium photography / Magnus Hagdorn",
+        "license_observed": "CC-BY-SA-2.0",
+        "scene_temporal_integrity": "2012 modern reconstruction; never label as an original ancient object",
+        "catalog_matched_to_redirect_filename": true,
+        "binary_or_crop_match_verified": false,
+        "item_rights_cleared": false,
+        "alt_caption_approved": false
+      },
+      "retrieval": {
+        "method": "WEB_OPEN_ORIGINAL_SPECIAL_REDIRECT",
+        "outcome": "TOOL_INACCESSIBLE",
+        "tool_wrapper_status": null,
+        "origin_http": null,
+        "guest_http": null,
+        "guest_current_src": null,
+        "guest_mime": null,
+        "guest_decoded_px": null,
+        "guest_transfer_bytes": null,
+        "visitor_broken": null
+      },
+      "release": {
+        "download": false,
+        "cache": false,
+        "wordpress_upload": false,
+        "post_rewrite": false,
+        "homepage_change": false
+      }
+    },
+    {
+      "slot": "254:6",
+      "post_id": 254,
+      "post_url": "https://finalvestige.com/2026/08/18/the-lump-had-gears/",
+      "stored_original_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Antikes%20Wrack%20von%20Antikythera%2004.jpg?width=1280",
+      "stored_alt": "Historical salvage work associated with the Antikythera shipwreck in the early twentieth century.",
+      "fixture_sha": "9b16b828342a9ac338f3e65610fd3d8d508355e9",
+      "candidate": {
+        "catalog_url": "https://commons.wikimedia.org/wiki/File:Antikes_Wrack_von_Antikythera_04.jpg",
+        "catalog_authority": "WIKIMEDIA_CURRENT_ORIGINAL_FILE_CATALOG",
+        "catalog_native_px": [
+          761,
+          553
+        ],
+        "conditional_max_960_no_upscale": [
+          761,
+          553
+        ],
+        "photographer": "Unknown",
+        "license_observed": "PD-OLD/US-PD-STATUS-NEEDS-REVIEW",
+        "scene_temporal_integrity": "1900–1901 recovery photograph, NOT a modern archaeological dive",
+        "catalog_matched_to_redirect_filename": true,
+        "binary_or_crop_match_verified": false,
+        "item_rights_cleared": false,
+        "alt_caption_approved": false
+      },
+      "retrieval": {
+        "method": "WEB_OPEN_ORIGINAL_SPECIAL_REDIRECT",
+        "outcome": "TOOL_INACCESSIBLE",
+        "tool_wrapper_status": null,
+        "origin_http": null,
+        "guest_http": null,
+        "guest_current_src": null,
+        "guest_mime": null,
+        "guest_decoded_px": null,
+        "guest_transfer_bytes": null,
+        "visitor_broken": null
+      },
+      "release": {
+        "download": false,
+        "cache": false,
+        "wordpress_upload": false,
+        "post_rewrite": false,
+        "homepage_change": false
+      }
+    }
+  ]
+}
