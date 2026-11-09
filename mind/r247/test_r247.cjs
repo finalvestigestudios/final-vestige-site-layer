@@ -38,7 +38,7 @@ function validate(data){
  check(Object.keys(paths).every(k=>typeof data[k]==='string'&&data[k].length>100),'all required inputs');
  const a=data.article;
  check(a.split(/\s+/).length>2300,'article deeply written');
- for(const s of ['Yim and Derbyshire','September 2, 2026','clinical pain','relaxation','Puységur','1784','14 studies','940 people','−0.13','−0.33','not a test of','Seven Day Focus Fieldbook','no need to mock']){
+ for(const s of ['Yim and Derbyshire','September 2, 2026','clinical pain','relaxation','Puységur','1784','fourteen studies','940 people','−0.13','−0.33','It did not measure','Seven Day Focus Fieldbook','no need to mock']){
   check(a.includes(s),'article nuanced evidence '+s);
  }
  check(a.includes('https://pubmed.ncbi.nlm.nih.gov/39263007/') && a.includes('https://pubmed.ncbi.nlm.nih.gov/40649035/') && a.includes('https://pmc.ncbi.nlm.nih.gov/articles/PMC13535766/'),'original citations');
@@ -96,7 +96,7 @@ function mutations(data){
  const edit=(key,find,repl)=>attack(key+' '+find.slice(0,40),d=>{check(d[key].includes(find),'attack target exists: '+find);d[key]=d[key].replace(find,repl)});
  // Actual source and science edits
  for(const [a,b] of [
- ['14 studies','1400 studies'],['940 people','94000 people'],['−0.13','−1.3'],['−0.33','−3.3'],
+ ['fourteen studies','fourteen hundred studies'],['940 people','94000 people'],['−0.13','−1.3'],['−0.33','−3.3'],
  ['clinical pain','dramatically improved focus'],['September 2, 2026','September 2, 2025'],
  ['Puységur','a famous hypnotist'],['Seven Day Focus Fieldbook','Magic Focus Guarantee'],
  ['https://pubmed.ncbi.nlm.nih.gov/39263007/','https://example.com/claim'],
