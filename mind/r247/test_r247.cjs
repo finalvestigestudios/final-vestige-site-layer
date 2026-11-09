@@ -15,10 +15,10 @@ const paths=Object.freeze({
  repairedTest:'mind/r246/test_r246.cjs'
 });
 const pins=Object.freeze({
- article:'8d6a391a61f776b5d3251fbd45cc949fd5cc0e4a',
- html:'294b8bf2e6e00580012846d27fe3fe7208937c64',
- matrix:'f33f8969b053106895aefc0f87be3d4c00f47278',
- plan:'fcc50a9e605bde8c9b1ccb4fcd06f83354e24df9',
+ article:'bfbdda370a31c205f7233e127261940b5ca08c3c',
+ html:'27637485f0ffa0e4391bff71a7b04168c9064ca6',
+ matrix:'c17c2d010a8ae540bf9eb79ac7ef2113a7eab862',
+ plan:'bbe3290c24bee041c00360a415761af754ddd5bf',
  repairedArticle:'fe583b478c41aa3ebe7dddb8a05fdfb5a43ffea8',
  repairedMatrix:'78f1ac986c9ba4e28dd0b4c3e5eb09185b564622',
  repairedTest:'ce094c0210b8a9936835245755880f9222c02699'
@@ -45,7 +45,7 @@ function validate(data){
  check(a.includes('not a clinical')||a.includes('not medical advice'),'clinical caveat');
  const m=JSON.parse(data.matrix);
  check(m.scope==='UNPUBLISHED_SOURCE_ONLY'&&m.commerce_release==='HARD_HOLD','matrix scope');
- check(m.sources.length===16&&m.claims.length===26&&m.gates.length===16,'exact evidence record counts');
+ check(m.sources.length===16&&m.claims.length===26&&m.gates.length===16,'exact evidence record counts');\n check(new Set(m.gates.map(x=>x.id)).size===m.gates.length,'unique commerce gate IDs');\n check(m.claims.find(x=>x.id==='SELLER_POLICY').statement.includes('five refunded sessions per year'),'merchant FAQ refund cap');
  const sources=new Set(m.sources.map(x=>x.id));
  check(sources.size===16 && new Set(m.claims.map(x=>x.id)).size===26,'unique evidence IDs');
  for(const x of m.sources)check(x.url.startsWith('https://')&&x.what.length>20,'actual source url/provenance '+x.id);
