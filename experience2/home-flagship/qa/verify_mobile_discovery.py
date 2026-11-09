@@ -75,6 +75,17 @@ def browser_check(header, css, out=None):
                         link = region.get_by_role("link", name=title)
                         assert link.is_visible() and link.get_attribute("href") == route
                         assert link.bounding_box()["height"] >= 44
+                    # Commercial CTA remains actionable even while the native
+                    # menu is open: fail if the dropdown covers its hit target.
+                    panel_box, cta_box = region.bounding_box(), cta.bounding_box()
+                    overlap = (min(panel_box["x"] + panel_box["width"],
+                                   cta_box["x"] + cta_box["width"]) >
+                               max(panel_box["x"], cta_box["x"]) and
+                               min(panel_box["y"] + panel_box["height"],
+                                   cta_box["y"] + cta_box["height"]) >
+                               max(panel_box["y"], cta_box["y"]))
+                    assert not overlap, ("menu obscures Focus", width, js)
+                    cta.click(trial=True)
                     summary.focus()
                     page.keyboard.press("Enter")
                     assert menu.get_attribute("open") is None
