@@ -1,0 +1,15 @@
+# R241 — Verified postcommit source QA, November 9 2026 13:48 PT
+
+**HOLD_UNSENT.** Master PR #175 `d57ccdba3aee8f065e143e101c2945f4f3d01647`; prior readiness PR #201 @ `ef53e5a17046e3dff5a4a7e3b0f4c8fbce9cd6f6`; downstream R235 PR #1763 `091fa36106afc9d9aa2aa13ed3d522ff3ecec2e7`. No original/older files rewritten.
+
+- Exact original #175 GitHub six issue SHA-1 blobs matched independently: #01 `039b452b5cb7cd6dc2fed6fac4d2dd77fa9d49c8`, #02 `faa207ab7deafd86460d36f8c17fe62d392d0e14`, #03 `aeeef34efea0cc281f69901488e4501fea851245`, #04 `89635bfb9c8d1ff17297a59b6b5b2a176934ca`, #05 `a9dfaa450ba025a7b5113ade8a294d6dbad778dc`, #06 `004d558df6376d2ad6f4f79a4581e8d2c444e355`.
+- Exact R235 contract GitHub blob `8aab8d3e1dfe85a8b3f700bb2a6fb5a77189347b` is not the canonical #175 source ledger: **6/6 issue source SHA mismatches; 4 preheaders; 1 subject (#04 14 versus 17 seconds); 1 CTA (#01)**. This is a provenance conflict, not necessarily erroneous revised copy.
+- Original eight previously authenticated master source files independently reran in native Python 3.13.5 `python -m unittest discover -s original_175_exact/tests -p test_campaign.py -v`: **6/6 passed** (basic structural checks only).
+- After commits, all R241 source and test bytes were fetched back from GitHub and evaluated in isolated JS V8: **46/46 test cases PASS** including 30 per-field mutations and 16 integrity/hold cases; not native Node/CI/WordPress testing. Gate returned `HOLD_SOURCE_DRIFT` and `ready_to_send:false`; even canonical match returns `HOLD_RELEASE_GATES`.
+- Actual committed file Git blobs: `SOURCE_RECORD.json` `879ecd4aef8aa4b95a8ebec2ff59dfb1c366b3dd`; `source_binding_gate.cjs` `5d06db12841f9e9726a7717a80da198f6918d434`; `tests/test_source_binding.cjs` `4cd3788ad3423f1c725a1ddd424c0392b441fdd5`; `RECONCILIATION_AND_CONVERSION_ACTION.md` `cbf6d588c7d3046b26e72f0fcb395b2092dbddd2`; `REVIEW_BOARD.html` `beb95b6a3435c777cea0275b2b045eac686092a6`.
+
+Authenticated Jetpack as of 2026-11-09 21:40Z: newsletter ON, automatic email OFF, full content, 52-page welcome configured, total3/confirmed3/unconfirmed2/suppressed0 **nonadditive**; five recent posts NEVER_SENT_OPTED_OUT, eligible recipients UNKNOWN. Final welcome, real received-email, postal address, unsubscribe and native preheader UNKNOWN. Gmail matching search for FV Inspire3 approval or final welcome returned no matches (not proof of absence).
+
+Exact seller pages reviewed https://zen12.com/hnp ; https://hypnosislive.com/mental-skills/total-focus ; https://hypnosislive.com/faq. Seller benefits are not independently proven product-specific efficacy. FV affiliate acceptance, email rights, issued link, final checkout, approved live guide and verified commissions UNKNOWN. Actual paid sales / 1000 qualified humans **NOT_COMPUTABLE**.
+
+No emails/test emails, WordPress post/draft/write, consent changes, list exports/imports, partner links, scripts, tracker, Grok queue, spending or merges. No source test proves legal clearance or actual inbox rendering. Founder retains release approval.

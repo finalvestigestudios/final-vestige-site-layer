@@ -1,0 +1,22 @@
+"use strict";
+const assert=require("node:assert/strict");
+const {auditSourceBinding,PINNED_MASTER}=require("../source_binding_gate.cjs");
+const evidence=require("../SOURCE_RECORD.json");
+const copy=(x)=>JSON.parse(JSON.stringify(x));
+let passed=0;
+function ok(name,fn){fn();passed++;console.log("PASS",name);}
+ok("exact original campaign SHA",()=>assert.equal(evidence.master.commit,PINNED_MASTER));
+ok("known historical source-drift detected",()=>{const r=auditSourceBinding(evidence);assert.equal(r.state,"HOLD_SOURCE_DRIFT");assert.equal(r.ready_to_send,false);assert.deepEqual(r.counts,{source_sha:6,subject:1,preheader:4,cta:1,kind:0});});
+ok("no approval construed from source metadata",()=>{let x=copy(evidence);x.downstream_r235=copy(x.canonical);assert.equal(auditSourceBinding(x).state,"HOLD_RELEASE_GATES");assert.equal(auditSourceBinding(x).ready_to_send,false);});
+for(let issue=0;issue<6;issue++)for(const field of ["source_sha","subject","preheader","cta","kind"])ok("tamper "+(issue+1)+" "+field,()=>{let x=copy(evidence);x.downstream_r235=copy(x.canonical);x.downstream_r235[issue][field]=field==="source_sha"?"0".repeat(40):"INVALID";const y=auditSourceBinding(x);assert.equal(y.source_bound,false);assert.equal(y.counts[field],1);});
+for(const field of ["founder_final","merchant_named_acceptance","merchant_email_rights","source_alternatives_adopted"])ok("unverified approval "+field,()=>{let x=copy(evidence);x.downstream_r235=copy(x.canonical);x.authorization[field]=true;assert.equal(auditSourceBinding(x).state,"HOLD_EVIDENCE_INTEGRITY");});
+ok("bad master SHA",()=>{let x=copy(evidence);x.master.commit="0".repeat(40);assert.equal(auditSourceBinding(x).state,"HOLD_EVIDENCE_INTEGRITY");});
+ok("extra edition",()=>{let x=copy(evidence);x.canonical.push({...x.canonical[0],number:7});assert.equal(auditSourceBinding(x).state,"HOLD_EVIDENCE_INTEGRITY");});
+ok("duplicate issue ID",()=>{let x=copy(evidence);x.downstream_r235[1].number=1;assert.equal(auditSourceBinding(x).state,"HOLD_EVIDENCE_INTEGRITY");});
+ok("unverified welcome",()=>{let x=copy(evidence);x.wordpress_readonly.received_welcome=true;assert.equal(auditSourceBinding(x).state,"HOLD_EVIDENCE_INTEGRITY");});
+ok("unverified eligible subscribers",()=>{let x=copy(evidence);x.wordpress_readonly.eligible_recipients=3;assert.equal(auditSourceBinding(x).state,"HOLD_EVIDENCE_INTEGRITY");});
+ok("autosend enabled is a fail",()=>{let x=copy(evidence);x.wordpress_readonly.auto_send_new_posts=true;assert.equal(auditSourceBinding(x).state,"HOLD_EVIDENCE_INTEGRITY");});
+ok("unexpected affiliate URL",()=>{let x=copy(evidence);x.downstream_r235[2].merchant_affiliate_url="https://example.com/earn";assert.equal(auditSourceBinding(x).state,"HOLD_EVIDENCE_INTEGRITY");});
+ok("unexpected send flag",()=>{let x=copy(evidence);x.downstream_r235[0].send_authorized=true;assert.equal(auditSourceBinding(x).state,"HOLD_EVIDENCE_INTEGRITY");});
+ok("empty evidence",()=>assert.equal(auditSourceBinding(null).state,"HOLD_BAD_INPUT"));
+console.log("PASS COUNT",passed);

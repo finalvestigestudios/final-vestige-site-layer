@@ -1,0 +1,152 @@
+{
+  "schema": "fv.dispatch.source_binding.v1",
+  "status": "EVIDENCE_ONLY_HOLD_UNSENT",
+  "observed_utc": "2026-11-09T21:40:17Z",
+  "master": {
+    "pr": 175,
+    "commit": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+    "manifest_blob": "86df98ad8a84e583ff5df64ddbf8c0eaa1335b00",
+    "test_blob": "fd7f05e30092a7ec82090993dc5d7d0e23755c8e"
+  },
+  "companion": {
+    "pr": 235,
+    "head": "091fa36106afc9d9aa2aa13ed3d522ff3ecec2e7",
+    "file": "dispatch/r235/contract.json",
+    "blob": "8aab8d3e1dfe85a8b3f700bb2a6fb5a77189347b",
+    "label": "downstream contract (NOT canonical original)"
+  },
+  "canonical": [
+    {
+      "number": 1,
+      "kind": "editorial",
+      "source_sha": "039b452b5cb7cd6dc2fed6fac4d2dd77fa9d49c8",
+      "subject": "The mind is not a camera",
+      "preheader": "What an old record can teach us about the difference between seeing and knowing.",
+      "cta": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+    },
+    {
+      "number": 2,
+      "kind": "editorial",
+      "source_sha": "faa207ab7deafd86460d36f8c17fe62d392d0e14",
+      "subject": "Before hypnosis had a name",
+      "preheader": "The eighteenth-century witnesses who left behind a problem of proof.",
+      "cta": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+    },
+    {
+      "number": 3,
+      "kind": "commercial-review-pending",
+      "source_sha": "aeeef34efea0cc281f69901488e4501fea851245",
+      "subject": "The twelve-minute meditation question",
+      "preheader": "An honest way to evaluate a short audio practice before you spend anything.",
+      "cta": "[[APPROVED_ZEN12_WARMUP_GUIDE_URL_REQUIRED]]"
+    },
+    {
+      "number": 4,
+      "kind": "editorial",
+      "source_sha": "89635bfb9c8d1ff17297a59b6b5b5b2a176934ca",
+      "subject": "Fourteen seconds. A much longer explanation.",
+      "preheader": "Apollo 1, the surviving record, and why a tidy cause can mislead.",
+      "cta": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/"
+    },
+    {
+      "number": 5,
+      "kind": "commercial-review-pending",
+      "source_sha": "a9dfaa450ba025a7b5113ade8a294d6dbad778dc",
+      "subject": "Before you press play on a hypnosis audio",
+      "preheader": "Three questions that matter more than an impressive promise.",
+      "cta": "[[APPROVED_HYPNOSIS_LIVE_WARMUP_GUIDE_URL_REQUIRED]]"
+    },
+    {
+      "number": 6,
+      "kind": "editorial",
+      "source_sha": "004d558df6376d2ad6f4f79a4581e8d2c444e355",
+      "subject": "What did seven days of attention reveal?",
+      "preheader": "A small experiment, a useful notebook, and no miracle claims.",
+      "cta": "https://finalvestige.com/focus/"
+    }
+  ],
+  "downstream_r235": [
+    {
+      "number": 1,
+      "kind": "editorial",
+      "source_sha": "2a573f6b7043c101ece49703f2dd1262ec2b0ee6",
+      "subject": "The mind is not a camera",
+      "preheader": "A stranger changed mid-conversation. The evidence lesson starts in the archives.",
+      "cta": "https://finalvestige.com/the-missing-caption/"
+    },
+    {
+      "number": 2,
+      "kind": "editorial",
+      "source_sha": "fb8cf1503acb2338a4884cac58b7c3b2cec95af7",
+      "subject": "Before hypnosis had a name",
+      "preheader": "In 1784, a young man slept and spoke. His witness drew a startling conclusion.",
+      "cta": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+    },
+    {
+      "number": 3,
+      "kind": "commercial-review-pending",
+      "source_sha": "b86572c15d05316801a007c00e9a2689a5de27c3",
+      "subject": "The twelve-minute meditation question",
+      "preheader": "An honest way to evaluate a short audio practice before you spend anything.",
+      "cta": "[[APPROVED_ZEN12_WARMUP_GUIDE_URL_REQUIRED]]"
+    },
+    {
+      "number": 4,
+      "kind": "editorial",
+      "source_sha": "7de77ccdc312e5bdf77a9aaa355c3a9ba4efa2c8",
+      "subject": "Seventeen seconds. A much longer explanation.",
+      "preheader": "NASA's Apollo 1 findings, and why a tidy explanation can mislead.",
+      "cta": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/"
+    },
+    {
+      "number": 5,
+      "kind": "commercial-review-pending",
+      "source_sha": "a62a74c6cc2a3722048ff801ccba6212a6cdb397",
+      "subject": "Before you press play on a hypnosis audio",
+      "preheader": "A free three-minute check, then a clearer look at the claims.",
+      "cta": "[[APPROVED_HYPNOSIS_LIVE_WARMUP_GUIDE_URL_REQUIRED]]"
+    },
+    {
+      "number": 6,
+      "kind": "editorial",
+      "source_sha": "94b2e31594f0cdea1ec49f654429fa5f3a7b89c6",
+      "subject": "What did seven days of attention reveal?",
+      "preheader": "A small experiment, a useful notebook, and no miracle claims.",
+      "cta": "https://finalvestige.com/focus/"
+    }
+  ],
+  "wordpress_readonly": {
+    "newsletter_enabled": true,
+    "auto_send_new_posts": false,
+    "email_content_format": "full",
+    "welcome_configured": true,
+    "subscribers_total": 3,
+    "confirmed": 3,
+    "unconfirmed": 2,
+    "suppressed": 0,
+    "eligible_recipients": null,
+    "received_welcome": null,
+    "received_postal_footer": null,
+    "received_opt_out": null,
+    "reported_recent_sends": 0
+  },
+  "authorization": {
+    "founder_final": false,
+    "merchant_named_acceptance": false,
+    "merchant_email_rights": false,
+    "merchant_issued_earning_url": false,
+    "merchant_guide_live": false,
+    "compliant_mime_verified": false,
+    "source_alternatives_adopted": false
+  },
+  "sources": [
+    "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/175",
+    "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/1763",
+    "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/174",
+    "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+    "https://zen12.com/hnp",
+    "https://hypnosislive.com/mental-skills/total-focus",
+    "https://hypnosislive.com/faq",
+    "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business"
+  ]
+}
