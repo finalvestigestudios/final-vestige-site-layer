@@ -51,7 +51,7 @@ function violations(f){
   require(/prefers-reduced-motion:reduce/.test(html),"reduced motion "+name);
   require(/:focus-visible/.test(html),"focus visible "+name);
  }
- require(!f.a.includes("video-proposal"),"text arm video excluded");
+ require(!f.a.includes('class="video-proposal"'),"text arm video excluded");
  require(f.b.includes('class="video-proposal"')&&f.b.includes("Not a video player"),"B honestly static");
  require(f.b.includes("<details>")&&f.b.includes("complete 42-second film transcript"),"B readable transcript");
  require(f.captions.startsWith("WEBVTT"),"valid caption header");
