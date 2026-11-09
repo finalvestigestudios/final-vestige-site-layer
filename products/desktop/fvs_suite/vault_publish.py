@@ -77,6 +77,43 @@ def _owned_stage(path: str, owned: os.stat_result) -> os.stat_result | None:
     return actual if _same_stage_identity(actual, owned) else None
 
 
+def _recheck_staged_bytes(path: str, owned: os.stat_result, payload: bytes) -> None:
+    """Reject an in-place mutation after initial descriptor verification.
+
+    This binds a second byte-for-byte read to the actual staged pathname before
+    exclusive publication. It narrows, but cannot eliminate, same-user races.
+    On Windows, O_BINARY prevents newline translation in raw descriptors.
+    """
+    flags = os.O_RDONLY | getattr(os, "O_BINARY", 0) | getattr(os, "O_NOFOLLOW", 0)
+    fd = os.open(path, flags)
+    try:
+        initial = os.fstat(fd)
+        if (not _same_stage_identity(initial, owned) or initial.st_nlink != 1
+                or initial.st_size != len(payload)):
+            raise OSError(errno.EIO, "Encrypted evidence staged source changed")
+        offset = 0
+        while offset < len(payload):
+            expected = payload[offset:offset + _BLOCK]
+            if _read_exact(fd, len(expected)) != expected:
+                raise OSError(errno.EIO, "Encrypted evidence staged bytes changed")
+            offset += len(expected)
+        if os.read(fd, 1) != b"":
+            raise OSError(errno.EIO, "Encrypted evidence staged bytes appended")
+        final = os.fstat(fd)
+        if (not _same_stage_identity(final, owned) or final.st_nlink != 1
+                or final.st_size != len(payload)
+                or final.st_mtime_ns != initial.st_mtime_ns
+                or final.st_ctime_ns != initial.st_ctime_ns):
+            raise OSError(errno.EIO, "Encrypted evidence staged source mutated")
+    finally:
+        os.close(fd)
+    named = _owned_stage(path, owned)
+    if (named is None or named.st_nlink != 1 or named.st_size != len(payload)
+            or named.st_mtime_ns != final.st_mtime_ns
+            or named.st_ctime_ns != final.st_ctime_ns):
+        raise OSError(errno.EIO, "Encrypted evidence staged name mutated")
+
+
 def _publish(target: Path, payload: bytes) -> None:
     # Avoid accidental publication through a symlinked destination directory.
     folder = target.parent
@@ -115,6 +152,7 @@ def _publish(target: Path, payload: bytes) -> None:
         observed = _owned_stage(temporary, owned)
         if observed is None or observed.st_nlink != 1 or observed.st_size != len(payload):
             raise OSError(errno.EIO, "Encrypted evidence staging pathname changed")
+        _recheck_staged_bytes(temporary, owned, payload)
         # An existing destination must NEVER be overwritten. POSIX rename
         # replaces, so use link; Windows rename refuses existing destinations.
         if os.name == "nt":
