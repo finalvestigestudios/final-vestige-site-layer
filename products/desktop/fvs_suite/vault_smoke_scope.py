@@ -37,9 +37,21 @@ def _unique_pairs(pairs: list[tuple[str, object]]) -> dict[str, object]:
     return result
 
 
+def _witness(paths: tuple[Path, ...]) -> tuple[tuple[int, ...], ...]:
+    """Record pathname custody across denial; never expose pathnames in errors.
+
+    lstat refuses to follow a swapped symlink. Metadata complements exact
+    content checks: replacing a file with byte-identical contents is not an
+    acceptable product-isolation smoke result. This is not a race-free lock.
+    """
+    return tuple((info.st_dev, info.st_ino, info.st_mode, info.st_size,
+                  info.st_mtime_ns, info.st_ctime_ns)
+                 for info in (path.lstat() for path in paths))
+
+
 def _verify_restored_bundle(restored: Path, product: str, report: Path,
                             journal: Path, original_report: bytes,
-                            original_journal: bytes) -> None:
+                            original_journal: bytes) -> bytes:
     """Fail if any synthetic restored member is absent, substituted or altered."""
     children = list(restored.iterdir())
     if len(children) != len(_MEMBERS) or {p.name for p in children} != _MEMBERS:
@@ -69,6 +81,7 @@ def _verify_restored_bundle(restored: Path, product: str, report: Path,
             or type(manifest["sealed_utc"]) is not str
             or not manifest["sealed_utc"]):
         _fail("restored manifest evidence mismatch")
+    return raw_manifest
 
 
 def check_scoped_vault_roundtrip(
@@ -97,12 +110,19 @@ def check_scoped_vault_roundtrip(
         _fail("scoped restore destination")
     if {p.name for p in root.iterdir()} != before | {restored.name}:
         _fail("scoped restore created unexpected contents")
-    _verify_restored_bundle(restored, product, report, journal,
-                            original_report, original_journal)
+    initial_manifest = _verify_restored_bundle(restored, product, report, journal,
+                                                original_report, original_journal)
     if archive.read_bytes() != original_archive:
         _fail("scoped restore changed encrypted archive")
     if report.read_bytes() != original_report or journal.read_bytes() != original_journal:
         _fail("scoped restore changed source evidence")
+
+    # The denial must leave every already-present bundle member, source and
+    # destination directory intact. A byte-for-byte replacement is still a
+    # custody violation even when report hashes and manifest fields match.
+    witnessed = (root, restored, archive, report, journal) + tuple(
+        restored / name for name in sorted(_MEMBERS))
+    custody_before = _witness(witnessed)
 
     # Wrong-scope request uses a known-valid archive and the SAME passphrase:
     # failures due to a bad password, corrupt file or missing fixture cannot
@@ -117,8 +137,12 @@ def check_scoped_vault_roundtrip(
         _fail("cross-product restore accepted")
     if {p.name for p in root.iterdir()} != before | {restored.name}:
         _fail("cross-product restore left plaintext")
-    _verify_restored_bundle(restored, product, report, journal,
-                            original_report, original_journal)
+    later_manifest = _verify_restored_bundle(restored, product, report, journal,
+                                              original_report, original_journal)
+    if later_manifest != initial_manifest:
+        _fail("cross-product restore changed manifest bytes")
+    if _witness(witnessed) != custody_before:
+        _fail("cross-product restore changed filesystem identity")
     if archive.read_bytes() != original_archive:
         _fail("cross-product restore changed encrypted archive")
     if report.read_bytes() != original_report or journal.read_bytes() != original_journal:
