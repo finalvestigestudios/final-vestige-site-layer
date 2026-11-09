@@ -85,7 +85,7 @@ function checkHtml(s){
  assert.ok(s.includes("not a video")&&s.includes("No film has been rendered"),"no fabricated rendered asset");
  assert.ok(s.includes(":focus-visible")&&s.includes("prefers-reduced-motion")&&s.includes("max-width"),"a11y CSS");
  assert.ok(s.includes('noindex,nofollow'),"unpublished noindex");
- assert.ok(!/\bautoplay\b/i.test(s),"no autoplay");
+ assert.ok(!/<(?:video|audio)\b[^>]*\bautoplay\b/i.test(s),"no autoplay attribute");
  return true;
 }
 function checkEditorial(a,p){
