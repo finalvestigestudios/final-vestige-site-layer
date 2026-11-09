@@ -22,6 +22,7 @@ from .exception_review import (
 )
 from .review_identity import require_snapshot_match
 from .vault_decode_privacy import decrypt_evidence, parse_evidence_json, decode_evidence_b64
+from .vault_input_snapshot import read_vault_input
 
 MAGIC = b"FVS-EVIDENCE-VAULT-v1\x00"
 SALT_SIZE = 16
@@ -47,15 +48,8 @@ def _unique_pairs(pairs):
 
 
 def _read_regular(path: Path, limit: int, label: str) -> bytes:
-    if path.is_symlink() or not path.is_file():
-        raise ValueError(f"{label} must be an existing regular file, not a symlink")
-    if path.stat().st_size > limit:
-        raise ValueError(f"{label} exceeds the size limit")
-    with path.open("rb") as stream:
-        result = stream.read(limit + 1)
-    if len(result) > limit:
-        raise ValueError(f"{label} exceeds the size limit")
-    return result
+    """One stable, private descriptor snapshot for sealing and restoring."""
+    return read_vault_input(path, limit, label)
 
 
 def _password(password: str) -> bytes:
