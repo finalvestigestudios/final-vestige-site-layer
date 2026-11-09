@@ -14,7 +14,6 @@ import secrets
 from datetime import datetime, timezone
 from pathlib import Path
 
-from cryptography.exceptions import InvalidTag
 from cryptography.hazmat.primitives.ciphers.aead import AESGCM
 from cryptography.hazmat.primitives.kdf.scrypt import Scrypt
 
@@ -22,6 +21,7 @@ from .exception_review import (
     MAX_JOURNAL_BYTES, MAX_REPORT_BYTES, read_cases, read_journal,
 )
 from .review_identity import require_snapshot_match
+from .vault_decode_privacy import decrypt_evidence, parse_evidence_json, decode_evidence_b64
 
 MAGIC = b"FVS-EVIDENCE-VAULT-v1\x00"
 SALT_SIZE = 16
@@ -170,15 +170,8 @@ def restore_evidence(vault: str | Path, folder: str | Path, passphrase: str) -> 
         raise ValueError("Unsupported or incomplete evidence vault format")
     salt = blob[len(MAGIC):len(MAGIC) + SALT_SIZE]
     nonce = blob[len(MAGIC) + SALT_SIZE:prefix_size]
-    try:
-        clear = AESGCM(_key(password, salt)).decrypt(nonce, blob[prefix_size:], blob[:prefix_size])
-    except InvalidTag as exc:
-        raise ValueError("Wrong passphrase or encrypted archive was altered") from exc
-    try:
-        payload = json.loads(clear.decode("utf-8"), object_pairs_hook=_unique_pairs,
-                             parse_constant=lambda v: (_ for _ in ()).throw(ValueError("Invalid JSON constant")))
-    except (UnicodeError, json.JSONDecodeError) as exc:
-        raise ValueError("Encrypted evidence has invalid JSON") from exc
+    clear = decrypt_evidence(_key(password, salt), nonce, blob[prefix_size:], blob[:prefix_size])
+    payload = parse_evidence_json(clear, _unique_pairs)
     if not isinstance(payload, dict) or set(payload) != FIELDS:
         raise ValueError("Encrypted evidence has an unsupported schema")
     if type(payload["schema"]) is not int or payload["schema"] != 1:
@@ -196,11 +189,8 @@ def restore_evidence(vault: str | Path, folder: str | Path, passphrase: str) -> 
     elif (payload["journal_filename"] is not None or payload["journal_b64"] is not None or
           payload["journal_sha256"] is not None or payload["review_event_count"]):
         raise ValueError("Inconsistent encrypted journal metadata")
-    try:
-        data = base64.b64decode(payload["report_b64"], validate=True)
-        journal_data = base64.b64decode(payload["journal_b64"], validate=True) if included else None
-    except (ValueError, TypeError) as exc:
-        raise ValueError("Malformed encrypted evidence bytes") from exc
+    data = decode_evidence_b64(payload["report_b64"])
+    journal_data = decode_evidence_b64(payload["journal_b64"]) if included else None
     if len(data) > MAX_REPORT_BYTES or (journal_data is not None and len(journal_data) > MAX_JOURNAL_BYTES):
         raise ValueError("Encrypted evidence exceeds safe restore limits")
     if not isinstance(payload["report_sha256"], str) or payload["report_sha256"] != _sha(data):
