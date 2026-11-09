@@ -17,11 +17,11 @@ const paths = Object.freeze({
  oldMatrix:'mind/r244/CHOICE-BLINDNESS-CLAIMS-RELEASE-GATES.json'
 });
 const pins = Object.freeze({
- article:'73e440e761c5c3420c567db9e4c7e32803981d1e',
- matrix:'9b0ed606f57306c371c886dea6c2daabe55f5164',
+ article:'9ec42b0bf713873e5b21b2bb87eed0b8177beae4',
+ matrix:'ec38557f02139c7b6519dc160bb7bcb116ed21d9',
  html:'3ca1b88b2724e3717bfa3597755f674795c992f6',
  vtt:'84286c2a7f6f112a3eca7cfe77f19e743ce95591',
- plan:'d251484c17017dcbe2980d7e95c344452781fadf',
+ plan:'be562ab2b35d712d887c1dec71330ab7a8ce747a',
  old:'1fcc40f86dddd7d9111bb41b60fdcd0885561ec4',
  oldMatrix:'0bd42d72e7f8d6f794baa92550b8b573910371e4'
 });
@@ -68,7 +68,7 @@ function validate(x) {
  const h=x.html;
  assert.ok(h.includes('data-release-state="HARD_HOLD"') && h.includes('UNPUBLISHED'));
  assert.ok(h.length>5800 && h.includes('https://finalvestige.com/focus/'));
- const forbidden=/<\s*(script|iframe|form|input|audio|video|img|source|track)\b|on(?:click|load|error|submit|mouseover|focus|touchstart)\s*=|\bjavascript\s*:|\bdata\s*:|\burl\s*\(|<[^>]+\bautoplay(?=\s|=|>)/i;
+ const forbidden=/<\s*(script|iframe|form|input|audio|video|img|source|track|select|textarea|object|embed|link|meta|base|picture|template|canvas)\b|<[^>]*\s+on[a-z][a-z0-9_-]*\s*=|\bjavascript\s*:|\bdata\s*:|\burl\s*\(|<[^>]+\bautoplay(?=\s|=|>)/i;
  assert.ok(!forbidden.test(h),'no active tracking, scripts, form, media or handlers');
  const anchors=[...h.matchAll(/<a\b([^>]*)>/gi)];
  assert.equal(anchors.length,2,'precisely two first-party editorial choices');
@@ -83,6 +83,7 @@ function validate(x) {
  assert.equal(buttons.length,1,'one native HOLD CTA');
  const attrs=buttons[0][1];
  assert.ok(/(?:^|\s)disabled(?=\s|=|$)/i.test(attrs),'native disabled not aria substitute');
+ assert.ok(/\baria-describedby\s*=\s*"fv245-disclosure fv245-hold"/i.test(attrs),'button must expose disclosure and hold to assistive technology');
  assert.ok(!/\bhref\s*=/i.test(attrs),'button may not carry destination');
  assert.ok(h.includes('id="fv245-disclosure"'));
  const disclosureAt=h.indexOf('id="fv245-disclosure"'),buttonAt=h.indexOf('<button');
