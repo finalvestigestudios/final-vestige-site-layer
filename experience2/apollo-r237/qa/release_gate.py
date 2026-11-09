@@ -98,6 +98,9 @@ def browser(html,css,qa,axe_path):
       result=page.evaluate("""async ()=>{if(!window.axe?.version)throw Error('Missing real axe-core');let r=await axe.run(document,{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21aa','wcag22aa']}});return {version:axe.version,violations:r.violations.map(v=>v.id),incomplete:r.incomplete.length}}""")
       axe_runs[str(width)]=result
       assert not result["violations"],result
+    page.evaluate("document.activeElement?.blur?.()")
+    page.mouse.move(0,0)
+    page.wait_for_timeout(120)
     name=str(width)+("-js" if js else "-nojs")+".png";shot=qa/name
     page.screenshot(path=str(shot),full_page=True,animations="disabled");hashes[name]=sha(shot)
     context.close()
