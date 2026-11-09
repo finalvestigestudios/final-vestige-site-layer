@@ -1,0 +1,439 @@
+{
+  "milestone": 242,
+  "as_of": "2026-11-09",
+  "branch": "mind-r242-entrainment-evidence-integrity-20261109",
+  "commercial_activation": false,
+  "visibility": "UNPUBLISHED_SOURCE_ONLY",
+  "product_scope": [
+    "Zen12 Premium",
+    "Brainwave Shots Focus Shot",
+    "Hypnosis Live Total Focus"
+  ],
+  "offer_eligibility": "NONE_VERIFIED",
+  "evidence_caveat": "Merchant descriptions are not proof of product-specific results. Exact prices, offers, refunds and channel permissions require private account/checkout proof. Gmail query found promotional material, not named partner acceptance.",
+  "sources": [
+    {
+      "id": "I3",
+      "url": "https://inspire3.com/",
+      "kind": "MERCHANT_CATALOG"
+    },
+    {
+      "id": "Z12",
+      "url": "https://zen12.com/hnp",
+      "kind": "MERCHANT_EXACT"
+    },
+    {
+      "id": "FS",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "kind": "MERCHANT_EXACT"
+    },
+    {
+      "id": "TF",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "kind": "MERCHANT_EXACT"
+    },
+    {
+      "id": "TFFAQ",
+      "url": "https://hypnosislive.com/faq",
+      "kind": "MERCHANT_POLICY"
+    },
+    {
+      "id": "EEG",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10198548/",
+      "kind": "INDEPENDENT_REVIEW"
+    },
+    {
+      "id": "MEM",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35842538/",
+      "kind": "INDEPENDENT_REVIEW"
+    },
+    {
+      "id": "DOOR",
+      "url": "https://doi.org/10.3758/BF03208840",
+      "kind": "INDEPENDENT_PRIMARY"
+    },
+    {
+      "id": "CB",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "kind": "VERIFIED_LIVE_FV"
+    },
+    {
+      "id": "FOCUS",
+      "url": "https://finalvestige.com/focus/",
+      "kind": "VERIFIED_LIVE_FV"
+    },
+    {
+      "id": "PUY",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "kind": "ISSUE171_LIVE_INVENTORY_DIRECT_READ_FAILED"
+    },
+    {
+      "id": "FTCEND",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "kind": "REGULATORY"
+    },
+    {
+      "id": "FTCHEALTH",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "kind": "REGULATORY"
+    },
+    {
+      "id": "ISSUE171",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "kind": "PROJECT_OWNERSHIP"
+    },
+    {
+      "id": "ISSUE820",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "kind": "PROJECT_MEASUREMENT"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "statement": "Zen12 Premium advertises 12 levels and 48 MP3s",
+      "source_id": "Z12",
+      "status": "SELLER_FORMAT_ONLY",
+      "commercial_release_permitted": false
+    },
+    {
+      "id": "C02",
+      "statement": "Zen12 advertises twelve minutes as equal to an hour of advanced meditation",
+      "source_id": "Z12",
+      "status": "SELLER_EFFICACY_NOT_VERIFIED",
+      "commercial_release_permitted": false
+    },
+    {
+      "id": "C03",
+      "statement": "Zen12 advertises one-year refund promise",
+      "source_id": "Z12",
+      "status": "SELLER_TERMS_NOT_TRANSACTION_VERIFIED",
+      "commercial_release_permitted": false
+    },
+    {
+      "id": "C04",
+      "statement": "Focus Shot advertises 15- and 30-minute recordings",
+      "source_id": "FS",
+      "status": "SELLER_FORMAT_ONLY",
+      "commercial_release_permitted": false
+    },
+    {
+      "id": "C05",
+      "statement": "Focus Shot states headphones not required",
+      "source_id": "FS",
+      "status": "SELLER_FORMAT_ONLY",
+      "commercial_release_permitted": false
+    },
+    {
+      "id": "C06",
+      "statement": "Focus Shot advertises four hours through rest-of-day focus",
+      "source_id": "FS",
+      "status": "SELLER_EFFICACY_NOT_VERIFIED",
+      "commercial_release_permitted": false
+    },
+    {
+      "id": "C07",
+      "statement": "Focus Shot merchant displays inconsistent price presentation",
+      "source_id": "FS",
+      "status": "SELLER_PRICE_DYNAMIC_FINAL_CART_UNVERIFIED",
+      "commercial_release_permitted": false
+    },
+    {
+      "id": "C08",
+      "statement": "Focus Shot advertises one-year refund promise",
+      "source_id": "FS",
+      "status": "SELLER_TERMS_NOT_TRANSACTION_VERIFIED",
+      "commercial_release_permitted": false
+    },
+    {
+      "id": "C09",
+      "statement": "Total Focus advertises one 33-minute, 47 MB narrated hypnosis session",
+      "source_id": "TF",
+      "status": "SELLER_FORMAT_ONLY",
+      "commercial_release_permitted": false
+    },
+    {
+      "id": "C10",
+      "statement": "Total Focus advertises career and concentration improvements",
+      "source_id": "TF",
+      "status": "SELLER_EFFICACY_NOT_VERIFIED",
+      "commercial_release_permitted": false
+    },
+    {
+      "id": "C11",
+      "statement": "Total Focus advertises fourteen-day refund period",
+      "source_id": "TF",
+      "status": "SELLER_TERMS_NOT_TRANSACTION_VERIFIED",
+      "commercial_release_permitted": false
+    },
+    {
+      "id": "C12",
+      "statement": "Hypnosis Live separate FAQ contains additional refund limits",
+      "source_id": "TFFAQ",
+      "status": "SELLER_POLICY_SCOPE_NOT_AUTHENTICATED_CHECKOUT",
+      "commercial_release_permitted": false
+    },
+    {
+      "id": "C13",
+      "statement": "Inspire3 lists Zen12 and Hypnosis Live as its brands",
+      "source_id": "I3",
+      "status": "SELLER_CATALOG",
+      "commercial_release_permitted": false
+    },
+    {
+      "id": "C14",
+      "statement": "2023 review of 14 EEG studies finds five supportive eight contradictory one mixed",
+      "source_id": "EEG",
+      "status": "INDEPENDENT_REVIEW_NOT_PRODUCT_PROOF",
+      "commercial_release_permitted": false
+    },
+    {
+      "id": "C15",
+      "statement": "Binaural beats require tones delivered separately to each ear",
+      "source_id": "EEG",
+      "status": "INDEPENDENT_MECHANISM_DESCRIPTION",
+      "commercial_release_permitted": false
+    },
+    {
+      "id": "C16",
+      "statement": "2022 pooled attention/memory estimates are not Focus Shot clinical efficacy",
+      "source_id": "MEM",
+      "status": "INDEPENDENT_REVIEW_LIMITATION",
+      "commercial_release_permitted": false
+    },
+    {
+      "id": "C17",
+      "statement": "1998 door replacement work found approximately half failed to report a change",
+      "source_id": "DOOR",
+      "status": "INDEPENDENT_PRIMARY_CONTEXT_ONLY",
+      "commercial_release_permitted": false
+    },
+    {
+      "id": "C18",
+      "statement": "A related FV Change Blindness article is already live",
+      "source_id": "CB",
+      "status": "VERIFIED_PUBLIC_DESTINATION",
+      "commercial_release_permitted": false
+    },
+    {
+      "id": "C19",
+      "statement": "The single existing Seven Day Focus Fieldbook page is live",
+      "source_id": "FOCUS",
+      "status": "VERIFIED_PUBLIC_DESTINATION",
+      "commercial_release_permitted": false
+    },
+    {
+      "id": "C20",
+      "statement": "Puységur source archive exists in original issue inventory",
+      "source_id": "PUY",
+      "status": "PROJECT_INVENTORY_DIRECT_READ_UNAVAILABLE",
+      "commercial_release_permitted": false
+    },
+    {
+      "id": "C21",
+      "statement": "FTC recommends clear conspicuous material-connection disclosure near recommendations",
+      "source_id": "FTCEND",
+      "status": "REGULATORY",
+      "commercial_release_permitted": false
+    },
+    {
+      "id": "C22",
+      "statement": "Objective health effectiveness advertising needs adequate scientific support",
+      "source_id": "FTCHEALTH",
+      "status": "REGULATORY",
+      "commercial_release_permitted": false
+    },
+    {
+      "id": "C23",
+      "statement": "Final Vestige has named Inspire3 affiliate acceptance and issued link",
+      "source_id": "ISSUE171",
+      "status": "UNVERIFIED_PRIVATE_PERMISSION",
+      "commercial_release_permitted": false
+    },
+    {
+      "id": "C24",
+      "statement": "Any confirmed paid sale and net revenue for the campaign exist",
+      "source_id": "ISSUE820",
+      "status": "UNVERIFIED_PRIVATE_FINANCE",
+      "commercial_release_permitted": false
+    },
+    {
+      "id": "C25",
+      "statement": "Authentic live Grok asset IDs and permitted tagged destinations established",
+      "source_id": "ISSUE820",
+      "status": "UNVERIFIED_CREATOR_ATTRIBUTION",
+      "commercial_release_permitted": false
+    },
+    {
+      "id": "C26",
+      "statement": "Authoritative Jetpack lead confirmation established for this pilot",
+      "source_id": "FOCUS",
+      "status": "UNVERIFIED_PROVIDER_DATA",
+      "commercial_release_permitted": false
+    },
+    {
+      "id": "C27",
+      "statement": "A currently sellable rights-cleared FV-owned Mind SKU and final checkout authenticated",
+      "source_id": "ISSUE820",
+      "status": "UNVERIFIED_OWNED_COMMERCE",
+      "commercial_release_permitted": false
+    },
+    {
+      "id": "C28",
+      "statement": "Buyer-facing FTC disclosure must precede or be adjacent to future active earning link",
+      "source_id": "FTCEND",
+      "status": "DESIGN_REQUIRED_NOT_LIVE",
+      "commercial_release_permitted": false
+    }
+  ],
+  "commercial_release_gates": [
+    {
+      "id": "named_publisher_acceptance",
+      "status": "HARD_HOLD",
+      "verified": false
+    },
+    {
+      "id": "issued_affiliate_link",
+      "status": "HARD_HOLD",
+      "verified": false
+    },
+    {
+      "id": "authorized_site_domain",
+      "status": "HARD_HOLD",
+      "verified": false
+    },
+    {
+      "id": "authorized_social_channels",
+      "status": "HARD_HOLD",
+      "verified": false
+    },
+    {
+      "id": "authorized_email_promotion",
+      "status": "HARD_HOLD",
+      "verified": false
+    },
+    {
+      "id": "creative_rights",
+      "status": "HARD_HOLD",
+      "verified": false
+    },
+    {
+      "id": "exact_sku_identity",
+      "status": "HARD_HOLD",
+      "verified": false
+    },
+    {
+      "id": "product_claims_substantiation",
+      "status": "HARD_HOLD",
+      "verified": false
+    },
+    {
+      "id": "final_cart_price_and_taxes",
+      "status": "HARD_HOLD",
+      "verified": false
+    },
+    {
+      "id": "refund_policy_and_delivery",
+      "status": "HARD_HOLD",
+      "verified": false
+    },
+    {
+      "id": "clear_contextual_disclosure",
+      "status": "HARD_HOLD",
+      "verified": false
+    },
+    {
+      "id": "founder_release_authorization",
+      "status": "HARD_HOLD",
+      "verified": false
+    },
+    {
+      "id": "browser_a11y_and_mobile",
+      "status": "HARD_HOLD",
+      "verified": false
+    },
+    {
+      "id": "privacy_safe_existing_analytics",
+      "status": "HARD_HOLD",
+      "verified": false
+    },
+    {
+      "id": "attributed_confirmed_purchase",
+      "status": "HARD_HOLD",
+      "verified": false
+    },
+    {
+      "id": "settled_net_revenue_reconciliation",
+      "status": "HARD_HOLD",
+      "verified": false
+    }
+  ],
+  "creator_topic_fit": [
+    {
+      "topic": "change blindness door swap",
+      "article": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "resource": "https://finalvestige.com/focus/",
+      "optional_offer": "Focus Shot independent buyer guide UNPUBLISHED",
+      "published_asset_id": null,
+      "media_url": null,
+      "authorization": "HARD_HOLD"
+    },
+    {
+      "topic": "Mesmer/Puysegur suggestion",
+      "article": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "resource": "https://finalvestige.com/focus/",
+      "optional_offer": "Hypnosis Live Total Focus buyer guide UNPUBLISHED",
+      "published_asset_id": null,
+      "media_url": null,
+      "authorization": "HARD_HOLD"
+    },
+    {
+      "topic": "twelve-minute beginner routine",
+      "article": "https://finalvestige.com/focus/",
+      "resource": "https://finalvestige.com/focus/",
+      "optional_offer": "Zen12 Premium A/B guide UNPUBLISHED",
+      "published_asset_id": null,
+      "media_url": null,
+      "authorization": "HARD_HOLD"
+    }
+  ],
+  "measurement": {
+    "source_of_truth": "#820 and #818",
+    "analytics_production_owner": "Claude; do not introduce duplicate scripts",
+    "campaign_fields": [
+      "utm_source",
+      "utm_medium",
+      "utm_campaign",
+      "utm_content (actual verified asset_id)"
+    ],
+    "no_pii": true,
+    "events": [
+      "qualified_human_landing",
+      "resource_click",
+      "provider_confirmed_lead",
+      "affiliate_outbound_click",
+      "merchant_confirmed_paid_order",
+      "merchant_confirmed_affiliate_sale",
+      "cleared_commission",
+      "refund",
+      "fee"
+    ],
+    "affiliate_click_not_sale": true,
+    "reporting_windows_days": [
+      7,
+      30
+    ],
+    "numerator": "verified paid revenue less refunds, fees and incremental attributable costs; never double subtract amounts already netted",
+    "denominator": "qualifying human unique sessions",
+    "net_revenue_per_1000_qualified_human_sessions": null,
+    "confirmed_paid_orders": null,
+    "cleared_affiliate_sales": null,
+    "confirmed_leads": null
+  },
+  "site_changes": "NONE",
+  "email_changes": "NONE",
+  "grok_queue_changes": "NONE",
+  "affiliate_url": null,
+  "actual_paid_sales": null,
+  "hold_reason": "Named authorization and cleared merchant accounting unavailable; owned Mind SKU not verified; release forbidden."
+}
