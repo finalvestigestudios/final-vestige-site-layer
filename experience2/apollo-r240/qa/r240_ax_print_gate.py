@@ -105,6 +105,7 @@ def main():
     doc = '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>'+css+'</style></head><body>'+fragment+'</body></html>'
     args.out.mkdir(parents=True)
     captures = []
+    performance = []
     with sync_playwright() as pw:
         browser = pw.chromium.launch(executable_path='/usr/bin/chromium', headless=True,
                                      args=['--no-sandbox'])
@@ -134,6 +135,21 @@ def main():
                 shot.wait_for_timeout(80)
                 filename=f'{width}-{"js" if js else "nojs"}.png'
                 shot.screenshot(path=str(args.out / filename), full_page=True, animations='disabled')
+                if js:
+                    metrics = shot.evaluate('''async () => {
+                      const l=[],s=[];
+                      new PerformanceObserver(list=>list.getEntries().forEach(e=>l.push(e.startTime)))
+                        .observe({type:'largest-contentful-paint',buffered:true});
+                      new PerformanceObserver(list=>list.getEntries().forEach(e=>{
+                        if(!e.hadRecentInput)s.push(e.value);
+                      })).observe({type:'layout-shift',buffered:true});
+                      await new Promise(done=>setTimeout(done,350));
+                      return {lcp_ms:l.length?Math.round(Math.max(...l)):null,
+                              observed_cls:s.reduce((a,b)=>a+b,0)};
+                    }''')
+                    assert metrics['lcp_ms'] is None or metrics['lcp_ms'] >= 0
+                    assert metrics['observed_cls'] >= 0
+                    performance.append({'width':width, **metrics})
                 captures.append({'width':width, 'js':js, 'computed_ax_link_names':named,
                     'printed_custody_links':print_links, 'screenshot_sha256':digest(args.out / filename)})
                 ctx.close()
@@ -151,10 +167,13 @@ def main():
         'chromium_version':version,'contexts':len(captures),'captures':captures,
         'cdp_accessibility_tree':'PASS (live Chromium AX node names)',
         'print_custody':'PASS (native Chromium print media)',
+        'fixture_lcp_cls':'MEASURED offline in fixture-performance-not-field.json',
         'css_zoom_200_percent':'PASS (approximation; NOT browser interface zoom)',
         'axe_core':'NOT_EXECUTED (unavailable offline)','screen_reader':'NOT_TESTED',
         'wordPress_assembler':'NOT_TESTED','field_cwv':'NOT_TESTED','commercial_media_rights':'NOT_CLEARED',
         'verified_sales':'NOT_OBSERVABLE','release':'STAGING_HOLD'}
+    (args.out/'fixture-performance-not-field.json').write_text(json.dumps(
+        performance,indent=2,sort_keys=True)+'\n')
     (args.out/'receipt.json').write_text(json.dumps(receipt,indent=2,sort_keys=True)+'\n')
     print(json.dumps({'contexts':len(captures),'chromium_version':version,
          'receipt_sha256':digest(args.out/'receipt.json'),'release':'STAGING_HOLD'}))
