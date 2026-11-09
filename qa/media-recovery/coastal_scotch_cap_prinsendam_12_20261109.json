@@ -1,0 +1,497 @@
+{
+  "schema": "fv-coastal-12-source-evidence-v1",
+  "audit_utc": "2026-11-09",
+  "frozen_source_date": "2026-10-30",
+  "origin_census_path": "qa/media-recovery/offsite_upstream_288_20261109.json",
+  "origin_census_blob_sha": "92a904c8da1ace1f972b2f00adf1a4847dde2b99",
+  "target_posts": [
+    292,
+    418
+  ],
+  "counts": {
+    "rows": 12,
+    "previously_researched": 2,
+    "incrementally_researched": 10,
+    "web_tool_rendered": 7,
+    "web_tool_http_403": 3,
+    "web_tool_inaccessible": 2,
+    "confirmed_guest_failures": 0
+  },
+  "status_contract": "Web-tool renders or 403 errors are never visitor-browser outcomes, decoded dimensions, wire bytes, or WordPress status; all remain null.",
+  "source_policy": "External images are references, not files licensed to copy. Nothing may be cached, localized, resized, or published until rights+identity+visual+guest-HTTP checks pass.",
+  "performance_policy": "The 76% transfer-saving figure is UNMEASURED. The 15 WP originals >1.5 MB and 47,096,779 stored bytes are NOT guest transferred bytes.",
+  "rights_references": [
+    "https://www.history.uscg.mil/Our-Collections/Photos/igphoto/2002603427/",
+    "https://www.rotterdam.nl/beeld-en-geluid-van-stadsarchief-opzoeken"
+  ],
+  "rows": [
+    {
+      "slot": "292:0",
+      "post_id": 292,
+      "post_url": "https://finalvestige.com/2026/08/19/they-marked-the-empty-boats-prinsendam/",
+      "original_url": "https://nationalcoastguardmuseum.org/wp-content/uploads/2023/08/DF-SN-86-12843-header-image-900x675.jpeg",
+      "source_upstream_host": "nationalcoastguardmuseum.org",
+      "prior_researched_in_288": false,
+      "retrieval_observation": {
+        "date_utc": "2026-11-09",
+        "service": "INDEPENDENT_WEB_OPEN_NOT_ORIGIN_HTTP",
+        "result": "IMAGE_RENDERED_WEB_TOOL",
+        "tool_reference": "turn722166view2",
+        "visitor_http_status": null,
+        "visitor_decoded_px": null,
+        "visitor_transferred_bytes": null,
+        "visitor_broken": null
+      },
+      "candidate": {
+        "official_catalog_page": "https://www.history.uscg.mil/Our-Collections/Photos/igphoto/2002603427/",
+        "authority": "US_COAST_GUARD",
+        "relationship": "similar_scene_possible_different_crop",
+        "scene_integrity": "Damaged Prinsendam with USCG helicopter; museum crop differs from wide official historical photograph",
+        "rights_review": "MUSEUM_RENDITION_ITEM_RIGHTS_REVIEW",
+        "archival_native_dimensions_px": null,
+        "claimed_native_bytes": null,
+        "filename_rendition_dimensions_hint_px": [
+          900,
+          675
+        ],
+        "conditional_960_max_rendition_px": null,
+        "exact_binary_match_confirmed": false,
+        "rights_cleared": false
+      },
+      "release": {
+        "binary_download": false,
+        "cdn_cache": false,
+        "wordpress_upload": false,
+        "post_block_rewrite": false,
+        "homepage_visual_change": false
+      }
+    },
+    {
+      "slot": "292:1",
+      "post_id": 292,
+      "post_url": "https://finalvestige.com/2026/08/19/they-marked-the-empty-boats-prinsendam/",
+      "original_url": "https://stadsarchief.rotterdam.nl/sites/default/files/styles/gallery_large/public/2025-04/hal-prinsendam-nl-rtsa_4121_24162-1-14.jpg?h=3e6ca723&itok=wjXwUo3w",
+      "source_upstream_host": "stadsarchief.rotterdam.nl",
+      "prior_researched_in_288": false,
+      "retrieval_observation": {
+        "date_utc": "2026-11-09",
+        "service": "INDEPENDENT_WEB_OPEN_NOT_ORIGIN_HTTP",
+        "result": "IMAGE_RENDERED_WEB_TOOL",
+        "tool_reference": "turn945677view0",
+        "visitor_http_status": null,
+        "visitor_decoded_px": null,
+        "visitor_transferred_bytes": null,
+        "visitor_broken": null
+      },
+      "candidate": {
+        "official_catalog_page": "https://stadsarchief.rotterdam.nl/holland-amerika-lijn",
+        "authority": "ROTTERDAM_CITY_ARCHIVES",
+        "relationship": "official_embedded_photo_original_unverified_binary",
+        "scene_integrity": "Prinsendam passing Koningsbruggen on 8 April 1973, photographer Ary Groeneveld; NOT the 1980 rescue",
+        "rights_review": "CITY_ARCHIVES_PHOTO_RIGHTS_NOT_CLEARED",
+        "archival_native_dimensions_px": null,
+        "claimed_native_bytes": null,
+        "filename_rendition_dimensions_hint_px": null,
+        "conditional_960_max_rendition_px": null,
+        "exact_binary_match_confirmed": false,
+        "rights_cleared": false
+      },
+      "release": {
+        "binary_download": false,
+        "cdn_cache": false,
+        "wordpress_upload": false,
+        "post_block_rewrite": false,
+        "homepage_visual_change": false
+      }
+    },
+    {
+      "slot": "292:2",
+      "post_id": 292,
+      "post_url": "https://finalvestige.com/2026/08/19/they-marked-the-empty-boats-prinsendam/",
+      "original_url": "https://images.pubble.cloud/worker/jpg/quick/1920/3077598/96897487/content/2024/6/cf6d9b51-c16b-4938-800c-833b86ac5740",
+      "source_upstream_host": "images.pubble.cloud",
+      "prior_researched_in_288": false,
+      "retrieval_observation": {
+        "date_utc": "2026-11-09",
+        "service": "INDEPENDENT_WEB_OPEN_NOT_ORIGIN_HTTP",
+        "result": "IMAGE_RENDERED_WEB_TOOL",
+        "tool_reference": "turn722166view6",
+        "visitor_http_status": null,
+        "visitor_decoded_px": null,
+        "visitor_transferred_bytes": null,
+        "visitor_broken": null
+      },
+      "candidate": {
+        "official_catalog_page": null,
+        "authority": "UNKNOWN",
+        "relationship": "no_verified_primary_candidate",
+        "scene_integrity": "Dutch ship in shipyard setting; exact vessel/date/photographer not independently cataloged; do not assert launch identity",
+        "rights_review": "UNKNOWN_CREATOR_AND_RIGHTS",
+        "archival_native_dimensions_px": null,
+        "claimed_native_bytes": null,
+        "filename_rendition_dimensions_hint_px": null,
+        "conditional_960_max_rendition_px": null,
+        "exact_binary_match_confirmed": false,
+        "rights_cleared": false
+      },
+      "release": {
+        "binary_download": false,
+        "cdn_cache": false,
+        "wordpress_upload": false,
+        "post_block_rewrite": false,
+        "homepage_visual_change": false
+      }
+    },
+    {
+      "slot": "292:3",
+      "post_id": 292,
+      "post_url": "https://finalvestige.com/2026/08/19/they-marked-the-empty-boats-prinsendam/",
+      "original_url": "https://cgaviationhistory.org/wp-content/uploads/MS_Prisendam_sinking_off_Alaska_with_USCG_HH-3F_1980.jpg",
+      "source_upstream_host": "cgaviationhistory.org",
+      "prior_researched_in_288": false,
+      "retrieval_observation": {
+        "date_utc": "2026-11-09",
+        "service": "INDEPENDENT_WEB_OPEN_NOT_ORIGIN_HTTP",
+        "result": "IMAGE_RENDERED_WEB_TOOL",
+        "tool_reference": "turn722166view3",
+        "visitor_http_status": null,
+        "visitor_decoded_px": null,
+        "visitor_transferred_bytes": null,
+        "visitor_broken": null
+      },
+      "candidate": {
+        "official_catalog_page": "https://www.history.uscg.mil/Our-Collections/Photos/igphoto/2002603427/",
+        "authority": "US_COAST_GUARD",
+        "relationship": "likely_same_frame_not_binary_verified",
+        "scene_integrity": "Prinsendam sinking with USCG HH-3 helicopter; official VIRIN 210210-G-G0000-1014; verify exact crop before use",
+        "rights_review": "USCG_PD_RELEASE_WITH_CREDIT_AND_VISUAL_INFORMATION_LIMITS",
+        "archival_native_dimensions_px": [
+          2820,
+          1891
+        ],
+        "claimed_native_bytes": null,
+        "filename_rendition_dimensions_hint_px": null,
+        "conditional_960_max_rendition_px": [
+          960,
+          644
+        ],
+        "exact_binary_match_confirmed": false,
+        "rights_cleared": false
+      },
+      "release": {
+        "binary_download": false,
+        "cdn_cache": false,
+        "wordpress_upload": false,
+        "post_block_rewrite": false,
+        "homepage_visual_change": false
+      }
+    },
+    {
+      "slot": "292:4",
+      "post_id": 292,
+      "post_url": "https://finalvestige.com/2026/08/19/they-marked-the-empty-boats-prinsendam/",
+      "original_url": "https://www.travelserver.net/travelpage/aspgallery/pictures/Ad_1981_12.jpg",
+      "source_upstream_host": "www.travelserver.net",
+      "prior_researched_in_288": false,
+      "retrieval_observation": {
+        "date_utc": "2026-11-09",
+        "service": "INDEPENDENT_WEB_OPEN_NOT_ORIGIN_HTTP",
+        "result": "IMAGE_RENDERED_WEB_TOOL",
+        "tool_reference": "turn722166view4",
+        "visitor_http_status": null,
+        "visitor_decoded_px": null,
+        "visitor_transferred_bytes": null,
+        "visitor_broken": null
+      },
+      "candidate": {
+        "official_catalog_page": null,
+        "authority": "UNKNOWN",
+        "relationship": "no_verified_same_scene_candidate",
+        "scene_integrity": "Heavily listing Prinsendam photograph; official USCG aerial image is a DIFFERENT scene, never silent substitute",
+        "rights_review": "THIRD_PARTY_PHOTOGRAPH_RIGHTS_UNKNOWN",
+        "archival_native_dimensions_px": null,
+        "claimed_native_bytes": null,
+        "filename_rendition_dimensions_hint_px": null,
+        "conditional_960_max_rendition_px": null,
+        "exact_binary_match_confirmed": false,
+        "rights_cleared": false
+      },
+      "release": {
+        "binary_download": false,
+        "cdn_cache": false,
+        "wordpress_upload": false,
+        "post_block_rewrite": false,
+        "homepage_visual_change": false
+      }
+    },
+    {
+      "slot": "292:5",
+      "post_id": 292,
+      "post_url": "https://finalvestige.com/2026/08/19/they-marked-the-empty-boats-prinsendam/",
+      "original_url": "https://static.thisdayinaviation.com/wp-content/uploads/tdia/2020/10/Screen-Shot-2020-10-03-at-14.51.27.png",
+      "source_upstream_host": "static.thisdayinaviation.com",
+      "prior_researched_in_288": false,
+      "retrieval_observation": {
+        "date_utc": "2026-11-09",
+        "service": "INDEPENDENT_WEB_OPEN_NOT_ORIGIN_HTTP",
+        "result": "WEB_OPEN_403",
+        "tool_reference": "turn722166view5",
+        "visitor_http_status": null,
+        "visitor_decoded_px": null,
+        "visitor_transferred_bytes": null,
+        "visitor_broken": null
+      },
+      "candidate": {
+        "official_catalog_page": null,
+        "authority": "UNKNOWN",
+        "relationship": "no_verified_primary_candidate",
+        "scene_integrity": "Aviation-history screenshot; original event and image identity unverified",
+        "rights_review": "SCREENSHOT_RIGHTS_AND_CREATOR_UNKNOWN",
+        "archival_native_dimensions_px": null,
+        "claimed_native_bytes": null,
+        "filename_rendition_dimensions_hint_px": null,
+        "conditional_960_max_rendition_px": null,
+        "exact_binary_match_confirmed": false,
+        "rights_cleared": false
+      },
+      "release": {
+        "binary_download": false,
+        "cdn_cache": false,
+        "wordpress_upload": false,
+        "post_block_rewrite": false,
+        "homepage_visual_change": false
+      }
+    },
+    {
+      "slot": "418:0",
+      "post_id": 418,
+      "post_url": "https://finalvestige.com/2026/08/20/the-lighthouse-was-gone-at-dawn-1946-tsunami/",
+      "original_url": "https://www.history.uscg.mil/Portals/6/2_%20new%20and%20old%20lighthouses%2019849609_web1_1_-Scotch-Cap-lighthouse-1200x984.jpg",
+      "source_upstream_host": "www.history.uscg.mil",
+      "prior_researched_in_288": false,
+      "retrieval_observation": {
+        "date_utc": "2026-11-09",
+        "service": "INDEPENDENT_WEB_OPEN_NOT_ORIGIN_HTTP",
+        "result": "WEB_OPEN_INACCESSIBLE",
+        "tool_reference": "turn722166view0",
+        "visitor_http_status": null,
+        "visitor_decoded_px": null,
+        "visitor_transferred_bytes": null,
+        "visitor_broken": null
+      },
+      "candidate": {
+        "official_catalog_page": "https://www.history.uscg.mil/Research/THE-LONG-BLUE-LINE/Article/2866442/the-long-blue-line-standing-a-deadly-watch-75-years-agofinal-hours-of-scotch-ca/",
+        "authority": "US_COAST_GUARD",
+        "relationship": "contextual_same_scene_not_binary_verified",
+        "scene_integrity": "Old and 1940 Scotch Cap stations side-by-side; before 1946 tsunami",
+        "rights_review": "USCG_ITEM_ATTRIBUTION_USE_LIMITS_REVIEW",
+        "archival_native_dimensions_px": null,
+        "claimed_native_bytes": null,
+        "filename_rendition_dimensions_hint_px": [
+          1200,
+          984
+        ],
+        "conditional_960_max_rendition_px": null,
+        "exact_binary_match_confirmed": false,
+        "rights_cleared": false
+      },
+      "release": {
+        "binary_download": false,
+        "cdn_cache": false,
+        "wordpress_upload": false,
+        "post_block_rewrite": false,
+        "homepage_visual_change": false
+      }
+    },
+    {
+      "slot": "418:1",
+      "post_id": 418,
+      "post_url": "https://finalvestige.com/2026/08/20/the-lighthouse-was-gone-at-dawn-1946-tsunami/",
+      "original_url": "https://media.defense.gov/2021/Mar/30/2002610812/1920/1080/0/210330-G-DE713-0002.JPG",
+      "source_upstream_host": "media.defense.gov",
+      "prior_researched_in_288": true,
+      "retrieval_observation": {
+        "date_utc": "2026-11-09",
+        "service": "INDEPENDENT_WEB_OPEN_NOT_ORIGIN_HTTP",
+        "result": "WEB_OPEN_403",
+        "tool_reference": "turn945677view2",
+        "visitor_http_status": null,
+        "visitor_decoded_px": null,
+        "visitor_transferred_bytes": null,
+        "visitor_broken": null
+      },
+      "candidate": {
+        "official_catalog_page": "https://www.history.uscg.mil/Our-Collections/Photos/igphoto/2002905913/",
+        "authority": "US_COAST_GUARD",
+        "relationship": "prior_catalog_reference_unverified_binary",
+        "scene_integrity": "Chief Boatswain's Mate Anthony L. Petit; subject and time must be preserved",
+        "rights_review": "USCG_ITEM_ATTRIBUTION_USE_LIMITS_REVIEW",
+        "archival_native_dimensions_px": null,
+        "claimed_native_bytes": null,
+        "filename_rendition_dimensions_hint_px": null,
+        "conditional_960_max_rendition_px": null,
+        "exact_binary_match_confirmed": false,
+        "rights_cleared": false
+      },
+      "release": {
+        "binary_download": false,
+        "cdn_cache": false,
+        "wordpress_upload": false,
+        "post_block_rewrite": false,
+        "homepage_visual_change": false
+      }
+    },
+    {
+      "slot": "418:2",
+      "post_id": 418,
+      "post_url": "https://finalvestige.com/2026/08/20/the-lighthouse-was-gone-at-dawn-1946-tsunami/",
+      "original_url": "https://www.history.uscg.mil/Portals/6/5_%20Scotch_Cap_debris2_1946.jpg",
+      "source_upstream_host": "www.history.uscg.mil",
+      "prior_researched_in_288": true,
+      "retrieval_observation": {
+        "date_utc": "2026-11-09",
+        "service": "INDEPENDENT_WEB_OPEN_NOT_ORIGIN_HTTP",
+        "result": "WEB_OPEN_403",
+        "tool_reference": "turn945677view3",
+        "visitor_http_status": null,
+        "visitor_decoded_px": null,
+        "visitor_transferred_bytes": null,
+        "visitor_broken": null
+      },
+      "candidate": {
+        "official_catalog_page": "https://www.history.uscg.mil/Research/THE-LONG-BLUE-LINE/Article/2866442/the-long-blue-line-standing-a-deadly-watch-75-years-agofinal-hours-of-scotch-ca/",
+        "authority": "US_COAST_GUARD",
+        "relationship": "topical_official_photo_not_binary_verified",
+        "scene_integrity": "Ruins of Scotch Cap after April 1 1946; official article shows multiple distinct ruin photographs",
+        "rights_review": "USCG_ITEM_ATTRIBUTION_USE_LIMITS_REVIEW",
+        "archival_native_dimensions_px": null,
+        "claimed_native_bytes": null,
+        "filename_rendition_dimensions_hint_px": null,
+        "conditional_960_max_rendition_px": null,
+        "exact_binary_match_confirmed": false,
+        "rights_cleared": false
+      },
+      "release": {
+        "binary_download": false,
+        "cdn_cache": false,
+        "wordpress_upload": false,
+        "post_block_rewrite": false,
+        "homepage_visual_change": false
+      }
+    },
+    {
+      "slot": "418:3",
+      "post_id": 418,
+      "post_url": "https://finalvestige.com/2026/08/20/the-lighthouse-was-gone-at-dawn-1946-tsunami/",
+      "original_url": "https://www.history.uscg.mil/Portals/6/6_%20Scotch%20Cap%20remains.jpg",
+      "source_upstream_host": "www.history.uscg.mil",
+      "prior_researched_in_288": false,
+      "retrieval_observation": {
+        "date_utc": "2026-11-09",
+        "service": "INDEPENDENT_WEB_OPEN_NOT_ORIGIN_HTTP",
+        "result": "WEB_OPEN_INACCESSIBLE",
+        "tool_reference": "turn722166view1",
+        "visitor_http_status": null,
+        "visitor_decoded_px": null,
+        "visitor_transferred_bytes": null,
+        "visitor_broken": null
+      },
+      "candidate": {
+        "official_catalog_page": "https://www.history.uscg.mil/Research/THE-LONG-BLUE-LINE/Article/2866442/the-long-blue-line-standing-a-deadly-watch-75-years-agofinal-hours-of-scotch-ca/",
+        "authority": "US_COAST_GUARD",
+        "relationship": "topical_official_photo_not_binary_verified",
+        "scene_integrity": "Aerial aftermath of Scotch Cap; do not confuse with other ruins scene",
+        "rights_review": "USCG_ITEM_ATTRIBUTION_USE_LIMITS_REVIEW",
+        "archival_native_dimensions_px": null,
+        "claimed_native_bytes": null,
+        "filename_rendition_dimensions_hint_px": null,
+        "conditional_960_max_rendition_px": null,
+        "exact_binary_match_confirmed": false,
+        "rights_cleared": false
+      },
+      "release": {
+        "binary_download": false,
+        "cdn_cache": false,
+        "wordpress_upload": false,
+        "post_block_rewrite": false,
+        "homepage_visual_change": false
+      }
+    },
+    {
+      "slot": "418:4",
+      "post_id": 418,
+      "post_url": "https://finalvestige.com/2026/08/20/the-lighthouse-was-gone-at-dawn-1946-tsunami/",
+      "original_url": "https://www.hawaiimagazine.com/wp-content/uploads/2020/12/Tsunami1946NOAA2.jpg",
+      "source_upstream_host": "www.hawaiimagazine.com",
+      "prior_researched_in_288": false,
+      "retrieval_observation": {
+        "date_utc": "2026-11-09",
+        "service": "INDEPENDENT_WEB_OPEN_NOT_ORIGIN_HTTP",
+        "result": "IMAGE_RENDERED_WEB_TOOL",
+        "tool_reference": "turn722166view7",
+        "visitor_http_status": null,
+        "visitor_decoded_px": null,
+        "visitor_transferred_bytes": null,
+        "visitor_broken": null
+      },
+      "candidate": {
+        "official_catalog_page": "https://prod-01-alb-www-noaa.woc.noaa.gov/noaa-collections/photo-library/pl23theb2705jpg",
+        "authority": "NOAA",
+        "relationship": "topical_alternative_not_same_image",
+        "scene_integrity": "Original magazine image depicts tsunami damage; separate NOAA Hilo photo is only a contextual catalog candidate",
+        "rights_review": "NOAA_ITEM_IDENTITY_RIGHTS_REVIEW",
+        "archival_native_dimensions_px": null,
+        "claimed_native_bytes": null,
+        "filename_rendition_dimensions_hint_px": null,
+        "conditional_960_max_rendition_px": null,
+        "exact_binary_match_confirmed": false,
+        "rights_cleared": false
+      },
+      "release": {
+        "binary_download": false,
+        "cdn_cache": false,
+        "wordpress_upload": false,
+        "post_block_rewrite": false,
+        "homepage_visual_change": false
+      }
+    },
+    {
+      "slot": "418:5",
+      "post_id": 418,
+      "post_url": "https://finalvestige.com/2026/08/20/the-lighthouse-was-gone-at-dawn-1946-tsunami/",
+      "original_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/styles/full_width/public/media/images/19460401_UNKNOWN_37-012_copy.jpg?itok=ASMRCahz",
+      "source_upstream_host": "d9-wret.s3.us-west-2.amazonaws.com",
+      "prior_researched_in_288": false,
+      "retrieval_observation": {
+        "date_utc": "2026-11-09",
+        "service": "INDEPENDENT_WEB_OPEN_NOT_ORIGIN_HTTP",
+        "result": "IMAGE_RENDERED_WEB_TOOL",
+        "tool_reference": "turn945677view1",
+        "visitor_http_status": null,
+        "visitor_decoded_px": null,
+        "visitor_transferred_bytes": null,
+        "visitor_broken": null
+      },
+      "candidate": {
+        "official_catalog_page": "https://www.ncei.noaa.gov/access/metadata/landing-page/bin/iso?id=gov.noaa.ngdc%3AHazard_Images_Database",
+        "authority": "NOAA_GENERAL_ARCHIVE",
+        "relationship": "topical_archive_not_same_image",
+        "scene_integrity": "Source image depicts destroyed commercial block in Hilo, Hawaiʻi, NOT Scotch Cap, Alaska; preserve Hawaiʻi section placement",
+        "rights_review": "USGS_SOURCE_ORIGINAL_ITEM_RIGHTS_REVIEW",
+        "archival_native_dimensions_px": null,
+        "claimed_native_bytes": null,
+        "filename_rendition_dimensions_hint_px": null,
+        "conditional_960_max_rendition_px": null,
+        "exact_binary_match_confirmed": false,
+        "rights_cleared": false
+      },
+      "release": {
+        "binary_download": false,
+        "cdn_cache": false,
+        "wordpress_upload": false,
+        "post_block_rewrite": false,
+        "homepage_visual_change": false
+      }
+    }
+  ]
+}
