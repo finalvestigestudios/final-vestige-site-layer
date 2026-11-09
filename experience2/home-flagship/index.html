@@ -31,6 +31,9 @@
     </div>
   </div>
   <div class="fv-hf__canvas">
+    <!-- First keyboard actions: no-JS bypass choices before the masthead and chapter rail. -->
+    <a class="fv-hf__skip" href="#fv-hf-main">Skip to the main archive</a>
+    <a class="fv-hf__skip" href="#fv-hf-evidence">Skip to the evidence room</a>
     <header class="fv-hf__masthead">
       <a class="fv-hf__brand" href="https://finalvestige.com/" aria-label="Final Vestige Studios home">
         <span class="fv-hf__cairn" aria-hidden="true"><i></i><i></i><i></i></span>
@@ -52,7 +55,6 @@
       <a class="fv-hf__mast-cta" href="https://finalvestige.com/focus/">Free Focus Fieldbook <span aria-hidden="true">↗</span></a>
     </header>
 
-    <a class="fv-hf__skip" href="#fv-hf-evidence">Skip to the evidence room</a>
 <nav class="fv-hf__chapter-nav" aria-label="Explore the chapters">
   <a href="#fv-hf-title"><span>01</span> The find</a>
   <a href="#fv-hf-chronicle"><span>02</span> A document changed</a>
@@ -63,7 +65,7 @@
   <a href="#fv-hf-mind-title"><span>07</span> The observer</a>
 </nav>
 
-    <main>
+    <main id="fv-hf-main" tabindex="-1">
       <section class="fv-hf__opening" aria-labelledby="fv-hf-title">
         <div class="fv-hf__grain" aria-hidden="true"></div>
         <div class="fv-hf__halo" aria-hidden="true"></div>
@@ -170,7 +172,7 @@
   </div>
 </section>
 
-      <section class="fv-hf__chamber" id="fv-hf-evidence" aria-labelledby="fv-hf-evidence-title" data-fv-records>
+      <section class="fv-hf__chamber" id="fv-hf-evidence" tabindex="-1" aria-labelledby="fv-hf-evidence-title" data-fv-records>
         <div class="fv-hf__chamber-header">
           <p class="fv-hf__eyebrow">THE ARCHIVE / OPEN A RECORD</p>
           <h2 id="fv-hf-evidence-title">A story changes when <em>you read the evidence.</em></h2>
