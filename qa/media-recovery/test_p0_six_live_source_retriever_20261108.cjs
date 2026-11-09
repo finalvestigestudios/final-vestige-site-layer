@@ -41,3 +41,14 @@ const changes=[
 ['alternate article permalink',a=>a.rows[2].post_url='https://finalvestige.com/unrelated/']
 ];
 for(const [n,f] of changes)test('fail closed: '+n,()=>{const a=JSON.parse(JSON.stringify(base));f(a);assert.ok(validate(a).length>0,n);});
+
+// Supplemental source-provenance and strict-schema tests: no production writes.
+test('fail closed: false alternate render attribution',()=>{const a=JSON.parse(JSON.stringify(base));(a=>{a.rows[0].candidate.rendered_by_retriever=true;a.rows[2].candidate.rendered_by_retriever=false;})(a);assert.ok(validate(a).length>0,'false alternate render attribution');});
+test('fail closed: misleading exact photo assertion',()=>{const a=JSON.parse(JSON.stringify(base));(a=>a.rows[2].candidate.relationship='EXACT_LICENSED_SAME_PHOTO')(a);assert.ok(validate(a).length>0,'misleading exact photo assertion');});
+test('fail closed: tampered CMS modified',()=>{const a=JSON.parse(JSON.stringify(base));(a=>a.rows[2].modified='2026-12-31T00:00:00')(a);assert.ok(validate(a).length>0,'tampered CMS modified');});
+test('fail closed: unapproved cache field',()=>{const a=JSON.parse(JSON.stringify(base));(a=>a.rows[2].candidate.safe_to_cache=true)(a);assert.ok(validate(a).length>0,'unapproved cache field');});
+test('fail closed: unapproved publication action',()=>{const a=JSON.parse(JSON.stringify(base));(a=>a.rows[2].actions.make_public=true)(a);assert.ok(validate(a).length>0,'unapproved publication action');});
+test('fail closed: injected guest row status',()=>{const a=JSON.parse(JSON.stringify(base));(a=>a.rows[2].visitor_broken=true)(a);assert.ok(validate(a).length>0,'injected guest row status');});
+test('fail closed: injected origin wrapper status',()=>{const a=JSON.parse(JSON.stringify(base));(a=>a.rows[2].wrapper.origin_status=404)(a);assert.ok(validate(a).length>0,'injected origin wrapper status');});
+test('fail closed: null row structured hold',()=>{const a=JSON.parse(JSON.stringify(base));(a=>a.rows[2]=null)(a);assert.ok(validate(a).length>0,'null row structured hold');});
+test('fail closed: array typed slot structured hold',()=>{const a=JSON.parse(JSON.stringify(base));(a=>a.rows[2].slot=['287:5'])(a);assert.ok(validate(a).length>0,'array typed slot structured hold');});
