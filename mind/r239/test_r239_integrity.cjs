@@ -9,7 +9,7 @@ const read=relative=>fs.readFileSync(path.join(root,relative),'utf8');
 function fnv32(s){let h=2166136261;for(let i=0;i<s.length;i++)h=Math.imul((h^s.charCodeAt(i)),16777619)>>>0;return h.toString(16).padStart(8,'0');}
 const EXPECTED={
  r238:{sources:'77fb0b42',claims:'7b2e2425',gates:'83f30948',counts:[15,20,16]},
- r239:{sources:'4434c150',claims:'01dd7703',gates:'b96bb701',counts:[14,22,16]}
+ r239:{sources:'74dfa454',claims:'19b73b33',gates:'b96bb701',counts:[14,22,16]}
 };
 const R238=JSON.parse(read('r238/R238-CLAIM-SOURCE-COMMERCE-HOLD.json'));
 const R239=JSON.parse(read('r239/CLAIM-SOURCE-OFFER-AND-REVENUE-GATES.json'));
@@ -38,14 +38,19 @@ function integrity(m,expected,label){
  assert.equal(('confirmed_paid_orders' in outcome)?outcome.confirmed_paid_orders:outcome.merchant_verified_paid_orders,null,label+' no invented paid orders');
 }
 function inspectArticle(s){
- assert.equal(fnv32(s),'d430737c','original investigation exact research fingerprint');
- for(const term of ['24 radiologists','Eighty-three percent','forty-eight times','2010','1999','separate','inattentional blindness','Change Blindness','NOT','Fieldbook','https://doi.org/10.1177/0956797613479386']) assert(s.toLowerCase().includes(term.toLowerCase()),'research boundary '+term);
+ assert.equal(fnv32(s),'804fe95f','original investigation exact research fingerprint');
+ for(const term of ['24 radiologists','Twenty of the 24','forty-eight-fold','2010','1999','separate','inattentional blindness','Change Blindness','NOT','Fieldbook','https://doi.org/10.1177/0956797613479386']) assert(s.toLowerCase().includes(term.toLowerCase()),'research boundary '+term);
  assert(!/https:\/\/(?:www\.)?(?:zen12|inspire3|hypnosislive|brainwaveshots)\.com/i.test(s),'investigation has no seller/product links');
+ assert(s.includes('**That between-group difference was not statistically significant.**'),'require non-significance qualification');
+ assert(s.includes('**volume of the rectangular box enclosing the inserted gorilla**'),'require 48-fold volume meaning');
+ assert(s.includes('R227 manuscript'),'require canonical collision declaration');
  assert(!/we (?:tested|used|recommend) zen12|guaranteed (?:mental|focus|cure)/i.test(s),'no fabricated product experience/effectiveness');
 }
 function inspectPlan(s){
- assert.equal(fnv32(s),'9b6c0122','complete reviewed plan immutable');
+ assert.equal(fnv32(s),'b20fe4d8','complete reviewed plan immutable');
  assert(s.length>6500,'substantive plan present');
+ assert(s.includes('**minus** refunds')&&s.includes('only to the extent each has not already been withheld'),'no sign error or double cost deduction');
+ assert(s.includes('**Collision confirmed:** R227'),'explicit manuscript collision gate');
  for(const term of ['NOT COMPUTABLE','HARD HOLD','utm_campaign','qualified_human_session','confirmed_lead','paid_order','cleared_commission','7-day','30-day','Grok','Praxxis','Jetpack','UNRENDERED','NOT LIVE','founder'])assert(s.toLowerCase().includes(term.toLowerCase()),'plan missing '+term);
 }
 function inspectArm(s){

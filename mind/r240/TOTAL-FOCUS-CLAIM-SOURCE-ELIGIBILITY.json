@@ -1,0 +1,403 @@
+{
+  "version": "R240",
+  "date": "2026-11-09",
+  "status": "SOURCE_ONLY_UNPUBLISHED",
+  "product": "Hypnosis Live Total Focus",
+  "offer_target": "Qualified adult who prefers a standalone narrated 33-minute self-guided recording rather than a multilevel audio library",
+  "merchant_approval": "NOT_VERIFIED",
+  "email_review": "Targeted post-2026-10-01 Gmail partner/publisher query returned zero hits; promotions do not establish acceptance; private dashboard uninspected",
+  "source_urls_not_purchase_links": true,
+  "merchant_links_in_public_html": false,
+  "affiliate_url": null,
+  "final_cart_price": null,
+  "checkout_validated": false,
+  "sources": [
+    {
+      "id": "S01",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "description": "Exact merchant Total Focus product page; 33 min 47MB and advertised performance; live text Nov 9",
+      "scope": "SELLER_ONLY"
+    },
+    {
+      "id": "S02",
+      "url": "https://hypnosislive.com/faq",
+      "description": "Official merchant FAQ; MP3 delivery, refunds and five-session per-year cap; live text Nov 9",
+      "scope": "SELLER_TERMS_NOT_CHECKOUT"
+    },
+    {
+      "id": "S03",
+      "url": "https://zen12.com/hnp",
+      "description": "Official Zen12 Premium offer; 12 levels, 48 MP3, four styles and claims",
+      "scope": "SELLER_ONLY"
+    },
+    {
+      "id": "S04",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "description": "Official 15/30 minute Focus Shot offer and seller efficacy claims",
+      "scope": "SELLER_ONLY"
+    },
+    {
+      "id": "S05",
+      "url": "https://inspire3.com/",
+      "description": "Inspire3 catalog links three relevant product families",
+      "scope": "SELLER_CATALOG"
+    },
+    {
+      "id": "S06",
+      "url": "https://doi.org/10.1080/00029157.2014.976783",
+      "description": "Lynn Laurence Kirsch 2015 integrative theoretical hypnosis paper; abstract",
+      "scope": "SCHOLARLY_ABSTRACT_NOT_SKU_TRIAL"
+    },
+    {
+      "id": "S07",
+      "url": "https://search.bwh.harvard.edu/new/pubs/DrewVoWolfe13.pdf",
+      "description": "Drew Võ Wolfe 2013 full original radiologist study pp 1849-50 examined with PDF screenshots",
+      "scope": "ORIGINAL_PAPER_FULL_TEXT_PAGES"
+    },
+    {
+      "id": "S08",
+      "url": "https://www.gathering4gardner.org/g4g10gift/science/Simons_Daniel_J-Monkeying_Around.pdf",
+      "description": "Simons 2010 full paper methods and nonsignificant comparison examined with screenshot",
+      "scope": "ORIGINAL_PAPER_FULL_TEXT_PAGES"
+    },
+    {
+      "id": "S09",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "description": "FTC near recommendation material-connections disclosure",
+      "scope": "OFFICIAL_GUIDANCE"
+    },
+    {
+      "id": "S10",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "description": "FTC health-related advertising support and misleading claims guidance",
+      "scope": "OFFICIAL_GUIDANCE"
+    },
+    {
+      "id": "S11",
+      "url": "https://finalvestige.com/focus/",
+      "description": "Published free Focus Fieldbook landing, 52-page PDF and existing Jetpack email; no provider-confirmed data",
+      "scope": "LIVE_EDITORIAL_ONLY"
+    },
+    {
+      "id": "S12",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "description": "Published original change blindness investigation, distinct from gorilla work",
+      "scope": "LIVE_EDITORIAL_ONLY"
+    },
+    {
+      "id": "S13",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "description": "Published Mesmer commission investigation",
+      "scope": "LIVE_EDITORIAL_ONLY"
+    },
+    {
+      "id": "S14",
+      "url": "https://finalvestige.com/explore/",
+      "description": "Public Explore index confirms Puységur archive's 153 source rows and 16 dossiers",
+      "scope": "LIVE_EDITORIAL_INDEX"
+    },
+    {
+      "id": "S15",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "description": "Mind and Inspire3 governance, disclosure, release holds",
+      "scope": "INTERNAL_CHARTER"
+    },
+    {
+      "id": "S16",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "description": "Net revenue and privacy-safe attribution business mandate",
+      "scope": "INTERNAL_MEASUREMENT"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "text": "Total Focus is listed as a single 33-minute, 47MB recording credited to J. A. Amos",
+      "source_id": "S01",
+      "status": "SELLER_DESCRIPTION_ONLY",
+      "adjudication": "Allowed attributed, not tested"
+    },
+    {
+      "id": "C02",
+      "text": "Total Focus's seller says it causes 100% concentration, brain reprogramming, and career-related productivity gains",
+      "source_id": "S01",
+      "status": "UNSUBSTANTIATED_PRODUCT_OUTCOMES",
+      "adjudication": "Do not echo as FV results"
+    },
+    {
+      "id": "C03",
+      "text": "The FAQ describes MP3 download after purchase and usually no recurring session payments",
+      "source_id": "S02",
+      "status": "SELLER_POLICY_UNAUTHENTICATED_AT_CHECKOUT",
+      "adjudication": "Require final cart"
+    },
+    {
+      "id": "C04",
+      "text": "The Total Focus page advertises a 14-day refund promise",
+      "source_id": "S01",
+      "status": "SELLER_PROMISE_FULFILLMENT_UNTESTED",
+      "adjudication": "Label as promise"
+    },
+    {
+      "id": "C05",
+      "text": "The FAQ states a maximum of five refunded sessions per year",
+      "source_id": "S02",
+      "status": "SELLER_POLICY_SCOPE",
+      "adjudication": "Disclose any future offer guide"
+    },
+    {
+      "id": "C06",
+      "text": "The FAQ describes additional refund-processing and credit times; the final checkout and controlling refund contract were not authenticated",
+      "source_id": "S02",
+      "status": "SELLER_POLICY_NOT_VERIFIED_IN_PRACTICE",
+      "adjudication": "No fulfillment assurances"
+    },
+    {
+      "id": "C07",
+      "text": "Current public Total Focus prices differ from earlier indexed promotional prices",
+      "source_id": "S01",
+      "status": "TRANSIENT_STORE_DISPLAY",
+      "adjudication": "No advertised price or percentage until cart validated"
+    },
+    {
+      "id": "C08",
+      "text": "Inspire3 catalog links Hypnosis Live, Zen12 and Brainwave Shots",
+      "source_id": "S05",
+      "status": "SELLER_CATALOG",
+      "adjudication": "No publisher permission inferred"
+    },
+    {
+      "id": "C09",
+      "text": "Zen12 Premium merchant describes 12 levels, 48 MP3s, four styles",
+      "source_id": "S03",
+      "status": "SELLER_DESCRIPTION_ONLY",
+      "adjudication": "No superior efficacy inference"
+    },
+    {
+      "id": "C10",
+      "text": "Zen12 asserts 12-minute listening yields an hour of meditation benefits",
+      "source_id": "S03",
+      "status": "UNSUBSTANTIATED_SKU_EFFECT",
+      "adjudication": "Exclude from FV recommendations"
+    },
+    {
+      "id": "C11",
+      "text": "Focus Shot seller lists 15- and 30-minute formats",
+      "source_id": "S04",
+      "status": "SELLER_DESCRIPTION_ONLY",
+      "adjudication": "Distinct from Total Focus"
+    },
+    {
+      "id": "C12",
+      "text": "Focus Shot marketing promises immediate multi-hour focus",
+      "source_id": "S04",
+      "status": "UNSUBSTANTIATED_SKU_EFFECT",
+      "adjudication": "Do not adopt"
+    },
+    {
+      "id": "C13",
+      "text": "Integrative hypnosis research discusses multiple processes and suggestion, not effects of Total Focus specifically",
+      "source_id": "S06",
+      "status": "GENERAL_RESEARCH_NOT_PRODUCT_EVIDENCE",
+      "adjudication": "Boundary clear"
+    },
+    {
+      "id": "C14",
+      "text": "The 2013 radiologist trial: 20/24 did not report gorilla and 12/20 of misses fixated its location",
+      "source_id": "S07",
+      "status": "FULL_PAPER_P1850_SUPPORTED",
+      "adjudication": "No diagnostic rates generalization"
+    },
+    {
+      "id": "C15",
+      "text": "The 48-fold gorilla/nodule comparison is bounding-box volume >7400 mm3 versus average nodule volume 153 mm3",
+      "source_id": "S07",
+      "status": "FULL_PAPER_P1849_SUPPORTED",
+      "adjudication": "Not image-area ratio"
+    },
+    {
+      "id": "C16",
+      "text": "The 2010 study found 4/23 vs 12/41 noticed other events, a nonsignificant difference",
+      "source_id": "S08",
+      "status": "FULL_PAPER_NONSIGNIFICANT",
+      "adjudication": "Do not imply familiarity harms detection"
+    },
+    {
+      "id": "C17",
+      "text": "FTC recommends clear affiliate disclosure as close as possible to commission-bearing links",
+      "source_id": "S09",
+      "status": "FTC_GUIDANCE",
+      "adjudication": "Place before CTA, not buried"
+    },
+    {
+      "id": "C18",
+      "text": "FTC requires substantiation for objectively claimed health benefits and treats implied claims as claims",
+      "source_id": "S10",
+      "status": "FTC_GUIDANCE",
+      "adjudication": "Do not borrow clinical studies"
+    },
+    {
+      "id": "C19",
+      "text": "The live Focus Fieldbook is a free 52-page PDF via existing Jetpack signup pathway, but provider-confirmed leads are unverified",
+      "source_id": "S11",
+      "status": "LIVE_DESCRIPTION_NO_SIGNUP_PROOF",
+      "adjudication": "Do not duplicate form"
+    },
+    {
+      "id": "C20",
+      "text": "Live FV change blindness article covers flicker and door-swap tasks rather than the gorilla studies",
+      "source_id": "S12",
+      "status": "LIVE_EDITORIAL_BOUNDARY",
+      "adjudication": "No invented gorilla URL"
+    },
+    {
+      "id": "C21",
+      "text": "Puységur archive is historical evidence resource rather than proof of modern product efficacy",
+      "source_id": "S14",
+      "status": "HISTORY_NOT_SKU_TRIAL",
+      "adjudication": "Keep editorial commerce separate"
+    },
+    {
+      "id": "C22",
+      "text": "No qualified sessions or independently reconciled paid revenues are authenticated; net per thousand is not computable",
+      "source_id": "S16",
+      "status": "MEASUREMENT_GATE",
+      "adjudication": "Missing must be null"
+    },
+    {
+      "id": "C23",
+      "text": "Prospective affiliate earning CTA needs named publisher approval, issued URL, allowed channels and founder release",
+      "source_id": "S15",
+      "status": "RELEASE_REQUIRED",
+      "adjudication": "No active merchant link"
+    },
+    {
+      "id": "C24",
+      "text": "No verified published Grok asset IDs and UTM content values may be invented",
+      "source_id": "S16",
+      "status": "ATTRIBUTION_GATE",
+      "adjudication": "Reconcile TASK-008"
+    }
+  ],
+  "gates": [
+    {
+      "id": "named_publisher_approval",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "account_issued_affiliate_url",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "approved_website_channel",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "approved_social_channel",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "approved_email_channel",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "correct_product_and_tier",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "final_cart_price_and_currency",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "refund_policy_and_real_delivery",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "creative_usage_authorization",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "adjacent_affiliate_disclosure_browser_QA",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "one_jetpack_focus_funnel",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "first_party_attribution_no_script_duplication",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "grok_published_asset_and_mobile_route",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "merchant_reported_paid_order",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "cleared_commissions_fees_refunds",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "founder_release_permission",
+      "status": "HARD_HOLD"
+    }
+  ],
+  "claim_types": {
+    "seller_format": "Seller description may be accurately attributed; not independent testing",
+    "seller_efficacy": "Do not publish as FV efficacy claim",
+    "science": "Not SKU test",
+    "policy": "Seller terms need checkout verification"
+  },
+  "return_terms": {
+    "product_page_promise": "14 days — seller only",
+    "faq_limit": "Maximum five refunded sessions per year — seller only",
+    "refund_execution_verified": false
+  },
+  "creator_to_product": [
+    {
+      "topic": "Change blindness flicker or door-swap",
+      "article": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "next": "https://finalvestige.com/focus/",
+      "offer": "NONE by default; audio guide only for independent purchase interest",
+      "asset_id": null
+    },
+    {
+      "topic": "Mesmerism 1784 / Puységur",
+      "article": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "next": "https://finalvestige.com/focus/",
+      "offer": "Optional historical-context Total Focus independent buyer guide once approved",
+      "asset_id": null
+    },
+    {
+      "topic": "Short starting routine",
+      "article": "https://finalvestige.com/focus/",
+      "next": "https://finalvestige.com/focus/",
+      "offer": "Zen12 as optional format comparison, only if authorized",
+      "asset_id": null
+    }
+  ],
+  "experiment": {
+    "baseline": "R237 Zen12 A identical buyer text",
+    "treatment": "R237 Zen12 B identical buyer text plus optional original 42s unrendered storyboard",
+    "status": "NOT_LIVE",
+    "primary": "merchant_verified_paid_rate_not_clicks",
+    "content_release": "HARD_HOLD"
+  },
+  "measurement": {
+    "qualified_human_sessions": null,
+    "first_party_cta_clicks": null,
+    "jetpack_confirmed_leads": null,
+    "affiliate_outbound_clicks": null,
+    "merchant_confirmed_sales": null,
+    "cleared_affiliate_commissions": null,
+    "verified_owned_orders": null,
+    "refunds": null,
+    "fees": null,
+    "net_revenue_per_1000_qualified_humans": null,
+    "confidence": "NO_SALES_LEDGER"
+  },
+  "source_identity_notes": "R239 source and claim corrections were reviewed against full paper; this matrix is independent R240 supplement, not proof of private commercial eligibility"
+}
