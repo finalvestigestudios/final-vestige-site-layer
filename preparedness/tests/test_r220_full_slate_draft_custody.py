@@ -12,6 +12,7 @@ import r220_full_slate_draft_custody as gate
 import r226_export_browser_custody as dom_gate
 import r227_inert_context_citation_hold as inert_gate
 import r230_html_tokenizer_state_hold as tokenizer_gate
+import r231_exact_export_replay_hold as replay_gate
 
 HEADS = {key: 'abcdef1'[i] * 40 for i, key in enumerate(
     ('start', 'shelter', 'food', 'health', 'hist-field', 'hist-food', 'hist-home'))}
@@ -128,26 +129,27 @@ class SyntheticRenderTests(unittest.TestCase):
         (cls.root / 'content' / 'tools').mkdir(parents=True)
         for slug in cls.allslugs[35:]:
             (cls.root / 'content' / 'tools' / f'{slug}.meta.json').write_text('{}')
+        cls.base_inner = ('<header>Independent safety/source and QD verification pending</header>'
+                          '<div class="pa-body" id="pa-main">hello x</div>'
+                          '<section class="pa-sources"><h2>Sources and verification</h2><ol></ol></section>'
+                          '<section class="pa-review"><h2>Review record</h2>'
+                          '<p>Independent source and safety review pending.</p></section>')
         for mode in ('wp', 'preview'):
             (cls.root / 'build' / mode).mkdir(parents=True)
             for slug in cls.allslugs:
-                (cls.root / 'build' / mode / f'{slug}.html').write_text(
-                    '<header>Independent safety/source and QD verification pending</header>'
-                    '<div class="pa-body" id="pa-main">hello x</div>'
-                    '<section class="pa-sources"><h2>Sources and verification</h2><ol></ol></section>'
-                    '<section class="pa-review"><h2>Review record</h2>'
-                    '<p>Independent source and safety review pending.</p></section>')
+                (cls.root / 'build' / mode / f'{slug}.html').write_text(cls.base_inner)
         cls.entries = {}
         for slug in cls.allslugs:
             cls.entries[slug] = {'slug': slug,
                                  'canonical': f'https://finalvestige.com/preparedness/start-here/{slug}/',
-                                 'sources': [], 'words': 2}
+                                 'sources': [], 'words': 2, 'minutes': 1}
         cls.report = {'articles': list(cls.entries.values()),
                       'release_evidence': {'wordpress_publication_performed': False,
                                            'independent_qa_verified': False}}
         class Library:
             def __init__(self, names):
-                self.articles = {x: {'status': {'publish': 'draft'}, '_body': 'hello x'} for x in names}
+                self.articles = {x: {'slug': x, 'status': {'publish': 'draft'}, '_body': 'hello x',
+                                  'h1': 'Test title', 'description': 'Synthetic preview'} for x in names}
             def url_path(self, slug):
                 return f'/preparedness/start-here/{slug}/'
         class Builder:
@@ -157,6 +159,15 @@ class SyntheticRenderTests(unittest.TestCase):
             @staticmethod
             def word_count(text):
                 return len(text.split())
+            @staticmethod
+            def build_article(library, slug):
+                return {'inner': cls.base_inner, **cls.entries[slug]}
+            @staticmethod
+            def wp_wrap(library, inner):
+                return inner
+            @staticmethod
+            def preview_wrap(library, inner, title, description):
+                return inner
         cls.lib = Library(cls.allslugs)
         cls.builder = Builder
 
@@ -166,23 +177,26 @@ class SyntheticRenderTests(unittest.TestCase):
 
     def check(self, report=None):
         return gate.verify_render(self.root, self.articles, report or self.report,
-                                  self.lib, self.builder, dom_gate, inert_gate, tokenizer_gate)
+                                  self.lib, self.builder, dom_gate, inert_gate, tokenizer_gate, replay_gate)
 
     def test_positive_synthetic_render(self):
         self.assertEqual(self.check()['channel_files_verified'], 82)
 
-    def test_all_three_guards_execute_for_every_channel(self):
+    def test_all_four_guards_execute_for_every_channel(self):
         # The old fixture did not pass either new guard, causing TypeError before
         # the 82 truncation regressions could exercise their intended assertions.
         with patch.object(dom_gate, 'verify_export', wraps=dom_gate.verify_export) as d, \
              patch.object(inert_gate, 'verify_inert_contexts',
                           wraps=inert_gate.verify_inert_contexts) as n, \
              patch.object(tokenizer_gate, 'verify_tokenizer_states',
-                          wraps=tokenizer_gate.verify_tokenizer_states) as t:
+                          wraps=tokenizer_gate.verify_tokenizer_states) as t, \
+             patch.object(replay_gate, 'verify_exact_export',
+                          wraps=replay_gate.verify_exact_export) as p:
             self.assertEqual(self.check()['channel_files_verified'], 82)
             self.assertEqual(d.call_count, 82)
             self.assertEqual(n.call_count, 82)
             self.assertEqual(t.call_count, 82)
+            self.assertEqual(p.call_count, 82)
 
     def test_rendered_source_inside_template_rejected(self):
         path = self.root / 'build' / 'wp' / 'article-1.html'
@@ -219,6 +233,17 @@ class SyntheticRenderTests(unittest.TestCase):
             page = page.replace('</p></section>', '</p></section></details>')
             path.write_text(page)
             with self.assertRaisesRegex(ValueError, 'R227 conditional DOM'):
+                self.check()
+        finally:
+            path.write_text(original)
+
+    def test_css_override_outside_sources_rejected_by_replay(self):
+        path = self.root / 'build' / 'wp' / 'article-1.html'
+        original = path.read_text()
+        try:
+            path.write_text(original.replace('<header>',
+                '<style>.pa-sources{display:none!important}</style><header>', 1))
+            with self.assertRaisesRegex(ValueError, 'R231 exact export bytes changed'):
                 self.check()
         finally:
             path.write_text(original)
