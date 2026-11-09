@@ -1,0 +1,498 @@
+{
+  "milestone": 245,
+  "created_date": "2026-11-09",
+  "scope": "UNPUBLISHED_SOURCE_ONLY",
+  "release": "HARD_HOLD",
+  "public_affiliate_portal": "https://affiliates.inspire3.com/",
+  "evidence_notice": "Observed public offer page display is NOT a verified cart, refund or authorized FV earning link. Retail prices may change. The affiliate site's 60%+ marketing is NOT a Final Vestige contractual payout; no commission estimate is used.",
+  "source_count": 22,
+  "claim_count": 29,
+  "gate_count": 16,
+  "sources": [
+    {
+      "id": "S01",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/1138489/",
+      "type": "primary_bibliographic",
+      "scope": "1975 saccadic displacement; abstract unavailable"
+    },
+    {
+      "id": "S02",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3720035/",
+      "type": "peer_reviewed_open",
+      "scope": "2013 updating / blanking description"
+    },
+    {
+      "id": "S03",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7424120/",
+      "type": "peer_reviewed_primary",
+      "scope": "2020 transsaccadic detailed form"
+    },
+    {
+      "id": "S04",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3254668/",
+      "type": "peer_reviewed_primary",
+      "scope": "2009 omitted stimuli processing"
+    },
+    {
+      "id": "S05",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9469035/",
+      "type": "peer_reviewed_primary",
+      "scope": "2022 context and contrast"
+    },
+    {
+      "id": "S06",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9255256/",
+      "type": "peer_reviewed_review",
+      "scope": "2021 remapping taxonomy"
+    },
+    {
+      "id": "S07",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8552810/",
+      "type": "peer_reviewed_review",
+      "scope": "2021 presaccadic attention"
+    },
+    {
+      "id": "S08",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10466800/",
+      "type": "peer_reviewed_review",
+      "scope": "2023 blink/saccade distinction"
+    },
+    {
+      "id": "S09",
+      "url": "https://inspire3.com/",
+      "type": "seller_catalog",
+      "scope": "Official catalog, not efficacy proof"
+    },
+    {
+      "id": "S10",
+      "url": "https://zen12.com/hnp",
+      "type": "seller_offer",
+      "scope": "Zen12 Premium detailed offer, 2026-11-09 web read"
+    },
+    {
+      "id": "S11",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "type": "seller_offer",
+      "scope": "Focus Shot exact offer, 2026-11-09 web read"
+    },
+    {
+      "id": "S12",
+      "url": "https://brainwaveshots.com/faq",
+      "type": "seller_policy",
+      "scope": "Focus Shot general seller restrictions"
+    },
+    {
+      "id": "S13",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "type": "seller_offer",
+      "scope": "Total Focus exact offer"
+    },
+    {
+      "id": "S14",
+      "url": "https://hypnosislive.com/faq",
+      "type": "seller_policy",
+      "scope": "Total Focus seller refund restrictions"
+    },
+    {
+      "id": "S15",
+      "url": "https://affiliates.inspire3.com/",
+      "type": "public_affiliate_portal",
+      "scope": "Public signup/login not FV acceptance"
+    },
+    {
+      "id": "S16",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "type": "regulator_guidance",
+      "scope": "Material connection transparency"
+    },
+    {
+      "id": "S17",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "type": "regulator_guidance",
+      "scope": "Product benefit substantiation"
+    },
+    {
+      "id": "S18",
+      "url": "https://finalvestige.com/focus/",
+      "type": "fv_live_resource",
+      "scope": "Published single Jetpack/Focus fieldbook path"
+    },
+    {
+      "id": "S19",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "type": "fv_live_article",
+      "scope": "Existing related but distinct science"
+    },
+    {
+      "id": "S20",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "type": "fv_inventory_unreadable",
+      "scope": "Listed archive; body inaccessible via direct web"
+    },
+    {
+      "id": "S21",
+      "url": "https://www.lucs.lu/fileadmin/user_upload/lucs/2011/01/Hall-et-al.-2010-Magic-at-the-Marketplace-Choice-Blindness-for-the-Taste-of-Jam-and-the-Smell-of-Tea.pdf",
+      "type": "primary_pdf_not_analyzed_in_this_sprint",
+      "scope": "Independent Praxxis correction; metadata only, not PDF analyzed"
+    },
+    {
+      "id": "S22",
+      "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0045457",
+      "type": "peer_reviewed_primary",
+      "scope": "Moral attitude study methods"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "product": "saccades",
+      "claim": "Bridgeman/Hendry/Stark 1975 bibliographic paper establishes the studied displacement-detection problem",
+      "source": "S01",
+      "status": "primary_bibliographic_no_method_overreach"
+    },
+    {
+      "id": "C02",
+      "product": "saccades",
+      "claim": "A target blank can improve displacement discrimination under constrained lab conditions",
+      "source": "S02",
+      "status": "research_summary_bounded"
+    },
+    {
+      "id": "C03",
+      "product": "saccades",
+      "claim": "2020 blanked-target detailed-form task used 200ms blanking at saccade onset",
+      "source": "S03",
+      "status": "primary_experiment"
+    },
+    {
+      "id": "C04",
+      "product": "saccades",
+      "claim": "Unreported peri-saccadic stimuli may still influence downstream processing",
+      "source": "S04",
+      "status": "primary_experiment"
+    },
+    {
+      "id": "C05",
+      "product": "saccades",
+      "claim": "Displacement and contrast suppression should not be conflated",
+      "source": "S05",
+      "status": "primary_experiment"
+    },
+    {
+      "id": "C06",
+      "product": "saccades",
+      "claim": "Visual remapping comprises debated and distinct categories",
+      "source": "S06",
+      "status": "peer_reviewed_synthesis"
+    },
+    {
+      "id": "C07",
+      "product": "saccades",
+      "claim": "Presaccadic attention differs from covert attention",
+      "source": "S07",
+      "status": "peer_reviewed_synthesis"
+    },
+    {
+      "id": "C08",
+      "product": "saccades",
+      "claim": "Blinking and saccades are not equivalent mechanisms",
+      "source": "S08",
+      "status": "peer_reviewed_synthesis"
+    },
+    {
+      "id": "C09",
+      "product": "saccades",
+      "claim": "None of these studies tested the exact three offered Inspire3 SKUs",
+      "source": "S03",
+      "status": "scope_exclusion"
+    },
+    {
+      "id": "C10",
+      "product": "Zen12 Premium",
+      "claim": "Seller describes 12 levels / 48 MP3 / twelve-minute sessions",
+      "source": "S10",
+      "status": "seller_feature_not_independent_test"
+    },
+    {
+      "id": "C11",
+      "product": "Zen12 Premium",
+      "claim": "Seller advertises 1 hour meditation benefits in 12 minutes",
+      "source": "S10",
+      "status": "unsupported_seller_efficacy_do_not_adopt"
+    },
+    {
+      "id": "C12",
+      "product": "Zen12 Premium",
+      "claim": "Seller displays premium reference $187.99 and current advertised $87.99",
+      "source": "S10",
+      "status": "seller_page_price_observation_only_checkout_not_verified"
+    },
+    {
+      "id": "C13",
+      "product": "Zen12 Premium",
+      "claim": "Seller advertises 1 year refund policy, performance not tested",
+      "source": "S10",
+      "status": "seller_policy_unverified_fulfillment"
+    },
+    {
+      "id": "C14",
+      "product": "Zen12 Premium",
+      "claim": "Free MP3 path on merchant page also invokes merchant newsletter",
+      "source": "S10",
+      "status": "seller_consent_copy_untested_form"
+    },
+    {
+      "id": "C15",
+      "product": "Focus Shot",
+      "claim": "Seller lists 15/30 minute tracks and optional sound-only versions",
+      "source": "S11",
+      "status": "seller_feature"
+    },
+    {
+      "id": "C16",
+      "product": "Focus Shot",
+      "claim": "Seller advertises hours of improved focus after listening",
+      "source": "S11",
+      "status": "unsupported_seller_efficacy_do_not_adopt"
+    },
+    {
+      "id": "C17",
+      "product": "Focus Shot",
+      "claim": "Seller displays $17.99 reduced from $22.99",
+      "source": "S11",
+      "status": "seller_page_price_observation_only_checkout_not_verified"
+    },
+    {
+      "id": "C18",
+      "product": "Focus Shot",
+      "claim": "Seller FAQ limits refund to one in six months; >10 item rule",
+      "source": "S12",
+      "status": "seller_policy_unverified_fulfillment"
+    },
+    {
+      "id": "C19",
+      "product": "Focus Shot",
+      "claim": "Seller warns against listening for epilepsy or when wakefulness required",
+      "source": "S12",
+      "status": "seller_precaution_no_safety_certification"
+    },
+    {
+      "id": "C20",
+      "product": "Total Focus",
+      "claim": "Seller describes 33min 47MB narrated session",
+      "source": "S13",
+      "status": "seller_feature"
+    },
+    {
+      "id": "C21",
+      "product": "Total Focus",
+      "claim": "Seller displays $24.44 with $29.95 comparison; bundle prices differ",
+      "source": "S13",
+      "status": "seller_page_price_observation_only_checkout_not_verified"
+    },
+    {
+      "id": "C22",
+      "product": "Total Focus",
+      "claim": "Seller promises improved productivity and concentration",
+      "source": "S13",
+      "status": "unsupported_seller_efficacy_do_not_adopt"
+    },
+    {
+      "id": "C23",
+      "product": "Total Focus",
+      "claim": "Seller FAQ states 14-day returns and at most 5 refunded sessions annually",
+      "source": "S14",
+      "status": "seller_policy_unverified_fulfillment"
+    },
+    {
+      "id": "C24",
+      "product": "Affiliate eligibility",
+      "claim": "Public affiliate portal invites signups but does not identify approved Final Vestige publisher",
+      "source": "S15",
+      "status": "public_portal_not_account_permission"
+    },
+    {
+      "id": "C25",
+      "product": "Disclosure",
+      "claim": "Material affiliate relationships must be clear and conspicuous",
+      "source": "S16",
+      "status": "regulatory_requirement"
+    },
+    {
+      "id": "C26",
+      "product": "Health advertising",
+      "claim": "Objective health benefit claims need appropriate substantiation",
+      "source": "S17",
+      "status": "regulatory_requirement"
+    },
+    {
+      "id": "C27",
+      "product": "Focus Fieldbook",
+      "claim": "Existing live landing and subscriber relationship distinct from merchant newsletter",
+      "source": "S18",
+      "status": "fv_resource_observation"
+    },
+    {
+      "id": "C28",
+      "product": "Older choice-blindness article",
+      "claim": "R244 description inaccurately says tea was tasted; tea was smelled, and comparison must be corrected before promotion",
+      "source": "S21",
+      "status": "qa_flag_pending_canonical_repair"
+    },
+    {
+      "id": "C29",
+      "product": "Older choice-blindness article",
+      "claim": "2012 design covertly altered statement wording while preserving rating value; not evidence of permanent belief change",
+      "source": "S22",
+      "status": "qa_flag_pending_canonical_repair"
+    }
+  ],
+  "gates": [
+    {
+      "id": "G01",
+      "name": "named_publisher_acceptance",
+      "state": "HARD_HOLD",
+      "verified": false,
+      "proof": null
+    },
+    {
+      "id": "G02",
+      "name": "issued_earning_url",
+      "state": "HARD_HOLD",
+      "verified": false,
+      "proof": null
+    },
+    {
+      "id": "G03",
+      "name": "approved_website_channel",
+      "state": "HARD_HOLD",
+      "verified": false,
+      "proof": null
+    },
+    {
+      "id": "G04",
+      "name": "approved_social_channel",
+      "state": "HARD_HOLD",
+      "verified": false,
+      "proof": null
+    },
+    {
+      "id": "G05",
+      "name": "approved_email_channel",
+      "state": "HARD_HOLD",
+      "verified": false,
+      "proof": null
+    },
+    {
+      "id": "G06",
+      "name": "campaign_tracking_terms",
+      "state": "HARD_HOLD",
+      "verified": false,
+      "proof": null
+    },
+    {
+      "id": "G07",
+      "name": "affiliate_creative_rights",
+      "state": "HARD_HOLD",
+      "verified": false,
+      "proof": null
+    },
+    {
+      "id": "G08",
+      "name": "exact_sku_permission",
+      "state": "HARD_HOLD",
+      "verified": false,
+      "proof": null
+    },
+    {
+      "id": "G09",
+      "name": "product_claim_substantiation",
+      "state": "HARD_HOLD",
+      "verified": false,
+      "proof": null
+    },
+    {
+      "id": "G10",
+      "name": "live_checkout_terms",
+      "state": "HARD_HOLD",
+      "verified": false,
+      "proof": null
+    },
+    {
+      "id": "G11",
+      "name": "refund_fulfillment",
+      "state": "HARD_HOLD",
+      "verified": false,
+      "proof": null
+    },
+    {
+      "id": "G12",
+      "name": "disclosure_review",
+      "state": "HARD_HOLD",
+      "verified": false,
+      "proof": null
+    },
+    {
+      "id": "G13",
+      "name": "browser_a11y_review",
+      "state": "HARD_HOLD",
+      "verified": false,
+      "proof": null
+    },
+    {
+      "id": "G14",
+      "name": "wp_sanitizer_review",
+      "state": "HARD_HOLD",
+      "verified": false,
+      "proof": null
+    },
+    {
+      "id": "G15",
+      "name": "attribution_proof",
+      "state": "HARD_HOLD",
+      "verified": false,
+      "proof": null
+    },
+    {
+      "id": "G16",
+      "name": "founder_release_approval",
+      "state": "HARD_HOLD",
+      "verified": false,
+      "proof": null
+    }
+  ],
+  "commercial": {
+    "affiliate_approved": null,
+    "affiliate_earning_url": null,
+    "authorized_channels": null,
+    "approved_creatives": null,
+    "owned_mind_sku_verified": null,
+    "checkout_authenticated": false,
+    "confirmed_paid_orders": null,
+    "confirmed_paid_affiliate_sales": null,
+    "refunds_verified": null,
+    "fees_verified": null,
+    "qualified_human_sessions": null,
+    "net_revenue_per_1000": null
+  },
+  "partner_gmail_review": {
+    "checked_date": "2026-11-09",
+    "search_scope": "Inspire3/Zen12/Hypnosis Live/Brainwave Shots terms; promotional subscriber mail only",
+    "named_approval_found": false,
+    "interpretation": "No affirmative acceptance evidence found; not proof of rejection."
+  },
+  "r244_quality_holds": [
+    "Existing r203 unpublished editorial covers same choice-blindness paradigm: avoid competing canonical article.",
+    "R244 jam tasted, tea smelled; account used inaccurate 'both tasted' language.",
+    "R244 2012 task switched wording versus fixed numeric ratings, not simply reversed whole answers.",
+    "R244 inherited validation predicate grouped AND/OR ambiguously. Fix in future canonical test; mark R244 not publication-ready.",
+    "R241 2023 entrainment review publication belongs to PLOS ONE, not Frontiers in Psychiatry; inherited original still needs correction."
+  ],
+  "experiment": {
+    "decision": "HOLD",
+    "existing_canonical": "R237 A text vs identical content B optional 42s VIDEO CONCEPT ONLY",
+    "randomization": "not_started",
+    "video_rendered": false,
+    "pass_condition": "merchant-authorized paid conversion and net revenue proof, not CTA clicks"
+  }
+}
