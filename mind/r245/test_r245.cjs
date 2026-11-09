@@ -114,6 +114,9 @@ function validate(x) {
   assert.ok(p.toLowerCase().includes(phrase.toLowerCase()),'plan must retain '+phrase);
  }
  assert.ok(p.includes('https://docs.google.com/document/d/1_dqcJeqxbvYb1prGxy0nSWTsHu8p0PSRsDB_NPNbL48/edit'));
+ assert.ok(p.includes('R203 \`mind/r203/the-decision-they-switched-choice-blindness-UNPUBLISHED.md\`'),'canonical exact reference');
+ assert.ok(p.includes('**UNVERIFIED**'),'creator media ID warning');
+ assert.ok(p.includes('https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance'),'health evidence guidance');
  return true;
 }
 function mutationTests(original) {
@@ -121,7 +124,7 @@ function mutationTests(original) {
  ['remove editorial source',x=>x.article=x.article.replace('https://pmc.ncbi.nlm.nih.gov/articles/PMC7424120/','REDACTED')],
  ['remove source limit',x=>x.article=x.article.replace('not a validated test','proven cure')],
  ['article cut',x=>x.article='short'],
- ['remove article status',x=>x.article=x.article.replace('UNPUBLISHED','PUBLIC')],
+ ['remove article status',x=>x.article=x.article.replaceAll('UNPUBLISHED','PUBLIC')],
  ['alter reference membership',x=>x.matrix.claims[0].source='UNLISTED'],
  ['duplicate source id',x=>x.matrix.sources[0].id=x.matrix.sources[1].id],
  ['duplicate claim id',x=>x.matrix.claims[0].id=x.matrix.claims[1].id],
@@ -154,9 +157,9 @@ function mutationTests(original) {
  ['caption shortened',x=>x.vtt=x.vtt.replace('00:00:42.000','00:00:40.000')],
  ['caption missing',x=>x.vtt=x.vtt.replace('00:00:21.000 --> 00:00:28.000','invalid cue')],
  ['caption gap',x=>x.vtt=x.vtt.replace('00:00:14.000 --> 00:00:21.000','00:00:15.000 --> 00:00:21.000')],
- ['plan loses financial caution',x=>x.plan=x.plan.replace('not already netted','always subtract again')],
+ ['plan loses financial caution',x=>x.plan=x.plan.replaceAll('not already netted','always subtract again')],
  ['plan loses prior canonical',x=>x.plan=x.plan.replaceAll('R203','previous')],
- ['plan loses media ID warning',x=>x.plan=x.plan.replace('UNVERIFIED','VERIFIED')],
+ ['plan loses media ID warning',x=>x.plan=x.plan.replaceAll('UNVERIFIED','VERIFIED')],
  ['plan loses FTC reference',x=>x.plan=x.plan.replace('https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance','REMOVED')]
  ];
  let rejected=0;const missed=[];
