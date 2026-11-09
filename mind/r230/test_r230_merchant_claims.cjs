@@ -99,7 +99,7 @@ ok(x.m.claims.find(c=>c.id==='B03')?.statement.includes('64 analyzed'),'claim de
 ok(x.m.claims.find(c=>c.id==='B05')?.statement.includes('only one binaural-beat study'),'review source scope');
 ok(x.a.includes('sixty-four')&&x.b.includes('sixty-four'),'A/B denominator');
 ok(x.a.includes('p = .385')&&x.b.includes('p = .385'),'A/B overall nonsignificance');
-ok(x.plan.includes('is not an invisible-gorilla page')||x.plan.includes('DISTINCT phenomenon'),'no false creator match');
+ok(x.plan.includes('is not an invisible-gorilla page') && x.plan.includes('DISTINCT phenomenon'),'no false creator match');
 ok(x.plan.includes('NOT COMPUTABLE')&&x.plan.includes('lead_confirmed'),'provider and paid revenue');
 ok(x.dossier.includes('UNPUBLISHED_RESEARCH_ONLY')&&x.dossier.includes('HARD_HOLD'),'unpublished guide');
 ok(x.dossier.includes('not significant (**p=.385**)')&&x.dossier.includes('64 analyzed'),'dossier source precision');
