@@ -30,6 +30,19 @@ class SourceContractError(ValueError):
 
 def _jobs(source: str) -> dict[str, str]:
     lines = source.splitlines()
+    # R293: the lexical job scanner must not silently ignore a second YAML
+    # root mapping (including 'jobs :' / quoted-key variants) before or after
+    # the approved tree. Some YAML loaders resolve duplicate root keys while
+    # this parser previously inspected only the first literal 'jobs:' block.
+    # Require the exact known root-key *shape*; any new trigger, permission,
+    # environment or document boundary needs independent CI/QD review.
+    roots = tuple(line for line in lines
+                  if line and not line[0].isspace() and not line.startswith('#'))
+    if roots not in (
+        ('name: Desktop suite build (internal)', 'on:', 'jobs:'),
+        ('name: Desktop suite build (internal)', 'on:', 'permissions:', 'jobs:'),
+    ):
+        raise SourceContractError('Unknown or duplicate desktop workflow root mapping')
     if lines.count('jobs:') != 1:
         raise SourceContractError('Missing or ambiguous jobs tree')
     position = lines.index('jobs:') + 1
