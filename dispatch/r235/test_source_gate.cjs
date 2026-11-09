@@ -11,4 +11,6 @@ for(let i=0;i<6;i++)for(const [k,v] of [['send_authorized',true],['post_created'
 for(let i of [2,4])for(const [k,v] of [['cta','https://zen12.com/hnp'],['cta_status','LIVE'],['affiliate_permission_verified',true]]){let a=structuredClone(base);a.issues[i][k]=v;assert.equal(check(a),false);rejected++;}
 for(const [k,v] of [['partner_email_rights_verified',true],['received_welcome_verified',true],['verified_paid_orders',1],['qualified_human_sessions',10]]){let a=structuredClone(base);a[k]=v;assert.equal(check(a),false);rejected++;}
 for(let i=0;i<6;i++){let a=structuredClone(base);a.issues[i].source_sha='aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa';assert.equal(check(a),false);rejected++;}
+for(const [k,v] of [['publisher_postal_verified',true],['postal_address_allegedly_verified',true]]){let a=structuredClone(base);a[k]=v;assert.equal(check(a),false);rejected++;}
+for(let i=0;i<6;i++){let a=structuredClone(base);a.issues[i].merchant_approved_by_founder=true;assert.equal(check(a),false);rejected++;}
 console.log('PASS baseline + '+rejected+' synthetic release/merchant false-positives rejected');
