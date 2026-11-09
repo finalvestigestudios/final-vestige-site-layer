@@ -62,7 +62,12 @@ function testVtt(s){
 }
 testArm(A);testArm(B);testHistory(H);testMatrix(M);testGuide(G);testVtt(V);
 assert.equal(B.replace(/<details class="card" id="optional-film">[\s\S]*?<\/details>/,''),A,'text vs optional film parity');
-assert(P.includes('NOT COMPUTABLE')&&P.includes('HARD_HOLD')===false?false:true,'plan available');
+function testPlan(p){
+ assert(p.length>2200,'non-empty substantive conversion plan');
+ for(const marker of ['NOT COMPUTABLE','HARD_HOLD','utm_campaign','qualified_human_session','confirmed_lead','paid_order','settled_affiliate_commission','7-day','30-day']) assert(p.includes(marker),'plan marker: '+marker);
+ assert(!/verified affiliate (approval|sale) is complete/i.test(p),'no invented verified success');
+}
+testPlan(P);
 let mutations=0;
 const rejects=(fn,label)=>{let bad=false;try{fn();}catch(e){bad=true;}assert(bad,'UNDETECTED synthetic mutation: '+label);mutations++};
 for(const [label,original,modified] of [
@@ -95,5 +100,7 @@ for(const [label,mutant] of [
  ])rejects(()=>testMatrix(mutant),label);
 rejects(()=>testVtt(V.replace('00:00:42.000','00:00:41.000')),'caption-length');
 rejects(()=>testGuide(G+'\nSeller checkout: https://zen12.com/hnp'),'guide-merchant-link');
-assert.equal(mutations,24,'synthetic mutations expected');
-console.log('PASS R238: source baseline, exact A/B parity, historic correction, merchant holds, source references, 42s captions; '+mutations+'/24 synthetic unsafe modifications rejected. NOT a browser/WordPress or commercial acceptance.');
+rejects(()=>testPlan(''),'empty-plan');
+rejects(()=>testPlan(P.replaceAll('NOT COMPUTABLE','UNKNOWN')),'missing-kpi-denominator-status');
+assert.equal(mutations,26,'synthetic mutations expected');
+console.log('PASS R238: source baseline, exact A/B parity, historic correction, merchant holds, source references, 42s captions; '+mutations+'/26 synthetic unsafe modifications rejected. NOT a browser/WordPress or commercial acceptance.');
