@@ -21,6 +21,9 @@ INERT = frozenset(('template', 'noscript', 'head', 'script', 'style',
                    'iframe', 'object', 'canvas', 'svg', 'math', 'select',
                    'textarea', 'audio', 'video'))
 CRITICAL = frozenset(('pa-body', 'pa-sources', 'pa-review', 'pa-cite'))
+# R228: source/citation/review evidence cannot be hidden INSIDE an otherwise
+# visible semantic block. Unrelated decorative body templates remain allowed.
+CRITICAL_DESCENDANTS = frozenset(('pa-sources', 'pa-review', 'pa-cite'))
 
 
 class _Visibility(HTMLParser):
@@ -53,9 +56,18 @@ class _Visibility(HTMLParser):
         classes = set(a.get('class', '').split())
         ident = a.get('id', '')
         source = SOURCE_ID.fullmatch(ident)
-        is_critical = bool(CRITICAL & classes) or source is not None
+        roles = CRITICAL & classes
+        is_critical = bool(roles) or source is not None
         conditional = self._conditional(tag, a)
         ancestors = [f['conditional'] for f in self.stack if f['conditional']]
+        # R227 checked only a critical element beginning INSIDE inert markup.
+        # R228 closes the inverse case: a visible <li id="src-1"> whose only
+        # source anchor sits inside a <template>, closed <details>, etc.
+        if conditional and any(f['roles'] & CRITICAL_DESCENDANTS for f in self.stack):
+            self.errors.append('inert/conditional descendant of bibliography, citation or review')
+        # Catch even unclassified citation-target links hidden in body markup.
+        if tag == 'a' and ancestors and re.fullmatch(r'#src-[1-9][0-9]*', a.get('href', '')):
+            self.errors.append('source-fragment hyperlink in inert/conditional context')
         if is_critical:
             if conditional or ancestors:
                 self.errors.append('source, citation, body or review in inert/conditional context')
@@ -66,7 +78,7 @@ class _Visibility(HTMLParser):
             if 'pa-cite' in classes:
                 self.citation_markers += 1
         self.stack.append({'tag': tag, 'conditional': conditional,
-                           'critical': is_critical})
+                           'critical': is_critical, 'roles': roles})
         if tag in VOID:
             self.stack.pop()
 

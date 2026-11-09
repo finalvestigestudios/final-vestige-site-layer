@@ -3,7 +3,7 @@ import importlib.util
 from pathlib import Path
 import unittest
 
-SCRIPT = Path(__file__).with_name('r227_inert_context_citation_hold.py')
+SCRIPT = Path(__file__).resolve().parents[1] / 'tools' / 'r227_inert_context_citation_hold.py'
 SPEC = importlib.util.spec_from_file_location('r227', SCRIPT)
 G = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(G)

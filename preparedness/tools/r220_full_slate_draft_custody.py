@@ -32,7 +32,7 @@ R226_DOM_PATH = 'tools/r226_export_browser_custody.py'
 R226_DOM_BLOB = '84fbbd23d3ec146221d335537fdc7a433452b5ca'
 # R227 catches markup inert to HTML reading or conditional on JS/open state.
 R227_INERT_PATH = 'tools/r227_inert_context_citation_hold.py'
-R227_INERT_BLOB = '0a15ea6fdfe60009d97fbbe4340aa5b03d111285'
+R227_INERT_BLOB = 'dd9f3fc97fb9a92231f7f882cacb021d1d115d12'
 # These are independently observed R219 integration Git blobs, not certified text.
 # Missing entries MUST match the older R200 original exactly.
 INTEGRATED_DIFFS = {
