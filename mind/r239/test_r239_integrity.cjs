@@ -39,7 +39,7 @@ function integrity(m,expected,label){
 }
 function inspectArticle(s){
  assert.equal(fnv32(s),'804fe95f','original investigation exact research fingerprint');
- for(const term of ['24 radiologists','Eighty-three percent','forty-eight times','2010','1999','separate','inattentional blindness','Change Blindness','NOT','Fieldbook','https://doi.org/10.1177/0956797613479386']) assert(s.toLowerCase().includes(term.toLowerCase()),'research boundary '+term);
+ for(const term of ['24 radiologists','Twenty of the 24','forty-eight-fold','2010','1999','separate','inattentional blindness','Change Blindness','NOT','Fieldbook','https://doi.org/10.1177/0956797613479386']) assert(s.toLowerCase().includes(term.toLowerCase()),'research boundary '+term);
  assert(!/https:\/\/(?:www\.)?(?:zen12|inspire3|hypnosislive|brainwaveshots)\.com/i.test(s),'investigation has no seller/product links');
  assert(s.includes('**That between-group difference was not statistically significant.**'),'require non-significance qualification');
  assert(s.includes('**volume of the rectangular box enclosing the inserted gorilla**'),'require 48-fold volume meaning');
