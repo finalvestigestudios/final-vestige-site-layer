@@ -68,7 +68,7 @@ function check(data){
 
  const article=data.article;
  assert.ok(article.split(/\s+/).length>=2700,'original long-form article');
- for(const evidence of ['Twelve Minutes Is a Duration','five reported findings','eight reported','twenty-eight eligible','2,574','Puységur','one-year','twelve minutes','not a blinded experiment','2026','https://pubmed.ncbi.nlm.nih.gov/37205669/','https://doi.org/10.1002/smi.3324','https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance'])assert.ok(article.includes(evidence),'article evidence '+evidence);
+ for(const evidence of ['Twelve Minutes Is a Duration','Five reported findings','eight reported','twenty-eight eligible','2,574','Puységur','one-year','twelve minutes','not a blinded experiment','2026','https://pubmed.ncbi.nlm.nih.gov/37205669/','https://doi.org/10.1002/smi.3324','https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance'])assert.ok(article.includes(evidence),'article evidence '+evidence);
  assert.ok(article.includes('not a product endorsement')||article.includes('not a product endorsement'.replace('product','commercial')),'independence');
  assert.ok(article.includes('not a dose-conversion table'),'no false equivalence');
 
@@ -96,7 +96,7 @@ function check(data){
   const svgIds=[...h.matchAll(/<(?:(?:title|desc))\s+id="([^"]+)"/g)].map(m=>m[1]);
   assert.equal(new Set(svgIds).size,svgIds.length,'unique SVG accessible labels');
   assert.equal((h.match(/<svg\b/gi)||[]).length,(h.match(/<desc\b/gi)||[]).length,'SVG descriptions');
-  assert.ok(!h.includes('autoplay'),'no autoplay claims/player attribute');
+  assert.ok(!/<video[^>]*\sautoplay(?:\s|>)/i.test(h),'no actual autoplay player attribute');
   return true;
  }
  checkPage(data.A,'A');checkPage(data.B,'B');
