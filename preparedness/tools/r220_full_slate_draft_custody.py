@@ -71,6 +71,10 @@ R240_ENTITY_ATTR_BLOB = '156f475b88c1e374e4626119ec1e9965474ec329'
 # unreviewed interactive forms, URL-scheme tricks and covert third-party loads.
 R243_ACTIVE_SOURCE_PATH = 'tools/r243_active_source_markup_custody_hold.py'
 R243_ACTIVE_SOURCE_BLOB = 'fd44288b0009811f1812ede1d618f2290308ed7e'
+# R246 pins the original Article 15 / Tool 104 privacy and minimal-mode claim
+# witness docket. Observed mismatches remain HUMAN REVIEW REQUIRED, not PASS.
+R246_FAMILY_CARD_PATH = 'tools/r246_family_card_claim_custody_hold.py'
+R246_FAMILY_CARD_BLOB = '7c27ad9e9c6d5d0dd5917e57733285db48973812'
 # These are independently observed R219 integration Git blobs, not certified text.
 # Missing entries MUST match the older R200 original exactly.
 INTEGRATED_DIFFS = {
@@ -525,6 +529,26 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
                 or active.get('merchant_approved') is not False):
             raise ValueError('R243 authored active-markup/source URL safety HOLD drift')
         result['authored_active_markup_custody'] = active
+        # Editorial E244/E245 established exact source-to-output discrepancies:
+        # the optional minimal printable still includes Household and Phone, and
+        # several cross-linked original pages make absolute privacy promises.
+        # This is an immutable review docket, NOT adjudication or live privacy QA.
+        family_claim_guard = load_frozen_gate(root, R246_FAMILY_CARD_PATH, R246_FAMILY_CARD_BLOB,
+                                              'fv_preparedness_r246_family_card_claim_guard',
+                                              ('audit_family_card_claims',))
+        family_claims = family_claim_guard.audit_family_card_claims(root, safe_read)
+        if (family_claims.get('state') != HOLD or family_claims.get('source_count') != 5
+                or family_claims.get('held_claim_count') != 7
+                or family_claims.get('human_review_required') is not True
+                or family_claims.get('claim_truth_evaluated') is not False
+                or family_claims.get('runtime_privacy_certified') is not False
+                or family_claims.get('release_authorized') is not False
+                or family_claims.get('independent_qd_pass') is not False
+                or family_claims.get('source_review_approved') is not False
+                or family_claims.get('medical_safety_verified') is not False
+                or family_claims.get('merchant_approved') is not False):
+            raise ValueError('R246 Article 15 / Tool 104 source-to-claim review HOLD changed')
+        result['family_card_claim_review_docket'] = family_claims
         if verify_exports:
             # Only imports the repository's own build code from its trusted tools path.
             tools_path = root / 'tools'
@@ -618,6 +642,8 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
             raise ValueError('R240 encoded visibility attribute gate mutated during audit')
         if git_blob(safe_read(root, R243_ACTIVE_SOURCE_PATH)) != R243_ACTIVE_SOURCE_BLOB:
             raise ValueError('R243 authored active-markup/source guard mutated during audit')
+        if git_blob(safe_read(root, R246_FAMILY_CARD_PATH)) != R246_FAMILY_CARD_BLOB:
+            raise ValueError('R246 Article 15 / Tool 104 source-claim guard mutated during audit')
         result['reconciliation'] = {'frozen_articles': 35,
                                     'integrated_changes_held_for_review': sum(
                                         x['changed_since_original'] for x in status),
