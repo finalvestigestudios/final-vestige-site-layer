@@ -108,7 +108,7 @@ class ActiveMarkupInspector(HTMLParser):
                 # approve original contributor citations or source records.
                 if key in ('href', 'xlink:href') and tag not in ('a', 'area'):
                     reference = html.unescape(value).strip()
-                    if not re.fullmatch(r'#[A-Za-z_][\\w:.-]*', reference):
+                    if not re.fullmatch(r'#[A-Za-z_][\w:.-]*', reference):
                         raise ValueError('R244 nonnavigation href loads unreviewed resource: ' + tag)
                 if key == 'href' and tag in ('a', 'area'):
                     self.raw_links += 1
