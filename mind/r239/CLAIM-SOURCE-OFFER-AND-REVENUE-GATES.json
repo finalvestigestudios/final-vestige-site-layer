@@ -1,0 +1,382 @@
+{
+  "version": "R239",
+  "date": "2026-11-09",
+  "status": "DRAFT_UNPUBLISHED",
+  "primary_intent": "Qualified adult seeking optional short guided audio and variety, after trying a free routine",
+  "preferred_offer": "Zen12 Premium — CONDITIONAL ONLY",
+  "alternative": "Currently sellable FV-owned Mind SKU — NONE AUTHENTICATED",
+  "accounts_verification": {
+    "gmail_search_2026_11_09": "No qualifying results found for account-specific Inspire3 acceptance in targeted recent searches; private dashboard not accessible",
+    "partner_dashboard": "NOT_AUTHENTICATED",
+    "approved_email_channel": "NOT_AUTHENTICATED",
+    "account_issued_earning_link": null,
+    "permitted_creatives": "UNKNOWN",
+    "sale_settlement_terms": "UNKNOWN"
+  },
+  "sources": [
+    {
+      "id": "S01",
+      "url": "https://doi.org/10.1177/0956797613479386",
+      "description": "2013 original radiologist abstract",
+      "scope": "abstract_only"
+    },
+    {
+      "id": "S02",
+      "url": "https://doi.org/10.1068/p281059",
+      "description": "1999 original dynamic scene study",
+      "scope": "abstract_only"
+    },
+    {
+      "id": "S03",
+      "url": "https://doi.org/10.1068/i0386",
+      "description": "2010 familiarity study",
+      "scope": "abstract_only"
+    },
+    {
+      "id": "S04",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "description": "FV published flicker/door-swap investigation",
+      "scope": "live_text"
+    },
+    {
+      "id": "S05",
+      "url": "https://finalvestige.com/focus/",
+      "description": "FV published 52-page Fieldbook landing",
+      "scope": "live_text_signup_not_provider_confirmed"
+    },
+    {
+      "id": "S06",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "description": "FV published historical resource",
+      "scope": "known_existing_not_browser_checked_this_run"
+    },
+    {
+      "id": "S07",
+      "url": "https://inspire3.com/",
+      "description": "official merchant catalog",
+      "scope": "seller"
+    },
+    {
+      "id": "S08",
+      "url": "https://zen12.com/hnp",
+      "description": "exact Zen12 seller offer",
+      "scope": "seller"
+    },
+    {
+      "id": "S09",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "description": "exact Focus Shot seller offer",
+      "scope": "seller"
+    },
+    {
+      "id": "S10",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "description": "exact Total Focus seller offer",
+      "scope": "seller"
+    },
+    {
+      "id": "S11",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "description": "official FTC endorsement guidance",
+      "scope": "guidance"
+    },
+    {
+      "id": "S12",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "description": "FTC health product advertising guidance",
+      "scope": "guidance"
+    },
+    {
+      "id": "S13",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "description": "canonical Mind directive",
+      "scope": "internal"
+    },
+    {
+      "id": "S14",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "description": "canonical measurement directive",
+      "scope": "internal"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "text": "24 radiologists completed the specialist search task; 83% did not report the gorilla",
+      "source_id": "S01",
+      "status": "ABSTRACT_SUPPORTED"
+    },
+    {
+      "id": "C02",
+      "text": "Most radiologists who missed the gorilla looked directly at its location",
+      "source_id": "S01",
+      "status": "ABSTRACT_SUPPORTED_NOT_CAUSAL_EXPLANATION"
+    },
+    {
+      "id": "C03",
+      "text": "The inserted image was 48 times average lung-nodule size",
+      "source_id": "S01",
+      "status": "ABSTRACT_SUPPORTED"
+    },
+    {
+      "id": "C04",
+      "text": "1999 noticing varied with task demand and attended-object similarity",
+      "source_id": "S02",
+      "status": "ABSTRACT_SUPPORTED"
+    },
+    {
+      "id": "C05",
+      "text": "1999 proximity alone did not predict detection of unexpected object",
+      "source_id": "S02",
+      "status": "ABSTRACT_SUPPORTED"
+    },
+    {
+      "id": "C06",
+      "text": "2010 familiarity made known gorilla salient but not other unexpected changes",
+      "source_id": "S03",
+      "status": "ABSTRACT_SUPPORTED"
+    },
+    {
+      "id": "C07",
+      "text": "Published FV Change Blindness article covers flicker/door-swap, not original gorilla study",
+      "source_id": "S04",
+      "status": "LIVE_EDITORIAL_BOUNDARY"
+    },
+    {
+      "id": "C08",
+      "text": "Published Focus Fieldbook landing advertises existing free 52-page PDF",
+      "source_id": "S05",
+      "status": "LIVE_DESCRIPTION_JETPACK_CONFIRMATION_NOT_VERIFIED"
+    },
+    {
+      "id": "C09",
+      "text": "Puységur archive exists as historical resource, not hypnosis evidence",
+      "source_id": "S06",
+      "status": "EXISTING_EDITORIAL_NOT_EFFICACY"
+    },
+    {
+      "id": "C10",
+      "text": "Inspire3 lists Zen12, Brainwave Shots and Hypnosis Live",
+      "source_id": "S07",
+      "status": "SELLER_CATALOG"
+    },
+    {
+      "id": "C11",
+      "text": "Zen12 seller lists 12 levels, 48 audio MP3s, four listening styles",
+      "source_id": "S08",
+      "status": "SELLER_PRODUCT_DESCRIPTION"
+    },
+    {
+      "id": "C12",
+      "text": "Zen12 seller advertises one-year refund guarantee",
+      "source_id": "S08",
+      "status": "SELLER_PROMISE_FULFILLMENT_UNTESTED"
+    },
+    {
+      "id": "C13",
+      "text": "Zen12 yields an hour of meditation benefits in 12 minutes",
+      "source_id": "S08",
+      "status": "UNSUBSTANTIATED_PRODUCT_OUTCOME_DO_NOT_REPEAT"
+    },
+    {
+      "id": "C14",
+      "text": "Zen12 site offers optional free audio with merchant newsletter sign-up",
+      "source_id": "S08",
+      "status": "SELLER_CONSENT_CONTENT_REQUIRE_BROWSER_CONFIRMATION"
+    },
+    {
+      "id": "C15",
+      "text": "Focus Shot seller lists 15-minute and 30-minute variants",
+      "source_id": "S09",
+      "status": "SELLER_PRODUCT_DESCRIPTION"
+    },
+    {
+      "id": "C16",
+      "text": "Focus Shot automatically enhances work performance",
+      "source_id": "S09",
+      "status": "UNSUBSTANTIATED_PRODUCT_OUTCOME_DO_NOT_REPEAT"
+    },
+    {
+      "id": "C17",
+      "text": "Total Focus seller lists a 33-minute recording",
+      "source_id": "S10",
+      "status": "SELLER_PRODUCT_DESCRIPTION"
+    },
+    {
+      "id": "C18",
+      "text": "Total Focus guarantees flawless concentration or financial advantage",
+      "source_id": "S10",
+      "status": "UNSUBSTANTIATED_PRODUCT_OUTCOME_DO_NOT_REPEAT"
+    },
+    {
+      "id": "C19",
+      "text": "Affiliate commission relationships should be plainly disclosed near recommendation",
+      "source_id": "S11",
+      "status": "FTC_GUIDANCE"
+    },
+    {
+      "id": "C20",
+      "text": "Objective health claims require competent and reliable scientific evidence",
+      "source_id": "S12",
+      "status": "FTC_GUIDANCE"
+    },
+    {
+      "id": "C21",
+      "text": "The absence of purchase verification cannot be treated as zero paid orders",
+      "source_id": "S14",
+      "status": "MEASUREMENT_REQUIREMENT"
+    },
+    {
+      "id": "C22",
+      "text": "Clicks and newsletter form submissions do not establish paid sales or confirmed leads",
+      "source_id": "S14",
+      "status": "MEASUREMENT_REQUIREMENT"
+    }
+  ],
+  "gates": [
+    {
+      "id": "named_publisher_approval",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "account_issued_tracking_url",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "authorized_website_channel",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "authorized_social_channel",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "authorized_email_channel",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "exact_product_and_tier_verified",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "verified_live_checkout_price_terms",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "verified_refund_and_fulfillment",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "approved_creatives_and_claim_use",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "merchant_newsletter_consent_browser_review",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "preserve_existing_jetpack_flow",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "accessible_adjacent_disclosure",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "approved_first_party_attribution",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "grok_exact_asset_and_mobile_destination",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "merchant_authoritative_paid_revenue",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "founder_commercial_release_approval",
+      "status": "HARD_HOLD"
+    }
+  ],
+  "commercial_activation": false,
+  "affiliate_link": null,
+  "checkout_price_authenticated": null,
+  "refund_performance_authenticated": false,
+  "source_product_claims_are_seller_claims": true,
+  "sold_product_verified": false,
+  "new_mailing_list": false,
+  "new_analytics_script": false,
+  "experiment": {
+    "A": "mind/r237/zen12-presell-A.html",
+    "B": "mind/r237/zen12-presell-B.html",
+    "concept_vtt": "mind/r237/zen12-42s-concept.vtt",
+    "duration_seconds": 42,
+    "video_status": "UNRENDERED_NO_PLAYBACK",
+    "status": "NOT_LIVE",
+    "primary_outcome": "independently verified paid conversion per eligible qualified human session",
+    "requirement": "Founder approval + verified offer + independently QA'd video + correct attribution, then predeclared allocation"
+  },
+  "creator_routes": [
+    {
+      "topic": "Change blindness: flicker and door swap",
+      "article": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "focus": "https://finalvestige.com/focus/",
+      "offer": "Zen12 independent audio buyer guide only if genuinely relevant; NOT an illusion cure",
+      "asset_id": null,
+      "published_video_url": null,
+      "mobile_test": "PENDING"
+    },
+    {
+      "topic": "Mesmer and Puységur: expectation versus record",
+      "article": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "historical_source": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "focus": "https://finalvestige.com/focus/",
+      "offer": "Hypnosis Live Total Focus buyer guide only if reader requests audio; not clinical treatment",
+      "asset_id": null,
+      "published_video_url": null,
+      "mobile_test": "PENDING"
+    },
+    {
+      "topic": "A 12-minute starting routine without miracle claims",
+      "article": "https://finalvestige.com/focus/",
+      "focus": "https://finalvestige.com/focus/",
+      "offer": "Zen12 premium conditional as format/variety purchase",
+      "asset_id": null,
+      "published_video_url": null,
+      "mobile_test": "PENDING"
+    }
+  ],
+  "measurement": {
+    "campaign_keys": [
+      "utm_source",
+      "utm_medium",
+      "utm_campaign",
+      "utm_content"
+    ],
+    "asset_id": "Grok-owned exact verified public asset ID only",
+    "no_pii": [
+      "IP",
+      "email",
+      "cookie identifier",
+      "raw URLs with unknown query strings"
+    ],
+    "qualified_human_sessions": null,
+    "cta_clicks": null,
+    "provider_verified_leads": null,
+    "merchant_verified_checkout_starts": null,
+    "merchant_verified_paid_orders": null,
+    "cleared_commissions": null,
+    "refunded_amount": null,
+    "fees": null,
+    "net_revenue_per_1000_qualified_human_sessions": null,
+    "kpi_status": "NOT_COMPUTABLE"
+  },
+  "editorial_collisions": [
+    "R211 vs R238 Coué autosuggestion",
+    "R196 vs R236 attentional blink",
+    "R237 vs live Mesmerism",
+    "Check other unpublished invisible-gorilla manuscripts before assigning canonical route"
+  ],
+  "release_approval": "HARD_HOLD"
+}
