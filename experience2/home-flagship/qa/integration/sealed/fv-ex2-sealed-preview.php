@@ -36,6 +36,12 @@ function fv_ex2_sealed_shortcode($atts = []): string {
     );
     return '<div data-fv-ex2-sealed="true">'
         . '<p><strong>PRIVATE STAGING STUDY — NOT LIVE.</strong> Authenticated reviewer preview; do not publish on the production homepage.</p>'
+        // The sandboxed iframe intentionally has an opaque origin; this explicit
+        // top-level fallback avoids session-cookie failures in private review.
+        // Keep the same authenticated, nonce-checked AJAX route and noindex CSP.
+        . '<p><a href="' . esc_url($url) . '" target="_blank" rel="noopener noreferrer" '
+        . 'referrerpolicy="no-referrer">Open the private full-page preview in a new tab</a>'
+        . ' <small>(reviewers only; use if the embedded frame cannot authenticate)</small></p>'
         . '<iframe src="' . esc_url($url) . '" title="Private Final Vestige Experience 2 homepage preview" '
         . 'sandbox="allow-scripts allow-popups" loading="lazy" referrerpolicy="no-referrer" '
         . 'style="display:block;width:100%;min-height:85vh;border:1px solid #5d4b31;background:#090a0a"></iframe>'
