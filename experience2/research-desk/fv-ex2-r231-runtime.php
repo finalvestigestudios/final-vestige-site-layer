@@ -9,7 +9,7 @@
  * MUTUALLY EXCLUSIVE with final-vestige-ex2-research-desk.php and fv-ex2-r230-runtime.php. Never activate together.
  */
 if (!defined('ABSPATH')) { exit; }
-if (!defined('FV_EX2_R231_VERSION')) { define('FV_EX2_R231_VERSION', '0.0.4-r231-staging'); }
+if (!defined('FV_EX2_R231_VERSION')) { define('FV_EX2_R231_VERSION', '0.0.5-r231-source-scope-staging'); }
 
 function fv_ex2_r231_assets(): void {
     // Register via enqueue; shortcode can be called from nested/reusable/dynamic blocks
