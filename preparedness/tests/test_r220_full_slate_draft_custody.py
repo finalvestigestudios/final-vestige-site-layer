@@ -11,6 +11,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'tools'))
 import r220_full_slate_draft_custody as gate
 import r226_export_browser_custody as dom_gate
 import r227_inert_context_citation_hold as inert_gate
+import r230_html_tokenizer_state_hold as tokenizer_gate
 
 HEADS = {key: 'abcdef1'[i] * 40 for i, key in enumerate(
     ('start', 'shelter', 'food', 'health', 'hist-field', 'hist-food', 'hist-home'))}
@@ -165,20 +166,23 @@ class SyntheticRenderTests(unittest.TestCase):
 
     def check(self, report=None):
         return gate.verify_render(self.root, self.articles, report or self.report,
-                                  self.lib, self.builder, dom_gate, inert_gate)
+                                  self.lib, self.builder, dom_gate, inert_gate, tokenizer_gate)
 
     def test_positive_synthetic_render(self):
         self.assertEqual(self.check()['channel_files_verified'], 82)
 
-    def test_both_guards_execute_for_every_channel(self):
+    def test_all_three_guards_execute_for_every_channel(self):
         # The old fixture did not pass either new guard, causing TypeError before
         # the 82 truncation regressions could exercise their intended assertions.
         with patch.object(dom_gate, 'verify_export', wraps=dom_gate.verify_export) as d, \
              patch.object(inert_gate, 'verify_inert_contexts',
-                          wraps=inert_gate.verify_inert_contexts) as n:
+                          wraps=inert_gate.verify_inert_contexts) as n, \
+             patch.object(tokenizer_gate, 'verify_tokenizer_states',
+                          wraps=tokenizer_gate.verify_tokenizer_states) as t:
             self.assertEqual(self.check()['channel_files_verified'], 82)
             self.assertEqual(d.call_count, 82)
             self.assertEqual(n.call_count, 82)
+            self.assertEqual(t.call_count, 82)
 
     def test_rendered_source_inside_template_rejected(self):
         path = self.root / 'build' / 'wp' / 'article-1.html'
@@ -264,6 +268,30 @@ for _slug in [f'article-{i}' for i in range(1, 36)] + [f'tool-{i}' for i in rang
     for _mode in ('wp', 'preview'):
         setattr(SyntheticRenderTests, f'test_{_mode}_{_slug.replace("-", "_")}_truncation',
                 _render_mutation(_slug, _mode))
+
+
+# Independently mutate one of the 82 intended WordPress/preview exports.
+# Each fixture retains the intact article body and warning while introducing a
+# browser plaintext-to-EOF construct just before its bibliography.
+def _tokenizer_mutation(slug, mode):
+    def check(self):
+        p = self.root / 'build' / mode / f'{slug}.html'
+        original = p.read_text()
+        try:
+            needle = '<section class="pa-sources">'
+            self.assertIn(needle, original)
+            p.write_text(original.replace(needle, '<plaintext>' + needle, 1))
+            with self.assertRaisesRegex(ValueError, 'R230 unsupported tokenizer'):
+                self.check()
+        finally:
+            p.write_text(original)
+    return check
+
+
+for _slug in [f'article-{i}' for i in range(1, 36)] + [f'tool-{i}' for i in range(1, 7)]:
+    for _mode in ('wp', 'preview'):
+        setattr(SyntheticRenderTests, f'test_{_mode}_{_slug.replace("-", "_")}_tokenizer_hold',
+                _tokenizer_mutation(_slug, _mode))
 
 
 class SyntheticOriginalsTests(unittest.TestCase):
