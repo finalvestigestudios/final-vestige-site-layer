@@ -1,0 +1,108 @@
+"""Local-only, exclusive, byte-verified publication of encrypted vault archives.
+
+A .fvault name never points at a partially written file during an ordinary
+write/fsync failure: stage privately in the same directory, verify the bytes,
+then publish with a no-overwrite operation. Does not promise power-loss atomic
+filesystem metadata durability or defend against a hostile directory owner.
+"""
+from __future__ import annotations
+
+import errno
+import os
+import stat
+import tempfile
+from pathlib import Path
+
+MAX_VAULT_PUBLICATION_BYTES = 120 * 1024 * 1024
+_BLOCK = 256 * 1024
+
+
+def _sanitize_io(exc: OSError) -> OSError:
+    if isinstance(exc, FileExistsError):
+        return FileExistsError("Encrypted evidence destination already exists")
+    code = exc.errno if type(exc.errno) is int and exc.errno > 0 else errno.EIO
+    return OSError(code, "Encrypted evidence publication failed")
+
+
+def _write_and_verify(fd: int, payload: bytes) -> None:
+    offset = 0
+    while offset < len(payload):
+        amount = os.write(fd, payload[offset:offset + _BLOCK])
+        if type(amount) is not int or not (0 < amount <= min(_BLOCK, len(payload) - offset)):
+            raise OSError(errno.EIO, "Incomplete encrypted evidence staging write")
+        offset += amount
+    if os.fstat(fd).st_size != len(payload):
+        raise OSError(errno.EIO, "Encrypted evidence staging length mismatch")
+    os.lseek(fd, 0, os.SEEK_SET)
+    offset = 0
+    while offset < len(payload):
+        expected = payload[offset:offset + _BLOCK]
+        actual = os.read(fd, len(expected))
+        if actual != expected:
+            raise OSError(errno.EIO, "Encrypted evidence staging byte mismatch")
+        offset += len(expected)
+    if os.read(fd, 1) != b"":
+        raise OSError(errno.EIO, "Encrypted evidence staging extra bytes")
+    os.fsync(fd)
+
+
+def _publish(target: Path, payload: bytes) -> None:
+    # Avoid accidental publication through a symlinked destination directory.
+    folder = target.parent
+    parent = folder.lstat()
+    if not stat.S_ISDIR(parent.st_mode):
+        raise ValueError("Choose an existing regular vault output folder")
+    try:
+        target.lstat()
+    except FileNotFoundError:
+        pass
+    else:
+        raise FileExistsError("Encrypted evidence destination already exists")
+
+    temporary = None
+    descriptor = None
+    try:
+        descriptor, temporary = tempfile.mkstemp(
+            prefix=".fvs-vault-", suffix=".partial", dir=folder)
+        try:
+            _write_and_verify(descriptor, payload)
+        finally:
+            # Clear ownership before close: a failed close must not trigger a
+            # second close on an fd the OS may already have recycled.
+            to_close, descriptor = descriptor, None
+            os.close(to_close)
+        # An existing destination must NEVER be overwritten. POSIX rename
+        # replaces, so use link; Windows rename refuses existing destinations.
+        if os.name == "nt":
+            os.rename(temporary, target)
+        else:
+            os.link(temporary, target)
+    finally:
+        if descriptor is not None:
+            os.close(descriptor)
+        if temporary is not None:
+            try:
+                os.unlink(temporary)
+            except FileNotFoundError:
+                pass
+
+
+def publish_vault(target: str | Path, payload: bytes) -> Path:
+    """Atomically expose a complete ciphertext file, never replacing a name.
+
+    Reject non-plain bytes and over-limit data before touching the disk. All
+    expected OS errors use safe diagnostics without private exception chains;
+    interrupts are not swallowed. Source documents are never modified.
+    """
+    if type(payload) is not bytes or len(payload) > MAX_VAULT_PUBLICATION_BYTES:
+        raise ValueError("Invalid or oversized encrypted evidence bytes")
+    destination = Path(target)
+    redacted = None
+    try:
+        _publish(destination, payload)
+    except OSError as exc:
+        redacted = _sanitize_io(exc)
+    if redacted is not None:
+        # Raised outside the handler: no private __context__ or __cause__.
+        raise redacted
+    return destination
