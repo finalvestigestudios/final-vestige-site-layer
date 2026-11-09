@@ -36,11 +36,11 @@ A later experiment found something almost perverse. In ordinary circumstances, i
 
 Deubel, Schneider and Bridgeman reported the postsaccadic target-blanking effect in 1996. In the paradigm discussed by later open reviews, participants looked from a central fixation position toward a peripheral dot. Around the saccade, the target changed position. Under a continuous-display condition, participants were relatively poor at judging the shift. In the blank condition, the target briefly disappeared at or following the eye movement and returned at the displaced location. Displacement judgments improved. [6, 7]
 
-An open 2013 account of the paradigm gives an illustrative contrast: without the blank, even changes as large as approximately two degrees could be difficult to judge; with a blank, sensitivity could extend to shifts of roughly 0.3 degrees under the cited experimental circumstances. These are study-specific thresholds, not limits of every human's eyesight, and the source is summarizing earlier work rather than constituting a new reproduction of the 1996 experiment. [6]
+A research account published on October 23, 2012, of the paradigm gives an illustrative contrast: without the blank, even changes as large as approximately two degrees could be difficult to judge; with a blank, sensitivity could extend to shifts of roughly 0.3 degrees under the cited experimental circumstances. These are study-specific thresholds, not limits of every human's eyesight, and the source is summarizing earlier work rather than constituting a new reproduction of the 1996 experiment. [6]
 
 Why would withholding the new image help? One account is that an immediately available postsaccadic target becomes the authoritative reference for a world assumed to be stable; a blank interrupts that continuity assumption and may allow previously retained location information to be compared with what returns. This is a theoretically informed explanation supported by converging findings, not a full account of every visual-stability process.
 
-A different experiment published in 2020 examined whether target blanking helped observers detect changes in detailed checkerboard-like forms across saccades. Participants reported whether a change appeared in an upper or lower part of the form, and the blank condition removed the form for 200 milliseconds at saccade onset. The authors found better performance with blanking, including a comparison against a fixation condition designed to mimic retinal events without an eye movement. They argued that the result was consistent with access to information carried across the eye movement rather than information that had simply disappeared. [7]
+A different experiment published in 2020, with 15 participants, examined whether target blanking helped observers detect changes in checkerboard-like forms. Participants reported whether a change appeared in an upper or lower part of the form. In the saccade/spatiotopic condition, removing the target form for 200 milliseconds around saccade onset significantly improved performance; **this was not a blanket improvement across every fixation or comparison condition**. The authors contrasted this with control arrangements and interpreted the task-specific benefit as evidence consistent with transsaccadic memory for object detail. This does not establish a general technique for everyday perception or recall. [7]
 
 The important qualification is in the task: the observers were trained to make constrained judgments about experimental stimuli. This was not a claim that anybody can improve everyday memory by intentionally blinking, rapidly looking away, or interrupting their work.
 
@@ -62,7 +62,7 @@ An eye movement changes which retinal neurons receive information from a particu
 
 A 2021 *Annual Review of Vision Science* article emphasizes that remapping is not a single settled mechanism. The authors distinguish forward and convergent proposals, spatial and attentional forms, and different timing relationships. That taxonomy is more faithful to the evidence than "the brain takes a picture and pastes over the blank." [2]
 
-Attention itself can also shift toward the intended eye-movement target before the eye lands. A 2021 review in *Trends in Neurosciences* distinguishes **presaccadic attention** from attending covertly while the gaze stays fixed. That literature provides another reason to resist slogans about a complete halt in visual computation during a saccade. [9]
+Attention itself can also shift toward the intended eye-movement target before the eye lands. A 2021 review in *Trends in Neurosciences* distinguishes **presaccadic attention** from attending covertly while the gaze stays fixed. That literature provides another reason to resist slogans about a complete halt in visual computation during a saccade. [1]
 
 None of this implies that a human can simultaneously attend to everything. It means that a sensory gap, a loss of reportability and a total absence of computation are different claims requiring different measurements.
 
@@ -70,7 +70,7 @@ There is a further caution when popular explanations say visual suppression prot
 
 ## Why a blink is not quite the same experiment
 
-An eye blink and a saccade both disrupt ordinary retinal input, but they are not equivalent events. A blink involves an eyelid obstructing light, whereas a saccade rapidly changes gaze direction. A 2023 review of blinks examines parallels in perceptual stability, including both optical interruption and influences from motor-related signals. [10]
+An eye blink and a saccade both disrupt ordinary retinal input, but they are not equivalent events. A blink involves an eyelid obstructing light, whereas a saccade rapidly changes gaze direction. A 2023 review of blinks examines parallels in perceptual stability, including both optical interruption and influences from motor-related signals. [9]
 
 A browser demonstration in which a picture disappears for a moment may help someone reflect on discontinuity, but it is **not** itself a laboratory demonstration of saccadic suppression. Without precisely measuring when the eye moved, what the stimulus did, and the observer's detection performance, it would be inaccurate to call any simple slideshow an experimental reproduction.
 
@@ -101,7 +101,7 @@ The commercial bridge is instead about **how to evaluate what is being sold**. A
 
 Inspire3's official catalog links to meditation, self-hypnosis and brainwave-audio offerings. The Zen12 seller page describes twelve-minute sessions and advertises that they confer the benefit of an hour's meditation. The Focus Shot seller describes fifteen- and thirty-minute recordings and advertises hours of improved focus. Total Focus is described as a 33-minute narrated file. These are **seller claims about separate products**; they do not transfer support from eye-movement research to psychological benefit. [11–14]
 
-At the time of this draft, Final Vestige has not authenticated a named publisher's Inspire3 affiliate approval, its issued earning link or channel permissions. Consequently this investigation contains **no earning link, recommendation, purchase button or merchant redirect**. If a separate independent buyer guide is eventually authorized, it must state any compensation relationship beside the specific recommendation and distinguish seller terms from independently demonstrated outcomes. The FTC requires clear material-connection disclosure and substantiation for objective health-related claims. [15]
+At the time of this draft, Final Vestige has not authenticated a named publisher's Inspire3 affiliate approval, its issued earning link or channel permissions. Consequently this investigation contains **no earning link, recommendation, purchase button or merchant redirect**. If a separate independent buyer guide is eventually authorized, it must state any compensation relationship beside the specific recommendation and distinguish seller terms from independently demonstrated outcomes. The FTC requires clear material-connection disclosure and substantiation for objective health-related claims. [14]
 
 This restriction improves the article. A reader who wants to understand why the world remains visually stable should not have to buy a product, surrender an email address or pass through a commercial pre-sell.
 
@@ -111,13 +111,13 @@ Imagine an account of a shipboard explosion assembled from three witnesses who h
 
 The eye-movement literature does not demonstrate that those hypothetical witnesses will make any particular error. It tells us something narrower and more defensible: **apparent perceptual continuity does not establish continuous sampling of all visual information**. A rigorous investigator therefore timestamps observations, preserves contradictory records, seeks independent physical evidence and avoids translating a vivid explanation into an unearned certainty.
 
-In the history of suggestion, the same distinction matters. An experience may be genuinely reported while the proposed cause remains unverified. Final Vestige's existing Puységur archive and Mesmerism investigation provide a historical pathway into claims about perception and expectation. Because the Puységur article's full text was not retrievable for this sprint, we cite it only as a resource destination, not as authority for an unseen historical passage. [16]
+In the history of suggestion, the same distinction matters. An experience may be genuinely reported while the proposed cause remains unverified. Final Vestige's existing Puységur archive and Mesmerism investigation provide a historical pathway into claims about perception and expectation. Because the Puységur article's full text was not retrievable for this sprint, we cite it only as a resource destination, not as authority for an unseen historical passage. [15]
 
 The simplest lesson is not "your brain lies." It is that a plausible account of continuity needs evidence just as an account of change does. You can respect perception while insisting on a record.
 
 ## Three open doors, no purchase required
 
-To explore a related but distinct phenomenon, read Final Vestige's published **Change Blindness** investigation, which documents the flicker task and the campus door-swap demonstration. That research asks whether observers notice changes across views; it should not be mistaken for the detection of movement during a measured saccade. [17]
+To explore a related but distinct phenomenon, read Final Vestige's published **Change Blindness** investigation, which documents the flicker task and the campus door-swap demonstration. That research asks whether observers notice changes across views; it should not be mistaken for the detection of movement during a measured saccade. [16]
 
 For the historical question—how suggestion and expectation complicate causal inference—use the published **Mesmerism** investigation or locate **Puységur's Animal Magnetism Files** in the existing library. The latter's exact article body remains unverified in this sprint.
 
@@ -129,22 +129,21 @@ For a practical free resource, the existing **Seven Day Focus Fieldbook** offers
 
 ## Sources, classification and research limits
 
-[1] Eye movements and attention review: Li and Carrasco (2021), *Trends in Neurosciences*, https://pmc.ncbi.nlm.nih.gov/articles/PMC8552810/ ; review/secondary.  
+[1] Eye movements and attention review: Li, Hanning and Carrasco (2021), *Trends in Neurosciences*, https://pmc.ncbi.nlm.nih.gov/articles/PMC8552810/ ; review/secondary.  
 [2] *Visual Remapping* (2021), *Annual Review of Vision Science*, https://pmc.ncbi.nlm.nih.gov/articles/PMC9255256/ ; expert review.  
 [3] *The Relationship Between Saccadic Suppression and Perceptual Stability* (2009), https://pmc.ncbi.nlm.nih.gov/articles/PMC3254668/ ; primary experimental report.  
 [4] *Vision, Perception, and Attention through the Lens of Microsaccades* (2015), https://www.frontiersin.org/journals/systems-neuroscience/articles/10.3389/fnsys.2015.00167/full ; review.  
 [5] Bridgeman, Hendry and Stark (1975), *Vision Research* 15, 719–722, https://pubmed.ncbi.nlm.nih.gov/1138489/ ; bibliographic primary record; no methods or sample size asserted from inaccessible full paper.  
-[6] *An Object-Mediated Updating Account of Insensitivity to Transsaccadic Change* (2013), https://pmc.ncbi.nlm.nih.gov/articles/PMC3720035/ ; open research discussion of earlier paradigm.  
+[6] *An Object-Mediated Updating Account of Insensitivity to Transsaccadic Change* (2012), https://pmc.ncbi.nlm.nih.gov/articles/PMC3720035/ ; open research discussion of earlier paradigm.  
 [7] *Spatiotopic and Saccade-Specific Transsaccadic Memory for Object Detail* (2020), https://pmc.ncbi.nlm.nih.gov/articles/PMC7424120/ ; primary open experiment.  
 [8] *Saccade Suppression of Displacements, but Not of Contrast, Depends on Context* (2022), https://pmc.ncbi.nlm.nih.gov/articles/PMC9469035/ ; primary open experiment.  
-[9] *To Look or Not to Look: Dissociating Presaccadic and Covert Spatial Attention* (2021), https://pmc.ncbi.nlm.nih.gov/articles/PMC8552810/ ; review.  
-[10] *The Perceptual Consequences and Neurophysiology of Eye Blinks* (2023), https://pmc.ncbi.nlm.nih.gov/articles/PMC10466800/ ; review.  
-[11] Inspire3 official catalog, https://inspire3.com/ ; seller source only.  
-[12] Zen12 exact offer, https://zen12.com/hnp ; seller source only.  
-[13] Focus Shot exact offer and terms, https://brainwaveshots.com/focus-shot and https://brainwaveshots.com/faq ; seller sources only.  
-[14] Hypnosis Live Total Focus offer and FAQ, https://hypnosislive.com/mental-skills/total-focus and https://hypnosislive.com/faq ; seller sources only.  
-[15] FTC endorsement and health claims guidance, https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking and https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance ; agency guidance, not a substitute for legal advice.  
-[16] Final Vestige Puységur library route https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/ and published Mesmerism https://finalvestige.com/2026/11/02/mesmerism/ ; only source inventory, not the inaccessible texts.  
-[17] Existing published Change Blindness https://finalvestige.com/2026/11/02/change-blindness/ ; live editorial bridge.
+[9] *The Perceptual Consequences and Neurophysiology of Eye Blinks* (2023), https://pmc.ncbi.nlm.nih.gov/articles/PMC10466800/ ; review.  
+[10] Inspire3 official catalog, https://inspire3.com/ ; seller source only.  
+[11] Zen12 exact offer, https://zen12.com/hnp ; seller source only.  
+[12] Focus Shot exact offer and terms, https://brainwaveshots.com/focus-shot and https://brainwaveshots.com/faq ; seller sources only.  
+[13] Hypnosis Live Total Focus offer and FAQ, https://hypnosislive.com/mental-skills/total-focus and https://hypnosislive.com/faq ; seller sources only.  
+[14] FTC endorsement and health claims guidance, https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking and https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance ; agency guidance, not a substitute for legal advice.  
+[15] Final Vestige Puységur library route https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/ and published Mesmerism https://finalvestige.com/2026/11/02/mesmerism/ ; only source inventory, not the inaccessible texts.  
+[16] Existing published Change Blindness https://finalvestige.com/2026/11/02/change-blindness/ ; live editorial bridge.
 
 **Limits:** No original eye-tracker data, systematic meta-analysis, commercial product purchase, checkout, refund, independent product-specific efficacy trial or human conversion data were examined. No claim that a simple two-fixation activity reproduces a laboratory test. No claim to have spoken with researchers or experienced any product. **UNPUBLISHED; no CMS action authorized.**

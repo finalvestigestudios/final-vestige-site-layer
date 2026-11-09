@@ -1,0 +1,477 @@
+{
+  "milestone": 246,
+  "created_date": "2026-11-09",
+  "source_scope": "UNPUBLISHED_ONLY",
+  "release": "HARD_HOLD",
+  "verification_categories": "seller specs vs seller efficacy vs independent research vs FDA/FTC etc",
+  "sources": [
+    {
+      "id": "TH01",
+      "type": "primary_reprinted",
+      "url": "https://anstislab.ucsd.edu/files/2012/11/2009-Thatcher-1980-paper.pdf",
+      "scope": "1980 original and 2009 first-person update; original photograph not licensed for FV"
+    },
+    {
+      "id": "TH02",
+      "type": "primary_abstract",
+      "url": "https://ora.ox.ac.uk/objects/uuid%3A06d73daa-0d0f-4b89-b1e8-09c4dae9a913",
+      "scope": "Boutsen Humphreys 2003 four experiments; abstract"
+    },
+    {
+      "id": "TH03",
+      "type": "primary_abstract",
+      "url": "https://doi.org/10.1177/0956797613501521",
+      "scope": "Psalta et al. online 2013/print 2014 fMRI study"
+    },
+    {
+      "id": "TH04",
+      "type": "primary_abstract",
+      "url": "https://doi.org/10.1068/p7755",
+      "scope": "Psalta Andrews 2014 expression recognition experiments"
+    },
+    {
+      "id": "TH05",
+      "type": "primary_abstract",
+      "url": "https://doi.org/10.1111/j.1467-7687.2004.00363.x",
+      "scope": "Bertin Bhatt six-month-olds"
+    },
+    {
+      "id": "TH06",
+      "type": "primary_abstract",
+      "url": "https://doi.org/10.1111/j.1467-7687.2008.00791.x",
+      "scope": "Leo Simion newborn habituation study"
+    },
+    {
+      "id": "TH07",
+      "type": "primary_abstract",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/19559613/",
+      "scope": "Adachi Chou Hampton 2009 rhesus effect"
+    },
+    {
+      "id": "TH08",
+      "type": "primary_abstract",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23420511/",
+      "scope": "2013 opposing findings on rhesus, chimpanzees"
+    },
+    {
+      "id": "SELLER_INDEX",
+      "type": "seller",
+      "url": "https://inspire3.com/",
+      "scope": "Catalog is seller marketing, not evidence of named partner rights"
+    },
+    {
+      "id": "SELLER_ZEN12",
+      "type": "seller",
+      "url": "https://zen12.com/hnp",
+      "scope": "Premium offer including 12 levels, 48 MP3; visible promotional price/refund may change and need cart check"
+    },
+    {
+      "id": "SELLER_FOCUS",
+      "type": "seller",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "scope": "Focus Shot 15/30 minutes; product benefit claims unverified"
+    },
+    {
+      "id": "SELLER_FOCUS_FAQ",
+      "type": "seller",
+      "url": "https://brainwaveshots.com/faq",
+      "scope": "Isochronic seller description; refunds limited to 1 per 6 months and download condition >10 items"
+    },
+    {
+      "id": "SELLER_HYPNOSIS",
+      "type": "seller",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "scope": "Total Focus 33 minutes/47MB seller description"
+    },
+    {
+      "id": "SELLER_HYPNOSIS_FAQ",
+      "type": "seller",
+      "url": "https://hypnosislive.com/faq",
+      "scope": "14-day request window; at most 5 sessions per year refunded"
+    },
+    {
+      "id": "SELLER_AFFILIATE",
+      "type": "seller",
+      "url": "https://affiliates.inspire3.com/",
+      "scope": "Public signup/marketing; not named FV publisher approval or binding commission terms"
+    },
+    {
+      "id": "FTC_DISCLOSURE",
+      "type": "regulatory",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "scope": "Clear conspicuous near recommendation; affiliate label alone unclear"
+    },
+    {
+      "id": "FTC_HEALTH",
+      "type": "regulatory",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "scope": "Objective marketing claims must be substantiated before use"
+    },
+    {
+      "id": "FV_FOCUS",
+      "type": "existing_site",
+      "url": "https://finalvestige.com/focus/",
+      "scope": "Seven Day Focus Fieldbook is task-starting, not meditation-audio program"
+    },
+    {
+      "id": "FV_CHANGE",
+      "type": "existing_site",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "scope": "Existing related perception investigation"
+    },
+    {
+      "id": "FV_MESMER",
+      "type": "existing_site",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "scope": "Existing hypnosis history research"
+    },
+    {
+      "id": "FV_PUYSEGUR",
+      "type": "existing_site",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "scope": "Route listed by site; direct web fetch unavailable, text not independently checked"
+    }
+  ],
+  "claims": [
+    {
+      "id": "TH_HIST",
+      "claim": "Thompson created inverted eye/mouth poster and noticed orientation effect accidentally",
+      "status": "research_supported",
+      "source": "TH01"
+    },
+    {
+      "id": "TH_IMAGE",
+      "claim": "Original Thatcher print and author reproductions are rights-cleared for FV reuse",
+      "status": "NOT_VERIFIED_RIGHTS",
+      "source": "TH01"
+    },
+    {
+      "id": "TH_MECH",
+      "claim": "Face inversion disrupts configural processing in tasks while features may remain available",
+      "status": "research_supported_task_specific",
+      "source": "TH02"
+    },
+    {
+      "id": "TH_FMRI",
+      "claim": "STS expression sensitivity depended on orientation in reported fMRI paradigm",
+      "status": "research_supported_bounded",
+      "source": "TH03"
+    },
+    {
+      "id": "TH_FFA",
+      "claim": "FFA responses also reflected change with inverted configuration; not an off switch",
+      "status": "research_supported_bounded",
+      "source": "TH03"
+    },
+    {
+      "id": "TH_EMOTION",
+      "claim": "Inverting Thatcherized face can improve expression recognition in tested tasks",
+      "status": "research_supported_bounded",
+      "source": "TH04"
+    },
+    {
+      "id": "TH_INFANTS",
+      "claim": "Six-month-olds discriminated upright Thatcher changes under specified procedures",
+      "status": "research_supported_bounded",
+      "source": "TH05"
+    },
+    {
+      "id": "TH_NEONATAL",
+      "claim": "Newborns showed discrimination upright but not inverted in habituation study",
+      "status": "research_supported_bounded",
+      "source": "TH06"
+    },
+    {
+      "id": "TH_MONKEY_2009",
+      "claim": "One 2009 study reports rhesus effect",
+      "status": "research_supported_conflicted",
+      "source": "TH07"
+    },
+    {
+      "id": "TH_MONKEY_2013",
+      "claim": "Later computerized study saw chimpanzee but not rhesus effect",
+      "status": "research_supported_conflicted",
+      "source": "TH08"
+    },
+    {
+      "id": "TH_TREAT",
+      "claim": "Thatcher illusion demonstrates a therapy, meditation training, hypnosis or focus-audio benefit",
+      "status": "NOT_SUPPORTED",
+      "source": "TH03"
+    },
+    {
+      "id": "FV_OWNED_DEMO",
+      "claim": "New original vector demo has been user-tested or replicated in a lab",
+      "status": "NOT_TESTED",
+      "source": "TH01"
+    },
+    {
+      "id": "ZEN12_FORMAT",
+      "claim": "Zen12 Premium listing says 12 levels and 48 audio MP3s",
+      "status": "seller_specification_only",
+      "source": "SELLER_ZEN12"
+    },
+    {
+      "id": "ZEN12_EQ",
+      "claim": "One Zen12 12-min recording equals 1 hour of meditation effects",
+      "status": "seller_claim_UNSUBSTANTIATED",
+      "source": "SELLER_ZEN12"
+    },
+    {
+      "id": "ZEN12_REFUND",
+      "claim": "Zen12 advertises a 1-year guarantee; refund fulfillment verified",
+      "status": "seller_promise_fulfillment_UNVERIFIED",
+      "source": "SELLER_ZEN12"
+    },
+    {
+      "id": "ZEN12_PRICE",
+      "claim": "Seller site promotional price is binding checkout/tax price",
+      "status": "NOT_VERIFIED_CART",
+      "source": "SELLER_ZEN12"
+    },
+    {
+      "id": "ZEN12_LEAD",
+      "claim": "Zen12 free audio signup also confirms an FV Jetpack subscriber",
+      "status": "FALSE_SEPARATE_MERCHANT_OPTIN",
+      "source": "SELLER_ZEN12"
+    },
+    {
+      "id": "BWS_FORMAT",
+      "claim": "Focus Shot listing offers 15/30 minute audios and bonus versions",
+      "status": "seller_specification_only",
+      "source": "SELLER_FOCUS"
+    },
+    {
+      "id": "BWS_EFFECT",
+      "claim": "Focus Shot delivers four hours or more of focus",
+      "status": "seller_claim_UNSUBSTANTIATED",
+      "source": "SELLER_FOCUS"
+    },
+    {
+      "id": "BWS_ISO",
+      "claim": "Seller FAQ describes isochronic tones and says headphones not required",
+      "status": "seller_specification_only",
+      "source": "SELLER_FOCUS_FAQ"
+    },
+    {
+      "id": "BWS_REFUND",
+      "claim": "One-year advertised refund unlimited in practice",
+      "status": "FALSE_FAQ_RESTRICTIONS",
+      "source": "SELLER_FOCUS_FAQ"
+    },
+    {
+      "id": "BWS_RISK",
+      "claim": "Seller FAQ cautions about epilepsy and when alertness is required",
+      "status": "seller_warning_not_independent_safety_proof",
+      "source": "SELLER_FOCUS_FAQ"
+    },
+    {
+      "id": "HL_FORMAT",
+      "claim": "Total Focus listing describes 33min 47MB narrated MP3",
+      "status": "seller_specification_only",
+      "source": "SELLER_HYPNOSIS"
+    },
+    {
+      "id": "HL_EFFECT",
+      "claim": "Hypnosis Live Total Focus proven to produce more productivity",
+      "status": "seller_claim_UNSUBSTANTIATED",
+      "source": "SELLER_HYPNOSIS"
+    },
+    {
+      "id": "HL_REFUND",
+      "claim": "Hypnosis Live returns available indefinitely",
+      "status": "FALSE_14D_5SESSIONS_YEAR",
+      "source": "SELLER_HYPNOSIS_FAQ"
+    },
+    {
+      "id": "INSPIRE_PORTAL",
+      "claim": "Public network advertises signup and promotional payments",
+      "status": "seller_program_advertisement_only",
+      "source": "SELLER_AFFILIATE"
+    },
+    {
+      "id": "INSPIRE_APPROVAL",
+      "claim": "Named Final Vestige account approved with issued referral URL and promotional rights",
+      "status": "NOT_VERIFIED",
+      "source": "SELLER_AFFILIATE"
+    },
+    {
+      "id": "FTC_ADJACENCY",
+      "claim": "A generic footer disclosure alone satisfies proximity for a specific affiliate CTA",
+      "status": "INCOMPLETE",
+      "source": "FTC_DISCLOSURE"
+    },
+    {
+      "id": "FTC_BENEFIT",
+      "claim": "General vision studies establish exact-SKU mental health or focus outcomes",
+      "status": "FALSE_INSUFFICIENT_EVIDENCE",
+      "source": "FTC_HEALTH"
+    },
+    {
+      "id": "FOCUS_DIFF",
+      "claim": "FV 12-minute activity-start fieldbook is identical to Zen12 12-minute meditation",
+      "status": "FALSE_DIFFERENT_USER_JOB",
+      "source": "FV_FOCUS"
+    },
+    {
+      "id": "FV_PAYHIP",
+      "claim": "Active FV-owned, rights-cleared Mind digital SKU, exact price, refund, checkout authenticated",
+      "status": "NOT_VERIFIED",
+      "source": "FV_FOCUS"
+    },
+    {
+      "id": "FV_ARCHIVE",
+      "claim": "Public Mind hub is already live and approved",
+      "status": "NOT_VERIFIED_NO_CMS_WRITE",
+      "source": "FV_MESMER"
+    },
+    {
+      "id": "REVENUE",
+      "claim": "Paid Zen12 affiliate purchases or owned sales verified via merchant receipts",
+      "status": "NOT_VERIFIED",
+      "source": "SELLER_AFFILIATE"
+    }
+  ],
+  "gates": [
+    {
+      "id": "named_partner_acceptance",
+      "state": "HARD_HOLD",
+      "verified": false,
+      "proof": null,
+      "owner": "Founder + Mind"
+    },
+    {
+      "id": "issued_earning_url",
+      "state": "HARD_HOLD",
+      "verified": false,
+      "proof": null,
+      "owner": "Founder + Mind"
+    },
+    {
+      "id": "permitted_site_channels",
+      "state": "HARD_HOLD",
+      "verified": false,
+      "proof": null,
+      "owner": "Founder + Mind"
+    },
+    {
+      "id": "permitted_social_channels",
+      "state": "HARD_HOLD",
+      "verified": false,
+      "proof": null,
+      "owner": "Founder + Mind"
+    },
+    {
+      "id": "permitted_email_channels",
+      "state": "HARD_HOLD",
+      "verified": false,
+      "proof": null,
+      "owner": "Founder + Mind"
+    },
+    {
+      "id": "current_affiliate_terms",
+      "state": "HARD_HOLD",
+      "verified": false,
+      "proof": null,
+      "owner": "Founder + Mind"
+    },
+    {
+      "id": "exact_offer_link_match",
+      "state": "HARD_HOLD",
+      "verified": false,
+      "proof": null,
+      "owner": "Mind + Site QA"
+    },
+    {
+      "id": "final_checkout_and_tax",
+      "state": "HARD_HOLD",
+      "verified": false,
+      "proof": null,
+      "owner": "Commerce + Founder"
+    },
+    {
+      "id": "refund_procedure_reviewed",
+      "state": "HARD_HOLD",
+      "verified": false,
+      "proof": null,
+      "owner": "Commerce + Founder"
+    },
+    {
+      "id": "claim_proof_clearance",
+      "state": "HARD_HOLD",
+      "verified": false,
+      "proof": null,
+      "owner": "Mind + Site QA"
+    },
+    {
+      "id": "near_link_ftc_disclosure",
+      "state": "HARD_HOLD",
+      "verified": false,
+      "proof": null,
+      "owner": "Mind + Site QA"
+    },
+    {
+      "id": "a11y_browser_mobile_no_js",
+      "state": "HARD_HOLD",
+      "verified": false,
+      "proof": null,
+      "owner": "Mind + Site QA"
+    },
+    {
+      "id": "original_video_render_caption_qa",
+      "state": "HARD_HOLD",
+      "verified": false,
+      "proof": null,
+      "owner": "Mind + Site QA"
+    },
+    {
+      "id": "attribution_authorization_no_pii",
+      "state": "HARD_HOLD",
+      "verified": false,
+      "proof": null,
+      "owner": "Mind + Site QA"
+    },
+    {
+      "id": "owned_sku_rights_checkout_fulfillment",
+      "state": "HARD_HOLD",
+      "verified": false,
+      "proof": null,
+      "owner": "Commerce + Founder"
+    },
+    {
+      "id": "settled_receipt_and_net_cohort",
+      "state": "HARD_HOLD",
+      "verified": false,
+      "proof": null,
+      "owner": "Commerce + Founder"
+    }
+  ],
+  "commercial": {
+    "publisher_approved": null,
+    "issued_earning_url": null,
+    "authorized_channels": null,
+    "merchant_checkout_test": null,
+    "refund_test": null,
+    "cleared_affiliate_commissions": null,
+    "settled_owned_orders": null,
+    "qualified_human_sessions": null,
+    "net_revenue_per_1000": null,
+    "affiliate_click": null
+  },
+  "test_hypothesis": {
+    "A": "independent text-only Zen12 buyer guide",
+    "B": "same guide with optional 42s ORIGINAL poster/storyboard and transcript",
+    "eligible_for_experiment": false,
+    "video_rendered": false,
+    "actual_randomization": false,
+    "metric": "verified net revenue / 1000 qualified human sessions; only if merchant settlement can be matched"
+  },
+  "source_limitations": [
+    "Official Inspire3 merchant pages can be cached/dynamic; dated on-screen price is not a payable final cart.",
+    "Gmail promotional correspondence is not publisher-specific authorization.",
+    "Full rights review for FV owned Mind product and Thatcher original portrait remains incomplete.",
+    "Live Journal currently displays 66 search results while Issue #171 records a prior baseline of 61 posts; these are different snapshots and not independently reconciled.",
+    "Some full research texts are paywalled; abstracts are not complete methodological audits.",
+    "No consented live A/B, independent video, browser accessibility, CMS sanitizer, or payout transaction tested."
+  ]
+}
