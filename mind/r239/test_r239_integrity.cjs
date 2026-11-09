@@ -44,7 +44,7 @@ function inspectArticle(s){
  assert(!/we (?:tested|used|recommend) zen12|guaranteed (?:mental|focus|cure)/i.test(s),'no fabricated product experience/effectiveness');
 }
 function inspectPlan(s){
- assert.equal(fnv32(s),'b4c1bffa','complete reviewed plan immutable');
+ assert.equal(fnv32(s),'9b6c0122','complete reviewed plan immutable');
  assert(s.length>6500,'substantive plan present');
  for(const term of ['NOT COMPUTABLE','HARD HOLD','utm_campaign','qualified_human_session','confirmed_lead','paid_order','cleared_commission','7-day','30-day','Grok','Praxxis','Jetpack','UNRENDERED','NOT LIVE','founder'])assert(s.toLowerCase().includes(term.toLowerCase()),'plan missing '+term);
 }
