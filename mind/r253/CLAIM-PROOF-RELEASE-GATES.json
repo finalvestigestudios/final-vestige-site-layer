@@ -62,6 +62,12 @@
       "type": "published_inventory",
       "url": "https://finalvestige.com/blog/",
       "summary": "Journal currently displays 66 result rows; earlier issue #171 baseline was 61; counts reflect different dates."
+    },
+    {
+      "id": "S11",
+      "type": "government_evidence_review",
+      "url": "https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety",
+      "summary": "NIH NCCIH on heterogeneous general meditation research and safety; not a proprietary Zen12 study"
     }
   ],
   "claims": [
@@ -207,6 +213,16 @@
       ],
       "classification": "CART_NOT_TESTED",
       "action": "HARD_HOLD"
+    },
+    {
+      "id": "P17",
+      "text": "General meditation evidence cannot substantiate exact Zen12 product effects",
+      "source_ids": [
+        "S11",
+        "S04"
+      ],
+      "classification": "INFERENCE_LIMITED",
+      "action": "USE_AS_EVIDENCE_BOUNDARY"
     }
   ],
   "authorization_gates": [
