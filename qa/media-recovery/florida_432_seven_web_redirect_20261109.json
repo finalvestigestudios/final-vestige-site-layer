@@ -1,0 +1,274 @@
+{
+  "schema": "fv-florida-432-www-apex-web-wrapper-v1",
+  "observed_date_utc": "2026-11-09",
+  "post_id": 432,
+  "post_url": "https://finalvestige.com/2026/08/20/they-buried-the-dead-apart-okeechobee-1928/",
+  "post_status": "publish",
+  "post_modified": "2026-08-28T03:07:30",
+  "verification_methods": [
+    "wpcom_mcp_posts_get(context=edit,read_only)",
+    "web.open (wrapper; NOT origin HTTP)",
+    "Florida Memory official item catalogs from web search"
+  ],
+  "scope": {
+    "source_slots": 7,
+    "unique_origin_hosts": 1,
+    "wrapper_redirect_unavailable_count": 7,
+    "visitor_confirmed_broken": null,
+    "not_seven_independent_outages": true
+  },
+  "rights": {
+    "ownership": "State Archives of Florida / Florida Memory",
+    "status": "item-level reuse/copyright and attribution review pending",
+    "blank_catalog_rights_field_is_permission": false,
+    "cache_or_republish_approved": false
+  },
+  "performance": {
+    "native_dimensions_verified": false,
+    "verified_wire_bytes": null,
+    "conditional_max_width_px": 960,
+    "no_upscale": true,
+    "actual_960_derivatives": null
+  },
+  "release": {
+    "wordpress_writes": 0,
+    "binary_downloads": 0,
+    "cache_writes": 0,
+    "homepage_changes": 0,
+    "spend_usd": 0,
+    "all_images_hold": true
+  },
+  "rows": [
+    {
+      "slot": "432:0",
+      "identifier": "PR04493",
+      "scene": "Funeral service, Woodlawn",
+      "wp_published_src": "https://www.floridamemory.com/fpc/prints/pr04493.jpg",
+      "official_catalog": "https://floridamemory.com/items/show/4144",
+      "official_catalog_image_path": "/fpc/prints/pr04493.jpg",
+      "conditional_canonical_origin_url": "https://floridamemory.com/fpc/prints/pr04493.jpg",
+      "catalog_path_matches_wp_source": true,
+      "source_href_catalog_verified": true,
+      "web_open": {
+        "observed_url": "https://www.floridamemory.com/fpc/prints/pr04493.jpg",
+        "wrapper_status": 500,
+        "wrapper_label": "REDIRECT_TARGET_INACCESSIBLE",
+        "reported_redirect_to": "https://floridamemory.com/fpc/prints/pr04493.jpg",
+        "origin_status": null,
+        "guest_chrome_status": null,
+        "guest_natural_width": null,
+        "guest_natural_height": null,
+        "guest_encoded_bytes": null,
+        "guest_broken": null
+      },
+      "candidate": {
+        "is_same_archive_record": true,
+        "downloaded": false,
+        "byte_identical_to_published_source": null,
+        "native_dimensions": null,
+        "conditional_960px_dimensions": null,
+        "rights_cleared": false,
+        "editor_approved": false,
+        "publish": false
+      }
+    },
+    {
+      "slot": "432:1",
+      "identifier": "RC17068",
+      "scene": "Flooded Avenue A, Belle Glade",
+      "wp_published_src": "https://www.floridamemory.com/fpc/reference/rc17068.jpg",
+      "official_catalog": "https://floridamemory.com/items/show/38362",
+      "official_catalog_image_path": "/fpc/reference/rc17068.jpg",
+      "conditional_canonical_origin_url": "https://floridamemory.com/fpc/reference/rc17068.jpg",
+      "catalog_path_matches_wp_source": true,
+      "source_href_catalog_verified": false,
+      "web_open": {
+        "observed_url": "https://www.floridamemory.com/fpc/reference/rc17068.jpg",
+        "wrapper_status": 500,
+        "wrapper_label": "REDIRECT_TARGET_INACCESSIBLE",
+        "reported_redirect_to": "https://floridamemory.com/fpc/reference/rc17068.jpg",
+        "origin_status": null,
+        "guest_chrome_status": null,
+        "guest_natural_width": null,
+        "guest_natural_height": null,
+        "guest_encoded_bytes": null,
+        "guest_broken": null
+      },
+      "candidate": {
+        "is_same_archive_record": true,
+        "downloaded": false,
+        "byte_identical_to_published_source": null,
+        "native_dimensions": null,
+        "conditional_960px_dimensions": null,
+        "rights_cleared": false,
+        "editor_approved": false,
+        "publish": false
+      }
+    },
+    {
+      "slot": "432:2",
+      "identifier": "RC10673",
+      "scene": "Demolished auto garage, Belle Glade",
+      "wp_published_src": "https://www.floridamemory.com/fpc/reference/rc10673.jpg",
+      "official_catalog": "https://floridamemory.com/items/show/33289",
+      "official_catalog_image_path": "/fpc/reference/rc10673.jpg",
+      "conditional_canonical_origin_url": "https://floridamemory.com/fpc/reference/rc10673.jpg",
+      "catalog_path_matches_wp_source": true,
+      "source_href_catalog_verified": true,
+      "web_open": {
+        "observed_url": "https://www.floridamemory.com/fpc/reference/rc10673.jpg",
+        "wrapper_status": 500,
+        "wrapper_label": "REDIRECT_TARGET_INACCESSIBLE",
+        "reported_redirect_to": "https://floridamemory.com/fpc/reference/rc10673.jpg",
+        "origin_status": null,
+        "guest_chrome_status": null,
+        "guest_natural_width": null,
+        "guest_natural_height": null,
+        "guest_encoded_bytes": null,
+        "guest_broken": null
+      },
+      "candidate": {
+        "is_same_archive_record": true,
+        "downloaded": false,
+        "byte_identical_to_published_source": null,
+        "native_dimensions": null,
+        "conditional_960px_dimensions": null,
+        "rights_cleared": false,
+        "editor_approved": false,
+        "publish": false
+      }
+    },
+    {
+      "slot": "432:3",
+      "identifier": "N031889",
+      "scene": "State Board of Health headquarters, Pahokee",
+      "wp_published_src": "https://www.floridamemory.com/fpc/general/n031889.jpg",
+      "official_catalog": "https://floridamemory.com/items/show/141398",
+      "official_catalog_image_path": "/fpc/general/n031889.jpg",
+      "conditional_canonical_origin_url": "https://floridamemory.com/fpc/general/n031889.jpg",
+      "catalog_path_matches_wp_source": true,
+      "source_href_catalog_verified": true,
+      "web_open": {
+        "observed_url": "https://www.floridamemory.com/fpc/general/n031889.jpg",
+        "wrapper_status": 500,
+        "wrapper_label": "REDIRECT_TARGET_INACCESSIBLE",
+        "reported_redirect_to": "https://floridamemory.com/fpc/general/n031889.jpg",
+        "origin_status": null,
+        "guest_chrome_status": null,
+        "guest_natural_width": null,
+        "guest_natural_height": null,
+        "guest_encoded_bytes": null,
+        "guest_broken": null
+      },
+      "candidate": {
+        "is_same_archive_record": true,
+        "downloaded": false,
+        "byte_identical_to_published_source": null,
+        "native_dimensions": null,
+        "conditional_960px_dimensions": null,
+        "rights_cleared": false,
+        "editor_approved": false,
+        "publish": false
+      }
+    },
+    {
+      "slot": "432:4",
+      "identifier": "RC04344",
+      "scene": "Coffins along canal bank",
+      "wp_published_src": "https://www.floridamemory.com/fpc/reference/rc04344.jpg",
+      "official_catalog": "https://floridamemory.com/items/show/27848",
+      "official_catalog_image_path": "/fpc/reference/rc04344.jpg",
+      "conditional_canonical_origin_url": "https://floridamemory.com/fpc/reference/rc04344.jpg",
+      "catalog_path_matches_wp_source": true,
+      "source_href_catalog_verified": false,
+      "web_open": {
+        "observed_url": "https://www.floridamemory.com/fpc/reference/rc04344.jpg",
+        "wrapper_status": 500,
+        "wrapper_label": "REDIRECT_TARGET_INACCESSIBLE",
+        "reported_redirect_to": "https://floridamemory.com/fpc/reference/rc04344.jpg",
+        "origin_status": null,
+        "guest_chrome_status": null,
+        "guest_natural_width": null,
+        "guest_natural_height": null,
+        "guest_encoded_bytes": null,
+        "guest_broken": null
+      },
+      "candidate": {
+        "is_same_archive_record": true,
+        "downloaded": false,
+        "byte_identical_to_published_source": null,
+        "native_dimensions": null,
+        "conditional_960px_dimensions": null,
+        "rights_cleared": false,
+        "editor_approved": false,
+        "publish": false
+      }
+    },
+    {
+      "slot": "432:5",
+      "identifier": "RC07668",
+      "scene": "Burial of hurricane victims",
+      "wp_published_src": "https://www.floridamemory.com/fpc/reference/rc07668.jpg",
+      "official_catalog": "https://floridamemory.com/items/show/30741",
+      "official_catalog_image_path": "/fpc/reference/rc07668.jpg",
+      "conditional_canonical_origin_url": "https://floridamemory.com/fpc/reference/rc07668.jpg",
+      "catalog_path_matches_wp_source": true,
+      "source_href_catalog_verified": false,
+      "web_open": {
+        "observed_url": "https://www.floridamemory.com/fpc/reference/rc07668.jpg",
+        "wrapper_status": 500,
+        "wrapper_label": "REDIRECT_TARGET_INACCESSIBLE",
+        "reported_redirect_to": "https://floridamemory.com/fpc/reference/rc07668.jpg",
+        "origin_status": null,
+        "guest_chrome_status": null,
+        "guest_natural_width": null,
+        "guest_natural_height": null,
+        "guest_encoded_bytes": null,
+        "guest_broken": null
+      },
+      "candidate": {
+        "is_same_archive_record": true,
+        "downloaded": false,
+        "byte_identical_to_published_source": null,
+        "native_dimensions": null,
+        "conditional_960px_dimensions": null,
+        "rights_cleared": false,
+        "editor_approved": false,
+        "publish": false
+      }
+    },
+    {
+      "slot": "432:6",
+      "identifier": "MSF-PB11548-001",
+      "scene": "2001 historic burial site photograph",
+      "wp_published_src": "https://www.floridamemory.com/fpc/msf/MSF-PB11548-001.jpg",
+      "official_catalog": "https://floridamemory.com/items/show/340182",
+      "official_catalog_image_path": "/fpc/msf/MSF-PB11548-001.jpg",
+      "conditional_canonical_origin_url": "https://floridamemory.com/fpc/msf/MSF-PB11548-001.jpg",
+      "catalog_path_matches_wp_source": true,
+      "source_href_catalog_verified": true,
+      "web_open": {
+        "observed_url": "https://www.floridamemory.com/fpc/msf/MSF-PB11548-001.jpg",
+        "wrapper_status": 500,
+        "wrapper_label": "REDIRECT_TARGET_INACCESSIBLE",
+        "reported_redirect_to": "https://floridamemory.com/fpc/msf/MSF-PB11548-001.jpg",
+        "origin_status": null,
+        "guest_chrome_status": null,
+        "guest_natural_width": null,
+        "guest_natural_height": null,
+        "guest_encoded_bytes": null,
+        "guest_broken": null
+      },
+      "candidate": {
+        "is_same_archive_record": true,
+        "downloaded": false,
+        "byte_identical_to_published_source": null,
+        "native_dimensions": null,
+        "conditional_960px_dimensions": null,
+        "rights_cleared": false,
+        "editor_approved": false,
+        "publish": false
+      }
+    }
+  ]
+}
