@@ -25,6 +25,7 @@ from .vault_input_snapshot import read_vault_input
 from .vault_publish import publish_vault
 from .vault_restore_cleanup import rollback_owned_restore
 from .vault_restore_writer import make_private_restore_folder, write_private_restore_member
+from .vault_restore_verify import verify_private_restore_members
 
 MAGIC = b"FVS-EVIDENCE-VAULT-v1\x00"
 SALT_SIZE = 16
@@ -203,12 +204,16 @@ def restore_evidence(vault: str | Path, folder: str | Path, passphrase: str) -> 
         files.append((metadata_file, (json.dumps(manifest, sort_keys=True, indent=2) + "\n").encode("utf-8")))
         for file, contents in files:
             write_private_restore_member(file, contents, created)
+        # Check the full plaintext bundle, including the non-parsed manifest.
+        verify_private_restore_members(restored, owned_directory, created, files)
         batch = read_cases(report_file, payload["product"])
         if batch.report_sha256 != payload["report_sha256"]:
             raise ValueError("Restored exception report no longer matches its evidence digest")
         restored_events = read_journal(journal_file, batch)
         if len(restored_events) != payload["review_event_count"]:
             raise ValueError("Review journal event count does not match sealed evidence")
+        # Parsers may have modified files in place; do not return a changed bundle.
+        verify_private_restore_members(restored, owned_directory, created, files)
     except BaseException:
         # Even interruption must attempt rollback, but never delete a
         # detectably swapped pathname or hide the original failure.
