@@ -1,0 +1,55 @@
+# Dispatch R242 — a subscriber count is not an inbox (review-only; unsent)
+
+**November 9, 2026 14:31 PT.** Owner: Issue #174; merchant decision ownership: #171; consent/Focus: #129; realized-revenue contract: #820. Parent: ORIGINAL draft PR #175 at exact d57ccdba3aee8f065e143e101c2945f4f3d01647. Parallel QA PR #201 and source-pin #1800 remain separate. No production writes, WordPress drafts, test sends, opt-in attempts, contact, list imports, subscriber exports, affiliate link activations, posting or paid services. Frozen homepage #49 is untouched.
+
+## P0: independently reconciled provider counts — **not** three email recipients
+
+At 2026-11-09 22:31:32 UTC, connected Jetpack newsletter status returned total=3, confirmed=3, unconfirmed=2, suppressed=0 and no actual send counts. The 2 unconfirmed requests are **not additive** to total or confirmed. Five recent published posts had `never_sent_opted_out` and null recipient counts. `site_can_send=true` means the platform is technically capable, **not that any person is contactable or opted into email**.
+
+At the same time, separate authenticated `wpcom_jetpack_stats_followers` (not an email roster) returned **wpcom=3, email=0, total=3, comment=0, partial=false**. WordPress explicitly distinguishes Reader followers from newsletter email status, while a WordPress.com follower can choose Reader delivery, email delivery, or both. Therefore **NEITHER** “3 confirmed = 3 reachable inboxes” **NOR** “email-only=0 = nobody receives email” follows from the available data. Eligible recipient count is **UNKNOWN** until we inspect the authoritative **Email subscription** status filter (Subscribed / Not subscribed / Not confirmed / Bounced / Emails paused / Not sending) in Jetpack → Newsletter → Subscribers. Do **not** export names or addresses, expose status rows, or send confirmation mail. Summarize aggregate by status only, respecting permissions.
+
+Connected newsletter settings at 2026-11-09 22:31:33 UTC: subscriptions ON; default new-post email OFF; format FULL; from-name Final Vestige Studios; reply-to no-reply; Newsletter categories OFF; welcome message CONFIGURED to the 52-page Seven Day Focus Fieldbook PDF. Configured copy is not evidence of a confirmed subscriber receiving the final welcome or being able to open the PDF. Distinguish the 2026-10-25 confirmation request from successful welcome delivery.
+
+Published CMS source pages: /dispatch/ (page 523, modified Nov 5), /focus/ (page 1579), /editorial-standards/ (page 17). /dispatch/ explicitly says new investigations and archive finds by email. /focus/ offers a 52-page task-starting fieldbook, states recipients also join Dispatch, and discloses that some emails may contain commissioned recommendations. The site's official standards favor primary records, truthfully qualified claims and editorial independence. **No new list, pop-up, pixels or website change authorized.**
+
+**Evidence:** https://wordpress.com/support/subscribers/ (last reviewed Nov 4, 2026); https://wordpress.com/support/newsletter/ ; https://jetpack.com/support/newsletter/ (last updated Nov 4, 2026); authenticated snapshot in contract.json. Statuses above are aggregate, and no recipient addresses are stored.
+
+## One subscriber-to-customer hypothesis (not a performance claim)
+
+**Audience:** a *confirmed email-receiving* subscriber who voluntarily opens an evidence-led meditation-audio evaluation, **not** merely someone who watches a history video, requests a task-starting PDF, or follows WordPress Reader.
+
+**One first offer:** Zen12 Premium, issue 03 only, subject to Mind Studio's *named Final Vestige publisher account acceptance*, explicit permission for EMAIL promotion, an issued compliant affiliate earning URL, an approved and actually LIVE evidence-based warm-up guide, a fresh verified checkout price/refund policy and clear affiliate disclosure. If any remain unverified, deliver only noncommercial educational material in separately approved issues; **do not silently substitute fallback drafts**. Original issue 05 / Total Focus retains its second provisional commercial slot with the same hard holds, NOT concurrent pressure.
+
+**Progression hypothesis:** (a) Grok source asset_id/UTMs, only when actually published and reconciled → /focus/ visit; (b) user-initiated Jetpack opt-in → provider-confirmed email subscription state transition, no repeats; (c) existing welcome receipt plus legitimate PDF link (status unverified); (d) consent-appropriate historical/attention editorial; (e) reader-initiated OPTIONAL click to a vetted Zen12 buyer's guide, not triggered solely by the lead magnet; (f) transparent comparison of no-purchase 12-minute practice vs optional commercial audio; (g) approved earning link if allowed; (h) independently verified settled commission / subsequent refunds/fees. Never claim conversion from pageviews, opens, clicks, or checkout starts. Critically, the Focus Fieldbook's twelve-minute task-start routine is **not** Zen12's twelve-minute meditation mechanism.
+
+**No automatic drip:** Jetpack Newsletter emails correspond to NEW published posts, not six directly scheduled standalone drip messages. Native Preview email for an unpublished post is different from Send test email. No WordPress draft or native preview was created. A future preview requires separately scoped founder permission; an actual delivered test email independently requires explicit consent. Emails 01/02/04/06 stay editorial, 03/05 remain commercial-review-pending; newsletter auto email stays OFF.
+
+## Concrete measurement acceptance contract (no duplicate script)
+
+**One `confirmed_signup` event** may only be recorded after an authoritative Jetpack provider status transition into email `Subscribed`, with demonstrable consent and an opaque site-scoped pseudonymous dedupe ID; each person/event scope counted at most once. A Subscribe button click, displayed thank-you, confirmation *requested*, PDF download, WordPress follower, or email-only counter change is **not** this event. Do not store email, name, confirmation token, or IP in analytics or Git. If provider transition cannot be securely observed with currently authorized integration, mark unavailable; do not synthesize it. No invented GA4 or Jetpack events. Claude owns implementation and QA checks existing analytics first.
+
+**Attribution convention (proposed, not installed):** real Grok asset ID as `utm_content`, `utm_source` = actual platform, `utm_medium=organic_social`, `utm_campaign=<topic_cluster>_pilot_2026_11`. For future editorial email CTA, `utm_source=dispatch`, `utm_medium=email`, `utm_campaign=dispatch_pilot_2026_11`, `utm_content=issue_01` … `issue_06`. Do not append UTM parameters to unapproved destinations. Preserve original source context without exposing subscriber IDs in links. One signal per event, no duplicate analytics scripts. If Jetpack strips/query-changes parameters, record attribution loss rather than inventing attribution.
+
+**7- and 30-day primary metric:** verified FV realized net revenue / verified qualified HUMAN sessions × 1000. Affiliate order contribution is *actually settled commission to FV*, not the merchant's full ticket value; subtract FV refunds/chargebacks/partner reversals/fees/campaign costs where attributable, with source and currency. FV-owned product paid revenue likewise requires independently verified settled orders. If session denominator, settlement ledger, reversals, or reconciliation is absent, status `NOT_COMPUTABLE`; **never** report zero revenue as a verified result without an independently checked zero-order ledger. Small samples: show numerator, denominator and uncertainty; never p-values or A/B winners with 3 Reader followers.
+
+## Release compliance and subject QA
+
+**CAN-SPAM for qualifying commercial sends:** truthful headers and subjects, commercial nature identified, current valid FV physical postal address (Automattic's address is not FV's), clear obvious working opt-out, timely suppression and merchant/agent accountability. A footer placeholder, generic Jetpack documentation or an HTML-only hidden footer cannot establish compliance. Inspect **real Jetpack preview** for subject/preheader/display AND separately authorized received MIME HTML/plaintext for visible publisher address and unsubscribe path, test actual opt-out only with permitted consent-controlled account. The test-email feature **sends a message**. No test sending permitted now. https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business
+
+**Product-specific merchant evidence**, checked Nov 9: https://zen12.com/hnp claims 12 levels, four styles, 48 Premium recordings and one hour's benefits in 12 minutes; these are SELLER descriptions/assertions, not independent evidence of product-specific efficacy. https://hypnosislive.com/mental-skills/total-focus describes 33 minutes and 47 MB; advertised single-item and bundle prices differ; its guarantee is seller-advertised, checkout and enforcement unverified. https://hypnosislive.com/faq discusses refund restrictions; don't quote a guaranteed refund without verified current terms. Never represent seller testimonials as independent FV testing. No live earning URL is approved. No claim that any affiliate commission was earned.
+
+## Offer → funnel step → blocker → change → pass/fail evidence → owner
+
+| Offer → step | Actual blocker | Safe next verification | Evidence and disposition | Owner |
+|---|---|---|---|---|
+| Dispatch → eligible inbox | confirmed3 vs wpcom3/email0 ambiguous | Read **only aggregate** Jetpack Email subscription status counts; do not send or export | P0 UNKNOWN, not 3 or 0 | Dispatch + Claude/Focus |
+| Focus → welcome | Configured not received | Read permitted already-existing final welcome receipt, check PDF destination read-only | UNKNOWN | Focus / Site QA |
+| Source → Jetpack draft | R235 binding drifts from master 6/6 | Founder selects exact per-issue source SHA; bind preview to that, not alternate copy | FAIL downstream identity, master intact | Dispatch |
+| Zen12 → voluntary buyer guide | Named EMAIL rights, earning URL, live approved guide unverified | Mind obtains authentic publisher permissions and owner-approved live guide | HARD_HOLD | Mind #171 |
+| Total Focus → merchant guide | Same, plus seller claim/checkout/refund unknown | Maintain optional 2nd commercial slot without active link | HARD_HOLD | Mind #171 |
+| Dispatch → commercial inbox | No verified publisher postal, visible opt-out, real Jetpack MIME | Authorized native preview, THEN separately authorized received-email QA | UNKNOWN / HOLD | Dispatch + Site QA |
+| Customer → realized net revenue | No provider-confirmed orders, qualified sessions, reversals | Independent 7-/30-day reconciliation | NOT_COMPUTABLE | Commerce / Praxxis |
+
+### Explicit release decision
+
+ALL SIX = HOLD_UNSENT; ISSUE 03/05 = HOLD_MERCHANT. No standalone sequence automation was created. This new review package does NOT replace or adopt previous copy and does not constitute approval to publish or contact the list.
