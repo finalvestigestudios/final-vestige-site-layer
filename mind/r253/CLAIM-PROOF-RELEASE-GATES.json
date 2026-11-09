@@ -304,8 +304,9 @@
   },
   "status": {
     "built": true,
-    "source_tested": false,
+    "source_tested": true,
     "live": false,
-    "verified_paid_conversion": false
+    "verified_paid_conversion": false,
+    "source_test_method": "V8 read-only Node-compatible shim on 2026-11-09; not native Node, browser, CI or WordPress"
   }
 }
