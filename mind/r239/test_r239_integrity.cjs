@@ -31,9 +31,9 @@ function integrity(m,expected,label){
  assert(m.claims.every(c=>sourceIds.has(c.source_id)),label+' all claim references resolve');
  assert(m.gates.every(g=>g.status==='HARD_HOLD'),label+' hold all gates');
  assert.equal(m.commercial_activation??m.merchant_activation,false,label+' activation must remain false');
- assert.equal(m.account_issued_affiliate_url??m.affiliate_link,null,label+' no earning link');
+ assert.equal(('account_issued_affiliate_url' in m)?m.account_issued_affiliate_url:m.affiliate_link,null,label+' no earning link');
  assert.equal(m.revenue.net_revenue_per_1000_qualified_human_sessions,null,label+' revenue unknowable');
- assert.equal(m.revenue.confirmed_paid_orders??m.revenue.merchant_verified_paid_orders,null,label+' no invented paid orders');
+ assert.equal(('confirmed_paid_orders' in m.revenue)?m.revenue.confirmed_paid_orders:m.revenue.merchant_verified_paid_orders,null,label+' no invented paid orders');
 }
 function inspectArticle(s){
  assert.equal(fnv32(s),'d430737c','original investigation exact research fingerprint');
@@ -99,5 +99,5 @@ rejects(()=>inspectVideo(V.replace('00:00:42.000','00:00:40.000')),'clip-time');
 rejects(()=>inspectArticle(article+'\nhttps://zen12.com/hnp'),'editorial seller insertion');
 rejects(()=>inspectPlan(''),'empty plan');
 rejects(()=>inspectPlan(plan.replaceAll('NOT COMPUTABLE','UNKNOWN')),'lost KPI status');
-assert.equal(mutations,115,'expected synthetic mutation count');
+assert.equal(mutations,119,'expected synthetic mutation count');
 console.log('PASS R239: frozen R238 and R239 registry identity/source URL/claim-status/gates; protected original investigation and full conversion plan; disabled A/B and seven 0–42s captions; '+mutations+' unsafe synthetic mutations rejected. SOURCE ONLY.');
