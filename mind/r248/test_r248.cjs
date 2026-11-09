@@ -23,7 +23,7 @@ const paths={
  r247test:'mind/r247/test_r247.cjs'
 };
 const pins={
- article:'743daca5fdf6558bd30e6619fa709a1705e39481',
+ article:'648b26de43dd3832db0416fadbe63d621e813894',
  A:'e920ea9c8983af2867b61f62a6d3e036fb8181a7',
  B:'7a2ed7ff9b784a721edf4e425613eb5d3aaf2ddc',
  vtt:'9879c96132ae2fb3241b8c0b79aa1d35b69406c5',
@@ -73,6 +73,7 @@ function check(data){
  for(const evidence of ['Twelve Minutes Is a Duration','Five reported findings','eight reported','twenty-eight eligible','2,574','Puységur','one-year','twelve minutes','not a blinded experiment','2026','https://pubmed.ncbi.nlm.nih.gov/37205669/','https://doi.org/10.1002/smi.3324','https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance'])assert.ok(article.includes(evidence),'article evidence '+evidence);
  assert.ok(article.includes('not a product endorsement')||article.includes('not a product endorsement'.replace('product','commercial')),'independence');
  assert.ok(article.includes('not a dose-conversion table'),'no false equivalence');
+ assert.ok(article.includes('narrative synthesis')&&article.includes('Only 29%'),'Mandlik methodology and bias caveat');
 
  function checkPage(h,name){
   assert.ok(/^<!doctype html>/i.test(h));assert.ok(h.includes('<html lang="en">'));
