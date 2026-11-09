@@ -193,7 +193,7 @@
         "cache_state": null
       },
       "catalog": {
-        "url": "https://qmmuseum.army.mil/assets/img/aotm/2012/09_M1910_canteen_1.jpg",
+        "url": "https://qmmuseum.army.mil/explore/artifact-of-the-month/2012.html",
         "authority": "US_ARMY_MUSEUM_HOST_ONLY",
         "catalog_identity": "M1910 canteen, specific provenance to Lady Be Good crew not verified",
         "rights": "UNKNOWN_SPECIFIC_ARTIFACT_PHOTO_RIGHTS",
@@ -288,7 +288,7 @@
       "catalog": {
         "url": "https://unwritten-record.blogs.archives.gov/2017/06/16/lost-and-found-the-story-of-lady-be-good-and-her-crew/",
         "authority": "NATIONAL_ARCHIVES_BLOG",
-        "catalog_identity": "NARA page depicts Lady Be Good wreck, related NARA record 111-CC-17240; exact scan accession for filename 111-c-17240 still needs catalog confirmation",
+        "catalog_identity": "NARA exact attachment basename 111-c-17240 and previously researched item ID 111-C-17240 (PR #183); source depiction appears to show aircraft without investigators.",
         "rights": "NARA_SCAN_CREDIT_AND_ANY_ITEM_RIGHTS_PENDING",
         "native_px": null,
         "conditional_960_px": null,
@@ -332,14 +332,14 @@
         "cache_state": null
       },
       "catalog": {
-        "url": null,
-        "authority": "US_AIR_FORCE_HOST_UNCATALOGUED",
-        "catalog_identity": "VIRIN from stored filename only: 060530-F-1234S-041; official item description unavailable",
-        "rights": "UNKNOWN_ITEM_RIGHTS",
+        "url": "https://www.nationalmuseum.af.mil/Upcoming/Photos/igphoto/2000554420/",
+        "authority": "NATIONAL_MUSEUM_USAF",
+        "catalog_identity": "USAF 060530-F-1234S-041, official image described as bomber tail with C-47 recovery aircraft in background",
+        "rights": "ITEM_CATALOG_PUBLIC_DOMAIN_RELEASE_WITH_DOD_LIMITATIONS_AND_CREDIT",
         "native_px": null,
         "conditional_960_px": null,
-        "source_match": "UNVERIFIED",
-        "scene_note": "Recovery personnel identity/action not independently established"
+        "source_match": "FILENAME_AND_CATALOG_VIRIN_ONLY",
+        "scene_note": "ALT says people working around wreck, whereas official record describes bomber tail and C-47; prior PR #183 proposed alternative ALT pending visual/editorial approval"
       },
       "hold": {
         "rights_cleared": false,
@@ -351,5 +351,12 @@
         "post_rewrite_approved": false
       }
     }
-  ]
+  ],
+  "prior_independent_research": {
+    "pr": 183,
+    "branch": "qa/media-recovery-reviewed-20261030-1158",
+    "path": "qa/media-recovery/lady_be_good_278_primary_20261031.json",
+    "git_blob_sha": "cf69fc6666037488012cf9fd48bb204764904e00",
+    "scope_note": "THIS ENTIRE SEVEN-SLOT SUBJECT WAS ALREADY RESEARCHED IN PR #183 ON OCTOBER 31; current batch reconciles prior records with fresh retriever observations, does not add seven new unique positions across all drafts."
+  }
 }
