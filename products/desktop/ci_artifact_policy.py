@@ -15,7 +15,7 @@ import re
 import sys
 from pathlib import Path
 
-MAX_WORKFLOW_BYTES = 128 * 1024
+from ci_workflow_budget_r292 import MAX_WORKFLOW_BYTES
 ALLOWED = {
     "final-vestige-desktop-source-only": (
         "${{ runner.temp }}/fvs-source/offline-source-suite.json",

@@ -14,7 +14,7 @@ import sys
 from ci_gate_step_contract import GateStepError, verify_gate_step
 from ci_action_pin_guard import ActionPinError, verify_action_pins
 
-MAX_WORKFLOW_BYTES = 128 * 1024
+from ci_workflow_budget_r292 import MAX_WORKFLOW_BYTES
 SOURCE_CMD = 'python products/desktop/scripts/offline_source_gate.py --report "$RUNNER_TEMP/fvs-source/offline-source-suite.json"'
 WINDOWS_CMD = 'python products/desktop/scripts/offline_source_gate.py'
 POLICY_CMD = 'python products/desktop/ci_source_contract.py .github/workflows/desktop-build.yml'
