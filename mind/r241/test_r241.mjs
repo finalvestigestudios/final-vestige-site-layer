@@ -26,7 +26,7 @@ function validate(h=html,m=matrix,a=article,p=plan) {
   assert.doesNotMatch(h,/<a[^>]+rel=["'](?:sponsored|nofollow)["'][^>]*>/i);
   assert.match(h,/https:\/\/finalvestige\.com\/focus\//i);
   assert.match(h,/:focus-visible/); assert.match(h,/@media\(max-width:650px\)/);assert.match(h, /prefers-reduced-motion/);
-  assert.match(a,/SELLER|seller/i); assert.match(a,/not a test that Final Vestige conducted/i);
+  assert.match(a,/SELLER|seller/i); assert.match(a,/not findings from a test that Final Vestige conducted/i);
   assert.match(a,/four hours/i); assert.match(a,/not automatically be treated/i);
   assert.match(p,/NOT COMPUTABLE/);assert.match(p,/TASK-008/);assert.match(p,/R237 A\/B/);
   return true;
