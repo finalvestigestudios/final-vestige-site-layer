@@ -24,6 +24,9 @@ from .review_identity import require_snapshot_match
 from .vault_decode_privacy import decrypt_evidence, parse_evidence_json, decode_evidence_b64
 from .vault_input_snapshot import read_vault_input
 from .vault_publish import publish_vault
+from .vault_restore_cleanup import (
+    snapshot_new_file, snapshot_new_folder, rollback_owned_restore,
+)
 
 MAGIC = b"FVS-EVIDENCE-VAULT-v1\x00"
 SALT_SIZE = 16
@@ -188,7 +191,9 @@ def restore_evidence(vault: str | Path, folder: str | Path, passphrase: str) -> 
         "%Y%m%d-%H%M%S") + "-" + secrets.token_hex(5))
     restored.mkdir(mode=0o700)  # exclusive; no folder overwrite
     created = []
+    owned_directory = None
     try:
+        owned_directory = snapshot_new_folder(restored)
         report_file = restored / "exception-report.csv"
         files = [(report_file, data)]
         journal_file = restored / "exception-report.review.jsonl"
@@ -201,7 +206,8 @@ def restore_evidence(vault: str | Path, folder: str | Path, passphrase: str) -> 
         files.append((metadata_file, (json.dumps(manifest, sort_keys=True, indent=2) + "\n").encode("utf-8")))
         for file, contents in files:
             with file.open("xb") as stream:
-                created.append(file)
+                # Capture OS identity before first plaintext byte is written.
+                created.append((file, snapshot_new_file(stream.fileno())))
                 stream.write(contents)
                 stream.flush()
                 os.fsync(stream.fileno())
@@ -211,10 +217,10 @@ def restore_evidence(vault: str | Path, folder: str | Path, passphrase: str) -> 
         restored_events = read_journal(journal_file, batch)
         if len(restored_events) != payload["review_event_count"]:
             raise ValueError("Review journal event count does not match sealed evidence")
-    except Exception:
-        # Only remove files we ourselves created. Never remove unrelated data.
-        for file in reversed(created):
-            file.unlink(missing_ok=True)
-        restored.rmdir()
+    except BaseException:
+        # Even interruption must attempt rollback, but never delete a
+        # detectably swapped pathname or hide the original failure.
+        if owned_directory is not None:
+            rollback_owned_restore(restored, owned_directory, created)
         raise
     return restored
