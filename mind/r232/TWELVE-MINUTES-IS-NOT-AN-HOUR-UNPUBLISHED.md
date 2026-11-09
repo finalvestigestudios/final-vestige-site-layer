@@ -100,7 +100,7 @@ The most useful finding is therefore neither “meditation audio is a scam” no
 [S5] Ingendoh RM, Posny ES, Heine A, PLOS ONE (2023), fourteen-study binaural-beat EEG review: https://doi.org/10.1371/journal.pone.0286023 .
 [S6] NIH NCCIH, *Meditation and Mindfulness: Effectiveness and Safety*: https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety/ .
 [S7] FV primary-source project: https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/ ; live Explore provides a public entry: https://finalvestige.com/explore/ .
-[S8] Statistical note on noninferiority/equivalence methodology: Schumi J and Wittes JT, 2011, *Through the looking glass: understanding non-inferiority*: https://pmc.ncbi.nlm.nih.gov/articles/PMC3181779/ .
+[S8] Statistical note on noninferiority/equivalence methodology: Schumi J and Wittes JT, 2011, *Through the looking glass: understanding non-inferiority*: https://pmc.ncbi.nlm.nih.gov/articles/PMC3113981/ .
 [S9] Actual live Focus Fieldbook: https://finalvestige.com/focus/ .
 [S10] Inspire3 official catalog: https://inspire3.com/ .
 [S11] Focus Shot seller: https://brainwaveshots.com/focus-shot .
