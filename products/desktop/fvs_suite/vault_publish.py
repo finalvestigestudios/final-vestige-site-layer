@@ -161,6 +161,34 @@ def _rollback_published_name(target: Path, observed: os.stat_result) -> None:
         os.unlink(target)
 
 
+def _rollback_failed_verification(target: Path, temporary: str,
+                                  owned: os.stat_result,
+                                  published: os.stat_result | None) -> None:
+    """Remove only a final name attributable to this publication attempt.
+
+    A final-name swap *after* a successful link may already have replaced our
+    file before the first post-link lstat. Never treat that arbitrary new inode
+    as ours merely because it was the first one observed at the final path.
+
+    When the source stage was instead substituted just before linking, POSIX
+    may have linked that substituted stage. Its matching identity at both names
+    is evidence that this call created the failed final link. This remains
+    best-effort pathname cleanup, not a defense against a hostile directory.
+    """
+    if published is None or _same_stage_identity(published, owned):
+        _rollback_published_name(target, owned)
+        return
+    try:
+        staged = os.lstat(temporary)
+    except FileNotFoundError:
+        return
+    # A replaced stage can be a symlink. Compare lstat identity/type without
+    # following it; only remove a final link to this exact staged object.
+    if (staged.st_dev == published.st_dev and staged.st_ino == published.st_ino
+            and stat.S_IFMT(staged.st_mode) == stat.S_IFMT(published.st_mode)):
+        _rollback_published_name(target, published)
+
+
 def _publish(target: Path, payload: bytes) -> None:
     # Avoid accidental publication through a symlinked destination directory.
     folder = target.parent
@@ -209,11 +237,15 @@ def _publish(target: Path, payload: bytes) -> None:
         # The exclusive operation guarantees no clobber, but not which bytes
         # were behind the stage name in the final race window. Fail closed if
         # the published inode/contents do not match our verified ciphertext.
-        published = os.lstat(target)
+        published = None
         try:
+            published = os.lstat(target)
             _verify_published_bytes(target, owned, payload)
         except BaseException:
-            _rollback_published_name(target, published)
+            # Covers failure in the first post-link lstat as well as verification.
+            # R307's unconditional rollback using ``published`` could erase an
+            # unrelated final-path replacement by another writer.
+            _rollback_failed_verification(target, temporary, owned, published)
             raise
     finally:
         if descriptor is not None:
