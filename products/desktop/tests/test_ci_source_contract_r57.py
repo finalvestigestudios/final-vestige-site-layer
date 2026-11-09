@@ -12,6 +12,14 @@ import ci_source_contract as guard
 GOOD = '''name: Desktop suite build (internal)
 on:
   pull_request:
+    paths:
+      - 'products/desktop/**'
+      - '.github/workflows/desktop-build.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
 jobs:
   source-tests:
     runs-on: ubuntu-24.04

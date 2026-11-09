@@ -16,6 +16,7 @@ from ci_action_pin_guard import ActionPinError, verify_action_pins
 
 from ci_workflow_budget_r292 import MAX_WORKFLOW_BYTES
 from ci_job_mapping_r294 import JobMappingError, verify_job_mapping
+from ci_event_permissions_r295 import EventPermissionsError, verify_event_permissions
 SOURCE_CMD = 'python products/desktop/scripts/offline_source_gate.py --report "$RUNNER_TEMP/fvs-source/offline-source-suite.json"'
 WINDOWS_CMD = 'python products/desktop/scripts/offline_source_gate.py'
 POLICY_CMD = 'python products/desktop/ci_source_contract.py .github/workflows/desktop-build.yml'
@@ -30,6 +31,10 @@ class SourceContractError(ValueError):
 
 
 def _jobs(source: str) -> dict[str, str]:
+    try:
+        verify_event_permissions(source)
+    except EventPermissionsError as exc:
+        raise SourceContractError('Unreviewed CI event or read-only token policy') from exc
     lines = source.splitlines()
     # R293: the lexical job scanner must not silently ignore a second YAML
     # root mapping (including 'jobs :' / quoted-key variants) before or after
@@ -40,10 +45,7 @@ def _jobs(source: str) -> dict[str, str]:
     # this lexical check and require separate controls.
     roots = tuple(line for line in lines
                   if line and not line[0].isspace() and not line.startswith('#'))
-    if roots not in (
-        ('name: Desktop suite build (internal)', 'on:', 'jobs:'),
-        ('name: Desktop suite build (internal)', 'on:', 'permissions:', 'jobs:'),
-    ):
+    if roots != ('name: Desktop suite build (internal)', 'on:', 'permissions:', 'jobs:'):
         raise SourceContractError('Unknown or duplicate desktop workflow root mapping')
     if lines.count('jobs:') != 1:
         raise SourceContractError('Missing or ambiguous jobs tree')
