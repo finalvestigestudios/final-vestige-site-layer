@@ -23,7 +23,7 @@ One influential scientific review, published in PLOS ONE in May 2023, assembled 
 
 A narrow description is the right one: research on specific forms of sound-induced EEG entrainment has produced inconsistent results. It neither demonstrates the Premium package's hour-equivalence claim nor proves that nobody will enjoy its music. Audio pleasantness, preference, motivation to follow a routine, EEG activity and clinically meaningful improvement are distinct outcomes. An advertiser can blur these by calling all of them benefits; an investigator must keep them separated.
 
-The Institute of Health's meditation guidance similarly distinguishes promising general research from overconfident promises about clinical effects. Studies of mindfulness or instructor-led meditation are not interchangeable with commercial audio files. A buyer should ask for a randomized, adequately powered comparison of this exact product against a credible alternative, with outcomes measured before and after use and follow-up for durability. None was authenticated in this editorial review. If the seller provides a claim-specific product trial later, it should be appraised on its methods rather than dismissed automatically.
+The US National Institutes of Health's National Center for Complementary and Integrative Health (NCCIH) guidance likewise distinguishes promising general research from overconfident promises about clinical effects. Studies of mindfulness or instructor-led meditation are not interchangeable with commercial audio files. A buyer should ask for a randomized, adequately powered comparison of this exact product against a credible alternative, with outcomes measured before and after use and follow-up for durability. None was authenticated in this editorial review. If the seller provides a claim-specific product trial later, it should be appraised on its methods rather than dismissed automatically.
 
 ## 03 | The small historical warning: suggestion can shape the story
 
@@ -68,10 +68,11 @@ As of this review, an official public affiliate signup page exists. It explains 
 3. Ingendoh RM, Posny ES, Heine A. *Binaural beats to entrain the brain?* PLOS ONE 18:e0286023 (2023). https://doi.org/10.1371/journal.pone.0286023 . Systematic review; not a Zen12 product trial.
 4. FTC, *Endorsement Guides: What People Are Asking*. https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking .
 5. FTC, *Health Products Compliance Guidance*. https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance .
-6. Official Inspire3 publisher portal (generic recruitment, not named acceptance): https://affiliates.inspire3.com/ .
-7. Final Vestige's published Focus Fieldbook: https://finalvestige.com/focus/ . Its research citations do not establish any proprietary Zen12 outcome.
-8. Final Vestige's published change-blindness investigation: https://finalvestige.com/2026/11/02/change-blindness/ .
-9. Final Vestige's Puységur source archive (reported in GitHub Issue #171; signed-out fetch unavailable this run): https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/ .
-10. Final Vestige's editorial site inventory: https://finalvestige.com/blog/ (66 results displayed on November 9; Issue #171 records an earlier 61-post baseline. Do not silently describe either as the current authoritative count).
+6. NIH NCCIH, *Meditation and Mindfulness: Effectiveness and Safety* (general practice research; not a Zen12 trial): https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety .
+7. Official Inspire3 publisher portal (generic recruitment, not named acceptance): https://affiliates.inspire3.com/ .
+8. Final Vestige's published Focus Fieldbook: https://finalvestige.com/focus/ . Its research citations do not establish any proprietary Zen12 outcome.
+9. Final Vestige's published change-blindness investigation: https://finalvestige.com/2026/11/02/change-blindness/ .
+10. Final Vestige's Puységur source archive (reported in GitHub Issue #171; signed-out fetch unavailable this run): https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/ .
+11. Final Vestige's editorial site inventory: https://finalvestige.com/blog/ (66 results displayed on November 9; Issue #171 records an earlier 61-post baseline. Do not silently describe either as the current authoritative count).
 
 **Editorial status:** original source-controlled draft, independent editorial/canonical review pending. Do not give this a new public URL until overlap with existing Zen12 buyer guides is resolved. No medical, wealth, product-use, refund-processing or commission claim was independently verified.
