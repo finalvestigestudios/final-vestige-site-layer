@@ -45,6 +45,9 @@ R232_AUXILIARY_BLOB = 'd723f888dba57d8e280ac24003239e93e30cae65'
 # R233 freezes the optional content/hubs source bytes and directory membership.
 R233_HUB_INPUT_PATH = 'tools/r233_hub_input_custody_hold.py'
 R233_HUB_INPUT_BLOB = '668c74c1672d86e4defad5e14a95ab1924ca6aa2'
+# R234 independently checks draft card routes/badges and auxiliary outbound links.
+R234_EXPOSURE_PATH = 'tools/r234_auxiliary_draft_exposure_hold.py'
+R234_EXPOSURE_BLOB = '316e5463cd41a067b6503fe7de115e1a1110d345'
 # These are independently observed R219 integration Git blobs, not certified text.
 # Missing entries MUST match the older R200 original exactly.
 INTEGRATED_DIFFS = {
@@ -408,6 +411,9 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
             hub_input_guard = load_frozen_gate(root, R233_HUB_INPUT_PATH, R233_HUB_INPUT_BLOB,
                                                'fv_preparedness_r233_hub_input_guard',
                                                ('verify_hub_inputs',))
+            exposure_guard = load_frozen_gate(root, R234_EXPOSURE_PATH, R234_EXPOSURE_BLOB,
+                                               'fv_preparedness_r234_auxiliary_exposure_gate',
+                                               ('verify_auxiliary_drafts',))
             library = build.Library(root=root)
             authority.verify_routes(roster, library)
             report = strict_object(safe_read(root, 'build/build-report.json'))
@@ -434,6 +440,18 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
                     or auxiliary.get('source_or_medical_safety_approved') is not False):
                 raise ValueError('unexpected auxiliary export custody state')
             result['auxiliary_render'] = auxiliary
+            # R232 byte replay protects output integrity, not independently
+            # interpreted exposure: drafts must still be visibly marked DRAFT,
+            # card links must be exactly the frozen 41 routes, and auxiliary
+            # pages must not acquire unreviewed merchant/outbound anchors.
+            exposure = exposure_guard.verify_auxiliary_drafts(root, library, tokenizer_guard, safe_read)
+            if (exposure.get('state') != HOLD or exposure.get('release_authorized') is not False
+                    or exposure.get('independent_qd_pass') is not False
+                    or exposure.get('source_or_medical_safety_approved') is not False
+                    or exposure.get('commercial_approval') is not False
+                    or exposure.get('distinct_frozen_routes') != 41):
+                raise ValueError('unexpected auxiliary exposure safety state')
+            result['auxiliary_exposure'] = exposure
             # Repeat source custody after building the rendered-corpus view.
             # A file replaced after preflight cannot silently inherit its pin.
             bundle.check_bundle(root, safe_read)
@@ -447,6 +465,8 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
                 raise ValueError('auxiliary-export guard mutated after render')
             if git_blob(safe_read(root, R233_HUB_INPUT_PATH)) != R233_HUB_INPUT_BLOB:
                 raise ValueError('hub-input guard mutated after render')
+            if git_blob(safe_read(root, R234_EXPOSURE_PATH)) != R234_EXPOSURE_BLOB:
+                raise ValueError('auxiliary exposure guard mutated after render')
             result['postrender_custody_recheck'] = 'DRAFT_HARD_HOLD'
         result['reconciliation'] = {'frozen_articles': 35,
                                     'integrated_changes_held_for_review': sum(
