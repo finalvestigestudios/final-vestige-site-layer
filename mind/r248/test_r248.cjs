@@ -15,6 +15,7 @@ const paths={
  vtt:'mind/r248/zen12-evidence-42sec.vtt',
  matrix:'mind/r248/CLAIM-PROOF-PARTNER-COMMERCE-GATES.json',
  plan:'mind/r248/CONVERSION-RELEASE-ATTRIBUTION-AND-CANONICAL-ACCEPTANCE.md',
+ hub:'mind/r248/mind-archive-four-stream-WP-SOURCE-UNPUBLISHED.html',
  r247article:'mind/r247/WHEN-HYPNOSIS-MET-A-FAIRER-COMPARISON-UNPUBLISHED.md',
  r247html:'mind/r247/total-focus-buyer-guide-WP-SOURCE-UNPUBLISHED.html',
  r247matrix:'mind/r247/PRODUCT-CLAIMS-2026-REVIEW-COMMERCIAL-GATES.json',
@@ -28,6 +29,7 @@ const pins={
  vtt:'9879c96132ae2fb3241b8c0b79aa1d35b69406c5',
  matrix:'bfd1c6cd800bd5c1d8481a56a9f4c001cae32fdb',
  plan:'5ffda6c9445fc903de507774cee7df2bce6833d9',
+ hub:'621bd7fba24fff60a2893cdf02811efc8e2b02a7',
  r247article:'bfbdda370a31c205f7233e127261940b5ca08c3c',
  r247html:'27637485f0ffa0e4391bff71a7b04168c9064ca6',
  r247matrix:'c17c2d010a8ae540bf9eb79ac7ef2113a7eab862',
@@ -99,7 +101,7 @@ function check(data){
   assert.ok(!/<video[^>]*\sautoplay(?:\s|>)/i.test(h),'no actual autoplay player attribute');
   return true;
  }
- checkPage(data.A,'A');checkPage(data.B,'B');
+ checkPage(data.A,'A');checkPage(data.B,'B');checkPage(data.hub,'Mind hub');
  assert.ok(!data.A.includes('<section id="short"'),'A text only');
  const section=data.B.match(/<section id="short"[\s\S]*?<\/section>/);
  assert.ok(section,'B optional video section');
@@ -141,6 +143,7 @@ function negativeCases(d){
   ()=>tamper('matrix',s=>{const x=JSON.parse(s);x.claims.find(c=>c.id==='ZEN_CLAIM').policy='ALLOWED';return JSON.stringify(x);}),
   ()=>tamper('A',s=>s.replace(' disabled aria-disabled',' aria-disabled')),
   ()=>tamper('B',s=>s.replace(' disabled aria-disabled',' aria-disabled')),
+  ()=>tamper('hub',s=>s.replace(' disabled aria-disabled',' aria-disabled')),
   ()=>tamper('A',s=>s.replace('Prospective affiliate disclosure:','No disclosures:')),
   ()=>tamper('B',s=>s.replace('Prospective affiliate disclosure:','No disclosures:')),
   ()=>tamper('A',s=>s.replace('</main>','<a href="https://zen12.com/hnp">shop</a></main>')),
