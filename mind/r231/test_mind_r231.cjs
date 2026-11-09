@@ -56,7 +56,7 @@ function failures(files){
  chk(files.B.includes('Some wandering is voluntary')&&files.captions.includes('Some wandering is voluntary'),'caption/transcript mismatch');
  chk(files.article.includes('No affiliate earning link is currently authorized')&&files.article.includes('replication')&&files.article.includes('two-week'),'investigation scientific/commercial limits');
  chk(!/https?:\/\/(?:zen12|brainwaveshots|hypnosislive)\.[^\s\]]+\?[^\s\]]*(?:aff|ref|subid)/gi.test(files.article),'no affiliate URL in investigation');
- chk(files.plan.includes('NOT COMPUTABLE')&&files.plan.includes('merchant-confirmed')&&files.plan.includes('no authorization'),'conversion metrics/proof guard');
+ chk(files.plan.includes('NOT COMPUTABLE')&&files.plan.includes('merchant-confirmed')&&files.plan.includes('HARD HOLD'),'conversion metrics/proof guard');
  return e;
 }
 function mutationSuite(files){
