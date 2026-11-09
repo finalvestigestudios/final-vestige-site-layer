@@ -36,6 +36,21 @@ def main():
                 page.route("http://**/*",lambda r:r.abort())
                 page.route("https://**/*",lambda r:r.abort())
                 page.goto(html.resolve().as_uri(),wait_until="domcontentloaded")
+                # Actual browser Tab order and native fragment navigation. Neither
+                # route relies on JavaScript or fake success UI.
+                page.keyboard.press("Tab")
+                first_skip=page.evaluate("document.activeElement.getAttribute('href')")
+                page.keyboard.press("Enter")
+                main_jump=page.evaluate("""() => ({
+                    hash: location.hash,
+                    focused: document.activeElement.id
+                })""")
+                page.locator('a.fv-hf__skip[href="#fv-hf-evidence"]').focus()
+                page.keyboard.press("Enter")
+                evidence_jump=page.evaluate("""() => ({
+                    hash: location.hash,
+                    focused: document.activeElement.id
+                })""")
                 menu=page.locator(".fv-hf__mobile-menu")
                 if width<=920:menu.locator("summary").click()
                 state=page.evaluate("""() => {
@@ -57,6 +72,12 @@ def main():
                   };
                 }""")
                 faults=[]
+                if first_skip != "#fv-hf-main":
+                    faults.append("first keyboard Tab did not reach main-archive bypass")
+                if main_jump != {"hash": "#fv-hf-main", "focused": "fv-hf-main"}:
+                    faults.append("native no-JS main bypass did not focus main landmark")
+                if evidence_jump != {"hash": "#fv-hf-evidence", "focused": "fv-hf-evidence"}:
+                    faults.append("native no-JS evidence bypass did not focus evidence section")
                 if state["ctaHeight"]<43.5:faults.append("Focus CTA below 44px")
                 if not state["ctaSafe"] or not state["brandSafe"]:faults.append("masthead clipped")
                 if width<=920:
@@ -75,7 +96,7 @@ def main():
                     faults.append("Focus route changed")
                 if js and width in (160,320,390,768,1440):
                     page.screenshot(path=str(args.out/f"home_{width}_js.png"))
-                rows.append({"width":width,"js":js,"pass":not faults,"faults":faults,**state})
+                rows.append({"width":width,"js":js,"pass":not faults,"faults":faults,"first_skip":first_skip,"main_jump":main_jump,"evidence_jump":evidence_jump,**state})
                 page.close()
         browser.close()
     (args.out/"report.json").write_text(json.dumps({
