@@ -8,7 +8,7 @@ function validate(a,b,m){
  for(const x of [a,b]){
  assert.match(x,/<html lang="en">/);assert.match(x,/<meta name="robots" content="noindex,nofollow">/);
  assert.match(x,/button type="button" disabled aria-describedby="commercial-reason"/);
- assert.match(x,/If you purchase through an approved link, Final Vestige may earn a commission at no additional cost to you/);
+ assert.match(x,/Affiliate disclosure \(prospective\):/);assert.match(x,/If you purchase through an approved link, Final Vestige may earn a commission at no additional cost to you/);
  assert.match(x,/account-issued destination/);assert.match(x,/https:\/\/finalvestige\.com\/focus\//);
  assert.doesNotMatch(x,/<script\b|<form\b|<iframe\b|<source\b|<video\b|autoplay|on[a-z]+\s*=|javascript:|http-equiv="refresh"/i);
  assert.doesNotMatch(x,/<a[^>]+href="https?:\/\/(?:www\.)?(?:zen12|inspire3|affiliates\.inspire3|brainwaveshots|hypnosislive)\./i);
