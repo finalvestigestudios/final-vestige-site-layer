@@ -1,6 +1,5 @@
 """Offline-only Dispatch provider-evidence and release guard. No HTTP, PII or sends."""
 from __future__ import annotations
-from dataclasses import dataclass
 from decimal import Decimal, InvalidOperation
 from typing import Any
 
@@ -45,8 +44,9 @@ def confirmed_signup(event: dict[str, Any]) -> bool:
     if event.get("attribution_evidence") != "first_party_verified_source":
         return False
     # Never accept direct personal identifiers or URLs with email tokens as event IDs.
-    forbidden = ("email", "subscriber_email", "ip", "name", "recipient_address")
-    if any(k in event for k in forbidden):
+    forbidden_terms = ("email", "address", "phone", "ip_", "_ip", "cookie", "raw_name", "recipient_name")
+    safe_status_keys = {"current_email_status", "previous_email_status"}
+    if any(k not in safe_status_keys and any(term in k.lower() for term in forbidden_terms) for k in event):
         return False
     token = event.get("opaque_transition_id")
     if not isinstance(token, str) or not (12 <= len(token) <= 96):
@@ -83,10 +83,19 @@ def realized_revenue_per_1000(qualified_sessions: int | None, settled_transactio
     if not isinstance(settled_transactions, list) or not settled_transactions:
         return None
     net = Decimal("0")
+    observed_order_refs = set()
     for item in settled_transactions:
         if (not isinstance(item, dict) or item.get("independently_verified_paid") is not True
-            or item.get("settled") is not True or item.get("attributed_qualified_session") is not True):
+            or item.get("settled") is not True or item.get("attributed_qualified_session") is not True
+            or item.get("currency") != "USD" or item.get("report_authoritative") is not True):
             return None
+        order_ref = item.get("opaque_order_ref")
+        proof_ref = item.get("partner_settlement_report_ref")
+        if (not isinstance(order_ref, str) or not (8 <= len(order_ref) <= 96)
+            or not isinstance(proof_ref, str) or not (8 <= len(proof_ref) <= 128)
+            or order_ref in observed_order_refs or "@" in order_ref or "@" in proof_ref):
+            return None
+        observed_order_refs.add(order_ref)
         try:
             gross, refunds, fees = (Decimal(str(item[x])) for x in ("gross", "refunds", "fees"))
         except (InvalidOperation, KeyError, TypeError, ValueError):
