@@ -70,9 +70,12 @@ function fv_ex2_rd_shortcode($atts = array()): string {
         $markup = str_replace('fv-ex2-ledger-apollo1-', 'fv-ex2-ledger-apollo1-instance-' . $instances . '-', $markup);
     }
 
-    // A late shortcode can miss wp_head styles. Inline *reviewed local CSS* once,
-    // never remote CSS or shortcode/user input. If unavailable, HTML stays readable.
-    if (!$fallback_style_emitted && !wp_style_is('fv-ex2-research-desk', 'done')) {
+    // Only after wp_head can a shortcode have missed the normal stylesheet
+    // printing opportunity. Shortcodes evaluated earlier (e.g., in block
+    // pre-render) must not duplicate the queued CSS inline. Legacy test shims
+    // without did_action retain the conservative fail-open behavior.
+    $head_finished_or_in_progress = !function_exists('did_action') || did_action('wp_head') > 0;
+    if ($head_finished_or_in_progress && !$fallback_style_emitted && !wp_style_is('fv-ex2-research-desk', 'done')) {
         $css_path = plugin_dir_path(__FILE__) . 'assets/source-ledger.css';
         if (fv_ex2_rd_trusted_asset('assets/source-ledger.css', 'db531213e6f8dbaa44fba2885eefdd016dab93e3')) {
             $css = file_get_contents($css_path);
