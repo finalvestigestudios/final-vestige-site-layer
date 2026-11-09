@@ -37,12 +37,17 @@ def _same_path_descriptor_signature(path_info: os.stat_result,
 
 
 def _metadata(path: Path) -> os.stat_result:
+    failure = None
     try:
         info = path.lstat()
     except FileNotFoundError:
-        raise ValueError("CSV input file is missing") from None
+        failure = "CSV input file is missing"
     except OSError:
-        raise ValueError("Cannot inspect CSV input") from None
+        failure = "Cannot inspect CSV input"
+    # Raise *after* leaving the handler: `from None` alone suppresses display
+    # but retains the customer's private path in exception.__context__.
+    if failure is not None:
+        raise ValueError(failure)
     if not stat.S_ISREG(info.st_mode):
         raise ValueError("CSV input must be a regular file, not a link")
     return info
@@ -63,25 +68,31 @@ def read_csv_snapshot(path: str | Path, maximum: int) -> bytes:
         raise ValueError("CSV input exceeds 64 MiB file-size limit")
     flags = (os.O_RDONLY | getattr(os, "O_BINARY", 0)
              | getattr(os, "O_NOFOLLOW", 0) | getattr(os, "O_NONBLOCK", 0))
+    open_failed = False
     try:
         descriptor = os.open(source, flags)
     except Exception:
-        # Never surface private customer paths from a failed OS open.
-        raise ValueError("Cannot safely open CSV input") from None
+        open_failed = True
+    if open_failed:
+        # The originating OS exception must no longer be the active handler.
+        raise ValueError("Cannot safely open CSV input")
     try:
+        adoption_failed = False
         try:
             stream = os.fdopen(descriptor, "rb")
         except BaseException as exc:
-            # fdopen may fail before taking ownership of the raw descriptor.
-            # Close it for both ordinary failures and interrupts, retaining
-            # the original interrupt while redacting routine error messages.
+            # If fdopen did not assume ownership, close our raw handle even
+            # for interrupts, without replacing a KeyboardInterrupt/SystemExit.
             try:
                 os.close(descriptor)
             except OSError:
-                pass  # Already closed; do not replace the original failure.
+                pass
             if isinstance(exc, Exception) and not isinstance(exc, MemoryError):
-                raise ValueError("Cannot read CSV input") from None
-            raise
+                adoption_failed = True
+            else:
+                raise
+        if adoption_failed:
+            raise ValueError("Cannot read CSV input")
         with stream:
             opened = os.fstat(stream.fileno())
             if not stat.S_ISREG(opened.st_mode) or not _same_path_descriptor_signature(before, opened):
@@ -100,7 +111,12 @@ def read_csv_snapshot(path: str | Path, maximum: int) -> bytes:
             if total != opened.st_size or _signature(closed) != _signature(opened):
                 raise ValueError("CSV input changed while reading")
     except OSError:
-        raise ValueError("Cannot read CSV input") from None
+        read_failed = True
+    else:
+        read_failed = False
+    if read_failed:
+        # No private exception (or its traceback) is retained in the chain.
+        raise ValueError("Cannot read CSV input")
     after_path = _metadata(source)
     if (_signature(after_path) != _signature(before)
             or not _same_path_descriptor_signature(after_path, opened)):
