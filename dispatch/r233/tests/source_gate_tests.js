@@ -1,0 +1,40 @@
+"use strict";
+/* Execute with auditCampaign injected, no contact with subscribers. */
+function runTests(auditCampaign) {
+  let pass=0;const ok=(x,m)=>{if(!x)throw Error(m);pass++};
+  const mk=(n,k,url)=>({number:n,kind:k,subject:"S"+n,preheader:"P"+n,publish_state:"hold",merchant_affiliate_url:null,editorial_cta:url});
+  let entries=[mk(1,"editorial","https://finalvestige.com/a"),mk(2,"editorial","https://finalvestige.com/b"),mk(3,"commercial-review-pending","[[APPROVED_ZEN12_WARMUP_GUIDE_URL_REQUIRED]]"),mk(4,"editorial","https://finalvestige.com/d"),mk(5,"commercial-review-pending","[[APPROVED_HYPNOSIS_LIVE_WARMUP_GUIDE_URL_REQUIRED]]"),mk(6,"editorial","https://finalvestige.com/focus/")];
+  let manifest={status:"DRAFT_UNSENT_NO_SCHEDULING",issues:entries};
+  const base=n=>"UNSENT DRAFT S"+n+" P"+n+" [[VALID_POSTAL_ADDRESS_REQUIRED]] [[JETPACK_UNSUBSCRIBE_LINK_MUST_BE_VERIFIED]]";
+  let bodies=Object.fromEntries(entries.map(x=>[x.number,base(x.number)+(x.kind==="editorial"?"":" Commercial disclosure:")]));
+  let r=auditCampaign(manifest,bodies);
+  ok(r.send_authorized===false&&r.release==="HOLD_UNSENT","fail closed");
+  ok(r.issues.length===6,"six");
+  ok(r.issues.filter(i=>i.kind==="commercial-review-pending").length===2,"mix");
+  ok(r.issues[2].blockers.includes("EXACT_PRODUCT_SALES_SOURCE_MISSING"),"Zen12 exact citation absent");
+  ok(r.issues[4].blockers.includes("EXACT_PRODUCT_SALES_SOURCE_MISSING"),"Total Focus exact citation absent");
+  ok(r.issues[5].blockers.includes("EXISTING_SUBSCRIBER_REPEAT_SIGNUP_RISK"),"repeat signup");
+  ok(r.issues[2].blockers.includes("MERCHANT_EMAIL_RIGHTS_NOT_VERIFIED"),"permissions cannot be fabricated");
+  bodies[3]+=" https://zen12.com/hnp";bodies[5]+=" https://hypnosislive.com/mental-skills/total-focus";
+  r=auditCampaign(manifest,bodies);
+  ok(!r.issues[2].blockers.includes("EXACT_PRODUCT_SALES_SOURCE_MISSING"),"Zen12 reference");
+  ok(!r.issues[4].blockers.includes("EXACT_PRODUCT_SALES_SOURCE_MISSING"),"Total Focus reference");
+  ok(r.issues[2].blockers.includes("MERCHANT_EMAIL_RIGHTS_NOT_VERIFIED"),"source not permission");
+  bodies[3]+=" guaranteed income";
+  ok(auditCampaign(manifest,bodies).issues[2].blockers.includes("UNSUPPORTED_CLAIM_REVIEW"),"claim quarantine");
+  bodies[3]=bodies[3].replace(" guaranteed income","");
+  entries[0].merchant_affiliate_url="https://example.org/earning";
+  ok(auditCampaign(manifest,bodies).issues[0].blockers.includes("AFFILIATE_LINK_NOT_AUTHORIZED"),"no earning link");
+  entries[0].merchant_affiliate_url=null;
+  entries[2].editorial_cta="https://zen12.com/hnp";
+  ok(auditCampaign(manifest,bodies).issues[2].blockers.includes("GUIDE_CTA_NOT_HELD"),"no direct link");
+  entries[2].editorial_cta="[[APPROVED_ZEN12_WARMUP_GUIDE_URL_REQUIRED]]";
+  bodies[5]=bodies[5].replace("Commercial disclosure:","");
+  ok(auditCampaign(manifest,bodies).issues[4].blockers.includes("DISCLOSURE_MISSING"),"near-link disclosure");
+  bodies[1]=bodies[1].replace("[[VALID_POSTAL_ADDRESS_REQUIRED]]","");
+  ok(auditCampaign(manifest,bodies).issues[0].blockers.includes("FOOTER_PROOF_INCOMPLETE"),"footer");
+  ok(auditCampaign({...manifest,status:"LIVE"},bodies).campaign_blockers.includes("CAMPAIGN_NOT_HELD"),"status");
+  ok(auditCampaign({...manifest,issues:entries.slice(1)},bodies).campaign_blockers.includes("ISSUE_COUNT_NOT_SIX"),"count");
+  ok(r.net_revenue_per_1000_qualified_sessions===null&&r.paid_orders===null,"no invented sales");
+  return {passed:pass,failed:0};
+}
