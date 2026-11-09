@@ -76,7 +76,7 @@ def build(raw):
     changed = changed.replace('</style>', CSS + '\n</style>', 1)
     if changed.count('<li>') != 72 or len(SPAN.findall(changed)) != 72:
         raise ValueError('PRESERVATION_COUNT_MISMATCH')
-    return changed, {
+    return changed + '<!-- /wp:html -->', {
         'notes': 72, 'changed_block_only': True, 'rest_of_page_untouched': True,
         'new_js': False, 'source_text_sha256': __import__('hashlib').sha256(
             '\n'.join(texts).encode()).hexdigest(),
