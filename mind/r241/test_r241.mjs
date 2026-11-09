@@ -16,7 +16,7 @@ function validate(h=html,m=matrix,a=article,p=plan) {
   for (const c of m.claims) {assert.ok(m.sources.some(s=>s.id===c.source_id));assert.ok(c.statement && c.status);}
   assert.equal(m.permission_evidence.issued_url,null);
   for (const k of ['net_revenue_per_1000_qualified_sessions','qualified_human_sessions','orders','affiliate_confirmed_sales']) assert.equal(m.live_revenue[k],null);
-  assert.match(h,/<button[^>]*\bdisabled\b[^>]*>/i);
+  assert.match(h,/<button\b[^>]*\sdisabled(?=[\s>])[^>]*>/i);
   assert.match(h,/may earn a commission/i);
   assert.match(h,/aria-describedby="close-disclosure"/);
   assert.match(h,/id="close-disclosure"/);
