@@ -51,7 +51,7 @@ function fv_ex2_rd_shortcode($atts = array()): string {
         $css_path = plugin_dir_path(__FILE__) . 'assets/source-ledger.css';
         if (is_readable($css_path)) {
             $css = file_get_contents($css_path);
-            if (is_string($css) && $css !== '' && !preg_match('~</?\\s*(?:script|style)\\b|@import\\b|url\\s*\\(~i', $css)) {
+            if (is_string($css) && $css !== '' && !preg_match('~</?\s*(?:script|style)\b|@import\b|url\s*\(~i', $css)) {
                 $markup = '<style id="fv-ex2-research-desk-late-style">' . $css . '</style>' . $markup;
                 $fallback_style_emitted = true;
             }
