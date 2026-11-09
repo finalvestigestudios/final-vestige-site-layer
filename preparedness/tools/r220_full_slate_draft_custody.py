@@ -70,7 +70,7 @@ R240_ENTITY_ATTR_BLOB = '2deedb8df74badf6b149719f71bb43e515993054'
 # R243 independently rejects authored executable HTML, event handlers,
 # unreviewed interactive forms, URL-scheme tricks and covert third-party loads.
 R243_ACTIVE_SOURCE_PATH = 'tools/r243_active_source_markup_custody_hold.py'
-R243_ACTIVE_SOURCE_BLOB = '26913389a5e39d8afe8de13ecdb2fd8ece2535db'
+R243_ACTIVE_SOURCE_BLOB = '17f8afe62caadd32d149d8e7dd6bdf8fd066302e'
 # These are independently observed R219 integration Git blobs, not certified text.
 # Missing entries MUST match the older R200 original exactly.
 INTEGRATED_DIFFS = {
