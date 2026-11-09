@@ -34,8 +34,9 @@ def _jobs(source: str) -> dict[str, str]:
     # root mapping (including 'jobs :' / quoted-key variants) before or after
     # the approved tree. Some YAML loaders resolve duplicate root keys while
     # this parser previously inspected only the first literal 'jobs:' block.
-    # Require the exact known root-key *shape*; any new trigger, permission,
-    # environment or document boundary needs independent CI/QD review.
+    # Require the known root-key *shape*. Additional top-level keys and
+    # document boundaries need review; nested trigger semantics are outside
+    # this lexical check and require separate controls.
     roots = tuple(line for line in lines
                   if line and not line[0].isspace() and not line.startswith('#'))
     if roots not in (
