@@ -74,7 +74,7 @@ function validate(b){
  const earningDomains=['zen12.com','hypnosislive.com','brainwaveshots.com','affiliates.inspire3.com'];
  assert(new Set(links.filter(x=>earningDomains.some(d=>(x.match(/^https?:\/\/([^/]+)/i)||[])[1]===d))).size<=2,'extra distinct merchant destinations');
  assert(links.filter(x=>/zen12\.com/.test(x)).every(x=>x==='https://zen12.com/hnp'||x==='https://zen12.com/secret/'),'unapproved merchant URL');
- assert(!/(?:awin1\.com|clickbank|hop=|affid=|affiliate_id=|ref=|utm_|fbclid=|gclid=|pixel)/i.test(b.html),'unauthorized tracking or affiliate token');
+ assert(!/(?:awin1\.com|clickbank|hop=|affid=|affiliate_id=|[?&]ref=|utm_|fbclid=|gclid=|pixel)/i.test(b.html),'unauthorized tracking or affiliate token');
  const allowed=['finalvestige.com','zen12.com','inspire3.com','doi.org','ftc.gov'];
  assert(links.filter(x=>/^https:\/\//.test(x)).every(x=>allowed.includes((x.match(/^https:\/\/([^/]+)/i)||[])[1].replace(/^www\./,''))),'unreviewed outbound URL');
  assert(b.html.includes('Evidence before expectation'),'poster concept deleted');
