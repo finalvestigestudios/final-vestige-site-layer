@@ -1,16 +1,62 @@
 {
- "identity":"R249_SYNTHETIC_ONLY_NO_REAL_EMAIL",
- "page_render_snapshots":{
-  "dispatch":{"page_id":523,"published":true,"has_jetpack_block":true,"subscribe_fallback_to_same_page":"?post_type=page&p=523","html_email_input_in_returned_block":false,"html_form_in_returned_block":false},
-  "focus":{"page_id":1579,"published":true,"has_jetpack_block":true,"subscribe_fallback_to_same_page":"?post_type=page&p=1579","html_email_input_in_returned_block":false,"html_form_in_returned_block":false}
- },
- "wordpress_newsletter":{"checked_at_utc":"2026-11-10T05:32:27Z","newsletter_on":true,"auto_email_new_posts":false,"email_content_format":"full","welcome_fieldbook_configured":true,"total":3,"confirmed":3,"unconfirmed_requests":2,"suppressed":0,"wpcom_followers":3,"email_only_followers":0,"actual_eligible_email_recipients":null,"welcome_received":null},
- "critical":{"commercial_slots":[3,5],"publisher_postal_verified":false,"unsubscribe_rendered_and_functional_verified":false,"inbox_preheader_verified":false,"native_preview_verified":false,"partner_email_permission":false,"approved_affiliate_link":false,"live_approved_guide":false,"verified_paid_sales":null,"send_allowed":false},
- "sources":[
- "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/175",
- "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/174",
- "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
- "https://wordpress.com/support/newsletter/email-appearance/",
- "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business"
- ]
+  "identity": "R249_SYNTHETIC_ONLY_NO_REAL_EMAIL",
+  "page_render_snapshots": {
+    "dispatch": {
+      "page_id": 523,
+      "published": true,
+      "has_jetpack_block": true,
+      "subscribe_fallback_to_same_page": "?post_type=page&p=523",
+      "html_email_input_in_returned_block": false,
+      "html_form_in_returned_block": false,
+      "button_copy": "Subscribe"
+    },
+    "focus": {
+      "page_id": 1579,
+      "published": true,
+      "has_jetpack_block": true,
+      "subscribe_fallback_to_same_page": "?post_type=page&p=1579",
+      "html_email_input_in_returned_block": false,
+      "html_form_in_returned_block": false,
+      "button_copy": "Send me the fieldbook"
+    }
+  },
+  "wordpress_newsletter": {
+    "checked_at_utc": "2026-11-10T05:32:27Z",
+    "newsletter_on": true,
+    "auto_email_new_posts": false,
+    "email_content_format": "full",
+    "welcome_fieldbook_configured": true,
+    "total": 3,
+    "confirmed": 3,
+    "unconfirmed_requests": 2,
+    "suppressed": 0,
+    "wpcom_followers": 3,
+    "email_only_followers": 0,
+    "actual_eligible_email_recipients": null,
+    "welcome_received": null
+  },
+  "critical": {
+    "commercial_slots": [
+      3,
+      5
+    ],
+    "publisher_postal_verified": false,
+    "unsubscribe_rendered_and_functional_verified": false,
+    "inbox_preheader_verified": false,
+    "native_preview_verified": false,
+    "partner_email_permission": false,
+    "approved_affiliate_link": false,
+    "live_approved_guide": false,
+    "verified_paid_sales": null,
+    "send_allowed": false,
+    "live_button_only_popup_function_verified": false
+  },
+  "sources": [
+    "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/175",
+    "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/174",
+    "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+    "https://wordpress.com/support/newsletter/email-appearance/",
+    "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business",
+    "https://wordpress.com/support/wordpress-editor/blocks/subscribe-block/"
+  ]
 }
