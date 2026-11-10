@@ -79,7 +79,7 @@ function validate(b){
  assert(links.filter(x=>/^https:\/\//.test(x)).every(x=>allowed.includes((x.match(/^https:\/\/([^/]+)/i)||[])[1].replace(/^www\./,''))),'unreviewed outbound URL');
  assert(b.html.includes('Evidence before expectation'),'poster concept deleted');
  assert(b.variantA.includes('disabled')&&b.variantB.includes('disabled'),'inherited A/B purchase controls changed');
- assert(b.variantA.includes('If you purchase')&&b.variantB.includes('If you purchase'),'inherited A/B disclosure absent');
+ assert(b.variantA.includes('Prospective affiliate disclosure:')&&b.variantB.includes('Prospective affiliate disclosure:'),'inherited A/B disclosure absent');
  return {source_count:m.sources.length,claims:m.claims.length,held_gates:m.commercial_gates.length,source_links:links.length,merchant_source_only:true,public_activation:false};
 }
 function selfTest(b) {
@@ -103,7 +103,7 @@ function selfTest(b) {
  ['injectClickbank',x=>{x.html+='\n<a href="https://zen12.com/?hop=fake">Buy</a>'}],['newSeller',x=>{x.html+='\n<a href="https://merchant.example/c">Buy</a>'}],
  ['removeFocus',x=>{x.html=x.html.replace('https://finalvestige.com/focus/','https://example.org/')}],['newInput',x=>{x.html+='\n<input type=email>'}],
  ['removeMediaCSS',x=>{x.html=x.html.replace('@media(max-width:390px)','/* noop */')}],['removePoster',x=>{x.html=x.html.replace('Evidence before expectation','no')}],
- ['removeA',x=>{x.variantA=x.variantA.replace('disabled','required')}],['removeB',x=>{x.variantB=x.variantB.replace('If you purchase','No disclosure')}]
+ ['removeA',x=>{x.variantA=x.variantA.replace('disabled','required')}],['removeB',x=>{x.variantB=x.variantB.replace('Prospective affiliate disclosure:','No disclosure')}]
  ];
  let rejected=0,ineffective=[];
  for(const [name,fn] of mutations){const copy=JSON.parse(JSON.stringify(b));fn(copy);let didFail=false;try{validate(copy);}catch(_){didFail=true;}if(didFail)rejected++;else ineffective.push(name)}
