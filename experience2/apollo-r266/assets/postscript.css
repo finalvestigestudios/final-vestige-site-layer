@@ -1,0 +1,15 @@
+/* Apollo R266 CLI-only review card; not loaded by WordPress. No animations or JS. */
+.fv-apollo-postscript{box-sizing:border-box;max-width:64rem;margin:clamp(2rem,6vw,5rem) auto;padding:clamp(1.125rem,4vw,2.25rem);border:1px solid #817148;border-left:4px solid #af955e;background:#161a20;color:#f3eddf;font:normal 1rem/1.6 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;overflow-wrap:anywhere}
+.fv-apollo-postscript *, .fv-apollo-postscript *:before,.fv-apollo-postscript *:after{box-sizing:border-box}
+.fv-apollo-postscript__label{text-transform:uppercase;letter-spacing:.075em;color:#e2cb98;font-size:.83rem;font-weight:700}
+.fv-apollo-postscript h2{color:#fff9e9;font-size:clamp(1.45rem,3vw,2.05rem);line-height:1.22;margin:.6rem 0 1rem}
+.fv-apollo-postscript p{max-width:68ch;margin:0 0 1rem;color:#f3eddf}
+.fv-apollo-postscript .fv-apollo-postscript__disclosure{padding:.75rem 1rem;background:#22252b;border:1px solid #646051}
+.fv-apollo-postscript .fv-apollo-postscript__fineprint{color:#d4c9b4;font-size:.86rem}
+.fv-apollo-postscript__action{display:inline-flex;align-items:center;justify-content:center;min-height:44px;min-width:44px;border:1px solid #c4aa6d;padding:.65rem 1.1rem;color:#fff9ea;background:#2c312f;text-decoration:underline;text-underline-offset:.22em;font-weight:650}
+.fv-apollo-postscript__action:hover{background:#394136;color:#fff}
+.fv-apollo-postscript a:focus-visible{outline:3px solid #fff;outline-offset:4px}
+@media(max-width:359px){.fv-apollo-postscript{margin:1.5rem .5rem;padding:1rem}.fv-apollo-postscript__action{width:100%;text-align:center}}
+@media(prefers-reduced-motion:reduce){.fv-apollo-postscript *, .fv-apollo-postscript *:before,.fv-apollo-postscript *:after{animation:none!important;transition:none!important}}
+@media(forced-colors:active){.fv-apollo-postscript{border:2px solid CanvasText;background:Canvas;color:CanvasText}.fv-apollo-postscript h2,.fv-apollo-postscript p,.fv-apollo-postscript__label,.fv-apollo-postscript__fineprint{color:CanvasText}.fv-apollo-postscript__action{background:Canvas;color:LinkText;border:2px solid LinkText}.fv-apollo-postscript__action:focus-visible{outline:3px solid Highlight}}
+@media print{.fv-apollo-postscript{display:none!important}}
