@@ -18,7 +18,7 @@ def synthetic_page():
     chapters = ''.join(f'<section id="{i}">Earlier chapter {i}</section>' for i in CHAPTERS)
     return (f'<!-- wp:html -->\n<div class="fv-margin-strip">{margins}</div>\n<!-- /wp:html -->'
             f'<!-- wp:html -->\n<div data-fv-home-flagship>{chapters}</div>\n<!-- /wp:html -->'
-            f'<!-- wp:html -->\n<section class="fv-focus-cta"><a href="https://finalvestige.com/focus/">Focus Fieldbook</a></section>\n<!-- /wp:html -->'
+            f'<!-- wp:html -->\n<section class="fv-focus-cta"><a class="fv-focus-cta__button" href="/focus/">Focus Fieldbook</a></section>\n<!-- /wp:html -->'
             f'<!-- wp:group --><div class="wp-block-group">Dispatch signup<!-- wp:jetpack/subscriptions {{"className":"is-style-split"}} /--></div><!-- /wp:group -->'
             f'<!-- wp:html -->\n<footer>Other public homepage content</footer>\n<!-- /wp:html -->')
 
@@ -82,7 +82,33 @@ class ScopedIntegration(unittest.TestCase):
 
     def test_focus_disappears(self):
         with self.assertRaises(AdmissionError):
-            compose(self.base.replace('https://finalvestige.com/focus/','https://example.invalid/'),self.payload)
+            compose(self.base.replace('href="/focus/"','href="https://example.invalid/focus/"'),self.payload)
+
+    def test_real_page6_root_relative_focus_action(self):
+        _, receipt = compose(self.base, self.payload)
+        self.assertEqual(receipt['native_focus_destination'], '/focus/')
+
+    def test_approved_absolute_focus_action(self):
+        raw = self.base.replace('href="/focus/"', 'href="https://finalvestige.com/focus/"')
+        _, receipt = compose(raw, self.payload)
+        self.assertEqual(receipt['native_focus_destination'], 'https://finalvestige.com/focus/')
+
+    def test_reject_native_focus_query_open_redirect_and_merchants(self):
+        for url in ('/focus/?subscribe=1', '//evil.example/focus/',
+                    'https://evil.example/focus/', 'javascript:alert(1)',
+                    'http://finalvestige.com/focus/', '/products/'):
+            with self.subTest(url=url), self.assertRaises(AdmissionError):
+                compose(self.base.replace('href="/focus/"', f'href="{url}"'), self.payload)
+
+    def test_unrelated_absolute_focus_link_not_valid_evidence(self):
+        bad = self.base.replace('href="/focus/"', 'href="/products/"')
+        bad += '<a href="https://finalvestige.com/focus/">Unrelated</a>'
+        with self.assertRaises(AdmissionError): compose(bad, self.payload)
+
+    def test_duplicate_native_focus_action_fails(self):
+        duplicate = '<a class="fv-focus-cta__button" href="/focus/">Duplicate</a>'
+        bad = self.base.replace('Focus Fieldbook</a>', 'Focus Fieldbook</a>'+duplicate, 1)
+        with self.assertRaises(AdmissionError): compose(bad, self.payload)
 
     def test_duplicate_chapter_outside(self):
         with self.assertRaises(AdmissionError):
