@@ -169,19 +169,42 @@ def audit_readable_workorders(joined: dict, claims: dict) -> dict:
                          'workorder_count': len(work), 'workorders': work,
                          'state': 'PENDING_HUMAN_SOURCE_AND_CLAIM_REVIEW',
                          'source_scope_approved': False, 'claim_support_approved': False})
-    fail(len(shared_ids) == 56 and len(observed) == 562
-         and all(indexed[n, o][1]['source_id'] in shared_ids for n, o, _ in HELD)
-         and len(readable) == 32,
+    fail(len(shared_ids) == 56 and len(observed) == 562 and len(readable) == 32,
          'frozen 56 shared IDs / 562 claim workorders drift')
+    # Authentic R235 crosswalk excludes the CDC water source: two disputed
+    # Article #7 citations are IN the other 1,438, not the 562 shared matches.
+    shared_held = {(n, o, sid) for n, o, sid in HELD if (n, o) in observed}
+    outside_held = sorted(set(HELD) - shared_held)
+    fail(shared_held == {(20, 55, 'start-ready-plan')}
+         and outside_held == [(7, 30, 'cdc-find-clean-water'),
+                             (7, 48, 'cdc-find-clean-water')]
+         and all(sid not in shared_ids for _, _, sid in outside_held),
+         'original disputed citations incorrectly assigned to shared URL groups')
     fail(all(x['disputed_original_citation'] is True for group in readable
              for x in group['workorders'] if (x['article_n'], x['citation_ordinal'], x['source_id']) in HELD),
-         'disputed citation must remain visible')
+         'shared disputed citation must remain visible')
+    outside_docket = []
+    for n, ordinal, sid in outside_held:
+        slug, cite = indexed[n, ordinal]
+        outside_docket.append({
+            'article_n': n, 'article_slug': slug,
+            'citation_ordinal': ordinal, 'source_id': sid,
+            'authored_context_excerpt': cite['context_excerpt'],
+            'context_sha256': cite['context_sha256'],
+            'author_source_use_note_sha256': cite['author_note_sha256'],
+            'review_terms': sorted(set(cite['human_risk_review_terms'])),
+            'disputed_original_citation': True,
+            'source_support_verified': False, 'safety_approved': False})
     receipt = {'schema': SCHEMA, 'state': HOLD, 'issue': 136,
                'source_review_groups': 32, 'shared_source_ids': 56,
                'article_count': 35, 'citation_count': 2000,
                'human_readable_workorders': len(observed),
                'other_citation_occurrences_still_unreviewed': 1438,
-               'disputed_original_claims': len(HELD), 'review_queue': readable,
+               'disputed_original_claims': len(HELD),
+               'shared_disputed_claims': len(shared_held),
+               'outside_shared_disputed_claims': len(outside_docket),
+               'outside_shared_disputed_workorders': outside_docket,
+               'review_queue': readable,
                'independent_claim_source_verified': False,
                'independent_qd_pass': False, 'medical_safety_verified': False,
                'merchant_approved': False, 'publication_authorized': False}

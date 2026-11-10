@@ -94,6 +94,12 @@ def checked(receipt: dict) -> tuple[list[dict], dict]:
                 'R254 frozen count drift: ' + key)
     for key in FALSE:
         require(receipt.get(key) is False, 'unapproved release flag: ' + key)
+    require(receipt.get('shared_disputed_claims') == 1
+            and receipt.get('outside_shared_disputed_claims') == 2,
+            'original disputed citation membership drift')
+    external = receipt.get('outside_shared_disputed_workorders')
+    require(type(external) is list and len(external) == 2,
+            'outside-shared original citation holds lost')
     groups = receipt.get('review_queue')
     require(type(groups) is list and len(groups) == 32, 'lost shared-source groups')
     seen_url, all_ids, points, disputes = set(), set(), set(), set()
@@ -154,8 +160,36 @@ def checked(receipt: dict) -> tuple[list[dict], dict]:
         require(rows == sorted(rows, key=lambda x: (x['article_n'], x['citation_ordinal'])),
                 'citation workorders reordered')
         view.append({'source_url': url, 'labels': labels, 'workorders': rows})
-    require(len(seen_url) == 32 and len(all_ids) == 56 and len(points) == 562
-            and disputes == HELD, 'frozen 32/56/562/3 scope drift')
+    external_keys = set()
+    for row in external:
+        require(type(row) is dict, 'outside-shared disputed claim malformed')
+        key = row.get('article_n'), row.get('citation_ordinal'), row.get('source_id')
+        require(key in HELD and key not in external_keys
+                and key[:2] not in points and key[2] not in all_ids,
+                'outside-shared disputed claim lost, repeated or assigned to shared group')
+        external_keys.add(key)
+        excerpt = row.get('authored_context_excerpt')
+        require(type(row.get('article_slug')) is str
+                and SLUG.fullmatch(row['article_slug'])
+                and type(excerpt) is str and 6 <= len(excerpt) <= 1000
+                and row.get('context_sha256') == digest(excerpt)
+                and is_hash(row.get('author_source_use_note_sha256')),
+                'outside-shared original source witness mismatch')
+        terms = row.get('review_terms')
+        require(type(terms) is list and terms == sorted(set(terms))
+                and all(type(t) is str and len(t) <= 100 for t in terms),
+                'outside-shared risk review terms malformed')
+        require(row.get('disputed_original_citation') is True
+                and row.get('source_support_verified') is False
+                and row.get('safety_approved') is False,
+                'outside-shared original dispute falsely approved')
+    require(external == sorted(external, key=lambda x: (x['article_n'], x['citation_ordinal']))
+            and len(seen_url) == 32 and len(all_ids) == 56 and len(points) == 562
+            and disputes == {(20, 55, 'start-ready-plan')}
+            and external_keys == {(7, 30, 'cdc-find-clean-water'),
+                                  (7, 48, 'cdc-find-clean-water')}
+            and disputes | external_keys == HELD,
+            'frozen 32/56/562 plus two outside-shared held citations drift')
     require([x['source_url'] for x in view] == sorted(seen_url),
             'nondeterministic source URL review order')
     possible_aliases = sum(len(values) - 1 for values in aliases.values() if len(values) > 1)
@@ -163,6 +197,7 @@ def checked(receipt: dict) -> tuple[list[dict], dict]:
              'source_review_groups': 32, 'review_workorders': 562,
              'unmatched_citations_unreviewed': 1438,
              'original_disputes_visible': 3,
+             'shared_disputes_visible': 1, 'outside_shared_disputes_visible': 2,
              'source_url_triage_labels': dict(sorted(source_labels.items())),
              'potential_url_alias_pairs_to_review': possible_aliases,
              'source_support_verified': False, 'independent_qd_pass': False,
@@ -200,14 +235,24 @@ def render_offline_review(receipt: dict) -> str:
                           (' — original disputed occurrence' if row['disputed_original_citation']
                            else '') + '</p></article>')
         chunks.append('</section>')
-    chunks.append('</body></html>')
+    chunks.append('<section><h2>Original disputed citations outside the 32 shared-source groups</h2>')
+    for row in receipt['outside_shared_disputed_workorders']:
+        chunks.append('<article><h3>Article ' + str(row['article_n']) + ' — ' +
+                      esc(row['article_slug']) + ' — citation ' +
+                      str(row['citation_ordinal']) + '</h3><p>Original source ID: ' +
+                      esc(row['source_id']) +
+                      ' (NOT in shared URL review groups)</p><pre>' +
+                      esc(row['authored_context_excerpt']) +
+                      '</pre><p>HARD HOLD — original disputed citation; '
+                      'independent source and safety review required.</p></article>')
+    chunks.append('</section></body></html>')
     return '\n'.join(chunks) + '\n'
 
 
 def audit_offline_review(receipt: dict) -> dict:
     _, facts = checked(receipt)
     document = render_offline_review(receipt)
-    require(document.count('<article>') == 562 and document.count('<section>') == 32
+    require(document.count('<article>') == 564 and document.count('<section>') == 33
             and '<a ' not in document and '<script' not in document
             and '<form' not in document, 'offline review surface exposure drift')
     facts['offline_review_sha256'] = digest(document)

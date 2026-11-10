@@ -540,6 +540,9 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
                 or workorders.get('human_readable_workorders') != 562
                 or workorders.get('other_citation_occurrences_still_unreviewed') != 1438
                 or workorders.get('disputed_original_claims') != 3
+                or workorders.get('shared_disputed_claims') != 1
+                or workorders.get('outside_shared_disputed_claims') != 2
+                or len(workorders.get('outside_shared_disputed_workorders') or []) != 2
                 or any(workorders.get(key) is not False for key in (
                     'independent_claim_source_verified', 'independent_qd_pass',
                     'medical_safety_verified', 'merchant_approved',
@@ -557,6 +560,8 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
                 or offline_review.get('review_workorders') != 562
                 or offline_review.get('unmatched_citations_unreviewed') != 1438
                 or offline_review.get('original_disputes_visible') != 3
+                or offline_review.get('shared_disputes_visible') != 1
+                or offline_review.get('outside_shared_disputes_visible') != 2
                 or type(offline_review.get('source_url_triage_labels')) is not dict
                 or type(offline_review.get('potential_url_alias_pairs_to_review')) is not int
                 or not re.fullmatch('[0-9a-f]{64}', offline_review.get('offline_review_sha256', ''))

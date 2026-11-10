@@ -12,7 +12,7 @@ spec.loader.exec_module(r)
 
 def fixture():
     urls = [f'https://evidence.example/scope-{n:02d}' for n in range(32)]
-    ids = ['cdc-find-clean-water', 'start-ready-plan'] + [f'other-{n}' for n in range(54)]
+    ids = ['start-ready-plan'] + [f'other-{n}' for n in range(55)]
     groups = [{'source_url': url, 'source_ids': [], 'priority': 'REVIEW_REQUIRED',
                'source_evidence_sha256': r.digest(url), 'workorders': [],
                'state': r.PENDING, 'source_scope_approved': False,
@@ -26,21 +26,26 @@ def fixture():
                (7, 48): 'cdc-find-clean-water', (20, 55): 'start-ready-plan'}
     chosen = set(slots[:559]) | set(dispute)
     for point in slots:
-        if len(chosen) >= 562:
+        if len(chosen) >= 564:
             break
         chosen.add(point)
-    # Keep the held occurrences in their exact original source groups.
+    # Preserve two Article #7 CDC disputed citations OUTSIDE shared groups.
+    external = []
     for i, point in enumerate(sorted(chosen)):
         a, b = point
-        sid = dispute.get(point, ids[2 + i % 54])
-        group = next(g for g in groups if sid in g['source_ids'])
+        sid = dispute.get(point, ids[1 + i % 55])
         excerpt = f'Authored context A{a} cite{b} — <img src=x onerror=alert(1)> & "unsafe".'
-        group['workorders'].append({'article_n': a, 'article_slug': f'article-{a}',
+        row = {'article_n': a, 'article_slug': f'article-{a}',
             'citation_ordinal': b, 'source_id': sid,
             'authored_context_excerpt': excerpt, 'context_sha256': r.digest(excerpt),
             'author_source_use_note_sha256': r.digest('note' + sid),
             'review_terms': [], 'disputed_original_citation': point in dispute,
-            'source_support_verified': False, 'safety_approved': False})
+            'source_support_verified': False, 'safety_approved': False}
+        if sid == 'cdc-find-clean-water':
+            external.append(row)
+        else:
+            group = next(g for g in groups if sid in g['source_ids'])
+            group['workorders'].append(row)
     for group in groups:
         group['workorders'].sort(key=lambda w: (w['article_n'], w['citation_ordinal']))
         group['workorder_count'] = len(group['workorders'])
@@ -49,7 +54,10 @@ def fixture():
                'article_count': 35, 'citation_count': 2000,
                'human_readable_workorders': 562,
                'other_citation_occurrences_still_unreviewed': 1438,
-               'disputed_original_claims': 3, 'review_queue': groups,
+               'disputed_original_claims': 3, 'shared_disputed_claims': 1,
+               'outside_shared_disputed_claims': 2,
+               'outside_shared_disputed_workorders': external,
+               'review_queue': groups,
                **{k: False for k in r.FALSE}}
     receipt['receipt_sha256'] = r.digest(r.canonical(receipt))
     assert sum(g['workorder_count'] for g in groups) == 562
@@ -77,8 +85,8 @@ class TestR255(unittest.TestCase):
 
     def test_full_562_contexts_stay_escaped(self):
         page = r.render_offline_review(BASE)
-        self.assertEqual(page.count('<article>'), 562)
-        self.assertEqual(page.count('<section>'), 32)
+        self.assertEqual(page.count('<article>'), 564)
+        self.assertEqual(page.count('<section>'), 33)
         self.assertIn('&lt;img src=x onerror=alert(1)&gt;', page)
         self.assertNotIn('<img ', page)
         self.assertNotIn('<a ', page)
@@ -169,9 +177,22 @@ mutate('reordered_group', lambda x: x['review_queue'].reverse())
 mutate('reordered_claims', lambda x: x['review_queue'][0]['workorders'].reverse())
 mutate('modified_excerpt', lambda x: x['review_queue'][0]['workorders'][0].__setitem__(
     'authored_context_excerpt', 'modified and unsupported source context'))
-mutate('missing_original_hold', lambda x: x['review_queue'][0]['workorders'][0].__setitem__(
+mutate('missing_original_hold', lambda x: x['outside_shared_disputed_workorders'][0].__setitem__(
     'disputed_original_citation', False))
 mutate('altered_receipt_checksum', lambda x: x.__setitem__('receipt_sha256', '0' * 64), recalc=False)
+
+mutate('drop_external_hold', lambda x: x['outside_shared_disputed_workorders'].pop())
+mutate('duplicate_external_hold', lambda x: x['outside_shared_disputed_workorders'].append(
+    copy.deepcopy(x['outside_shared_disputed_workorders'][0])))
+mutate('launder_outside_source', lambda x: x['outside_shared_disputed_workorders'][0].__setitem__(
+    'source_id', 'start-ready-plan'))
+mutate('launder_outside_excerpt', lambda x: x['outside_shared_disputed_workorders'][0].__setitem__(
+    'authored_context_excerpt', 'different content'))
+mutate('outside_medical_approval', lambda x: x['outside_shared_disputed_workorders'][0].__setitem__(
+    'safety_approved', True))
+mutate('reorder_outside_held', lambda x: x['outside_shared_disputed_workorders'].reverse())
+mutate('forge_external_count', lambda x: x.__setitem__('outside_shared_disputed_claims', 1))
+mutate('forge_internal_count', lambda x: x.__setitem__('shared_disputed_claims', 3))
 
 
 if __name__ == '__main__':
