@@ -57,7 +57,7 @@ function audit(input) {
  check(input.article.includes('The Experiment That Made Distraction Disappear') && input.article.includes('2025') &&
  input.article.includes('Eltiti') && input.article.includes('Puységur') &&
  input.article.includes('replicat'),'ARTICLE_EVIDENCE');
- check(!/\\[(?:buy|purchase|checkout|order|get started|claim)[^\\]]*\\]\\(https?:\\/\\/(?:zen12\\.com|hypnosislive\\.com|brainwaveshots\\.com|affiliates\\.inspire3\\.com)/i.test(input.article),'ARTICLE_NO_SALES_CTA');
+ check(!/\[(?:buy|purchase|checkout|order|get started|claim)[^\]]*\]\(https?:\/\/(?:zen12\.com|hypnosislive\.com|brainwaveshots\.com|affiliates\.inspire3\.com)/i.test(input.article),'ARTICLE_NO_SALES_CTA');
  check(input.article.includes('does not demonstrate') && input.article.includes('failure to replicate') &&
  input.article.includes('It will not reproduce a laboratory effect'),'ARTICLE_LIMITATIONS');
  check(input.hub.includes('UNPUBLISHED') && input.hub.includes('noindex,nofollow') &&
