@@ -1,14 +1,14 @@
 <?php
 /**
  * Plugin Name: FV Apollo Campaign Continuity (STAGING ONLY — DO NOT ACTIVATE)
- * Description: Optional source-gated internal UTM continuity, with no tracking or network calls.
+ * Description: Optional source-gated DOM campaign handoff hints, with unchanged links and no tracking.
  * Version: 0.1.0-r265
  * Requires PHP: 8.0
  */
 if (!defined('ABSPATH')) { exit; }
 function fv_apollo_r265_assets_ok(): bool {
     $script = __DIR__ . '/assets/campaign-continuity.js';
-    return is_readable($script) && hash_file('sha256', $script) === '9f27b97aa6797e796e4b005fe6cfa5ea579f499519d7664c7f0cca58d07e11d7';
+    return is_readable($script) && hash_file('sha256', $script) === 'afec1e65191d4df1655a557dca70c92d76922799c0c20d5fb14a6c992ad12c3e';
 }
 function fv_apollo_r265_enqueue(): void {
     if (is_admin() || !is_singular()) return;
