@@ -1,0 +1,291 @@
+{
+  "version": "R265-2026-11-10",
+  "status": "UNPUBLISHED_HARD_HOLD",
+  "checked_date": "2026-11-10",
+  "sources": [
+    {
+      "id": "S1",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/21442007/",
+      "type": "primary",
+      "detail": "Rozenblit & Keil (2002), explanatory depth; 12 studies"
+    },
+    {
+      "id": "S2",
+      "url": "https://doi.org/10.1177/0956797612464058",
+      "type": "primary",
+      "detail": "Fernbach et al. (2013), causal explanation vs reasons"
+    },
+    {
+      "id": "S3",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/19638628/",
+      "type": "review",
+      "detail": "Alter & Oppenheimer (2009) fluency review; different construct"
+    },
+    {
+      "id": "S4",
+      "url": "https://inspire3.com/",
+      "type": "seller",
+      "detail": "Zen12/Hypnosis Live/Brainwave Shots catalog; efficacy statements are seller claims"
+    },
+    {
+      "id": "S5",
+      "url": "https://zen12.com/?no-popup=1",
+      "type": "seller",
+      "detail": "Standard seller page; current checkout not independently verified"
+    },
+    {
+      "id": "S6",
+      "url": "https://zen12.com/secret/",
+      "type": "seller",
+      "detail": "Distinct promotional offer, not verified authorized channel"
+    },
+    {
+      "id": "S7",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "type": "regulator",
+      "detail": "affiliate link disclosure near recommendation"
+    },
+    {
+      "id": "S8",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "type": "regulator",
+      "detail": "adequate product-relevant health claim substantiation"
+    },
+    {
+      "id": "S9",
+      "url": "https://finalvestige.com/focus/",
+      "type": "owned_public",
+      "detail": "existing free Fieldbook, no new form"
+    },
+    {
+      "id": "S10",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "type": "owned_public",
+      "detail": "historical bridge"
+    },
+    {
+      "id": "S11",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "type": "project",
+      "detail": "approval and scope contract"
+    },
+    {
+      "id": "S12",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "type": "project",
+      "detail": "revenue acceptance"
+    },
+    {
+      "id": "S13",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "type": "owned_public",
+      "detail": "existing published investigation, latest not rechecked"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "Explanatory-depth overconfidence found across original 2002 research",
+      "source": "S1",
+      "classification": "independent_science",
+      "status": "SUPPORTED_FOR_STUDY_NOT_PRODUCT"
+    },
+    {
+      "id": "C02",
+      "claim": "Policy-mechanism explanations reduced attitude extremity in tested tasks",
+      "source": "S2",
+      "classification": "independent_science",
+      "status": "SUPPORTED_WITH_BOUNDARIES"
+    },
+    {
+      "id": "C03",
+      "claim": "Fluency influences judgments but is distinct from depth illusion",
+      "source": "S3",
+      "classification": "independent_review",
+      "status": "SUPPORTED_WITH_BOUNDARIES"
+    },
+    {
+      "id": "C04",
+      "claim": "Inspire3 lists Zen12 and related audio products",
+      "source": "S4",
+      "classification": "seller_catalog",
+      "status": "SELLER_DESCRIPTION_ONLY"
+    },
+    {
+      "id": "C05",
+      "claim": "Zen12 Premium features 12 levels/48 MP3 recordings",
+      "source": "S5",
+      "classification": "seller_feature",
+      "status": "SELLER_DESCRIBED_DELIVERY_UNVERIFIED"
+    },
+    {
+      "id": "C06",
+      "claim": "12 minutes equals one hour of deep meditation",
+      "source": "S4",
+      "classification": "seller_efficacy",
+      "status": "NOT_SUBSTANTIATED_FOR_PRODUCT;OMIT"
+    },
+    {
+      "id": "C07",
+      "claim": "Specific brainwave/health/wealth outcome from Zen12",
+      "source": "S4",
+      "classification": "seller_efficacy",
+      "status": "NOT_SUBSTANTIATED;OMIT"
+    },
+    {
+      "id": "C08",
+      "claim": "Distinct standard/promotional price frames",
+      "source": "S5;S6",
+      "classification": "seller_pricing",
+      "status": "HISTORICAL_DISPLAY_ONLY;NO_CURRENT_PRICE"
+    },
+    {
+      "id": "C09",
+      "claim": "Seller refund banner ensures successful refund",
+      "source": "S5",
+      "classification": "seller_promise",
+      "status": "UNVERIFIED_FULFILLMENT;DO_NOT_ASSERT"
+    },
+    {
+      "id": "C10",
+      "claim": "FV has approved Inspire3 publisher account",
+      "source": "S11",
+      "classification": "authorization",
+      "status": "NOT_VERIFIED"
+    },
+    {
+      "id": "C11",
+      "claim": "FV has validated owned paid Mind product",
+      "source": "S12",
+      "classification": "merchant",
+      "status": "NOT_VERIFIED"
+    },
+    {
+      "id": "C12",
+      "claim": "Focus gift UI equals confirmed subscription",
+      "source": "S12",
+      "classification": "measurement",
+      "status": "FALSE;PROHIBITED"
+    },
+    {
+      "id": "C13",
+      "claim": "Affiliate outbound means paid commission",
+      "source": "S12",
+      "classification": "measurement",
+      "status": "FALSE;PROHIBITED"
+    },
+    {
+      "id": "C14",
+      "claim": "FTC requires visible material connection",
+      "source": "S7",
+      "classification": "regulatory",
+      "status": "SUPPORTED"
+    },
+    {
+      "id": "C15",
+      "claim": "Health outcome marketing needs adequate substantiation",
+      "source": "S8",
+      "classification": "regulatory",
+      "status": "SUPPORTED"
+    }
+  ],
+  "gates": [
+    {
+      "id": "named_partner_acceptance",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "written_product_permission",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "approved_social_channels",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "approved_email_channel",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "issued_tracking_url",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "affiliate_terms",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "approved_creatives_rights",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "exact_active_offer",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "cart_total_verified",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "returns_terms_verified",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "fulfillment_verified",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "product_specific_claim_substantiation",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "independent_disclosure_qa",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "first_party_attribution_review",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "verified_paid_merchant_reporting",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "founder_release_approval",
+      "status": "HARD_HOLD",
+      "evidence": null
+    }
+  ],
+  "commerce": {
+    "affiliate_link": null,
+    "approved_publisher": null,
+    "commission_rate": null,
+    "price": null,
+    "paid_orders": null,
+    "refunds": null,
+    "net_revenue_per_1000_qualified_humans": null
+  },
+  "constraints": {
+    "no_live_cms": true,
+    "no_deploy": true,
+    "no_merge": true,
+    "no_new_jetpack_list": true,
+    "no_tracking_script": true,
+    "no_media_autoplay": true
+  }
+}
