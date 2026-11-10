@@ -76,8 +76,8 @@ const mutations=[
  ['inject product placement',f=>f.article+='\nZen12 promises perfect concentration.'],
  ['remove evidence citation',f=>f.article=f.article.replace('https://pubmed.ncbi.nlm.nih.gov/41217756/','invalid-reference')],
  ['fabricate revenue in plan',f=>f.plan+='\nCommission cleared: $300'],
- ['delete attribution guard',f=>f.plan=f.plan.replace('affiliate_outbound','affiliate_click_only')],
- ['delete human caveat',f=>f.plan=f.plan.replace('NOT COMPUTABLE','zero dollars')]
+ ['delete attribution guard',f=>f.plan=f.plan.replaceAll('affiliate_outbound','affiliate_click_only')],
+ ['delete human caveat',f=>f.plan=f.plan.replaceAll('NOT COMPUTABLE','zero dollars')]
 ];
 let rejected=0;
 for(const [name,mutate] of mutations){
