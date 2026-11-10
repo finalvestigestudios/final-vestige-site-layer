@@ -55,13 +55,13 @@ function validate(bundle){
  /^https:\/\/www\.ftc\.gov\//.test(x)),'unknown external URL or affiliate redirect');
  ensure(!/(?:awin1\.com|clickbank|[?&]ref=|affiliate[_-]?id|hoplink|rel="sponsored"|utm_source=)/i.test(html),'unexpected earning link');
  const button=[...html.matchAll(/<button\b([^>]*)>([\s\S]*?)<\/button>/gi)];
- ensure(button.length===1&&/\bdisabled\b/i.test(button[0][1])&&!/\bhref\b|\bformaction\b/i.test(button[0][1]),'CTA not disabled');
+ ensure(button.length===1&&/\sdisabled(?:\s|=|$)/i.test(button[0][1])&&!/\bhref\b|\bformaction\b/i.test(button[0][1]),'CTA not disabled');
  const disclosure=html.indexOf('id="disclose"'),cta=html.indexOf('<button');
  ensure(disclosure>cta&&disclosure-cta<900&&html.includes('may earn a commission'),'adjacent disclosure missing');
  ensure(!/guaranteed\s+\$37|clinically proven to rewire|cures\s+(?:anxiety|depression)|made\s+us\s+wealthy/i.test(html+acceptance),'prohibited seller conclusion');
  ensure(acceptance.includes('NOT COMPUTABLE')&&acceptance.includes('merchant-confirmed')&&acceptance.includes('PR #172'),'revenue distinction or governance missing');
  ensure(acceptance.includes('360, 390, 768 and 1440')&&acceptance.includes('consent'),'mobile QA/consent criteria missing');
- [variantA,variantB].forEach((v,i)=>{ensure(/<button\b[^>]*disabled/i.test(v),'inherited pilot '+i+' CTA enabled');ensure(/may earn a commission/i.test(v),'inherited disclosure lost');ensure(!/<form\b|<script\b/i.test(v),'inherited extra form/script');});
+ [variantA,variantB].forEach((v,i)=>{ensure(/<button\b[^>]*\sdisabled(?:\s|=|>)/i.test(v),'inherited pilot '+i+' CTA enabled');ensure(/may earn a commission/i.test(v),'inherited disclosure lost');ensure(!/<form\b|<script\b/i.test(v),'inherited extra form/script');});
  ensure(variantB.includes('42-second')&&variantA.includes('Is twelve minutes'),'inherited A/B cohort missing');
  return {passed:true,sources:m.sources.length,claims:m.claims.length,gates:m.commercial_gates.length,hrefs:anchors.length};
 }
