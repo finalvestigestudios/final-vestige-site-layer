@@ -12,6 +12,8 @@ from pathlib import Path
 import re
 import sys
 
+from verify_homepage_dom_custody import evaluate_dom
+
 MARGIN_RE = re.compile(r'<span\s+class="fv-margin-strip__item"[^>]*>[\s\S]*?</span>')
 INDEX_RE = re.compile(r'--i:(\d+)')
 JETPACK_OPEN = re.compile(r'<div\b[^>]*class="[^"]*\bwp-block-jetpack-subscriptions\b[^"]*"[^>]*>', re.I)
@@ -74,11 +76,14 @@ def evaluate(html: str, manifest: dict, require_current_snapshot: bool = False) 
     missing = sorted(set(manifest['required_chapter_ids']) - set(found['chapter_ids']))
     if missing:
         errors.append('Seven-chapter anchor IDs missing: ' + ', '.join(missing))
+    dom_result = evaluate_dom(html, manifest)
+    errors.extend('DOM custody: ' + issue for issue in dom_result['errors'])
     if require_current_snapshot and found['content_sha256'] != manifest['page_content_sha256']:
         errors.append('Canonical Page 6 snapshot differs; re-review baseline')
     return {'gate': 'PASS' if not errors else 'HOLD', 'release_approved': False,
             'scope': 'offline supplied markup only: not WordPress/Jetpack staging acceptance',
-            'errors': errors, 'measured': found, 'baseline_modified': manifest.get('modified')}
+            'errors': errors, 'measured': found, 'dom_custody': dom_result,
+            'baseline_modified': manifest.get('modified')}
 
 
 def main(argv=None):
