@@ -27,6 +27,12 @@ MEDIA = {
 }
 EXPECTED_SOURCES = 39
 EXPECTED_EVIDENCE_ROWS = 10
+# Content sentinels anchored in the latest authenticated Gutenberg readback.
+# These improve confidence that the preview is the current editorial revision,
+# but do NOT cryptographically prove the declared --sha or replace a fresh WP read.
+REVISION_SENTINELS = (
+    "2:17 p.m.", "$1,096,796.53", "Bohemia Spillway", "Acosta v.", "1991",
+)
 
 def capture(page, locator, out):
     try:
@@ -85,6 +91,8 @@ def inspect(page, width, out):
     # could still duplicate the cover outside the article; check the whole DOM.
     hero_duplicates = page.locator('img[src*="1927-caernarvon-levee-explosion-noa"]').count()
     photo_ok = all(found.values()) and len(photo_results) == 4
+    revision_text = article.text_content(timeout=12000) or ""
+    revision_sentinels = {token: token in revision_text for token in REVISION_SENTINELS}
     sources = article.locator("h2#sources").first
     source_list = sources.locator("xpath=following-sibling::ul[1]")
     source_count = source_list.locator(":scope > li").count() if source_list.count() else 0
@@ -112,6 +120,7 @@ def inspect(page, width, out):
         "all_four_local_archival_photos_loaded_credited_and_alt": photo_ok,
         "evidence_table_10_rows_including_header": bool(table_stats and table_stats["rows"] == EXPECTED_EVIDENCE_ROWS),
         "source_bibliography_39_entries": source_count == EXPECTED_SOURCES,
+        "expected_editorial_revision_markers_present": all(revision_sentinels.values()),
         "original_compensation_figure_present": chart_count == 1,
         "site_header_and_footer_present": bool(header_count and footer_count),
         "no_duplicate_lead_image": hero_duplicates == 1,
@@ -140,7 +149,9 @@ def inspect(page, width, out):
             captures[label] = name
     return {"viewport": width, "checks": checks, "document": page_stats,
             "overflowPx": overflow, "evidenceTable": table_stats,
-            "bibliographyEntryCount": source_count, "archivalImageChecks": found,
+            "bibliographyEntryCount": source_count,
+            "editorialRevisionSentinels": revision_sentinels,
+            "archivalImageChecks": found,
             "archivalImages": photo_results, "featuredImageOccurrences": hero_duplicates,
             "captured": captures, "consoleErrorCount": len(console_errors),
             "uncaughtJsErrorCount": len(page_errors)}
