@@ -128,7 +128,7 @@ def execute_gate(directory: Path, *, targets=REQUIRED) -> dict[str, object]:
                         raise IntegrationHold(_FIXED_ERROR)
                     # Compile vetted SOURCE bytes, not Python's timestamp/size
                     # cache. A forged .pyc can otherwise pass with changed .py.
-                    suite, loaded, loader_errors = load_source_suite(source)
+                    suite, loaded, loader_errors = load_source_suite(source, expected_sha256=initial_witness[-1])
                     if loaded is not sys.modules.get(filename[:-3]):
                         raise IntegrationHold(_FIXED_ERROR)
                     if (loaded is None or
