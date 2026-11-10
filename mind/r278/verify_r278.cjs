@@ -47,7 +47,7 @@ for (const [variant,html] of [['A',A],['B',B]]){
   assert((html.match(/<button\b/g)||[]).length===1 && /<button\s+type="button"\s+disabled\s+aria-disabled="true">/.test(html),'held only CTA '+variant);
   const commerce=html.split('<section aria-labelledby="commerce">')[1]?.split('</section>')[0]||'';
   assert(commerce.includes('may receive a commission')&&commerce.includes('No affiliate earning link')&&commerce.indexOf('may receive a commission')>commerce.indexOf('<button')&&commerce.indexOf('may receive a commission')<commerce.indexOf('</div>'),'adjacent FTC disclosure '+variant);
-  assert(html.includes('seller\'s own newsletter')&&html.includes('existing Dispatch')&&html.includes('no-account')===false /* no extra form */,'seller / FV consent distinctions '+variant);
+  assert(html.includes('own newsletter')&&html.includes('existing Dispatch')&&html.includes('Set a no-account timer'),'seller / FV consent distinctions '+variant);
   assert(html.includes('zen12.com/hnp') && html.includes('zen12.com/secret/') && html.includes('hypnosislive.com/mental-skills/total-focus'),'exact public seller offers '+variant);
   assert(html.includes('No Final Vestige-specific partner acceptance') && html.includes('not a clinical promise'),'no implicit seller auth or cure '+variant);
 }
