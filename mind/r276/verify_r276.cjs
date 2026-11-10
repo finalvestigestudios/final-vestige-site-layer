@@ -103,7 +103,7 @@ function selfTest(b) {
  ['injectClickbank',x=>{x.html+='\n<a href="https://zen12.com/?hop=fake">Buy</a>'}],['newSeller',x=>{x.html+='\n<a href="https://merchant.example/c">Buy</a>'}],
  ['removeFocus',x=>{x.html=x.html.replace('https://finalvestige.com/focus/','https://example.org/')}],['newInput',x=>{x.html+='\n<input type=email>'}],
  ['removeMediaCSS',x=>{x.html=x.html.replace('@media(max-width:390px)','/* noop */')}],['removePoster',x=>{x.html=x.html.replaceAll('Evidence before expectation','no')}],
- ['removeA',x=>{x.variantA=x.variantA.replace('disabled','required')}],['removeB',x=>{x.variantB=x.variantB.replace('Prospective affiliate disclosure:','No disclosure')}]
+ ['removeA',x=>{x.variantA=x.variantA.replace('type="button" disabled','type="button"')}],['removeB',x=>{x.variantB=x.variantB.replace('Prospective affiliate disclosure:','No disclosure')}]
  ];
  let rejected=0,ineffective=[];
  for(const [name,fn] of mutations){const copy=JSON.parse(JSON.stringify(b));fn(copy);let didFail=false;try{validate(copy);}catch(_){didFail=true;}if(didFail)rejected++;else ineffective.push(name)}
