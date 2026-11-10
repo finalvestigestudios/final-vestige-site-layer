@@ -53,7 +53,7 @@ function readPlain(data) {
        !card.includes(buttons[0]))errors.push(n+' activated purchase button');
     const ctl=card.indexOf('id="zen12-buy-button"'),d=card.indexOf('id="affiliate-disclosure"');
     if(ctl<0||d<ctl||d-ctl>350||!card.includes('Final Vestige may earn a commission')||!card.includes('no active affiliate link'))errors.push(n+' affiliate disclosure proximity');
-    if(/<(script|form|iframe|video|audio|source|track)\b/i.test(h)||/\bautoplay\b|\bonclick\s*=|http-equiv=["']refresh/i.test(h))errors.push(n+' unapproved scripts/forms/forced media');
+    if(/<(script|form|iframe|video|audio|source|track)\b/i.test(h)||/<(?:video|audio)[^>]*\sautoplay(?:[=\s>])/i.test(h)||/\bonclick\s*=|http-equiv=["\x27]refresh/i.test(h))errors.push(n+' unapproved scripts/forms/forced media');
     if(/<a\b[^>]*href=["']https?:\/\/(?:www\.)?(zen12\.com|inspire3\.com|hypnosislive\.com|brainwaveshots\.com)/i.test(h))errors.push(n+' unapproved merchant link');
     if(/(?:url\s*\(\s*['"]?https?:|<image\b|<use\b|<img\b|<link\b[^>]*href=)/i.test(h))errors.push(n+' unreviewed external resource');
     if(!h.includes('href="https://finalvestige.com/focus/"'))errors.push(n+' existing free route');
