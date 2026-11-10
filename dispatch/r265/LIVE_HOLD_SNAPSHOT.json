@@ -1,0 +1,61 @@
+{
+  "record_type": "READ_ONLY_OBSERVATION_NOT_SEND_AUTHORIZATION",
+  "observed_utc": "2026-11-10T21:41:48Z",
+  "source": "authenticated WordPress.com Jetpack newsletter status/get_settings; page reads; public merchant and official compliance pages",
+  "repository": "finalvestigestudios/final-vestige-site-layer",
+  "campaign_master_pr": 175,
+  "release_readiness_pr": 201,
+  "parent_pr": 1946,
+  "dispatch_issue": 174,
+  "mind_issue": 171,
+  "focus_issue": 129,
+  "conversion_issue": 820,
+  "send_status": "HOLD_UNSENT",
+  "mix": {"editorial": 4, "commercial_review_pending": 2},
+  "commercial_issues": [3, 5],
+  "newsletter": {
+    "enabled": true,
+    "new_post_autosend": false,
+    "email_content_format": "full",
+    "sender_name": "Final Vestige Studios",
+    "reply_to": "no-reply",
+    "fieldbook_welcome_configured": true,
+    "fieldbook_received_verified": false,
+    "total_diagnostic": 3,
+    "confirmed_diagnostic": 3,
+    "unconfirmed_requests": 2,
+    "suppressed_diagnostic": 0,
+    "provider_filtered_email_subscription_subscribed_count": null,
+    "eligible_email_recipients": null,
+    "last_five_post_send_states": ["never_sent_opted_out", "never_sent_opted_out", "never_sent_opted_out", "never_sent_opted_out", "never_sent_opted_out"]
+  },
+  "source_linked_hold_proofs": {
+    "jetpack_subscriber_filter": "https://wordpress.com/support/subscribers/",
+    "can_spam": "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business",
+    "zen12_standard": "https://zen12.com/hnp",
+    "zen12_seller_newsletter": "https://zen12.com/welcome",
+    "zen12_freeaudio_seller_newsletter": "https://zen12.com/freeaudio",
+    "hypnosis_live_total_focus": "https://hypnosislive.com/mental-skills/total-focus"
+  },
+  "verified_authorizations": {
+    "founder_final_campaign_approval": false,
+    "affiliate_email_promotion_permission": false,
+    "affiliate_link_validated": false,
+    "approved_guide_live": false,
+    "exact_checkout_terms_verified": false,
+    "provider_subscriber_consent_verified": false,
+    "welcome_delivery_verified": false,
+    "received_email_preview_verified": false,
+    "fv_publisher_postal_address_verified": false,
+    "functional_unsubscribe_verified": false,
+    "authenticated_settled_paid_orders": false
+  },
+  "business_kpi": {
+    "qualified_human_sessions": null,
+    "confirmed_signups": null,
+    "verified_paid_orders": null,
+    "realized_net_revenue_cents": null,
+    "net_revenue_per_1000_qualified_sessions_cents": null,
+    "classification": "NOT_COMPUTABLE_NOT_ZERO"
+  }
+}
