@@ -120,6 +120,10 @@ R254_READABLE_WORKORDERS_BLOB = '5af564610f10fb3fe35512348cad2ed30844dfea'
 # CMS exports, source approval, merchant links or WordPress publication.
 R255_REVIEW_SURFACE_PATH = 'tools/r255_offline_source_review_surface_hold.py'
 R255_REVIEW_SURFACE_BLOB = '86e8b8e3cb29efbac738fd8574b487c4d633b1af'
+# R257 additionally accounts for ALL 1,438 original citations not represented
+# in the 562 shared-source workorders, retaining source contexts and all holds.
+R257_PARTITION_PATH = 'tools/r257_complete_citation_partition_hold.py'
+R257_PARTITION_BLOB = 'adb2353e4d5314df2cd01213292b3f4153aa43d1'
 # These are independently observed R219 integration Git blobs, not certified text.
 # Missing entries MUST match the older R200 original exactly.
 INTEGRATED_DIFFS = {
@@ -572,6 +576,27 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
                     'publication_authorized'))):
             raise ValueError('R255 offline source-review surface HARD HOLD drift')
         result['unpublished_offline_source_review_surface'] = offline_review
+        r257 = load_frozen_gate(root, R257_PARTITION_PATH,
+                                R257_PARTITION_BLOB,
+                                'fv_preparedness_r257_full_citation_partition',
+                                ('audit_full_partition',))
+        partition = r257.audit_full_partition(claims, workorders)
+        if (partition.get('schema') != r257.SCHEMA
+                or partition.get('state') != HOLD
+                or partition.get('article_count') != 35
+                or partition.get('citation_count') != 2000
+                or partition.get('shared_workorders') != 562
+                or partition.get('nonshared_workorders') != 1438
+                or partition.get('total_unapproved_claims') != 2000
+                or partition.get('shared_disputes') != 1
+                or partition.get('nonshared_disputes') != 2
+                or len(partition.get('unreviewed_nonshared_queue') or []) != 1438
+                or any(partition.get(k) is not False for k in (
+                    'independent_claim_source_verified', 'independent_qd_pass',
+                    'medical_safety_verified', 'merchant_approved',
+                    'publication_authorized'))):
+            raise ValueError('R257 full 2000-citation partition HARD HOLD drift')
+        result['complete_unreviewed_citation_partition'] = partition
         # R237's simple tag/attribute regex can mistake '>' inside a quoted
         # attribute or HTML comment for the end of markup. Verify source-level
         # visibility separately with an independently pinned quote-aware lexer.
@@ -891,6 +916,8 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
             raise ValueError('R254 readable claim review gate changed during audit')
         if git_blob(safe_read(root, R255_REVIEW_SURFACE_PATH)) != R255_REVIEW_SURFACE_BLOB:
             raise ValueError('R255 offline reviewer surface guard changed during audit')
+        if git_blob(safe_read(root, R257_PARTITION_PATH)) != R257_PARTITION_BLOB:
+            raise ValueError('R257 complete citation partition gate changed during audit')
         result['reconciliation'] = {'frozen_articles': 35,
                                     'integrated_changes_held_for_review': sum(
                                         x['changed_since_original'] for x in status),
