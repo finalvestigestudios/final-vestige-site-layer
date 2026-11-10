@@ -12,7 +12,8 @@ const NAMES={
  hub:"mind/r268/MIND-ARCHIVE-UNPUBLISHED-PREVIEW.html",
  matrix:"mind/r269/ILLUSORY-TRUTH-PRODUCT-CLAIM-SOURCE-REVENUE-GATES.json",
  vtt:"mind/r257/zen12_42s_preview.vtt",
- article:"mind/r270/THE-DOORWAY-THAT-DIDNT-STEAL-YOUR-MEMORY-UNPUBLISHED.md"
+ article:"mind/r270/THE-DOORWAY-THAT-DIDNT-STEAL-YOUR-MEMORY-UNPUBLISHED.md",
+ r270_matrix:"mind/r270/DOORWAY-SCIENCE-INSPIRE3-COMMERCE-CLAIM-MATRIX.json"
 };
 const GATES=[
 "named_inspire3_acceptance","issued_publisher_specific_earning_url","exact_zen12_offer_identity",
@@ -93,6 +94,17 @@ function check(f){
  for(const key of ["qualified_human_sessions","affiliate_outbound","confirmed_signup","merchant_confirmed_paid_orders","partner_reported_paid_affiliate_conversions","refunds_and_fees","realized_net_revenue","net_revenue_per_1000_qualified_human_sessions"])bad(m.metric_contract?.[key]!==null,"fabricated metric "+key);
  for(const key of ["no_live_cms_edits","no_affiliate_activation","no_email_or_social_posts","no_new_forms_or_js","no_merge_or_deploy","no_spend","homepage_pr49_unchanged","canonical_mind_pr172_unchanged","owner_issue150_unchanged"])bad(m.release_controls?.[key]!==true,"boundary unset "+key);
  bad(m.media_custody?.hosted_playback!==false||m.media_custody?.real_browser_qa!==false,"media claim inflated");
+ let newer;try{newer=JSON.parse(f.r270_matrix)}catch{return errors.concat("r270 matrix JSON malformed")}
+ bad(newer.decision!=="HARD_HOLD"||newer.editorial_status!=="UNPUBLISHED","R270 commercial/editorial hold");
+ bad(newer.source_count!==18||newer.sources?.length!==18||new Set(newer.sources.map(s=>s.id)).size!==18,"R270 source identities");
+ bad(newer.claim_count!==20||newer.claims?.length!==20||new Set(newer.claims.map(c=>c.id)).size!==20,"R270 claim identities");
+ for(const c of newer.claims??[])bad(!c.source_ids?.length||!c.limit||c.source_ids.some(id=>!newer.sources.some(s=>s.id===id)),"R270 ungrounded claim "+c.id);
+ for(const [id,status] of Object.entries({C06:"unsupported_do_not_claim",C10:"unsupported_product_efficacy",C11:"unsupported_product_efficacy",C13:"unsupported_product_efficacy",C15:"false_not_verified",C18:"false_no_transfer",C19:"not_verified",C20:"not_verified"}))bad(newer.claims.find(c=>c.id===id)?.status!==status,"R270 claim unsupported status changed "+id);
+ bad(newer.commercial_gates?.length!==16||GATES.some(id=>!newer.commercial_gates.some(g=>g.id===id))||new Set(newer.commercial_gates.map(g=>g.id)).size!==16,"R270 gate identities");
+ for(const g of newer.commercial_gates??[])bad(g.status!=="HARD_HOLD"||g.evidence!=="NOT_VERIFIED"||g.release_blocker!==true,"R270 gate released "+g.id);
+ for(const offer of newer.offer_priority??[])if(offer.eligibility==="NOT_VERIFIED")bad(offer.approved_link!==null||offer.checkout_total!==null,"R270 invented earning URL/checkout");
+ bad(newer.measurement?.merchant_verified_paid_orders!==null||newer.measurement?.realized_net_revenue!==null||newer.measurement?.net_revenue_per_1000_qualified_human_sessions!==null,"R270 fabricated paid results");
+ for(const key of ["no_live_wordpress_edits","no_merge_or_deploy","no_social_or_email_send","no_duplicate_focus_signup","no_merchant_links","no_purchases_claimed","no_paid_services","homepage_pr49_unchanged","mind_hub_pr172_unchanged","issue150_owner_untouched"])bad(newer.release_controls?.[key]!==true,"R270 boundary removed "+key);
  return errors;
 }
 const clone=f=>JSON.parse(JSON.stringify(f));
@@ -117,6 +129,11 @@ function fixtures(f){
  add("commission invented",o=>{let m=JSON.parse(o.matrix);m.metric_contract.partner_reported_paid_affiliate_conversions=10;o.matrix=JSON.stringify(m)});
  add("article commercial endorsement",o=>o.article=o.article.replace("an unrelated seller's meditation","Zen12 is proven to reprogram the brain; an unrelated seller's meditation"));
  add("article emptied",o=>o.article="Summary.");
+ add("R270 source removed",o=>{let m=JSON.parse(o.r270_matrix);m.sources.pop();o.r270_matrix=JSON.stringify(m)});
+ add("R270 false product claim approved",o=>{let m=JSON.parse(o.r270_matrix);m.claims.find(c=>c.id==="C11").status="supported_fulltext";o.r270_matrix=JSON.stringify(m)});
+ add("R270 partner enabled",o=>{let m=JSON.parse(o.r270_matrix);m.commercial_gates[1].status="APPROVED";o.r270_matrix=JSON.stringify(m)});
+ add("R270 forged paid order",o=>{let m=JSON.parse(o.r270_matrix);m.measurement.merchant_verified_paid_orders=1;o.r270_matrix=JSON.stringify(m)});
+ add("R270 made up affiliate URL",o=>{let m=JSON.parse(o.r270_matrix);m.offer_priority[0].approved_link="https://example.invalid/affiliate";o.r270_matrix=JSON.stringify(m)});
  return out;
 }
 module.exports={NAMES,check,fixtures};
