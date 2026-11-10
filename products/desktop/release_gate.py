@@ -177,8 +177,13 @@ def main(argv=None) -> int:
             publish_report(destination, result)
         print(f"Candidate verified: {result['status']} (NOT release authorized)")
         return 0
-    except (GateFailure, ReportEvidenceError, OSError) as exc:
+    except (GateFailure, ReportEvidenceError) as exc:
         print("REJECTED: " + str(exc), file=sys.stderr)
+        return 1
+    except (OSError, RuntimeError):
+        # Untrusted filesystem/runtime exception strings may contain private
+        # financial folder paths. Do not format or chain raw failures at CLI.
+        print("REJECTED: Candidate verification could not be completed safely", file=sys.stderr)
         return 1
 
 
