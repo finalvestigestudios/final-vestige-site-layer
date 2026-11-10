@@ -105,8 +105,8 @@ def build_inventory(candidate_dir: str | Path) -> str:
     """Publish one canonical inventory only if all six source images stay stable.
 
     The completed seven-file bundle STILL requires release_gate.verify() and real
-    Windows smoke tests. A failed post-publication check keeps the linked checksum inventory for
-    explicit human review: path-based rollback unlink has a check/delete race.
+    Windows smoke tests. A failed post-publication check preserves the linked
+    inventory for human review; pathname rollback has a check/delete race.
     """
     stage: Path | None = None
     published_identity: tuple[int, int] | None = None
@@ -134,10 +134,9 @@ def build_inventory(candidate_dir: str | Path) -> str:
             raise InventoryBuildError("Staged checksum inventory differs from canonical evidence")
         if _fingerprints(root) != original:
             raise InventoryBuildError("Candidate binaries changed during inventory build")
-        # Anchor rollback to the verified staging inode BEFORE publication.
-        # Capturing target identity after os.link leaves a failure window: an
-        # lstat error strands our new manifest, and an intervening replacement
-        # can be mistaken for ours (and potentially deleted during rollback).
+        # Pin the staging inode identity BEFORE publication. A successful
+        # os.link must expose this exact inode; never assume that an observed
+        # pathname still refers to the inode after the check.
         staged_info = stage.lstat()
         if not stat.S_ISREG(staged_info.st_mode) or staged_info.st_nlink != 1:
             raise InventoryBuildError("Inventory staging identity changed")
