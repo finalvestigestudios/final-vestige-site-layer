@@ -12,8 +12,10 @@
     "status": "publish",
     "modified": "2026-08-21T00:32:52",
     "original_img_count": 6,
-    "exact_src_and_alt_match": 6,
-    "source": "wpcom_mcp_posts_get(context=edit) Nov 10 2026"
+    "source": "wpcom_mcp_posts_get(context=edit) Nov 10 2026",
+    "exact_src_matches_frozen": 6,
+    "live_alt_captured": 6,
+    "historical_alt_match_verified": false
   },
   "source_refs": [
     "https://www.usgs.gov/media/images/lituya-bay-1958",
@@ -30,7 +32,6 @@
     "web_retriever_inaccessible": 2,
     "guest_http_confirmed": 0,
     "guest_broken_confirmed": 0,
-    "live_wp_source_match": 6,
     "incorrect_graphic_description_slots": [
       "277:0",
       "277:4"
@@ -44,7 +45,9 @@
       "277:5"
     ],
     "downloads": 0,
-    "wp_writes": 0
+    "wp_writes": 0,
+    "live_wp_src_matches_frozen": 6,
+    "historical_alt_matches_unverified": 6
   },
   "release": "HOLD for all image binaries, rights clearance, guest browser status, transfer bytes, native pixel/crop match and production changes. This is source research only.",
   "rows": [
@@ -306,5 +309,6 @@
       "wordpress_media_upload_authorized": false,
       "post_rewrite_authorized": false
     }
-  ]
+  ],
+  "scope_note": "October 30 frozen source register stores literal src URLs but not historical ALT text; ALT values were captured from November 10 live WordPress readback, NOT independently matched to historical ALT."
 }
