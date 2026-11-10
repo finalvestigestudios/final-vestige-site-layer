@@ -49,7 +49,7 @@ function verify(files){
   const segments=["00:00–00:06","00:06–00:12","00:12–00:18","00:18–00:24","00:24–00:30","00:30–00:36","00:36–00:42"];
   for(const seg of segments)if(!B.includes(seg))bad("B timed transcript missing "+seg);
   const normalize=(html)=>html.replace(/<section class="section" aria-labelledby="film" data-experiment-only="video-storyboard">[\s\S]*?<\/section>/,"").replace(/data-experiment="[AB]"/,'data-experiment="X"').replace(/<title>Is Zen12 Worth Considering\? \| Final Vestige draft [AB]<\/title>/,"<title>SAME</title>");
-  if(normalize(A)!==normalize(B))bad("A/B purchasing content diverges beyond film");
+  if(normalize(A).replace("Unpublished A · No live merchant link","Unpublished X · No live merchant link")!==normalize(B).replace("Unpublished B · No live merchant link","Unpublished X · No live merchant link"))bad("A/B purchasing content diverges beyond film");
   const requiredArticle=["https://zen12.com/hnp","https://zen12.com/freeaudio","https://pubmed.ncbi.nlm.nih.gov/37578065/","https://pubmed.ncbi.nlm.nih.gov/37205669/","https://doi.org/10.1111/acps.13225","https://finalvestige.com/focus/"];
   for(const link of requiredArticle)if(!article.includes(link))bad("Source removed from manuscript: "+link);
   if(!article.includes("No earning link is active") && !article.includes("No earning link is active in this document"))bad("Manuscript marketing status ambiguous");
