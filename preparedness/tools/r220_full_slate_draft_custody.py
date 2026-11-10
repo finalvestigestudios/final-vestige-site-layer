@@ -934,9 +934,10 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
                     'release_authorized', 'public_published'))):
             raise ValueError('R266 browser receipt falsely changed source/safety/release HOLD')
         result['wallet_card_bounded_browser_observation'] = browser_observation
-        # A reversible SCREEN-only alternative is not approval for the
+        # Preserve the independent, intentionally manual browser reproduction.
         if git_blob(safe_read(root, R267_BROWSER_REPRO_PATH)) != R267_BROWSER_REPRO_BLOB:
             raise ValueError('R267 reproduction method changed before held export')
+        # A reversible SCREEN-only alternative is not approval for the
         # existing held tool or proof of physical print/privacy safety.
         r267 = load_frozen_gate(root, R267_WALLET_SCREEN_PATH,
                                 R267_WALLET_SCREEN_BLOB,
