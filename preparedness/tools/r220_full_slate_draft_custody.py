@@ -155,6 +155,17 @@ R266_WALLET_BROWSER_PATH = 'tools/r266_wallet_browser_observation_custody_hold.p
 R266_WALLET_BROWSER_BLOB = '00ce114682bdb1bdefd245e3866f7dc221989c54'
 R266_WALLET_RECEIPT_PATH = 'audits/r266_chromium_wallet_print_observation_REVIEW_ONLY.json'
 R266_WALLET_RECEIPT_BLOB = 'bae95ed84281919fb0e21e5a8e9bbb3feef99e9d'
+# R267 is an UNPUBLISHED screen-only alternative. R266's original mobile
+# overflow remains a negative source finding; neither is a QD or privacy pass.
+R267_WALLET_SCREEN_PATH = 'tools/r267_wallet_responsive_preview_hold.py'
+R267_WALLET_SCREEN_BLOB = '36ab403f12c70db3f0d5c0c8592ea6d8a45f4aaf'
+R267_WALLET_HTML_PATH = 'audits/r267_responsive_wallet_card_REVIEW_ONLY.html'
+R267_WALLET_HTML_BLOB = '5ae643302faf6bce47e8c507fbcfff9c099eaf00'
+R267_WALLET_RECEIPT_PATH = 'audits/r267_responsive_browser_observation_REVIEW_ONLY.json'
+R267_WALLET_RECEIPT_BLOB = '74dc8e0f9cbb07e6cfd14a2d2dd3b4552239e40f'
+# Repro script is explicit/manual, network-disabled, not run during site build.
+R267_BROWSER_REPRO_PATH = 'tools/r267_reproduce_browser_observation_REVIEW_ONLY.py'
+R267_BROWSER_REPRO_BLOB = '461d97b005de520bbece907d6224f15101abfb2e'
 # R258 binds the complete R254/R257 original source-claim partition to a
 # deterministic, entirely escaped, no-clickable-links offline reviewer view.
 R258_COMPLETE_REVIEW_PATH = 'tools/r258_complete_offline_claim_review_hold.py'
@@ -923,6 +934,31 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
                     'release_authorized', 'public_published'))):
             raise ValueError('R266 browser receipt falsely changed source/safety/release HOLD')
         result['wallet_card_bounded_browser_observation'] = browser_observation
+        # Preserve the independent, intentionally manual browser reproduction.
+        if git_blob(safe_read(root, R267_BROWSER_REPRO_PATH)) != R267_BROWSER_REPRO_BLOB:
+            raise ValueError('R267 reproduction method changed before held export')
+        # A reversible SCREEN-only alternative is not approval for the
+        # existing held tool or proof of physical print/privacy safety.
+        r267 = load_frozen_gate(root, R267_WALLET_SCREEN_PATH,
+                                R267_WALLET_SCREEN_BLOB,
+                                'fv_preparedness_r267_wallet_responsive_preview',
+                                ('audit', 'inspect'))
+        screen_candidate = r267.audit(root, safe_read, browser_observation)
+        if (screen_candidate.get('state') != HOLD
+                or screen_candidate.get('source_preview_git_blob') != R267_WALLET_HTML_BLOB
+                or screen_candidate.get('browser_receipt_git_blob') != R267_WALLET_RECEIPT_BLOB
+                or screen_candidate.get('screen_overflow_not_observed_at_five_tested_widths') is not True
+                or screen_candidate.get('original_r266_overflow_negative_finding_preserved') is not True
+                or screen_candidate.get('printed_card_css_unchanged') is not True
+                or any(screen_candidate.get(k) is not False for k in (
+                    'physical_print_cut_fold_verified', 'accessibility_approved',
+                    'child_privacy_approved', 'source_citations_approved',
+                    'independent_qd_pass', 'merchant_approved',
+                    'release_authorized', 'public_published', 'ready_for_wordpress',
+                    'full_native_pipeline_executed',
+                    'original_tool_104_browser_tested'))):
+            raise ValueError('R267 preview evidence/safety state changed')
+        result['wallet_card_screen_only_review_candidate'] = screen_candidate
         # An editorial option is NOT a source correction or approval. Authenticate
         # its exact preview bytes, then separately inspect its visible copy.
         if git_blob(safe_read(root, R249_UNPUBLISHED_PREVIEW_PATH)) != R249_UNPUBLISHED_PREVIEW_BLOB:
@@ -1135,6 +1171,13 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
             raise ValueError('R266 wallet browser evidence gate changed during audit')
         if git_blob(safe_read(root, R266_WALLET_RECEIPT_PATH)) != R266_WALLET_RECEIPT_BLOB:
             raise ValueError('R266 wallet browser evidence changed during audit')
+        for path, expected in (
+                (R267_WALLET_SCREEN_PATH, R267_WALLET_SCREEN_BLOB),
+                (R267_WALLET_HTML_PATH, R267_WALLET_HTML_BLOB),
+                (R267_WALLET_RECEIPT_PATH, R267_WALLET_RECEIPT_BLOB),
+                (R267_BROWSER_REPRO_PATH, R267_BROWSER_REPRO_BLOB)):
+            if git_blob(safe_read(root, path)) != expected:
+                raise ValueError('R267 screen-only candidate/source receipt changed during audit')
         if git_blob(safe_read(root, R258_COMPLETE_REVIEW_PATH)) != R258_COMPLETE_REVIEW_BLOB:
             raise ValueError('R258 2000-citation offline reviewer gate changed during audit')
         result['reconciliation'] = {'frozen_articles': 35,
