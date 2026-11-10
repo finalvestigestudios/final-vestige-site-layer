@@ -18,6 +18,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from .journal_io import append_verified_event, read_regular_bytes
+from .review_line_framing_r324 import canonical_review_records
 from .review_commit import confirm_review_commit
 from .review_lock import exclusive_review_lock
 from .review_chronology import check_new_review_clock, check_record_order
@@ -225,7 +226,7 @@ def read_journal(journal: str | Path, batch: ReportBatch) -> list[dict]:
     result = []
     previous = ZERO_HASH
     prior_timestamp = None
-    for line_number, line in enumerate(data.splitlines(), 1):
+    for line_number, line in enumerate(canonical_review_records(data), 1):
         if line_number > MAX_EVENTS:
             raise ValueError("Review journal exceeds maximum recorded events")
         if not line:
