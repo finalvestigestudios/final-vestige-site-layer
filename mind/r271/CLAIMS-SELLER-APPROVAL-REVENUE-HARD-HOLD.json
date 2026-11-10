@@ -1,0 +1,501 @@
+{
+  "schema": "fv-mind-r271-source-claim-and-conversion-custody-v1",
+  "date": "2026-11-10",
+  "source_check_date": "2026-11-10",
+  "status": "UNPUBLISHED",
+  "commercial_decision": "HARD_HOLD",
+  "article": "mind/r271/THE-VOICE-YOU-HEARD-WASNT-ON-THE-RECORDING-UNPUBLISHED.md",
+  "sources": [
+    {
+      "id": "S01",
+      "type": "primary_study",
+      "title": "McGurk and MacDonald 1976",
+      "url": "https://www.nature.com/articles/264746a0"
+    },
+    {
+      "id": "S02",
+      "type": "primary_study",
+      "title": "Magnotti and Beauchamp 2017",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/28207734/"
+    },
+    {
+      "id": "S03",
+      "type": "primary_study",
+      "title": "Brown et al 2018",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6231656/"
+    },
+    {
+      "id": "S04",
+      "type": "primary_study",
+      "title": "Hirst et al 2018",
+      "url": "https://www.nature.com/articles/s41598-018-30798-8"
+    },
+    {
+      "id": "S05",
+      "type": "primary_study",
+      "title": "Luttke et al 2018",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29657743/"
+    },
+    {
+      "id": "S06",
+      "type": "regulator",
+      "title": "FTC endorsement FAQ",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking"
+    },
+    {
+      "id": "S07",
+      "type": "regulator",
+      "title": "FTC health product claims guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+    },
+    {
+      "id": "S08",
+      "type": "seller_catalog",
+      "title": "Official Inspire3",
+      "url": "https://inspire3.com/"
+    },
+    {
+      "id": "S09",
+      "type": "seller_offer",
+      "title": "Zen12 standard Premium",
+      "url": "https://zen12.com/hnp"
+    },
+    {
+      "id": "S10",
+      "type": "seller_offer",
+      "title": "Zen12 distinct promotion",
+      "url": "https://zen12.com/secret/"
+    },
+    {
+      "id": "S11",
+      "type": "seller_offer",
+      "title": "Total Focus exact",
+      "url": "https://hypnosislive.com/mental-skills/total-focus"
+    },
+    {
+      "id": "S12",
+      "type": "first_party_live",
+      "title": "Puységur historical record",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+    },
+    {
+      "id": "S13",
+      "type": "first_party_live",
+      "title": "Free Focus Fieldbook",
+      "url": "https://finalvestige.com/focus/"
+    },
+    {
+      "id": "S14",
+      "type": "first_party_live",
+      "title": "Change blindness investigation",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/"
+    },
+    {
+      "id": "S15",
+      "type": "first_party_live",
+      "title": "Mesmerism Franklin investigation",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "Auditory /ba/ + visual /ga/ can elicit perceived /da/",
+      "status": "supported_research",
+      "source_ids": [
+        "S01"
+      ],
+      "limitation": "Only some listeners and conditions"
+    },
+    {
+      "id": "C02",
+      "claim": "Original study controlled audio-only and congruent conditions",
+      "status": "supported_research",
+      "source_ids": [
+        "S01"
+      ],
+      "limitation": "Not a claim about all devices"
+    },
+    {
+      "id": "C03",
+      "claim": "Audiovisual speech can be modeled as causal inference",
+      "status": "supported_model_with_limits",
+      "source_ids": [
+        "S02"
+      ],
+      "limitation": "Model explanatory, not demonstrated biology"
+    },
+    {
+      "id": "C04",
+      "claim": "Individual McGurk fusion reports can range 0-100% in some studies",
+      "status": "supported_research",
+      "source_ids": [
+        "S03"
+      ],
+      "limitation": "Not individual prediction"
+    },
+    {
+      "id": "C05",
+      "claim": "Visual place-of-articulation information predicted susceptibility in studied sample",
+      "status": "supported_research",
+      "source_ids": [
+        "S03"
+      ],
+      "limitation": "Correlational and limited"
+    },
+    {
+      "id": "C06",
+      "claim": "Attentional control score reliably predicts McGurk susceptibility",
+      "status": "contradicted_in_tested_measures",
+      "source_ids": [
+        "S03"
+      ],
+      "limitation": "Do not claim"
+    },
+    {
+      "id": "C07",
+      "claim": "Audiovisual noise/blur conditions affect fusion rates",
+      "status": "supported_research",
+      "source_ids": [
+        "S04"
+      ],
+      "limitation": "Stimulus dependent"
+    },
+    {
+      "id": "C08",
+      "claim": "Some short-term speech recalibration can follow illusion exposure",
+      "status": "supported_research",
+      "source_ids": [
+        "S05"
+      ],
+      "limitation": "No transfer to broad self-improvement"
+    },
+    {
+      "id": "C09",
+      "claim": "McGurk illusion proves commercial audio brainwave efficacy",
+      "status": "unsupported_do_not_claim",
+      "source_ids": [
+        "S01",
+        "S02",
+        "S07"
+      ],
+      "limitation": "No product-specific trials"
+    },
+    {
+      "id": "C10",
+      "claim": "Zen12 offers Premium 12 levels and 48 MP3s",
+      "status": "seller_description_only",
+      "source_ids": [
+        "S09"
+      ],
+      "limitation": "Seller inventory not independently purchased"
+    },
+    {
+      "id": "C11",
+      "claim": "Zen12 standard and promotion are the same checkout offer",
+      "status": "false_not_verified",
+      "source_ids": [
+        "S09",
+        "S10"
+      ],
+      "limitation": "Different marketing propositions"
+    },
+    {
+      "id": "C12",
+      "claim": "Zen12 reliably delivers an hour of meditation in twelve minutes",
+      "status": "seller_unsupported_do_not_claim",
+      "source_ids": [
+        "S08",
+        "S09",
+        "S07"
+      ],
+      "limitation": "No comparable operational measure established"
+    },
+    {
+      "id": "C13",
+      "claim": "Zen12 can treat anxiety/depression or prevent disease",
+      "status": "unsupported_do_not_claim",
+      "source_ids": [
+        "S07"
+      ],
+      "limitation": "No clinical product evidence"
+    },
+    {
+      "id": "C14",
+      "claim": "Brainwave Shots improves work performance",
+      "status": "seller_unsupported_do_not_claim",
+      "source_ids": [
+        "S08",
+        "S07"
+      ],
+      "limitation": "Vendor says enhance performance; not independent proof"
+    },
+    {
+      "id": "C15",
+      "claim": "Total Focus exists as branded recording",
+      "status": "seller_description_only",
+      "source_ids": [
+        "S11"
+      ],
+      "limitation": "Do not infer effectiveness"
+    },
+    {
+      "id": "C16",
+      "claim": "Existing Focus Fieldbook is published and offered free",
+      "status": "verified_first_party_page",
+      "source_ids": [
+        "S13"
+      ],
+      "limitation": "Fulfillment/provider-confirmed lead still unverified"
+    },
+    {
+      "id": "C17",
+      "claim": "Historical Puységur accounts prove animal magnetism",
+      "status": "unsupported_do_not_claim",
+      "source_ids": [
+        "S12"
+      ],
+      "limitation": "Historical testimony != mechanism"
+    },
+    {
+      "id": "C18",
+      "claim": "Affiliate disclosures should be clear and adjacent to recommendation",
+      "status": "regulatory_guidance",
+      "source_ids": [
+        "S06"
+      ],
+      "limitation": "Near-link future mandatory"
+    },
+    {
+      "id": "C19",
+      "claim": "Objective health claims need adequate competent reliable scientific evidence",
+      "status": "regulatory_guidance",
+      "source_ids": [
+        "S07"
+      ],
+      "limitation": "Product-specific basis not provided"
+    },
+    {
+      "id": "C20",
+      "claim": "Final Vestige is an approved Inspire3 affiliate with issued link",
+      "status": "not_verified_hard_hold",
+      "source_ids": [
+        "S08"
+      ],
+      "limitation": "Catalog cannot establish named publisher acceptance"
+    },
+    {
+      "id": "C21",
+      "claim": "Final Vestige earned a settled affiliate sale",
+      "status": "not_verified_hard_hold",
+      "source_ids": [],
+      "limitation": "Clicks and promotional emails prove no sale"
+    },
+    {
+      "id": "C22",
+      "claim": "The Zen12 coupon page shows an offer that is valid for all FV readers",
+      "status": "not_verified_hard_hold",
+      "source_ids": [
+        "S10"
+      ],
+      "limitation": "No authorized identity/cart"
+    },
+    {
+      "id": "C23",
+      "claim": "R268 A/B video treatment provides hosted play-ready 42s video",
+      "status": "false_static_only",
+      "source_ids": [],
+      "limitation": "Static poster/transcript; original film not hosted"
+    },
+    {
+      "id": "C24",
+      "claim": "Affiliate CTA events equal commission",
+      "status": "false_event_distinction",
+      "source_ids": [
+        "S06"
+      ],
+      "limitation": "Partner settlement necessary"
+    }
+  ],
+  "commercial_gates": [
+    {
+      "id": "named_inspire3_acceptance",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "issued_publisher_specific_earning_url",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "exact_zen12_offer_identity",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "current_authenticated_cart_total",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "refund_policy_scope_and_fulfillment",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "approved_web_promotion_channels",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "approved_email_promotion_channels",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "approved_creatives_or_swipe_terms",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "product_specific_claim_substantiation",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "affiliate_attribution_permissions",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "ftc_adjacent_disclosure_qa",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "signed_out_mobile_browser_qa",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "word_press_sanitization_qa",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "founder_commercial_release_approval",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "independent_settled_commission_report",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "verified_product_sales_and_refunds_reconciliation",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    }
+  ],
+  "offers": [
+    {
+      "id": "zen12_premium",
+      "merchant": "Inspire3 / Zen12",
+      "landing": "https://zen12.com/hnp",
+      "distinct_promo": "https://zen12.com/secret/",
+      "product_description": "Seller advertises 12 levels, 48 MP3 recordings, guides, and support",
+      "product_specific_efficacy": "NOT_SUBSTANTIATED",
+      "publisher_approval": "NOT_VERIFIED",
+      "earning_url": null,
+      "approved_channels": [],
+      "checkout_total": null,
+      "refund_terms_customer_accepted": null,
+      "settled_commissions": null,
+      "decision": "HARD_HOLD"
+    },
+    {
+      "id": "owned_paid_mind_sku",
+      "merchant": "Final Vestige",
+      "product_id": null,
+      "rights_cleared": false,
+      "checkout_verified": false,
+      "fulfillment_verified": false,
+      "price": null,
+      "refund_terms": null,
+      "decision": "HARD_HOLD"
+    },
+    {
+      "id": "focus_fieldbook",
+      "merchant": "Final Vestige",
+      "landing": "https://finalvestige.com/focus/",
+      "type": "FREE_EXISTING_JETPACK_FUNNEL",
+      "paid_order": false,
+      "confirmed_lead_tracking": "NOT_VERIFIED",
+      "decision": "FREE_FIRST_PARTY_CTA_ONLY"
+    }
+  ],
+  "measurement_contract": {
+    "events": [
+      "qualified_human_session",
+      "landing_visit",
+      "relevant_cta_click",
+      "confirmed_jetpack_lead",
+      "affiliate_outbound_click",
+      "merchant_confirmed_paid_order",
+      "independent_settled_affiliate_commission",
+      "refund",
+      "fee"
+    ],
+    "no_pii": true,
+    "no_new_tracking_script": true,
+    "no_client_identity_stitching": true,
+    "attribution_keys": [
+      "utm_source",
+      "utm_medium",
+      "utm_campaign",
+      "utm_content_asset_id"
+    ],
+    "asset_ids": "NOT_AUTHENTICATED",
+    "metric": "1000 * realized_net_revenue / qualified_human_sessions",
+    "metric_status": "NOT_COMPUTABLE",
+    "cohorts_days": [
+      7,
+      30
+    ],
+    "do_not_count_as_paid": [
+      "outbound_click",
+      "checkout_start",
+      "email_subscribe"
+    ]
+  },
+  "release": {
+    "cms_write": false,
+    "merchant_link": false,
+    "site_nav_write": false,
+    "new_jetpack_form": false,
+    "blog_publish": false,
+    "video_autoplay": false,
+    "script_injection": false,
+    "release_approved": false,
+    "source_tests_only": true
+  },
+  "verification_scope": "Public seller descriptions and WordPress resources reviewed; partner acceptance, exact issued affiliate terms, signed-out browser QA, merchant transactions and paid fallback NOT verified. No merchant click."
+}
