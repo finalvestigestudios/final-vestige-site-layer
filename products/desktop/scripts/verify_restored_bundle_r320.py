@@ -62,6 +62,7 @@ def _read_member(folder: Path, directory_id, filename: str, *, materialize=False
     No user-controlled filename reaches this helper: callers select constants.
     Rechecking the path AFTER closing is a best-effort TOCTOU detection, not an
     OS-level lock against a hostile simultaneous writer.
+    Nonblocking descriptor opening prevents a raced POSIX FIFO hang.
     """
     if _folder_identity(folder) != directory_id:
         raise ValueError(ERROR)
@@ -70,7 +71,12 @@ def _read_member(folder: Path, directory_id, filename: str, *, materialize=False
     if (not stat.S_ISREG(before.st_mode) or before.st_ino == 0 or
             before.st_nlink != 1 or not 0 <= before.st_size <= MAX_BYTES[filename]):
         raise ValueError(ERROR)
-    flags = os.O_RDONLY | getattr(os, "O_BINARY", 0) | getattr(os, "O_NOFOLLOW", 0)
+    # lstat() and os.open() are separate operations: a concurrent writer can
+    # replace a checked regular member with a FIFO. O_NONBLOCK prevents a
+    # POSIX FIFO reader from hanging; fstat identity/type custody still
+    # rejects the replacement. Windows native acceptance remains required.
+    flags = (os.O_RDONLY | getattr(os, "O_BINARY", 0) |
+             getattr(os, "O_NOFOLLOW", 0) | getattr(os, "O_NONBLOCK", 0))
     fd = os.open(path, flags)
     try:
         opened = os.fstat(fd)
