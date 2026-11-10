@@ -10,7 +10,7 @@ from pathlib import Path
 HOLD = "DRAFT_HARD_HOLD"
 INVALID = "INVALID_HARD_HOLD"
 SOURCE_GATE = "tools/r272_crosswalk_snapshot_hold.py"
-SOURCE_GATE_BLOB = "97cacd40b2a4324696f746798b472251a42a53b6"
+SOURCE_GATE_BLOB = "c85a958ef9e69951b39ca036d85237c5f39a1772"
 DOCKET_PATH = "audits/r273_shared_source_review_docket_UNAPPROVED.json"
 SCHEMA = "fv-r273-source-review-docket-v1"
 
