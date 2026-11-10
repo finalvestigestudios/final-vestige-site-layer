@@ -58,7 +58,7 @@ ok(p>=0&&d>p&&d-p<250,'immediately adjacent commission disclosure');
 ok(held.includes('may earn a commission'),'plain earning disclosure');
 ok(!/href="https:\/\/(?:affiliates\.inspire3\.com|payhip\.com)/.test(html),'no earning link');
 ok(html.includes("Does the merchant's free audio also join a mailing list?"),'free audio FAQ');
-for(const phrase of ['Zen12 free-audio invitation',"seller's newsletter",'There are therefore **four distinct decisions**','No FV customer emails may be forwarded'])
+for(const phrase of ['Zen12 separately advertises',"seller's newsletter",'There are therefore **four distinct decisions**','No FV customer emails may be forwarded'])
 ok(guide.includes(phrase),'canonical guide update '+phrase);
 for(const phrase of ['The Free Track and the Second Permission','Four doors that must stay separate',
 'The history problem','The three-question trial','A transparent offer','https://zen12.com/welcome',
