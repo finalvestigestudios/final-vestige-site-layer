@@ -1,0 +1,68 @@
+{
+  "record": "Dispatch R250 non-sending evidence",
+  "collected_utc": "2026-11-10T06:36:55Z",
+  "master_issue": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/174",
+  "canonical_campaign_sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "source_pr": 175,
+  "parent_pr": 1849,
+  "source_of_truth_status": {
+    "wordpress_site_id": 256784396,
+    "newsletter_enabled": true,
+    "new_post_auto_email_enabled": false,
+    "email_format": "full",
+    "welcome_fieldbook_configured": true,
+    "welcome_fieldbook_received": null,
+    "newsletter_subscriber_total_counter": 3,
+    "newsletter_confirmed_counter": 3,
+    "unconfirmed_request_counter": 2,
+    "suppressed_counter": 0,
+    "email_eligible_recipient_count": null,
+    "these_counts_are_additive": false,
+    "recent_posts": "five shown, all never_sent_opted_out",
+    "rendered_unsubscribe_verified": false,
+    "valid_final_vestige_postal_footer_verified": false,
+    "actual_received_email_preview_verified": false
+  },
+  "first_mile_discrepancy": {
+    "wordpress_api_rendered_dispatch": "self-page anchor rather than an email field in returned Subscribe block",
+    "wordpress_api_rendered_focus": "self-page anchor rather than an email field in returned Subscribe block",
+    "public_focus_html_text_extraction": "includes an email-address input and Send me the fieldbook button; source is public fetched page, not authenticated interactive browser",
+    "public_focus_source": "https://finalvestige.com/focus/",
+    "public_dispatch_interactive_verification": null,
+    "focus_signup_operational": null,
+    "dispatch_signup_operational": null,
+    "double_opt_in_delivered": null,
+    "interpretation": "Different HTML extraction surfaces are not equivalent to real browser functionality; require anonymous non-submitting viewport and keyboard proof."
+  },
+  "commercial_proof": {
+    "named_inspire3_partner_approved": null,
+    "inspire3_email_channel_authorized": null,
+    "approved_earning_link": null,
+    "verified_exact_checkout_and_refund_terms": null,
+    "approved_live_zen12_warmup_guide": null,
+    "approved_live_hypnosis_live_warmup_guide": null,
+    "historical_editorial_issues": 4,
+    "commercial_review_pending_issues": 2,
+    "emails_authorized_to_send": 0,
+    "paid_sales_authenticated": null,
+    "net_revenue_per_1000_qualified_sessions": null
+  },
+  "methods": {
+    "original_python_suite": "six semantic checks executed on original committed source in isolated V8; native Python not executed this run",
+    "new_probe": "source-controlled read-only Playwright harness CREATED, not run in a real browser",
+    "new_unit_tests": "exact committed-source V8 shim execution; not native Node or hosted CI",
+    "webpage": "public reader extraction, not a click-through or DOM hydration proof"
+  },
+  "references": [
+    "https://finalvestige.com/editorial-standards/",
+    "https://wordpress.com/support/wordpress-editor/blocks/subscribe-block/",
+    "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business",
+    "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/129",
+    "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+    "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820"
+  ],
+  "release": "HOLD_UNSENT_AND_HOLD_MERCHANT",
+  "production_changes": false,
+  "subscriber_contacted": false,
+  "email_test_sent": false
+}

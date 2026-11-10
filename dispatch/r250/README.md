@@ -1,0 +1,46 @@
+# Final Vestige Dispatch — R250: subscriber entry, evidence precedence and conversion-first QA
+**DRAFT ONLY / NO EMAIL / NO PUBLISH / NO REAL SUBSCRIBER TEST / NO AFFILIATE ACTIVATION.**
+
+Origin: original six-issue campaign [PR #175](https://github.com/finalvestigestudios/final-vestige-site-layer/pull/175) at `d57ccdba3aee8f065e143e101c2945f4f3d01647`; owner [#174](https://github.com/finalvestigestudios/final-vestige-site-layer/issues/174); merchant and guide owner [#171](https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171); consent owner [#129](https://github.com/finalvestigestudios/final-vestige-site-layer/issues/129); revenue program [#820](https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820). Stacked on prior draft [#1849](https://github.com/finalvestigestudios/final-vestige-site-layer/pull/1849) at `8951cbd992b89cb38c4a46378beab1c0c6568b25`. Existing readiness PR #201 and frozen homepage #49 are NOT replaced.
+
+## New material finding: competing surfaces do NOT establish signup success
+The authenticated WordPress page-content API for **published** /focus/ (1579) and /dispatch/ (523) yields a self-page Subscribe anchor and no `<input type=email>` within that returned block. However a **public reader HTML/text extraction** of https://finalvestige.com/focus/ on 2026-11-10 exposes `[Input: Your email address]`, the **Send me the fieldbook** button, fieldbook download content and affiliate-expectations disclosure. These are two *different observation surfaces*. The public extractor is evidence that some email-input markup is present in a rendered representation, so **R249's API-only risk should NOT be escalated to “signup broken.”** Neither source demonstrates input visibility, tab access, valid email submission, double opt-in or welcome receipt. No synthetic subscriber was created.
+
+Official WordPress Subscribe block guidance, last reviewed October 5, 2026, describes email-input and button behavior: https://wordpress.com/support/wordpress-editor/blocks/subscribe-block/ . The evidence precedence for signup is: browser **visual/keyboard form presence** (read-only, allowable now) < **independently authorized provider-confirmation event** (not yet approved) < **actual delivered welcome** (not yet proven). These are distinct gates; no browser proof can manufacture a `confirmed_signup`.
+
+## New review package
+- `browser_evidence_gate.cjs`: pure, fail-closed four-slot verdict on anonymous /focus/ and /dispatch/ at 390/1440 pixels. All outcomes preserve `subscription_verified:false` and `release_authorized:false`.
+- `read_only_browser_probe.cjs`: **optional** Node + already-installed Playwright script for owner Claude/Site QA. Fresh empty cookie jar, no address typed, no submitting, only GET/HEAD traffic allowed; any non-GET request is aborted. A safe *non-form* opener may be clicked once to reveal a popup; submit controls are NEVER clicked. Captures aggregate counts, keyboard-focus check, page errors and anonymous screenshots. No screenshot, account identity, email field value, raw URL token or subscriber detail should be committed.
+- `test_r250.cjs`: 22 adversarial cases plus synthetic four-viewport matrix tests; run `node --test dispatch/r250/test_r250.cjs` when native Node available. No external test dependencies.
+- `EVIDENCE_SNAPSHOT.json`: source-based configuration, mismatch classification, all unknowns and commercial release holds.
+
+**Browser execution is NOT attested in this PR.** Run only in the existing authorized QA runtime when Playwright is already available:
+```bash
+FV_PROBE_OUTDIR=/tmp/fv-dispatch-browser-r250 node dispatch/r250/read_only_browser_probe.cjs
+node --test dispatch/r250/test_r250.cjs
+```
+The script does not install Playwright or launch a service. If unavailable, report `NOT_EXECUTED`. `VISUAL_ONLY_COMPLETE` would establish **only** that an anonymous user can visually reach a labeled signup field and action control; it **cannot** prove confirmation or receipts. Screenshots are for private reviewer access. Redact any incidental content before adding aggregate QA to GitHub.
+
+## Merchant, compliance and attribution gates — one paid offer at a time
+Current proposed offers are Zen12 (Issue 03) and Hypnosis Live Total Focus (Issue 05); the other four of six stay editorial. Published /focus/ is a **free lead offer**, NOT a vetted live Zen12 buyer guide. Mind owns account-specific permission, merchant sales-creative rights, exact earning URL, actual checkout, refund and accurate benefit claims. Public seller marketing and apparent seller price variants cannot establish acceptance, rights or paid conversions. No subscriber email may contain an active affiliate URL until all explicit conditions are met.
+
+The actual Jetpack setting snapshot as of 2026-11-10 06:36 UTC is: newsletter enabled; automatic new-post send **OFF**; full email mode; welcome copy contains 52-page PDF; five sampled posts never sent; Jetpack total3/confirmed3/unconfirmed2/suppressed0. The counters are not additive and are **not** the number of email-eligible recipients. Read-only provider aggregate **Email subscription = Subscribed** and double-opt-in evidence are required. No PII or subscriber export allowed. Existing confirmation-message evidence is **not** received Fieldbook welcome proof.
+
+The sender's business postal address, rendered **functional** unsubscribe, subject/preheader in the **actual** received email, partner EMAIL-channel permission and subscriber channel eligibility remain unverified. FTC guidance: https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business . WordPress's native *visual preview* cannot prove a delivered footer. No native WordPress draft, per-post toggle, test message, scheduled post or newsletter setting change is authorized.
+
+## Editorial/editorial-commercial audience continuity
+The page [Editorial Standards](https://finalvestige.com/editorial-standards/) requires close-to-source documentation, visible disagreements, correction notes and clear commercial relationships. /focus/ already describes occasional commission recommendations; /dispatch/ emphasizes historical investigations and the Fieldbook and should receive equivalent **proposed** expectation language only after founder review. Preserve the history/investigation identity; do not silently substitute the optional R240–R248 copy or change the four editorial/two proposed offer placements.
+
+### Conversion-first next work, prioritized (no invented data)
+| Offer | Funnel step | Blocker | Change / experiment | Pass/fail evidence | Owner |
+|---|---|---|---|---|---|
+| Fieldbook (free) | public Focus or Dispatch visitor → signup screen | REST block and public extractor disagree | Execute read-only four-slot browser probe; assess accessible labels, action control and keyboard reach | Real private anonymous screenshot, four JSON records; currently **NOT EXECUTED** | Claude / Focus / Site QA |
+| Fieldbook | signup → eligible confirmed lead → welcome | Jetpack counts not recipient status; no received Fieldbook proof | Read-only provider aggregate status; await separately authorized delivery/confirmation proof | **UNKNOWN** | Focus / Claude |
+| Zen12 | consented subscriber → optional unbiased buyer guide | Merchant EMAIL permission, checkout identity and live approved guide missing | Named merchant-account rights confirmation and source-checked offer page; *no emails or links* | **HOLD_MERCHANT** | Mind #171 |
+| Hypnosis Live | edition05 → relevant approved guide | Same permissions, price/refund and efficacy evidence missing | Independent product gate if Issue05 later considered | **HOLD_MERCHANT** | Mind #171 |
+| Qualified Grok visitor | source-tagged landing → confirmed lead → paid conversion | Real asset_id and source-authenticated buyer records missing | Align `utm_source=<actual_platform>&utm_medium=organic_social&utm_campaign=<topic_pilot>&utm_content=<actual_asset_id>` with TASK-008 and existing Claude instrumentation, **no duplicate scripts** | **NOT COMPUTABLE** | Grok/Praxxis/Claude |
+| Verified order | settled commission → realized net revenue | No authenticated transactions, fees, refunds, human session denominator | Compare 7/30-day cohorts only with independent records; report unknown | **NOT COMPUTABLE**, no claims of paid orders | Commerce / Praxxis |
+
+**Confirmed signup measurement contract**: a single deduped `confirmed_signup` per provider-signed/verified opt-in transition, keyed privately by provider subscription identifier (never in URLs or repo), tagged only with a privacy-safe source campaign/asset attribution if available. A link click, download, self-entered address, popup-open or “confirmed” dashboard count alone is NOT this event. **Revenue KPI** = 1000 × independently verified settled net revenue / independently verified qualified human sessions, with fees/refunds and 7/30-day cohorts; if either is absent return **NOT COMPUTABLE**, never a fabricated zero.
+
+No files under canonical `dispatch/campaign-2026-mind/` modified. No WordPress writes, screenshots of subscribers, data exports, sends, tests to inboxes, paid calls, merchant clicks with earning links, analytics installations, social posts or spending.
