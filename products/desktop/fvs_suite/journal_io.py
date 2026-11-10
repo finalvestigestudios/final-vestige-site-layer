@@ -14,7 +14,7 @@ import stat
 from typing import Callable
 
 from .csv_snapshot import _same_path_descriptor_signature
-from .journal_write_receipt import require_exact_append_readback
+from .journal_write_receipt import require_exact_append_readback, digest_pinned_prefix
 
 
 def _redact_os_errors(message: str):
@@ -166,6 +166,12 @@ def append_verified_event(path: str | Path, data: bytes, limit: int,
             raise ValueError("Review journal changed while validating append")
         if not _unchanged(path_baseline, _same_path(target, verified, "Review journal")):
             raise ValueError("Review journal path changed before append")
+        # Snapshot the exact prior journal bytes from this pinned descriptor.
+        # Byte counts alone cannot detect corruption of earlier review events
+        # during the subsequent write of the new, correctly appended event.
+        prefix_witness = digest_pinned_prefix(descriptor, verified.st_size)
+        if not _unchanged(verified, os.fstat(descriptor)):
+            raise ValueError("Review journal changed while binding prior events")
         offset = 0
         while offset < len(data):
             count = os.write(descriptor, data[offset:])
@@ -179,12 +185,17 @@ def append_verified_event(path: str | Path, data: bytes, limit: int,
         if ending.st_size != verified.st_size + len(data):
             raise ValueError("Review journal size changed during append")
         require_exact_append_readback(descriptor, verified.st_size, data)
+        if digest_pinned_prefix(descriptor, verified.st_size) != prefix_witness:
+            raise ValueError("Review journal previous events changed during append")
+        after_witness = os.fstat(descriptor)
+        if not _unchanged(ending, after_witness):
+            raise ValueError("Review journal changed after append readback")
         # A pathname can still refer to the same inode after a rival writer
         # grows or rewrites it between final fstat and lstat. Compare the
         # observed pathname metadata with the pinned descriptor snapshot;
         # Windows ctime may legitimately differ across those API views.
-        final_path = _same_path(target, ending, "Review journal")
-        if not _same_path_descriptor_signature(final_path, ending):
+        final_path = _same_path(target, after_witness, "Review journal")
+        if not _same_path_descriptor_signature(final_path, after_witness):
             raise ValueError("Review journal path changed during append")
     finally:
         os.close(descriptor)
