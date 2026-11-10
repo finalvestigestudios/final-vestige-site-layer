@@ -47,7 +47,7 @@ function validateBundle(b) {
   for(const m of requiredHtml)if(!b.hub.includes(m))err("hub_required:"+m);
   if(/<\s*(?:script|form|iframe|video|audio|source)\b/i.test(b.hub))err("unauthorized_form_script_media");
   if(/\bonclick\s*=|\bonload\s*=|javascript:|data:text\/html|<\s*meta[^>]*http-equiv\s*=\s*["']?refresh/i.test(b.hub))err("injected_navigation");
-  if(/\bautoplay\b|\bplaysinline\b/.test(b.hub))err("unauthorized_autoplay");
+  if(/<[^>]+\s(?:autoplay|playsinline)(?:\s|=|>)/i.test(b.hub))err("unauthorized_autoplay");
   if(/<\s*button\b(?![^>]*\bdisabled\b)[^>]*>/i.test(b.hub))err("enabled_button");
   const block=b.hub.match(/<div class="blocked"[^>]*>([\s\S]*?)<\/div>/i)?.[1]||"";
   if(!block.includes("disabled aria-disabled=\"true\"")||!block.includes("may earn a commission")||!block.includes("No earning link is active"))err("adjacent_disclosure_and_disabled");
