@@ -146,7 +146,7 @@ R263_WALLET_PRIVACY_BLOB = 'd07b2e504c0c5cf0c4d1e900e81d79740bb587ea'
 # problem witnessed by R263. R265 binds each warning to its own direct sibling
 # face; structure still cannot establish actual print/privacy safety or approval.
 R264_MINIMAL_WALLET_PATH = 'tools/r264_minimal_wallet_cutout_candidate_hold.py'
-R264_MINIMAL_WALLET_BLOB = '5a3cd3ac442b72e48aa8a1a8f9d5d0ebe5955eae'
+R264_MINIMAL_WALLET_BLOB = 'f14976d60436028fb6c7634380c13b75af3aee9a'
 R264_MINIMAL_HTML_PATH = 'audits/r264_minimal_wallet_card_REVIEW_ONLY.html'
 R264_MINIMAL_HTML_BLOB = '40782ef142edfd348fec53eb6d8a0dc673244dea'
 # R258 binds the complete R254/R257 original source-claim partition to a
