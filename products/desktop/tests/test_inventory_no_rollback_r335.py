@@ -133,6 +133,14 @@ class NoAutomaticManifestRollbackR335(unittest.TestCase):
         real_link = os.link
         external = self.root.parent / "external.txt"
         external.write_text("untouched", encoding="utf-8")
+        probe = self.root.parent / "symlink-probe"
+        try:
+            probe.symlink_to(external)
+        except (OSError, NotImplementedError):
+            self.skipTest("Windows environment cannot create local symlinks")
+        finally:
+            if probe.is_symlink():
+                probe.unlink()
         def link_then_symlink(stage, output):
             real_link(stage, output)
             os.unlink(output)
