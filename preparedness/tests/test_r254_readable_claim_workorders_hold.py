@@ -11,7 +11,7 @@ spec.loader.exec_module(r)
 
 
 def fixture():
-    ids = ['cdc-find-clean-water', 'start-ready-plan'] + [f'shared-{n:02d}' for n in range(54)]
+    ids = ['start-ready-plan'] + [f'shared-{n:02d}' for n in range(55)]
     url_of_id = {sid: f'https://evidence.example/group-{i // 2 if i < 48 else i - 24:02d}'
                  for i, sid in enumerate(ids)}
     url_map = {f'https://evidence.example/group-{i:02d}': [] for i in range(32)}
@@ -21,13 +21,13 @@ def fixture():
                         for ordinal in range(1, 63 if n == 35 else 58)]
     held = {(7, 30), (7, 48), (20, 55)}
     chosen = set(global_citations[:559]) | held
-    # fixed disputed citations are within the initial 559 for Article7, so
-    # fill until precisely 562, preserving all 3 original held positions.
+    # Two CDC citations fall OUTSIDE the shared groups: 564 selected contexts
+    # comprise 562 shared-group matches plus two independently held contexts.
     for point in global_citations:
-        if len(chosen) >= 562:
+        if len(chosen) >= 564:
             break
         chosen.add(point)
-    assert len(chosen) == 562
+    assert len(chosen) == 564
     articles, assigned, seq = [], {url: [] for url in url_map}, 0
     for n in range(1, 36):
         rows = []
@@ -35,7 +35,7 @@ def fixture():
             if (n, ordinal) in chosen:
                 sid = ('cdc-find-clean-water' if n == 7 and ordinal in (30, 48)
                        else 'start-ready-plan' if n == 20 and ordinal == 55
-                       else ids[2 + (seq % (len(ids) - 2))])
+                       else ids[1 + (seq % (len(ids) - 1))])
                 seq += 1
             else:
                 sid = 'other-source'
@@ -112,8 +112,13 @@ class TestWorkorders(unittest.TestCase):
         got = [(w['article_n'], w['citation_ordinal'], w['source_id'])
                for g in out['review_queue'] for w in g['workorders']
                if w['disputed_original_citation']]
+        external = out['outside_shared_disputed_workorders']
+        got.extend((w['article_n'], w['citation_ordinal'], w['source_id'])
+                   for w in external)
         self.assertEqual(sorted(got), sorted(r.HELD))
-        self.assertEqual(len(got), 3)
+        self.assertEqual(len(external), 2)
+        self.assertEqual(out['shared_disputed_claims'], 1)
+        self.assertEqual(out['outside_shared_disputed_claims'], 2)
 
     def test_reader_contexts_preserved_and_non_approved(self):
         out = run()
@@ -137,6 +142,23 @@ class TestWorkorders(unittest.TestCase):
         for bad in (None, [], 'unknown'):
             with self.subTest(bad=bad), self.assertRaisesRegex(ValueError, 'R254 HARD HOLD'):
                 r.audit_readable_workorders(bad, {})
+
+    def test_cdc_outside_group_receipt_preserves_authored_words(self):
+        out = run()
+        self.assertEqual(sum(g['workorder_count'] for g in out['review_queue']), 562)
+        self.assertEqual(len(out['outside_shared_disputed_workorders']), 2)
+        for w in out['outside_shared_disputed_workorders']:
+            self.assertEqual(w['article_n'], 7)
+            self.assertEqual(w['source_id'], 'cdc-find-clean-water')
+            self.assertEqual(w['context_sha256'], r.sha(w['authored_context_excerpt']))
+            self.assertFalse(w['safety_approved'])
+
+    def test_unapproved_outside_source_context_not_merged(self):
+        out = run()
+        inside = {s for g in out['review_queue'] for s in g['source_ids']}
+        self.assertNotIn('cdc-find-clean-water', inside)
+        self.assertIn('start-ready-plan', inside)
+        self.assertEqual(out['other_citation_occurrences_still_unreviewed'], 1438)
 
 
 def mutant(name, change, fix_join=True, fix_claim_index=None):
