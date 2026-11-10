@@ -28,4 +28,4 @@ for (const [id, n] of [["03",3],["05",5]]) {
 }
 test("manifest four editorial two commercial", () => assert.equal(manifest.issues.filter(x=>x.kind==="editorial").length,4));
 test("manifest no activated links", () => assert.ok(manifest.issues.every(x=>x.merchant_affiliate_url===null)));
-console.log("R261 OFFLINE NATIVE QA "+total+"/"+total+" PASSED. NOT EMAIL DELIVERY OR MERCHANT AUTHORIZATION.");
+console.log("R261 OFFLINE QA "+total+"/"+total+" PASSED. NOT EMAIL DELIVERY OR MERCHANT AUTHORIZATION.");
