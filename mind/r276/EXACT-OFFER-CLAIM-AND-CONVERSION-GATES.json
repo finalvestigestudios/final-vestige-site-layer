@@ -1,0 +1,518 @@
+{
+  "schema": "fv-mind-r276-zen12-evidence-commercial-hold-v1",
+  "as_of": "2026-11-10",
+  "release": "DRAFT_HARD_HOLD",
+  "public_activation": false,
+  "source_scope": "Seller official page observations and regulator/primary research; no checkout or product use.",
+  "price_data_type": "dated_public_seller_observation_not_authenticated_cart",
+  "primary_intent": "buyer seeking structured 12-minute meditation audio rather than proven clinical benefit",
+  "exact_offer": "Zen12 Premium STANDARD only, not /secret promo",
+  "sources": [
+    {
+      "id": "S01",
+      "type": "official_seller",
+      "url": "https://inspire3.com/"
+    },
+    {
+      "id": "S02",
+      "type": "official_seller_exact_offer",
+      "url": "https://zen12.com/hnp"
+    },
+    {
+      "id": "S03",
+      "type": "official_seller_distinct_promo",
+      "url": "https://zen12.com/secret/"
+    },
+    {
+      "id": "S04",
+      "type": "official_seller_exact_offer",
+      "url": "https://hypnosislive.com/mental-skills/total-focus"
+    },
+    {
+      "id": "S05",
+      "type": "official_seller_catalog",
+      "url": "https://brainwaveshots.com/"
+    },
+    {
+      "id": "S06",
+      "type": "systematic_review",
+      "url": "https://doi.org/10.1371/journal.pone.0286023"
+    },
+    {
+      "id": "S07",
+      "type": "systematic_review",
+      "url": "https://doi.org/10.1016/j.ijpsycho.2024.112328"
+    },
+    {
+      "id": "S08",
+      "type": "regulator",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking"
+    },
+    {
+      "id": "S09",
+      "type": "regulator",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+    },
+    {
+      "id": "S10",
+      "type": "published_fv",
+      "url": "https://finalvestige.com/focus/"
+    },
+    {
+      "id": "S11",
+      "type": "published_fv",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+    },
+    {
+      "id": "S12",
+      "type": "published_fv",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/"
+    },
+    {
+      "id": "S13",
+      "type": "public_youtube_topical_match_not_affiliate",
+      "url": "https://www.youtube.com/watch?v=SV9m07PFTYk"
+    },
+    {
+      "id": "S14",
+      "type": "published_fv",
+      "url": "https://finalvestige.com/affiliate-disclosure/"
+    },
+    {
+      "id": "S15",
+      "type": "published_fv",
+      "url": "https://finalvestige.com/editorial-standards/"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "The official seller describes Zen12 Premium as twelve levels with 48 MP3 recordings.",
+      "status": "seller_feature_only",
+      "source_ids": [
+        "S02"
+      ],
+      "limitation": "Not independently inspected or used by FV."
+    },
+    {
+      "id": "C02",
+      "claim": "The official seller describes Zen12 Beginner and Advanced as distinct six-level 24-recording packages.",
+      "status": "seller_feature_only",
+      "source_ids": [
+        "S02"
+      ],
+      "limitation": "Not interchangeable with Premium."
+    },
+    {
+      "id": "C03",
+      "claim": "Zen12 standard Premium page displayed $87.99 on November 10 2026.",
+      "status": "dated_public_price_not_checkout",
+      "source_ids": [
+        "S02"
+      ],
+      "limitation": "Do not represent as guaranteed final cart price."
+    },
+    {
+      "id": "C04",
+      "claim": "A separate video/coupon page advertised a $37 offer.",
+      "status": "dated_public_price_not_checkout",
+      "source_ids": [
+        "S03"
+      ],
+      "limitation": "Other offer presentation and potential different conditions; no countdown urgency copied."
+    },
+    {
+      "id": "C05",
+      "claim": "The standard Zen12 page advertises a one-year refund window.",
+      "status": "seller_refund_claim_only",
+      "source_ids": [
+        "S02"
+      ],
+      "limitation": "No refunds tested or authenticated."
+    },
+    {
+      "id": "C06",
+      "claim": "12 minutes of Zen12 equals one hour of advanced meditation.",
+      "status": "unsupported_seller_efficacy",
+      "source_ids": [
+        "S02"
+      ],
+      "limitation": "No independently verified product-specific equivalence."
+    },
+    {
+      "id": "C07",
+      "claim": "Zen12 improves anxiety, stress, cognition or creativity in a given buyer.",
+      "status": "unsupported_seller_health_performance",
+      "source_ids": [
+        "S02",
+        "S09"
+      ],
+      "limitation": "Do not assert product-specific improvements."
+    },
+    {
+      "id": "C08",
+      "claim": "2023 systematic review considered 14 EEG entrainment studies with five supportive, eight contradictory and one mixed.",
+      "status": "supported_systematic_review",
+      "source_ids": [
+        "S06"
+      ],
+      "limitation": "Heterogeneous studies, not product test."
+    },
+    {
+      "id": "C09",
+      "claim": "2024 auditory stimulation systematic review considered 31 studies with mixed or insufficient evidence.",
+      "status": "supported_systematic_review",
+      "source_ids": [
+        "S07"
+      ],
+      "limitation": "Not a Zen12 head-to-head trial."
+    },
+    {
+      "id": "C10",
+      "claim": "Existence of binaural beat perception validates specific commercial brainwave outcomes.",
+      "status": "not_supported",
+      "source_ids": [
+        "S06",
+        "S07"
+      ],
+      "limitation": "Perception, EEG, behavior and clinical benefit are distinct."
+    },
+    {
+      "id": "C11",
+      "claim": "Hypnosis Live Total Focus listing describes a 33-minute 47MB individual download.",
+      "status": "seller_feature_only",
+      "source_ids": [
+        "S04"
+      ],
+      "limitation": "No firsthand testing."
+    },
+    {
+      "id": "C12",
+      "claim": "Total Focus's claimed brain reprogramming and 100% concentration are proven.",
+      "status": "unsupported_seller_efficacy",
+      "source_ids": [
+        "S04",
+        "S09"
+      ],
+      "limitation": "Do not echo seller guarantee."
+    },
+    {
+      "id": "C13",
+      "claim": "Hypnosis Live Total Focus displayed $24.44 and different bundle pricing November 10.",
+      "status": "dated_public_price_not_checkout",
+      "source_ids": [
+        "S04"
+      ],
+      "limitation": "Site rendering/merchant checkout may differ."
+    },
+    {
+      "id": "C14",
+      "claim": "Brainwave Shots official catalog includes Focus Shot.",
+      "status": "seller_catalog_feature_only",
+      "source_ids": [
+        "S05"
+      ],
+      "limitation": "No product-specific deliverable/checkout verified."
+    },
+    {
+      "id": "C15",
+      "claim": "Final Vestige affiliate publisher acceptance and earning URLs are authenticated.",
+      "status": "unverified_partner_authorization",
+      "source_ids": [
+        "S01"
+      ],
+      "limitation": "NO signed acceptance, terms or issued URL. HARD_HOLD."
+    },
+    {
+      "id": "C16",
+      "claim": "FTC guidance requires clear conspicuous disclosure of material financial relationships near earning recommendations.",
+      "status": "regulator_guidance",
+      "source_ids": [
+        "S08"
+      ],
+      "limitation": "Specific implementation still needs independent accessibility review."
+    },
+    {
+      "id": "C17",
+      "claim": "FTC requires competent and reliable evidence for objective health claims.",
+      "status": "regulator_guidance",
+      "source_ids": [
+        "S09"
+      ],
+      "limitation": "No Zen12 product-specific substantiation authenticated."
+    },
+    {
+      "id": "C18",
+      "claim": "Free FV Focus Fieldbook is an already published alternative via existing Jetpack funnel.",
+      "status": "published_fv_verified",
+      "source_ids": [
+        "S10"
+      ],
+      "limitation": "Not a clinical outcome guarantee. No duplicate form."
+    },
+    {
+      "id": "C19",
+      "claim": "R275 rubber-hand draft is editorially unique and ready for promotion.",
+      "status": "not_supported_duplicate_topic_hold",
+      "source_ids": [
+        "S11"
+      ],
+      "limitation": "Known R204/R218/R251 unpublished overlap, consolidate only."
+    },
+    {
+      "id": "C20",
+      "claim": "Public video SV9m07PFTYk guarantees attributable verified Grok Mind campaign traffic.",
+      "status": "unverified_creative_to_revenue",
+      "source_ids": [
+        "S13"
+      ],
+      "limitation": "Public topical match only; internal ID, CTA, rights, mobile path unknown."
+    },
+    {
+      "id": "C21",
+      "claim": "Outbound affiliate_click equals paid affiliate commission.",
+      "status": "prohibited_revenue_inference",
+      "source_ids": [
+        "S08"
+      ],
+      "limitation": "Only independently reported settled commission counts as sale."
+    },
+    {
+      "id": "C22",
+      "claim": "Legacy FV Payhip/Triage is authenticated as eligible paid Mind fallback.",
+      "status": "not_authenticated",
+      "source_ids": [
+        "S10"
+      ],
+      "limitation": "No rights-cleared paid Mind SKU/checkout/refund/fulfillment authenticated."
+    },
+    {
+      "id": "C23",
+      "claim": "Study of meditation generally validates the exact Zen12 commercial recordings.",
+      "status": "not_supported",
+      "source_ids": [
+        "S06",
+        "S07",
+        "S09"
+      ],
+      "limitation": "Product, population, comparisons and outcomes must align."
+    }
+  ],
+  "products": [
+    {
+      "id": "zen12_standard",
+      "offer_url": "https://zen12.com/hnp",
+      "eligible_for_earning_cta": false,
+      "partner_approval": "UNVERIFIED",
+      "issued_earning_url": null,
+      "public_price_note": "Seller displayed $87.99 on 2026-11-10; not final checkout",
+      "refund_note": "Seller says one year, not fulfilled-refund evidence"
+    },
+    {
+      "id": "zen12_distinct_promo",
+      "offer_url": "https://zen12.com/secret/",
+      "eligible_for_earning_cta": false,
+      "partner_approval": "UNVERIFIED",
+      "issued_earning_url": null,
+      "public_price_note": "Other offer displayed $37 with coupon, countdown NOT used",
+      "refund_note": "Not assumed identical to standard"
+    },
+    {
+      "id": "hypnosis_live_total_focus",
+      "offer_url": "https://hypnosislive.com/mental-skills/total-focus",
+      "eligible_for_earning_cta": false,
+      "partner_approval": "UNVERIFIED",
+      "issued_earning_url": null,
+      "public_price_note": "$24.44 public display with distinct bundle, not cart total",
+      "refund_note": "Seller 14-day policy on page; not independently fulfilled"
+    },
+    {
+      "id": "brainwave_shots_focus",
+      "offer_url": "https://brainwaveshots.com/",
+      "eligible_for_earning_cta": false,
+      "partner_approval": "UNVERIFIED",
+      "issued_earning_url": null,
+      "public_price_note": null,
+      "refund_note": "Unknown exact offer"
+    },
+    {
+      "id": "fv_paid_mind_owned",
+      "offer_url": null,
+      "eligible_for_earning_cta": false,
+      "sku": null,
+      "ownership_rights": null,
+      "checkout": null,
+      "refund_note": "UNKNOWN",
+      "fulfillment": null
+    }
+  ],
+  "commercial_gates": [
+    {
+      "id": "named_inspire3_acceptance",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "issued_publisher_specific_earning_url",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "exact_zen12_offer_identity",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "current_authenticated_cart_total",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "refund_policy_scope_and_fulfillment",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "approved_web_promotion_channels",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "approved_email_promotion_channels",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "approved_creatives_or_swipe_terms",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "product_specific_claim_substantiation",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "affiliate_attribution_permissions",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "ftc_adjacent_disclosure_qa",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "signed_out_mobile_browser_qa",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "word_press_sanitization_qa",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "founder_commercial_release_approval",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "independent_settled_commission_report",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "verified_product_sales_and_refunds_reconciliation",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    }
+  ],
+  "creative_matching": [
+    {
+      "video_topic": "Mesmer and Puységur",
+      "public_video_id": "SV9m07PFTYk",
+      "asset_id": null,
+      "verified_clickable_path": false,
+      "article": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "focus": "https://finalvestige.com/focus/",
+      "offer": "Zen12 optional only after eligibility"
+    },
+    {
+      "video_topic": "Change blindness",
+      "public_video_id": null,
+      "asset_id": null,
+      "verified_clickable_path": false,
+      "article": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "focus": "https://finalvestige.com/focus/",
+      "offer": "Zen12 optional only after eligibility"
+    },
+    {
+      "video_topic": "Attentional blink",
+      "public_video_id": null,
+      "asset_id": null,
+      "verified_clickable_path": false,
+      "article": null,
+      "focus": "https://finalvestige.com/focus/",
+      "offer": "No public article until approved"
+    }
+  ],
+  "attribution": {
+    "utm_source": "platform",
+    "utm_medium": "organic_social",
+    "utm_campaign": "mind_zen12_pilot_2026_11",
+    "utm_content": "GROK_VERIFIED_ASSET_ID_REQUIRED",
+    "campaign_landing": "PROPOSE_ONLY",
+    "article_to_resource_click": "PROPOSE_ONLY",
+    "confirmed_signup": "ONLY_PROVIDER_CONFIRMED",
+    "affiliate_click": "NEVER_A_SALE",
+    "merchant_paid_order": "MERCHANT_CONFIRMED_REQUIRED",
+    "settled_commission": "PARTNER_REPORTED_REQUIRED",
+    "refund_fee_reconcile": "REQUIRED",
+    "net_revenue_per_1000_qualified_human_sessions": null,
+    "cohorts": [
+      "7d",
+      "30d"
+    ],
+    "privacy": "no PII, do not add tracking scripts"
+  },
+  "AB": {
+    "A": "inherited R268 text-only guide",
+    "B": "inherited R268 same guide plus R257 42-second poster/transcript concept",
+    "hosted_video_playback": false,
+    "study_started": false,
+    "primary_paid_outcome": "net revenue per 1000 qualified humans, not link clicks",
+    "qualified_sample": false
+  },
+  "release_controls": {
+    "cms_writes": false,
+    "publishing": false,
+    "social_posts": false,
+    "email_sends": false,
+    "merchant_links": false,
+    "new_tracking": false,
+    "new_forms": false,
+    "paid_services": false,
+    "merge_approved": false
+  },
+  "canonical_overlap": {
+    "r275_rubber_hand": "DUPLICATE_TOPIC_HOLD_R204_R218_R251",
+    "new_public_url_allowed": false
+  }
+}
