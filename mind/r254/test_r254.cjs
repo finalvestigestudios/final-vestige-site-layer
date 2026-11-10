@@ -7,7 +7,7 @@
 const assert = require("node:assert/strict");
 const PINS = {
  A:"c5277c7023ba97d68a9773f1711528c3169acdfc",
- B:"aa55277af94df571ececad38988f39e8b2c35a89",
+ B:"2b7567ff07bedc86a203e37f23e41c3e79bc306f",
  article:"d1b3d5c5a280de94403946fc3dcad781360b07be",
  matrix:"74ef68da7ced6d06e7b5439b00ea1238ab8a39c4",
  plan:"e3c52fd71f9886b6371657f3a1b44c7163c3b3e5",
@@ -52,7 +52,7 @@ function validate(x){
  assert.doesNotMatch(A,/<section class="film"/);
  assert.match(B,/<section class="film"/);
  assert.match(B,/<details><summary>/);
- assert.match(B,/<desc id="film-desc">Original illustration: a stopwatch marked 12 minutes/);
+ assert.match(B,/<desc id="film-desc">Original illustration: a stopwatch marked 12 minutes beside four evidence cards labeled FORMAT, CLAIM, PROOF and LIMIT/);
  assert.match(B,/No original MP4, audio, WebVTT media file or synchronized playback exists yet/);
  const timePattern=/<time>(\d\d):(\d\d)–(\d\d):(\d\d)<\/time>/g;
  const times=[...B.matchAll(timePattern)].map(v=>[+v[1]*60+(+v[2]),+v[3]*60+(+v[4])]);
