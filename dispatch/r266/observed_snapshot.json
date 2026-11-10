@@ -1,0 +1,88 @@
+{
+  "observed_at": "2026-11-10T22:36:26Z",
+  "sources": {
+    "references": [
+      "https://finalvestige.com/focus/",
+      "https://finalvestige.com/dispatch/",
+      "https://wordpress.com/support/subscribers/",
+      "https://wordpress.com/support/newsletter/send-newsletter-emails/"
+    ]
+  },
+  "newsletter": {
+    "subscriptions": true,
+    "email_new_posts_by_default": false,
+    "email_content_format": "full",
+    "reply_to": "no-reply",
+    "from_name": "Final Vestige Studios",
+    "welcome_configured": true,
+    "welcome_pdf_label": "52-page Complete Edition",
+    "welcome_pdf_url": "https://finalvestige.com/wp-content/uploads/2026/10/Final_Vestige_Seven_Day_Focus_Fieldbook_Complete_Edition.pdf"
+  },
+  "media": {
+    "id": 1737,
+    "mime_type": "application/pdf",
+    "bytes": 599946,
+    "source_url": "https://finalvestige.com/wp-content/uploads/2026/10/Final_Vestige_Seven_Day_Focus_Fieldbook_Complete_Edition.pdf"
+  },
+  "focus": {
+    "page_id": 1579,
+    "published": true,
+    "download_url": "https://finalvestige.com/wp-content/uploads/2026/10/Final_Vestige_Seven_Day_Focus_Fieldbook_Complete_Edition.pdf",
+    "discloses_possible_commissions": true,
+    "troubleshooting_says_sign_up_again": true
+  },
+  "dispatch": {
+    "page_id": 523,
+    "published": true,
+    "discloses_possible_commissions": false
+  },
+  "followers": {
+    "email": 0,
+    "wpcom": 3,
+    "partial": false
+  },
+  "diagnostics": {
+    "total": 3,
+    "confirmed": 3,
+    "unconfirmed": 2,
+    "suppressed": 0
+  },
+  "evidence": {
+    "public_http": {
+      "status": "UNKNOWN",
+      "proof_id": null
+    },
+    "pdf_inspection": {
+      "status": "UNKNOWN",
+      "proof_id": null
+    },
+    "received_welcome": {
+      "status": "UNKNOWN",
+      "proof_id": null
+    },
+    "provider_subscribed_aggregate": {
+      "status": "UNKNOWN",
+      "proof_id": null
+    },
+    "postal_address_render": {
+      "status": "UNKNOWN",
+      "proof_id": null
+    },
+    "unsubscribe_function": {
+      "status": "UNKNOWN",
+      "proof_id": null
+    },
+    "merchant_email_permission": {
+      "status": "UNKNOWN",
+      "proof_id": null
+    },
+    "merchant_earning_link": {
+      "status": "UNKNOWN",
+      "proof_id": null
+    },
+    "founder_final_send_approval": {
+      "status": "UNKNOWN",
+      "proof_id": null
+    }
+  }
+}
