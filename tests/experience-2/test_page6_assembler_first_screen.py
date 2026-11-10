@@ -48,8 +48,13 @@ class FirstScreenIntegration(unittest.TestCase):
     def test_original_evidence_and_art_directions_remain(self):
         for chapter in CHAPTERS:
             self.assertEqual(self.payload.count(f'id="{chapter}"'), 1)
+        # Internal founder preview options remain in the immutable standalone
+        # source, but must not appear as public WordPress page controls.
+        original = (self.source / 'index.html').read_text()
         for direction in ("dossier", "museum", "observatory"):
-            self.assertEqual(self.payload.count(f'data-fv-direction-choice="{direction}"'), 1)
+            self.assertEqual(original.count(f'data-fv-direction-choice="{direction}"'), 1)
+            self.assertEqual(self.payload.count(f'data-fv-direction-choice="{direction}"'), 0)
+        self.assertNotIn('<div class="fv-hf__studio"', self.payload)
         self.assertIn('Inspect the museum record', self.payload)
         self.assertIn('EDITORIAL TYPESETTING', self.payload)
         self.assertIn('Skip to the main archive', self.payload)
