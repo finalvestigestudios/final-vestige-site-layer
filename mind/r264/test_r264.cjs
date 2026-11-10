@@ -3,7 +3,7 @@
    Not merchant authorization, WP sanitization, browser a11y or revenue proof. */
 const F=["THE-GORILLA-IN-THE-SCAN-UNPUBLISHED.md","CLAIM-PROOF-PARTNER-AND-REVENUE-GATES.json","ZEN12-A-TEXT-GUIDE-UNPUBLISHED.html","ZEN12-B-OPTIONAL-FILM-GUIDE-UNPUBLISHED.html","MIND-EVIDENCE-ARCHIVE-UNPUBLISHED-WP-PREVIEW.html","OFFER-FUNNEL-BLOCKER-EXPERIMENT-ACCEPTANCE.md"];
 const G=["publisher_named_acceptance","issued_affiliate_url","specific_zen12_product_and_destination","website_channel_permission","social_channel_permission","email_channel_permission","approved_creative_usage_rights","exact_checkout_price_and_currency","merchant_tax_shipping_or_extra_charges","product_inclusion_equivalence_promo_vs_standard","refund_terms_specific_offer","merchant_refund_actual_process","buyer_facing_compliant_disclosure","first_party_event_definition_owner_signoff","merchant_confirmed_paid_commission_feed","founder_editorial_QA_release_approval"];
-const ALLOW=["https://inspire3.com/","https://zen12.com/?no-popup=1","https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"];
+const ALLOW=["https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"];
 function withoutFilm(b){
  const i=b.indexOf('<section class="band wrap"><p class="label">OPTIONAL VIDEO /');
  if(i<0)return null;
@@ -72,6 +72,7 @@ function runSuite(original){
  edit("activate purchase",F[2],s=>s.replace('type="button" disabled aria-disabled="true"','type="button"'));
  edit("remove disclosure",F[2],s=>s.replace("If you purchase through that link, Final Vestige may earn a commission at no additional cost to you.",""));
  edit("insert merchant link",F[3],s=>s+"<a href=\"https://merchant.example.org/checkout\">Pay</a>");
+ edit("inject direct seller link",F[2],s=>s+'<a href="https://zen12.com/?no-popup=1">Seller</a>');
  edit("change A price copy",F[2],s=>s.replace("48 MP3s","49 MP3s"));
  edit("change B package",F[3],s=>s.replace("48 MP3s","49 MP3s"));
  edit("break film caption",F[3],s=>s.replace("36–42","36–43"));
