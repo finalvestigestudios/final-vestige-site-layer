@@ -47,10 +47,12 @@ function verify(a,now,prev,f) {
   for(const [key,row] of byPrev){const b=byNow.get(key);if(!b)continue;if(JSON.stringify(row)!==JSON.stringify(b)){changed++;if(!KEYS.includes(key))errors.push("unrelated_position_modified_"+key);}}
   check(changed===6,"exactly_six_rows_changed");
   check(now.rows.filter(x=>x.evidence.length).length===246&&now.rows.filter(x=>!x.evidence.length).length===42,"recomputed_coverage");
-  check(a.rows[2].published_src===a.rows[5].published_src&&a.rows[2].published_alt!==a.rows[5].published_alt,"identical_url_conflicting_alt");
-  check(a.rows[2].visual_integrity_note.includes("debris cleanup")&&a.rows[2].proposed_alt_editor_review?.includes("debris"),"wrong_scene_flag");
-  check(a.rows[0].rights_observation.includes("contractor"),"nara_contract_worker_not_public_domain");
-  check(a.rows[3].rights_observation.includes("permission"),"byui_licensing_hold");
+  const cleanup=a.rows.find(x=>x.slot==="291:2"),repeat=a.rows.find(x=>x.slot==="291:5");
+  const nara=a.rows.find(x=>x.slot==="291:0"),byui=a.rows.find(x=>x.slot==="291:3");
+  check(!!(cleanup&&repeat&&cleanup.published_src===repeat.published_src&&cleanup.published_alt!==repeat.published_alt),"identical_url_conflicting_alt");
+  check(!!(cleanup?.visual_integrity_note?.includes("debris cleanup")&&cleanup?.proposed_alt_editor_review?.includes("debris")),"wrong_scene_flag");
+  check(!!nara?.rights_observation?.includes("contractor"),"nara_contract_worker_not_public_domain");
+  check(!!byui?.rights_observation?.includes("permission"),"byui_licensing_hold");
   return errors;
 }
 module.exports={verify};
