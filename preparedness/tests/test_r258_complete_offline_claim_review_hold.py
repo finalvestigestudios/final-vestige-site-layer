@@ -179,6 +179,8 @@ mutant('missing_shared',lambda w,p:w['review_queue'][0]['workorders'].pop())
 mutant('reorder_complement',lambda w,p:p['unreviewed_nonshared_queue'].reverse())
 mutant('missing_cdc_exception',lambda w,p:w['outside_shared_disputed_workorders'].pop())
 mutant('corrupt_cdc_exception',lambda w,p:w['outside_shared_disputed_workorders'][0].__setitem__('authored_context_excerpt','changed'))
+mutant('duplicate_article_slug',lambda w,p:p['unreviewed_nonshared_queue'][-1].__setitem__('article_slug','original-1'))
+mutant('duplicate_outside_cdc_hold',lambda w,p:w['outside_shared_disputed_workorders'].__setitem__(1,copy.deepcopy(w['outside_shared_disputed_workorders'][0])))
 mutant('reclassify_article20_dispute',lambda w,p:w['review_queue'][0]['workorders'][0].__setitem__('disputed_original_citation',True))
 
 if __name__=='__main__': unittest.main()
