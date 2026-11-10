@@ -1,0 +1,509 @@
+{
+  "schema": "fv-mind-r269-source-proof-v1",
+  "date": "2026-11-10",
+  "decision": "HARD_HOLD",
+  "scope": "source-only, no commercial activation",
+  "sources": [
+    {
+      "id": "S01",
+      "label": "Hasher et al. 1977 original publisher abstract",
+      "url": "https://doi.org/10.1016/S0022-5371(77)80012-1",
+      "type": "research_abstract",
+      "checked": "2026-11-10 read only; publication and page contexts vary"
+    },
+    {
+      "id": "S02",
+      "label": "2010 51-study meta-analysis",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/20023210/",
+      "type": "research_abstract",
+      "checked": "2026-11-10 read only; publication and page contexts vary"
+    },
+    {
+      "id": "S03",
+      "label": "Fazio et al. 2015 prior knowledge",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26301795/",
+      "type": "research_abstract",
+      "checked": "2026-11-10 read only; publication and page contexts vary"
+    },
+    {
+      "id": "S04",
+      "label": "Fazio/Rand/Pennycook 2019 plausibility",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31420808/",
+      "type": "research_abstract",
+      "checked": "2026-11-10 read only; publication and page contexts vary"
+    },
+    {
+      "id": "S05",
+      "label": "Pennycook et al. 2018 headline experiment",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6279465/",
+      "type": "research_fulltext",
+      "checked": "2026-11-10 read only; publication and page contexts vary"
+    },
+    {
+      "id": "S06",
+      "label": "Ye et al. 2026 systematic review; full text",
+      "url": "https://www.nature.com/articles/s41467-026-70041-x",
+      "type": "research_fulltext",
+      "checked": "2026-11-10 read only; publication and page contexts vary"
+    },
+    {
+      "id": "S07",
+      "label": "Brashier et al. initial accuracy focus",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31473395/",
+      "type": "research_abstract",
+      "checked": "2026-11-10 read only; publication and page contexts vary"
+    },
+    {
+      "id": "S08",
+      "label": "Prike/Ecker 2023 correction review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37944323/",
+      "type": "research_abstract",
+      "checked": "2026-11-10 read only; publication and page contexts vary"
+    },
+    {
+      "id": "S09",
+      "label": "Puységur source archive",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "type": "fv_published_historical",
+      "checked": "2026-11-10 read only; publication and page contexts vary"
+    },
+    {
+      "id": "S10",
+      "label": "Current Seven Day Focus Fieldbook",
+      "url": "https://finalvestige.com/focus/",
+      "type": "fv_live",
+      "checked": "2026-11-10 read only; publication and page contexts vary"
+    },
+    {
+      "id": "S11",
+      "label": "Current Dispatch route",
+      "url": "https://finalvestige.com/dispatch/",
+      "type": "fv_live",
+      "checked": "2026-11-10 read only; publication and page contexts vary"
+    },
+    {
+      "id": "S12",
+      "label": "Inspire3 official product catalog",
+      "url": "https://inspire3.com/",
+      "type": "seller_only",
+      "checked": "2026-11-10 read only; publication and page contexts vary"
+    },
+    {
+      "id": "S13",
+      "label": "Exact Zen12 Premium standard sales page",
+      "url": "https://zen12.com/hnp",
+      "type": "seller_only",
+      "checked": "2026-11-10 read only; publication and page contexts vary"
+    },
+    {
+      "id": "S14",
+      "label": "Zen12 separate secret promo sales page",
+      "url": "https://zen12.com/secret/",
+      "type": "seller_only",
+      "checked": "2026-11-10 read only; publication and page contexts vary"
+    },
+    {
+      "id": "S15",
+      "label": "Generic Inspire3 affiliate portal",
+      "url": "https://affiliates.inspire3.com/",
+      "type": "public_portal_not_authorization",
+      "checked": "2026-11-10 read only; publication and page contexts vary"
+    },
+    {
+      "id": "S16",
+      "label": "FTC Endorsement Guides Q&A",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "type": "regulator",
+      "checked": "2026-11-10 read only; publication and page contexts vary"
+    },
+    {
+      "id": "S17",
+      "label": "FTC Health Products Compliance Guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "type": "regulator",
+      "checked": "2026-11-10 read only; publication and page contexts vary"
+    },
+    {
+      "id": "S18",
+      "label": "Published FV Change Blindness",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "type": "fv_published",
+      "checked": "2026-11-10 read only; publication and page contexts vary"
+    },
+    {
+      "id": "S19",
+      "label": "Hypnosis Live official Total Focus seller page",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "type": "seller_only",
+      "checked": "2026-11-10 read only; publication and page contexts vary"
+    },
+    {
+      "id": "S20",
+      "label": "Brainwave Shots official seller site",
+      "url": "https://brainwaveshots.com/",
+      "type": "seller_only",
+      "checked": "2026-11-10 read only; publication and page contexts vary"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "statement": "1977 study: repeated statements rated more true across three occasions, including false items",
+      "status": "supported_in_1977_abstract",
+      "source_ids": [
+        "S01"
+      ],
+      "limit": "Ratings of plausible items; no universal belief or behavior claim."
+    },
+    {
+      "id": "C02",
+      "statement": "2010 synthesis included 51 studies and distinguished within-item vs between-item contrasts",
+      "status": "supported_abstract",
+      "source_ids": [
+        "S02"
+      ],
+      "limit": "Different scoring criteria and effect sizes."
+    },
+    {
+      "id": "C03",
+      "statement": "2015 experiments found repetition effect despite demonstrable relevant knowledge",
+      "status": "supported_abstract",
+      "source_ids": [
+        "S03"
+      ],
+      "limit": "Not claim that education never helps."
+    },
+    {
+      "id": "C04",
+      "statement": "2019 study found repeated statements gained credibility across plausibility categories",
+      "status": "supported_abstract",
+      "source_ids": [
+        "S04"
+      ],
+      "limit": "Tasks measure truth ratings, not any infinite susceptibility."
+    },
+    {
+      "id": "C05",
+      "statement": "2018 fake-news headline study found small changes in perceived accuracy",
+      "status": "supported_fulltext",
+      "source_ids": [
+        "S05"
+      ],
+      "limit": "Two preregistered studies; not identical to live creator traffic or sales."
+    },
+    {
+      "id": "C06",
+      "statement": "2026 synthesis included 182 studies, 366 effect sizes, N=31,184",
+      "status": "supported_fulltext",
+      "source_ids": [
+        "S06"
+      ],
+      "limit": "Study years 1977–2025, report published 2026-02-27."
+    },
+    {
+      "id": "C07",
+      "statement": "2026 bias-adjusted g=.37 with 95% CI [.30,.44]",
+      "status": "supported_fulltext",
+      "source_ids": [
+        "S06"
+      ],
+      "limit": "Small pooled effect; large heterogeneity; correction sensitive to assumptions."
+    },
+    {
+      "id": "C08",
+      "statement": "Early accuracy attention prevented later bias when participants possessed relevant knowledge",
+      "status": "supported_in_task",
+      "source_ids": [
+        "S07"
+      ],
+      "limit": "Do not claim this always works without knowledge."
+    },
+    {
+      "id": "C09",
+      "statement": "Correction can include a clear alternative explanation, with low documented familiarity-backfire risk",
+      "status": "supported_review_with_limits",
+      "source_ids": [
+        "S08"
+      ],
+      "limit": "Not a guarantee for all corrections."
+    },
+    {
+      "id": "C10",
+      "statement": "Repetition of seller product ads proves Zen12 mental or health benefits",
+      "status": "unsupported_do_not_claim",
+      "source_ids": [
+        "S06",
+        "S12",
+        "S17"
+      ],
+      "limit": "Truth-rating studies provide no product-specific intervention evidence."
+    },
+    {
+      "id": "C11",
+      "statement": "Inspire3 describes Zen12, Hypnosis Live and Brainwave Shots",
+      "status": "seller_statement_only",
+      "source_ids": [
+        "S12"
+      ],
+      "limit": "Catalog inclusion does not establish effectiveness or partner status."
+    },
+    {
+      "id": "C12",
+      "statement": "Zen12 Premium standard seller page advertises 12 levels and 48 MP3 tracks",
+      "status": "seller_statement_only",
+      "source_ids": [
+        "S13"
+      ],
+      "limit": "Content not independently delivered or tested by FV."
+    },
+    {
+      "id": "C13",
+      "statement": "Standard Zen12 seller page advertises one-year refund",
+      "status": "seller_statement_unverified_fulfillment",
+      "source_ids": [
+        "S13"
+      ],
+      "limit": "Actual eligibility, checkout, refunds and support handling unverified."
+    },
+    {
+      "id": "C14",
+      "statement": "Separate Zen12 promotional page contains different coupon/price framing",
+      "status": "seller_statement_only",
+      "source_ids": [
+        "S14"
+      ],
+      "limit": "Do not substitute offer or imply discount authorized."
+    },
+    {
+      "id": "C15",
+      "statement": "The public Inspire3 publisher portal establishes FV-specific acceptance",
+      "status": "false_not_verified",
+      "source_ids": [
+        "S15"
+      ],
+      "limit": "Public enrollment page is not named publisher agreement."
+    },
+    {
+      "id": "C16",
+      "statement": "The public portal publishes generic 60%+ language, thus FV earns that rate",
+      "status": "false_not_verified",
+      "source_ids": [
+        "S15"
+      ],
+      "limit": "Do not ascribe generic marketing compensation to this publisher."
+    },
+    {
+      "id": "C17",
+      "statement": "A near-link commission disclosure is required before a commercial recommendation",
+      "status": "regulator_guidance",
+      "source_ids": [
+        "S16"
+      ],
+      "limit": "Disclosure needs clear placement and language, not a distant policy link."
+    },
+    {
+      "id": "C18",
+      "statement": "A health benefit claim needs adequate evidence for the particular claim/product",
+      "status": "regulator_guidance",
+      "source_ids": [
+        "S17"
+      ],
+      "limit": "General mechanism evidence cannot stand in for product evidence."
+    },
+    {
+      "id": "C19",
+      "statement": "The Focus Fieldbook is free and uses one existing Jetpack/Dispatch route",
+      "status": "observed_live_page",
+      "source_ids": [
+        "S10",
+        "S11"
+      ],
+      "limit": "Subscriptions must be provider-confirmed; pageviews are not confirmed leads."
+    },
+    {
+      "id": "C20",
+      "statement": "Paid FV-owned Mind SKU is currently eligible, rights-cleared and functioning",
+      "status": "not_verified",
+      "source_ids": [
+        "S10",
+        "S11"
+      ],
+      "limit": "No rights, live inventory, settlement/refunds and successful checkout evidence."
+    },
+    {
+      "id": "C21",
+      "statement": "R257 rendered film has seven WebVTT cues matching revised R268 B text",
+      "status": "source_level_verified",
+      "source_ids": [
+        "S12"
+      ],
+      "limit": "Custody from GitHub VTT only; binary is local review, not hosted / browser QA."
+    },
+    {
+      "id": "C22",
+      "statement": "A web click is a merchant-confirmed sale or settled commission",
+      "status": "false",
+      "source_ids": [
+        "S15"
+      ],
+      "limit": "Separate outbound from merchant-confirmed paid event; no zero-revenue assumption."
+    },
+    {
+      "id": "C23",
+      "statement": "Historical Puységur observations validate presumed magnetic fluid",
+      "status": "unsupported_do_not_claim",
+      "source_ids": [
+        "S09"
+      ],
+      "limit": "Historical reporting is not physical proof."
+    }
+  ],
+  "commercial_gates": [
+    {
+      "id": "named_inspire3_acceptance",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "issued_publisher_specific_earning_url",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "exact_zen12_offer_identity",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "current_authenticated_cart_total",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "refund_policy_scope_and_fulfillment",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "approved_web_promotion_channels",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "approved_email_promotion_channels",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "approved_creatives_or_swipe_terms",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "product_specific_claim_substantiation",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "affiliate_attribution_permissions",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "ftc_adjacent_disclosure_qa",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "signed_out_mobile_browser_qa",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "word_press_sanitization_qa",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "founder_commercial_release_approval",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "independent_settled_commission_report",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "verified_product_sales_and_refunds_reconciliation",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    }
+  ],
+  "offer": {
+    "candidate": "Zen12 Premium via seller standard page",
+    "seller_page": "https://zen12.com/hnp",
+    "promo_alternate": "https://zen12.com/secret/",
+    "category": "structured meditation audio library",
+    "affiliate_approval": null,
+    "issued_earning_url": null,
+    "permitted_channels": null,
+    "approved_creatives": null,
+    "verified_checkout_total": null,
+    "refund_fulfillment_verified": false,
+    "commission_rate_for_fv": null,
+    "owned_mind_sku_verified": false,
+    "purchase_cta_active": false
+  },
+  "metric_contract": {
+    "qualified_human_sessions": null,
+    "affiliate_outbound": null,
+    "confirmed_signup": null,
+    "merchant_confirmed_paid_orders": null,
+    "partner_reported_paid_affiliate_conversions": null,
+    "refunds_and_fees": null,
+    "realized_net_revenue": null,
+    "net_revenue_per_1000_qualified_human_sessions": null,
+    "cohorts_days": [
+      7,
+      30
+    ],
+    "notice": "Not computable != zero; unknown counts are not measured zeros."
+  },
+  "media_custody": {
+    "rendered_r257_vtt_blob": "e4e0a67ecac610d1c56fa904d52347a19f766469",
+    "r268_b_reconciled_to_vtt": true,
+    "caption_cues": 7,
+    "seconds": 42,
+    "hosted_playback": false,
+    "real_browser_qa": false,
+    "comment": "Text is aligned; no assertion that original video actually serves from website."
+  },
+  "release_controls": {
+    "no_live_cms_edits": true,
+    "no_affiliate_activation": true,
+    "no_email_or_social_posts": true,
+    "no_new_forms_or_js": true,
+    "no_merge_or_deploy": true,
+    "no_spend": true,
+    "homepage_pr49_unchanged": true,
+    "canonical_mind_pr172_unchanged": true,
+    "owner_issue150_unchanged": true
+  }
+}
