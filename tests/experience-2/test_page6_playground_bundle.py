@@ -81,7 +81,8 @@ class IntegrationBlueprint(unittest.TestCase):
             doc = json.loads(z.read('blueprint.json'))
             php = doc['steps'][2]['code']
         self.assertIn('fv-focus-cta__button', php)
-        self.assertIn('(?:/focus/|https://finalvestige', php)
+        self.assertIn("$focus_href === '/focus/'", php)
+        self.assertIn('NON-FLAGSHIP Gutenberg HTML', php)
         self.assertNotIn("strpos($raw, 'https://finalvestige.com/focus/')", php)
 
     def test_php_rejects_redirect_even_when_source_digest_matches(self):
