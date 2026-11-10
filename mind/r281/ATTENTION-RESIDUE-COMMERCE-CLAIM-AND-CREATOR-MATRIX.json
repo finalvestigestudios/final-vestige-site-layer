@@ -1,0 +1,375 @@
+{
+  "version": "r281",
+  "date_checked": "2026-11-10",
+  "publication": "UNPUBLISHED",
+  "commercial_status": "HARD_HOLD",
+  "owner": "Mind & Perception editorial only",
+  "research_question": "Does attention residue suggest an actionable free return note and does any Inspire3 product have independent proof of fixing that specific outcome?",
+  "sources": [
+    {
+      "id": "AR09",
+      "kind": "PRIMARY_SCIENCE",
+      "url": "https://doi.org/10.1016/j.obhdp.2009.04.002",
+      "scope": "two experiments on task transitions; no consumer audio trial"
+    },
+    {
+      "id": "AR18",
+      "kind": "PRIMARY_SCIENCE",
+      "url": "https://doi.org/10.1287/orsc.2017.1184",
+      "scope": "four interruption studies, ready-to-resume method, measured interrupting task"
+    },
+    {
+      "id": "UW18",
+      "kind": "INSTITUTIONAL_SUMMARY",
+      "url": "https://www.washington.edu/news/2018/01/16/task-interrupted-a-plan-for-returning-helps-you-move-on/",
+      "scope": "study counts 202 professionals survey and 66/44 student intervention groups; original task return untested"
+    },
+    {
+      "id": "ZE25",
+      "kind": "META_ANALYSIS",
+      "url": "https://www.nature.com/articles/s41599-025-05000-w",
+      "scope": "59 publications Zeigarnik and Ovsiankina; memory recall and resumption not attention-residue proxies"
+    },
+    {
+      "id": "ZEN",
+      "kind": "SELLER",
+      "url": "https://zen12.com/hnp",
+      "scope": "specific standard seller offer, 12 levels 48 MP3, session duration and seller performance claims"
+    },
+    {
+      "id": "ZFREE",
+      "kind": "SELLER_CONSENT",
+      "url": "https://zen12.com/freeaudio",
+      "scope": "seller newsletter receipt condition for free audio; distinct from Jetpack"
+    },
+    {
+      "id": "INSPIRE",
+      "kind": "SELLER",
+      "url": "https://inspire3.com/",
+      "scope": "portfolio naming only"
+    },
+    {
+      "id": "HYPN",
+      "kind": "SELLER",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "scope": "Total Focus recording feature and claims; product efficacy not established"
+    },
+    {
+      "id": "HYPNFAQ",
+      "kind": "SELLER_POLICY",
+      "url": "https://hypnosislive.com/faq",
+      "scope": "14-day policy max five refunded sessions yearly; no refund fulfillment proof"
+    },
+    {
+      "id": "BWS",
+      "kind": "SELLER",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "scope": "Focus Shot marketed contents, not effectiveness"
+    },
+    {
+      "id": "MBI",
+      "kind": "INDEPENDENT_META_ANALYSIS",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37578065/",
+      "scope": "111 RCTs 9538 participants explicitly excluded one-session; no Zen12 proof"
+    },
+    {
+      "id": "ACUTE",
+      "kind": "INDEPENDENT_META_ANALYSIS",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38215647/",
+      "scope": "five studies n277; pooled state-anxiety k3 n100 low certainty, high bias"
+    },
+    {
+      "id": "FTCENDORSE",
+      "kind": "REGULATORY",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "scope": "material relationships and adjacent clear disclosures"
+    },
+    {
+      "id": "FTCHEALTH",
+      "kind": "REGULATORY",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "scope": "substantiation standard for efficacy/health claims"
+    },
+    {
+      "id": "PUY",
+      "kind": "LIVE_FV",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "scope": "published first-party historical source archive"
+    },
+    {
+      "id": "FOCUS",
+      "kind": "LIVE_FV",
+      "url": "https://finalvestige.com/focus/",
+      "scope": "published existing Seven Day Focus Fieldbook and Jetpack/Dispatch consent"
+    },
+    {
+      "id": "CHANGE",
+      "kind": "LIVE_FV",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "scope": "published investigation"
+    },
+    {
+      "id": "MESMER",
+      "kind": "LIVE_FV",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "scope": "published investigation"
+    }
+  ],
+  "claim_source_map": [
+    {
+      "id": "AR_MECHANISM",
+      "claim": "Lingering prior task thoughts may affect later performance",
+      "basis": [
+        "AR09",
+        "AR18"
+      ],
+      "level": "DIRECT_RESEARCH",
+      "handling": "describe observed contexts; not universal inevitability"
+    },
+    {
+      "id": "RETURN_NOTE",
+      "claim": "Brief ready-to-resume planning mitigated residue in studied contexts",
+      "basis": [
+        "AR18",
+        "UW18"
+      ],
+      "level": "DIRECT_RESEARCH",
+      "handling": "not a proven guarantee; original-task return was not directly measured"
+    },
+    {
+      "id": "RETURN_SAMPLE",
+      "claim": "2018 studies included field survey and lab intervention samples 66 and 44",
+      "basis": [
+        "UW18",
+        "AR18"
+      ],
+      "level": "INSTITUTIONAL_AND_PRIMARY",
+      "handling": "do not generalize student lab outcomes to all professions"
+    },
+    {
+      "id": "ZEIGARNIK",
+      "claim": "General unfinished-task memory advantage not supported in 2025 synthesis",
+      "basis": [
+        "ZE25"
+      ],
+      "level": "META_ANALYSIS",
+      "handling": "distinguish memory recall from residue and resumption"
+    },
+    {
+      "id": "ZEN12_LIBRARY",
+      "claim": "Standard seller offer advertises 12 levels/48 MP3s of 12-minute sessions",
+      "basis": [
+        "ZEN"
+      ],
+      "level": "SELLER_DESCRIPTION_ONLY",
+      "handling": "not product-delivery or effectiveness proof"
+    },
+    {
+      "id": "ZEN12_EQUIV",
+      "claim": "One session confers an hour of advanced meditation benefits",
+      "basis": [
+        "ZEN",
+        "MBI"
+      ],
+      "level": "UNSUBSTANTIATED_PRODUCT_SPECIFIC",
+      "handling": "do not endorse or present as supported; relevant mindfulness meta excludes single-session"
+    },
+    {
+      "id": "ZEN12_EEG",
+      "claim": "Advertised special audio establishes better cognition or health",
+      "basis": [
+        "ZEN",
+        "FTCHEALTH"
+      ],
+      "level": "UNSUBSTANTIATED_PRODUCT_SPECIFIC",
+      "handling": "do not inherit advertising assertions"
+    },
+    {
+      "id": "ZEN12_FREE",
+      "claim": "Seller free audio asks consent to its own newsletter",
+      "basis": [
+        "ZFREE"
+      ],
+      "level": "SELLER_CONSENT",
+      "handling": "never conflate with FV Jetpack/Dispatch"
+    },
+    {
+      "id": "HYPNOSIS_TOTAL",
+      "claim": "Seller describes a specific Total Focus recording",
+      "basis": [
+        "HYPN"
+      ],
+      "level": "SELLER_DESCRIPTION_ONLY",
+      "handling": "not demonstrated restoration of attention residue"
+    },
+    {
+      "id": "HYPNOSIS_REFUND",
+      "claim": "14-day request and maximum five refunded sessions per year",
+      "basis": [
+        "HYPNFAQ"
+      ],
+      "level": "SELLER_POLICY_ONLY",
+      "handling": "include both limits when mentioning; independently settled refund unknown"
+    },
+    {
+      "id": "BRAINWAVE_FOCUS",
+      "claim": "Seller markets Focus Shot concentration audio",
+      "basis": [
+        "BWS"
+      ],
+      "level": "SELLER_DESCRIPTION_ONLY",
+      "handling": "not a trial on interrupting-task outcomes"
+    },
+    {
+      "id": "MINDFULNESS",
+      "claim": "Longer mindfulness interventions sometimes improve cognitive measures",
+      "basis": [
+        "MBI"
+      ],
+      "level": "INDEPENDENT_CONTEXT_ONLY",
+      "handling": "review excluded one-session; cannot infer Zen12 equivalence"
+    },
+    {
+      "id": "ACUTE_ANXIETY",
+      "claim": "Small acute induction pooled estimate reduced self-reported state anxiety",
+      "basis": [
+        "ACUTE"
+      ],
+      "level": "LOW_CERTAINTY_CONTEXT",
+      "handling": "pooled k3 n100 from 5 studies n277; not Zen12 focus result"
+    },
+    {
+      "id": "DISCLOSE",
+      "claim": "Potential earning links need clear immediately adjacent explanation",
+      "basis": [
+        "FTCENDORSE"
+      ],
+      "level": "REGULATORY",
+      "handling": "no active merchant links until publisher authorization"
+    },
+    {
+      "id": "FV_FIELD",
+      "claim": "FV owns one already published free focus route",
+      "basis": [
+        "FOCUS"
+      ],
+      "level": "LIVE_FIRST_PARTY",
+      "handling": "preserve one existing Dispatch form; no duplication"
+    },
+    {
+      "id": "SETTLED_SALE",
+      "claim": "Actual FV paid affiliate commission",
+      "basis": [],
+      "level": "NOT_VERIFIED",
+      "handling": "never derive from clicks, promotional email or hypothetical checkout"
+    }
+  ],
+  "creator_topic_fit": [
+    {
+      "topic": "Change blindness",
+      "published_article": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "public_media_id": null,
+      "internal_grok_asset_id": null,
+      "cta": "existing Focus Fieldbook",
+      "optional_commercial_offer": "Zen12 only after rights/fit verification",
+      "fit": "MODERATE: attention awareness is not product efficacy",
+      "status": "NO_VERIFIED_CREATOR_BUNDLE"
+    },
+    {
+      "topic": "Mesmerism/Puységur",
+      "published_article": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "public_media_id": "SV9m07PFTYk",
+      "internal_grok_asset_id": null,
+      "cta": "source archive then Focus Fieldbook",
+      "optional_commercial_offer": "Hypnosis Live informational comparison, no active link",
+      "fit": "HIGH_HISTORY, LOW_IMMEDIATE_PURCHASE_INTENT",
+      "status": "PUBLIC_VIDEO_TOPIC_MATCH_ONLY"
+    },
+    {
+      "topic": "Task interruptions / attention residue",
+      "published_article": null,
+      "unpublished_manuscript": "mind/r281/THE-WORK-YOU-LEFT-BEHIND-FOLLOWED-YOU-UNPUBLISHED.md",
+      "public_media_id": null,
+      "internal_grok_asset_id": null,
+      "cta": "free return-note exercise then existing Focus Fieldbook",
+      "optional_commercial_offer": "Zen12 exact-standard buying guide, not proven mechanism",
+      "fit": "HIGH_PROBLEM_INTENT, UNVERIFIED_CREATOR_ASSET",
+      "status": "UNPUBLISHED_NO_CAMPAIGN"
+    }
+  ],
+  "conversion_pilot": {
+    "audience": "Reader who feels overwhelmed by task switching and is deciding whether to purchase structured guided audio",
+    "primary_offer": "Zen12 Premium exact standard seller page (research only)",
+    "alternative": "Existing FV free Focus Fieldbook; FV paid Mind SKU not independently verified",
+    "affiliate_approval": "UNVERIFIED",
+    "merchant_earning_url": null,
+    "merchant_price_authenticated": false,
+    "merchant_policy_authenticated_for_customer": false,
+    "source_controlled_variant_A": "mind/r280/ZEN12-DECISION-GUIDE-A-UNPUBLISHED.html",
+    "source_controlled_variant_B": "mind/r280/ZEN12-DECISION-GUIDE-B-UNPUBLISHED.html",
+    "variant_B_media": "STATIC_POSTER_AND_7_TIMED_TRANSCRIPT_SEGMENTS_NOT_PLAYABLE",
+    "randomization": "NOT_IMPLEMENTED",
+    "hypothesis": "B with a rights-cleared optional original 42-second video might increase independently settled commission per qualified session relative to equivalent text-only A; equally plausible that media adds no value",
+    "experiment_live": false,
+    "prospective_affiliate_block": {
+      "button": "Affiliate offer unavailable",
+      "button_disabled": true,
+      "disclosure": "If you purchase through a future authorized link, Final Vestige may earn a commission at no additional cost to you.",
+      "placement": "immediately adjacent to disabled control",
+      "activation": "HARD_HOLD"
+    },
+    "first_party_attribution": {
+      "utm_source": "platform name only",
+      "utm_medium": "organic_social",
+      "utm_campaign": "mind_topic_yyyy_mm",
+      "utm_content": "verified Grok asset_id only",
+      "privacy": [
+        "no names",
+        "no emails",
+        "no IP address in custom event",
+        "no PII in URLs",
+        "no new vendor",
+        "no double-counting analytics scripts"
+      ],
+      "separate_events": [
+        "qualified_human_landing",
+        "relevant_cta_click",
+        "provider_confirmed_signup",
+        "affiliate_outbound_click",
+        "merchant_confirmed_paid_order",
+        "cleared_commission",
+        "refund_or_fee"
+      ],
+      "affiliate_outbound_is_paid_sale": false
+    },
+    "kpi": "Net settled revenue per 1,000 qualified human sessions = (cleared paid proceeds less refunds and fees) / qualified human sessions * 1000; unknown when either component unverified",
+    "time_windows": [
+      "7-day cohort",
+      "30-day cohort"
+    ],
+    "tiny_sample_warning": true
+  },
+  "authorization_gates": {
+    "total": 16,
+    "held": 16,
+    "mode": "HARD_HOLD",
+    "reason": "No named FV publisher acceptance, issued earning URL, verified permitted channels, authenticated cart/refund experience, full browser QA or paid settlement report."
+  },
+  "outstanding_owners": [
+    "Founder/Mind verify signed account terms and earning URL",
+    "Commerce authenticate truly saleable rights-cleared FV Mind SKU if affiliate unavailable",
+    "Claude/Site QA perform mobile a11y, no-JS and optional media/performance tests",
+    "Praxxis/Grok authenticate real existing media IDs in TASK-008",
+    "Dispatch retains existing Jetpack list, no emails altered"
+  ],
+  "release_protections": [
+    "No WordPress writes",
+    "No homepage flagship PR #49 changes",
+    "No #150 edits",
+    "No /mind/ PR #172 edits",
+    "No merge",
+    "No social posting",
+    "No commerce activation",
+    "No paid service"
+  ]
+}
