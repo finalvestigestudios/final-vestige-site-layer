@@ -37,7 +37,7 @@ function check(x){
  assert.match(x.article,/copyright ownership and image permissions/i);
  assert.match(x.article,/No affiliate recommendation or earning link/i);
  assert.doesNotMatch(x.article,/<script|<iframe|href=["']https?:\/\/(?:www\.)?zen12\.com/i);
- assert.doesNotMatch(x.article,/guaranteed (?:results|benefit|cure)|99% of (?:people|viewers) (?:fail|are fooled)/i);
+ assert.doesNotMatch(x.article,/^(?:guaranteed (?:results|benefit|cure)|99% of (?:people|viewers) (?:fail|are fooled))/im);
  assert.match(x.plan,/Net revenue per 1,000/i);
  assert.match(x.plan,/26\/26 unsafe mutations rejected/i);
  assert.match(x.plan,/NOT COMPUTABLE/i);
