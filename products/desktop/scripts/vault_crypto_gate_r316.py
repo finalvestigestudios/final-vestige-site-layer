@@ -15,6 +15,8 @@ import re
 import sys
 import unittest
 
+from scripts.source_only_test_loader_r318 import load_source_suite
+
 # These are real complete-checkout integration cases, not isolated mocked helpers.
 # Both premium product flows and authentication, rollback, publication and
 # source-custody paths must execute, not merely be discovered or skipped.
@@ -124,20 +126,17 @@ def execute_gate(directory: Path, *, targets=REQUIRED) -> dict[str, object]:
                     source = directory / filename
                     if _source_witness(source) != initial_witness:
                         raise IntegrationHold(_FIXED_ERROR)
-                    # TestLoader.discover consults sys.modules. Without eviction
-                    # a same-named stale/forged in-memory test can masquerade
-                    # as an on-disk required integration module.
-                    sys.modules.pop(filename[:-3], None)
-                    loader = unittest.TestLoader()
-                    suite = loader.discover(str(directory), pattern=filename,
-                                            top_level_dir=str(directory))
-                    loaded = sys.modules.get(filename[:-3])
+                    # Compile vetted SOURCE bytes, not Python's timestamp/size
+                    # cache. A forged .pyc can otherwise pass with changed .py.
+                    suite, loaded, loader_errors = load_source_suite(source)
+                    if loaded is not sys.modules.get(filename[:-3]):
+                        raise IntegrationHold(_FIXED_ERROR)
                     if (loaded is None or
                             Path(getattr(loaded, "__file__", "")).resolve() != source.resolve() or
                             _source_witness(source) != initial_witness):
                         raise IntegrationHold(_FIXED_ERROR)
                     identifiers = [case.id() for case in _cases(suite)]
-                    if (loader.errors or len(identifiers) != len(set(identifiers))
+                    if (loader_errors or len(identifiers) != len(set(identifiers))
                             or not required.issubset(set(identifiers))):
                         raise IntegrationHold(_FIXED_ERROR)
                     result = unittest.TestResult()
