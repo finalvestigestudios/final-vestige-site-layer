@@ -9,7 +9,6 @@ import argparse
 import hashlib
 import os
 import platform
-import re
 import stat
 import subprocess
 import sys
@@ -33,8 +32,8 @@ from candidate_guard import (
 )
 
 from build_inventory import EXPECTED
+from canonical_inventory_r334 import CanonicalInventoryError, parse_canonical_inventory
 from smoke_provenance import SmokeProvenanceError, classify_smoke
-HEX = re.compile(r"^[0-9a-f]{64}$")
 
 
 class GateFailure(ValueError):
@@ -47,26 +46,18 @@ def _regular(path: Path) -> None:
 
 
 def _inventory(root: Path) -> dict[str, str]:
+    """Accept only the canonical ordered six-app producer inventory.
+
+    Read bytes through the existing bounded, descriptor-pinned file guard;
+    normalization must not hide altered line endings, row order or trailing
+    evidence. Reject any noncanonical input before a smoke command runs.
+    """
     path = root / "SHA256SUMS.txt"
     _regular(path)
     try:
-        lines = read_checksum_candidate(path).decode("ascii").splitlines()
-    except CandidateGuardError as exc:
+        return parse_canonical_inventory(read_checksum_candidate(path), EXPECTED)
+    except (CandidateGuardError, CanonicalInventoryError) as exc:
         raise GateFailure(str(exc)) from None
-    except UnicodeError:
-        raise GateFailure("Checksum inventory must be ASCII") from None
-    entries: dict[str, str] = {}
-    for line in lines:
-        match = re.fullmatch(r"([0-9a-f]{64})  ([A-Za-z0-9]+\.exe)", line)
-        if not match:
-            raise GateFailure("Malformed checksum inventory entry")
-        digest, filename = match.groups()
-        if filename not in EXPECTED or filename in entries:
-            raise GateFailure("Unknown or duplicate checksum entry")
-        entries[filename] = digest
-    if set(entries) != set(EXPECTED):
-        raise GateFailure("Checksum inventory must include exactly six expected executables")
-    return entries
 
 
 def _pe64(path: Path) -> None:
