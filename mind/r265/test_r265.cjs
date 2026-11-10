@@ -51,5 +51,5 @@ const negative=[
  ['unapproved publisher link B',f=>f.B=f.B.replace('Explore the existing Seven Day Focus Fieldbook','<a href="https://affiliates.inspire3.com/track">offer</a>')]
 ];
 let rejected=0;
-for(const [name,mutate] of negative){const f=structuredClone(files);mutate(f);try{verify(f);throw new Error('FAILED TO REJECT '+name)}catch(e){if(String(e.message).startsWith('FAILED TO REJECT'))throw e;rejected++;}}
+for(const [name,mutate] of negative){const f=JSON.parse(JSON.stringify(files));mutate(f);try{verify(f);throw new Error('FAILED TO REJECT '+name)}catch(e){if(String(e.message).startsWith('FAILED TO REJECT'))throw e;rejected++;}}
 console.log('R265 baseline PASS; '+rejected+'/'+negative.length+' unsafe mutations rejected; source-only checks; native Node invocation complete.');
