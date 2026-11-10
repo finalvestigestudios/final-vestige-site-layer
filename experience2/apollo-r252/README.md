@@ -82,3 +82,39 @@ rights and checkout before activation; Grok owns production and posting, Praxxis
 independent creator QA and TASK-008 inventory; Apollo owns isolated evidence UX and
 browser QA; Claude owns production analytics and implementation. See #150,
 #820 and charter #818. No publishing, sending, payments or release actions.
+
+
+## R252 print-contrast defect, isolated correction and executable negative control
+
+**Actual defect found:** the original sealed R238 Atlas printed 13 text spans with
+white-paper contrast below 4.5:1, including the introductory `Evidence, not spectacle.`
+line, confidence labels, NASA archival-source kinds, and teacher-lesson badges.
+These inherited screen colors were extremely pale on printed white paper.
+
+A new component-scoped `r252-print-custody.css` supplies a **print-only** `#111`
+override for those six selectors. The original R238 manifest/CSS and all historical
+text, source links and CTA remain unchanged. Nothing is installed in production.
+
+**Exact committed test:** `qa/r252_print_contrast_gate.py` (Git blob
+`ed2c635cc00432c91304a097512df9c021c59970`) was executed locally, byte
+for byte, twice. It renders the original R238 PHP HTML with Chromium 144 to PDF
+using the sealed original stylesheet, proves **13 failing spans**, adds the
+isolated print override (Git blob
+`11bb761b857253b84f636cd174ef32e25933a7e1`), and proves **0
+low-contrast spans**, preserving 22 visible `nasa.gov` URL occurrences
+and the archival rights index. The resulting 14-page normalized PDFs are
+byte-identical across the two runs, SHA-256
+`f6ff7d34c46a9b2def1263b6dd08168f4e6b557823b2f77fe6471b4db0004eb0`.
+
+Reproduce against the sealed R238 package:
+
+```sh
+python3 experience2/apollo-r252/qa/r252_print_contrast_gate.py \
+  --atlas /path/to/sealed-r238 --out /tmp/apollo-r252-print
+```
+
+This compares extracted PDF text ink against *assumed white printed paper*.
+It is not a full background-aware WCAG audit, genuine axe test, print-driver
+matrix, real WP staging, or commercial release. The staging enhancement
+must be reviewed and integrated through the owner's controlled build before
+any production use.
