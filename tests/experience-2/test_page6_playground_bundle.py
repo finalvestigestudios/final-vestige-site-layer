@@ -24,7 +24,7 @@ def fake_raw():
         'fv-hf-method-title','fv-hf-observer','fv-hf-mind-title'))
     return ('<!-- wp:html -->\n<!-- FV-SYNTHETIC-FIXTURE: NOT HISTORICAL CONTENT -->\n'+records+'<!-- /wp:html -->'
             '<!-- wp:html -->\n<div data-fv-home-flagship>'+sections+'</div>\n<!-- /wp:html -->'
-            '<!-- wp:html -->\n<section class="fv-focus-cta"><a href="https://finalvestige.com/focus/">Fieldbook</a></section>\n<!-- /wp:html -->'
+            '<!-- wp:html -->\n<section class="fv-focus-cta"><a class="fv-focus-cta__button" href="/focus/">Fieldbook</a></section>\n<!-- /wp:html -->'
             '<!-- wp:group -->\n<div class="wp-block-group">'
             '<!-- wp:jetpack/subscriptions /-->\n</div>\n<!-- /wp:group -->'
             '<!-- wp:html -->\n<p>Other public content</p>\n<!-- /wp:html -->')
@@ -74,6 +74,45 @@ class IntegrationBlueprint(unittest.TestCase):
             self.assertEqual(len(re.findall(r'<div\b[^>]*\bdata-fv-home-flagship\b',data)),1)
             self.assertEqual(data.count('id="fv-hf-evidence"'),1)
             self.assertIn('FV-SYNTHETIC-FIXTURE',data)
+
+    def test_php_checks_actual_native_focus_action_not_candidate_link(self):
+        self.make()
+        with zipfile.ZipFile(self.path/'review.zip') as z:
+            doc = json.loads(z.read('blueprint.json'))
+            php = doc['steps'][2]['code']
+        self.assertIn('fv-focus-cta__button', php)
+        self.assertIn('(?:/focus/|https://finalvestige', php)
+        self.assertNotIn("strpos($raw, 'https://finalvestige.com/focus/')", php)
+
+    def test_php_rejects_redirect_even_when_source_digest_matches(self):
+        self.make()
+        with zipfile.ZipFile(self.path/'review.zip') as z:
+            raw = z.read('page6-review.blocks.html').decode()
+        self.assertIn('href="/focus/"', raw)
+        attacked = raw.replace('href="/focus/"', 'href="https://example.invalid/focus/"', 1)
+        contents = self.path/'changed.blocks.html'
+        contents.write_text(attacked, encoding='utf-8')
+        generated = bp.guarded_php(bp.digest(attacked.encode()), True, 5, 4)
+        generated = generated.replace("require_once '/wordpress/wp-load.php';", '')
+        generated = generated.replace('/tmp/fv-ex2-page6-review.blocks.html', str(contents))
+        mock = """<?php
+        define('FV_EX2_LOCAL_ONLY', true);
+        function wp_get_environment_type(){return 'local';}
+        function parse_blocks($source){
+            $items=[];
+            for($i=0;$i<4;$i++){$items[]=['blockName'=>'core/html','innerBlocks'=>[]];}
+            $items[]=['blockName'=>'core/group','innerBlocks'=>[['blockName'=>'jetpack/subscriptions','innerBlocks'=>[]]]];
+            return $items;
+        }
+        function get_page_by_path($path){return null;}
+        function wp_insert_post($post,$error){throw new Exception('Must never reach insert');}
+        ?>"""
+        file = self.path/'redirect.php'
+        file.write_text(mock+'\n'+generated, encoding='utf-8')
+        self.assertEqual(subprocess.run(['php','-l',str(file)], capture_output=True).returncode, 0)
+        run = subprocess.run(['php',str(file)], capture_output=True, text=True)
+        self.assertNotEqual(run.returncode, 0)
+        self.assertIn('native Jetpack/Focus custody failed', run.stderr)
 
     def test_deterministic_zip_bytes(self):
         a=self.make('a.zip');b=self.make('b.zip')
