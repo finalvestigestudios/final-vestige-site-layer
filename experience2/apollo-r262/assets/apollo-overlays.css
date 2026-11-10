@@ -1,0 +1,191 @@
+/* Apollo R262 immutable staging overlay bundle; source CSS concatenated in version order.
+ * Not a WordPress deployment/rights approval or an alternative to base source. */
+
+/* START apollo-r253/atlas-source-actions.css Git blob 4cbdf6676e8d45f39a3aa12ad934ba53ba1ad30d */
+/* Apollo R253: independently staged source-action touch targets.
+   Layer AFTER the SHA-pinned R238 Atlas CSS; do not modify the NASA archive. */
+.fv-apollo-atlas .plate details a[href^="https://www.nasa.gov/"],
+.fv-apollo-atlas .source-card details a[href^="https://www.nasa.gov/"],
+.fv-apollo-atlas .fv-apollo-custody-list a[href^="https://www.nasa.gov/"],
+.fv-apollo-atlas #fv-apollo-source-drawer a[href^="https://www.nasa.gov/"] {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  max-width: 100%;
+  padding-block: .55rem;
+  overflow-wrap: anywhere;
+  text-underline-offset: .18em;
+}
+@media (forced-colors: active) {
+  .fv-apollo-atlas .plate details a[href^="https://www.nasa.gov/"]:focus-visible,
+  .fv-apollo-atlas .source-card details a[href^="https://www.nasa.gov/"]:focus-visible,
+  .fv-apollo-atlas .fv-apollo-custody-list a[href^="https://www.nasa.gov/"]:focus-visible,
+  .fv-apollo-atlas #fv-apollo-source-drawer a[href^="https://www.nasa.gov/"]:focus-visible {
+    outline: 3px solid Highlight;
+    outline-offset: 2px;
+  }
+}
+/* Do not inflate source URLs, pagination or page count in archival printouts. */
+@media print {
+  .fv-apollo-atlas .plate details a[href^="https://www.nasa.gov/"],
+  .fv-apollo-atlas .source-card details a[href^="https://www.nasa.gov/"],
+  .fv-apollo-atlas .fv-apollo-custody-list a[href^="https://www.nasa.gov/"],
+  .fv-apollo-atlas #fv-apollo-source-drawer a[href^="https://www.nasa.gov/"] {
+    display: inline;
+    min-height: 0;
+    padding: 0;
+  }
+}
+/* END apollo-r253/atlas-source-actions.css */
+
+/* START apollo-r254/provenance-tap-continuity.css Git blob 459eb6c272a386fd5c193ccc6bdc042f83dd4a22 */
+/* Apollo R254: close remaining NASA-source touch gaps at different breakpoints.
+   Apply AFTER the SHA-pinned R238 stylesheet and R253 overlay. STAGING ONLY.
+   URL identity, editorial content and source chronology remain unchanged. */
+.fv-apollo-atlas a[href^="https://www.nasa.gov/"] {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  max-width: 100%;
+  padding-block: .55rem;
+  overflow-wrap: anywhere;
+  vertical-align: middle;
+  text-underline-offset: .18em;
+}
+/* The existing method-grid selector has higher specificity; preserve true box sizing. */
+.fv-apollo-atlas .fv-apollo-method dd a[href^="https://www.nasa.gov/"] {
+  display: inline-flex;
+}
+@media (forced-colors: active) {
+  .fv-apollo-atlas a[href^="https://www.nasa.gov/"]:focus-visible {
+    outline: 3px solid Highlight;
+    outline-offset: 2px;
+  }
+}
+/* Print the record, not 44px touch UI. Source URL labels stay visible. */
+@media print {
+  .fv-apollo-atlas a[href^="https://www.nasa.gov/"] {
+    display: inline;
+    min-height: 0;
+    max-width: 100%;
+    padding: 0;
+    vertical-align: baseline;
+  }
+  .fv-apollo-atlas .fv-apollo-method dd a[href^="https://www.nasa.gov/"] {
+    display: inline;
+  }
+}
+/* END apollo-r254/provenance-tap-continuity.css */
+
+/* START apollo-r255/evidence-path-touch.css Git blob a71db932b8c0047d569f98f5e6d9742c18f44704 */
+/* FV Apollo Evidence Atlas R255. Staging-only; apply AFTER sealed R238, R253 and R254 CSS.
+   Three source-comparison answer-guide cross-references were 22px high at 320-1920px.
+   Keep NASA provenance, historical text and the only free investigation CTA untouched. */
+.fv-apollo-atlas .fv-apollo-confidence-answer a[href^="#fv-apollo-"] {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  max-width: 100%;
+  padding-block: .55rem;
+  vertical-align: middle;
+  overflow-wrap: anywhere;
+  text-underline-offset: .18em;
+}
+@media (forced-colors: active) {
+  .fv-apollo-atlas .fv-apollo-confidence-answer a[href^="#fv-apollo-"]:focus-visible {
+    outline: 3px solid Highlight;
+    outline-offset: 2px;
+  }
+}
+@media print {
+  /* Preserve inline source bibliography / punctuation, without touch UI spacing. */
+  .fv-apollo-atlas .fv-apollo-confidence-answer a[href^="#fv-apollo-"] {
+    display: inline;
+    min-height: 0;
+    padding: 0;
+    vertical-align: baseline;
+  }
+}
+/* END apollo-r255/evidence-path-touch.css */
+
+/* START apollo-r256/print-custody.css Git blob 82ee3387dd3d4392976731a6946ac9086d3eabe0 */
+/* Apollo Evidence Atlas R256 — print-only disclosure custody.
+   SourceDrawer stays native and collapsed on screen; printing exposes its four
+   provenance records, without JavaScript, changing original historical text,
+   or altering the original NASA URLs. The unreviewed R238 HTML is untouched. */
+@media print {
+  .fv-apollo-atlas #fv-apollo-source-drawer::details-content {
+    content-visibility: visible !important;
+    display: block !important;
+  }
+  .fv-apollo-atlas #fv-apollo-source-drawer .fv-apollo-drawer-body {
+    display: block !important;
+    color: #000 !important;
+  }
+  .fv-apollo-atlas #fv-apollo-source-drawer .fv-apollo-drawer-list {
+    display: block !important;
+  }
+  .fv-apollo-atlas #fv-apollo-source-drawer .fv-apollo-drawer-list li {
+    break-inside: avoid;
+    background: #fff !important;
+    border: 1px solid #333 !important;
+    color: #000 !important;
+    margin-bottom: .6rem;
+  }
+  .fv-apollo-atlas #fv-apollo-source-drawer .fv-apollo-drawer-list a,
+  .fv-apollo-atlas #fv-apollo-source-drawer .fv-apollo-plate-facts dt,
+  .fv-apollo-atlas #fv-apollo-source-drawer .fv-apollo-plate-facts dd {
+    color: #000 !important;
+  }
+}
+/* END apollo-r256/print-custody.css */
+
+/* START apollo-r257/print-full-evidence.css Git blob 9a778b790d1032441037b0da329b081a5cf33b20 */
+/* FV Apollo Evidence Atlas R257 — complete print-native evidence custody.
+   The sealed R238 archive contains thirteen native <details> disclosures.
+   Print should preserve ALL their evidence/source text even when a visitor
+   did not open each detail beforehand. No screen, image, tracking or commerce
+   behavior is changed. Works without JavaScript in Chromium 144+. */
+@media print {
+  .fv-apollo-atlas details::details-content {
+    content-visibility: visible !important;
+    display: block !important;
+  }
+  .fv-apollo-atlas details > summary,
+  .fv-apollo-atlas details > summary * {
+    color: #000 !important;
+  }
+  .fv-apollo-atlas details a {
+    color: #000 !important;
+    text-decoration: underline !important;
+    overflow-wrap: anywhere;
+  }
+}
+/* END apollo-r257/print-full-evidence.css */
+
+/* START apollo-r260/hash-target-orientation.css Git blob 64c4dfab15d13ad9427d4e813fba4462f50b4827 */
+/* Apollo R260: no-JS, source-navigation wayfinding; staging candidate only.
+   Applies to native fragment targets, not citations, outbound links or checkout.
+   All selectors remain within the protected, original Atlas component. */
+.fv-apollo-atlas :is(section, article, aside, details, div)[id^="fv-apollo-"] {
+  scroll-margin-block-start: clamp(1rem, 5vw, 4rem);
+}
+.fv-apollo-atlas :is(section, article, aside, details, div)[id^="fv-apollo-"]:target {
+  outline: 3px solid #d8b777;
+  outline-offset: -3px;
+  box-shadow: inset 5px 0 0 #d8b777;
+}
+@media (forced-colors: active) {
+  .fv-apollo-atlas :is(section, article, aside, details, div)[id^="fv-apollo-"]:target {
+    outline: 3px solid Highlight;
+    outline-offset: -3px;
+    box-shadow: none;
+  }
+}
+@media print {
+  .fv-apollo-atlas :is(section, article, aside, details, div)[id^="fv-apollo-"]:target {
+    outline: none;
+    box-shadow: none;
+  }
+}
+/* END apollo-r260/hash-target-orientation.css */
