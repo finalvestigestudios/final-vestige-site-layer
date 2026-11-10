@@ -168,7 +168,7 @@ class BuildInventoryR40Tests(unittest.TestCase):
         self.assertFalse(self.manifest().exists())
         self.assertFalse(any(p.name.startswith(".fvs-") for p in self.dist.iterdir()))
 
-    def test_drift_after_publication_removes_own_manifest(self):
+    def test_drift_after_publication_preserves_manifest_for_review(self):
         original_hash = inv.sha256_candidate
         counter = 0
         def drift(path, **kwargs):
@@ -180,7 +180,7 @@ class BuildInventoryR40Tests(unittest.TestCase):
         with patch.object(inv, "sha256_candidate", side_effect=drift):
             with self.assertRaises(inv.InventoryBuildError):
                 inv.build_inventory(self.dist)
-        self.assertFalse(self.manifest().exists())
+        self.assertTrue(self.manifest().is_file(), "keep failed build evidence for review")
         self.assertFalse(any(p.name.startswith(".fvs-") for p in self.dist.iterdir()))
 
     def test_link_collision_does_not_overwrite_someone_elses_manifest(self):
