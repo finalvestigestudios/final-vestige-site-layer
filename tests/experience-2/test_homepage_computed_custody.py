@@ -50,4 +50,26 @@ class ComputedStyleCustodyTests(unittest.TestCase):
     def test_horizontal_overflow(self):
         self.assert_gate('body::after{content:"";position:absolute;left:2000px;width:200px;height:10px}', 'HOLD')
 
+    def test_unloaded_external_stylesheet_fails_closed(self):
+        html=self.html.replace('</head>','<link rel="stylesheet" href="/wp-content/theme.css"></head>')
+        self.assertEqual(evaluate(html,self.baseline)['gate'],'PASS')
+        r=verify(html,self.baseline,widths=(390,))
+        self.assertEqual(r['gate'],'HOLD')
+        self.assertEqual(r['checks'],[])
+        self.assertIn('external_stylesheet_not_loaded',str(r['errors']))
+
+    def test_unloaded_external_script_fails_closed(self):
+        html=self.html.replace('</head>','<script src="/wp-content/theme.js"></script></head>')
+        self.assertEqual(evaluate(html,self.baseline)['gate'],'PASS')
+        r=verify(html,self.baseline,widths=(390,))
+        self.assertEqual(r['gate'],'HOLD')
+        self.assertIn('external_script_not_loaded',str(r['errors']))
+
+    def test_css_import_fails_closed(self):
+        html=self.html.replace('</head>','<style>@import url("/wp-content/theme.css");</style></head>')
+        self.assertEqual(evaluate(html,self.baseline)['gate'],'PASS')
+        r=verify(html,self.baseline,widths=(390,))
+        self.assertEqual(r['gate'],'HOLD')
+        self.assertIn('stylesheet_import_not_loaded',str(r['errors']))
+
 if __name__=='__main__':unittest.main(verbosity=2)
