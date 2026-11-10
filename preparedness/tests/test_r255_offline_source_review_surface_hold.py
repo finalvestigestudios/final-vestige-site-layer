@@ -149,7 +149,7 @@ for field, value in [('article_n', 36), ('article_slug', '../bad'),
                      ('context_sha256', '0'*64),
                      ('author_source_use_note_sha256', 'x'),
                      ('review_terms', ['a','a']),
-                     ('disputed_original_citation', False),
+                     ('disputed_original_citation', True),
                      ('source_support_verified', True), ('safety_approved', True)]:
     mutate('workorder_' + field, lambda x, k=field, v=value:
            x['review_queue'][0]['workorders'][0].__setitem__(k, v))
@@ -181,6 +181,11 @@ mutate('missing_original_hold', lambda x: x['outside_shared_disputed_workorders'
     'disputed_original_citation', False))
 mutate('altered_receipt_checksum', lambda x: x.__setitem__('receipt_sha256', '0' * 64), recalc=False)
 
+
+mutate('drop_shared_original_dispute', lambda x: next(
+    w for g in x['review_queue'] for w in g['workorders']
+    if (w['article_n'], w['citation_ordinal']) == (20, 55)
+).__setitem__('disputed_original_citation', False))
 mutate('drop_external_hold', lambda x: x['outside_shared_disputed_workorders'].pop())
 mutate('duplicate_external_hold', lambda x: x['outside_shared_disputed_workorders'].append(
     copy.deepcopy(x['outside_shared_disputed_workorders'][0])))
