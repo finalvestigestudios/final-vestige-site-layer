@@ -1,0 +1,575 @@
+{
+  "version": "mind-r264-2026-11-10",
+  "status": "DRAFT_UNPUBLISHED_COMMERCIAL_HARD_HOLD",
+  "purpose": "source-linked scientific claims, audited seller terms, anti-false-conversion controls",
+  "sources": [
+    {
+      "id": "S01",
+      "type": "PRIMARY_STUDY",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23863753/",
+      "note": "Drew et al. 2013, n=24 radiologists, 20 did not report unexpected gorilla",
+      "verified_read_2026_11_10": true
+    },
+    {
+      "id": "S02",
+      "type": "PRIMARY_OPEN_MANUSCRIPT",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3964612/",
+      "note": "Open manuscript; task design and eye tracking. Full live page availability may vary.",
+      "verified_read_2026_11_10": false
+    },
+    {
+      "id": "S03",
+      "type": "CRITICAL_REVIEW",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10973299/",
+      "note": "2024 Inattentional blindness in medicine; warns about inference from 4/49 noticers",
+      "verified_read_2026_11_10": true
+    },
+    {
+      "id": "S04",
+      "type": "PRIMARY_STUDY",
+      "url": "https://doi.org/10.1068/p281059",
+      "note": "Simons & Chabris 1999 original gorilla selective-attention tasks",
+      "verified_read_2026_11_10": true
+    },
+    {
+      "id": "S05",
+      "type": "PRIMARY_STUDY",
+      "url": "https://doi.org/10.3758/BF03208840",
+      "note": "Simons & Levin 1998 real-world change blindness",
+      "verified_read_2026_11_10": true
+    },
+    {
+      "id": "S06",
+      "type": "SELLER_CATALOG",
+      "url": "https://inspire3.com/",
+      "note": "Official seller product catalog; not independent efficacy evidence",
+      "verified_read_2026_11_10": true
+    },
+    {
+      "id": "S07",
+      "type": "SELLER_STANDARD",
+      "url": "https://zen12.com/?no-popup=1",
+      "note": "Zen12 standard; 12 levels, 48 MP3; feature and 1-year refund claims; snapshot/currency subject to change",
+      "verified_read_2026_11_10": true
+    },
+    {
+      "id": "S08",
+      "type": "SELLER_PROMO",
+      "url": "https://zen12.com/secret/",
+      "note": "Zen12 coupon/VSL promo; non-equivalent price presentation, countdown not validated",
+      "verified_read_2026_11_10": true
+    },
+    {
+      "id": "S09",
+      "type": "FTC_DISCLOSURE",
+      "url": "https://search.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "note": "Clear conspicuous affiliate disclosure must accompany recommendation",
+      "verified_read_2026_11_10": true
+    },
+    {
+      "id": "S10",
+      "type": "FTC_HEALTH",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "note": "Product-relevant competent scientific evidence required for health claims",
+      "verified_read_2026_11_10": true
+    },
+    {
+      "id": "S11",
+      "type": "FV_FIELD",
+      "url": "https://finalvestige.com/focus/",
+      "note": "One existing free 52-page Focus Fieldbook and single Dispatch funnel",
+      "verified_read_2026_11_10": true
+    },
+    {
+      "id": "S12",
+      "type": "FV_DISPATCH",
+      "url": "https://finalvestige.com/dispatch/",
+      "note": "Existing Jetpack/WordPress signup and existing welcome message",
+      "verified_read_2026_11_10": true
+    },
+    {
+      "id": "S13",
+      "type": "FV_PUYSEGUR",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "note": "Historical records and source criticism; not evidence of modern audio efficacy",
+      "verified_read_2026_11_10": false
+    },
+    {
+      "id": "S14",
+      "type": "FV_EXISTING_CHANGE",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "note": "Published change-blindness article for internal linkage",
+      "verified_read_2026_11_10": false
+    },
+    {
+      "id": "S15",
+      "type": "FV_GOVERNANCE",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "note": "Mind editorial/merchant release gates",
+      "verified_read_2026_11_10": true
+    },
+    {
+      "id": "S16",
+      "type": "FV_CONVERSION",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820#issuecomment-6764124130",
+      "note": "Dispatch R253 reports arbitrary subscribe query can trigger gift UI; not confirmed signup",
+      "verified_read_2026_11_10": true
+    },
+    {
+      "id": "S17",
+      "type": "FV_DISPATCH_COORD",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171#issuecomment-6764123522",
+      "note": "Dispatch requests verified permissions and separate buyer guide; no email publishing",
+      "verified_read_2026_11_10": true
+    },
+    {
+      "id": "S18",
+      "type": "FV_VIDEO",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/1833",
+      "note": "Existing R257 draft optional 42s concept and locally rendered review film",
+      "verified_read_2026_11_10": false
+    },
+    {
+      "id": "S19",
+      "type": "MERCHANT_PROMO_GUIDANCE",
+      "url": "https://inspire3.com/ll/",
+      "note": "Different product special program (Limitless Labs): explicit partner approval required; do not transfer rights to Zen12",
+      "verified_read_2026_11_10": true
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "24 radiologists searched lung nodules in CT slices in 2013 laboratory study",
+      "classification": "PRIMARY_STUDY",
+      "source_ids": [
+        "S01",
+        "S02"
+      ],
+      "decision": "ALLOW specific study design"
+    },
+    {
+      "id": "C02",
+      "claim": "20/24 (about 83%) did not report inserted gorilla",
+      "classification": "PRIMARY_STUDY",
+      "source_ids": [
+        "S01",
+        "S03"
+      ],
+      "decision": "ALLOW with n and setting; not clinical diagnostic error rate"
+    },
+    {
+      "id": "C03",
+      "claim": "Gorilla described as 48 times size of average nodule",
+      "classification": "PRIMARY_STUDY",
+      "source_ids": [
+        "S01",
+        "S03"
+      ],
+      "decision": "ALLOW with attribution; comparison to study's target"
+    },
+    {
+      "id": "C04",
+      "claim": "In eye tracking, some observers gazed at region but did not report gorilla",
+      "classification": "PRIMARY_STUDY",
+      "source_ids": [
+        "S02",
+        "S03"
+      ],
+      "decision": "ALLOW; avoid asserting direct conscious perception"
+    },
+    {
+      "id": "C05",
+      "claim": "The study proves expertise worsens noticing",
+      "classification": "UNSUPPORTED_EXTRAPOLATION",
+      "source_ids": [
+        "S03"
+      ],
+      "decision": "REJECT: very few participants noticed, causal inference unsupported"
+    },
+    {
+      "id": "C06",
+      "claim": "The study establishes real-world medical diagnostic error rate",
+      "classification": "UNSUPPORTED_EXTRAPOLATION",
+      "source_ids": [
+        "S03"
+      ],
+      "decision": "REJECT"
+    },
+    {
+      "id": "C07",
+      "claim": "Review examined five radiology-specific inattentional blindness papers",
+      "classification": "CRITICAL_REVIEW",
+      "source_ids": [
+        "S03"
+      ],
+      "decision": "ALLOW scoped review count"
+    },
+    {
+      "id": "C08",
+      "claim": "The observer criteria in Drew study are fully clear",
+      "classification": "SOURCE_LIMITATION",
+      "source_ids": [
+        "S03"
+      ],
+      "decision": "REJECT: 2024 review questions coding criteria"
+    },
+    {
+      "id": "C09",
+      "claim": "1999 gorilla experiment shows task/object similarity mattered",
+      "classification": "PRIMARY_STUDY",
+      "source_ids": [
+        "S04"
+      ],
+      "decision": "ALLOW narrow task-specific summary"
+    },
+    {
+      "id": "C10",
+      "claim": "1998 door replacement is same paradigm as 2013 gorilla",
+      "classification": "WRONG_PARADIGM",
+      "source_ids": [
+        "S05",
+        "S01"
+      ],
+      "decision": "REJECT change blindness vs inattentional blindness"
+    },
+    {
+      "id": "C11",
+      "claim": "Gorilla shows all human attention is defective",
+      "classification": "UNSUPPORTED_GENERALIZATION",
+      "source_ids": [
+        "S01",
+        "S03"
+      ],
+      "decision": "REJECT"
+    },
+    {
+      "id": "C12",
+      "claim": "Puységur historical records establish audio product efficacy",
+      "classification": "HISTORICAL_NON_TRANSFER",
+      "source_ids": [
+        "S13"
+      ],
+      "decision": "REJECT"
+    },
+    {
+      "id": "C13",
+      "claim": "Existing FV Fieldbook is 52-page practical workbook free with existing Dispatch signup",
+      "classification": "FIRST_PARTY_LIVE",
+      "source_ids": [
+        "S11",
+        "S12"
+      ],
+      "decision": "ALLOW; no claims of clinical efficacy"
+    },
+    {
+      "id": "C14",
+      "claim": "Focus gift display, PDF click or subscribe query means provider confirmed signup",
+      "classification": "INTERNAL_QA_FRAUD_GUARD",
+      "source_ids": [
+        "S16"
+      ],
+      "decision": "REJECT; require provider-confirmed transition and consent"
+    },
+    {
+      "id": "C15",
+      "claim": "Inspire3 catalog identifies Zen12, Hypnosis Live, Brainwave Shots",
+      "classification": "SELLER_DESCRIPTION",
+      "source_ids": [
+        "S06"
+      ],
+      "decision": "ALLOW attributed catalog identity only"
+    },
+    {
+      "id": "C16",
+      "claim": "Zen12 standard seller page advertises 12 levels and 48 MP3s",
+      "classification": "SELLER_DESCRIPTION",
+      "source_ids": [
+        "S07"
+      ],
+      "decision": "ALLOW with seller attribution; not independent inspection"
+    },
+    {
+      "id": "C17",
+      "claim": "Zen12 seller asserts 12 minutes equals one hour meditation",
+      "classification": "UNSUBSTANTIATED_SELLER_EFFICACY",
+      "source_ids": [
+        "S07"
+      ],
+      "decision": "DO NOT ADOPT as fact; no Zen12-specific independent proof here"
+    },
+    {
+      "id": "C18",
+      "claim": "Zen12 treats or prevents anxiety/depression",
+      "classification": "UNSUBSTANTIATED_HEALTH_CLAIM",
+      "source_ids": [
+        "S07",
+        "S10"
+      ],
+      "decision": "PROHIBIT"
+    },
+    {
+      "id": "C19",
+      "claim": "Meditation studies validate Zen12 Premium specifically",
+      "classification": "UNSUPPORTED_TRANSFER",
+      "source_ids": [
+        "S01",
+        "S07",
+        "S10"
+      ],
+      "decision": "REJECT"
+    },
+    {
+      "id": "C20",
+      "claim": "Seller states 1-year refund guarantee",
+      "classification": "SELLER_TERM_UNVERIFIED",
+      "source_ids": [
+        "S07"
+      ],
+      "decision": "ATTRIBUTE ONLY; actual terms and fulfillment unverified"
+    },
+    {
+      "id": "C21",
+      "claim": "Standard and promotional merchant pages differ in advertised price framing",
+      "classification": "SELLER_PAGE_DIVERGENCE",
+      "source_ids": [
+        "S07",
+        "S08"
+      ],
+      "decision": "ALLOW dated comparison internally only; no public pricing until authorized checkout"
+    },
+    {
+      "id": "C22",
+      "claim": "Countdown/coupon means real urgency or an approved FV discount",
+      "classification": "UNVERIFIED_URGENCY",
+      "source_ids": [
+        "S08"
+      ],
+      "decision": "PROHIBIT"
+    },
+    {
+      "id": "C23",
+      "claim": "Inspire3 public program means Final Vestige named approval",
+      "classification": "PARTNER_AUTH_UNVERIFIED",
+      "source_ids": [
+        "S06",
+        "S15"
+      ],
+      "decision": "REJECT until direct account-verified evidence"
+    },
+    {
+      "id": "C24",
+      "claim": "Limitless Labs ClickBank marketing rights transfer to Zen12",
+      "classification": "WRONG_PRODUCT_AUTH",
+      "source_ids": [
+        "S19"
+      ],
+      "decision": "REJECT"
+    },
+    {
+      "id": "C25",
+      "claim": "Affiliate CTA can run if near-link disclosure present without partner permission",
+      "classification": "PARTIAL_COMPLIANCE",
+      "source_ids": [
+        "S09",
+        "S15"
+      ],
+      "decision": "REJECT: both consent and authorization required"
+    },
+    {
+      "id": "C26",
+      "claim": "A strong affiliate disclosure says Final Vestige may earn a commission",
+      "classification": "FTC_DISCLOSURE",
+      "source_ids": [
+        "S09"
+      ],
+      "decision": "ALLOW in near-CTA text only; prospective until activation"
+    },
+    {
+      "id": "C27",
+      "claim": "Outbound affiliate_click represents paid order",
+      "classification": "MEASUREMENT_MISCLASSIFICATION",
+      "source_ids": [
+        "S16",
+        "S15"
+      ],
+      "decision": "REJECT"
+    },
+    {
+      "id": "C28",
+      "claim": "Confirmed sale requires independent merchant report, matching order and realized proceeds after adjustments",
+      "classification": "MEASUREMENT_SPEC",
+      "source_ids": [
+        "S15",
+        "S16"
+      ],
+      "decision": "REQUIRE for revenue KPI; unknown until data"
+    },
+    {
+      "id": "C29",
+      "claim": "Optional video guarantees higher conversion",
+      "classification": "UNTESTED_HYPOTHESIS",
+      "source_ids": [
+        "S18"
+      ],
+      "decision": "REJECT; no A/B exposure/payment observations"
+    },
+    {
+      "id": "C30",
+      "claim": "Medical or wealth outcomes guaranteed by hypnosis audio",
+      "classification": "UNSUBSTANTIATED_PRODUCT_CLAIM",
+      "source_ids": [
+        "S06",
+        "S10"
+      ],
+      "decision": "PROHIBIT"
+    },
+    {
+      "id": "C31",
+      "claim": "Public current checkout and return terms have been independently verified for FV",
+      "classification": "COMMERCIAL_AUTH_UNVERIFIED",
+      "source_ids": [
+        "S07",
+        "S08"
+      ],
+      "decision": "REJECT; no authenticated cart"
+    },
+    {
+      "id": "C32",
+      "claim": "The original public scientific article must be free of direct product placement",
+      "classification": "EDITORIAL_GOVERNANCE",
+      "source_ids": [
+        "S15"
+      ],
+      "decision": "REQUIRE; commerce separate"
+    }
+  ],
+  "commercial_gates": [
+    {
+      "id": "publisher_named_acceptance",
+      "status": "HARD_HOLD",
+      "evidence": null,
+      "decision": "NO_ACTIVATION"
+    },
+    {
+      "id": "issued_affiliate_url",
+      "status": "HARD_HOLD",
+      "evidence": null,
+      "decision": "NO_ACTIVATION"
+    },
+    {
+      "id": "specific_zen12_product_and_destination",
+      "status": "HARD_HOLD",
+      "evidence": null,
+      "decision": "NO_ACTIVATION"
+    },
+    {
+      "id": "website_channel_permission",
+      "status": "HARD_HOLD",
+      "evidence": null,
+      "decision": "NO_ACTIVATION"
+    },
+    {
+      "id": "social_channel_permission",
+      "status": "HARD_HOLD",
+      "evidence": null,
+      "decision": "NO_ACTIVATION"
+    },
+    {
+      "id": "email_channel_permission",
+      "status": "HARD_HOLD",
+      "evidence": null,
+      "decision": "NO_ACTIVATION"
+    },
+    {
+      "id": "approved_creative_usage_rights",
+      "status": "HARD_HOLD",
+      "evidence": null,
+      "decision": "NO_ACTIVATION"
+    },
+    {
+      "id": "exact_checkout_price_and_currency",
+      "status": "HARD_HOLD",
+      "evidence": null,
+      "decision": "NO_ACTIVATION"
+    },
+    {
+      "id": "merchant_tax_shipping_or_extra_charges",
+      "status": "HARD_HOLD",
+      "evidence": null,
+      "decision": "NO_ACTIVATION"
+    },
+    {
+      "id": "product_inclusion_equivalence_promo_vs_standard",
+      "status": "HARD_HOLD",
+      "evidence": null,
+      "decision": "NO_ACTIVATION"
+    },
+    {
+      "id": "refund_terms_specific_offer",
+      "status": "HARD_HOLD",
+      "evidence": null,
+      "decision": "NO_ACTIVATION"
+    },
+    {
+      "id": "merchant_refund_actual_process",
+      "status": "HARD_HOLD",
+      "evidence": null,
+      "decision": "NO_ACTIVATION"
+    },
+    {
+      "id": "buyer_facing_compliant_disclosure",
+      "status": "HARD_HOLD",
+      "evidence": null,
+      "decision": "NO_ACTIVATION"
+    },
+    {
+      "id": "first_party_event_definition_owner_signoff",
+      "status": "HARD_HOLD",
+      "evidence": null,
+      "decision": "NO_ACTIVATION"
+    },
+    {
+      "id": "merchant_confirmed_paid_commission_feed",
+      "status": "HARD_HOLD",
+      "evidence": null,
+      "decision": "NO_ACTIVATION"
+    },
+    {
+      "id": "founder_editorial_QA_release_approval",
+      "status": "HARD_HOLD",
+      "evidence": null,
+      "decision": "NO_ACTIVATION"
+    }
+  ],
+  "release_bounds": {
+    "no_cms": true,
+    "no_site_nav": true,
+    "no_merge": true,
+    "no_deploy": true,
+    "no_email": true,
+    "no_social": true,
+    "no_spend": true,
+    "no_affiliate_activation": true,
+    "no_new_tracking": true
+  },
+  "known_risk": "Seller standard and VSL promotional prices diverge; exact final checkout and rights unknown. Prohibition applies to published prices and affiliate URLs.",
+  "funnel": {
+    "acquisition": "Grok owned, published asset_id required; none validated here",
+    "qualified_human_sessions": "UNKNOWN",
+    "cta_click": "DIAGNOSTIC_ONLY",
+    "confirmed_signup": "PROVIDER_VERIFIED_OPT_IN_ONLY",
+    "merchant_confirmed_paid_sale": "UNKNOWN",
+    "settled_commission": "UNKNOWN",
+    "fees_and_refunds": "UNKNOWN",
+    "net_revenue_per_1000_qualified_sessions": "NOT_COMPUTABLE"
+  },
+  "handoffs": {
+    "editorial": "Issue #171",
+    "site_qa": "Issue #126",
+    "homepage_art": "Issue #150 review only",
+    "dispatch": "Issue #174 no email edits",
+    "conversion": "Issue #820",
+    "grok": "TASK-008 no posting"
+  }
+}
