@@ -801,6 +801,10 @@ jobs:
         run: |
           python -W error -m unittest discover -s products/desktop/tests -p 'test_report_evidence_exact_stage_r337.py'
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_report_evidence_exact_stage_r337.py'
+      - name: R338 six-app report post-link custody (26 tests; standard and -OO)
+        run: |
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_report_link_*_r338.py'
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_report_link_*_r338.py'
       - name: Verify full normal/optimized source provenance and six smokes (R57)
         run: |
           mkdir -p "$RUNNER_TEMP/fvs-source"
@@ -845,6 +849,14 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R336 smoke runner regression FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_smoke_runner_r336.py'
           if ($LASTEXITCODE -ne 0) { throw "R336 optimized smoke runner regression FAILED" }
+      - name: R338 Windows post-link custody and publisher integration (26 tests; normal and -OO)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_report_link_*_r338.py'
+          if ($LASTEXITCODE -ne 0) { throw "R338 Windows post-link witness tests FAILED" }
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_report_link_*_r338.py'
+          if ($LASTEXITCODE -ne 0) { throw "R338 Windows optimized post-link witness tests FAILED" }
       - name: R337 Windows release report byte and descriptor custody (normal and -OO)
         shell: pwsh
         run: |
