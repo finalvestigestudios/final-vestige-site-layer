@@ -61,7 +61,7 @@ function validate(files){
  reject((article.match(/\b[\w'-]+\b/g)||[]).length>1600,"scientific investigation below substantive threshold");
  reject(/McGurk/.test(article)&&/MacDonald/.test(article)&&/doi\.org\/10\.1038\/264746a0/.test(article),"original paper source missing");
  reject(/Puységur/.test(article)&&/https:\/\/finalvestige\.com\/focus\//.test(article),"history/real funnel bridge missing");
- reject(/not a medical|not a clinical|does \*\*not\*\* demonstrate/i.test(article),"science-to-product inference limit missing");
+ reject(article.includes("It does **not** demonstrate that binaural beats entrain an individual"),"specific science-to-product inference limit missing");
  reject(/Offer → funnel → blocker → change/.test(plan)&&/NOT_COMPUTABLE/.test(plan)&&/asset_id/.test(plan),"conversion plan incomplete");
  reject(/HARD HOLD/.test(plan)&&/browser/.test(plan)&&/WordPress/.test(plan),"release QA boundary missing");
  return {status:"PASS",sources:m.sources.length,claims:m.claims.length,gates:m.gates.length,film_segments:segments.length,film_seconds:segments.at(-1)[1]};
