@@ -98,6 +98,13 @@ R250_SOURCE_READER_BLOB = 'c8149e31b44b6b37ce930dfc8a140560270f1f73'
 # The underlying Article 15/Tool 104 is still unreviewed and unchanged.
 R251_READER_CONTEXT_PATH = 'tools/r251_reader_visible_context_hold.py'
 R251_READER_CONTEXT_BLOB = '677285daafbd53ab3bd2b5ea71e4a84a211bb30a'
+# R252 binds the three original disputed claim occurrences to exact author
+# bodies and a frozen human-review-only CDC/Ready.gov source-scope docket.
+# Presence of a citation NEVER conveys claim or safety approval.
+R252_DISPUTED_CLAIMS_PATH = 'tools/r252_three_disputed_claims_hold.py'
+R252_DISPUTED_CLAIMS_BLOB = '3f2667e088729ec4353c08f8c1f5ef49f4ba6027'
+R252_REVIEW_DOCKET_PATH = 'audits/r252_three_disputed_claims_hard_hold.json'
+R252_REVIEW_DOCKET_BLOB = 'e3aca0a67d0cbbddb9a2bd84c591687d868d7392'
 # These are independently observed R219 integration Git blobs, not certified text.
 # Missing entries MUST match the older R200 original exactly.
 INTEGRATED_DIFFS = {
@@ -662,6 +669,32 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
                     'merchant_approved', 'release_authorized'))):
             raise ValueError('R251 conditional reader-disclosure context HARD HOLD drift')
         result['unapproved_reader_visible_context'] = visible
+        # Three frozen source citations remain independent HUMAN REVIEW,
+        # even where an agency page can be retrieved successfully.
+        r252 = load_frozen_gate(root, R252_DISPUTED_CLAIMS_PATH,
+                                R252_DISPUTED_CLAIMS_BLOB,
+                                'fv_preparedness_r252_claim_review',
+                                ('audit_bytes', 'strict_json', 'git_blob'))
+        review_docket_raw = safe_read(root, R252_REVIEW_DOCKET_PATH)
+        if git_blob(review_docket_raw) != R252_REVIEW_DOCKET_BLOB:
+            raise ValueError('R252 citation review docket Git identity drift')
+        claim_hold = r252.audit_bytes(
+            {
+                'homemade-water-filters': safe_read(
+                    root, 'content/articles/homemade-water-filters.body.html'),
+                'preparedness-real-households': safe_read(
+                    root, 'content/articles/preparedness-real-households.body.html'),
+            }, r252.strict_json(review_docket_raw))
+        if (claim_hold.get('state') != HOLD
+                or claim_hold.get('observed_count') != 3
+                or claim_hold.get('shared_source_groups_still_unreviewed') != 32
+                or claim_hold.get('ready_gov_page_verified') is not False
+                or any(claim_hold.get(k) is not False for k in (
+                    'human_claim_approved', 'human_source_approved',
+                    'medical_safety_verified', 'independent_qd_pass',
+                    'commerce_approved', 'publication_authorized'))):
+            raise ValueError('R252 three citation-claim occurrences HARD HOLD drift')
+        result['unadjudicated_citation_claims'] = claim_hold
         if verify_exports:
             # Only imports the repository's own build code from its trusted tools path.
             tools_path = root / 'tools'
@@ -769,6 +802,10 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
             raise ValueError('R250 source-to-reader guard changed during audit')
         if git_blob(safe_read(root, R251_READER_CONTEXT_PATH)) != R251_READER_CONTEXT_BLOB:
             raise ValueError('R251 reader-disclosure context guard changed during audit')
+        if git_blob(safe_read(root, R252_DISPUTED_CLAIMS_PATH)) != R252_DISPUTED_CLAIMS_BLOB:
+            raise ValueError('R252 citation-claim gate changed during audit')
+        if git_blob(safe_read(root, R252_REVIEW_DOCKET_PATH)) != R252_REVIEW_DOCKET_BLOB:
+            raise ValueError('R252 source-scope review docket changed during audit')
         result['reconciliation'] = {'frozen_articles': 35,
                                     'integrated_changes_held_for_review': sum(
                                         x['changed_since_original'] for x in status),
