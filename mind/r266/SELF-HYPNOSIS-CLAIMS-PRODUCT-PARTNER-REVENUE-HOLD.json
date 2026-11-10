@@ -2,7 +2,7 @@
   "version": "R266-2026-11-10",
   "status": "DRAFT_UNPUBLISHED_HARD_HOLD",
   "product_focus": "Zen12 Premium — never affiliate-active in this draft",
-  "verification_method": "2026-11-10 web read-only seller/FTC/primary research; Gmail searched for publisher approval and Payhip purchase confirmations; no authenticated merchant-side account",
+  "verification_method": "2026-11-10 web read-only seller/FTC/primary research; Gmail searched for publisher approval and Payhip purchase confirmations; no authenticated merchant-side account; R267 independently checked full JAMA Results and Puységur biographical notice, with canonical overlap hold on R266",
   "source_count": 18,
   "claim_count": 26,
   "sources": [
@@ -28,7 +28,7 @@
       "id": "S04",
       "url": "https://pubmed.ncbi.nlm.nih.gov/41217756/",
       "kind": "independent_randomized_trial",
-      "scope": "2025 self-administered hot-flash protocol versus white-noise control; not Inspire3"
+      "scope": "2025 clinical audio trial; time-matched white-noise recordings labeled hypnosis + education control; week-six P=.04 for score contrast, overall score trajectory P=.06; full Results https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2841242 ; not Inspire3"
     },
     {
       "id": "S05",
@@ -142,7 +142,7 @@
     },
     {
       "id": "C05",
-      "claim": "2025 trial reported 53.4% vs 40.9% mean hot-flash score reductions; P=.04",
+      "claim": "2025 hot-flash trial: primary week-six score=freq×severity decreased 53.4% vs 40.9% (P=.04); separate longitudinal score-trajectory P=.06 (partial η²=.02), not product efficacy; 205/250 week-six and 191/250 week-twelve diaries available, ITT/imputation reported.",
       "source": "S04",
       "status": "INDEPENDENT_TRIAL_NOT_PRODUCT"
     },
