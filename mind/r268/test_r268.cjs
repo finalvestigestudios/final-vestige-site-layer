@@ -37,7 +37,7 @@ function inspectHtml(html,tag,errors){
   const button=blocks.find(x=>/\bid\s*=\s*["']?zen12-buy-button\b/i.test(x));
   errorIf(errors,!button,tag+": disabled commercial control absent");
   if(button){
-    errorIf(errors,!/\bdisabled\b/i.test(button),tag+": commercial button not truly disabled");
+    errorIf(errors,!/\sdisabled(?=\s|>)/i.test(button),tag+": commercial button not truly disabled");
     errorIf(errors,!/\baria-disabled\s*=\s*["']?true\b/i.test(button),tag+": aria-disabled absent");
     const at=html.indexOf(button),end=html.indexOf("</button>",at);
     const after=html.slice(end+9,end+360);
@@ -58,7 +58,7 @@ function inspectHtml(html,tag,errors){
   }
   errorIf(errors,/<\s*a\b[^>]*\bhref\s*=\s*(?:"|'|)\s*(?:https?:\/\/)?(?:www\.)?(?:zen12|inspire3|hypnosislive|brainwaveshots)\./i.test(html),tag+": merchant link is unauthorized");
   errorIf(errors,/(?:guaranteed? (?:health|wealth|healing|memory|brain|results)|clinically proven Zen12|millionaire overnight)/i.test(html),tag+": unsubstantiated direct promise");
-  errorIf(errors,/\b(?:<style[^>]*@import|<link[^>]+stylesheet|<img[^>]+src\s*=\s*["']https?:)/i.test(html),tag+": remote resource");
+  errorIf(errors,/<img\b[^>]*\bsrc\s*=\s*(?:"https?:|'https?:|https?:)/i.test(html)||/<link\b[^>]*\bhref\s*=\s*(?:"https?:|'https?:|https?:)/i.test(html)||/@import\b/i.test(html),tag+": remote resource");
 }
 function getBuyer(html){
   const start=html.indexOf('<section id="choice">'),end=html.indexOf("</main>",start);
@@ -131,7 +131,7 @@ function check(files){
 function deepCopy(o){return JSON.parse(JSON.stringify(o))}
 function mutations(files){
  const out=[];
- function add(label,change){const f=deepCopy(files);change(f);out.push([label,f]);}
+ function add(label,change){const f=deepCopy(files);change(f);if(Object.keys(files).every(k=>files[k]===f[k]))throw new Error("Ineffective mutation fixture: "+label);out.push([label,f]);}
  add("A enables buy",f=>f.a=f.a.replace("type=\"button\" disabled","type=\"button\""));
  add("B enables buy",f=>f.b=f.b.replace("type=\"button\" disabled","type=\"button\""));
  add("hub enables buy",f=>f.hub=f.hub.replace("id=\"zen12-buy-button\" disabled","id=\"zen12-buy-button\""));
@@ -151,7 +151,7 @@ function mutations(files){
  add("B loses transcript",f=>f.b=f.b.replace('complete seven-part, 42-second transcript','No transcript provided'));
  add("B changes caption start",f=>f.b=f.b.replace('data-time="12-18"','data-time="13-18"'));
  add("B changes caption end",f=>f.b=f.b.replace('data-time="36-42"','data-time="36-43"'));
- add("B rewrites buyer copy",f=>f.b=f.b.replace('a free twelve-minute timer','a scientifically inferior free twelve-minute timer'));
+ add("B rewrites buyer copy",f=>f.b=f.b.replace("That is a practical preference.","That is a clinically proven outcome."));
  add("A adds guaranteed clinical claim",f=>f.a=f.a.replace("</main>","<p>guaranteed healing</p></main>"));
  add("article removes early primary",f=>f.article=f.article.replace(/14450948/g,"MISSING"));
  add("article changes history",f=>f.article=f.article.replace("artillery officer","physician"));
