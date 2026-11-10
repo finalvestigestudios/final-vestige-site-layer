@@ -110,6 +110,11 @@ R252_REVIEW_DOCKET_BLOB = 'e3aca0a67d0cbbddb9a2bd84c591687d868d7392'
 # Risk-term priority is a human review queue, NEVER safety or QD approval.
 R253_SOURCE_CONTEXT_PATH = 'tools/r253_full_slate_shared_source_priority_hold.py'
 R253_SOURCE_CONTEXT_BLOB = '4456a15606a3787b348cc4d540a2ea40299a0ee5'
+# R254 exposes the original author-owned claim context to human reviewers while
+# enforcing the independently observed 562 shared-source occurrences/56 IDs.
+# Its output remains review-only; every release, medical and QD HOLD persists.
+R254_READABLE_WORKORDERS_PATH = 'tools/r254_readable_claim_workorders_hold.py'
+R254_READABLE_WORKORDERS_BLOB = '76d5030cd774c1474e2d0b69510045ed404fe8fd'
 # These are independently observed R219 integration Git blobs, not certified text.
 # Missing entries MUST match the older R200 original exactly.
 INTEGRATED_DIFFS = {
@@ -517,6 +522,25 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
                     'merchant_approved', 'publication_authorized'))):
             raise ValueError('R253 35-article source/claim join HARD HOLD drift')
         result['shared_source_context_review_queue'] = joined
+        r254 = load_frozen_gate(root, R254_READABLE_WORKORDERS_PATH,
+                                R254_READABLE_WORKORDERS_BLOB,
+                                'fv_preparedness_r254_readable_review_workorders',
+                                ('audit_readable_workorders',))
+        workorders = r254.audit_readable_workorders(joined, claims)
+        if (workorders.get('state') != HOLD
+                or workorders.get('article_count') != 35
+                or workorders.get('citation_count') != 2000
+                or workorders.get('source_review_groups') != 32
+                or workorders.get('shared_source_ids') != 56
+                or workorders.get('human_readable_workorders') != 562
+                or workorders.get('other_citation_occurrences_still_unreviewed') != 1438
+                or workorders.get('disputed_original_claims') != 3
+                or any(workorders.get(key) is not False for key in (
+                    'independent_claim_source_verified', 'independent_qd_pass',
+                    'medical_safety_verified', 'merchant_approved',
+                    'publication_authorized'))):
+            raise ValueError('R254 human-readable 562-citation review docket HARD HOLD drift')
+        result['shared_source_readable_claim_workorders'] = workorders
         # R237's simple tag/attribute regex can mistake '>' inside a quoted
         # attribute or HTML comment for the end of markup. Verify source-level
         # visibility separately with an independently pinned quote-aware lexer.
@@ -832,6 +856,8 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
             raise ValueError('R252 source-scope review docket changed during audit')
         if git_blob(safe_read(root, R253_SOURCE_CONTEXT_PATH)) != R253_SOURCE_CONTEXT_BLOB:
             raise ValueError('R253 source-context join gate changed during audit')
+        if git_blob(safe_read(root, R254_READABLE_WORKORDERS_PATH)) != R254_READABLE_WORKORDERS_BLOB:
+            raise ValueError('R254 readable claim review gate changed during audit')
         result['reconciliation'] = {'frozen_articles': 35,
                                     'integrated_changes_held_for_review': sum(
                                         x['changed_since_original'] for x in status),
