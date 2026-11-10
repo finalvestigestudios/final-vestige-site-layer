@@ -99,6 +99,8 @@ def inspect(original:bytes,draft:bytes,witness:dict,*,expected_original_blob:str
       "schema":SCHEMA,"state":HOLD,"original_git_blob":expected_original_blob,
       "candidate_git_blob":git_blob(draft),"cutout_faces":2,
       "cautions_structurally_inside_both_faces":True,
+      "r265_notice_owners_exactly_front_and_back":True,
+      "r265_cutout_faces_are_direct_siblings":True,
       "original_source_unchanged":True,"citation_and_routes_unchanged":True,
       "real_browser_and_cutout_qa_completed":False,"qualified_child_privacy_review_completed":False,
       "safe_to_carry_certified":False,"ready_for_wordpress":False,
