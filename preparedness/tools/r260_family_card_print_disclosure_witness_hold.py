@@ -72,8 +72,8 @@ def inspect(raw: bytes, *, expected_blob: str = BODY_BLOB) -> dict:
     if not rule_hides(css, 'pa-card-mainhide'):
         raise ValueError('R260 observed print-hide rule changed; re-review CSS')
     screen_alert = re.search(
-        r'<div\b(?=[^>]*\bclass\s*=\s*["\x27][^"\x27]*\bpa-alert--stop\b[^"\x27]*["\x27])'
-        r'(?=[^>]*\bclass\s*=\s*["\x27][^"\x27]*\bpa-card-mainhide\b[^"\x27]*["\x27])'
+        r'<div\b(?=[^>]*\bclass\s*=\s*["\'][^"\']*\bpa-alert--stop\b[^"\']*["\'])'
+        r'(?=[^>]*\bclass\s*=\s*["\'][^"\']*\bpa-card-mainhide\b[^"\']*["\'])'
         r'[^>]*>(.*?)</div\s*>', text, re.I | re.S)
     if not screen_alert:
         raise ValueError('R260 original privacy alert missing or no longer print-hidden')
