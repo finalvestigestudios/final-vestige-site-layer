@@ -711,6 +711,15 @@
     "unchanged_jetpack_list": true,
     "video_not_playable": true,
     "release_approval": false,
-    "claim_denominators": "study-specific"
+    "claim_denominators": "study-specific",
+    "canonical_duplicate_review": "BLOCKED_R203_R244"
+  },
+  "canonical_editorial_status": "DUPLICATE_TOPIC_HARD_HOLD_R203_R244",
+  "canonical_reference": {
+    "preferred_prior_draft": "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/1499",
+    "overlapping_later_draft": "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/1754",
+    "prior_qa_corrections": "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/1504",
+    "r273_draft_role": "ALTERNATIVE_WORDING_ONLY_NOT_NEW_EDITORIAL_TOPIC",
+    "public_slug_approved": false
   }
 }
