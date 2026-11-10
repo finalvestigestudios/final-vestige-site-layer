@@ -26,15 +26,9 @@ class ScopedIntegration(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         # Use the exact source in a clean checkout; never silently accept an approximate version.
-        cls.source = REPO / 'experience2' / 'homepage'
-        if not (cls.source / 'index.html').exists():
-            # The source actually lives in the independently stacked Experience 2 tree.
-            # Locate only under the expected Experience 2 directory, fail on ambiguity.
-            candidates = list((REPO / 'experience2').rglob('index.html'))
-            matches = [p.parent for p in candidates if all((p.parent / name).exists() for name in PINNED_GIT_BLOBS)]
-            if len(matches) != 1:
-                raise RuntimeError('Expected exactly one eleven-source Experience 2 candidate directory; got '+str(matches))
-            cls.source = matches[0]
+        cls.source = REPO / 'experience2' / 'home-flagship'
+        if not cls.source.is_dir():
+            raise RuntimeError('Expected exact source directory experience2/home-flagship is missing')
         cls.payload = stage_payload(cls.source)
         cls.base = synthetic_page()
 
