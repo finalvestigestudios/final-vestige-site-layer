@@ -171,6 +171,14 @@ R267_BROWSER_REPRO_BLOB = '6ed7552d9b9c210e7fd4b7d67771a154c3b7a590'
 # is external and remains no medical, child privacy, accessibility or QD PASS.
 R268_PRINT_ACCEPTANCE_PATH = 'tools/r268_wallet_print_parity_acceptance_hold.py'
 R268_PRINT_ACCEPTANCE_BLOB = '5207b20954c1b6d93b88f430843d4bafb2e8df88'
+# R269 is an OFFLINE, unapproved detachable-status review alternative.
+# Both the original R267 and all frozen corpus inputs remain immutable.
+R269_CUTOUT_GATE_PATH = 'tools/r269_cutout_review_status_hold.py'
+R269_CUTOUT_GATE_BLOB = 'ac55281e9813f33f7004f9b5b9121b00f2a1e247'
+R269_CUTOUT_HTML_PATH = 'audits/r269_cutout_status_card_REVIEW_ONLY.html'
+R269_CUTOUT_HTML_BLOB = '4fbe028e0460dc81478825f501d76b03596faeaf'
+R269_CUTOUT_REPRO_PATH = 'tools/r269_reproduce_detached_status_REVIEW_ONLY.py'
+R269_CUTOUT_REPRO_BLOB = '31c729b079ce81a574acb39f00d8f73f20277fa4'
 # R258 binds the complete R254/R257 original source-claim partition to a
 # deterministic, entirely escaped, no-clickable-links offline reviewer view.
 R258_COMPLETE_REVIEW_PATH = 'tools/r258_complete_offline_claim_review_hold.py'
@@ -953,6 +961,29 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
                 or 'independent_qd_pass' not in acceptance_gate.FALSE_STATES):
             raise ValueError('R268 acceptance gate release/coverage drift')
         result['manual_browser_reproduction_gate'] = 'PINNED_NOT_NATIVE_EXECUTED'
+        # R269: source-bound reversible alternative keeps REVIEW-ONLY status
+        # inside both detachable faces. It is NOT a fix to original Tool #104.
+        cutout_gate = load_frozen_gate(root, R269_CUTOUT_GATE_PATH,
+                                       R269_CUTOUT_GATE_BLOB,
+                                       'fv_preparedness_r269_cutout_review_status_hold',
+                                       ('audit', 'inspect'))
+        cutout_review = cutout_gate.audit(root, safe_read)
+        if (cutout_review.get('state') != HOLD
+                or cutout_review.get('candidate_git_blob') != R269_CUTOUT_HTML_BLOB
+                or cutout_review.get('old_git_blob') != R267_WALLET_HTML_BLOB
+                or cutout_review.get('original_cutout_review_status_missing') is not True
+                or cutout_review.get('candidate_badge_in_each_face_source') is not True
+                or any(cutout_review.get(k) is not False for k in (
+                    'source_approved', 'privacy_approved', 'accessibility_approved',
+                    'physical_print_approved', 'child_information_approved',
+                    'independent_qd_pass', 'ready_for_wordpress',
+                    'publication_authorized', 'public_published', 'commerce_approved',
+                    'full_native_pipeline_executed'))):
+            raise ValueError('R269 cutout status/source safety gates changed')
+        if git_blob(safe_read(root, R269_CUTOUT_REPRO_PATH)) != R269_CUTOUT_REPRO_BLOB:
+            raise ValueError('R269 separate browser reproducer changed')
+        result['unpublished_cutout_status_review'] = cutout_review
+        result['r269_manual_browser_test'] = 'EXTERNAL_ONLY_NOT_NATIVE_EXECUTED'
         # A reversible SCREEN-only alternative is not approval for the
         # existing held tool or proof of physical print/privacy safety.
         r267 = load_frozen_gate(root, R267_WALLET_SCREEN_PATH,
@@ -1192,7 +1223,10 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
                 (R267_WALLET_HTML_PATH, R267_WALLET_HTML_BLOB),
                 (R267_WALLET_RECEIPT_PATH, R267_WALLET_RECEIPT_BLOB),
                 (R267_BROWSER_REPRO_PATH, R267_BROWSER_REPRO_BLOB),
-                (R268_PRINT_ACCEPTANCE_PATH, R268_PRINT_ACCEPTANCE_BLOB)):
+                (R268_PRINT_ACCEPTANCE_PATH, R268_PRINT_ACCEPTANCE_BLOB),
+                (R269_CUTOUT_GATE_PATH, R269_CUTOUT_GATE_BLOB),
+                (R269_CUTOUT_HTML_PATH, R269_CUTOUT_HTML_BLOB),
+                (R269_CUTOUT_REPRO_PATH, R269_CUTOUT_REPRO_BLOB)):
             if git_blob(safe_read(root, path)) != expected:
                 raise ValueError('R267 screen-only candidate/source receipt changed during audit')
         if git_blob(safe_read(root, R258_COMPLETE_REVIEW_PATH)) != R258_COMPLETE_REVIEW_BLOB:
