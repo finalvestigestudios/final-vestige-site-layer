@@ -15,6 +15,7 @@ function validate(d){
  if(!eq(m.offers,FROZEN.offers))e.push('seller permissions, rights, SKU, links, fulfillment or refund drift');
  if(m.measurement.metrics_status!=='NOT_COMPUTABLE'||!m.creator_fit.every(x=>!x.asset_id))e.push('invented revenue or media provenance');
  if(!m.validation_scope.no_proven_commissions||!m.validation_scope.video_not_playable||m.validation_scope.release_approval!==false)e.push('false commercial state');
+ if(m.canonical_editorial_status!=='DUPLICATE_TOPIC_HARD_HOLD_R203_R244'||m.canonical_reference.public_slug_approved!==false||m.validation_scope.canonical_duplicate_review!=='BLOCKED_R203_R244'||!d.article.includes('CANONICAL EDITORIAL HOLD'))e.push('R203/R244 topic overlap was silently cleared');
  const hostAllowed=['finalvestige.com','www.ftc.gov','pubmed.ncbi.nlm.nih.gov','www.nccih.nih.gov','pmc.ncbi.nlm.nih.gov'];
  for(const[n,h]of [['A',d.a],['B',d.b],['HUB',d.hub]]){
   if(/<\s*(script|form|iframe|video|audio|source|track|img|picture|link|base|object|embed|use)\b/i.test(h))e.push(n+' unapproved media/script/form/embed');
@@ -57,7 +58,7 @@ function adversarial(d){
  ['claim evidence switch',x=>x.claims[3].status='PROVEN'],['historical transfer',x=>x.claims.find(y=>y.id==='C21').status='supported'],
  ['missing claim',x=>x.claims.pop()],['missing gate',x=>x.commercial_gates.pop()],
  ['invent paid revenue',x=>x.measurement.metrics_status='VERIFIED'],['invent media asset',x=>x.creator_fit[0].asset_id='FAKE'],
- ['new release flag',x=>x.release.external_pixel=true]
+ ['false public article clearance',x=>x.canonical_reference.public_slug_approved=true],['duplicate gate quietly removed',x=>x.validation_scope.canonical_duplicate_review='PASSED'],['new release flag',x=>x.release.external_pixel=true]
  ])matrixTest(name,fn);
  for(const[name,key,old,replacement]of [
  ['A button enabled','a','type="button" disabled','type="button"'],
