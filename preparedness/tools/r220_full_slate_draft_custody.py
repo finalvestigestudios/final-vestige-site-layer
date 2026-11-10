@@ -105,6 +105,11 @@ R252_DISPUTED_CLAIMS_PATH = 'tools/r252_three_disputed_claims_hold.py'
 R252_DISPUTED_CLAIMS_BLOB = '3f2667e088729ec4353c08f8c1f5ef49f4ba6027'
 R252_REVIEW_DOCKET_PATH = 'audits/r252_three_disputed_claims_hard_hold.json'
 R252_REVIEW_DOCKET_BLOB = 'e3aca0a67d0cbbddb9a2bd84c591687d868d7392'
+# R253 joins the frozen 32 shared-source review groups to the 2,000
+# authentic R237 citation contexts across all 35 original articles.
+# Risk-term priority is a human review queue, NEVER safety or QD approval.
+R253_SOURCE_CONTEXT_PATH = 'tools/r253_full_slate_shared_source_priority_hold.py'
+R253_SOURCE_CONTEXT_BLOB = '4456a15606a3787b348cc4d540a2ea40299a0ee5'
 # These are independently observed R219 integration Git blobs, not certified text.
 # Missing entries MUST match the older R200 original exactly.
 INTEGRATED_DIFFS = {
@@ -493,6 +498,25 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
                 or claims.get('claim_evidence_adjudicated') is not False):
             raise ValueError('R237 per-occurrence claim/source review HOLD changed')
         result['claim_context_review_docket'] = claims
+        r253 = load_frozen_gate(root, R253_SOURCE_CONTEXT_PATH,
+                                R253_SOURCE_CONTEXT_BLOB,
+                                'fv_preparedness_r253_source_claim_join',
+                                ('audit_join',))
+        joined = r253.audit_join(docket, claims, roster)
+        totals = joined.get('totals') or {}
+        if (joined.get('state') != HOLD
+                or joined.get('article_count') != 35
+                or joined.get('citation_count') != 2000
+                or joined.get('contributor_cluster_count') != 7
+                or totals.get('groups') != 32
+                or totals.get('matched_occurrences', -1) + totals.get('unmatched_occurrences', -1) != 2000
+                or totals.get('original_disputed_occurrences') != 3
+                or any(joined.get(key) is not False for key in (
+                    'human_source_scope_approved', 'independent_claim_reviewed',
+                    'independent_qd_pass', 'medical_safety_verified',
+                    'merchant_approved', 'publication_authorized'))):
+            raise ValueError('R253 35-article source/claim join HARD HOLD drift')
+        result['shared_source_context_review_queue'] = joined
         # R237's simple tag/attribute regex can mistake '>' inside a quoted
         # attribute or HTML comment for the end of markup. Verify source-level
         # visibility separately with an independently pinned quote-aware lexer.
@@ -806,6 +830,8 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
             raise ValueError('R252 citation-claim gate changed during audit')
         if git_blob(safe_read(root, R252_REVIEW_DOCKET_PATH)) != R252_REVIEW_DOCKET_BLOB:
             raise ValueError('R252 source-scope review docket changed during audit')
+        if git_blob(safe_read(root, R253_SOURCE_CONTEXT_PATH)) != R253_SOURCE_CONTEXT_BLOB:
+            raise ValueError('R253 source-context join gate changed during audit')
         result['reconciliation'] = {'frozen_articles': 35,
                                     'integrated_changes_held_for_review': sum(
                                         x['changed_since_original'] for x in status),
