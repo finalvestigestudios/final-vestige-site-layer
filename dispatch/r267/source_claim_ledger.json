@@ -1,0 +1,64 @@
+{
+  "status": "DRAFT_UNSENT_NO_ADOPTION",
+  "edition": 2,
+  "canonical_pr": 175,
+  "canonical_issue": 174,
+  "stacked_on_pr": 1958,
+  "original_edition_unchanged": true,
+  "planned_subject": "The man who answered while asleep",
+  "planned_preheader": "Puységur's 1784 account is a remarkable document—and an imperfect experiment.",
+  "jetpack_preheader_supported": "NOT_VERIFIED",
+  "single_editorial_cta": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+  "affiliate_links": [],
+  "commercial_placement": false,
+  "research_claims": [
+    {
+      "id": "CASE_REPORT",
+      "claim": "Puységur wrote a report of a young farmworker's altered behavior in May 1784",
+      "evidence_type": "historical account attributed to its author",
+      "status": "SOURCE_SUPPORTED_REPORT_NOT_INDEPENDENT_FACT",
+      "sources": [
+        "https://www.circee.org/puysegur-memoires-pour-servir-a-l-histoire-du-magnetisme-animal-1784/",
+        "https://catalogue.bnf.fr/ark:/12148/cb31160297p"
+      ]
+    },
+    {
+      "id": "IMPRINT",
+      "claim": "Original work bibliographed 1784–1785; a NLM imprint is catalogued '1784 [i.e. 1785]'",
+      "evidence_type": "library catalogue metadata",
+      "status": "VERIFIED_CATALOGUE_NOT_PHYSICAL_FIRST_EDITION_EXAM",
+      "sources": [
+        "https://catalogue.bnf.fr/ark:/12148/cb31160297p",
+        "https://www.ncbi.nlm.nih.gov/nlmcatalog/440836"
+      ]
+    },
+    {
+      "id": "FRANKLIN",
+      "claim": "1784 commission examined animal magnetism; 1785 translation survives",
+      "evidence_type": "historical report translation",
+      "status": "VERIFIED_REPORT_EXISTS_NOT_VICTOR_EXAM",
+      "sources": [
+        "https://www.gutenberg.org/files/78413/78413-h/78413-h.htm"
+      ]
+    }
+  ],
+  "do_not_assert": [
+    "Hypnosis Live / Zen12 clinically established by this case",
+    "Franklin commission personally tested Victor",
+    "A magnetic fluid was independently demonstrated",
+    "Victor's statements are an objective recording",
+    "The work was certainly published in 1784"
+  ],
+  "live_checks": {
+    "delivered_email": false,
+    "actual_preheader": false,
+    "postal_address": false,
+    "unsubscribe": false,
+    "confirmed_subscriber": false,
+    "merchant_email_permission": false
+  },
+  "source_retrieval_date": "2026-11-10",
+  "review_required": "Founder's separate editorial adoption and final campaign release approval",
+  "owner": "Dispatch #174",
+  "blocked": true
+}
