@@ -70,20 +70,18 @@ function fv_ex2_rd_shortcode($atts = array()): string {
         $markup = str_replace('fv-ex2-ledger-apollo1-', 'fv-ex2-ledger-apollo1-instance-' . $instances . '-', $markup);
     }
 
-    // Only after wp_head can a shortcode have missed the normal stylesheet
-    // printing opportunity. Shortcodes evaluated earlier (e.g., in block
-    // pre-render) must not duplicate the queued CSS inline. Legacy test shims
-    // without did_action retain the conservative fail-open behavior.
-    $head_finished_or_in_progress = !function_exists('did_action') || did_action('wp_head') > 0;
-    if ($head_finished_or_in_progress && !$fallback_style_emitted && !wp_style_is('fv-ex2-research-desk', 'done')) {
-        $css_path = plugin_dir_path(__FILE__) . 'assets/source-ledger.css';
-        if (fv_ex2_rd_trusted_asset('assets/source-ledger.css', 'db531213e6f8dbaa44fba2885eefdd016dab93e3')) {
-            $css = file_get_contents($css_path);
-            if (is_string($css) && $css !== '' && !preg_match('~</?\s*(?:script|style)\b|@import\b|url\s*\(~i', $css)) {
-                $markup = '<style id="fv-ex2-research-desk-late-style">' . $css . '</style>' . $markup;
-                $fallback_style_emitted = true;
-            }
-        }
+    // Late shortcode markup can appear after wp_head has already printed styles.
+    // Under a CSP that forbids inline styles, emitting <style> fails silently.
+    // Use a single REVIEWED SAME-ORIGIN PLUGIN CSS URL instead, verified against
+    // the pinned Git object. A missing/changed stylesheet fails open: the native
+    // six-record NASA evidence list stays readable without presentation CSS.
+    // No duplicate link if WordPress already printed the queued stylesheet.
+    $head_started = !function_exists('did_action') || did_action('wp_head') > 0;
+    if ($head_started && !$fallback_style_emitted && !wp_style_is('fv-ex2-research-desk', 'done')
+            && fv_ex2_rd_trusted_asset('assets/source-ledger.css', 'db531213e6f8dbaa44fba2885eefdd016dab93e3')) {
+        $href = plugins_url('assets/source-ledger.css', __FILE__);
+        $markup = '<link rel="stylesheet" id="fv-ex2-research-desk-late-style" href="' . esc_url($href) . '">' . $markup;
+        $fallback_style_emitted = true;
     }
     return $markup;
 }
