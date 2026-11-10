@@ -179,6 +179,14 @@ R269_CUTOUT_HTML_PATH = 'audits/r269_cutout_status_card_REVIEW_ONLY.html'
 R269_CUTOUT_HTML_BLOB = '4fbe028e0460dc81478825f501d76b03596faeaf'
 R269_CUTOUT_REPRO_PATH = 'tools/r269_reproduce_detached_status_REVIEW_ONLY.py'
 R269_CUTOUT_REPRO_BLOB = '31c729b079ce81a574acb39f00d8f73f20277fa4'
+# R270 pins manually reproduced PDF *text spans per cutout face*, including
+# a negative 8pt legibility-risk observation. No physical or QD approval.
+R270_PDF_LOCALITY_PATH = 'tools/r270_wallet_pdf_face_locality_hold.py'
+R270_PDF_LOCALITY_BLOB = 'db1831cceab610e559f4ce8c174a867dbf692b99'
+R270_PDF_RECEIPT_PATH = 'audits/r270_print_locality_receipt_REVIEW_ONLY.json'
+R270_PDF_RECEIPT_BLOB = 'df6a8732265a24fbc54442c87e24015f76ef5282'
+R270_PDF_REPRO_PATH = 'tools/r270_reproduce_wallet_print_locality_REVIEW_ONLY.py'
+R270_PDF_REPRO_BLOB = '02efdcb44f7dab1ccd4bbd5dae506952dc7ee9c4'
 # R258 binds the complete R254/R257 original source-claim partition to a
 # deterministic, entirely escaped, no-clickable-links offline reviewer view.
 R258_COMPLETE_REVIEW_PATH = 'tools/r258_complete_offline_claim_review_hold.py'
@@ -984,6 +992,26 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
             raise ValueError('R269 separate browser reproducer changed')
         result['unpublished_cutout_status_review'] = cutout_review
         result['r269_manual_browser_test'] = 'EXTERNAL_ONLY_NOT_NATIVE_EXECUTED'
+        # R270: source-bound, offline PDF text-span locality evidence is NOT a
+        # physical cut/fold, font legibility, child-privacy, or QD release PASS.
+        pdf_locality_gate = load_frozen_gate(root, R270_PDF_LOCALITY_PATH,
+                                             R270_PDF_LOCALITY_BLOB,
+                                             'fv_preparedness_r270_pdf_face_locality_hold',
+                                             ('audit', 'inspect'))
+        pdf_receipt = pdf_locality_gate.audit(root, safe_read)
+        if (pdf_receipt.get('state') != HOLD
+                or pdf_receipt.get('source_git_blob') != R269_CUTOUT_HTML_BLOB
+                or pdf_receipt.get('receipt_git_blob') != R270_PDF_RECEIPT_BLOB
+                or pdf_receipt.get('reproducer_git_blob') != R270_PDF_REPRO_BLOB
+                or pdf_receipt.get('printed_notice_8pt_risk_requires_human_review') is not True
+                or any(pdf_receipt.get(k) is not False for k in (
+                    'physical_print_approved', 'legibility_approved',
+                    'child_privacy_approved', 'independent_qd_pass',
+                    'publication_authorized', 'commerce_approved',
+                    'full_native_pipeline_executed'))):
+            raise ValueError('R270 printed-face locality and negative safety evidence drift')
+        result['r270_cutout_pdf_face_locality_hard_hold'] = pdf_receipt
+        result['r270_manual_pdf_reproduction'] = 'EXTERNAL_ONLY_NOT_NATIVE_EXECUTED'
         # A reversible SCREEN-only alternative is not approval for the
         # existing held tool or proof of physical print/privacy safety.
         r267 = load_frozen_gate(root, R267_WALLET_SCREEN_PATH,
@@ -1226,7 +1254,10 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
                 (R268_PRINT_ACCEPTANCE_PATH, R268_PRINT_ACCEPTANCE_BLOB),
                 (R269_CUTOUT_GATE_PATH, R269_CUTOUT_GATE_BLOB),
                 (R269_CUTOUT_HTML_PATH, R269_CUTOUT_HTML_BLOB),
-                (R269_CUTOUT_REPRO_PATH, R269_CUTOUT_REPRO_BLOB)):
+                (R269_CUTOUT_REPRO_PATH, R269_CUTOUT_REPRO_BLOB),
+                (R270_PDF_LOCALITY_PATH, R270_PDF_LOCALITY_BLOB),
+                (R270_PDF_RECEIPT_PATH, R270_PDF_RECEIPT_BLOB),
+                (R270_PDF_REPRO_PATH, R270_PDF_REPRO_BLOB)):
             if git_blob(safe_read(root, path)) != expected:
                 raise ValueError('R267 screen-only candidate/source receipt changed during audit')
         if git_blob(safe_read(root, R258_COMPLETE_REVIEW_PATH)) != R258_COMPLETE_REVIEW_BLOB:
