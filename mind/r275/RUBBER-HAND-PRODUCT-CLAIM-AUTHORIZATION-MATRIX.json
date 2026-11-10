@@ -23,7 +23,7 @@
       "id": "hypnosis_live_total_focus",
       "seller_url": "https://hypnosislive.com/mental-skills/total-focus",
       "package_public": "33-minute 47 MB audio; seller-described concentration hypnosis",
-      "public_price_observation": "Public page crawl shows dynamic $2 / crossed $22.95; prior observations differed. Do not quote live price.",
+      "public_price_observation": "Official Total Focus product page read 2026-11-10 shows $24.44 with $29.95 struck through, and a $19.95 bundle item; seller display NOT authenticated final checkout; amounts may change.",
       "product_trial": null,
       "issued_earning_link": null,
       "eligible_for_live_cta": false
@@ -252,21 +252,21 @@
     },
     {
       "id": "C10",
-      "claim": "Altered-gravity conditions can change illusion susceptibility in studied conditions",
+      "claim": "Bruno et al. analyzed five parabolic-flight participants and nineteen water-immersion participants; flight proprioceptive drift increased in synchronous and asynchronous conditions, while subjective embodiment comparisons have important nonsignificant outcomes.",
       "status": "supported_conditionally",
       "source_ids": [
         "R05"
       ],
-      "limitation": "Specialized protocol, not universal effect"
+      "limitation": "Flight one of six participants fell ill; pool simulation not zero gravity; subjective embodiment is distinct from drift, and expectation effects were not experimentally excluded"
     },
     {
       "id": "C11",
-      "claim": "Touch intensity can affect rubber-hand measures in a specific experimental protocol",
+      "claim": "Della Longa et al. (21 adults) found intensity-related changes in proprioceptive drift but subjective embodiment was better predicted by synchronous touch.",
       "status": "supported_conditionally",
       "source_ids": [
         "R06"
       ],
-      "limitation": "No at-home discomfort demonstration"
+      "limitation": "Do not label all measures generic susceptibility; no at-home discomfort exercise"
     },
     {
       "id": "C12",
@@ -401,7 +401,7 @@
     {
       "id": "C26",
       "claim": "Final Vestige has approved Inspire3 affiliate acceptance and issued earning link",
-      "status": "unverified_account_specific",
+      "status": "publisher_authorization_unverified",
       "source_ids": [
         "R07"
       ],
@@ -593,5 +593,6 @@
     "new_paid_services": false,
     "merge_approved": false
   },
-  "decision": "Eligibility first. No purchase call-to-action until named publisher agreement, precise eligible product, issued URL, channels, terms, live checkout and founder signoff. Prioritize paid FV-owned offer only if authenticated; otherwise keep free Focus CTA and revenue NOT_COMPUTABLE."
+  "decision": "Eligibility first. No purchase call-to-action until named publisher agreement, precise eligible product, issued URL, channels, terms, live checkout and founder signoff. Prioritize paid FV-owned offer only if authenticated; otherwise keep free Focus CTA and revenue NOT_COMPUTABLE.",
+  "editorial_canonical_status": "DUPLICATE_TOPIC_HOLD__R204_R218_R251; consolidate only novelty into R204, no new WordPress or Grok destination"
 }
