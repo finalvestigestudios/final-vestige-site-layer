@@ -27,3 +27,6 @@ test('fail partial missing row',()=>assert.throws(mutate(a=>a.rows.pop())));
 test('fail unrelated evidence rewrite',()=>assert.throws(mutate((a,b)=>b.rows[0].stored_url+='-changed')));
 test('fail overcount',()=>assert.throws(mutate((a,b)=>b.counts.researched_unique++)));
 test('fail fabricated full-register guest result',()=>assert.throws(mutate((a,b)=>b.rows.find(r=>r.slot==='256:0').guest_http_status=200)));
+test('fail original published ALT drift',()=>assert.throws(mutate(a=>a.rows[0].published_alt='Invented subject')));
+test('fail missing source blob pin',()=>assert.throws(mutate((a,b)=>b.rows.find(r=>r.slot==='256:0').evidence[0].blob_sha=null)));
+test('fail altered batch provenance blob',()=>assert.throws(mutate((a,b)=>b.batch_sources.find(x=>x.file.endsWith('blacktom_256_seven_loc_newspaper_rights_20261110.json')).blob_sha='bogus')));
