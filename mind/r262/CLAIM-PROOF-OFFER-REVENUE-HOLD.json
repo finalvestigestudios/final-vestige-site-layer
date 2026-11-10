@@ -1,0 +1,405 @@
+{
+  "version": "2026-11-10-r262",
+  "workspace": "mind/r262",
+  "record_status": "UNPUBLISHED_HARD_HOLD",
+  "sources": [
+    {
+      "id": "S01",
+      "kind": "primary",
+      "url": "https://doi.org/10.1037/h0054651",
+      "use": "1935 original historical Stroop study"
+    },
+    {
+      "id": "S02",
+      "kind": "bibliography",
+      "url": "https://www.mpi.nl/publications/item2389918/studies-interference-serial-verbal-reactions",
+      "use": "1935 catalog and source"
+    },
+    {
+      "id": "S03",
+      "kind": "review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/2034749/",
+      "use": "1991 integrative review"
+    },
+    {
+      "id": "S04",
+      "kind": "methods",
+      "url": "https://link.springer.com/article/10.3758/s13428-023-02215-0",
+      "use": "2024 Stroop methodological review"
+    },
+    {
+      "id": "S05",
+      "kind": "methods",
+      "url": "https://doi.org/10.3758/s13428-023-02091-8",
+      "use": "2024 methodological variance"
+    },
+    {
+      "id": "S06",
+      "kind": "methods",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39733220/",
+      "use": "Within-person Stroop measures"
+    },
+    {
+      "id": "S07",
+      "kind": "history",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "use": "Existing published historical source files"
+    },
+    {
+      "id": "S08",
+      "kind": "owned_lead",
+      "url": "https://finalvestige.com/focus/",
+      "use": "Existing sole Focus Fieldbook funnel"
+    },
+    {
+      "id": "S09",
+      "kind": "seller",
+      "url": "https://inspire3.com/",
+      "use": "Seller catalog, not evidence of efficacy"
+    },
+    {
+      "id": "S10",
+      "kind": "seller",
+      "url": "https://zen12.com/hnp",
+      "use": "Exact Zen12 standard offer page"
+    },
+    {
+      "id": "S11",
+      "kind": "seller",
+      "url": "https://zen12.com/secret/",
+      "use": "Distinct coupon/time-limited promotional page"
+    },
+    {
+      "id": "S12",
+      "kind": "public_affiliate_program",
+      "url": "https://affiliates.inspire3.com/",
+      "use": "Generic public terms only, NOT account approval"
+    },
+    {
+      "id": "S13",
+      "kind": "FTC",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "use": "Disclosure near links"
+    },
+    {
+      "id": "S14",
+      "kind": "FTC",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "use": "Objective product claims substantiation"
+    },
+    {
+      "id": "S15",
+      "kind": "published_post",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "use": "Organic Mind article route"
+    },
+    {
+      "id": "S16",
+      "kind": "published_post",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "use": "Historical Mind article route"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "text": "Original Stroop color-naming task reported 47 seconds or 74.3% interference compared with color patches",
+      "classification": "HISTORICAL_STUDY_SPECIFIC",
+      "source_ids": [
+        "S01",
+        "S02"
+      ],
+      "editorial_handling": "Historical context only"
+    },
+    {
+      "id": "C02",
+      "text": "The 1991 Stroop review rejects simplistic single-mechanism accounts",
+      "classification": "INDEPENDENT_REVIEW",
+      "source_ids": [
+        "S03"
+      ],
+      "editorial_handling": "Background science"
+    },
+    {
+      "id": "C03",
+      "text": "Different Stroop variants and scoring designs create validity and reliability differences",
+      "classification": "METHODOLOGICAL_REVIEW",
+      "source_ids": [
+        "S04",
+        "S05",
+        "S06"
+      ],
+      "editorial_handling": "Qualify by test"
+    },
+    {
+      "id": "C04",
+      "text": "A three-word Stroop demo diagnoses ADHD, willpower, focus or intelligence",
+      "classification": "UNSUPPORTED_CLINICAL",
+      "source_ids": [],
+      "editorial_handling": "PROHIBITED"
+    },
+    {
+      "id": "C05",
+      "text": "Stroop interference predicts whether Zen12 helps an individual",
+      "classification": "UNSUPPORTED_CAUSAL_LINK",
+      "source_ids": [],
+      "editorial_handling": "PROHIBITED"
+    },
+    {
+      "id": "C06",
+      "text": "Zen12 standard lists 12 levels and 48 MP3s/four listening styles",
+      "classification": "SELLER_DESCRIPTION",
+      "source_ids": [
+        "S09",
+        "S10"
+      ],
+      "editorial_handling": "Attribute to seller only"
+    },
+    {
+      "id": "C07",
+      "text": "Zen12 standard Premium displays 87.99 USD at inspection",
+      "classification": "SELLER_DISPLAY_NOT_CHECKOUT",
+      "source_ids": [
+        "S10"
+      ],
+      "editorial_handling": "No verified cart total"
+    },
+    {
+      "id": "C08",
+      "text": "Zen12 secret promo displays 37 USD coupon and countdown",
+      "classification": "SELLER_PROMO_NOT_APPROVED",
+      "source_ids": [
+        "S11"
+      ],
+      "editorial_handling": "No reuse of coupon or urgency"
+    },
+    {
+      "id": "C09",
+      "text": "One-year money-back guarantee is actually fulfilled",
+      "classification": "REFUND_NOT_TESTED",
+      "source_ids": [
+        "S10"
+      ],
+      "editorial_handling": "Seller promise only"
+    },
+    {
+      "id": "C10",
+      "text": "Zen12 delivers one hour of meditation benefits in twelve minutes",
+      "classification": "SELLER_CLAIM_NOT_SUBSTANTIATED",
+      "source_ids": [
+        "S09",
+        "S10"
+      ],
+      "editorial_handling": "Never endorse"
+    },
+    {
+      "id": "C11",
+      "text": "An Inspire3 public affiliate program exists using account-issued special links",
+      "classification": "PUBLIC_PROGRAM",
+      "source_ids": [
+        "S12"
+      ],
+      "editorial_handling": "Not named acceptance"
+    },
+    {
+      "id": "C12",
+      "text": "Final Vestige is accepted/has earning link/confirmed commission",
+      "classification": "UNVERIFIED_ACCOUNT_STATUS",
+      "source_ids": [],
+      "editorial_handling": "PROHIBITED"
+    },
+    {
+      "id": "C13",
+      "text": "Any FV affiliate recommendation needs an obvious proximate commission disclosure",
+      "classification": "FTC_GUIDANCE",
+      "source_ids": [
+        "S13"
+      ],
+      "editorial_handling": "Show at link, not generic footer alone"
+    },
+    {
+      "id": "C14",
+      "text": "Objective product-specific health claims need adequate substantiation",
+      "classification": "FTC_GUIDANCE",
+      "source_ids": [
+        "S14"
+      ],
+      "editorial_handling": "No clinical claims without evidence"
+    },
+    {
+      "id": "C15",
+      "text": "Outbound affiliate clicks are settled paid commissions",
+      "classification": "FALSE_METRIC",
+      "source_ids": [],
+      "editorial_handling": "PROHIBITED"
+    },
+    {
+      "id": "C16",
+      "text": "Payhip FV-owned Mind digital SKU is verified sellable and rights cleared",
+      "classification": "UNVERIFIED_INVENTORY",
+      "source_ids": [],
+      "editorial_handling": "Do not propose active purchase"
+    }
+  ],
+  "commercial_gates": [
+    {
+      "id": "publisher_named_acceptance",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "issued_affiliate_url",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "specific_zen12_product_and_destination",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "website_channel_permission",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "social_channel_permission",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "email_channel_permission",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "approved_creative_usage_rights",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "exact_checkout_price_and_currency",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "merchant_tax_shipping_or_extra_charges",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "product_inclusion_equivalence_promo_vs_standard",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "refund_terms_specific_offer",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "merchant_refund_actual_process",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "buyer_facing_compliant_disclosure",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "first_party_event_definition_owner_signoff",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "merchant_confirmed_paid_commission_feed",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "founder_editorial_QA_release_approval",
+      "status": "HARD_HOLD",
+      "evidence": null
+    }
+  ],
+  "commercial_status": {
+    "named_inspire3_acceptance": "NOT_VERIFIED",
+    "issued_earning_link": "NOT_VERIFIED",
+    "website_social_email_permitted_channels": "NOT_VERIFIED",
+    "approved_creatives": "NOT_VERIFIED",
+    "standard_vs_promo_offer_identity": "NOT_VERIFIED",
+    "merchant_exact_cart_total": "NOT_VERIFIED",
+    "refund_implementation": "NOT_VERIFIED",
+    "reconciled_partner_commission": "NOT_VERIFIED",
+    "fv_owned_mind_product": "NOT_AUTHENTICATED"
+  },
+  "release_bounds": {
+    "public_cms": false,
+    "newsletter": false,
+    "social_post": false,
+    "merchant_link": false,
+    "analytics_script": false,
+    "merge_deploy": false,
+    "paid_saas": false
+  },
+  "measurement": {
+    "plan_only": true,
+    "events": [
+      "campaign_landing",
+      "article_to_resource_click",
+      "affiliate_click",
+      "confirmed_signup_provider_only",
+      "merchant_paid_order_provider_only",
+      "partner_settled_commission",
+      "refund"
+    ],
+    "utm": [
+      "utm_source",
+      "utm_medium",
+      "utm_campaign",
+      "utm_content_verified_asset_id"
+    ],
+    "privacy": "No PII, cookies, fingerprint, pixels, extra scripts or duplicate lists",
+    "cohorts_days": [
+      7,
+      30
+    ],
+    "realized_net_revenue_per_1000_qualified_human_sessions": "NOT_COMPUTABLE",
+    "formula": "1000 * (settled receipts or commissions - refunds - fees - attributable cost) / verified qualified-human sessions; avoid double counting",
+    "note": "A link click, email form, reported view or checkout start is not revenue"
+  },
+  "creative_pilot": {
+    "canonical": "Existing R257 A text vs B same text plus opt-in 42 second film",
+    "status": "UNPUBLISHED_NOT_LIVE",
+    "video": "Local rendered review artifact in prior milestone; not hosted",
+    "autoplay": false,
+    "no_js": true,
+    "filing": "No new offer variant; this sprint adds source evidence and editorial routing"
+  },
+  "social_join": [
+    {
+      "topic": "change blindness",
+      "article": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "asset_id": null
+    },
+    {
+      "topic": "Mesmer and Puységur",
+      "article": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "asset_id": null
+    },
+    {
+      "topic": "Stroop",
+      "article": "mind/r262/THE-WORD-THAT-WOULD-NOT-STAY-QUIET-UNPUBLISHED.md",
+      "asset_id": null
+    }
+  ],
+  "owners": {
+    "social": "Grok via Praxxis TASK-008",
+    "production_engineering": "Claude",
+    "dispatch": "Issue174",
+    "visual": "Issue150",
+    "quality": "Issue126",
+    "commercial_release": "Founder"
+  }
+}
