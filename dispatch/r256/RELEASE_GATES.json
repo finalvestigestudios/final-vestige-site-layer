@@ -1,0 +1,24 @@
+{
+  "status": "ALL_HOLD_UNSENT",
+  "date": "2026-11-10",
+  "master_issue": 174,
+  "canonical_pr": 175,
+  "base_pr": 1888,
+  "editorial_count": 4,
+  "commercial_held": [
+    3,
+    5
+  ],
+  "optional_issue02_adopted": false,
+  "founder_final_approval": false,
+  "eligible_email_subscribers_verified": false,
+  "confirmed_signup_verified": false,
+  "welcome_receipt_verified": false,
+  "jetpack_preview_verified": false,
+  "actual_preheader_verified": false,
+  "studio_physical_address_verified": false,
+  "unsubscribe_verified": false,
+  "zen12_affiliate_email_permission_verified": false,
+  "total_focus_affiliate_email_permission_verified": false,
+  "net_revenue_reconciled": false
+}
