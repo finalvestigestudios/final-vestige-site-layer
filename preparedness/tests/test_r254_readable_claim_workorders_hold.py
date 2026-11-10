@@ -4,7 +4,7 @@ import importlib.util
 import pathlib
 import unittest
 
-SOURCE = pathlib.Path(__file__).with_name('r254_readable_claim_workorders_hold.py')
+SOURCE = pathlib.Path(__file__).resolve().parents[1] / 'tools/r254_readable_claim_workorders_hold.py'
 spec = importlib.util.spec_from_file_location('r254', SOURCE)
 r = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(r)
