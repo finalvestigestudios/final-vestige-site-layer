@@ -11,6 +11,7 @@ from __future__ import annotations
 import argparse
 import asyncio
 import hashlib
+import importlib.util
 import json
 from pathlib import Path
 import shutil
@@ -22,6 +23,8 @@ CANDIDATE_PATH = ROOT / 'audits/r267_responsive_wallet_card_REVIEW_ONLY.html'
 SOURCE_PIN = '40782ef142edfd348fec53eb6d8a0dc673244dea'
 CANDIDATE_PIN = '5ae643302faf6bce47e8c507fbcfff9c099eaf00'
 WIDTHS = [320,360,390,768,1440]
+R268_GATE_PATH = ROOT / 'tools/r268_wallet_print_parity_acceptance_hold.py'
+R268_GATE_PIN = '5207b20954c1b6d93b88f430843d4bafb2e8df88'
 
 def blob(b:bytes)->str:
     return hashlib.sha1(b'blob '+str(len(b)).encode()+b'\0'+b).hexdigest()
@@ -81,27 +84,45 @@ async def execute(folder:Path, chromium:str):
                     await context.close()
         finally:
             await browser.close()
-    before=[record['original']['screen'][str(w)]['document_css_px'] for w in WIDTHS]
-    after=[record['preview']['screen'][str(w)]['document_css_px'] for w in WIDTHS]
-    # PDF byte digests can change between browser contexts/runs because of
-    # PDF object IDs/metadata even when rendered card geometry and words match.
-    # Never equate a changed PDF hash with either content drift or QA approval.
-    match_geometry=all(
-        {k:v for k,v in record['original']['print'][str(js)].items() if k!='sha256'}==
-        {k:v for k,v in record['preview']['print'][str(js)].items() if k!='sha256'}
-        for js in (True,False))
-    def extract_pdf(path):
-        return subprocess.check_output(['pdftotext','-layout',str(path),'-'],text=True)
-    text_matches=all(extract_pdf(folder/f'original_js_{int(js)}.pdf')==
-                     extract_pdf(folder/f'preview_js_{int(js)}.pdf')
-                     for js in (True,False))
-    verified=before==[680,680,680,768,1440] and after==WIDTHS and match_geometry and text_matches
-    record['same_run_print_geometry_parity']=match_geometry
-    record['same_run_pdf_extracted_text_parity']=text_matches
-    record['pdf_byte_hashes_may_differ_between_contexts']=True
-    record['bounded_five_width_and_same_run_geometry_text_reproducible']=verified
-    record['not_human_accessibility_or_physical_print_approval']=True
-    (folder/'reproduction.json').write_text(json.dumps(record,indent=2)+'\n',encoding='utf-8')
+    # R268 accepts only a complete, mutually consistent, source-authenticated
+    # four-PDF browser receipt; it never grants QD, accessibility or privacy PASS.
+    # PDF byte hashes are diagnostics only: browser-generated metadata varies.
+    evidence = R268_GATE_PATH.read_bytes()
+    if blob(evidence) != R268_GATE_PIN:
+        raise ValueError('R268 acceptance gate identity changed')
+    spec = importlib.util.spec_from_file_location('r268_print_acceptance', R268_GATE_PATH)
+    gate = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(gate)
+    texts, pages = {}, {}
+    for name in ('original', 'preview'):
+        for js in (0, 1):
+            key = f'{name}_js_{js}'
+            pdf = folder / f'{key}.pdf'
+            # Raw extraction avoids interleaving the two card columns, while
+            # still detecting text lost from print.
+            texts[key] = subprocess.check_output(
+                ['pdftotext', '-raw', str(pdf), '-'], text=True)
+            info = subprocess.check_output(['pdfinfo', str(pdf)], text=True)
+            page_rows = [line for line in info.splitlines() if line.startswith('Pages:')]
+            if len(page_rows) != 1:
+                raise ValueError('PDF page count unobservable: ' + key)
+            pages[key] = int(page_rows[0].split(':', 1)[1].strip())
+    try:
+        checked = gate.inspect(record, texts, pages)
+        verified = True
+        record['r268_strict_print_acceptance'] = checked
+    except (KeyError, ValueError, TypeError) as exc:
+        # Preserve failure evidence in the external-only output directory.
+        # Never rewrite original R267 observation or issue a positive status.
+        verified = False
+        record['r268_strict_print_acceptance'] = {
+            'state': 'DRAFT_HARD_HOLD', 'bounded_reproduction_failed': True,
+            'failure': str(exc), 'independent_qd_pass': False,
+            'ready_for_wordpress': False, 'public_published': False}
+    record['pdf_byte_hashes_may_differ_between_contexts'] = True
+    record['bounded_five_width_and_same_run_geometry_text_reproducible'] = verified
+    record['not_human_accessibility_or_physical_print_approval'] = True
+    (folder/'reproduction.json').write_text(json.dumps(record,indent=2)+'\\n',encoding='utf-8')
     return verified
 
 def main():
