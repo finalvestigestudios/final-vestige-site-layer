@@ -149,6 +149,12 @@ R264_MINIMAL_WALLET_PATH = 'tools/r264_minimal_wallet_cutout_candidate_hold.py'
 R264_MINIMAL_WALLET_BLOB = 'bcfb472f6074721c88876a16e2bd579cf2f20990'
 R264_MINIMAL_HTML_PATH = 'audits/r264_minimal_wallet_card_REVIEW_ONLY.html'
 R264_MINIMAL_HTML_BLOB = '40782ef142edfd348fec53eb6d8a0dc673244dea'
+# R266 pins an actual single-Chromium/Letter print observation. Its MOBILE
+# overflow finding and unreviewed statuses are negative evidence, not approval.
+R266_WALLET_BROWSER_PATH = 'tools/r266_wallet_browser_observation_custody_hold.py'
+R266_WALLET_BROWSER_BLOB = '00ce114682bdb1bdefd245e3866f7dc221989c54'
+R266_WALLET_RECEIPT_PATH = 'audits/r266_chromium_wallet_print_observation_REVIEW_ONLY.json'
+R266_WALLET_RECEIPT_BLOB = 'bae95ed84281919fb0e21e5a8e9bbb3feef99e9d'
 # R258 binds the complete R254/R257 original source-claim partition to a
 # deterministic, entirely escaped, no-clickable-links offline reviewer view.
 R258_COMPLETE_REVIEW_PATH = 'tools/r258_complete_offline_claim_review_hold.py'
@@ -895,6 +901,28 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
                     'merchant_approved','release_authorized','public_published'))):
             raise ValueError('R264 minimal wallet cutout candidate or release HOLD drift')
         result['unapproved_wallet_card_alternative'] = alternative
+        # The observed on-card warning survives Chromium print-to-PDF in ONE
+        # local engine, but the narrow mobile screen overflows horizontally.
+        # This cannot resolve printed-paper readability, privacy or source QD.
+        r266 = load_frozen_gate(root, R266_WALLET_BROWSER_PATH,
+                                R266_WALLET_BROWSER_BLOB,
+                                'fv_preparedness_r266_wallet_browser_observation',
+                                ('audit', 'inspect'))
+        browser_observation = r266.audit(root, safe_read, alternative)
+        if (browser_observation.get('state') != HOLD
+                or browser_observation.get('candidate_git_blob') != R264_MINIMAL_HTML_BLOB
+                or browser_observation.get('receipt_git_blob') != R266_WALLET_RECEIPT_BLOB
+                or browser_observation.get('mobile_horizontal_overflow_observed') is not True
+                or browser_observation.get('full_native_pipeline_executed') is not False
+                or browser_observation.get('ready_for_wordpress') is not False
+                or any(browser_observation.get(k) is not False for k in (
+                    'original_tool_104_rendered', 'physical_cut_fold_completed',
+                    'legibility_and_accessibility_approved',
+                    'qualified_child_privacy_approved', 'source_citation_approved',
+                    'independent_qd_pass', 'merchant_approved',
+                    'release_authorized', 'public_published'))):
+            raise ValueError('R266 browser receipt falsely changed source/safety/release HOLD')
+        result['wallet_card_bounded_browser_observation'] = browser_observation
         # An editorial option is NOT a source correction or approval. Authenticate
         # its exact preview bytes, then separately inspect its visible copy.
         if git_blob(safe_read(root, R249_UNPUBLISHED_PREVIEW_PATH)) != R249_UNPUBLISHED_PREVIEW_BLOB:
@@ -1103,6 +1131,10 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
             raise ValueError('R264 minimal wallet source gate mutated during audit')
         if git_blob(safe_read(root, R264_MINIMAL_HTML_PATH)) != R264_MINIMAL_HTML_BLOB:
             raise ValueError('R264 minimal wallet HTML changed during audit')
+        if git_blob(safe_read(root, R266_WALLET_BROWSER_PATH)) != R266_WALLET_BROWSER_BLOB:
+            raise ValueError('R266 wallet browser evidence gate changed during audit')
+        if git_blob(safe_read(root, R266_WALLET_RECEIPT_PATH)) != R266_WALLET_RECEIPT_BLOB:
+            raise ValueError('R266 wallet browser evidence changed during audit')
         if git_blob(safe_read(root, R258_COMPLETE_REVIEW_PATH)) != R258_COMPLETE_REVIEW_BLOB:
             raise ValueError('R258 2000-citation offline reviewer gate changed during audit')
         result['reconciliation'] = {'frozen_articles': 35,
