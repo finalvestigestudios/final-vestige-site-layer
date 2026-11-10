@@ -180,11 +180,25 @@ class CrosswalkTests(unittest.TestCase):
         x["groups"][0]["variants"][0]["source"]["url"] = SLASH
         x["groups"][0]["url"] = SLASH
         x["groups"][0]["canonical_url"] = SLASH
+        # The fixture advertises its own original-source census. Once these
+        # two historical spellings are intentionally made identical, the exact
+        # URL count is TWO; the immutable production baseline remains 202.
+        x["unique_source_urls"] = 2
         counts = {**CENSUS, "exact_urls": 2, "alias_variants": 0}
         result = guard.inspect(x, sources, census=counts)
         self.assertEqual(result["state"], guard.HOLD)
         self.assertEqual(x["groups"][0]["url"], SLASH)
         self.assertEqual(result["counts"]["alias_urls"], 2)
+
+    def test_changed_synthetic_source_urls_without_census_update_fail_closed(self):
+        """Do not hide a changed synthetic exact-URL census behind a caller override."""
+        x, sources = fixture()
+        sources["base"][0]["url"] = SLASH
+        x["groups"][0]["variants"][0]["source"]["url"] = SLASH
+        x["groups"][0]["url"] = SLASH
+        x["groups"][0]["canonical_url"] = SLASH
+        with self.assertRaisesRegex(ValueError, "advertised source census"):
+            guard.inspect(x, sources, census={**CENSUS, "exact_urls": 2, "alias_variants": 0})
 
     def test_mixed_original_url_spellings_keep_slash_ended_label(self):
         """Terminal slash may group review only; raw provenance remains distinct."""
