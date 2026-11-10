@@ -36,7 +36,7 @@ function readPlain(data) {
   if(!Array.isArray(m.creator_fit)||m.creator_fit.length!==3||m.creator_fit.some(c=>c.asset_id!==null))errors.push('fabricated creator asset mapping');
   if(article.trim().split(/\s+/).length<2000 || !article.includes('five reported findings') ||
      !article.includes('eight reported contradictory') || !article.includes('one presented mixed') ||
-     !article.includes('does **not**') || !article.includes('Seven Day Focus Fieldbook'))errors.push('article integrity');
+     !article.includes('did **not**') || !article.includes('Seven Day Focus Fieldbook'))errors.push('article integrity');
   for(const u of ['https://pmc.ncbi.nlm.nih.gov/articles/PMC10198548/','https://pubmed.ncbi.nlm.nih.gov/38458383/','https://pubmed.ncbi.nlm.nih.gov/33049431/','https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance']){
     if(!article.includes(u))errors.push('missing primary source '+u);
   }
