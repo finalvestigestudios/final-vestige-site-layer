@@ -3,6 +3,7 @@
 
 Default mode is an OFFLINE contract preflight. --network is explicit and
 performs three HTTPS GET requests to fixed first-party media URLs only.
+Redirects are denied BEFORE fetching any Location endpoint.
 Never writes to WordPress. Never treats a rights statement as a transfer test.
 """
 from __future__ import annotations
@@ -23,6 +24,22 @@ BASE = "https://finalvestige.com/wp-content/uploads/2026/08/"
 
 class GateFailure(ValueError):
     pass
+
+
+class NeverFollowRedirect(urllib.request.HTTPRedirectHandler):
+    """Reject redirects *before* opening the Location endpoint.
+
+    Checking response.geturl() after urlopen() is too late: urllib's default
+    redirect handler may already have fetched another host (including a CDN).
+    """
+
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        raise GateFailure(f"HTTP {code} redirect refused before network follow")
+
+
+def first_party_open(request, timeout):
+    """Use an opener with no HTTP(S) redirects, even for same-host paths."""
+    return urllib.request.build_opener(NeverFollowRedirect()).open(request, timeout=timeout)
 
 def media_url(row):
     return BASE + row["file"]
@@ -45,7 +62,7 @@ def inspect(row, opener=None):
     """Requires exact-sized, valid original bytes (not CDN derivatives)."""
     url = media_url(row)
     validate_location(url, url)
-    opener = opener or urllib.request.urlopen
+    opener = opener if opener is not None else first_party_open
     request = urllib.request.Request(url, headers={"User-Agent": "FV-EX2-read-only-media-admission/1.0", "Accept": row["mime"]}, method="GET")
     h = hashlib.sha256()
     buf = bytearray()
