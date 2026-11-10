@@ -29,7 +29,21 @@ function utcMillis(value, allowWpNaive = false) {
   if (allowWpNaive && /^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}$/.test(s)) {
     s = s.replace(" ", "T") + "Z";
   }
-  if (!/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2})$/.test(s)) return null;
+  // Date.parse normalizes impossible calendar days (Feb 30 -> Mar 2).
+  // Reject impossible source evidence before comparing recovery timestamps.
+  const m = s.match(/^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})(?:\.(\d+))?(Z|[+-]\d{2}:\d{2})$/);
+  if (!m) return null;
+  const year = Number(m[1]), month = Number(m[2]), day = Number(m[3]);
+  const hour = Number(m[4]), minute = Number(m[5]), second = Number(m[6]);
+  const leap = year % 4 === 0 && (year % 100 !== 0 || year % 400 === 0);
+  const monthDays = [31, leap ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+  if (year < 1 || month < 1 || month > 12 || day < 1 ||
+      day > monthDays[month - 1] || hour > 23 || minute > 59 || second > 59) return null;
+  if (m[8] !== "Z") {
+    const zoneHour = Number(m[8].slice(1, 3));
+    const zoneMinute = Number(m[8].slice(4, 6));
+    if (zoneHour > 14 || zoneMinute > 59 || (zoneHour === 14 && zoneMinute !== 0)) return null;
+  }
   const t = Date.parse(s);
   return Number.isFinite(t) ? t : null;
 }
