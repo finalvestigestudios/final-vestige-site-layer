@@ -53,7 +53,7 @@ function validate(bundle){
  const anchors=[...html.matchAll(/href="([^"]+)"/g)].map(x=>x[1]);
  ensure(anchors.every(x=>/^https:\/\/(?:www\.)?(?:finalvestige\.com|zen12\.com|nature\.com|doi\.org)\//.test(x)||
  /^https:\/\/www\.ftc\.gov\//.test(x)),'unknown external URL or affiliate redirect');
- ensure(!/(?:awin1\.com|clickbank|ref=|affiliate[_-]?id|hoplink|rel="sponsored"|utm_source=)/i.test(html),'unexpected earning link');
+ ensure(!/(?:awin1\.com|clickbank|[?&]ref=|affiliate[_-]?id|hoplink|rel="sponsored"|utm_source=)/i.test(html),'unexpected earning link');
  const button=[...html.matchAll(/<button\b([^>]*)>([\s\S]*?)<\/button>/gi)];
  ensure(button.length===1&&/\bdisabled\b/i.test(button[0][1])&&!/\bhref\b|\bformaction\b/i.test(button[0][1]),'CTA not disabled');
  const disclosure=html.indexOf('id="disclose"'),cta=html.indexOf('<button');
