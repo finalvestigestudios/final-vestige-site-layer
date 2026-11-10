@@ -35,8 +35,9 @@ with sync_playwright() as p:
                 page.set_content(html)
                 if enabled: page.add_script_tag(content=js)
                 link=page.locator('#fv-apollo-reading-bridge a.cta').get_attribute('href')
-                expected=free+('?' + urlencode(valid) if enabled and source=='youtube' else '')
-                assert link==expected,(width,enabled,source,link)
+                assert link==free,(width,enabled,source,link)
+                value=page.locator('#fv-apollo-reading-bridge a.cta').get_attribute('data-fv-apollo-campaign-asset')
+                assert value==('Yt_Apollo_001' if enabled and source=='youtube' else None),(width,enabled,source,value)
                 assert page.locator('a[href^="https://www.nasa.gov/"]').count()==55
                 assert page.locator('a[href^="#"]').count()==31
                 assert page.evaluate('document.documentElement.scrollWidth<=innerWidth+1')
