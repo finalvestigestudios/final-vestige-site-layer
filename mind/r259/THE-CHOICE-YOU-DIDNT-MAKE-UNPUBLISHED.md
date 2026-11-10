@@ -84,7 +84,7 @@ Final Vestige's research into Franz Anton Mesmer, the Marquis de Puységur and a
 
 Choice-blindness experiments invite the same separation, but they are not a retrospective explanation of eighteenth-century accounts. We cannot rerun a 2005 face-swap task on a person who lived two centuries earlier. Nor can we treat every confident report in a historical archive as choice blindness. The useful connection is methodological: preserve what happened, who observed it, what was asked, and how the explanation was formed.
 
-The original **Puységur Animal Magnetism Files** already occupies that historical lane in Final Vestige's library. The modern work here is a companion in epistemology, not a claim that a contemporary laboratory experiment proves or disproves the historical practice.
+The original [**Puységur Animal Magnetism Files**](https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/) already occupies that historical lane in Final Vestige's library. The modern work here is a companion in epistemology, not a claim that a contemporary laboratory experiment proves or disproves the historical practice.
 
 ## What this means for your next purchase
 
