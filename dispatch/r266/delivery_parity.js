@@ -6,6 +6,16 @@ const evidenceKeys=["public_http","pdf_inspection","received_welcome","provider_
 const roots=["observed_at","sources","newsletter","media","focus","dispatch","followers","diagnostics","evidence"];
 const own=(o,k)=>Object.prototype.hasOwnProperty.call(o,k);
 const isObj=x=>x!==null&&typeof x==="object"&&!Array.isArray(x);
+const forbiddenPII=new Set(["email","email_address","emailaddress","subscriber_email","phone","phone_number","ip","ip_address","subscriber_id","confirmation_token","auth_token","full_name","recipient","recipients","subscriber_list","raw_message","cookie","cookies"]);
+function piiPaths(v,path,depth,out){
+ if(depth>12){out.push("max_nesting_exceeded:"+path);return;}
+ if(Array.isArray(v)){for(let i=0;i<v.length;i++)piiPaths(v[i],path+"["+i+"]",depth+1,out);return;}
+ if(!isObj(v))return;
+ for(const [k,val] of Object.entries(v)){
+   if(forbiddenPII.has(k.toLowerCase()))out.push("sensitive_field:"+path+"."+k);
+   if(val!==null&&typeof val==="object")piiPaths(val,path+"."+k,depth+1,out);
+ }
+}
 function canonicalPDF(x){
   if(typeof x!=="string") return false;
   try{const u=new URL(x);return u.protocol==="https:"&&u.hostname==="finalvestige.com"&&
@@ -22,6 +32,7 @@ function audit(s){
  const errors=[],stages={};
  if(!isObj(s))return {pass:false,status:HOLD,errors:["not_an_object"],stages};
  for(const k of Object.keys(s))if(!roots.includes(k))errors.push("unexpected_root:"+k);
+ piiPaths(s,"snapshot",0,errors);
  for(const k of roots)if(!own(s,k))errors.push("missing_root:"+k);
  if(typeof s.observed_at!=="string"||!/^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\dZ$/.test(s.observed_at))errors.push("invalid_timestamp");
  if(!isObj(s.sources)||!Array.isArray(s.sources.references)||s.sources.references.length<2||
