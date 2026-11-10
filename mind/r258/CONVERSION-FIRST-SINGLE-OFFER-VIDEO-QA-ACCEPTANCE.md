@@ -1,0 +1,71 @@
+# Mind R258 — Conversion-first evidence, canonical navigation, QA and release docket
+
+**UNPUBLISHED · SOURCE-CONTROLLED · 9 November 2026 · No CMS, social, Dispatch, merchant or checkout changes**
+
+## Decision in one paragraph
+
+**Commercial activation remains a HARD HOLD.** The public Inspire3 affiliate application page does not verify Final Vestige's acceptance, an approved account-issued Zen12 URL, permitted publisher channels, order settlement or which of the standard and promotional Zen12 offers FV may advertise. Targeted Gmail searches returned promotional messages, not qualifying approval. It would be misleading to call a referral click a commission or advertise the coupon as FV-authorized. We also have no authenticated rights-cleared paid FV Mind SKU and checkout receipt. Do not invent either. The only existing first-party step is the ungated editorial → optional existing Seven Day Focus Fieldbook → existing Jetpack/Dispatch subscriber relationship. The Focus pipeline is *not* a substitute for paid conversion.
+
+## Most valuable new work this sprint: repair a false-negative test
+
+Independent Praxxis QA identified that the previous R257 source gate used a wrongly escaped expression to detect `<video>`. A forced-playback mutation in B happened to fail A/B parity and therefore did **not** prove video was prohibited. The old gate also checked timestamps without checking VTT words, did not protect renderer/cue equivalence, and its optional FFprobe check did not assert the absence of audio.
+
+On this isolated stacked branch, `mind/r257/test_r257.cjs` was actually repaired: explicit proper `<video\b`, `<audio\b` and `<source\b` rejection across BOTH A/B and hub; immutable seven-cue copy independently compared with both the VTT and Python renderer; new adversarial cases for equal A/B forced media, hub playback, audio/source insertion and text distortion; and FFprobe `codec_type` plus zero-audio-stream assertion. Do not describe this as native Node CI. The exact committed test source was executed in isolated V8 using file/assert shims and freshly retrieved branch blob contents: **baseline PASS; 26/26 unsafe mutations rejected; nine R257 files fetched**. The local MP4 was separately probed with the real FFprobe executable: H.264, one video stream, **no audio**, 540×960, 12fps, 42.000 seconds, 259,973 bytes. Hosted playback, WebVTT screen-reader consumption and browser/WP sanitization remain untested.
+
+This is a concrete reduction in the chance of accidentally publishing forced video, not a claim that buyers are converting.
+
+## One high-intent audience and one conditional offer
+
+**Audience:** an adult who has already looked at a sourced attention/illusion story, wants a repeatable short listening/meditation routine, and is comparing a guided audio library against a free timer. Do *not* position an illusion as a medical symptom requiring treatment.
+
+**Offer on hold:** Zen12 Premium. Exact [seller standard page](https://zen12.com/hnp) describes twelve levels, 48 MP3 recordings, and four listening styles. It displayed $87.99 historically on 9 November 2026. Separate [seller promo page](https://zen12.com/secret/) displayed a $37 coupon-framed offer. Neither is an authenticated current final checkout, approved FV destination, or proof of refund fulfillment. Do not copy merchant countdowns. The parent [Inspire3 catalog](https://inspire3.com/) describes the brand; its claims are not independent scientific evidence. The 2023 [EEG review](https://doi.org/10.1371/journal.pone.0286023) does not support Zen12's claimed twelve-minutes-equals-hour equivalence.
+
+**Pre-sell already built:** canonical candidate [R257 Variant A](../r257/zen12-text-only-A-UNPUBLISHED.html) and [R257 Variant B](../r257/zen12-optional-film-B-UNPUBLISHED.html), complete and copy-identical outside the optional reader-controlled media area. **Do not create a fresh near-duplicate commercial page.** The actual locally rendered and inspected silent 42-second film remains a private review artifact, not a remotely hosted file; retain the source-controlled [Python renderer](../r257/build_zen12_r257_preview.py), [caption source](../r257/zen12_42s_preview.vtt) and poster/transcript. A media-integrity gate now guards these assets. Current proposed CTA remains deliberately **disabled**.
+
+**Conditional CTA after all commercial gates:** "Review Zen12 Premium's official contents and current terms." Immediately before/after the actual earning URL, in normal visible text: "**Affiliate disclosure:** If you purchase through this link, Final Vestige may earn a commission at no additional cost to you." Adjacent text must also say "We have not independently tested this product; efficacy claims are the seller's, not proven by the cited meditation research." Do not cloak links or use a coupon, urgency timer, discount certainty or testimonial. The entire block remains noninteractive until explicit named account link/channel approval and release permission.
+
+**Alternative commercial path:** identify a rights-cleared *already sellable* FV-owned Payhip digital product with a genuine SKU, customer-facing delivery, price, refund terms, and paid status receipts. If none has Mind audience fit, mark fallback UNKNOWN, do not activate unrelated products for the sake of immediate monetization.
+
+## Three creator topic → investigation → existing Focus/Dispatch → conditional offer pathways
+
+| Creator topic / Grok asset | Truthful hook / evidence | Reader destination | First-party step | Commerce eligibility |
+| --- | --- | --- | --- | --- |
+| Change blindness — **asset ID, publish date and signed-out destination UNVERIFIED** | "What changed while your attention was occupied?" Preserve actual sourced demonstration and disclosure of setup. | Existing published [change-blindness](https://finalvestige.com/2026/11/02/change-blindness/) investigation, subject to fresh signed-out check. | Optional [Seven Day Focus Fieldbook](https://finalvestige.com/focus/) on single Jetpack flow; then existing Dispatch if user consents. | Only a relevant independent Zen12 buyer guide, with account approval; not an illusion cure. |
+| Thatcher face inversion — **asset ID UNVERIFIED; no social post assigned** | "Why does the same inverted face look different when upright?" Original Thompson 1980 and follow-up behavioral/neural work; no 99%-fooled statistic. | [R258 unpublished Thatcher investigation](./THE-FACE-THAT-CHANGED-WHEN-YOU-TURNED-IT-UPRIGHT-UNPUBLISHED.md), NOT an invented live URL. | Optional Focus; no mandatory form. | No direct product CTA by default. Buyer guide available only when voluntarily chosen and properly authorized. |
+| Attentional blink — **asset ID, exact URL UNVERIFIED** | "Two targets arrive close together; why may the second go unreported?" Avoid person-level cognitive diagnosis. | One *canonical* attentional-blink story following editorial de-duplication of R236/R249 (not both published). | Optional Focus + existing Dispatch consent; do not manufacture leads. | Zen12 buyer guide may be contextually discoverable; no research-to-efficacy leap. |
+
+**Operational ownership:** Grok retains creator/posting decisions. Praxxis must verify actual published media IDs, hook copy, rights, date, and signed-out smartphone destination from existing TASK-008 and dated handoff; do not append new production work to its queue. Claude owns site/analytics engineering and real browser QA; Dispatch #174 owns newsletter publishing. Homepage #150/PR #49 and Mind hub PR #172 are preserved.
+
+## One clean archive instead of one prototype per run
+
+The source-controlled R257 four-stream Mind Archive remains the current **unpublished** hub candidate; preserve PR #172 as the hub release baseline. First confirm the live WordPress source-of-truth inventory, since Issue #171's 61-article statement is an older baseline and later Journal observations suggest greater counts. Do not invent article slugs.
+
+Navigation suggestion for **a later authorized release**, without changing the current nav: Journal / Explore → Mind archive; archive → Perception & Attention, History of Suggestion, Practice & Reflection, Tools Under Review; individual investigation → source notes → optional Focus → optional independently labeled buyer guide. Never make an affiliate destination the sole educational next step. Historical Puységur reference must remain plain text or a pending destination until signed-out link is proven; do not use a known-unverified slug as if live. No new category tile, no duplicate Jetpack form, no homepage takeover.
+
+## Controlled A/B hypothesis: optional film must earn its media cost
+
+**A = complete text-only buyer guide. B = same buyer guide plus opt-in original 42-second video**. One tested difference. Reader opens details deliberately, with static SVG poster, full transcript and WebVTT available; no autoplay, no JS required to read the guide, no remote player needed for the text experience. If an MP4 is later approved for staged testing, prefer `preload="none"` and no `autoplay`, `loop` or forced sound. It must not alter product-claim copy, price or link text between arms. Compare 360/390/768/1440/1920 widths, real mobile device, captions and controls via keyboard/screen reader, dark mode contrast, reduced motion, request/weight waterfall, Largest Contentful Paint and click/lead/paid-revenue funnel. Add no analytics pixels/scripts unless Claude confirms absent existing implementation and founder authorizes a privacy-safe change.
+
+**Test unit:** session-level stable assignment *only* where consent and existing analytics support it; otherwise use explicitly identified sequential cohorts with confounding caveat. Do not fingerprint or persist an identifier merely to force assignment. Log anonymous `asset_id` + UTM source/campaign/content (if present), experiment arm, landing/page, legitimate human-screened event status, non-personal CTA, existing provider-confirmed subscriber status if obtainable, and **merchant-reported paid order or paid affiliate conversion** separately. An affiliate click is not a paid sale. An email entry is not a confirmed signup. Group seven- and thirty-day cohorts, track new vs returning only when existing privacy settings permit.
+
+**Primary KPI:** realized net revenue per 1,000 *qualified human* sessions, with denominator and evidence grade disclosed. Net = reconciled cleared product receipts/commissions minus applicable reversals, returns/refunds, fees, and incremental attributable costs **without double-subtracting already net settlement fields**. Supporting rates: paid conversion per qualified session, independently confirmed orders/customers, confirmed leads, lead→customer conversion, verified gross/net, refund incidence. No invented values. With missing human sessions or merchant settlements, report **NOT COMPUTABLE**. With tiny cohorts, show counts and uncertainty, not false percent precision. Never select a winner merely on outbound CTR.
+
+## Release and PASS/FAIL register
+
+| OFFER → STEP | BLOCKER | CHANGE / EXPERIMENT | PASS/FAIL evidence | OWNER |
+| --- | --- | --- | --- | --- |
+| Zen12 → earning link | Acceptance/issued URL/channels absent | Verify named dashboard and precise authorized link and merchant landing | **HOLD**; public portal + promotional Gmail insufficient | Founder/Mind |
+| Zen12 → buyer confidence | Divergent $87.99/$37 seller framing | Verify eligible offer, full price, refund language and merchant checkout | **HOLD**; historical seller display only | Mind/Commerce |
+| Owned digital product → paid order | No authenticated eligible Mind SKU | Audit existing catalog, checkout, rights and refunds read-only | **UNKNOWN**; no authorization to invent product | Commerce |
+| R257 video → safe optional viewing | Previous test failed to reject media independent of parity | Patched R257 guard, caption copy, renderer relation and audio assertion | **PASS source-level**; 26/26 unsafe mutations rejected, actual MP4 metadata native-checked | Mind/QA |
+| Thatcher social → article | No published Grok asset IDs or live Thatcher URL | Source-led original draft and verification handoff | **BUILT**, not live, canonical CMS check pending | Mind/Praxxis |
+| Article → verified Focus lead | Jetpack delivery/attribution cannot be inferred from clicks | Verify existing provider records, no new form | **NOT VERIFIED** | Claude/Dispatch |
+| A/B → realized revenue | No authorized buyer checkout or settled outcome | Once approved, one-variable experiment with paid conversion reconciliation | **NOT LIVE / NOT COMPUTABLE** | Founder/Commerce/QA |
+
+## Reproducibility and non-release constraints
+
+Run the actual committed `mind/r257/test_r257.cjs` against a complete native checkout with Node 22+ before approving the PR. For local video testing pass `R257_VIDEO=<path>` and confirm FFprobe asserts 42s, one H.264 540×960 video stream, **zero audio streams**; separately inspect real playback, poster and captions across browsers. The file has been executed in a V8-compatible read-only harness this sprint; this is NOT evidence of native checkout/CI. Run an HTML parser, axe/WCAG tests, Lighthouse, mobile screenshots, media file hash check, WordPress sanitizer/staging export and CSP/no-JS review before merging. Do not claim them passed unless actually executed.
+
+Release HOLD until publisher acceptance, specific offer and channel permissions, FTC source and copy review, site/browser/merchant checks, founder release, and legitimate purchase reporting exist. No WordPress CMS/nav, email/list, social, tracking script, merchant changes, merges, deployments, spending or affiliate activation authorized.
+
+**Sources:** [FTC Endorsements](https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking) · [FTC Health Claims](https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance) · [Inspire3](https://inspire3.com/) · [Zen12 standard](https://zen12.com/hnp) · [Zen12 distinct promo](https://zen12.com/secret/) · [Mind #171](https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171) · [Conversion #820](https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820).
