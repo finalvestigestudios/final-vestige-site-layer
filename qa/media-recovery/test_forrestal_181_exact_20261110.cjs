@@ -2,7 +2,7 @@
 const {test}=require("node:test"),assert=require("node:assert/strict"),fs=require("node:fs"),path=require("node:path");
 const {validateBatch,validateCoverage}=require("./validate_forrestal_181_exact_20261110.cjs");
 const read=p=>JSON.parse(fs.readFileSync(path.join(__dirname,p),"utf8"));
-const b=read("forrestal_289_six_retriever_dvids_20261110.json"), i=read("parts/03.json"),n=read("coverage_181_exact_pr1703_20261110.json"),o=read("coverage_175_exact_pr1703_20261110.json");
+const b=read("forrestal_289_six_retriever_dvids_20261110.json"), i=read("forrestal_289_exact_source_fixture_20261110.json"),n=read("coverage_181_exact_pr1703_20261110.json"),o=read("coverage_175_exact_pr1703_20261110.json");
 const cp=x=>JSON.parse(JSON.stringify(x));
 test("six true source URLs and observed retriever state",()=>assert.deepEqual(validateBatch(b,i),[]));
 test("181/288 ledger and all unrelated positions immutable",()=>assert.deepEqual(validateCoverage(n,b,o),[]));

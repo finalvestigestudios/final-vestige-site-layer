@@ -52,6 +52,6 @@ module.exports={validateBatch,validateCoverage};
 if(require.main===module){
 const fs=require("node:fs"),path=require("node:path");
 const read=p=>JSON.parse(fs.readFileSync(path.join(__dirname,p),"utf8"));
-const errors=[...validateBatch(read("forrestal_289_six_retriever_dvids_20261110.json"),read("parts/03.json")),...validateCoverage(read("coverage_181_exact_pr1703_20261110.json"),read("forrestal_289_six_retriever_dvids_20261110.json"),read("coverage_175_exact_pr1703_20261110.json"))];
+const errors=[...validateBatch(read("forrestal_289_six_retriever_dvids_20261110.json"),read("forrestal_289_exact_source_fixture_20261110.json")),...validateCoverage(read("coverage_181_exact_pr1703_20261110.json"),read("forrestal_289_six_retriever_dvids_20261110.json"),read("coverage_175_exact_pr1703_20261110.json"))];
 if(errors.length){console.error(errors);process.exitCode=1;}else console.log("PASS six source records and 181/288 ledger; no unsupported guest facts");
 }
