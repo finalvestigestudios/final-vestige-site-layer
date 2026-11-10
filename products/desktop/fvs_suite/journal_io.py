@@ -105,7 +105,9 @@ def read_regular_bytes(path: str | Path, limit: int, kind: str) -> bytes:
             data = stream.read(limit + 1)
         after = os.fstat(descriptor)
         _regular(after, limit, kind)
-        if len(data) > limit or not _unchanged(before, after):
+        # An unchanged stat snapshot is insufficient if read() returned a
+        # truncated or fabricated payload. Require the exact observed length.
+        if len(data) != before.st_size or len(data) > limit or not _unchanged(before, after):
             raise ValueError(f"{kind} changed during read or exceeded its size limit")
         if not _unchanged(initial, _same_path(source, after, kind)):
             raise ValueError(f"{kind} path changed during access")
