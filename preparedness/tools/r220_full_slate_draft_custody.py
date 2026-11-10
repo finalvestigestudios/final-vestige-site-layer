@@ -142,6 +142,12 @@ R262_NOJS_TRUTH_BLOB = 'e8eae0980bbd30cc27a714a0b6b5a4d711c3224b'
 # a NEGATIVE privacy finding, not a printable-card repair or release approval.
 R263_WALLET_PRIVACY_PATH = 'tools/r263_wallet_cutout_privacy_witness_hold.py'
 R263_WALLET_PRIVACY_BLOB = 'd07b2e504c0c5cf0c4d1e900e81d79740bb587ea'
+# R264 is an isolated editorial-only alternative for the cut-out privacy
+# problem witnessed by R263. Structural on-card text is NOT print/privacy PASS.
+R264_MINIMAL_WALLET_PATH = 'tools/r264_minimal_wallet_cutout_candidate_hold.py'
+R264_MINIMAL_WALLET_BLOB = '62d11494a772979aca1b50dd61e75517e5348d1d'
+R264_MINIMAL_HTML_PATH = 'audits/r264_minimal_wallet_card_REVIEW_ONLY.html'
+R264_MINIMAL_HTML_BLOB = '40782ef142edfd348fec53eb6d8a0dc673244dea'
 # R258 binds the complete R254/R257 original source-claim partition to a
 # deterministic, entirely escaped, no-clickable-links offline reviewer view.
 R258_COMPLETE_REVIEW_PATH = 'tools/r258_complete_offline_claim_review_hold.py'
@@ -862,6 +868,30 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
                     'merchant_approved', 'release_authorized', 'public_published'))):
             raise ValueError('R263 wallet privacy NON-PASS evidence/HARD HOLD drift')
         result['family_card_wallet_cutout_privacy_witness'] = cutout
+        # This distinct, unpublished concept reduces printed sensitive fields
+        # and places cautions WITHIN both cutout faces in source. Not approved.
+        r264 = load_frozen_gate(root, R264_MINIMAL_WALLET_PATH,
+                                R264_MINIMAL_WALLET_BLOB,
+                                'fv_preparedness_r264_minimal_wallet_card',
+                                ('audit', 'inspect'))
+        alternative = r264.audit(root, safe_read, cutout)
+        if (alternative.get('state') != HOLD
+                or alternative.get('original_git_blob') != cutout['original_git_blob']
+                or alternative.get('candidate_git_blob') != R264_MINIMAL_HTML_BLOB
+                or alternative.get('cutout_faces') != 2
+                or alternative.get('cautions_structurally_inside_both_faces') is not True
+                or alternative.get('original_source_unchanged') is not True
+                or alternative.get('citation_and_routes_unchanged') is not True
+                or alternative.get('human_review_required') is not True
+                or any(alternative.get(k) is not False for k in (
+                    'real_browser_and_cutout_qa_completed',
+                    'qualified_child_privacy_review_completed',
+                    'safe_to_carry_certified','ready_for_wordpress',
+                    'privacy_certified','medical_safety_verified',
+                    'independent_qd_pass','source_review_approved',
+                    'merchant_approved','release_authorized','public_published'))):
+            raise ValueError('R264 minimal wallet cutout candidate or release HOLD drift')
+        result['unapproved_wallet_card_alternative'] = alternative
         # An editorial option is NOT a source correction or approval. Authenticate
         # its exact preview bytes, then separately inspect its visible copy.
         if git_blob(safe_read(root, R249_UNPUBLISHED_PREVIEW_PATH)) != R249_UNPUBLISHED_PREVIEW_BLOB:
@@ -1066,6 +1096,10 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
             raise ValueError('R262 truthful no-JS draft gate changed during audit')
         if git_blob(safe_read(root, R263_WALLET_PRIVACY_PATH)) != R263_WALLET_PRIVACY_BLOB:
             raise ValueError('R263 wallet privacy witness gate changed during audit')
+        if git_blob(safe_read(root, R264_MINIMAL_WALLET_PATH)) != R264_MINIMAL_WALLET_BLOB:
+            raise ValueError('R264 minimal wallet source gate mutated during audit')
+        if git_blob(safe_read(root, R264_MINIMAL_HTML_PATH)) != R264_MINIMAL_HTML_BLOB:
+            raise ValueError('R264 minimal wallet HTML changed during audit')
         if git_blob(safe_read(root, R258_COMPLETE_REVIEW_PATH)) != R258_COMPLETE_REVIEW_BLOB:
             raise ValueError('R258 2000-citation offline reviewer gate changed during audit')
         result['reconciliation'] = {'frozen_articles': 35,
