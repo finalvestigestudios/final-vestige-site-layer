@@ -1,0 +1,46 @@
+# Dispatch R254 — canonical attribution repair, consent/revenue proof and hold-only review
+
+**2026-11-10 — SOURCE-CONTROLLED DRAFT ONLY. No live modifications.** Source issue [#174](https://github.com/finalvestigestudios/final-vestige-site-layer/issues/174); companion Mind [#171](https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171); Focus [#129](https://github.com/finalvestigestudios/final-vestige-site-layer/issues/129); commercial conversion [#820](https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820).
+
+## One material error: canonical UTM drift between R253 and #820
+
+R253's **draft-only** progression document uses `utm_source=grok&utm_medium=video` for creator traffic. #820 expressly specifies **actual platform** `utm_source` and `utm_medium=organic_social`, plus `utm_campaign=<cluster>_pilot_2026_11` and `utm_content=<asset_id>`. If R253 were implemented literally, the two traffic taxonomies would fragment attribution and wrongly identify the creative agent instead of the distribution channel. **No evidence either string has been deployed.**
+
+**Proposed syntax, NOT a published tracking URL:** `https://finalvestige.com/focus/?utm_source=tiktok&utm_medium=organic_social&utm_campaign=mind_pilot_2026_11&utm_content=tk_mind_0001`. This **asset ID is synthetic**; Grok/Praxxis TASK-008 must supply a real, immutable ID and actual platform URL before Claude implements anything. [Grok TASK-008](https://docs.google.com/document/d/1_dqcJeqxbvYb1prGxy0nSWTsHu8p0PSRsDB_NPNbL48/edit). R254's code is **offline source/UTM QA**, not an analytics script, deployment, or source of true sessions.
+
+**Draft-only email guide schema:** `utm_source=dispatch&utm_medium=email&utm_campaign=dispatch_pilot_2026_11&utm_content=issue03_zen12_guide`, never direct to a checkout: an independently vetted first-party guide must first be **LIVE and editorially approved**, merchant must specifically approve email promotion, and founder must grant final sending approval. The exact link is not activated. Actual guide proof belongs to Mind #171.
+
+## Latest read-only evidence
+
+* WordPress at **2026-11-10T10:31 UTC**: newsletter `subscriptions=true`, default send **OFF**, `email_content_format=full`, sender display `Final Vestige Studios`, `reply_to=no-reply`, configured 52-page Seven Day Focus Fieldbook welcome. Reported `total=3, confirmed=3, unconfirmed=2, suppressed=0`; the counters are **not additive**. Last five listed posts are `never_sent_opted_out`. Actual `Email subscription: Subscribed` aggregate, final welcome receipt, publisher postal footer, unsubscribe operation and preheader in a delivered email **remain unverified**. No names/addresses exported.
+* Published [Dispatch](https://finalvestige.com/dispatch/) page ID 523 emphasizes investigations and archive finds; published [Focus](https://finalvestige.com/focus/) page ID 1579 describes possible commission-earning recommendations. [Editorial Standards](https://finalvestige.com/editorial-standards/) requires official/archival evidence, visible uncertainty, source checking and commercial independence. Align disclosure/expectations before the founder authorizes commercial sending; this draft does not change live copy.
+* Mind R265 draft [PR #1880](https://github.com/finalvestigestudios/final-vestige-site-layer/pull/1880), exact `8a424230ee8fc0e6d144383f5419f57012907ccb`, is **not live**. Its 16 merchant release gates remain on **HARD HOLD** with no named Final Vestige affiliate email authorization, issued earning URL, confirmed checkout/returns or product efficacy validation. Both seller pages [Zen12 standard](https://zen12.com/hnp) and [promotion](https://zen12.com/secret/) advertise distinct price presentations; these are seller statements, not authorized FV checkout terms. Hypnosis Live has distinct unverified merchant gates; one program's rights do not establish another's.
+* Official [WordPress confirmation/welcome behavior](https://wordpress.com/support/newsletter-settings/) notes existing WP accounts can skip an extra email confirmation and receive welcome immediately. Therefore the evidence condition is **provider-authenticated subscribed status plus appropriate consent and deduplication**, not a specific confirmation-email artifact. The Focus gift's `?subscribe=` UI or clicked PDF is **not** consent.
+* FTC [CAN-SPAM](https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business) requires a valid sender postal address and functioning marketing opt-out, among other conditions. An Automattic address on a WordPress confirmation email is not the **Final Vestige** mailing address. The actual received-email footer remains **UNKNOWN**; no sending or test-email approval.
+* WordPress [email appearance](https://wordpress.com/support/newsletter/email-appearance/) says the sending toggle must be on to expose preview; [send-newsletter-emails](https://wordpress.com/support/newsletter/send-newsletter-emails/) also documents a preview link while send-off. This platform-documentation inconsistency should be resolved by a separately approved safe native draft preview; no toggles were changed here.
+
+## State model and privacy contract
+
+`focus_signup_click`, `focus_pdf_click`, `gift_ui_shown`, `signup_form_visible`, `form_submitted` are diagnostics only. **One** `confirmed_signup` requires independent provider proof of `Subscribed`, Dispatch-appropriate consent, and a deduped verified transition. Dedup must occur privately in provider/first-party authorized infrastructure; no emails, raw subscriber IDs, tokenized URLs or fingerprints in public code/analytics. No cross-device attribution if a consented join is unavailable. Report qualified humans only when independently classified; crawler visits and clicks cannot be paid customers.
+
+An independently reported settled partner commission, verified order, refund/fee reconciliation and first-party qualified-human session denominator are required before net revenue per 1,000 qualified human sessions becomes meaningful. The locally provided boolean attestation in the QA function **is not a substitute** for checking merchant provenance; its numeric output is deliberately labelled `PROVISIONAL_CALCULATION_ONLY`. Use 7/30-day cohorts, tiny-sample caveats, unknown != zero, and no A/B significance claims for a list of this size.
+
+## Conversion-first owner/proof plan
+
+| OFFER → FUNNEL STEP | BLOCKER | CHANGE / EXPERIMENT | PASS/FAIL EVIDENCE | OWNER |
+|---|---|---|---|---|
+| Free Focus Fieldbook → qualified visit | R253 source/medium contradict canonical #820 | Align platform/organic_social and owner-verified asset_id | Published creator asset inventory + first-party qualified session, not synthetic fixture | Grok/Praxxis TASK-008; Claude #820 |
+| Fieldbook → lead | Gift unlock possible without provider confirmation; 3/3/2 counters nonadditive | Private provider status/consent/dedupe and aggregate `Email subscription: Subscribed` | Read-only authenticated aggregate, no identities | Focus/Claude #129 |
+| Focus → Dispatch inbox | Welcome receipt, postal address, unsubscribe, preheader unverified | Founder-authorized preview and separate received-message verification | Genuine Jetpack representation and legal footer/opt-out proof | Dispatch/Site QA #174 |
+| Zen12 → buyer guide | Buyer guide not live; account-specific email rights missing | Authenticate publisher and exact guide/offer, *then* plan one CTA | Merchant written authority, current package/checkout/refund terms and approved guide | Mind #171 |
+| Buyer → verified revenue | No independently reconciled paid transaction | Independent settled commission ledger, fees/refunds and 7/30d causal session alignment | Merchant-verified settled orders; no click→sale inference | Commerce/Praxxis #820 |
+
+## Proposed subscriber-expectation alignment (UNPUBLISHED, NOT AUTHORIZED)
+
+Propose adding next to /dispatch/ signup for review: “The Dispatch is primarily investigations, original documents and practical guides. Occasionally we may examine a relevant tool. Recommendations remain independent, and any commission is disclosed beside the offer. The free Focus Fieldbook is yours to use whether or not you buy anything.” Do not alter either published page without founder's separate approval.
+
+## QA scope
+
+`attribution_contract.mjs` / `test_attribution_contract.mjs` are no-network, read-only offline artifacts for native Node.js execution: `node --test dispatch/r254/test_attribution_contract.mjs`. Reject noncanonical R253 social links, malformed UTMs/PII keys, unvetted/unauthorized guide links, UI-only consent and unverified revenue. **All six canonical emails remain unchanged and HOLD_UNSENT; Issues 03/05 HOLD_MERCHANT.** The original PR #175 immutable head is `d57ccdba3aee8f065e143e101c2945f4f3d01647`; six original Python guards were executed natively in R252 at that exact head. This sprint read its original manifest and test but did not re-run the full original source suite.
+
+No email, test message, public post, WP modification, new list, affiliate activation, social post, analytics deployment, spending, checkout test or merge is authorized or performed. Homepage PR #49 remains frozen and independent.
