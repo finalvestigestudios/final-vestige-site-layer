@@ -1,0 +1,298 @@
+{
+  "candidate_git_blob": "a898d45f5cf050e941ce9f771f0d684084735570",
+  "chromium_version": "144.0.7559.96",
+  "js_modes": {
+    "false": {
+      "faces": {
+        "back": {
+          "cutout_bounding_box_pt": [
+            294.2,
+            70.0,
+            546.2,
+            220.0
+          ],
+          "field_boxes_pt": [
+            [
+              302.64,
+              134.35,
+              459.25,
+              144.41
+            ],
+            [
+              302.64,
+              150.85,
+              469.76,
+              160.91
+            ],
+            [
+              302.64,
+              168.1,
+              454.23,
+              178.16
+            ]
+          ],
+          "field_labels": [
+            "Backup contact:",
+            "Backup telephone:",
+            "Plan reviewed:"
+          ],
+          "full_privacy_text": "Privacy: A finder can read this card. Carry only non-sensitive contact details and review before sharing.",
+          "heading": "Backup contact",
+          "privacy_boxes_pt": [
+            [
+              302.64,
+              108.1,
+              524.54,
+              118.16
+            ],
+            [
+              302.64,
+              118.6,
+              523.22,
+              128.66
+            ]
+          ],
+          "privacy_fonts_pt": [
+            9.0,
+            9.0
+          ],
+          "privacy_lines": 2,
+          "status": "UNAPPROVED - DO NOT USE",
+          "status_box_pt": [
+            304.89,
+            75.1,
+            432.4,
+            85.16
+          ],
+          "status_font_pt": 9.0
+        },
+        "front": {
+          "cutout_bounding_box_pt": [
+            42.0,
+            70.0,
+            294.2,
+            220.0
+          ],
+          "field_boxes_pt": [
+            [
+              51.39,
+              156.1,
+              224.0,
+              166.16
+            ],
+            [
+              51.39,
+              172.6,
+              187.99,
+              182.66
+            ]
+          ],
+          "field_labels": [
+            "Out-of-area contact:",
+            "Telephone:"
+          ],
+          "full_privacy_text": "Privacy: This card may be lost or photographed. Do not write child names, school details, home addresses, passwords, medical information or access codes.",
+          "heading": "Emergency contact",
+          "privacy_boxes_pt": [
+            [
+              51.39,
+              108.1,
+              272.44,
+              118.16
+            ],
+            [
+              51.39,
+              118.6,
+              237.44,
+              128.66
+            ],
+            [
+              51.39,
+              129.1,
+              282.48,
+              139.16
+            ],
+            [
+              51.39,
+              140.35,
+              79.9,
+              150.41
+            ]
+          ],
+          "privacy_fonts_pt": [
+            9.0,
+            9.0,
+            9.0,
+            9.0
+          ],
+          "privacy_lines": 4,
+          "status": "UNAPPROVED - DO NOT USE",
+          "status_box_pt": [
+            53.64,
+            75.1,
+            181.15,
+            85.16
+          ],
+          "status_font_pt": 9.0
+        }
+      },
+      "page_count": 1
+    },
+    "true": {
+      "faces": {
+        "back": {
+          "cutout_bounding_box_pt": [
+            294.2,
+            70.0,
+            546.2,
+            220.0
+          ],
+          "field_boxes_pt": [
+            [
+              302.64,
+              134.35,
+              459.25,
+              144.41
+            ],
+            [
+              302.64,
+              150.85,
+              469.76,
+              160.91
+            ],
+            [
+              302.64,
+              168.1,
+              454.23,
+              178.16
+            ]
+          ],
+          "field_labels": [
+            "Backup contact:",
+            "Backup telephone:",
+            "Plan reviewed:"
+          ],
+          "full_privacy_text": "Privacy: A finder can read this card. Carry only non-sensitive contact details and review before sharing.",
+          "heading": "Backup contact",
+          "privacy_boxes_pt": [
+            [
+              302.64,
+              108.1,
+              524.54,
+              118.16
+            ],
+            [
+              302.64,
+              118.6,
+              523.22,
+              128.66
+            ]
+          ],
+          "privacy_fonts_pt": [
+            9.0,
+            9.0
+          ],
+          "privacy_lines": 2,
+          "status": "UNAPPROVED - DO NOT USE",
+          "status_box_pt": [
+            304.89,
+            75.1,
+            432.4,
+            85.16
+          ],
+          "status_font_pt": 9.0
+        },
+        "front": {
+          "cutout_bounding_box_pt": [
+            42.0,
+            70.0,
+            294.2,
+            220.0
+          ],
+          "field_boxes_pt": [
+            [
+              51.39,
+              156.1,
+              224.0,
+              166.16
+            ],
+            [
+              51.39,
+              172.6,
+              187.99,
+              182.66
+            ]
+          ],
+          "field_labels": [
+            "Out-of-area contact:",
+            "Telephone:"
+          ],
+          "full_privacy_text": "Privacy: This card may be lost or photographed. Do not write child names, school details, home addresses, passwords, medical information or access codes.",
+          "heading": "Emergency contact",
+          "privacy_boxes_pt": [
+            [
+              51.39,
+              108.1,
+              272.44,
+              118.16
+            ],
+            [
+              51.39,
+              118.6,
+              237.44,
+              128.66
+            ],
+            [
+              51.39,
+              129.1,
+              282.48,
+              139.16
+            ],
+            [
+              51.39,
+              140.35,
+              79.9,
+              150.41
+            ]
+          ],
+          "privacy_fonts_pt": [
+            9.0,
+            9.0,
+            9.0,
+            9.0
+          ],
+          "privacy_lines": 4,
+          "status": "UNAPPROVED - DO NOT USE",
+          "status_box_pt": [
+            53.64,
+            75.1,
+            181.15,
+            85.16
+          ],
+          "status_font_pt": 9.0
+        }
+      },
+      "page_count": 1
+    }
+  },
+  "page_size_pt": [
+    612,
+    792
+  ],
+  "parent_git_blob": "4fbe028e0460dc81478825f501d76b03596faeaf",
+  "physical_cut_fold_not_tested": true,
+  "proof_scope": "offline Chromium PDF spans; not physical or independent safety QA",
+  "reader_legibility_not_assessed": true,
+  "release_flags": {
+    "accessibility_approved": false,
+    "child_information_privacy_approved": false,
+    "commerce_approved": false,
+    "full_native_pipeline_executed": false,
+    "independent_qd_pass": false,
+    "legibility_approved": false,
+    "physical_print_approved": false,
+    "publication_authorized": false
+  },
+  "schema": "fv.r271.wallet.full-privacy-text.v1",
+  "state": "DRAFT_HARD_HOLD"
+}

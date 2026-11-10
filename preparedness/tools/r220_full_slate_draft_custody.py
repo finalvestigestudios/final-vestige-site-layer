@@ -187,6 +187,16 @@ R270_PDF_RECEIPT_PATH = 'audits/r270_print_locality_receipt_REVIEW_ONLY.json'
 R270_PDF_RECEIPT_BLOB = 'df6a8732265a24fbc54442c87e24015f76ef5282'
 R270_PDF_REPRO_PATH = 'tools/r270_reproduce_wallet_print_locality_REVIEW_ONLY.py'
 R270_PDF_REPRO_BLOB = '02efdcb44f7dab1ccd4bbd5dae506952dc7ee9c4'
+# R271 separate UNAPPROVED 9pt alternative: exact full wrapped warnings per
+# PDF face. This never supersedes R270's 8pt negative historical evidence.
+R271_FULL_WARNING_GATE_PATH = 'tools/r271_full_warning_print_hold.py'
+R271_FULL_WARNING_GATE_BLOB = '6b7488dec29b3f9c1085c68f44339282fe04b922'
+R271_PREVIEW_PATH = 'audits/r271_wallet_full_warning_9pt_REVIEW_ONLY.html'
+R271_PREVIEW_BLOB = 'a898d45f5cf050e941ce9f771f0d684084735570'
+R271_FULL_RECEIPT_PATH = 'audits/r271_full_warning_print_receipt_REVIEW_ONLY.json'
+R271_FULL_RECEIPT_BLOB = '5d5145a433576a42deb05e1c9518b9044154b8ca'
+R271_FULL_REPRO_PATH = 'tools/r271_reproduce_full_warning_REVIEW_ONLY.py'
+R271_FULL_REPRO_BLOB = '7d2541cdafc2de9cb71c7b49d102c75a086674a5'
 # R258 binds the complete R254/R257 original source-claim partition to a
 # deterministic, entirely escaped, no-clickable-links offline reviewer view.
 R258_COMPLETE_REVIEW_PATH = 'tools/r258_complete_offline_claim_review_hold.py'
@@ -1012,6 +1022,24 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
             raise ValueError('R270 printed-face locality and negative safety evidence drift')
         result['r270_cutout_pdf_face_locality_hard_hold'] = pdf_receipt
         result['r270_manual_pdf_reproduction'] = 'EXTERNAL_ONLY_NOT_NATIVE_EXECUTED'
+        # R271 provenance/receipt check is offline and fail-closed. It tests
+        # full wrapped warning continuity, not actual household usability.
+        r271_full_gate = load_frozen_gate(root, R271_FULL_WARNING_GATE_PATH,
+                                          R271_FULL_WARNING_GATE_BLOB,
+                                          'fv_preparedness_r271_complete_pdf_warning_hold',
+                                          ('audit', 'inspect'))
+        r271_full = r271_full_gate.audit(root, safe_read)
+        if (r271_full.get('state') != HOLD
+                or r271_full.get('candidate_git_blob') != R271_PREVIEW_BLOB
+                or r271_full.get('full_wrapped_privacy_pdf_text_bounded_observation') is not True
+                or r271_full.get('print_9pt_source_witness') is not True
+                or any(r271_full.get(k) is not False for k in (
+                    'reader_legibility_approved','physical_cut_fold_tested',
+                    'independent_qd_pass','publication_authorized',
+                    'full_native_pipeline_executed'))):
+            raise ValueError('R271 full-text print evidence or HOLD state drift')
+        result['r271_full_wrapped_pdf_warning_hard_hold'] = r271_full
+        result['r271_chromium_reproduction'] = 'EXTERNAL_ONLY_NOT_NATIVE_EXECUTED'
         # A reversible SCREEN-only alternative is not approval for the
         # existing held tool or proof of physical print/privacy safety.
         r267 = load_frozen_gate(root, R267_WALLET_SCREEN_PATH,
@@ -1257,7 +1285,11 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
                 (R269_CUTOUT_REPRO_PATH, R269_CUTOUT_REPRO_BLOB),
                 (R270_PDF_LOCALITY_PATH, R270_PDF_LOCALITY_BLOB),
                 (R270_PDF_RECEIPT_PATH, R270_PDF_RECEIPT_BLOB),
-                (R270_PDF_REPRO_PATH, R270_PDF_REPRO_BLOB)):
+                (R270_PDF_REPRO_PATH, R270_PDF_REPRO_BLOB),
+                (R271_FULL_WARNING_GATE_PATH, R271_FULL_WARNING_GATE_BLOB),
+                (R271_PREVIEW_PATH, R271_PREVIEW_BLOB),
+                (R271_FULL_RECEIPT_PATH, R271_FULL_RECEIPT_BLOB),
+                (R271_FULL_REPRO_PATH, R271_FULL_REPRO_BLOB)):
             if git_blob(safe_read(root, path)) != expected:
                 raise ValueError('R267 screen-only candidate/source receipt changed during audit')
         if git_blob(safe_read(root, R258_COMPLETE_REVIEW_PATH)) != R258_COMPLETE_REVIEW_BLOB:
