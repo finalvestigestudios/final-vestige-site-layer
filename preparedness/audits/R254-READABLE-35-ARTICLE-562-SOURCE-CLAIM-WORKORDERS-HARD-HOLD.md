@@ -11,7 +11,7 @@ The three originally disputed citations are explicitly located at **Article 7 ci
 
 ## Tested engineering scope
 - R254 stand-alone module: `preparedness/tools/r254_readable_claim_workorders_hold.py`; Git blob `76d5030cd774c1474e2d0b69510045ed404fe8fd`.
-- R254 test suite: `preparedness/tests/test_r254_readable_claim_workorders_hold.py`; Git blob `4f8b694f7a7413386d4e378378a7dafdc66acdd1`.
+- R254 test suite: `preparedness/tests/test_r254_readable_claim_workorders_hold.py`; Git blob `81bb5924412feb26329c8cc6ae65846fabbfa29b`.
 - **78/78 isolated synthetic Python tests PASS**; Python compilation PASS. Confirmed GitHub blob identities match the locally executed files. Tests include adversarial input approval flips, corpus/group drift, unreadable claim witnesses, forged excerpt hashes and duplicate/lost citations.
 - R220 now invokes pinned R254 immediately after authenticated R235/R237/R253 receipts and **before draft export**, checks the hard holds and rechecks R254 module identity at end of audit.
 - **NOT EXECUTED:** complete native validate/build/inherited suite, end-to-end real R220/R254 receipt generation, WordPress-ready 41-export verification, real browser/print, original claim source reading and independent QD. Full `git clone` fails in the local runtime due to GitHub DNS resolution; the GitHub connector can retrieve individual authenticated files. Do not represent isolated synthetic success as native QA.
