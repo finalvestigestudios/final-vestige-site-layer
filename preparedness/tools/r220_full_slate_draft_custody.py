@@ -202,6 +202,12 @@ R271_FULL_REPRO_BLOB = '7d2541cdafc2de9cb71c7b49d102c75a086674a5'
 # all 32 unadjudicated shared-source groups and 15 duplicated ID groups.
 R272_CROSSWALK_GATE_PATH = 'tools/r272_crosswalk_snapshot_hold.py'
 R272_CROSSWALK_GATE_BLOB = '97cacd40b2a4324696f746798b472251a42a53b6'
+# R273 non-adjudicating reviewer-facing docket; the complete 244 original
+# readings remain origin/row-scoped and both collision axes stay open.
+R273_DOCKET_GATE_PATH = 'tools/r273_source_review_docket_hold.py'
+R273_DOCKET_GATE_BLOB = '89418fa7b280591a1bd556f148329b4ed422d1c8'
+R273_DOCKET_PATH = 'audits/r273_shared_source_review_docket_UNAPPROVED.json'
+R273_DOCKET_BLOB = 'db59f659b0e1c513011539bbc9b6fc1ebf056785'
 # R258 binds the complete R254/R257 original source-claim partition to a
 # deterministic, entirely escaped, no-clickable-links offline reviewer view.
 R258_COMPLETE_REVIEW_PATH = 'tools/r258_complete_offline_claim_review_hold.py'
@@ -1042,6 +1048,22 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
                 or r272.get('publication_authorized') is not False):
             raise ValueError('R272 original source/crosswalk parity HOLD drift')
         result['r272_eight_origin_source_census_hard_hold'] = r272
+        # R273 never adjudicates collisions: hold both URL and ID review lanes.
+        r273_gate = load_frozen_gate(root, R273_DOCKET_GATE_PATH,
+                                     R273_DOCKET_GATE_BLOB,
+                                     'fv_preparedness_r273_source_review_docket_hold',
+                                     ('audit', 'build_docket'))
+        r273 = r273_gate.audit(root, safe_read)
+        if (r273.get('state') != HOLD
+                or r273.get('docket_parity') is not True
+                or r273.get('source_readings') != 244
+                or r273.get('review_alias_groups') != 32
+                or r273.get('duplicate_source_id_groups') != 15
+                or r273.get('exact_urls') != 202
+                or r273.get('independent_qd_pass') is not False
+                or r273.get('publication_authorized') is not False):
+            raise ValueError('R273 human source docket MUST remain original-parity HARD HOLD')
+        result['r273_unadjudicated_source_collision_docket'] = r273
         # R271 provenance/receipt check is offline and fail-closed. It tests
         # full wrapped warning continuity, not actual household usability.
         r271_full_gate = load_frozen_gate(root, R271_FULL_WARNING_GATE_PATH,
@@ -1310,7 +1332,9 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
                 (R271_PREVIEW_PATH, R271_PREVIEW_BLOB),
                 (R271_FULL_RECEIPT_PATH, R271_FULL_RECEIPT_BLOB),
                 (R271_FULL_REPRO_PATH, R271_FULL_REPRO_BLOB),
-                (R272_CROSSWALK_GATE_PATH, R272_CROSSWALK_GATE_BLOB)):
+                (R272_CROSSWALK_GATE_PATH, R272_CROSSWALK_GATE_BLOB),
+                (R273_DOCKET_GATE_PATH, R273_DOCKET_GATE_BLOB),
+                (R273_DOCKET_PATH, R273_DOCKET_BLOB)):
             if git_blob(safe_read(root, path)) != expected:
                 raise ValueError('R267 screen-only candidate/source receipt changed during audit')
         if git_blob(safe_read(root, R258_COMPLETE_REVIEW_PATH)) != R258_COMPLETE_REVIEW_BLOB:
