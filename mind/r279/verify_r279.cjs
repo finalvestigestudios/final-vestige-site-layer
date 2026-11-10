@@ -109,7 +109,7 @@ function mutations(f) {
     ["exact seller drift",{...f,matrix:f.matrix.replace('https://zen12.com/hnp','https://zen12.com/something-else')}],
     ["wrong consent",{...f,matrix:f.matrix.replace('INSPIRE3_SELLER_NEWSLETTER','FV_JETPACK_FOCUS')}],
     ["paid fieldbook",{...f,matrix:f.matrix.replace('LIVE_FREE_RESOURCE_NOT_PAID_SALE','PAID_ORDER_VERIFIED')}],
-    ["paid sku fraud",{...f,matrix:f.matrix.replace('"status": "NOT_AUTHENTICATED"','"status": "VERIFIED"}')],
+    ["paid sku fraud",{...f,matrix:f.matrix.replace('"status": "NOT_AUTHENTICATED"','"status": "VERIFIED"}')}],
     ["tracking collector",{...f,matrix:f.matrix.replace('"collector": "none_new"','"collector": "custom_pixel"')}],
     ["false live video",{...f,matrix:f.matrix.replace('"hosted_video": false','"hosted_video": true')}],
     ["false experiment",{...f,matrix:f.matrix.replace('"live_ab": false','"live_ab": true')}],
