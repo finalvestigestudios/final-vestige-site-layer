@@ -1,0 +1,607 @@
+{
+  "schema": "fv-mind-r274-evidence-commerce-gates-v1",
+  "as_of": "2026-11-10",
+  "status": "UNPUBLISHED_SOURCE_CONTROLLED",
+  "release": "HARD_HOLD",
+  "seller_source_verified_as_public_not_account_authenticated": true,
+  "scientific_sources_date_verified": true,
+  "products": [
+    {
+      "id": "zen12_premium_standard",
+      "official_seller": "Inspire3 / Zen12",
+      "page": "https://zen12.com/hnp",
+      "verified_public_description": "12 levels; 48 MP3s; guide materials; seller-advertised one-year money-back guarantee",
+      "public_display_price_observation": "Public page advertised Premium $87.99 at reviewed time; NOT a checkout verification",
+      "separate_offer": "https://zen12.com/secret/",
+      "separate_offer_observation": "Coupon-framed $37 promotional copy displayed on Nov 10; NOT interchangeable with standard offer; cannot claim current sale, urgency or authorization",
+      "account_issued_affiliate_link": null,
+      "approved_channels": null,
+      "checkout_total": null,
+      "actual_refund_fulfillment": null,
+      "eligible_for_live_earning_cta": false
+    },
+    {
+      "id": "hypnosis_live_total_focus",
+      "page": "https://hypnosislive.com/mental-skills/total-focus",
+      "verified_public_description": "33-minute audio, 47 MB; seller describes hypnosis for concentration",
+      "public_display_price_observation": "$24.44 and struck-through $29.95 appeared in public page at review, NOT verified checkout total",
+      "account_issued_affiliate_link": null,
+      "claim_efficacy_verified": false,
+      "eligible_for_live_earning_cta": false
+    },
+    {
+      "id": "brainwave_shots",
+      "page": "https://brainwaveshots.com/",
+      "verified_public_description": "Seller catalog lists Focus Shot and other downloadable audio categories",
+      "exact_track_eligibility": null,
+      "issued_earning_url": null,
+      "claim_efficacy_verified": false,
+      "eligible_for_live_earning_cta": false
+    },
+    {
+      "id": "fv_owned_paid_mind",
+      "sku": null,
+      "rights_cleared": null,
+      "active_checkout": null,
+      "verified_product_price": null,
+      "refund_terms": null,
+      "paid_orders": null,
+      "status": "NOT_AUTHENTICATED_SO_NOT_SELLABLE_AS_A_VERIFIED_MIND_PILOT"
+    },
+    {
+      "id": "seven_day_focus_fieldbook",
+      "public_url": "https://finalvestige.com/focus/",
+      "price": "FREE",
+      "page_status": "LIVE",
+      "mailing_list": "EXISTING_JETPACK_DISPATCH_ONLY",
+      "confirmed_leads": null,
+      "paid_orders": null
+    }
+  ],
+  "sources": [
+    {
+      "id": "S01",
+      "type": "journal_primary",
+      "title": "Lavie & Tsal 1994 perceptual load theory",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/7971119/"
+    },
+    {
+      "id": "S02",
+      "type": "journal_primary",
+      "title": "Lavie 1995 perceptual load experiments",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/7790827/"
+    },
+    {
+      "id": "S03",
+      "type": "journal_primary",
+      "title": "Lavie & Cox 1997 visual search distractors",
+      "url": "https://journals.sagepub.com/doi/10.1111/j.1467-9280.1997.tb00432.x"
+    },
+    {
+      "id": "S04",
+      "type": "peer_reviewed_synthesis",
+      "title": "Lavie 2005 perceptual/executive load distinction",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/15668100/"
+    },
+    {
+      "id": "S05",
+      "type": "journal_primary_counterevidence",
+      "title": "Eltiti Wallace Fox 2005 salience hypothesis",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/16334059/"
+    },
+    {
+      "id": "S06",
+      "type": "systematic_review",
+      "title": "Matias et al 2021 systematic review three meta-analyses",
+      "url": "https://doi.org/10.1177/17470218211064903"
+    },
+    {
+      "id": "S07",
+      "type": "meta_analysis_summary",
+      "title": "2022 Psychological Bulletin 81 studies 317 effects",
+      "url": "https://ifp.nyu.edu/2023/meta-analyses-systematic-reviews/bul0000371/"
+    },
+    {
+      "id": "S08",
+      "type": "journal_replication_challenge",
+      "title": "Snowden Gray 2025 six experiments non-replication",
+      "url": "https://orca.cardiff.ac.uk/id/eprint/179923/"
+    },
+    {
+      "id": "S09",
+      "type": "journal_primary",
+      "title": "Simons Chabris 1999 gorilla",
+      "url": "https://doi.org/10.1068/p281059"
+    },
+    {
+      "id": "S10",
+      "type": "seller_catalog",
+      "title": "Inspire3 official home catalog",
+      "url": "https://inspire3.com/"
+    },
+    {
+      "id": "S11",
+      "type": "seller_exact_offer",
+      "title": "Zen12 standard Premium current public offer",
+      "url": "https://zen12.com/hnp"
+    },
+    {
+      "id": "S12",
+      "type": "seller_distinct_promotion",
+      "title": "Zen12 promotional proposition distinct from standard",
+      "url": "https://zen12.com/secret/"
+    },
+    {
+      "id": "S13",
+      "type": "seller_exact_offer",
+      "title": "Hypnosis Live Total Focus",
+      "url": "https://hypnosislive.com/mental-skills/total-focus"
+    },
+    {
+      "id": "S14",
+      "type": "seller_catalog",
+      "title": "Brainwave Shots catalog",
+      "url": "https://brainwaveshots.com/"
+    },
+    {
+      "id": "S15",
+      "type": "public_partner_portal",
+      "title": "Inspire3 affiliate portal public description, not account acceptance",
+      "url": "https://affiliates.inspire3.com/"
+    },
+    {
+      "id": "S16",
+      "type": "regulator",
+      "title": "FTC Endorsements FAQ",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking"
+    },
+    {
+      "id": "S17",
+      "type": "regulator",
+      "title": "FTC Health Products Compliance Guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+    },
+    {
+      "id": "S18",
+      "type": "first_party_live",
+      "title": "Existing free Focus Fieldbook",
+      "url": "https://finalvestige.com/focus/"
+    },
+    {
+      "id": "S19",
+      "type": "first_party_live",
+      "title": "Puységur Animal Magnetism Files",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+    },
+    {
+      "id": "S20",
+      "type": "first_party_live",
+      "title": "Change Blindness investigation",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/"
+    },
+    {
+      "id": "S21",
+      "type": "first_party_live",
+      "title": "Mesmerism 1784 commission investigation",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/"
+    },
+    {
+      "id": "S22",
+      "type": "repository_charter",
+      "title": "Mind and Affiliate Issue 171",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171"
+    },
+    {
+      "id": "S23",
+      "type": "repository_business",
+      "title": "Business Issue 820",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "Higher perceptual load can reduce measured interference in particular visual-search arrangements",
+      "status": "supported_conditionally",
+      "source_ids": [
+        "S01",
+        "S02",
+        "S03"
+      ],
+      "limitation": "Not a recommendation for cluttered workspaces"
+    },
+    {
+      "id": "C02",
+      "claim": "Perceptual load and executive/control load may have different distractor effects",
+      "status": "supported_theoretical_model",
+      "source_ids": [
+        "S04"
+      ],
+      "limitation": "Review model, not universal result"
+    },
+    {
+      "id": "C03",
+      "claim": "2005 salience experiment supported an alternative to the simple load prediction",
+      "status": "supported_counterevidence",
+      "source_ids": [
+        "S05"
+      ],
+      "limitation": "Three tested experiments, not universal reversal"
+    },
+    {
+      "id": "C04",
+      "claim": "2021 review found higher inattentional blindness with higher perceptual load",
+      "status": "supported_review_scope",
+      "source_ids": [
+        "S06"
+      ],
+      "limitation": "Subjective awareness distinct from interference"
+    },
+    {
+      "id": "C05",
+      "claim": "2021 review decisively confirmed all predictions for cognitive load",
+      "status": "contradicted_withhold",
+      "source_ids": [
+        "S06"
+      ],
+      "limitation": "Cognitive findings less clear"
+    },
+    {
+      "id": "C06",
+      "claim": "2022 meta-analysis synthesized 81 studies and 317 effect sizes",
+      "status": "supported_secondary_summary",
+      "source_ids": [
+        "S07"
+      ],
+      "limitation": "Confirm full bibliographic record before release"
+    },
+    {
+      "id": "C07",
+      "claim": "2025 six-experiment study failed to reproduce classic load-dependent distraction reduction",
+      "status": "supported_replication_challenge",
+      "source_ids": [
+        "S08"
+      ],
+      "limitation": "Task-limited failure, not total field disproof"
+    },
+    {
+      "id": "C08",
+      "claim": "Increasing difficulty always protects from distraction",
+      "status": "unsupported_extrapolation",
+      "source_ids": [
+        "S03",
+        "S05",
+        "S08"
+      ],
+      "limitation": "Do not publish"
+    },
+    {
+      "id": "C09",
+      "claim": "Inattentional blindness can occur under dynamic selective-attention demands",
+      "status": "supported_scientific",
+      "source_ids": [
+        "S09"
+      ],
+      "limitation": "No claims about individual intelligence or diagnoses"
+    },
+    {
+      "id": "C10",
+      "claim": "Zen12 Premium seller lists twelve levels and 48 MP3 audio recordings",
+      "status": "seller_feature_only",
+      "source_ids": [
+        "S11"
+      ],
+      "limitation": "No FV firsthand use or validated value claim"
+    },
+    {
+      "id": "C11",
+      "claim": "Zen12 advertises a year money-back guarantee on standard page",
+      "status": "seller_policy_only",
+      "source_ids": [
+        "S11"
+      ],
+      "limitation": "Scope, eligibility and fulfillment not independently tested"
+    },
+    {
+      "id": "C12",
+      "claim": "Zen12 compresses one hour of meditation benefit into twelve minutes",
+      "status": "unsupported_seller_efficacy_withhold",
+      "source_ids": [
+        "S11"
+      ],
+      "limitation": "No product-specific comparative clinical proof authenticated"
+    },
+    {
+      "id": "C13",
+      "claim": "Zen12 displayed one standard public price and another promotional coupon proposition",
+      "status": "observed_offer_mismatch",
+      "source_ids": [
+        "S11",
+        "S12"
+      ],
+      "limitation": "No authenticated final checkout; prices can change"
+    },
+    {
+      "id": "C14",
+      "claim": "Hypnosis Live Total Focus describes a 33-minute downloadable hypnosis audio",
+      "status": "seller_feature_only",
+      "source_ids": [
+        "S13"
+      ],
+      "limitation": "No hands-on test; no benefit endorsement"
+    },
+    {
+      "id": "C15",
+      "claim": "Hypnosis Live Total Focus makes limitless-concentration promise",
+      "status": "unsupported_seller_efficacy_withhold",
+      "source_ids": [
+        "S13"
+      ],
+      "limitation": "Never inherit superlative"
+    },
+    {
+      "id": "C16",
+      "claim": "Brainwave Shots provides Focus Shot and other catalog tracks",
+      "status": "seller_feature_only",
+      "source_ids": [
+        "S14"
+      ],
+      "limitation": "Track-specific price, permission, efficacy and rights unverified"
+    },
+    {
+      "id": "C17",
+      "claim": "Brainwave Shots cures pain or medical symptoms",
+      "status": "unsupported_health_claim_withhold",
+      "source_ids": [
+        "S14",
+        "S17"
+      ],
+      "limitation": "Never imply cure via catalog category"
+    },
+    {
+      "id": "C18",
+      "claim": "Inspire3 affiliate program is publicly described as existing",
+      "status": "supported_portal_only",
+      "source_ids": [
+        "S15"
+      ],
+      "limitation": "Portal is not acceptance of Final Vestige"
+    },
+    {
+      "id": "C19",
+      "claim": "Final Vestige was accepted as an Inspire3 publisher",
+      "status": "NOT_VERIFIED",
+      "source_ids": [
+        "S15"
+      ],
+      "limitation": "No account acceptance evidence"
+    },
+    {
+      "id": "C20",
+      "claim": "Final Vestige has a valid issued affiliate URL and permission for social/email promotion",
+      "status": "NOT_VERIFIED",
+      "source_ids": [
+        "S15"
+      ],
+      "limitation": "No link activation"
+    },
+    {
+      "id": "C21",
+      "claim": "An affiliate earning link needs clear adjacent monetary relationship disclosure",
+      "status": "regulatory_requirement",
+      "source_ids": [
+        "S16"
+      ],
+      "limitation": "Future link only; current buttons disabled"
+    },
+    {
+      "id": "C22",
+      "claim": "Health-related performance/medical claims need adequate competent reliable scientific support",
+      "status": "regulatory_requirement",
+      "source_ids": [
+        "S17"
+      ],
+      "limitation": "General attention papers are not proof for Zen12"
+    },
+    {
+      "id": "C23",
+      "claim": "Published Focus Fieldbook is a free 52-page resource using existing Dispatch signup",
+      "status": "first_party_observed",
+      "source_ids": [
+        "S18"
+      ],
+      "limitation": "Does not represent confirmed new leads"
+    },
+    {
+      "id": "C24",
+      "claim": "Payhip provides confirmed settled Mind product orders",
+      "status": "NOT_VERIFIED",
+      "source_ids": [],
+      "limitation": "No validated rights-cleared paid Mind SKU, merchant account order data or refund reconciliation"
+    },
+    {
+      "id": "C25",
+      "claim": "Net revenue per 1,000 qualified-human sessions",
+      "status": "NOT_COMPUTABLE",
+      "source_ids": [
+        "S23"
+      ],
+      "limitation": "Unknown eligible sessions, settlements, refunds and fees; do not treat as zero"
+    }
+  ],
+  "commercial_gates": [
+    {
+      "id": "named_inspire3_acceptance",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "issued_publisher_specific_earning_url",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "exact_zen12_offer_identity",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "current_authenticated_cart_total",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "refund_policy_scope_and_fulfillment",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "approved_web_promotion_channels",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "approved_email_promotion_channels",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "approved_creatives_or_swipe_terms",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "product_specific_claim_substantiation",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "affiliate_attribution_permissions",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "ftc_adjacent_disclosure_qa",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "signed_out_mobile_browser_qa",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "word_press_sanitization_qa",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "founder_commercial_release_approval",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "independent_settled_commission_report",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "verified_product_sales_and_refunds_reconciliation",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    }
+  ],
+  "creator_topic_fit": [
+    {
+      "topic": "Change blindness",
+      "public_article": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "media_id": null,
+      "media_url": null,
+      "focus": "https://finalvestige.com/focus/",
+      "product": "zen12_premium_standard",
+      "commercial_relevance": "LOW: perception research is not meditation audio efficacy",
+      "status": "NO_VERIFIED_VIDEO_ASSET"
+    },
+    {
+      "topic": "Mesmerism / Puységur historical suggestion",
+      "public_article": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "historical_archive": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "media_id": null,
+      "media_url": null,
+      "focus": "https://finalvestige.com/focus/",
+      "product": "hypnosis_live_total_focus",
+      "commercial_relevance": "LOW: historical history ≠ tested audio benefits",
+      "status": "NO_VERIFIED_VIDEO_ASSET"
+    },
+    {
+      "topic": "Perceptual load / task selection",
+      "public_article": null,
+      "unpublished": "mind/r274/THE-EXPERIMENT-THAT-MADE-DISTRACTION-DISAPPEAR-UNPUBLISHED.md",
+      "media_id": null,
+      "media_url": null,
+      "focus": "https://finalvestige.com/focus/",
+      "product": "zen12_premium_standard",
+      "commercial_relevance": "LOW: focus content could invite careful comparison, cannot infer effect",
+      "status": "ARTICLE_AND_MEDIA_UNPUBLISHED"
+    }
+  ],
+  "measurement": {
+    "implement_new_scripts": false,
+    "no_new_cookies": true,
+    "no_fingerprinting": true,
+    "no_personal_data": true,
+    "utm_template": "utm_source=<verified_platform>&utm_medium=organic_social&utm_campaign=mind_pilot_2026_11&utm_content=<verified_asset_id>",
+    "required_order": [
+      "actual_asset_id",
+      "published_URL",
+      "signed_out_mobile_landing",
+      "qualified_human_session",
+      "landing_visit",
+      "article_to_focus_click",
+      "provider_confirmed_lead",
+      "affiliate_outbound_click",
+      "merchant_confirmed_paid_order",
+      "cleared_affiliate_commission",
+      "refunds",
+      "fees"
+    ],
+    "event_distinctions": "A CTA click, checkout start or subscriber is never a paid sale; store settled order and cleared commission separately",
+    "cohorts_days": [
+      7,
+      30
+    ],
+    "kpi": "1000 * ((net_paid_orders + cleared_affiliate_commissions) - refunds - fees) / qualified_human_sessions",
+    "kpi_status": "NOT_COMPUTABLE",
+    "no_qualified_sessions_zero_fallback": true
+  },
+  "sources_count": 23,
+  "claims_count": 25,
+  "gates_count": 16,
+  "release_controls": {
+    "affiliate_links_active": false,
+    "merchant_checkout_tested": false,
+    "WordPress_live_edits": false,
+    "Jetpack_edits": false,
+    "social_posts": false,
+    "newsletter_edits": false,
+    "new_paid_services": false,
+    "merge_approved": false
+  },
+  "note": "Live seller pages may change. Published catalog evidence is not contractual authorization, product-specific science, or confirmed transaction data."
+}
