@@ -1,0 +1,145 @@
+{
+  "schema": "fv_dispatch_r246_proof_ledger_v1",
+  "canonical": {
+    "issue": 174,
+    "source_pr": 175,
+    "source_sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+    "readiness_pr": 201,
+    "previous_pr": 1824,
+    "allocation": "4 editorial / 2 commercial draft"
+  },
+  "wp_authenticated_as_of_utc": "2026-11-10T02:36:07Z",
+  "newsletter": {
+    "enabled": true,
+    "auto_send": false,
+    "format": "full",
+    "welcome_fieldbook_52_pages_configured": true,
+    "welcome_received": false,
+    "subscribers_total": 3,
+    "confirmed_counter": 3,
+    "unconfirmed_requests": 2,
+    "suppressed": 0,
+    "actual_email_eligible": null,
+    "recent_sends": "5 never_sent_opted_out"
+  },
+  "pricing": [
+    {
+      "product": "Zen12",
+      "url": "https://zen12.com/hnp",
+      "observed": "2026-11-09",
+      "seller_advertised_price_usd": 87.99,
+      "details": "12 levels, 48 MP3s; seller claims not independent evidence"
+    },
+    {
+      "product": "Zen12",
+      "url": "https://zen12.com/secret/",
+      "observed": "2026-11-09",
+      "seller_advertised_price_usd": 37,
+      "details": "coupon/timer offer; equivalence and final checkout not verified"
+    }
+  ],
+  "blocked_proofs": [
+    {
+      "key": "partner_named_acceptance",
+      "state": "UNVERIFIED",
+      "owner": "Mind Studio"
+    },
+    {
+      "key": "partner_email_channel_permission",
+      "state": "UNVERIFIED",
+      "owner": "Mind Studio"
+    },
+    {
+      "key": "issued_earning_link",
+      "state": "UNVERIFIED",
+      "owner": "Mind Studio"
+    },
+    {
+      "key": "specific_seller_checkout_price",
+      "state": "UNVERIFIED",
+      "owner": "Mind Studio"
+    },
+    {
+      "key": "specific_seller_refund_terms",
+      "state": "UNVERIFIED",
+      "owner": "Mind Studio"
+    },
+    {
+      "key": "approved_live_warmup_guide",
+      "state": "NOT_LIVE",
+      "owner": "Mind Studio"
+    },
+    {
+      "key": "provider_eligible_status_aggregate",
+      "state": "UNKNOWN",
+      "owner": "Focus/Claude"
+    },
+    {
+      "key": "welcome_received_independently",
+      "state": "UNVERIFIED",
+      "owner": "Dispatch/Site QA"
+    },
+    {
+      "key": "publisher_postal_address",
+      "state": "UNVERIFIED",
+      "owner": "Publisher"
+    },
+    {
+      "key": "real_jetpack_preview",
+      "state": "NOT_RUN",
+      "owner": "Dispatch/Site QA"
+    },
+    {
+      "key": "unsubscribe_in_received_email",
+      "state": "NOT_RUN",
+      "owner": "Dispatch/Site QA"
+    },
+    {
+      "key": "founder_campaign_release",
+      "state": "NOT_GRANTED",
+      "owner": "Founder"
+    }
+  ],
+  "issues": [
+    {
+      "issue": 1,
+      "kind": "editorial",
+      "cta": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "state": "HOLD_UNSENT"
+    },
+    {
+      "issue": 2,
+      "kind": "editorial",
+      "cta": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "state": "HOLD_UNSENT"
+    },
+    {
+      "issue": 3,
+      "kind": "commercial",
+      "cta": null,
+      "state": "HOLD_MERCHANT"
+    },
+    {
+      "issue": 4,
+      "kind": "editorial",
+      "cta": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/",
+      "state": "HOLD_UNSENT"
+    },
+    {
+      "issue": 5,
+      "kind": "commercial",
+      "cta": null,
+      "state": "HOLD_MERCHANT"
+    },
+    {
+      "issue": 6,
+      "kind": "editorial",
+      "cta": "https://finalvestige.com/focus/",
+      "state": "HOLD_UNSENT"
+    }
+  ],
+  "verified_paid_orders": null,
+  "verified_net_revenue_usd": null,
+  "qualified_human_session_denominator": null,
+  "net_revenue_per_1000": null
+}
