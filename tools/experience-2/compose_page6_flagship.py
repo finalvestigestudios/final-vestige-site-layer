@@ -6,6 +6,7 @@ import hashlib
 import json
 import re
 from pathlib import Path
+from urllib.parse import urlsplit
 
 HTML_BLOCK = re.compile(r'<!-- wp:html -->(.*?)<!-- /wp:html -->', re.S)
 JETPACK = re.compile(r'<!-- wp:jetpack/subscriptions\b[^>]*?/>')
@@ -37,6 +38,30 @@ def sha(raw: bytes) -> str:
 
 def git_blob(raw: bytes) -> str:
     return hashlib.sha1(b'blob ' + str(len(raw)).encode() + b'\0' + raw).hexdigest()
+
+
+# Published WordPress Page 6 uses a root-relative /focus/ native CTA. Never
+# require an absolute URL that appears only inside the replaceable flagship:
+# that falsely blocks the real page while allowing unrelated links as proof.
+FOCUS_CTA = re.compile(r"<section\b[^>]*\bclass=[\"'](?P<classes>[^\"']*)[\"'][^>]*>(?P<body>.*?)</section>", re.I | re.S)
+FOCUS_ACTION = re.compile(r"<a\b(?=[^>]*\bclass=[\"'][^\"']*\bfv-focus-cta__button\b)[^>]*\bhref=[\"'](?P<href>[^\"']+)[\"']", re.I | re.S)
+
+def native_focus_action(outside: str) -> str:
+    """Require one preserved native Focus CTA and an approved exact destination."""
+    sections = [m for m in FOCUS_CTA.finditer(outside)
+                if 'fv-focus-cta' in m.group('classes').split()]
+    if len(sections) != 1:
+        raise AdmissionError('native external Focus section missing or duplicated')
+    actions = list(FOCUS_ACTION.finditer(sections[0].group('body')))
+    if len(actions) != 1:
+        raise AdmissionError('native Focus button missing or duplicated')
+    href = actions[0].group('href')
+    parsed = urlsplit(href)
+    if (parsed.path != '/focus/' or parsed.query or parsed.fragment or parsed.username
+            or parsed.password or (parsed.scheme, parsed.netloc) not in
+            (('', ''), ('https', 'finalvestige.com')) or href.startswith('//')):
+        raise AdmissionError('native Focus button has an unapproved destination')
+    return href
 
 def stage_payload(source_dir: Path, pin: bool = True) -> str:
     parts = {}
@@ -98,8 +123,7 @@ def compose(raw: str, payload: str) -> tuple[str, dict]:
         raise AdmissionError('native Jetpack block missing or unexpectedly inside candidate swap')
     if len(MARGINS.findall(outside)) != 72:
         raise AdmissionError('original 72 Margins not fully outside candidate swap')
-    if 'fv-focus-cta' not in outside or 'https://finalvestige.com/focus/' not in outside:
-        raise AdmissionError('native external Focus block/destination would be removed')
+    focus_href = native_focus_action(outside)
     for chapter in CHAPTERS:
         if len(re.findall(r'id=["\']'+re.escape(chapter)+r'["\']', outside)):
             raise AdmissionError('chapter destination duplicates outside flagship')
@@ -126,6 +150,7 @@ def compose(raw: str, payload: str) -> tuple[str, dict]:
         'new_flagship_block_bytes': len(insertion.encode()),
         'gutenberg_html_blocks': len(matches), 'margins_retained': 72,
         'native_jetpack_retained': True, 'native_focus_retained': True,
+        'native_focus_destination': focus_href,
         'chapter_count': 7, 'wp_integration': 'NOT TESTED',
         'conditions': ['Use public-only Page 6 raw editor content',
                        'Never upload this file to production or sync database',
