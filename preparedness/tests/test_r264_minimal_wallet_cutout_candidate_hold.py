@@ -115,4 +115,65 @@ for name,old,new in MUTATIONS:
             with self.assertRaises(ValueError,msg=name):check(html=variant)
         return test
     setattr(Negative,"test_mutation_"+name,make())
+
+# R265 regression cases: a global ordered notice list is NOT face ownership.
+# Tests repin the MUTATED synthetic HTML to force semantic rejection rather
+# than relying only on R220's fixed candidate hash.
+FRONT_WARN='<p class="pa-privacy">'+gate.NOTICES[0]+'</p>'
+BACK_WARN='<p class="pa-privacy">'+gate.NOTICES[1]+'</p>'
+HTML_TEXT=HTML.decode("utf-8")
+FACE_BACK='<section class="pa-face" aria-label="Back">'
+FACE_FRONT='<section class="pa-face" aria-label="Front">'
+FRONT_END='<p class="pa-write">Telephone: __________________</p>\n</section>'
+BACK_END='<p class="pa-write">Plan reviewed: __________________</p>\n</section>'
+
+def _new_case(title, transform):
+    def test(self):
+        changed=transform(HTML_TEXT)
+        self.assertNotEqual(changed,HTML_TEXT,title)
+        with self.assertRaises(ValueError,msg=title):
+            check(html=changed.encode("utf-8"))
+    return test
+
+def _both_front(s):
+    self_check=BACK_WARN+"\n"
+    assert self_check in s
+    return s.replace(self_check,"",1).replace(FRONT_WARN,FRONT_WARN+"\n"+BACK_WARN,1)
+
+def _both_back(s):
+    assert FRONT_WARN+"\n" in s
+    return s.replace(FRONT_WARN+"\n","",1).replace(
+        '<h2>Backup contact</h2>','<h2>Backup contact</h2>\n'+FRONT_WARN,1)
+
+def _nested_faces(s):
+    assert FRONT_END+"\n"+FACE_BACK in s
+    assert BACK_END in s
+    return s.replace(FRONT_END+"\n"+FACE_BACK,
+                     '<p class="pa-write">Telephone: __________________</p>\n'+FACE_BACK,1).replace(
+        BACK_END,BACK_END+"\n</section>",1)
+
+def _wrapped_back(s):
+    assert FACE_BACK in s and BACK_END in s
+    return s.replace(FACE_BACK,"<div>"+FACE_BACK,1).replace(BACK_END,BACK_END+"\n</div>",1)
+
+def _wrapped_front(s):
+    assert FACE_FRONT in s and FRONT_END in s
+    return s.replace(FACE_FRONT,"<div>"+FACE_FRONT,1).replace(FRONT_END,FRONT_END+"\n</div>",1)
+
+def _warning_outside(s):
+    assert BACK_WARN+"\n" in s and "</div>\n<p class=\"pa-editor-note\">" in s
+    return s.replace(BACK_WARN+"\n","",1).replace(
+        '</div>\n<p class="pa-editor-note">',
+        '</div>\n'+BACK_WARN+'\n<p class="pa-editor-note">',1)
+
+for _name,_transform in (
+    ("both_notices_on_front",_both_front),
+    ("both_notices_on_back",_both_back),
+    ("nested_sibling_faces",_nested_faces),
+    ("back_face_wrapped",_wrapped_back),
+    ("front_face_wrapped",_wrapped_front),
+    ("warning_outside_cutout",_warning_outside),
+):
+    setattr(Negative,"test_r265_"+_name,_new_case(_name,_transform))
+
 if __name__=="__main__":unittest.main()
