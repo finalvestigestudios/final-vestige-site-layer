@@ -28,11 +28,12 @@ Executed four exact source Git blobs in an **isolated reconstruction** of the pr
 | `fvs_suite/journal_fd_read.py` | `2140c15d6d14b92afa0036dff32512a7706a301f` |
 | `fvs_suite/csv_snapshot.py` | `a695123f1adc133dfac2cc38726540fe373618fe` |
 
-- **Old expectations reproduced:** 2 out of 2 obsolete `assertFalse(path.exists())` assertions failed against the exact current R331 source (expected before the test correction).
-- **New committed R332 regression file:** `6e3f1fbe176fed5a1823b7c5b8f1414f9942efef`, identical to the locally executed file.
-- **New focused regressions:** `10/10 PASS` with `-W error` and `10/10 PASS` with `-OO -W error` = **20/20 successful focused executions**, 0 skipped.
-- Python compilation of the isolated copied modules and new test: PASS.
-- **Not executed:** the actual amended complete R47/R290 test modules, the complete private checkout test suite, genuine AES-GCM integration cases, or native Windows x64 acceptance. The local reconstruction contained the exact four Git source blobs, but is **not** end-to-end repository verification.
+- **Old expectations reproduced:** 2 out of 2 obsolete `assertFalse(path.exists())` assertions failed against exact R331 source (expected before the test correction).
+- **Amended committed legacy R47 module:** `d6444c96106b696a14f610f942b08b2240727a37`, **17/17 PASS** normal and **17/17 PASS** optimized `-OO`.
+- **Amended committed legacy R290 module:** `32f660d0b2f5c1ed3fe4fd0b40bcce08b3a3954a`, **12/12 PASS** normal and **12/12 PASS** optimized `-OO`.
+- **New committed R332 regression module:** `6e3f1fbe176fed5a1823b7c5b8f1414f9942efef`, **10/10 PASS** normal and **10/10 PASS** optimized `-OO`.
+- **Combined result:** **39/39 PASS normal + 39/39 PASS optimized = 78/78 focused test executions**, 0 skipped; `-W error` enabled. Python compilation PASS. The R47 Windows-stat test helper also matched exact committed Git blob `ec1e67a498d5079f6618726984e3c966f6385083`.
+- **Not executed:** the **complete private repository** test suite, genuine AES-GCM integration cases, or native Windows x64 acceptance. The local reconstruction contained the **exact Git file blobs** for the four journal dependencies and all three executed test modules, but is **not** end-to-end repository verification.
 
 ## Reproduce in a full checkout (mandatory before merge)
 
