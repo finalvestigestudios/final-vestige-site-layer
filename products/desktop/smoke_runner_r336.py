@@ -14,6 +14,16 @@ class SmokeRunError(ValueError):
     """A smoke attempt failed without exposing private paths or child output."""
 
 
+def select_smoke_runner(runner: Callable | None) -> Callable:
+    """Preserve an injected runner even when its truth value is false.
+
+    Never silently launch a real EXE because a test double implements
+    __bool__ or __len__ as false. Keep provenance detection consistent with
+    the caller's ``runner is not None`` check.
+    """
+    return subprocess.run if runner is None else runner
+
+
 def run_smoke_checked(launch: Callable, exe: Path, root: Path, *,
                       name: str, timeout: int) -> None:
     """Launch one already-verified candidate without inheriting I/O streams.
