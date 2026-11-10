@@ -128,7 +128,7 @@ function adversarialTests(files){
  add("false video availability",f=>f.r281matrix.conversion_pilot.variant_B_media="PLAYABLE");
  add("changed quote from seller",f=>f.matrix.claims.find(x=>x.id==="ZEN12_EQUIV").classification="PROVEN");
  add("refund omitted",f=>f.article=f.article.replace("five refunded sessions per year","unlimited sessions"));
- add("missing R281 primary",f=>f.investigation=f.investigation.replace("10.1287/orsc.2017.1184","no-source"));
+ add("missing R281 primary",f=>f.investigation=f.investigation.replaceAll("10.1287/orsc.2017.1184","no-source"));
  add("third-party pixel",f=>f.B+='<img src=https://bad.example/p.gif>');
  add("duplicate tracking claims",f=>f.r281matrix.conversion_pilot.first_party_attribution.affiliate_outbound_is_paid_sale=true);
  let passed=0;const failures=[];
