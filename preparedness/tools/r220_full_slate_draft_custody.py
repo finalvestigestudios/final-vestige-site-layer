@@ -93,6 +93,11 @@ R249_UNPUBLISHED_PREVIEW_BLOB = 'ce5c363786deb0296f78598818af1fd7abefae65'
 # unapproved, visible reader copy. Source parity is NOT human/medical/QD approval.
 R250_SOURCE_READER_PATH = 'tools/r250_family_card_reader_source_alignment_hold.py'
 R250_SOURCE_READER_BLOB = 'c8149e31b44b6b37ce930dfc8a140560270f1f73'
+# R251 independently verifies that all R249 notices remain visible prose,
+# not HTML popovers, foreign wrappers, hidden attributes or conditional UI.
+# The underlying Article 15/Tool 104 is still unreviewed and unchanged.
+R251_READER_CONTEXT_PATH = 'tools/r251_reader_visible_context_hold.py'
+R251_READER_CONTEXT_BLOB = '677285daafbd53ab3bd2b5ea71e4a84a211bb30a'
 # These are independently observed R219 integration Git blobs, not certified text.
 # Missing entries MUST match the older R200 original exactly.
 INTEGRATED_DIFFS = {
@@ -640,6 +645,23 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
                     'merchant_approved', 'release_authorized'))):
             raise ValueError('R250 source-to-reader evidence HARD HOLD drift')
         result['unapproved_reader_source_alignment'] = alignment
+        context_guard = load_frozen_gate(root, R251_READER_CONTEXT_PATH,
+                                         R251_READER_CONTEXT_BLOB,
+                                         'fv_preparedness_r251_reader_visible', ('inspect',))
+        visible = context_guard.inspect(
+            safe_read(root, R249_UNPUBLISHED_PREVIEW_PATH).decode('utf-8', 'strict'),
+            preview)
+        if (visible.get('state') != HOLD
+                or visible.get('scope') != 'UNAPPROVED_OFFLINE_READER_COPY_ONLY'
+                or visible.get('visible_paragraph_count') != 7
+                or visible.get('unique_free_destinations') != ['/preparedness/']
+                or visible.get('human_review_required') is not True
+                or any(visible.get(k) is not False for k in (
+                    'source_review_approved', 'medical_safety_verified',
+                    'privacy_certified', 'independent_qd_pass',
+                    'merchant_approved', 'release_authorized'))):
+            raise ValueError('R251 conditional reader-disclosure context HARD HOLD drift')
+        result['unapproved_reader_visible_context'] = visible
         if verify_exports:
             # Only imports the repository's own build code from its trusted tools path.
             tools_path = root / 'tools'
@@ -745,6 +767,8 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
             raise ValueError('R249 reader-preview HTML changed during audit')
         if git_blob(safe_read(root, R250_SOURCE_READER_PATH)) != R250_SOURCE_READER_BLOB:
             raise ValueError('R250 source-to-reader guard changed during audit')
+        if git_blob(safe_read(root, R251_READER_CONTEXT_PATH)) != R251_READER_CONTEXT_BLOB:
+            raise ValueError('R251 reader-disclosure context guard changed during audit')
         result['reconciliation'] = {'frozen_articles': 35,
                                     'integrated_changes_held_for_review': sum(
                                         x['changed_since_original'] for x in status),
