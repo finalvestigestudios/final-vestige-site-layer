@@ -143,9 +143,10 @@ R262_NOJS_TRUTH_BLOB = 'e8eae0980bbd30cc27a714a0b6b5a4d711c3224b'
 R263_WALLET_PRIVACY_PATH = 'tools/r263_wallet_cutout_privacy_witness_hold.py'
 R263_WALLET_PRIVACY_BLOB = 'd07b2e504c0c5cf0c4d1e900e81d79740bb587ea'
 # R264 is an isolated editorial-only alternative for the cut-out privacy
-# problem witnessed by R263. Structural on-card text is NOT print/privacy PASS.
+# problem witnessed by R263. R265 binds each warning to its own direct sibling
+# face; structure still cannot establish actual print/privacy safety or approval.
 R264_MINIMAL_WALLET_PATH = 'tools/r264_minimal_wallet_cutout_candidate_hold.py'
-R264_MINIMAL_WALLET_BLOB = '62d11494a772979aca1b50dd61e75517e5348d1d'
+R264_MINIMAL_WALLET_BLOB = '5a3cd3ac442b72e48aa8a1a8f9d5d0ebe5955eae'
 R264_MINIMAL_HTML_PATH = 'audits/r264_minimal_wallet_card_REVIEW_ONLY.html'
 R264_MINIMAL_HTML_BLOB = '40782ef142edfd348fec53eb6d8a0dc673244dea'
 # R258 binds the complete R254/R257 original source-claim partition to a
@@ -880,6 +881,8 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
                 or alternative.get('candidate_git_blob') != R264_MINIMAL_HTML_BLOB
                 or alternative.get('cutout_faces') != 2
                 or alternative.get('cautions_structurally_inside_both_faces') is not True
+                or alternative.get('r265_notice_owners_exactly_front_and_back') is not True
+                or alternative.get('r265_cutout_faces_are_direct_siblings') is not True
                 or alternative.get('original_source_unchanged') is not True
                 or alternative.get('citation_and_routes_unchanged') is not True
                 or alternative.get('human_review_required') is not True
