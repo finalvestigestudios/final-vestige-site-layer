@@ -145,7 +145,6 @@ def append_verified_event(path: str | Path, data: bytes, limit: int,
         flags |= os.O_CREAT | os.O_EXCL
     descriptor = os.open(target, _flags(flags), 0o600)
     created = first is None
-    wrote = False
     path_baseline = None
     try:
         before = os.fstat(descriptor)
@@ -178,7 +177,6 @@ def append_verified_event(path: str | Path, data: bytes, limit: int,
             if count <= 0:
                 raise OSError("Review journal write was incomplete")
             offset += count
-            wrote = True
         os.fsync(descriptor)
         ending = os.fstat(descriptor)
         _regular(ending, limit, "Review journal")
@@ -199,15 +197,7 @@ def append_verified_event(path: str | Path, data: bytes, limit: int,
             raise ValueError("Review journal path changed during append")
     finally:
         os.close(descriptor)
-        # An indeterminate empty journal is review evidence, not disposable.
-        # Unlink only the same *unchanged pathname snapshot* established before
-        # validation; do not rely on inode + zero size alone.
-        if created and not wrote and path_baseline is not None:
-            try:
-                current = os.lstat(target)
-                if (stat.S_ISREG(current.st_mode)
-                    and current.st_size == 0
-                    and _unchanged(path_baseline, current)):
-                    os.unlink(target)
-            except FileNotFoundError:
-                pass
+        # Never delete a newly created journal during failed custody validation,
+        # even if it is empty. A checked pathname can be replaced immediately
+        # before unlink(), causing deletion of another process's file. The
+        # local artifact is kept for explicit human-reviewed recovery.
