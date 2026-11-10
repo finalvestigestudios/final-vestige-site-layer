@@ -27,3 +27,9 @@ Local native repository checkout remains unavailable due GitHub DNS; `preparedne
 | Qualified-human session → reader click → confirmed lead → verified settled paid order | No authenticated creator or merchant conversion ledger | Only pre-existing privacy-approved attribution; reconcile 7/30-day asset_id/UTM cohorts with confirmed paid orders net of fees/refunds | Net realized revenue per 1,000 qualified human sessions **NOT COMPUTABLE** | Praxxis/Claude analytics/Commerce |
 
 No additional website design, live affiliate, advertising, checkout, email form, analytics vendor or creator production is authorized. Essential safety guidance must remain free. No public navigation, WordPress/CMS, social or merchant changes; nothing merged or published.
+
+## Fresh collaboration identities (read-only, 2026-11-09 PT)
+
+Confirmed live Git refs against the frozen R200 manifest: `claude/prep-start-bbfeb8` `2122d856`, `claude/prep-shelter-5e1e0e` `5daeaf2d`, `claude/prep-food-ccdc55` `f911ff7a`, `claude/prep-health-837444` `d5ef5baf`, `claude/prep-hist-field-9db767` `4e5caf81`, `claude/prep-hist-food-b81f19` `67e116e5`, `claude/prep-hist-home-0e0e38` `7504a5f0`. **Seven of seven exact HEAD matches.**
+
+Independent QA draft #157 `7d1ae6b8ef93d10cfb6810987672360885e9c1aa` (safety corrections, five-file patch inspected); synthetic-fixture draft #169 `e9cd7766dac59d47ab467d8945269b9146c2aef5` (isolation test patch inspected); homepage lead #1689 `f55c36b6598eec558dd8bb24e4c8988becc51be0`. Parent R250 #1811 `542f193c1ddd9214458c50197600057b2cd49253`. No changes made to any collaborator branch. The seven-branch SHA check verifies branch heads, **not** the medical correctness or rendered citation safety of the 35 articles.
