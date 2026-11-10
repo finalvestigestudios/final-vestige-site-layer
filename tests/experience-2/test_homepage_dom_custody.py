@@ -63,6 +63,16 @@ class DOMCustodyTests(unittest.TestCase):
     def test_duplicate_chapter_id(self):
         self.assertEqual(self.verdict(self.good + '<aside id="fv-hf-title">Duplicate</aside>')['gate'], 'HOLD')
 
+    def test_raw_gutenberg_block_comment_is_not_rendered_jetpack(self):
+        # WordPress context=edit returns Gutenberg source; it must not be
+        # presented as an accepted rendered subscription UI.
+        raw = self.good.replace(Original.jetpack, '<!-- wp:jetpack/subscriptions {"className":"is-style-split"} /-->')
+        self.assertEqual(self.verdict(raw)['gate'], 'HOLD')
+
+    def test_jetpack_in_regular_comment_does_not_count(self):
+        hidden = self.good.replace(Original.jetpack, '<!-- ' + Original.jetpack + ' -->')
+        self.assertEqual(self.verdict(hidden)['gate'], 'HOLD')
+
     def test_all_existing_mutation_tests_still_import(self):
         self.assertEqual(len(self.baseline['required_chapter_ids']), 7)
         self.assertEqual(self.verdict(self.good)['dom_custody']['exposed_margin_count'], 72)
