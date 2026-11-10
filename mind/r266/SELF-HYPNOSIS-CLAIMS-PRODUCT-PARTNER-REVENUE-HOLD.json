@@ -1,0 +1,402 @@
+{
+  "version": "R266-2026-11-10",
+  "status": "DRAFT_UNPUBLISHED_HARD_HOLD",
+  "product_focus": "Zen12 Premium — never affiliate-active in this draft",
+  "verification_method": "2026-11-10 web read-only seller/FTC/primary research; Gmail searched for publisher approval and Payhip purchase confirmations; no authenticated merchant-side account",
+  "source_count": 18,
+  "claim_count": 26,
+  "sources": [
+    {
+      "id": "S01",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12233205/",
+      "kind": "independent_history_review",
+      "scope": "Puységur magnetic somnambulism/Faria; historians' interpretations"
+    },
+    {
+      "id": "S02",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31914365/",
+      "kind": "independent_study",
+      "scope": "2020; 110 college students; factor structure unsupported"
+    },
+    {
+      "id": "S03",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31254737/",
+      "kind": "independent_study",
+      "scope": "2019; imagined/interoceptive response experiments"
+    },
+    {
+      "id": "S04",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41217756/",
+      "kind": "independent_randomized_trial",
+      "scope": "2025 self-administered hot-flash protocol versus white-noise control; not Inspire3"
+    },
+    {
+      "id": "S05",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39263007/",
+      "kind": "independent_systematic_review",
+      "scope": "2024 clinical pain adjunct hypnosis, 70 studies, very low overall evidence certainty"
+    },
+    {
+      "id": "S06",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37399315/",
+      "kind": "independent_systematic_review",
+      "scope": "2023 sleep intervention review, 44 studies with mixed findings"
+    },
+    {
+      "id": "S07",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31251710/",
+      "kind": "independent_meta_analysis",
+      "scope": "2019 anxiety hypnosis trials; not commercial recording validation"
+    },
+    {
+      "id": "S08",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36944851/",
+      "kind": "independent_randomized_trial",
+      "scope": "2023 procedure-specific self hypnosis; limited transferability"
+    },
+    {
+      "id": "S09",
+      "url": "https://inspire3.com/",
+      "kind": "seller_catalog",
+      "scope": "Inspire3 official catalog; all efficacy language seller-side"
+    },
+    {
+      "id": "S10",
+      "url": "https://zen12.com/hnp",
+      "kind": "seller_offer",
+      "scope": "Zen12 standard tiers contents and displayed offer, not tested checkout"
+    },
+    {
+      "id": "S11",
+      "url": "https://zen12.com/secret/",
+      "kind": "seller_offer",
+      "scope": "Different promotional/coupon terms; no authorized FV destination"
+    },
+    {
+      "id": "S12",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "kind": "regulator",
+      "scope": "Clear conspicuous material connection disclosures near CTA"
+    },
+    {
+      "id": "S13",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "kind": "regulator",
+      "scope": "Appropriate scientific substantiation for health-related claims"
+    },
+    {
+      "id": "S14",
+      "url": "https://finalvestige.com/focus/",
+      "kind": "first_party_live",
+      "scope": "Existing single Fieldbook/Jetpack route; gift UI is not confirmed signup"
+    },
+    {
+      "id": "S15",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "kind": "first_party_live",
+      "scope": "Existing historical archive; WP inventory reported ID1377"
+    },
+    {
+      "id": "S16",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "kind": "first_party_live",
+      "scope": "Published source-grounded change blindness investigation"
+    },
+    {
+      "id": "S17",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "kind": "governance",
+      "scope": "Mind lane approval controls and editorial ownership"
+    },
+    {
+      "id": "S18",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "kind": "governance",
+      "scope": "Revenue KPI, qualified sessions, cohort and measurement contract"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "Puységur's reported somnambulism is historical record, not proof of mesmeric fluid",
+      "source": "S01",
+      "status": "INDEPENDENT_HISTORY_CONTEXT"
+    },
+    {
+      "id": "C02",
+      "claim": "2020 suggestibility study sampled 110 students and rejected proposed factor structures",
+      "source": "S02",
+      "status": "INDEPENDENT_SCIENCE_NARROW"
+    },
+    {
+      "id": "C03",
+      "claim": "2019 imagination/interoception task raised responsiveness to tested suggestion",
+      "source": "S03",
+      "status": "INDEPENDENT_SCIENCE_NARROW"
+    },
+    {
+      "id": "C04",
+      "claim": "2025 audio self-hypnosis trial included 250 participants and active comparison",
+      "source": "S04",
+      "status": "INDEPENDENT_TRIAL_NOT_PRODUCT"
+    },
+    {
+      "id": "C05",
+      "claim": "2025 trial reported 53.4% vs 40.9% mean hot-flash score reductions; P=.04",
+      "source": "S04",
+      "status": "INDEPENDENT_TRIAL_NOT_PRODUCT"
+    },
+    {
+      "id": "C06",
+      "claim": "2024 pain meta-analysis pooled 70 studies n=6078 but overall certainty very low",
+      "source": "S05",
+      "status": "INDEPENDENT_REVIEW_LIMITED"
+    },
+    {
+      "id": "C07",
+      "claim": "2023 sleep review 44 studies includes positive, mixed and no-impact findings",
+      "source": "S06",
+      "status": "INDEPENDENT_REVIEW_MIXED"
+    },
+    {
+      "id": "C08",
+      "claim": "2019 anxiety meta-analysis findings are tied to studied interventions",
+      "source": "S07",
+      "status": "INDEPENDENT_REVIEW_NOT_PRODUCT"
+    },
+    {
+      "id": "C09",
+      "claim": "2023 procedure-specific self-hypnosis trial cannot prove retail audio efficacy",
+      "source": "S08",
+      "status": "INDEPENDENT_TRIAL_NOT_PRODUCT"
+    },
+    {
+      "id": "C10",
+      "claim": "Inspire3 sells Zen12, Hypnosis Live and brainwave products",
+      "source": "S09",
+      "status": "SELLER_CATALOG_ONLY"
+    },
+    {
+      "id": "C11",
+      "claim": "Zen12 Premium advertised 12 levels and 48 MP3 recordings",
+      "source": "S10",
+      "status": "SELLER_FEATURE_DELIVERY_NOT_AUDITED"
+    },
+    {
+      "id": "C12",
+      "claim": "Zen12 has differing standard and coupon sales pages",
+      "source": "S10;S11",
+      "status": "SELLER_DISPLAY_NOT_VERIFIED_CART"
+    },
+    {
+      "id": "C13",
+      "claim": "12 minute Zen12 equals hour of advanced meditation",
+      "source": "S10",
+      "status": "PRODUCT_EFFICACY_UNSUBSTANTIATED_OMIT"
+    },
+    {
+      "id": "C14",
+      "claim": "Hypnosis Live recordings are 100% guaranteed effective",
+      "source": "S09",
+      "status": "PRODUCT_EFFICACY_UNSUBSTANTIATED_OMIT"
+    },
+    {
+      "id": "C15",
+      "claim": "Brainwave Shots entrains the brain to guarantee cognition/health changes",
+      "source": "S09",
+      "status": "PRODUCT_EFFICACY_UNSUBSTANTIATED_OMIT"
+    },
+    {
+      "id": "C16",
+      "claim": "Seller one-year returns statement proves refunds are fulfilled",
+      "source": "S10",
+      "status": "REFUND_PERFORMANCE_UNVERIFIED"
+    },
+    {
+      "id": "C17",
+      "claim": "FV approved for Inspire3 publisher program",
+      "source": "S17",
+      "status": "PARTNER_APPROVAL_NOT_AUTHENTICATED"
+    },
+    {
+      "id": "C18",
+      "claim": "FV issued Zen12 earning link and price",
+      "source": "S17",
+      "status": "PARTNER_LINK_PRICE_NOT_AUTHENTICATED"
+    },
+    {
+      "id": "C19",
+      "claim": "FV has sellable, rights-cleared paid Mind SKU on Payhip",
+      "source": "S18",
+      "status": "OWNED_SKU_RIGHTS_CHECKOUT_UNVERIFIED"
+    },
+    {
+      "id": "C20",
+      "claim": "A landing CTA click equals paid affiliate sale",
+      "source": "S18",
+      "status": "FALSE_DO_NOT_INFER"
+    },
+    {
+      "id": "C21",
+      "claim": "Focus gift UI equals confirmed Jetpack opt-in",
+      "source": "S14;S18",
+      "status": "FALSE_DO_NOT_INFER"
+    },
+    {
+      "id": "C22",
+      "claim": "Near-CTA disclosure must explain financial connection",
+      "source": "S12",
+      "status": "REGULATORY_GUIDANCE"
+    },
+    {
+      "id": "C23",
+      "claim": "Product medical efficacy claim needs appropriate support",
+      "source": "S13",
+      "status": "REGULATORY_GUIDANCE"
+    },
+    {
+      "id": "C24",
+      "claim": "Editor may connect existing change blindness to /focus/ without forced opt-in",
+      "source": "S16;S14",
+      "status": "FIRST_PARTY_EDITORIAL_PATH"
+    },
+    {
+      "id": "C25",
+      "claim": "No merchant-confirmed orders/qualified-human sessions reconciled in lane",
+      "source": "S18",
+      "status": "DATA_MISSING_NOT_ZERO"
+    },
+    {
+      "id": "C26",
+      "claim": "2025 self-hypnosis study proves Zen12 is medically effective",
+      "source": "S04",
+      "status": "FALSE_NOT_STUDIED_PRODUCT"
+    }
+  ],
+  "gates": [
+    {
+      "id": "named_partner_acceptance",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "written_product_permission",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "approved_social_channels",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "approved_email_channel",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "issued_tracking_url",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "affiliate_terms",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "approved_creatives_rights",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "exact_active_offer",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "cart_total_verified",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "returns_terms_verified",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "fulfillment_verified",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "product_specific_claim_substantiation",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "independent_disclosure_qa",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "first_party_attribution_review",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "verified_paid_merchant_reporting",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "founder_release_approval",
+      "status": "HARD_HOLD",
+      "evidence": null
+    }
+  ],
+  "commerce": {
+    "approved_partner_account": null,
+    "verified_partner_terms": null,
+    "affiliate_earning_url": null,
+    "approved_promotional_channels": null,
+    "verified_cart_price": null,
+    "verified_returns_execution": null,
+    "verified_paid_order_count": null,
+    "settled_affiliate_commissions": null,
+    "owned_mind_sku_rights": null,
+    "owned_mind_checkout": null,
+    "qualified_human_sessions": null,
+    "confirmed_leads": null,
+    "gross_revenue": null,
+    "refunds_and_fees": null,
+    "realized_net_revenue": null,
+    "realized_net_revenue_per_1000_qualified_sessions": null
+  },
+  "experiment": {
+    "hypothesis": "Optional silent 42s video could improve verified paid conversions vs matched text guide; no benefit assumed",
+    "variant_a": "mind/r265/ZEN12-A-SOURCED-UNPUBLISHED.html",
+    "variant_b": "mind/r265/ZEN12-B-OPTIONAL-FILM-UNPUBLISHED.html",
+    "video_binary": "local offline R257 preview only; not hosted; later release requires measured a11y/performance checks",
+    "paid_conversion_outcome": null,
+    "activation": "BLOCKED"
+  },
+  "privacy": {
+    "reuse_existing_first_party_analytics": true,
+    "do_not_add_new_scripts": true,
+    "do_not_collect_email_or_IP_in_custom_events": true,
+    "utm_source": "platform",
+    "utm_medium": "organic_social",
+    "utm_campaign": "cluster_pilot_yyyy_mm",
+    "utm_content": "actual_verified_asset_id",
+    "do_not_emit_affiliate_click_before_partner_approval": true
+  },
+  "boundary": {
+    "live_CMS_writes": false,
+    "merge": false,
+    "deploy": false,
+    "email_send": false,
+    "creator_post": false,
+    "spend": false
+  }
+}
