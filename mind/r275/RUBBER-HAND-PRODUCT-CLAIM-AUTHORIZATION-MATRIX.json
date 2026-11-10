@@ -1,0 +1,597 @@
+{
+  "schema": "fv-mind-r275-offer-science-eligibility-v1",
+  "as_of": "2026-11-10",
+  "status": "UNPUBLISHED_SOURCE_CONTROLLED",
+  "release": "HARD_HOLD",
+  "source_evidence_method": "Public official pages and research primary pages read 2026-11-10; Gmail searched for Inspire3 terms; no signed publisher acceptance surfaced. Site/CMS not changed.",
+  "exact_offer_first": "Zen12 PREMIUM STANDARD; contrast separate /secret offer without claiming interchangeable price; never activate or recommend earning URL until authenticated.",
+  "options": [
+    {
+      "id": "zen12_standard",
+      "seller_url": "https://zen12.com/hnp",
+      "package_public": "12 levels / 48 MP3s / guides; seller-advertised 1-year policy",
+      "public_price_observation": "$87.99 shown on standard page as of public fetch; NOT checkout price",
+      "promotional_other_url": "https://zen12.com/secret/",
+      "promotional_price_observation": "$37 with coupon in different seller context; NOT interchangeable",
+      "issued_earning_link": null,
+      "product_trial": null,
+      "verified_checkout_total": null,
+      "verified_refunds": null,
+      "eligible_for_live_cta": false
+    },
+    {
+      "id": "hypnosis_live_total_focus",
+      "seller_url": "https://hypnosislive.com/mental-skills/total-focus",
+      "package_public": "33-minute 47 MB audio; seller-described concentration hypnosis",
+      "public_price_observation": "Public page crawl shows dynamic $2 / crossed $22.95; prior observations differed. Do not quote live price.",
+      "product_trial": null,
+      "issued_earning_link": null,
+      "eligible_for_live_cta": false
+    },
+    {
+      "id": "brainwave_shots_focus_shot",
+      "seller_url": "https://brainwaveshots.com/",
+      "package_public": "Catalog identifies Focus Shot; precise cart/product rights unverified",
+      "product_trial": null,
+      "issued_earning_link": null,
+      "eligible_for_live_cta": false
+    },
+    {
+      "id": "fv_focus_fieldbook",
+      "url": "https://finalvestige.com/focus/",
+      "type": "existing free resource",
+      "additional_form_created": false,
+      "paid_sale": false
+    },
+    {
+      "id": "fv_paid_mind_fallback",
+      "authorized_sku": null,
+      "ownership_rights": null,
+      "checkout": null,
+      "refund_policy": null,
+      "fulfilled_orders": null,
+      "status": "NOT_AUTHENTICATED"
+    }
+  ],
+  "sources": [
+    {
+      "id": "R01",
+      "type": "peer_reviewed_original",
+      "title": "Botvinick & Cohen 1998 Nature",
+      "url": "https://doi.org/10.1038/35784"
+    },
+    {
+      "id": "R02",
+      "type": "peer_reviewed_original",
+      "title": "Lush et al 2020 phenomenological control RHI",
+      "url": "https://www.nature.com/articles/s41467-020-18591-6"
+    },
+    {
+      "id": "R03",
+      "type": "peer_reviewed_reanalysis",
+      "title": "Ehrsson et al 2022 methodological challenge",
+      "url": "https://www.nature.com/articles/s41467-022-28177-z"
+    },
+    {
+      "id": "R04",
+      "type": "peer_reviewed_reply",
+      "title": "Lush & Seth 2022 reply",
+      "url": "https://www.nature.com/articles/s41467-022-28178-y"
+    },
+    {
+      "id": "R05",
+      "type": "peer_reviewed_original",
+      "title": "Bruno et al 2022 microgravity",
+      "url": "https://www.nature.com/articles/s41526-022-00198-4"
+    },
+    {
+      "id": "R06",
+      "type": "peer_reviewed_original",
+      "title": "Della Longa et al 2022 touch intensity",
+      "url": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2022.901413/full"
+    },
+    {
+      "id": "R07",
+      "type": "official_seller",
+      "title": "Inspire3 company/catalog",
+      "url": "https://inspire3.com/"
+    },
+    {
+      "id": "R08",
+      "type": "official_seller",
+      "title": "Zen12 Premium standard",
+      "url": "https://zen12.com/hnp"
+    },
+    {
+      "id": "R09",
+      "type": "official_seller",
+      "title": "Zen12 promotional alternative offer",
+      "url": "https://zen12.com/secret/"
+    },
+    {
+      "id": "R10",
+      "type": "official_seller",
+      "title": "Hypnosis Live Total Focus",
+      "url": "https://hypnosislive.com/mental-skills/total-focus"
+    },
+    {
+      "id": "R11",
+      "type": "official_seller",
+      "title": "Brainwave Shots catalog",
+      "url": "https://brainwaveshots.com/"
+    },
+    {
+      "id": "R12",
+      "type": "regulator",
+      "title": "FTC endorsements FAQ",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking"
+    },
+    {
+      "id": "R13",
+      "type": "regulator",
+      "title": "FTC health claims compliance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+    },
+    {
+      "id": "R14",
+      "type": "published_fv",
+      "title": "Puységur Animal Magnetism Files",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+    },
+    {
+      "id": "R15",
+      "type": "published_fv",
+      "title": "Existing Focus Fieldbook",
+      "url": "https://finalvestige.com/focus/"
+    },
+    {
+      "id": "R16",
+      "type": "published_fv",
+      "title": "Existing Change Blindness article",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/"
+    },
+    {
+      "id": "R17",
+      "type": "existing_public_video_partial_match",
+      "title": "Mesmer/Puységur public YouTube historical video",
+      "url": "https://www.youtube.com/watch?v=SV9m07PFTYk"
+    },
+    {
+      "id": "R18",
+      "type": "official_policy",
+      "title": "Final Vestige affiliate policy",
+      "url": "https://finalvestige.com/affiliate-disclosure/"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "The original 1998 rubber-hand experiment described touch attributed to an artificial limb",
+      "status": "supported_original",
+      "source_ids": [
+        "R01"
+      ],
+      "limitation": "Short research correspondence, not a product study"
+    },
+    {
+      "id": "C02",
+      "claim": "Synchronous seen/felt touch can lead to reported rubber-hand ownership",
+      "status": "supported_conditionally",
+      "source_ids": [
+        "R01",
+        "R02"
+      ],
+      "limitation": "Individual responses and protocols vary"
+    },
+    {
+      "id": "C03",
+      "claim": "Proprioceptive drift and subjective ownership are distinct measures",
+      "status": "supported_methodology",
+      "source_ids": [
+        "R01",
+        "R02"
+      ],
+      "limitation": "Do not imply interchangeable outcomes"
+    },
+    {
+      "id": "C04",
+      "claim": "A 2020 report found associations of hypnotizability with certain illusion measures",
+      "status": "supported_conditionally",
+      "source_ids": [
+        "R02"
+      ],
+      "limitation": "Correlational; several nonpreregistered analyses"
+    },
+    {
+      "id": "C05",
+      "claim": "The 2020 preregistered expectancy manipulation worked as intended",
+      "status": "not_supported",
+      "source_ids": [
+        "R02"
+      ],
+      "limitation": "The authors report it did not; do not claim experimental causation"
+    },
+    {
+      "id": "C06",
+      "claim": "A 2022 reanalysis challenged an illusion-specific suggestibility association",
+      "status": "supported_counterevidence",
+      "source_ids": [
+        "R03"
+      ],
+      "limitation": "Not independent replication; methodological dispute"
+    },
+    {
+      "id": "C07",
+      "claim": "The 2022 original authors published a reply to the challenge",
+      "status": "supported",
+      "source_ids": [
+        "R04"
+      ],
+      "limitation": "Dispute remains open"
+    },
+    {
+      "id": "C08",
+      "claim": "The rubber hand illusion proves hypnosis entirely explains body ownership",
+      "status": "not_supported",
+      "source_ids": [
+        "R02",
+        "R03",
+        "R04"
+      ],
+      "limitation": "Competing explanations and measures"
+    },
+    {
+      "id": "C09",
+      "claim": "The illusion proves that people can be made to obey any command",
+      "status": "prohibited_extrapolation",
+      "source_ids": [
+        "R01",
+        "R03"
+      ],
+      "limitation": "No evidence for general coercion"
+    },
+    {
+      "id": "C10",
+      "claim": "Altered-gravity conditions can change illusion susceptibility in studied conditions",
+      "status": "supported_conditionally",
+      "source_ids": [
+        "R05"
+      ],
+      "limitation": "Specialized protocol, not universal effect"
+    },
+    {
+      "id": "C11",
+      "claim": "Touch intensity can affect rubber-hand measures in a specific experimental protocol",
+      "status": "supported_conditionally",
+      "source_ids": [
+        "R06"
+      ],
+      "limitation": "No at-home discomfort demonstration"
+    },
+    {
+      "id": "C12",
+      "claim": "Puységur historical animal magnetism validates a physical magnetic fluid",
+      "status": "not_supported",
+      "source_ids": [
+        "R14"
+      ],
+      "limitation": "Historical reports not independent mechanism proof"
+    },
+    {
+      "id": "C13",
+      "claim": "Inspire3 officially advertises Zen12, Hypnosis Live and Brainwave Shots",
+      "status": "seller_description_only",
+      "source_ids": [
+        "R07"
+      ],
+      "limitation": "Product existence not partner acceptance"
+    },
+    {
+      "id": "C14",
+      "claim": "Zen12 Premium public standard page describes 12 levels and 48 MP3 recordings",
+      "status": "seller_feature_verified_page",
+      "source_ids": [
+        "R08"
+      ],
+      "limitation": "Not independently tested"
+    },
+    {
+      "id": "C15",
+      "claim": "Zen12 Premium page advertised 1-year money-back guarantee",
+      "status": "seller_policy_claim_only",
+      "source_ids": [
+        "R08"
+      ],
+      "limitation": "Refund fulfillment/checkout terms unverified"
+    },
+    {
+      "id": "C16",
+      "claim": "Zen12 Premium seller page displayed $87.99 and different promotional $37 price exists elsewhere",
+      "status": "public_offer_variance",
+      "source_ids": [
+        "R08",
+        "R09"
+      ],
+      "limitation": "Not final checkout, may change without notice; never state as guaranteed price"
+    },
+    {
+      "id": "C17",
+      "claim": "Zen12 offers the same benefits as an hour's meditation in 12 minutes",
+      "status": "unsupported_seller_efficacy",
+      "source_ids": [
+        "R07",
+        "R08"
+      ],
+      "limitation": "Not independently substantiated for product"
+    },
+    {
+      "id": "C18",
+      "claim": "Zen12 or brainwave entrainment provides a medical cure",
+      "status": "prohibited_unsubstantiated_health_claim",
+      "source_ids": [
+        "R08",
+        "R13"
+      ],
+      "limitation": "No product-specific competent and reliable proof"
+    },
+    {
+      "id": "C19",
+      "claim": "Hypnosis Live Total Focus describes a 33-min / 47 MB audio recording",
+      "status": "seller_feature_verified_page",
+      "source_ids": [
+        "R10"
+      ],
+      "limitation": "No independent efficacy evidence"
+    },
+    {
+      "id": "C20",
+      "claim": "Hypnosis Live Total Focus public pricing is stable",
+      "status": "not_supported",
+      "source_ids": [
+        "R10"
+      ],
+      "limitation": "Search/crawl variation; page displayed $2 with $22.95 crossed reference, earlier observation $24.44"
+    },
+    {
+      "id": "C21",
+      "claim": "Hypnosis Live Total Focus guarantees concentration or rewires the brain",
+      "status": "unsupported_seller_efficacy",
+      "source_ids": [
+        "R10"
+      ],
+      "limitation": "Refrain from repeating as independent conclusion"
+    },
+    {
+      "id": "C22",
+      "claim": "Brainwave Shots catalog includes Focus Shot and other downloadable recordings",
+      "status": "seller_feature_verified_page",
+      "source_ids": [
+        "R11"
+      ],
+      "limitation": "Catalog not product-specific trial"
+    },
+    {
+      "id": "C23",
+      "claim": "Brainwave Shots can heal pain or guarantee income",
+      "status": "prohibited_unsubstantiated_claim",
+      "source_ids": [
+        "R11",
+        "R13"
+      ],
+      "limitation": "Seller claims not independent proof"
+    },
+    {
+      "id": "C24",
+      "claim": "FTC calls for near-link clear material relationship disclosures",
+      "status": "regulatory_guidance",
+      "source_ids": [
+        "R12"
+      ],
+      "limitation": "A general policy page alone is inadequate"
+    },
+    {
+      "id": "C25",
+      "claim": "Existing FV Focus Fieldbook is a free, single-funnel alternative",
+      "status": "published_fv_navigation",
+      "source_ids": [
+        "R15"
+      ],
+      "limitation": "No additional signup form permitted"
+    },
+    {
+      "id": "C26",
+      "claim": "Final Vestige has approved Inspire3 affiliate acceptance and issued earning link",
+      "status": "unverified_account_specific",
+      "source_ids": [
+        "R07"
+      ],
+      "limitation": "No authenticated publisher contract, no active merchant CTA"
+    },
+    {
+      "id": "C27",
+      "claim": "A public Puységur YouTube ID proves Grok internal asset attribution",
+      "status": "not_supported",
+      "source_ids": [
+        "R17"
+      ],
+      "limitation": "Public video ID distinct from internal asset_id"
+    },
+    {
+      "id": "C28",
+      "claim": "An affiliate outbound click is a confirmed paid order",
+      "status": "prohibited_attribution_error",
+      "source_ids": [
+        "R12"
+      ],
+      "limitation": "Must reconcile merchant transactions and cleared commission"
+    }
+  ],
+  "commercial_gates": [
+    {
+      "id": "named_inspire3_acceptance",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "issued_publisher_specific_earning_url",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "exact_zen12_offer_identity",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "current_authenticated_cart_total",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "refund_policy_scope_and_fulfillment",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "approved_web_promotion_channels",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "approved_email_promotion_channels",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "approved_creatives_or_swipe_terms",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "product_specific_claim_substantiation",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "affiliate_attribution_permissions",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "ftc_adjacent_disclosure_qa",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "signed_out_mobile_browser_qa",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "word_press_sanitization_qa",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "founder_commercial_release_approval",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "independent_settled_commission_report",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "verified_product_sales_and_refunds_reconciliation",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    }
+  ],
+  "creator_topic_fit": [
+    {
+      "topic": "Puységur / Mesmerism",
+      "public_youtube_id": "SV9m07PFTYk",
+      "internal_grok_asset_id": null,
+      "media_rights": null,
+      "public_article": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "focus": "https://finalvestige.com/focus/",
+      "optional_offer": "Hypnosis Live Total Focus / documentary relevance only",
+      "status": "PARTIAL_PUBLIC_TOPIC_MATCH__NO_INTERNAL_ID_OR_VERIFIED_CTA"
+    },
+    {
+      "topic": "Change blindness",
+      "public_youtube_id": null,
+      "internal_grok_asset_id": null,
+      "public_article": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "focus": "https://finalvestige.com/focus/",
+      "optional_offer": "Zen12 / only after independent approval",
+      "status": "PUBLISHED_ARTICLE_BUT_MEDIA_ID_UNVERIFIED"
+    },
+    {
+      "topic": "Rubber-hand illusion / suggestion",
+      "public_youtube_id": null,
+      "internal_grok_asset_id": null,
+      "public_article": null,
+      "unpublished": "mind/r275/THE-HAND-THAT-WASNT-YOURS-UNPUBLISHED.md",
+      "focus": "https://finalvestige.com/focus/",
+      "optional_offer": "None on investigation; separate vetted guide if approved",
+      "status": "UNPUBLISHED_NO_GROK_ASSET"
+    }
+  ],
+  "measurement": {
+    "identity_keys": [
+      "utm_source",
+      "utm_medium",
+      "utm_campaign",
+      "utm_content",
+      "Grok asset_id only if authenticated"
+    ],
+    "event_steps": [
+      "qualified_human_session",
+      "campaign_landing",
+      "article_to_focus_click",
+      "confirmed_provider_lead",
+      "offer_guide_cta_click",
+      "affiliate_outbound_click",
+      "merchant_confirmed_purchase",
+      "settled_affiliate_commission",
+      "refund_fee_adjustment"
+    ],
+    "event_outbound_is_sale": false,
+    "personally_identifiable_data_stored": false,
+    "seven_day_cohorts": "NOT_COMPUTABLE",
+    "thirty_day_cohorts": "NOT_COMPUTABLE",
+    "kpi_net_revenue_per_1000_qualified_human_sessions": null
+  },
+  "gates_count": 16,
+  "claims_count": 28,
+  "sources_count": 18,
+  "release_controls": {
+    "affiliate_links_active": false,
+    "merchant_checkout_tested": false,
+    "WordPress_live_edits": false,
+    "Jetpack_edits": false,
+    "social_posts": false,
+    "newsletter_edits": false,
+    "new_paid_services": false,
+    "merge_approved": false
+  },
+  "decision": "Eligibility first. No purchase call-to-action until named publisher agreement, precise eligible product, issued URL, channels, terms, live checkout and founder signoff. Prioritize paid FV-owned offer only if authenticated; otherwise keep free Focus CTA and revenue NOT_COMPUTABLE."
+}
