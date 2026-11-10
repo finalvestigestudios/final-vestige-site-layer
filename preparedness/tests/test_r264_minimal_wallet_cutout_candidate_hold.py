@@ -23,6 +23,8 @@ def check(html=HTML,original=ORIGINAL,witness=None,pin=PIN):
 
 class Positive(unittest.TestCase):
     def test_structurally_inside_both_faces(self):self.assertIs(check()["cautions_structurally_inside_both_faces"],True)
+    def test_r265_face_owners(self):self.assertIs(check()["r265_notice_owners_exactly_front_and_back"],True)
+    def test_r265_faces_direct_siblings(self):self.assertIs(check()["r265_cutout_faces_are_direct_siblings"],True)
     def test_two_faces(self):self.assertEqual(check()["cutout_faces"],2)
     def test_hard_hold(self):self.assertEqual(check()["state"],gate.HOLD)
     def test_no_browser_proof(self):self.assertIs(check()["real_browser_and_cutout_qa_completed"],False)
@@ -117,8 +119,8 @@ for name,old,new in MUTATIONS:
     setattr(Negative,"test_mutation_"+name,make())
 
 # R265 regression cases: a global ordered notice list is NOT face ownership.
-# Tests repin the MUTATED synthetic HTML to force semantic rejection rather
-# than relying only on R220's fixed candidate hash.
+# Mutations retain a valid synthetic original-source pin. Rejection exercises
+# actual source semantics independently of R220's fixed candidate HTML pin.
 FRONT_WARN='<p class="pa-privacy">'+gate.NOTICES[0]+'</p>'
 BACK_WARN='<p class="pa-privacy">'+gate.NOTICES[1]+'</p>'
 HTML_TEXT=HTML.decode("utf-8")
@@ -160,6 +162,14 @@ def _wrapped_front(s):
     assert FACE_FRONT in s and FRONT_END in s
     return s.replace(FACE_FRONT,"<div>"+FACE_FRONT,1).replace(FRONT_END,FRONT_END+"\n</div>",1)
 
+def _warning_nested_in_front(s):
+    assert FRONT_WARN in s
+    return s.replace(FRONT_WARN, "<div>"+FRONT_WARN+"</div>",1)
+
+def _warning_nested_in_back(s):
+    assert BACK_WARN in s
+    return s.replace(BACK_WARN, "<div>"+BACK_WARN+"</div>",1)
+
 def _warning_outside(s):
     assert BACK_WARN+"\n" in s and "</div>\n<p class=\"pa-editor-note\">" in s
     return s.replace(BACK_WARN+"\n","",1).replace(
@@ -173,6 +183,8 @@ for _name,_transform in (
     ("back_face_wrapped",_wrapped_back),
     ("front_face_wrapped",_wrapped_front),
     ("warning_outside_cutout",_warning_outside),
+    ("warning_nested_front",_warning_nested_in_front),
+    ("warning_nested_back",_warning_nested_in_back),
 ):
     setattr(Negative,"test_r265_"+_name,_new_case(_name,_transform))
 
