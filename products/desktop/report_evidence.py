@@ -10,6 +10,8 @@ import os
 import tempfile
 from pathlib import Path
 
+from report_link_witness_r338 import LinkWitnessError, verify_published_link
+
 
 class ReportEvidenceError(ValueError):
     """Do not trust or release an evidence report from a failed publication."""
@@ -95,6 +97,7 @@ def publish_report(destination: str | Path, evidence: dict) -> None:
     destination = Path(destination)
     parent = destination.parent
     temporary = None
+    preserve_suspect_stage = False
     try:
         payload = (json.dumps(evidence, sort_keys=True, indent=2,
                               ensure_ascii=True, allow_nan=False) + "\n").encode("utf-8")
@@ -103,10 +106,18 @@ def publish_report(destination: str | Path, evidence: dict) -> None:
         _write_verified_stage(fd, payload)
         # Never use rename/replace: those can overwrite previous verification evidence.
         os.link(temporary, destination)
+        # An exclusive link can point at the wrong inode or modified bytes if
+        # the staging pathname changed after initial descriptor readback.
+        # Never treat that as successful audit evidence.
+        try:
+            verify_published_link(temporary, destination, payload)
+        except LinkWitnessError:
+            preserve_suspect_stage = True
+            raise ReportEvidenceError("Published verification evidence failed custody check") from None
     except (OSError, TypeError, ValueError, OverflowError):
         raise ReportEvidenceError("Could not exclusively publish complete verification evidence") from None
     finally:
-        if temporary is not None:
+        if temporary is not None and not preserve_suspect_stage:
             try:
                 temporary.unlink(missing_ok=True)
             except OSError:
