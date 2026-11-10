@@ -120,7 +120,7 @@
     },
     {
       "file": "qa/media-recovery/blacktom_256_seven_loc_newspaper_rights_20261110.json",
-      "blob_sha": null,
+      "blob_sha": "5982e47293987826a549a22fc1a670dc91797e3d",
       "source_records": 7
     }
   ],
@@ -4461,7 +4461,7 @@
         {
           "batch": "blacktom256",
           "path": "qa/media-recovery/blacktom_256_seven_loc_newspaper_rights_20261110.json",
-          "blob_sha": null,
+          "blob_sha": "5982e47293987826a549a22fc1a670dc91797e3d",
           "retriever_only_observation": "TOOL_INACCESSIBLE_NOT_ORIGIN_STATUS",
           "retriever_wrapper_code": null
         }
@@ -4502,7 +4502,7 @@
         {
           "batch": "blacktom256",
           "path": "qa/media-recovery/blacktom_256_seven_loc_newspaper_rights_20261110.json",
-          "blob_sha": null,
+          "blob_sha": "5982e47293987826a549a22fc1a670dc91797e3d",
           "retriever_only_observation": "TOOL_INACCESSIBLE_NOT_ORIGIN_STATUS",
           "retriever_wrapper_code": null
         }
@@ -4543,7 +4543,7 @@
         {
           "batch": "blacktom256",
           "path": "qa/media-recovery/blacktom_256_seven_loc_newspaper_rights_20261110.json",
-          "blob_sha": null,
+          "blob_sha": "5982e47293987826a549a22fc1a670dc91797e3d",
           "retriever_only_observation": "TOOL_INACCESSIBLE_NOT_ORIGIN_STATUS",
           "retriever_wrapper_code": null
         }
@@ -4584,7 +4584,7 @@
         {
           "batch": "blacktom256",
           "path": "qa/media-recovery/blacktom_256_seven_loc_newspaper_rights_20261110.json",
-          "blob_sha": null,
+          "blob_sha": "5982e47293987826a549a22fc1a670dc91797e3d",
           "retriever_only_observation": "TOOL_INACCESSIBLE_NOT_ORIGIN_STATUS",
           "retriever_wrapper_code": null
         }
@@ -4625,7 +4625,7 @@
         {
           "batch": "blacktom256",
           "path": "qa/media-recovery/blacktom_256_seven_loc_newspaper_rights_20261110.json",
-          "blob_sha": null,
+          "blob_sha": "5982e47293987826a549a22fc1a670dc91797e3d",
           "retriever_only_observation": "TOOL_INACCESSIBLE_NOT_ORIGIN_STATUS",
           "retriever_wrapper_code": null
         }
@@ -4666,7 +4666,7 @@
         {
           "batch": "blacktom256",
           "path": "qa/media-recovery/blacktom_256_seven_loc_newspaper_rights_20261110.json",
-          "blob_sha": null,
+          "blob_sha": "5982e47293987826a549a22fc1a670dc91797e3d",
           "retriever_only_observation": "TOOL_INACCESSIBLE_NOT_ORIGIN_STATUS",
           "retriever_wrapper_code": null
         }
@@ -4707,7 +4707,7 @@
         {
           "batch": "blacktom256",
           "path": "qa/media-recovery/blacktom_256_seven_loc_newspaper_rights_20261110.json",
-          "blob_sha": null,
+          "blob_sha": "5982e47293987826a549a22fc1a670dc91797e3d",
           "retriever_only_observation": "TOOL_INACCESSIBLE_NOT_ORIGIN_STATUS",
           "retriever_wrapper_code": null
         }
