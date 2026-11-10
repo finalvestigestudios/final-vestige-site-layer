@@ -12,7 +12,7 @@ import argparse
 import json
 import os
 from pathlib import Path
-from urllib.parse import urlsplit
+from urllib.parse import urlsplit, unquote
 
 from playwright.sync_api import sync_playwright
 
@@ -33,6 +33,22 @@ EXPECTED_EVIDENCE_ROWS = 10
 REVISION_SENTINELS = (
     "2:17 p.m.", "$1,096,796.53", "Bohemia Spillway", "Acosta v.", "1991",
 )
+
+def local_asset_source(url):
+    """Only original FV uploads or WordPress's image CDN proxy of those uploads."""
+    p = urlsplit(url)
+    host = (p.hostname or "").lower()
+    path = unquote(p.path)
+    if p.scheme != "https":
+        return False
+    if host in ("finalvestige.com", "www.finalvestige.com"):
+        return path.startswith("/wp-content/uploads/")
+    if host in ("i0.wp.com", "i1.wp.com", "i2.wp.com"):
+        return path.startswith((
+            "/finalvestige.com/wp-content/uploads/",
+            "/www.finalvestige.com/wp-content/uploads/",
+        ))
+    return False
 
 def capture(page, locator, out):
     try:
@@ -73,9 +89,14 @@ def inspect(page, width, out):
               src:el.getAttribute('src')||'', currentSrc:el.currentSrc||el.src,
               alt:el.getAttribute('alt')||'', loaded:el.complete && el.naturalWidth>0,
               width:el.naturalWidth,height:el.naturalHeight,
+              visible:el.getBoundingClientRect().width > 40 &&
+                el.getBoundingClientRect().height > 20 &&
+                getComputedStyle(el).visibility !== "hidden" &&
+                getComputedStyle(el).display !== "none",
               wpMediaId:(el.className.match(/wp-image-(\\d+)/)||[])[1]||null})""")
             caption = el.locator("xpath=ancestor::figure[1]/figcaption")
             info["captionText"] = caption.first.inner_text(timeout=3000)[:600] if caption.count() else ""
+            info["localSource"] = local_asset_source(info["src"]) and local_asset_source(info["currentSrc"])
             photo_results.append(info)
         except Exception:
             photo_results.append({"load_error": True})
@@ -84,7 +105,8 @@ def inspect(page, width, out):
         matching = [x for x in photo_results if x.get("wpMediaId") == mid or
                     rec["stem"] in x.get("src", "") or rec["stem"] in x.get("currentSrc", "")]
         found[mid] = bool(len(matching) == 1 and matching[0].get("loaded") and
-                          matching[0].get("alt") and
+                          matching[0].get("alt") and matching[0].get("visible") and
+                          matching[0].get("localSource") and
                           any(credit.lower() in matching[0].get("captionText", "").lower()
                               for credit in rec["credits"]))
     # The editor sets _jetpack_hide_featured_image=true, but the live template
