@@ -114,12 +114,12 @@ R253_SOURCE_CONTEXT_BLOB = '4456a15606a3787b348cc4d540a2ea40299a0ee5'
 # enforcing the independently observed 562 shared-source occurrences/56 IDs.
 # Its output remains review-only; every release, medical and QD HOLD persists.
 R254_READABLE_WORKORDERS_PATH = 'tools/r254_readable_claim_workorders_hold.py'
-R254_READABLE_WORKORDERS_BLOB = '76d5030cd774c1474e2d0b69510045ed404fe8fd'
+R254_READABLE_WORKORDERS_BLOB = '5af564610f10fb3fe35512348cad2ed30844dfea'
 # R255 authenticates the R254 source workorders and builds a self-contained,
 # HTML-escaped OFFLINE HUMAN REVIEW surface in memory; no source URL clicks,
 # CMS exports, source approval, merchant links or WordPress publication.
 R255_REVIEW_SURFACE_PATH = 'tools/r255_offline_source_review_surface_hold.py'
-R255_REVIEW_SURFACE_BLOB = 'c53e9a6a690a826562500a88a3b1fac2597b2604'
+R255_REVIEW_SURFACE_BLOB = '86e8b8e3cb29efbac738fd8574b487c4d633b1af'
 # These are independently observed R219 integration Git blobs, not certified text.
 # Missing entries MUST match the older R200 original exactly.
 INTEGRATED_DIFFS = {
