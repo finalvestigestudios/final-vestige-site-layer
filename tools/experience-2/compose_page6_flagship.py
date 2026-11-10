@@ -79,11 +79,26 @@ def stage_payload(source_dir: Path, pin: bool = True) -> str:
     for chapter in CHAPTERS:
         if content.count(f'id="{chapter}"') != 1:
             raise AdmissionError('missing or duplicate chapter destination ' + chapter)
-    # WordPress/Assembler already supplies site-level header/main/footer landmarks.
-    # Keep candidate's own chapter navigation and labels, not a nested main/banner.
+    # Assembler supplies site-level branding and navigation. The source masthead
+    # duplicates that navigation in WordPress, pushing evidence below the fold.
+    # Preserve its original Focus action in a small, independent resource rail.
+    mastheads = list(re.finditer(r'<header class="fv-hf__masthead">.*?</header>', content, re.S))
+    if len(mastheads) != 1:
+        raise AdmissionError('expected exactly one isolated source masthead')
+    masthead = mastheads[0]
+    source_ctas = re.findall(r'<a class="fv-hf__mast-cta" href="https://finalvestige.com/focus/">.*?</a>', masthead.group(), re.S)
+    if len(source_ctas) != 1:
+        raise AdmissionError('source masthead Focus link missing or duplicated')
+    focus_rail = ('<div class="fv-hf__focus-rail" aria-label="Free reader resource">'
+                  + source_ctas[0] + '</div>')
+    content = content[:masthead.start()] + focus_rail + content[masthead.end():]
+    if content.count('<div class="fv-hf" data-fv-home-flagship') != 1:
+        raise AdmissionError('expected exactly one original flagship wrapper')
+    content = content.replace('<div class="fv-hf" data-fv-home-flagship',
+                              '<div class="fv-hf fv-hf--wp-integrated" data-fv-home-flagship', 1)
+    # Keep all three original art-direction choices for founder review.
+    # The Focus link remains accessible if optional JavaScript is disabled.
     replacements = [
-        ('<header class="fv-hf__masthead">', '<div class="fv-hf__masthead" role="group" aria-label="Archive navigation">'),
-        ('</header>', '</div>'),
         ('<main id="fv-hf-main" tabindex="-1">', '<div id="fv-hf-main" tabindex="-1" role="region" aria-label="The living archive">'),
         ('</main>', '</div>'),
         ('<footer class="fv-hf__footer">', '<div class="fv-hf__footer">'),
@@ -95,7 +110,18 @@ def stage_payload(source_dir: Path, pin: bool = True) -> str:
         content = content.replace(old, new, 1)
     if re.search(r'<(?:html|head|body|main|header|footer)(?:\s|>)', content, re.I):
         raise AdmissionError('unexpected document or site-level landmark in scoped payload')
-    styles = []
+    styles = ["""/* WordPress/Assembler integration-only rail; original sources untouched. */
+.fv-hf--wp-integrated .fv-hf__studio-note{display:none}
+.fv-hf--wp-integrated .fv-hf__studio{min-height:0;padding-block:6px}
+.fv-hf--wp-integrated .fv-hf__focus-rail{display:flex;justify-content:flex-end;
+  padding:8px clamp(18px,4vw,72px);background:#101a19;border-bottom:1px solid #50432d}
+.fv-hf--wp-integrated .fv-hf__focus-rail .fv-hf__mast-cta{min-height:44px;
+  max-width:100%;padding:10px 18px;white-space:normal;text-align:center}
+@media(max-width:560px){
+  .fv-hf--wp-integrated .fv-hf__focus-rail{padding:7px 18px}
+  .fv-hf--wp-integrated .fv-hf__focus-rail .fv-hf__mast-cta{width:100%}
+}
+"""]
     for filename in CSS:
         body = parts[filename]
         if '</style' in body.lower() or '<!-- /wp:' in body.lower() or re.search(r'@import\b', body):
