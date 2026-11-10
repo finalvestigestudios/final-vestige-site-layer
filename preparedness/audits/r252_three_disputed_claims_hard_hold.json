@@ -1,0 +1,60 @@
+{
+  "schema": "fv-preparedness-r252-three-held-occurrence-review-v1",
+  "state": "DRAFT_HARD_HOLD",
+  "issue": 136,
+  "conversion_issue": 820,
+  "snapshot_date_pt": "2026-11-09",
+  "source_authority_note": "2026-11-09 read CDC page dated 2025-06-25; Ready.gov /plan returned HTTP 403 from external verification and is not independently verified. Human link-check remains false in author registry.",
+  "historical_shared_source_groups_still_unreviewed": 32,
+  "ready_gov_access": "HTTP_403_UNVERIFIED",
+  "human_claim_approved": false,
+  "human_source_approved": false,
+  "medical_safety_verified": false,
+  "independent_qd_pass": false,
+  "commerce_approved": false,
+  "publication_authorized": false,
+  "occurrences": [
+    {
+      "n": 7,
+      "article_slug": "homemade-water-filters",
+      "citation_id": "cdc-find-clean-water",
+      "occurrence": 1,
+      "lead_in": "Look for other clean water in the house",
+      "source_url": "https://www.cdc.gov/water-emergency/about/how-to-find-clean-water-in-an-emergency.html",
+      "review_topic": "tap-water heater versus household heating system and ice contamination",
+      "editorial_observation": "CDC lists tap-water heater tanks and uncontaminated ice as conditional possible sources; original draft says 'water heater tank, melted ice cubes and similar sources' without both specific caveats.",
+      "suggested_human_action": "Evaluate whether to clarify potable water-heater distinction and uncontaminated-ice condition in the reader-facing sentence; ensure local-authority warnings remain.",
+      "claim_verdict": "NOT_ADJUDICATED",
+      "source_scope_verdict": "NOT_APPROVED",
+      "human_review_required": true
+    },
+    {
+      "n": 7,
+      "article_slug": "homemade-water-filters",
+      "citation_id": "cdc-find-clean-water",
+      "occurrence": 2,
+      "lead_in": "Stop and ask what might be upstream.",
+      "source_url": "https://www.cdc.gov/water-emergency/about/how-to-find-clean-water-in-an-emergency.html",
+      "review_topic": "microbial sewage/waste versus fuel or toxic chemical contamination",
+      "editorial_observation": "CDC warns outdoor water can have animal/human waste and requires treatment for germs, but says water suspected to contain fuel/toxic chemicals cannot be made safe. The manuscript lumps 'fuel, chemicals or waste' together as an always-use-another-source decision; cautious advice may be reasonable but this precise citation does not make the categories equivalent.",
+      "suggested_human_action": "Check whether revised wording should explicitly distinguish microbiological contamination from chemical/fuel contamination, retaining conservative guidance where source or local advisory is uncertain.",
+      "claim_verdict": "NOT_ADJUDICATED",
+      "source_scope_verdict": "NOT_APPROVED",
+      "human_review_required": true
+    },
+    {
+      "n": 20,
+      "article_slug": "preparedness-real-households",
+      "citation_id": "start-ready-plan",
+      "occurrence": 1,
+      "lead_in": "Ready.gov asks you to consider languages spoken in the household",
+      "source_url": "https://www.ready.gov/plan",
+      "review_topic": "Ready.gov language planning claim independently inaccessible on this run",
+      "editorial_observation": "The frozen source fragment states that Ready.gov includes household languages as a consideration, but a fresh direct page fetch returned HTTP 403; this run cannot independently corroborate the current page wording or date.",
+      "suggested_human_action": "Have an independent reviewer inspect the current Ready.gov page or official cached/accessibly rendered substitute and record exact page/date/claim line; do not silently mark verified.",
+      "claim_verdict": "NOT_ADJUDICATED",
+      "source_scope_verdict": "NOT_APPROVED",
+      "human_review_required": true
+    }
+  ]
+}
