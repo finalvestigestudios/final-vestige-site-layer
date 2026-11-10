@@ -138,6 +138,10 @@ R261_PRINT_DRAFT_BLOB = '7132840d9f35bd60af5c7e4152053270f347da58'
 # source-bound candidate. Original HTML and all release holds remain intact.
 R262_NOJS_TRUTH_PATH = 'tools/r262_family_card_truthful_nojs_gate_hold.py'
 R262_NOJS_TRUTH_BLOB = 'e8eae0980bbd30cc27a714a0b6b5a4d711c3224b'
+# R263 witnesses the separate cut-out-card warning gap; it is intentionally
+# a NEGATIVE privacy finding, not a printable-card repair or release approval.
+R263_WALLET_PRIVACY_PATH = 'tools/r263_wallet_cutout_privacy_witness_hold.py'
+R263_WALLET_PRIVACY_BLOB = 'd07b2e504c0c5cf0c4d1e900e81d79740bb587ea'
 # R258 binds the complete R254/R257 original source-claim partition to a
 # deterministic, entirely escaped, no-clickable-links offline reviewer view.
 R258_COMPLETE_REVIEW_PATH = 'tools/r258_complete_offline_claim_review_hold.py'
@@ -831,6 +835,33 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
                     'release_authorized', 'public_published'))):
             raise ValueError('R262 truthful no-JS draft candidate HARD HOLD changed')
         result['family_card_unpublished_truthful_nojs_candidate'] = truth
+        # Even the R262 held candidate places privacy cautions above, NOT inside,
+        # either wallet-size cut-out. Preserve this as explicit non-PASS evidence.
+        r263 = load_frozen_gate(root, R263_WALLET_PRIVACY_PATH,
+                                R263_WALLET_PRIVACY_BLOB,
+                                'fv_preparedness_r263_wallet_cutout_privacy_witness',
+                                ('audit', 'inspect'))
+        cutout = r263.audit(root, safe_read, r261, r262)
+        if (cutout.get('state') != HOLD
+                or cutout.get('original_git_blob') != truth['original_git_blob']
+                or cutout.get('r262_candidate_blob') != truth['r262_candidate_blob']
+                or cutout.get('nojs_source_field_count') != 13
+                or cutout.get('nojs_cutout_faces') != 2
+                or cutout.get('print_css_face_overflow_hidden') is not True
+                or cutout.get('javascript_warning_on_print_page_only') is not True
+                or cutout.get('nojs_warning_on_print_page_only') is not True
+                or cutout.get('wallet_cutout_has_privacy_warning') is not False
+                or cutout.get('printed_card_privacy_resolved') is not False
+                or cutout.get('actual_browser_and_physical_cutout_qa_completed') is not False
+                or cutout.get('qualified_child_privacy_review_completed') is not False
+                or cutout.get('requires_editorial_resolution_before_publication') is not True
+                or cutout.get('original_source_unchanged') is not True
+                or any(cutout.get(key) is not False for key in (
+                    'privacy_certified', 'medical_safety_verified',
+                    'independent_qd_pass', 'source_review_approved',
+                    'merchant_approved', 'release_authorized', 'public_published'))):
+            raise ValueError('R263 wallet privacy NON-PASS evidence/HARD HOLD drift')
+        result['family_card_wallet_cutout_privacy_witness'] = cutout
         # An editorial option is NOT a source correction or approval. Authenticate
         # its exact preview bytes, then separately inspect its visible copy.
         if git_blob(safe_read(root, R249_UNPUBLISHED_PREVIEW_PATH)) != R249_UNPUBLISHED_PREVIEW_BLOB:
@@ -1033,6 +1064,8 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
             raise ValueError('R261 offline print privacy draft gate changed during audit')
         if git_blob(safe_read(root, R262_NOJS_TRUTH_PATH)) != R262_NOJS_TRUTH_BLOB:
             raise ValueError('R262 truthful no-JS draft gate changed during audit')
+        if git_blob(safe_read(root, R263_WALLET_PRIVACY_PATH)) != R263_WALLET_PRIVACY_BLOB:
+            raise ValueError('R263 wallet privacy witness gate changed during audit')
         if git_blob(safe_read(root, R258_COMPLETE_REVIEW_PATH)) != R258_COMPLETE_REVIEW_BLOB:
             raise ValueError('R258 2000-citation offline reviewer gate changed during audit')
         result['reconciliation'] = {'frozen_articles': 35,
