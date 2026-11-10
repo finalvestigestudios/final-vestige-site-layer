@@ -1,0 +1,40 @@
+"use strict";
+// Native: node --test dispatch/r244/tests/test_causality.cjs
+const {test}=require("node:test");
+const assert=require("node:assert/strict");
+const {reviewLedgerCausality: review}=require("../review_causality.cjs");
+const base=require("../../r243/fixtures/synthetic_ledger.json");
+const copy=()=>JSON.parse(JSON.stringify(base));
+const codes=x=>review(x).blockers;
+const enrich=()=>{
+ const x=copy(), o=x.orders[0];
+ o.currency="USD";o.offer_id="zen12_premium";o.affiliate_click_ref="synthetic_click_001";
+ x.actions=[{type:"affiliate_outbound",at_utc:"2026-11-08T20:30:00Z",
+  attributed_session_id:"sess_fake_001",click_ref:"synthetic_click_001",offer_id:"zen12_premium"}];
+ return x;
+};
+test("original R243 fixture lacks payable click join",()=>assert(codes(copy()).includes("CLICK_JOIN_MISSING")));
+test("original R243 fixture lacks currency",()=>assert(codes(copy()).includes("CURRENCY_NOT_ATTESTED_USD")));
+test("enriched causal fixture has no click join gap",()=>assert(!codes(enrich()).includes("CLICK_JOIN_MISSING_OR_AMBIGUOUS")));
+test("enriched fixture still cannot claim real sale",()=>assert.equal(review(enrich()).independent_verified_paid_orders,null));
+test("reviewed synthetic does not release newsletter",()=>assert.equal(review(enrich()).status,"REVIEW_ONLY_HOLD_UNSENT"));
+test("all editions stay unsent despite flags",()=>{const x=enrich();x.founder_final_campaign_approval=true;assert.equal(review(x).status,"REVIEW_ONLY_HOLD_UNSENT")});
+test("missing click cannot count linked revenue",()=>{const x=enrich();x.actions=[];assert(codes(x).includes("CLICK_JOIN_MISSING_OR_AMBIGUOUS"))});
+test("different click id is not same click",()=>{const x=enrich();x.actions[0].click_ref="different_click";assert(codes(x).includes("CLICK_JOIN_MISSING_OR_AMBIGUOUS"))});
+test("different offer is not same click",()=>{const x=enrich();x.actions[0].offer_id="other_offer";assert(codes(x).includes("CLICK_JOIN_MISSING_OR_AMBIGUOUS"))});
+test("two claims for same click fail",()=>{const x=enrich();x.actions.push({...x.actions[0]});assert(codes(x).includes("CLICK_JOIN_MISSING_OR_AMBIGUOUS"))});
+test("click before visit fails",()=>{const x=enrich();x.actions[0].at_utc="2026-11-08T19:00:00Z";assert(codes(x).includes("CLICK_CAUSAL_ORDER_INVALID"))});
+test("click after order fails",()=>{const x=enrich();x.actions[0].at_utc="2026-11-09T16:00:00Z";assert(codes(x).includes("CLICK_CAUSAL_ORDER_INVALID"))});
+test("order before visit fails",()=>{const x=enrich();x.orders[0].at_utc="2026-11-08T19:00:00Z";assert(codes(x).includes("ORDER_BEFORE_OR_WITHOUT_SESSION"))});
+test("confirmed lead before visit fails",()=>{const x=enrich();x.confirmations[0].at_utc="2026-11-08T19:00:00Z";assert(codes(x).includes("CONFIRMATION_BEFORE_OR_WITHOUT_SESSION"))});
+test("nonprovider email status fails",()=>{const x=enrich();x.confirmations[0].verification="unverified";assert(codes(x).includes("EMAIL_STATUS_NOT_PROVIDER_CONFIRMED"))});
+test("publisher currency must be attested",()=>{const x=enrich();x.orders[0].currency="JPY";assert(codes(x).includes("CURRENCY_NOT_ATTESTED_USD"))});
+test("different commercial offer fails one-offer scope",()=>{const x=enrich();x.orders[0].offer_id="other";assert(codes(x).includes("OFFER_NOT_ONE_AUTHORIZED_CANDIDATE"))});
+test("conflicting duplicated session ids flagged",()=>{const x=enrich();x.sessions.push({...x.sessions[0],utm_content:"other"});assert(codes(x).includes("SESSION_DUPLICATE_CONFLICT"))});
+test("conflicting duplicated transaction ids flagged",()=>{const x=enrich();x.orders.push({...x.orders[0],commission_minor:2});assert(codes(x).includes("ORDER_DUPLICATE_CONFLICT"))});
+test("negative fees cannot be passed as revenue",()=>{const x=enrich();x.orders[0].fees_minor=-1;assert(codes(x).includes("SETTLEMENT_AMOUNT_INVALID"))});
+test("PII email field refused",()=>{const x=enrich();x.email="someone@example.com";assert.throws(()=>review(x),/PII_FORBIDDEN/)});
+test("missing array refused",()=>{const x=enrich();delete x.actions;assert.throws(()=>review(x),/array_required:actions/)});
+test("no numerical real business metric produced",()=>{const x=enrich();assert.equal(review(x).audited_7d_net_revenue_per_1000,null);assert.equal(review(x).audited_30d_net_revenue_per_1000,null)});
+test("postal and opt out not attested",()=>assert(codes(enrich()).includes("LEGAL_FOOTER_AND_RECIPIENT_PROOF_REQUIRED")));
+test("affiliate EMAIL authorization not attested",()=>assert(codes(enrich()).includes("NAMED_AFFILIATE_EMAIL_PERMISSION_NOT_ATTESTED")));

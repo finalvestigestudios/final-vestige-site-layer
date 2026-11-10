@@ -1,0 +1,58 @@
+{
+  "schema": "fv.dispatch.r244.review_only.v1",
+  "review_date_local": "2026-11-09",
+  "branch_parent_pr": 1812,
+  "branch_parent_sha": "f66796e2c6678806504b13adc299deb9ab238af6",
+  "master_pr": 175,
+  "master_sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "pr201_unmodified": true,
+  "homepage_pr49_unmodified": true,
+  "issue174": 174,
+  "issue171": 171,
+  "live_jetpack": {
+    "newsletter_enabled": true,
+    "auto_new_post": false,
+    "format": "full",
+    "total": 3,
+    "confirmed": 3,
+    "unconfirmed_requests": 2,
+    "suppressed": 0,
+    "email_eligible": null,
+    "welcome_configured": true,
+    "welcome_received_verified": false,
+    "footer_postal_verified": false,
+    "footer_unsubscribe_verified": false
+  },
+  "commercial_issues": [
+    3,
+    5
+  ],
+  "editorial_issues": [
+    1,
+    2,
+    4,
+    6
+  ],
+  "merchant_email_permission_verified": false,
+  "named_affiliate_approval_verified": false,
+  "earnings_url_verified": false,
+  "approved_published_offer_guide_verified": false,
+  "real_paid_commissions_verified": false,
+  "founder_send_approved": false,
+  "newsletter_send_status": "ALL_HOLD_UNSENT",
+  "commercial_status": "HOLD_MERCHANT",
+  "published_or_sent": false,
+  "production_analytics_changed": false,
+  "realized_net_revenue_per_1000_qualified_human_sessions": null,
+  "tests": {
+    "original_native_python": "6/6",
+    "r243_native_node": "25/25",
+    "r244_committed_v8_mock": "25/25",
+    "r244_native_node": "NOT_EXECUTED"
+  },
+  "official_sources": [
+    "https://wordpress.com/support/newsletter/email-appearance/",
+    "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business",
+    "https://zen12.com/hnp"
+  ]
+}
