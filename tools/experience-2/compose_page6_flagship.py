@@ -121,6 +121,26 @@ def stage_payload(source_dir: Path, pin: bool = True) -> str:
   .fv-hf--wp-integrated .fv-hf__focus-rail{padding:7px 18px}
   .fv-hf--wp-integrated .fv-hf__focus-rail .fv-hf__mast-cta{width:100%}
 }
+/* WCAG 2.2 2.5.8 target-custody improvement for integrated preview only.
+   Leave inline citations, original standalone sources and theme controls alone. */
+.fv-hf--wp-integrated :is(
+  .fv-hf__opening-actions > .fv-hf__text-link,
+  .fv-hf__folio-bottomline > a,
+  .fv-hf__opening-foot > a,
+  .fv-hf__index-note > a,
+  .fv-hf__case-actions > .fv-hf__text-link,
+  .fv-hf__case-source > a,
+  .fv-hf__method > a,
+  .fv-hf__inquiry-sources > a,
+  .fv-hf__observer-context a,
+  .fv-hf__observer-exit > a,
+  .fv-hf__mind-actions > a,
+  .fv-hf__exit > a,
+  .fv-hf__footer > a,
+  .fv-hf__chronicle-sources > a
+){display:inline-flex;align-items:center;min-height:28px;max-width:100%;white-space:normal;overflow-wrap:anywhere}
+.fv-hf--wp-integrated .fv-hf__case-source > a{display:flex}
+.fv-hf--wp-integrated .fv-hf__case-actions summary{min-height:44px;padding-block:11px;box-sizing:border-box}
 """]
     for filename in CSS:
         body = parts[filename]
