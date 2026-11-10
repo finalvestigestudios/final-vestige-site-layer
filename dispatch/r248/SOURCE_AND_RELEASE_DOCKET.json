@@ -1,0 +1,71 @@
+{
+  "review": "R248",
+  "stage": "DRAFT_UNSENT",
+  "origin": {
+    "pr": 175,
+    "sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+    "parent_pr": 1837,
+    "parent_sha": "fd2a0a82d5ae88a1ee51f70d92be04361e045f65",
+    "homepage_pr_49_frozen": true,
+    "mix": {
+      "editorial": 4,
+      "commercial": 2
+    }
+  },
+  "nasa": {
+    "source": "https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/",
+    "technical_report_index": "https://ntrs.nasa.gov/citations/19930078717",
+    "incident_date": "1967-01-27",
+    "first_crew_fire_report_gmt": "23:31:04.7",
+    "estimated_rupture_gmt": "23:31:19",
+    "approx_seconds_after_report": 14.3,
+    "last_transmission_start_gmt": "23:31:16.8",
+    "telemetry_lost_gmt": "23:31:22.4",
+    "exact_ignition_source": "UNKNOWN",
+    "precise_time_of_death": "UNKNOWN",
+    "release_rule": "DO_NOT_CONFLATE_REPORT_TO_RUPTURE_WITH_ENTIRE_FIRE_DURATION"
+  },
+  "wordpress": {
+    "as_of_utc": "2026-11-10T04:37:40Z",
+    "newsletter_on": true,
+    "auto_send": false,
+    "email_format": "full",
+    "welcome_configured": true,
+    "welcome_delivered": null,
+    "subscriber_counters": {
+      "total": 3,
+      "confirmed": 3,
+      "unconfirmed_requests": 2
+    },
+    "followers": {
+      "email_only": 0,
+      "wpcom": 3
+    },
+    "actual_email_eligible": null,
+    "provider_subscribed_filter_verified": false,
+    "postal_footer_verified": false,
+    "unsubscribe_verified": false,
+    "native_preview": false
+  },
+  "seller": {
+    "zen12_standard_source": "https://zen12.com/hnp",
+    "zen12_promo_source": "https://zen12.com/secret/",
+    "hypnosis_total_focus_source": "https://hypnosislive.com/mental-skills/total-focus",
+    "approval": null,
+    "email_permission": null,
+    "earning_url": null,
+    "current_checkout_eligible_price": null,
+    "promises_proven": false
+  },
+  "revenue": {
+    "settled_orders": null,
+    "net_usd": null,
+    "qualified_human_sessions": null,
+    "net_revenue_per_1000": null
+  },
+  "release": {
+    "all_six": "HOLD_UNSENT",
+    "commercial_03_05": "HOLD_MERCHANT",
+    "founder_approved": false
+  }
+}
