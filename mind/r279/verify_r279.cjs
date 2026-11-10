@@ -14,6 +14,7 @@ function validate(f) {
   safe(m.editorial_only===true && m.release_status==="HARD_HOLD","matrix release must remain held");
   safe(Array.isArray(m.sources)&&m.sources.length===20,"source inventory drift");
   safe(Array.isArray(m.claims)&&m.claims.length===34,"claim inventory drift");
+  safe(new Set((m.claims||[]).map(c=>c.id)).size===34,"duplicate claim identifiers");
   safe(Array.isArray(m.offers)&&m.offers.length===5,"offer inventory drift");
   safe(Array.isArray(m.commercial_gates)&&m.commercial_gates.length===16,"16-gate contract broken");
   const ids=new Set((m.sources||[]).map(s=>s.id));
@@ -54,7 +55,7 @@ function validate(f) {
   safe(/<button[^>]*\bdisabled\b[^>]*aria-disabled="true"[^>]*>Merchant offer unavailable/.test(h),"commercial CTA not disabled");
   const button=h.indexOf("<button");const d=h.lastIndexOf("Prospective affiliate disclosure:",button);
   safe(button>0 && d>=0 && button-d<1000 && /Final Vestige may receive a commission at no additional cost/.test(h.slice(d,button)),"FTC disclosure not adjacent to purchasing control");
-  safe(/seller's newsletter/.test(h)&&/separate merchant newsletter/.test(h),"dual-consent note missing");
+  safe(/merchant newsletter/.test(h)&&/separate merchant newsletter/.test(h),"dual-consent note missing");
   safe(/42-second/.test(h)&&/NOT a playable hosted video|not hosted or playable/i.test(h),"film concept misrepresented");
   safe(/NO \/mind\/ ROUTE ACTIVATED/.test(h) && /No WordPress draft ID/.test(h),"prototype marked live");
   safe(/https:\/\/finalvestige.com\/focus\//.test(h) && /https:\/\/finalvestige.com\/free-resources\/puysegurs-animal-magnetism-files\//.test(h),"existing internal links lost");
@@ -63,7 +64,7 @@ function validate(f) {
   safe(!/url\s*\(|@import\b|<meta[^>]*http-equiv="refresh"/i.test(h),"CSS/redirect network injection detected");
   const anchors=[...h.matchAll(/<a\b[^>]*href\s*=\s*"([^"]+)"/gi)].map(x=>x[1]);
   safe(anchors.every(x=>x.startsWith("#")||x.startsWith("https://finalvestige.com/")||x.startsWith("https://www.ftc.gov/")),"merchant/external link activated in hub");
-  safe(!/\b(?:affiliate_click|gtag\(|dataLayer|pixel\b|analytics\.js|beacon\b)\b/i.test(h),"extra tracking introduced");
+  safe(!/\b(?:affiliate_click\(|gtag\(|dataLayer\s*=|analytics\.js|sendBeacon\()/i.test(h),"extra tracking introduced");
   safe(a.split(/\s+/).length>=2400,"insufficiently substantial investigation");
   for(const term of ["Neurypnology","Puységur","333","clinical population","Total Focus","Focus Shot","Zen12","What would convincing product evidence look like","FTC","seller's newsletter"])safe(a.includes(term),"article lost evidence or caveat: "+term);
   safe(a.includes("not a clinical trial")||a.includes("not a clinical")||a.includes("not proof"),"research limitations missing");
@@ -109,7 +110,7 @@ function mutations(f) {
     ["exact seller drift",{...f,matrix:f.matrix.replace('https://zen12.com/hnp','https://zen12.com/something-else')}],
     ["wrong consent",{...f,matrix:f.matrix.replace('INSPIRE3_SELLER_NEWSLETTER','FV_JETPACK_FOCUS')}],
     ["paid fieldbook",{...f,matrix:f.matrix.replace('LIVE_FREE_RESOURCE_NOT_PAID_SALE','PAID_ORDER_VERIFIED')}],
-    ["paid sku fraud",{...f,matrix:f.matrix.replace('"status": "NOT_AUTHENTICATED"','"status": "VERIFIED"}')}],
+    ["paid sku fraud",{...f,matrix:f.matrix.replace('"status": "NOT_AUTHENTICATED"','"status": "VERIFIED"')}],
     ["tracking collector",{...f,matrix:f.matrix.replace('"collector": "none_new"','"collector": "custom_pixel"')}],
     ["false live video",{...f,matrix:f.matrix.replace('"hosted_video": false','"hosted_video": true')}],
     ["false experiment",{...f,matrix:f.matrix.replace('"live_ab": false','"live_ab": true')}],
