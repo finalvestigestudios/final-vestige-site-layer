@@ -119,5 +119,5 @@ def publish_report(destination: str | Path, evidence: dict) -> None:
             verify_published_link(temporary, destination, payload)
         except LinkWitnessError:
             raise ReportEvidenceError("Published verification evidence failed custody check") from None
-    except (OSError, TypeError, ValueError, OverflowError):
+    except (OSError, TypeError, ValueError, OverflowError, RuntimeError):
         raise ReportEvidenceError("Could not exclusively publish complete verification evidence") from None
