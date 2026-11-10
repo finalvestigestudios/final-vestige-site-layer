@@ -13,7 +13,7 @@ Existing protections remain unchanged: descriptor identity and stat consistency,
 ## Regression proof
 New `products/desktop/tests/test_journal_fifo_open_r326.py`: **11 synthetic methods**, including valid read, existing/new append, reject-before-write callback, real `os.open` flag witness, preexisting FIFO refusal, and **two killable 4-second child-process race reproducers** (read and append), with no private path in an accepted HOLD.
 
-Local Linux Python source proof: pre-patch `journal_io.py` is byte-for-byte Git blob `17f8fa651098cbe641d88ae88b8f4e43100bf811`; patched source Git blob `8b88ebd90877c8e69599fe3bfd1d1cae25b1c22e`; test Git blob `4308cc88dcae2a54c478c92beb0b099d5d1af24b`. The local test harness reproduced the production `csv_snapshot._same_path_descriptor_signature` helper behavior, but **was not a full private repository checkout**.
+Local Linux Python source proof: pre-patch `journal_io.py` is byte-for-byte Git blob `17f8fa651098cbe641d88ae88b8f4e43100bf811`; patched source Git blob `8b88ebd90877c8e69599fe3bfd1d1cae25b1c22e`; test Git blob `4308cc88dcae2a54c478c92beb0b099d5d1af24b`. The local test harness also used the **exact Git blob** `a695123f1adc133dfac2cc38726540fe373618fe` for `csv_snapshot.py` (the only `journal_io` import dependency). Thus the focused test exercised the exact committed production source and dependency, but **was not a full private repository checkout**.
 
 - Before patch: **11 methods executed, 5 failures + 2 errors**, including **both** read/write POSIX FIFO-swap subprocesses timing out after four seconds. The two subprocesses are killable, not permanent CI hangs.
 - After patch: **11/11 normal PASS**, **11/11 Python `-OO` PASS**, zero skips on local Linux; all test outcomes use synthetic temporary files.
