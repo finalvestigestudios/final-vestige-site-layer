@@ -201,11 +201,11 @@ R271_FULL_REPRO_BLOB = '7d2541cdafc2de9cb71c7b49d102c75a086674a5'
 # Preserve 244 unmerged readings, 202 exact URLs, 201 review aliases,
 # all 32 unadjudicated shared-source groups and 15 duplicated ID groups.
 R272_CROSSWALK_GATE_PATH = 'tools/r272_crosswalk_snapshot_hold.py'
-R272_CROSSWALK_GATE_BLOB = '97cacd40b2a4324696f746798b472251a42a53b6'
+R272_CROSSWALK_GATE_BLOB = '13f9e06da710c500c4dc45dd013133d46e5d87ab'
 # R273 non-adjudicating reviewer-facing docket; the complete 244 original
 # readings remain origin/row-scoped and both collision axes stay open.
 R273_DOCKET_GATE_PATH = 'tools/r273_source_review_docket_hold.py'
-R273_DOCKET_GATE_BLOB = '89418fa7b280591a1bd556f148329b4ed422d1c8'
+R273_DOCKET_GATE_BLOB = '1ff75d8cb329cdfa027c6bbc8a6cc96aef276875'
 R273_DOCKET_PATH = 'audits/r273_shared_source_review_docket_UNAPPROVED.json'
 R273_DOCKET_BLOB = 'db59f659b0e1c513011539bbc9b6fc1ebf056785'
 # R258 binds the complete R254/R257 original source-claim partition to a
