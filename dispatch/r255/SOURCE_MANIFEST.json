@@ -1,0 +1,94 @@
+{
+  "date": "2026-11-10",
+  "state": "ALL_HOLD_NON_SENDING",
+  "preview_type": "STATIC_REVIEW_NOT_NATIVE_JETPACK",
+  "original_pr": 175,
+  "original_head": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "stack_parent_pr": 1881,
+  "stack_head": "6f44ff8fec891862ddc9cf28ccba8b10eb857d42",
+  "count": 6,
+  "commercial_held": [
+    3,
+    5
+  ],
+  "issues": [
+    {
+      "issue": 1,
+      "original": "dispatch/campaign-2026-mind/issues/01-the-mind-is-not-a-camera.md",
+      "blob_sha": "039b452b5cb7cd6dc2fed6fac4d2dd77fa9d49c8",
+      "subject": "The mind is not a camera",
+      "preheader": "What an old record can teach us about the difference between seeing and knowing.",
+      "kind": "editorial",
+      "html": "dispatch/r255/previews/01.html",
+      "plaintext": "dispatch/r255/previews/01.txt",
+      "status": "HOLD_UNSENT"
+    },
+    {
+      "issue": 2,
+      "original": "dispatch/campaign-2026-mind/issues/02-before-hypnosis-had-a-name.md",
+      "blob_sha": "faa207ab7deafd86460d36f8c17fe62d392d0e14",
+      "subject": "Before hypnosis had a name",
+      "preheader": "The eighteenth-century witnesses who left behind a problem of proof.",
+      "kind": "editorial",
+      "html": "dispatch/r255/previews/02.html",
+      "plaintext": "dispatch/r255/previews/02.txt",
+      "status": "HOLD_UNSENT"
+    },
+    {
+      "issue": 3,
+      "original": "dispatch/campaign-2026-mind/issues/03-the-twelve-minute-question.md",
+      "blob_sha": "aeeef34efea0cc281f69901488e4501fea851245",
+      "subject": "The twelve-minute meditation question",
+      "preheader": "An honest way to evaluate a short audio practice before you spend anything.",
+      "kind": "commercial-review-pending",
+      "html": "dispatch/r255/previews/03.html",
+      "plaintext": "dispatch/r255/previews/03.txt",
+      "status": "HOLD_UNSENT"
+    },
+    {
+      "issue": 4,
+      "original": "dispatch/campaign-2026-mind/issues/04-the-hatch-and-the-spark.md",
+      "blob_sha": "89635bfb9c8d1ff17297a59b6b5b5b2a176934ca",
+      "subject": "Fourteen seconds. A much longer explanation.",
+      "preheader": "Apollo 1, the surviving record, and why a tidy cause can mislead.",
+      "kind": "editorial",
+      "html": "dispatch/r255/previews/04.html",
+      "plaintext": "dispatch/r255/previews/04.txt",
+      "status": "HOLD_UNSENT"
+    },
+    {
+      "issue": 5,
+      "original": "dispatch/campaign-2026-mind/issues/05-before-you-press-play.md",
+      "blob_sha": "a9dfaa450ba025a7b5113ade8a294d6dbad778dc",
+      "subject": "Before you press play on a hypnosis audio",
+      "preheader": "Three questions that matter more than an impressive promise.",
+      "kind": "commercial-review-pending",
+      "html": "dispatch/r255/previews/05.html",
+      "plaintext": "dispatch/r255/previews/05.txt",
+      "status": "HOLD_UNSENT"
+    },
+    {
+      "issue": 6,
+      "original": "dispatch/campaign-2026-mind/issues/06-the-evidence-log.md",
+      "blob_sha": "004d558df6376d2ad6f4f79a4581e8d2c444e355",
+      "subject": "What did seven days of attention reveal?",
+      "preheader": "A small experiment, a useful notebook, and no miracle claims.",
+      "kind": "editorial",
+      "html": "dispatch/r255/previews/06.html",
+      "plaintext": "dispatch/r255/previews/06.txt",
+      "status": "HOLD_UNSENT"
+    }
+  ],
+  "unknown": [
+    "email_affiliate_permission",
+    "issued_earning_url",
+    "live_guide",
+    "actual_eligible_subscribers",
+    "received_welcome",
+    "delivered_unsubscribe",
+    "studio_postal_address",
+    "inbox_preheader",
+    "settled_revenue",
+    "founder_final_approval"
+  ]
+}
