@@ -36,7 +36,7 @@ function validate(x){
   assert.match(h,/<!doctype html>/i);
   assert.match(h,/<html lang="en">/);
   assert.match(h,/<meta name="viewport"/);
-  assert.doesNotMatch(h,/<script\b|<iframe\b|<form\b|<input\b|<video\\b|onerror\s*=|onclick\s*=/i);
+  assert.doesNotMatch(h,/<script\b|<iframe\b|<form\b|<input\b|<video\b|<audio\b|<source\b|onerror\s*=|onclick\s*=/i);
   assert.doesNotMatch(h,/href=["']https?:\/\/(?:www\.)?(?:zen12\.com|affiliates\.inspire3\.com|brainwaveshots\.com|hypnosislive\.com)/i);
   assert.doesNotMatch(h,/(?:pixel|doubleclick\.net|facebook\.net\/?en_US\/fbevents|gtag\s*\()/i);
   assert.match(h,/https:\/\/finalvestige\.com\/focus\//);
@@ -78,6 +78,21 @@ function validate(x){
  assert.match(x.renderer,/ffmpeg/);
  assert.match(x.renderer,/No consumer claims/);
  // The timecodes are all in strict VTT format HH:MM:SS.mmm and contiguous.
+ const approvedCaptions=Object.freeze([
+  'Twelve minutes is an amount of time—not a measured benefit.',
+  'A listener may feel calmer. That experience deserves respect.',
+  'But a free timer, a guided voice, and expectation can all matter.',
+  'The 2023 EEG review found mixed results for binaural-beat entrainment.',
+  'It did not test Zen12 Premium or prove twelve minutes equals sixty.',
+  'Compare the format with a free session. Record what you noticed.',
+  'Read the evidence and the terms before deciding to purchase.'
+ ]);
+ const actualCueTexts=x.vtt.trim().split(/\n\n/).slice(1).map(block=>block.trim().split('\n').slice(1).join('\n'));
+ assert.deepEqual(actualCueTexts,approvedCaptions,'seven approved cue texts must be exact');
+ const rendererCueSection=x.renderer.match(/captions=\[([\s\S]*?)\]\s*def tt\(/);
+ assert.ok(rendererCueSection,'renderer includes canonical caption source');
+ const rendererTexts=[...rendererCueSection[1].matchAll(/^'([^']*)',?\s*$/gm)].map(m=>m[1]);
+ assert.deepEqual(rendererTexts,approvedCaptions,'renderer caption text must match independently approved copy');
  const ranges=[...x.vtt.matchAll(/^(\d{2}):(\d{2}):(\d{2})\.(\d{3}) --> (\d{2}):(\d{2}):(\d{2})\.(\d{3})$/gm)];
  const clock=([h,m,s,ms])=>{assert.ok(+m<60&&+s<60&&+ms<1000);return +h*3600000+ +m*60000+ +s*1000+ +ms};
  assert.ok(x.vtt.startsWith('WEBVTT\n\n'));
@@ -103,6 +118,12 @@ const cases=[
  ['injected tracking',o=>o.b=o.b.replace('</body>','<script src="https://example.org/tracker.js"></script></body>')],
  ['new newsletter form',o=>o.hub=o.hub.replace('</body>','<form><input type="email"></form></body>')],
  ['forced playback',o=>o.b=o.b.replace('</body>','<video autoplay></video></body>')],
+ ['forced playback in BOTH variants',o=>{for(const k of ['a','b'])o[k]=o[k].replace('</body>','<video autoplay></video></body>')}],
+ ['forced playback in HUB',o=>o.hub=o.hub.replace('</body>','<video autoplay></video></body>')],
+ ['audio added to hub',o=>o.hub=o.hub.replace('</body>','<audio controls></audio></body>')],
+ ['remote video source in A',o=>o.a=o.a.replace('</body>','<source src="https://example.com/v.mp4"></body>')],
+ ['captions misleading but same duration',o=>o.vtt=o.vtt.replace('The 2023 EEG review found mixed results','Clinical trials prove all health benefits')],
+ ['renderer changed without matching captions',o=>o.renderer=o.renderer.replace('Compare the format with a free session. Record what you noticed.','Guaranteed to reprogram your brain in twelve minutes.')],
  ['hidden promo destination',o=>o.b=o.b.replace('href="https://finalvestige.com/focus/"','href="https://zen12.com/hnp"')],
  ['A/B copy changed',o=>o.b=o.b.replace('organized library','miracle library')],
  ['caption starts late',o=>o.vtt=o.vtt.replace('00:00:06.000 --> 00:00:12.000','00:00:06.100 --> 00:00:12.000')],
@@ -123,9 +144,10 @@ for(const [name,mutate] of cases){
 console.log(rejected+'/'+cases.length+' unsafe variants REJECTED');
 if(process.env.R257_VIDEO){
  const cp=require('node:child_process');
- const info=JSON.parse(cp.execFileSync('ffprobe',['-v','error','-show_entries','format=duration:stream=width,height,codec_name','-of','json',process.env.R257_VIDEO],{encoding:'utf8'}));
+ const info=JSON.parse(cp.execFileSync('ffprobe',['-v','error','-show_entries','format=duration:stream=width,height,codec_name,codec_type','-of','json',process.env.R257_VIDEO],{encoding:'utf8'}));
  assert.equal(+info.format.duration,42);
- assert.ok(info.streams.some(s=>s.width===540 && s.height===960 && s.codec_name==='h264'));
+ assert.ok(info.streams.some(s=>s.codec_type==='video' && s.width===540 && s.height===960 && s.codec_name==='h264'));
+ assert.equal(info.streams.filter(s=>s.codec_type==='audio').length,0,'silent film must not contain an audio track');
  console.log('LOCAL MP4 PASS · 42.000 seconds · 540×960 H.264 (silent, not live)');
 }
 console.log('SOURCE TESTS ≠ browser a11y/WordPress/merchant checkout/paid commission confirmation.');
