@@ -76,7 +76,11 @@ def _same_path(path: Path, descriptor: os.stat_result, kind: str) -> os.stat_res
 def _flags(base: int) -> int:
     # O_NOFOLLOW is available on POSIX. Windows lacks it, so pre/post lstat
     # comparisons and descriptor identity checks are mandatory on both systems.
-    return base | getattr(os, "O_BINARY", 0) | getattr(os, "O_NOFOLLOW", 0) | getattr(os, "O_CLOEXEC", 0)
+    # A checked regular file can be swapped for a FIFO before os.open():
+    # nonblocking opens prevent both reader and writer hangs in that race.
+    # Regular-file semantics are unchanged; all fstat/path checks still apply.
+    return (base | getattr(os, "O_BINARY", 0) | getattr(os, "O_NOFOLLOW", 0)
+            | getattr(os, "O_CLOEXEC", 0) | getattr(os, "O_NONBLOCK", 0))
 
 
 @_redact_os_errors("Review evidence cannot be read; inspect local input permissions")
