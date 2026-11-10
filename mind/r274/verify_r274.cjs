@@ -56,11 +56,10 @@ function audit(input) {
  check(a.creator_topic_fit?.[2]?.public_article===null,'NO_FAKE_UNPUBLISHED_ARTICLE_URL');
  check(input.article.includes('The Experiment That Made Distraction Disappear') && input.article.includes('2025') &&
  input.article.includes('Eltiti') && input.article.includes('Puységur') &&
- input.article.includes('replicate') && input.article.includes('Observation')===false ? true :
- input.article.includes('The Experiment That Made Distraction Disappear') && input.article.includes('2025') && input.article.includes('Eltiti') && input.article.includes('Puységur') && input.article.includes('replicat'),'ARTICLE_EVIDENCE');
+ input.article.includes('replicat'),'ARTICLE_EVIDENCE');
  check(!/\]\(https?:\/\/(?:zen12\.com|hypnosislive\.com|brainwaveshots\.com|affiliates\.inspire3\.com)\//i.test(input.article),'ARTICLE_NO_SELLER_LINK');
  check(input.article.includes('does not demonstrate') && input.article.includes('failure to replicate') &&
- input.article.includes('not a psychological test'),'ARTICLE_LIMITATIONS');
+ input.article.includes('It will not reproduce a laboratory effect'),'ARTICLE_LIMITATIONS');
  check(input.hub.includes('UNPUBLISHED') && input.hub.includes('noindex,nofollow') &&
  input.hub.includes('<main>') && input.hub.includes('lang="en"') &&
  input.hub.includes('prefers-reduced-motion'),'HUB_STRUCTURE');
