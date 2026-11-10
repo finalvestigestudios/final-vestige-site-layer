@@ -70,4 +70,32 @@ run("malformed ignored threats inventory => HOLD", () => {
   x.scan.ignored_threats={};
   assert.equal(assess(x).status,"HOLD");
 });
-console.log(n + "/16 offline tests passed");
+
+run("impossible Feb 30 change cannot produce false green", () => {
+  const x=baseline(); x.changes[0].date="2026-02-30T01:00:00Z";
+  x.backup.last_backup_when="2026-03-03 02:00:00"; x.scan.last_scan.started_at="2026-03-03T03:00:00Z";
+  assert.equal(assess(x).status,"HOLD");
+});
+run("impossible November 31 rejected", () => {
+  assert.equal(utcMillis("2026-11-31T12:00:00Z"),null);
+});
+run("invalid post-change backup cannot pass", () => {
+  const x=baseline(); x.changes[0].date="2026-02-28T01:00:00Z";
+  x.backup.last_backup_when="2026-02-30 02:00:00"; x.scan.last_scan.started_at="2026-03-03T03:00:00Z";
+  assert.equal(assess(x).status,"HOLD"); assert.equal(assess(x).backup_after_change,false);
+});
+run("invalid post-change scan cannot pass", () => {
+  const x=baseline(); x.changes[0].date="2026-02-28T01:00:00Z";
+  x.backup.last_backup_when="2026-03-03 02:00:00"; x.scan.last_scan.started_at="2026-02-30T03:00:00Z";
+  assert.equal(assess(x).status,"HOLD"); assert.equal(assess(x).scan_after_change,false);
+});
+run("nonleap February 29 rejected", () => {
+  assert.equal(utcMillis("2027-02-29T00:00:00Z"),null);
+});
+run("valid leap day and valid timezone offset accepted", () => {
+  assert.equal(utcMillis("2028-02-29T23:00:00+01:00"),Date.parse("2028-02-29T23:00:00+01:00"));
+});
+run("impossible UTC offset rejected", () => {
+  assert.equal(utcMillis("2026-11-10T12:00:00+14:30"),null);
+});
+console.log(n + "/23 offline tests passed");
