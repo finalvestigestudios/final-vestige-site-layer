@@ -1,0 +1,97 @@
+{
+  "sprint": "R252",
+  "date_utc": "2026-11-10",
+  "state": "DRAFT_UNSENT_NO_SEND_AUTHORIZATION",
+  "parent": {
+    "pr": 1862,
+    "exact_head_sha": "4369446ff110708d9a6bf9f3c251fcf1965605b1"
+  },
+  "original_campaign": {
+    "pr": 175,
+    "head_sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+    "untouched": true,
+    "editorial": 4,
+    "commercial_held": 2,
+    "baseline_python_native": {
+      "passed": 6,
+      "failed": 0,
+      "source_blobs_verified": 8,
+      "manifest_git_blob": "86df98ad8a84e583ff5df64ddbf8c0eaa1335b00",
+      "test_git_blob": "fd7f05e30092a7ec82090993dc5d7d0e23755c8e"
+    }
+  },
+  "hard_counterexamples": [
+    {
+      "input": "same-origin GET form with labeled email and bound button",
+      "predecessor_observed": "FORM_BINDING_VISUALLY_VALID_UNSUBMITTED",
+      "meaning": "visible bound controls do not establish a subscription submission route",
+      "release_bypass": false
+    },
+    {
+      "input": "same-origin POST form with pointer-events:none submit button",
+      "predecessor_observed": "FORM_BINDING_VISUALLY_VALID_UNSUBMITTED",
+      "meaning": "form has unclickable button",
+      "release_bypass": false
+    }
+  ],
+  "exact_committed_source": {
+    "script_sha": "3aa68c16734097b79c045ee8e27e8a9cd847271e",
+    "test_sha": "7f1abd7a3f383862597ae3afd34eb242836016f6"
+  },
+  "regression": {
+    "engine": "native Python 3.13 + Chromium /usr/bin/chromium, Playwright",
+    "test_origin": "offline about:blank with synthetic base",
+    "passed": 18,
+    "failed": 0,
+    "real_production_browser": false,
+    "live_submission": false
+  },
+  "wordpress_read_only": {
+    "as_of_utc": "2026-11-10T08:33:47Z",
+    "newsletter_enabled": true,
+    "auto_send_new_posts": false,
+    "email_format": "full",
+    "welcome_configured": true,
+    "total_counter": 3,
+    "confirmed_counter": 3,
+    "unconfirmed_requests": 2,
+    "subscriber_email_eligibility": "UNKNOWN",
+    "confirmed_welcome_delivery": "NOT_VERIFIED",
+    "physical_address_footer": "NOT_VERIFIED",
+    "working_unsubscribe": "NOT_VERIFIED"
+  },
+  "merchant_and_commerce": {
+    "zen12_email_permission": "NOT_VERIFIED",
+    "total_focus_email_permission": "NOT_VERIFIED",
+    "approved_vetted_live_guide": "NOT_VERIFIED",
+    "issued_earning_url": "NOT_VERIFIED",
+    "independently_settled_paid_orders": "NOT_VERIFIED",
+    "net_revenue_per_1000_qualified_human_sessions": null,
+    "commercial_issues": [
+      "03",
+      "05"
+    ]
+  },
+  "forbidden_actions_performed": {
+    "emails_sent": 0,
+    "test_emails_sent": 0,
+    "signup_submissions": 0,
+    "wordpress_writes": 0,
+    "affiliate_link_activations": 0,
+    "tracking_scripts_added": 0,
+    "subscribers_exported": 0,
+    "published_posts": 0,
+    "paid_services": 0,
+    "pr_merges": 0
+  },
+  "references": [
+    "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/174",
+    "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+    "https://wordpress.com/support/subscribers/",
+    "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business",
+    "https://zen12.com/hnp",
+    "https://zen12.com/secret/"
+  ],
+  "evidence_limit": "Testing proves conservative offline DOM classification only. Neither production browser signup nor provider confirmation/delivered email nor commercial payment was tested.",
+  "founder_final_approval_received": false
+}
