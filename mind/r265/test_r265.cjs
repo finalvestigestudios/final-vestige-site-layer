@@ -64,7 +64,7 @@ function verify(f){
   assert.equal(segments.length,7);
   segments.forEach((match,i)=>{assert.equal(Number(match[1]),i*6);assert.equal(Number(match[2]),(i+1)*6)});
   const expectedLines=['One short session can feel meaningful.','But what did you actually hear?','What does the seller say comes in the package?','What was tested in the actual product?','A mechanism is not a verified result.','Try a free timer before deciding.','Examine the sources, limits and real terms.'];
-  const captionLines=[...f.B.matchAll(/<li data-start="\\d+" data-end="\\d+">\\d+–\\d+s: ([\\s\\S]*?)<\\/li>/g)];
+  const captionLines=[...f.B.matchAll(new RegExp('<li data-start="[0-9]+" data-end="[0-9]+">[0-9]+–[0-9]+s: ([^<]+)</li>','g'))];
   assert.equal(captionLines.length,7,'full caption text count');
   captionLines.forEach((x,i)=>assert.equal(x[1],expectedLines[i],'caption copy remains authorized'));
   const removeFilm=s=>s.replace(/<section class="film"[\s\S]*?<\/section>/,'');
