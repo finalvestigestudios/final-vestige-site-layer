@@ -10,7 +10,7 @@ R257 adds `preparedness/tools/r257_complete_citation_partition_hold.py`, authent
 ### Executed verification (local isolated fixture, byte-identical committed code)
 - `python -I -m unittest discover -s preparedness/tests -p 'test_r257*.py' -q` → **70 / 70 PASS**.
 - `python -m py_compile preparedness/tools/r257_complete_citation_partition_hold.py preparedness/tests/test_r257_complete_citation_partition_hold.py` → PASS.
-- Local executed Git blob SHA: module `adb2353e4d5314df2cd01213292b3f4153aa43d1`, tests `9f5c094dbd17b193ac1f0a3c432da25bbba91351`, both independently re-fetched from GitHub at those exact blob identities.
+- Local executed Git blob SHA: module `df74968de5ee609fa16287a7339cd8262616603c`, tests `77a8109bc90f86f6b7b7b4489a46bfdc6ac6be24`, both independently re-fetched from GitHub at those exact blob identities.
 - R220 Git blob updated; pinned R257 source is rechecked after pipeline audit.
 - **NOT RUN:** full native repository `validate.py`, `build.py`, entire inherited suite, authentic R237→R254→R257 pipeline, actual 41 WordPress-ready exports or browser/print checks. Local environment DNS cannot resolve private GitHub checkout. Synthetic passes **DO NOT** represent authentic source-safety verification, medical-safety review or QD PASS.
 - Zero WordPress/CMS/social/email/analytics/checkout writes.
