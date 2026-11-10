@@ -56,7 +56,7 @@ function checkMarkup(html, commercialRequired) {
 function verify(F){
   const a=F.original,c=F.correction,e=JSON.parse(F.evidence),m=JSON.parse(F.matrix266),p=F.plan;
   const ar=a.trim().split(/\s+/);ok(ar.length>=2000,'distinct substantial source-led investigation');
-  for (const term of ['1987','white bear','1994','2009','five-minute','distracter','not itself a clinical','Puységur','no affiliate recommendation']) ok(a.toLowerCase().includes(term.toLowerCase()),'original missing '+term);
+  for (const term of ['1987','white bear','1994','1996','five-minute','distracter','not itself a clinical','Puységur','no affiliate recommendation']) ok(a.toLowerCase().includes(term.toLowerCase()),'original missing '+term);
   for(const id of ['3612492','8121959','8295117','29040891'])ok(a.includes(id),'original missing primary source '+id);
   ok(!/https?:\/\/(?:zen12|inspire3|hypnosislive|brainwaveshots)\.com/i.test(a),'no seller endorsement link in article');
   ok(c.includes('The old story begins with an artillery officer'),'historical correction retained');
