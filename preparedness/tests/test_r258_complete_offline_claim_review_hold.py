@@ -1,4 +1,5 @@
 """R258 isolated synthetic tests ONLY: do not imply original source or safety approval."""
+import ast
 import copy
 import importlib.util
 from pathlib import Path
@@ -85,6 +86,32 @@ BASE=build_fixture()
 
 
 class TestR258(unittest.TestCase):
+    def test_r220_custody_and_r258_gate_python_parse(self):
+        # A valid standalone R258 module is insufficient if R220 cannot parse.
+        # Parsing is side-effect-free: no native build, WordPress or network.
+        for filename in ('r220_full_slate_draft_custody.py',
+                         'r258_complete_offline_claim_review_hold.py'):
+            path = SRC.parents[1] / 'tools' / filename
+            with self.subTest(filename=filename):
+                ast.parse(path.read_text(encoding='utf-8'), filename=str(path))
+
+    def test_r220_pre_export_integration_guard_is_wired(self):
+        source = (SRC.parents[1] / 'tools' /
+                  'r220_full_slate_draft_custody.py').read_text(encoding='utf-8')
+        self.assertIn("R258_COMPLETE_REVIEW_BLOB = 'ade65322cf347c34bd9f731bbb490ff2bc9fc9f0'", source)
+        self.assertIn('r258.render_full_review(workorders, partition)', source)
+        self.assertIn('if git_blob(safe_read(root, R258_COMPLETE_REVIEW_PATH)) != R258_COMPLETE_REVIEW_BLOB:', source)
+        self.assertLess(source.index('r258.render_full_review(workorders, partition)'),
+                        source.index('postrender_custody_recheck'))
+
+    def test_original_article20_dispute_fixture_is_unique_and_held(self):
+        rows = [row for group in BASE[0]['review_queue']
+                for row in group['workorders']
+                if (row['article_n'], row['citation_ordinal'], row['source_id'])
+                == (20, 55, 'start-ready-plan')]
+        self.assertEqual(len(rows), 1)
+        self.assertIs(rows[0]['disputed_original_citation'], True)
+
     def test_all_citations_rendered_and_accessible(self):
         a=r.render_full_review(*BASE)
         self.assertEqual((a['article_count'],a['citation_occurrences'],a['shared'],a['other']),(35,2000,562,1438))
@@ -181,6 +208,16 @@ mutant('missing_cdc_exception',lambda w,p:w['outside_shared_disputed_workorders'
 mutant('corrupt_cdc_exception',lambda w,p:w['outside_shared_disputed_workorders'][0].__setitem__('authored_context_excerpt','changed'))
 mutant('duplicate_article_slug',lambda w,p:p['unreviewed_nonshared_queue'][-1].__setitem__('article_slug','original-1'))
 mutant('duplicate_outside_cdc_hold',lambda w,p:w['outside_shared_disputed_workorders'].__setitem__(1,copy.deepcopy(w['outside_shared_disputed_workorders'][0])))
-mutant('reclassify_article20_dispute',lambda w,p:w['review_queue'][0]['workorders'][0].__setitem__('disputed_original_citation',True))
+def conceal_original_article20_dispute(workorders, partition):
+    # Change the ACTUAL disputed Ready.gov citation, not an unrelated first row.
+    rows = [row for group in workorders['review_queue']
+            for row in group['workorders']
+            if (row['article_n'], row['citation_ordinal'], row['source_id'])
+            == (20, 55, 'start-ready-plan')]
+    assert len(rows) == 1 and rows[0]['disputed_original_citation'] is True
+    rows[0]['disputed_original_citation'] = False
+
+
+mutant('reclassify_article20_dispute', conceal_original_article20_dispute)
 
 if __name__=='__main__': unittest.main()
