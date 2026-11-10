@@ -42,8 +42,51 @@ def prepare_report_path(report: str | Path, candidate_dir: str | Path) -> Path:
         raise ReportEvidenceError("Invalid evidence destination") from None
 
 
+
+def _write_verified_stage(fd: int, payload: bytes) -> None:
+    """Own the raw fd and prove exact staged report bytes before hardlinking.
+
+    A short write, an incorrect write count, or same-length corruption must
+    never be published as a successful release-gate report. Re-read through
+    the same descriptor after fsync; do not trust the writer's return alone.
+    """
+    try:
+        stream = os.fdopen(fd, "w+b")
+    except BaseException as exc:
+        # fdopen did not assume ownership; a failed adoption must not leak the
+        # private staging handle, including on deliberate system interrupts.
+        try:
+            os.close(fd)
+        except OSError:
+            pass
+        if isinstance(exc, Exception):
+            raise ReportEvidenceError("Could not stage verification evidence safely") from None
+        raise
+    try:
+        with stream:
+            count = stream.write(payload)
+            if type(count) is not int or count != len(payload):
+                raise ReportEvidenceError("Incomplete verification evidence staging")
+            stream.flush()
+            os.fsync(stream.fileno())
+            stream.seek(0)
+            witnessed = stream.read(len(payload) + 1)
+            if type(witnessed) is not bytes or witnessed != payload:
+                raise ReportEvidenceError("Verification evidence staging differs from intended bytes")
+    except ReportEvidenceError:
+        raise
+    except Exception:
+        raise ReportEvidenceError("Could not stage verification evidence safely") from None
+    finally:
+        # with.__enter__ failure does not invoke __exit__; always discharge
+        # ownership even when a wrapper fails during context entry.
+        try:
+            stream.close()
+        except Exception:
+            pass
+
 def publish_report(destination: str | Path, evidence: dict) -> None:
-    """Stage, flush and atomically publish complete UTF-8 JSON without overwrite.
+    """Stage, verify, and atomically publish exact UTF-8 JSON without overwrite.
 
     os.link is exclusive even if another process creates the final path after
     preflight. Both paths are in the same directory. A link-unsupported volume
@@ -57,10 +100,7 @@ def publish_report(destination: str | Path, evidence: dict) -> None:
                               ensure_ascii=True, allow_nan=False) + "\n").encode("utf-8")
         fd, name = tempfile.mkstemp(prefix=".fvs-candidate-report-", suffix=".tmp", dir=parent)
         temporary = Path(name)
-        with os.fdopen(fd, "wb") as stream:
-            stream.write(payload)
-            stream.flush()
-            os.fsync(stream.fileno())
+        _write_verified_stage(fd, payload)
         # Never use rename/replace: those can overwrite previous verification evidence.
         os.link(temporary, destination)
     except (OSError, TypeError, ValueError, OverflowError):
