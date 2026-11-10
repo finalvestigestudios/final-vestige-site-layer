@@ -72,9 +72,11 @@ function fv_ex2_rd_shortcode($atts = array()): string {
 
     // Late shortcode markup can appear after wp_head has already printed styles.
     // Under a CSP that forbids inline styles, emitting <style> fails silently.
-    // Use a single REVIEWED SAME-ORIGIN PLUGIN CSS URL instead, verified against
+    // Use the REVIEWED PLUGIN CSS URL instead, verified against
     // the pinned Git object. A missing/changed stylesheet fails open: the native
     // six-record NASA evidence list stays readable without presentation CSS.
+    // The plugin URL may be cross-origin in CDN installations; if the site CSP
+    // rejects it, source HTML still renders without styling. Never relax CSP.
     // No duplicate link if WordPress already printed the queued stylesheet.
     $head_started = !function_exists('did_action') || did_action('wp_head') > 0;
     if ($head_started && !$fallback_style_emitted && !wp_style_is('fv-ex2-research-desk', 'done')
