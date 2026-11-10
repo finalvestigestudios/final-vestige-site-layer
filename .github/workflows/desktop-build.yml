@@ -785,6 +785,10 @@ jobs:
         run: |
           python -W error -m unittest discover -s products/desktop/tests -p 'test_restored_bundle_open_race_r323.py'
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_restored_bundle_open_race_r323.py'
+      - name: R334 canonical six-app checksum evidence (normal and -OO)
+        run: |
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_canonical_inventory_r334.py'
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_canonical_inventory_r334.py'
       - name: Verify full normal/optimized source provenance and six smokes (R57)
         run: |
           mkdir -p "$RUNNER_TEMP/fvs-source"
@@ -805,6 +809,14 @@ jobs:
       - uses: actions/setup-python@e797f83bcb11b83ae66e0230d6156d7c80228e7c # v6.0.0 (node24)
         with:
           python-version: '3.12'
+      - name: R334 canonical six-app checksum evidence before private Windows packaging
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_canonical_inventory_r334.py'
+          if ($LASTEXITCODE -ne 0) { throw "R334 canonical inventory regression FAILED" }
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_canonical_inventory_r334.py'
+          if ($LASTEXITCODE -ne 0) { throw "R334 optimized canonical inventory regression FAILED" }
       - name: R319 witnessed-vs-compiled premium test source before Windows packaging
         shell: pwsh
         run: |
