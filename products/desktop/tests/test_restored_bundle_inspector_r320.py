@@ -4,6 +4,7 @@ from __future__ import annotations
 import hashlib
 import json
 import os
+import stat
 from pathlib import Path
 import subprocess
 import sys
@@ -95,16 +96,33 @@ class RestoredBundleInspectionR320(unittest.TestCase):
         (self.folder / REPORT).unlink()
         self._hold()
 
+    def _assert_symlink_hold(self, link: Path, target: Path, *, directory=False):
+        # Windows build agents may lack SeCreateSymbolicLinkPrivilege. Exercise
+        # the identical lstat refusal without skipping the security assertion.
+        try:
+            link.symlink_to(target, target_is_directory=directory)
+        except (OSError, NotImplementedError):
+            import scripts.verify_restored_bundle_r320 as module
+            original = module.os.lstat
+            forged = os.stat_result((stat.S_IFLNK | 0o777, 0, 0, 1, 0, 0,
+                                     0, 0, 0, 0))
+            def fake_lstat(path, *args, **kw):
+                return forged if Path(path) == link else original(path, *args, **kw)
+            with patch.object(module.os, "lstat", side_effect=fake_lstat):
+                self._hold() if not directory else self.assertRaisesBundle(link)
+        else:
+            self._hold() if not directory else self.assertRaisesBundle(link)
+
+    def assertRaisesBundle(self, path):
+        with self.assertRaises(BundleHold):
+            inspect_bundle(path)
+
     def test_symlink_file_rejected(self):
         (self.folder / REPORT).unlink()
-        (self.folder / REPORT).symlink_to(self.root / "outside.csv")
-        self._hold()
+        self._assert_symlink_hold(self.folder / REPORT, self.root / "outside.csv")
 
     def test_symlink_folder_rejected(self):
-        link = self.root / "link"
-        link.symlink_to(self.folder, target_is_directory=True)
-        with self.assertRaises(BundleHold):
-            inspect_bundle(link)
+        self._assert_symlink_hold(self.root / "link", self.folder, directory=True)
 
     def test_hardlinked_report_rejected(self):
         os.link(self.folder / REPORT, self.root / "hardlink.csv")
