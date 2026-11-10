@@ -34,7 +34,7 @@ from candidate_guard import (
 from build_inventory import EXPECTED
 from canonical_inventory_r334 import CanonicalInventoryError, parse_canonical_inventory
 from smoke_provenance import SmokeProvenanceError, classify_smoke
-from smoke_runner_r336 import SmokeRunError, run_smoke_checked
+from smoke_runner_r336 import SmokeRunError, run_smoke_checked, select_smoke_runner
 
 
 class GateFailure(ValueError):
@@ -136,9 +136,9 @@ def verify(folder: str | Path, *, smoke: bool = False, runner=None,
 
     recheck_artifacts("initial verification")
     if smoke:
-        if timeout < 1 or timeout > 600:
+        if type(timeout) is not int or not 1 <= timeout <= 600:
             raise GateFailure("Smoke timeout must be between 1 and 600 seconds")
-        launch = runner or subprocess.run
+        launch = select_smoke_runner(runner)
         for record in records:
             recheck_artifacts("pre-smoke")
             exe = root / record["name"]
