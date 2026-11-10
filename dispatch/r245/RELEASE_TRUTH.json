@@ -1,0 +1,95 @@
+{
+  "schema": "fv.dispatch.r245.temporal-consent-readiness.v1",
+  "as_of_utc": "2026-11-10T01:34:04Z",
+  "source_pr": {
+    "campaign": 175,
+    "base_review": 1818,
+    "qa_201": 201,
+    "branch": "dispatch/r245-temporal-source-audit-20261109"
+  },
+  "campaign": {
+    "editorial_issue_ids": [
+      1,
+      2,
+      4,
+      6
+    ],
+    "commercial_issue_ids": [
+      3,
+      5
+    ],
+    "overall": "HOLD_UNSENT",
+    "commercial": "HOLD_MERCHANT",
+    "founder_send_approved": false,
+    "manuscripts_changed": false
+  },
+  "wordpress_read_only": {
+    "site": "https://finalvestige.com",
+    "newsletter_enabled": true,
+    "automatic_new_posts": false,
+    "email_content_format": "full",
+    "dashboard_total": 3,
+    "dashboard_confirmed": 3,
+    "unconfirmed_requests": 2,
+    "suppressed": 0,
+    "counters_additive": false,
+    "email_eligible_recipients": null,
+    "welcome_fieldbook_configured": true,
+    "welcome_received_verified": false,
+    "dispatch_page_published": true,
+    "focus_page_published": true,
+    "dispatch_explicit_commission_notice_in_page_copy": false,
+    "focus_explicit_commission_notice_in_page_copy": true,
+    "physical_address_in_received_email_verified": false,
+    "unsubscribe_in_received_email_verified": false
+  },
+  "merchant": {
+    "offer_candidate": "zen12_premium",
+    "named_publisher_accepted": false,
+    "email_channel_permission_authenticated": false,
+    "account_issued_earning_url_authenticated": false,
+    "published_guide_approved": false,
+    "verified_refund_terms": false,
+    "verified_checkout_total": false,
+    "product_outcomes_independently_established": false
+  },
+  "revenue": {
+    "verified_settled_orders": null,
+    "verified_net_revenue_usd": null,
+    "qualified_human_sessions": null,
+    "net_revenue_per_1000": null,
+    "cohorts_7d_30d": "NOT_COMPUTABLE",
+    "synthetic_fixtures_are_real_results": false
+  },
+  "execution_evidence": {
+    "original_pilot_python_native": "6/6 PASS",
+    "new_native_node": "24/24 PASS",
+    "node_version": "22.16.0",
+    "new_module_git_blob_sha": "04677d1dffbb534211f5085eec041cd9b3d11df2",
+    "new_test_git_blob_sha": "082dfacfe26f28660b31b6524b937493793c06a4",
+    "new_blob_match_local_executed_files": true,
+    "jetpack_native_preview": "NOT_PERFORMED",
+    "received_test_email": "NOT_SENT",
+    "github_actions": "NOT_CLAIMED"
+  },
+  "production_mutation": {
+    "email_sent": false,
+    "test_email_sent": false,
+    "wordpress_modified": false,
+    "subscribers_modified": false,
+    "merchant_link_activated": false,
+    "analytics_modified": false,
+    "money_spent": false,
+    "social_published": false
+  },
+  "references": [
+    "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/174",
+    "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+    "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/175",
+    "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/201",
+    "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/1818",
+    "https://zen12.com/hnp",
+    "https://wordpress.com/support/newsletter/email-appearance/",
+    "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business"
+  ]
+}

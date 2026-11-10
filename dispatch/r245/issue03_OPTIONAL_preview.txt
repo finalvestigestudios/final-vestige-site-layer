@@ -1,0 +1,30 @@
+THE DISPATCH — ISSUE 03 — OPTIONAL SOURCE-ALIGNED REVIEW COPY
+STATUS: UNSENT DRAFT. NOT A SUBSTITUTION FOR ORIGINAL ISSUE 03.
+Subject: Twelve minutes is a format, not a finding
+Preheader: What Zen12 actually offers, what remains unproven, and a no-cost test.
+
+A familiar promise takes twelve minutes: press play, slow down, and return to the day a little steadier. It's appealing because twelve minutes can fit where a longer practice cannot. But a convenient format and a demonstrated result are two different things.
+
+The Zen12 seller describes a Premium program with twelve progressive levels and 48 MP3 recordings, using guided audio, relaxation music, nature sounds and white noise. Those are descriptions of what is advertised. The page also claims that twelve minutes can deliver the benefits of an hour's meditation. That equivalence is the seller's claim, not an independently established outcome for Zen12.
+
+Researchers have studied binaural-beat audio and related brain responses. Those investigations ask narrower questions than whether this particular consumer package reliably improves attention. Evidence about a general sound phenomenon cannot by itself establish the effectiveness of a branded product.
+
+Before paying, try the part that costs nothing. Choose one repeatable twelve-minute quiet interval. Record only three things: whether you began, what interrupted you, and whether the routine felt workable enough to repeat. Do it twice before comparing audio products. Your notes are not a clinical trial; they're a practical check on fit and habit.
+
+If you later consider Zen12, the questions become concrete: which tracks would you use, what device and format work for you, what is the actual checkout total, and what refund restrictions apply? The answers belong in an independent guide with a current source trail—not a claim borrowed from an advertising headline.
+
+PRIMARY CTA — INACTIVE PENDING APPROVAL: Read the independent Zen12 evaluation.
+[[APPROVED_ZEN12_WARMUP_GUIDE_URL_REQUIRED]]
+
+Commercial disclosure (beside prospective CTA): If you buy through a qualifying link in our approved guide, Final Vestige may earn a commission. No purchase is required to use the free Fieldbook; the actual offer and affiliate link remain unapproved.
+
+Sources (not purchase links):
+- Official Zen12 Premium seller offer: https://zen12.com/hnp (format/claims, not outcome proof)
+- Independent research overview of binaural-beat EEG studies: https://pubmed.ncbi.nlm.nih.gov/37205669/ (does NOT test Zen12)
+- FTC endorsement guidance: https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking
+- Final Vestige Editorial Standards: https://finalvestige.com/editorial-standards/
+
+SENDER: Final Vestige Studios.
+PHYSICAL MAILING ADDRESS: [[VALID_POSTAL_ADDRESS_REQUIRED]]
+UNSUBSCRIBE: [[JETPACK_UNSUBSCRIBE_LINK_MUST_BE_VERIFIED]]
+RELEASE: HOLD_UNSENT; HOLD_MERCHANT; FOUNDER_FINAL_APPROVAL_REQUIRED.
