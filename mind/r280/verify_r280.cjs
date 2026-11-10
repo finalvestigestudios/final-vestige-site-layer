@@ -99,7 +99,7 @@ function adversarialTests(files){
  add("video false playable",f=>f.matrix.experiment.media_status="HOSTED_PLAYABLE");
  add("wrong captions",f=>f.B=f.B.replace("00:36–00:42","00:36–00:43"));
  add("poster aria removed",f=>f.B=f.B.replace("<desc","<invaliddesc"));
- add("missing source in manuscript",f=>f.article=f.article.replace("https://pubmed.ncbi.nlm.nih.gov/37205669/",""));
+ add("missing source in manuscript",f=>f.article=f.article.split("https://pubmed.ncbi.nlm.nih.gov/37205669/").join(""));
  add("site publish/indexing",f=>f.A=f.A.replace('content="noindex,nofollow"','content="index,follow"'));
  add("remove draft status",f=>f.B=f.B.replace('data-publication="unpublished"','data-publication="published"'));
  add("CTA text removed",f=>f.A=f.A.replace("Affiliate offer unavailable","Buy now"));
