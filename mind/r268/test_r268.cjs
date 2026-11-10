@@ -151,7 +151,7 @@ function mutations(files){
  add("B loses transcript",f=>f.b=f.b.replace('complete seven-part, 42-second transcript','No transcript provided'));
  add("B changes caption start",f=>f.b=f.b.replace('data-time="12-18"','data-time="13-18"'));
  add("B changes caption end",f=>f.b=f.b.replace('data-time="36-42"','data-time="36-43"'));
- add("B rewrites buyer copy",f=>f.b=f.b.replace("That is a practical preference.","That is a clinically proven outcome."));
+ add("B rewrites buyer copy",f=>f.b=f.b.replace("Zen12 Premium as described by its seller","Zen12 Premium as guaranteed by its seller"));
  add("A adds guaranteed clinical claim",f=>f.a=f.a.replace("</main>","<p>guaranteed healing</p></main>"));
  add("article removes early primary",f=>f.article=f.article.replace(/14450948/g,"MISSING"));
  add("article changes history",f=>f.article=f.article.replace("artillery officer","physician"));
