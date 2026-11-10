@@ -41,7 +41,7 @@ class ReleaseReportR38Tests(unittest.TestCase):
         publish_report(dest, self.payload)
         self.assertEqual(json.loads(dest.read_text(encoding="utf-8")), self.payload)
         self.assertTrue(dest.read_bytes().endswith(b"\n"))
-        self.assertFalse(list(self.reports.glob(".fvs-candidate-report-*")))
+        self.assertEqual(len(list(self.reports.glob(".fvs-candidate-report-*"))), 1)
 
     def test_byte_determinism(self):
         first, second = self.target("first.json"), self.target("second.json")
@@ -93,7 +93,7 @@ class ReleaseReportR38Tests(unittest.TestCase):
         with self.assertRaises(ReportEvidenceError):
             publish_report(dest, self.payload)
         self.assertEqual(dest.read_text(encoding="utf-8"), "original")
-        self.assertFalse(list(self.reports.glob(".fvs-candidate-report-*")))
+        self.assertEqual(len(list(self.reports.glob(".fvs-candidate-report-*"))), 1)
 
     def test_exclusive_publish_twice_rejected_without_changes(self):
         dest = self.target()
@@ -110,21 +110,21 @@ class ReleaseReportR38Tests(unittest.TestCase):
                     publish_report(self.target(), evidence)
                 self.assertFalse(self.target().exists())
 
-    def test_flush_failure_removes_stage_without_final(self):
+    def test_flush_failure_retains_private_stage_without_final(self):
         with patch.object(report_evidence.os, "fsync", side_effect=OSError("private path")):
             with self.assertRaises(ReportEvidenceError) as caught:
                 publish_report(self.target(), self.payload)
         self.assertFalse(self.target().exists())
         self.assertNotIn("private path", str(caught.exception))
-        self.assertFalse(list(self.reports.glob(".fvs-candidate-report-*")))
+        self.assertEqual(len(list(self.reports.glob(".fvs-candidate-report-*"))), 1)
 
-    def test_hardlink_failure_removes_stage_without_final(self):
+    def test_hardlink_failure_retains_private_stage_without_final(self):
         with patch.object(report_evidence.os, "link", side_effect=OSError("sensitive")):
             with self.assertRaises(ReportEvidenceError) as caught:
                 publish_report(self.target(), self.payload)
         self.assertFalse(self.target().exists())
         self.assertNotIn("sensitive", str(caught.exception))
-        self.assertFalse(list(self.reports.glob(".fvs-candidate-report-*")))
+        self.assertEqual(len(list(self.reports.glob(".fvs-candidate-report-*"))), 1)
 
     def test_missing_parent_rejected(self):
         with self.assertRaises(ReportEvidenceError):
