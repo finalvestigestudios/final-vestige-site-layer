@@ -2,7 +2,7 @@
 // Offline, fail-closed external-media source audit; NO HTTP, media downloads or WordPress writes.
 const KEYS=["277:0","277:1","277:2","277:3","277:4","277:5"];
 const AUDIT_PATH="qa/media-recovery/lituya_277_six_usgs_nasa_composite_rights_20261110.json";
-const AUDIT_SHA="66f893e5171ee8a958c2e48f6871a8607249953e";
+const AUDIT_SHA="22b917e632f9429456c0582355f2f912c2ed614b";
 const PREV_SHA="874304f7b77534c336edf79916b6e70c76108d9c";
 const FROZEN_SHA="92a904c8da1ace1f972b2f00adf1a4847dde2b99";
 function verify(a,now,prev,f){
@@ -13,8 +13,9 @@ function verify(a,now,prev,f){
   check(f?.schema==="fv-lituya-277-original-live-source-fixture-v1","live_fixture_schema");
   if(!Array.isArray(a?.rows)||!Array.isArray(now?.rows)||!Array.isArray(prev?.rows)||!Array.isArray(f?.images))return [...errors,"missing_rows"];
   check(a.rows.length===6&&f.images.length===6,"exactly_six_live_sources");
-  check(a.live_wordpress_read_only?.status==="publish"&&a.live_wordpress_read_only?.exact_src_and_alt_match===6,"published_live_source_recheck");
+  check(a.live_wordpress_read_only?.status==="publish"&&a.live_wordpress_read_only?.exact_src_matches_frozen===6&&a.live_wordpress_read_only?.live_alt_captured===6&&a.live_wordpress_read_only?.historical_alt_match_verified===false,"published_live_source_recheck");
   check(a.live_wordpress_read_only?.modified===f.live_modified,"frozen_live_modified");
+  check(a.scope_note?.includes("NOT independently matched")===true,"no_invented_historical_alt_match");
   check(a.frozen_source?.git_blob_sha===FROZEN_SHA&&f.frozen_source_blob_sha===FROZEN_SHA,"frozen_git_anchor");
   check(now.prior_246_register?.blob_sha===PREV_SHA,"previous_register_git_anchor");
   check(now.rows.length===288&&prev.rows.length===288,"288_frozen_slots");
