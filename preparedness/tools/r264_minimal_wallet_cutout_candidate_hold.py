@@ -80,8 +80,8 @@ def inspect(original:bytes,draft:bytes,witness:dict,*,expected_original_blob:str
     if any(x in s.lower() for x in ("<script","<form","{{cite:","{{link:","http:","https:","utm_")):
         raise ValueError("R264 external, commercial or source/citation scope")
     p=Parser();p.feed(s);p.close()
-    if p.stack or p.card!=1 or p.faces!=["Front","Back"] or p.notes!=list(NOTICES)
-        or p.note_owners!=["Front","Back"] or p.extra_notice:
+    if (p.stack or p.card!=1 or p.faces!=["Front","Back"] or p.notes!=list(NOTICES)
+        or p.note_owners!=["Front","Back"] or p.extra_notice):
         raise ValueError("R264 on-card notices or two-face structure")
     if s.count('class="pa-privacy"')!=2 or s.count('class="pa-write"')!=len(FIELDS):
         raise ValueError("R264 unexpected privacy/field count")
