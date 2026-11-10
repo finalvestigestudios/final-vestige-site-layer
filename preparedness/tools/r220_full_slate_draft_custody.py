@@ -163,6 +163,9 @@ R267_WALLET_HTML_PATH = 'audits/r267_responsive_wallet_card_REVIEW_ONLY.html'
 R267_WALLET_HTML_BLOB = '5ae643302faf6bce47e8c507fbcfff9c099eaf00'
 R267_WALLET_RECEIPT_PATH = 'audits/r267_responsive_browser_observation_REVIEW_ONLY.json'
 R267_WALLET_RECEIPT_BLOB = '74dc8e0f9cbb07e6cfd14a2d2dd3b4552239e40f'
+# Repro script is explicit/manual, network-disabled, not run during site build.
+R267_BROWSER_REPRO_PATH = 'tools/r267_reproduce_browser_observation_REVIEW_ONLY.py'
+R267_BROWSER_REPRO_BLOB = '461d97b005de520bbece907d6224f15101abfb2e'
 # R258 binds the complete R254/R257 original source-claim partition to a
 # deterministic, entirely escaped, no-clickable-links offline reviewer view.
 R258_COMPLETE_REVIEW_PATH = 'tools/r258_complete_offline_claim_review_hold.py'
@@ -932,6 +935,8 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
             raise ValueError('R266 browser receipt falsely changed source/safety/release HOLD')
         result['wallet_card_bounded_browser_observation'] = browser_observation
         # A reversible SCREEN-only alternative is not approval for the
+        if git_blob(safe_read(root, R267_BROWSER_REPRO_PATH)) != R267_BROWSER_REPRO_BLOB:
+            raise ValueError('R267 reproduction method changed before held export')
         # existing held tool or proof of physical print/privacy safety.
         r267 = load_frozen_gate(root, R267_WALLET_SCREEN_PATH,
                                 R267_WALLET_SCREEN_BLOB,
@@ -1168,7 +1173,8 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
         for path, expected in (
                 (R267_WALLET_SCREEN_PATH, R267_WALLET_SCREEN_BLOB),
                 (R267_WALLET_HTML_PATH, R267_WALLET_HTML_BLOB),
-                (R267_WALLET_RECEIPT_PATH, R267_WALLET_RECEIPT_BLOB)):
+                (R267_WALLET_RECEIPT_PATH, R267_WALLET_RECEIPT_BLOB),
+                (R267_BROWSER_REPRO_PATH, R267_BROWSER_REPRO_BLOB)):
             if git_blob(safe_read(root, path)) != expected:
                 raise ValueError('R267 screen-only candidate/source receipt changed during audit')
         if git_blob(safe_read(root, R258_COMPLETE_REVIEW_PATH)) != R258_COMPLETE_REVIEW_BLOB:
