@@ -1,0 +1,491 @@
+{
+  "version": "mind-r267-2026-11-10",
+  "status": "BUILT_SOURCE_CONTROLLED_UNPUBLISHED_COMMERCE_HARD_HOLD",
+  "supersedes_nothing": true,
+  "review_context": {
+    "founder_issue": 171,
+    "business_issue": 820,
+    "read_date": "2026-11-10",
+    "new_article": "mind/r267/THE-WHITE-BEAR-IN-THE-ROOM-UNPUBLISHED.md",
+    "canonical_article_hold": "R266 overlaps R254 and R247; see corrective patch; do not publish multiple manuscripts",
+    "buyer_variants": "Reuse mind/r265/ZEN12-A-SOURCED-UNPUBLISHED.html and mind/r265/ZEN12-B-OPTIONAL-FILM-UNPUBLISHED.html; no new duplicate landing page",
+    "video": "Optional R257 42-second locally rendered review film, not hosted or playable",
+    "public_mind_hub": "PR #172 remains owner canonical; do not overwrite",
+    "cms_changes": 0
+  },
+  "sources": [
+    {
+      "id": "P01",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/3612492/",
+      "scope": "1987 white-bear suppression and rebound; distracter condition",
+      "type": "primary study"
+    },
+    {
+      "id": "P02",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/8121959/",
+      "scope": "1994 ironic-process theory, not commercial efficacy",
+      "type": "theory"
+    },
+    {
+      "id": "P03",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/8295117/",
+      "scope": "1993 cognitive-load mood-control experiments",
+      "type": "primary study"
+    },
+    {
+      "id": "P04",
+      "url": "https://www.cambridge.org/core/journals/behavioural-and-cognitive-psychotherapy/article/abs/suppression-of-negative-and-neutral-thoughts/CD650E7ED544A0CB60029D50EF33BC49",
+      "scope": "2009 relevant negative thought versus neutral white bear, abstract level",
+      "type": "study abstract"
+    },
+    {
+      "id": "P05",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29040891/",
+      "scope": "2018 acceptance training RCT; not suppression task or Zen12",
+      "type": "primary study"
+    },
+    {
+      "id": "P06",
+      "url": "https://www.alsace-histoire.org/netdba/puysegur-armand-marie-jacques-marquis-de/",
+      "scope": "Puységur biography: artillery officer",
+      "type": "historical biographical reference"
+    },
+    {
+      "id": "P07",
+      "url": "https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2841242",
+      "scope": "2025 trial detailed endpoint week six P=.04, overall hot flash score trajectory P=.06",
+      "type": "primary RCT full text"
+    },
+    {
+      "id": "P08",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41217756/",
+      "scope": "2025 trial indexed abstract, 250 randomized; not seller product",
+      "type": "primary RCT abstract"
+    },
+    {
+      "id": "S09",
+      "url": "https://inspire3.com/",
+      "scope": "Official supplier product family catalog",
+      "type": "seller description"
+    },
+    {
+      "id": "S10",
+      "url": "https://zen12.com/hnp",
+      "scope": "Zen12 standard package: 12 levels, 48 MP3s; displayed Premium price/refund statements",
+      "type": "seller sales page"
+    },
+    {
+      "id": "S11",
+      "url": "https://zen12.com/secret/",
+      "scope": "Separate Zen12 coupon-framed page; not authenticated checkout terms",
+      "type": "seller promotional page"
+    },
+    {
+      "id": "S12",
+      "url": "https://hypnosislive.com/",
+      "scope": "200+ recordings in seller catalog; assertions not independently proven",
+      "type": "seller sales page"
+    },
+    {
+      "id": "S13",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "scope": "Focus Shot formats/benefit claims; seller-only",
+      "type": "seller sales page"
+    },
+    {
+      "id": "F14",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "scope": "Affiliate material connection disclosure near recommendation",
+      "type": "regulatory guidance"
+    },
+    {
+      "id": "F15",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "scope": "Health claim substantiation, including implied claims",
+      "type": "regulatory guidance"
+    },
+    {
+      "id": "V16",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "scope": "Published historical archive; existing URL",
+      "type": "published first-party"
+    },
+    {
+      "id": "V17",
+      "url": "https://finalvestige.com/focus/",
+      "scope": "Published existing 52-page focus edition and Jetpack path",
+      "type": "published first-party"
+    },
+    {
+      "id": "V18",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "scope": "Published change-blindness article",
+      "type": "published first-party"
+    },
+    {
+      "id": "V19",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "scope": "Published history investigation",
+      "type": "published first-party"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "text": "Original white-bear study included a five-minute suppression instruction and a later rebound contrast",
+      "source_ids": [
+        "P01"
+      ],
+      "status": "SUPPORTED_EXPERIMENT_CONDITIONS"
+    },
+    {
+      "id": "C02",
+      "text": "Original second experiment found a specifically assigned distracter reduced later preoccupation",
+      "source_ids": [
+        "P01"
+      ],
+      "status": "SUPPORTED_EXPERIMENT_CONDITIONS"
+    },
+    {
+      "id": "C03",
+      "text": "Ironic process is a model involving intentional operator and counter-target monitor under load",
+      "source_ids": [
+        "P02",
+        "P03"
+      ],
+      "status": "SUPPORTED_THEORY_SCOPE"
+    },
+    {
+      "id": "C04",
+      "text": "Experiment does not show all thought-control attempts fail or that anyone is hypnotizable by default",
+      "source_ids": [
+        "P01",
+        "P02",
+        "P04"
+      ],
+      "status": "LIMITED_GENERALIZATION"
+    },
+    {
+      "id": "C05",
+      "text": "Neutral white bear and personally relevant negative thoughts may show different patterns",
+      "source_ids": [
+        "P04"
+      ],
+      "status": "STUDY_ABSTRACT_BOUND"
+    },
+    {
+      "id": "C06",
+      "text": "Mindfulness acceptance RCT examined stress reactivity, not a specific merchant recording",
+      "source_ids": [
+        "P05"
+      ],
+      "status": "INDEPENDENT_STUDY_NOT_PRODUCT"
+    },
+    {
+      "id": "C07",
+      "text": "Puységur was an artillery officer, not a physician",
+      "source_ids": [
+        "P06"
+      ],
+      "status": "HISTORICAL_CORRECTION"
+    },
+    {
+      "id": "C08",
+      "text": "2025 hypnosis-audio RCT week-six hot flash score reduction 53.4 vs 40.9 P=.04; separate overall score trajectory P=.06",
+      "source_ids": [
+        "P07",
+        "P08"
+      ],
+      "status": "ENDPOINT_SPECIFIC_NOT_PRODUCT"
+    },
+    {
+      "id": "C09",
+      "text": "Inspire3 officially associates Zen12 Hypnosis Live and Brainwave Shots as product family",
+      "source_ids": [
+        "S09"
+      ],
+      "status": "SELLER_ONLY"
+    },
+    {
+      "id": "C10",
+      "text": "Zen12 Premium seller describes twelve levels and 48 MP3 recordings; contents not independently delivered-tested",
+      "source_ids": [
+        "S10"
+      ],
+      "status": "SELLER_DELIVERY_NOT_AUDITED"
+    },
+    {
+      "id": "C11",
+      "text": "Seller standard and coupon-framed pages present divergent offers; neither verified as authorized affiliate checkout",
+      "source_ids": [
+        "S10",
+        "S11"
+      ],
+      "status": "SELLER_DISPLAY_NOT_VERIFIED_CART"
+    },
+    {
+      "id": "C12",
+      "text": "Zen12 12 minutes equivalent to hour advanced meditation",
+      "source_ids": [
+        "S10",
+        "F15"
+      ],
+      "status": "UNSUBSTANTIATED_SELLER_CLAIM_OMIT"
+    },
+    {
+      "id": "C13",
+      "text": "Hypnosis Live dramatic guaranteed results",
+      "source_ids": [
+        "S12",
+        "F15"
+      ],
+      "status": "UNSUBSTANTIATED_SELLER_CLAIM_OMIT"
+    },
+    {
+      "id": "C14",
+      "text": "Brainwave Shots Focus Shot reliably increases concentration and no risk",
+      "source_ids": [
+        "S13",
+        "F15"
+      ],
+      "status": "UNSUBSTANTIATED_SELLER_CLAIM_OMIT"
+    },
+    {
+      "id": "C15",
+      "text": "Affiliate commission disclosure must identify financial connection close to recommendation",
+      "source_ids": [
+        "F14"
+      ],
+      "status": "REQUIRED_PRE_RELEASE"
+    },
+    {
+      "id": "C16",
+      "text": "Medical psychological claims need appropriately matched, reliable product-specific studies",
+      "source_ids": [
+        "F15"
+      ],
+      "status": "REQUIRED_SUBSTANTIATION"
+    },
+    {
+      "id": "C17",
+      "text": "A publisher's real affiliate acceptance and issued URL are not established by public product pages",
+      "source_ids": [
+        "S09",
+        "S10"
+      ],
+      "status": "UNKNOWN_PARTNER_NOT_APPROVED"
+    },
+    {
+      "id": "C18",
+      "text": "A CTA click or affiliate outbound event is not a completed merchant sale",
+      "source_ids": [
+        "F14"
+      ],
+      "status": "MEASUREMENT_DISTINCTION"
+    },
+    {
+      "id": "C19",
+      "text": "Paid SKU availability, price, final checkout, refunds and confirmed commissions are not established in authenticated merchant data",
+      "source_ids": [
+        "S09",
+        "S10"
+      ],
+      "status": "UNKNOWN_NOT_ZERO"
+    },
+    {
+      "id": "C20",
+      "text": "The existing free Focus resource and published Puységur investigation are verified live navigation targets",
+      "source_ids": [
+        "V16",
+        "V17"
+      ],
+      "status": "LIVE_FIRST_PARTY_ONLY"
+    }
+  ],
+  "gates": [
+    {
+      "id": "named_partner_acceptance",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "written_product_permission",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "approved_social_channels",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "approved_email_channel",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "issued_tracking_url",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "affiliate_terms",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "approved_creatives_rights",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "exact_active_offer",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "cart_total_verified",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "returns_terms_verified",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "fulfillment_verified",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "product_specific_claim_substantiation",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "independent_disclosure_qa",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "first_party_attribution_review",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "verified_paid_merchant_reporting",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "founder_release_approval",
+      "status": "HARD_HOLD",
+      "evidence": null
+    }
+  ],
+  "offer": {
+    "candidate": "Zen12 Premium",
+    "verified_partner_approval": false,
+    "partner_approval_evidence": null,
+    "issued_earning_url": null,
+    "merchant_link_active": false,
+    "commission_terms": null,
+    "real_checkout_total": null,
+    "refund_performance": null,
+    "price_display_notes": "Standard seller page shows a different price frame than coupon seller page as of 2026-11-10. Display is not checkout, not authority to quote discount.",
+    "feature_claim": "Seller advertises 12 levels, 48 MP3s and support/guide elements; exact fulfillment not tested",
+    "benefit_claim": "No product-specific trial authenticated; refrain from efficacy predictions",
+    "eligible_fv_mind_sku": null,
+    "merchant_side_access": false
+  },
+  "privacy_measurement": {
+    "schema_owner": "Claude / Issue #820",
+    "no_new_script": true,
+    "allowed_query_keys": [
+      "utm_source",
+      "utm_medium",
+      "utm_campaign",
+      "utm_content"
+    ],
+    "campaign_event": "campaign_landing",
+    "article_resource_event": "article_to_resource_click",
+    "partner_outbound_event": "affiliate_outbound",
+    "lead_event": "confirmed_signup_only_if_provider_confirmed",
+    "sale_event": "merchant_confirmed_purchase_or_partner_confirmed_commission",
+    "prohibited": [
+      "visitor_ip",
+      "fingerprint",
+      "client_side_commission_inference",
+      "unconsented_cross_site_id"
+    ],
+    "gross_revenue": null,
+    "net_revenue": null,
+    "qualified_human_sessions": null,
+    "net_revenue_per_1000_qualified_human_sessions": null,
+    "cohorts_days": [
+      7,
+      30
+    ],
+    "minimum_sample_warning": true
+  },
+  "experiment": {
+    "status": "DESIGN_ONLY_UNPUBLISHED",
+    "A": "text only",
+    "B": "same buyer copy plus optional 42s captioned original video",
+    "primary_metric": "net_revenue_per_1000_qualified_human_sessions_when_reconciled",
+    "secondary_metrics": [
+      "verified_paid_conversion_rate",
+      "paid_orders",
+      "confirmed_leads",
+      "lead_to_paid_conversion",
+      "outbound_click_diagnostic_only"
+    ],
+    "randomization": "future server-side first-party stable non-identifying 50/50 assignment, only with approval; no JS requirement",
+    "guardrails": [
+      "no autoplay",
+      "no extra email form",
+      "no payment link until 16 gates clear",
+      "no duplicate measurement script",
+      "no conversion claim from click",
+      "no variant tracking that leaks PII"
+    ]
+  },
+  "creator_fit": [
+    {
+      "topic": "Change blindness",
+      "source": "https://doi.org/10.3758/BF03208840",
+      "published_article": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "offer": "Zen12",
+      "fit": "LOW: perception illusion not evidence for audio; free Focus first",
+      "media_asset_id": null,
+      "owner": "Grok/Praxxis validate"
+    },
+    {
+      "topic": "Invisible gorilla / inattentional blindness",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/23863753/",
+      "published_article": null,
+      "offer": "Zen12",
+      "fit": "LOW: published asset match and live article not established; no merchant assertion",
+      "media_asset_id": null,
+      "owner": "Grok/Praxxis validate"
+    },
+    {
+      "topic": "Thought suppression / white bear",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/3612492/",
+      "published_article": null,
+      "offer": "Hypnosis Live or Zen12",
+      "fit": "CONDITIONAL: only editorial bridge from thought regulation to optional buying questions; no therapeutic generalization",
+      "media_asset_id": null,
+      "owner": "Grok/Praxxis validate"
+    }
+  ],
+  "release": {
+    "founder_approved": false,
+    "live": false,
+    "merged": false,
+    "affiliate_active": false,
+    "paid_order_evidence": false,
+    "refunds_fees_reconciled": false
+  }
+}
