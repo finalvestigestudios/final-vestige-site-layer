@@ -1,0 +1,38 @@
+# Dispatch R265 — consent-to-customer measurement without fake sales
+
+**DRAFT / HOLD / UNSENT.** Stacked exclusively on Dispatch R264 draft #1946, exact SHA c7ed9bdd273438219afff9c2623b6bcb82da904c. Founder original #175, readiness #201, frozen homepage #49, WordPress content/settings and subscriber lists are untouched. Mind #171 owns merchant eligibility; Dispatch #174 owns email consent and campaign; Focus #129 owns subscriber journey; conversion #820 owns qualified acquisitions and verified settlements.
+
+## New operational artifact (not another release-gate checklist)
+
+cohort_audit.js is a standalone, **non-sending** and privacy-minimizing cohort/settlement audit prototype. It accepts only daily platform+campaign+asset aggregates, opaque Jetpack provider confirmation event refs, and independently reconciled merchant order summaries with **acquisition days**. Exact allowlisted fields reject raw email, IP, device identifiers, cookie IDs and extra event fields. Duplicate daily aggregates and duplicate merchant settlement references fail; repeat provider confirmation events deduplicate without treating signup attempts as subscribed leads. A Zen12 seller signup is NOT a Final Vestige confirmation.
+
+It separates an **actual acquisition cohort** (date of attributed qualified session) from the false inference that money paid in a particular week originated from visitors in that same week. Only settled transactions linked to the identical original asset+platform+campaign count. The integer-cent calculation subtracts refunds and fees. Dates are UTC; inclusive demonstration windows: 2026-11-04 through 2026-11-10 (7 days) and 2026-10-12 through 2026-11-10 (30 days). Without a vetted cohort attribution or source-complete ledger, computed business metrics remain null, **not zero**. No person-level lead-to-customer rate is inferred.
+
+**All example data in the 40-case native Node regression suite are synthetic.** The library explicitly labels a hypothetical externally supplied report as UNVERIFIED_EXTERNAL_ATTESTATION until someone verifies underlying provider and merchant evidence. It NEVER authorizes a message, subscriber contact, tracking install, purchase, affiliate link, live analytics, publication or campaign release. Source-field boolean flags alone do not constitute authenticated proof.
+
+### Current read-only WordPress and document evidence (2026-11-10 21:41:48 UTC)
+
+Authenticated Jetpack status/configuration: Newsletter enabled, default automatic post emails OFF, content FULL, sender Final Vestige Studios, reply-to no-reply, 52-page Fieldbook welcome **configured** (delivery unverified). Diagnostic total=3, confirmed=3, unconfirmed requests=2, suppressed=0. Five recent posts explicitly never_sent_opted_out. Counts describe distinct populations; eligible recipients **UNKNOWN**. [WordPress subscriber documentation, reviewed Nov 4 2026](https://wordpress.com/support/subscribers/) specifically requires provider filtering **Email subscription → Subscribed** to distinguish email-eligible recipients from Reader followers, pending, paused, bounced or otherwise blocked status. No raw identities accessed or exported.
+
+Live published [Dispatch](https://finalvestige.com/dispatch/) #523 promises archival investigations and free 52-page workbook, but not occasional commission-backed recommendations. Published [Focus](https://finalvestige.com/focus/) #1579 explains possible recommendations with commissions. The promise mismatch needs copy review, not retroactive consent claims. [FV Editorial Standards](https://finalvestige.com/editorial-standards/) #17 require primary sources, correction transparency and independence from advertisers.
+
+Official seller [Zen12 standard](https://zen12.com/hnp) markets twelve-minute audio and a 48-MP3 Premium course; seller-promised “one hour in twelve minutes” and brainwave outcomes are **not independent efficacy proof**. [Zen12 free audio](https://zen12.com/freeaudio) and [seller welcome](https://zen12.com/welcome) expressly indicate enrollment in **Zen12's own newsletter**, not FV's Jetpack list. [Hypnosis Live Total Focus](https://hypnosislive.com/mental-skills/total-focus) describes 33-minute audio and a seller refund representation; previously encountered conflicting prices mean actual approved checkout pricing/terms remain **UNKNOWN**. Affiliate acceptance, email-promotion rights, link, current prices and allowed promotional creative are **unverified**. [FTC CAN-SPAM](https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business) applies according to actual message purpose, with truthful headers/subjects, publisher postal address and functional unsubscribe requirements for qualifying commercial messages.
+
+## OFFER → FUNNEL STEP → BLOCKER → CHANGE / EXPERIMENT → PASS/FAIL EVIDENCE → OWNER
+
+| Offer / stage | Blocker | Change and required PASS evidence | Owner |
+| --- | --- | --- | --- |
+| Zen12 → vetted guide → paid checkout | FV-specific affiliate acceptance, permission to promote by email, verified earning URL and actual approved guide NOT proven | Authenticate named merchant acceptance, channel-specific rules, exact guide, claim boundaries and checkout. **HOLD** | Mind & Affiliate #171 |
+| Focus → actual confirmed subscriber | Headline subscriber counts do not identify eligible recipients, welcome receipt unproven | Private provider aggregate Email subscription=Subscribed, double-opt-in provenance, consent scope, securely authorized received welcome inspection. No raw emails in GitHub. **UNKNOWN** | Focus #129 / Claude |
+| Dispatch → compliant inbox | No received footer, valid FV business mailing address or tested opt-out | Separately authorized native WordPress preview and actual received-MIME/opt-out inspection. **HOLD** | Dispatch #174 / Site QA |
+| Grok social → qualified Focus visitor | No authenticated live platform asset ID + actual mobile click route + source-to-session match | Confirm one already published asset's immutable asset ID, rights, link surface, and existing utm_source=actual_platform;utm_medium=organic_social;utm_campaign=cluster_pilot_2026_11;utm_content=verified_asset_id contract. No duplicate scripts. **UNKNOWN** | Grok / Praxxis / Claude #820 |
+| Merchant sale → realized net revenue | No reconciled, independently authenticated paid order attribution, refunds/fees | Verify settlement with acquisition cohort matching source asset and net paid commission. Do not count clicks, pending checkout or partner email signups as sales. **NOT COMPUTABLE** | Commerce #820 / Praxxis |
+
+A single confirmed_signup must be emitted only for independently evidenced **Jetpack-confirmed, email-eligible FV Dispatch subscription**, deduped by provider event reference. Without consented person-level connection to a checkout, lead_to_customer_rate remains UNKNOWN even if aggregates are available. Do not create a new subscriber list or install scripts.
+
+## Validation and release status
+
+- New source-controlled JS engine and **40 native Node synthetic tests**, including payout arithmetic, 7/30-day acquisition windows, null-vs-zero behavior, false claims of permission, unknown keys/PII, merchant-list separation, duplicate settlement rejection, and lead deduplication.
+- A passing synthetic test is **code QA only**, not a verified conversion, Jetpack email, subscriber consent or revenue finding.
+- Current source snapshot records release attestations **false** and business KPIs **null**.
+- Six original issues stay HOLD_UNSENT; offers 03 and 05 remain HOLD_MERCHANT. Founder final approval was not given. No mails (including tests), live pages, posts, settings, subscribers, merchant links, analytics, social distribution, payments or spending changed.
