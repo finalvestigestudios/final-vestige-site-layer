@@ -17,12 +17,16 @@ from urllib.parse import urlsplit
 from playwright.sync_api import sync_playwright
 
 TITLE = "The Levee They Blew on Purpose"
-IMAGES = (
-    "1927-caernarvon-levee-explosion-noaa-archive.jpg",
-    "poydras-artificial-crevasse-1927-april30-loc.jpg",
-    "emile-riche-1927-flood-claim-lou-block-1939-loc.jpg",
-    "mississippi-flood-1927-apr29-national-photo-company.jpg",
-)
+# WordPress media IDs are more reliable than exact file basenames: WP may serve
+# a srcset-resized image whose currentSrc differs from the Gutenberg src.
+MEDIA = {
+    "2148": {"stem": "1927-caernarvon-levee-explosion-noaa-archive", "credits": ("NOAA",)},
+    "2255": {"stem": "poydras-artificial-crevasse-1927-april30-loc", "credits": ("Library of Congress", "LOC")},
+    "2202": {"stem": "emile-riche-1927-flood-claim-lou-block-1939-loc", "credits": ("Library of Congress", "LOC")},
+    "2149": {"stem": "mississippi-flood-1927-apr29-national-photo-company", "credits": ("Library of Congress", "LOC", "National Photo Company")},
+}
+EXPECTED_SOURCES = 39
+EXPECTED_EVIDENCE_ROWS = 10
 
 def capture(page, locator, out):
     try:
@@ -45,29 +49,48 @@ def inspect(page, width, out):
     except Exception:
         raise RuntimeError("Unable to load authorized draft; preview URL withheld.") from None
     page.wait_for_timeout(1400)
-    if TITLE.lower() not in page.locator("body").inner_text(timeout=12000)[:8000].lower():
-        raise RuntimeError("Wrong post, login screen, or missing authenticated draft content.")
+    article = page.locator("article").first
+    if not article.count() or TITLE.lower() not in page.locator("h1").first.inner_text(timeout=12000).lower():
+        raise RuntimeError("Not the intended post's frontend preview; login/editor screen rejected.")
+    if not article.locator("h2#sources").count():
+        raise RuntimeError("Sources anchor absent from post: wrong preview or incomplete rendering.")
 
     page.screenshot(path=str(out / f"{width}-top.png"), animations="disabled")
-    pics = page.locator("figure.wp-block-image img")
+    pics = article.locator("figure.wp-block-image img")
     photo_results = []
     for i in range(pics.count()):
         el = pics.nth(i)
         try:
             el.scroll_into_view_if_needed(timeout=7000)
             el.evaluate("(img) => img.decode().catch(() => null)")
-            info = el.evaluate("""el => ({name:(el.currentSrc||el.src).split('/').pop().split('?')[0],
-              src:el.currentSrc||el.src, alt:el.alt||'', loaded:el.complete && el.naturalWidth>0,
-              width:el.naturalWidth,height:el.naturalHeight})""")
-            info["caption"] = bool(el.locator("xpath=ancestor::figure[1]/figcaption").count())
+            info = el.evaluate("""el => ({
+              src:el.getAttribute('src')||'', currentSrc:el.currentSrc||el.src,
+              alt:el.getAttribute('alt')||'', loaded:el.complete && el.naturalWidth>0,
+              width:el.naturalWidth,height:el.naturalHeight,
+              wpMediaId:(el.className.match(/wp-image-(\\d+)/)||[])[1]||null})""")
+            caption = el.locator("xpath=ancestor::figure[1]/figcaption")
+            info["captionText"] = caption.first.inner_text(timeout=3000)[:600] if caption.count() else ""
             photo_results.append(info)
         except Exception:
             photo_results.append({"load_error": True})
-    found = {filename: any(filename in x.get("src", "") for x in photo_results)
-             for filename in IMAGES}
-    photo_ok = all(found.values()) and all(
-        i.get("loaded") and i.get("alt") and i.get("caption") for i in photo_results
-    )
+    found = {}
+    for mid, rec in MEDIA.items():
+        matching = [x for x in photo_results if x.get("wpMediaId") == mid or
+                    rec["stem"] in x.get("src", "") or rec["stem"] in x.get("currentSrc", "")]
+        found[mid] = bool(len(matching) == 1 and matching[0].get("loaded") and
+                          matching[0].get("alt") and
+                          any(credit.lower() in matching[0].get("captionText", "").lower()
+                              for credit in rec["credits"]))
+    # The editor sets _jetpack_hide_featured_image=true, but the live template
+    # could still duplicate the cover outside the article; check the whole DOM.
+    hero_duplicates = page.locator('img[src*="1927-caernarvon-levee-explosion-noa"]').count()
+    photo_ok = all(found.values()) and len(photo_results) == 4
+    sources = article.locator("h2#sources").first
+    source_list = sources.locator("xpath=following-sibling::ul[1]")
+    source_count = source_list.locator(":scope > li").count() if source_list.count() else 0
+    chart_count = article.locator("figure.fv-evidence-chart").count()
+    footer_count = page.locator("footer").count()
+    header_count = page.locator("header").count()
     table = page.locator("figure:has(table)").first
     table_stats = None
     if table.count():
@@ -87,7 +110,11 @@ def inspect(page, width, out):
     checks = {
         "no_page_wide_horizontal_overflow": overflow <= 2,
         "all_four_local_archival_photos_loaded_credited_and_alt": photo_ok,
-        "evidence_table_10_rows_including_header": bool(table_stats and table_stats["rows"] == 10),
+        "evidence_table_10_rows_including_header": bool(table_stats and table_stats["rows"] == EXPECTED_EVIDENCE_ROWS),
+        "source_bibliography_39_entries": source_count == EXPECTED_SOURCES,
+        "original_compensation_figure_present": chart_count == 1,
+        "site_header_and_footer_present": bool(header_count and footer_count),
+        "no_duplicate_lead_image": hero_duplicates == 1,
         "responsive_table_scrolls_inside_figure": bool(table_stats and (
             width > 500 or (
                 table_stats["scrollWidth"] > table_stats["clientWidth"]
@@ -113,8 +140,10 @@ def inspect(page, width, out):
             captures[label] = name
     return {"viewport": width, "checks": checks, "document": page_stats,
             "overflowPx": overflow, "evidenceTable": table_stats,
-            "archivalImages": photo_results, "captured": captures,
-            "consoleErrorCount": len(console_errors), "uncaughtJsErrorCount": len(page_errors)}
+            "bibliographyEntryCount": source_count, "archivalImageChecks": found,
+            "archivalImages": photo_results, "featuredImageOccurrences": hero_duplicates,
+            "captured": captures, "consoleErrorCount": len(console_errors),
+            "uncaughtJsErrorCount": len(page_errors)}
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
@@ -154,6 +183,8 @@ def main():
     print("Local screenshots + inspection.json generated for both viewport widths.")
     for item in result["viewports"]:
         print(item["viewport"], item["checks"])
+    if not all(all(item["checks"].values()) for item in result["viewports"]):
+        print("One or more automated checks FAILED; manual QA and defect resolution required.")
     print("Release status: MANUAL_EDITOR_REVIEW_REQUIRED. No secrets, preview URL or cookies stored.")
 
 if __name__ == "__main__":
