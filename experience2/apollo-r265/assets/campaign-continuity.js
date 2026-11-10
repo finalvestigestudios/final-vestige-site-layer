@@ -1,4 +1,4 @@
-/* Apollo R265: opt-in, staging-only internal campaign continuity. No events, cookies, network or storage. */
+/* Apollo R265: STAGING ONLY — validated DOM handoff hints, no internal UTM links or analytics. */
 (() => {
   'use strict';
   const destination = 'https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/';
@@ -26,10 +26,15 @@
       if (!root || document.querySelectorAll('.fv-apollo-atlas').length !== 1) return;
       const links = [...root.querySelectorAll('a[href]')].filter(link => link.href === destination);
       if (links.length !== 1 || !links[0].closest('#fv-apollo-reading-bridge')) return;
-      const url = new URL(destination);
-      for (const key of keys) url.searchParams.set(key, params[key]);
-      links[0].href = url.href;
-    } catch (_) { /* Attribution fails open: the original free investigation link still works. */ }
+      // Never add UTMs to internal navigation: event-scoped attribution could be distorted.
+      const link = links[0];
+      if (Object.keys(link.dataset).some(key => key.startsWith('fvApolloCampaign'))) return;
+      link.dataset.fvApolloCampaignSource = params.utm_source;
+      link.dataset.fvApolloCampaignMedium = params.utm_medium;
+      link.dataset.fvApolloCampaignName = params.utm_campaign;
+      link.dataset.fvApolloCampaignAsset = params.utm_content;
+      link.dataset.fvApolloCampaignStatus = 'unverified';
+    } catch (_) { /* The original free investigation link is always unchanged. */ }
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', enhance, { once: true });
   else enhance();
