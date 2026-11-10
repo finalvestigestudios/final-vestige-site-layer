@@ -789,6 +789,10 @@ jobs:
         run: |
           python -W error -m unittest discover -s products/desktop/tests -p 'test_canonical_inventory_r334.py'
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_canonical_inventory_r334.py'
+      - name: R335 non-destructive checksum publication evidence (10 tests, normal and -OO)
+        run: |
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_inventory_no_rollback_r335.py'
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_inventory_no_rollback_r335.py'
       - name: Verify full normal/optimized source provenance and six smokes (R57)
         run: |
           mkdir -p "$RUNNER_TEMP/fvs-source"
@@ -817,6 +821,14 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R334 canonical inventory regression FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_canonical_inventory_r334.py'
           if ($LASTEXITCODE -ne 0) { throw "R334 optimized canonical inventory regression FAILED" }
+      - name: R335 Windows candidate manifest preservation before packaging (normal and -OO)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_inventory_no_rollback_r335.py'
+          if ($LASTEXITCODE -ne 0) { throw "R335 manifest preservation regression FAILED" }
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_inventory_no_rollback_r335.py'
+          if ($LASTEXITCODE -ne 0) { throw "R335 optimized manifest preservation regression FAILED" }
       - name: R319 witnessed-vs-compiled premium test source before Windows packaging
         shell: pwsh
         run: |

@@ -105,8 +105,8 @@ def build_inventory(candidate_dir: str | Path) -> str:
     """Publish one canonical inventory only if all six source images stay stable.
 
     The completed seven-file bundle STILL requires release_gate.verify() and real
-    Windows smoke tests. A failed post-publication check removes only our own
-    just-created inventory (best effort, inode-checked), never another file.
+    Windows smoke tests. A failed post-publication check preserves the linked
+    inventory for human review; pathname rollback has a check/delete race.
     """
     stage: Path | None = None
     published_identity: tuple[int, int] | None = None
@@ -134,10 +134,9 @@ def build_inventory(candidate_dir: str | Path) -> str:
             raise InventoryBuildError("Staged checksum inventory differs from canonical evidence")
         if _fingerprints(root) != original:
             raise InventoryBuildError("Candidate binaries changed during inventory build")
-        # Anchor rollback to the verified staging inode BEFORE publication.
-        # Capturing target identity after os.link leaves a failure window: an
-        # lstat error strands our new manifest, and an intervening replacement
-        # can be mistaken for ours (and potentially deleted during rollback).
+        # Pin the staging inode identity BEFORE publication. A successful
+        # os.link must expose this exact inode; never assume that an observed
+        # pathname still refers to the inode after the check.
         staged_info = stage.lstat()
         if not stat.S_ISREG(staged_info.st_mode) or staged_info.st_nlink != 1:
             raise InventoryBuildError("Inventory staging identity changed")
@@ -163,18 +162,10 @@ def build_inventory(candidate_dir: str | Path) -> str:
                 stage.unlink(missing_ok=True)
             except OSError:
                 pass
-        # A filesystem wrapper may create the hardlink and then raise before
-        # returning. In that case no post-link flag can have been set. On ANY
-        # failed publication attempt, inspect the target against the inode we
-        # recorded before calling os.link. Never remove a foreign replacement.
-        if sys.exc_info()[0] is not None and published_identity is not None:
-            try:
-                info = target.lstat()
-                if (info.st_dev, info.st_ino) == published_identity and stat.S_ISREG(info.st_mode):
-                    target.unlink()
-            except OSError:
-                pass
-
+        # Never auto-unlink a published SHA256SUMS path after a failed build.
+        # Even an inode check followed by unlink has a race: another local
+        # writer can replace the path between those operations. Keep evidence
+        # for explicit operator review, and require a NEW clean folder/retry.
 
 def _membership_with_stage(root: Path, stage: Path) -> None:
     _membership_staged = list(root.iterdir())
