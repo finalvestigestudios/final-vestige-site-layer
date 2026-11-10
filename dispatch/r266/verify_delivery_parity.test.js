@@ -53,7 +53,9 @@ const mutations=[
  ["missing founder gate",s=>delete s.evidence.founder_final_send_approval],
  ["missing address gate",s=>delete s.evidence.postal_address_render],
  ["non-PDF welcome",s=>s.newsletter.welcome_pdf_url="https://finalvestige.com/wp-content/uploads/a.png"],
- ["incomplete positive proof",s=>s.evidence.received_welcome={proof_id:"fvproof-confirm-00001234"}]
+ ["incomplete positive proof",s=>s.evidence.received_welcome={proof_id:"fvproof-confirm-00001234"}],
+ ["nested subscriber identifier",s=>s.media.subscriber_id="private"],
+ ["nested raw message",s=>s.evidence.received_welcome.raw_message="private"]
 ];
 for(const [name,fn] of mutations)check("fail closed: "+name,()=>{
   const s=clone();fn(s);const result=audit(s);
