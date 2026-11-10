@@ -1,0 +1,430 @@
+{
+  "schema": "fv.mind.commercial_evidence.r261.v1",
+  "date": "2026-11-09",
+  "status": "UNPUBLISHED_HARD_HOLD",
+  "partner_verified": false,
+  "affiliate_link_authorized": false,
+  "commercial_activation": false,
+  "live_experiment": false,
+  "confirmed_paid_orders": null,
+  "confirmed_affiliate_commissions": null,
+  "net_revenue_per_1000_qualified_human_sessions": null,
+  "sources": [
+    {
+      "id": "SCI01",
+      "type": "primary_research",
+      "url": "https://doi.org/10.1002/acp.3068",
+      "access": "publisher abstract",
+      "scope": "Nees and Phillips, contextual framing and voice-report experiment, 2014 online/2015 print"
+    },
+    {
+      "id": "SCI02",
+      "type": "primary_research",
+      "url": "https://doi.org/10.1371/journal.pone.0274595",
+      "access": "open full study",
+      "scope": "Williams and Blagrove 2022, 61 analyzed, between-group nonreplication with narrower within-group effect"
+    },
+    {
+      "id": "SCI03",
+      "type": "primary_research",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/6444985/",
+      "access": "indexed abstract",
+      "scope": "Ganong 1980, lexical bias in controlled phonetic categorization"
+    },
+    {
+      "id": "SCI04",
+      "type": "primary_research",
+      "url": "https://doi.org/10.1111/j.1467-9280.1991.tb00112.x",
+      "access": "journal abstract",
+      "scope": "Greenwald et al 1991, 237 historic tape users, no claimed improvement"
+    },
+    {
+      "id": "SCI05",
+      "type": "primary_research",
+      "url": "https://doi.org/10.1207/s15324834basp1503_3",
+      "access": "publisher abstract",
+      "scope": "Pratkanis et al 1994, historic subliminal audiotapes and expectation"
+    },
+    {
+      "id": "MER01",
+      "type": "official_merchant_catalog",
+      "url": "https://inspire3.com/",
+      "access": "live publicly visible as of 2026-11-09",
+      "scope": "seller's brand descriptions, not verified efficacy"
+    },
+    {
+      "id": "MER02",
+      "type": "official_exact_offer",
+      "url": "https://zen12.com/hnp",
+      "access": "live publicly visible as of 2026-11-09",
+      "scope": "Premium package, advertised $87.99 on standard page, seller refund representation"
+    },
+    {
+      "id": "MER03",
+      "type": "official_distinct_offer",
+      "url": "https://zen12.com/secret/",
+      "access": "live publicly visible as of 2026-11-09",
+      "scope": "promotional coupon $37, different phrasing, not proven eligible"
+    },
+    {
+      "id": "MER04",
+      "type": "official_public_affiliate_portal",
+      "url": "https://affiliates.inspire3.com/",
+      "access": "public only; no signed-in publisher evidence",
+      "scope": "program exists; no named FV acceptance"
+    },
+    {
+      "id": "LAW01",
+      "type": "regulatory_guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "access": "published FTC guidance",
+      "scope": "clear conspicuous affiliate relationship near link"
+    },
+    {
+      "id": "LAW02",
+      "type": "regulatory_guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "access": "published FTC guidance",
+      "scope": "product-specific adequate support for efficacy claims"
+    },
+    {
+      "id": "FV01",
+      "type": "published_first_party",
+      "url": "https://finalvestige.com/focus/",
+      "access": "public page observed 2026-11-09",
+      "scope": "existing Seven Day Focus Fieldbook; no new signup stack"
+    },
+    {
+      "id": "FV02",
+      "type": "published_first_party",
+      "url": "https://finalvestige.com/explore/",
+      "access": "public page observed 2026-11-09",
+      "scope": "Puységur archive linked and described as 153 source rows and 16 dossiers"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "text": "Contextual priming increased voice-reporting in Nees and Phillips experiment",
+      "classification": "independent_study_supported_within_scope",
+      "source_ids": [
+        "SCI01"
+      ],
+      "approved_for_article": true,
+      "approved_for_product_efficacy": false
+    },
+    {
+      "id": "C02",
+      "text": "The 2022 study replicated a simple overall between-group priming increase",
+      "classification": "not_supported_contradicted_by_source",
+      "source_ids": [
+        "SCI02"
+      ],
+      "approved_for_article": false,
+      "approved_for_product_efficacy": false
+    },
+    {
+      "id": "C03",
+      "text": "The 2022 study found a narrower within-primed-group EVP-versus-degraded-speech contrast",
+      "classification": "independent_study_supported_within_scope",
+      "source_ids": [
+        "SCI02"
+      ],
+      "approved_for_article": true,
+      "approved_for_product_efficacy": false
+    },
+    {
+      "id": "C04",
+      "text": "Lexical knowledge influenced judgments in Ganong's controlled acoustic continua",
+      "classification": "independent_study_supported_within_scope",
+      "source_ids": [
+        "SCI03"
+      ],
+      "approved_for_article": true,
+      "approved_for_product_efficacy": false
+    },
+    {
+      "id": "C05",
+      "text": "1991 historic subliminal audiotapes did not produce advertised memory/self-esteem changes",
+      "classification": "independent_study_supported_historic_only",
+      "source_ids": [
+        "SCI04"
+      ],
+      "approved_for_article": true,
+      "approved_for_product_efficacy": false
+    },
+    {
+      "id": "C06",
+      "text": "1994 historic audiotape improvement perceptions tended to track labels",
+      "classification": "independent_study_supported_historic_only",
+      "source_ids": [
+        "SCI05"
+      ],
+      "approved_for_article": true,
+      "approved_for_product_efficacy": false
+    },
+    {
+      "id": "C07",
+      "text": "Any present-day Inspire3 product is proved ineffective by the historic trials",
+      "classification": "not_supported_wrong_product_extrapolation",
+      "source_ids": [
+        "SCI04",
+        "MER01"
+      ],
+      "approved_for_article": false,
+      "approved_for_product_efficacy": false
+    },
+    {
+      "id": "C08",
+      "text": "Zen12 Premium standard sales page advertises 48 MP3s, 12 levels, four styles",
+      "classification": "verified_seller_description_not_fulfillment",
+      "source_ids": [
+        "MER02"
+      ],
+      "approved_for_article": true,
+      "approved_for_product_efficacy": false
+    },
+    {
+      "id": "C09",
+      "text": "Standard Zen12 page displayed $87.99 and distinct promotion displayed $37 coupon on 2026-11-09",
+      "classification": "seller_display_only_checkout_unknown",
+      "source_ids": [
+        "MER02",
+        "MER03"
+      ],
+      "approved_for_article": true,
+      "approved_for_product_efficacy": false
+    },
+    {
+      "id": "C10",
+      "text": "Either Zen12 advertised price is the final actual FV-authorized purchaser charge",
+      "classification": "unverified_checkout",
+      "source_ids": [
+        "MER02",
+        "MER03"
+      ],
+      "approved_for_article": false,
+      "approved_for_product_efficacy": false
+    },
+    {
+      "id": "C11",
+      "text": "Zen12 provides one hour's meditation benefit in twelve minutes",
+      "classification": "unsubstantiated_product_efficacy_seller_promise",
+      "source_ids": [
+        "MER02",
+        "LAW02"
+      ],
+      "approved_for_article": false,
+      "approved_for_product_efficacy": false
+    },
+    {
+      "id": "C12",
+      "text": "Zen12 refund guarantee is proven honored for FV referred customers",
+      "classification": "unverified_merchant_fulfillment",
+      "source_ids": [
+        "MER02"
+      ],
+      "approved_for_article": false,
+      "approved_for_product_efficacy": false
+    },
+    {
+      "id": "C13",
+      "text": "Inspire3 accepts FV as a publisher and permits website, TikTok, and Dispatch email referrals",
+      "classification": "unverified_partner_authorization",
+      "source_ids": [
+        "MER04"
+      ],
+      "approved_for_article": false,
+      "approved_for_product_efficacy": false
+    },
+    {
+      "id": "C14",
+      "text": "A public affiliate portal can establish named acceptance/issued URL/payout",
+      "classification": "not_supported",
+      "source_ids": [
+        "MER04"
+      ],
+      "approved_for_article": false,
+      "approved_for_product_efficacy": false
+    },
+    {
+      "id": "C15",
+      "text": "FTC affiliate disclosures belong plainly near recommendations and commission links",
+      "classification": "supported_regulatory_guidance",
+      "source_ids": [
+        "LAW01"
+      ],
+      "approved_for_article": true,
+      "approved_for_product_efficacy": false
+    },
+    {
+      "id": "C16",
+      "text": "Proven treatment, cognitive enhancement or financial returns from a product",
+      "classification": "prohibited_absent_product_specific_evidence",
+      "source_ids": [
+        "LAW02",
+        "MER01"
+      ],
+      "approved_for_article": false,
+      "approved_for_product_efficacy": false
+    },
+    {
+      "id": "C17",
+      "text": "A CTA click establishes an affiliate commission or paid order",
+      "classification": "prohibited_false_conversion_inference",
+      "source_ids": [
+        "MER04",
+        "LAW01"
+      ],
+      "approved_for_article": false,
+      "approved_for_product_efficacy": false
+    },
+    {
+      "id": "C18",
+      "text": "The existing Focus page is a live first-party editorial resource path",
+      "classification": "first_party_page_verified_signup_delivery_unverified",
+      "source_ids": [
+        "FV01"
+      ],
+      "approved_for_article": true,
+      "approved_for_product_efficacy": false
+    }
+  ],
+  "authorization_gates": [
+    {
+      "id": "named_partner_account_acceptance",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "exact_approved_product_offer",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "account_issued_earning_url",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "website_channel_permission",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "organic_social_channel_permission",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "email_channel_permission",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "allowed_promotion_and_creatives",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "attribution_cookie_and_terms",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "exact_checkout_total_and_currency",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "refund_policy_and_support_verified",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "commission_report_access",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "settlement_and_reversal_rules",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "claim_support_or_removal",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "adjacent_disclosure_and_accessibility_QA",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "signed_out_mobile_destination_QA",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "founder_commercial_release_approval",
+      "status": "HARD_HOLD",
+      "evidence": null
+    }
+  ],
+  "release_boundaries": {
+    "cms_write": false,
+    "site_nav_write": false,
+    "live_link_enable": false,
+    "newsletter_send": false,
+    "new_tracking_script": false,
+    "merge_or_deploy": false
+  },
+  "offer_candidates": [
+    {
+      "offer": "Zen12 Premium",
+      "fit": "12-minute meditation-audio buyer; high-intent compared with free timer",
+      "exact_offers": [
+        "https://zen12.com/hnp",
+        "https://zen12.com/secret/"
+      ],
+      "price_status": "conflicting_seller_displays_not_authenticated",
+      "commercial_status": "HARD_HOLD"
+    },
+    {
+      "offer": "Subliminal Guru category",
+      "fit": "auditory pareidolia and subliminal evidence; not a tested product",
+      "exact_offer_url": null,
+      "commercial_status": "RESEARCH_ONLY"
+    },
+    {
+      "offer": "FV-owned paid Mind SKU",
+      "fit": "needs actual rights-cleared sellable Payhip listing",
+      "exact_offer_url": null,
+      "commercial_status": "NOT_AUTHENTICATED"
+    }
+  ],
+  "measurement_contract": {
+    "source_parameters": [
+      "utm_source",
+      "utm_medium",
+      "utm_campaign",
+      "utm_content"
+    ],
+    "asset_id_status": "unverified",
+    "event_classes": [
+      "qualified_human_session",
+      "landing_visit",
+      "contextual_cta_click",
+      "confirmed_subscriber",
+      "affiliate_outbound_click",
+      "merchant_confirmed_order",
+      "partner_confirmed_paid_affiliate_conversion",
+      "refund",
+      "fees",
+      "realized_net_revenue"
+    ],
+    "privacy": "No email, IP, full referrer query or other direct identifiers in custom reporting; use existing analytics only; no new live instrumentation without consent and Claude/founder approval.",
+    "seven_and_thirty_day_cohorts": "report denominator, segment, confirmed paid amounts and tiny samples; missing denominators remain null, never zero"
+  }
+}
