@@ -57,7 +57,7 @@ assert(/STATIC POSTER/.test(film)&&/No hosted video/.test(film)&&!/<(?:video|ifr
 for(let i=0;i<7;i++){const a=String(i*6).padStart(2,'0'),z=String((i+1)*6).padStart(2,'0');assert(film.includes('00:'+a+'–00:'+z),'caption interval '+i);}
 const commercial = h => h.split('<section aria-labelledby="commerce">')[1]?.split('</section>')[0];
 assert(commercial(A)===commercial(B),'identical commercial decisions, A and B');
-for(const x of ['HARD HOLD','affiliate_outbound_click','merchant_confirmed_paid_order','refunded','360','390','768','1440','no-JS'])assert(plan.includes(x),'plan missing '+x);
+for(const x of ['HARD HOLD','affiliate_outbound_click','merchant_confirmed_paid_order','refunds','360','390','768','1440','no-JS'])assert(plan.includes(x),'plan missing '+x);
 return true;
 }
 function load(){return {article:get(names.article),matrix:get(names.matrix),A:get(names.A),B:get(names.B),plan:get(names.plan)};}
