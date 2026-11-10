@@ -20,6 +20,7 @@ function inspection(input){
   if (!keys(input,['schema','mode','as_of_day','attestations','sessions','confirmations','settlements']))
     return {pass:false,errors:['invalid_top_level'],state:'HOLD_UNSENT',cohorts:null};
   if (input.schema!==SCHEMA || !['synthetic','external_aggregate'].includes(input.mode) || !dateValid(input.as_of_day)) add('schema_mode_or_date');
+  if(errors.length) return {pass:false,errors,state:'HOLD_UNSENT',cohorts:null};
   const at=input.attestations;
   const required=['complete_qualified_sessions','jetpack_confirmations_verified','merchant_settlements_reconciled','cohort_attribution_verified','publisher_postal_and_unsubscribe_verified','partner_email_permission_verified','founder_campaign_approval'];
   if (!keys(at,required) || required.some(k=>typeof at?.[k]!=='boolean')) add('missing_attestations');
