@@ -115,6 +115,11 @@ R253_SOURCE_CONTEXT_BLOB = '4456a15606a3787b348cc4d540a2ea40299a0ee5'
 # Its output remains review-only; every release, medical and QD HOLD persists.
 R254_READABLE_WORKORDERS_PATH = 'tools/r254_readable_claim_workorders_hold.py'
 R254_READABLE_WORKORDERS_BLOB = '76d5030cd774c1474e2d0b69510045ed404fe8fd'
+# R255 authenticates the R254 source workorders and builds a self-contained,
+# HTML-escaped OFFLINE HUMAN REVIEW surface in memory; no source URL clicks,
+# CMS exports, source approval, merchant links or WordPress publication.
+R255_REVIEW_SURFACE_PATH = 'tools/r255_offline_source_review_surface_hold.py'
+R255_REVIEW_SURFACE_BLOB = 'c53e9a6a690a826562500a88a3b1fac2597b2604'
 # These are independently observed R219 integration Git blobs, not certified text.
 # Missing entries MUST match the older R200 original exactly.
 INTEGRATED_DIFFS = {
@@ -541,6 +546,27 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
                     'publication_authorized'))):
             raise ValueError('R254 human-readable 562-citation review docket HARD HOLD drift')
         result['shared_source_readable_claim_workorders'] = workorders
+        r255 = load_frozen_gate(root, R255_REVIEW_SURFACE_PATH,
+                                R255_REVIEW_SURFACE_BLOB,
+                                'fv_preparedness_r255_offline_review_surface',
+                                ('audit_offline_review', 'render_offline_review'))
+        offline_review = r255.audit_offline_review(workorders)
+        if (offline_review.get('schema') != r255.SCHEMA
+                or offline_review.get('state') != HOLD
+                or offline_review.get('source_review_groups') != 32
+                or offline_review.get('review_workorders') != 562
+                or offline_review.get('unmatched_citations_unreviewed') != 1438
+                or offline_review.get('original_disputes_visible') != 3
+                or type(offline_review.get('source_url_triage_labels')) is not dict
+                or type(offline_review.get('potential_url_alias_pairs_to_review')) is not int
+                or not re.fullmatch('[0-9a-f]{64}', offline_review.get('offline_review_sha256', ''))
+                or offline_review.get('offline_review_utf8_bytes', 0) <= 10000
+                or any(offline_review.get(k) is not False for k in (
+                    'source_support_verified', 'independent_qd_pass',
+                    'medical_safety_verified', 'merchant_approved',
+                    'publication_authorized'))):
+            raise ValueError('R255 offline source-review surface HARD HOLD drift')
+        result['unpublished_offline_source_review_surface'] = offline_review
         # R237's simple tag/attribute regex can mistake '>' inside a quoted
         # attribute or HTML comment for the end of markup. Verify source-level
         # visibility separately with an independently pinned quote-aware lexer.
@@ -858,6 +884,8 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
             raise ValueError('R253 source-context join gate changed during audit')
         if git_blob(safe_read(root, R254_READABLE_WORKORDERS_PATH)) != R254_READABLE_WORKORDERS_BLOB:
             raise ValueError('R254 readable claim review gate changed during audit')
+        if git_blob(safe_read(root, R255_REVIEW_SURFACE_PATH)) != R255_REVIEW_SURFACE_BLOB:
+            raise ValueError('R255 offline reviewer surface guard changed during audit')
         result['reconciliation'] = {'frozen_articles': 35,
                                     'integrated_changes_held_for_review': sum(
                                         x['changed_since_original'] for x in status),
