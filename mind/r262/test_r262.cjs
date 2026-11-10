@@ -79,7 +79,7 @@ function validate(b){
 }
 function mutationTests(input){
  const cases=[];
- const change=(label,field,from,to)=>{const x={...input};x[field]=x[field].replace(from,to);if(x[field]===input[field])throw Error("ineffective mutation "+label);cases.push([label,x]);};
+ const change=(label,field,from,to)=>{const x={...input};x[field]=x[field].split(from).join(to);if(x[field]===input[field])throw Error("ineffective mutation "+label);cases.push([label,x]);};
  change("broken headline science", "article","47.0 seconds","47 sec");
  change("missing review","article","https://pubmed.ncbi.nlm.nih.gov/2034749/","MISSING");
  change("merchant in investigation","article","## The simple answer that is not simple",'[Get Zen12](https://zen12.com/hnp)\n\n## The simple answer that is not simple');
