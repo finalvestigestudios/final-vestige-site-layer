@@ -1,0 +1,28 @@
+/* FV Apollo Evidence Atlas R255. Staging-only; apply AFTER sealed R238, R253 and R254 CSS.
+   Three source-comparison answer-guide cross-references were 22px high at 320-1920px.
+   Keep NASA provenance, historical text and the only free investigation CTA untouched. */
+.fv-apollo-atlas .fv-apollo-confidence-answer a[href^="#fv-apollo-"] {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  max-width: 100%;
+  padding-block: .55rem;
+  vertical-align: middle;
+  overflow-wrap: anywhere;
+  text-underline-offset: .18em;
+}
+@media (forced-colors: active) {
+  .fv-apollo-atlas .fv-apollo-confidence-answer a[href^="#fv-apollo-"]:focus-visible {
+    outline: 3px solid Highlight;
+    outline-offset: 2px;
+  }
+}
+@media print {
+  /* Preserve inline source bibliography / punctuation, without touch UI spacing. */
+  .fv-apollo-atlas .fv-apollo-confidence-answer a[href^="#fv-apollo-"] {
+    display: inline;
+    min-height: 0;
+    padding: 0;
+    vertical-align: baseline;
+  }
+}
