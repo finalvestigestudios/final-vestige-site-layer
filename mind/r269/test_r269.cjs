@@ -106,7 +106,7 @@ function fixtures(f){
   ["a",'https://finalvestige.com/focus/','https://example.org/a'],["b",'https://finalvestige.com/focus/','https://example.org/b'],
   ["b",'source-controlled R257 WebVTT text','some other screenplay']
  ])add("replace "+k+" "+rx,o=>o[k]=o[k].replace(rx,to));
- for(const key of ["a","b","hub"])add("Enable "+key+" exact CTA",o=>o[key]=o[key].replace(/<button\\b[^>]*\\bid=["']zen12-buy-button["'][^>]*>/i,tag=>tag.replace(/\\sdisabled(?=\\s|>)/i,"")));
+ for(const key of ["a","b","hub"])add("Enable "+key+" exact CTA",o=>o[key]=o[key].replace(/<button\b[^>]*\bid=["']zen12-buy-button["'][^>]*>/i,tag=>tag.replace(/\sdisabled(?=\s|>)/i,"")));
  for(const [name,element] of [
  ["script","<script>alert(1)</script>"],["form","<form><input></form>"],["merchant","<a href=https://zen12.com/secret/>Go</a>"],
  ["jsURL",'<a href="javascript:alert(1)">Go</a>'],["handler",'<div onclick="alert(1)">test</div>'],
