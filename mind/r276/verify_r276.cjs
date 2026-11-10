@@ -77,8 +77,8 @@ function validate(b){
  assert(!/(?:awin1\.com|clickbank|hop=|affid=|affiliate_id=|[?&]ref=|utm_|fbclid=|gclid=|pixel)/i.test(b.html),'unauthorized tracking or affiliate token');
  const allowed=['finalvestige.com','zen12.com','inspire3.com','doi.org','ftc.gov'];
  assert(links.filter(x=>/^https:\/\//.test(x)).every(x=>allowed.includes((x.match(/^https:\/\/([^/]+)/i)||[])[1].replace(/^www\./,''))),'unreviewed outbound URL');
- assert(b.html.includes('Evidence before expectation'),'poster concept deleted');
- assert(b.variantA.includes('disabled')&&b.variantB.includes('disabled'),'inherited A/B purchase controls changed');
+ assert((b.html.match(/Evidence before expectation/g)||[]).length>=2,'poster concept deleted');
+ assert(/<button[^>]*\\sdisabled\\b/i.test(b.variantA)&&/<button[^>]*\\sdisabled\\b/i.test(b.variantB),'inherited A/B purchase controls changed');
  assert(b.variantA.includes('Prospective affiliate disclosure:')&&b.variantB.includes('Prospective affiliate disclosure:'),'inherited A/B disclosure absent');
  return {source_count:m.sources.length,claims:m.claims.length,held_gates:m.commercial_gates.length,source_links:links.length,merchant_source_only:true,public_activation:false};
 }
@@ -102,7 +102,7 @@ function selfTest(b) {
  ['secondButton',x=>{x.html+='\n<button>Buy now</button>'}],['removeDisclosure',x=>{x.html=x.html.replace('If you purchase through a future authorized link','N/A')}],
  ['injectClickbank',x=>{x.html+='\n<a href="https://zen12.com/?hop=fake">Buy</a>'}],['newSeller',x=>{x.html+='\n<a href="https://merchant.example/c">Buy</a>'}],
  ['removeFocus',x=>{x.html=x.html.replace('https://finalvestige.com/focus/','https://example.org/')}],['newInput',x=>{x.html+='\n<input type=email>'}],
- ['removeMediaCSS',x=>{x.html=x.html.replace('@media(max-width:390px)','/* noop */')}],['removePoster',x=>{x.html=x.html.replace('Evidence before expectation','no')}],
+ ['removeMediaCSS',x=>{x.html=x.html.replace('@media(max-width:390px)','/* noop */')}],['removePoster',x=>{x.html=x.html.replaceAll('Evidence before expectation','no')}],
  ['removeA',x=>{x.variantA=x.variantA.replace('disabled','required')}],['removeB',x=>{x.variantB=x.variantB.replace('Prospective affiliate disclosure:','No disclosure')}]
  ];
  let rejected=0,ineffective=[];
