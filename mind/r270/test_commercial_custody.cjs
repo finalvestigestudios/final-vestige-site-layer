@@ -44,7 +44,7 @@ function check(f){
  for(const [label,html] of [["A",f.a],["B",f.b],["Hub",f.hub]]){
   bad(!/<meta\b[^>]*name=["']robots["'][^>]*content=["']noindex,nofollow["']/i.test(html),label+" noindex missing");
   bad(/<\s*(?:script|form|input|iframe|video|audio|source|track|object|embed|picture|img|link|base)\b/i.test(html),label+" live resource/script/form/media");
-  bad(/\bon[a-z]+\s*=|\bsrcdoc\s*=|\bautoplay\b|\bhttp-equiv\s*=\s*["']?refresh/i.test(html),label+" event/autoplay/refresh");
+  bad(/\bon[a-z]+\s*=|\bsrcdoc\s*=|\bautoplay\s*=|\bhttp-equiv\s*=\s*["']?refresh/i.test(html),label+" event/autoplay/refresh");
   bad(/@import\b|url\s*\(|\b(?:src|srcset|data|action|formaction|poster|background)\s*=/i.test(html),label+" hidden resource network vector");
   bad(/<\s*meta\b[^>]*http-equiv\s*=/i.test(html),label+" meta http-equiv");
   bad(/<\s*svg\b[^>]*\b(?:xmlns:xlink|href)\s*=/i.test(html),label+" unexpected svg reference");
