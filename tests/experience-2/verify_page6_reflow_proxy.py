@@ -7,6 +7,7 @@ represent actual browser zoom, WordPress/Assembler, live image fetches or WCAG
 certification. No network or CMS writes.
 """
 import importlib.util
+import os
 import json
 from pathlib import Path
 from playwright.sync_api import sync_playwright
@@ -28,7 +29,7 @@ def main():
              'SIMULATED ASSEMBLER SHELL — NOT WORDPRESS</header>')
     results = []
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True, args=["--no-sandbox"])
+        browser = p.chromium.launch(executable_path=os.environ.get("CHROMIUM_EXECUTABLE", "/usr/bin/chromium"), headless=True, args=["--no-sandbox"])
         for width in WIDTHS:
             for direction in DIRECTIONS:
                 for js in (False, True):
