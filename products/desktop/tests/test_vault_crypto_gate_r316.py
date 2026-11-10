@@ -11,6 +11,7 @@ import sys
 import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 from scripts.vault_crypto_gate_r316 import IntegrationHold, REQUIRED, execute_gate
 
@@ -71,11 +72,15 @@ class VaultCryptoGateR316Tests(unittest.TestCase):
         self.assertEqual((stdout.getvalue(), stderr.getvalue()), ("", ""))
 
     def test_synthetic_symlinked_source_refused(self):
-        elsewhere = self.directory / "elsewhere.txt"
-        elsewhere.write_text("import unittest\n", encoding="utf-8")
-        (self.directory / self.name).symlink_to(elsewhere)
-        with self.assertRaises(IntegrationHold):
-            self.check()
+        # Windows CI commonly disallows creating real symlinks for unprivileged
+        # users. Simulate an observed link without platform privilege or skips.
+        self.write("import unittest\nclass Synthetic(unittest.TestCase):\n def test_a(self): pass\n def test_b(self): pass\n")
+        actual_is_symlink = Path.is_symlink
+        def observed_link(path):
+            return path.name == self.name or actual_is_symlink(path)
+        with patch.object(Path, "is_symlink", observed_link):
+            with self.assertRaises(IntegrationHold):
+                self.check()
 
     def test_synthetic_missing_second_module_blocks_before_first_runs(self):
         marker = self.directory / "marker"
