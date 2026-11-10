@@ -24,7 +24,15 @@ const failures=[
  ['url_replaced',d=>d.oversized_media[0].original_url='https://elsewhere.example/impostor.jpg'],
  ['rights_approved',d=>d.oversized_media[0].derivative_authorized=true],
  ['wrong_inline_total',d=>d.methodology.inline_referenced_original_storage_bytes=1],
- ['forged_first_party_fix',d=>d.release.wordpress_writes=1]
+ ['forged_first_party_fix',d=>d.release.wordpress_writes=1],
+ ['false_retriever_status',d=>d.p0_queue[0].retriever_only.wrapper_code=200],
+ ['fake_catalog',d=>d.p0_queue[0].catalog_candidate_url='https://example.org/fake.jpg'],
+ ['forged_catalog_rights',d=>d.p0_queue[0].rights_observation='CLEARED'],
+ ['media_rights_swap',d=>d.oversized_media[0].rights_observation='PUBLIC_DOMAIN'],
+ ['media_native_dimensions_swap',d=>d.oversized_media[0].native_px=[1500,999]],
+ ['media_inline_post_swap',d=>d.oversized_media[0].inline_post_ids=[12345]],
+ ['media_generated_subsize_swap',d=>d.oversized_media[0].generated_subsizes=0],
+ ['media_runtime_source_swap',d=>d.oversized_media[0].published_direct_srcs=['https://example.org/fake.jpg']]
 ];
 for(const [name,mutate] of failures){const d=clone();mutate(d);assert.equal(validate(d).pass,false,'forged manifest accepted: '+name);}
 console.log('PASS '+(failures.length+1)+'/'+(failures.length+1)+' offline handoff integrity cases (1 positive, '+failures.length+' negative)');
