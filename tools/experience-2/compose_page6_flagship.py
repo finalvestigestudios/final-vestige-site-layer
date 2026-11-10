@@ -134,6 +134,14 @@ def stage_payload(source_dir: Path, pin: bool = True) -> str:
     focus_rail = ('<div class="fv-hf__focus-rail" aria-label="Free reader resource">'
                   + source_ctas[0] + '</div>')
     content = content[:masthead.start()] + focus_rail + content[masthead.end():]
+    # WordPress owns public navigation. The founder's visual-direction picker
+    # is a design-study control, not a reader-facing homepage component.
+    # Retain all three directions in pinned JS, selectable in private preview.
+    studio = re.compile(r'<div class="fv-hf__studio"[^>]*>.*?</details>\\s*</div>', re.S)
+    studios = list(studio.finditer(content))
+    if len(studios) != 1 or any(content.count('data-fv-direction-choice="'+d+'"') != 1 for d in ('dossier', 'museum', 'observatory')):
+        raise AdmissionError('missing, duplicate or altered preview-only art-direction controls')
+    content = content[:studios[0].start()] + content[studios[0].end():]
     if content.count('<div class="fv-hf" data-fv-home-flagship') != 1:
         raise AdmissionError('expected exactly one original flagship wrapper')
     content = content.replace('<div class="fv-hf" data-fv-home-flagship',
@@ -194,6 +202,21 @@ def stage_payload(source_dir: Path, pin: bool = True) -> str:
         body = parts[filename]
         if '</script' in body.lower() or '<!-- /wp:' in body.lower():
             raise AdmissionError('unsafe JS token in ' + filename)
+        if filename == 'flagship.js':
+            # Case switching cannot require preview-only controls. Preserve
+            # pinned standalone JS exactly; adapt only this scoped WP payload.
+            updates = (
+                ('if (!group || !status || !directionGroup ||', 'if (!group || !status ||'),
+                ('directionGroup.hidden = true;', 'if (directionGroup) directionGroup.hidden = true;'),
+                ('directionGroup.hidden = false;', 'if (directionGroup) directionGroup.hidden = false;'),
+                ('if (choice && directionGroup.contains(choice)) {', 'if (choice && directionGroup && directionGroup.contains(choice)) {'),
+                ('if (!DIRECTIONS.every((id) => directionButtons.some((b) => b.dataset.fvDirectionChoice === id))) {',
+                 'if (directionGroup && !DIRECTIONS.every((id) => directionButtons.some((b) => b.dataset.fvDirectionChoice === id))) {'),
+            )
+            for original, replacement in updates:
+                if body.count(original) != 1:
+                    raise AdmissionError('preview control/source JS contract changed: ' + original)
+                body = body.replace(original, replacement, 1)
         scripts.append('<script data-fv-source="' + filename + '">\n' + body + '\n</script>')
     return ('\n<!-- FVS EX2: OFFLINE REVIEW-ONLY SINGLE-BLOCK COMPOSITION; NOT FOR PUBLICATION -->\n'
             + content.strip() + '\n<style data-fv-source="experience-2.0">\n'
