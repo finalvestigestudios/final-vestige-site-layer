@@ -154,7 +154,8 @@ def prepare(workorders: dict, partition: dict) -> tuple[list[dict], dict]:
         by_article[n].append((category, r, url))
         if (n, o, r['source_id']) in DISPUTES:
             disputes.add((n, o, r['source_id']))
-    hold(set(by_article) == set(range(1, 36)), 'not all 35 articles represented')
+    hold(set(by_article) == set(range(1, 36)) and len(set(slugs.values())) == 35,
+         'not all 35 uniquely identified articles represented')
     for n, entries in by_article.items():
         hold([r['citation_ordinal'] for _, r, _ in entries] ==
              list(range(1, len(entries) + 1)),
@@ -163,6 +164,9 @@ def prepare(workorders: dict, partition: dict) -> tuple[list[dict], dict]:
     # Bind R254 independent CDC exceptions to the exact OTHER contexts.
     ext = workorders.get('outside_shared_disputed_workorders')
     hold(type(ext) is list and len(ext) == 2, 'outside-shared CDC exceptions missing')
+    hold({(x.get('article_n'), x.get('citation_ordinal'), x.get('source_id'))
+          for x in ext if type(x) is dict} == DISPUTES - {(20, 55, 'start-ready-plan')},
+         'two unique outside-shared CDC original disputes required')
     for row in ext:
         key, r = checked_entry(row, shared=True)
         hold(key in coverage and coverage[key][0] == 'OTHER',
