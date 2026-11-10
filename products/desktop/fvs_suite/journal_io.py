@@ -14,6 +14,7 @@ import stat
 from typing import Callable
 
 from .csv_snapshot import _same_path_descriptor_signature
+from .journal_write_receipt import require_exact_append_readback
 
 
 def _redact_os_errors(message: str):
@@ -137,7 +138,9 @@ def append_verified_event(path: str | Path, data: bytes, limit: int,
         first = None
     if first is not None:
         _regular(first, limit, "Review journal")
-    flags = os.O_WRONLY | os.O_APPEND
+    # Read access is necessary to verify the exact just-written bytes on
+    # the SAME descriptor, before reporting successful review custody.
+    flags = os.O_RDWR | os.O_APPEND
     if first is None:
         flags |= os.O_CREAT | os.O_EXCL
     descriptor = os.open(target, _flags(flags), 0o600)
@@ -175,6 +178,7 @@ def append_verified_event(path: str | Path, data: bytes, limit: int,
         _regular(ending, limit, "Review journal")
         if ending.st_size != verified.st_size + len(data):
             raise ValueError("Review journal size changed during append")
+        require_exact_append_readback(descriptor, verified.st_size, data)
         # A pathname can still refer to the same inode after a rival writer
         # grows or rewrites it between final fstat and lstat. Compare the
         # observed pathname metadata with the pinned descriptor snapshot;
