@@ -83,9 +83,28 @@ $scan = function($blocks) use (&$scan, &$names) {
     }
 };
 $scan($blocks);
-// Page 6's existing external CTA is root-relative; check that actual button,
-// not any absolute Focus link in the replaceable flagship.
-$focus_action_valid = preg_match('~<section\b[^>]*class="fv-focus-cta"[^>]*>.*?<a\b[^>]*class="fv-focus-cta__button"[^>]*href="(?:/focus/|https://finalvestige\.com/focus/)"[^>]*>.*?</section>~is', $raw) === 1;
+// Fail closed on the original Focus CTA in a NON-FLAGSHIP Gutenberg HTML
+// block. The standalone seven-chapter payload must never satisfy this gate.
+preg_match_all('~<!-- wp:html -->(.*?)<!-- /wp:html -->~s', $raw, $chunk_matches);
+$outside_chunks = array();
+$flagship_count = 0;
+foreach ($chunk_matches[1] as $chunk) {
+    if (strpos($chunk, 'data-fv-home-flagship') !== false) {
+        $flagship_count++;
+    } else {
+        $outside_chunks[] = $chunk;
+    }
+}
+$outside = implode("\n", $outside_chunks);
+$focus_sections = array();
+preg_match_all('~<section\b[^>]*class="(?=[^"]*\bfv-focus-cta\b)[^"]+"[^>]*>(.*?)</section>~is', $outside, $focus_sections);
+$focus_action_valid = false;
+if (count($chunk_matches[1]) === EXPECTED_HTML && $flagship_count === 1 && count($focus_sections[1]) === 1) {
+    $focus_actions = array();
+    preg_match_all('~<a\b(?=[^>]*\bclass="[^"]*\bfv-focus-cta__button\b)[^>]*\bhref="([^"]+)"[^>]*>~is', $focus_sections[1][0], $focus_actions);
+    $focus_href = count($focus_actions[1]) === 1 ? html_entity_decode($focus_actions[1][0], ENT_QUOTES, 'UTF-8') : '';
+    $focus_action_valid = $focus_href === '/focus/' || $focus_href === 'https://finalvestige.com/focus/';
+}
 if (count($blocks) !== EXPECTED_TOP || count(array_filter($names, fn($x) => $x === 'core/html')) !== EXPECTED_HTML ||
     count(array_filter($names, fn($x) => $x === 'jetpack/subscriptions')) !== 1 ||
     substr_count($raw, 'class="fv-margin-strip__item') !== 72 ||
