@@ -775,6 +775,12 @@ jobs:
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_restored_external_witness_r322.py'
           python -W error -m unittest discover -s products/desktop/tests -p 'test_restored_journal_canonical_r323.py'
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_restored_journal_canonical_r323.py'
+      - name: R324 source-bound premium journal framing (unit and integration, normal and -OO)
+        run: |
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_review_line_framing_r324.py'
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_review_line_framing_r324.py'
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_review_line_framing_integration_r324.py'
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_review_line_framing_integration_r324.py'
       - name: Verify full normal/optimized source provenance and six smokes (R57)
         run: |
           mkdir -p "$RUNNER_TEMP/fvs-source"
@@ -823,6 +829,18 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R323 canonical audit JSONL FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_restored_journal_canonical_r323.py'
           if ($LASTEXITCODE -ne 0) { throw "R323 optimized canonical audit JSONL FAILED" }
+      - name: R324 premium journal LF custody before Windows packaging
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_review_line_framing_r324.py'
+          if ($LASTEXITCODE -ne 0) { throw "R324 framing unit FAILED" }
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_review_line_framing_r324.py'
+          if ($LASTEXITCODE -ne 0) { throw "R324 optimized framing unit FAILED" }
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_review_line_framing_integration_r324.py'
+          if ($LASTEXITCODE -ne 0) { throw "R324 premium review reader integration FAILED" }
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_review_line_framing_integration_r324.py'
+          if ($LASTEXITCODE -ne 0) { throw "R324 optimized premium review reader integration FAILED" }
       - name: Fail closed on CI artifact paths before packaging (R41)
         run: python products/desktop/ci_artifact_policy.py .github/workflows/desktop-build.yml
       - name: Verify mandatory two-mode CI source gate (R57)
