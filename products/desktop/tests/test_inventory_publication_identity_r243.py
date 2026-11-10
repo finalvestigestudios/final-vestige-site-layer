@@ -1,4 +1,4 @@
-"""R243: post-link manifest inode custody and fail-closed rollback.
+"""R243: post-link manifest inode custody and non-destructive failed-build evidence.
 
 Synthetic non-executable bytes only. Exercises real temporary files and links,
 never builds, executes or distributes a Windows binary.
@@ -49,11 +49,11 @@ class ManifestPublicationIdentityR243(unittest.TestCase):
         with patch.object(Path, "lstat", autospec=True, side_effect=wrapped):
             with self.assertRaises(inv.InventoryBuildError) as caught:
                 inv.build_inventory(self.root)
-        self.assertEqual(len(seen), 2, "must retry lstat in identity-gated rollback")
+        self.assertEqual(len(seen), 1, "no pathname-based rollback lstat")
         self.assertNotIn(str(self.root), str(caught.exception))
         self.assertNotIn("secret", str(caught.exception))
         self.assertIsNone(caught.exception.__cause__)
-        self.assertFalse(self.target.exists(), "failed build left a published manifest")
+        self.assertTrue(self.target.is_file(), "preserve failed-build evidence")
         self.assert_sources_unchanged()
 
     def test_postlink_lstat_permission_error_rolls_back_only_own_manifest(self):
@@ -81,8 +81,8 @@ class ManifestPublicationIdentityR243(unittest.TestCase):
         with patch.object(Path, "lstat", autospec=True, side_effect=wrapped):
             with self.assertRaises(KeyboardInterrupt):
                 inv.build_inventory(self.root)
-        self.assertEqual(len(faults), 2)
-        self.assertFalse(self.target.exists())
+        self.assertEqual(len(faults), 1)
+        self.assertTrue(self.target.is_file())
         self.assert_sources_unchanged()
 
     def test_postlink_lstat_system_exit_rolls_back_and_propagates(self):
@@ -100,8 +100,8 @@ class ManifestPublicationIdentityR243(unittest.TestCase):
             with self.assertRaises(SystemExit) as caught:
                 inv.build_inventory(self.root)
         self.assertEqual(caught.exception.code, 51)
-        self.assertEqual(len(faults), 2)
-        self.assertFalse(self.target.exists())
+        self.assertEqual(len(faults), 1)
+        self.assertTrue(self.target.is_file())
         self.assert_sources_unchanged()
 
     def perform_link_swap(self, *, corrupt):
@@ -156,12 +156,12 @@ class ManifestPublicationIdentityR243(unittest.TestCase):
         self.assertFalse(self.target.exists())
         self.assert_sources_unchanged()
 
-    def test_postpublish_guard_failure_rolls_back_own_manifest(self):
+    def test_postpublish_guard_failure_retains_manifest_for_review(self):
         with patch("build_inventory.check_candidate_directory",
                    side_effect=inv.CandidateGuardError("failed release gate")):
             with self.assertRaises(inv.InventoryBuildError):
                 inv.build_inventory(self.root)
-        self.assertFalse(self.target.exists())
+        self.assertTrue(self.target.is_file())
         self.assert_sources_unchanged()
 
     def test_originals_remain_untouched_on_success(self):
