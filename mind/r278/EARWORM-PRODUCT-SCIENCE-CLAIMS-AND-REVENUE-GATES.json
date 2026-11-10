@@ -1,0 +1,704 @@
+{
+  "schema": "fv_mind_r278_claims_consent_revenue_v1",
+  "evidence_checked_on": "2026-11-10",
+  "status": "UNPUBLISHED_SOURCE_CONTROLLED_DRAFT",
+  "commercial": "HARD_HOLD",
+  "sources": [
+    {
+      "id": "S01",
+      "kind": "peer_review_review",
+      "url": "https://doi.org/10.3758/s13423-020-01750-7",
+      "notes": "Liikkanen & Jakubowski 2020: 47 studies, 33 peer reviewed articles"
+    },
+    {
+      "id": "S02",
+      "kind": "primary_empirical",
+      "url": "https://doi.org/10.1037/aca0000090",
+      "notes": "Jakubowski et al 2017: music characteristics and INMI"
+    },
+    {
+      "id": "S03",
+      "kind": "primary_empirical",
+      "url": "https://doi.org/10.1177/0305735613511506",
+      "notes": "Byron & Fowles 2015: 36 participants, exposure and recency"
+    },
+    {
+      "id": "S04",
+      "kind": "primary_empirical",
+      "url": "https://doi.org/10.1525/mp.2025.2330968",
+      "notes": "Vollweiler & Pfordresher 2025: n=152 performance/correlation"
+    },
+    {
+      "id": "S05",
+      "kind": "primary_empirical",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40031136/",
+      "notes": "Dodds et al 2025 n=883 self-report habits correlations"
+    },
+    {
+      "id": "S06",
+      "kind": "narrative_review",
+      "url": "https://doi.org/10.1001/jama.2024.2780",
+      "notes": "JAMA 2024 narrative review on musical intrusions"
+    },
+    {
+      "id": "S07",
+      "kind": "seller_official",
+      "url": "https://inspire3.com/",
+      "notes": "Inspire3 parent brand catalog"
+    },
+    {
+      "id": "S08",
+      "kind": "seller_official",
+      "url": "https://zen12.com/hnp",
+      "notes": "Zen12 standard product and package claims"
+    },
+    {
+      "id": "S09",
+      "kind": "seller_official",
+      "url": "https://zen12.com/secret/",
+      "notes": "Zen12 separate promotional funnel"
+    },
+    {
+      "id": "S10",
+      "kind": "seller_official",
+      "url": "https://zen12.com/welcome",
+      "notes": "Free MP3 signup includes seller newsletter"
+    },
+    {
+      "id": "S11",
+      "kind": "seller_official",
+      "url": "https://zen12.com/freeaudio",
+      "notes": "Separate free MP3 page includes seller newsletter"
+    },
+    {
+      "id": "S12",
+      "kind": "seller_official",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "notes": "Total Focus 33-minute seller-described hypnosis product"
+    },
+    {
+      "id": "S13",
+      "kind": "seller_official",
+      "url": "https://brainwaveshots.com/",
+      "notes": "Brainwave Shots catalog seller descriptions"
+    },
+    {
+      "id": "S14",
+      "kind": "first_party_fv",
+      "url": "https://finalvestige.com/focus/",
+      "notes": "FV free Seven Day Focus Fieldbook, distinct Jetpack consent"
+    },
+    {
+      "id": "S15",
+      "kind": "first_party_fv",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "notes": "FV Puységur historic-source analysis"
+    },
+    {
+      "id": "S16",
+      "kind": "first_party_fv",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "notes": "FV historical 1784 investigation"
+    },
+    {
+      "id": "S17",
+      "kind": "regulator",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "notes": "FTC clear near-recommendation endorsement disclosure"
+    },
+    {
+      "id": "S18",
+      "kind": "regulator",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "notes": "FTC health products claims substantiation"
+    },
+    {
+      "id": "S19",
+      "kind": "peer_review_review",
+      "url": "https://doi.org/10.1371/journal.pone.0286023",
+      "notes": "Ingendoh et al 2023 binaural beat EEG review (not Zen12 efficacy)"
+    },
+    {
+      "id": "S20",
+      "kind": "peer_review_review",
+      "url": "https://doi.org/10.1016/j.ijpsycho.2024.112328",
+      "notes": "Chee et al 2024 auditory cognitive-effects systematic review"
+    },
+    {
+      "id": "S21",
+      "kind": "first_party_fv",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "notes": "Published change blindness investigation"
+    },
+    {
+      "id": "S22",
+      "kind": "first_party_fv",
+      "url": "https://finalvestige.com/dispatch/",
+      "notes": "Existing Dispatch / Jetpack subscription"
+    },
+    {
+      "id": "S23",
+      "kind": "seller_partner_portal",
+      "url": "https://affiliates.inspire3.com/",
+      "notes": "Public partner portal (not FV-specific authorization)"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "statement": "INMI describes spontaneous conscious music imagery without deliberate initiation",
+      "source_ids": [
+        "S01"
+      ],
+      "assessment": "independent_supported",
+      "editorial_use": "editorial"
+    },
+    {
+      "id": "C02",
+      "statement": "2020 review cataloged 47 studies in 33 peer reviewed articles",
+      "source_ids": [
+        "S01"
+      ],
+      "assessment": "independent_supported",
+      "editorial_use": "editorial"
+    },
+    {
+      "id": "C03",
+      "statement": "2017 song-comparison study used 100 reported INMI and 100 matched non-INMI tunes",
+      "source_ids": [
+        "S02"
+      ],
+      "assessment": "independent_supported",
+      "editorial_use": "editorial"
+    },
+    {
+      "id": "C04",
+      "statement": "2017 melody/tempo associations predict every individual earworm",
+      "source_ids": [
+        "S02"
+      ],
+      "assessment": "unsubstantiated_generalization",
+      "editorial_use": "exclude"
+    },
+    {
+      "id": "C05",
+      "statement": "2015 repetition/recency study exposed 36 people to previously unfamiliar songs",
+      "source_ids": [
+        "S03"
+      ],
+      "assessment": "independent_supported_small_sample",
+      "editorial_use": "editorial"
+    },
+    {
+      "id": "C06",
+      "statement": "Repeated listening can guarantee changes in concentration or behavior",
+      "source_ids": [
+        "S03"
+      ],
+      "assessment": "unsubstantiated_product_leap",
+      "editorial_use": "exclude"
+    },
+    {
+      "id": "C07",
+      "statement": "2025 singing/musical skill paper involved 152 participants",
+      "source_ids": [
+        "S04"
+      ],
+      "assessment": "independent_supported",
+      "editorial_use": "editorial"
+    },
+    {
+      "id": "C08",
+      "statement": "Singing ability determines frequency of earworms",
+      "source_ids": [
+        "S04"
+      ],
+      "assessment": "unsupported_contrary_to_abstract",
+      "editorial_use": "exclude"
+    },
+    {
+      "id": "C09",
+      "statement": "2025 habits/earworms study surveyed 883 participants",
+      "source_ids": [
+        "S05"
+      ],
+      "assessment": "independent_supported_observational",
+      "editorial_use": "editorial"
+    },
+    {
+      "id": "C10",
+      "statement": "Earworms diagnose OCD or cause compulsive symptoms",
+      "source_ids": [
+        "S05",
+        "S06"
+      ],
+      "assessment": "unsubstantiated_causal_or_clinical",
+      "editorial_use": "exclude"
+    },
+    {
+      "id": "C11",
+      "statement": "Zen12 standard seller markets 12 levels/48 MP3s",
+      "source_ids": [
+        "S08"
+      ],
+      "assessment": "seller_description_observed_not_independent_efficacy",
+      "editorial_use": "qualified editorial"
+    },
+    {
+      "id": "C12",
+      "statement": "Zen12 12 minutes objectively equals one hour meditation",
+      "source_ids": [
+        "S08"
+      ],
+      "assessment": "unsubstantiated_seller_claim",
+      "editorial_use": "exclude"
+    },
+    {
+      "id": "C13",
+      "statement": "Zen12 standard and secret presentations share identical final checkout price/terms",
+      "source_ids": [
+        "S08",
+        "S09"
+      ],
+      "assessment": "unverified_merchant_checkout",
+      "editorial_use": "exclude"
+    },
+    {
+      "id": "C14",
+      "statement": "Zen12 welcome free audio includes merchant newsletter enrollment",
+      "source_ids": [
+        "S10"
+      ],
+      "assessment": "seller_page_observed_no_signup_test",
+      "editorial_use": "qualified editorial"
+    },
+    {
+      "id": "C15",
+      "statement": "Zen12 freeaudio free MP3 includes merchant newsletter enrollment",
+      "source_ids": [
+        "S11"
+      ],
+      "assessment": "seller_page_observed_no_signup_test",
+      "editorial_use": "qualified editorial"
+    },
+    {
+      "id": "C16",
+      "statement": "Merchant newsletter consent equals FV Dispatch consent",
+      "source_ids": [
+        "S10",
+        "S11",
+        "S14",
+        "S22"
+      ],
+      "assessment": "false_separate_consent",
+      "editorial_use": "exclude"
+    },
+    {
+      "id": "C17",
+      "statement": "Hypnosis Live Total Focus described as 33-minute recording",
+      "source_ids": [
+        "S12"
+      ],
+      "assessment": "seller_description_observed",
+      "editorial_use": "qualified editorial"
+    },
+    {
+      "id": "C18",
+      "statement": "Total Focus provides proven limitless concentration",
+      "source_ids": [
+        "S12"
+      ],
+      "assessment": "unsubstantiated_seller_claim",
+      "editorial_use": "exclude"
+    },
+    {
+      "id": "C19",
+      "statement": "Brainwave Shots seller markets audio products to change mood/cognitive state",
+      "source_ids": [
+        "S13"
+      ],
+      "assessment": "seller_description_observed_not_independent_efficacy",
+      "editorial_use": "qualified editorial"
+    },
+    {
+      "id": "C20",
+      "statement": "Brainwave Shots product recordings independently proven for mental health benefit",
+      "source_ids": [
+        "S13",
+        "S19",
+        "S20"
+      ],
+      "assessment": "unsubstantiated_product_claim",
+      "editorial_use": "exclude"
+    },
+    {
+      "id": "C21",
+      "statement": "2023 EEG review proves named Zen12 track entrains brainwaves",
+      "source_ids": [
+        "S19"
+      ],
+      "assessment": "unsubstantiated_product_leap",
+      "editorial_use": "exclude"
+    },
+    {
+      "id": "C22",
+      "statement": "2024 auditory systematic review establishes cognitive effects of named Inspire3 items",
+      "source_ids": [
+        "S20"
+      ],
+      "assessment": "unsubstantiated_product_leap",
+      "editorial_use": "exclude"
+    },
+    {
+      "id": "C23",
+      "statement": "Published FV Focus Fieldbook is a free 52-page edition connected to one Dispatch route",
+      "source_ids": [
+        "S14",
+        "S22"
+      ],
+      "assessment": "verified_public_fv_description",
+      "editorial_use": "editorial"
+    },
+    {
+      "id": "C24",
+      "statement": "FV free fieldbook already clinically validated as product",
+      "source_ids": [
+        "S14"
+      ],
+      "assessment": "unsubstantiated_product_efficacy",
+      "editorial_use": "exclude"
+    },
+    {
+      "id": "C25",
+      "statement": "Mesmer/Puységur document trail establishes cause of modern earworms",
+      "source_ids": [
+        "S15",
+        "S16"
+      ],
+      "assessment": "unsupported_historical_mechanism",
+      "editorial_use": "exclude"
+    },
+    {
+      "id": "C26",
+      "statement": "Affiliate disclosure should be clear and near paid endorsement",
+      "source_ids": [
+        "S17"
+      ],
+      "assessment": "ftc_guidance",
+      "editorial_use": "mandatory_when_active"
+    },
+    {
+      "id": "C27",
+      "statement": "Health-related promises need competent and reliable substantiation",
+      "source_ids": [
+        "S18"
+      ],
+      "assessment": "ftc_guidance",
+      "editorial_use": "mandatory"
+    },
+    {
+      "id": "C28",
+      "statement": "FV named publisher acceptance and assigned earning link exists",
+      "source_ids": [
+        "S23"
+      ],
+      "assessment": "unverified_account_specific",
+      "editorial_use": "exclude"
+    },
+    {
+      "id": "C29",
+      "statement": "FV can advertise a verified Zen12 checkout total or guarantee refund result",
+      "source_ids": [
+        "S08",
+        "S09"
+      ],
+      "assessment": "unverified_checkout_and_fulfillment",
+      "editorial_use": "exclude"
+    },
+    {
+      "id": "C30",
+      "statement": "FV has actually sellable, rights-cleared, paid Mind SKU with verified delivery",
+      "source_ids": [
+        "S14"
+      ],
+      "assessment": "unverified_paid_inventory",
+      "editorial_use": "exclude"
+    },
+    {
+      "id": "C31",
+      "statement": "FV has verified paid merchant commissions and net revenue",
+      "source_ids": [],
+      "assessment": "unverified_settlement",
+      "editorial_use": "exclude"
+    },
+    {
+      "id": "C32",
+      "statement": "A public YouTube video ID alone proves Grok internal asset_id and campaign conversion",
+      "source_ids": [],
+      "assessment": "unverified_attribution",
+      "editorial_use": "exclude"
+    }
+  ],
+  "offers": [
+    {
+      "offer": "Zen12 Premium",
+      "exact_seller_page": "https://zen12.com/hnp",
+      "fit": "structured 12-minute audio library; not proven hour equivalence",
+      "commercial_authorized": false,
+      "pricing_checkout_verified": false,
+      "refund_fulfillment_verified": false
+    },
+    {
+      "offer": "Zen12 special promo",
+      "exact_seller_page": "https://zen12.com/secret/",
+      "fit": "different public promo; do not silently substitute for standard",
+      "commercial_authorized": false,
+      "pricing_checkout_verified": false,
+      "refund_fulfillment_verified": false
+    },
+    {
+      "offer": "Hypnosis Live Total Focus",
+      "exact_seller_page": "https://hypnosislive.com/mental-skills/total-focus",
+      "fit": "single 33-minute guided hypnosis rather than multi-level meditation library",
+      "commercial_authorized": false,
+      "pricing_checkout_verified": false,
+      "refund_fulfillment_verified": false
+    },
+    {
+      "offer": "Brainwave Shots",
+      "exact_seller_page": "https://brainwaveshots.com/",
+      "fit": "catalog of short audio; exact SKU must be selected and verified",
+      "commercial_authorized": false,
+      "pricing_checkout_verified": false,
+      "refund_fulfillment_verified": false
+    },
+    {
+      "offer": "FV Seven Day Focus Fieldbook",
+      "exact_seller_page": "https://finalvestige.com/focus/",
+      "fit": "free 52-page fieldbook, one Jetpack/Dispatch consent; not a paid sale",
+      "commercial_authorized": false,
+      "pricing_checkout_verified": false,
+      "refund_fulfillment_verified": null
+    },
+    {
+      "offer": "FV-owned paid Mind product",
+      "exact_seller_page": null,
+      "fit": "commercial alternative only after specific SKU/rights/payment verification",
+      "commercial_authorized": false,
+      "pricing_checkout_verified": false,
+      "refund_fulfillment_verified": false
+    }
+  ],
+  "commercial_gates": [
+    {
+      "id": "publisher_identity_verified",
+      "status": "HARD_HOLD",
+      "verified": false,
+      "approval_evidence": null
+    },
+    {
+      "id": "named_inspire3_acceptance",
+      "status": "HARD_HOLD",
+      "verified": false,
+      "approval_evidence": null
+    },
+    {
+      "id": "signed_partner_terms",
+      "status": "HARD_HOLD",
+      "verified": false,
+      "approval_evidence": null
+    },
+    {
+      "id": "approved_promotion_channels",
+      "status": "HARD_HOLD",
+      "verified": false,
+      "approval_evidence": null
+    },
+    {
+      "id": "issued_account_tracking_url",
+      "status": "HARD_HOLD",
+      "verified": false,
+      "approval_evidence": null
+    },
+    {
+      "id": "offer_slug_exact",
+      "status": "HARD_HOLD",
+      "verified": false,
+      "approval_evidence": null
+    },
+    {
+      "id": "final_checkout_total_verified",
+      "status": "HARD_HOLD",
+      "verified": false,
+      "approval_evidence": null
+    },
+    {
+      "id": "tax_fees_terms_verified",
+      "status": "HARD_HOLD",
+      "verified": false,
+      "approval_evidence": null
+    },
+    {
+      "id": "refund_policy_offer_specific_verified",
+      "status": "HARD_HOLD",
+      "verified": false,
+      "approval_evidence": null
+    },
+    {
+      "id": "customer_delivery_tested",
+      "status": "HARD_HOLD",
+      "verified": false,
+      "approval_evidence": null
+    },
+    {
+      "id": "claims_substantiated_or_excluded",
+      "status": "HARD_HOLD",
+      "verified": false,
+      "approval_evidence": null
+    },
+    {
+      "id": "ftc_near_cta_disclosure",
+      "status": "HARD_HOLD",
+      "verified": false,
+      "approval_evidence": null
+    },
+    {
+      "id": "no_merchant_newsletter_consent_transfer",
+      "status": "HARD_HOLD",
+      "verified": false,
+      "approval_evidence": null
+    },
+    {
+      "id": "privacy_no_pii_transfer",
+      "status": "HARD_HOLD",
+      "verified": false,
+      "approval_evidence": null
+    },
+    {
+      "id": "founder_release_approval",
+      "status": "HARD_HOLD",
+      "verified": false,
+      "approval_evidence": null
+    },
+    {
+      "id": "merchant_commission_settlement_evidence",
+      "status": "HARD_HOLD",
+      "verified": false,
+      "approval_evidence": null
+    }
+  ],
+  "release_guards": {
+    "cms_written": false,
+    "merchant_link_live": false,
+    "email_sent": false,
+    "social_post_created": false,
+    "analytics_script_added": false,
+    "new_subscription_form_added": false,
+    "merged": false,
+    "deployed": false,
+    "founder_release_approved": false
+  },
+  "consumer_consent": [
+    {
+      "id": "timer",
+      "account_required": false,
+      "merchant_newsletter": false,
+      "fv_dispatch": false,
+      "purchase": false
+    },
+    {
+      "id": "fv_focus",
+      "account_required": "email signup",
+      "merchant_newsletter": false,
+      "fv_dispatch": true,
+      "purchase": false
+    },
+    {
+      "id": "zen12_freeaudio",
+      "account_required": "merchant email signup",
+      "merchant_newsletter": true,
+      "fv_dispatch": false,
+      "purchase": false
+    },
+    {
+      "id": "zen12_paid",
+      "account_required": "merchant order checkout NOT tested",
+      "merchant_newsletter": "not independently verified",
+      "fv_dispatch": false,
+      "purchase": "not authenticated"
+    }
+  ],
+  "creator_to_product_fit": [
+    {
+      "topic": "Change Blindness",
+      "public_article": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "actual_grok_asset_id": null,
+      "intent": "curiosity and perception",
+      "path": "video -> article -> optional FV Focus -> evidence guide",
+      "commercial_fit": "low; do not force commercial CTA"
+    },
+    {
+      "topic": "Mesmerism/Puységur",
+      "public_article": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "known_youtube_video_id": "SV9m07PFTYk",
+      "actual_grok_asset_id": null,
+      "intent": "historical suggestion",
+      "path": "existing creator video -> article -> source archive -> optional Focus/guide",
+      "commercial_fit": "medium on explicitly educational hypnosis guide; no health claims"
+    },
+    {
+      "topic": "Involuntary Musical Imagery",
+      "public_article": null,
+      "unpublished_draft": "mind/r278/THE-SONG-THAT-PLAYED-WITHOUT-A-SPEAKER-UNPUBLISHED.md",
+      "actual_grok_asset_id": null,
+      "intent": "earworm science and audio purchasing skepticism",
+      "path": "future creator asset only after Grok coordination -> article after release -> Focus/guide",
+      "commercial_fit": "conditional Zen12 guide as buying decision, not efficacy proof"
+    }
+  ],
+  "metrics": {
+    "attribution_source": "first-party only after Claude review and consent requirements",
+    "utm_template": {
+      "utm_source": "platform",
+      "utm_medium": "organic_social",
+      "utm_campaign": "mind_audio_pilot_2026_11",
+      "utm_content": "verified_grok_asset_id"
+    },
+    "signal_events": [
+      "qualified_human_session",
+      "landing_view",
+      "relevant_cta_click",
+      "confirmed_lead_provider",
+      "affiliate_outbound_click",
+      "merchant_confirmed_paid_order",
+      "cleared_commission",
+      "refund",
+      "fee"
+    ],
+    "outbound_is_sale": false,
+    "one_list_only": true,
+    "no_extra_script": true
+  },
+  "revenue": {
+    "label": "NOT_COMPUTABLE_NOT_ZERO",
+    "qualified_human_sessions": null,
+    "confirmed_leads": null,
+    "verified_paid_orders": null,
+    "cleared_commissions": null,
+    "refunds": null,
+    "fees": null,
+    "realized_net_revenue": null,
+    "net_revenue_per_1000_qualified_sessions": null,
+    "cohorts_days": [
+      7,
+      30
+    ]
+  },
+  "release_requires": [
+    "actual FV partner approval, issued tracking link, accepted channels",
+    "one verified exact checkout, price, tax, refund and fulfillment",
+    "successful external merchant checkout/commission reconciliation evidence",
+    "QA approved 360/390/768/1440/no-JS/keyboard/reduced-motion",
+    "founder explicit release approval"
+  ]
+}
