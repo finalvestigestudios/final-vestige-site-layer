@@ -137,7 +137,7 @@ def stage_payload(source_dir: Path, pin: bool = True) -> str:
     # WordPress owns public navigation. The founder's visual-direction picker
     # is a design-study control, not a reader-facing homepage component.
     # Retain all three directions in pinned JS, selectable in private preview.
-    studio = re.compile(r'<div class="fv-hf__studio"[^>]*>.*?</details>\\s*</div>', re.S)
+    studio = re.compile(r'<div class="fv-hf__studio"[^>]*>.*?</details>\s*</div>', re.S)
     studios = list(studio.finditer(content))
     if len(studios) != 1 or any(content.count('data-fv-direction-choice="'+d+'"') != 1 for d in ('dossier', 'museum', 'observatory')):
         raise AdmissionError('missing, duplicate or altered preview-only art-direction controls')
