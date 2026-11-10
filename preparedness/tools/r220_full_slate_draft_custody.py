@@ -165,7 +165,12 @@ R267_WALLET_RECEIPT_PATH = 'audits/r267_responsive_browser_observation_REVIEW_ON
 R267_WALLET_RECEIPT_BLOB = '74dc8e0f9cbb07e6cfd14a2d2dd3b4552239e40f'
 # Repro script is explicit/manual, network-disabled, not run during site build.
 R267_BROWSER_REPRO_PATH = 'tools/r267_reproduce_browser_observation_REVIEW_ONLY.py'
-R267_BROWSER_REPRO_BLOB = '461d97b005de520bbece907d6224f15101abfb2e'
+R267_BROWSER_REPRO_BLOB = '6ed7552d9b9c210e7fd4b7d67771a154c3b7a590'
+# R268 hardens the manual browser reproduction's acceptance predicate. This
+# code identity is protected BEFORE/AFTER draft export; full browser execution
+# is external and remains no medical, child privacy, accessibility or QD PASS.
+R268_PRINT_ACCEPTANCE_PATH = 'tools/r268_wallet_print_parity_acceptance_hold.py'
+R268_PRINT_ACCEPTANCE_BLOB = '5207b20954c1b6d93b88f430843d4bafb2e8df88'
 # R258 binds the complete R254/R257 original source-claim partition to a
 # deterministic, entirely escaped, no-clickable-links offline reviewer view.
 R258_COMPLETE_REVIEW_PATH = 'tools/r258_complete_offline_claim_review_hold.py'
@@ -937,6 +942,17 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
         # Preserve the independent, intentionally manual browser reproduction.
         if git_blob(safe_read(root, R267_BROWSER_REPRO_PATH)) != R267_BROWSER_REPRO_BLOB:
             raise ValueError('R267 reproduction method changed before held export')
+        # Pin the revised browser acceptance module. It tests only bounded
+        # evidence when explicitly run; no browser is run in this custody pass.
+        acceptance_gate = load_frozen_gate(root, R268_PRINT_ACCEPTANCE_PATH,
+                                           R268_PRINT_ACCEPTANCE_BLOB,
+                                           'fv_preparedness_r268_strict_browser_hold',
+                                           ('inspect',))
+        if (acceptance_gate.HOLD != HOLD
+                or tuple(acceptance_gate.WIDTHS) != (320, 360, 390, 768, 1440)
+                or 'independent_qd_pass' not in acceptance_gate.FALSE_STATES):
+            raise ValueError('R268 acceptance gate release/coverage drift')
+        result['manual_browser_reproduction_gate'] = 'PINNED_NOT_NATIVE_EXECUTED'
         # A reversible SCREEN-only alternative is not approval for the
         # existing held tool or proof of physical print/privacy safety.
         r267 = load_frozen_gate(root, R267_WALLET_SCREEN_PATH,
@@ -1175,7 +1191,8 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
                 (R267_WALLET_SCREEN_PATH, R267_WALLET_SCREEN_BLOB),
                 (R267_WALLET_HTML_PATH, R267_WALLET_HTML_BLOB),
                 (R267_WALLET_RECEIPT_PATH, R267_WALLET_RECEIPT_BLOB),
-                (R267_BROWSER_REPRO_PATH, R267_BROWSER_REPRO_BLOB)):
+                (R267_BROWSER_REPRO_PATH, R267_BROWSER_REPRO_BLOB),
+                (R268_PRINT_ACCEPTANCE_PATH, R268_PRINT_ACCEPTANCE_BLOB)):
             if git_blob(safe_read(root, path)) != expected:
                 raise ValueError('R267 screen-only candidate/source receipt changed during audit')
         if git_blob(safe_read(root, R258_COMPLETE_REVIEW_PATH)) != R258_COMPLETE_REVIEW_BLOB:
