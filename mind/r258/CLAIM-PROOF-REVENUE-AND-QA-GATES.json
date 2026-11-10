@@ -1,0 +1,339 @@
+{
+  "milestone": "R258",
+  "date": "2026-11-09",
+  "status": "UNPUBLISHED_HARD_HOLD",
+  "commercial_activation": false,
+  "partner_publisher_approval": "NOT_VERIFIED",
+  "commercial_gates": [
+    {
+      "id": "G01",
+      "step": "Inspire3 named FV application acceptance",
+      "state": "HARD_HOLD",
+      "proof": "Authenticated publisher dashboard or explicit acceptance notice"
+    },
+    {
+      "id": "G02",
+      "step": "Zen12 approved account-issued earning URL",
+      "state": "HARD_HOLD",
+      "proof": "Dashboard-generated link and permitted destination"
+    },
+    {
+      "id": "G03",
+      "step": "Permitted website, organic social and email promotion",
+      "state": "HARD_HOLD",
+      "proof": "Publisher terms and channel conditions"
+    },
+    {
+      "id": "G04",
+      "step": "Specific Zen12 standard-vs-secret offer parity",
+      "state": "HARD_HOLD",
+      "proof": "Approved creative/offer matrix and checkout reconciliation"
+    },
+    {
+      "id": "G05",
+      "step": "Price, taxes and fee disclosure",
+      "state": "HARD_HOLD",
+      "proof": "Permitted live checkout verification; dynamic prices not asserted"
+    },
+    {
+      "id": "G06",
+      "step": "Return/refund conditions and exclusions",
+      "state": "HARD_HOLD",
+      "proof": "Agreement, checkout and merchant support tests"
+    },
+    {
+      "id": "G07",
+      "step": "Affiliate settlement, reversals, thresholds",
+      "state": "HARD_HOLD",
+      "proof": "Account-level payout terms"
+    },
+    {
+      "id": "G08",
+      "step": "Rights-cleared owned FV paid Mind SKU fallback",
+      "state": "HARD_HOLD",
+      "proof": "Owned inventory license, active SKU and checkout/delivery"
+    },
+    {
+      "id": "G09",
+      "step": "Independent buyer-guide claim QA",
+      "state": "HARD_HOLD",
+      "proof": "Human claims review with exact URLs"
+    },
+    {
+      "id": "G10",
+      "step": "Keyboard/screen reader/mobile browser QA",
+      "state": "HARD_HOLD",
+      "proof": "360/390/768/1440/1920 proof and WCAG 2.2 AA"
+    },
+    {
+      "id": "G11",
+      "step": "WordPress sanitizer/staged integration",
+      "state": "HARD_HOLD",
+      "proof": "Approved staged export/render"
+    },
+    {
+      "id": "G12",
+      "step": "A/B real video accessibility and performance",
+      "state": "HARD_HOLD",
+      "proof": "Hosted opted-in 42-second MP4 with poster, VTT and transcript; media weight and LCP"
+    },
+    {
+      "id": "G13",
+      "step": "Grok published asset and exact link match",
+      "state": "HARD_HOLD",
+      "proof": "Authentic media ID/rights/date/platform mobile destination via TASK-008"
+    },
+    {
+      "id": "G14",
+      "step": "Existing Jetpack confirmed lead and provenance",
+      "state": "HARD_HOLD",
+      "proof": "Only existing signup provider reports; consent and privacy checks"
+    },
+    {
+      "id": "G15",
+      "step": "Merchant independently confirmed paid transaction",
+      "state": "HARD_HOLD",
+      "proof": "Merchant order ID, paid status and attribution where available"
+    },
+    {
+      "id": "G16",
+      "step": "Founder signed release",
+      "state": "HARD_HOLD",
+      "proof": "Explicit approval to publish, activate earning URL and run test"
+    }
+  ],
+  "sources": [
+    {
+      "id": "S01",
+      "url": "https://inspire3.com/",
+      "type": "seller_catalog",
+      "scope": "Zen12/Hypnosis Live/Brainwave Shots brand positioning, claims not independent"
+    },
+    {
+      "id": "S02",
+      "url": "https://zen12.com/hnp",
+      "type": "exact_seller_offer",
+      "scope": "Premium package, 12 levels, 48 MP3s, four styles, standard advertised historical $87.99"
+    },
+    {
+      "id": "S03",
+      "url": "https://zen12.com/secret/",
+      "type": "separate_seller_promo",
+      "scope": "coupon-framed $37 at access, timer/urgency must not be inherited"
+    },
+    {
+      "id": "S04",
+      "url": "https://affiliates.inspire3.com/",
+      "type": "public_partner_portal",
+      "scope": "Affiliate application existence only, not publisher approval"
+    },
+    {
+      "id": "S05",
+      "url": "https://doi.org/10.1068/p090483",
+      "type": "original_research_metadata",
+      "scope": "1980 Thompson original Thatcher illusion description and bibliographic metadata"
+    },
+    {
+      "id": "S06",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/8354050/",
+      "type": "research_abstract",
+      "scope": "Bartlett Searcy 1993 face inversion and configuration"
+    },
+    {
+      "id": "S07",
+      "url": "https://research.birmingham.ac.uk/en/publications/comparing-neural-correlates-of-configural-processing-in-faces-and/",
+      "type": "institutional_research_abstract",
+      "scope": "2006 EEG design and effects"
+    },
+    {
+      "id": "S08",
+      "url": "https://doi.org/10.1177/0956797613501521",
+      "type": "research_abstract",
+      "scope": "2013 online fMRI-adaptation findings; not product-relevant efficacy"
+    },
+    {
+      "id": "S09",
+      "url": "https://doi.org/10.1068/p2774",
+      "type": "research_debate_metadata",
+      "scope": "Rakover interpretative alternatives"
+    },
+    {
+      "id": "S10",
+      "url": "https://doi.org/10.1371/journal.pone.0286023",
+      "type": "systematic_review",
+      "scope": "2023 14 EEG binaural-beat studies mixed"
+    },
+    {
+      "id": "S11",
+      "url": "https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety",
+      "type": "federal_science_overview",
+      "scope": "General mindfulness research/safety, not Zen12 product trial"
+    },
+    {
+      "id": "S12",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "type": "ftc_guidance",
+      "scope": "Honest endorsements and clear/conspicuous material connection"
+    },
+    {
+      "id": "S13",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "type": "ftc_guidance",
+      "scope": "Adequate substantiation for implied and express efficacy claims"
+    },
+    {
+      "id": "S14",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "type": "internal_charter",
+      "scope": "Mind lane, canonical article and release limits"
+    },
+    {
+      "id": "S15",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "type": "internal_measurement",
+      "scope": "Revenue-first attribution contract"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "text": "Orientation changes how locally inverted eyes/mouth appear on a face",
+      "status": "research_supported",
+      "refs": [
+        "S05",
+        "S06"
+      ]
+    },
+    {
+      "id": "C02",
+      "text": "EEG response differed across upright/inverted faces in tested paradigm",
+      "status": "abstract_supported_not_diagnostic",
+      "refs": [
+        "S07"
+      ]
+    },
+    {
+      "id": "C03",
+      "text": "2013 fMRI study found superior temporal sulcus orientation-dependent signal",
+      "status": "abstract_supported_not_causal_localization",
+      "refs": [
+        "S08"
+      ]
+    },
+    {
+      "id": "C04",
+      "text": "One viewer's response diagnoses perception or attention problems",
+      "status": "PROHIBITED_UNSUPPORTED",
+      "refs": [
+        "S05",
+        "S06"
+      ]
+    },
+    {
+      "id": "C05",
+      "text": "Thatcher illusion proves hypnosis/meditation brain-training efficacy",
+      "status": "PROHIBITED_UNSUPPORTED",
+      "refs": [
+        "S05",
+        "S01"
+      ]
+    },
+    {
+      "id": "C06",
+      "text": "Zen12 premium 12 levels, 48 MP3, four styles",
+      "status": "seller_statement_not_fulfillment_proof",
+      "refs": [
+        "S02"
+      ]
+    },
+    {
+      "id": "C07",
+      "text": "Zen12 12 minutes equals hour's meditation benefits",
+      "status": "seller_efficacy_UNSUBSTANTIATED",
+      "refs": [
+        "S02",
+        "S10"
+      ]
+    },
+    {
+      "id": "C08",
+      "text": "Standard $87.99 and separate $37 coupon promotion appeared on seller pages 2026-11-09",
+      "status": "historical_seller_display_not_checkout_price",
+      "refs": [
+        "S02",
+        "S03"
+      ]
+    },
+    {
+      "id": "C09",
+      "text": "Final Vestige is accepted Inspire3 publisher",
+      "status": "NOT_VERIFIED_must_not_assert",
+      "refs": [
+        "S04"
+      ]
+    },
+    {
+      "id": "C10",
+      "text": "Checkout or affiliate outbound click equals paid commission",
+      "status": "PROHIBITED_false_inference",
+      "refs": [
+        "S15"
+      ]
+    },
+    {
+      "id": "C11",
+      "text": "The 42-second preview is silent, 540x960, 12fps and 42s",
+      "status": "local_ffprobe_only_not_web_hosted",
+      "refs": [
+        "S14"
+      ]
+    },
+    {
+      "id": "C12",
+      "text": "FTC disclosure near financial recommendation necessary",
+      "status": "regulatory_guidance",
+      "refs": [
+        "S12"
+      ]
+    },
+    {
+      "id": "C13",
+      "text": "General meditation science proves Zen12 outcomes",
+      "status": "PROHIBITED_UNSUPPORTED",
+      "refs": [
+        "S10",
+        "S11",
+        "S13"
+      ]
+    }
+  ],
+  "negative_cases": [
+    "autoplay video in A and B",
+    "autoplay in hub",
+    "audio element",
+    "source element injected",
+    "misleading cue despite unchanged clocks",
+    "renderer caption mismatch",
+    "commercial button enabled",
+    "merchant href",
+    "missing adjacent disclosure",
+    "affiliate approved invented",
+    "sale invented"
+  ],
+  "attribution_contract": {
+    "source": "Grok verified asset_id + utm_campaign",
+    "stages": [
+      "qualified_human_session",
+      "landing",
+      "relevant_cta_click",
+      "provider_confirmed_lead_if_applicable",
+      "merchant_confirmed_paid_order_or_affiliate_conversion",
+      "refunds_fees_realized_net_revenue"
+    ],
+    "unknowns": "No authenticated counts; NRP1000 NOT COMPUTABLE; clicks not transactions",
+    "privacy": "No fingerprinting, email PII, duplicated scripts or provider list; aggregate only"
+  },
+  "canonical": "Thatcher draft must be checked against live CMS before publishing; no false duplicate URLs",
+  "video_status": "LOCAL_INSPECTED_NOT_HOSTED_NOT_LIVE",
+  "footer": "Do not merge, publish, activate affiliate link, submit subscription or spend without founder release."
+}
