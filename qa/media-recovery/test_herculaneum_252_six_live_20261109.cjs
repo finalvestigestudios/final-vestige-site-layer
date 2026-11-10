@@ -31,6 +31,9 @@ const probes=[
 ['alter source catalog',a=>{a.rows[1].catalog.url='https://example.com/not-the-source'}],
 ['claim live source mismatch',a=>{a.live_wordpress_readback.exact_matches=5}],
 ['reclassify tool error as HTTP',a=>{a.rows[0].viewer.result='http_404'}],
-['invent native binary download',a=>{a.rows[0].derivative.image_binary_downloaded=true}]
+['invent native binary download',a=>{a.rows[0].derivative.image_binary_downloaded=true}],
+['erase CC BY attribution/license',a=>{a.rows[0].catalog.rights_statement='public domain'}],
+['replace true photo with alternate scene',a=>{a.rows[1].catalog.scene_description='a photograph of rolls'}],
+['wrong floorplan ALT recommendation',a=>{a.rows[1].fidelity.proposed_alt_for_editor_only='A historical photo of papyrus rolls.'}]
 ];
 probes.forEach(([name,mutate])=>test('rejects '+name,()=>{const a=clone();mutate(a);assert.equal(validate(a).ok,false,name)}));
