@@ -123,7 +123,7 @@ R255_REVIEW_SURFACE_BLOB = '86e8b8e3cb29efbac738fd8574b487c4d633b1af'
 # R257 additionally accounts for ALL 1,438 original citations not represented
 # in the 562 shared-source workorders, retaining source contexts and all holds.
 R257_PARTITION_PATH = 'tools/r257_complete_citation_partition_hold.py'
-R257_PARTITION_BLOB = 'adb2353e4d5314df2cd01213292b3f4153aa43d1'
+R257_PARTITION_BLOB = 'df74968de5ee609fa16287a7339cd8262616603c'
 # These are independently observed R219 integration Git blobs, not certified text.
 # Missing entries MUST match the older R200 original exactly.
 INTEGRATED_DIFFS = {
@@ -587,7 +587,7 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
                 or partition.get('citation_count') != 2000
                 or partition.get('shared_workorders') != 562
                 or partition.get('nonshared_workorders') != 1438
-                or partition.get('total_unapproved_claims') != 2000
+                or partition.get('total_unapproved_citation_occurrences') != 2000
                 or partition.get('shared_disputes') != 1
                 or partition.get('nonshared_disputes') != 2
                 or len(partition.get('unreviewed_nonshared_queue') or []) != 1438
