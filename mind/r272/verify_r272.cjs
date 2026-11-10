@@ -58,6 +58,9 @@ function readPlain(data) {
     if(/(?:url\s*\(\s*['"]?https?:|<image\b|<use\b|<img\b|<link\b[^>]*href=)/i.test(h))errors.push(n+' unreviewed external resource');
     if(!h.includes('href="https://finalvestige.com/focus/"'))errors.push(n+' existing free route');
   }
+    const EXACT_FILM_CAPTIONS = ["<p data-time=\"0-6\">00:00–06:00 · Twelve minutes is an amount of time—not a measured benefit.</p>","<p data-time=\"6-12\">06:00–12:00 · A listener may feel calmer. That experience deserves respect.</p>","<p data-time=\"12-18\">12:00–18:00 · But a free timer, a guided voice, and expectation can all matter.</p>","<p data-time=\"18-24\">18:00–24:00 · The 2023 EEG review found mixed results for binaural-beat entrainment.</p>","<p data-time=\"24-30\">24:00–30:00 · It did not test Zen12 Premium or prove twelve minutes equals sixty.</p>","<p data-time=\"30-36\">30:00–36:00 · Compare the format with a free session. Record what you noticed.</p>","<p data-time=\"36-42\">36:00–42:00 · Read the evidence and the terms before deciding to purchase.</p>"];
+  const actualCaptions=b.match(/<p data-time="[^"]+">[^<]+<\/p>/g)||[];
+  if(JSON.stringify(actualCaptions)!==JSON.stringify(EXACT_FILM_CAPTIONS))errors.push('original R257 film caption timing/text drift');
   if(!b.includes('NOT HOSTED')||!b.includes('static poster')||(b.match(/data-time="/g)||[]).length!==7)errors.push('video source status and captions');
   if(/<video\b|<audio\b/i.test(b)||b.includes('src="https://'))errors.push('video unexpectedly hosted/external');
   return errors;
