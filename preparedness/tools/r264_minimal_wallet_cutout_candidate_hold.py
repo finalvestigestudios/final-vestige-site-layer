@@ -41,7 +41,8 @@ class Parser(HTMLParser):
                 raise ValueError("R264 cutout face nesting")
             self.faces.append(d.get("aria-label",""))
         if "pa-privacy" in classes:
-            if tag!="p" or classes!=["pa-privacy"]:raise ValueError("R264 privacy prose structure")
+            if tag!="p" or classes!=["pa-privacy"] or not self.stack or self.stack[-1][1]!=["pa-face"]:
+                raise ValueError("R265 privacy warning must be a direct child of its cutout face")
             owners=[e[2].get("aria-label") for e in self.stack if "pa-face" in e[1]]
             if len(owners)!=1:self.extra_notice+=1
             else:self.note_owners.append(owners[0])
