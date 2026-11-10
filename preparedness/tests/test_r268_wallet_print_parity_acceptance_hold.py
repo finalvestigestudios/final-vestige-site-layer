@@ -5,7 +5,7 @@ import importlib.util
 import unittest
 from pathlib import Path
 
-PATH = Path(__file__).with_name('r268_wallet_print_parity_acceptance_hold.py')
+PATH = Path(__file__).resolve().parents[1] / 'tools/r268_wallet_print_parity_acceptance_hold.py'
 spec = importlib.util.spec_from_file_location('r268', PATH)
 gate = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(gate)
