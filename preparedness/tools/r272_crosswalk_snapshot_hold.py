@@ -37,7 +37,7 @@ FLAGS = ("independent_QD_PASS", "safety_approved", "medical_safety_verified",
 def blob(data: bytes) -> str:
     if type(data) is not bytes:
         raise ValueError("expected unmodified file bytes")
-    return hashlib.sha1(b"blob " + str(len(data)).encode() + b"\\0" + data).hexdigest()
+    return hashlib.sha1(b"blob " + str(len(data)).encode() + b"\0" + data).hexdigest()
 
 
 def decode(data: bytes):
