@@ -1,0 +1,463 @@
+{
+  "version": "R256",
+  "checked_date": "2026-11-09",
+  "scope": "UNPUBLISHED MIND ONLY",
+  "intent": "conversion-first research; strict disabled commerce",
+  "public_site_count_note": "Issue #171 recorded 61 historical investigations; public Journal currently presents 66 results. Do not equate these inventories or claim five new qualifying investigations without independent reconciliation.",
+  "priority_offer": "Zen12 Premium only as unapproved candidate",
+  "exact_standard_page": "https://zen12.com/hnp",
+  "alternative_page_warning": "https://zen12.com/secret/ has a different $37 promotional context; no approval to reproduce pricing or coupon",
+  "owner_commerce_alternative": "FV-owned product not authenticated",
+  "source_count": 19,
+  "claim_count": 28,
+  "authorization_gate_count": 16,
+  "sources": [
+    {
+      "id": "S01",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "type": "governance",
+      "scope": "Primary Mind editorial and commercial authorization issue"
+    },
+    {
+      "id": "S02",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "type": "governance",
+      "scope": "Conversion measurement, no-production-write charter"
+    },
+    {
+      "id": "S03",
+      "url": "https://finalvestige.com/blog/",
+      "type": "first_party_live",
+      "scope": "66 Journal results observed 2026-11-09, differs from historical 61"
+    },
+    {
+      "id": "S04",
+      "url": "https://finalvestige.com/focus/",
+      "type": "first_party_live",
+      "scope": "Existing 52-page free Fieldbook + Jetpack/Dispatch funnel; no new list"
+    },
+    {
+      "id": "S05",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "type": "first_party_unreachable",
+      "scope": "Retrieval failed during this run; MUST NOT represent verified working destination"
+    },
+    {
+      "id": "S06",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "type": "first_party_live",
+      "scope": "Published investigation visible with study details"
+    },
+    {
+      "id": "S07",
+      "url": "https://inspire3.com/",
+      "type": "seller_catalog",
+      "scope": "Catalog names Zen12, Hypnosis Live, Brainwave Shots; broad promotional efficacy claims not independently proven"
+    },
+    {
+      "id": "S08",
+      "url": "https://zen12.com/hnp",
+      "type": "seller_exact_standard",
+      "scope": "Premium describes 12 levels/48 MP3/four styles; displayed $87.99; one-year guarantee, not checkout"
+    },
+    {
+      "id": "S09",
+      "url": "https://zen12.com/secret/",
+      "type": "seller_alternative",
+      "scope": "Separate promo page displayed $37 with code and timed creative; no authorized publisher offer established"
+    },
+    {
+      "id": "S10",
+      "url": "https://affiliates.inspire3.com/",
+      "type": "merchant_affiliate_portal",
+      "scope": "Public login/signup and generalized payout messaging, NOT named FV acceptance or issued link"
+    },
+    {
+      "id": "S11",
+      "url": "https://brainwaveshots.com/faq",
+      "type": "seller_exact_other_offer",
+      "scope": "15/30 min products, 35 audio library, stated epilepsy/alertness exclusions and refund limits; seller claims"
+    },
+    {
+      "id": "S12",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/1012311/",
+      "type": "independent_original",
+      "scope": "McGurk/MacDonald 1976 original experimental study"
+    },
+    {
+      "id": "S13",
+      "url": "https://doi.org/10.1371/journal.pone.0207160",
+      "type": "independent_science",
+      "scope": "Brown et al 2018 individual variation, not diagnostics"
+    },
+    {
+      "id": "S14",
+      "url": "https://doi.org/10.1007/s00426-021-01618-y",
+      "type": "independent_science",
+      "scope": "Wahn et al 2022 gaze/attention effects; control nuances"
+    },
+    {
+      "id": "S15",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31264598/",
+      "type": "independent_science",
+      "scope": "Playback-speed study 110 people, natural vs altered rate"
+    },
+    {
+      "id": "S16",
+      "url": "https://doi.org/10.3389/fnhum.2022.1027335",
+      "type": "independent_science",
+      "scope": "Attention and sensory noise in audiovisual speech"
+    },
+    {
+      "id": "S17",
+      "url": "https://doi.org/10.1371/journal.pone.0286023",
+      "type": "independent_science",
+      "scope": "2023 heterogeneous binaural beat EEG review does not test Zen12"
+    },
+    {
+      "id": "S18",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "type": "regulatory",
+      "scope": "FTC clear conspicuous material-connection affiliate disclosure"
+    },
+    {
+      "id": "S19",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "type": "regulatory",
+      "scope": "Claims substantiation, overall net impression, clear conspicuous limitations"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "Journal current results = 66",
+      "status": "verified_live",
+      "source": "S03",
+      "limit": "Snapshot only; old Issue #171 inventory = historical 61"
+    },
+    {
+      "id": "C02",
+      "claim": "Existing /focus/ is the free 52-page fieldbook and email flow",
+      "status": "verified_live",
+      "source": "S04",
+      "limit": "Existing subscriber confirmation/delivery NOT tested"
+    },
+    {
+      "id": "C03",
+      "claim": "Puységur path works for signed-out visitors",
+      "status": "unverified",
+      "source": "S05",
+      "limit": "Retrieval error, block link until QA checks"
+    },
+    {
+      "id": "C04",
+      "claim": "Inspire3 lists Zen12, Hypnosis Live and Brainwave Shots",
+      "status": "verified_seller_catalog",
+      "source": "S07",
+      "limit": "Brand catalog; not product effect proof"
+    },
+    {
+      "id": "C05",
+      "claim": "Zen12 Premium lists 12 levels, 48 MP3 and four styles",
+      "status": "seller_describes",
+      "source": "S08",
+      "limit": "Not product custody or physical verification"
+    },
+    {
+      "id": "C06",
+      "claim": "Standard seller page displays $87.99",
+      "status": "seller_displays_price",
+      "source": "S08",
+      "limit": "Not merchant checkout/payment total"
+    },
+    {
+      "id": "C07",
+      "claim": "Other /secret/ promotion displays $37 plus coupon",
+      "status": "seller_displays_promo",
+      "source": "S09",
+      "limit": "Separate funnel/offer, not equivalent or approved"
+    },
+    {
+      "id": "C08",
+      "claim": "Either displayed price is guaranteed for FV referrals",
+      "status": "unverified_prohibited",
+      "source": "S08",
+      "limit": "Must block prices in active CTA pending authorization and checkout"
+    },
+    {
+      "id": "C09",
+      "claim": "Zen12 standard page advertises one-year guarantee",
+      "status": "seller_promises",
+      "source": "S08",
+      "limit": "Refund fulfillment and exclusions not authenticated"
+    },
+    {
+      "id": "C10",
+      "claim": "12 minutes Zen12 = one hour advanced meditation",
+      "status": "unsupported_seller_efficacy",
+      "source": "S08",
+      "limit": "OMIT from endorsements and CTA"
+    },
+    {
+      "id": "C11",
+      "claim": "Zen12 product changes brainwaves or treats conditions",
+      "status": "unsupported_seller_efficacy",
+      "source": "S08",
+      "limit": "Product-specific high-quality evidence not supplied; OMIT"
+    },
+    {
+      "id": "C12",
+      "claim": "Independent binaural beat EEG evidence validates Zen12",
+      "status": "false_inference_reject",
+      "source": "S17",
+      "limit": "Broad mixed heterogeneous evidence; product not tested"
+    },
+    {
+      "id": "C13",
+      "claim": "McGurk classic mismatched /ba/ audio + /ga/ face can yield /da/ reports",
+      "status": "supported_science",
+      "source": "S12",
+      "limit": "Speech perception only, not audiovisual audio product treatment"
+    },
+    {
+      "id": "C14",
+      "claim": "Everyone experiences McGurk illusion equally",
+      "status": "contradicted",
+      "source": "S13",
+      "limit": "Large individual variability"
+    },
+    {
+      "id": "C15",
+      "claim": "Eye position and attentional allocation can influence McGurk reports",
+      "status": "supported_science_with_limit",
+      "source": "S14",
+      "limit": "Specific conditions; a control complicates attribution"
+    },
+    {
+      "id": "C16",
+      "claim": "Playback rate can change fusion reports",
+      "status": "supported_science_with_limit",
+      "source": "S15",
+      "limit": "Lab timing; not universal practical trick"
+    },
+    {
+      "id": "C17",
+      "claim": "McGurk effect validates Zen12 effectiveness",
+      "status": "false_inference_reject",
+      "source": "S12",
+      "limit": "No causal bridge"
+    },
+    {
+      "id": "C18",
+      "claim": "Brainwave Shots FAQ says 35 sessions and 15/30 minute versions",
+      "status": "seller_describes",
+      "source": "S11",
+      "limit": "Do not collapse different seller offers"
+    },
+    {
+      "id": "C19",
+      "claim": "Brainwave Shots seller advises against use with epilepsy/when alertness required",
+      "status": "seller_safety_statement",
+      "source": "S11",
+      "limit": "Preserve if editorially reviewed; not substitute for healthcare advice"
+    },
+    {
+      "id": "C20",
+      "claim": "Public portal states 60%+ payout and $1+ EPC",
+      "status": "seller_network_promo_only",
+      "source": "S10",
+      "limit": "Do not project FV commission or state actual payout"
+    },
+    {
+      "id": "C21",
+      "claim": "FV has partner acceptance and channel/email permissions",
+      "status": "unverified",
+      "source": "S10",
+      "limit": "Require named account documentation"
+    },
+    {
+      "id": "C22",
+      "claim": "FV has actual paid affiliate commission on Zen12",
+      "status": "unverified",
+      "source": "S10",
+      "limit": "Require settled merchant ledger, not click"
+    },
+    {
+      "id": "C23",
+      "claim": "Affiliates must have adjacent clear material-connection disclosures",
+      "status": "regulatory",
+      "source": "S18",
+      "limit": "Test near disabled/active CTA; do not hide in footer"
+    },
+    {
+      "id": "C24",
+      "claim": "Health benefit claims need appropriate substantiation",
+      "status": "regulatory",
+      "source": "S19",
+      "limit": "FTC also requires net impression not misleading"
+    },
+    {
+      "id": "C25",
+      "claim": "FV has a rights-cleared, sellable Mind Payhip SKU",
+      "status": "unverified",
+      "source": "S02",
+      "limit": "No authenticated inventory/rights/fulfillment"
+    },
+    {
+      "id": "C26",
+      "claim": "New article has a cleared, nonduplicative public canonical URL",
+      "status": "unverified",
+      "source": "S01",
+      "limit": "Hold until editorial checks overlap"
+    },
+    {
+      "id": "C27",
+      "claim": "A 42s moving film exists with tested accessibility",
+      "status": "not_built",
+      "source": "S01",
+      "limit": "B contains an optional storyboard/caption text only, no video"
+    },
+    {
+      "id": "C28",
+      "claim": "Measured net revenue per 1000 qualified humans",
+      "status": "not_computable",
+      "source": "S02",
+      "limit": "Qualified denominator and settled net revenue unavailable"
+    }
+  ],
+  "gates": [
+    {
+      "id": "G01",
+      "requirement": "Final Vestige named Inspire3 application acceptance",
+      "owner": "Founder–Mind",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "G02",
+      "requirement": "Current written partner terms & paid attribution window",
+      "owner": "Founder–Mind",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "G03",
+      "requirement": "Publisher-issued affiliate URL and exact approved landing page",
+      "owner": "Founder–Mind",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "G04",
+      "requirement": "TikTok/YouTube/social promotion channel permission",
+      "owner": "Founder–Mind",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "G05",
+      "requirement": "Website promotion permission and disclosure placement",
+      "owner": "Founder–Mind",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "G06",
+      "requirement": "Email promotion permission before any Dispatch earning CTA",
+      "owner": "Founder–Dispatch",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "G07",
+      "requirement": "Any official affiliate creatives/swipe usage rights documented",
+      "owner": "Founder–Mind",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "G08",
+      "requirement": "Exact Zen12 SKU/pricing/promo/checkout consistency verified",
+      "owner": "Commerce",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "G09",
+      "requirement": "Actual returns/guarantee eligibility and documented restrictions",
+      "owner": "Commerce",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "G10",
+      "requirement": "FV owned Mind SKU rights, eligibility, checkout, delivery as alternative",
+      "owner": "Commerce",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "G11",
+      "requirement": "3 actual Grok asset IDs and verified signed-out mobile destinations",
+      "owner": "Praxxis–Grok",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "G12",
+      "requirement": "Single Focus/Jetpack flow delivery and consent audit",
+      "owner": "Claude–Dispatch–QA",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "G13",
+      "requirement": "Source, medical efficacy, historical and duplicate editorial review",
+      "owner": "Mind–Independent editor",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "G14",
+      "requirement": "Browser mobile/no-JS/WCAG + WordPress sanitizer + CVW QA",
+      "owner": "Site QA",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "G15",
+      "requirement": "Existing first-party analytics contract and privacy-approved attribution",
+      "owner": "Claude–QA",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "G16",
+      "requirement": "Founder commercial release approval + settled order/commission evidence",
+      "owner": "Founder–Commerce",
+      "status": "HARD_HOLD",
+      "evidence": null
+    }
+  ],
+  "commercial_state": {
+    "merchant_link_enabled": false,
+    "authenticated_partner_approval": false,
+    "verified_paid_orders": null,
+    "verified_affiliate_commissions": null,
+    "qualified_human_sessions": null,
+    "net_revenue_per_1000_qualified_human_sessions": null,
+    "reason": "No authenticated denominator or settlement ledger; missing data MUST NOT be reported as zero."
+  },
+  "ethics": {
+    "disclosure_template": "If you purchase through an authorized link, Final Vestige may earn a commission at no additional cost to you.",
+    "forbidden_claims": [
+      "meditation hour-equivalence",
+      "guaranteed stress relief or healing",
+      "verified product-specific cognitive/clinical outcome",
+      "guaranteed price or coupon",
+      "evergreen urgency",
+      "invented payout, sale or product use"
+    ],
+    "inherited_funnel": "single existing /focus/ Jetpack list, no new signup form"
+  }
+}
