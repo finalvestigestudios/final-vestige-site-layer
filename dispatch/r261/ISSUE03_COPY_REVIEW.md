@@ -6,6 +6,8 @@ Type: commercial-review-pending
 
 Twelve minutes sounds like an answer to a familiar problem: you want to practice attention, but the calendar is already full. It is a sensible *amount of time to try*. It is not, by itself, evidence that a recording can reproduce an hour of meditation.
 
+That separation is part of our historical method, not a new rule made for meditation. In 1784, investigators evaluating animal magnetism distinguished experiences that people reported from the proposed magnetic cause. Our published study of Franklin's commission follows the tests in the surviving record. A modern audio claim deserves that same distinction, without pretending it is the same experiment. [Archive 1]
+
 Here is a useful distinction. In a 2023 randomized study, 372 adults were assigned to brief mindfulness sessions or control recordings. The study compared ten- and twenty-minute meditation conditions, and its results suggested short sessions can affect self-reported state mindfulness. Individual responses differed; the investigators did not test Zen12, its audio, or its claimed brainwave mechanism. Those findings cannot verify a particular seller's promise. [Research 1]
 
 Before buying a program, make the first experiment free. Pick an ordinary task you have been avoiding. Spend twelve minutes on it—or sit quietly and practice returning attention to a single anchor. On your Fieldbook page, write down when you began, what interrupted you, and whether you were willing to do the same thing the next day. Repeat over several days. Do not grade yourself on whether you reached a special state. This checks *practical fit*, not clinical efficacy.
@@ -17,6 +19,7 @@ If the free routine is already useful, you might not need a product. If you want
 **PRIMARY CTA (disabled pending approval):** Read the Zen12 evidence and purchase-path guide — [[APPROVED_LIVE_ZEN12_GUIDE_URL_REQUIRED]]
 **Commercial disclosure (beside the proposed CTA):** Final Vestige may earn a commission if a reader later purchases through a qualifying link in an approved guide. No affiliate offer, referral link, price, or email-promotion permission is approved for this draft.
 
+Archive 1: Final Vestige 1784 commission investigation: https://finalvestige.com/2026/11/02/mesmerism/
 Research 1: Palmer et al. (2023), randomized comparison of 10 vs. 20 min meditation: https://pubmed.ncbi.nlm.nih.gov/38001316/
 Research 2: NIH NCCIH, Meditation and Mindfulness—Effectiveness and Safety: https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety
 Merchant 1: Zen12 standard seller page: https://zen12.com/hnp
