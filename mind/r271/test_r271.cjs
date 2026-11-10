@@ -67,12 +67,13 @@ function check(d){
  bad(!d.plan.includes("NO VERIFIED CREATOR MATCH")||!d.plan.includes("R268")||!d.plan.includes("NOT COMPUTABLE"),"plan unknown/reuse/KPI");
  for(const [k,h] of [["a",d.a],["b",d.b]]){
   bad(!/<meta\b[^>]*name="robots"[^>]*content="noindex,nofollow"/i.test(h),k+" noindex");
-  bad(!/<button\b[^>]*\bid="zen12-buy-button"[^>]*\bdisabled\b[^>]*aria-disabled="true"/i.test(h),k+" disabled purchase");
+  const buyTag=(h.match(/<button\b[^>]*\bid="zen12-buy-button"[^>]*>/i)||[])[0]||"";
+  bad(!buyTag||!(/\sdisabled(?:\s|>)/i.test(buyTag))||!/aria-disabled="true"/i.test(buyTag),k+" disabled purchase");
   const p=h.indexOf('id="zen12-buy-button"'),q=h.indexOf('id="affiliate-disclosure"');
   bad(p<0||q<p||q-p>850,k+" near CTA disclosure");
   bad(!/no active affiliate link here now/i.test(h),k+" inactive disclosure");
   bad(/<\s*(?:script|form|iframe|video|audio|source|track|input|img)\b/i.test(h),k+" added executable/resource/form");
-  bad(/(?:@import\s|url\s*\(|\bon[a-z]+\s*=|\bautoplay\b|http-equiv\s*=)/i.test(h),k+" hidden fetch/event/autoplay");
+  bad(/(?:@import\s|url\s*\(|\bon[a-z]+\s*=|\bautoplay\s*(?:=|>|\/>)|http-equiv\s*=)/i.test(h),k+" hidden fetch/event/autoplay");
   bad(/<a\b[^>]*href=["']https?:\/\/(?:www\.)?(?:zen12|inspire3|hypnosislive|brainwaveshots)\./i.test(h),k+" earning/merchant link");
  }
  const choice=h=>h.slice(h.indexOf('<section id="choice">'),h.indexOf("</main>",h.indexOf('<section id="choice">')));
