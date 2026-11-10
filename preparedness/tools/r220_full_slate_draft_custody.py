@@ -130,6 +130,10 @@ R257_PARTITION_BLOB = 'df74968de5ee609fa16287a7339cd8262616603c'
 # not a computed-style/browser/privacy/QD approval.
 R260_PRINT_DISCLOSURE_PATH = 'tools/r260_family_card_print_disclosure_witness_hold.py'
 R260_PRINT_DISCLOSURE_BLOB = '3a5c51f2e49c0b92de0730d558af18b29b6c206b'
+# R261 proposes only an in-memory, source-bound print privacy draft;
+# original source, citations and review holds remain untouched.
+R261_PRINT_DRAFT_PATH = 'tools/r261_family_card_print_remediation_draft_hold.py'
+R261_PRINT_DRAFT_BLOB = '7132840d9f35bd60af5c7e4152053270f347da58'
 # R258 binds the complete R254/R257 original source-claim partition to a
 # deterministic, entirely escaped, no-clickable-links offline reviewer view.
 R258_COMPLETE_REVIEW_PATH = 'tools/r258_complete_offline_claim_review_hold.py'
@@ -779,6 +783,26 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
                     'release_authorized'))):
             raise ValueError('R260 printed family-card privacy witness HARD HOLD changed')
         result['family_card_print_privacy_review_witness'] = print_witness
+        # An offline candidate is not a corrected original or a privacy PASS.
+        r261 = load_frozen_gate(root, R261_PRINT_DRAFT_PATH,
+                                R261_PRINT_DRAFT_BLOB,
+                                'fv_preparedness_r261_print_privacy_draft', ('audit',))
+        candidate_receipt = r261.audit(root, safe_read)
+        if (candidate_receipt.get('state') != HOLD
+                or candidate_receipt.get('original_git_blob') != print_witness['source_git_blob']
+                or candidate_receipt.get('changed_anchor_count') != 3
+                or candidate_receipt.get('draft_notice_occurrences') != 2
+                or candidate_receipt.get('javascript_print_note_contains_notice') is not True
+                or candidate_receipt.get('nojs_print_sheet_contains_notice') is not True
+                or candidate_receipt.get('nojs_functionality_claim_corrected_in_draft') is not True
+                or candidate_receipt.get('original_source_unchanged') is not True
+                or candidate_receipt.get('real_browser_and_print_tests_required') is not True
+                or any(candidate_receipt.get(key) is not False for key in (
+                    'privacy_certified', 'medical_safety_verified', 'independent_qd_pass',
+                    'source_review_approved', 'merchant_approved',
+                    'release_authorized', 'public_published'))):
+            raise ValueError('R261 offline print privacy candidate HOLD drift')
+        result['family_card_unpublished_print_remediation_receipt'] = candidate_receipt
         # An editorial option is NOT a source correction or approval. Authenticate
         # its exact preview bytes, then separately inspect its visible copy.
         if git_blob(safe_read(root, R249_UNPUBLISHED_PREVIEW_PATH)) != R249_UNPUBLISHED_PREVIEW_BLOB:
@@ -977,6 +1001,8 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
             raise ValueError('R257 complete citation partition gate changed during audit')
         if git_blob(safe_read(root, R260_PRINT_DISCLOSURE_PATH)) != R260_PRINT_DISCLOSURE_BLOB:
             raise ValueError('R260 print/privacy disclosure witness changed during audit')
+        if git_blob(safe_read(root, R261_PRINT_DRAFT_PATH)) != R261_PRINT_DRAFT_BLOB:
+            raise ValueError('R261 offline print privacy draft gate changed during audit')
         if git_blob(safe_read(root, R258_COMPLETE_REVIEW_PATH)) != R258_COMPLETE_REVIEW_BLOB:
             raise ValueError('R258 2000-citation offline reviewer gate changed during audit')
         result['reconciliation'] = {'frozen_articles': 35,
