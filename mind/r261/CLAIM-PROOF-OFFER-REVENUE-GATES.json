@@ -1,0 +1,531 @@
+{
+  "version": "r261",
+  "verified_on": "2026-11-09 PT",
+  "status": "UNPUBLISHED_HARD_HOLD",
+  "source_usage_notice": "Public facts independently read from official/primary pages. A live webpage is NOT a record of merchant settlement or partner account acceptance. All other account status is unknown. Prior R260 was parent for canonical gates.",
+  "sources": [
+    {
+      "id": "S01",
+      "url": "https://www.nature.com/articles/35048669",
+      "kind": "primary_science"
+    },
+    {
+      "id": "S02",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/12063138/",
+      "kind": "primary_science"
+    },
+    {
+      "id": "S03",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2905511/",
+      "kind": "primary_science"
+    },
+    {
+      "id": "S04",
+      "url": "https://doi.org/10.1177/0301006619885796",
+      "kind": "primary_science"
+    },
+    {
+      "id": "S05",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35435070/",
+      "kind": "primary_science"
+    },
+    {
+      "id": "S06",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35562629/",
+      "kind": "primary_science"
+    },
+    {
+      "id": "S07",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35233744/",
+      "kind": "primary_science"
+    },
+    {
+      "id": "S08",
+      "url": "https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety",
+      "kind": "government"
+    },
+    {
+      "id": "S09",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "kind": "government"
+    },
+    {
+      "id": "S10",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "kind": "government"
+    },
+    {
+      "id": "S11",
+      "url": "https://inspire3.com/",
+      "kind": "seller_or_portal"
+    },
+    {
+      "id": "S12",
+      "url": "https://affiliates.inspire3.com/",
+      "kind": "seller_or_portal"
+    },
+    {
+      "id": "S13",
+      "url": "https://zen12.com/hnp",
+      "kind": "seller_or_portal"
+    },
+    {
+      "id": "S14",
+      "url": "https://zen12.com/secret/",
+      "kind": "seller_or_portal"
+    },
+    {
+      "id": "S15",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "kind": "seller_or_portal"
+    },
+    {
+      "id": "S16",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "kind": "published_FV"
+    },
+    {
+      "id": "S17",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "kind": "published_FV"
+    },
+    {
+      "id": "S18",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "kind": "published_FV"
+    },
+    {
+      "id": "S19",
+      "url": "https://finalvestige.com/focus/",
+      "kind": "published_FV"
+    },
+    {
+      "id": "S20",
+      "url": "https://finalvestige.com/editorial-standards/",
+      "kind": "published_FV"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "Two tones paired with one physical flash can influence reported flash count",
+      "classification": "INDEPENDENT_PRIMARY_LAB",
+      "sources": [
+        "S01",
+        "S02"
+      ],
+      "editorial": "Experiment-specific, not universal or product effect",
+      "eligible_for_sales_copy": true
+    },
+    {
+      "id": "C02",
+      "claim": "A temporal interaction window near 100ms was reported in a 2002 experiment",
+      "classification": "INDEPENDENT_PRIMARY_LAB",
+      "sources": [
+        "S02"
+      ],
+      "editorial": "Do not generalize to all humans/conditions",
+      "eligible_for_sales_copy": true
+    },
+    {
+      "id": "C03",
+      "claim": "Early event-related potential modulation differs from an actual second flash",
+      "classification": "INDEPENDENT_PRIMARY_EEG",
+      "sources": [
+        "S03"
+      ],
+      "editorial": "No brain-reprogramming inference",
+      "eligible_for_sales_copy": true
+    },
+    {
+      "id": "C04",
+      "claim": "Instructions can modulate the tested fission response",
+      "classification": "INDEPENDENT_PRIMARY_LAB",
+      "sources": [
+        "S04"
+      ],
+      "editorial": "Do not imply the fusion counterpart is equally stable",
+      "eligible_for_sales_copy": true
+    },
+    {
+      "id": "C05",
+      "claim": "Reward condition in a 2022 study reduced fission illusion measures",
+      "classification": "INDEPENDENT_PRIMARY_LAB",
+      "sources": [
+        "S05"
+      ],
+      "editorial": "No claim that rewarding consumers changes brain health",
+      "eligible_for_sales_copy": true
+    },
+    {
+      "id": "C06",
+      "claim": "Eccentricity effects were not monotonically increasing",
+      "classification": "INDEPENDENT_PRIMARY_LAB",
+      "sources": [
+        "S06"
+      ],
+      "editorial": "Specify tested conditions",
+      "eligible_for_sales_copy": true
+    },
+    {
+      "id": "C07",
+      "claim": "Implicit expectation influences some multisensory conditions",
+      "classification": "INDEPENDENT_PRIMARY_LAB",
+      "sources": [
+        "S07"
+      ],
+      "editorial": "Mechanism and outcome remain task dependent",
+      "eligible_for_sales_copy": true
+    },
+    {
+      "id": "C08",
+      "claim": "Meditation studies concern varied practices and evidence quality",
+      "classification": "INDEPENDENT_GOVERNMENT_OVERVIEW",
+      "sources": [
+        "S08"
+      ],
+      "editorial": "Not product-specific proof",
+      "eligible_for_sales_copy": true
+    },
+    {
+      "id": "C09",
+      "claim": "Zen12 offers twelve levels, four styles and 48 tracks on its standard seller page",
+      "classification": "SELLER_PACKAGE_ONLY",
+      "sources": [
+        "S13"
+      ],
+      "editorial": "May describe solely as seller's advertised inventory; checkout unverified",
+      "eligible_for_sales_copy": true
+    },
+    {
+      "id": "C10",
+      "claim": "Zen12 12 minutes equals benefits of one hour of advanced meditation",
+      "classification": "UNSUBSTANTIATED_SELLER_EFFICACY",
+      "sources": [
+        "S13"
+      ],
+      "editorial": "Never repeat as fact or inherit from meditation literature",
+      "eligible_for_sales_copy": false
+    },
+    {
+      "id": "C11",
+      "claim": "Zen12 brainwave entrainment automatically produces deep meditation",
+      "classification": "UNSUBSTANTIATED_SELLER_EFFICACY",
+      "sources": [
+        "S13"
+      ],
+      "editorial": "Neither illusion nor EEG physiology proves this product benefit",
+      "eligible_for_sales_copy": false
+    },
+    {
+      "id": "C12",
+      "claim": "Zen12 standard page displayed a Premium price as a seller web price",
+      "classification": "UNVERIFIED_PRICE",
+      "sources": [
+        "S13"
+      ],
+      "editorial": "2026-11-09 snapshot lists $87 (earlier R260 reported $87.99); final checkout, locale, cents unverified",
+      "eligible_for_sales_copy": false
+    },
+    {
+      "id": "C13",
+      "claim": "Separate Zen12 coupon page displayed $37 and a countdown",
+      "classification": "PROMO_TERMS_UNVERIFIED",
+      "sources": [
+        "S14"
+      ],
+      "editorial": "No endorsement, countdown, coupon reproduction, or redirect",
+      "eligible_for_sales_copy": false
+    },
+    {
+      "id": "C14",
+      "claim": "Standard Zen12 page advertises a one-year refund promise",
+      "classification": "SELLER_REFUND_PROMISE",
+      "sources": [
+        "S13"
+      ],
+      "editorial": "Actual processing and offer-specific contractual terms unverified",
+      "eligible_for_sales_copy": false
+    },
+    {
+      "id": "C15",
+      "claim": "Affiliate portal states generic 60%+ commission claims",
+      "classification": "SELLER_PROGRAM_PROMO",
+      "sources": [
+        "S12"
+      ],
+      "editorial": "Not a verified FV commission rate, entitlement or sale",
+      "eligible_for_sales_copy": false
+    },
+    {
+      "id": "C16",
+      "claim": "The public portal proves Final Vestige accepted",
+      "classification": "NOT_VERIFIED",
+      "sources": [
+        "S12"
+      ],
+      "editorial": "Public signup is not named acceptance",
+      "eligible_for_sales_copy": false
+    },
+    {
+      "id": "C17",
+      "claim": "A seller-issued tracking destination for FV has been authenticated",
+      "classification": "NOT_VERIFIED",
+      "sources": [
+        "S12"
+      ],
+      "editorial": "Do not invent tracking URL or imply commercial acceptance",
+      "eligible_for_sales_copy": false
+    },
+    {
+      "id": "C18",
+      "claim": "Hypnosis Live Total Focus lists a 33-minute 47MB audio",
+      "classification": "SELLER_PACKAGE_ONLY",
+      "sources": [
+        "S15"
+      ],
+      "editorial": "Exact product not substitute for Zen12",
+      "eligible_for_sales_copy": false
+    },
+    {
+      "id": "C19",
+      "claim": "Hypnosis Live Total Focus assures concentration, NLP reprogramming and professional gain",
+      "classification": "UNSUBSTANTIATED_SELLER_EFFICACY",
+      "sources": [
+        "S15"
+      ],
+      "editorial": "Do not inherit guarantees",
+      "eligible_for_sales_copy": false
+    },
+    {
+      "id": "C20",
+      "claim": "FC-owned Mind paid item rights/checkout/settled paid order verified",
+      "classification": "NOT_VERIFIED",
+      "sources": [],
+      "editorial": "Cannot activate owned fallback without exact SKU+transaction",
+      "eligible_for_sales_copy": false
+    },
+    {
+      "id": "C21",
+      "claim": "Published Focus page exists",
+      "classification": "LIVE_ROUTE_ONLY",
+      "sources": [
+        "S19"
+      ],
+      "editorial": "Does not establish newsletter confirmation or welcome email delivery",
+      "eligible_for_sales_copy": true
+    },
+    {
+      "id": "C22",
+      "claim": "The FTC recommends close clear commission disclosures near earning links",
+      "classification": "REGULATOR_GUIDANCE",
+      "sources": [
+        "S10"
+      ],
+      "editorial": "Prospective disclosure must not pretend active links",
+      "eligible_for_sales_copy": true
+    },
+    {
+      "id": "C23",
+      "claim": "FTC requires substantive independent product health efficacy substantiation",
+      "classification": "REGULATOR_GUIDANCE",
+      "sources": [
+        "S09"
+      ],
+      "editorial": "Silence unsupported claims, no cure or focus guarantee",
+      "eligible_for_sales_copy": true
+    },
+    {
+      "id": "C24",
+      "claim": "Affiliate clicks are actual paid commissions",
+      "classification": "FALSE_METRIC",
+      "sources": [],
+      "editorial": "Require independently settled partner payout documentation",
+      "eligible_for_sales_copy": false
+    },
+    {
+      "id": "C25",
+      "claim": "Actual net revenue/1000 qualified human sessions is presently computable",
+      "classification": "NOT_VERIFIED",
+      "sources": [],
+      "editorial": "Denominator and merchant financial records missing",
+      "eligible_for_sales_copy": false
+    }
+  ],
+  "commercial_gates": [
+    {
+      "id": "publisher_named_acceptance",
+      "status": "HARD_HOLD",
+      "verified_at": null,
+      "evidence_required": "Specific signed partner/account/merchant/source proof before activation"
+    },
+    {
+      "id": "issued_affiliate_url",
+      "status": "HARD_HOLD",
+      "verified_at": null,
+      "evidence_required": "Specific signed partner/account/merchant/source proof before activation"
+    },
+    {
+      "id": "specific_zen12_product_and_destination",
+      "status": "HARD_HOLD",
+      "verified_at": null,
+      "evidence_required": "Specific signed partner/account/merchant/source proof before activation"
+    },
+    {
+      "id": "website_channel_permission",
+      "status": "HARD_HOLD",
+      "verified_at": null,
+      "evidence_required": "Specific signed partner/account/merchant/source proof before activation"
+    },
+    {
+      "id": "social_channel_permission",
+      "status": "HARD_HOLD",
+      "verified_at": null,
+      "evidence_required": "Specific signed partner/account/merchant/source proof before activation"
+    },
+    {
+      "id": "email_channel_permission",
+      "status": "HARD_HOLD",
+      "verified_at": null,
+      "evidence_required": "Specific signed partner/account/merchant/source proof before activation"
+    },
+    {
+      "id": "approved_creative_usage_rights",
+      "status": "HARD_HOLD",
+      "verified_at": null,
+      "evidence_required": "Specific signed partner/account/merchant/source proof before activation"
+    },
+    {
+      "id": "exact_checkout_price_and_currency",
+      "status": "HARD_HOLD",
+      "verified_at": null,
+      "evidence_required": "Specific signed partner/account/merchant/source proof before activation"
+    },
+    {
+      "id": "merchant_tax_shipping_or_extra_charges",
+      "status": "HARD_HOLD",
+      "verified_at": null,
+      "evidence_required": "Specific signed partner/account/merchant/source proof before activation"
+    },
+    {
+      "id": "product_inclusion_equivalence_promo_vs_standard",
+      "status": "HARD_HOLD",
+      "verified_at": null,
+      "evidence_required": "Specific signed partner/account/merchant/source proof before activation"
+    },
+    {
+      "id": "refund_terms_specific_offer",
+      "status": "HARD_HOLD",
+      "verified_at": null,
+      "evidence_required": "Specific signed partner/account/merchant/source proof before activation"
+    },
+    {
+      "id": "merchant_refund_actual_process",
+      "status": "HARD_HOLD",
+      "verified_at": null,
+      "evidence_required": "Specific signed partner/account/merchant/source proof before activation"
+    },
+    {
+      "id": "buyer_facing_compliant_disclosure",
+      "status": "HARD_HOLD",
+      "verified_at": null,
+      "evidence_required": "Specific signed partner/account/merchant/source proof before activation"
+    },
+    {
+      "id": "first_party_event_definition_owner_signoff",
+      "status": "HARD_HOLD",
+      "verified_at": null,
+      "evidence_required": "Specific signed partner/account/merchant/source proof before activation"
+    },
+    {
+      "id": "merchant_confirmed_paid_commission_feed",
+      "status": "HARD_HOLD",
+      "verified_at": null,
+      "evidence_required": "Specific signed partner/account/merchant/source proof before activation"
+    },
+    {
+      "id": "founder_editorial_QA_release_approval",
+      "status": "HARD_HOLD",
+      "verified_at": null,
+      "evidence_required": "Specific signed partner/account/merchant/source proof before activation"
+    }
+  ],
+  "release_boundary": {
+    "wordpress_published": false,
+    "newsletter_sent": false,
+    "merchant_link_enabled": false,
+    "analytics_script_added": false,
+    "merge_or_deploy": false,
+    "paid_service": false
+  },
+  "owned_product_fallback": {
+    "status": "UNKNOWN_NOT_AUTHENTICATED",
+    "require": [
+      "product_id",
+      "rights_clearance",
+      "audience_fit",
+      "current_checkout_price",
+      "refund_policy",
+      "delivery_test",
+      "merchant_sale_receipt"
+    ],
+    "action": "Do not suggest any owned product is for sale before authenticating its SKU/rights/cart."
+  },
+  "attribution_contract": {
+    "privacy": "first-party aggregate only; no visitor fingerprint, email, PII, advertising pixels, or unconsented cookie",
+    "proposed_events": [
+      "campaign_landing",
+      "article_to_resource_click",
+      "confirmed_signup_if_provider_verified",
+      "affiliate_outbound_or_affiliate_click",
+      "merchant_confirmed_purchase",
+      "partner_settled_commission",
+      "refund_or_chargeback"
+    ],
+    "qualified_humans": "only when source-validated; exclude suspected bots/internal sessions with documented rules",
+    "net_revenue_per_1000_qualified_humans": "NOT_COMPUTABLE",
+    "treatment": "7 and 30 day cohorts; never equate click with sale"
+  },
+  "pilot": {
+    "commercial_target": "Zen12 Premium IF named account and exact approved destination verified; otherwise HOLD",
+    "canonical_ab": "mind/r257 existing text A vs same copy+optional 42s video B",
+    "film_status": "local review artifact, NOT HOSTED",
+    "no_js": true,
+    "autoplay": false,
+    "explicit_consent_needed": "Only if future instrumentation requires visitor-level storage",
+    "proposed_primary_endpoint": "verified realized net revenue per 1000 qualified humans",
+    "if_no_merchant_data": "Not computable; no A/B conclusion"
+  },
+  "social_join_paths": [
+    {
+      "topic": "change blindness",
+      "published_article": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "asset_id": "NOT_VERIFIED",
+      "resource": "https://finalvestige.com/focus/",
+      "offer": "Zen12 only if relevant and authorized"
+    },
+    {
+      "topic": "Mesmer / Puységur",
+      "published_article": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "asset_id": "NOT_VERIFIED",
+      "resource": "https://finalvestige.com/focus/",
+      "offer": "Hypnosis Live separate evidence/authorization required"
+    },
+    {
+      "topic": "sound-induced flash / audiovisual perception",
+      "draft_article": "mind/r261/THE-SECOND-FLASH-THAT-NEVER-HAPPENED-UNPUBLISHED.md",
+      "asset_id": "NOT_VERIFIED",
+      "resource": "https://finalvestige.com/focus/",
+      "offer": "No editorial endorsement; optional independent Zen12 comparison if shopping intent"
+    }
+  ],
+  "fixed_constraints": [
+    "Preserve site PR49",
+    "Preserve Mind hub PR172",
+    "Do not edit agent Issue150",
+    "Single existing Jetpack /focus/ opt-in and Dispatch welcome",
+    "No new analytics scripts, social content, emails or paid SaaS",
+    "No active commercial links until authorization",
+    "No product-specific medical/wealth benefits"
+  ]
+}
