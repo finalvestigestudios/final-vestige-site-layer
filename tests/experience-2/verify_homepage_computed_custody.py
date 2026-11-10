@@ -7,6 +7,8 @@ backend. A PASS is a Chromium lab preflight, NEVER release approval.
 """
 import argparse
 import json
+import re
+from html.parser import HTMLParser
 from pathlib import Path
 from playwright.sync_api import sync_playwright
 from verify_homepage_preservation import evaluate
@@ -51,6 +53,19 @@ COMPUTED = r"""(q) => {
     horizontal_overflow_px:overflow, subscription_self_links_inconclusive:selfLinkCount};
 }"""
 
+class AssetPreflight(HTMLParser):
+    """Fail closed if source needs styles/scripts that offline browser blocks."""
+    def __init__(self):
+        super().__init__()
+        self.blocked = []
+    def handle_starttag(self, tag, attrs):
+        d=dict(attrs)
+        if tag == 'link' and 'stylesheet' in (d.get('rel') or '').lower().split():
+            self.blocked.append('external_stylesheet_not_loaded')
+        if tag == 'script' and d.get('src'):
+            self.blocked.append('external_script_not_loaded')
+
+
 def verify(html, baseline, widths=WIDTHS):
     result={'gate':'HOLD','release_approved':False,'checks':[],'errors':[],
       'limitations':['Offline rendered candidate, not a WordPress/Assembler runtime',
@@ -61,6 +76,14 @@ def verify(html, baseline, widths=WIDTHS):
     result['static_gate']=static['gate']
     if static['gate']!='PASS':
         result['errors'].append('Raw/DOM fingerprints HOLD: '+str(static['errors']))
+        return result
+    deps=AssetPreflight()
+    deps.feed(html)
+    deps.close()
+    if re.search(r'@import\\s', html, re.I):
+        deps.blocked.append('stylesheet_import_not_loaded')
+    if deps.blocked:
+        result['errors'].append('Offline CSS/JS asset preflight HOLD: '+', '.join(sorted(set(deps.blocked))))
         return result
     with sync_playwright() as pw:
         browser=pw.chromium.launch(executable_path='/usr/bin/chromium',
