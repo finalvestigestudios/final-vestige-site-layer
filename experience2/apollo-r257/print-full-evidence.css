@@ -1,0 +1,20 @@
+/* FV Apollo Evidence Atlas R257 — complete print-native evidence custody.
+   The sealed R238 archive contains thirteen native <details> disclosures.
+   Print should preserve ALL their evidence/source text even when a visitor
+   did not open each detail beforehand. No screen, image, tracking or commerce
+   behavior is changed. Works without JavaScript in Chromium 144+. */
+@media print {
+  .fv-apollo-atlas details::details-content {
+    content-visibility: visible !important;
+    display: block !important;
+  }
+  .fv-apollo-atlas details > summary,
+  .fv-apollo-atlas details > summary * {
+    color: #000 !important;
+  }
+  .fv-apollo-atlas details a {
+    color: #000 !important;
+    text-decoration: underline !important;
+    overflow-wrap: anywhere;
+  }
+}
