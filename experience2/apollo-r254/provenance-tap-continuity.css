@@ -1,0 +1,36 @@
+/* Apollo R254: close remaining NASA-source touch gaps at different breakpoints.
+   Apply AFTER the SHA-pinned R238 stylesheet and R253 overlay. STAGING ONLY.
+   URL identity, editorial content and source chronology remain unchanged. */
+.fv-apollo-atlas a[href^="https://www.nasa.gov/"] {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  max-width: 100%;
+  padding-block: .55rem;
+  overflow-wrap: anywhere;
+  vertical-align: middle;
+  text-underline-offset: .18em;
+}
+/* The existing method-grid selector has higher specificity; preserve true box sizing. */
+.fv-apollo-atlas .fv-apollo-method dd a[href^="https://www.nasa.gov/"] {
+  display: inline-flex;
+}
+@media (forced-colors: active) {
+  .fv-apollo-atlas a[href^="https://www.nasa.gov/"]:focus-visible {
+    outline: 3px solid Highlight;
+    outline-offset: 2px;
+  }
+}
+/* Print the record, not 44px touch UI. Source URL labels stay visible. */
+@media print {
+  .fv-apollo-atlas a[href^="https://www.nasa.gov/"] {
+    display: inline;
+    min-height: 0;
+    max-width: 100%;
+    padding: 0;
+    vertical-align: baseline;
+  }
+  .fv-apollo-atlas .fv-apollo-method dd a[href^="https://www.nasa.gov/"] {
+    display: inline;
+  }
+}
