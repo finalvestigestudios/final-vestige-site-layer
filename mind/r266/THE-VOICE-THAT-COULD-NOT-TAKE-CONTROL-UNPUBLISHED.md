@@ -97,7 +97,7 @@ The modern self-hypnosis trial is a much stronger kind of evidence than a mesmer
 
 That is the central Final Vestige principle: a compelling experience may deserve investigation; a particular explanation must still earn its evidence.
 
-If you want a no-cost starting point for attention and reflection, the existing [Seven Day Focus Fieldbook](https://finalvestige.com/focus/) is available without buying any audio. Its practical logging exercise does not claim to diagnose, hypnotize or treat anyone. For the historical source trail, consult [Puységur's Animal Magnetism Files](https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/). Neither reading requires a purchase.
+If you want a no-cost starting point for attention and reflection, the existing [Seven Day Focus Fieldbook](https://finalvestige.com/focus/) is available without buying any audio. Its practical logging exercise does not claim to diagnose, hypnotize or treat anyone. For the historical source trail, begin with the published [Franklin commission investigation](https://finalvestige.com/2026/11/02/mesmerism/) and continue to [Puységur's Animal Magnetism Files](https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/). Neither reading requires a purchase.
 
 ### Sources and verification notes
 
