@@ -9,6 +9,11 @@ test("self linking REST fallback does not prove live form broken",()=>{
  assert.equal(x.self_linking_subscribe_fallback,true);assert.equal(x.live_signup_working,null);
  assert.equal(x.requires_real_browser_render_and_keyboard_QA,true);
 });
+test("Focus Fieldbook button-only copy also counts as self page link",()=>{
+ const h='<div class="wp-block-jetpack-subscriptions"><a href="https://finalvestige.com/?post_type=page&#038;p=1579">Send me the fieldbook</a></div>';
+ const x=auditSignupSnapshot({blockHtml:h,expectedPageId:1579});
+ assert.equal(x.self_linking_subscribe_fallback,true);assert.equal(x.live_signup_working,null);
+});
 test("different page link is not matching fallback",()=>assert.equal(auditSignupSnapshot({blockHtml:fallback(1579),expectedPageId:523}).self_linking_subscribe_fallback,false));
 test("actually present form does not trigger fallback",()=>{
  const x=auditSignupSnapshot({blockHtml:fallback(523)+'<form><input type="email"></form>',expectedPageId:523});
