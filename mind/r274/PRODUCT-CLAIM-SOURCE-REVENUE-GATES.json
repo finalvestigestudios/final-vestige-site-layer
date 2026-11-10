@@ -196,6 +196,12 @@
       "type": "repository_business",
       "title": "Business Issue 820",
       "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820"
+    },
+    {
+      "id": "S24",
+      "type": "creator_public_metadata_documented_prior",
+      "title": "Existing YouTube Mesmer/Puységur video: This Boy Collapsed at the WRONG Tree (1784)",
+      "url": "https://www.youtube.com/watch?v=SV9m07PFTYk"
     }
   ],
   "claims": [
@@ -547,7 +553,22 @@
       "focus": "https://finalvestige.com/focus/",
       "product": "hypnosis_live_total_focus",
       "commercial_relevance": "LOW: historical history ≠ tested audio benefits",
-      "status": "NO_VERIFIED_VIDEO_ASSET"
+      "status": "PUBLIC_YOUTUBE_TOPIC_MATCH_DOCUMENTED_BUT_INTERNAL_ASSET_ID_RIGHTS_AND_SITE_CTA_UNVERIFIED",
+      "public_youtube_video_id": "SV9m07PFTYk",
+      "public_youtube_url": "https://www.youtube.com/watch?v=SV9m07PFTYk",
+      "public_youtube_metadata": {
+        "title": "This Boy Collapsed at the WRONG Tree (1784)",
+        "duration": "18:12",
+        "published_calendar_date": "2026-10-31",
+        "observed_historical_relevance": "Mesmer, 1784 commission; Puységur segment at 14:02",
+        "source": "Prior independent public YouTube metadata and description check documented in existing Praxxis/Grok dated Google Drive handoff",
+        "channel_ownership": "NOT_REAUTHENTICATED_THIS_RUN",
+        "exact_timestamp": null,
+        "internal_grok_asset_id": null,
+        "creator_rights_proof": null,
+        "direct_article_link_in_description": false,
+        "signed_out_mobile_article_landing": null
+      }
     },
     {
       "topic": "Perceptual load / task selection",
@@ -590,7 +611,7 @@
     "kpi_status": "NOT_COMPUTABLE",
     "no_qualified_sessions_zero_fallback": true
   },
-  "sources_count": 23,
+  "sources_count": 24,
   "claims_count": 25,
   "gates_count": 16,
   "release_controls": {
@@ -603,5 +624,5 @@
     "new_paid_services": false,
     "merge_approved": false
   },
-  "note": "Live seller pages may change. Published catalog evidence is not contractual authorization, product-specific science, or confirmed transaction data."
+  "note": "Live seller pages may change. Published catalog evidence is not contractual authorization, product-specific science, or confirmed transaction data. Existing dated Praxxis/Grok handoff identifies a PUBLIC YOUTUBE VIDEO ID for Mesmer/Puységur, not Grok's internal asset_id and not a site-directed qualified session. No video-specific FV landing link found in previously inspected description."
 }
