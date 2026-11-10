@@ -48,7 +48,7 @@ for (const [variant,html] of [['A',A],['B',B]]){
   const commerce=html.split('<section aria-labelledby="commerce">')[1]?.split('</section>')[0]||'';
   assert(commerce.includes('may receive a commission')&&commerce.includes('No affiliate earning link')&&commerce.indexOf('may receive a commission')>commerce.indexOf('<button')&&commerce.indexOf('may receive a commission')<commerce.indexOf('</div>'),'adjacent FTC disclosure '+variant);
   assert(html.includes('own newsletter')&&html.includes('existing Dispatch')&&html.includes('Set a no-account timer'),'seller / FV consent distinctions '+variant);
-  assert(html.includes('zen12.com/hnp') && html.includes('zen12.com/secret/') && html.includes('hypnosislive.com/mental-skills/total-focus'),'exact public seller offers '+variant);
+  assert(html.split('zen12.com/hnp').length===4 && html.split('zen12.com/secret/').length===3 && html.includes('hypnosislive.com/mental-skills/total-focus'),'exact public seller offers and source-link parity '+variant);
   assert(html.includes('No Final Vestige-specific partner acceptance') && html.includes('not a clinical promise'),'no implicit seller auth or cure '+variant);
 }
 assert(!A.includes('id="optional-film"')&&B.includes('id="optional-film"'),'film only B');
