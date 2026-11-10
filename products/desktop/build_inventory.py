@@ -105,8 +105,8 @@ def build_inventory(candidate_dir: str | Path) -> str:
     """Publish one canonical inventory only if all six source images stay stable.
 
     The completed seven-file bundle STILL requires release_gate.verify() and real
-    Windows smoke tests. A failed post-publication check removes only our own
-    just-created inventory (best effort, inode-checked), never another file.
+    Windows smoke tests. A failed post-publication check keeps the linked checksum inventory for
+    explicit human review: path-based rollback unlink has a check/delete race.
     """
     stage: Path | None = None
     published_identity: tuple[int, int] | None = None
@@ -163,46 +163,7 @@ def build_inventory(candidate_dir: str | Path) -> str:
                 stage.unlink(missing_ok=True)
             except OSError:
                 pass
-        # A filesystem wrapper may create the hardlink and then raise before
-        # returning. In that case no post-link flag can have been set. On ANY
-        # failed publication attempt, inspect the target against the inode we
-        # recorded before calling os.link. Never remove a foreign replacement.
-        if sys.exc_info()[0] is not None and published_identity is not None:
-            try:
-                info = target.lstat()
-                if (info.st_dev, info.st_ino) == published_identity and stat.S_ISREG(info.st_mode):
-                    target.unlink()
-            except OSError:
-                pass
-
-
-def _membership_with_stage(root: Path, stage: Path) -> None:
-    _membership_staged = list(root.iterdir())
-    if (len(_membership_staged) != len(EXPECTED) + 1
-            or {p.name for p in _membership_staged} != set(EXPECTED) | {stage.name}):
-        raise InventoryBuildError("Candidate folder changed during inventory build")
-    info = stage.lstat()
-    if not stat.S_ISREG(info.st_mode) or info.st_nlink != 1:
-        raise InventoryBuildError("Inventory staging file is not ordinary")
-    for name in EXPECTED:
-        item = (root / name).lstat()
-        if (not stat.S_ISREG(item.st_mode) or item.st_nlink != 1
-                or item.st_size < 1 or item.st_size > MAX_EXE_BYTES):
-            raise InventoryBuildError("Candidate changed during inventory build")
-
-
-def main(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("dist", help="Directory containing ONLY the six approved EXEs")
-    args = parser.parse_args(argv)
-    try:
-        name = build_inventory(args.dist)
-    except InventoryBuildError as exc:
-        print("REJECTED: " + str(exc), file=sys.stderr)
-        return 1
-    print(f"Wrote {name} for six candidates. NOT release authorized; run independent gate.")
-    return 0
-
-
-if __name__ == "__main__":
-    sys.exit(main())
+        # Never auto-unlink a published SHA256SUMS path after a failed build.
+        # Even an inode check followed by unlink has a race: another local
+        # writer can replace the path between those operations. Keep evidence
+        # for explicit operator review, and require a NEW clean folder/retry.
