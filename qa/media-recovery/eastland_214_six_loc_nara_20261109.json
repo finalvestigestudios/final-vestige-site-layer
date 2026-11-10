@@ -1,0 +1,321 @@
+{
+  "schema": "fv-media-eastland-214-archival-primary-custody-v1",
+  "audit_local_date": "2026-11-09",
+  "cohort": "OCT_30_61_POST_355_IMAGE_FROZEN_EDITOR_SOURCE_NOT_GUEST_HTML",
+  "post_id": 214,
+  "post_url": "https://finalvestige.com/2026/08/18/the-lifeboats-never-left-the-deck/",
+  "source_fixture_sha": "0f3dfe398a76838049cebba7cb773d5c5a0c8c69",
+  "audit_method": "Six exact original URLs reopened via external web retriever; all produced tool-inaccessible, which is NOT origin/guest HTTP status. Five independent Commons/LOC/NARA catalog records and primary NARA narrative reviewed; no image binaries downloaded.",
+  "provenance_note": "Primary LOC LCCN 2014699553 and 2014699554 bind CDN ggbain IDs; pan.6a04191 supports panorama; NARA 281841 originates in court evidence, not necessarily government photography. Catalog/Commons claims are not binary identity proof.",
+  "site_baseline": {
+    "historic_posts": 61,
+    "historic_image_positions": 355,
+    "historic_upstream_external_positions": 288,
+    "historic_broken_report_unverified": 42,
+    "guest_confirmed_broken": 0,
+    "claimed_76_percent_cold_wire_savings_verified": false,
+    "wp_originals_over_1500000_bytes": 15,
+    "wp_oversized_original_stored_bytes": 47096779
+  },
+  "measurement_policy": {
+    "guest_http_available": false,
+    "actual_transferred_bytes_available": false,
+    "conditional_960_dimensions_are_catalog_derived_not_browser": true
+  },
+  "wp_plan": [
+    "P0 six slots assigned to Site QA PR154 remain first; then cold-guest CDP for 214:0..5 with final currentSrc, actual redirected request HTTP response, cache booleans, decoded natural dimensions, response MIME, full-scroll screenshots.",
+    "Confirm precise image/crop identity, photographer, institution rights and reproduction credit at item-level. LOC/NARA hosting alone cannot grant reuse of third-party works.",
+    "Only after rights and visitor failure evidence, prepare at most 960px wide no-upscale rendition; preserve wide panorama detail via authorized full-resolution alternative. Staging WordPress media ID and immutable original src rollback map require separate approval.",
+    "Compare identical post/slot and identical historical source after staging via cold-cache encoded network byte accounting, including cache exclusions. No unapproved Gutenberg rewrites."
+  ],
+  "rows": [
+    {
+      "slot": "214:0",
+      "post_id": 214,
+      "post_url": "https://finalvestige.com/2026/08/18/the-lifeboats-never-left-the-deck/",
+      "stored_original_url": "https://cdn.loc.gov/service/pnp/ggbain/19600/19622v.jpg",
+      "stored_alt": "SS Eastland lying on its side beside the Chicago River wharf after capsizing on July 24, 1915.",
+      "frozen_source_fixture": {
+        "path": "qa/media-recovery/parts/06.json",
+        "ref": "qa/media-recovery-reviewed-20261030-1158",
+        "blob_sha": "0f3dfe398a76838049cebba7cb773d5c5a0c8c69"
+      },
+      "source_observation": {
+        "date": "2026-11-09",
+        "method": "WEB_OPEN_INDEPENDENT_RETRIEVER",
+        "result": "TOOL_INACCESSIBLE",
+        "origin_http_status": null,
+        "guest_http_status": null,
+        "guest_current_src": null,
+        "guest_natural_dimensions": null,
+        "guest_encoded_transfer_bytes": null,
+        "confirmed_broken": null
+      },
+      "candidate": {
+        "catalog_url": "https://www.loc.gov/pictures/item/2014699553/",
+        "authority_type": "PRIMARY_LOC_GGBain",
+        "accession": "LOC LCCN 2014699553 / ggbain.19622",
+        "source_evidence_url": "https://www.loc.gov/pictures/item/2014699553/marc/",
+        "relationship": "DIGITAL_ID_GGBAIN_19622_SOURCE_PATH_MATCH",
+        "catalog_native_dimensions_px": null,
+        "conditional_960px_no_upscale_dimensions_px": null,
+        "rights_summary": "LOC Bain collection: no known restrictions on publication; item-level reuse evaluation pending.",
+        "historical_visual_integrity": "Bain title says EASTLAND overturned in Chicago River 7/24/15; title derived from unverified photo-captions; photo capture date not independently proven.",
+        "item_rights_cleared": false,
+        "exact_binary_crop_proven": false,
+        "visual_editor_approved": false
+      },
+      "release": {
+        "binary_download": false,
+        "cache_rehost": false,
+        "wordpress_media_upload": false,
+        "post_block_rewrite": false,
+        "homepage_design_change": false
+      }
+    },
+    {
+      "slot": "214:1",
+      "post_id": 214,
+      "post_url": "https://finalvestige.com/2026/08/18/the-lifeboats-never-left-the-deck/",
+      "stored_original_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Wreck_of_the_Eastland,_Chicago,_1915.jpg",
+      "stored_alt": "Panoramic view of the overturned Eastland and rescue activity along the Chicago River in 1915.",
+      "frozen_source_fixture": {
+        "path": "qa/media-recovery/parts/06.json",
+        "ref": "qa/media-recovery-reviewed-20261030-1158",
+        "blob_sha": "0f3dfe398a76838049cebba7cb773d5c5a0c8c69"
+      },
+      "source_observation": {
+        "date": "2026-11-09",
+        "method": "WEB_OPEN_INDEPENDENT_RETRIEVER",
+        "result": "TOOL_INACCESSIBLE",
+        "origin_http_status": null,
+        "guest_http_status": null,
+        "guest_current_src": null,
+        "guest_natural_dimensions": null,
+        "guest_encoded_transfer_bytes": null,
+        "confirmed_broken": null
+      },
+      "candidate": {
+        "catalog_url": "https://www.loc.gov/item/2007661460/",
+        "authority_type": "PRIMARY_LOC_PANORAMA",
+        "accession": "LOC LCCN 2007661460 / pan.6a04191",
+        "source_evidence_url": "https://commons.wikimedia.org/wiki/File:Wreck_of_the_Eastland,_Chicago,_1915.jpg",
+        "relationship": "COMMONS_LINKS_LOCPANORAMA_EXACT_SCENE_CROP_UNVERIFIED",
+        "catalog_native_dimensions_px": [
+          2475,
+          662
+        ],
+        "conditional_960px_no_upscale_dimensions_px": [
+          960,
+          257
+        ],
+        "rights_summary": "LOC states no known restrictions on publication; 1915 copyrighted deposit work, historical status and derivative crop still require item review.",
+        "historical_visual_integrity": "July 29 1915 copyright deposit panorama, not evidence photograph was captured during July 24 live rescue. Preserve very wide aspect ratio and legibility.",
+        "item_rights_cleared": false,
+        "exact_binary_crop_proven": false,
+        "visual_editor_approved": false
+      },
+      "release": {
+        "binary_download": false,
+        "cache_rehost": false,
+        "wordpress_media_upload": false,
+        "post_block_rewrite": false,
+        "homepage_design_change": false
+      }
+    },
+    {
+      "slot": "214:2",
+      "post_id": 214,
+      "post_url": "https://finalvestige.com/2026/08/18/the-lifeboats-never-left-the-deck/",
+      "stored_original_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/EastlandKenosha.jpg",
+      "stored_alt": "The tug Kenosha alongside the overturned Eastland, rescuing survivors from the exposed hull in the Chicago River.",
+      "frozen_source_fixture": {
+        "path": "qa/media-recovery/parts/06.json",
+        "ref": "qa/media-recovery-reviewed-20261030-1158",
+        "blob_sha": "0f3dfe398a76838049cebba7cb773d5c5a0c8c69"
+      },
+      "source_observation": {
+        "date": "2026-11-09",
+        "method": "WEB_OPEN_INDEPENDENT_RETRIEVER",
+        "result": "TOOL_INACCESSIBLE",
+        "origin_http_status": null,
+        "guest_http_status": null,
+        "guest_current_src": null,
+        "guest_natural_dimensions": null,
+        "guest_encoded_transfer_bytes": null,
+        "confirmed_broken": null
+      },
+      "candidate": {
+        "catalog_url": "https://commons.wikimedia.org/wiki/File:EastlandKenosha.jpg",
+        "authority_type": "SECONDARY_COMMONS_CHICAGO_HISTORY_MUSEUM_COLLECTION_REFERENCE",
+        "accession": "Chicago Daily News negative DN-0064936",
+        "source_evidence_url": "https://commons.wikimedia.org/wiki/File:EastlandKenosha.jpg",
+        "relationship": "SAME_COMMONS_FILE_NOT_PROVEN_BINARY_EQUIVALENCE",
+        "catalog_native_dimensions_px": [
+          475,
+          381
+        ],
+        "conditional_960px_no_upscale_dimensions_px": [
+          475,
+          381
+        ],
+        "rights_summary": "Commons PD-US assertion (historic Chicago Daily News image) with non-US jurisdiction caveat; donor/collection and existing crop/credit review pending.",
+        "historical_visual_integrity": "Cropped 2012 Commons version, original 500x397 earlier; never enlarge 475x381 or assume same pixels as museum source.",
+        "item_rights_cleared": false,
+        "exact_binary_crop_proven": false,
+        "visual_editor_approved": false
+      },
+      "release": {
+        "binary_download": false,
+        "cache_rehost": false,
+        "wordpress_media_upload": false,
+        "post_block_rewrite": false,
+        "homepage_design_change": false
+      }
+    },
+    {
+      "slot": "214:3",
+      "post_id": 214,
+      "post_url": "https://finalvestige.com/2026/08/18/the-lifeboats-never-left-the-deck/",
+      "stored_original_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Helen_Repa_Eastland_Disaster_photo.png?width=1280",
+      "stored_alt": "Western Electric nurse Helen Repa assisting a victim after the Eastland disaster in Chicago.",
+      "frozen_source_fixture": {
+        "path": "qa/media-recovery/parts/06.json",
+        "ref": "qa/media-recovery-reviewed-20261030-1158",
+        "blob_sha": "0f3dfe398a76838049cebba7cb773d5c5a0c8c69"
+      },
+      "source_observation": {
+        "date": "2026-11-09",
+        "method": "WEB_OPEN_INDEPENDENT_RETRIEVER",
+        "result": "TOOL_INACCESSIBLE",
+        "origin_http_status": null,
+        "guest_http_status": null,
+        "guest_current_src": null,
+        "guest_natural_dimensions": null,
+        "guest_encoded_transfer_bytes": null,
+        "confirmed_broken": null
+      },
+      "candidate": {
+        "catalog_url": "https://commons.wikimedia.org/wiki/File:Helen_Repa_Eastland_Disaster_photo.png",
+        "authority_type": "SECONDARY_COMMONS_NEWSPAPER_UNATTRIBUTED",
+        "accession": "Newspaper reproduction dated August 4 1915 on Commons",
+        "source_evidence_url": "https://commons.wikimedia.org/wiki/File:Helen_Repa_Eastland_Disaster_photo.png",
+        "relationship": "SAME_COMMONS_FILE_NOT_PROVEN_BINARY_EQUIVALENCE",
+        "catalog_native_dimensions_px": [
+          1786,
+          920
+        ],
+        "conditional_960px_no_upscale_dimensions_px": [
+          960,
+          495
+        ],
+        "rights_summary": "Commons claims pre-1931 U.S. publication public domain; photographer unknown and newspaper issue provenance needs independent clearance.",
+        "historical_visual_integrity": "Commons dates newspaper reproduction Aug 4 1915; do not label image as captured on the July 24 sinking day; scanned paper image not original camera negative.",
+        "item_rights_cleared": false,
+        "exact_binary_crop_proven": false,
+        "visual_editor_approved": false
+      },
+      "release": {
+        "binary_download": false,
+        "cache_rehost": false,
+        "wordpress_media_upload": false,
+        "post_block_rewrite": false,
+        "homepage_design_change": false
+      }
+    },
+    {
+      "slot": "214:4",
+      "post_id": 214,
+      "post_url": "https://finalvestige.com/2026/08/18/the-lifeboats-never-left-the-deck/",
+      "stored_original_url": "https://cdn.loc.gov/service/pnp/ggbain/19600/19623v.jpg",
+      "stored_alt": "Rescuers attempting to revive a victim of the Eastland disaster in Chicago in July 1915.",
+      "frozen_source_fixture": {
+        "path": "qa/media-recovery/parts/06.json",
+        "ref": "qa/media-recovery-reviewed-20261030-1158",
+        "blob_sha": "0f3dfe398a76838049cebba7cb773d5c5a0c8c69"
+      },
+      "source_observation": {
+        "date": "2026-11-09",
+        "method": "WEB_OPEN_INDEPENDENT_RETRIEVER",
+        "result": "TOOL_INACCESSIBLE",
+        "origin_http_status": null,
+        "guest_http_status": null,
+        "guest_current_src": null,
+        "guest_natural_dimensions": null,
+        "guest_encoded_transfer_bytes": null,
+        "confirmed_broken": null
+      },
+      "candidate": {
+        "catalog_url": "https://www.loc.gov/pictures/item/2014699554/",
+        "authority_type": "PRIMARY_LOC_GGBAIN",
+        "accession": "LOC LCCN 2014699554 / ggbain.19623",
+        "source_evidence_url": "https://commons.wikimedia.org/wiki/File:Reviving_EASTLAND_victim_LCCN2014699554.jpg",
+        "relationship": "DIGITAL_ID_GGBAIN_19623_SOURCE_PATH_MATCH",
+        "catalog_native_dimensions_px": null,
+        "conditional_960px_no_upscale_dimensions_px": null,
+        "rights_summary": "LOC Bain collection no known restrictions; collection-specific advisory rather than individual republishing license.",
+        "historical_visual_integrity": "Important catalog chronology conflict: Commons metadata for 'Reviving EASTLAND victim' gives 1910, though disaster occurred 1915. It also reports an upscaled Commons image; published LOC v.jpg actual native size unverified. Flag for curator review.",
+        "item_rights_cleared": false,
+        "exact_binary_crop_proven": false,
+        "visual_editor_approved": false
+      },
+      "release": {
+        "binary_download": false,
+        "cache_rehost": false,
+        "wordpress_media_upload": false,
+        "post_block_rewrite": false,
+        "homepage_design_change": false
+      }
+    },
+    {
+      "slot": "214:5",
+      "post_id": 214,
+      "post_url": "https://finalvestige.com/2026/08/18/the-lifeboats-never-left-the-deck/",
+      "stored_original_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Photograph_of_The_Eastland_(upside_down)_on_Chicago_River,_Chicago._-_NARA_-_281841.jpg?width=1280",
+      "stored_alt": "National Archives photograph of the overturned Eastland in the Chicago River after the 1915 disaster.",
+      "frozen_source_fixture": {
+        "path": "qa/media-recovery/parts/06.json",
+        "ref": "qa/media-recovery-reviewed-20261030-1158",
+        "blob_sha": "0f3dfe398a76838049cebba7cb773d5c5a0c8c69"
+      },
+      "source_observation": {
+        "date": "2026-11-09",
+        "method": "WEB_OPEN_INDEPENDENT_RETRIEVER",
+        "result": "TOOL_INACCESSIBLE",
+        "origin_http_status": null,
+        "guest_http_status": null,
+        "guest_current_src": null,
+        "guest_natural_dimensions": null,
+        "guest_encoded_transfer_bytes": null,
+        "confirmed_broken": null
+      },
+      "candidate": {
+        "catalog_url": "https://www.archives.gov/chicago/highlights/eastland",
+        "authority_type": "PRIMARY_NARA_COURT_RECORD",
+        "accession": "NARA NAID 281841 / RG 21 criminal case exhibit",
+        "source_evidence_url": "https://commons.wikimedia.org/wiki/File:Photograph_of_The_Eastland_(upside_down)_on_Chicago_River,_Chicago._-_NARA_-_281841.jpg",
+        "relationship": "COMMONS_NARA_281841_SCENE_CATALOG_MATCH_BINARY_UNVERIFIED",
+        "catalog_native_dimensions_px": [
+          3000,
+          2402
+        ],
+        "conditional_960px_no_upscale_dimensions_px": [
+          960,
+          769
+        ],
+        "rights_summary": "Critical rights issue: photograph in federal court record has unknown original photographer; NARA custody does not itself make a privately made exhibit a U.S. federal government work. Commons PD-USGov assertion NOT accepted as item clearance.",
+        "historical_visual_integrity": "NARA says photograph depicts Eastland after rescue and recovery were complete. Do not recaption as rescuers actively operating or assume 24 July exposure. Verify original work rights.",
+        "item_rights_cleared": false,
+        "exact_binary_crop_proven": false,
+        "visual_editor_approved": false
+      },
+      "release": {
+        "binary_download": false,
+        "cache_rehost": false,
+        "wordpress_media_upload": false,
+        "post_block_rewrite": false,
+        "homepage_design_change": false
+      }
+    }
+  ]
+}
