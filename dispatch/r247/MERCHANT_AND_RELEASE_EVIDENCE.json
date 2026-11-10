@@ -1,0 +1,69 @@
+{
+  "review_id": "r247",
+  "as_of_utc": "2026-11-10T03:38:16Z",
+  "origin": {
+    "issue": 174,
+    "canonical_pr": 175,
+    "canonical_sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+    "parent_pr": 1830,
+    "parent_sha": "d39f1b4afd47ef09e2e63a3896d33c03db0f8527",
+    "homepage_pr_49_frozen": true
+  },
+  "merchant": {
+    "product": "Hypnosis Live — Total Focus",
+    "seller_product_url": "https://hypnosislive.com/mental-skills/total-focus",
+    "seller_faq_url": "https://hypnosislive.com/faq",
+    "observed_product_page": "2026-11-09",
+    "advertised_minutes": 33,
+    "advertised_mb": 47,
+    "advertised_single_price_usd": 24.44,
+    "advertised_single_reference_price_usd": 29.95,
+    "advertised_bundle_both_price_usd": 39.9,
+    "merchant_faq_typical_price_usd": 22.95,
+    "pricing_live_checkout_verified": false,
+    "refund_window_seller_days": 14,
+    "refund_limit_seller_sessions_per_year": 5,
+    "final_checkout_refund_verified": false,
+    "product_specific_efficacy_verified": false,
+    "claims_class": "merchant assertions only"
+  },
+  "independent_source": "https://www.nccih.nih.gov/health/hypnosis",
+  "subscriber": {
+    "total_counter": 3,
+    "confirmed_counter": 3,
+    "unconfirmed_requests": 2,
+    "email_eligible": null,
+    "distinct_humans": null,
+    "welcome_configured": true,
+    "welcome_received": null,
+    "auto_new_post_email": false,
+    "content_format": "full"
+  },
+  "editorial_mix": {
+    "editorial": 4,
+    "commercial_review_pending": 2
+  },
+  "gates": {
+    "founder_final_approval": false,
+    "named_partner_acceptance": null,
+    "email_channel_permission": null,
+    "earning_link": null,
+    "live_approved_warmup_guide": null,
+    "publisher_business_postal_address": null,
+    "delivered_unsubscribe": null,
+    "jetpack_native_preview": null,
+    "confirmed_signup_provider_transition": null,
+    "settled_affiliate_transactions": null
+  },
+  "revenue": {
+    "qualified_human_sessions": null,
+    "verified_paid_orders": null,
+    "verified_net_revenue_usd": null,
+    "net_revenue_per_1000_qualified_human_sessions": null
+  },
+  "legal_sources": [
+    "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business",
+    "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking"
+  ],
+  "status": "HOLD_UNSENT"
+}
