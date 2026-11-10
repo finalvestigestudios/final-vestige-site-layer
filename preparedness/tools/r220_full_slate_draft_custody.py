@@ -197,6 +197,11 @@ R271_FULL_RECEIPT_PATH = 'audits/r271_full_warning_print_receipt_REVIEW_ONLY.jso
 R271_FULL_RECEIPT_BLOB = '5d5145a433576a42deb05e1c9518b9044154b8ca'
 R271_FULL_REPRO_PATH = 'tools/r271_reproduce_full_warning_REVIEW_ONLY.py'
 R271_FULL_REPRO_BLOB = '7d2541cdafc2de9cb71c7b49d102c75a086674a5'
+# R272 exact eight-origin source parity and source-reading-scope HOLD.
+# Preserve 244 unmerged readings, 202 exact URLs, 201 review aliases,
+# all 32 unadjudicated shared-source groups and 15 duplicated ID groups.
+R272_CROSSWALK_GATE_PATH = 'tools/r272_crosswalk_snapshot_hold.py'
+R272_CROSSWALK_GATE_BLOB = '97cacd40b2a4324696f746798b472251a42a53b6'
 # R258 binds the complete R254/R257 original source-claim partition to a
 # deterministic, entirely escaped, no-clickable-links offline reviewer view.
 R258_COMPLETE_REVIEW_PATH = 'tools/r258_complete_offline_claim_review_hold.py'
@@ -1022,6 +1027,21 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
             raise ValueError('R270 printed-face locality and negative safety evidence drift')
         result['r270_cutout_pdf_face_locality_hard_hold'] = pdf_receipt
         result['r270_manual_pdf_reproduction'] = 'EXTERNAL_ONLY_NOT_NATIVE_EXECUTED'
+        # R272 runs BEFORE any held WordPress draft generation. This does not
+        # resolve or collapse any reading scopes, IDs, sources or citations.
+        r272_gate = load_frozen_gate(root, R272_CROSSWALK_GATE_PATH,
+                                     R272_CROSSWALK_GATE_BLOB,
+                                     'fv_preparedness_r272_crosswalk_hard_hold',
+                                     ('audit', 'inspect'))
+        r272 = r272_gate.audit(root, safe_read)
+        if (r272.get('state') != HOLD
+                or r272.get('source_snapshot_parity') is not True
+                or r272.get('unreviewed_groups') != 32
+                or r272.get('counts') != r272_gate.CENSUS
+                or r272.get('independent_qd_pass') is not False
+                or r272.get('publication_authorized') is not False):
+            raise ValueError('R272 original source/crosswalk parity HOLD drift')
+        result['r272_eight_origin_source_census_hard_hold'] = r272
         # R271 provenance/receipt check is offline and fail-closed. It tests
         # full wrapped warning continuity, not actual household usability.
         r271_full_gate = load_frozen_gate(root, R271_FULL_WARNING_GATE_PATH,
@@ -1289,7 +1309,8 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
                 (R271_FULL_WARNING_GATE_PATH, R271_FULL_WARNING_GATE_BLOB),
                 (R271_PREVIEW_PATH, R271_PREVIEW_BLOB),
                 (R271_FULL_RECEIPT_PATH, R271_FULL_RECEIPT_BLOB),
-                (R271_FULL_REPRO_PATH, R271_FULL_REPRO_BLOB)):
+                (R271_FULL_REPRO_PATH, R271_FULL_REPRO_BLOB),
+                (R272_CROSSWALK_GATE_PATH, R272_CROSSWALK_GATE_BLOB)):
             if git_blob(safe_read(root, path)) != expected:
                 raise ValueError('R267 screen-only candidate/source receipt changed during audit')
         if git_blob(safe_read(root, R258_COMPLETE_REVIEW_PATH)) != R258_COMPLETE_REVIEW_BLOB:
