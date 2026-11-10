@@ -1,0 +1,636 @@
+{
+  "schema": "fv_mind_r277_evidence_v1",
+  "date_observed": "2026-11-10",
+  "release": "DRAFT_UNPUBLISHED",
+  "commercial": "HARD_HOLD",
+  "source_links": [
+    {
+      "id": "S01",
+      "title": "Inspire3 official catalog",
+      "url": "https://inspire3.com/",
+      "kind": "official_seller_catalog",
+      "observed_date": "2026-11-10",
+      "reliability_note": "Seller-owned: features or marketing wording only; not independent efficacy or contract test"
+    },
+    {
+      "id": "S02",
+      "title": "Zen12 Premium standard offer",
+      "url": "https://zen12.com/hnp",
+      "kind": "official_seller_offer",
+      "observed_date": "2026-11-10",
+      "reliability_note": "Seller-owned: features or marketing wording only; not independent efficacy or contract test"
+    },
+    {
+      "id": "S03",
+      "title": "Zen12 separate video/coupon presentation",
+      "url": "https://zen12.com/secret/",
+      "kind": "official_seller_promo",
+      "observed_date": "2026-11-10",
+      "reliability_note": "Seller-owned: features or marketing wording only; not independent efficacy or contract test"
+    },
+    {
+      "id": "S04",
+      "title": "Zen12 welcome free-audio invitation",
+      "url": "https://zen12.com/welcome",
+      "kind": "official_seller_signup",
+      "observed_date": "2026-11-10",
+      "reliability_note": "Seller-owned: features or marketing wording only; not independent efficacy or contract test"
+    },
+    {
+      "id": "S05",
+      "title": "Zen12 freeaudio invitation",
+      "url": "https://zen12.com/freeaudio",
+      "kind": "official_seller_signup",
+      "observed_date": "2026-11-10",
+      "reliability_note": "Seller-owned: features or marketing wording only; not independent efficacy or contract test"
+    },
+    {
+      "id": "S06",
+      "title": "Hypnosis Live Total Focus",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "kind": "official_seller_offer",
+      "observed_date": "2026-11-10",
+      "reliability_note": "Seller-owned: features or marketing wording only; not independent efficacy or contract test"
+    },
+    {
+      "id": "S07",
+      "title": "Brainwave Shots catalog",
+      "url": "https://brainwaveshots.com/",
+      "kind": "official_seller_catalog",
+      "observed_date": "2026-11-10",
+      "reliability_note": "Seller-owned: features or marketing wording only; not independent efficacy or contract test"
+    },
+    {
+      "id": "S08",
+      "title": "Inspire3 public affiliate portal",
+      "url": "https://affiliates.inspire3.com/",
+      "kind": "public_affiliate_program_not_publisher_approval",
+      "observed_date": "2026-11-10",
+      "reliability_note": null
+    },
+    {
+      "id": "S09",
+      "title": "Ingendoh et al systematic review 2023",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+      "kind": "independent_scientific_review",
+      "observed_date": "2026-11-10",
+      "reliability_note": null
+    },
+    {
+      "id": "S10",
+      "title": "Chee et al systematic review 2024",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38458383/",
+      "kind": "independent_scientific_review",
+      "observed_date": "2026-11-10",
+      "reliability_note": null
+    },
+    {
+      "id": "S11",
+      "title": "FTC endorsement guides FAQ",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "kind": "regulatory_guidance",
+      "observed_date": "2026-11-10",
+      "reliability_note": null
+    },
+    {
+      "id": "S12",
+      "title": "FTC Health Products Compliance Guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "kind": "regulatory_guidance",
+      "observed_date": "2026-11-10",
+      "reliability_note": null
+    },
+    {
+      "id": "S13",
+      "title": "FV published free Focus Fieldbook",
+      "url": "https://finalvestige.com/focus/",
+      "kind": "publisher_live_resource",
+      "observed_date": "2026-11-10",
+      "reliability_note": null
+    },
+    {
+      "id": "S14",
+      "title": "FV published Puységur history files",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "kind": "publisher_live_historical_resource",
+      "observed_date": "2026-11-10",
+      "reliability_note": null
+    },
+    {
+      "id": "S15",
+      "title": "FV Editorial Standards",
+      "url": "https://finalvestige.com/editorial-standards/",
+      "kind": "publisher_live_policy",
+      "observed_date": "2026-11-10",
+      "reliability_note": null
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "statement": "Zen12 Premium standard advertises 12 levels",
+      "source_ids": [
+        "S02"
+      ],
+      "category": "seller_feature",
+      "assessment": "seller_described"
+    },
+    {
+      "id": "C02",
+      "statement": "Zen12 Premium standard advertises 48 MP3s",
+      "source_ids": [
+        "S02"
+      ],
+      "category": "seller_feature",
+      "assessment": "seller_described"
+    },
+    {
+      "id": "C03",
+      "statement": "Standard page describes a progressive course",
+      "source_ids": [
+        "S02"
+      ],
+      "category": "seller_feature",
+      "assessment": "seller_described"
+    },
+    {
+      "id": "C04",
+      "statement": "Standard and secret promotional pages are different seller presentations",
+      "source_ids": [
+        "S02",
+        "S03"
+      ],
+      "category": "seller_offer_comparison",
+      "assessment": "verified_page_observation"
+    },
+    {
+      "id": "C05",
+      "statement": "Displayed promotional prices are authenticated checkout amounts",
+      "source_ids": [
+        "S02",
+        "S03"
+      ],
+      "category": "merchant_checkout",
+      "assessment": "unverified_do_not_publish_as_price"
+    },
+    {
+      "id": "C06",
+      "statement": "Standard page advertises a refund guarantee",
+      "source_ids": [
+        "S02"
+      ],
+      "category": "seller_policy",
+      "assessment": "advertised_not_tested"
+    },
+    {
+      "id": "C07",
+      "statement": "Final Vestige has personally tested Zen12 audio",
+      "source_ids": [],
+      "category": "publisher_experience",
+      "assessment": "prohibited_no_experience"
+    },
+    {
+      "id": "C08",
+      "statement": "One hour of meditation equals 12 minutes of Zen12",
+      "source_ids": [
+        "S02"
+      ],
+      "category": "efficacy",
+      "assessment": "seller_claim_unsubstantiated"
+    },
+    {
+      "id": "C09",
+      "statement": "Zen12 cures a condition",
+      "source_ids": [],
+      "category": "medical_efficacy",
+      "assessment": "prohibited_unsubstantiated"
+    },
+    {
+      "id": "C10",
+      "statement": "Zen12 guaranteed cognitive performance",
+      "source_ids": [],
+      "category": "cognitive_efficacy",
+      "assessment": "prohibited_unsubstantiated"
+    },
+    {
+      "id": "C11",
+      "statement": "Fourteen 2023 EEG studies had mixed outcomes",
+      "source_ids": [
+        "S09"
+      ],
+      "category": "scientific_review",
+      "assessment": "independent_supported"
+    },
+    {
+      "id": "C12",
+      "statement": "Five consistent, eight contrary, one mixed in 2023 review",
+      "source_ids": [
+        "S09"
+      ],
+      "category": "scientific_review",
+      "assessment": "independent_supported"
+    },
+    {
+      "id": "C13",
+      "statement": "2024 review covered 31 auditory-stimulation studies",
+      "source_ids": [
+        "S10"
+      ],
+      "category": "scientific_review",
+      "assessment": "independent_supported"
+    },
+    {
+      "id": "C14",
+      "statement": "Those reviews clinically tested Zen12 Premium specifically",
+      "source_ids": [
+        "S09",
+        "S10"
+      ],
+      "category": "product_specific_efficacy",
+      "assessment": "prohibited_not_product_specific"
+    },
+    {
+      "id": "C15",
+      "statement": "Zen12 /welcome explicitly tells prospects they receive its newsletter",
+      "source_ids": [
+        "S04"
+      ],
+      "category": "seller_signup_condition",
+      "assessment": "verified_page_observation_no_submission"
+    },
+    {
+      "id": "C16",
+      "statement": "Zen12 /freeaudio explicitly tells prospects they receive its newsletter",
+      "source_ids": [
+        "S05"
+      ],
+      "category": "seller_signup_condition",
+      "assessment": "verified_page_observation_no_submission"
+    },
+    {
+      "id": "C17",
+      "statement": "Zen12 free-audio sign-up is an FV Dispatch confirmation",
+      "source_ids": [
+        "S04",
+        "S13"
+      ],
+      "category": "consent_identity",
+      "assessment": "prohibited_wrong_sender"
+    },
+    {
+      "id": "C18",
+      "statement": "FV Focus existing page discloses Dispatch enrollment",
+      "source_ids": [
+        "S13"
+      ],
+      "category": "publisher_resource",
+      "assessment": "verified_public_page"
+    },
+    {
+      "id": "C19",
+      "statement": "FV Fieldbook is a 52-page free guide",
+      "source_ids": [
+        "S13"
+      ],
+      "category": "publisher_resource",
+      "assessment": "verified_public_page"
+    },
+    {
+      "id": "C20",
+      "statement": "No-email ordinary timer path is an available alternative",
+      "source_ids": [],
+      "category": "editorial_comparison",
+      "assessment": "plain_nonmedical_alternative"
+    },
+    {
+      "id": "C21",
+      "statement": "Total Focus seller page describes 33 minutes and 47MB",
+      "source_ids": [
+        "S06"
+      ],
+      "category": "seller_feature",
+      "assessment": "seller_described"
+    },
+    {
+      "id": "C22",
+      "statement": "Total Focus scientifically reprograms reader's brain",
+      "source_ids": [
+        "S06"
+      ],
+      "category": "efficacy",
+      "assessment": "seller_claim_unsubstantiated"
+    },
+    {
+      "id": "C23",
+      "statement": "Brainwave Shots lists Focus Shot among its products",
+      "source_ids": [
+        "S07"
+      ],
+      "category": "seller_feature",
+      "assessment": "seller_described"
+    },
+    {
+      "id": "C24",
+      "statement": "Brainwave Shots free MP3 invitation also discloses seller newsletter",
+      "source_ids": [
+        "S07"
+      ],
+      "category": "seller_signup_condition",
+      "assessment": "verified_page_observation_no_submission"
+    },
+    {
+      "id": "C25",
+      "statement": "Inspire3 operates a public affiliate program",
+      "source_ids": [
+        "S08"
+      ],
+      "category": "program_existence",
+      "assessment": "publicly_observable"
+    },
+    {
+      "id": "C26",
+      "statement": "Final Vestige named publisher acceptance is established",
+      "source_ids": [
+        "S08"
+      ],
+      "category": "publisher_authorization",
+      "assessment": "unverified_hard_hold"
+    },
+    {
+      "id": "C27",
+      "statement": "Account-issued Zen12 affiliate tracking URL established",
+      "source_ids": [],
+      "category": "publisher_authorization",
+      "assessment": "unverified_hard_hold"
+    },
+    {
+      "id": "C28",
+      "statement": "A click to a seller page proves commission",
+      "source_ids": [],
+      "category": "revenue",
+      "assessment": "prohibited_false_conversion"
+    },
+    {
+      "id": "C29",
+      "statement": "Cleared paid affiliate conversions and refunds reconciled",
+      "source_ids": [],
+      "category": "revenue",
+      "assessment": "unverified_hard_hold"
+    },
+    {
+      "id": "C30",
+      "statement": "Existing Puységur file proves modern medical efficacy",
+      "source_ids": [
+        "S14"
+      ],
+      "category": "scientific_inference",
+      "assessment": "prohibited_category_error"
+    },
+    {
+      "id": "C31",
+      "statement": "FTC guidance requires visible nearby material relationship disclosure",
+      "source_ids": [
+        "S11"
+      ],
+      "category": "regulatory",
+      "assessment": "supported_general_guidance"
+    },
+    {
+      "id": "C32",
+      "statement": "Product-specific health benefit claims require competent reliable evidence",
+      "source_ids": [
+        "S12"
+      ],
+      "category": "regulatory",
+      "assessment": "supported_general_guidance"
+    },
+    {
+      "id": "C33",
+      "statement": "Commercial relationships do not dictate FV historical conclusions",
+      "source_ids": [
+        "S15"
+      ],
+      "category": "publisher_policy",
+      "assessment": "published_policy"
+    },
+    {
+      "id": "C34",
+      "statement": "A free Zen12 audio listener has consented to FV Dispatch",
+      "source_ids": [
+        "S04",
+        "S13"
+      ],
+      "category": "consent_identity",
+      "assessment": "prohibited_no_transfer"
+    },
+    {
+      "id": "C35",
+      "statement": "A seller-advertised guarantee means refunds were independently tested",
+      "source_ids": [
+        "S02"
+      ],
+      "category": "refund_fulfillment",
+      "assessment": "prohibited_not_tested"
+    },
+    {
+      "id": "C36",
+      "statement": "Verified payable net revenue per 1000 qualified sessions is calculated",
+      "source_ids": [],
+      "category": "revenue",
+      "assessment": "unverified_not_computable"
+    }
+  ],
+  "commercial_gates": [
+    {
+      "id": "publisher_identity_verified",
+      "status": "HARD_HOLD",
+      "verified": false,
+      "approval_evidence": null
+    },
+    {
+      "id": "named_inspire3_acceptance",
+      "status": "HARD_HOLD",
+      "verified": false,
+      "approval_evidence": null
+    },
+    {
+      "id": "signed_partner_terms",
+      "status": "HARD_HOLD",
+      "verified": false,
+      "approval_evidence": null
+    },
+    {
+      "id": "approved_promotion_channels",
+      "status": "HARD_HOLD",
+      "verified": false,
+      "approval_evidence": null
+    },
+    {
+      "id": "issued_account_tracking_url",
+      "status": "HARD_HOLD",
+      "verified": false,
+      "approval_evidence": null
+    },
+    {
+      "id": "offer_slug_exact",
+      "status": "HARD_HOLD",
+      "verified": false,
+      "approval_evidence": null
+    },
+    {
+      "id": "final_checkout_total_verified",
+      "status": "HARD_HOLD",
+      "verified": false,
+      "approval_evidence": null
+    },
+    {
+      "id": "tax_fees_terms_verified",
+      "status": "HARD_HOLD",
+      "verified": false,
+      "approval_evidence": null
+    },
+    {
+      "id": "refund_policy_offer_specific_verified",
+      "status": "HARD_HOLD",
+      "verified": false,
+      "approval_evidence": null
+    },
+    {
+      "id": "customer_delivery_tested",
+      "status": "HARD_HOLD",
+      "verified": false,
+      "approval_evidence": null
+    },
+    {
+      "id": "claims_substantiated_or_excluded",
+      "status": "HARD_HOLD",
+      "verified": false,
+      "approval_evidence": null
+    },
+    {
+      "id": "ftc_near_cta_disclosure",
+      "status": "HARD_HOLD",
+      "verified": false,
+      "approval_evidence": null
+    },
+    {
+      "id": "no_merchant_newsletter_consent_transfer",
+      "status": "HARD_HOLD",
+      "verified": false,
+      "approval_evidence": null
+    },
+    {
+      "id": "privacy_no_pii_transfer",
+      "status": "HARD_HOLD",
+      "verified": false,
+      "approval_evidence": null
+    },
+    {
+      "id": "founder_release_approval",
+      "status": "HARD_HOLD",
+      "verified": false,
+      "approval_evidence": null
+    },
+    {
+      "id": "merchant_commission_settlement_evidence",
+      "status": "HARD_HOLD",
+      "verified": false,
+      "approval_evidence": null
+    }
+  ],
+  "separate_consent_paths": [
+    {
+      "id": "none",
+      "owner": "none",
+      "email_required": false,
+      "active_site_url": null,
+      "scope": "self-guided 12-minute timer",
+      "verified_confirmation": "not_applicable"
+    },
+    {
+      "id": "focus",
+      "owner": "Final Vestige / existing Jetpack Dispatch",
+      "email_required": true,
+      "active_site_url": "https://finalvestige.com/focus/",
+      "scope": "existing 52-page free Fieldbook and Dispatch; confirmation required",
+      "verified_confirmation": "provider_status_unverified_for_campaign"
+    },
+    {
+      "id": "zen12_free_audio",
+      "owner": "Zen12/Inspire3",
+      "email_required": true,
+      "active_site_url": null,
+      "source_url": "https://zen12.com/welcome",
+      "scope": "seller audio plus newsletter as publicly stated",
+      "verified_confirmation": "NOT_TESTED_NO_FORM_SUBMITTED"
+    },
+    {
+      "id": "zen12_premium",
+      "owner": "Zen12/Inspire3",
+      "email_required": "merchant_checkout_conditions_unverified",
+      "active_site_url": null,
+      "source_url": "https://zen12.com/hnp",
+      "scope": "paid package; no approved affiliate link",
+      "verified_confirmation": "NOT_TESTED_NO_PURCHASE"
+    }
+  ],
+  "creator_topic_fit": [
+    {
+      "topic": "Change blindness",
+      "public_article": "PUBLISHED_CLAIM_REQUIRES_ROUTE_VERIFICATION",
+      "grok_media_id": null,
+      "fit": "attention evidence → /focus/; no forced sale",
+      "merchant": "zen12_premium_optional_hard_hold"
+    },
+    {
+      "topic": "Puységur / Mesmer historical suggestion",
+      "public_youtube_id": "SV9m07PFTYk",
+      "grok_media_id": null,
+      "fit": "historical investigation → Puységur source archive → optional guide",
+      "merchant": "zen12_premium_optional_hard_hold",
+      "rights_and_attribution": "UNVERIFIED"
+    },
+    {
+      "topic": "Inattentional blindness / invisible gorilla",
+      "public_article": "ROUTE_UNVERIFIED",
+      "grok_media_id": null,
+      "fit": "peer-reviewed experiment → sourced article → optional Fieldbook",
+      "merchant": "none_default"
+    }
+  ],
+  "ab_hypothesis": {
+    "A": "complete existing R276 source guide with no media download",
+    "B": "same purchase information and original optional 42-second storyboard / later playable film only after review",
+    "metric": "merchant-confirmed paid order per qualified human session, and net per 1000",
+    "not_success": "video views / CTA clicks alone",
+    "implementation": "NOT_LIVE",
+    "assignment": "deterministic first-party after owner approval, never new tracker by Mind"
+  },
+  "revenue": {
+    "qualified_human_sessions": null,
+    "confirmed_leads": null,
+    "affiliate_clicks": null,
+    "merchant_confirmed_paid_orders": null,
+    "cleared_commissions": null,
+    "refunds": null,
+    "fees": null,
+    "net_revenue_per_1000_qualified_sessions": null,
+    "label": "NOT_COMPUTABLE_NOT_ZERO"
+  },
+  "release_guards": {
+    "email_list_duplication": false,
+    "merchant_contact": false,
+    "active_affiliate_link": false,
+    "wordPress_write": false,
+    "paid_service": false,
+    "web_analytics_script_added": false,
+    "social_post": false,
+    "merge_or_deploy": false
+  },
+  "notes": [
+    "Seller price displays may vary and are not the final authenticated basket.",
+    "Merchant free audio and FV Dispatch are independent permissions.",
+    "Do not route creator traffic to unpublished artifacts.",
+    "No customer-level PII, raw email, IP, fingerprint or cross-site tracking."
+  ]
+}
