@@ -61,7 +61,8 @@ async function safeProbe(browser,url,width) {
   emails=page.locator('.wp-block-jetpack-subscriptions input[type="email"], [role="dialog"] input[type="email"]');
   shown=await visibleCount(emails);
   const accessible=await labeledVisibleCount(emails);
-  const visibleSubmit=await visibleCount(page.locator('.wp-block-jetpack-subscriptions button[type="submit"], .wp-block-jetpack-subscriptions input[type="submit"], [role="dialog"] button[type="submit"], [role="dialog"] input[type="submit"]'));
+  // Some WordPress actions are buttons with implicit submit type. Only count alongside visible email fields.
+  const visibleSubmit=shown>0?await visibleCount(page.locator('.wp-block-jetpack-subscriptions button, .wp-block-jetpack-subscriptions input[type="submit"], [role="dialog"] button, [role="dialog"] input[type="submit"]')):0;
   // Keyboard-only navigation check from start. Never activate a focused control or send any keystroke containing data.
   await page.keyboard.press("ControlOrMeta+Home");
   let reached=false;
