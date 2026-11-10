@@ -1,0 +1,34 @@
+/* Apollo R253: independently staged source-action touch targets.
+   Layer AFTER the SHA-pinned R238 Atlas CSS; do not modify the NASA archive. */
+.fv-apollo-atlas .plate details a[href^="https://www.nasa.gov/"],
+.fv-apollo-atlas .source-card details a[href^="https://www.nasa.gov/"],
+.fv-apollo-atlas .fv-apollo-custody-list a[href^="https://www.nasa.gov/"],
+.fv-apollo-atlas #fv-apollo-source-drawer a[href^="https://www.nasa.gov/"] {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  max-width: 100%;
+  padding-block: .55rem;
+  overflow-wrap: anywhere;
+  text-underline-offset: .18em;
+}
+@media (forced-colors: active) {
+  .fv-apollo-atlas .plate details a[href^="https://www.nasa.gov/"]:focus-visible,
+  .fv-apollo-atlas .source-card details a[href^="https://www.nasa.gov/"]:focus-visible,
+  .fv-apollo-atlas .fv-apollo-custody-list a[href^="https://www.nasa.gov/"]:focus-visible,
+  .fv-apollo-atlas #fv-apollo-source-drawer a[href^="https://www.nasa.gov/"]:focus-visible {
+    outline: 3px solid Highlight;
+    outline-offset: 2px;
+  }
+}
+/* Do not inflate source URLs, pagination or page count in archival printouts. */
+@media print {
+  .fv-apollo-atlas .plate details a[href^="https://www.nasa.gov/"],
+  .fv-apollo-atlas .source-card details a[href^="https://www.nasa.gov/"],
+  .fv-apollo-atlas .fv-apollo-custody-list a[href^="https://www.nasa.gov/"],
+  .fv-apollo-atlas #fv-apollo-source-drawer a[href^="https://www.nasa.gov/"] {
+    display: inline;
+    min-height: 0;
+    padding: 0;
+  }
+}
