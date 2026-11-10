@@ -90,19 +90,25 @@ def _write_verified_stage(fd: int, payload: bytes) -> None:
 def publish_report(destination: str | Path, evidence: dict) -> None:
     """Stage, verify, and atomically publish exact UTF-8 JSON without overwrite.
 
+    Every created staging path is retained for controlled human inspection;
+    never unlink a possibly swapped pathname, even after successful linking.
+    Stages are private, hardlinked to successful evidence, and never approved
+    for distribution. Operators must clean them up only after review.
+
     os.link is exclusive even if another process creates the final path after
     preflight. Both paths are in the same directory. A link-unsupported volume
     fails closed rather than falling back to a partial destination write.
     """
     destination = Path(destination)
     parent = destination.parent
-    temporary = None
-    preserve_suspect_stage = False
     try:
         payload = (json.dumps(evidence, sort_keys=True, indent=2,
                               ensure_ascii=True, allow_nan=False) + "\n").encode("utf-8")
         fd, name = tempfile.mkstemp(prefix=".fvs-candidate-report-", suffix=".tmp", dir=parent)
         temporary = Path(name)
+        # R339: no automatic pathname deletion. A concurrent local actor can
+        # swap a path between a metadata check and unlink; retain the private
+        # stage for explicit post-review cleanup in every outcome.
         _write_verified_stage(fd, payload)
         # Never use rename/replace: those can overwrite previous verification evidence.
         os.link(temporary, destination)
@@ -112,15 +118,6 @@ def publish_report(destination: str | Path, evidence: dict) -> None:
         try:
             verify_published_link(temporary, destination, payload)
         except LinkWitnessError:
-            preserve_suspect_stage = True
             raise ReportEvidenceError("Published verification evidence failed custody check") from None
     except (OSError, TypeError, ValueError, OverflowError):
         raise ReportEvidenceError("Could not exclusively publish complete verification evidence") from None
-    finally:
-        if temporary is not None and not preserve_suspect_stage:
-            try:
-                temporary.unlink(missing_ok=True)
-            except OSError:
-                # The completed destination, if any, is intact; an orphan temp
-                # requires operator investigation rather than destructive cleanup.
-                pass
