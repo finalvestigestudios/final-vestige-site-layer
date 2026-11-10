@@ -1,0 +1,125 @@
+{
+  "schema": "FV-Dispatch-R263-2026-11-10",
+  "state": "DRAFT_UNSENT_NO_SCHEDULING",
+  "founder_send_approval": false,
+  "canonical": {
+    "original_pr": 175,
+    "readiness_pr": 201,
+    "base_pr": 1935,
+    "dispatch_issue": 174,
+    "mind_issue": 171,
+    "focus_issue": 129,
+    "conversion_issue": 820
+  },
+  "actual_email_eligible_audience": null,
+  "verified_welcome_receipt": false,
+  "verified_received_unsubscribe": false,
+  "verified_received_fv_postal_address": false,
+  "wordpress": {
+    "observed_at": "2026-11-10T19:35:04Z",
+    "newsletter_enabled": true,
+    "auto_new_posts": false,
+    "format": "full",
+    "total": 3,
+    "confirmed_counter": 3,
+    "unconfirmed_requests": 2,
+    "jetpack_email_followers_last_observed": 0,
+    "wpcom_followers_last_observed": 3
+  },
+  "editions": [
+    {
+      "n": 1,
+      "type": "editorial",
+      "subject": "The mind is not a camera",
+      "cta": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "release": "HOLD"
+    },
+    {
+      "n": 2,
+      "type": "editorial",
+      "subject": "Before hypnosis had a name",
+      "cta": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "release": "HOLD"
+    },
+    {
+      "n": 3,
+      "type": "commercial-review-pending",
+      "subject": "The twelve-minute meditation question",
+      "cta": "[[APPROVED_ZEN12_WARMUP_GUIDE_URL_REQUIRED]]",
+      "release": "HOLD_MERCHANT",
+      "offer": "zen12",
+      "disclosure": "If you buy through a link on the linked guide, Final Vestige may earn a commission.",
+      "disclosure_at_offer": true
+    },
+    {
+      "n": 4,
+      "type": "editorial",
+      "subject": "Fourteen seconds. A much longer explanation.",
+      "cta": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/",
+      "release": "HOLD"
+    },
+    {
+      "n": 5,
+      "type": "commercial-review-pending",
+      "subject": "Before you press play on a hypnosis audio",
+      "cta": "[[APPROVED_HYPNOSIS_LIVE_WARMUP_GUIDE_URL_REQUIRED]]",
+      "release": "HOLD_MERCHANT",
+      "offer": "hypnosis-total-focus",
+      "disclosure": "If you buy through a link on the linked guide, Final Vestige may earn a commission.",
+      "disclosure_at_offer": true
+    },
+    {
+      "n": 6,
+      "type": "editorial",
+      "subject": "What did seven days of attention reveal?",
+      "cta": "https://finalvestige.com/focus/",
+      "release": "HOLD"
+    }
+  ],
+  "offers": {
+    "zen12": {
+      "official_sources": [
+        "https://zen12.com/hnp",
+        "https://zen12.com/secret/",
+        "https://zen12.com/welcome",
+        "https://zen12.com/freeaudio"
+      ],
+      "merchant_free_trial_separate_newsletter": true,
+      "price": null,
+      "verified_fv_affiliate_approval": false,
+      "verified_email_marketing_permission": false,
+      "verified_earning_url": null,
+      "verified_live_fv_guide": null,
+      "verified_current_terms": false,
+      "product_specific_efficacy_verified": false
+    },
+    "hypnosis-total-focus": {
+      "official_sources": [
+        "https://hypnosislive.com/mental-skills/total-focus"
+      ],
+      "price": null,
+      "observed_price_variance": true,
+      "verified_fv_affiliate_approval": false,
+      "verified_email_marketing_permission": false,
+      "verified_earning_url": null,
+      "verified_live_fv_guide": null,
+      "verified_current_terms": false,
+      "product_specific_efficacy_verified": false
+    }
+  },
+  "metrics": {
+    "source_rule": "utm_source=actual_platform;utm_medium=organic_social;utm_campaign=cluster_pilot_2026_11;utm_content=verified_asset_id",
+    "confirmed_paid_orders": null,
+    "realized_net_revenue": null,
+    "net_revenue_per_1000_qualified_human_sessions": null
+  },
+  "release_gates": {
+    "received_jetpack_preview": false,
+    "received_message_footer": false,
+    "functional_opt_out": false,
+    "postal_address_for_fv": false,
+    "confirmed_consent_and_eligible_count": false,
+    "partner_email_permission": false,
+    "founder_campaign_approval": false
+  }
+}
