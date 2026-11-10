@@ -70,7 +70,7 @@ class FaceObserver(HTMLParser):
             need(len(self.stack) >= 2 and self.stack[-2][0] == 'section'
                  and self.stack[-2][1].get('class') == 'pa-face',
                  'badge not a direct child of a card face')
-            need(not attrs.get('hidden') and attrs.get('aria-hidden') != 'true',
+            need('hidden' not in attrs and attrs.get('aria-hidden') != 'true',
                  'review badge concealed')
             self._badge = [self.stack[-2][1].get('aria-label'), '']
             self._badge_depth = len(self.stack)
