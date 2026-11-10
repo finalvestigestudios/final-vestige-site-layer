@@ -3,7 +3,7 @@ const assert = require("node:assert/strict");
 const { assess, utcMillis } = require("./recovery_postchange_guard_20261110.cjs");
 const baseline = () => ({
   backup: { last_backup_when: "2026-11-10 03:06:04", last_attempt_status: "finished", last_attempt_failed: false },
-  scan: { state: "idle", last_scan: { started_at: "2026-11-10T03:08:36+00:00", progress: 100, error: false } },
+  scan: { state: "idle", threats: [], ignored_threats: [], last_scan: { started_at: "2026-11-10T03:08:36+00:00", progress: 100, error: false } },
   changes: [{ group: "plugin", action: "activated", date: "2026-11-10T10:47:49Z" }],
   restore: { has_restore_record: false }
 });
@@ -50,4 +50,24 @@ run("unqualified ISO date rejected", () => {
 run("nonqualifying editorial change excluded", () => {
   const x=baseline(); x.changes=[{group:"post",action:"updated",date:"2026-11-10T10:47:49Z"}]; assert.equal(assess(x).status,"NO_CHANGE_EVIDENCE");
 });
-console.log(n + "/12 offline tests passed");
+run("active threat after otherwise adequate post-change scan => HOLD", () => {
+  const x=baseline(); x.backup.last_backup_when="2026-11-10 11:00:00"; x.scan.last_scan.started_at="2026-11-10T11:01:00Z";
+  x.scan.threats=[{id:777,signature:"malware"}];
+  assert.equal(assess(x).status,"HOLD"); assert.equal(assess(x).scan_after_change,false);
+});
+run("ignored unresolved threat => HOLD", () => {
+  const x=baseline(); x.backup.last_backup_when="2026-11-10 11:00:00"; x.scan.last_scan.started_at="2026-11-10T11:01:00Z";
+  x.scan.ignored_threats=[{id:778}];
+  assert.equal(assess(x).status,"HOLD");
+});
+run("missing threats inventory => HOLD", () => {
+  const x=baseline(); x.backup.last_backup_when="2026-11-10 11:00:00"; x.scan.last_scan.started_at="2026-11-10T11:01:00Z";
+  delete x.scan.threats;
+  assert.equal(assess(x).status,"HOLD");
+});
+run("malformed ignored threats inventory => HOLD", () => {
+  const x=baseline(); x.backup.last_backup_when="2026-11-10 11:00:00"; x.scan.last_scan.started_at="2026-11-10T11:01:00Z";
+  x.scan.ignored_threats={};
+  assert.equal(assess(x).status,"HOLD");
+});
+console.log(n + "/16 offline tests passed");

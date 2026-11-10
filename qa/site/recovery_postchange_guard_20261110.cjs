@@ -9,7 +9,8 @@
  * {
  *   backup: { last_backup_when: "YYYY-MM-DD HH:mm:ss",
  *             last_attempt_status: "finished", last_attempt_failed: false },
- *   scan: { state: "idle", last_scan: { started_at: ISO_WITH_OFFSET,
+ *   scan: { state: "idle", threats: [], ignored_threats: [],
+ *           last_scan: { started_at: ISO_WITH_OFFSET,
  *             progress: 100, error: false } },
  *   changes: [{ group: "plugin"|"theme"|"core",
  *               action: "installed"|"activated"|"updated"|...,
@@ -55,11 +56,15 @@ function assess(snapshot) {
   const scanAt = utcMillis(lastScan.started_at);
   const backupOk = backup.last_attempt_status === "finished" &&
     backup.last_attempt_failed === false && backupAt !== null && backupAt > latest;
+  // An error-free scan with unresolved or suppressed threats is not clean.
+  // Missing threat arrays are insufficient evidence, so fail closed.
+  const threatsClear = Array.isArray(scan.threats) && scan.threats.length === 0 &&
+    Array.isArray(scan.ignored_threats) && scan.ignored_threats.length === 0;
   const scanOk = scan.state === "idle" && lastScan.progress === 100 &&
-    lastScan.error === false && scanAt !== null && scanAt > latest;
+    lastScan.error === false && scanAt !== null && scanAt > latest && threatsClear;
   const reasons = [];
   if (!backupOk) reasons.push("No independently verified completed backup starting strictly after latest production change.");
-  if (!scanOk) reasons.push("No independently verified clean completed scan starting strictly after latest production change.");
+  if (!scanOk) reasons.push("No completed post-change scan with explicit empty active and ignored threat lists was independently verified.");
   return {
     status: backupOk && scanOk ? "POST_CHANGE_EVIDENCE_PRESENT" : "HOLD",
     latest_change_utc: new Date(latest).toISOString(),
