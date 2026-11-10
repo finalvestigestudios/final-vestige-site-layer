@@ -6,7 +6,7 @@ Working article: WordPress #2151, **The Levee They Blew on Purpose**. Investigat
 
 ## Authenticated WordPress structural readback
 
-- Status **draft**; modified site-local 2026-11-10T06:38:38; Gutenberg raw SHA-1 **9d3b2b62511caf6704044da1eed431888d979d46**. Subsequent edits invalidate this exact QA target.
+- Status **draft**; modified site-local 2026-11-10T12:38:16; Gutenberg raw SHA-1 **64c42e94412bdb3a07a48d791c0ccd3c9e1c07b1**. Subsequent edits invalidate this exact QA target.
 - 78 top-level blocks, 11 H2 headings, 39 bibliography entries, 4 locally hosted documentary photographs and 10 table rows (including header).
 - 130 link occurrences across 48 unique URL targets: inventory, NOT proof that all links load for visitors.
 - Zero scripts/iframes (actual counts: 0 / 0).
@@ -22,6 +22,13 @@ Working article: WordPress #2151, **The Levee They Blew on Purpose**. Investigat
 4. Verify ordinary visitor-browser accessibility for USACE/USGS sources listed below. Tool HTTP 403 is not evidence ordinary visitors get 403.
 5. QA owner to report dated PASS/FAIL at both widths against this same content SHA. If failed, record exact section and screenshot evidence. Investigations owner controls final publish; Site QA lane stays read-only.
 6. On PASS and fresh draft hash, first publish request must explicitly include meta._jetpack_dont_email_post_to_subs=true and meta.jetpack_publicize_feature_enabled=false, then independently inspect anonymous live page and responsive rendering, image URLs and links before any Grok handoff. No social distribution here.
+
+
+## November 10, 12:38 Pacific — original measurement versus inferred peak
+
+- Source-checked USGS Costa and Jarrett (2008), Appendix A printed pp. 231–232: a current-meter measurement at the historical Chicot/Arkansas City reach reached **1,712,000 ft³/s on April 20, 1927**; Corps material cited by USGS says the **April 21 Mounds Landing crevasse** increased current enough to end boat observations. Underlying 1927 measurement sheets were unavailable to the USGS review team. The frequently cited **2,472,000 ft³/s May peak is a modeled/conditional estimate**, not a later direct discharge reading, nor a measure of Caernarvon flow. The printed site label and exact measurement reach differ from today's gage location; avoid implying point-identical observations.
+- Targeted edit: WordPress draft #2151, existing hydrological-analysis paragraph, Gutenberg section 26 only. WordPress saved with zero content warnings; independent section and post readbacks confirmed new hash **`64c42e94412bdb3a07a48d791c0ccd3c9e1c07b1`**, 78 blocks, 39 references, four photographs, draft status, subscriber email suppression=true and automatic social sharing=false. Existing editorial release gate remains **HOLD**.
+- USGS Appendix A indexed text inspected at https://pubs.usgs.gov/sir/2008/5164/pdf/sir20085164_AppendixA.pdf ; screenshot retrieval returned 403, so scanned PDF page images have **not** been visually reviewed. Report full source citation remains in the current bibliography. Do not claim new independent reconstruction of 1927 discharge observations.
 
 ## Automated access flags, not definitive broken links
 
@@ -91,7 +98,7 @@ Example (execute only in an authorized editor's secure shell or browser machine)
 pip install playwright
 python -m playwright install chromium
 # Export FV_PREVIEW_URL privately; do NOT paste an authenticated URL into a command saved in history.
-python docs/editorial/tools/inspect_wp_draft_2151.py --out /private/fv-qa-2151 --sha 9d3b2b62511caf6704044da1eed431888d979d46
+python docs/editorial/tools/inspect_wp_draft_2151.py --out /private/fv-qa-2151 --sha 64c42e94412bdb3a07a48d791c0ccd3c9e1c07b1
 ```
 For sites requiring logged-in cookies, configure `FV_STORAGE_STATE` with an already authorized private Playwright storage-state file. The script deliberately refuses non-Final Vestige target hosts and does **not** generate or obtain login credentials, tokens, or private previews.
 
@@ -99,7 +106,7 @@ For sites requiring logged-in cookies, configure `FV_STORAGE_STATE` with an alre
 
 ## November 10, 2026, 09:35 Pacific — read-only QA inspector hardening and source fallback research
 
-**Editorial release state unchanged:** WordPress post #2151 remains **draft**, raw Gutenberg SHA-1 `9d3b2b62511caf6704044da1eed431888d979d46`. Authenticated site QA at 390px and 1440px remains **NOT PASSED**; no first publish, subscriber mail, social post, or sitewide/template edit authorized.
+**Editorial release state unchanged:** WordPress post #2151 remains **draft**, raw Gutenberg SHA-1 `64c42e94412bdb3a07a48d791c0ccd3c9e1c07b1`. Authenticated site QA at 390px and 1440px remains **NOT PASSED**; no first publish, subscriber mail, social post, or sitewide/template edit authorized.
 
 Inspector revision committed in `22041267bc52df56821f7b5394ac1c3e2d92e0de`: the script now identifies the four media by WordPress media IDs, not only by exact `currentSrc` filename, because WordPress responsive `srcset` may substitute filenames. It requires one loaded, alt-texted and credit-captioned occurrence of each expected archival image, checks for a duplicate lead image anywhere in the DOM, validates 39 source entries, checks the original compensation chart and presence of site header/footer, and retains overflow, accessible evidence table, anchor and JavaScript checks. It now rejects a page lacking a proper article/H1/source anchor, reducing the risk that a login or editor screen is mistakenly accepted as the post preview. None of these code changes constitute a real-browser PASS.
 
@@ -111,7 +118,7 @@ Inspector revision committed in `22041267bc52df56821f7b5394ac1c3e2d92e0de`: the 
 
 ## November 10, 2026, 10:32 Pacific — preview revision guard and primary-source access audit
 
-**Publication remains HOLD.** The site currently lists 66 published Journal entries; WordPress search identifies only the existing Caernarvon draft #2151. A fresh authenticated draft read confirmed the original editorial baseline remains unchanged (modified 2026-11-10 06:38:38 site-local; SHA-1 `9d3b2b62511caf6704044da1eed431888d979d46`; 78 blocks, 39 bibliography items, four local archival images). The two email/social suppression flags remain enabled/disabled respectively. Nothing was published.
+**Publication remains HOLD.** The site currently lists 66 published Journal entries; WordPress search identifies only the existing Caernarvon draft #2151. A fresh authenticated draft read confirmed the original editorial baseline remains unchanged (modified 2026-11-10 06:38:38 site-local; SHA-1 `64c42e94412bdb3a07a48d791c0ccd3c9e1c07b1`; 78 blocks, 39 bibliography items, four local archival images). The two email/social suppression flags remain enabled/disabled respectively. Nothing was published.
 
 **Inspector hardening:** At GitHub commit `0291fd4cb4e338a70dda2fea117f7cdf4d67053c`, the read-only inspector additionally requires five literal revision markers in the rendered draft DOM: `2:17 p.m.`, `$1,096,796.53`, `Bohemia Spillway`, `Acosta v.`, and `1991`. Each was checked for presence against the *authenticated WordPress raw Gutenberg draft* before being made a gate. The JSON records per-marker results. This prevents a visually plausible **earlier revision** from being mistakenly accepted based on a manually supplied SHA alone, but **does not prove exact byte identity**; the browser cannot attest the WP raw-content hash. A fresh authenticated WordPress read and real 390px/1440px frontend preview screenshot inspection are still required before release. Source edits to #2151 were deliberately avoided so prior QA baselines remain valid. Inspector code committed, but **not executed against an authorized production preview**.
 
@@ -126,7 +133,7 @@ Inspector revision committed in `22041267bc52df56821f7b5394ac1c3e2d92e0de`: the 
 
 ## November 10, 2026, 11:31 Pacific — archival-image trust boundary checked (release still HOLD)
 
-**Verified WordPress source state:** Post #2151 is still **draft**; modified 2026-11-10 06:38:38 site-local; Gutenberg SHA-1 **`9d3b2b62511caf6704044da1eed431888d979d46`** and **78 sections**. All four WordPress media records were independently read back this cycle (#2148 NOAA, #2255 LOC Poydras April 30, #2202 Lou Block's 1939 Emile Riche, #2149 LOC National Photo Company/location unconfirmed). Their original `source_url` values currently point to HTTPS `finalvestige.com/wp-content/uploads/` media and carry nonempty alt text plus archival attribution. A public-media metadata read does not establish actual frontend display or rights beyond the individual archive's advisory.
+**Verified WordPress source state:** Post #2151 is still **draft**; modified 2026-11-10 06:38:38 site-local; Gutenberg SHA-1 **`64c42e94412bdb3a07a48d791c0ccd3c9e1c07b1`** and **78 sections**. All four WordPress media records were independently read back this cycle (#2148 NOAA, #2255 LOC Poydras April 30, #2202 Lou Block's 1939 Emile Riche, #2149 LOC National Photo Company/location unconfirmed). Their original `source_url` values currently point to HTTPS `finalvestige.com/wp-content/uploads/` media and carry nonempty alt text plus archival attribution. A public-media metadata read does not establish actual frontend display or rights beyond the individual archive's advisory.
 
 **Concrete inspector defect repaired:** Prior `all_four_local_archival_photos_loaded_credited_and_alt` check accepted a loaded third-party/hotlinked replacement if it kept the expected `wp-image-<id>` class and credited caption. [Read-only inspector](./tools/inspect_wp_draft_2151.py) now additionally requires that **both the HTML `src` and rendered `currentSrc`** be HTTPS WordPress uploads on `finalvestige.com` (or a WordPress `i0/i1/i2.wp.com` image-CDN proxy whose path points back to the same uploads), and requires nonzero visible image dimensions with visible CSS. It rejects arbitrary third-party hosts, lookalike domain suffixes, insecure HTTP, and outside-upload paths. Host-allowlist logic passed seven local positive/negative unit examples. **GitHub commit `2c2d6cfe595b2c25919afe63ca40c0e6685ec6cf`**; independently fetched new blob SHA `134b79ceaa9a5779e8eddf989f8d4143bbccd288`.
 
