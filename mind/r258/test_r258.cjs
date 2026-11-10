@@ -64,7 +64,7 @@ const cases=[
  ['invented CTA evidence',o=>o.plan=o.plan.replace(/NOT COMPUTABLE/g,'REVENUE VERIFIED')],
  ['remove FTC disclosure',o=>o.plan=o.plan.replace('If you purchase through this link, Final Vestige may earn a commission at no additional cost to you','Free health outcomes guaranteed')],
  ['fake Thatcher stat',o=>o.article+='\n99% of people are fooled by this test.'],
- ['remove photo rights guard',o=>o.article=o.article.replace(/copyright ownership and image permissions/g,'public image reuse welcome')],
+ ['remove photo rights guard',o=>o.article=o.article.replace(/copyright ownership and image permissions/gi,'public image reuse welcome')],
  ['added unlicensed merchant link',o=>o.article+='\n<a href="https://zen12.com/secret/">Get it</a>'],
  ['fake merchant sale',o=>{let m=JSON.parse(o.matrix);m.video_status='PAID_SALES_VERIFIED';o.matrix=JSON.stringify(m)}]
 ];
