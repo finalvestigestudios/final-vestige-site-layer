@@ -10,7 +10,7 @@ function auditSignupSnapshot({blockHtml="", expectedPageId=0}={}) {
   const selfLink=anchors.some(a=>{
     const url=a[1].replace(/&(?:amp|#038);/gi,"&");
     return expectedPageId>0 && /[?&]p=/.test(url) && new RegExp("[?&]p="+expectedPageId+"(?:&|$)").test(url)
-      && /subscribe/i.test(a[2].replace(/<[^>]*>/g,""));
+     ;
   });
   const fallbackShape=hasBlock&&selfLink&&!hasForm&&!hasEmailControl;
   return Object.freeze({
