@@ -1,0 +1,18 @@
+{
+  "approval_state": "HARD_HOLD_NOT_LIVE",
+  "asset_id_verified_for_apollo_grok_long_form": false,
+  "affiliate_publisher_acceptance_verified": false,
+  "affiliate_payable_tracking_verified": false,
+  "approved_for_automatic_wordpress_insertion": false,
+  "approved_for_public_merchant_placement": false,
+  "founder_release_approval_recorded": false,
+  "merchant_settlement_verified": false,
+  "net_revenue_per_1000_qualified_human_sessions_computable": false,
+  "paid_orders_verified": false,
+  "preferred_primary_conversion_action": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/",
+  "preview_guide_destination": "https://finalvestige.com/mini-museum-history-collectibles/",
+  "research_source": "https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/",
+  "rights_guidance": "https://www.nasa.gov/nasa-brand-center/advertising-guidelines/",
+  "separate_commerce_after_historical_narrative": true,
+  "staging_only": true
+}
