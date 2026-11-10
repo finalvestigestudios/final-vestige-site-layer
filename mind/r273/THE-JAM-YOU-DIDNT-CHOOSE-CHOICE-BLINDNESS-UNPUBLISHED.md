@@ -1,7 +1,7 @@
 ---
 title: "The Jam You Didn't Choose"
 subtitle: "Choice blindness, the stories we tell about decisions, and the evidence a buyer should demand"
-status: UNPUBLISHED — editorial review, not a live article
+status: UNPUBLISHED / CANONICAL DUPLICATE HOLD — alternative draft, NOT an approved new topic
 date_reviewed: 2026-11-10
 proposed_slug: choice-blindness-the-jam-you-didnt-choose
 stream: Mind & Perception / Perception & Attention
@@ -9,6 +9,9 @@ commercial_status: NO PRODUCT ENDORSEMENT
 ---
 
 # The Jam You Didn't Choose
+
+> **CANONICAL EDITORIAL HOLD (Nov. 10, 2026):** This is an original *alternative wording* but **NOT an original topic**. Earlier, better-developed unpublished choice-blindness treatment exists in [Mind R203](https://github.com/finalvestigestudios/final-vestige-site-layer/pull/1499) (3,003 words, with financial-choice research), and a second overlapping [R244 draft](https://github.com/finalvestigestudios/final-vestige-site-layer/pull/1754). DO NOT publish this as a new investigation or route social traffic here. Canonical editor should prefer reconciling and upgrading R203, preserve corrections already made in R204, and select one source-traceable publication candidate. This derivative draft exists only to compare a narrower consumer-choice framing and is not cleared for release.
+
 
 *At a supermarket tasting table, the researchers changed what someone had chosen. What happened next was stranger than an ordinary error of memory: people explained a decision they had not made.*
 
@@ -22,7 +25,7 @@ This is not a parlor claim that the mind is permanently unreliable. It is an exp
 
 ## A hand at the table
 
-In 2010, Lars Hall, Petter Johansson, Betty Tärning, Sverker Sikström and Thérèse Deutgen reported a study conducted at a supermarket tasting venue. Shoppers sampled varieties of jam and tea, chose which they preferred, and were then offered what they were told was the chosen item for another taste and an explanation. Researchers sometimes swapped the contents at that point. [2]
+In 2010, Lars Hall, Petter Johansson, Betty Tärning, Sverker Sikström and Thérèse Deutgen reported a study conducted at a supermarket tasting venue. Shoppers **tasted jam samples and smelled tea samples**, expressed which they preferred, and were then offered what they were told was the chosen item for another taste or smell and an explanation. Researchers sometimes swapped the contents at that point. [2]
 
 The design matters. There were two separate records: an earlier expressed preference and the later item placed in front of the participant. They could be compared. A person repeating an answer after a quiet switch is not proof they had changed their taste buds. Nor can researchers read their intentions directly. What they could observe was whether people detected that the item offered as the winner was actually the loser of the earlier comparison.
 
@@ -150,4 +153,4 @@ The next time an offer seems to explain why you always wanted it, make one small
 
 **Method note:** The primary indexed abstracts and university research descriptions support the methods and summary observations above. The full original 2005 and 2010 paywalled methods were not independently audited in this sprint. Avoid converting their study-level statistics into general population rates. No invented participant dialogue, hands-on product testing, product guarantees or compensation claim is presented.
 
-**Rights and release:** Text-only original prose; no third-party images; no deceptive recreation of an actual participant; unpublished pending canonical corpus overlap review, editorial/source fact-check, accessibility and founder release authorization.
+**Rights and release:** Text-only editorial alternative; no third-party images; no deceptive recreation of an actual participant. **Known overlap with R203/R244 — not a new topical investigation or a publishable page without consolidation.** Full methods, source fact-check, accessibility and founder release authorization remain outstanding.
