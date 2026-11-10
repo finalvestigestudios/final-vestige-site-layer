@@ -1,0 +1,287 @@
+{
+  "schema": "fv-forrestal-289-six-evidence-v1",
+  "date_utc": "2026-11-10",
+  "inventory": {
+    "path": "qa/media-recovery/parts/03.json",
+    "blob_sha": "49183f66f880f7c4dfd363acca906876877f2e5e"
+  },
+  "post_id": 289,
+  "post_url": "https://finalvestige.com/2026/08/19/they-thought-they-had-ten-minutes-forrestal/",
+  "rows": [
+    {
+      "slot": "289:0",
+      "post_id": 289,
+      "post_url": "https://finalvestige.com/2026/08/19/they-thought-they-had-ten-minutes-forrestal/",
+      "stored_url": "https://upload.wikimedia.org/wikipedia/commons/b/b8/USS_Forrestal_A-4_Skyhawk_burning.png",
+      "stored_alt": "Fire spreading among armed aircraft on the flight deck of USS Forrestal on July 29, 1967.",
+      "host": "upload.wikimedia.org",
+      "retrieval": {
+        "method": "web.open_independent_image_retriever",
+        "date_utc": "2026-11-10",
+        "outcome": "IMAGE_RENDERED",
+        "retriever_http_code": null,
+        "guest_http_status": null,
+        "guest_broken": null,
+        "guest_current_src": null,
+        "guest_decoded_px": null,
+        "guest_wire_bytes": null,
+        "uncached_guest_verified": false,
+        "final_origin_redirects": null
+      },
+      "candidate": {
+        "catalog_url": "https://commons.wikimedia.org/wiki/File:USS_Forrestal_A-4_Skyhawk_burning.png",
+        "catalog_id": "Commons:USS_Forrestal_A-4_Skyhawk_burning.png",
+        "relationship": "PUBLISHED_SOURCE_CATALOG",
+        "catalog_intrinsic_px": [
+          1396,
+          1110
+        ],
+        "conditional_960px": [
+          960,
+          763
+        ],
+        "rights_observation": "Unknown author; Wikimedia Commons asserts US federal public domain but points to a commercial article, not an official photo accession. Individual rights require review.",
+        "chronology_note": "1967-07-29 carrier fire; no Navy accession or source-binary hash verified.",
+        "exact_binary_match_sha256": null,
+        "rights_cleared": false,
+        "editorial_match_approved": false
+      },
+      "permissions": {
+        "download": false,
+        "mirror": false,
+        "cache": false,
+        "wordpress_upload": false,
+        "post_block_edit": false,
+        "caption_edit": false
+      }
+    },
+    {
+      "slot": "289:1",
+      "post_id": 289,
+      "post_url": "https://finalvestige.com/2026/08/19/they-thought-they-had-ten-minutes-forrestal/",
+      "stored_url": "https://specials-images.forbesimg.com/imageserve/69a2157d5ca34a424f6e4791/0x0.jpg",
+      "stored_alt": "USS Forrestal sailors directing firefighting hoses across the burned flight deck during the 1967 fire.",
+      "host": "specials-images.forbesimg.com",
+      "retrieval": {
+        "method": "web.open_independent_image_retriever",
+        "date_utc": "2026-11-10",
+        "outcome": "IMAGE_RENDERED",
+        "retriever_http_code": null,
+        "guest_http_status": null,
+        "guest_broken": null,
+        "guest_current_src": null,
+        "guest_decoded_px": null,
+        "guest_wire_bytes": null,
+        "uncached_guest_verified": false,
+        "final_origin_redirects": null
+      },
+      "candidate": {
+        "catalog_url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nara-series/usn/USN-1120000/USN-1124794.html",
+        "catalog_id": "NHHC USN 1124794",
+        "relationship": "DIFFERENT_PHOTO_EDITORIAL_ALTERNATIVE",
+        "catalog_intrinsic_px": null,
+        "conditional_960px": null,
+        "rights_observation": "Forbes-hosted photograph has unknown original creator and derivative/crop license; USN archive is a different photograph, not a replacement.",
+        "chronology_note": "Original image renders in color; Navy USN 1124794 is an independently catalogued DIFFERENT fire photograph, not pixel-matched.",
+        "exact_binary_match_sha256": null,
+        "rights_cleared": false,
+        "editorial_match_approved": false
+      },
+      "permissions": {
+        "download": false,
+        "mirror": false,
+        "cache": false,
+        "wordpress_upload": false,
+        "post_block_edit": false,
+        "caption_edit": false
+      }
+    },
+    {
+      "slot": "289:2",
+      "post_id": 289,
+      "post_url": "https://finalvestige.com/2026/08/19/they-thought-they-had-ten-minutes-forrestal/",
+      "stored_url": "https://k.sinaimg.cn/n/spider20191227/356/w640h516/20191227/d15a-imfiehq8368462.jpg/w700d1q75cms.jpg?by=cms_fixed_width",
+      "stored_alt": "Aerial view of the burned and damaged USS Forrestal flight deck after the 1967 fire.",
+      "host": "k.sinaimg.cn",
+      "retrieval": {
+        "method": "web.open_independent_image_retriever",
+        "date_utc": "2026-11-10",
+        "outcome": "IMAGE_RENDERED",
+        "retriever_http_code": null,
+        "guest_http_status": null,
+        "guest_broken": null,
+        "guest_current_src": null,
+        "guest_decoded_px": null,
+        "guest_wire_bytes": null,
+        "uncached_guest_verified": false,
+        "final_origin_redirects": null
+      },
+      "candidate": {
+        "catalog_url": "https://www.history.navy.mil/our-collections/photography/us-navy-ships/alphabetical-listing/f/uss-forrestal--cva-59-cv-59--0.html",
+        "catalog_id": "NHHC Forrestal archival index",
+        "relationship": "UNIDENTIFIED_ARCHIVE_CANDIDATE",
+        "catalog_intrinsic_px": null,
+        "conditional_960px": null,
+        "rights_observation": "Sina-hosted reproduction original photographer, acquisition and reuse rights unverified.",
+        "chronology_note": "Elevated stern view of deck damage; exact official photographic accession, capture date and image identity unresolved.",
+        "exact_binary_match_sha256": null,
+        "rights_cleared": false,
+        "editorial_match_approved": false
+      },
+      "permissions": {
+        "download": false,
+        "mirror": false,
+        "cache": false,
+        "wordpress_upload": false,
+        "post_block_edit": false,
+        "caption_edit": false
+      }
+    },
+    {
+      "slot": "289:3",
+      "post_id": 289,
+      "post_url": "https://finalvestige.com/2026/08/19/they-thought-they-had-ten-minutes-forrestal/",
+      "stored_url": "https://k-static.appmobile.cn/uploads3/allimg/2603/15/1K1364K1-2.jpg",
+      "stored_alt": "USS Forrestal crewmen fighting and cooling wreckage on the flight deck after the 1967 fire.",
+      "host": "k-static.appmobile.cn",
+      "retrieval": {
+        "method": "web.open_independent_image_retriever",
+        "date_utc": "2026-11-10",
+        "outcome": "IMAGE_RENDERED",
+        "retriever_http_code": null,
+        "guest_http_status": null,
+        "guest_broken": null,
+        "guest_current_src": null,
+        "guest_decoded_px": null,
+        "guest_wire_bytes": null,
+        "uncached_guest_verified": false,
+        "final_origin_redirects": null
+      },
+      "candidate": {
+        "catalog_url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nara-series/usn/USN-1120000/USN-1124794.html",
+        "catalog_id": "NHHC USN 1124794",
+        "relationship": "DIFFERENT_PHOTO_EDITORIAL_ALTERNATIVE",
+        "catalog_intrinsic_px": null,
+        "conditional_960px": null,
+        "rights_observation": "Chinese mirror reproduction creator/retouch rights unknown; Navy item a different editorial alternative.",
+        "chronology_note": "Appmobile image is monochrome and visually overlaps Forbes hose/debris scene, but neither matching crop nor digital photo identity established.",
+        "exact_binary_match_sha256": null,
+        "rights_cleared": false,
+        "editorial_match_approved": false
+      },
+      "permissions": {
+        "download": false,
+        "mirror": false,
+        "cache": false,
+        "wordpress_upload": false,
+        "post_block_edit": false,
+        "caption_edit": false
+      }
+    },
+    {
+      "slot": "289:4",
+      "post_id": 289,
+      "post_url": "https://finalvestige.com/2026/08/19/they-thought-they-had-ten-minutes-forrestal/",
+      "stored_url": "https://media.defense.gov/2021/Dec/04/2002903623/1460/1280/0/210811-N-SG189-1105.JPG",
+      "stored_alt": "U.S. Navy sailors training on a shipboard fire simulation at Farrier Firefighting School in Norfolk.",
+      "host": "media.defense.gov",
+      "retrieval": {
+        "method": "web.open_independent_image_retriever",
+        "date_utc": "2026-11-10",
+        "outcome": "WEB_RETRIEVER_403",
+        "retriever_http_code": 403,
+        "guest_http_status": null,
+        "guest_broken": null,
+        "guest_current_src": null,
+        "guest_decoded_px": null,
+        "guest_wire_bytes": null,
+        "uncached_guest_verified": false,
+        "final_origin_redirects": null
+      },
+      "candidate": {
+        "catalog_url": "https://www.dvidshub.net/image/6947585/farrier-firefighting-school",
+        "catalog_id": "DVIDS 6947585 / VIRIN 210811-N-SG189-1105",
+        "relationship": "EXACT_CATALOG_ID_NOT_BINARY_MATCH",
+        "catalog_intrinsic_px": [
+          5448,
+          3625
+        ],
+        "conditional_960px": [
+          960,
+          639
+        ],
+        "rights_observation": "DVIDS identifies J. Keith Wilson US Navy released public-domain photograph with DVIDS copyright/use restrictions. Rights clearance for caching remains HOLD.",
+        "chronology_note": "Photo from 2021-08-11 of simulated Class B firefighting, not a photograph of the 1967 carrier fire.",
+        "exact_binary_match_sha256": null,
+        "rights_cleared": false,
+        "editorial_match_approved": false
+      },
+      "permissions": {
+        "download": false,
+        "mirror": false,
+        "cache": false,
+        "wordpress_upload": false,
+        "post_block_edit": false,
+        "caption_edit": false
+      }
+    },
+    {
+      "slot": "289:5",
+      "post_id": 289,
+      "post_url": "https://finalvestige.com/2026/08/19/they-thought-they-had-ten-minutes-forrestal/",
+      "stored_url": "https://d1ldvf68ux039x.cloudfront.net/thumbs/photos/1307/985674/1000w_q95.jpg",
+      "stored_alt": "A Navy firefighting instructor beside the memorial to Gerald W. Farrier at the school that bears his name.",
+      "host": "d1ldvf68ux039x.cloudfront.net",
+      "retrieval": {
+        "method": "web.open_independent_image_retriever",
+        "date_utc": "2026-11-10",
+        "outcome": "IMAGE_RENDERED",
+        "retriever_http_code": null,
+        "guest_http_status": null,
+        "guest_broken": null,
+        "guest_current_src": null,
+        "guest_decoded_px": null,
+        "guest_wire_bytes": null,
+        "uncached_guest_verified": false,
+        "final_origin_redirects": null
+      },
+      "candidate": {
+        "catalog_url": "https://www.dvidshub.net/image/985674/uss-forrestal-memorial-ceremony",
+        "catalog_id": "DVIDS 985674 / VIRIN 130726-N-ST310-007",
+        "relationship": "EXACT_CATALOG_ID_NOT_BINARY_MATCH",
+        "catalog_intrinsic_px": [
+          1200,
+          1808
+        ],
+        "conditional_960px": [
+          960,
+          1446
+        ],
+        "rights_observation": "DVIDS identifies David Todd US Navy released public-domain photograph with copyright/use restrictions. Individual credit and republishing remain HOLD.",
+        "chronology_note": "Photo from 2013-07-26 shows Paul Anderson at Gerald W. Farrier memorial plaque; not a 1967 scene.",
+        "exact_binary_match_sha256": null,
+        "rights_cleared": false,
+        "editorial_match_approved": false
+      },
+      "permissions": {
+        "download": false,
+        "mirror": false,
+        "cache": false,
+        "wordpress_upload": false,
+        "post_block_edit": false,
+        "caption_edit": false
+      }
+    }
+  ],
+  "observation_totals": {
+    "image_rendered": 5,
+    "retriever_403": 1,
+    "confirmed_visitor_broken": 0,
+    "confirmed_visitor_loaded": 0
+  },
+  "warning": "Image-tool success/failure is not origin HTTP, logged-out browser decoding, cold wire bytes or a verified production failure.",
+  "revision_gate": "HOLD all rights, binary acquisition, caching and WordPress publication.",
+  "site_writes": 0,
+  "downloaded_binaries": 0,
+  "spend_usd": 0
+}
