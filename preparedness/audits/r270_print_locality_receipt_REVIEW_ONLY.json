@@ -1,0 +1,76 @@
+{
+  "child_privacy_approved": false,
+  "chromium_version": "144.0.7559.96",
+  "commerce_approved": false,
+  "full_native_pipeline_executed": false,
+  "independent_qd_pass": false,
+  "javascript_modes": {
+    "false": {
+      "back": {
+        "max_warning_font_pt": 7.99,
+        "min_warning_font_pt": 7.99,
+        "privacy_count": 1,
+        "status_count": 1,
+        "text_inside_expected_cutout_bounds": true,
+        "verified_field_labels": [
+          "Backup contact:",
+          "Backup telephone:",
+          "Plan reviewed:"
+        ]
+      },
+      "front": {
+        "max_warning_font_pt": 7.99,
+        "min_warning_font_pt": 7.99,
+        "privacy_count": 1,
+        "status_count": 1,
+        "text_inside_expected_cutout_bounds": true,
+        "verified_field_labels": [
+          "Out-of-area contact:",
+          "Telephone:"
+        ]
+      },
+      "page_count": 1,
+      "pdf_text_label_count": 2
+    },
+    "true": {
+      "back": {
+        "max_warning_font_pt": 7.99,
+        "min_warning_font_pt": 7.99,
+        "privacy_count": 1,
+        "status_count": 1,
+        "text_inside_expected_cutout_bounds": true,
+        "verified_field_labels": [
+          "Backup contact:",
+          "Backup telephone:",
+          "Plan reviewed:"
+        ]
+      },
+      "front": {
+        "max_warning_font_pt": 7.99,
+        "min_warning_font_pt": 7.99,
+        "privacy_count": 1,
+        "status_count": 1,
+        "text_inside_expected_cutout_bounds": true,
+        "verified_field_labels": [
+          "Out-of-area contact:",
+          "Telephone:"
+        ]
+      },
+      "page_count": 1,
+      "pdf_text_label_count": 2
+    }
+  },
+  "legibility_approved": false,
+  "pdf_page_size_pt": [
+    612,
+    792
+  ],
+  "physical_paper_cut_fold_not_tested": true,
+  "physical_print_approved": false,
+  "printed_warning_below_internal_9pt_review_floor": true,
+  "proof_scope": "bounded offline Chromium+PDF spans, not physical usability",
+  "publication_authorized": false,
+  "schema": "fv.r270.wallet.pdf-face-locality.v1",
+  "source_git_blob": "4fbe028e0460dc81478825f501d76b03596faeaf",
+  "state": "DRAFT_HARD_HOLD"
+}
