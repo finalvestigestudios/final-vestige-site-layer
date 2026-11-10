@@ -34,6 +34,7 @@ from candidate_guard import (
 from build_inventory import EXPECTED
 from canonical_inventory_r334 import CanonicalInventoryError, parse_canonical_inventory
 from smoke_provenance import SmokeProvenanceError, classify_smoke
+from smoke_runner_r336 import SmokeRunError, run_smoke_checked, select_smoke_runner
 
 
 class GateFailure(ValueError):
@@ -135,24 +136,17 @@ def verify(folder: str | Path, *, smoke: bool = False, runner=None,
 
     recheck_artifacts("initial verification")
     if smoke:
-        if timeout < 1 or timeout > 600:
+        if type(timeout) is not int or not 1 <= timeout <= 600:
             raise GateFailure("Smoke timeout must be between 1 and 600 seconds")
-        launch = runner or subprocess.run
+        launch = select_smoke_runner(runner)
         for record in records:
             recheck_artifacts("pre-smoke")
             exe = root / record["name"]
             started = time.monotonic()
             try:
-                result = launch([str(exe.resolve()), "--smoke-test"],
-                                cwd=str(root.resolve()), timeout=timeout,
-                                check=False, stdin=subprocess.DEVNULL,
-                                stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-            except subprocess.TimeoutExpired as exc:
-                raise GateFailure(f"{record['name']}: smoke timed out") from exc
-            except OSError as exc:
-                raise GateFailure(f"{record['name']}: could not execute packaged EXE") from exc
-            if result.returncode != 0:
-                raise GateFailure(f"{record['name']}: smoke failed with exit code {result.returncode}")
+                run_smoke_checked(launch, exe, root, name=record["name"], timeout=timeout)
+            except SmokeRunError as exc:
+                raise GateFailure(str(exc)) from None
             # A passing exit code is insufficient if a process modifies its
             # own image, another app's image, or the checksum inventory.
             recheck_artifacts("post-smoke")
