@@ -8,7 +8,7 @@ Working article: WordPress #2151, **The Levee They Blew on Purpose**. Investigat
 
 - Status **draft**; modified site-local 2026-11-10T15:39:43; Gutenberg raw SHA-1 **0e01a1bd8fa9ee3b0debcc8490862ac6d8727010** (current release identity; previous dated logs below remain historical). Subsequent edits invalidate this exact QA target.
 - 78 top-level blocks, 11 H2 headings, 39 bibliography entries, 4 locally hosted documentary photographs and 10 table rows (including header).
-- 130 link occurrences across 48 unique URL targets: inventory, NOT proof that all links load for visitors.
+- 131 link occurrences across 48 unique URL targets (one additional inline citation of the existing *Foret* ruling): inventory, NOT proof that all links load for visitors.
 - Zero scripts/iframes (actual counts: 0 / 0).
 - WordPress photo attachments #2148, #2255, #2202, #2149; caption/alt/source/license metadata checked independently. Featured #2148; _jetpack_hide_featured_image=true.
 - Categories 257245, 232815 (Catastrophe; Ingenuity). Subscriber guard _jetpack_dont_email_post_to_subs=true; automatic social sharing jetpack_publicize_feature_enabled=false.
