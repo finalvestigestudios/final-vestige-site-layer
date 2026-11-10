@@ -813,6 +813,10 @@ jobs:
         run: |
           python -W error -m unittest discover -s products/desktop/tests -p 'test_report_runtime_fault_r340.py'
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_report_runtime_fault_r340.py'
+      - name: R341 release-gate CLI raw filesystem fault privacy (18 tests; normal and -OO)
+        run: |
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_release_gate_cli_privacy_r341.py'
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_release_gate_cli_privacy_r341.py'
       - name: Verify full normal/optimized source provenance and six smokes (R57)
         run: |
           mkdir -p "$RUNNER_TEMP/fvs-source"
@@ -889,6 +893,14 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R340 Windows private report fault regression FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_report_runtime_fault_r340.py'
           if ($LASTEXITCODE -ne 0) { throw "R340 Windows optimized report fault regression FAILED" }
+      - name: R341 Windows six-app release CLI private fault boundary (18 tests; normal and -OO)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_release_gate_cli_privacy_r341.py'
+          if ($LASTEXITCODE -ne 0) { throw "R341 Windows CLI privacy regression FAILED" }
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_release_gate_cli_privacy_r341.py'
+          if ($LASTEXITCODE -ne 0) { throw "R341 Windows optimized CLI privacy regression FAILED" }
       - name: R319 witnessed-vs-compiled premium test source before Windows packaging
         shell: pwsh
         run: |
