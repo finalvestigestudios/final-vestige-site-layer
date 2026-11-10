@@ -109,6 +109,7 @@ class TestCompletePartition(unittest.TestCase):
                           result['nonshared_workorders']), (2000, 562, 1438))
         self.assertEqual(len(result['unreviewed_nonshared_queue']), 1438)
         self.assertEqual(result['state'], r.HOLD)
+        self.assertEqual(result['total_unapproved_citation_occurrences'], 2000)
         for flag in r.FALSE:
             self.assertIs(result[flag], False)
 
