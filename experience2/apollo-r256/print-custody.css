@@ -1,0 +1,29 @@
+/* Apollo Evidence Atlas R256 — print-only disclosure custody.
+   SourceDrawer stays native and collapsed on screen; printing exposes its four
+   provenance records, without JavaScript, changing original historical text,
+   or altering the original NASA URLs. The unreviewed R238 HTML is untouched. */
+@media print {
+  .fv-apollo-atlas #fv-apollo-source-drawer::details-content {
+    content-visibility: visible !important;
+    display: block !important;
+  }
+  .fv-apollo-atlas #fv-apollo-source-drawer .fv-apollo-drawer-body {
+    display: block !important;
+    color: #000 !important;
+  }
+  .fv-apollo-atlas #fv-apollo-source-drawer .fv-apollo-drawer-list {
+    display: block !important;
+  }
+  .fv-apollo-atlas #fv-apollo-source-drawer .fv-apollo-drawer-list li {
+    break-inside: avoid;
+    background: #fff !important;
+    border: 1px solid #333 !important;
+    color: #000 !important;
+    margin-bottom: .6rem;
+  }
+  .fv-apollo-atlas #fv-apollo-source-drawer .fv-apollo-drawer-list a,
+  .fv-apollo-atlas #fv-apollo-source-drawer .fv-apollo-plate-facts dt,
+  .fv-apollo-atlas #fv-apollo-source-drawer .fv-apollo-plate-facts dd {
+    color: #000 !important;
+  }
+}
