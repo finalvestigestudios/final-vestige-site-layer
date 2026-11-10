@@ -1,0 +1,24 @@
+{
+  "source": "Read-only WordPress.com connected page_get, finalvestige.com, page ID 6",
+  "site_id": 256784396,
+  "page_id": 6,
+  "status": "publish",
+  "modified": "2026-11-05T12:07:24",
+  "captured_at_utc": "2026-11-10T04:00:00Z",
+  "page_content_sha256": "685911178ae68ca9dfbd8f47f5903ef57f76ac4b52e886d8287416304c98794b",
+  "record_count": 72,
+  "record_spans_sha256": "68494e869966675a587a16e581e513135eda000c77b76a2ec2fa55b751887139",
+  "jetpack_block_sha256": "3e91d3c92c5185709237da55e509dd03d47b6d532a6053a00d78ecaf41e36941",
+  "jetpack_block_length": 495,
+  "focus_href_min_count": 2,
+  "required_chapter_ids": [
+    "fv-hf-title",
+    "fv-hf-chronicle",
+    "fv-hf-evidence",
+    "fv-hf-inquiry",
+    "fv-hf-method-title",
+    "fv-hf-observer",
+    "fv-hf-mind-title"
+  ],
+  "status_note": "Public HTML fingerprints only; no subscriber, email, session, credentials, database, or analytics data. Hashes are of WordPress content markup, not a screenshot or theme runtime DOM."
+}
