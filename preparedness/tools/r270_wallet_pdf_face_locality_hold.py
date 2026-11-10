@@ -26,7 +26,7 @@ FALSE_FLAGS = ('physical_print_approved', 'legibility_approved', 'child_privacy_
 def git_blob(b: bytes) -> str:
     if type(b) is not bytes:
         raise ValueError('R270 requires bytes')
-    return hashlib.sha1(b'blob ' + str(len(b)).encode() + b'\\0' + b).hexdigest()
+    return hashlib.sha1(b'blob ' + str(len(b)).encode() + b'\0' + b).hexdigest()
 
 
 def require(value, message):
