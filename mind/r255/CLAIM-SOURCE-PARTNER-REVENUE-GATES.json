@@ -1,0 +1,459 @@
+{
+  "title": "Mind R255 — exact Zen12 Premium claims, evidence hierarchy and hard commercial release gates",
+  "checked_at": "2026-11-09",
+  "environment": "source-controlled unpublished prototype; no CMS/merchant write",
+  "sources": [
+    {
+      "id": "SRC01",
+      "type": "merchant",
+      "url": "https://zen12.com/hnp",
+      "scope": "Exact Zen12 Premium product contents, displayed price, hour-equivalence, advertised guarantee"
+    },
+    {
+      "id": "SRC02",
+      "type": "merchant_catalog",
+      "url": "https://inspire3.com/",
+      "scope": "Separates Zen12 / Hypnosis Live / Brainwave Shots; seller-provided benefit language"
+    },
+    {
+      "id": "SRC03",
+      "type": "affiliate_public",
+      "url": "https://affiliates.inspire3.com/",
+      "scope": "Shows public signup, not Final Vestige account authorization or terms"
+    },
+    {
+      "id": "SRC04",
+      "type": "systematic_review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+      "scope": "Ingendoh et al 2023 review of 14 binaural-beat EEG studies"
+    },
+    {
+      "id": "SRC05",
+      "type": "independent_review",
+      "url": "https://www.jmir.org/2025/e68204/",
+      "scope": "Consumer neurofeedback + mindfulness intervention; NOT Zen12/Brainwave Shots"
+    },
+    {
+      "id": "SRC06",
+      "type": "systematic_review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/15257721/",
+      "scope": "2004 placebo review; methodological analogy ONLY"
+    },
+    {
+      "id": "SRC07",
+      "type": "regulator",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "scope": "Adjacent clear commission material-connection disclosure"
+    },
+    {
+      "id": "SRC08",
+      "type": "regulator",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "scope": "Objective health benefit claims require adequate substantiation"
+    },
+    {
+      "id": "SRC09",
+      "type": "first_party_live",
+      "url": "https://finalvestige.com/focus/",
+      "scope": "Existing 52-page free Fieldbook / single Dispatch signup"
+    },
+    {
+      "id": "SRC10",
+      "type": "first_party_live",
+      "url": "https://finalvestige.com/blog/",
+      "scope": "Live Journal index 66 results Nov 9 (different from historical Issue #171 inventory 61)"
+    },
+    {
+      "id": "SRC11",
+      "type": "first_party_live",
+      "url": "https://finalvestige.com/dispatch/",
+      "scope": "Existing Jetpack Dispatch list, same Fieldbook"
+    },
+    {
+      "id": "SRC12",
+      "type": "first_party_issue",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "scope": "Canonical Mind lane ownership/limits"
+    },
+    {
+      "id": "SRC13",
+      "type": "first_party_issue",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "scope": "Paid-conversion revenue and causal measurement gate"
+    },
+    {
+      "id": "SRC14",
+      "type": "first_party_issue",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/818",
+      "scope": "Business charter"
+    },
+    {
+      "id": "SRC15",
+      "type": "unavailable_live",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "scope": "Referenced in #171; direct path inaccessible in current public fetch: NOT verified as working"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "Zen12 Premium is seller-listed as 12 levels",
+      "status": "merchant_fact_only",
+      "source_ids": [
+        "SRC01"
+      ],
+      "limit": "Seller description; no purchased package verification"
+    },
+    {
+      "id": "C02",
+      "claim": "Zen12 Premium is seller-listed as 48 MP3s",
+      "status": "merchant_fact_only",
+      "source_ids": [
+        "SRC01"
+      ],
+      "limit": "Do not infer total distinct protocols"
+    },
+    {
+      "id": "C03",
+      "claim": "Seller lists 4 listening styles per level",
+      "status": "merchant_fact_only",
+      "source_ids": [
+        "SRC01"
+      ],
+      "limit": "Format not neuro-effectiveness"
+    },
+    {
+      "id": "C04",
+      "claim": "Seller describes 12 minute sessions",
+      "status": "merchant_fact_only",
+      "source_ids": [
+        "SRC01"
+      ],
+      "limit": "Duration only"
+    },
+    {
+      "id": "C05",
+      "claim": "Seller advertises 1-year refund",
+      "status": "merchant_claim_unverified",
+      "source_ids": [
+        "SRC01"
+      ],
+      "limit": "Terms/actual refund not tested"
+    },
+    {
+      "id": "C06",
+      "claim": "Seller displayed $87.99 Premium on Nov 9 2026",
+      "status": "time_bound_seller_price",
+      "source_ids": [
+        "SRC01"
+      ],
+      "limit": "Not final checkout / fee/currency/discount verification"
+    },
+    {
+      "id": "C07",
+      "claim": "12 min is equivalent to 1 hour of meditation",
+      "status": "unsupported_product_effect",
+      "source_ids": [
+        "SRC01"
+      ],
+      "limit": "EXCLUDE from FV factual recommendations"
+    },
+    {
+      "id": "C08",
+      "claim": "Zen12 changes EEG and causes cognitive improvement",
+      "status": "unsupported_product_effect",
+      "source_ids": [
+        "SRC01",
+        "SRC04"
+      ],
+      "limit": "Mechanistic review heterogeneous, not product-specific"
+    },
+    {
+      "id": "C09",
+      "claim": "2023 review identified 14 EEG studies",
+      "status": "independent_supported",
+      "source_ids": [
+        "SRC04"
+      ],
+      "limit": "Five compatible / eight contradictory / one mixed"
+    },
+    {
+      "id": "C10",
+      "claim": "All binaural beats are ineffective",
+      "status": "unsupported_negative_absolute",
+      "source_ids": [
+        "SRC04"
+      ],
+      "limit": "Do not infer from inconclusive mechanism review"
+    },
+    {
+      "id": "C11",
+      "claim": "Reported calm after audio proves a cause",
+      "status": "unsupported_inference",
+      "source_ids": [
+        "SRC06"
+      ],
+      "limit": "Subjective report not causal proof"
+    },
+    {
+      "id": "C12",
+      "claim": "2025 neurofeedback review showed no reliable cognitive improvement",
+      "status": "independent_supported_other_intervention",
+      "source_ids": [
+        "SRC05"
+      ],
+      "limit": "Does NOT assess Zen12 or Brainwave Shots"
+    },
+    {
+      "id": "C13",
+      "claim": "Brainwave Shots is the same product as Zen12 Premium",
+      "status": "false_conflation",
+      "source_ids": [
+        "SRC02"
+      ],
+      "limit": "Separate products"
+    },
+    {
+      "id": "C14",
+      "claim": "Hypnosis Live recording is clinically proven to boost focus",
+      "status": "unsupported_product_effect",
+      "source_ids": [
+        "SRC02"
+      ],
+      "limit": "No exact product trial authenticated"
+    },
+    {
+      "id": "C15",
+      "claim": "FV has named Inspire3 partner approval",
+      "status": "unverified_private_eligibility",
+      "source_ids": [
+        "SRC03"
+      ],
+      "limit": "Public signup cannot verify account"
+    },
+    {
+      "id": "C16",
+      "claim": "FV has verified account issued earning URL",
+      "status": "unverified_private_eligibility",
+      "source_ids": [
+        "SRC03"
+      ],
+      "limit": "Never guess link/subID"
+    },
+    {
+      "id": "C17",
+      "claim": "FV can promote via email",
+      "status": "unverified_channel_rights",
+      "source_ids": [
+        "SRC03"
+      ],
+      "limit": "Dispatch partner permission unverified"
+    },
+    {
+      "id": "C18",
+      "claim": "FV can promote via social",
+      "status": "unverified_channel_rights",
+      "source_ids": [
+        "SRC03"
+      ],
+      "limit": "Grok cannot activate affiliate links"
+    },
+    {
+      "id": "C19",
+      "claim": "FV has earned a commission",
+      "status": "unverified_transaction",
+      "source_ids": [
+        "SRC03"
+      ],
+      "limit": "Clicks / dashboards / gross ≠ settled commission"
+    },
+    {
+      "id": "C20",
+      "claim": "FV has a verified sellable owned Mind SKU",
+      "status": "unverified_inventory",
+      "source_ids": [
+        "SRC09"
+      ],
+      "limit": "Free Fieldbook is not a paid product"
+    },
+    {
+      "id": "C21",
+      "claim": "FV single live Focus path is a free 52 page Fieldbook",
+      "status": "first_party_live",
+      "source_ids": [
+        "SRC09"
+      ],
+      "limit": "May link to existing signup; no second list"
+    },
+    {
+      "id": "C22",
+      "claim": "FTC asks for clear conspicuous affiliate disclosure near link",
+      "status": "regulatory",
+      "source_ids": [
+        "SRC07"
+      ],
+      "limit": "Prospective disclosure not authorization"
+    },
+    {
+      "id": "C23",
+      "claim": "FTC requires adequate substantiation for objective health related claims",
+      "status": "regulatory",
+      "source_ids": [
+        "SRC08"
+      ],
+      "limit": "Exact product/claim relevance required"
+    },
+    {
+      "id": "C24",
+      "claim": "Journal currently enumerates 66 results",
+      "status": "time_bound_live_ui",
+      "source_ids": [
+        "SRC10"
+      ],
+      "limit": "Not same as earlier published investigation count of 61"
+    },
+    {
+      "id": "C25",
+      "claim": "Puységur files are currently verified live at issue-provided path",
+      "status": "not_verified",
+      "source_ids": [
+        "SRC15"
+      ],
+      "limit": "Do not create clickable production deep link without QA"
+    }
+  ],
+  "authorization_gates": [
+    {
+      "id": "G01",
+      "label": "G01 named Final Vestige Inspire3 acceptance credential verified privately",
+      "status": "HARD_HOLD",
+      "cleared_at": null,
+      "evidence": null
+    },
+    {
+      "id": "G02",
+      "label": "G02 exact offer is approved for promotion",
+      "status": "HARD_HOLD",
+      "cleared_at": null,
+      "evidence": null
+    },
+    {
+      "id": "G03",
+      "label": "G03 account-issued earning destination recorded privately",
+      "status": "HARD_HOLD",
+      "cleared_at": null,
+      "evidence": null
+    },
+    {
+      "id": "G04",
+      "label": "G04 permitted website promotional channel documented",
+      "status": "HARD_HOLD",
+      "cleared_at": null,
+      "evidence": null
+    },
+    {
+      "id": "G05",
+      "label": "G05 permitted Grok social promotional channel documented",
+      "status": "HARD_HOLD",
+      "cleared_at": null,
+      "evidence": null
+    },
+    {
+      "id": "G06",
+      "label": "G06 permitted Dispatch/email promotional channel documented",
+      "status": "HARD_HOLD",
+      "cleared_at": null,
+      "evidence": null
+    },
+    {
+      "id": "G07",
+      "label": "G07 tracked commission/attribution terms documented",
+      "status": "HARD_HOLD",
+      "cleared_at": null,
+      "evidence": null
+    },
+    {
+      "id": "G08",
+      "label": "G08 current seller checkout total and upsell disclosures verified",
+      "status": "HARD_HOLD",
+      "cleared_at": null,
+      "evidence": null
+    },
+    {
+      "id": "G09",
+      "label": "G09 refund terms verified and change-controlled",
+      "status": "HARD_HOLD",
+      "cleared_at": null,
+      "evidence": null
+    },
+    {
+      "id": "G10",
+      "label": "G10 unsupported psychological/medical/financial claims removed",
+      "status": "HARD_HOLD",
+      "cleared_at": null,
+      "evidence": null
+    },
+    {
+      "id": "G11",
+      "label": "G11 near-link disclosure tested visible and understandable",
+      "status": "HARD_HOLD",
+      "cleared_at": null,
+      "evidence": null
+    },
+    {
+      "id": "G12",
+      "label": "G12 real mobile/keyboard/contrast/screen-reader accessibility QA passed",
+      "status": "HARD_HOLD",
+      "cleared_at": null,
+      "evidence": null
+    },
+    {
+      "id": "G13",
+      "label": "G13 WordPress sanitizer and theme integration tested",
+      "status": "HARD_HOLD",
+      "cleared_at": null,
+      "evidence": null
+    },
+    {
+      "id": "G14",
+      "label": "G14 no duplicate analytics/scripts/forms/Jetpack workflow",
+      "status": "HARD_HOLD",
+      "cleared_at": null,
+      "evidence": null
+    },
+    {
+      "id": "G15",
+      "label": "G15 founder commercial release and written partner authorization approved",
+      "status": "HARD_HOLD",
+      "cleared_at": null,
+      "evidence": null
+    },
+    {
+      "id": "G16",
+      "label": "G16 confirmed paid conversion/settlement/refund reconciliation available before revenue claims",
+      "status": "HARD_HOLD",
+      "cleared_at": null,
+      "evidence": null
+    }
+  ],
+  "conversion_events": {
+    "campaign": "utm_source,utm_medium=organic_social,utm_campaign=mind_pilot_2026_11,utm_content=verified_unique_asset_id",
+    "visit": "first-party consent-compliant qualified-human session keyed to actual asset_id, where observable",
+    "cta": "offer-guide click separate from checkout or lead",
+    "affiliate_click": "outbound click only, NEVER paid order",
+    "confirmed_lead": "Jetpack/provider-confirmed consent and delivery, not form submit",
+    "paid_order": "verified merchant purchase ref; not assumed",
+    "commission": "merchant/affiliate provider reported settlement with currency/time, not assumed",
+    "net_revenue": "reconciled cleared orders/commissions less non-duplicated fees, refunds, variable costs",
+    "main_kpi": "1000 * realized_net_revenue / qualified_human_sessions (7 and 30 day, null when data missing)",
+    "no_personal_data": "no email/IP/UA fingerprint/customer identity/subID values in public logs; use aggregate counts and permissioned joins"
+  },
+  "alternatives": {
+    "free": "https://finalvestige.com/focus/",
+    "owned_paid_mind": "NOT_AUTHENTICATED",
+    "other_public_paid": "Legacy Triage Payhip listing is preparedness/estate domain, not an appropriate Mind offer; no cross-lane commercialization",
+    "default_no_authorized_merchant": "Leave CTA disabled and preserve the free alternative."
+  },
+  "release": "HARD_HOLD",
+  "notes": "Neither no-login website evidence nor targeted Gmail searches proved named affiliate approval. No affiliate link, checkout, CMS write, live A/B, tracked session, lead, paid order or settlement has been created by this sprint."
+}
