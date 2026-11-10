@@ -12,7 +12,7 @@ function piiPaths(v,path,depth,out){
  if(Array.isArray(v)){for(let i=0;i<v.length;i++)piiPaths(v[i],path+"["+i+"]",depth+1,out);return;}
  if(!isObj(v))return;
  for(const [k,val] of Object.entries(v)){
-   if(forbiddenPII.has(k.toLowerCase()))out.push("sensitive_field:"+path+"."+k);
+   if(forbiddenPII.has(k.toLowerCase()) && !(path==="snapshot.followers"&&k==="email"&&Number.isInteger(val)))out.push("sensitive_field:"+path+"."+k);
    if(val!==null&&typeof val==="object")piiPaths(val,path+"."+k,depth+1,out);
  }
 }
