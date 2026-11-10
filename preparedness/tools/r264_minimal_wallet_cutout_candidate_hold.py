@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""R264 offline review of a minimal card concept: structural evidence, NEVER privacy approval."""
+"""R264/R265 offline wallet-card face/notice custody. NEVER privacy approval."""
 from __future__ import annotations
 import hashlib
 import re
@@ -25,7 +25,7 @@ class Parser(HTMLParser):
     """Tag-and-depth structural check; no browser behavior is claimed."""
     def __init__(self):
         super().__init__(convert_charrefs=True)
-        self.stack=[];self.card=0;self.faces=[];self.notes=[];self.active_note=False
+        self.stack=[];self.card=0;self.faces=[];self.notes=[];self.note_owners=[];self.active_note=False
         self.css="";self.text=[];self.extra_notice=0
     def handle_starttag(self,tag,attrs):
         if tag not in ("section","div","p","h2","style"):raise ValueError("R264 unexpected/active tag")
@@ -37,15 +37,17 @@ class Parser(HTMLParser):
             if tag!="div" or classes!=["pa-foldcard"] or self.card:raise ValueError("R264 card structure")
             self.card=1
         if "pa-face" in classes:
-            if tag!="section" or classes!=["pa-face"] or not any("pa-foldcard" in c for _,c in self.stack):
+            if tag!="section" or classes!=["pa-face"] or not self.stack or self.stack[-1][1]!=["pa-foldcard"]:
                 raise ValueError("R264 cutout face nesting")
             self.faces.append(d.get("aria-label",""))
         if "pa-privacy" in classes:
             if tag!="p" or classes!=["pa-privacy"]:raise ValueError("R264 privacy prose structure")
-            if not any("pa-face" in c for _,c in self.stack):self.extra_notice+=1
+            owners=[e[2].get("aria-label") for e in self.stack if "pa-face" in e[1]]
+            if len(owners)!=1:self.extra_notice+=1
+            else:self.note_owners.append(owners[0])
             self.notes.append("")
             self.active_note=True
-        self.stack.append((tag,classes))
+        self.stack.append((tag,classes,d))
     def handle_endtag(self,tag):
         if not self.stack or self.stack[-1][0]!=tag:raise ValueError("R264 unbalanced tags")
         if "pa-privacy" in self.stack[-1][1]:self.active_note=False
@@ -78,7 +80,8 @@ def inspect(original:bytes,draft:bytes,witness:dict,*,expected_original_blob:str
     if any(x in s.lower() for x in ("<script","<form","{{cite:","{{link:","http:","https:","utm_")):
         raise ValueError("R264 external, commercial or source/citation scope")
     p=Parser();p.feed(s);p.close()
-    if p.stack or p.card!=1 or p.faces!=["Front","Back"] or p.notes!=list(NOTICES) or p.extra_notice:
+    if p.stack or p.card!=1 or p.faces!=["Front","Back"] or p.notes!=list(NOTICES)
+        or p.note_owners!=["Front","Back"] or p.extra_notice:
         raise ValueError("R264 on-card notices or two-face structure")
     if s.count('class="pa-privacy"')!=2 or s.count('class="pa-write"')!=len(FIELDS):
         raise ValueError("R264 unexpected privacy/field count")
