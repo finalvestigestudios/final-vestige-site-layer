@@ -124,6 +124,10 @@ R255_REVIEW_SURFACE_BLOB = '86e8b8e3cb29efbac738fd8574b487c4d633b1af'
 # in the 562 shared-source workorders, retaining source contexts and all holds.
 R257_PARTITION_PATH = 'tools/r257_complete_citation_partition_hold.py'
 R257_PARTITION_BLOB = 'df74968de5ee609fa16287a7339cd8262616603c'
+// R258 binds the complete R254/R257 original source-claim partition to a
+// deterministic, entirely escaped, no-clickable-links offline reviewer view.
+R258_COMPLETE_REVIEW_PATH = 'tools/r258_complete_offline_claim_review_hold.py'
+R258_COMPLETE_REVIEW_BLOB = '3f48d7612986626b4e0faf9dd004e322d6bc7806'
 # These are independently observed R219 integration Git blobs, not certified text.
 # Missing entries MUST match the older R200 original exactly.
 INTEGRATED_DIFFS = {
@@ -597,6 +601,34 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
                     'publication_authorized'))):
             raise ValueError('R257 full 2000-citation partition HARD HOLD drift')
         result['complete_unreviewed_citation_partition'] = partition
+        # R255's HTML only renders 562 shared + two CDC exception contexts.
+        # R258 requires ALL 2,000 original citation excerpts in ONE offline,
+        # unapproved human-readable review. Never write to CMS or emit HTML
+        # into the audit JSON (the reviewer can render from authenticated inputs).
+        r258 = load_frozen_gate(root, R258_COMPLETE_REVIEW_PATH,
+                                R258_COMPLETE_REVIEW_BLOB,
+                                'fv_preparedness_r258_full_offline_review',
+                                ('prepare', 'render_full_review'))
+        full_review = r258.render_full_review(workorders, partition)
+        if (full_review.get('schema') != r258.SCHEMA
+                or full_review.get('state') != HOLD
+                or full_review.get('article_count') != 35
+                or full_review.get('citation_occurrences') != 2000
+                or full_review.get('shared') != 562
+                or full_review.get('other') != 1438
+                or full_review.get('held_disputes') != 3
+                or full_review.get('source_groups') != 32
+                or full_review.get('shared_source_ids') != 56
+                or full_review.get('review_approval') is not False
+                or any(full_review.get(k) is not False for k in (
+                    'independent_claim_source_verified', 'independent_qd_pass',
+                    'medical_safety_verified', 'merchant_approved',
+                    'publication_authorized'))
+                or not re.fullmatch('[0-9a-f]{64}', full_review.get('offline_review_sha256', ''))
+                or full_review.get('offline_review_utf8_bytes', 0) < 150000):
+            raise ValueError('R258 2000-citation offline source-review HOLD drift')
+        full_review.pop('offline_review_html')  # audit JSON: only the checksum and counts
+        result['full_2000_citation_offline_human_review'] = full_review
         # R237's simple tag/attribute regex can mistake '>' inside a quoted
         # attribute or HTML comment for the end of markup. Verify source-level
         # visibility separately with an independently pinned quote-aware lexer.
@@ -918,6 +950,8 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
             raise ValueError('R255 offline reviewer surface guard changed during audit')
         if git_blob(safe_read(root, R257_PARTITION_PATH)) != R257_PARTITION_BLOB:
             raise ValueError('R257 complete citation partition gate changed during audit')
+        if git_blob(safe_read(root, R258_COMPLETE_REVIEW_PATH)) != R258_COMPLETE_REVIEW_BLOB:
+            raise ValueError('R258 2000-citation offline reviewer gate changed during audit')
         result['reconciliation'] = {'frozen_articles': 35,
                                     'integrated_changes_held_for_review': sum(
                                         x['changed_since_original'] for x in status),
