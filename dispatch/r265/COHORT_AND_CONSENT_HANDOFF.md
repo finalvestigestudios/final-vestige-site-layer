@@ -8,7 +8,7 @@ cohort_audit.js is a standalone, **non-sending** and privacy-minimizing cohort/s
 
 It separates an **actual acquisition cohort** (date of attributed qualified session) from the false inference that money paid in a particular week originated from visitors in that same week. Only settled transactions linked to the identical original asset+platform+campaign count. The integer-cent calculation subtracts refunds and fees. Dates are UTC; inclusive demonstration windows: 2026-11-04 through 2026-11-10 (7 days) and 2026-10-12 through 2026-11-10 (30 days). Without a vetted cohort attribution or source-complete ledger, computed business metrics remain null, **not zero**. No person-level lead-to-customer rate is inferred.
 
-**All example data in the 40-case native Node regression suite are synthetic.** The library explicitly labels a hypothetical externally supplied report as UNVERIFIED_EXTERNAL_ATTESTATION until someone verifies underlying provider and merchant evidence. It NEVER authorizes a message, subscriber contact, tracking install, purchase, affiliate link, live analytics, publication or campaign release. Source-field boolean flags alone do not constitute authenticated proof.
+**All example data in the 41-case native Node regression suite are synthetic.** The library explicitly labels a hypothetical externally supplied report as UNVERIFIED_EXTERNAL_ATTESTATION until someone verifies underlying provider and merchant evidence. It NEVER authorizes a message, subscriber contact, tracking install, purchase, affiliate link, live analytics, publication or campaign release. Source-field boolean flags alone do not constitute authenticated proof.
 
 ### Current read-only WordPress and document evidence (2026-11-10 21:41:48 UTC)
 
@@ -32,7 +32,7 @@ A single confirmed_signup must be emitted only for independently evidenced **Jet
 
 ## Validation and release status
 
-- New source-controlled JS engine and **40 native Node synthetic tests**, including payout arithmetic, 7/30-day acquisition windows, null-vs-zero behavior, false claims of permission, unknown keys/PII, merchant-list separation, duplicate settlement rejection, and lead deduplication.
+- New source-controlled JS engine and **41 native Node synthetic tests**, including payout arithmetic, 7/30-day acquisition windows, null-vs-zero behavior, false claims of permission, unknown keys/PII, merchant-list separation, duplicate settlement rejection, and lead deduplication.
 - A passing synthetic test is **code QA only**, not a verified conversion, Jetpack email, subscriber consent or revenue finding.
 - Current source snapshot records release attestations **false** and business KPIs **null**.
 - Six original issues stay HOLD_UNSENT; offers 03 and 05 remain HOLD_MERCHANT. Founder final approval was not given. No mails (including tests), live pages, posts, settings, subscribers, merchant links, analytics, social distribution, payments or spending changed.
