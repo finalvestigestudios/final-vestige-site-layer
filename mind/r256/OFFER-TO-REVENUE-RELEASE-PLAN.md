@@ -12,7 +12,9 @@ An additional commercial integrity problem is now source-documented: https://zen
 
 This is a material trust/checkout blocker. The prudent next commercial action is partner-account and **exact offer URL** authentication, *not* another vague meditation-benefits page. Vendor claimed benefits, including hour-equivalence, remain unsupported at the product level and cannot be inherited from general research.
 
-## OFFER → funnel step → blocker → change/experiment → pass/fail evidence → owner
+## Offer → funnel → blocker → change → evidence → owner
+
+This table is the **Offer → funnel → blocker → change** accountability record, not proof of any tested sales performance.
 
 | Priority & offer | Funnel step | Concrete blocker | Proposed controlled change / experiment | Evidence now / pass rule | Owner |
 |---|---|---|---|---|---|
