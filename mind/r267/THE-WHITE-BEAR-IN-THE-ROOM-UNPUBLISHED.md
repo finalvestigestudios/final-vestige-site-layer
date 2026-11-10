@@ -37,7 +37,7 @@ This is an important correction to an overly mystical reading. A thought appeari
 
 The white-bear effect is famous enough that popular summaries sometimes describe it as if every person who hears "don't think of a white bear" experiences exactly the same rebound. A useful scientific habit is to look for differences rather than erase them.
 
-In a 2009 study, Richard McNally and Joseph Ricciardi distinguished personally relevant negative thoughts from a neutral white-bear target. Participants were assigned to different thought targets and to different orders of suppression and expression. The authors reported that white-bear thoughts declined across the experiment in the neutral group, while suppression of a troubling personally relevant negative thought was followed by a marked increase when expression was permitted. [4]
+In a study published in **1996** (whose online archive displays a 2009 publication date), Richard McNally and Joseph Ricciardi distinguished personally relevant negative thoughts from a neutral white-bear target. Participants were assigned to different thought targets and to different orders of suppression and expression. The authors reported that white-bear thoughts declined across the experiment in the neutral group, while suppression of a troubling personally relevant negative thought was followed by a marked increase when expression was permitted. [4]
 
 The immediate implication is not that the 1987 findings were fake. It is that *target relevance and design conditions matter*. A neutral animal can behave differently from a personally meaningful worry. One study's exact task should not be silently promoted into a treatment claim for another population or problem.
 
@@ -102,7 +102,7 @@ Final Vestige is interested in precisely that gap: **what the record shows, what
 
 [3] Wegner DM, Erber R, Zanakos S. *Ironic processes in the mental control of mood and mood-related thought*. J Pers Soc Psychol. 1993;65(6):1093–1104. Cognitive-load experiments, not an individual diagnostic test. https://pubmed.ncbi.nlm.nih.gov/8295117/
 
-[4] McNally RJ, Ricciardi JN. *Suppression of Negative and Neutral Thoughts*. Behav Cogn Psychother. 2009. Study of target relevance and order; abstract inspected, no unreviewed numerical participant-level generalizations. https://www.cambridge.org/core/journals/behavioural-and-cognitive-psychotherapy/article/abs/suppression-of-negative-and-neutral-thoughts/CD650E7ED544A0CB60029D50EF33BC49
+[4] McNally RJ, Ricciardi JN. *Suppression of Negative and Neutral Thoughts*. *Behavioural and Cognitive Psychotherapy*. **1996;24(1):17–25** (Cambridge page published online 16 June 2009). DOI: 10.1017/S1352465800016805. Study of target relevance and order; abstract inspected, no unreviewed numerical participant-level generalizations. https://www.cambridge.org/core/journals/behavioural-and-cognitive-psychotherapy/article/abs/suppression-of-negative-and-neutral-thoughts/CD650E7ED544A0CB60029D50EF33BC49
 
 [5] FTC, *Health Products Compliance Guidance*. Requirements for adequately substantiating health-related efficacy claims. https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance
 
