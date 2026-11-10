@@ -27,4 +27,4 @@ test("HTML no remote images",()=>assert(!/<img/i.test(html)));
 test("no active merchant links",()=>assert(!/href=["']https?:\/\/(zen12|hypnosislive|inspire3)/i.test(html)));
 test("one principal CTA",()=>assert((html.match(/Read the archival case file/g)||[]).length===1));
 test("marketing timing not invented",()=>assert(!/buy now|limited offer|guaranteed results/i.test(md+" "+txt)));
-console.log("R267 exact-source native JS QA: "+a.length+" checks passed; release remains UNSENT / NOT ADOPTED.");
+console.log("R267 source-level JS QA: "+a.length+" checks passed; release remains UNSENT / NOT ADOPTED.");
