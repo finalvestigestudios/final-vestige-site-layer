@@ -80,7 +80,7 @@ function validate(v){
 }
 function mutants(b){
  const all=[]; const mutateText=(name,k,from,to)=>{
- const n={...b,[k]:b[k].replace(from,to)};if(n[k]===b[k])throw Error("ineffective mutation "+name);all.push([name,n])};
+ const n={...b,[k]:b[k].split(from).join(to)};if(n[k]===b[k])throw Error("ineffective mutation "+name);all.push([name,n])};
  const mutateJSON=(name,fn)=>{const n={...b},m=JSON.parse(n.matrix);fn(m);n.matrix=JSON.stringify(m);all.push([name,n])};
  mutateText("remove primary paper","article","https://pubmed.ncbi.nlm.nih.gov/1500880/","BROKEN");
  mutateText("remove review","article","https://pmc.ncbi.nlm.nih.gov/articles/PMC2848898/","BROKEN");
