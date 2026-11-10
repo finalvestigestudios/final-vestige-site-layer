@@ -15,6 +15,7 @@ from typing import Callable
 
 from .csv_snapshot import _same_path_descriptor_signature
 from .journal_write_receipt import require_exact_append_readback, digest_pinned_prefix
+from .journal_fd_read import read_bounded_duplicate
 
 
 def _redact_os_errors(message: str):
@@ -102,8 +103,7 @@ def read_regular_bytes(path: str | Path, limit: int, kind: str) -> bytes:
             raise ValueError(f"{kind} changed before read")
         if not _unchanged(initial, _same_path(source, before, kind)):
             raise ValueError(f"{kind} path changed during access")
-        with os.fdopen(os.dup(descriptor), "rb") as stream:
-            data = stream.read(limit + 1)
+        data = read_bounded_duplicate(descriptor, limit)
         after = os.fstat(descriptor)
         _regular(after, limit, kind)
         # An unchanged stat snapshot is insufficient if read() returned a
