@@ -51,7 +51,9 @@ const mutations=[
  ["unauthenticated proof ID",s=>s.evidence.public_http={status:"VERIFIED",proof_id:"fake"}],
  ["unexpected proof field",s=>s.evidence.public_http.email="secret"],
  ["missing founder gate",s=>delete s.evidence.founder_final_send_approval],
- ["missing address gate",s=>delete s.evidence.postal_address_render]
+ ["missing address gate",s=>delete s.evidence.postal_address_render],
+ ["non-PDF welcome",s=>s.newsletter.welcome_pdf_url="https://finalvestige.com/wp-content/uploads/a.png"],
+ ["incomplete positive proof",s=>s.evidence.received_welcome={proof_id:"fvproof-confirm-00001234"}]
 ];
 for(const [name,fn] of mutations)check("fail closed: "+name,()=>{
   const s=clone();fn(s);const result=audit(s);
