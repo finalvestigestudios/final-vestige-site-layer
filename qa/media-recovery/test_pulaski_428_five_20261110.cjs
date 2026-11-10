@@ -44,7 +44,7 @@ if(require.main===module){
  const read=n=>JSON.parse(fs.readFileSync(path.join(dir,n),"utf8"));
  const p=read("coverage_269_exact_pr1703_20261110.json"),a=read("pulaski_428_five_ui_loc_rights_live_20261110.json"),c=read("coverage_274_exact_pr1703_20261110.json");
  const bytes=fs.readFileSync(path.join(dir,"pulaski_428_five_ui_loc_rights_live_20261110.json"));
- const sha=crypto.createHash("sha1").update(Buffer.concat([Buffer.from("blob "+bytes.length+"\\0"),bytes])).digest("hex");
+ const sha=crypto.createHash("sha1").update(Buffer.concat([Buffer.from("blob "+bytes.length+String.fromCharCode(0)),bytes])).digest("hex");
  const out=runTests(p,a,c,sha,require("./validate_pulaski_428_five_20261110.cjs").validate);
  console.log(JSON.stringify(out));if(out.failures.length)process.exitCode=1;
 }
