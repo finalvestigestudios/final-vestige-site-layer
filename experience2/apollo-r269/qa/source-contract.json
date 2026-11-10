@@ -1,0 +1,45 @@
+{
+  "approval_state": "HARD_HOLD_NOT_LIVE",
+  "baseline_distinct_nasa_urls": 10,
+  "baseline_nasa_count": 55,
+  "chronology": [
+    [
+      "1967-01-03",
+      "3 January 1967"
+    ],
+    [
+      "1966-10-18",
+      "18 Oct 1966"
+    ],
+    [
+      "1967-01-03",
+      "3 Jan 1967"
+    ],
+    [
+      "1967-01-27",
+      "27 Jan 1967"
+    ],
+    [
+      "1967-01-28",
+      "28 Jan 1967"
+    ],
+    [
+      "1967-04",
+      "April 1967"
+    ]
+  ],
+  "nasa_distinct_urls": [
+    "https://www.nasa.gov/apollo-1-resources/",
+    "https://www.nasa.gov/gallery/apollo-1/",
+    "https://www.nasa.gov/humans-in-space/55-years-ago-final-preparations-for-the-planned-launch-of-apollo-1/",
+    "https://www.nasa.gov/image-detail/amf-ksc-20170124-ph_kls01_0164/",
+    "https://www.nasa.gov/image-detail/amf-s66-58038/",
+    "https://www.nasa.gov/image-detail/amf-s67-15717/",
+    "https://www.nasa.gov/image-detail/amf-s67-21294/",
+    "https://www.nasa.gov/mission/apollo-1/",
+    "https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/",
+    "https://www.nasa.gov/nasa-brand-center/advertising-guidelines/"
+  ],
+  "snapshot_sha256": "96bf09ce7e543e32744eacb14e7cd340043eb398c71690a140ddc234c21c3dd8",
+  "source_manifest_sha256": "f5d1cf4e4e1be9b397563a6d9b25145f3b22d6dc5737774c1d27362869e3ed68"
+}
