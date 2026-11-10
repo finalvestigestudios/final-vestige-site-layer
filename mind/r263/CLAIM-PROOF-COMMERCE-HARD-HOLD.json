@@ -1,0 +1,521 @@
+{
+  "version": "r263-2026-11-10",
+  "workspace": "mind/r263",
+  "status": "UNPUBLISHED_DRAFT_HARD_HOLD",
+  "source_inventory": [
+    {
+      "id": "S01",
+      "classification": "primary-study",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/1500880/",
+      "scope": "Raymond, Shapiro & Arnell 1992 RSVP and report window",
+      "checked_on": "2026-11-10",
+      "verification": "SOURCE_PAGE_OBSERVED_OR_BIBLIOGRAPHY_VERIFIED"
+    },
+    {
+      "id": "S02",
+      "classification": "independent-review",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2848898/",
+      "scope": "Martens & Wyble 2010 attentional blink interpretations",
+      "checked_on": "2026-11-10",
+      "verification": "SOURCE_PAGE_OBSERVED_OR_BIBLIOGRAPHY_VERIFIED"
+    },
+    {
+      "id": "S03",
+      "classification": "primary-study",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/16341546/",
+      "scope": "Olivers et al. 2007 spreading sparing",
+      "checked_on": "2026-11-10",
+      "verification": "SOURCE_PAGE_OBSERVED_OR_BIBLIOGRAPHY_VERIFIED"
+    },
+    {
+      "id": "S04",
+      "classification": "primary-study",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17488185/",
+      "scope": "Slagter et al. 2007 3-month meditation study",
+      "checked_on": "2026-11-10",
+      "verification": "SOURCE_PAGE_OBSERVED_OR_BIBLIOGRAPHY_VERIFIED"
+    },
+    {
+      "id": "S05",
+      "classification": "independent-review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+      "scope": "2023 binaural beat EEG systematic review",
+      "checked_on": "2026-11-10",
+      "verification": "SOURCE_PAGE_OBSERVED_OR_BIBLIOGRAPHY_VERIFIED"
+    },
+    {
+      "id": "S06",
+      "classification": "merchant-home",
+      "url": "https://inspire3.com/",
+      "scope": "Official catalog, seller descriptions only",
+      "checked_on": "2026-11-10",
+      "verification": "SOURCE_PAGE_OBSERVED_OR_BIBLIOGRAPHY_VERIFIED"
+    },
+    {
+      "id": "S07",
+      "classification": "merchant-standard",
+      "url": "https://zen12.com/hnp",
+      "scope": "Official standard Zen12 Premium; display inspected 2026-11-10",
+      "checked_on": "2026-11-10",
+      "verification": "SOURCE_PAGE_OBSERVED_OR_BIBLIOGRAPHY_VERIFIED"
+    },
+    {
+      "id": "S08",
+      "classification": "merchant-promo",
+      "url": "https://zen12.com/secret/",
+      "scope": "Distinct promotional offer and urgency; not endorsed or validated",
+      "checked_on": "2026-11-10",
+      "verification": "SOURCE_PAGE_OBSERVED_OR_BIBLIOGRAPHY_VERIFIED"
+    },
+    {
+      "id": "S09",
+      "classification": "affiliate-program-public",
+      "url": "https://affiliates.inspire3.com/",
+      "scope": "Public program is not named publisher acceptance",
+      "checked_on": "2026-11-10",
+      "verification": "SOURCE_PAGE_OBSERVED_OR_BIBLIOGRAPHY_VERIFIED"
+    },
+    {
+      "id": "S10",
+      "classification": "FTC-endorsements",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "scope": "Clear conspicuous disclosures",
+      "checked_on": "2026-11-10",
+      "verification": "SOURCE_PAGE_OBSERVED_OR_BIBLIOGRAPHY_VERIFIED"
+    },
+    {
+      "id": "S11",
+      "classification": "FTC-health",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "scope": "Product-specific claims require substantiation",
+      "checked_on": "2026-11-10",
+      "verification": "SOURCE_PAGE_OBSERVED_OR_BIBLIOGRAPHY_VERIFIED"
+    },
+    {
+      "id": "S12",
+      "classification": "published-bridge",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "scope": "Existing published Mind/Perception path",
+      "checked_on": "2026-11-10",
+      "verification": "SOURCE_PAGE_OBSERVED_OR_BIBLIOGRAPHY_VERIFIED"
+    },
+    {
+      "id": "S13",
+      "classification": "published-bridge",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "scope": "Historical commission bridge",
+      "checked_on": "2026-11-10",
+      "verification": "SOURCE_PAGE_OBSERVED_OR_BIBLIOGRAPHY_VERIFIED"
+    },
+    {
+      "id": "S14",
+      "classification": "published-archive",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "scope": "Source-led Puységur Files",
+      "checked_on": "2026-11-10",
+      "verification": "SOURCE_PAGE_OBSERVED_OR_BIBLIOGRAPHY_VERIFIED"
+    },
+    {
+      "id": "S15",
+      "classification": "single-focus-funnel",
+      "url": "https://finalvestige.com/focus/",
+      "scope": "Existing 52-page Focus Fieldbook with current Jetpack pathway",
+      "checked_on": "2026-11-10",
+      "verification": "SOURCE_PAGE_OBSERVED_OR_BIBLIOGRAPHY_VERIFIED"
+    },
+    {
+      "id": "S16",
+      "classification": "editorial",
+      "url": "https://finalvestige.com/editorial-standards/",
+      "scope": "Published editorial policy",
+      "checked_on": "2026-11-10",
+      "verification": "SOURCE_PAGE_OBSERVED_OR_BIBLIOGRAPHY_VERIFIED"
+    },
+    {
+      "id": "S17",
+      "classification": "disclosure",
+      "url": "https://finalvestige.com/affiliate-disclosure/",
+      "scope": "Site disclosure supplemental, not substitute for near-link text",
+      "checked_on": "2026-11-10",
+      "verification": "SOURCE_PAGE_OBSERVED_OR_BIBLIOGRAPHY_VERIFIED"
+    },
+    {
+      "id": "S18",
+      "classification": "primary-study",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/10694957/",
+      "scope": "Simons & Chabris 1999 attention social subject reference",
+      "checked_on": "2026-11-10",
+      "verification": "SOURCE_PAGE_OBSERVED_OR_BIBLIOGRAPHY_VERIFIED"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "RSVP can impair reporting T2 at specific lags under task conditions",
+      "classification": "INDEPENDENT_EXPERIMENT",
+      "source_ids": [
+        "S01",
+        "S02"
+      ],
+      "decision": "ALLOW qualified study-specific statement"
+    },
+    {
+      "id": "C02",
+      "claim": "The 1992 specific window begins ~180ms and lasts 270ms",
+      "classification": "INDEPENDENT_EXPERIMENT",
+      "source_ids": [
+        "S01"
+      ],
+      "decision": "ALLOW exact design not universal duration"
+    },
+    {
+      "id": "C03",
+      "claim": "Lag-one sparing and uninterrupted target runs challenge simple refractory accounts",
+      "classification": "INDEPENDENT_EXPERIMENT",
+      "source_ids": [
+        "S03"
+      ],
+      "decision": "ALLOW qualified"
+    },
+    {
+      "id": "C04",
+      "claim": "Three months of intensive meditation training was associated with lower blink in a study",
+      "classification": "CONDITION_SPECIFIC_STUDY",
+      "source_ids": [
+        "S04"
+      ],
+      "decision": "ALLOW; no product extrapolation"
+    },
+    {
+      "id": "C05",
+      "claim": "Zen12 short listening reproduces intensive three-month intervention",
+      "classification": "UNSUPPORTED_TRANSFER",
+      "source_ids": [],
+      "decision": "PROHIBITED"
+    },
+    {
+      "id": "C06",
+      "claim": "Attentional blink establishes a disease, IQ, ADHD diagnosis or impairment",
+      "classification": "UNSUPPORTED_HEALTH",
+      "source_ids": [],
+      "decision": "PROHIBITED"
+    },
+    {
+      "id": "C07",
+      "claim": "Zen12 Premium seller describes twelve levels and 48 MP3 recordings",
+      "classification": "SELLER_DESCRIPTION",
+      "source_ids": [
+        "S07"
+      ],
+      "decision": "ALLOW with explicit attribution"
+    },
+    {
+      "id": "C08",
+      "claim": "Seller standard Premium page displays 87.99 USD",
+      "classification": "SELLER_DISPLAY_NOT_CHECKOUT",
+      "source_ids": [
+        "S07"
+      ],
+      "decision": "ALLOW archival note only, do not assert payable price"
+    },
+    {
+      "id": "C09",
+      "claim": "Seller separate promo page displays 37 USD coupon-framed offer",
+      "classification": "SELLER_PROMOTION_NOT_AUTHORIZED",
+      "source_ids": [
+        "S08"
+      ],
+      "decision": "ALLOW editorial difference notice, do not repeat coupon or urgency"
+    },
+    {
+      "id": "C10",
+      "claim": "Both offers have equal eligibility, contents or checkout cost",
+      "classification": "UNVERIFIED_EQUIVALENCE",
+      "source_ids": [],
+      "decision": "PROHIBITED"
+    },
+    {
+      "id": "C11",
+      "claim": "Merchant advertises one-year refund guarantee",
+      "classification": "SELLER_PROMISE",
+      "source_ids": [
+        "S07"
+      ],
+      "decision": "ALLOW as claimed, not proof of refund handling"
+    },
+    {
+      "id": "C12",
+      "claim": "Refund is processed as advertised",
+      "classification": "UNVERIFIED_FULFILLMENT",
+      "source_ids": [],
+      "decision": "PROHIBITED"
+    },
+    {
+      "id": "C13",
+      "claim": "12 minutes of Zen12 equals one hour of meditation results",
+      "classification": "PRODUCT_EFFICACY_UNSUBSTANTIATED",
+      "source_ids": [
+        "S07"
+      ],
+      "decision": "PROHIBITED as independent fact"
+    },
+    {
+      "id": "C14",
+      "claim": "2023 EEG review found 5 consistent, 8 contradictory, 1 mixed across 14 studies",
+      "classification": "SYSTEMATIC_REVIEW",
+      "source_ids": [
+        "S05"
+      ],
+      "decision": "ALLOW with heterogeneity caveat"
+    },
+    {
+      "id": "C15",
+      "claim": "Generic binaural EEG findings demonstrate health gains from Zen12",
+      "classification": "UNSUPPORTED_TRANSFER",
+      "source_ids": [],
+      "decision": "PROHIBITED"
+    },
+    {
+      "id": "C16",
+      "claim": "Public Inspire3 affiliate program exists",
+      "classification": "PUBLIC_PROGRAM",
+      "source_ids": [
+        "S09"
+      ],
+      "decision": "ALLOW, not evidence of approval"
+    },
+    {
+      "id": "C17",
+      "claim": "Final Vestige is approved as a publisher or has an issued authorized affiliate URL",
+      "classification": "ACCOUNT_STATUS_NOT_VERIFIED",
+      "source_ids": [],
+      "decision": "PROHIBITED"
+    },
+    {
+      "id": "C18",
+      "claim": "Specific promotional creatives/swipe are authorized for FV reuse",
+      "classification": "PERMISSION_NOT_VERIFIED",
+      "source_ids": [],
+      "decision": "PROHIBITED"
+    },
+    {
+      "id": "C19",
+      "claim": "FTC requires disclosing material earning relationships clearly and conspicuously",
+      "classification": "GOVERNMENT_GUIDANCE",
+      "source_ids": [
+        "S10"
+      ],
+      "decision": "ALLOW"
+    },
+    {
+      "id": "C20",
+      "claim": "Health-related claims require scientific support appropriate to the claim",
+      "classification": "GOVERNMENT_GUIDANCE",
+      "source_ids": [
+        "S11"
+      ],
+      "decision": "ALLOW"
+    },
+    {
+      "id": "C21",
+      "claim": "FV Focus Fieldbook currently published at /focus/",
+      "classification": "PUBLIC_SITE_VERIFIED",
+      "source_ids": [
+        "S15"
+      ],
+      "decision": "ALLOW existing link"
+    },
+    {
+      "id": "C22",
+      "claim": "Affiliate outbound click equals a paid purchase or confirmed commission",
+      "classification": "ATTRIBUTION_CATEGORY_ERROR",
+      "source_ids": [],
+      "decision": "PROHIBITED"
+    },
+    {
+      "id": "C23",
+      "claim": "One paid FV Mind SKU with rights, checkout/refund/fulfillment has been verified",
+      "classification": "OWNED_SKU_UNAUTHENTICATED",
+      "source_ids": [],
+      "decision": "PROHIBITED"
+    },
+    {
+      "id": "C24",
+      "claim": "Social posts have verified Grok asset IDs suitable for stitching to confirmed conversions",
+      "classification": "CREATOR_PROVENANCE_UNVERIFIED",
+      "source_ids": [],
+      "decision": "PROHIBITED"
+    },
+    {
+      "id": "C25",
+      "claim": "Optional film beats text-only guide on paid conversion",
+      "classification": "EXPERIMENT_NOT_RUN",
+      "source_ids": [],
+      "decision": "PROHIBITED"
+    },
+    {
+      "id": "C26",
+      "claim": "Focus subscribers confirm a purchase",
+      "classification": "ATTRIBUTION_CATEGORY_ERROR",
+      "source_ids": [],
+      "decision": "PROHIBITED"
+    }
+  ],
+  "commercial_gates": [
+    {
+      "id": "publisher_named_acceptance",
+      "status": "HARD_HOLD",
+      "evidence": null,
+      "decision": "NO_ACTIVATION"
+    },
+    {
+      "id": "issued_affiliate_url",
+      "status": "HARD_HOLD",
+      "evidence": null,
+      "decision": "NO_ACTIVATION"
+    },
+    {
+      "id": "specific_zen12_product_and_destination",
+      "status": "HARD_HOLD",
+      "evidence": null,
+      "decision": "NO_ACTIVATION"
+    },
+    {
+      "id": "website_channel_permission",
+      "status": "HARD_HOLD",
+      "evidence": null,
+      "decision": "NO_ACTIVATION"
+    },
+    {
+      "id": "social_channel_permission",
+      "status": "HARD_HOLD",
+      "evidence": null,
+      "decision": "NO_ACTIVATION"
+    },
+    {
+      "id": "email_channel_permission",
+      "status": "HARD_HOLD",
+      "evidence": null,
+      "decision": "NO_ACTIVATION"
+    },
+    {
+      "id": "approved_creative_usage_rights",
+      "status": "HARD_HOLD",
+      "evidence": null,
+      "decision": "NO_ACTIVATION"
+    },
+    {
+      "id": "exact_checkout_price_and_currency",
+      "status": "HARD_HOLD",
+      "evidence": null,
+      "decision": "NO_ACTIVATION"
+    },
+    {
+      "id": "merchant_tax_shipping_or_extra_charges",
+      "status": "HARD_HOLD",
+      "evidence": null,
+      "decision": "NO_ACTIVATION"
+    },
+    {
+      "id": "product_inclusion_equivalence_promo_vs_standard",
+      "status": "HARD_HOLD",
+      "evidence": null,
+      "decision": "NO_ACTIVATION"
+    },
+    {
+      "id": "refund_terms_specific_offer",
+      "status": "HARD_HOLD",
+      "evidence": null,
+      "decision": "NO_ACTIVATION"
+    },
+    {
+      "id": "merchant_refund_actual_process",
+      "status": "HARD_HOLD",
+      "evidence": null,
+      "decision": "NO_ACTIVATION"
+    },
+    {
+      "id": "buyer_facing_compliant_disclosure",
+      "status": "HARD_HOLD",
+      "evidence": null,
+      "decision": "NO_ACTIVATION"
+    },
+    {
+      "id": "first_party_event_definition_owner_signoff",
+      "status": "HARD_HOLD",
+      "evidence": null,
+      "decision": "NO_ACTIVATION"
+    },
+    {
+      "id": "merchant_confirmed_paid_commission_feed",
+      "status": "HARD_HOLD",
+      "evidence": null,
+      "decision": "NO_ACTIVATION"
+    },
+    {
+      "id": "founder_editorial_QA_release_approval",
+      "status": "HARD_HOLD",
+      "evidence": null,
+      "decision": "NO_ACTIVATION"
+    }
+  ],
+  "commercial_status": {
+    "named_inspire3_acceptance": "NOT_VERIFIED",
+    "authorized_affiliate_url": null,
+    "merchant_verified_checkout": null,
+    "approved_creatives": "NOT_VERIFIED",
+    "fv_owned_mind_product": "NOT_AUTHENTICATED",
+    "referral_compensation": "NOT_VERIFIED"
+  },
+  "release_bounds": {
+    "wordpress_write": false,
+    "menu_write": false,
+    "affiliate_activation": false,
+    "subscriber_list_change": false,
+    "social_post": false,
+    "merge": false,
+    "deploy": false,
+    "paid_service": false
+  },
+  "single_focus_funnel": {
+    "url": "https://finalvestige.com/focus/",
+    "new_form": false,
+    "existing_jetpack_unchanged": true
+  },
+  "social_join": [
+    {
+      "topic": "attentional-blink",
+      "asset_id": null,
+      "utm_campaign": null,
+      "published_url": null
+    },
+    {
+      "topic": "change-blindness",
+      "asset_id": null,
+      "utm_campaign": null,
+      "published_url": null
+    },
+    {
+      "topic": "invisible-gorilla",
+      "asset_id": null,
+      "utm_campaign": null,
+      "published_url": null
+    }
+  ],
+  "measurement": {
+    "plan_only": true,
+    "paid_orders": "NOT_VERIFIED",
+    "settled_affiliate_commissions": "NOT_VERIFIED",
+    "qualified_human_sessions": "NOT_VERIFIED",
+    "refunds_fees": "NOT_VERIFIED",
+    "realized_net_revenue_per_1000_qualified_humans": "NOT_COMPUTABLE",
+    "source": "event_id only after consent/authorization; no PII"
+  },
+  "design": {
+    "a": "R257 text-only guide unchanged",
+    "b": "R257 identical purchasing guide + optional original 42s film",
+    "outcome": "merchant-confirmed net revenue per 1000 qualified-human sessions",
+    "film_asset": "LOCAL_REVIEW_ONLY_NOT_HOSTED",
+    "not_live": true
+  }
+}
