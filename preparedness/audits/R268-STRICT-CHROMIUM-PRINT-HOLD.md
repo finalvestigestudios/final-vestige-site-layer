@@ -12,7 +12,7 @@ The script verifies the gate's Git blob before invoking it. R220 independently p
 
 **R268 matching committed Git blob identities:**
 - New acceptance gate: `5207b20954c1b6d93b88f430843d4bafb2e8df88`.
-- New 79-case regression suite: `67fec360ae113a6f756450c604c1b0693d93fd19`.
+- New 79-case regression suite: `cc3d88dcf62605ec3ae19c5db44299652e7ec2ff`.
 - Revised manual reproduction: `6ed7552d9b9c210e7fd4b7d67771a154c3b7a590`.
 - R220 custody: `b34ffd2d060eb8df276cdff3849009d782366ad6`.
 - Original R264 HTML **unchanged**: `40782ef142edfd348fec53eb6d8a0dc673244dea`.
@@ -21,7 +21,7 @@ The script verifies the gate's Git blob before invoking it. R220 independently p
 
 ## Tests actually executed vs not executed
 
-- **79/79 PASS** local Python unittests of the new R268 gate and test module, compiled successfully, including 77 independent negative mutations. Both local modules were byte-identical to GitHub blob IDs listed above.
+- **79/79 PASS** local Python `-I -m unittest discover -s preparedness/tests` equivalent using the exact repository `tests/` and `tools/` layout; of the new R268 gate and test module, compiled successfully, including 77 independent negative mutations. Both local modules were byte-identical to GitHub blob IDs listed above.
 - **Actual independent browser rerun** in local Chromium 144.0.7559.96/Playwright with network requests aborted, JS ON/OFF print, original/preview source bytes authenticated to the two unchanged Git blob IDs above. Original widths [680,680,680,768,1440] → preview [320,360,390,768,1440], with exact configured CSS viewports [320,360,390,768,1440]. The strict gate returned `DRAFT_HARD_HOLD` with both warnings and five labels in one-page, 672×206 CSS px PDF captures, 335px halves and 10.6667px (8pt) caution. Four PDFs/ten screenshots, and machine observation file were generated locally for audit. **This was an independent local verification invoking the committed gate's matching bytes, NOT execution of the revised committed R267 reproduction script.**
 - Python syntax compilation of the revised R267 script and complete original-data `validate.py`, `build.py`, inherited 36+ tests, original 41 WordPress draft exports: **NOT EXECUTED** due to full repository checkout DNS failure in local runtime.
 - Browser zoom, keyboard, assistive technology, physical printing/cutting, readable detached card and child-privacy review: **NOT APPROVED**.
