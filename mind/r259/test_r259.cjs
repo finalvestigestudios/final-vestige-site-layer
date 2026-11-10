@@ -22,7 +22,14 @@ function validate(files){
  if(/we (personally |independently )?(purchased|used|tried|tested) Zen12/i.test(article)||/our customers (earned|benefited|improved)/i.test(article))errs.push('fabricated lived efficacy');
  if(!Array.isArray(m.sources)||m.sources.length<15||!Array.isArray(m.claims)||m.claims.length<18||!Array.isArray(m.commercial_gates)||m.commercial_gates.length!==16)errs.push('matrix completeness');
  if(m.partner_verified!==false||m.affiliate_link_authorized!==false||m.live_experiment!==false||m.commercial_gates.some(g=>g.status!=='HARD_HOLD'||g.verified_at!==null))errs.push('unauthorized partner/live gate');
- if(m.claims.find(c=>c.id==='C09')?.eligible_for_copy!==false||m.claims.find(c=>c.id==='C13')?.eligible_for_copy!==false)errs.push('unsupported benefit or revenue');
+ const heldClaimIds=['C04','C05','C07','C08','C09','C10','C12','C13','C15','C18'];
+ for(const id of heldClaimIds)if(m.claims.find(c=>c.id===id)?.eligible_for_copy!==false)errs.push('ineligible-claim:'+id);
+ if(m.claims.find(c=>c.id==='C01')?.text!=='Participants detected some choice-outcome swaps in a 2005 attractiveness choice task while others passed unnoticed')errs.push('choice-blindness actor swapped');
+ const expectedGates=['publisher_named_acceptance','issued_affiliate_url','specific_zen12_product_and_destination','website_channel_permission','social_channel_permission','email_channel_permission','approved_creative_usage_rights','exact_checkout_price_and_currency','merchant_tax_shipping_or_extra_charges','product_inclusion_equivalence_promo_vs_standard','refund_terms_specific_offer','merchant_refund_actual_process','buyer_facing_compliant_disclosure','first_party_event_definition_owner_signoff','merchant_confirmed_paid_commission_feed','founder_editorial_QA_release_approval'];
+ const actualGates=m.commercial_gates.map(g=>g.id);
+ if(actualGates.length!==expectedGates.length||new Set(actualGates).size!==expectedGates.length||expectedGates.some(id=>!actualGates.includes(id)))errs.push('missing or substituted commercial gate');
+ const boundaries=['wordpress_published','newsletter_sent','merchant_link_enabled','analytics_script_added','merge_or_deploy','paid_service'];
+ if(!m.release_boundary||boundaries.some(id=>m.release_boundary[id]!==false)||Object.keys(m.release_boundary).length!==boundaries.length)errs.push('commercial release boundary not held');
  if(m.owned_product_fallback?.status!=='UNKNOWN_NOT_AUTHENTICATED'||m.attribution_contract?.zero_denominator!=='NOT_COMPUTABLE')errs.push('fabricated fallback/metric');
  if(!m.attribution_contract?.events?.includes('merchant_confirmed_paid_commission')||!m.attribution_contract?.events?.includes('affiliate_outbound_click'))errs.push('outbound conflated with sale');
  if(!/noindex,nofollow/.test(html)||!/lang="en"/.test(html)||!/viewport/.test(html)||!/@media\(max-width:670px\)/.test(html))errs.push('responsive/noindex baseline');
@@ -68,6 +75,11 @@ function mutators(){
    ['fake experiment live',M,s=>s.replace('"live_experiment": false','"live_experiment": true')],
    ['gate bypass',M,s=>s.replace('"status": "HARD_HOLD"','"status": "PASS"')],
    ['false earnings',M,s=>{const m=JSON.parse(s);m.claims.find(x=>x.id==='C13').eligible_for_copy=true;return JSON.stringify(m);}],
+   ...['C04','C05','C07','C08','C09','C10','C12','C15','C18'].map(id=>['forbidden claim '+id,M,s=>{const m=JSON.parse(s);m.claims.find(x=>x.id===id).eligible_for_copy=true;return JSON.stringify(m);}]),
+   ...['wordpress_published','newsletter_sent','merchant_link_enabled','analytics_script_added','merge_or_deploy','paid_service'].map(id=>['release boundary '+id,M,s=>{const m=JSON.parse(s);m.release_boundary[id]=true;return JSON.stringify(m);}]),
+   ['gate identity substituted',M,s=>{const m=JSON.parse(s);m.commercial_gates[4].id='fake_approval';return JSON.stringify(m);}],
+   ['duplicate gate identity',M,s=>{const m=JSON.parse(s);m.commercial_gates[3].id=m.commercial_gates[2].id;return JSON.stringify(m);}],
+   ['research actor confused',M,s=>{const m=JSON.parse(s);m.claims.find(x=>x.id==='C01').text='Researchers detected some choice-outcome swaps in a 2005 attractiveness choice task while others passed unnoticed';return JSON.stringify(m);} ],
    ['wrong zero denominator',M,s=>s.replace('"zero_denominator": "NOT_COMPUTABLE"','"zero_denominator": "0"')],
    ['fake fallback SKU',M,s=>s.replace('UNKNOWN_NOT_AUTHENTICATED','READY_FOR_SALE')],
    ['missing gate',M,s=>s.replace(/\{\s*"id": "publisher_named_acceptance"[\s\S]*?\},\s*/, '')],
@@ -75,15 +87,15 @@ function mutators(){
    ['R257 omitted',P,s=>s.replaceAll('R257','R200')],
    ['A forced media',VA,s=>s+'<video autoplay></video>'],
    ['B forced media',VB,s=>s+'<video autoplay></video>'],
-   ['both forced media A',VA,s=>s+'<video autoplay></video>'],
-   ['both forced media B',VB,s=>s+'<video autoplay></video>'],
+   ['both forced media simultaneously',[VA,VB],s=>s+'<video autoplay></video>'],
   ];
 }
 function test(files){
  const baseline=validate(files); if(baseline.length)throw new Error('baseline failed: '+baseline.join(' | '));
  let rejected=0;const results=[];
  for(const [name,path,mutate] of mutators()){
-  const sample={...files,[path]:mutate(files[path])};
+  const sample={...files};
+  for(const p of Array.isArray(path)?path:[path])sample[p]=mutate(files[p]);
   const errors=validate(sample);results.push({name,errors});
   if(!errors.length)throw new Error('failed to reject mutation: '+name);
   rejected++;
