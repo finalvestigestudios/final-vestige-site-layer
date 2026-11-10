@@ -35,7 +35,7 @@
     {
       "id": "P04",
       "url": "https://www.cambridge.org/core/journals/behavioural-and-cognitive-psychotherapy/article/abs/suppression-of-negative-and-neutral-thoughts/CD650E7ED544A0CB60029D50EF33BC49",
-      "scope": "2009 relevant negative thought versus neutral white bear, abstract level",
+      "scope": "1996 original publication (Cambridge archive put online 16 June 2009), personally relevant negative thought versus neutral white bear",
       "type": "study abstract"
     },
     {
@@ -167,7 +167,7 @@
     },
     {
       "id": "C05",
-      "text": "Neutral white bear and personally relevant negative thoughts may show different patterns",
+      "text": "McNally/Ricciardi 1996 (online archive date 2009) compared neutral white-bear with personally relevant negative thought under different task orders; individual differences and stimulus relevance matter",
       "source_ids": [
         "P04"
       ],
