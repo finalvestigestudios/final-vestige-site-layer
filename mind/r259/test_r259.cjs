@@ -50,9 +50,9 @@ function mutators(){
   const A=REQUIRED[0], H=REQUIRED[1], M=REQUIRED[2], P=REQUIRED[3], VA=REQUIRED[4], VB=REQUIRED[5];
   return [
    ['paper erased',A,s=>s.replace("The Choice You Didn't Make","The Hidden Choice")],
-   ['missing 2005 DOI',A,s=>s.replace('10.1126/science.1111709','missing-primary')],
-   ['missing 2010 DOI',A,s=>s.replace('10.1016/j.cognition.2010.06.010','missing')],
-   ['missing 2012 DOI',A,s=>s.replace('10.1371/journal.pone.0045457','missing')],
+   ['missing 2005 DOI',A,s=>s.replaceAll('10.1126/science.1111709','missing-primary')],
+   ['missing 2010 DOI',A,s=>s.replaceAll('10.1016/j.cognition.2010.06.010','missing')],
+   ['missing 2012 DOI',A,s=>s.replaceAll('10.1371/journal.pone.0045457','missing')],
    ['fabricated test use',A,s=>s+"\nWe independently tested Zen12 and found it works."],
    ['enabled button',H,s=>s.replace('button type="button" disabled aria-disabled="true"','button type="button"')],
    ['missing commission',H,s=>s.replace('Final Vestige may earn a commission','Final Vestige is uncompensated')],
@@ -67,7 +67,7 @@ function mutators(){
    ['affiliate activated',M,s=>s.replace('"affiliate_link_authorized": false','"affiliate_link_authorized": true')],
    ['fake experiment live',M,s=>s.replace('"live_experiment": false','"live_experiment": true')],
    ['gate bypass',M,s=>s.replace('"status": "HARD_HOLD"','"status": "PASS"')],
-   ['false earnings',M,s=>s.replace('"id": "C13",','"id": "C13", "eligible_for_copy": true,')],
+   ['false earnings',M,s=>{const m=JSON.parse(s);m.claims.find(x=>x.id==='C13').eligible_for_copy=true;return JSON.stringify(m);}],
    ['wrong zero denominator',M,s=>s.replace('"zero_denominator": "NOT_COMPUTABLE"','"zero_denominator": "0"')],
    ['fake fallback SKU',M,s=>s.replace('UNKNOWN_NOT_AUTHENTICATED','READY_FOR_SALE')],
    ['missing gate',M,s=>s.replace(/\{\s*"id": "publisher_named_acceptance"[\s\S]*?\},\s*/, '')],
