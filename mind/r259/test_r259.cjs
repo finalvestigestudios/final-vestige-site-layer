@@ -35,8 +35,8 @@ function validate(files){
    if(/\bon(?:click|load|error|submit|play|mouseenter)\s*=/i.test(body))errs.push('inline handler:'+name);
    // R257 pilot contains clearly labeled merchant source citations, NOT active earning CTAs.
    // All merchant links are still prohibited in the new consumer decision card.
-   if(name==='html' && /href\\s*=\\s*["']https?:\\/\\/(?:www\\.)?(?:zen12|hypnosislive|inspire3|affiliates\\.inspire3)\\./i.test(body))errs.push('active merchant href:'+name);
-   if(/<a[^>]*href=["'][^"']*(?:awin1\\.com|[?&](?:ref|affid|affiliate_id)=)/i.test(body))errs.push('affiliate/tracker href:'+name);
+   if(name==='html' && /href\s*=\s*["']https?:\/\/(?:www\.)?(?:zen12|hypnosislive|inspire3|affiliates\.inspire3)\./i.test(body))errs.push('active merchant href:'+name);
+   if(/<a[^>]*href=["'][^"']*(?:awin1\.com|[?&](?:ref|affid|affiliate_id)=)/i.test(body))errs.push('affiliate/tracker href:'+name);
  }
  if(/href\s*=\s*["']https?:\/\/(?:www\.)?(?:zen12|hypnosislive|inspire3|affiliates\.inspire3)\./i.test(html))errs.push('commercial link in card');
  if(/<\s*form\b/i.test(html)||/localStorage|fingerprint|gtag\(|fbq\(/i.test(html))errs.push('duplicate funnel or tracking');
