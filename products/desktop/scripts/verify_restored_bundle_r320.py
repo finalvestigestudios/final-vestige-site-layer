@@ -28,6 +28,7 @@ FIELDS = frozenset(("schema", "product", "sealed_utc", "report_filename",
 ERROR = "Private evidence bundle failed consistency verification"
 HEX = re.compile(r"[a-f0-9]{64}\Z")
 _BLOCK = 256 * 1024
+MAX_EVENTS = 20_000
 
 
 class BundleHold(ValueError):
@@ -150,6 +151,37 @@ def _manifest(raw: bytes):
     return entry
 
 
+def _verify_journal_structure(data: bytes, expected_count: int) -> int:
+    """Confirm bounded JSONL framing and manifest count using witnessed bytes.
+
+    Structural consistency only: this is NOT journal chain authentication,
+    proof of an actual reviewer or a compliance or release authorization.
+    Authenticated vault restore still checks all review-event hashes and case
+    binding with the source report before an evidence bundle is accepted.
+    """
+    if (type(data) is not bytes or type(expected_count) is not int or
+            not 0 <= expected_count <= MAX_EVENTS or
+            len(data) > MAX_BYTES[JOURNAL]):
+        raise ValueError(ERROR)
+    if data and not data.endswith(b"\n"):
+        raise ValueError(ERROR)
+    records = data.splitlines()
+    if len(records) != expected_count:
+        raise ValueError(ERROR)
+    for record in records:
+        if not record or b"\x00" in record:
+            raise ValueError(ERROR)
+        try:
+            event = json.loads(record.decode("utf-8"),
+                               object_pairs_hook=_unique,
+                               parse_constant=_reject_constant)
+        except (ValueError, UnicodeError):
+            raise ValueError(ERROR) from None
+        if type(event) is not dict:
+            raise ValueError(ERROR)
+    return len(records)
+
+
 def inspect_bundle(path: str | Path) -> dict[str, object]:
     """Inspect immutable-at-observation bundle bytes; never write or decrypt.
 
@@ -175,8 +207,15 @@ def inspect_bundle(path: str | Path) -> dict[str, object]:
         # Re-read the entire report/journal to catch observed mutations after
         # the first hash and ensure the manifest remained byte-identical.
         for name, digest in checks.items():
-            if _read_member(folder, directory_id, name)[0] != digest:
+            observed, snapshot = _read_member(folder, directory_id, name,
+                                              materialize=(name == JOURNAL))
+            if observed != digest:
                 raise ValueError(ERROR)
+            if name == JOURNAL:
+                # A matching file digest alone does not establish that the
+                # manifest's claimed event count reflects the JSONL records.
+                # Use the custody-checked second pass, never a raw path read.
+                _verify_journal_structure(snapshot, meta["review_event_count"])
         if _read_member(folder, directory_id, MANIFEST)[0] != manifest_digest:
             raise ValueError(ERROR)
         _inventory(folder, directory_id, allowed)
