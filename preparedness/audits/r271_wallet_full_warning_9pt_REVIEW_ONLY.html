@@ -1,0 +1,43 @@
+<!-- Unapproved R264 source-only review concept. Not for publication or real household data. -->
+<section class="pa-wallet-review" aria-label="Unapproved minimal emergency card">
+<p class="pa-editor-note">UNAPPROVED REVIEW CONCEPT. Do not distribute or enter real personal details.</p>
+<style>
+.pa-wallet-review { color:#111; background:#fff; font-family:sans-serif; }
+.pa-foldcard { display:grid; grid-template-columns:1fr 1fr; box-sizing:border-box; width:7in; min-height:2.125in; border:1px solid #111; }
+.pa-face { box-sizing:border-box; min-width:0; min-height:2.125in; padding:.08in .12in; border-right:1px dashed #111; font-size:9pt; line-height:1.3; }
+.pa-face h2 { font-size:11pt; margin:0 0 .06in; }
+.pa-privacy { font-weight:bold; font-size:9pt; margin:.06in 0; line-height:1.2; }
+.pa-prototype-status { font-size:9pt; line-height:1.1; font-weight:700; margin:0 0 .03in; border:1px solid #111; padding:1px 2px; }
+.pa-write { margin:.07in 0; }
+/* R267: SCREEN-ONLY reviewer preview; does not change held 7-inch print geometry. */
+@media screen and (max-width: 739px) {
+.pa-foldcard { width:100%; max-width:100%; grid-template-columns:minmax(0, 1fr); }
+.pa-face { min-height:0; border-right:0; border-bottom:1px dashed #111; padding:12px; font-size:14px; }
+.pa-privacy { font-size:14px; line-height:1.4; overflow-wrap:anywhere; }
+.pa-write { overflow-wrap:anywhere; }
+}
+@media print {
+@page { margin:.5in; }
+.pa-foldcard { display:grid; grid-template-columns:1fr 1fr; width:7in; min-height:2.125in; }
+.pa-face { min-height:2.125in; font-size:9pt; line-height:1.3; }
+}
+</style>
+<div class="pa-foldcard" role="group" aria-label="Foldable two-face concept">
+<section class="pa-face" aria-label="Front">
+<p class="pa-prototype-status">UNAPPROVED - DO NOT USE</p>
+<h2>Emergency contact</h2>
+<p class="pa-privacy">Privacy: This card may be lost or photographed. Do not write child names, school details, home addresses, passwords, medical information or access codes.</p>
+<p class="pa-write">Out-of-area contact: __________________</p>
+<p class="pa-write">Telephone: __________________</p>
+</section>
+<section class="pa-face" aria-label="Back">
+<p class="pa-prototype-status">UNAPPROVED - DO NOT USE</p>
+<h2>Backup contact</h2>
+<p class="pa-privacy">Privacy: A finder can read this card. Carry only non-sensitive contact details and review before sharing.</p>
+<p class="pa-write">Backup contact: __________________</p>
+<p class="pa-write">Backup telephone: __________________</p>
+<p class="pa-write">Plan reviewed: __________________</p>
+</section>
+</div>
+<p class="pa-editor-note">Not an approved replacement for Tool #104. Physical cutout, JavaScript-off printing, qualified child-privacy, accessibility and source review remain required.</p>
+</section>
