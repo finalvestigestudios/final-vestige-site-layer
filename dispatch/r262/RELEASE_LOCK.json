@@ -1,0 +1,31 @@
+{
+  "run": "R262",
+  "date": "2026-11-10",
+  "original_campaign_pr": 175,
+  "original_head": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "parent_pr": 1929,
+  "all_six_send_state": "HOLD_UNSENT",
+  "commercial_03_05": "HOLD_MERCHANT",
+  "optional_editions": [
+    1,
+    6
+  ],
+  "optional_status": "NOT_ADOPTED",
+  "attestations": {
+    "founder_final_send_approval": false,
+    "legal_address_verified": false,
+    "jetpack_opt_out_received_and_tested": false,
+    "actual_email_eligible_recipients_reconciled": false,
+    "welcome_received_verified": false,
+    "partner_named_account_approved": false,
+    "partner_email_permission_verified": false,
+    "issued_earning_link_verified": false,
+    "live_approved_guide_verified": false,
+    "settled_paid_conversion_verified": false
+  },
+  "links": {
+    "issue01": "https://finalvestige.com/2026/11/02/change-blindness/",
+    "issue06": "https://finalvestige.com/focus/"
+  },
+  "notes": "No addresses or subscriber identities recorded. No email/live content actions."
+}
