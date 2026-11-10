@@ -15,14 +15,14 @@ The HTML is generated **only in memory**, escapes every authored excerpt and unt
 ## Implementation
 
 - `preparedness/tools/r258_complete_offline_claim_review_hold.py` — strict upstream reconciliation and renderer.
-- `preparedness/tests/test_r258_complete_offline_claim_review_hold.py` — isolated synthetic fixtures with 75 positive/adversarial tests, including escaped markup injection and fabricated receipt/review status, duplicate URLs, source-ID reassignment, omission, reordering and disputed-source drift.
+- `preparedness/tests/test_r258_complete_offline_claim_review_hold.py` — isolated synthetic fixtures with 77 positive/adversarial tests, including escaped markup injection and fabricated receipt/review status, duplicate URLs, source-ID reassignment, omission, reordering and disputed-source drift.
 - `preparedness/tools/r220_full_slate_draft_custody.py` — cryptographic Git-blob pin for R258, invokes R258 immediately after R257 and **before WordPress draft export**; fails closed and rechecks gate identity at the end.
 
 ## Executed verification / limitations
 
-- Local Python `python -I -m unittest discover -s preparedness/tests -p 'test_r258*.py' -q`: **75/75 PASS**, isolated synthetic data, not authentic source claims.
+- Local Python `python -I -m unittest discover -s preparedness/tests -p 'test_r258*.py' -q`: **77/77 PASS**, isolated synthetic data, not authentic source claims.
 - Local `python -m py_compile` on module + tests: **PASS**.
-- Original locally executed blob identities verified against GitHub committed blobs: module `3f48d7612986626b4e0faf9dd004e322d6bc7806`; tests `c4836ac1680e686bfbcf406dd37d03f8e3951299`. R220 newly pinned gate and post-audit identity check.
+- Original locally executed blob identities verified against GitHub committed blobs: module `ade65322cf347c34bd9f731bbb490ff2bc9fc9f0`; tests `8b08f909f3b7f66d494cdd7c3bf6bd13f911a6a4`. R220 newly pinned gate and post-audit identity check.
 - Current seven contributor branches compared against frozen original R200 SHA set: **7/7 identical** (2026-11-09 PT); QA PR #157 at `7d1ae6b8ef93d10cfb6810987672360885e9c1aa`, synthetic-fixture PR #169 at `e9cd7766dac59d47ab467d8945269b9146c2aef5` and homepage lead PR #1689 at `f55c36b6598eec558dd8bb24e4c8988becc51be0` checked, unchanged.
 - **NOT EXECUTED:** authentic complete upstream R200→R258 end-to-end integration, native `validate.py` / `build.py` / inherited 36+ tests, actual 41 WordPress-ready artifacts, browser/print QA, source support adjudication, medical safety and independent QD. The container cannot resolve `github.com` for a trusted complete repository checkout. These runs MUST NOT be reported as PASS.
 
