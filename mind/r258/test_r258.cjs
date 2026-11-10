@@ -61,7 +61,7 @@ const cases=[
  ['one gate approved',o=>{let m=JSON.parse(o.matrix);m.commercial_gates[0].state='APPROVED';o.matrix=JSON.stringify(m)}],
  ['duplicate gate ID',o=>{let m=JSON.parse(o.matrix);m.commercial_gates[1].id=m.commercial_gates[0].id;o.matrix=JSON.stringify(m)}],
  ['false product efficacy',o=>{let m=JSON.parse(o.matrix);m.claims.find(c=>c.id==='C07').status='proven';o.matrix=JSON.stringify(m)}],
- ['invented CTA evidence',o=>o.plan=o.plan.replace('NOT COMPUTABLE','REVENUE VERIFIED')],
+ ['invented CTA evidence',o=>o.plan=o.plan.replace(/NOT COMPUTABLE/g,'REVENUE VERIFIED')],
  ['remove FTC disclosure',o=>o.plan=o.plan.replace('If you purchase through this link, Final Vestige may earn a commission at no additional cost to you','Free health outcomes guaranteed')],
  ['fake Thatcher stat',o=>o.article+='\n99% of people are fooled by this test.'],
  ['remove photo rights guard',o=>o.article=o.article.replace('copyright ownership and image permissions','public image reuse welcome')],
