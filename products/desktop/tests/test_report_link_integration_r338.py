@@ -19,10 +19,10 @@ class ReportLinkIntegrationR338(unittest.TestCase):
     def temp_paths(self):
         return list(self.parent.glob('.fvs-candidate-report-*'))
 
-    def test_real_hardlink_is_verified_then_staging_cleaned(self):
+    def test_real_hardlink_is_verified_and_private_stage_retained(self):
         report.publish_report(self.destination, self.payload)
         self.assertEqual(json.loads(self.destination.read_text()), self.payload)
-        self.assertEqual(self.temp_paths(), [])
+        self.assertEqual(len(self.temp_paths()), 1)
 
     def test_fake_link_creating_same_size_copy_rejected_with_evidence_preserved(self):
         def wrong_link(source, target):
@@ -65,12 +65,12 @@ class ReportLinkIntegrationR338(unittest.TestCase):
         with self.assertRaises(report.ReportEvidenceError):
             report.publish_report(self.destination, self.payload)
         self.assertEqual(self.destination.read_bytes(), b'customer-kept')
-        self.assertEqual(self.temp_paths(), [])
+        self.assertEqual(len(self.temp_paths()), 1)
 
     def test_invalid_json_does_not_create_stage(self):
         with self.assertRaises(report.ReportEvidenceError):
             report.publish_report(self.destination, {'value': float('nan')})
-        self.assertEqual(self.temp_paths(), [])
+        self.assertEqual(len(self.temp_paths()), 0)
 
     def test_private_error_on_postlink_fault(self):
         with patch.object(report, 'verify_published_link', side_effect=report.LinkWitnessError('PRIVATE_CLIENT')):

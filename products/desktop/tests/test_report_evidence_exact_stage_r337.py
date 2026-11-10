@@ -1,4 +1,4 @@
-"""R337: private six-app release report must be byte-exact before publication.
+"""R337/R339: release report must be byte-exact; staging preserved for human review.
 
 Real temporary files only; no customer data, premium binaries or Windows EXEs.
 """
@@ -81,11 +81,11 @@ class ReportEvidenceExactStageR337(unittest.TestCase):
     def stage_names(self):
         return sorted(p.name for p in self.root.glob('.fvs-candidate-report-*'))
 
-    def assert_rejected_privately(self):
+    def assert_rejected_privately(self, *, stage_created=True):
         with self.assertRaises(evidence.ReportEvidenceError) as ctx:
             evidence.publish_report(self.dest, self.payload)
         self.assertFalse(self.dest.exists())
-        self.assertEqual(self.stage_names(), [])
+        self.assertEqual(len(self.stage_names()), 1 if stage_created else 0)
         self.assertNotIn(str(self.root), str(ctx.exception))
         self.assertNotIn('PRIVATE_CLIENT_PATH', str(ctx.exception))
         self.assertIsNone(ctx.exception.__cause__)
@@ -104,7 +104,7 @@ class ReportEvidenceExactStageR337(unittest.TestCase):
         expected = (json.dumps(self.payload, sort_keys=True, indent=2,
                                ensure_ascii=True, allow_nan=False) + '\n').encode()
         self.assertEqual(self.dest.read_bytes(), expected)
-        self.assertEqual(self.stage_names(), [])
+        self.assertEqual(len(self.stage_names()), 1 if stage_created else 0)
 
     def test_repeated_publication_is_byte_deterministic(self):
         evidence.publish_report(self.dest, self.payload)
@@ -123,7 +123,7 @@ class ReportEvidenceExactStageR337(unittest.TestCase):
         with self.assertRaises(evidence.ReportEvidenceError):
             evidence.publish_report(self.dest, self.payload)
         self.assertEqual(self.dest.read_bytes(), b'customer-preserved')
-        self.assertEqual(self.stage_names(), [])
+        self.assertEqual(len(self.stage_names()), 1 if stage_created else 0)
 
     def test_short_actual_write_fails_before_any_link(self):
         with self.proxy_fdopen(write_mode='short'):
@@ -188,7 +188,7 @@ class ReportEvidenceExactStageR337(unittest.TestCase):
         with self.assertRaises(OSError):
             os.fstat(opened[0])
         self.assertFalse(self.dest.exists())
-        self.assertEqual(self.stage_names(), [])
+        self.assertEqual(len(self.stage_names()), 1 if stage_created else 0)
 
     def test_hardlink_failure_preserves_target_and_redacts(self):
         with patch.object(evidence.os, 'link', side_effect=OSError('PRIVATE_CLIENT_PATH')):
@@ -200,7 +200,7 @@ class ReportEvidenceExactStageR337(unittest.TestCase):
                 old = self.payload
                 self.payload = invalid
                 try:
-                    self.assert_rejected_privately()
+                    self.assert_rejected_privately(stage_created=False)
                 finally:
                     self.payload = old
 
