@@ -591,8 +591,7 @@
     "social_posts": false,
     "newsletter_edits": false,
     "new_paid_services": false,
-    "merge_approved": false,
-    "canonical_editorial_duplicate_hold": true
+    "merge_approved": false
   },
   "decision": "Eligibility first. No purchase call-to-action until named publisher agreement, precise eligible product, issued URL, channels, terms, live checkout and founder signoff. Prioritize paid FV-owned offer only if authenticated; otherwise keep free Focus CTA and revenue NOT_COMPUTABLE.",
   "editorial_canonical_status": "DUPLICATE_TOPIC_HOLD__R204_R218_R251; consolidate only novelty into R204, no new WordPress or Grok destination"
