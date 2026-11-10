@@ -6,7 +6,42 @@ Only call with a readable O_RDWR descriptor and an already-validated event.
 """
 from __future__ import annotations
 
+import hashlib
 import os
+
+
+
+PREFIX_CHUNK_BYTES = 1024 * 1024
+
+
+def digest_pinned_prefix(descriptor: int, byte_count: int) -> bytes:
+    """Hash exactly the pre-append bytes using a duplicate of the pinned fd.
+
+    The duplicate shares its file offset with the append handle, but O_APPEND
+    keeps subsequent writes at EOF. No pathname is reopened, no unbounded
+    plaintext is retained, and a short read fails closed. The caller compares
+    this digest before and after the append; this is NOT an authenticity proof.
+    """
+    if type(byte_count) is not int or byte_count < 0:
+        raise ValueError("Review journal prefix length is invalid")
+    copied = os.dup(descriptor)
+    try:
+        stream = os.fdopen(copied, "rb", buffering=0)
+    except BaseException:
+        os.close(copied)
+        raise
+    with stream:
+        if stream.seek(0, os.SEEK_SET) != 0:
+            raise ValueError("Review journal prefix could not be positioned")
+        digest = hashlib.sha256()
+        remaining = byte_count
+        while remaining:
+            block = stream.read(min(PREFIX_CHUNK_BYTES, remaining))
+            if not block:
+                raise ValueError("Review journal prefix changed during append")
+            digest.update(block)
+            remaining -= len(block)
+        return digest.digest()
 
 
 def require_exact_append_readback(descriptor: int, offset: int, event: bytes) -> None:
