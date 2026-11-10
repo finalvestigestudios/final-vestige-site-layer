@@ -56,7 +56,7 @@ function checkMarkup(html, commercialRequired) {
 function verify(F){
   const a=F.original,c=F.correction,e=JSON.parse(F.evidence),m=JSON.parse(F.matrix266),p=F.plan;
   const ar=a.trim().split(/\s+/);ok(ar.length>=2000,'distinct substantial source-led investigation');
-  for (const term of ['1987','white bear','1994','2009','five-minute','distracter','not a clinical','Puységur','no affiliate recommendation']) ok(a.toLowerCase().includes(term.toLowerCase()),'original missing '+term);
+  for (const term of ['1987','white bear','1994','2009','five-minute','distracter','not itself a clinical','Puységur','no affiliate recommendation']) ok(a.toLowerCase().includes(term.toLowerCase()),'original missing '+term);
   for(const id of ['3612492','8121959','8295117','29040891'])ok(a.includes(id),'original missing primary source '+id);
   ok(!/https?:\/\/(?:zen12|inspire3|hypnosislive|brainwaveshots)\.com/i.test(a),'no seller endorsement link in article');
   ok(c.includes('The old story begins with an artillery officer'),'historical correction retained');
@@ -71,6 +71,7 @@ function verify(F){
   const idset=new Set(e.sources.map(x=>x.id));eq(idset.size,e.sources.length,'no duplicate source ID');
   for(const s of e.sources)ok(/^https:\/\//.test(s.url),'verified source URL schema');
   for(const cl of e.claims){ok(cl.source_ids.length>0,'claims mapped');for(const id of cl.source_ids)ok(idset.has(id),'mapped claim source '+id)}
+  for(const id of ['C12','C13','C14'])ok(e.claims.find(c=>c.id===id)?.status==='UNSUBSTANTIATED_SELLER_CLAIM_OMIT','unsupported efficacy omitted '+id);
   eq(e.gates.length,GATES.length,'commercial gate count');
   eq(new Set(e.gates.map(x=>x.id)).size,GATES.length,'unique commercial gates');
   for(const id of GATES){const g=e.gates.find(x=>x.id===id);ok(g&&g.status==='HARD_HOLD'&&g.evidence===null,'held authorization '+id)}
@@ -85,7 +86,7 @@ function verify(F){
   ok(/Optional original 42-second film/i.test(F.buyerB),'video variant labeled optional');
   ok(!/Optional original 42-second film/i.test(F.buyerA),'text variant remains text only');
   ok(F.hub.includes('aria-labelledby')&&F.hub.includes('disabled aria-describedby')&&F.hub.includes('focus-visible'),'modular hub accessibility');
-  for(const term of ['NOT TESTED','HARD HOLD','A/B','R254','R247','P=.06','Grok','Praxxis','Claude','Dispatch','Founder','Issue #820','refunds'])ok(p.includes(term),'conversion owner/release plan '+term);
+  for(const term of ['NOT TESTED','HARD HOLD','A/B','R254','R247','P=.06','Grok','Praxxis','Claude','Dispatch','Founder','issue #820','refunds'])ok(p.includes(term),'conversion owner/release plan '+term);
   return {source_count:e.sources.length,claim_count:e.claims.length,gate_count:e.gates.length,article_words:ar.length};
 }
 function run(f){
@@ -98,7 +99,7 @@ function run(f){
   inject('break citation map',F=>{const m=JSON.parse(F.evidence);m.claims[0].source_ids=['NO_SOURCE'];F.evidence=JSON.stringify(m)});
   inject('remove P06 historical source',F=>{F.original=F.original.replace('8121959','missing')});
   inject('reintroduce physician error',F=>{F.correction=F.correction.replace('begins with an artillery officer','begins with a physician')});
-  inject('hide P=.06 caveat',F=>{F.correction=F.correction.replace('P* = .06','P* = .05')});
+  inject('hide P=.06 caveat',F=>{F.correction=F.correction.replaceAll('P* = .06','P* = .05')});
   inject('promote unverified efficacy',F=>{F.evidence=F.evidence.replace('UNSUBSTANTIATED_SELLER_CLAIM_OMIT','PROVEN_PRODUCT_OUTCOME')});
   inject('put seller link A',F=>{F.buyerA=F.buyerA.replace('</main>','<a href="https://zen12.com/secret/">Buy</a></main>')});
   inject('put unquoted merchant link B',F=>{F.buyerB=F.buyerB.replace('</main>','<a href=https://zen12.com/hnp>Buy</a></main>')});
