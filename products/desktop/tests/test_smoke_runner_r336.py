@@ -10,9 +10,9 @@ import tempfile
 import unittest
 from pathlib import Path
 from types import SimpleNamespace
-from unittest.mock import Mock
+from unittest.mock import Mock, patch
 
-from smoke_runner_r336 import SmokeRunError, run_smoke_checked
+from smoke_runner_r336 import SmokeRunError, run_smoke_checked, select_smoke_runner
 
 
 class SmokeRunnerR336(unittest.TestCase):
@@ -33,6 +33,29 @@ class SmokeRunnerR336(unittest.TestCase):
         self.assertIn(contains, str(caught.exception))
         self.assertNotIn(str(self.root), str(caught.exception))
         self.assertIsNone(caught.exception.__cause__)
+
+    def test_none_selects_native_runner_only(self):
+        self.assertIs(select_smoke_runner(None), subprocess.run)
+
+    def test_falsy_injected_runner_is_used_not_bypassed(self):
+        class FalsyCallable:
+            def __bool__(self):
+                return False
+            def __call__(self, *args, **kwargs):
+                return SimpleNamespace(returncode=0)
+        injected = FalsyCallable()
+        self.assertIs(select_smoke_runner(injected), injected)
+        with patch('smoke_runner_r336.subprocess.run',
+                   side_effect=AssertionError('unexpected native EXE launch')):
+            self.run_case(select_smoke_runner(injected))
+
+    def test_truthiness_trap_is_never_evaluated(self):
+        class Trap:
+            def __bool__(self):
+                raise AssertionError('never evaluate injected runner truthiness')
+            def __call__(self, *args, **kwargs):
+                return SimpleNamespace(returncode=0)
+        self.run_case(select_smoke_runner(Trap()))
 
     def test_zero_exit(self):
         self.run_case(lambda *_args, **_kw: SimpleNamespace(returncode=0))
