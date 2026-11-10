@@ -1,0 +1,60 @@
+{
+  "schema": "fv-preparedness-r267-responsive-preview-observation-v1",
+  "state": "DRAFT_HARD_HOLD",
+  "date_utc": "2026-11-10",
+  "test_engine": "Chromium",
+  "test_method": "local Playwright set_content; synthetic blank fields; no network",
+  "source_original_git_blob": "40782ef142edfd348fec53eb6d8a0dc673244dea",
+  "source_preview_git_blob": "5ae643302faf6bce47e8c507fbcfff9c099eaf00",
+  "screen_viewports_css_px": [
+    320,
+    360,
+    390,
+    768,
+    1440
+  ],
+  "original_document_scroll_width_css_px": [
+    680,
+    680,
+    680,
+    768,
+    1440
+  ],
+  "preview_document_scroll_width_css_px": [
+    320,
+    360,
+    390,
+    768,
+    1440
+  ],
+  "screen_preview_overflow_not_observed_at_tested_widths": true,
+  "original_r266_mobile_overflow_remains_documented": true,
+  "responsive_change_only_in_screen_css": true,
+  "print_unfolded_card_width_css_px": 672,
+  "print_unfolded_card_height_css_px": 206,
+  "print_face_width_css_px": [
+    335,
+    335
+  ],
+  "print_notice_font_css_px": [
+    10.6667,
+    10.6667
+  ],
+  "print_pdf_js_on_sha256": "232495acec8411828d2c8a67ee6118b6441aafe52de050dd95a9a9f33d13193f",
+  "print_pdf_js_off_sha256": "232495acec8411828d2c8a67ee6118b6441aafe52de050dd95a9a9f33d13193f",
+  "same_run_old_and_new_print_pdf_bytes": true,
+  "same_run_js_on_and_off_pdf_bytes": true,
+  "printed_warnings_in_pdf_text_verified": true,
+  "real_paper_legibility_unverified": true,
+  "physical_print_cut_fold_verified": false,
+  "accessibility_approved": false,
+  "child_privacy_approved": false,
+  "source_citations_approved": false,
+  "independent_qd_pass": false,
+  "merchant_approved": false,
+  "release_authorized": false,
+  "public_published": false,
+  "ready_for_wordpress": false,
+  "full_native_pipeline_executed": false,
+  "original_tool_104_browser_tested": false
+}
