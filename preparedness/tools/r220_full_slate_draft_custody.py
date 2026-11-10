@@ -124,8 +124,8 @@ R255_REVIEW_SURFACE_BLOB = '86e8b8e3cb29efbac738fd8574b487c4d633b1af'
 # in the 562 shared-source workorders, retaining source contexts and all holds.
 R257_PARTITION_PATH = 'tools/r257_complete_citation_partition_hold.py'
 R257_PARTITION_BLOB = 'df74968de5ee609fa16287a7339cd8262616603c'
-// R258 binds the complete R254/R257 original source-claim partition to a
-// deterministic, entirely escaped, no-clickable-links offline reviewer view.
+# R258 binds the complete R254/R257 original source-claim partition to a
+# deterministic, entirely escaped, no-clickable-links offline reviewer view.
 R258_COMPLETE_REVIEW_PATH = 'tools/r258_complete_offline_claim_review_hold.py'
 R258_COMPLETE_REVIEW_BLOB = 'ade65322cf347c34bd9f731bbb490ff2bc9fc9f0'
 # These are independently observed R219 integration Git blobs, not certified text.
