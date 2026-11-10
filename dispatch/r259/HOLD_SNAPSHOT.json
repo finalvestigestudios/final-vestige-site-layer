@@ -1,0 +1,29 @@
+{
+  "release": "HOLD_UNSENT",
+  "issue04_variant": "OPTIONAL_NOT_ADOPTED",
+  "commercial_03_05": "HOLD_MERCHANT",
+  "as_of_utc": "2026-11-10T15:30:45Z",
+  "source_documents": {
+    "apollo_board": "https://www.nasa.gov/wp-content/uploads/static/history/Apollo204/find.html",
+    "apollo_interim": "https://www.nasa.gov/history/Apollo204/seamans3.html",
+    "apollo_nasa_case": "https://sma.nasa.gov/sma-disciplines/accllp/apollo-1",
+    "hypnosis_live_direct": "https://hypnosislive.com/mental-skills/total-focus",
+    "zen12_standard": "https://zen12.com/hnp",
+    "zen12_coupon_distinct": "https://zen12.com/secret/",
+    "partner_portal_not_authorization": "https://affiliates.inspire3.com/"
+  },
+  "merchant_exact_price_verified_at_checkout": false,
+  "affiliate_named_acceptance": false,
+  "email_promotion_permission": false,
+  "issued_earning_url": false,
+  "warmup_guides_published_approved": false,
+  "native_wordpress_email_preview": false,
+  "received_mail_footer": false,
+  "publisher_mailing_address": false,
+  "functional_unsubscribe": false,
+  "provider_subscribed_aggregate": false,
+  "actual_welcome_receipt": false,
+  "settled_revenue_verification": false,
+  "net_revenue_per_1000_qualified_sessions": null,
+  "wordPress_diagnostic": { "total":3, "confirmed":3, "unconfirmed":2, "email_follower":0, "wpcom_follower":3, "nonadditive":true }
+}
