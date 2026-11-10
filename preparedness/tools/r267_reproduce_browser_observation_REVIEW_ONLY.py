@@ -122,7 +122,7 @@ async def execute(folder:Path, chromium:str):
     record['pdf_byte_hashes_may_differ_between_contexts'] = True
     record['bounded_five_width_and_same_run_geometry_text_reproducible'] = verified
     record['not_human_accessibility_or_physical_print_approval'] = True
-    (folder/'reproduction.json').write_text(json.dumps(record,indent=2)+'\\n',encoding='utf-8')
+    (folder/'reproduction.json').write_text(json.dumps(record,indent=2)+'\n',encoding='utf-8')
     return verified
 
 def main():
