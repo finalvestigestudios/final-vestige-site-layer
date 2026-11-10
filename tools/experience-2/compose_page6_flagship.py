@@ -5,6 +5,7 @@ import argparse
 import hashlib
 import json
 import re
+from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urlsplit
 
@@ -43,19 +44,60 @@ def git_blob(raw: bytes) -> str:
 # Published WordPress Page 6 uses a root-relative /focus/ native CTA. Never
 # require an absolute URL that appears only inside the replaceable flagship:
 # that falsely blocks the real page while allowing unrelated links as proof.
-FOCUS_CTA = re.compile(r"<section\b[^>]*\bclass=[\"'](?P<classes>[^\"']*)[\"'][^>]*>(?P<body>.*?)</section>", re.I | re.S)
-FOCUS_ACTION = re.compile(r"<a\b(?=[^>]*\bclass=[\"'][^\"']*\bfv-focus-cta__button\b)[^>]*\bhref=[\"'](?P<href>[^\"']+)[\"']", re.I | re.S)
+class NativeFocusParser(HTMLParser):
+    """Interpret actual attribute names, not regex suffix matches like data-href."""
+
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.depth = 0
+        self.active_depth = None
+        self.focus_sections = 0
+        self.actions = []
+        self.invalid = False
+
+    def handle_starttag(self, tag, attrs):
+        names = [name for name, _ in attrs]
+        amap = dict(attrs)
+        if tag == 'section':
+            self.depth += 1
+            if 'fv-focus-cta' in (amap.get('class') or '').split():
+                self.focus_sections += 1
+                if self.active_depth is not None:
+                    self.invalid = True
+                self.active_depth = self.depth
+                if names.count('class') != 1:
+                    self.invalid = True
+        if tag == 'a' and self.active_depth is not None:
+            if 'fv-focus-cta__button' in (amap.get('class') or '').split():
+                if (names.count('class') != 1 or names.count('href') != 1
+                        or any(name.startswith('on') for name in names)):
+                    self.invalid = True
+                self.actions.append(amap.get('href'))
+
+    def handle_startendtag(self, tag, attrs):
+        self.handle_starttag(tag, attrs)
+        if tag == 'section':
+            self.handle_endtag(tag)
+
+    def handle_endtag(self, tag):
+        if tag == 'section':
+            if self.active_depth == self.depth:
+                self.active_depth = None
+            self.depth -= 1
+            if self.depth < 0:
+                self.invalid = True
+
 
 def native_focus_action(outside: str) -> str:
-    """Require one preserved native Focus CTA and an approved exact destination."""
-    sections = [m for m in FOCUS_CTA.finditer(outside)
-                if 'fv-focus-cta' in m.group('classes').split()]
-    if len(sections) != 1:
-        raise AdmissionError('native external Focus section missing or duplicated')
-    actions = list(FOCUS_ACTION.finditer(sections[0].group('body')))
-    if len(actions) != 1:
-        raise AdmissionError('native Focus button missing or duplicated')
-    href = actions[0].group('href')
+    """Fail closed on actual native button href, including attribute spoofing."""
+    parser = NativeFocusParser()
+    parser.feed(outside)
+    parser.close()
+    if parser.invalid or parser.focus_sections != 1 or len(parser.actions) != 1:
+        raise AdmissionError('native Focus section/button missing, duplicated, or unsafe')
+    href = parser.actions[0]
+    if not isinstance(href, str):
+        raise AdmissionError('native Focus button href is missing')
     parsed = urlsplit(href)
     if (parsed.path != '/focus/' or parsed.query or parsed.fragment or parsed.username
             or parsed.password or (parsed.scheme, parsed.netloc) not in
