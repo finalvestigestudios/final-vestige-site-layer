@@ -1,0 +1,2346 @@
+{
+  "schema": "fv-r273-source-review-docket-v1",
+  "state": "DRAFT_HARD_HOLD",
+  "crosswalk_blob": "d62e493a67dedd23e04cfdf3cce762ef933c6bf9",
+  "warning": "UNAPPROVED provenance worklist only; matching URLs or IDs do not prove shared claims or safe guidance.",
+  "source_rows": 244,
+  "review_alias_groups": 32,
+  "duplicate_source_id_groups": 15,
+  "exact_urls": 202,
+  "shared_url_review": [
+    {
+      "review_alias": "https://ask.fsis.usda.gov/article/How-do-you-keep-food-safe-during-a-power-failure",
+      "review_status": "pending-human-source-and-reading-scope-review",
+      "reviewer": null,
+      "reviewed_on": null,
+      "variants": [
+        {
+          "origin": "base",
+          "source_file": "preparedness/sources/register.json",
+          "row_index": 22,
+          "source": {
+            "id": "fsis-power-failure",
+            "title": "How do you keep food safe during a power failure?",
+            "publisher": "USDA FSIS",
+            "kind": "regulator",
+            "url": "https://ask.fsis.usda.gov/article/How-do-you-keep-food-safe-during-a-power-failure",
+            "verified_on": null,
+            "human_link_check": false,
+            "notes": "Listed in Issue #136; for article 9."
+          }
+        },
+        {
+          "origin": "food",
+          "source_file": "preparedness/sources/fragments/food.json",
+          "row_index": 0,
+          "source": {
+            "id": "fsis-power-failure",
+            "title": "How do you keep food safe during a power failure?",
+            "publisher": "USDA Food Safety and Inspection Service (Ask USDA)",
+            "kind": "regulator",
+            "url": "https://ask.fsis.usda.gov/article/How-do-you-keep-food-safe-during-a-power-failure",
+            "published": null,
+            "updated": "2024-12-17",
+            "reviewed": null,
+            "verified_on": "2026-10-29",
+            "human_link_check": false,
+            "supports": "A refrigerator keeps food cold for about 4 hours if unopened; a full stand-alone freezer holds temperature about 48 hours (24 if half full) with the door closed; a refrigerator's freezer compartment may not hold as long; group freezer packages together.",
+            "notes": "Short Q&A that points to the longer FSIS emergencies page. Upgraded from the register placeholder."
+          }
+        },
+        {
+          "origin": "shelter",
+          "source_file": "preparedness/sources/fragments/shelter.json",
+          "row_index": 41,
+          "source": {
+            "id": "fsis-power-failure",
+            "title": "How do you keep food safe during a power failure? (Ask USDA)",
+            "publisher": "USDA Food Safety and Inspection Service (Ask USDA)",
+            "kind": "regulator",
+            "url": "https://ask.fsis.usda.gov/article/How-do-you-keep-food-safe-during-a-power-failure",
+            "published": null,
+            "updated": "2024-12-17",
+            "reviewed": null,
+            "verified_on": "2026-11-01",
+            "human_link_check": false,
+            "supports": "A refrigerator keeps food cold for about 4 hours if unopened; a full stand-alone freezer holds its temperature for approximately 48 hours (24 hours if half full) if the door stays closed; the freezer compartment of a refrigerator-freezer may not keep food frozen as long; group freezer packages together.",
+            "notes": "Upgraded from the register placeholder. Read: the whole short article as rendered by Firecrawl on 2026-11-01. Page shows 'Last Updated: Dec 17, 2024'. Agrees with the CDC, FEMA and Ready.gov timings. human_link_check remains false."
+          }
+        }
+      ]
+    },
+    {
+      "review_alias": "https://ask.fsis.usda.gov/article/What-foods-should-I-keep-in-my-house-for-emergencies",
+      "review_status": "pending-human-source-and-reading-scope-review",
+      "reviewer": null,
+      "reviewed_on": null,
+      "variants": [
+        {
+          "origin": "base",
+          "source_file": "preparedness/sources/register.json",
+          "row_index": 23,
+          "source": {
+            "id": "fsis-emergency-foods",
+            "title": "What foods should I keep in my house for emergencies?",
+            "publisher": "USDA FSIS",
+            "kind": "regulator",
+            "url": "https://ask.fsis.usda.gov/article/What-foods-should-I-keep-in-my-house-for-emergencies",
+            "verified_on": null,
+            "human_link_check": false,
+            "notes": "Listed in Issue #136; for article 8."
+          }
+        },
+        {
+          "origin": "food",
+          "source_file": "preparedness/sources/fragments/food.json",
+          "row_index": 1,
+          "source": {
+            "id": "fsis-emergency-foods",
+            "title": "What foods should I keep in my house for emergencies?",
+            "publisher": "USDA Food Safety and Inspection Service (Ask USDA)",
+            "kind": "regulator",
+            "url": "https://ask.fsis.usda.gov/article/What-foods-should-I-keep-in-my-house-for-emergencies",
+            "published": null,
+            "updated": "2025-01-03",
+            "reviewed": null,
+            "verified_on": "2026-10-29",
+            "human_link_check": false,
+            "supports": "Keep nonperishable food and a 3-day supply of commercially bottled water per person (minimum 3 gallons); example foods; choose small cans so there are no leftovers needing refrigeration; include infant formula, pet food and special-diet foods; have a manual can opener; periodically use and refresh the supply.",
+            "notes": "Upgraded from the register placeholder. The first fetch returned only the page title; a second fetch with a render wait returned the full text."
+          }
+        }
+      ]
+    },
+    {
+      "review_alias": "https://nchfp.uga.edu/",
+      "review_status": "pending-human-source-and-reading-scope-review",
+      "reviewer": null,
+      "reviewed_on": null,
+      "variants": [
+        {
+          "origin": "base",
+          "source_file": "preparedness/sources/register.json",
+          "row_index": 19,
+          "source": {
+            "id": "nchfp-home",
+            "title": "National Center for Home Food Preservation",
+            "publisher": "NCHFP, University of Georgia",
+            "kind": "extension",
+            "url": "https://nchfp.uga.edu/",
+            "verified_on": null,
+            "human_link_check": false,
+            "notes": "Listed in Issue #136; not yet read for a specific claim."
+          }
+        },
+        {
+          "origin": "food",
+          "source_file": "preparedness/sources/fragments/food.json",
+          "row_index": 2,
+          "source": {
+            "id": "nchfp-home",
+            "title": "National Center for Home Food Preservation",
+            "publisher": "NCHFP, University of Georgia",
+            "kind": "extension",
+            "url": "https://nchfp.uga.edu/",
+            "published": null,
+            "updated": null,
+            "reviewed": null,
+            "verified_on": "2026-10-29",
+            "human_link_check": false,
+            "supports": "Describes itself as the source of current research-based recommendations for most methods of home food preservation, established with USDA funding to address food-safety concerns; sections on canning, pickling, fermenting, freezing, drying, curing and smoking, and storing.",
+            "notes": "Home page only. Used as the hub link. Upgraded from the register placeholder."
+          }
+        },
+        {
+          "origin": "hist-home",
+          "source_file": "preparedness/sources/fragments/hist-home.json",
+          "row_index": 0,
+          "source": {
+            "id": "nchfp-home",
+            "title": "National Center for Home Food Preservation",
+            "publisher": "NCHFP, University of Georgia",
+            "kind": "extension",
+            "url": "https://nchfp.uga.edu/",
+            "published": null,
+            "updated": null,
+            "reviewed": null,
+            "verified_on": "2026-10-29",
+            "human_link_check": false,
+            "supports": "Describes itself as a source of current research-based recommendations for most methods of home food preservation, established with USDA (CSREES) funding; separate sections for canning, pickling, fermenting, freezing, drying, curing and smoking, and storing; points to the University of Georgia Cooperative Extension book So Easy To Preserve (6th edition, reviewed and updated 2020).",
+            "notes": "Upgrades the register placeholder of the same id. Home page only; no specific recipe or process is taken from it. Reading depth: FULL: whole page read as markdown."
+          }
+        }
+      ]
+    },
+    {
+      "review_alias": "https://nchfp.uga.edu/how/can/preparing-and-canning-poultry-red-meats-and-seafoods/meat-ground-or-chopped/",
+      "review_status": "pending-human-source-and-reading-scope-review",
+      "reviewer": null,
+      "reviewed_on": null,
+      "variants": [
+        {
+          "origin": "base",
+          "source_file": "preparedness/sources/register.json",
+          "row_index": 21,
+          "source": {
+            "id": "nchfp-pressure-ground-meat",
+            "title": "Ground or chopped meat (pressure canning)",
+            "publisher": "NCHFP",
+            "kind": "extension",
+            "url": "https://nchfp.uga.edu/how/can/preparing-and-canning-poultry-red-meats-and-seafoods/meat-ground-or-chopped/",
+            "verified_on": null,
+            "human_link_check": false,
+            "notes": "Listed in Issue #136; for article 10."
+          }
+        },
+        {
+          "origin": "food",
+          "source_file": "preparedness/sources/fragments/food.json",
+          "row_index": 4,
+          "source": {
+            "id": "nchfp-pressure-ground-meat",
+            "title": "Meat, Ground or Chopped (pressure canning)",
+            "publisher": "NCHFP, University of Georgia (adapted from the USDA Complete Guide to Home Canning)",
+            "kind": "extension",
+            "url": "https://nchfp.uga.edu/how/can/preparing-and-canning-poultry-red-meats-and-seafoods/meat-ground-or-chopped/",
+            "published": null,
+            "updated": null,
+            "reviewed": null,
+            "verified_on": "2026-10-29",
+            "human_link_check": false,
+            "supports": "A tested pressure-canning process for ground or chopped meat: it must be read with Using Pressure Canners; process time varies by jar size, and canner pressure varies by dial-gauge versus weighted-gauge canner and by elevation band (separate tables). The tables are NOT reproduced in the article.",
+            "notes": "Page text says it was adapted from the Complete Guide to Home Canning, Agriculture Information Bulletin No. 539, USDA, revised 2015. Upgraded from the register placeholder."
+          }
+        }
+      ]
+    },
+    {
+      "review_alias": "https://nchfp.uga.edu/how/dry/recipes/jerky",
+      "review_status": "pending-human-source-and-reading-scope-review",
+      "reviewer": null,
+      "reviewed_on": null,
+      "variants": [
+        {
+          "origin": "base",
+          "source_file": "preparedness/sources/register.json",
+          "row_index": 20,
+          "source": {
+            "id": "nchfp-jerky",
+            "title": "Jerky safety",
+            "publisher": "NCHFP",
+            "kind": "extension",
+            "url": "https://nchfp.uga.edu/how/dry/recipes/jerky",
+            "verified_on": null,
+            "human_link_check": false,
+            "notes": "Listed in Issue #136; for article 11."
+          }
+        },
+        {
+          "origin": "food",
+          "source_file": "preparedness/sources/fragments/food.json",
+          "row_index": 3,
+          "source": {
+            "id": "nchfp-jerky",
+            "title": "Jerky",
+            "publisher": "NCHFP, University of Georgia (extracted from So Easy to Preserve, 6th ed.)",
+            "kind": "extension",
+            "url": "https://nchfp.uga.edu/how/dry/recipes/jerky",
+            "published": null,
+            "updated": null,
+            "reviewed": null,
+            "verified_on": "2026-10-29",
+            "human_link_check": false,
+            "supports": "Jerky safety procedure: raw poultry generally not recommended; freeze pork and wild game 6 inches or thinner at 0 F or below for at least 30 days against trichinella; handling rules; wild-game cautions; reaching 160 F internally by heating in marinade before drying or in an oven after drying, without case hardening; slices no thicker than 1/4 inch; dry in a dehydrator or oven preheated to 140 F until a test piece cracks but does not break; ground-meat jerky is harder; home-dried jerky keeps 2 weeks at room temperature in a sealed container, longer refrigerated or frozen.",
+            "notes": "Page text credits \"So Easy to Preserve\", 6th ed. 2014 (Bulletin 989, UGA Cooperative Extension). No page-level date is shown. Upgraded from the register placeholder."
+          }
+        },
+        {
+          "origin": "hist-food",
+          "source_file": "preparedness/sources/fragments/hist-food.json",
+          "row_index": 14,
+          "source": {
+            "id": "hist-food-nchfp-jerky",
+            "title": "Jerky",
+            "publisher": "National Center for Home Food Preservation, University of Georgia (from So Easy to Preserve, 6th ed., Bulletin 989)",
+            "kind": "extension",
+            "url": "https://nchfp.uga.edu/how/dry/recipes/jerky/",
+            "published": "2014",
+            "updated": null,
+            "reviewed": null,
+            "verified_on": "2026-10-29",
+            "human_link_check": false,
+            "supports": "Jerky raw-meat hazards; wild game and pork trichinella treatment; heating meat strips to 160 F either in marinade before drying or in an oven after drying; fecal contamination of game; properly dried jerky keeps at room temperature two weeks in a sealed container.",
+            "notes": "Same page as the register placeholder 'nchfp-jerky' (read at the URL without the trailing slash; both return HTTP 200). Defined under a new id because the shared test suite uses 'nchfp-jerky' as its permanent unverified-placeholder fixture. Source of an official disagreement: NCHFP allows the 160 F heat step after drying; USDA FSIS recommends it before dehydrating and says home-dried jerky keeps 1 to 2 months. See hist-food-fsis-jerky. Extent read: full page text, live scrape."
+          }
+        }
+      ]
+    },
+    {
+      "review_alias": "https://nchfp.uga.edu/resources/entry/historical-origins-of-food-preservation",
+      "review_status": "pending-human-source-and-reading-scope-review",
+      "reviewer": null,
+      "reviewed_on": null,
+      "variants": [
+        {
+          "origin": "base",
+          "source_file": "preparedness/sources/register.json",
+          "row_index": 33,
+          "source": {
+            "id": "nchfp-historical-origins",
+            "title": "Historical origins of food preservation",
+            "publisher": "NCHFP",
+            "kind": "extension",
+            "url": "https://nchfp.uga.edu/resources/entry/historical-origins-of-food-preservation",
+            "verified_on": null,
+            "human_link_check": false,
+            "notes": "Listed in Issue #136; for article 35."
+          }
+        },
+        {
+          "origin": "hist-food",
+          "source_file": "preparedness/sources/fragments/hist-food.json",
+          "row_index": 13,
+          "source": {
+            "id": "nchfp-historical-origins",
+            "title": "Historical Origins of Food Preservation",
+            "publisher": "National Center for Home Food Preservation, University of Georgia (Brian A. Nummer, Ph.D., May 2002)",
+            "kind": "extension",
+            "url": "https://nchfp.uga.edu/resources/entry/historical-origins-of-food-preservation",
+            "published": "2002-05",
+            "updated": null,
+            "reviewed": null,
+            "verified_on": "2026-10-29",
+            "human_link_check": false,
+            "supports": "Overview of drying, freezing, fermenting, pickling, curing, jam and jelly, and canning; Appert's 1790s discovery and about 1806 French Navy trial; Durand's tin cans in 1810; Pasteur 1864; Chevalier-Appert's 1851 pressure retort; nitrites and C. botulinum recognised in the 1920s.",
+            "notes": "A 2002 overview that gives some claims without citation (for example 12,000 B.C. drying, ketchup origins). We use only the dated canning, curing and refrigeration statements, and flag the rest as undocumented. Extent read: full page text, live scrape."
+          }
+        }
+      ]
+    },
+    {
+      "review_alias": "https://www.cdc.gov/botulism/prevention/home-canned-foods.html",
+      "review_status": "pending-human-source-and-reading-scope-review",
+      "reviewer": null,
+      "reviewed_on": null,
+      "variants": [
+        {
+          "origin": "food",
+          "source_file": "preparedness/sources/fragments/food.json",
+          "row_index": 26,
+          "source": {
+            "id": "food-cdc-home-canned",
+            "title": "Home-Canned Foods (Botulism Prevention)",
+            "publisher": "Centers for Disease Control and Prevention (NCEZID)",
+            "kind": "regulator",
+            "url": "https://www.cdc.gov/botulism/prevention/home-canned-foods.html",
+            "published": "2024-05-15",
+            "updated": "2024-04-25",
+            "reviewed": "2024-04-25",
+            "verified_on": "2026-10-29",
+            "human_link_check": false,
+            "supports": "Follow the USDA Complete Guide; do not use other recipes even from a trusted friend or relative; low-acid foods (pH above 4.6) are the most common source of home-canning botulism and home-canned vegetables the most common cause of US outbreaks; pressure canning is the only recommended method for low-acid foods; do not use a boiling water canner or an electric multi-cooker for them; use a canner that holds at least four 1-quart jars upright, an accurate gauge (county extension offices often check gauges), vented before pressurizing; use current processing times for old recipes; can only a year's worth; store 50 to 70 F for quality, never above 95 F; boil home-canned low-acid foods and tomatoes 10 minutes plus 1 minute per additional 1,000 ft before eating; signs of contamination; if in doubt, throw it out.",
+            "notes": "Page lists 'Published May 15, 2024' and 'Updated April 25, 2024', which is the order CDC shows; recorded as shown."
+          }
+        },
+        {
+          "origin": "hist-home",
+          "source_file": "preparedness/sources/fragments/hist-home.json",
+          "row_index": 4,
+          "source": {
+            "id": "hist-home-cdc-botulism-home-canned",
+            "title": "Home-Canned Foods (Botulism)",
+            "publisher": "Centers for Disease Control and Prevention (NCEZID)",
+            "kind": "regulator",
+            "url": "https://www.cdc.gov/botulism/prevention/home-canned-foods.html",
+            "published": "2024-05-15",
+            "updated": "2025-12-02",
+            "reviewed": "2024-04-25",
+            "verified_on": "2026-10-30",
+            "human_link_check": false,
+            "supports": "Follow safe canning instructions and use the right equipment; never taste food to see if it is safe; be mindful of the kind of food, jar size and packing method; the page lists home-canned tomatoes, low-acid home-canned foods and home-fermented foods among foods to boil before eating (times given on the page, not reproduced here); signs a container should be thrown out (leaking, bulging, swollen, damaged, spurting, discolored, moldy, smells bad); do not eat food if you do not know whether safe canning guidelines were followed.",
+            "notes": "The boiling times on this page are deliberately not reproduced in the archive. Reading depth: PARTIAL: read through a targeted extraction (key points, boil list, discard signs), not the full page."
+          }
+        }
+      ]
+    },
+    {
+      "review_alias": "https://www.cdc.gov/carbon-monoxide/about/index.html",
+      "review_status": "pending-human-source-and-reading-scope-review",
+      "reviewer": null,
+      "reviewed_on": null,
+      "variants": [
+        {
+          "origin": "hist-field",
+          "source_file": "preparedness/sources/fragments/hist-field.json",
+          "row_index": 10,
+          "source": {
+            "id": "hist-field-cdc-co-basics",
+            "title": "Carbon Monoxide (CO) Poisoning Basics",
+            "publisher": "Centers for Disease Control and Prevention (National Center for Environmental Health)",
+            "kind": "regulator",
+            "url": "https://www.cdc.gov/carbon-monoxide/about/index.html",
+            "published": "2024-05-15",
+            "updated": "2026-10-26",
+            "reviewed": "2026-10-26",
+            "verified_on": "2026-10-29",
+            "human_link_check": false,
+            "supports": "CO is an odorless, colorless gas that kills without warning; produced when fuel burns in vehicles, small engines, stoves, lanterns, grills, fireplaces, gas ranges and furnaces; symptoms are headache, dizziness, weakness, upset stomach, vomiting, chest pain and confusion, often described as flu-like; people who are sleeping or intoxicated can die before symptoms; never burn charcoal indoors; never use a portable gas camp stove indoors; do not cook or burn anything in a stove or fireplace that is not vented; install battery-operated or battery backup CO detectors near every sleeping area; operate generators only outdoors more than 20 feet from windows, doors and vents.",
+            "notes": "Page was re-dated 2026-10-26, three days before verification. Generator and vehicle-exhaust practices are not reproduced in the article; it links out."
+          }
+        },
+        {
+          "origin": "shelter",
+          "source_file": "preparedness/sources/fragments/shelter.json",
+          "row_index": 3,
+          "source": {
+            "id": "shelter-cdc-co-basics",
+            "title": "Carbon Monoxide (CO) Poisoning Basics",
+            "publisher": "Centers for Disease Control and Prevention (National Center for Environmental Health)",
+            "kind": "regulator",
+            "url": "https://www.cdc.gov/carbon-monoxide/about/index.html",
+            "published": "2024-05-15",
+            "updated": "2026-10-26",
+            "reviewed": "2026-10-26",
+            "verified_on": "2026-10-29",
+            "human_link_check": false,
+            "supports": "CO is odorless and colorless; symptoms are flu-like; people who are sleeping or intoxicated can die before symptoms; infants, older adults and people with chronic heart disease, anemia or breathing problems more likely to get sick; more than 400 non-fire CO deaths a year; detectors near every sleeping area, check batteries when clocks change, replace per manufacturer or every 5 years; annual servicing of fuel-burning appliances and chimney; never burn charcoal or use a camp stove or flameless chemical heater indoors; generator rules; vehicle in garage.",
+            "notes": "Detector-placement wording differs from CPSC and Ready.gov; see the cluster notes. Read: page text as rendered by the Firecrawl scraper on 2026-10-29; embedded video, images, and linked PDFs or handouts were not opened. human_link_check remains false."
+          }
+        }
+      ]
+    },
+    {
+      "review_alias": "https://www.cdc.gov/natural-disasters/psa-toolkit/avoiding-carbon-monoxide-poisoning.html",
+      "review_status": "pending-human-source-and-reading-scope-review",
+      "reviewer": null,
+      "reviewed_on": null,
+      "variants": [
+        {
+          "origin": "base",
+          "source_file": "preparedness/sources/register.json",
+          "row_index": 25,
+          "source": {
+            "id": "cdc-co-generators",
+            "title": "Avoiding carbon monoxide poisoning",
+            "publisher": "CDC",
+            "kind": "regulator",
+            "url": "https://www.cdc.gov/natural-disasters/psa-toolkit/avoiding-carbon-monoxide-poisoning.html",
+            "verified_on": null,
+            "human_link_check": false,
+            "notes": "Listed in Issue #136; for article 12."
+          }
+        },
+        {
+          "origin": "shelter",
+          "source_file": "preparedness/sources/fragments/shelter.json",
+          "row_index": 1,
+          "source": {
+            "id": "cdc-co-generators",
+            "title": "Avoiding Carbon Monoxide Poisoning (disaster PSA)",
+            "publisher": "Centers for Disease Control and Prevention (National Center for Environmental Health)",
+            "kind": "regulator",
+            "url": "https://www.cdc.gov/natural-disasters/psa-toolkit/avoiding-carbon-monoxide-poisoning.html",
+            "published": "2024-05-15",
+            "updated": "2023-11-01",
+            "reviewed": "2026-08-26",
+            "verified_on": "2026-10-29",
+            "human_link_check": false,
+            "supports": "During a power outage never use generators, grills or other gasoline-, propane- or charcoal-burning devices inside the home, garage or carport or near doors, windows or vents; CO is odorless and colorless; 'kills more than 500 Americans each year'; do not heat the home with a gas oven; keep generators at least 20 ft from doors, windows and vents; 800-CDC-INFO.",
+            "notes": "Upgraded from the register placeholder. The visible 'Updated' date (Nov 1, 2023) precedes the 'Published' date (May 15, 2024); both recorded as shown. The '500 a year' figure differs from the same agency's CO basics page ('more than 400', non-fire); see shelter-cdc-co-basics. Read: page text as rendered by the Firecrawl scraper on 2026-10-29; embedded video, images, and linked PDFs or handouts were not opened. human_link_check remains false."
+          }
+        }
+      ]
+    },
+    {
+      "review_alias": "https://www.cdc.gov/natural-disasters/response/what-to-do-protect-yourself-during-a-power-outage.html",
+      "review_status": "pending-human-source-and-reading-scope-review",
+      "reviewer": null,
+      "reviewed_on": null,
+      "variants": [
+        {
+          "origin": "health",
+          "source_file": "preparedness/sources/fragments/health.json",
+          "row_index": 3,
+          "source": {
+            "id": "health-cdc-power-outage",
+            "title": "What to Do to Protect Yourself During a Power Outage",
+            "publisher": "Centers for Disease Control and Prevention (National Center for Environmental Health)",
+            "kind": "regulator",
+            "url": "https://www.cdc.gov/natural-disasters/response/what-to-do-protect-yourself-during-a-power-outage.html",
+            "published": "2024-05-15",
+            "updated": "2024-01-26",
+            "reviewed": "2026-08-26",
+            "verified_on": "2026-10-29",
+            "human_link_check": false,
+            "supports": "Medication safety in an outage: some drugs need refrigeration to keep their strength; when the power is out for a day or more, throw away refrigerated medication unless the label says otherwise; if a life depends on a refrigerated drug that has been at room temperature, use it only until a new supply is available; replace refrigerated drugs as soon as possible. Also: safe water for drinking, cooking and hygiene is bottled, boiled or treated; carbon monoxide rules (never run a generator indoors or less than 20 feet from a window, door or vent; Poison Control 1-800-222-1222); fridge and freezer hold times.",
+            "notes": "Page shows 'Updated: January 26, 2024' while also showing 'Reviewed: August 26, 2026'; both recorded as shown."
+          }
+        },
+        {
+          "origin": "shelter",
+          "source_file": "preparedness/sources/fragments/shelter.json",
+          "row_index": 2,
+          "source": {
+            "id": "shelter-cdc-power-outage",
+            "title": "What to Do to Protect Yourself During a Power Outage",
+            "publisher": "Centers for Disease Control and Prevention (National Center for Environmental Health)",
+            "kind": "regulator",
+            "url": "https://www.cdc.gov/natural-disasters/response/what-to-do-protect-yourself-during-a-power-outage.html",
+            "published": "2024-05-15",
+            "updated": "2024-01-26",
+            "reviewed": "2026-08-26",
+            "verified_on": "2026-10-29",
+            "human_link_check": false,
+            "supports": "CO rules for generators (20 ft, longer extension cord, battery CO detector, never in basement, garage or enclosed structure even with doors open unless professionally installed and vented), never charcoal grills, camp stoves or lanterns indoors, never run a vehicle in a garage; never heat with a gas range or oven; CO symptoms and 911 / Poison Control 1-800-222-1222; food (4 h fridge, 48 h full freezer) and refrigerated-medication guidance; heat stroke; no air conditioning options; hypothermia below 95 F; heat sources; flashlights over candles; do not siphon gasoline.",
+            "notes": "Read: page text as rendered by the Firecrawl scraper on 2026-10-29; embedded video, images, and linked PDFs or handouts were not opened. human_link_check remains false."
+          }
+        },
+        {
+          "origin": "start",
+          "source_file": "preparedness/sources/fragments/start.json",
+          "row_index": 28,
+          "source": {
+            "id": "start-cdc-power-outage",
+            "title": "What to Do to Protect Yourself During a Power Outage",
+            "publisher": "CDC",
+            "kind": "regulator",
+            "url": "https://www.cdc.gov/natural-disasters/response/what-to-do-protect-yourself-during-a-power-outage.html",
+            "published": null,
+            "updated": null,
+            "reviewed": null,
+            "verified_on": "2026-11-02",
+            "human_link_check": false,
+            "supports": "Carbon monoxide section: never use a generator, pressure washer or other gasoline-powered engine inside the home, basement or garage, or less than 20 feet from any window, door or vent; use an extension cord longer than 20 feet to keep the generator at a safe distance.",
+            "notes": "Search excerpt read 2026-11-02; full page text fetched by audit/start-here/verify_sources.py on the same run (size and hash in ledger.json). Added to cross-check the 20-foot figure from Ready.gov and FEMA. The CDC's wording ('less than 20 feet') and its carbon monoxide basics page ('more than 20 feet') differ slightly from Ready.gov's 'at least 20 feet'; none of them says 20 feet is safe at every site."
+          }
+        }
+      ]
+    },
+    {
+      "review_alias": "https://www.cdc.gov/water-emergency/safety/guidelines-for-personal-hygiene-during-an-emergency.html",
+      "review_status": "pending-human-source-and-reading-scope-review",
+      "reviewer": null,
+      "reviewed_on": null,
+      "variants": [
+        {
+          "origin": "base",
+          "source_file": "preparedness/sources/register.json",
+          "row_index": 26,
+          "source": {
+            "id": "cdc-hygiene-emergency",
+            "title": "Guidelines for personal hygiene during an emergency",
+            "publisher": "CDC",
+            "kind": "regulator",
+            "url": "https://www.cdc.gov/water-emergency/safety/guidelines-for-personal-hygiene-during-an-emergency.html",
+            "verified_on": null,
+            "human_link_check": false,
+            "notes": "Listed in Issue #136; for article 18."
+          }
+        },
+        {
+          "origin": "health",
+          "source_file": "preparedness/sources/fragments/health.json",
+          "row_index": 0,
+          "source": {
+            "id": "cdc-hygiene-emergency",
+            "title": "Guidelines for Personal Hygiene During an Emergency",
+            "publisher": "Centers for Disease Control and Prevention (National Center for Environmental Health)",
+            "kind": "regulator",
+            "url": "https://www.cdc.gov/water-emergency/safety/guidelines-for-personal-hygiene-during-an-emergency.html",
+            "published": "2024-09-16",
+            "updated": "2024-07-18",
+            "reviewed": "2024-08-05",
+            "verified_on": "2026-10-29",
+            "human_link_check": false,
+            "supports": "Handwashing with soap and water for at least 20 seconds; boiled or disinfected water for handwashing only if local authorities or a doctor recommend extra caution; a temporary handwashing station from a large water jug; alcohol-based sanitizer with at least 60% alcohol and its limits (does not eliminate all germs, may not remove chemicals, less effective on visibly dirty or greasy hands); bathing guidance and when not to bathe (sewage, toxic chemicals, flood-contaminated rivers, streams and lakes); brushing teeth with clean water; protecting wounds (Vibrio, waterproof bandage, seek care for redness, swelling or oozing); pointer to CDC diapering fact sheets.",
+            "notes": "Page shows 'Updated: July 18, 2024' before 'Published: September 16, 2024'; both recorded as shown. Upgrades the register placeholder of the same id."
+          }
+        }
+      ]
+    },
+    {
+      "review_alias": "https://www.fcc.gov/reports-research/guides/tips-communicating-emergency",
+      "review_status": "pending-human-source-and-reading-scope-review",
+      "reviewer": null,
+      "reviewed_on": null,
+      "variants": [
+        {
+          "origin": "health",
+          "source_file": "preparedness/sources/fragments/health.json",
+          "row_index": 17,
+          "source": {
+            "id": "health-fcc-comms-tips",
+            "title": "Tips for Communicating in an Emergency",
+            "publisher": "Federal Communications Commission",
+            "kind": "regulator",
+            "url": "https://www.fcc.gov/reports-research/guides/tips-communicating-emergency",
+            "published": null,
+            "updated": null,
+            "reviewed": null,
+            "verified_on": "2026-10-29",
+            "human_link_check": false,
+            "supports": "Emergencies create network congestion; limit non-emergency calls and keep calls brief; try text messaging, which may go through when a call will not; try several services (text, email, landline); wait 10 seconds before redialing; have charged batteries and car-charger adapters; keep emergency numbers in the phone; place calls while the vehicle is stationary; have a family communications plan with an out-of-area central contact; forward a home number to a wireless number when evacuating; keep a corded phone that does not depend on electricity; for people with disabilities, medical alert systems usually need a working phone line so keep a backup.",
+            "notes": "Undated; some wording (pagers, PDAs, text radio) reflects older technology. Cited for its congestion advice, which it states generally."
+          }
+        },
+        {
+          "origin": "shelter",
+          "source_file": "preparedness/sources/fragments/shelter.json",
+          "row_index": 25,
+          "source": {
+            "id": "shelter-fcc-comms",
+            "title": "Tips for Communicating in an Emergency",
+            "publisher": "Federal Communications Commission",
+            "kind": "regulator",
+            "url": "https://www.fcc.gov/reports-research/guides/tips-communicating-emergency",
+            "published": null,
+            "updated": null,
+            "reviewed": null,
+            "verified_on": "2026-10-29",
+            "human_link_check": false,
+            "supports": "Congestion on phone networks in emergencies; limit non-emergency calls; try text messaging, which often goes through when calls do not; try multiple services; wait 10 seconds before redialing; backup power; designate an out-of-area person as central contact and make sure everyone knows who to contact; keep a corded phone that does not depend on electricity.",
+            "notes": "No date on the page and its disability section uses dated technology (pagers, PDAs). Used only for the general network-congestion points. Read: page text as rendered by the Firecrawl scraper on 2026-10-29; embedded video, images, and linked PDFs or handouts were not opened. human_link_check remains false."
+          }
+        }
+      ]
+    },
+    {
+      "review_alias": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/emergencies/keep-your-food-safe-during-emergencies",
+      "review_status": "pending-human-source-and-reading-scope-review",
+      "reviewer": null,
+      "reviewed_on": null,
+      "variants": [
+        {
+          "origin": "food",
+          "source_file": "preparedness/sources/fragments/food.json",
+          "row_index": 5,
+          "source": {
+            "id": "food-fsis-emergencies",
+            "title": "Keep Your Food Safe During Emergencies: Power Outages, Floods & Fires",
+            "publisher": "USDA Food Safety and Inspection Service",
+            "kind": "regulator",
+            "url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/emergencies/keep-your-food-safe-during-emergencies",
+            "published": null,
+            "updated": "2013-08-07",
+            "reviewed": null,
+            "verified_on": "2026-10-29",
+            "human_link_check": false,
+            "supports": "Power-outage planning (appliance thermometers: refrigerator 40 F or below, freezer 0 F or below; group and fill the freezer; cooler and gel packs); refrigerator safe up to 4 hours; full freezer about 48 hours (24 half full); 50 lb dry ice holds an 18 cu ft freezer 2 days; do not put perishable food in snow; never taste food to judge safety; lists of foods to discard after more than 4 hours without power and foods that are safe; frozen-food rules; flood and fire guidance; USDA Meat and Poultry Hotline 1-888-674-6854.",
+            "notes": "Visible 'Last Updated' is Aug 07, 2013; it is the older, longer FSIS page and the shorter Ask USDA articles point to it. Its bleach sanitizing amounts (1 tablespoon per gallon) differ from CDC's and Ready.gov's."
+          }
+        },
+        {
+          "origin": "shelter",
+          "source_file": "preparedness/sources/fragments/shelter.json",
+          "row_index": 42,
+          "source": {
+            "id": "shelter-usda-fsis-emergencies",
+            "title": "Keep Your Food Safe During Emergencies: Power Outages, Floods & Fires",
+            "publisher": "USDA Food Safety and Inspection Service",
+            "kind": "regulator",
+            "url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/emergencies/keep-your-food-safe-during-emergencies",
+            "published": null,
+            "updated": "2013-08-07",
+            "reviewed": null,
+            "verified_on": "2026-11-01",
+            "human_link_check": false,
+            "supports": "Keep an appliance thermometer in the refrigerator and freezer (refrigerator 40 F or below, freezer 0 F or below); group foods; keep the freezer full or fill gaps with frozen jugs of water, ice or gel packs; have an insulated cooler and frozen gel packs; perishable food stays safe in a refrigerator only 4 hours; refrigerator up to 4 hours and full freezer about 48 hours (24 if half full); never taste food to judge its safety, when in doubt throw it out; discard listed perishable foods (raw, cooked or leftover meat, poultry, fish, eggs, milk, soft cheeses, cut fruit and others) if the refrigerator has been without power for more than 4 hours; do not put perishable food in the snow, make ice instead; USDA Meat and Poultry Hotline 1-888-MPHotline; flood and fire sections.",
+            "notes": "Read: the whole page as rendered by Firecrawl on 2026-11-01, including the flood and fire sections, which these guides do not reproduce. Page shows 'Last Updated: Aug 07, 2013', so it is old; its 4-hour figure matches the newer Ask USDA article (Dec 2024), CDC and FEMA. Resolves the Ready.gov '40 F for two hours' wording by giving a specific outage rule. The dry-ice figure is on this page and is not reproduced. human_link_check remains false."
+          }
+        }
+      ]
+    },
+    {
+      "review_alias": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/meat-fish/jerky",
+      "review_status": "pending-human-source-and-reading-scope-review",
+      "reviewer": null,
+      "reviewed_on": null,
+      "variants": [
+        {
+          "origin": "food",
+          "source_file": "preparedness/sources/fragments/food.json",
+          "row_index": 16,
+          "source": {
+            "id": "food-fsis-jerky",
+            "title": "Jerky and Food Safety",
+            "publisher": "USDA Food Safety and Inspection Service",
+            "kind": "regulator",
+            "url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/meat-fish/jerky",
+            "published": null,
+            "updated": "2016-11-03",
+            "reviewed": null,
+            "verified_on": "2026-10-29",
+            "human_link_check": false,
+            "supports": "Pathogenic bacteria are likely to survive dry heat and the 130 to 140 F of a food dehydrator; Salmonella and E. coli O157:H7 illnesses from homemade jerky; USDA Hotline recommendation to heat meat to 160 F and poultry to 165 F before dehydrating, then dry at a constant 130 to 140 F; why the order matters (evaporation keeps the meat cool, bacteria become more heat resistant); sun drying not recommended; summary of a 2004 Journal of Food Protection study (marination alone did not reduce the pathogen; E. coli survived up to 10 hours at up to 145 F in lab-inoculated venison) and a 1998 study on ground beef jerky with and without a nitrite curing mix; wild-game contamination; storage times (commercial 12 months, home-dried 1 to 2 months).",
+            "notes": "Studies are reported as FSIS summarizes them; we did not read the journal articles. Currency check 2026-10-30 in a browser: the page still shows 'Last Updated: Nov 03, 2016' and the same 160 F / 165 F, 130 to 140 F and 1 to 2 months figures as the newer Ask USDA article (Feb 2025). Kansas State MF3173 cites an FSIS 'Jerky and Food Safety' fact sheet dated September 22, 2023 at a /meat/jerky path; we could not retrieve that version (automated fetch refused), so we cannot say whether it differs."
+          }
+        },
+        {
+          "origin": "hist-food",
+          "source_file": "preparedness/sources/fragments/hist-food.json",
+          "row_index": 15,
+          "source": {
+            "id": "hist-food-fsis-jerky",
+            "title": "Jerky and Food Safety",
+            "publisher": "USDA Food Safety and Inspection Service",
+            "kind": "regulator",
+            "url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/meat-fish/jerky",
+            "published": null,
+            "updated": "2016-11-03",
+            "reviewed": null,
+            "verified_on": "2026-10-29",
+            "human_link_check": false,
+            "supports": "USDA Meat and Poultry Hotline's current recommendation to heat meat to 160 F and poultry to 165 F before dehydrating; explanation that dehydrators may not reach that temperature and that bacteria become more heat resistant after drying; venison fecal contamination; home-dried jerky stored 1 to 2 months, commercially packaged 12 months.",
+            "notes": "Last updated November 2016. The old FSIS path .../meat/jerky-and-food-safety now returns 404. Extent read: the page via verbatim extraction (recommendation, reasoning, wild game and storage passages, update date) plus a search excerpt of the same page; ask.fsis.usda.gov repeats the 160 F / 165 F recommendation in a search excerpt only."
+          }
+        }
+      ]
+    },
+    {
+      "review_alias": "https://www.loc.gov/item/2002564479/",
+      "review_status": "pending-human-source-and-reading-scope-review",
+      "reviewer": null,
+      "reviewed_on": null,
+      "variants": [
+        {
+          "origin": "base",
+          "source_file": "preparedness/sources/register.json",
+          "row_index": 31,
+          "source": {
+            "id": "loc-pioneer-diaries",
+            "title": "Pioneer diaries collection",
+            "publisher": "Library of Congress",
+            "kind": "archive",
+            "url": "https://www.loc.gov/item/2002564479/",
+            "verified_on": null,
+            "human_link_check": false,
+            "notes": "Listed in Issue #136; for articles 24 and 34."
+          }
+        },
+        {
+          "origin": "hist-field",
+          "source_file": "preparedness/sources/fragments/hist-field.json",
+          "row_index": 1,
+          "source": {
+            "id": "loc-pioneer-diaries",
+            "title": "Trails to Utah and the Pacific diaries and letters, 1846-1869 (Library of Congress American Memory collection)",
+            "publisher": "Library of Congress, with Harold B. Lee Library (Brigham Young University) and the Utah Academic Library Consortium",
+            "kind": "archive",
+            "url": "https://www.loc.gov/item/2002564479/",
+            "published": "2002",
+            "updated": null,
+            "reviewed": null,
+            "verified_on": "2026-10-29",
+            "human_link_check": false,
+            "supports": "Catalogue record for a digitized collection of 49 diaries, 43 maps, 82 photographs and illustrations, and seven published guides for emigrants, about Mormon and other pioneers moving west to Utah, Montana and the Pacific between 1847 and 1869 (collection title runs from 1846).",
+            "notes": "Upgraded from the register placeholder; the placeholder title 'Pioneer diaries collection' was not the record's actual title. The drafting agent read the catalogue record only, NOT the diaries. The collection is mostly Latter Day Saint migration to Utah and is not a Donner Party source; it is cited only as a place to read ordinary overland provisioning in the travelers' own words."
+          }
+        },
+        {
+          "origin": "hist-food",
+          "source_file": "preparedness/sources/fragments/hist-food.json",
+          "row_index": 12,
+          "source": {
+            "id": "loc-pioneer-diaries",
+            "title": "Trails to Utah and the Pacific diaries and letters, 1846-1869",
+            "publisher": "Library of Congress (American Memory-derived collection; source material from Brigham Young University and Utah Academic Libraries Consortium)",
+            "kind": "archive",
+            "url": "https://www.loc.gov/item/2002564479/",
+            "published": null,
+            "updated": null,
+            "reviewed": null,
+            "verified_on": "2026-10-30",
+            "human_link_check": false,
+            "supports": "The collection comprises 49 diaries, 43 maps, 82 photographs and illustrations and seven published guides for emigrants, covering Mormon and other pioneers moving to Utah, Montana and the Pacific between 1847 and 1869.",
+            "notes": "Only the collection-level description was read. We did not open individual diaries, so no diary text is quoted or paraphrased from it. The placeholder titled this 'Pioneer diaries collection'; this is the actual title. Extent read: the collection-level description only. No individual diary was opened."
+          }
+        }
+      ]
+    },
+    {
+      "review_alias": "https://www.loc.gov/resource/gdcmassbookdig.prairietravelerh01marc/?st=list",
+      "review_status": "pending-human-source-and-reading-scope-review",
+      "reviewer": null,
+      "reviewed_on": null,
+      "variants": [
+        {
+          "origin": "base",
+          "source_file": "preparedness/sources/register.json",
+          "row_index": 32,
+          "source": {
+            "id": "loc-prairie-traveler",
+            "title": "The Prairie Traveler (Marcy)",
+            "publisher": "Library of Congress",
+            "kind": "archive",
+            "url": "https://www.loc.gov/resource/gdcmassbookdig.prairietravelerh01marc/?st=list",
+            "verified_on": null,
+            "human_link_check": false,
+            "notes": "Listed in Issue #136; for articles 24 and 34."
+          }
+        },
+        {
+          "origin": "hist-field",
+          "source_file": "preparedness/sources/fragments/hist-field.json",
+          "row_index": 0,
+          "source": {
+            "id": "loc-prairie-traveler",
+            "title": "The prairie traveler. A hand-book for overland expeditions (Randolph B. Marcy), Harper & Brothers, 1861 printing",
+            "publisher": "Library of Congress (Joseph Meredith Toner Collection, digitized book)",
+            "kind": "primary-digitized",
+            "url": "https://www.loc.gov/resource/gdcmassbookdig.prairietravelerh01marc/?st=list",
+            "published": "1861",
+            "updated": null,
+            "reviewed": null,
+            "verified_on": "2026-10-29",
+            "human_link_check": false,
+            "supports": "Digitized public-domain handbook by Capt. Randolph B. Marcy, U.S. Army, 'published by authority of the War Department'. Contents list (seven chapters, read in full) shows chapters on routes, wagons and teams, stores and provisions (including anti-scorbutics), camp life including fuel and making fires, and guides. Preface says it draws on the author's frontier experience and on officers' reports for the routes.",
+            "notes": "Upgraded from the register placeholder. The drafting agent read the LOC catalogue record and the OCR snippets of the first 25 of 398 page images (title page, copyright page, preface, both contents pages and the opening of chapter I). The two contents pages (images 17 and 18) were read in full on 2026-11-01; the book's full-text file could not be fetched (404), NOT the body chapters. No passage from the chapters is quoted or relied on. The LOC copy is the 1861 printing; the title page shows a copyright entry of 1860, and the work postdates the 1846-47 events discussed in pioneer-supply-chains-failed. Rights: LOC says books in this collection are in the public domain."
+          }
+        },
+        {
+          "origin": "hist-food",
+          "source_file": "preparedness/sources/fragments/hist-food.json",
+          "row_index": 11,
+          "source": {
+            "id": "loc-prairie-traveler",
+            "title": "The prairie traveler. A hand-book for overland expeditions (Library of Congress digitized book)",
+            "publisher": "Library of Congress (Joseph Meredith Toner Collection); Randolph B. Marcy, Harper & Brothers, 1861",
+            "kind": "primary-digitized",
+            "url": "https://www.loc.gov/resource/gdcmassbookdig.prairietravelerh01marc/?st=list",
+            "published": "1861",
+            "updated": null,
+            "reviewed": null,
+            "verified_on": "2026-10-29",
+            "human_link_check": false,
+            "supports": "Catalogue and contents: 'published by authority of the War Department'; Chapter I contents list 'Stores and Provisions ... Pemmican ... Antiscorbutics ... Cold Flour'; Chapter V includes 'Jerking Meat'; rights statement says the book is in the public domain.",
+            "notes": "The LOC page-level text view did not load for us; the passages we quote were read in the Internet Archive text of the same scan (see hist-food-marcy-prairie-traveler-text). Extent read: the item landing page (catalogue record, contents list and a few page-level OCR excerpts); the page-level text view did not load."
+          }
+        }
+      ]
+    },
+    {
+      "review_alias": "https://www.nps.gov/articles/000/how-to-make-salt.htm",
+      "review_status": "pending-human-source-and-reading-scope-review",
+      "reviewer": null,
+      "reviewed_on": null,
+      "variants": [
+        {
+          "origin": "base",
+          "source_file": "preparedness/sources/register.json",
+          "row_index": 29,
+          "source": {
+            "id": "nps-lewis-clark-salt",
+            "title": "How to make salt (Lewis and Clark)",
+            "publisher": "National Park Service",
+            "kind": "regulator",
+            "url": "https://www.nps.gov/articles/000/how-to-make-salt.htm",
+            "verified_on": null,
+            "human_link_check": false,
+            "notes": "Listed in Issue #136; for article 23."
+          }
+        },
+        {
+          "origin": "hist-food",
+          "source_file": "preparedness/sources/fragments/hist-food.json",
+          "row_index": 0,
+          "source": {
+            "id": "nps-lewis-clark-salt",
+            "title": "How To Make Salt",
+            "publisher": "National Park Service (Lewis and Clark National Historic Trail, 'Pivotal Places')",
+            "kind": "museum",
+            "url": "https://www.nps.gov/articles/000/how-to-make-salt.htm",
+            "published": null,
+            "updated": "2023-11-28",
+            "reviewed": null,
+            "verified_on": "2026-10-29",
+            "human_link_check": false,
+            "supports": "Field, Bratton and Gibson made salt near a Clatsop-Nehalem village on the Oregon coast in winter 1805-1806; equipment named (five kettles, wood, rocks, iron kegs, seawater); NPS says almost a gallon a day working around the clock; Lewis's 'very tedious opperation' and mid-February stock of about 20 gallons with 12 secured in two kegs; Clark's remark that the salt was not so strong as rock salt.",
+            "notes": "Interpretive article, not a research paper. NPS says 'almost a gallon of salt a day'; the journals say 3 quarts to a gallon a day (5 Jan 1806). Extent read: full page text (single short article), live scrape."
+          }
+        }
+      ]
+    },
+    {
+      "review_alias": "https://www.nps.gov/places/salt-works-oregon.htm",
+      "review_status": "pending-human-source-and-reading-scope-review",
+      "reviewer": null,
+      "reviewed_on": null,
+      "variants": [
+        {
+          "origin": "base",
+          "source_file": "preparedness/sources/register.json",
+          "row_index": 30,
+          "source": {
+            "id": "nps-salt-works",
+            "title": "Salt Works, Oregon",
+            "publisher": "National Park Service",
+            "kind": "regulator",
+            "url": "https://www.nps.gov/places/salt-works-oregon.htm",
+            "verified_on": null,
+            "human_link_check": false,
+            "notes": "Listed in Issue #136; for article 23."
+          }
+        },
+        {
+          "origin": "hist-food",
+          "source_file": "preparedness/sources/fragments/hist-food.json",
+          "row_index": 1,
+          "source": {
+            "id": "nps-salt-works",
+            "title": "Salt Works, Oregon",
+            "publisher": "National Park Service (Lewis and Clark National Historic Trail / Lewis and Clark National Historical Park)",
+            "kind": "museum",
+            "url": "https://www.nps.gov/places/salt-works-oregon.htm",
+            "published": null,
+            "updated": "2023-11-28",
+            "reviewed": null,
+            "verified_on": "2026-10-29",
+            "human_link_check": false,
+            "supports": "The party ran out of salt and chose to winter near the ocean to make it; salt valued for preserving meat; the three salt makers befriended people of the Clatsop-Nehalem village, who sold them whale blubber; about twenty gallons made by Lewis's count; the site is a replica salt works in Seaside, Oregon.",
+            "notes": "NPS says Clark did not mind going without salt while Lewis found unsalted food bland; the journals confirm the contrast (5 Jan 1806). Extent read: full page text, live scrape."
+          }
+        }
+      ]
+    },
+    {
+      "review_alias": "https://www.ready.gov/alerts",
+      "review_status": "pending-human-source-and-reading-scope-review",
+      "reviewer": null,
+      "reviewed_on": null,
+      "variants": [
+        {
+          "origin": "health",
+          "source_file": "preparedness/sources/fragments/health.json",
+          "row_index": 14,
+          "source": {
+            "id": "health-ready-alerts",
+            "title": "Emergency Alerts",
+            "publisher": "FEMA / Ready.gov",
+            "kind": "regulator",
+            "url": "https://www.ready.gov/alerts",
+            "published": null,
+            "updated": "2026-05-27",
+            "reviewed": null,
+            "verified_on": "2026-10-29",
+            "human_link_check": false,
+            "supports": "Wireless Emergency Alerts (short alerts to WEA-enabled phones in a locally targeted area; unique sound and vibration; not affected by network congestion; no charge, no subscription; older phones may not be capable and some phones require WEA to be enabled; some carriers call them Government Alerts or Emergency Alert Messages); the Emergency Alert System (broadcast TV and radio, satellite audio, cable); NOAA Weather Radio All Hazards; IPAWS (FEMA does not review, edit or approve alerts); the FEMA App (NWS alerts for up to five locations, shelter finder).",
+            "notes": "Read scope: full page as returned; linked PDFs (WEA fact sheet, guide for alerts and warnings) were not opened."
+          }
+        },
+        {
+          "origin": "start",
+          "source_file": "preparedness/sources/fragments/start.json",
+          "row_index": 8,
+          "source": {
+            "id": "start-ready-alerts",
+            "title": "Emergency Alerts",
+            "publisher": "FEMA / Ready.gov",
+            "kind": "regulator",
+            "url": "https://www.ready.gov/alerts",
+            "published": null,
+            "updated": "2026-05-27",
+            "reviewed": null,
+            "verified_on": "2026-10-29",
+            "human_link_check": false,
+            "supports": "Wireless Emergency Alerts (no subscription or charge, distinct sound and vibration, not affected by network congestion, some phones need the setting enabled, older phones may not be capable); Emergency Alert System on broadcast TV and radio; NOAA Weather Radio All Hazards broadcasting 24 hours a day; IPAWS; FEMA App with alerts for up to five locations and shelter finder; local alerting authorities decide what to send and FEMA does not review or approve alerts."
+          }
+        }
+      ]
+    },
+    {
+      "review_alias": "https://www.ready.gov/evacuation",
+      "review_status": "pending-human-source-and-reading-scope-review",
+      "reviewer": null,
+      "reviewed_on": null,
+      "variants": [
+        {
+          "origin": "shelter",
+          "source_file": "preparedness/sources/fragments/shelter.json",
+          "row_index": 15,
+          "source": {
+            "id": "shelter-ready-evacuation",
+            "title": "Evacuation",
+            "publisher": "FEMA / Ready.gov",
+            "kind": "regulator",
+            "url": "https://www.ready.gov/evacuation",
+            "published": null,
+            "updated": "2026-03-20",
+            "reviewed": null,
+            "verified_on": "2026-10-29",
+            "human_link_check": false,
+            "supports": "Know your risks, destinations, zones and routes; go-bag; several destinations in different directions; pets; route may be on foot; fuel (full tank when evacuation likely, half tank at all times); one car per family; leave early; tell the out-of-state contact where you are going; leave a note; check on neighbors needing a ride; no shortcuts; after an evacuation check with officials before returning; generators outdoors only and never connected to the home's electrical system.",
+            "notes": "Read: page text as rendered by the Firecrawl scraper on 2026-10-29; embedded video, images, and linked PDFs or handouts were not opened. human_link_check remains false."
+          }
+        },
+        {
+          "origin": "start",
+          "source_file": "preparedness/sources/fragments/start.json",
+          "row_index": 5,
+          "source": {
+            "id": "start-ready-evacuation",
+            "title": "Evacuation",
+            "publisher": "FEMA / Ready.gov",
+            "kind": "regulator",
+            "url": "https://www.ready.gov/evacuation",
+            "published": null,
+            "updated": "2026-03-20",
+            "reviewed": null,
+            "verified_on": "2026-10-29",
+            "human_link_check": false,
+            "supports": "Know your risks, when and where to go, what to bring; build a go-bag so you do not scramble; everyone knows where the bag is and who is responsible; several destinations in different directions; a pet-friendly place because most public shelters allow only service animals; prepare a go-bag to carry on foot or public transport plus supplies for longer trips by car; keep a half tank at all times; one car per family; what to do before leaving; evacuation route may be on foot."
+          }
+        }
+      ]
+    },
+    {
+      "review_alias": "https://www.ready.gov/food",
+      "review_status": "pending-human-source-and-reading-scope-review",
+      "reviewer": null,
+      "reviewed_on": null,
+      "variants": [
+        {
+          "origin": "food",
+          "source_file": "preparedness/sources/fragments/food.json",
+          "row_index": 9,
+          "source": {
+            "id": "food-ready-food",
+            "title": "Food",
+            "publisher": "FEMA / Ready.gov",
+            "kind": "regulator",
+            "url": "https://www.ready.gov/food",
+            "published": null,
+            "updated": "2026-03-12",
+            "reviewed": null,
+            "verified_on": "2026-10-29",
+            "human_link_check": false,
+            "supports": "Store at least a several-day supply of non-perishable food; choose foods your family will eat; special dietary needs; example items including a manual can opener; do not eat from swollen, dented or corroded cans; throw away food at room temperature two hours or more; refrigerator about four hours unopened; discard perishables above 40 F for two hours or more; dry ice 25 lb for a 10 cu ft freezer three to four days, gloves, no direct contact with food; heating canned food and a bleach-to-water disinfecting ratio.",
+            "notes": "Its dry-ice figure (25 lb, 10 cu ft, three to four days) and its 'two hours or more above 40 F' rule differ in framing from FSIS and FDA. Its can-disinfecting ratio (1 part bleach to 10 parts water) differs from FSIS, FDA and CDC. Newer FEMA material (fact sheet V-1008, December 2023) states the discard rule as 'exposed to temperatures 40 degrees Fahrenheit or higher for more than 4 hours', not two hours; see food-fema-outage-sheet."
+          }
+        },
+        {
+          "origin": "start",
+          "source_file": "preparedness/sources/fragments/start.json",
+          "row_index": 4,
+          "source": {
+            "id": "start-ready-food",
+            "title": "Food (emergency food supplies)",
+            "publisher": "FEMA / Ready.gov",
+            "kind": "regulator",
+            "url": "https://www.ready.gov/food",
+            "published": null,
+            "updated": "2026-03-12",
+            "reviewed": null,
+            "verified_on": "2026-10-29",
+            "human_link_check": false,
+            "supports": "Store at least a several-day supply of non-perishable food; choose foods your family will eat; remember special dietary needs; example items (ready-to-eat canned goods and a can opener, bars, cereal, peanut butter, dried fruit, juices, non-perishable milk, high-energy and comfort foods, infant food); refrigerator holds cold about four hours unopened; discard perishables above 40 F for two hours or more; do not eat from swollen, dented or corroded cans; use ready-to-feed formula, and bottled or boiled water as a last resort if mixing."
+          }
+        }
+      ]
+    },
+    {
+      "review_alias": "https://www.ready.gov/kit",
+      "review_status": "pending-human-source-and-reading-scope-review",
+      "reviewer": null,
+      "reviewed_on": null,
+      "variants": [
+        {
+          "origin": "health",
+          "source_file": "preparedness/sources/fragments/health.json",
+          "row_index": 12,
+          "source": {
+            "id": "health-ready-kit",
+            "title": "Build A Kit",
+            "publisher": "FEMA / Ready.gov",
+            "kind": "regulator",
+            "url": "https://www.ready.gov/kit",
+            "published": null,
+            "updated": "2026-07-01",
+            "reviewed": null,
+            "verified_on": "2026-10-29",
+            "human_link_check": false,
+            "supports": "Basic kit items include water (one gallon per person per day for several days, for drinking and sanitation), a battery-powered or hand-crank radio and a NOAA Weather Radio with tone alert, flashlight, extra batteries, whistle, moist towelettes, garbage bags and plastic ties for personal sanitation, local maps, and a cell phone with chargers and a backup battery; additional items include soap, hand sanitizer, prescription medications, feminine supplies, diapers and wipes, and personal hygiene items.",
+            "notes": "Read scope: full page as returned; the linked printable checklist PDF was not opened."
+          }
+        },
+        {
+          "origin": "start",
+          "source_file": "preparedness/sources/fragments/start.json",
+          "row_index": 2,
+          "source": {
+            "id": "start-ready-kit",
+            "title": "Build A Kit",
+            "publisher": "FEMA / Ready.gov",
+            "kind": "regulator",
+            "url": "https://www.ready.gov/kit",
+            "published": null,
+            "updated": "2026-07-01",
+            "reviewed": null,
+            "verified_on": "2026-10-29",
+            "human_link_check": false,
+            "supports": "Basic disaster supplies kit list (water, several days of non-perishable food, radio including NOAA Weather Radio with tone alert, flashlight, first aid kit, batteries, whistle, dust mask, plastic sheeting and duct tape, towelettes and garbage bags, wrench or pliers, manual can opener, local maps, phone and charger with backup battery); additional items (hygiene, medications, eyeglasses, infant supplies, pet supplies, cash, documents, bedding, clothing and sturdy shoes, fire extinguisher, matches, mess kits, paper and pencil, activities); store items in airtight bags in one or two easy-to-carry containers; maintenance (cool dry place, replace expired items, 're-think your needs every year'); kit locations (home, work for at least 24 hours, car).",
+            "notes": "Says to re-think needs 'every year'; the 2020 Are You Ready guide and the CDC pages say every six months. See the cluster notes."
+          }
+        }
+      ]
+    },
+    {
+      "review_alias": "https://www.ready.gov/people-disabilities",
+      "review_status": "pending-human-source-and-reading-scope-review",
+      "reviewer": null,
+      "reviewed_on": null,
+      "variants": [
+        {
+          "origin": "health",
+          "source_file": "preparedness/sources/fragments/health.json",
+          "row_index": 11,
+          "source": {
+            "id": "health-ready-disabilities",
+            "title": "People with Disabilities",
+            "publisher": "FEMA / Ready.gov",
+            "kind": "regulator",
+            "url": "https://www.ready.gov/people-disabilities",
+            "published": null,
+            "updated": "2026-09-09",
+            "reviewed": null,
+            "verified_on": "2026-10-29",
+            "human_link_check": false,
+            "supports": "Support network; many city and county emergency management agencies keep voluntary registries for people with disabilities; know more than one dialysis or treatment facility; ask the power provider for priority power restoration; organize prescriptions; medical alert tags; list of device styles and serial numbers; backup oxygen; spare batteries and a manual backup for a power wheelchair; keep model information and where equipment came from; weather radio with text display and flashing alert for people who are deaf or hard of hearing; extra hearing-aid batteries; FEMA App alerts for up to five locations; several days' supply of prescription medicines.",
+            "notes": "Read scope: full page as returned; linked PDFs and videos were not opened."
+          }
+        },
+        {
+          "origin": "shelter",
+          "source_file": "preparedness/sources/fragments/shelter.json",
+          "row_index": 24,
+          "source": {
+            "id": "shelter-ready-disabilities",
+            "title": "People with Disabilities",
+            "publisher": "FEMA / Ready.gov",
+            "kind": "regulator",
+            "url": "https://www.ready.gov/people-disabilities",
+            "published": null,
+            "updated": "2026-09-09",
+            "reviewed": null,
+            "verified_on": "2026-10-29",
+            "human_link_check": false,
+            "supports": "Support network and accessible evacuation transportation; voluntary registries kept by some city and county emergency management agencies; priority power restoration lists; assistive-technology and mobility-equipment backups; guidance for people who are deaf or hard of hearing, blind or low vision, with speech or intellectual or developmental disabilities, or with Alzheimer's and dementia; extreme-heat risks for people with spinal cord injuries, certain medications, cognitive disabilities.",
+            "notes": "Read: page text as rendered by the Firecrawl scraper on 2026-10-29; embedded video, images, and linked PDFs or handouts were not opened. human_link_check remains false."
+          }
+        },
+        {
+          "origin": "start",
+          "source_file": "preparedness/sources/fragments/start.json",
+          "row_index": 10,
+          "source": {
+            "id": "start-ready-disability",
+            "title": "People with Disabilities",
+            "publisher": "FEMA / Ready.gov",
+            "kind": "regulator",
+            "url": "https://www.ready.gov/people-disabilities",
+            "published": null,
+            "updated": "2026-09-09",
+            "reviewed": null,
+            "verified_on": "2026-10-29",
+            "human_link_check": false,
+            "supports": "Support network and contact list; tell the network where supplies are and consider giving a trusted person a key; plan accessible transportation; voluntary local registries; know more than one dialysis or treatment facility; talk to your doctor about keeping electric medical equipment running and ask your power provider about priority restoration; medical alert tags; communication cards; kit tips by disability (deaf or hard of hearing, blind or low vision, speech disability, intellectual or developmental, mobility including a spare battery and a lightweight manual chair, Alzheimer's and dementia); several days' supply of prescription medicines; extreme-heat cautions; direct deposit.",
+            "notes": "The URL ready.gov/disability redirects here."
+          }
+        }
+      ]
+    },
+    {
+      "review_alias": "https://www.ready.gov/plan",
+      "review_status": "pending-human-source-and-reading-scope-review",
+      "reviewer": null,
+      "reviewed_on": null,
+      "variants": [
+        {
+          "origin": "health",
+          "source_file": "preparedness/sources/fragments/health.json",
+          "row_index": 13,
+          "source": {
+            "id": "health-ready-plan",
+            "title": "Make A Plan",
+            "publisher": "FEMA / Ready.gov",
+            "kind": "regulator",
+            "url": "https://www.ready.gov/plan",
+            "published": null,
+            "updated": "2026-09-01",
+            "reviewed": null,
+            "verified_on": "2026-10-29",
+            "human_link_check": false,
+            "supports": "Plan around five questions, the first being how you will receive emergency alerts and warnings; know how you will contact one another and reconnect if separated; pick a familiar, easy-to-find family meeting place; account for medical needs including prescriptions and equipment, disabilities and access needs, languages, pets and service animals; document and practice the plan.",
+            "notes": "Read scope: full page as returned; the fillable plan form and linked PDFs were not opened."
+          }
+        },
+        {
+          "origin": "shelter",
+          "source_file": "preparedness/sources/fragments/shelter.json",
+          "row_index": 21,
+          "source": {
+            "id": "shelter-ready-plan",
+            "title": "Make A Plan",
+            "publisher": "FEMA / Ready.gov",
+            "kind": "regulator",
+            "url": "https://www.ready.gov/plan",
+            "published": null,
+            "updated": "2026-09-01",
+            "reviewed": null,
+            "verified_on": "2026-10-29",
+            "human_link_check": false,
+            "supports": "Family may not be together; know how you'll contact one another and reconnect; familiar, easy-to-find meeting place; five discussion questions (alerts, shelter plan, evacuation route, communication plan, kit); household-needs checklist (ages, medical, disabilities and access and functional needs, languages, pets, school-aged children); document and practice the plan.",
+            "notes": "Fetched from https://www.ready.gov/make-a-plan, which redirects to this URL. Read: page text as rendered by the Firecrawl scraper on 2026-10-29; embedded video, images, and linked PDFs or handouts were not opened. human_link_check remains false."
+          }
+        },
+        {
+          "origin": "start",
+          "source_file": "preparedness/sources/fragments/start.json",
+          "row_index": 1,
+          "source": {
+            "id": "start-ready-plan",
+            "title": "Make A Plan",
+            "publisher": "FEMA / Ready.gov",
+            "kind": "regulator",
+            "url": "https://www.ready.gov/plan",
+            "published": null,
+            "updated": "2026-09-01",
+            "reviewed": null,
+            "verified_on": "2026-10-29",
+            "human_link_check": false,
+            "supports": "Four steps: meet with your household (five questions: alerts, shelter, evacuation route, communication plan, kit); assess household needs (ages, responsibilities for assisting others, locations visited, dietary and medical needs, disabilities and access and functional needs, languages, cultural and religious considerations, pets or service animals, school-aged children); document the plan with the free fillable form; practice it. Family meeting place that is familiar and easy to find."
+          }
+        }
+      ]
+    },
+    {
+      "review_alias": "https://www.ready.gov/power-outages",
+      "review_status": "pending-human-source-and-reading-scope-review",
+      "reviewer": null,
+      "reviewed_on": null,
+      "variants": [
+        {
+          "origin": "health",
+          "source_file": "preparedness/sources/fragments/health.json",
+          "row_index": 10,
+          "source": {
+            "id": "health-ready-power-outages",
+            "title": "Power Outages",
+            "publisher": "FEMA / Ready.gov",
+            "kind": "regulator",
+            "url": "https://www.ready.gov/power-outages",
+            "published": null,
+            "updated": "2026-06-04",
+            "reviewed": null,
+            "verified_on": "2026-10-29",
+            "human_link_check": false,
+            "supports": "A power outage may prevent use of medical devices; have alternate plans for refrigerating medicines or powering medical devices; inventory the items that rely on electricity and plan for batteries, power banks and other alternatives; talk to your medical provider about an outage plan for powered devices and refrigerated medicines, ask how long a medication can be stored at higher temperatures, and get specific guidance for life-critical medications; if power is out for more than a day, discard refrigerated medication unless the label says otherwise and consult a doctor or pharmacist for a new supply; generator and carbon monoxide rules (outdoors, at least 20 feet from windows, doors and attached garages).",
+            "notes": "Read scope: full page as returned; linked PDFs not opened except the December 2023 fact sheet, which is registered separately (health-fema-power-outage-sheet)."
+          }
+        },
+        {
+          "origin": "shelter",
+          "source_file": "preparedness/sources/fragments/shelter.json",
+          "row_index": 8,
+          "source": {
+            "id": "shelter-ready-power-outages",
+            "title": "Power Outages",
+            "publisher": "FEMA / Ready.gov",
+            "kind": "regulator",
+            "url": "https://www.ready.gov/power-outages",
+            "published": null,
+            "updated": "2026-06-04",
+            "reviewed": null,
+            "verified_on": "2026-10-29",
+            "human_link_check": false,
+            "supports": "Generator and fuel outdoors at least 20 ft from windows, doors and attached garages; CO detectors with battery backup on every level; keep generator dry; heavy-duty cords; let it cool before refueling; no gas stove or oven for heat; plan for medicines and power-dependent medical devices; check local officials for heating and cooling locations; go to a community location with power if heat or cold is extreme; fridge about 4 h and full freezer about 48 h; inventory electric-dependent items.",
+            "notes": "Read: page text as rendered by the Firecrawl scraper on 2026-10-29; embedded video, images, and linked PDFs or handouts were not opened. human_link_check remains false."
+          }
+        },
+        {
+          "origin": "start",
+          "source_file": "preparedness/sources/fragments/start.json",
+          "row_index": 7,
+          "source": {
+            "id": "start-ready-power",
+            "title": "Power Outages",
+            "publisher": "FEMA / Ready.gov",
+            "kind": "regulator",
+            "url": "https://www.ready.gov/power-outages",
+            "published": null,
+            "updated": "2026-06-04",
+            "reviewed": null,
+            "verified_on": "2026-10-29",
+            "human_link_check": false,
+            "supports": "What an extended outage can disrupt; take an inventory of items that rely on electricity; talk to your medical provider about a power-outage plan for powered medical devices and refrigerated medicines; refrigerator keeps food cold about four hours, a full freezer about 48 hours; discard food at 40 F or above for two hours or more; discard refrigerated medicine if power is out more than a day unless the label says otherwise; generators, camp stoves and charcoal grills outdoors and at least 20 feet from windows, doors and attached garages; CO detectors with battery backup on every level; never heat a home with a gas stovetop or oven.",
+            "notes": "Web page read in full on 2026-10-29. Its medicine line ('discard refrigerated medication if power is out more than a day unless the label says otherwise') repeats the 2020 FEMA guide and is stricter than FEMA's newer December 2023 fact sheet (start-fema-power-sheet), which adds 'call your doctor or pharmacist' and 'only use the medicine until you have a new supply'. Its fridge/food rule is two hours above 40 F; the 2023 sheet says more than 4 hours. Both discrepancies are stated on the three-day-kit page."
+          }
+        }
+      ]
+    },
+    {
+      "review_alias": "https://www.ready.gov/sites/default/files/2021-11/are-you-ready-guide.pdf",
+      "review_status": "pending-human-source-and-reading-scope-review",
+      "reviewer": null,
+      "reviewed_on": null,
+      "variants": [
+        {
+          "origin": "base",
+          "source_file": "preparedness/sources/register.json",
+          "row_index": 28,
+          "source": {
+            "id": "ready-are-you-ready",
+            "title": "Are You Ready? guide",
+            "publisher": "FEMA / Ready.gov",
+            "kind": "regulator",
+            "url": "https://www.ready.gov/sites/default/files/2021-11/are-you-ready-guide.pdf",
+            "verified_on": null,
+            "human_link_check": false,
+            "notes": "Listed in Issue #136; for articles 1 and 15."
+          }
+        },
+        {
+          "origin": "start",
+          "source_file": "preparedness/sources/fragments/start.json",
+          "row_index": 0,
+          "source": {
+            "id": "ready-are-you-ready",
+            "title": "Are You Ready? An In-Depth Guide to Citizen Preparedness (P-2064, September 2020)",
+            "publisher": "FEMA / Ready.gov",
+            "kind": "regulator",
+            "url": "https://www.ready.gov/sites/default/files/2021-11/are-you-ready-guide.pdf",
+            "published": "2020-09",
+            "updated": null,
+            "reviewed": null,
+            "verified_on": "2026-10-29",
+            "human_link_check": false,
+            "supports": "Fetched the full 36-page text; read the contents list and the sections cited here (introduction, protective actions, financial preparedness, Make a Plan, supplies, documents, practice schedule). The hazard-by-hazard sections were not read. Three-step frame (know your risks, make a plan, take action); first moves when something happens without warning (assess the situation, decide to stay or change location); family communication plan with an out-of-state contact reachable two ways and a wallet or digital copy for everyone; evacuation guidelines (meeting places in several directions, half-tank rule, one car per family, leave a note); basic kit contents and the 'at least 72 hours' framing; water of 1 gallon per person per day for 3, 7 or even 14 days depending on location; cash in small bills with the highest a twenty; N95 respirators; kit maintenance (first in, first out; discard swollen, dented or corroded cans; check needs every six months); critical-document storage; practice schedule and one-year timeline.",
+            "notes": "September 2020 edition, hosted under a 2021-11 upload path. Older than the Ready.gov web pages, so where they differ the web pages are newer. Upgraded from a placeholder in register.json. The power-outage section says 'If the power is out for more than a day, discard any medication that should be refrigerated, unless the drug's label says otherwise' and uses a two-hour 40 F food rule; FEMA's December 2023 power-outage fact sheet is newer and differs."
+          }
+        }
+      ]
+    },
+    {
+      "review_alias": "https://www.ready.gov/sites/default/files/2024-03/ready.gov_power-outage_hazard-info-sheet.pdf",
+      "review_status": "pending-human-source-and-reading-scope-review",
+      "reviewer": null,
+      "reviewed_on": null,
+      "variants": [
+        {
+          "origin": "food",
+          "source_file": "preparedness/sources/fragments/food.json",
+          "row_index": 28,
+          "source": {
+            "id": "food-fema-outage-sheet",
+            "title": "Be Prepared for a Power Outage (FEMA V-1008)",
+            "publisher": "FEMA / Ready.gov",
+            "kind": "regulator",
+            "url": "https://www.ready.gov/sites/default/files/2024-03/ready.gov_power-outage_hazard-info-sheet.pdf",
+            "published": "2023-12",
+            "updated": null,
+            "reviewed": null,
+            "verified_on": "2026-10-30",
+            "human_link_check": false,
+            "supports": "Keep freezers and refrigerators closed; a refrigerator keeps food cold for about 4 hours and a full freezer stays at a safe temperature for about 48 hours; do not store food outside or in snow; keep a thermometer in the refrigerator and freezer; throw away refrigerated food exposed to 40 F or higher for more than 4 hours, and food with an unusual odor, color or texture; make a plan with your doctor for refrigerating medicines and powering medical devices; replace refrigerated medications if the power is out for a day or more unless the drug's label says otherwise, call your doctor or pharmacist if you depend on refrigerated medication that has been at room temperature, and use the medicine only until you have a new supply; use generators outdoors at least 20 feet from building openings.",
+            "notes": "READ SCOPE: the whole one-page sheet, read as text extracted with pdftotext from a local copy of the PDF fetched 2026-10-30 (Firecrawl and the web-fetch tool could not extract it; Firecrawl was out of credits). Document code and date read from the sheet itself: 'FEMA V-1008/December 2023'. This is newer than the Ready.gov Food page's 'two hours' framing, and it is the document used for the medication line. We did not read the older 2020 FEMA wording the lead mentioned."
+          }
+        },
+        {
+          "origin": "health",
+          "source_file": "preparedness/sources/fragments/health.json",
+          "row_index": 20,
+          "source": {
+            "id": "health-fema-power-outage-sheet",
+            "title": "Be Prepared for a Power Outage (FEMA V-1008, December 2023)",
+            "publisher": "FEMA / Ready.gov",
+            "kind": "regulator",
+            "url": "https://www.ready.gov/sites/default/files/2024-03/ready.gov_power-outage_hazard-info-sheet.pdf",
+            "published": "2023-12-01",
+            "updated": null,
+            "reviewed": null,
+            "verified_on": "2026-10-30",
+            "human_link_check": false,
+            "supports": "One-page FEMA fact sheet: make a plan for refrigerating medicines and powering medical devices; talk to your doctor about how you will use electrically powered devices and store medications; 'Replace refrigerated medications if the power is out for a day or more, unless the drug's label says otherwise. Call your doctor or pharmacist if you depend on refrigerated medications that have been at room temperature. Only use the medicine until you have a new supply.'; generators outdoors at least 20 feet from building openings; learn the signs of carbon monoxide poisoning.",
+            "notes": "READ IN FULL: one page; text extracted with pdftotext from the saved PDF bytes (the first fetch tool could not decode it). Printed edition 'FEMA V-1008/December 2023'; exact day not printed, so 2023-12-01 is a placeholder for the month. File metadata shows last modified 2023-12-29. Wording says 'Replace', whereas the Ready.gov power-outage web page (updated 2026-06-04, health-ready-power-outages) says 'discard'; both are shown in medication-and-devices."
+          }
+        },
+        {
+          "origin": "shelter",
+          "source_file": "preparedness/sources/fragments/shelter.json",
+          "row_index": 29,
+          "source": {
+            "id": "shelter-fema-power-outage-sheet",
+            "title": "Be Prepared for a Power Outage (FEMA V-1008, December 2023)",
+            "publisher": "FEMA / Ready.gov",
+            "kind": "regulator",
+            "url": "https://www.ready.gov/sites/default/files/2024-03/ready.gov_power-outage_hazard-info-sheet.pdf",
+            "published": null,
+            "updated": null,
+            "reviewed": null,
+            "verified_on": "2026-10-30",
+            "human_link_check": false,
+            "supports": "Two-page FEMA fact sheet: generators, camp stoves and charcoal grills outdoors at least 20 ft from any building openings like windows, doors or garages; never use a gas stovetop, oven, grill or dryer to heat a home; do not use gas stoves or candles to heat; do not leave a vehicle running in a garage even with the door open and run a vehicle used for power or warmth in a well-ventilated place outside; smoke and CO alarms with battery backup (if hardwired) on every level and near sleeping areas; talk to your doctor about medical devices and storing medications; replace refrigerated medications if the power is out for a day or more unless the label says otherwise, call your doctor or pharmacist if you depend on refrigerated medications that have been at room temperature, and use the medicine only until you have a new supply; refrigerator about 4 hours and full freezer about 48 hours; communications plan with a paper copy; go to an alternate location for heat or cooling if safe.",
+            "notes": "Document shows 'FEMA V-1008/December 2023'; PDF metadata title 'BE PREPARED FOR A POWER OUTAGE', author FEMA ICPD, created 2023-12-29. No publication field on the page, so published/updated/reviewed are null. Read: both pages, in full. The PDF was downloaded by a web-fetch subagent after Firecrawl credits ran out, and the text was extracted locally with PyMuPDF; the subagent's own extraction could not read it. Supersedes older Ready.gov wording on refrigerated medication ('discard'). human_link_check remains false."
+          }
+        },
+        {
+          "origin": "start",
+          "source_file": "preparedness/sources/fragments/start.json",
+          "row_index": 26,
+          "source": {
+            "id": "start-fema-power-sheet",
+            "title": "Be Prepared for a Power Outage (FEMA V-1008, December 2023)",
+            "publisher": "FEMA / Ready.gov",
+            "kind": "regulator",
+            "url": "https://www.ready.gov/sites/default/files/2024-03/ready.gov_power-outage_hazard-info-sheet.pdf",
+            "published": "2023-12",
+            "updated": null,
+            "reviewed": null,
+            "verified_on": "2026-10-30",
+            "human_link_check": false,
+            "supports": "English two-page sheet (pages 1-2 of a 34-page file) read in full as extracted text: make a plan for refrigerating medicines and powering medical devices; talk to your doctor to plan for medical devices and medication storage; generators, camp stoves and charcoal grills outdoors at least 20 feet from building openings such as windows, doors or garages; never use a gas stovetop, oven, grill or dryer to heat a home; CO and smoke alarms with battery backup; refrigerator keeps food cold about 4 hours, full freezer about 48 hours; throw away refrigerated food above 40 F for more than 4 hours; 'Replace refrigerated medications if the power is out for a day or more, unless the drug's label says otherwise. Call your doctor or pharmacist if you depend on refrigerated medications that have been at room temperature. Only use the medicine until you have a new supply.'",
+            "notes": "Newer than the 2020 FEMA guide and the Ready.gov power-outages web page, which say to discard refrigerated medication after a day and use a two-hour food rule. Pages 3-34 of the file yielded no extractable text (likely translations as images) and were not read. Downloaded directly with curl and converted with pdftotext because Firecrawl had no credits."
+          }
+        }
+      ]
+    },
+    {
+      "review_alias": "https://www.usfa.fema.gov/blog/protecting-people-who-live-or-work-in-high-rises/",
+      "review_status": "pending-human-source-and-reading-scope-review",
+      "reviewer": null,
+      "reviewed_on": null,
+      "variants": [
+        {
+          "origin": "shelter",
+          "source_file": "preparedness/sources/fragments/shelter.json",
+          "row_index": 30,
+          "source": {
+            "id": "shelter-usfa-high-rise",
+            "title": "Protecting People Who Live or Work in High-Rises",
+            "publisher": "U.S. Fire Administration",
+            "kind": "regulator",
+            "url": "https://www.usfa.fema.gov/blog/protecting-people-who-live-or-work-in-high-rises/",
+            "published": "2022-01-12",
+            "updated": null,
+            "reviewed": "2026-05-01",
+            "verified_on": "2026-10-30",
+            "human_link_check": false,
+            "supports": "Default is to evacuate by the nearest stairs: pull the alarm or shout fire, call 911, tell building staff, close doors behind you, no elevators; keep stair and corridor doors closed and never propped open (pressurized stairwells work best with doors closed); shelter in place is for people who cannot self-evacuate (call 911, stay in a room with the door closed and seal cracks with a wet towel, or wait on the stair landing if clear or nearly clear of smoke); not all tall buildings meet modern standards; learn exits and practice the route.",
+            "notes": "Page shows 'Posted: Jan. 12, 2022' and 'Page last reviewed: May 1, 2026'. Read: the whole page text, but through a web-fetch subagent's extraction (about 19,000 characters, no sign of truncation), not in Firecrawl or a browser, because Firecrawl credits ran out; quotes were returned verbatim by the tool but not independently checked against the live HTML. The handout PDF, social cards and pictographs were not opened. human_link_check remains false."
+          }
+        },
+        {
+          "origin": "start",
+          "source_file": "preparedness/sources/fragments/start.json",
+          "row_index": 25,
+          "source": {
+            "id": "start-usfa-high-rise",
+            "title": "Protecting People Who Live or Work in High-Rises",
+            "publisher": "U.S. Fire Administration (FEMA)",
+            "kind": "regulator",
+            "url": "https://www.usfa.fema.gov/blog/protecting-people-who-live-or-work-in-high-rises/",
+            "published": "2022-01-12",
+            "updated": null,
+            "reviewed": null,
+            "verified_on": "2026-10-29",
+            "human_link_check": false,
+            "supports": "Know the exits and fire-safety features of your building; practice your exit route; do not prop stairway or corridor doors open; do not use elevators during a fire; close stair doors behind you; call 911; not all tall buildings meet modern standards; a person who cannot use the stairs should call 911 and be prepared to shelter in place, possibly in a room with the door closed and a wet towel sealing the cracks, or wait on a clear stair landing for help.",
+            "notes": "Whole page re-read on 2026-10-30 via direct download. A blog post written for fire educators; the exit and shelter-in-place messages are about FIRE in tall buildings and say nothing about other hazards. Not the same page as the 'usfa-fire-escape' placeholder in register.json."
+          }
+        }
+      ]
+    },
+    {
+      "review_alias": "https://www.usfa.fema.gov/prevention/home-fires/prepare-for-fire/home-fire-escape-plans/index.html",
+      "review_status": "pending-human-source-and-reading-scope-review",
+      "reviewer": null,
+      "reviewed_on": null,
+      "variants": [
+        {
+          "origin": "base",
+          "source_file": "preparedness/sources/register.json",
+          "row_index": 24,
+          "source": {
+            "id": "usfa-fire-escape",
+            "title": "Home fire escape plans",
+            "publisher": "U.S. Fire Administration",
+            "kind": "regulator",
+            "url": "https://www.usfa.fema.gov/prevention/home-fires/prepare-for-fire/home-fire-escape-plans/index.html",
+            "verified_on": null,
+            "human_link_check": false,
+            "notes": "Listed in Issue #136; for article 13."
+          }
+        },
+        {
+          "origin": "shelter",
+          "source_file": "preparedness/sources/fragments/shelter.json",
+          "row_index": 0,
+          "source": {
+            "id": "usfa-fire-escape",
+            "title": "Home Fire Escape Plans",
+            "publisher": "U.S. Fire Administration",
+            "kind": "regulator",
+            "url": "https://www.usfa.fema.gov/prevention/home-fires/prepare-for-fire/home-fire-escape-plans/index.html",
+            "published": null,
+            "updated": null,
+            "reviewed": null,
+            "verified_on": "2026-10-29",
+            "human_link_check": false,
+            "supports": "Residents could have less than 2 minutes to escape once the smoke alarm sounds; draw a map with all doors and windows; two ways out of every room; keep doors and windows unblocked; outside meeting place in front of the home; practice with everyone; use the test button to start the drill; high-rise and condominium steps (leave and close the door, pull the alarm, use stairs not elevator unless directed, stay at the meeting place, tell the fire department if someone is trapped).",
+            "notes": "Upgraded from the register placeholder. Page shows no published or updated date. Handouts and pictographs on the page were not opened. Read: page text as rendered by the Firecrawl scraper on 2026-10-29; embedded video, images, and linked PDFs or handouts were not opened. human_link_check remains false."
+          }
+        }
+      ]
+    },
+    {
+      "review_alias": "https://www.weather.gov/cys/nwr",
+      "review_status": "pending-human-source-and-reading-scope-review",
+      "reviewer": null,
+      "reviewed_on": null,
+      "variants": [
+        {
+          "origin": "base",
+          "source_file": "preparedness/sources/register.json",
+          "row_index": 27,
+          "source": {
+            "id": "nws-nwr",
+            "title": "NOAA Weather Radio",
+            "publisher": "National Weather Service",
+            "kind": "regulator",
+            "url": "https://www.weather.gov/cys/nwr",
+            "verified_on": null,
+            "human_link_check": false,
+            "notes": "Listed in Issue #136; for article 19."
+          }
+        },
+        {
+          "origin": "health",
+          "source_file": "preparedness/sources/fragments/health.json",
+          "row_index": 1,
+          "source": {
+            "id": "nws-nwr",
+            "title": "NOAA Weather Radio (NWS Cheyenne office page)",
+            "publisher": "National Weather Service, Cheyenne, WY Weather Forecast Office",
+            "kind": "regulator",
+            "url": "https://www.weather.gov/cys/nwr",
+            "published": null,
+            "updated": null,
+            "reviewed": null,
+            "verified_on": "2026-10-29",
+            "human_link_check": false,
+            "supports": "NOAA Weather Radio All Hazards is a nationwide network broadcasting official warnings, watches, forecasts and other hazard information 24 hours a day; it works with the FCC's Emergency Alert System; a special radio is needed; useful receiver features are Tone Alert, Specific Area Message Encoding (SAME) to alert for your county only, and battery backup.",
+            "notes": "A regional (Cheyenne) office page, kept because it is the URL listed in the register placeholder. It carries no publication or review date. The national page (health-nws-nwr-national) is the one cited for frequencies and coverage. Upgrades the register placeholder of the same id."
+          }
+        }
+      ]
+    },
+    {
+      "review_alias": "https://www.weather.gov/nwr/",
+      "review_status": "pending-human-source-and-reading-scope-review",
+      "reviewer": null,
+      "reviewed_on": null,
+      "variants": [
+        {
+          "origin": "health",
+          "source_file": "preparedness/sources/fragments/health.json",
+          "row_index": 2,
+          "source": {
+            "id": "health-nws-nwr-national",
+            "title": "NOAA Weather Radio All Hazards (national program page)",
+            "publisher": "National Weather Service / NOAA",
+            "kind": "regulator",
+            "url": "https://www.weather.gov/nwr/",
+            "published": null,
+            "updated": null,
+            "reviewed": null,
+            "verified_on": "2026-10-29",
+            "human_link_check": false,
+            "supports": "NWR is a nationwide network of radio stations broadcasting from the nearest NWS office; it also carries warnings for non-weather hazards (earthquakes, chemical releases, AMBER alerts, 911 telephone outages); more than 1,000 transmitters covering all 50 states, coastal waters, Puerto Rico, the U.S. Virgin Islands and U.S. Pacific territories; a special receiver or scanner is required; seven VHF frequencies (162.400 to 162.550 MHz); the page lists transmitters that are degraded or out of service and says to check county coverage listings for alternate transmitters.",
+            "notes": "Undated page. It displays a live list of transmitter outages, so its content changes continuously. Read scope: full page as returned, including the live outage list; the linked FAQ, alert-information and receiver pages were not opened."
+          }
+        },
+        {
+          "origin": "shelter",
+          "source_file": "preparedness/sources/fragments/shelter.json",
+          "row_index": 28,
+          "source": {
+            "id": "shelter-nws-nwr",
+            "title": "NOAA Weather Radio All Hazards",
+            "publisher": "National Weather Service (NOAA)",
+            "kind": "regulator",
+            "url": "https://www.weather.gov/nwr/",
+            "published": null,
+            "updated": null,
+            "reviewed": null,
+            "verified_on": "2026-10-29",
+            "human_link_check": false,
+            "supports": "NWR broadcasts official NWS warnings, watches and forecasts 24 hours a day; works with the Emergency Alert System; also carries non-weather hazard information including chemical releases; needs a special receiver; some transmitters are out of service and the county coverage listing should be checked.",
+            "notes": "Page shows live outage notices; no page date. Read: page text as rendered by the Firecrawl scraper on 2026-10-29; embedded video, images, and linked PDFs or handouts were not opened. human_link_check remains false."
+          }
+        }
+      ]
+    },
+    {
+      "review_alias": "https://www.weather.gov/safety/winter-during",
+      "review_status": "pending-human-source-and-reading-scope-review",
+      "reviewer": null,
+      "reviewed_on": null,
+      "variants": [
+        {
+          "origin": "hist-field",
+          "source_file": "preparedness/sources/fragments/hist-field.json",
+          "row_index": 12,
+          "source": {
+            "id": "hist-field-nws-winter-during",
+            "title": "What To Do If You're Caught in a Winter Storm",
+            "publisher": "NOAA National Weather Service",
+            "kind": "regulator",
+            "url": "https://www.weather.gov/safety/winter-during",
+            "published": null,
+            "updated": null,
+            "reviewed": null,
+            "verified_on": "2026-10-29",
+            "human_link_check": false,
+            "supports": "In a vehicle: let someone know where you are going and what route you will take so a search can start in the right place; if the car is stuck, stay in the vehicle because leaving means becoming disoriented quickly in wind-driven snow and cold; be visible to rescuers. The page also gives engine-running and exhaust-pipe instructions to avoid carbon monoxide poisoning, which this archive does not reproduce.",
+            "notes": "Page carries no visible update date (metadata shows 2019). Contains engine-running timing and a statement that outdoors with no shelter one should 'build a fire for heat'; neither is reproduced or endorsed by this archive. Flagged for the safety reviewer of fire-making-across-time."
+          }
+        },
+        {
+          "origin": "shelter",
+          "source_file": "preparedness/sources/fragments/shelter.json",
+          "row_index": 40,
+          "source": {
+            "id": "shelter-nws-winter-during",
+            "title": "What To Do If You're Caught in a Winter Storm",
+            "publisher": "National Weather Service (NOAA)",
+            "kind": "regulator",
+            "url": "https://www.weather.gov/safety/winter-during",
+            "published": null,
+            "updated": null,
+            "reviewed": null,
+            "verified_on": "2026-11-01",
+            "human_link_check": false,
+            "supports": "If your car gets stuck: stay in the vehicle, run the motor about 10 minutes each hour for heat, open the window a little for fresh air while running it to avoid carbon monoxide poisoning, clear snow from the exhaust pipe, be visible to rescuers (dome light at night, bright cloth, raise the hood after snow stops); indoors: use fire safeguards and ventilate when using a fireplace, wood stove or space heater, make sure a gas furnace vent is not blocked by snow; close off rooms, stuff towels in cracks, close curtains.",
+            "notes": "Read: the whole page text, extracted from a direct download on 2026-11-01 (the 'Outside' section includes advice to build a fire for heat when no shelter is nearby, which is not reproduced in these guides). No page date. Corroborates the CDC 10-minutes-per-hour stranded-vehicle instruction. human_link_check remains false."
+          }
+        }
+      ]
+    }
+  ],
+  "duplicate_id_review": [
+    {
+      "source_id": "cdc-co-generators",
+      "review_status": "pending-human-source-and-reading-scope-review",
+      "reviewer": null,
+      "reviewed_on": null,
+      "variants": [
+        {
+          "origin": "base",
+          "source_file": "preparedness/sources/register.json",
+          "row_index": 25,
+          "source": {
+            "id": "cdc-co-generators",
+            "title": "Avoiding carbon monoxide poisoning",
+            "publisher": "CDC",
+            "kind": "regulator",
+            "url": "https://www.cdc.gov/natural-disasters/psa-toolkit/avoiding-carbon-monoxide-poisoning.html",
+            "verified_on": null,
+            "human_link_check": false,
+            "notes": "Listed in Issue #136; for article 12."
+          }
+        },
+        {
+          "origin": "shelter",
+          "source_file": "preparedness/sources/fragments/shelter.json",
+          "row_index": 1,
+          "source": {
+            "id": "cdc-co-generators",
+            "title": "Avoiding Carbon Monoxide Poisoning (disaster PSA)",
+            "publisher": "Centers for Disease Control and Prevention (National Center for Environmental Health)",
+            "kind": "regulator",
+            "url": "https://www.cdc.gov/natural-disasters/psa-toolkit/avoiding-carbon-monoxide-poisoning.html",
+            "published": "2024-05-15",
+            "updated": "2023-11-01",
+            "reviewed": "2026-08-26",
+            "verified_on": "2026-10-29",
+            "human_link_check": false,
+            "supports": "During a power outage never use generators, grills or other gasoline-, propane- or charcoal-burning devices inside the home, garage or carport or near doors, windows or vents; CO is odorless and colorless; 'kills more than 500 Americans each year'; do not heat the home with a gas oven; keep generators at least 20 ft from doors, windows and vents; 800-CDC-INFO.",
+            "notes": "Upgraded from the register placeholder. The visible 'Updated' date (Nov 1, 2023) precedes the 'Published' date (May 15, 2024); both recorded as shown. The '500 a year' figure differs from the same agency's CO basics page ('more than 400', non-fire); see shelter-cdc-co-basics. Read: page text as rendered by the Firecrawl scraper on 2026-10-29; embedded video, images, and linked PDFs or handouts were not opened. human_link_check remains false."
+          }
+        }
+      ]
+    },
+    {
+      "source_id": "cdc-hygiene-emergency",
+      "review_status": "pending-human-source-and-reading-scope-review",
+      "reviewer": null,
+      "reviewed_on": null,
+      "variants": [
+        {
+          "origin": "base",
+          "source_file": "preparedness/sources/register.json",
+          "row_index": 26,
+          "source": {
+            "id": "cdc-hygiene-emergency",
+            "title": "Guidelines for personal hygiene during an emergency",
+            "publisher": "CDC",
+            "kind": "regulator",
+            "url": "https://www.cdc.gov/water-emergency/safety/guidelines-for-personal-hygiene-during-an-emergency.html",
+            "verified_on": null,
+            "human_link_check": false,
+            "notes": "Listed in Issue #136; for article 18."
+          }
+        },
+        {
+          "origin": "health",
+          "source_file": "preparedness/sources/fragments/health.json",
+          "row_index": 0,
+          "source": {
+            "id": "cdc-hygiene-emergency",
+            "title": "Guidelines for Personal Hygiene During an Emergency",
+            "publisher": "Centers for Disease Control and Prevention (National Center for Environmental Health)",
+            "kind": "regulator",
+            "url": "https://www.cdc.gov/water-emergency/safety/guidelines-for-personal-hygiene-during-an-emergency.html",
+            "published": "2024-09-16",
+            "updated": "2024-07-18",
+            "reviewed": "2024-08-05",
+            "verified_on": "2026-10-29",
+            "human_link_check": false,
+            "supports": "Handwashing with soap and water for at least 20 seconds; boiled or disinfected water for handwashing only if local authorities or a doctor recommend extra caution; a temporary handwashing station from a large water jug; alcohol-based sanitizer with at least 60% alcohol and its limits (does not eliminate all germs, may not remove chemicals, less effective on visibly dirty or greasy hands); bathing guidance and when not to bathe (sewage, toxic chemicals, flood-contaminated rivers, streams and lakes); brushing teeth with clean water; protecting wounds (Vibrio, waterproof bandage, seek care for redness, swelling or oozing); pointer to CDC diapering fact sheets.",
+            "notes": "Page shows 'Updated: July 18, 2024' before 'Published: September 16, 2024'; both recorded as shown. Upgrades the register placeholder of the same id."
+          }
+        }
+      ]
+    },
+    {
+      "source_id": "fsis-emergency-foods",
+      "review_status": "pending-human-source-and-reading-scope-review",
+      "reviewer": null,
+      "reviewed_on": null,
+      "variants": [
+        {
+          "origin": "base",
+          "source_file": "preparedness/sources/register.json",
+          "row_index": 23,
+          "source": {
+            "id": "fsis-emergency-foods",
+            "title": "What foods should I keep in my house for emergencies?",
+            "publisher": "USDA FSIS",
+            "kind": "regulator",
+            "url": "https://ask.fsis.usda.gov/article/What-foods-should-I-keep-in-my-house-for-emergencies",
+            "verified_on": null,
+            "human_link_check": false,
+            "notes": "Listed in Issue #136; for article 8."
+          }
+        },
+        {
+          "origin": "food",
+          "source_file": "preparedness/sources/fragments/food.json",
+          "row_index": 1,
+          "source": {
+            "id": "fsis-emergency-foods",
+            "title": "What foods should I keep in my house for emergencies?",
+            "publisher": "USDA Food Safety and Inspection Service (Ask USDA)",
+            "kind": "regulator",
+            "url": "https://ask.fsis.usda.gov/article/What-foods-should-I-keep-in-my-house-for-emergencies",
+            "published": null,
+            "updated": "2025-01-03",
+            "reviewed": null,
+            "verified_on": "2026-10-29",
+            "human_link_check": false,
+            "supports": "Keep nonperishable food and a 3-day supply of commercially bottled water per person (minimum 3 gallons); example foods; choose small cans so there are no leftovers needing refrigeration; include infant formula, pet food and special-diet foods; have a manual can opener; periodically use and refresh the supply.",
+            "notes": "Upgraded from the register placeholder. The first fetch returned only the page title; a second fetch with a render wait returned the full text."
+          }
+        }
+      ]
+    },
+    {
+      "source_id": "fsis-power-failure",
+      "review_status": "pending-human-source-and-reading-scope-review",
+      "reviewer": null,
+      "reviewed_on": null,
+      "variants": [
+        {
+          "origin": "base",
+          "source_file": "preparedness/sources/register.json",
+          "row_index": 22,
+          "source": {
+            "id": "fsis-power-failure",
+            "title": "How do you keep food safe during a power failure?",
+            "publisher": "USDA FSIS",
+            "kind": "regulator",
+            "url": "https://ask.fsis.usda.gov/article/How-do-you-keep-food-safe-during-a-power-failure",
+            "verified_on": null,
+            "human_link_check": false,
+            "notes": "Listed in Issue #136; for article 9."
+          }
+        },
+        {
+          "origin": "food",
+          "source_file": "preparedness/sources/fragments/food.json",
+          "row_index": 0,
+          "source": {
+            "id": "fsis-power-failure",
+            "title": "How do you keep food safe during a power failure?",
+            "publisher": "USDA Food Safety and Inspection Service (Ask USDA)",
+            "kind": "regulator",
+            "url": "https://ask.fsis.usda.gov/article/How-do-you-keep-food-safe-during-a-power-failure",
+            "published": null,
+            "updated": "2024-12-17",
+            "reviewed": null,
+            "verified_on": "2026-10-29",
+            "human_link_check": false,
+            "supports": "A refrigerator keeps food cold for about 4 hours if unopened; a full stand-alone freezer holds temperature about 48 hours (24 if half full) with the door closed; a refrigerator's freezer compartment may not hold as long; group freezer packages together.",
+            "notes": "Short Q&A that points to the longer FSIS emergencies page. Upgraded from the register placeholder."
+          }
+        },
+        {
+          "origin": "shelter",
+          "source_file": "preparedness/sources/fragments/shelter.json",
+          "row_index": 41,
+          "source": {
+            "id": "fsis-power-failure",
+            "title": "How do you keep food safe during a power failure? (Ask USDA)",
+            "publisher": "USDA Food Safety and Inspection Service (Ask USDA)",
+            "kind": "regulator",
+            "url": "https://ask.fsis.usda.gov/article/How-do-you-keep-food-safe-during-a-power-failure",
+            "published": null,
+            "updated": "2024-12-17",
+            "reviewed": null,
+            "verified_on": "2026-11-01",
+            "human_link_check": false,
+            "supports": "A refrigerator keeps food cold for about 4 hours if unopened; a full stand-alone freezer holds its temperature for approximately 48 hours (24 hours if half full) if the door stays closed; the freezer compartment of a refrigerator-freezer may not keep food frozen as long; group freezer packages together.",
+            "notes": "Upgraded from the register placeholder. Read: the whole short article as rendered by Firecrawl on 2026-11-01. Page shows 'Last Updated: Dec 17, 2024'. Agrees with the CDC, FEMA and Ready.gov timings. human_link_check remains false."
+          }
+        }
+      ]
+    },
+    {
+      "source_id": "loc-pioneer-diaries",
+      "review_status": "pending-human-source-and-reading-scope-review",
+      "reviewer": null,
+      "reviewed_on": null,
+      "variants": [
+        {
+          "origin": "base",
+          "source_file": "preparedness/sources/register.json",
+          "row_index": 31,
+          "source": {
+            "id": "loc-pioneer-diaries",
+            "title": "Pioneer diaries collection",
+            "publisher": "Library of Congress",
+            "kind": "archive",
+            "url": "https://www.loc.gov/item/2002564479/",
+            "verified_on": null,
+            "human_link_check": false,
+            "notes": "Listed in Issue #136; for articles 24 and 34."
+          }
+        },
+        {
+          "origin": "hist-field",
+          "source_file": "preparedness/sources/fragments/hist-field.json",
+          "row_index": 1,
+          "source": {
+            "id": "loc-pioneer-diaries",
+            "title": "Trails to Utah and the Pacific diaries and letters, 1846-1869 (Library of Congress American Memory collection)",
+            "publisher": "Library of Congress, with Harold B. Lee Library (Brigham Young University) and the Utah Academic Library Consortium",
+            "kind": "archive",
+            "url": "https://www.loc.gov/item/2002564479/",
+            "published": "2002",
+            "updated": null,
+            "reviewed": null,
+            "verified_on": "2026-10-29",
+            "human_link_check": false,
+            "supports": "Catalogue record for a digitized collection of 49 diaries, 43 maps, 82 photographs and illustrations, and seven published guides for emigrants, about Mormon and other pioneers moving west to Utah, Montana and the Pacific between 1847 and 1869 (collection title runs from 1846).",
+            "notes": "Upgraded from the register placeholder; the placeholder title 'Pioneer diaries collection' was not the record's actual title. The drafting agent read the catalogue record only, NOT the diaries. The collection is mostly Latter Day Saint migration to Utah and is not a Donner Party source; it is cited only as a place to read ordinary overland provisioning in the travelers' own words."
+          }
+        },
+        {
+          "origin": "hist-food",
+          "source_file": "preparedness/sources/fragments/hist-food.json",
+          "row_index": 12,
+          "source": {
+            "id": "loc-pioneer-diaries",
+            "title": "Trails to Utah and the Pacific diaries and letters, 1846-1869",
+            "publisher": "Library of Congress (American Memory-derived collection; source material from Brigham Young University and Utah Academic Libraries Consortium)",
+            "kind": "archive",
+            "url": "https://www.loc.gov/item/2002564479/",
+            "published": null,
+            "updated": null,
+            "reviewed": null,
+            "verified_on": "2026-10-30",
+            "human_link_check": false,
+            "supports": "The collection comprises 49 diaries, 43 maps, 82 photographs and illustrations and seven published guides for emigrants, covering Mormon and other pioneers moving to Utah, Montana and the Pacific between 1847 and 1869.",
+            "notes": "Only the collection-level description was read. We did not open individual diaries, so no diary text is quoted or paraphrased from it. The placeholder titled this 'Pioneer diaries collection'; this is the actual title. Extent read: the collection-level description only. No individual diary was opened."
+          }
+        }
+      ]
+    },
+    {
+      "source_id": "loc-prairie-traveler",
+      "review_status": "pending-human-source-and-reading-scope-review",
+      "reviewer": null,
+      "reviewed_on": null,
+      "variants": [
+        {
+          "origin": "base",
+          "source_file": "preparedness/sources/register.json",
+          "row_index": 32,
+          "source": {
+            "id": "loc-prairie-traveler",
+            "title": "The Prairie Traveler (Marcy)",
+            "publisher": "Library of Congress",
+            "kind": "archive",
+            "url": "https://www.loc.gov/resource/gdcmassbookdig.prairietravelerh01marc/?st=list",
+            "verified_on": null,
+            "human_link_check": false,
+            "notes": "Listed in Issue #136; for articles 24 and 34."
+          }
+        },
+        {
+          "origin": "hist-field",
+          "source_file": "preparedness/sources/fragments/hist-field.json",
+          "row_index": 0,
+          "source": {
+            "id": "loc-prairie-traveler",
+            "title": "The prairie traveler. A hand-book for overland expeditions (Randolph B. Marcy), Harper & Brothers, 1861 printing",
+            "publisher": "Library of Congress (Joseph Meredith Toner Collection, digitized book)",
+            "kind": "primary-digitized",
+            "url": "https://www.loc.gov/resource/gdcmassbookdig.prairietravelerh01marc/?st=list",
+            "published": "1861",
+            "updated": null,
+            "reviewed": null,
+            "verified_on": "2026-10-29",
+            "human_link_check": false,
+            "supports": "Digitized public-domain handbook by Capt. Randolph B. Marcy, U.S. Army, 'published by authority of the War Department'. Contents list (seven chapters, read in full) shows chapters on routes, wagons and teams, stores and provisions (including anti-scorbutics), camp life including fuel and making fires, and guides. Preface says it draws on the author's frontier experience and on officers' reports for the routes.",
+            "notes": "Upgraded from the register placeholder. The drafting agent read the LOC catalogue record and the OCR snippets of the first 25 of 398 page images (title page, copyright page, preface, both contents pages and the opening of chapter I). The two contents pages (images 17 and 18) were read in full on 2026-11-01; the book's full-text file could not be fetched (404), NOT the body chapters. No passage from the chapters is quoted or relied on. The LOC copy is the 1861 printing; the title page shows a copyright entry of 1860, and the work postdates the 1846-47 events discussed in pioneer-supply-chains-failed. Rights: LOC says books in this collection are in the public domain."
+          }
+        },
+        {
+          "origin": "hist-food",
+          "source_file": "preparedness/sources/fragments/hist-food.json",
+          "row_index": 11,
+          "source": {
+            "id": "loc-prairie-traveler",
+            "title": "The prairie traveler. A hand-book for overland expeditions (Library of Congress digitized book)",
+            "publisher": "Library of Congress (Joseph Meredith Toner Collection); Randolph B. Marcy, Harper & Brothers, 1861",
+            "kind": "primary-digitized",
+            "url": "https://www.loc.gov/resource/gdcmassbookdig.prairietravelerh01marc/?st=list",
+            "published": "1861",
+            "updated": null,
+            "reviewed": null,
+            "verified_on": "2026-10-29",
+            "human_link_check": false,
+            "supports": "Catalogue and contents: 'published by authority of the War Department'; Chapter I contents list 'Stores and Provisions ... Pemmican ... Antiscorbutics ... Cold Flour'; Chapter V includes 'Jerking Meat'; rights statement says the book is in the public domain.",
+            "notes": "The LOC page-level text view did not load for us; the passages we quote were read in the Internet Archive text of the same scan (see hist-food-marcy-prairie-traveler-text). Extent read: the item landing page (catalogue record, contents list and a few page-level OCR excerpts); the page-level text view did not load."
+          }
+        }
+      ]
+    },
+    {
+      "source_id": "nchfp-historical-origins",
+      "review_status": "pending-human-source-and-reading-scope-review",
+      "reviewer": null,
+      "reviewed_on": null,
+      "variants": [
+        {
+          "origin": "base",
+          "source_file": "preparedness/sources/register.json",
+          "row_index": 33,
+          "source": {
+            "id": "nchfp-historical-origins",
+            "title": "Historical origins of food preservation",
+            "publisher": "NCHFP",
+            "kind": "extension",
+            "url": "https://nchfp.uga.edu/resources/entry/historical-origins-of-food-preservation",
+            "verified_on": null,
+            "human_link_check": false,
+            "notes": "Listed in Issue #136; for article 35."
+          }
+        },
+        {
+          "origin": "hist-food",
+          "source_file": "preparedness/sources/fragments/hist-food.json",
+          "row_index": 13,
+          "source": {
+            "id": "nchfp-historical-origins",
+            "title": "Historical Origins of Food Preservation",
+            "publisher": "National Center for Home Food Preservation, University of Georgia (Brian A. Nummer, Ph.D., May 2002)",
+            "kind": "extension",
+            "url": "https://nchfp.uga.edu/resources/entry/historical-origins-of-food-preservation",
+            "published": "2002-05",
+            "updated": null,
+            "reviewed": null,
+            "verified_on": "2026-10-29",
+            "human_link_check": false,
+            "supports": "Overview of drying, freezing, fermenting, pickling, curing, jam and jelly, and canning; Appert's 1790s discovery and about 1806 French Navy trial; Durand's tin cans in 1810; Pasteur 1864; Chevalier-Appert's 1851 pressure retort; nitrites and C. botulinum recognised in the 1920s.",
+            "notes": "A 2002 overview that gives some claims without citation (for example 12,000 B.C. drying, ketchup origins). We use only the dated canning, curing and refrigeration statements, and flag the rest as undocumented. Extent read: full page text, live scrape."
+          }
+        }
+      ]
+    },
+    {
+      "source_id": "nchfp-home",
+      "review_status": "pending-human-source-and-reading-scope-review",
+      "reviewer": null,
+      "reviewed_on": null,
+      "variants": [
+        {
+          "origin": "base",
+          "source_file": "preparedness/sources/register.json",
+          "row_index": 19,
+          "source": {
+            "id": "nchfp-home",
+            "title": "National Center for Home Food Preservation",
+            "publisher": "NCHFP, University of Georgia",
+            "kind": "extension",
+            "url": "https://nchfp.uga.edu/",
+            "verified_on": null,
+            "human_link_check": false,
+            "notes": "Listed in Issue #136; not yet read for a specific claim."
+          }
+        },
+        {
+          "origin": "food",
+          "source_file": "preparedness/sources/fragments/food.json",
+          "row_index": 2,
+          "source": {
+            "id": "nchfp-home",
+            "title": "National Center for Home Food Preservation",
+            "publisher": "NCHFP, University of Georgia",
+            "kind": "extension",
+            "url": "https://nchfp.uga.edu/",
+            "published": null,
+            "updated": null,
+            "reviewed": null,
+            "verified_on": "2026-10-29",
+            "human_link_check": false,
+            "supports": "Describes itself as the source of current research-based recommendations for most methods of home food preservation, established with USDA funding to address food-safety concerns; sections on canning, pickling, fermenting, freezing, drying, curing and smoking, and storing.",
+            "notes": "Home page only. Used as the hub link. Upgraded from the register placeholder."
+          }
+        },
+        {
+          "origin": "hist-home",
+          "source_file": "preparedness/sources/fragments/hist-home.json",
+          "row_index": 0,
+          "source": {
+            "id": "nchfp-home",
+            "title": "National Center for Home Food Preservation",
+            "publisher": "NCHFP, University of Georgia",
+            "kind": "extension",
+            "url": "https://nchfp.uga.edu/",
+            "published": null,
+            "updated": null,
+            "reviewed": null,
+            "verified_on": "2026-10-29",
+            "human_link_check": false,
+            "supports": "Describes itself as a source of current research-based recommendations for most methods of home food preservation, established with USDA (CSREES) funding; separate sections for canning, pickling, fermenting, freezing, drying, curing and smoking, and storing; points to the University of Georgia Cooperative Extension book So Easy To Preserve (6th edition, reviewed and updated 2020).",
+            "notes": "Upgrades the register placeholder of the same id. Home page only; no specific recipe or process is taken from it. Reading depth: FULL: whole page read as markdown."
+          }
+        }
+      ]
+    },
+    {
+      "source_id": "nchfp-jerky",
+      "review_status": "pending-human-source-and-reading-scope-review",
+      "reviewer": null,
+      "reviewed_on": null,
+      "variants": [
+        {
+          "origin": "base",
+          "source_file": "preparedness/sources/register.json",
+          "row_index": 20,
+          "source": {
+            "id": "nchfp-jerky",
+            "title": "Jerky safety",
+            "publisher": "NCHFP",
+            "kind": "extension",
+            "url": "https://nchfp.uga.edu/how/dry/recipes/jerky",
+            "verified_on": null,
+            "human_link_check": false,
+            "notes": "Listed in Issue #136; for article 11."
+          }
+        },
+        {
+          "origin": "food",
+          "source_file": "preparedness/sources/fragments/food.json",
+          "row_index": 3,
+          "source": {
+            "id": "nchfp-jerky",
+            "title": "Jerky",
+            "publisher": "NCHFP, University of Georgia (extracted from So Easy to Preserve, 6th ed.)",
+            "kind": "extension",
+            "url": "https://nchfp.uga.edu/how/dry/recipes/jerky",
+            "published": null,
+            "updated": null,
+            "reviewed": null,
+            "verified_on": "2026-10-29",
+            "human_link_check": false,
+            "supports": "Jerky safety procedure: raw poultry generally not recommended; freeze pork and wild game 6 inches or thinner at 0 F or below for at least 30 days against trichinella; handling rules; wild-game cautions; reaching 160 F internally by heating in marinade before drying or in an oven after drying, without case hardening; slices no thicker than 1/4 inch; dry in a dehydrator or oven preheated to 140 F until a test piece cracks but does not break; ground-meat jerky is harder; home-dried jerky keeps 2 weeks at room temperature in a sealed container, longer refrigerated or frozen.",
+            "notes": "Page text credits \"So Easy to Preserve\", 6th ed. 2014 (Bulletin 989, UGA Cooperative Extension). No page-level date is shown. Upgraded from the register placeholder."
+          }
+        }
+      ]
+    },
+    {
+      "source_id": "nchfp-pressure-ground-meat",
+      "review_status": "pending-human-source-and-reading-scope-review",
+      "reviewer": null,
+      "reviewed_on": null,
+      "variants": [
+        {
+          "origin": "base",
+          "source_file": "preparedness/sources/register.json",
+          "row_index": 21,
+          "source": {
+            "id": "nchfp-pressure-ground-meat",
+            "title": "Ground or chopped meat (pressure canning)",
+            "publisher": "NCHFP",
+            "kind": "extension",
+            "url": "https://nchfp.uga.edu/how/can/preparing-and-canning-poultry-red-meats-and-seafoods/meat-ground-or-chopped/",
+            "verified_on": null,
+            "human_link_check": false,
+            "notes": "Listed in Issue #136; for article 10."
+          }
+        },
+        {
+          "origin": "food",
+          "source_file": "preparedness/sources/fragments/food.json",
+          "row_index": 4,
+          "source": {
+            "id": "nchfp-pressure-ground-meat",
+            "title": "Meat, Ground or Chopped (pressure canning)",
+            "publisher": "NCHFP, University of Georgia (adapted from the USDA Complete Guide to Home Canning)",
+            "kind": "extension",
+            "url": "https://nchfp.uga.edu/how/can/preparing-and-canning-poultry-red-meats-and-seafoods/meat-ground-or-chopped/",
+            "published": null,
+            "updated": null,
+            "reviewed": null,
+            "verified_on": "2026-10-29",
+            "human_link_check": false,
+            "supports": "A tested pressure-canning process for ground or chopped meat: it must be read with Using Pressure Canners; process time varies by jar size, and canner pressure varies by dial-gauge versus weighted-gauge canner and by elevation band (separate tables). The tables are NOT reproduced in the article.",
+            "notes": "Page text says it was adapted from the Complete Guide to Home Canning, Agriculture Information Bulletin No. 539, USDA, revised 2015. Upgraded from the register placeholder."
+          }
+        }
+      ]
+    },
+    {
+      "source_id": "nps-lewis-clark-salt",
+      "review_status": "pending-human-source-and-reading-scope-review",
+      "reviewer": null,
+      "reviewed_on": null,
+      "variants": [
+        {
+          "origin": "base",
+          "source_file": "preparedness/sources/register.json",
+          "row_index": 29,
+          "source": {
+            "id": "nps-lewis-clark-salt",
+            "title": "How to make salt (Lewis and Clark)",
+            "publisher": "National Park Service",
+            "kind": "regulator",
+            "url": "https://www.nps.gov/articles/000/how-to-make-salt.htm",
+            "verified_on": null,
+            "human_link_check": false,
+            "notes": "Listed in Issue #136; for article 23."
+          }
+        },
+        {
+          "origin": "hist-food",
+          "source_file": "preparedness/sources/fragments/hist-food.json",
+          "row_index": 0,
+          "source": {
+            "id": "nps-lewis-clark-salt",
+            "title": "How To Make Salt",
+            "publisher": "National Park Service (Lewis and Clark National Historic Trail, 'Pivotal Places')",
+            "kind": "museum",
+            "url": "https://www.nps.gov/articles/000/how-to-make-salt.htm",
+            "published": null,
+            "updated": "2023-11-28",
+            "reviewed": null,
+            "verified_on": "2026-10-29",
+            "human_link_check": false,
+            "supports": "Field, Bratton and Gibson made salt near a Clatsop-Nehalem village on the Oregon coast in winter 1805-1806; equipment named (five kettles, wood, rocks, iron kegs, seawater); NPS says almost a gallon a day working around the clock; Lewis's 'very tedious opperation' and mid-February stock of about 20 gallons with 12 secured in two kegs; Clark's remark that the salt was not so strong as rock salt.",
+            "notes": "Interpretive article, not a research paper. NPS says 'almost a gallon of salt a day'; the journals say 3 quarts to a gallon a day (5 Jan 1806). Extent read: full page text (single short article), live scrape."
+          }
+        }
+      ]
+    },
+    {
+      "source_id": "nps-salt-works",
+      "review_status": "pending-human-source-and-reading-scope-review",
+      "reviewer": null,
+      "reviewed_on": null,
+      "variants": [
+        {
+          "origin": "base",
+          "source_file": "preparedness/sources/register.json",
+          "row_index": 30,
+          "source": {
+            "id": "nps-salt-works",
+            "title": "Salt Works, Oregon",
+            "publisher": "National Park Service",
+            "kind": "regulator",
+            "url": "https://www.nps.gov/places/salt-works-oregon.htm",
+            "verified_on": null,
+            "human_link_check": false,
+            "notes": "Listed in Issue #136; for article 23."
+          }
+        },
+        {
+          "origin": "hist-food",
+          "source_file": "preparedness/sources/fragments/hist-food.json",
+          "row_index": 1,
+          "source": {
+            "id": "nps-salt-works",
+            "title": "Salt Works, Oregon",
+            "publisher": "National Park Service (Lewis and Clark National Historic Trail / Lewis and Clark National Historical Park)",
+            "kind": "museum",
+            "url": "https://www.nps.gov/places/salt-works-oregon.htm",
+            "published": null,
+            "updated": "2023-11-28",
+            "reviewed": null,
+            "verified_on": "2026-10-29",
+            "human_link_check": false,
+            "supports": "The party ran out of salt and chose to winter near the ocean to make it; salt valued for preserving meat; the three salt makers befriended people of the Clatsop-Nehalem village, who sold them whale blubber; about twenty gallons made by Lewis's count; the site is a replica salt works in Seaside, Oregon.",
+            "notes": "NPS says Clark did not mind going without salt while Lewis found unsalted food bland; the journals confirm the contrast (5 Jan 1806). Extent read: full page text, live scrape."
+          }
+        }
+      ]
+    },
+    {
+      "source_id": "nws-nwr",
+      "review_status": "pending-human-source-and-reading-scope-review",
+      "reviewer": null,
+      "reviewed_on": null,
+      "variants": [
+        {
+          "origin": "base",
+          "source_file": "preparedness/sources/register.json",
+          "row_index": 27,
+          "source": {
+            "id": "nws-nwr",
+            "title": "NOAA Weather Radio",
+            "publisher": "National Weather Service",
+            "kind": "regulator",
+            "url": "https://www.weather.gov/cys/nwr",
+            "verified_on": null,
+            "human_link_check": false,
+            "notes": "Listed in Issue #136; for article 19."
+          }
+        },
+        {
+          "origin": "health",
+          "source_file": "preparedness/sources/fragments/health.json",
+          "row_index": 1,
+          "source": {
+            "id": "nws-nwr",
+            "title": "NOAA Weather Radio (NWS Cheyenne office page)",
+            "publisher": "National Weather Service, Cheyenne, WY Weather Forecast Office",
+            "kind": "regulator",
+            "url": "https://www.weather.gov/cys/nwr",
+            "published": null,
+            "updated": null,
+            "reviewed": null,
+            "verified_on": "2026-10-29",
+            "human_link_check": false,
+            "supports": "NOAA Weather Radio All Hazards is a nationwide network broadcasting official warnings, watches, forecasts and other hazard information 24 hours a day; it works with the FCC's Emergency Alert System; a special radio is needed; useful receiver features are Tone Alert, Specific Area Message Encoding (SAME) to alert for your county only, and battery backup.",
+            "notes": "A regional (Cheyenne) office page, kept because it is the URL listed in the register placeholder. It carries no publication or review date. The national page (health-nws-nwr-national) is the one cited for frequencies and coverage. Upgrades the register placeholder of the same id."
+          }
+        }
+      ]
+    },
+    {
+      "source_id": "ready-are-you-ready",
+      "review_status": "pending-human-source-and-reading-scope-review",
+      "reviewer": null,
+      "reviewed_on": null,
+      "variants": [
+        {
+          "origin": "base",
+          "source_file": "preparedness/sources/register.json",
+          "row_index": 28,
+          "source": {
+            "id": "ready-are-you-ready",
+            "title": "Are You Ready? guide",
+            "publisher": "FEMA / Ready.gov",
+            "kind": "regulator",
+            "url": "https://www.ready.gov/sites/default/files/2021-11/are-you-ready-guide.pdf",
+            "verified_on": null,
+            "human_link_check": false,
+            "notes": "Listed in Issue #136; for articles 1 and 15."
+          }
+        },
+        {
+          "origin": "start",
+          "source_file": "preparedness/sources/fragments/start.json",
+          "row_index": 0,
+          "source": {
+            "id": "ready-are-you-ready",
+            "title": "Are You Ready? An In-Depth Guide to Citizen Preparedness (P-2064, September 2020)",
+            "publisher": "FEMA / Ready.gov",
+            "kind": "regulator",
+            "url": "https://www.ready.gov/sites/default/files/2021-11/are-you-ready-guide.pdf",
+            "published": "2020-09",
+            "updated": null,
+            "reviewed": null,
+            "verified_on": "2026-10-29",
+            "human_link_check": false,
+            "supports": "Fetched the full 36-page text; read the contents list and the sections cited here (introduction, protective actions, financial preparedness, Make a Plan, supplies, documents, practice schedule). The hazard-by-hazard sections were not read. Three-step frame (know your risks, make a plan, take action); first moves when something happens without warning (assess the situation, decide to stay or change location); family communication plan with an out-of-state contact reachable two ways and a wallet or digital copy for everyone; evacuation guidelines (meeting places in several directions, half-tank rule, one car per family, leave a note); basic kit contents and the 'at least 72 hours' framing; water of 1 gallon per person per day for 3, 7 or even 14 days depending on location; cash in small bills with the highest a twenty; N95 respirators; kit maintenance (first in, first out; discard swollen, dented or corroded cans; check needs every six months); critical-document storage; practice schedule and one-year timeline.",
+            "notes": "September 2020 edition, hosted under a 2021-11 upload path. Older than the Ready.gov web pages, so where they differ the web pages are newer. Upgraded from a placeholder in register.json. The power-outage section says 'If the power is out for more than a day, discard any medication that should be refrigerated, unless the drug's label says otherwise' and uses a two-hour 40 F food rule; FEMA's December 2023 power-outage fact sheet is newer and differs."
+          }
+        }
+      ]
+    },
+    {
+      "source_id": "usfa-fire-escape",
+      "review_status": "pending-human-source-and-reading-scope-review",
+      "reviewer": null,
+      "reviewed_on": null,
+      "variants": [
+        {
+          "origin": "base",
+          "source_file": "preparedness/sources/register.json",
+          "row_index": 24,
+          "source": {
+            "id": "usfa-fire-escape",
+            "title": "Home fire escape plans",
+            "publisher": "U.S. Fire Administration",
+            "kind": "regulator",
+            "url": "https://www.usfa.fema.gov/prevention/home-fires/prepare-for-fire/home-fire-escape-plans/index.html",
+            "verified_on": null,
+            "human_link_check": false,
+            "notes": "Listed in Issue #136; for article 13."
+          }
+        },
+        {
+          "origin": "shelter",
+          "source_file": "preparedness/sources/fragments/shelter.json",
+          "row_index": 0,
+          "source": {
+            "id": "usfa-fire-escape",
+            "title": "Home Fire Escape Plans",
+            "publisher": "U.S. Fire Administration",
+            "kind": "regulator",
+            "url": "https://www.usfa.fema.gov/prevention/home-fires/prepare-for-fire/home-fire-escape-plans/index.html",
+            "published": null,
+            "updated": null,
+            "reviewed": null,
+            "verified_on": "2026-10-29",
+            "human_link_check": false,
+            "supports": "Residents could have less than 2 minutes to escape once the smoke alarm sounds; draw a map with all doors and windows; two ways out of every room; keep doors and windows unblocked; outside meeting place in front of the home; practice with everyone; use the test button to start the drill; high-rise and condominium steps (leave and close the door, pull the alarm, use stairs not elevator unless directed, stay at the meeting place, tell the fire department if someone is trapped).",
+            "notes": "Upgraded from the register placeholder. Page shows no published or updated date. Handouts and pictographs on the page were not opened. Read: page text as rendered by the Firecrawl scraper on 2026-10-29; embedded video, images, and linked PDFs or handouts were not opened. human_link_check remains false."
+          }
+        }
+      ]
+    }
+  ],
+  "article_7_chemical_claims_reviewed": false,
+  "article_7_cdc_claims_reviewed": false,
+  "article_20_readygov_claim_reviewed": false,
+  "independent_qd_pass": false,
+  "medical_safety_verified": false,
+  "privacy_approved": false,
+  "merchant_offer_approved": false,
+  "publication_authorized": false,
+  "may_merge": false
+}
