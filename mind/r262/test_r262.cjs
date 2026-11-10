@@ -32,11 +32,12 @@ function validate(b){
  try{j=JSON.parse(b.matrix);}catch(e){return ["matrix JSON invalid: "+String(e)]}
  const a=b.article,h=b.hub,p=b.plan;
  check(a.trim().split(/\s+/).length>=1800,"article < 1800 words");
- for(const phrase of ["Stroop","MacLeod","1935","47.0 seconds","74.3%","Puységur","https://finalvestige.com/focus/","UNPUBLISHED","NOT","FTC"])
+ for(const phrase of ["Stroop","MacLeod","1935","47.0 seconds","74.3%","Puységur","https://finalvestige.com/focus/","Unpublished","No commerce","FTC"])
    check(a.includes(phrase),"article lacks "+phrase);
  check(a.includes("https://doi.org/10.1037/h0054651"),"original paper missing");
  check(a.includes("https://pubmed.ncbi.nlm.nih.gov/2034749/"),"theory review missing");
  check(!/href\s*=\s*["'][^"']*(zen12|inspire3|payhip)/i.test(a),"article commercial link");
+ check(!/\]\(https?:\/\/(?:www\.)?(?:zen12\.com|inspire3\.com|payhip\.com)[^)]*\)/i.test(a),"article commercial markdown link");
  check(!/affiliate recommendation appears here|buy now|affiliate purchase link/i.test(a),"article commercial endorsement");
  check(/<html lang="en">/.test(h),"hub lang");
  check(/name="robots" content="noindex,nofollow"/.test(h),"hub not noindexed");
@@ -53,7 +54,7 @@ function validate(b){
  check(!/href\s*=\s*["'][^"']*(?:zen12|inspire3|payhip)/i.test(h),"hub has merchant or affiliate link");
  check(!/autoplay/i.test(h.replace(/no autoplay/gi,"")),"hub autoplay");
  check(/<details>/.test(h)&&/<summary>/.test(h),"optional no-JS film absent");
- const times=[...h.matchAll(/<time>(\d\d:\d\d)–(\d\d:\d)<\/time>/g)].map(m=>[m[1],m[2]]);
+ const times=[...h.matchAll(/<time>(\d\d:\d\d)–(\d\d:\d\d)<\/time>/g)].map(m=>[m[1],m[2]]);
  check(times.length===7,"not seven timed captions");
  if(times.length===7){check(times[0][0]==="00:00"&&times[6][1]==="00:42","captions do not cover 42 sec");for(let i=0;i<6;i++)check(times[i][1]===times[i+1][0],"caption gap "+i);}
  check(Array.isArray(j.sources)&&j.sources.length>=16,"source record count");
