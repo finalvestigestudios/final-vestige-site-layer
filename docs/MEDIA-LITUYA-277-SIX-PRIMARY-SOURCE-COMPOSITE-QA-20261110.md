@@ -4,7 +4,7 @@
 
 ## Material findings: original figure and 2020 satellite mislabeled
 
-A November 10 **authenticated read-only** `posts_get(context=edit)` returned published post **277**, [*The Boat Went Over the Trees*](https://finalvestige.com/2026/08/19/the-boat-went-over-the-trees-lituya-bay/), last modified `2026-08-21T00:32:52`. **Six out of six** literal current `<img src>` URLs **and ALT descriptions** exactly match the frozen October 30 source inventory.
+A November 10 **authenticated read-only** `posts_get(context=edit)` returned published post **277**, [*The Boat Went Over the Trees*](https://finalvestige.com/2026/08/19/the-boat-went-over-the-trees-lituya-bay/), last modified `2026-08-21T00:32:52`. **Six out of six** literal current `<img src>` URLs match the frozen October 30 source inventory. The **six current ALT strings were captured from live WordPress**, but the archived October 30 offsite register contains **URLs only**, so no independent historical ALT equality is claimed.
 
 - **277:0 — P1 editorial mismatch:** the exact published image visibly is a **two-panel annotated scientific composite** (wave geometry and run-up model over an aerial overview). Its ALT says merely "Aerial view ... showing ... shoreline and runup scar." Annotation copyright is unverified. A stand-alone Don J. Miller USGS photo is **not a like-for-like replacement** for the diagram. Propose, for editorial review only: "Two-panel diagram of the 1958 Lituya Bay wave, combining annotated run-up geometry above an aerial view of the bay below."
 - **277:1 — research figure:** the ResearchGate original endpoint was inaccessible to the web retriever. The catalog calls it *Fig. 10* of a 2013 Robinson/Davies paper, comprising **three photographic panels** credited to USGS. The 2013 figure/arrangement may be copyrighted despite the underlying government photographs. Treat it as a compound research figure, not a generic archive JPG. Do not copy the ResearchGate derivative.
@@ -26,10 +26,10 @@ The image tool's ability to display an image is not a proof that the live site's
 
 ## Evidence and engineering
 
-- [Six literal original URLs, live ALTs, rights/retriever/960px candidate audit](../qa/media-recovery/lituya_277_six_usgs_nasa_composite_rights_20261110.json) — Git blob **`66f893e5171ee8a958c2e48f6871a8607249953e`**.
-- [Frozen independent six-source WordPress readback fixture](../qa/media-recovery/fixture_lituya_277_live_source_20261110.json) — Git blob **`8d73780c32d4aa6ef10d665503bb5109e64dc1ad`**.
-- [Full updated 288-slot recovery ledger](../qa/media-recovery/coverage_252_exact_pr1703_20261110.json) — Git blob **`24e0d408c1e8d3c696a613cf7d9ec5e9b78b677e`**.
-- [Offline fail-closed validator](../qa/media-recovery/validate_lituya_277_six_20261110.cjs) — Git blob **`77b57009d9b9b7b087c293d307d495c8d571dae2`**.
+- [Six literal original URLs, live ALTs, rights/retriever/960px candidate audit](../qa/media-recovery/lituya_277_six_usgs_nasa_composite_rights_20261110.json) — Git blob **`22b917e632f9429456c0582355f2f912c2ed614b`**.
+- [Frozen six-source WordPress readback fixture (derived from the same live read; not independent historical ALT proof)](../qa/media-recovery/fixture_lituya_277_live_source_20261110.json) — Git blob **`8d73780c32d4aa6ef10d665503bb5109e64dc1ad`**.
+- [Full updated 288-slot recovery ledger](../qa/media-recovery/coverage_252_exact_pr1703_20261110.json) — Git blob **`a48e4aad14e3789109bdbd77b48a75bbc2a818f8`**.
+- [Offline fail-closed validator](../qa/media-recovery/validate_lituya_277_six_20261110.cjs) — Git blob **`8cff1a0f0c8123608264ab218c0da3a1db1c9251`**.
 - [46 regression checks](../qa/media-recovery/test_lituya_277_six_20261110.cjs) — Git blob **`9de18156d57595a2595a99db41625716c04efb41`**.
 
 **46/46 tests passed** under isolated V8 execution with Node-compatible `fs`, `assert` and test runner shims against the five actual GitHub-committed file bodies. Native Node CI and actual logged-out Chromium remain **unrun**.
