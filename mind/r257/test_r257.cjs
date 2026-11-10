@@ -71,7 +71,7 @@ function validate(x){
  assert.match(x.article,/Puységur.*not.*verified destination/is);
  assert.match(x.article,/informal personal observation exercise/i);
  assert.match(x.article,/not a clinical trial/i);
- assert.match(x.plan,/net.*revenue[\\s\\S]{0,200}1,?000/i);
+ assert.match(x.plan,/Net revenue \/ 1,000/i);
  assert.match(x.plan,/asset_id/i);
  assert.match(x.plan,/Issue #820/);
  assert.match(x.plan,/Mind hub PR #172/);
