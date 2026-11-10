@@ -140,7 +140,7 @@ function negativeSuite(original){
  bad(x=>x.matrix.claims.pop());
  bad(x=>x.article=x.article.replace(/25958769/g,"unverifiable"));
  bad(x=>x.article=x.article.slice(0,3000));
- bad(x=>x.plan=x.plan.replace("NOT_COMPUTABLE","conversion verified"));
+ bad(x=>x.plan=x.plan.replace(/NOT_COMPUTABLE/g,"conversion verified"));
  return count;
 }
 module.exports={validate,negativeSuite,PINS};
