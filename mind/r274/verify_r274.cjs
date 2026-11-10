@@ -54,6 +54,11 @@ function audit(input) {
  check(Array.isArray(a.creator_topic_fit) && a.creator_topic_fit.length===3 &&
  a.creator_topic_fit.every(t=>t.media_id===null && t.media_url===null),'NO_FABRICATED_GROK_ASSETS');
  check(a.creator_topic_fit?.[2]?.public_article===null,'NO_FAKE_UNPUBLISHED_ARTICLE_URL');
+ check(a.creator_topic_fit?.[1]?.public_youtube_video_id==='SV9m07PFTYk' &&
+ a.creator_topic_fit?.[1]?.public_youtube_url==='https://www.youtube.com/watch?v=SV9m07PFTYk' &&
+ a.creator_topic_fit?.[1]?.public_youtube_metadata?.internal_grok_asset_id===null &&
+ a.creator_topic_fit?.[1]?.public_youtube_metadata?.direct_article_link_in_description===false &&
+ a.creator_topic_fit?.[1]?.public_youtube_metadata?.signed_out_mobile_article_landing===null,'PUBLIC_VIDEO_NOT_INTERNAL_ASSET_OR_ATTRIBUTION');
  check(input.article.includes('The Experiment That Made Distraction Disappear') && input.article.includes('2025') &&
  input.article.includes('Eltiti') && input.article.includes('Puységur') &&
  input.article.includes('replicat'),'ARTICLE_EVIDENCE');
@@ -104,6 +109,7 @@ function mutateAndCheck(original) {
  ['fabricate net revenue',v=>{let m=JSON.parse(v.matrix);m.measurement.kpi_status='ZERO';v.matrix=JSON.stringify(m)}],
  ['leak person info',v=>{let m=JSON.parse(v.matrix);m.measurement.no_personal_data=false;v.matrix=JSON.stringify(m)}],
  ['fake creator id',v=>{let m=JSON.parse(v.matrix);m.creator_topic_fit[0].media_id='FAKE123';v.matrix=JSON.stringify(m)}],
+ ['confuse public video with internal Grok identity',v=>{let m=JSON.parse(v.matrix);m.creator_topic_fit[1].public_youtube_metadata.internal_grok_asset_id='SV9m07PFTYk';v.matrix=JSON.stringify(m)}],
  ['invent article URL',v=>{let m=JSON.parse(v.matrix);m.creator_topic_fit[2].public_article='https://finalvestige.com/mind/article/';v.matrix=JSON.stringify(m)}],
  ['erase seller claim warning',v=>{let m=JSON.parse(v.matrix);m.claims.find(x=>x.id==='C12').status='clinically_proven';v.matrix=JSON.stringify(m)}],
  ['remove cited source',v=>{let m=JSON.parse(v.matrix);m.sources=m.sources.filter(s=>s.id!=='S08');v.matrix=JSON.stringify(m)}],
