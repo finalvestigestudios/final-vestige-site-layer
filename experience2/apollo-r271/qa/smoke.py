@@ -8,7 +8,7 @@ BASE=pathlib.Path(__file__).resolve().parents[1]
 SRC=BASE/'fixtures/research-desk'
 BLOBS={'templates/ledger.html':'403d128c57b9bc82dac7c619651689070edef86c','assets/source-ledger.css':'b8cf00afeceba115a9e9d19044fc11dcf2890cbe','assets/source-ledger.js':'32e757cc4dc8708397ff65ac21e89dd319781d78','final-vestige-ex2-research-desk.php':'d1879a90101b5475990132369178f42743f4b57c'}
 def gh_blob(p):
- b=p.read_bytes();return hashlib.sha1(f'blob {len(b)}\\0'.encode()+b).hexdigest()
+ b=p.read_bytes();return hashlib.sha1(f'blob {len(b)}\0'.encode()+b).hexdigest()
 def check(p,m):
  if not p:raise AssertionError(m)
 def main(out):
@@ -58,6 +58,6 @@ def main(out):
     context.close()
   browser.close()
  receipt={'sources':BLOBS,'cases':records,'screenshots':images,'limitations':['offline set_content','no installed WordPress/HTTP','no genuine axe or screenreader','no native zoom or field LCP/CLS']}
- (out/'receipt.json').write_text(json.dumps(receipt,indent=2,sort_keys=True)+'\\n')
+ (out/'receipt.json').write_text(json.dumps(receipt,indent=2,sort_keys=True)+'\n')
  print('R271',len(records),'PASS','receipt',hashlib.sha256((out/'receipt.json').read_bytes()).hexdigest())
 if __name__=='__main__':main(pathlib.Path(sys.argv[1]))
