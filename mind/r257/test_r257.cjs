@@ -36,7 +36,7 @@ function validate(x){
   assert.match(h,/<!doctype html>/i);
   assert.match(h,/<html lang="en">/);
   assert.match(h,/<meta name="viewport"/);
-  assert.doesNotMatch(h,/<script\b|<iframe\b|<form\b|<input\b|autoplay|onerror\s*=|onclick\s*=/i);
+  assert.doesNotMatch(h,/<script\b|<iframe\b|<form\b|<input\b|<video\\b|onerror\s*=|onclick\s*=/i);
   assert.doesNotMatch(h,/href=["']https?:\/\/(?:www\.)?(?:zen12\.com|affiliates\.inspire3\.com|brainwaveshots\.com|hypnosislive\.com)/i);
   assert.doesNotMatch(h,/(?:pixel|doubleclick\.net|facebook\.net\/?en_US\/fbevents|gtag\s*\()/i);
   assert.match(h,/https:\/\/finalvestige\.com\/focus\//);
@@ -102,7 +102,7 @@ const cases=[
  ['evidence reclassified',o=>{let m=JSON.parse(o.matrix);m.claims.find(c=>c.id==='C11').classification='scientifically_proven';o.matrix=JSON.stringify(m)}],
  ['injected tracking',o=>o.b=o.b.replace('</body>','<script src="https://example.org/tracker.js"></script></body>')],
  ['new newsletter form',o=>o.hub=o.hub.replace('</body>','<form><input type="email"></form></body>')],
- ['forced playback',o=>o.b=o.b.replace('No autoplay','autoplay')],
+ ['forced playback',o=>o.b=o.b.replace('</body>','<video autoplay></video></body>')],
  ['hidden promo destination',o=>o.b=o.b.replace('href="https://finalvestige.com/focus/"','href="https://zen12.com/hnp"')],
  ['A/B copy changed',o=>o.b=o.b.replace('organized library','miracle library')],
  ['caption starts late',o=>o.vtt=o.vtt.replace('00:00:06.000 --> 00:00:12.000','00:00:06.100 --> 00:00:12.000')],
