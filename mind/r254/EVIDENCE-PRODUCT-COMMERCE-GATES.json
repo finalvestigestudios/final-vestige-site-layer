@@ -1,0 +1,496 @@
+{
+  "schema": "fv.mind.r254.evidence.v1",
+  "as_of": "2026-11-09",
+  "source_count": 17,
+  "claim_count": 24,
+  "release_status": "HARD_HOLD",
+  "sources": [
+    {
+      "id": "S01",
+      "title": "Inspire3 official product-family index",
+      "url": "https://inspire3.com/",
+      "kind": "seller_catalog",
+      "last_checked": "2026-11-09",
+      "independent_status": "OPENED_OR_INDEXED"
+    },
+    {
+      "id": "S02",
+      "title": "Zen12 Premium exact seller offer",
+      "url": "https://zen12.com/hnp",
+      "kind": "seller_offer",
+      "last_checked": "2026-11-09",
+      "independent_status": "OPENED_OR_INDEXED"
+    },
+    {
+      "id": "S03",
+      "title": "Inspire3 affiliate portal public sign-up",
+      "url": "https://affiliates.inspire3.com/",
+      "kind": "seller_program",
+      "last_checked": "2026-11-09",
+      "independent_status": "OPENED_OR_INDEXED"
+    },
+    {
+      "id": "S04",
+      "title": "Hypnosis Live exact Total Focus seller page",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "kind": "seller_offer",
+      "last_checked": "2026-11-09",
+      "independent_status": "OPENED_OR_INDEXED"
+    },
+    {
+      "id": "S05",
+      "title": "Hypnosis Live refund/usage FAQ",
+      "url": "https://hypnosislive.com/faq",
+      "kind": "seller_policy",
+      "last_checked": "2026-11-09",
+      "independent_status": "OPENED_OR_INDEXED"
+    },
+    {
+      "id": "S06",
+      "title": "Ingendoh et al. 2023 binaural beats EEG systematic review",
+      "url": "https://doi.org/10.1371/journal.pone.0286023",
+      "kind": "peer_reviewed",
+      "last_checked": "2026-11-09",
+      "independent_status": "OPENED_OR_INDEXED"
+    },
+    {
+      "id": "S07",
+      "title": "APA Division 30 operational hypnosis definitions",
+      "url": "https://www.apadivisions.org/division-30/about/index",
+      "kind": "professional_definition",
+      "last_checked": "2026-11-09",
+      "independent_status": "OPENED_OR_INDEXED"
+    },
+    {
+      "id": "S08",
+      "title": "2015 antenatal self-hypnosis randomized trial",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25958769/",
+      "kind": "randomized_trial",
+      "last_checked": "2026-11-09",
+      "independent_status": "OPENED_OR_INDEXED"
+    },
+    {
+      "id": "S09",
+      "title": "Bo et al. 2018 self-conditioning randomized trial",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30226009/",
+      "kind": "randomized_trial",
+      "last_checked": "2026-11-09",
+      "independent_status": "OPENED_OR_INDEXED"
+    },
+    {
+      "id": "S10",
+      "title": "2022 audio self-hypnosis randomized pilot",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36536625/",
+      "kind": "randomized_trial",
+      "last_checked": "2026-11-09",
+      "independent_status": "OPENED_OR_INDEXED"
+    },
+    {
+      "id": "S11",
+      "title": "Scheffrahn et al. hypnosis apps systematic review",
+      "url": "https://doi.org/10.1080/00207144.2024.2434085",
+      "kind": "peer_reviewed",
+      "last_checked": "2026-11-09",
+      "independent_status": "OPENED_OR_INDEXED"
+    },
+    {
+      "id": "S12",
+      "title": "FTC endorsement questions",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "kind": "regulator",
+      "last_checked": "2026-11-09",
+      "independent_status": "OPENED_OR_INDEXED"
+    },
+    {
+      "id": "S13",
+      "title": "FTC health products substantiation guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "kind": "regulator",
+      "last_checked": "2026-11-09",
+      "independent_status": "OPENED_OR_INDEXED"
+    },
+    {
+      "id": "S14",
+      "title": "Final Vestige existing Focus Fieldbook",
+      "url": "https://finalvestige.com/focus/",
+      "kind": "first_party_live",
+      "last_checked": "2026-11-09",
+      "independent_status": "OPENED_OR_INDEXED"
+    },
+    {
+      "id": "S15",
+      "title": "Final Vestige published change blindness investigation",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "kind": "first_party_live",
+      "last_checked": "2026-11-09",
+      "independent_status": "OPENED_OR_INDEXED"
+    },
+    {
+      "id": "S16",
+      "title": "Final Vestige published Mesmerism index",
+      "url": "https://finalvestige.com/blog/",
+      "kind": "first_party_live",
+      "last_checked": "2026-11-09",
+      "independent_status": "OPENED_OR_INDEXED"
+    },
+    {
+      "id": "S17",
+      "title": "Puységur original collection URL needs signed-out route verification",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "kind": "unverified_route",
+      "last_checked": "2026-11-09",
+      "independent_status": "DIRECT_FETCH_FAILED"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "text": "Zen12 Premium lists 12 levels and 48 MP3 recordings",
+      "status": "SELLER_DESCRIBES",
+      "source_ids": [
+        "S02"
+      ],
+      "caveat": "Inventory claim; delivery unverified"
+    },
+    {
+      "id": "C02",
+      "text": "Zen12 offers four variants per level",
+      "status": "SELLER_DESCRIBES",
+      "source_ids": [
+        "S02"
+      ],
+      "caveat": "Music, guided, nature, white noise; exact delivered files unverified"
+    },
+    {
+      "id": "C03",
+      "text": "Zen12 Premium displayed 87.99 USD on November 9",
+      "status": "DATED_SELLER_DISPLAY",
+      "source_ids": [
+        "S02"
+      ],
+      "caveat": "NOT final authorized checkout, taxes or fees"
+    },
+    {
+      "id": "C04",
+      "text": "Zen12 Premium advertises a one-year money-back promise",
+      "status": "SELLER_POLICY",
+      "source_ids": [
+        "S02"
+      ],
+      "caveat": "Actual refund experience not independently tested"
+    },
+    {
+      "id": "C05",
+      "text": "Twelve minutes equals benefits of an hour of meditation",
+      "status": "NOT_SUBSTANTIATED_FOR_THIS_PRODUCT",
+      "source_ids": [
+        "S02",
+        "S06"
+      ],
+      "caveat": "Do not repeat as fact"
+    },
+    {
+      "id": "C06",
+      "text": "Zen12 guarantees brain entrainment and clinical, mood or focus results",
+      "status": "NOT_SUBSTANTIATED_FOR_THIS_PRODUCT",
+      "source_ids": [
+        "S02",
+        "S06"
+      ],
+      "caveat": "PLOS review heterogeneous and contradictory; product-specific testing not established"
+    },
+    {
+      "id": "C07",
+      "text": "Binaural beats EEG review: 14 studies, 5 support, 8 contradict, 1 mixed",
+      "status": "INDEPENDENT_REVIEW",
+      "source_ids": [
+        "S06"
+      ],
+      "caveat": "EEG entrainment only, not clinical benefit or Zen12 proof"
+    },
+    {
+      "id": "C08",
+      "text": "Hypnosis Live Total Focus describes a 33-minute 47MB audio",
+      "status": "SELLER_DESCRIBES",
+      "source_ids": [
+        "S04"
+      ],
+      "caveat": "Not independently delivered/tested"
+    },
+    {
+      "id": "C09",
+      "text": "Total Focus seller displayed $24.44 single track",
+      "status": "DATED_SELLER_DISPLAY",
+      "source_ids": [
+        "S04",
+        "S05"
+      ],
+      "caveat": "Checkout unverified; generic FAQ may describe different typical price"
+    },
+    {
+      "id": "C10",
+      "text": "Total Focus improves productivity/concentration",
+      "status": "NOT_SUBSTANTIATED_FOR_THIS_PRODUCT",
+      "source_ids": [
+        "S04",
+        "S11"
+      ],
+      "caveat": "Seller uses efficacy copy; no direct randomized outcome evidence supplied"
+    },
+    {
+      "id": "C11",
+      "text": "Hypnosis Live page offers 14 day refunds, FAQ caps five sessions annually",
+      "status": "SELLER_POLICY",
+      "source_ids": [
+        "S04",
+        "S05"
+      ],
+      "caveat": "Refund outcome, timing and exact cart terms untested"
+    },
+    {
+      "id": "C12",
+      "text": "APA hypnosis terminology is an operational definition",
+      "status": "PROFESSIONAL_DEFINITION",
+      "source_ids": [
+        "S07"
+      ],
+      "caveat": "Does not demonstrate individual products are effective"
+    },
+    {
+      "id": "C13",
+      "text": "2015 RCT of 680 did not find statistically significant primary epidural difference",
+      "status": "RANDOMIZED_TRIAL",
+      "source_ids": [
+        "S08"
+      ],
+      "caveat": "Not a concentration trial"
+    },
+    {
+      "id": "C14",
+      "text": "2018 N=120 RCT: no significant group difference in weight loss primary endpoint",
+      "status": "RANDOMIZED_TRIAL",
+      "source_ids": [
+        "S09"
+      ],
+      "caveat": "Subgroup findings observational; not product evidence"
+    },
+    {
+      "id": "C15",
+      "text": "2022 audio RCT pilot: 46 followups, no significant tested outcomes, underpowered",
+      "status": "RANDOMIZED_PILOT",
+      "source_ids": [
+        "S10"
+      ],
+      "caveat": "Different endpoint and audio"
+    },
+    {
+      "id": "C16",
+      "text": "2025 hypnosis apps review 168 included, four reported trial inclusion",
+      "status": "DESCRIPTIVE_SYSTEMATIC_REVIEW",
+      "source_ids": [
+        "S11"
+      ],
+      "caveat": "Apps not equivalent to Total Focus"
+    },
+    {
+      "id": "C17",
+      "text": "FTC asks affiliate disclosure close to earning recommendation",
+      "status": "REGULATORY_GUIDANCE",
+      "source_ids": [
+        "S12"
+      ],
+      "caveat": "Disclosure cannot cure unsupported claim"
+    },
+    {
+      "id": "C18",
+      "text": "FTC health-related objective claims need adequate substantiation",
+      "status": "REGULATORY_GUIDANCE",
+      "source_ids": [
+        "S13"
+      ],
+      "caveat": "Use product-specific proof or omit claim"
+    },
+    {
+      "id": "C19",
+      "text": "Focus Fieldbook is live existing 52-page resource and Dispatch capture pathway",
+      "status": "FIRST_PARTY_LIVE",
+      "source_ids": [
+        "S14"
+      ],
+      "caveat": "No independent lead-confirmation count retrieved"
+    },
+    {
+      "id": "C20",
+      "text": "FV name approved as Inspire3 affiliate, with issued earning URL",
+      "status": "UNVERIFIED_ACCOUNT_SPECIFIC",
+      "source_ids": [
+        "S03"
+      ],
+      "caveat": "Public portal is not approval"
+    },
+    {
+      "id": "C21",
+      "text": "Rights-cleared FV owned paid Mind SKU and checkout are actively sellable",
+      "status": "UNVERIFIED_COMMERCE",
+      "source_ids": [
+        "S14"
+      ],
+      "caveat": "Payhip stock/checkout/rights unverified; Focus is free"
+    },
+    {
+      "id": "C22",
+      "text": "Actual qualified sessions, orders, commissions or net revenue are confirmed",
+      "status": "UNVERIFIED_REVENUE",
+      "source_ids": [
+        "S03"
+      ],
+      "caveat": "Null unknown, not zero"
+    },
+    {
+      "id": "C23",
+      "text": "Puységur direct route is available signed-out in current site",
+      "status": "UNVERIFIED_ROUTE",
+      "source_ids": [
+        "S17"
+      ],
+      "caveat": "Direct fetch failed; link kept out of preview until verified"
+    },
+    {
+      "id": "C24",
+      "text": "The merchant public signup site is proof of FV affiliate permission",
+      "status": "REJECTED_INFERENCE",
+      "source_ids": [
+        "S03"
+      ],
+      "caveat": "Account authorization and allowed channels must be authenticated"
+    }
+  ],
+  "authorization_gates": [
+    {
+      "id": "publisher_identity",
+      "requirement": "Named FV account and publisher status",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_AUTHENTICATED_FOR_RELEASE"
+    },
+    {
+      "id": "partner_acceptance",
+      "requirement": "Authenticated affiliate acceptance",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_AUTHENTICATED_FOR_RELEASE"
+    },
+    {
+      "id": "issued_link",
+      "requirement": "Account-issued earning link for exact product",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_AUTHENTICATED_FOR_RELEASE"
+    },
+    {
+      "id": "channels",
+      "requirement": "Approved website/social/email traffic channels",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_AUTHENTICATED_FOR_RELEASE"
+    },
+    {
+      "id": "creative_rights",
+      "requirement": "Approved original or merchant creatives permissions",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_AUTHENTICATED_FOR_RELEASE"
+    },
+    {
+      "id": "campaign_tag_terms",
+      "requirement": "Allowed UTM/subID parameters and no cloaking",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_AUTHENTICATED_FOR_RELEASE"
+    },
+    {
+      "id": "checkout_price",
+      "requirement": "Authenticated final checkout and tax/fee terms",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_AUTHENTICATED_FOR_RELEASE"
+    },
+    {
+      "id": "refund_terms",
+      "requirement": "Exact written refund conditions and fulfillment risk",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_AUTHENTICATED_FOR_RELEASE"
+    },
+    {
+      "id": "merchant_attribution",
+      "requirement": "Official postback/order-commission reconciliation terms",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_AUTHENTICATED_FOR_RELEASE"
+    },
+    {
+      "id": "commission_settlement",
+      "requirement": "Settlement timing and cleared payment evidence",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_AUTHENTICATED_FOR_RELEASE"
+    },
+    {
+      "id": "product_specific_claims",
+      "requirement": "Scientific support or exclusion of all objective benefits",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_AUTHENTICATED_FOR_RELEASE"
+    },
+    {
+      "id": "ftc_disclosure",
+      "requirement": "Near-link disclosure independently accessible and tested",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_AUTHENTICATED_FOR_RELEASE"
+    },
+    {
+      "id": "browser_qa",
+      "requirement": "Browser/mobile/keyboard/no-JS/WP sanitizer/CWV QA",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_AUTHENTICATED_FOR_RELEASE"
+    },
+    {
+      "id": "consent_privacy",
+      "requirement": "Consent, first-party event privacy and no duplicate scripts",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_AUTHENTICATED_FOR_RELEASE"
+    },
+    {
+      "id": "founder_release",
+      "requirement": "Founder commercial/publication approval",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_AUTHENTICATED_FOR_RELEASE"
+    },
+    {
+      "id": "revenue_truth",
+      "requirement": "Verified paid conversions/returns/fees and qualified denominators",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_AUTHENTICATED_FOR_RELEASE"
+    }
+  ],
+  "pricing": {
+    "zen12_displayed_usd": 87.99,
+    "as_of": "2026-11-09",
+    "checkout_total_usd": null,
+    "refund_performance_verified": false
+  },
+  "affiliate": {
+    "named_approval": null,
+    "issued_earning_url": null,
+    "allowed_channels": null,
+    "commission_terms_account_specific": null,
+    "cleared_commissions": null
+  },
+  "measurements": {
+    "qualified_human_sessions_7d": null,
+    "qualified_human_sessions_30d": null,
+    "confirmed_jetpack_leads": null,
+    "verified_paid_orders": null,
+    "affiliate_cleared_commissions": null,
+    "net_revenue": null,
+    "net_revenue_per_1000_qualified_humans": null
+  },
+  "status": {
+    "built": true,
+    "tested_native": false,
+    "live": false,
+    "affiliate_active": false,
+    "payment_verified": false
+  },
+  "notes": "Seller statements are not independently substantiated efficacy. All commercial and launch gates fail closed; null represents unavailable evidence, not zero."
+}
