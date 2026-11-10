@@ -42,7 +42,6 @@ def prepare_report_path(report: str | Path, candidate_dir: str | Path) -> Path:
         raise ReportEvidenceError("Invalid evidence destination") from None
 
 
-
 def _write_verified_stage(fd: int, payload: bytes) -> None:
     """Own the raw fd and prove exact staged report bytes before hardlinking.
 
@@ -84,6 +83,7 @@ def _write_verified_stage(fd: int, payload: bytes) -> None:
             stream.close()
         except Exception:
             pass
+
 
 def publish_report(destination: str | Path, evidence: dict) -> None:
     """Stage, verify, and atomically publish exact UTF-8 JSON without overwrite.
