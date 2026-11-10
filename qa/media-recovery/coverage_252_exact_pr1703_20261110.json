@@ -145,7 +145,7 @@
     },
     {
       "file": "qa/media-recovery/lituya_277_six_usgs_nasa_composite_rights_20261110.json",
-      "blob_sha": "66f893e5171ee8a958c2e48f6871a8607249953e",
+      "blob_sha": "22b917e632f9429456c0582355f2f912c2ed614b",
       "source_records": 6
     }
   ],
@@ -6310,7 +6310,7 @@
         {
           "batch": "lituya277",
           "path": "qa/media-recovery/lituya_277_six_usgs_nasa_composite_rights_20261110.json",
-          "blob_sha": "66f893e5171ee8a958c2e48f6871a8607249953e",
+          "blob_sha": "22b917e632f9429456c0582355f2f912c2ed614b",
           "retriever_only_observation": "IMAGE_DISPLAYED_BY_WEB_RETRIEVER_NOT_GUEST",
           "retriever_wrapper_code": null
         }
@@ -6354,7 +6354,7 @@
         {
           "batch": "lituya277",
           "path": "qa/media-recovery/lituya_277_six_usgs_nasa_composite_rights_20261110.json",
-          "blob_sha": "66f893e5171ee8a958c2e48f6871a8607249953e",
+          "blob_sha": "22b917e632f9429456c0582355f2f912c2ed614b",
           "retriever_only_observation": "WEB_RETRIEVER_INACCESSIBLE_NOT_ORIGIN_STATUS",
           "retriever_wrapper_code": null
         }
@@ -6398,7 +6398,7 @@
         {
           "batch": "lituya277",
           "path": "qa/media-recovery/lituya_277_six_usgs_nasa_composite_rights_20261110.json",
-          "blob_sha": "66f893e5171ee8a958c2e48f6871a8607249953e",
+          "blob_sha": "22b917e632f9429456c0582355f2f912c2ed614b",
           "retriever_only_observation": "IMAGE_DISPLAYED_BY_WEB_RETRIEVER_NOT_GUEST",
           "retriever_wrapper_code": null
         }
@@ -6442,7 +6442,7 @@
         {
           "batch": "lituya277",
           "path": "qa/media-recovery/lituya_277_six_usgs_nasa_composite_rights_20261110.json",
-          "blob_sha": "66f893e5171ee8a958c2e48f6871a8607249953e",
+          "blob_sha": "22b917e632f9429456c0582355f2f912c2ed614b",
           "retriever_only_observation": "WEB_RETRIEVER_INACCESSIBLE_NOT_ORIGIN_STATUS",
           "retriever_wrapper_code": null
         }
@@ -6486,7 +6486,7 @@
         {
           "batch": "lituya277",
           "path": "qa/media-recovery/lituya_277_six_usgs_nasa_composite_rights_20261110.json",
-          "blob_sha": "66f893e5171ee8a958c2e48f6871a8607249953e",
+          "blob_sha": "22b917e632f9429456c0582355f2f912c2ed614b",
           "retriever_only_observation": "IMAGE_DISPLAYED_BY_WEB_RETRIEVER_NOT_GUEST",
           "retriever_wrapper_code": null
         }
@@ -6530,7 +6530,7 @@
         {
           "batch": "lituya277",
           "path": "qa/media-recovery/lituya_277_six_usgs_nasa_composite_rights_20261110.json",
-          "blob_sha": "66f893e5171ee8a958c2e48f6871a8607249953e",
+          "blob_sha": "22b917e632f9429456c0582355f2f912c2ed614b",
           "retriever_only_observation": "IMAGE_DISPLAYED_BY_WEB_RETRIEVER_NOT_GUEST",
           "retriever_wrapper_code": null
         }
