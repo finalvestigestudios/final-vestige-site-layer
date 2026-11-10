@@ -1,0 +1,12 @@
+'use strict';const {test}=require('node:test');const assert=require('node:assert/strict');const fs=require('node:fs');const path=require('node:path');const root=path.join(__dirname,'..');
+const html=fs.readFileSync(path.join(root,'issue04_apollo_OPTIONAL_UNSENT.html'),'utf8'), md=fs.readFileSync(path.join(root,'issue04_apollo_OPTIONAL_UNSENT.md'),'utf8'), plain=fs.readFileSync(path.join(root,'issue04_apollo_OPTIONAL_UNSENT.txt'),'utf8');
+test('all three clearly UNSENT',()=>{for(const s of [html,md,plain])assert.match(s,/UNSENT/);});
+test('pre-send postal blocker',()=>{for(const s of [html,md,plain])assert.ok(s.includes('[[VALID_POSTAL_ADDRESS_REQUIRED]]'));});
+test('pre-send unsubscribe blocker',()=>{for(const s of [html,md,plain])assert.ok(s.includes('[[JETPACK_UNSUBSCRIBE_LINK_MUST_BE_VERIFIED]]'));});
+test('NASA exact onset vs rupture anchors',()=>{for(const s of [html,md,plain]){assert.ok(s.includes('23:31:04.7'));assert.ok(s.includes('23:31:19'));assert.ok(s.includes('23:31:22.4'));}});
+test('NASA primary evidence present',()=>{for(const s of [html,md,plain])assert.ok(s.includes('https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/'));});
+test('no unauthorized merchant links',()=>{for(const s of [html,md,plain])assert.doesNotMatch(s,/https?:\/\/(?:www\.)?(?:zen12|hypnosislive|affiliates\.inspire3)\.com/i);});
+test('single primary FV content destination',()=>{for(const s of [html,md,plain])assert.equal((s.match(/https:\/\/finalvestige\.com\/2026\/08\/20\/the-hatch-opened-inward-apollo-1\//g)||[]).length,1);});
+test('email safe static tags',()=>{assert.match(html,/<html lang="en"/);assert.match(html,/role="presentation"/);assert.match(html,/<h1/);assert.doesNotMatch(html,/<(?:script|form|iframe|video|audio|img)\b/i);});
+test('no fabricated claims',()=>{for(const s of [html,md,plain])assert.doesNotMatch(s,/guaranteed (?:benefit|focus|results)|clinically proven to reprogram/i);});
+test('reviewer subject not fake inbox preheader',()=>{assert.match(md,/Proposed preheader/);assert.match(plain,/Preheader \(proposed\)/);assert.match(html,/NOT A JETPACK EMAIL PREVIEW/);});
