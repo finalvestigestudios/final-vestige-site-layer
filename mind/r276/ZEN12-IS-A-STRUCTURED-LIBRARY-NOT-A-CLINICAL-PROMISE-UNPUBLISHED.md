@@ -45,6 +45,21 @@ The seller's intended audience is recognizable: someone who wants to set aside a
 
 What is the actual alternative? A free timer, a quiet place, freely available introductory instructions, or Final Vestige's existing [Seven Day Focus Fieldbook](https://finalvestige.com/focus/). That Fieldbook is a research and reflection resource offered through the existing Jetpack/Dispatch pathway, not a clinical intervention; access does not require buying Zen12. The mind archive should also leave the product guide accessible **without forcing an email subscription**.
 
+## A second list hiding inside the free-sample choice: a real offer distinction
+
+Zen12 separately advertises a **free sample MP3**. The official invitation at https://zen12.com/welcome, inspected November 10, 2026, explicitly states that the visitor **will receive the seller's newsletter**. A second official route, https://zen12.com/freeaudio, includes the same newsletter statement. This is not evidence that every visitor actually receives a message; Final Vestige has not supplied a test address, entered a form, requested an MP3, or inspected email-delivery behavior. It is evidence of what the public merchant invitation tells a prospective subscriber before they submit details.
+
+There are therefore **four distinct decisions**, not a single free-versus-paid choice:
+
+1. **Use a free timer**: no seller account, no FV subscription, no paid product. This is the least committal practical trial.
+2. **Use Final Vestige's free Focus Fieldbook**: the existing /focus/ route offers the 52-page resource and discloses enrollment in the existing FV Dispatch; it requests email confirmation. FV is the sender and owner of that relationship. There is no second FV form or substitute mailing platform in this guide.
+3. **Request Zen12's free audio directly from its merchant**: its public seller pages describe a free MP3 along with *Zen12/Inspire3 newsletter enrollment*. This is a **separate merchant decision**; FV cannot represent its own Dispatch permission as permission for the vendor, or count a merchant signup as an FV-confirmed lead. The exact seller privacy handling and delivery need their own verification.
+4. **Consider Zen12 Premium**: a distinct paid program, for which edition, checkout, refunds, rights and Final Vestige affiliate authorization all remain independently unverified. A free-audio subscriber is not a purchaser.
+
+A free product's **monetary price** may be zero while its **email-consent condition** still matters. Do not refer to the merchant offer as an unconditional no-email trial; equally, do not call it a hidden fee: the newsletter statement appears on the actual public seller page. Explain the tradeoff plainly and let the reader decline.
+
+No FV customer emails may be forwarded, uploaded, synchronized, or otherwise shared with Inspire3. No local tracking pixels, new signup forms or prechecked permissions are justified by this review. Only the authorized service can confirm a confirmed subscriber; a link click or submitted form by itself cannot.
+
 ## A twelve-minute decision exercise that costs nothing
 
 Before deciding whether a recording library is worth paying for, compare *the kind of value* you want. This is a personal decision journal, **not a randomized experiment or medical test**.
