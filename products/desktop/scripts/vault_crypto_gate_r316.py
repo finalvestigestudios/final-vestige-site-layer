@@ -7,7 +7,9 @@ contents, passwords, private tracebacks or test skip reasons. QD/founder HOLD.
 from __future__ import annotations
 
 import contextlib
+import hashlib
 import os
+import stat
 from pathlib import Path
 import re
 import sys
@@ -65,6 +67,27 @@ def _cases(suite):
             yield item
 
 
+def _source_witness(source: Path) -> tuple[object, ...]:
+    """Snapshot source bytes AND filesystem identity, without echoing paths.
+
+    This detects source replacement between preflight and final execution,
+    including byte-identical substitutions. It is not an OS-level lock and
+    does not guarantee absence of transient races between observations.
+    """
+    if source.is_symlink():
+        raise IntegrationHold(_FIXED_ERROR)
+    before = source.lstat()
+    if not stat.S_ISREG(before.st_mode) or not 0 < before.st_size <= 128 * 1024:
+        raise IntegrationHold(_FIXED_ERROR)
+    data = source.read_bytes()
+    after = source.lstat()
+    fields = lambda s: (s.st_dev, s.st_ino, s.st_mode, s.st_size,
+                        s.st_mtime_ns, s.st_ctime_ns)
+    if fields(before) != fields(after) or len(data) != before.st_size:
+        raise IntegrationHold(_FIXED_ERROR)
+    return fields(after) + (hashlib.sha256(data).digest(),)
+
+
 def execute_gate(directory: Path, *, targets=REQUIRED) -> dict[str, object]:
     """Preflight all modules; then run exact required tests with zero skips.
 
@@ -89,19 +112,30 @@ def execute_gate(directory: Path, *, targets=REQUIRED) -> dict[str, object]:
                 raise IntegrationHold(_FIXED_ERROR)
             seen.add(filename)
             source = directory / filename
-            if source.is_symlink() or not source.is_file() or not 0 < source.stat().st_size <= 128 * 1024:
-                raise IntegrationHold(_FIXED_ERROR)
-            vetted.append((filename, {filename[:-3] + "." + m for m in methods}))
+            witness = _source_witness(source)
+            vetted.append((filename, {filename[:-3] + "." + m for m in methods}, witness))
 
         observed = 0
         # Suppress Python-level prints from test import, execution and errors.
         # Never include unittest error strings or skip reasons in the result.
         with open(os.devnull, "w", encoding="utf-8") as sink:
             with contextlib.redirect_stdout(sink), contextlib.redirect_stderr(sink):
-                for filename, required in vetted:
+                for filename, required, initial_witness in vetted:
+                    source = directory / filename
+                    if _source_witness(source) != initial_witness:
+                        raise IntegrationHold(_FIXED_ERROR)
+                    # TestLoader.discover consults sys.modules. Without eviction
+                    # a same-named stale/forged in-memory test can masquerade
+                    # as an on-disk required integration module.
+                    sys.modules.pop(filename[:-3], None)
                     loader = unittest.TestLoader()
                     suite = loader.discover(str(directory), pattern=filename,
                                             top_level_dir=str(directory))
+                    loaded = sys.modules.get(filename[:-3])
+                    if (loaded is None or
+                            Path(getattr(loaded, "__file__", "")).resolve() != source.resolve() or
+                            _source_witness(source) != initial_witness):
+                        raise IntegrationHold(_FIXED_ERROR)
                     identifiers = [case.id() for case in _cases(suite)]
                     if (loader.errors or len(identifiers) != len(set(identifiers))
                             or not required.issubset(set(identifiers))):
@@ -112,7 +146,13 @@ def execute_gate(directory: Path, *, targets=REQUIRED) -> dict[str, object]:
                             or result.skipped or result.expectedFailures
                             or result.unexpectedSuccesses):
                         raise IntegrationHold(_FIXED_ERROR)
+                    if _source_witness(source) != initial_witness:
+                        raise IntegrationHold(_FIXED_ERROR)
                     observed += len(required)
+                # Earlier modules must also remain unchanged while later ones run.
+                for filename, _, initial_witness in vetted:
+                    if _source_witness(directory / filename) != initial_witness:
+                        raise IntegrationHold(_FIXED_ERROR)
         return {
             "schema": "fvs-premium-crypto-integration-r316-v1",
             "modules": len(vetted),
