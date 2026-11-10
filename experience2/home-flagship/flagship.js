@@ -35,7 +35,11 @@
       return;
     }
 
-    let active = CASES[0];
+    // A campaign or source citation may link to an individual archive record.
+    // Only exact known fragments may choose a case; never trust arbitrary URL text.
+    const caseFromFragment = () => CASES.find((id) =>
+      window.location.hash === '#fv-hf-' + id) || null;
+    let active = caseFromFragment() || CASES[0];
     let enhanced = false;
     const resetStatic = () => {
       enhanced = false;
@@ -119,6 +123,14 @@
       root.classList.add('fv-hf--enhanced');
       root.addEventListener('click', handleClick);
       root.addEventListener('keydown', handleKeydown);
+      // Back/forward, in-page citations and campaign fragments must reveal their target.
+      // Other chapter fragments do not change the currently selected record.
+      window.addEventListener('hashchange', () => {
+        const requestedCase = caseFromFragment();
+        if (!requestedCase || !selectCase(requestedCase)) return;
+        const target = casePanels.find((panel) => panel.dataset.fvCase === requestedCase);
+        if (target) target.scrollIntoView({block: 'start', behavior: 'auto'});
+      });
 
       // URL parameter selects only a visual design study; never executes any external script.
       const requested = typeof URLSearchParams === 'function' ?
