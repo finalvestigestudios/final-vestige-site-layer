@@ -83,11 +83,14 @@ $scan = function($blocks) use (&$scan, &$names) {
     }
 };
 $scan($blocks);
+// Page 6's existing external CTA is root-relative; check that actual button,
+// not any absolute Focus link in the replaceable flagship.
+$focus_action_valid = preg_match('~<section\b[^>]*class="fv-focus-cta"[^>]*>.*?<a\b[^>]*class="fv-focus-cta__button"[^>]*href="(?:/focus/|https://finalvestige\.com/focus/)"[^>]*>.*?</section>~is', $raw) === 1;
 if (count($blocks) !== EXPECTED_TOP || count(array_filter($names, fn($x) => $x === 'core/html')) !== EXPECTED_HTML ||
     count(array_filter($names, fn($x) => $x === 'jetpack/subscriptions')) !== 1 ||
     substr_count($raw, 'class="fv-margin-strip__item') !== 72 ||
     substr_count($raw, 'data-fv-home-flagship') < 1 ||
-    strpos($raw, 'https://finalvestige.com/focus/') === false) {
+    !$focus_action_valid) {
     throw new RuntimeException('Gutenberg, 72 Margins or native Jetpack/Focus custody failed');
 }
 if (get_page_by_path('fv-ex2-integrated-review')) {
