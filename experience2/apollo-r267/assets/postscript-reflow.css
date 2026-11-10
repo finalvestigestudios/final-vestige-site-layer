@@ -1,0 +1,14 @@
+/* R267: optional SCREEN-ONLY post-article CTA reflow; no WordPress activation.
+   Preserve full-size readable text; remove decorative arrow to free line width.
+   The original R266 card is left intact and its print exclusion is unchanged. */
+@media screen and (max-width:480px) {
+  .fv-apollo-postscript { margin:24px 8px; padding:12px; }
+  .fv-apollo-postscript__action {
+    display:block;
+    width:100%;
+    padding:10px 12px;
+    line-height:1.35;
+    text-align:left;
+  }
+  .fv-apollo-postscript__action span[aria-hidden="true"] { display:none; }
+}
