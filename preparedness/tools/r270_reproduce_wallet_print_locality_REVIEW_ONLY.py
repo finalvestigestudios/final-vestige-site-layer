@@ -23,7 +23,7 @@ HOLD = 'DRAFT_HARD_HOLD'
 
 
 def git_blob(b):
-    return hashlib.sha1(b'blob ' + str(len(b)).encode() + b'\\0' + b).hexdigest()
+    return hashlib.sha1(b'blob ' + str(len(b)).encode() + b'\0' + b).hexdigest()
 
 
 def require(ok, why):
