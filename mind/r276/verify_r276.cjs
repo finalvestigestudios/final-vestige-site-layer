@@ -58,7 +58,7 @@ function validate(b){
  assert(b.article275.includes('DUPLICATE HOLD')&&b.article275.includes('353')&&b.article275.includes('five participants')&&b.article275.includes('nineteen'),'R275 methodological corrections missing');
  assert(b.module275.includes('duplicate topic')&&b.module275.includes('s41467-022-28178-y'),'R275 reading module lacks hold/reply');
  assert(b.guide.length>11000&&b.guide.includes('A Twelve-Minute Soundtrack')&&b.guide.includes('No such earning link is active'),'guide not present');
- assert(b.guide.includes('five reported')===false || b.guide.includes('Five reported'),'guide wording unexpected'); // not claiming product proof
+ assert(b.guide.includes('Ingendoh')&&b.guide.includes('Chee'),'review studies absent');
  assert(b.guide.includes('fourth proposition')&&b.guide.includes('The comparison that matters'),'insufficient evidence trail');
  assert(b.html.startsWith('<!doctype html>')&&b.html.includes('<html lang="en"'),'missing semantic doc');
  for(const need of ['<main','<h1','<h2','<details','<summary','<ol','<button','type="button"','aria-disabled="true"','disabled','prefers-reduced-motion','focus-visible','@media(max-width:390px)','<meta name="viewport"','noindex,nofollow','https://finalvestige.com/focus/','If you purchase through a future authorized link'])assert(b.html.includes(need),'missing HTML requirement '+need);
@@ -72,9 +72,12 @@ function validate(b){
  assert(links.length>=12,'expected source links missing');
  assert(links.every(x=>x.startsWith('#')||x.startsWith('https://')),'invalid link');
  const earningDomains=['zen12.com','hypnosislive.com','brainwaveshots.com','affiliates.inspire3.com'];
- assert(links.filter(x=>earningDomains.some(d=>new URL(x).hostname===d)).length<=2,'extra merchant destinations');
+ assert(links.filter(x=>earningDomains.some(d=>(x.match(/^https?:\/\/([^/]+)/i)||[])[1]===d)).length<=2,'extra merchant destinations');
  assert(links.filter(x=>/zen12\.com/.test(x)).every(x=>x==='https://zen12.com/hnp'||x==='https://zen12.com/secret/'),'unapproved merchant URL');
  assert(!/(?:awin1\.com|clickbank|hop=|affid=|affiliate_id=|ref=|utm_|fbclid=|gclid=|pixel)/i.test(b.html),'unauthorized tracking or affiliate token');
+ const allowed=['finalvestige.com','zen12.com','inspire3.com','doi.org','ftc.gov'];
+ assert(links.filter(x=>/^https:\/\//.test(x)).every(x=>allowed.includes((x.match(/^https:\/\/([^/]+)/i)||[])[1].replace(/^www\./,''))),'unreviewed outbound URL');
+ assert(b.html.includes('Evidence before expectation'),'poster concept deleted');
  assert(b.variantA.includes('disabled')&&b.variantB.includes('disabled'),'inherited A/B purchase controls changed');
  assert(b.variantA.includes('If you purchase')&&b.variantB.includes('If you purchase'),'inherited A/B disclosure absent');
  return {source_count:m.sources.length,claims:m.claims.length,held_gates:m.commercial_gates.length,source_links:links.length,merchant_source_only:true,public_activation:false};
