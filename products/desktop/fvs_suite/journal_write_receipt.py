@@ -21,27 +21,37 @@ def digest_pinned_prefix(descriptor: int, byte_count: int) -> bytes:
     keeps subsequent writes at EOF. No pathname is reopened, no unbounded
     plaintext is retained, and a short read fails closed. The caller compares
     this digest before and after the append; this is NOT an authenticity proof.
+
+    The duplicate remains owned here until stream context entry succeeds; a
+    failed fdopen or __enter__ must not leave an audit-evidence descriptor open.
     """
     if type(byte_count) is not int or byte_count < 0:
         raise ValueError("Review journal prefix length is invalid")
     copied = os.dup(descriptor)
     try:
-        stream = os.fdopen(copied, "rb", buffering=0)
-    except BaseException:
-        os.close(copied)
-        raise
-    with stream:
-        if stream.seek(0, os.SEEK_SET) != 0:
-            raise ValueError("Review journal prefix could not be positioned")
-        digest = hashlib.sha256()
-        remaining = byte_count
-        while remaining:
-            block = stream.read(min(PREFIX_CHUNK_BYTES, remaining))
-            if not block:
-                raise ValueError("Review journal prefix changed during append")
-            digest.update(block)
-            remaining -= len(block)
-        return digest.digest()
+        with os.fdopen(copied, "rb", buffering=0) as stream:
+            # Hand ownership to the entered context only after __enter__ succeeds.
+            # On fdopen/enter failure the finally block closes our duplicate.
+            copied = None
+            if stream.seek(0, os.SEEK_SET) != 0:
+                raise ValueError("Review journal prefix could not be positioned")
+            digest = hashlib.sha256()
+            remaining = byte_count
+            while remaining:
+                block = stream.read(min(PREFIX_CHUNK_BYTES, remaining))
+                if not block:
+                    raise ValueError("Review journal prefix changed during append")
+                digest.update(block)
+                remaining -= len(block)
+            return digest.digest()
+    finally:
+        if copied is not None:
+            try:
+                os.close(copied)
+            except OSError:
+                # Some fdopen implementations close on error before raising.
+                # Preserve the original error, never close the caller's fd.
+                pass
 
 
 def require_exact_append_readback(descriptor: int, offset: int, event: bytes) -> None:
