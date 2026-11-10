@@ -181,7 +181,7 @@ def audit_full_partition(claims: dict, workorders: dict) -> dict:
     result = {'schema': SCHEMA, 'state': HOLD,
               'article_count': 35, 'citation_count': 2000,
               'shared_workorders': 562, 'nonshared_workorders': 1438,
-              'total_unapproved_claims': 2000,
+              'total_unapproved_citation_occurrences': 2000,
               'shared_disputes': 1, 'nonshared_disputes': 2,
               'unreviewed_nonshared_queue': pending,
               **{flag: False for flag in FALSE}}
