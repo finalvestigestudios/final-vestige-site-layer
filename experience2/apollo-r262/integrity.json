@@ -1,0 +1,17 @@
+{
+  "source_git_blobs": {
+    "apollo-r253/atlas-source-actions.css": "4cbdf6676e8d45f39a3aa12ad934ba53ba1ad30d",
+    "apollo-r254/provenance-tap-continuity.css": "459eb6c272a386fd5c193ccc6bdc042f83dd4a22",
+    "apollo-r255/evidence-path-touch.css": "a71db932b8c0047d569f98f5e6d9742c18f44704",
+    "apollo-r256/print-custody.css": "82ee3387dd3d4392976731a6946ac9086d3eabe0",
+    "apollo-r257/print-full-evidence.css": "9a778b790d1032441037b0da329b081a5cf33b20",
+    "apollo-r260/hash-target-orientation.css": "64c4dfab15d13ad9427d4e813fba4462f50b4827"
+  },
+  "r261_js_git_blob": "2c196dbb733345e6e51a27af2d2894ca4461a2c9",
+  "generated_asset_sha256": {
+    "apollo-overlays.css": "18115eab49504bc5dc0b59373456b78f590b7816e052046d4379cb4b109cc108",
+    "source-drawer-focus.js": "0f1c8feeecf40c79c0b5e9d41025e7a4fd7806eac92a7d612aed3ecd4aaededa"
+  },
+  "original_r238_manifest_sha256": "f5d1cf4e4e1be9b397563a6d9b25145f3b22d6dc5737774c1d27362869e3ed68",
+  "build": "R262 staging only; not deployed"
+}
