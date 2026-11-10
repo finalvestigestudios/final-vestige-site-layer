@@ -134,6 +134,10 @@ R260_PRINT_DISCLOSURE_BLOB = '3a5c51f2e49c0b92de0730d558af18b29b6c206b'
 # original source, citations and review holds remain untouched.
 R261_PRINT_DRAFT_PATH = 'tools/r261_family_card_print_remediation_draft_hold.py'
 R261_PRINT_DRAFT_BLOB = '7132840d9f35bd60af5c7e4152053270f347da58'
+# R262 supersedes R261's inaccurate feature description in an OFFLINE
+# source-bound candidate. Original HTML and all release holds remain intact.
+R262_NOJS_TRUTH_PATH = 'tools/r262_family_card_truthful_nojs_gate_hold.py'
+R262_NOJS_TRUTH_BLOB = 'e8eae0980bbd30cc27a714a0b6b5a4d711c3224b'
 # R258 binds the complete R254/R257 original source-claim partition to a
 # deterministic, entirely escaped, no-clickable-links offline reviewer view.
 R258_COMPLETE_REVIEW_PATH = 'tools/r258_complete_offline_claim_review_hold.py'
@@ -803,6 +807,30 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
                     'release_authorized', 'public_published'))):
             raise ValueError('R261 offline print privacy candidate HOLD drift')
         result['family_card_unpublished_print_remediation_receipt'] = candidate_receipt
+        # R261's draft still describes automatic reminders/text download which
+        # the actual original Tool #104 does not implement. Preserve R261 as an
+        # historical witness but use ONLY the held R262 truthfully worded option.
+        r262 = load_frozen_gate(root, R262_NOJS_TRUTH_PATH, R262_NOJS_TRUTH_BLOB,
+                                'fv_preparedness_r262_nojs_feature_truth', ('audit', 'propose'))
+        truth = r262.audit(root, safe_read, r261)
+        if (truth.get('state') != HOLD
+                or truth.get('original_git_blob') != print_witness['source_git_blob']
+                or truth.get('r261_candidate_blob') != candidate_receipt['draft_git_blob']
+                or truth.get('unsupported_feature_promises_removed') != 2
+                or truth.get('review_only_claim_replacements') != 1
+                or truth.get('required_static_affordances') != 9
+                or truth.get('static_affordance_checks_pass') is not True
+                or truth.get('two_print_privacy_notices_retained') is not True
+                or truth.get('citations_and_links_unchanged') is not True
+                or truth.get('original_source_unchanged') is not True
+                or truth.get('independent_editorial_review_required') is not True
+                or truth.get('real_browser_and_print_tests_required') is not True
+                or any(truth.get(key) is not False for key in (
+                    'privacy_certified', 'medical_safety_verified', 'independent_qd_pass',
+                    'source_review_approved', 'merchant_approved',
+                    'release_authorized', 'public_published'))):
+            raise ValueError('R262 truthful no-JS draft candidate HARD HOLD changed')
+        result['family_card_unpublished_truthful_nojs_candidate'] = truth
         # An editorial option is NOT a source correction or approval. Authenticate
         # its exact preview bytes, then separately inspect its visible copy.
         if git_blob(safe_read(root, R249_UNPUBLISHED_PREVIEW_PATH)) != R249_UNPUBLISHED_PREVIEW_BLOB:
@@ -1003,6 +1031,8 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
             raise ValueError('R260 print/privacy disclosure witness changed during audit')
         if git_blob(safe_read(root, R261_PRINT_DRAFT_PATH)) != R261_PRINT_DRAFT_BLOB:
             raise ValueError('R261 offline print privacy draft gate changed during audit')
+        if git_blob(safe_read(root, R262_NOJS_TRUTH_PATH)) != R262_NOJS_TRUTH_BLOB:
+            raise ValueError('R262 truthful no-JS draft gate changed during audit')
         if git_blob(safe_read(root, R258_COMPLETE_REVIEW_PATH)) != R258_COMPLETE_REVIEW_BLOB:
             raise ValueError('R258 2000-citation offline reviewer gate changed during audit')
         result['reconciliation'] = {'frozen_articles': 35,
