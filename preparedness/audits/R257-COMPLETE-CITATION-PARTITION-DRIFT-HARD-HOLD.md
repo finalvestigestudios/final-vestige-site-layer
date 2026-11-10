@@ -1,4 +1,4 @@
-# R257 — Complete Original Citation Coverage / Emerging Contributor Drift (Issue #136)
+# R257 — Complete Original Citation Coverage / Historical Crosswalk Provenance (Issue #136)
 
 **DRAFT / HARD HOLD.** No merge, live WordPress/CMS, navigation, source-status change, email/social publishing, affiliate or merchant activation. Cross-reference business authority #820 and #818.
 
@@ -15,20 +15,21 @@ R257 adds `preparedness/tools/r257_complete_citation_partition_hold.py`, authent
 - **NOT RUN:** full native repository `validate.py`, `build.py`, entire inherited suite, authentic R237→R254→R257 pipeline, actual 41 WordPress-ready exports or browser/print checks. Local environment DNS cannot resolve private GitHub checkout. Synthetic passes **DO NOT** represent authentic source-safety verification, medical-safety review or QD PASS.
 - Zero WordPress/CMS/social/email/analytics/checkout writes.
 
-## **Current contributor branches have drifted from R200 — NEW merge blocker (2026-11-09 PT)**
-Fresh authenticated GitHub branch-head reads differ from the frozen source identities for **5 of 7**, contrary to earlier snapshots:
+## **Contributor reconciliation corrected — all seven current branches MATCH the frozen R200 manifest**
 
-| Cluster | Frozen R200 SHA | Current branch HEAD | Compare / observed scope |
-|---|---|---|---|
-| start | `2122d856` | `2122d856` | unchanged |
-| shelter | `5daeaf2d` | `5daeaf2d` | unchanged |
-| food | `e9cd7766` | `f911ff7a` | **diverged**, 1 ahead/1 behind: test, food cluster memo |
-| hist-food | `2acf65ca` | `67e116e5` | ahead 1: two article HTML/metadata, source fragment, tests, memo |
-| health | `d2212d0` | `d5ef5baf` | ahead 1: cluster memo |
-| hist-home | `f654e600` | `7504a5f0` | ahead 2: three article HTML/metadata, source fragment, memo |
-| hist-field | `a5ce8a62` | `4e5caf81` | ahead 1: two article HTML, metadata, source fragment, memo |
+**Important verification correction:** The first comparison was inadvertently performed against `preparedness/sources/crosswalk.json`'s older, explicitly dated `source_head_commits` (2026-11-04), **not against R200's frozen `branch_heads`**. The resulting statement that 5/7 source branches had recently drifted from R200 was wrong. Subsequent independent read of `preparedness/audits/r200_seven_cluster_35_article_frozen_custody.json` (Git blob `5822f9dfde21d1f3bdfc26658769d852c639438c`) established **7/7 current Claude contributor HEADs equal exact R200 branch_heads**. This supersedes any preceding R257 provisional '5/7 drift' notes.
 
-**No automatic merge.** Changes require per-article body word-count/read-depth, safety-review fingerprint, origin-scoped citation/source comparison, duplicated route, source-group and source approval checks, and independent QA. The existing R200 frozen snapshot is still the archival integration base; newer branch heads are *not* silently substituted. Keep the R256/R257 drafts stacked and held while Claude contributor owners reconcile.
+| Cluster | Frozen R200 HEAD = Current contributor HEAD | Historical crosswalk (if different) |
+|---|---|---|
+| start | `2122d856fce9f64887c16df3d52e64be9f59a55b` | same |
+| shelter | `5daeaf2dd5ab71806a6b73c91edfb1d8df5da976` | same |
+| food | `f911ff7a655de8d81535ea86ec3d65a49ee76648` | `e9cd7766` |
+| hist-food | `67e116e536c7410bed30f8f3b1bb8c166f3c223d` | `2acf65ca` |
+| health | `d5ef5bafd68361434dd1cc9209915b8e8a4eaf17` | `d2212d0` |
+| hist-home | `7504a5f099594d635e3dd7332a33a2e1346c43a2` | `f654e600` |
+| hist-field | `4e5caf812727953aa45e3bda2d382f2c67b6a09c` | `a5ce8a62` |
+
+The 5 different historical crosswalk source HEADs reflect an **older provenance snapshot**, not observed current branch movement relative to frozen R200. Their source-file receipts must remain historically intact until independently reconciled; do not rewrite or upgrade source variants automatically or imply the 32 shared-group source reading scopes are approved. The two inventories have different dates and purposes. The R200 manifest includes 35 article identities and 41 intended exports; original reading-depth, citation and safety reviews are still pending the authentic native pipeline.
 
 Independent QA PR #157 (`7d1ae6b8ef93d10cfb6810987672360885e9c1aa`), synthetic test isolation PR #169 (`e9cd7766dac59d47ab467d8945269b9146c2aef5`), and homepage PR #1689 (`f55c36b6598eec558dd8bb24e4c8988becc51be0`) were inspected, not modified.
 
