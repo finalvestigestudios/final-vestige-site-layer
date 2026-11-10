@@ -43,12 +43,13 @@ class DescriptorJournalR47Tests(unittest.TestCase):
                               lambda: self.assertEqual(self.journal.read_bytes(), self.first))
         self.assertEqual(self.journal.read_bytes(), self.first + self.second)
 
-    def test_failed_verification_does_not_leave_empty_journal(self):
+    def test_failed_verification_preserves_empty_journal_for_manual_review(self):
         def reject():
             raise ValueError("source changed")
         with self.assertRaisesRegex(ValueError, "source changed"):
             append_verified_event(self.journal, self.first, 64, reject)
-        self.assertFalse(self.journal.exists())
+        self.assertTrue(self.journal.is_file())
+        self.assertEqual(self.journal.read_bytes(), b"")
 
     def test_failed_existing_verification_does_not_append(self):
         self.journal.write_bytes(self.first)

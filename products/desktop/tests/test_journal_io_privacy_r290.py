@@ -95,13 +95,14 @@ class JournalIOMetadataPrivacyR290(unittest.TestCase):
                 append_verified_event(self.source, self.data, 1024, lambda: None)
         self.assert_private_failure(raised.exception, APPEND_ERROR)
 
-    def test_verified_callback_oserror_is_sanitized_and_empty_file_removed(self):
+    def test_verified_callback_oserror_is_sanitized_and_empty_file_preserved(self):
         def fail_verification():
             raise PermissionError(13, PRIVATE, str(self.source))
         with self.assertRaises(ValueError) as raised:
             append_verified_event(self.source, self.data, 1024, fail_verification)
         self.assert_private_failure(raised.exception, APPEND_ERROR)
-        self.assertFalse(self.source.exists(), "unchanged empty new file may be cleaned")
+        self.assertTrue(self.source.is_file(), "failed review evidence must be preserved")
+        self.assertEqual(self.source.read_bytes(), b"")
 
     def test_append_fsync_error_is_sanitized_and_write_not_rolled_back(self):
         self.source.write_bytes(self.data)
