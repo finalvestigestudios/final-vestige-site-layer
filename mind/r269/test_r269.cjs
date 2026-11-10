@@ -101,11 +101,12 @@ const clone=f=>JSON.parse(JSON.stringify(f));
 function fixtures(f){
  const tests=[];function add(name,fn){const o=clone(f);fn(o);if(Object.keys(f).every(k=>f[k]===o[k]))throw Error("ineffective fixture "+name);tests.push([name,o])}
  for(const [k,rx,to] of [
-  ["a", " disabled", " "],["b"," disabled"," "],["hub"," disabled"," "],
+  
   ["a",'id="affiliate-disclosure"','id="different"'],["b",'id="affiliate-disclosure"','id="different"'],["hub",'id="affiliate-disclosure"','id="different"'],
   ["a",'https://finalvestige.com/focus/','https://example.org/a'],["b",'https://finalvestige.com/focus/','https://example.org/b'],
   ["b",'source-controlled R257 WebVTT text','some other screenplay']
  ])add("replace "+k+" "+rx,o=>o[k]=o[k].replace(rx,to));
+ for(const key of ["a","b","hub"])add("Enable "+key+" exact CTA",o=>o[key]=o[key].replace(/(<button\\b[^>]*\\bid=["']?zen12-buy-button\\b[^>]*?)\\sdisabled(?=\\s|>)/i,"$1"));
  for(const [name,element] of [
  ["script","<script>alert(1)</script>"],["form","<form><input></form>"],["merchant","<a href=https://zen12.com/secret/>Go</a>"],
  ["jsURL",'<a href="javascript:alert(1)">Go</a>'],["handler",'<div onclick="alert(1)">test</div>'],
@@ -118,7 +119,7 @@ function fixtures(f){
  add("A/B buyer mismatch",o=>o.b=o.b.replace("The free comparison","The expensive comparison"));
  add("Article sample damaged",o=>o.article=o.article.slice(0,500));
  add("Article 2026 number changed",o=>o.article=o.article.replace("31,184","31,185"));
- add("Plan no-JS removed",o=>o.plan=o.plan.replace("no-JS","JavaScript only"));
+ add("Plan no-JS removed",o=>o.plan=o.plan.replace(/no-JS/g,"JavaScript only"));
  add("Matrix source deleted",o=>{let x=JSON.parse(o.matrix);x.sources.pop();o.matrix=JSON.stringify(x)});
  add("Matrix unsupported claim approved",o=>{let x=JSON.parse(o.matrix);x.claims.find(c=>c.id==="C10").status="proven";o.matrix=JSON.stringify(x)});
  add("Matrix gate deleted",o=>{let x=JSON.parse(o.matrix);x.commercial_gates.pop();o.matrix=JSON.stringify(x)});
