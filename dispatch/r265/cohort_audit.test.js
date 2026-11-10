@@ -54,6 +54,7 @@ test('unverified signup provider means unknown leads',()=>{const r=mutate(x=>x.a
 test('zero denominator means no rate',()=>{const r=mutate(x=>x.sessions=[]);assert(r.pass);assert.equal(r.cohorts['7d'].net_cents_per_1000_qualified_human_sessions,null);});
 test('empty unverified evidence yields null metrics, not 0',()=>{const r=mutate(x=>{x.sessions=[];x.confirmations=[];x.settlements=[];x.attestations.complete_qualified_sessions=false;x.attestations.jetpack_confirmations_verified=false;x.attestations.merchant_settlements_reconciled=false;x.attestations.cohort_attribution_verified=false;});assert(r.pass);assert.equal(r.cohorts['30d'].qualified_human_sessions,null);assert.equal(r.cohorts['30d'].settled_attributed_orders,null);});
 test('hypothetical live attestation does not equal verified source',()=>{const r=mutate(x=>x.mode='external_aggregate');assert(r.pass);assert.equal(r.evidence_class,'UNVERIFIED_EXTERNAL_ATTESTATION');});
+test('malformed as-of date fails closed without throwing',()=>{const r=mutate(x=>x.as_of_day='2026-11-31');assert(!r.pass);});
 test('missing list fails closed',()=>{const x=base();delete x.sessions;assert(!inspection(x).pass);});
 let count=0;for(const [name,fn] of cases){try{fn();console.log('PASS '+name);count++;}catch(e){console.error('FAIL '+name+' '+e.message);process.exitCode=1;}}
 console.log('SUMMARY '+count+'/'+cases.length+' passed');
