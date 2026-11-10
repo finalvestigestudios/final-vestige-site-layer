@@ -166,3 +166,34 @@ def build_inventory(candidate_dir: str | Path) -> str:
         # Even an inode check followed by unlink has a race: another local
         # writer can replace the path between those operations. Keep evidence
         # for explicit operator review, and require a NEW clean folder/retry.
+
+def _membership_with_stage(root: Path, stage: Path) -> None:
+    _membership_staged = list(root.iterdir())
+    if (len(_membership_staged) != len(EXPECTED) + 1
+            or {p.name for p in _membership_staged} != set(EXPECTED) | {stage.name}):
+        raise InventoryBuildError("Candidate folder changed during inventory build")
+    info = stage.lstat()
+    if not stat.S_ISREG(info.st_mode) or info.st_nlink != 1:
+        raise InventoryBuildError("Inventory staging file is not ordinary")
+    for name in EXPECTED:
+        item = (root / name).lstat()
+        if (not stat.S_ISREG(item.st_mode) or item.st_nlink != 1
+                or item.st_size < 1 or item.st_size > MAX_EXE_BYTES):
+            raise InventoryBuildError("Candidate changed during inventory build")
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("dist", help="Directory containing ONLY the six approved EXEs")
+    args = parser.parse_args(argv)
+    try:
+        name = build_inventory(args.dist)
+    except InventoryBuildError as exc:
+        print("REJECTED: " + str(exc), file=sys.stderr)
+        return 1
+    print(f"Wrote {name} for six candidates. NOT release authorized; run independent gate.")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
