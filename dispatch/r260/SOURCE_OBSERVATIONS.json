@@ -1,0 +1,78 @@
+{
+  "snapshot_date_utc": "2026-11-10T16:30:29Z",
+  "source_type": "authenticated_read_only_WordPress_pages_and_newsletter_settings",
+  "editorial_standards": {
+    "url": "https://finalvestige.com/editorial-standards/",
+    "page_id": 17,
+    "published": true,
+    "direct_records_first": true,
+    "uncertainty_visible": true,
+    "affiliate_influence_disclosed": true
+  },
+  "dispatch": {
+    "url": "https://finalvestige.com/dispatch/",
+    "page_id": 523,
+    "modified": "2026-11-05T20:01:31",
+    "published": true,
+    "promise": "New investigations and archive finds by email, when we publish them.",
+    "secondary": "Join The Dispatch and get the complete Seven Day Focus Fieldbook, a free 52-page guide to getting started, building a workable routine, and tracking what helps. You’ll also get new investigations and useful finds from the archive when we publish them.",
+    "confirmation": "If WordPress asks you to confirm the address, click the confirmation link and you’re in.",
+    "optout": "Unsubscribe anytime.",
+    "commercial_earning_disclosure_present": false
+  },
+  "focus": {
+    "url": "https://finalvestige.com/focus/",
+    "page_id": 1579,
+    "modified": "2026-11-05T17:44:02",
+    "published": true,
+    "promise": "By subscribing you also join The Dispatch, our email of new investigations and archive finds, sent when we publish them. Some emails may include recommendations that earn us a commission. Unsubscribe anytime.",
+    "confirmation": "Please confirm your email to join The Dispatch. The welcome email will include this same download link.",
+    "commercial_earning_disclosure_present": true
+  },
+  "newsletter": {
+    "enabled": true,
+    "new_post_automatic_email": false,
+    "content_format": "full",
+    "reply_to": "no-reply",
+    "from_name": "Final Vestige Studios",
+    "welcome_configured": true,
+    "welcome_promise": "You'll hear from us when there's a new Final Vestige investigation or a worthwhile find from the archives. No daily flood of emails.",
+    "welcome_actual_receipt_verified": false,
+    "actual_business_postal_verified": false,
+    "delivered_unsubscribe_verified": false,
+    "subscriber_diagnostics": {
+      "total": 3,
+      "confirmed": 3,
+      "unconfirmed": 2,
+      "suppressed": 0
+    },
+    "separate_followers": {
+      "email": 0,
+      "wpcom": 3,
+      "partial": false
+    },
+    "actual_email_eligible_count": null,
+    "recent_posts_never_sent_opted_out": 5
+  },
+  "affiliate": {
+    "named_final_vestige_acceptance": false,
+    "email_promotion_rights": false,
+    "issued_earning_url": false,
+    "approved_guide_for_zen12": false,
+    "approved_guide_for_hypnosis_live": false,
+    "live_affiliate_cart_and_refund_checked": false,
+    "confirmed_paid_commissions": null
+  },
+  "campaign": {
+    "canonical_original_pr": 175,
+    "master_issue": 174,
+    "editorial_count": 4,
+    "commercial_slots": [
+      3,
+      5
+    ],
+    "all_six_held": true,
+    "founder_final_send_approval": false
+  },
+  "interpretation": "Differences in signup copy are a disclosure/expectations gap, not proof of illegal consent. Aggregate provider counts are nonadditive and do not identify email-eligible recipients."
+}

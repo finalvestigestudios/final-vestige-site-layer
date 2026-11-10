@@ -1,0 +1,36 @@
+{
+  "as_of_utc": "2026-11-10T16:30:29Z",
+  "stage": "DRAFT_REVIEW_ONLY",
+  "founder_approved_fully": [
+    "draft_6_issue_campaign"
+  ],
+  "founder_final_send_authorization": false,
+  "per_issue": {
+    "1": "HOLD_UNSENT",
+    "2": "HOLD_UNSENT",
+    "3": "HOLD_UNSENT_HOLD_MERCHANT",
+    "4": "HOLD_UNSENT",
+    "5": "HOLD_UNSENT_HOLD_MERCHANT",
+    "6": "HOLD_UNSENT"
+  },
+  "provider_filtered_email_subscription_count_verified": false,
+  "subscriber_origin_and_consent_basis_verified": false,
+  "welcome_received_verified": false,
+  "jetpack_received_issue_verified": false,
+  "publisher_business_postal_verified": false,
+  "functional_opt_out_verified": false,
+  "subject_and_preheader_rendered_verified": false,
+  "named_affiliate_acceptance_verified": false,
+  "email_channel_permission_verified": false,
+  "issued_earning_url_verified": false,
+  "live_authorized_guide_verified": false,
+  "price_and_refund_at_checkout_verified": false,
+  "independent_product_claims_verified": false,
+  "settled_paid_revenue_verified": false,
+  "qualified_human_sessions_verified": false,
+  "subscriber_eligibility": null,
+  "realized_net_revenue": null,
+  "net_revenue_per_1000_qualified_human_sessions": null,
+  "no_send_or_cms_write_performed": true,
+  "note": "FALSE is not an assertion that merchant permission was denied or that revenue equals zero; only evidence missing. No dispatch action authorized by this artifact."
+}
