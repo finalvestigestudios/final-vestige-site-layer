@@ -1,0 +1,603 @@
+{
+  "updated_at_utc": "2026-11-10T13:37:47Z",
+  "release_policy": "NO_SEND_NO_PUBLICATION",
+  "origin": "GitHub Issue #174; master draft PR #175; readiness PR #201; stacked parent PR #1896",
+  "purpose": "Reconcile source evidence to per-edition legal/commercial delivery restrictions. Every gate remains unverified unless direct evidence exists.",
+  "jetpack_read_only_snapshot": {
+    "newsletter_enabled": true,
+    "email_new_posts_by_default": false,
+    "email_content_format": "full",
+    "sender_display": "Final Vestige Studios",
+    "reply_to": "no-reply",
+    "welcome_configured": true,
+    "welcome_received_verified": false,
+    "subscriber_total": 3,
+    "confirmed_counter": 3,
+    "unconfirmed_requests": 2,
+    "suppressed": 0,
+    "jetpack_follower_email": 0,
+    "wordpress_com_followers": 3,
+    "actual_email_eligible_count": null,
+    "count_policy": "Non-additive counters; confirmed counter is not proof of current email eligibility",
+    "recent_sends": "Five most recent published posts explicitly opted out",
+    "snapshot_checked_utc": "2026-11-10T13:37:47Z"
+  },
+  "primary_purpose_principle": "Editorial/commercial issue grouping is a CONTENT PLAN, not a determination of CAN-SPAM primary purpose. All six first-party CTAs can promote a commercial website; each requires message-specific legal determination. Safest draft gate is physical postal address and functioning opt-out on all six.",
+  "merchant_status": {
+    "zen12": {
+      "partner_approved_for_fv": null,
+      "email_promotion_permission": null,
+      "issued_earning_url": null,
+      "guide_live_and_approved": false,
+      "current_final_checkout_verified": false,
+      "exact_sales_page": "https://zen12.com/hnp",
+      "different_promo_route": "https://zen12.com/secret/",
+      "seller_claim_not_independent_proof": true
+    },
+    "hypnosis_live": {
+      "partner_approved_for_fv": null,
+      "email_promotion_permission": null,
+      "issued_earning_url": null,
+      "guide_live_and_approved": false,
+      "current_final_checkout_verified": false,
+      "specific_seller_page": "https://hypnosislive.com/mental-skills/total-focus",
+      "seller_claim_not_independent_proof": true
+    }
+  },
+  "metrics": {
+    "confirmed_signup_verified_count": null,
+    "qualified_human_sessions": null,
+    "merchant_confirmed_paid_orders": null,
+    "realized_net_revenue": null,
+    "net_revenue_per_1000_qualified_sessions": null,
+    "statistical_ab_conclusion": "prohibited: tiny and unverified email-eligible population"
+  },
+  "issues": [
+    {
+      "number": 1,
+      "kind": "editorial",
+      "subject": "The mind is not a camera",
+      "send_authorized": false,
+      "actual_received_evidence": "WITHHELD_PRIVATE",
+      "evidence": {
+        "primary_purpose_legal_review": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        },
+        "truthful_subject_review": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        },
+        "genuine_jetpack_preview": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        },
+        "actual_received_render_review": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        },
+        "final_vestige_postal_address_in_received_message": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        },
+        "unsubscribe_visible_in_received_message": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        },
+        "unsubscribe_function_verified": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        },
+        "eligible_recipients_provider_verified": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        },
+        "welcome_delivery_verified": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        },
+        "relevant_first_party_cta_live": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        },
+        "founder_final_campaign_approval": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        }
+      }
+    },
+    {
+      "number": 2,
+      "kind": "editorial",
+      "subject": "Before hypnosis had a name",
+      "send_authorized": false,
+      "actual_received_evidence": "WITHHELD_PRIVATE",
+      "evidence": {
+        "primary_purpose_legal_review": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        },
+        "truthful_subject_review": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        },
+        "genuine_jetpack_preview": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        },
+        "actual_received_render_review": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        },
+        "final_vestige_postal_address_in_received_message": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        },
+        "unsubscribe_visible_in_received_message": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        },
+        "unsubscribe_function_verified": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        },
+        "eligible_recipients_provider_verified": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        },
+        "welcome_delivery_verified": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        },
+        "relevant_first_party_cta_live": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        },
+        "founder_final_campaign_approval": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        }
+      }
+    },
+    {
+      "number": 3,
+      "kind": "commercial",
+      "subject": "The twelve-minute meditation question",
+      "send_authorized": false,
+      "actual_received_evidence": "WITHHELD_PRIVATE",
+      "evidence": {
+        "primary_purpose_legal_review": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        },
+        "truthful_subject_review": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        },
+        "genuine_jetpack_preview": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        },
+        "actual_received_render_review": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        },
+        "final_vestige_postal_address_in_received_message": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        },
+        "unsubscribe_visible_in_received_message": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        },
+        "unsubscribe_function_verified": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        },
+        "eligible_recipients_provider_verified": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        },
+        "welcome_delivery_verified": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        },
+        "relevant_first_party_cta_live": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        },
+        "founder_final_campaign_approval": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        },
+        "named_affiliate_acceptance": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        },
+        "permission_to_promote_by_email": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        },
+        "merchant_issued_earning_url": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        },
+        "approved_first_party_buyer_guide_live": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        },
+        "specific_seller_sales_page_and_creative_reviewed": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        },
+        "current_cart_price_and_refund_verified": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        },
+        "product_claims_independently_cleared": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        },
+        "near_offer_affiliate_disclosure_checked": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        }
+      }
+    },
+    {
+      "number": 4,
+      "kind": "editorial",
+      "subject": "Fourteen seconds. A much longer explanation.",
+      "send_authorized": false,
+      "actual_received_evidence": "WITHHELD_PRIVATE",
+      "evidence": {
+        "primary_purpose_legal_review": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        },
+        "truthful_subject_review": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        },
+        "genuine_jetpack_preview": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        },
+        "actual_received_render_review": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        },
+        "final_vestige_postal_address_in_received_message": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        },
+        "unsubscribe_visible_in_received_message": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        },
+        "unsubscribe_function_verified": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        },
+        "eligible_recipients_provider_verified": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        },
+        "welcome_delivery_verified": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        },
+        "relevant_first_party_cta_live": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        },
+        "founder_final_campaign_approval": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        }
+      }
+    },
+    {
+      "number": 5,
+      "kind": "commercial",
+      "subject": "Before you press play on a hypnosis audio",
+      "send_authorized": false,
+      "actual_received_evidence": "WITHHELD_PRIVATE",
+      "evidence": {
+        "primary_purpose_legal_review": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        },
+        "truthful_subject_review": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        },
+        "genuine_jetpack_preview": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        },
+        "actual_received_render_review": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        },
+        "final_vestige_postal_address_in_received_message": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        },
+        "unsubscribe_visible_in_received_message": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        },
+        "unsubscribe_function_verified": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        },
+        "eligible_recipients_provider_verified": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        },
+        "welcome_delivery_verified": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        },
+        "relevant_first_party_cta_live": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        },
+        "founder_final_campaign_approval": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        },
+        "named_affiliate_acceptance": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        },
+        "permission_to_promote_by_email": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        },
+        "merchant_issued_earning_url": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        },
+        "approved_first_party_buyer_guide_live": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        },
+        "specific_seller_sales_page_and_creative_reviewed": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        },
+        "current_cart_price_and_refund_verified": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        },
+        "product_claims_independently_cleared": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        },
+        "near_offer_affiliate_disclosure_checked": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        }
+      }
+    },
+    {
+      "number": 6,
+      "kind": "editorial",
+      "subject": "What did seven days of attention reveal?",
+      "send_authorized": false,
+      "actual_received_evidence": "WITHHELD_PRIVATE",
+      "evidence": {
+        "primary_purpose_legal_review": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        },
+        "truthful_subject_review": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        },
+        "genuine_jetpack_preview": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        },
+        "actual_received_render_review": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        },
+        "final_vestige_postal_address_in_received_message": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        },
+        "unsubscribe_visible_in_received_message": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        },
+        "unsubscribe_function_verified": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        },
+        "eligible_recipients_provider_verified": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        },
+        "welcome_delivery_verified": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        },
+        "relevant_first_party_cta_live": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        },
+        "founder_final_campaign_approval": {
+          "status": "not_verified",
+          "source": null,
+          "verified_at": null,
+          "reviewer": null
+        }
+      }
+    }
+  ]
+}
