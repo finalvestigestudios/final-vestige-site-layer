@@ -3,7 +3,7 @@ import importlib.util
 from pathlib import Path
 import unittest
 
-p = Path(__file__).with_name('r262_family_card_truthful_nojs_gate_hold.py')
+p = Path(__file__).resolve().parents[1] / 'tools/r262_family_card_truthful_nojs_gate_hold.py'
 spec = importlib.util.spec_from_file_location('r262', p)
 r = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(r)
