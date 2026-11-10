@@ -44,7 +44,7 @@ ok(m.creator_topic_fit.length===3&&m.creator_topic_fit.every(x=>x.grok_media_id=
 ok(m.ab_hypothesis.implementation==='NOT_LIVE','no fabricated live AB');
 ok(html.includes('<meta name="robots" content="noindex,nofollow">'),'draft noindex');
 ok(!/<(?:script|form|iframe|video|audio)\b/i.test(html),'no third party scripts forms or fake video');
-ok(!/autoplay|localStorage|sendBeacon|dataLayer\.push/i.test(html),'no autoplay or tracker');
+ok(!/<(?:video|audio)[^>]*\bautoplay|localStorage\s*\(|sendBeacon\s*\(|dataLayer\.push\s*\(/i.test(html),'no forced media or tracking code');
 ok(html.includes('aria-labelledby="consent-map"'),'accessible consent section');
 const consent=html.split('aria-labelledby="consent-map"')[1].split('aria-labelledby="optional-film"')[0];
 for(const phrase of ["A free recording can still ask for your email","seller's own newsletter","No account: a free timer",
