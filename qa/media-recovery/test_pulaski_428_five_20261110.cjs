@@ -1,0 +1,50 @@
+"use strict";
+function runTests(previous,audit,current,sha,validate){
+ const failures=[];let total=0;const check=(name,fn)=>{total++;try{if(!fn())failures.push(name)}catch(e){failures.push(name+": "+e.message)}};
+ const copy=x=>JSON.parse(JSON.stringify(x));
+ check("baseline passes",()=>validate(previous,audit,current,sha).ok);
+ check("61 posts",()=>current.frozen_source.posts===61);
+ check("355 image positions",()=>current.frozen_source.inline_images===355);
+ check("288 upstream sources",()=>current.rows.length===288);
+ check("274 researched",()=>current.rows.filter(x=>x.evidence.length).length===274);
+ check("14 remaining",()=>current.rows.filter(x=>!x.evidence.length).length===14);
+ check("279 evidence records",()=>current.counts.total_evidence_records===279);
+ check("five exact Gutenberg original src",()=>audit.rows.every(a=>previous.rows.find(x=>x.slot===a.slot)?.stored_url===a.original_url));
+ check("five ALT captured",()=>audit.rows.every(a=>a.live_alt.length>10));
+ check("first URL retriever failure does not become HTTP 404",()=>audit.rows[0].guest_http_status===null&&audit.rows[0].web_retriever_observation==="RETRIEVER_UNAVAILABLE");
+ check("four exact URL retriever displays",()=>audit.rows.filter(a=>a.web_retriever_observation==="IMAGE_DISPLAYED").length===4);
+ check("U Idaho rights per item",()=>audit.rows.slice(0,4).every(a=>a.rights_review.includes("Public Domain Mark")));
+ check("LOC map rights explicitly catalogued",()=>audit.rows[4].rights_review.includes("public domain/free"));
+ check("map text and index protected",()=>audit.rows[4].diagram_label_legibility_hold&&audit.rows[4].suggested_alt.includes("index"));
+ check("dimensions remain unknown without decode",()=>audit.rows.every(a=>a.candidate_native_px===null&&a.conditional_max960_px===null));
+ check("rights not precleared",()=>audit.rows.every(a=>!a.rights_cleared&&!a.cache_authorized));
+ check("source URLs unmodified in register",()=>previous.rows.every((r,i)=>r.stored_url===current.rows[i].stored_url));
+ check("all 283 unrelated records byte-equivalent as objects",()=>previous.rows.every((r,i)=>r.post_id===428||JSON.stringify(r)===JSON.stringify(current.rows[i])));
+ check("Site QA original P0 queue intact",()=>JSON.stringify(previous.original_six_p0_guest_queue)===JSON.stringify(current.original_six_p0_guest_queue));
+ check("no documented writes or spend",()=>audit.counts.wordpress_writes===0&&audit.counts.spend_usd===0);
+ const mustFail=(name,mutate)=>check(name,()=>{const p=copy(previous),a=copy(audit),c=copy(current);mutate(p,a,c);return !validate(p,a,c,sha).ok;});
+ mustFail("reject original URL spoof",(p,a)=>a.rows[0].original_url="https://example.invalid/image.jpg");
+ mustFail("reject current URL mutation",(p,a,c)=>c.rows.find(r=>r.slot==="428:1").stored_url="https://example.invalid/missing.jpg");
+ mustFail("reject invented guest 404",(p,a)=>a.rows[0].guest_http_status=404);
+ mustFail("reject invented bytes",(p,a)=>a.rows[0].guest_wire_bytes=1200);
+ mustFail("reject unauthorized cache",(p,a)=>a.rows[0].cache_authorized=true);
+ mustFail("reject license clearance claim",(p,a)=>a.rows[0].rights_cleared=true);
+ mustFail("reject image native dimension guessing",(p,a)=>a.rows[0].candidate_native_px=[1500,1000]);
+ mustFail("reject replaced evidence blob",(p,a,c)=>c.rows.find(r=>r.slot==="428:1").evidence[0].blob_sha="fake");
+ mustFail("reject altered unrelated slot",(p,a,c)=>c.rows.find(r=>r.slot==="101:1").origin_host="example.invalid");
+ mustFail("reject false researched count",(p,a,c)=>c.counts.researched_unique=275);
+ mustFail("reject map legibility bypass",(p,a)=>a.rows[4].diagram_label_legibility_hold=false);
+ mustFail("reject published asset permission",(p,a)=>a.publication_authorized=true);
+ mustFail("reject P0 queue reorder",(p,a,c)=>c.original_six_p0_guest_queue.reverse());
+ return {passed:total-failures.length,total,failures};
+}
+module.exports={runTests};
+if(require.main===module){
+ const fs=require("node:fs"),crypto=require("node:crypto"),path=require("node:path"),dir=__dirname;
+ const read=n=>JSON.parse(fs.readFileSync(path.join(dir,n),"utf8"));
+ const p=read("coverage_269_exact_pr1703_20261110.json"),a=read("pulaski_428_five_ui_loc_rights_live_20261110.json"),c=read("coverage_274_exact_pr1703_20261110.json");
+ const bytes=fs.readFileSync(path.join(dir,"pulaski_428_five_ui_loc_rights_live_20261110.json"));
+ const sha=crypto.createHash("sha1").update(Buffer.concat([Buffer.from("blob "+bytes.length+"\\0"),bytes])).digest("hex");
+ const out=runTests(p,a,c,sha,require("./validate_pulaski_428_five_20261110.cjs").validate);
+ console.log(JSON.stringify(out));if(out.failures.length)process.exitCode=1;
+}
