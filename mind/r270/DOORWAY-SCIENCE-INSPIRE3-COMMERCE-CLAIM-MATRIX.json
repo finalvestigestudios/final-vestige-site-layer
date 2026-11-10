@@ -1,0 +1,515 @@
+{
+  "schema": "fv-mind-r270-claim-proof-revenue-v1",
+  "date": "2026-11-10",
+  "editorial_status": "UNPUBLISHED",
+  "decision": "HARD_HOLD",
+  "source_count": 18,
+  "claim_count": 20,
+  "commercial_gates": [
+    {
+      "id": "named_inspire3_acceptance",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "issued_publisher_specific_earning_url",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "exact_zen12_offer_identity",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "current_authenticated_cart_total",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "refund_policy_scope_and_fulfillment",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "approved_web_promotion_channels",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "approved_email_promotion_channels",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "approved_creatives_or_swipe_terms",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "product_specific_claim_substantiation",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "affiliate_attribution_permissions",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "ftc_adjacent_disclosure_qa",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "signed_out_mobile_browser_qa",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "word_press_sanitization_qa",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "founder_commercial_release_approval",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "independent_settled_commission_report",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    },
+    {
+      "id": "verified_product_sales_and_refunds_reconciliation",
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED",
+      "release_blocker": true
+    }
+  ],
+  "offer_priority": [
+    {
+      "offer": "Zen12 Premium",
+      "eligibility": "NOT_VERIFIED",
+      "approved_link": null,
+      "checkout_total": null,
+      "merchant_refund_performance": null,
+      "pricing_status": "two distinct unconfirmed seller page snapshots",
+      "next_owner": "Founder / Mind",
+      "status": "HARD_HOLD"
+    },
+    {
+      "offer": "FV owned paid Mind SKU",
+      "eligibility": "NOT_VERIFIED",
+      "approved_link": null,
+      "checkout_total": null,
+      "rights_confirmed": false,
+      "fulfillment_verified": false,
+      "next_owner": "Commerce",
+      "status": "HARD_HOLD"
+    },
+    {
+      "offer": "Existing Focus Fieldbook",
+      "eligibility": "VERIFIED_FREE_RESOURCE",
+      "approved_link": "https://finalvestige.com/focus/",
+      "checkout_total": 0,
+      "rights_confirmed": "owner_publicly_offered_free",
+      "fulfillment_verified": false,
+      "next_owner": "Dispatch / Claude",
+      "status": "NOT_PAID_CONVERSION"
+    }
+  ],
+  "sources": [
+    {
+      "id": "D01",
+      "title": "Radvansky & Copeland (2006)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17128613/",
+      "classification": "primary_abstract",
+      "checked": "2026-11-10",
+      "scope": "Descriptive source only; independent inference prohibited unless designated"
+    },
+    {
+      "id": "D02",
+      "title": "Radvansky et al. (2011)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/21563019/",
+      "classification": "primary_abstract",
+      "checked": "2026-11-10",
+      "scope": "Descriptive source only; independent inference prohibited unless designated"
+    },
+    {
+      "id": "D03",
+      "title": "Pettijohn & Radvansky (2016)",
+      "url": "https://journals.sagepub.com/doi/10.1080/17470218.2015.1101478",
+      "classification": "primary_abstract",
+      "checked": "2026-11-10",
+      "scope": "Descriptive source only; independent inference prohibited unless designated"
+    },
+    {
+      "id": "D04",
+      "title": "McFadyen et al. (2021)",
+      "url": "https://link.springer.com/article/10.1186/s40359-021-00536-3",
+      "classification": "primary_fulltext",
+      "checked": "2026-11-10",
+      "scope": "Descriptive source only; independent inference prohibited unless designated"
+    },
+    {
+      "id": "F01",
+      "title": "Puységur Animal Magnetism Files",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "classification": "fv_published",
+      "checked": "2026-11-10",
+      "scope": "Descriptive source only; independent inference prohibited unless designated"
+    },
+    {
+      "id": "F02",
+      "title": "Seven Day Focus Fieldbook",
+      "url": "https://finalvestige.com/focus/",
+      "classification": "fv_published_free",
+      "checked": "2026-11-10",
+      "scope": "Descriptive source only; independent inference prohibited unless designated"
+    },
+    {
+      "id": "F03",
+      "title": "Dispatch, existing single list",
+      "url": "https://finalvestige.com/dispatch/",
+      "classification": "fv_published",
+      "checked": "2026-11-10",
+      "scope": "Descriptive source only; independent inference prohibited unless designated"
+    },
+    {
+      "id": "F04",
+      "title": "Existing affiliate disclosure",
+      "url": "https://finalvestige.com/affiliate-disclosure/",
+      "classification": "fv_published",
+      "checked": "2026-11-10",
+      "scope": "Descriptive source only; independent inference prohibited unless designated"
+    },
+    {
+      "id": "F05",
+      "title": "Current editorial standards",
+      "url": "https://finalvestige.com/editorial-standards/",
+      "classification": "fv_published",
+      "checked": "2026-11-10",
+      "scope": "Descriptive source only; independent inference prohibited unless designated"
+    },
+    {
+      "id": "P01",
+      "title": "Inspire3 catalog",
+      "url": "https://inspire3.com/",
+      "classification": "seller_statement",
+      "checked": "2026-11-10",
+      "scope": "Descriptive source only; independent inference prohibited unless designated"
+    },
+    {
+      "id": "P02",
+      "title": "Exact Zen12 Premium standard",
+      "url": "https://zen12.com/hnp",
+      "classification": "seller_statement",
+      "checked": "2026-11-10",
+      "scope": "Descriptive source only; independent inference prohibited unless designated"
+    },
+    {
+      "id": "P03",
+      "title": "Different Zen12 promotional offer",
+      "url": "https://zen12.com/secret/",
+      "classification": "seller_statement",
+      "checked": "2026-11-10",
+      "scope": "Descriptive source only; independent inference prohibited unless designated"
+    },
+    {
+      "id": "P04",
+      "title": "Hypnosis Live Total Focus",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "classification": "seller_statement",
+      "checked": "2026-11-10",
+      "scope": "Descriptive source only; independent inference prohibited unless designated"
+    },
+    {
+      "id": "P05",
+      "title": "Brainwave Shots product family",
+      "url": "https://brainwaveshots.com/",
+      "classification": "seller_statement",
+      "checked": "2026-11-10",
+      "scope": "Descriptive source only; independent inference prohibited unless designated"
+    },
+    {
+      "id": "P06",
+      "title": "Public affiliate portal (not named approval)",
+      "url": "https://affiliates.inspire3.com/",
+      "classification": "partner_public_portal",
+      "checked": "2026-11-10",
+      "scope": "Descriptive source only; independent inference prohibited unless designated"
+    },
+    {
+      "id": "L01",
+      "title": "FTC affiliate Endorsement Guides Q&A",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "classification": "regulator",
+      "checked": "2026-11-10",
+      "scope": "Descriptive source only; independent inference prohibited unless designated"
+    },
+    {
+      "id": "L02",
+      "title": "FTC Health Products Compliance Guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "classification": "regulator",
+      "checked": "2026-11-10",
+      "scope": "Descriptive source only; independent inference prohibited unless designated"
+    },
+    {
+      "id": "B01",
+      "title": "2021 public Bond research landing",
+      "url": "https://research.bond.edu.au/en/publications/doorways-do-not-always-cause-forgetting-a-multimodal-investigatio/",
+      "classification": "research_metadata",
+      "checked": "2026-11-10",
+      "scope": "Descriptive source only; independent inference prohibited unless designated"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "Doorway-crossing impaired some object recognition in a 2006 virtual environment",
+      "status": "supported_with_task_limits",
+      "source_ids": [
+        "D01"
+      ],
+      "limit": "Cannot generalize to everyday intentions or every doorway."
+    },
+    {
+      "id": "C02",
+      "claim": "2011 experiments detected location-updating effects across environments",
+      "status": "supported_with_task_limits",
+      "source_ids": [
+        "D02"
+      ],
+      "limit": "Abstract scope only; not universal memory erasure."
+    },
+    {
+      "id": "C03",
+      "claim": "2016 paper investigated retention interval and retrieval-interference models",
+      "status": "supported_abstract",
+      "source_ids": [
+        "D03"
+      ],
+      "limit": "Mechanistic interpretation is not proven product mechanism."
+    },
+    {
+      "id": "C04",
+      "claim": "2021 four-experiment study did not show broad significant doorway forgetting",
+      "status": "supported_fulltext",
+      "source_ids": [
+        "D04"
+      ],
+      "limit": "Absence of significant effects does not prove no effect in any context."
+    },
+    {
+      "id": "C05",
+      "claim": "Under memory load the 2021 team observed increased false alarms for mismatched probes",
+      "status": "supported_fulltext",
+      "source_ids": [
+        "D04"
+      ],
+      "limit": "Not the same as blanket loss of hit rates or of real-life errands."
+    },
+    {
+      "id": "C06",
+      "claim": "A doorway causes the human brain to reset universally",
+      "status": "unsupported_do_not_claim",
+      "source_ids": [
+        "D01",
+        "D04"
+      ],
+      "limit": "No such general reset established."
+    },
+    {
+      "id": "C07",
+      "claim": "Zen12 standard Premium seller lists 12 levels and 48 MP3 files",
+      "status": "seller_statement_only",
+      "source_ids": [
+        "P02"
+      ],
+      "limit": "List of contents not independently purchased or checked for fulfillment."
+    },
+    {
+      "id": "C08",
+      "claim": "Zen12 public standard pricing differs from separate coupon-framed offer",
+      "status": "observed_separate_seller_pages",
+      "source_ids": [
+        "P02",
+        "P03"
+      ],
+      "limit": "2026-11-10 snapshots; no verified cart, merchant acceptance or Final Vestige earning price. Do not assert discounts."
+    },
+    {
+      "id": "C09",
+      "claim": "One year money-back guarantee displayed on Zen12 standard page",
+      "status": "seller_statement_only",
+      "source_ids": [
+        "P02"
+      ],
+      "limit": "Policy applicability, payment method and refund fulfillment not independently authenticated."
+    },
+    {
+      "id": "C10",
+      "claim": "Twelve minutes of Zen12 equals an hour of meditation",
+      "status": "unsupported_product_efficacy",
+      "source_ids": [
+        "P02",
+        "L02"
+      ],
+      "limit": "Seller assertion, no suitable product-specific proof. Never use as FV claim."
+    },
+    {
+      "id": "C11",
+      "claim": "Zen12 product proven to improve health, memory, productivity or mood",
+      "status": "unsupported_product_efficacy",
+      "source_ids": [
+        "P02",
+        "L02"
+      ],
+      "limit": "No product-specific independently substantiated outcome in current evidence."
+    },
+    {
+      "id": "C12",
+      "claim": "Hypnosis Live Total Focus seller advertises a 33-minute/47MB session",
+      "status": "seller_statement_only",
+      "source_ids": [
+        "P04"
+      ],
+      "limit": "Not a tested intervention; current cart and rights unknown."
+    },
+    {
+      "id": "C13",
+      "claim": "Hypnosis Live can reprogram brain for 100% focus",
+      "status": "unsupported_product_efficacy",
+      "source_ids": [
+        "P04",
+        "L02"
+      ],
+      "limit": "Commercial seller copy not supportable as FV recommendation."
+    },
+    {
+      "id": "C14",
+      "claim": "Brainwave Shots product family exists in seller catalog",
+      "status": "seller_statement_only",
+      "source_ids": [
+        "P01",
+        "P05"
+      ],
+      "limit": "Specific offers, customer rights and outcomes not separately verified."
+    },
+    {
+      "id": "C15",
+      "claim": "Inspire3 public affiliate portal proves Final Vestige accepted",
+      "status": "false_not_verified",
+      "source_ids": [
+        "P06"
+      ],
+      "limit": "Account authorization, channel rights, issued URL and commission terms absent."
+    },
+    {
+      "id": "C16",
+      "claim": "Clear disclosure must be near affiliate endorsement/link",
+      "status": "regulator_guidance",
+      "source_ids": [
+        "L01"
+      ],
+      "limit": "Disclosure is necessary but not sufficient; prohibited efficacy claims remain prohibited."
+    },
+    {
+      "id": "C17",
+      "claim": "A free Fieldbook exists and uses existing Dispatch signup pathway",
+      "status": "verified_live_public_description",
+      "source_ids": [
+        "F02",
+        "F03"
+      ],
+      "limit": "No claim that a subscriber was confirmed or delivery verified."
+    },
+    {
+      "id": "C18",
+      "claim": "Focused doorway article proves Zen12 or Hypnosis Live works",
+      "status": "false_no_transfer",
+      "source_ids": [
+        "D04",
+        "P02",
+        "P04",
+        "L02"
+      ],
+      "limit": "A memory segmentation experiment is not a commercial product trial."
+    },
+    {
+      "id": "C19",
+      "claim": "Independent cleared Zen12 paid commission has been established",
+      "status": "not_verified",
+      "source_ids": [
+        "P06"
+      ],
+      "limit": "Clicks, emails, signup and pageviews never counted as paid sales."
+    },
+    {
+      "id": "C20",
+      "claim": "Rights-cleared FV Mind owned paid SKU is active and fulfilling",
+      "status": "not_verified",
+      "source_ids": [
+        "F02"
+      ],
+      "limit": "Focus is free; Payhip payment ownership, returns and settled sales not authenticated."
+    }
+  ],
+  "measurement": {
+    "qualified_human_sessions": null,
+    "article_to_focus_clicks": null,
+    "confirmed_opt_in_leads": null,
+    "affiliate_outbound_clicks": null,
+    "merchant_verified_paid_orders": null,
+    "merchant_verified_paid_affiliate_conversions": null,
+    "gross_revenue": null,
+    "refunds": null,
+    "fees": null,
+    "realized_net_revenue": null,
+    "net_revenue_per_1000_qualified_human_sessions": null,
+    "cohorts_days": [
+      7,
+      30
+    ],
+    "policy": "No identifiers, cookies or duplicate scripts; data retention and consent before any first-party integration; clicks never reported as sales"
+  },
+  "variant_contract": {
+    "A": "mind/r268/ZEN12-A-TEXT-UNPUBLISHED.html",
+    "B": "mind/r268/ZEN12-B-OPTIONAL-FILM-UNPUBLISHED.html",
+    "B_state": "static poster/transcript only, film MP4 not hosted",
+    "same_buyer_copy": true,
+    "consent_required_before_activated_measurement": true,
+    "no_js_baseline": true
+  },
+  "release_controls": {
+    "no_live_wordpress_edits": true,
+    "no_merge_or_deploy": true,
+    "no_social_or_email_send": true,
+    "no_duplicate_focus_signup": true,
+    "no_merchant_links": true,
+    "no_purchases_claimed": true,
+    "no_paid_services": true,
+    "homepage_pr49_unchanged": true,
+    "mind_hub_pr172_unchanged": true,
+    "issue150_owner_untouched": true
+  },
+  "last_assessment": "Live WP read-only verified Puységur page ID 1377 and Focus page ID 1579. Search 'doorway' yielded a theater post in broad relevance, no dedicated doorway finding. Unpublished overlap still requires canonical review. Named publisher/owned-SKU acceptance not shown."
+}
