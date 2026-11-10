@@ -1,0 +1,52 @@
+{
+  "sprint": "R251",
+  "scope": "UNSENT_OFFLINE_QA_ONLY",
+  "parent_pr": 1855,
+  "parent_exact_sha": "8ab2b5338fcf941d970e87aa946d3c0e72f862ae",
+  "master_campaign_pr": 175,
+  "master_exact_sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "r250_gate_blob": "1738d14e48a5ed091f18ffd925e00c2c2501d6ac",
+  "r250_v8_synthetic_reproduction": {
+    "type": "OFFLINE_SYNTHETIC",
+    "fixture": "visible labeled email input inside form with NO submit; unrelated button in same block",
+    "r250_classification": "VISUAL_ENTRY_PRESENT_UNSUBMITTED",
+    "r250_visual_entry_pass": true,
+    "actual_signup_test": false,
+    "release_authorized": false
+  },
+  "new_files_source_identity": {
+    "form_proof.py": "a04a83f4e72f2a15d934b56c48805187f806a503",
+    "test_form_proof.py": "4bbbb31e5848f548d90f23f5f78e767e7b5eeaaf"
+  },
+  "native_qa": {
+    "performed": true,
+    "environment": "Python 3.13.5; Chromium 144.0.7559.96 via Python Playwright; local HTML fixture only",
+    "tests_passed": 9,
+    "tests_total": 9,
+    "network_access": false,
+    "live_site_browser": false,
+    "wordPress_preview": false,
+    "emails_sent": 0,
+    "subscribers_contacted": 0
+  },
+  "live_wp_2026_11_10_0739UTC": {
+    "newsletter_enabled": true,
+    "new_post_send_default": false,
+    "email_content_format": "full",
+    "fieldbook_welcome_configured": true,
+    "subscribers_total_counter": 3,
+    "subscribers_confirmed_counter": 3,
+    "unconfirmed_requests": 2,
+    "suppressed": 0,
+    "actual_email_eligible_count": null,
+    "received_welcome_proven": false,
+    "received_footer_proven": false
+  },
+  "partner_rights_verified": false,
+  "partner_email_promotion_permission_verified": false,
+  "official_issued_link_verified": false,
+  "received_email_qa_pass": false,
+  "founder_release_approval": false,
+  "real_paid_orders_verified": null,
+  "net_revenue_per_1000_qualified_sessions": null
+}
