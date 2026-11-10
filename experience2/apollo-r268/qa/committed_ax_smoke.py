@@ -16,7 +16,7 @@ assert 'data-release="REVIEW-ONLY"' in card
 hold=json.loads((Path(__file__).parent/'conversion-hold.json').read_text())
 assert hold['approval_state']=='HARD_HOLD_NOT_LIVE' and hold['staging_only'] is True
 for key,value in hold.items():
- if key.endswith('_verified') or key.startswith('approved_') or key.startswith('founder_') or key.endswith('_computable'):
+ if '_verified' in key or key.startswith('approved_') or key.startswith('founder_') or key.endswith('_computable'):
   assert value is False,(key,value)
 css=''.join((x.read_text() for x in [f/'assets/atlas-scoped.css',o/'assets/apollo-overlays.css',s/'assets/postscript.css',r/'assets/postscript-reflow.css']))
 html='<!doctype html><html lang="en"><meta name="viewport" content="width=device-width,initial-scale=1"><style>'+css+'</style>'+p['html']+card+'</html>'
