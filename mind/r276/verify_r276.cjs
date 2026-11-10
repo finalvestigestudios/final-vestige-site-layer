@@ -78,7 +78,7 @@ function validate(b){
  const allowed=['finalvestige.com','zen12.com','inspire3.com','doi.org','ftc.gov'];
  assert(links.filter(x=>/^https:\/\//.test(x)).every(x=>allowed.includes((x.match(/^https:\/\/([^/]+)/i)||[])[1].replace(/^www\./,''))),'unreviewed outbound URL');
  assert((b.html.match(/Evidence before expectation/g)||[]).length>=2,'poster concept deleted');
- assert(/<button[^>]*\\sdisabled\\b/i.test(b.variantA)&&/<button[^>]*\\sdisabled\\b/i.test(b.variantB),'inherited A/B purchase controls changed');
+ assert(b.variantA.includes('type="button" disabled')&&b.variantB.includes('type="button" disabled'),'inherited A/B purchase controls changed');
  assert(b.variantA.includes('Prospective affiliate disclosure:')&&b.variantB.includes('Prospective affiliate disclosure:'),'inherited A/B disclosure absent');
  return {source_count:m.sources.length,claims:m.claims.length,held_gates:m.commercial_gates.length,source_links:links.length,merchant_source_only:true,public_activation:false};
 }
