@@ -1,0 +1,70 @@
+{
+  "run_date": "2026-11-10",
+  "source": "authenticated WordPress read-only page 1579",
+  "page_url": "https://finalvestige.com/focus/",
+  "page_modified": "2026-11-05T17:44:02",
+  "discovered_script_id": "fvf-gift-v2",
+  "client_positive_test": "any nonempty subscribe query except five negative values, plus is-subscriber class",
+  "observed_negative_values": [
+    "invalid_email",
+    "error",
+    "blocked_email",
+    "opted_out",
+    "blocked"
+  ],
+  "examples_displayed_without_consent_proof": [
+    "subscribe=unconfirmed",
+    "subscribe=pending",
+    "subscribe=1",
+    "subscribe=ERROR"
+  ],
+  "no_browser_live_interaction": true,
+  "pdf_public_asset": true,
+  "not_security_vulnerability_claim": true,
+  "node_test": {
+    "pass": 26,
+    "total": 26,
+    "native": true,
+    "source_blob_sha": "b306f9dbc6c82901ac1e13730e91a9f101869f20",
+    "test_blob_sha": "3a20d61042f6aab2ff50f0f6747443743cbc0d80"
+  },
+  "chromium_offline": {
+    "test_methods_pass": 6,
+    "url_cases": 15,
+    "original_inline_script_simulated": true,
+    "production_page_loaded": false,
+    "requests_to_production": 0
+  },
+  "jetpack_snapshot": {
+    "as_of": "2026-11-10T09:31:43Z",
+    "enabled": true,
+    "auto_new_post_emails": false,
+    "email_format": "full",
+    "total": 3,
+    "confirmed": 3,
+    "unconfirmed": 2,
+    "email_eligible_aggregate": null,
+    "welcome_configured": true,
+    "welcome_received": null,
+    "received_unsubscribe": null,
+    "received_postal": null
+  },
+  "campaign": {
+    "master_pr": 175,
+    "stacked_on_pr": 1870,
+    "readiness_pr": 201,
+    "original_issues_changed": 0,
+    "editorial": 4,
+    "commercial_pending": 2,
+    "release": "HOLD_UNSENT"
+  },
+  "merchant": {
+    "named_email_approval": "NOT_VERIFIED",
+    "issued_link": "NOT_VERIFIED",
+    "guide": "NOT_APPROVED_LIVE",
+    "sales": "NOT_VERIFIED"
+  },
+  "real_net_revenue_per_1000_qualified_sessions": null,
+  "production_changes": 0,
+  "sends": 0
+}
