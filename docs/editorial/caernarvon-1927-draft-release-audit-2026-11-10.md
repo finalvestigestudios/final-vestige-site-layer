@@ -81,3 +81,18 @@ Working article: WordPress #2151, **The Levee They Blew on Purpose**. Investigat
 - #2149 National Photo Company, LOC LC-DIG-npcc-16867, April 29, 1927 Mississippi flood; location not specified in catalog, must not be labeled Caernarvon specifically.
 
 **Disposition:** draft remains unpublished. No first-publish email, social, shared-template, homepage, or unrelated post changes from this documentation.
+
+## November 10, 2026, 08:XX Pacific — reusable authenticated-preview inspector created (NOT A PASS)
+
+New read-only Playwright source: [docs/editorial/tools/inspect_wp_draft_2151.py](./tools/inspect_wp_draft_2151.py); commit `797ec3b125ad9d0399d5b7485d416903369f3aba`. This is an **execution handoff to Site QA**, not a screenshot or confirmation the draft renders correctly. The inspector expects an already authorized WordPress frontend Preview supplied solely through private environment variable `FV_PREVIEW_URL`; optionally use `FV_STORAGE_STATE` pointing to an existing authorized browser state. Neither belongs in GitHub, issue comments, CLI arguments, screenshots uploaded publicly, or logs. Its output is **local-only screenshots** (390px and 1440px top/photo/chart/table/sources/footer) and `inspection.json` (image load/alt/caption observations, table inner scroll, page overflow, internal anchors and runtime errors). It never writes to WordPress, and its `--sha` argument is a **declared editorial hash, not cryptographic verification by the browser**.
+
+Example (execute only in an authorized editor's secure shell or browser machine):
+```sh
+pip install playwright
+python -m playwright install chromium
+# Export FV_PREVIEW_URL privately; do NOT paste an authenticated URL into a command saved in history.
+python docs/editorial/tools/inspect_wp_draft_2151.py --out /private/fv-qa-2151 --sha 9d3b2b62511caf6704044da1eed431888d979d46
+```
+For sites requiring logged-in cookies, configure `FV_STORAGE_STATE` with an already authorized private Playwright storage-state file. The script deliberately refuses non-Final Vestige target hosts and does **not** generate or obtain login credentials, tokens, or private previews.
+
+**Access limitation confirmed in this execution environment:** attempted Chromium navigation to the public `/blog/` route, then a local fixture and a locally intercepted route, returned `net::ERR_BLOCKED_BY_ADMINISTRATOR`. These were not meaningful screenshots; the local fixture could not run. Python syntax compiled in a local draft of the inspector, and the committed version was independently fetched, but an actual live run **has not occurred**. This requires an approved browser/runtime with editor access. Final acceptance is a human-reviewed screenshot/DOM **PASS/FAIL at each width** against a freshly rechecked post hash, followed by a separate anonymous live-site check after publication. Until then, **RELEASE HOLD**. Do not treat a script commit, source inventory, mshots or synthetic tests as clearance.
