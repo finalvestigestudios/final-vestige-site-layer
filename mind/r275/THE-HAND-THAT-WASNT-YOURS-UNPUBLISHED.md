@@ -1,7 +1,7 @@
 # The Hand That Wasn't Yours: When Touch, Vision, and Suggestion Disagree
 **Final Vestige Studios | Mind & Perception / Evidence & History | UNPUBLISHED EDITORIAL DRAFT | 10 November 2026**
 
-*Proposed search focus: rubber hand illusion, is the rubber hand illusion hypnosis, hypnotic suggestion versus perception. Editorial status: sources checked; independent duplicate-title audit and founder approval pending. The article is not a product review.*
+*Proposed search focus: rubber hand illusion, is the rubber hand illusion hypnosis, hypnotic suggestion versus perception. Editorial status: sources checked; canonical duplicate-topic hold against earlier R204/R218/R251 rubber-hand manuscript family; integrate only novel, verified elements into the R204 corrected canonical draft after independent editorial review, not a new public URL or Grok campaign. The article is not a product review.*
 
 A hand rests on a table. You can see its fingers and knuckles, but it is not attached to you. Your own hand is concealed. A researcher brushes the hand in front of you while an unseen brush touches your real hand in the same rhythm. After a while, an ordinary sentence becomes an extraordinary report: *that fake hand feels like mine.*
 
@@ -37,15 +37,15 @@ If you have seen a rubber-hand demonstration on social media, notice which sente
 
 In September 2020, Peter Lush and colleagues reported a series of studies of a trait they called **phenomenological control**: the capacity to experience changes that fit imaginative suggestions or perceived task expectations. Their work also examined mirror-sensory experiences and the rubber hand illusion [2].
 
-The paper included studies involving 156, 404, and 353 participants. The authors found relationships between measures of hypnotizability and several subjective rubber-hand measures. Their interpretation was that differences in how people respond to implicit suggestion could be influencing what researchers had taken to be primarily multisensory effects.
+The paper's rubber-hand analysis involved 353 participants; its 156- and 404-participant cohorts concerned mirror-sensory experiences, not separate rubber-hand replications. The authors found relationships between measures of hypnotizability and several subjective rubber-hand measures. Their interpretation was that differences in how people respond to implicit suggestion could be influencing what researchers had taken to be primarily multisensory effects.
 
 There was an important caveat *inside their own paper*. A preregistered attempt to manipulate what participants expected from synchronous versus asynchronous stimulation did not demonstrate the intended change in expectations. The authors therefore could not directly establish that the expectancy manipulation **caused** the rubber hand illusion. Some of the later evidence was correlational, and some of its analyses were not preregistered.
 
 That matters. Correlation between hypnotizability and a rubber-hand measure does not mean that hypnosis explains the illusion, nor that a specific prerecorded suggestion will alter a person's sense of ownership.
 
-In January 2022, Henrik Ehrsson and colleagues published a reanalysis of the 2020 data [3]. They argued that the relationship with hypnotic suggestibility disappeared when rubber-hand responses were quantified as the difference between synchronous and asynchronous conditions, consistent with the standard comparison used in the field. They emphasized that the existing evidence was more compatible with the multisensory interpretation than with a **specific** relationship to hypnotic suggestibility.
+In January 2022, Henrik Ehrsson and colleagues published a reanalysis of the 2020 data [3]. They reported no statistically significant association for a synchronous-minus-asynchronous composite combining referred-touch and ownership statements. That analysis is not a conclusive demonstration of no relationship for every outcome; it is also a reanalysis of the same data, not an independent replication. They emphasized that the existing evidence was more compatible with the multisensory interpretation than with a **specific** relationship to hypnotic suggestibility.
 
-Lush and Anil Seth responded in the same journal [4]. Their reply continued to contest how suggestion-related response should be measured and interpreted. The disagreement did not vanish just because both sides cited the same dataset.
+Lush and Anil Seth responded in the same journal [4]. Their reply contested whether the asynchronous control equated expectations across conditions, and therefore whether subtraction isolates a wholly suggestion-free multisensory component. The original preregistered expectancy manipulation had not successfully shifted expectations, so causal claims remain limited. The disagreement did not vanish just because both sides cited the same dataset.
 
 The dispute illustrates why research cannot be reduced to a clean percentage or a spectacular clip. The result depends partly on the quantity being measured. Does the experiment ask whether someone reports an experience after synchronized stroking? Does it subtract a control condition? Are measured expectations actually changed? How do investigators separate a real change in experience from a participant's interpretation of a questionnaire? Each choice can lead to a different answer.
 
@@ -53,13 +53,13 @@ The dispute illustrates why research cannot be reduced to a clean percentage or 
 
 ## What changed when gravity changed?
 
-A 2022 open-access study by Bruno and colleagues investigated the rubber hand illusion in water immersion and parabolic flight settings [5]. The authors reported increased susceptibility under altered gravitational conditions and interpreted the findings as changes in the weighting of visual, proprioceptive, and vestibular information.
+A 2022 open-access study by Bruno and colleagues investigated the rubber hand illusion in water immersion and parabolic flight settings [5]. The study analyzed five participants in its parabolic-flight experiment (one of six fell ill) and nineteen in its water-immersion experiment. Flight proprioceptive drift increased under both synchronous and asynchronous stimulation, while the comparison of subjective synchronous embodiment in flight did not reach statistical significance. In the pool, synchronous proprioceptive drift increased without a significant gravity effect on subjective embodiment. The water-immersion setting simulated aspects of altered gravity; it was not literal zero gravity. These are outcome-specific findings, not proof that the entire illusion intensifies for everyone.
 
 This is an illuminating complication. A purely verbal story about suggestion has difficulty standing alone when physical and sensory conditions vary. At the same time, findings in unusual settings do not allow us to conclude that all rubber-hand reports everywhere have a single explanation. The sample, protocol, and altered-gravity conditions place boundaries around what can be generalized.
 
 The study is also a reminder that the body is not represented by sight and touch alone. Balance and orientation contribute information about how a body exists in the world.
 
-A related 2022 study by Della Longa and colleagues examined how the intensity and qualities of touch could influence the illusion [6]. Differences in stimulation can change measured responses. Its use here is not to recommend painful stimulation: Final Vestige does **not** recommend replicating discomfort or threats in any at-home demonstration.
+A related 2022 study by Della Longa and colleagues examined how the intensity and qualities of touch could influence the illusion [6]. The 21-adult study found an intensity relationship for proprioceptive drift, not a demonstrated general increase in subjective ownership; in its model subjective embodiment was better predicted by visuotactile synchrony. Do not collapse these two dependent measures. Its use here is not to recommend painful stimulation: Final Vestige does **not** recommend replicating discomfort or threats in any at-home demonstration.
 
 ## A historical echo: Puységur's invisible explanation
 
@@ -135,4 +135,4 @@ A good investigation gives a reader a surprise and then a way to evaluate it. Th
 
 [8] FTC, *Endorsement Guides: What People Are Asking*: https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking ; *Health Products Compliance Guidance*: https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance
 
-Editorial constraints: no commercial links, no claim to have used products, no personal health promises, no homemade illusion intended to elicit distress. Internal navigation proposal: /mind/ → history of suggestion → Puységur / Mesmerism; and /mind/ → perception/attention → this draft *only after editorial approval* → existing /focus/. Duplicate search of unpublished manuscript portfolio and a signed-off WordPress draft are required before publication.
+Editorial constraints: no commercial links, no claim to have used products, no personal health promises, no homemade illusion intended to elicit distress. Internal navigation proposal: /mind/ → history of suggestion → Puységur / Mesmerism; and /mind/ → perception/attention → this draft *only after editorial approval* → existing /focus/. CANONICAL DUPLICATE HOLD: earlier corrected R204 rubber-hand manuscript and R218/R251 family already cover ownership versus drift, the expectancy dispute, Puységur and a paper-based demonstration. R275 is an editorial research supplement only; no separate public URL, WordPress draft or Grok campaign. Assess novel gravity/touch evidence for a single R204 canonical revision. A signed-off WordPress draft, rights/source audit and founder approval remain required for the canonical article.
