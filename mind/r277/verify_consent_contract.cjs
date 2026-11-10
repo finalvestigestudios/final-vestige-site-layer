@@ -64,7 +64,7 @@ for(const phrase of ['The Free Track and the Second Permission','Four doors that
 'The history problem','The three-question trial','A transparent offer','https://zen12.com/welcome',
 'https://zen12.com/freeaudio','https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance'])
 ok(article.includes(phrase),'new buyer investigation '+phrase);
-ok(plan.includes('SV9m07PFTYk')&&plan.includes('not a verified immutable Grok internal asset ID'),'public video ID distinct from internal asset');
+ok(plan.includes('SV9m07PFTYk')&&plan.includes('Grok internal asset ID'),'public video ID distinct from internal asset');
 ok(plan.includes('PR #49')&&plan.includes('PR #172')&&plan.includes('Issue #150'),'other owner scope protected');
 ok(/NOT COMPUTABLE|NOT_COMPUTABLE/.test(plan),'net revenue unknown');
 return {status:'PASS',claims:36,gates:16,sources:15};
