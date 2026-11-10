@@ -165,17 +165,26 @@ def _verify_journal_structure(data: bytes, expected_count: int) -> int:
         raise ValueError(ERROR)
     if data and not data.endswith(b"\n"):
         raise ValueError(ERROR)
-    records = data.splitlines()
+    # Only LF and CRLF are JSONL record separators. bytes.splitlines() also
+    # accepts bare CR, creating ambiguous audit record boundaries.
+    records = data[:-1].split(b"\n") if data else []
     if len(records) != expected_count:
         raise ValueError(ERROR)
     for record in records:
-        if not record or b"\x00" in record:
+        if record.endswith(b"\r"):
+            record = record[:-1]
+        if not record or b"\x00" in record or b"\r" in record:
             raise ValueError(ERROR)
         try:
             event = json.loads(record.decode("utf-8"),
                                object_pairs_hook=_unique,
-                               parse_constant=_reject_constant)
-        except (ValueError, UnicodeError):
+                               parse_constant=_reject_constant,
+                               parse_float=_reject_constant)
+            # The supported premium review writer produces integer-only
+            # numeric fields and Unicode scalar text. Reject escaped lone
+            # surrogates instead of treating them as valid review evidence.
+            json.dumps(event, ensure_ascii=False).encode("utf-8")
+        except (ValueError, UnicodeError, RecursionError):
             raise ValueError(ERROR) from None
         if type(event) is not dict:
             raise ValueError(ERROR)
