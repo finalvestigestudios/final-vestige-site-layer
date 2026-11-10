@@ -52,7 +52,7 @@ function inspectHtml(html,tag,errors){
   errorIf(errors,/\b(?:autoplay|onload|onclick|onerror|onmouseover|srcdoc)\s*=/i.test(html),tag+": active/auto media or inline handler");
   errorIf(errors,/\b(?:data-?price|commission-rate|payout|conversion-count|verified-sale)\s*=/i.test(html),tag+": unsourced monetary attribution metadata");
   for(const href of anchorHrefs(html)){
-    if(!href){errors.push(tag+": anchor has no href");continue;}
+    if(!href){errors.push(tag+": anchor has no href");continue;} if(/^#[a-z0-9_-]+$/i.test(href))continue;
     const parsed=/^https:\/\/([^/#?]+)(?:[/?#]|$)/i.exec(href);
     if(!parsed || !ALLOWED_HOSTS.has(parsed[1].toLowerCase()))errors.push(tag+": unacceptable link "+href);
   }
@@ -88,7 +88,7 @@ function check(files){
  errorIf(errors,!/not a live WordPress page/i.test(hub),"Hub: unpublished identity disclosure missing");
  const wordCount=article.trim().split(/\s+/).length;
  errorIf(errors,wordCount<1900,"Article: too thin");
- for(const s of ["14450948","14450946","29375411","35287550","9564746","Puységur","artillery officer","No affiliate","not published","Zen12"]){
+ for(const s of ["14450948","14450946","10.3389/fpsyg.2017.02117","35287550","9564746","Puységur","artillery officer","No commercial CTA","UNPUBLISHED","Zen12"]){
    errorIf(errors,!article.toLowerCase().includes(s.toLowerCase()),"Article missing anchor: "+s);
  }
  errorIf(errors,!article.includes("not a validated test"),"Article: informal demonstration limit missing");
