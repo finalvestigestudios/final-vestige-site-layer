@@ -14,6 +14,7 @@ This protects against setup faults; it does **not** prove immutability under pri
 
 - Linux CPython **3.13.5**, synthetic temporary review data only. Exact committed R333 source/test Git blobs were copied into an isolated test slice and checked by `git hash-object`: source `a78a2b3b62150576f1f5ad4d41b969da8693dced`; tests `654d813a5ebade133eebbb1658fb1f867aabbd45`.
 - New focused module: **15/15 PASS** with `-W error` and **15/15 PASS** under `-OO -W error` = **30 passing method executions, 0 skips**; `py_compile` PASS.
+- Also replayed the **exact existing R329 10-case prefix-witness regression module** (Git blob `97aca985b6839d4e57c2f8ceb26d3503ea0cc61b`) alongside R333: **25/25 PASS** normal and **25/25 PASS** optimized = **50 total focused method executions**, zero skips. R329 unchanged and not re-committed.
 - Synthetic regression against the unmodified predecessor: **2/15 FAIL** (descriptor still valid after injected `__enter__` `PermissionError` and `KeyboardInterrupt`), as expected before fix. All other methods passed.
 - Cases cover duplicate creation/open/enter/exit/interrupt/hash failures, original-descriptor preservation, empty/multi-chunk/truncated prefix hashing, unchanged postappend prefix, exact append readback and no path reopen.
 - **Not executed:** whole private repository suite, 22 genuine AES-GCM integrations, hosted CI test steps, Windows 11 x64 builds/smokes, malware scans, native accessibility or premium entitlement verification.
