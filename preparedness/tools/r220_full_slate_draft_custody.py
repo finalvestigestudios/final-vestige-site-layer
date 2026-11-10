@@ -124,6 +124,12 @@ R255_REVIEW_SURFACE_BLOB = '86e8b8e3cb29efbac738fd8574b487c4d633b1af'
 # in the 562 shared-source workorders, retaining source contexts and all holds.
 R257_PARTITION_PATH = 'tools/r257_complete_citation_partition_hold.py'
 R257_PARTITION_BLOB = 'df74968de5ee609fa16287a7339cd8262616603c'
+# R260 pins a source-only, reviewer-held witness: Tool #104's visible
+# privacy alert is hidden by original @media print CSS; printed JS/no-JS
+# paths lack an equivalent privacy warning in the checked source. It is
+# not a computed-style/browser/privacy/QD approval.
+R260_PRINT_DISCLOSURE_PATH = 'tools/r260_family_card_print_disclosure_witness_hold.py'
+R260_PRINT_DISCLOSURE_BLOB = '3a5c51f2e49c0b92de0730d558af18b29b6c206b'
 # R258 binds the complete R254/R257 original source-claim partition to a
 # deterministic, entirely escaped, no-clickable-links offline reviewer view.
 R258_COMPLETE_REVIEW_PATH = 'tools/r258_complete_offline_claim_review_hold.py'
@@ -754,6 +760,25 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
                     'merchant_approved', 'release_authorized'))):
             raise ValueError('R248 family-card field-disclosure HOLD drift')
         result['family_card_field_disclosure_review_matrix'] = field_matrix
+        # R260 preserves a critical unresolved print/privacy finding. The
+        # source witness remains held and no approval may be inferred from it.
+        print_guard = load_frozen_gate(root, R260_PRINT_DISCLOSURE_PATH,
+                                       R260_PRINT_DISCLOSURE_BLOB,
+                                       'fv_preparedness_r260_print_privacy_witness', ('audit',))
+        print_witness = print_guard.audit(root, safe_read)
+        if (print_witness.get('state') != HOLD
+                or print_witness.get('source_git_blob') != 'be8698ac5d020476ff649d85813810e2000c6f98'
+                or print_witness.get('print_css_hides_original_privacy_alert') is not True
+                or print_witness.get('javascript_print_note_lacks_privacy_warning') is not True
+                or print_witness.get('nojs_print_fallback_field_count') != 13
+                or print_witness.get('nojs_print_fallback_lacks_privacy_warning') is not True
+                or print_witness.get('human_editorial_and_privacy_review_required') is not True
+                or any(print_witness.get(key) is not False for key in (
+                    'browser_print_verified', 'privacy_certified', 'medical_safety_verified',
+                    'source_review_approved', 'independent_qd_pass', 'merchant_approved',
+                    'release_authorized'))):
+            raise ValueError('R260 printed family-card privacy witness HARD HOLD changed')
+        result['family_card_print_privacy_review_witness'] = print_witness
         # An editorial option is NOT a source correction or approval. Authenticate
         # its exact preview bytes, then separately inspect its visible copy.
         if git_blob(safe_read(root, R249_UNPUBLISHED_PREVIEW_PATH)) != R249_UNPUBLISHED_PREVIEW_BLOB:
@@ -950,6 +975,8 @@ def audit(root: Path, *, verify_exports: bool = True) -> dict:
             raise ValueError('R255 offline reviewer surface guard changed during audit')
         if git_blob(safe_read(root, R257_PARTITION_PATH)) != R257_PARTITION_BLOB:
             raise ValueError('R257 complete citation partition gate changed during audit')
+        if git_blob(safe_read(root, R260_PRINT_DISCLOSURE_PATH)) != R260_PRINT_DISCLOSURE_BLOB:
+            raise ValueError('R260 print/privacy disclosure witness changed during audit')
         if git_blob(safe_read(root, R258_COMPLETE_REVIEW_PATH)) != R258_COMPLETE_REVIEW_BLOB:
             raise ValueError('R258 2000-citation offline reviewer gate changed during audit')
         result['reconciliation'] = {'frozen_articles': 35,
