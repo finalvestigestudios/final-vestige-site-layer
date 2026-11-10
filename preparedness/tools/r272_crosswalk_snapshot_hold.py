@@ -97,28 +97,36 @@ def inspect(x: dict, origins: dict, census=None):
         raise ValueError("missing or invented shared-URL review groups")
     seen, alias_count = set(), 0
     for group in groups:
+        # The frozen 2026-11-04 crosswalk uses original, sometimes slash-ended
+        # source URLs as group labels. Group by a separate review-only alias key;
+        # NEVER rewrite the historical group label, source URL or citation ID.
         url = group["url"]
-        if url != alias(url) or url in seen or url not in shared:
-            raise ValueError("unrecognized canonical shared-source group")
-        seen.add(url)
+        lookup_key = alias(url)
+        if lookup_key in seen or lookup_key not in shared:
+            raise ValueError("unrecognized shared-source review group")
+        # A reviewer label must be an actual original source URL, not an invented
+        # lookalike that happens to normalize to the same terminal-slash alias.
+        if url not in {src["url"] for _, _, _, src in shared[lookup_key]}:
+            raise ValueError("group label is not an original source URL")
+        seen.add(lookup_key)
         if (group.get("canonical_url") != url
             or group.get("review_status") != "pending-human-source-and-reading-scope-review"
             or group.get("reviewer", "__MISSING__") is not None
             or group.get("reviewed_on", "__MISSING__") is not None):
             raise ValueError("unauthorized group adjudication")
-        want = {(o, p, i): src for o, p, i, src in shared[url]}
+        want = {(o, p, i): src for o, p, i, src in shared[lookup_key]}
         got = {}
         for item in group["variants"]:
             identity = (item["origin"], item["source_file"], item["row_index"])
             if identity in got or identity not in want or item["source"] != want[identity]:
                 raise ValueError("variant lost, duplicated, or changed reading scope")
-            if alias(item["source"]["url"]) != url:
+            if alias(item["source"]["url"]) != lookup_key:
                 raise ValueError("invalid terminal-slash review equivalent")
             alias_count += item["source"]["url"] != url
             got[identity] = item["source"]
         if got != want:
             raise ValueError("source variant omitted from review")
-        expected_ids = sorted((o, i, src["id"]) for o, p, i, src in shared[url])
+        expected_ids = sorted((o, i, src["id"]) for o, p, i, src in shared[lookup_key])
         actual_ids = sorted((it["origin"], it["row_index"], it["id"]) for it in group["identities"])
         if actual_ids != expected_ids:
             raise ValueError("source identity joined across distinct reading scopes")

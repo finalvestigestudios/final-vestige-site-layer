@@ -163,6 +163,87 @@ class CrosswalkTests(unittest.TestCase):
         self.assertFalse(result["publication_authorized"])
 
 
+    def test_authenticated_eight_origin_historical_crosswalk_is_hold(self):
+        """Regression: five authentic group labels end in /; they are not aliases."""
+        result = guard.audit(ROOT)
+        self.assertEqual(result["state"], guard.HOLD, result.get("errors"))
+        self.assertEqual(result["counts"], guard.CENSUS)
+        self.assertEqual(result["unreviewed_groups"], 32)
+        self.assertTrue(result["source_snapshot_parity"])
+        self.assertFalse(result["independent_qd_pass"])
+        self.assertFalse(result["publication_authorized"])
+
+    def test_authentic_raw_slash_group_remains_an_original_label(self):
+        """The slash-ended group label must be retained, not normalized in-place."""
+        x, sources = fixture()
+        sources["base"][0]["url"] = SLASH
+        x["groups"][0]["variants"][0]["source"]["url"] = SLASH
+        x["groups"][0]["url"] = SLASH
+        x["groups"][0]["canonical_url"] = SLASH
+        counts = {**CENSUS, "exact_urls": 2, "alias_variants": 0}
+        result = guard.inspect(x, sources, census=counts)
+        self.assertEqual(result["state"], guard.HOLD)
+        self.assertEqual(x["groups"][0]["url"], SLASH)
+        self.assertEqual(result["counts"]["alias_urls"], 2)
+
+    def test_mixed_original_url_spellings_keep_slash_ended_label(self):
+        """Terminal slash may group review only; raw provenance remains distinct."""
+        x, sources = fixture()
+        x["groups"][0]["url"] = SLASH
+        x["groups"][0]["canonical_url"] = SLASH
+        result = guard.inspect(x, sources, census=CENSUS)
+        self.assertEqual(result["state"], guard.HOLD)
+        self.assertEqual(result["counts"]["exact_urls"], 3)
+        self.assertEqual(result["counts"]["alias_variants"], 1)
+        self.assertNotEqual(sources["base"][0]["url"], sources["food"][0]["url"])
+
+    def test_invented_slash_label_not_in_source_readings_is_rejected(self):
+        """Alias equality is insufficient: historical label must exist verbatim."""
+        x, sources = fixture()
+        sources["food"][0]["url"] = URL
+        x["groups"][0]["variants"][1]["source"]["url"] = URL
+        x["groups"][0]["url"] = SLASH
+        x["groups"][0]["canonical_url"] = SLASH
+        with self.assertRaisesRegex(ValueError, "not an original source URL"):
+            guard.inspect(x, sources, census={**CENSUS, "exact_urls": 2, "alias_variants": 0})
+
+    def test_cannot_erase_historical_slash_from_all_slash_readings(self):
+        x, sources = fixture()
+        sources["base"][0]["url"] = SLASH
+        x["groups"][0]["variants"][0]["source"]["url"] = SLASH
+        with self.assertRaisesRegex(ValueError, "not an original source URL"):
+            guard.inspect(x, sources, census={**CENSUS, "exact_urls": 2, "alias_variants": 0})
+
+    def test_invented_alias_with_modified_query_cannot_collide(self):
+        x, sources = fixture()
+        x["groups"][0]["url"] = URL + "?redirect=1"
+        x["groups"][0]["canonical_url"] = x["groups"][0]["url"]
+        with self.assertRaises((ValueError, KeyError)):
+            guard.inspect(x, sources, census=CENSUS)
+
+    def test_trailing_slash_before_query_preserves_query_and_fragment(self):
+        for suffix in ("?st=list", "?st=other", "?st=list#page-2", "#p-one", "#p-two"):
+            with self.subTest(suffix=suffix):
+                self.assertEqual(guard.alias(URL + "/" + suffix), guard.alias(URL + suffix))
+                self.assertNotEqual(guard.alias(URL + suffix), guard.alias(URL + "new" + suffix))
+
+    def test_historical_group_review_approval_remains_rejected(self):
+        x, sources = fixture()
+        x["groups"][0]["url"] = SLASH
+        x["groups"][0]["canonical_url"] = SLASH
+        x["groups"][0]["review_status"] = "approved"
+        with self.assertRaisesRegex(ValueError, "adjudication"):
+            guard.inspect(x, sources, census=CENSUS)
+
+    def test_source_membership_mutation_still_rejected(self):
+        x, sources = fixture()
+        x["groups"][0]["url"] = SLASH
+        x["groups"][0]["canonical_url"] = SLASH
+        x["groups"][0]["variants"][1]["source"]["supports"] = "Made up evidence"
+        with self.assertRaisesRegex(ValueError, "variant lost"):
+            guard.inspect(x, sources, census=CENSUS)
+
+
 for name, change in CHANGES.items():
     def adversarial(self, mutation=change):
         x, sources = fixture()
