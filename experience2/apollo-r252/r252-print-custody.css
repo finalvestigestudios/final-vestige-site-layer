@@ -1,0 +1,13 @@
+/* Apollo Experience R252 — staging-only archival print legibility correction.
+   This overrides only the previously sealed Atlas's print presentation; neither
+   original NASA evidence source nor screen design is modified. */
+@media print {
+  .fv-apollo-atlas .notice strong,
+  .fv-apollo-atlas .eyebrow,
+  .fv-apollo-atlas .fv-apollo-confidence-status,
+  .fv-apollo-atlas .fv-apollo-confidence-question,
+  .fv-apollo-atlas .fv-apollo-custody-kind,
+  .fv-apollo-atlas .fv-apollo-lesson-badge {
+    color: #111 !important;
+  }
+}
