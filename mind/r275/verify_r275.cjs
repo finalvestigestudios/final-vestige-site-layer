@@ -93,7 +93,7 @@ function adversarial(bundle){
  ['delete_article_independence',x=>{x.article=x.article.replace('No commercial recommendation','Commercial recommendation');}],
  ['missing_campaign_consents',x=>{x.acceptance=x.acceptance.replaceAll('consent','no privacy rules');}],
  ['remove_inherited_disclosure',x=>{x.variantA=x.variantA.replaceAll('may earn a commission','may earn nothing');}],
- ['enable_inherited_offer',x=>{x.variantB=x.variantB.replace(/<button([^>]*)disabled/,'<button$1');}]
+ ['enable_inherited_offer',x=>{x.variantB=x.variantB.replace(' disabled aria-disabled',' aria-disabled');}]
  ];
  let rejected=0,escaped=[];
  for(const [name,mutate] of mutations){
