@@ -234,16 +234,60 @@ def inspect_bundle(path: str | Path) -> dict[str, object]:
     raise BundleHold(ERROR)
 
 
+
+def inspect_with_external_witness(path: str | Path, *, product: str,
+                                  report_sha256: str,
+                                  journal_sha256: str | None) -> dict[str, object]:
+    """Match inspected bytes to a separately held, operator-supplied SHA-256 witness.
+
+    `None` for journal_sha256 explicitly requires that NO journal be present.
+    The witness must come from a trusted, independent channel to have evidential
+    value. Matching hashes do not authenticate the vault, signer, or reviewer.
+    Neither the witness nor the folder is modified or transmitted.
+    """
+    if (type(product) is not str or product not in ("grants", "procurement") or
+            type(report_sha256) is not str or not HEX.fullmatch(report_sha256) or
+            (journal_sha256 is not None and
+             (type(journal_sha256) is not str or not HEX.fullmatch(journal_sha256)))):
+        raise BundleHold(ERROR)
+    result = inspect_bundle(path)
+    if (result["product"] != product or
+            result["report_sha256"] != report_sha256 or
+            result["journal_sha256"] != journal_sha256):
+        raise BundleHold(ERROR)
+    return {**result, "external_witness_matched": True}
+
+
 def main(argv=None) -> int:
     parser = argparse.ArgumentParser(description="Read-only local premium restored-bundle consistency check")
     parser.add_argument("folder", type=Path, help="Local restored evidence folder (never uploaded)")
+    parser.add_argument("--expect-product", choices=("grants", "procurement"))
+    parser.add_argument("--expect-report-sha256")
+    journal = parser.add_mutually_exclusive_group()
+    journal.add_argument("--expect-journal-sha256")
+    journal.add_argument("--expect-no-journal", action="store_true")
     args = parser.parse_args(argv)
+    witness_mode = (args.expect_product is not None or
+                    args.expect_report_sha256 is not None or
+                    args.expect_journal_sha256 is not None or args.expect_no_journal)
     try:
-        result = inspect_bundle(args.folder)
+        if witness_mode:
+            # A partial witness is never silently downgraded to consistency-only.
+            if (args.expect_product is None or args.expect_report_sha256 is None or
+                    (args.expect_journal_sha256 is None and not args.expect_no_journal)):
+                raise BundleHold(ERROR)
+            result = inspect_with_external_witness(
+                args.folder, product=args.expect_product,
+                report_sha256=args.expect_report_sha256,
+                journal_sha256=args.expect_journal_sha256)
+        else:
+            result = inspect_bundle(args.folder)
     except BundleHold:
         print("HOLD: evidence bundle failed; no authentication or review approval", file=sys.stderr)
         return 1
-    print("PASS: " + result["product"] + " bundle internally consistent; "
+    phrase = ("matches operator-supplied SHA-256 witness" if witness_mode
+              else "bundle internally consistent")
+    print("PASS: " + result["product"] + " " + phrase + "; "
           "NOT AUTHENTICATED; human review and QD/founder HOLD")
     return 0
 
