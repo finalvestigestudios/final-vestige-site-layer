@@ -2,7 +2,7 @@ import importlib.util
 from pathlib import Path
 import unittest
 
-p=Path(__file__).resolve().parents[2]/'tools'/'experience-2'/'verify_ex2_media_bytes.py'
+p=Path(__file__).resolve().parents[1]/'tools'/'experience-2'/'verify_ex2_media_bytes.py'
 spec=importlib.util.spec_from_file_location('ex2bytes',p)
 m=importlib.util.module_from_spec(spec)
 spec.loader.exec_module(m)
