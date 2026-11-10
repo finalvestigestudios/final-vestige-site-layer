@@ -1,4 +1,4 @@
-"""R244: rollback when os.link reports failure after having made the link.
+"""R244: preserve ambiguous post-link evidence without pathname rollback.
 
 Synthetic non-PE payloads, genuine local hardlinks, no distribution/production.
 """
@@ -40,6 +40,13 @@ class ManifestLinkAmbiguityR244(unittest.TestCase):
         self.assertFalse(os.path.lexists(self.target))
         self.assert_originals()
 
+    def assert_preserved_manifest(self):
+        self.assertEqual({p.name for p in self.root.iterdir()},
+                         set(inv.EXPECTED) | {inv.MANIFEST})
+        self.assertTrue(self.target.is_file())
+        self.assertEqual(len(self.target.read_bytes().splitlines()), 6)
+        self.assert_originals()
+
     def after_link_error(self, error, *, replacement=None):
         """Inject a fault after the kernel operation has already succeeded."""
         calls = []
@@ -73,27 +80,27 @@ class ManifestLinkAmbiguityR244(unittest.TestCase):
 
     def test_postlink_permission_error_rolls_back_link(self):
         self.after_link_error(PermissionError(errno.EACCES, "private path", str(self.root)))
-        self.assert_pristine()
+        self.assert_preserved_manifest()
 
     def test_postlink_disk_io_error_rolls_back_link(self):
         self.after_link_error(OSError(errno.EIO, "private path", str(self.root)))
-        self.assert_pristine()
+        self.assert_preserved_manifest()
 
     def test_postlink_no_space_error_rolls_back_link(self):
         self.after_link_error(OSError(errno.ENOSPC, "private path", str(self.root)))
-        self.assert_pristine()
+        self.assert_preserved_manifest()
 
     def test_postlink_already_exists_error_rolls_back_own_link(self):
         self.after_link_error(FileExistsError(errno.EEXIST, "private path", str(self.root)))
-        self.assert_pristine()
+        self.assert_preserved_manifest()
 
     def test_postlink_interrupt_rolls_back_link_and_propagates(self):
         self.after_link_error(KeyboardInterrupt())
-        self.assert_pristine()
+        self.assert_preserved_manifest()
 
     def test_postlink_exit_rolls_back_link_and_propagates(self):
         self.after_link_error(SystemExit(73))
-        self.assert_pristine()
+        self.assert_preserved_manifest()
 
     def test_postlink_error_preserves_foreign_replacement(self):
         self.after_link_error(OSError(errno.EIO, "private path"), replacement="regular")
