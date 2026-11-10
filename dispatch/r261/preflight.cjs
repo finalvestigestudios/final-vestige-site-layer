@@ -29,13 +29,13 @@ function inspect(manuscript, preview, manifest, issueNumber) {
   requireThat(di === ci + 1, "DISCLOSURE_ADJACENT");
   requireThat(has("[[VALID_FINAL_VESTIGE_POSTAL_ADDRESS_REQUIRED]]") && has("[[JETPACK_REAL_UNSUBSCRIBE_VERIFICATION_REQUIRED]]") && has("[[ACTUAL_INBOX_RENDER_REQUIRED]]"), "COMPLIANCE_GATES");
   requireThat(has("No final founder approval") && has("Do not send, schedule"), "FOUNDER_APPROVAL_GATE");
-  requireThat(has("not independently") || has("not independent") || has("NOT an independently") || has("not a product"), "PRODUCT_VS_SCIENCE");
+  requireThat(has("not independently") || has("not independent") || has("not an independently") || has("NOT an independently") || has("not a product"), "PRODUCT_VS_SCIENCE");
   requireThat(!/clinically proven to reprogram|100% guaranteed to work|buy now before midnight|cures anxiety/i.test(manuscript), "MISLEADING_COPY");
   const urls = manuscript.match(/https:\/\/[^\s\])]+/g) || [];
   const good = ["pubmed.ncbi.nlm.nih.gov", "www.nccih.nih.gov", "zen12.com", "hypnosislive.com", "affiliates.inspire3.com", "finalvestige.com"];
   requireThat(urls.length >= 3 && urls.every(url => {
-    try { const u = new URL(url); return good.includes(u.hostname) && !u.search && !u.username && !u.password; }
-    catch { return false; }
+    const u = url.match(/^https:\/\/([a-z0-9.-]+)(\/[^?#\s]*)?$/i);
+    return !!u && good.includes(u[1].toLowerCase());
   }), "SOURCE_URL_ALLOWLIST");
   requireThat(manuscript.includes("Research 1:") && manuscript.includes("Merchant 1:"), "PRIMARY_SOURCES");
   requireThat(preview.startsWith("<!DOCTYPE html>") && /<html lang="en">/.test(preview) && /name="viewport"/.test(preview), "PREVIEW_ACCESSIBILITY");
