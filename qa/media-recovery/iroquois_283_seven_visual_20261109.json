@@ -27,7 +27,8 @@
     "tool_rendered": 6,
     "tool_inaccessible": 1,
     "guest_confirmed_broken": 0,
-    "caption_mismatches": 3
+    "caption_mismatches": 1,
+    "editorial_review_flags": 3
   },
   "source_rows": [
     {
@@ -305,9 +306,9 @@
         "guest_broken": null
       },
       "visual": {
-        "assessment": "MISMATCH",
-        "observed": "A photograph showing a fire-damaged interior passage/stairwell or opening, not an outdoor fire-escape scene.",
-        "proposed_alt_review_only": "Historic photograph of a fire-damaged interior passage at the Iroquois Theatre; exact location unverified.",
+        "assessment": "SCENE_NOT_CATALOG_IDENTIFIED",
+        "observed": "An interior fire-damaged passage or stairwell; the viewer image alone does not establish whether it is the particular exit/fire-escape area claimed by the ALT.",
+        "proposed_alt_review_only": "Historic photograph of a damaged interior passage in the Iroquois Theatre; exit/fire-escape identification unverified.",
         "editorial_change_applied": false
       },
       "candidate": {
@@ -358,8 +359,8 @@
         "guest_broken": null
       },
       "visual": {
-        "assessment": "MISMATCH",
-        "observed": "A photograph of the building's ornate Randolph Street facade with people along the street, not a documented crowd gathering during the fire.",
+        "assessment": "CHRONOLOGY_UNSUPPORTED",
+        "observed": "A historic exterior view of the ornate Randolph Street facade with pedestrians; the Chicago History Museum exhibit identifies the facade but does not establish this was a crowd gathered after the fire.",
         "proposed_alt_review_only": "Historic exterior view of the Iroquois Theatre facade on Randolph Street; held by the Chicago History Museum (ICHi-36009).",
         "editorial_change_applied": false
       },
