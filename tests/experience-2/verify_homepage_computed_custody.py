@@ -80,7 +80,7 @@ def verify(html, baseline, widths=WIDTHS):
     deps=AssetPreflight()
     deps.feed(html)
     deps.close()
-    if re.search(r'@import\\s', html, re.I):
+    if re.search(r'@import\s', html, re.I):
         deps.blocked.append('stylesheet_import_not_loaded')
     if deps.blocked:
         result['errors'].append('Offline CSS/JS asset preflight HOLD: '+', '.join(sorted(set(deps.blocked))))
