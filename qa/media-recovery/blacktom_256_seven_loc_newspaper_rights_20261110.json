@@ -83,7 +83,7 @@
         960,
         1344
       ],
-      "catalog_original_stored_bytes": 10852761,
+      "catalog_original_stored_bytes": null,
       "license_review": "HOLD",
       "catalog_html": "ACCESSIBLE",
       "web_retriever": "TOOL_INACCESSIBLE_NOT_ORIGIN_STATUS",
@@ -278,7 +278,7 @@
         800,
         535
       ],
-      "catalog_original_stored_bytes": 50500,
+      "catalog_original_stored_bytes": null,
       "license_review": "HOLD",
       "catalog_html": "ACCESSIBLE",
       "web_retriever": "TOOL_INACCESSIBLE_NOT_ORIGIN_STATUS",
