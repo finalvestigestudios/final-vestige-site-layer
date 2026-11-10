@@ -143,6 +143,23 @@ class TestWorkorders(unittest.TestCase):
             with self.subTest(bad=bad), self.assertRaisesRegex(ValueError, 'R254 HARD HOLD'):
                 r.audit_readable_workorders(bad, {})
 
+    def test_cdc_outside_group_receipt_preserves_authored_words(self):
+        out = run()
+        self.assertEqual(sum(g['workorder_count'] for g in out['review_queue']), 562)
+        self.assertEqual(len(out['outside_shared_disputed_workorders']), 2)
+        for w in out['outside_shared_disputed_workorders']:
+            self.assertEqual(w['article_n'], 7)
+            self.assertEqual(w['source_id'], 'cdc-find-clean-water')
+            self.assertEqual(w['context_sha256'], r.sha(w['authored_context_excerpt']))
+            self.assertFalse(w['safety_approved'])
+
+    def test_unapproved_outside_source_context_not_merged(self):
+        out = run()
+        inside = {s for g in out['review_queue'] for s in g['source_ids']}
+        self.assertNotIn('cdc-find-clean-water', inside)
+        self.assertIn('start-ready-plan', inside)
+        self.assertEqual(out['other_citation_occurrences_still_unreviewed'], 1438)
+
 
 def mutant(name, change, fix_join=True, fix_claim_index=None):
     def test(self):
@@ -202,23 +219,6 @@ mutant('move_held_citation', lambda d: d[1]['articles'][6]['occurrences'][29].__
        fix_claim_index=6)
 mutant('nonsense_join_receipt', lambda d: d[0].__setitem__('receipt_sha256', '0'*64), fix_join=False)
 mutant('reorder_workorders', lambda d: d[0]['review_queue'][0]['matched_citation_evidence'].reverse())
-    def test_cdc_outside_group_receipt_preserves_authored_words(self):
-        out = run()
-        self.assertEqual(sum(g['workorder_count'] for g in out['review_queue']), 562)
-        self.assertEqual(len(out['outside_shared_disputed_workorders']), 2)
-        for w in out['outside_shared_disputed_workorders']:
-            self.assertEqual(w['article_n'], 7)
-            self.assertEqual(w['source_id'], 'cdc-find-clean-water')
-            self.assertEqual(w['context_sha256'], r.sha(w['authored_context_excerpt']))
-            self.assertFalse(w['safety_approved'])
-
-    def test_unapproved_outside_source_context_not_merged(self):
-        out = run()
-        inside = {s for g in out['review_queue'] for s in g['source_ids']}
-        self.assertNotIn('cdc-find-clean-water', inside)
-        self.assertIn('start-ready-plan', inside)
-        self.assertEqual(out['other_citation_occurrences_still_unreviewed'], 1438)
-
 
 if __name__ == '__main__':
     unittest.main()
