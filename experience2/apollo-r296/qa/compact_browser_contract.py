@@ -6,7 +6,7 @@ from playwright.sync_api import sync_playwright
 BASE=Path(__file__).resolve().parents[2]
 css=(BASE/'apollo-r281/assets/apollo-source-experience.css').read_text()
 markup=subprocess.check_output(['php',str(BASE/'apollo-r294/qa/local_http_fixture.php')],text=True)
-markup=re.sub(r'<link\\b[^>]*rel="stylesheet"[^>]*>','',markup)
+markup=re.sub(r'<link\b[^>]*rel="stylesheet"[^>]*>','',markup)
 markup=markup.replace('</head>','<style>'+css+'</style></head>')
 count=0
 with sync_playwright() as p:
