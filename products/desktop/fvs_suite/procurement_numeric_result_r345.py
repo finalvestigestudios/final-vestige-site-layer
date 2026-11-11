@@ -8,7 +8,7 @@ This is validation of arithmetic evidence, not payment approval.
 from __future__ import annotations
 
 import re
-from decimal import Decimal, InvalidOperation
+from decimal import Decimal, InvalidOperation, localcontext
 from typing import Callable
 
 _MAX_QUANTITY = Decimal("1000000000")
@@ -112,7 +112,11 @@ def _checked(value: object, parser: Callable, *, quantity: bool) -> Decimal:
     # callback must not launder a simple source numeral into a different sum.
     original = _source_value(value, quantity=quantity)
     try:
-        result = parser(value)
+        # Parser code may alter getcontext(), setcontext(), traps or status
+        # flags. Isolate it so a valid Decimal return cannot silently lower
+        # review_line's 64-digit arithmetic precision for subsequent totals.
+        with localcontext():
+            result = parser(value)
     except Exception:
         # Callback exception text and chaining can disclose private CSV paths.
         raise ValueError(failure) from None
