@@ -1,0 +1,536 @@
+{
+  "schema": "fv-mind-r301-source-claim-commercial-hold-v1",
+  "as_of": "2026-11-11",
+  "release": "UNPUBLISHED_HARD_HOLD",
+  "origin_branch": "mind-r301-attentional-blink-evidence-and-conversion-holds-20261111",
+  "canonical_ab": "Use inherited R284 A text and R284 B static storyboard; no competing public landing",
+  "sources": [
+    {
+      "id": "AB92",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/1500880/",
+      "type": "1992 experimental abstract",
+      "read_depth": "abstract_only",
+      "limitation": "RSVP probe interval 180–450 ms is task-specific, not global blindness"
+    },
+    {
+      "id": "LAG05",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/16365947/",
+      "type": "2005 experiment abstract",
+      "read_depth": "abstract_only",
+      "limitation": "Lag-1 sparing with possible order confusion"
+    },
+    {
+      "id": "SPARE07",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/16341546/",
+      "type": "2007 experimental abstract",
+      "read_depth": "abstract_only",
+      "limitation": "Target-stream configuration changes performance; rejects simplistic mechanism"
+    },
+    {
+      "id": "MEG05",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/15932614/",
+      "type": "2005 neurophysiology abstract",
+      "read_depth": "abstract_only",
+      "limitation": "Neural correlates; no retail intervention tested"
+    },
+    {
+      "id": "REVIEW10",
+      "url": "https://pure.psu.edu/en/publications/the-attentional-blink-past-present-and-future-of-a-blind-spot-in-/",
+      "type": "2010 review abstract",
+      "read_depth": "institutional_abstract_only",
+      "limitation": "Literature review, not experimental efficacy trial"
+    },
+    {
+      "id": "FV_CHANGE",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "type": "existing FV published investigation",
+      "read_depth": "live_page_checked_2026_11_11",
+      "limitation": "Different paradigm; published source-linked page"
+    },
+    {
+      "id": "FV_PUY",
+      "url": "https://finalvestige.com/explore/",
+      "type": "FV archive index",
+      "read_depth": "live_page_checked_2026_11_11",
+      "limitation": "Puységur highlighted as archival route; deep page intermittently inaccessible"
+    },
+    {
+      "id": "FV_FOCUS",
+      "url": "https://finalvestige.com/focus/",
+      "type": "FV free product page",
+      "read_depth": "live_page_checked_2026_11_11",
+      "limitation": "52-page existing free fieldbook and existing Jetpack/Dispatch signup; delivery not validated"
+    },
+    {
+      "id": "INSPIRE",
+      "url": "https://inspire3.com/",
+      "type": "official seller catalog",
+      "read_depth": "live_page_checked_2026_11_11",
+      "limitation": "Scientific benefit language is seller marketing, not proof"
+    },
+    {
+      "id": "ZEN",
+      "url": "https://zen12.com/getstarted",
+      "type": "official checkout",
+      "read_depth": "live_page_checked_2026_11_11",
+      "limitation": "12 levels/48 MP3; checkout timer and dynamic order total; terms not FV authorization"
+    },
+    {
+      "id": "AFF",
+      "url": "https://affiliates.inspire3.com/",
+      "type": "official public affiliate recruiting",
+      "read_depth": "live_page_checked_2026_11_11",
+      "limitation": "Generic program details do not authenticate specific FV approval, earning URL, or channels"
+    },
+    {
+      "id": "HYPN",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "type": "official seller offer",
+      "read_depth": "live_page_checked_2026_11_11",
+      "limitation": "33 min/47 MB and seller's 14-day guarantee, not guaranteed concentration"
+    },
+    {
+      "id": "BRAIN",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "type": "official seller offer",
+      "read_depth": "live_page_checked_2026_11_11",
+      "limitation": "15 and 30 minute files; frequencies advertised; claimed effects unsubstantiated"
+    },
+    {
+      "id": "FTC_END",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "type": "US regulator",
+      "read_depth": "live_page_checked_2026_11_11",
+      "limitation": "Conspicuous material-connection disclosure; honest endorsement"
+    },
+    {
+      "id": "FTC_HEALTH",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "type": "US regulator",
+      "read_depth": "search_text_verified_2026_11_11",
+      "limitation": "Product-relevant substantiation required for implied health benefit"
+    },
+    {
+      "id": "ISSUE171",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "type": "founder Mind directive",
+      "read_depth": "connector_read_2026_11_11",
+      "limitation": "Governance and previous research ownership"
+    },
+    {
+      "id": "ISSUE820",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "type": "business conversion source",
+      "read_depth": "connector_read_2026_11_11",
+      "limitation": "Revenue rather than traffic as north star"
+    },
+    {
+      "id": "GROK",
+      "url": "https://docs.google.com/document/d/1_dqcJeqxbvYb1prGxy0nSWTsHu8p0PSRsDB_NPNbL48/edit",
+      "type": "owner shared creator document",
+      "read_depth": "connector_read_2026_11_11",
+      "limitation": "Existing Rosenhan asset owner-reported; video route not independent platform verification"
+    }
+  ],
+  "claims": [
+    {
+      "id": "AB1",
+      "claim": "1992 RSVP probe detection reduced from 180 ms through a 270 ms interval after first target",
+      "source_ids": [
+        "AB92"
+      ],
+      "decision": "ATTRIBUTED_EXPERIMENT"
+    },
+    {
+      "id": "AB2",
+      "claim": "Everyone goes visually blind after an important stimulus",
+      "source_ids": [
+        "AB92"
+      ],
+      "decision": "OMIT"
+    },
+    {
+      "id": "AB3",
+      "claim": "Lag-1 sparing reported with order confusion caveat",
+      "source_ids": [
+        "LAG05"
+      ],
+      "decision": "ATTRIBUTED_EXPERIMENT"
+    },
+    {
+      "id": "AB4",
+      "claim": "Blink necessarily caused only by fixed memory capacity",
+      "source_ids": [
+        "SPARE07"
+      ],
+      "decision": "OMIT"
+    },
+    {
+      "id": "AB5",
+      "claim": "Target-stream distractors can affect attentional blink",
+      "source_ids": [
+        "SPARE07"
+      ],
+      "decision": "ATTRIBUTED_EXPERIMENT"
+    },
+    {
+      "id": "AB6",
+      "claim": "MEG evidence reveals neural correlates, not product treatment",
+      "source_ids": [
+        "MEG05"
+      ],
+      "decision": "ATTRIBUTED_EXPERIMENT"
+    },
+    {
+      "id": "AB7",
+      "claim": "A clinical diagnosis can be inferred from paper demo",
+      "source_ids": [
+        "AB92"
+      ],
+      "decision": "OMIT"
+    },
+    {
+      "id": "AB8",
+      "claim": "Attentional blink is the same as change blindness",
+      "source_ids": [
+        "FV_CHANGE"
+      ],
+      "decision": "OMIT"
+    },
+    {
+      "id": "AB9",
+      "claim": "Modern retailer audio is proven to repair attentional blink",
+      "source_ids": [
+        "AB92"
+      ],
+      "decision": "OMIT"
+    },
+    {
+      "id": "FV1",
+      "claim": "Published Change Blindness article is a real internal editorial route",
+      "source_ids": [
+        "FV_CHANGE"
+      ],
+      "decision": "ALLOW"
+    },
+    {
+      "id": "FV2",
+      "claim": "Puységur source dossiers are historical evidence, not efficacy proof",
+      "source_ids": [
+        "FV_PUY"
+      ],
+      "decision": "ALLOW_WITH_SCOPE"
+    },
+    {
+      "id": "FV3",
+      "claim": "Existing Focus resource is a free 52-page fieldbook",
+      "source_ids": [
+        "FV_FOCUS"
+      ],
+      "decision": "ALLOW_AS_PUBLISHED"
+    },
+    {
+      "id": "ZEN1",
+      "claim": "Zen12 seller checkout lists 12 levels and 48 MP3s",
+      "source_ids": [
+        "ZEN"
+      ],
+      "decision": "SELLER_DESCRIPTION_ONLY"
+    },
+    {
+      "id": "ZEN2",
+      "claim": "Zen12 reliably creates an hour of meditation within 12 minutes",
+      "source_ids": [
+        "INSPIRE"
+      ],
+      "decision": "OMIT_UNSUBSTANTIATED"
+    },
+    {
+      "id": "ZEN3",
+      "claim": "Zen12 price or countdown on site is approved FV price or deadline",
+      "source_ids": [
+        "ZEN"
+      ],
+      "decision": "OMIT_VOLATILE"
+    },
+    {
+      "id": "ZEN4",
+      "claim": "Zen12 1-year guarantee is advertised",
+      "source_ids": [
+        "ZEN"
+      ],
+      "decision": "SELLER_TERMS_VERIFY_AT_PURCHASE"
+    },
+    {
+      "id": "HY1",
+      "claim": "Total Focus seller lists 33-min, 47 MB recording",
+      "source_ids": [
+        "HYPN"
+      ],
+      "decision": "SELLER_DESCRIPTION_ONLY"
+    },
+    {
+      "id": "HY2",
+      "claim": "Total Focus gives 100 percent razor sharp concentration",
+      "source_ids": [
+        "HYPN"
+      ],
+      "decision": "OMIT_UNSUBSTANTIATED"
+    },
+    {
+      "id": "BS1",
+      "claim": "Focus Shot seller lists 15 and 30 minute versions",
+      "source_ids": [
+        "BRAIN"
+      ],
+      "decision": "SELLER_DESCRIPTION_ONLY"
+    },
+    {
+      "id": "BS2",
+      "claim": "Focus Shot effects last four hours to entire day",
+      "source_ids": [
+        "BRAIN"
+      ],
+      "decision": "OMIT_UNSUBSTANTIATED"
+    },
+    {
+      "id": "BS3",
+      "claim": "Broad binaural-beat research validates Focus Shot protocol",
+      "source_ids": [
+        "BRAIN"
+      ],
+      "decision": "OMIT_UNJUSTIFIED_TRANSFER"
+    },
+    {
+      "id": "AFF1",
+      "claim": "Public affiliate page promises commissions, so FV is approved",
+      "source_ids": [
+        "AFF"
+      ],
+      "decision": "OMIT"
+    },
+    {
+      "id": "FTC1",
+      "claim": "Prospective affiliate disclosure must be near actual future recommendation",
+      "source_ids": [
+        "FTC_END"
+      ],
+      "decision": "ALLOW_REQUIRE_LOCAL_COPY"
+    },
+    {
+      "id": "FTC2",
+      "claim": "Specific health benefit claims require competent product-relevant proof",
+      "source_ids": [
+        "FTC_HEALTH"
+      ],
+      "decision": "ALLOW"
+    },
+    {
+      "id": "GO1",
+      "claim": "Rosenhan YouTube ID zctcIECAZ2s is authoritatively platform authenticated",
+      "source_ids": [
+        "GROK"
+      ],
+      "decision": "OMIT_OWNER_REPORTED_ONLY"
+    },
+    {
+      "id": "FIN1",
+      "claim": "Clicks are paid orders",
+      "source_ids": [
+        "ISSUE820"
+      ],
+      "decision": "OMIT"
+    },
+    {
+      "id": "FIN2",
+      "claim": "FV affiliate proceeds equal entire merchant gross basket value",
+      "source_ids": [
+        "ISSUE820"
+      ],
+      "decision": "OMIT"
+    },
+    {
+      "id": "FIN3",
+      "claim": "Settled FV affiliate commission, after adjustments, counts toward verified attributable income",
+      "source_ids": [
+        "ISSUE820"
+      ],
+      "decision": "ALLOW_WHEN_RECONCILED"
+    }
+  ],
+  "source_count": 18,
+  "claim_count": 28,
+  "holds": [
+    {
+      "id": "partner_account_owner_and_acceptance",
+      "status": "HARD_HOLD",
+      "verified_evidence": null
+    },
+    {
+      "id": "publisher_entity_and_eligibility",
+      "status": "HARD_HOLD",
+      "verified_evidence": null
+    },
+    {
+      "id": "channel_specific_social_promotion_rights",
+      "status": "HARD_HOLD",
+      "verified_evidence": null
+    },
+    {
+      "id": "channel_specific_email_rights",
+      "status": "HARD_HOLD",
+      "verified_evidence": null
+    },
+    {
+      "id": "issued_signed_earning_url",
+      "status": "HARD_HOLD",
+      "verified_evidence": null
+    },
+    {
+      "id": "merchant_destination_authorization",
+      "status": "HARD_HOLD",
+      "verified_evidence": null
+    },
+    {
+      "id": "current_terms_and_refunds",
+      "status": "HARD_HOLD",
+      "verified_evidence": null
+    },
+    {
+      "id": "product_claim_substantiation",
+      "status": "HARD_HOLD",
+      "verified_evidence": null
+    },
+    {
+      "id": "editorial_and_medical_context_QA",
+      "status": "HARD_HOLD",
+      "verified_evidence": null
+    },
+    {
+      "id": "FTC_adjacency_screen_reader_QA",
+      "status": "HARD_HOLD",
+      "verified_evidence": null
+    },
+    {
+      "id": "no_JS_and_real_browser_WCAG_QA",
+      "status": "HARD_HOLD",
+      "verified_evidence": null
+    },
+    {
+      "id": "short_video_media_captions_poster_rights",
+      "status": "HARD_HOLD",
+      "verified_evidence": null
+    },
+    {
+      "id": "Grok_real_asset_id_and_route_QA",
+      "status": "HARD_HOLD",
+      "verified_evidence": null
+    },
+    {
+      "id": "campaign_id_one_owner_verified",
+      "status": "HARD_HOLD",
+      "verified_evidence": null
+    },
+    {
+      "id": "Jetpack_consent_provider_confirmation",
+      "status": "HARD_HOLD",
+      "verified_evidence": null
+    },
+    {
+      "id": "payable_commission_and_refunds_ledger",
+      "status": "HARD_HOLD",
+      "verified_evidence": null
+    },
+    {
+      "id": "qualified_human_session_denominator",
+      "status": "HARD_HOLD",
+      "verified_evidence": null
+    },
+    {
+      "id": "founder_QA_release_approval",
+      "status": "HARD_HOLD",
+      "verified_evidence": null
+    }
+  ],
+  "creator_fit": [
+    {
+      "topic": "attentional_blink",
+      "asset_id": null,
+      "owner": "Praxxis/Grok",
+      "video_status": "not_authenticated",
+      "best_next_step": "published change blindness article now; R301 source investigation after editorial release",
+      "focus": "optional free Fieldbook",
+      "offer": "Zen12 only after separate high-intent buyer intent and partner approval",
+      "commercial_status": "NO_DIRECT_UPSELL"
+    },
+    {
+      "topic": "change_blindness",
+      "asset_id": null,
+      "owner": "Praxxis/Grok",
+      "video_status": "not_authenticated",
+      "best_next_step": "existing published change blindness investigation",
+      "focus": "optional free Fieldbook",
+      "offer": "only if reader independently chooses structured meditation audio review",
+      "commercial_status": "NO_DIRECT_UPSELL"
+    },
+    {
+      "topic": "Rosenhan_and_psychiatric_history",
+      "asset_id": "zctcIECAZ2s",
+      "asset_verification": "owner_reported_TASK008_not_platform_verified",
+      "owner": "Praxxis/Grok",
+      "best_next_step": "R299/R300 history article after source/editorial review",
+      "focus": "optional free Fieldbook",
+      "offer": "not suitable for direct Zen12 merchant pitch",
+      "commercial_status": "NO_DIRECT_UPSELL"
+    }
+  ],
+  "partner": {
+    "seller": "Inspire3",
+    "target_offer": "Zen12",
+    "public_program_observed": true,
+    "final_vestige_approved": null,
+    "allowed_social_channels": null,
+    "allowed_email": null,
+    "issued_earning_url": null,
+    "commission_rate_for_FV": null,
+    "tracking_terms_for_FV": null,
+    "claim_proof_product_specific": null,
+    "link_state": "WITHHELD"
+  },
+  "fallback_owned_product": {
+    "verified_paid_mind_sku": null,
+    "rights_cleared": null,
+    "payment_and_delivery_verified": null,
+    "decision": "FREE_FIELD_BOOK_ONLY_NO_SALE"
+  },
+  "measurement": {
+    "qualified_human_sessions": null,
+    "landing_visits": null,
+    "relevant_CTA_clicks": null,
+    "provider_confirmed_leads": null,
+    "affiliate_outbound_clicks": null,
+    "partner_confirmed_paid_orders": null,
+    "cleared_attributable_commission": null,
+    "verified_owned_net_receipts": null,
+    "refunds_or_clawbacks": null,
+    "fees_already_included_in_net": null,
+    "net_revenue_per_1000": null,
+    "utm_campaign": "RESOLVE_WITH_CLAUDE",
+    "campaign_id_conflict": [
+      "mind_pilot_2026_11",
+      "mind_proposed_2026_11"
+    ],
+    "utm_content": "Grok asset_id only after verified",
+    "pii_collected": false,
+    "new_scripts_added": false,
+    "formula": "1000 * (cleared_attributable_affiliate_commission + separately reconciled owned_product_net_receipts) / verified_qualified_human_sessions; zero denominator and missing inputs return NOT COMPUTABLE; do not subtract already-netted partner adjustments twice"
+  },
+  "release_approvals": {
+    "founder": false,
+    "affiliate": false,
+    "site_QA": false,
+    "commercial_QA": false,
+    "WordPress": false,
+    "video": false
+  }
+}
