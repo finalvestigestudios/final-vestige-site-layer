@@ -196,9 +196,10 @@
       "id": "zen12_price",
       "statement": "Standard and promotional product prices differ",
       "kind": "offer_variant",
-      "source_id": "zen12_standard;zen12_offer",
-      "qualification": "no final price stated; offers not interchangeable",
-      "decision": "DO_NOT_QUOTE_PRICE"
+      "source_id": "zen12_standard",
+      "qualification": "no final price stated; offers not interchangeable; distinct offer pages must be evaluated separately",
+      "decision": "DO_NOT_QUOTE_PRICE",
+      "secondary_source_id": "zen12_offer"
     },
     {
       "id": "zen12_newsletter",
