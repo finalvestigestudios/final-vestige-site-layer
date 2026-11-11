@@ -1,0 +1,105 @@
+{
+  "schema": "fv-malbone621-two-slot-rights-detail-v1",
+  "date_utc": "2026-11-11",
+  "scope": "Read-only historical provenance, original file-size, 960px legibility gate; NOT visitor-browser verification",
+  "sources": {
+    "pr_worklist": 183,
+    "worklist_blob": "2acd06a4ca4317646006eb6591face3fe76fedec",
+    "pr_media": 1703,
+    "pr_siteQA": 154,
+    "frozen_11_blob": "e1dc5dd1347fa9186fc5ee8d782514afbd94f098",
+    "article": "https://finalvestige.com/2026/08/23/six-miles-an-hour-malbone-street-wreck/"
+  },
+  "prior_counts": {
+    "historical_posts": 61,
+    "inline_tags": 355,
+    "researched_offsite": 288,
+    "reported_broken_not_guest_verified": 42,
+    "expanded_posts": 66,
+    "expanded_inline_tags": 361,
+    "originals_over_1_5_decimal_MB": 15,
+    "oversize_stored_original_bytes": 47096779,
+    "proposed_76_percent_actual_transfer_measured": false
+  },
+  "measured_browser_http_statuses": null,
+  "measured_browser_transfer_bytes": null,
+  "measured_sitewide_transfer_reduction_pct": null,
+  "rows": [
+    {
+      "slot": "621:0",
+      "post_id": 621,
+      "wp_media_id": 1257,
+      "original_url": "https://finalvestige.com/wp-content/uploads/2026/08/edit-017-v01-malbone-tunnel-generalpunger-original.jpg",
+      "stored_bytes": 4798395,
+      "original_native_px": [
+        4000,
+        3000
+      ],
+      "conditional_960_px": [
+        960,
+        720
+      ],
+      "visual_role": "2021 photograph of surviving tunnel, not 1918 derailment",
+      "kind": "PHOTOGRAPH",
+      "published_caption_credit": "GeneralPunger / Wikimedia Commons, CC BY-SA 4.0",
+      "catalog_url": null,
+      "catalog_item_identity_proven": false,
+      "rights": "CC_BY_SA_4_PUBLISHED_PAGE_ASSERTION_NOT_ITEM_CLEARED",
+      "retriever": {
+        "tested_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/edit-017-v01-malbone-tunnel-generalpunger-original.jpg?resize=4000%2C3000&ssl=1",
+        "observation": "TOOL_TIMEOUT",
+        "origin_http_status": null,
+        "guest_browser_http_status": null
+      },
+      "guest_current_src": null,
+      "guest_wire_bytes": null,
+      "rights_cleared": false,
+      "production_write_approved": false
+    },
+    {
+      "slot": "621:1",
+      "post_id": 621,
+      "wp_media_id": 1258,
+      "original_url": "https://finalvestige.com/wp-content/uploads/2026/08/edit-017-v02-nypl-5003296-original.jpg",
+      "stored_bytes": 5553669,
+      "original_native_px": [
+        5667,
+        3831
+      ],
+      "conditional_960_px": [
+        960,
+        649
+      ],
+      "visual_role": "1903 BRT system map; not 1918 wreck geometry",
+      "kind": "FINE_DETAIL_MAP",
+      "published_caption_credit": "From The New York Public Library; believed public domain in U.S.",
+      "catalog_url": "https://digitalcollections.nypl.org/items/c745e730-d2a9-012f-5ecc-58d385a7bbd0",
+      "catalog_image_id": "5003296",
+      "independent_catalog_crosscheck_url": "https://libguides.nypl.org/nyc-rail-transit/companies",
+      "NYPL_rights_policy_url": "https://qa-digitalcollections.nypl.org/about",
+      "catalog_direct_retriever": "TOOL_403_NOT_ORIGIN_STATUS",
+      "rights": "NYPL_US_PUBLIC_DOMAIN_CLAIM_ITEM_LICENSE_PENDING",
+      "retriever": {
+        "tested_url": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/edit-017-v02-nypl-5003296-original.jpg?resize=5667%2C3831&ssl=1",
+        "observation": "IMAGE_RENDERED_IN_WEB_RETRIEVER",
+        "origin_http_status": null,
+        "guest_browser_http_status": null
+      },
+      "guest_current_src": null,
+      "guest_wire_bytes": null,
+      "rights_cleared": false,
+      "production_write_approved": false
+    }
+  ],
+  "original_stored_bytes_total": 10352064,
+  "safeguards": {
+    "map_960_only_thumbnail": true,
+    "require_same_map_accessible_full_detail": true,
+    "permit_upscale": false,
+    "photo_must_preserve_author_attribution_license": true,
+    "rights_clearance_is_not_conferred": true,
+    "wp_writes": false,
+    "binary_download": false,
+    "sitewide_savings_claim": false
+  }
+}
