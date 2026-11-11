@@ -221,7 +221,11 @@ function fv_r281_render($attributes = []): string {
     $id='fv-r281-'.$sequence;
     $s='<section class="fv-r281" aria-labelledby="'.$id.'-heading" data-fv-evidence-status="editorial-review-pending">';
     $s.='<header class="fv-r281__head"><p class="fv-r281__eyebrow">Final Vestige / Evidence Atlas / Apollo 1</p><h2 id="'.$id.'-heading">What the record establishes</h2>';
-    $s.='<p>Three documented milestones. Open the source for each claim; note the limits of the evidence. Editorial review remains pending.</p></header>';
+    $s.='<p>Three documented milestones. Open the source for each claim; note the limits of the evidence. Editorial review remains pending.</p>';
+    // R292: an early direct source-catalogue route for visitors arriving from research-led films.
+    // Targets the existing focusable first catalogue record; no extra tab stops, JS,
+    // outbound commercial link, new source URL, or second investigation CTA.
+    $s.='<p class="fv-r292__source-route"><a href="#'.$id.'-source-1">Skip to the NASA source catalogue (first record)</a></p></header>';
     $s.='<nav class="fv-r281__rail" aria-label="Apollo chronology"><ol>';
     foreach ($records as $index=>$r) {
         $point=$id.'-event-'.($index+1);
