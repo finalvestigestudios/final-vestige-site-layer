@@ -1,0 +1,487 @@
+{
+  "schema": "fv-preparedness-r294-three-witness-cluster-v1",
+  "repository": "finalvestigestudios/final-vestige-site-layer",
+  "cluster": "hist-home",
+  "observed_on_utc": "2026-11-11",
+  "witness_commit_refs": {
+    "frozen": "f654e600f89c321a480dd8f055be4d13d0673490",
+    "live": "7504a5f099594d635e3dd7332a33a2e1346c43a2",
+    "integrated": "ffd3d684c143240b64990ab6e898489d085e3558"
+  },
+  "state": "DRAFT_HARD_HOLD",
+  "publication_authorized": false,
+  "independent_qd_pass": false,
+  "medical_safety_verified": false,
+  "privacy_approved": false,
+  "articles": [
+    {
+      "slug": "pickling-fermentation-old-recipes",
+      "body": {
+        "frozen": {
+          "git_blob_sha": "17f5da8a998e6b9b38695a2ef6716c6f336f31c4",
+          "characters": 18560,
+          "word_tokens": 2483,
+          "citation_count": 42,
+          "citations": {
+            "cdc-botulism-prevention": 4,
+            "fsis-botulism": 1,
+            "fsis-home-cure-qa": 3,
+            "hist-home-cdc-botulism-about": 5,
+            "hist-home-cdc-botulism-home-canned": 5,
+            "hist-home-loc-simmons-1796": 5,
+            "hist-home-nchfp-pickling": 13,
+            "hist-home-nps-ww2-canning": 4,
+            "nchfp-home": 2
+          },
+          "line_endings": "LF"
+        },
+        "live": {
+          "git_blob_sha": "1869e37626b7463da45763d60202bd5ac0bd7700",
+          "characters": 21293,
+          "word_tokens": 2853,
+          "citation_count": 49,
+          "citations": {
+            "cdc-botulism-prevention": 6,
+            "fsis-botulism": 1,
+            "fsis-home-cure-qa": 3,
+            "hist-home-cdc-botulism-about": 5,
+            "hist-home-cdc-botulism-home-canned": 5,
+            "hist-home-loc-simmons-1796": 4,
+            "hist-home-msu-simmons-1798": 6,
+            "hist-home-nchfp-pickling": 13,
+            "hist-home-nps-ww2-canning": 4,
+            "nchfp-home": 2
+          },
+          "line_endings": "LF"
+        },
+        "integrated": {
+          "git_blob_sha": "1869e37626b7463da45763d60202bd5ac0bd7700",
+          "characters": 21293,
+          "word_tokens": 2853,
+          "citation_count": 49,
+          "citations": {
+            "cdc-botulism-prevention": 6,
+            "fsis-botulism": 1,
+            "fsis-home-cure-qa": 3,
+            "hist-home-cdc-botulism-about": 5,
+            "hist-home-cdc-botulism-home-canned": 5,
+            "hist-home-loc-simmons-1796": 4,
+            "hist-home-msu-simmons-1798": 6,
+            "hist-home-nchfp-pickling": 13,
+            "hist-home-nps-ww2-canning": 4,
+            "nchfp-home": 2
+          },
+          "line_endings": "LF"
+        }
+      },
+      "meta": {
+        "frozen": {
+          "git_blob_sha": "4b955811459017df83a28704aaf1e69ddb036c29",
+          "n": 28,
+          "slug": "pickling-fermentation-old-recipes",
+          "section": "lost-ways",
+          "canonical_route": "/preparedness/lost-ways/pickling-fermentation-old-recipes/",
+          "status": {
+            "editorial": "drafted",
+            "publish": "draft"
+          },
+          "safety_review": {
+            "state": "pending",
+            "reviewer": null,
+            "date": null
+          },
+          "source_use_ids": [
+            "cdc-botulism-prevention",
+            "fsis-botulism",
+            "fsis-home-cure-qa",
+            "hist-home-cdc-botulism-about",
+            "hist-home-cdc-botulism-home-canned",
+            "hist-home-loc-simmons-1796",
+            "hist-home-nchfp-pickling",
+            "hist-home-nps-ww2-canning",
+            "nchfp-home"
+          ]
+        },
+        "live": {
+          "git_blob_sha": "da97f42fcabbd05dc513d26c6af289bbeb8816f3",
+          "n": 28,
+          "slug": "pickling-fermentation-old-recipes",
+          "section": "lost-ways",
+          "canonical_route": "/preparedness/lost-ways/pickling-fermentation-old-recipes/",
+          "status": {
+            "editorial": "drafted",
+            "publish": "draft"
+          },
+          "safety_review": {
+            "state": "pending",
+            "reviewer": null,
+            "date": null
+          },
+          "source_use_ids": [
+            "cdc-botulism-prevention",
+            "fsis-botulism",
+            "fsis-home-cure-qa",
+            "hist-home-cdc-botulism-about",
+            "hist-home-cdc-botulism-home-canned",
+            "hist-home-loc-simmons-1796",
+            "hist-home-msu-simmons-1798",
+            "hist-home-nchfp-pickling",
+            "hist-home-nps-ww2-canning",
+            "nchfp-home"
+          ]
+        },
+        "integrated": {
+          "git_blob_sha": "da97f42fcabbd05dc513d26c6af289bbeb8816f3",
+          "n": 28,
+          "slug": "pickling-fermentation-old-recipes",
+          "section": "lost-ways",
+          "canonical_route": "/preparedness/lost-ways/pickling-fermentation-old-recipes/",
+          "status": {
+            "editorial": "drafted",
+            "publish": "draft"
+          },
+          "safety_review": {
+            "state": "pending",
+            "reviewer": null,
+            "date": null
+          },
+          "source_use_ids": [
+            "cdc-botulism-prevention",
+            "fsis-botulism",
+            "fsis-home-cure-qa",
+            "hist-home-cdc-botulism-about",
+            "hist-home-cdc-botulism-home-canned",
+            "hist-home-loc-simmons-1796",
+            "hist-home-msu-simmons-1798",
+            "hist-home-nchfp-pickling",
+            "hist-home-nps-ww2-canning",
+            "nchfp-home"
+          ]
+        }
+      },
+      "comparisons": {
+        "integrated_equals_live_exact": true,
+        "integrated_equals_live_lf": true,
+        "integrated_equals_frozen_lf": false,
+        "integrated_matches_live_citation_sequence": true,
+        "live_new_citation_ids": [
+          "hist-home-msu-simmons-1798"
+        ],
+        "integrated_missing_live_citation_ids": [],
+        "canonical_route_preserved": true,
+        "all_meta_publish_draft": true
+      }
+    },
+    {
+      "slug": "root-cellars-cool-storage",
+      "body": {
+        "frozen": {
+          "git_blob_sha": "e28548b4e5014f36ffd12becb9261ae696480efa",
+          "characters": 18830,
+          "word_tokens": 2532,
+          "citation_count": 37,
+          "citations": {
+            "cdc-botulism-prevention": 2,
+            "hist-home-fsis-refrigeration": 6,
+            "hist-home-monticello-ice-house": 8,
+            "hist-home-mu-root-cellars": 14,
+            "hist-home-nps-fort-union-water": 1,
+            "hist-home-nps-oxon-hill-root-cellar": 4,
+            "hist-home-nps-ww2-canning": 2
+          },
+          "line_endings": "LF"
+        },
+        "live": {
+          "git_blob_sha": "7f375c32d74f2828b4912f5692abc44483e4629a",
+          "characters": 21366,
+          "word_tokens": 2903,
+          "citation_count": 42,
+          "citations": {
+            "cdc-botulism-prevention": 2,
+            "hist-home-fsis-refrigeration": 6,
+            "hist-home-monticello-ice-house": 8,
+            "hist-home-msu-simmons-1798": 4,
+            "hist-home-mu-root-cellars": 15,
+            "hist-home-nps-fort-union-water": 1,
+            "hist-home-nps-oxon-hill-root-cellar": 4,
+            "hist-home-nps-ww2-canning": 2
+          },
+          "line_endings": "CRLF"
+        },
+        "integrated": {
+          "git_blob_sha": "2ff8d029769aa9a97de6b1e388d937899f3af38c",
+          "characters": 21264,
+          "word_tokens": 2903,
+          "citation_count": 42,
+          "citations": {
+            "cdc-botulism-prevention": 2,
+            "hist-home-fsis-refrigeration": 6,
+            "hist-home-monticello-ice-house": 8,
+            "hist-home-msu-simmons-1798": 4,
+            "hist-home-mu-root-cellars": 15,
+            "hist-home-nps-fort-union-water": 1,
+            "hist-home-nps-oxon-hill-root-cellar": 4,
+            "hist-home-nps-ww2-canning": 2
+          },
+          "line_endings": "LF"
+        }
+      },
+      "meta": {
+        "frozen": {
+          "git_blob_sha": "705e1157f9394b615ecb74ffd25be8500453e18a",
+          "n": 27,
+          "slug": "root-cellars-cool-storage",
+          "section": "lost-ways",
+          "canonical_route": "/preparedness/lost-ways/root-cellars-cool-storage/",
+          "status": {
+            "editorial": "drafted",
+            "publish": "draft"
+          },
+          "safety_review": {
+            "state": "not-required",
+            "reviewer": null,
+            "date": null,
+            "scope": "Not gated in the taxonomy. Contains food-safety statements (produce storage ranges, the 40 F benchmark) that a human reviewer should still read before publication."
+          },
+          "source_use_ids": [
+            "cdc-botulism-prevention",
+            "hist-home-fsis-refrigeration",
+            "hist-home-monticello-ice-house",
+            "hist-home-mu-root-cellars",
+            "hist-home-nps-fort-union-water",
+            "hist-home-nps-oxon-hill-root-cellar",
+            "hist-home-nps-ww2-canning"
+          ]
+        },
+        "live": {
+          "git_blob_sha": "c3b7425711c3953c2d6cac9eb2aabe21a6717285",
+          "n": 27,
+          "slug": "root-cellars-cool-storage",
+          "section": "lost-ways",
+          "canonical_route": "/preparedness/lost-ways/root-cellars-cool-storage/",
+          "status": {
+            "editorial": "drafted",
+            "publish": "draft"
+          },
+          "safety_review": {
+            "state": "not-required",
+            "reviewer": null,
+            "date": null,
+            "scope": "Not gated in the taxonomy. Contains food-safety statements (produce storage ranges, the 40 F benchmark) that a human reviewer should still read before publication."
+          },
+          "source_use_ids": [
+            "cdc-botulism-prevention",
+            "hist-home-fsis-refrigeration",
+            "hist-home-monticello-ice-house",
+            "hist-home-msu-simmons-1798",
+            "hist-home-mu-root-cellars",
+            "hist-home-nps-fort-union-water",
+            "hist-home-nps-oxon-hill-root-cellar",
+            "hist-home-nps-ww2-canning"
+          ]
+        },
+        "integrated": {
+          "git_blob_sha": "c3b7425711c3953c2d6cac9eb2aabe21a6717285",
+          "n": 27,
+          "slug": "root-cellars-cool-storage",
+          "section": "lost-ways",
+          "canonical_route": "/preparedness/lost-ways/root-cellars-cool-storage/",
+          "status": {
+            "editorial": "drafted",
+            "publish": "draft"
+          },
+          "safety_review": {
+            "state": "not-required",
+            "reviewer": null,
+            "date": null,
+            "scope": "Not gated in the taxonomy. Contains food-safety statements (produce storage ranges, the 40 F benchmark) that a human reviewer should still read before publication."
+          },
+          "source_use_ids": [
+            "cdc-botulism-prevention",
+            "hist-home-fsis-refrigeration",
+            "hist-home-monticello-ice-house",
+            "hist-home-msu-simmons-1798",
+            "hist-home-mu-root-cellars",
+            "hist-home-nps-fort-union-water",
+            "hist-home-nps-oxon-hill-root-cellar",
+            "hist-home-nps-ww2-canning"
+          ]
+        }
+      },
+      "comparisons": {
+        "integrated_equals_live_exact": false,
+        "integrated_equals_live_lf": true,
+        "integrated_equals_frozen_lf": false,
+        "integrated_matches_live_citation_sequence": true,
+        "live_new_citation_ids": [
+          "hist-home-msu-simmons-1798"
+        ],
+        "integrated_missing_live_citation_ids": [],
+        "canonical_route_preserved": true,
+        "all_meta_publish_draft": true
+      }
+    },
+    {
+      "slug": "sanitation-before-germ-theory",
+      "body": {
+        "frozen": {
+          "git_blob_sha": "15852c158708270d72d5f9723d90e5cb6083a766",
+          "characters": 21687,
+          "word_tokens": 2759,
+          "citation_count": 47,
+          "citations": {
+            "cdc-water-safe": 3,
+            "hist-home-cdc-clean-hands": 5,
+            "hist-home-chadwick-cureus": 13,
+            "hist-home-nps-fort-union-water": 3,
+            "hist-home-smith-naval-hygiene": 17,
+            "hist-home-snow-mode-of-communication": 1,
+            "hist-home-tulchinsky-snow": 3,
+            "hist-home-wellcome-snow-map": 1,
+            "rmg-life-at-sea": 1
+          },
+          "line_endings": "LF"
+        },
+        "live": {
+          "git_blob_sha": "02090fc1b773fd79f08a7ba754b6125844c37eab",
+          "characters": 22049,
+          "word_tokens": 2793,
+          "citation_count": 48,
+          "citations": {
+            "cdc-water-safe": 3,
+            "hist-home-cdc-clean-hands": 5,
+            "hist-home-chadwick-cureus": 13,
+            "hist-home-nps-fort-union-water": 3,
+            "hist-home-smith-naval-hygiene": 17,
+            "hist-home-snow-mode-of-communication": 1,
+            "hist-home-tulchinsky-snow": 3,
+            "hist-home-wellcome-chadwick-1842": 1,
+            "hist-home-wellcome-snow-map": 1,
+            "rmg-life-at-sea": 1
+          },
+          "line_endings": "CRLF"
+        },
+        "integrated": {
+          "git_blob_sha": "d56df76647d2598f35cfd4609f91649cef063f12",
+          "characters": 21947,
+          "word_tokens": 2793,
+          "citation_count": 48,
+          "citations": {
+            "cdc-water-safe": 3,
+            "hist-home-cdc-clean-hands": 5,
+            "hist-home-chadwick-cureus": 13,
+            "hist-home-nps-fort-union-water": 3,
+            "hist-home-smith-naval-hygiene": 17,
+            "hist-home-snow-mode-of-communication": 1,
+            "hist-home-tulchinsky-snow": 3,
+            "hist-home-wellcome-chadwick-1842": 1,
+            "hist-home-wellcome-snow-map": 1,
+            "rmg-life-at-sea": 1
+          },
+          "line_endings": "LF"
+        }
+      },
+      "meta": {
+        "frozen": {
+          "git_blob_sha": "0dad1731adc3c88aac65baceaa9aa09112e5eb5b",
+          "n": 33,
+          "slug": "sanitation-before-germ-theory",
+          "section": "lost-ways",
+          "canonical_route": "/preparedness/lost-ways/sanitation-before-germ-theory/",
+          "status": {
+            "editorial": "drafted",
+            "publish": "draft"
+          },
+          "safety_review": {
+            "state": "not-required",
+            "reviewer": null,
+            "date": null,
+            "scope": "Not gated in the taxonomy. Contains a current handwashing statement and a modern verdict panel that a human reviewer should still read before publication."
+          },
+          "source_use_ids": [
+            "cdc-water-safe",
+            "hist-home-cdc-clean-hands",
+            "hist-home-chadwick-cureus",
+            "hist-home-nps-fort-union-water",
+            "hist-home-smith-naval-hygiene",
+            "hist-home-snow-mode-of-communication",
+            "hist-home-tulchinsky-snow",
+            "hist-home-wellcome-snow-map",
+            "rmg-life-at-sea"
+          ]
+        },
+        "live": {
+          "git_blob_sha": "3294cd9fcf59496c9ece9342e67b0d57d2ed5523",
+          "n": 33,
+          "slug": "sanitation-before-germ-theory",
+          "section": "lost-ways",
+          "canonical_route": "/preparedness/lost-ways/sanitation-before-germ-theory/",
+          "status": {
+            "editorial": "drafted",
+            "publish": "draft"
+          },
+          "safety_review": {
+            "state": "not-required",
+            "reviewer": null,
+            "date": null,
+            "scope": "Not gated in the taxonomy. Contains a current handwashing statement and a modern verdict panel that a human reviewer should still read before publication."
+          },
+          "source_use_ids": [
+            "cdc-water-safe",
+            "hist-home-cdc-clean-hands",
+            "hist-home-chadwick-cureus",
+            "hist-home-nps-fort-union-water",
+            "hist-home-smith-naval-hygiene",
+            "hist-home-snow-mode-of-communication",
+            "hist-home-tulchinsky-snow",
+            "hist-home-wellcome-chadwick-1842",
+            "hist-home-wellcome-snow-map",
+            "rmg-life-at-sea"
+          ]
+        },
+        "integrated": {
+          "git_blob_sha": "3294cd9fcf59496c9ece9342e67b0d57d2ed5523",
+          "n": 33,
+          "slug": "sanitation-before-germ-theory",
+          "section": "lost-ways",
+          "canonical_route": "/preparedness/lost-ways/sanitation-before-germ-theory/",
+          "status": {
+            "editorial": "drafted",
+            "publish": "draft"
+          },
+          "safety_review": {
+            "state": "not-required",
+            "reviewer": null,
+            "date": null,
+            "scope": "Not gated in the taxonomy. Contains a current handwashing statement and a modern verdict panel that a human reviewer should still read before publication."
+          },
+          "source_use_ids": [
+            "cdc-water-safe",
+            "hist-home-cdc-clean-hands",
+            "hist-home-chadwick-cureus",
+            "hist-home-nps-fort-union-water",
+            "hist-home-smith-naval-hygiene",
+            "hist-home-snow-mode-of-communication",
+            "hist-home-tulchinsky-snow",
+            "hist-home-wellcome-chadwick-1842",
+            "hist-home-wellcome-snow-map",
+            "rmg-life-at-sea"
+          ]
+        }
+      },
+      "comparisons": {
+        "integrated_equals_live_exact": false,
+        "integrated_equals_live_lf": true,
+        "integrated_equals_frozen_lf": false,
+        "integrated_matches_live_citation_sequence": true,
+        "live_new_citation_ids": [
+          "hist-home-wellcome-chadwick-1842"
+        ],
+        "integrated_missing_live_citation_ids": [],
+        "canonical_route_preserved": true,
+        "all_meta_publish_draft": true
+      }
+    }
+  ],
+  "register": null
+}

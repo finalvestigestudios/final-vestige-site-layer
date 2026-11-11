@@ -1,0 +1,458 @@
+{
+  "schema": "fv-preparedness-r294-three-witness-cluster-v1",
+  "repository": "finalvestigestudios/final-vestige-site-layer",
+  "cluster": "hist-field",
+  "observed_on_utc": "2026-11-11",
+  "witness_commit_refs": {
+    "frozen": "a5ce8a62f168db05c95232e3eb385dccd0d19e7f",
+    "live": "4e5caf812727953aa45e3bda2d382f2c67b6a09c",
+    "integrated": "ffd3d684c143240b64990ab6e898489d085e3558"
+  },
+  "state": "DRAFT_HARD_HOLD",
+  "publication_authorized": false,
+  "independent_qd_pass": false,
+  "medical_safety_verified": false,
+  "privacy_approved": false,
+  "articles": [
+    {
+      "slug": "navigation-before-gps",
+      "body": {
+        "frozen": {
+          "git_blob_sha": "64c6b2c7004bc5549eea5a47d9095183e7436750",
+          "characters": 21729,
+          "word_tokens": 3002,
+          "citation_count": 47,
+          "citations": {
+            "hist-field-nasa-north-star": 4,
+            "hist-field-noaa-declination": 4,
+            "hist-field-nws-winter-before": 5,
+            "hist-field-rmg-harrison": 8,
+            "hist-field-rmg-lunar": 8,
+            "hist-field-rmg-why-longitude": 8,
+            "hist-field-si-sextant": 1,
+            "hist-field-usgs-declination": 5,
+            "hist-field-usgs-north-arrows": 2,
+            "loc-prairie-traveler": 2
+          },
+          "line_endings": "LF"
+        },
+        "live": {
+          "git_blob_sha": "49beb68339a6b85b07d686c0cfb9fe1d88b8de4f",
+          "characters": 21846,
+          "word_tokens": 3002,
+          "citation_count": 47,
+          "citations": {
+            "hist-field-nasa-north-star": 4,
+            "hist-field-noaa-declination": 4,
+            "hist-field-nws-winter-before": 5,
+            "hist-field-rmg-harrison": 8,
+            "hist-field-rmg-lunar": 8,
+            "hist-field-rmg-why-longitude": 8,
+            "hist-field-si-sextant": 1,
+            "hist-field-usgs-declination": 5,
+            "hist-field-usgs-north-arrows": 2,
+            "loc-prairie-traveler": 2
+          },
+          "line_endings": "CRLF"
+        },
+        "integrated": {
+          "git_blob_sha": "3c02e58c30d1d608224944142f31fbead44a1252",
+          "characters": 21746,
+          "word_tokens": 3002,
+          "citation_count": 47,
+          "citations": {
+            "hist-field-nasa-north-star": 4,
+            "hist-field-noaa-declination": 4,
+            "hist-field-nws-winter-before": 5,
+            "hist-field-rmg-harrison": 8,
+            "hist-field-rmg-lunar": 8,
+            "hist-field-rmg-why-longitude": 8,
+            "hist-field-si-sextant": 1,
+            "hist-field-usgs-declination": 5,
+            "hist-field-usgs-north-arrows": 2,
+            "loc-prairie-traveler": 2
+          },
+          "line_endings": "LF"
+        }
+      },
+      "meta": {
+        "frozen": {
+          "git_blob_sha": "40c83419760bc7bd0c4c574304e65b773b4a8423",
+          "n": 32,
+          "slug": "navigation-before-gps",
+          "section": "lost-ways",
+          "canonical_route": "/preparedness/lost-ways/navigation-before-gps/",
+          "status": {
+            "editorial": "drafted",
+            "publish": "draft"
+          },
+          "safety_review": {
+            "state": "not-required",
+            "reviewer": null,
+            "date": null,
+            "scope": "Not a gated slate item (taxonomy gate: false). No instructions, quantities or procedures are given. Editorial read-through still required."
+          },
+          "source_use_ids": [
+            "hist-field-nasa-north-star",
+            "hist-field-noaa-declination",
+            "hist-field-nws-winter-before",
+            "hist-field-rmg-harrison",
+            "hist-field-rmg-lunar",
+            "hist-field-rmg-why-longitude",
+            "hist-field-si-sextant",
+            "hist-field-usgs-declination",
+            "hist-field-usgs-north-arrows",
+            "loc-prairie-traveler"
+          ]
+        },
+        "live": {
+          "git_blob_sha": "40c83419760bc7bd0c4c574304e65b773b4a8423",
+          "n": 32,
+          "slug": "navigation-before-gps",
+          "section": "lost-ways",
+          "canonical_route": "/preparedness/lost-ways/navigation-before-gps/",
+          "status": {
+            "editorial": "drafted",
+            "publish": "draft"
+          },
+          "safety_review": {
+            "state": "not-required",
+            "reviewer": null,
+            "date": null,
+            "scope": "Not a gated slate item (taxonomy gate: false). No instructions, quantities or procedures are given. Editorial read-through still required."
+          },
+          "source_use_ids": [
+            "hist-field-nasa-north-star",
+            "hist-field-noaa-declination",
+            "hist-field-nws-winter-before",
+            "hist-field-rmg-harrison",
+            "hist-field-rmg-lunar",
+            "hist-field-rmg-why-longitude",
+            "hist-field-si-sextant",
+            "hist-field-usgs-declination",
+            "hist-field-usgs-north-arrows",
+            "loc-prairie-traveler"
+          ]
+        },
+        "integrated": {
+          "git_blob_sha": "40c83419760bc7bd0c4c574304e65b773b4a8423",
+          "n": 32,
+          "slug": "navigation-before-gps",
+          "section": "lost-ways",
+          "canonical_route": "/preparedness/lost-ways/navigation-before-gps/",
+          "status": {
+            "editorial": "drafted",
+            "publish": "draft"
+          },
+          "safety_review": {
+            "state": "not-required",
+            "reviewer": null,
+            "date": null,
+            "scope": "Not a gated slate item (taxonomy gate: false). No instructions, quantities or procedures are given. Editorial read-through still required."
+          },
+          "source_use_ids": [
+            "hist-field-nasa-north-star",
+            "hist-field-noaa-declination",
+            "hist-field-nws-winter-before",
+            "hist-field-rmg-harrison",
+            "hist-field-rmg-lunar",
+            "hist-field-rmg-why-longitude",
+            "hist-field-si-sextant",
+            "hist-field-usgs-declination",
+            "hist-field-usgs-north-arrows",
+            "loc-prairie-traveler"
+          ]
+        }
+      },
+      "comparisons": {
+        "integrated_equals_live_exact": false,
+        "integrated_equals_live_lf": true,
+        "integrated_equals_frozen_lf": false,
+        "integrated_matches_live_citation_sequence": true,
+        "live_new_citation_ids": [],
+        "integrated_missing_live_citation_ids": [],
+        "canonical_route_preserved": true,
+        "all_meta_publish_draft": true
+      }
+    },
+    {
+      "slug": "pioneer-supply-chains-failed",
+      "body": {
+        "frozen": {
+          "git_blob_sha": "1332df3540a903fdecdb3527fb22347d57968fb0",
+          "characters": 22205,
+          "word_tokens": 2904,
+          "citation_count": 57,
+          "citations": {
+            "hist-field-britannica-donner": 20,
+            "hist-field-ca-parks-donner": 1,
+            "hist-field-mccurdy-1994": 4,
+            "hist-field-nps-donner": 15,
+            "hist-field-nws-winter-before": 4,
+            "hist-field-nws-winter-during": 4,
+            "hist-field-utah-hastings": 6,
+            "loc-pioneer-diaries": 1,
+            "loc-prairie-traveler": 2
+          },
+          "line_endings": "LF"
+        },
+        "live": {
+          "git_blob_sha": "3643c50b43ca7ba6c1d9bc439e7c78730503b80f",
+          "characters": 24916,
+          "word_tokens": 3270,
+          "citation_count": 63,
+          "citations": {
+            "hist-field-britannica-donner": 20,
+            "hist-field-ca-parks-donner": 1,
+            "hist-field-ia-hastings-guide": 3,
+            "hist-field-mccurdy-1994": 4,
+            "hist-field-nps-donner": 16,
+            "hist-field-nws-winter-before": 4,
+            "hist-field-nws-winter-during": 4,
+            "hist-field-oac-breen-diary": 2,
+            "hist-field-utah-hastings": 6,
+            "loc-pioneer-diaries": 1,
+            "loc-prairie-traveler": 2
+          },
+          "line_endings": "CRLF"
+        },
+        "integrated": {
+          "git_blob_sha": "ad158ee898f76d05bcb65c845b1e4a0e8103c660",
+          "characters": 24803,
+          "word_tokens": 3270,
+          "citation_count": 63,
+          "citations": {
+            "hist-field-britannica-donner": 20,
+            "hist-field-ca-parks-donner": 1,
+            "hist-field-ia-hastings-guide": 3,
+            "hist-field-mccurdy-1994": 4,
+            "hist-field-nps-donner": 16,
+            "hist-field-nws-winter-before": 4,
+            "hist-field-nws-winter-during": 4,
+            "hist-field-oac-breen-diary": 2,
+            "hist-field-utah-hastings": 6,
+            "loc-pioneer-diaries": 1,
+            "loc-prairie-traveler": 2
+          },
+          "line_endings": "LF"
+        }
+      },
+      "meta": {
+        "frozen": {
+          "git_blob_sha": "fcb42c440e3b7aad5eeecfd4e0c974a5d04a9cec",
+          "n": 34,
+          "slug": "pioneer-supply-chains-failed",
+          "section": "lost-ways",
+          "canonical_route": "/preparedness/lost-ways/pioneer-supply-chains-failed/",
+          "status": {
+            "editorial": "drafted",
+            "publish": "draft"
+          },
+          "safety_review": {
+            "state": "not-required",
+            "reviewer": null,
+            "date": null,
+            "scope": "Not a gated slate item (taxonomy gate: false). History with a short safety verdict citing NWS guidance; no procedures or quantities. Editorial read-through, especially of the death counts and the cannibalism paragraph, is still required."
+          },
+          "source_use_ids": [
+            "hist-field-britannica-donner",
+            "hist-field-ca-parks-donner",
+            "hist-field-mccurdy-1994",
+            "hist-field-nps-donner",
+            "hist-field-nws-winter-before",
+            "hist-field-nws-winter-during",
+            "hist-field-utah-hastings",
+            "loc-pioneer-diaries",
+            "loc-prairie-traveler"
+          ]
+        },
+        "live": {
+          "git_blob_sha": "8789c77dcc2be717f09ce0fbd340a04319aaf223",
+          "n": 34,
+          "slug": "pioneer-supply-chains-failed",
+          "section": "lost-ways",
+          "canonical_route": "/preparedness/lost-ways/pioneer-supply-chains-failed/",
+          "status": {
+            "editorial": "drafted",
+            "publish": "draft"
+          },
+          "safety_review": {
+            "state": "not-required",
+            "reviewer": null,
+            "date": null,
+            "scope": "Not a gated slate item (taxonomy gate: false). History with a short safety verdict citing NWS guidance; no procedures or quantities. Editorial read-through, especially of the death counts and the cannibalism paragraph, is still required."
+          },
+          "source_use_ids": [
+            "hist-field-britannica-donner",
+            "hist-field-ca-parks-donner",
+            "hist-field-ia-hastings-guide",
+            "hist-field-mccurdy-1994",
+            "hist-field-nps-donner",
+            "hist-field-nws-winter-before",
+            "hist-field-nws-winter-during",
+            "hist-field-oac-breen-diary",
+            "hist-field-utah-hastings",
+            "loc-pioneer-diaries",
+            "loc-prairie-traveler"
+          ]
+        },
+        "integrated": {
+          "git_blob_sha": "4d2dc4958736e3c5257c65dda8ed016a473ac6be",
+          "n": 34,
+          "slug": "pioneer-supply-chains-failed",
+          "section": "lost-ways",
+          "canonical_route": "/preparedness/lost-ways/pioneer-supply-chains-failed/",
+          "status": {
+            "editorial": "drafted",
+            "publish": "draft"
+          },
+          "safety_review": {
+            "state": "not-required",
+            "reviewer": null,
+            "date": null,
+            "scope": "Not a gated slate item (taxonomy gate: false). History with a short safety verdict citing NWS guidance; no procedures or quantities. Editorial read-through, especially of the death counts and the cannibalism paragraph, is still required."
+          },
+          "source_use_ids": [
+            "hist-field-britannica-donner",
+            "hist-field-ca-parks-donner",
+            "hist-field-ia-hastings-guide",
+            "hist-field-mccurdy-1994",
+            "hist-field-nps-donner",
+            "hist-field-nws-winter-before",
+            "hist-field-nws-winter-during",
+            "hist-field-oac-breen-diary",
+            "hist-field-utah-hastings",
+            "loc-pioneer-diaries",
+            "loc-prairie-traveler"
+          ]
+        }
+      },
+      "comparisons": {
+        "integrated_equals_live_exact": false,
+        "integrated_equals_live_lf": true,
+        "integrated_equals_frozen_lf": false,
+        "integrated_matches_live_citation_sequence": true,
+        "live_new_citation_ids": [
+          "hist-field-ia-hastings-guide",
+          "hist-field-oac-breen-diary"
+        ],
+        "integrated_missing_live_citation_ids": [],
+        "canonical_route_preserved": true,
+        "all_meta_publish_draft": true
+      }
+    }
+  ],
+  "register": {
+    "witnesses": {
+      "frozen": {
+        "git_blob_sha": "4f369122cc0e230ee39654c215f18ffc79b5cc85",
+        "source_count": 26,
+        "ids": [
+          "hist-field-bbc-walker-light",
+          "hist-field-britannica-donner",
+          "hist-field-ca-parks-donner",
+          "hist-field-cdc-co-basics",
+          "hist-field-mccurdy-1994",
+          "hist-field-nasa-north-star",
+          "hist-field-nfpa-outdoor-fire",
+          "hist-field-nmah-tinder-box",
+          "hist-field-noaa-declination",
+          "hist-field-nps-campfires",
+          "hist-field-nps-donner",
+          "hist-field-nps-flint-steel",
+          "hist-field-nws-winter-before",
+          "hist-field-nws-winter-during",
+          "hist-field-rmg-harrison",
+          "hist-field-rmg-lunar",
+          "hist-field-rmg-why-longitude",
+          "hist-field-si-sextant",
+          "hist-field-smg-fire-methods",
+          "hist-field-tvm-walker",
+          "hist-field-usfa-outdoor-fire",
+          "hist-field-usgs-declination",
+          "hist-field-usgs-north-arrows",
+          "hist-field-utah-hastings",
+          "loc-pioneer-diaries",
+          "loc-prairie-traveler"
+        ]
+      },
+      "live": {
+        "git_blob_sha": "6b65e0aaa777b4c5ebc57fbeade0386b4ab6c32f",
+        "source_count": 28,
+        "ids": [
+          "hist-field-bbc-walker-light",
+          "hist-field-britannica-donner",
+          "hist-field-ca-parks-donner",
+          "hist-field-cdc-co-basics",
+          "hist-field-ia-hastings-guide",
+          "hist-field-mccurdy-1994",
+          "hist-field-nasa-north-star",
+          "hist-field-nfpa-outdoor-fire",
+          "hist-field-nmah-tinder-box",
+          "hist-field-noaa-declination",
+          "hist-field-nps-campfires",
+          "hist-field-nps-donner",
+          "hist-field-nps-flint-steel",
+          "hist-field-nws-winter-before",
+          "hist-field-nws-winter-during",
+          "hist-field-oac-breen-diary",
+          "hist-field-rmg-harrison",
+          "hist-field-rmg-lunar",
+          "hist-field-rmg-why-longitude",
+          "hist-field-si-sextant",
+          "hist-field-smg-fire-methods",
+          "hist-field-tvm-walker",
+          "hist-field-usfa-outdoor-fire",
+          "hist-field-usgs-declination",
+          "hist-field-usgs-north-arrows",
+          "hist-field-utah-hastings",
+          "loc-pioneer-diaries",
+          "loc-prairie-traveler"
+        ]
+      },
+      "integrated": {
+        "git_blob_sha": "3dafa9425f3829c0be2e6fea00889aff95124031",
+        "source_count": 28,
+        "ids": [
+          "hist-field-bbc-walker-light",
+          "hist-field-britannica-donner",
+          "hist-field-ca-parks-donner",
+          "hist-field-cdc-co-basics",
+          "hist-field-ia-hastings-guide",
+          "hist-field-mccurdy-1994",
+          "hist-field-nasa-north-star",
+          "hist-field-nfpa-outdoor-fire",
+          "hist-field-nmah-tinder-box",
+          "hist-field-noaa-declination",
+          "hist-field-nps-campfires",
+          "hist-field-nps-donner",
+          "hist-field-nps-flint-steel",
+          "hist-field-nws-winter-before",
+          "hist-field-nws-winter-during",
+          "hist-field-oac-breen-diary",
+          "hist-field-rmg-harrison",
+          "hist-field-rmg-lunar",
+          "hist-field-rmg-why-longitude",
+          "hist-field-si-sextant",
+          "hist-field-smg-fire-methods",
+          "hist-field-tvm-walker",
+          "hist-field-usfa-outdoor-fire",
+          "hist-field-usgs-declination",
+          "hist-field-usgs-north-arrows",
+          "hist-field-utah-hastings",
+          "loc-pioneer-diaries",
+          "loc-prairie-traveler"
+        ]
+      }
+    },
+    "new_live_source_ids": [
+      "hist-field-oac-breen-diary",
+      "hist-field-ia-hastings-guide"
+    ],
+    "live_ids_missing_integrated": [],
+    "changed_source_urls": [],
+    "changed_source_supports": [
+      "loc-prairie-traveler"
+    ]
+  }
+}

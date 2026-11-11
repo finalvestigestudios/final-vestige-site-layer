@@ -1,0 +1,468 @@
+{
+  "schema": "fv-preparedness-r294-three-witness-cluster-v1",
+  "repository": "finalvestigestudios/final-vestige-site-layer",
+  "cluster": "hist-food",
+  "observed_on_utc": "2026-11-11",
+  "witness_commit_refs": {
+    "frozen": "2acf65ca3efa9b4b5db7976f379b9ea693be43a4",
+    "live": "67e116e536c7410bed30f8f3b1bb8c166f3c223d",
+    "integrated": "ffd3d684c143240b64990ab6e898489d085e3558"
+  },
+  "state": "DRAFT_HARD_HOLD",
+  "publication_authorized": false,
+  "independent_qd_pass": false,
+  "medical_safety_verified": false,
+  "privacy_approved": false,
+  "articles": [
+    {
+      "slug": "pemmican-and-dried-meats",
+      "body": {
+        "frozen": {
+          "git_blob_sha": "0b3319cc85ea2bc6d069b46d13a40e12ddbd5bc5",
+          "characters": 18652,
+          "word_tokens": 2498,
+          "citation_count": 46,
+          "citations": {
+            "cdc-botulism-prevention": 2,
+            "fsis-home-cure-qa": 2,
+            "hist-food-ce-pemmican": 11,
+            "hist-food-fsis-jerky": 7,
+            "hist-food-headsmashedin": 6,
+            "hist-food-marcy-prairie-traveler-text": 2,
+            "hist-food-metis-fur-trade": 4,
+            "hist-food-natifs-wasna": 3,
+            "hist-food-nchfp-jerky": 7,
+            "hist-food-nk360-bison": 1,
+            "loc-prairie-traveler": 1
+          },
+          "line_endings": "LF"
+        },
+        "live": {
+          "git_blob_sha": "1febc8929f8b90c81a3fcef1e46a2811778b7e06",
+          "characters": 18673,
+          "word_tokens": 2498,
+          "citation_count": 46,
+          "citations": {
+            "cdc-botulism-prevention": 2,
+            "fsis-home-cure-qa": 2,
+            "hist-food-ce-pemmican": 11,
+            "hist-food-fsis-jerky": 7,
+            "hist-food-headsmashedin": 6,
+            "hist-food-marcy-prairie-traveler-text": 2,
+            "hist-food-metis-fur-trade": 4,
+            "hist-food-natifs-wasna": 3,
+            "hist-food-nk360-bison": 1,
+            "loc-prairie-traveler": 1,
+            "nchfp-jerky": 7
+          },
+          "line_endings": "CRLF"
+        },
+        "integrated": {
+          "git_blob_sha": "0b3319cc85ea2bc6d069b46d13a40e12ddbd5bc5",
+          "characters": 18652,
+          "word_tokens": 2498,
+          "citation_count": 46,
+          "citations": {
+            "cdc-botulism-prevention": 2,
+            "fsis-home-cure-qa": 2,
+            "hist-food-ce-pemmican": 11,
+            "hist-food-fsis-jerky": 7,
+            "hist-food-headsmashedin": 6,
+            "hist-food-marcy-prairie-traveler-text": 2,
+            "hist-food-metis-fur-trade": 4,
+            "hist-food-natifs-wasna": 3,
+            "hist-food-nchfp-jerky": 7,
+            "hist-food-nk360-bison": 1,
+            "loc-prairie-traveler": 1
+          },
+          "line_endings": "LF"
+        }
+      },
+      "meta": {
+        "frozen": {
+          "git_blob_sha": "03d3824e07fe51931671d0ddc7aa8c85eda58435",
+          "n": 25,
+          "slug": "pemmican-and-dried-meats",
+          "section": "lost-ways",
+          "canonical_route": "/preparedness/lost-ways/pemmican-and-dried-meats/",
+          "status": {
+            "editorial": "drafted",
+            "publish": "draft"
+          },
+          "safety_review": {
+            "state": "pending",
+            "reviewer": null,
+            "date": null,
+            "scope": "Gated (pemmican/curing). Items for the human reviewer: (1) the page gives no recipe, ratio, time or storage duration for pemmican; (2) it reproduces the 160 F / 165 F jerky heat-step figures with attribution, and states that USDA FSIS (heat before dehydrating; home jerky 1 to 2 months) and NCHFP (heat before or after drying; 2 weeks at room temperature) differ; (3) the verdict is not-validated for lack of any regulator source on pemmican. Also recommended: cultural read-through by someone with standing in the communities named, before publication."
+          },
+          "source_use_ids": [
+            "cdc-botulism-prevention",
+            "fsis-home-cure-qa",
+            "hist-food-ce-pemmican",
+            "hist-food-fsis-jerky",
+            "hist-food-headsmashedin",
+            "hist-food-marcy-prairie-traveler-text",
+            "hist-food-metis-fur-trade",
+            "hist-food-natifs-wasna",
+            "hist-food-nchfp-jerky",
+            "hist-food-nk360-bison",
+            "loc-prairie-traveler"
+          ]
+        },
+        "live": {
+          "git_blob_sha": "c19f68f2ac0988a8d0959e2d05b8ace8f9511348",
+          "n": 25,
+          "slug": "pemmican-and-dried-meats",
+          "section": "lost-ways",
+          "canonical_route": "/preparedness/lost-ways/pemmican-and-dried-meats/",
+          "status": {
+            "editorial": "drafted",
+            "publish": "draft"
+          },
+          "safety_review": {
+            "state": "pending",
+            "reviewer": null,
+            "date": null,
+            "scope": "Gated (pemmican/curing). Items for the human reviewer: (1) the page gives no recipe, ratio, time or storage duration for pemmican; (2) it reproduces the 160 F / 165 F jerky heat-step figures with attribution, and states that USDA FSIS (heat before dehydrating; home jerky 1 to 2 months) and NCHFP (heat before or after drying; 2 weeks at room temperature) differ; (3) the verdict is not-validated for lack of any regulator source on pemmican. Also recommended: cultural read-through by someone with standing in the communities named, before publication."
+          },
+          "source_use_ids": [
+            "cdc-botulism-prevention",
+            "fsis-home-cure-qa",
+            "hist-food-ce-pemmican",
+            "hist-food-fsis-jerky",
+            "hist-food-headsmashedin",
+            "hist-food-marcy-prairie-traveler-text",
+            "hist-food-metis-fur-trade",
+            "hist-food-natifs-wasna",
+            "hist-food-nk360-bison",
+            "loc-prairie-traveler",
+            "nchfp-jerky"
+          ]
+        },
+        "integrated": {
+          "git_blob_sha": "03d3824e07fe51931671d0ddc7aa8c85eda58435",
+          "n": 25,
+          "slug": "pemmican-and-dried-meats",
+          "section": "lost-ways",
+          "canonical_route": "/preparedness/lost-ways/pemmican-and-dried-meats/",
+          "status": {
+            "editorial": "drafted",
+            "publish": "draft"
+          },
+          "safety_review": {
+            "state": "pending",
+            "reviewer": null,
+            "date": null,
+            "scope": "Gated (pemmican/curing). Items for the human reviewer: (1) the page gives no recipe, ratio, time or storage duration for pemmican; (2) it reproduces the 160 F / 165 F jerky heat-step figures with attribution, and states that USDA FSIS (heat before dehydrating; home jerky 1 to 2 months) and NCHFP (heat before or after drying; 2 weeks at room temperature) differ; (3) the verdict is not-validated for lack of any regulator source on pemmican. Also recommended: cultural read-through by someone with standing in the communities named, before publication."
+          },
+          "source_use_ids": [
+            "cdc-botulism-prevention",
+            "fsis-home-cure-qa",
+            "hist-food-ce-pemmican",
+            "hist-food-fsis-jerky",
+            "hist-food-headsmashedin",
+            "hist-food-marcy-prairie-traveler-text",
+            "hist-food-metis-fur-trade",
+            "hist-food-natifs-wasna",
+            "hist-food-nchfp-jerky",
+            "hist-food-nk360-bison",
+            "loc-prairie-traveler"
+          ]
+        }
+      },
+      "comparisons": {
+        "integrated_equals_live_exact": false,
+        "integrated_equals_live_lf": false,
+        "integrated_equals_frozen_lf": true,
+        "integrated_matches_live_citation_sequence": false,
+        "live_new_citation_ids": [
+          "nchfp-jerky"
+        ],
+        "integrated_missing_live_citation_ids": [
+          "nchfp-jerky"
+        ],
+        "canonical_route_preserved": true,
+        "all_meta_publish_draft": true
+      }
+    },
+    {
+      "slug": "pioneer-travel-rations",
+      "body": {
+        "frozen": {
+          "git_blob_sha": "058c90b763d8cd6dec0731a7b0a9cee4dd5a57c7",
+          "characters": 18095,
+          "word_tokens": 2438,
+          "citation_count": 39,
+          "citations": {
+            "cdc-botulism-prevention": 2,
+            "fsis-home-cure-qa": 1,
+            "hist-food-fsis-jerky": 4,
+            "hist-food-marcy-prairie-traveler-text": 13,
+            "hist-food-nchfp-jerky": 1,
+            "hist-food-nps-emigrant-trails": 5,
+            "hist-food-nps-nht-nevada-guide": 9,
+            "loc-pioneer-diaries": 1,
+            "loc-prairie-traveler": 1,
+            "nchfp-cure-smoke": 2
+          },
+          "line_endings": "LF"
+        },
+        "live": {
+          "git_blob_sha": "a658481d828dc4c5ba85f296adbfbee0514f0611",
+          "characters": 18175,
+          "word_tokens": 2438,
+          "citation_count": 39,
+          "citations": {
+            "cdc-botulism-prevention": 2,
+            "fsis-home-cure-qa": 1,
+            "hist-food-fsis-jerky": 4,
+            "hist-food-marcy-prairie-traveler-text": 13,
+            "hist-food-nps-emigrant-trails": 5,
+            "hist-food-nps-nht-nevada-guide": 9,
+            "loc-pioneer-diaries": 1,
+            "loc-prairie-traveler": 1,
+            "nchfp-cure-smoke": 2,
+            "nchfp-jerky": 1
+          },
+          "line_endings": "CRLF"
+        },
+        "integrated": {
+          "git_blob_sha": "058c90b763d8cd6dec0731a7b0a9cee4dd5a57c7",
+          "characters": 18095,
+          "word_tokens": 2438,
+          "citation_count": 39,
+          "citations": {
+            "cdc-botulism-prevention": 2,
+            "fsis-home-cure-qa": 1,
+            "hist-food-fsis-jerky": 4,
+            "hist-food-marcy-prairie-traveler-text": 13,
+            "hist-food-nchfp-jerky": 1,
+            "hist-food-nps-emigrant-trails": 5,
+            "hist-food-nps-nht-nevada-guide": 9,
+            "loc-pioneer-diaries": 1,
+            "loc-prairie-traveler": 1,
+            "nchfp-cure-smoke": 2
+          },
+          "line_endings": "LF"
+        }
+      },
+      "meta": {
+        "frozen": {
+          "git_blob_sha": "7191acba55d63dc405ad9c2003d66193276da89f",
+          "n": 24,
+          "slug": "pioneer-travel-rations",
+          "section": "lost-ways",
+          "canonical_route": "/preparedness/lost-ways/pioneer-travel-rations/",
+          "status": {
+            "editorial": "drafted",
+            "publish": "draft"
+          },
+          "safety_review": {
+            "state": "pending",
+            "reviewer": null,
+            "date": null,
+            "scope": "Taxonomy does not gate this item, but the page carries a verdict panel referring to jerky heat-step guidance (160 F / 165 F) and a flagged NCHFP versus USDA difference on timing. Requested for human read-through of that panel and of the historical ration lists, which are labelled as not guidance."
+          },
+          "source_use_ids": [
+            "cdc-botulism-prevention",
+            "fsis-home-cure-qa",
+            "hist-food-fsis-jerky",
+            "hist-food-marcy-prairie-traveler-text",
+            "hist-food-nchfp-jerky",
+            "hist-food-nps-emigrant-trails",
+            "hist-food-nps-nht-nevada-guide",
+            "loc-pioneer-diaries",
+            "loc-prairie-traveler",
+            "nchfp-cure-smoke"
+          ]
+        },
+        "live": {
+          "git_blob_sha": "521e56a3f18d8b211920529a88a3c3b86eb332d7",
+          "n": 24,
+          "slug": "pioneer-travel-rations",
+          "section": "lost-ways",
+          "canonical_route": "/preparedness/lost-ways/pioneer-travel-rations/",
+          "status": {
+            "editorial": "drafted",
+            "publish": "draft"
+          },
+          "safety_review": {
+            "state": "pending",
+            "reviewer": null,
+            "date": null,
+            "scope": "Taxonomy does not gate this item, but the page carries a verdict panel referring to jerky heat-step guidance (160 F / 165 F) and a flagged NCHFP versus USDA difference on timing. Requested for human read-through of that panel and of the historical ration lists, which are labelled as not guidance."
+          },
+          "source_use_ids": [
+            "cdc-botulism-prevention",
+            "fsis-home-cure-qa",
+            "hist-food-fsis-jerky",
+            "hist-food-marcy-prairie-traveler-text",
+            "hist-food-nps-emigrant-trails",
+            "hist-food-nps-nht-nevada-guide",
+            "loc-pioneer-diaries",
+            "loc-prairie-traveler",
+            "nchfp-cure-smoke",
+            "nchfp-jerky"
+          ]
+        },
+        "integrated": {
+          "git_blob_sha": "7191acba55d63dc405ad9c2003d66193276da89f",
+          "n": 24,
+          "slug": "pioneer-travel-rations",
+          "section": "lost-ways",
+          "canonical_route": "/preparedness/lost-ways/pioneer-travel-rations/",
+          "status": {
+            "editorial": "drafted",
+            "publish": "draft"
+          },
+          "safety_review": {
+            "state": "pending",
+            "reviewer": null,
+            "date": null,
+            "scope": "Taxonomy does not gate this item, but the page carries a verdict panel referring to jerky heat-step guidance (160 F / 165 F) and a flagged NCHFP versus USDA difference on timing. Requested for human read-through of that panel and of the historical ration lists, which are labelled as not guidance."
+          },
+          "source_use_ids": [
+            "cdc-botulism-prevention",
+            "fsis-home-cure-qa",
+            "hist-food-fsis-jerky",
+            "hist-food-marcy-prairie-traveler-text",
+            "hist-food-nchfp-jerky",
+            "hist-food-nps-emigrant-trails",
+            "hist-food-nps-nht-nevada-guide",
+            "loc-pioneer-diaries",
+            "loc-prairie-traveler",
+            "nchfp-cure-smoke"
+          ]
+        }
+      },
+      "comparisons": {
+        "integrated_equals_live_exact": false,
+        "integrated_equals_live_lf": false,
+        "integrated_equals_frozen_lf": true,
+        "integrated_matches_live_citation_sequence": false,
+        "live_new_citation_ids": [
+          "nchfp-jerky"
+        ],
+        "integrated_missing_live_citation_ids": [
+          "nchfp-jerky"
+        ],
+        "canonical_route_preserved": true,
+        "all_meta_publish_draft": true
+      }
+    }
+  ],
+  "register": {
+    "witnesses": {
+      "frozen": {
+        "git_blob_sha": "d10628342fea5f177a8d1be00dd906d0c9c7850e",
+        "source_count": 28,
+        "ids": [
+          "hist-food-ce-pemmican",
+          "hist-food-fsis-jerky",
+          "hist-food-fsis-molds",
+          "hist-food-fsis-smoking",
+          "hist-food-headsmashedin",
+          "hist-food-lc-journal-1805-12-28",
+          "hist-food-lc-journal-1806-01-05",
+          "hist-food-lc-journal-1806-02-21",
+          "hist-food-lc-salt-works-trail-alliance",
+          "hist-food-marcy-prairie-traveler-text",
+          "hist-food-metis-fur-trade",
+          "hist-food-monticello-meat",
+          "hist-food-mv-smokehouse",
+          "hist-food-natifs-wasna",
+          "hist-food-nchfp-jerky",
+          "hist-food-nk360-bison",
+          "hist-food-nps-emigrant-trails",
+          "hist-food-nps-fosc-rations",
+          "hist-food-nps-hardtack-mana",
+          "hist-food-nps-icebox",
+          "hist-food-nps-lewi-tribes",
+          "hist-food-nps-nht-nevada-guide",
+          "hist-food-si-cold",
+          "loc-pioneer-diaries",
+          "loc-prairie-traveler",
+          "nchfp-historical-origins",
+          "nps-lewis-clark-salt",
+          "nps-salt-works"
+        ]
+      },
+      "live": {
+        "git_blob_sha": "c1856c998c6c728f0de72221e5654a238df994a9",
+        "source_count": 28,
+        "ids": [
+          "hist-food-ce-pemmican",
+          "hist-food-fsis-jerky",
+          "hist-food-fsis-molds",
+          "hist-food-fsis-smoking",
+          "hist-food-headsmashedin",
+          "hist-food-lc-journal-1805-12-28",
+          "hist-food-lc-journal-1806-01-05",
+          "hist-food-lc-journal-1806-02-21",
+          "hist-food-lc-salt-works-trail-alliance",
+          "hist-food-marcy-prairie-traveler-text",
+          "hist-food-metis-fur-trade",
+          "hist-food-monticello-meat",
+          "hist-food-mv-smokehouse",
+          "hist-food-natifs-wasna",
+          "hist-food-nk360-bison",
+          "hist-food-nps-emigrant-trails",
+          "hist-food-nps-fosc-rations",
+          "hist-food-nps-hardtack-mana",
+          "hist-food-nps-icebox",
+          "hist-food-nps-lewi-tribes",
+          "hist-food-nps-nht-nevada-guide",
+          "hist-food-si-cold",
+          "loc-pioneer-diaries",
+          "loc-prairie-traveler",
+          "nchfp-historical-origins",
+          "nchfp-jerky",
+          "nps-lewis-clark-salt",
+          "nps-salt-works"
+        ]
+      },
+      "integrated": {
+        "git_blob_sha": "d10628342fea5f177a8d1be00dd906d0c9c7850e",
+        "source_count": 28,
+        "ids": [
+          "hist-food-ce-pemmican",
+          "hist-food-fsis-jerky",
+          "hist-food-fsis-molds",
+          "hist-food-fsis-smoking",
+          "hist-food-headsmashedin",
+          "hist-food-lc-journal-1805-12-28",
+          "hist-food-lc-journal-1806-01-05",
+          "hist-food-lc-journal-1806-02-21",
+          "hist-food-lc-salt-works-trail-alliance",
+          "hist-food-marcy-prairie-traveler-text",
+          "hist-food-metis-fur-trade",
+          "hist-food-monticello-meat",
+          "hist-food-mv-smokehouse",
+          "hist-food-natifs-wasna",
+          "hist-food-nchfp-jerky",
+          "hist-food-nk360-bison",
+          "hist-food-nps-emigrant-trails",
+          "hist-food-nps-fosc-rations",
+          "hist-food-nps-hardtack-mana",
+          "hist-food-nps-icebox",
+          "hist-food-nps-lewi-tribes",
+          "hist-food-nps-nht-nevada-guide",
+          "hist-food-si-cold",
+          "loc-pioneer-diaries",
+          "loc-prairie-traveler",
+          "nchfp-historical-origins",
+          "nps-lewis-clark-salt",
+          "nps-salt-works"
+        ]
+      }
+    },
+    "new_live_source_ids": [
+      "nchfp-jerky"
+    ],
+    "live_ids_missing_integrated": [
+      "nchfp-jerky"
+    ],
+    "changed_source_urls": [],
+    "changed_source_supports": []
+  }
+}
