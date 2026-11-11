@@ -9,7 +9,6 @@ selected=[
  'experience2/apollo-r281/apollo-source-experience.php',
  'experience2/apollo-r281/assets/apollo-source-experience.css',
  'experience2/apollo-r281/qa/committed_gate.py',
- 'experience2/apollo-r285/README.md',
  'experience2/apollo-r285/verify_preflight.php',
  'experience2/apollo-r285/verify_print_export.py',
  'experience2/apollo-r285/build_archive.py',
