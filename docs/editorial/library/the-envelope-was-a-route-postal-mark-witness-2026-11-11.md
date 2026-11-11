@@ -8,7 +8,7 @@ A historical letter may include a handwritten composition date, dispatch or canc
 ## Original assets
 - Standalone responsive HTML article: `The_Envelope_Was_a_Route.html` (~35 KB), including accessible original fictional front-and-back cover SVG and local-only Postal Mark Witness form with repeatable mark records, provisional date ordering, safe text rendering, JSON export and print action.
 - Four-page designed printable PDF: `Postal_Mark_Witness_Field_Cards.pdf`, with original diagram, seven-pass method, 2-mark blank witness card and source URLs.
-- 12-source institutional and internal provenance and image-rights CSV, with access and last-checked qualifications.
+- 12-source institutional and internal provenance CSV, plus an original-media rights/alt-text CSV (two entries), with access and last-checked qualifications.
 - Runnable local browser QA (`qa.py`), build scripts, README, SHA-256 manifest and self-contained release ZIP.
 - Art does not reproduce third-party scans or stamps. Diagram labels all place names and dates as fictional.
 
@@ -33,7 +33,7 @@ Related FV reading: [Paper Witness](https://finalvestige.com/the-paper-witness/)
 ## Quality evidence
 - Standalone Chromium at **320, 390, 768, 1440 px** with JavaScript on and off: **8/8 layout passes**, no page overflow or script exceptions.
 - Interactive tests: repeatable mark entry, provisional date sequence, inert display of HTML-like user input, JSON export, URL scheme validation, reset, internal anchors: passed. **32/32 total checks**.
-- Print PDF: 4 pages, rendered and visually inspected; **12 embedded institutional/internal PDF hyperlinks**. ZIP CRC passed. Archive SHA-256: `509cfe3a343bbd0e6b735c840476562a4f9cf1e1bc9c459b9b0409ddb5e76bd8`.
+- Print PDF: 4 pages, rendered and visually inspected; **12 embedded institutional/internal PDF hyperlinks**. ZIP CRC passed. Archive SHA-256: `26d9c534f2c7db83c84720e3912ca6220006079dedaf1c44853f822d01a4caaf`.
 - The browser was fed the exact standalone HTML via `set_content()` because direct file navigation was administratively blocked. This is **not** production WordPress-theme inspection.
 
 ## Publication gate — HOLD
@@ -44,3 +44,6 @@ Related FV reading: [Paper Witness](https://finalvestige.com/the-paper-witness/)
 5. Only then publish a new resource under the existing Library hierarchy and insert a **single** scoped Library card/cross-links, preserving all existing paths. Research Sources #1338's 90-source count correction in #1788 is still the higher live-site release priority.
 
 **No public WP modifications, promotions, new expenditures or subscriber emails.** Optional Grok hook after publishing: *A letter's date is not the date of its journey.*
+
+## Final media-rights clarification
+Original schematic: © 2026 Final Vestige Studios, all rights reserved; no public reuse license granted; original local file `Original_Cover_Diagram.svg`, not yet publicly hosted. Descriptive SVG title/alt and a fictional-sample caption are embedded. Printable PDF also remains an original FV editorial layout. Release ZIP rebuilt with the media ledger (11 archive entries), SHA-256 `26d9c534f2c7db83c84720e3912ca6220006079dedaf1c44853f822d01a4caaf`.
