@@ -252,7 +252,7 @@ function fv_r281_render($attributes = []): string {
     $s.='</ol><aside class="fv-r281__reconciliation" aria-label="NASA source date reconciliation" data-fv-date-review="editorial-review-pending"><h3>Why NASA sources give different establishment dates</h3>';
     $s.='<p><strong>Unresolved source distinction:</strong> The Apollo 204 Review Board narrative dates its original oral authorization to January 27, 1967. A later NASA safety summary describes the Board as established on January 28. Both place its first Kennedy meeting on January 28. We preserve that distinction instead of calling two institutional descriptions independent corroboration.</p>';
     $s.='<h4>Document custody: four different dated actions</h4><p>These dates describe the Board\'s authority, meeting, memorandum and later confirmation. Its own 1967 narrative and proceedings are parts of the same investigation, not independent eyewitness corroboration.</p>';
-    $s.='<ol class="fv-r281__authority-ledger" aria-label="Board authority document chronology">';
+    $s.='<details class="fv-r291__authority-disclosure"><summary>Inspect all four dated Board authority records</summary><p class="fv-r291__disclosure-intro">Each entry identifies what the Board documented and what that record does not establish. Source links lead to NASA, not a commercial offer.</p><ol class="fv-r281__authority-ledger" aria-label="Board authority document chronology">';
     foreach ($authority_ledger as $index=>$entry) {
         $authority_point=$id.'-authority-'.($index+1);
         $s.='<li id="'.$authority_point.'" tabindex="-1"><p class="fv-r281__authority-date"><time datetime="'.fv_r281_escape($entry['date']).'">'.fv_r281_escape($entry['label']).'</time></p>';
@@ -260,7 +260,7 @@ function fv_r281_render($attributes = []): string {
         $s.='<p><a href="'.fv_r281_escape($entry['url']).'" rel="noopener noreferrer">Inspect '.fv_r281_escape($entry['source']).' at NASA</a></p>';
         $s.='<p class="fv-r281__authority-return"><a href="#'.$id.'-event-2">Return to January 28 evidence</a></p></li>';
     }
-    $s.='</ol><ul class="fv-r281__reconciliation-list">';
+    $s.='</ol></details><ul class="fv-r281__reconciliation-list">';
     foreach ($date_reconciliation as $source) {
         $s.='<li><strong>'.fv_r281_escape($source['authority']).'</strong><p>'.fv_r281_escape($source['statement']).'</p>';
         $s.='<p class="fv-r281__reconciliation-boundary">Source boundary: '.fv_r281_escape($source['boundary']).'</p>';
