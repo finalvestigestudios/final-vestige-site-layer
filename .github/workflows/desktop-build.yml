@@ -849,6 +849,12 @@ jobs:
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_numeric_source_r346.py'
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_numeric_source_integration_r346.py'
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_formatted_source_r347.py'
+      - name: R348 signed-zero source and full-engine regressions (normal and -OO)
+        run: |
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_signed_zero_custody_r348.py'
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_signed_zero_integration_r348.py'
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_signed_zero_custody_r348.py'
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_signed_zero_integration_r348.py'
       - name: Verify full normal/optimized source provenance and six smokes (R57)
         run: |
           mkdir -p "$RUNNER_TEMP/fvs-source"
@@ -997,6 +1003,18 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R346 Windows optimized source integration FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_formatted_source_r347.py'
           if ($LASTEXITCODE -ne 0) { throw "R347 Windows optimized accounting custody FAILED" }
+      - name: R348 Windows signed-zero source and full-engine regressions
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_signed_zero_custody_r348.py'
+          if ($LASTEXITCODE -ne 0) { throw "R348 Windows signed-zero helper FAILED" }
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_signed_zero_integration_r348.py'
+          if ($LASTEXITCODE -ne 0) { throw "R348 Windows signed-zero integration FAILED" }
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_signed_zero_custody_r348.py'
+          if ($LASTEXITCODE -ne 0) { throw "R348 Windows optimized signed-zero helper FAILED" }
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_signed_zero_integration_r348.py'
+          if ($LASTEXITCODE -ne 0) { throw "R348 Windows optimized signed-zero integration FAILED" }
       - name: R319 witnessed-vs-compiled premium test source before Windows packaging
         shell: pwsh
         run: |
