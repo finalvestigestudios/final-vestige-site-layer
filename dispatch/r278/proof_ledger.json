@@ -1,0 +1,120 @@
+{
+  "version": "R278-2026-11-11",
+  "recorded_utc": "2026-11-11T10:36:25Z",
+  "state": "ALL_HOLD_UNSENT",
+  "source_issue": 174,
+  "companion_issue": 171,
+  "original_campaign_pr": 175,
+  "qa_pr": 201,
+  "parent_pr": 2028,
+  "architecture": "one Jetpack list; no new service; no emails; no activation",
+  "read_only_wordpress": {
+    "source": "authenticated wpcom_jetpack_newsletter status/get_settings",
+    "site": "https://finalvestige.com",
+    "blog_id": 256784396,
+    "newsletter_enabled": true,
+    "site_can_send": true,
+    "email_new_posts_by_default": false,
+    "email_format": "full",
+    "sender_name": "Final Vestige Studios",
+    "reply_to": "no-reply",
+    "categories_enabled": false,
+    "welcome_fieldbook_pdf_configured": true,
+    "counts": {
+      "diagnostic_total": 3,
+      "diagnostic_confirmed": 3,
+      "unconfirmed_requests": 2,
+      "suppressed": 0,
+      "wpcom_followers_last_observed": 3,
+      "email_followers_last_observed": 0,
+      "actual_eligible_recipients": null
+    },
+    "send_observations": {
+      "observed_recent_posts": 5,
+      "status": "never_sent_opted_out",
+      "successful_dispatches_in_observed_five": 0
+    },
+    "notes": [
+      "site_can_send is capability, not proof a campaign was sent or may be sent",
+      "email_new_posts_by_default=false is only the DEFAULT; a per-post send option can override it",
+      "confirmed counters and email followers are different metrics; cannot be added",
+      "no received welcome, compliant postal footer or unsubscribe observed"
+    ]
+  },
+  "public_pages": {
+    "dispatch": "https://finalvestige.com/dispatch/",
+    "focus": "https://finalvestige.com/focus/",
+    "standards": "https://finalvestige.com/editorial-standards/"
+  },
+  "editorial_campaign": {
+    "issue_count": 6,
+    "editorial": [
+      1,
+      2,
+      4,
+      6
+    ],
+    "commercial": [
+      3,
+      5
+    ],
+    "original_manifest": "dispatch/campaign-2026-mind/manifest.json",
+    "all_issues_hold": true,
+    "alternatives_not_adopted": true
+  },
+  "commercial": {
+    "03": {
+      "vendor": "Zen12",
+      "merchant_page": "https://zen12.com/getstarted",
+      "free_audio_page": "https://zen12.com/welcome",
+      "merchant_claims_are_not_proven": true,
+      "affiliate_approval_verified": false,
+      "email_promotion_permission_verified": false,
+      "exact_earning_link_verified": false,
+      "live_vetted_fv_guide_verified": false,
+      "current_checkout_and_refund_verified": false,
+      "activated_link": null
+    },
+    "05": {
+      "vendor": "Hypnosis Live / Total Focus",
+      "merchant_page": "https://hypnosislive.com/mental-skills/total-focus",
+      "refund_faq": "https://hypnosislive.com/faq",
+      "product_format_public_claim": "33min audio, 47MB; seller claim, not product-specific efficacy proof",
+      "affiliate_approval_verified": false,
+      "email_promotion_permission_verified": false,
+      "exact_earning_link_verified": false,
+      "live_vetted_fv_guide_verified": false,
+      "current_checkout_and_refund_verified": false,
+      "activated_link": null
+    }
+  },
+  "gate": {
+    "founder_final_campaign_send_approval": false,
+    "eligible_recipients_reconciled_from_provider": false,
+    "received_welcome_and_fieldbook_verified": false,
+    "valid_fv_physical_postal_address_in_actual_email_verified": false,
+    "rendered_functional_unsubscribe_verified": false,
+    "native_jetpack_email_render_verified": false,
+    "all_ctas_verified_live": false,
+    "partner_authorization_verified": false,
+    "merchant_settled_orders_verified": false
+  },
+  "metrics": {
+    "attributable_paid_orders": null,
+    "gross_revenue": null,
+    "refunds": null,
+    "fees": null,
+    "net_realized_revenue": null,
+    "net_per_1000_qualified_human_sessions": null,
+    "reason": "No independently authenticated paid settlement or denominator; do not report zeros or synthetic rates."
+  },
+  "source_links": [
+    "https://wordpress.com/support/newsletter/send-newsletter-emails/",
+    "https://wordpress.com/support/newsletter/email-appearance/",
+    "https://wordpress.com/support/subscribers/",
+    "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business",
+    "https://zen12.com/welcome",
+    "https://hypnosislive.com/mental-skills/total-focus",
+    "https://hypnosislive.com/faq"
+  ]
+}
