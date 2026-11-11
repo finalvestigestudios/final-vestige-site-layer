@@ -1,4 +1,6 @@
 # Caernarvon 1927 — newly staged original figure and visual source check
+> **Update, November 10, 2026, 20:37 Pacific:** An adapted, responsive HTML rendition of this evidence timeline is now saved **inside unpublished WordPress draft #2151**, at block index 8; it is **not live**. [Editable source HTML](assets/caernarvon-1927-responsive-evidence-figure.html). Source-raster PNG/SVG remains staged, not uploaded; the connector rejected the local PNG file reference. New draft SHA-1 `6b3fc289ba63a99a1b8852e7642a3ca9aec6c6d1`, 79 blocks; a real 390px/1440px preview PASS and official-source reader checks remain outstanding. The historical status notes below concern the original SVG/PNG asset, not the newly embedded HTML figure.
+
 **Editor/research date:** 2026-11-10 Pacific. **Scope:** Investigations WP draft #2151 only; no public-site, homepage, subscriber or social changes. This record supplements (does not replace) the main [release audit](caernarvon-1927-draft-release-audit-2026-11-10.md) and [QA issue #1589](https://github.com/finalvestigestudios/final-vestige-site-layer/issues/1589).
 
 ## Original, not published — evidence timeline
