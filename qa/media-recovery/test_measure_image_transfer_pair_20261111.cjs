@@ -8,7 +8,8 @@ function fixture() {
     slot:'621:0', post_id:621,request_id:id,resource_type:'Image',
     current_src:src,request_url:src,final_response_url:src,
     response_mime_type:'image/jpeg',final_http_status:200,loading_finished:true,
-    encoded_data_length:bytes,natural_width:960,natural_height:640,
+    encoded_data_length:bytes,network_data_received_bytes:bytes*2,
+    network_data_received_provenance:'CDP_NETWORK_DATA_RECEIVED',natural_width:960,natural_height:640,
     from_disk_cache:false,from_memory_cache:false,from_service_worker:false,
     image_identity:'malbone-verified-original'});
   const cap=(run,bytes)=>({method:'CHROME_CDP_LOGGED_OUT_COLD',
@@ -116,4 +117,22 @@ test('mixed shared and separate request evidence uses distinct request bytes per
  assert.equal(r.image_network_before_bytes,1000);
  assert.equal(r.image_network_after_bytes,400);
  assert.equal(r.reduction_percent,60);
+});
+
+for(const [label,change] of [
+ ['204 no-content response',r=>r.final_http_status=204],
+ ['206 partial-content response',r=>r.final_http_status=206],
+ ['201 created response',r=>r.final_http_status=201],
+ ['zero CDP dataReceived length',r=>r.network_data_received_bytes=0],
+ ['missing CDP dataReceived length',r=>delete r.network_data_received_bytes],
+ ['fabricated body provenance',r=>r.network_data_received_provenance='WEB_RETRIEVER'],
+]) test('synthetic 76pct transfer cannot be verified from '+label,()=>{
+ const p=fixture();p.after.images[0].encoded_data_length=240;
+ change(p.after.images[0]);const x=evaluatePair(p);
+ assert.equal(x.status,'HOLD');assert.equal(x.target_76_percent_met,null);
+ assert.equal(x.sitewide_transfer_savings_verified,false);
+});
+test('two slots sharing a request must agree about CDP dataReceived body bytes',()=>{
+ const p=sharedTetonPair();p.after.images[1].network_data_received_bytes+=1;
+ assert.equal(evaluatePair(p).reason,'CANDIDATE_CONFLICTING_SHARED_IMAGE_REQUEST');
 });
