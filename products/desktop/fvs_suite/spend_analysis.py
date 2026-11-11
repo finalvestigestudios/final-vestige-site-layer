@@ -16,6 +16,7 @@ from typing import Callable, Mapping
 from .review import ascii_case_identity, labels_for_report, normalized_collision, raw_values
 from .spend_median import RunningDecimalMedian
 from .spend_input import validated_spend_rows
+from .spend_callback_context_r355 import invoke_spend_callback
 
 VENDOR_MONTH_EVIDENCE_LIMIT = 32  # Bounded preview; full evidence is in SHA-bound source.
 
@@ -69,6 +70,11 @@ def summarize_spend(
     """
     if not isinstance(source_sha256, str) or re.fullmatch(r"[0-9a-f]{64}", source_sha256) is None:
         raise ValueError("Source snapshot SHA-256 must be 64 lowercase hexadecimal characters")
+
+    def report_money(amount: Decimal) -> str:
+        # A caller-supplied formatter must not mutate the private 64-digit
+        # aggregation context or contaminate subsequent output fields.
+        return invoke_spend_callback(format_money, amount)
 
     totals: dict[tuple[str, str, str], Decimal] = defaultdict(lambda: Decimal(0))
     # A net total can hide large purchases offset by credits or refunds.
@@ -171,9 +177,9 @@ def summarize_spend(
             "vendor_key": vendor,
             "month": month,
             "category": category,
-            "amount": format_money(totals[bucket]),
-            "gross_charges": format_money(gross_charges[bucket]),
-            "gross_credits": format_money(gross_credits[bucket]),
+            "amount": report_money(totals[bucket]),
+            "gross_charges": report_money(gross_charges[bucket]),
+            "gross_credits": report_money(gross_credits[bucket]),
             "credit_offset_review": (
                 "review_mixed_sign_offset"
                 if gross_charges[bucket] > 0 and gross_credits[bucket] > 0 else ""),
@@ -181,14 +187,14 @@ def summarize_spend(
             "vendor_month_evidence_count": month_evidence[(vendor, month)][1],
             "vendor_month_evidence_omitted": month_evidence[(vendor, month)][2],
             "vendor_month_evidence_sha256": month_evidence[(vendor, month)][3],
-            "vendor_month_gross_charges": format_money(vendor_month_charges[vendor][month]),
-            "vendor_month_gross_credits": format_money(vendor_month_credits[vendor][month]),
+            "vendor_month_gross_charges": report_money(vendor_month_charges[vendor][month]),
+            "vendor_month_gross_credits": report_money(vendor_month_credits[vendor][month]),
             "vendor_month_offset_review": (
                 "review_vendor_month_mixed_sign_offset"
                 if vendor_month_charges[vendor][month] > 0
                 and vendor_month_credits[vendor][month] > 0 else ""),
             "flag": ";".join(flags),
-            "vendor_month_total": format_money(monthly[vendor][month]),
+            "vendor_month_total": report_money(monthly[vendor][month]),
             # An even-sized median may be half a cent; do not round evidence.
             "baseline_median": "" if baseline is None else format(baseline, "f"),
             "history_months": str(count),
