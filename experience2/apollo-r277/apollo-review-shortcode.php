@@ -105,9 +105,25 @@ function fv_r277_has_source_custody($html): bool {
         && stripos($html, '<iframe') === false;
 }
 
+/**
+ * Exact reviewed staging-renderer byte identity. This pins the bundled NASA
+ * source presentation to the version independently examined for this PR.
+ * A drifted/partial sibling must fail open to the two fixed historical links,
+ * rather than retain credible-looking anchors around unreviewed new claims.
+ * SHA-256 is intentionally strict: any legitimate edit requires a new reviewed
+ * pin and regression evidence. This does not sandbox privileged WordPress PHP,
+ * prove editorial accuracy, or authorize production release.
+ */
+const FV_R280_RENDERER_SHA256 = '3f3c5a01e64cbc68349dd20c3daceadb64bf8a2e68ec5a0a2ea4bb6a3eed9107';
+function fv_r277_renderer_source_matches(string $path): bool {
+    if (!is_file($path) || !is_readable($path)) { return false; }
+    $actual = @hash_file('sha256', $path);
+    return is_string($actual) && hash_equals(FV_R280_RENDERER_SHA256, $actual);
+}
+
 function fv_r277_render_shortcode($attributes = [], $unused_content = null): string {
     $source = __DIR__ . '/../apollo-r273/review-custody.php';
-    if (!is_readable($source)) { return fv_r277_source_fallback(); }
+    if (!fv_r277_renderer_source_matches($source)) { return fv_r277_source_fallback(); }
     // A sibling may throw during include OR later when its renderer executes.
     // Also discard accidental echo/warning output from a damaged PHP sibling:
     // a WordPress shortcode must return its HTML instead of writing to output.
