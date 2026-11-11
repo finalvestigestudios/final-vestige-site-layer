@@ -67,15 +67,18 @@ class ContextIsolation(unittest.TestCase):
         self.assertIn('no-claim-text-in-block', e['review_flags'])
         self.assertNotIn('Fake evidence', e['review_excerpt'])
         self.assertEqual(e['context_sha256'], hashlib.sha256(b'').hexdigest())
+        self.assertIn('excluded-nonreader-sibling-context', e['review_flags'])
 
     def test_control_only_claim_not_accepted(self):
         e = edge('<p><textarea>Fake evidence</textarea>{{cite:a}}</p>')
         self.assertIn('no-claim-text-in-block', e['review_flags'])
         self.assertNotIn('Fake evidence', e['review_excerpt'])
+        self.assertIn('excluded-nonreader-sibling-context', e['review_flags'])
 
     def test_css_prose_not_in_excerpt_before(self):
         e = edge('<p><b style="filter:opacity(0)">DO NOT USE</b>Claim {{cite:a}}</p>')
         self.assertNotIn('DO NOT USE', e['review_excerpt'])
+        self.assertIn('excluded-nonreader-sibling-context', e['review_flags'])
 
     def test_css_prose_not_in_excerpt_after(self):
         e = edge('<p>Claim {{cite:a}}<i style="transform:scale(0)">DO NOT USE</i></p>')
@@ -88,6 +91,7 @@ class ContextIsolation(unittest.TestCase):
     def test_entity_decoding_still_supported(self):
         e = edge('<p>Visible &times; 4 {{cite:a}}</p>')
         self.assertIn('Visible × 4', e['review_excerpt'])
+        self.assertNotIn('excluded-nonreader-sibling-context', e['review_flags'])
 
     def test_hidden_entity_ignored(self):
         e = edge('<p><span style="opacity:0">Fake &times; source</span>{{cite:a}}</p>')
