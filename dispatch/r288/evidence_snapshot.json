@@ -1,0 +1,35 @@
+{
+  "observed_utc": "2026-11-11T20:30:33Z",
+  "observed_site": "https://finalvestige.com",
+  "source": "Authenticated read-only WordPress Jetpack newsletter status and settings, plus connected Gmail merchant/confirmation search; all verification states conservative",
+  "site_newsletter_enabled": true,
+  "auto_new_post_send_enabled": false,
+  "email_content_format": "full",
+  "welcome_message_configured_not_verified_received": true,
+  "subscriber_diagnostic": {"total": 3, "confirmed_counter": 3, "unconfirmed_requests": 2, "suppressed": 0},
+  "follower_diagnostic": {"wpcom": 3, "email": 0},
+  "actual_eligible_recipient_count": null,
+  "global": {
+    "audience_provider_confirmed": false,
+    "audience_email_eligible_verified": false,
+    "consent_and_suppression_checked": false,
+    "native_jetpack_preview_reviewed": false,
+    "real_received_footer_verified": false,
+    "publisher_postal_address_verified": false,
+    "unsubscribe_end_to_end_verified": false,
+    "subject_and_content_approved": false,
+    "founder_final_campaign_approval": false,
+    "post_level_send_flag_authorized": false
+  },
+  "issues": {
+    "01": {"duplicate_puysegur_cta_reviewed": false},
+    "02": {"duplicate_puysegur_cta_reviewed": false},
+    "03": {"merchant_partner_accepted": false, "merchant_email_channel_permitted": false, "offer_specific_earning_link_verified": false, "current_terms_verified": false, "offer_specific_claim_review_complete": false, "vetted_guide_live_and_approved": false, "adjacent_email_and_guide_disclosures_verified": false},
+    "04": {"apollo_interval_copy_approved": false},
+    "05": {"merchant_partner_accepted": false, "merchant_email_channel_permitted": false, "offer_specific_earning_link_verified": false, "current_terms_verified": false, "offer_specific_claim_review_complete": false, "vetted_guide_live_and_approved": false, "adjacent_email_and_guide_disclosures_verified": false},
+    "06": {"fieldbook_repeat_cta_reviewed": false}
+  },
+  "settled_orders": null,
+  "verified_realized_net_revenue": null,
+  "net_revenue_per_1000_qualified_human_sessions": null
+}
