@@ -33,3 +33,5 @@ Official FTC: https://www.ftc.gov/business-guidance/resources/can-spam-act-compl
 Official WP: https://wordpress.com/support/newsletter/send-newsletter-emails/
 
 **KPI denominator definition:** Qualified-human sessions are privacy-safe, bot-filtered, distinct eligible visits, not impressions or all Jetpack views. When population provenance is unverified, the KPI remains NOT COMPUTABLE.
+
+**Audience arithmetic rule:** Jetpack diagnostic total/confirmed/unconfirmed and WordPress Reader/email follower measurements are not additive; eligible current recipients remain unknown until provider confirmation.
