@@ -126,6 +126,35 @@ def inspect(page, width, out):
     source_list = sources.locator("xpath=following-sibling::ul[1]")
     source_count = source_list.locator(":scope > li").count() if source_list.count() else 0
     chart_count = article.locator("figure.fv-evidence-chart").count()
+    # This chronology was added AFTER the original QA inspector was written.
+    # Inspect the real production-theme rendering, not merely its Gutenberg source.
+    timeline = article.locator("figure.fv-caernarvon-timeline")
+    timeline_stats = None
+    if timeline.count() == 1:
+        timeline.first.scroll_into_view_if_needed(timeout=6000)
+        timeline_stats = timeline.first.evaluate("""el => {
+          const r=el.getBoundingClientRect(), cards=Array.from(el.querySelectorAll('ol > li'));
+          const links=Array.from(el.querySelectorAll('figcaption a[href]'));
+          const cap=el.querySelector('figcaption');
+          const descriptions=cards.map(c=>c.querySelector('span:last-child')).filter(Boolean);
+          const text=el.textContent||'';
+          return {
+            count:cards.length,
+            cardDates:cards.map(c=>(c.querySelector('span')?.textContent||'').trim()),
+            creditLinks:links.map(a=>a.getAttribute('href')),
+            accessible:el.getAttribute('role')==='group' && !!el.getAttribute('aria-label'),
+            caution: text.includes('Neither number is a direct measurement')
+              && text.includes('Different methods and reference conditions'),
+            stageEstimates: text.includes('½ foot') && text.includes('2 feet'),
+            withinViewport:r.left>=-2 && r.right<=innerWidth+2,
+            clippedCards:cards.some(c=>{const b=c.getBoundingClientRect();
+              return b.left < r.left-2 || b.right > r.right+2
+                || c.scrollWidth>c.clientWidth+2;}),
+            captionFontPx:cap?parseFloat(getComputedStyle(cap).fontSize):0,
+            minDescriptionFontPx:descriptions.length?
+              Math.min(...descriptions.map(d=>parseFloat(getComputedStyle(d).fontSize))):0
+          };
+        }""")
     footer_count = page.locator("footer").count()
     header_count = page.locator("header").count()
     table = page.locator("figure:has(table)").first
@@ -151,6 +180,17 @@ def inspect(page, width, out):
         "source_bibliography_39_entries": source_count == EXPECTED_SOURCES,
         "expected_editorial_revision_markers_present": all(revision_sentinels.values()),
         "original_compensation_figure_present": chart_count == 1,
+        "timeline_has_five_chronology_cards_and_four_source_links": bool(
+            timeline_stats and timeline_stats["count"] == 5
+            and len(timeline_stats["creditLinks"]) == 4
+            and timeline_stats["accessible"]),
+        "timeline_preserves_estimate_measurement_distinction": bool(
+            timeline_stats and timeline_stats["caution"] and timeline_stats["stageEstimates"]),
+        "timeline_fits_and_has_readable_mobile_text": bool(
+            timeline_stats and timeline_stats["withinViewport"]
+            and not timeline_stats["clippedCards"]
+            and timeline_stats["captionFontPx"] >= 14
+            and timeline_stats["minDescriptionFontPx"] >= 14),
         "site_header_and_footer_present": bool(header_count and footer_count),
         "no_duplicate_lead_image": hero_duplicates == 1,
         "responsive_table_scrolls_inside_figure": bool(table_stats and (
@@ -169,6 +209,7 @@ def inspect(page, width, out):
         ("hero", page.locator("figure.wp-block-image").first),
         ("final-photo", page.locator("figure.wp-block-image").last),
         ("compensation", page.locator("figure.fv-evidence-chart")),
+        ("original-timeline", timeline),
         ("evidence-table", table),
         ("sources", page.get_by_text("Sources & Further Reading", exact=False).first),
         ("footer", page.locator("footer").last),
@@ -178,6 +219,7 @@ def inspect(page, width, out):
             captures[label] = name
     return {"viewport": width, "checks": checks, "document": page_stats,
             "overflowPx": overflow, "evidenceTable": table_stats,
+            "originalTimeline": timeline_stats,
             "bibliographyEntryCount": source_count,
             "editorialRevisionSentinels": revision_sentinels,
             "archivalImageChecks": found,
