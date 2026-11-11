@@ -1,0 +1,30 @@
+# R277 | Correct historic provenance comparison without masking 17 integrated article differences
+
+**2026-11-10 PT · Issue #136 · coordinated with #820 · DRAFT / HARD HOLD · NO PUBLISH.**
+
+## Critical correction
+Fresh GitHub branch-versus-commit comparisons on 2026-11-11 UTC confirm **all seven actual Claude contributor refs identical** to the seven heads recorded in the authenticated R200 frozen-custody manifest (`5822f9dfde21d1f3bdfc26658769d852c639438c`): 0 ahead / 0 behind per branch. The prior R276 declaration "5/7 drifted" incorrectly interpreted differences against an **older crosswalk provenance** baseline as newly arrived upstream changes. That older comparison is genuine historical data, but must not trigger five new intake tasks or imply current authors changed their refs.
+
+## Independent distinction that still demands substantive review
+The immutable **R275 integrated** 96-file witness (`b8c7c6df0dca62b04b01abc5671b7083ad9cb61e`) is not the same as the individual R200 contributor file byte identities. Exact comparison of R200's 35 article OIDs to R275 integrated witness: **17 distinct articles differ, 14 article bodies and 12 metadata files**. The other 18 articles have matching body and metadata identities. These changes were already present by R275, not introduced by R276. A blob difference alone says nothing about safety, accuracy, depth or editorial acceptability. The immutable baseline witness protects what exists, rather than proving it matches the earlier contributor source.
+
+R277 adds `r277_source_baseline_reconciliation_UNAPPROVED.json` with all 7 exact current refs, the older provenance refs explicitly named, and every differing article's old/new body/meta OIDs and original route. The R276 old delta file is preserved as dated historical evidence. An explicit correction has been prepended to R276's audit on this review branch.
+
+## Safe release and source gates
+All 35 article routes remain unique in the authenticated R200 roster. Original 35 articles, 6 tools, 244 source readings, 202 exact source URLs, 32 unresolved URL groups, 15 unresolved ID groups and held citations remain unchanged. Any substantive article difference requires human source/citation and reading-depth review; publication remains blocked. Article 7 chemical hazards and CDC evidence, Article 20 Ready.gov evidence, and Article 15/Tool 104 household-child privacy/accessibility still require independent qualified review. **No QD PASS, medical safety verdict or publication authorization.**
+
+## Execution scope
+- **AUTHENTICATED FROM GITHUB:** R200 manifest, R275 integrated manifest, R276 provenance record and seven live GitHub compare queries. Exact repo head of PR #157 `7d1ae6b8ef93d10cfb6810987672360885e9c1aa`, PR #169 `e9cd7766dac59d47ab467d8945269b9146c2aef5`, home lead #1689 `f55c36b6598eec558dd8bb24e4c8988becc51be0`; all remain open drafts. #169 source-directory fixture-mutation issue remains with independent QA owner.
+- **LOCAL SYNTHETIC TESTS:** R276 45 prior cases plus R277 provenance/metadata/citation hold adversarial suite; see committed new test module or local evidence. This is not an authenticated complete-tree QA run.
+- **BLOCKED:** git checkout DNS resolution; complete Python validate/build/inherited tests and all 41 intended WordPress draft exports unverified. No claim that native build or original source review passed.
+
+## Conversion-first plan (OFFER → STEP → BLOCKER → CHANGE → EVIDENCE → OWNER)
+| Offer | Funnel step | Blocker | Change / experiment | Pass/fail evidence | Owner |
+|---|---|---|---|---|---|
+| Authentic free public Preparedness resources | Existing published Grok contact/reunification asset → mobile landing | Verified matching asset_id, rights and clickable mobile destination missing | Existing TASK-008 owners verify already published post/date/URL and valid tagged link; no new content | NO VERIFIED MATCH | Grok/Praxxis |
+| Free guide and held emergency contact-card proposal | Guide → optional practical free tool | Article 15/Tool 104 child-information privacy and physical card review incomplete | Independently review content, keyboard/zoom, print/cut, no data capture | HOLD; browser-only evidence not usability clearance | Preparedness/QA |
+| Legacy Triage (existing provisional PDF) | Free guide → optional suitable paid offer | Product rights, actual content-fit, privacy and founder clearance not established | Audit authentic PDF, provenance, rights and offer fit before any CTA | NOT APPROVED | Founder/Commerce |
+| Approved offer (if any) | Checkout → paid completed order/delivery | Merchant acceptance, fulfillment, fees/refunds unverified | Authorized end-to-end merchant acceptance, no fake orders | NOT TESTED | Commerce |
+| Approved orders | 7/30-day verified net revenue/1,000 qualified human sessions | Credible Grok asset attribution and independently confirmed orders missing | Reconcile orders minus refunds/fees; tiny-sample warnings | NOT COMPUTABLE, not zero | Analytics/Commerce |
+
+No retired water freebie, paid CTA, analytics script, social content, mailing, WordPress/CMS write, navigation change, merchant/affiliate activation or spend. **Hold until independent reviewer/founder acceptance.**
