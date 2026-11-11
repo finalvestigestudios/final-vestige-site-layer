@@ -17,8 +17,8 @@ function html(t,label){
  ok(anchors.every(a=>a.startsWith('#')||/^https:\/\/(finalvestige\.com|www\.ftc\.gov|pubmed\.ncbi\.nlm\.nih\.gov|doi\.org)\//.test(a)),label+' anchor allowlist');
  ok(!/\b(?:src|action|href|formaction)\s*=\s*["'][^"']*(?:zen12|hypnosislive|inspire3|brainwaveshots)\.com/i.test(raw),label+' merchant link withheld');
  const buttons=[...raw.matchAll(/<button\b[^>]*>/gi)].map(x=>x[0]);
- ok(buttons.filter(x=>/\bdisabled\b/i.test(x)).length===1,label+' one disabled commercial control');
- const btn=buttons.find(x=>/\bdisabled\b/i.test(x));ok(/type="button"/i.test(btn)&&!/\b(href|onclick|formaction)\b/i.test(btn),label+' inert button');
+ ok(buttons.filter(x=>/(?:^|\s)disabled(?:\s|=|>)/i.test(x)).length===1,label+' one disabled commercial control');
+ const btn=buttons.find(x=>/(?:^|\s)disabled(?:\s|=|>)/i.test(x));ok(/type="button"/i.test(btn)&&!/\b(href|onclick|formaction)\b/i.test(btn),label+' inert button');
  const i=raw.indexOf(btn),near=raw.slice(Math.max(0,i-950),i);
  ok(/commission at no additional cost to you/i.test(near)&&/affiliate/i.test(near),label+' adjacent FTC disclosure');
  ok(raw.includes('https://finalvestige.com/focus/'),label+' free existing funnel');
