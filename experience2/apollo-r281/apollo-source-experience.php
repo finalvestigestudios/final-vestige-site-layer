@@ -12,6 +12,9 @@ const FV_R287_NASA_PROCEEDINGS = 'https://www.nasa.gov/history/Apollo204/proceed
 const FV_R281_NASA_BOARD = 'https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/';
 const FV_R281_FREE = 'https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/';
 const FV_R281_STYLE = 'fv-apollo-evidence-r281';
+// R294: stylesheet version is tied to reviewed CSS bytes (sha256 prefix). Keep
+// WordPress's enqueued link and the no-preflight body fallback cache-consistent.
+const FV_R294_STYLE_VERSION = 'r294-de213c4f113f';
 // Staging-only digest of corrected chronology, pending independent historical editorial
 // approval. It detects accidental data drift; it does not certify publication.
 const FV_R287_STAGING_EVENTS_SHA256 = '2a473986ed2e9c8ca98d19fb5ce0d32fea62d060d9dadcd2fa4613167eba36ef';
@@ -136,6 +139,12 @@ function fv_r281_valid_records(array $records): bool {
 function fv_r281_stylesheet_url(): string {
     return plugins_url('assets/apollo-source-experience.css', __FILE__);
 }
+/** Matching cache key when shortcode renders after wp_head (no queued style). */
+function fv_r294_fallback_stylesheet_url(): string {
+    $base = fv_r281_stylesheet_url();
+    $separator = strpos($base, '?') === false ? '?' : '&';
+    return $base . $separator . 'ver=' . rawurlencode(FV_R294_STYLE_VERSION);
+}
 /**
  * Read-only, bounded discovery of shortcode placement in a singular post, including
  * published synced patterns (core/block). Never render or execute block content
@@ -204,7 +213,7 @@ function fv_r281_preflight(): void {
     if ($post && is_string($post->post_content ?? null)) {
         $visited=[];
         if (fv_r285_content_has_shortcode($post->post_content, $visited)) {
-            wp_enqueue_style(FV_R281_STYLE, fv_r281_stylesheet_url(), [], 'r285');
+            wp_enqueue_style(FV_R281_STYLE, fv_r281_stylesheet_url(), [], FV_R294_STYLE_VERSION);
         }
     }
 }
@@ -291,7 +300,7 @@ function fv_r281_render($attributes = []): string {
     if (!$linked && (!function_exists('wp_style_is') ||
         (!wp_style_is(FV_R281_STYLE, 'done') && !wp_style_is(FV_R281_STYLE, 'enqueued')))) {
         $linked=true;
-        return '<link rel="stylesheet" href="'.fv_r281_escape(fv_r281_stylesheet_url()).'">'.$s;
+        return '<link rel="stylesheet" href="'.fv_r281_escape(fv_r294_fallback_stylesheet_url()).'">'.$s;
     }
     return $s;
 }
