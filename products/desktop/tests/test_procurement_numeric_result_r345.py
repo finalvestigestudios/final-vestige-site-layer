@@ -169,8 +169,15 @@ class NumericCustodyR345(unittest.TestCase):
     def test_quantity_tiny_exponent_rejected_without_normalizing(self):
         self.reject(lambda: checked_quantity("1E-999999", Decimal))
 
-    def test_price_zero_huge_negative_exponent_accepted(self):
-        self.assertTrue(checked_unit_price("0E-999999", Decimal).is_zero())
+    def test_price_zero_huge_negative_exponent_rejected(self):
+        self.reject(lambda: checked_unit_price("0E-999999", Decimal))
+
+    def test_zero_huge_positive_exponent_rejected(self):
+        self.reject(lambda: checked_quantity("0E+999999", Decimal))
+
+    def test_ordinary_zero_scale_remains_exact(self):
+        self.assertEqual(checked_quantity("0.000000000000000", Decimal),
+                         Decimal("0.000000000000000"))
 
 
 if __name__ == "__main__":
