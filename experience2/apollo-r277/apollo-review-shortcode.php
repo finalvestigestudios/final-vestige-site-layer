@@ -95,14 +95,36 @@ function fv_r277_has_source_custody($html): bool {
     if (!is_string($html) || trim($html) === '' || strlen($html) > 1000000) { return false; }
     $nasa = 'https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/';
     $free = 'https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/';
-    return str_contains($html, 'data-fv-review-ready="false"')
-        && str_contains($html, '<aside class="fv-r273"')
-        && substr_count($html, 'href="' . $nasa . '"') === 2
-        && substr_count($html, 'href="' . $free . '"') === 1
-        // Three and only three source/next-action anchors belong in this pinned panel.
-        && substr_count($html, '<a ') === 3
-        && stripos($html, '<script') === false
-        && stripos($html, '<iframe') === false;
+    // This is a staging drift detector for the trusted, fixed pending-only R273
+    // sibling, NOT a sanitizer for untrusted HTML or an editorial approval gate.
+    // strpos, rather than str_contains, keeps the adapter PHP 7.4 compatible.
+    $required = [
+        'data-fv-review-ready="false"',
+        '<aside class="fv-r273"',
+        'Editorial review remains open',
+        'Editorial review pending',
+        'two editorial record categories, not two independent',
+        'NASA has not endorsed Final Vestige',
+    ];
+    foreach ($required as $marker) {
+        if (strpos($html, $marker) === false) { return false; }
+    }
+    // The two review categories cite ONE report. Their identical NASA URLs are
+    // deliberately retained; no phantom corroborating primary source is added.
+    if (substr_count($html, 'href="' . $nasa . '"') !== 2
+        || substr_count($html, 'href="' . $free . '"') !== 1
+        || substr_count($html, 'Read NASA primary source:') !== 2
+        || substr_count($html, 'rel="noopener noreferrer"') !== 2
+        || substr_count($html, 'target="_blank"') !== 2
+        || substr_count($html, '<a ') !== 3
+        || substr_count($html, 'class="fv-r273__record"') !== 2) { return false; }
+    // Disallow accidental interactive/remote-media drift or inline event code.
+    // WordPress source is still privileged PHP; this regex is not a security
+    // boundary. Reviewers must inspect the actual source and installed output.
+    if (preg_match('~<\s*(?:script|iframe|form|button|input|textarea|select|object|embed|base|meta|img|svg)\b~i', $html)
+        || preg_match('~\s+on[a-z]+\s*=~i', $html)
+        || preg_match('~(?:javascript:|data:text/html)~i', $html)) { return false; }
+    return true;
 }
 
 function fv_r277_render_shortcode($attributes = [], $unused_content = null): string {
