@@ -119,7 +119,11 @@ def render_local_confusable_evidence(hunks: list[dict]) -> str:
         removed_result = _owned_rows(hunk, "removed_sources")
         added_result = _owned_rows(hunk, "added_sources")
         if removed_result is None or added_result is None:
-            continue  # A locally malformed hunk has no navigational cues.
+            # Suppressing only the malformed hunk could leave persuasive
+            # physical-line cues from a partial, untrustworthy diff. The
+            # canonical and compatibility renderers already reject the whole
+            # collection; keep all three navigation systems consistent.
+            return ""
         removed, before_span = removed_result
         added, after_span = added_result
         if ((before_span is not None and before_span[0] <= last_before)
