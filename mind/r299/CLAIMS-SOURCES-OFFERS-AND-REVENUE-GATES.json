@@ -211,7 +211,7 @@
       "source_ids": [
         "S09"
       ],
-      "reason": "Review record, not independent archival inspection"
+      "reason": "Publisher-hosted *Nature* review continuation p. 623 read; not independent archival inspection"
     },
     {
       "id": "C07",
@@ -431,7 +431,7 @@
       "source_ids": [
         "S21"
       ],
-      "reason": "Drive reports authentication, direct YouTube fetch failed"
+      "reason": "Drive owner reports publication; platform verification pending, direct YouTube fetch failed"
     },
     {
       "id": "C29",
