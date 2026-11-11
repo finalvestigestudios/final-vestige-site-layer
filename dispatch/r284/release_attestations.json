@@ -1,0 +1,40 @@
+{
+  "revision": "R284",
+  "as_of": "2026-11-11",
+  "status": "HOLD_UNSENT",
+  "issue02_alternative_adopted": false,
+  "original_six_changed": false,
+  "merchant_issues_reserved": [
+    3,
+    5
+  ],
+  "editorial_issues": [
+    1,
+    2,
+    4,
+    6
+  ],
+  "evidence": {
+    "original_campaign_ref": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+    "source_pr": 175,
+    "stack_base_pr": 2063,
+    "wordpress_snapshot_utc": "2026-11-11T16:31:07Z",
+    "publisher_postal_address_verified": false,
+    "jetpack_unsubscribe_received_and_functional": false,
+    "jetpack_real_inbox_preview_verified": false,
+    "actual_welcome_received": false,
+    "actual_email_eligible_recipient_count": null,
+    "provider_confirmed_signup_attribution_deployed": false,
+    "mind_publisher_affiliate_accepted": false,
+    "merchant_email_promotion_approved": false,
+    "zen12_earning_link_issued": false,
+    "total_focus_earning_link_issued": false,
+    "zen12_independent_guide_live": false,
+    "total_focus_independent_guide_live": false,
+    "founder_final_campaign_approval": false,
+    "verified_paid_orders": null,
+    "verified_net_revenue": null,
+    "qualified_human_sessions": null
+  },
+  "notes": "All-false proof attestations are intentional. No submission of subscriber PII or invented commercial success; no send/scheduling authorization."
+}
