@@ -1,0 +1,26 @@
+'use strict';
+const test = require('node:test'), assert = require('node:assert/strict');
+const {scope,review} = require('./review_gate.cjs');
+const source = require('./source_snapshot.json');
+const copy = () => JSON.parse(JSON.stringify(source));
+test('Focus accurately discloses potential commission',()=>assert.equal(scope(source.surfaces.focus.text).commission_expectation,true));
+test('Dispatch signup does not mention commissions',()=>assert.equal(scope(source.surfaces.dispatch.text).commission_expectation,false));
+test('Welcome configuration does not mention commissions',()=>assert.equal(scope(source.surfaces.welcome.text).commission_expectation,false));
+test('Existing first-party scope is not three-way consistent',()=>assert.equal(Object.values(review(source).consent).filter(x=>x.commission_expectation).length,1));
+test('Existing founder 4 editorial:2 commercial allocation pinned',()=>assert.deepEqual(review(source).mix.commercial_ids,[3,5]));
+test('Do not treat unconfirmed requests as confirmed people',()=>assert.equal(review(source).real_revenue,null));
+test('Unknown email-eligible population blocks',()=>assert.ok(review(source).blockers.includes('ACTUAL_EMAIL_ELIGIBILITY_UNKNOWN')));
+test('No received welcome blocks',()=>assert.ok(review(source).blockers.includes('RECEIVED_WELCOME_NOT_AUTHENTICATED')));
+test('Unreceived Jetpack postal/unsubscribe blocks',()=>assert.ok(review(source).blockers.includes('RENDERED_POSTAL_UNSUB_NOT_AUTHENTICATED')));
+test('No authenticated affiliate email permission blocks',()=>assert.ok(review(source).blockers.includes('COMMERCIAL_OFFERS_NOT_AUTHORIZED')));
+test('No final approval blocks',()=>assert.equal(review(source).can_send,false));
+test('No synthetic data interpreted as sales',()=>assert.equal(review(source).real_revenue,null));
+test('Incomplete snapshots fail closed',()=>assert.throws(()=>review({surfaces:{}}),TypeError));
+test('Missing surface fails closed',()=>{let x=copy();delete x.surfaces.focus;assert.throws(()=>review(x),TypeError)});
+test('Fabricated positive flags do NOT grant sending',()=>{let x=copy();x.founder_final_send_approval=true;x.merchant={affiliate_acceptance:true,email_promo_permission:true,earning_url:'https://example.com',approved_live_guide:true};x.newsletter.eligible_recipient_count=100;x.newsletter.welcome_received=true;x.actual_received_jetpack_footer=true;x.verified_paid_orders=10;x.realized_net_revenue_per_1000_qualified_sessions=500;assert.equal(review(x).can_send,false)});
+test('Date of source is explicitly recorded',()=>assert.match(source.run,/2026-11-11/));
+test('No subscriber email identities persisted',()=>assert.equal(JSON.stringify(source).includes('@'),false));
+test('No seller prices or settlement assumptions in release gate',()=>assert.equal(source.merchant.settled_commissions,null));
+test('Both offers still reserve held slots',()=>assert.equal(review(source).mix.commercial,2));
+test('Editor-side copy changes cannot authorize real email',()=>{let x=copy();for(let k of ['dispatch','welcome'])x.surfaces[k].text+=' Some recommendations may earn us a commission.';assert.equal(review(x).can_send,false)});
+
