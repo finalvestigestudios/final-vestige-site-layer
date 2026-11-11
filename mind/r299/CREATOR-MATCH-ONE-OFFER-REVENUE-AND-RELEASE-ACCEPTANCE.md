@@ -5,7 +5,7 @@
 Zen12 remains the single proposed Mind buyer-intent affiliate candidate: its exact official checkout describes a 12-level, 48-MP3 library. The public Inspire3 recruiting portal is NOT proof of Final Vestige-specific acceptance, allowed channels, partner tracking, prices or payouts. An actually purchasable rights-cleared FV-owned paid Mind SKU and valid checkout/fulfillment were likewise NOT authenticated. Consequently no active merchant CTA, email/publishing release or measured-revenue claim.
 
 ## Material creator discovery: real published asset, but not direct merchant intent
-The existing Praxxis/Grok Google Drive TASK-008 handoff records an owner-authenticated Rosenhan documentary at https://www.youtube.com/watch?v=zctcIECAZ2s (asset ID zctcIECAZ2s), reported published 10 November 2026. The public platform fetch failed this run, so mark as **OWNER-DOCUMENTED / direct platform inspection pending**. Do not change Grok's task queue or create a replacement video.
+The existing Praxxis/Grok Google Drive TASK-008 handoff records an owner-reported Rosenhan documentary at https://www.youtube.com/watch?v=zctcIECAZ2s (asset ID zctcIECAZ2s), reported published 10 November 2026. The public platform fetch failed this run, so mark as **OWNER-DOCUMENTED / direct platform inspection pending**. Do not change Grok's task queue or create a replacement video.
 
 The Rosenhan audience wants source verification, not an unrelated meditation checkout. Ethical conversion route is documentary → original R299 historical investigation, once approved → optional existing /focus/ resource. No Zen12 offer embedded in psychiatry or medical narrative. If independently verified creator links allow a research companion, Grok/Praxxis may choose it; no links or posts changed here.
 
@@ -14,7 +14,7 @@ The Rosenhan audience wants source verification, not an unrelated meditation che
 |---|---|---|---|---|---|
 | Rosenhan evidence and records | zctcIECAZ2s from owner shared Drive | R299 original source trail, currently unpublished | Existing free Focus Fieldbook | No immediate merchant CTA; mismatch | Owner-documented, destination HOLD |
 | Change blindness and unexpected changes | UNKNOWN | Existing https://finalvestige.com/2026/11/02/change-blindness/ | Same /focus/ when appropriate | Independent guide only if expressed audio purchase intent | Public article verified, asset HOLD |
-| Meditation audio evidence and buyer objections | UNKNOWN | Canonical inherited Zen12 R284 A/B guide; R299 copy is review material | Existing /focus/ genuinely free alternative | Zen12 only after partner approval | Commerce HOLD |
+| Meditation audio evidence and buyer objections | UNKNOWN | Canonical inherited Zen12 R284 A/B guide; R299 copy is non-routable editorial review material, not a competing landing destination | Existing /focus/ genuinely free alternative | Zen12 only after partner approval | Commerce HOLD |
 
 Do not invent a video asset ID, manufactured post metrics, visitor clicks, subscriber count, confirmed orders or paid sales.
 
@@ -38,7 +38,7 @@ Proposed events and meaning:
 
 Keep only aggregate date/cohort, allowed attribution, landing slug, CTA ID, count and confidence/source. No email address, IP address, browser fingerprint, raw UA, free-text visitor identity, additional pixel or duplicative analytics vendor. Claude owns engineering, privacy review and consent gates.
 
-**Primary KPI**: 1000 × (attributable paid receipts or cleared affiliate commission less attributable refunds and fees) / qualified-human sessions. If denominator, commission, order or refund evidence missing, display NULL / NOT COMPUTABLE, never zero. Report paid CVR and confirmed lead-to-customer only when numerator and denominator are authenticated.
+**Primary affiliate KPI**: 1000 × (cleared FV-attributable commissions **after all recorded partner adjustments**) / qualified-human sessions. Gross merchant order value is not the FV affiliate numerator. Keep a ledger of commission, clawbacks, fees and refunds and flag already-netted deductions to prevent **double subtraction**. An authenticated FV-owned-product branch uses a distinct net-receipts numerator: settled FV proceeds less *non-duplicated* refunds, processor fees, remitted taxes and documented incremental fulfillment costs. If denominator, commission, order or refund evidence missing, display NULL / NOT COMPUTABLE, never zero. Report paid CVR and confirmed lead-to-customer only when numerator and denominator are authenticated.
 
 ## Partner and owned-product acceptance gates
 1. Founder/Commerce verifies an account-specific active publisher acceptance and exactly which domains, content types, organic social platforms and email placements the account may use.
