@@ -69,6 +69,7 @@ function audit(s){
  for(const phrase of ['6 November 2026','66 studies','187 effect sizes','2,503','2,511','g = 0.09','0.03 to 0.16','very limited','excludes one-session','twelve-minute','Puységur'])assert.ok(a.toLowerCase().includes(phrase.toLowerCase()),'article science miss: '+phrase);
  for(const key of ['meta_2026','meta_program_2024','eeg_review_2023'])assert.ok(a.includes(m.source_registry.find(x=>x.id===key).url),key+' missing from article');
  assert.ok(!/affiliate.*(approved|activated)/i.test(a), 'article may not claim an affiliate approval');
+ assert.ok(!/\]\(https:\/\/(?:zen12\.com|hypnosislive\.com|brainwaveshots\.com)/i.test(a),'article merchant product links must remain withheld');
  safeHtml(s.hub,'hub');safeHtml(s.a,'a');safeHtml(s.b,'b');
  assert.ok(s.hub.includes('id="mind-r286-heading"') && s.hub.includes('g = 0.09'),'new hub has wrong study');
  assert.ok(s.hub.includes('aria-describedby="fv-r286-disclosure"'),'hub disclosure not connected to disabled control');
@@ -114,6 +115,7 @@ function run(){
  mutant('B transcript broken',s=>{s.b=s.b.replace('00:12–00:18','00:11–00:18');});
  mutant('new 2026 paper magnitude changed',s=>{s.article=s.article.replace('g = 0.09','g = 0.90');});
  mutant('article no citation',s=>{s.article=s.article.replace('https://link.springer.com/article/10.1007/s11065-026-09714-9','SOURCE MISSING');});
+ mutant('article merchant href activation',s=>{s.article+='\n[BUY NOW](https://zen12.com/hnp)';});
  mutant('shop page false purchase',s=>{let m=JSON.parse(s.matrix);m.offers[0].verified_merchant_paid_order=1;s.matrix=JSON.stringify(m);});
  let rejected=0;
  for(const t of mutants){const s={...base};t.fn(s);try{audit(s);}catch(e){rejected++;continue;}throw Error('UNSAFE MUTATION ACCEPTED: '+t.name);}
