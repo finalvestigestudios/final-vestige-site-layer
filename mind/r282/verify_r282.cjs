@@ -106,7 +106,7 @@ const mods=[
  ["recruitment promoted",b=>b.matrix.claims.find(c=>c.id==="CB17").classification="VERIFIED_COMMISSIONS"],
  ["invented Grok ID",b=>b.matrix.creator_topic_fit[0].private_grok_asset_id="fake"],
  ["A changes buyer copy",b=>b.A=b.A.replace("four different outcomes","seven different outcomes")],
- ["B changes buyer copy",b=>b.B=b.B.replace("12 levels","100 levels")],
+ ["B changes buyer copy",b=>b.B=b.B.replace("twelve-level","four-level")],
  ["A enabled button",b=>b.A=b.A.replace(" disabled aria-disabled"," aria-disabled")],
  ["B enabled button",b=>b.B=b.B.replace(" disabled aria-disabled"," aria-disabled")],
  ["A lost disclosure",b=>b.A=b.A.replace("Potential affiliate relationship:","Disclosure hidden:")],
