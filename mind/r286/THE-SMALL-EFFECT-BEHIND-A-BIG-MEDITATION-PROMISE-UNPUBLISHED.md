@@ -115,9 +115,9 @@ For readers seeking structured reflection, Final Vestige's existing [free Seven 
 
 ## The offer question that remains
 
-Inspire3's [Zen12 Premium seller page](https://zen12.com/hnp) describes a library of twelve-minute sessions and advertises equivalence to an hour of advanced meditation. The public [promotional presentation](https://zen12.com/secret/) displays a separate purchase proposition. We have not authenticated a Final Vestige-specific partner agreement, approved earning link, exact checkout total, commission reporting or purchase outcome. A seller statement is not a verified publisher payment or a trial result. [4]
+Zen12's seller-operated Premium presentation (exact URL recorded in the separate source matrix) describes a library of twelve-minute sessions and advertises equivalence to an hour of advanced meditation. A separately advertised promotional presentation (exact URL recorded in the source matrix) displays a separate purchase proposition. We have not authenticated a Final Vestige-specific partner agreement, approved earning link, exact checkout total, commission reporting or purchase outcome. A seller statement is not a verified publisher payment or a trial result. [4]
 
-The seller's [free-audio invitation](https://zen12.com/freeaudio) also leads to a seller-controlled newsletter signup. That consent is separate from the free Final Vestige Fieldbook's own Dispatch subscription; neither should silently enroll the other. [11]
+The seller's free-audio invitation (exact URL in the source matrix) also leads to a seller-controlled newsletter signup. That consent is separate from the free Final Vestige Fieldbook's own Dispatch subscription; neither should silently enroll the other. [11]
 
 For now, the scientifically defensible question is smaller and more useful than the commercial headline: *Does a brief exercise offer enough structure to be worth doing?* For some readers, yes as a matter of personal preference; for others, no. The new meta-analysis provides an estimate of immediate laboratory effects, not a guarantee about the next hour of anyone's life.
 
@@ -130,14 +130,14 @@ A test can detect a small change. An advertisement can promise a large one. Evid
 1. **Independent, peer-reviewed synthesis:** Shi, K., Wimmer, L., Calia, C., and Takacs, Z. K. (published **6 November 2026**), *Acute Effects of Brief Mindfulness Inductions on Executive Function Performance: A Systematic Review and Three-Level Meta-Analysis*, *Neuropsychology Review*: https://link.springer.com/article/10.1007/s11065-026-09714-9 . Preregistered synthesis of 66 studies / 187 effect sizes; very small immediate effect, g=0.09, 95% CI 0.03–0.16. No Zen12 testing.
 2. **Independent synthesis, different intervention scope:** Zainal, N. H., and Newman, M. G., *Mindfulness enhances cognitive functioning: a meta-analysis of 111 randomized controlled trials*: https://pure.psu.edu/en/publications/mindfulness-enhances-cognitive-functioning-a-meta-analysis-of-111/ . 111 trials / 9,538 participants; excludes one-session interventions.
 3. **Independent EEG evidence review:** Ingendoh et al. (2023), binaural-beat entrainment EEG review: https://pubmed.ncbi.nlm.nih.gov/37205669/ . Electrophysiological hypothesis; not product-specific focus efficacy.
-4. **Seller/product descriptions only:** Zen12 Premium standard: https://zen12.com/hnp ; distinct Zen12 promotion: https://zen12.com/secret/ .
-5. **Seller/product description only:** Hypnosis Live Total Focus: https://hypnosislive.com/mental-skills/total-focus .
-6. **Seller/product description only:** Brainwave Shots Focus Shot: https://brainwaveshots.com/focus-shot .
-7. **Seller policy; fulfillment not independently tested:** Hypnosis Live FAQ: https://hypnosislive.com/faq .
-8. **Seller policy and precautions; not independent safety clearance:** Brainwave Shots FAQ: https://brainwaveshots.com/faq .
+4. **Seller/product descriptions only:** exact Zen12 Premium standard and distinct promotion source URLs are documented as \`zen12_standard\` and \`zen12_promotion\` in the separate R286 evidence matrix. Neither is an authorized FV affiliate destination.
+5. **Seller/product description only:** Hypnosis Live Total Focus; source registry key \`hl_product\`. No commercial link activated.
+6. **Seller/product description only:** Brainwave Shots Focus Shot; source registry key \`bw_product\`. No commercial link activated.
+7. **Seller policy; fulfillment not independently tested:** Hypnosis Live FAQ; source registry key \`hl_faq\`.
+8. **Seller policy and precautions; not independent safety clearance:** Brainwave Shots FAQ; source registry key \`bw_faq\`.
 9. **Published FV historical investigation:** https://finalvestige.com/2026/11/02/mesmerism/ .
 10. **Published FV source archive:** https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/ .
-11. **Seller-owned marketing/consent:** https://zen12.com/freeaudio (redirect observed to /gift, newsletter indicated).
+11. **Seller-owned marketing/consent:** Zen12 free-audio invitation; source registry key \`zen12_free\` (redirect to seller gift page; newsletter indicated).
 12. **Regulatory guidance:** FTC endorsements https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking ; FTC health-product substantiation https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance .
 
 **Copy/release gate:** verify URLs and terms again before any commercial copy is approved; never represent study [1] or [3] as branded-product proof. No product endorsing CTA, commercial URL, fabricated personal experience or medical advice is authorized in this investigation. Duplicate-editorial review against R280, R284 and R285 remains a prerequisite before publication.
