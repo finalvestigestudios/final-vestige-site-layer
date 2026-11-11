@@ -196,10 +196,17 @@ def check_raw_ids(n: int, before: bytes, after: bytes, witness: dict):
     require(removed == [] and introduced == witness.get("introduced_citation_ids")
             and witness.get("lost_citation_ids") == [],
             "unrecognized raw source-ID replacement or loss")
-    require(all(new[id] >= count for id, count in old.items()),
-            "existing citation source lost occurrences")
+    decreased = {key: [count, new[key]] for key, count in old.items() if new[key] < count}
+    # Three retained source IDs each lose one occurrence in the authentic Article 13
+    # revision. These are held evidence changes, not permission to discard citations.
+    known_article13 = {"usfa-fire-escape": [11,10],
+                       "shelter-nfpa-escape": [21,20],
+                       "shelter-usfa-high-rise": [3,2]}
+    require(decreased == (known_article13 if n == 13 else {}),
+            "unreviewed occurrence reduction of a retained citation ID")
     return {"n": n, "raw_removed_ids": [], "raw_introduced_ids": introduced,
-            "replaced_occurrences": 0, "independent_equivalence_approved": False}
+            "replaced_occurrences": 0, "retained_id_occurrence_decreases_held": decreased,
+            "independent_equivalence_approved": False}
 
 
 def git_show(repo: Path, ref: str, path: str) -> bytes:
