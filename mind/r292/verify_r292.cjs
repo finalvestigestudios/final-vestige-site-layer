@@ -36,6 +36,7 @@ function audit(files){
  chk(m.canonical_presell?.A===P.a&&m.canonical_presell?.B===P.b,'canonical A/B paths');
  chk(article.includes('49 meta-analyses')&&article.includes('nine of the 49')&&article.includes('261 distinct')&&article.includes('Puységur'),'scientific bounds');
  chk(article.includes('not a trial of Zen12')&&article.includes('seller claims'),'product-generalization caveat');
+ chk(!/49 guaranteed cures/i.test(article),'unsupported altered research outcome');
  chk(!/\]\(https?:\/\/(?:www\.)?(?:zen12|inspire3|hypnosislive|brainwaveshots)\./i.test(article),'active merchant source link in article');
  chk(!/clinically proven to improve (?:everyone|your)|guaranteed concentration|guarantees? wealth|medically cure/i.test(article+hub),'medical/wealth outcome guarantee');
  chk(!/<(?:script|form|iframe|object|embed)\b/i.test(hub),'active hub script, iframe or second signup');
