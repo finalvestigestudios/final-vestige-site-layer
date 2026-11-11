@@ -1,0 +1,59 @@
+{
+  "title": "FV Dispatch R268 hold-only acquisition integrity snapshot",
+  "utc_read": "2026-11-11T00:39:30Z",
+  "live_wp_observed": {
+    "newsletter_enabled": true,
+    "email_new_posts_by_default": false,
+    "format": "full",
+    "from_name": "Final Vestige Studios",
+    "welcome_configured": true,
+    "diagnostic_total": 3,
+    "diagnostic_confirmed": 3,
+    "diagnostic_unconfirmed": 2,
+    "diagnostic_suppressed": 0,
+    "email_eligible_subscribers": null,
+    "last_five_posts": "never_sent_opted_out",
+    "verified_received_welcome": false,
+    "verified_footer": false,
+    "verified_optout": false
+  },
+  "campaign": {
+    "original_pr": 175,
+    "original_sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+    "readiness_pr": 201,
+    "previous_pr": 1964,
+    "previous_sha": "92bdbcd2adb7202da1e4d6bec8555c27ffe68b22",
+    "allocation": {
+      "editorial": 4,
+      "merchant_review_pending": 2
+    },
+    "all_six_unsent": true,
+    "merchant_issues_on_hold": [
+      3,
+      5
+    ],
+    "no_buyer_link_activation": true,
+    "no_testing_mail": true
+  },
+  "merchant": {
+    "inspire3_account_acceptance": "NOT_VERIFIED",
+    "permission_to_promote_by_email": "NOT_VERIFIED",
+    "earning_url": "NOT_VERIFIED",
+    "live_approved_guides": "NOT_VERIFIED",
+    "verified_paid_revenue": "NOT_ESTABLISHED"
+  },
+  "scope": {
+    "no_prod_changes": true,
+    "no_subscriber_access": true,
+    "no_email_sends": true,
+    "no_tracking_install": true,
+    "no_merchant_links": true
+  },
+  "tests": {
+    "native_node": "42/42",
+    "source_identity_method": "git blob sha equality",
+    "mode": "synthetic",
+    "not_CI": true,
+    "not_inbox_rendering": true
+  }
+}
