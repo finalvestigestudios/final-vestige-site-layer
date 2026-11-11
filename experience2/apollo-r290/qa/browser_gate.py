@@ -32,6 +32,7 @@ assert markup.count('data-fv-evidence-status="editorial-review-pending"')==2
 assert markup.count('https://attacker.invalid')==0
 assert markup.count('<details')==8 and markup.count('<time')==14
 assert markup.count('fv-r281__source-list')==2
+assert markup.count('class="fv-r291__authority-disclosure"')==2
 assert 'malicious.invalid' not in markup
 NASA=['https://www.nasa.gov/mission/apollo-1/',
       'https://www.nasa.gov/history/Apollo204/proceed.html',
@@ -65,6 +66,8 @@ with sync_playwright() as pw:
                                'https://sma.nasa.gov/sma-disciplines/accllp/apollo-1'):
                 assert pg.locator('a[href="'+source_url+'"]').count()==(6 if 'narr.html' in source_url else 2)
             assert pg.locator('[data-fv-date-review="editorial-review-pending"]').count()==2
+            assert pg.locator('.fv-r291__authority-disclosure').count()==2
+            assert pg.locator('.fv-r291__authority-disclosure').evaluate_all('els=>els.every(el=>!el.open)')
             assert pg.locator('.fv-r281__authority-ledger').count()==2
             assert pg.locator('.fv-r281__authority-ledger>li').count()==8
             assert pg.locator('.fv-r281__authority-ledger time').all_text_contents()==['January 27 · oral authority','January 28 · board convenes','January 31 · dated memorandum received','February 3 · written confirmation']*2
@@ -78,6 +81,7 @@ with sync_playwright() as pw:
                 target=jump.get_attribute('href')[1:]
                 jump.focus();jump.press('Enter')
                 assert pg.evaluate('document.activeElement.id')==target,(width,js,component,'authority focus lost')
+                assert pg.locator('.fv-r291__authority-disclosure').nth(component).evaluate('el=>el.open'),(width,js,'native auto-open lost')
                 record=pg.locator('#'+target)
                 assert record.evaluate('e=>getComputedStyle(e).outlineStyle')!='none'
                 assert record.locator('a[href^="https://www.nasa.gov/"]').count()==1
@@ -138,6 +142,7 @@ with sync_playwright() as pw:
             pg.locator('.fv-r281__rail a').first.click()
             assert pg.evaluate('location.hash')=='#fv-r281-1-event-1'
             pg.emulate_media(media='print')
+            assert pg.locator('.fv-r281__boundary').first.evaluate('el=>getComputedStyle(el).backgroundColor')=='rgb(255, 255, 255)',(width,js,'print contrast')
             a=pg.locator('.fv-r281__drawer-body a').first
             assert a.is_visible()
             assert NASA[0] in a.evaluate("e=>getComputedStyle(e,'::after').content")
