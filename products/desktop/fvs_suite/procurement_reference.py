@@ -9,6 +9,7 @@ case folding must not silently equate independent financial identifiers.
 from __future__ import annotations
 
 from collections.abc import Callable, Iterable
+from decimal import localcontext
 
 from .review import ascii_case_identity
 
@@ -41,7 +42,11 @@ def normalized_document_key(value: object, identifier: Callable[[str], str]) -> 
     """
     text = _native_document_text(value)
     try:
-        result = identifier(text)
+        # User-defined matching callbacks must not change the precision,
+        # rounding, traps or status flags of subsequent financial review.
+        # This isolates both getcontext() mutation and setcontext() swaps.
+        with localcontext():
+            result = identifier(text)
     except Exception:
         raise ValueError(_KEY_ERROR) from None
     if type(result) is not str:
