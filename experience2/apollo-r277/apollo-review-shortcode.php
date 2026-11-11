@@ -2,7 +2,7 @@
 /**
  * Plugin Name: FV Apollo review custody — R277 staging adapter
  * Description: STAGING/REVIEW ONLY. Native shortcode for Apollo editorial custody; no approvals or tracking.
- * Version: 0.1.0
+ * Version: 0.1.1
  * License: GPL-2.0-or-later
  *
  * Release gate: this file must not be activated on production without founder approval.
@@ -12,6 +12,8 @@ if (!defined('ABSPATH')) { return; }
 
 const FV_R277_SHORTCODE = 'fv_apollo_review_custody';
 const FV_R277_STYLE = 'fv-apollo-r277-review-custody';
+// SHA-256 of the frozen, reviewed R275 Apollo source renderer (not an editorial approval).
+const FV_R278_SOURCE_SHA256 = '3f3c5a01e64cbc68349dd20c3daceadb64bf8a2e68ec5a0a2ea4bb6a3eed9107';
 
 /** Deliberately pinned to a *same-origin* sibling asset; no external scripts. */
 function fv_r277_style_url(): string {
@@ -48,11 +50,18 @@ function fv_r277_block_contains(array $block, int $depth, array &$seen): bool {
     if (($block['blockName'] ?? null) === 'core/block') {
         $ref = $block['attrs']['ref'] ?? null;
         if (is_int($ref) && $ref > 0 && !isset($seen[$ref])) {
-            $seen[$ref] = true; // cycles cannot recurse indefinitely
-            $post = get_post($ref);
-            if ($post && $post->post_type === 'wp_block' && $post->post_status === 'publish'
-                && is_string($post->post_content)
-                && fv_r277_contains_shortcode($post->post_content, $depth + 1, $seen)) { return true; }
+            // The set represents only the ACTIVE recursion path, not all visited
+            // references. A deep, truncated first route must not suppress a
+            // later short route to the same published block.
+            $seen[$ref] = true;
+            try {
+                $post = get_post($ref);
+                if ($post && $post->post_type === 'wp_block' && $post->post_status === 'publish'
+                    && is_string($post->post_content)
+                    && fv_r277_contains_shortcode($post->post_content, $depth + 1, $seen)) { return true; }
+            } finally {
+                unset($seen[$ref]);
+            }
         }
     }
     foreach (($block['innerBlocks'] ?? []) as $child) {
@@ -78,16 +87,32 @@ function fv_r277_enqueue_preflight(): void {
  * All data shown here are *pending*. Unauthenticated shortcode attributes cannot
  * set review state, pass rights checks, change sources, or introduce merchant links.
  */
+function fv_r277_fallback_sources(): string {
+    return '<aside aria-label="Apollo 1 research custody"><p>The review panel is unavailable. The original records remain accessible. Editorial review is not established.</p>'
+        . '<p><a href="https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/">NASA Apollo 204 Review Board report</a></p>'
+        . '<p><a href="https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/">Free Apollo 1 investigation</a></p></aside>';
+}
+
+/** Do not execute a silent replacement of the reviewed historical renderer. */
+function fv_r277_source_pinned(string $path): bool {
+    if (!is_file($path) || !is_readable($path)) { return false; }
+    $actual = @hash_file('sha256', $path); // A concurrent file removal must fail open, not TypeError.
+    return is_string($actual) && hash_equals(FV_R278_SOURCE_SHA256, $actual);
+}
+
 function fv_r277_render_shortcode($attributes = [], $unused_content = null): string {
     $source = __DIR__ . '/../apollo-r273/review-custody.php';
-    if (!is_readable($source)) {
-        return '<aside aria-label="Apollo 1 research custody"><p>The review panel is unavailable. The original records remain accessible.</p>'
-            . '<p><a href="https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/">NASA Apollo 204 Review Board report</a></p>'
-            . '<p><a href="https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/">Free Apollo 1 investigation</a></p></aside>';
+    if (!fv_r277_source_pinned($source)) { return fv_r277_fallback_sources(); }
+    try {
+        require_once $source;
+        if (!function_exists('fv_ex2_r273_review_panel')) { return fv_r277_fallback_sources(); }
+        $html = fv_ex2_r273_review_panel([]); // Never trust client/user-controlled approval metadata.
+        if (!is_string($html) || strpos($html, 'data-fv-review-ready="false"') === false) {
+            return fv_r277_fallback_sources();
+        }
+    } catch (Throwable $e) {
+        return fv_r277_fallback_sources();
     }
-    require_once $source;
-    if (!function_exists('fv_ex2_r273_review_panel')) { return ''; }
-    $html = fv_ex2_r273_review_panel([]); // Never trust client/user-controlled approval metadata.
     // Dynamic templates may render after wp_head. A static stylesheet link in the
     // shortcode body is HTML body-ok and works without JS under same-origin CSP.
     // Output only once, even if the shortcode is repeated on a page.
