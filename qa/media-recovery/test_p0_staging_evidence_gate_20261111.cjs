@@ -15,6 +15,7 @@ const good = () => ({source_slot:img.slot,post_id:img.post_id,stored_original_sr
   capture_run_id:'synthetic-run',request_id:'synthetic-request',
   response_request_id:'synthetic-request',dom_element_request_id:'synthetic-request',
   screenshot_sha256:'b'.repeat(64)});
+const decoded = () => {const e=good();e.final_http_status=200;e.natural_width=819;e.natural_height=614;e.encoded_data_length=8192;e.response_mime_type='image/jpeg';e.resource_type='Image';e.loading_finished=true;return e;};
 const approval = () => ({source_slot:img.slot,original_src:img.original_src,
   candidate_catalog_url:img.catalog_candidate_url,
   item_rights_evidence_url:'https://example.org/rights/1',rights_reviewer:'human-reviewer',
@@ -39,7 +40,7 @@ for(const field of ['final_http_status','natural_width','natural_height','encode
   test('missing numeric '+field,()=>{const e=good();e[field]=null;assert.equal(guestFinding(img,e).verdict,'HOLD')});
 test('missing screenshot holds',()=>{const e=good();e.screenshot_evidence_id=null;assert.equal(guestFinding(img,e).verdict,'HOLD')});
 test('synthetic cold guest 404 + zero dimensions confirms',()=>assert.equal(guestFinding(img,good()).verdict,'CONFIRMED_GUEST_BROKEN'));
-test('success with positive image dimensions displays',()=>{const e=good();e.final_http_status=200;e.natural_width=819;e.natural_height=614;assert.equal(guestFinding(img,e).verdict,'CONFIRMED_GUEST_DISPLAYED')});
+test('complete image decode evidence displays',()=>assert.equal(guestFinding(img,decoded()).verdict,'CONFIRMED_GUEST_DISPLAYED'));
 test('200 with zero dimensions inconclusive',()=>{const e=good();e.final_http_status=200;assert.equal(guestFinding(img,e).verdict,'HOLD')});
 test('404 with positive dimensions inconclusive',()=>{const e=good();e.natural_width=819;e.natural_height=614;assert.equal(guestFinding(img,e).verdict,'HOLD')});
 for(const field of ['source_slot','original_src','candidate_catalog_url'])
@@ -157,4 +158,30 @@ for (const [name,change,why] of [
   const result=guestFinding(img,e);
   assert.equal(result.verdict,'HOLD');assert.equal(result.reason,why);
   assert.equal(compileRecovery(source,{[img.slot]:e}).verified_broken_in_supplied_guest_evidence,0);
+});
+
+for (const [label,change] of [
+ ['zero body',e=>e.encoded_data_length=0],
+ ['HTML instead of image',e=>e.response_mime_type='text/html'],
+ ['unknown MIME',e=>delete e.response_mime_type],
+ ['wrong resource type',e=>e.resource_type='Document'],
+ ['missing resource type',e=>delete e.resource_type],
+ ['unfinished response',e=>e.loading_finished=false],
+ ['unknown completion',e=>delete e.loading_finished],
+ ['HTTP 204 zero body',e=>{e.final_http_status=204;e.encoded_data_length=0;}],
+ ['HTTP 200 empty MIME',e=>e.response_mime_type=''],
+]) test('image-display false positive is HOLD: '+label,()=>{
+ const e=decoded();change(e);
+ assert.equal(guestFinding(img,e).verdict,'HOLD');
+ assert.equal(guestFinding(img,e).reason,'IMAGE_MIME_LIFECYCLE_OR_BODY_BYTES_NOT_PROVEN');
+});
+test('complete PNG body qualifies as displayed',()=>{
+ const e=decoded();e.response_mime_type='image/png';
+ assert.equal(guestFinding(img,e).verdict,'CONFIRMED_GUEST_DISPLAYED');
+});
+test('HTML 200 does not mark article image as delivered in recovery report',()=>{
+ const e=decoded();e.response_mime_type='text/html';
+ const r=compileRecovery(source,{[img.slot]:e});
+ assert.equal(r.priority[0].guest_browser.verdict,'HOLD');
+ assert.equal(r.verified_broken_in_supplied_guest_evidence,0);
 });
