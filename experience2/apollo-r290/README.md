@@ -21,9 +21,13 @@ php -l experience2/apollo-r281/apollo-source-experience.php
 php experience2/apollo-r290/qa/php_gate.php
 python experience2/apollo-r290/qa/browser_gate.py /tmp/apollo-r290-QA
 python experience2/apollo-r290/build_archive.py /tmp/Apollo_R290.zip /tmp/apollo-r290-QA
+# Optional STRICT release probe; exit 2 / BLOCKED here, never a false PASS:
+python experience2/apollo-r290/qa/http_axe_gate.py /tmp/apollo-r290-http /path/to/axe.min.js
 ```
 
 Browser gate renders **actual PHP** two instances in Chromium at 320/390/768/1440/1920px (JS on/off). Verifies unique IDs; four authority targets per instance; Enter-key claim → native fragment → precise dated record → return-focus behavior (100 roundtrip focus checks); keyboard source navigation, forced-colors focus indicator, reduced motion, touch emulation, root-text reflow, readable no-JS chronology, printing primary-source references, no overflow or requests. Captures deterministic 390px and 1440px screenshots twice; manifest contains SHA-256 of each file. PHP runs 38 assertions including tampered NASA source rejection and a single free investigation CTA. Browser LCP/CLS on locally injected HTML, if observed, are **synthetic only** and are not production Core Web Vitals.
+
+The strict HTTP/axe harness uses an actual local HTTP server, restrictive response CSP and an optional genuine axe-core runner; it writes a JSON receipt and exits nonzero whenever dependencies/browser navigation block execution. Current receipt: browser `net::ERR_BLOCKED_BY_ADMINISTRATOR`, axe `NOT_INSTALLED`, no LCP/CLS figures. It is NOT a passed HTTP/CSP/axe test.
 
 **Unsupported / HARD HOLD:** genuine axe-core package not installed (registry DNS blocked); independent NVDA/VoiceOver, installed WordPress/Assembler + reusable-block acceptance, real HTTP/CSP navigation (`net::ERR_BLOCKED_BY_ADMINISTRATOR`), browser UI zoom, field LCP/CLS, hosted CI, editorial/media-rights review and founder release authorization. Do not construe these as passes. No installed WP, live server, social platform or merchant transactions were touched.
 
