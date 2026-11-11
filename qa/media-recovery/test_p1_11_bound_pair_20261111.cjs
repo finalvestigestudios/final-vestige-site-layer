@@ -16,7 +16,7 @@ function fixture(post=621,before=1000,after=240){
      current_src:p.src,request_url:p.src,final_response_url:p.src,
      response_mime_type:'image/'+(p.src.includes('.png')?'png':'jpeg'),
      final_http_status:200,loading_finished:true,encoded_data_length:bytes,
-     natural_width:960,natural_height:540,from_disk_cache:false,
+     natural_width:960,natural_height:Math.round(960*p.native_height/p.native_width),from_disk_cache:false,
      from_memory_cache:false,from_service_worker:false,
      image_identity:'wp-media:'+p.media_id}))
  });
@@ -116,4 +116,45 @@ test('exported source pins are immutable under adversarial mutation',()=>{
  const original=PINS[0].src;
  assert.throws(()=>{PINS[0].src='https://other.example/unrelated.jpg';},TypeError);
  assert.equal(PINS[0].src,original);
+});
+
+test('frozen native geometry pinned to all 11 WordPress original media records',()=>{
+ const wh=new Map([[39,[1672,941]],[40,[1672,941]],[41,[1672,941]],[42,[1672,941]],
+ [43,[1672,941]],[1714,[1280,1280]],[389,[2147,1417]],[388,[4256,2832]],
+ [382,[1800,1200]],[1257,[4000,3000]],[1258,[5667,3831]]]);
+ for(const p of PINS)assert.deepEqual([p.native_width,p.native_height],wh.get(p.media_id));
+});
+test('synthetic 76 percent Malbone with 16:9 pixels but 4:3 original is held',()=>
+ held(f=>{for(const phase of ['before','after'])for(const x of f[phase].images){
+   x.natural_width=960;x.natural_height=540;
+ }},'IMAGE_GEOMETRY_INCONSISTENT_WITH_FROZEN_ORIGINAL'));
+test('identical 1x1 tracker pixels cannot masquerade as original photo',()=>
+ held(f=>{for(const phase of ['before','after'])for(const x of f[phase].images){
+   x.natural_width=1;x.natural_height=1;
+ }},'IMAGE_GEOMETRY_INCONSISTENT_WITH_FROZEN_ORIGINAL'));
+test('identical 32x24 low-resolution placeholders are held',()=>
+ held(f=>{for(const phase of ['before','after'])for(const x of f[phase].images){
+   x.natural_width=32;x.natural_height=24;
+ }},'IMAGE_GEOMETRY_INCONSISTENT_WITH_FROZEN_ORIGINAL'));
+test('single tiny candidate is not a network optimization',()=>
+ held(f=>{f.after.images[0].natural_width=1;f.after.images[0].natural_height=1;},
+ 'IMAGE_GEOMETRY_INCONSISTENT_WITH_FROZEN_ORIGINAL'));
+test('candidate changes aspect ratio to 16:9 without approved crop',()=>
+ held(f=>{f.after.images[0].natural_height=540;},
+ 'IMAGE_GEOMETRY_INCONSISTENT_WITH_FROZEN_ORIGINAL'));
+test('same URL downsampled candidate on same device is not apples-to-apples',()=>
+ held(f=>{f.after.images[0].natural_width=480;
+ f.after.images[0].natural_height=Math.round(480*3000/4000);},
+ 'UNMATCHED_SAME_SOURCE_IMAGE_DIMENSIONS'));
+test('Malbone second image rotated to portrait is held',()=>
+ held(f=>{f.after.images[1].natural_width=649;f.after.images[1].natural_height=960;},
+ 'IMAGE_GEOMETRY_INCONSISTENT_WITH_FROZEN_ORIGINAL'));
+test('single Vasa image changed shape holds its three-image cohort',()=>{
+ const f=fixture(299);f.after.images[2].natural_height=400;
+ const r=evaluatePinnedPair(f);assert.equal(r.status,'HOLD');
+ assert.equal(r.reason,'IMAGE_GEOMETRY_INCONSISTENT_WITH_FROZEN_ORIGINAL');
+});
+test('all eight real article cohorts accept matching synthetic native ratios',()=>{
+ for(const post of new Set(PINS.map(p=>p.post_id)))
+   assert.equal(evaluatePinnedPair(fixture(post)).status,'VERIFIED_PINNED_OVERSIZE_SLOTS_COLD_PAIR');
 });
