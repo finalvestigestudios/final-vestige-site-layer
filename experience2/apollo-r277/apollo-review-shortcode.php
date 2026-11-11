@@ -78,15 +78,21 @@ function fv_r277_enqueue_preflight(): void {
  * All data shown here are *pending*. Unauthenticated shortcode attributes cannot
  * set review state, pass rights checks, change sources, or introduce merchant links.
  */
+/** Readable, commerce-free fallback for missing, incomplete, or invalid sibling code. */
+function fv_r277_source_fallback(): string {
+    return '<aside aria-label="Apollo 1 research custody"><p>The review panel is unavailable. The original records remain accessible.</p>'
+        . '<p><a href="https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/">NASA Apollo 204 Review Board report</a></p>'
+        . '<p><a href="https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/">Free Apollo 1 investigation</a></p></aside>';
+}
+
 function fv_r277_render_shortcode($attributes = [], $unused_content = null): string {
     $source = __DIR__ . '/../apollo-r273/review-custody.php';
-    if (!is_readable($source)) {
-        return '<aside aria-label="Apollo 1 research custody"><p>The review panel is unavailable. The original records remain accessible.</p>'
-            . '<p><a href="https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/">NASA Apollo 204 Review Board report</a></p>'
-            . '<p><a href="https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/">Free Apollo 1 investigation</a></p></aside>';
-    }
-    require_once $source;
-    if (!function_exists('fv_ex2_r273_review_panel')) { return ''; }
+    if (!is_readable($source)) { return fv_r277_source_fallback(); }
+    // A damaged/partial sibling can throw ParseError or another Throwable.
+    // Never disclose server paths or replace readable evidence with blank output.
+    try { require_once $source; }
+    catch (\Throwable $error) { return fv_r277_source_fallback(); }
+    if (!function_exists('fv_ex2_r273_review_panel')) { return fv_r277_source_fallback(); }
     $html = fv_ex2_r273_review_panel([]); // Never trust client/user-controlled approval metadata.
     // Dynamic templates may render after wp_head. A static stylesheet link in the
     // shortcode body is HTML body-ok and works without JS under same-origin CSP.
