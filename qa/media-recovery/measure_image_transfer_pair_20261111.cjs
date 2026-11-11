@@ -41,8 +41,10 @@ function validateCapture(c, expectedSlots, postId) {
         !https(img.final_response_url) || img.final_response_url !== img.request_url ||
         !goodMime(img.response_mime_type) ||
         !Number.isInteger(img.final_http_status) ||
-        img.final_http_status < 200 || img.final_http_status >= 300 ||
+        img.final_http_status !== 200 ||
         img.loading_finished !== true || !positive(img.encoded_data_length) ||
+        !positive(img.network_data_received_bytes) ||
+        img.network_data_received_provenance !== 'CDP_NETWORK_DATA_RECEIVED' ||
         !positive(img.natural_width) || !positive(img.natural_height) ||
         img.from_disk_cache !== false || img.from_memory_cache !== false ||
         img.from_service_worker !== false ||
@@ -53,6 +55,7 @@ function validateCapture(c, expectedSlots, postId) {
     const signature = JSON.stringify([img.post_id,img.resource_type,img.current_src,
       img.request_url,img.final_response_url,img.response_mime_type,
       img.final_http_status,img.loading_finished,img.encoded_data_length,
+      img.network_data_received_bytes,img.network_data_received_provenance,
       img.natural_width,img.natural_height,img.image_identity,
       img.from_disk_cache,img.from_memory_cache,img.from_service_worker]);
     const prior = requestById.get(img.request_id);
