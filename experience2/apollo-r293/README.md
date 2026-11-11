@@ -6,13 +6,13 @@ This isolated Apollo-only change is stacked on R292 PR #2089 (943c73e257e32d68ed
 
 ## Corrected defect
 
-When WordPress has enqueued the Apollo stylesheet but it has not yet reached done, the previous render fallback emitted a second HTML stylesheet link into body markup. R293 first checks both done and enqueued, and emits the native body fallback **only if no stylesheet has been queued or printed**. A dynamic/no-JS shortcode with no queued stylesheet still receives exactly one fallback link, even if rendered twice. This is a potential duplicate-resource and page-weight reduction, not proven production LCP improvement.
+When WordPress has enqueued the Apollo stylesheet but it has not yet reached done, the previous render fallback emitted a second HTML stylesheet link into body markup. R293 first checks both done and enqueued, and emits the native body fallback **only if no stylesheet has been queued or printed**. A dynamic/no-JS shortcode with no queued stylesheet still receives exactly one fallback link, even if rendered twice. This is a potential duplicate-resource and page-weight reduction, not proven production LCP improvement. The same R293 sprint also corrects a visible Chromium print-pagination defect: the previous first sheet contained only the introduction and chronology, leaving most of the sheet blank because the first full EvidencePlate was kept together on page two. A print-only layout relaxes that page-break constraint and verifies that the first NASA source record prints on sheet one.
 
 ## Test and evidence
 
 Run: python experience2/apollo-r293/qa/release_gate.py /tmp/apollo-r293-gate
 
-The gate uses actual PHP and actual Chromium/Playwright at 320, 390, 768, 1440 and 1920 px with JS disabled/enabled, real fragment focus, unique IDs, no unexpected requests and no horizontal overflow. The extended independent local archive suite checks 12 PHP cases (including the prior R292 negative control), 10 Chromium contexts and 2 actual printable PDFs preserving NASA URLs. Existing R290 PHP checks pass 38/38.
+The gate uses actual PHP and actual Chromium/Playwright at 320, 390, 768, 1440 and 1920 px with JS disabled/enabled, real fragment focus, unique IDs, no unexpected requests and no horizontal overflow. The extended independent local archive suite checks 12 PHP cases (including the prior R292 negative control), 10 Chromium contexts and 2 actual printable PDFs preserving NASA URLs (13 pages each for a deliberately duplicated component fixture). The committed gate also generates a real PDF and asserts the first sheet includes the first evidence record and its NASA source title. Existing R290 PHP checks pass 38/38.
 
 **Unresolved:** Browser HTTP navigation is blocked by ERR_BLOCKED_BY_ADMINISTRATOR, so no real HTTP/CSP acceptance or navigation LCP/CLS. Genuine axe-core is unavailable due to npm DNS failure; NVDA/VoiceOver and installed WordPress/Assembler acceptance remain untested. Local document rendering and screenshots are not production field evidence or WCAG certification. Hosted CI, independent editorial/source/media rights review and founder approval are required before merge or deployment.
 

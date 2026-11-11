@@ -34,8 +34,19 @@ with sync_playwright() as p:
                 link=page.locator(f'#fv-r281-{i}-event-1 .fv-r281__source-jump a');link.focus();link.press('Enter')
                 assert page.evaluate('document.activeElement.id')==f'fv-r281-{i}-source-1'
             contexts.append({'width':width,'js':js,'pass':True});ctx.close()
+    print_page=b.new_page(viewport={'width':390,'height':900})
+    print_page.set_content(html)
+    print_page.pdf(path=str(OUT/'r293-print-pagination.pdf'),print_background=True)
     b.close()
+# Real Chromium PDF, not a CSS media-query existence assertion.
+import fitz
+pdf=fitz.open(str(OUT/'r293-print-pagination.pdf'))
+first_page=pdf[0].get_text()
+assert 'The pad test and fire' in first_page and 'Open NASA Apollo 1 mission history' in first_page, 'print orphaned the first evidence record'
+print_pages=len(pdf)
+pdf.close()
 report={'php_states':checks,'browser_contexts':contexts,'browser_passes':len(contexts),
+        'print_first_sheet_source':'PASS','printed_pages':print_pages,
         'php_sha256':hashlib.sha256(php.read_bytes()).hexdigest(),
         'css_sha256':hashlib.sha256(css.encode()).hexdigest(),
         'axe':'NOT_EXECUTED','http_csp':'BLOCKED_BY_ADMINISTRATOR',
