@@ -1,0 +1,146 @@
+{
+  "schema": "fv-tmi-panel-p0-lineage-v1",
+  "evidence_date": "2026-11-11",
+  "post": {
+    "id": 285,
+    "slot": "285:2",
+    "url": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+    "status": "publish",
+    "modified": "2026-11-02T21:39:59",
+    "read_method": "WORDPRESS_POSTS_GET_EDIT_READ_ONLY",
+    "published_src": "https://blog.ucsusa.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+    "existing_alt": "Three Mile Island control panel showing dense rows of gauges, lights and switches.",
+    "existing_caption": "A TMI control panel illustrates the interface problem: each light and gauge represented part of the machine, but operators still had to infer the machine’s overall physical state."
+  },
+  "observations": {
+    "web_retriever": {
+      "method": "WEB_OPEN_WRAPPER_NOT_GUEST_OR_ORIGIN",
+      "date": "2026-11-11",
+      "status": 500,
+      "result": "REDIRECT_TARGET_INACCESSIBLE",
+      "redirect_target": "https://blog.ucs.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg"
+    },
+    "image_search": {
+      "result": "THUMBNAIL_PREVIEW_OF_OLD_UCS_URL_DISPLAYED",
+      "actual_guest_status": null
+    },
+    "guest_cdp": {
+      "completed_cold_image_response": null,
+      "http_status": null,
+      "current_src": null,
+      "natural_px": null,
+      "encoded_transfer_bytes": null
+    },
+    "real_origin_http_status": null,
+    "confirmed_guest_broken": false
+  },
+  "provenance": {
+    "ucs_article_url": "https://blog.ucs.org/dlochbaum/nuclear-plant-accidents-three-mile-island/",
+    "ucs_date": "2016-07-26",
+    "ucs_figure": "4",
+    "ucs_credit": "Source: Nuclear Regulatory Commission",
+    "federal_report_title": "Report of the President's Commission on the Accident at Three Mile Island: The Need for Change: The Legacy of TMI",
+    "federal_report_scan_url": "https://www.tmia.com/sites/tmia.com/files/media/Presidents-Commission.pdf",
+    "federal_osti_url": "https://www.osti.gov/servlets/purl/6986994",
+    "report_date": "1979-10",
+    "printed_page": 97,
+    "pdf_zero_index_page": 27,
+    "figure_original_caption": "Control panel of TMI-2, showing maintenance tags that operators testified covered one of the closed emergency feedwater valve indicator lights during the first 8 minutes of the accident.",
+    "photo_identity": "TMI-2 emergency-feedwater maintenance tags; not the stuck-open relief-valve position/command lamp",
+    "strict_binary_identity_verified": false
+  },
+  "candidates": [
+    {
+      "kind": "UCS_MIGRATED_PUBLISHER",
+      "url": "https://blog.ucs.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+      "catalog": "https://blog.ucs.org/dlochbaum/nuclear-plant-accidents-three-mile-island/",
+      "native_px": null,
+      "conditional_960px": null,
+      "rights": "UNKNOWN",
+      "pixel_identity_verified": false,
+      "cache_authorized": false
+    },
+    {
+      "kind": "PRIMARY_1979_FEDERAL_COMMISSION_REPORT",
+      "url": "https://www.tmia.com/sites/tmia.com/files/media/Presidents-Commission.pdf",
+      "catalog": "https://www.osti.gov/servlets/purl/6986994",
+      "printed_page": 97,
+      "pdf_zero_index_page": 27,
+      "native_px": null,
+      "conditional_960px": null,
+      "rights": "FEDERAL_PUBLICATION_BUT_EMBEDDED_PHOTOGRAPH_RIGHTS_ITEM_REVIEW_REQUIRED",
+      "pixel_identity_verified": false,
+      "cache_authorized": false
+    },
+    {
+      "kind": "COMMONS_RETOUCHED_DERIVATIVE",
+      "url": "https://commons.wikimedia.org/wiki/File:TMI-2_control_panel.png",
+      "catalog": "https://commons.wikimedia.org/wiki/File:TMI-2_control_panel.png",
+      "native_px": [
+        604,
+        590
+      ],
+      "conditional_960px": [
+        604,
+        590
+      ],
+      "retouched_revision": true,
+      "rights": "WIKIMEDIA_PD_US_GOV_ASSERTION_REVIEW_ITEM_AND_RETOUCH",
+      "pixel_identity_verified": false,
+      "cache_authorized": false
+    }
+  ],
+  "editorial": {
+    "current_context": "Placed in an explanatory passage concerning pilot-operated relief valve command state; photo actually documents maintenance tags at an emergency-feedwater indicator",
+    "distinct_failure_mechanisms": true,
+    "proposed_alt": "TMI-2 control panel with maintenance tags hanging over switches and indicator lights.",
+    "proposed_caption": "The 1979 presidential commission documented maintenance tags obscuring an emergency-feedwater valve indicator during the first eight minutes. This was a separate problem from the stuck-open relief valve's misleading command-state indication.",
+    "editor_approved": false,
+    "apply_to_wordpress": false
+  },
+  "size": {
+    "ceiling_width_px": 960,
+    "commons_native_px": [
+      604,
+      590
+    ],
+    "conditional_output_px": [
+      604,
+      590
+    ],
+    "no_upscale": true,
+    "no_crop": true,
+    "retina_2x_max_css_width_px": 302,
+    "source_caption_must_be_preserved": true
+  },
+  "decision": {
+    "result": "HOLD_REVIEW_ONLY",
+    "require_actual_guest_browser": true,
+    "require_same_photo_visual_verification": true,
+    "require_item_rights_approval": true,
+    "require_editorial_signoff": true,
+    "allow_binary_download": false,
+    "allow_cache": false,
+    "allow_wordpress_media": false,
+    "allow_wordpress_post_edit": false,
+    "allow_homepage_edit": false,
+    "allow_deploy": false,
+    "allow_merge": false,
+    "subscription_spend_usd": 0
+  },
+  "sitewide": {
+    "historical_posts": 61,
+    "historical_inline": 355,
+    "external_positions": 288,
+    "reported_broken_guest_unconfirmed": 42,
+    "guest_confirmed_broken": 0,
+    "wp_originals_over_1500000": 15,
+    "oversized_original_stored_bytes": 47096779,
+    "proposed_reduction_pct": 76,
+    "measured_transfer_reduction_pct": null,
+    "source_handoff_git_blob": "d1a9c7a499510ec37bcdba5858d45165752587e0",
+    "worklist_blob": "2acd06a4ca4317646006eb6591face3fe76fedec",
+    "site_qa_pr": 154,
+    "media_recovery_pr": 1703
+  }
+}

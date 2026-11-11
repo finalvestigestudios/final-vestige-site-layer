@@ -1,0 +1,23 @@
+# Three Mile Island 285:2 — source photo, historical accuracy and safe restoration (2026-11-11)
+
+Read `docs/IMAGE-WEIGHT-WORKLIST.md` from draft [#183](https://github.com/finalvestigestudios/final-vestige-site-layer/pull/183) (not on main) and [Site QA #154](https://github.com/finalvestigestudios/final-vestige-site-layer/pull/154). Independently checked live published WordPress post **285** using read-only edit-context lookup on November 11. **Source unchanged** since the 2026-11-02 post modification: `https://blog.ucsusa.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg`.
+
+## Exact historic image identified
+
+[UCS Nuclear Plant Accidents: Three Mile Island, July 26 2016](https://blog.ucs.org/dlochbaum/nuclear-plant-accidents-three-mile-island/) explicitly labels this **Fig. 4**, “Source: Nuclear Regulatory Commission.” I traced it to the **1979 President's Commission report, printed page 97, scanned PDF zero-based page index 27** in [the independent document copy](https://www.tmia.com/sites/tmia.com/files/media/Presidents-Commission.pdf), with [a federal OSTI listing](https://www.osti.gov/servlets/purl/6986994). The original figure depicts **maintenance tags hanging over an emergency-feedwater valve indicator**, which operators testified was obscured in the accident's first eight minutes.
+
+**Historically significant visual-integrity issue:** the current FV figure occurs in a passage discussing a *different* condition: the pilot-operated relief valve (**PORV**) indicated the electrical close command, not its actual stuck-open physical position. The tags photograph **does not depict that PORV status lamp**. Existing ALT/caption are generic but the placement could suggest a false equivalence. Proposed exact replacement ALT/caption are in the machine audit for editorial consideration only; no post block rewrite.
+
+## Replacement-source mapping and limitations
+
+- **Current UCS original**: old host `https://blog.ucsusa.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg` redirects to `https://blog.ucs.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg`, inaccessible to independent web retriever (wrapper 500, *not* origin or real guest HTTP). Search image thumbnail displays the old image, not a guest-browser assertion.
+- **Original federal report photo**: contemporaneous authoritative historical figure, but the downloadable PDF is only a *document copy* and embedded photography should receive a rights/item check before extraction or WordPress localization. Source figure printed page 97 is verified visually.
+- [**Commons TMI-2 control panel.png**](https://commons.wikimedia.org/wiki/File:TMI-2_control_panel.png): catalog links to report p.97 and marks public domain as a US federal government work. The current PNG is **retouched**, catalogued **604×590 native pixels, 459 KB original**, and is **not cryptographically identical** to UCS's JPEG. PD marking is useful evidence but not automatic content workflow approval. A hypothetical 960-wide file would *upscale* the 604px master, so **604×590 is the only no-upscale ceiling** from that asset; at 2× density it supports roughly 302 CSS px. For larger, legible reproduction, inspect a licensed higher-resolution archival scan rather than manufacturing pixels. Preserve full frame and the emergency-feedwater caption.
+
+## Code gate and handoff
+
+The new JSON contains exact URLs, browser-status `null`, web-retriever **500 wrapper** separately, correct report page, conditional 960 ceiling, source-credit distinctions, no production authority, and historical performance caveats. New fail-closed offline verifier rejects fabricated guest errors/bytes, changed image URL, wrong page/figure, invalid 960 upscale, incorrect photograph attribution, presumed rights, publication/caching, or 76% savings claims. Run `node qa/media-recovery/test_tmi_panel_source_20261111.cjs` in native CI.
+
+**Site QA retains its sole guest-browser collector**: P0 sequence `285:5 → 285:2 → 287:5 → 418:1 → 418:2 → 407:1`. Capture cold image `currentSrc`, completed uncached request status/MIME/bytes, natural dimensions and screenshot before restoration. This draft does not overwrite its collection work.
+
+Historical 61 posts / 355 inline / 288 external. Reported 42 broken **guest-unconfirmed**, proposed 76% transfer savings **unmeasured**, 15 oversized >1.5 decimal MB WordPress originals totaling 47,096,779 **stored-original** bytes. No binary downloads, WP writes, homepage design changes, deployments, merges, payment or automatic caching.
