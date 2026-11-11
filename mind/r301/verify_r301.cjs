@@ -41,7 +41,7 @@ function validate(d){
  ok(!legacy.claims.find(x=>x.id==="C28").reason.includes("Drive reports authentication"),"LEGACY_C28_FALSE_AUTH");
  ok(d.legacyArticle.includes("Primary article scan directly inspected")&&d.legacyArticle.includes("continuation page (printed p. 623)"),"LEGACY_LEDGER_REPAIR");
  ok(d.article.trim().split(/\s+/).length>=2400,"ARTICLE_LENGTH");
- for(const q of ["pubmed.ncbi.nlm.nih.gov/1500880","pubmed.ncbi.nlm.nih.gov/7707027","pmc.ncbi.nlm.nih.gov/articles/PMC8062350","pubmed.ncbi.nlm.nih.gov/17488185","not a test of","48 MP3"])ok(d.article.includes(q),"ARTICLE_SOURCE_OR_CLAIM_"+q);
+ for(const q of ["pubmed.ncbi.nlm.nih.gov/1500880","pubmed.ncbi.nlm.nih.gov/7707027","pmc.ncbi.nlm.nih.gov/articles/PMC8062350","pubmed.ncbi.nlm.nih.gov/17488185","not a test of","48-MP3"])ok(d.article.includes(q),"ARTICLE_SOURCE_OR_CLAIM_"+q);
  ok(d.article.includes("unpublished editorial draft")&&d.article.includes("does **not**"),"ARTICLE_UNPUBLISHED_LIMITS");
  ok(d.acceptance.includes("R284 A/B")&&d.acceptance.includes("HARD HOLD")&&d.acceptance.includes("cleared FV commission"),"ONE_OFFER_REVENUE_GUARD");
  ok(d.acceptance.includes("no external script")||d.acceptance.includes("no external assets"),"VIDEO_PRIVACY");
@@ -65,7 +65,7 @@ const fixtures=[
  ["false_asset_approval","matrix",s=>s.replace("OWNER_REPORTED_NOT_PLATFORM_VERIFIED","VERIFIED_LIVE"),"NO_FAKE_PLATFORM_VERIFICATION"],
  ["fewer_captions","captions",s=>s.replace("00:00:36.000 --> 00:00:42.000","00:00:36.000 --> 00:00:36.000"),"VTT_42S_SEVEN_SCENES"],
  ["short_film","film",s=>s.replace("960,540,12,42","960,540,12,30"),"FILM_DURATION_42"],
- ["remove_free_alternative","article",s=>s.replace("https://finalvestige.com/focus/","https://example.invalid/focus/"),"ARTICLE_SOURCE_OR_CLAIM_48 MP3"],
+ ["remove_free_alternative","article",s=>s.replace("48-MP3","48 unknown"),"ARTICLE_SOURCE_OR_CLAIM_48-MP3"],
  ["remove_disclosure","hub",s=>s.replace("may earn a commission","may receive no commission"),"HUB_DISABLED_DISCLOSURE"],
  ["false_original_scan","legacyArticle",s=>s.replace("Primary article scan directly inspected","Abstract only"),"LEGACY_LEDGER_REPAIR"],
  ["false_grok_source","legacyMatrix",s=>s.replace("owner-reported","directly verified"),"LEGACY_C28_WORDING"],
