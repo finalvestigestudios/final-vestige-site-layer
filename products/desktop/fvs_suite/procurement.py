@@ -18,6 +18,7 @@ from typing import Callable, Mapping
 from .procurement_reference import (has_original_spelling, normalized_document_key,
                                     source_document_spellings)
 from .procurement_native_rows import owned_procurement_rows, physical_source_row
+from .procurement_numeric_result_r345 import checked_quantity, checked_unit_price
 from .audit_display import visible_source_label_list
 from .review import price_outside_tolerance
 
@@ -192,6 +193,9 @@ def review_line(
     ordered = owned_procurement_rows(ordered)
     invoices = owned_procurement_rows(invoices)
     receipts = owned_procurement_rows(receipts)
+    # The numeric callback outputs must also pass native Decimal bounds; no
+    # injected parser may silently turn credits or receipts into negative
+    # movements, NaNs, floats or privacy-leaking exception text.
     # All CSV document columns must be plain source text even if a row never
     # becomes a linked credit/return. Reject a forged direct-API cell before
     # any callback or human-display operation can coerce it.
@@ -205,8 +209,8 @@ def review_line(
         return normalized_document_key(value, identifier)
 
     flags: list[str] = []
-    order_qty = quantity(ordered[0]["quantity"]) if len(ordered) == 1 else Decimal(0)
-    order_price = unit_cost(ordered[0]["unit_price"]) if len(ordered) == 1 else Decimal(0)
+    order_qty = checked_quantity(ordered[0]["quantity"], quantity) if len(ordered) == 1 else Decimal(0)
+    order_price = checked_unit_price(ordered[0]["unit_price"], unit_cost) if len(ordered) == 1 else Decimal(0)
     if len(ordered) != 1:
         flags.append("missing_or_duplicate_po")
     if order_price < 0:
@@ -219,8 +223,8 @@ def review_line(
     receipt_entries: list[tuple[dict[str, str], str, Decimal]] = []
     for row in invoices:
         kind = event_kind(row, source="invoice")
-        amount = quantity(row["quantity"])
-        price = unit_cost(row["unit_price"])
+        amount = checked_quantity(row["quantity"], quantity)
+        price = checked_unit_price(row["unit_price"], unit_cost)
         invoice_entries.append((row, kind, amount, price))
         if kind == "credit":
             negative_qty += amount
@@ -236,7 +240,7 @@ def review_line(
             flags.append("price_variance_above_policy")
     for row in receipts:
         kind = event_kind(row, source="receipt")
-        amount = quantity(row["quantity"])
+        amount = checked_quantity(row["quantity"], quantity)
         receipt_entries.append((row, kind, amount))
         if kind == "return":
             returned_qty += amount
