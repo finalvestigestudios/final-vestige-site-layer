@@ -16,7 +16,8 @@ const files={
   legacyMatrix:"mind/r299/CLAIMS-SOURCES-OFFERS-AND-REVENUE-GATES.json",
   A:"mind/r284/ZEN12-BUYER-GUIDE-A-TEXT-ONLY-UNPUBLISHED.html",
   B:"mind/r284/ZEN12-BUYER-GUIDE-B-FILM-STORYBOARD-UNPUBLISHED.html",
-  hub:"mind/r299/MIND-ARCHIVE-RESEARCH-ROOM-WP-HTML-CANDIDATE.html"
+  hub:"mind/r299/MIND-ARCHIVE-RESEARCH-ROOM-WP-HTML-CANDIDATE.html",
+  videoPreview:"mind/r301/video/UNPUBLISHED-ZEN12-NATIVE-VIDEO-UX-PREVIEW.html"
 };
 const fail=(x)=>{throw new Error(x)},ok=(x,y)=>{if(!x)fail(y)};
 const load=()=>Object.fromEntries(Object.entries(files).map(([k,v])=>[k,fs.readFileSync(path.join(root,v),"utf8")]));
@@ -48,6 +49,9 @@ function validate(d){
  ok(d.film.includes("W,H,FPS,DURATION=960,540,12,42"),"FILM_DURATION_42");
  ok(d.film.includes("-an")&&d.film.includes("+faststart")&&d.film.includes("render(t)"),"FILM_SOURCE");
  ok((d.captions.match(/-->/g)||[]).length===7&&d.captions.includes("00:00:42.000"),"VTT_42S_SEVEN_SCENES");
+ ok(d.videoPreview.includes("<video controls preload=\"none\"")&&d.videoPreview.includes("<track kind=\"captions\"")&&d.videoPreview.includes("<details>"),"VIDEO_NATIVE_A11Y_TEXT");
+ ok(d.videoPreview.includes("may earn a commission")&&d.videoPreview.includes("disabled")&&!/<script\\b/i.test(d.videoPreview)&&!/<form\\b/i.test(d.videoPreview),"VIDEO_SAFETY_DISCLOSURE");
+ ok(!/<a[^>]*href=["\u0027]https?:\\/\\/(?:zen12|hypnosislive|brainwaveshots|affiliates)[^"\u0027]*["\u0027]/i.test(d.videoPreview),"VIDEO_NO_MERCHANT_LINK");
  ok(d.hub.includes("may earn a commission")&&/disabled/i.test(d.hub)&&!/<script\b/i.test(d.hub),"HUB_DISABLED_DISCLOSURE");
  for(const key of ["A","B"])ok(d[key].includes("disabled")&&d[key].includes("<html")&&!/<script\b/i.test(d[key]),"AB_INACTIVE_"+key);
  // The register and the guide can cite seller pages as SOURCES, not active earning destinations.
@@ -69,7 +73,10 @@ const fixtures=[
  ["remove_disclosure","hub",s=>s.replace("may earn a commission","may receive no commission"),"HUB_DISABLED_DISCLOSURE"],
  ["false_original_scan","legacyArticle",s=>s.replace("Primary article scan directly inspected","Abstract only"),"LEGACY_LEDGER_REPAIR"],
  ["false_grok_source","legacyMatrix",s=>s.replace("Growth R8 owner-reported asset in shared Drive handoff only","Growth R8 direct-platform-authenticated asset"),"LEGACY_C28_WORDING"],
- ["invalid_article","article",s=>s.slice(0,1000),"ARTICLE_LENGTH"]
+ ["invalid_article","article",s=>s.slice(0,1000),"ARTICLE_LENGTH"],
+ ["video_autoplay","videoPreview",s=>s.replace("<video controls preload=", "<video autoplay controls preload="),"VIDEO_NATIVE_A11Y_TEXT"],
+ ["video_buy_enabled","videoPreview",s=>s.replace("disabled aria-disabled", "aria-disabled"),"VIDEO_SAFETY_DISCLOSURE"],
+ ["video_merchant_link","videoPreview",s=>s.replace("</main>",\u0027<a href="https://zen12.com/getstarted">Unapproved merchant link</a></main>\u0027),"VIDEO_NO_MERCHANT_LINK"]
 ];
 function run(){
  const d=load();validate(d);let n=0;
