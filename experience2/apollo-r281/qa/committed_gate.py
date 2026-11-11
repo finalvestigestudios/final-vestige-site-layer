@@ -19,6 +19,10 @@ $bad=$events;$bad[1]['date']='1967-01-27';
 if(fv_r281_valid_records($bad))exit(13);
 $bad=$events;unset($bad[2]['boundary']);
 if(fv_r281_valid_records($bad))exit(14);
+foreach(['statement','boundary','source_name','source_type','source_dependency'] as $field){
+  $bad=$events; $bad[0][$field].=' UNREVIEWED'; if(fv_r281_valid_records($bad))exit(15);
+}
+$bad=$events; $bad[1]['source_id']='nasa_board'; if(fv_r281_valid_records($bad))exit(16);
 echo fv_r281_render(['state'=>'approved','merchant'=>'https://attacker.invalid/']);
 echo fv_r281_render(['review'=>'complete']);'''
 r=subprocess.run(['php','-r',php],cwd=ROOT,capture_output=True,text=True,timeout=20)
@@ -27,11 +31,13 @@ markup=r.stdout
 assert markup.count('data-fv-evidence-status="editorial-review-pending"')==2
 assert markup.count('https://attacker.invalid')==0
 assert markup.count('<details')==6 and markup.count('<time')==6
+assert markup.count('fv-r281__source-list')==2
+assert 'malicious.invalid' not in markup
 NASA=['https://www.nasa.gov/mission/apollo-1/',
       'https://sma.nasa.gov/sma-disciplines/accllp/apollo-1',
       'https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/']
 FREE='https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/'
-assert all(markup.count('href="'+url+'"')==2 for url in NASA+[FREE])
+assert all(markup.count('href="'+url+'"')==(4 if url in NASA else 2) for url in NASA+[FREE])
 css=(ROOT/'assets/apollo-source-experience.css').read_text()
 html='<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>body{margin:0;background:#101418;color:white;font:16px system-ui}</style><style>'+css+'</style></head><body>'+markup+'</body></html>'
 contexts=[];screens={}
@@ -50,10 +56,14 @@ with sync_playwright() as pw:
             assert pg.get_by_role('navigation',name='Apollo chronology').count()==2
             assert pg.get_by_role('list',name='Historical evidence plates').count()==2
             assert pg.get_by_role('complementary',name='Source gallery').count()==2
+            assert pg.locator('.fv-r281__source-list').first.locator('li').count()==3
+            assert all(pg.locator('.fv-r281__source-list').first.locator('a[href="'+url+'"]').count()==1 for url in NASA)
+            ax=ctx.new_cdp_session(pg).send('Accessibility.getFullAXTree')['nodes']
+            assert any('Inspect NASA Apollo 204 Review Board report' in n.get('name',{}).get('value','') for n in ax)
             ids=pg.locator('[id]').evaluate_all('nodes=>nodes.map(x=>x.id)')
             assert len(ids)==len(set(ids))==14
             assert pg.get_by_role('link',name='Read the free Apollo 1 investigation').count()==2
-            assert all(pg.locator('a[href="'+url+'"]').count()==2 for url in NASA)
+            assert all(pg.locator('a[href="'+url+'"]').count()==4 for url in NASA)
             d=pg.locator('details').first;d.locator('summary').focus();pg.keyboard.press('Enter')
             assert d.get_attribute('open') is not None
             pg.keyboard.press('Enter');assert d.get_attribute('open') is None
@@ -63,6 +73,8 @@ with sync_playwright() as pw:
             a=pg.locator('.fv-r281__drawer-body a').first
             assert a.is_visible()
             assert NASA[0] in a.evaluate("e=>getComputedStyle(e,'::after').content")
+            g=pg.locator('.fv-r281__source-list').first.locator('a').first
+            assert NASA[0] in g.evaluate("e=>getComputedStyle(e,'::after').content")
             pg.emulate_media(media='screen')
             if width in (390,1440) and not js:
                 path=OUT/f'r281-{width}-nojs.png';pg.screenshot(path=str(path),full_page=True,animations='disabled')

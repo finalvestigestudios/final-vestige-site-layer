@@ -12,6 +12,9 @@ const FV_R281_NASA_SAFETY = 'https://sma.nasa.gov/sma-disciplines/accllp/apollo-
 const FV_R281_NASA_BOARD = 'https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/';
 const FV_R281_FREE = 'https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/';
 const FV_R281_STYLE = 'fv-apollo-evidence-r281';
+// Review-custody digest is pinned after independent historical copy approval. This
+// protects against accidental data drift, not a malicious PHP release editor.
+const FV_R282_REVIEWED_EVENTS_SHA256 = '268605391a741300d13e487968336040bfe016dd3d6e2165182a5269ecb19d4d';
 
 /** Immutable, curated chronology. All dates/claims have named official NASA sources. */
 function fv_r281_events(): array {
@@ -19,15 +22,18 @@ function fv_r281_events(): array {
         ['date'=>'1967-01-27','when'=>'January 27, 1967', 'title'=>'The pad test and fire',
          'statement'=>'During a preflight test for AS-204, a fire swept through the Apollo command module. Virgil Grissom, Edward White and Roger Chaffee died.',
          'boundary'=>'This dated record establishes the accident and crew. It does not identify the precise ignition point.',
-         'source_id'=>'nasa_mission', 'source_name'=>'NASA Apollo 1 mission history', 'source_url'=>FV_R281_NASA_MISSION],
+         'source_id'=>'nasa_mission', 'source_name'=>'NASA Apollo 1 mission history', 'source_url'=>FV_R281_NASA_MISSION,
+         'source_type'=>'Later institutional mission summary', 'source_dependency'=>'A NASA retrospective, not a separate firsthand witness record.'],
         ['date'=>'1967-01-28','when'=>'January 28, 1967', 'title'=>'An investigation begins',
          'statement'=>'NASA established the Apollo 204 Review Board to investigate the accident. The board met and visited the scene on January 28.',
          'boundary'=>'Establishment of an inquiry is not proof that any specific ignition source was confirmed.',
-         'source_id'=>'nasa_safety', 'source_name'=>'NASA Safety and Mission Assurance account', 'source_url'=>FV_R281_NASA_SAFETY],
+         'source_id'=>'nasa_safety', 'source_name'=>'NASA Safety and Mission Assurance account', 'source_url'=>FV_R281_NASA_SAFETY,
+         'source_type'=>'Later institutional safety summary', 'source_dependency'=>'A NASA account of the same investigation, not independent corroboration.'],
         ['date'=>'1967-04','when'=>'April 1967', 'title'=>'The Review Board reports',
          'statement'=>'The review findings identified an electrical arc as the most probable fire initiator, without conclusively identifying the precise ignition source.',
          'boundary'=>'Most probable is not an exact-source finding. The published Board report is primary evidence; later NASA summaries are not an independent eyewitness confirmation.',
-         'source_id'=>'nasa_board', 'source_name'=>'NASA Apollo 204 Review Board report', 'source_url'=>FV_R281_NASA_BOARD],
+         'source_id'=>'nasa_board', 'source_name'=>'NASA Apollo 204 Review Board report', 'source_url'=>FV_R281_NASA_BOARD,
+         'source_type'=>'1967 investigative primary report', 'source_dependency'=>'A contemporary institutional investigation, not a conclusive ignition-site identification.'],
     ];
 }
 function fv_r281_escape(string $text): string {
@@ -38,15 +44,19 @@ function fv_r281_valid_records(array $records): bool {
     $allow=['nasa_mission'=>FV_R281_NASA_MISSION,'nasa_safety'=>FV_R281_NASA_SAFETY,'nasa_board'=>FV_R281_NASA_BOARD];
     $seen=[];
     foreach ($records as $record) {
-        if (!isset($record['date'],$record['when'],$record['title'],$record['statement'],$record['boundary'],$record['source_id'],$record['source_name'],$record['source_url'])) { return false; }
+        if (!isset($record['date'],$record['when'],$record['title'],$record['statement'],$record['boundary'],$record['source_id'],$record['source_name'],$record['source_url'],$record['source_type'],$record['source_dependency'])) { return false; }
         if (!isset($allow[$record['source_id']]) || $allow[$record['source_id']] !== $record['source_url']) { return false; }
         if (isset($seen[$record['date']]) || !preg_match('/^1967-(?:01-27|01-28|04)$/D', $record['date'])) { return false; }
-        foreach (['when','title','statement','boundary','source_name'] as $field) {
+        foreach (['when','title','statement','boundary','source_name','source_type','source_dependency'] as $field) {
             if (!is_string($record[$field]) || trim($record[$field]) === '') { return false; }
         }
         $seen[$record['date']]=true;
     }
-    return count($records)===3 && count($seen)===3 && array_keys($seen)===['1967-01-27','1967-01-28','1967-04'];
+    if (count($records)!==3 || count($seen)!==3 || array_keys($seen)!==['1967-01-27','1967-01-28','1967-04']) { return false; }
+    // This digest covers *all* historical wording and NASA source metadata,
+    // not merely date/URL allowlists. Changes require a new reviewed receipt.
+    $encoded=json_encode(array_values($records), JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return is_string($encoded) && hash_equals(FV_R282_REVIEWED_EVENTS_SHA256, hash('sha256',$encoded));
 }
 function fv_r281_stylesheet_url(): string {
     return plugins_url('assets/apollo-source-experience.css', __FILE__);
@@ -83,12 +93,18 @@ function fv_r281_render($attributes = []): string {
         $s.='<li class="fv-r281__plate" id="'.$point.'"><article aria-labelledby="'.$point.'-heading"><p class="fv-r281__date"><time datetime="'.fv_r281_escape($r['date']).'">'.fv_r281_escape($r['when']).'</time></p>';
         $s.='<h3 id="'.$point.'-heading">'.fv_r281_escape($r['title']).'</h3><p>'.fv_r281_escape($r['statement']).'</p>';
         $s.='<p class="fv-r281__boundary"><strong>Evidence boundary:</strong> '.fv_r281_escape($r['boundary']).'</p>';
-        $s.='<details class="fv-r281__drawer"><summary>Inspect the source and custody record</summary><div class="fv-r281__drawer-body"><p><strong>Custodian:</strong> NASA · <strong>Record:</strong> '.fv_r281_escape($r['source_id']).' · <strong>Editorial review:</strong> Pending</p>';
+        $s.='<details class="fv-r281__drawer"><summary>Inspect the source and custody record</summary><div class="fv-r281__drawer-body"><p><strong>Custodian:</strong> NASA · <strong>Record:</strong> '.fv_r281_escape($r['source_id']).' · <strong>Editorial review:</strong> Pending</p><p><strong>Record type:</strong> '.fv_r281_escape($r['source_type']).'. <strong>Source relationship:</strong> '.fv_r281_escape($r['source_dependency']).'</p>';
         $s.='<p><a href="'.fv_r281_escape($r['source_url']).'" rel="noopener noreferrer">Open '.fv_r281_escape($r['source_name']).' (NASA)</a></p>';
         $s.='<p>This is an official-source link, not a claim of NASA endorsement or clearance for promotional use of agency marks, astronaut likenesses, or media.</p></div></details>';
         $s.='</article></li>';
     }
-    $s.='</ol><aside class="fv-r281__gallery" aria-label="Source gallery"><h3>Document gallery, not reconstructed images</h3><p>Three source records are linked above. No unreviewed photos, location pins, inferred connections or visual reconstructions are included.</p><p>NASA mission history and safety summaries both describe the same accident; they are not independent primary witness testimony.</p></aside>';
+    $s.='</ol><aside class="fv-r281__gallery" aria-label="Source gallery"><h3>Inspect the document sources</h3><p>This is a text-only catalogue of three NASA records, not a photographic gallery or three independent eyewitness accounts. Review remains pending.</p><ul class="fv-r281__source-list">';
+    foreach ($records as $r) {
+        $s.='<li><p class="fv-r281__source-type">'.fv_r281_escape($r['source_type']).'</p>';
+        $s.='<a href="'.fv_r281_escape($r['source_url']).'" rel="noopener noreferrer">Inspect '.fv_r281_escape($r['source_name']).' (NASA)</a>';
+        $s.='<p>'.fv_r281_escape($r['source_dependency']).'</p></li>';
+    }
+    $s.='</ul><p>No archive image, geolocation, ownership or commercial rights are inferred from these source links. NASA does not endorse this website.</p></aside>';
     $s.='<footer class="fv-r281__next"><p>Continue with the investigation, including the original evidence and its uncertainties.</p><p><a href="'.FV_R281_FREE.'">Read the free Apollo 1 investigation</a></p></footer></section>';
     // Body-placed stylesheet is a progressive fallback where an unknown dynamic
     // shortcode executes after wp_head. Never inject JS or remote analytics.
