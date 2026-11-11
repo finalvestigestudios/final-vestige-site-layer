@@ -16,6 +16,9 @@ from .review import ascii_case_identity
 _MAX_NATIVE_INT_BITS = 269
 _ERROR = "Procurement document identity must be native text or a bounded integer"
 _KEY_ERROR = "Procurement document normalization requires a native text key"
+# Preserve non-ASCII whitespace as original identity evidence. Python str.strip()
+# otherwise erases NBSP/figure/narrow spaces, hiding normalization-only links.
+_ASCII_BOUNDARY_WHITESPACE = " \t\r\n\v\f"
 
 
 def _native_document_text(value: object) -> str:
@@ -79,18 +82,19 @@ def document_key_session(identifier: Callable[[str], str]) -> Callable[[object],
 
 
 def source_document_spellings(documents: Iterable[object]) -> frozenset[str]:
-    """Snapshot source labels with only ASCII-case and boundary-space changes.
+    """Snapshot source labels with only ASCII-case and ASCII boundary-space changes.
 
     A direct caller cannot forge a reference via an overridden ``__str__``;
     ordinary CSV text and small native integer cells preserve prior behavior.
+    Non-ASCII boundary whitespace remains material original evidence.
     The immutable result is deterministic, with no financial amounts or paths.
     """
-    return frozenset(ascii_case_identity(_native_document_text(value).strip())
+    return frozenset(ascii_case_identity(_native_document_text(value).strip(_ASCII_BOUNDARY_WHITESPACE))
                      for value in documents)
 
 
 def has_original_spelling(reference: object, source_spellings: frozenset[str]) -> bool:
-    """True only for a genuine original label, ignoring ASCII case.
+    """True only for a genuine original label, ignoring ASCII case/edge whitespace.
 
     Do not invoke untrusted equality hooks in a forged source collection.
     False means human review, not an automatic compliance or payment decision.
@@ -98,4 +102,4 @@ def has_original_spelling(reference: object, source_spellings: frozenset[str]) -
     if (type(source_spellings) is not frozenset
             or any(type(value) is not str for value in source_spellings)):
         raise ValueError("Procurement original labels must be a plain text snapshot")
-    return ascii_case_identity(_native_document_text(reference).strip()) in source_spellings
+    return ascii_case_identity(_native_document_text(reference).strip(_ASCII_BOUNDARY_WHITESPACE)) in source_spellings
