@@ -37,13 +37,13 @@ function verify(d){
   need(!/\bhref\s*=\s*['"]https?:\/\/(?:www\.)?(?:zen12\.com|hypnosislive\.com|brainwaveshots\.com|payhip\.com|affiliates\.inspire3\.com)/i.test(s),'active paid href '+k);
   need(!/<img\b[^>]+src\s*=\s*['"]https?:/i.test(s),'remote pixel '+k);
   need(s.includes('https://finalvestige.com/focus/'),'single Focus path '+k);
-  need(/affiliate/i.test(s)&&/commission/i.test(s),'nearby disclosure '+k);
+  need(/Prospective affiliate disclosure:/i.test(s)&&/commission/i.test(s),'nearby disclosure '+k);
   need(/<button\b[^>]*\bdisabled\b/i.test(s),'disabled commerce '+k);
  }
  need(!/<video\b/i.test(d.a),'A no film');
  need((d.b.match(/<video\b/gi)||[]).length===1,'B one video');
  need(/<video\b[^>]*\bcontrols\b[^>]*\bpreload="none"/i.test(d.b),'manual video');
- need(!/\bautoplay\b/i.test(d.b),'no autoplay');
+ need(!/<video\b[^>]*\bautoplay\b/i.test(d.b),'no autoplay attribute');
  need(/src="fv_mind_r285_42s_silent\.mp4"/i.test(d.b),'relative video path');
  need(/kind="captions"/i.test(d.b)&&/src="mind_42sec_en\.vtt"/i.test(d.b),'caption track');
  need(/poster="mind_42sec_poster\.svg"/i.test(d.b),'poster');
@@ -83,7 +83,7 @@ function adversarial(d){
  ['script',x=>{x.hub=x.hub.replace('</section>','<script>alert(1)</script></section>')}],
  ['signup',x=>{x.hub=x.hub.replace('</section>','<form><input type="email"></form></section>')}],
  ['pixel',x=>{x.hub=x.hub.replace('</section>','<img src="https://tracker.example/pixel"></section>')}],
- ['noarticle',x=>{x.article=x.article.replace('https://doi.org/10.3758/BF03208840','NO_SOURCE')}],
+ ['noarticle',x=>{x.article=x.article.replaceAll('https://doi.org/10.3758/BF03208840','NO_SOURCE')}],
  ['disablegone',x=>{x.b=x.b.replace(/\bdisabled\b(?=\s+aria-describedby)/,'')}],
  ['disclosegone',x=>{x.b=x.b.replace('Prospective affiliate disclosure:','NO DISCLOSURE:')}]
  ];
