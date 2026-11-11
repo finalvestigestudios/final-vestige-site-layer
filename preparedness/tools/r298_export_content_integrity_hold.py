@@ -17,7 +17,7 @@ from pathlib import Path
 CUSTODY = 'preparedness/audits/r200_seven_cluster_35_article_frozen_custody.json'
 CUSTODY_OID = '5822f9dfde21d1f3bdfc26658769d852c639438c'
 SITE = 'https://finalvestige.com'
-PATTERN = re.compile(r'\{\{(?:cite|link):[^}]+\}\}')
+PATTERN = re.compile(r'\{\{(?:cite|link|inline-js):[^}]+\}\}')
 TOKEN = re.compile(r"[a-z0-9]+(?:['’][a-z0-9]+)?", re.I)
 
 
@@ -37,7 +37,7 @@ class Narrative(HTMLParser):
             self.depth += 1
         elif self.target and tag == 'div' and ('class', 'pa-body') in attrs:
             self.depth = 1
-        if tag in ('style', 'script', 'noscript'):
+        if tag in ('style', 'script', 'noscript') or (tag=='sup' and ('class','pa-cite') in attrs):
             self.suppressed.append(tag)
 
     def handle_endtag(self, tag):
