@@ -20,7 +20,7 @@ function literal(text){return text.toLowerCase()}
 function verify(x){
  for(const k of Object.keys(filesToCheck))assert(typeof x[k]==="string"&&x[k].length>400,"MISSING_FULL_FILE_"+k);
  const a=x.article,h=x.hub,d=x.acceptance,g=[h,x.guideA,x.guideB],m=JSON.parse(x.matrix);
- assert(a.split(/\\s+/).length>=1700,"ARTICLE_NOT_SUBSTANTIVE");
+ assert(a.split(/\s+/).length>=1700,"ARTICLE_NOT_SUBSTANTIVE");
  for(const s of ["Ingendoh","Garcia-Argibay","Papadatou","isochronic","binaural","brainwaveshots.com/faq","https://doi.org/10.1080/25742442.2026.2679402"]){
    assert(a.includes(s),"ARTICLE_EVIDENCE_MISSING_"+s);
  }
@@ -32,7 +32,7 @@ function verify(x){
  assert(m.sources.length===19&&m.claims.length===30&&m.gates.length===18,"EVIDENCE_COUNTS_CHANGED");
  const ids=new Set();const urls=new Map();
  for(const s of m.sources){
-   assert(/^S\\d{2}$/.test(s.id)&&!ids.has(s.id),"SOURCE_ID_BAD_OR_DUPLICATE");
+   assert(/^S\d{2}$/.test(s.id)&&!ids.has(s.id),"SOURCE_ID_BAD_OR_DUPLICATE");
    ids.add(s.id);const u=new URL(s.url);
    assert(u.protocol==="https:"&&!u.username&&!u.password,"NONHTTPS_OR_CREDENTIAL_SOURCE");
    assert(s.checked==="2026-11-11","UNDATED_SOURCE");
@@ -47,7 +47,7 @@ function verify(x){
  };
  for(const [k,url] of Object.entries(expected))assert(urls.get(k)===url,"EXACT_SOURCE_URL_TAMPER_"+k);
  const cids=new Set(); for(const c of m.claims){
-  assert(/^C\\d{2}$/.test(c.id)&&!cids.has(c.id),"CLAIM_ID_BAD"); cids.add(c.id);
+  assert(/^C\d{2}$/.test(c.id)&&!cids.has(c.id),"CLAIM_ID_BAD"); cids.add(c.id);
   assert(c.source_ids.length>0&&c.source_ids.every(id=>ids.has(id)),"CLAIM_SOURCE_BROKEN_"+c.id);
   assert(c.decision&&typeof c.decision==="string","CLAIM_DECISION_UNSET_"+c.id);
  }
@@ -71,14 +71,14 @@ function verify(x){
  assert(a.includes("No independent product-specific controlled trial")||a.includes("no accessible independent product-specific controlled trial")||a.includes("There is no accessible independent product-specific controlled trial"),"PRODUCT_EFFICACY_OVERCLAIM");
  for(let i=0;i<g.length;i++){
   const page=g[i]; const html=literal(page);
-  assert(/<html\\s+lang=["']en["']/.test(html),"HTML_LANG_MISSING_"+i);
+  assert(/<html\s+lang=["']en["']/.test(html),"HTML_LANG_MISSING_"+i);
   assert(/<meta[^>]+name=["']viewport["']/.test(html),"RESPONSIVE_META_MISSING_"+i);
-  assert(/<button[^>]*\\bdisabled\\b/i.test(page),"ENABLED_PURCHASE_CONTROL_"+i);
+  assert(/<button[^>]*\bdisabled\b/i.test(page),"ENABLED_PURCHASE_CONTROL_"+i);
   assert(/may earn a commission/.test(html),"ADJACENT_DISCLOSURE_MISSING_"+i);
   assert(/<meta[^>]+name=["']robots["'][^>]+noindex/i.test(page),"DRAFT_NOINDEX_MISSING_"+i);
-  assert(!/<script\\b|<iframe\\b|<form\\b|<meta[^>]+http-equiv\\s*=\\s*["']?refresh|\\bonclick\\s*=|\\bonload\\s*=|<img[^>]*src=["']https?:/i.test(page),"UNAUTHORIZED_INTERACTIVE_OR_REDIRECT_"+i);
-  assert(!/<video\\b[^>]*autoplay|<audio\\b[^>]*autoplay/i.test(page),"AUTOPLAY_NOT_ALLOWED_"+i);
-  const href=[...page.matchAll(/\\bhref\\s*=\\s*["']([^"']+)["']/gi)].map(m=>m[1]);
+  assert(!/<script\b|<iframe\b|<form\b|<meta[^>]+http-equiv\s*=\s*["']?refresh|\bonclick\s*=|\bonload\s*=|<img[^>]*src=["']https?:/i.test(page),"UNAUTHORIZED_INTERACTIVE_OR_REDIRECT_"+i);
+  assert(!/<video\b[^>]*autoplay|<audio\b[^>]*autoplay/i.test(page),"AUTOPLAY_NOT_ALLOWED_"+i);
+  const href=[...page.matchAll(/\bhref\s*=\s*["']([^"']+)["']/gi)].map(m=>m[1]);
   for(const link of href){
     assert(!/^(javascript:|data:|vbscript:)/i.test(link),"DANGEROUS_SCHEME_"+i);
     if(link.startsWith("#"))continue;
