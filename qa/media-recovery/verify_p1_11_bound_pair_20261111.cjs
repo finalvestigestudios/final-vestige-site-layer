@@ -185,6 +185,24 @@ function evaluatePinnedPair(input){
        (p.native_width/p.native_height)-1)<=0.025;
    if(!visible(b)||!visible(a))
      return hold('IMAGE_RENDERED_SIZE_OR_FIT_UNVERIFIED',p.slot);
+   // naturalWidth is density-corrected CSS intrinsic pixels, NOT proof
+   // that the delivered, selected currentSrc has enough physical pixels
+   // for a high-DPR display. Reject 1x resources stretched to 2x CSS pixels.
+   // These must be observed from the actual decoded selected resource;
+   // frozen WP original metadata and bare img.width/naturalWidth are not proof.
+   const sharp=(x,c)=>{
+     const w=x.selected_resource_pixel_width, h=x.selected_resource_pixel_height;
+     return x.selected_resource_pixel_provenance==='BROWSER_DECODED_CURRENT_SRC' &&
+       Number.isSafeInteger(w)&&Number.isSafeInteger(h)&&
+       w>=64&&h>=64&&
+       w<=p.native_width&&h<=p.native_height &&
+       w>=Math.ceil(x.rendered_css_width*c.dpr)&&
+       h>=Math.ceil(x.rendered_css_height*c.dpr)&&
+       w>=x.natural_width&&h>=x.natural_height&&
+       Math.abs((w/h)/(p.native_width/p.native_height)-1)<=0.025;
+   };
+   if(!sharp(b,input.before)||!sharp(a,input.after))
+     return hold('SELECTED_RESOURCE_PHYSICAL_PIXELS_OR_DPR_UNVERIFIED',p.slot);
    if(b.rendered_css_width!==a.rendered_css_width||
       b.rendered_css_height!==a.rendered_css_height||
       b.object_fit!==a.object_fit)

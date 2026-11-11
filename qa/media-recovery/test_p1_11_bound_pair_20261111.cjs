@@ -18,6 +18,9 @@ function fixture(post=621,before=1000,after=240){
      final_http_status:200,loading_finished:true,encoded_data_length:bytes,
      natural_width:960,natural_height:Math.round(960*p.native_height/p.native_width),
      rendered_css_width:320,rendered_css_height:Math.round(320*p.native_height/p.native_width),
+     selected_resource_pixel_width:960,
+     selected_resource_pixel_height:Math.round(960*p.native_height/p.native_width),
+     selected_resource_pixel_provenance:'BROWSER_DECODED_CURRENT_SRC',
      object_fit:'contain',fully_visible_in_capture:true,from_disk_cache:false,
      from_memory_cache:false,from_service_worker:false,
      image_identity:'wp-media:'+p.media_id}))
@@ -174,3 +177,77 @@ test("CSS box distorted to 16:9 from Malbone 4:3 source",()=>held(f=>{f.after.im
 test("changed painted image box invalidates identical visual composition",()=>held(f=>{f.after.images[0].rendered_css_width=300;f.after.images[0].rendered_css_height=225;},'UNMATCHED_RENDERED_LAYOUT_GEOMETRY'));
 test("different object-fit across runs invalidates composition pair",()=>held(f=>{f.after.images[0].object_fit='fill';},'UNMATCHED_RENDERED_LAYOUT_GEOMETRY'));
 test("all eight P1 cohorts retain positive test coverage",()=>{for(const post of [34,35,36,37,38,269,299,621]){assert.equal(evaluatePinnedPair(fixture(post)).status,'VERIFIED_PINNED_OVERSIZE_SLOTS_COLD_PAIR')}});
+
+
+test('mobile DPR=2 320 physical pixels at 320 CSS px is NOT 2x sharp',()=>{
+ const f=fixture();
+ for(const phase of ['before','after'])for(const x of f[phase].images){
+   const p=PINS.find(p=>p.slot===x.slot);
+   x.natural_width=320;x.natural_height=Math.round(320*p.native_height/p.native_width);
+   x.selected_resource_pixel_width=320;
+   x.selected_resource_pixel_height=x.natural_height;
+ }
+ assert.equal(evaluatePair(f).status,'VERIFIED_SINGLE_POST_COLD_PAIR');
+ assert.equal(evaluatePinnedPair(f).reason,'SELECTED_RESOURCE_PHYSICAL_PIXELS_OR_DPR_UNVERIFIED');
+});
+test('480px selected pixels at 320px painted size on DPR2 remains HOLD',()=>held(f=>{
+ for(const phase of ['before','after'])for(const x of f[phase].images){
+   const p=PINS.find(p=>p.slot===x.slot);
+   x.natural_width=480;x.natural_height=Math.round(480*p.native_height/p.native_width);
+   x.selected_resource_pixel_width=480;
+   x.selected_resource_pixel_height=x.natural_height;
+ }
+},'SELECTED_RESOURCE_PHYSICAL_PIXELS_OR_DPR_UNVERIFIED'));
+test('same 320px resource on DPR1 with matching 320px painted size is acceptable',()=>{
+ const f=fixture();f.before.dpr=f.after.dpr=1;
+ for(const phase of ['before','after'])for(const x of f[phase].images){
+   const p=PINS.find(p=>p.slot===x.slot);
+   x.natural_width=320;x.natural_height=Math.round(320*p.native_height/p.native_width);
+   x.selected_resource_pixel_width=320;
+   x.selected_resource_pixel_height=x.natural_height;
+ }
+ assert.equal(evaluatePinnedPair(f).status,'VERIFIED_PINNED_OVERSIZE_SLOTS_COLD_PAIR');
+});
+test('DPR2 selected pixels 640x matching original ratio are sufficient for 320 CSS',()=>{
+ const f=fixture();
+ for(const phase of ['before','after'])for(const x of f[phase].images){
+   const p=PINS.find(p=>p.slot===x.slot);
+   x.natural_width=640;x.natural_height=Math.round(640*p.native_height/p.native_width);
+   x.selected_resource_pixel_width=640;
+   x.selected_resource_pixel_height=x.natural_height;
+ }
+ assert.equal(evaluatePinnedPair(f).status,'VERIFIED_PINNED_OVERSIZE_SLOTS_COLD_PAIR');
+});
+test('missing physical pixel width is not inferred from WP original',()=>held(f=>{
+ delete f.after.images[0].selected_resource_pixel_width
+},'SELECTED_RESOURCE_PHYSICAL_PIXELS_OR_DPR_UNVERIFIED'));
+test('missing physical pixel height is held',()=>held(f=>{
+ delete f.after.images[0].selected_resource_pixel_height
+},'SELECTED_RESOURCE_PHYSICAL_PIXELS_OR_DPR_UNVERIFIED'));
+test('zero physical pixels are held',()=>held(f=>{
+ f.after.images[0].selected_resource_pixel_width=0
+},'SELECTED_RESOURCE_PHYSICAL_PIXELS_OR_DPR_UNVERIFIED'));
+test('fractional physical pixels are held',()=>held(f=>{
+ f.after.images[0].selected_resource_pixel_width=960.5
+},'SELECTED_RESOURCE_PHYSICAL_PIXELS_OR_DPR_UNVERIFIED'));
+test('self-attested size without browser pixel provenance is held',()=>held(f=>{
+ f.after.images[0].selected_resource_pixel_provenance='WP_ORIGINAL_METADATA'
+},'SELECTED_RESOURCE_PHYSICAL_PIXELS_OR_DPR_UNVERIFIED'));
+test('one wide dimension cannot hide insufficient physical height',()=>held(f=>{
+ f.after.images[0].selected_resource_pixel_height=320
+},'SELECTED_RESOURCE_PHYSICAL_PIXELS_OR_DPR_UNVERIFIED'));
+test('selected resource upscaled beyond archival native original is held',()=>held(f=>{
+ f.after.images[0].selected_resource_pixel_width=8000;
+ f.after.images[0].selected_resource_pixel_height=6000;
+},'SELECTED_RESOURCE_PHYSICAL_PIXELS_OR_DPR_UNVERIFIED'));
+test('physically distorted image with fine naturalWidth but wrong pixels is held',()=>held(f=>{
+ f.after.images[0].selected_resource_pixel_height=540
+},'SELECTED_RESOURCE_PHYSICAL_PIXELS_OR_DPR_UNVERIFIED'));
+test('all eight frozen posts require actual selected-pixel provenance',()=>{
+ for(const post of new Set(PINS.map(p=>p.post_id))){
+   const f=fixture(post);
+   assert.equal(evaluatePinnedPair(f).status,'VERIFIED_PINNED_OVERSIZE_SLOTS_COLD_PAIR');
+   delete f.before.images[0].selected_resource_pixel_provenance;
+   assert.equal(evaluatePinnedPair(f).reason,'SELECTED_RESOURCE_PHYSICAL_PIXELS_OR_DPR_UNVERIFIED');
+ }
+});
