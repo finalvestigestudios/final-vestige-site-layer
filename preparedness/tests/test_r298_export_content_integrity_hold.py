@@ -29,7 +29,7 @@ def fixture():
         wp[f'preparedness/build/wp/{slug}.html']=(
             '<!-- wp:html -->\n<div class="pa pa-article" data-slug="'+slug+'">'
             '<span>Independent safety/source and QD verification pending</span>'
-            '<div class="pa-body">'+raw.replace('{{cite:source-abc}}','<sup>[1]</sup>')+'</div></div>\n<!-- /wp:html -->\n'
+            '<div class="pa-body">'+raw.replace('{{cite:source-abc}}','<sup class="pa-cite"><a href="#src-1">[1]</a></sup>')+'</div></div>\n<!-- /wp:html -->\n'
         ).encode()
         custody['articles'].append({'n':i,'slug':slug,'section':sec,
             'route':f'/preparedness/{sec}/{slug}/','body_oid':g.blob_oid(rawb),
@@ -63,6 +63,7 @@ class ExportGuardTests(unittest.TestCase):
     def test_narrative(self):
         self.assertEqual(g.words('<p>Hello {{cite:a}} &amp; goodbye</p>'),['hello','goodbye'])
         self.assertEqual(g.words('<script>evil</script><p>good</p>'),['good'])
+        self.assertEqual(g.words('<p>hello<sup class="pa-cite">[4]</sup> world</p>'),['hello','world'])
         self.assertEqual(g.words('<div class="pa-body"><p>good</p></div><p>bad</p>',target=True),['good'])
 
 # Independent one-factor adversarial transformations; no source approval granted.
