@@ -18,6 +18,7 @@ from .spend_median import RunningDecimalMedian
 from .spend_input import validated_spend_rows
 from .spend_callback_context_r355 import invoke_spend_callback
 from .spend_format_custody_r357 import verified_spend_money_display
+from .spend_source_row_order_r363 import canonical_spend_source_rows
 
 VENDOR_MONTH_EVIDENCE_LIMIT = 32  # Bounded preview; full evidence is in SHA-bound source.
 
@@ -207,7 +208,7 @@ def summarize_spend(
             "category_baseline_median": (
                 "" if category_baseline is None else format(category_baseline, "f")),
             "category_review_flag": "review_category_spike" if category_spike else "",
-            "source_rows": ";".join(row["row"] for row in rows),
+            "source_rows": canonical_spend_source_rows([row["row"] for row in rows]),
             "source_vendor_labels": vendor_source_evidence[vendor][2],
             "vendor_label_variants": str(vendor_source_evidence[vendor][1]),
             "source_sha256": source_sha256,
