@@ -21,3 +21,12 @@
 @media(prefers-reduced-motion:reduce){.fv-r281 *, .fv-r281 *::before,.fv-r281 *::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
 @media(forced-colors:active){.fv-r281,.fv-r281__plate,.fv-r281__gallery,.fv-r281__next{background:Canvas;color:CanvasText;border-color:CanvasText}.fv-r281 a{color:LinkText}.fv-r281__boundary{background:Canvas;color:CanvasText;border-color:Highlight}.fv-r281 :is(a,summary):focus-visible{outline-color:Highlight}}
 @media print{.fv-r281{background:#fff!important;color:#000!important;border-color:#000}.fv-r281 *{color:#000!important}.fv-r281__plate{background:#fff!important;break-inside:avoid}.fv-r281__plates{display:block}.fv-r281__plate{margin-bottom:1rem}.fv-r281__gallery{background:white!important}.fv-r281 details::details-content{content-visibility:visible!important}.fv-r281 .fv-r281__drawer-body{display:block!important}.fv-r281 .fv-r281__drawer-body a::after{content:' <' attr(href) '>';display:block;overflow-wrap:anywhere;font-size:.75rem}.fv-r281__next a{border:0;padding:0}}
+/* R282: actionable source catalogue, separated from the historical narrative. */
+.fv-r281__source-list{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.8rem;padding:0;margin:1rem 0}
+.fv-r281__source-list li{min-width:0;border:1px solid var(--line);padding:1rem;background:#191d21}
+.fv-r281__source-list p{margin:.5rem 0;color:var(--muted);font-size:.9rem;line-height:1.55}
+.fv-r281__source-list .fv-r281__source-type{font:.72rem/1.5 ui-monospace,monospace;letter-spacing:.06em;text-transform:uppercase;color:var(--gold)}
+.fv-r281__source-list a{display:inline-flex;min-height:44px;align-items:center;font-weight:650;overflow-wrap:anywhere}
+@media(max-width:850px){.fv-r281__source-list{grid-template-columns:1fr}}
+@media(forced-colors:active){.fv-r281__source-list li{background:Canvas;color:CanvasText;border-color:CanvasText}.fv-r281__source-list p{color:CanvasText}}
+@media print{.fv-r281__source-list{display:block}.fv-r281__source-list li{background:white!important;break-inside:avoid;margin:1rem 0}.fv-r281__source-list a::after{content:' <' attr(href) '>';display:block;overflow-wrap:anywhere;font-size:.75rem}}
