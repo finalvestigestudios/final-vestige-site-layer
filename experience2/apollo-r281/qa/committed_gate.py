@@ -43,6 +43,13 @@ html='<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="vie
 contexts=[];screens={}
 with sync_playwright() as pw:
     browser=pw.chromium.launch(headless=True,executable_path='/usr/bin/chromium',args=['--no-sandbox'])
+    # Negative control: native R282 hash anchors lost focus without a focusable target.
+    negative=browser.new_page()
+    negative.set_content(html.replace(' tabindex="-1"',''))
+    negative.locator('.fv-r281__rail a').first.focus()
+    negative.locator('.fv-r281__rail a').first.press('Enter')
+    assert negative.evaluate('document.activeElement.id') != 'fv-r281-1-event-1'
+    negative.close()
     for width in [320,390,768,1440,1920]:
         for js in [False,True]:
             ctx=browser.new_context(viewport={'width':width,'height':900},java_script_enabled=js,
@@ -62,6 +69,18 @@ with sync_playwright() as pw:
             assert any('Inspect NASA Apollo 204 Review Board report' in n.get('name',{}).get('value','') for n in ax)
             ids=pg.locator('[id]').evaluate_all('nodes=>nodes.map(x=>x.id)')
             assert len(ids)==len(set(ids))==14
+            assert pg.locator('.fv-r281__plate[tabindex="-1"]').count()==6
+            for index in range(6):
+                anchor=pg.locator('.fv-r281__rail a').nth(index)
+                target=anchor.get_attribute('href')[1:]
+                anchor.focus();anchor.press('Enter')
+                assert pg.evaluate('document.activeElement.id')==target,(width,js,index,'native focus lost')
+                assert pg.locator('#'+target).evaluate('el=>getComputedStyle(el).outlineStyle')!='none'
+            assert pg.locator('.fv-r281__plate[tabindex="0"]').count()==0
+            for root_px in (32,64):
+                pg.evaluate('px=>document.documentElement.style.fontSize=px+"px"',root_px)
+                assert pg.evaluate('document.documentElement.scrollWidth<=innerWidth+1'),(width,js,root_px,'text overflow')
+            pg.evaluate('document.documentElement.style.fontSize=""')
             assert pg.get_by_role('link',name='Read the free Apollo 1 investigation').count()==2
             assert all(pg.locator('a[href="'+url+'"]').count()==4 for url in NASA)
             d=pg.locator('details').first;d.locator('summary').focus();pg.keyboard.press('Enter')
@@ -85,7 +104,7 @@ with sync_playwright() as pw:
 receipt={'suite':'R281 actual PHP plus Chromium offline accessibility/print source gate',
          'php_sha256':hashlib.sha256((ROOT/'apollo-source-experience.php').read_bytes()).hexdigest(),
          'css_sha256':hashlib.sha256(css.encode()).hexdigest(),
-         'contexts':contexts,'screenshot_sha256':screens,'release':'HARD_HOLD',
+         'contexts':contexts,'native_fragment_focus_checks':60,'R282_negative_control':'rejected','root_text_stress_px':[32,64], 'screenshot_sha256':screens,'release':'HARD_HOLD',
          'unverified':['installed WordPress','genuine axe-core','screen reader','browser HTTP/CSP','field LCP/CLS','paid sales']}
 (OUT/'receipt.json').write_text(json.dumps(receipt,indent=2,sort_keys=True)+'\n')
 print(f'PHP PASS | Chromium {len(contexts)}/{len(contexts)} PASS | Receipt SHA256 '+hashlib.sha256((OUT/'receipt.json').read_bytes()).hexdigest())
