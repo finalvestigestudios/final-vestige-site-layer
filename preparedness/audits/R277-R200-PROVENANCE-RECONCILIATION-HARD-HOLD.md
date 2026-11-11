@@ -15,7 +15,7 @@ All 35 article routes remain unique in the authenticated R200 roster. Original 3
 
 ## Execution scope
 - **AUTHENTICATED FROM GITHUB:** R200 manifest, R275 integrated manifest, R276 provenance record and seven live GitHub compare queries. Exact repo head of PR #157 `7d1ae6b8ef93d10cfb6810987672360885e9c1aa`, PR #169 `e9cd7766dac59d47ab467d8945269b9146c2aef5`, home lead #1689 `f55c36b6598eec558dd8bb24e4c8988becc51be0`; all remain open drafts. #169 source-directory fixture-mutation issue remains with independent QA owner.
-- **LOCAL SYNTHETIC TESTS:** R276 45 prior cases plus R277 provenance/metadata/citation hold adversarial suite; see committed new test module or local evidence. This is not an authenticated complete-tree QA run.
+- **LOCAL SYNTHETIC TESTS (UNCOMMITTED CANDIDATE ONLY):** 108/108 Python unittest cases were executed locally against a reconstructed isolated R276 fixture plus NEW R277 proposed source/test files in a separately downloadable ChatGPT review evidence ZIP (SHA-256 `235e09378d3cff6809ee4cc0ffaabefe69569a608e8ee040aa37c9e3dec19527`). **PR #1976 DOES NOT contain either new R277 Python validator or its test module.** Those local-only test results do NOT verify any newly committed R277 executable source, the actual 96-file GitHub tree, the native pipeline or 41 exports. They are candidate review evidence only.
 - **BLOCKED:** git checkout DNS resolution; complete Python validate/build/inherited tests and all 41 intended WordPress draft exports unverified. No claim that native build or original source review passed.
 
 ## Conversion-first plan (OFFER → STEP → BLOCKER → CHANGE → EVIDENCE → OWNER)
