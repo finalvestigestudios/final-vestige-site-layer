@@ -95,8 +95,9 @@ function fv_r277_fallback_sources(): string {
 
 /** Do not execute a silent replacement of the reviewed historical renderer. */
 function fv_r277_source_pinned(string $path): bool {
-    return is_file($path) && is_readable($path)
-        && hash_equals(FV_R278_SOURCE_SHA256, hash_file('sha256', $path));
+    if (!is_file($path) || !is_readable($path)) { return false; }
+    $actual = @hash_file('sha256', $path); // A concurrent file removal must fail open, not TypeError.
+    return is_string($actual) && hash_equals(FV_R278_SOURCE_SHA256, $actual);
 }
 
 function fv_r277_render_shortcode($attributes = [], $unused_content = null): string {
