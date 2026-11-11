@@ -51,7 +51,6 @@ function fv_r288_reconciliation_valid(array $items): bool {
 }
 
 
-
 // R289: more exact document custody, not new independent witness evidence.
 // The Board's own proceedings mention a January 28 memorandum being received
 // January 31. Its narrative also cites February 3 written confirmation.
