@@ -26,6 +26,7 @@ def fixture():
         original_origin='start'
         history_origin='base' if n<=6 else 'start'
         articles.append(dict(n=n,slug=slug,route=f'/preparedness/start-here/{slug}/',source_cluster=original_origin,
+                             section='start-here',track='modern',branch_sha=oid(90001),also_in=['start'],
                              body_oid=oldbody,body_bytes=100+n,meta_oid=oldmeta,meta_bytes=80+n))
         entries.extend([dict(path=f'content/articles/{slug}.body.html',role='article_body',sha=newbody,size=110+n),
                         dict(path=f'content/articles/{slug}.meta.json',role='article_meta',sha=newmeta,size=90+n)])
@@ -41,8 +42,13 @@ def fixture():
     locks.append(dict(slug='water-planner',origin='base',
        body=dict(path='preparedness/content/tools/water-planner.body.html',git_blob_sha=oid(13001),bytes=500),
        metadata=dict(path='preparedness/content/tools/water-planner.meta.json',git_blob_sha=oid(13002),bytes=200)))
-    return (dict(artifact_count=35,state=g.HOLD,articles=articles),
+    return (dict(artifact_count=35,state=g.HOLD,articles=articles,
+                 branch_heads={x:oid(90001+j) for j,x in enumerate(('start','shelter','food','health','hist-field','hist-food','hist-home'))},
+                 publication_authorized=False,independent_qd_pass=False,human_source_approved=False,
+                 medical_safety_verified=False,merchant_offer_verified=False,verified_paid_orders=None,realized_net_revenue=None),
             dict(schema='fv-r276-all-slate-identity-v1',state=g.HOLD,entries=entries,
+                 publication_authorized=False,independent_qd_pass=False,medical_safety_verified=False,
+                 privacy_approved=False,merchant_offer_approved=False,may_merge=False,
                  source_review={'shared_url_groups':32,'duplicate_id_groups':15,'held_occurrences':3}),
             dict(longform_article_count=35,local_tool_count=1,records=locks))
 
@@ -231,5 +237,92 @@ for section in R283_SECTIONS:
     setattr(R283CanonicalRoutes,'test_r283_accept_'+section.replace('-','_'),r283_positive(section))
 for index,route in enumerate(R283_INVALID):
     setattr(R283CanonicalRoutes,'test_r283_reject_%02d'%index,r283_negative(route))
+
+
+# R284: adversarial regression for semantic contributor/source and upstream
+# release flags; mutation should never create an apparent approved artifact.
+R284_BAD = {
+    'original_pub_true': lambda o,i,l:o.__setitem__('publication_authorized',True),
+    'original_pub_missing': lambda o,i,l:o.pop('publication_authorized'),
+    'original_qd_true': lambda o,i,l:o.__setitem__('independent_qd_pass',True),
+    'original_source_true': lambda o,i,l:o.__setitem__('human_source_approved',True),
+    'original_medical_true': lambda o,i,l:o.__setitem__('medical_safety_verified',True),
+    'original_merchant_true': lambda o,i,l:o.__setitem__('merchant_offer_verified',True),
+    'original_order_zero': lambda o,i,l:o.__setitem__('verified_paid_orders',0),
+    'original_revenue_zero': lambda o,i,l:o.__setitem__('realized_net_revenue',0),
+    'integration_pub_true': lambda o,i,l:i.__setitem__('publication_authorized',True),
+    'integration_qd_true': lambda o,i,l:i.__setitem__('independent_qd_pass',True),
+    'integration_medical_true': lambda o,i,l:i.__setitem__('medical_safety_verified',True),
+    'integration_privacy_true': lambda o,i,l:i.__setitem__('privacy_approved',True),
+    'integration_commercial_true': lambda o,i,l:i.__setitem__('merchant_offer_approved',True),
+    'integration_merge_true': lambda o,i,l:i.__setitem__('may_merge',True),
+    'integration_privacy_missing': lambda o,i,l:i.pop('privacy_approved'),
+    'branch_heads_missing': lambda o,i,l:o.pop('branch_heads'),
+    'branch_heads_extra': lambda o,i,l:o['branch_heads'].__setitem__('untrusted',oid(123)),
+    'branch_heads_removed': lambda o,i,l:o['branch_heads'].pop('start'),
+    'branch_heads_invalid': lambda o,i,l:o['branch_heads'].__setitem__('start','g'*40),
+    'branch_heads_bool': lambda o,i,l:o['branch_heads'].__setitem__('start',True),
+    'contributor_sha_bad': lambda o,i,l:o['articles'][0].__setitem__('branch_sha',oid(888)),
+    'contributor_sha_missing': lambda o,i,l:o['articles'][0].pop('branch_sha'),
+    'unknown_contributor': lambda o,i,l:o['articles'][0].__setitem__('source_cluster','unknown'),
+    'historic_on_modern': lambda o,i,l:o['articles'][0].__setitem__('source_cluster','hist-home'),
+    'section_drift': lambda o,i,l:o['articles'][0].__setitem__('section','water'),
+    'section_missing': lambda o,i,l:o['articles'][0].pop('section'),
+    'track_mismatch': lambda o,i,l:o['articles'][0].__setitem__('track','lost-ways'),
+    'track_unknown': lambda o,i,l:o['articles'][0].__setitem__('track','hybrid'),
+    'witness_list_empty': lambda o,i,l:o['articles'][0].__setitem__('also_in',[]),
+    'witness_list_missing': lambda o,i,l:o['articles'][0].pop('also_in'),
+    'witness_list_dup': lambda o,i,l:o['articles'][0].__setitem__('also_in',['start','start']),
+    'witness_list_wrong': lambda o,i,l:o['articles'][0].__setitem__('also_in',['food']),
+    'witness_list_unknown': lambda o,i,l:o['articles'][0].__setitem__('also_in',['start','unknown']),
+    'witness_list_string': lambda o,i,l:o['articles'][0].__setitem__('also_in','start'),
+}
+class R284SourceReleaseCustody(unittest.TestCase):
+    def setUp(self):self.o,self.i,self.l=fixture()
+    def test_synthetic_35_remain_draft(self):
+        d=g.derive(self.o,self.i,self.l)
+        self.assertEqual(d['state'],g.HOLD)
+        self.assertEqual(d['aggregates']['review_required_articles'],len([x for x in d['articles'] if x['human_review_required']]))
+        self.assertFalse(d['publication_authorized'])
+    def test_source_branch_identical_and_known(self):
+        self.assertEqual(self.o['articles'][0]['branch_sha'],self.o['branch_heads']['start'])
+        self.assertEqual(g.derive(self.o,self.i,self.l)['articles'][0]['original_cluster'],'start')
+    def test_source_only_changing_witness_list_accepted(self):
+        # Extra legitimate witnesses are not treated as publication approvals.
+        self.o['articles'][0]['also_in']=['start','food']
+        self.assertEqual(g.derive(self.o,self.i,self.l)['state'],g.HOLD)
+    def make_original_historical_cross_track(self):
+        # Frozen article #21: Lost Ways subject, Start cluster source,
+        # seven-cluster witness roster. Preserve this real historical anomaly.
+        a=self.o['articles'][20];old=a['slug'];slug='salt-beef-salt-pork-age-of-sail'
+        a.update(slug=slug,section='lost-ways',track='lost-ways',
+                 route=f'/preparedness/lost-ways/{slug}/',
+                 also_in=list(self.o['branch_heads']))
+        for e in self.i['entries']:
+            if e['path'].startswith(f'content/articles/{old}.'):
+                e['path']=e['path'].replace(f'/{old}.',f'/{slug}.')
+        lock=self.l['records'][20];lock['slug']=slug
+        for part in ('body','metadata'):
+            lock[part]['path']=lock[part]['path'].replace(f'/{old}.',f'/{slug}.')
+    def test_authentic_cross_track_start_origin_is_preserved(self):
+        self.make_original_historical_cross_track()
+        rows=g.derive(self.o,self.i,self.l)['articles']
+        self.assertEqual(rows[20]['original_cluster'],'start')
+        self.assertEqual(rows[20]['route'],'/preparedness/lost-ways/salt-beef-salt-pork-age-of-sail/')
+    def test_cross_track_requires_all_seven_witnesses(self):
+        self.make_original_historical_cross_track()
+        self.o['articles'][20]['also_in']=['start']
+        with self.assertRaisesRegex(ValueError,'article contributor/track mismatch'):
+            g.derive(self.o,self.i,self.l)
+
+def r284_negative(key,fn):
+    def test(self):
+        fn(self.o,self.i,self.l)
+        with self.assertRaises((ValueError,KeyError,TypeError,AttributeError)):
+            g.derive(self.o,self.i,self.l)
+    test.__name__='test_reject_'+key
+    return test
+for name,fn in R284_BAD.items():
+    setattr(R284SourceReleaseCustody,'test_reject_'+name,r284_negative(name,fn))
 
 if __name__=='__main__':unittest.main(verbosity=2)
