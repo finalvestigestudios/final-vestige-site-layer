@@ -116,7 +116,7 @@ function validate(state){
  }
  assert(state.article.length>14000,'research manuscript unusually short');
  for(const src of ['[1] Greenwald','[2] Pratkanis','[3] Merikle','[4] Chakalis','[11] FTC','[12] FTC'])assert(state.article.includes(src),'article source missing: '+src);
- for(const rule of ['N = 237','237','78 adults','Sixty volunteers','not a blinded clinical trial','not product-specific','2026'])assert(state.article.toLowerCase().includes(rule.toLowerCase()),'article balance: '+rule);
+ for(const rule of ['combined sample was 237','237','78 adults','Sixty volunteers','not a blinded clinical trial','not product-specific','2026'])assert(state.article.toLowerCase().includes(rule.toLowerCase()),'article balance: '+rule);
  assert(!/\]\(https?:\/\/(?:zen12|brainwaveshots|hypnosislive|subliminalguru)\./i.test(state.article),'no reader-facing merchant purchase hyperlink in investigation');
  assertNoActiveCommerce(state.hub);
  assert(/<nav aria-label/.test(state.hub) && /@media\(max-width:720px\)/.test(state.hub),'navigation and mobile');
