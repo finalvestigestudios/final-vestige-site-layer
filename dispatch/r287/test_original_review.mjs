@@ -19,7 +19,7 @@ for(const e of ledger.issues){
   ['postal marker',html.includes('[[VALID_POSTAL_ADDRESS_REQUIRED]]')&&txt.includes('[[VALID_POSTAL_ADDRESS_REQUIRED]]')],
   ['unsub marker',html.includes('[[JETPACK_UNSUBSCRIBE_LINK_MUST_BE_VERIFIED]]')&&txt.includes('[[JETPACK_UNSUBSCRIBE_LINK_MUST_BE_VERIFIED]]')],
   ['email safe structure',html.includes('role="presentation"')&&!/<script|<form|<iframe|<img/i.test(html)],
-  ['no active merchant',!/href="[^"]*(APPROVED_|\[\[|ref=|checkout)/i.test(html)],
+  ['no active merchant',!/href="[^"]*(APPROVED_|\[\[|ref=|checkout)/i.test(html))&& !/href="https:\/\/(?:zen12\.com|hypnosislive\.com)\//i.test(html)],
   ['one editorial route or disabled merchant',e.kind==='editorial'?html.includes('href="'+e.primary_cta+'"'):!html.includes('href="'+e.primary_cta+'"')],
   ['release hold',e.release_status==='HOLD_UNSENT']]){
   assert.ok(predicate,'issue '+e.number+' '+name);checks++;

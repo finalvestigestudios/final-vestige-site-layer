@@ -25,3 +25,5 @@ Original manifest + six source files checked against exact GitHub `parent` blobs
 - Dispatch original six → pre-send legal/deliverability → no actual native preview/received footer → perform founder-authorized no-send native editor preview; separate received check requires approval → FAIL: not exercised → Dispatch.
 - Grok topic asset → qualified landing → no verified route/asset pair for this offer → verify existing published asset & UTM with existing TASK-008 → FAIL: no attributed actual visits → Grok/Praxxis.
 - Merchant purchase → realized FV revenue → no authenticated paid order, commission or adjustment ledger → reconcile provider export → FAIL: absent records → Commerce.
+
+**R287 post-commit reviewer hardening:** Commercial issue HTML no longer contains clickable merchant sales-page source links. Full public seller page URLs remain in the source ledger/reviewer memo only. This prevents an unapproved email from bypassing the pending warm-up guide, while research citations stay reviewable. Original letters unchanged; native Jetpack and received-mail rendering untested.
