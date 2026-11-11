@@ -61,13 +61,59 @@ function fv_r281_valid_records(array $records): bool {
 function fv_r281_stylesheet_url(): string {
     return plugins_url('assets/apollo-source-experience.css', __FILE__);
 }
-/** Enqueue only for explicit shortcode on the singular post, and preserve a body fallback for dynamic blocks. */
+/**
+ * Read-only, bounded discovery of shortcode placement in a singular post, including
+ * published synced patterns (core/block). Never render or execute block content
+ * during wp_head preflight. Rejected / unavailable blocks fall back to the
+ * already-existing body link. This is NOT a general-purpose block resolver.
+ */
+function fv_r285_content_has_shortcode(string $content, array &$visited = [], int $depth = 0): bool {
+    if (strlen($content) > 250000 || $depth > 8) { return false; }
+    if (function_exists('has_shortcode') && has_shortcode($content, 'fv_apollo_source_experience')) {
+        return true;
+    }
+    if (!function_exists('parse_blocks') || strpos($content, '<!-- wp:') === false) { return false; }
+    $blocks = parse_blocks($content);
+    if (!is_array($blocks)) { return false; }
+    return fv_r285_blocks_have_shortcode($blocks, $visited, $depth);
+}
+function fv_r285_blocks_have_shortcode(array $blocks, array &$visited, int $depth): bool {
+    if ($depth > 8) { return false; }
+    $count = 0;
+    foreach ($blocks as $block) {
+        if (++$count > 128 || !is_array($block)) { return false; }
+        if (($block['blockName'] ?? null) === 'core/block' && function_exists('get_post')) {
+            $ref = $block['attrs']['ref'] ?? null;
+            if (is_int($ref) || (is_string($ref) && ctype_digit($ref) && strlen($ref) < 18)) {
+                $id=(int)$ref;
+                if ($id > 0 && !isset($visited[$id]) && count($visited) < 128) {
+                    $visited[$id]=true; // prevent cycles and repeated database fetches
+                    $post=get_post($id);
+                    if (is_object($post) && ($post->post_type ?? null) === 'wp_block' &&
+                        ($post->post_status ?? null) === 'publish' && is_string($post->post_content ?? null) &&
+                        fv_r285_content_has_shortcode($post->post_content, $visited, $depth + 1)) {
+                        return true;
+                    }
+                }
+            }
+        }
+        if (!empty($block['innerBlocks']) && is_array($block['innerBlocks']) &&
+            fv_r285_blocks_have_shortcode($block['innerBlocks'], $visited, $depth + 1)) { return true; }
+        // Relevant for noncanonical/editor-exported innerHTML fixtures.
+        if (is_string($block['innerHTML'] ?? null) && function_exists('has_shortcode') &&
+            has_shortcode($block['innerHTML'], 'fv_apollo_source_experience')) { return true; }
+    }
+    return false;
+}
+/** Enqueue a confirmed public shortcode before wp_head, without unrelated pages. */
 function fv_r281_preflight(): void {
     if (!function_exists('is_singular') || !is_singular() || !function_exists('get_post')) { return; }
     $post = get_post();
-    if ($post && isset($post->post_content) && function_exists('has_shortcode') &&
-        has_shortcode((string)$post->post_content, 'fv_apollo_source_experience')) {
-        wp_enqueue_style(FV_R281_STYLE, fv_r281_stylesheet_url(), [], 'r281');
+    if ($post && is_string($post->post_content ?? null)) {
+        $visited=[];
+        if (fv_r285_content_has_shortcode($post->post_content, $visited)) {
+            wp_enqueue_style(FV_R281_STYLE, fv_r281_stylesheet_url(), [], 'r285');
+        }
     }
 }
 /** No user content or parameters alter evidence; ids are unique when a shortcode repeats. */
