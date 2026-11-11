@@ -908,6 +908,12 @@ jobs:
           python -W error -m unittest discover -s products/desktop/tests -p 'test_spend_format_engine_integration_r357.py'
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_spend_format_custody_r357.py'
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_spend_format_engine_integration_r357.py'
+      - name: R358 SpendMap Unicode vendor evidence and genuine CSV integration (normal and -OO)
+        run: |
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_spend_vendor_evidence_r358.py'
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_spend_vendor_integration_r358.py'
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_spend_vendor_evidence_r358.py'
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_spend_vendor_integration_r358.py'
       - name: Verify full normal/optimized source provenance and six smokes (R57)
         run: |
           mkdir -p "$RUNNER_TEMP/fvs-source"
@@ -1173,6 +1179,18 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R357 Windows optimized format unit FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_spend_format_engine_integration_r357.py'
           if ($LASTEXITCODE -ne 0) { throw "R357 Windows optimized format engine FAILED" }
+      - name: R358 SpendMap Unicode vendor evidence and genuine CSV integration on Windows (normal and -OO)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_spend_vendor_evidence_r358.py'
+          if ($LASTEXITCODE -ne 0) { throw "R358 Windows vendor unit FAILED" }
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_spend_vendor_integration_r358.py'
+          if ($LASTEXITCODE -ne 0) { throw "R358 Windows vendor engine FAILED" }
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_spend_vendor_evidence_r358.py'
+          if ($LASTEXITCODE -ne 0) { throw "R358 Windows optimized vendor unit FAILED" }
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_spend_vendor_integration_r358.py'
+          if ($LASTEXITCODE -ne 0) { throw "R358 Windows optimized vendor engine FAILED" }
       - name: R319 witnessed-vs-compiled premium test source before Windows packaging
         shell: pwsh
         run: |
