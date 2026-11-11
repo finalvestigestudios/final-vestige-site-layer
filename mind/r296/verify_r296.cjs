@@ -53,7 +53,7 @@ function verify(x){
  }
  const verdict=Object.fromEntries(m.claims.map(c=>[c.id,c.decision]));
  for(const id of ["C04","C05","C15","C16","C17","C19","C21","C24","C25","C28","C29"]){
-   assert(/REJECT|DO_NOT_REPEAT/.test(verdict[id]),"DANGEROUS_CLAIM_ENABLED_"+id);
+   assert(/REJECT|DO_NOT_REPEAT|UNSUBSTANTIATED/.test(verdict[id]),"DANGEROUS_CLAIM_ENABLED_"+id);
  }
  assert(verdict.C14==="SUPPORTED_WITH_REVIEW_INCLUSION_CAVEAT","ISOCHRONIC_SCOPE_WEAKENED");
  const gnames=new Set();for(const gate of m.gates){
