@@ -11,6 +11,7 @@ const https = value => typeof value === 'string' && /^https:\/\/[^/\s]+\//.test(
 const integer = value => Number.isSafeInteger(value) && value >= 0;
 const px = value => Number.isSafeInteger(value) && value > 0;
 const sha256 = value => typeof value === 'string' && /^[a-f0-9]{64}$/.test(value);
+const imageMime = value => typeof value === 'string' && /^image\/(?:jpeg|png|gif|webp|avif|bmp|svg\+xml)(?:\s*;.*)?$/i.test(value.trim());
 
 const PINNED_POST_PERMALINKS = Object.freeze({
   "285": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
@@ -66,8 +67,18 @@ function guestFinding(item, evidence) {
       evidence.natural_height === 0)
     return {verdict:'CONFIRMED_GUEST_BROKEN', reason:'COLD_HTTP_ERROR_AND_ZERO_IMAGE_DIMENSIONS', observed_http:evidence.final_http_status};
   if (evidence.final_http_status >= 200 && evidence.final_http_status < 300 &&
-      px(evidence.natural_width) && px(evidence.natural_height))
-    return {verdict:'CONFIRMED_GUEST_DISPLAYED', reason:'COLD_HTTP_SUCCESS_AND_POSITIVE_IMAGE_DIMENSIONS', observed_http:evidence.final_http_status};
+      px(evidence.natural_width) && px(evidence.natural_height)) {
+    // DOM dimensions alone cannot establish a transferred and decoded image:
+    // HTML fallbacks, aborted CDP requests or zero-byte bodies all stay HOLD.
+    if (evidence.resource_type !== 'Image' ||
+        evidence.loading_finished !== true ||
+        !imageMime(evidence.response_mime_type) ||
+        evidence.encoded_data_length === 0)
+      return {verdict:'HOLD', reason:'IMAGE_MIME_LIFECYCLE_OR_BODY_BYTES_NOT_PROVEN'};
+    return {verdict:'CONFIRMED_GUEST_DISPLAYED',
+      reason:'COLD_HTTP_IMAGE_WITH_POSITIVE_DIMENSIONS_AND_BODY',
+      observed_http:evidence.final_http_status};
+  }
   return {verdict:'HOLD', reason:'HTTP_AND_IMAGE_GEOMETRY_INCONCLUSIVE'};
 }
 
