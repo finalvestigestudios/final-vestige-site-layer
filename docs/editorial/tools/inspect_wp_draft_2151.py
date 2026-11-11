@@ -4,6 +4,13 @@
 Requirements: pip install playwright && python -m playwright install chromium
 Usage: FV_PREVIEW_URL="<PRIVATE editor preview>" [FV_STORAGE_STATE="/private/auth.json"] \
        python inspect_wp_draft_2151.py --out /private/qa --sha <fresh WP Gutenberg SHA-1>
+Alternative: use an already authenticated, locally running dedicated Chromium session:
+    FV_PREVIEW_URL="<PRIVATE editor preview>" \
+       python inspect_wp_draft_2151.py --cdp http://127.0.0.1:9222 --out /private/qa \
+       --sha <fresh WP Gutenberg SHA-1>
+Start that session with a loopback-only remote debugging port and a separate
+private profile; log in there normally. The inspector opens only new QA tabs.
+No cookies, preview URLs or editor credentials are serialized to output.
 Preview URLs, authentication states, screenshots, and results must remain private.
 No publication, WordPress writes, subscriber notices, or social updates occur.
 A successful automated inspection is NOT final editorial authorization to publish.
@@ -184,6 +191,9 @@ def main():
     ap.add_argument("--sha", required=True,
         help="Gutenberg SHA from fresh WP authenticated readback; script does not independently verify it")
     ap.add_argument("--browser-bin", default=os.environ.get("CHROMIUM_PATH"))
+    ap.add_argument("--cdp", metavar="LOCAL_CDP_ENDPOINT",
+        help="Attach to an already authenticated Chromium browser using a LOOPBACK-ONLY "
+             "CDP endpoint, e.g. http://127.0.0.1:9222; no credentials are exported.")
     args = ap.parse_args()
     url = os.environ.get("FV_PREVIEW_URL", "")
     if not url or urlsplit(url).scheme != "https" or urlsplit(url).hostname not in (
@@ -193,23 +203,51 @@ def main():
     storage = os.environ.get("FV_STORAGE_STATE")
     if storage and not Path(storage).is_file():
         ap.error("Existing authenticated browser state missing; path withheld.")
+    if args.cdp:
+        from urllib.parse import urlsplit as _urlsplit
+        endpoint = _urlsplit(args.cdp)
+        if (endpoint.scheme != "http" or endpoint.hostname not in ("127.0.0.1", "localhost")
+                or endpoint.username or endpoint.password or endpoint.path not in ("", "/")
+                or endpoint.query or endpoint.fragment or not endpoint.port):
+            ap.error("--cdp accepts only a plain HTTP loopback host:port (no credentials or paths).")
+        if storage:
+            ap.error("Use either --cdp with an authenticated browser or FV_STORAGE_STATE, not both.")
     args.out.mkdir(parents=True, exist_ok=True)
     result = {"postId": 2151, "declaredGutenbergSha1": args.sha,
+              "captureMode": "attached_authorized_browser" if args.cdp else "isolated_browser",
               "hashVerifiedByBrowser": False,
               "releaseGate": "MANUAL_EDITOR_REVIEW_REQUIRED",
               "viewports": []}
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True, executable_path=args.browser_bin or None)
-        try:
+        if args.cdp:
+            # Reuse the authenticated session in an authorized *local* browser.
+            # Open and close only our own tabs, without changing its user tabs,
+            # profile, persistent cookies or logged-in WordPress session.
+            browser = p.chromium.connect_over_cdp(args.cdp, timeout=15000)
+            if not browser.contexts:
+                raise RuntimeError("Local Chromium has no active browser context.")
+            ctx = browser.contexts[0]
             for width in (390, 1440):
-                ctx = browser.new_context(viewport={"width": width, "height": 900},
-                    device_scale_factor=1, storage_state=storage if storage else None)
+                page = ctx.new_page()
                 try:
-                    result["viewports"].append(inspect(ctx.new_page(), width, args.out))
+                    page.set_viewport_size({"width": width, "height": 900})
+                    result["viewports"].append(inspect(page, width, args.out))
                 finally:
-                    ctx.close()
-        finally:
-            browser.close()
+                    page.close()
+            # Playwright context-manager teardown disconnects from CDP.
+            # Do not call browser.close() on a user's running Chromium.
+        else:
+            browser = p.chromium.launch(headless=True, executable_path=args.browser_bin or None)
+            try:
+                for width in (390, 1440):
+                    ctx = browser.new_context(viewport={"width": width, "height": 900},
+                        device_scale_factor=1, storage_state=storage if storage else None)
+                    try:
+                        result["viewports"].append(inspect(ctx.new_page(), width, args.out))
+                    finally:
+                        ctx.close()
+            finally:
+                browser.close()
     (args.out / "inspection.json").write_text(
         json.dumps(result, indent=2, ensure_ascii=False), encoding="utf-8"
     )
