@@ -136,5 +136,6 @@ def audit(root):
 if __name__=='__main__':
     import argparse
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--root',required=True,type=Path)
-    print(json.dumps(audit(p.parse_args().root),indent=2,sort_keys=True))
-    raise SystemExit(2)  # Even mechanically authentic sources are NOT release-approved.
+    report=audit(p.parse_args().root)
+    print(json.dumps(report,indent=2,sort_keys=True))
+    raise SystemExit(2 if report['state']==HOLD else 3)  # Neither result authorizes publication.
