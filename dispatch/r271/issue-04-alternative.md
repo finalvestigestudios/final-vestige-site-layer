@@ -1,0 +1,29 @@
+# THE DISPATCH — ISSUE 04 OPTIONAL ALTERNATIVE
+**STATUS: UNSENT DRAFT / NOT ADOPTED. DO NOT EMAIL OR PUBLISH.**
+
+**Subject:** The fire's first spark was never found.
+**Preheader:** Apollo 1, the official record and the dangers of an explanation that's too neat.
+**Type:** Historical editorial — no affiliate placement.
+
+On January 27, 1967, three astronauts were inside an Apollo command module on the launchpad, conducting a ground test on an unfueled rocket. A fire began in the cabin. Virgil “Gus” Grissom, Edward White and Roger Chaffee died.
+
+The investigation that followed was exhaustive. Teams examined wire bundles, traced damage patterns and tested how materials behaved in the cabin environment. Yet the board could not conclusively identify one exact ignition source.
+
+That was not the same as knowing nothing.
+
+The board considered an electrical arc the most probable initiator. It also documented why an ignition could become a catastrophe: combustible materials near vulnerable electrical systems, a pure-oxygen test atmosphere at approximately 16.7 pounds per square inch *absolute*, and a three-part inward-opening hatch that could not be opened quickly under the pressure created by the fire.
+
+According to NASA's safety history, opening the hatch required about ninety seconds even in ideal conditions. The fire spread in seconds.
+
+A simple headline would have blamed one spark. The harder question is why the system allowed one possible spark to have such irreversible consequences.
+
+It is worth remembering when we encounter any explanation that seems to resolve everything in one sentence. What was observed? Which explanation was judged most likely? What could not be established? Those answers can coexist without contradiction.
+
+Our investigation follows the records and the changes made afterward. It is a story about the crew, the hardware, and the cost of confusing a possible trigger with a complete explanation.
+
+**ONE EDITORIAL CTA — Read The Hatch Opened Inward:**
+https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/
+
+**Sources:** NASA Apollo 204 Review Board https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/ ; NASA Safety and Mission Assurance https://sma.nasa.gov/sma-disciplines/accllp/apollo-1 ; NASA NSSDC https://nssdc.gsfc.nasa.gov/planetary/lunar/apollo1info.html .
+
+**MANDATORY PRE-SEND HOLD:** Publisher address [[VALID_POSTAL_ADDRESS_REQUIRED]]; delivered unsubscribe [[JETPACK_UNSUBSCRIBE_LINK_MUST_BE_VERIFIED]]. Native Jetpack rendering and the final recipient population remain unverified.
