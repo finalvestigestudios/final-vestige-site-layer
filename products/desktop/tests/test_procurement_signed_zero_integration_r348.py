@@ -74,7 +74,33 @@ class SignedZeroIntegrationR348(unittest.TestCase):
                                   invoices=[row(price="($0.00)", doc="INV1")],
                                   unit_cost=accounting)
         self.assertEqual(Decimal(evidence["invoice_total_exact"]), Decimal(0))
-        self.assertIsInstance(flags, list)
+        self.assertIn("negative_unit_price_review", flags)
+
+    def test_invoice_negative_zero_price_is_review_flagged(self):
+        def accounting(value):
+            return Decimal("-0") if value == "($0.00)" else Decimal(value)
+        evidence, flags = review(invoices=[row(price="($0.00)", doc="INV1")],
+                                  unit_cost=accounting)
+        self.assertEqual(Decimal(evidence["invoice_total_exact"]), Decimal(0))
+        self.assertIn("negative_unit_price_review", flags)
+
+    def test_credit_negative_zero_price_is_separately_review_flagged(self):
+        def accounting(value):
+            return Decimal("-0") if value == "($0.00)" else Decimal(value)
+        evidence, flags = review(invoices=[row(doc="INV1"),
+                              row(qty="1", price="($0.00)", kind="credit",
+                                  doc="CM1", related="INV1")], unit_cost=accounting)
+        self.assertIn("negative_unit_price_review", flags)
+        self.assertIn("negative_credit_price_review", flags)
+
+    def test_positive_zero_price_not_mislabeled_negative(self):
+        def zero(value):
+            return Decimal(0) if value == "$0.00" else Decimal(value)
+        evidence, flags = review(ordered=[row(price="$0.00")],
+                                  invoices=[row(price="$0.00", doc="INV1")],
+                                  unit_cost=zero)
+        self.assertNotIn("negative_unit_price_review", flags)
+        self.assertNotIn("negative_credit_price_review", flags)
 
     def test_positive_zero_quantity_still_human_reviewed(self):
         evidence, flags = review(ordered=[row(qty="0")],
