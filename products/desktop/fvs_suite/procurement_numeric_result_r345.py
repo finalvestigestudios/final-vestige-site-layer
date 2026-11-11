@@ -43,6 +43,7 @@ def _checked(value: object, parser: Callable, *, quantity: bool) -> Decimal:
         # Callback exception text and chaining can disclose private CSV paths.
         raise ValueError(failure) from None
     if (type(result) is not Decimal or not result.is_finite()
+            or not -80 <= result.as_tuple().exponent <= 80
             or result.copy_abs() > (_MAX_QUANTITY if quantity else _MAX_UNIT_PRICE)
             or (quantity and result < 0)
             or _fractional_places(result) > 8):
