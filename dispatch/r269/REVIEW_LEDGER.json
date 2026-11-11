@@ -1,0 +1,113 @@
+{
+  "run": "R269",
+  "run_local": "2026-11-10",
+  "canonical": {
+    "issue": 174,
+    "master_pr": 175,
+    "master_sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+    "manifest_blob": "86df98ad8a84e583ff5df64ddbf8c0eaa1335b00",
+    "stacked_base_pr": 1973,
+    "stacked_base_sha": "aa019626ebe3b380616471c8fe27276ca186369c"
+  },
+  "review_status": "HOLD_UNSENT",
+  "editions": [
+    {
+      "number": 1,
+      "kind": "editorial",
+      "subject": "The mind is not a camera",
+      "original_blob": "039b452b5cb7cd6dc2fed6fac4d2dd77fa9d49c8",
+      "original_path": "dispatch/campaign-2026-mind/issues/01-the-mind-is-not-a-camera.md",
+      "html": "dispatch/r269/previews/01-the-mind-is-not-a-camera.html",
+      "plaintext": "dispatch/r269/previews/01-the-mind-is-not-a-camera.txt",
+      "release": "HOLD_UNSENT"
+    },
+    {
+      "number": 2,
+      "kind": "editorial",
+      "subject": "Before hypnosis had a name",
+      "original_blob": "faa207ab7deafd86460d36f8c17fe62d392d0e14",
+      "original_path": "dispatch/campaign-2026-mind/issues/02-before-hypnosis-had-a-name.md",
+      "html": "dispatch/r269/previews/02-before-hypnosis-had-a-name.html",
+      "plaintext": "dispatch/r269/previews/02-before-hypnosis-had-a-name.txt",
+      "release": "HOLD_UNSENT"
+    },
+    {
+      "number": 3,
+      "kind": "commercial-review-pending",
+      "subject": "The twelve-minute meditation question",
+      "original_blob": "aeeef34efea0cc281f69901488e4501fea851245",
+      "original_path": "dispatch/campaign-2026-mind/issues/03-the-twelve-minute-question.md",
+      "html": "dispatch/r269/previews/03-the-twelve-minute-question.html",
+      "plaintext": "dispatch/r269/previews/03-the-twelve-minute-question.txt",
+      "release": "HOLD_UNSENT"
+    },
+    {
+      "number": 4,
+      "kind": "editorial",
+      "subject": "Fourteen seconds. A much longer explanation.",
+      "original_blob": "89635bfb9c8d1ff17297a59b6b5b5b2a176934ca",
+      "original_path": "dispatch/campaign-2026-mind/issues/04-the-hatch-and-the-spark.md",
+      "html": "dispatch/r269/previews/04-the-hatch-and-the-spark.html",
+      "plaintext": "dispatch/r269/previews/04-the-hatch-and-the-spark.txt",
+      "release": "HOLD_UNSENT"
+    },
+    {
+      "number": 5,
+      "kind": "commercial-review-pending",
+      "subject": "Before you press play on a hypnosis audio",
+      "original_blob": "a9dfaa450ba025a7b5113ade8a294d6dbad778dc",
+      "original_path": "dispatch/campaign-2026-mind/issues/05-before-you-press-play.md",
+      "html": "dispatch/r269/previews/05-before-you-press-play.html",
+      "plaintext": "dispatch/r269/previews/05-before-you-press-play.txt",
+      "release": "HOLD_UNSENT"
+    },
+    {
+      "number": 6,
+      "kind": "editorial",
+      "subject": "What did seven days of attention reveal?",
+      "original_blob": "004d558df6376d2ad6f4f79a4581e8d2c444e355",
+      "original_path": "dispatch/campaign-2026-mind/issues/06-the-evidence-log.md",
+      "html": "dispatch/r269/previews/06-the-evidence-log.html",
+      "plaintext": "dispatch/r269/previews/06-the-evidence-log.txt",
+      "release": "HOLD_UNSENT"
+    }
+  ],
+  "qa": {
+    "source_level_checks": "49/49 static precommit V8 assertions passed",
+    "tests_describe": "Original manifest matches 4 editorial / 2 merchant, exact subject/preheader present in HTML+TXT, 6 postal and 6 unsubscribe placeholder checks, no scripts/forms/pixels/external merchant links, live Focus script predicate verified",
+    "native_python_not_rerun": true,
+    "jetpack_received_email_not_run": true,
+    "hosted_ci_not_run": true,
+    "real_subscriber_test_not_run": true,
+    "deliverability_not_verified": true
+  },
+  "wordpress": {
+    "newsletter_on": true,
+    "auto_send_off": true,
+    "format": "full",
+    "diagnostic_total": 3,
+    "confirmed_counter": 3,
+    "unconfirmed_requests": 2,
+    "actual_eligible": "UNKNOWN",
+    "welcome_delivery": "NOT VERIFIED",
+    "gift_ui_display_is_signup": false,
+    "subscribe_query_is_signup": false
+  },
+  "commercial": {
+    "issue_03": "HOLD_MERCHANT",
+    "issue_05": "HOLD_MERCHANT",
+    "partner_email_permission": "NOT VERIFIED",
+    "earning_link": "NOT VERIFIED",
+    "merchant_claim_proof": "NOT VERIFIED",
+    "real_orders": "NOT ESTABLISHED",
+    "net_per_1000_qualified_sessions": "NOT COMPUTABLE"
+  },
+  "no_go": [
+    "No emails or test sends",
+    "No page/settings edits",
+    "No subscriber imports/contact",
+    "No affiliate link activation",
+    "No new tracking scripts",
+    "No social posts or spend"
+  ]
+}
