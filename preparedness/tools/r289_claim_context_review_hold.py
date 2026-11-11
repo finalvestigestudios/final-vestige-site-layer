@@ -10,6 +10,7 @@ from __future__ import annotations
 from collections import Counter
 import hashlib
 from html.parser import HTMLParser
+from html import unescape
 import json
 from pathlib import Path
 import re
@@ -21,6 +22,8 @@ PARENT = 'tools/r288_reader_exposure_citation_hold.py'
 PARENT_SHA = '0924ead810a4df8c169a5e77f05bcf979eac3dc9'
 CITE = re.compile(r'\{\{cite:([A-Za-z0-9][A-Za-z0-9._-]*)\}\}')
 NO_NARRATIVE = frozenset(('textarea', 'select', 'option', 'datalist'))
+HIDDEN_ELEMENTS = frozenset(('script','style','template','head','noscript','iframe','svg','math','canvas','object'))
+HIDE_STYLE = re.compile(r'(?i)(?:^|;)\s*(?:display\s*:\s*none\b|visibility\s*:\s*(?:hidden|collapse)\b|content-visibility\s*:\s*hidden\b)')
 SEMANTIC = frozenset(('p', 'li', 'td', 'th', 'blockquote', 'figcaption', 'caption',
                       'dt', 'dd', 'summary', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'))
 VOID = frozenset(('area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input',
@@ -85,8 +88,11 @@ def style_flags(css):
 
 class ClaimContext(HTMLParser):
     """Conservative source-marker placement ledger, not a DOM/CSS renderer."""
-    def __init__(self):
+    def __init__(self, raw_text):
         super().__init__(convert_charrefs=False)
+        self.raw = raw_text
+        self.line_starts = [0] + [m.end() for m in re.finditer(r'\n', raw_text)]
+        self.reader_parts = []
         self.stack = []
         self.blocks = {'implicit': []}
         self.seq = 0
@@ -101,9 +107,14 @@ class ClaimContext(HTMLParser):
             self.seq += 1
             block = f'{tag}-{self.seq}'
             self.blocks[block] = []
+        hidden = (tag in HIDDEN_ELEMENTS or 'hidden' in attributes or
+                  'inert' in attributes or
+                  str(attributes.get('aria-hidden','')).lower() == 'true' or
+                  bool(HIDE_STYLE.search(attributes.get('style') or '')))
         if tag not in VOID:
             self.stack.append({'tag': tag, 'block': block, 'hard': hard,
-                               'review': review, 'collapsed':tag == 'details' and 'open' not in attributes})
+                               'hidden': hidden, 'review': review,
+                               'collapsed':tag == 'details' and 'open' not in attributes})
 
     def handle_startendtag(self, tag, attrs):
         pass
@@ -115,11 +126,28 @@ class ClaimContext(HTMLParser):
         elif tag not in VOID:
             self.errors.append('unmatched HTML end tag '+tag)
 
+    def add_decoded_entity(self, data):
+        if not any(item['hidden'] for item in self.stack):
+            block = next((item['block'] for item in reversed(self.stack) if item['block']), 'implicit')
+            self.blocks[block].append(data)
+            self.reader_parts.append(data)
+
+    def handle_entityref(self, name):
+        self.add_decoded_entity(unescape('&'+name+';'))
+
+    def handle_charref(self, name):
+        self.add_decoded_entity(unescape('&#'+name+';'))
+
     def handle_data(self, data):
+        in_reader = not any(item['hidden'] for item in self.stack)
+        matches = list(CITE.finditer(data))
+        require(in_reader or not matches, 'nonreader hidden literal citation occurrence')
         block = next((item['block'] for item in reversed(self.stack) if item['block']), 'implicit')
         offset = len(''.join(self.blocks[block]))
-        self.blocks[block].append(data)
-        for match in CITE.finditer(data):
+        if in_reader:
+            self.blocks[block].append(data)
+            self.reader_parts.append(data)
+        for match in matches:
             tags = [item['tag'] for item in self.stack]
             require(not any(t in NO_NARRATIVE for t in tags),
                     'citation in non-narrative form control')
@@ -134,7 +162,12 @@ class ClaimContext(HTMLParser):
             line, col = self.getpos()
             line += pre.count('\n')
             col = len(pre.rsplit('\n', 1)[-1]) if '\n' in pre else col + len(pre)
-            self.edges.append({'source_id':match.group(1),'line':line,'column':col,
+            position = self.line_starts[self.getpos()[0]-1] + self.getpos()[1] + match.start()
+            require(self.raw[position:position+len(match.group(0))] == match.group(0),
+                    'literal DATA source span mapping failed')
+            self.edges.append({'source_id':match.group(1),'raw_start':position,
+                               'raw_end':position+len(match.group(0)),
+                               'line':line,'column':col,
                                'block':block,'block_tag':block.split('-',1)[0],
                                'block_offset':offset+match.start(),
                                'review_flags':sorted(set(risk))})
@@ -142,6 +175,13 @@ class ClaimContext(HTMLParser):
     def finish(self):
         self.close()
         require(not self.errors, 'HTML structure: '+repr(self.errors[:3]))
+        raw_spans = [(m.start(),m.end(),m.group(1)) for m in CITE.finditer(self.raw)]
+        reader_spans = [(x['raw_start'],x['raw_end'],x['source_id']) for x in self.edges]
+        require(raw_spans == reader_spans,
+                'raw citation occurrence not identical to visible DATA occurrence')
+        require(Counter(CITE.findall(''.join(self.reader_parts))) ==
+                Counter(e['source_id'] for e in self.edges),
+                'markup/entity-assembled citation token requires review')
         for edge in self.edges:
             raw = ''.join(self.blocks[edge['block']])
             pos = edge.pop('block_offset')
@@ -163,13 +203,15 @@ def scan_document(raw, name, parent_scanner, canonical_parser):
     require(type(raw) is bytes and callable(parent_scanner) and callable(canonical_parser),
             'invalid authenticated scan inputs')
     baseline = parent_scanner(raw, name, canonical_parser)
-    parser = ClaimContext()
+    parser = ClaimContext(raw.decode('utf-8'))
     parser.feed(raw.decode('utf-8'))
     edges = parser.finish()
     require(Counter(x['source_id'] for x in edges) == canonical_parser(raw, name),
             'literal/reader citation identity mismatch: '+name)
     require(len(edges) == baseline['inline_occurrences'], 'R288 count mismatch: '+name)
     return {'body':name,'source_edges':edges,'count':len(edges),
+            'source_occurrence_identity_verified':True,
+            'context_entity_decoding_applied':True,
             'context_review_flags':sum(bool(e['review_flags']) for e in edges),
             'source_scope_verified':False,'browser_visibility_verified':False}
 
