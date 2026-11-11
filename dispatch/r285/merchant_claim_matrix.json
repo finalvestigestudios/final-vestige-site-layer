@@ -1,0 +1,69 @@
+{
+  "verified_public_on": "2026-11-11",
+  "scope": "Hypnosis Live Total Focus single-session product; NOT bundles, multipacks, other offers, personal checkout or affiliate contract",
+  "official_seller_sales_url": "https://hypnosislive.com/mental-skills/total-focus",
+  "official_seller_refund_faq": "https://hypnosislive.com/faq",
+  "independent_research_overview": "https://www.nccih.nih.gov/health/hypnosis",
+  "claim_rows": [
+    {
+      "claim": "Session length 33 minutes; digital size 47 MB",
+      "source": "official Total Focus page",
+      "class": "public seller inventory",
+      "observed": true,
+      "independent_product_effectiveness": false,
+      "copy_decision": "can state as seller-listed product specification"
+    },
+    {
+      "claim": "'reprogram the brain', '100% razor-sharp concentration' and productivity claims",
+      "source": "official Total Focus page",
+      "class": "seller promise only",
+      "observed": true,
+      "independent_product_effectiveness": false,
+      "copy_decision": "do NOT reproduce as proven benefit"
+    },
+    {
+      "claim": "Hypnosis research includes pain and procedural anxiety",
+      "source": "NCCIH hypnosis overview",
+      "class": "science background",
+      "observed": true,
+      "proves_this_audio_increases_work_focus": false,
+      "copy_decision": "context only, no product-specific inference"
+    },
+    {
+      "claim": "Refund requests within 14 days, limit of five sessions refunded per year",
+      "source": "official seller FAQ",
+      "class": "public seller terms",
+      "observed": true,
+      "approved_checkout_or_affiliate_terms": false,
+      "copy_decision": "do not guarantee current individual checkout or promote in subject"
+    },
+    {
+      "claim": "Price, discounts, bundles",
+      "source": "public seller pages with variable displays",
+      "class": "dynamic offer",
+      "current_price_approved": false,
+      "copy_decision": "OMIT entirely until current authorized checkout & permitted channel are verified"
+    },
+    {
+      "claim": "Final Vestige publisher affiliate acceptance and email marketing permission",
+      "source": "requires account-specific partner proof",
+      "class": "private contract",
+      "verified": false,
+      "copy_decision": "HOLD all commercial CTAs"
+    },
+    {
+      "claim": "Partner-approved earning URL and creative",
+      "source": "requires account-specific partner proof",
+      "class": "private contract",
+      "verified": false,
+      "copy_decision": "HOLD all commercial CTAs"
+    }
+  ],
+  "approved_affiliate_creative_reviewed": false,
+  "affiliate_email_permission_verified": false,
+  "earning_link_issued": false,
+  "current_price_approved": false,
+  "refund_terms_approved": false,
+  "guide_live_verified": false,
+  "advertiser_claim_note": "Seller statements do not demonstrate product efficacy; the NCCIH hypnosis page is not a clinical trial of this product."
+}
