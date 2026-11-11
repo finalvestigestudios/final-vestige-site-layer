@@ -15,7 +15,7 @@ from functools import wraps
 from pathlib import Path
 from typing import Callable, Mapping
 
-from .procurement_reference import (has_original_spelling, normalized_document_key,
+from .procurement_reference import (document_key_session, has_original_spelling,
                                     source_document_spellings)
 from .procurement_native_rows import owned_procurement_rows, physical_source_row
 from .procurement_numeric_result_r345 import checked_quantity, checked_unit_price
@@ -152,8 +152,7 @@ def offset_source_line_links(
     for row in rows:
         physical_source_row(row.get("row"))
 
-    def document_key(value: object) -> str:
-        return normalized_document_key(value, identifier)
+    document_key = document_key_session(identifier)
 
     originals: dict[str, list[str]] = defaultdict(list)
     for row in rows:
@@ -211,8 +210,7 @@ def review_line(
                     or type(row.get("related_document", "")) is not str):
                 raise ValueError("Procurement review requires native document label text")
 
-    def document_key(value: object) -> str:
-        return normalized_document_key(value, identifier)
+    document_key = document_key_session(identifier)
 
     flags: list[str] = []
     order_qty = checked_quantity(ordered[0]["quantity"], quantity) if len(ordered) == 1 else Decimal(0)

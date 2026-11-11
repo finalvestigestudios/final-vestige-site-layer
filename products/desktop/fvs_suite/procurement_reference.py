@@ -54,6 +54,30 @@ def normalized_document_key(value: object, identifier: Callable[[str], str]) -> 
     return result
 
 
+def document_key_session(identifier: Callable[[str], str]) -> Callable[[object], str]:
+    """Freeze each distinct native source label's match key per review operation.
+
+    Real three-way reconciliation asks for the same document label multiple
+    times (candidate sets, duplicate counts, offsets and display decisions).
+    Stateful or nondeterministic injected normalizers must not give the SAME
+    original source a different candidate key later in one audit computation.
+    Scope the cache to ONE call of review_line or offset_source_line_links;
+    never make it global or share keys between source files/reviews. Original
+    source-label spelling remains separately available for human review.
+    """
+    keys: dict[str, str] = {}
+
+    def key(value: object) -> str:
+        # Validate before cache lookup: forged subclasses must never bypass
+        # source custody, even if their underlying characters were seen.
+        text = _native_document_text(value)
+        if text not in keys:
+            keys[text] = normalized_document_key(text, identifier)
+        return keys[text]
+
+    return key
+
+
 def source_document_spellings(documents: Iterable[object]) -> frozenset[str]:
     """Snapshot source labels with only ASCII-case and boundary-space changes.
 
