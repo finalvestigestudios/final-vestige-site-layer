@@ -34,10 +34,10 @@
     },
     {
       "id": "S05",
-      "url": "https://pubmed.ncbi.nlm.nih.gov/4683124/",
-      "source_class": "primary_bibliography_abstract",
-      "read_depth": "abstract",
-      "limitation": "Rosenhan 1973 claims, not fieldwork corroboration"
+      "url": "https://www.sjsu.edu/people/jennifer.gregg/courses/c2/s0/Rosenhahn-being-sane-in-insane-places.pdf",
+      "source_class": "primary_paper_university_hosted_scan",
+      "read_depth": "full_scan_printed_251_and_258_note_6",
+      "limitation": "Original published assertion (eight analyzed, twelve hospitals, ninth omitted); NOT independent verification of fieldwork. Source copyright/permission limits."
     },
     {
       "id": "S06",
@@ -62,10 +62,10 @@
     },
     {
       "id": "S09",
-      "url": "https://www.nature.com/articles/d41586-019-03268-y",
-      "source_class": "secondary_review",
-      "read_depth": "record_only",
-      "limitation": "Cahalan 2019 investigative work through Nature review; full article paywall"
+      "url": "https://media.nature.com/original/magazine-assets/d41586-019-03084-4/d41586-019-03084-4.pdf",
+      "source_class": "secondary_partial_book_review",
+      "read_depth": "publisher_pdf_review_continuation_printed_623_only",
+      "limitation": "Underwood and search discussed in Abbott review continuation; NOT entire review/book/charts"
     },
     {
       "id": "S10",
@@ -148,20 +148,20 @@
       "id": "S21",
       "url": "https://www.youtube.com/watch?v=zctcIECAZ2s",
       "source_class": "creator_owner_documented",
-      "read_depth": "drive_owner_handoff_not_direct_platform",
-      "limitation": "Praxxis authenticated video ID in TASK-008; direct YouTube page fetch failed this run"
+      "read_depth": "owner_report_shared_drive_only",
+      "limitation": "Growth R8 owner-reported asset in TASK-008; independent YouTube metadata, rights, destination remain unverified"
     }
   ],
   "claims": [
     {
       "id": "C01",
-      "claim": "Rosenhan 1973 published an eight-pseudopatient account",
+      "claim": "Rosenhan 1973 reported eight analyzed in twelve hospitals and an excluded ninth in note 6",
       "type": "historical_report",
       "decision": "ALLOW_AS_ATTRIBUTED",
       "source_ids": [
         "S05"
       ],
-      "reason": "A published report is not independent fieldwork verification"
+      "reason": "Primary 1973 full scan pp 251 and 258 read; reported facts not fieldwork corroboration"
     },
     {
       "id": "C02",
@@ -622,7 +622,7 @@
     {
       "topic": "Rosenhan / questionable research records",
       "asset_id": "zctcIECAZ2s",
-      "source": "owner shared Drive TASK-008",
+      "source": "Growth R8 owner-reported via TASK-008; direct platform verification pending",
       "platform": "youtube",
       "video_url": "https://www.youtube.com/watch?v=zctcIECAZ2s",
       "target_article": "THE-PATIENT-THE-STUDY-COULD-NOT-ACCOUNT-FOR-UNPUBLISHED.md",
@@ -647,7 +647,7 @@
       "source": "Mind R297/R298 buyer guides",
       "platform": null,
       "video_url": null,
-      "target_article": "CANONICAL-ZEN12-BUYER-GUIDE-COPY-AND-42S-STORYBOARD.md",
+      "target_article": "Canonical R284 text-only A / R284 static-storyboard B (same unpublished buyer guide experiment); R299 supplementary copy is NON-ROUTABLE",
       "capture": "optional existing Focus Fieldbook",
       "merchant_bridge": "Zen12 only after permissions and product evidence",
       "permission": "await Grok asset ID"
@@ -682,7 +682,8 @@
     "fees": null,
     "affiliate_clicks": null,
     "confirmed_leads": null,
-    "primary_metric_formula": "1000*(verified_settled_order_net_receipts_or_cleared_commissions - attributable_refunds - attributable_fees)/qualified_human_sessions; null unless all inputs authenticated"
+    "primary_metric_formula": "affiliate: 1000*cleared_attributable_FV_commission_after_partner_adjustments/qualified_human_sessions; separate FV-owned-product numerator uses authenticated net settled receipts after nonduplicated refunds/fees/taxes/fulfillment. Both NULL until ledgers and denominator verified.",
+    "reconciliation_rule": "Never count gross merchant checkout value as FV income; retain commission and separately labeled refund/clawback/fee adjustments with flags for values already netted. Do not double subtract."
   },
   "release_approval": {
     "partner": false,
@@ -691,5 +692,27 @@
     "wordPress": false,
     "video_playable": false,
     "affiliate_links_active": false
-  }
+  },
+  "source_fidelity_notes": [
+    {
+      "source_id": "S05",
+      "claim": "Eight analyzed/twelve hospitals; footnote sixth says omitted ninth",
+      "limitation": "Original publication not authenticated original fieldwork"
+    },
+    {
+      "source_id": "S09",
+      "claim": "Cahalan/Underwood and discrepancy reports",
+      "limitation": "Only Abbott review continuation printed page 623 read"
+    },
+    {
+      "source_id": "S21",
+      "claim": "Rosenhan video ID",
+      "limitation": "Owner-reported; independent YouTube verification pending"
+    },
+    {
+      "source_id": "internal",
+      "claim": "FV affiliate numerator",
+      "limitation": "Cleared FV commission; all ledger fields unknown; no double counting"
+    }
+  ]
 }

@@ -1,4 +1,4 @@
-# The Patient the Famous Study Could Not Account For
+# The Ninth Patient in the Footnote: What the Rosenhan Study Actually Counted
 **Final Vestige Studios | Mind & Perception | Original investigation — unpublished editorial draft | 11 November 2026**
 **Status:** SOURCE REVIEW / editorial and medical-context QA pending. No medical advice, advertisement, affiliate link, or claim about treatment effectiveness.
 
@@ -10,7 +10,7 @@ In 2019, journalist Susannah Cahalan documented discrepancies and gaps in the pu
 
 This is the evidence behind the story—not another retelling of the famous punch line.
 
-## The published account: eight pseudopatients, twelve hospitals
+## Nine reported, eight analyzed, twelve hospitals — and the excluded footnote
 
 On 19 January 1973, *Science* published Rosenhan's “On Being Sane in Insane Places,” volume 179, pages 250–258 ([record and abstract](https://pubmed.ncbi.nlm.nih.gov/4683124/)). Rosenhan described an exercise in which eight apparently healthy people presented at psychiatric hospitals, reported voices, were admitted, and subsequently ceased reporting the invented symptom. His published analysis argued that the hospital context could transform the meaning assigned to behavior.
 
@@ -18,7 +18,9 @@ To understand why it mattered, imagine a commonplace act: taking notes. In a lec
 
 But several questions have to remain separate. *Did hospital workers fail to discover the simulated admission symptom?* is not equivalent to *could psychiatric professionals reliably distinguish people with and without illness when given adequate truthful information?* A deception exercise can test one kind of vulnerability without settling every aspect of the broader diagnostic problem. Those distinctions were challenged within a few years, well before the archival investigation.
 
-The publication itself is the **source for what Rosenhan claimed**, not independent verification of the claimed fieldwork. Because the article is not fully reproduced here, exact episode-level details should be checked against licensed access to the original before public release.
+The original paper is **evidence for what Rosenhan claimed**, not independent verification of fieldwork. We inspected the university-hosted original *Science* scan at printed page 251 and printed page 258, note 6: https://www.sjsu.edu/people/jennifer.gregg/courses/c2/s0/Rosenhahn-being-sane-in-insane-places.pdf . Page 251 reports eight pseudopatients in the analyzed account and twelve hospitals. Note 6 explicitly states that a **ninth pseudopatient's data were excluded** because, Rosenhan wrote, the person had changed parts of his personal history, including marital and parental details. The footnote does not identify that person. This is a statement of the reported exclusion criterion, not independent substantiation for it.
+
+The numerical story consequently has three separate entries: nine reported as having participated overall, eight in the published analysis, and one omitted under the author's stated rule. Harry Lando's 1976 supplemental report supplies a distinctive later account of an undetected simulated admission and positive treatment experience, but Rosenhan's note 6 does not itself name Lando. Nor does it establish that favorable treatment caused someone's exclusion. The relationship between Lando and the excluded ninth requires careful attribution to later analyses rather than a documentary leap.
 
 ## The objection did not begin in 2019
 
@@ -44,9 +46,9 @@ A precise caveat: the accessible institutional abstract establishes what Lando r
 
 Cahalan's 2019 book, *The Great Pretender*, revisited the experiment through archives, witness searches, and interviews. Alison Abbott's *Nature* review, published on 29 October 2019, describes the troubling inconsistencies Cahalan uncovered ([review record](https://www.nature.com/articles/d41586-019-03268-y)). Andrew Scull's 2023 *History of Psychiatry* essay drew on Cahalan's findings and records she shared with him ([journal abstract](https://journals.sagepub.com/doi/abs/10.1177/0957154X221150878)).
 
-This distinction of access is crucial. Here, the primary 1973 paper's bibliographic record and abstract, Spitzer's 1976 abstract, Lando's institutional abstract, the *Nature* review record, and Scull's published abstract are directly available. Cahalan's entire archive of original medical documents is **not independently reproduced in this draft**. Claims about the exact contents of individual intake charts must therefore be attributed to Cahalan's reporting, not presented as an independent archival discovery by Final Vestige.
+This distinction of access is crucial. We directly inspected the **full 1973 article scan** at printed pages 251 and 258 (note 6), together with the available Spitzer 1976, Lando 1976 and Scull 2023 abstracts. We also inspected the **continuation of Alison Abbott's *Nature* review on printed page 623**, in a publisher-hosted PDF: https://media.nature.com/original/magazine-assets/d41586-019-03084-4/d41586-019-03084-4.pdf . Abbott describes Cahalan's search, her contact with Bill Underwood and discrepancies she reported between Rosenhan's study and surviving records. This is only a **partial secondary review**, not the entire *Nature* review, Cahalan's book, or authenticated charts. Cahalan's source files remain unexamined here, so chart-level allegations must be attributed and qualified.
 
-Cahalan's reporting raised doubts about the participant roster and the consistency between hospital records and the paper's account. She was able to trace far fewer pseudopatients than the eight described by Rosenhan. A record that cannot be located is not proof that its subject never existed; it does prevent full independent verification.
+Cahalan's reporting raised doubts about the participant roster and the consistency between hospital records and the paper's account. Abbott's review continuation reports that Cahalan eventually located one identifiable participant, Bill Underwood. The later shorthand about *six untraced* participants is a count attributed to investigative accounts, not a direct audit of six hospital charts performed here. A record that cannot be located is not proof that its subject never existed; it does prevent full independent verification.
 
 Scull's 2023 essay makes the stronger scholarly judgment that the evidence constitutes fraud. His accessible abstract explicitly characterizes it that way. We can report his assessment as a cited historical argument without silently treating the conclusion as a judicial finding or offering a false suggestion that the underlying patient charts have been audited in this project.
 
@@ -89,13 +91,15 @@ This is a documentary-source practice, not a psychological diagnostic exercise. 
 
 We have not independently examined Cahalan's underlying patient-chart reproductions or the complete subscription-access text of Scull's paper. We have not authenticated all original pseudopatient identities. We have not determined how modern diagnostic practice compares with the hospitals described in 1973; that would require an entirely different body of research. We have also not evaluated whether the Final Vestige documentary's individual archival scenes perfectly match the primary record—this manuscript is an independent companion with its own stated reading limits.
 
-That is not a weak ending. It is the actual end of the accessible paper trail.
+That is not a weak ending. It identifies the **limits of the sources examined for this draft**, not the end of the available paper trail. Earlier research in this project and the university-hosted original paper invite fuller editorial comparison before publication.
 
 A study about the danger of a label became a label in its own right: *the experiment that proved psychiatrists cannot tell*. The responsible conclusion is not to replace it with a more fashionable certainty. It is to keep the original question open, preserve the documented objections, and demand records that can survive scrutiny.
 
 ---
 
 ### Primary and secondary source ledger
+
+**Direct-source correction, 11 November 2026.** Rosenhan's 1973 paper (full university-hosted scan; printed pp. 251 and 258, note 6): https://www.sjsu.edu/people/jennifer.gregg/courses/c2/s0/Rosenhahn-being-sane-in-insane-places.pdf . Abbott's *Nature* book-review continuation (publisher PDF, printed p. 623 only): https://media.nature.com/original/magazine-assets/d41586-019-03084-4/d41586-019-03084-4.pdf . These copyrighted source materials are **linked, not reproduced**. They do not independently authenticate fieldwork, the excluded patient's identity, or private charts.
 
 1. David L. Rosenhan, “On Being Sane in Insane Places,” *Science* 179 (19 Jan 1973): 250–258. [PubMed original abstract/bibliography](https://pubmed.ncbi.nlm.nih.gov/4683124/). **Direct record/abstract inspected**, full article not used here.
 2. Robert L. Spitzer, “On Pseudoscience in Science…” *J. Abnormal Psychology* 84 (1975): 442–452. [PubMed bibliography](https://pubmed.ncbi.nlm.nih.gov/1194504/). **Bibliography only**, not full article.
