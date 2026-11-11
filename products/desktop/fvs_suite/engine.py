@@ -47,9 +47,11 @@ CENT = Decimal("0.01")
 _ASCII_DOCUMENT_BOUNDARY_WHITESPACE = " \t\r\n\v\f"
 
 
-def _import_cell_text(name: str, cell: str) -> str:
+def _import_cell_text(name: str, cell: str, *, preserve_spend_vendor_source: bool = False) -> str:
     text = str(cell or "")
-    if name in ("document_id", "related_document"):
+    if name in ("document_id", "related_document") or (preserve_spend_vendor_source and name == "vendor"):
+        # SpendMap must not erase Unicode source identity evidence before its
+        # vendor collision review. Other applications retain legacy imports.
         return text.strip(_ASCII_DOCUMENT_BOUNDARY_WHITESPACE)
     return text.strip()
 
@@ -181,7 +183,8 @@ def parse_date(value):
     return _parse_date_native(value)
 
 def table(path, required, optional=(), *, include_headers=False, include_digest=False,
-          id_column=None, amount_column=None, include_columns=False):
+          id_column=None, amount_column=None, include_columns=False,
+          preserve_spend_vendor_source=False):
     # Explicit LedgerDiff identity/amount mappings are opt-in; only the
     # LedgerDiff caller supplies them, preserving other engines' contracts.
     # Normalize exactly like imported CSV headers; reject unbounded, unsafe
@@ -200,6 +203,8 @@ def table(path, required, optional=(), *, include_headers=False, include_digest=
         override_amount = amount_column.strip().lower().replace(" ", "_")
         if re.fullmatch(r"[a-z_][a-z0-9_]{0,127}", override_amount) is None:
             raise ValueError("Invalid explicit ledger amount column")
+    if type(preserve_spend_vendor_source) is not bool:
+        raise ValueError("Invalid SpendMap vendor import policy")
     p = checked_csv_path(path)
     # Parse a verified single-descriptor snapshot: no source can change between
     # CSV header and row parsing, and symlinks/path swaps fail closed.
@@ -257,8 +262,10 @@ def table(path, required, optional=(), *, include_headers=False, include_digest=
                 if any("\x00" in cell for cell in values):
                     raise csv_input_error("nul_record", line=source_line)
                 row = dict(zip(fieldnames, values))
-                out.append({"row":str(source_line),**{name:_import_cell_text(name, row.get(col))
-                       for name,col in cols.items() if col}})
+                out.append({"row":str(source_line),**{
+                    name:_import_cell_text(name, row.get(col),
+                         preserve_spend_vendor_source=preserve_spend_vendor_source)
+                    for name,col in cols.items() if col}})
         except (csv.Error, UnicodeError):
             # Only errors from non-reader operations can reach this fallback.
             # Raise after leaving the handler to discard raw private context.
@@ -481,7 +488,7 @@ def spend_map(source,folder):
     """Expose exact bucket and vendor-month gross flows for human review."""
     from .spend_analysis import summarize_spend
     records, source_sha256=table(source,("vendor","amount","date"),("category",),
-                                include_digest=True)
+                                include_digest=True, preserve_spend_vendor_source=True)
     rows=summarize_spend(
         records, normalize_vendor=key, parse_date=parse_date,
         parse_money=money, format_money=dollars,
