@@ -177,4 +177,4 @@ for(const [name,mutate] of mutationCases){
  assert(rejected,'unsafe test mutation escaped: '+name);
  caught++;
 }
-console.log('PASS R295 baseline; 8 source files read (including full R284 A/B); 17/17 pinned source URLs; 28/28 claim decisions; 18/18 HARD_HOLD gates; '+caught+'/'+mutationCases.length+' unsafe mutations rejected.');
+console.log('PASS R295 baseline; 9 source files read (including full R284 A/B); 17/17 pinned source URLs; 28/28 claim decisions; 18/18 HARD_HOLD gates; '+caught+'/'+mutationCases.length+' unsafe mutations rejected.');
