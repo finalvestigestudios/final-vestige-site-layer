@@ -41,6 +41,17 @@ MAX_ROWS = 200_000
 # Bound user-provided exports before parsing (premium review reports use the same cap).
 MAX_IMPORT_BYTES = 64 * 1024 * 1024
 CENT = Decimal("0.01")
+# Original credit/return document labels retain Unicode boundary whitespace.
+# The lossy matching key may collapse them, but the human reviewer must still
+# see an explicit normalized-link review flag. Preserve legacy ASCII trimming.
+_ASCII_DOCUMENT_BOUNDARY_WHITESPACE = " \t\r\n\v\f"
+
+
+def _import_cell_text(name: str, cell: str) -> str:
+    text = str(cell or "")
+    if name in ("document_id", "related_document"):
+        return text.strip(_ASCII_DOCUMENT_BOUNDARY_WHITESPACE)
+    return text.strip()
 
 _AMOUNT_FORMAT = re.compile(
     r"(?P<prefix>(?:[+-]?\$|\$[+-]?|[+-]?))"
@@ -246,7 +257,7 @@ def table(path, required, optional=(), *, include_headers=False, include_digest=
                 if any("\x00" in cell for cell in values):
                     raise csv_input_error("nul_record", line=source_line)
                 row = dict(zip(fieldnames, values))
-                out.append({"row":str(source_line),**{name:str(row.get(col) or "").strip()
+                out.append({"row":str(source_line),**{name:_import_cell_text(name, row.get(col))
                        for name,col in cols.items() if col}})
         except (csv.Error, UnicodeError):
             # Only errors from non-reader operations can reach this fallback.
