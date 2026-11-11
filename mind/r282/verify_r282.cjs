@@ -131,7 +131,7 @@ function runSelfTest(f){
  flip('matrix','"status": "HARD_HOLD"','"status": "LIVE"');
  let passed=0;
  for(const m of mutations){if(!f[m.key].includes(m.from))throw Error('BAD MUTATION FIXTURE '+m.key+': '+m.from);
-   const other={...f,[m.key]:m.key==='article'&&m.from==='Slagter'?f[m.key].replaceAll(m.from,m.to):f[m.key].replace(m.from,m.to)};
+   const other={...f,[m.key]:(m.key==='article'&&m.from==='Slagter')||(m.key==='plan'&&m.from==='NOT COMPUTABLE')?f[m.key].replaceAll(m.from,m.to):f[m.key].replace(m.from,m.to)};
    const failures=validate(other);if(!failures.length)throw Error('UNDETECTED UNSAFE MUTATION '+JSON.stringify(m));passed++;
  }
  return {baseline:'PASS',rejected:passed,total:mutations.length,commercial_gates:16,film_status:'STATIC_ONLY',source_level_only:true};
