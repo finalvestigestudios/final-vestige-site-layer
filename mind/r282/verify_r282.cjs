@@ -47,7 +47,7 @@ function validateHTML(html,variant,errors){
   }
   for(const tag of (html.match(/<\s*(?:button|a|svg)\b[^>]*>/gi)||[])){
     let a=attrs(tag);
-    if(/<\s*button/i.test(tag)&&!('disabled'in a)&&/commercial-control/.test(tag))fault(errors,variant+': enabled commercial control');
+    if(/<\s*button/i.test(tag)&&!/\sdisabled(?:\s|>|\/)/i.test(tag)&&/commercial-control/.test(tag))fault(errors,variant+': enabled commercial control');
   }
   const commercial=html.match(/<section class="section" aria-labelledby="m282-commercial">([\s\S]*?)<\/section>/);
   if(!commercial||!/<button[^>]*disabled\b[^>]*aria-disabled="true"/.test(commercial[1])||!/If a purchasing link is approved and activated/.test(commercial[1])||!/may earn a commission/.test(commercial[1])||!/no active commission-earning link here/i.test(commercial[1]))fault(errors,variant+': missing adjacent disabled CTA disclosure');
