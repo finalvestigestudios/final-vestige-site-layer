@@ -57,6 +57,5 @@ with sync_playwright() as p:
     page.close()
     browser.close()
 receipt={'suite':'R276 source-matched Chromium print smoke','cases':cases,'screens_sha256':sha,'negative_R275_print_hidden':'REPRODUCED','axe':'NOT_EXECUTED','installed_WP':'NOT_TESTED','HTTP':'BLOCKED_BY_ADMINISTRATOR','field_CWV':'NOT_TESTED','release':'HARD_HOLD'}
-(OUT/'smoke_receipt.json').write_text(json.dumps(receipt,indent=2,sort_keys=True)+'
-')
+(OUT/'smoke_receipt.json').write_text(json.dumps(receipt,indent=2,sort_keys=True)+'\n')
 print('R276 committed smoke',len(cases),'PASS; sha256',hashlib.sha256((OUT/'smoke_receipt.json').read_bytes()).hexdigest())
