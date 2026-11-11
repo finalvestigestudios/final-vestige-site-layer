@@ -1,0 +1,151 @@
+{
+  "id": "dispatch-r287-six-original-mail-specimens",
+  "generated_for": "non-sending editorial QA only",
+  "created_utc": "2026-11-11T19:30:10Z",
+  "original_pr": 175,
+  "original_pr_head": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "source_inherited_head": "932d6b1578e14455a7ffbe576a2f8c76154ac4fb",
+  "manifest_blob_sha": "86df98ad8a84e583ff5df64ddbf8c0eaa1335b00",
+  "original_python_test_blob_sha": "fd7f05e30092a7ec82090993dc5d7d0e23755c8e",
+  "mix": {
+    "editorial": 4,
+    "commercial_reserved": 2
+  },
+  "wordpress_readonly": {
+    "as_of_utc": "2026-11-11T19:30:10Z",
+    "newsletter_enabled": true,
+    "new_post_auto_send": false,
+    "email_content_format": "full",
+    "welcome_configured": true,
+    "subscribers_total_diagnostic": 3,
+    "subscribers_confirmed_counter": 3,
+    "unconfirmed_requests": 2,
+    "wpcom_followers": 3,
+    "email_followers": 0,
+    "email_eligible_audience": null,
+    "send_status_five_latest": "never_sent_opted_out",
+    "received_welcome_verified": false,
+    "received_jetpack_footer_verified": false
+  },
+  "partner_acceptance": false,
+  "email_channel_permission": false,
+  "affiliate_earning_url_verified": false,
+  "postal_address_verified": false,
+  "unsubscribe_received_verified": false,
+  "offer_guide_urls_verified_live": false,
+  "founder_final_approval": false,
+  "paid_orders_verified": null,
+  "realized_net_revenue": null,
+  "net_revenue_per_1000_qualified_humans": null,
+  "issues": [
+    {
+      "number": 1,
+      "kind": "editorial",
+      "source_sha": "039b452b5cb7cd6dc2fed6fac4d2dd77fa9d49c8",
+      "subject": "The mind is not a camera",
+      "preheader": "What an old record can teach us about the difference between seeing and knowing.",
+      "primary_cta": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "cta_status": "PUBLIC_FIRST_PARTY_REQUIRES_FINAL_REVIEW",
+      "html": "dispatch/r287/issue-01.html",
+      "plaintext": "dispatch/r287/issue-01.txt",
+      "source_links": [
+        "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+        "https://pubmed.ncbi.nlm.nih.gov/10694957/"
+      ],
+      "editorial_hold": "COPY_REVIEW_PENDING",
+      "merchant_email_permitted": false,
+      "release_status": "HOLD_UNSENT"
+    },
+    {
+      "number": 2,
+      "kind": "editorial",
+      "source_sha": "faa207ab7deafd86460d36f8c17fe62d392d0e14",
+      "subject": "Before hypnosis had a name",
+      "preheader": "The eighteenth-century witnesses who left behind a problem of proof.",
+      "primary_cta": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "cta_status": "PUBLIC_FIRST_PARTY_REQUIRES_FINAL_REVIEW",
+      "html": "dispatch/r287/issue-02.html",
+      "plaintext": "dispatch/r287/issue-02.txt",
+      "source_links": [
+        "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+        "https://finalvestige.com/editorial-standards/"
+      ],
+      "editorial_hold": "COPY_REVIEW_PENDING",
+      "merchant_email_permitted": false,
+      "release_status": "HOLD_UNSENT"
+    },
+    {
+      "number": 3,
+      "kind": "commercial-review-pending",
+      "source_sha": "aeeef34efea0cc281f69901488e4501fea851245",
+      "subject": "The twelve-minute meditation question",
+      "preheader": "An honest way to evaluate a short audio practice before you spend anything.",
+      "primary_cta": "[[APPROVED_ZEN12_WARMUP_GUIDE_URL_REQUIRED]]",
+      "cta_status": "DISABLED_MERCHANT_GUIDE_PENDING",
+      "html": "dispatch/r287/issue-03.html",
+      "plaintext": "dispatch/r287/issue-03.txt",
+      "source_links": [
+        "https://zen12.com/about",
+        "https://zen12.com/secret/",
+        "https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety"
+      ],
+      "editorial_hold": "COPY_REVIEW_PENDING",
+      "merchant_email_permitted": false,
+      "release_status": "HOLD_UNSENT"
+    },
+    {
+      "number": 4,
+      "kind": "editorial",
+      "source_sha": "89635bfb9c8d1ff17297a59b6b5b5b2a176934ca",
+      "subject": "Fourteen seconds. A much longer explanation.",
+      "preheader": "Apollo 1, the surviving record, and why a tidy cause can mislead.",
+      "primary_cta": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/",
+      "cta_status": "PUBLIC_FIRST_PARTY_REQUIRES_FINAL_REVIEW",
+      "html": "dispatch/r287/issue-04.html",
+      "plaintext": "dispatch/r287/issue-04.txt",
+      "source_links": [
+        "https://www.nasa.gov/wp-content/uploads/static/history/Apollo204/seamans.html",
+        "https://www.nasa.gov/history/Apollo204/seamans3.html"
+      ],
+      "editorial_hold": "EXPLAIN_14_SECONDS_DETECTION_TO_RUPTURE_OR_CHANGE_SUBJECT",
+      "merchant_email_permitted": false,
+      "release_status": "HOLD_UNSENT"
+    },
+    {
+      "number": 5,
+      "kind": "commercial-review-pending",
+      "source_sha": "a9dfaa450ba025a7b5113ade8a294d6dbad778dc",
+      "subject": "Before you press play on a hypnosis audio",
+      "preheader": "Three questions that matter more than an impressive promise.",
+      "primary_cta": "[[APPROVED_HYPNOSIS_LIVE_WARMUP_GUIDE_URL_REQUIRED]]",
+      "cta_status": "DISABLED_MERCHANT_GUIDE_PENDING",
+      "html": "dispatch/r287/issue-05.html",
+      "plaintext": "dispatch/r287/issue-05.txt",
+      "source_links": [
+        "https://hypnosislive.com/mental-skills/total-focus",
+        "https://www.nccih.nih.gov/health/hypnosis"
+      ],
+      "editorial_hold": "COPY_REVIEW_PENDING",
+      "merchant_email_permitted": false,
+      "release_status": "HOLD_UNSENT"
+    },
+    {
+      "number": 6,
+      "kind": "editorial",
+      "source_sha": "004d558df6376d2ad6f4f79a4581e8d2c444e355",
+      "subject": "What did seven days of attention reveal?",
+      "preheader": "A small experiment, a useful notebook, and no miracle claims.",
+      "primary_cta": "https://finalvestige.com/focus/",
+      "cta_status": "PUBLIC_FIRST_PARTY_REQUIRES_FINAL_REVIEW",
+      "html": "dispatch/r287/issue-06.html",
+      "plaintext": "dispatch/r287/issue-06.txt",
+      "source_links": [
+        "https://www.psychologicalscience.org/journals/psychological-science/j.1467-9280.1997.tb00427.x/",
+        "https://pubmed.ncbi.nlm.nih.gov/10694957/"
+      ],
+      "editorial_hold": "REPEATS_WELCOME_FIELDBOOK",
+      "merchant_email_permitted": false,
+      "release_status": "HOLD_UNSENT"
+    }
+  ]
+}
