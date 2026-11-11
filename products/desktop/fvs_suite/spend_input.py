@@ -14,6 +14,7 @@ from typing import Callable, Iterator, Mapping
 
 from .spend_callback_context_r355 import invoke_spend_callback
 from .spend_source_custody_r356 import canonical_spend_source_cents, spend_parser_preserves_source
+from .spend_date_custody_r359 import canonical_spend_source_date, spend_date_parser_preserves_source
 
 MAX_SPEND_ROWS = 200_000  # Mirrors the bounded shared financial CSV reader.
 _PHYSICAL_ROW = re.compile(r"[1-9][0-9]{0,9}\Z", re.ASCII)
@@ -64,6 +65,7 @@ def validated_spend_rows(
     # malformed row must not cause partial report evidence or callback effects.
     seen_rows: set[str] = set()
     canonical_source_amounts: list[Decimal] = []
+    canonical_source_dates: list[date] = []
     for record in frozen_records:
         physical_row = record.get("row")
         if (type(physical_row) is not str
@@ -91,6 +93,12 @@ def validated_spend_rows(
             canonical_source_amounts.append(canonical_spend_source_cents(record["amount"]))
         except ValueError:
             raise ValueError(f"Invalid original spend amount at physical row {physical_row}") from None
+        # Verify original calendar facts before any external callback can
+        # substitute a plausible but false month in the spend report.
+        try:
+            canonical_source_dates.append(canonical_spend_source_date(record["date"]))
+        except ValueError:
+            raise ValueError(f"Invalid original spend date at physical row {physical_row}") from None
 
     # Precompute every semantic result *before* yielding the first one.
     # Previously the first valid row escaped to a direct iterator consumer
@@ -100,7 +108,8 @@ def validated_spend_rows(
     # Callback side effects cannot be rolled back: callbacks must be trusted
     # and source authenticity remains a separate descriptor-verified concern.
     prepared_rows: list[tuple[Mapping[str, str], str, str, str, Decimal]] = []
-    for record, canonical_source_amount in zip(frozen_records, canonical_source_amounts):
+    for record, canonical_source_amount, canonical_source_day in zip(
+            frozen_records, canonical_source_amounts, canonical_source_dates):
         physical_row = record["row"]
         category = record.get("category", "")
         try:
@@ -121,6 +130,8 @@ def validated_spend_rows(
             raise ValueError(f"Invalid spend date at physical row {physical_row}") from None
         if type(calendar_day) is not date:
             raise ValueError(f"Spend date must be a calendar date at physical row {physical_row}")
+        if not spend_date_parser_preserves_source(canonical_source_day, calendar_day):
+            raise ValueError(f"Spend parser changed original date at physical row {physical_row}")
 
         try:
             amount = invoke_spend_callback(parse_money, record["amount"])
