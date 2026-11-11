@@ -31,8 +31,9 @@ def manifest_and_tree(root):
         add(f'content/tools/{slug}.body.html', 'tool_body', f'<h2>Unapproved tool {i}</h2>')
         add(f'content/tools/{slug}.meta.json', 'tool_meta', json.dumps({'slug': slug, 'status': {'publish': 'draft'}}))
     add('content/hubs/start-here.body.html', 'hub_body', '<p>Unapproved hub</p>')
-    for i in range(8):
-        add(f'sources/fragments/source-{i}.json', 'source_origin', '{}')
+    for name in ('start', 'shelter', 'food', 'health', 'hist-field', 'hist-food', 'hist-home'):
+        add(f'sources/fragments/{name}.json', 'source_origin', '{}')
+    add('sources/register.json', 'source_origin', '{}')
     add('sources/crosswalk.json', 'crosswalk', '{}')
     add('audits/r273_shared_source_review_docket_UNAPPROVED.json', 'docket', '{}')
     add('tools/r220_full_slate_draft_custody.py', 'export_gate', 'print("draft")')
@@ -155,18 +156,18 @@ TREE_CASES = {
     'tool_meta_edit': lambda root,m: (root/'content/tools/tool-01.meta.json').write_text('{"status":{"publish":"publish"}}'),
     'crosswalk_edit': lambda root,m: (root/'sources/crosswalk.json').write_text('{"approved":true}'),
     'docket_edit': lambda root,m: (root/'audits/r273_shared_source_review_docket_UNAPPROVED.json').write_text('{"approved":true}'),
-    'origin_edit': lambda root,m: (root/'sources/fragments/source-2.json').write_text('{"modified":true}'),
+    'origin_edit': lambda root,m: (root/'sources/fragments/food.json').write_text('{"modified":true}'),
     'hub_edit': lambda root,m: (root/'content/hubs/start-here.body.html').write_text('<p>changed</p>'),
     'exporter_edit': lambda root,m: (root/'tools/r220_full_slate_draft_custody.py').write_text('print("release")'),
     'source_gate_edit': lambda root,m: (root/'tools/r272_crosswalk_snapshot_hold.py').write_text('print("release")'),
     'docket_gate_edit': lambda root,m: (root/'tools/r273_source_review_docket_hold.py').write_text('print("release")'),
     'missing_article': lambda root,m: (root/'content/articles/article-01.body.html').unlink(),
-    'missing_source': lambda root,m: (root/'sources/fragments/source-0.json').unlink(),
+    'missing_source': lambda root,m: (root/'sources/fragments/start.json').unlink(),
     'unexpected_article': lambda root,m: (root/'content/articles/extra.body.html').write_text('<h2>extra</h2>'),
     'unexpected_tool': lambda root,m: (root/'content/tools/extra.meta.json').write_text('{}'),
     'article_symlink': lambda root,m: ((root/'content/articles/article-01.body.html').unlink(), (root/'content/articles/article-01.body.html').symlink_to(root/'content/articles/article-02.body.html')),
     'tool_symlink': lambda root,m: ((root/'content/tools/tool-01.body.html').unlink(), (root/'content/tools/tool-01.body.html').symlink_to(root/'content/tools/tool-02.body.html')),
-    'source_symlink': lambda root,m: ((root/'sources/fragments/source-0.json').unlink(), (root/'sources/fragments/source-0.json').symlink_to(root/'sources/fragments/source-1.json')),
+    'source_symlink': lambda root,m: ((root/'sources/fragments/start.json').unlink(), (root/'sources/fragments/start.json').symlink_to(root/'sources/fragments/shelter.json')),
 }
 
 
