@@ -26,7 +26,10 @@ const FV_R287_STAGING_EVENTS_SHA256 = '2a473986ed2e9c8ca98d19fb5ce0d32fea62d060d
 // permission to declare that either record is independently corroborated.
 const FV_R288_BOARD_NARRATIVE = 'https://www.nasa.gov/history/Apollo204/narr.html';
 const FV_R288_NASA_SAFETY = 'https://sma.nasa.gov/sma-disciplines/accllp/apollo-1';
-const FV_R288_RECONCILIATION_SHA256 = '4adc693afaf6f33a6bdef1965b0dd315783ff310f7afc87a79de773a3d1d8e41';
+// R295: NASA's archived Board memorandum is a related primary source. Its webpage
+// title names January 27, but the transcribed memorandum body has no visible date.
+const FV_R295_NASA_MEMORANDUM = 'https://www.nasa.gov/history/Apollo204/15.html';
+const FV_R288_RECONCILIATION_SHA256 = 'a7ccd1ead52d5b036540e083dcaa2dd6774f43a6f88c90a6c7492914c69121a7';
 
 function fv_r288_source_reconciliation(): array {
     return [
@@ -38,11 +41,15 @@ function fv_r288_source_reconciliation(): array {
          'statement'=>'NASA\'s later safety summary dates the Deputy Administrator\'s establishment of the Board to January 28, 1967.',
          'boundary'=>'A later institutional summary, not independent evidence that supersedes the 1967 Board narrative.',
          'url'=>FV_R288_NASA_SAFETY],
+        ['authority'=>'NASA archive: memorandum for the Apollo 204 Review Board',
+         'statement'=>'NASA\'s archival page is titled Memorandum - January 27, 1967, and transcribes instructions to establish and appoint the Review Board.',
+         'boundary'=>'The transcribed memorandum body does not display a separate signed date. The archival title is not independent confirmation of when oral instructions were issued or when the Board first convened.',
+         'url'=>FV_R295_NASA_MEMORANDUM],
     ];
 }
 function fv_r288_reconciliation_valid(array $items): bool {
-    if (count($items) !== 2 || array_keys($items) !== [0,1]) { return false; }
-    if (($items[0]['url'] ?? null) !== FV_R288_BOARD_NARRATIVE || ($items[1]['url'] ?? null) !== FV_R288_NASA_SAFETY) { return false; }
+    if (count($items) !== 3 || array_keys($items) !== [0,1,2]) { return false; }
+    if (($items[0]['url'] ?? null) !== FV_R288_BOARD_NARRATIVE || ($items[1]['url'] ?? null) !== FV_R288_NASA_SAFETY || ($items[2]['url'] ?? null) !== FV_R295_NASA_MEMORANDUM) { return false; }
     foreach ($items as $item) {
         if (array_keys($item) !== ['authority','statement','boundary','url']) { return false; }
         foreach (['authority','statement','boundary'] as $key) {
