@@ -16,7 +16,7 @@ RELS=['experience2/apollo-r281/apollo-source-experience.php',
       'experience2/apollo-r292/build_archive.py']
 files={p:(ROOT/p).read_bytes() for p in RELS}
 for p in sorted(QA.iterdir()):
-    if p.is_file() and p.suffix.lower() in ('.json','.png','.pdf'):
+    if p.is_file() and p.suffix.lower() in ('.json','.png','.pdf','.py'):
         files['QA/'+p.name]=p.read_bytes()
 manifest={'release':'R292 STAGING HARD HOLD',
           'scope':'Local source-controlled PHP/Playwright and independent offline browser QA only; NOT installed WordPress, genuine axe, HTTP/CSP, field CWV, commerce or editorial approval.',
