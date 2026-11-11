@@ -30,7 +30,7 @@ function validate(f){
  assert(Array.isArray(j.gates)&&j.gates.length===18&&j.gates.every((g,i)=>g.id==="G"+String(i+1).padStart(2,"0")&&g.status==="HARD_HOLD"&&g.proof===null),"GATE_HOLD");
  assert(j.creator_topic_fit.length===3 && j.creator_topic_fit[1].asset_id===null && j.creator_topic_fit[2].asset_id===null,"CREATOR_IDS");
  assert(a.split(/\s+/).length>1950 && a.startsWith("# The Gorilla in the Scan:") && a.includes("20 of 24") && a.includes("12 looked directly") && a.includes("55 percent") && a.includes("12 percent") && a.includes("88 percent"),"ARTICLE_EVIDENCE");
- assert(a.includes("https://pmc.ncbi.nlm.nih.gov/articles/PMC3964612/") && a.includes("full text restricted") && a.includes("not a clinical diagnostic error rate"),"ARTICLE_READING_SCOPE");
+ assert(a.includes("https://pmc.ncbi.nlm.nih.gov/articles/PMC3964612/") && a.includes("full text restricted") && a.includes("not a universal risk percentage"),"ARTICLE_READING_SCOPE");
  assert(/<html lang="en">/.test(h) && /<main id="main">/.test(h) && /class="skip" href="#main"/.test(h),"ACCESSIBILITY_NAV");
  assert(/@media\(max-width:650px\)/.test(h) && /prefers-reduced-motion:reduce/.test(h),"RESPONSIVE_MOTION");
  assert(/<button type="button" disabled aria-describedby="commission-disclosure authorization-status">/.test(h),"CTA_DISABLED");
