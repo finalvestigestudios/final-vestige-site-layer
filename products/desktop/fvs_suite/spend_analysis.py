@@ -13,7 +13,7 @@ from functools import wraps
 import re
 from typing import Callable, Mapping
 
-from .review import ascii_case_identity, labels_for_report, normalized_collision, raw_values
+from .spend_vendor_evidence_r358 import spend_vendor_evidence
 from .spend_median import RunningDecimalMedian
 from .spend_input import validated_spend_rows
 from .spend_callback_context_r355 import invoke_spend_callback
@@ -139,11 +139,10 @@ def summarize_spend(
             _vendor_month_line_digest(source_sha256, vendor, month, ordered),
         )
 
-    collision = {vendor: normalized_collision(rows, "vendor")
-                 for vendor, rows in vendor_rows.items()}
-    variant_counts = {
-        vendor: len({ascii_case_identity(name) for name in raw_values(rows, "vendor")})
-        for vendor, rows in vendor_rows.items()
+    # Keep Unicode boundary whitespace in ORIGINAL labels. The matching key
+    # intentionally loses it, so the human must see every normalized collision.
+    vendor_source_evidence = {
+        vendor: spend_vendor_evidence(rows) for vendor, rows in vendor_rows.items()
     }
     history: dict[tuple[str, str], tuple[int, Decimal | None, bool]] = {}
     for vendor, months in monthly.items():
@@ -177,7 +176,7 @@ def summarize_spend(
         flags = []
         if spike:
             flags.append("review_spike")
-        if collision[vendor]:
+        if vendor_source_evidence[vendor][0]:
             flags.append("normalized_vendor_collision_review")
         report.append({
             "vendor_key": vendor,
@@ -209,8 +208,8 @@ def summarize_spend(
                 "" if category_baseline is None else format(category_baseline, "f")),
             "category_review_flag": "review_category_spike" if category_spike else "",
             "source_rows": ";".join(row["row"] for row in rows),
-            "source_vendor_labels": labels_for_report(rows, "vendor"),
-            "vendor_label_variants": str(variant_counts[vendor]),
+            "source_vendor_labels": vendor_source_evidence[vendor][2],
+            "vendor_label_variants": str(vendor_source_evidence[vendor][1]),
             "source_sha256": source_sha256,
         })
     return report
