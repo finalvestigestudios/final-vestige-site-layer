@@ -1,0 +1,108 @@
+{
+  "as_of_utc": "2026-11-11T07:41:01Z",
+  "release": "ALL_SIX_HOLD_UNSENT",
+  "alternatives": "NOT_ADOPTED",
+  "source_original_pr_175": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "stacked_base": "ac536262b84539f87f8043eab03ab2e3a75f64e1",
+  "original_6": [
+    {
+      "id": 1,
+      "kind": "editorial",
+      "destination": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+    },
+    {
+      "id": 2,
+      "kind": "editorial",
+      "destination": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+    },
+    {
+      "id": 3,
+      "kind": "commercial-review-pending",
+      "destination": null
+    },
+    {
+      "id": 4,
+      "kind": "editorial",
+      "destination": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/"
+    },
+    {
+      "id": 5,
+      "kind": "commercial-review-pending",
+      "destination": null
+    },
+    {
+      "id": 6,
+      "kind": "editorial",
+      "destination": "https://finalvestige.com/focus/"
+    }
+  ],
+  "optional_alternatives": [
+    {
+      "id": 1,
+      "title": "The person who changed mid-conversation",
+      "published_wp_id": 1922,
+      "published_wp_status": "publish",
+      "destination": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "primary_source": "https://doi.org/10.3758/BF03208840",
+      "signed_out_browser_verified": false,
+      "founder_adopted": false
+    },
+    {
+      "id": 6,
+      "title": "What if the evidence changes tomorrow?",
+      "published_wp_id": 2209,
+      "published_wp_status": "publish",
+      "destination": "https://finalvestige.com/free-resources/the-page-that-changed/",
+      "primary_source": "https://finalvestige.com/free-resources/the-page-that-changed/",
+      "signed_out_browser_verified": false,
+      "founder_adopted": false
+    }
+  ],
+  "live_newsletter": {
+    "enabled": true,
+    "auto_new_post_email": false,
+    "format": "full",
+    "welcome_fieldbook_configured": true,
+    "diagnostics": {
+      "total": 3,
+      "confirmed": 3,
+      "unconfirmed": 2,
+      "are_additive": false
+    },
+    "wpcom_followers": 3,
+    "email_followers": 0,
+    "actual_email_eligible": null,
+    "received_welcome_verified": false,
+    "final_vestige_valid_postal_verified": false,
+    "real_received_unsubscribe_verified": false
+  },
+  "commercial": {
+    "issue03": {
+      "seller_product": "Zen12 12 levels, 48 MP3s",
+      "public_order": "https://zen12.com/getstarted",
+      "seller_sample": "https://zen12.com/welcome",
+      "sample_is_separate_seller_newsletter": true,
+      "price_verified_for_fv": false,
+      "affiliate_email_permission": false,
+      "earning_link": null,
+      "live_approved_guide": false
+    },
+    "issue05": {
+      "seller_product": "Hypnosis Live Total Focus 33 min / 47MB",
+      "product": "https://hypnosislive.com/mental-skills/total-focus",
+      "terms": "https://hypnosislive.com/faq",
+      "refund_qualification": "14-day request, max five sessions per year (seller FAQ)",
+      "affiliate_email_permission": false,
+      "earning_link": null,
+      "live_approved_guide": false
+    }
+  },
+  "attribution_convention_not_live": {
+    "utm_source": "dispatch",
+    "utm_medium": "email",
+    "utm_campaign": "dispatch_mind_2026_pilot",
+    "utm_content": "issueNN"
+  },
+  "verified_paid_orders": null,
+  "verified_net_revenue_per_1000_qualified_humans": null
+}
