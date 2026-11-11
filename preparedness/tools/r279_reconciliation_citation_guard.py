@@ -224,8 +224,10 @@ def check_original_fragment(repo: Path, integrated_ref: str):
             git_blob(b) == HIST_FOOD_INTEGRATED_SOURCE_BLOB,
             "NCHFP source fragment provenance differs from original evidence")
     old, new = strict_json(a)["sources"], strict_json(b)["sources"]
-    original = next(x for x in old if x["id"] == "nchfp-jerky")
-    updated = next(x for x in new if x["id"] == "hist-food-nchfp-jerky")
+    original = next((x for x in old if x.get("id") == "nchfp-jerky"), None)
+    updated = next((x for x in new if x.get("id") == "hist-food-nchfp-jerky"), None)
+    require(isinstance(original, dict) and isinstance(updated, dict),
+            "source record missing from frozen source fragment")
     require(original["title"] == updated["title"] and
             original["supports"] == updated["supports"] and
             original["url"].rstrip("/") == updated["url"].rstrip("/"),
@@ -264,7 +266,7 @@ def audit(root: Path, repo: Path | None = None):
         result["historical_r277_zero_loss_claim_corrected"] = True
         result["independent_equivalence_approved"] = False
         result["git_blobs_rechecked"] = 30
-    except (OSError, TypeError, ValueError, KeyError, AttributeError, UnicodeError) as exc:
+    except (OSError, TypeError, ValueError, KeyError, AttributeError, UnicodeError, subprocess.TimeoutExpired) as exc:
         result["errors"].append(str(exc))
     return result
 
