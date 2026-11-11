@@ -99,3 +99,13 @@
 .fv-r281 .fv-r292__source-route a{display:inline-flex;align-items:center;min-height:44px;padding:.4rem .7rem;border:1px solid var(--line);text-decoration:underline}
 @media(forced-colors:active){.fv-r281 .fv-r292__source-route a{border-color:CanvasText}}
 @media print{.fv-r281 .fv-r292__source-route{display:none!important}}
+
+/* R293 print pagination: retain source custody on the first sheet instead of
+   forcing the first full plate onto a new sheet and leaving a large blank gap.
+   This affects print only; on-screen cards, citations and links are unchanged. */
+@media print{
+  .fv-r281__plate{break-inside:auto!important}
+  .fv-r281__rail{margin:.7rem 0!important;padding:.3rem 0!important}
+  .fv-r281 h2{font-size:2rem!important;margin:.2rem 0 .5rem!important}
+  .fv-r281__plate article{height:auto!important}
+}

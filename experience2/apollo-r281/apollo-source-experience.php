@@ -285,7 +285,11 @@ function fv_r281_render($attributes = []): string {
     $s.='<footer class="fv-r281__next"><p>Continue with the investigation, including the original evidence and its uncertainties.</p><p><a href="'.FV_R281_FREE.'">Read the free Apollo 1 investigation</a></p></footer></section>';
     // Body-placed stylesheet is a progressive fallback where an unknown dynamic
     // shortcode executes after wp_head. Never inject JS or remote analytics.
-    if (!$linked && (!function_exists('wp_style_is') || !wp_style_is(FV_R281_STYLE, 'done'))) {
+    // R293: never emit a second stylesheet link when WordPress has already queued
+    // the Apollo stylesheet but has not yet printed it. Keep the body fallback
+    // only for genuinely unqueued dynamic shortcodes (including no-JS).
+    if (!$linked && (!function_exists('wp_style_is') ||
+        (!wp_style_is(FV_R281_STYLE, 'done') && !wp_style_is(FV_R281_STYLE, 'enqueued')))) {
         $linked=true;
         return '<link rel="stylesheet" href="'.fv_r281_escape(fv_r281_stylesheet_url()).'">'.$s;
     }
