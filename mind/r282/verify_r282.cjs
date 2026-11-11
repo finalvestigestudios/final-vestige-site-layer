@@ -9,7 +9,7 @@ function read(f){return fs.readFileSync(path.join(dir,f),"utf8")}
 const originals={
  A:read("ZEN12-WHITE-BEAR-BUYER-A-UNPUBLISHED.html"),
  B:read("ZEN12-WHITE-BEAR-BUYER-B-UNPUBLISHED.html"),
- article:read("THE-WHITE-BEAR-YOU-COULD-NOT-PUT-AWAY-UNPUBLISHED.md"),
+ article:read("THE-SECOND-WORD-THAT-NEVER-ARRIVED-REPETITION-BLINDNESS-UNPUBLISHED.md"),
  matrix:JSON.parse(read("WHITE-BEAR-PRODUCT-CLAIM-COMMERCE-GATES.json"))
 };
 const gateIDs=[
@@ -55,7 +55,7 @@ function verify(bundle){
  if(m.creator_topic_fit?.length!==3||m.creator_topic_fit.some(x=>x.private_grok_asset_id!==null))bad("Invented Grok asset");
  if(m.claims.find(c=>c.id==="CB09")?.classification!=="UNSUBSTANTIATED_PRODUCT_SPECIFIC")bad("Zen12 equivalence magically proven");
  if(m.claims.find(c=>c.id==="CB17")?.classification!=="SELLER_RECRUITMENT")bad("Generic public payout treated as commission proof");
- if(!article.includes("Wegner")||!article.includes("white bear")||!article.includes("Puységur")||!article.includes("not a clinical")&&!article.includes("not a clinically"))bad("Investigation markers");
+ if(!article.includes("Kanwisher")||!article.includes("repetition blindness")||!article.includes("Puységur")||!article.includes("clinical"))bad("Investigation markers");
  if(article.trim().split(/\s+/).length<2000)bad("Thin investigation");
  if(/(?:I (?:have|personally) (?:used|tested)|guaranteed (?:clinical|health)|proven to cure)/i.test(article))bad("Invented testimony or medical guarantee");
  const primary= s=>s.match(/<main id="main">([\s\S]*?)<\/main>/i)?.[1];
