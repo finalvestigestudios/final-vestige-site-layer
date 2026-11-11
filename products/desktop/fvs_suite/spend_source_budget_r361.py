@@ -11,10 +11,15 @@ from __future__ import annotations
 MAX_SPEND_SOURCE_COLUMNS = 64
 MAX_SPEND_SOURCE_CELL_CHARS = 1_048_576
 MAX_SPEND_SOURCE_TEXT_BYTES = 64 * 1024 * 1024
+# A UTF-8 byte budget alone does not bound Python's per-field dictionary and
+# evidence bookkeeping overhead: millions of tiny/empty fields may fit under
+# 64 MiB yet require hundreds of MiB of container allocations. With the
+# 200k-row cap this allows an average of 10 source columns per row.
+MAX_SPEND_SOURCE_TOTAL_FIELDS = 2_000_000
 
 
 class SpendSourceBudget:
-    """One-report UTF-8 source text budget for native detached row dictionaries.
+    """One-report source-text AND field-count budget for detached native rows.
 
     The total counts every retained key/value and a two-byte-per-field framing
     allowance. It is NOT the original CSV byte length (which includes quoting,
@@ -24,10 +29,17 @@ class SpendSourceBudget:
 
     def __init__(self) -> None:
         self._used = 0
+        self._fields = 0
 
     def attest(self, record: dict[str, str]) -> None:
         if type(record) is not dict or dict.__len__(record) > MAX_SPEND_SOURCE_COLUMNS:
             raise ValueError("Spend source column limit exceeded; no report was saved")
+        count = dict.__len__(record)
+        # Check BEFORE text encoding, copying into result sets or running any
+        # external callback. Subtraction avoids oversized intermediate totals;
+        # both counters are report-scoped and only advance on success.
+        if count > MAX_SPEND_SOURCE_TOTAL_FIELDS - self._fields:
+            raise ValueError("Spend source field-count limit exceeded; no report was saved")
         consumed = 0
         for field, value in dict.items(record):
             if type(field) is not str or type(value) is not str:
@@ -49,3 +61,4 @@ class SpendSourceBudget:
             if consumed > MAX_SPEND_SOURCE_TEXT_BYTES - self._used:
                 raise ValueError("Spend source text byte limit exceeded; no report was saved")
         self._used += consumed
+        self._fields += count
