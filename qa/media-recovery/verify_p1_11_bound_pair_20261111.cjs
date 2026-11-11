@@ -97,7 +97,7 @@ const PINS=Object.freeze([
     "src": "https://finalvestige.com/wp-content/uploads/2026/08/edit-017-v02-nypl-5003296-original.jpg",
     "stored_bytes": 5553669
   }
-]);
+].map(row=>Object.freeze(row)));
 const P0_FIRST=true;
 function hold(reason,slot=null){
  return {status:'HOLD',reason,detail:slot,
