@@ -136,10 +136,10 @@ const attempts=[
  ['b',s=>s.replace('prefers-reduced-motion','prefers-constant-motion')],
  ['matrix',s=>s.replace('"commercial_gates": [','"commercial_gates": [] , "deleted_gates": [')]
 ];
-for(const [target,mutate] of attempts){
+let mutationIndex=-1; for(const [target,mutate] of attempts){ mutationIndex++;
  const altered=mutate(fixture[target]);
  assert.notEqual(altered,fixture[target],'mutation fixture must actually change source: '+target);
  try{assertAll({...fixture,[target]:altered});}catch(e){rejected++;continue;}
- throw new Error('Unsafe mutation slipped past validator: '+target+' '+altered.slice(0,80));
+ throw new Error('Unsafe mutation #'+mutationIndex+' slipped past validator: '+target+' '+altered.slice(0,80));
 }
 console.log('R284 BASELINE PASS; '+rejected+'/'+attempts.length+' unsafe mutations rejected; 16/16 gates HARD HOLD; A/B buyer copy parity PASS; commercial links inactive. SOURCE ONLY; real-browser/merchant/CI untested.');
