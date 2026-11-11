@@ -4,23 +4,23 @@
 
 ## Reproduced source-integrity gap
 
-The R347 `checked_quantity` accepted textual and native Decimal **negative zero quantities** (for example `-0`, `-.0`, `Decimal("-0")`) because `Decimal("-0") < 0` is false. The suite's standard CSV `engine.qty` regex rejects negative sign quantities. An injected callback could also flip `+0` ↔ `-0` while preserving numeric equality, including accounting negative-zero unit prices `($0.00)`. The monetary totals did not change, but the direct API disagreed with CSV quantity grammar, and parser-produced sign evidence was silently discarded.
+The R347 `checked_quantity` accepted textual and native Decimal **negative zero quantities** (for example `-0`, `-.0`, `Decimal("-0")`) because `Decimal("-0") < 0` is false. The suite's standard CSV `engine.qty` regex rejects negative sign quantities. An injected callback could also flip `+0` ↔ `-0` while preserving numeric equality, including accounting negative-zero unit prices `($0.00)`. The monetary totals did not change, but the direct API disagreed with CSV quantity grammar, and parser-produced sign evidence was silently discarded. A second gap was that the real review engine used `price < 0` for PO, invoice and credit flags, so a genuinely signed negative-zero accounting price never triggered `negative_unit_price_review` or `negative_credit_price_review`.
 
-**R348 source patch:** The existing source preflight rejects *any signed* quantity (including negative zero) before calling supplied parsers. Callback validation rejects signed quantities and requires **zero-sign parity** between independent source interpretation and returned native Decimal. Ordinary nonzero equality, eight-place Decimal precision, source bounds, accounting negative-zero prices, strict native types, and redacted errors remain. Negative unit prices remain reviewable: **no automated payment or compliance approval**.
+**R348 source patch:** The existing source preflight rejects *any signed* quantity (including negative zero) before calling supplied parsers. Callback validation rejects signed quantities and requires **zero-sign parity** between independent source interpretation and returned native Decimal. The genuine `procurement.review_line` engine now uses native `Decimal.is_signed()` for negative-price review flags, so both ordinary negative prices and accounting negative-zero prices are visible to human reviewers. Positive zero prices remain unflagged. Ordinary nonzero equality, eight-place Decimal precision, source bounds, accounting negative-zero prices, strict native types, and redacted errors remain. **No automated payment or compliance approval**.
 
-This is an intentional direct-API compatibility tightening only for signed-zero quantities and zero-sign-flipping injected callbacks. QD must assess plugins using signed-zero inputs. No original files, provenance hashes, reports, licensing or WordPress content were changed.
+This is an intentional direct-API compatibility tightening only for signed-zero quantities and zero-sign-flipping injected callbacks. QD must assess plugins using signed-zero inputs. No original files, provenance hashes, reports, licensing or WordPress content were changed. The new negative-zero review flag is a deliberate warning-only change, not a policy decision.
 
 ## Evidence — verified locally
 
 - The **exact R347 Git blob** `a4a85721c99c376795dc269333f36b54339dc2cd` was recreated locally and verified using `git hash-object`.
 - Before the patch, the same 29 R348 helper tests produced **17 failures / 29 tests** on original R347 behavior. After patch: **29/29 PASS** on Linux CPython standard `-W error`, **29/29 PASS** under `-OO -W error`; total **58 passing focused test executions**. Python `compileall` PASS.
 - The tested updated helper matches the GitHub committed Git blob **`d56de27fc28a307932f4a0d3e556e1939e8edcff`**. The 29-test file matches **`806f4dce8cf91cfa5755a3c218a5e89ed73bd19d`** exactly.
-- **10 additional genuine `review_line` integration tests** compiled successfully and were committed byte-identically (`5b3189e497beaba4a41369694cdfdaa75aa9b59a`), but **NOT executed locally**: complete private dependency tree unavailable in the isolated Linux runtime.
+- **13 additional genuine `review_line` integration tests** compiled successfully and were committed byte-identically (`320b27851c54bef644b845f445a33b2a9d92200d`), but **NOT executed locally**: complete private dependency tree unavailable in the isolated Linux runtime.
 - Existing procurement suites, 22 real AES-GCM cases, six Windows x64 executables, Windows Defender, screen-reader/accessibility, and entitlement-gated premium distribution were **not validated** in this sprint.
 
 ## Required CI gates
 
-`.github/workflows/desktop-build.yml` adds two explicit R348 jobs steps (Ubuntu source and Windows package runner), each running the 29 helper and 10 real-engine cases in standard and `-OO` Python, with Windows exit-code enforcement. Once true runners execute, expected R348 total across both OS and modes is **156 method executions**, subject to actual results; this is NOT a claimed pass.
+`.github/workflows/desktop-build.yml` adds two explicit R348 jobs steps (Ubuntu source and Windows package runner), each running the 29 helper and 13 real-engine cases in standard and `-OO` Python, with Windows exit-code enforcement. Once true runners execute, expected R348 total across both OS and modes is **168 method executions**, subject to actual results; this is NOT a claimed pass.
 
 For trusted complete-checkout validation:
 
