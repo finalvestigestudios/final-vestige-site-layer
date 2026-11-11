@@ -60,3 +60,60 @@ test('duplicate expected slot is invalid',()=>hold(p=>p.expected_slots.push('621
 test('same CDP run is invalid',()=>hold(p=>p.after.run_id='b','UNMATCHED_CAPTURE_ENVIRONMENT_OR_CONTENT'));
 test('non-image resource is invalid',()=>hold(p=>p.after.images[0].resource_type='Document','CANDIDATE_MISSING_OR_INVALID_IMAGE_REQUEST'));
 test('redirect response mismatch is on hold pending lineage',()=>hold(p=>p.after.images[0].final_response_url='https://example.org/image.jpg','CANDIDATE_MISSING_OR_INVALID_IMAGE_REQUEST'));
+
+const TETON='https://cloudfront-us-east-1.images.arcpublishing.com/deseretnews/PLWPL72QKJB7BBFJWTXJWVK6QQ.JPG';
+function sharedTetonPair() {
+ const p=fixture();p.post_id=291;p.expected_slots=['291:2','291:5'];
+ for(const cap of [p.before,p.after]){
+  cap.post_id=291;cap.page_url='https://finalvestige.com/2026/08/19/one-bulldozer-never-came-back-teton-dam/';
+  const r=cap.images[0];r.post_id=291;r.slot='291:2';r.current_src=r.request_url=r.final_response_url=TETON;
+  cap.images.push({...r,slot:'291:5'});
+ }
+ return p;
+}
+test('Teton 291:2 and 291:5 share one completed request and count bytes only once',()=>{
+ const r=evaluatePair(sharedTetonPair());
+ assert.equal(r.status,'VERIFIED_SINGLE_POST_COLD_PAIR');
+ assert.equal(r.matched_image_slots,2);
+ assert.equal(r.unique_completed_requests_before,1);
+ assert.equal(r.unique_completed_requests_after,1);
+ assert.equal(r.shared_request_slots_before,1);
+ assert.equal(r.image_network_before_bytes,1000);
+ assert.equal(r.image_network_after_bytes,200);
+ assert.equal(r.reduction_percent,80);
+});
+test('two truly separate completed requests count as two wire transfers',()=>{
+ const p=sharedTetonPair();p.before.images[1].request_id='other-before';p.after.images[1].request_id='other-after';
+ const r=evaluatePair(p);
+ assert.equal(r.status,'VERIFIED_SINGLE_POST_COLD_PAIR');
+ assert.equal(r.unique_completed_requests_before,2);
+ assert.equal(r.image_network_before_bytes,2000);
+ assert.equal(r.image_network_after_bytes,400);
+});
+for(const [what,edit] of [
+ ['byte length',r=>r.encoded_data_length++],
+ ['request URL',r=>r.request_url=r.current_src=r.final_response_url='https://example.net/different.jpg'],
+ ['MIME type',r=>r.response_mime_type='image/png'],
+ ['decoded width',r=>r.natural_width++],
+ ['decoded height',r=>r.natural_height++],
+ ['visual identity',r=>r.image_identity='different-photo'],
+ ['HTTP status',r=>r.final_http_status=201],
+ ['cache state',r=>r.from_memory_cache=true]
+]) test('conflicting shared CDP request '+what+' cannot be counted',()=>{
+ const p=sharedTetonPair();edit(p.before.images[1]);
+ const r=evaluatePair(p);
+ assert.equal(r.status,'HOLD');
+ assert.ok(['BASELINE_CONFLICTING_SHARED_IMAGE_REQUEST','BASELINE_MISSING_OR_INVALID_IMAGE_REQUEST'].includes(r.reason));
+});
+test('one omitted DOM slot is incomplete image coverage',()=>{
+ const p=sharedTetonPair();p.after.images.pop();
+ assert.equal(evaluatePair(p).reason,'CANDIDATE_INCOMPLETE_IMAGE_SLOT_COVERAGE');
+});
+test('mixed shared and separate request evidence uses distinct request bytes per run',()=>{
+ const p=sharedTetonPair();p.after.images[1].request_id='independent-after';
+ const r=evaluatePair(p);
+ assert.equal(r.status,'VERIFIED_SINGLE_POST_COLD_PAIR');
+ assert.equal(r.image_network_before_bytes,1000);
+ assert.equal(r.image_network_after_bytes,400);
+ assert.equal(r.reduction_percent,60);
+});
