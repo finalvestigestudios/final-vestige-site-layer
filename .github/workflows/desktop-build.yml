@@ -829,6 +829,12 @@ jobs:
           python -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_document_boundary_integration_r343.py'
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_normalized_key_r343.py'
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_document_boundary_integration_r343.py'
+      - name: R344 ProcureGuard native row storage and source-row custody (normal and -OO)
+        run: |
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_native_rows_r344.py'
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_native_row_integration_r344.py'
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_native_rows_r344.py'
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_native_row_integration_r344.py'
       - name: Verify full normal/optimized source provenance and six smokes (R57)
         run: |
           mkdir -p "$RUNNER_TEMP/fvs-source"
@@ -937,6 +943,18 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R343 Windows optimized native document key tests FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_document_boundary_integration_r343.py'
           if ($LASTEXITCODE -ne 0) { throw "R343 Windows optimized review integration FAILED" }
+      - name: R344 Windows ProcureGuard native row storage and physical citation custody
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_native_rows_r344.py'
+          if ($LASTEXITCODE -ne 0) { throw "R344 Windows native row unit tests FAILED" }
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_native_row_integration_r344.py'
+          if ($LASTEXITCODE -ne 0) { throw "R344 Windows procurement row integration FAILED" }
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_native_rows_r344.py'
+          if ($LASTEXITCODE -ne 0) { throw "R344 Windows optimized native rows FAILED" }
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_native_row_integration_r344.py'
+          if ($LASTEXITCODE -ne 0) { throw "R344 Windows optimized procurement integration FAILED" }
       - name: R319 witnessed-vs-compiled premium test source before Windows packaging
         shell: pwsh
         run: |

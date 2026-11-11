@@ -17,6 +17,7 @@ from typing import Callable, Mapping
 
 from .procurement_reference import (has_original_spelling, normalized_document_key,
                                     source_document_spellings)
+from .procurement_native_rows import owned_procurement_rows, physical_source_row
 from .audit_display import visible_source_label_list
 from .review import price_outside_tolerance
 
@@ -142,6 +143,12 @@ def offset_source_line_links(
     array. This is not a decision that an offset is genuine or authorized.
     Private document labels are deliberately absent from this JSON.
     """
+    # Never trust virtual dictionary methods or a forged physical-row label.
+    # These are copies; source CSV rows and their digest remain untouched.
+    rows = owned_procurement_rows(rows)
+    for row in rows:
+        physical_source_row(row.get("row"))
+
     def document_key(value: object) -> str:
         return normalized_document_key(value, identifier)
 
@@ -180,6 +187,11 @@ def review_line(
     Negative numeric quantities are invalid (enforced by quantity parser).
     Only an explicit credit/return reverses a positive source movement.
     """
+    # Snapshot genuine stored fields before ANY .get(), [], iteration, Decimal
+    # parser or display callback. A dict subclass may forge virtual values.
+    ordered = owned_procurement_rows(ordered)
+    invoices = owned_procurement_rows(invoices)
+    receipts = owned_procurement_rows(receipts)
     # All CSV document columns must be plain source text even if a row never
     # becomes a linked credit/return. Reject a forged direct-API cell before
     # any callback or human-display operation can coerce it.
