@@ -1,0 +1,14 @@
+# R272 proof and prioritized conversion handoff — November 10, 2026 (PT)
+- Original PR #175 current HEAD d57ccdba3aee8f065e143e101c2945f4f3d01647 remained unchanged. Native Python original suite re-executed against its eight locally archived exact-source files: **6/6 PASS**, with manifest and test module blob SHA confirmed. Static tests are not Jetpack receipt tests.
+- This new stacked branch originates from R271 PR #1992 exact eb1b6ccabeb4339adf1de7aaeb4fe1f842bb2144; standalone R272 files only. Founder 4 editorial/2 commercial remains frozen.
+- **Commercially consequential finding:** Zen12 official /about, /?no-popup=1 and /secret are distinct seller paths with different package/promotion presentations. Do not pick a price or refund and project it onto an approved affiliate journey. Hypnosis Live official Total Focus and FAQ also require checkout-specific terms.
+- Independent 10/20-minute mindfulness research and binaural reviews cannot authenticate Zen12 efficacy, particularly not an hour-equivalence claim.
+- The new Issue 03 alternative is buyer-fit-first, with one INACTIVE proposed guide CTA, adjacent disclosure, full study/merchant citations and no price or purchase link. It is NOT_ADOPTED.
+- OFFER → FUNNEL STEP → BLOCKER → CHANGE/EXPERIMENT → EVIDENCE → OWNER:
+  - Zen12 → vetted buyer guide → missing account-specific email permission/issued earning URL/live presell → obtain authenticated approvals and route-matched disclosures → FAIL / UNKNOWN → Mind Studio.
+  - Existing Focus → Jetpack confirmed lead → total3/confirmed3/unconfirmed2 plus 0 email/3 WP followers do not establish current email eligibility → privately reconcile filtered 'Email subscription=Subscribed' status and double opt-in → UNKNOWN → Focus / Claude.
+  - Jetpack welcome → actual inbox → public PDF and received welcome unproven → authorized read-only recipient-owned evidence, do not create test subscriber → UNKNOWN → Focus / Dispatch.
+  - Dispatch → legal inbox → postal address, unsubscribe and native rendered preview unverified → founder-approved received-email proof after address validation → HOLD → Dispatch / Site QA.
+  - Grok asset → paid customer → conversion source join and settled merchant orders missing → use existing UTMs, aggregate 7/30-day cohorts, net of refunds/fees → NOT_COMPUTABLE → Grok / Praxxis / Commerce.
+- FTC sources: https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business and https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance
+- **No emails, test sends, posts, imports, WP settings writes, affiliate activation, purchases, social releases, or expenses.**
