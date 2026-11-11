@@ -1,5 +1,14 @@
 # Caernarvon, 1927 — USGS full-text source paths and chronology caution
 
+## Editorial update — 11 November, 01:42 PST (supersedes previous draft identity)
+
+- **Current WordPress draft #2151** changed via targeted insertion of a contemporaneous-source paragraph: **80 blocks, modified 2026-11-11T01:42:03 site-local**, content SHA-1 **`43b2d48acda68e8e4d92253454454470b9f7a76b`**. The former 79-block SHA `faa3566ec2cf389ff2dc260568f4a20caa2ad0ab` is historical. Retain all original visual/USGS source cautions and do **not** treat prior screenshots as testing this revision.
+- New primary-period press source (period reporting, **not** original engineering survey): [*TIME* May 9, 1927, “Catastrophe: At New Orleans”](https://time.com/archive/6660910/catastrophe-at-new-orleans/). It reports the initial 48 charges, repeated blasts, 3,000 lb more the next day, a reported 1,200-ft opening and predicted 2–3 ft reduction, explicitly NOT measured final width or proven saved height. Its accompanying observation that separate New Orleans rainwater pictures were mislabeled as Mississippi flooding reinforces the site's photo-provenance caution. The TIME archive page has extraneous **July 2026 sponsored FAQ** content before the clearly dated 1927 report; do not confuse this injected header with historical article text. The original 1927 print issue was not examined; no exact archival quote reproduced, no TIME photo or other assets reused.
+- Full government 2011 history [Leland R. Johnson, *Situation Desperate*, pp. 152–153](https://www.govinfo.gov/content/pkg/GOVPUB-D103-PURL-gpo27158/pdf/GOVPUB-D103-PURL-gpo27158.pdf) separately records first Apr29 charges ineffective and diver Ted Herbert applying underwater explosives two days later. The existing article already credits this retrospective information in its opening; **no duplicate paragraph added**. Government PDF text accessible to the research crawler, but actual PDF screenshot retrieval failed for file-size limit (60MB), so do not claim visually inspected page.
+- This update does **not** relax the HOLD: still no authenticated draft screenshots at 390px and 1440px, still no anonymous ordinary-browser USACE/USGS PDF PASS. No release, newsletter or social.
+
+---
+
 **Investigations editorial source addendum, 2026-11-11 (Pacific).** This is a source-critical note for existing WordPress **draft #2151, _The Levee They Blew on Purpose_**; **NOT** publication authorization, a reader-browser verification PASS, a claim to have visually inspected a PDF scan, or a substitute for source #1589's authenticated theme screenshots. Related issues: [Investigations #1463](https://github.com/finalvestigestudios/final-vestige-site-layer/issues/1463) and [Site QA #1589](https://github.com/finalvestigestudios/final-vestige-site-layer/issues/1589). No WordPress article edit was made for this note.
 
 ## New direct official technical-document routes
