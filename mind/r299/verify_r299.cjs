@@ -18,9 +18,13 @@ const paths={
  B:"mind/r284/ZEN12-BUYER-GUIDE-B-FILM-STORYBOARD-UNPUBLISHED.html"
 };
 const pins={
- article:"142d6ea336d32335",guide:"1360d707d100c47e",
- matrix:"711d06743ca9fe14",hub:"caffe96106de484f",
- dossier:"a3b5ee1251444ef1",A:"e0bbb529cff3f5e4",B:"4b1b9fe38a5a89a1"
+  "article": "fdb5e5b3e5ca6239",
+  "guide": "3dd8926ec41a776b",
+  "matrix": "e17e01d1f6467202",
+  "hub": "5ce4fa668194f20e",
+  "dossier": "e31bafb29ab19c14",
+  "A": "e0bbb529cff3f5e4",
+  "B": "4b1b9fe38a5a89a1"
 };
 const fail=(message)=>{throw new Error(message)};
 const ok=(v,message)=>{if(!v)fail(message)};
@@ -30,7 +34,7 @@ function checkHub(s){
  ok(/<html\b[^>]*lang=["']en["']/i.test(s),"HTML_LANG");
  ok(/<meta[^>]*name=["']viewport["']/i.test(s),"HTML_VIEWPORT");
  ok(/<meta[^>]*name=["']robots["'][^>]*noindex/i.test(s),"HTML_UNPUBLISHED");
- ok(/<main id=["']main["']>/i.test(s)&&/<h1\b/i.test(s),"HTML_SEMANTICS");
+ ok(/<main\b[^>]*id=["']main["'][^>]*>/i.test(s)&&/<h1\b/i.test(s),"HTML_SEMANTICS");
  ok(/href=["']#main["']/i.test(s),"HTML_SKIP_LINK");
  ok(/prefers-reduced-motion/i.test(s)&&/@media\(max-width:760px\)/i.test(s),"HTML_RESPONSIVE");
  ok(!/<(?:script|iframe|form|base|link|img|picture|video|audio|source|object|embed|svg|template)\b/i.test(s),"HTML_UNSAFE_ELEMENT");
@@ -89,7 +93,7 @@ function validate(d,opt={}){
   ok(d.article.toLowerCase().includes(p.toLowerCase()),"ARTICLE_EVIDENCE_"+p);
  }
  ok(d.guide.trim().split(/\s+/).length>=1400,"BUYER_GUIDE_DEPTH");
- for(const p of ["12 levels","48 MP3","one-year","affiliate","not established","Variant A","Variant B","42-second","not encoded video"]){
+ for(const p of ["twelve levels","48 MP3","one-year","affiliate","not established","Variant A","Variant B","42-second","not encoded video"]){
   ok(d.guide.toLowerCase().includes(p.toLowerCase()),"BUYER_RESTRICTION_"+p);
  }
  ok(d.dossier.includes("NOT COMPUTABLE")&&d.dossier.includes("mind_pilot_2026_11")&&d.dossier.includes("mind_proposed_2026_11"),"DATA_AND_CAMPAIGN_DRIFT");
