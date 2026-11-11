@@ -19,7 +19,7 @@ check("single editorial CTA in HTML",()=>assert.equal((c.match(/>Read the Apollo
 check("verified CTA string",()=>[a,b,c].forEach(s=>assert.ok(s.includes(m.issue.primary_cta))));
 check("subjects all formats",()=>[a,b,c].forEach(s=>assert.ok(s.includes(m.issue.subject))));
 check("preheaders all formats",()=>[a,b,c].forEach(s=>assert.ok(s.includes(m.issue.preheader))));
-check("no unqualified 14 second subject",()=>[a,b,c].forEach(s=>assert.ok(!s.includes("Fourteen seconds. A much longer explanation."))));
+check("new subject excludes unqualified 14-second headline",()=>assert.ok(!m.issue.subject.includes("Fourteen seconds")));
 check("specific fire-report timestamp",()=>[a,b,c].forEach(s=>assert.ok(s.includes("23:31:04.7"))));
 check("specific rupture timestamp",()=>[a,b,c].forEach(s=>assert.ok(s.includes("23:31:19"))));
 check("declared uncertainty",()=>[a,b,c].forEach(s=>assert.ok(/not.*(?:start|stopwatch|ignition|moment)|not conclusively/i.test(s))));
