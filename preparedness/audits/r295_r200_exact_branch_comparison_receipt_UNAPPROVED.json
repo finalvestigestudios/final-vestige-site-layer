@@ -1,0 +1,93 @@
+{
+  "schema": "fv-preparedness-r295-exact-r200-branch-comparison-snapshot-v1",
+  "observed_at": "2026-11-11T16:13:00Z",
+  "repository": "finalvestigestudios/final-vestige-site-layer",
+  "source_of_truth": "preparedness/audits/r200_seven_cluster_35_article_frozen_custody.json",
+  "source_of_truth_git_blob_sha": "5822f9dfde21d1f3bdfc26658769d852c639438c",
+  "status": "DRAFT_HARD_HOLD",
+  "publication_authorized": false,
+  "independent_qd_pass": false,
+  "historical_baseline_warning": "R293's 'frozen' commits predate the R200 manifest for five clusters. R293's own 'head' values are exactly the R200 frozen commits. Earlier reported live 5/7 drift is a baseline classification error, not confirmed post-R200 contributor changes.",
+  "live_branch_comparisons": {
+    "start": {
+      "branch": "claude/prep-start-bbfeb8",
+      "r200_base": "2122d856fce9f64887c16df3d52e64be9f59a55b",
+      "observed_head": "2122d856fce9f64887c16df3d52e64be9f59a55b",
+      "status": "identical",
+      "ahead_by": 0,
+      "behind_by": 0,
+      "changed_files": 0
+    },
+    "shelter": {
+      "branch": "claude/prep-shelter-5e1e0e",
+      "r200_base": "5daeaf2dd5ab71806a6b73c91edfb1d8df5da976",
+      "observed_head": "5daeaf2dd5ab71806a6b73c91edfb1d8df5da976",
+      "status": "identical",
+      "ahead_by": 0,
+      "behind_by": 0,
+      "changed_files": 0
+    },
+    "food": {
+      "branch": "claude/prep-food-ccdc55",
+      "r200_base": "f911ff7a655de8d81535ea86ec3d65a49ee76648",
+      "observed_head": "f911ff7a655de8d81535ea86ec3d65a49ee76648",
+      "status": "identical",
+      "ahead_by": 0,
+      "behind_by": 0,
+      "changed_files": 0
+    },
+    "health": {
+      "branch": "claude/prep-health-837444",
+      "r200_base": "d5ef5bafd68361434dd1cc9209915b8e8a4eaf17",
+      "observed_head": "d5ef5bafd68361434dd1cc9209915b8e8a4eaf17",
+      "status": "identical",
+      "ahead_by": 0,
+      "behind_by": 0,
+      "changed_files": 0
+    },
+    "hist-food": {
+      "branch": "claude/prep-hist-food-b81f19",
+      "r200_base": "67e116e536c7410bed30f8f3b1bb8c166f3c223d",
+      "observed_head": "67e116e536c7410bed30f8f3b1bb8c166f3c223d",
+      "status": "identical",
+      "ahead_by": 0,
+      "behind_by": 0,
+      "changed_files": 0
+    },
+    "hist-home": {
+      "branch": "claude/prep-hist-home-0e0e38",
+      "r200_base": "7504a5f099594d635e3dd7332a33a2e1346c43a2",
+      "observed_head": "7504a5f099594d635e3dd7332a33a2e1346c43a2",
+      "status": "identical",
+      "ahead_by": 0,
+      "behind_by": 0,
+      "changed_files": 0
+    },
+    "hist-field": {
+      "branch": "claude/prep-hist-field-9db767",
+      "r200_base": "4e5caf812727953aa45e3bda2d382f2c67b6a09c",
+      "observed_head": "4e5caf812727953aa45e3bda2d382f2c67b6a09c",
+      "status": "identical",
+      "ahead_by": 0,
+      "behind_by": 0,
+      "changed_files": 0
+    }
+  },
+  "source_id_dispute": {
+    "old_id": "hist-food-nchfp-jerky",
+    "r200_id": "nchfp-jerky",
+    "articles": {
+      "pemmican-and-dried-meats": 7,
+      "pioneer-travel-rations": 1
+    },
+    "occurrences": 8,
+    "distinct_id_pairs": 1,
+    "same_title_publisher_and_supports": true,
+    "url_difference": "trailing slash only",
+    "old_source_fragment_blob": "d10628342fea5f177a8d1be00dd906d0c9c7850e",
+    "r200_source_fragment_blob": "c1856c998c6c728f0de72221e5654a238df994a9",
+    "editorial_equivalence_approved": false,
+    "automatic_citation_rewrite_approved": false,
+    "agency_timing_disagreement_held": true
+  }
+}
