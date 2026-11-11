@@ -3,6 +3,8 @@ import copy
 import importlib.util
 import json
 import tempfile
+import subprocess
+import sys
 import unittest
 from pathlib import Path
 
@@ -74,6 +76,11 @@ class ThreeWay(unittest.TestCase):
     def test_missing_pinned_checkout_invalid(self):
         with tempfile.TemporaryDirectory() as td:
             self.assertEqual(g.audit(td)['state'],g.INVALID)
+    def test_cli_invalid_checkout_exit_three(self):
+        with tempfile.TemporaryDirectory() as td:
+            run=subprocess.run([sys.executable,str(MOD),'--root',td],capture_output=True,text=True)
+            self.assertEqual(run.returncode,3)
+            self.assertEqual(json.loads(run.stdout)['state'],g.INVALID)
     def test_fake_sha_refuses(self):
         with tempfile.TemporaryDirectory() as td:
             p=Path(td)/'data.json';p.write_text('{}')
