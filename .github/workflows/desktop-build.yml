@@ -823,6 +823,12 @@ jobs:
           python -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_native_document_r342.py'
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_reference_r75.py'
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_native_document_r342.py'
+      - name: R343 ProcureGuard native normalization and review/citation integration (normal and -OO)
+        run: |
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_normalized_key_r343.py'
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_document_boundary_integration_r343.py'
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_normalized_key_r343.py'
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_document_boundary_integration_r343.py'
       - name: Verify full normal/optimized source provenance and six smokes (R57)
         run: |
           mkdir -p "$RUNNER_TEMP/fvs-source"
@@ -919,6 +925,18 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R75 optimized procurement references FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_native_document_r342.py'
           if ($LASTEXITCODE -ne 0) { throw "R342 optimized procurement identity custody FAILED" }
+      - name: R343 Windows ProcureGuard native normalization and review/citation integration
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_normalized_key_r343.py'
+          if ($LASTEXITCODE -ne 0) { throw "R343 Windows native document key tests FAILED" }
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_document_boundary_integration_r343.py'
+          if ($LASTEXITCODE -ne 0) { throw "R343 Windows procurement review integration FAILED" }
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_normalized_key_r343.py'
+          if ($LASTEXITCODE -ne 0) { throw "R343 Windows optimized native document key tests FAILED" }
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_document_boundary_integration_r343.py'
+          if ($LASTEXITCODE -ne 0) { throw "R343 Windows optimized review integration FAILED" }
       - name: R319 witnessed-vs-compiled premium test source before Windows packaging
         shell: pwsh
         run: |
