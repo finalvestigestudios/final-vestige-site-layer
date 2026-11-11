@@ -1,5 +1,11 @@
 # Caernarvon, 1927 — USGS full-text source paths and chronology caution
 
+## FINAL source-coverage identity — November 11, 01:44:51 PST
+
+Updated WordPress draft **#2151** remains unpublished: **80 Gutenberg blocks, 40 bibliography entries, SHA-1 `e4c2653b9d2a9bffa7edec9c10afb5132e69083a`**, modified site-local `2026-11-11T01:44:51`. The *TIME* May 9, 1927 reference was added both as inline contextual evidence (paragraph block 21) and to the existing Sources & Further Reading list (index 78), with no source entries removed. Newsletter suppression and automatic social-sharing disabled were independently rechecked. **All older fingerprints in this addendum are superseded by the identity here.** Full theme preview and visitor PDF checks remain required; no release authorization.
+
+---
+
 ## Editorial update — 11 November, 01:42 PST (supersedes previous draft identity)
 
 - **Current WordPress draft #2151** changed via targeted insertion of a contemporaneous-source paragraph: **80 blocks, modified 2026-11-11T01:42:03 site-local**, content SHA-1 **`43b2d48acda68e8e4d92253454454470b9f7a76b`**. The former 79-block SHA `faa3566ec2cf389ff2dc260568f4a20caa2ad0ab` is historical. Retain all original visual/USGS source cautions and do **not** treat prior screenshots as testing this revision.
