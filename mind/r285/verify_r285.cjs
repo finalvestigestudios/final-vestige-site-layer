@@ -171,7 +171,7 @@ for(const change of [
  m=>m.source_register[0].url='https://false.invalid/',
  m=>m.claims[0].source_id='missing_source'
 ])attempts.push(['matrix',s=>{let m=JSON.parse(s);change(m);return JSON.stringify(m); }]);
-attempts.push(['article',s=>s.replace('31 studies','3 studies')]);
+attempts.push(['article',s=>s.replaceAll('31 studies','3 studies')]);
 attempts.push(['article',s=>s.replace('https://pubmed.ncbi.nlm.nih.gov/3612492/','https://false.invalid/')]);
 attempts.push(['both',s=>s+'<a href="https://zen12.com/hnp">Pay</a>']);
 let rejected=0;
