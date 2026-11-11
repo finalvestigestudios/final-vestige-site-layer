@@ -835,6 +835,12 @@ jobs:
           python -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_native_row_integration_r344.py'
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_native_rows_r344.py'
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_native_row_integration_r344.py'
+      - name: R345 ProcureGuard Decimal callback custody (normal and optimized)
+        run: |
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_numeric_result_r345.py'
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_numeric_integration_r345.py'
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_numeric_result_r345.py'
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_numeric_integration_r345.py'
       - name: Verify full normal/optimized source provenance and six smokes (R57)
         run: |
           mkdir -p "$RUNNER_TEMP/fvs-source"
@@ -955,6 +961,18 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R344 Windows optimized native rows FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_native_row_integration_r344.py'
           if ($LASTEXITCODE -ne 0) { throw "R344 Windows optimized procurement integration FAILED" }
+      - name: R345 Windows ProcureGuard Decimal callback custody (normal and optimized)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_numeric_result_r345.py'
+          if ($LASTEXITCODE -ne 0) { throw "R345 Windows numeric helper FAILED" }
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_numeric_integration_r345.py'
+          if ($LASTEXITCODE -ne 0) { throw "R345 Windows numeric integration FAILED" }
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_numeric_result_r345.py'
+          if ($LASTEXITCODE -ne 0) { throw "R345 Windows optimized numeric helper FAILED" }
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_numeric_integration_r345.py'
+          if ($LASTEXITCODE -ne 0) { throw "R345 Windows optimized numeric integration FAILED" }
       - name: R319 witnessed-vs-compiled premium test source before Windows packaging
         shell: pwsh
         run: |
