@@ -25,6 +25,9 @@ COUNTS = {'article_body': 35, 'article_meta': 35, 'tool_body': 6,
 SHA = re.compile(r'^[a-f0-9]{40}$')
 ARTICLE = re.compile(r'^content/articles/([a-z0-9-]+)\.(body\.html|meta\.json)$')
 TOOL = re.compile(r'^content/tools/([a-z0-9-]+)\.(body\.html|meta\.json)$')
+# Source-like extensions can alter registered evidence even when an existing
+# fragment's SHA stays unchanged. README/notes are not source inputs.
+SOURCE_DATA_EXTENSIONS = frozenset({'.json', '.jsonl', '.yaml', '.yml', '.csv', '.tsv'})
 
 
 def require(ok, error):
@@ -116,12 +119,24 @@ def check_tree(root: Path, manifest: dict):
             require(meta.get('slug') == Path(row['path']).name.removesuffix('.meta.json'), 'metadata slug drift')
             require(isinstance(meta.get('status'), dict) and meta['status'].get('publish') == 'draft', 'non-draft manuscript')
     expected = {r['path'] for r in rows}
+    # R280: an added fragment can shadow registered evidence in a source loader
+    # without touching any of the eight frozen source files. Traverse all levels
+    # and reject both untracked source-like files and symlink indirection.
+    fragments = root / 'sources/fragments'
+    require(fragments.is_dir() and not fragments.is_symlink(), 'source-fragment directory unavailable')
+    for candidate in fragments.rglob('*'):
+        rel = candidate.relative_to(root).as_posix()
+        require(not candidate.is_symlink(), 'source-fragment symlink: ' + rel)
+        if candidate.is_file() and candidate.suffix.lower() in SOURCE_DATA_EXTENSIONS:
+            require(rel in expected, 'untracked source fragment: ' + rel)
     for directory in ('content/articles', 'content/tools'):
         folder = root / directory
         require(folder.is_dir() and not folder.is_symlink(), 'content directory unavailable')
-        for file in folder.iterdir():
-            if file.name.endswith(('.body.html', '.meta.json')):
-                require(file.relative_to(root).as_posix() in expected, 'unexpected article/tool: ' + file.name)
+        for file in folder.rglob('*'):
+            if file.is_symlink():
+                require(False, 'untracked content symlink: ' + file.relative_to(root).as_posix())
+            if file.is_file() and file.name.lower().endswith(('.body.html', '.meta.json')):
+                require(file.relative_to(root).as_posix() in expected, 'unexpected article/tool: ' + file.relative_to(root).as_posix())
     return {'state': HOLD, 'mechanical_source_parity_only': True, 'protected_files': 96,
             'article_count': 35, 'tool_count': 6, 'publication_authorized': False,
             'independent_qd_pass': False, 'medical_safety_verified': False,
