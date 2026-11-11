@@ -6,7 +6,7 @@ citation scope, real-world advice, independent QA, fulfillment, or publication.
 """
 from __future__ import annotations
 import hashlib
-import importlib.util
+import types
 import json
 import re
 from collections import Counter, defaultdict
@@ -139,19 +139,33 @@ def evaluate(original, integrated, metadata, sources):
     }
 
 
+def load_pinned_gate(root, rel, pin):
+    """Execute exactly the authenticated Git blob bytes, never cached .pyc.
+
+    Hashing the source and subsequently loading a filesystem path creates a
+    second-read/bytecode-cache custody gap. CPython's path loader may reuse a
+    timestamp-valid __pycache__ file instead of compiling the reviewed source.
+    Compile the bytes returned by the *same* verified read; neither the source
+    pathname nor any cache is consulted again for the module's code.
+    """
+    raw = pinned_bytes(root, rel, pin)
+    name = 'fv_custody_' + rel.split('/')[-1].removesuffix('.py')
+    module = types.ModuleType(name)
+    module.__file__ = str(Path(root) / rel)
+    module.__package__ = ''
+    code = compile(raw, module.__file__, 'exec', dont_inherit=True)
+    exec(code, module.__dict__)
+    require(callable(getattr(module, 'audit', None)), 'pinned gate has no callable audit: '+rel)
+    return module
+
+
 def audit(root):
     root = Path(root)
     try:
         # Enforce both independently reviewed mechanical gates, not either one.
-        modules = {}
-        for rel, pin in TOOL_PINS.items():
-            pinned_bytes(root, rel, pin)
-            name = 'fv_custody_'+rel.split('/')[-1].split('.')[0]
-            spec = importlib.util.spec_from_file_location(name, root / rel)
-            require(spec is not None and spec.loader is not None, 'validator import impossible')
-            module = importlib.util.module_from_spec(spec)
-            spec.loader.exec_module(module)
-            modules[rel] = module
+        # Bind code execution to the bytes whose Git identities were verified.
+        modules = {rel: load_pinned_gate(root, rel, pin)
+                   for rel, pin in TOOL_PINS.items()}
         for rel, module in modules.items():
             result = module.audit(root)
             require(result.get('state') == HOLD and
@@ -169,7 +183,7 @@ def audit(root):
             if row['path'] in SOURCE_ROSTER:
                 sources[row['path']] = strict_json(pinned_bytes(root,row['path'],row['sha']))
         return evaluate(original, integrated, metadata, sources)
-    except (OSError, ValueError, TypeError, KeyError, AttributeError, UnicodeError, ImportError) as exc:
+    except (OSError, ValueError, TypeError, KeyError, AttributeError, UnicodeError, ImportError, SyntaxError) as exc:
         return {'state': INVALID, 'publication_authorized': False,
                 'independent_qd_pass': False, 'errors': [str(exc)]}
 
