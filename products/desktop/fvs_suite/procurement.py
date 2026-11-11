@@ -15,7 +15,8 @@ from functools import wraps
 from pathlib import Path
 from typing import Callable, Mapping
 
-from .procurement_reference import has_original_spelling, source_document_spellings
+from .procurement_reference import (has_original_spelling, normalized_document_key,
+                                    source_document_spellings)
 from .audit_display import visible_source_label_list
 from .review import price_outside_tolerance
 
@@ -141,17 +142,20 @@ def offset_source_line_links(
     array. This is not a decision that an offset is genuine or authorized.
     Private document labels are deliberately absent from this JSON.
     """
+    def document_key(value: object) -> str:
+        return normalized_document_key(value, identifier)
+
     originals: dict[str, list[str]] = defaultdict(list)
     for row in rows:
         if event_kind(row, source=source) == source:
-            document = identifier(row.get("document_id", ""))
+            document = document_key(row.get("document_id", ""))
             if document:
                 originals[document].append(row["row"])
     links: list[dict[str, object]] = []
     for row in rows:
         if event_kind(row, source=source) != offset:
             continue
-        reference = identifier(row.get("related_document", ""))
+        reference = document_key(row.get("related_document", ""))
         links.append({
             "offset_row": row["row"],
             "target_rows": list(dict.fromkeys(originals.get(reference, ())))
@@ -176,6 +180,18 @@ def review_line(
     Negative numeric quantities are invalid (enforced by quantity parser).
     Only an explicit credit/return reverses a positive source movement.
     """
+    # All CSV document columns must be plain source text even if a row never
+    # becomes a linked credit/return. Reject a forged direct-API cell before
+    # any callback or human-display operation can coerce it.
+    for stream in (invoices, receipts):
+        for row in stream:
+            if (type(row.get("document_id", "")) is not str
+                    or type(row.get("related_document", "")) is not str):
+                raise ValueError("Procurement review requires native document label text")
+
+    def document_key(value: object) -> str:
+        return normalized_document_key(value, identifier)
+
     flags: list[str] = []
     order_qty = quantity(ordered[0]["quantity"]) if len(ordered) == 1 else Decimal(0)
     order_price = unit_cost(ordered[0]["unit_price"]) if len(ordered) == 1 else Decimal(0)
@@ -231,21 +247,21 @@ def review_line(
 
     # Credit/return events with missing references cannot be silently treated
     # as verified offsets to the source documents.
-    invoice_docs = {identifier(r.get("document_id", "")) for r, k, _, _ in invoice_entries
-                    if k == "invoice" and identifier(r.get("document_id", ""))}
+    invoice_docs = {document_key(r.get("document_id", "")) for r, k, _, _ in invoice_entries
+                    if k == "invoice" and document_key(r.get("document_id", ""))}
     raw_invoice_docs = source_document_spellings(
         r.get("document_id", "") for r, k, _, _ in invoice_entries if k == "invoice")
     invoice_doc_counts = Counter(
-        identifier(r.get("document_id", "")) for r, k, _, _ in invoice_entries
-        if k == "invoice" and identifier(r.get("document_id", ""))
+        document_key(r.get("document_id", "")) for r, k, _, _ in invoice_entries
+        if k == "invoice" and document_key(r.get("document_id", ""))
     )
     if any(count > 1 for count in invoice_doc_counts.values()):
         flags.append("repeated_invoice_document_id_review")
     for row, kind, _, price in invoice_entries:
         if kind != "credit":
             continue
-        document = identifier(row.get("document_id", ""))
-        related = identifier(row.get("related_document", ""))
+        document = document_key(row.get("document_id", ""))
+        related = document_key(row.get("related_document", ""))
         if not document or not related or related not in invoice_docs:
             flags.append("unlinked_credit_review")
         elif not has_original_spelling(row.get("related_document", ""), raw_invoice_docs):
@@ -254,19 +270,19 @@ def review_line(
             flags.append("reused_invoice_document_id_review")
         if price < 0:
             flags.append("negative_credit_price_review")
-    receipt_docs = {identifier(r.get("document_id", "")) for r, kind, _ in receipt_entries
-                    if kind == "receipt" and identifier(r.get("document_id", ""))}
+    receipt_docs = {document_key(r.get("document_id", "")) for r, kind, _ in receipt_entries
+                    if kind == "receipt" and document_key(r.get("document_id", ""))}
     # An apparent quantity match is not evidence of distinct receiving events.
     # Detect repeated IDs within each physical event type, even when the lossy
     # matching key collapses different source spellings. Empty optional IDs
     # are not treated as the same document.
     receipt_doc_counts = Counter(
-        identifier(r.get("document_id", "")) for r, kind, _ in receipt_entries
-        if kind == "receipt" and identifier(r.get("document_id", ""))
+        document_key(r.get("document_id", "")) for r, kind, _ in receipt_entries
+        if kind == "receipt" and document_key(r.get("document_id", ""))
     )
     return_doc_counts = Counter(
-        identifier(r.get("document_id", "")) for r, kind, _ in receipt_entries
-        if kind == "return" and identifier(r.get("document_id", ""))
+        document_key(r.get("document_id", "")) for r, kind, _ in receipt_entries
+        if kind == "return" and document_key(r.get("document_id", ""))
     )
     if any(count > 1 for count in receipt_doc_counts.values()):
         flags.append("repeated_receipt_document_id_review")
@@ -277,14 +293,14 @@ def review_line(
     for row, kind, _ in receipt_entries:
         if kind != "return":
             continue
-        return_document = identifier(row.get("document_id", ""))
+        return_document = document_key(row.get("document_id", ""))
         if not return_document:
             flags.append("unidentified_return_review")
         elif return_document in receipt_docs:
             # A return and its source receipt must not silently share a
             # physical document identity, even when the amounts reconcile.
             flags.append("reused_receipt_document_id_review")
-        related = identifier(row.get("related_document", ""))
+        related = document_key(row.get("related_document", ""))
         if not related or related not in receipt_docs:
             flags.append("unlinked_return_review")
         elif not has_original_spelling(row.get("related_document", ""), raw_receipt_docs):
@@ -292,7 +308,7 @@ def review_line(
 
     # Distinct document references permit legitimate equal-quantity installments.
     # When references are missing, retain the older conservative duplicate flag.
-    with_docs = all(identifier(row.get("document_id", "")) for row, _, _, _ in invoice_entries)
+    with_docs = all(document_key(row.get("document_id", "")) for row, _, _, _ in invoice_entries)
     if not with_docs:
         signature = [(kind, amount, price) for _, kind, amount, price in invoice_entries]
         if len(set(signature)) < len(signature):

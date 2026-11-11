@@ -8,12 +8,13 @@ case folding must not silently equate independent financial identifiers.
 """
 from __future__ import annotations
 
-from collections.abc import Iterable
+from collections.abc import Callable, Iterable
 
 from .review import ascii_case_identity
 
 _MAX_NATIVE_INT_BITS = 269
 _ERROR = "Procurement document identity must be native text or a bounded integer"
+_KEY_ERROR = "Procurement document normalization requires a native text key"
 
 
 def _native_document_text(value: object) -> str:
@@ -28,6 +29,24 @@ def _native_document_text(value: object) -> str:
     if type(value) is int and value.bit_length() <= _MAX_NATIVE_INT_BITS:
         return str(value)
     raise ValueError(_ERROR)
+
+
+def normalized_document_key(value: object, identifier: Callable[[str], str]) -> str:
+    """Validate original identity *before* invoking the lossy match callback.
+
+    Only plain source text reaches the injected normalizer. An unexpected
+    callback exception or forged output must not expose customer paths or
+    create an attacker-controlled dictionary key. This is a candidate key,
+    never proof of invoice/receipt identity or approval.
+    """
+    text = _native_document_text(value)
+    try:
+        result = identifier(text)
+    except Exception:
+        raise ValueError(_KEY_ERROR) from None
+    if type(result) is not str:
+        raise ValueError(_KEY_ERROR)
+    return result
 
 
 def source_document_spellings(documents: Iterable[object]) -> frozenset[str]:
