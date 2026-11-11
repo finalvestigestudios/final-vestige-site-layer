@@ -1,0 +1,74 @@
+{
+  "id": "dispatch-r289-commercial-plaintext-destination-boundary",
+  "review_date": "2026-11-11",
+  "source_pr": 2087,
+  "source_head": "25fb8da996b2a2e1a9060cf9e8c2c098f2285fb9",
+  "draft_status": "HOLD_UNSENT",
+  "send_authorized": false,
+  "orig_plaintext": [
+    {
+      "path": "dispatch/r287/issue-03.txt",
+      "blob_sha": "79c72dd628dd6d754df03c4b3eb336b6c4474424",
+      "merchant_source_lines": 2
+    },
+    {
+      "path": "dispatch/r287/issue-05.txt",
+      "blob_sha": "0014da524b52fed71677506db14c358f1a451bd2",
+      "merchant_source_lines": 1
+    }
+  ],
+  "issue_map": [
+    {
+      "issue": 3,
+      "type": "affiliate_reservation",
+      "seller": "Zen12",
+      "seller_primary_sources": [
+        "https://zen12.com/about",
+        "https://zen12.com/secret/"
+      ],
+      "noncommercial_source": "https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety",
+      "status": "HOLD_MERCHANT"
+    },
+    {
+      "issue": 5,
+      "type": "affiliate_reservation",
+      "seller": "Hypnosis Live Total Focus",
+      "seller_primary_sources": [
+        "https://hypnosislive.com/mental-skills/total-focus"
+      ],
+      "noncommercial_source": "https://www.nccih.nih.gov/health/hypnosis",
+      "status": "HOLD_MERCHANT"
+    }
+  ],
+  "attestations": {
+    "publisher_affiliate_acceptance": false,
+    "affiliate_email_channel_permission": false,
+    "earning_url_issued": false,
+    "approved_live_prewarm_guide": false,
+    "pricing_and_refunds_checked_for_promotion": false,
+    "publisher_postal_address_verified": false,
+    "received_email_unsubscribe_verified": false,
+    "verified_email_eligibility": false,
+    "received_jetpack_rendering": false,
+    "founder_final_campaign_approval": false
+  },
+  "wordpress_snapshot": {
+    "as_of": "2026-11-11T21:32:52Z",
+    "newsletter_enabled": true,
+    "email_new_posts_by_default": false,
+    "email_content_format": "full",
+    "welcome_fieldbook_configured": true,
+    "eligible_subscribers": "UNKNOWN",
+    "diagnostic_total": 3,
+    "diagnostic_confirmed": 3,
+    "diagnostic_unconfirmed": 2,
+    "wpcom_followers": 3,
+    "email_followers": 0
+  },
+  "merchant_note": "Seller URLs are traceability evidence only, not approved earning URLs. Direct seller URLs in plaintext may auto-link in common email clients. Keep out of distributable review specimens pending explicit editorial and commerce authorization.",
+  "financial_metrics": {
+    "verified_paid_orders": null,
+    "verified_net_revenue": null,
+    "net_revenue_per_1000_qualified_sessions": null
+  }
+}
