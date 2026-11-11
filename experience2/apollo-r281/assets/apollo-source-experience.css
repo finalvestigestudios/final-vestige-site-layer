@@ -70,3 +70,12 @@
 @media(max-width:760px){.fv-r281__authority-ledger{grid-template-columns:1fr}}
 @media(forced-colors:active){.fv-r281__authority-ledger>li{background:Canvas;color:CanvasText;border-color:CanvasText}.fv-r281__authority-date,.fv-r281__authority-boundary,.fv-r281__authority-ledger>li:before,.fv-r281__reconciliation h4{color:CanvasText}}
 @media print{.fv-r281__authority-ledger{display:block}.fv-r281__authority-ledger>li{background:white!important;border-color:#000;break-inside:avoid;margin:0 0 1rem}.fv-r281__authority-ledger a::after{content:' <' attr(href) '>';display:block;overflow-wrap:anywhere;font-size:.75rem}}
+
+/* R290 — trace Jan 28 claim to the four original dated authority actions. */
+.fv-r281__authority-jump{margin:.6rem 0 1rem;padding:.5rem .7rem;border-left:3px solid var(--gold);background:#292922}
+.fv-r281__authority-jump a,.fv-r281__authority-return a{display:inline-flex;min-height:44px;align-items:center}
+.fv-r281__authority-ledger>li{scroll-margin-top:1.5rem}
+.fv-r281__authority-ledger>li:focus{outline:3px solid var(--gold);outline-offset:3px}
+.fv-r281__authority-return{padding-top:.4rem;border-top:1px solid var(--line)}
+@media(forced-colors:active){.fv-r281__authority-jump{background:Canvas;color:CanvasText;border-color:Highlight}.fv-r281__authority-ledger>li:focus{outline-color:Highlight}}
+@media print{.fv-r281__authority-jump,.fv-r281__authority-return{display:none!important}}
