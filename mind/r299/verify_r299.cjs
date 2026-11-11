@@ -18,9 +18,9 @@ const paths={
  B:"mind/r284/ZEN12-BUYER-GUIDE-B-FILM-STORYBOARD-UNPUBLISHED.html"
 };
 const pins={
-  "article": "fdb5e5b3e5ca6239",
+  "article": "a4f6fd17ee565221",
   "guide": "3dd8926ec41a776b",
-  "matrix": "e17e01d1f6467202",
+  "matrix": "2b66cf4b690faa5d",
   "hub": "5ce4fa668194f20e",
   "dossier": "e31bafb29ab19c14",
   "A": "e0bbb529cff3f5e4",
