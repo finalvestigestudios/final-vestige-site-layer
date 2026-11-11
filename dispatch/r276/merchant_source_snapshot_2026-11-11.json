@@ -1,0 +1,85 @@
+{
+  "snapshot_at_utc": "2026-11-11T08:30:50Z",
+  "owner": "Dispatch editorial QA; Mind & Affiliate owns presell/eligibility; Claude owns production analytics",
+  "source_type": "public-seller pages plus authenticated read-only WordPress settings; NOT partner-account authorization",
+  "commercial_restrictions": {
+    "affiliate_account_approved": false,
+    "email_channel_permission_verified": false,
+    "earning_link_issued": false,
+    "qualifying_offer_terms_verified": false,
+    "approved_guide_live": false,
+    "founder_final_campaign_approval": false
+  },
+  "offers": [
+    {
+      "issue": 3,
+      "seller": "Zen12",
+      "canonical_official_url": "https://zen12.com/getstarted",
+      "observed_public_package": "12 levels; 48 MP3s; manuals, guides, support; not individually verified delivery",
+      "observed_public_checkout_amount_usd": 87.99,
+      "observed_public_compare_amount_usd": 187.99,
+      "price_is_authorized_earning_checkout": false,
+      "seller_free_audio_url": "https://zen12.com/welcome",
+      "free_audio_optin": "merchant newsletter, independent of Final Vestige consent",
+      "seller_equivalence_claim": "one hour of advanced meditation in 12 minutes",
+      "claim_independently_product_proven": false,
+      "cta_state": "PENDING_MIND_APPROVAL_NOT_LIVE",
+      "disclosure": "If you purchase through a qualifying link in the guide, Final Vestige may earn a commission."
+    },
+    {
+      "issue": 5,
+      "seller": "Hypnosis Live — Total Focus",
+      "canonical_official_url": "https://hypnosislive.com/mental-skills/total-focus",
+      "observed_public_file_minutes": 33,
+      "observed_public_file_mb": 47,
+      "observed_public_standalone_price_usd": 24.44,
+      "observed_public_reference_price_usd": 29.95,
+      "price_is_authorized_earning_checkout": false,
+      "refund_source_url": "https://hypnosislive.com/faq",
+      "merchant_refund_request_days": 14,
+      "merchant_refund_max_sessions_per_year": 5,
+      "seller_effectiveness_claim": "razor-sharp concentration and brain reprogramming",
+      "claim_independently_product_proven": false,
+      "cta_state": "PENDING_MIND_APPROVAL_NOT_LIVE",
+      "disclosure": "If you purchase through a qualifying link in the guide, Final Vestige may earn a commission."
+    }
+  ],
+  "platform": {
+    "newsletter_enabled": true,
+    "email_new_posts_by_default": false,
+    "email_content_format": "full",
+    "welcome_has_fieldbook_url": true,
+    "newsletter_categories_enabled": false,
+    "subscriber_diagnostic_total": 3,
+    "subscriber_diagnostic_confirmed": 3,
+    "subscriber_diagnostic_unconfirmed": 2,
+    "followers_wpcom": 3,
+    "followers_email": 0,
+    "provider_filtered_current_eligible": null,
+    "genuine_welcome_received": false,
+    "public_pdf_binary_verified": false,
+    "current_commercial_sends": 0,
+    "recent_post_status": "never_sent_opted_out"
+  },
+  "public_pdf": {
+    "wordpress_media_id": 1737,
+    "mime": "application/pdf",
+    "registered_bytes": 599946,
+    "url": "https://finalvestige.com/wp-content/uploads/2026/10/Final_Vestige_Seven_Day_Focus_Fieldbook_Complete_Edition.pdf",
+    "configured_link_matches_media": true,
+    "public_fetch_status": "INCONCLUSIVE_TOOL_ERROR_NOT_A_READER_FAILURE"
+  },
+  "legal_inbox": {
+    "final_vestige_valid_physical_mailing_address_verified": false,
+    "received_jetpack_unsubscribe_verified": false,
+    "actual_jetpack_html_plain_mime_verified": false,
+    "eligible_recipients_verified": false
+  },
+  "revenue": {
+    "merchant_settlement_evidence": false,
+    "real_paid_orders": null,
+    "realized_net_revenue_usd": null,
+    "qualified_human_sessions": null,
+    "net_revenue_per_1000": null
+  }
+}
