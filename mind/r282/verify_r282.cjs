@@ -13,7 +13,7 @@ const P = {
  a:'ZEN12-DECISION-A-TEXT-UNPUBLISHED.html',
  b:'ZEN12-DECISION-B-OPTIONAL-FILM-CONCEPT-UNPUBLISHED.html',
  matrix:'MERCHANT-CLAIM-REVENUE-GATES.json',
- plan:'ONE-OFFER-REVENUE-CONVERSION-ACCEPTANCE.md'
+ plan:'ONE-OFFER-REVENUE-CONVERSION-ACCEPTANCE.md',hub:'MIND-ARCHIVE-ATTENTION-HUB-COMPONENT-UNPUBLISHED.html'
 };
 const GATES = [
 'named_FV_partner_acceptance','current_signed_affiliate_terms','permitted_website_channel',
@@ -61,7 +61,7 @@ function validateHTML(html,variant,errors){
   } else if(/class="filmmodule"|<svg class="poster"/.test(html))fault(errors,'A: unexpected film');
 }
 function validate(f){
-  const errors=[];
+  const errors=[]; if(!f.hub.includes('class="fv-mind-r282"')||!f.hub.includes('fv-r282-perception')||!f.hub.includes('fv-r282-history')||!f.hub.includes('fv-r282-practice')||!f.hub.includes('fv-r282-review'))fault(errors,'Mind hub missing editorial streams'); if(!f.hub.includes('disabled aria-disabled="true"')||!f.hub.includes('may earn a commission')||!f.hub.includes('No earning link is active here'))fault(errors,'Mind hub earning disclosure and disabled CTA'); if(f.hub.includes('<script')||f.hub.includes('<form')||f.hub.includes('<iframe')||f.hub.includes('href="https://zen12.com'))fault(errors,'Mind hub active merchant resource');
   if(words(f.article)<1800)fault(errors,'manuscript too short');
   for(const s of ['Raymond','Chun','Slagter','MacLean','Puységur','https://pubmed.ncbi.nlm.nih.gov/1500880/','not active','not a'])if(!f.article.includes(s))fault(errors,'missing original investigation boundary: '+s);
   if(/href\s*=|<script/i.test(f.article))fault(errors,'article contains rendered script or href');
@@ -129,6 +129,9 @@ function runSelfTest(f){
  flip('matrix','"no_duplicate_forms": true','"no_duplicate_forms": false');
  flip('matrix','"publisher_earning_url": null','"publisher_earning_url": "https://zen12.com/aff"');
  flip('matrix','"status": "HARD_HOLD"','"status": "LIVE"');
+ flip('hub','may earn a commission','independent advertising');
+ flip('hub','fv-r282-perception','fv-r282-missing');
+ flip('hub','<section class="fv-mind-r282"','<script>alert(1)</script><section class="fv-mind-r282"');
  let passed=0;
  for(const m of mutations){if(!f[m.key].includes(m.from))throw Error('BAD MUTATION FIXTURE '+m.key+': '+m.from);
    const other={...f,[m.key]:(m.key==='article'&&m.from==='Slagter')||(m.key==='plan'&&m.from==='NOT COMPUTABLE')?f[m.key].replaceAll(m.from,m.to):f[m.key].replace(m.from,m.to)};
