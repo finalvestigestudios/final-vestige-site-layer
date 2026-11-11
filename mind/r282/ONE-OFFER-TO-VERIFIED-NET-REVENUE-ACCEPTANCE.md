@@ -43,7 +43,7 @@ Site QA/Claude: signed-out 360/390/768/1440/1920 widths, keyboard tab sequence, 
 
 1. **Existing change blindness:** https://finalvestige.com/2026/11/02/change-blindness/ → existing free https://finalvestige.com/focus/ → optional approved exact Zen12 buyer file only where someone has buying interest. Benefit-claim inference prohibited. Proposed hook/topic only; **no authenticated creator asset ID/post URL**.
 2. **Mesmerism / Puységur:** historical https://finalvestige.com/2026/11/02/mesmerism/ → https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/ → existing Focus or independent hypnosis comparison only after permission. Public YouTube `SV9m07PFTYk` is an **existing reported topic match**, not Grok's authenticated asset ID, rights or website redirect. Do not treat as attributed traffic.
-3. **White bear / thought suppression:** new UNPUBLISHED R282 original investigation → no public landing URL until editorial release → optional Focus, and only then relevant evidence-reviewed Zen12 guide if audience intent warrants. **No new Grok production task**, no fake media ID or public URL.
+3. **Repetition blindness:** new UNPUBLISHED R282 independent original investigation on rapid word-recognition versus repeated-event registration → no public landing URL until editorial release → optional Focus, and only then a commercially vetted guide if the individual reader has buying intent. This research does NOT imply an audio remedy. **No new Grok production task**, no fake media ID or public URL.
 
 Praxxis verifies exact platform, immutable Grok `asset_id`, published timestamp, original media URL, rights, supported click placement, actual landing URL and referral permissions in existing TASK-008; Grok continues making/posting video under founder approval, and the dated handoff is research-only. The allowed naming concept is `utm_source=actual_platform`, `utm_medium=organic_social`, `utm_campaign=mind_white_bear_pilot_2026_11`, `utm_content=<authentic_asset_id>`; these are **proposals**, not campaign evidence or live links.
 
@@ -68,15 +68,20 @@ Event sequence: `qualified_human_session` → actual `landing_view` by validated
 | P1 — Focus lead | Existing fieldbook → confirmed, consented subscriber | Provider-confirmed attributable signup and delivery unknown | Inspect existing Jetpack route with consent; no new list or new welcome email | **LIVE ROUTE**, conversion unverified | Claude + Dispatch |
 | P0 — Verified net revenue | Settled real sale → net-revenue/1k qualified sessions | Actual settlement, refunds, fees and valid session join missing | Reconcile 7/30-day finance cohorts, tiny-sample warning, segregate unknown attribution | **NOT COMPUTABLE** | Commerce + Claude |
 
+
+### Duplication safeguard (material finding)
+
+Review of Issue #171's historical comments found several prior **white-bear / thought-suppression** investigations in R81, R127, R169, R186 and R234/R235/R267. R282's initially drafted white-bear article was therefore **removed from the proposed file set** and must not be counted as a new original. Its research informs the independent buyer-guide micro-story only. The **distinct new primary article** addresses *repetition blindness* under rapid visual presentation and includes citations to five relevant experimental reports; Issue #171 comments did not match the phrase, but **complete draft portfolio duplicate screening remains outstanding**. Do not publish both white-bear and repetition-blindness as adjacent canon solely to fill a content quota.
+
 ## Dated acceptance / actual tests
 
-- **Built:** unpublished source-controlled original 2,400+ word thought-suppression investigation; 18-source, 24-claim, 5-offer, 3-creator-route exact-source JSON; same-main A/B responsive buyer file; 42s original SVG/static poster and seven caption/time segments; fail-closed `node mind/r282/verify_r282.cjs` source suite.
+- **Built:** unpublished source-controlled original 2,700+ word **repetition-blindness** investigation grounded in Kanwisher 1987/1989/1991, Hochhaus/Marohn 1991 and Park/Kanwisher 1994; the older white-bear topic was found to recur in earlier Issue #171 milestones and is therefore **not** relabeled a new editorial achievement; 18-source, 24-claim, 5-offer, 3-creator-route exact-source JSON; same-main A/B responsive buyer file; 42s original SVG/static poster and seven caption/time segments; fail-closed `node mind/r282/verify_r282.cjs` source suite.
 - **Executed:** source-level tests are run against final connector-read-back files in isolated V8 with a Node `fs/path` shim. We clearly do **not** label this native Node, CI, live browser, or sales testing. Output and exact final commit SHA recorded after final verification.
 - **Not done:** official paid FV SKU auth, real source-controlled MP4, native/repository Node on a full checkout deployment, live WP media/CMS sanitization, partner approval, buyer checkout, payment settlement, measured revenue, Grok posting, any live subscribers or email.
 - **Release approval:** **HARD HOLD**. Do not merge/deploy/post, edit live WP/Jetpack/Dispatch or social, enable commerce, copy generic affiliate promos or add a new analytics tag. Preserve homepage PR #49, canonical Mind hub PR #172, Issue #150 art lead, Dispatch Issue #174 and conversion Issue #820 ownership. All release decisions remain with the founder.
 
 ### Source control / QA desk
-- Editorial: `mind/r282/THE-WHITE-BEAR-YOU-COULD-NOT-PUT-AWAY-UNPUBLISHED.md`
+- Editorial: `mind/r282/THE-SECOND-WORD-THAT-NEVER-ARRIVED-REPETITION-BLINDNESS-UNPUBLISHED.md`
 - Claims: `mind/r282/WHITE-BEAR-PRODUCT-CLAIM-COMMERCE-GATES.json`
 - Pre-sell variants: `mind/r282/ZEN12-WHITE-BEAR-BUYER-A-UNPUBLISHED.html`, `ZEN12-WHITE-BEAR-BUYER-B-UNPUBLISHED.html`
 - Reproducible static tests: `mind/r282/verify_r282.cjs`
