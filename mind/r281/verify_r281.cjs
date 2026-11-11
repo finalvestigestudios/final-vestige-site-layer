@@ -37,7 +37,7 @@ function tags(html){
 }
 function verify(input){
  const errors=[],bad=(e)=>errors.push(e);
- const A=input.A||"",B=input.B||"",article=input.article||"",investigation=input.investigation||"";
+ const A=input.A||"",B=input.B||"",article=input.article||"",investigation=input.investigation||"",hub=input.hub||"";
  let m,n;try{m=typeof input.matrix==="string"?JSON.parse(input.matrix):input.matrix;n=typeof input.r281matrix==="string"?JSON.parse(input.r281matrix):input.r281matrix;}catch(e){return ["Invalid claims JSON"];}
  if(!m||!n)return ["Missing matrices"];
  if(m.commercial_mode!=="HARD_HOLD"||m.publication!=="UNPUBLISHED")bad("R280 commercial mode not held");
@@ -98,6 +98,22 @@ function verify(input){
  if(!article.includes("excluded one-session interventions")||!article.includes("three studies totaling 100")||!article.includes("five refunded sessions per year")||!article.includes("https://hypnosislive.com/faq"))bad("R280 editorial repairs absent");
  for(const url of ["10.1016/j.obhdp.2009.04.002","10.1287/orsc.2017.1184","s41599-025-05000-w","https://finalvestige.com/focus/"])if(!investigation.includes(url))bad("Original investigation lost its source "+url);
  if(/we tested Zen12|verified affiliate commission|guaranteed (?:focus|health)/i.test(article+investigation))bad("Fabricated result / efficacy guarantee");
+ if(!hub.includes('class="fv-mind-r281"')||!hub.includes('data-publication="unpublished"')||!hub.includes('data-commerce="hard-hold"')||!hub.includes('aria-labelledby="fv-r281-heading"'))bad("Unpublished reading-room module contract lost");
+ if(!hub.includes('https://finalvestige.com/focus/')||!hub.includes('https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/')||!hub.includes('https://doi.org/10.1287/orsc.2017.1184'))bad("Hub lost free path or scholarly sources");
+ if(/<\\s*(?:script|form|iframe|input|video|audio|img|link|base|object|embed|foreignObject|use|animate)\\b/i.test(hub))bad("Hub active external/input element");
+ if(/@import|url\\s*\\(/i.test(hub))bad("Hub CSS external fetch vector");
+ let hubButtons=0;
+ for(const tag of tags(hub)){
+  for(const [key,vals] of Object.entries(tag.attrs)){
+   if(key.startsWith("on")||["src","srcset","srcdoc","formaction","action","xlink:href"].includes(key))bad("Hub active attribute");
+   if(key==="href"&&vals.some(v=>!(v.startsWith("https://finalvestige.com/")||v.startsWith("https://doi.org/")||v.startsWith("https://www.nature.com/"))))bad("Hub unauthorized link");
+  }
+  if(tag.name==="button"){hubButtons++;if(!("disabled" in tag.attrs)||tag.attrs.type?.[0]!=="button")bad("Hub enabled offer control")}
+ }
+ if(hubButtons!==1)bad("Hub commercial control cardinality");
+ if(!/<button\\b[^>]*\\bdisabled\\b[^>]*>[\\s\\S]*?<\\/button>\\s*<p class="fv-disclosure">[\\s\\S]{0,450}may earn a commission/i.test(hub))bad("Hub disclosure not adjacent");
+ if(!hub.includes("merchant's newsletter")||!hub.includes("existing Final Vestige Dispatch"))bad("Hub consent identities conflated");
+
  return errors;
 }
 function adversarialTests(files){
@@ -131,6 +147,16 @@ function adversarialTests(files){
  add("missing R281 primary",f=>f.investigation=f.investigation.replaceAll("10.1287/orsc.2017.1184","no-source"));
  add("third-party pixel",f=>f.B+='<img src=https://bad.example/p.gif>');
  add("duplicate tracking claims",f=>f.r281matrix.conversion_pilot.first_party_attribution.affiliate_outbound_is_paid_sale=true);
+ add("hub active offer",f=>f.hub=f.hub.replace('<button type="button" disabled','<button type="button"'));
+ add("hub fake earning URL",f=>f.hub+='<a href="https://zen12.com/hnp">pay</a>');
+ add("hub extra signup",f=>f.hub+='<form><input type=email></form>');
+ add("hub hidden pixel",f=>f.hub+='<img src="https://bad.example/pixel">');
+ add("hub script",f=>f.hub+='<script>event()</script>');
+ add("hub missing disclosure",f=>f.hub=f.hub.replace("may earn a commission","gets a reward"));
+ add("hub altered consent",f=>f.hub=f.hub.replace("merchant's newsletter","no separate newsletter"));
+ add("hub missing focus path",f=>f.hub=f.hub.replaceAll("https://finalvestige.com/focus/","https://bad.example/"));
+ add("hub CSS remote import",f=>f.hub+='<style>@import "https://bad.example/r.css";</style>');
+
  let passed=0;const failures=[];
  for(const t of cases){const copy=JSON.parse(JSON.stringify(files));t.edit(copy);if(verify(copy).length>0)passed++;else failures.push(t.name)}
  return {total:cases.length,rejected:passed,missed:failures};
@@ -142,6 +168,7 @@ if(typeof require==="function"&&typeof module!=="undefined"&&require.main===modu
  article:fs.readFileSync(base+"TWELVE-MINUTES-IS-NOT-AN-HOUR-EVIDENCE-REVIEW-UNPUBLISHED.md","utf8"),
  matrix:JSON.parse(fs.readFileSync(base+"OFFER-EVIDENCE-CONVERSION-AUTHORIZATION.json","utf8")),
  investigation:fs.readFileSync(r281+"THE-WORK-YOU-LEFT-BEHIND-FOLLOWED-YOU-UNPUBLISHED.md","utf8"),
+ hub:fs.readFileSync(r281+"MIND-READING-ROOM-ATTENTION-RESIDUE-MODULE-UNPUBLISHED.html","utf8"),
  r281matrix:JSON.parse(fs.readFileSync(r281+"ATTENTION-RESIDUE-COMMERCE-CLAIM-AND-CREATOR-MATRIX.json","utf8"))};
  const errors=verify(input),result=adversarialTests(input);console.log(JSON.stringify({baseline:errors.length?"FAIL":"PASS",errors,adversarial:result}));
  if(errors.length||result.rejected!==result.total)process.exitCode=1;
