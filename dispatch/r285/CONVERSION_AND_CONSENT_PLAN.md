@@ -31,3 +31,5 @@ Every potentially commercial newsletter needs FTC primary-purpose assessment. Ve
 
 Official FTC: https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business
 Official WP: https://wordpress.com/support/newsletter/send-newsletter-emails/
+
+**KPI denominator definition:** Qualified-human sessions are privacy-safe, bot-filtered, distinct eligible visits, not impressions or all Jetpack views. When population provenance is unverified, the KPI remains NOT COMPUTABLE.
