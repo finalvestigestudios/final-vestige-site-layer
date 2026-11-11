@@ -1,5 +1,13 @@
 # Caernarvon 1927 — source and publication-gate audit (November 10, 2026)
 
+## FINAL run identity — November 11, 2026, 01:44:51 Pacific (supersedes 01:42 interim revision)
+
+**CURRENT QA TARGET / RELEASE HOLD:** Authenticated WordPress #2151 **DRAFT**, modified site-local **2026-11-11T01:44:51**, Gutenberg SHA-1 **`e4c2653b9d2a9bffa7edec9c10afb5132e69083a`**, **80 blocks**, **40 Sources & Further Reading items**. This supersedes the 01:42 80-block 39-source interim SHA `43b2d48acda68e8e4d92253454454470b9f7a76b` and the previous 79-block SHA. Follow-on optimistic-locked replacement of bibliography core/list **index 78** added the full [*TIME*, May 9, 1927 archive](https://time.com/archive/6660910/catastrophe-at-new-orleans/) entry; original 39 bibliography items preserved byte-for-byte within the list. WordPress returned zero content warnings and independent WP readback reconfirmed draft/80 blocks/original featured #2148/two categories/mail opt-out true/social off. No published article, no email, no social, no template/homepage mutation.
+
+Source caution: historical TIME archive segment is dated 1927; unrelated July 2026 modern sponsored FAQ precedes it. Its 48 charges, 3,000-pound next-day explosion, 1,200-foot opening and two-to-three-foot prediction are period **claims and expectation**, not an operational log, a final width survey, or a real-world no-breach control. Source paragraph (index 21) and bibliography both point to historical article. Earlier run notes remain retained for change history. **No authenticated 390/1440 production-theme preview and no ordinary-reader 2 USACE/2 USGS reference PASS; publication remains HOLD.**
+
+---
+
 ## November 11, 2026, 01:42 Pacific — contemporary TIME report and new WordPress draft revision
 
 - **CURRENT ACTIVE RELEASE IDENTITY**: authenticated WordPress post **#2151**, **DRAFT**, modified site-local **2026-11-11T01:42:03**, raw Gutenberg SHA-1 **`43b2d48acda68e8e4d92253454454470b9f7a76b`**, **80 top-level blocks**. Earlier hashes/dates in this log are historic only. Existing 39 bibliography items, 11 H2 sections, four local LOC/NOAA photos, featured #2148, original responsive chronology, categories 257245 and 232815 retained. The new `core/paragraph` is block index 21, between detonation chronology and historical-photo analysis.
