@@ -10,7 +10,8 @@ RELS=['experience2/apollo-r281/apollo-source-experience.php',
       'experience2/apollo-r290/README.md',
       'experience2/apollo-r290/build_archive.py',
       'experience2/apollo-r290/qa/browser_gate.py',
-      'experience2/apollo-r290/qa/php_gate.php']
+      'experience2/apollo-r290/qa/php_gate.php',
+      'experience2/apollo-r290/qa/http_axe_gate.py']
 files={rel:(ROOT/rel).read_bytes() for rel in RELS}
 for path in sorted(QA.glob('*')):
     if path.is_file() and path.suffix.lower() in {'.json','.png','.pdf'}:
