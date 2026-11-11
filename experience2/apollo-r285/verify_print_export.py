@@ -13,7 +13,7 @@ render=subprocess.run(['php','-r',php],cwd=root,text=True,capture_output=True,ch
 css=(root/'assets/apollo-source-experience.css').read_text()
 html='<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>'+css+'</style></head><body>'+render.stdout+'</body></html>'
 sources=['https://www.nasa.gov/mission/apollo-1/',
-'https://sma.nasa.gov/sma-disciplines/accllp/apollo-1',
+'https://www.nasa.gov/history/Apollo204/proceed.html',
 'https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/',
 'https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/']
 receipt={'test':'R285 chromium printed evidence PDF with closed native details','pdfs':{},'source_links':sources}

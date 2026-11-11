@@ -8,13 +8,13 @@
 if (!defined('ABSPATH')) { return; }
 
 const FV_R281_NASA_MISSION = 'https://www.nasa.gov/mission/apollo-1/';
-const FV_R281_NASA_SAFETY = 'https://sma.nasa.gov/sma-disciplines/accllp/apollo-1';
+const FV_R287_NASA_PROCEEDINGS = 'https://www.nasa.gov/history/Apollo204/proceed.html';
 const FV_R281_NASA_BOARD = 'https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/';
 const FV_R281_FREE = 'https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/';
 const FV_R281_STYLE = 'fv-apollo-evidence-r281';
-// Review-custody digest is pinned after independent historical copy approval. This
-// protects against accidental data drift, not a malicious PHP release editor.
-const FV_R282_REVIEWED_EVENTS_SHA256 = '268605391a741300d13e487968336040bfe016dd3d6e2165182a5269ecb19d4d';
+// Staging-only digest of corrected chronology, pending independent historical editorial
+// approval. It detects accidental data drift; it does not certify publication.
+const FV_R287_STAGING_EVENTS_SHA256 = '27821100c9fef91f1f2bbefa22b8c9f4ab05454b1e4af286b59a8a175fcde9fa';
 
 /** Immutable, curated chronology. All dates/claims have named official NASA sources. */
 function fv_r281_events(): array {
@@ -24,11 +24,11 @@ function fv_r281_events(): array {
          'boundary'=>'This dated record establishes the accident and crew. It does not identify the precise ignition point.',
          'source_id'=>'nasa_mission', 'source_name'=>'NASA Apollo 1 mission history', 'source_url'=>FV_R281_NASA_MISSION,
          'source_type'=>'Later institutional mission summary', 'source_dependency'=>'A NASA retrospective, not a separate firsthand witness record.'],
-        ['date'=>'1967-01-28','when'=>'January 28, 1967', 'title'=>'An investigation begins',
-         'statement'=>'NASA established the Apollo 204 Review Board to investigate the accident. The board met and visited the scene on January 28.',
-         'boundary'=>'Establishment of an inquiry is not proof that any specific ignition source was confirmed.',
-         'source_id'=>'nasa_safety', 'source_name'=>'NASA Safety and Mission Assurance account', 'source_url'=>FV_R281_NASA_SAFETY,
-         'source_type'=>'Later institutional safety summary', 'source_dependency'=>'A NASA account of the same investigation, not independent corroboration.'],
+        ['date'=>'1967-01-28','when'=>'January 28, 1967', 'title'=>'The Board convenes at Kennedy',
+         'statement'=>'The Apollo 204 Review Board convened at Kennedy Space Center on January 28, 1967, then visited Launch Complex 34 after its initial general session.',
+         'boundary'=>'This is the date of the Board meeting and site visit, not its establishment. NASA records that the Board was established on January 27. Neither date identifies the ignition source.',
+         'source_id'=>'nasa_proceedings', 'source_name'=>'NASA Apollo 204 Review Board proceedings', 'source_url'=>FV_R287_NASA_PROCEEDINGS,
+         'source_type'=>'1967 investigative primary proceedings', 'source_dependency'=>'The Board proceedings are part of its own investigation, not an independent eyewitness account.'],
         ['date'=>'1967-04','when'=>'April 1967', 'title'=>'The Review Board reports',
          'statement'=>'The review findings identified an electrical arc as the most probable fire initiator, without conclusively identifying the precise ignition source.',
          'boundary'=>'Most probable is not an exact-source finding. The published Board report is primary evidence; later NASA summaries are not an independent eyewitness confirmation.',
@@ -41,7 +41,7 @@ function fv_r281_escape(string $text): string {
 }
 /** Pin official link destinations to an explicit allowlist; fail closed on changed records. */
 function fv_r281_valid_records(array $records): bool {
-    $allow=['nasa_mission'=>FV_R281_NASA_MISSION,'nasa_safety'=>FV_R281_NASA_SAFETY,'nasa_board'=>FV_R281_NASA_BOARD];
+    $allow=['nasa_mission'=>FV_R281_NASA_MISSION,'nasa_proceedings'=>FV_R287_NASA_PROCEEDINGS,'nasa_board'=>FV_R281_NASA_BOARD];
     $seen=[];
     foreach ($records as $record) {
         if (!isset($record['date'],$record['when'],$record['title'],$record['statement'],$record['boundary'],$record['source_id'],$record['source_name'],$record['source_url'],$record['source_type'],$record['source_dependency'])) { return false; }
@@ -56,7 +56,7 @@ function fv_r281_valid_records(array $records): bool {
     // This digest covers *all* historical wording and NASA source metadata,
     // not merely date/URL allowlists. Changes require a new reviewed receipt.
     $encoded=json_encode(array_values($records), JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
-    return is_string($encoded) && hash_equals(FV_R282_REVIEWED_EVENTS_SHA256, hash('sha256',$encoded));
+    return is_string($encoded) && hash_equals(FV_R287_STAGING_EVENTS_SHA256, hash('sha256',$encoded));
 }
 function fv_r281_stylesheet_url(): string {
     return plugins_url('assets/apollo-source-experience.css', __FILE__);

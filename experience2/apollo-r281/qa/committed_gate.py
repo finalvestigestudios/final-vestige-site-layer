@@ -34,7 +34,7 @@ assert markup.count('<details')==6 and markup.count('<time')==6
 assert markup.count('fv-r281__source-list')==2
 assert 'malicious.invalid' not in markup
 NASA=['https://www.nasa.gov/mission/apollo-1/',
-      'https://sma.nasa.gov/sma-disciplines/accllp/apollo-1',
+      'https://www.nasa.gov/history/Apollo204/proceed.html',
       'https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/']
 FREE='https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/'
 assert all(markup.count('href="'+url+'"')==(4 if url in NASA else 2) for url in NASA+[FREE])
