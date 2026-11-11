@@ -77,7 +77,7 @@ function adversarialTests(b){
  add('hub merchant anchor',x=>x.hub=x.hub.replace('</main>','<a href="https://zen12.com/getstarted">BUY</a></main>'));
  add('hub script',x=>x.hub=x.hub.replace('</main>','<script>1</script></main>'));
  add('hub form',x=>x.hub=x.hub.replace('</main>','<form></form></main>'));
- add('hub active control',x=>x.hub=x.hub.replace('type="button" disabled','type="button"'));
+ add('hub active control',x=>x.hub=x.hub.replace(' disabled aria-disabled="true"',' aria-disabled="false"'));
  add('hub disclosure',x=>x.hub=x.hub.replace('commission at no additional cost','payment undisclosed'));
  add('hub unsupported claim',x=>x.hub=x.hub.replace('</main>','<p>guaranteed cognitive enhancement</p></main>'));
  add('source swapped',x=>{let m=JSON.parse(x.matrix);m.sources[0].url=m.sources[1].url;x.matrix=JSON.stringify(m)});
