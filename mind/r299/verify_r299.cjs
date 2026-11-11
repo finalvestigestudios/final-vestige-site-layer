@@ -134,7 +134,7 @@ function run(){
   const modified={...actual,[key]:mutate(actual[key])};
   ok(modified[key]!==actual[key],"MUTATION_DID_NOT_CHANGE_"+name);
   let thrown=null;
-  try{validate(modified,{pin:key==="hub"||key==="matrix"?false:true})}catch(e){thrown=e.message}
+  try{validate(modified,{pin:(key==="hub"||(key==="matrix"&&name!=="source_tamper"))?false:true})}catch(e){thrown=e.message}
   // Where pin is off for structure attacks, require the intended relevant guard.
   ok(thrown&&(thrown===code||((key==="hub"||key==="matrix")&&thrown.startsWith(code))),"MUTATION_NOT_CAUGHT_"+name+":"+thrown);
   passed++;
