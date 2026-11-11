@@ -1,0 +1,583 @@
+{
+  "milestone": "R294",
+  "date_checked": "2026-11-11",
+  "status": "UNPUBLISHED_HARD_HOLD",
+  "notes": "Primary source plus merchant official pages read directly; live 66 journal results differ from 61 in founding Issue #171. Distinguish source-derived statements from verified account evidence.",
+  "sources": [
+    {
+      "id": "stille_2017",
+      "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0173606",
+      "role": "primary_full_text"
+    },
+    {
+      "id": "johansson_2005",
+      "url": "https://doi.org/10.1126/science.1111709",
+      "role": "primary_paper"
+    },
+    {
+      "id": "loftus_palmer_1974",
+      "url": "https://doi.org/10.1016/S0022-5371(74)80011-3",
+      "role": "primary_paper"
+    },
+    {
+      "id": "sagana_2013",
+      "url": "https://onlinelibrary.wiley.com/doi/10.1002/bsl.2082",
+      "role": "primary_paper"
+    },
+    {
+      "id": "sagana_2014",
+      "url": "https://onlinelibrary.wiley.com/doi/10.1002/acp.3062",
+      "role": "primary_paper"
+    },
+    {
+      "id": "puys_archive",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "role": "live_FV_archive"
+    },
+    {
+      "id": "fv_explore",
+      "url": "https://finalvestige.com/explore/",
+      "role": "live_FV_page"
+    },
+    {
+      "id": "focus",
+      "url": "https://finalvestige.com/focus/",
+      "role": "live_FV_lead_magnet"
+    },
+    {
+      "id": "fv_change",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "role": "live_FV_investigation"
+    },
+    {
+      "id": "fv_journal",
+      "url": "https://finalvestige.com/blog/",
+      "role": "live_FV_inventory"
+    },
+    {
+      "id": "inspire3",
+      "url": "https://inspire3.com/",
+      "role": "seller_catalog"
+    },
+    {
+      "id": "zen12",
+      "url": "https://zen12.com/getstarted",
+      "role": "seller_checkout_snapshot"
+    },
+    {
+      "id": "hypnosis",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "role": "seller_offer"
+    },
+    {
+      "id": "brainwave",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "role": "seller_offer"
+    },
+    {
+      "id": "ftc_aff",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "role": "official_US_guidance"
+    },
+    {
+      "id": "ftc_health",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "role": "official_US_guidance"
+    },
+    {
+      "id": "fv_disclosure",
+      "url": "https://finalvestige.com/affiliate-disclosure/",
+      "role": "FV_policy_route"
+    },
+    {
+      "id": "dispatch",
+      "url": "https://finalvestige.com/dispatch/",
+      "role": "live_FV_route"
+    }
+  ],
+  "claims": [
+    {
+      "id": "c01",
+      "text": "2017 film and altered reattachable-sticker questionnaire",
+      "source_ids": [
+        "stille_2017"
+      ],
+      "decision": "ALLOW_RESEARCH",
+      "limits": "Experimental setup only, not therapy"
+    },
+    {
+      "id": "c02",
+      "text": "161 items altered, 61 percent corrected and 39 percent missed",
+      "source_ids": [
+        "stille_2017"
+      ],
+      "decision": "ALLOW_RESEARCH",
+      "limits": "Percentages are item-level, not person-level"
+    },
+    {
+      "id": "c03",
+      "text": "72 percent missed one or more of three changes",
+      "source_ids": [
+        "stille_2017"
+      ],
+      "decision": "ALLOW_RESEARCH",
+      "limits": "Participant-level threshold, not overall chance"
+    },
+    {
+      "id": "c04",
+      "text": "70 percent later response change for choice-blind items",
+      "source_ids": [
+        "stille_2017"
+      ],
+      "decision": "ALLOW_RESEARCH",
+      "limits": "Answers not objective durable memory"
+    },
+    {
+      "id": "c05",
+      "text": "68 percentage points aligned with the change",
+      "source_ids": [
+        "stille_2017"
+      ],
+      "decision": "ALLOW_RESEARCH",
+      "limits": "2 points changed independently"
+    },
+    {
+      "id": "c06",
+      "text": "19 percent changed among unmanipulated statements",
+      "source_ids": [
+        "stille_2017"
+      ],
+      "decision": "ALLOW_RESEARCH",
+      "limits": "Paper-specific comparison and exclusions"
+    },
+    {
+      "id": "c07",
+      "text": "Two ambiguous items excluded from main analysis",
+      "source_ids": [
+        "stille_2017"
+      ],
+      "decision": "ALLOW_RESEARCH",
+      "limits": "Alternate analysis reported by authors"
+    },
+    {
+      "id": "c08",
+      "text": "Choice-blindness portrait study was published in 2005",
+      "source_ids": [
+        "johansson_2005"
+      ],
+      "decision": "ALLOW_RESEARCH",
+      "limits": "Different task and outcome"
+    },
+    {
+      "id": "c09",
+      "text": "Leading questions can shape later answers",
+      "source_ids": [
+        "loftus_palmer_1974"
+      ],
+      "decision": "ALLOW_RESEARCH",
+      "limits": "Original car-speed experiment only"
+    },
+    {
+      "id": "c10",
+      "text": "Eyewitness studies varied across conditions",
+      "source_ids": [
+        "sagana_2013",
+        "sagana_2014"
+      ],
+      "decision": "ALLOW_QUALIFIED",
+      "limits": "Do not quote universal population rates"
+    },
+    {
+      "id": "c11",
+      "text": "Puységur archive is a source-led investigation",
+      "source_ids": [
+        "puys_archive",
+        "fv_explore"
+      ],
+      "decision": "ALLOW",
+      "limits": "Not proof of animal magnetism"
+    },
+    {
+      "id": "c12",
+      "text": "Existing Focus is 52 pages and free with Dispatch",
+      "source_ids": [
+        "focus",
+        "dispatch"
+      ],
+      "decision": "ALLOW",
+      "limits": "Do not duplicate opt-in forms"
+    },
+    {
+      "id": "c13",
+      "text": "Live Journal currently displays 66 results",
+      "source_ids": [
+        "fv_journal"
+      ],
+      "decision": "OBSERVED_NOT_PINNED",
+      "limits": "Dynamic count may change; issue historic 61"
+    },
+    {
+      "id": "c14",
+      "text": "Zen12 page advertises 12 levels and 48 MP3s",
+      "source_ids": [
+        "zen12"
+      ],
+      "decision": "ALLOW_AS_SELLER_DESCRIPTION",
+      "limits": "Package may change, verify at release"
+    },
+    {
+      "id": "c15",
+      "text": "Zen12 promises fast meditation benefits",
+      "source_ids": [
+        "inspire3",
+        "zen12"
+      ],
+      "decision": "DO_NOT_ASSERT_EFFICACY",
+      "limits": "No product-specific independent verification"
+    },
+    {
+      "id": "c16",
+      "text": "Zen12 checkout showed an $87.99 conditional total on Nov 11",
+      "source_ids": [
+        "zen12"
+      ],
+      "decision": "EVIDENCE_LOG_ONLY",
+      "limits": "Price/tax/discount mutable; do not publish as FV price"
+    },
+    {
+      "id": "c17",
+      "text": "Zen12 guaranteed refund satisfaction",
+      "source_ids": [
+        "zen12"
+      ],
+      "decision": "SELLER_ONLY",
+      "limits": "Do not promise refund eligibility or fulfillment"
+    },
+    {
+      "id": "c18",
+      "text": "Hypnosis Live Total Focus is 33-min seller recording",
+      "source_ids": [
+        "hypnosis"
+      ],
+      "decision": "ALLOW_AS_SELLER_DESCRIPTION",
+      "limits": "Retail marketing benefit claims unverified"
+    },
+    {
+      "id": "c19",
+      "text": "Hypnosis Live guarantees limitless concentration",
+      "source_ids": [
+        "hypnosis"
+      ],
+      "decision": "DO_NOT_ASSERT_EFFICACY",
+      "limits": "Not independently established"
+    },
+    {
+      "id": "c20",
+      "text": "Brainwave Focus Shot sells 15/30-minute recordings",
+      "source_ids": [
+        "brainwave"
+      ],
+      "decision": "ALLOW_AS_SELLER_DESCRIPTION",
+      "limits": "Seller product format only"
+    },
+    {
+      "id": "c21",
+      "text": "Brainwave focus lasts hours",
+      "source_ids": [
+        "brainwave"
+      ],
+      "decision": "DO_NOT_ASSERT_EFFICACY",
+      "limits": "Seller claim; not verified"
+    },
+    {
+      "id": "c22",
+      "text": "Affiliate disclosure adjacent to any endorsement",
+      "source_ids": [
+        "ftc_aff"
+      ],
+      "decision": "MANDATORY",
+      "limits": "On-page and close to future link"
+    },
+    {
+      "id": "c23",
+      "text": "Implied psychological effects require proof",
+      "source_ids": [
+        "ftc_health"
+      ],
+      "decision": "MANDATORY",
+      "limits": "Product-specific substantiation before disseminating"
+    },
+    {
+      "id": "c24",
+      "text": "An affiliate program exists in public catalog",
+      "source_ids": [
+        "inspire3"
+      ],
+      "decision": "NOT_ACCOUNT_APPROVAL",
+      "limits": "No Final Vestige-specific acceptance evidenced"
+    },
+    {
+      "id": "c25",
+      "text": "Click-through equals a paid sale",
+      "source_ids": [
+        "ftc_aff"
+      ],
+      "decision": "PROHIBITED_METRIC",
+      "limits": "Only merchant confirmed order or settled commission counts"
+    },
+    {
+      "id": "c26",
+      "text": "Suggested campaign name mind_proposed_2026_11 is live",
+      "source_ids": [
+        "fv_explore"
+      ],
+      "decision": "UNVERIFIED",
+      "limits": "Name mismatch with mind_pilot_2026_11; owner must reconcile"
+    },
+    {
+      "id": "c27",
+      "text": "A short optional film guarantees higher conversion",
+      "source_ids": [
+        "ftc_aff"
+      ],
+      "decision": "HYPOTHESIS_ONLY",
+      "limits": "No live A/B or verified paid outcome"
+    },
+    {
+      "id": "c28",
+      "text": "Personal memory manipulation proves sound-program efficacy",
+      "source_ids": [
+        "stille_2017",
+        "ftc_health"
+      ],
+      "decision": "PROHIBITED_INFERENCE",
+      "limits": "No Zen12/Hypnosis/Brainwave trial in this work"
+    }
+  ],
+  "authorization_gates": [
+    {
+      "id": "publisher_identity",
+      "status": "HARD_HOLD",
+      "verified_at": null,
+      "evidence": null,
+      "override_allowed": false
+    },
+    {
+      "id": "partner_acceptance",
+      "status": "HARD_HOLD",
+      "verified_at": null,
+      "evidence": null,
+      "override_allowed": false
+    },
+    {
+      "id": "signed_partner_terms",
+      "status": "HARD_HOLD",
+      "verified_at": null,
+      "evidence": null,
+      "override_allowed": false
+    },
+    {
+      "id": "allowed_site_content_channel",
+      "status": "HARD_HOLD",
+      "verified_at": null,
+      "evidence": null,
+      "override_allowed": false
+    },
+    {
+      "id": "allowed_social_channel",
+      "status": "HARD_HOLD",
+      "verified_at": null,
+      "evidence": null,
+      "override_allowed": false
+    },
+    {
+      "id": "allowed_email_channel",
+      "status": "HARD_HOLD",
+      "verified_at": null,
+      "evidence": null,
+      "override_allowed": false
+    },
+    {
+      "id": "approved_asset_or_creative_rights",
+      "status": "HARD_HOLD",
+      "verified_at": null,
+      "evidence": null,
+      "override_allowed": false
+    },
+    {
+      "id": "issued_merchant_tracking_URL",
+      "status": "HARD_HOLD",
+      "verified_at": null,
+      "evidence": null,
+      "override_allowed": false
+    },
+    {
+      "id": "target_checkout_verified",
+      "status": "HARD_HOLD",
+      "verified_at": null,
+      "evidence": null,
+      "override_allowed": false
+    },
+    {
+      "id": "offer_entitlement_and_eligible_SKU",
+      "status": "HARD_HOLD",
+      "verified_at": null,
+      "evidence": null,
+      "override_allowed": false
+    },
+    {
+      "id": "current_consumer_terms_verified",
+      "status": "HARD_HOLD",
+      "verified_at": null,
+      "evidence": null,
+      "override_allowed": false
+    },
+    {
+      "id": "refunds_and_guarantees_verified",
+      "status": "HARD_HOLD",
+      "verified_at": null,
+      "evidence": null,
+      "override_allowed": false
+    },
+    {
+      "id": "product_claims_independently_substantiated_or_omitted",
+      "status": "HARD_HOLD",
+      "verified_at": null,
+      "evidence": null,
+      "override_allowed": false
+    },
+    {
+      "id": "FTC_near_link_disclosure",
+      "status": "HARD_HOLD",
+      "verified_at": null,
+      "evidence": null,
+      "override_allowed": false
+    },
+    {
+      "id": "browser_mobile_accessibility_QA",
+      "status": "HARD_HOLD",
+      "verified_at": null,
+      "evidence": null,
+      "override_allowed": false
+    },
+    {
+      "id": "security_and_privacy_attribution_QA",
+      "status": "HARD_HOLD",
+      "verified_at": null,
+      "evidence": null,
+      "override_allowed": false
+    },
+    {
+      "id": "founder_commercial_activation_approval",
+      "status": "HARD_HOLD",
+      "verified_at": null,
+      "evidence": null,
+      "override_allowed": false
+    },
+    {
+      "id": "founder_production_release_approval",
+      "status": "HARD_HOLD",
+      "verified_at": null,
+      "evidence": null,
+      "override_allowed": false
+    }
+  ],
+  "commercial_primary_hypothesis": {
+    "product": "Zen12 Premium",
+    "intended_reader": "Reader comparing guided short meditation audio with free timer",
+    "official_offer_url_for_research_only": "https://zen12.com/getstarted",
+    "affiliate_earning_url": null,
+    "affiliate_accepted": false,
+    "checkout_activated": false,
+    "cta_disabled": true,
+    "price_to_quote": null,
+    "commission_to_quote": null,
+    "canonical_variants": [
+      "mind/r284/ZEN12-BUYER-GUIDE-A-TEXT-ONLY-UNPUBLISHED.html",
+      "mind/r284/ZEN12-BUYER-GUIDE-B-FILM-STORYBOARD-UNPUBLISHED.html"
+    ]
+  },
+  "owned_fallback": {
+    "verified_paid_mind_sku": null,
+    "verified_licensed_assets": null,
+    "verified_live_checkout": null,
+    "refund_policy": null,
+    "settlement_evidence": null,
+    "paid_checkout_approved": false
+  },
+  "creator_topic_fit": [
+    {
+      "topic": "Change blindness",
+      "article": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "next": "https://finalvestige.com/focus/",
+      "optional_offer": "Zen12 only after acceptance",
+      "asset_id": null,
+      "post_url": null,
+      "campaign_live": false
+    },
+    {
+      "topic": "Puységur and suggestion history",
+      "article": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "next": "https://finalvestige.com/focus/",
+      "optional_offer": "Hypnosis Live Total Focus only if claims and rights verified",
+      "asset_id": null,
+      "post_url": null,
+      "campaign_live": false
+    },
+    {
+      "topic": "Thatcher illusion",
+      "article": null,
+      "next": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "optional_offer": "Zen12 only if relevant; no implied efficacy",
+      "asset_id": null,
+      "post_url": null,
+      "campaign_live": false
+    }
+  ],
+  "measurement": {
+    "live": false,
+    "no_PII": true,
+    "no_new_pixels": true,
+    "no_new_forms": true,
+    "utm_campaign_final": null,
+    "campaign_values_conflict": [
+      "mind_pilot_2026_11",
+      "mind_proposed_2026_11"
+    ],
+    "event_chain": [
+      "qualified_human_session",
+      "landing",
+      "relevant_cta_click",
+      "confirmed_consented_lead_if_any",
+      "affiliate_click",
+      "independently_verified_paid_order_or_settled_commission",
+      "refunds_fees",
+      "FV_realized_net_revenue"
+    ],
+    "kpi": "1000*(verified_FV_owned_net_receipts+settled_FV_affiliate_commissions-refunds-chargebacks-attributable_fees)/qualified_human_sessions",
+    "cohorts_days": [
+      7,
+      30
+    ],
+    "current_kpi": null,
+    "reason": "No matched human denominator, merchant proof, settled affiliate earnings, returns or fees"
+  },
+  "experiment": {
+    "variant_A": "Existing R284 text-only guide",
+    "variant_B": "Existing R284 matching copy + 42s static storyboard; separate R291 film rendered locally but not hosted, not integrated",
+    "variant_B_currently_playable": false,
+    "assignment_live": false,
+    "primary_outcome": "net confirmed paid FV revenue per qualified human session",
+    "small_sample_warning": true
+  },
+  "release": {
+    "wordpress_write": false,
+    "nav_write": false,
+    "jetpack_write": false,
+    "social_post": false,
+    "affiliate_activation": false,
+    "merge": false,
+    "deploy": false,
+    "spend": false
+  }
+}
