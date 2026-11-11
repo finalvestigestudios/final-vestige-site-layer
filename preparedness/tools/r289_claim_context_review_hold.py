@@ -126,8 +126,18 @@ class ClaimContext(HTMLParser):
         elif tag not in VOID:
             self.errors.append('unmatched HTML end tag '+tag)
 
+    def permitted_reader_context(self):
+        """Reuse the citation-exposure exclusions for surrounding claim text.
+
+        This is only a conservative HTML source-level rule, not a CSS renderer.
+        Hidden/hard-concealed/non-narrative siblings cannot substantiate a
+        separate visible citation by contaminating its context fingerprint.
+        """
+        return not any(item['hidden'] or item['hard'] or
+                       item['tag'] in NO_NARRATIVE for item in self.stack)
+
     def add_decoded_entity(self, data):
-        if not any(item['hidden'] for item in self.stack):
+        if self.permitted_reader_context():
             block = next((item['block'] for item in reversed(self.stack) if item['block']), 'implicit')
             self.blocks[block].append(data)
             self.reader_parts.append(data)
@@ -144,7 +154,7 @@ class ClaimContext(HTMLParser):
         require(in_reader or not matches, 'nonreader hidden literal citation occurrence')
         block = next((item['block'] for item in reversed(self.stack) if item['block']), 'implicit')
         offset = len(''.join(self.blocks[block]))
-        if in_reader:
+        if self.permitted_reader_context():
             self.blocks[block].append(data)
             self.reader_parts.append(data)
         for match in matches:
