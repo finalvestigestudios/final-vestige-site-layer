@@ -457,7 +457,7 @@
   ],
   "consent_boundaries": {
     "fv_dispatch": "existing Jetpack only; opt-in is independent and voluntary",
-    "zen12_gift": "merchant email list, not FV lead",
+    "zen12_gift": "Merchant newsletter list, explicitly separate from FV Jetpack/Dispatch consent and lead counting",
     "no_duplicate_forms": true
   },
   "measurement_contract": {
