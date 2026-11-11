@@ -101,3 +101,29 @@ test('alternate currentSrc cannot inflate compileRecovery broken count',()=>{
   assert.equal(report.verified_broken_in_supplied_guest_evidence,0);
   assert.equal(report.priority[0].guest_browser.reason,'SELECTED_SOURCE_NOT_THE_PUBLISHED_ORIGINAL');
 });
+
+
+function frozenMutation(name,mutate) {
+  test('source-custody guard: '+name,()=>{
+    const copy=JSON.parse(JSON.stringify(source));
+    mutate(copy);
+    assert.throws(()=>compileRecovery(copy));
+  });
+}
+frozenMutation('substituted P0 original URL',x=>x.p0_queue[0].original_src='https://fake.invalid/substituted.jpg');
+frozenMutation('substituted same-publisher catalog URL',x=>x.p0_queue[2].catalog_candidate_url='https://media.stpetecatalyst.com/uploads/2020/04/different.jpg');
+frozenMutation('invented P0 retriever outcome',x=>x.p0_queue[0].retriever_only.wrapper_code=200);
+frozenMutation('fabricated P0 guest HTTP 404 in read-only ledger',x=>x.p0_queue[0].guest_http_status=404);
+frozenMutation('claimed prior rights approval',x=>x.p0_queue[0].reuse_rights_cleared=true);
+frozenMutation('invented 960-pixel dimension',x=>x.p0_queue[0].conditional_960px=[960,720]);
+frozenMutation('changed oversized original media URL',x=>x.oversized_media[0].original_url='https://finalvestige.com/wp-content/uploads/new.jpg');
+frozenMutation('inflated oversized stored size',x=>x.oversized_media[0].stored_original_bytes=999999999);
+frozenMutation('manipulated native pixel dimensions',x=>x.oversized_media[0].native_px=[100,100]);
+frozenMutation('deleted inline Malbone association',x=>x.oversized_media[1].inline_post_ids=[]);
+frozenMutation('replaced Jetpack published delivery reference',x=>x.oversized_media[0].published_direct_srcs=['https://finalvestige.com/other.jpg']);
+frozenMutation('invented oversized measured guest byte count',x=>x.oversized_media[1].guest_wire_bytes=4000000);
+frozenMutation('fabricated source-only confirmed 42 failures',x=>x.release.claim_42_verified=true);
+frozenMutation('fabricated 76 percent measured success',x=>x.methodology.measured_saving_pct=76);
+frozenMutation('mixed 61-post and 66-post counts',x=>x.cohorts.historical.posts=66);
+frozenMutation('changed worklist blob without reconciliation',x=>x.authority.worklist.blob_sha='f'.repeat(40));
+test('unchanged source-only snapshot still valid',()=>assert.equal(compileRecovery(source).verified_broken_in_supplied_guest_evidence,0));
