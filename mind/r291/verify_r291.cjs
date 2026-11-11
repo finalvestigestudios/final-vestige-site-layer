@@ -57,8 +57,8 @@ function audit(files) {
   requireEq(/(?:unpublished|not published)/i.test(h),'false publication scope '+key,e);
  }
  const hub=files[P.hub],vid=files[P.video],article=files[P.article],renderer=files[P.renderer],plan=files[P.plan];
- requireEq(/<p class=["']disclosure["'][^>]*>/.test(vid)&&vid.indexOf('Potential affiliate disclosure')<vid.indexOf('<button'),'video disclosure not adjacent',e);
- requireEq(hub.indexOf('Potential affiliate relationship')<hub.indexOf('<button'),'hub disclosure position missing',e);
+ requireEq(/<p class=["']disclosure["'][^>]*>/.test(vid)&&vid.includes('Potential affiliate disclosure:')&&vid.indexOf('Potential affiliate disclosure')<vid.indexOf('<button'),'video disclosure wording or position missing',e);
+ requireEq(hub.includes('Potential affiliate relationship:')&&hub.indexOf('Potential affiliate relationship')<hub.indexOf('<button'),'hub disclosure wording or position missing',e);
  requireEq(!/\bautoplay\b/i.test(vid.match(/<video\b[^>]*>/i)?.[0]||''),'autoplay enabled',e);
  requireEq(/<video\b(?=[^>]*\bcontrols\b)(?=[^>]*preload=["']none["'])[^>]*>/i.test(vid),'missing optional native controls + preload none',e);
  requireEq(/<track\b[^>]*kind=["']captions["']/i.test(vid),'missing caption track',e);
@@ -66,9 +66,9 @@ function audit(files) {
  requireEq(!/\bzen12\.com\/getstarted\b/i.test(vid),'unapproved raw merchant destination in playback UI',e);
  requireEq(/subprocess\.run/.test(renderer)&&/ffmpeg/.test(renderer)&&/captions\.vtt/.test(renderer)&&/poster\.png/.test(renderer),'render recipe missing',e);
  requireEq(/-t","42"/.test(renderer),'render length not 42s',e);
- requireEq(/Thompson/.test(article)&&/Bartlett/.test(article)&&/Psalta/.test(article)&&/Puységur/.test(article),'missing research sources',e);
- requireEq(/not.*product-specific|not.*meditation|cannot verify|cannot substantiate|cannot establish/i.test(article),'source limitation missing',e);
- requireEq(/NOT COMPUTABLE/i.test(plan)&&/HARD HOLD/i.test(plan),'realized revenue or release hold missing',e);
+ requireEq(/Peter Thompson/.test(article)&&/Bartlett/.test(article)&&/Psalta/.test(article)&&/Puységur/.test(article),'missing research sources',e);
+ requireEq(article.includes('They offer reasons to ask sharper questions of evidence, not a license to dismiss witnesses.')&&/not.*product-specific|not.*meditation|cannot verify|cannot substantiate|cannot establish/i.test(article),'source limitation missing',e);
+ requireEq(plan.includes('**NOT COMPUTABLE, NOT ZERO**')&&/HARD HOLD/i.test(plan),'realized revenue or release hold missing',e);
  requireEq(/verified.*commission|commission.*cleared/i.test(plan)&&/refund/i.test(plan)&&/qualified_human_sessions/i.test(plan),'net revenue validation absent',e);
  return e;
 }
