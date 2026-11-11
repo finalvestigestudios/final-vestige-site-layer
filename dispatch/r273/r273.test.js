@@ -1,0 +1,17 @@
+'use strict';
+const t=require('node:test'),a=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
+const r=f=>fs.readFileSync(path.join(__dirname,f),'utf8');
+const m=r('ISSUE05_BUYER_FIT_NOT_ADOPTED.md'),p=r('ISSUE05_BUYER_FIT_NOT_ADOPTED.txt'),h=r('ISSUE05_BUYER_FIT_NOT_ADOPTED.html'),j=JSON.parse(r('MERCHANT_CONSENT_EVIDENCE.json')),q=r('QA_CONVERSION_HANDOFF.md');
+t.test('original founder allocation and manuscripts preserved',()=>{a.equal(j.original_campaign.editorial,4);a.equal(j.original_campaign.commercial,2);a.equal(j.original_campaign.changed,false);a.equal(j.adopted,false)});
+t.test('hold and legal-placeholder state in each preview',()=>{for(let s of [m,p,h]){a(s.includes('VALID_POSTAL_ADDRESS_REQUIRED'));a(s.includes('JETPACK_UNSUBSCRIBE_LINK_MUST_BE_VERIFIED'));a(s.includes('APPROVED_HYPNOSIS_LIVE_WARMUP_GUIDE_URL_REQUIRED'))}});
+t.test('subject and preheader are identical in all formats',()=>{for(let s of [m,p,h]){a(s.includes(j.subject));a(s.includes(j.preheader))}});
+t.test('proposed guide has adjacent disclosure',()=>{for(let s of [m,p,h]){let x=s.indexOf('APPROVED_HYPNOSIS_LIVE_WARMUP_GUIDE_URL_REQUIRED'),y=s.indexOf('If you later purchase through a qualifying link');a(y>x&&y-x<650)}});
+t.test('HTML is standalone, readable, script/pixel/form free',()=>{a(h.includes('role="presentation"'));a(h.includes('<html lang="en">'));a(!/<script|<form|<img|<iframe|onclick=|onload=/i.test(h));a(h.includes('NOT A REAL JETPACK EMAIL'))});
+t.test('no affiliate tracking urls or active CTA anchors',()=>{a(!/hop=|hoplink|clickbank|affiliate_id=|aff_id=|utm_content=issue05/.test(h));a(!/href="\[\[/.test(h))});
+t.test('primary merchant claim not independently asserted',()=>{a(m.includes('not outcomes Final Vestige has independently demonstrated'));a.equal(j.product.seller_claims_product_proven,false)});
+t.test('exact refund caveat and product format appear',()=>{a(m.includes('14 days'));a(m.includes('five sessions'));a(m.includes('33-minute, 47 MB'));a.equal(j.product.seller_faq_max_refunds_per_year,5)});
+t.test('all merchant approvals fail closed',()=>{for(let k of ['partner_acceptance_verified','permission_to_promote_by_email_verified','earning_link_verified','approved_live_guide_verified'])a.equal(j.product[k],false)});
+t.test('no false subscriber counts or welcome evidence',()=>{a.equal(j.subscribers.eligible_to_email,'UNKNOWN');a(j.subscribers.nonadditive);a.equal(j.subscribers.received_welcome,'UNKNOWN');a.equal(j.gates.genuine_jetpack_preview_verified,false)});
+t.test('WordPress preverified consent exception recorded',()=>{a.equal(j.subscribers.preverified_wordpress_address_may_skip_confirmation_click,true);a(q.includes('may not need a new confirmation email click'))});
+t.test('official source URL coverage',()=>{let s=j.sources.map(x=>x.url).join('|');for(let host of ['hypnosislive.com','nccih.nih.gov','pubmed.ncbi.nlm.nih.gov','ftc.gov','wordpress.com'])a(s.includes(host))});
+t.test('settled monetary outcomes never invented',()=>{a.equal(j.revenue.net_revenue_per_1000_qualified_human_sessions,'NOT_COMPUTABLE');a.equal(j.revenue.independently_settled_transactions,'UNKNOWN')});

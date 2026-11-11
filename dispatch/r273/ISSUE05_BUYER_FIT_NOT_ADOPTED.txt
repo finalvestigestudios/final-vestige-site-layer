@@ -1,0 +1,37 @@
+THE DISPATCH · ISSUE 05 — REVIEW ONLY, NEVER SEND
+HOLD_UNSENT / HOLD_MERCHANT / NOT_ADOPTED. No original issue changed. Proposed guide CTA is inactive.
+Subject: The 33-minute promise you can actually check
+Preheader: A focus recording, a refund limit, and four questions worth asking.
+
+On a difficult afternoon, a thirty-three-minute recording can sound like an appealing shortcut. Put on headphones, press play, and come back ready to work. The part worth testing is not whether that sounds good. It is what the recording can reasonably promise.
+
+In the eighteenth-century records behind our Puységur investigation, a witness describes an experience and then interprets it. Those are two different kinds of evidence. A modern product page can make the same leap when it turns an audio format into a guarantee about what your mind will do.
+
+Take Hypnosis Live's Total Focus. Its current public product page lists a 33-minute, 47 MB downloadable session. Those are useful facts about the purchase. It also promises heightened concentration and uses language about reprogramming your brain and achieving perfect focus. Those stronger claims are the seller's marketing, not outcomes Final Vestige has independently demonstrated.
+
+The U.S. National Center for Complementary and Integrative Health reviews research on hypnosis for certain conditions, including pain and procedure-related anxiety. That research does not establish that this specific MP3 reliably improves workplace concentration. Nor does a theoretical review about how hypnotic suggestions may work validate this particular commercial recording.
+
+Before spending anything, try a small comparison that makes the question concrete. Pick one routine task and record, on three ordinary days, the minutes it takes to begin, the interruptions you notice and whether you finish the step you intended. Keep the setting and task as similar as practical. That is a personal feasibility log, not a blinded experiment or medical test. It can tell you whether a routine fits your life, but not whether an audio file changes your brain.
+
+Then ask four questions of any offer. What exact file or service will I receive? Can I hear a representative sample? Does the description promise a pleasant guided experience or an outcome no one has verified for this product? And what happens if I decide it was not worth the purchase?
+
+The refund question is concrete here. Hypnosis Live's public FAQ describes requests within 14 days, but limits refunds to five sessions in a year. That qualification matters; the product page's broad satisfaction wording should not obscure it. Public prices and bundles can change, and none establishes an approved Final Vestige affiliate checkout.
+
+If a no-cost focus routine works well enough, there is nothing you need to buy. If a guided recording still appeals to you, an independent comparison should make the format, limitations and actual terms clearer, not sell certainty it cannot substantiate.
+
+PROPOSED GUIDE CTA (INACTIVE): [[APPROVED_HYPNOSIS_LIVE_WARMUP_GUIDE_URL_REQUIRED]]
+
+Commercial disclosure beside proposed guide CTA: If you later purchase through a qualifying link in that independent guide, Final Vestige may earn a commission. The guide, merchant acceptance, email permission and earning link are not approved or live. This draft is not an offer to purchase.
+
+RESEARCH SOURCES (NOT PURCHASE CTAs)
+Merchant's official Total Focus offer and feature claims: https://hypnosislive.com/mental-skills/total-focus
+Merchant's official FAQ and refund annual cap: https://hypnosislive.com/faq
+NIH NCCIH evidence on hypnosis, not the seller's MP3: https://www.nccih.nih.gov/health/hypnosis
+2024 review of hypnosis theories, not product efficacy: https://pubmed.ncbi.nlm.nih.gov/39032268/
+Final Vestige historical Puységur source archive: https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/
+FTC health product evidence standard: https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance
+FTC CAN-SPAM compliance: https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business
+WordPress exact email subscription states: https://wordpress.com/support/subscribers/
+WordPress preverified-account confirmation exception: https://wordpress.com/support/newsletter/subscribe-to-a-newsletter/
+
+Final Vestige Studios | Postal address: [[VALID_POSTAL_ADDRESS_REQUIRED]] | Unsubscribe: [[JETPACK_UNSUBSCRIBE_LINK_MUST_BE_VERIFIED]]

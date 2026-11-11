@@ -1,0 +1,96 @@
+{
+  "status": "HOLD_UNSENT",
+  "commercial_status": "HOLD_MERCHANT",
+  "issue": 5,
+  "adopted": false,
+  "original_campaign": {
+    "pr": 175,
+    "sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+    "editorial": 4,
+    "commercial": 2,
+    "changed": false
+  },
+  "parent": {
+    "pr": 1997,
+    "sha": "f0dcb33206a50232bc92d9305fa86ab5cb297aab"
+  },
+  "subject": "The 33-minute promise you can actually check",
+  "preheader": "A focus recording, a refund limit, and four questions worth asking.",
+  "guide_cta": "[[APPROVED_HYPNOSIS_LIVE_WARMUP_GUIDE_URL_REQUIRED]]",
+  "cta_status": "INACTIVE",
+  "offer_disclosure": "NEAR_INACTIVE_CTA",
+  "product": {
+    "merchant": "Hypnosis Live",
+    "product": "Total Focus",
+    "seller_reported_duration_minutes": 33,
+    "seller_reported_size_MB": 47,
+    "seller_claims_product_proven": false,
+    "partner_acceptance_verified": false,
+    "permission_to_promote_by_email_verified": false,
+    "earning_link_verified": false,
+    "approved_live_guide_verified": false,
+    "route_price_verified": false,
+    "route_refund_verified": false,
+    "seller_faq_14_day_refund": true,
+    "seller_faq_max_refunds_per_year": 5
+  },
+  "subscribers": {
+    "total_diagnostic": 3,
+    "confirmed_diagnostic": 3,
+    "unconfirmed_diagnostic": 2,
+    "email_followers": 0,
+    "wpcom_followers": 3,
+    "eligible_to_email": "UNKNOWN",
+    "nonadditive": true,
+    "preverified_wordpress_address_may_skip_confirmation_click": true,
+    "received_welcome": "UNKNOWN"
+  },
+  "gates": {
+    "publisher_address_verified": false,
+    "received_unsubscribe_verified": false,
+    "genuine_jetpack_preview_verified": false,
+    "founder_campaign_release_approved": false
+  },
+  "revenue": {
+    "independently_settled_transactions": "UNKNOWN",
+    "net_revenue_per_1000_qualified_human_sessions": "NOT_COMPUTABLE"
+  },
+  "sources": [
+    {
+      "title": "Merchant's official Total Focus offer and feature claims",
+      "url": "https://hypnosislive.com/mental-skills/total-focus"
+    },
+    {
+      "title": "Merchant's official FAQ and refund annual cap",
+      "url": "https://hypnosislive.com/faq"
+    },
+    {
+      "title": "NIH NCCIH evidence on hypnosis, not the seller's MP3",
+      "url": "https://www.nccih.nih.gov/health/hypnosis"
+    },
+    {
+      "title": "2024 review of hypnosis theories, not product efficacy",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39032268/"
+    },
+    {
+      "title": "Final Vestige historical Puységur source archive",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+    },
+    {
+      "title": "FTC health product evidence standard",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+    },
+    {
+      "title": "FTC CAN-SPAM compliance",
+      "url": "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business"
+    },
+    {
+      "title": "WordPress exact email subscription states",
+      "url": "https://wordpress.com/support/subscribers/"
+    },
+    {
+      "title": "WordPress preverified-account confirmation exception",
+      "url": "https://wordpress.com/support/newsletter/subscribe-to-a-newsletter/"
+    }
+  ]
+}
