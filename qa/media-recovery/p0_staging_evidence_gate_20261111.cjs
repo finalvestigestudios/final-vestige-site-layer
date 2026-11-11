@@ -64,8 +64,15 @@ function guestFinding(item, evidence) {
   if (!evidence.screenshot_evidence_id || typeof evidence.screenshot_evidence_id !== 'string')
     return {verdict:'HOLD', reason:'MISSING_SCREENSHOT_EVIDENCE'};
   if (evidence.final_http_status >= 400 && evidence.natural_width === 0 &&
-      evidence.natural_height === 0)
+      evidence.natural_height === 0) {
+    // A page navigation or failed/aborted request to the same URL is not
+    // image-element loading evidence. Bind error status to a completed CDP
+    // Image resource before declaring a visitor-visible broken photograph.
+    // Error payloads often have text/html MIME, which is valid for HTTP 404.
+    if (evidence.resource_type !== 'Image' || evidence.loading_finished !== true)
+      return {verdict:'HOLD', reason:'FAILED_IMAGE_RESOURCE_LIFECYCLE_NOT_PROVEN'};
     return {verdict:'CONFIRMED_GUEST_BROKEN', reason:'COLD_HTTP_ERROR_AND_ZERO_IMAGE_DIMENSIONS', observed_http:evidence.final_http_status};
+  }
   if (evidence.final_http_status >= 200 && evidence.final_http_status < 300 &&
       px(evidence.natural_width) && px(evidence.natural_height)) {
     // DOM dimensions alone cannot establish a transferred and decoded image:
