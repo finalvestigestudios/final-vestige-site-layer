@@ -16,7 +16,9 @@ function fixture(post=621,before=1000,after=240){
      current_src:p.src,request_url:p.src,final_response_url:p.src,
      response_mime_type:'image/'+(p.src.includes('.png')?'png':'jpeg'),
      final_http_status:200,loading_finished:true,encoded_data_length:bytes,
-     natural_width:960,natural_height:Math.round(960*p.native_height/p.native_width),from_disk_cache:false,
+     natural_width:960,natural_height:Math.round(960*p.native_height/p.native_width),
+     rendered_css_width:320,rendered_css_height:Math.round(320*p.native_height/p.native_width),
+     object_fit:'contain',fully_visible_in_capture:true,from_disk_cache:false,
      from_memory_cache:false,from_service_worker:false,
      image_identity:'wp-media:'+p.media_id}))
  });
@@ -158,3 +160,17 @@ test('all eight real article cohorts accept matching synthetic native ratios',()
  for(const post of new Set(PINS.map(p=>p.post_id)))
    assert.equal(evaluatePinnedPair(fixture(post)).status,'VERIFIED_PINNED_OVERSIZE_SLOTS_COLD_PAIR');
 });
+
+// Visual composition & CSS-quality gates; synthetic browser fixtures only.
+test("same-ratio 120px blurry image cannot count as transfer savings",()=>held(f=>{for(const phase of ['before','after'])for(const x of f[phase].images){
+  x.natural_width=120;x.natural_height=Math.round(120*(x.slot==='621:0'?3000/4000:3831/5667));
+}},'IMAGE_RENDERED_SIZE_OR_FIT_UNVERIFIED'));
+test("unrecorded CSS painted width blocks assumed quality",()=>held(f=>{delete f.after.images[0].rendered_css_width;},'IMAGE_RENDERED_SIZE_OR_FIT_UNVERIFIED'));
+test("unrecorded object-fit is held",()=>held(f=>{delete f.after.images[0].object_fit;},'IMAGE_RENDERED_SIZE_OR_FIT_UNVERIFIED'));
+test("object-fit cover can silently crop a historic photo",()=>held(f=>{f.after.images[0].object_fit='cover';},'IMAGE_RENDERED_SIZE_OR_FIT_UNVERIFIED'));
+test("partially visible image cannot prove composition",()=>held(f=>{f.after.images[0].fully_visible_in_capture=false;},'IMAGE_RENDERED_SIZE_OR_FIT_UNVERIFIED'));
+test("CSS painted width larger than intrinsic is a blur/upscale",()=>held(f=>{f.after.images[0].rendered_css_width=1050;},'IMAGE_RENDERED_SIZE_OR_FIT_UNVERIFIED'));
+test("CSS box distorted to 16:9 from Malbone 4:3 source",()=>held(f=>{f.after.images[0].rendered_css_height=180;},'IMAGE_RENDERED_SIZE_OR_FIT_UNVERIFIED'));
+test("changed painted image box invalidates identical visual composition",()=>held(f=>{f.after.images[0].rendered_css_width=300;f.after.images[0].rendered_css_height=225;},'UNMATCHED_RENDERED_LAYOUT_GEOMETRY'));
+test("different object-fit across runs invalidates composition pair",()=>held(f=>{f.after.images[0].object_fit='fill';},'UNMATCHED_RENDERED_LAYOUT_GEOMETRY'));
+test("all eight P1 cohorts retain positive test coverage",()=>{for(const post of [34,35,36,37,38,269,299,621]){assert.equal(evaluatePinnedPair(fixture(post)).status,'VERIFIED_PINNED_OVERSIZE_SLOTS_COLD_PAIR')}});
