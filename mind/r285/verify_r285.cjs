@@ -21,7 +21,7 @@ function decode(s){return s.replace(/&(#x[0-9a-f]+|#[0-9]+|amp|quot|apos|colon|T
 function auditMarkup(html,key){
  assert.ok(html.length>=1800,key+' length');
  const style=[...html.matchAll(/<style\b[^>]*>([\s\S]*?)<\/style\s*>/gi)];
- for(const s of style)assert.ok(!/@import\b|url\s*\(|expression\s*\(|behavior\s*:|-moz-binding|data\s*:/i.test(s[1]),key+' resource-loading CSS');
+ for(const s of style)assert.ok(!/@import\b|url\s*\(|expression\s*\(|(?:^|[;{])\s*behavior\s*:|-moz-binding|data\s*:/i.test(s[1]),key+' resource-loading CSS');
  const work=html.replace(/<!--[\s\S]*?-->/g,'').replace(/<style\b[^>]*>[\s\S]*?<\/style\s*>/gi,'<style></style>').replace(/<!doctype\s+html\s*>/gi,'');
  const fragments=[...work.matchAll(/<([^<>]*)>/g)];
  assert.ok(!/[<>]/.test(work.replace(/<[^<>]*>/g,'')),key+' malformed markup');
