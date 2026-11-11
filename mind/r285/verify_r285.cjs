@@ -115,6 +115,7 @@ function check(d){
  for(const s of ['31 studies','1987','2020','rebound','cognitive load','https://pubmed.ncbi.nlm.nih.gov/3612492/','https://pubmed.ncbi.nlm.nih.gov/32286932/','https://zen12.com/hnp','no earning links','not a clinical trial','https://finalvestige.com/focus/'])
   assert.ok(d.article.toLowerCase().includes(s.toLowerCase()),'article grounding '+s);
  for(const k of ['a','b','hub','newHub'])auditMarkup(d[k],k);
+ for(const k of ['a','b'])for(const term of ['five refunded sessions in a year','one refund within any six-month period','with epilepsy','seller FAQ'])assert.ok(d[k].includes(term),'merchant-specific policy shown in buyer '+k+': '+term);
  assert.ok(!d.a.includes('class="film"'));
  assert.ok(d.b.includes('class="film"'));
  assert.ok(d.newHub.includes('unpublished design candidate'));
@@ -171,6 +172,7 @@ for(const change of [
  m=>m.source_register[0].url='https://false.invalid/',
  m=>m.claims[0].source_id='missing_source'
 ])attempts.push(['matrix',s=>{let m=JSON.parse(s);change(m);return JSON.stringify(m); }]);
+for(const term of ['five refunded sessions in a year','one refund within any six-month period','with epilepsy'])attempts.push(['both',s=>s.replaceAll(term,'withheld merchant policy')]);
 attempts.push(['article',s=>s.replaceAll('31 studies','3 studies')]);
 attempts.push(['article',s=>s.replace('https://pubmed.ncbi.nlm.nih.gov/3612492/','https://false.invalid/')]);
 attempts.push(['both',s=>s+'<a href="https://zen12.com/hnp">Pay</a>']);
