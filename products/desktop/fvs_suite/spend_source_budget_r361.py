@@ -11,7 +11,7 @@ from __future__ import annotations
 MAX_SPEND_SOURCE_COLUMNS = 64
 MAX_SPEND_SOURCE_CELL_CHARS = 1_048_576
 MAX_SPEND_SOURCE_TEXT_BYTES = 64 * 1024 * 1024
-# A UTF-8 byte budget alone does not bound Python\'s per-field dictionary and
+# A UTF-8 byte budget alone does not bound Python's per-field dictionary and
 # evidence bookkeeping overhead: millions of tiny/empty fields may fit under
 # 64 MiB yet require hundreds of MiB of container allocations. With the
 # 200k-row cap this allows an average of 10 source columns per row.
