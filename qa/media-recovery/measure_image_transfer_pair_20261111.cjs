@@ -31,11 +31,11 @@ function validateCapture(c, expectedSlots, postId) {
       !positive(c.viewport_width) || !positive(c.viewport_height) ||
       !(c.dpr > 0 && c.dpr <= 5) || !Array.isArray(c.images))
     return {error:'INCOMPLETE_COLD_CAPTURE'};
-  const ids = new Set(), slots = new Set();
+  const requestById = new Map(), slots = new Set();
   for (const img of c.images) {
     if (!img || img.post_id !== postId || !expectedSlots.includes(img.slot) ||
         slots.has(img.slot) || typeof img.request_id !== 'string' ||
-        !img.request_id || ids.has(img.request_id) ||
+        !img.request_id ||
         img.resource_type !== 'Image' || !https(img.current_src) ||
         !https(img.request_url) || img.current_src !== img.request_url ||
         !https(img.final_response_url) || img.final_response_url !== img.request_url ||
@@ -48,10 +48,23 @@ function validateCapture(c, expectedSlots, postId) {
         img.from_service_worker !== false ||
         typeof img.image_identity !== 'string' || !img.image_identity.trim())
       return {error:'MISSING_OR_INVALID_IMAGE_REQUEST',slot:img && img.slot};
-    slots.add(img.slot); ids.add(img.request_id);
+    // A single completed CDP Image request may feed multiple DOM <img> slots.
+    // Its network bytes must be counted once; inconsistent duplicate evidence is invalid.
+    const signature = JSON.stringify([img.post_id,img.resource_type,img.current_src,
+      img.request_url,img.final_response_url,img.response_mime_type,
+      img.final_http_status,img.loading_finished,img.encoded_data_length,
+      img.natural_width,img.natural_height,img.image_identity,
+      img.from_disk_cache,img.from_memory_cache,img.from_service_worker]);
+    const prior = requestById.get(img.request_id);
+    if (prior && prior.signature !== signature)
+      return {error:'CONFLICTING_SHARED_IMAGE_REQUEST',slot:img.slot};
+    if (!prior) requestById.set(img.request_id,{signature,row:img});
+    slots.add(img.slot);
   }
   if (!equalLists([...slots], expectedSlots)) return {error:'INCOMPLETE_IMAGE_SLOT_COVERAGE'};
-  return {ok:true, rows:new Map(c.images.map(r=>[r.slot,r]))};
+  return {ok:true, rows:new Map(c.images.map(r=>[r.slot,r])),
+    requests:new Map([...requestById].map(([id,r])=>[id,r.row])),
+    shared_slots:c.images.length-requestById.size};
 }
 function evaluatePair(input) {
   if (!input || input.schema !== 'fv-cold-transfer-pair-v1' ||
@@ -81,20 +94,25 @@ function evaluatePair(input) {
           https(y.item_rights_evidence_url)))
       return fail('CHANGED_ASSET_WITHOUT_RIGHTS_AND_VISUAL_GATE',slot);
   }
-  const sum = c => c.images.reduce((n,r)=>n+r.encoded_data_length,0);
-  const initial=sum(b), candidate=sum(a);
+  const sum = capture => [...capture.requests.values()]
+    .reduce((n,r)=>n+r.encoded_data_length,0);
+  const initial=sum(before), candidate=sum(after);
   if (!Number.isSafeInteger(initial) || !Number.isSafeInteger(candidate) ||
       initial <= 0 || candidate <= 0) return fail('INVALID_TRANSFER_TOTALS');
   const pct=(initial-candidate)*100/initial;
   return {status:'VERIFIED_SINGLE_POST_COLD_PAIR', post_id:input.post_id,
     matched_image_slots:input.expected_slots.length,
+    unique_completed_requests_before:before.requests.size,
+    unique_completed_requests_after:after.requests.size,
+    shared_request_slots_before:before.shared_slots,
+    shared_request_slots_after:after.shared_slots,
     network_metric:'CDP Network.loadingFinished encodedDataLength',
     image_network_before_bytes:initial, image_network_after_bytes:candidate,
     reduction_percent:Math.round(pct*100)/100,
     target_76_percent_met:pct>=PERCENT_TARGET,
     sitewide_transfer_savings_verified:false,
     production_change_allowed:false,
-    scope:'single-post matched-inline-image requests only, not sitewide page weight',
+    scope:'single-post unique completed Image requests across matched DOM slots, not sitewide page weight',
     caveat:'CDP encodedDataLength is request-network bytes, not WordPress stored originals; no CSS/background/ad image coverage'};
 }
 module.exports={evaluatePair,validateCapture,INVENTORY_BLOB};
