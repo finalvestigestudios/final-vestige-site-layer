@@ -25,7 +25,7 @@ def fixture():
         lockmeta=oid(6000+n) if n%6==0 else oldmeta
         original_origin='start'
         history_origin='base' if n<=6 else 'start'
-        articles.append(dict(n=n,slug=slug,route=f'/preparedness/{slug}/',source_cluster=original_origin,
+        articles.append(dict(n=n,slug=slug,route=f'/preparedness/start-here/{slug}/',source_cluster=original_origin,
                              body_oid=oldbody,body_bytes=100+n,meta_oid=oldmeta,meta_bytes=80+n))
         entries.extend([dict(path=f'content/articles/{slug}.body.html',role='article_body',sha=newbody,size=110+n),
                         dict(path=f'content/articles/{slug}.meta.json',role='article_meta',sha=newmeta,size=90+n)])
@@ -151,5 +151,85 @@ def add_negative(name, mut):
     fn.__name__='test_reject_'+name
     return fn
 for name,mutation in BAD_MUTATIONS.items():setattr(ThreeWay,'test_reject_'+name,add_negative(name,mutation))
+
+
+# R283 authentic category-qualified route regression and adversarial controls.
+# Frozen R200 routes are /preparedness/<section>/<slug>/, never flat.
+R283_SECTIONS = ('start-here', 'water', 'food', 'shelter-power',
+                 'family-communication', 'health-sanitation', 'lost-ways')
+R283_INVALID = (
+    '/preparedness/article-01/',
+    'preparedness/start-here/article-01/',
+    '//preparedness/start-here/article-01/',
+    '/Preparedness/start-here/article-01/',
+    '/preparedness/Start-Here/article-01/',
+    '/preparedness/other/article-01/',
+    '/preparedness/start-here/article-01',
+    '/preparedness/start-here/article-01//',
+    '/preparedness//article-01/',
+    '/preparedness/start-here//article-01/',
+    '/preparedness/start-here/extra/article-01/',
+    '/elsewhere/start-here/article-01/',
+    '/preparedness-archive/start-here/article-01/',
+    '/preparedness/start-here/article-01/?a=1',
+    '/preparedness/start-here/article-01/#top',
+    '/preparedness/start-here/article-01/\n',
+    'https://example.org/preparedness/start-here/article-01/',
+    '/preparedness/start-here/article-02/',
+    '/preparedness/./article-01/',
+    '/preparedness/../article-01/',
+    '/preparedness/start%2Dhere/article-01/',
+    '/preparedness/start-here/article%2D01/',
+    '/preparedness/start-here%2Farticle-01/',
+    '/preparedness/start-here/article--01/',
+    '/preparedness/start-here/-article-01/',
+    '/preparedness/start-here/article-01-/',
+    '/preparedness/start-here/Article-01/',
+    '/preparedness/start-here/article_01/',
+    '/preparedness/start-here/article 01/',
+    '/preparedness/start-here/article-ö1/',
+    '/preparedness/start-here/article-01/extra/',
+    '/preparedness/start-here/article-01//extra/',
+    '/preparedness/start-here\\article-01/',
+    '/preparedness/start-here/article%2F01/',
+    '/preparedness/start-here/article\x0001/',
+)
+
+class R283CanonicalRoutes(unittest.TestCase):
+    def test_sections_exact(self):
+        self.assertEqual(g.CANONICAL_SECTIONS, frozenset(R283_SECTIONS))
+    def test_authenticated_35_routes_on_complete_checkout(self):
+        root = MOD.parents[1]
+        name = 'audits/r200_seven_cluster_35_article_frozen_custody.json'
+        if not (root/name).is_file():
+            self.skipTest('incomplete isolated checkout; authentic 35-route native test held')
+        original = g.read_pinned(root,name,g.PINS[name])
+        self.assertEqual(len(original['articles']),35)
+        for article in original['articles']:
+            g.require_canonical_route(article['route'],article['slug'])
+    def test_authentic_three_way_docket_on_complete_checkout(self):
+        root = MOD.parents[1]
+        if not all((root/name).is_file() for name in g.PINS):
+            self.skipTest('complete native pinned inputs unavailable')
+        report = g.audit(root)
+        self.assertEqual(report['state'],g.HOLD,report)
+        self.assertEqual(report['review_required_articles'],21)
+        self.assertIs(report['publication_authorized'],False)
+
+def r283_positive(section):
+    def run(self):
+        g.require_canonical_route('/preparedness/'+section+'/article-01/','article-01')
+    return run
+
+def r283_negative(route):
+    def run(self):
+        with self.assertRaisesRegex(ValueError,'canonical route mismatch'):
+            g.require_canonical_route(route,'article-01')
+    return run
+
+for section in R283_SECTIONS:
+    setattr(R283CanonicalRoutes,'test_r283_accept_'+section.replace('-','_'),r283_positive(section))
+for index,route in enumerate(R283_INVALID):
+    setattr(R283CanonicalRoutes,'test_r283_reject_%02d'%index,r283_negative(route))
 
 if __name__=='__main__':unittest.main(verbosity=2)

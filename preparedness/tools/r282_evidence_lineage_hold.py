@@ -22,6 +22,25 @@ PINS = {
 HOLD_FLAGS = ('publication_authorized','may_merge','independent_qd_pass','medical_safety_verified','privacy_approved','commercial_offer_approved')
 SHA = re.compile(r'^[0-9a-f]{40}$')
 
+CANONICAL_SECTIONS = frozenset((
+    'start-here', 'water', 'food', 'shelter-power',
+    'family-communication', 'health-sanitation', 'lost-ways',
+))
+SLUG = re.compile(r'[a-z0-9]+(?:-[a-z0-9]+)*')
+
+def require_canonical_route(route, slug):
+    # R283: 35 authenticated R200 routes have a *section* before the slug.
+    # Reject flat, cross-domain, case-variant, query/fragment and nested routes.
+    # Match complete path components; do not normalize away security-relevant data.
+    require(type(route) is str and type(slug) is str, 'canonical route mismatch')
+    parts = route.split('/')
+    require(len(parts) == 5 and parts[0] == parts[4] == ''
+            and parts[1] == 'preparedness'
+            and parts[2] in CANONICAL_SECTIONS
+            and bool(SLUG.fullmatch(slug))
+            and parts[3] == slug,
+            'canonical route mismatch')
+
 def require(ok, reason):
     if not ok: raise ValueError(reason)
 
@@ -77,7 +96,7 @@ def derive(o,i,l):
     rows=[]
     for a in arts:
         slug=a['slug']; lock=locks[slug]
-        require(a['route']==f'/preparedness/{slug}/','canonical route mismatch')
+        require_canonical_route(a['route'], slug)
         b=known[f'content/articles/{slug}.body.html']; m=known[f'content/articles/{slug}.meta.json']
         require(b['role']=='article_body' and m['role']=='article_meta','wrong integrated role')
         require(lock['body']['path']==f'preparedness/content/articles/{slug}.body.html' and lock['metadata']['path']==f'preparedness/content/articles/{slug}.meta.json','historical lock path mismatch')
