@@ -1,0 +1,64 @@
+{
+  "version": "R274",
+  "observed_at_utc": "2026-11-11T06:34:14Z",
+  "tested_git_head": "4c465f983a621d0fd0c866391301db6456cb4502",
+  "original_pr_175_head": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "original_python_suite": {
+    "tests_run": 6,
+    "passed": 6,
+    "failed": 0,
+    "interpreter": "native Python; local prior exact source archive",
+    "independently_matched_original_git_blobs": 8
+  },
+  "committed_source": {
+    "blob_verified": 5,
+    "blob_ids": [
+      "0e7b0c432818aafe0a413d25154c4671848f8ebe",
+      "2f30a6fd9249981f0c3e6dcf40a43cedb21050b1",
+      "b045835685cc74fba34ed48c4918802bef75076e",
+      "fe0add92cdd9a6f140368f879f6de8a3d7ad7cd4",
+      "09462b35463673a89b11edeba06a4348295d8148"
+    ]
+  },
+  "new_tests": {
+    "test_runner": "isolated V8 with Node test/assert compatibility shims",
+    "passed": 36,
+    "total": 36,
+    "failed": 0
+  },
+  "adversarial_mutation_check": {
+    "rejected": 30,
+    "total": 30,
+    "description": "synthetic payload mutations injected invalid provider, origin, ID, timestamp, status, PII, fabricated approval and bad categories; every mutation failed closed"
+  },
+  "offline_review_board": {
+    "pass": 9,
+    "total": 9,
+    "checks": [
+      "doctype",
+      "html_lang",
+      "viewport",
+      "semantic_table",
+      "no_javascript",
+      "no_forms",
+      "no_images",
+      "no_merchant_purchase_links",
+      "no_subscriber_email_address"
+    ]
+  },
+  "not_executed": [
+    "native Node execution of new R274 code",
+    "hosted CI",
+    "real Jetpack email rendering",
+    "real received email",
+    "real publisher postal and unsubscribe verification",
+    "actual Jetpack subscriber eligibility",
+    "affiliate account approval / email permission",
+    "real purchases or net revenue"
+  ],
+  "release": "HOLD_UNSENT",
+  "commercial_03_05": "HOLD_MERCHANT",
+  "actual_audience": "UNKNOWN",
+  "paid_revenue": "NOT_VERIFIED",
+  "privacy": "No subscriber identity exported or stored"
+}

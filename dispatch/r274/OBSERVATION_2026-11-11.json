@@ -1,0 +1,57 @@
+{
+  "as_of_utc": "2026-11-11T06:34:14Z",
+  "source_site": "https://finalvestige.com",
+  "source_wordpress_status": "wpcom_jetpack_newsletter status read-only",
+  "source_wordpress_settings": "wpcom_jetpack_newsletter get_settings read-only",
+  "observed": {
+    "newsletter_enabled": true,
+    "automatic_new_post_email": false,
+    "email_format": "full",
+    "categories_enabled": false,
+    "newsletter_categories": [],
+    "welcome_configured": true,
+    "from_name": "Final Vestige Studios",
+    "reply_to": "no-reply",
+    "diagnostic_total": 3,
+    "diagnostic_confirmed": 3,
+    "diagnostic_unconfirmed": 2,
+    "suppressed": 0,
+    "wordPress_com_followers": 3,
+    "email_followers": 0,
+    "eligible_recipients": null,
+    "recent_dispatch_status": "never_sent_opted_out"
+  },
+  "critical_unknowns": [
+    "actual eligible recipient population with Email subscription=Subscribed",
+    "provider consent provenance and lifecycle data",
+    "genuine inbox welcome receipt",
+    "received-email legal unsubscribe and physical publisher postal address",
+    "public PDF bytes/52 pages",
+    "accepted affiliate email marketing rights and issued earning URL",
+    "actual merchant paid settlements/refunds/fees"
+  ],
+  "user_approved_campaign": {
+    "editorial_issues": [
+      1,
+      2,
+      4,
+      6
+    ],
+    "commercial_issues": [
+      3,
+      5
+    ],
+    "all": "HOLD_UNSENT"
+  },
+  "external_refs": {
+    "wordpress_subscriber_categories": "https://wordpress.com/support/subscribers/",
+    "wordpress_preverified": "https://wordpress.com/support/newsletter/subscribe-to-a-newsletter/",
+    "ftc_can_spam": "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business",
+    "zen12_official": "https://zen12.com/",
+    "hypnosis_live_official": "https://hypnosislive.com/mental-skills/total-focus",
+    "hypnosis_live_faq": "https://hypnosislive.com/faq",
+    "editorial_standards": "https://finalvestige.com/editorial-standards/",
+    "campaign_issue": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/174",
+    "upstream_draft": "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/175"
+  }
+}
