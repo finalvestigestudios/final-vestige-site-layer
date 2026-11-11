@@ -49,6 +49,25 @@ class Suite(unittest.TestCase):
         self.assertRaisesRegex(ValueError,'duplicate JSON',g.strict_json,b'{"a":1,"a":2}')
     def test_nan_fails(self):self.assertRaises(ValueError,g.strict_json,b'{"a":NaN}')
     def test_git_blob(self):self.assertEqual(g.git_blob(b'hello'),'b6fc4c620b67d95f953a5c1c1230aaab5db5a1b0')
+    def test_original_tool_numbers_can_repeat(self):
+        m,data=fixture()
+        p='content/tools/tool-2.meta.json'
+        content=json.loads(data[p]);content['n']=101
+        data[p]=json.dumps(content).encode()
+        e=next(e for e in m['entries'] if e['path']==p)
+        e['sha']=g.git_blob(data[p]);e['size']=len(data[p])
+        self.assertTrue(g.inspect(m,lambda k:data[k])['original_byte_parity'])
+
+    def test_duplicate_article_number_fails(self):
+        m,data=fixture()
+        p='content/articles/article-2.meta.json'
+        content=json.loads(data[p]);content['n']=1
+        data[p]=json.dumps(content).encode()
+        e=next(e for e in m['entries'] if e['path']==p)
+        e['sha']=g.git_blob(data[p]);e['size']=len(data[p])
+        with self.assertRaisesRegex(ValueError,'duplicate article number'):
+            g.inspect(m,lambda k:data[k])
+
 
 MUTATIONS={
   'schema':lambda m,d:m.update(schema='INVALID'),
