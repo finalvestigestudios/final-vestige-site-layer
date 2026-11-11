@@ -9,7 +9,7 @@ function ok(x,m){if(!x)throw Error(m)}
 function html(t,label){
  ok(/^<!doctype html>/i.test(t.trim())&&/<html lang="en"/.test(t)&&/<main\b/.test(t),label+' semantics');
  ok(/name="viewport"/.test(t)&&/noindex,nofollow/.test(t),label+' unpublished layout');
- ok(!/<\s*(script|iframe|form|object|embed|input|link|audio|video|source)\b/i.test(t),label+' forbidden active content');
+ ok(!/<\s*(script|iframe|form|object|embed|input|img|picture|link|audio|video|source)\b/i.test(t),label+' forbidden active content');
  ok(!/\bon(click|load|error|submit|focus)\s*=|javascript\s*:|data\s*:\s*text\/html|srcdoc\s*=/i.test(t),label+' dangerous attributes');
  // Decode numeric/HTML escapes to catch obfuscated URL attributes; never load network.
  const raw=t.replace(/&#x([0-9a-f]+);?/gi,(_,h)=>String.fromCharCode(parseInt(h,16))).replace(/&#([0-9]+);?/g,(_,n)=>String.fromCharCode(+n)).replace(/&sol;/gi,'/').replace(/&colon;/gi,':').replace(/&amp;/gi,'&');
@@ -76,6 +76,7 @@ function adversarialTests(b){
  add('B fake film',x=>x.b=x.b.replace('no playable video yet','playable now'));
  add('hub merchant anchor',x=>x.hub=x.hub.replace('</main>','<a href="https://zen12.com/getstarted">BUY</a></main>'));
  add('hub script',x=>x.hub=x.hub.replace('</main>','<script>1</script></main>'));
+ add('hub external pixel',x=>x.hub=x.hub.replace('</main>','<img src="https://tracking.invalid/px"></main>'));
  add('hub form',x=>x.hub=x.hub.replace('</main>','<form></form></main>'));
  add('hub active control',x=>x.hub=x.hub.replace(' disabled aria-disabled="true"',' aria-disabled="false"'));
  add('hub disclosure',x=>x.hub=x.hub.replace('commission at no additional cost','payment undisclosed'));
