@@ -16,7 +16,7 @@ const good = () => ({source_slot:img.slot,post_id:img.post_id,stored_original_sr
   response_request_id:'synthetic-request',dom_element_request_id:'synthetic-request',
   resource_type:'Image',loading_finished:true,
   screenshot_sha256:'b'.repeat(64)});
-const decoded = () => {const e=good();e.final_http_status=200;e.natural_width=819;e.natural_height=614;e.encoded_data_length=8192;e.response_mime_type='image/jpeg';e.resource_type='Image';e.loading_finished=true;return e;};
+const decoded = () => {const e=good();e.final_http_status=200;e.natural_width=819;e.natural_height=614;e.encoded_data_length=8192;e.network_data_received_bytes=7900;e.network_data_received_provenance='CDP_NETWORK_DATA_RECEIVED';e.response_mime_type='image/jpeg';e.resource_type='Image';e.loading_finished=true;return e;};
 const approval = () => ({source_slot:img.slot,original_src:img.original_src,
   candidate_catalog_url:img.catalog_candidate_url,
   item_rights_evidence_url:'https://example.org/rights/1',rights_reviewer:'human-reviewer',
@@ -200,3 +200,18 @@ test('HTML error response is valid for complete failed Image request',()=>{const
 test('complete 503 failing Image request counts as broken only for that slot',()=>{const e=good();e.final_http_status=503;assert.equal(guestFinding(img,e).verdict,'CONFIRMED_GUEST_BROKEN');});
 test('valid 200 still requires positive dimensions+image MIME and body',()=>{const e=decoded();e.response_mime_type='text/html';assert.equal(guestFinding(img,e).verdict,'HOLD');});
 test('unverified screenshot+image 404 remains held',()=>{const e=good();e.screenshot_sha256=null;assert.equal(guestFinding(img,e).verdict,'HOLD');});
+
+// Body evidence and complete-response checks; synthetic fixtures only.
+for(const [label,change,reason] of [
+ ['body length missing',e=>delete e.network_data_received_bytes,'IMAGE_MIME_LIFECYCLE_OR_BODY_BYTES_NOT_PROVEN'],
+ ['zero body and positive encoded header bytes',e=>e.network_data_received_bytes=0,'IMAGE_MIME_LIFECYCLE_OR_BODY_BYTES_NOT_PROVEN'],
+ ['body provenance absent',e=>delete e.network_data_received_provenance,'IMAGE_MIME_LIFECYCLE_OR_BODY_BYTES_NOT_PROVEN'],
+ ['retriever wrapper presented as CDP body',e=>e.network_data_received_provenance='WEB_RETRIEVER','IMAGE_MIME_LIFECYCLE_OR_BODY_BYTES_NOT_PROVEN'],
+ ['206 partial response',e=>e.final_http_status=206,'PARTIAL_OR_NONSTANDARD_IMAGE_HTTP_NOT_FULL_BODY'],
+ ['201 nonstandard response',e=>e.final_http_status=201,'PARTIAL_OR_NONSTANDARD_IMAGE_HTTP_NOT_FULL_BODY'],
+ ['1x1 decoded placeholder',e=>{e.natural_width=1;e.natural_height=1;},'TINY_OR_PLACEHOLDER_IMAGE'],
+ ['63px tiny thumbnail',e=>e.natural_width=63,'TINY_OR_PLACEHOLDER_IMAGE'],
+]) test('complete-image audit rejects '+label,()=>{
+ const e=decoded();change(e);const r=guestFinding(img,e);
+ assert.equal(r.verdict,'HOLD');assert.equal(r.reason,reason);
+});
