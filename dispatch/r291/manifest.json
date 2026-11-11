@@ -1,0 +1,49 @@
+{
+  "sprint": "R291",
+  "status": "REVIEW_ONLY_NOT_ADOPTED_HOLD_UNSENT",
+  "original_source": {
+    "pr": 175,
+    "issue": 4,
+    "source_sha": "89635bfb9c8d1ff17297a59b6b5b5b2a176934ca"
+  },
+  "issue": {
+    "number": 4,
+    "kind": "editorial",
+    "subject": "The fire report was not the start of the fire",
+    "preheader": "What Apollo 1's clocks establish, what they cannot, and the records left behind.",
+    "primary_cta": "https://finalvestige.com/apollo-1-evidence-atlas/",
+    "merchant_url": null,
+    "commercial_placement": false
+  },
+  "sources": [
+    "https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/",
+    "https://www.nasa.gov/missions/apollo/apollo-1/apollo-204-review-board-summary/",
+    "https://www.nasa.gov/history/55-years-ago-the-apollo-1-fire-and-its-aftermath/"
+  ],
+  "wordpress_snapshot": {
+    "as_of": "2026-11-11T23:32:59+00:00",
+    "newsletter_enabled": true,
+    "new_post_default_off": true,
+    "email_format": "full",
+    "subscriber_total": 3,
+    "confirmed_counter": 3,
+    "unconfirmed_requests": 2,
+    "actual_eligible_email_recipients": null,
+    "actual_welcome_receipt_verified": false,
+    "received_footer_verified": false
+  },
+  "release": {
+    "legal_postal": false,
+    "received_unsubscribe": false,
+    "eligible_audience": false,
+    "provider_native_preview": false,
+    "merchant_authorization": false,
+    "founder_campaign_approval": false,
+    "paid_orders_verified": false
+  },
+  "attribution": {
+    "canonical_utm": "utm_source=platform&utm_medium=organic_social&utm_campaign=cluster_pilot_2026_11&utm_content=asset_id",
+    "confirmed_signup_definition": "Authenticated subscriber provider transition only; one event per durable provider subscription key, no PII in analytics",
+    "paid_conversion_definition": "Merchant/Payhip-confirmed settled order less refunds and fees, not click or checkout"
+  }
+}
