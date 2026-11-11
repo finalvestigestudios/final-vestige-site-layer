@@ -1,0 +1,15 @@
+{
+  "observation_date": "2026-11-10",
+  "url": "https://finalvestige.com/apollo-1-evidence-atlas/",
+  "retrieval": "read-only web text extraction (not raw HTML or field browser)",
+  "status": "publicly accessible (not evidence of R273 deployment)",
+  "observed_pending_review_entries": [
+    "Apollo 204 Review Board Final Report",
+    "The recorded markers"
+  ],
+  "exact_visible_status": "Atlas review status: Not yet reviewed.",
+  "claim_level_verified_labels_are_not_editorial_release_signoff": true,
+  "authenticated_editorial_review": "NOT PROVIDED",
+  "commercial_order_or_partner_commission": "NOT PROVIDED",
+  "stage_release": "HARD HOLD"
+}
