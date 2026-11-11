@@ -1,0 +1,93 @@
+{
+  "schema": "fv-preparedness-r296-tool104-source-claim-review-v1",
+  "status": "DRAFT_HARD_HOLD",
+  "issue": 136,
+  "conversion_issue": 820,
+  "witness_ref": "89d7b926a7d61b39e19867d7ec6e94d7fe0e37b0",
+  "observed_date": "2026-11-11",
+  "source_blobs": {
+    "preparedness/content/tools/family-reunification-card.body.html": "be8698ac5d020476ff649d85813810e2000c6f98",
+    "preparedness/content/tools/family-reunification-card.meta.json": "47da1e7e20e39f0ea85e26d54a8d58301f6e0a15",
+    "preparedness/tools/reunion_card.js": "b1a09b1eda1ae26f081de65b400a37bc19538035",
+    "preparedness/audits/r200_seven_cluster_35_article_frozen_custody.json": "5822f9dfde21d1f3bdfc26658769d852c639438c"
+  },
+  "seven_contributor_heads": {
+    "start": "2122d856fce9f64887c16df3d52e64be9f59a55b",
+    "shelter": "5daeaf2dd5ab71806a6b73c91edfb1d8df5da976",
+    "food": "f911ff7a655de8d81535ea86ec3d65a49ee76648",
+    "health": "d5ef5bafd68361434dd1cc9209915b8e8a4eaf17",
+    "hist-food": "67e116e536c7410bed30f8f3b1bb8c166f3c223d",
+    "hist-home": "7504a5f099594d635e3dd7332a33a2e1346c43a2",
+    "hist-field": "4e5caf812727953aa45e3bda2d382f2c67b6a09c"
+  },
+  "comparison_result": "7/7 IDENTICAL to AUTHENTIC R200 bases, zero ahead/behind/changed paths; R293 older-baseline discrepancy superseded",
+  "other_heads": {
+    "independent_QA_PR157": "7d1ae6b8ef93d10cfb6810987672360885e9c1aa",
+    "synthetic_fixture_PR169": "e9cd7766dac59d47ab467d8945269b9146c2aef5",
+    "homepage_PR1689": "f55c36b6598eec558dd8bb24e4c8988becc51be0"
+  },
+  "review": [
+    {
+      "claim": "911 immediate assistance definition",
+      "risk": "Tool104 'life-threatening' narrowing",
+      "old_source_id": "shelter-ready-tech",
+      "source": "https://www.911.gov/calling-911/",
+      "owner": "Independent emergency-communications QA",
+      "state": "HARD_HOLD"
+    },
+    {
+      "claim": "Call vs text emergency dispatch",
+      "risk": "Tool104 blurs 'everything else' text recommendation with emergency assistance",
+      "source": "https://www.911.gov/calling-911/frequently-asked-questions/",
+      "owner": "Independent emergency-communications QA",
+      "state": "HARD_HOLD"
+    },
+    {
+      "claim": "Family non-emergency check-in",
+      "risk": "Do not confuse texts for family with texting emergency dispatch",
+      "source": "https://www.cdc.gov/prepare-your-health/plan-ahead/stay-connected.html",
+      "owner": "Source reviewer",
+      "state": "HARD_HOLD"
+    },
+    {
+      "claim": "Information stays on page and not saved",
+      "risk": "Absolute technical privacy assertion unverified on WordPress",
+      "owner": "Privacy/runtime QA",
+      "state": "HARD_HOLD"
+    },
+    {
+      "claim": "Tab close clears data",
+      "risk": "No storage/browser/session/lifecycle proof",
+      "owner": "Privacy/runtime QA",
+      "state": "HARD_HOLD"
+    },
+    {
+      "claim": "No-JS form works and prints",
+      "risk": "Requires no-JS, actual print, device and assistive technology QA",
+      "owner": "Accessibility/print QA",
+      "state": "HARD_HOLD"
+    },
+    {
+      "claim": "Children's information on wallet card",
+      "risk": "Physical exposure and minimal version semantics",
+      "owner": "Child-privacy QA",
+      "state": "HARD_HOLD"
+    }
+  ],
+  "preserved_legacy_dispute": {
+    "old_source_id": "hist-food-nchfp-jerky",
+    "r200_source_id": "nchfp-jerky",
+    "articles": 2,
+    "occurrences": 8,
+    "alias_approved": false
+  },
+  "claimed_native_build": false,
+  "claimed_wordpress_drafts_verified": false,
+  "independent_qd_pass": false,
+  "medical_safety_verified": false,
+  "privacy_approved": false,
+  "publication_authorized": false,
+  "paid_offer_approved": false,
+  "confirmed_paid_orders": null,
+  "realized_net_revenue": null
+}
