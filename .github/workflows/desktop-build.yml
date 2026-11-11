@@ -859,6 +859,12 @@ jobs:
         run: |
           python -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_signed_zero_r349.py'
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_signed_zero_r349.py'
+      - name: R350 ProcureGuard negative-zero price reviewer flags (normal and -OO)
+        run: |
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_price_sign_r350.py'
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_price_sign_integration_r350.py'
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_price_sign_r350.py'
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_price_sign_integration_r350.py'
       - name: Verify full normal/optimized source provenance and six smokes (R57)
         run: |
           mkdir -p "$RUNNER_TEMP/fvs-source"
@@ -1027,6 +1033,18 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R349 Windows signed-zero regression FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_signed_zero_r349.py'
           if ($LASTEXITCODE -ne 0) { throw "R349 Windows optimized signed-zero regression FAILED" }
+      - name: R350 Windows ProcureGuard negative-zero price reviewer flags (normal and -OO)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_price_sign_r350.py'
+          if ($LASTEXITCODE -ne 0) { throw "R350 Windows price sign helper FAILED" }
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_price_sign_integration_r350.py'
+          if ($LASTEXITCODE -ne 0) { throw "R350 Windows price sign integration FAILED" }
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_price_sign_r350.py'
+          if ($LASTEXITCODE -ne 0) { throw "R350 Windows optimized price sign helper FAILED" }
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_price_sign_integration_r350.py'
+          if ($LASTEXITCODE -ne 0) { throw "R350 Windows optimized price sign integration FAILED" }
       - name: R319 witnessed-vs-compiled premium test source before Windows packaging
         shell: pwsh
         run: |

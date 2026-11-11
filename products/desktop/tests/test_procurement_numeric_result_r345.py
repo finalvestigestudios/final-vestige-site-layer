@@ -75,8 +75,14 @@ class NumericCustodyR345(unittest.TestCase):
     def test_quantity_negative_rejected(self):
         self.reject(lambda: checked_quantity("-1", Decimal))
 
-    def test_quantity_negative_zero_allowed(self):
-        self.assertTrue(checked_quantity("-0", Decimal).is_zero())
+    def test_quantity_negative_zero_rejected_before_parser(self):
+        calls = []
+        def parser(source):
+            calls.append(source)
+            return Decimal(0)
+        with self.assertRaisesRegex(ValueError, "Procurement quantity"):
+            checked_quantity("-0", parser)
+        self.assertEqual(calls, [])
 
     def test_quantity_above_maximum(self):
         self.reject(lambda: checked_quantity("1000000000.00000001", Decimal))
