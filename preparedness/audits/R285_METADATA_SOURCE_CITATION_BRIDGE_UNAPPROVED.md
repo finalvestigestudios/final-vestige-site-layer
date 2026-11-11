@@ -37,3 +37,11 @@ The 21 historic article lineage reviews, 32 shared URL groups, 15 duplicated sou
 | Paid orders → net revenue per 1,000 qualified-human sessions | no attributed settled orders, fees, refunds or qualified session denominator | consent-preserving 7/30-day reconciliation | NOT COMPUTABLE (not zero) | Claude / Commerce |
 
 No merge, publishing, site navigation, CMS, analytics script, social post, TASK-008 queue edit, email, checkout, affiliate activation, product creation or paid service occurred.
+
+## Supplemental authenticated metadata/source inventory check (same review run)
+
+After creating this draft PR, connected GitHub read **all 41 actual frozen metadata JSON files individually** at exact R284 parent `9c13bc078f78fa79bb3cad60374c17466312a8fb`, together with all eight frozen original source registers. The 35 article and six tool metadata files contain **452 `source_use` references**. Every listed source ID had **at least one match** among the authenticated 244 raw source rows; **zero unregistered source-use IDs** in this bounded read. Every file had `status.publish=draft` and a populated `safety_review.state`. Original duplicate tool numbers 102 and 103 are preserved, not treated as duplicate URLs. This is authenticated connector-based content checking; the actual R285 command has still **NOT** run on a complete local checkout.
+
+Two authentic article metadata records use historical `safety_review.state=approved`: **#6 `making-water-safer` and #21 `salt-beef-salt-pork-age-of-sail`**. These are metadata labels only, **not independent safety/QD approval**. Article #21 expressly states that the recorded founder chat approval had unconfirmed scope, no itemized checklist and no qualified independent review. R285 explicitly reports such labels as holds, never release authorization.
+
+Ambiguous source IDs from the 15 duplicate-ID groups remain named unresolved source-adjudication tasks despite every citation reference resolving to a registered ID. Registered ID presence **does not** prove correct source variant, adequate reading scope, current medical safety, accurate original claim or a valid external link. No public release status changes.
