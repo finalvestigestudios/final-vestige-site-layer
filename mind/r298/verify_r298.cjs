@@ -29,7 +29,7 @@ const exact={
 const refuse=(code)=>{throw new Error(code)};
 const needs=(value,code)=>{if(!value)refuse(code)};
 function fnv64(s){let h=0xcbf29ce484222325n;for(let i=0;i<s.length;i++){h^=BigInt(s.charCodeAt(i));h=(h*0x100000001b3n)&0xffffffffffffffffn;}return h.toString(16).padStart(16,"0")}
-const allowedHosts=new Set(["finalvestige.com","www.ftc.gov"]);
+const allowedHosts=new Set(["finalvestige.com","www.ftc.gov","pubmed.ncbi.nlm.nih.gov","pmc.ncbi.nlm.nih.gov","doi.org","research.monash.edu","www.nccih.nih.gov","journals.plos.org"]);
 function checkHtml(html,strict=false){
  needs(/<html\b[^>]*lang=["']en["']/i.test(html),"HTML_LANG");
  needs(/<meta\s+name=["']viewport["']/i.test(html),"HTML_VIEWPORT");
