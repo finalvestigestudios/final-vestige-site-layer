@@ -234,7 +234,7 @@ def review_line(
     invoice_docs = {identifier(r.get("document_id", "")) for r, k, _, _ in invoice_entries
                     if k == "invoice" and identifier(r.get("document_id", ""))}
     raw_invoice_docs = source_document_spellings(
-        str(r.get("document_id", "")) for r, k, _, _ in invoice_entries if k == "invoice")
+        r.get("document_id", "") for r, k, _, _ in invoice_entries if k == "invoice")
     invoice_doc_counts = Counter(
         identifier(r.get("document_id", "")) for r, k, _, _ in invoice_entries
         if k == "invoice" and identifier(r.get("document_id", ""))
@@ -273,7 +273,7 @@ def review_line(
     if any(count > 1 for count in return_doc_counts.values()):
         flags.append("repeated_return_document_id_review")
     raw_receipt_docs = source_document_spellings(
-        str(r.get("document_id", "")) for r, kind, _ in receipt_entries if kind == "receipt")
+        r.get("document_id", "") for r, kind, _ in receipt_entries if kind == "receipt")
     for row, kind, _ in receipt_entries:
         if kind != "return":
             continue
