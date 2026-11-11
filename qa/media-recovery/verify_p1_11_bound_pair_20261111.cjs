@@ -169,6 +169,26 @@ function evaluatePinnedPair(input){
        (p.native_width/p.native_height)-1)<=0.025;
    if(!sane(b)||!sane(a))
      return hold('IMAGE_GEOMETRY_INCONSISTENT_WITH_FROZEN_ORIGINAL',p.slot);
+   // naturalWidth is density-corrected intrinsic CSS px: a matching
+   // aspect ratio alone does not mean a 120px image looks good at 320px.
+   // Capture exact painted geometry from the existing Site QA collector.
+   // Never infer visibility or object-fit from an HTTP 200.
+   const visible=x=>Number.isSafeInteger(x.rendered_css_width)&&
+     Number.isSafeInteger(x.rendered_css_height)&&
+     x.rendered_css_width>=64&&x.rendered_css_height>=64&&
+     x.fully_visible_in_capture===true&&
+     (x.object_fit==='contain'||x.object_fit==='scale-down'||
+       x.object_fit==='fill')&&
+     x.natural_width>=x.rendered_css_width&&
+     x.natural_height>=x.rendered_css_height&&
+     Math.abs((x.rendered_css_width/x.rendered_css_height)/
+       (p.native_width/p.native_height)-1)<=0.025;
+   if(!visible(b)||!visible(a))
+     return hold('IMAGE_RENDERED_SIZE_OR_FIT_UNVERIFIED',p.slot);
+   if(b.rendered_css_width!==a.rendered_css_width||
+      b.rendered_css_height!==a.rendered_css_height||
+      b.object_fit!==a.object_fit)
+     return hold('UNMATCHED_RENDERED_LAYOUT_GEOMETRY',p.slot);
    // Exact same source URL + same viewport/DPR must not silently alter crop.
    if(b.natural_width!==a.natural_width||
       b.natural_height!==a.natural_height)
