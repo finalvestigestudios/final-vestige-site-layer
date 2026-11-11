@@ -145,10 +145,11 @@ class PolicyConfusableSourceCustodyR182(unittest.TestCase):
         self.assertIn("before L3; after L4", result)
         self.assertNotIn("before L1", result)
 
-    def test_invalid_hunk_does_not_suppress_independent_valid_hunk(self):
+    def test_invalid_hunk_suppresses_all_partial_navigation(self):
+        # R364: a malformed source hunk invalidates the entire supplemental
+        # navigation index, not just the particular hunk being inspected.
         result = render([hunk(old=[(0, "PAY A\n")]), hunk()])
-        self.assertIn("hunk 002: before L1; after L2", result)
-        self.assertNotIn("hunk 001", result)
+        self.assertEqual(result, "")
 
     def test_source_rows_unchanged(self):
         value = hunk()
