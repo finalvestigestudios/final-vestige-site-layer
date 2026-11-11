@@ -95,6 +95,7 @@ class ClaimContext(HTMLParser):
         self.reader_parts = []
         self.stack = []
         self.blocks = {'implicit': []}
+        self.excluded_blocks = set()
         self.seq = 0
         self.edges = []
         self.errors = []
@@ -136,11 +137,18 @@ class ClaimContext(HTMLParser):
         return not any(item['hidden'] or item['hard'] or
                        item['tag'] in NO_NARRATIVE for item in self.stack)
 
+    def record_excluded(self, data):
+        if data.strip():
+            block = next((item['block'] for item in reversed(self.stack) if item['block']), 'implicit')
+            self.excluded_blocks.add(block)
+
     def add_decoded_entity(self, data):
         if self.permitted_reader_context():
             block = next((item['block'] for item in reversed(self.stack) if item['block']), 'implicit')
             self.blocks[block].append(data)
             self.reader_parts.append(data)
+        else:
+            self.record_excluded(data)
 
     def handle_entityref(self, name):
         self.add_decoded_entity(unescape('&'+name+';'))
@@ -157,6 +165,8 @@ class ClaimContext(HTMLParser):
         if self.permitted_reader_context():
             self.blocks[block].append(data)
             self.reader_parts.append(data)
+        else:
+            self.record_excluded(data)
         for match in matches:
             tags = [item['tag'] for item in self.stack]
             require(not any(t in NO_NARRATIVE for t in tags),
@@ -203,6 +213,8 @@ class ClaimContext(HTMLParser):
             edge['review_excerpt'] = nearby
             if not context:
                 edge['review_flags'].append('no-claim-text-in-block')
+            if edge['block'] in self.excluded_blocks:
+                edge['review_flags'].append('excluded-nonreader-sibling-context')
             if edge['block'] == 'implicit':
                 edge['review_flags'].append('no-semantic-block')
             edge['review_flags'] = sorted(set(edge['review_flags']))
