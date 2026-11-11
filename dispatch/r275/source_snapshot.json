@@ -1,0 +1,57 @@
+{
+  "run": "Dispatch R275 — 2026-11-11 07:31 UTC",
+  "status": "DRAFT_HOLD_NO_SEND",
+  "provenance": {
+    "wordpress_newsletter": "Authenticated WordPress wpcom_jetpack_newsletter status + get_settings, 2026-11-11T07:31:13Z-07:31:14Z",
+    "wordpress_pages": "Authenticated WordPress pages/get page IDs 523 (dispatch), 1579 (focus), 17 (editorial-standards); read-only",
+    "original_campaign": "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/175 @ d57ccdba3aee8f065e143e101c2945f4f3d01647",
+    "review_master": "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/201",
+    "mind_handoff": "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/2011 @ c08c3e2f48c0fadf7ed11d2fd6b6fcc5bf6809f7"
+  },
+  "surfaces": {
+    "focus": {
+      "text": "By subscribing you also join The Dispatch, our email of new investigations and archive finds, sent when we publish them. Some emails may include recommendations that earn us a commission. Unsubscribe anytime.",
+      "source_url": "https://finalvestige.com/focus/",
+      "id": 1579
+    },
+    "dispatch": {
+      "text": "Join The Dispatch and get the complete Seven Day Focus Fieldbook, a free 52-page guide to getting started, building a workable routine, and tracking what helps. You’ll also get new investigations and useful finds from the archive when we publish them. Unsubscribe anytime.",
+      "source_url": "https://finalvestige.com/dispatch/",
+      "id": 523
+    },
+    "welcome": {
+      "text": "Welcome to The Dispatch. Here's your Seven Day Focus Fieldbook — Complete Edition (52 pages). You'll hear from us when there's a new Final Vestige investigation or a worthwhile find from the archives. No daily flood of emails.",
+      "source_url": "authenticated Jetpack get_settings (welcome_message); no received email",
+      "id": null
+    }
+  },
+  "newsletter": {
+    "enabled": true,
+    "new_post_auto_send": false,
+    "email_content_format": "full",
+    "categories_enabled": false,
+    "reply_to": "no-reply",
+    "diagnostic_total": 3,
+    "diagnostic_confirmed": 3,
+    "unconfirmed_requests": 2,
+    "eligible_recipient_count": null,
+    "welcome_configured": true,
+    "welcome_received": null,
+    "original_emails_sent": false
+  },
+  "merchant": {
+    "zen12_official_sales_page": "https://zen12.com/getstarted",
+    "zen12_official_free_trial": "https://zen12.com/welcome",
+    "hypnosis_live_total_focus": "https://hypnosislive.com/mental-skills/total-focus",
+    "hypnosis_live_faq": "https://hypnosislive.com/faq",
+    "affiliate_acceptance": null,
+    "email_promo_permission": null,
+    "earning_url": null,
+    "approved_live_guide": null,
+    "settled_commissions": null
+  },
+  "actual_received_jetpack_footer": null,
+  "founder_final_send_approval": false,
+  "verified_paid_orders": null,
+  "realized_net_revenue_per_1000_qualified_sessions": null
+}
