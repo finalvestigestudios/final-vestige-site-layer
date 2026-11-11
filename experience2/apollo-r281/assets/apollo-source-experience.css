@@ -34,3 +34,12 @@
 /* R283: real keyboard and native fragment focus must be perceivable. */
 .fv-r281__plate:focus{outline:3px solid var(--gold);outline-offset:3px}
 @media(forced-colors:active){.fv-r281__plate:focus{outline-color:Highlight}}
+
+/* R284: native, bidirectional claim-to-source custody links. No script required. */
+.fv-r281__source-jump{margin:.7rem 0 1rem;font-size:.875rem}
+.fv-r281__source-jump a,.fv-r281__source-return a{display:inline-flex;align-items:center;min-height:44px}
+.fv-r281__source-list li{scroll-margin-top:1.5rem}
+.fv-r281__source-list li:focus{outline:3px solid var(--gold);outline-offset:3px}
+.fv-r281__source-return{margin-top:.75rem!important;border-top:1px solid var(--line);padding-top:.5rem}
+@media(forced-colors:active){.fv-r281__source-list li:focus{outline-color:Highlight}}
+@media print{.fv-r281__source-jump,.fv-r281__source-return{display:none!important}.fv-r281__next a::after{content:' <' attr(href) '>';display:block;overflow-wrap:anywhere;font-size:.75rem}}
