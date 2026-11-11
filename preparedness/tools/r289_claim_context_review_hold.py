@@ -58,17 +58,50 @@ def load_parent(root):
     return mod
 
 
+def decode_css_ascii_escapes(value):
+    """Decode simple CSS escapes so escaped 'none' cannot appear innocuous.
+
+    CSS escape syntax permits up to six hexadecimal digits with one optional
+    separating whitespace. This is a bounded source-level detector, NOT CSSOM.
+    """
+    def replacement(match):
+        token = match.group(1)
+        if token is not None:
+            number = int(token, 16)
+            if not (1 <= number <= 0x10ffff):
+                return '\ufffd'
+            return chr(number)
+        return match.group(2)
+    return re.sub(r'\\([0-9A-Fa-f]{1,6})(?:[ \t\r\n\f])?|\\([^\r\n\f])',
+                  replacement, value)
+
+
 def style_flags(css):
-    """Recognize limited obvious CSS; never claim exhaustive CSS/browser visibility."""
+    """Recognize bounded inline CSS hard-hides; never assert browser visibility."""
     require(isinstance(css, str), 'style must be text')
-    css = re.sub(r'/\*.*?\*/', '', css, flags=re.S)
+    # Decode before comment removal: a CSS escape ends at a comment boundary.
+    # Stripping first could merge the next hex-like identifier into the escape.
+    css = re.sub(r'/\*.*?\*/', '', decode_css_ascii_escapes(css), flags=re.S)
     hard, review = set(), set()
     for item in css.split(';'):
         if ':' not in item:
             continue
-        prop, value = (x.strip().lower() for x in item.split(':', 1))
+        prop, value = (decode_css_ascii_escapes(x.strip().lower())
+                       for x in item.split(':', 1))
         value = re.sub(r'\s*!important\s*$', '', value).strip()
         compact = re.sub(r'\s+', '', value)
+        # R288 only recognizes contiguous style spellings. CSS comments and
+        # valid escapes can conceal the same literal CSS declaration from
+        # its regex. Fail closed when its actual CSS value is a hard-hide.
+        if prop == 'display' and compact == 'none':
+            hard.add('display-none')
+        if prop == 'visibility' and compact in ('hidden', 'collapse'):
+            hard.add('visibility-'+compact)
+        if prop == 'content-visibility' and compact == 'hidden':
+            hard.add('content-visibility-hidden')
+        if prop in ('display', 'visibility', 'content-visibility', 'opacity') and \
+                ('var(' in compact or 'env(' in compact):
+            review.add('dynamic-css-visibility-unverified')
         if prop == 'opacity' and re.fullmatch(r'(?:0+(?:\.0*)?|\.0+)%?', compact):
             hard.add('opacity-zero')
         if prop in ('filter', '-webkit-filter') and re.search(r'opacity\((?:0+(?:\.0*)?|\.0+)%?\)', compact):
@@ -115,6 +148,7 @@ class ClaimContext(HTMLParser):
         if tag not in VOID:
             self.stack.append({'tag': tag, 'block': block, 'hard': hard,
                                'hidden': hidden, 'review': review,
+                               'style_selector': bool(attributes.get('class') or attributes.get('id')),
                                'collapsed':tag == 'details' and 'open' not in attributes})
 
     def handle_startendtag(self, tag, attrs):
@@ -174,6 +208,8 @@ class ClaimContext(HTMLParser):
             hard = sorted({f for item in self.stack for f in item['hard']})
             require(not hard, 'CSS-concealed citation: '+','.join(hard))
             risk = sorted({f for item in self.stack for f in item['review']})
+            if any(item['style_selector'] for item in self.stack):
+                risk.append('external-css-visibility-unverified')
             if any(item['collapsed'] for item in self.stack):
                 # A <summary> descendant is exposed in a closed <details>.
                 if not any(item['tag'] == 'summary' for item in self.stack):
