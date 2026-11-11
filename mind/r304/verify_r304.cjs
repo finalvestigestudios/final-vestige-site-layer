@@ -41,7 +41,7 @@ function verify(f){
    ck(name+'_NO_JS_ATTR',!/\bon(?:click|load|error|mouseover|submit|focus)\s*=/i.test(html));
    ck(name+'_NO_MERCHANT_LINK',!/<a\b[^>]*href\s*=\s*["'][^"']*(zen12\.com|hypnosislive\.com|brainwaveshots\.com|affiliates\.inspire3\.com)/i.test(html));
    ck(name+'_NO_ACTIVE_COMMERCE',!/<a[^>]*>(?:\s*buy now|purchase Zen12|claim offer)/i.test(html));
-   ck(name+'_DISABLED',/<button\b[^>]*\bdisabled\b[^>]*>/.test(html));
+   ck(name+'_DISABLED',/<button\b[^>]*\sdisabled(?:\s|>)[^>]*>/.test(html));
    ck(name+'_DISCLOSURE',/may earn a commission at no additional cost to you/.test(html));
    ck(name+'_FREE_ROUTE',/https:\/\/finalvestige\.com\/focus\//.test(html));
  }
