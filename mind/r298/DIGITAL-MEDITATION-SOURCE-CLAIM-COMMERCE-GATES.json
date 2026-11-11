@@ -1,0 +1,604 @@
+{
+  "schema": "mind-claim-provenance-r298-v1",
+  "as_of": "2026-11-11",
+  "status": "UNPUBLISHED_HARD_HOLD",
+  "sources": [
+    {
+      "id": "S01",
+      "type": "seller_exact_checkout",
+      "url": "https://zen12.com/getstarted",
+      "retrieval_depth": "full_public_checkout",
+      "scope": "12 levels/48 MP3, manual/support; $87.99 displayed 2026-11-11, dynamic; 1-year guarantee seller-described; NOT partner terms",
+      "checked_date": "2026-11-11"
+    },
+    {
+      "id": "S02",
+      "type": "academic_official_abstract",
+      "url": "https://research.monash.edu/en/publications/cognitive-effects-of-mbsrmbct-a-systematic-review-of-neuropsychol/",
+      "retrieval_depth": "abstract",
+      "scope": "2016 18-study MBSR/MBCT review; overall no objective attention benefit",
+      "checked_date": "2026-11-11"
+    },
+    {
+      "id": "S03",
+      "type": "journal_abstract",
+      "url": "https://doi.org/10.1080/17437199.2023.2248222",
+      "retrieval_depth": "journal_abstract",
+      "scope": "2024 111 RCT n=9538 pooled selected improvements, nulls, stronger face-to-face vs self-guided",
+      "checked_date": "2026-11-11"
+    },
+    {
+      "id": "S04",
+      "type": "indexed_abstract",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34425456/",
+      "retrieval_depth": "indexed_abstract",
+      "scope": "2021 29 group studies; after removing outliers small significant overall executive outcome, not attention shifting",
+      "checked_date": "2026-11-11"
+    },
+    {
+      "id": "S05",
+      "type": "peer_review_full_text",
+      "url": "https://doi.org/10.1111/nyas.15095",
+      "retrieval_depth": "full_text_accessible",
+      "scope": "2024 digital mindfulness preregistered review 19 studies n=1654; mixed results",
+      "checked_date": "2026-11-11"
+    },
+    {
+      "id": "S06",
+      "type": "indexed_abstract",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37540550/",
+      "retrieval_depth": "indexed_abstract",
+      "scope": "2023 apps 28 RCTs; heterogeneity, attrition and high risk of bias",
+      "checked_date": "2026-11-11"
+    },
+    {
+      "id": "S07",
+      "type": "journal_abstract",
+      "url": "https://doi.org/10.1016/j.cpr.2023.102370",
+      "retrieval_depth": "journal_abstract",
+      "scope": "2024 apps depression/anxiety 45 RCTs; small pooled effects vs controls not active therapeutic comparators; NOT Zen12",
+      "checked_date": "2026-11-11"
+    },
+    {
+      "id": "S08",
+      "type": "brand_live",
+      "url": "https://finalvestige.com/focus/",
+      "retrieval_depth": "live_full_page",
+      "scope": "existing 52-page free fieldbook and existing Jetpack/Dispatch path",
+      "checked_date": "2026-11-11"
+    },
+    {
+      "id": "S09",
+      "type": "brand_issue_and_index",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "retrieval_depth": "direct_fetch_error_index_verified",
+      "scope": "historical resource confirmed Issue171 and live Explore; direct page signed-out fetch failed",
+      "checked_date": "2026-11-11"
+    },
+    {
+      "id": "S10",
+      "type": "brand_live_index",
+      "url": "https://finalvestige.com/explore/",
+      "retrieval_depth": "live_page",
+      "scope": "Puységur 153 source rows 16 cases described, live index",
+      "checked_date": "2026-11-11"
+    },
+    {
+      "id": "S11",
+      "type": "brand_live_index",
+      "url": "https://finalvestige.com/blog/",
+      "retrieval_depth": "live_page",
+      "scope": "66 results now versus 61 published posts historical Issue171 baseline",
+      "checked_date": "2026-11-11"
+    },
+    {
+      "id": "S12",
+      "type": "seller_official_home",
+      "url": "https://inspire3.com/",
+      "retrieval_depth": "full_page",
+      "scope": "Zen12, Hypnosis Live, Brainwave Shots are distinct catalog offers; slogans are seller claims",
+      "checked_date": "2026-11-11"
+    },
+    {
+      "id": "S13",
+      "type": "seller_exact_offer",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "retrieval_depth": "full_page",
+      "scope": "Focus Shot 15/30 min, seller price $17.99, marketing claim hours-long benefits not verified",
+      "checked_date": "2026-11-11"
+    },
+    {
+      "id": "S14",
+      "type": "seller_official_faq",
+      "url": "https://brainwaveshots.com/faq",
+      "retrieval_depth": "full_page",
+      "scope": "isochronic tones, contraindications, guarantee restrictions; 1 refund / 6months and >10 item restriction",
+      "checked_date": "2026-11-11"
+    },
+    {
+      "id": "S15",
+      "type": "seller_unavailable_this_run",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "retrieval_depth": "web_fetch_error",
+      "scope": "Total Focus exact offer was reviewed in previous milestone but NOT reverified this run",
+      "checked_date": "2026-11-11"
+    },
+    {
+      "id": "S16",
+      "type": "partner_recruitment_public",
+      "url": "https://affiliates.inspire3.com/",
+      "retrieval_depth": "full_page",
+      "scope": "public recruitment advertising and commissions NOT FV approval/terms/earning URL",
+      "checked_date": "2026-11-11"
+    },
+    {
+      "id": "S17",
+      "type": "regulator",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "retrieval_depth": "full_page",
+      "scope": "clear conspicuous material-connection disclosure and honest endorsement",
+      "checked_date": "2026-11-11"
+    },
+    {
+      "id": "S18",
+      "type": "regulator",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "retrieval_depth": "full_page",
+      "scope": "objective health claims need adequate product-relevant substantiation",
+      "checked_date": "2026-11-11"
+    },
+    {
+      "id": "S19",
+      "type": "brand_existing_investigation",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "retrieval_depth": "live_index_not_direct_article",
+      "scope": "published investigation route linked from journal; signed-out page recheck for release",
+      "checked_date": "2026-11-11"
+    },
+    {
+      "id": "S20",
+      "type": "brand_policy_not_regulator",
+      "url": "https://finalvestige.com/affiliate-disclosure/",
+      "retrieval_depth": "site_policy_known",
+      "scope": "site generic disclosure not a replacement for nearby recommendation disclosure",
+      "checked_date": "2026-11-11"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "statement": "Zen12 public checkout advertises 12 levels and 48 MP3s",
+      "source_ids": [
+        "S01"
+      ],
+      "decision": "seller_descriptive_only"
+    },
+    {
+      "id": "C02",
+      "statement": "The checkout shows a public $87.99 total at this observation; not an authorized FV affiliate price",
+      "source_ids": [
+        "S01"
+      ],
+      "decision": "time_specific_seller_display_not_publish_as_affiliate_price"
+    },
+    {
+      "id": "C03",
+      "statement": "Zen12 checkout advertises one-year satisfaction guarantee; actual refund outcome not audited",
+      "source_ids": [
+        "S01"
+      ],
+      "decision": "seller_term_recheck_required"
+    },
+    {
+      "id": "C04",
+      "statement": "Zen12 twelve-minute equals one hour claim is not demonstrated by cited independent Zen12 clinical research",
+      "source_ids": [
+        "S01",
+        "S02",
+        "S03"
+      ],
+      "decision": "NO_PRODUCT_SPECIFIC_SUBSTANTIATION_DO_NOT_ASSERT"
+    },
+    {
+      "id": "C05",
+      "statement": "2016 review: 18 standardized program studies; overall no objective attention/executive function improvement",
+      "source_ids": [
+        "S02"
+      ],
+      "decision": "academic_abstract_scope"
+    },
+    {
+      "id": "C06",
+      "statement": "2024 synthesis: 111 RCTs n=9538; selected cognitive accuracy and sustained-attention gains",
+      "source_ids": [
+        "S03"
+      ],
+      "decision": "journal_abstract_conditional"
+    },
+    {
+      "id": "C07",
+      "statement": "2024 synthesis had null findings for processing speed, some latency, episodic memory and error outcomes",
+      "source_ids": [
+        "S03"
+      ],
+      "decision": "journal_abstract_qualifier_required"
+    },
+    {
+      "id": "C08",
+      "statement": "2024 synthesis reports stronger effects face-to-face vs self-guided, not direct support for retail MP3s",
+      "source_ids": [
+        "S03"
+      ],
+      "decision": "DELIVERY_MODERATOR_REQUIRED"
+    },
+    {
+      "id": "C09",
+      "statement": "2021 group 29-study analysis found small significant overall EF effects AFTER outlier exclusion",
+      "source_ids": [
+        "S04"
+      ],
+      "decision": "OUTLIER_QUALIFIER_REQUIRED"
+    },
+    {
+      "id": "C10",
+      "statement": "2021 group analysis reported no significant pooled attention-shifting benefit",
+      "source_ids": [
+        "S04"
+      ],
+      "decision": "subdomain_only_not_universal_null"
+    },
+    {
+      "id": "C11",
+      "statement": "2024 digital training preregistered review 19 studies/1654 had many null findings amid signals",
+      "source_ids": [
+        "S05"
+      ],
+      "decision": "digital_heterogeneity_required"
+    },
+    {
+      "id": "C12",
+      "statement": "2023 28-app RCT review found most trials high risk of bias and substantial attrition",
+      "source_ids": [
+        "S06"
+      ],
+      "decision": "abstract_level"
+    },
+    {
+      "id": "C13",
+      "statement": "2024 45 app RCT meta found small depression/anxiety effects against controls but not significant against active therapy comparators",
+      "source_ids": [
+        "S07"
+      ],
+      "decision": "not_for_product_mental_health_claim"
+    },
+    {
+      "id": "C14",
+      "statement": "The free 52-page Focus Fieldbook is an existing FV asset with a Jetpack/Dispatch sign-up",
+      "source_ids": [
+        "S08"
+      ],
+      "decision": "brand_live_verified"
+    },
+    {
+      "id": "C15",
+      "statement": "Puységur historical archive is indexed by Explore with 153 source rows and 16 cases; historical claims not proof",
+      "source_ids": [
+        "S09",
+        "S10"
+      ],
+      "decision": "brand_index_confirmed_direct_link_access_pending"
+    },
+    {
+      "id": "C16",
+      "statement": "The Journal shows 66 results as of Nov 11; 61 count is historical issue baseline",
+      "source_ids": [
+        "S11"
+      ],
+      "decision": "time_specific_website_count"
+    },
+    {
+      "id": "C17",
+      "statement": "Official Inspire3 catalogs the three offers separately",
+      "source_ids": [
+        "S12"
+      ],
+      "decision": "seller_catalog"
+    },
+    {
+      "id": "C18",
+      "statement": "Focus Shot is seller-described isochronic 15/30-minute product, not conventional binaural-beat protocol",
+      "source_ids": [
+        "S13",
+        "S14"
+      ],
+      "decision": "seller_format_not_efficacy"
+    },
+    {
+      "id": "C19",
+      "statement": "Seller says Focus Shot produces hours-long effects; not independently substantiated here",
+      "source_ids": [
+        "S13"
+      ],
+      "decision": "UNSUPPORTED_PRODUCT_SPECIFIC_OUTCOME_DO_NOT_ASSERT"
+    },
+    {
+      "id": "C20",
+      "statement": "Brainwave Shots FAQ lists epilepsy and wakefulness precautions",
+      "source_ids": [
+        "S14"
+      ],
+      "decision": "seller_safety_text_do_not_say_safe_FOR_ALL"
+    },
+    {
+      "id": "C21",
+      "statement": "Brainwave Shots FAQ permits one refund in six months and orders above 10 items have a download-based condition",
+      "source_ids": [
+        "S14"
+      ],
+      "decision": "seller_term_conditional_verify_wording_before_release"
+    },
+    {
+      "id": "C22",
+      "statement": "Hypnosis Live Total Focus exact product page could not be accessed in this run",
+      "source_ids": [
+        "S15"
+      ],
+      "decision": "RECHECK_REQUIRED_NO_NEW_ASSERTIONS"
+    },
+    {
+      "id": "C23",
+      "statement": "Public Inspire3 recruiting is not proof FV has been accepted, a unique earning URL or channel authorization",
+      "source_ids": [
+        "S16"
+      ],
+      "decision": "HARD_HOLD"
+    },
+    {
+      "id": "C24",
+      "statement": "Material commission connections must be clearly disclosed near recommendation",
+      "source_ids": [
+        "S17"
+      ],
+      "decision": "regulatory_guidance"
+    },
+    {
+      "id": "C25",
+      "statement": "Health efficacy claims need competent reliable scientific support",
+      "source_ids": [
+        "S18"
+      ],
+      "decision": "regulatory_guidance"
+    },
+    {
+      "id": "C26",
+      "statement": "Generic FV disclosure does not replace adjacent disclosure",
+      "source_ids": [
+        "S17",
+        "S20"
+      ],
+      "decision": "regulatory_and_brand_policy_distinct"
+    },
+    {
+      "id": "C27",
+      "statement": "No specific purchasable FV-owned Mind product was authenticated in current commerce records",
+      "source_ids": [
+        "S08"
+      ],
+      "decision": "UNVERIFIED_PAID_FALLBACK"
+    },
+    {
+      "id": "C28",
+      "statement": "Affiliate clicks, email form views and suggested orders do not prove paid commission or sale",
+      "source_ids": [
+        "S16"
+      ],
+      "decision": "MEASUREMENT_CONTRACT_ZERO_INVENTION"
+    }
+  ],
+  "offers": [
+    {
+      "name": "Zen12",
+      "role": "ONE_PROVISIONAL_OFFER",
+      "seller_url": "https://zen12.com/getstarted",
+      "observed_public_price": "$87.99 shown on 2026-11-11; not FV approved; dynamic",
+      "seller_returns": "merchant advertises one-year guarantee, independent enforcement and exclusions unverified",
+      "merchant_authorization": false,
+      "earning_url": null
+    },
+    {
+      "name": "Hypnosis Live Total Focus",
+      "role": "SEPARATE_NOT_ACTIVATED",
+      "seller_url": "https://hypnosislive.com/mental-skills/total-focus",
+      "price_verified_this_run": false,
+      "returns_verified_this_run": false,
+      "earning_url": null
+    },
+    {
+      "name": "Brainwave Shots Focus Shot",
+      "role": "SEPARATE_NOT_ACTIVATED",
+      "seller_url": "https://brainwaveshots.com/focus-shot",
+      "observed_public_price": "$17.99 displayed on 2026-11-11, not FV offer",
+      "returns": "seller FAQ conditional, not guaranteed unconditional",
+      "earning_url": null
+    },
+    {
+      "name": "Seven Day Focus Fieldbook",
+      "role": "EXISTING_FREE_FIRST_PARTY",
+      "site_url": "https://finalvestige.com/focus/",
+      "price": "FREE",
+      "paid_order": false
+    },
+    {
+      "name": "FV rights-cleared paid Mind SKU",
+      "role": "POTENTIAL_OWNED_FALLBACK_UNAUTHENTICATED",
+      "sku": null,
+      "price": null,
+      "rights_approval": null,
+      "fulfillment": null,
+      "returns": null,
+      "earning_url": null
+    }
+  ],
+  "creator_fit": [
+    {
+      "topic": "change_blindness",
+      "video_hook": "The room changed while you watched—what did your eyes miss?",
+      "verified_existing_article": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "free_next_step": "https://finalvestige.com/focus/",
+      "provisional_offer": "Zen12 buyer-only optional, not on scientific finding",
+      "grok_asset_id": null,
+      "post_url": null,
+      "rights": null,
+      "clickable_native_mobile_path": null
+    },
+    {
+      "topic": "puysegur_hypnosis_history",
+      "video_hook": "A patient seemed to sleep and speak. What did Puységur actually record?",
+      "verified_existing_article": "https://finalvestige.com/explore/",
+      "free_next_step": "https://finalvestige.com/focus/",
+      "provisional_offer": "Zen12 only if later explicit practice intent, not a historical cure",
+      "grok_asset_id": null,
+      "post_url": null,
+      "rights": null,
+      "clickable_native_mobile_path": null
+    },
+    {
+      "topic": "mindfulness_audio_buyer",
+      "video_hook": "The meditation study did not test the recording on the sales page",
+      "verified_existing_article": null,
+      "editorial_artifact_path": "mind/r298/THE-MEDITATION-STUDY-THAT-DID-NOT-TEST-YOUR-RECORDING-UNPUBLISHED.md",
+      "free_next_step": "https://finalvestige.com/focus/",
+      "provisional_offer": "Zen12 buyer-only pending all gates; no video production instruction",
+      "grok_asset_id": null,
+      "post_url": null,
+      "rights": null,
+      "clickable_native_mobile_path": null
+    }
+  ],
+  "gates": [
+    {
+      "name": "fv_publisher_acceptance",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "name": "affiliate_agreement_available",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "name": "web_promotion_rights",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "name": "social_promotion_rights",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "name": "email_promotion_rights",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "name": "canonical_earning_url",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "name": "link_attribution_terms",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "name": "merchant_creative_rights",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "name": "checkout_exact_price",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "name": "checkout_tax_currency",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "name": "refund_exceptions",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "name": "seller_safety_disclosure",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "name": "product_specific_efficacy",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "name": "no_false_testimonial",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "name": "privacy_safe_first_party_events",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "name": "confirmed_paid_order_reporting",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "name": "commission_settlement_refund_feed",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "name": "founder_and_qa_release_approval",
+      "status": "HARD_HOLD",
+      "evidence": null
+    }
+  ],
+  "experiment": {
+    "canonical_A": "mind/r284/ZEN12-BUYER-GUIDE-A-TEXT-ONLY-UNPUBLISHED.html",
+    "canonical_B": "mind/r284/ZEN12-BUYER-GUIDE-B-FILM-STORYBOARD-UNPUBLISHED.html",
+    "current_B_media": "STATIC_STORYBOARD_NOT_PLAYABLE",
+    "optional_video": "42s transcript concept, no hosted playable video",
+    "planned_variable": "optional original 30–45 second video only; all buyer terms/CTA/source/disclosure identical",
+    "status": "NOT_STARTED",
+    "conversion_goal": "independently_confirmed_paid_commission_or_paid_owned_order"
+  },
+  "measurement": {
+    "qualified_human_sessions_7d": null,
+    "qualified_human_sessions_30d": null,
+    "affiliate_outbound_clicks": null,
+    "confirmed_jetpack_leads": null,
+    "merchant_confirmed_paid_orders": null,
+    "settled_commission": null,
+    "refunds": null,
+    "fees": null,
+    "net_realized_revenue": null,
+    "net_revenue_per_1000_qualified_human_sessions": null,
+    "pii_collected": false,
+    "added_tracking_scripts": false,
+    "creator_asset_id": "UNVERIFIED",
+    "campaign_id": "HARD_HOLD_UNCHOSEN",
+    "affiliate_click_is_sale": false
+  },
+  "control_notes": [
+    "Only exact source claims; do not infer seller efficacy",
+    "Brand policy S20 is not regulator; duplicate URLs count by distinct field",
+    "No future priced or entitled CTA without written partner confirmation",
+    "All three creator rows have unknown actual Grok asset IDs, no production handoff",
+    "No new Jetpack forms, no copy of merchant newsletter",
+    "Current seller discount timer not genuine proof of limited offer"
+  ]
+}
