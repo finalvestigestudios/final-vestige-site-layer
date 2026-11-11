@@ -57,3 +57,16 @@
 @media print{.fv-r281__reconciliation{break-inside:avoid}.fv-r281__reconciliation-list>li{break-inside:avoid}}
 @media(forced-colors:active){.fv-r281__reconciliation,.fv-r281__reconciliation-list>li{border-color:CanvasText;background:Canvas;color:CanvasText}.fv-r281__reconciliation-list>li>strong,.fv-r281__reconciliation-boundary{color:CanvasText}}
 @media print{.fv-r281__reconciliation,.fv-r281__reconciliation-list>li{background:#fff!important;border-color:#000}.fv-r281__reconciliation-list{display:block}.fv-r281__reconciliation-list>li{margin:0 0 1rem}.fv-r281__reconciliation-list a::after{content:' <' attr(href) '>';display:block;overflow-wrap:anywhere;font-size:.75rem}}
+
+/* R289 — documented authorization acts. Readable without JS, images or maps. */
+.fv-r281__reconciliation h4{font:600 1.1rem/1.45 system-ui,sans-serif;margin:1.5rem 0 .6rem;color:var(--paper)}
+.fv-r281__authority-ledger{list-style:none;counter-reset:custody;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.85rem;padding:0;margin:1rem 0 1.6rem}
+.fv-r281__authority-ledger>li{counter-increment:custody;min-width:0;padding:1rem;border:1px solid var(--line);background:#161b1f}
+.fv-r281__authority-ledger>li:before{content:'Record ' counter(custody,decimal-leading-zero);font:.75rem/1.5 ui-monospace,monospace;letter-spacing:.08em;color:var(--gold)}
+.fv-r281__authority-ledger p{margin:.55rem 0;line-height:1.55}
+.fv-r281__authority-date{font-weight:700;color:var(--gold)}
+.fv-r281__authority-boundary{color:var(--muted)}
+.fv-r281__authority-ledger a{display:inline-flex;align-items:center;min-height:44px}
+@media(max-width:760px){.fv-r281__authority-ledger{grid-template-columns:1fr}}
+@media(forced-colors:active){.fv-r281__authority-ledger>li{background:Canvas;color:CanvasText;border-color:CanvasText}.fv-r281__authority-date,.fv-r281__authority-boundary,.fv-r281__authority-ledger>li:before,.fv-r281__reconciliation h4{color:CanvasText}}
+@media print{.fv-r281__authority-ledger{display:block}.fv-r281__authority-ledger>li{background:white!important;border-color:#000;break-inside:avoid;margin:0 0 1rem}.fv-r281__authority-ledger a::after{content:' <' attr(href) '>';display:block;overflow-wrap:anywhere;font-size:.75rem}}
