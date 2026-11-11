@@ -79,3 +79,16 @@
 .fv-r281__authority-return{padding-top:.4rem;border-top:1px solid var(--line)}
 @media(forced-colors:active){.fv-r281__authority-jump{background:Canvas;color:CanvasText;border-color:Highlight}.fv-r281__authority-ledger>li:focus{outline-color:Highlight}}
 @media print{.fv-r281__authority-jump,.fv-r281__authority-return{display:none!important}}
+
+/* R291: keep the source dispute visible, let readers expand the long four-act
+   custody ledger on demand. Native details auto-opens for fragment deep-links,
+   including with JS disabled; links never depend on script. */
+.fv-r281 .fv-r291__authority-disclosure{margin:1.2rem 0;padding:.25rem clamp(.25rem,1vw,.75rem) .65rem;min-width:0;border:1px solid var(--line);background:#1b2024}
+.fv-r281 .fv-r291__authority-disclosure>summary{display:list-item;min-height:44px;padding:.7rem 0;color:var(--gold);cursor:pointer;font-weight:650}
+.fv-r281 .fv-r291__disclosure-intro{color:var(--muted);max-width:66ch}
+.fv-r281 .fv-r291__authority-disclosure[open]>summary{border-bottom:1px solid var(--line)}
+@media(forced-colors:active){.fv-r281 .fv-r291__authority-disclosure{background:Canvas;color:CanvasText;border-color:CanvasText}.fv-r281 .fv-r291__authority-disclosure>summary{color:LinkText}}
+@media print{.fv-r281 .fv-r291__authority-disclosure{background:#fff!important;color:#000!important;break-inside:auto}.fv-r281 .fv-r291__authority-disclosure::details-content{content-visibility:visible!important}.fv-r281 .fv-r291__authority-disclosure>summary{display:none!important}.fv-r281 .fv-r291__authority-disclosure .fv-r291__disclosure-intro{display:block!important}}
+/* R291: print evidence boundaries must not retain the on-screen dark fill while
+   the print stylesheet forces their text black. This is a contrast correction. */
+@media print{.fv-r281 .fv-r281__boundary{background:#fff!important;color:#000!important;border-color:#000!important}}
