@@ -1,0 +1,29 @@
+{
+  "version": "R283-2026-11-11",
+  "issue_slot": 3,
+  "candidate": "review_only_not_adopted",
+  "merchant": "Zen12 / Inspire3",
+  "sources": [
+    {"url": "https://zen12.com/getstarted", "classification": "seller_checkout", "conclusion": "12 levels, 48 MP3 files are seller inventory; no independently proven effects"},
+    {"url": "https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety", "classification": "government_review", "conclusion": "Research is mixed and intervention-dependent; not Zen12 specific"},
+    {"url": "https://affiliates.inspire3.com/", "classification": "public_affiliate_program", "conclusion": "Not Final Vestige affiliate acceptance or email permission"},
+    {"url": "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business", "classification": "regulator", "conclusion": "Primary-purpose commercial-email and disclosure/postal/opt-out requirements"}
+  ],
+  "partner_approved": false,
+  "email_channel_approved": false,
+  "earning_url_verified": false,
+  "guide_live_verified": false,
+  "checkout_and_refund_verified": false,
+  "received_email_verified": false,
+  "physical_postal_verified": false,
+  "unsubscribe_verified": false,
+  "confirmed_eligible_audience_verified": false,
+  "founder_release_approved": false,
+  "test_email_authorized": false,
+  "campaign_sent": false,
+  "real_paid_orders_verified": false,
+  "proposed_cta": "[[APPROVED_LIVE_ZEN12_GUIDE_URL_REQUIRED]]",
+  "net_revenue_per_1000_human_sessions": null,
+  "campaign_state": "HOLD_UNSENT",
+  "merchant_state": "HOLD_MERCHANT"
+}
