@@ -81,7 +81,7 @@ function assertAll(d){
  assert.ok(/UNPUBLISHED/.test(d.hub));
  assert.ok(/not yet a public URL/.test(d.hub),'no unapproved new public guide');
  assert.ok(/existing.*Dispatch/i.test(d.hub),'single lead funnel');
- for(const phrase of ['one refund within any six-month','five refunded sessions','NOT COMPUTABLE','no additional','NO VERIFIED MATCH']){
+ for(const phrase of ['one refund within any six-month','five refunded sessions','NOT COMPUTABLE','No new pixels','NO VERIFIED MATCH']){
   assert.ok(d.plan.toLowerCase().includes(phrase.toLowerCase()),'plan '+phrase);
  }
 }
