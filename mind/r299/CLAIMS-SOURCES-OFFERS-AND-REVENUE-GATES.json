@@ -1,0 +1,695 @@
+{
+  "schema": "fv-mind-r299-source-commercial-v1",
+  "date": "2026-11-11",
+  "release_state": "UNPUBLISHED_HARD_HOLD",
+  "canonical_pilot": "single_inherited_Zen12_R284_A_text_R284_B_storyboard_no_playable_video",
+  "sources": [
+    {
+      "id": "S01",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "source_class": "founder_charter",
+      "read_depth": "read_full_issue",
+      "limitation": "61 investigations is Oct 30 baseline, not verified current count"
+    },
+    {
+      "id": "S02",
+      "url": "https://finalvestige.com/explore/",
+      "source_class": "fv_live",
+      "read_depth": "full_page",
+      "limitation": "Puységur archive described with 153 source rows/16 dossiers; direct dossier fetch failed"
+    },
+    {
+      "id": "S03",
+      "url": "https://finalvestige.com/focus/",
+      "source_class": "fv_live",
+      "read_depth": "full_page",
+      "limitation": "Single 52-page Focus Fieldbook and existing Dispatch capture"
+    },
+    {
+      "id": "S04",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "source_class": "fv_live",
+      "read_depth": "full_page",
+      "limitation": "Existing published perception investigation"
+    },
+    {
+      "id": "S05",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/4683124/",
+      "source_class": "primary_bibliography_abstract",
+      "read_depth": "abstract",
+      "limitation": "Rosenhan 1973 claims, not fieldwork corroboration"
+    },
+    {
+      "id": "S06",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/1194504/",
+      "source_class": "primary_bibliography",
+      "read_depth": "bibliography_only",
+      "limitation": "Spitzer 1975 critique; full text not accessed"
+    },
+    {
+      "id": "S07",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/938183/",
+      "source_class": "primary_abstract",
+      "read_depth": "abstract",
+      "limitation": "Spitzer 1976 argument against interpretation"
+    },
+    {
+      "id": "S08",
+      "url": "https://experts.umn.edu/en/publications/on-being-sane-in-insane-places-a-supplemental-report/",
+      "source_class": "primary_institutional_abstract",
+      "read_depth": "abstract",
+      "limitation": "Lando 1976 mixed report"
+    },
+    {
+      "id": "S09",
+      "url": "https://www.nature.com/articles/d41586-019-03268-y",
+      "source_class": "secondary_review",
+      "read_depth": "record_only",
+      "limitation": "Cahalan 2019 investigative work through Nature review; full article paywall"
+    },
+    {
+      "id": "S10",
+      "url": "https://journals.sagepub.com/doi/abs/10.1177/0957154X221150878",
+      "source_class": "historical_analysis_abstract",
+      "read_depth": "abstract",
+      "limitation": "Scull 2023 interpretation"
+    },
+    {
+      "id": "S11",
+      "url": "https://inspire3.com/",
+      "source_class": "official_seller",
+      "read_depth": "full_page",
+      "limitation": "Brand descriptions; outcome promises unverified"
+    },
+    {
+      "id": "S12",
+      "url": "https://zen12.com/getstarted",
+      "source_class": "official_seller_checkout",
+      "read_depth": "full_page",
+      "limitation": "12 levels/48 MP3s; public checkout only, volatile price/timer/guarantee"
+    },
+    {
+      "id": "S13",
+      "url": "https://affiliates.inspire3.com/",
+      "source_class": "affiliate_recruiting",
+      "read_depth": "full_page",
+      "limitation": "Public generic recruiting is NOT Final Vestige publisher acceptance"
+    },
+    {
+      "id": "S14",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "source_class": "official_seller_offer",
+      "read_depth": "full_page",
+      "limitation": "Seller says one 33-minute 47MB MP3, strong unsubstantiated outcomes"
+    },
+    {
+      "id": "S15",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "source_class": "official_seller_offer",
+      "read_depth": "full_page",
+      "limitation": "Seller describes focus audio and frequency scheme, not clinical proof"
+    },
+    {
+      "id": "S16",
+      "url": "https://brainwaveshots.com/faq",
+      "source_class": "official_seller_policy",
+      "read_depth": "known_prior_review",
+      "limitation": "Refund restrictions and seller product technology; refresh before public use"
+    },
+    {
+      "id": "S17",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "source_class": "regulator",
+      "read_depth": "full_page",
+      "limitation": "Clear, proximate material connection; affiliate label insufficient"
+    },
+    {
+      "id": "S18",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "source_class": "regulator",
+      "read_depth": "full_page",
+      "limitation": "Competent/reliable product-relevant evidence for health efficacy"
+    },
+    {
+      "id": "S19",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "source_class": "business_source_of_truth",
+      "read_depth": "read_issue",
+      "limitation": "Commercial KPI and first-party measurement no new script"
+    },
+    {
+      "id": "S20",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/2072",
+      "source_class": "canonical_inherited_mind",
+      "read_depth": "read_pr",
+      "limitation": "A/B unchanged; B is static transcript not hosted playable video"
+    },
+    {
+      "id": "S21",
+      "url": "https://www.youtube.com/watch?v=zctcIECAZ2s",
+      "source_class": "creator_owner_documented",
+      "read_depth": "drive_owner_handoff_not_direct_platform",
+      "limitation": "Praxxis authenticated video ID in TASK-008; direct YouTube page fetch failed this run"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "Rosenhan 1973 published an eight-pseudopatient account",
+      "type": "historical_report",
+      "decision": "ALLOW_AS_ATTRIBUTED",
+      "source_ids": [
+        "S05"
+      ],
+      "reason": "A published report is not independent fieldwork verification"
+    },
+    {
+      "id": "C02",
+      "claim": "Rosenhan's conclusion establishes diagnostic unreliability across hospitals",
+      "type": "overgeneralization",
+      "decision": "OMIT",
+      "source_ids": [
+        "S05"
+      ],
+      "reason": "Original study cannot establish broad modern clinical accuracy"
+    },
+    {
+      "id": "C03",
+      "claim": "Spitzer's critique is contemporaneous (1975)",
+      "type": "historical_record",
+      "decision": "ALLOW",
+      "source_ids": [
+        "S06"
+      ],
+      "reason": "Full Spitzer 1975 paper not read"
+    },
+    {
+      "id": "C04",
+      "claim": "Spitzer argued the design did not settle diagnostic validity",
+      "type": "historical_interpretation",
+      "decision": "ALLOW_AS_ATTRIBUTED",
+      "source_ids": [
+        "S07"
+      ],
+      "reason": "Abstract only"
+    },
+    {
+      "id": "C05",
+      "claim": "Lando reported both undetected simulation and positive hospital care",
+      "type": "participant_report",
+      "decision": "ALLOW_AS_ATTRIBUTED",
+      "source_ids": [
+        "S08"
+      ],
+      "reason": "Institutional abstract not complete underlying records"
+    },
+    {
+      "id": "C06",
+      "claim": "Cahalan challenged original study's records and participant trail",
+      "type": "investigative_reporting",
+      "decision": "ALLOW_WITH_ACCESS_CAVEAT",
+      "source_ids": [
+        "S09"
+      ],
+      "reason": "Review record, not independent archival inspection"
+    },
+    {
+      "id": "C07",
+      "claim": "Six missing pseudopatients were proven fictional",
+      "type": "unsupported_absolute",
+      "decision": "OMIT",
+      "source_ids": [
+        "S09"
+      ],
+      "reason": "Untraced is not proven fabricated"
+    },
+    {
+      "id": "C08",
+      "claim": "Scull characterized study as scientific fraud",
+      "type": "historian_interpretation",
+      "decision": "ALLOW_AS_ATTRIBUTED",
+      "source_ids": [
+        "S10"
+      ],
+      "reason": "Full paper restricted; abstract describes interpretation"
+    },
+    {
+      "id": "C09",
+      "claim": "Historical case proves hypnosis or meditation products work",
+      "type": "unsupported_causal_transfer",
+      "decision": "OMIT",
+      "source_ids": [
+        "S05"
+      ],
+      "reason": "No efficacy link"
+    },
+    {
+      "id": "C10",
+      "claim": "Puységur archive features 153 rows and 16 dossiers",
+      "type": "brand_route_fact",
+      "decision": "ALLOW_WITH_LIMIT",
+      "source_ids": [
+        "S02"
+      ],
+      "reason": "From Explore summary; target page not accessible"
+    },
+    {
+      "id": "C11",
+      "claim": "Focus Fieldbook is a free 52-page resource",
+      "type": "owned_resource_fact",
+      "decision": "ALLOW",
+      "source_ids": [
+        "S03"
+      ],
+      "reason": "Single existing lead route, no duplicate"
+    },
+    {
+      "id": "C12",
+      "claim": "Zen12 public checkout lists 12 levels/48 MP3s",
+      "type": "seller_package_fact",
+      "decision": "ALLOW_AS_SELLER_DESCRIPTION",
+      "source_ids": [
+        "S12"
+      ],
+      "reason": "No fulfilment audit"
+    },
+    {
+      "id": "C13",
+      "claim": "Zen12 produces one hour meditation in 12 minutes",
+      "type": "seller_outcome_claim",
+      "decision": "OMIT",
+      "source_ids": [
+        "S11"
+      ],
+      "reason": "No independent product-specific evidence"
+    },
+    {
+      "id": "C14",
+      "claim": "Zen12 cure/therapy/wealth outcomes guaranteed",
+      "type": "health_or_wealth_claim",
+      "decision": "OMIT",
+      "source_ids": [
+        "S12"
+      ],
+      "reason": "No acceptable evidence"
+    },
+    {
+      "id": "C15",
+      "claim": "Zen12 currently shows a checkout total and countdown",
+      "type": "volatile_seller_fact",
+      "decision": "ALLOW_INTERNAL_ONLY",
+      "source_ids": [
+        "S12"
+      ],
+      "reason": "Do not repeat price or pressure; not FV authorized rate"
+    },
+    {
+      "id": "C16",
+      "claim": "Zen12 advertises 1-year money-back guarantee",
+      "type": "seller_policy",
+      "decision": "ALLOW_AS_SELLER_DESCRIPTION",
+      "source_ids": [
+        "S12"
+      ],
+      "reason": "Not independent proof refunds honored or complete terms"
+    },
+    {
+      "id": "C17",
+      "claim": "Generic Inspire3 public program proves FV acceptance",
+      "type": "authorization_claim",
+      "decision": "OMIT",
+      "source_ids": [
+        "S13"
+      ],
+      "reason": "Need signed/account-specific approval"
+    },
+    {
+      "id": "C18",
+      "claim": "Affiliate commissions in public recruiting are FV contracted rate",
+      "type": "authorization_claim",
+      "decision": "OMIT",
+      "source_ids": [
+        "S13"
+      ],
+      "reason": "Cannot infer FV payout or terms"
+    },
+    {
+      "id": "C19",
+      "claim": "Hypnosis Live Total Focus is one 33-min/47-MB audio",
+      "type": "seller_package_fact",
+      "decision": "ALLOW_AS_SELLER_DESCRIPTION",
+      "source_ids": [
+        "S14"
+      ],
+      "reason": "Not proof of efficacy"
+    },
+    {
+      "id": "C20",
+      "claim": "Hypnosis Live guarantees 100% concentration",
+      "type": "seller_outcome_claim",
+      "decision": "OMIT",
+      "source_ids": [
+        "S14"
+      ],
+      "reason": "Unsupported retail efficacy"
+    },
+    {
+      "id": "C21",
+      "claim": "Brainwave Focus Shot is an audio session and frequency protocol",
+      "type": "seller_package_fact",
+      "decision": "ALLOW_AS_SELLER_DESCRIPTION",
+      "source_ids": [
+        "S15"
+      ],
+      "reason": "Technical description seller-supplied"
+    },
+    {
+      "id": "C22",
+      "claim": "Brainwave frequencies reliably enhance focus",
+      "type": "seller_outcome_claim",
+      "decision": "OMIT",
+      "source_ids": [
+        "S15"
+      ],
+      "reason": "No product trial"
+    },
+    {
+      "id": "C23",
+      "claim": "Brainwave and Zen12 refunds are identical",
+      "type": "unsupported_policy_transfer",
+      "decision": "OMIT",
+      "source_ids": [
+        "S16"
+      ],
+      "reason": "Per-product restrictions differ"
+    },
+    {
+      "id": "C24",
+      "claim": "On-page material connection disclosure belongs next to recommendation/link",
+      "type": "regulatory_guidance",
+      "decision": "ALLOW",
+      "source_ids": [
+        "S17"
+      ],
+      "reason": "Actual rendering must be checked"
+    },
+    {
+      "id": "C25",
+      "claim": "Generic meditation studies substantiate this proprietary audio",
+      "type": "misleading_healthy_claim",
+      "decision": "OMIT",
+      "source_ids": [
+        "S18"
+      ],
+      "reason": "FTC warns against product-irrelevant evidence"
+    },
+    {
+      "id": "C26",
+      "claim": "An affiliate_click event counts as a sale",
+      "type": "measurement_fallacy",
+      "decision": "OMIT",
+      "source_ids": [
+        "S19"
+      ],
+      "reason": "Only merchant-confirmed paid transaction counts"
+    },
+    {
+      "id": "C27",
+      "claim": "B already has a playable live 42-second video",
+      "type": "false_release_state",
+      "decision": "OMIT",
+      "source_ids": [
+        "S20"
+      ],
+      "reason": "Inherited B is storyboard, not video"
+    },
+    {
+      "id": "C28",
+      "claim": "A creator asset zctcIECAZ2s appears in owner handoff",
+      "type": "attribution_inventory",
+      "decision": "ALLOW_WITH_OWNER_VALIDATION",
+      "source_ids": [
+        "S21"
+      ],
+      "reason": "Drive reports authentication, direct YouTube fetch failed"
+    },
+    {
+      "id": "C29",
+      "claim": "2026 current published investigations still exactly 61",
+      "type": "stale_inventory",
+      "decision": "OMIT",
+      "source_ids": [
+        "S01"
+      ],
+      "reason": "Historical dated baseline, recrawl needed"
+    },
+    {
+      "id": "C30",
+      "claim": "Rosenhan creator documentary authorizes Zen12 checkout jump",
+      "type": "intent_mismatch",
+      "decision": "OMIT",
+      "source_ids": [
+        "S21"
+      ],
+      "reason": "Historical-video audience is not inherently buyer-intent"
+    }
+  ],
+  "gates": [
+    {
+      "id": "G01",
+      "condition": "verified_final_vestige_inspire3_approved_account",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "G02",
+      "condition": "verified_partner_authorized_domains",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "G03",
+      "condition": "verified_partner_authorized_organic_channels",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "G04",
+      "condition": "verified_partner_authorized_email_channel",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "G05",
+      "condition": "verified_product_specific_earning_url",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "G06",
+      "condition": "verified_approved_creative_rights",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "G07",
+      "condition": "verified_public_claim_to_proof",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "G08",
+      "condition": "verified_nonmedical_copy_review",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "G09",
+      "condition": "verified_checkout_product_identity",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "G10",
+      "condition": "verified_current_total_and_tax_display",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "G11",
+      "condition": "verified_current_refund_terms_and_exclusions",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "G12",
+      "condition": "verified_first_party_privacy_review",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "G13",
+      "condition": "verified_affiliate_click_distinguished_from_sale",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "G14",
+      "condition": "verified_grok_asset_id_platform_destination",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "G15",
+      "condition": "verified_existing_jetpack_confirmation_event",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "G16",
+      "condition": "verified_wcag_mobile_nojs_experience",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "G17",
+      "condition": "verified_independent_qa_and_founder_release",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "G18",
+      "condition": "verified_merchant_paid_settled_reporting",
+      "status": "HARD_HOLD",
+      "evidence": null
+    }
+  ],
+  "offers": [
+    {
+      "id": "ZEN12",
+      "seller": "Inspire3/Zen12",
+      "offer_url": "https://zen12.com/getstarted",
+      "buyer_problem": "wants a structured library of meditation audio",
+      "formats": "seller: 12 levels, 48 MP3s",
+      "price_usd": null,
+      "refund": "seller says 1 year; check written terms",
+      "affiliate_approved": false,
+      "earning_url": null,
+      "active_cta": false,
+      "efficacy_verified": false
+    },
+    {
+      "id": "TOTAL_FOCUS",
+      "seller": "Hypnosis Live",
+      "offer_url": "https://hypnosislive.com/mental-skills/total-focus",
+      "buyer_problem": "prefers a single self-hypnosis audio",
+      "formats": "seller: one 33-minute 47-MB MP3",
+      "price_usd": null,
+      "refund": "verify independently before publication",
+      "affiliate_approved": false,
+      "earning_url": null,
+      "active_cta": false,
+      "efficacy_verified": false
+    },
+    {
+      "id": "FOCUS_SHOT",
+      "seller": "Brainwave Shots",
+      "offer_url": "https://brainwaveshots.com/focus-shot",
+      "buyer_problem": "seeks shorter structured audio",
+      "formats": "seller: isochronic sessions",
+      "price_usd": null,
+      "refund": "seller FAQ restrictions require direct check",
+      "affiliate_approved": false,
+      "earning_url": null,
+      "active_cta": false,
+      "efficacy_verified": false
+    },
+    {
+      "id": "FOCUS_FIELDBOOK",
+      "seller": "Final Vestige",
+      "offer_url": "https://finalvestige.com/focus/",
+      "buyer_problem": "wants a no-purchase planning practice",
+      "formats": "free 52-page existing Dispatch/Jetpack PDF",
+      "price_usd": 0,
+      "refund": "not applicable",
+      "affiliate_approved": false,
+      "earning_url": null,
+      "active_cta": true,
+      "efficacy_verified": false
+    }
+  ],
+  "creator_pathways": [
+    {
+      "topic": "Rosenhan / questionable research records",
+      "asset_id": "zctcIECAZ2s",
+      "source": "owner shared Drive TASK-008",
+      "platform": "youtube",
+      "video_url": "https://www.youtube.com/watch?v=zctcIECAZ2s",
+      "target_article": "THE-PATIENT-THE-STUDY-COULD-NOT-ACCOUNT-FOR-UNPUBLISHED.md",
+      "capture": "optional existing Focus Fieldbook",
+      "merchant_bridge": "NO - documentary intent not commercial buying intent",
+      "permission": "owner/Praxxis verification still required"
+    },
+    {
+      "topic": "Change blindness / missing detail",
+      "asset_id": null,
+      "source": "FV public Change Blindness article",
+      "platform": null,
+      "video_url": null,
+      "target_article": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "capture": "optional existing Focus Fieldbook",
+      "merchant_bridge": "only independent guide after expressed buying intent",
+      "permission": "await Grok asset ID"
+    },
+    {
+      "topic": "Meditation audio / seller evidence",
+      "asset_id": null,
+      "source": "Mind R297/R298 buyer guides",
+      "platform": null,
+      "video_url": null,
+      "target_article": "CANONICAL-ZEN12-BUYER-GUIDE-COPY-AND-42S-STORYBOARD.md",
+      "capture": "optional existing Focus Fieldbook",
+      "merchant_bridge": "Zen12 only after permissions and product evidence",
+      "permission": "await Grok asset ID"
+    }
+  ],
+  "measurement": {
+    "status": "UNINSTRUMENTED_PROPOSED_ONLY",
+    "allowed_campaign_fields": [
+      "utm_source",
+      "utm_medium",
+      "utm_campaign",
+      "utm_content"
+    ],
+    "asset_id_key": "utm_content",
+    "proposed_events": [
+      "campaign_landing",
+      "article_to_resource_click",
+      "confirmed_signup_when_provider_verified",
+      "affiliate_outbound_when_authorized",
+      "merchant_confirmed_paid_order",
+      "refund",
+      "fee",
+      "settled_commission"
+    ],
+    "sensitive_data": "none; do not store email, IP, user agent, free-text identity in campaign record",
+    "no_duplicate_analytics": true,
+    "net_revenue_per_1000_qualified_humans": null,
+    "verified_orders": null,
+    "confirmed_commissions": null,
+    "qualified_human_sessions": null,
+    "refunds": null,
+    "fees": null,
+    "affiliate_clicks": null,
+    "confirmed_leads": null,
+    "primary_metric_formula": "1000*(verified_settled_order_net_receipts_or_cleared_commissions - attributable_refunds - attributable_fees)/qualified_human_sessions; null unless all inputs authenticated"
+  },
+  "release_approval": {
+    "partner": false,
+    "qa": false,
+    "founder": false,
+    "wordPress": false,
+    "video_playable": false,
+    "affiliate_links_active": false
+  }
+}
