@@ -1,0 +1,802 @@
+{
+  "title": "Mind R297 | complete research-to-claim-to-authorization ledger — meditation audio buyer guide",
+  "as_of": "2026-11-11",
+  "status": "DRAFT_HARD_HOLD",
+  "draft_only": true,
+  "sources": [
+    {
+      "id": "S01",
+      "type": "seller",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "checked": "2026-11-11",
+      "limits": "Focus Shot exact offer; protocol, recordings, seller promised duration"
+    },
+    {
+      "id": "S02",
+      "type": "seller",
+      "url": "https://brainwaveshots.com/faq",
+      "checked": "2026-11-11",
+      "limits": "Isochronic identity, no-headphone and precautions, seller refund statements"
+    },
+    {
+      "id": "S03",
+      "type": "primary_systematic_review",
+      "url": "https://doi.org/10.1371/journal.pone.0286023",
+      "checked": "2026-11-11",
+      "limits": "2023 14-paper binaural-EEG review; five aligned, eight contradictory, one mixed"
+    },
+    {
+      "id": "S04",
+      "type": "primary_meta_analysis",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30073406/",
+      "checked": "2026-11-11",
+      "limits": "2019 22-study binaural-beat pooled cognitive/anxiety/pain results; g≈0.45"
+    },
+    {
+      "id": "S05",
+      "type": "primary_systematic_review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38458383/",
+      "checked": "2026-11-11",
+      "limits": "2024 auditory arousal cognition review 31 studies; mixed/inadequate"
+    },
+    {
+      "id": "S06",
+      "type": "peer_reviewed_scoping_review",
+      "url": "https://doi.org/10.1080/25742442.2026.2679402",
+      "checked": "2026-11-11",
+      "limits": "2026 scoping review 45 included studies, just one isochronic under criteria (2010–24 search)"
+    },
+    {
+      "id": "S07",
+      "type": "seller",
+      "url": "https://inspire3.com/",
+      "checked": "2026-11-11",
+      "limits": "Official product categories; marketing slogans not independently validated"
+    },
+    {
+      "id": "S08",
+      "type": "seller",
+      "url": "https://zen12.com/getstarted",
+      "checked": "2026-11-11",
+      "limits": "Zen12 exact checkout describing 12 levels and 48 MP3s; terms are dynamic"
+    },
+    {
+      "id": "S09",
+      "type": "seller",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "checked": "2026-11-11",
+      "limits": "Total Focus exact product page 33-minute, 47MB seller claim"
+    },
+    {
+      "id": "S10",
+      "type": "seller",
+      "url": "https://hypnosislive.com/faq",
+      "checked": "2026-11-11",
+      "limits": "Hypnosis Live FAQ and seller refund/exclusions"
+    },
+    {
+      "id": "S11",
+      "type": "seller",
+      "url": "https://brainwaveshots.com/faq",
+      "checked": "2026-11-11",
+      "limits": "Brainwave Shots FAQ and seller refund/contraindication text"
+    },
+    {
+      "id": "S12",
+      "type": "official_regulator",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "checked": "2026-11-11",
+      "limits": "FTC endorsements, material connections, proximity of disclosure"
+    },
+    {
+      "id": "S13",
+      "type": "official_regulator",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "checked": "2026-11-11",
+      "limits": "FTC truthfulness and substantiation of express/implied health claims"
+    },
+    {
+      "id": "S14",
+      "type": "brand_existing",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "checked": "2026-11-11",
+      "limits": "Published research route confirmed via current web result"
+    },
+    {
+      "id": "S15",
+      "type": "brand_existing_access_qa_needed",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "checked": "2026-11-11",
+      "limits": "Historical archive supported by Issue #171; web retrieval blocked this run"
+    },
+    {
+      "id": "S16",
+      "type": "brand_existing_live_verified_20261111",
+      "url": "https://finalvestige.com/focus/",
+      "checked": "2026-11-11",
+      "limits": "Live Nov 11 2026: 52-page free fieldbook, 12-min starting routine, existing confirmed-email Jetpack Dispatch pathway; no new list."
+    },
+    {
+      "id": "S17",
+      "type": "partner_public_not_account_auth",
+      "url": "https://affiliates.inspire3.com/",
+      "checked": "2026-11-11",
+      "limits": "Public recruitment page; does not establish Final Vestige-specific approval"
+    },
+    {
+      "id": "S18",
+      "type": "brand_policy_not_regulator",
+      "url": "https://finalvestige.com/affiliate-disclosure/",
+      "checked": "2026-11-11",
+      "limits": "Existing general site disclosure; separate adjacent link disclosure still required"
+    },
+    {
+      "id": "S19",
+      "type": "brand_existing",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "checked": "2026-11-11",
+      "limits": "Historic Mesmerism route, recheck signed-out before release"
+    },
+    {
+      "id": "S20",
+      "type": "peer_reviewed_review",
+      "url": "https://research.monash.edu/en/publications/cognitive-effects-of-mbsrmbct-a-systematic-review-of-neuropsychol/",
+      "checked": "2026-11-11",
+      "limits": "2016 18-study standardized-program attention review; accessible official abstract"
+    },
+    {
+      "id": "S21",
+      "type": "peer_reviewed_meta_analysis",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10902202/",
+      "checked": "2026-11-11",
+      "limits": "2024 111 RCT n=9,538 mindfulness intervention synthesis; not Zen12"
+    },
+    {
+      "id": "S22",
+      "type": "peer_reviewed_meta_analysis",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34425456/",
+      "checked": "2026-11-11",
+      "limits": "2021 29-study group mindfulness review; heterogeneous results and no significant attention shifting"
+    },
+    {
+      "id": "S23",
+      "type": "nih_public_health",
+      "url": "https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety",
+      "checked": "2026-11-11",
+      "limits": "NCCIH general safety/evidence boundaries; not product-specific proof"
+    },
+    {
+      "id": "S24",
+      "type": "brand_existing_live",
+      "url": "https://finalvestige.com/blog/",
+      "checked": "2026-11-11",
+      "limits": "Live Journal reports 66 result count Nov 11; 61 historical Issue171 baseline not current count"
+    },
+    {
+      "id": "S25",
+      "type": "brand_existing_live",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "checked": "2026-11-11",
+      "limits": "Published Change Blindness evidence and original demonstration, confirmed Nov 11"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "statement": "Focus Shot seller describes 15- and 30-minute files plus brainwave-only variants",
+      "source_ids": [
+        "S01"
+      ],
+      "decision": "SELLER_FORMAT_ONLY"
+    },
+    {
+      "id": "C02",
+      "statement": "Focus Shot seller labels its mechanism isochronic; headphones not required",
+      "source_ids": [
+        "S02"
+      ],
+      "decision": "SELLER_FORMAT_ONLY"
+    },
+    {
+      "id": "C03",
+      "statement": "Seller says its Focus Shot alternates 12 and 18 hertz",
+      "source_ids": [
+        "S01"
+      ],
+      "decision": "SELLER_PROTOCOL_ONLY"
+    },
+    {
+      "id": "C04",
+      "statement": "Seller asserts lasting 4 hours to full day",
+      "source_ids": [
+        "S01"
+      ],
+      "decision": "DO_NOT_REPEAT_AS_ESTABLISHED"
+    },
+    {
+      "id": "C05",
+      "statement": "Seller asserts immediate focus, productivity and enhanced motivation",
+      "source_ids": [
+        "S01"
+      ],
+      "decision": "DO_NOT_REPEAT_AS_ESTABLISHED"
+    },
+    {
+      "id": "C06",
+      "statement": "Seller states epilepsy/wakefulness precautions",
+      "source_ids": [
+        "S02"
+      ],
+      "decision": "QUOTE_AS_SELLER_WARNING_NEVER_AS_INDEPENDENT_SAFETY"
+    },
+    {
+      "id": "C07",
+      "statement": "Focus Shot seller states one-year refund request window; limit one refund per six months; for orders exceeding ten items less than half must have been downloaded",
+      "source_ids": [
+        "S01",
+        "S11"
+      ],
+      "decision": "SELLER_TERMS_WITH_EXPLICIT_EXCLUSIONS_NOT_VERIFIED_FULFILLMENT"
+    },
+    {
+      "id": "C08",
+      "statement": "Binaural beats use differing tones played separately to ears",
+      "source_ids": [
+        "S03"
+      ],
+      "decision": "SUPPORTED_FOR_BINAURAL_NOT_ISOCHRONIC"
+    },
+    {
+      "id": "C09",
+      "statement": "2019 binaural-beat meta-analysis involved 22 studies/35 effects",
+      "source_ids": [
+        "S04"
+      ],
+      "decision": "SUPPORTED_RESEARCH_SCOPE"
+    },
+    {
+      "id": "C10",
+      "statement": "2019 overall estimated g about 0.45",
+      "source_ids": [
+        "S04"
+      ],
+      "decision": "SUPPORTED_POOLED_ESTIMATE_NOT_PERCENT_OR_PRODUCT"
+    },
+    {
+      "id": "C11",
+      "statement": "2023 EEG review analyzed 14 binaural studies with 5 supportive/8 contrary/1 mixed",
+      "source_ids": [
+        "S03"
+      ],
+      "decision": "SUPPORTED_RESEARCH_SCOPE"
+    },
+    {
+      "id": "C12",
+      "statement": "2023 EEG entrainment evidence is inconsistent",
+      "source_ids": [
+        "S03"
+      ],
+      "decision": "SUPPORTED_WITH_METHOD_CAVEATS"
+    },
+    {
+      "id": "C13",
+      "statement": "2024 autonomic arousal/cognition review included 31 studies with mixed or insufficient evidence",
+      "source_ids": [
+        "S05"
+      ],
+      "decision": "SUPPORTED_WITH_INDIRECTNESS_CAVEAT"
+    },
+    {
+      "id": "C14",
+      "statement": "2026 scoping review included 45 papers, of which one examined isochronic tones",
+      "source_ids": [
+        "S06"
+      ],
+      "decision": "SUPPORTED_WITH_REVIEW_INCLUSION_CAVEAT"
+    },
+    {
+      "id": "C15",
+      "statement": "Only one isochronic trial has ever existed",
+      "source_ids": [
+        "S06"
+      ],
+      "decision": "REJECT_OVERGENERALIZATION"
+    },
+    {
+      "id": "C16",
+      "statement": "Evidence from binaural-beat studies automatically proves isochronic Focus Shot efficacy",
+      "source_ids": [
+        "S02",
+        "S03",
+        "S06"
+      ],
+      "decision": "REJECT_CROSS_MODALITY_LEAP"
+    },
+    {
+      "id": "C17",
+      "statement": "Auditory steady state response proves all-day productivity gains",
+      "source_ids": [
+        "S03",
+        "S01"
+      ],
+      "decision": "REJECT_MECHANISTIC_LEAP"
+    },
+    {
+      "id": "C18",
+      "statement": "Zen12 exact checkout advertises 12 levels and 48 MP3s",
+      "source_ids": [
+        "S08"
+      ],
+      "decision": "SELLER_FORMAT_ONLY"
+    },
+    {
+      "id": "C19",
+      "statement": "Zen12 gives one hour of meditation effect in twelve minutes",
+      "source_ids": [
+        "S07",
+        "S08"
+      ],
+      "decision": "SELLER_CLAIM_UNSUBSTANTIATED"
+    },
+    {
+      "id": "C20",
+      "statement": "Hypnosis Live Total Focus seller describes ONE 33-minute 47MB MP3 session written and recorded by J.A. Amos; not a separate written product",
+      "source_ids": [
+        "S09"
+      ],
+      "decision": "SELLER_SINGLE_AUDIO_FORMAT_ONLY"
+    },
+    {
+      "id": "C21",
+      "statement": "Hypnosis Live guarantees limitless concentration",
+      "source_ids": [
+        "S09"
+      ],
+      "decision": "REJECT_UNSUBSTANTIATED_PROMISE"
+    },
+    {
+      "id": "C22",
+      "statement": "Public Inspire3 affiliate recruitment advertises a program",
+      "source_ids": [
+        "S17"
+      ],
+      "decision": "PUBLIC_RECRUITMENT_ONLY_NOT_FV_APPROVAL"
+    },
+    {
+      "id": "C23",
+      "statement": "Final Vestige publisher accepted and permitted to use issued earning URL",
+      "source_ids": [
+        "S17"
+      ],
+      "decision": "UNVERIFIED_HARD_HOLD"
+    },
+    {
+      "id": "C24",
+      "statement": "General affiliate disclosure alone is enough for a recommendation link",
+      "source_ids": [
+        "S12",
+        "S18"
+      ],
+      "decision": "REJECT_REQUIRES_ADJACENT_DISCLOSURE"
+    },
+    {
+      "id": "C25",
+      "statement": "Health-related benefits can be promoted without product-specific adequate evidence",
+      "source_ids": [
+        "S13"
+      ],
+      "decision": "REJECT_REQUIRE_SUBSTANTIATION"
+    },
+    {
+      "id": "C26",
+      "statement": "Focus Fieldbook is free and uses existing lead funnel",
+      "source_ids": [
+        "S16"
+      ],
+      "decision": "ISSUE171_DOCUMENTED_RECHECK_LIVE"
+    },
+    {
+      "id": "C27",
+      "statement": "Site currently has exactly 61 investigations",
+      "source_ids": [
+        "S14",
+        "S15"
+      ],
+      "decision": "HISTORIC_BASELINE_NOT_CURRENT_VERIFIED_COUNT"
+    },
+    {
+      "id": "C28",
+      "statement": "Provisional Zen12 is an authorized purchase destination",
+      "source_ids": [
+        "S08",
+        "S17"
+      ],
+      "decision": "REJECT_NO_FV_ACCOUNT_APPROVAL"
+    },
+    {
+      "id": "C29",
+      "statement": "One merchant outbound click counts as a paid affiliate sale",
+      "source_ids": [
+        "S17"
+      ],
+      "decision": "REJECT_NOT_A_SETTLED_SALE"
+    },
+    {
+      "id": "C30",
+      "statement": "The audio type difference is material to evaluating research-to-product relevance",
+      "source_ids": [
+        "S02",
+        "S03",
+        "S06"
+      ],
+      "decision": "SUPPORTED_INFERENCE_WITH_REVIEW_BOUNDARIES"
+    },
+    {
+      "id": "C31",
+      "statement": "2016 standardized 18-study mindfulness review did not support attention or executive functioning improvements overall",
+      "source_ids": [
+        "S20"
+      ],
+      "decision": "SUPPORTED_REVIEW_SCOPE_NOT_PRODUCT"
+    },
+    {
+      "id": "C32",
+      "statement": "2024 111-RCT 9538-person review found small-to-moderate gains in some cognitive domains but not all",
+      "source_ids": [
+        "S21"
+      ],
+      "decision": "SUPPORTED_WITH_HETEROGENEITY_NOT_PRODUCT"
+    },
+    {
+      "id": "C33",
+      "statement": "2021 group mindfulness meta-analysis included 29 studies; no statistically significant pooled attention shifting; effects not robust",
+      "source_ids": [
+        "S22"
+      ],
+      "decision": "SUPPORTED_WITH_DOMAIN_CAVEAT"
+    },
+    {
+      "id": "C34",
+      "statement": "General mindfulness trials prove Zen12 twelve-minute audio generates a one-hour-equivalent meditation outcome",
+      "source_ids": [
+        "S21",
+        "S08"
+      ],
+      "decision": "REJECT_PRODUCT_EXTRAPOLATION"
+    },
+    {
+      "id": "C35",
+      "statement": "NIH reports that meditation can have adverse experiences for some users and research varies by outcome",
+      "source_ids": [
+        "S23"
+      ],
+      "decision": "SUPPORTED_GENERAL_SAFETY_CONTEXT_NOT_MEDICAL_ADVICE"
+    },
+    {
+      "id": "C36",
+      "statement": "Zen12 checkout displays a public promotional total and countdown; this is a verified FV price or scarcity deadline",
+      "source_ids": [
+        "S08"
+      ],
+      "decision": "REJECT_FV_PRICE_AND_URGENCY"
+    },
+    {
+      "id": "C37",
+      "statement": "Sellers' guarantee language demonstrates real-world refund fulfillment",
+      "source_ids": [
+        "S08",
+        "S11"
+      ],
+      "decision": "REJECT_UNVERIFIED_REFUND_PERFORMANCE"
+    },
+    {
+      "id": "C38",
+      "statement": "Existing FV Seven Day Focus Fieldbook is free and accessible on the live route with existing Dispatch signup",
+      "source_ids": [
+        "S16"
+      ],
+      "decision": "SUPPORTED_LIVE_FV_RESOURCE_NOT_PAID_OFFER"
+    },
+    {
+      "id": "C39",
+      "statement": "A first-party affiliate_click establishes a merchant-confirmed paid order",
+      "source_ids": [
+        "S17"
+      ],
+      "decision": "REJECT_OUTBOUND_IS_NOT_PAID"
+    },
+    {
+      "id": "C40",
+      "statement": "Mind editorial work requires clear near-link material-connection disclosure when activated",
+      "source_ids": [
+        "S12",
+        "S18"
+      ],
+      "decision": "REQUIRE_NEAR_LINK_WITH_APPROVAL"
+    },
+    {
+      "id": "C41",
+      "statement": "FV currently has exactly 61 published investigations",
+      "source_ids": [
+        "S24"
+      ],
+      "decision": "REJECT_STALE_COUNT_LIVE_66_JOURNAL_RESULTS"
+    },
+    {
+      "id": "C42",
+      "statement": "A structured audio library is something buyers can independently evaluate as format rather than guaranteed cognitive benefit",
+      "source_ids": [
+        "S08",
+        "S21"
+      ],
+      "decision": "EDITORIAL_INFERENCE_NO_EFFECT_CLAIM"
+    }
+  ],
+  "offers": [
+    {
+      "name": "Zen12",
+      "seller_url": "https://zen12.com/getstarted",
+      "intended_role": "single_provisional_primary_offer",
+      "buyer": "reader comparing structured meditation library",
+      "actual_price_verified_for_fv": false,
+      "refund_conditions_approved": false,
+      "earning_url": null,
+      "published": false
+    },
+    {
+      "name": "Brainwave Shots Focus Shot",
+      "seller_url": "https://brainwaveshots.com/focus-shot",
+      "intended_role": "reviewed_format_comparison_NOT_SECOND_PILOT",
+      "seller_described_format": "isochronic audio, 15/30 min",
+      "earning_url": null,
+      "published": false
+    },
+    {
+      "name": "Hypnosis Live Total Focus",
+      "seller_url": "https://hypnosislive.com/mental-skills/total-focus",
+      "intended_role": "separate_context_only",
+      "earning_url": null,
+      "published": false
+    },
+    {
+      "name": "FV Seven Day Focus Fieldbook",
+      "seller_url": "https://finalvestige.com/focus/",
+      "intended_role": "existing_free_resource_not_paid_SKU",
+      "paid_fv_product_authenticated": false
+    },
+    {
+      "name": "FV paid Mind owned SKU",
+      "seller_url": null,
+      "intended_role": "fallback_if_eligible",
+      "paid_fv_product_authenticated": false,
+      "rights_verified": false,
+      "fulfillment_verified": false
+    }
+  ],
+  "gate_count": 18,
+  "gates": [
+    {
+      "id": "account_holder_identified",
+      "status": "HARD_HOLD",
+      "evidence": null,
+      "owner": "Mind / Commerce"
+    },
+    {
+      "id": "inspire3_acceptance_final_vestige",
+      "status": "HARD_HOLD",
+      "evidence": null,
+      "owner": "Mind / Commerce"
+    },
+    {
+      "id": "offer_specific_publisher_eligibility",
+      "status": "HARD_HOLD",
+      "evidence": null,
+      "owner": "Mind / Commerce"
+    },
+    {
+      "id": "permitted_website_promotion",
+      "status": "HARD_HOLD",
+      "evidence": null,
+      "owner": "Mind / Commerce"
+    },
+    {
+      "id": "permitted_social_promotion",
+      "status": "HARD_HOLD",
+      "evidence": null,
+      "owner": "Mind / Commerce"
+    },
+    {
+      "id": "permitted_email_promotion",
+      "status": "HARD_HOLD",
+      "evidence": null,
+      "owner": "Mind / Commerce"
+    },
+    {
+      "id": "authorized_earning_url",
+      "status": "HARD_HOLD",
+      "evidence": null,
+      "owner": "Mind / Commerce"
+    },
+    {
+      "id": "link_destination_and_redirect_terms",
+      "status": "HARD_HOLD",
+      "evidence": null,
+      "owner": "Mind / Commerce"
+    },
+    {
+      "id": "merchant_creative_rights",
+      "status": "HARD_HOLD",
+      "evidence": null,
+      "owner": "Mind / Commerce"
+    },
+    {
+      "id": "pricing_current_checkout_verified",
+      "status": "HARD_HOLD",
+      "evidence": null,
+      "owner": "Mind / Commerce"
+    },
+    {
+      "id": "refund_exclusions_verified",
+      "status": "HARD_HOLD",
+      "evidence": null,
+      "owner": "Mind / Commerce"
+    },
+    {
+      "id": "health_psychological_claim_review",
+      "status": "HARD_HOLD",
+      "evidence": null,
+      "owner": "Mind / Commerce"
+    },
+    {
+      "id": "adjacent_disclosure_approved",
+      "status": "HARD_HOLD",
+      "evidence": null,
+      "owner": "Mind / Commerce"
+    },
+    {
+      "id": "owner_commercial_approval",
+      "status": "HARD_HOLD",
+      "evidence": null,
+      "owner": "Mind / Commerce"
+    },
+    {
+      "id": "qa_a11y_security_review",
+      "status": "HARD_HOLD",
+      "evidence": null,
+      "owner": "Site QA"
+    },
+    {
+      "id": "founder_release_approval",
+      "status": "HARD_HOLD",
+      "evidence": null,
+      "owner": "Founder"
+    },
+    {
+      "id": "merchant_attribution_reporting_verified",
+      "status": "HARD_HOLD",
+      "evidence": null,
+      "owner": "Mind / Commerce"
+    },
+    {
+      "id": "paid_commission_reconciliation",
+      "status": "HARD_HOLD",
+      "evidence": null,
+      "owner": "Mind / Commerce"
+    }
+  ],
+  "creator_topic_fit": [
+    {
+      "topic": "Change Blindness",
+      "published_article": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "focus": "https://finalvestige.com/focus/",
+      "option": "Zen12 only after approval",
+      "grok_asset_id": null,
+      "asset_url": null,
+      "rights": null
+    },
+    {
+      "topic": "Mesmerism / Puységur",
+      "published_article": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "history": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "focus": "https://finalvestige.com/focus/",
+      "option": "Hypnosis Live only if independently eligible, otherwise no commercial CTA",
+      "grok_asset_id": null,
+      "asset_url": null,
+      "rights": null
+    },
+    {
+      "topic": "Focus-audio distinction: isochronic vs binaural",
+      "unpublished_article": "mind/r296/THE-SOUND-THAT-PROMISED-TO-HOLD-YOUR-ATTENTION-UNPUBLISHED.md",
+      "focus": "https://finalvestige.com/focus/",
+      "option": "Seller research, not active Focus Shot buying link",
+      "grok_asset_id": null,
+      "asset_url": null,
+      "rights": null
+    }
+  ],
+  "measurement": {
+    "campaign_id_choice": "HARD_HOLD_UNRESOLVED mind_pilot_2026_11 vs mind_proposed_2026_11; Claude owns analytics decision",
+    "first_party_only": true,
+    "pii": false,
+    "new_scripts": false,
+    "affiliate_click_event_name": "affiliate_click",
+    "affiliate_click_vs_sale": "STRICTLY_SEPARATE: no sale until merchant transaction/settlement joined",
+    "qualified_sessions_7d": null,
+    "qualified_sessions_30d": null,
+    "relevant_cta_clicks": null,
+    "confirmed_jetpack_leads": null,
+    "merchant_confirmed_orders": null,
+    "commission_settled": null,
+    "refunds": null,
+    "fees": null,
+    "net_realized_revenue": null,
+    "revenue_per_1000_qualified_humans": null,
+    "reason_not_computable": "NO VERIFIED PARTNER SALE/SETTLEMENT AND NO QUALIFIED SESSION DENOMINATOR"
+  },
+  "release": "UNPUBLISHED_NO_AFFILIATE_ACTIVATION",
+  "parent_source_sha": "cdf7b0e148e2468ee9c51e9956ff7b6cb870fd16",
+  "parent_matrix_blob_sha": "b78fc7874ea3c6bc63a8b8c7e2c1621647b49f98",
+  "note": "R297 is a cumulative SOURCE-ONLY editorial extension; same 18 gates on hard hold. Duplicated S02/S11 URL are distinct records with different intended claim scopes; not 19 distinct URLs.",
+  "offer_hypothesis": {
+    "primary": "Zen12",
+    "buying_intent": "adult reader seeking structured and downloadable guided meditation practice",
+    "provisional": true,
+    "product_specific_efficacy_verified": false,
+    "account_approval_verified": false,
+    "partner_creatives_approved": false,
+    "authorized_earning_url": null,
+    "legal_commercial_activation": "HARD_HOLD",
+    "fallback_owned_paid_sku_verified": false
+  },
+  "article_to_offer": {
+    "editorial_article": "mind/r297/BEFORE-YOU-BUY-MEDITATION-AUDIO-INDEPENDENT-GUIDE-UNPUBLISHED.md",
+    "route_status": "unpublished",
+    "existing_hub": "/mind/ under PR172 not to change",
+    "existing_lead_magnet": "https://finalvestige.com/focus/",
+    "paid_call_to_action": "disabled_until_18_gates_clear"
+  },
+  "ab_hypothesis": {
+    "variantA": "mind/r284/ZEN12-BUYER-GUIDE-A-TEXT-ONLY-UNPUBLISHED.html",
+    "variantB": "mind/r284/ZEN12-BUYER-GUIDE-B-FILM-STORYBOARD-UNPUBLISHED.html",
+    "B_media_actual": "static_storyboard_not_playable",
+    "video_candidate": "30-45s optional independently captioned short; absent in canonical B",
+    "test_status": "NOT_STARTED",
+    "winner": "UNKNOWN",
+    "denominator": "qualified_human_sessions",
+    "success_primary": "realized_net_revenue_per_1000_qualified_humans",
+    "prerequisites": "authenticated affiliate authorization, compliant offer links, checkout/refund proof, founder approval, browser and consent QA"
+  },
+  "first_party_event_contract": {
+    "campaign_id": "HARD_HOLD owner decision mind_pilot_2026_11 vs mind_proposed_2026_11",
+    "creator_asset_id": "UNKNOWN - only real posted Grok IDs permitted",
+    "privacy": "No PII, no cross-site individual tracking, no new code, existing Claude instrument only",
+    "events": [
+      "landing_visit",
+      "relevant_cta_click",
+      "focus_signup_attempt",
+      "affiliate_click"
+    ],
+    "verified_outcomes": [
+      "jetpack_confirmed_subscription",
+      "merchant_confirmed_paid_order",
+      "settled_commission",
+      "refund",
+      "fee",
+      "realized_net_revenue"
+    ],
+    "attribution_rule": "Never infer merchant sale from affiliate_click or Jetpack signup"
+  },
+  "refund_attention": {
+    "Zen12": "Exact public checkout advertises 1-year guarantee, but full applicable authorized referral terms and merchant refund outcomes unverified",
+    "BrainwaveShots": "1 year to request refund; at most one refund in six months; orders over 10 items must have downloaded less than half ordered items",
+    "HypnosisLive": "Offer-specific FAQ terms must be independently checked before any recommendation"
+  },
+  "evidence_review": {
+    "sources_total": 25,
+    "unique_source_urls": 23,
+    "claims_total": 42,
+    "commercial_gates": 18,
+    "all_gates_hard_hold": true,
+    "reviewer": "Mind editorial; independent release QA pending"
+  }
+}
