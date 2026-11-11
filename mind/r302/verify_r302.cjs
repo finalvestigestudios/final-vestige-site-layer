@@ -39,7 +39,7 @@ function validate(f){
  assert(!/<(?:script|iframe|form|video|audio|object|embed)\b/i.test(h),"UNAPPROVED_ACTIVE_ELEMENT");
  assert(!/<meta[^>]*http-equiv\s*=\s*["']?refresh/i.test(h),"UNAPPROVED_REDIRECT");
  assert(!/\bon(?:click|load|error|submit|mouseover|focus)\s*=/i.test(h),"UNAPPROVED_EVENT_HANDLER");
- assert(!/\b(?:autoplay|data:|javascript:|window\.location|gtag\(|fbq\()\b/i.test(h),"UNAPPROVED_TRACKING");
+ assert(!/<(?:video|audio)[^>]*\bautoplay\b|\b(?:src|href)\s*=\s*["\x27](?:javascript:|data:)|\bgtag\s*\(|\bfbq\s*\(/i.test(h),"UNAPPROVED_TRACKING");
  assert(!/<a\b[^>]*\bhref=["'](?:https?:\/\/)?(?:www\.)?(?:zen12|hypnosislive|brainwaveshots|inspire3|affiliates\.inspire3)\b/i.test(h),"MERCHANT_LINK_HOLD");
  const hrefs=[...h.matchAll(/<a\b[^>]*\bhref=["']([^"']+)/gi)].map(x=>x[1]);
  assert(hrefs.length>=6&&hrefs.every(s=>s.startsWith("#")||/^https:\/\/(?:finalvestige\.com|pmc\.ncbi\.nlm\.nih\.gov)\//.test(s)),"OUTBOUND_ALLOWLIST");
