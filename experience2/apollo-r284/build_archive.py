@@ -17,11 +17,11 @@ SOURCE=[
  'experience2/apollo-r281/apollo-source-experience.php',
  'experience2/apollo-r281/assets/apollo-source-experience.css',
  'experience2/apollo-r281/qa/committed_gate.py',
- 'experience2/apollo-r284/verify_source_roundtrip.py',
- 'experience2/apollo-r284/r283-baseline.php',
  'experience2/apollo-r284/build_archive.py',
 ]
 OPTIONAL=[
+ 'experience2/apollo-r284/verify_source_roundtrip.py',
+ 'experience2/apollo-r284/r283-baseline.php',
  'QA-A/receipt.json','QA-B/receipt.json',
  'QA-A/r284-390-nojs-source-focus.png','QA-B/r284-390-nojs-source-focus.png',
  'QA-A/r284-1440-nojs-source-focus.png','QA-B/r284-1440-nojs-source-focus.png',
