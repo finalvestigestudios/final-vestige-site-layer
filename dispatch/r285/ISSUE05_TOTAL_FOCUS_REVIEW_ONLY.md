@@ -1,0 +1,37 @@
+# THE DISPATCH — ISSUE 05 (OPTIONAL REVIEW ALTERNATIVE)
+
+> UNSENT DRAFT — NOT ADOPTED — DO NOT SEND OR PUBLISH
+> The original four-editorial/two-commercial campaign remains unchanged.
+
+**Subject:** Can a 33-minute recording improve focus?
+**Preheader:** One seller promise, three practical checks, and what the evidence does not show.
+**Type:** commercial-review-pending
+
+An eighteenth-century observer could witness an unexpected reaction and still be wrong about its cause. The same distinction matters when a modern audio product promises a change in concentration: a persuasive experience is not the same thing as evidence for a specific outcome.
+
+Consider Hypnosis Live’s Total Focus recording. Its official sales page currently lists a 33-minute, 47 MB downloadable audio session. That describes the format; it does not establish that the recording produces the concentration gains described in the advertising.
+
+The seller uses language about “reprogramming” the brain and exceptionally sharp concentration. Those are the seller’s promotional claims. We have not located product-specific independent evidence in the sources reviewed that would justify repeating those promises as Final Vestige findings.
+
+Research about hypnosis exists, but it is not a blank cheque for every recording. The U.S. National Center for Complementary and Integrative Health reviews applications such as pain and anxiety around procedures, with varying levels of evidence. Its overview does not establish that Total Focus improves ordinary work productivity.
+
+Three questions make the decision clearer. FIRST: what exactly will I receive—a single audio file, an ongoing program, or a subscription? SECOND: what modest result would I notice and record, without promising myself a transformation? THIRD: what does the actual checkout say about payment, access, and refunds?
+
+The merchant’s FAQ currently describes refund requests within 14 days and a limit of five refunded sessions per year. Those are public merchant terms, not a personalized guarantee or a promise that a checkout will show the same terms. Check the current offer before deciding.
+
+You do not have to buy a recording to run a useful experiment. Choose one task, remove one distraction, work for a short uninterrupted period, and note what made starting or staying with it easier. Repeat on another day. This does not prove the effectiveness of hypnosis; it gives you a baseline for judging whether any paid tool adds practical value.
+
+Our independent Total Focus buyer guide is still under editorial and partner review. It will distinguish the recording’s inventory from claims, include free alternatives, and link to an authorized offer only if Final Vestige’s email promotion rights and exact link are verified.
+
+**Read the independent Total Focus buyer guide: [[APPROVED_TOTAL_FOCUS_GUIDE_URL_REQUIRED]]**
+
+**Commercial disclosure: If you later purchase through a qualifying link on our buyer guide, Final Vestige may earn a commission. There is no purchase requirement, and no commercial link is active in this draft.**
+
+## Full sources
+- Hypnosis Live — Total Focus sales page: https://hypnosislive.com/mental-skills/total-focus
+- Hypnosis Live — FAQ / refund conditions: https://hypnosislive.com/faq
+- NIH NCCIH — Hypnosis evidence overview: https://www.nccih.nih.gov/health/hypnosis
+- FTC — CAN-SPAM business guidance: https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business
+
+DO NOT SEND — link and legal footer are incomplete.
+Sender: Final Vestige Studios. Physical mailing address: [[VALID_POSTAL_ADDRESS_REQUIRED]]. Unsubscribe: [[JETPACK_UNSUBSCRIBE_LINK_MUST_BE_VERIFIED]].

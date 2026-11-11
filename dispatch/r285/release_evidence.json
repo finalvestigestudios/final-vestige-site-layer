@@ -1,0 +1,42 @@
+{
+  "status": "HOLD_UNSENT",
+  "edition": "05",
+  "original_campaign_pr": 175,
+  "previous_dispatch_pr": 2070,
+  "alternative_adopted": false,
+  "commercial_issues_reserved": [
+    3,
+    5
+  ],
+  "live_jetpack_newsletter_enabled": true,
+  "jetpack_default_new_post_email_disabled": true,
+  "email_content_format": "full",
+  "diagnostic_aggregate_counts_as_of_2026_11_11": {
+    "total": 3,
+    "confirmed": 3,
+    "unconfirmed_requests": 2,
+    "wordpress_reader_followers": 3,
+    "email_followers": 0
+  },
+  "actual_email_eligible_recipients": null,
+  "provider_confirmed_consent_proof_verified": false,
+  "welcome_receipt_verified": false,
+  "fieldbook_download_delivery_verified": false,
+  "merchant_account_approved_for_fv": false,
+  "email_channel_affiliate_permission_verified": false,
+  "approved_earning_link_verified": false,
+  "seller_price_and_refund_terms_approved": false,
+  "merchant_claims_independently_product_verified": false,
+  "buyer_guide_published_and_fully_audited": false,
+  "actual_fv_physical_postal_address_verified": false,
+  "unsubscribe_in_real_jetpack_email_verified": false,
+  "native_jetpack_preview_executed": false,
+  "actual_received_email_inspected": false,
+  "founder_final_send_approval": false,
+  "no_website_writes": true,
+  "no_messages_sent": true,
+  "settled_paid_transactions_verified": null,
+  "realized_net_revenue": null,
+  "qualified_human_sessions": null,
+  "net_revenue_per_1000_human_sessions": null
+}
