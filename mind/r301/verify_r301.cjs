@@ -45,7 +45,7 @@ function validate(d){
  ok(d.article.includes("unpublished editorial draft")&&d.article.includes("does **not**"),"ARTICLE_UNPUBLISHED_LIMITS");
  ok(d.acceptance.includes("R284 A/B")&&d.acceptance.includes("HARD HOLD")&&d.acceptance.includes("cleared FV commission"),"ONE_OFFER_REVENUE_GUARD");
  ok(d.acceptance.includes("no external script")||d.acceptance.includes("no external assets"),"VIDEO_PRIVACY");
- ok(d.film.includes("DURATION=960")===false&&d.film.includes("FPS,DURATION=960,540,12,42"),"FILM_DURATION_42");
+ ok(d.film.includes("W,H,FPS,DURATION=960,540,12,42"),"FILM_DURATION_42");
  ok(d.film.includes("-an")&&d.film.includes("+faststart")&&d.film.includes("render(t)"),"FILM_SOURCE");
  ok((d.captions.match(/-->/g)||[]).length===7&&d.captions.includes("00:00:42.000"),"VTT_42S_SEVEN_SCENES");
  ok(d.hub.includes("may earn a commission")&&/disabled/i.test(d.hub)&&!/<script\b/i.test(d.hub),"HUB_DISABLED_DISCLOSURE");
