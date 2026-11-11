@@ -30,7 +30,7 @@ assert r.returncode==0,(r.returncode,r.stderr)
 markup=r.stdout
 assert markup.count('data-fv-evidence-status="editorial-review-pending"')==2
 assert markup.count('https://attacker.invalid')==0
-assert markup.count('<details')==6 and markup.count('<time')==14
+assert markup.count('<details')==8 and markup.count('<time')==14
 assert markup.count('fv-r281__source-list')==2
 assert 'malicious.invalid' not in markup
 NASA=['https://www.nasa.gov/mission/apollo-1/',
