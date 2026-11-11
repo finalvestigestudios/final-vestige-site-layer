@@ -236,6 +236,11 @@ function fv_r281_render($attributes = []): string {
         // Native claim-to-catalogue cross-reference; accessible with JS disabled.
         $source_point=$id.'-source-'.($index+1);
         $s.='<p class="fv-r281__source-jump"><a href="#'.$source_point.'">Locate the '.fv_r281_escape($r['source_type']).' in the source catalogue</a></p>';
+        // R290: the Jan 28 Board claim has its own four-act custody chain.
+        // Direct native fragment movement is available without JS or a map.
+        if ($index === 1) {
+            $s.='<p class="fv-r281__authority-jump"><a href="#'.$id.'-authority-1">Examine the four dated Board authority records</a></p>';
+        }
         $s.='<details class="fv-r281__drawer"><summary>Inspect the source and custody record</summary><div class="fv-r281__drawer-body"><p><strong>Custodian:</strong> NASA · <strong>Record:</strong> '.fv_r281_escape($r['source_id']).' · <strong>Editorial review:</strong> Pending</p><p><strong>Record type:</strong> '.fv_r281_escape($r['source_type']).'. <strong>Source relationship:</strong> '.fv_r281_escape($r['source_dependency']).'</p>';
         $s.='<p><a href="'.fv_r281_escape($r['source_url']).'" rel="noopener noreferrer">Open '.fv_r281_escape($r['source_name']).' (NASA)</a></p>';
         $s.='<p>This is an official-source link, not a claim of NASA endorsement or clearance for promotional use of agency marks, astronaut likenesses, or media.</p></div></details>';
@@ -248,10 +253,12 @@ function fv_r281_render($attributes = []): string {
     $s.='<p><strong>Unresolved source distinction:</strong> The Apollo 204 Review Board narrative dates its original oral authorization to January 27, 1967. A later NASA safety summary describes the Board as established on January 28. Both place its first Kennedy meeting on January 28. We preserve that distinction instead of calling two institutional descriptions independent corroboration.</p>';
     $s.='<h4>Document custody: four different dated actions</h4><p>These dates describe the Board\'s authority, meeting, memorandum and later confirmation. Its own 1967 narrative and proceedings are parts of the same investigation, not independent eyewitness corroboration.</p>';
     $s.='<ol class="fv-r281__authority-ledger" aria-label="Board authority document chronology">';
-    foreach ($authority_ledger as $entry) {
-        $s.='<li><p class="fv-r281__authority-date"><time datetime="'.fv_r281_escape($entry['date']).'">'.fv_r281_escape($entry['label']).'</time></p>';
+    foreach ($authority_ledger as $index=>$entry) {
+        $authority_point=$id.'-authority-'.($index+1);
+        $s.='<li id="'.$authority_point.'" tabindex="-1"><p class="fv-r281__authority-date"><time datetime="'.fv_r281_escape($entry['date']).'">'.fv_r281_escape($entry['label']).'</time></p>';
         $s.='<p>'.fv_r281_escape($entry['finding']).'</p><p class="fv-r281__authority-boundary"><strong>Limit:</strong> '.fv_r281_escape($entry['boundary']).'</p>';
-        $s.='<p><a href="'.fv_r281_escape($entry['url']).'" rel="noopener noreferrer">Inspect '.fv_r281_escape($entry['source']).' at NASA</a></p></li>';
+        $s.='<p><a href="'.fv_r281_escape($entry['url']).'" rel="noopener noreferrer">Inspect '.fv_r281_escape($entry['source']).' at NASA</a></p>';
+        $s.='<p class="fv-r281__authority-return"><a href="#'.$id.'-event-2">Return to January 28 evidence</a></p></li>';
     }
     $s.='</ol><ul class="fv-r281__reconciliation-list">';
     foreach ($date_reconciliation as $source) {
