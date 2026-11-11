@@ -1,0 +1,556 @@
+{
+  "schema_version": "r303.1",
+  "reviewed_on": "2026-11-11",
+  "status": "UNPUBLISHED_HARD_HOLD",
+  "sources": [
+    {
+      "id": "S01",
+      "kind": "publisher-abstract",
+      "url": "https://doi.org/10.1068/p090483",
+      "scope": "1980 Thatcher original landing metadata; full text restricted"
+    },
+    {
+      "id": "S02",
+      "kind": "independent-full-text",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4191594/",
+      "scope": "2014 whole-face/isolated-feature matching task"
+    },
+    {
+      "id": "S03",
+      "kind": "independent-full-text",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4298288/",
+      "scope": "2013/14 fMRI-adaptation and red-dot task"
+    },
+    {
+      "id": "S04",
+      "kind": "publisher-abstract",
+      "url": "https://doi.org/10.1068/p7755",
+      "scope": "2014 expression recognition abstract only"
+    },
+    {
+      "id": "S05",
+      "kind": "fv-published",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "scope": "153 source rows/16 dossiers; history not efficacy"
+    },
+    {
+      "id": "S06",
+      "kind": "fv-published",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "scope": "existing change blindness article"
+    },
+    {
+      "id": "S07",
+      "kind": "fv-published",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "scope": "published Mesmer/Franklin context"
+    },
+    {
+      "id": "S08",
+      "kind": "fv-published",
+      "url": "https://finalvestige.com/free-resources/",
+      "scope": "one existing fieldbook route/single Jetpack funnel"
+    },
+    {
+      "id": "S09",
+      "kind": "seller",
+      "url": "https://inspire3.com/",
+      "scope": "parent catalog and seller representations"
+    },
+    {
+      "id": "S10",
+      "kind": "seller-offer",
+      "url": "https://zen12.com/getstarted",
+      "scope": "Zen12 exact checkout path; package and form"
+    },
+    {
+      "id": "S11",
+      "kind": "seller-offer",
+      "url": "https://zen12.com/",
+      "scope": "Zen12 marketing and sales variants; package/guarantee claims"
+    },
+    {
+      "id": "S12",
+      "kind": "seller-offer",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "scope": "Total Focus product format, advertising, snapshot price"
+    },
+    {
+      "id": "S13",
+      "kind": "seller-offer",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "scope": "Focus Shot formats and seller performance claims"
+    },
+    {
+      "id": "S14",
+      "kind": "seller-affiliate-public",
+      "url": "https://affiliates.inspire3.com/",
+      "scope": "public recruitment only; not FV acceptance"
+    },
+    {
+      "id": "S15",
+      "kind": "regulator",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "scope": "material-connection disclosure guidance"
+    },
+    {
+      "id": "S16",
+      "kind": "regulator",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "scope": "health-related advertising claim substantiation guidance"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "Thompson published Thatcher illusion in 1980",
+      "source_ids": [
+        "S01"
+      ],
+      "classification": "historical-primary-metadata",
+      "decision": "ALLOW",
+      "notes": "Publisher date and page range confirmed; no full text participant claims"
+    },
+    {
+      "id": "C02",
+      "claim": "Feature-local inversion produces orientation-dependent distortion",
+      "source_ids": [
+        "S01",
+        "S02"
+      ],
+      "classification": "scientific",
+      "decision": "ALLOW",
+      "notes": "Qualify as experimental visual effect, not universal personal deficit"
+    },
+    {
+      "id": "C03",
+      "claim": "The illusion is explained solely by face-wide spatial configuration",
+      "source_ids": [
+        "S02"
+      ],
+      "classification": "oversimplification",
+      "decision": "EXCLUDE",
+      "notes": "Isolated eye and mouth regions retained an orientation effect"
+    },
+    {
+      "id": "C04",
+      "claim": "Inverted normal/Thatcherized same-person pairs were hard to discriminate in 2014 matching task",
+      "source_ids": [
+        "S02"
+      ],
+      "classification": "scientific",
+      "decision": "ALLOW",
+      "notes": "Describe tested task not diagnostic ability"
+    },
+    {
+      "id": "C05",
+      "claim": "STS response was orientation-dependent in fMRI adaptation study",
+      "source_ids": [
+        "S03"
+      ],
+      "classification": "scientific",
+      "decision": "ALLOW",
+      "notes": "Correlate, not causation or mind-reading"
+    },
+    {
+      "id": "C06",
+      "claim": "Expression recognition and perceived grotesqueness are separate tasks",
+      "source_ids": [
+        "S04",
+        "S02"
+      ],
+      "classification": "scientific",
+      "decision": "ALLOW_WITH_SCOPE",
+      "notes": "S04 abstract only"
+    },
+    {
+      "id": "C07",
+      "claim": "An internet Thatcher photograph is free for FV reuse",
+      "source_ids": [
+        "S01"
+      ],
+      "classification": "rights",
+      "decision": "EXCLUDE",
+      "notes": "Original figure is not rights cleared"
+    },
+    {
+      "id": "C08",
+      "claim": "Puységur preserved recorded failures and consent conflicts",
+      "source_ids": [
+        "S05"
+      ],
+      "classification": "history",
+      "decision": "ALLOW",
+      "notes": "Historical archive; no hypnotic efficacy"
+    },
+    {
+      "id": "C09",
+      "claim": "Zen12 seller lists twelve levels and 48 MP3s",
+      "source_ids": [
+        "S10"
+      ],
+      "classification": "seller-product-format",
+      "decision": "SELLER_ATTRIBUTION",
+      "notes": "Offer packaging only"
+    },
+    {
+      "id": "C10",
+      "claim": "Zen12 seller advertises support guides and support call",
+      "source_ids": [
+        "S10"
+      ],
+      "classification": "seller-product-format",
+      "decision": "SELLER_ATTRIBUTION",
+      "notes": "Actual availability buyer should confirm at checkout"
+    },
+    {
+      "id": "C11",
+      "claim": "Zen12 seller markets stronger focus/relaxation benefits",
+      "source_ids": [
+        "S11"
+      ],
+      "classification": "seller-efficacy",
+      "decision": "DO_NOT_ADOPT",
+      "notes": "No Zen12-specific independent evidence established here"
+    },
+    {
+      "id": "C12",
+      "claim": "Twelve minutes of Zen12 equals an hour of meditation",
+      "source_ids": [
+        "S11"
+      ],
+      "classification": "seller-comparative-efficacy",
+      "decision": "EXCLUDE",
+      "notes": "No independent equivalence substantiation"
+    },
+    {
+      "id": "C13",
+      "claim": "Zen12 checkout is a confirmed FV-approved affiliate destination",
+      "source_ids": [
+        "S10",
+        "S14"
+      ],
+      "classification": "commercial-authorization",
+      "decision": "HARD_HOLD",
+      "notes": "No FV-issued tracked URL"
+    },
+    {
+      "id": "C14",
+      "claim": "Public affiliate recruitment proves FV has publisher status",
+      "source_ids": [
+        "S14"
+      ],
+      "classification": "commercial-authorization",
+      "decision": "EXCLUDE",
+      "notes": "Eligibility not established by public signup page"
+    },
+    {
+      "id": "C15",
+      "claim": "Price from one Zen12 promotional route applies to all audiences",
+      "source_ids": [
+        "S10",
+        "S11"
+      ],
+      "classification": "price",
+      "decision": "EXCLUDE",
+      "notes": "Multiple routes and transient pricing; quote no price"
+    },
+    {
+      "id": "C16",
+      "claim": "Zen12 money-back language is seller advertised",
+      "source_ids": [
+        "S10",
+        "S11"
+      ],
+      "classification": "seller-policy",
+      "decision": "SELLER_ATTRIBUTION",
+      "notes": "No independently tested refund; buyer verify conditions"
+    },
+    {
+      "id": "C17",
+      "claim": "Hypnosis Live Total Focus seller lists a 33-minute 47MB audio",
+      "source_ids": [
+        "S12"
+      ],
+      "classification": "seller-product-format",
+      "decision": "SELLER_ATTRIBUTION",
+      "notes": "Not the same product as Zen12"
+    },
+    {
+      "id": "C18",
+      "claim": "Total Focus makes promised on-demand 100% concentration",
+      "source_ids": [
+        "S12"
+      ],
+      "classification": "seller-efficacy",
+      "decision": "EXCLUDE",
+      "notes": "Unsubstantiated product-specific result"
+    },
+    {
+      "id": "C19",
+      "claim": "Brainwave Shots Focus Shot seller lists 15/30-minute audio and bonus-only versions",
+      "source_ids": [
+        "S13"
+      ],
+      "classification": "seller-product-format",
+      "decision": "SELLER_ATTRIBUTION",
+      "notes": "Feature listing only"
+    },
+    {
+      "id": "C20",
+      "claim": "Focus Shot produces sustained concentration for 4+ hours",
+      "source_ids": [
+        "S13"
+      ],
+      "classification": "seller-efficacy",
+      "decision": "EXCLUDE",
+      "notes": "No product-specific proof established"
+    },
+    {
+      "id": "C21",
+      "claim": "A consumer would necessarily pay no more via an affiliate link",
+      "source_ids": [
+        "S15"
+      ],
+      "classification": "material-connection",
+      "decision": "HARD_HOLD",
+      "notes": "Disclosure wording must reflect validated terms and presentation"
+    },
+    {
+      "id": "C22",
+      "claim": "Close-to-link disclosure is required for material financial connection",
+      "source_ids": [
+        "S15"
+      ],
+      "classification": "regulatory-guidance",
+      "decision": "ALLOW",
+      "notes": "Clear plain-language commission disclosure"
+    },
+    {
+      "id": "C23",
+      "claim": "General disclosure page alone is sufficient for recommendation",
+      "source_ids": [
+        "S15"
+      ],
+      "classification": "regulatory-guidance",
+      "decision": "EXCLUDE",
+      "notes": "FTC encourages proximity and clarity"
+    },
+    {
+      "id": "C24",
+      "claim": "Health-related benefit marketing needs adequate claim-specific substantiation",
+      "source_ids": [
+        "S16"
+      ],
+      "classification": "regulatory-guidance",
+      "decision": "ALLOW",
+      "notes": "FTC guidance not specific Zen12 trial evidence"
+    },
+    {
+      "id": "C25",
+      "claim": "Focus Fieldbook is free and uses existing Dispatch mechanism",
+      "source_ids": [
+        "S08"
+      ],
+      "classification": "fv-owned-free-resource",
+      "decision": "ALLOW",
+      "notes": "No new list or signup form"
+    },
+    {
+      "id": "C26",
+      "claim": "Outbound merchant click equals paid affiliate conversion",
+      "source_ids": [
+        "S14"
+      ],
+      "classification": "measurement",
+      "decision": "EXCLUDE",
+      "notes": "Payment provider verification missing"
+    },
+    {
+      "id": "C27",
+      "claim": "Promotional video must increase purchase rate",
+      "source_ids": [
+        "S15"
+      ],
+      "classification": "experiment-hypothesis",
+      "decision": "EXCLUDE",
+      "notes": "A/B is a hypothesis not result"
+    },
+    {
+      "id": "C28",
+      "claim": "Thatcher illusion demonstrates audio can increase attention",
+      "source_ids": [
+        "S02",
+        "S11"
+      ],
+      "classification": "scientific-to-commercial-leap",
+      "decision": "EXCLUDE",
+      "notes": "No connection established"
+    },
+    {
+      "id": "C29",
+      "claim": "Seller's advertised affiliate commission percentage proves FV contracted commission",
+      "source_ids": [
+        "S14"
+      ],
+      "classification": "commercial-authorization",
+      "decision": "EXCLUDE",
+      "notes": "Public pitch not account-specific entitlement"
+    },
+    {
+      "id": "C30",
+      "claim": "Commission revenue should be based on independently cleared FV payments",
+      "source_ids": [
+        "S14"
+      ],
+      "classification": "financial-contract",
+      "decision": "ALLOW_AS_METHOD",
+      "notes": "No actual payment records available"
+    }
+  ],
+  "commercial_gates": [
+    {
+      "id": "publisher_acceptance",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "account_owner_identity",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "authorized_earning_url",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "channel_web",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "channel_email",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "channel_video",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "creative_licence",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "product_offer_accuracy",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "current_checkout_price",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "refund_specific_terms",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "claims_substantiation",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "adjacent_disclosure",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "destination_mobile_qa",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "security_link_sanitization",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "consent_privacy",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "verified_purchase_reporting",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "settlement_refunds_fees",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "founder_release_approval",
+      "status": "HARD_HOLD",
+      "evidence": null
+    }
+  ],
+  "offer_selection": {
+    "candidate": "Zen12",
+    "status": "CONDITIONAL_NOT_APPROVED",
+    "publisher_approval": null,
+    "issued_affiliate_url": null,
+    "price_for_fv": null,
+    "commission_terms_for_fv": null,
+    "seller_refund_independently_tested": false,
+    "paid_fv_owned_mind_sku_verified": false,
+    "source_ids": [
+      "S09",
+      "S10",
+      "S11",
+      "S14"
+    ]
+  },
+  "paid_outcomes": {
+    "qualified_human_sessions": null,
+    "verified_paid_orders": null,
+    "cleared_affiliate_commissions": null,
+    "refunds": null,
+    "fees": null,
+    "realized_net_revenue": null,
+    "revenue_per_1000_qualified_sessions": null
+  },
+  "creator_paths": [
+    {
+      "topic": "Thatcher illusion",
+      "asset_id": null,
+      "asset_url": null,
+      "editorial_destination": "UNPUBLISHED R303 article",
+      "cta": "existing Focus Fieldbook optional; Zen12 guide only on relevance"
+    },
+    {
+      "topic": "Change blindness",
+      "asset_id": null,
+      "asset_url": null,
+      "editorial_destination": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "cta": "existing Focus Fieldbook optional"
+    },
+    {
+      "topic": "Puységur/mesmerism",
+      "asset_id": null,
+      "asset_url": null,
+      "editorial_destination": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "cta": "source trail/Fieldbook; avoid medical product upsell"
+    }
+  ],
+  "notes": [
+    "Gmail targeted search 11 Nov 2026 found Inspire3 promotional marketing but no FV-specific partner authorization. Search results are limited, so approval is NOT VERIFIED, not proven nonexistent.",
+    "No merchant link in HTML. Source URLs appear in source matrix only; they are not earning links.",
+    "Prices/commissions and product outcomes are deliberately not copied from seller advertisements."
+  ]
+}
