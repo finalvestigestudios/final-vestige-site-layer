@@ -871,6 +871,12 @@ jobs:
           python -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_policy_integration_r351.py'
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_policy_custody_r351.py'
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_policy_integration_r351.py'
+      - name: R352 ProcureGuard document identifier Decimal context custody (normal and -OO)
+        run: |
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_identifier_decimal_context_r352.py'
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_identifier_context_integration_r352.py'
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_identifier_decimal_context_r352.py'
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_identifier_context_integration_r352.py'
       - name: Verify full normal/optimized source provenance and six smokes (R57)
         run: |
           mkdir -p "$RUNNER_TEMP/fvs-source"
@@ -1063,6 +1069,18 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R351 Windows optimized policy unit FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_policy_integration_r351.py'
           if ($LASTEXITCODE -ne 0) { throw "R351 Windows optimized policy integration FAILED" }
+      - name: R352 Windows ProcureGuard document identifier Decimal context custody (normal and -OO)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_identifier_decimal_context_r352.py'
+          if ($LASTEXITCODE -ne 0) { throw "R352 Windows identifier-context unit FAILED" }
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_identifier_context_integration_r352.py'
+          if ($LASTEXITCODE -ne 0) { throw "R352 Windows identifier-context integration FAILED" }
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_identifier_decimal_context_r352.py'
+          if ($LASTEXITCODE -ne 0) { throw "R352 Windows optimized identifier-context unit FAILED" }
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_procurement_identifier_context_integration_r352.py'
+          if ($LASTEXITCODE -ne 0) { throw "R352 Windows optimized identifier-context integration FAILED" }
       - name: R319 witnessed-vs-compiled premium test source before Windows packaging
         shell: pwsh
         run: |
