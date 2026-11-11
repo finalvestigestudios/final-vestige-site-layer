@@ -1,0 +1,75 @@
+# Mind R285 — One-Offer Conversion Acceptance, Editorial Canonicalization & Reproducible Security Audit
+**UNPUBLISHED • 10 Nov 2026 PT • Commercial / production HARD HOLD • Mind-owned scope only**
+
+## Decision at the beginning of the funnel
+The acquisition audience is **an already-curious reader who watched or sought an evidence-based perception/suggestion explanation and now wonders whether a structured meditation audio would be useful**. Do not treat a generic mystery viewer as a ready buyer. The single proposed primary merchant offer is **Zen12 Premium**, for its *format*—a seller-described 12-level collection with four styles per level / 48 MP3s—not for unverified hour-equivalence, health gains, trance induction, stress treatment or "meditating for you." Source: https://zen12.com/hnp and official parent https://inspire3.com/ .
+
+The buyer's real question: "Would curated 12-minute audio be more convenient for me than a free timer or the published Seven Day Focus Fieldbook?" A concrete paid offer value proposition may concern *recordings, variety, access, ease of selecting a track*. It may not turn research on thought suppression or binaural-beat EEG into claims that this product **works** in a person. Our original R285 white-bear article is the no-offer investigative bridge; it is **not a new public product destination**.
+
+### Merchant permission comes FIRST
+The public affiliate program is evidence of the *possibility of application*, not verified named Final Vestige acceptance. Inbox promotional messages from Inspire3 are consumer communications, not partner account acceptance. No approved earning URL, channel permissions, current account terms, cleared commission or actual cart proof was available to this run. **Therefore no merchant link, paid CTA activation, checkout test, paid revenue claim, or A/B rollout.**
+
+The fall-back "FV paid Mind product" cannot be treated as saleable until a current Payhip SKU, pricing, original-rights/license inventory, purchaser fulfillment, refund/fees and founder authorization are independently authenticated. The published [Seven Day Focus Fieldbook](https://finalvestige.com/focus/) is **FREE** and may count as a confirmed lead only if Jetpack/provider confirms opt-in. A free download is not a paid order. The published FV Collection https://finalvestige.com/collection/ is not by itself proof of eligible Mind checkout.
+
+## Keep ONE canonical commercial experiment, not eight rival URLs
+Prior R280/R282/R283/R284 pilots explore substantially overlapping "free timer vs Zen12" decisions. **Provisional canonical source**: R284's complete **A text-only** and **B matching copy + original 42-second storyboard/transcript**. The R285 reading room does **not** invent another merchant route. It points to the same future guide concept as a held editorial destination. A final commercial URL/slug requires owner/founder decision and must not shadow PR #172's canonical hub or the approved homepage release.
+
+Variant B is presently a poster and seven timed transcript segments, **not a video file**. A valid eventual B must contain an original, rights-cleared 30–45s video that is opt-in only, has a static poster, text transcript and accurate captions (VTT), respects reduced motion, supports keyboard/assistive technology, does not initialize a third-party player or autoplay, and does not harm mobile LCP. Variant A stays complete and useful without any script. No altered product copy, prices, disclosure prominence, CTA destination or form steps between variants. Any divergence invalidates the comparison.
+
+**A/B hypothesis (not a forecast):** The optional short source-led narrative may improve *informed purchases* among qualified visitors relative to otherwise identical text. It may also distract, slow rendering or decrease trust. Define assignment and attribution before launch; use a stable first-party visitor cohort method only if already approved by Claude, do not add a second analytics script/cookie. Avoid making decisions on tiny numbers; report all variant counts, confidence and uncertainty; do not call CTR a commerce win.
+
+## Separate the independence of investigation from the prospective sale
+The 1987 [Wegner et al. experiment](https://pubmed.ncbi.nlm.nih.gov/3612492/) documented thought suppression/rebound under a particular five-minute protocol. The [2020 31-study meta-analysis](https://pubmed.ncbi.nlm.nih.gov/32286932/) distinguished later rebound from immediate enhancement under cognitive load. Neither study tests Zen12, Hypnosis Live or Brainwave Shots.
+
+The seller [Zen12 standard page](https://zen12.com/hnp) describes 12 levels/48 MP3s, but its one-hour-equivalence, brainwave-induced automatic effects and clinical/performance language are **not adopted as verified outcomes**. The [Hypnosis Live Total Focus seller page](https://hypnosislive.com/mental-skills/total-focus) describes 33 minutes/47 MB. [Its FAQ](https://hypnosislive.com/faq) presents a 14-day refund request window with a maximum of five refunded sessions per year. The [Brainwave Focus Shot seller page](https://brainwaveshots.com/focus-shot) describes 15/30-minute recordings; [its FAQ](https://brainwaveshots.com/faq) states one refund per six months, a >10-items restriction, and listening precautions. Do not interchange claims and terms between offers. A seller web page does not prove buyer-side cart terms, successful refunds or paid commissions.
+
+Independent [2023 binaural-beat EEG review](https://pubmed.ncbi.nlm.nih.gov/37205669/) does not establish product-specific Zen12 effects. FTC [endorsement](https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking) and [health-product](https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance) guidance require nearby disclosures and appropriate substantiation before efficacy/health messaging. Merchant-approved creatives, if obtained, may reveal questions/objections but cannot be copied wholesale or treated as scientific authority.
+
+### The conditional commercial block (not live HTML)
+Reader-facing copy under a future recommendation, directly adjacent to the *exact* vetted earning link once approved:
+
+> If you prefer structured recordings to a free timer, you can review Zen12's exact Premium library. The seller describes twelve levels and forty-eight tracks. Its promised mental and health benefits are **seller claims**, not independently verified outcomes of this product. Check the final checkout, refund conditions and package details. **If you purchase through this link, Final Vestige may earn a commission at no additional cost to you.**
+
+Currently the block is represented only by a **disabled button** in source-controlled HTML and a **prospective conditional disclosure**. Do not activate before documented account approval, issuing URL, exact page/package and final release. Avoid placing a live product URL in an image/background, hidden redirect, data attribute, CSS fetch, QR, or unquoted/encoded HTML attribute.
+
+## Real creator-to-offer fit (no invented social data)
+| Creator theme | Existing public article/record | Existing free step | Optional later offer | Evidence status / owner |
+|---|---|---|---|---|
+| Change blindness — "a large change can vanish from attention" | https://finalvestige.com/2026/11/02/change-blindness/ | https://finalvestige.com/focus/ | Zen12 independent guide only for a self-selected structured-audio buyer | Actual posted Grok asset_id / date / platform URL / usable native mobile destination **UNVERIFIED**, Praxxis–Grok |
+| Mesmerism/Puységur — "the 1784 commission tested the cause" | https://finalvestige.com/2026/11/02/mesmerism/ and https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/ | https://finalvestige.com/focus/ | Zen12 or product comparisons only after reader chooses to explore recorded practice | Public YouTube topic witness https://www.youtube.com/watch?v=SV9m07PFTYk **exists in prior audit**; internal Grok asset_id, rights, description link and native mobile attribution **NOT VERIFIED**, Praxxis–Grok |
+| Thought suppression — "trying not to think makes an idea return" | R285 **UNPUBLISHED** manuscript; no public URL | Existing Focus only after article approved | Zen12 format-only guide, never a clinical or effortless-suppression promise | No matched posted creator asset known; **DO NOT ASSIGN/POST**, Mind/Praxxis |
+
+The required practical handoff is a **research-only request** in existing TASK-008 and its dated handoff: for *already posted* matching Grok creative, provide asset_id, platform, immutable post URL, publication date, rights, actual post text, clickable mobile destination, approved UTM fields, and evidence that the landing page genuinely answers that video's claim. The user's past examples of attention/perception TikTok topics do not imply verified platform media identifiers. Grok alone decides creation/distribution; Praxxis performs independent QA.
+
+## First-party measurement contract, with proof requirements
+Claude should reuse existing consent-respecting measurement. No new paid SaaS or duplicate site tags. Standard fields when already permitted: utm_source=[platform], utm_medium=organic_social, utm_campaign=[approved_cluster_yyyy_mm], utm_content=[**verified** asset_id]. If bio link redirects or apps strip parameters, record that limitation instead of fabricating a match. Do not store email addresses, raw IP, user agents or device fingerprints in new source-side code.
+
+**Funnel hierarchy:**
+1. *qualified_human_session*: first-party observed, de-botted visitor with traceable platform/asset to a coherent landing destination; clearly state qualifications and exclusions.
+2. *relevant_cta_click*: explicit archive→free Fieldbook or archive→approved buyer guide navigation; not a subscriber or purchase.
+3. *confirmed_lead*: actual provider-confirmed Jetpack/Dispatch opt-in, not form submit, pageview or newsletter cross-brand consent.
+4. *affiliate_click*: only an authorized seller outbound event; **never paid commission**.
+5. *verified_paid_order*: independently reported merchant/Payhip paid transaction, deduplicated by provider's non-PII transaction ID, with returns window.
+6. *settled_gross, refunds, fees, reversals, net*: verified reconciliation; not inferred from price × clicks or from order screenshots.
+7. *net_revenue_per_1000_qualified_humans* = 1000 × realized_net_revenue / qualified_human_sessions. If either denominator or settled accounting missing, display **NULL / NOT COMPUTABLE, not $0**.
+
+Show 7-day and 30-day cohorts separately. Tiny denominators, self-selected visitors, bots, incomplete affiliate reporting, cross-device journeys, refunds and delayed settlements all create uncertainty. The dashboard must label BUILT, SOURCE-TESTED, BROWSER-TESTED, STAGED, LIVE and FINANCIALLY VERIFIED independently.
+
+## Priority acceptance — offer → step → blocker → experiment → evidence → owner
+| Offer / funnel step | Blocker | Change or controlled experiment | PASS evidence / current status | Owner |
+|---|---|---|---|---|
+| Zen12 affiliate approval | No FV-specific contract, authorized link, channel/creative restrictions | Privately read signed partner account and exact campaign permissions | **HARD HOLD** / no account verification | Founder / Mind |
+| Zen12 paid buyer choice | Exact cart total, package and detailed refunds not authenticated | Test exact seller URL only after merchant/traffic authorization; write evidence ledger | **UNTESTED** / no fabricated price or return | Founder / Commerce |
+| FV-owned paid fallback | No authenticated eligible paid Mind SKU | Verify actual Payhip product, rights, delivery, refund/fees, settlement export | **UNVERIFIED**, cannot label sellable | Commerce |
+| Creator→article | Actual internal asset ID + native mobile path missing | Reconcile *existing* posted media with TASK-008/dated handoff | **NO VERIFIED MATCH** | Praxxis / Grok |
+| Article→free resource→lead | Provider-confirmed source/opt-in missing | Use existing Jetpack Focus/Dispatch, no new form | **UNVERIFIED provider record** | Claude / Dispatch |
+| Source-level abuse prevention | R284 per-page HTML checks relied on limited patterns and A/B parity | R285 independent tag+attribute/URL allowlist plus gate/source/offer tests | **BASELINE PASS; 107/107 hostile mutations rejected in isolated V8 against actual GitHub text**, **NOT native Node/real-browser** | Mind / Site QA |
+| Text vs optional video | B is poster/transcript concept, not playable hosted film; channel approval missing | Rights-cleared optional 42s local video, VTT, poster, no-JS, then owner-approved randomization | **BUILT storyboard only; A/B NOT LIVE** | Mind / Claude / Site QA |
+| Verified purchase→net | Merchant/Payhip settlements, refunds, fees, qualified sessions absent | Independently reconcile provider exports at 7/30 days | **NOT COMPUTABLE** | Commerce / Claude |
+
+## Quality and release checklist
+Source-level validator in this PR checks exact twenty source URLs, 24 specific claims, all sixteen named HARD_HOLD commercial gates, six offer IDs including free-vs-paid distinction, three creator routes with no fabricated internal IDs, near-CTA conditional text, held buttons, exact approved public href allowlist, no unapproved tag/attribute/resource fetches, A/B copy parity and adversarial mutations across both variants *together* as well as individually. This is deliberately more restrictive than a generic HTML sanitizer. It is not an independent HTML5 parser; complex entity/encoding/sanitization behavior must still be checked by Site QA in actual browser and the actual WordPress editor/sanitizer **without publishing**. The script requires no new package or network call.
+
+Pre-release still requires author/source review, cross-check duplicate editorial manuscripts, responsive mobile 360/390/768/1440/1920, keyboard/zoom/contrast/WCAG 2.2 AA, consent/security, actual no-JS rendering, prefers-reduced-motion, mobile LCP, script resource inventory, WordPress block normalization, hosted local MP4/VTT if B launched, first-party event QA, exact seller approval and checkout evidence, and **founder release approval**.
+
+**Scope boundary:** New branch files under mind/r285 only, stacked on frozen R284. No homepage PR #49, Mind hub PR #172, art issue #150 or Dispatch issue #174 changes. No WordPress CMS writes, lists, social posts, email sends, merchant activity, affiliate activation, analytics scripts, merges, deployments or spending. All commercial states HARD HOLD.
