@@ -1,0 +1,348 @@
+{
+  "schema": "fv-p1-pinned-11-slot-network-transfer-handoff-v1",
+  "generated_utc_date": "2026-11-11",
+  "status": "SOURCE_LEDGER_AUDITED_GUEST_UNVERIFIED",
+  "provenance": {
+    "oversized_exposure_worklist_pr": 183,
+    "oversized_exposure_blob_sha": "5e474e1cb293353b2226d84fceedca0a182894d8",
+    "historical_frozen_bridge_blob_sha": "d1a9c7a499510ec37bcdba5858d45165752587e0",
+    "comparator_prior_blob_sha": "4db203595212c709f9bc9c82c3c6995b8d38a906",
+    "site_qa_pr": 154,
+    "draft_pr": 1703,
+    "cohort": "2026-11-08 66 published posts/361 raw inline images; NOT 2026-10-30 61 posts/355 image historical cohort"
+  },
+  "stats": {
+    "original_store_over_1500000_bytes_count": 15,
+    "original_store_total_bytes": 47096779,
+    "pinned_inline_exposures": 11,
+    "pinned_post_count": 8,
+    "pinned_inline_original_stored_bytes": 38480915,
+    "historical_external_positions_researched": 288,
+    "reported_broken_42_browser_confirmed": false,
+    "purported_76_percent_sitewide_wire_saving_measured": false,
+    "actual_guest_statuses_observed": 0,
+    "actual_network_byte_measurements": 0,
+    "rights_or_derivatives_approved": 0,
+    "production_images_repaired": 0
+  },
+  "precedence": "P0 suspected missing images must be tested by Site QA #154 before P1 transfer tests; no collector duplication",
+  "p0_exact_original_and_candidate_links": [
+    {
+      "slot": "285:5",
+      "post_id": 285,
+      "original_url": "https://images.saymedia-content.com/.image/ar_16:9,c_fill,cs_srgb,fl_progressive,q_auto:eco,w_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg",
+      "candidate_catalog_or_publisher_url": "https://commons.wikimedia.org/wiki/File:Three_mile_island_062010.jpg",
+      "rights_observation_not_clearance": "PD_SELF",
+      "max_conditional_no_upscale_px": [
+        819,
+        614
+      ],
+      "actual_guest_http_status": null,
+      "actual_guest_network_bytes": null,
+      "upload_authorized": false
+    },
+    {
+      "slot": "285:2",
+      "post_id": 285,
+      "original_url": "https://blog.ucsusa.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+      "candidate_catalog_or_publisher_url": "https://blog.ucs.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+      "rights_observation_not_clearance": "UNKNOWN",
+      "max_conditional_no_upscale_px": null,
+      "actual_guest_http_status": null,
+      "actual_guest_network_bytes": null,
+      "upload_authorized": false
+    },
+    {
+      "slot": "287:5",
+      "post_id": 287,
+      "original_url": "https://stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+      "candidate_catalog_or_publisher_url": "https://media.stpetecatalyst.com/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+      "rights_observation_not_clearance": "RIGHTS_UNVERIFIED",
+      "max_conditional_no_upscale_px": null,
+      "actual_guest_http_status": null,
+      "actual_guest_network_bytes": null,
+      "upload_authorized": false
+    },
+    {
+      "slot": "418:1",
+      "post_id": 418,
+      "original_url": "https://media.defense.gov/2021/Mar/30/2002610812/1920/1080/0/210330-G-DE713-0002.JPG",
+      "candidate_catalog_or_publisher_url": "https://www.history.uscg.mil/Our-Collections/Photos/igphoto/2002905913/",
+      "rights_observation_not_clearance": "USCG_PUBLIC_DOMAIN_RELEASE_CATALOG",
+      "max_conditional_no_upscale_px": null,
+      "actual_guest_http_status": null,
+      "actual_guest_network_bytes": null,
+      "upload_authorized": false
+    },
+    {
+      "slot": "418:2",
+      "post_id": 418,
+      "original_url": "https://www.history.uscg.mil/Portals/6/5_%20Scotch_Cap_debris2_1946.jpg",
+      "candidate_catalog_or_publisher_url": "https://www.lighthousefriends.com/Scotch_Cap_debris2_1946.jpg",
+      "rights_observation_not_clearance": "RIGHTS_UNVERIFIED",
+      "max_conditional_no_upscale_px": null,
+      "actual_guest_http_status": null,
+      "actual_guest_network_bytes": null,
+      "upload_authorized": false
+    },
+    {
+      "slot": "407:1",
+      "post_id": 407,
+      "original_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/img7535.jpg",
+      "candidate_catalog_or_publisher_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/thumbnails/image/img7535.jpg",
+      "rights_observation_not_clearance": "USGS_PUBLIC_DOMAIN_CATALOG",
+      "max_conditional_no_upscale_px": null,
+      "actual_guest_http_status": null,
+      "actual_guest_network_bytes": null,
+      "upload_authorized": false
+    }
+  ],
+  "p1_pinned_exposures": [
+    {
+      "slot": "34:0",
+      "post_id": 34,
+      "media_id": 39,
+      "published_page_url": "https://finalvestige.com/2026/08/16/the-morning-san-francisco-lost-its-water/",
+      "published_src": "https://finalvestige.com/wp-content/uploads/2026/08/bceca0bd-a16f-44f7-be08-16376fbf08ca.png",
+      "original_url": "https://finalvestige.com/wp-content/uploads/2026/08/bceca0bd-a16f-44f7-be08-16376fbf08ca.png",
+      "original_stored_bytes": 2892087,
+      "rights_status": "HISTORICAL_RECONSTRUCTION_CREATOR_LICENSE_UNVERIFIED",
+      "conditional_no_upscale_px": [
+        960,
+        540
+      ],
+      "has_wp_subsizes": false,
+      "delivery_kind": "src_and_wp_image_id",
+      "actual_guest_http_status": null,
+      "actual_guest_network_bytes": null,
+      "candidate_960px_wire_bytes": null,
+      "cached_derivative_authorized": false,
+      "production_rewrite_authorized": false
+    },
+    {
+      "slot": "35:0",
+      "post_id": 35,
+      "media_id": 40,
+      "published_page_url": "https://finalvestige.com/2026/08/16/the-boat-that-refused-to-die/",
+      "published_src": "https://finalvestige.com/wp-content/uploads/2026/08/377e08da-e121-4f57-9174-1548343402b3.png",
+      "original_url": "https://finalvestige.com/wp-content/uploads/2026/08/377e08da-e121-4f57-9174-1548343402b3.png",
+      "original_stored_bytes": 2552136,
+      "rights_status": "HISTORICAL_RECONSTRUCTION_CREATOR_LICENSE_UNVERIFIED",
+      "conditional_no_upscale_px": [
+        960,
+        540
+      ],
+      "has_wp_subsizes": false,
+      "delivery_kind": "src_and_wp_image_id",
+      "actual_guest_http_status": null,
+      "actual_guest_network_bytes": null,
+      "candidate_960px_wire_bytes": null,
+      "cached_derivative_authorized": false,
+      "production_rewrite_authorized": false
+    },
+    {
+      "slot": "36:0",
+      "post_id": 36,
+      "media_id": 41,
+      "published_page_url": "https://finalvestige.com/2026/08/16/the-city-that-went-underground/",
+      "published_src": "https://finalvestige.com/wp-content/uploads/2026/08/a44f673d-a8a8-4c83-9f29-7e24dd55156b.png",
+      "original_url": "https://finalvestige.com/wp-content/uploads/2026/08/a44f673d-a8a8-4c83-9f29-7e24dd55156b.png",
+      "original_stored_bytes": 2498247,
+      "rights_status": "HISTORICAL_RECONSTRUCTION_CREATOR_LICENSE_UNVERIFIED",
+      "conditional_no_upscale_px": [
+        960,
+        540
+      ],
+      "has_wp_subsizes": false,
+      "delivery_kind": "src_and_wp_image_id",
+      "actual_guest_http_status": null,
+      "actual_guest_network_bytes": null,
+      "candidate_960px_wire_bytes": null,
+      "cached_derivative_authorized": false,
+      "production_rewrite_authorized": false
+    },
+    {
+      "slot": "37:0",
+      "post_id": 37,
+      "media_id": 42,
+      "published_page_url": "https://finalvestige.com/2026/08/16/how-petra-made-water-flow-through-stone/",
+      "published_src": "https://finalvestige.com/wp-content/uploads/2026/08/c1237ffd-4a47-4988-8254-e3b021069e72.png",
+      "original_url": "https://finalvestige.com/wp-content/uploads/2026/08/c1237ffd-4a47-4988-8254-e3b021069e72.png",
+      "original_stored_bytes": 2488823,
+      "rights_status": "HISTORICAL_RECONSTRUCTION_CREATOR_LICENSE_UNVERIFIED",
+      "conditional_no_upscale_px": [
+        960,
+        540
+      ],
+      "has_wp_subsizes": false,
+      "delivery_kind": "src_and_wp_image_id",
+      "actual_guest_http_status": null,
+      "actual_guest_network_bytes": null,
+      "candidate_960px_wire_bytes": null,
+      "cached_derivative_authorized": false,
+      "production_rewrite_authorized": false
+    },
+    {
+      "slot": "38:0",
+      "post_id": 38,
+      "media_id": 43,
+      "published_page_url": "https://finalvestige.com/2026/08/16/the-cisterns-beneath-san-francisco/",
+      "published_src": "https://finalvestige.com/wp-content/uploads/2026/08/01340c2e-1165-4ca0-aa96-87398a83d13a.png",
+      "original_url": "https://finalvestige.com/wp-content/uploads/2026/08/01340c2e-1165-4ca0-aa96-87398a83d13a.png",
+      "original_stored_bytes": 2836245,
+      "rights_status": "HISTORICAL_RECONSTRUCTION_CREATOR_LICENSE_UNVERIFIED",
+      "conditional_no_upscale_px": [
+        960,
+        540
+      ],
+      "has_wp_subsizes": false,
+      "delivery_kind": "src_and_wp_image_id",
+      "actual_guest_http_status": null,
+      "actual_guest_network_bytes": null,
+      "candidate_960px_wire_bytes": null,
+      "cached_derivative_authorized": false,
+      "production_rewrite_authorized": false
+    },
+    {
+      "slot": "269:1",
+      "post_id": 269,
+      "media_id": 1714,
+      "published_page_url": "https://finalvestige.com/2026/08/18/the-watch-lost-its-hands-halifax-explosion/",
+      "published_src": "https://finalvestige.com/wp-content/uploads/2026/10/halifax-explosion-map.png",
+      "original_url": "https://finalvestige.com/wp-content/uploads/2026/10/halifax-explosion-map.png",
+      "original_stored_bytes": 1543002,
+      "rights_status": "ORIGINAL_MAP_AUTHOR_RIGHTS_UNVERIFIED",
+      "conditional_no_upscale_px": [
+        960,
+        960
+      ],
+      "has_wp_subsizes": true,
+      "delivery_kind": "src_and_wp_image_id",
+      "actual_guest_http_status": null,
+      "actual_guest_network_bytes": null,
+      "candidate_960px_wire_bytes": null,
+      "cached_derivative_authorized": false,
+      "production_rewrite_authorized": false
+    },
+    {
+      "slot": "299:0",
+      "post_id": 299,
+      "media_id": 389,
+      "published_page_url": "https://finalvestige.com/2026/08/19/thirty-men-were-enough-vasa/",
+      "published_src": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/vasa-01-2020.jpg?fit=1024%2C676&ssl=1",
+      "original_url": "https://finalvestige.com/wp-content/uploads/2026/08/vasa-01-2020.jpg",
+      "original_stored_bytes": 2822969,
+      "rights_status": "ITEM_LEVEL_REVIEW_REQUIRED",
+      "conditional_no_upscale_px": [
+        960,
+        634
+      ],
+      "has_wp_subsizes": true,
+      "delivery_kind": "wp_image_id_with_transformed_src",
+      "actual_guest_http_status": null,
+      "actual_guest_network_bytes": null,
+      "candidate_960px_wire_bytes": null,
+      "cached_derivative_authorized": false,
+      "production_rewrite_authorized": false
+    },
+    {
+      "slot": "299:1",
+      "post_id": 299,
+      "media_id": 388,
+      "published_page_url": "https://finalvestige.com/2026/08/19/thirty-men-were-enough-vasa/",
+      "published_src": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/vasa-modell-2020.jpg?fit=1024%2C681&ssl=1",
+      "original_url": "https://finalvestige.com/wp-content/uploads/2026/08/vasa-modell-2020.jpg",
+      "original_stored_bytes": 8176362,
+      "rights_status": "EDITORIAL_ONLY_MUSEUM_CREDIT_REQUIRED",
+      "conditional_no_upscale_px": [
+        960,
+        639
+      ],
+      "has_wp_subsizes": true,
+      "delivery_kind": "wp_image_id_with_transformed_src",
+      "actual_guest_http_status": null,
+      "actual_guest_network_bytes": null,
+      "candidate_960px_wire_bytes": null,
+      "cached_derivative_authorized": false,
+      "production_rewrite_authorized": false
+    },
+    {
+      "slot": "299:7",
+      "post_id": 299,
+      "media_id": 382,
+      "published_page_url": "https://finalvestige.com/2026/08/19/thirty-men-were-enough-vasa/",
+      "published_src": "https://i0.wp.com/finalvestige.com/wp-content/uploads/2026/08/vasa-med-gamla-och-nya-stottor_vasa-with-old-and-new-supports.jpg?fit=1024%2C683&ssl=1",
+      "original_url": "https://finalvestige.com/wp-content/uploads/2026/08/vasa-med-gamla-och-nya-stottor_vasa-with-old-and-new-supports.jpg",
+      "original_stored_bytes": 2318980,
+      "rights_status": "ITEM_LEVEL_REVIEW_REQUIRED",
+      "conditional_no_upscale_px": [
+        960,
+        640
+      ],
+      "has_wp_subsizes": true,
+      "delivery_kind": "wp_image_id_with_transformed_src",
+      "actual_guest_http_status": null,
+      "actual_guest_network_bytes": null,
+      "candidate_960px_wire_bytes": null,
+      "cached_derivative_authorized": false,
+      "production_rewrite_authorized": false
+    },
+    {
+      "slot": "621:0",
+      "post_id": 621,
+      "media_id": 1257,
+      "published_page_url": "https://finalvestige.com/2026/08/23/six-miles-an-hour-malbone-street-wreck/",
+      "published_src": "https://finalvestige.com/wp-content/uploads/2026/08/edit-017-v01-malbone-tunnel-generalpunger-original.jpg",
+      "original_url": "https://finalvestige.com/wp-content/uploads/2026/08/edit-017-v01-malbone-tunnel-generalpunger-original.jpg",
+      "original_stored_bytes": 4798395,
+      "rights_status": "ITEM_LEVEL_REVIEW_REQUIRED",
+      "conditional_no_upscale_px": [
+        960,
+        720
+      ],
+      "has_wp_subsizes": true,
+      "delivery_kind": "src_and_wp_image_id",
+      "actual_guest_http_status": null,
+      "actual_guest_network_bytes": null,
+      "candidate_960px_wire_bytes": null,
+      "cached_derivative_authorized": false,
+      "production_rewrite_authorized": false
+    },
+    {
+      "slot": "621:1",
+      "post_id": 621,
+      "media_id": 1258,
+      "published_page_url": "https://finalvestige.com/2026/08/23/six-miles-an-hour-malbone-street-wreck/",
+      "published_src": "https://finalvestige.com/wp-content/uploads/2026/08/edit-017-v02-nypl-5003296-original.jpg",
+      "original_url": "https://finalvestige.com/wp-content/uploads/2026/08/edit-017-v02-nypl-5003296-original.jpg",
+      "original_stored_bytes": 5553669,
+      "rights_status": "ITEM_LEVEL_REVIEW_REQUIRED",
+      "conditional_no_upscale_px": [
+        960,
+        649
+      ],
+      "has_wp_subsizes": true,
+      "delivery_kind": "src_and_wp_image_id",
+      "actual_guest_http_status": null,
+      "actual_guest_network_bytes": null,
+      "candidate_960px_wire_bytes": null,
+      "cached_derivative_authorized": false,
+      "production_rewrite_authorized": false
+    }
+  ],
+  "measurement_protocol": {
+    "method": "existing Site QA logged-out cold Chrome CDP captures, full lazy scroll, Network.loadingFinished encodedDataLength",
+    "eligible_comparison": "same exact frozen slot URLs and published post URL; pairs with changed URL held for separate independent rights and visual parity review",
+    "output_scope": "pinned oversized inline source slots only; never full article or site-wide",
+    "target_76_percent": "hypothesis, not observed",
+    "safe_960px": "width min(960, nativeWidth), aspect-preserving height; never enlarge or assume image identity/rights",
+    "wp_cached_media_plan": "After guest failure confirmation and item-level commercial use rights plus exact identity/crop verification, stage SHA256-identified max-960px local derivative with alt/caption, responsive subsize and rollback. No automatic binaries or publication."
+  },
+  "safety": {
+    "third_party_binary_downloads": 0,
+    "wordpress_production_writes": 0,
+    "homepage_design_changes": 0,
+    "spend_usd": 0,
+    "merge_or_deploy": false
+  }
+}
