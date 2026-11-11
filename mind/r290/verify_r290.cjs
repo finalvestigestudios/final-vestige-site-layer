@@ -48,7 +48,7 @@ function validate(b){
  ok(hash(b.a)===E.A&&hash(b.b)===E.B,'frozen canonical A/B bytes, re-review if updated');
  for(const [label,t] of [['A',b.a],['B',b.b]]){
   ok(/12 levels/i.test(t)&&/48 MP3/i.test(t),label+' merchant feature');
-  ok(/14 days/i.test(t)&&/five sessions|5 sessions/i.test(t),label+' Hypnosis Live limits');
+  ok(/14 days/i.test(t)&&/five refunded sessions|five sessions|5 sessions/i.test(t),label+' Hypnosis Live limits');
   ok(/six.month/i.test(t)&&/fewer than half|less than half/i.test(t),label+' Brainwave refund constraints');
   ok(/merchant newsletters/i.test(t),label+' external seller consent separation');
  }
