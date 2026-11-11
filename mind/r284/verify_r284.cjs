@@ -41,7 +41,7 @@ function assertAll(d){
  assert.ok(m.events.affiliate_click.includes('not sale'));
  assert.ok(m.events.net_revenue_per_1000.includes('NULL'));
  assert.ok(d.article.split(/\s+/).length>=2100,'substantial independent evidence manuscript');
- for(const phrase of ['five reported','eight','one mixed','one refund within any six-month','five refunded sessions','the seller's newsletter','No affiliate link is active','not a clinical trial']){
+ for(const phrase of ['five reported','eight','one mixed','one refund within any six-month','five refunded sessions',"the seller's newsletter",'No affiliate link is active','not a clinical trial']){
   assert.ok(d.article.toLowerCase().includes(phrase.toLowerCase()),'article required evidence: '+phrase);
  }
  for(const phrase of ['https://pubmed.ncbi.nlm.nih.gov/37205669/','https://brainwaveshots.com/faq','https://zen12.com/hnp','https://hypnosislive.com/faq','https://www.ftc.gov/']){
@@ -104,7 +104,7 @@ const attempts=[
  ['article',s=>s.replace('one mixed','none mixed')],
  ['article',s=>s.replace('one refund within any six-month','unlimited refunds')],
  ['article',s=>s.replace('five refunded sessions','unlimited refunded sessions')],
- ['article',s=>s.replace('the seller's newsletter','Final Vestige newsletter')],
+ ['article',s=>s.replace("the seller's newsletter",'Final Vestige newsletter')],
  ['article',s=>s.replace('No affiliate link is active','Affiliate link is active')],
  ['article',s=>s.replace('not a clinical trial','a clinical trial')],
  ['article',s=>s.replace('https://brainwaveshots.com/faq','https://wrong-site.invalid/refund')],
