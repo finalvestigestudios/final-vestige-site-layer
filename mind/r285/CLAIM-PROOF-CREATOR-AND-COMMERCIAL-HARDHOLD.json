@@ -1,0 +1,514 @@
+{
+  "revision": "r285",
+  "checked_on": "2026-11-10",
+  "status": "DRAFT_UNPUBLISHED_COMMERCIAL_HARD_HOLD",
+  "approval_status": "NOT_AUTHENTICATED",
+  "verified_account_permission": false,
+  "external_affiliate_urls_active": false,
+  "unapproved_merchant_hrefs_allowed": false,
+  "source_register": [
+    {
+      "id": "whitebear_1987",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/3612492/",
+      "note": "original experiments, two 5-min periods; not therapy",
+      "checked_utc": "2026-11-11"
+    },
+    {
+      "id": "ironic_1997",
+      "url": "https://www.psychologicalscience.org/journals/psychological-science/j.1467-9280.1997.tb00399.x/",
+      "note": "ironic-control theory",
+      "checked_utc": "2026-11-11"
+    },
+    {
+      "id": "meta_2020",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/32286932/",
+      "note": "31-study meta, rebound versus immediate enhancement",
+      "checked_utc": "2026-11-11"
+    },
+    {
+      "id": "mood_1993",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/8295117/",
+      "note": "mood controls and cognitive-load experiments",
+      "checked_utc": "2026-11-11"
+    },
+    {
+      "id": "meditation_adverse",
+      "url": "https://doi.org/10.1111/acps.13225",
+      "note": "heterogeneous adverse-events review, not product-specific",
+      "checked_utc": "2026-11-11"
+    },
+    {
+      "id": "eeg_2023",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+      "note": "binaural beat EEG review, no branded-benefit proof",
+      "checked_utc": "2026-11-11"
+    },
+    {
+      "id": "inspire3",
+      "url": "https://inspire3.com/",
+      "note": "seller product catalog",
+      "checked_utc": "2026-11-11"
+    },
+    {
+      "id": "zen12",
+      "url": "https://zen12.com/hnp",
+      "note": "Zen12 seller exact standard Premium page",
+      "checked_utc": "2026-11-11"
+    },
+    {
+      "id": "zen12_newsletter",
+      "url": "https://zen12.com/freeaudio",
+      "note": "free audio and seller newsletter, not FV",
+      "checked_utc": "2026-11-11"
+    },
+    {
+      "id": "total_focus",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "note": "seller Total Focus product",
+      "checked_utc": "2026-11-11"
+    },
+    {
+      "id": "hypnosis_refund",
+      "url": "https://hypnosislive.com/faq",
+      "note": "seller refund restrictions",
+      "checked_utc": "2026-11-11"
+    },
+    {
+      "id": "focus_shot",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "note": "seller Focus Shot product",
+      "checked_utc": "2026-11-11"
+    },
+    {
+      "id": "brainwave_refund",
+      "url": "https://brainwaveshots.com/faq",
+      "note": "seller refund and precautions",
+      "checked_utc": "2026-11-11"
+    },
+    {
+      "id": "ftc_endorsement",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "note": "affiliate disclosure proximity",
+      "checked_utc": "2026-11-11"
+    },
+    {
+      "id": "ftc_health",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "note": "substantiation of health-related claims",
+      "checked_utc": "2026-11-11"
+    },
+    {
+      "id": "fv_puy",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "note": "published historical archive",
+      "checked_utc": "2026-11-11"
+    },
+    {
+      "id": "fv_focus",
+      "url": "https://finalvestige.com/focus/",
+      "note": "published FREE lead resource, existing Jetpack list",
+      "checked_utc": "2026-11-11"
+    },
+    {
+      "id": "fv_change",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "note": "published investigation",
+      "checked_utc": "2026-11-11"
+    },
+    {
+      "id": "fv_mesmer",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "note": "published investigation",
+      "checked_utc": "2026-11-11"
+    },
+    {
+      "id": "yt_mesmer",
+      "url": "https://www.youtube.com/watch?v=SV9m07PFTYk",
+      "note": "public video topic witness only; unverified internal Grok id",
+      "checked_utc": "2026-11-11"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "statement": "The 1987 laboratory design used five-minute thought monitoring and bell rings.",
+      "kind": "experiment",
+      "source_id": "whitebear_1987",
+      "decision": "ATTRIBUTE_TO_STUDY"
+    },
+    {
+      "id": "C02",
+      "statement": "Thought rebound was observed after a suppression condition in defined tasks.",
+      "kind": "experiment",
+      "source_id": "whitebear_1987",
+      "decision": "ALLOW_CONTEXTUAL"
+    },
+    {
+      "id": "C03",
+      "statement": "A substitute thought reduced later preoccupation in one original experiment.",
+      "kind": "experiment",
+      "source_id": "whitebear_1987",
+      "decision": "ALLOW_CONTEXTUAL"
+    },
+    {
+      "id": "C04",
+      "statement": "Ironic process monitoring is a theoretical explanatory account, not direct mind imaging.",
+      "kind": "theory",
+      "source_id": "ironic_1997",
+      "decision": "ALLOW_AS_MODEL"
+    },
+    {
+      "id": "C05",
+      "statement": "The 2020 meta-analyzed 31 studies with a conditional immediate enhancement under cognitive load.",
+      "kind": "meta_analysis",
+      "source_id": "meta_2020",
+      "decision": "ALLOW_WITH_LIMITS"
+    },
+    {
+      "id": "C06",
+      "statement": "Suppression never works for anyone.",
+      "kind": "overgeneralization",
+      "source_id": "meta_2020",
+      "decision": "EXCLUDE"
+    },
+    {
+      "id": "C07",
+      "statement": "Cognitive load moderated mood-control outcomes in early lab experiments.",
+      "kind": "experiment",
+      "source_id": "mood_1993",
+      "decision": "ALLOW_WITH_LIMITS"
+    },
+    {
+      "id": "C08",
+      "statement": "A published review discusses adverse experiences across heterogeneous meditation practices.",
+      "kind": "review",
+      "source_id": "meditation_adverse",
+      "decision": "ALLOW_NOT_BRAND_RISK"
+    },
+    {
+      "id": "C09",
+      "statement": "The seller describes Zen12 Premium as 12 levels and 48 MP3 recordings.",
+      "kind": "seller_product_description",
+      "source_id": "zen12",
+      "decision": "ALLOW_SELLER_ATTRIBUTED"
+    },
+    {
+      "id": "C10",
+      "statement": "One 12-minute Zen12 audio yields benefits of one hour of advanced meditation.",
+      "kind": "seller_efficacy",
+      "source_id": "zen12",
+      "decision": "EXCLUDE_AS_FACT"
+    },
+    {
+      "id": "C11",
+      "statement": "Zen12 brainwave audio automatically creates clinically meaningful focus gains.",
+      "kind": "seller_efficacy",
+      "source_id": "zen12",
+      "decision": "EXCLUDE_AS_FACT"
+    },
+    {
+      "id": "C12",
+      "statement": "Zen12's free-audio opt-in also involves the merchant's own newsletter.",
+      "kind": "merchant_consent",
+      "source_id": "zen12_newsletter",
+      "decision": "MUST_SEPARATE_FROM_FV"
+    },
+    {
+      "id": "C13",
+      "statement": "Total Focus is marketed as a 33-minute self-hypnosis MP3.",
+      "kind": "seller_product_description",
+      "source_id": "total_focus",
+      "decision": "ALLOW_SELLER_ATTRIBUTED"
+    },
+    {
+      "id": "C14",
+      "statement": "Total Focus's advertised concentration outcomes are verified for purchasers.",
+      "kind": "seller_efficacy",
+      "source_id": "total_focus",
+      "decision": "EXCLUDE_AS_FACT"
+    },
+    {
+      "id": "C15",
+      "statement": "The seller's Hypnosis Live FAQ includes 14-day refund requests and five refunded sessions/year.",
+      "kind": "merchant_policy",
+      "source_id": "hypnosis_refund",
+      "decision": "MUST_DISCLOSE_IF_COMPARING"
+    },
+    {
+      "id": "C16",
+      "statement": "Focus Shot is marketed with 15- and 30-minute recordings.",
+      "kind": "seller_product_description",
+      "source_id": "focus_shot",
+      "decision": "ALLOW_SELLER_ATTRIBUTED"
+    },
+    {
+      "id": "C17",
+      "statement": "Focus Shot's claimed hours-long improvements are independently proven.",
+      "kind": "seller_efficacy",
+      "source_id": "focus_shot",
+      "decision": "EXCLUDE_AS_FACT"
+    },
+    {
+      "id": "C18",
+      "statement": "Brainwave Shots FAQ restricts refunds to one per six months and adds a >10-item download condition.",
+      "kind": "merchant_policy",
+      "source_id": "brainwave_refund",
+      "decision": "MUST_DISCLOSE_IF_COMPARING"
+    },
+    {
+      "id": "C19",
+      "statement": "Brainwave Shots FAQ includes wakefulness and epilepsy precautions.",
+      "kind": "merchant_safety",
+      "source_id": "brainwave_refund",
+      "decision": "MUST_DISCLOSE"
+    },
+    {
+      "id": "C20",
+      "statement": "The 2023 EEG binaural-beat literature alone establishes product-specific concentration improvement.",
+      "kind": "unwarranted_inference",
+      "source_id": "eeg_2023",
+      "decision": "EXCLUDE_AS_FACT"
+    },
+    {
+      "id": "C21",
+      "statement": "FTC advises clear conspicuous affiliate disclosures near earning links.",
+      "kind": "regulatory_guidance",
+      "source_id": "ftc_endorsement",
+      "decision": "REQUIRE_NEAR_CTA"
+    },
+    {
+      "id": "C22",
+      "statement": "FTC requires suitable substantiation for objective health claims.",
+      "kind": "regulatory_guidance",
+      "source_id": "ftc_health",
+      "decision": "REQUIRE_PRODUCT_SPECIFIC"
+    },
+    {
+      "id": "C23",
+      "statement": "The published Fieldbook is a free resource, not proof of a purchased conversion.",
+      "kind": "fv_fact",
+      "source_id": "fv_focus",
+      "decision": "ALLOW_FREE_NOT_SALE"
+    },
+    {
+      "id": "C24",
+      "statement": "The publicly observed YouTube media ID is an authenticated Grok internal asset ID.",
+      "kind": "false_attribution",
+      "source_id": "yt_mesmer",
+      "decision": "EXCLUDE_AS_FACT"
+    }
+  ],
+  "offer_candidates": [
+    {
+      "id": "zen12_premium",
+      "source_id": "zen12",
+      "commercial_state": "HARD_HOLD",
+      "approved_partner_link": null,
+      "verified_checkout_total": null,
+      "verified_paid_orders": null,
+      "notes": "priority prospective offer; merchant 12 levels/48 MP3, not efficacy endorsement"
+    },
+    {
+      "id": "zen12_promo",
+      "source_id": "zen12",
+      "commercial_state": "HARD_HOLD",
+      "approved_partner_link": null,
+      "verified_checkout_total": null,
+      "verified_paid_orders": null,
+      "notes": "distinct promotion, never silently substitute"
+    },
+    {
+      "id": "hypnosis_live_total_focus",
+      "source_id": "total_focus",
+      "commercial_state": "HARD_HOLD",
+      "approved_partner_link": null,
+      "verified_checkout_total": null,
+      "verified_paid_orders": null,
+      "notes": "different 33-minute self-hypnosis format"
+    },
+    {
+      "id": "brainwave_focus_shot",
+      "source_id": "focus_shot",
+      "commercial_state": "HARD_HOLD",
+      "approved_partner_link": null,
+      "verified_checkout_total": null,
+      "verified_paid_orders": null,
+      "notes": "different 15/30-minute product, restricted refunds"
+    },
+    {
+      "id": "fv_free_focus",
+      "source_id": "fv_focus",
+      "commercial_state": "FREE_LEAD_NOT_SALE",
+      "approved_partner_link": null,
+      "verified_checkout_total": null,
+      "verified_paid_orders": null,
+      "free_url": "https://finalvestige.com/focus/",
+      "notes": "single existing Jetpack/Dispatch lead pathway"
+    },
+    {
+      "id": "fv_paid_mind_sku",
+      "source_id": "fv_focus",
+      "commercial_state": "HARD_HOLD",
+      "approved_partner_link": null,
+      "verified_checkout_total": null,
+      "verified_paid_orders": null,
+      "notes": "paid mind SKU/rights/cart not authenticated; cannot declare sellable"
+    }
+  ],
+  "commercial_gates": [
+    {
+      "id": "merchant_account_acceptance",
+      "state": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "merchant_identity_matches_fv",
+      "state": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "affiliate_terms_current",
+      "state": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "permitted_traffic_channels",
+      "state": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "approved_presell_placement",
+      "state": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "issued_earning_url",
+      "state": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "test_tracking_accepted",
+      "state": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "offer_route_exact",
+      "state": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "checkout_price_and_charges",
+      "state": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "returns_eligibility_restrictions",
+      "state": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "seller_creative_rights",
+      "state": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "product_specific_claims_review",
+      "state": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "adjacent_disclosure_qa",
+      "state": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "browser_mobile_accessibility",
+      "state": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "conversion_reporting_access",
+      "state": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "founder_live_release_approval",
+      "state": "HARD_HOLD",
+      "proof": null
+    }
+  ],
+  "creator_routes": [
+    {
+      "topic": "change_blindness",
+      "public_article": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "proposed_buyer_resource": "https://finalvestige.com/focus/",
+      "grok_asset_id": null,
+      "public_video_url": null,
+      "proof_state": "NO_VERIFIED_MATCH",
+      "owner": "Praxxis/Grok"
+    },
+    {
+      "topic": "mesmerism_puysegur",
+      "public_article": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "proposed_buyer_resource": "https://finalvestige.com/focus/",
+      "grok_asset_id": null,
+      "public_video_url": "https://www.youtube.com/watch?v=SV9m07PFTYk",
+      "proof_state": "PUBLIC_TOPIC_WITNESS_NOT_INTERNAL_ID",
+      "owner": "Praxxis/Grok"
+    },
+    {
+      "topic": "thought_suppression_white_bear",
+      "public_article": null,
+      "proposed_buyer_resource": "https://finalvestige.com/focus/",
+      "grok_asset_id": null,
+      "public_video_url": null,
+      "proof_state": "UNPUBLISHED_NO_TRAFFIC_ASSIGNMENT",
+      "owner": "Mind/Praxxis"
+    }
+  ],
+  "measurement": {
+    "first_party_candidate_events": [
+      "campaign_landing",
+      "article_to_focus_click",
+      "confirmed_signup_when_provider_verified",
+      "affiliate_click_when_authorized",
+      "verified_checkout_start_if_provider_observable",
+      "merchant_confirmed_paid_order",
+      "settled_commission",
+      "refund_or_reversal"
+    ],
+    "utm_fields": [
+      "utm_source",
+      "utm_medium",
+      "utm_campaign",
+      "utm_content"
+    ],
+    "asset_id_provenance": "Grok shared TASK-008 only; never generate and call verified",
+    "pii": "do not store email, IP or raw UA in new logs",
+    "affiliate_click": "outbound intent, not a paid sale",
+    "confirmed_signup": "provider-confirmed, not form-submit event",
+    "paid_order": "provider independently confirmed, not receipt pageview",
+    "net_revenue_per_1000": "NULL if qualified-human sessions or realized net margin unavailable; 1000*(settled payout - refunds - fees)/qualified sessions",
+    "cohorts_days": [
+      7,
+      30
+    ],
+    "warning": "low-N; no valid conversion inference from tiny counts"
+  },
+  "experiment": {
+    "canonical_provisional_pair": "mind/r284/ZEN12-BUYER-GUIDE-(A|B)-UNPUBLISHED.html",
+    "not_live": true,
+    "variant_a": "text_only",
+    "variant_b": "same text plus nonplayable static 42-second film storyboard",
+    "metric": "verified net revenue per 1000 qualified humans",
+    "preconditions": "authorized link, rights-cleared hosted optional film, browser QA, reliable attribution, approved release; otherwise do not run",
+    "stop_conditions": [
+      "misleading product claims",
+      "broken CTA",
+      "missing near-link disclosure",
+      "merchant unapproved",
+      "no accessible no-JS path"
+    ]
+  },
+  "release_gate": "HARD_HOLD"
+}
