@@ -153,6 +153,7 @@ class R296HoldTests(unittest.TestCase):
             r=m.examine(d)
         self.assertEqual(r['state'],'INVALID_HARD_HOLD');self.assertEqual(r['detected_known_risks'],{})
 
+
 def mutating_meta(field,value,expected_fragment):
     def test(self):
         self.altered_meta(lambda x:x.update({field:value}))
@@ -204,4 +205,3 @@ for field in ('n','slug','section','source_use','status','safety_review'):
     setattr(R296HoldTests,'test_any_unapproved_metadata_byte_change_'+field,make(field))
 
 if __name__=='__main__':unittest.main()
-
