@@ -68,7 +68,7 @@ const fixtures=[
  ["remove_free_alternative","article",s=>s.replace("48-MP3","48 unknown"),"ARTICLE_SOURCE_OR_CLAIM_48-MP3"],
  ["remove_disclosure","hub",s=>s.replace("may earn a commission","may receive no commission"),"HUB_DISABLED_DISCLOSURE"],
  ["false_original_scan","legacyArticle",s=>s.replace("Primary article scan directly inspected","Abstract only"),"LEGACY_LEDGER_REPAIR"],
- ["false_grok_source","legacyMatrix",s=>s.replace("owner-reported","directly verified"),"LEGACY_C28_WORDING"],
+ ["false_grok_source","legacyMatrix",s=>s.replace("Growth R8 owner-reported asset in shared Drive handoff only","Growth R8 direct-platform-authenticated asset"),"LEGACY_C28_WORDING"],
  ["invalid_article","article",s=>s.slice(0,1000),"ARTICLE_LENGTH"]
 ];
 function run(){
