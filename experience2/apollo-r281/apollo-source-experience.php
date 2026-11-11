@@ -17,7 +17,6 @@ const FV_R281_STYLE = 'fv-apollo-evidence-r281';
 const FV_R287_STAGING_EVENTS_SHA256 = '27821100c9fef91f1f2bbefa22b8c9f4ab05454b1e4af286b59a8a175fcde9fa';
 
 
-
 // R288: discrepancy custody. NASA's original Review Board narrative says that
 // authority was initiated orally on Jan 27, while a later NASA safety summary
 // dates establishment Jan 28. This is a source-attribution distinction, NOT
