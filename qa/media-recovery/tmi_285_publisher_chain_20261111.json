@@ -1,0 +1,160 @@
+{
+  "schema": "fv-tmi-p0-publisher-chain-v1",
+  "evidence_date_utc": "2026-11-11",
+  "source_method": "Read-only WordPress post 285 context=edit + independent web retriever + official/publisher catalogs",
+  "post_url": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+  "site_qa_pr": 154,
+  "media_recovery_draft_pr": 1703,
+  "worklist_draft_pr": 183,
+  "reference_bridge_blob_sha": "d1a9c7a499510ec37bcdba5858d45165752587e0",
+  "originals": [
+    {
+      "slot": "285:5",
+      "priority": 1,
+      "post_id": 285,
+      "stored_src": "https://images.saymedia-content.com/.image/ar_16:9,c_fill,cs_srgb,fl_progressive,q_auto:eco,w_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg",
+      "alt": "Aerial view of the Three Mile Island nuclear generating station on the Susquehanna River.",
+      "caption": "Three Mile Island from the air. The public emergency outside the plant and the physical damage inside the reactor differed sharply in scale.",
+      "retriever": {
+        "method": "WEB_WRAPPER_NOT_GUEST_OR_ORIGIN",
+        "wrapper_code": 404,
+        "wrapper_result": "NOT_FOUND",
+        "observed_original_url": "https://images.saymedia-content.com/.image/ar_16:9,c_fill,cs_srgb,fl_progressive,q_auto:eco,w_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg"
+      },
+      "publisher": {
+        "article_url": "https://discover.hubpages.com/entertainment/The-China-Syndrome-Blockbuster-Movie-Becomes-Eerie-Prophecy",
+        "article_date": "2022-05-30",
+        "caption_assertion": "Three Mile Island photograph taken June 6 2010; Wikimedia Commons/Public Domain",
+        "image_credit_url": "https://upload.wikimedia.org/wikipedia/commons/0/09/Three_mile_island_062010.jpg"
+      },
+      "candidate": {
+        "role": "SAME_SUBJECT_AND_PUBLISHER_CREDIT_FILE_NO_BINARY_MATCH",
+        "catalog_url": "https://commons.wikimedia.org/wiki/File:Three_mile_island_062010.jpg",
+        "file_url": "https://upload.wikimedia.org/wikipedia/commons/0/09/Three_mile_island_062010.jpg",
+        "creator": "Marque1313",
+        "creation_year": 2010,
+        "rights": "COMMONS_PD_SELF_UPLOADER_ASSERTION_ITEM_REVIEW",
+        "native_px": [
+          819,
+          614
+        ],
+        "conditional_no_upscale_output_px": [
+          819,
+          614
+        ],
+        "max_width_px": 819,
+        "original_derivative_crop_match_verified": false
+      },
+      "historical_alternative": {
+        "role": "EDITORIAL_ALTERNATIVE_NOT_SAME_PHOTO",
+        "catalog_url": "https://commons.wikimedia.org/wiki/File:Three_Mile_Island_(color).jpg",
+        "attribution": "U.S. Department of Energy claimed by Commons",
+        "year": 1979,
+        "rights": "COMMONS_PD_USGOV_DOE_ASSERTION_ITEM_REVIEW",
+        "native_px": [
+          2592,
+          2488
+        ],
+        "conditional_no_upscale_output_px": [
+          960,
+          921
+        ],
+        "same_photo": false
+      },
+      "guest_http_status": null,
+      "origin_http_status": null,
+      "guest_current_src": null,
+      "guest_natural_px": null,
+      "cold_encoded_transfer_bytes": null,
+      "guest_failure_confirmed": false,
+      "rights_clearance_verified": false,
+      "scene_crop_approved": false,
+      "caching_approved": false,
+      "wordpress_staging_media_upload_approved": false,
+      "wordpress_production_write_approved": false,
+      "decision": "HOLD"
+    },
+    {
+      "slot": "285:2",
+      "priority": 2,
+      "post_id": 285,
+      "stored_src": "https://blog.ucsusa.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+      "alt": "Three Mile Island control panel showing dense rows of gauges, lights and switches.",
+      "caption": "A TMI control panel illustrates the interface problem: each light and gauge represented part of the machine, but operators still had to infer the machine’s overall physical state.",
+      "retriever": {
+        "method": "WEB_WRAPPER_NOT_GUEST_OR_ORIGIN",
+        "wrapper_code": 500,
+        "wrapper_result": "REDIRECT_TARGET_NOT_ACCESSIBLE",
+        "observed_original_url": "https://blog.ucsusa.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+        "wrapper_redirect_target": "https://blog.ucs.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg"
+      },
+      "publisher": {
+        "article_url": "https://blog.ucs.org/dlochbaum/nuclear-plant-accidents-three-mile-island/",
+        "article_date": "2016-07-26",
+        "series": "Disaster by Design/Safety by Intent #42",
+        "figure_index": 4,
+        "figure_href": "https://blog.ucsusa.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+        "figure_credit": "Nuclear Regulatory Commission",
+        "rights_note": "Other figures on publisher page are NRC annotated by UCS; do not infer all have identical authorship"
+      },
+      "candidate": {
+        "role": "EXACT_FIGURE_HREF_CREDITED_TO_NRC_PRIMARY_ITEM_NOT_FOUND",
+        "catalog_url": null,
+        "publisher_catalog_url": "https://blog.ucs.org/dlochbaum/nuclear-plant-accidents-three-mile-island/",
+        "nrc_general_background_url": "https://www.nrc.gov/regulations-legislation/fact-sheets-brochures/backgrounder-on-the-three-mile-island-accident",
+        "rights": "NRC_FIGURE_CREDIT_ONLY_DERIVATIVE_AND_REHOST_RIGHTS_UNKNOWN",
+        "native_px": null,
+        "conditional_no_upscale_output_px": null,
+        "original_derivative_crop_match_verified": false,
+        "visual_gate": "Specific control-panel switch positions/indicators/text must be readable; generic panel or reactor diagram is not equivalent"
+      },
+      "guest_http_status": null,
+      "origin_http_status": null,
+      "guest_current_src": null,
+      "guest_natural_px": null,
+      "cold_encoded_transfer_bytes": null,
+      "guest_failure_confirmed": false,
+      "rights_clearance_verified": false,
+      "scene_crop_approved": false,
+      "caching_approved": false,
+      "wordpress_staging_media_upload_approved": false,
+      "wordpress_production_write_approved": false,
+      "decision": "HOLD"
+    }
+  ],
+  "baseline": {
+    "historical_posts": 61,
+    "historical_inline_refs": 355,
+    "historical_external_refs": 288,
+    "external_researched": 288,
+    "reported_broken_unverified": 42,
+    "guest_verified_broken": 0,
+    "expanded_posts": 66,
+    "expanded_inline_refs": 361,
+    "originals_over_1500000_bytes": 15,
+    "oversized_stored_original_bytes": 47096779,
+    "inline_oversize_stored_original_bytes": 38480915,
+    "claimed_wire_saving_pct": 76,
+    "measured_wire_saving_pct": null
+  },
+  "release": {
+    "siteqa_guest_browser_collector_owner": 154,
+    "original_priority_order": [
+      "285:5",
+      "285:2",
+      "287:5",
+      "418:1",
+      "418:2",
+      "407:1"
+    ],
+    "requires_guest_http_current_src_intrinsic_px_cache_wire_screenshots": true,
+    "requires_item_rights_crop_chronology_attribution": true,
+    "no_upscale_max_width_px": 960,
+    "requires_separate_staging_and_production_approval": true,
+    "wordpress_writes": 0,
+    "homepage_writes": 0,
+    "third_party_binary_downloads": 0,
+    "subscription_spend_usd": 0,
+    "any_live_change": false
+  }
+}
