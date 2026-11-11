@@ -1,0 +1,594 @@
+{
+  "schema": "fv-r276-all-slate-identity-v1",
+  "state": "DRAFT_HARD_HOLD",
+  "snapshot_ref": "df96120007ceb33290764392a5900e356e04deac",
+  "source_review": {
+    "shared_url_groups": 32,
+    "duplicate_id_groups": 15,
+    "held_occurrences": 3
+  },
+  "independent_qd_pass": false,
+  "publication_authorized": false,
+  "medical_safety_verified": false,
+  "privacy_approved": false,
+  "merchant_offer_approved": false,
+  "may_merge": false,
+  "entries": [
+    {
+      "path": "audits/r273_shared_source_review_docket_UNAPPROVED.json",
+      "role": "docket",
+      "sha": "db59f659b0e1c513011539bbc9b6fc1ebf056785",
+      "size": 143121
+    },
+    {
+      "path": "content/articles/emergency-hygiene-sanitation.body.html",
+      "role": "article_body",
+      "sha": "324eeafa4d48c3e83e88055c5f226645a8893b4a",
+      "size": 24497
+    },
+    {
+      "path": "content/articles/emergency-hygiene-sanitation.meta.json",
+      "role": "article_meta",
+      "sha": "e94ff9b33e6ced71dafcdcc4412ad687a503ccf6",
+      "size": 3096
+    },
+    {
+      "path": "content/articles/family-communication-plan.body.html",
+      "role": "article_body",
+      "sha": "8ac8bd7dba3be15d477c15737e54d83364d72527",
+      "size": 26822
+    },
+    {
+      "path": "content/articles/family-communication-plan.meta.json",
+      "role": "article_meta",
+      "sha": "dcad79faa8e0e6f1aef6db03e9e6e9451e19d8d3",
+      "size": 4489
+    },
+    {
+      "path": "content/articles/fire-making-across-time.body.html",
+      "role": "article_body",
+      "sha": "ff1b5e2c91172925e1d75462da4b3e162399269f",
+      "size": 24662
+    },
+    {
+      "path": "content/articles/fire-making-across-time.meta.json",
+      "role": "article_meta",
+      "sha": "ca9e2c84d825b5cd9e182dc9a4a381c8a6905884",
+      "size": 3134
+    },
+    {
+      "path": "content/articles/food-safety-power-outage.body.html",
+      "role": "article_body",
+      "sha": "70339ef60f3f7bf1bec26a0ca457b0438650163e",
+      "size": 23027
+    },
+    {
+      "path": "content/articles/food-safety-power-outage.meta.json",
+      "role": "article_meta",
+      "sha": "3283071134ba24490d47f5a0635836b6ed4f8965",
+      "size": 2902
+    },
+    {
+      "path": "content/articles/go-bags.body.html",
+      "role": "article_body",
+      "sha": "e5910015fc6e33ad015bc5dc0605b86622b701be",
+      "size": 26443
+    },
+    {
+      "path": "content/articles/go-bags.meta.json",
+      "role": "article_meta",
+      "sha": "16cc5e91204a77486912444c6e516f5d5b48f567",
+      "size": 3881
+    },
+    {
+      "path": "content/articles/history-of-food-preservation.body.html",
+      "role": "article_body",
+      "sha": "273b246a069e834d8476bfc2854308732f5137ab",
+      "size": 18005
+    },
+    {
+      "path": "content/articles/history-of-food-preservation.meta.json",
+      "role": "article_meta",
+      "sha": "907237e436b44a34f8d673ef9de3168d1e9ad517",
+      "size": 3128
+    },
+    {
+      "path": "content/articles/home-fire-escape-plan.body.html",
+      "role": "article_body",
+      "sha": "0412484304a3bcf08f0bb1b170110f617e3c2869",
+      "size": 31595
+    },
+    {
+      "path": "content/articles/home-fire-escape-plan.meta.json",
+      "role": "article_meta",
+      "sha": "ff1246dcbfb0dd0bc864977f815badb9ad4e7ed8",
+      "size": 3711
+    },
+    {
+      "path": "content/articles/homemade-water-filters.body.html",
+      "role": "article_body",
+      "sha": "67aa44e9a332f57fb70298a3867410d8f66c8c15",
+      "size": 15230
+    },
+    {
+      "path": "content/articles/homemade-water-filters.meta.json",
+      "role": "article_meta",
+      "sha": "91c730bd1c7a61fa3140a86245c9bc0c88160c29",
+      "size": 2367
+    },
+    {
+      "path": "content/articles/household-emergency-plan.body.html",
+      "role": "article_body",
+      "sha": "f81cd43516e8295104230412f18776919148f905",
+      "size": 24695
+    },
+    {
+      "path": "content/articles/household-emergency-plan.meta.json",
+      "role": "article_meta",
+      "sha": "0681d51e6e29166eaae27ac2b7f1fbde3f836787",
+      "size": 3314
+    },
+    {
+      "path": "content/articles/lewis-and-clark-salt-works.body.html",
+      "role": "article_body",
+      "sha": "364152230a6956a4936fd4ec4bce6b1547fe2533",
+      "size": 17785
+    },
+    {
+      "path": "content/articles/lewis-and-clark-salt-works.meta.json",
+      "role": "article_meta",
+      "sha": "3a350aedac67ea89c6995831032367634248c9e9",
+      "size": 3230
+    },
+    {
+      "path": "content/articles/making-water-safer.body.html",
+      "role": "article_body",
+      "sha": "f85d158fc8752200a227282e640f6df48277daf5",
+      "size": 21486
+    },
+    {
+      "path": "content/articles/making-water-safer.meta.json",
+      "role": "article_meta",
+      "sha": "827d861eb3beebfd010ee98fcca764b23a2de90e",
+      "size": 3523
+    },
+    {
+      "path": "content/articles/medication-and-devices.body.html",
+      "role": "article_body",
+      "sha": "47bbfeefb5aca5f5a8d66ad8c66e2998e6caae5e",
+      "size": 28770
+    },
+    {
+      "path": "content/articles/medication-and-devices.meta.json",
+      "role": "article_meta",
+      "sha": "a49a6d42a3deb14acbe67e7cf636c23cdc5ec49c",
+      "size": 3923
+    },
+    {
+      "path": "content/articles/navigation-before-gps.body.html",
+      "role": "article_body",
+      "sha": "3c02e58c30d1d608224944142f31fbead44a1252",
+      "size": 21752
+    },
+    {
+      "path": "content/articles/navigation-before-gps.meta.json",
+      "role": "article_meta",
+      "sha": "40c83419760bc7bd0c4c574304e65b773b4a8423",
+      "size": 2856
+    },
+    {
+      "path": "content/articles/outage-heat-cold-generators.body.html",
+      "role": "article_body",
+      "sha": "2cd3e30b3a7e3dfdb3fd30cfd2b832355f58dfe2",
+      "size": 33137
+    },
+    {
+      "path": "content/articles/outage-heat-cold-generators.meta.json",
+      "role": "article_meta",
+      "sha": "be37b602d0b82593d438083dfc8a1e5ef595dd44",
+      "size": 5155
+    },
+    {
+      "path": "content/articles/pantry-rotation.body.html",
+      "role": "article_body",
+      "sha": "727a43eff8b30c0f68fb6695d76d63166eb51450",
+      "size": 23078
+    },
+    {
+      "path": "content/articles/pantry-rotation.meta.json",
+      "role": "article_meta",
+      "sha": "dfafbb77e076d6cab5aec8217f98d7fd20dbff1c",
+      "size": 2730
+    },
+    {
+      "path": "content/articles/pemmican-and-dried-meats.body.html",
+      "role": "article_body",
+      "sha": "0b3319cc85ea2bc6d069b46d13a40e12ddbd5bc5",
+      "size": 18672
+    },
+    {
+      "path": "content/articles/pemmican-and-dried-meats.meta.json",
+      "role": "article_meta",
+      "sha": "03d3824e07fe51931671d0ddc7aa8c85eda58435",
+      "size": 3385
+    },
+    {
+      "path": "content/articles/pickling-fermentation-old-recipes.body.html",
+      "role": "article_body",
+      "sha": "1869e37626b7463da45763d60202bd5ac0bd7700",
+      "size": 21293
+    },
+    {
+      "path": "content/articles/pickling-fermentation-old-recipes.meta.json",
+      "role": "article_meta",
+      "sha": "da97f42fcabbd05dc513d26c6af289bbeb8816f3",
+      "size": 2838
+    },
+    {
+      "path": "content/articles/pioneer-supply-chains-failed.body.html",
+      "role": "article_body",
+      "sha": "ad158ee898f76d05bcb65c845b1e4a0e8103c660",
+      "size": 24803
+    },
+    {
+      "path": "content/articles/pioneer-supply-chains-failed.meta.json",
+      "role": "article_meta",
+      "sha": "4d2dc4958736e3c5257c65dda8ed016a473ac6be",
+      "size": 3162
+    },
+    {
+      "path": "content/articles/pioneer-travel-rations.body.html",
+      "role": "article_body",
+      "sha": "058c90b763d8cd6dec0731a7b0a9cee4dd5a57c7",
+      "size": 18100
+    },
+    {
+      "path": "content/articles/pioneer-travel-rations.meta.json",
+      "role": "article_meta",
+      "sha": "7191acba55d63dc405ad9c2003d66193276da89f",
+      "size": 3020
+    },
+    {
+      "path": "content/articles/preparedness-real-households.body.html",
+      "role": "article_body",
+      "sha": "68344cf6c4022285fffb2a01f42027bf6f9ee95d",
+      "size": 25659
+    },
+    {
+      "path": "content/articles/preparedness-real-households.meta.json",
+      "role": "article_meta",
+      "sha": "ba840917f34634ccd634c488eeca4a8a6b3a8fe2",
+      "size": 3948
+    },
+    {
+      "path": "content/articles/pressure-canning-low-acid.body.html",
+      "role": "article_body",
+      "sha": "c60d824c2f679fb7362b8523aec18110f8248290",
+      "size": 25674
+    },
+    {
+      "path": "content/articles/pressure-canning-low-acid.meta.json",
+      "role": "article_meta",
+      "sha": "4ab01d4aa566b8970351d8d8d43f7f85e8a04341",
+      "size": 3828
+    },
+    {
+      "path": "content/articles/rain-barrels-and-cisterns.body.html",
+      "role": "article_body",
+      "sha": "1454ab95bef4e54ae8992addf4f815fc8bf358b4",
+      "size": 19896
+    },
+    {
+      "path": "content/articles/rain-barrels-and-cisterns.meta.json",
+      "role": "article_meta",
+      "sha": "dc42694e842969624f24ab5edc9bff2497693e70",
+      "size": 2422
+    },
+    {
+      "path": "content/articles/root-cellars-cool-storage.body.html",
+      "role": "article_body",
+      "sha": "2ff8d029769aa9a97de6b1e388d937899f3af38c",
+      "size": 21281
+    },
+    {
+      "path": "content/articles/root-cellars-cool-storage.meta.json",
+      "role": "article_meta",
+      "sha": "c3b7425711c3953c2d6cac9eb2aabe21a6717285",
+      "size": 2538
+    },
+    {
+      "path": "content/articles/safe-jerky-dehydration.body.html",
+      "role": "article_body",
+      "sha": "6fa55c397b161437e016d5d4a6c27da7ce3fa6bd",
+      "size": 21780
+    },
+    {
+      "path": "content/articles/safe-jerky-dehydration.meta.json",
+      "role": "article_meta",
+      "sha": "50b365e8109c14bdb9ce1a9365db88215a678ec5",
+      "size": 2881
+    },
+    {
+      "path": "content/articles/salt-beef-salt-pork-age-of-sail.body.html",
+      "role": "article_body",
+      "sha": "6539aafeca9bca67c96247c81a7412b117201b88",
+      "size": 21371
+    },
+    {
+      "path": "content/articles/salt-beef-salt-pork-age-of-sail.meta.json",
+      "role": "article_meta",
+      "sha": "1c4c5396da703f3724b584c67e49e2128ab1f4c6",
+      "size": 3433
+    },
+    {
+      "path": "content/articles/sanitation-before-germ-theory.body.html",
+      "role": "article_body",
+      "sha": "d56df76647d2598f35cfd4609f91649cef063f12",
+      "size": 21947
+    },
+    {
+      "path": "content/articles/sanitation-before-germ-theory.meta.json",
+      "role": "article_meta",
+      "sha": "3294cd9fcf59496c9ece9342e67b0d57d2ed5523",
+      "size": 2962
+    },
+    {
+      "path": "content/articles/shelter-or-evacuate.body.html",
+      "role": "article_body",
+      "sha": "de3cb805041904cf22d4f216296bd4c8ddec17c1",
+      "size": 31374
+    },
+    {
+      "path": "content/articles/shelter-or-evacuate.meta.json",
+      "role": "article_meta",
+      "sha": "cb559141d1e4a39debad16cf5cb796b746a01f19",
+      "size": 3938
+    },
+    {
+      "path": "content/articles/ships-biscuit-and-hardtack.body.html",
+      "role": "article_body",
+      "sha": "f2ec2393819c26741f7ce77b7e0f0f893d1c33e4",
+      "size": 19898
+    },
+    {
+      "path": "content/articles/ships-biscuit-and-hardtack.meta.json",
+      "role": "article_meta",
+      "sha": "2b2c3ce9472073df3d15e8befb39178d369632b1",
+      "size": 2741
+    },
+    {
+      "path": "content/articles/smokehouses-salting-curing.body.html",
+      "role": "article_body",
+      "sha": "e5f6241c1fa09fdbd684234317aa819ea4ef13a2",
+      "size": 16424
+    },
+    {
+      "path": "content/articles/smokehouses-salting-curing.meta.json",
+      "role": "article_meta",
+      "sha": "16223945e83f95b349acf09a2b684c09326550c0",
+      "size": 3280
+    },
+    {
+      "path": "content/articles/three-day-kit.body.html",
+      "role": "article_body",
+      "sha": "933f38ff3cd55a241cf9b392014fc52d4961e84f",
+      "size": 27644
+    },
+    {
+      "path": "content/articles/three-day-kit.meta.json",
+      "role": "article_meta",
+      "sha": "1c69d5f1636a3a41631a5d93f11254d85cbe1b59",
+      "size": 4215
+    },
+    {
+      "path": "content/articles/two-week-water-storage.body.html",
+      "role": "article_body",
+      "sha": "24572839d79a3c3f78805f3fc6834b7ab6037768",
+      "size": 13321
+    },
+    {
+      "path": "content/articles/two-week-water-storage.meta.json",
+      "role": "article_meta",
+      "sha": "76f317f047ed95c8b6c7ab130f44d79232e7a463",
+      "size": 1583
+    },
+    {
+      "path": "content/articles/warnings-radios-offline-maps.body.html",
+      "role": "article_body",
+      "sha": "fbc39101ba2c8378423ba9554aaf467ee3bc53b7",
+      "size": 21257
+    },
+    {
+      "path": "content/articles/warnings-radios-offline-maps.meta.json",
+      "role": "article_meta",
+      "sha": "025ddac0f8c077f2a6fa17d7fcb746caa51234a7",
+      "size": 3132
+    },
+    {
+      "path": "content/articles/water-advisories-explained.body.html",
+      "role": "article_body",
+      "sha": "e96486d74731606fdd5a616030f146f66c59e2b0",
+      "size": 14465
+    },
+    {
+      "path": "content/articles/water-advisories-explained.meta.json",
+      "role": "article_meta",
+      "sha": "4c88e747b46d9e95264ec3367911a5175baa6c31",
+      "size": 1740
+    },
+    {
+      "path": "content/articles/water-math.body.html",
+      "role": "article_body",
+      "sha": "e82ad3ab14acb23e1cb1d87e80fa2e5d60da6ae4",
+      "size": 14140
+    },
+    {
+      "path": "content/articles/water-math.meta.json",
+      "role": "article_meta",
+      "sha": "4b1c3cd7166afa03e56991f7de8af771828a6e54",
+      "size": 1860
+    },
+    {
+      "path": "content/articles/water-purification-through-history.body.html",
+      "role": "article_body",
+      "sha": "3c89d3041b170038c842dea1b4f943385b0c8a86",
+      "size": 24340
+    },
+    {
+      "path": "content/articles/water-purification-through-history.meta.json",
+      "role": "article_meta",
+      "sha": "1d9b77aa4a4cdbf4f9a02fe6d1cf5d2691cc798e",
+      "size": 3142
+    },
+    {
+      "path": "content/hubs/start-here.body.html",
+      "role": "hub_body",
+      "sha": "e1e749169a58e35a32c1d48ee8c46c209630965b",
+      "size": 7583
+    },
+    {
+      "path": "content/tools/family-reunification-card.body.html",
+      "role": "tool_body",
+      "sha": "be8698ac5d020476ff649d85813810e2000c6f98",
+      "size": 19145
+    },
+    {
+      "path": "content/tools/family-reunification-card.meta.json",
+      "role": "tool_meta",
+      "sha": "47da1e7e20e39f0ea85e26d54a8d58301f6e0a15",
+      "size": 2401
+    },
+    {
+      "path": "content/tools/home-fire-escape-worksheet.body.html",
+      "role": "tool_body",
+      "sha": "01161948b6de6ffbd1b053c9b83a420758e707e4",
+      "size": 36155
+    },
+    {
+      "path": "content/tools/home-fire-escape-worksheet.meta.json",
+      "role": "tool_meta",
+      "sha": "397c7d3072fb237b490a5a316c93fc863c101be9",
+      "size": 1917
+    },
+    {
+      "path": "content/tools/kit-builder.body.html",
+      "role": "tool_body",
+      "sha": "2cb531174d6828fa5185c47bd2b742a0befa8353",
+      "size": 51947
+    },
+    {
+      "path": "content/tools/kit-builder.meta.json",
+      "role": "tool_meta",
+      "sha": "e9be8a497df737b36d7d399fccc4a00000ce8eac",
+      "size": 3175
+    },
+    {
+      "path": "content/tools/power-outage-planner.body.html",
+      "role": "tool_body",
+      "sha": "aa8f866aaaaab9253f41c4363d31919029c69234",
+      "size": 39172
+    },
+    {
+      "path": "content/tools/power-outage-planner.meta.json",
+      "role": "tool_meta",
+      "sha": "8796bba2b323cce096639997002c402bd853e50f",
+      "size": 3033
+    },
+    {
+      "path": "content/tools/reunification-plan.body.html",
+      "role": "tool_body",
+      "sha": "3305578369183edb1d427c8f8f8002eaacee420f",
+      "size": 13745
+    },
+    {
+      "path": "content/tools/reunification-plan.meta.json",
+      "role": "tool_meta",
+      "sha": "10cd57dc8d39e366aaef8fd76cc3f8969b8c5348",
+      "size": 2040
+    },
+    {
+      "path": "content/tools/water-planner.body.html",
+      "role": "tool_body",
+      "sha": "a738d1f7824437911064d425868ed3d709326027",
+      "size": 8246
+    },
+    {
+      "path": "content/tools/water-planner.meta.json",
+      "role": "tool_meta",
+      "sha": "7ea188a06b614940a226328c0166c2a2b20ff84e",
+      "size": 1497
+    },
+    {
+      "path": "sources/crosswalk.json",
+      "role": "crosswalk",
+      "sha": "d62e493a67dedd23e04cfdf3cce762ef933c6bf9",
+      "size": 126069
+    },
+    {
+      "path": "sources/fragments/food.json",
+      "role": "source_origin",
+      "sha": "a1f73c8170932d6b3192e9cd506686d516d23d30",
+      "size": 35020
+    },
+    {
+      "path": "sources/fragments/health.json",
+      "role": "source_origin",
+      "sha": "cc29c439372b9d49debf78e63020ffe4d62baeb8",
+      "size": 27263
+    },
+    {
+      "path": "sources/fragments/hist-field.json",
+      "role": "source_origin",
+      "sha": "3dafa9425f3829c0be2e6fea00889aff95124031",
+      "size": 36391
+    },
+    {
+      "path": "sources/fragments/hist-food.json",
+      "role": "source_origin",
+      "sha": "d10628342fea5f177a8d1be00dd906d0c9c7850e",
+      "size": 32572
+    },
+    {
+      "path": "sources/fragments/hist-home.json",
+      "role": "source_origin",
+      "sha": "8d85fd868508c5caba14a839d119d55f31f14f72",
+      "size": 37320
+    },
+    {
+      "path": "sources/fragments/shelter.json",
+      "role": "source_origin",
+      "sha": "2a3f1a7ddeab2782add875be1e0e378513504aa1",
+      "size": 53617
+    },
+    {
+      "path": "sources/fragments/start.json",
+      "role": "source_origin",
+      "sha": "96140d6d1872588e5d20d9052445c9157e88934d",
+      "size": 30914
+    },
+    {
+      "path": "sources/register.json",
+      "role": "source_origin",
+      "sha": "b25cd02b9beaadaf5a2db0c52e0ae66d20b1ac77",
+      "size": 22269
+    },
+    {
+      "path": "tools/r220_full_slate_draft_custody.py",
+      "role": "export_gate",
+      "sha": "a8eae8838844713d0b0157eb99b3a85619fb4a1e",
+      "size": 92208
+    },
+    {
+      "path": "tools/r272_crosswalk_snapshot_hold.py",
+      "role": "source_gate",
+      "sha": "c85a958ef9e69951b39ca036d85237c5f39a1772",
+      "size": 10377
+    },
+    {
+      "path": "tools/r273_source_review_docket_hold.py",
+      "role": "docket_gate",
+      "sha": "4a962e8f35249b35e69fbfb64a3ae52ea5c45375",
+      "size": 5531
+    }
+  ]
+}
