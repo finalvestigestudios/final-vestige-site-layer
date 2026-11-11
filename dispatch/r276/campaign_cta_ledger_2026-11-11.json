@@ -1,0 +1,64 @@
+{
+  "campaign": "PR175, exact head d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "status": "HOLD_UNSENT",
+  "originals_untouched": true,
+  "issues": [
+    {
+      "issue": 1,
+      "kind": "editorial",
+      "subject": "The mind is not a camera",
+      "cta": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "cta_status": "existing_editorial_route",
+      "offer": false,
+      "disclosure_beside_offer": false
+    },
+    {
+      "issue": 2,
+      "kind": "editorial",
+      "subject": "Before hypnosis had a name",
+      "cta": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "cta_status": "existing_editorial_route",
+      "offer": false,
+      "disclosure_beside_offer": false
+    },
+    {
+      "issue": 3,
+      "kind": "commercial_draft",
+      "subject": "The twelve-minute meditation question",
+      "cta": null,
+      "cta_status": "PENDING_MIND_APPROVAL_NOT_LIVE",
+      "offer": true,
+      "disclosure_beside_offer": true
+    },
+    {
+      "issue": 4,
+      "kind": "editorial",
+      "subject": "Fourteen seconds. A much longer explanation.",
+      "cta": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/",
+      "cta_status": "existing_editorial_route",
+      "offer": false,
+      "disclosure_beside_offer": false
+    },
+    {
+      "issue": 5,
+      "kind": "commercial_draft",
+      "subject": "Before you press play on a hypnosis audio",
+      "cta": null,
+      "cta_status": "PENDING_MIND_APPROVAL_NOT_LIVE",
+      "offer": true,
+      "disclosure_beside_offer": true
+    },
+    {
+      "issue": 6,
+      "kind": "editorial",
+      "subject": "What did seven days of attention reveal?",
+      "cta": "https://finalvestige.com/focus/",
+      "cta_status": "existing_editorial_route",
+      "offer": false,
+      "disclosure_beside_offer": false
+    }
+  ],
+  "known_cta_duplication": "1 and 2 share archive; 6 repeats welcome gift; distinct alternatives in R275 #2016 are NOT_ADOPTED",
+  "email_eligibility": "UNKNOWN_NOT_ZERO_OR_THREE",
+  "merchant_revenue": "UNKNOWN_NOT_ZERO"
+}
