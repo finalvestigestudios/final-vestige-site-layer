@@ -1,0 +1,519 @@
+{
+  "version": "R289",
+  "research_date": "2026-11-10",
+  "publication": "UNPUBLISHED",
+  "commercial": "HARD_HOLD",
+  "parent_sha": "c08c3e2f48c0fadf7ed11d2fd6b6fcc5bf6809f7",
+  "scope": "ONLY_MIND",
+  "canonical_presell": [
+    "mind/r284/ZEN12-BUYER-GUIDE-A-TEXT-ONLY-UNPUBLISHED.html",
+    "mind/r284/ZEN12-BUYER-GUIDE-B-FILM-STORYBOARD-UNPUBLISHED.html"
+  ],
+  "notes": [
+    "R289 makes no competing presell page. Existing R284 text vs static storyboard pair remains candidate; R287 refund correction retained through branch ancestry.",
+    "Public recruitment emails and seller public portal are not account-specific publisher authorization. Marketing prices and timed discounts are not FV checkout evidence.",
+    "The authored film concept is not a playable 42-second hosted video. No traffic allocated, no commercial A/B test.",
+    "Do not infer zero sales from an absence of account-verified sales. Revenue KPI is not computable."
+  ],
+  "sources": [
+    {
+      "id": "raymond1992",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/1500880/",
+      "type": "PRIMARY",
+      "boundary": "RSVP target/probe timing and first-target processing dependence"
+    },
+    {
+      "id": "maclean2012",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/22821263/",
+      "type": "REVIEW",
+      "boundary": "Attentional-blink magnitude short-vs-long lag and measurement constraints"
+    },
+    {
+      "id": "chun1995",
+      "url": "https://doi.org/10.1037/0096-1523.21.1.109",
+      "type": "PRIMARY",
+      "boundary": "Two-stage model for multi-target report"
+    },
+    {
+      "id": "shapiro1994",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/8189198/",
+      "type": "PRIMARY",
+      "boundary": "Pattern-selection and target-definition specificity"
+    },
+    {
+      "id": "slagter2007",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17488185/",
+      "type": "PRIMARY",
+      "boundary": "Three-month intensive mental training and P3b/T2 outcomes"
+    },
+    {
+      "id": "sharpe2021",
+      "url": "https://doi.org/10.1007/s12671-021-01709-2",
+      "type": "PRIMARY",
+      "boundary": "Three arms, 40 per group; no evidence for between-condition AB difference"
+    },
+    {
+      "id": "amir2022",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36037219/",
+      "type": "MODEL",
+      "boundary": "Computational framework; not a commercial efficacy trial"
+    },
+    {
+      "id": "inspire3",
+      "url": "https://inspire3.com/",
+      "type": "SELLER_CATALOG",
+      "boundary": "Product-family inventory, seller promotional language"
+    },
+    {
+      "id": "zen12_order",
+      "url": "https://zen12.com/getstarted",
+      "type": "SELLER_OFFER",
+      "boundary": "12 levels, 48 MP3s, claimed support and guarantee; visible dynamic checkout"
+    },
+    {
+      "id": "zen12_welcome",
+      "url": "https://zen12.com/welcome",
+      "type": "SELLER_OPTIN",
+      "boundary": "Seller newsletter consent separate from FV's Jetpack list"
+    },
+    {
+      "id": "inspire3_affiliate",
+      "url": "https://affiliates.inspire3.com/",
+      "type": "PUBLIC_PROGRAM",
+      "boundary": "Generic recruitment; not proof of FV publisher approval or tracking URL"
+    },
+    {
+      "id": "hypnosis_focus",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "type": "SELLER_PRODUCT",
+      "boundary": "33-minute hypnosis audio; benefit claims seller-only"
+    },
+    {
+      "id": "brainwave_focus",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "type": "SELLER_PRODUCT",
+      "boundary": "15/30-minute Focus Shot; benefits seller-only"
+    },
+    {
+      "id": "brainwave_faq",
+      "url": "https://brainwaveshots.com/faq",
+      "type": "SELLER_TERMS",
+      "boundary": "One refund / six months; >10-item order download condition; seller precaution"
+    },
+    {
+      "id": "ftc_endorsements",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "type": "REGULATORY",
+      "boundary": "Clear, conspicuous, close-to-link material connection"
+    },
+    {
+      "id": "ftc_health",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "type": "REGULATORY",
+      "boundary": "Objective health claim substantiation, no extrapolation"
+    },
+    {
+      "id": "fv_puysegur",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "type": "FV_LIVE",
+      "boundary": "Historical research archive and source critique"
+    },
+    {
+      "id": "fv_mesmerism",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "type": "FV_LIVE",
+      "boundary": "Existing investigation"
+    },
+    {
+      "id": "fv_change",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "type": "FV_LIVE",
+      "boundary": "Existing perception investigation"
+    },
+    {
+      "id": "fv_focus",
+      "url": "https://finalvestige.com/focus/",
+      "type": "FV_LIVE",
+      "boundary": "Existing 52-page lead magnet, one signup"
+    },
+    {
+      "id": "fv_dispatch",
+      "url": "https://finalvestige.com/dispatch/",
+      "type": "FV_LIVE",
+      "boundary": "Existing free Dispatch, no welcome replacement"
+    },
+    {
+      "id": "fv_affiliate_disclosure",
+      "url": "https://finalvestige.com/affiliate-disclosure/",
+      "type": "FV_LIVE",
+      "boundary": "Sitewide statement supplements, never replaces adjacent disclosure"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "statement": "RSVP study showed a time-locked target probe reporting deficit",
+      "source_id": "raymond1992",
+      "decision": "ALLOW_SPECIFIC_SCIENCE",
+      "scope": "EDITORIAL_EVIDENCE_ONLY"
+    },
+    {
+      "id": "C02",
+      "statement": "AB magnitude requires short-versus-long-lag T2 performance contrast",
+      "source_id": "maclean2012",
+      "decision": "ALLOW_SPECIFIC_SCIENCE",
+      "scope": "EDITORIAL_EVIDENCE_ONLY"
+    },
+    {
+      "id": "C03",
+      "statement": "Two-stage consolidation is an influential proposed mechanism, not proof of a single universal model",
+      "source_id": "chun1995",
+      "decision": "ALLOW_MODEL_WITH_BOUNDARIES",
+      "scope": "EDITORIAL_EVIDENCE_ONLY"
+    },
+    {
+      "id": "C04",
+      "statement": "Target definition and intervening stimuli change the blink",
+      "source_id": "shapiro1994",
+      "decision": "ALLOW_SPECIFIC_SCIENCE",
+      "scope": "EDITORIAL_EVIDENCE_ONLY"
+    },
+    {
+      "id": "C05",
+      "statement": "Three months of intensive meditation linked to smaller AB and P3b differences in one study",
+      "source_id": "slagter2007",
+      "decision": "ALLOW_SPECIFIC_SCIENCE",
+      "scope": "EDITORIAL_EVIDENCE_ONLY"
+    },
+    {
+      "id": "C06",
+      "statement": "That 2007 work establishes benefits from a single 12-minute commercial Zen12 track",
+      "source_id": "slagter2007",
+      "decision": "REJECT_UNTESTED_EXTRAPOLATION",
+      "scope": "EDITORIAL_EVIDENCE_ONLY"
+    },
+    {
+      "id": "C07",
+      "statement": "Brief meditation interventions had no evidence of between-condition AB magnitude differences in 2021 study",
+      "source_id": "sharpe2021",
+      "decision": "ALLOW_SPECIFIC_SCIENCE",
+      "scope": "EDITORIAL_EVIDENCE_ONLY"
+    },
+    {
+      "id": "C08",
+      "statement": "Brief meditation proves no possible attention benefit",
+      "source_id": "sharpe2021",
+      "decision": "REJECT_OVERGENERALIZATION",
+      "scope": "EDITORIAL_EVIDENCE_ONLY"
+    },
+    {
+      "id": "C09",
+      "statement": "Computational model simulates proposed resource allocation mechanisms",
+      "source_id": "amir2022",
+      "decision": "ALLOW_MODEL_WITH_BOUNDARIES",
+      "scope": "EDITORIAL_EVIDENCE_ONLY"
+    },
+    {
+      "id": "C10",
+      "statement": "An EEG finding establishes everyday productivity or clinical improvement",
+      "source_id": "slagter2007",
+      "decision": "REJECT_UNTESTED_EXTRAPOLATION",
+      "scope": "EDITORIAL_EVIDENCE_ONLY"
+    },
+    {
+      "id": "C11",
+      "statement": "Inspire3 markets a family of audio and personal-development products",
+      "source_id": "inspire3",
+      "decision": "ALLOW_SELLER_FORMAT",
+      "scope": "EDITORIAL_EVIDENCE_ONLY"
+    },
+    {
+      "id": "C12",
+      "statement": "Zen12 order page describes 12 levels and 48 MP3s",
+      "source_id": "zen12_order",
+      "decision": "ALLOW_SELLER_FORMAT",
+      "scope": "EDITORIAL_EVIDENCE_ONLY"
+    },
+    {
+      "id": "C13",
+      "statement": "Zen12 12 minutes equals 1 hour of advanced meditation",
+      "source_id": "zen12_welcome",
+      "decision": "REJECT_UNSUBSTANTIATED_PRODUCT_CLAIM",
+      "scope": "EDITORIAL_EVIDENCE_ONLY"
+    },
+    {
+      "id": "C14",
+      "statement": "Zen12's free audio requires consent to merchant newsletter",
+      "source_id": "zen12_welcome",
+      "decision": "ALLOW_SELLER_CONSENT_NOTICE",
+      "scope": "EDITORIAL_EVIDENCE_ONLY"
+    },
+    {
+      "id": "C15",
+      "statement": "Public affiliate portal establishes Final Vestige is authorized to earn commissions",
+      "source_id": "inspire3_affiliate",
+      "decision": "REJECT_UNVERIFIED_AUTHORIZATION",
+      "scope": "EDITORIAL_EVIDENCE_ONLY"
+    },
+    {
+      "id": "C16",
+      "statement": "Hypnosis Live Total Focus is a 33-minute seller-described MP3",
+      "source_id": "hypnosis_focus",
+      "decision": "ALLOW_SELLER_FORMAT",
+      "scope": "EDITORIAL_EVIDENCE_ONLY"
+    },
+    {
+      "id": "C17",
+      "statement": "Hypnosis Live Total Focus guarantees superior concentration and workplace benefits",
+      "source_id": "hypnosis_focus",
+      "decision": "REJECT_UNSUBSTANTIATED_PRODUCT_CLAIM",
+      "scope": "EDITORIAL_EVIDENCE_ONLY"
+    },
+    {
+      "id": "C18",
+      "statement": "Brainwave Shots Focus Shot includes 15/30-minute audio versions",
+      "source_id": "brainwave_focus",
+      "decision": "ALLOW_SELLER_FORMAT",
+      "scope": "EDITORIAL_EVIDENCE_ONLY"
+    },
+    {
+      "id": "C19",
+      "statement": "Brainwave Shots Focus Shot produces hours of enhanced concentration",
+      "source_id": "brainwave_focus",
+      "decision": "REJECT_UNSUBSTANTIATED_PRODUCT_CLAIM",
+      "scope": "EDITORIAL_EVIDENCE_ONLY"
+    },
+    {
+      "id": "C20",
+      "statement": "Brainwave Shots FAQ imposes refund limits, and notes epilepsy/wakefulness precautions",
+      "source_id": "brainwave_faq",
+      "decision": "ALLOW_SELLER_POLICY_WITH_CAVEAT",
+      "scope": "EDITORIAL_EVIDENCE_ONLY"
+    },
+    {
+      "id": "C21",
+      "statement": "Affiliate relationships require clear proximate plain-language disclosure",
+      "source_id": "ftc_endorsements",
+      "decision": "ALLOW_REGULATORY",
+      "scope": "EDITORIAL_EVIDENCE_ONLY"
+    },
+    {
+      "id": "C22",
+      "statement": "Health/performance objective claims require matching scientific substantiation",
+      "source_id": "ftc_health",
+      "decision": "ALLOW_REGULATORY",
+      "scope": "EDITORIAL_EVIDENCE_ONLY"
+    },
+    {
+      "id": "C23",
+      "statement": "Puységur records are historical evidence, not independent verification of modern product effects",
+      "source_id": "fv_puysegur",
+      "decision": "ALLOW_HISTORICAL_BOUNDARY",
+      "scope": "EDITORIAL_EVIDENCE_ONLY"
+    },
+    {
+      "id": "C24",
+      "statement": "FV Focus Fieldbook exists as free alternative; no duplicate subscriber stack",
+      "source_id": "fv_focus",
+      "decision": "ALLOW_EXISTING_FREE_ROUTE",
+      "scope": "EDITORIAL_EVIDENCE_ONLY"
+    },
+    {
+      "id": "C25",
+      "statement": "FV Dispatch serves as existing opt-in nurture, independently of seller's newsletter",
+      "source_id": "fv_dispatch",
+      "decision": "ALLOW_EXISTING_FREE_ROUTE",
+      "scope": "EDITORIAL_EVIDENCE_ONLY"
+    },
+    {
+      "id": "C26",
+      "statement": "FV owned paid Mind SKU has verified rights, price, checkout, refunds, fulfillment",
+      "source_id": "fv_focus",
+      "decision": "REJECT_NOT_VERIFIED",
+      "scope": "EDITORIAL_EVIDENCE_ONLY"
+    },
+    {
+      "id": "C27",
+      "statement": "Visible checkout discount/timer proves an evergreen affiliate price or deadline",
+      "source_id": "zen12_order",
+      "decision": "REJECT_DYNAMIC_UNVERIFIED_TERMS",
+      "scope": "EDITORIAL_EVIDENCE_ONLY"
+    },
+    {
+      "id": "C28",
+      "statement": "Having an affiliate disclosure page eliminates the need for a near-link notice",
+      "source_id": "fv_affiliate_disclosure",
+      "decision": "REJECT_INADEQUATE_DISCLOSURE",
+      "scope": "EDITORIAL_EVIDENCE_ONLY"
+    }
+  ],
+  "products": [
+    {
+      "id": "ZEN12",
+      "audience": "people seeking a structured downloadable meditation-audio routine",
+      "official_page": "zen12_order",
+      "commercial": "HOLD",
+      "pricing": "VISIBLE_DYNAMIC_CHECKOUT_NOT_A_FV_QUOTE",
+      "returns": "SELLER_DESCRIBED_1_YEAR;_NO_FULFILLMENT_PROOF",
+      "product_proof": "NOT_PRODUCT_SPECIFICALLY_VALIDATED"
+    },
+    {
+      "id": "HYPNOSIS_TOTAL_FOCUS",
+      "audience": "readers specifically considering guided self-hypnosis recordings",
+      "official_page": "hypnosis_focus",
+      "commercial": "HOLD",
+      "pricing": "NOT_USED",
+      "returns": "CHECK_OFFICIAL_FAQ_BEFORE_ACTIVATION"
+    },
+    {
+      "id": "BRAINWAVE_FOCUS_SHOT",
+      "audience": "readers specifically looking for short audio formats",
+      "official_page": "brainwave_focus",
+      "commercial": "HOLD",
+      "pricing": "NOT_USED",
+      "returns": "SELLER_LIMITS_IN_BRAINWAVE_FAQ"
+    },
+    {
+      "id": "FV_FOCUS",
+      "audience": "reader wanting a no-cost structured exercise",
+      "official_page": "fv_focus",
+      "commercial": "FREE_EXISTING_ROUTE_ONLY",
+      "pricing": "FREE",
+      "returns": "NOT_APPLICABLE"
+    },
+    {
+      "id": "FV_OWNED_PAID_MIND",
+      "audience": "reader willing to pay for evidence-led workbooks",
+      "official_page": null,
+      "commercial": "HOLD",
+      "pricing": "UNVERIFIED",
+      "returns": "UNVERIFIED",
+      "rights": "UNVERIFIED",
+      "fulfillment": "UNVERIFIED"
+    }
+  ],
+  "creator_routes": [
+    {
+      "topic": "attentional_blink",
+      "existing_asset_id": null,
+      "confirmed_url": null,
+      "landing": "UNPUBLISHED_RESEARCH_DRAFT",
+      "owner": "Grok_Praxxis",
+      "next": "match already-published asset, verify rights and mobile UTM path; do not retask queue"
+    },
+    {
+      "topic": "change_blindness",
+      "existing_asset_id": null,
+      "confirmed_url": null,
+      "landing": "fv_change",
+      "owner": "Grok_Praxxis",
+      "next": "verify media ID before counting attributed humans"
+    },
+    {
+      "topic": "mesmerism_puysegur",
+      "existing_asset_id": null,
+      "confirmed_url": null,
+      "landing": "fv_mesmerism",
+      "owner": "Grok_Praxxis",
+      "next": "verify media ID and no false hypnosis efficacy inference"
+    }
+  ],
+  "measurement_contract": {
+    "campaign_fields": [
+      "utm_source",
+      "utm_medium",
+      "utm_campaign",
+      "utm_content"
+    ],
+    "utm_medium": "organic_social",
+    "utm_campaign": "mind_pilot_2026_11",
+    "events": [
+      "qualified_human_landing",
+      "article_to_focus_click",
+      "provider_confirmed_signup",
+      "guide_view",
+      "affiliate_outbound",
+      "merchant_confirmed_purchase",
+      "settled_commission",
+      "refund",
+      "fees"
+    ],
+    "human_session": "must be validated privacy-safely; do not count bot/user-agents as qualified without verification",
+    "private_data": "No email addresses, IPs, cookies, fingerprinting or additional scripts in R289",
+    "revenue_kpi": "1000 * (verified gross - settled refunds - payment and merchant fees) / qualified_human_sessions; insufficient evidence => NOT_COMPUTABLE"
+  },
+  "release_gates": {
+    "named_publisher_acceptance": {
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED_IN_THIS_RUN"
+    },
+    "authorized_publisher_identity": {
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED_IN_THIS_RUN"
+    },
+    "issued_earning_url": {
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED_IN_THIS_RUN"
+    },
+    "allowed_promotional_channels": {
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED_IN_THIS_RUN"
+    },
+    "allowed_email_promotion": {
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED_IN_THIS_RUN"
+    },
+    "approved_creative_rights": {
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED_IN_THIS_RUN"
+    },
+    "verified_destination_route": {
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED_IN_THIS_RUN"
+    },
+    "exact_checkout_terms": {
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED_IN_THIS_RUN"
+    },
+    "verified_offer_price_if_used": {
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED_IN_THIS_RUN"
+    },
+    "refund_policy_confirmed": {
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED_IN_THIS_RUN"
+    },
+    "actual_refund_fulfillment_not_assumed": {
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED_IN_THIS_RUN"
+    },
+    "claim_substantiation_review": {
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED_IN_THIS_RUN"
+    },
+    "proximate_disclosure_QA": {
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED_IN_THIS_RUN"
+    },
+    "original_video_rights_and_captions": {
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED_IN_THIS_RUN"
+    },
+    "browser_accessibility_mobile_QA": {
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED_IN_THIS_RUN"
+    },
+    "privacy_measurement_approval": {
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED_IN_THIS_RUN"
+    },
+    "founder_commercial_approval": {
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED_IN_THIS_RUN"
+    },
+    "founder_production_release_approval": {
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED_IN_THIS_RUN"
+    }
+  }
+}
