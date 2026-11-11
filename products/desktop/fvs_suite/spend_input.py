@@ -15,6 +15,7 @@ from typing import Callable, Iterator, Mapping
 from .spend_callback_context_r355 import invoke_spend_callback
 from .spend_source_custody_r356 import canonical_spend_source_cents, spend_parser_preserves_source
 from .spend_date_custody_r359 import canonical_spend_source_date, spend_date_parser_preserves_source
+from .spend_vendor_session_r360 import SpendVendorSession
 
 MAX_SPEND_ROWS = 200_000  # Mirrors the bounded shared financial CSV reader.
 _PHYSICAL_ROW = re.compile(r"[1-9][0-9]{0,9}\Z", re.ASCII)
@@ -108,6 +109,9 @@ def validated_spend_rows(
     # Callback side effects cannot be rolled back: callbacks must be trusted
     # and source authenticity remains a separate descriptor-verified concern.
     prepared_rows: list[tuple[Mapping[str, str], str, str, str, Decimal]] = []
+    # Enforce one stable matching key for each ASCII-source-equivalent vendor
+    # throughout this fully precomputed report. Never silently fragment totals.
+    vendor_session = SpendVendorSession()
     for record, canonical_source_amount, canonical_source_day in zip(
             frozen_records, canonical_source_amounts, canonical_source_dates):
         physical_row = record["row"]
@@ -123,6 +127,7 @@ def validated_spend_rows(
             raise ValueError("Blank vendor at row " + physical_row)
         if _VENDOR_KEY.fullmatch(vendor) is None:
             raise ValueError(f"Invalid normalized vendor key at physical row {physical_row}")
+        vendor_session.attest(record["vendor"], vendor, physical_row)
 
         try:
             calendar_day = invoke_spend_callback(parse_date, record["date"])
