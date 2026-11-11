@@ -185,6 +185,9 @@ def check_raw_ids(n: int, before: bytes, after: bytes, witness: dict):
                 "Article 24/25 raw source-ID replacement differs from held evidence")
         require(old["hist-food-nchfp-jerky"] == 0 and new["nchfp-jerky"] == 0,
                 "retained old ID / newly introduced ID mismatch")
+        require(all(new[source_id] >= uses for source_id, uses in old.items()
+                    if source_id != "nchfp-jerky"),
+                "other cited source lost occurrences during purported rekey")
         require(witness.get("lost_citation_ids") == [] and
                 witness.get("introduced_citation_ids") == [],
                 "R277 historical false zero-loss witness modified; create new erratum")
