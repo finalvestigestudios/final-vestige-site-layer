@@ -228,4 +228,29 @@ for label, mutate in {
                 g.check_raw_ids(n,a,b,w)
         setattr(RawCitationErratumTests,'test_reject_'+label+'_'+str(article),test)
 
+
+class Article13RetainedSourceCounts(unittest.TestCase):
+    def rows(self):
+        def html(counts):
+            return "".join(("{{cite:"+k+"}}")*n for k,n in counts.items()).encode()
+        old=html({"usfa-fire-escape":11,"shelter-nfpa-escape":21,
+                  "shelter-usfa-high-rise":3,"unchanged":1})
+        new=html({"usfa-fire-escape":10,"shelter-nfpa-escape":20,
+                  "shelter-usfa-high-rise":2,"unchanged":1,"new-ref":3})
+        w=dict(r200_blob=g.git_blob(old),r275_blob=g.git_blob(new),
+               citation_occurrences_old=36,citation_occurrences_integrated=36,
+               lost_citation_ids=[],introduced_citation_ids=["new-ref"])
+        return old,new,w
+    def test_three_authentic_retained_id_losses_held(self):
+        a,b,w=self.rows()
+        self.assertEqual(len(g.check_raw_ids(13,a,b,w)['retained_id_occurrence_decreases_held']),3)
+    def test_unreported_reductions_rejected(self):
+        a,b,w=self.rows()
+        w['citation_occurrences_integrated']+=1
+        with self.assertRaises(ValueError):g.check_raw_ids(13,a,b,w)
+    def test_same_source_reductions_not_allowed_in_other_articles(self):
+        a,b,w=self.rows()
+        with self.assertRaisesRegex(ValueError,'occurrence reduction'):
+            g.check_raw_ids(12,a,b,w)
+
 if __name__ == '__main__':unittest.main()
