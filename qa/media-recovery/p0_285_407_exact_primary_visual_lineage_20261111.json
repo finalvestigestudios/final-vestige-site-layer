@@ -1,0 +1,135 @@
+{
+  "schema": "fv-primary-visual-lineage-285-407-20261111-v1",
+  "verified_utc_date": "2026-11-11",
+  "scope": "Two existing P0 guest-unverified images. Publisher/USGS catalog lineage from public read-only pages; no image binary copied and no guest CDP measured.",
+  "history": {
+    "historical_posts": 61,
+    "historical_inline_images": 355,
+    "external_image_slots": 288,
+    "external_slots_researched": 288,
+    "previously_reported_broken": 42,
+    "guest_confirmed_broken": 0,
+    "proposed_transfer_reduction_percent": 76,
+    "measured_transfer_reduction_percent": null,
+    "wp_originals_over_1500000_bytes": 15,
+    "wp_original_stored_bytes": 47096779
+  },
+  "immutable_source": {
+    "p0_bridge_blob": "d1a9c7a499510ec37bcdba5858d45165752587e0",
+    "p0_browser_audit_blob": "a293d589dc631d87d3953a7bf7f3bccb66cb6d6f",
+    "image_weight_worklist_blob": "2acd06a4ca4317646006eb6591face3fe76fedec",
+    "source_research": "public HubPages, Wikimedia Commons, USGS catalogs",
+    "site_qa_pr": 154,
+    "media_recovery_pr": 1703
+  },
+  "items": [
+    {
+      "slot": "285:5",
+      "article_url": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+      "exact_published_src": "https://images.saymedia-content.com/.image/ar_16:9,c_fill,cs_srgb,fl_progressive,q_auto:eco,w_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg",
+      "evidence": {
+        "publisher_article": "https://discover.hubpages.com/entertainment/The-China-Syndrome-Blockbuster-Movie-Becomes-Eerie-Prophecy",
+        "publisher_rendered_image_url": "https://discover.hubpages.com/.image/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg?profile=w2560&x=50&y=50",
+        "publisher_caption": "Photo of Three Mile Island Nuclear Generating Station taken on June 6, 2010.",
+        "publisher_media_identifier": "MTg5ODU1MTM1NjYzNDAwNjM2",
+        "publisher_links_public_domain_original": "https://upload.wikimedia.org/wikipedia/commons/0/09/Three_mile_island_062010.jpg",
+        "catalog_url": "https://commons.wikimedia.org/wiki/File:Three_mile_island_062010.jpg",
+        "observed_source_chain": "Same publisher media identifier and Commons credited original; independent image displays have visually matching scene, not hash-matched images.",
+        "image_retriever_publisher_displayed": true,
+        "image_retriever_commons_displayed": true,
+        "strict_pixel_identity_proven": false,
+        "original_published_retriever_method": "EXTERNAL_WEB_RETRIEVER_NOT_GUEST",
+        "original_published_retriever_wrapper_code": 404
+      },
+      "attribution": {
+        "photographer_catalog_uploader": "Marque1313",
+        "photographed_year": 2010,
+        "not_a_1979_accident_photo": true,
+        "license_catalog": "PUBLIC_DOMAIN_CREATOR_DEDICATION_PD_SELF",
+        "commercial_reuse_candidate": true,
+        "publication_approval": false
+      },
+      "geometry": {
+        "catalog_original_native_px": [
+          819,
+          614
+        ],
+        "conditional_no_upscale_px": [
+          819,
+          614
+        ],
+        "published_transform": "ar_16:9,c_fill,w_1200",
+        "full_frame_vs_published_crop_differs": true,
+        "automatic_crop_allowed": false,
+        "upscale_allowed": false
+      },
+      "guest_http_status": null,
+      "origin_http_status": null,
+      "guest_current_src": null,
+      "guest_wire_bytes": null,
+      "replacement_visual_parity_approved": false,
+      "upload_authorized": false,
+      "caching_authorized": false,
+      "post_rewrite_authorized": false,
+      "decision": "P0_SAME_SCENE_RIGHTS_LEAD_EDITOR_CROP_AND_BROWSER_HOLD"
+    },
+    {
+      "slot": "407:1",
+      "article_url": "https://finalvestige.com/2026/08/20/the-lake-wasnt-there-yesterday-hebgen/",
+      "exact_published_src": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/img7535.jpg",
+      "evidence": {
+        "primary_catalog_url": "https://www.usgs.gov/media/images/hebgen-lake-fault-scarp-1959-0",
+        "primary_catalog_original_link_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/img7535.jpg",
+        "alternate_primary_catalog_url": "https://www.usgs.gov/media/images/hebgen-lake-fault-scarp-1959",
+        "alternate_primary_catalog_original_link_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/thumbnails/image/img7535.jpg",
+        "original_link_exact_match_to_published_src": true,
+        "alternate_link_same_basename_not_binary_proof": true,
+        "alt_catalog_retriever_rendered": true,
+        "published_original_retriever_method": "EXTERNAL_WEB_RETRIEVER_NOT_GUEST",
+        "published_original_retriever_result": "UNSUPPORTED_CONTENT_TYPE_BINARY_OCTET_STREAM",
+        "published_original_retriever_wrapper_code": 400,
+        "image_binary_identity_sha256": null
+      },
+      "attribution": {
+        "photographer": "J. R. Stacy",
+        "photographed_year": 1959,
+        "license_catalog": "USGS_SOURCES_USAGE_PUBLIC_DOMAIN",
+        "commercial_reuse_candidate": true,
+        "publication_approval": false,
+        "depicted": "1959 Hebgen Lake fault scarp (not an aerial lake overview)"
+      },
+      "geometry": {
+        "published_original_native_px": null,
+        "conditional_no_upscale_px": null,
+        "alternate_rendered_copy_not_native_dimensions": true,
+        "automatic_crop_allowed": false,
+        "upscale_allowed": false
+      },
+      "guest_http_status": null,
+      "origin_http_status": null,
+      "guest_current_src": null,
+      "guest_wire_bytes": null,
+      "replacement_visual_parity_approved": false,
+      "upload_authorized": false,
+      "caching_authorized": false,
+      "post_rewrite_authorized": false,
+      "decision": "P0_EXACT_USGS_SOURCE_URL_BROWSER_FIRST_NO_REHOST"
+    }
+  ],
+  "release": {
+    "actual_guest_failures_confirmed": 0,
+    "source_candidate_assets_downloaded": 0,
+    "wordpress_production_writes": 0,
+    "homepage_design_changes": 0,
+    "new_browser_collectors": 0,
+    "production_caching_changes": 0,
+    "merged_or_deployed": false,
+    "spend_usd": 0
+  },
+  "next_actions": [
+    "Site QA #154 browser-check 285:5 and 407:1 as part of existing six P0 queue; preserve exact img/currentSrc and completed cold Image response with screenshot.",
+    "If 285:5 fails, compare original 16:9 publisher crop against Commons full 819x614 before any editor-approved replacement. Keep 2010 date in ALT.",
+    "If 407:1 fails, prefer original USGS catalog maintenance/source-URL choice; investigate content-type and alternate official image source, preserve uncropped native scene; never infer 960 dimensions from thumbnails.",
+    "For post-weight claims, use measured cold visitor encoded image bytes, not 47,096,779 original-media stored bytes; account for Jetpack Vasa transforms."
+  ]
+}
