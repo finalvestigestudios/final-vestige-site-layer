@@ -85,11 +85,12 @@ def inspect(custody: dict, report: dict, originals: dict[str, bytes],
     if len(set(slugs)) != 35 or len(set(routes)) != 35:
         fail('DUPLICATE_CUSTODY_SLUG_OR_URL')
     built = report.get('articles', [])
-    if len(built) != 35 or len({a.get('slug') for a in built}) != 35:
+    if len(built) != 41 or len({a.get('slug') for a in built}) != 41:
         fail('BUILD_REPORT_INVENTORY_INVALID')
     by_slug = {a.get('slug'):a for a in built if isinstance(a,dict)}
-    if set(by_slug) != set(slugs):
+    if not set(slugs).issubset(by_slug) or len(set(by_slug)-set(slugs)) != 6:
         fail('BUILD_REPORT_SLUG_SET_DRIFT')
+    tool_slugs = set(by_slug)-set(slugs)
     ev = report.get('release_evidence', {})
     if ev.get('independent_qa_verified') is not False or ev.get('wordpress_publication_performed') is not False:
         fail('BUILD_REPORT_RELEASE_STATE_INVALID')
@@ -139,17 +140,52 @@ def inspect(custody: dict, report: dict, originals: dict[str, bytes],
         detail.append({'slug':slug,'source_words':len(srcw),'draft_body_words':len(docw),
                        'unchanged_word_window_fraction':round(coverage,5),
                        'original_oid_matches':blob_oid(raw)==a.get('body_oid')})
-    # build.py only exports ARTICLES/hubs/landing. The six tools need a separate
-    # witnessed receipt; a 35-article build must NEVER be described as 41 drafts.
-    if not isinstance(tool_receipt,dict):
+    # The native builder registers both content/articles and content/tools in
+    # lib.articles and exports BOTH through build_article(): 35 + 6 = 41.
+    # A tool receipt must attest actual bytes, not just assert a file hash exists.
+    if not isinstance(tool_receipt, dict):
         fail('SIX_TOOL_EXPORT_RECEIPT_MISSING')
     else:
-        tools=tool_receipt.get('tools',[])
-        if len(tools)!=6 or len({t.get('slug') for t in tools if isinstance(t,dict)})!=6:
+        tools = tool_receipt.get('tools', [])
+        tool_ids = [t.get('slug') for t in tools if isinstance(t, dict)]
+        if len(tools) != 6 or len(set(tool_ids)) != 6 or set(tool_ids) != tool_slugs:
             fail('SIX_TOOL_INVENTORY_INVALID')
         for t in tools:
-            if not isinstance(t,dict) or t.get('status')!='draft' or not t.get('file_sha256') or not t.get('review_only') is True:
-                fail('SIX_TOOL_RELEASE_WITNESS_INVALID');break
+            if not isinstance(t, dict):
+                fail('SIX_TOOL_RELEASE_WITNESS_INVALID'); continue
+            slug=t.get('slug')
+            if not isinstance(slug,str) or not re.fullmatch('[a-z0-9-]+',slug):
+                fail('SIX_TOOL_SLUG_INVALID'); continue
+            srcpath=f'preparedness/content/tools/{slug}.body.html'
+            metapath=f'preparedness/content/tools/{slug}.meta.json'
+            wppath=f'preparedness/build/wp/{slug}.html'
+            raw, metaraw, output=originals.get(srcpath),originals.get(metapath),wp.get(wppath)
+            if not all(isinstance(x,bytes) for x in (raw,metaraw,output)):
+                fail('SIX_TOOL_SOURCE_OR_EXPORT_MISSING:'+slug);continue
+            if blob_oid(raw) != t.get('body_oid') or blob_oid(metaraw) != t.get('meta_oid'):
+                fail('SIX_TOOL_SOURCE_CUSTODY_MISMATCH:'+slug)
+            if hashlib.sha256(output).hexdigest() != t.get('file_sha256'):
+                fail('SIX_TOOL_EXPORT_HASH_MISMATCH:'+slug)
+            if t.get('status')!='draft' or t.get('review_only') is not True:
+                fail('SIX_TOOL_RELEASE_WITNESS_INVALID:'+slug)
+            try:
+                meta=json.loads(metaraw)
+                body=raw.decode('utf-8')
+                doc=output.decode('utf-8')
+            except (ValueError,UnicodeError):
+                fail('SIX_TOOL_PARSE_ERROR:'+slug);continue
+            if meta.get('slug')!=slug or meta.get('status',{}).get('publish')!='draft' or meta.get('kind') not in ('tool',None):
+                fail('SIX_TOOL_META_IDENTITY_OR_RELEASE_DRIFT:'+slug)
+            route=SITE+'/preparedness/'+str(meta.get('section'))+'/'+slug+'/'
+            if by_slug.get(slug,{}).get('canonical')!=route or route in (SITE+r for r in routes):
+                fail('SIX_TOOL_CANONICAL_COLLISION:'+slug)
+            if not doc.startswith('<!-- wp:html -->\n') or not doc.rstrip().endswith('<!-- /wp:html -->'):
+                fail('SIX_TOOL_WORDPRESS_WRAPPER:'+slug)
+            if f'data-slug="{slug}"' not in doc or 'Independent safety/source and QD verification pending' not in doc:
+                fail('SIX_TOOL_REVIEW_LABEL_MISSING:'+slug)
+            srcw,docw=words(body),words(doc,target=True)
+            if len(srcw)<25 or window_coverage(srcw,docw)<.90:
+                fail('SIX_TOOL_READING_DEPTH_LOSS:'+slug)
     return {'schema':'fv-preparedness-r298-export-content-integrity-v1',
             'state':'INVALID_HARD_HOLD' if errors else 'DRAFT_HARD_HOLD',
             'errors':sorted(set(errors)),'article_entries_reviewed':len(detail),
@@ -179,6 +215,14 @@ def main(argv=None):
             for dest,p in ((originals,f'preparedness/content/articles/{slug}.body.html'),
                            (wp,f'preparedness/build/wp/{slug}.html')):
                 if (root/p).is_file(): dest[p]=(root/p).read_bytes()
+        if tools:
+            for t in tools.get('tools',[]):
+                slug=t.get('slug','')
+                if not re.fullmatch('[a-z0-9-]+',slug): continue
+                for dest,p in ((originals,f'preparedness/content/tools/{slug}.body.html'),
+                               (originals,f'preparedness/content/tools/{slug}.meta.json'),
+                               (wp,f'preparedness/build/wp/{slug}.html')):
+                    if (root/p).is_file(): dest[p]=(root/p).read_bytes()
         result=inspect(custody,report,originals,wp,tools)
     except (OSError,ValueError,KeyError,TypeError) as e:
         result={'state':'INVALID_HARD_HOLD','errors':['MISSING_OR_INVALID_INPUT:'+type(e).__name__]}
