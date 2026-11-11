@@ -1,5 +1,5 @@
 /* R281 staging-only Apollo evidence. Fully scoped; no external fonts, media or JS. */
-.fv-r281{--ink:#121518;--paper:#f6f0e4;--muted:#ded6c7;--line:#665b49;--gold:#e9c988;box-sizing:border-box;max-width:82rem;margin:1.5rem auto;padding:clamp(1rem,3vw,2.5rem);background:var(--ink);color:var(--paper);font:400 1rem/1.65 system-ui,sans-serif;overflow-wrap:anywhere;border:1px solid var(--line)}
+.fv-r281{--ink:#121518;--paper:#f6f0e4;--muted:#ded6c7;--line:#81745f;--gold:#e9c988;box-sizing:border-box;max-width:82rem;margin:1.5rem auto;padding:clamp(1rem,3vw,2.5rem);background:var(--ink);color:var(--paper);font:400 1rem/1.65 system-ui,sans-serif;overflow-wrap:anywhere;border:1px solid var(--line)}
 .fv-r281 *, .fv-r281 *::before, .fv-r281 *::after{box-sizing:inherit}
 .fv-r281 :is(a,summary):focus-visible{outline:3px solid var(--gold);outline-offset:4px}
 .fv-r281 a{color:var(--gold);text-underline-offset:.24em}
@@ -92,3 +92,10 @@
 /* R291: print evidence boundaries must not retain the on-screen dark fill while
    the print stylesheet forces their text black. This is a contrast correction. */
 @media print{.fv-r281 .fv-r281__boundary{background:#fff!important;color:#000!important;border-color:#000!important}}
+
+/* R292: accessible in-document source route, not an additional commerce CTA.
+   Border contrast now >=3:1 on all fixed dark component surfaces. */
+.fv-r281 .fv-r292__source-route{margin:.85rem 0 0;font-size:.95rem}
+.fv-r281 .fv-r292__source-route a{display:inline-flex;align-items:center;min-height:44px;padding:.4rem .7rem;border:1px solid var(--line);text-decoration:underline}
+@media(forced-colors:active){.fv-r281 .fv-r292__source-route a{border-color:CanvasText}}
+@media print{.fv-r281 .fv-r292__source-route{display:none!important}}
