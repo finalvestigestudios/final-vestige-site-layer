@@ -42,7 +42,7 @@ function validate(bundle){
   req(m.creator_routes.length===3&&m.creator_routes.every(x=>x.existing_asset_id===null&&x.confirmed_url===null),'unverified media attribution');
   req(m.measurement_contract.events.includes('merchant_confirmed_purchase')&&m.measurement_contract.events.includes('affiliate_outbound')&&m.measurement_contract.events.includes('settled_commission'),'paid vs outbound event separation');
   req(m.canonical_presell.length===2&&m.canonical_presell.every(x=>x.startsWith('mind/r284/')),'canonical pair changed or competitor introduced');
-  req(m.notes.join(' ').includes('NOT a playable')||m.notes.join(' ').includes('not a playable'),'false video status');
+  req(typeof m.notes[2]==='string' && m.notes[2].includes('NOT a playable'),'false video status');
 
   req(article.includes('# The Second Number Vanished'),'original investigation missing');
   req(article.includes('three months')&&article.includes('brief')&&article.includes('2021'),'duration evidence boundary');
