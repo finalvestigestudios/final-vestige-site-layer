@@ -73,7 +73,7 @@ function verify(x){
   const page=g[i]; const html=literal(page);
   assert(/<html\s+lang=["']en["']/.test(html),"HTML_LANG_MISSING_"+i);
   assert(/<meta[^>]+name=["']viewport["']/.test(html),"RESPONSIVE_META_MISSING_"+i);
-  assert(/<button[^>]*\bdisabled\b/i.test(page),"ENABLED_PURCHASE_CONTROL_"+i);
+  assert(/<button\b[^>]*\sdisabled(?:\s|=|>)/i.test(page),"ENABLED_PURCHASE_CONTROL_"+i);
   assert(/may earn a commission/.test(html),"ADJACENT_DISCLOSURE_MISSING_"+i);
   assert(/<meta[^>]+name=["']robots["'][^>]+noindex/i.test(page),"DRAFT_NOINDEX_MISSING_"+i);
   assert(!/<script\b|<iframe\b|<form\b|<meta[^>]+http-equiv\s*=\s*["']?refresh|\bonclick\s*=|\bonload\s*=|<img[^>]*src=["']https?:/i.test(page),"UNAUTHORIZED_INTERACTIVE_OR_REDIRECT_"+i);
@@ -114,7 +114,7 @@ function mutations(x){
   ["fake_attribution",z=>{const m=JSON.parse(z.matrix);m.measurement.revenue_per_1000_qualified_humans=100;z.matrix=JSON.stringify(m)}],
   ["guide_js",z=>z.guideB=z.guideB.replace("</head>","<script>alert(1)</script></head>")],
   ["scope_collapse",z=>z.article=z.article.replace("Only one studied isochronic tones","All studied isochronic tones")],
-  ["remove_revenue",z=>z.acceptance=z.acceptance.replace("NOT COMPUTABLE","zero")]
+  ["remove_revenue",z=>z.acceptance=z.acceptance.replaceAll("NOT COMPUTABLE","zero")]
  ];
  let caught=0;const failures=[];
  for(const [id,change] of edits){const z={...x};change(z);try{verify(z);failures.push(id)}catch(e){caught++}}
