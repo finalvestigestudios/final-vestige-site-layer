@@ -14,6 +14,7 @@ const good = () => ({source_slot:img.slot,post_id:img.post_id,stored_original_sr
   stored_inline_ordinal:5,dom_img_src:img.original_src,
   capture_run_id:'synthetic-run',request_id:'synthetic-request',
   response_request_id:'synthetic-request',dom_element_request_id:'synthetic-request',
+  resource_type:'Image',loading_finished:true,
   screenshot_sha256:'b'.repeat(64)});
 const decoded = () => {const e=good();e.final_http_status=200;e.natural_width=819;e.natural_height=614;e.encoded_data_length=8192;e.response_mime_type='image/jpeg';e.resource_type='Image';e.loading_finished=true;return e;};
 const approval = () => ({source_slot:img.slot,original_src:img.original_src,
@@ -185,3 +186,17 @@ test('HTML 200 does not mark article image as delivered in recovery report',()=>
  assert.equal(r.priority[0].guest_browser.verdict,'HOLD');
  assert.equal(r.verified_broken_in_supplied_guest_evidence,0);
 });
+
+
+// New lifecycle lineage regressions: all synthetic; not visitor observations.
+test('completed CDP Image 404 remains a confirmed broken image',()=>{const e=good();assert.equal(guestFinding(img,e).verdict,'CONFIRMED_GUEST_BROKEN');});
+test('same URL navigated as Document is not a broken DOM image',()=>{const e=good();e.resource_type='Document';assert.equal(guestFinding(img,e).reason,'FAILED_IMAGE_RESOURCE_LIFECYCLE_NOT_PROVEN');});
+test('same URL fetched as Script is not a broken DOM image',()=>{const e=good();e.resource_type='Script';assert.equal(guestFinding(img,e).reason,'FAILED_IMAGE_RESOURCE_LIFECYCLE_NOT_PROVEN');});
+test('missing CDP resource type rejects synthetic HTTP 404',()=>{const e=good();delete e.resource_type;assert.equal(guestFinding(img,e).verdict,'HOLD');});
+test('missing Network.loadingFinished rejects synthetic HTTP 404',()=>{const e=good();delete e.loading_finished;assert.equal(guestFinding(img,e).reason,'FAILED_IMAGE_RESOURCE_LIFECYCLE_NOT_PROVEN');});
+test('failed/incomplete image request cannot convict published image',()=>{const e=good();e.loading_finished=false;e.loading_failed=true;assert.equal(guestFinding(img,e).verdict,'HOLD');});
+test('cached 404 remains blocked even with completed Image lifecycle',()=>{const e=good();e.from_memory_cache=true;assert.equal(guestFinding(img,e).reason,'UNCLEAR_COLD_CACHE_STATUS');});
+test('HTML error response is valid for complete failed Image request',()=>{const e=good();e.response_mime_type='text/html';assert.equal(guestFinding(img,e).verdict,'CONFIRMED_GUEST_BROKEN');});
+test('complete 503 failing Image request counts as broken only for that slot',()=>{const e=good();e.final_http_status=503;assert.equal(guestFinding(img,e).verdict,'CONFIRMED_GUEST_BROKEN');});
+test('valid 200 still requires positive dimensions+image MIME and body',()=>{const e=decoded();e.response_mime_type='text/html';assert.equal(guestFinding(img,e).verdict,'HOLD');});
+test('unverified screenshot+image 404 remains held',()=>{const e=good();e.screenshot_sha256=null;assert.equal(guestFinding(img,e).verdict,'HOLD');});
