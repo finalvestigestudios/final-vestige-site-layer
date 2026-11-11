@@ -16,6 +16,7 @@ from .spend_callback_context_r355 import invoke_spend_callback
 from .spend_source_custody_r356 import canonical_spend_source_cents, spend_parser_preserves_source
 from .spend_date_custody_r359 import canonical_spend_source_date, spend_date_parser_preserves_source
 from .spend_vendor_session_r360 import SpendVendorSession
+from .spend_source_budget_r361 import SpendSourceBudget, MAX_SPEND_SOURCE_COLUMNS
 
 MAX_SPEND_ROWS = 200_000  # Mirrors the bounded shared financial CSV reader.
 _PHYSICAL_ROW = re.compile(r"[1-9][0-9]{0,9}\Z", re.ASCII)
@@ -54,12 +55,21 @@ def validated_spend_rows(
     # Copy native dict storage only: dict subclasses may override .items(),
     # .keys(), .get(), __getitem__ or iteration with unsafe side effects.
     frozen_records: list[dict[str, str]] = []
+    source_budget = SpendSourceBudget()
     for original in records:
         if not isinstance(original, dict):
             raise ValueError("Spend source record must be a mapping")
+        if dict.__len__(original) > MAX_SPEND_SOURCE_COLUMNS:
+            raise ValueError("Spend source column limit exceeded; no report was saved")
         if any(type(field) is not str for field in dict.keys(original)):
             raise ValueError("Spend source field names must be plain text")
-        frozen_records.append(dict(dict.items(original)))
+        # The CSV entry path is byte-capped, but the direct list/dict API
+        # previously allowed giant source/category/unused text fields. Check
+        # every detached native cell and the aggregate UTF-8 budget before
+        # invoking ANY externally supplied parsing or normalization callback.
+        detached = dict(dict.items(original))
+        source_budget.attest(detached)
+        frozen_records.append(detached)
 
     # Validate all frozen source coordinates and required plain-text fields
     # before running ANY external parser callback or yielding ANY row. A late
