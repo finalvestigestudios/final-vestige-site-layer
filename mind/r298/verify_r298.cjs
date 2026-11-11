@@ -106,7 +106,7 @@ function validate(d,options={}){
  }
  for(const s of m.sources){needs(d.guide.includes(s.url)||(["S10","S11","S12","S16","S17","S18","S20"].includes(s.id)),"SOURCE_URL_MISSING_IN_GUIDE_"+s.id);}
  needs(d.dossier.includes("NOT COMPUTABLE")&&d.dossier.includes("mind_pilot_2026_11")&&d.dossier.includes("mind_proposed_2026_11"),"DOSSIER_ATTRIBUTION_AND_REVENUE");
- needs(d.dossier.includes("face-to-face")&&d.dossier.includes("outliers")&&d.dossier.includes("No verified"),"DOSSIER_EVIDENCE_LIMITS");
+ needs(d.dossier.includes("face-to-face")&&d.dossier.includes("outliers")&&d.dossier.includes("HARD_HOLD"),"DOSSIER_EVIDENCE_LIMITS");
  needs(d.dossier.includes("NOT PLAYABLE")&&d.dossier.includes("NO VERIFIED MATCH"),"DOSSIER_MEDIA_HOLD");
  return {pass:true,files:Object.keys(paths).length,sources:m.sources.length,claims:m.claims.length,gates:m.gates.length,negative_cases:negative.length,guide_words:wc};
 }
