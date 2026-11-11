@@ -30,3 +30,7 @@
 @media(max-width:850px){.fv-r281__source-list{grid-template-columns:1fr}}
 @media(forced-colors:active){.fv-r281__source-list li{background:Canvas;color:CanvasText;border-color:CanvasText}.fv-r281__source-list p{color:CanvasText}}
 @media print{.fv-r281__source-list{display:block}.fv-r281__source-list li{background:white!important;break-inside:avoid;margin:1rem 0}.fv-r281__source-list a::after{content:' <' attr(href) '>';display:block;overflow-wrap:anywhere;font-size:.75rem}}
+
+/* R283: real keyboard and native fragment focus must be perceivable. */
+.fv-r281__plate:focus{outline:3px solid var(--gold);outline-offset:3px}
+@media(forced-colors:active){.fv-r281__plate:focus{outline-color:Highlight}}
