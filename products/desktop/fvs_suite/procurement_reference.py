@@ -12,20 +12,42 @@ from collections.abc import Iterable
 
 from .review import ascii_case_identity
 
+_MAX_NATIVE_INT_BITS = 269
+_ERROR = "Procurement document identity must be native text or a bounded integer"
+
+
+def _native_document_text(value: object) -> str:
+    """Forbid caller-defined conversion hooks in source identity evidence.
+
+    Existing numeric import compatibility applies only to native integers.
+    The finite bit cap prevents enormous integer conversion or digit-limit
+    failures; bool, arbitrary objects, and str/int subclasses are not IDs.
+    """
+    if type(value) is str:
+        return value
+    if type(value) is int and value.bit_length() <= _MAX_NATIVE_INT_BITS:
+        return str(value)
+    raise ValueError(_ERROR)
+
 
 def source_document_spellings(documents: Iterable[object]) -> frozenset[str]:
-    """Snapshot original source labels, trimming only boundary whitespace.
+    """Snapshot source labels with only ASCII-case and boundary-space changes.
 
-    The immutable result is deterministic and contains no financial amounts.
-    Preserve the existing permissive ``str`` handling of imported CSV cells.
+    A direct caller cannot forge a reference via an overridden ``__str__``;
+    ordinary CSV text and small native integer cells preserve prior behavior.
+    The immutable result is deterministic, with no financial amounts or paths.
     """
-    return frozenset(ascii_case_identity(str(value).strip()) for value in documents)
+    return frozenset(ascii_case_identity(_native_document_text(value).strip())
+                     for value in documents)
 
 
 def has_original_spelling(reference: object, source_spellings: frozenset[str]) -> bool:
-    """True only when a linked source label is identical up to ASCII case.
+    """True only for a genuine original label, ignoring ASCII case.
 
-    A false result is a *review flag*, not a rejection of a normalized link.
-    The calling engine separately checks that the normalized link exists.
+    Do not invoke untrusted equality hooks in a forged source collection.
+    False means human review, not an automatic compliance or payment decision.
     """
-    return ascii_case_identity(str(reference).strip()) in source_spellings
+    if (type(source_spellings) is not frozenset
+            or any(type(value) is not str for value in source_spellings)):
+        raise ValueError("Procurement original labels must be a plain text snapshot")
+    return ascii_case_identity(_native_document_text(reference).strip()) in source_spellings
