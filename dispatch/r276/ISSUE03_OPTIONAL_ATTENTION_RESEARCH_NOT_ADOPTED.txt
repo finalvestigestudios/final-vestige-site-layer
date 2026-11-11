@@ -1,0 +1,33 @@
+THE DISPATCH — OPTIONAL ISSUE 03 REVIEW ONLY
+STATUS: NOT_ADOPTED / HOLD_UNSENT / HOLD_MERCHANT
+SUBJECT: Three months of training. Twelve minutes of audio.
+PREHEADER: Two attention studies, one seller promise, and a useful test before you pay.
+
+Your attention can fail in a fraction of a second. In a classic laboratory task, people watch a stream of letters with two numbers tucked inside. If the numbers arrive close together, the second is surprisingly easy to miss. Researchers call this the attentional blink.
+
+That effect offers a good way to examine a familiar sales pitch: can a short recording give you the benefits of much longer practice?
+
+In 2007, Slagter and colleagues reported that three months of intensive mental training was associated with a smaller attentional blink and a change in a measured brain response. This was a study of extended training, not a commercial twelve-minute audio.
+
+In 2021, Sharpe, Whalley and Mitchell compared one brief focused-attention session, one brief open-monitoring session, and a relaxation condition. Each group had forty participants. Their study found no evidence of a difference in attentional-blink size among the three groups. Overall target accuracy, however, was higher in the meditation groups than in the relaxation group. Both findings matter; neither proves that any named recording equals an hour of advanced meditation.
+
+Zen12's seller describes an audio program built around shorter sessions. Its current public order page lists twelve levels and forty-eight MP3s. That is package information, not independently established proof that twelve minutes produces hour-equivalent benefits or guarantees better concentration.
+
+Before comparing any paid audio, try a three-day experiment you control. Choose twelve quiet minutes on three different days; pick a simple focus cue; record whether you began, whether interruptions occurred, and whether the routine was manageable. It will not prove a clinical outcome. It can help you decide whether a paid guide is useful for you at all.
+
+If you're still interested in guided audio, ask four questions: What is actually delivered? What supports the specific benefit claimed? What does the final checkout charge today? What does the refund policy actually cover? A visible countdown is not evidence that buying now will help you focus.
+
+PROPOSED SINGLE CTA — NOT LINKED / NOT LIVE:
+Read Final Vestige's independent Zen12 buyer's guide — [APPROVED_MIND_GUIDE_URL_NOT_YET_AUTHENTICATED]
+
+COMMERCIAL DISCLOSURE (DIRECTLY BESIDE CTA): If you purchase through a qualifying link in that guide, Final Vestige may earn a commission. The guide and any earning link must stay inactive until Final Vestige's named affiliate approval, permission for email promotion, approved guide and exact checkout terms are independently verified.
+
+SOURCES AND FURTHER READING (NOT SALES CTAS):
+Slagter et al. 2007, study of three months intensive training: https://pubmed.ncbi.nlm.nih.gov/17488185/
+Sharpe et al. 2021, three-arm 40-per-group brief-session comparison: https://link.springer.com/article/10.1007/s12671-021-01709-2
+Zen12 official current public checkout (not authorized FV earning terms): https://zen12.com/getstarted
+Zen12 official free-audio seller newsletter notice (not FV consent): https://zen12.com/welcome
+
+LEGAL FOOTER HOLD: Final Vestige's valid publisher postal address and a functioning recipient-specific unsubscribed-rendered Jetpack link are NOT VERIFIED. This content cannot be sent until independently verified and founder-approved.
+
+This is an OPTIONAL alternative to Issue 03 in original #175; the original six, four-editorial/two-commercial plan and all existing drafts remain unchanged.
