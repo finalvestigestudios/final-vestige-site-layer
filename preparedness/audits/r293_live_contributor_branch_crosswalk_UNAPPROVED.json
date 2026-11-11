@@ -1,0 +1,98 @@
+{
+  "schema": "fv-preparedness-r293-branch-drift-v1",
+  "captured_on_utc": "2026-11-11T14:16:49Z",
+  "repository": "finalvestigestudios/final-vestige-site-layer",
+  "clusters": {
+    "start": {
+      "branch": "claude/prep-start-bbfeb8",
+      "frozen": "2122d856fce9f64887c16df3d52e64be9f59a55b",
+      "head": "2122d856fce9f64887c16df3d52e64be9f59a55b",
+      "status": "identical",
+      "ahead": 0,
+      "behind": 0,
+      "paths": []
+    },
+    "shelter": {
+      "branch": "claude/prep-shelter-5e1e0e",
+      "frozen": "5daeaf2dd5ab71806a6b73c91edfb1d8df5da976",
+      "head": "5daeaf2dd5ab71806a6b73c91edfb1d8df5da976",
+      "status": "identical",
+      "ahead": 0,
+      "behind": 0,
+      "paths": []
+    },
+    "food": {
+      "branch": "claude/prep-food-ccdc55",
+      "frozen": "e9cd7766dac59d47ab467d8945269b9146c2aef5",
+      "head": "f911ff7a655de8d81535ea86ec3d65a49ee76648",
+      "status": "diverged",
+      "ahead": 1,
+      "behind": 1,
+      "paths": [
+        "preparedness/docs/CLUSTER-food.md",
+        "preparedness/tests/test_preparedness.py"
+      ]
+    },
+    "health": {
+      "branch": "claude/prep-health-837444",
+      "frozen": "d2212d0ca0750817d3929865d3069835980faf20",
+      "head": "d5ef5bafd68361434dd1cc9209915b8e8a4eaf17",
+      "status": "ahead",
+      "ahead": 1,
+      "behind": 0,
+      "paths": [
+        "preparedness/docs/CLUSTER-health.md"
+      ]
+    },
+    "hist-food": {
+      "branch": "claude/prep-hist-food-b81f19",
+      "frozen": "2acf65ca3efa9b4b5db7976f379b9ea693be43a4",
+      "head": "67e116e536c7410bed30f8f3b1bb8c166f3c223d",
+      "status": "ahead",
+      "ahead": 1,
+      "behind": 0,
+      "paths": [
+        "preparedness/content/articles/pemmican-and-dried-meats.body.html",
+        "preparedness/content/articles/pemmican-and-dried-meats.meta.json",
+        "preparedness/content/articles/pioneer-travel-rations.body.html",
+        "preparedness/content/articles/pioneer-travel-rations.meta.json",
+        "preparedness/docs/CLUSTER-hist-food.md",
+        "preparedness/sources/fragments/hist-food.json",
+        "preparedness/tests/test_preparedness.py"
+      ]
+    },
+    "hist-home": {
+      "branch": "claude/prep-hist-home-0e0e38",
+      "frozen": "f654e600f89c321a480dd8f055be4d13d0673490",
+      "head": "7504a5f099594d635e3dd7332a33a2e1346c43a2",
+      "status": "ahead",
+      "ahead": 2,
+      "behind": 0,
+      "paths": [
+        "preparedness/content/articles/pickling-fermentation-old-recipes.body.html",
+        "preparedness/content/articles/pickling-fermentation-old-recipes.meta.json",
+        "preparedness/content/articles/root-cellars-cool-storage.body.html",
+        "preparedness/content/articles/root-cellars-cool-storage.meta.json",
+        "preparedness/content/articles/sanitation-before-germ-theory.body.html",
+        "preparedness/content/articles/sanitation-before-germ-theory.meta.json",
+        "preparedness/docs/CLUSTER-hist-home.md",
+        "preparedness/sources/fragments/hist-home.json"
+      ]
+    },
+    "hist-field": {
+      "branch": "claude/prep-hist-field-9db767",
+      "frozen": "a5ce8a62f168db05c95232e3eb385dccd0d19e7f",
+      "head": "4e5caf812727953aa45e3bda2d382f2c67b6a09c",
+      "status": "ahead",
+      "ahead": 1,
+      "behind": 0,
+      "paths": [
+        "preparedness/content/articles/navigation-before-gps.body.html",
+        "preparedness/content/articles/pioneer-supply-chains-failed.body.html",
+        "preparedness/content/articles/pioneer-supply-chains-failed.meta.json",
+        "preparedness/docs/CLUSTER-hist-field.md",
+        "preparedness/sources/fragments/hist-field.json"
+      ]
+    }
+  }
+}
