@@ -1,0 +1,10 @@
+# Final Vestige Dispatch R278 — provider proof and non-sending commercial QA
+**Status: DRAFT / NO_SEND / NO_DEPLOY / NO_PARTNER_ACTIVATION.** Isolated stacked branch on Dispatch R277 PR #2028, preserving PR #175 six original newsletters and PR #201 gates. All six HOLD; #03/#05 additionally HOLD_MERCHANT. Homepage #49 and Grok/Claude lanes untouched.
+
+This sprint deliberately prioritizes **revenue proof and email eligibility** over yet another speculative newsletter. It adds: (1) timestamped actual WordPress diagnostic and merchant HOLD ledger; (2) pure fail-closed machine evaluator which never certifies provider consent or revenue; (3) executable Node regression tests including forged approval flags, active link insertions, false revenue, and send-default changes; (4) real WordPress "Preview email with sending OFF" read-only operator runbook, consent-count resolution, refund/product source audit, and compliant postal/unsubscribe requirements; (5) existing six-issue source-faithful, one-offer, consent-to-paid-customer funnel plan.
+
+**RUN:** `node dispatch/r278/test_release_gate.cjs` from repo root, Node.js >=18. Tests exercise offline source records only, NOT authentic subscription, payment or deliverability. Invalid evidence is never accepted as send approval. The validator never returns READY, even with a nominally clean source record: only an operator with independent authoritative proof and founder final release approval can decide. Do NOT attempt to 'fix' tests by filling all flags true; that is explicitly tested as unacceptable.
+
+Reference: [Issue #174](https://github.com/finalvestigestudios/final-vestige-site-layer/issues/174) · [Mind #171](https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171) · [Focus #129](https://github.com/finalvestigestudios/final-vestige-site-layer/issues/129) · [Business #820](https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820).
+
+**No email sent; no WordPress posts/settings/subscribers changed; no affiliate links activated; no platform added; no metrics claimed.**
