@@ -1,0 +1,567 @@
+{
+  "version": "R288",
+  "research_date": "2026-11-10 PT",
+  "parent_sha": "22ccbb52191aa284ea876bdb9749b7a09da47c5d",
+  "publication_status": "UNPUBLISHED",
+  "commercial_status": "HARD_HOLD",
+  "canonical_presell": "mind/r284/ZEN12-BUYER-GUIDE-A-TEXT-ONLY-UNPUBLISHED.html + mind/r284/ZEN12-BUYER-GUIDE-B-FILM-STORYBOARD-UNPUBLISHED.html (inherited, do not create duplicate)",
+  "sources": [
+    {
+      "id": "warren1970",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/5409744/",
+      "type": "PRIMARY_SCIENCE",
+      "boundary": "Original 1970 masking-vs-silence speech restoration claim."
+    },
+    {
+      "id": "samuel1981",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/6457110/",
+      "type": "PRIMARY_SCIENCE",
+      "boundary": "Acoustic class and replacement matter alongside expectations."
+    },
+    {
+      "id": "shahin2009",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/19275331/",
+      "type": "PRIMARY_SCIENCE",
+      "boundary": "Congruent mouth movements enhanced restoration of longer missing spans."
+    },
+    {
+      "id": "leonard2016",
+      "url": "https://www.nature.com/articles/ncomms13619",
+      "type": "PRIMARY_SCIENCE",
+      "boundary": "Direct cortical recordings under specific experimental conditions."
+    },
+    {
+      "id": "riecke2009",
+      "url": "https://doi.org/10.1016/j.neuron.2009.10.016",
+      "type": "PRIMARY_SCIENCE",
+      "boundary": "Illusory tone continuity, distinct from speech."
+    },
+    {
+      "id": "inspire3",
+      "url": "https://inspire3.com/",
+      "type": "OFFICIAL_CATALOG",
+      "boundary": "Describes product families; unsubstantiated promotional efficacy language."
+    },
+    {
+      "id": "affiliates_public",
+      "url": "https://affiliates.inspire3.com/",
+      "type": "OFFICIAL_PUBLIC_PROGRAM",
+      "boundary": "Public invitation and broad advertised compensation; does not confer publisher-specific authorization. No rates stated in FV content."
+    },
+    {
+      "id": "zen12_home",
+      "url": "https://zen12.com/",
+      "type": "OFFICIAL_PRODUCT",
+      "boundary": "Twelve-minute audio and equivalence claims are seller claims."
+    },
+    {
+      "id": "zen12_order",
+      "url": "https://zen12.com/getstarted",
+      "type": "OFFICIAL_OFFER",
+      "boundary": "Visible 12-level, 48-MP3 bundle; form/price can change and are not authenticated paid-order conditions."
+    },
+    {
+      "id": "zen12_free",
+      "url": "https://zen12.com/welcome",
+      "type": "OFFICIAL_OPT_IN",
+      "boundary": "Free MP3 invitation expressly discloses merchant newsletter."
+    },
+    {
+      "id": "focus_shot",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "type": "OFFICIAL_PRODUCT",
+      "boundary": "15/30-minute MP3 recordings; concentration claims not independently established."
+    },
+    {
+      "id": "brainwave_faq",
+      "url": "https://brainwaveshots.com/faq",
+      "type": "OFFICIAL_POLICY",
+      "boundary": "One refund/6 months; for >10 items, less than half downloaded. Also cautions about wakefulness/epilepsy."
+    },
+    {
+      "id": "hypnosis_catalog",
+      "url": "https://hypnosislive.com/",
+      "type": "OFFICIAL_PRODUCT_CATALOG",
+      "boundary": "Guided suggestion offerings, seller benefits not established by our sources."
+    },
+    {
+      "id": "hypnosis_faq",
+      "url": "https://hypnosislive.com/faq",
+      "type": "OFFICIAL_POLICY",
+      "boundary": "Seller describes 14-day period and five-sessions-per-year restriction."
+    },
+    {
+      "id": "ftc_endorsement",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "type": "REGULATORY",
+      "boundary": "Clear and conspicuous close-to-recommendation material connection disclosure."
+    },
+    {
+      "id": "ftc_health",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "type": "REGULATORY",
+      "boundary": "Objective health/mental-benefit claims require suitable product-specific substantiation."
+    },
+    {
+      "id": "fv_library",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "type": "FV_LIVE_ROUTE",
+      "boundary": "Historical Puységur primary-source investigation."
+    },
+    {
+      "id": "fv_focus",
+      "url": "https://finalvestige.com/focus/",
+      "type": "FV_LIVE_ROUTE",
+      "boundary": "Existing 52-page lead magnet and single Dispatch signup."
+    },
+    {
+      "id": "fv_journal",
+      "url": "https://finalvestige.com/blog/",
+      "type": "FV_LIVE_ROUTE",
+      "boundary": "66 indexed investigations observed Nov 10; not live inventory mutation."
+    },
+    {
+      "id": "fv_dispatch",
+      "url": "https://finalvestige.com/dispatch/",
+      "type": "FV_LIVE_ROUTE",
+      "boundary": "Existing single-list Dispatch; do not replace welcome or create forms."
+    }
+  ],
+  "claims": [
+    {
+      "id": "R01",
+      "statement": "Warren's cough/tone replacement can yield reported missing phoneme; silence differs",
+      "source_id": "warren1970",
+      "decision": "ALLOW_CONTROLLED_FINDING",
+      "scope": "EDITORIAL_ONLY",
+      "sales_eligibility": "NOT_COMMERCIAL_AUTHORIZATION"
+    },
+    {
+      "id": "R02",
+      "statement": "Phonemic restoration depends partly on replacement acoustics and phoneme class",
+      "source_id": "samuel1981",
+      "decision": "ALLOW_CONTROLLED_FINDING",
+      "scope": "EDITORIAL_ONLY",
+      "sales_eligibility": "NOT_COMMERCIAL_AUTHORIZATION"
+    },
+    {
+      "id": "R03",
+      "statement": "Congruent lip movements increase reported continuity for certain removed sections",
+      "source_id": "shahin2009",
+      "decision": "ALLOW_CONTROLLED_FINDING",
+      "scope": "EDITORIAL_ONLY",
+      "sales_eligibility": "NOT_COMMERCIAL_AUTHORIZATION"
+    },
+    {
+      "id": "R04",
+      "statement": "Neural activity in controlled speech task correlates with restoration",
+      "source_id": "leonard2016",
+      "decision": "ALLOW_LIMITED_INTERPRETATION",
+      "scope": "EDITORIAL_ONLY",
+      "sales_eligibility": "NOT_COMMERCIAL_AUTHORIZATION"
+    },
+    {
+      "id": "R05",
+      "statement": "Illusory continuity of tones differs from replacement of speech phonemes",
+      "source_id": "riecke2009",
+      "decision": "ALLOW_CONTEXT",
+      "scope": "EDITORIAL_ONLY",
+      "sales_eligibility": "NOT_COMMERCIAL_AUTHORIZATION"
+    },
+    {
+      "id": "R06",
+      "statement": "Everyone reconstructs all missing speech perfectly",
+      "source_id": "warren1970",
+      "decision": "REJECT_GENERALIZATION",
+      "scope": "EDITORIAL_ONLY",
+      "sales_eligibility": "BLOCK"
+    },
+    {
+      "id": "R07",
+      "statement": "Phonemic restoration proves commercial meditation programs create focus",
+      "source_id": "leonard2016",
+      "decision": "REJECT_UNRELATED_EFFICACY",
+      "scope": "EDITORIAL_ONLY",
+      "sales_eligibility": "BLOCK"
+    },
+    {
+      "id": "R08",
+      "statement": "Zen12 official homepage advertises an hour in twelve minutes",
+      "source_id": "zen12_home",
+      "decision": "SELLER_CLAIM_ONLY",
+      "scope": "EDITORIAL_ONLY",
+      "sales_eligibility": "BLOCK"
+    },
+    {
+      "id": "R09",
+      "statement": "Zen12 paid checkout advertises 12 levels / 48 MP3s",
+      "source_id": "zen12_order",
+      "decision": "ALLOW_SELLER_FORMAT_ONLY",
+      "scope": "EDITORIAL_ONLY",
+      "sales_eligibility": "NOT_COMMERCIAL_AUTHORIZATION"
+    },
+    {
+      "id": "R10",
+      "statement": "Zen12 single session produces clinically proven hour-equivalent outcome",
+      "source_id": "zen12_home",
+      "decision": "REJECT_UNSUPPORTED_PRODUCT_EFFICACY",
+      "scope": "EDITORIAL_ONLY",
+      "sales_eligibility": "BLOCK"
+    },
+    {
+      "id": "R11",
+      "statement": "Zen12 free audio invitation involves seller newsletter",
+      "source_id": "zen12_free",
+      "decision": "ALLOW_SELLER_OPT_IN_CONDITION",
+      "scope": "EDITORIAL_ONLY",
+      "sales_eligibility": "NOT_COMMERCIAL_AUTHORIZATION"
+    },
+    {
+      "id": "R12",
+      "statement": "Brainwave Shots Focus Shot provides 15 and 30 minute MP3 audios",
+      "source_id": "focus_shot",
+      "decision": "ALLOW_SELLER_FORMAT_ONLY",
+      "scope": "EDITORIAL_ONLY",
+      "sales_eligibility": "NOT_COMMERCIAL_AUTHORIZATION"
+    },
+    {
+      "id": "R13",
+      "statement": "Brainwave Shots auditory frequencies guarantee focus lasting hours",
+      "source_id": "focus_shot",
+      "decision": "REJECT_UNSUPPORTED_PRODUCT_EFFICACY",
+      "scope": "EDITORIAL_ONLY",
+      "sales_eligibility": "BLOCK"
+    },
+    {
+      "id": "R14",
+      "statement": "Brainwave Shots refunds restricted one per 6mo and downloads for orders >10 items",
+      "source_id": "brainwave_faq",
+      "decision": "ALLOW_SELLER_POLICY_ONLY",
+      "scope": "EDITORIAL_ONLY",
+      "sales_eligibility": "NOT_COMMERCIAL_AUTHORIZATION"
+    },
+    {
+      "id": "R15",
+      "statement": "Brainwave Shots cautions against epilepsy use and wakefulness-critical situations",
+      "source_id": "brainwave_faq",
+      "decision": "ALLOW_SELLER_CAUTION_NOT_MEDICAL_VALIDATION",
+      "scope": "EDITORIAL_ONLY",
+      "sales_eligibility": "NOT_COMMERCIAL_AUTHORIZATION"
+    },
+    {
+      "id": "R16",
+      "statement": "Hypnosis Live catalog offers commercial guided recordings",
+      "source_id": "hypnosis_catalog",
+      "decision": "ALLOW_SELLER_FORMAT_ONLY",
+      "scope": "EDITORIAL_ONLY",
+      "sales_eligibility": "NOT_COMMERCIAL_AUTHORIZATION"
+    },
+    {
+      "id": "R17",
+      "statement": "Hypnosis Live refunds described as 14-day and at most five sessions/year",
+      "source_id": "hypnosis_faq",
+      "decision": "ALLOW_SELLER_POLICY_ONLY",
+      "scope": "EDITORIAL_ONLY",
+      "sales_eligibility": "NOT_COMMERCIAL_AUTHORIZATION"
+    },
+    {
+      "id": "R18",
+      "statement": "An official public affiliate signup proves FV has been accepted",
+      "source_id": "affiliates_public",
+      "decision": "REJECT_ACCOUNT_APPROVAL_INFERENCE",
+      "scope": "EDITORIAL_ONLY",
+      "sales_eligibility": "BLOCK"
+    },
+    {
+      "id": "R19",
+      "statement": "Specific commissions/prices/earning URLs are established for FV",
+      "source_id": "affiliates_public",
+      "decision": "REJECT_UNVERIFIED_ACCOUNT_TERMS",
+      "scope": "EDITORIAL_ONLY",
+      "sales_eligibility": "BLOCK"
+    },
+    {
+      "id": "R20",
+      "statement": "Affiliate material connections need nearby plain-language disclosure",
+      "source_id": "ftc_endorsement",
+      "decision": "ALLOW_REGULATORY_STANDARD",
+      "scope": "EDITORIAL_ONLY",
+      "sales_eligibility": "NOT_COMMERCIAL_AUTHORIZATION"
+    },
+    {
+      "id": "R21",
+      "statement": "General neuroscience demonstrates particular commercial audio benefits",
+      "source_id": "ftc_health",
+      "decision": "REJECT_PRODUCT_SUBSTANTIATION_INFERENCE",
+      "scope": "EDITORIAL_ONLY",
+      "sales_eligibility": "BLOCK"
+    },
+    {
+      "id": "R22",
+      "statement": "FV Focus Fieldbook is existing single subscription pathway",
+      "source_id": "fv_focus",
+      "decision": "ALLOW_CURRENT_FV_ROUTE",
+      "scope": "EDITORIAL_ONLY",
+      "sales_eligibility": "NOT_COMMERCIAL_AUTHORIZATION"
+    },
+    {
+      "id": "R23",
+      "statement": "Puységur archive proves animal magnetism cures",
+      "source_id": "fv_library",
+      "decision": "REJECT_HISTORICAL_EFFICACY_INFERENCE",
+      "scope": "EDITORIAL_ONLY",
+      "sales_eligibility": "BLOCK"
+    },
+    {
+      "id": "R24",
+      "statement": "Grok topic concept maps are authenticated media assets",
+      "source_id": "fv_journal",
+      "decision": "REJECT_NO_VERIFIED_GROK_IDS",
+      "scope": "EDITORIAL_ONLY",
+      "sales_eligibility": "BLOCK"
+    }
+  ],
+  "offers": [
+    {
+      "id": "zen12",
+      "official_product": "https://zen12.com/",
+      "exact_offer": "https://zen12.com/getstarted",
+      "buyer": "adult who wants short structured downloadable meditation audio",
+      "seller_deliverable": "12 levels / 48 MP3s; seller order page includes accompanying guides",
+      "verified_checkout_price": null,
+      "actual_fulfillment_verified": false,
+      "approved_affiliate_earning_url": null,
+      "partner_accepted": false,
+      "cta_state": "DISABLED"
+    },
+    {
+      "id": "hypnosis_live",
+      "official_product": "https://hypnosislive.com/",
+      "buyer": "adult researching narrated self-hypnosis",
+      "exact_offer_verified": false,
+      "claimed_focus_effects": "SELLER_ONLY",
+      "approved_affiliate_earning_url": null,
+      "cta_state": "DISABLED"
+    },
+    {
+      "id": "brainwave_focus",
+      "official_product": "https://brainwaveshots.com/focus-shot",
+      "buyer": "adult researching short non-voice brainwave sound recordings",
+      "seller_deliverable": "15 + 30 minute MP3s",
+      "claimed_focus_effects": "SELLER_ONLY",
+      "referral_link": null,
+      "cta_state": "DISABLED"
+    },
+    {
+      "id": "fv_focus",
+      "official_product": "https://finalvestige.com/focus/",
+      "buyer": "reader who needs practical free routine rather than paid library",
+      "price": "FREE",
+      "email_list": "EXISTING_JETPACK_DISPATCH_ONLY",
+      "cta_state": "EXISTING_PUBLIC_NONCOMMERCIAL_ROUTE"
+    },
+    {
+      "id": "fv_paid_mind_product_fallback",
+      "sku": null,
+      "payhip_listing_verified": false,
+      "rights_cleared": false,
+      "price": null,
+      "checkout_verified": false,
+      "cta_state": "DISABLED"
+    }
+  ],
+  "creator_routes": [
+    {
+      "topic": "change_blindness",
+      "hook": "Why the biggest change can go unnoticed",
+      "article": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "free": "https://finalvestige.com/focus/",
+      "relevant_offer": "zen12",
+      "grok_asset_id": null,
+      "media_url": null,
+      "owner": "PRAXXIS_GROK",
+      "proof": "TOPIC_MAPPING_ONLY"
+    },
+    {
+      "topic": "mesmerism_puysegur",
+      "hook": "The experiment that exposed invisible influence",
+      "article": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "historical_archive": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "free": "https://finalvestige.com/focus/",
+      "relevant_offer": "hypnosis_live",
+      "grok_asset_id": null,
+      "media_url": null,
+      "owner": "PRAXXIS_GROK",
+      "proof": "TOPIC_MAPPING_ONLY"
+    },
+    {
+      "topic": "phonemic_restoration",
+      "hook": "The syllable never reached your ears",
+      "article": "mind/r288/THE-SYLLABLE-THAT-WAS-NOT-THERE-UNPUBLISHED.md",
+      "free": "https://finalvestige.com/focus/",
+      "relevant_offer": "zen12",
+      "grok_asset_id": null,
+      "media_url": null,
+      "owner": "PRAXXIS_GROK",
+      "proof": "NOT_PUBLISHED_NOT_POSTED"
+    }
+  ],
+  "commercial_gates": [
+    {
+      "id": "merchant_account_acceptance",
+      "state": "HARD_HOLD",
+      "verified_proof": null,
+      "approval_reference": null
+    },
+    {
+      "id": "merchant_identity_matches_fv",
+      "state": "HARD_HOLD",
+      "verified_proof": null,
+      "approval_reference": null
+    },
+    {
+      "id": "affiliate_terms_current",
+      "state": "HARD_HOLD",
+      "verified_proof": null,
+      "approval_reference": null
+    },
+    {
+      "id": "permitted_traffic_channels",
+      "state": "HARD_HOLD",
+      "verified_proof": null,
+      "approval_reference": null
+    },
+    {
+      "id": "approved_presell_placement",
+      "state": "HARD_HOLD",
+      "verified_proof": null,
+      "approval_reference": null
+    },
+    {
+      "id": "issued_earning_url",
+      "state": "HARD_HOLD",
+      "verified_proof": null,
+      "approval_reference": null
+    },
+    {
+      "id": "test_tracking_accepted",
+      "state": "HARD_HOLD",
+      "verified_proof": null,
+      "approval_reference": null
+    },
+    {
+      "id": "offer_route_exact",
+      "state": "HARD_HOLD",
+      "verified_proof": null,
+      "approval_reference": null
+    },
+    {
+      "id": "checkout_price_and_charges",
+      "state": "HARD_HOLD",
+      "verified_proof": null,
+      "approval_reference": null
+    },
+    {
+      "id": "returns_eligibility_restrictions",
+      "state": "HARD_HOLD",
+      "verified_proof": null,
+      "approval_reference": null
+    },
+    {
+      "id": "seller_creative_rights",
+      "state": "HARD_HOLD",
+      "verified_proof": null,
+      "approval_reference": null
+    },
+    {
+      "id": "original_video_media_rights",
+      "state": "HARD_HOLD",
+      "verified_proof": null,
+      "approval_reference": null
+    },
+    {
+      "id": "product_specific_claims_review",
+      "state": "HARD_HOLD",
+      "verified_proof": null,
+      "approval_reference": null
+    },
+    {
+      "id": "adjacent_disclosure_qa",
+      "state": "HARD_HOLD",
+      "verified_proof": null,
+      "approval_reference": null
+    },
+    {
+      "id": "browser_mobile_accessibility",
+      "state": "HARD_HOLD",
+      "verified_proof": null,
+      "approval_reference": null
+    },
+    {
+      "id": "conversion_reporting_access",
+      "state": "HARD_HOLD",
+      "verified_proof": null,
+      "approval_reference": null
+    },
+    {
+      "id": "founder_live_release_approval",
+      "state": "HARD_HOLD",
+      "verified_proof": null,
+      "approval_reference": null
+    },
+    {
+      "id": "founder_commercial_activation_approval",
+      "state": "HARD_HOLD",
+      "verified_proof": null,
+      "approval_reference": null
+    }
+  ],
+  "measurement": {
+    "campaign_landing": "DRAFT_EVENT_CONTRACT_ONLY",
+    "first_party_param_names": [
+      "utm_source",
+      "utm_medium",
+      "utm_campaign",
+      "utm_content"
+    ],
+    "affiliate_click_event": "NOT_IMPLEMENTED",
+    "qualified_human_sessions": null,
+    "landing_visits": null,
+    "cta_clicks": null,
+    "confirmed_subscribers": null,
+    "verified_paid_orders": null,
+    "verified_paid_affiliate_conversions": null,
+    "gross_revenue": null,
+    "refunds": null,
+    "fees": null,
+    "settled_net_revenue": null,
+    "net_revenue_per_1000_qualified_human_sessions": null,
+    "cohorts_days": [
+      7,
+      30
+    ],
+    "identifiable_data_collection": false,
+    "privacy_rule": "aggregate only; reuse existing consented measurement; no duplicate script and no raw IP/email",
+    "unknown_rule": "NOT_COMPUTABLE_NOT_ZERO"
+  },
+  "experiments": {
+    "variant_a": "INHERITED_CANONICAL_TEXT",
+    "variant_b": "INHERITED_CANONICAL_STATIC_STORYBOARD_NOT_PLAYABLE",
+    "variant_b_media_status": "NOT_RENDERED_NOT_HOSTED",
+    "hypothesis": "Optional short playable video may change verified paid purchase rate; not yet testable or proven",
+    "randomization": "NOT_LIVE",
+    "paid_outcomes_measured": false
+  },
+  "release_controls": {
+    "wordpress_cms_writes": false,
+    "homepage_pr_49_edits": false,
+    "canonical_hub_pr_172_edits": false,
+    "issue150_owned_edits": false,
+    "merchant_links_active": false,
+    "email_sends": false,
+    "social_posts": false,
+    "merge": false,
+    "deploy": false,
+    "spending": false
+  }
+}
