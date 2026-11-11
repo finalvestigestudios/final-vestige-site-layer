@@ -1,5 +1,5 @@
 {
-  "schema": "fv-11-source-native-geometry-guard-v1",
+  "schema": "fv-11-source-rendered-geometry-guard-v2",
   "generated_date_utc": "2026-11-11",
   "status": "SOURCE_VERIFIED_NOT_BROWSER_MEASURED",
   "sources": {
@@ -7,7 +7,7 @@
     "wp_media_blob": "5e474e1cb293353b2226d84fceedca0a182894d8",
     "media_recovery_draft_pr": 1703,
     "qa_collector_pr": 154,
-    "previous_gate_blob": "ed8f6f4bf7a33c9fa2fbcd9c921657592a8c3c54"
+    "previous_gate_blob": "3928a6275597af61b18f1d329265e4598400ef2a"
   },
   "cohorts": {
     "historical_61_posts": {
@@ -29,8 +29,19 @@
     "maximum_original_aspect_ratio_relative_drift": 0.025,
     "requires_identical_intrinsic_dimensions_for_same_source_pair": true,
     "recorded_frozen_original_meta": true,
-    "scope": "11 published oversized-image positions only; not all site images",
-    "rights_or_copyright_clearance_conferred": false
+    "scope": "11 frozen oversized image positions in eight articles; NOT all images, sitewide transfer or rights clearance",
+    "rights_or_copyright_clearance_conferred": false,
+    "required_painted_geometry": [
+      "rendered_css_width",
+      "rendered_css_height",
+      "object_fit",
+      "fully_visible_in_capture"
+    ],
+    "rendered_geometry_requires_full_frame_aspect_tolerance": 0.025,
+    "requires_intrinsic_css_pixels_at_least_painted_css_pixels": true,
+    "requires_identical_css_painted_geometry_and_object_fit_before_after": true,
+    "rejects_object_fit_cover_and_none": true,
+    "native_image_quality_not_proven_without_browser": true
   },
   "rows": [
     {
@@ -284,9 +295,9 @@
     "measured_76_percent_reduction": null
   },
   "test_result": {
-    "isolated_v8_cases_passed": 39,
-    "isolated_v8_cases_total": 39,
-    "old_cases": 29,
+    "isolated_v8_cases_passed": 49,
+    "isolated_v8_cases_total": 49,
+    "old_cases": 39,
     "new_cases": 10,
     "native_node_ci_run": false,
     "logged_out_chrome_run": false
@@ -298,5 +309,42 @@
     "homepage_changes": false,
     "deployments": false,
     "subscription_spend_usd": 0
+  },
+  "evidence": {
+    "prior_gate_synthetic_failing_case": {
+      "post_id": 621,
+      "slots": [
+        "621:0",
+        "621:1"
+      ],
+      "original_native_pixels": [
+        [
+          4000,
+          3000
+        ],
+        [
+          5667,
+          3831
+        ]
+      ],
+      "synthetic_intrinsic_width_px": 120,
+      "synthetic_rendered_width_css_px": 320,
+      "claimed_synthetic_reduction_percent": 76,
+      "old_gate_status": "VERIFIED_PINNED_OVERSIZE_SLOTS_COLD_PAIR",
+      "new_gate_status": "HOLD",
+      "new_gate_reason": "IMAGE_RENDERED_SIZE_OR_FIT_UNVERIFIED",
+      "real_visitor_failure_observed": false
+    },
+    "capture_source": "Site QA #154 collector ONLY; new geometry fields requested, no collector created",
+    "existing_siteQA_guest_browser_results_received": 0,
+    "unchanged_priority_6": [
+      "285:5",
+      "285:2",
+      "287:5",
+      "418:1",
+      "418:2",
+      "407:1"
+    ],
+    "cold_browser_validated": false
   }
 }
