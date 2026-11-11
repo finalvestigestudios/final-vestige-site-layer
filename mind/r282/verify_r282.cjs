@@ -130,7 +130,7 @@ function runSelfTest(f){
  flip('matrix','"publisher_earning_url": null','"publisher_earning_url": "https://zen12.com/aff"');
  flip('matrix','"status": "HARD_HOLD"','"status": "LIVE"');
  flip('hub','may earn a commission','independent advertising');
- flip('hub','fv-r282-perception','fv-r282-missing');
+ flip('hub','class="fv-mind-r282"','class="fv-missing"');
  flip('hub','<section class="fv-mind-r282"','<script>alert(1)</script><section class="fv-mind-r282"');
  let passed=0;
  for(const m of mutations){if(!f[m.key].includes(m.from))throw Error('BAD MUTATION FIXTURE '+m.key+': '+m.from);
