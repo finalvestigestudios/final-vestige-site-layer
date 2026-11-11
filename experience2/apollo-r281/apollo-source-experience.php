@@ -14,7 +14,7 @@ const FV_R281_FREE = 'https://finalvestige.com/2026/08/20/the-hatch-opened-inwar
 const FV_R281_STYLE = 'fv-apollo-evidence-r281';
 // Staging-only digest of corrected chronology, pending independent historical editorial
 // approval. It detects accidental data drift; it does not certify publication.
-const FV_R287_STAGING_EVENTS_SHA256 = '27821100c9fef91f1f2bbefa22b8c9f4ab05454b1e4af286b59a8a175fcde9fa';
+const FV_R287_STAGING_EVENTS_SHA256 = '2a473986ed2e9c8ca98d19fb5ce0d32fea62d060d9dadcd2fa4613167eba36ef';
 
 
 // R288: discrepancy custody. NASA's original Review Board narrative says that
@@ -50,6 +50,47 @@ function fv_r288_reconciliation_valid(array $items): bool {
     return is_string($encoded) && hash_equals(FV_R288_RECONCILIATION_SHA256, hash('sha256', $encoded));
 }
 
+
+// R289: more exact document custody, not new independent witness evidence.
+// The Board's own proceedings mention a January 28 memorandum being received
+// January 31. Its narrative also cites February 3 written confirmation.
+// Dates refer to distinct DOCUMENTARY ACTIONS, not a silently chosen "formation".
+const FV_R289_AUTHORITY_LEDGER_SHA256 = '29ecbb11dd75eea3aa7a584c53036b0496e05cf351a35a197b3e4f759d094558';
+function fv_r289_authority_ledger(): array {
+    return [
+        ['date'=>'1967-01-27','label'=>'January 27 · oral authority',
+         'finding'=>'The Board narrative dates its establishment to January 27, initiated by the Deputy Administrator through oral instructions.',
+         'boundary'=>'This is the Board\'s account of its authority, not an independently witnessed appointment.',
+         'source'=>'Original Review Board narrative', 'url'=>FV_R288_BOARD_NARRATIVE],
+        ['date'=>'1967-01-28','label'=>'January 28 · board convenes',
+         'finding'=>'The Board assembled and met at Kennedy Space Center, then inspected Launch Complex 34.',
+         'boundary'=>'A first meeting and site visit do not by themselves settle the date a board was authorized.',
+         'source'=>'1967 Review Board proceedings', 'url'=>FV_R287_NASA_PROCEEDINGS],
+        ['date'=>'1967-01-31','label'=>'January 31 · dated memorandum received',
+         'finding'=>'The proceedings record that the chairman received and distributed a memorandum dated January 28 that established the Review Board.',
+         'boundary'=>'The memorandum\'s date and the date it was received are different; this is the Board\'s own proceedings.',
+         'source'=>'1967 Review Board proceedings', 'url'=>FV_R287_NASA_PROCEEDINGS],
+        ['date'=>'1967-02-03','label'=>'February 3 · written confirmation',
+         'finding'=>'The Board narrative describes written confirmation of its authority on February 3.',
+         'boundary'=>'Later written confirmation is not evidence that the Board did not operate before February 3.',
+         'source'=>'Original Review Board narrative', 'url'=>FV_R288_BOARD_NARRATIVE],
+    ];
+}
+function fv_r289_authority_ledger_valid(array $items): bool {
+    if (count($items)!==4 || array_keys($items)!==[0,1,2,3]) { return false; }
+    $dates=['1967-01-27','1967-01-28','1967-01-31','1967-02-03'];
+    $links=[FV_R288_BOARD_NARRATIVE,FV_R287_NASA_PROCEEDINGS,FV_R287_NASA_PROCEEDINGS,FV_R288_BOARD_NARRATIVE];
+    foreach ($items as $i=>$item) {
+        if (array_keys($item)!==['date','label','finding','boundary','source','url'] ||
+            $item['date']!==$dates[$i] || $item['url']!==$links[$i]) { return false; }
+        foreach (['label','finding','boundary','source'] as $key) {
+            if (!is_string($item[$key]) || trim($item[$key])==='') { return false; }
+        }
+    }
+    $encoded=json_encode($items,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return is_string($encoded) && hash_equals(FV_R289_AUTHORITY_LEDGER_SHA256,hash('sha256',$encoded));
+}
+
 /** Immutable, curated chronology. All dates/claims have named official NASA sources. */
 function fv_r281_events(): array {
     return [
@@ -60,7 +101,7 @@ function fv_r281_events(): array {
          'source_type'=>'Later institutional mission summary', 'source_dependency'=>'A NASA retrospective, not a separate firsthand witness record.'],
         ['date'=>'1967-01-28','when'=>'January 28, 1967', 'title'=>'The Board convenes at Kennedy',
          'statement'=>'The Apollo 204 Review Board convened at Kennedy Space Center on January 28, 1967, then visited Launch Complex 34 after its initial general session.',
-         'boundary'=>'This is the date of the Board meeting and site visit, not its establishment. NASA records that the Board was established on January 27. Neither date identifies the ignition source.',
+         'boundary'=>'This is the date of the Board meeting and site visit, not its establishment. The Board\'s own narrative dates oral authority to January 27, while a later NASA safety summary uses January 28 for establishment. Neither establishes an ignition source.',
          'source_id'=>'nasa_proceedings', 'source_name'=>'NASA Apollo 204 Review Board proceedings', 'source_url'=>FV_R287_NASA_PROCEEDINGS,
          'source_type'=>'1967 investigative primary proceedings', 'source_dependency'=>'The Board proceedings are part of its own investigation, not an independent eyewitness account.'],
         ['date'=>'1967-04','when'=>'April 1967', 'title'=>'The Review Board reports',
@@ -171,7 +212,8 @@ function fv_r281_preflight(): void {
 function fv_r281_render($attributes = []): string {
     $records=fv_r281_events();
     $date_reconciliation=fv_r288_source_reconciliation();
-    if (!fv_r281_valid_records($records) || !fv_r288_reconciliation_valid($date_reconciliation)) {
+    $authority_ledger=fv_r289_authority_ledger();
+    if (!fv_r281_valid_records($records) || !fv_r288_reconciliation_valid($date_reconciliation) || !fv_r289_authority_ledger_valid($authority_ledger)) {
         return '<aside aria-label="Apollo source fallback"><p>Evidence experience unavailable.</p><a href="'.FV_R281_NASA_BOARD.'">Read the NASA Review Board report</a> · <a href="'.FV_R281_FREE.'">Read the free Apollo investigation</a></aside>';
     }
     static $sequence=0, $linked=false;
@@ -204,7 +246,14 @@ function fv_r281_render($attributes = []): string {
     // direct official NASA destinations, with clear source-dependency labels.
     $s.='</ol><aside class="fv-r281__reconciliation" aria-label="NASA source date reconciliation" data-fv-date-review="editorial-review-pending"><h3>Why NASA sources give different establishment dates</h3>';
     $s.='<p><strong>Unresolved source distinction:</strong> The Apollo 204 Review Board narrative dates its original oral authorization to January 27, 1967. A later NASA safety summary describes the Board as established on January 28. Both place its first Kennedy meeting on January 28. We preserve that distinction instead of calling two institutional descriptions independent corroboration.</p>';
-    $s.='<ul class="fv-r281__reconciliation-list">';
+    $s.='<h4>Document custody: four different dated actions</h4><p>These dates describe the Board\'s authority, meeting, memorandum and later confirmation. Its own 1967 narrative and proceedings are parts of the same investigation, not independent eyewitness corroboration.</p>';
+    $s.='<ol class="fv-r281__authority-ledger" aria-label="Board authority document chronology">';
+    foreach ($authority_ledger as $entry) {
+        $s.='<li><p class="fv-r281__authority-date"><time datetime="'.fv_r281_escape($entry['date']).'">'.fv_r281_escape($entry['label']).'</time></p>';
+        $s.='<p>'.fv_r281_escape($entry['finding']).'</p><p class="fv-r281__authority-boundary"><strong>Limit:</strong> '.fv_r281_escape($entry['boundary']).'</p>';
+        $s.='<p><a href="'.fv_r281_escape($entry['url']).'" rel="noopener noreferrer">Inspect '.fv_r281_escape($entry['source']).' at NASA</a></p></li>';
+    }
+    $s.='</ol><ul class="fv-r281__reconciliation-list">';
     foreach ($date_reconciliation as $source) {
         $s.='<li><strong>'.fv_r281_escape($source['authority']).'</strong><p>'.fv_r281_escape($source['statement']).'</p>';
         $s.='<p class="fv-r281__reconciliation-boundary">Source boundary: '.fv_r281_escape($source['boundary']).'</p>';
