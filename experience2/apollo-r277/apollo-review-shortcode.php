@@ -85,15 +85,47 @@ function fv_r277_source_fallback(): string {
         . '<p><a href="https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/">Free Apollo 1 investigation</a></p></aside>';
 }
 
+/**
+ * Verify minimal exact-origin custody anchors from the sibling renderer.
+ * This detects accidentally incomplete or mismatched staging installs. It is NOT
+ * authorization to mark an editorial review complete or a substitute for a
+ * security review of code installed with WordPress plugin privileges.
+ */
+function fv_r277_has_source_custody($html): bool {
+    if (!is_string($html) || trim($html) === '' || strlen($html) > 1000000) { return false; }
+    $nasa = 'https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/';
+    $free = 'https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/';
+    return str_contains($html, 'data-fv-review-ready="false"')
+        && str_contains($html, '<aside class="fv-r273"')
+        && substr_count($html, 'href="' . $nasa . '"') === 2
+        && substr_count($html, 'href="' . $free . '"') === 1
+        // Three and only three source/next-action anchors belong in this pinned panel.
+        && substr_count($html, '<a ') === 3
+        && stripos($html, '<script') === false
+        && stripos($html, '<iframe') === false;
+}
+
 function fv_r277_render_shortcode($attributes = [], $unused_content = null): string {
     $source = __DIR__ . '/../apollo-r273/review-custody.php';
     if (!is_readable($source)) { return fv_r277_source_fallback(); }
-    // A damaged/partial sibling can throw ParseError or another Throwable.
-    // Never disclose server paths or replace readable evidence with blank output.
-    try { require_once $source; }
-    catch (\Throwable $error) { return fv_r277_source_fallback(); }
-    if (!function_exists('fv_ex2_r273_review_panel')) { return fv_r277_source_fallback(); }
-    $html = fv_ex2_r273_review_panel([]); // Never trust client/user-controlled approval metadata.
+    // A sibling may throw during include OR later when its renderer executes.
+    // Also discard accidental echo/warning output from a damaged PHP sibling:
+    // a WordPress shortcode must return its HTML instead of writing to output.
+    $html = null;
+    $output_level = ob_get_level();
+    ob_start();
+    try {
+        require_once $source;
+        if (function_exists('fv_ex2_r273_review_panel')) {
+            $html = fv_ex2_r273_review_panel([]); // Untrusted metadata is never passed in.
+        }
+    } catch (\Throwable $error) {
+        $html = null; // Never leak exception text or local paths.
+    } finally {
+        // The current sibling is not allowed to output content outside its return.
+        while (ob_get_level() > $output_level) { ob_end_clean(); }
+    }
+    if (!fv_r277_has_source_custody($html)) { return fv_r277_source_fallback(); }
     // Dynamic templates may render after wp_head. A static stylesheet link in the
     // shortcode body is HTML body-ok and works without JS under same-origin CSP.
     // Output only once, even if the shortcode is repeated on a page.

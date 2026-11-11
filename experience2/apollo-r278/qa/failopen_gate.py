@@ -21,6 +21,14 @@ states={
  'source_wrong_symbol':'<?php function unrelated_function() {}\n',
  'source_parse_error':'<?php function broken( {\n',
  'source_throws':'<?php throw new RuntimeException("secret path /tmp/evidence");\n',
+ 'source_renderer_exception':"<?php function fv_ex2_r273_review_panel($records){ throw new RuntimeException(\"secret path /tmp/evidence\"); }\n",
+ 'source_renderer_type_error':"<?php function fv_ex2_r273_review_panel($records):string { return []; }\n",
+ 'source_renderer_null':"<?php function fv_ex2_r273_review_panel($records){ return null; }\n",
+ 'source_renderer_empty':"<?php function fv_ex2_r273_review_panel($records){ return \"\"; }\n",
+ 'source_echo_leak':"<?php echo \"LEAKED_SIBLING_TEXT\"; function unrelated_function() {}\n",
+ 'source_renderer_echo_and_exception':"<?php function fv_ex2_r273_review_panel($records){ echo \"LEAKED_SIBLING_TEXT\"; throw new RuntimeException(\"secret path /tmp/evidence\"); }\n",
+ 'source_renderer_extra_merchant':"<?php function fv_ex2_r273_review_panel($records){ return '<aside class=\"fv-r273\" data-fv-review-ready=\"false\"><a href=\"https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/\">NASA 1</a><a href=\"https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/\">NASA 2</a><a href=\"https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/\">FREE</a><a href=\"https://merchant.invalid/buy\">BUY</a></aside>'; }\n",
+ 'source_renderer_inline_script':"<?php function fv_ex2_r273_review_panel($records){ return '<aside class=\"fv-r273\" data-fv-review-ready=\"false\"><a href=\"https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/\">NASA 1</a><a href=\"https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/\">NASA 2</a><a href=\"https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/\">FREE</a><script>alert(1)</script></aside>'; }\n",
  'source_original':REAL.read_text(),
 }
 php_fixture="""<?php
@@ -47,7 +55,7 @@ with tempfile.TemporaryDirectory(prefix='apollo-r278-') as d:
     assert proc.returncode==0,(name,proc.stderr)
     html=proc.stdout; html_cases[name]=html
     assert NASA in html and FREE in html,name
-    assert 'merchant.invalid' not in html and 'secret path' not in html,name
+    assert 'merchant.invalid' not in html and 'secret path' not in html and 'LEAKED_SIBLING_TEXT' not in html and '<script' not in html,name
     assert ('data-fv-review-ready="false"' in html) if name=='source_original' else ('The review panel is unavailable' in html),name
     assert html.count('href=')==(3 if name=='source_original' else 2),name
     php_pass.append(name)
@@ -81,4 +89,4 @@ receipt={'php_cases':php_pass,'chromium_cases':browser_cases,'screenshot_sha256'
  'http_browser_csp':'BLOCKED_BY_ADMINISTRATOR','axe_core':'NOT_EXECUTED',
  'installed_wordpress':'NOT_TESTED','production_release':'HARD_HOLD'}
 f=OUT/'receipt.json';f.write_text(json.dumps(receipt,indent=2,sort_keys=True)+'\n')
-print(f'R278 PHP {len(php_pass)}/6 PASS; Chromium {len(browser_cases)}/30 PASS; receipt SHA-256 {hashlib.sha256(f.read_bytes()).hexdigest()}')
+print(f'R279 PHP {len(php_pass)}/{len(php_pass)} PASS; Chromium {len(browser_cases)}/{len(browser_cases)} PASS; receipt SHA-256 {hashlib.sha256(f.read_bytes()).hexdigest()}')
