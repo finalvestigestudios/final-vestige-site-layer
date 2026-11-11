@@ -1,0 +1,245 @@
+{
+  "schema": "fv-p0-article-cdp-source-binding-v1",
+  "source_check": "authenticated read-only WordPress posts.get context=edit; stored HTML <img src>",
+  "observation_date_utc": "2026-11-11",
+  "source_bridge_sha": "d1a9c7a499510ec37bcdba5858d45165752587e0",
+  "cms_posts": [
+    {
+      "id": 285,
+      "permalink": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+      "slug": "the-light-said-closed-three-mile-island",
+      "modified": "2026-11-02T21:39:59",
+      "stored_inline_image_count": 6
+    },
+    {
+      "id": 287,
+      "permalink": "https://finalvestige.com/2026/08/19/the-warning-was-a-man-waving-sunshine-skyway/",
+      "slug": "the-warning-was-a-man-waving-sunshine-skyway",
+      "modified": "2026-11-02T21:40:01",
+      "stored_inline_image_count": 6
+    },
+    {
+      "id": 407,
+      "permalink": "https://finalvestige.com/2026/08/20/the-lake-wasnt-there-yesterday-hebgen/",
+      "slug": "the-lake-wasnt-there-yesterday-hebgen",
+      "modified": "2026-10-29T18:30:30",
+      "stored_inline_image_count": 8
+    },
+    {
+      "id": 418,
+      "permalink": "https://finalvestige.com/2026/08/20/the-lighthouse-was-gone-at-dawn-1946-tsunami/",
+      "slug": "the-lighthouse-was-gone-at-dawn-1946-tsunami",
+      "modified": "2026-08-28T03:11:08",
+      "stored_inline_image_count": 6
+    }
+  ],
+  "p0_verified_sources": [
+    {
+      "slot": "285:5",
+      "post_id": 285,
+      "verified_post_url": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+      "stored_inline_ordinal": 5,
+      "original_src": "https://images.saymedia-content.com/.image/ar_16:9,c_fill,cs_srgb,fl_progressive,q_auto:eco,w_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg",
+      "candidate_catalog_url": "https://commons.wikimedia.org/wiki/File:Three_mile_island_062010.jpg",
+      "candidate_kind": "COMMONS_CATALOG_RECORD",
+      "rights_observation_not_clearance": "PD_SELF",
+      "conditional_960px": [
+        819,
+        614
+      ],
+      "web_retriever_wrapper_only": {
+        "method": "EXTERNAL_WEB_RETRIEVER_NOT_GUEST",
+        "result": "NOT_FOUND",
+        "wrapper_code": 404
+      },
+      "actual_origin_http_status": null,
+      "visitor_browser_http_status": null,
+      "current_src_guest": null,
+      "visitor_encoded_bytes": null,
+      "guest_image_dimensions": null,
+      "photo_identity_approved": false,
+      "commercial_reuse_rights_approved": false,
+      "rehost_approved": false
+    },
+    {
+      "slot": "285:2",
+      "post_id": 285,
+      "verified_post_url": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+      "stored_inline_ordinal": 2,
+      "original_src": "https://blog.ucsusa.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+      "candidate_catalog_url": "https://blog.ucs.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+      "candidate_kind": "THIRD_PARTY_OR_PUBLISHER_REFERENCE",
+      "rights_observation_not_clearance": "UNKNOWN",
+      "conditional_960px": null,
+      "web_retriever_wrapper_only": {
+        "method": "EXTERNAL_WEB_RETRIEVER_NOT_GUEST",
+        "result": "REDIRECT_TARGET_INACCESSIBLE",
+        "wrapper_code": 500
+      },
+      "actual_origin_http_status": null,
+      "visitor_browser_http_status": null,
+      "current_src_guest": null,
+      "visitor_encoded_bytes": null,
+      "guest_image_dimensions": null,
+      "photo_identity_approved": false,
+      "commercial_reuse_rights_approved": false,
+      "rehost_approved": false
+    },
+    {
+      "slot": "287:5",
+      "post_id": 287,
+      "verified_post_url": "https://finalvestige.com/2026/08/19/the-warning-was-a-man-waving-sunshine-skyway/",
+      "stored_inline_ordinal": 5,
+      "original_src": "https://stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+      "candidate_catalog_url": "https://media.stpetecatalyst.com/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+      "candidate_kind": "THIRD_PARTY_OR_PUBLISHER_REFERENCE",
+      "rights_observation_not_clearance": "RIGHTS_UNVERIFIED",
+      "conditional_960px": null,
+      "web_retriever_wrapper_only": {
+        "method": "EXTERNAL_WEB_RETRIEVER_NOT_GUEST",
+        "result": "NOT_FOUND",
+        "wrapper_code": 404
+      },
+      "actual_origin_http_status": null,
+      "visitor_browser_http_status": null,
+      "current_src_guest": null,
+      "visitor_encoded_bytes": null,
+      "guest_image_dimensions": null,
+      "photo_identity_approved": false,
+      "commercial_reuse_rights_approved": false,
+      "rehost_approved": false
+    },
+    {
+      "slot": "418:1",
+      "post_id": 418,
+      "verified_post_url": "https://finalvestige.com/2026/08/20/the-lighthouse-was-gone-at-dawn-1946-tsunami/",
+      "stored_inline_ordinal": 1,
+      "original_src": "https://media.defense.gov/2021/Mar/30/2002610812/1920/1080/0/210330-G-DE713-0002.JPG",
+      "candidate_catalog_url": "https://www.history.uscg.mil/Our-Collections/Photos/igphoto/2002905913/",
+      "candidate_kind": "OFFICIAL_PRIMARY_CATALOG",
+      "rights_observation_not_clearance": "USCG_PUBLIC_DOMAIN_RELEASE_CATALOG",
+      "conditional_960px": null,
+      "web_retriever_wrapper_only": {
+        "method": "EXTERNAL_WEB_RETRIEVER_NOT_GUEST",
+        "result": "FORBIDDEN",
+        "wrapper_code": 403
+      },
+      "actual_origin_http_status": null,
+      "visitor_browser_http_status": null,
+      "current_src_guest": null,
+      "visitor_encoded_bytes": null,
+      "guest_image_dimensions": null,
+      "photo_identity_approved": false,
+      "commercial_reuse_rights_approved": false,
+      "rehost_approved": false
+    },
+    {
+      "slot": "418:2",
+      "post_id": 418,
+      "verified_post_url": "https://finalvestige.com/2026/08/20/the-lighthouse-was-gone-at-dawn-1946-tsunami/",
+      "stored_inline_ordinal": 2,
+      "original_src": "https://www.history.uscg.mil/Portals/6/5_%20Scotch_Cap_debris2_1946.jpg",
+      "candidate_catalog_url": "https://www.lighthousefriends.com/Scotch_Cap_debris2_1946.jpg",
+      "candidate_kind": "THIRD_PARTY_OR_PUBLISHER_REFERENCE",
+      "rights_observation_not_clearance": "RIGHTS_UNVERIFIED",
+      "conditional_960px": null,
+      "web_retriever_wrapper_only": {
+        "method": "EXTERNAL_WEB_RETRIEVER_NOT_GUEST",
+        "result": "FORBIDDEN",
+        "wrapper_code": 403
+      },
+      "actual_origin_http_status": null,
+      "visitor_browser_http_status": null,
+      "current_src_guest": null,
+      "visitor_encoded_bytes": null,
+      "guest_image_dimensions": null,
+      "photo_identity_approved": false,
+      "commercial_reuse_rights_approved": false,
+      "rehost_approved": false
+    },
+    {
+      "slot": "407:1",
+      "post_id": 407,
+      "verified_post_url": "https://finalvestige.com/2026/08/20/the-lake-wasnt-there-yesterday-hebgen/",
+      "stored_inline_ordinal": 1,
+      "original_src": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/img7535.jpg",
+      "candidate_catalog_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/thumbnails/image/img7535.jpg",
+      "candidate_kind": "THIRD_PARTY_OR_PUBLISHER_REFERENCE",
+      "rights_observation_not_clearance": "USGS_PUBLIC_DOMAIN_CATALOG",
+      "conditional_960px": null,
+      "web_retriever_wrapper_only": {
+        "method": "EXTERNAL_WEB_RETRIEVER_NOT_GUEST",
+        "result": "UNSUPPORTED_OCTET_STREAM",
+        "wrapper_code": 400
+      },
+      "actual_origin_http_status": null,
+      "visitor_browser_http_status": null,
+      "current_src_guest": null,
+      "visitor_encoded_bytes": null,
+      "guest_image_dimensions": null,
+      "photo_identity_approved": false,
+      "commercial_reuse_rights_approved": false,
+      "rehost_approved": false
+    }
+  ],
+  "synthetic_regression": {
+    "prepatch": "CONFIRMED_GUEST_BROKEN for same-source cold-shaped 404 captured from wrong published article",
+    "postpatch": "HOLD:PUBLISHED_PAGE_OR_DOM_SLOT_NOT_PROVEN",
+    "precommit_v8_passed": 84,
+    "existing_tests": 70,
+    "new_tests": 14,
+    "requires": [
+      "page_url",
+      "page_http_status",
+      "page_census_complete",
+      "full_scroll_complete",
+      "stored_inline_ordinal",
+      "dom_img_src",
+      "capture_run_id",
+      "request_id",
+      "response_request_id",
+      "dom_element_request_id",
+      "screenshot_sha256"
+    ]
+  },
+  "florida_memory_alt_only": {
+    "slot": "287:5",
+    "archive": "State Archives of Florida / Florida Memory",
+    "item": "RC09236",
+    "catalog_url": "https://www.floridamemory.com/items/show/32082",
+    "date": "1980-05-09",
+    "subject": "Car at broken Sunshine Skyway bridge immediately after collision",
+    "scene_identity": "different or unverified versus current 287:5 replacement-bridge imagery",
+    "native_pixels": null,
+    "conditional_output_pixels": null,
+    "item_commercial_rights_verified": false,
+    "license_or_download_cost_authorized": false,
+    "action": "HOLD; not exact image restoration"
+  },
+  "cohort_and_weight": {
+    "historical_posts": 61,
+    "historical_inline": 355,
+    "historical_external_researched": 288,
+    "expanded_posts": 66,
+    "expanded_inline": 361,
+    "reported_broken_guest_confirmed": false,
+    "reported_broken_count": 42,
+    "oversized_original_count": 15,
+    "oversized_original_stored_bytes": 47096779,
+    "inline_matched_stored_original_bytes": 38480915,
+    "target_pct": 76,
+    "measured_cold_visitor_before_image_bytes": null,
+    "measured_cold_visitor_after_image_bytes": null,
+    "measured_saving_pct": null
+  },
+  "release": {
+    "site_qa_pr": 154,
+    "media_recovery_draft_pr": 1703,
+    "worklist_draft_pr": 183,
+    "production_wp_writes": 0,
+    "third_party_downloads": 0,
+    "homepage_edits": 0,
+    "merge_deploy": false,
+    "subscription_spend_usd": 0
+  }
+}
