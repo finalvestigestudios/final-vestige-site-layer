@@ -1,0 +1,333 @@
+{
+  "schema": "fv-r277-source-baseline-erratum-v1",
+  "checked_utc_date": "2026-11-11",
+  "state": "DRAFT_HARD_HOLD",
+  "basis": "GitHub compare_commits against authentic R200 manifest; R275 integrated 96-file witness; R276 historical delta preserved for provenance",
+  "source_refs": {
+    "r200_manifest_blob": "5822f9dfde21d1f3bdfc26658769d852c639438c",
+    "r276_integrated_manifest_blob": "b8c7c6df0dca62b04b01abc5671b7083ad9cb61e",
+    "r276_older_delta_blob": "55d09d3145a00c579263c870bb08ed143e06a2c3",
+    "integrated_snapshot_commit": "df96120007ceb33290764392a5900e356e04deac",
+    "r276_parent_commit": "483d695923b01c289650eec02953a23c7d675ff8"
+  },
+  "release": {
+    "may_merge": false,
+    "publication_authorized": false,
+    "independent_qd_pass": false,
+    "medical_safety_verified": false,
+    "privacy_approved": false,
+    "commercial_offer_approved": false
+  },
+  "source_review": {
+    "unadjudicated_shared_url_groups": 32,
+    "unadjudicated_duplicate_id_groups": 15,
+    "held_cdc_ready_gov_occurrences": 3
+  },
+  "branch_heads": [
+    {
+      "origin": "start",
+      "branch": "claude/prep-start-bbfeb8",
+      "head_sha_at_check": "2122d856fce9f64887c16df3d52e64be9f59a55b",
+      "r200_frozen_sha": "2122d856fce9f64887c16df3d52e64be9f59a55b",
+      "compare_status": "identical",
+      "ahead": 0,
+      "behind": 0,
+      "prior_r276_comparison_sha": "2122d856fce9f64887c16df3d52e64be9f59a55b",
+      "prior_comparison_kind": "older_crosswalk_provenance",
+      "matches_prior_r276_comparison": true
+    },
+    {
+      "origin": "shelter",
+      "branch": "claude/prep-shelter-5e1e0e",
+      "head_sha_at_check": "5daeaf2dd5ab71806a6b73c91edfb1d8df5da976",
+      "r200_frozen_sha": "5daeaf2dd5ab71806a6b73c91edfb1d8df5da976",
+      "compare_status": "identical",
+      "ahead": 0,
+      "behind": 0,
+      "prior_r276_comparison_sha": "5daeaf2dd5ab71806a6b73c91edfb1d8df5da976",
+      "prior_comparison_kind": "older_crosswalk_provenance",
+      "matches_prior_r276_comparison": true
+    },
+    {
+      "origin": "food",
+      "branch": "claude/prep-food-ccdc55",
+      "head_sha_at_check": "f911ff7a655de8d81535ea86ec3d65a49ee76648",
+      "r200_frozen_sha": "f911ff7a655de8d81535ea86ec3d65a49ee76648",
+      "compare_status": "identical",
+      "ahead": 0,
+      "behind": 0,
+      "prior_r276_comparison_sha": "e9cd7766dac59d47ab467d8945269b9146c2aef5",
+      "prior_comparison_kind": "older_crosswalk_provenance",
+      "matches_prior_r276_comparison": false
+    },
+    {
+      "origin": "health",
+      "branch": "claude/prep-health-837444",
+      "head_sha_at_check": "d5ef5bafd68361434dd1cc9209915b8e8a4eaf17",
+      "r200_frozen_sha": "d5ef5bafd68361434dd1cc9209915b8e8a4eaf17",
+      "compare_status": "identical",
+      "ahead": 0,
+      "behind": 0,
+      "prior_r276_comparison_sha": "d2212d0ca0750817d3929865d3069835980faf20",
+      "prior_comparison_kind": "older_crosswalk_provenance",
+      "matches_prior_r276_comparison": false
+    },
+    {
+      "origin": "hist-field",
+      "branch": "claude/prep-hist-field-9db767",
+      "head_sha_at_check": "4e5caf812727953aa45e3bda2d382f2c67b6a09c",
+      "r200_frozen_sha": "4e5caf812727953aa45e3bda2d382f2c67b6a09c",
+      "compare_status": "identical",
+      "ahead": 0,
+      "behind": 0,
+      "prior_r276_comparison_sha": "a5ce8a62f168db05c95232e3eb385dccd0d19e7f",
+      "prior_comparison_kind": "older_crosswalk_provenance",
+      "matches_prior_r276_comparison": false
+    },
+    {
+      "origin": "hist-food",
+      "branch": "claude/prep-hist-food-b81f19",
+      "head_sha_at_check": "67e116e536c7410bed30f8f3b1bb8c166f3c223d",
+      "r200_frozen_sha": "67e116e536c7410bed30f8f3b1bb8c166f3c223d",
+      "compare_status": "identical",
+      "ahead": 0,
+      "behind": 0,
+      "prior_r276_comparison_sha": "2acf65ca3efa9b4b5db7976f379b9ea693be43a4",
+      "prior_comparison_kind": "older_crosswalk_provenance",
+      "matches_prior_r276_comparison": false
+    },
+    {
+      "origin": "hist-home",
+      "branch": "claude/prep-hist-home-0e0e38",
+      "head_sha_at_check": "7504a5f099594d635e3dd7332a33a2e1346c43a2",
+      "r200_frozen_sha": "7504a5f099594d635e3dd7332a33a2e1346c43a2",
+      "compare_status": "identical",
+      "ahead": 0,
+      "behind": 0,
+      "prior_r276_comparison_sha": "f654e600f89c321a480dd8f055be4d13d0673490",
+      "prior_comparison_kind": "older_crosswalk_provenance",
+      "matches_prior_r276_comparison": false
+    }
+  ],
+  "comparison_census": {
+    "r200_current_matches": 7,
+    "r276_older_crosswalk_matches": 2,
+    "older_provenance_differences": 5,
+    "unreviewed_new_branch_changes_identified": 0
+  },
+  "article_snapshot": {
+    "r200_articles": 35,
+    "r275_integrated_articles": 35,
+    "baseline_different_articles": 17,
+    "body_blob_differences": 14,
+    "meta_blob_differences": 12,
+    "route_duplicate_count": 0,
+    "differences": [
+      {
+        "n": 1,
+        "slug": "household-emergency-plan",
+        "source_cluster": "start",
+        "route": "/preparedness/start-here/household-emergency-plan/",
+        "r200_body_blob": "8ca5c261dba56eeaf79c445332381a74867233de",
+        "r200_meta_blob": "0681d51e6e29166eaae27ac2b7f1fbde3f836787",
+        "r275_body_blob": "f81cd43516e8295104230412f18776919148f905",
+        "r275_meta_blob": "0681d51e6e29166eaae27ac2b7f1fbde3f836787",
+        "body_diff": true,
+        "meta_diff": false
+      },
+      {
+        "n": 2,
+        "slug": "three-day-kit",
+        "source_cluster": "start",
+        "route": "/preparedness/start-here/three-day-kit/",
+        "r200_body_blob": "ef5463ca668166766ca3d868908bc0bcb6040a23",
+        "r200_meta_blob": "c830e4b8b0ee2890a8ddaf82273fdc25bd4b50f2",
+        "r275_body_blob": "933f38ff3cd55a241cf9b392014fc52d4961e84f",
+        "r275_meta_blob": "1c69d5f1636a3a41631a5d93f11254d85cbe1b59",
+        "body_diff": true,
+        "meta_diff": true
+      },
+      {
+        "n": 6,
+        "slug": "making-water-safer",
+        "source_cluster": "start",
+        "route": "/preparedness/water/making-water-safer/",
+        "r200_body_blob": "f85d158fc8752200a227282e640f6df48277daf5",
+        "r200_meta_blob": "bcb567905444687b5ae0a261cbbdb7a24a9e7870",
+        "r275_body_blob": "f85d158fc8752200a227282e640f6df48277daf5",
+        "r275_meta_blob": "827d861eb3beebfd010ee98fcca764b23a2de90e",
+        "body_diff": false,
+        "meta_diff": true
+      },
+      {
+        "n": 7,
+        "slug": "homemade-water-filters",
+        "source_cluster": "start",
+        "route": "/preparedness/water/homemade-water-filters/",
+        "r200_body_blob": "67aa44e9a332f57fb70298a3867410d8f66c8c15",
+        "r200_meta_blob": "33789d3db0ec06007deb50d0293361f07cea27ae",
+        "r275_body_blob": "67aa44e9a332f57fb70298a3867410d8f66c8c15",
+        "r275_meta_blob": "91c730bd1c7a61fa3140a86245c9bc0c88160c29",
+        "body_diff": false,
+        "meta_diff": true
+      },
+      {
+        "n": 12,
+        "slug": "outage-heat-cold-generators",
+        "source_cluster": "shelter",
+        "route": "/preparedness/shelter-power/outage-heat-cold-generators/",
+        "r200_body_blob": "47d949d97ddb15abc5fdc3b556f37aea5036ce29",
+        "r200_meta_blob": "77dd194b096bb60ea99728a5b0042adf016b905e",
+        "r275_body_blob": "2cd3e30b3a7e3dfdb3fd30cfd2b832355f58dfe2",
+        "r275_meta_blob": "be37b602d0b82593d438083dfc8a1e5ef595dd44",
+        "body_diff": true,
+        "meta_diff": true
+      },
+      {
+        "n": 13,
+        "slug": "home-fire-escape-plan",
+        "source_cluster": "shelter",
+        "route": "/preparedness/family-communication/home-fire-escape-plan/",
+        "r200_body_blob": "ba869874b5ee6ef85a7694e65a364e12f4aed873",
+        "r200_meta_blob": "6a54547ef1458b0b5b0464f95d735ff4653c8368",
+        "r275_body_blob": "0412484304a3bcf08f0bb1b170110f617e3c2869",
+        "r275_meta_blob": "ff1246dcbfb0dd0bc864977f815badb9ad4e7ed8",
+        "body_diff": true,
+        "meta_diff": true
+      },
+      {
+        "n": 14,
+        "slug": "shelter-or-evacuate",
+        "source_cluster": "shelter",
+        "route": "/preparedness/shelter-power/shelter-or-evacuate/",
+        "r200_body_blob": "b8acf07e533eea43795aa242f39fd926b080130f",
+        "r200_meta_blob": "fe90c9ef50e2cad5fd36f2a9c4e2edd70c424186",
+        "r275_body_blob": "de3cb805041904cf22d4f216296bd4c8ddec17c1",
+        "r275_meta_blob": "cb559141d1e4a39debad16cf5cb796b746a01f19",
+        "body_diff": true,
+        "meta_diff": true
+      },
+      {
+        "n": 15,
+        "slug": "family-communication-plan",
+        "source_cluster": "shelter",
+        "route": "/preparedness/family-communication/family-communication-plan/",
+        "r200_body_blob": "16e2b1ec37fd6ea37f442d13e831180253c709b9",
+        "r200_meta_blob": "e63bbe70f5b93936da5cd71c030e33d82256d3ee",
+        "r275_body_blob": "8ac8bd7dba3be15d477c15737e54d83364d72527",
+        "r275_meta_blob": "dcad79faa8e0e6f1aef6db03e9e6e9451e19d8d3",
+        "body_diff": true,
+        "meta_diff": true
+      },
+      {
+        "n": 16,
+        "slug": "go-bags",
+        "source_cluster": "start",
+        "route": "/preparedness/start-here/go-bags/",
+        "r200_body_blob": "5135639786bbafa4e03939a74659cd0f31df3564",
+        "r200_meta_blob": "16cc5e91204a77486912444c6e516f5d5b48f567",
+        "r275_body_blob": "e5910015fc6e33ad015bc5dc0605b86622b701be",
+        "r275_meta_blob": "16cc5e91204a77486912444c6e516f5d5b48f567",
+        "body_diff": true,
+        "meta_diff": false
+      },
+      {
+        "n": 20,
+        "slug": "preparedness-real-households",
+        "source_cluster": "start",
+        "route": "/preparedness/start-here/preparedness-real-households/",
+        "r200_body_blob": "70d03c366e10db623929f118501becfa26c48bab",
+        "r200_meta_blob": "a0c3a09143a825560b5a5ed79d857b7402bfa295",
+        "r275_body_blob": "68344cf6c4022285fffb2a01f42027bf6f9ee95d",
+        "r275_meta_blob": "ba840917f34634ccd634c488eeca4a8a6b3a8fe2",
+        "body_diff": true,
+        "meta_diff": true
+      },
+      {
+        "n": 21,
+        "slug": "salt-beef-salt-pork-age-of-sail",
+        "source_cluster": "start",
+        "route": "/preparedness/lost-ways/salt-beef-salt-pork-age-of-sail/",
+        "r200_body_blob": "6539aafeca9bca67c96247c81a7412b117201b88",
+        "r200_meta_blob": "06b1cec809cb78a3315f7a7655b028c0a27dd642",
+        "r275_body_blob": "6539aafeca9bca67c96247c81a7412b117201b88",
+        "r275_meta_blob": "1c4c5396da703f3724b584c67e49e2128ab1f4c6",
+        "body_diff": false,
+        "meta_diff": true
+      },
+      {
+        "n": 24,
+        "slug": "pioneer-travel-rations",
+        "source_cluster": "hist-food",
+        "route": "/preparedness/lost-ways/pioneer-travel-rations/",
+        "r200_body_blob": "a658481d828dc4c5ba85f296adbfbee0514f0611",
+        "r200_meta_blob": "521e56a3f18d8b211920529a88a3c3b86eb332d7",
+        "r275_body_blob": "058c90b763d8cd6dec0731a7b0a9cee4dd5a57c7",
+        "r275_meta_blob": "7191acba55d63dc405ad9c2003d66193276da89f",
+        "body_diff": true,
+        "meta_diff": true
+      },
+      {
+        "n": 25,
+        "slug": "pemmican-and-dried-meats",
+        "source_cluster": "hist-food",
+        "route": "/preparedness/lost-ways/pemmican-and-dried-meats/",
+        "r200_body_blob": "1febc8929f8b90c81a3fcef1e46a2811778b7e06",
+        "r200_meta_blob": "c19f68f2ac0988a8d0959e2d05b8ace8f9511348",
+        "r275_body_blob": "0b3319cc85ea2bc6d069b46d13a40e12ddbd5bc5",
+        "r275_meta_blob": "03d3824e07fe51931671d0ddc7aa8c85eda58435",
+        "body_diff": true,
+        "meta_diff": true
+      },
+      {
+        "n": 27,
+        "slug": "root-cellars-cool-storage",
+        "source_cluster": "hist-home",
+        "route": "/preparedness/lost-ways/root-cellars-cool-storage/",
+        "r200_body_blob": "7f375c32d74f2828b4912f5692abc44483e4629a",
+        "r200_meta_blob": "c3b7425711c3953c2d6cac9eb2aabe21a6717285",
+        "r275_body_blob": "2ff8d029769aa9a97de6b1e388d937899f3af38c",
+        "r275_meta_blob": "c3b7425711c3953c2d6cac9eb2aabe21a6717285",
+        "body_diff": true,
+        "meta_diff": false
+      },
+      {
+        "n": 32,
+        "slug": "navigation-before-gps",
+        "source_cluster": "hist-field",
+        "route": "/preparedness/lost-ways/navigation-before-gps/",
+        "r200_body_blob": "49beb68339a6b85b07d686c0cfb9fe1d88b8de4f",
+        "r200_meta_blob": "40c83419760bc7bd0c4c574304e65b773b4a8423",
+        "r275_body_blob": "3c02e58c30d1d608224944142f31fbead44a1252",
+        "r275_meta_blob": "40c83419760bc7bd0c4c574304e65b773b4a8423",
+        "body_diff": true,
+        "meta_diff": false
+      },
+      {
+        "n": 33,
+        "slug": "sanitation-before-germ-theory",
+        "source_cluster": "hist-home",
+        "route": "/preparedness/lost-ways/sanitation-before-germ-theory/",
+        "r200_body_blob": "02090fc1b773fd79f08a7ba754b6125844c37eab",
+        "r200_meta_blob": "3294cd9fcf59496c9ece9342e67b0d57d2ed5523",
+        "r275_body_blob": "d56df76647d2598f35cfd4609f91649cef063f12",
+        "r275_meta_blob": "3294cd9fcf59496c9ece9342e67b0d57d2ed5523",
+        "body_diff": true,
+        "meta_diff": false
+      },
+      {
+        "n": 34,
+        "slug": "pioneer-supply-chains-failed",
+        "source_cluster": "hist-field",
+        "route": "/preparedness/lost-ways/pioneer-supply-chains-failed/",
+        "r200_body_blob": "3643c50b43ca7ba6c1d9bc439e7c78730503b80f",
+        "r200_meta_blob": "8789c77dcc2be717f09ce0fbd340a04319aaf223",
+        "r275_body_blob": "ad158ee898f76d05bcb65c845b1e4a0e8103c660",
+        "r275_meta_blob": "4d2dc4958736e3c5257c65dda8ed016a473ac6be",
+        "body_diff": true,
+        "meta_diff": true
+      }
+    ]
+  },
+  "scope_caution": "R276 old 2/7 compared older crosswalk provenance, NOT the R200 frozen contributor-head manifest. R275 integrated file bytes differ from R200 contributor article bytes in 17 articles (14 body/12 meta), not automatically safe or cleared. No new intake assignments solely from historical branch refs. No source/medical/privacy/QD or publishing approval."
+}
