@@ -105,7 +105,7 @@ const negative=[
  ["auto_video","hub",s=>s.replace("</body>",'<video autoplay src="x.mp4"></video></body>'),"HTML_UNAUTHORIZED_ELEMENT"],
  ["refresh","hub",s=>s.replace("</head>",'<meta http-equiv="refresh" content="1;url=https://zen12.com"></head>'),"HTML_META_REFRESH"],
  ["js_handler","hub",s=>s.replace("<main id=\"main\">",'<main id="main" onclick="go()">'),"HTML_SCRIPT_OR_URL"],
- ["erase_skip","hub",s=>s.replace('href="#main"','href="#missing"'),"HTML_DANGLING_ANCHOR"],
+ ["erase_skip","hub",s=>s.replace('href="#main"','href="#missing"'),"HTML_SKIP"],
  ["remove_responsive","hub",s=>s.replace("prefers-reduced-motion:reduce","prefers-reduced-motion:none"),"HTML_RESPONSIVE"],
  ["fake_video","hub",s=>s.replace("not playable media","playable video is available"),"HTML_VIDEO_TRUTH"],
  ["partner_approved","matrix",s=>s.replace('"final_vestige_approved": null','"final_vestige_approved": true'),"PARTNER_NOT_AUTHORIZED_final_vestige_approved"],
