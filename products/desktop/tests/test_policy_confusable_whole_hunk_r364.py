@@ -54,7 +54,7 @@ class WholeHunkPolicyCustodyR364(unittest.TestCase):
             def __eq__(self, other):
                 raise AssertionError("unsafe equality")
             def __hash__(self):
-                return hash("added_sources")
+                return hash("__not_a_source_column__")
         bad = hunk(2)
         bad[Key()] = "injected"
         self.assertEqual(render([hunk(1), bad]), "")
