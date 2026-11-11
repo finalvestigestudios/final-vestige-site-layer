@@ -42,7 +42,7 @@ function validate(bundle){
   req(m.creator_routes.length===3&&m.creator_routes.every(x=>x.existing_asset_id===null&&x.confirmed_url===null),'unverified media attribution');
   req(m.measurement_contract.events.includes('merchant_confirmed_purchase')&&m.measurement_contract.events.includes('affiliate_outbound')&&m.measurement_contract.events.includes('settled_commission'),'paid vs outbound event separation');
   req(m.canonical_presell.length===2&&m.canonical_presell.every(x=>x.startsWith('mind/r284/')),'canonical pair changed or competitor introduced');
-  req(typeof m.notes[2]==='string' && m.notes[2].includes('NOT a playable'),'false video status');
+  req(typeof m.notes[2]==='string' && m.notes[2].includes('not a playable'),'false video status');
 
   req(article.includes('# The Second Number Vanished'),'original investigation missing');
   req(article.includes('three months')&&article.includes('brief')&&article.includes('2021'),'duration evidence boundary');
@@ -91,7 +91,7 @@ function adversarialTests(bundle){
   alterMatrix('fake creator URL',m=>{m.creator_routes[1].confirmed_url='https://example.org/video'});
   alterMatrix('owned product commercial live',m=>{m.products[4].commercial='LIVE'});
   alterMatrix('add competing presell',m=>{m.canonical_presell.push('mind/r289/new-presell.html')});
-  alterMatrix('false live video',m=>{m.notes=m.notes.map(x=>x.replace('NOT a playable','now a playable'))});
+  alterMatrix('false live video',m=>{m.notes=m.notes.map(x=>x.replace('not a playable','now a playable'))});
   add('remove disclosure',b=>{b.hub=b.hub.replace('If you purchase through an approved link in the future, Final Vestige may earn a commission at no additional cost to you','No disclosure necessary')});
   add('remove disabled',b=>{b.hub=b.hub.replace('type="button" disabled aria-disabled="true"','type="button"')});
   add('merchant link injection',b=>{b.hub=b.hub.replace('</footer>',"<a href=\"https://zen12.com/getstarted\">BUY</a></footer>")});
