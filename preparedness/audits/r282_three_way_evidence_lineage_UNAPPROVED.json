@@ -1,0 +1,1094 @@
+{
+  "schema": "fv-preparedness-r282-three-way-historical-evidence-lineage-unapproved-v1",
+  "state": "DRAFT_HARD_HOLD",
+  "issue": 136,
+  "conversion_issue": 820,
+  "original_pin": "5822f9dfde21d1f3bdfc26658769d852c639438c",
+  "integrated_pin": "b8c7c6df0dca62b04b01abc5671b7083ad9cb61e",
+  "historical_lock_pin": "2dc41fccad6f1272f0a9d9585b6c10c760dcb08c",
+  "authority": "MECHANICAL_GIT_OBJECT_COMPARISON_NOT_HUMAN_SOURCE_ADJUDICATION",
+  "publication_authorized": false,
+  "may_merge": false,
+  "independent_qd_pass": false,
+  "medical_safety_verified": false,
+  "privacy_approved": false,
+  "commercial_offer_approved": false,
+  "source_review": {
+    "shared_url_groups": 32,
+    "duplicate_id_groups": 15,
+    "held_occurrences": 3
+  },
+  "unresolved_editorial": {
+    "changed_article_substantive_review_required": 17,
+    "shorter_body_article_numbers": [
+      24,
+      25,
+      27,
+      32,
+      33,
+      34
+    ],
+    "article_7_contamination_review_required": true,
+    "article_15_tool_104_privacy_review_required": true
+  },
+  "aggregates": {
+    "articles": 35,
+    "integrated_articles": 35,
+    "original_lock_tool_count": 1,
+    "source_origin_differences": 6,
+    "r200_integrated_article_differences": 17,
+    "r200_lock_article_differences": 9,
+    "lock_integrated_article_differences": 15,
+    "r200_integrated_body_changes": 14,
+    "r200_integrated_metadata_changes": 12,
+    "r200_lock_body_changes": 7,
+    "r200_lock_meta_changes": 8,
+    "review_required_articles": 21,
+    "body_lineage": {
+      "original_lock_equal": 8,
+      "all_equal": 20,
+      "integrated_lock_equal": 2,
+      "all_distinct": 4,
+      "original_integrated_equal": 1
+    },
+    "metadata_lineage": {
+      "all_equal": 20,
+      "original_lock_equal": 7,
+      "integrated_lock_equal": 4,
+      "original_integrated_equal": 3,
+      "all_distinct": 1
+    }
+  },
+  "historical_lock_extra_tool": {
+    "slug": "water-planner",
+    "origin": "base",
+    "body": {
+      "path": "preparedness/content/tools/water-planner.body.html",
+      "git_blob_sha": "a738d1f7824437911064d425868ed3d709326027",
+      "bytes": 8246
+    },
+    "metadata": {
+      "path": "preparedness/content/tools/water-planner.meta.json",
+      "git_blob_sha": "7ea188a06b614940a226328c0166c2a2b20ff84e",
+      "bytes": 1497
+    },
+    "not_an_authorized_offer": true
+  },
+  "articles": [
+    {
+      "n": 1,
+      "slug": "household-emergency-plan",
+      "original_cluster": "start",
+      "evidence_lock_origin": "start",
+      "origin_differs": false,
+      "route": "/preparedness/start-here/household-emergency-plan/",
+      "body": {
+        "r200_blob": "8ca5c261dba56eeaf79c445332381a74867233de",
+        "r200_bytes": 23176,
+        "integrated_blob": "f81cd43516e8295104230412f18776919148f905",
+        "integrated_bytes": 24695,
+        "evidence_lock_blob": "8ca5c261dba56eeaf79c445332381a74867233de",
+        "evidence_lock_bytes": 23176,
+        "lineage": "original_lock_equal",
+        "review_required": true
+      },
+      "metadata": {
+        "r200_blob": "0681d51e6e29166eaae27ac2b7f1fbde3f836787",
+        "r200_bytes": 3314,
+        "integrated_blob": "0681d51e6e29166eaae27ac2b7f1fbde3f836787",
+        "integrated_bytes": 3314,
+        "evidence_lock_blob": "0681d51e6e29166eaae27ac2b7f1fbde3f836787",
+        "evidence_lock_bytes": 3314,
+        "lineage": "all_equal",
+        "review_required": false
+      },
+      "human_review_required": true
+    },
+    {
+      "n": 2,
+      "slug": "three-day-kit",
+      "original_cluster": "start",
+      "evidence_lock_origin": "start",
+      "origin_differs": false,
+      "route": "/preparedness/start-here/three-day-kit/",
+      "body": {
+        "r200_blob": "ef5463ca668166766ca3d868908bc0bcb6040a23",
+        "r200_bytes": 24783,
+        "integrated_blob": "933f38ff3cd55a241cf9b392014fc52d4961e84f",
+        "integrated_bytes": 27644,
+        "evidence_lock_blob": "ef5463ca668166766ca3d868908bc0bcb6040a23",
+        "evidence_lock_bytes": 24783,
+        "lineage": "original_lock_equal",
+        "review_required": true
+      },
+      "metadata": {
+        "r200_blob": "c830e4b8b0ee2890a8ddaf82273fdc25bd4b50f2",
+        "r200_bytes": 3865,
+        "integrated_blob": "1c69d5f1636a3a41631a5d93f11254d85cbe1b59",
+        "integrated_bytes": 4215,
+        "evidence_lock_blob": "c830e4b8b0ee2890a8ddaf82273fdc25bd4b50f2",
+        "evidence_lock_bytes": 3865,
+        "lineage": "original_lock_equal",
+        "review_required": true
+      },
+      "human_review_required": true
+    },
+    {
+      "n": 3,
+      "slug": "water-math",
+      "original_cluster": "start",
+      "evidence_lock_origin": "base",
+      "origin_differs": true,
+      "route": "/preparedness/water/water-math/",
+      "body": {
+        "r200_blob": "e82ad3ab14acb23e1cb1d87e80fa2e5d60da6ae4",
+        "r200_bytes": 14140,
+        "integrated_blob": "e82ad3ab14acb23e1cb1d87e80fa2e5d60da6ae4",
+        "integrated_bytes": 14140,
+        "evidence_lock_blob": "e82ad3ab14acb23e1cb1d87e80fa2e5d60da6ae4",
+        "evidence_lock_bytes": 14140,
+        "lineage": "all_equal",
+        "review_required": false
+      },
+      "metadata": {
+        "r200_blob": "4b1c3cd7166afa03e56991f7de8af771828a6e54",
+        "r200_bytes": 1860,
+        "integrated_blob": "4b1c3cd7166afa03e56991f7de8af771828a6e54",
+        "integrated_bytes": 1860,
+        "evidence_lock_blob": "4b1c3cd7166afa03e56991f7de8af771828a6e54",
+        "evidence_lock_bytes": 1860,
+        "lineage": "all_equal",
+        "review_required": false
+      },
+      "human_review_required": true
+    },
+    {
+      "n": 4,
+      "slug": "two-week-water-storage",
+      "original_cluster": "start",
+      "evidence_lock_origin": "base",
+      "origin_differs": true,
+      "route": "/preparedness/water/two-week-water-storage/",
+      "body": {
+        "r200_blob": "24572839d79a3c3f78805f3fc6834b7ab6037768",
+        "r200_bytes": 13321,
+        "integrated_blob": "24572839d79a3c3f78805f3fc6834b7ab6037768",
+        "integrated_bytes": 13321,
+        "evidence_lock_blob": "24572839d79a3c3f78805f3fc6834b7ab6037768",
+        "evidence_lock_bytes": 13321,
+        "lineage": "all_equal",
+        "review_required": false
+      },
+      "metadata": {
+        "r200_blob": "76f317f047ed95c8b6c7ab130f44d79232e7a463",
+        "r200_bytes": 1583,
+        "integrated_blob": "76f317f047ed95c8b6c7ab130f44d79232e7a463",
+        "integrated_bytes": 1583,
+        "evidence_lock_blob": "76f317f047ed95c8b6c7ab130f44d79232e7a463",
+        "evidence_lock_bytes": 1583,
+        "lineage": "all_equal",
+        "review_required": false
+      },
+      "human_review_required": true
+    },
+    {
+      "n": 5,
+      "slug": "water-advisories-explained",
+      "original_cluster": "start",
+      "evidence_lock_origin": "base",
+      "origin_differs": true,
+      "route": "/preparedness/water/water-advisories-explained/",
+      "body": {
+        "r200_blob": "e96486d74731606fdd5a616030f146f66c59e2b0",
+        "r200_bytes": 14465,
+        "integrated_blob": "e96486d74731606fdd5a616030f146f66c59e2b0",
+        "integrated_bytes": 14465,
+        "evidence_lock_blob": "e96486d74731606fdd5a616030f146f66c59e2b0",
+        "evidence_lock_bytes": 14465,
+        "lineage": "all_equal",
+        "review_required": false
+      },
+      "metadata": {
+        "r200_blob": "4c88e747b46d9e95264ec3367911a5175baa6c31",
+        "r200_bytes": 1740,
+        "integrated_blob": "4c88e747b46d9e95264ec3367911a5175baa6c31",
+        "integrated_bytes": 1740,
+        "evidence_lock_blob": "4c88e747b46d9e95264ec3367911a5175baa6c31",
+        "evidence_lock_bytes": 1740,
+        "lineage": "all_equal",
+        "review_required": false
+      },
+      "human_review_required": true
+    },
+    {
+      "n": 6,
+      "slug": "making-water-safer",
+      "original_cluster": "start",
+      "evidence_lock_origin": "base",
+      "origin_differs": true,
+      "route": "/preparedness/water/making-water-safer/",
+      "body": {
+        "r200_blob": "f85d158fc8752200a227282e640f6df48277daf5",
+        "r200_bytes": 21486,
+        "integrated_blob": "f85d158fc8752200a227282e640f6df48277daf5",
+        "integrated_bytes": 21486,
+        "evidence_lock_blob": "f85d158fc8752200a227282e640f6df48277daf5",
+        "evidence_lock_bytes": 21486,
+        "lineage": "all_equal",
+        "review_required": false
+      },
+      "metadata": {
+        "r200_blob": "bcb567905444687b5ae0a261cbbdb7a24a9e7870",
+        "r200_bytes": 2987,
+        "integrated_blob": "827d861eb3beebfd010ee98fcca764b23a2de90e",
+        "integrated_bytes": 3523,
+        "evidence_lock_blob": "bcb567905444687b5ae0a261cbbdb7a24a9e7870",
+        "evidence_lock_bytes": 2987,
+        "lineage": "original_lock_equal",
+        "review_required": true
+      },
+      "human_review_required": true
+    },
+    {
+      "n": 7,
+      "slug": "homemade-water-filters",
+      "original_cluster": "start",
+      "evidence_lock_origin": "base",
+      "origin_differs": true,
+      "route": "/preparedness/water/homemade-water-filters/",
+      "body": {
+        "r200_blob": "67aa44e9a332f57fb70298a3867410d8f66c8c15",
+        "r200_bytes": 15230,
+        "integrated_blob": "67aa44e9a332f57fb70298a3867410d8f66c8c15",
+        "integrated_bytes": 15230,
+        "evidence_lock_blob": "67aa44e9a332f57fb70298a3867410d8f66c8c15",
+        "evidence_lock_bytes": 15230,
+        "lineage": "all_equal",
+        "review_required": false
+      },
+      "metadata": {
+        "r200_blob": "33789d3db0ec06007deb50d0293361f07cea27ae",
+        "r200_bytes": 1973,
+        "integrated_blob": "91c730bd1c7a61fa3140a86245c9bc0c88160c29",
+        "integrated_bytes": 2367,
+        "evidence_lock_blob": "91c730bd1c7a61fa3140a86245c9bc0c88160c29",
+        "evidence_lock_bytes": 2367,
+        "lineage": "integrated_lock_equal",
+        "review_required": true
+      },
+      "human_review_required": true
+    },
+    {
+      "n": 8,
+      "slug": "pantry-rotation",
+      "original_cluster": "food",
+      "evidence_lock_origin": "food",
+      "origin_differs": false,
+      "route": "/preparedness/food/pantry-rotation/",
+      "body": {
+        "r200_blob": "727a43eff8b30c0f68fb6695d76d63166eb51450",
+        "r200_bytes": 23078,
+        "integrated_blob": "727a43eff8b30c0f68fb6695d76d63166eb51450",
+        "integrated_bytes": 23078,
+        "evidence_lock_blob": "727a43eff8b30c0f68fb6695d76d63166eb51450",
+        "evidence_lock_bytes": 23078,
+        "lineage": "all_equal",
+        "review_required": false
+      },
+      "metadata": {
+        "r200_blob": "dfafbb77e076d6cab5aec8217f98d7fd20dbff1c",
+        "r200_bytes": 2730,
+        "integrated_blob": "dfafbb77e076d6cab5aec8217f98d7fd20dbff1c",
+        "integrated_bytes": 2730,
+        "evidence_lock_blob": "dfafbb77e076d6cab5aec8217f98d7fd20dbff1c",
+        "evidence_lock_bytes": 2730,
+        "lineage": "all_equal",
+        "review_required": false
+      },
+      "human_review_required": false
+    },
+    {
+      "n": 9,
+      "slug": "food-safety-power-outage",
+      "original_cluster": "food",
+      "evidence_lock_origin": "food",
+      "origin_differs": false,
+      "route": "/preparedness/food/food-safety-power-outage/",
+      "body": {
+        "r200_blob": "70339ef60f3f7bf1bec26a0ca457b0438650163e",
+        "r200_bytes": 23027,
+        "integrated_blob": "70339ef60f3f7bf1bec26a0ca457b0438650163e",
+        "integrated_bytes": 23027,
+        "evidence_lock_blob": "70339ef60f3f7bf1bec26a0ca457b0438650163e",
+        "evidence_lock_bytes": 23027,
+        "lineage": "all_equal",
+        "review_required": false
+      },
+      "metadata": {
+        "r200_blob": "3283071134ba24490d47f5a0635836b6ed4f8965",
+        "r200_bytes": 2902,
+        "integrated_blob": "3283071134ba24490d47f5a0635836b6ed4f8965",
+        "integrated_bytes": 2902,
+        "evidence_lock_blob": "3283071134ba24490d47f5a0635836b6ed4f8965",
+        "evidence_lock_bytes": 2902,
+        "lineage": "all_equal",
+        "review_required": false
+      },
+      "human_review_required": false
+    },
+    {
+      "n": 10,
+      "slug": "pressure-canning-low-acid",
+      "original_cluster": "food",
+      "evidence_lock_origin": "food",
+      "origin_differs": false,
+      "route": "/preparedness/food/pressure-canning-low-acid/",
+      "body": {
+        "r200_blob": "c60d824c2f679fb7362b8523aec18110f8248290",
+        "r200_bytes": 25674,
+        "integrated_blob": "c60d824c2f679fb7362b8523aec18110f8248290",
+        "integrated_bytes": 25674,
+        "evidence_lock_blob": "c60d824c2f679fb7362b8523aec18110f8248290",
+        "evidence_lock_bytes": 25674,
+        "lineage": "all_equal",
+        "review_required": false
+      },
+      "metadata": {
+        "r200_blob": "4ab01d4aa566b8970351d8d8d43f7f85e8a04341",
+        "r200_bytes": 3828,
+        "integrated_blob": "4ab01d4aa566b8970351d8d8d43f7f85e8a04341",
+        "integrated_bytes": 3828,
+        "evidence_lock_blob": "4ab01d4aa566b8970351d8d8d43f7f85e8a04341",
+        "evidence_lock_bytes": 3828,
+        "lineage": "all_equal",
+        "review_required": false
+      },
+      "human_review_required": false
+    },
+    {
+      "n": 11,
+      "slug": "safe-jerky-dehydration",
+      "original_cluster": "food",
+      "evidence_lock_origin": "food",
+      "origin_differs": false,
+      "route": "/preparedness/food/safe-jerky-dehydration/",
+      "body": {
+        "r200_blob": "6fa55c397b161437e016d5d4a6c27da7ce3fa6bd",
+        "r200_bytes": 21780,
+        "integrated_blob": "6fa55c397b161437e016d5d4a6c27da7ce3fa6bd",
+        "integrated_bytes": 21780,
+        "evidence_lock_blob": "6fa55c397b161437e016d5d4a6c27da7ce3fa6bd",
+        "evidence_lock_bytes": 21780,
+        "lineage": "all_equal",
+        "review_required": false
+      },
+      "metadata": {
+        "r200_blob": "50b365e8109c14bdb9ce1a9365db88215a678ec5",
+        "r200_bytes": 2881,
+        "integrated_blob": "50b365e8109c14bdb9ce1a9365db88215a678ec5",
+        "integrated_bytes": 2881,
+        "evidence_lock_blob": "50b365e8109c14bdb9ce1a9365db88215a678ec5",
+        "evidence_lock_bytes": 2881,
+        "lineage": "all_equal",
+        "review_required": false
+      },
+      "human_review_required": false
+    },
+    {
+      "n": 12,
+      "slug": "outage-heat-cold-generators",
+      "original_cluster": "shelter",
+      "evidence_lock_origin": "shelter",
+      "origin_differs": false,
+      "route": "/preparedness/shelter-power/outage-heat-cold-generators/",
+      "body": {
+        "r200_blob": "47d949d97ddb15abc5fdc3b556f37aea5036ce29",
+        "r200_bytes": 31428,
+        "integrated_blob": "2cd3e30b3a7e3dfdb3fd30cfd2b832355f58dfe2",
+        "integrated_bytes": 33137,
+        "evidence_lock_blob": "47d949d97ddb15abc5fdc3b556f37aea5036ce29",
+        "evidence_lock_bytes": 31428,
+        "lineage": "original_lock_equal",
+        "review_required": true
+      },
+      "metadata": {
+        "r200_blob": "77dd194b096bb60ea99728a5b0042adf016b905e",
+        "r200_bytes": 4568,
+        "integrated_blob": "be37b602d0b82593d438083dfc8a1e5ef595dd44",
+        "integrated_bytes": 5155,
+        "evidence_lock_blob": "77dd194b096bb60ea99728a5b0042adf016b905e",
+        "evidence_lock_bytes": 4568,
+        "lineage": "original_lock_equal",
+        "review_required": true
+      },
+      "human_review_required": true
+    },
+    {
+      "n": 13,
+      "slug": "home-fire-escape-plan",
+      "original_cluster": "shelter",
+      "evidence_lock_origin": "shelter",
+      "origin_differs": false,
+      "route": "/preparedness/family-communication/home-fire-escape-plan/",
+      "body": {
+        "r200_blob": "ba869874b5ee6ef85a7694e65a364e12f4aed873",
+        "r200_bytes": 26250,
+        "integrated_blob": "0412484304a3bcf08f0bb1b170110f617e3c2869",
+        "integrated_bytes": 31595,
+        "evidence_lock_blob": "ba869874b5ee6ef85a7694e65a364e12f4aed873",
+        "evidence_lock_bytes": 26250,
+        "lineage": "original_lock_equal",
+        "review_required": true
+      },
+      "metadata": {
+        "r200_blob": "6a54547ef1458b0b5b0464f95d735ff4653c8368",
+        "r200_bytes": 3127,
+        "integrated_blob": "ff1246dcbfb0dd0bc864977f815badb9ad4e7ed8",
+        "integrated_bytes": 3711,
+        "evidence_lock_blob": "6a54547ef1458b0b5b0464f95d735ff4653c8368",
+        "evidence_lock_bytes": 3127,
+        "lineage": "original_lock_equal",
+        "review_required": true
+      },
+      "human_review_required": true
+    },
+    {
+      "n": 14,
+      "slug": "shelter-or-evacuate",
+      "original_cluster": "shelter",
+      "evidence_lock_origin": "shelter",
+      "origin_differs": false,
+      "route": "/preparedness/shelter-power/shelter-or-evacuate/",
+      "body": {
+        "r200_blob": "b8acf07e533eea43795aa242f39fd926b080130f",
+        "r200_bytes": 24382,
+        "integrated_blob": "de3cb805041904cf22d4f216296bd4c8ddec17c1",
+        "integrated_bytes": 31374,
+        "evidence_lock_blob": "b8acf07e533eea43795aa242f39fd926b080130f",
+        "evidence_lock_bytes": 24382,
+        "lineage": "original_lock_equal",
+        "review_required": true
+      },
+      "metadata": {
+        "r200_blob": "fe90c9ef50e2cad5fd36f2a9c4e2edd70c424186",
+        "r200_bytes": 3398,
+        "integrated_blob": "cb559141d1e4a39debad16cf5cb796b746a01f19",
+        "integrated_bytes": 3938,
+        "evidence_lock_blob": "fe90c9ef50e2cad5fd36f2a9c4e2edd70c424186",
+        "evidence_lock_bytes": 3398,
+        "lineage": "original_lock_equal",
+        "review_required": true
+      },
+      "human_review_required": true
+    },
+    {
+      "n": 15,
+      "slug": "family-communication-plan",
+      "original_cluster": "shelter",
+      "evidence_lock_origin": "shelter",
+      "origin_differs": false,
+      "route": "/preparedness/family-communication/family-communication-plan/",
+      "body": {
+        "r200_blob": "16e2b1ec37fd6ea37f442d13e831180253c709b9",
+        "r200_bytes": 23180,
+        "integrated_blob": "8ac8bd7dba3be15d477c15737e54d83364d72527",
+        "integrated_bytes": 26822,
+        "evidence_lock_blob": "16e2b1ec37fd6ea37f442d13e831180253c709b9",
+        "evidence_lock_bytes": 23180,
+        "lineage": "original_lock_equal",
+        "review_required": true
+      },
+      "metadata": {
+        "r200_blob": "e63bbe70f5b93936da5cd71c030e33d82256d3ee",
+        "r200_bytes": 3524,
+        "integrated_blob": "dcad79faa8e0e6f1aef6db03e9e6e9451e19d8d3",
+        "integrated_bytes": 4489,
+        "evidence_lock_blob": "e63bbe70f5b93936da5cd71c030e33d82256d3ee",
+        "evidence_lock_bytes": 3524,
+        "lineage": "original_lock_equal",
+        "review_required": true
+      },
+      "human_review_required": true
+    },
+    {
+      "n": 16,
+      "slug": "go-bags",
+      "original_cluster": "start",
+      "evidence_lock_origin": "start",
+      "origin_differs": false,
+      "route": "/preparedness/start-here/go-bags/",
+      "body": {
+        "r200_blob": "5135639786bbafa4e03939a74659cd0f31df3564",
+        "r200_bytes": 24931,
+        "integrated_blob": "e5910015fc6e33ad015bc5dc0605b86622b701be",
+        "integrated_bytes": 26443,
+        "evidence_lock_blob": "5135639786bbafa4e03939a74659cd0f31df3564",
+        "evidence_lock_bytes": 24931,
+        "lineage": "original_lock_equal",
+        "review_required": true
+      },
+      "metadata": {
+        "r200_blob": "16cc5e91204a77486912444c6e516f5d5b48f567",
+        "r200_bytes": 3881,
+        "integrated_blob": "16cc5e91204a77486912444c6e516f5d5b48f567",
+        "integrated_bytes": 3881,
+        "evidence_lock_blob": "16cc5e91204a77486912444c6e516f5d5b48f567",
+        "evidence_lock_bytes": 3881,
+        "lineage": "all_equal",
+        "review_required": false
+      },
+      "human_review_required": true
+    },
+    {
+      "n": 17,
+      "slug": "medication-and-devices",
+      "original_cluster": "health",
+      "evidence_lock_origin": "health",
+      "origin_differs": false,
+      "route": "/preparedness/health-sanitation/medication-and-devices/",
+      "body": {
+        "r200_blob": "47bbfeefb5aca5f5a8d66ad8c66e2998e6caae5e",
+        "r200_bytes": 28770,
+        "integrated_blob": "47bbfeefb5aca5f5a8d66ad8c66e2998e6caae5e",
+        "integrated_bytes": 28770,
+        "evidence_lock_blob": "47bbfeefb5aca5f5a8d66ad8c66e2998e6caae5e",
+        "evidence_lock_bytes": 28770,
+        "lineage": "all_equal",
+        "review_required": false
+      },
+      "metadata": {
+        "r200_blob": "a49a6d42a3deb14acbe67e7cf636c23cdc5ec49c",
+        "r200_bytes": 3923,
+        "integrated_blob": "a49a6d42a3deb14acbe67e7cf636c23cdc5ec49c",
+        "integrated_bytes": 3923,
+        "evidence_lock_blob": "a49a6d42a3deb14acbe67e7cf636c23cdc5ec49c",
+        "evidence_lock_bytes": 3923,
+        "lineage": "all_equal",
+        "review_required": false
+      },
+      "human_review_required": false
+    },
+    {
+      "n": 18,
+      "slug": "emergency-hygiene-sanitation",
+      "original_cluster": "health",
+      "evidence_lock_origin": "health",
+      "origin_differs": false,
+      "route": "/preparedness/health-sanitation/emergency-hygiene-sanitation/",
+      "body": {
+        "r200_blob": "324eeafa4d48c3e83e88055c5f226645a8893b4a",
+        "r200_bytes": 24497,
+        "integrated_blob": "324eeafa4d48c3e83e88055c5f226645a8893b4a",
+        "integrated_bytes": 24497,
+        "evidence_lock_blob": "324eeafa4d48c3e83e88055c5f226645a8893b4a",
+        "evidence_lock_bytes": 24497,
+        "lineage": "all_equal",
+        "review_required": false
+      },
+      "metadata": {
+        "r200_blob": "e94ff9b33e6ced71dafcdcc4412ad687a503ccf6",
+        "r200_bytes": 3096,
+        "integrated_blob": "e94ff9b33e6ced71dafcdcc4412ad687a503ccf6",
+        "integrated_bytes": 3096,
+        "evidence_lock_blob": "e94ff9b33e6ced71dafcdcc4412ad687a503ccf6",
+        "evidence_lock_bytes": 3096,
+        "lineage": "all_equal",
+        "review_required": false
+      },
+      "human_review_required": false
+    },
+    {
+      "n": 19,
+      "slug": "warnings-radios-offline-maps",
+      "original_cluster": "health",
+      "evidence_lock_origin": "health",
+      "origin_differs": false,
+      "route": "/preparedness/family-communication/warnings-radios-offline-maps/",
+      "body": {
+        "r200_blob": "fbc39101ba2c8378423ba9554aaf467ee3bc53b7",
+        "r200_bytes": 21257,
+        "integrated_blob": "fbc39101ba2c8378423ba9554aaf467ee3bc53b7",
+        "integrated_bytes": 21257,
+        "evidence_lock_blob": "fbc39101ba2c8378423ba9554aaf467ee3bc53b7",
+        "evidence_lock_bytes": 21257,
+        "lineage": "all_equal",
+        "review_required": false
+      },
+      "metadata": {
+        "r200_blob": "025ddac0f8c077f2a6fa17d7fcb746caa51234a7",
+        "r200_bytes": 3132,
+        "integrated_blob": "025ddac0f8c077f2a6fa17d7fcb746caa51234a7",
+        "integrated_bytes": 3132,
+        "evidence_lock_blob": "025ddac0f8c077f2a6fa17d7fcb746caa51234a7",
+        "evidence_lock_bytes": 3132,
+        "lineage": "all_equal",
+        "review_required": false
+      },
+      "human_review_required": false
+    },
+    {
+      "n": 20,
+      "slug": "preparedness-real-households",
+      "original_cluster": "start",
+      "evidence_lock_origin": "start",
+      "origin_differs": false,
+      "route": "/preparedness/start-here/preparedness-real-households/",
+      "body": {
+        "r200_blob": "70d03c366e10db623929f118501becfa26c48bab",
+        "r200_bytes": 24269,
+        "integrated_blob": "68344cf6c4022285fffb2a01f42027bf6f9ee95d",
+        "integrated_bytes": 25659,
+        "evidence_lock_blob": "70d03c366e10db623929f118501becfa26c48bab",
+        "evidence_lock_bytes": 24269,
+        "lineage": "original_lock_equal",
+        "review_required": true
+      },
+      "metadata": {
+        "r200_blob": "a0c3a09143a825560b5a5ed79d857b7402bfa295",
+        "r200_bytes": 3718,
+        "integrated_blob": "ba840917f34634ccd634c488eeca4a8a6b3a8fe2",
+        "integrated_bytes": 3948,
+        "evidence_lock_blob": "ba840917f34634ccd634c488eeca4a8a6b3a8fe2",
+        "evidence_lock_bytes": 3948,
+        "lineage": "integrated_lock_equal",
+        "review_required": true
+      },
+      "human_review_required": true
+    },
+    {
+      "n": 21,
+      "slug": "salt-beef-salt-pork-age-of-sail",
+      "original_cluster": "start",
+      "evidence_lock_origin": "base",
+      "origin_differs": true,
+      "route": "/preparedness/lost-ways/salt-beef-salt-pork-age-of-sail/",
+      "body": {
+        "r200_blob": "6539aafeca9bca67c96247c81a7412b117201b88",
+        "r200_bytes": 21371,
+        "integrated_blob": "6539aafeca9bca67c96247c81a7412b117201b88",
+        "integrated_bytes": 21371,
+        "evidence_lock_blob": "6539aafeca9bca67c96247c81a7412b117201b88",
+        "evidence_lock_bytes": 21371,
+        "lineage": "all_equal",
+        "review_required": false
+      },
+      "metadata": {
+        "r200_blob": "06b1cec809cb78a3315f7a7655b028c0a27dd642",
+        "r200_bytes": 2897,
+        "integrated_blob": "1c4c5396da703f3724b584c67e49e2128ab1f4c6",
+        "integrated_bytes": 3433,
+        "evidence_lock_blob": "06b1cec809cb78a3315f7a7655b028c0a27dd642",
+        "evidence_lock_bytes": 2897,
+        "lineage": "original_lock_equal",
+        "review_required": true
+      },
+      "human_review_required": true
+    },
+    {
+      "n": 22,
+      "slug": "ships-biscuit-and-hardtack",
+      "original_cluster": "hist-food",
+      "evidence_lock_origin": "hist-food",
+      "origin_differs": false,
+      "route": "/preparedness/lost-ways/ships-biscuit-and-hardtack/",
+      "body": {
+        "r200_blob": "f2ec2393819c26741f7ce77b7e0f0f893d1c33e4",
+        "r200_bytes": 19898,
+        "integrated_blob": "f2ec2393819c26741f7ce77b7e0f0f893d1c33e4",
+        "integrated_bytes": 19898,
+        "evidence_lock_blob": "f2ec2393819c26741f7ce77b7e0f0f893d1c33e4",
+        "evidence_lock_bytes": 19898,
+        "lineage": "all_equal",
+        "review_required": false
+      },
+      "metadata": {
+        "r200_blob": "2b2c3ce9472073df3d15e8befb39178d369632b1",
+        "r200_bytes": 2741,
+        "integrated_blob": "2b2c3ce9472073df3d15e8befb39178d369632b1",
+        "integrated_bytes": 2741,
+        "evidence_lock_blob": "2b2c3ce9472073df3d15e8befb39178d369632b1",
+        "evidence_lock_bytes": 2741,
+        "lineage": "all_equal",
+        "review_required": false
+      },
+      "human_review_required": false
+    },
+    {
+      "n": 23,
+      "slug": "lewis-and-clark-salt-works",
+      "original_cluster": "hist-food",
+      "evidence_lock_origin": "hist-food",
+      "origin_differs": false,
+      "route": "/preparedness/lost-ways/lewis-and-clark-salt-works/",
+      "body": {
+        "r200_blob": "364152230a6956a4936fd4ec4bce6b1547fe2533",
+        "r200_bytes": 17785,
+        "integrated_blob": "364152230a6956a4936fd4ec4bce6b1547fe2533",
+        "integrated_bytes": 17785,
+        "evidence_lock_blob": "364152230a6956a4936fd4ec4bce6b1547fe2533",
+        "evidence_lock_bytes": 17785,
+        "lineage": "all_equal",
+        "review_required": false
+      },
+      "metadata": {
+        "r200_blob": "3a350aedac67ea89c6995831032367634248c9e9",
+        "r200_bytes": 3230,
+        "integrated_blob": "3a350aedac67ea89c6995831032367634248c9e9",
+        "integrated_bytes": 3230,
+        "evidence_lock_blob": "3a350aedac67ea89c6995831032367634248c9e9",
+        "evidence_lock_bytes": 3230,
+        "lineage": "all_equal",
+        "review_required": false
+      },
+      "human_review_required": false
+    },
+    {
+      "n": 24,
+      "slug": "pioneer-travel-rations",
+      "original_cluster": "hist-food",
+      "evidence_lock_origin": "hist-food",
+      "origin_differs": false,
+      "route": "/preparedness/lost-ways/pioneer-travel-rations/",
+      "body": {
+        "r200_blob": "a658481d828dc4c5ba85f296adbfbee0514f0611",
+        "r200_bytes": 18180,
+        "integrated_blob": "058c90b763d8cd6dec0731a7b0a9cee4dd5a57c7",
+        "integrated_bytes": 18100,
+        "evidence_lock_blob": "058c90b763d8cd6dec0731a7b0a9cee4dd5a57c7",
+        "evidence_lock_bytes": 18100,
+        "lineage": "integrated_lock_equal",
+        "review_required": true
+      },
+      "metadata": {
+        "r200_blob": "521e56a3f18d8b211920529a88a3c3b86eb332d7",
+        "r200_bytes": 3057,
+        "integrated_blob": "7191acba55d63dc405ad9c2003d66193276da89f",
+        "integrated_bytes": 3020,
+        "evidence_lock_blob": "7191acba55d63dc405ad9c2003d66193276da89f",
+        "evidence_lock_bytes": 3020,
+        "lineage": "integrated_lock_equal",
+        "review_required": true
+      },
+      "human_review_required": true
+    },
+    {
+      "n": 25,
+      "slug": "pemmican-and-dried-meats",
+      "original_cluster": "hist-food",
+      "evidence_lock_origin": "hist-food",
+      "origin_differs": false,
+      "route": "/preparedness/lost-ways/pemmican-and-dried-meats/",
+      "body": {
+        "r200_blob": "1febc8929f8b90c81a3fcef1e46a2811778b7e06",
+        "r200_bytes": 18693,
+        "integrated_blob": "0b3319cc85ea2bc6d069b46d13a40e12ddbd5bc5",
+        "integrated_bytes": 18672,
+        "evidence_lock_blob": "0b3319cc85ea2bc6d069b46d13a40e12ddbd5bc5",
+        "evidence_lock_bytes": 18672,
+        "lineage": "integrated_lock_equal",
+        "review_required": true
+      },
+      "metadata": {
+        "r200_blob": "c19f68f2ac0988a8d0959e2d05b8ace8f9511348",
+        "r200_bytes": 3424,
+        "integrated_blob": "03d3824e07fe51931671d0ddc7aa8c85eda58435",
+        "integrated_bytes": 3385,
+        "evidence_lock_blob": "03d3824e07fe51931671d0ddc7aa8c85eda58435",
+        "evidence_lock_bytes": 3385,
+        "lineage": "integrated_lock_equal",
+        "review_required": true
+      },
+      "human_review_required": true
+    },
+    {
+      "n": 26,
+      "slug": "smokehouses-salting-curing",
+      "original_cluster": "hist-food",
+      "evidence_lock_origin": "hist-food",
+      "origin_differs": false,
+      "route": "/preparedness/lost-ways/smokehouses-salting-curing/",
+      "body": {
+        "r200_blob": "e5f6241c1fa09fdbd684234317aa819ea4ef13a2",
+        "r200_bytes": 16424,
+        "integrated_blob": "e5f6241c1fa09fdbd684234317aa819ea4ef13a2",
+        "integrated_bytes": 16424,
+        "evidence_lock_blob": "e5f6241c1fa09fdbd684234317aa819ea4ef13a2",
+        "evidence_lock_bytes": 16424,
+        "lineage": "all_equal",
+        "review_required": false
+      },
+      "metadata": {
+        "r200_blob": "16223945e83f95b349acf09a2b684c09326550c0",
+        "r200_bytes": 3280,
+        "integrated_blob": "16223945e83f95b349acf09a2b684c09326550c0",
+        "integrated_bytes": 3280,
+        "evidence_lock_blob": "16223945e83f95b349acf09a2b684c09326550c0",
+        "evidence_lock_bytes": 3280,
+        "lineage": "all_equal",
+        "review_required": false
+      },
+      "human_review_required": false
+    },
+    {
+      "n": 27,
+      "slug": "root-cellars-cool-storage",
+      "original_cluster": "hist-home",
+      "evidence_lock_origin": "hist-home",
+      "origin_differs": false,
+      "route": "/preparedness/lost-ways/root-cellars-cool-storage/",
+      "body": {
+        "r200_blob": "7f375c32d74f2828b4912f5692abc44483e4629a",
+        "r200_bytes": 21383,
+        "integrated_blob": "2ff8d029769aa9a97de6b1e388d937899f3af38c",
+        "integrated_bytes": 21281,
+        "evidence_lock_blob": "e28548b4e5014f36ffd12becb9261ae696480efa",
+        "evidence_lock_bytes": 18847,
+        "lineage": "all_distinct",
+        "review_required": true
+      },
+      "metadata": {
+        "r200_blob": "c3b7425711c3953c2d6cac9eb2aabe21a6717285",
+        "r200_bytes": 2538,
+        "integrated_blob": "c3b7425711c3953c2d6cac9eb2aabe21a6717285",
+        "integrated_bytes": 2538,
+        "evidence_lock_blob": "705e1157f9394b615ecb74ffd25be8500453e18a",
+        "evidence_lock_bytes": 2314,
+        "lineage": "original_integrated_equal",
+        "review_required": true
+      },
+      "human_review_required": true
+    },
+    {
+      "n": 28,
+      "slug": "pickling-fermentation-old-recipes",
+      "original_cluster": "hist-home",
+      "evidence_lock_origin": "hist-home",
+      "origin_differs": false,
+      "route": "/preparedness/lost-ways/pickling-fermentation-old-recipes/",
+      "body": {
+        "r200_blob": "1869e37626b7463da45763d60202bd5ac0bd7700",
+        "r200_bytes": 21293,
+        "integrated_blob": "1869e37626b7463da45763d60202bd5ac0bd7700",
+        "integrated_bytes": 21293,
+        "evidence_lock_blob": "17f5da8a998e6b9b38695a2ef6716c6f336f31c4",
+        "evidence_lock_bytes": 18560,
+        "lineage": "original_integrated_equal",
+        "review_required": true
+      },
+      "metadata": {
+        "r200_blob": "da97f42fcabbd05dc513d26c6af289bbeb8816f3",
+        "r200_bytes": 2838,
+        "integrated_blob": "da97f42fcabbd05dc513d26c6af289bbeb8816f3",
+        "integrated_bytes": 2838,
+        "evidence_lock_blob": "4b955811459017df83a28704aaf1e69ddb036c29",
+        "evidence_lock_bytes": 2542,
+        "lineage": "original_integrated_equal",
+        "review_required": true
+      },
+      "human_review_required": true
+    },
+    {
+      "n": 29,
+      "slug": "rain-barrels-and-cisterns",
+      "original_cluster": "hist-home",
+      "evidence_lock_origin": "hist-home",
+      "origin_differs": false,
+      "route": "/preparedness/lost-ways/rain-barrels-and-cisterns/",
+      "body": {
+        "r200_blob": "1454ab95bef4e54ae8992addf4f815fc8bf358b4",
+        "r200_bytes": 19896,
+        "integrated_blob": "1454ab95bef4e54ae8992addf4f815fc8bf358b4",
+        "integrated_bytes": 19896,
+        "evidence_lock_blob": "1454ab95bef4e54ae8992addf4f815fc8bf358b4",
+        "evidence_lock_bytes": 19896,
+        "lineage": "all_equal",
+        "review_required": false
+      },
+      "metadata": {
+        "r200_blob": "dc42694e842969624f24ab5edc9bff2497693e70",
+        "r200_bytes": 2422,
+        "integrated_blob": "dc42694e842969624f24ab5edc9bff2497693e70",
+        "integrated_bytes": 2422,
+        "evidence_lock_blob": "dc42694e842969624f24ab5edc9bff2497693e70",
+        "evidence_lock_bytes": 2422,
+        "lineage": "all_equal",
+        "review_required": false
+      },
+      "human_review_required": false
+    },
+    {
+      "n": 30,
+      "slug": "water-purification-through-history",
+      "original_cluster": "hist-home",
+      "evidence_lock_origin": "hist-home",
+      "origin_differs": false,
+      "route": "/preparedness/lost-ways/water-purification-through-history/",
+      "body": {
+        "r200_blob": "3c89d3041b170038c842dea1b4f943385b0c8a86",
+        "r200_bytes": 24340,
+        "integrated_blob": "3c89d3041b170038c842dea1b4f943385b0c8a86",
+        "integrated_bytes": 24340,
+        "evidence_lock_blob": "3c89d3041b170038c842dea1b4f943385b0c8a86",
+        "evidence_lock_bytes": 24340,
+        "lineage": "all_equal",
+        "review_required": false
+      },
+      "metadata": {
+        "r200_blob": "1d9b77aa4a4cdbf4f9a02fe6d1cf5d2691cc798e",
+        "r200_bytes": 3142,
+        "integrated_blob": "1d9b77aa4a4cdbf4f9a02fe6d1cf5d2691cc798e",
+        "integrated_bytes": 3142,
+        "evidence_lock_blob": "1d9b77aa4a4cdbf4f9a02fe6d1cf5d2691cc798e",
+        "evidence_lock_bytes": 3142,
+        "lineage": "all_equal",
+        "review_required": false
+      },
+      "human_review_required": false
+    },
+    {
+      "n": 31,
+      "slug": "fire-making-across-time",
+      "original_cluster": "hist-field",
+      "evidence_lock_origin": "hist-field",
+      "origin_differs": false,
+      "route": "/preparedness/lost-ways/fire-making-across-time/",
+      "body": {
+        "r200_blob": "ff1b5e2c91172925e1d75462da4b3e162399269f",
+        "r200_bytes": 24662,
+        "integrated_blob": "ff1b5e2c91172925e1d75462da4b3e162399269f",
+        "integrated_bytes": 24662,
+        "evidence_lock_blob": "ff1b5e2c91172925e1d75462da4b3e162399269f",
+        "evidence_lock_bytes": 24662,
+        "lineage": "all_equal",
+        "review_required": false
+      },
+      "metadata": {
+        "r200_blob": "ca9e2c84d825b5cd9e182dc9a4a381c8a6905884",
+        "r200_bytes": 3134,
+        "integrated_blob": "ca9e2c84d825b5cd9e182dc9a4a381c8a6905884",
+        "integrated_bytes": 3134,
+        "evidence_lock_blob": "ca9e2c84d825b5cd9e182dc9a4a381c8a6905884",
+        "evidence_lock_bytes": 3134,
+        "lineage": "all_equal",
+        "review_required": false
+      },
+      "human_review_required": false
+    },
+    {
+      "n": 32,
+      "slug": "navigation-before-gps",
+      "original_cluster": "hist-field",
+      "evidence_lock_origin": "hist-field",
+      "origin_differs": false,
+      "route": "/preparedness/lost-ways/navigation-before-gps/",
+      "body": {
+        "r200_blob": "49beb68339a6b85b07d686c0cfb9fe1d88b8de4f",
+        "r200_bytes": 21852,
+        "integrated_blob": "3c02e58c30d1d608224944142f31fbead44a1252",
+        "integrated_bytes": 21752,
+        "evidence_lock_blob": "64c6b2c7004bc5549eea5a47d9095183e7436750",
+        "evidence_lock_bytes": 21735,
+        "lineage": "all_distinct",
+        "review_required": true
+      },
+      "metadata": {
+        "r200_blob": "40c83419760bc7bd0c4c574304e65b773b4a8423",
+        "r200_bytes": 2856,
+        "integrated_blob": "40c83419760bc7bd0c4c574304e65b773b4a8423",
+        "integrated_bytes": 2856,
+        "evidence_lock_blob": "40c83419760bc7bd0c4c574304e65b773b4a8423",
+        "evidence_lock_bytes": 2856,
+        "lineage": "all_equal",
+        "review_required": false
+      },
+      "human_review_required": true
+    },
+    {
+      "n": 33,
+      "slug": "sanitation-before-germ-theory",
+      "original_cluster": "hist-home",
+      "evidence_lock_origin": "hist-home",
+      "origin_differs": false,
+      "route": "/preparedness/lost-ways/sanitation-before-germ-theory/",
+      "body": {
+        "r200_blob": "02090fc1b773fd79f08a7ba754b6125844c37eab",
+        "r200_bytes": 22049,
+        "integrated_blob": "d56df76647d2598f35cfd4609f91649cef063f12",
+        "integrated_bytes": 21947,
+        "evidence_lock_blob": "15852c158708270d72d5f9723d90e5cb6083a766",
+        "evidence_lock_bytes": 21687,
+        "lineage": "all_distinct",
+        "review_required": true
+      },
+      "metadata": {
+        "r200_blob": "3294cd9fcf59496c9ece9342e67b0d57d2ed5523",
+        "r200_bytes": 2962,
+        "integrated_blob": "3294cd9fcf59496c9ece9342e67b0d57d2ed5523",
+        "integrated_bytes": 2962,
+        "evidence_lock_blob": "0dad1731adc3c88aac65baceaa9aa09112e5eb5b",
+        "evidence_lock_bytes": 2635,
+        "lineage": "original_integrated_equal",
+        "review_required": true
+      },
+      "human_review_required": true
+    },
+    {
+      "n": 34,
+      "slug": "pioneer-supply-chains-failed",
+      "original_cluster": "hist-field",
+      "evidence_lock_origin": "hist-field",
+      "origin_differs": false,
+      "route": "/preparedness/lost-ways/pioneer-supply-chains-failed/",
+      "body": {
+        "r200_blob": "3643c50b43ca7ba6c1d9bc439e7c78730503b80f",
+        "r200_bytes": 24916,
+        "integrated_blob": "ad158ee898f76d05bcb65c845b1e4a0e8103c660",
+        "integrated_bytes": 24803,
+        "evidence_lock_blob": "1332df3540a903fdecdb3527fb22347d57968fb0",
+        "evidence_lock_bytes": 22205,
+        "lineage": "all_distinct",
+        "review_required": true
+      },
+      "metadata": {
+        "r200_blob": "8789c77dcc2be717f09ce0fbd340a04319aaf223",
+        "r200_bytes": 3208,
+        "integrated_blob": "4d2dc4958736e3c5257c65dda8ed016a473ac6be",
+        "integrated_bytes": 3162,
+        "evidence_lock_blob": "fcb42c440e3b7aad5eeecfd4e0c974a5d04a9cec",
+        "evidence_lock_bytes": 2830,
+        "lineage": "all_distinct",
+        "review_required": true
+      },
+      "human_review_required": true
+    },
+    {
+      "n": 35,
+      "slug": "history-of-food-preservation",
+      "original_cluster": "hist-food",
+      "evidence_lock_origin": "hist-food",
+      "origin_differs": false,
+      "route": "/preparedness/lost-ways/history-of-food-preservation/",
+      "body": {
+        "r200_blob": "273b246a069e834d8476bfc2854308732f5137ab",
+        "r200_bytes": 18005,
+        "integrated_blob": "273b246a069e834d8476bfc2854308732f5137ab",
+        "integrated_bytes": 18005,
+        "evidence_lock_blob": "273b246a069e834d8476bfc2854308732f5137ab",
+        "evidence_lock_bytes": 18005,
+        "lineage": "all_equal",
+        "review_required": false
+      },
+      "metadata": {
+        "r200_blob": "907237e436b44a34f8d673ef9de3168d1e9ad517",
+        "r200_bytes": 3128,
+        "integrated_blob": "907237e436b44a34f8d673ef9de3168d1e9ad517",
+        "integrated_bytes": 3128,
+        "evidence_lock_blob": "907237e436b44a34f8d673ef9de3168d1e9ad517",
+        "evidence_lock_bytes": 3128,
+        "lineage": "all_equal",
+        "review_required": false
+      },
+      "human_review_required": false
+    }
+  ]
+}
