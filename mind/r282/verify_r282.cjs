@@ -72,7 +72,7 @@ function verify(bundle){
   const disclosure=html.indexOf("Potential affiliate relationship:"),button=html.indexOf("<button");
   if(disclosure<0||button<0||button-disclosure>700||button<disclosure)bad(label+": adjacent FTC disclosure");
   if(!html.includes("No affiliate purchasing link is currently active")||!html.includes("not independently substantiated")||
-     !html.includes("merchant's newsletter")||!html.includes("annual")&&!html.includes("annually"))bad(label+": seller/consent/efficacy limitation");
+     !html.includes("Zen12's newsletter")||!html.includes("annual")&&!html.includes("annually"))bad(label+": seller/consent/efficacy limitation");
  }
  if(A.includes('class="film"'))bad("Text control contains film");
  if(!B.includes('class="film"')||!B.includes("NOT PLAYABLE")||!B.includes("No MP4, WebM"))bad("B film status fabricated");
