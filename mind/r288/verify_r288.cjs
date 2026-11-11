@@ -142,7 +142,7 @@ function mutants(){
  ["remove_focus",v=>editH(v,s=>s.replaceAll("https://finalvestige.com/focus/","/dead-link"))],
  ["remove_study_stream",v=>editH(v,s=>s.replace("History of Suggestion","History (removed)"))],
  ["remove_source_dossier",v=>editH(v,s=>s.replaceAll("puysegurs-animal-magnetism-files/","broken/"))],
- ["erase_plan_metric",v=>editP(v,s=>s.replace("NOT COMPUTABLE","ZERO"))],
+ ["erase_plan_metric",v=>editP(v,s=>s.replaceAll("NOT COMPUTABLE","ZERO"))],
  ["erase_plan_release",v=>editP(v,s=>s.replace("NO MERGE","MERGE OK"))],
  ["change_parent_offer",v=>editM(v,m=>m.offers.pop())],
  ["turn_B_into_film",v=>mutate(v,"b",s=>s+'<video src="fake.mp4"></video>')],
