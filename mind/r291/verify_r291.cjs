@@ -96,8 +96,8 @@ function mutants(files){
  add('remove rev calculation','plan',s=>s.replace('NOT COMPUTABLE','NOT TRACKED'));
  add('change renderer length','renderer',s=>s.replace('"-t","42"','"-t","60"'));
  add('remove renderer captions','renderer',s=>s.replace('captions.vtt','fake.ext'));
- add('alter A copy','a',s=>s.replace('Money Back','Money Bonus'));
- add('alter B copy','b',s=>s.replace('Money Back','Money Bonus'));
+ add('alter A copy','a',s=>s.replace('Zen12','UnrelatedAudio'));
+ add('alter B copy','b',s=>s.replace('Zen12','UnrelatedAudio'));
  for (const [name,change] of [
   ['make affiliate approved',j=>{j.release_gates.issued_earning_url.status='APPROVED'}],
   ['wrong valid claim source',j=>{j.claims[0].source_id=j.sources[2].id}],
