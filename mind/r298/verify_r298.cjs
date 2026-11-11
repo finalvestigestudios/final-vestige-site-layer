@@ -104,7 +104,7 @@ function validate(d,options={}){
  for(const phrase of ["111 randomized controlled trials","9,538","18 eligible studies","29 studies","19 digital-training studies","45 randomized trials","face-to-face","self-guided","outliers","Puységur","There is no active purchasing recommendation"]){
   needs(d.guide.toLowerCase().includes(phrase.toLowerCase()),"GUIDE_EVIDENCE_"+phrase);
  }
- for(const s of m.sources){needs(d.guide.includes(s.url)||(["S11","S16","S17","S18","S20"].includes(s.id)),"SOURCE_URL_MISSING_IN_GUIDE_"+s.id);}
+ for(const s of m.sources){needs(d.guide.includes(s.url)||(["S10","S11","S12","S16","S17","S18","S20"].includes(s.id)),"SOURCE_URL_MISSING_IN_GUIDE_"+s.id);}
  needs(d.dossier.includes("NOT COMPUTABLE")&&d.dossier.includes("mind_pilot_2026_11")&&d.dossier.includes("mind_proposed_2026_11"),"DOSSIER_ATTRIBUTION_AND_REVENUE");
  needs(d.dossier.includes("face-to-face")&&d.dossier.includes("outliers")&&d.dossier.includes("No verified"),"DOSSIER_EVIDENCE_LIMITS");
  needs(d.dossier.includes("NOT PLAYABLE")&&d.dossier.includes("NO VERIFIED MATCH"),"DOSSIER_MEDIA_HOLD");
