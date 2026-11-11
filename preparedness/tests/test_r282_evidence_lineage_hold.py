@@ -291,6 +291,29 @@ class R284SourceReleaseCustody(unittest.TestCase):
         # Extra legitimate witnesses are not treated as publication approvals.
         self.o['articles'][0]['also_in']=['start','food']
         self.assertEqual(g.derive(self.o,self.i,self.l)['state'],g.HOLD)
+    def make_original_historical_cross_track(self):
+        # Frozen article #21: Lost Ways subject, Start cluster source,
+        # seven-cluster witness roster. Preserve this real historical anomaly.
+        a=self.o['articles'][20];old=a['slug'];slug='salt-beef-salt-pork-age-of-sail'
+        a.update(slug=slug,section='lost-ways',track='lost-ways',
+                 route=f'/preparedness/lost-ways/{slug}/',
+                 also_in=list(self.o['branch_heads']))
+        for e in self.i['entries']:
+            if e['path'].startswith(f'content/articles/{old}.'):
+                e['path']=e['path'].replace(f'/{old}.',f'/{slug}.')
+        lock=self.l['records'][20];lock['slug']=slug
+        for part in ('body','metadata'):
+            lock[part]['path']=lock[part]['path'].replace(f'/{old}.',f'/{slug}.')
+    def test_authentic_cross_track_start_origin_is_preserved(self):
+        self.make_original_historical_cross_track()
+        rows=g.derive(self.o,self.i,self.l)['articles']
+        self.assertEqual(rows[20]['original_cluster'],'start')
+        self.assertEqual(rows[20]['route'],'/preparedness/lost-ways/salt-beef-salt-pork-age-of-sail/')
+    def test_cross_track_requires_all_seven_witnesses(self):
+        self.make_original_historical_cross_track()
+        self.o['articles'][20]['also_in']=['start']
+        with self.assertRaisesRegex(ValueError,'article contributor/track mismatch'):
+            g.derive(self.o,self.i,self.l)
 
 def r284_negative(key,fn):
     def test(self):
