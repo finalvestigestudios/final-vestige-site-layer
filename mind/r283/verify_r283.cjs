@@ -53,7 +53,7 @@ function check(data){
     assert(!/\bon(?:click|load|error)\s*=/i.test(h),"no inline event "+k,fail);
     assert(!/autoplay/i.test(h.replace(/no autoplay/g,"")),"no autoplay attribute "+k,fail);
     assert(!/data-(?:gtm|ga|pixel)/i.test(h),"no duplicate tracker "+k,fail);
-    assert(/<button[^>]*\bdisabled\b[^>]*>Compare Zen12/i.test(h),"disabled CTA "+k,fail);
+    assert(/<button[^>]*\sdisabled(?:\s|>)[^>]*>Compare Zen12/i.test(h),"disabled CTA "+k,fail);
     assert(/If you purchase through a future approved link, Final Vestige may earn a commission at no additional cost to you/.test(h),"adjacent FTC disclosure "+k,fail);
     const section=h.match(/<div class="commercial"[\s\S]*?<\/div>/i)?.[0]||"";
     assert(section.indexOf("If you purchase through a future approved link")>section.indexOf("<button")&&section.indexOf("If you purchase through a future approved link")<section.indexOf("</div>"),"disclosure in same commerce box "+k,fail);
@@ -81,7 +81,7 @@ function check(data){
     data.hub.includes("No public article route exists") && data.hub.includes("https://finalvestige.com/focus/") &&
     data.hub.includes("https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"),"canonical hub and live links",fail);
   assert(!/<(?:form|script|iframe|video|audio|source|input)\b/i.test(data.hub) && !sellerHost.test(data.hub),"hub no tracker/forms/merchant",fail);
-  assert(/<button[^>]*\bdisabled\b/.test(data.hub) && data.hub.includes("If you purchase through a future approved link, Final Vestige may earn a commission at no additional cost to you"),"hub disabled + disclosure",fail);
+  assert(/<button[^>]*\sdisabled(?:\s|>)/.test(data.hub) && data.hub.includes("If you purchase through a future approved link, Final Vestige may earn a commission at no additional cost to you"),"hub disabled + disclosure",fail);
   assert(data.plan.includes("NOT COMPUTABLE") && data.plan.includes("HARD_HOLD") &&
     data.plan.includes("qualified_human_session") && data.plan.includes("settled_commission") &&
     data.plan.includes("paid commission")&&data.plan.includes("no playable video") && data.plan.includes("**Release judgment: HARD HOLD.**"),"conversion/release plan",fail);
