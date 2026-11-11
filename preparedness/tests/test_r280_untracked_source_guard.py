@@ -51,7 +51,7 @@ class R280(unittest.TestCase):
 
     def test_added_source_symlink_rejected(self):
         target = self.root/'sources/fragments/shadow.json'
-        target.symlink_to(self.root/'sources/fragments/source-0.json')
+        target.symlink_to(self.root/'sources/fragments/start.json')
         with self.assertRaisesRegex(ValueError, 'symlink'):
             g.check_tree(self.root, self.manifest)
 

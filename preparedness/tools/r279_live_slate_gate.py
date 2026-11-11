@@ -7,6 +7,7 @@ from a passing custody check. No CMS, browser, network, or merchant side effects
 from __future__ import annotations
 
 import hashlib
+import os
 import json
 import re
 import stat
@@ -28,6 +29,19 @@ TOOL = re.compile(r'^content/tools/([a-z0-9-]+)\.(body\.html|meta\.json)$')
 # Source-like extensions can alter registered evidence even when an existing
 # fragment's SHA stays unchanged. README/notes are not source inputs.
 SOURCE_DATA_EXTENSIONS = frozenset({'.json', '.jsonl', '.yaml', '.yml', '.csv', '.tsv'})
+# Exact authentic R276 source-origin roster: seven cluster fragments plus
+# the separately located root source register. This corrects the previous
+# broad all-fragments assumption which rejected the real frozen manifest.
+SOURCE_ORIGINS = frozenset({
+    'sources/register.json',
+    'sources/fragments/start.json',
+    'sources/fragments/shelter.json',
+    'sources/fragments/food.json',
+    'sources/fragments/health.json',
+    'sources/fragments/hist-field.json',
+    'sources/fragments/hist-food.json',
+    'sources/fragments/hist-home.json',
+})
 
 
 def require(ok, error):
@@ -80,7 +94,7 @@ def check_manifest(m: dict):
             require(kind.endswith('body') == (match.group(2) == 'body.html'), 'body/meta role mismatch')
             groups[family].setdefault(match.group(1), set()).add(kind)
         elif kind == 'source_origin':
-            require(p.startswith('sources/fragments/') and p.endswith('.json'), 'source origin path')
+            require(p in SOURCE_ORIGINS, 'source origin path')
         elif kind == 'hub_body':
             require(p == 'content/hubs/start-here.body.html', 'hub path')
         elif kind == 'crosswalk':
@@ -93,6 +107,8 @@ def check_manifest(m: dict):
                        'docket_gate': 'tools/r273_source_review_docket_hold.py'}
             require(p == allowed[kind], 'gate path changed')
     require(dict(kinds) == COUNTS, 'inventory role census')
+    require({r['path'] for r in rows if r['role'] == 'source_origin'} == SOURCE_ORIGINS,
+            'authentic source origin roster')
     require(len(groups['article']) == 35 and all(x == {'article_body', 'article_meta'} for x in groups['article'].values()), 'article pair lost')
     require(len(groups['tool']) == 6 and all(x == {'tool_body', 'tool_meta'} for x in groups['tool'].values()), 'tool pair lost')
     return rows
@@ -143,12 +159,71 @@ def check_tree(root: Path, manifest: dict):
             'privacy_approved': False, 'requires_independent_review': True}
 
 
+
+# R281: this authentic source JSON exists outside the 96-row R276 manifest.
+# It is not an extra article or an approval. It must remain byte-identical.
+EVIDENCE_LOCK = 'sources/article-evidence-lock.json'
+EVIDENCE_LOCK_SHA = '2dc41fccad6f1272f0a9d9585b6c10c760dcb08c'
+EVIDENCE_LOCK_SIZE = 18593
+
+
+def check_source_closure(root: Path, manifest: dict, evidence_pin=None):
+    """Reject any new source-data input, including in root or nested folders.
+
+    The evidence_pin override exists for isolated synthetic testing only;
+    production audit always uses the independently authenticated Git pin.
+    """
+    root = Path(root)
+    rows = check_manifest(manifest)
+    expected = {r['path'] for r in rows if r['role'] in ('source_origin', 'crosswalk')}
+    require(len(expected) == 9 and SOURCE_ORIGINS <= expected, 'registered sources mismatch')
+    sha, size = evidence_pin if evidence_pin is not None else (EVIDENCE_LOCK_SHA, EVIDENCE_LOCK_SIZE)
+    require(isinstance(sha, str) and SHA.fullmatch(sha) and type(size) is int and size > 0,
+            'evidence lock pin invalid')
+    protected = root / EVIDENCE_LOCK
+    ancestor = protected
+    while True:
+        mode = ancestor.lstat().st_mode
+        require(not stat.S_ISLNK(mode), 'protected source symlink')
+        require(stat.S_ISREG(mode) if ancestor == protected else (stat.S_ISDIR(mode) or ancestor == root),
+                'protected source nonregular path')
+        if ancestor == root:
+            break
+        ancestor = ancestor.parent
+    data = protected.read_bytes()
+    require(len(data) == size and blob(data) == sha, 'source evidence lock modified')
+    expected.add(EVIDENCE_LOCK)
+    source_root = root / 'sources'
+    require(source_root.is_dir() and not source_root.is_symlink(), 'source directory unavailable')
+    found = set()
+    def onerror(err):
+        raise err
+    for dirname, directories, files in os.walk(source_root, topdown=True, followlinks=False, onerror=onerror):
+        for name in directories + files:
+            p = Path(dirname) / name
+            mode = p.lstat().st_mode
+            require(not stat.S_ISLNK(mode), 'source-tree symlink: ' + p.relative_to(root).as_posix())
+            require(stat.S_ISDIR(mode) if name in directories else stat.S_ISREG(mode),
+                    'source-tree nonregular: ' + p.relative_to(root).as_posix())
+        for name in files:
+            p = Path(dirname) / name
+            if p.suffix.lower() in SOURCE_DATA_EXTENSIONS:
+                rel = p.relative_to(root).as_posix()
+                require(rel in expected, 'unregistered source data: ' + rel)
+                found.add(rel)
+    require(found == expected, 'missing source data: ' + ','.join(sorted(expected - found)))
+    return {'source_data_files': 10, 'additional_pinned_source_files': 1}
+
+
 def audit(root: Path):
     root = Path(root)
     try:
         raw = (root / MANIFEST).read_bytes()
         require(blob(raw) == MANIFEST_SHA, 'manifest Git identity mismatch')
-        return check_tree(root, load_json(raw))
+        manifest = load_json(raw)
+        result = check_tree(root, manifest)
+        result.update(check_source_closure(root, manifest))
+        return result
     except (OSError, ValueError, TypeError, KeyError, AttributeError, UnicodeError) as exc:
         return {'state': INVALID, 'mechanical_source_parity_only': False,
                 'publication_authorized': False, 'independent_qd_pass': False,
