@@ -6,6 +6,8 @@ const path=require("node:path");
 const root=path.resolve(__dirname,"../..");
 const F={article:"mind/r294/THE-MEMORY-THAT-ARRIVED-AFTER-THE-EVENT-UNPUBLISHED.md",hub:"mind/r294/MIND-THE-WITNESS-AND-THE-RECORD-WP-HTML-CANDIDATE.html",matrix:"mind/r294/MEMORY-MISINFORMATION-COMMERCE-GATES.json",plan:"mind/r294/CANONICAL-ONE-OFFER-AND-REVENUE-ACCEPTANCE.md",A:"mind/r284/ZEN12-BUYER-GUIDE-A-TEXT-ONLY-UNPUBLISHED.html",B:"mind/r284/ZEN12-BUYER-GUIDE-B-FILM-STORYBOARD-UNPUBLISHED.html"};
 const read=()=>Object.fromEntries(Object.entries(F).map(([k,v])=>[k,fs.readFileSync(path.join(root,v),"utf8")]));
+const pinned={sources:"f0d89ab0",claims:"5f99b150",gates:"611804d0"};
+const fnv=s=>{let h=2166136261;for(let i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619)}return(h>>>0).toString(16).padStart(8,"0")};
 const allowed=new Set(["finalvestige.com","pubmed.ncbi.nlm.nih.gov","www.ftc.gov","journals.plos.org","portal.research.lu.se","onlinelibrary.wiley.com"]);
 function decode(s){return s.replace(/&#x([0-9a-f]+);?|&#([0-9]+);?|&colon;?|&sol;?/gi,(z,h,d)=>h?String.fromCodePoint(parseInt(h,16)):d?String.fromCodePoint(+d):/^&colon/i.test(z)?":":"/");}
 function htmlCheck(h,label){
@@ -41,6 +43,9 @@ function validate(x){
  assert.equal(m.status,"UNPUBLISHED_HARD_HOLD");
  assert.equal(m.sources.length,18);assert.equal(m.claims.length,28);
  assert.equal(m.authorization_gates.length,18);assert.ok(m.authorization_gates.every(g=>g.status==="HARD_HOLD"&&g.verified_at===null&&g.evidence===null&&!g.override_allowed));
+ assert.equal(fnv(m.sources.map(s=>s.id+"|"+s.url).join("\\n")),pinned.sources,"source identity/url pin");
+ assert.equal(fnv(m.claims.map(c=>c.id+"|"+c.source_ids.join(",")+"|"+c.decision+"|"+c.limits).join("\\n")),pinned.claims,"claim/source/decision/limits pin");
+ assert.equal(fnv(m.authorization_gates.map(g=>g.id+"|"+g.status).join("\\n")),pinned.gates,"gate identity/status pin");
  const ids=new Set(m.sources.map(s=>s.id));assert.equal(ids.size,18);
  for(const c of m.claims){assert.ok(c.source_ids.length&&c.source_ids.every(id=>ids.has(id)));assert.ok(c.limits.length>=10)}
  const c=m.commercial_primary_hypothesis;
@@ -79,6 +84,9 @@ function mutationTests(x){
  ["campaign silently chosen",y=>{let j=JSON.parse(y.matrix);j.measurement.utm_campaign_final="mind_proposed_2026_11";y.matrix=JSON.stringify(j)}],
  ["video magically hosted",y=>{let j=JSON.parse(y.matrix);j.experiment.variant_B_currently_playable=true;y.matrix=JSON.stringify(j)}],
  ["claim source unlinked",y=>{let j=JSON.parse(y.matrix);j.claims[0].source_ids=["missing_id"];y.matrix=JSON.stringify(j)}],
+ ["source URL swapped",y=>{let j=JSON.parse(y.matrix);j.sources[0].url="https://bad.invalid/";y.matrix=JSON.stringify(j)}],
+ ["seller claim upgraded",y=>{let j=JSON.parse(y.matrix);j.claims[14].decision="ALLOW";y.matrix=JSON.stringify(j)}],
+ ["claim limitations diluted",y=>{let j=JSON.parse(y.matrix);j.claims[15].limits="safe";y.matrix=JSON.stringify(j)}],
  ["source list shrunk",y=>{let j=JSON.parse(y.matrix);j.sources.pop();y.matrix=JSON.stringify(j)}],
  ["release toggled",y=>{let j=JSON.parse(y.matrix);j.release.wordpress_write=true;y.matrix=JSON.stringify(j)}]
  ];
