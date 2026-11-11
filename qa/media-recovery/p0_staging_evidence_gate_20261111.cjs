@@ -12,11 +12,36 @@ const integer = value => Number.isSafeInteger(value) && value >= 0;
 const px = value => Number.isSafeInteger(value) && value > 0;
 const sha256 = value => typeof value === 'string' && /^[a-f0-9]{64}$/.test(value);
 
+const PINNED_POST_PERMALINKS = Object.freeze({
+  "285": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+  "287": "https://finalvestige.com/2026/08/19/the-warning-was-a-man-waving-sunshine-skyway/",
+  "407": "https://finalvestige.com/2026/08/20/the-lake-wasnt-there-yesterday-hebgen/",
+  "418": "https://finalvestige.com/2026/08/20/the-lighthouse-was-gone-at-dawn-1946-tsunami/"
+});
+
 function guestFinding(item, evidence) {
   if (!evidence) return {verdict:'UNVERIFIED', reason:'NO_GUEST_BROWSER_EVIDENCE'};
   if (evidence.source_slot !== item.slot || evidence.post_id !== item.post_id ||
       evidence.stored_original_src !== item.original_src)
     return {verdict:'HOLD', reason:'SOURCE_SLOT_OR_POST_MISMATCH'};
+  // Verify that the CDP request, DOM source and screenshot were captured on
+  // the actual published article, at its stored inline source position.
+  // An unrelated page using the same image URL is not visitor evidence here.
+  const pinnedPage = PINNED_POST_PERMALINKS[String(item.post_id)];
+  const inlineOrdinal = Number(item.slot.split(':')[1]);
+  if (!pinnedPage || evidence.page_url !== pinnedPage ||
+      evidence.page_http_status !== 200 || evidence.page_census_complete !== true ||
+      evidence.full_scroll_complete !== true ||
+      !Number.isSafeInteger(inlineOrdinal) || inlineOrdinal < 0 ||
+      evidence.stored_inline_ordinal !== inlineOrdinal ||
+      evidence.dom_img_src !== item.original_src)
+    return {verdict:'HOLD', reason:'PUBLISHED_PAGE_OR_DOM_SLOT_NOT_PROVEN'};
+  if (typeof evidence.capture_run_id !== 'string' || !evidence.capture_run_id.trim() ||
+      typeof evidence.request_id !== 'string' || !evidence.request_id.trim() ||
+      evidence.response_request_id !== evidence.request_id ||
+      evidence.dom_element_request_id !== evidence.request_id ||
+      !sha256(evidence.screenshot_sha256))
+    return {verdict:'HOLD', reason:'CDP_REQUEST_DOM_SCREENSHOT_CHAIN_NOT_PROVEN'};
   if (evidence.method !== 'CHROME_CDP_LOGGED_OUT_COLD' ||
       evidence.network_capture_complete !== true ||
       !https(evidence.current_src) || !https(evidence.request_url) ||
@@ -568,4 +593,4 @@ function compileRecovery(bridge, observations = {}, approvals = {}) {
       automatic_staging_upload_permitted:false,subscription_spend_permitted:false}};
 }
 
-module.exports={P0_ORDER,guestFinding,candidateReview,compileRecovery,assertFrozenBridge};
+module.exports={P0_ORDER,PINNED_POST_PERMALINKS,guestFinding,candidateReview,compileRecovery,assertFrozenBridge};
