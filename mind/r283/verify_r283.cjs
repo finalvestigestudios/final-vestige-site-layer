@@ -78,7 +78,7 @@ function check(data){
     /no affiliate checkout link/i.test(data.article),"article sources/evidence",fail);
   assert(data.plan.includes("NOT COMPUTABLE") && data.plan.includes("HARD_HOLD") &&
     data.plan.includes("qualified_human_session") && data.plan.includes("settled_commission") &&
-    data.plan.includes("paid commission")&&data.plan.includes("no playable video"),"conversion/release plan",fail);
+    data.plan.includes("paid commission")&&data.plan.includes("no playable video") && data.plan.includes("**Release judgment: HARD HOLD.**"),"conversion/release plan",fail);
   return fail;
 }
 function mutationTests(data){
