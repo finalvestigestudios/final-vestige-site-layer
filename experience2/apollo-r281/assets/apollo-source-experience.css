@@ -109,3 +109,13 @@
   .fv-r281 h2{font-size:2rem!important;margin:.2rem 0 .5rem!important}
   .fv-r281__plate article{height:auto!important}
 }
+
+/* R296: a second native, source-custody disclosure removes repetitive mobile
+   reading burden. The disputed-date explanation remains visible above it;
+   no JavaScript, geolocation, paid CTA, or remote asset is required. */
+.fv-r281 .fv-r296__date-disclosure{margin:1.2rem 0;padding:.25rem clamp(.4rem,1vw,.75rem) .7rem;border:1px solid var(--line);background:#1b2024;min-width:0}
+.fv-r281 .fv-r296__date-disclosure>summary{display:list-item;min-height:44px;padding:.75rem 0;color:var(--gold);cursor:pointer;font-weight:650}
+.fv-r281 .fv-r296__date-guide{color:var(--muted);max-width:66ch}
+.fv-r281 .fv-r296__date-disclosure[open]>summary{border-bottom:1px solid var(--line)}
+@media(forced-colors:active){.fv-r281 .fv-r296__date-disclosure{background:Canvas;color:CanvasText;border-color:CanvasText}.fv-r281 .fv-r296__date-disclosure>summary{color:LinkText}}
+@media print{.fv-r281 .fv-r296__date-disclosure{background:#fff!important;border-color:#000!important;break-inside:auto}.fv-r281 .fv-r296__date-disclosure::details-content{content-visibility:visible!important;display:block!important}.fv-r281 .fv-r296__date-disclosure>summary{display:none!important}}
