@@ -12,6 +12,8 @@ from types import MappingProxyType
 import re
 from typing import Callable, Iterator, Mapping
 
+from .spend_callback_context_r355 import invoke_spend_callback
+
 MAX_SPEND_ROWS = 200_000  # Mirrors the bounded shared financial CSV reader.
 _PHYSICAL_ROW = re.compile(r"[1-9][0-9]{0,9}\Z", re.ASCII)
 _VENDOR_KEY = re.compile(r"[A-Z0-9]+\Z", re.ASCII)
@@ -93,7 +95,7 @@ def validated_spend_rows(
         physical_row = record["row"]
         category = record.get("category", "")
         try:
-            vendor = normalize_vendor(record["vendor"])
+            vendor = invoke_spend_callback(normalize_vendor, record["vendor"])
         except Exception:
             raise ValueError(f"Invalid vendor at physical row {physical_row}") from None
         if type(vendor) is not str:
@@ -105,14 +107,14 @@ def validated_spend_rows(
             raise ValueError(f"Invalid normalized vendor key at physical row {physical_row}")
 
         try:
-            calendar_day = parse_date(record["date"])
+            calendar_day = invoke_spend_callback(parse_date, record["date"])
         except Exception:
             raise ValueError(f"Invalid spend date at physical row {physical_row}") from None
         if type(calendar_day) is not date:
             raise ValueError(f"Spend date must be a calendar date at physical row {physical_row}")
 
         try:
-            amount = parse_money(record["amount"])
+            amount = invoke_spend_callback(parse_money, record["amount"])
         except Exception:
             raise ValueError(f"Invalid spend amount at physical row {physical_row}") from None
         if type(amount) is not Decimal or not amount.is_finite():
