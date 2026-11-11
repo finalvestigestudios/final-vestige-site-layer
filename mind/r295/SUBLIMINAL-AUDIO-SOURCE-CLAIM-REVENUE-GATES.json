@@ -1,0 +1,628 @@
+{
+  "title": "Mind R295 - exact-source product-claim evidence and revenue hold register",
+  "as_of_date": "2026-11-11",
+  "owner": "Final Vestige Studios / Mind & Affiliate",
+  "draft_only": true,
+  "public_activation": false,
+  "source_count": 17,
+  "claim_count": 28,
+  "sources": [
+    {
+      "id": "S01",
+      "type": "primary",
+      "title": "Greenwald et al. 1991 triple double-blind tape trials",
+      "url": "https://www.psychologicalscience.org/journals/psychological-science/j.1467-9280.1991.tb00112.x",
+      "checked_date": "2026-11-11",
+      "verification": "source page or issue inventory; see type and access caveats"
+    },
+    {
+      "id": "S02",
+      "type": "primary",
+      "title": "Pratkanis et al. 1994 randomized tape content versus labeling",
+      "url": "https://www.tandfonline.com/doi/abs/10.1207/s15324834basp1503_3",
+      "checked_date": "2026-11-11",
+      "verification": "source page or issue inventory; see type and access caveats"
+    },
+    {
+      "id": "S03",
+      "type": "primary",
+      "title": "Merikle and Skanes 1992 weight-related tape trial",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/1429349/",
+      "checked_date": "2026-11-11",
+      "verification": "source page or issue inventory; see type and access caveats"
+    },
+    {
+      "id": "S04",
+      "type": "primary",
+      "title": "Chakalis and Lowe 1992 short recall experiment",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/1608733/",
+      "checked_date": "2026-11-11",
+      "verification": "source page or issue inventory; see type and access caveats"
+    },
+    {
+      "id": "S05",
+      "type": "seller",
+      "title": "Inspire3 catalog",
+      "url": "https://inspire3.com/",
+      "checked_date": "2026-11-11",
+      "verification": "source page or issue inventory; see type and access caveats"
+    },
+    {
+      "id": "S06",
+      "type": "seller",
+      "title": "Subliminal Guru exact FAQ, product format and returns",
+      "url": "https://subliminalguru.com/faq",
+      "checked_date": "2026-11-11",
+      "verification": "source page or issue inventory; see type and access caveats"
+    },
+    {
+      "id": "S07",
+      "type": "seller",
+      "title": "Zen12 exact checkout page and package",
+      "url": "https://zen12.com/getstarted",
+      "checked_date": "2026-11-11",
+      "verification": "source page or issue inventory; see type and access caveats"
+    },
+    {
+      "id": "S08",
+      "type": "seller",
+      "title": "Hypnosis Live Total Focus exact offer page",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "checked_date": "2026-11-11",
+      "verification": "source page or issue inventory; see type and access caveats"
+    },
+    {
+      "id": "S09",
+      "type": "seller",
+      "title": "Brainwave Shots Focus Shot exact offer page",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "checked_date": "2026-11-11",
+      "verification": "source page or issue inventory; see type and access caveats"
+    },
+    {
+      "id": "S10",
+      "type": "regulator",
+      "title": "FTC endorsement and material-connection FAQ",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "checked_date": "2026-11-11",
+      "verification": "source page or issue inventory; see type and access caveats"
+    },
+    {
+      "id": "S11",
+      "type": "regulator",
+      "title": "FTC health products claims and scientific substantiation",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "checked_date": "2026-11-11",
+      "verification": "source page or issue inventory; see type and access caveats"
+    },
+    {
+      "id": "S12",
+      "type": "first_party_live",
+      "title": "Published free Focus Fieldbook",
+      "url": "https://finalvestige.com/focus/",
+      "checked_date": "2026-11-11",
+      "verification": "source page or issue inventory; see type and access caveats"
+    },
+    {
+      "id": "S13",
+      "type": "first_party_live",
+      "title": "Published Mesmerism commission investigation",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "checked_date": "2026-11-11",
+      "verification": "source page or issue inventory; see type and access caveats"
+    },
+    {
+      "id": "S14",
+      "type": "first_party_inventory",
+      "title": "Published Puységur historical source collection (signed-out recheck needed)",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "checked_date": "2026-11-11",
+      "verification": "source page or issue inventory; see type and access caveats"
+    },
+    {
+      "id": "S15",
+      "type": "first_party_live",
+      "title": "Published Change Blindness investigation",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "checked_date": "2026-11-11",
+      "verification": "source page or issue inventory; see type and access caveats"
+    },
+    {
+      "id": "S16",
+      "type": "first_party_live",
+      "title": "Published Journal, currently 66 results despite 61 historical issue baseline",
+      "url": "https://finalvestige.com/blog/",
+      "checked_date": "2026-11-11",
+      "verification": "source page or issue inventory; see type and access caveats"
+    },
+    {
+      "id": "S17",
+      "type": "first_party_live",
+      "title": "Published Dispatch, existing single welcome funnel",
+      "url": "https://finalvestige.com/dispatch/",
+      "checked_date": "2026-11-11",
+      "verification": "source page or issue inventory; see type and access caveats"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "text": "Three replications examined N=237 for a month",
+      "source_ids": [
+        "S01"
+      ],
+      "decision": "supported",
+      "limitation": "Study as described in journal abstract; not present-product trial"
+    },
+    {
+      "id": "C02",
+      "text": "Actual tape contents failed to produce claimed memory or self-esteem effects",
+      "source_ids": [
+        "S01"
+      ],
+      "decision": "supported",
+      "limitation": "Specific two claimed outcomes, not universal no-effect claim"
+    },
+    {
+      "id": "C03",
+      "text": "More than a third perceived label-matching improvement",
+      "source_ids": [
+        "S01"
+      ],
+      "decision": "supported",
+      "limitation": "Self-report; not independently verified change"
+    },
+    {
+      "id": "C04",
+      "text": "A five-week 78-subject test crossed labels and actual content",
+      "source_ids": [
+        "S02"
+      ],
+      "decision": "supported",
+      "limitation": "Publisher abstract; original full text not audited"
+    },
+    {
+      "id": "C05",
+      "text": "Perceived improvement followed label not content",
+      "source_ids": [
+        "S02"
+      ],
+      "decision": "supported",
+      "limitation": "Does not make all participant perception fabricated"
+    },
+    {
+      "id": "C06",
+      "text": "Weight-loss trial saw similar average changes in tape, placebo and no-tape arms",
+      "source_ids": [
+        "S03"
+      ],
+      "decision": "supported",
+      "limitation": "Different sample/outcome; authors challenge simple placebo account"
+    },
+    {
+      "id": "C07",
+      "text": "A 60-person study reported short-term name recall improvement in subliminal arm",
+      "source_ids": [
+        "S04"
+      ],
+      "decision": "supported_narrow",
+      "limitation": "Do not suppress conflicting outcome; small sample; not generalizable"
+    },
+    {
+      "id": "C08",
+      "text": "Subliminal perception in an experiment proves subliminal retail recordings work",
+      "source_ids": [
+        "S01"
+      ],
+      "decision": "reject",
+      "limitation": "Invalid extrapolation from construct to product and outcome"
+    },
+    {
+      "id": "C09",
+      "text": "Subliminal Guru FAQ advertises 10-minute sessions and music variants",
+      "source_ids": [
+        "S06"
+      ],
+      "decision": "seller_described",
+      "limitation": "Package description only"
+    },
+    {
+      "id": "C10",
+      "text": "Subliminal Guru albums rewire brain or reliably improve weight, wealth or confidence",
+      "source_ids": [
+        "S06"
+      ],
+      "decision": "seller_unsubstantiated",
+      "limitation": "No product-specific independent evidence; exclude from FV advertising"
+    },
+    {
+      "id": "C11",
+      "text": "Subliminal Guru FAQ states 14-day return, five albums per year cap, custom excluded",
+      "source_ids": [
+        "S06"
+      ],
+      "decision": "seller_described_terms",
+      "limitation": "Recheck exact current terms; actual refunds unverified"
+    },
+    {
+      "id": "C12",
+      "text": "Zen12 checkout shows 12 levels and 48 MP3s",
+      "source_ids": [
+        "S07"
+      ],
+      "decision": "seller_described",
+      "limitation": "Product contents only; packages may change"
+    },
+    {
+      "id": "C13",
+      "text": "Zen12 delivers guaranteed meditation or concentration improvements",
+      "source_ids": [
+        "S07"
+      ],
+      "decision": "seller_unsubstantiated",
+      "limitation": "Do not adopt benefits from testimonials or timer"
+    },
+    {
+      "id": "C14",
+      "text": "Total Focus is a 33-minute 47-MB hypnosis MP3",
+      "source_ids": [
+        "S08"
+      ],
+      "decision": "seller_described",
+      "limitation": "Specific product distinct from Zen12"
+    },
+    {
+      "id": "C15",
+      "text": "Total Focus boosts work output and concentration as advertised",
+      "source_ids": [
+        "S08"
+      ],
+      "decision": "seller_unsubstantiated",
+      "limitation": "Do not treat seller copy as science"
+    },
+    {
+      "id": "C16",
+      "text": "Total Focus seller offers 14-day satisfaction refunds",
+      "source_ids": [
+        "S08"
+      ],
+      "decision": "seller_described_terms",
+      "limitation": "Separate exact refund policy conditions require recheck"
+    },
+    {
+      "id": "C17",
+      "text": "Focus Shot seller includes 15- and 30-minute versions",
+      "source_ids": [
+        "S09"
+      ],
+      "decision": "seller_described",
+      "limitation": "Specific product format"
+    },
+    {
+      "id": "C18",
+      "text": "Focus Shot gives four hours of focus from one listen",
+      "source_ids": [
+        "S09"
+      ],
+      "decision": "seller_unsubstantiated",
+      "limitation": "Specific efficacy claim lacks independently matched evidence"
+    },
+    {
+      "id": "C19",
+      "text": "One Focus product's refund guarantee applies to other products",
+      "source_ids": [
+        "S06"
+      ],
+      "decision": "reject",
+      "limitation": "Merchants and terms differ"
+    },
+    {
+      "id": "C20",
+      "text": "An affiliate-marketing disclosure must be near the recommendation",
+      "source_ids": [
+        "S10"
+      ],
+      "decision": "supported",
+      "limitation": "FTC says closer to link is better; label alone insufficient"
+    },
+    {
+      "id": "C21",
+      "text": "Health and psychological product benefits require adequate independent substantiation",
+      "source_ids": [
+        "S11"
+      ],
+      "decision": "supported",
+      "limitation": "Claims depend on evidence and consumer impression"
+    },
+    {
+      "id": "C22",
+      "text": "FV Focus resource is free 52 pages linked with existing Dispatch list",
+      "source_ids": [
+        "S12"
+      ],
+      "decision": "supported",
+      "limitation": "Not a clinically tested intervention; lead confirmation must be provider observed"
+    },
+    {
+      "id": "C23",
+      "text": "Puységur archives prove historical magnetic forces changed minds",
+      "source_ids": [
+        "S14"
+      ],
+      "decision": "reject",
+      "limitation": "Historical documents establish claims were made, not their mechanism"
+    },
+    {
+      "id": "C24",
+      "text": "A commercial outgoing click proves purchase",
+      "source_ids": [
+        "S10"
+      ],
+      "decision": "reject",
+      "limitation": "Needs independent merchant paid transaction record"
+    },
+    {
+      "id": "C25",
+      "text": "Current FV Inspire3 publisher approval is established by general marketing emails",
+      "source_ids": [
+        "S05"
+      ],
+      "decision": "reject",
+      "limitation": "No named acceptance, tracking permissions or issued earning URL"
+    },
+    {
+      "id": "C26",
+      "text": "An approved, actually sellable FV-owned Mind SKU was independently established",
+      "source_ids": [
+        "S12"
+      ],
+      "decision": "not_verified",
+      "limitation": "Free Fieldbook does not constitute paid SKU; no rights/fulfillment evidence"
+    },
+    {
+      "id": "C27",
+      "text": "The current Journal result count is 66",
+      "source_ids": [
+        "S16"
+      ],
+      "decision": "supported_snapshot",
+      "limitation": "Search/page snapshot Nov 11 2026; not a new CMS count assertion"
+    },
+    {
+      "id": "C28",
+      "text": "Merchant free audio signup and FV Jetpack Dispatch are one mailing list",
+      "source_ids": [
+        "S17"
+      ],
+      "decision": "reject",
+      "limitation": "Different entities; no automatic equivalence"
+    }
+  ],
+  "offers": [
+    {
+      "id": "ZEN12",
+      "primary_candidate": true,
+      "source_ids": [
+        "S05",
+        "S07"
+      ],
+      "buyer_problem": "wants a structured meditation-audio library rather than clinical outcome promises",
+      "advertised_format": "12 levels and 48 MP3s",
+      "purchasable_in_practice": "public seller checkout displays payment fields; FV publisher authorisation NOT verified",
+      "fv_earning_url": null,
+      "fx_price_approved": null,
+      "refunds_settled_verified": false,
+      "decision": "HARD_HOLD"
+    },
+    {
+      "id": "SUBLIMINAL_GURU",
+      "primary_candidate": false,
+      "source_ids": [
+        "S05",
+        "S06",
+        "S01",
+        "S02"
+      ],
+      "buyer_problem": "wants to assess inaudible affirmation claims",
+      "advertised_format": "topic-specific albums and 10-minute session variants",
+      "seller_return_terms": "FAQ says 14 days, at most five albums refunded in a year, custom albums excluded",
+      "fv_earning_url": null,
+      "decision": "EDITORIAL_ONLY_HARD_HOLD"
+    },
+    {
+      "id": "HYPNOSIS_LIVE_TOTAL_FOCUS",
+      "primary_candidate": false,
+      "source_ids": [
+        "S05",
+        "S08"
+      ],
+      "buyer_problem": "wants an individual guided hypnosis recording",
+      "advertised_format": "33-minute / 47-MB seller listed",
+      "fv_earning_url": null,
+      "decision": "HARD_HOLD"
+    },
+    {
+      "id": "BRAINWAVE_SHOTS_FOCUS_SHOT",
+      "primary_candidate": false,
+      "source_ids": [
+        "S05",
+        "S09"
+      ],
+      "buyer_problem": "wants brief concentration-themed audio",
+      "advertised_format": "15- and 30-minute seller listed",
+      "fv_earning_url": null,
+      "decision": "HARD_HOLD"
+    },
+    {
+      "id": "FV_SEVEN_DAY_FOCUS_FIELDBOOK",
+      "primary_candidate": false,
+      "source_ids": [
+        "S12",
+        "S17"
+      ],
+      "buyer_problem": "wants a no-cost routine and evidence-check tool",
+      "advertised_format": "52-page PDF, 12-minute routine, same Dispatch welcome and Jetpack",
+      "price_observed": "Free; existing opt-in",
+      "commercial_purchase": false,
+      "decision": "EXISTING_FREE_PATH_ONLY"
+    },
+    {
+      "id": "FV_OWNED_PAID_MIND_FALLBACK",
+      "primary_candidate": false,
+      "source_ids": [],
+      "buyer_problem": "no authenticated candidate",
+      "paid_sku": null,
+      "rights": null,
+      "net_paid_order": null,
+      "decision": "NOT_AUTHENTICATED"
+    }
+  ],
+  "gates": {
+    "named_fv_inspire3_account_acceptance": {
+      "state": "HARD_HOLD",
+      "evidence": null
+    },
+    "written_publisher_terms_and_channel_rights": {
+      "state": "HARD_HOLD",
+      "evidence": null
+    },
+    "issued_named_earning_url": {
+      "state": "HARD_HOLD",
+      "evidence": null
+    },
+    "allowed_paid_and_organic_media_use": {
+      "state": "HARD_HOLD",
+      "evidence": null
+    },
+    "email_promotion_consent_and_permission": {
+      "state": "HARD_HOLD",
+      "evidence": null
+    },
+    "copyright_approved_creatives": {
+      "state": "HARD_HOLD",
+      "evidence": null
+    },
+    "exact_offer_identity": {
+      "state": "HARD_HOLD",
+      "evidence": null
+    },
+    "rechecked_exact_checkout_price_and_tax": {
+      "state": "HARD_HOLD",
+      "evidence": null
+    },
+    "rechecked_refund_and_chargeback_terms": {
+      "state": "HARD_HOLD",
+      "evidence": null
+    },
+    "checkout_delivery_and_availability": {
+      "state": "HARD_HOLD",
+      "evidence": null
+    },
+    "claim_specific_scientific_substantiation": {
+      "state": "HARD_HOLD",
+      "evidence": null
+    },
+    "product_specific_health_safety_review": {
+      "state": "HARD_HOLD",
+      "evidence": null
+    },
+    "adjacent_affiliate_disclosure_review": {
+      "state": "HARD_HOLD",
+      "evidence": null
+    },
+    "privacy_consent_and_no_duplicate_scripts": {
+      "state": "HARD_HOLD",
+      "evidence": null
+    },
+    "nonproduction_browser_wcag_mobile_qa": {
+      "state": "HARD_HOLD",
+      "evidence": null
+    },
+    "authentic_grok_asset_id_and_landing_url": {
+      "state": "HARD_HOLD",
+      "evidence": null
+    },
+    "merchant_paid_order_and_settlement_reconciliation": {
+      "state": "HARD_HOLD",
+      "evidence": null
+    },
+    "founder_commercial_and_production_release_approvals": {
+      "state": "HARD_HOLD",
+      "evidence": null
+    }
+  },
+  "proposed_creator_crosswalk": [
+    {
+      "topic": "Subliminal tapes label-swap",
+      "script_hook": "The tape said 'memory.' What if that was the only thing that mattered?",
+      "source_ids": [
+        "S01",
+        "S02"
+      ],
+      "actual_grok_asset_id": null,
+      "platform": null,
+      "post_url": null,
+      "landing_url": null,
+      "editorial_destination": "unpublished R295 manuscript",
+      "optional_offer": "Subliminal Guru seller-evidence review only; no commercial CTA"
+    },
+    {
+      "topic": "Change blindness",
+      "script_hook": "The person swapped behind the door, and many did not report the switch.",
+      "source_ids": [
+        "S15"
+      ],
+      "actual_grok_asset_id": null,
+      "platform": null,
+      "post_url": null,
+      "landing_url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "optional_offer": "existing free Focus only; optional Zen12 guide when authorized"
+    },
+    {
+      "topic": "Mesmer and Puységur",
+      "script_hook": "A historical report records a claim. How can we test its explanation?",
+      "source_ids": [
+        "S13",
+        "S14"
+      ],
+      "actual_grok_asset_id": null,
+      "platform": null,
+      "post_url": null,
+      "landing_url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "optional_offer": "existing free Focus only"
+    }
+  ],
+  "revenue_contract": {
+    "session_definition": "privacy-safe qualified-human first-party sessions with diagnostic bot/internal filtering; not raw views",
+    "allowed_campaign_parameters": [
+      "utm_source",
+      "utm_medium=organic_social",
+      "utm_campaign",
+      "utm_content=actual_asset_id"
+    ],
+    "campaign_id_choice": "UNRESOLVED: previous documentation alternates mind_pilot_2026_11 and mind_proposed_2026_11; Claude #820 owns final choice",
+    "nonproduction_events": [
+      "campaign_landing",
+      "relevant_cta_click",
+      "affiliate_click_only_if_authorized",
+      "confirmed_signup_only_provider_verified",
+      "merchant_confirmed_paid_order",
+      "refund",
+      "net_settled_commission"
+    ],
+    "no_double_count": true,
+    "unique_personal_identifiers_stored": false,
+    "qualified_sessions_7d": null,
+    "qualified_sessions_30d": null,
+    "confirmed_leads": null,
+    "verified_paid_orders": null,
+    "settled_commissions": null,
+    "refunded_amount": null,
+    "fees": null,
+    "realized_net_revenue": null,
+    "net_revenue_per_1000_qualified_sessions": null,
+    "kpi_status": "NOT_COMPUTABLE_NOT_ZERO",
+    "confidence": "MISSING_MERCHANT_AND_QUALIFIED_TRAFFIC_EVIDENCE"
+  },
+  "release": "HARD_HOLD_NOT_MERGED_NOT_PUBLISHED"
+}
