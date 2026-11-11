@@ -66,7 +66,7 @@ function audit(files) {
  requireEq(!/\bzen12\.com\/getstarted\b/i.test(vid),'unapproved raw merchant destination in playback UI',e);
  requireEq(/subprocess\.run/.test(renderer)&&/ffmpeg/.test(renderer)&&/captions\.vtt/.test(renderer)&&/poster\.png/.test(renderer),'render recipe missing',e);
  requireEq(/-t","42"/.test(renderer),'render length not 42s',e);
- requireEq(/Peter Thompson/.test(article)&&/Bartlett/.test(article)&&/Psalta/.test(article)&&/Puységur/.test(article),'missing research sources',e);
+ requireEq(article.includes('psychologist Peter Thompson in 1980')&&/Bartlett/.test(article)&&/Psalta/.test(article)&&/Puységur/.test(article),'missing research sources',e);
  requireEq(article.includes('They offer reasons to ask sharper questions of evidence, not a license to dismiss witnesses.')&&/not.*product-specific|not.*meditation|cannot verify|cannot substantiate|cannot establish/i.test(article),'source limitation missing',e);
  requireEq(plan.includes('**NOT COMPUTABLE, NOT ZERO**')&&/HARD HOLD/i.test(plan),'realized revenue or release hold missing',e);
  requireEq(/verified.*commission|commission.*cleared/i.test(plan)&&/refund/i.test(plan)&&/qualified_human_sessions/i.test(plan),'net revenue validation absent',e);
