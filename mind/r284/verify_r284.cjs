@@ -32,6 +32,7 @@ function assertAll(d){
  assert.ok(m.source_register.length>=16,'source bibliography');
  assert.ok(m.claims.length>=24,'classified claims');
  assert.ok(m.offer_candidates.length>=5);
+ assert.ok(m.offer_candidates.every(x=>x.id==='focus_fieldbook'?x.commercial_state==='FREE_LEAD_NOT_SALE':x.commercial_state==='HARD_HOLD'),'all proposed paid offers stay hard-held');
  assert.ok(m.creator_routes.length===3);
  assert.ok(m.creator_routes.every(x=>x.grok_media_id===null),'no invented internal IDs');
  assert.ok(m.claims.some(x=>x.id==='brainwave_refund_cap'&&x.decision==='MUST_DISCLOSE_IF_COMPARING'));
