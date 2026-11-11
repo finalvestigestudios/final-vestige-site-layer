@@ -5,3 +5,16 @@
 @media (prefers-reduced-motion:reduce){.fv-r273 *{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
 @media (forced-colors:active){.fv-r273{background:Canvas;color:CanvasText;border-color:CanvasText}.fv-r273 a{color:LinkText}.fv-r273__status,.fv-r273__eyebrow{color:CanvasText}.fv-r273 :is(a,summary):focus-visible{outline-color:Highlight}}
 @media print{.fv-r273{background:white;color:black;border-color:black}.fv-r273__disclosure{display:block}.fv-r273__records{display:block}.fv-r273 a{color:black}}
+
+/* R276: print is a source-custody view. Closed native <details> hides its
+   provenance content in Chromium even if the details box is display:block.
+   The UA uses content-visibility on ::details-content; reopen for print only.
+   The printed source URL must survive a dead/expired hyperlink or offline copy.
+   This does not change the interactive on-screen disclosure state. */
+@media print{
+  .fv-r273 details::details-content{content-visibility:visible!important}
+  .fv-r273 :is(.fv-r273__eyebrow,.fv-r273__status,.fv-r273__boundary){color:#000!important}
+  .fv-r273 .fv-r273__external{display:none}
+  .fv-r273__records a{display:block;min-height:0}
+  .fv-r273__records a::after{content:" <" attr(href) ">";display:block;font-size:.8em;font-weight:400;line-height:1.5;overflow-wrap:anywhere;word-break:break-word}
+}
