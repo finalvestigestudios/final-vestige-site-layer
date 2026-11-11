@@ -32,7 +32,7 @@
       "id": "I04",
       "category": "SELLER",
       "url": "https://hypnosislive.com/mental-skills/total-focus",
-      "note": "33-minute 47 MB hypnosis MP3; price variants and seller 14-day guarantee are not independent paid-order/refund proof.",
+      "note": "33-minute Total Focus MP3; seller price display not authenticated checkout; 14-day refund request is subject to a maximum five refunded sessions per year per official FAQ.",
       "checked": "2026-11-10",
       "scope": "public source only"
     },
@@ -56,7 +56,7 @@
       "id": "S01",
       "category": "INDEPENDENT",
       "url": "https://pubmed.ncbi.nlm.nih.gov/37578065/",
-      "note": "2024 Zainal/Newman: 111 mindfulness RCTs, n=9538; mixed domain effects; not an evaluation of Zen12.",
+      "note": "2024 Zainal/Newman, 111 mindfulness RCTs, n=9538; explicitly EXCLUDES one-session interventions; no Zen12 single-track comparison.",
       "checked": "2026-11-10",
       "scope": "public source only"
     },
@@ -72,7 +72,7 @@
       "id": "S03",
       "category": "INDEPENDENT",
       "url": "https://doi.org/10.1016/j.jpsychires.2023.12.009",
-      "note": "2024 brief mindfulness induction systematic review; limited attention outcome evidence.",
+      "note": "2024 Williams et al., brief audio induction, 5 studies n277; pooled state-anxiety result only 3 studies n100; high bias and low certainty; cannot validate Zen12.",
       "checked": "2026-11-10",
       "scope": "public source only"
     },
@@ -147,6 +147,14 @@
       "note": "Historical topic match to Puységur; public YouTube identifier is not internal Grok asset ID.",
       "checked": "2026-11-10",
       "scope": "public source only"
+    },
+    {
+      "id": "I07",
+      "category": "SELLER_POLICY",
+      "url": "https://hypnosislive.com/faq",
+      "note": "Exact seller FAQ: refund request within 14 days, maximum five refunded sessions per year; not observed refund fulfillment.",
+      "checked": "2026-11-10",
+      "scope": "public policy only"
     }
   ],
   "claims": [
@@ -225,12 +233,13 @@
     },
     {
       "id": "HYPNOSIS_REFUND",
-      "claim": "14-day refund described by seller",
+      "claim": "Seller's 14-day refund policy limits refunds to five sessions per year",
       "classification": "SELLER_POLICY_ONLY",
       "sources": [
-        "I04"
+        "I04",
+        "I07"
       ],
-      "handling": "No verified claims of real refunds."
+      "handling": "Mention material five-session-per-year cap beside the 14-day condition; not authenticated paid refund."
     },
     {
       "id": "HYPNOSIS_FOCUS",
@@ -284,7 +293,7 @@
       "sources": [
         "S01"
       ],
-      "handling": "111 trials not Zen12 efficacy."
+      "handling": "Meta-analysis excluded one-session studies; no hour-equivalence inference."
     },
     {
       "id": "ENTRAINMENT_META",
@@ -302,7 +311,7 @@
       "sources": [
         "S03"
       ],
-      "handling": "Participants/conditions restricted; not this product."
+      "handling": "5 studies n277; pooled state-anxiety result k3 n100; low certainty/high bias; no Zen12 efficacy inference."
     },
     {
       "id": "SAFETY_REVIEW",
@@ -612,5 +621,11 @@
     "No email sends",
     "No social posts",
     "Do not modify homepage PR49, Mind hub PR172, Issue150 or Dispatch issue drafts"
-  ]
+  ],
+  "r281_editorial_corrections": {
+    "scientific_single_session_exclusion": "S01",
+    "acute_induction_pooled_denominator": "S03",
+    "refund_limit": "I07",
+    "review_note": "R281 stacked unpublished repair; 2026-11-10; no original R280 PR mutation"
+  }
 }
