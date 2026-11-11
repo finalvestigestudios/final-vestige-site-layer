@@ -71,3 +71,33 @@ test('15-original mismatch fails closed',()=>{
  const copy=JSON.parse(JSON.stringify(source));copy.oversized_media.pop();
  assert.throws(()=>compileRecovery(copy));
 });
+
+test('synthetic unrelated cold 404 cannot convict the published original',()=>{
+  const e=good();const wrong='https://unrelated.invalid/missing.jpg';
+  e.current_src=wrong;e.request_url=wrong;e.final_response_url=wrong;
+  assert.equal(guestFinding(img,e).verdict,'HOLD');
+  assert.equal(guestFinding(img,e).reason,'SELECTED_SOURCE_NOT_THE_PUBLISHED_ORIGINAL');
+});
+test('synthetic same-origin alternate path 404 cannot convict original',()=>{
+  const e=good();const wrong=img.original_src.slice(0,img.original_src.lastIndexOf('/')+1)+'different.jpg';
+  e.current_src=wrong;e.request_url=wrong;e.final_response_url=wrong;
+  assert.equal(guestFinding(img,e).verdict,'HOLD');
+});
+test('synthetic catalog image 404 cannot substitute for failed original',()=>{
+  const e=good();e.current_src=img.catalog_candidate_url;
+  e.request_url=e.current_src;e.final_response_url=e.current_src;
+  assert.equal(guestFinding(img,e).verdict,'HOLD');
+});
+test('synthetic successful 200 different image not evidence original displays',()=>{
+  const e=good();const other='https://unrelated.invalid/loaded.jpg';
+  e.current_src=other;e.request_url=other;e.final_response_url=other;
+  e.final_http_status=200;e.natural_width=819;e.natural_height=614;
+  assert.equal(guestFinding(img,e).verdict,'HOLD');
+});
+test('alternate currentSrc cannot inflate compileRecovery broken count',()=>{
+  const e=good();const other='https://unrelated.invalid/404.jpg';
+  e.current_src=other;e.request_url=other;e.final_response_url=other;
+  const report=compileRecovery(source,{[img.slot]:e});
+  assert.equal(report.verified_broken_in_supplied_guest_evidence,0);
+  assert.equal(report.priority[0].guest_browser.reason,'SELECTED_SOURCE_NOT_THE_PUBLISHED_ORIGINAL');
+});
