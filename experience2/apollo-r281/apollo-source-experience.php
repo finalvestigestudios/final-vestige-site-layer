@@ -93,16 +93,23 @@ function fv_r281_render($attributes = []): string {
         $s.='<li class="fv-r281__plate" id="'.$point.'" tabindex="-1"><article aria-labelledby="'.$point.'-heading"><p class="fv-r281__date"><time datetime="'.fv_r281_escape($r['date']).'">'.fv_r281_escape($r['when']).'</time></p>';
         $s.='<h3 id="'.$point.'-heading">'.fv_r281_escape($r['title']).'</h3><p>'.fv_r281_escape($r['statement']).'</p>';
         $s.='<p class="fv-r281__boundary"><strong>Evidence boundary:</strong> '.fv_r281_escape($r['boundary']).'</p>';
+        // Native claim-to-catalogue cross-reference; accessible with JS disabled.
+        $source_point=$id.'-source-'.($index+1);
+        $s.='<p class="fv-r281__source-jump"><a href="#'.$source_point.'">Locate the '.fv_r281_escape($r['source_type']).' in the source catalogue</a></p>';
         $s.='<details class="fv-r281__drawer"><summary>Inspect the source and custody record</summary><div class="fv-r281__drawer-body"><p><strong>Custodian:</strong> NASA · <strong>Record:</strong> '.fv_r281_escape($r['source_id']).' · <strong>Editorial review:</strong> Pending</p><p><strong>Record type:</strong> '.fv_r281_escape($r['source_type']).'. <strong>Source relationship:</strong> '.fv_r281_escape($r['source_dependency']).'</p>';
         $s.='<p><a href="'.fv_r281_escape($r['source_url']).'" rel="noopener noreferrer">Open '.fv_r281_escape($r['source_name']).' (NASA)</a></p>';
         $s.='<p>This is an official-source link, not a claim of NASA endorsement or clearance for promotional use of agency marks, astronaut likenesses, or media.</p></div></details>';
         $s.='</article></li>';
     }
     $s.='</ol><aside class="fv-r281__gallery" aria-label="Source gallery"><h3>Inspect the document sources</h3><p>This is a text-only catalogue of three NASA records, not a photographic gallery or three independent eyewitness accounts. Review remains pending.</p><ul class="fv-r281__source-list">';
-    foreach ($records as $r) {
-        $s.='<li><p class="fv-r281__source-type">'.fv_r281_escape($r['source_type']).'</p>';
+    foreach ($records as $index=>$r) {
+        // Every catalogue record has a stable target within this component instance.
+        $source_point=$id.'-source-'.($index+1);
+        $event_point=$id.'-event-'.($index+1);
+        $s.='<li id="'.$source_point.'" tabindex="-1"><p class="fv-r281__source-type">'.fv_r281_escape($r['source_type']).'</p>';
         $s.='<a href="'.fv_r281_escape($r['source_url']).'" rel="noopener noreferrer">Inspect '.fv_r281_escape($r['source_name']).' (NASA)</a>';
-        $s.='<p>'.fv_r281_escape($r['source_dependency']).'</p></li>';
+        $s.='<p>'.fv_r281_escape($r['source_dependency']).'</p>';
+        $s.='<p class="fv-r281__source-return"><a href="#'.$event_point.'">Return to evidence: '.fv_r281_escape($r['title']).'</a></p></li>';
     }
     $s.='</ul><p>No archive image, geolocation, ownership or commercial rights are inferred from these source links. NASA does not endorse this website.</p></aside>';
     $s.='<footer class="fv-r281__next"><p>Continue with the investigation, including the original evidence and its uncertainties.</p><p><a href="'.FV_R281_FREE.'">Read the free Apollo 1 investigation</a></p></footer></section>';

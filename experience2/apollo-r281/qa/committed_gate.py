@@ -68,14 +68,31 @@ with sync_playwright() as pw:
             ax=ctx.new_cdp_session(pg).send('Accessibility.getFullAXTree')['nodes']
             assert any('Inspect NASA Apollo 204 Review Board report' in n.get('name',{}).get('value','') for n in ax)
             ids=pg.locator('[id]').evaluate_all('nodes=>nodes.map(x=>x.id)')
-            assert len(ids)==len(set(ids))==14
+            assert len(ids)==len(set(ids))==20
             assert pg.locator('.fv-r281__plate[tabindex="-1"]').count()==6
+            assert pg.locator('.fv-r281__source-list>li[tabindex="-1"]').count()==6
+            assert pg.locator('.fv-r281__source-jump a').count()==6
+            assert pg.locator('.fv-r281__source-return a').count()==6
             for index in range(6):
                 anchor=pg.locator('.fv-r281__rail a').nth(index)
                 target=anchor.get_attribute('href')[1:]
                 anchor.focus();anchor.press('Enter')
                 assert pg.evaluate('document.activeElement.id')==target,(width,js,index,'native focus lost')
                 assert pg.locator('#'+target).evaluate('el=>getComputedStyle(el).outlineStyle')!='none'
+            # R284: claim → custodian catalogue → same claim, native hash/focus.
+            for index in range(6):
+                plate=pg.locator('.fv-r281__plate').nth(index)
+                jump=plate.locator('.fv-r281__source-jump a')
+                source_id=jump.get_attribute('href')[1:]
+                jump.focus();jump.press('Enter')
+                assert pg.evaluate('document.activeElement.id')==source_id,(width,js,index,'source target focus lost')
+                record=pg.locator('#'+source_id)
+                assert record.evaluate('e=>getComputedStyle(e).outlineStyle')!='none'
+                assert record.locator('a[href^="https://"]').count()==1
+                back=record.locator('.fv-r281__source-return a')
+                assert back.get_attribute('href')=='#'+plate.get_attribute('id')
+                back.focus();back.press('Enter')
+                assert pg.evaluate('document.activeElement.id')==plate.get_attribute('id'),(width,js,index,'claim return focus lost')
             assert pg.locator('.fv-r281__plate[tabindex="0"]').count()==0
             for root_px in (32,64):
                 pg.evaluate('px=>document.documentElement.style.fontSize=px+"px"',root_px)
@@ -94,6 +111,10 @@ with sync_playwright() as pw:
             assert NASA[0] in a.evaluate("e=>getComputedStyle(e,'::after').content")
             g=pg.locator('.fv-r281__source-list').first.locator('a').first
             assert NASA[0] in g.evaluate("e=>getComputedStyle(e,'::after').content")
+            assert pg.locator('.fv-r281__source-jump').first.is_hidden()
+            assert pg.locator('.fv-r281__source-return').first.is_hidden()
+            free_link=pg.get_by_role('link',name='Read the free Apollo 1 investigation').first
+            assert FREE in free_link.evaluate("e=>getComputedStyle(e,'::after').content")
             pg.emulate_media(media='screen')
             if width in (390,1440) and not js:
                 path=OUT/f'r281-{width}-nojs.png';pg.screenshot(path=str(path),full_page=True,animations='disabled')
@@ -104,7 +125,7 @@ with sync_playwright() as pw:
 receipt={'suite':'R281 actual PHP plus Chromium offline accessibility/print source gate',
          'php_sha256':hashlib.sha256((ROOT/'apollo-source-experience.php').read_bytes()).hexdigest(),
          'css_sha256':hashlib.sha256(css.encode()).hexdigest(),
-         'contexts':contexts,'native_fragment_focus_checks':60,'R282_negative_control':'rejected','root_text_stress_px':[32,64], 'screenshot_sha256':screens,'release':'HARD_HOLD',
+         'contexts':contexts,'native_fragment_focus_checks':60,'native_source_roundtrip_checks':60,'R282_negative_control':'rejected','root_text_stress_px':[32,64], 'screenshot_sha256':screens,'release':'HARD_HOLD',
          'unverified':['installed WordPress','genuine axe-core','screen reader','browser HTTP/CSP','field LCP/CLS','paid sales']}
 (OUT/'receipt.json').write_text(json.dumps(receipt,indent=2,sort_keys=True)+'\n')
 print(f'PHP PASS | Chromium {len(contexts)}/{len(contexts)} PASS | Receipt SHA256 '+hashlib.sha256((OUT/'receipt.json').read_bytes()).hexdigest())
