@@ -213,7 +213,7 @@ def review_line(
     order_price = checked_unit_price(ordered[0]["unit_price"], unit_cost) if len(ordered) == 1 else Decimal(0)
     if len(ordered) != 1:
         flags.append("missing_or_duplicate_po")
-    if order_price < 0:
+    if order_price.is_signed():
         flags.append("negative_unit_price_review")
     if len(ordered) == 1 and order_qty == 0:
         flags.append("zero_order_quantity_review")
@@ -234,7 +234,7 @@ def review_line(
             gross_value += amount * price
         if amount == 0:
             flags.append("zero_movement_review")
-        if price < 0:
+        if price.is_signed():
             flags.append("negative_unit_price_review")
         if len(ordered) == 1 and policy.outside(price, order_price):
             flags.append("price_variance_above_policy")
@@ -284,7 +284,7 @@ def review_line(
             flags.append("normalized_credit_link_review")
         if document in invoice_docs:
             flags.append("reused_invoice_document_id_review")
-        if price < 0:
+        if price.is_signed():
             flags.append("negative_credit_price_review")
     receipt_docs = {document_key(r.get("document_id", "")) for r, kind, _ in receipt_entries
                     if kind == "receipt" and document_key(r.get("document_id", ""))}
