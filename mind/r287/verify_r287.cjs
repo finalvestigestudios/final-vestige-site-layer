@@ -98,7 +98,7 @@ function checkHtml(s,label){
  assert.ok(pos>=0&&b>pos&&b-pos<1800,label+' disclosure not adjacent');
  assert.ok(s.slice(Math.max(0,pos-60),b).includes('affiliate disclosure:'),label+' no explicit prospective relationship');
  assert.ok(s.includes('https://finalvestige.com/focus/'),label+' free route missing');
- assert.ok(!/(?:googletagmanager\\.com|google-analytics\\.com|doubleclick\\.net|facebook\\.com\\/tr)/i.test(s),label+' injected tracking endpoint');
+ assert.ok(!/(?:googletagmanager\.com|google-analytics\.com|doubleclick\.net|facebook\.com\/tr)/i.test(s),label+' injected tracking endpoint');
 }
 function parity(a,b){
  const bText=b.replace(/<aside class="film"[\s\S]*?<\/aside>\s*/,'').replace('Variant B / optional film concept','Variant A / text only');
