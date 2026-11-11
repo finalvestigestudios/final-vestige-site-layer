@@ -50,7 +50,7 @@ function validate(d){
  ok(d.film.includes("-an")&&d.film.includes("+faststart")&&d.film.includes("render(t)"),"FILM_SOURCE");
  ok((d.captions.match(/-->/g)||[]).length===7&&d.captions.includes("00:00:42.000"),"VTT_42S_SEVEN_SCENES");
  ok(d.videoPreview.includes("<video controls preload=\"none\"")&&d.videoPreview.includes("<track kind=\"captions\"")&&d.videoPreview.includes("<details>"),"VIDEO_NATIVE_A11Y_TEXT");
- ok(d.videoPreview.includes("may earn a commission")&&d.videoPreview.includes("disabled")&&!/<script\b/i.test(d.videoPreview)&&!/<form\b/i.test(d.videoPreview),"VIDEO_SAFETY_DISCLOSURE");
+ ok(d.videoPreview.includes("may earn a commission")&&/<button\b[^>]*\sdisabled(?:\s|>)/i.test(d.videoPreview)&&!/<script\b/i.test(d.videoPreview)&&!/<form\b/i.test(d.videoPreview),"VIDEO_SAFETY_DISCLOSURE");
  ok(!/<a[^>]*href="https:\/\/(?:zen12|hypnosislive|brainwaveshots|affiliates)/i.test(d.videoPreview),"VIDEO_NO_MERCHANT_LINK");
  ok(d.hub.includes("may earn a commission")&&/disabled/i.test(d.hub)&&!/<script\b/i.test(d.hub),"HUB_DISABLED_DISCLOSURE");
  for(const key of ["A","B"])ok(d[key].includes("disabled")&&d[key].includes("<html")&&!/<script\b/i.test(d[key]),"AB_INACTIVE_"+key);
