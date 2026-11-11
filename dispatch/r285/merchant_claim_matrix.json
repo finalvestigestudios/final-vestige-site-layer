@@ -19,7 +19,9 @@
       "class": "seller promise only",
       "observed": true,
       "independent_product_effectiveness": false,
-      "copy_decision": "do NOT reproduce as proven benefit"
+      "copy_decision": "do NOT reproduce as proven benefit",
+      "reproduce_in_email": false,
+      "independently_verified_product_outcomes": false
     },
     {
       "claim": "Hypnosis research includes pain and procedural anxiety",
