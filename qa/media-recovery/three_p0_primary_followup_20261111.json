@@ -1,0 +1,155 @@
+{
+  "schema": "fv-media-p0-three-primary-followup-v1",
+  "checked_utc_date": "2026-11-11",
+  "origin": "Isolated editorial/source-only evidence. No visitor CDP or origin HTTP proof; do not treat independent web search as image health.",
+  "frozen_historical_cohort": {
+    "published_posts": 61,
+    "inline_images": 355,
+    "external_images": 288,
+    "reported_broken_unverified": 42,
+    "guest_confirmed_broken": 0
+  },
+  "expanded_performance_cohort": {
+    "published_posts": 66,
+    "inline_images": 361,
+    "oversized_originals_gt_1500000_decimal_bytes": 15,
+    "oversized_stored_bytes": 47096779,
+    "measured_wire_saving_percent": null,
+    "previously_proposed_percent": 76
+  },
+  "source_pins": {
+    "source_pr": 1703,
+    "existing_head_at_start": "db5d2e3d4de138206ff441b6c0fb592e51b60ed8",
+    "six_p0_15_overweight_blob": "20d56771cbef7fa5368bf0325dd65c6a3067538a",
+    "full_288_register_blob": "4965a862f7de7de46c1f4a1e26f3ca70a8c38805",
+    "source_worklist_pr": 183,
+    "source_worklist_blob": "2acd06a4ca4317646006eb6591face3fe76fedec"
+  },
+  "rows": [
+    {
+      "slot": "285:2",
+      "post_id": 285,
+      "published_original_src": "https://blog.ucsusa.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+      "prior_retriever_only": {
+        "outcome": "REDIRECT_TARGET_INACCESSIBLE",
+        "wrapper_status": 500
+      },
+      "origin_http_status": null,
+      "guest_http_status": null,
+      "guest_encoded_bytes": null,
+      "selected_current_src": null,
+      "candidates": [
+        {
+          "catalog_url": "https://commons.wikimedia.org/wiki/File:TMI-2_control_panel.png",
+          "source_authority": "1979 President's Commission report on Three Mile Island, page 97, catalogued by Wikimedia Commons",
+          "creator_credit": "John G. Kemeny et al (commission report); current Wikimedia file was retouched by a Commons user",
+          "scene": "Control panel of TMI-2 with maintenance tags obscuring one valve-indicator light",
+          "historical_date": "1979-10",
+          "rights_evidence": "Commons item asserts public domain based on U.S. federal-government work (17 USC 105); retouched Commons revision needs independent identity and contribution review",
+          "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:TMI-2_control_panel.png",
+          "native_pixels_catalog": [
+            604,
+            590
+          ],
+          "conditional_960_px_full_frame": [
+            604,
+            590
+          ],
+          "retouched_derivative": true,
+          "identical_to_published_src_proven": false,
+          "commercial_reuse_cleared": false,
+          "word_press_cache_approved": false
+        }
+      ],
+      "issue": "Publisher credits NRC figure; federal commission catalog is a plausible photograph of the same control panel, not an authenticated binary match to the UCS Figure 4. Do not upscale or silently replace photographic treatment."
+    },
+    {
+      "slot": "418:2",
+      "post_id": 418,
+      "published_original_src": "https://www.history.uscg.mil/Portals/6/5_%20Scotch_Cap_debris2_1946.jpg",
+      "prior_retriever_only": {
+        "outcome": "FORBIDDEN",
+        "wrapper_status": 403
+      },
+      "origin_http_status": null,
+      "guest_http_status": null,
+      "guest_encoded_bytes": null,
+      "selected_current_src": null,
+      "candidates": [
+        {
+          "catalog_url": "https://www.history.uscg.mil/Research/THE-LONG-BLUE-LINE/Article/2866442/the-long-blue-line-standing-a-deadly-watch-75-years-agofinal-hours-of-scotch-ca/",
+          "source_authority": "United States Coast Guard official historical article by Dr David S Rosen",
+          "creator_credit": "U.S. Coast Guard (article's credited historic photographs)",
+          "scene": "1946 aftermath, debris and remains of Scotch Cap Lighthouse, with distinct images from bluff and aerial viewpoints",
+          "historical_date": "1946-04",
+          "rights_evidence": "Official Coast Guard photo attribution; individual asset copyright/license and binary identity not independently cleared",
+          "rights_evidence_url": "https://www.history.uscg.mil/Research/THE-LONG-BLUE-LINE/Article/2866442/the-long-blue-line-standing-a-deadly-watch-75-years-agofinal-hours-of-scotch-ca/",
+          "native_pixels_catalog": null,
+          "conditional_960_px_full_frame": null,
+          "retouched_derivative": false,
+          "identical_to_published_src_proven": false,
+          "commercial_reuse_cleared": false,
+          "word_press_cache_approved": false
+        }
+      ],
+      "issue": "Official source distinguishes bluff photograph from aerial aftermath and pre-1946 images. Confirm scene and original image identity before any replacement; 1964-era NOAA scene is not acceptable."
+    },
+    {
+      "slot": "287:5",
+      "post_id": 287,
+      "published_original_src": "https://stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+      "prior_retriever_only": {
+        "outcome": "NOT_FOUND",
+        "wrapper_status": 404
+      },
+      "origin_http_status": null,
+      "guest_http_status": null,
+      "guest_encoded_bytes": null,
+      "selected_current_src": null,
+      "candidates": [
+        {
+          "catalog_url": "https://www.floridamemory.com/items/show/131305",
+          "catalog_id": "K893521",
+          "source_authority": "State Archives of Florida, Florida Memory, Department of Commerce collection",
+          "creator_credit": "Robert M. Overton",
+          "scene": "Aerial view of old and new Sunshine Skyway bridges",
+          "historical_date": "1989",
+          "rights_evidence": "Catalog identifies creator and archival holding; web catalog rights field is not clear affirmative commercial republication license; seek item-level confirmation",
+          "rights_evidence_url": "https://www.floridamemory.com/items/show/131305",
+          "native_pixels_catalog": null,
+          "conditional_960_px_full_frame": null,
+          "retouched_derivative": false,
+          "identical_to_published_src_proven": false,
+          "commercial_reuse_cleared": false,
+          "word_press_cache_approved": false
+        }
+      ],
+      "issue": "Historical editorial alternative for the old/new bridge chronology ONLY: a 1989 aerial cannot stand in for a photograph of the May 9, 1980 collision, or be described as the original St Pete Catalyst image."
+    }
+  ],
+  "release": {
+    "guest_browser_confirmed_failures_in_this_batch": 0,
+    "download_binaries": 0,
+    "wordpress_production_writes": 0,
+    "theme_or_homepage_edits": 0,
+    "cached_assets": 0,
+    "published_block_rewrites": 0,
+    "spend_usd": 0,
+    "staging_authorized": false,
+    "production_authorized": false
+  },
+  "workflow": {
+    "guest_qa_owner": "Site QA PR #154",
+    "priority_order": [
+      "285:5",
+      "285:2",
+      "287:5",
+      "418:1",
+      "418:2",
+      "407:1"
+    ],
+    "conditional_sizing": "Use min(native_width,960); preserve full-frame ratio, no enlargement; if dimensions unknown, block sizing and binary handling.",
+    "caching": "Before any first-party WordPress caching, prove original displayed failure, exact artwork identity, rights/credit, hash, dimensions, editorial crop/ALT and visual before/after in a separate non-production staging environment.",
+    "wire_bytes": "Compare cold, cache-disabled fully-scrolled page image encoded transfer bytes for same 66 post cohort, browser viewport, DPR, original content and decoded-image coverage. Baseline and candidate bytes are null today; never use stored WordPress bytes as wire bytes."
+  }
+}
