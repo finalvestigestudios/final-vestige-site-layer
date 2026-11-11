@@ -8,7 +8,13 @@ const good = () => ({source_slot:img.slot,post_id:img.post_id,stored_original_sr
   method:'CHROME_CDP_LOGGED_OUT_COLD',network_capture_complete:true,
   current_src:img.original_src,request_url:img.original_src,final_response_url:img.original_src,
   was_cached:false,from_disk_cache:false,from_memory_cache:false,from_service_worker:false,
-  final_http_status:404,natural_width:0,natural_height:0,encoded_data_length:0,screenshot_evidence_id:'test-only'});
+  final_http_status:404,natural_width:0,natural_height:0,encoded_data_length:0,screenshot_evidence_id:'test-only',
+  page_url:'https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/',
+  page_http_status:200,page_census_complete:true,full_scroll_complete:true,
+  stored_inline_ordinal:5,dom_img_src:img.original_src,
+  capture_run_id:'synthetic-run',request_id:'synthetic-request',
+  response_request_id:'synthetic-request',dom_element_request_id:'synthetic-request',
+  screenshot_sha256:'b'.repeat(64)});
 const approval = () => ({source_slot:img.slot,original_src:img.original_src,
   candidate_catalog_url:img.catalog_candidate_url,
   item_rights_evidence_url:'https://example.org/rights/1',rights_reviewer:'human-reviewer',
@@ -127,3 +133,28 @@ frozenMutation('fabricated 76 percent measured success',x=>x.methodology.measure
 frozenMutation('mixed 61-post and 66-post counts',x=>x.cohorts.historical.posts=66);
 frozenMutation('changed worklist blob without reconciliation',x=>x.authority.worklist.blob_sha='f'.repeat(40));
 test('unchanged source-only snapshot still valid',()=>assert.equal(compileRecovery(source).verified_broken_in_supplied_guest_evidence,0));
+
+test('verified CMS permalink and stored ordinal fixture is precise',()=>{
+  assert.equal(good().page_url,'https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/');
+  assert.equal(good().stored_inline_ordinal,5);
+});
+for (const [name,change,why] of [
+ ['other article at same origin',e=>e.page_url='https://finalvestige.com/other/', 'PUBLISHED_PAGE_OR_DOM_SLOT_NOT_PROVEN'],
+ ['wrong published post permalink',e=>e.page_url='https://finalvestige.com/2026/08/19/the-warning-was-a-man-waving-sunshine-skyway/', 'PUBLISHED_PAGE_OR_DOM_SLOT_NOT_PROVEN'],
+ ['missing page permalink',e=>e.page_url=null, 'PUBLISHED_PAGE_OR_DOM_SLOT_NOT_PROVEN'],
+ ['non-successful article response',e=>e.page_http_status=404, 'PUBLISHED_PAGE_OR_DOM_SLOT_NOT_PROVEN'],
+ ['incomplete page image census',e=>e.page_census_complete=false, 'PUBLISHED_PAGE_OR_DOM_SLOT_NOT_PROVEN'],
+ ['incomplete lazy-image scroll',e=>e.full_scroll_complete=false, 'PUBLISHED_PAGE_OR_DOM_SLOT_NOT_PROVEN'],
+ ['other stored image ordinal',e=>e.stored_inline_ordinal=2, 'PUBLISHED_PAGE_OR_DOM_SLOT_NOT_PROVEN'],
+ ['different DOM original source',e=>e.dom_img_src='https://unrelated.invalid/image.jpg', 'PUBLISHED_PAGE_OR_DOM_SLOT_NOT_PROVEN'],
+ ['missing run identifier',e=>e.capture_run_id=null, 'CDP_REQUEST_DOM_SCREENSHOT_CHAIN_NOT_PROVEN'],
+ ['missing CDP request ID',e=>e.request_id=null, 'CDP_REQUEST_DOM_SCREENSHOT_CHAIN_NOT_PROVEN'],
+ ['response belongs to other request',e=>e.response_request_id='other-request', 'CDP_REQUEST_DOM_SCREENSHOT_CHAIN_NOT_PROVEN'],
+ ['DOM image bound to other request',e=>e.dom_element_request_id='other-request', 'CDP_REQUEST_DOM_SCREENSHOT_CHAIN_NOT_PROVEN'],
+ ['invalid screenshot hash',e=>e.screenshot_sha256='no-hash', 'CDP_REQUEST_DOM_SCREENSHOT_CHAIN_NOT_PROVEN']
+]) test('article and CDP lineage: '+name,()=>{
+  const e=good();change(e);
+  const result=guestFinding(img,e);
+  assert.equal(result.verdict,'HOLD');assert.equal(result.reason,why);
+  assert.equal(compileRecovery(source,{[img.slot]:e}).verified_broken_in_supplied_guest_evidence,0);
+});
