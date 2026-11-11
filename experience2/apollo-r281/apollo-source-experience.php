@@ -281,9 +281,9 @@ function fv_r281_render($attributes = []): string {
         $s.='<p class="fv-r281__authority-return"><a href="#'.$id.'-event-2">Return to January 28 evidence</a></p></li>';
     }
     // R296: on mobile, keep the disagreement and editorial boundary visible,
-// but make the three longer related NASA-source accounts opt-in. Native
-// details is keyboard/touch/no-JS capable; print exposes the full custody
-// record; source URLs are unchanged and never rewritten as commercial links.
+    // but make the three longer related NASA-source accounts opt-in. Native
+    // details is keyboard/touch/no-JS capable; print exposes the full custody
+    // record; source URLs are unchanged and never rewritten as commercial links.
     $s.='</ol></details><details class="fv-r296__date-disclosure"><summary>Compare all three NASA source descriptions</summary><p class="fv-r296__date-guide">Three related NASA institutional records, not three independent witnesses. Each source states a date or documents an action, with its limits shown below.</p><ul class="fv-r281__reconciliation-list">';
     foreach ($date_reconciliation as $source) {
         $s.='<li><strong>'.fv_r281_escape($source['authority']).'</strong><p>'.fv_r281_escape($source['statement']).'</p>';
