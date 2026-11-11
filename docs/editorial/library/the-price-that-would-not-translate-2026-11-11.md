@@ -15,7 +15,7 @@ Readers encounter a historical cash price and ask what it was worth, how expensi
 - **Price_Source_Provenance_Rights.csv**: 13 dated source, evidence-scope, qualification and reuse/access records.
 - **Benchmark_CPI_Annual_Selected_Years.csv**: 14 chosen rounded annual values, with source, date and limitations.
 - **MANIFEST.json**, **QA_REPORT.json**, **SHA256SUMS.txt**, and **FV_Price_Witness_Release_Candidate.zip**; attachments to this Library Studio run, *not* currently WordPress-hosted or GitHub binary attachments.
-- Final ZIP SHA-256: `ab1df4924243fc137ab11683eeead3df5a557df61f2732cbcbc7f2932626a5e1`. HTML SHA-256: `26e82cac94bef3e03a19c665846f92c205b8b58257e25a0d0b54af6c8fbaf175`.
+- Final ZIP SHA-256: `af67e718d6e1867e4c5b1f77110311e332943bd1de18e35bfe1e19cfc5d1d0ea`. HTML SHA-256: `26e82cac94bef3e03a19c665846f92c205b8b58257e25a0d0b54af6c8fbaf175`.
 
 ## Primary institutional sources, checked 2026-11-11
 
