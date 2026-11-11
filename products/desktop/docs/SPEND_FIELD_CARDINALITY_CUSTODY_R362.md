@@ -19,7 +19,7 @@ R361 bounds total UTF-8 field text to 64 MiB, at most 64 columns per record and 
 - `test_spend_source_field_budget_r362.py`: 16 focused methods (exact and overflow limits, many empty cells, counters transactional, UTF-8 and text-cap failures, native dictionary boundary, privacy, Unicode, and report isolation).
 - `test_spend_source_field_engine_integration_r362.py`: 6 actual `validated_spend_rows` / `summarize_spend` / CSV `spend_map` regressions requiring the whole checkout.
 - Workflow `desktop-build.yml`: Ubuntu and Windows normal/optimized Python runs of both files (eight explicit commands).
-- Isolated local Linux CPython tests passed **16/16 normal** and **16/16 optimized (`-OO -W error`)**, 32 focused executions. Git blob hashes of exact tested helper and test files must be verified before treating these as committed-code test evidence.
+- Isolated local Linux CPython tests passed **41/41 normal** and **41/41 optimized (`-OO -W error`)**, **82 focused executions** (25 inherited R361 + 16 new R362). Exact locally tested helper and both unit test files match GitHub blob SHAs: `50f3c052820234a4ae2eed5cdfc0229c43a04f31`, `aaea33eaeff310d9de31ab244bce47bdb4de72f8`, `aff9864c7bf39a945bc6bb15e5d50d45b3e7a130`. The new integration test file (`c0bd5c182e367de21aed801cfb2830d2879d2346`) was locally compiled, **not executed** with the engine.
 - **Not yet validated:** whole-repository integration tests, all other suite tests, Windows runner, executable build, antivirus, accessibility, QD and founder acceptance. Do not represent test files being committed as passing tests.
 
 ## Next high-impact step
