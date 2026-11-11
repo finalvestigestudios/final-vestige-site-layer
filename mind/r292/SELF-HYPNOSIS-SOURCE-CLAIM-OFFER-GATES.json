@@ -1,0 +1,435 @@
+{
+  "version": "R292",
+  "as_of": "2026-11-11",
+  "state": "DRAFT_UNPUBLISHED_HARD_HOLD",
+  "parent_commit": "ae77e2b6bf97c680964524bf708b8ce529203223",
+  "source_status": "web rechecked 2026-11-11; not affiliate-account authenticated",
+  "canonical_presell": {
+    "A": "mind/r284/ZEN12-BUYER-GUIDE-A-TEXT-ONLY-UNPUBLISHED.html",
+    "B": "mind/r284/ZEN12-BUYER-GUIDE-B-FILM-STORYBOARD-UNPUBLISHED.html",
+    "B_status": "STATIC_STORYBOARD; optional separately rendered R291 candidate not inserted or hosted"
+  },
+  "sources": [
+    {
+      "id": "fv_puysegur",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "kind": "live historical archive",
+      "scope": "historical-source claims; archive page fetch intermittently unavailable on this pass, live Explore index confirms record"
+    },
+    {
+      "id": "fv_explore",
+      "url": "https://finalvestige.com/explore/",
+      "kind": "live FV directory",
+      "scope": "Puységur record index, source count and historical distinction"
+    },
+    {
+      "id": "fv_focus",
+      "url": "https://finalvestige.com/focus/",
+      "kind": "live owned free resource",
+      "scope": "52-page Fieldbook and existing single Jetpack/Dispatch form"
+    },
+    {
+      "id": "fv_change",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "kind": "live investigation",
+      "scope": "existing perception article"
+    },
+    {
+      "id": "hypnosis_review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38268815/",
+      "kind": "research synthesis",
+      "scope": "49 meta-analyses, 261 unique studies; only nine rated high quality"
+    },
+    {
+      "id": "hypnosis_anxiety",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31251710/",
+      "kind": "research meta-analysis",
+      "scope": "15 studies/17 trials anxiety, context-specific"
+    },
+    {
+      "id": "hypnosis_sleep",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37399315/",
+      "kind": "research systematic review",
+      "scope": "44 sleep studies with mixed findings"
+    },
+    {
+      "id": "hypnosis_test_anxiety",
+      "url": "https://doi.org/10.1080/23311908.2023.2281745",
+      "kind": "research systematic review",
+      "scope": "12 studies/515 students, heterogeneous findings"
+    },
+    {
+      "id": "inspire3",
+      "url": "https://inspire3.com/",
+      "kind": "merchant catalog",
+      "scope": "brand family only; claims are seller claims"
+    },
+    {
+      "id": "zen12_checkout",
+      "url": "https://zen12.com/getstarted",
+      "kind": "merchant offer",
+      "scope": "12 levels, 48 MP3; public display not account-specific FV terms"
+    },
+    {
+      "id": "zen12_newsletter",
+      "url": "https://zen12.com/welcome",
+      "kind": "merchant signup",
+      "scope": "merchant newsletter, different consent from FV"
+    },
+    {
+      "id": "hypnosis_total_focus",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "kind": "merchant offer",
+      "scope": "Total Focus 33 minutes 47 MB, seller concentration promises"
+    },
+    {
+      "id": "hypnosis_faq",
+      "url": "https://hypnosislive.com/faq",
+      "kind": "merchant FAQ",
+      "scope": "requests within 14 days, maximum five refunded sessions annually"
+    },
+    {
+      "id": "bws_focus",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "kind": "merchant offer",
+      "scope": "15/30-minute recordings; 4-hours-plus focus claim seller only"
+    },
+    {
+      "id": "bws_faq",
+      "url": "https://brainwaveshots.com/faq",
+      "kind": "merchant FAQ",
+      "scope": "epilepsy and wakefulness precautions, specific refund requirements must be reconfirmed"
+    },
+    {
+      "id": "affiliate_public",
+      "url": "https://affiliates.inspire3.com/",
+      "kind": "public recruiting page",
+      "scope": "public program existence, NOT FV publisher account acceptance"
+    },
+    {
+      "id": "ftc_disclosure",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "kind": "US consumer regulatory guidance",
+      "scope": "plain near-recommendation material-connection disclosure"
+    },
+    {
+      "id": "ftc_health",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "kind": "US consumer regulatory guidance",
+      "scope": "product-relevant reliable substantiation for express and implied claims"
+    }
+  ],
+  "claims": [
+    {
+      "id": "r292-01",
+      "statement": "Puységur's animal-magnetism archive is a historical record, not evidence for magnetic fluid",
+      "source_ids": [
+        "fv_puysegur",
+        "fv_explore"
+      ],
+      "disposition": "historical context; bounded"
+    },
+    {
+      "id": "r292-02",
+      "statement": "The existing FV Focus Fieldbook is a 52-page free resource with one existing signup route",
+      "source_ids": [
+        "fv_focus"
+      ],
+      "disposition": "observed live"
+    },
+    {
+      "id": "r292-03",
+      "statement": "2024 overview includes 49 meta-analyses and 261 distinct primary studies",
+      "source_ids": [
+        "hypnosis_review"
+      ],
+      "disposition": "supported review count only"
+    },
+    {
+      "id": "r292-04",
+      "statement": "Only nine of the reviewed meta-analyses were rated high methodological quality",
+      "source_ids": [
+        "hypnosis_review"
+      ],
+      "disposition": "supported methodological caveat"
+    },
+    {
+      "id": "r292-05",
+      "statement": "2019 anxiety meta-analysis included 15 studies and 17 trials",
+      "source_ids": [
+        "hypnosis_anxiety"
+      ],
+      "disposition": "supported, treatment settings only"
+    },
+    {
+      "id": "r292-06",
+      "statement": "2023 sleep review included 44 studies with varied outcomes",
+      "source_ids": [
+        "hypnosis_sleep"
+      ],
+      "disposition": "supported, no product extrapolation"
+    },
+    {
+      "id": "r292-07",
+      "statement": "2023 test-anxiety review included 12 studies and 515 students",
+      "source_ids": [
+        "hypnosis_test_anxiety"
+      ],
+      "disposition": "supported, no direct consumer MP3 proof"
+    },
+    {
+      "id": "r292-08",
+      "statement": "Inspire3 owns catalog of multiple brands",
+      "source_ids": [
+        "inspire3"
+      ],
+      "disposition": "seller catalog only"
+    },
+    {
+      "id": "r292-09",
+      "statement": "Zen12 offer says 12 levels and 48 MP3s",
+      "source_ids": [
+        "zen12_checkout"
+      ],
+      "disposition": "seller description, not efficacy"
+    },
+    {
+      "id": "r292-10",
+      "statement": "Zen12 observed countdown/discount is not an authorized permanent FV price",
+      "source_ids": [
+        "zen12_checkout"
+      ],
+      "disposition": "observed context; omit price and urgency from presell"
+    },
+    {
+      "id": "r292-11",
+      "statement": "Zen12 free audio signup is a separate merchant newsletter",
+      "source_ids": [
+        "zen12_newsletter",
+        "fv_focus"
+      ],
+      "disposition": "no shared consent"
+    },
+    {
+      "id": "r292-12",
+      "statement": "Total Focus merchant describes 33min and 47MB",
+      "source_ids": [
+        "hypnosis_total_focus"
+      ],
+      "disposition": "format only"
+    },
+    {
+      "id": "r292-13",
+      "statement": "Total Focus promises concentration gains",
+      "source_ids": [
+        "hypnosis_total_focus"
+      ],
+      "disposition": "UNSUBSTANTIATED FOR SPECIFIC PRODUCT: exclude outcome"
+    },
+    {
+      "id": "r292-14",
+      "statement": "Hypnosis Live FAQ states refund requests within 14 days, maximum 5 refunded sessions per year",
+      "source_ids": [
+        "hypnosis_faq"
+      ],
+      "disposition": "seller policy, not settlement proof"
+    },
+    {
+      "id": "r292-15",
+      "statement": "Focus Shot offers 15/30-minute audios",
+      "source_ids": [
+        "bws_focus"
+      ],
+      "disposition": "format only"
+    },
+    {
+      "id": "r292-16",
+      "statement": "Focus Shot states hours-long focus",
+      "source_ids": [
+        "bws_focus"
+      ],
+      "disposition": "UNSUBSTANTIATED FOR SPECIFIC PRODUCT: exclude outcome"
+    },
+    {
+      "id": "r292-17",
+      "statement": "Brainwave Shots FAQ cautions epilepsy and listening when wakefulness is necessary",
+      "source_ids": [
+        "bws_faq"
+      ],
+      "disposition": "seller precaution, not independent safety verification"
+    },
+    {
+      "id": "r292-18",
+      "statement": "Public Inspire3 recruiting portal advertises affiliate enrollment",
+      "source_ids": [
+        "affiliate_public"
+      ],
+      "disposition": "NOT evidence of named FV acceptance or actual commission"
+    },
+    {
+      "id": "r292-19",
+      "statement": "FTC calls for clear near-link material-connection disclosure",
+      "source_ids": [
+        "ftc_disclosure"
+      ],
+      "disposition": "regulatory guidance"
+    },
+    {
+      "id": "r292-20",
+      "statement": "General hypnosis clinical results do not substantiate a particular MP3 product",
+      "source_ids": [
+        "ftc_health",
+        "hypnosis_review"
+      ],
+      "disposition": "bounded inference"
+    },
+    {
+      "id": "r292-21",
+      "statement": "Existing FV article can link to the Fieldbook without creating a new subscriber list",
+      "source_ids": [
+        "fv_change",
+        "fv_focus"
+      ],
+      "disposition": "editorial routing only"
+    }
+  ],
+  "gates": [
+    {
+      "id": "named_fv_approval",
+      "state": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "offer_authorization",
+      "state": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "approved_channels",
+      "state": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "issued_earning_url",
+      "state": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "partner_tracking_terms",
+      "state": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "affiliate_creative_rights",
+      "state": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "exact_destination_identity",
+      "state": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "checkout_identity",
+      "state": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "refund_and_delivery_terms",
+      "state": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "independent_claim_substantiation",
+      "state": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "ftc_near_link_disclosure",
+      "state": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "founder_commercial_approval",
+      "state": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "founder_production_release",
+      "state": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "privacy_and_consent",
+      "state": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "real_creator_asset_ids",
+      "state": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "signed_out_mobile_a11y",
+      "state": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "refund_fee_settlement_reporting",
+      "state": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "id": "original_video_rights_and_hosted_qa",
+      "state": "HARD_HOLD",
+      "evidence": null
+    }
+  ],
+  "offer_fit": {
+    "provisional": "Zen12 ONLY if FV publisher approval is established",
+    "alternatives": "FV Focus Fieldbook free only; no verified paid owned Mind SKU",
+    "hypnosis_live": "research comparison only; no earning URL",
+    "brainwave_shots": "research comparison only; no earning URL"
+  },
+  "creator_routes": [
+    {
+      "topic": "Thatcher illusion",
+      "article": "mind/r291/THE-FACE-THAT-LOOKED-NORMAL-UPSIDE-DOWN-UNPUBLISHED.md",
+      "asset_id": null,
+      "post_url": null,
+      "landing": "/mind/ editorial candidate",
+      "resource": "/focus/",
+      "offer": "Zen12 optional after approval"
+    },
+    {
+      "topic": "Change blindness",
+      "article": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "asset_id": null,
+      "post_url": null,
+      "landing": "published article",
+      "resource": "/focus/",
+      "offer": "Zen12 optional after approval"
+    },
+    {
+      "topic": "Puységur / hypnotism history",
+      "article": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "asset_id": null,
+      "post_url": null,
+      "landing": "archival route",
+      "resource": "/focus/",
+      "offer": "Independent hypnosis guide, optional offer only after approval"
+    }
+  ],
+  "commercial_events": {
+    "qualified_human_sessions": null,
+    "affiliate_click": null,
+    "confirmed_affiliate_sale": null,
+    "verified_paid_orders": null,
+    "refunds": null,
+    "merchant_fees": null,
+    "cleared_commission": null,
+    "net_revenue_per_1000_qualified_humans": null
+  },
+  "no_active_affiliate_links": true,
+  "no_new_jetpack_list": true
+}
