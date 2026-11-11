@@ -84,6 +84,7 @@ function check(d){
  assert.equal(m.external_affiliate_urls_active,false);
  assert.equal(m.unapproved_merchant_hrefs_allowed,false);
  assert.deepEqual(m.source_register.map(x=>x.id),sources);
+ assert.deepEqual(m.source_register.map(x=>x.url),["https://pubmed.ncbi.nlm.nih.gov/3612492/","https://www.psychologicalscience.org/journals/psychological-science/j.1467-9280.1997.tb00399.x/","https://pubmed.ncbi.nlm.nih.gov/32286932/","https://pubmed.ncbi.nlm.nih.gov/8295117/","https://doi.org/10.1111/acps.13225","https://pubmed.ncbi.nlm.nih.gov/37205669/","https://inspire3.com/","https://zen12.com/hnp","https://zen12.com/freeaudio","https://hypnosislive.com/mental-skills/total-focus","https://hypnosislive.com/faq","https://brainwaveshots.com/focus-shot","https://brainwaveshots.com/faq","https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking","https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance","https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/","https://finalvestige.com/focus/","https://finalvestige.com/2026/11/02/change-blindness/","https://finalvestige.com/2026/11/02/mesmerism/","https://www.youtube.com/watch?v=SV9m07PFTYk"],'exact source URLs; no substituted evidence');
  assert.equal(new Set(m.source_register.map(x=>x.url)).size,20);
  assert.ok(m.source_register.every(x=>/^https:\/\/\S+$/.test(x.url)));
  assert.deepEqual(m.commercial_gates.map(x=>x.id),gates);
