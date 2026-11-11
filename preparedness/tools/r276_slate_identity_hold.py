@@ -63,7 +63,7 @@ def inspect(manifest: dict, read):
         raise ValueError("missing/extra draft or source inventory")
     if Counter(e.get("role") for e in entries if isinstance(e, dict)) != ROLES:
         raise ValueError("article/tool/source counts changed")
-    seen, article_parts, tool_parts, meta_slugs, meta_numbers = set(), {}, {}, set(), set()
+    seen, article_parts, tool_parts, meta_slugs, article_numbers = set(), {}, {}, set(), set()
     for e in entries:
         if set(e) != {"path", "sha", "size", "role"}:
             raise ValueError("manifest entry fields modified")
@@ -99,13 +99,21 @@ def inspect(manifest: dict, read):
             meta = strict_json(data)
             if meta.get("slug") != slug or meta.get("status", {}).get("publish") != "draft":
                 raise ValueError("slug or draft publication state changed")
-            if meta["slug"] in meta_slugs or meta.get("n") in meta_numbers:
-                raise ValueError("duplicate canonical slug or content number")
+            if meta["slug"] in meta_slugs:
+                raise ValueError("duplicate canonical slug")
             meta_slugs.add(meta["slug"])
-            meta_numbers.add(meta["n"])
+            # The authentic six tools reuse numbers 102 and 103; their unique
+            # identity is the slug. Articles 1..35 have strictly unique numbers.
+            if role == "article_meta":
+                n = meta.get("n")
+                if type(n) is not int or n not in range(1, 36) or n in article_numbers:
+                    raise ValueError("missing or duplicate article number")
+                article_numbers.add(n)
+            elif type(meta.get("n")) is not int or meta["n"] < 100:
+                raise ValueError("invalid tool number")
     if any(parts != {"body", "meta"} for parts in (*article_parts.values(), *tool_parts.values())):
         raise ValueError("orphaned body or metadata")
-    if len(article_parts) != 35 or len(tool_parts) != 6 or len(meta_slugs) != 41:
+    if len(article_parts) != 35 or len(tool_parts) != 6 or len(meta_slugs) != 41 or article_numbers != set(range(1, 36)):
         raise ValueError("article/tool reading-depth roster changed")
     crosswalk = strict_json(read(EXTRA["crosswalk"]))
     origins = crosswalk.get("article_origins", {})
