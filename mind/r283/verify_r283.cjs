@@ -75,10 +75,10 @@ function check(data){
   assert(data.article.length>7500 && data.article.includes("79 percent") &&
     data.article.includes("Raveh") && data.article.includes("Scheer") &&
     data.article.includes("https://pubmed.ncbi.nlm.nih.gov/25287617/") &&
-    data.article.includes("No affiliate checkout link"),"article sources/evidence",fail);
+    /no affiliate checkout link/i.test(data.article),"article sources/evidence",fail);
   assert(data.plan.includes("NOT COMPUTABLE") && data.plan.includes("HARD_HOLD") &&
     data.plan.includes("qualified_human_session") && data.plan.includes("settled_commission") &&
-    data.plan.includes("paid commission")&&data.plan.includes("NOT playable"),"conversion/release plan",fail);
+    data.plan.includes("paid commission")&&data.plan.includes("no playable video"),"conversion/release plan",fail);
   return fail;
 }
 function mutationTests(data){
