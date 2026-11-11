@@ -5,7 +5,7 @@ const fs=require('node:fs');
 const path=require('node:path');
 const {validate}=require('./validate_three_p0_primary_followup_20261111.cjs');
 const data=JSON.parse(fs.readFileSync(path.join(__dirname,'three_p0_primary_followup_20261111.json'),'utf8'));
-const run=(fn)=>{const x=structuredClone(data);fn(x);return validate(x);};
+const run=(fn)=>{const x=JSON.parse(JSON.stringify(data));fn(x);return validate(x);};
 test('authoritative source-only baseline',()=>assert.deepEqual(validate(data),{ok:true,errors:[]}));
 test('refuse invented HTTP',()=>assert.equal(run(x=>x.rows[0].guest_http_status=404).ok,false));
 test('refuse fabricated origin HTTP',()=>assert.equal(run(x=>x.rows[1].origin_http_status=200).ok,false));
