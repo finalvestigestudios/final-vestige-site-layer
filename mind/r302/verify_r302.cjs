@@ -80,7 +80,7 @@ function run(){
  fixture("inject form","UNAPPROVED_ACTIVE_ELEMENT",f=>({...f,hub:f.hub+"<form></form>"}));
  fixture("inject video","UNAPPROVED_ACTIVE_ELEMENT",f=>({...f,hub:f.hub+"<video autoplay></video>"}));
  fixture("meta redirect","UNAPPROVED_REDIRECT",f=>({...f,hub:f.hub.replace("</head>","<meta http-equiv=\"refresh\" content=\"0;url=https://fake.invalid\"></head>")}));
- fixture("inline event","UNAPPROVED_EVENT_HANDLER",f=>({...f,hub:f.hub.replace("<main id=\"main\">","<main id=\"main\" onclick=\"go()\">")}));
+ fixture("inline event","UNAPPROVED_EVENT_HANDLER",f=>({...f,hub:f.hub.replace('<p class="kicker">','<p class="kicker" onclick="go()">')}));
  fixture("merchant link","MERCHANT_LINK_HOLD",f=>({...f,hub:f.hub.replace("</footer>",'<a href="https://zen12.com/getstarted">Buy</a></footer>')}));
  fixture("unapproved outbound","OUTBOUND_ALLOWLIST",f=>({...f,hub:f.hub.replace("</footer>",'<a href="https://pixel.example.net/track">Click</a></footer>')}));
  fixture("hidden disclosure","DISCLOSURE_VISIBLE",f=>({...f,hub:f.hub.replace('id="commission-disclosure" class="disclosure"','id="commission-disclosure" class="disclosure" style="display:none"')}));
