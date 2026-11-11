@@ -1,0 +1,232 @@
+{
+  "schema": "fv-r276-seven-contributor-delta-v1",
+  "checked_on_utc": "2026-11-11",
+  "status": "DRAFT_HARD_HOLD",
+  "snapshot_ref": "df96120007ceb33290764392a5900e356e04deac",
+  "warning": "Current remote branch heads are NOT the immutable source snapshots used by R272/R273/R276. Intake only after source and article review; no automatic replacement or release.",
+  "independent_qd_pass": false,
+  "may_merge": false,
+  "publication_authorized": false,
+  "contributors": [
+    {
+      "origin": "start",
+      "branch": "claude/prep-start-bbfeb8",
+      "frozen_sha": "2122d856fce9f64887c16df3d52e64be9f59a55b",
+      "head_sha_at_check": "2122d856fce9f64887c16df3d52e64be9f59a55b",
+      "compare_status": "identical",
+      "commits_ahead": 0,
+      "commits_behind": 0,
+      "review_state": "frozen-no-new-intake",
+      "changed_files": []
+    },
+    {
+      "origin": "shelter",
+      "branch": "claude/prep-shelter-5e1e0e",
+      "frozen_sha": "5daeaf2dd5ab71806a6b73c91edfb1d8df5da976",
+      "head_sha_at_check": "5daeaf2dd5ab71806a6b73c91edfb1d8df5da976",
+      "compare_status": "identical",
+      "commits_ahead": 0,
+      "commits_behind": 0,
+      "review_state": "frozen-no-new-intake",
+      "changed_files": []
+    },
+    {
+      "origin": "food",
+      "branch": "claude/prep-food-ccdc55",
+      "frozen_sha": "e9cd7766dac59d47ab467d8945269b9146c2aef5",
+      "head_sha_at_check": "f911ff7a655de8d81535ea86ec3d65a49ee76648",
+      "compare_status": "diverged",
+      "commits_ahead": 1,
+      "commits_behind": 1,
+      "review_state": "CHANGED_UNADJUDICATED_HARD_HOLD",
+      "changed_files": [
+        {
+          "path": "preparedness/docs/CLUSTER-food.md",
+          "change": "modified",
+          "additions": 2,
+          "deletions": 0
+        },
+        {
+          "path": "preparedness/tests/test_preparedness.py",
+          "change": "modified",
+          "additions": 12,
+          "deletions": 3
+        }
+      ]
+    },
+    {
+      "origin": "health",
+      "branch": "claude/prep-health-837444",
+      "frozen_sha": "d2212d0ca0750817d3929865d3069835980faf20",
+      "head_sha_at_check": "d5ef5bafd68361434dd1cc9209915b8e8a4eaf17",
+      "compare_status": "ahead",
+      "commits_ahead": 1,
+      "commits_behind": 0,
+      "review_state": "CHANGED_UNADJUDICATED_HARD_HOLD",
+      "changed_files": [
+        {
+          "path": "preparedness/docs/CLUSTER-health.md",
+          "change": "modified",
+          "additions": 17,
+          "deletions": 0
+        }
+      ]
+    },
+    {
+      "origin": "hist-field",
+      "branch": "claude/prep-hist-field-9db767",
+      "frozen_sha": "a5ce8a62f168db05c95232e3eb385dccd0d19e7f",
+      "head_sha_at_check": "4e5caf812727953aa45e3bda2d382f2c67b6a09c",
+      "compare_status": "ahead",
+      "commits_ahead": 1,
+      "commits_behind": 0,
+      "review_state": "CHANGED_UNADJUDICATED_HARD_HOLD",
+      "changed_files": [
+        {
+          "path": "preparedness/content/articles/navigation-before-gps.body.html",
+          "change": "modified",
+          "additions": 100,
+          "deletions": 100
+        },
+        {
+          "path": "preparedness/content/articles/pioneer-supply-chains-failed.body.html",
+          "change": "modified",
+          "additions": 113,
+          "deletions": 111
+        },
+        {
+          "path": "preparedness/content/articles/pioneer-supply-chains-failed.meta.json",
+          "change": "modified",
+          "additions": 46,
+          "deletions": 44
+        },
+        {
+          "path": "preparedness/docs/CLUSTER-hist-field.md",
+          "change": "modified",
+          "additions": 98,
+          "deletions": 83
+        },
+        {
+          "path": "preparedness/sources/fragments/hist-field.json",
+          "change": "modified",
+          "additions": 396,
+          "deletions": 368
+        }
+      ]
+    },
+    {
+      "origin": "hist-food",
+      "branch": "claude/prep-hist-food-b81f19",
+      "frozen_sha": "2acf65ca3efa9b4b5db7976f379b9ea693be43a4",
+      "head_sha_at_check": "67e116e536c7410bed30f8f3b1bb8c166f3c223d",
+      "compare_status": "ahead",
+      "commits_ahead": 1,
+      "commits_behind": 0,
+      "review_state": "CHANGED_UNADJUDICATED_HARD_HOLD",
+      "changed_files": [
+        {
+          "path": "preparedness/content/articles/pemmican-and-dried-meats.body.html",
+          "change": "modified",
+          "additions": 91,
+          "deletions": 91
+        },
+        {
+          "path": "preparedness/content/articles/pemmican-and-dried-meats.meta.json",
+          "change": "modified",
+          "additions": 49,
+          "deletions": 49
+        },
+        {
+          "path": "preparedness/content/articles/pioneer-travel-rations.body.html",
+          "change": "modified",
+          "additions": 90,
+          "deletions": 90
+        },
+        {
+          "path": "preparedness/content/articles/pioneer-travel-rations.meta.json",
+          "change": "modified",
+          "additions": 47,
+          "deletions": 47
+        },
+        {
+          "path": "preparedness/docs/CLUSTER-hist-food.md",
+          "change": "modified",
+          "additions": 86,
+          "deletions": 86
+        },
+        {
+          "path": "preparedness/sources/fragments/hist-food.json",
+          "change": "modified",
+          "additions": 395,
+          "deletions": 395
+        },
+        {
+          "path": "preparedness/tests/test_preparedness.py",
+          "change": "modified",
+          "additions": 323,
+          "deletions": 315
+        }
+      ]
+    },
+    {
+      "origin": "hist-home",
+      "branch": "claude/prep-hist-home-0e0e38",
+      "frozen_sha": "f654e600f89c321a480dd8f055be4d13d0673490",
+      "head_sha_at_check": "7504a5f099594d635e3dd7332a33a2e1346c43a2",
+      "compare_status": "ahead",
+      "commits_ahead": 2,
+      "commits_behind": 0,
+      "review_state": "CHANGED_UNADJUDICATED_HARD_HOLD",
+      "changed_files": [
+        {
+          "path": "preparedness/content/articles/pickling-fermentation-old-recipes.body.html",
+          "change": "modified",
+          "additions": 10,
+          "deletions": 6
+        },
+        {
+          "path": "preparedness/content/articles/pickling-fermentation-old-recipes.meta.json",
+          "change": "modified",
+          "additions": 26,
+          "deletions": 10
+        },
+        {
+          "path": "preparedness/content/articles/root-cellars-cool-storage.body.html",
+          "change": "modified",
+          "additions": 107,
+          "deletions": 101
+        },
+        {
+          "path": "preparedness/content/articles/root-cellars-cool-storage.meta.json",
+          "change": "modified",
+          "additions": 25,
+          "deletions": 8
+        },
+        {
+          "path": "preparedness/content/articles/sanitation-before-germ-theory.body.html",
+          "change": "modified",
+          "additions": 102,
+          "deletions": 102
+        },
+        {
+          "path": "preparedness/content/articles/sanitation-before-germ-theory.meta.json",
+          "change": "modified",
+          "additions": 29,
+          "deletions": 10
+        },
+        {
+          "path": "preparedness/docs/CLUSTER-hist-home.md",
+          "change": "modified",
+          "additions": 13,
+          "deletions": 0
+        },
+        {
+          "path": "preparedness/sources/fragments/hist-home.json",
+          "change": "modified",
+          "additions": 29,
+          "deletions": 1
+        }
+      ]
+    }
+  ]
+}
