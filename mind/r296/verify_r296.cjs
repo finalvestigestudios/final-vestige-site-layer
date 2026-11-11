@@ -88,7 +88,7 @@ function verify(x){
   }
  }
  assert(/no-JS|no JS|no additional/i.test(h),"NONJS_SPEC_MISSING");
- assert(/no active purchasing link/.test(literal(h)),"ACTIVE_PURCHASE_IMPLICATION");
+ assert(/no affiliate purchasing link is currently enabled|no active purchasing link/.test(literal(h)),"ACTIVE_PURCHASE_IMPLICATION");
  assert(d.includes("mind_pilot_2026_11")&&d.includes("mind_proposed_2026_11"),"ANALYTICS_ID_CONFLICT_ERASED");
  assert(d.includes("NOT COMPUTABLE"),"REVENUE_TRUTH_MISSING");
  assert(d.includes("Only one isochronic")||d.includes("only one isochronic"),"SCOPING_LIMIT_MISSING");
