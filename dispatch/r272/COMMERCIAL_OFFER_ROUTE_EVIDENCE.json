@@ -1,0 +1,114 @@
+{
+  "as_of": "2026-11-10",
+  "owner": "Dispatch editorial, review only",
+  "canonical": "GitHub #174; PR #175; Mind #171",
+  "parent_pr": 1992,
+  "campaign": {
+    "approved_draft_issue_count": 6,
+    "editorial": 4,
+    "commercial_review_pending": 2,
+    "all_unsent": true,
+    "original_manuscripts_modified": false
+  },
+  "offers": [
+    {
+      "id": "zen12",
+      "pilot_issue": 3,
+      "release": "HOLD_MERCHANT",
+      "merchant_approval": null,
+      "permission_to_email": null,
+      "affiliate_link": null,
+      "guide_approved_live": null,
+      "price_verified_for_route": null,
+      "refund_verified_for_route": null,
+      "claims_independently_proven": false,
+      "observations": [
+        {
+          "page": "https://zen12.com/about",
+          "kind": "seller",
+          "observation": "12-minute levels with multiple audio formats; seller effectiveness and equivalence assertions not independent proof."
+        },
+        {
+          "page": "https://zen12.com/?no-popup=1",
+          "kind": "seller",
+          "observation": "Beginner/Premium configurations and listed amounts differ from other promotions."
+        },
+        {
+          "page": "https://zen12.com/secret/",
+          "kind": "seller",
+          "observation": "Separate advertised promotion shows $37 coupon vs a stated $87; no authorization for FV to quote it."
+        },
+        {
+          "page": "https://zen12.com/welcome",
+          "kind": "seller",
+          "observation": "Free audio enrolls in merchant newsletter, not FV consent."
+        },
+        {
+          "page": "https://pubmed.ncbi.nlm.nih.gov/38001316/",
+          "kind": "independent-not-product-specific",
+          "observation": "10 vs 20 minute mindfulness randomized study; not a Zen12 trial."
+        },
+        {
+          "page": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+          "kind": "independent-not-product-specific",
+          "observation": "Binaural beat entrainment systematic review."
+        },
+        {
+          "page": "https://pubmed.ncbi.nlm.nih.gov/38458383/",
+          "kind": "independent-not-product-specific",
+          "observation": "31-study auditory stimulation review notes mixed or insufficient arousal/cognition evidence."
+        }
+      ]
+    },
+    {
+      "id": "hypnosis_live_total_focus",
+      "pilot_issue": 5,
+      "release": "HOLD_MERCHANT",
+      "merchant_approval": null,
+      "permission_to_email": null,
+      "affiliate_link": null,
+      "guide_approved_live": null,
+      "price_verified_for_route": null,
+      "refund_verified_for_route": null,
+      "claims_independently_proven": false,
+      "observations": [
+        {
+          "page": "https://hypnosislive.com/mental-skills/total-focus",
+          "kind": "seller",
+          "observation": "33 minutes / 47MB and $17.95 next to $22.95 listed; exact FV route unverified. Effectiveness language is seller claim."
+        },
+        {
+          "page": "https://hypnosislive.com/faq",
+          "kind": "seller",
+          "observation": "Refund request described with 14-day period and limit of five refunded sessions annually; route-specific checkout not verified."
+        }
+      ]
+    }
+  ],
+  "compliance": {
+    "publisher_postal_address_verified": false,
+    "received_unsubscribe_render_verified": false,
+    "actual_jetpack_preview_verified": false,
+    "welcome_receipt_verified": false,
+    "email_eligible_subscribers": "UNKNOWN",
+    "verified_paid_orders": "UNKNOWN",
+    "revenue_per_1000_qualified_sessions": "NOT_COMPUTABLE",
+    "final_founder_campaign_approval": false
+  },
+  "analytics": {
+    "confirmed_signup": "Only authenticated Jetpack first-party provider-confirmed event; dedup opaque provider refs; never success URL or a merchant newsletter opt-in.",
+    "utm": "utm_source=actual_platform; utm_medium=organic_social; utm_campaign=topic_pilot_2026_11; utm_content=published_grok_asset_id",
+    "monetization": "Only settled merchant affiliate conversion less refunds/fees, independent of affiliate clicks"
+  },
+  "sources": [
+    "https://pubmed.ncbi.nlm.nih.gov/38001316/",
+    "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+    "https://pubmed.ncbi.nlm.nih.gov/38458383/",
+    "https://zen12.com/about",
+    "https://zen12.com/?no-popup=1",
+    "https://zen12.com/secret/",
+    "https://zen12.com/welcome",
+    "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business",
+    "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+  ]
+}

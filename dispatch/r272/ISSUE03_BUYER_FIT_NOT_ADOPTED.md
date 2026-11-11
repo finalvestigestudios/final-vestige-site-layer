@@ -1,0 +1,33 @@
+# ISSUE 03 — OPTIONAL BUYER-FIT ALTERNATIVE (NOT ADOPTED)
+
+> HOLD_UNSENT. This does not amend the founder-approved 4-editorial/2-commercial draft. All affiliate offers, guide URLs and sends remain blocked.
+
+**Subject:** A twelve-minute meditation can fit. What does the audio prove?
+**Preheader:** A buyer's test for short meditation recordings, before the promises take over.
+
+There's a wonderfully modest reason to try a twelve-minute routine: you can find out whether it fits into Tuesday. No transformation required. Find a quiet spot, set a timer, and notice what happens when your mind wanders.
+
+The trouble begins when an approachable routine becomes a scientific-sounding guarantee. A recording may be pleasant, convenient, or easier to revisit than a class. None of those qualities proves that its audio can compress an hour of meditation into twelve minutes.
+
+One randomized study compared brief mindfulness exercises of ten and twenty minutes with control recordings. It found some short-term benefits in the meditation conditions, but it did not evaluate Zen12. Reviews of binaural-beat research also find important uncertainty. A finding about meditation in general is not a finding about this seller's MP3s.
+
+Before choosing any paid audio, try three ordinary sessions without purchasing anything. Write down the time, whether you finished, what interrupted you, and whether you wanted to repeat it. That log can tell you about feasibility. It cannot diagnose a condition or prove that an audio technology rewires your brain.
+
+Zen12 is one program we're examining. The seller describes twelve-minute sessions across several audio styles and levels. Its public pages also show different packages and promotional routes. That makes exact checkout, access and refund terms—not its headline claim—essential to a fair recommendation. We haven't independently tested the recordings, confirmed Final Vestige's affiliate permission, or verified its purchase route.
+
+If a no-cost routine works for you, keep it. If a guided format genuinely matters, compare its preview, exact inclusions, file access, and current refund terms before considering purchase. A thoughtful 'not yet' is an entirely good outcome.
+
+**Read our independent Zen12 buyer-fit guide: [[APPROVED_ZEN12_WARMUP_GUIDE_URL_REQUIRED]]**
+
+**Commercial disclosure: If you later buy through a qualifying link in that guide, Final Vestige may earn a commission. That guide and earning link are NOT currently approved or live. This is an unsent, internal alternative, not an invitation to purchase.**
+
+## Sources (not purchase CTAs)
+- [Randomized brief meditation study; NOT Zen12](https://pubmed.ncbi.nlm.nih.gov/38001316/)
+- [Binaural-beat entrainment systematic review; NOT Zen12](https://pubmed.ncbi.nlm.nih.gov/37205669/)
+- [Auditory stimulation review; NOT Zen12](https://pubmed.ncbi.nlm.nih.gov/38458383/)
+- [Zen12 seller product description](https://zen12.com/about)
+- [Zen12 seller standard packages](https://zen12.com/?no-popup=1)
+- [Zen12 seller special promotion, not approved](https://zen12.com/secret/)
+- [Zen12 seller free-audio separate newsletter opt-in](https://zen12.com/welcome)
+
+Final Vestige Studios | Physical postal address: [[VALID_POSTAL_ADDRESS_REQUIRED]] | Unsubscribe: [[JETPACK_UNSUBSCRIBE_LINK_MUST_BE_VERIFIED]]
