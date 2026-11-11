@@ -43,9 +43,9 @@ function validate(x){
  assert.equal(m.status,"UNPUBLISHED_HARD_HOLD");
  assert.equal(m.sources.length,18);assert.equal(m.claims.length,28);
  assert.equal(m.authorization_gates.length,18);assert.ok(m.authorization_gates.every(g=>g.status==="HARD_HOLD"&&g.verified_at===null&&g.evidence===null&&!g.override_allowed));
- assert.equal(fnv(m.sources.map(s=>s.id+"|"+s.url).join("\\n")),pinned.sources,"source identity/url pin");
- assert.equal(fnv(m.claims.map(c=>c.id+"|"+c.source_ids.join(",")+"|"+c.decision+"|"+c.limits).join("\\n")),pinned.claims,"claim/source/decision/limits pin");
- assert.equal(fnv(m.authorization_gates.map(g=>g.id+"|"+g.status).join("\\n")),pinned.gates,"gate identity/status pin");
+ assert.equal(fnv(m.sources.map(s=>s.id+"|"+s.url).join("\n")),pinned.sources,"source identity/url pin");
+ assert.equal(fnv(m.claims.map(c=>c.id+"|"+c.source_ids.join(",")+"|"+c.decision+"|"+c.limits).join("\n")),pinned.claims,"claim/source/decision/limits pin");
+ assert.equal(fnv(m.authorization_gates.map(g=>g.id+"|"+g.status).join("\n")),pinned.gates,"gate identity/status pin");
  const ids=new Set(m.sources.map(s=>s.id));assert.equal(ids.size,18);
  for(const c of m.claims){assert.ok(c.source_ids.length&&c.source_ids.every(id=>ids.has(id)));assert.ok(c.limits.length>=10)}
  const c=m.commercial_primary_hypothesis;
