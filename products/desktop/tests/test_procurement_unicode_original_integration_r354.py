@@ -7,8 +7,11 @@ from __future__ import annotations
 
 from decimal import Decimal
 import json
+from pathlib import Path
+from tempfile import TemporaryDirectory
 import unittest
 
+from fvs_suite import engine
 from fvs_suite.identity_inputs import normalize_key
 from fvs_suite.procurement import PricePolicy, offset_source_line_links, review_line
 
@@ -79,6 +82,49 @@ class UnicodeOriginalIntegrationR354(unittest.TestCase):
         links = json.loads(offset_source_line_links(
             inv, source="invoice", offset="credit", identifier=normalize_key))
         self.assertEqual(links, [{"offset_row": "3", "target_rows": ["2"]}])
+
+
+    def test_actual_csv_document_columns_preserve_nbsp_boundary(self):
+        with TemporaryDirectory() as directory:
+            path = Path(directory) / "invoice.csv"
+            path.write_text("po_number,line,quantity,unit_price,event_type,document_id,related_document\n"
+                            "PO-1,1,1,10,invoice,\u00a0INV1,\n", encoding="utf-8")
+            rows = engine.table(path, ("po_number", "line", "quantity", "unit_price"),
+                                ("event_type", "document_id", "related_document"))
+        self.assertEqual(rows[0]["document_id"], "\u00a0INV1")
+        self.assertEqual(rows[0]["po_number"], "PO-1")
+
+    def test_actual_csv_related_column_preserves_narrow_nbsp_boundary(self):
+        with TemporaryDirectory() as directory:
+            path = Path(directory) / "credit.csv"
+            path.write_text("po_number,line,quantity,unit_price,event_type,document_id,related_document\n"
+                            "PO-1,1,1,10,credit,CM1,INV1\u202f\n", encoding="utf-8")
+            rows = engine.table(path, ("po_number", "line", "quantity", "unit_price"),
+                                ("event_type", "document_id", "related_document"))
+        self.assertEqual(rows[0]["related_document"], "INV1\u202f")
+
+    def test_other_import_fields_retain_prior_unicode_strip_behavior(self):
+        with TemporaryDirectory() as directory:
+            path = Path(directory) / "invoice.csv"
+            path.write_text("po_number,line,quantity,unit_price,event_type,document_id\n"
+                            "\u00a0PO-1\u00a0,1,1,10,invoice,INV1\n", encoding="utf-8")
+            rows = engine.table(path, ("po_number", "line", "quantity", "unit_price"),
+                                ("event_type", "document_id"))
+        self.assertEqual(rows[0]["po_number"], "PO-1")
+        self.assertEqual(rows[0]["document_id"], "INV1")
+
+    def test_actual_csv_source_then_real_credit_review_flags_spelling(self):
+        with TemporaryDirectory() as directory:
+            path = Path(directory) / "invoice.csv"
+            path.write_text("po_number,line,quantity,unit_price,event_type,document_id,related_document\n"
+                            "PO-1,1,2,10,invoice,\u00a0INV1,\n"
+                            "PO-1,1,1,10,credit,CM1,INV1\n", encoding="utf-8")
+            inv = engine.table(path, ("po_number", "line", "quantity", "unit_price"),
+                               ("event_type", "document_id", "related_document"))
+            metrics, flags = review(inv, [row(kind="receipt", doc="REC1")])
+        self.assertEqual(metrics["invoice_total_exact"], "10")
+        self.assertIn("normalized_credit_link_review", flags)
+        self.assertNotIn("unlinked_credit_review", flags)
 
 
 if __name__ == "__main__":
