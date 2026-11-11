@@ -90,7 +90,7 @@ function fv_r281_render($attributes = []): string {
     $s.='</ol></nav><ol class="fv-r281__plates" aria-label="Historical evidence plates">';
     foreach ($records as $index=>$r) {
         $point=$id.'-event-'.($index+1);
-        $s.='<li class="fv-r281__plate" id="'.$point.'"><article aria-labelledby="'.$point.'-heading"><p class="fv-r281__date"><time datetime="'.fv_r281_escape($r['date']).'">'.fv_r281_escape($r['when']).'</time></p>';
+        $s.='<li class="fv-r281__plate" id="'.$point.'" tabindex="-1"><article aria-labelledby="'.$point.'-heading"><p class="fv-r281__date"><time datetime="'.fv_r281_escape($r['date']).'">'.fv_r281_escape($r['when']).'</time></p>';
         $s.='<h3 id="'.$point.'-heading">'.fv_r281_escape($r['title']).'</h3><p>'.fv_r281_escape($r['statement']).'</p>';
         $s.='<p class="fv-r281__boundary"><strong>Evidence boundary:</strong> '.fv_r281_escape($r['boundary']).'</p>';
         $s.='<details class="fv-r281__drawer"><summary>Inspect the source and custody record</summary><div class="fv-r281__drawer-body"><p><strong>Custodian:</strong> NASA · <strong>Record:</strong> '.fv_r281_escape($r['source_id']).' · <strong>Editorial review:</strong> Pending</p><p><strong>Record type:</strong> '.fv_r281_escape($r['source_type']).'. <strong>Source relationship:</strong> '.fv_r281_escape($r['source_dependency']).'</p>';
