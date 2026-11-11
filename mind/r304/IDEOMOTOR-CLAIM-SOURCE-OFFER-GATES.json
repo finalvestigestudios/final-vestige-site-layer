@@ -1,0 +1,440 @@
+{
+  "schema": "fv-mind-r304-commercial-evidence-v1",
+  "updated": "2026-11-11",
+  "release_state": "UNPUBLISHED_HARD_HOLD",
+  "sources": [
+    {
+      "id": "CHEV",
+      "url": "https://openlibrary.org/works/OL4989940W/De_la_baguette_divinatoire",
+      "reading_scope": "1854 historical catalog"
+    },
+    {
+      "id": "SHEN",
+      "url": "https://doi.org/10.1080/00029157.2011.10401754",
+      "reading_scope": "2011 historical review abstract"
+    },
+    {
+      "id": "GAU",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/22377138/",
+      "reading_scope": "2012 original experiment abstract"
+    },
+    {
+      "id": "MOGA",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35184700/",
+      "reading_scope": "2022 replication abstract"
+    },
+    {
+      "id": "MOGAFULL",
+      "url": "https://doi.org/10.1080/00029157.2021.2010641",
+      "reading_scope": "2022 publisher full-text excerpts"
+    },
+    {
+      "id": "IDEO",
+      "url": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2023.1066839/full",
+      "reading_scope": "2023 original full text"
+    },
+    {
+      "id": "PUY",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "reading_scope": "authenticated live WP page 1377"
+    },
+    {
+      "id": "FOCUS",
+      "url": "https://finalvestige.com/focus/",
+      "reading_scope": "established free 52-page lead magnet"
+    },
+    {
+      "id": "CHANGE",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "reading_scope": "published article"
+    },
+    {
+      "id": "INSPIRE",
+      "url": "https://inspire3.com/",
+      "reading_scope": "seller catalog"
+    },
+    {
+      "id": "ZCHECK",
+      "url": "https://zen12.com/getstarted",
+      "reading_scope": "seller checkout with timer and route price"
+    },
+    {
+      "id": "ZSELL",
+      "url": "https://zen12.com/",
+      "reading_scope": "seller packages and format"
+    },
+    {
+      "id": "HSELL",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "reading_scope": "seller exact offer"
+    },
+    {
+      "id": "BSELL",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "reading_scope": "seller exact offer"
+    },
+    {
+      "id": "FTCEND",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "reading_scope": "FTC endorsements"
+    },
+    {
+      "id": "FTCHEALTH",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "reading_scope": "FTC health claim"
+    },
+    {
+      "id": "ISSUE171",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "reading_scope": "editorial commerce governance"
+    },
+    {
+      "id": "ISSUE820",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "reading_scope": "conversion governance"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "statement": "Chevreul's volume was published in 1854",
+      "decision": "ALLOW_METADATA",
+      "source_id": "CHEV"
+    },
+    {
+      "id": "C02",
+      "statement": "Chevreul's exact experimental dialogue/measurements have been inspected",
+      "decision": "EXCLUDE_UNVERIFIED",
+      "source_id": "CHEV"
+    },
+    {
+      "id": "C03",
+      "statement": "Ideomotor movement can occur without experienced deliberate intention",
+      "decision": "QUALIFY_GENERAL",
+      "source_id": "SHEN"
+    },
+    {
+      "id": "C04",
+      "statement": "2012 Ouija task reported 65% guessed-item vs 50% verbal",
+      "decision": "QUALIFY_EXPERIMENT",
+      "source_id": "GAU"
+    },
+    {
+      "id": "C05",
+      "statement": "2012 Ouija finding proves supernatural or hidden abilities generally",
+      "decision": "EXCLUDE_UNSUPPORTED",
+      "source_id": "GAU"
+    },
+    {
+      "id": "C06",
+      "statement": "2022 pendulum replication found no guessed-item advantage",
+      "decision": "QUALIFY_EXPERIMENT",
+      "source_id": "MOGA"
+    },
+    {
+      "id": "C07",
+      "statement": "2022 replication proves 2012 study fabrication",
+      "decision": "EXCLUDE_UNSUPPORTED",
+      "source_id": "MOGA"
+    },
+    {
+      "id": "C08",
+      "statement": "2022 study differed in instrument/social method",
+      "decision": "QUALIFY_EXPERIMENT",
+      "source_id": "MOGAFULL"
+    },
+    {
+      "id": "C09",
+      "statement": "2023 experimental work addresses idea-action motor links",
+      "decision": "QUALIFY_GENERAL",
+      "source_id": "IDEO"
+    },
+    {
+      "id": "C10",
+      "statement": "Ideomotor response is a verified therapy or wealth tool",
+      "decision": "EXCLUDE_UNSUPPORTED",
+      "source_id": "FTCHEALTH"
+    },
+    {
+      "id": "C11",
+      "statement": "FV Puységur source archive is published, has evidence limitations",
+      "decision": "ALLOW_CONTEXT",
+      "source_id": "PUY"
+    },
+    {
+      "id": "C12",
+      "statement": "Existing 52-page Focus Fieldbook is free",
+      "decision": "ALLOW_FORMAT",
+      "source_id": "FOCUS"
+    },
+    {
+      "id": "C13",
+      "statement": "Zen12 seller lists 12 levels and 48 MP3s at checkout",
+      "decision": "SELLER_FORMAT_ONLY",
+      "source_id": "ZCHECK"
+    },
+    {
+      "id": "C14",
+      "statement": "Zen12 has differently scoped packages",
+      "decision": "SELLER_FORMAT_ONLY",
+      "source_id": "ZSELL"
+    },
+    {
+      "id": "C15",
+      "statement": "Every Zen12 track is guided meditation",
+      "decision": "EXCLUDE_MISMATCH",
+      "source_id": "ZSELL"
+    },
+    {
+      "id": "C16",
+      "statement": "12 minutes Zen12 replicates hour meditation benefits",
+      "decision": "EXCLUDE_EFFICACY",
+      "source_id": "ZSELL"
+    },
+    {
+      "id": "C17",
+      "statement": "Zen12 specific FV-approved price is verified",
+      "decision": "EXCLUDE_UNVERIFIED",
+      "source_id": "ZCHECK"
+    },
+    {
+      "id": "C18",
+      "statement": "Zen12 seller describes money-back guarantee",
+      "decision": "SELLER_POLICY_UNVERIFIED_FULFILLMENT",
+      "source_id": "ZCHECK"
+    },
+    {
+      "id": "C19",
+      "statement": "Total Focus seller specifies 33min and 47MB",
+      "decision": "SELLER_FORMAT_ONLY",
+      "source_id": "HSELL"
+    },
+    {
+      "id": "C20",
+      "statement": "Total Focus yields perfect concentration",
+      "decision": "EXCLUDE_EFFICACY",
+      "source_id": "HSELL"
+    },
+    {
+      "id": "C21",
+      "statement": "Focus Shot seller lists 15/30-minute audios",
+      "decision": "SELLER_FORMAT_ONLY",
+      "source_id": "BSELL"
+    },
+    {
+      "id": "C22",
+      "statement": "Focus Shot benefits last four hours",
+      "decision": "EXCLUDE_EFFICACY",
+      "source_id": "BSELL"
+    },
+    {
+      "id": "C23",
+      "statement": "Inspire3 catalog contains Zen12 and Hypnosis Live",
+      "decision": "ALLOW_SELLER_CATALOG",
+      "source_id": "INSPIRE"
+    },
+    {
+      "id": "C24",
+      "statement": "FV is accepted Inspire3 publisher",
+      "decision": "EXCLUDE_UNVERIFIED",
+      "source_id": "ISSUE171"
+    },
+    {
+      "id": "C25",
+      "statement": "FV has authorized tracking link and permitted channels",
+      "decision": "EXCLUDE_UNVERIFIED",
+      "source_id": "ISSUE171"
+    },
+    {
+      "id": "C26",
+      "statement": "FV product was personally tested",
+      "decision": "EXCLUDE_UNVERIFIED",
+      "source_id": "FTCEND"
+    },
+    {
+      "id": "C27",
+      "statement": "Earning links need immediate clear commission disclosure",
+      "decision": "REQUIRED",
+      "source_id": "FTCEND"
+    },
+    {
+      "id": "C28",
+      "statement": "Health claims need competent reliable scientific evidence",
+      "decision": "REQUIRED",
+      "source_id": "FTCHEALTH"
+    },
+    {
+      "id": "C29",
+      "statement": "Affiliate outbound click equals paid commission",
+      "decision": "EXCLUDE_FALSE_EQUIVALENCE",
+      "source_id": "ISSUE820"
+    },
+    {
+      "id": "C30",
+      "statement": "Merchant gross cart value is FV realized commission",
+      "decision": "EXCLUDE_FALSE_EQUIVALENCE",
+      "source_id": "ISSUE820"
+    },
+    {
+      "id": "C31",
+      "statement": "Attribution needs settled commissions and qualified sessions",
+      "decision": "REQUIRED",
+      "source_id": "ISSUE820"
+    }
+  ],
+  "commercial_gates": [
+    {
+      "id": "G01",
+      "name": "publisher acceptance",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "G02",
+      "name": "web promo rights",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "G03",
+      "name": "video/social rights",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "G04",
+      "name": "Dispatch/email rights",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "G05",
+      "name": "issued earning URL",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "G06",
+      "name": "affiliate attribution terms",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "G07",
+      "name": "current package/price",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "G08",
+      "name": "refund/return terms",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "G09",
+      "name": "licensed creative permissions",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "G10",
+      "name": "product clinical substantiation",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "G11",
+      "name": "editorial-commerce segregation",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "G12",
+      "name": "adjacent disclosure",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "G13",
+      "name": "text-versus-video content parity",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "G14",
+      "name": "original hosted video/captions",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "G15",
+      "name": "browser viewport and WCAG QA",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "G16",
+      "name": "WordPress sanitizer/security QA",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "G17",
+      "name": "founder release approval",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "G18",
+      "name": "independently reconciled settled commission",
+      "status": "HARD_HOLD",
+      "proof": null
+    }
+  ],
+  "creator_paths": [
+    {
+      "topic": "Change blindness",
+      "asset_id": null,
+      "media_url": null,
+      "publication_proof": "NOT_VERIFIED",
+      "article_url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "lead_url": "https://finalvestige.com/focus/",
+      "commercial_path": "Optional Zen12 only for separate buying intent after partner acceptance"
+    },
+    {
+      "topic": "Rosenhan Ninth Patient",
+      "asset_id": "zctcIECAZ2s",
+      "media_url": "https://www.youtube.com/watch?v=zctcIECAZ2s",
+      "publication_proof": "Grok/Praxxis Drive handoff; platform recheck outstanding",
+      "article_url": null,
+      "lead_url": "https://finalvestige.com/focus/",
+      "commercial_path": null
+    },
+    {
+      "topic": "Chevreul pendulum",
+      "asset_id": null,
+      "media_url": null,
+      "publication_proof": "NOT_PUBLISHED",
+      "article_url": null,
+      "lead_url": "https://finalvestige.com/focus/",
+      "commercial_path": "Hypnosis Live source research only, never automatic upsell"
+    }
+  ],
+  "realized_revenue": {
+    "qualified_human_sessions": null,
+    "merchant_confirmed_purchases": null,
+    "cleared_affiliate_commissions": null,
+    "net_revenue_per_1000": null,
+    "status": "NOT_COMPUTABLE"
+  },
+  "disclosure_template": "If you purchase through this link, Final Vestige may earn a commission at no additional cost to you.",
+  "guardrails": [
+    "No earning link, checkout redirect, active merchant CTA or paid claim without approval",
+    "Source URLs may appear only in internal research ledger until release",
+    "No repeated newsletter form or new paid SaaS",
+    "No public CMS, menu, email, social, deploy, merge or spending changes",
+    "Merchant product format is not evidence of psychological effect",
+    "No hardcoded price or urgency from dynamically priced checkout"
+  ]
+}
