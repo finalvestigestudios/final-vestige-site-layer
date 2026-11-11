@@ -16,7 +16,7 @@
 - Don't promote bundles/up-sells as included in the intended Total Focus SKU.
 
 ## Program recruitment does not authorize THIS publisher
-Official https://affiliates.inspire3.com/ invites people to join a network, advertises rates and issued unique links. This proves a program exists, NOT that Final Vestige has an approved account, email permission, approved links/creatives, or real commission settlement. Affiliate network's listed London mailing address is NOT Final Vestige's own business postal address for CAN-SPAM.
+Official https://affiliates.inspire3.com/ invites people to join a network, advertises rates and issued unique links. This is not FV-specific affiliate approval. It proves a program exists, NOT that Final Vestige has an approved account, email permission, approved links/creatives, or real commission settlement. Affiliate network's listed London mailing address is NOT Final Vestige's own business postal address for CAN-SPAM.
 
 ## Release evidence required from Mind Studio, per offer
 1. Publisher-specific acceptance with date/private proof reference (NO credential or subscriber email exposed).
