@@ -111,3 +111,9 @@ test('no actual guest captures in source audit',()=>{
  assert.equal(a.stats.purported_76_percent_sitewide_wire_saving_measured,false);
  assert.equal(a.stats.reported_broken_42_browser_confirmed,false);
 });
+test('exported source pins are immutable under adversarial mutation',()=>{
+ assert.ok(Object.isFrozen(PINS));assert.ok(PINS.every(x=>Object.isFrozen(x)));
+ const original=PINS[0].src;
+ assert.throws(()=>{PINS[0].src='https://other.example/unrelated.jpg';},TypeError);
+ assert.equal(PINS[0].src,original);
+});
