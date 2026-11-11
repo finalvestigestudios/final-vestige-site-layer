@@ -14,8 +14,9 @@ Telescope imagery often visualizes radiation outside the visual spectrum. A disp
 - **The_Color_Was_a_Key.html** — self-contained ~1,725-word original article; SVG three-stage source→detector→display explanation; interactive **fictional** three-channel color-composite laboratory with RGB contribution sliders; 14-field local-only JSON witness card; 12 linked sources. No remote scripts or embedded institutional images.
 - **Telescope_Color_Key_Field_Card.pdf** — original four-page illustrated printable method/worksheet; four pages rendered and visually reviewed; 10 embedded source links.
 - **Source_Provenance_and_Rights.csv** — dated claims, links, credit/use qualifications for 12 sources.
+- **Media_Rights_and_Access_Ledger.csv** — original diagram/canvas/PDF art author, owner, caption, alt text, local provenance and reuse terms.
 - **QA_REPORT.md**, **README.md**, regression test and integrity-checked release ZIP (saved in originating Library Studio run).
-- ZIP SHA256 starts **f5e490777ada409c21ec**.
+- ZIP SHA256 **754b3e3123cf462cc0de5aeadcfb4951ce81bdca0a485b9f779b009ce4454f5a** (final package including original-media ledger).
 
 ## Sources / critical details (linked, not copied)
 
