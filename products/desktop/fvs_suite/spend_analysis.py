@@ -17,6 +17,7 @@ from .review import ascii_case_identity, labels_for_report, normalized_collision
 from .spend_median import RunningDecimalMedian
 from .spend_input import validated_spend_rows
 from .spend_callback_context_r355 import invoke_spend_callback
+from .spend_format_custody_r357 import verified_spend_money_display
 
 VENDOR_MONTH_EVIDENCE_LIMIT = 32  # Bounded preview; full evidence is in SHA-bound source.
 
@@ -72,9 +73,14 @@ def summarize_spend(
         raise ValueError("Source snapshot SHA-256 must be 64 lowercase hexadecimal characters")
 
     def report_money(amount: Decimal) -> str:
-        # A caller-supplied formatter must not mutate the private 64-digit
-        # aggregation context or contaminate subsequent output fields.
-        return invoke_spend_callback(format_money, amount)
+        # In addition to isolating the Decimal context, reject callbacks that
+        # alter any exported number or smuggle formulas/nontext into the CSV.
+        # Never propagate callback exception messages containing private cells.
+        try:
+            rendered = invoke_spend_callback(format_money, amount)
+        except Exception:
+            raise ValueError("Invalid SpendMap monetary display; no report was saved") from None
+        return verified_spend_money_display(amount, rendered)
 
     totals: dict[tuple[str, str, str], Decimal] = defaultdict(lambda: Decimal(0))
     # A net total can hide large purchases offset by credits or refunds.
