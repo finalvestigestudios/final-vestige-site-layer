@@ -28,9 +28,254 @@ const exactGates = [
 "browser_mobile_accessibility","conversion_reporting_access","founder_live_release_approval",
 "founder_commercial_activation_approval"
 ];
+const PINNED_R288 = {
+  "sources": [
+    {
+      "id": "warren1970",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/5409744/"
+    },
+    {
+      "id": "samuel1981",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/6457110/"
+    },
+    {
+      "id": "shahin2009",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/19275331/"
+    },
+    {
+      "id": "leonard2016",
+      "url": "https://www.nature.com/articles/ncomms13619"
+    },
+    {
+      "id": "riecke2009",
+      "url": "https://doi.org/10.1016/j.neuron.2009.10.016"
+    },
+    {
+      "id": "inspire3",
+      "url": "https://inspire3.com/"
+    },
+    {
+      "id": "affiliates_public",
+      "url": "https://affiliates.inspire3.com/"
+    },
+    {
+      "id": "zen12_home",
+      "url": "https://zen12.com/"
+    },
+    {
+      "id": "zen12_order",
+      "url": "https://zen12.com/getstarted"
+    },
+    {
+      "id": "zen12_free",
+      "url": "https://zen12.com/welcome"
+    },
+    {
+      "id": "focus_shot",
+      "url": "https://brainwaveshots.com/focus-shot"
+    },
+    {
+      "id": "brainwave_faq",
+      "url": "https://brainwaveshots.com/faq"
+    },
+    {
+      "id": "hypnosis_catalog",
+      "url": "https://hypnosislive.com/"
+    },
+    {
+      "id": "hypnosis_faq",
+      "url": "https://hypnosislive.com/faq"
+    },
+    {
+      "id": "ftc_endorsement",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking"
+    },
+    {
+      "id": "ftc_health",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+    },
+    {
+      "id": "fv_library",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+    },
+    {
+      "id": "fv_focus",
+      "url": "https://finalvestige.com/focus/"
+    },
+    {
+      "id": "fv_journal",
+      "url": "https://finalvestige.com/blog/"
+    },
+    {
+      "id": "fv_dispatch",
+      "url": "https://finalvestige.com/dispatch/"
+    }
+  ],
+  "claims": [
+    {
+      "id": "R01",
+      "statement": "Warren's cough/tone replacement can yield reported missing phoneme; silence differs",
+      "source_id": "warren1970",
+      "decision": "ALLOW_CONTROLLED_FINDING"
+    },
+    {
+      "id": "R02",
+      "statement": "Phonemic restoration depends partly on replacement acoustics and phoneme class",
+      "source_id": "samuel1981",
+      "decision": "ALLOW_CONTROLLED_FINDING"
+    },
+    {
+      "id": "R03",
+      "statement": "Congruent lip movements increase reported continuity for certain removed sections",
+      "source_id": "shahin2009",
+      "decision": "ALLOW_CONTROLLED_FINDING"
+    },
+    {
+      "id": "R04",
+      "statement": "Neural activity in controlled speech task correlates with restoration",
+      "source_id": "leonard2016",
+      "decision": "ALLOW_LIMITED_INTERPRETATION"
+    },
+    {
+      "id": "R05",
+      "statement": "Illusory continuity of tones differs from replacement of speech phonemes",
+      "source_id": "riecke2009",
+      "decision": "ALLOW_CONTEXT"
+    },
+    {
+      "id": "R06",
+      "statement": "Everyone reconstructs all missing speech perfectly",
+      "source_id": "warren1970",
+      "decision": "REJECT_GENERALIZATION"
+    },
+    {
+      "id": "R07",
+      "statement": "Phonemic restoration proves commercial meditation programs create focus",
+      "source_id": "leonard2016",
+      "decision": "REJECT_UNRELATED_EFFICACY"
+    },
+    {
+      "id": "R08",
+      "statement": "Zen12 official homepage advertises an hour in twelve minutes",
+      "source_id": "zen12_home",
+      "decision": "SELLER_CLAIM_ONLY"
+    },
+    {
+      "id": "R09",
+      "statement": "Zen12 paid checkout advertises 12 levels / 48 MP3s",
+      "source_id": "zen12_order",
+      "decision": "ALLOW_SELLER_FORMAT_ONLY"
+    },
+    {
+      "id": "R10",
+      "statement": "Zen12 single session produces clinically proven hour-equivalent outcome",
+      "source_id": "zen12_home",
+      "decision": "REJECT_UNSUPPORTED_PRODUCT_EFFICACY"
+    },
+    {
+      "id": "R11",
+      "statement": "Zen12 free audio invitation involves seller newsletter",
+      "source_id": "zen12_free",
+      "decision": "ALLOW_SELLER_OPT_IN_CONDITION"
+    },
+    {
+      "id": "R12",
+      "statement": "Brainwave Shots Focus Shot provides 15 and 30 minute MP3 audios",
+      "source_id": "focus_shot",
+      "decision": "ALLOW_SELLER_FORMAT_ONLY"
+    },
+    {
+      "id": "R13",
+      "statement": "Brainwave Shots auditory frequencies guarantee focus lasting hours",
+      "source_id": "focus_shot",
+      "decision": "REJECT_UNSUPPORTED_PRODUCT_EFFICACY"
+    },
+    {
+      "id": "R14",
+      "statement": "Brainwave Shots refunds restricted one per 6mo and downloads for orders >10 items",
+      "source_id": "brainwave_faq",
+      "decision": "ALLOW_SELLER_POLICY_ONLY"
+    },
+    {
+      "id": "R15",
+      "statement": "Brainwave Shots cautions against epilepsy use and wakefulness-critical situations",
+      "source_id": "brainwave_faq",
+      "decision": "ALLOW_SELLER_CAUTION_NOT_MEDICAL_VALIDATION"
+    },
+    {
+      "id": "R16",
+      "statement": "Hypnosis Live catalog offers commercial guided recordings",
+      "source_id": "hypnosis_catalog",
+      "decision": "ALLOW_SELLER_FORMAT_ONLY"
+    },
+    {
+      "id": "R17",
+      "statement": "Hypnosis Live refunds described as 14-day and at most five sessions/year",
+      "source_id": "hypnosis_faq",
+      "decision": "ALLOW_SELLER_POLICY_ONLY"
+    },
+    {
+      "id": "R18",
+      "statement": "An official public affiliate signup proves FV has been accepted",
+      "source_id": "affiliates_public",
+      "decision": "REJECT_ACCOUNT_APPROVAL_INFERENCE"
+    },
+    {
+      "id": "R19",
+      "statement": "Specific commissions/prices/earning URLs are established for FV",
+      "source_id": "affiliates_public",
+      "decision": "REJECT_UNVERIFIED_ACCOUNT_TERMS"
+    },
+    {
+      "id": "R20",
+      "statement": "Affiliate material connections need nearby plain-language disclosure",
+      "source_id": "ftc_endorsement",
+      "decision": "ALLOW_REGULATORY_STANDARD"
+    },
+    {
+      "id": "R21",
+      "statement": "General neuroscience demonstrates particular commercial audio benefits",
+      "source_id": "ftc_health",
+      "decision": "REJECT_PRODUCT_SUBSTANTIATION_INFERENCE"
+    },
+    {
+      "id": "R22",
+      "statement": "FV Focus Fieldbook is existing single subscription pathway",
+      "source_id": "fv_focus",
+      "decision": "ALLOW_CURRENT_FV_ROUTE"
+    },
+    {
+      "id": "R23",
+      "statement": "Puységur archive proves animal magnetism cures",
+      "source_id": "fv_library",
+      "decision": "REJECT_HISTORICAL_EFFICACY_INFERENCE"
+    },
+    {
+      "id": "R24",
+      "statement": "Grok topic concept maps are authenticated media assets",
+      "source_id": "fv_journal",
+      "decision": "REJECT_NO_VERIFIED_GROK_IDS"
+    }
+  ],
+  "release_keys": [
+    "canonical_hub_pr_172_edits",
+    "deploy",
+    "email_sends",
+    "homepage_pr_49_edits",
+    "issue150_owned_edits",
+    "merchant_links_active",
+    "merge",
+    "social_posts",
+    "spending",
+    "wordpress_cms_writes"
+  ]
+};
 const error = (bad,msg)=>{ if(bad) throw new Error(msg); };
 function verify(v){
  const M = JSON.parse(v.matrix);
+ error(JSON.stringify(M.sources?.map(({id,url})=>({id,url})))!==JSON.stringify(PINNED_R288.sources),"exact source-id/URL roster changed");
+ error(JSON.stringify(M.claims?.map(({id,statement,source_id,decision})=>({id,statement,source_id,decision})))!==JSON.stringify(PINNED_R288.claims),"exact claim-id/text/source/decision mapping changed");
+ error(JSON.stringify(Object.keys(M.release_controls||{}).sort())!==JSON.stringify(PINNED_R288.release_keys),"release-control key roster changed");
  error(M.version!=="R288"||M.publication_status!=="UNPUBLISHED"||M.commercial_status!=="HARD_HOLD","draft/commercial status changed");
  error(!Array.isArray(M.sources)||M.sources.length!==20,"source count changed");
  const sourceIds=new Set(M.sources.map(s=>s.id));
@@ -123,6 +368,9 @@ function mutants(){
  ["release_now",v=>editM(v,m=>m.release_controls.deploy=true)],
  ["corrupt_source_url",v=>editM(v,m=>m.sources.find(s=>s.id==="warren1970").url="https://example.com/unverified")],
  ["delete_claim_source",v=>editM(v,m=>m.claims[0].source_id="source_does_not_exist")],
+ ["wrong_existing_claim_source",v=>editM(v,m=>m.claims[0].source_id="samuel1981")],
+ ["drop_release_control",v=>editM(v,m=>delete m.release_controls.deploy)],
+ ["rewrite_claim_meaning",v=>editM(v,m=>m.claims[0].statement="Zen12 is scientifically proven to restore cognition")],
  ["allow_seller_claim",v=>editM(v,m=>m.claims.find(c=>c.id==="R08").sales_eligibility="COMMERCIAL_ALLOWED")],
  ["allow_guaranteed_result",v=>editM(v,m=>m.claims.find(c=>c.id==="R13").decision="ALLOW_SCIENTIFIC_PROOF")],
  ["remove_article_ftc",v=>editA(v,s=>s.replace("https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",""))],
