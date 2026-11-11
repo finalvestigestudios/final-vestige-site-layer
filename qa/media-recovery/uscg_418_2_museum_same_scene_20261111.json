@@ -1,0 +1,123 @@
+{
+  "schema": "fv-media-uscg418-museum-primary-corroboration-v1",
+  "observed_date": "2026-11-11",
+  "scope": "One priority Scotch Cap original image; source-only retrieval evidence, NOT a guest-browser or origin-HTTP determination",
+  "pinned_sources": {
+    "media_recovery_draft_pr": 1703,
+    "site_qa_draft_pr": 154,
+    "source_register_sha": "4965a862f7de7de46c1f4a1e26f3ca70a8c38805",
+    "cross_draft_worklist_pr": 183,
+    "worklist_blob_sha": "2acd06a4ca4317646006eb6591face3fe76fedec"
+  },
+  "article": {
+    "post_id": 418,
+    "slot": "418:2",
+    "url": "https://finalvestige.com/2026/08/20/the-lighthouse-was-gone-at-dawn-1946-tsunami/",
+    "published_original_src": "https://www.history.uscg.mil/Portals/6/5_%20Scotch_Cap_debris2_1946.jpg",
+    "subject": "Scotch Cap lighthouse aftermath debris viewed from above the shore bluff, 1946"
+  },
+  "observations": {
+    "original_retriever": {
+      "method": "WEB_OPEN_RETRIEVER_ONLY_NOT_ORIGIN_OR_GUEST",
+      "wrapper_status": 403,
+      "wrapper_result": "FORBIDDEN",
+      "date": "2026-11-11"
+    },
+    "museum_preview_retriever": {
+      "method": "WEB_CLICK_IMAGE_DISPLAYED_NOT_CDP",
+      "date": "2026-11-11",
+      "rendered": true,
+      "origin_http_status": null,
+      "guest_http_status": null,
+      "transferred_bytes": null
+    },
+    "lighthousefriends_retriever": {
+      "method": "WEB_OPEN_IMAGE_DISPLAYED_NOT_CDP",
+      "date": "2026-11-11",
+      "rendered": true,
+      "origin_http_status": null,
+      "guest_http_status": null,
+      "transferred_bytes": null
+    },
+    "actual_guest_cdp": {
+      "image_request_status": null,
+      "resource_type": null,
+      "loading_finished": null,
+      "current_src": null,
+      "natural_width": null,
+      "natural_height": null,
+      "encoded_transfer_bytes": null,
+      "all_cache_flags_explicitly_false": null,
+      "confirmed_broken": null
+    }
+  },
+  "candidate_mapping": [
+    {
+      "kind": "COAST_GUARD_MUSEUM_EDITORIAL_CREDITED_PREVIEW",
+      "editorial_catalog": "https://nationalcoastguardmuseum.org/articles/scotch-cap-lighthouse/",
+      "preview_image_url": "https://nationalcoastguardmuseum.org/wp-content/uploads/2023/08/5_-Scotch_Cap_debris2_1946-600x463.jpg",
+      "date_of_museum_article": "2024-10-30",
+      "figure_caption": "Photo of the remains of Scotch Cap Lighthouse taken from the bluff after the 1946 tsunami.",
+      "displayed_credit": "U.S. Coast Guard",
+      "preview_filename_geometry_hint_px": [600, 463],
+      "original_native_dimensions_px": null,
+      "verified_derivative_dimensions_px": null,
+      "conditional_960px_output_px": null,
+      "subject_scene_correspondence": "SAME_HISTORICAL_PHOTOGRAPH_SCENE_VISUALLY_CORROBORATED",
+      "exact_pixel_or_file_hash_identity_proven": false,
+      "item_specific_commercial_reuse_clearance": false,
+      "reuse_observation": "MUSEUM_CREDITS_USCG_BUT_DOES_NOT_SUPPLY_ITEM_SPECIFIC_REUSE_LICENSE",
+      "rights_decision": "HOLD",
+      "cache_or_mirror_approved": false
+    },
+    {
+      "kind": "THIRD_PARTY_MIRROR_SAME_SCENE",
+      "editorial_catalog": "https://www.lighthousefriends.com/",
+      "preview_image_url": "https://www.lighthousefriends.com/Scotch_Cap_debris2_1946.jpg",
+      "preview_filename_geometry_hint_px": null,
+      "original_native_dimensions_px": null,
+      "verified_derivative_dimensions_px": null,
+      "conditional_960px_output_px": null,
+      "subject_scene_correspondence": "SAME_HISTORICAL_PHOTOGRAPH_SCENE_VISUALLY_CORROBORATED",
+      "exact_pixel_or_file_hash_identity_proven": false,
+      "item_specific_commercial_reuse_clearance": false,
+      "reuse_observation": "UNRELATED_MIRROR_SITE_NOT_RELICENSING_AUTHORITY",
+      "rights_decision": "HOLD",
+      "cache_or_mirror_approved": false
+    }
+  ],
+  "rights_and_size": {
+    "attribution_evidence": "Museum article labels the displayed photograph Credit: U.S. Coast Guard",
+    "copyright_status": "CREDIT_ONLY_AUTHORSHIP_AND_ITEM_RIGHTS_NOT_INDEPENDENTLY_DOCUMENTED",
+    "maximum_requested_width_px": 960,
+    "original_dimensions_verified": false,
+    "derivative_960px_authorized": false,
+    "preview_600x463_is_not_verified_original_native_size": true,
+    "no_upscale": true,
+    "no_crop": true,
+    "cache_plan": "IF guest failure established AND provenance/rights/editorial approved, source from authorized archival master, preserve attribution, 960px width cap and original ratio, QA 1x/2x and rollback; NO action approved now"
+  },
+  "decision": {
+    "status": "HOLD_PRIMARY_SOURCE_CORROBORATED_GUEST_AND_RIGHTS_PENDING",
+    "confirmed_guest_failure": false,
+    "publish_replacement_approved": false,
+    "wordpress_media_upload_approved": false,
+    "wordpress_block_rewrite_approved": false,
+    "homepage_visual_edit_approved": false,
+    "binary_download_or_rehost_approved": false,
+    "merge_or_deploy_approved": false,
+    "subscription_spend_usd": 0,
+    "next_owner": "Site QA PR #154 for guest-image CDP evidence; Media Recovery for rights and archival source review"
+  },
+  "sitewide_baseline": {
+    "historical_posts": 61,
+    "historical_inline_images": 355,
+    "offsite_image_slots": 288,
+    "prior_reported_broken_unconfirmed": 42,
+    "guest_confirmed_broken": 0,
+    "oversized_wordpress_originals_gt_1500000_bytes": 15,
+    "oversized_original_stored_bytes": 47096779,
+    "suggested_reduction_pct": 76,
+    "measured_cold_image_transfer_reduction_pct": null
+  }
+}
