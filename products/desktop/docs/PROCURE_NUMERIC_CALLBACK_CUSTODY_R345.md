@@ -28,6 +28,9 @@ might also contain private financial paths.
   `[-1,000,000,000,000, 1,000,000,000,000]`.
   Negative prices remain possible but flagged for **human review**, preserving
   existing review behavior. Subcents and trailing zeros remain exact.
+- Rejects extreme Decimal exponents outside [-80, 80], including enormous
+  zero-scale values that could otherwise expand into megabyte-sized text
+  during exact evidence rendering, despite having numerical value zero.
 - Uses `Decimal.copy_abs()`, not context-sensitive unary `abs()`, so
   a low-precision ambient context cannot round a small over-limit amount into
   the allowed range. No binary float conversion is performed.
@@ -37,7 +40,7 @@ might also contain private financial paths.
   `review_line`: order quantity and unit price, invoice quantity and unit
   price, receipt quantity. No original CSV data, audit row identities, or
   source digests are mutated.
-- Adds 40 standalone adversarial unit tests and **19** separate full-engine
+- Adds 42 standalone adversarial unit tests and **21** separate full-engine
   integration tests. Both suites are blocking Ubuntu + Windows actions steps
   for normal and optimized `-OO` Python prior to packaging.
 
@@ -49,18 +52,18 @@ Environment: Linux CPython 3.13.5, entirely synthetic data, isolated
 ```sh
 PYTHONPATH=/mnt/data/labs_r345 python -W error -m unittest discover \
     -s /mnt/data/labs_r345/tests -p 'test_procurement_numeric_result_r345.py'
-# Ran 40 tests ... OK
+# Ran 42 tests ... OK
 PYTHONPATH=/mnt/data/labs_r345 python -OO -W error -m unittest discover \
     -s /mnt/data/labs_r345/tests -p 'test_procurement_numeric_result_r345.py'
-# Ran 40 tests ... OK
+# Ran 42 tests ... OK
 ```
 
-**80/80 focused executions passed; zero skips.** Both local files were
+**84/84 focused executions passed; zero skips.** Both local files were
 confirmed byte-identical to their GitHub committed blobs:
-- helper `6843cedb658ffcfb0fc004a1437fb8931b56b466`;
-- unit tests `cb21a5ced14d61c5a63688d05c00bb2661e6d72e`.
+- helper `e8ee399d081d27b60b14338c3f6d2d33e9bc80cc`;
+- unit tests `0edbfb48a22c6a9bd722c3cd1c82f6cfeebfae3b`.
 
-**Not executed locally:** the changed `procurement.py` integration, 19 new
+**Not executed locally:** the changed `procurement.py` integration, 21 new
 full-engine tests, inherited procurement tests, six EXE smoke tests, 22 genuine
 AES-GCM integration tests, actual Windows x64 packaging, malware scans, or
 premium entitlement verification. These are NOT claimed to pass. The
