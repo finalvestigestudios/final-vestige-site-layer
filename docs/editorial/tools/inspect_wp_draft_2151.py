@@ -32,13 +32,13 @@ MEDIA = {
     "2202": {"stem": "emile-riche-1927-flood-claim-lou-block-1939-loc", "credits": ("Library of Congress", "LOC")},
     "2149": {"stem": "mississippi-flood-1927-apr29-national-photo-company", "credits": ("Library of Congress", "LOC", "National Photo Company")},
 }
-EXPECTED_SOURCES = 39
+EXPECTED_SOURCES = 40  # November 11: TIME archival article added as bibliography item 40.
 EXPECTED_EVIDENCE_ROWS = 10
 # Content sentinels anchored in the latest authenticated Gutenberg readback.
 # These improve confidence that the preview is the current editorial revision,
 # but do NOT cryptographically prove the declared --sha or replace a fresh WP read.
 REVISION_SENTINELS = (
-    "2:17 p.m.", "$1,096,796.53", "Bohemia Spillway", "Acosta v.", "1991",
+    "2:17 p.m.", "$1,096,796.53", "Bohemia Spillway", "Acosta v.", "1991", "May 9, 1927",
 )
 
 def local_asset_source(url):
@@ -177,7 +177,7 @@ def inspect(page, width, out):
         "no_page_wide_horizontal_overflow": overflow <= 2,
         "all_four_local_archival_photos_loaded_credited_and_alt": photo_ok,
         "evidence_table_10_rows_including_header": bool(table_stats and table_stats["rows"] == EXPECTED_EVIDENCE_ROWS),
-        "source_bibliography_39_entries": source_count == EXPECTED_SOURCES,
+        "source_bibliography_40_entries": source_count == EXPECTED_SOURCES,
         "expected_editorial_revision_markers_present": all(revision_sentinels.values()),
         "original_compensation_figure_present": chart_count == 1,
         "timeline_has_five_chronology_cards_and_four_source_links": bool(
