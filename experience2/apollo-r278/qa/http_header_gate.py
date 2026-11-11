@@ -49,5 +49,5 @@ finally:
     server.shutdown();server.server_close();thread.join(timeout=2)
 out=Path(sys.argv[1] if len(sys.argv)>1 else '/tmp/fv-r278-qa');out.mkdir(parents=True,exist_ok=True)
 receipt={'python_local_http':'PASS','served_csp_header':'PASS','actual_browser_http_csp':'BLOCKED_BY_ADMINISTRATOR','installed_wordpress':'NOT_TESTED'}
-(out/'http_header_receipt.json').write_text(json.dumps(receipt,sort_keys=True,indent=2)+'\\n')
+(out/'http_header_receipt.json').write_text(json.dumps(receipt,sort_keys=True,indent=2)+'\n')
 print('R278 local Python HTTP content/MIME/CSP-header PASS; Chromium HTTP blocked by administrator')
