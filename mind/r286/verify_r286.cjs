@@ -31,8 +31,8 @@ function safeHtml(s,label){
  assert.ok(!/\b(?:javascript|data|vbscript)\s*:/i.test(s),label+' unsafe scheme');
  assert.ok(!/@import\b|url\s*\(|expression\s*\(/i.test(s.replace(/https?:\/\/[^\s"'<>]+/g,'')),label+' CSS external resources');
  assert.ok(!/<a\b[^>]*\bhref\s*=\s*["']?\s*(?:https?:\/\/)?(?:www\.)?(?:zen12\.com|inspire3\.com|affiliates\.inspire3\.com|brainwaveshots\.com|hypnosislive\.com)/i.test(s),label+' unauthorized merchant anchor');
- assert.ok(s.includes('disabled'),label+' affiliate control enabled');
- assert.ok(/disclosure/i.test(s),label+' missing adjacent disclosure');
+ assert.ok(/<button\\b[^>]*\\sdisabled\\b/i.test(s),label+' affiliate control enabled');
+ assert.ok(s.includes('Prospective affiliate disclosure:'),label+' missing adjacent disclosure');
  assert.ok(s.includes('https://finalvestige.com/focus/'),label+' free alternative removed');
  assert.ok(!/no active affiliate link[^\n]*https:\/\/zen12\.com/i.test(s),label+' contradictory active link');
 }
