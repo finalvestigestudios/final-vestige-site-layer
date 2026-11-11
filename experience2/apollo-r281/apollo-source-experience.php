@@ -14,7 +14,7 @@ const FV_R281_FREE = 'https://finalvestige.com/2026/08/20/the-hatch-opened-inwar
 const FV_R281_STYLE = 'fv-apollo-evidence-r281';
 // R294: stylesheet version is tied to reviewed CSS bytes (sha256 prefix). Keep
 // WordPress's enqueued link and the no-preflight body fallback cache-consistent.
-const FV_R294_STYLE_VERSION = 'r294-de213c4f113f';
+const FV_R294_STYLE_VERSION = 'r296-41ab84cba066';
 // Staging-only digest of corrected chronology, pending independent historical editorial
 // approval. It detects accidental data drift; it does not certify publication.
 const FV_R287_STAGING_EVENTS_SHA256 = '2a473986ed2e9c8ca98d19fb5ce0d32fea62d060d9dadcd2fa4613167eba36ef';
@@ -280,13 +280,17 @@ function fv_r281_render($attributes = []): string {
         $s.='<p><a href="'.fv_r281_escape($entry['url']).'" rel="noopener noreferrer">Inspect '.fv_r281_escape($entry['source']).' at NASA</a></p>';
         $s.='<p class="fv-r281__authority-return"><a href="#'.$id.'-event-2">Return to January 28 evidence</a></p></li>';
     }
-    $s.='</ol></details><ul class="fv-r281__reconciliation-list">';
+    // R296: on mobile, keep the disagreement and editorial boundary visible,
+    // but make the three longer related NASA-source accounts opt-in. Native
+    // details is keyboard/touch/no-JS capable; print exposes the full custody
+    // record; source URLs are unchanged and never rewritten as commercial links.
+    $s.='</ol></details><details class="fv-r296__date-disclosure"><summary>Compare all three NASA source descriptions</summary><p class="fv-r296__date-guide">Three related NASA institutional records, not three independent witnesses. Each source states a date or documents an action, with its limits shown below.</p><ul class="fv-r281__reconciliation-list">';
     foreach ($date_reconciliation as $source) {
         $s.='<li><strong>'.fv_r281_escape($source['authority']).'</strong><p>'.fv_r281_escape($source['statement']).'</p>';
         $s.='<p class="fv-r281__reconciliation-boundary">Source boundary: '.fv_r281_escape($source['boundary']).'</p>';
         $s.='<p><a href="'.fv_r281_escape($source['url']).'" rel="noopener noreferrer">Read source at NASA</a></p></li>';
     }
-    $s.='</ul><p>Original investigation and later NASA summaries are different records. Editorial reconciliation remains pending.</p></aside>';
+    $s.='</ul></details><p>Original investigation and later NASA summaries are different records. Editorial reconciliation remains pending.</p></aside>';
     $s.='<aside class="fv-r281__gallery" aria-label="Source gallery"><h3>Inspect the document sources</h3><p>This is a text-only catalogue of three NASA records, not a photographic gallery or three independent eyewitness accounts. Review remains pending.</p><ul class="fv-r281__source-list">';
     foreach ($records as $index=>$r) {
         // Every catalogue record has a stable target within this component instance.
