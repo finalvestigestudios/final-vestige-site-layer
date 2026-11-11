@@ -1,0 +1,34 @@
+# R294 — Exact three-witness Historical Archive source/citation crosswalk (UNAPPROVED)
+**Date:** 2026-11-11 PT · **Ownership:** Preparedness integration, #136 only · **Business coordination:** #820, #818 · **Release:** DRAFT / HARD HOLD. NO MERGE, PUBLISH, CMS, NAV, TRACKING, MERCHANT, EMAIL, SOCIAL, SPENDING OR QD PASS.
+
+## Authenticated read-only evidence
+Fetched 51 original GitHub file versions at **fixed immutable commit SHAs** (seven article HTML bodies and their metadata across frozen R200, current Claude head, and R293 integrated draft; three cluster source-fragment registers across all three). Committed the raw Git blob SHAs, metadata safety/publication states, exact canonical routes, per-source citation-occurrence histograms, whitespace-word token counts and source-register ID differences to four deterministic JSON crosswalks:
+- `r294_hist-food_three_witness_UNAPPROVED.json`
+- `r294_hist-home_three_witness_UNAPPROVED.json`
+- `r294_hist-home_register_three_witness_UNAPPROVED.json`
+- `r294_hist-field_three_witness_UNAPPROVED.json`
+
+The fixed integrated witness is R293 PR #2056 commit `ffd3d684c143240b64990ab6e898489d085e3558`. Fresh moving branch comparisons still show **2/7 original heads identical, five changed**; no automatic cherry-pick or reclassification of source safety flags. Read-only mechanical manifest re-fetch succeeded: **7 distinct canonical routes; 334 recorded integrated citation occurrences; 7 integrated metadata publication states remain DRAFT; no observed loss below frozen word/citation totals.**
+
+## Newly established integration contradiction — MUST adjudicate
+Hist-food latest Claude revision uses `nchfp-jerky` in *pemmican-and-dried-meats* and *pioneer-travel-rations*, replacing `hist-food-nchfp-jerky`. The **R293 integrated body remains frozen R200 equivalent after LF normalization, not the moving head**. Both live source IDs are missing from integrated body citation IDs, and `nchfp-jerky` is present in the latest cluster source fragment but **absent from integrated hist-food fragment**. These are meaningful citation-provenance substitution decisions, not harmless spelling changes; do not auto-merge or treat either ID as authoritatively equivalent. The free guide and any paid funnel MUST NOT use these unreviewed articles.
+
+Hist-home three revised article bodies **already match the moving contributor** after LF normalization; expanded pickling, root-cellar, sanitation citations are reflected in integrated sources including `hist-home-msu-simmons-1798` and `hist-home-wellcome-chadwick-1842`. Hist-field two revised bodies match after LF normalization; integrated fragment includes `hist-field-ia-hastings-guide` and `hist-field-oac-breen-diary`. **LF-normalized equality is only byte-normalized custody**, not source-support or historical-truth approval. Five of seven articles match latest bodies by normalized text.
+
+No observed route duplication within this seven-article delta; **full 35-article uniqueness, 41 real-body checks, 36+ complete inherited tests and all WordPress draft exports remain UNVERIFIED** due inability to checkout whole repository locally (GitHub DNS). No full native validate/build executed.
+
+## Offline test scope — transparently separate from GitHub commits
+Built an **uncommitted local R294 Python review-gate prototype plus adversarial synthetic fixtures**, exercised offline with **138/138 Python tests PASS** and Python compilation PASS. The tests are about sentinel/record-shape/duplicate-route/source-ID consistency only. **They were NOT run against these four authentic GitHub JSON manifests in a full authenticated checkout, and the prototype code is NOT part of this PR.** Its executable source/tests and output log are retained in the separate run evidence ZIP, not an approval record. The prior R293 committed compact validator remains a draft point-in-time snapshot gate. A commit of R294 native validator/tests and execution on the authentic checkout remains an open next-step deliverable.
+
+## Cross-agent custody and holds
+Exact PR heads observed: QA #157 `7d1ae6b8ef93d10cfb6810987672360885e9c1aa` DRAFT, QA #169 `e9cd7766dac59d47ab467d8945269b9146c2aef5` DRAFT (still one repository-source-root writing test), home lead #1689 `f55c36b6598eec558dd8bb24e4c8988becc51be0` DRAFT, R293 integration #2056 `ffd3d684c143240b64990ab6e898489d085e3558` DRAFT. No ownership conflicts induced. The existing **21 historical article-lineage discrepancies, 32 shared-URL groups, 15 duplicated source-ID groups and three agency citation disputes** remain. Article #7 chemical guidance, Article #15 / Tool #104 minor's personal information, printing, no-JS and accessibility remain qualified review HOLD.
+
+## Offer → step → blocker → change → evidence → owner
+| Offer | Funnel step | Blocker | Proposed change/acceptance | Evidence | Owner |
+|---|---|---|---|---|---|
+| Public official-resource Preparedness Archive, free | Relevant social landing | No authenticated already-posted Grok `asset_id`, date, rights or signed-out mobile destination | Validate an existing asset and standard `utm_content=asset_id` without editing creator queue | NO VERIFIED MATCH | Grok/Praxxis TASK-008 |
+| Unpublished household reunion/contact article and Tool #104 | Free practical download | Child data/privacy, print, no-JS, accessibility and source safety review | Independently approve before linking; never email-gate essential safety advice | HARD HOLD | Preparedness QA |
+| $19 Legacy Triage (public Payhip listing, seller Vested Wisdom) | Optional paid pack | FV ownership/license, seller-of-record, intent fit, checkout/delivery/refunds UNVERIFIED | Obtain contractual/merchant proof and verify buyer flow before any CTA | LISTING ≠ FV rights or paid order | Founder/Commerce |
+| Confirmed buyer | Settled net revenue | No attributed, merchant-confirmed orders or fees/refunds | 7/30-day qualified-human cohort reconciliation; measure net revenue/1k human sessions and tiny sample | NOT COMPUTABLE | Commerce/Claude analytics |
+
+No retrospective attribution or paid sale inferred from pageviews, affiliate clicks, signup attempts, or merchant listing. No public paid CTA permitted. **Nothing in this PR grants release authority.**
