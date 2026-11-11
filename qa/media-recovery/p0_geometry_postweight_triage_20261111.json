@@ -1,0 +1,277 @@
+{
+  "schema": "fv-media-geometry-postweight-triage-v1",
+  "evidence_date_utc": "2026-11-11",
+  "document_kind": "READ_ONLY_TICKET_AND_STORAGE_MATH_NOT_BROWSER_MEASUREMENT",
+  "authority": {
+    "repository": "finalvestigestudios/final-vestige-site-layer",
+    "qa_pr": 154,
+    "recovery_pr": 1703,
+    "worklist_pr": 183,
+    "bridge_path": "qa/media-recovery/browser_handoff_6_p0_15_oversize_20261110.json",
+    "bridge_blob_sha": "d1a9c7a499510ec37bcdba5858d45165752587e0"
+  },
+  "p0_source_queue": [
+    {
+      "slot": "285:5",
+      "original_src": "https://images.saymedia-content.com/.image/ar_16:9,c_fill,cs_srgb,fl_progressive,q_auto:eco,w_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg",
+      "retriever_only": {
+        "method": "EXTERNAL_WEB_RETRIEVER_NOT_GUEST",
+        "result": "NOT_FOUND",
+        "wrapper_code": 404
+      },
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_natural_px": null,
+      "cold_encoded_image_bytes": null,
+      "exact_visual_identity_proven": false,
+      "reuse_rights_cleared": false,
+      "cache_or_wp_upload_approved": false
+    },
+    {
+      "slot": "285:2",
+      "original_src": "https://blog.ucsusa.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+      "retriever_only": {
+        "method": "EXTERNAL_WEB_RETRIEVER_NOT_GUEST",
+        "result": "REDIRECT_TARGET_INACCESSIBLE",
+        "wrapper_code": 500
+      },
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_natural_px": null,
+      "cold_encoded_image_bytes": null,
+      "exact_visual_identity_proven": false,
+      "reuse_rights_cleared": false,
+      "cache_or_wp_upload_approved": false
+    },
+    {
+      "slot": "287:5",
+      "original_src": "https://stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+      "retriever_only": {
+        "method": "EXTERNAL_WEB_RETRIEVER_NOT_GUEST",
+        "result": "NOT_FOUND",
+        "wrapper_code": 404
+      },
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_natural_px": null,
+      "cold_encoded_image_bytes": null,
+      "exact_visual_identity_proven": false,
+      "reuse_rights_cleared": false,
+      "cache_or_wp_upload_approved": false
+    },
+    {
+      "slot": "418:1",
+      "original_src": "https://media.defense.gov/2021/Mar/30/2002610812/1920/1080/0/210330-G-DE713-0002.JPG",
+      "retriever_only": {
+        "method": "EXTERNAL_WEB_RETRIEVER_NOT_GUEST",
+        "result": "FORBIDDEN",
+        "wrapper_code": 403
+      },
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_natural_px": null,
+      "cold_encoded_image_bytes": null,
+      "exact_visual_identity_proven": false,
+      "reuse_rights_cleared": false,
+      "cache_or_wp_upload_approved": false
+    },
+    {
+      "slot": "418:2",
+      "original_src": "https://www.history.uscg.mil/Portals/6/5_%20Scotch_Cap_debris2_1946.jpg",
+      "retriever_only": {
+        "method": "EXTERNAL_WEB_RETRIEVER_NOT_GUEST",
+        "result": "FORBIDDEN",
+        "wrapper_code": 403
+      },
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_natural_px": null,
+      "cold_encoded_image_bytes": null,
+      "exact_visual_identity_proven": false,
+      "reuse_rights_cleared": false,
+      "cache_or_wp_upload_approved": false
+    },
+    {
+      "slot": "407:1",
+      "original_src": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/img7535.jpg",
+      "retriever_only": {
+        "method": "EXTERNAL_WEB_RETRIEVER_NOT_GUEST",
+        "result": "UNSUPPORTED_OCTET_STREAM",
+        "wrapper_code": 400
+      },
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_natural_px": null,
+      "cold_encoded_image_bytes": null,
+      "exact_visual_identity_proven": false,
+      "reuse_rights_cleared": false,
+      "cache_or_wp_upload_approved": false
+    }
+  ],
+  "tmi_285_5_geometry": {
+    "source_slot": "285:5",
+    "source_request_url": "https://images.saymedia-content.com/.image/ar_16:9,c_fill,cs_srgb,fl_progressive,q_auto:eco,w_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg",
+    "saymedia_source_transform": {
+      "aspect_ratio": "16:9",
+      "crop_mode": "fill",
+      "requested_width_px": 1200,
+      "requested_dimensions_are_actual_browser_dimensions": false
+    },
+    "commons_catalog": "https://commons.wikimedia.org/wiki/File:Three_mile_island_062010.jpg",
+    "commons_native_px": [
+      819,
+      614
+    ],
+    "commons_original_file_bytes_advertised": 235000,
+    "file_bytes_are_not_guest_transfer_bytes": true,
+    "commons_license_observation": "UPLOADER_PUBLIC_DOMAIN_DEDICATION_ITEM_REVIEW_REQUIRED",
+    "direct_original_aspect_ratio": 1.3338762214983713,
+    "transformed_requested_aspect_ratio": 1.7777777777777777,
+    "width_limited_if_preserve_all_pixels_px": 819,
+    "hypothetical_16_9_crop_px": [
+      819,
+      461
+    ],
+    "hypothetical_vertical_pixels_removed": 153,
+    "crop_scene_parity_verified": false,
+    "crop_approved": false,
+    "no_upscale": true,
+    "browser_rendered_dimensions": null,
+    "observed_bytes": null,
+    "decision": "HOLD_FOR_GUEST_CAPTURE_SCENE_CROP_RIGHTS_EDITOR"
+  },
+  "oversized_media": {
+    "source_record_count": 15,
+    "decimal_threshold_bytes": 1500000,
+    "total_stored_original_bytes": 47096779,
+    "inline_linked_original_count": 11,
+    "inline_linked_stored_original_bytes": 38480915,
+    "not_linked_inline_original_count": 4,
+    "not_linked_inline_stored_original_bytes": 8615864,
+    "no_subsize_pngs": {
+      "media_ids": [
+        39,
+        40,
+        41,
+        42,
+        43
+      ],
+      "original_count": 5,
+      "stored_original_bytes": 13267538,
+      "conditional_output_px": [
+        960,
+        540
+      ],
+      "rights_clearance": false
+    },
+    "per_post_storage_priority": [
+      {
+        "post_id": 299,
+        "media_ids": [
+          382,
+          388,
+          389
+        ],
+        "stored_original_bytes": 13318311,
+        "delivery": "jetpack_fit_transformed_in_stored_src",
+        "requires_rights_review": true
+      },
+      {
+        "post_id": 621,
+        "media_ids": [
+          1257,
+          1258
+        ],
+        "stored_original_bytes": 10352064,
+        "delivery": "direct_original_in_stored_src",
+        "requires_rights_review": true
+      },
+      {
+        "post_id": 34,
+        "media_ids": [
+          39
+        ],
+        "stored_original_bytes": 2892087,
+        "delivery": "direct_original_in_stored_src",
+        "requires_rights_review": true
+      },
+      {
+        "post_id": 38,
+        "media_ids": [
+          43
+        ],
+        "stored_original_bytes": 2836245,
+        "delivery": "direct_original_in_stored_src",
+        "requires_rights_review": true
+      },
+      {
+        "post_id": 35,
+        "media_ids": [
+          40
+        ],
+        "stored_original_bytes": 2552136,
+        "delivery": "direct_original_in_stored_src",
+        "requires_rights_review": true
+      },
+      {
+        "post_id": 36,
+        "media_ids": [
+          41
+        ],
+        "stored_original_bytes": 2498247,
+        "delivery": "direct_original_in_stored_src",
+        "requires_rights_review": true
+      },
+      {
+        "post_id": 37,
+        "media_ids": [
+          42
+        ],
+        "stored_original_bytes": 2488823,
+        "delivery": "direct_original_in_stored_src",
+        "requires_rights_review": true
+      },
+      {
+        "post_id": 269,
+        "media_ids": [
+          1714
+        ],
+        "stored_original_bytes": 1543002,
+        "delivery": "direct_original_in_stored_src",
+        "requires_rights_review": true
+      }
+    ],
+    "hard_restrictions": [
+      "storage bytes cannot be treated as visitor bytes",
+      "Jetpack-fit URLs do not establish original download",
+      "unlinked originals may be used as featured/page/custom assets",
+      "rights and historical scene/crop must be approved",
+      "Halifax map small labels must remain readable"
+    ]
+  },
+  "claimed_76_percent": {
+    "target_pct": 76,
+    "actual_cold_baseline_image_wire_bytes": null,
+    "actual_cold_candidate_image_wire_bytes": null,
+    "actual_saving_pct": null,
+    "eligible_to_report": false,
+    "required_method": "Per-URL matched guest CDP cold uncached image responses, same cohort/viewports/DPR, account for currentSrc/srcset/Jetpack, deduplicate network requests; rights and scene identical. Ownership Site QA #154"
+  },
+  "delivery_order": [
+    "P0: Site QA confirm real missing media in six exact image slots",
+    "P0: manual rights/crop/attribution/archival identity approval before staging",
+    "P1: actual cold browser bytes for Malbone 621 and PNG posts 34-38",
+    "P1: check Vasa 299 Jetpack already-transformed bytes before optimization",
+    "P1: Halifax 269 map details & rights; four unlinked originals media context audit"
+  ],
+  "release": {
+    "guest_verified_broken": 0,
+    "wp_production_writes": 0,
+    "asset_downloads": 0,
+    "asset_caching": 0,
+    "homepage_design_changes": 0,
+    "spend_usd": 0,
+    "staging_approved": false,
+    "production_approved": false
+  }
+}
