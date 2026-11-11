@@ -1,5 +1,14 @@
 # Caernarvon 1927 — source and publication-gate audit (November 10, 2026)
 
+## November 11, 2026, 05:37 Pacific — alternate public-domain USACE book scan added
+
+- **ACTIVE WP release identity (supersedes prior):** Investigations post **#2151 remains DRAFT**, site-local modified `2026-11-11T05:37:13`, raw Gutenberg SHA-1 **`92268a39e7fbbe05b6b56a6fdd20e893cd0c1a2e`**, **81 blocks, 41 bibliography entries, 11 section headings**. No body claim, historical date, quantity, featured photo, category or other block changed. One optimistic-locked replacement to **bibliography core/list block index 79**, zero WordPress content warnings. Independent authenticated readback confirmed new hash and 41 sources.
+- **Reader access improvement:** Cited USACE/Mississippi River Commission Marion Bragg, *Historic Names and Places on the Lower Mississippi River* (1977), pp. 253–254, now retains its [original USACE CONTENTdm provenance record](https://usace.contentdm.oclc.org/digital/collection/p16021coll4/id/261/) and adds a [page-viewable digitized USACE book scan on Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Historic_names_and_places_on_the_lower_Mississippi_River_-_USACE-p16021coll4-261.pdf). Commons identifies a 294-page, 19.33 MB scan digitized in 2018 and uploaded September 21, 2024; the USACE government work is marked public domain there. Exact printed pp. 253–254 were **not** page-image-inspected here. This adds a second route to the source, not proof of the retrospective's controversial April 25 date.
+- **Four documentary images preserved:** Media #2148, #2255, #2202, #2149 independently read back with FV-local URLs, alt descriptions and source-credit captions. No visual was added. Featured media #2148 remains. First-publish `_jetpack_dont_email_post_to_subs=true`, and Jetpack automatic social sharing disabled.
+- **RELEASE HOLD REMAINS:** Need authenticated real *production-theme draft* visual/DOM PASS at **390px and 1440px** against **this** hash, plus ordinary browser inspection for two USACE brochure and two USGS references. Four source URL web probes each returned automated 403, inconclusive for real readers. No publication, subscriber email, social sharing, homepage/template edits, unrelated content writes or paid services.
+
+---
+
 ## November 11, 2026, 03:41 Pacific — reparation bond afterlife added to draft; prior QA hashes superseded
 
 - **NEW CURRENT RELEASE IDENTITY:** WP #2151, **DRAFT**, site-local modified `2026-11-11T03:41:18`, raw Gutenberg SHA-1 **`55a41cb34e87a3e15275acaed02bab6d55aa3a8f`**; **81 top-level blocks**, **41 Sources & Further Reading direct list entries**. Supersedes 01:44 revision `e4c2653b9d2a9bffa7edec9c10afb5132e69083a` (80 blocks/40 sources). Checked via independent authenticated WordPress post + sections readback, with zero write warnings.
