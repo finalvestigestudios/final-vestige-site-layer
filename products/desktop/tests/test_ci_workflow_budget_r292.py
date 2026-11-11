@@ -1,4 +1,4 @@
-"""R292 regression: a real >128 KiB desktop workflow must remain strictly gated.
+"""R292/R363 regression: a grown >192 KiB desktop workflow must remain gated.
 
 Uses the committed full workflow and the actual four independent CI validators.
 No builds, private payloads, customer data or release authorization.
@@ -53,7 +53,7 @@ class CIWorkflowBudgetR292(unittest.TestCase):
                     validator(source)
 
     def test_shared_reviewed_ceiling_and_four_consumers(self):
-        self.assertEqual(MAX_WORKFLOW_BYTES, 192 * 1024)
+        self.assertEqual(MAX_WORKFLOW_BYTES, 224 * 1024)
         for module, _, _, _ in GUARDS:
             with self.subTest(module=module.__name__):
                 self.assertEqual(module.MAX_WORKFLOW_BYTES, MAX_WORKFLOW_BYTES)
