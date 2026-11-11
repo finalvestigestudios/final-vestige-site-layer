@@ -31,7 +31,7 @@ NASA=['https://www.nasa.gov/mission/apollo-1/',
       'https://sma.nasa.gov/sma-disciplines/accllp/apollo-1',
       'https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/']
 FREE='https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/'
-assert all(markup.count('href="'+url+'"')==2 for url in NASA+[FREE])
+assert all(markup.count('href="'+url+'"')==(4 if url in NASA else 2) for url in NASA+[FREE])
 css=(ROOT/'assets/apollo-source-experience.css').read_text()
 html='<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>body{margin:0;background:#101418;color:white;font:16px system-ui}</style><style>'+css+'</style></head><body>'+markup+'</body></html>'
 contexts=[];screens={}
@@ -53,7 +53,7 @@ with sync_playwright() as pw:
             ids=pg.locator('[id]').evaluate_all('nodes=>nodes.map(x=>x.id)')
             assert len(ids)==len(set(ids))==14
             assert pg.get_by_role('link',name='Read the free Apollo 1 investigation').count()==2
-            assert all(pg.locator('a[href="'+url+'"]').count()==2 for url in NASA)
+            assert all(pg.locator('a[href="'+url+'"]').count()==4 for url in NASA)
             d=pg.locator('details').first;d.locator('summary').focus();pg.keyboard.press('Enter')
             assert d.get_attribute('open') is not None
             pg.keyboard.press('Enter');assert d.get_attribute('open') is None
