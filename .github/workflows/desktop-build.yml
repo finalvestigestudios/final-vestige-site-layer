@@ -926,6 +926,12 @@ jobs:
           python -W error -m unittest discover -s products/desktop/tests -p 'test_spend_vendor_session_engine_integration_r360.py'
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_spend_vendor_session_r360.py'
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_spend_vendor_session_engine_integration_r360.py'
+      - name: R361 SpendMap bounded direct-source UTF-8 evidence (normal and -OO)
+        run: |
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_spend_source_budget_r361.py'
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_spend_source_budget_engine_integration_r361.py'
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_spend_source_budget_r361.py'
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_spend_source_budget_engine_integration_r361.py'
       - name: Verify full normal/optimized source provenance and six smokes (R57)
         run: |
           mkdir -p "$RUNNER_TEMP/fvs-source"
@@ -1227,6 +1233,18 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R360 Windows optimized vendor session unit FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_spend_vendor_session_engine_integration_r360.py'
           if ($LASTEXITCODE -ne 0) { throw "R360 Windows optimized vendor session engine FAILED" }
+      - name: R361 SpendMap direct-source budget on Windows (normal and -OO)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_spend_source_budget_r361.py'
+          if ($LASTEXITCODE -ne 0) { throw "R361 Windows source budget unit FAILED" }
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_spend_source_budget_engine_integration_r361.py'
+          if ($LASTEXITCODE -ne 0) { throw "R361 Windows source budget engine FAILED" }
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_spend_source_budget_r361.py'
+          if ($LASTEXITCODE -ne 0) { throw "R361 Windows optimized source budget unit FAILED" }
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_spend_source_budget_engine_integration_r361.py'
+          if ($LASTEXITCODE -ne 0) { throw "R361 Windows optimized source budget engine FAILED" }
       - name: R319 witnessed-vs-compiled premium test source before Windows packaging
         shell: pwsh
         run: |
