@@ -1,0 +1,608 @@
+{
+  "version": "R286",
+  "as_of": "2026-11-10 PT",
+  "parent_frozen_r285_sha": "1606906f75dd25b23c707f7db03f040be0205e3f",
+  "publication": "UNPUBLISHED",
+  "commercial": "HARD_HOLD",
+  "source_registry": [
+    {
+      "id": "meta_2026",
+      "url": "https://link.springer.com/article/10.1007/s11065-026-09714-9",
+      "source_type": "peer_review",
+      "reviewed": "2026-11-10",
+      "caution": "As indexed/observed, not a substituted final checkout"
+    },
+    {
+      "id": "meta_program_2024",
+      "url": "https://pure.psu.edu/en/publications/mindfulness-enhances-cognitive-functioning-a-meta-analysis-of-111/",
+      "source_type": "peer_review",
+      "reviewed": "2026-11-10",
+      "caution": "As indexed/observed, not a substituted final checkout"
+    },
+    {
+      "id": "eeg_review_2023",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+      "source_type": "peer_review",
+      "reviewed": "2026-11-10",
+      "caution": "As indexed/observed, not a substituted final checkout"
+    },
+    {
+      "id": "zen12_standard",
+      "url": "https://zen12.com/hnp",
+      "source_type": "merchant_or_program",
+      "reviewed": "2026-11-10",
+      "caution": "As indexed/observed, not a substituted final checkout"
+    },
+    {
+      "id": "zen12_promotion",
+      "url": "https://zen12.com/secret/",
+      "source_type": "merchant_or_program",
+      "reviewed": "2026-11-10",
+      "caution": "As indexed/observed, not a substituted final checkout"
+    },
+    {
+      "id": "zen12_free",
+      "url": "https://zen12.com/freeaudio",
+      "source_type": "merchant_or_program",
+      "reviewed": "2026-11-10",
+      "caution": "As indexed/observed, not a substituted final checkout"
+    },
+    {
+      "id": "hl_product",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "source_type": "merchant_or_program",
+      "reviewed": "2026-11-10",
+      "caution": "As indexed/observed, not a substituted final checkout"
+    },
+    {
+      "id": "hl_faq",
+      "url": "https://hypnosislive.com/faq",
+      "source_type": "merchant_or_program",
+      "reviewed": "2026-11-10",
+      "caution": "As indexed/observed, not a substituted final checkout"
+    },
+    {
+      "id": "bw_product",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "source_type": "merchant_or_program",
+      "reviewed": "2026-11-10",
+      "caution": "As indexed/observed, not a substituted final checkout"
+    },
+    {
+      "id": "bw_faq",
+      "url": "https://brainwaveshots.com/faq",
+      "source_type": "merchant_or_program",
+      "reviewed": "2026-11-10",
+      "caution": "As indexed/observed, not a substituted final checkout"
+    },
+    {
+      "id": "inspire3",
+      "url": "https://inspire3.com/",
+      "source_type": "merchant_or_program",
+      "reviewed": "2026-11-10",
+      "caution": "As indexed/observed, not a substituted final checkout"
+    },
+    {
+      "id": "partner_public",
+      "url": "https://affiliates.inspire3.com/",
+      "source_type": "merchant_or_program",
+      "reviewed": "2026-11-10",
+      "caution": "As indexed/observed, not a substituted final checkout"
+    },
+    {
+      "id": "ftc_disclosure",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "source_type": "regulator",
+      "reviewed": "2026-11-10",
+      "caution": "As indexed/observed, not a substituted final checkout"
+    },
+    {
+      "id": "ftc_health",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "source_type": "regulator",
+      "reviewed": "2026-11-10",
+      "caution": "As indexed/observed, not a substituted final checkout"
+    },
+    {
+      "id": "fv_focus",
+      "url": "https://finalvestige.com/focus/",
+      "source_type": "fv_public",
+      "reviewed": "2026-11-10",
+      "caution": "As indexed/observed, not a substituted final checkout"
+    },
+    {
+      "id": "fv_change",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "source_type": "fv_public",
+      "reviewed": "2026-11-10",
+      "caution": "As indexed/observed, not a substituted final checkout"
+    },
+    {
+      "id": "fv_mesmer",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "source_type": "fv_public",
+      "reviewed": "2026-11-10",
+      "caution": "As indexed/observed, not a substituted final checkout"
+    },
+    {
+      "id": "fv_puy",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "source_type": "fv_public",
+      "reviewed": "2026-11-10",
+      "caution": "As indexed/observed, not a substituted final checkout"
+    },
+    {
+      "id": "fv_journal",
+      "url": "https://finalvestige.com/blog/",
+      "source_type": "fv_public",
+      "reviewed": "2026-11-10",
+      "caution": "As indexed/observed, not a substituted final checkout"
+    },
+    {
+      "id": "fv_collection",
+      "url": "https://finalvestige.com/collection/",
+      "source_type": "fv_public",
+      "reviewed": "2026-11-10",
+      "caution": "As indexed/observed, not a substituted final checkout"
+    },
+    {
+      "id": "yt_topic",
+      "url": "https://www.youtube.com/watch?v=SV9m07PFTYk",
+      "source_type": "public_video",
+      "reviewed": "2026-11-10",
+      "caution": "As indexed/observed, not a substituted final checkout"
+    }
+  ],
+  "claims": [
+    {
+      "id": "R286-01",
+      "statement": "66 published studies and 187 effects, 2,503 experimental/2,511 controls.",
+      "kind": "independent_synthesis",
+      "source_id": "meta_2026",
+      "decision": "ALLOW_EXACTLY",
+      "limit": "Single-session interventions, NOT specific Zen12 proof."
+    },
+    {
+      "id": "R286-02",
+      "statement": "Pooled overall acute EF g=0.09, 95% CI 0.03 to 0.16.",
+      "kind": "independent_synthesis",
+      "source_id": "meta_2026",
+      "decision": "ALLOW_WITH_SMALL_EFFECT_CONTEXT",
+      "limit": "Not a nine-percent improvement and not hours of real-world work."
+    },
+    {
+      "id": "R286-03",
+      "statement": "Individual components working memory and flexibility not significant, moderation underpowered.",
+      "kind": "independent_synthesis",
+      "source_id": "meta_2026",
+      "decision": "ALLOW_WITH_LIMITS",
+      "limit": "Do not claim no effect is proven."
+    },
+    {
+      "id": "R286-04",
+      "statement": "Authors concluded acute EF improvement was of very limited practical relevance.",
+      "kind": "independent_synthesis",
+      "source_id": "meta_2026",
+      "decision": "ALLOW_AS_AUTHORS_CONCLUSION",
+      "limit": "Not a finding that any audio is harmful or useless."
+    },
+    {
+      "id": "R286-05",
+      "statement": "111 RCT meta-analysis excluded single-session mindfulness interventions.",
+      "kind": "scope_limit",
+      "source_id": "meta_program_2024",
+      "decision": "MUST_DISCLOSE_WHEN_CITING",
+      "limit": "Do not cite repeated-course evidence for a one-off twelve-minute recording."
+    },
+    {
+      "id": "R286-06",
+      "statement": "2023 EEG synthesis: 5 supportive, 8 contradictory, 1 mixed.",
+      "kind": "independent_synthesis",
+      "source_id": "eeg_review_2023",
+      "decision": "ALLOW_WITH_OUTCOME_LIMIT",
+      "limit": "Not a test of marketed consumer benefit."
+    },
+    {
+      "id": "R286-07",
+      "statement": "Zen12 standard seller page describes 12 levels, 48 MP3 and twelve-minute sessions.",
+      "kind": "seller_feature",
+      "source_id": "zen12_standard",
+      "decision": "ATTRIBUTE_SELLER",
+      "limit": "Formats not treatment/effectiveness proof."
+    },
+    {
+      "id": "R286-08",
+      "statement": "One Zen12 twelve-minute track equals an hour of advanced meditation.",
+      "kind": "seller_efficacy",
+      "source_id": "zen12_standard",
+      "decision": "EXCLUDE_AS_FACT",
+      "limit": "No independent product-specific randomized comparison authenticated."
+    },
+    {
+      "id": "R286-09",
+      "statement": "Zen12 promotional page displays coupon and countdown presentation.",
+      "kind": "seller_offer",
+      "source_id": "zen12_promotion",
+      "decision": "DISTINCT_OFFER_NO_PRICE_ADOPTED",
+      "limit": "Do not assert live checkout price, urgency, or availability."
+    },
+    {
+      "id": "R286-10",
+      "statement": "Zen12 free audio involves the seller's newsletter.",
+      "kind": "merchant_consent",
+      "source_id": "zen12_free",
+      "decision": "MUST_DISTINGUISH_FV_CONSENT",
+      "limit": "Separate merchant and Jetpack lists."
+    },
+    {
+      "id": "R286-11",
+      "statement": "Hypnosis Live Total Focus is seller-listed as 33 min MP3.",
+      "kind": "seller_feature",
+      "source_id": "hl_product",
+      "decision": "ATTRIBUTE_SELLER",
+      "limit": "Different offer and protocol than Zen12."
+    },
+    {
+      "id": "R286-12",
+      "statement": "Hypnosis Live FAQ: 14-day request, max five sessions refunded per year.",
+      "kind": "merchant_policy",
+      "source_id": "hl_faq",
+      "decision": "MUST_DISCLOSE_IF_COMPARING",
+      "limit": "No verified refunds executed."
+    },
+    {
+      "id": "R286-13",
+      "statement": "Brainwave Shots Focus Shot contains 15- and 30-minute versions.",
+      "kind": "seller_feature",
+      "source_id": "bw_product",
+      "decision": "ATTRIBUTE_SELLER",
+      "limit": "Not Zen12."
+    },
+    {
+      "id": "R286-14",
+      "statement": "Brainwave Shots FAQ: one refund in six months; >10-item download restriction.",
+      "kind": "merchant_policy",
+      "source_id": "bw_faq",
+      "decision": "MUST_DISCLOSE_IF_COMPARING",
+      "limit": "Seller-stated, not tested fulfillment."
+    },
+    {
+      "id": "R286-15",
+      "statement": "Brainwave Shots FAQ cautions about epilepsy and needing to stay awake.",
+      "kind": "merchant_safety",
+      "source_id": "bw_faq",
+      "decision": "MUST_ATTRIBUTE_SELLER",
+      "limit": "Not independently established blanket safety clearance."
+    },
+    {
+      "id": "R286-16",
+      "statement": "Brainwave Shots reliably improves attention for four hours.",
+      "kind": "seller_efficacy",
+      "source_id": "bw_product",
+      "decision": "EXCLUDE_AS_FACT",
+      "limit": "No independent product-specific evidence authenticated."
+    },
+    {
+      "id": "R286-17",
+      "statement": "Public Inspire3 affiliate page specifies program claims; it proves FV acceptance.",
+      "kind": "authorization",
+      "source_id": "partner_public",
+      "decision": "EXCLUDE_AS_FACT",
+      "limit": "Public signup and payout rhetoric are not account-specific approval."
+    },
+    {
+      "id": "R286-18",
+      "statement": "Existing Focus Fieldbook is free via existing Dispatch/Jetpack path.",
+      "kind": "fv_fact",
+      "source_id": "fv_focus",
+      "decision": "ALLOW_FREE_NOT_SALE",
+      "limit": "Do not record its opt-in as a paid sale."
+    },
+    {
+      "id": "R286-19",
+      "statement": "FTC material financial relationship disclosure should be adjacent to earning CTA.",
+      "kind": "regulatory_guidance",
+      "source_id": "ftc_disclosure",
+      "decision": "REQUIRE_NEAR_CTA",
+      "limit": "Proximity plus clear reader wording."
+    },
+    {
+      "id": "R286-20",
+      "statement": "Objective health effects require adequate substantiation.",
+      "kind": "regulatory_guidance",
+      "source_id": "ftc_health",
+      "decision": "REQUIRE_PRODUCT_SPECIFIC_PROOF",
+      "limit": "Avoid medical and wealth guarantees."
+    },
+    {
+      "id": "R286-21",
+      "statement": "All Payhip product results automatically refer to FV's products.",
+      "kind": "false_match",
+      "source_id": "fv_collection",
+      "decision": "EXCLUDE_AS_FACT",
+      "limit": "Generic search results not owner authentication."
+    },
+    {
+      "id": "R286-22",
+      "statement": "The public YouTube Mesmerism-related video ID is an authenticated Grok internal asset ID.",
+      "kind": "false_match",
+      "source_id": "yt_topic",
+      "decision": "EXCLUDE_AS_FACT",
+      "limit": "Public media ID is only a topic witness; internal attribution unverified."
+    }
+  ],
+  "offers": [
+    {
+      "id": "zen12_standard",
+      "source_id": "zen12_standard",
+      "type": "third_party_seller",
+      "seller_format": "12 levels / 48 MP3 / 12-minute sessions",
+      "authorization": "HARD_HOLD",
+      "issued_link": null,
+      "verified_checkout_currency": null,
+      "verified_checkout_total": null,
+      "verified_merchant_paid_order": null,
+      "refund_fulfillment": "UNVERIFIED"
+    },
+    {
+      "id": "zen12_promotion",
+      "source_id": "zen12_promotion",
+      "type": "third_party_seller",
+      "seller_format": "distinct promotional funnel; coupon/countdown observed, not current checkout",
+      "authorization": "HARD_HOLD",
+      "issued_link": null,
+      "verified_checkout_currency": null,
+      "verified_checkout_total": null,
+      "verified_merchant_paid_order": null,
+      "refund_fulfillment": "UNVERIFIED"
+    },
+    {
+      "id": "hypnosis_total_focus",
+      "source_id": "hl_product",
+      "policy_source_id": "hl_faq",
+      "type": "third_party_seller",
+      "seller_format": "33 min MP3",
+      "authorization": "HARD_HOLD",
+      "issued_link": null,
+      "verified_checkout_total": null,
+      "verified_merchant_paid_order": null,
+      "refund_fulfillment": "UNVERIFIED"
+    },
+    {
+      "id": "brainwave_focus_shot",
+      "source_id": "bw_product",
+      "policy_source_id": "bw_faq",
+      "type": "third_party_seller",
+      "seller_format": "15 & 30 min tracks",
+      "authorization": "HARD_HOLD",
+      "issued_link": null,
+      "verified_checkout_total": null,
+      "verified_merchant_paid_order": null,
+      "refund_fulfillment": "UNVERIFIED"
+    },
+    {
+      "id": "fv_free_focus",
+      "source_id": "fv_focus",
+      "type": "fv_free_resource",
+      "authorization": "FREE_NOT_SALE",
+      "issued_link": null,
+      "verified_merchant_paid_order": null,
+      "notes": "single existing Jetpack/Dispatch subscriber pathway; never duplicate"
+    },
+    {
+      "id": "fv_owned_paid_mind",
+      "source_id": "fv_collection",
+      "type": "potential_fv_owned_paid_sku",
+      "authorization": "HARD_HOLD",
+      "verified_rights_cleared_sku": null,
+      "issued_link": null,
+      "verified_checkout_total": null,
+      "verified_merchant_paid_order": null,
+      "notes": "Public Collection does not establish SKU-specific FV ownership, live checkout, rights, return or fulfillment."
+    }
+  ],
+  "creator_topic_to_offer_fit": [
+    {
+      "topic": "change_blindness",
+      "creator_hook": "You can look directly at a change and miss it.",
+      "public_article": "fv_change",
+      "existing_free": "fv_focus",
+      "optional_future_offer": "zen12_standard",
+      "external_media_url": null,
+      "grok_internal_asset_id": null,
+      "status": "REQUIRES_PRAXXIS_GROK_READBACK"
+    },
+    {
+      "topic": "mesmerism_puysegur",
+      "creator_hook": "The 1784 tests separated expectation from claimed magnetic influence.",
+      "public_article": "fv_mesmer",
+      "archive": "fv_puy",
+      "existing_free": "fv_focus",
+      "optional_future_offer": "hypnosis_total_focus",
+      "external_media_url": "yt_topic",
+      "grok_internal_asset_id": null,
+      "status": "PUBLIC_VIDEO_TOPIC_MATCH_NOT_INTERNAL_ATTRIBUTION"
+    },
+    {
+      "topic": "brief_mindfulness_2026",
+      "creator_hook": "66 studies detected a real but very small acute effect.",
+      "public_article": null,
+      "unpublished_article": "mind/r286/THE-SMALL-EFFECT-BEHIND-A-BIG-MEDITATION-PROMISE-UNPUBLISHED.md",
+      "existing_free": "fv_focus",
+      "optional_future_offer": "zen12_standard",
+      "external_media_url": null,
+      "grok_internal_asset_id": null,
+      "status": "RESEARCH_ONLY_NO_POST_OR_ASSIGNMENT"
+    }
+  ],
+  "commercial_gates": [
+    {
+      "id": "merchant_account_acceptance",
+      "state": "HARD_HOLD",
+      "proof": null,
+      "approval_reference": null
+    },
+    {
+      "id": "merchant_identity_matches_fv",
+      "state": "HARD_HOLD",
+      "proof": null,
+      "approval_reference": null
+    },
+    {
+      "id": "affiliate_terms_current",
+      "state": "HARD_HOLD",
+      "proof": null,
+      "approval_reference": null
+    },
+    {
+      "id": "permitted_traffic_channels",
+      "state": "HARD_HOLD",
+      "proof": null,
+      "approval_reference": null
+    },
+    {
+      "id": "approved_presell_placement",
+      "state": "HARD_HOLD",
+      "proof": null,
+      "approval_reference": null
+    },
+    {
+      "id": "issued_earning_url",
+      "state": "HARD_HOLD",
+      "proof": null,
+      "approval_reference": null
+    },
+    {
+      "id": "test_tracking_accepted",
+      "state": "HARD_HOLD",
+      "proof": null,
+      "approval_reference": null
+    },
+    {
+      "id": "offer_route_exact",
+      "state": "HARD_HOLD",
+      "proof": null,
+      "approval_reference": null
+    },
+    {
+      "id": "checkout_price_and_charges",
+      "state": "HARD_HOLD",
+      "proof": null,
+      "approval_reference": null
+    },
+    {
+      "id": "returns_eligibility_restrictions",
+      "state": "HARD_HOLD",
+      "proof": null,
+      "approval_reference": null
+    },
+    {
+      "id": "seller_creative_rights",
+      "state": "HARD_HOLD",
+      "proof": null,
+      "approval_reference": null
+    },
+    {
+      "id": "original_video_media_rights",
+      "state": "HARD_HOLD",
+      "proof": null,
+      "approval_reference": null
+    },
+    {
+      "id": "product_specific_claims_review",
+      "state": "HARD_HOLD",
+      "proof": null,
+      "approval_reference": null
+    },
+    {
+      "id": "adjacent_disclosure_qa",
+      "state": "HARD_HOLD",
+      "proof": null,
+      "approval_reference": null
+    },
+    {
+      "id": "browser_mobile_accessibility",
+      "state": "HARD_HOLD",
+      "proof": null,
+      "approval_reference": null
+    },
+    {
+      "id": "conversion_reporting_access",
+      "state": "HARD_HOLD",
+      "proof": null,
+      "approval_reference": null
+    },
+    {
+      "id": "founder_live_release_approval",
+      "state": "HARD_HOLD",
+      "proof": null,
+      "approval_reference": null
+    },
+    {
+      "id": "founder_commercial_activation_approval",
+      "state": "HARD_HOLD",
+      "proof": null,
+      "approval_reference": null
+    }
+  ],
+  "authorization_summary": {
+    "partner_approval": "NOT_AUTHENTICATED",
+    "public_program_page": "NOT_ACCOUNT_APPROVAL",
+    "issued_earning_url": null,
+    "private_swipe_and_creative_rights": "NOT_AUTHENTICATED",
+    "merchant_sale_report": null,
+    "settled_commission_report": null,
+    "actual_qualified_traffic": null,
+    "verified_existing_fv_paid_mind_sku": null
+  },
+  "canonical_offer_test": {
+    "high_intent_reader": "Adult reader choosing between a free timer, existing FV Focus Fieldbook, and paid structured meditation audio",
+    "target": "Zen12 Premium exact standard offer only if eligibility verified",
+    "canonical_buyer_pair": "mind/r284/ZEN12-BUYER-GUIDE-A-TEXT-ONLY-UNPUBLISHED.html + mind/r284/ZEN12-BUYER-GUIDE-B-FILM-STORYBOARD-UNPUBLISHED.html",
+    "state": "UNPUBLISHED_HOLD",
+    "variant_a": "identical text-only reviewed guide",
+    "variant_b": "same copy plus STATIC poster and 42-second script, NOT playable or tested video",
+    "primary_metric": "realized net revenue per 1000 qualified human sessions",
+    "evaluation": "Prior prespecified 7-day and 30-day cohorts; test only after rights, consent, merchant approval, valid media, QA and release",
+    "ab_assignment": "not implemented; Claude owner",
+    "near_link_disclosure": "If you purchase through this link, Final Vestige may earn a commission at no additional cost to you.",
+    "buyer_link": null
+  },
+  "measurement_contract": {
+    "marketing": "platform/approved asset_id + utm_campaign + first-party qualified sessions",
+    "cta_click": "independent, NOT a confirmed subscriber or sale",
+    "confirmed_lead": "existing Jetpack/Dispatch provider evidence only",
+    "affiliate_click": "only after authorized outbound link, NOT a commission",
+    "confirmed_paid_order": "merchant/Payhip provider independently reports paid transaction",
+    "settled_commission": "cleared earnings report, adjusted for refunds, reversals and fees",
+    "attribution_state": "UNVERIFIED",
+    "net_revenue_per_1000": null,
+    "net_formula": "1000 * (settled gross received - verified refunds - fees - reversals) / independently qualified sessions",
+    "cohorts_days": [
+      7,
+      30
+    ],
+    "denominator_state": "NOT_VERIFIED",
+    "missing_value_rule": "NULL_NOT_COMPUTABLE_NOT_ZERO",
+    "privacy": "No personal emails, IP addresses, raw UAs, fingerprints, new tracking scripts or additional lists"
+  },
+  "branch_governance": {
+    "touch_home_pr49": false,
+    "touch_mind_hub_pr172": false,
+    "touch_issue150": false,
+    "modify_wordpress_live": false,
+    "modify_dispatch": false,
+    "modify_social": false,
+    "publish": false,
+    "merge": false,
+    "commercial_activation": false,
+    "paid_services": false
+  },
+  "notes": [
+    "R285 repaired factual refund disclosures on the inherited canonical buyer A/B; do not reissue another conflicting purchasing page.",
+    "R286 adds the two distinct authorization obligations absent or collapsed in R284: original_video_media_rights and founder_commercial_activation_approval, while retaining founder_live_release_approval and seller_creative_rights.",
+    "The 2026 meta-analysis g=0.09 is an immediate pooled laboratory effect, not percentage productivity change, seller-specific focus gain or proof of twelve-minutes-equals-an-hour.",
+    "External public prices observed on vendor pages are not verified checkout totals, currencies, tax/fee eligibility, or approved affiliate propositions. Do not repeat in live recommendation.",
+    "Current FV archive shows 66 listed journal results; #171's 61 is historical, not silently presented as the current count."
+  ]
+}
