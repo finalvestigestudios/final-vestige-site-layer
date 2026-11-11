@@ -50,8 +50,8 @@ function validate(d){
  ok(d.film.includes("-an")&&d.film.includes("+faststart")&&d.film.includes("render(t)"),"FILM_SOURCE");
  ok((d.captions.match(/-->/g)||[]).length===7&&d.captions.includes("00:00:42.000"),"VTT_42S_SEVEN_SCENES");
  ok(d.videoPreview.includes("<video controls preload=\"none\"")&&d.videoPreview.includes("<track kind=\"captions\"")&&d.videoPreview.includes("<details>"),"VIDEO_NATIVE_A11Y_TEXT");
- ok(d.videoPreview.includes("may earn a commission")&&d.videoPreview.includes("disabled")&&!/<script\\b/i.test(d.videoPreview)&&!/<form\\b/i.test(d.videoPreview),"VIDEO_SAFETY_DISCLOSURE");
- ok(!/<a[^>]*href=["\u0027]https?:\\/\\/(?:zen12|hypnosislive|brainwaveshots|affiliates)[^"\u0027]*["\u0027]/i.test(d.videoPreview),"VIDEO_NO_MERCHANT_LINK");
+ ok(d.videoPreview.includes("may earn a commission")&&d.videoPreview.includes("disabled")&&!/<script\b/i.test(d.videoPreview)&&!/<form\b/i.test(d.videoPreview),"VIDEO_SAFETY_DISCLOSURE");
+ ok(!/<a[^>]*href="https:\/\/(?:zen12|hypnosislive|brainwaveshots|affiliates)/i.test(d.videoPreview),"VIDEO_NO_MERCHANT_LINK");
  ok(d.hub.includes("may earn a commission")&&/disabled/i.test(d.hub)&&!/<script\b/i.test(d.hub),"HUB_DISABLED_DISCLOSURE");
  for(const key of ["A","B"])ok(d[key].includes("disabled")&&d[key].includes("<html")&&!/<script\b/i.test(d[key]),"AB_INACTIVE_"+key);
  // The register and the guide can cite seller pages as SOURCES, not active earning destinations.
@@ -76,7 +76,7 @@ const fixtures=[
  ["invalid_article","article",s=>s.slice(0,1000),"ARTICLE_LENGTH"],
  ["video_autoplay","videoPreview",s=>s.replace("<video controls preload=", "<video autoplay controls preload="),"VIDEO_NATIVE_A11Y_TEXT"],
  ["video_buy_enabled","videoPreview",s=>s.replace("disabled aria-disabled", "aria-disabled"),"VIDEO_SAFETY_DISCLOSURE"],
- ["video_merchant_link","videoPreview",s=>s.replace("</main>",\u0027<a href="https://zen12.com/getstarted">Unapproved merchant link</a></main>\u0027),"VIDEO_NO_MERCHANT_LINK"]
+ ["video_merchant_link","videoPreview",s=>s.replace("</main>",'<a href="https://zen12.com/getstarted">Unapproved merchant link</a></main>'),"VIDEO_NO_MERCHANT_LINK"]
 ];
 function run(){
  const d=load();validate(d);let n=0;
