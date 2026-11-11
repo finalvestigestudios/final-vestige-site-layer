@@ -7,6 +7,7 @@ This is validation of arithmetic evidence, not payment approval.
 """
 from __future__ import annotations
 
+import re
 from decimal import Decimal, InvalidOperation
 from typing import Callable
 
@@ -16,6 +17,17 @@ _QUANTITY_ERROR = "Procurement quantity must be a bounded exact nonnegative Deci
 _PRICE_ERROR = "Procurement unit price must be a bounded exact finite Decimal"
 _MAX_INPUT_CHARS = 80
 _MAX_EXPONENT = 80
+# Mirror the suite's ASCII quantity/price grammar before untrusted parser calls.
+# Keep legacy plain scientific notation but exclude Decimal-only conveniences
+# (Unicode digits and underscores) that the real CSV intake rejects.
+_PLAIN_NUMBER = re.compile(r"[+-]?(?:[0-9]+(?:\.[0-9]*)?|\.[0-9]+)(?:[eE][+-]?[0-9]+)?\Z")
+_GROUPED_QUANTITY = re.compile(
+    r"[+]?(?:(?:[0-9]{1,3}(?:,[0-9]{3})+|[0-9]+)(?:\.[0-9]*)?|\.[0-9]+)\Z"
+)
+_ACCOUNTING_PRICE = re.compile(
+    r"(?P<prefix>(?:[+-]?\$|\$[+-]?|[+-]?))"
+    r"(?P<number>(?:(?:[0-9]{1,3}(?:,[0-9]{3})+)|[0-9]+)(?:\.[0-9]*)?|\.[0-9]+)\Z"
+)
 
 
 def _fractional_places(value: Decimal) -> int:
@@ -31,13 +43,39 @@ def _fractional_places(value: Decimal) -> int:
     return max(0, -numeric.exponent - trailing)
 
 
-def _source_value(value: object, *, quantity: bool) -> Decimal | None:
+def _parse_source_text(raw: str, *, quantity: bool) -> Decimal:
+    """Interpret ordinary accounting tokens independently of parser callbacks.
+
+    The standard CSV engine uses the same strict ASCII grouping, currency and
+    parenthesis grammar. Unknown tokens fail closed *before* callbacks run.
+    """
+    failure = _QUANTITY_ERROR if quantity else _PRICE_ERROR
+    if not raw.isascii():
+        raise ValueError(failure)
+    if _PLAIN_NUMBER.fullmatch(raw):
+        return Decimal(raw)
+    if quantity:
+        if _GROUPED_QUANTITY.fullmatch(raw):
+            return Decimal(raw.replace(",", ""))
+        raise ValueError(failure)
+    parenthesized = raw.startswith("(") or raw.endswith(")")
+    if parenthesized:
+        if not (raw.startswith("(") and raw.endswith(")")):
+            raise ValueError(failure)
+        raw = raw[1:-1].strip()
+    match = _ACCOUNTING_PRICE.fullmatch(raw)
+    if match is None or (parenthesized and
+                         ("+" in match.group("prefix") or "-" in match.group("prefix"))):
+        raise ValueError(failure)
+    result = Decimal(match.group("number").replace(",", ""))
+    return result.copy_negate() if parenthesized or "-" in match.group("prefix") else result
+
+
+def _source_value(value: object, *, quantity: bool) -> Decimal:
     """Bound native financial input before invoking an untrusted callback.
 
-    Plain numeric strings, integers and Decimals also carry independent exact
-    values: a supplied parser must not silently change those amounts. Other
-    permitted accounting strings retain the established callback grammar; they
-    are still bounded and never presumed to be verified by this helper.
+    All supported source tokens carry an independent exact numeric meaning:
+    supplied parsers must neither change amounts nor launder malformed input.
     """
     failure = _QUANTITY_ERROR if quantity else _PRICE_ERROR
     if type(value) is str:
@@ -47,16 +85,7 @@ def _source_value(value: object, *, quantity: bool) -> Decimal | None:
         raw = value.strip()
         if not raw:
             raise ValueError(failure)
-        # Decimal's plain-number parser intentionally does not understand
-        # $ signs, grouping commas or accounting parentheses. Keep those
-        # formats available for the existing engine parser, but bind native
-        # numeric tokens (including E notation) to their exact source value.
-        if not raw.isascii():
-            return None
-        try:
-            original = Decimal(raw)
-        except InvalidOperation:
-            return None
+        original = _parse_source_text(raw, quantity=quantity)
     elif type(value) is int:
         if value.bit_length() > 269:
             raise ValueError(failure)
@@ -92,7 +121,7 @@ def _checked(value: object, parser: Callable, *, quantity: bool) -> Decimal:
             or result.copy_abs() > (_MAX_QUANTITY if quantity else _MAX_UNIT_PRICE)
             or (quantity and result < 0)
             or _fractional_places(result) > 8
-            or (original is not None and result != original)):
+            or result != original):
         raise ValueError(failure)
     return result
 
