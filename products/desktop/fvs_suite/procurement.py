@@ -20,6 +20,7 @@ from .procurement_reference import (has_original_spelling, normalized_document_k
 from .procurement_native_rows import owned_procurement_rows, physical_source_row
 from .procurement_numeric_result_r345 import checked_quantity, checked_unit_price
 from .procurement_price_sign_r350 import negative_price_review_required
+from .procurement_policy_custody_r351 import snapshot_price_policy
 from .audit_display import visible_source_label_list
 from .review import price_outside_tolerance
 
@@ -189,6 +190,10 @@ def review_line(
     Negative numeric quantities are invalid (enforced by quantity parser).
     Only an explicit credit/return reverses a positive source movement.
     """
+    # Freeze genuine stored price-review controls BEFORE any row/parser callback.
+    # A direct API caller must not inject new thresholds or rewrite the SHA256
+    # evidence fingerprint mid-review (even via object.__setattr__).
+    policy = PricePolicy(*snapshot_price_policy(policy, PricePolicy))
     # Snapshot genuine stored fields before ANY .get(), [], iteration, Decimal
     # parser or display callback. A dict subclass may forge virtual values.
     ordered = owned_procurement_rows(ordered)
