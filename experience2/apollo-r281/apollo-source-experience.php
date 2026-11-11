@@ -67,38 +67,55 @@ function fv_r281_stylesheet_url(): string {
  * during wp_head preflight. Rejected / unavailable blocks fall back to the
  * already-existing body link. This is NOT a general-purpose block resolver.
  */
-function fv_r285_content_has_shortcode(string $content, array &$visited = [], int $depth = 0): bool {
-    if (strlen($content) > 250000 || $depth > 8) { return false; }
+function fv_r285_content_has_shortcode(string $content, array &$visited = [], int $depth = 0, ?array &$budget = null): bool {
+    // Shared across ALL synced-block branches: per-node limits alone permit
+    // expensive fan-out (or many near-250KB wp_block payloads) in wp_head.
+    if ($budget === null) { $budget = ['nodes'=>0, 'reads'=>0, 'bytes'=>0, 'exhausted'=>false]; }
+    if ($budget['exhausted'] || $depth > 8) { return false; }
+    $size = strlen($content);
+    if ($size > 250000 || $budget['bytes'] + $size > 500000) {
+        $budget['exhausted'] = true;
+        return false;
+    }
+    $budget['bytes'] += $size;
     if (function_exists('has_shortcode') && has_shortcode($content, 'fv_apollo_source_experience')) {
         return true;
     }
     if (!function_exists('parse_blocks') || strpos($content, '<!-- wp:') === false) { return false; }
     $blocks = parse_blocks($content);
     if (!is_array($blocks)) { return false; }
-    return fv_r285_blocks_have_shortcode($blocks, $visited, $depth);
+    return fv_r285_blocks_have_shortcode($blocks, $visited, $depth, $budget);
 }
-function fv_r285_blocks_have_shortcode(array $blocks, array &$visited, int $depth): bool {
-    if ($depth > 8) { return false; }
+function fv_r285_blocks_have_shortcode(array $blocks, array &$visited, int $depth, ?array &$budget = null): bool {
+    if ($budget === null) { $budget = ['nodes'=>0, 'reads'=>0, 'bytes'=>0, 'exhausted'=>false]; }
+    if ($budget['exhausted'] || $depth > 8) { return false; }
     $count = 0;
     foreach ($blocks as $block) {
-        if (++$count > 128 || !is_array($block)) { return false; }
+        if (++$count > 128 || ++$budget['nodes'] > 256 || !is_array($block)) {
+            $budget['exhausted'] = true;
+            return false;
+        }
         if (($block['blockName'] ?? null) === 'core/block' && function_exists('get_post')) {
             $ref = $block['attrs']['ref'] ?? null;
             if (is_int($ref) || (is_string($ref) && ctype_digit($ref) && strlen($ref) < 18)) {
                 $id=(int)$ref;
                 if ($id > 0 && !isset($visited[$id]) && count($visited) < 128) {
+                    // Limit database queries across all branches, not per level.
+                    if (++$budget['reads'] > 32) { $budget['exhausted'] = true; return false; }
                     $visited[$id]=true; // prevent cycles and repeated database fetches
                     $post=get_post($id);
                     if (is_object($post) && ($post->post_type ?? null) === 'wp_block' &&
                         ($post->post_status ?? null) === 'publish' && is_string($post->post_content ?? null) &&
-                        fv_r285_content_has_shortcode($post->post_content, $visited, $depth + 1)) {
+                        fv_r285_content_has_shortcode($post->post_content, $visited, $depth + 1, $budget)) {
                         return true;
                     }
+                    if ($budget['exhausted']) { return false; }
                 }
             }
         }
         if (!empty($block['innerBlocks']) && is_array($block['innerBlocks']) &&
-            fv_r285_blocks_have_shortcode($block['innerBlocks'], $visited, $depth + 1)) { return true; }
+            fv_r285_blocks_have_shortcode($block['innerBlocks'], $visited, $depth + 1, $budget)) { return true; }
+        if ($budget['exhausted']) { return false; }
         // Relevant for noncanonical/editor-exported innerHTML fixtures.
         if (is_string($block['innerHTML'] ?? null) && function_exists('has_shortcode') &&
             has_shortcode($block['innerHTML'], 'fv_apollo_source_experience')) { return true; }
