@@ -105,6 +105,12 @@ class NumericCallbackIntegrationR345(unittest.TestCase):
                          invoices=[row(price="0.00000001", doc="INV1")])
         self.assertEqual(data["invoice_total_exact"], "0.00000003")
 
+    def test_zero_quantity_with_pathological_exponent_rejected(self):
+        self.private_rejection(lambda: review(invoices=[row(qty="0E-999999")]))
+
+    def test_zero_price_with_pathological_exponent_rejected(self):
+        self.private_rejection(lambda: review(invoices=[row(price="0E-999999")]))
+
     def test_input_rows_unchanged_on_failure(self):
         inv = [row(qty="NaN", doc="INV1")]
         before = dict(inv[0])
