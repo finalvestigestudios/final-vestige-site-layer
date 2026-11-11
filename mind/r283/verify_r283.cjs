@@ -100,7 +100,7 @@ function mutationTests(data){
   alter("autoplay-B","b","<details>","<video autoplay></video><details>");
   alter("missing-film-B","b",'data-optional-film="R283_STATIC_ONLY"','data-optional-film="UNLABELED"');
   alter("caption-timing-B","b","00:36–00:42","00:36–00:48");
-  alter("change-copy-A","a"," twelve-minute focus/meditation ritual"," ten-minute focus ritual");
+  alter("change-copy-A","a","Can a 12-minute recording help you focus?","Can a 6-minute recording help you focus?");
   alter("missing-trial-source","article","https://pubmed.ncbi.nlm.nih.gov/25287617/","https://example.invalid/no-proof");
   alter("fake-revenue","claims",'"verified_sales": null','"verified_sales": 12');
   alter("reprogram-guarantee","a","a free timer","scientifically proven to improve focus");
