@@ -1,0 +1,87 @@
+{
+  "sprint": "R277",
+  "audited_on_utc": "2026-11-11",
+  "status": "HOLD_UNSENT",
+  "source_method": "Official URLs and provider read-only observations; web-cached seller pages not treated as live checkout or account authorization",
+  "canonical_production": {
+    "site": "https://finalvestige.com",
+    "newsletter_enabled": true,
+    "auto_new_post_email": false,
+    "format": "full",
+    "welcome_fieldbook_configured": true,
+    "diagnostic_total": 3,
+    "diagnostic_confirmed": 3,
+    "diagnostic_unconfirmed_requests": 2,
+    "followers_wpcom": 3,
+    "followers_email": 0,
+    "eligible_email_recipients": null,
+    "received_welcome_proven": false,
+    "public_pdf_binary_sha256_verified": false,
+    "received_legal_footer_verified": false
+  },
+  "draft_ratio": {
+    "editorial": [
+      1,
+      2,
+      4,
+      6
+    ],
+    "commercial_hard_hold": [
+      3,
+      5
+    ],
+    "actual_sends": 0
+  },
+  "offers": [
+    {
+      "name": "Zen12",
+      "official_seller": "https://zen12.com/getstarted",
+      "documented_product": "12 levels and 48 MP3 audio files",
+      "price_status": "CONFLICTING PUBLIC PAGE OBSERVATIONS, NOT FV APPROVED",
+      "account_acceptance_verified": false,
+      "email_permission_verified": false,
+      "earning_link_verified": false,
+      "live_warm_guide_verified": false,
+      "scientific_product_claims_verified": false
+    },
+    {
+      "name": "Hypnosis Live / Total Focus",
+      "official_seller": "https://hypnosislive.com/mental-skills/total-focus",
+      "seller_faq": "https://hypnosislive.com/faq",
+      "documented_product": "33-minute 47 MB MP3",
+      "price_status": "PUBLIC DISPLAY DRIFT/CACHED PRICE CONFLICT; NO VERIFIED FV CHECKOUT",
+      "refund_status": "merchant FAQ mentions 14-day request and maximum five sessions a year; verify exact account/offer terms",
+      "account_acceptance_verified": false,
+      "email_permission_verified": false,
+      "earning_link_verified": false,
+      "live_warm_guide_verified": false,
+      "scientific_product_claims_verified": false
+    }
+  ],
+  "conversion_contract": {
+    "utm_source": "actual_creator_platform",
+    "utm_medium": "organic_social",
+    "utm_campaign": "topic_campaign",
+    "utm_content": "immutable_grok_asset_id",
+    "lead_event": "confirmed_signup only on authenticated subscription provider state (not download reveal, URL parameter or click)",
+    "dedupe": "provider subscription identity keyed internally; no personal data in analytics exports",
+    "sales_event": "authenticated settled paid order/affiliate cleared commission independent of CTA clicks",
+    "net_revenue_per_1000_qualified_sessions": null,
+    "reason": "no authenticated paid transactions and qualified human cohort"
+  },
+  "blockers": {
+    "final_vestige_address": false,
+    "jetpack_optout_received": false,
+    "full_delivered_preview": false,
+    "partner_email_permission": false,
+    "approved_mind_guide": false,
+    "founder_campaign_send_approval": false
+  },
+  "source_urls": [
+    "https://www.nationalarchives.gov.uk/explore-the-collection/stories/cabinet-meeting-11-November-1918/",
+    "https://www.theworldwar.org/learn/about-wwi/nov-11-1918",
+    "https://www.history.navy.mil/content/history/museums/nmusn/explore/photography/wwi/wwi-armistice/armistice-november-11-1918.html",
+    "https://www.nam.ac.uk/explore/1918-victory",
+    "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business"
+  ]
+}
