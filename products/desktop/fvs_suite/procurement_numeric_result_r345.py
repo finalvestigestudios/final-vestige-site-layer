@@ -100,7 +100,7 @@ def _source_value(value: object, *, quantity: bool) -> Decimal:
     if (len(spec.digits) > _MAX_INPUT_CHARS
             or not -_MAX_EXPONENT <= spec.exponent <= _MAX_EXPONENT
             or original.copy_abs() > (_MAX_QUANTITY if quantity else _MAX_UNIT_PRICE)
-            or (quantity and original < 0)
+            or (quantity and (original < 0 or (original.is_zero() and original.is_signed())))
             or _fractional_places(original) > 8):
         raise ValueError(failure)
     return original
@@ -125,7 +125,8 @@ def _checked(value: object, parser: Callable, *, quantity: bool) -> Decimal:
             or result.copy_abs() > (_MAX_QUANTITY if quantity else _MAX_UNIT_PRICE)
             or (quantity and result < 0)
             or _fractional_places(result) > 8
-            or result != original):
+            or result != original
+            or (result.is_zero() and result.is_signed() != original.is_signed())):
         raise ValueError(failure)
     return result
 
