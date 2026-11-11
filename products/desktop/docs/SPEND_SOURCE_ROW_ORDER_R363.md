@@ -19,6 +19,12 @@ The R362 SpendMap input boundary intentionally accepts direct API `list` records
 - Linux Python 3.13.5: 21/21 focused helper tests passed with `-W error`, and 21/21 with `-OO -W error` (42 separate test executions). No native Windows executable, 22 AES-GCM cases, CI job or full-suite pass is inferred from those focused results.
 - Ubuntu and Windows source CI now run both test modules in normal and optimized mode. Existing runner provisioning failures can still prevent those checks from executing.
 
+## CI preflight blocker discovered and patched
+
+On R362, the real `.github/workflows/desktop-build.yml` measured **206,611 UTF-8 bytes** against the existing shared **192 KiB (196,608-byte)** ceiling: **10,003 bytes over budget**. As written, the four independent source/action/artifact preflights would reject the current approved workflow after runners returned, even without malicious changes. R363's workflow, including eight new required tests commands, measures **208,179 bytes**.
+
+This sprint increases only the reviewed **finite byte budget to 224 KiB (229,376 bytes)** in `ci_workflow_budget_r292.py`. The same bound is imported by all four strict validators. `test_ci_workflow_budget_r292.py` now asserts 224 KiB, reproduces the 192 KiB rejection in all four validators and preserves the exact-byte-boundary, +1-byte, multibyte-overflow, unpinned-action, artifact-EXE exclusion and source-gate tests. These full-workflow guard tests have **not been executed locally** because only an isolated helper/test subset is available; hosted jobs have not executed. Raising this finite source-size limit is not permission to weaken workflow permissions, upload allowlists, executable release gates or QD/founder approval.
+
 ## Next validation
 
 Restore real Ubuntu/Windows Actions job allocation; run the new 8 engine tests, inherited desktop regressions and 22 genuine AES-GCM integration cases; perform physical Windows 11 x64 six-app packaging, Defender, keyboard/screen-reader, SHA-256, signed/unsigned disposition, and independent QD + founder acceptance before any catalog publication or premium download.
