@@ -23,6 +23,10 @@ function guestFinding(item, evidence) {
       evidence.request_url !== evidence.current_src ||
       evidence.final_response_url !== evidence.current_src)
     return {verdict:'HOLD', reason:'UNPROVEN_CURRENT_SRC_OR_NETWORK_CAPTURE'};
+  // A different selected image's HTTP failure must not convict the frozen
+  // published original. CDN/Jetpack/srcset changes require independent review.
+  if (evidence.current_src !== item.original_src)
+    return {verdict:'HOLD', reason:'SELECTED_SOURCE_NOT_THE_PUBLISHED_ORIGINAL'};
   if (evidence.was_cached !== false || evidence.from_disk_cache !== false ||
       evidence.from_memory_cache !== false || evidence.from_service_worker !== false)
     return {verdict:'HOLD', reason:'UNCLEAR_COLD_CACHE_STATUS'};
