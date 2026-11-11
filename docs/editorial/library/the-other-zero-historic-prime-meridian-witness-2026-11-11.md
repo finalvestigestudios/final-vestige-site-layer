@@ -10,7 +10,7 @@ A nineteenth-century map can print a perfectly legible longitude from a prime me
 
 - 29 KB standalone accessible `The_Other_Zero.html`: original SVG meridian ruler with text alternative, seven-step method, worked example, source ledger and browser-local 12-field Meridian Witness Card; approximately rounded degrees/minutes calculator supports Ferro/Paris/Pulkovo/Greenwich and reverse conversions; local JSON export/print; no calls to remote scripts, APIs, or user-data services.
 - 3-page original vector `Meridian_Witness_Field_Cards.pdf`, rendered and visually inspected.
-- 10-entry `Source_Provenance_Rights.csv`: authors/owning institutions, dates/last-check, originals, source roles, access status and individual rights considerations.
+- 11-entry `Source_Provenance_Rights.csv`: authors/owning institutions, dates/last-check, originals, source roles, access status and individual rights considerations.
 - Reproducible build, browser QA script, QA results, SHA-256 manifest, ZIP package.
 - All artifacts are attached to the corresponding Library Studio run, **not publicly hosted**. No third-party map scans or copyrighted photos copied.
 
@@ -30,6 +30,7 @@ Library of Congress rounding: Ferro **−17°40′**, Paris **+2°20′**, Pulko
 8. [FV The Lost Landscape](https://finalvestige.com/the-lost-landscape/) — live, related guide.
 9. [FV The Moving Noon](https://finalvestige.com/the-moving-noon/) — live, related historical time work.
 10. [FV Editorial Standards](https://finalvestige.com/editorial-standards/) — live FV source/rights policy.
+11. [FV The Piri Reis Map investigation](https://finalvestige.com/2026/11/02/piri-reis-map/) — authenticated published investigation link, for source-specific historic chart interpretation; no prime-meridian offset is inferred for that chart.
 
 Rights: all diagrams and worksheets are original FV creations; no archival imagery rehosted. External source links do not imply permission to republish external images; item-level rights still apply.
 
