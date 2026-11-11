@@ -80,6 +80,23 @@ def lineage(original, integrated, historical):
 def derive(o,i,l):
     require(o.get('artifact_count')==35 and i.get('schema')=='fv-r276-all-slate-identity-v1','35-article baseline lost')
     require(o.get('state')==i.get('state')==HOLD,'source hold drift')
+    # R284: hold state alone is not a substitute for explicit, fail-closed
+    # source/release/commercial flags in BOTH original upstream witnesses.
+    for key in ('publication_authorized', 'independent_qd_pass',
+                'human_source_approved', 'medical_safety_verified',
+                'merchant_offer_verified'):
+        require(o.get(key) is False, 'original upstream release gate drift: '+key)
+    for key in ('publication_authorized','may_merge','independent_qd_pass',
+                'medical_safety_verified','privacy_approved','merchant_offer_approved'):
+        require(i.get(key) is False, 'integration upstream release gate drift: '+key)
+    require(o.get('verified_paid_orders') is None and
+            o.get('realized_net_revenue') is None,
+            'unverified commerce evidence must remain unknown')
+    heads=o.get('branch_heads')
+    clusters={'start','shelter','food','health','hist-field','hist-food','hist-home'}
+    require(type(heads) is dict and set(heads)==clusters and
+            all(type(v) is str and SHA.fullmatch(v) for v in heads.values()),
+            'seven contributor branch identity roster invalid')
     require(i.get('source_review')=={'shared_url_groups':32,'duplicate_id_groups':15,'held_occurrences':3},'citation hold drift')
     arts=o.get('articles'); records=l.get('records'); inventory=i.get('entries')
     require(type(arts) is list and len(arts)==35 and type(records) is list and len(records)==36 and type(inventory) is list and len(inventory)==96,'census mismatch')
@@ -97,6 +114,28 @@ def derive(o,i,l):
     for a in arts:
         slug=a['slug']; lock=locks[slug]
         require_canonical_route(a['route'], slug)
+        # R284: routes must match their frozen section/track/cluster metadata,
+        # not merely look like valid addresses in one of seven categories.
+        section=a.get('section'); track=a.get('track'); cluster=a.get('source_cluster')
+        require(type(section) is str and section in CANONICAL_SECTIONS and
+                a['route'].split('/')[2]==section, 'article section/route mismatch')
+        require((track=='lost-ways') == (section=='lost-ways') and
+                track in ('modern','lost-ways'), 'article track/section mismatch')
+        # One authentic R200 cross-track witness (article 21) originated in the
+        # Start contributor despite historical classification; never recast its origin.
+        cross_track=(slug=='salt-beef-salt-pork-age-of-sail' and
+                     cluster=='start' and track=='lost-ways' and
+                     set(a.get('also_in',()))==clusters)
+        require(cluster in clusters and
+                (cluster.startswith('hist-') == (track=='lost-ways') or cross_track),
+                'article contributor/track mismatch')
+        require(type(a.get('branch_sha')) is str and
+                a['branch_sha']==heads[cluster], 'article contributor SHA mismatch')
+        witnesses=a.get('also_in')
+        require(type(witnesses) is list and bool(witnesses) and
+                all(type(v) is str and v in clusters for v in witnesses) and
+                len(witnesses)==len(set(witnesses)) and cluster in witnesses,
+                'article contributor witness list invalid')
         b=known[f'content/articles/{slug}.body.html']; m=known[f'content/articles/{slug}.meta.json']
         require(b['role']=='article_body' and m['role']=='article_meta','wrong integrated role')
         require(lock['body']['path']==f'preparedness/content/articles/{slug}.body.html' and lock['metadata']['path']==f'preparedness/content/articles/{slug}.meta.json','historical lock path mismatch')
