@@ -1,0 +1,525 @@
+{
+  "version": "R287",
+  "as_of": "2026-11-10 21:47 PT",
+  "parent_sha": "8078e6dac34723c47c190d1d63c373f373e5ad6f",
+  "publication": "UNPUBLISHED",
+  "commercial": "HARD_HOLD",
+  "sources": [
+    {
+      "id": "mcgurk_1976",
+      "url": "https://www.nature.com/articles/264746a0",
+      "type": "peer_review",
+      "boundary": "Original mismatched /ba/ audio and /ga/ visual film, reported fusion."
+    },
+    {
+      "id": "mcgurk_2018",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30418995/",
+      "type": "peer_review",
+      "boundary": "Interindividual variability and visual speech-reading skill."
+    },
+    {
+      "id": "mcgurk_model",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25245268/",
+      "type": "peer_review",
+      "boundary": "Model separates stimulus and observer contributions."
+    },
+    {
+      "id": "mcgurk_stability",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25802068/",
+      "type": "peer_review",
+      "boundary": "Retest and response-format sensitivity."
+    },
+    {
+      "id": "mcgurk_bias",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30231054/",
+      "type": "peer_review",
+      "boundary": "Significance selection inflates published group differences."
+    },
+    {
+      "id": "mcgurk_review",
+      "url": "https://doi.org/10.1163/22134808-00002565",
+      "type": "peer_review",
+      "boundary": "Review of limitations/generalization."
+    },
+    {
+      "id": "acute_2026",
+      "url": "https://link.springer.com/article/10.1007/s11065-026-09714-9",
+      "type": "peer_review",
+      "boundary": "Short mindfulness executive function g=0.09, not Zen12."
+    },
+    {
+      "id": "eeg_2023",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+      "type": "peer_review",
+      "boundary": "Inconsistent entrainment EEG results, not branded audio."
+    },
+    {
+      "id": "inspire3",
+      "url": "https://inspire3.com/",
+      "type": "seller",
+      "boundary": "Corporate catalog and seller marketing."
+    },
+    {
+      "id": "zen12",
+      "url": "https://zen12.com/hnp",
+      "type": "seller",
+      "boundary": "Standard full-program claims; not checkout proof."
+    },
+    {
+      "id": "zen12_promo",
+      "url": "https://zen12.com/secret/",
+      "type": "seller",
+      "boundary": "Separate coupon-framed offer; not account-specific terms."
+    },
+    {
+      "id": "zen12_free",
+      "url": "https://zen12.com/freeaudio",
+      "type": "seller",
+      "boundary": "Redirects to gift; vendor newsletter consent."
+    },
+    {
+      "id": "hl_focus",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "type": "seller",
+      "boundary": "33-min separate hypnosis MP3."
+    },
+    {
+      "id": "hl_faq",
+      "url": "https://hypnosislive.com/faq",
+      "type": "seller",
+      "boundary": "14-day request and at most five refunded sessions/year."
+    },
+    {
+      "id": "bw_focus",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "type": "seller",
+      "boundary": "15/30-min audio seller claims."
+    },
+    {
+      "id": "bw_faq",
+      "url": "https://brainwaveshots.com/faq",
+      "type": "seller",
+      "boundary": "One refund per six months and <half downloaded for >10-item orders."
+    },
+    {
+      "id": "partner",
+      "url": "https://affiliates.inspire3.com/",
+      "type": "seller",
+      "boundary": "Public partner signup, not FV approval."
+    },
+    {
+      "id": "ftc_endorse",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "type": "regulatory",
+      "boundary": "Clear conspicuous material-connection disclosures."
+    },
+    {
+      "id": "ftc_health",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "type": "regulatory",
+      "boundary": "Health claims need reliable scientific substantiation."
+    },
+    {
+      "id": "fv_focus",
+      "url": "https://finalvestige.com/focus/",
+      "type": "live_fv",
+      "boundary": "Single free 52-page Dispatch/Jetpack pathway."
+    },
+    {
+      "id": "fv_change",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "type": "live_fv",
+      "boundary": "Existing original investigation."
+    },
+    {
+      "id": "fv_mesmer",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "type": "live_fv",
+      "boundary": "Published historical comparison."
+    },
+    {
+      "id": "fv_puy",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "type": "live_fv",
+      "boundary": "Existing historical source bridge."
+    },
+    {
+      "id": "fv_collection",
+      "url": "https://finalvestige.com/collection/",
+      "type": "live_fv",
+      "boundary": "Product inventory public summary; insufficient to verify paid Mind SKU."
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "statement": "McGurk 1976 auditory /ba/ + visual /ga/ can yield /da/",
+      "source_id": "mcgurk_1976",
+      "decision": "ALLOW_OBSERVED_METHOD",
+      "limit": "Does not prove all people perceive fusion."
+    },
+    {
+      "id": "C02",
+      "statement": "McGurk effect varies between people and stimuli",
+      "source_id": "mcgurk_2018",
+      "decision": "ALLOW_CONTEXT",
+      "limit": "Not a diagnostic of a viewer's focus."
+    },
+    {
+      "id": "C03",
+      "statement": "Response format can increase measured fusion frequency",
+      "source_id": "mcgurk_stability",
+      "decision": "ALLOW_CONTEXT",
+      "limit": "Reported 18 percentage points pertains to one study."
+    },
+    {
+      "id": "C04",
+      "statement": "Publication selection can inflate population differences",
+      "source_id": "mcgurk_bias",
+      "decision": "ALLOW_CONTEXT",
+      "limit": "Specific simulation not a universal adjustment."
+    },
+    {
+      "id": "C05",
+      "statement": "McGurk effect proves focus product efficacy",
+      "source_id": "mcgurk_review",
+      "decision": "EXCLUDE_AS_FACT",
+      "limit": "Different study and endpoint."
+    },
+    {
+      "id": "C06",
+      "statement": "Zen12 standard describes 12 levels and 48 MP3s",
+      "source_id": "zen12",
+      "decision": "SELLER_DESCRIPTION_ONLY",
+      "limit": "Format not independent benefits."
+    },
+    {
+      "id": "C07",
+      "statement": "Zen12 12 minutes equals hour advanced meditation",
+      "source_id": "zen12",
+      "decision": "EXCLUDE_AS_FACT",
+      "limit": "No verified product-specific equivalence experiment."
+    },
+    {
+      "id": "C08",
+      "statement": "Zen12 promotional coupon/price is FV-authorized",
+      "source_id": "zen12_promo",
+      "decision": "EXCLUDE_AS_FACT",
+      "limit": "No authenticated checkout/earning URL."
+    },
+    {
+      "id": "C09",
+      "statement": "Zen12 free audio subscribes user to seller newsletter",
+      "source_id": "zen12_free",
+      "decision": "DISCLOSE_SEPARATE_CONSENT",
+      "limit": "Independent of FV Jetpack signup."
+    },
+    {
+      "id": "C10",
+      "statement": "Hypnosis Live Total Focus is 33-minute MP3",
+      "source_id": "hl_focus",
+      "decision": "SELLER_DESCRIPTION_ONLY",
+      "limit": "Seller page not independent effectiveness."
+    },
+    {
+      "id": "C11",
+      "statement": "Hypnosis Live refunds unlimited",
+      "source_id": "hl_faq",
+      "decision": "EXCLUDE_AS_FACT",
+      "limit": "FAQ limits at most five refunded sessions/year, 14-day requests."
+    },
+    {
+      "id": "C12",
+      "statement": "Brainwave Shots Focus Shot includes 15/30 minute versions",
+      "source_id": "bw_focus",
+      "decision": "SELLER_DESCRIPTION_ONLY",
+      "limit": "Seller's performance benefits unsubstantiated here."
+    },
+    {
+      "id": "C13",
+      "statement": "Brainwave Shots guarantee is unrestricted",
+      "source_id": "bw_faq",
+      "decision": "EXCLUDE_AS_FACT",
+      "limit": "One refund in six months; >10 items need <half downloaded."
+    },
+    {
+      "id": "C14",
+      "statement": "Brainwave warnings apply",
+      "source_id": "bw_faq",
+      "decision": "ATTRIBUTE_MERCHANT_WARNING",
+      "limit": "Seller cautions epilepsy and when need to remain awake; not independent medical assessment."
+    },
+    {
+      "id": "C15",
+      "statement": "Brainwave recording leads to four+ hours of focus",
+      "source_id": "bw_focus",
+      "decision": "EXCLUDE_AS_FACT",
+      "limit": "No verified product-specific efficacy."
+    },
+    {
+      "id": "C16",
+      "statement": "Short mindfulness average immediate cognitive benefit small",
+      "source_id": "acute_2026",
+      "decision": "ALLOW_WITH_LIMITS",
+      "limit": "66 studies g=0.09, not branded recordings."
+    },
+    {
+      "id": "C17",
+      "statement": "Binaural beat EEG science verifies Zen12",
+      "source_id": "eeg_2023",
+      "decision": "EXCLUDE_AS_FACT",
+      "limit": "Mixed findings, not product trial."
+    },
+    {
+      "id": "C18",
+      "statement": "Material affiliate links require close disclosure",
+      "source_id": "ftc_endorse",
+      "decision": "REQUIRE_ADJACENT_DISCLOSURE",
+      "limit": "No live links before verified approval."
+    },
+    {
+      "id": "C19",
+      "statement": "Health claims require scientifically supported evidence",
+      "source_id": "ftc_health",
+      "decision": "REQUIRE_PRODUCT_SPECIFIC_PROOF",
+      "limit": "Do not extrapolate general literature to seller product."
+    },
+    {
+      "id": "C20",
+      "statement": "Free Focus Fieldbook is a paid FV Mind order",
+      "source_id": "fv_focus",
+      "decision": "EXCLUDE_AS_FACT",
+      "limit": "Free existing Dispatch/Jetpack option."
+    },
+    {
+      "id": "C21",
+      "statement": "Public Inspire3 partner page proves FV acceptance",
+      "source_id": "partner",
+      "decision": "EXCLUDE_AS_FACT",
+      "limit": "Requires authenticated account evidence."
+    },
+    {
+      "id": "C22",
+      "statement": "Checkout outbound click is a settled commission",
+      "source_id": "partner",
+      "decision": "EXCLUDE_AS_FACT",
+      "limit": "Merchant settlement report required."
+    }
+  ],
+  "offers": [
+    {
+      "id": "zen12_standard",
+      "source_id": "zen12",
+      "buyer": "adult seeking structured short audio",
+      "url_for_source_only": "https://zen12.com/hnp",
+      "approved_earning_url": null,
+      "partner_acceptance": "NOT_VERIFIED",
+      "price": "NOT_VERIFIED_AT_CHECKOUT",
+      "refund": "NOT_VERIFIED_IN_COMPLETED_TRANSACTION",
+      "verified_paid_orders": null,
+      "commercial_state": "HARD_HOLD"
+    },
+    {
+      "id": "hypnosis_total_focus",
+      "source_id": "hl_focus",
+      "buyer": "adult seeking 33min guided voice hypnosis",
+      "approved_earning_url": null,
+      "commercial_state": "HARD_HOLD",
+      "seller_refund_condition": "14 days; up to five refunded sessions/year"
+    },
+    {
+      "id": "brainwave_focus_shot",
+      "source_id": "bw_focus",
+      "buyer": "adult seeking sound-focused audio variants",
+      "approved_earning_url": null,
+      "commercial_state": "HARD_HOLD",
+      "seller_refund_condition": "one refund per six months; >10 items requires fewer than half downloaded"
+    },
+    {
+      "id": "fv_focus_fieldbook",
+      "source_id": "fv_focus",
+      "buyer": "free planning and evidence checklist",
+      "approved_earning_url": null,
+      "commercial_state": "FREE_NOT_PAID",
+      "subscriber_service": "EXISTING_SINGLE_JETPACK_LIST"
+    },
+    {
+      "id": "fv_owned_paid_mind",
+      "source_id": "fv_collection",
+      "buyer": "not established",
+      "approved_earning_url": null,
+      "commercial_state": "NOT_AUTHENTICATED"
+    }
+  ],
+  "commercial_gates": [
+    {
+      "id": "merchant_account_acceptance",
+      "state": "HARD_HOLD",
+      "proof": null,
+      "approval_reference": null
+    },
+    {
+      "id": "merchant_identity_matches_fv",
+      "state": "HARD_HOLD",
+      "proof": null,
+      "approval_reference": null
+    },
+    {
+      "id": "affiliate_terms_current",
+      "state": "HARD_HOLD",
+      "proof": null,
+      "approval_reference": null
+    },
+    {
+      "id": "permitted_traffic_channels",
+      "state": "HARD_HOLD",
+      "proof": null,
+      "approval_reference": null
+    },
+    {
+      "id": "approved_presell_placement",
+      "state": "HARD_HOLD",
+      "proof": null,
+      "approval_reference": null
+    },
+    {
+      "id": "issued_earning_url",
+      "state": "HARD_HOLD",
+      "proof": null,
+      "approval_reference": null
+    },
+    {
+      "id": "test_tracking_accepted",
+      "state": "HARD_HOLD",
+      "proof": null,
+      "approval_reference": null
+    },
+    {
+      "id": "offer_route_exact",
+      "state": "HARD_HOLD",
+      "proof": null,
+      "approval_reference": null
+    },
+    {
+      "id": "checkout_price_and_charges",
+      "state": "HARD_HOLD",
+      "proof": null,
+      "approval_reference": null
+    },
+    {
+      "id": "returns_eligibility_restrictions",
+      "state": "HARD_HOLD",
+      "proof": null,
+      "approval_reference": null
+    },
+    {
+      "id": "seller_creative_rights",
+      "state": "HARD_HOLD",
+      "proof": null,
+      "approval_reference": null
+    },
+    {
+      "id": "original_video_media_rights",
+      "state": "HARD_HOLD",
+      "proof": null,
+      "approval_reference": null
+    },
+    {
+      "id": "product_specific_claims_review",
+      "state": "HARD_HOLD",
+      "proof": null,
+      "approval_reference": null
+    },
+    {
+      "id": "adjacent_disclosure_qa",
+      "state": "HARD_HOLD",
+      "proof": null,
+      "approval_reference": null
+    },
+    {
+      "id": "browser_mobile_accessibility",
+      "state": "HARD_HOLD",
+      "proof": null,
+      "approval_reference": null
+    },
+    {
+      "id": "conversion_reporting_access",
+      "state": "HARD_HOLD",
+      "proof": null,
+      "approval_reference": null
+    },
+    {
+      "id": "founder_live_release_approval",
+      "state": "HARD_HOLD",
+      "proof": null,
+      "approval_reference": null
+    },
+    {
+      "id": "founder_commercial_activation_approval",
+      "state": "HARD_HOLD",
+      "proof": null,
+      "approval_reference": null
+    }
+  ],
+  "creator_routes": [
+    {
+      "topic": "change_blindness",
+      "fv_article": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "free_resource": "https://finalvestige.com/focus/",
+      "optional_future_offer": "zen12_standard",
+      "public_post_url": null,
+      "grok_asset_id": null,
+      "status": "TOPIC_FIT_ONLY"
+    },
+    {
+      "topic": "mesmerism_puysegur",
+      "fv_article": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "free_resource": "https://finalvestige.com/focus/",
+      "optional_future_offer": "zen12_standard",
+      "public_youtube_video_id": "SV9m07PFTYk",
+      "grok_asset_id": null,
+      "status": "PUBLIC_VIDEO_NOT_INTERNAL_ASSET"
+    },
+    {
+      "topic": "mcgurk_av_speech",
+      "fv_article": "UNPUBLISHED_R287",
+      "free_resource": "https://finalvestige.com/focus/",
+      "optional_future_offer": "zen12_standard",
+      "public_post_url": null,
+      "grok_asset_id": null,
+      "status": "TOPIC_CONCEPT_NOT_POSTED"
+    }
+  ],
+  "measurement": {
+    "asset_id": null,
+    "utm_campaign": null,
+    "qualified_human_sessions": null,
+    "cta_clicks": null,
+    "provider_confirmed_subscriptions": null,
+    "affiliate_clicks": null,
+    "verified_paid_orders": null,
+    "settled_commission": null,
+    "refunds": null,
+    "fees": null,
+    "realized_net_revenue": null,
+    "net_revenue_per_1000_qualified_human_sessions": null,
+    "cohorts_days": [
+      7,
+      30
+    ],
+    "missing_rule": "NULL_NOT_COMPUTABLE_NOT_ZERO",
+    "privacy": "No raw email/IP/Grok pseudonymous profiles and no duplicate pixels/scripts; first-party aggregate consent-respecting attribution only."
+  },
+  "release_controls": {
+    "wordpress_cms_writes": false,
+    "homepage_pr_49_edits": false,
+    "canonical_hub_pr_172_edits": false,
+    "issue150_owned_edits": false,
+    "merchant_links_active": false,
+    "email_sends": false,
+    "social_posts": false,
+    "merge": false,
+    "deploy": false,
+    "spending": false
+  }
+}
