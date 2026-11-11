@@ -1,0 +1,483 @@
+{
+  "run": "Mind R302",
+  "as_of": "2026-11-11",
+  "status": "SOURCE_CONTROLLED_DRAFT_ONLY",
+  "prior_mind_pr": 2092,
+  "base_sha": "ceac7a936a39645d7072f2e339e00aab65d34f1c",
+  "canonical_pilot": {
+    "offer": "Zen12 only conditional",
+    "existing_variants": "Inherited R284 text-only A and 42s static-storyboard B, not a playable film",
+    "partner_approved": null,
+    "earning_url": null,
+    "merchant_confirmed_paid_orders": null,
+    "cleared_commission": null,
+    "qualified_human_sessions": null,
+    "net_revenue_per_1000": null
+  },
+  "sources": [
+    {
+      "id": "S01",
+      "type": "primary_full_text",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3964612/",
+      "scope": "Drew et al 2013 author manuscript; methods, all 3 experiments and discussion read"
+    },
+    {
+      "id": "S02",
+      "type": "primary_abstract",
+      "url": "https://journals.sagepub.com/doi/10.1068/p281059",
+      "scope": "Simons and Chabris 1999 original publisher abstract; full paper not inspected"
+    },
+    {
+      "id": "S03",
+      "type": "primary_abstract",
+      "url": "https://doi.org/10.1111/1467-9280.00303",
+      "scope": "Most et al 2001 publisher abstract; restricted full text"
+    },
+    {
+      "id": "S04",
+      "type": "FV_live",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "scope": "FV live Change Blindness article"
+    },
+    {
+      "id": "S05",
+      "type": "FV_live",
+      "url": "https://finalvestige.com/explore/",
+      "scope": "FV Explore summary mentions Puysegur 153 source rows and 16 case dossiers; direct underlying file inaccessible"
+    },
+    {
+      "id": "S06",
+      "type": "FV_unfetched",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "scope": "Published dossier route from Issue 171, direct page fetch failed; contents not freshly authenticated"
+    },
+    {
+      "id": "S07",
+      "type": "FV_live",
+      "url": "https://finalvestige.com/focus/",
+      "scope": "FV original free 52-page fieldbook, twelve-minute practice, existing subscriber form"
+    },
+    {
+      "id": "S08",
+      "type": "FV_live",
+      "url": "https://finalvestige.com/blog/",
+      "scope": "Public Journal says 66 results found at time of crawl, unlike Issue 171 historical inventory 61"
+    },
+    {
+      "id": "S09",
+      "type": "seller_official",
+      "url": "https://inspire3.com/",
+      "scope": "Official Inspire3 parent catalog, seller claims only"
+    },
+    {
+      "id": "S10",
+      "type": "seller_official",
+      "url": "https://zen12.com/getstarted",
+      "scope": "Exact Zen12 checkout, 12 levels and 48 MP3s; marketing/guarantee not independent proof"
+    },
+    {
+      "id": "S11",
+      "type": "seller_official",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "scope": "Separate 33-minute 47-MB product; efficacy not independently supported"
+    },
+    {
+      "id": "S12",
+      "type": "seller_official",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "scope": "Separate 15/30 minute product; seller claims only"
+    },
+    {
+      "id": "S13",
+      "type": "partner_recruitment",
+      "url": "https://affiliates.inspire3.com/",
+      "scope": "Public recruitment only, not proof of FV account acceptance or contractual commission"
+    },
+    {
+      "id": "S14",
+      "type": "FTC_official",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "scope": "Material relationship disclosures near endorsements"
+    },
+    {
+      "id": "S15",
+      "type": "FTC_official",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "scope": "Substantiation of express and implied health/psychological benefit claims"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "statement": "2013 experiment recruited 24 radiologists",
+      "source_ids": [
+        "S01"
+      ],
+      "decision": "supported_in_study"
+    },
+    {
+      "id": "C02",
+      "statement": "20 of 24 did not report gorilla in the controlled task",
+      "source_ids": [
+        "S01"
+      ],
+      "decision": "supported_in_study"
+    },
+    {
+      "id": "C03",
+      "statement": "12 of 20 non-reporters fixated gorilla location",
+      "source_ids": [
+        "S01"
+      ],
+      "decision": "supported_in_study"
+    },
+    {
+      "id": "C04",
+      "statement": "Mean dwell time for those fixators was 547ms",
+      "source_ids": [
+        "S01"
+      ],
+      "decision": "supported_in_study"
+    },
+    {
+      "id": "C05",
+      "statement": "Gorilla was inserted across five slices and 48x typical nodule volume",
+      "source_ids": [
+        "S01"
+      ],
+      "decision": "supported_in_study"
+    },
+    {
+      "id": "C06",
+      "statement": "Expert mean nodule detection 55%; novices 12%",
+      "source_ids": [
+        "S01"
+      ],
+      "decision": "supported_in_study"
+    },
+    {
+      "id": "C07",
+      "statement": "2013 third control 88% gorilla detection with cueing",
+      "source_ids": [
+        "S01"
+      ],
+      "decision": "supported_in_study"
+    },
+    {
+      "id": "C08",
+      "statement": "2013 results prove real clinical missed-diagnosis rate 83%",
+      "source_ids": [
+        "S01"
+      ],
+      "decision": "REJECT_extrapolation"
+    },
+    {
+      "id": "C09",
+      "statement": "2013 results prove audio fixes inattentional blindness",
+      "source_ids": [
+        "S01",
+        "S10"
+      ],
+      "decision": "REJECT_no_product_trial"
+    },
+    {
+      "id": "C10",
+      "statement": "1999 original study shows task-dependent unexpected-event detection",
+      "source_ids": [
+        "S02"
+      ],
+      "decision": "supported_abstract_only"
+    },
+    {
+      "id": "C11",
+      "statement": "2001 unexpected bright red cross missed by nearly 30% of observers in condition",
+      "source_ids": [
+        "S03"
+      ],
+      "decision": "supported_abstract_only"
+    },
+    {
+      "id": "C12",
+      "statement": "Change blindness and inattentional blindness are identical",
+      "source_ids": [
+        "S02",
+        "S04"
+      ],
+      "decision": "REJECT_distinct_constructs"
+    },
+    {
+      "id": "C13",
+      "statement": "Puysegur historical files prove animal magnetism cures",
+      "source_ids": [
+        "S05",
+        "S06"
+      ],
+      "decision": "REJECT_historical_claim_not_efficacy"
+    },
+    {
+      "id": "C14",
+      "statement": "FV Journal currently displays 66 results; Issue171 earlier says 61",
+      "source_ids": [
+        "S08"
+      ],
+      "decision": "supported_as_page_view_not_catalog_audit"
+    },
+    {
+      "id": "C15",
+      "statement": "Focus Fieldbook is free 52-page existing lead resource",
+      "source_ids": [
+        "S07"
+      ],
+      "decision": "supported_live_page"
+    },
+    {
+      "id": "C16",
+      "statement": "Zen12 seller lists 12 levels and 48 MP3s",
+      "source_ids": [
+        "S09",
+        "S10"
+      ],
+      "decision": "seller_format_only"
+    },
+    {
+      "id": "C17",
+      "statement": "Zen12 improves concentration or clinical outcomes",
+      "source_ids": [
+        "S10",
+        "S15"
+      ],
+      "decision": "REJECT_product_specific_support_missing"
+    },
+    {
+      "id": "C18",
+      "statement": "Hypnosis Live Total Focus lists 33-min 47-MB audio",
+      "source_ids": [
+        "S11"
+      ],
+      "decision": "seller_format_only"
+    },
+    {
+      "id": "C19",
+      "statement": "Hypnosis Live Total Focus guarantees attention recovery",
+      "source_ids": [
+        "S11",
+        "S15"
+      ],
+      "decision": "REJECT_outcome"
+    },
+    {
+      "id": "C20",
+      "statement": "Brainwave Shots Focus Shot lists 15/30 minute tracks",
+      "source_ids": [
+        "S12"
+      ],
+      "decision": "seller_format_only"
+    },
+    {
+      "id": "C21",
+      "statement": "Brainwave Shots scientifically proven to fix inattentional blindness",
+      "source_ids": [
+        "S12",
+        "S01"
+      ],
+      "decision": "REJECT_no_trials"
+    },
+    {
+      "id": "C22",
+      "statement": "Inspire3 public affiliate recruiting proves FV accepted publisher",
+      "source_ids": [
+        "S13"
+      ],
+      "decision": "REJECT_account_specific_authorization_absent"
+    },
+    {
+      "id": "C23",
+      "statement": "Affiliate disclosure must be close to actionable earning link",
+      "source_ids": [
+        "S14"
+      ],
+      "decision": "supported_guidance"
+    },
+    {
+      "id": "C24",
+      "statement": "Health benefit marketing needs adequate relevant substantiation",
+      "source_ids": [
+        "S15"
+      ],
+      "decision": "supported_guidance"
+    },
+    {
+      "id": "C25",
+      "statement": "A click on an affiliate link represents a paid commission",
+      "source_ids": [
+        "S13"
+      ],
+      "decision": "REJECT_accounting_equivalence"
+    },
+    {
+      "id": "C26",
+      "statement": "A merchant's price/discount is final FV approved offer",
+      "source_ids": [
+        "S10",
+        "S11",
+        "S12"
+      ],
+      "decision": "REJECT_volatile_seller_terms"
+    }
+  ],
+  "gates": [
+    {
+      "id": "G01",
+      "requirement": "FV-specific Inspire3 publisher acceptance",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "G02",
+      "requirement": "Current merchant agreement and product permissions",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "G03",
+      "requirement": "Unique FV issued earning link",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "G04",
+      "requirement": "Allowed social channel terms",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "G05",
+      "requirement": "Allowed email channel terms",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "G06",
+      "requirement": "Permitted claims/creative license",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "G07",
+      "requirement": "Current verified checkout destination",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "G08",
+      "requirement": "Verified price/tax/shipping or omission",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "G09",
+      "requirement": "Verified product-specific refund terms",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "G10",
+      "requirement": "Product-specific efficacy independent substantiation or exclusion",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "G11",
+      "requirement": "Near-link clear FTC disclosure",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "G12",
+      "requirement": "Founder release authorization",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "G13",
+      "requirement": "Site QA mobile keyboard and contrast acceptance",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "G14",
+      "requirement": "No-JS reader and caption/transcript acceptance",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "G15",
+      "requirement": "Signed-out real mobile tap-through and checkout acceptance",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "G16",
+      "requirement": "Existing Jetpack provider-confirmed lead route",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "G17",
+      "requirement": "Privacy-safe first-party asset_id attribution",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "G18",
+      "requirement": "Merchant-confirmed cleared commission and refund fee reconciliation",
+      "status": "HARD_HOLD",
+      "proof": null
+    }
+  ],
+  "creator_topic_fit": [
+    {
+      "topic": "Rosenhan historical witness",
+      "asset_id": "zctcIECAZ2s",
+      "asset_provenance": "Praxxis/Grok owner-reported; direct platform not independently verified",
+      "landing": "R299 Rosenhan investigation UNPUBLISHED",
+      "next": "optional existing free Focus fieldbook",
+      "paid_offer": "NONE; psychiatric source intent not meditation purchase intent"
+    },
+    {
+      "topic": "Change Blindness",
+      "asset_id": null,
+      "landing": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "next": "optional Focus Fieldbook/Dispatch existing route",
+      "paid_offer": "Only if audience asks for independent Zen12 buyer review; no earnings link until approval"
+    },
+    {
+      "topic": "Expert gorilla/inattentional blindness",
+      "asset_id": null,
+      "landing": "R302 expert gorilla investigation UNPUBLISHED",
+      "next": "existing Focus Fieldbook/Dispatch optional",
+      "paid_offer": "NONE on research conclusion; independent conditional buyer guide optional elsewhere"
+    }
+  ],
+  "metrics": {
+    "affiliate_click": "outbound diagnostic only",
+    "confirmed_lead": "provider-confirmed only",
+    "paid_conversion": "merchant-confirmed settled transaction only",
+    "net_revenue": "cleared commission after merchant adjustments for affiliates; do not subtract refunds twice",
+    "cohorts_days": [
+      7,
+      30
+    ],
+    "not_computable_reason": "missing accepted publisher/account ID, settled commission and qualified-human denominator"
+  },
+  "scope_protection": [
+    "NO homepage PR49",
+    "NO Mind hub PR172",
+    "NO Issue150 edits",
+    "NO WP CMS writes",
+    "NO Dispatch Issue174 edits",
+    "NO Grok queue writes",
+    "NO additional email lists",
+    "NO analytics scripts"
+  ]
+}
