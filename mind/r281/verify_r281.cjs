@@ -100,8 +100,8 @@ function verify(input){
  if(/we tested Zen12|verified affiliate commission|guaranteed (?:focus|health)/i.test(article+investigation))bad("Fabricated result / efficacy guarantee");
  if(!hub.includes('class="fv-mind-r281"')||!hub.includes('data-publication="unpublished"')||!hub.includes('data-commerce="hard-hold"')||!hub.includes('aria-labelledby="fv-r281-heading"'))bad("Unpublished reading-room module contract lost");
  if(!hub.includes('https://finalvestige.com/focus/')||!hub.includes('https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/')||!hub.includes('https://doi.org/10.1287/orsc.2017.1184'))bad("Hub lost free path or scholarly sources");
- if(/<\\s*(?:script|form|iframe|input|video|audio|img|link|base|object|embed|foreignObject|use|animate)\\b/i.test(hub))bad("Hub active external/input element");
- if(/@import|url\\s*\\(/i.test(hub))bad("Hub CSS external fetch vector");
+ if(/<\s*(?:script|form|iframe|input|video|audio|img|link|base|object|embed|foreignObject|use|animate)\b/i.test(hub))bad("Hub active external/input element");
+ if(/@import|url\s*\(/i.test(hub))bad("Hub CSS external fetch vector");
  let hubButtons=0;
  for(const tag of tags(hub)){
   for(const [key,vals] of Object.entries(tag.attrs)){
@@ -111,7 +111,7 @@ function verify(input){
   if(tag.name==="button"){hubButtons++;if(!("disabled" in tag.attrs)||tag.attrs.type?.[0]!=="button")bad("Hub enabled offer control")}
  }
  if(hubButtons!==1)bad("Hub commercial control cardinality");
- if(!/<button\\b[^>]*\\bdisabled\\b[^>]*>[\\s\\S]*?<\\/button>\\s*<p class="fv-disclosure">[\\s\\S]{0,450}may earn a commission/i.test(hub))bad("Hub disclosure not adjacent");
+ if(!/<button\b[^>]*\bdisabled\b[^>]*>[\s\S]*?<\/button>\s*<p class="fv-disclosure">[\s\S]{0,450}may earn a commission/i.test(hub))bad("Hub disclosure not adjacent");
  if(!hub.includes("merchant's newsletter")||!hub.includes("existing Final Vestige Dispatch"))bad("Hub consent identities conflated");
 
  return errors;
