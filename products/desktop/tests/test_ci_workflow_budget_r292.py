@@ -17,6 +17,7 @@ from ci_workflow_budget_r292 import MAX_WORKFLOW_BYTES
 
 WORKFLOW = Path(__file__).resolve().parents[3] / ".github/workflows/desktop-build.yml"
 OLD_CEILING = 128 * 1024
+PREVIOUS_REVIEWED_CEILING = 192 * 1024
 GUARDS = (
     (keys, keys.verify_action_key_shape, keys.ActionKeyError, 6),
     (pins, pins.verify_action_pins, pins.ActionPinError, 6),
@@ -63,6 +64,16 @@ class CIWorkflowBudgetR292(unittest.TestCase):
         self.assertGreater(len(source.encode("utf-8")), OLD_CEILING)
         self.assertLessEqual(len(source.encode("utf-8")), MAX_WORKFLOW_BYTES)
         self.require_all_pass(source)
+
+    def test_previous_192kib_cap_now_rejects_real_workflow(self):
+        source = full_workflow()
+        self.assertGreater(len(source.encode("utf-8")), PREVIOUS_REVIEWED_CEILING)
+        self.assertLessEqual(len(source.encode("utf-8")), MAX_WORKFLOW_BYTES)
+        for module, validator, error, _ in GUARDS:
+            with self.subTest(module=module.__name__):
+                with patch.object(module, "MAX_WORKFLOW_BYTES", PREVIOUS_REVIEWED_CEILING):
+                    with self.assertRaises(error):
+                        validator(source)
 
     def test_legacy_ceiling_reproduces_full_workflow_rejection(self):
         source = full_workflow()
