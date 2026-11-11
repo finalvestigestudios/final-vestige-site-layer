@@ -34,3 +34,21 @@ The witness records path, actual Git blob SHA, original byte length and role for
 | Qualified organic audience | Seven-/30-day paid net revenue per 1000 qualified human sessions | Asset attribution and independently confirmed net orders missing | Reconcile source/UTM → confirmed orders minus refunds/fees and disclose small denominators | NOT COMPUTABLE, **not $0** | Analytics/Commerce |
 
 No website, WordPress, commerce, CTA, analytics, social, navigation, email or paid-service changes. **Hard release HOLD.**
+
+
+## IMPORTANT: independent current-head discovery (2026-11-10 PT)
+
+Checking **live branch refs**, rather than merely reading frozen source heads, revealed **2/7 identical and 5/7 changed**. The R276 96-file manifest intentionally freezes the vetted R275 integration snapshot; it is *NOT* an assertion that all current contributor branches are already integrated.
+
+| Contributor | Current remote HEAD | Compared with frozen R272 HEAD | Changed paths |
+|---|---|---|---|
+| start | `2122d856fce9f64887c16df3d52e64be9f59a55b` | IDENTICAL | 0 |
+| shelter | `5daeaf2dd5ab71806a6b73c91edfb1d8df5da976` | IDENTICAL | 0 |
+| food | `f911ff7a655de8d81535ea86ec3d65a49ee76648` | **DIVERGED**, 1 ahead / 1 behind | 2 (test + cluster notes) |
+| health | `d5ef5bafd68361434dd1cc9209915b8e8a4eaf17` | **AHEAD**, 1 commit | 1 (cluster notes) |
+| historical field | `4e5caf812727953aa45e3bda2d382f2c67b6a09c` | **AHEAD**, 1 commit | 5 (2 bodies, 1 meta, source fragment, notes) |
+| historical food | `67e116e536c7410bed30f8f3b1bb8c166f3c223d` | **AHEAD**, 1 commit | 7 (2 bodies, 2 metas, source fragment, tests, notes) |
+| historical home | `7504a5f099594d635e3dd7332a33a2e1346c43a2` | **AHEAD**, 2 commits | 8 (3 bodies, 3 metas, source fragment, notes) |
+
+Exact file-level delta receipts: `audits/r276_seven_contributor_head_delta_UNAPPROVED.json`. **All five changed heads remain PENDING INTAKE and must not be silently overwritten, merged, copied into WordPress, or treated as editorially cleared.** The authentic 35-article frozen slate is protected; reconciliation with new contributor content is a separate future review. Existing #169 fixture test still mutates repository files and requires independent owner correction.
+
