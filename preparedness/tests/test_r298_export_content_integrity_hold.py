@@ -2,6 +2,7 @@
 from __future__ import annotations
 import copy
 import importlib.util
+import hashlib
 import json
 from pathlib import Path
 import unittest
@@ -35,7 +36,25 @@ def fixture():
             'route':f'/preparedness/{sec}/{slug}/','body_oid':g.blob_oid(rawb),
             'body_bytes':len(rawb)})
         report['articles'].append({'slug':slug,'canonical':f'https://finalvestige.com/preparedness/{sec}/{slug}/'})
-    tool_receipt={'tools':[{'slug':f'tool-{i}','status':'draft','file_sha256':'a'*64,'review_only':True} for i in range(6)]}
+    tool_receipt={'tools':[]}
+    for i in range(6):
+        slug=f'tool-{i}'
+        raw=f'<article><p>'+(' '.join(f'tool{i} fact{j} evidence{j}' for j in range(30)))+'</p></article>'
+        meta={'slug':slug,'kind':'tool','section':'field-tools',
+              'status':{'publish':'draft'},'safety_review':{'state':'pending'}}
+        meta_bytes=json.dumps(meta).encode()
+        source=raw.encode()
+        rendered=('<!-- wp:html -->\n<div class="pa pa-article" data-slug="'+slug+'">'
+                  '<p>Independent safety/source and QD verification pending</p>'
+                  '<div class="pa-body">'+raw+'</div></div>\n<!-- /wp:html -->\n').encode()
+        originals[f'preparedness/content/tools/{slug}.body.html']=source
+        originals[f'preparedness/content/tools/{slug}.meta.json']=meta_bytes
+        wp[f'preparedness/build/wp/{slug}.html']=rendered
+        report['articles'].append({'slug':slug,'canonical':
+              f'https://finalvestige.com/preparedness/field-tools/{slug}/'})
+        tool_receipt['tools'].append({'slug':slug,'status':'draft','review_only':True,
+            'body_oid':g.blob_oid(source),'meta_oid':g.blob_oid(meta_bytes),
+            'file_sha256':hashlib.sha256(rendered).hexdigest()})
     return custody,report,originals,wp,tool_receipt
 
 BASE=fixture()
@@ -105,6 +124,12 @@ MUTATIONS={
     'duplicate_tool':lambda c,r,o,w,t:t['tools'][2].update(slug=t['tools'][1]['slug']),
     'published_tool':lambda c,r,o,w,t:t['tools'][2].update(status='published'),
     'tool_without_checksum':lambda c,r,o,w,t:t['tools'][2].update(file_sha256=''),
+    'tool_wrong_source_hash':lambda c,r,o,w,t:t['tools'][2].update(body_oid='f'*40),
+    'tool_wrong_meta_hash':lambda c,r,o,w,t:t['tools'][2].update(meta_oid='f'*40),
+    'tool_source_loss':lambda c,r,o,w,t:o.__setitem__('preparedness/content/tools/tool-2.body.html',b'broken'),
+    'tool_wrong_checkout_canonical':lambda c,r,o,w,t:r['articles'][-1].update(canonical='https://example.net/'),
+    'tool_wrong_publish_meta':lambda c,r,o,w,t:o.__setitem__('preparedness/content/tools/tool-2.meta.json',json.dumps({'slug':'tool-2','kind':'tool','status':{'publish':'published'}}).encode()),
+    'tool_narrative_loss':lambda c,r,o,w,t:w.__setitem__('preparedness/build/wp/tool-2.html',b'no original content'),
     'tool_without_review_only':lambda c,r,o,w,t:t['tools'][2].update(review_only=False),
 }
 for name,mutation in MUTATIONS.items():
