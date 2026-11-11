@@ -80,8 +80,17 @@ function guestFinding(item, evidence) {
     if (evidence.resource_type !== 'Image' ||
         evidence.loading_finished !== true ||
         !imageMime(evidence.response_mime_type) ||
-        evidence.encoded_data_length === 0)
+        evidence.encoded_data_length === 0 ||
+        !px(evidence.network_data_received_bytes) ||
+        evidence.network_data_received_provenance !== 'CDP_NETWORK_DATA_RECEIVED')
       return {verdict:'HOLD', reason:'IMAGE_MIME_LIFECYCLE_OR_BODY_BYTES_NOT_PROVEN'};
+    // Non-200 final responses, including 206 Partial Content, need a
+    // separate complete-range investigation. Do not confirm a full image.
+    if (evidence.final_http_status !== 200)
+      return {verdict:'HOLD', reason:'PARTIAL_OR_NONSTANDARD_IMAGE_HTTP_NOT_FULL_BODY'};
+    // An analytics pixel or tiny fallback is not an archival photograph.
+    if (evidence.natural_width < 64 || evidence.natural_height < 64)
+      return {verdict:'HOLD', reason:'TINY_OR_PLACEHOLDER_IMAGE'};
     return {verdict:'CONFIRMED_GUEST_DISPLAYED',
       reason:'COLD_HTTP_IMAGE_WITH_POSITIVE_DIMENSIONS_AND_BODY',
       observed_http:evidence.final_http_status};
