@@ -1,0 +1,23 @@
+# Dispatch R275 — closing two actual editorial CTA-value gaps (DRAFT, NOT ADOPTED)
+
+The original six-issue PR #175 is unchanged, including 4 editorial/2 commercial, and PR #201 is not superseded. Two original problems from R270 remain relevant: #01 and #02 duplicate the Puységur CTA, while #06 repeats the Focus Fieldbook already promised in the welcome email. The optional new Issue 01 instead uses the 1998 Simons–Levin real-world change-blindness experiment and sends readers to *published* WordPress post **1922**, and optional Issue 06 uses a three-line archival capture exercise with *published* source guide **2209**. These are not adopted alternatives. Both have subject/preheader, full original editorial, one featured CTA, source boundaries, readable plaintext/inline-table offline HTML, and explicit unsent footer tokens.
+
+**Evidence:** Authenticated read-only WordPress says /dispatch/ page 523, /focus/ page 1579, Editorial Standards page 17, WP published destination #1922 and #2209. The standards demand primary evidence and visible uncertainty, not inferred certainty. Source study: https://doi.org/10.3758/BF03208840 . Published guide: https://finalvestige.com/free-resources/the-page-that-changed/ . Public signed-out browser fetching was inconclusive, so live user navigability is UNKNOWN. Offline specimen ≠ received Jetpack mail.
+
+**Commercial truth:** Zen12 official sales https://zen12.com/getstarted describes 12 levels/48 MP3s, public order showed $87 and a 15-minute timer; neither establishes approved affiliate price, permitted urgency or FV email permission. Seller sample https://zen12.com/welcome enrolls merchant newsletter separately. Hypnosis Live https://hypnosislive.com/mental-skills/total-focus advertises 33-minute/47MB recording, while https://hypnosislive.com/faq describes 14-day refund request with five-session-per-year maximum. Vendor effectiveness claims are not independently proven product outcomes. No FV-specific approval, earning URL, permitted email channel, currently validated price/refund checkout, published Mind buyer guide, or verified settled sale. Issues 03 and 05 remain HOLD_MERCHANT.
+
+**Consent:** Jetpack enabled, automatic new-post emails OFF, full format, Fieldbook welcome configured. Counts total 3/confirmed 3/unconfirmed 2 NONADDITIVE, stats WP.com followers 3 and email followers 0; actual provider-filtered eligible population UNKNOWN. First confirmed signup must come from genuine authenticated provider state and consent provenance, not Focus query strings, page visibility, merchant signup or repeated attempts. Received welcome, real PDF download, physical FV mailing address, opt-out and actual Jetpack inbox rendering UNKNOWN. FTC: https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business .
+
+**Attribution hypothesis only:** Do not put new UTMs on production pages. After partner and founder release gates, use `utm_source=dispatch&utm_medium=email&utm_campaign=dispatch_mind_2026_pilot&utm_content=issueNN`, and existing TASK-008 Grok asset_id conventions for inbound discovery. Deduplicate first-party confirmations; paid outcomes require independent settlement less refunds/fees, not clicks. Net revenue per 1,000 qualified human sessions is NOT COMPUTABLE.
+
+| OFFER → STEP | BLOCKER | CHANGE / EXPERIMENT | PASS / FAIL EVIDENCE | OWNER |
+|---|---|---|---|---|
+| Source investigation → #01 click | duplicated CTA with #02 | alternate WP #1922 change blindness | published WP, browser/approval unknown | Dispatch #174 |
+| Source-recovery field guide → #06 click | re-promised Fieldbook | alternate WP #2209 methods guide | published WP, browser/approval unknown | Dispatch #174 |
+| Zen12 → #03 guide → order | FV affiliate rights/earning link/live guide unverified | authenticate one authorized checkout | HOLD | Mind #171 |
+| Hypnosis Live → #05 guide → order | same + specific refund/claims | audit exact affiliate route | HOLD | Mind #171 |
+| Focus → eligible subscriber/welcome | provider filter/receipt unverified | private provider aggregate and recipient-owned proof after approval | UNKNOWN | Claude/Focus #129 |
+| Dispatch → delivered mail | real sender address/opt-out/native rendering/final approval | only approved real received test | HOLD | Dispatch |
+| Grok→paid order | no actual asset/lead/settlement join | reuse TASK-008, audit real net orders | NOT COMPUTABLE | Praxxis/Commerce #820 |
+
+**No send, test email, subscriber import/contact, WordPress settings/post change, merchant activation, duplicate analytics, Grok queue edit, spend or merge.** No additional newsletter provider.
