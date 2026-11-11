@@ -1,0 +1,597 @@
+{
+  "version": "R283",
+  "publication_state": "UNPUBLISHED",
+  "checked_at": "2026-11-10",
+  "owner": "Final Vestige Mind & Perception",
+  "commercial_mode": "HARD_HOLD",
+  "source_register": [
+    {
+      "id": "S01",
+      "type": "experiment",
+      "title": "Macdonald and Lavie 2011",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/21611856/",
+      "checked_at": "2026-11-10",
+      "scope": "source inspected; no downstream account/checkout verification"
+    },
+    {
+      "id": "S02",
+      "type": "replication_extension",
+      "title": "Raveh and Lavie 2015",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25287617/",
+      "checked_at": "2026-11-10",
+      "scope": "source inspected; no downstream account/checkout verification"
+    },
+    {
+      "id": "S03",
+      "type": "neural_behavioral",
+      "title": "Molloy et al 2015",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26658858/",
+      "checked_at": "2026-11-10",
+      "scope": "source inspected; no downstream account/checkout verification"
+    },
+    {
+      "id": "S04",
+      "type": "auditory_musical",
+      "title": "Inattentional deafness in music 2014",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/24652341/",
+      "checked_at": "2026-11-10",
+      "scope": "source inspected; no downstream account/checkout verification"
+    },
+    {
+      "id": "S05",
+      "type": "task_relevance",
+      "title": "Scheer et al 2018",
+      "url": "https://doi.org/10.1177/0018720818760919",
+      "checked_at": "2026-11-10",
+      "scope": "source inspected; no downstream account/checkout verification"
+    },
+    {
+      "id": "S06",
+      "type": "foundational_visual",
+      "title": "Simons Chabris 1999",
+      "url": "https://doi.org/10.1068/p281059",
+      "checked_at": "2026-11-10",
+      "scope": "source inspected; no downstream account/checkout verification"
+    },
+    {
+      "id": "S07",
+      "type": "review",
+      "title": "Binaural EEG systematic review 2023",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+      "checked_at": "2026-11-10",
+      "scope": "source inspected; no downstream account/checkout verification"
+    },
+    {
+      "id": "S08",
+      "type": "official_merchant",
+      "title": "Inspire3 product-family catalog",
+      "url": "https://inspire3.com/",
+      "checked_at": "2026-11-10",
+      "scope": "source inspected; no downstream account/checkout verification"
+    },
+    {
+      "id": "S09",
+      "type": "official_offer",
+      "title": "Zen12 Premium main seller page",
+      "url": "https://zen12.com/hnp",
+      "checked_at": "2026-11-10",
+      "scope": "source inspected; no downstream account/checkout verification"
+    },
+    {
+      "id": "S10",
+      "type": "official_offer",
+      "title": "Hypnosis Live Total Focus exact offer",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "checked_at": "2026-11-10",
+      "scope": "source inspected; no downstream account/checkout verification"
+    },
+    {
+      "id": "S11",
+      "type": "official_terms",
+      "title": "Hypnosis Live FAQ",
+      "url": "https://hypnosislive.com/faq",
+      "checked_at": "2026-11-10",
+      "scope": "source inspected; no downstream account/checkout verification"
+    },
+    {
+      "id": "S12",
+      "type": "official_offer",
+      "title": "Brainwave Shots Focus Shot exact offer",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "checked_at": "2026-11-10",
+      "scope": "source inspected; no downstream account/checkout verification"
+    },
+    {
+      "id": "S13",
+      "type": "official_consent",
+      "title": "Zen12 gift/merchant newsletter",
+      "url": "https://zen12.com/gift",
+      "checked_at": "2026-11-10",
+      "scope": "source inspected; no downstream account/checkout verification"
+    },
+    {
+      "id": "S14",
+      "type": "affiliate_public_not_approval",
+      "title": "Inspire3 affiliate public portal",
+      "url": "https://affiliates.inspire3.com/",
+      "checked_at": "2026-11-10",
+      "scope": "source inspected; no downstream account/checkout verification"
+    },
+    {
+      "id": "S15",
+      "type": "FTC",
+      "title": "Endorsement Guides FAQ",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "checked_at": "2026-11-10",
+      "scope": "source inspected; no downstream account/checkout verification"
+    },
+    {
+      "id": "S16",
+      "type": "FTC",
+      "title": "Health Products Compliance Guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "checked_at": "2026-11-10",
+      "scope": "source inspected; no downstream account/checkout verification"
+    },
+    {
+      "id": "S17",
+      "type": "published_FV",
+      "title": "Puységur historical dossier",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "checked_at": "2026-11-10",
+      "scope": "source inspected; no downstream account/checkout verification"
+    },
+    {
+      "id": "S18",
+      "type": "published_FV",
+      "title": "Free Seven Day Focus Fieldbook",
+      "url": "https://finalvestige.com/focus/",
+      "checked_at": "2026-11-10",
+      "scope": "source inspected; no downstream account/checkout verification"
+    },
+    {
+      "id": "S19",
+      "type": "published_FV",
+      "title": "Change Blindness",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "checked_at": "2026-11-10",
+      "scope": "source inspected; no downstream account/checkout verification"
+    },
+    {
+      "id": "S20",
+      "type": "published_FV",
+      "title": "Mesmerism 1784 commission",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "checked_at": "2026-11-10",
+      "scope": "source inspected; no downstream account/checkout verification"
+    }
+  ],
+  "claim_source_map": [
+    {
+      "id": "C01",
+      "claim": "2011 high-load 79% miss rate",
+      "classification": "primary_supported_with_limit",
+      "source_ids": [
+        "S01"
+      ],
+      "limitation": "Condition-specific failure to report an unexpected tone; not a population prevalence."
+    },
+    {
+      "id": "C02",
+      "claim": "load reduces sensitivity even with anticipated tones",
+      "classification": "primary_supported_with_limit",
+      "source_ids": [
+        "S02"
+      ],
+      "limitation": "Four laboratory experiments; no safety-critical generalization."
+    },
+    {
+      "id": "C03",
+      "claim": "high visual load alters early neural tone responses",
+      "classification": "primary_supported_with_limit",
+      "source_ids": [
+        "S03"
+      ],
+      "limitation": "MEG and behavioral findings, not a demonstration of clinical hearing loss."
+    },
+    {
+      "id": "C04",
+      "claim": "musical-task inattentional deafness occurs",
+      "classification": "primary_supported_with_limit",
+      "source_ids": [
+        "S04"
+      ],
+      "limitation": "115 and 47 participant studies; not a claim about all musicians."
+    },
+    {
+      "id": "C05",
+      "claim": "auditory task relevance affects novelty-P3",
+      "classification": "primary_supported_with_limit",
+      "source_ids": [
+        "S05"
+      ],
+      "limitation": "48-person lab study; distinct measurement."
+    },
+    {
+      "id": "C06",
+      "claim": "invisible gorilla concerns visual attention",
+      "classification": "primary_supported_with_limit",
+      "source_ids": [
+        "S06"
+      ],
+      "limitation": "Visual analogy; not proof of general auditory experience."
+    },
+    {
+      "id": "C07",
+      "claim": "specific Zen12 recording prevents missed tones",
+      "classification": "unsupported_not_publishable",
+      "source_ids": [
+        "S01",
+        "S09"
+      ],
+      "limitation": "No product-specific inattentional-deafness outcome study."
+    },
+    {
+      "id": "C08",
+      "claim": "Zen12 one hour in 12 minutes is equivalent",
+      "classification": "seller_assertion_unsubstantiated",
+      "source_ids": [
+        "S09"
+      ],
+      "limitation": "No independently substantiated equivalence established."
+    },
+    {
+      "id": "C09",
+      "claim": "Zen12 Premium lists 12 levels and 48 MP3s",
+      "classification": "merchant_feature_only",
+      "source_ids": [
+        "S09"
+      ],
+      "limitation": "Seller description; delivery not tested."
+    },
+    {
+      "id": "C10",
+      "claim": "Zen12 gives medical relief and guaranteed benefits",
+      "classification": "seller_assertion_unsubstantiated",
+      "source_ids": [
+        "S09",
+        "S16"
+      ],
+      "limitation": "No product-specific clinical substantiation."
+    },
+    {
+      "id": "C11",
+      "claim": "Zen12 Premium price at actual FV checkout",
+      "classification": "unknown_do_not_claim",
+      "source_ids": [
+        "S09"
+      ],
+      "limitation": "Advertised prices and checkout totals may differ."
+    },
+    {
+      "id": "C12",
+      "claim": "Zen12 advertises 1-year refunds",
+      "classification": "merchant_policy_only",
+      "source_ids": [
+        "S09"
+      ],
+      "limitation": "No documented claim fulfillment or account-specific final cart."
+    },
+    {
+      "id": "C13",
+      "claim": "Zen12 free audio entails merchant newsletter consent",
+      "classification": "merchant_terms_visible",
+      "source_ids": [
+        "S13"
+      ],
+      "limitation": "Not a Final Vestige/Jetpack subscriber."
+    },
+    {
+      "id": "C14",
+      "claim": "Total Focus 33 min/47 MB downloadable session",
+      "classification": "merchant_feature_only",
+      "source_ids": [
+        "S10"
+      ],
+      "limitation": "Seller page only; download and efficacy untested."
+    },
+    {
+      "id": "C15",
+      "claim": "Total Focus guarantees concentration",
+      "classification": "seller_assertion_unsubstantiated",
+      "source_ids": [
+        "S10"
+      ],
+      "limitation": "Do not reproduce as editorial fact."
+    },
+    {
+      "id": "C16",
+      "claim": "Hypnosis Live refund 14 days; max five sessions/year",
+      "classification": "merchant_policy_only",
+      "source_ids": [
+        "S11"
+      ],
+      "limitation": "Merchant FAQ; actual processing not authenticated."
+    },
+    {
+      "id": "C17",
+      "claim": "Focus Shot 15- and 30-minute versions",
+      "classification": "merchant_feature_only",
+      "source_ids": [
+        "S12"
+      ],
+      "limitation": "Seller offer; no delivered-file audit."
+    },
+    {
+      "id": "C18",
+      "claim": "Focus Shot improves focus for hours",
+      "classification": "seller_assertion_unsubstantiated",
+      "source_ids": [
+        "S12"
+      ],
+      "limitation": "No product-specific independent proof."
+    },
+    {
+      "id": "C19",
+      "claim": "Binaural-beat literature proves Zen12 efficacy",
+      "classification": "unsupported_inference",
+      "source_ids": [
+        "S07",
+        "S09"
+      ],
+      "limitation": "General mixed research not branded product verification."
+    },
+    {
+      "id": "C20",
+      "claim": "Public affiliate site confers FV eligibility",
+      "classification": "false",
+      "source_ids": [
+        "S14"
+      ],
+      "limitation": "Publisher-specific authorization absent."
+    },
+    {
+      "id": "C21",
+      "claim": "Purchasing through hypothetical earning link may compensate FV",
+      "classification": "conditional_disclosure",
+      "source_ids": [
+        "S15"
+      ],
+      "limitation": "Use clear plain-language disclosure next to each approved link."
+    },
+    {
+      "id": "C22",
+      "claim": "Fieldbook is currently free and existing",
+      "classification": "published_internal_resource",
+      "source_ids": [
+        "S18"
+      ],
+      "limitation": "Do not introduce second list or claim confirmed subscriber from view."
+    },
+    {
+      "id": "C23",
+      "claim": "Any paid order or commission currently verified",
+      "classification": "not_verified",
+      "source_ids": [],
+      "limitation": "No merchant/provider-specific order or settlement records."
+    },
+    {
+      "id": "C24",
+      "claim": "Hypnosis cures anxiety or changes brain permanently",
+      "classification": "unsupported_not_publishable",
+      "source_ids": [
+        "S10",
+        "S16"
+      ],
+      "limitation": "Avoid medical and neural guarantees."
+    },
+    {
+      "id": "C25",
+      "claim": "auditory-task findings independently prove seller brainwave audio effects",
+      "classification": "unsupported_inference",
+      "source_ids": [
+        "S02",
+        "S07",
+        "S09",
+        "S12"
+      ],
+      "limitation": "No bridge study."
+    }
+  ],
+  "offer_inventory": [
+    {
+      "id": "zen12_premium",
+      "type": "prospective_affiliate",
+      "seller_url_for_verification_only": "https://zen12.com/hnp",
+      "audience": "self-directed structure for brief meditation routines",
+      "offer_to_test": "12 levels and 48 MP3s listed by seller",
+      "checkout_price": null,
+      "returns": "seller advertises one-year guarantee; fulfillment unverified",
+      "rights_verified": false,
+      "activated": false
+    },
+    {
+      "id": "zen12_freeaudio",
+      "type": "merchant_owned_newsletter",
+      "seller_url_for_verification_only": "https://zen12.com/gift",
+      "audience": "samples",
+      "consent": "distinct merchant newsletter, not FV subscriber",
+      "activated": false
+    },
+    {
+      "id": "hypnosislive_total_focus",
+      "type": "comparison_not_default",
+      "seller_url_for_verification_only": "https://hypnosislive.com/mental-skills/total-focus",
+      "returns": "14 days; 5 refunded sessions per year according to FAQ",
+      "activated": false
+    },
+    {
+      "id": "brainwave_focus_shot",
+      "type": "comparison_not_default",
+      "seller_url_for_verification_only": "https://brainwaveshots.com/focus-shot",
+      "activated": false
+    },
+    {
+      "id": "fv_focus_fieldbook",
+      "type": "existing_free_resource",
+      "published_url": "https://finalvestige.com/focus/",
+      "single_jetpack_list": true,
+      "activated_for_commerce": false
+    },
+    {
+      "id": "fv_paid_mind_sku",
+      "type": "fallback_candidate",
+      "verified_rights_cleared_sellable": false,
+      "authenticated_checkout_url": null,
+      "returns": null,
+      "activated": false
+    }
+  ],
+  "creator_topic_to_product_fit": [
+    {
+      "topic": "Change blindness",
+      "article": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "asset_id": null,
+      "public_post_url": null,
+      "video_rights_verified": false,
+      "landing_mobile_verified": false,
+      "free_path": "https://finalvestige.com/focus/",
+      "optional_offer": "Zen12 Premium only if approved",
+      "fit": "Perceptual limits -> voluntary attention routine; no efficacy inference"
+    },
+    {
+      "topic": "Mesmerism/Puységur",
+      "article": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "secondary_article": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "public_historical_video_id": "SV9m07PFTYk",
+      "asset_id": null,
+      "video_rights_verified": false,
+      "landing_mobile_verified": false,
+      "free_path": "https://finalvestige.com/focus/",
+      "optional_offer": "Zen12 if approved, but not historical proof",
+      "fit": "Suggestion history -> independent buyer skepticism"
+    },
+    {
+      "topic": "Inattentional deafness",
+      "article_status": "UNPUBLISHED",
+      "asset_id": null,
+      "public_post_url": null,
+      "free_path": "https://finalvestige.com/focus/",
+      "optional_offer": "Zen12 only if approved",
+      "fit": "Recognizing attention trade-offs -> practical free timer or structured recording choice"
+    }
+  ],
+  "authorization_gates": [
+    {
+      "id": "named_FV_partner_acceptance",
+      "status": "HARD_HOLD",
+      "evidence": "Account-specific verified approval/proof missing; public offer pages do not clear release"
+    },
+    {
+      "id": "current_signed_affiliate_terms",
+      "status": "HARD_HOLD",
+      "evidence": "Account-specific verified approval/proof missing; public offer pages do not clear release"
+    },
+    {
+      "id": "permitted_website_channel",
+      "status": "HARD_HOLD",
+      "evidence": "Account-specific verified approval/proof missing; public offer pages do not clear release"
+    },
+    {
+      "id": "permitted_organic_social_channel",
+      "status": "HARD_HOLD",
+      "evidence": "Account-specific verified approval/proof missing; public offer pages do not clear release"
+    },
+    {
+      "id": "permitted_email_channel_if_used",
+      "status": "HARD_HOLD",
+      "evidence": "Account-specific verified approval/proof missing; public offer pages do not clear release"
+    },
+    {
+      "id": "issued_earning_URL",
+      "status": "HARD_HOLD",
+      "evidence": "Account-specific verified approval/proof missing; public offer pages do not clear release"
+    },
+    {
+      "id": "tracking_parameter_rules",
+      "status": "HARD_HOLD",
+      "evidence": "Account-specific verified approval/proof missing; public offer pages do not clear release"
+    },
+    {
+      "id": "current_exact_offer_page",
+      "status": "HARD_HOLD",
+      "evidence": "Account-specific verified approval/proof missing; public offer pages do not clear release"
+    },
+    {
+      "id": "authenticated_cart_total",
+      "status": "HARD_HOLD",
+      "evidence": "Account-specific verified approval/proof missing; public offer pages do not clear release"
+    },
+    {
+      "id": "refundable_item_terms",
+      "status": "HARD_HOLD",
+      "evidence": "Account-specific verified approval/proof missing; public offer pages do not clear release"
+    },
+    {
+      "id": "verified_refund_fulfillment_process",
+      "status": "HARD_HOLD",
+      "evidence": "Account-specific verified approval/proof missing; public offer pages do not clear release"
+    },
+    {
+      "id": "creative_audio_video_rights",
+      "status": "HARD_HOLD",
+      "evidence": "Account-specific verified approval/proof missing; public offer pages do not clear release"
+    },
+    {
+      "id": "substantiation_for_any_claim",
+      "status": "HARD_HOLD",
+      "evidence": "Account-specific verified approval/proof missing; public offer pages do not clear release"
+    },
+    {
+      "id": "full_browsers_a11y_security_QA",
+      "status": "HARD_HOLD",
+      "evidence": "Account-specific verified approval/proof missing; public offer pages do not clear release"
+    },
+    {
+      "id": "founder_release_approval",
+      "status": "HARD_HOLD",
+      "evidence": "Account-specific verified approval/proof missing; public offer pages do not clear release"
+    },
+    {
+      "id": "merchant_reported_settled_commissions",
+      "status": "HARD_HOLD",
+      "evidence": "Account-specific verified approval/proof missing; public offer pages do not clear release"
+    }
+  ],
+  "consent_boundaries": {
+    "fv_jetpack": "existing list; never duplicated",
+    "merchant_zen12": "seller newsletter opt-in distinct from FV",
+    "no_pii_tracking": true
+  },
+  "measurement_contract": {
+    "qualified_human_session": "requires first-party dedup + bot filtering, no invented data",
+    "asset_id": "only verified internal creator ID",
+    "utm_campaign": "validated campaign parameter",
+    "event_funnel": [
+      "landing_view",
+      "relevant_cta_click",
+      "provider_confirmed_lead",
+      "affiliate_click",
+      "merchant_verified_paid_order",
+      "settled_commission",
+      "refunds_and_fees"
+    ],
+    "net_revenue_per_1000": "1000*(net_cleared_paid_receipts)/qualified_human_sessions; N/A if denominator or receipts unavailable",
+    "cohorts": [
+      "7d",
+      "30d"
+    ],
+    "no_new_tracking_script": true
+  },
+  "ab_hypothesis": "An optional original 42-second poster/transcript beside identical full buyer guide might improve qualified paid conversions; no claim until randomized live proof and authorization",
+  "verified_sales": null,
+  "verified_settled_commission": null,
+  "qualified_human_sessions": null,
+  "net_revenue_per_1000_qualified_humans": null,
+  "release_status": "HARD_HOLD"
+}
