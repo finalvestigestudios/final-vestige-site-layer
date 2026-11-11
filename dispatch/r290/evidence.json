@@ -1,0 +1,107 @@
+{
+  "run": "R290",
+  "date_utc": "2026-11-11T22:38:14Z",
+  "release": "HOLD_UNSENT",
+  "draft_parent_pr": 2100,
+  "master_pr": 175,
+  "issues": {
+    "dispatch": 174,
+    "mind": 171,
+    "focus": 129,
+    "business": 820
+  },
+  "draft_mode": "OPTIONAL_NOT_ADOPTED",
+  "campaign": {
+    "total": 6,
+    "editorial_issues": [
+      1,
+      2,
+      4,
+      6
+    ],
+    "commercial_issues": [
+      3,
+      5
+    ],
+    "cadence": "weekly proposal only",
+    "send_authorized": false
+  },
+  "candidate": {
+    "issue": 1,
+    "subject": "What a careful observer can still miss",
+    "preheader": "A 1999 attention experiment changes how we read a confident account of what happened.",
+    "verified_primary_cta": "https://finalvestige.com/2026/11/02/change-blindness/",
+    "source_doi": "https://doi.org/10.1068/p281059",
+    "source_pubmed": "https://pubmed.ncbi.nlm.nih.gov/10694957/",
+    "claim_scope": "Inattentional blindness does not establish change blindness or specific witness fallibility",
+    "not_adopted": true
+  },
+  "jetpack": {
+    "newsletter_enabled": true,
+    "site_can_send": true,
+    "email_new_posts_by_default": false,
+    "email_content_format": "full",
+    "from_name": "Final Vestige Studios",
+    "reply_to": "no-reply",
+    "welcome_fieldbook_configured": true,
+    "welcome_receipt_proven": false,
+    "total": 3,
+    "confirmed": 3,
+    "unconfirmed_requests": 2,
+    "wpcom_followers": 3,
+    "email_followers": 0,
+    "counts_additive": false,
+    "confirmed_send_eligible": null,
+    "latest_five_post_status": "never_sent_opted_out",
+    "lifetime_sends_unknown": true,
+    "actual_jetpack_preview_verified": false,
+    "received_mail_preview_verified": false,
+    "valid_publisher_postal_verified": false,
+    "unsubscribe_function_verified": false
+  },
+  "merchant_gate": {
+    "zen12": {
+      "account_accepted": false,
+      "email_marketing_authorized": false,
+      "issued_earning_url": null,
+      "approved_live_guide": null,
+      "price_verified": false,
+      "refund_verified": false
+    },
+    "hypnosis_total_focus": {
+      "account_accepted": false,
+      "email_marketing_authorized": false,
+      "issued_earning_url": null,
+      "approved_live_guide": null,
+      "price_verified": false,
+      "refund_verified": false
+    }
+  },
+  "analytics": {
+    "proposed_only": true,
+    "existing_Grok_campaign": "mind_pilot_2026_11",
+    "Grok_medium": "organic_social",
+    "Grok_content": "unique_asset_id",
+    "separate_email_campaign": "dispatch_pilot_2026_11",
+    "email_utm_source": "dispatch",
+    "email_utm_medium": "email",
+    "email_utm_content": "issue01_attention",
+    "confirmed_signup_rule": "provider attested consent status, one logical confirmation per unique provider lifecycle, no URL-based counting",
+    "purchase_rule": "independent settled purchase/affiliate conversion adjusted for refunds/fees",
+    "qualified_human_sessions": null,
+    "settled_net_revenue": null,
+    "net_revenue_per_1000": null
+  },
+  "claims": {
+    "zen12_official": "https://zen12.com/secret/",
+    "zen12_seller_says": "12 levels, 48 MP3s; advertised efficacy and coupon price NOT independently validated",
+    "total_focus_official": "https://hypnosislive.com/mental-skills/total-focus",
+    "total_focus_seller_says": "33-minute 47-MB recording; outcome claims/prices/refund terms NOT approved publisher representations"
+  },
+  "canonical_sources": {
+    "WordPress": "https://wordpress.com/support/newsletter/email-appearance/",
+    "FTC": "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business",
+    "inattentional_blindness": "https://doi.org/10.1068/p281059",
+    "PubMed": "https://pubmed.ncbi.nlm.nih.gov/10694957/"
+  }
+}
