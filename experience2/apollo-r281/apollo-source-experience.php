@@ -16,6 +16,41 @@ const FV_R281_STYLE = 'fv-apollo-evidence-r281';
 // approval. It detects accidental data drift; it does not certify publication.
 const FV_R287_STAGING_EVENTS_SHA256 = '27821100c9fef91f1f2bbefa22b8c9f4ab05454b1e4af286b59a8a175fcde9fa';
 
+
+
+// R288: discrepancy custody. NASA's original Review Board narrative says that
+// authority was initiated orally on Jan 27, while a later NASA safety summary
+// dates establishment Jan 28. This is a source-attribution distinction, NOT
+// permission to declare that either record is independently corroborated.
+const FV_R288_BOARD_NARRATIVE = 'https://www.nasa.gov/history/Apollo204/narr.html';
+const FV_R288_NASA_SAFETY = 'https://sma.nasa.gov/sma-disciplines/accllp/apollo-1';
+const FV_R288_RECONCILIATION_SHA256 = '4adc693afaf6f33a6bdef1965b0dd315783ff310f7afc87a79de773a3d1d8e41';
+
+function fv_r288_source_reconciliation(): array {
+    return [
+        ['authority'=>'Original Apollo 204 Review Board narrative',
+         'statement'=>'The Board narrative records establishment on January 27, 1967, initiated through oral instructions, and separately dates the first Kennedy meeting January 28.',
+         'boundary'=>'A retrospective published with the original investigation; it describes the Board\'s own formation, not an independent account.',
+         'url'=>FV_R288_BOARD_NARRATIVE],
+        ['authority'=>'Later NASA Safety and Mission Assurance summary',
+         'statement'=>'NASA\'s later safety summary dates the Deputy Administrator\'s establishment of the Board to January 28, 1967.',
+         'boundary'=>'A later institutional summary, not independent evidence that supersedes the 1967 Board narrative.',
+         'url'=>FV_R288_NASA_SAFETY],
+    ];
+}
+function fv_r288_reconciliation_valid(array $items): bool {
+    if (count($items) !== 2 || array_keys($items) !== [0,1]) { return false; }
+    if (($items[0]['url'] ?? null) !== FV_R288_BOARD_NARRATIVE || ($items[1]['url'] ?? null) !== FV_R288_NASA_SAFETY) { return false; }
+    foreach ($items as $item) {
+        if (array_keys($item) !== ['authority','statement','boundary','url']) { return false; }
+        foreach (['authority','statement','boundary'] as $key) {
+            if (!is_string($item[$key]) || trim($item[$key]) === '') { return false; }
+        }
+    }
+    $encoded=json_encode($items, JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return is_string($encoded) && hash_equals(FV_R288_RECONCILIATION_SHA256, hash('sha256', $encoded));
+}
+
 /** Immutable, curated chronology. All dates/claims have named official NASA sources. */
 function fv_r281_events(): array {
     return [
@@ -136,7 +171,8 @@ function fv_r281_preflight(): void {
 /** No user content or parameters alter evidence; ids are unique when a shortcode repeats. */
 function fv_r281_render($attributes = []): string {
     $records=fv_r281_events();
-    if (!fv_r281_valid_records($records)) {
+    $date_reconciliation=fv_r288_source_reconciliation();
+    if (!fv_r281_valid_records($records) || !fv_r288_reconciliation_valid($date_reconciliation)) {
         return '<aside aria-label="Apollo source fallback"><p>Evidence experience unavailable.</p><a href="'.FV_R281_NASA_BOARD.'">Read the NASA Review Board report</a> · <a href="'.FV_R281_FREE.'">Read the free Apollo investigation</a></aside>';
     }
     static $sequence=0, $linked=false;
@@ -164,7 +200,19 @@ function fv_r281_render($attributes = []): string {
         $s.='<p>This is an official-source link, not a claim of NASA endorsement or clearance for promotional use of agency marks, astronaut likenesses, or media.</p></div></details>';
         $s.='</article></li>';
     }
-    $s.='</ol><aside class="fv-r281__gallery" aria-label="Source gallery"><h3>Inspect the document sources</h3><p>This is a text-only catalogue of three NASA records, not a photographic gallery or three independent eyewitness accounts. Review remains pending.</p><ul class="fv-r281__source-list">';
+    // Do not silently flatten discrepant NASA dates into one unsupported claim.
+    // Plain text is available without JS and in print; all source anchors are
+    // direct official NASA destinations, with clear source-dependency labels.
+    $s.='</ol><aside class="fv-r281__reconciliation" aria-label="NASA source date reconciliation" data-fv-date-review="editorial-review-pending"><h3>Why NASA sources give different establishment dates</h3>';
+    $s.='<p><strong>Unresolved source distinction:</strong> The Apollo 204 Review Board narrative dates its original oral authorization to January 27, 1967. A later NASA safety summary describes the Board as established on January 28. Both place its first Kennedy meeting on January 28. We preserve that distinction instead of calling two institutional descriptions independent corroboration.</p>';
+    $s.='<ul class="fv-r281__reconciliation-list">';
+    foreach ($date_reconciliation as $source) {
+        $s.='<li><strong>'.fv_r281_escape($source['authority']).'</strong><p>'.fv_r281_escape($source['statement']).'</p>';
+        $s.='<p class="fv-r281__reconciliation-boundary">Source boundary: '.fv_r281_escape($source['boundary']).'</p>';
+        $s.='<p><a href="'.fv_r281_escape($source['url']).'" rel="noopener noreferrer">Read source at NASA</a></p></li>';
+    }
+    $s.='</ul><p>Original investigation and later NASA summaries are different records. Editorial reconciliation remains pending.</p></aside>';
+    $s.='<aside class="fv-r281__gallery" aria-label="Source gallery"><h3>Inspect the document sources</h3><p>This is a text-only catalogue of three NASA records, not a photographic gallery or three independent eyewitness accounts. Review remains pending.</p><ul class="fv-r281__source-list">';
     foreach ($records as $index=>$r) {
         // Every catalogue record has a stable target within this component instance.
         $source_point=$id.'-source-'.($index+1);
