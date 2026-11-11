@@ -8,7 +8,8 @@ const files={
  claims:"PRODUCT-CLAIM-SOURCE-COMMERCIAL-GATES.json",
  a:"ZEN12-INATTENTIONAL-DEAFNESS-BUYER-A-TEXT-UNPUBLISHED.html",
  b:"ZEN12-INATTENTIONAL-DEAFNESS-BUYER-B-OPTIONAL-VIDEO-CONCEPT-UNPUBLISHED.html",
- plan:"OFFER-TO-VERIFIED-REVENUE-AB-RELEASE-ACCEPTANCE.md"
+ plan:"OFFER-TO-VERIFIED-REVENUE-AB-RELEASE-ACCEPTANCE.md",
+ hub:"MIND-AUDITORY-ATTENTION-HUB-CUSTOM-HTML-UNPUBLISHED.html"
 };
 const requiredGates=[
 "named_FV_partner_acceptance","current_signed_affiliate_terms","permitted_website_channel","permitted_organic_social_channel",
@@ -76,6 +77,11 @@ function check(data){
     data.article.includes("Raveh") && data.article.includes("Scheer") &&
     data.article.includes("https://pubmed.ncbi.nlm.nih.gov/25287617/") &&
     /no affiliate checkout link/i.test(data.article),"article sources/evidence",fail);
+  assert(data.hub.includes("The Mind & Perception Archive") && data.hub.includes("The Alarm You Did Not Hear") &&
+    data.hub.includes("No public article route exists") && data.hub.includes("https://finalvestige.com/focus/") &&
+    data.hub.includes("https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"),"canonical hub and live links",fail);
+  assert(!/<(?:form|script|iframe|video|audio|source|input)\b/i.test(data.hub) && !sellerHost.test(data.hub),"hub no tracker/forms/merchant",fail);
+  assert(/<button[^>]*\bdisabled\b/.test(data.hub) && data.hub.includes("If you purchase through a future approved link, Final Vestige may earn a commission at no additional cost to you"),"hub disabled + disclosure",fail);
   assert(data.plan.includes("NOT COMPUTABLE") && data.plan.includes("HARD_HOLD") &&
     data.plan.includes("qualified_human_session") && data.plan.includes("settled_commission") &&
     data.plan.includes("paid commission")&&data.plan.includes("no playable video") && data.plan.includes("**Release judgment: HARD HOLD.**"),"conversion/release plan",fail);
@@ -93,6 +99,9 @@ function mutationTests(data){
   alter("remove-disabled-B","b",'type="button" disabled','type="button"');
   alter("disclosure-A","a","may earn a commission","may receive nothing");
   alter("disclosure-B","b","may earn a commission","may receive nothing");
+  alter("hub-remove-disabled","hub",'type="button" disabled','type="button"');
+  alter("hub-inject-merchant","hub","</footer>","<a href=\"https://zen12.com/hnp\">buy</a></footer>");
+  alter("hub-remove-disclosure","hub","may earn a commission","will not earn money");
   alter("form-A","a","</body>","<form><input type=email></form></body>");
   alter("form-B","b","</body>","<form><input type=email></form></body>");
   alter("script-A","a","</body>","<script src=\"https://track.example/x.js\"></script></body>");
