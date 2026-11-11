@@ -1,0 +1,674 @@
+{
+  "version": "mind-r291-2026-11-11",
+  "research_date": "2026-11-11",
+  "scope": "Thatcher illusion originality + inherited R290 commercial contract; no CMS or affiliate activation",
+  "publication": "UNPUBLISHED",
+  "commercial": "HARD_HOLD",
+  "parent_sha": "ad7cac6cc0ff821a2b8b2ee47db2ab774d428f08",
+  "canonical_presell": [
+    "mind/r284/ZEN12-BUYER-GUIDE-A-TEXT-ONLY-UNPUBLISHED.html",
+    "mind/r284/ZEN12-BUYER-GUIDE-B-FILM-STORYBOARD-UNPUBLISHED.html"
+  ],
+  "product_priority": "ZEN12_AFTER_APPROVAL_ONLY",
+  "fallback_paid_fv_sku": "NOT_AUTHENTICATED",
+  "merchant_specific_affiliate_approval": "NOT_AUTHENTICATED",
+  "published_landing": "NONE",
+  "media_status": "B_IS_STATIC_STORYBOARD_NOT_PLAYABLE",
+  "commercial_revenue_status": "NO_VERIFIED_REPORTING",
+  "sources": [
+    {
+      "id": "simons1999",
+      "url": "https://doi.org/10.1068/p281059",
+      "type": "primary research",
+      "scope": "1999 unexpected-object detection depends on monitoring task and unexpected-object features"
+    },
+    {
+      "id": "simons2010",
+      "url": "https://doi.org/10.1068/i0386",
+      "type": "primary research",
+      "scope": "familiarity with gorilla can fail to improve other unexpected-event detection"
+    },
+    {
+      "id": "drew2013",
+      "url": "https://doi.org/10.1177/0956797613479386",
+      "type": "primary research",
+      "scope": "24 expert radiologists, 83 percent failed to report inserted gorilla"
+    },
+    {
+      "id": "wallisch2023",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37216543/",
+      "type": "primary research",
+      "scope": "three experiments totaling 4,493; higher unexpected-object speed increases notice"
+    },
+    {
+      "id": "fvChange",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "type": "existing live investigation",
+      "scope": "published change blindness distinction and original flicker demo"
+    },
+    {
+      "id": "fvPuysegur",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "type": "existing live archive",
+      "scope": "historical suggestion and witness record; not magnetic cure proof"
+    },
+    {
+      "id": "fvFocus",
+      "url": "https://finalvestige.com/focus/",
+      "type": "existing free funnel",
+      "scope": "52-page Fieldbook plus Jetpack/Dispatch consent"
+    },
+    {
+      "id": "fvLibrary",
+      "url": "https://finalvestige.com/free-resources/",
+      "type": "existing library",
+      "scope": "published free resource and historical archive navigation"
+    },
+    {
+      "id": "zen12order",
+      "url": "https://zen12.com/getstarted",
+      "type": "merchant's own offer page",
+      "scope": "12 levels, 48 MP3 files, visible dynamic checkout; not publisher acceptance"
+    },
+    {
+      "id": "zen12welcome",
+      "url": "https://zen12.com/welcome",
+      "type": "merchant lead form",
+      "scope": "seller's newsletter signup separate from FV consent"
+    },
+    {
+      "id": "inspire3",
+      "url": "https://inspire3.com/",
+      "type": "seller portfolio",
+      "scope": "catalog descriptions and commercial assertions; no independent efficacy"
+    },
+    {
+      "id": "inspireAffiliate",
+      "url": "https://affiliates.inspire3.com/",
+      "type": "public affiliate recruitment",
+      "scope": "marketing portal not account-specific approved publisher contract"
+    },
+    {
+      "id": "hypnosisfocus",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "type": "merchant exact product page",
+      "scope": "seller's Total Focus 33 min 47MB, visible promotional price dynamic, benefits unproven"
+    },
+    {
+      "id": "brainwavefocus",
+      "url": "https://brainwaveshots.com/",
+      "type": "merchant catalog",
+      "scope": "seller Focus Shot category; exact Focus Shot product and FAQ recheck release"
+    },
+    {
+      "id": "ftcEndorse",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "type": "regulatory guidance",
+      "scope": "honest endorsements, clear and conspicuous material-connection disclosure"
+    },
+    {
+      "id": "ftcHealth",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "type": "regulatory guidance",
+      "scope": "competent and reliable product-specific support for objective health benefits"
+    },
+    {
+      "id": "fvDisclosure",
+      "url": "https://finalvestige.com/affiliate-disclosure/",
+      "type": "FV compliance policy",
+      "scope": "site-wide disclosures alone not a substitute for near-link disclosure"
+    },
+    {
+      "id": "fvEditorial",
+      "url": "https://finalvestige.com/editorial-standards/",
+      "type": "FV editorial policy",
+      "scope": "source and correction criteria"
+    },
+    {
+      "id": "thompson1980",
+      "url": "https://doi.org/10.1068/p090483",
+      "type": "primary research",
+      "scope": "Thompson 1980 original Thatcher illusion, *Perception* 9 483–484"
+    },
+    {
+      "id": "bartlett1993",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/8354050/",
+      "type": "primary research",
+      "scope": "Three studies show inversion affected altered feature configurations differently than grotesque expressions"
+    },
+    {
+      "id": "rakover1999",
+      "url": "https://doi.org/10.1068/p2774",
+      "type": "primary research",
+      "scope": "Alternative accounts and boundaries of inversion effects"
+    },
+    {
+      "id": "psalta2014",
+      "url": "https://doi.org/10.1068/p7755",
+      "type": "primary research",
+      "scope": "Expression recognition changes with Thatcherized feature orientation, not simple global inhibition"
+    },
+    {
+      "id": "psaltaNeural",
+      "url": "https://doi.org/10.1177/0956797613501521",
+      "type": "primary research",
+      "scope": "fMRI adaptation responses differ for upright vs inverted Thatcherized facial configuration"
+    },
+    {
+      "id": "fvJournalLive",
+      "url": "https://finalvestige.com/blog/",
+      "type": "published site",
+      "scope": "Journal search rendered 66 results 11 Nov 2026; differs from Oct 30 issue inventory 61 posts (different counts and times must not conflate)"
+    },
+    {
+      "id": "brainwaveFaqExact",
+      "url": "https://brainwaveshots.com/faq",
+      "type": "merchant FAQ",
+      "scope": "One refund per six months; more than ten items require fewer than half downloaded; seller precautions"
+    },
+    {
+      "id": "hypnosisFaqExact",
+      "url": "https://hypnosislive.com/faq",
+      "type": "merchant FAQ",
+      "scope": "14-day request and at most five refunded sessions per year; seller claims not payout proof"
+    }
+  ],
+  "claims": [
+    {
+      "id": "G001",
+      "statement": "The 1999 experimental paradigm was a selective visual monitoring task with unexpected events",
+      "source_id": "simons1999",
+      "decision": "SUPPORTED_CONTEXTUAL"
+    },
+    {
+      "id": "G002",
+      "statement": "Inattentional blindness is not identical to change blindness",
+      "source_id": "fvChange",
+      "decision": "SUPPORTED_DISTINCTION"
+    },
+    {
+      "id": "G003",
+      "statement": "Knowing gorilla videos did not improve broad detection of unrelated events in the 2010 study",
+      "source_id": "simons2010",
+      "decision": "SUPPORTED_EXPERIMENT_BOUND"
+    },
+    {
+      "id": "G004",
+      "statement": "A 2013 study involved 24 radiologists",
+      "source_id": "drew2013",
+      "decision": "SUPPORTED_SMALL_SAMPLE"
+    },
+    {
+      "id": "G005",
+      "statement": "83% of expert participants missed the inserted gorilla in the studied radiology task",
+      "source_id": "drew2013",
+      "decision": "SUPPORTED_TASK_BOUND"
+    },
+    {
+      "id": "G006",
+      "statement": "Radiologist oversight in actual patient care is 83%",
+      "source_id": "drew2013",
+      "decision": "PROHIBITED_EXTRAPOLATION"
+    },
+    {
+      "id": "G007",
+      "statement": "Three 2023 experiments included a total of 4,493 participants",
+      "source_id": "wallisch2023",
+      "decision": "SUPPORTED"
+    },
+    {
+      "id": "G008",
+      "statement": "Fast unexpected object movement increased detection compared with slow movement",
+      "source_id": "wallisch2023",
+      "decision": "SUPPORTED_EXPERIMENT_BOUND"
+    },
+    {
+      "id": "G009",
+      "statement": "A fast unexpected object is always detected in any real-world scene",
+      "source_id": "wallisch2023",
+      "decision": "PROHIBITED_EXTRAPOLATION"
+    },
+    {
+      "id": "G010",
+      "statement": "The Puységur files present historical records rather than validation of cure claims",
+      "source_id": "fvPuysegur",
+      "decision": "SUPPORTED_CONTEXTUAL"
+    },
+    {
+      "id": "G011",
+      "statement": "Zen12's public sales page lists twelve course levels and forty-eight MP3 recordings",
+      "source_id": "zen12order",
+      "decision": "SELLER_FORMAT"
+    },
+    {
+      "id": "G012",
+      "statement": "Twelve minutes of Zen12 is scientifically proven equivalent to an hour of advanced meditation",
+      "source_id": "zen12order",
+      "decision": "UNSUBSTANTIATED_SELLER_CLAIM_NO_REPETITION"
+    },
+    {
+      "id": "G013",
+      "statement": "Zen12 free audio enrollment includes the merchant's newsletter",
+      "source_id": "zen12welcome",
+      "decision": "SELLER_CONSENT"
+    },
+    {
+      "id": "G014",
+      "statement": "Zen12 newsletter consent is interchangeable with FV's Dispatch email permission",
+      "source_id": "zen12welcome",
+      "decision": "PROHIBITED_FALSE_CONSENT"
+    },
+    {
+      "id": "G015",
+      "statement": "FV Focus is an existing 52-page free resource with its own Dispatch signup",
+      "source_id": "fvFocus",
+      "decision": "VERIFIED_LIVE_DESCRIPTION"
+    },
+    {
+      "id": "G016",
+      "statement": "The Inspire3 portfolio establishes product ownership, not FV-specific affiliate authorization",
+      "source_id": "inspire3",
+      "decision": "SUPPORTED_BOUNDARY"
+    },
+    {
+      "id": "G017",
+      "statement": "A public affiliate signup means Final Vestige has been accepted and may promote earning links",
+      "source_id": "inspireAffiliate",
+      "decision": "PROHIBITED_FALSE_APPROVAL"
+    },
+    {
+      "id": "G018",
+      "statement": "Hypnosis Live lists Total Focus as a 33-minute, 47MB recording",
+      "source_id": "hypnosisfocus",
+      "decision": "SELLER_FORMAT"
+    },
+    {
+      "id": "G019",
+      "statement": "Total Focus promises concentration benefits on its sales page",
+      "source_id": "hypnosisfocus",
+      "decision": "SELLER_ASSERTION_NOT_INDEPENDENT_PROOF"
+    },
+    {
+      "id": "G020",
+      "statement": "Brainwave Shots offers audio products including Focus Shot",
+      "source_id": "brainwavefocus",
+      "decision": "SELLER_FORMAT"
+    },
+    {
+      "id": "G021",
+      "statement": "Commercial audio is proven to reduce inattentional blindness by the gorilla studies",
+      "source_id": "wallisch2023",
+      "decision": "PROHIBITED_PRODUCT_EXTRAPOLATION"
+    },
+    {
+      "id": "G022",
+      "statement": "An affiliate financial relationship must be disclosed clearly near a recommendation",
+      "source_id": "ftcEndorse",
+      "decision": "COMPLIANCE_REQUIREMENT"
+    },
+    {
+      "id": "G023",
+      "statement": "Product-specific efficacy/health claims require adequate scientific support",
+      "source_id": "ftcHealth",
+      "decision": "COMPLIANCE_REQUIREMENT"
+    },
+    {
+      "id": "G024",
+      "statement": "A generic affiliate disclosure page substitutes for clear near-link disclosure",
+      "source_id": "fvDisclosure",
+      "decision": "PROHIBITED_INSUFFICIENT_DISCLOSURE"
+    },
+    {
+      "id": "G025",
+      "statement": "Public checkout prices/timers are guaranteed FV permitted affiliate prices",
+      "source_id": "zen12order",
+      "decision": "PROHIBITED_UNVERIFIED_TRANSACTION"
+    },
+    {
+      "id": "G026",
+      "statement": "Outward clicks prove paid merchant commissions",
+      "source_id": "ftcEndorse",
+      "decision": "PROHIBITED_FALSE_REVENUE"
+    },
+    {
+      "id": "G027",
+      "statement": "A static timed storyboard is a verified playable video",
+      "source_id": "fvEditorial",
+      "decision": "PROHIBITED_FALSE_MEDIA"
+    },
+    {
+      "id": "G028",
+      "statement": "The existing FV guide may be used without merchant enrollment",
+      "source_id": "fvFocus",
+      "decision": "SUPPORTED_FREE_ALTERNATIVE"
+    },
+    {
+      "id": "T001",
+      "statement": "Thompson published the Margaret Thatcher illusion in 1980; it involved changing local eye and mouth orientation",
+      "source_id": "thompson1980",
+      "decision": "SUPPORTED_HISTORICAL"
+    },
+    {
+      "id": "T002",
+      "statement": "The original study is an illusion report, not a hypnosis, medical, or consumer-product trial",
+      "source_id": "thompson1980",
+      "decision": "SUPPORTED_LIMIT"
+    },
+    {
+      "id": "T003",
+      "statement": "Bartlett and Searcy compared Thatcherized, displaced-feature, and grotesque-expression faces in three experiments",
+      "source_id": "bartlett1993",
+      "decision": "SUPPORTED_CONTEXTUAL"
+    },
+    {
+      "id": "T004",
+      "statement": "Inversion changed grotesqueness judgments for some facial distortions, not all forms of unusual expression",
+      "source_id": "bartlett1993",
+      "decision": "SUPPORTED_CONTEXTUAL"
+    },
+    {
+      "id": "T005",
+      "statement": "Face inversion does not mean all facial feature processing stops",
+      "source_id": "rakover1999",
+      "decision": "SUPPORTED_LIMIT"
+    },
+    {
+      "id": "T006",
+      "statement": "Expression recognition and Thatcherized grotesqueness may show different orientation sensitivity",
+      "source_id": "psalta2014",
+      "decision": "SUPPORTED_CONTEXTUAL"
+    },
+    {
+      "id": "T007",
+      "statement": "A neural fMRI-adaptation finding is not an independently validated therapeutic intervention",
+      "source_id": "psaltaNeural",
+      "decision": "SUPPORTED_LIMIT"
+    },
+    {
+      "id": "T008",
+      "statement": "A Thatcher-style altered portrait demonstrates Zen12 efficacy",
+      "source_id": "thompson1980",
+      "decision": "REJECTED_FALSE_INFERENCE"
+    },
+    {
+      "id": "T009",
+      "statement": "A Thatcher-style altered portrait demonstrates Total Focus efficacy",
+      "source_id": "bartlett1993",
+      "decision": "REJECTED_FALSE_INFERENCE"
+    },
+    {
+      "id": "T010",
+      "statement": "Official public affiliate portal describes signup, but does not prove publisher acceptance or approved earning links for Final Vestige",
+      "source_id": "inspireAffiliate",
+      "decision": "SUPPORTED_BOUNDARY"
+    },
+    {
+      "id": "T011",
+      "statement": "A publicly shown checkout total is an authenticated permitted FV affiliate offer price",
+      "source_id": "zen12order",
+      "decision": "REJECTED_UNAUTHORIZED_PRICE"
+    },
+    {
+      "id": "T012",
+      "statement": "The live Journal search showed 66 results on 11 Nov 2026, while the dated #171 baseline cited 61 posts; these are not necessarily the same inventory measure",
+      "source_id": "fvJournalLive",
+      "decision": "SUPPORTED_OBSERVATION_WITH_SCOPE"
+    },
+    {
+      "id": "T013",
+      "statement": "Brainwave Shots FAQ limits refunds to one in six months and imposes a less-than-half-downloaded condition for orders over ten items",
+      "source_id": "brainwaveFaqExact",
+      "decision": "SUPPORTED_SELLER_POLICY"
+    },
+    {
+      "id": "T014",
+      "statement": "Hypnosis Live's FAQ limits refund requests to fourteen days and refunded sessions to five per year",
+      "source_id": "hypnosisFaqExact",
+      "decision": "SUPPORTED_SELLER_POLICY"
+    },
+    {
+      "id": "T015",
+      "statement": "Actual approved refund fulfillment for an FV-referred order is verified from FAQ text alone",
+      "source_id": "hypnosisFaqExact",
+      "decision": "REJECTED_NOT_SETTLEMENT_PROOF"
+    },
+    {
+      "id": "T016",
+      "statement": "Original Thatcher celebrity photography is public domain simply because a citation to the research exists",
+      "source_id": "thompson1980",
+      "decision": "REJECTED_RIGHTS_ASSUMPTION"
+    },
+    {
+      "id": "T017",
+      "statement": "The word ‘affiliate link’ alone sufficiently discloses compensation",
+      "source_id": "ftcEndorse",
+      "decision": "REJECTED_FTC_DISCLOSURE"
+    },
+    {
+      "id": "T018",
+      "statement": "Site-wide general efficacy studies establish the exact Zen12 twelve-minute equivalence promise",
+      "source_id": "zen12order",
+      "decision": "REJECTED_PRODUCT_SPECIFIC_SUPPORT_ABSENT"
+    }
+  ],
+  "products": [
+    {
+      "name": "Zen12 Premium",
+      "status": "SELLER_FORMAT_VERIFIED",
+      "offer": "twelve-level recorded meditation audio course with 48 MP3s",
+      "issuer": "inspire3",
+      "source": "zen12order",
+      "price": "DYNAMIC_SELLER_DISPLAY_NOT_APPROVED_FV_PRICE",
+      "refund": "PUBLIC_SELLER_ONE_YEAR_CLAIM_REQUIRES_TERMS_CHECK",
+      "buyer": "reader preferring structured meditation library"
+    },
+    {
+      "name": "Hypnosis Live — Total Focus",
+      "status": "SELLER_FORMAT_VERIFIED",
+      "offer": "33-minute 47MB hypnosis audio",
+      "source": "hypnosisfocus",
+      "price": "SELLER_DYNAMIC",
+      "claim": "NOT_PRODUCT_INDEPENDENTLY_SUBSTANTIATED"
+    },
+    {
+      "name": "Brainwave Shots — Focus Shot",
+      "status": "SELLER_CATALOG",
+      "source": "brainwavefocus",
+      "claim": "NOT_PRODUCT_INDEPENDENTLY_SUBSTANTIATED"
+    },
+    {
+      "name": "Seven Day Focus Fieldbook",
+      "status": "LIVE_FREE",
+      "source": "fvFocus",
+      "signup": "EXISTING_JETPACK_ONLY"
+    },
+    {
+      "name": "FV paid Mind digital product",
+      "status": "NOT_AUTHENTICATED",
+      "source": null
+    }
+  ],
+  "creator_routes": [
+    {
+      "topic": "thatcher_illusion",
+      "hook": "The face looks wrong right-side up. What changed when you flipped it?",
+      "asset_id": null,
+      "video_url": null,
+      "article": "mind/r291/THE-FACE-THAT-LOOKED-NORMAL-UPSIDE-DOWN-UNPUBLISHED.md",
+      "lead": "https://finalvestige.com/focus/",
+      "offer": "optional one canonical Zen12 guide AFTER approval",
+      "owner": "Praxxis/Grok verifies existing asset only",
+      "go_live": false
+    },
+    {
+      "topic": "invisible_gorilla",
+      "hook": "The famous invisible gorilla has a 2023 exception: moving fast changes the result",
+      "asset_id": null,
+      "video_url": null,
+      "article": "mind/r290/THE-GORILLA-THAT-MOVED-TOO-FAST-TO-MISS-UNPUBLISHED.md",
+      "lead": "https://finalvestige.com/focus/",
+      "offer": "Zen12 only after authenticated affiliate rights",
+      "owner": "Praxxis/Grok",
+      "go_live": false
+    },
+    {
+      "topic": "change_blindness",
+      "hook": "Could you notice a person replaced mid-conversation?",
+      "asset_id": null,
+      "video_url": null,
+      "article": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "lead": "https://finalvestige.com/focus/",
+      "owner": "Praxxis/Grok",
+      "go_live": false
+    }
+  ],
+  "measurement_contract": {
+    "no_new_scripts": true,
+    "confirmed_human_sessions": "only deduplicated qualified-human visits after authenticated internal Grok asset_id and first-party source; unknown otherwise",
+    "signals": [
+      "campaign_landing_visit",
+      "relevant_cta_click",
+      "jetpack_confirmed_subscribe",
+      "affiliate_click",
+      "merchant_confirmed_paid_order",
+      "affiliate_commission_cleared",
+      "refund",
+      "chargeback",
+      "fees"
+    ],
+    "prohibit_pseudo_conversions": true,
+    "revenue_numerator": "FV OWNED PAID ORDER RECEIPTS received + CLEARED FV AFFILIATE COMMISSIONS received - REFUNDS - CHARGEBACKS - PROCESSOR_AND_PLATFORM_FEES; never use affiliate merchant retail sale total as FV gross",
+    "kpi": "1000*realized_net_revenue / qualified_human_sessions, null if either side missing",
+    "cohorts_days": [
+      7,
+      30
+    ],
+    "tiny_n_warning_required": true
+  },
+  "release_gates": {
+    "named_publisher_acceptance": {
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED_AT_2026_11_11"
+    },
+    "authorized_publisher_identity": {
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED_AT_2026_11_11"
+    },
+    "issued_earning_url": {
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED_AT_2026_11_11"
+    },
+    "allowed_promotional_channels": {
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED_AT_2026_11_11"
+    },
+    "allowed_email_promotion": {
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED_AT_2026_11_11"
+    },
+    "approved_creative_rights": {
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED_AT_2026_11_11"
+    },
+    "verified_destination_route": {
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED_AT_2026_11_11"
+    },
+    "exact_checkout_terms": {
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED_AT_2026_11_11"
+    },
+    "verified_offer_price_if_used": {
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED_AT_2026_11_11"
+    },
+    "refund_policy_confirmed": {
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED_AT_2026_11_11"
+    },
+    "actual_refund_fulfillment_not_assumed": {
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED_AT_2026_11_11"
+    },
+    "claim_substantiation_review": {
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED_AT_2026_11_11"
+    },
+    "proximate_disclosure_QA": {
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED_AT_2026_11_11"
+    },
+    "original_video_rights_and_captions": {
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED_AT_2026_11_11"
+    },
+    "browser_accessibility_mobile_QA": {
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED_AT_2026_11_11"
+    },
+    "privacy_measurement_approval": {
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED_AT_2026_11_11"
+    },
+    "founder_commercial_approval": {
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED_AT_2026_11_11"
+    },
+    "founder_production_release_approval": {
+      "status": "HARD_HOLD",
+      "evidence": "NOT_VERIFIED_AT_2026_11_11"
+    }
+  },
+  "editorial_addendum": {
+    "feature": "THE-FACE-THAT-LOOKED-NORMAL-UPSIDE-DOWN-UNPUBLISHED.md",
+    "hub": "MIND-THATCHER-ARCHIVE-UNPUBLISHED.html",
+    "status": "UNPUBLISHED_UNREVIEWED",
+    "image_rights": "ONLY ORIGINAL SVG SCHEMATIC; no third party Thatcher image embedded",
+    "article_permalink": "NOT_CREATED",
+    "historical_correction": "Issue 171 Oct 30 inventory: 61 published posts. Public /blog/ on 2026-11-11 displayed 66 search results. Treat both as dated observations, not identical database checks.",
+    "existing_R290_sample_precision": "Praxxis review requested clarify 2023 study n=4493 as retained/analysed vs recruitment; not silently edited in frozen R290.",
+    "interpretation": "Face illusion shows experimental perceptual orientation, cannot substantiate meditation-product efficacy"
+  },
+  "public_merchants_checked_20261111": {
+    "zen12_checkout_public": {
+      "url": "https://zen12.com/getstarted",
+      "display_seen_usd": "87.99",
+      "status": "DYNAMIC_UNAUTHORIZED_DO_NOT_PROMOTE",
+      "payment_test": "NOT_PERFORMED"
+    },
+    "zen12_refund_public": {
+      "url": "https://zen12.com/",
+      "seller_claim": "1 year",
+      "actual_refund_test": "NOT_PERFORMED"
+    },
+    "total_focus": {
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "format": "33 min 47MB",
+      "observed_display_price_usd": "24.44",
+      "status": "PUBLIC_SELLER_NOT_APPROVED"
+    },
+    "total_focus_refund": {
+      "url": "https://hypnosislive.com/faq",
+      "policy": "14 day request; maximum 5 sessions/year"
+    },
+    "focus_shot": {
+      "url": "https://brainwaveshots.com/focus-shot",
+      "format": "15 and 30 minute MP3",
+      "status": "SELLER_DESCRIPTION_NOT_EFFECTIVENESS"
+    },
+    "focus_shot_refund": {
+      "url": "https://brainwaveshots.com/faq",
+      "policy": "1 refund per 6 months; orders >10 items downloaded less than half to qualify"
+    }
+  },
+  "pilot_design": {
+    "offer": "Zen12 PREMIUM ONLY IF ACCOUNT_AUTHORIZED",
+    "audience": "history/attention reader explicitly searching for guided audio practice",
+    "text_variant": "mind/r284/ZEN12-BUYER-GUIDE-A-TEXT-ONLY-UNPUBLISHED.html",
+    "video_variant": "mind/r284/ZEN12-BUYER-GUIDE-B-FILM-STORYBOARD-UNPUBLISHED.html",
+    "video_status": "ORIGINAL_STATIC_42_SECOND_STORYBOARD_NOT_PLAYABLE",
+    "hypothesis": "Original short explainer may improve verified net revenue per 1000 qualified humans over identical text guide; untested",
+    "commercial_clicks_must_be_disabled": true,
+    "no_traffic_assignment": true
+  }
+}
