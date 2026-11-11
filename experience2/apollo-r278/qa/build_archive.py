@@ -30,7 +30,7 @@ manifest={
  'release':'UNMERGED DRAFT HARD HOLD',
  'file_sha256':{p.relative_to(root).as_posix():hashlib.sha256(p.read_bytes()).hexdigest() for p in files}
 }
-(root/'EVIDENCE-MANIFEST.json').write_text(json.dumps(manifest,sort_keys=True,indent=2)+'\\n')
+(root/'EVIDENCE-MANIFEST.json').write_text(json.dumps(manifest,sort_keys=True,indent=2)+'\n')
 files.append(root/'EVIDENCE-MANIFEST.json')
 files.sort(key=lambda p:p.relative_to(root).as_posix())
 for label in ('A','B'):
