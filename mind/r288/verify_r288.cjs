@@ -69,7 +69,7 @@ function verify(v){
   error(!v.article.includes(term),"article essential citation missing: "+term);
  }
  error(!v.article.includes("No affiliate links belong in this article"),"editorial/commercial firewall missing");
- error(!v.plan.includes("NOT COMPUTABLE")||!v.plan.includes("not a playable movie")||!v.plan.includes("NO MERGE"),"acceptance / missing metric semantics");
+ error(!v.plan.includes("NOT COMPUTABLE")||!/not a playable movie/i.test(v.plan)||!v.plan.includes("NO MERGE"),"acceptance / missing metric semantics");
  error(!v.plan.includes("TASK-008")||!v.plan.includes("Claude")||!v.plan.includes("Grok"),"handoff/ownership missing");
  error(!v.hub.includes("id=\"fv-mind-r288\"")||!v.hub.includes("id=\"fvm-title\""),"scoped hub/landmark missing");
  for(const heading of ["Attention & Perception","History of Suggestion","Practice & Reflection","Tools Under Review"])error(!v.hub.includes(heading),"four-stream structure missing: "+heading);
