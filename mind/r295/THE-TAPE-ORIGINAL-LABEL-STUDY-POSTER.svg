@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" role="img" aria-labelledby="title desc">
+<title id="title">The Tape That Changed Its Name — original editorial poster</title>
+<desc id="desc">Two schematic cassette cards with different labels, MEMORY and SELF-ESTEEM, separated by a thin gold line. Original illustrative graphic, not an experiment photograph.</desc>
+<rect width="960" height="540" fill="#0c0d0d"/>
+<rect x="56" y="52" width="848" height="436" fill="#151615" stroke="#615743" stroke-width="2"/>
+<text x="92" y="103" fill="#e6c889" font-family="Arial, sans-serif" font-weight="bold" letter-spacing="4" font-size="17">FINAL VESTIGE · MIND / PERCEPTION</text>
+<text x="92" y="162" fill="#f1eee5" font-family="Georgia, serif" font-size="49">The tape that changed its name.</text>
+<path d="M480 202V406" stroke="#e6c889" stroke-width="2" stroke-dasharray="6 8"/>
+<rect x="123" y="220" rx="11" width="286" height="162" fill="#242722" stroke="#e6c889" stroke-width="2"/>
+<rect x="551" y="220" rx="11" width="286" height="162" fill="#242722" stroke="#e6c889" stroke-width="2"/>
+<rect x="147" y="243" rx="3" width="238" height="54" fill="#e7d6b4"/>
+<rect x="575" y="243" rx="3" width="238" height="54" fill="#e7d6b4"/>
+<text x="266" y="278" fill="#141715" font-family="Arial, sans-serif" font-size="25" font-weight="bold" text-anchor="middle">MEMORY</text>
+<text x="694" y="278" fill="#141715" font-family="Arial, sans-serif" font-size="25" font-weight="bold" text-anchor="middle">SELF-ESTEEM</text>
+<circle cx="197" cy="343" r="24" stroke="#b7ad92" fill="none" stroke-width="5"/>
+<circle cx="335" cy="343" r="24" stroke="#b7ad92" fill="none" stroke-width="5"/>
+<circle cx="625" cy="343" r="24" stroke="#b7ad92" fill="none" stroke-width="5"/>
+<circle cx="763" cy="343" r="24" stroke="#b7ad92" fill="none" stroke-width="5"/>
+<path d="M222 343h88M650 343h88" stroke="#b7ad92" stroke-width="6"/>
+<text x="480" y="455" text-anchor="middle" font-family="Arial, sans-serif" fill="#d2c9b5" font-size="19">THE LABEL IS NOT THE EVIDENCE.</text>
+</svg>
