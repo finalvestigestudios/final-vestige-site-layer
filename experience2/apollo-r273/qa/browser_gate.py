@@ -8,7 +8,7 @@ ROOT=Path(__file__).resolve().parents[1]
 parser=argparse.ArgumentParser();parser.add_argument('output'); args=parser.parse_args()
 out=Path(args.output);out.mkdir(parents=True,exist_ok=True)
 html=subprocess.check_output(['php', str(ROOT/'qa/render.php'),'pending']).decode('utf8')
-cases=[]; screenshots={}; seen=0
+cases=[]; screenshots={}; seen=0; stress=[]
 with sync_playwright() as pw:
  browser=pw.chromium.launch(headless=True, executable_path='/usr/bin/chromium',args=['--no-sandbox'])
  for width in [320,390,768,1440,1920]:
@@ -47,10 +47,22 @@ with sync_playwright() as pw:
     screenshots[f'{width}-'+('js' if js else 'nojs')+'.png']=sha256((out/(f'{width}-'+('js' if js else 'nojs')+'.png')).read_bytes()).hexdigest()
    cases.append({'width':width,'js':js,'result':'PASS'})
    context.close()
+ # Additional root-text stress under forced-colors. Not actual browser UI zoom.
+ for width in [320,390,768,1440,1920]:
+  for font_scale in [2,4]:
+   context=browser.new_context(viewport={'width':width,'height':800},forced_colors='active',reduced_motion='reduce',has_touch=True)
+   page=context.new_page();page.set_content(html,wait_until='load')
+   page.evaluate(f'document.documentElement.style.fontSize="{16*font_scale}px"')
+   assert page.evaluate('document.documentElement.scrollWidth <= innerWidth+1'),(width,font_scale,'overflow')
+   page.locator('summary').tap()
+   assert page.locator('details[open]').count()==1
+   assert page.locator('.fv-r273__records a').count()==2
+   stress.append({'width':width,'root_text_scale':font_scale,'forced_colors':True,'touch':'PASS'})
+   context.close()
  # Negative mutation: removing review notice must fail its mandatory gate.
  assert 'Editorial review remains open' in html
  assert 'Editorial review remains open' not in html.replace('Editorial review remains open','Editorial review COMPLETE')
  browser.close()
-receipt={'suite':'R273','browser_cases':cases,'count':seen,'screenshots_sha256':screenshots,'independent_axe':'NOT_EXECUTED','wordpress':'NOT_INSTALLED','live_http':'NOT_TESTED','editorial_approval':'NOT_RECEIVED'}
+receipt={'suite':'R273','browser_cases':cases,'count':seen,'text_stress':stress,'screenshots_sha256':screenshots,'independent_axe':'NOT_EXECUTED','wordpress':'NOT_INSTALLED','live_http':'NOT_TESTED','editorial_approval':'NOT_RECEIVED'}
 (out/'receipt.json').write_text(json.dumps(receipt,indent=2,sort_keys=True)+'\n')
-print(f'R273 {seen}/{seen} Chromium contexts PASS; receipt SHA256 {sha256((out/"receipt.json").read_bytes()).hexdigest()}')
+print(f'R273 {seen}/{seen} Chromium contexts + {len(stress)}/{len(stress)} forced-colors/touch text-stress PASS;  receipt SHA256 {sha256((out/"receipt.json").read_bytes()).hexdigest()}')
