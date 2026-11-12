@@ -1,0 +1,57 @@
+{
+  "sprint": "R304",
+  "checked_on": "2026-11-11",
+  "verification_method": "NASA text-page retrieval and passage inspection; NOT image/media licensing, site availability SLA, or editorial publication approval",
+  "component_state": "staging / editorial-review-pending / not live",
+  "primary_claims": [
+    {
+      "fv_key": "nasa_mission",
+      "url": "https://www.nasa.gov/mission/apollo-1/",
+      "record_type": "later institutional mission summary",
+      "supports": "accident date and crew",
+      "source_dependency": "NASA retrospective; not independent witness"
+    },
+    {
+      "fv_key": "nasa_proceedings",
+      "url": "https://www.nasa.gov/history/Apollo204/proceed.html",
+      "record_type": "1967 Review Board proceedings",
+      "supports": "January 28 Kennedy meeting and LC-34 visit; January 31 receipt of dated memorandum",
+      "source_dependency": "same Board institutional investigation"
+    },
+    {
+      "fv_key": "nasa_board",
+      "url": "https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/",
+      "record_type": "1967 investigative primary report",
+      "supports": "probable electrical arc without conclusive exact ignition location",
+      "source_dependency": "Board finding; not independent confirmation of exact arc location"
+    }
+  ],
+  "related_documents": [
+    {
+      "url": "https://www.nasa.gov/history/Apollo204/narr.html",
+      "character": "original Board narrative",
+      "boundary": "January 27 oral authorization; February 3 written confirmation; January 28 convening"
+    },
+    {
+      "url": "https://sma.nasa.gov/sma-disciplines/accllp/apollo-1",
+      "character": "later NASA safety summary",
+      "boundary": "January 28 establishment date differs from original Board narrative"
+    },
+    {
+      "url": "https://www.nasa.gov/history/Apollo204/15.html",
+      "character": "archive memorandum transcript",
+      "boundary": "archive heading says January 27; transcribed body does not separately display execution date"
+    }
+  ],
+  "rights": {
+    "text_links": "NASA permits factual linking without conveying agency endorsement",
+    "images": "No NASA images or archival photographs embedded in R304; links do not establish commercial image rights",
+    "identifiers": "No NASA insignia, logotype or seal used as branding",
+    "individuals": "Commercial exploitation of identifiable astronaut likenesses may require separate clearance",
+    "guidance": [
+      "https://www.nasa.gov/nasa-brand-center/",
+      "https://www.nasa.gov/nasa-brand-center/advertising-guidelines/"
+    ]
+  },
+  "conversion_boundary": "Only the existing free editorial continuation is linked; no verified buyable Apollo SKU, affiliate acceptance, paid sale or lead is asserted"
+}
