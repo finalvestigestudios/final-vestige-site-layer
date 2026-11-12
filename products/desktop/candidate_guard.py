@@ -43,10 +43,13 @@ def _same_path_descriptor_signature(path_info: os.stat_result,
 
 
 def _ordinary(path: Path, maximum: int) -> os.stat_result:
+    lookup_failed = False
     try:
         info = path.lstat()
     except OSError:
-        raise CandidateGuardError("Missing or inaccessible candidate payload") from None
+        lookup_failed = True
+    if lookup_failed:
+        raise CandidateGuardError("Missing or inaccessible candidate payload")
     if not stat.S_ISREG(info.st_mode) or info.st_nlink > 1:
         raise CandidateGuardError("Candidate payload must be a distinct ordinary file")
     if info.st_size > maximum:
@@ -73,10 +76,9 @@ def _private_candidate_stream(stream):
         with stream:
             entered = True
             yield stream
-    except CandidateGuardError:
-        raise
-    except Exception:
-        raise CandidateGuardError("Unable to read candidate payload safely") from None
+    # Unexpected stream faults are handled by _inspect *after* the
+    # stream context has unwound, so the redacted public exception cannot
+    # retain a private error via __context__ / __cause__.
     finally:
         if not entered:
             try:
@@ -96,13 +98,17 @@ def _inspect(path: str | Path, maximum: int, *, return_bytes: bool):
     before = _ordinary(path, maximum)
     flags = (os.O_RDONLY | getattr(os, "O_BINARY", 0)
              | getattr(os, "O_NOFOLLOW", 0) | getattr(os, "O_NONBLOCK", 0))
+    open_failed = False
     try:
         descriptor = os.open(path, flags)
     except OSError:
-        raise CandidateGuardError("Unable to open candidate payload safely") from None
+        open_failed = True
+    if open_failed:
+        raise CandidateGuardError("Unable to open candidate payload safely")
     # A raw descriptor belongs to this function until fdopen has succeeded.
     # If fdopen fails (including BaseException interruptions), no stream exists
     # to close it. Never leave an untracked handle to a private candidate.
+    fdopen_failed = False
     try:
         stream = os.fdopen(descriptor, "rb")
     except BaseException as exc:
@@ -111,9 +117,12 @@ def _inspect(path: str | Path, maximum: int, *, return_bytes: bool):
         except OSError:
             pass
         if isinstance(exc, Exception):
-            # Suppress OS paths, client-provided messages, and exception chains.
-            raise CandidateGuardError("Unable to read candidate payload safely") from None
-        raise
+            fdopen_failed = True
+        else:
+            raise
+    if fdopen_failed:
+        raise CandidateGuardError("Unable to read candidate payload safely")
+    stream_failed = False
     try:
         with _private_candidate_stream(stream):
             opened = os.fstat(stream.fileno())
@@ -133,8 +142,12 @@ def _inspect(path: str | Path, maximum: int, *, return_bytes: bool):
             finished = os.fstat(stream.fileno())
             if total != opened.st_size or _signature(finished) != _signature(opened):
                 raise CandidateGuardError("Candidate changed during reading")
-    except OSError:
-        raise CandidateGuardError("Unable to read candidate payload safely") from None
+    except CandidateGuardError:
+        raise
+    except Exception:
+        stream_failed = True
+    if stream_failed:
+        raise CandidateGuardError("Unable to read candidate payload safely")
     after_path = _ordinary(path, maximum)
     if (_signature(after_path) != _signature(before)
             or not _same_path_descriptor_signature(after_path, opened)):
@@ -162,13 +175,16 @@ def check_candidate_directory(folder: str | Path, expected_exes) -> None:
     belong OUTSIDE this seven-file staging directory; no cleanup is attempted.
     """
     root = Path(folder)
+    directory_failed = False
     try:
         info = root.lstat()
         if not stat.S_ISDIR(info.st_mode):
             raise CandidateGuardError("Candidate root must be a real directory")
         members = list(root.iterdir())
     except OSError:
-        raise CandidateGuardError("Cannot inspect candidate directory") from None
+        directory_failed = True
+    if directory_failed:
+        raise CandidateGuardError("Cannot inspect candidate directory")
     allowed = set(expected_exes) | {"SHA256SUMS.txt"}
     if len(members) != len(allowed) or {m.name for m in members} != allowed:
         raise CandidateGuardError("Candidate directory has missing or unapproved payloads")
