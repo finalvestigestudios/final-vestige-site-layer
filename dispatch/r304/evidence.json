@@ -1,0 +1,36 @@
+{
+  "as_of_utc": "2026-11-12T12:30:52Z",
+  "master_pr_175": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "stacked_base_pr_2186": "96b3303fa3112db324be5f2754ad313eae6233a1",
+  "related_issues": [
+    174,
+    171,
+    129,
+    820
+  ],
+  "newsletter": {
+    "enabled": true,
+    "new_post_default": false,
+    "email_format": "full",
+    "welcome": "CONFIGURED_RECEIPT_UNVERIFIED",
+    "total": 3,
+    "confirmed": 3,
+    "not_confirmed": 2
+  },
+  "followers": {
+    "wpcom": 3,
+    "email": 0
+  },
+  "pending_excluded_from_total_documented": true,
+  "actual_email_eligible": null,
+  "actual_confirmed_signup_events": null,
+  "native_jetpack_preview": false,
+  "publisher_postal_in_received_message": false,
+  "functioning_unsubscribe_verified": false,
+  "approved_email_promotion_rights": false,
+  "approved_earning_link": false,
+  "live_approved_merchant_guide": false,
+  "verified_paid_orders": null,
+  "realized_net_revenue_per_1000_qualified_sessions": null,
+  "release": "ALL_6_HOLD_UNSENT_03_AND_05_HOLD_MERCHANT"
+}
