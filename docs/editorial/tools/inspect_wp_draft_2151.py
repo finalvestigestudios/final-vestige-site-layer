@@ -32,7 +32,7 @@ MEDIA = {
     "2202": {"stem": "emile-riche-1927-flood-claim-lou-block-1939-loc", "credits": ("Library of Congress", "LOC")},
     "2149": {"stem": "mississippi-flood-1927-apr29-national-photo-company", "credits": ("Library of Congress", "LOC", "National Photo Company")},
 }
-EXPECTED_SOURCES = 42  # Nov 11 20:42 Pacific: AP/Brownsville Herald added as bibliography item 42.
+EXPECTED_SOURCES = 43  # Nov 12 12:44 Pacific: 1955 Dantoni court opinion added as source 43.
 EXPECTED_EVIDENCE_ROWS = 10
 # Content sentinels anchored in the latest authenticated Gutenberg readback.
 # These improve confidence that the preview is the current editorial revision,
@@ -57,6 +57,14 @@ CORPS_PROVENANCE_MARKERS = (
     "The same caption also claims the cut saved the city",
     "single institutional retrospective",
     "not an original 1927 decision record",
+)
+# Nov 12 12:44: ensure the 1955 court-tax aftermath appears in one paragraph.
+DANTONI_AFTERLIFE_MARKERS = (
+    "Dantoni v. Board of Levee Commissioners",
+    "March 21, 1955",
+    "5½-mill property tax",
+    "Half a mill was designated",
+    "not establish whether the proposed tax was collected",
 )
 
 def local_asset_source(url):
@@ -149,6 +157,10 @@ def inspect(page, width, out):
         all(marker in p for marker in CORPS_PROVENANCE_MARKERS)
         for p in precision_paragraphs
     )
+    dantoni_afterlife_ok = any(
+        all(marker in p for marker in DANTONI_AFTERLIFE_MARKERS)
+        for p in precision_paragraphs
+    )
     sources = article.locator("h2#sources").first
     source_list = sources.locator("xpath=following-sibling::ul[1]")
     source_count = source_list.locator(":scope > li").count() if source_list.count() else 0
@@ -204,10 +216,11 @@ def inspect(page, width, out):
         "no_page_wide_horizontal_overflow": overflow <= 2,
         "all_four_local_archival_photos_loaded_credited_and_alt": photo_ok,
         "evidence_table_10_rows_including_header": bool(table_stats and table_stats["rows"] == EXPECTED_EVIDENCE_ROWS),
-        "source_bibliography_42_entries": source_count == EXPECTED_SOURCES,
+        "source_bibliography_43_entries": source_count == EXPECTED_SOURCES,
         "expected_editorial_revision_markers_present": all(revision_sentinels.values()),
         "usgs_2026_11_12_precision_correction_present_in_one_paragraph": precision_correction_ok,
         "corps_2026_11_12_provenance_correction_present_in_one_paragraph": corps_provenance_ok,
+        "dantoni_1955_reparation_tax_scope_present_in_one_paragraph": dantoni_afterlife_ok,
         "original_compensation_figure_present": chart_count == 1,
         "timeline_has_five_chronology_cards_and_four_source_links": bool(
             timeline_stats and timeline_stats["count"] == 5
