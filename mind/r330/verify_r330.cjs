@@ -90,7 +90,7 @@ function run() {
  ['enabled purchase',s=>s.replace('type="button" disabled aria-disabled="true"','type="button"'),commerce],
  ['missing fieldbook',s=>s.replaceAll('https://finalvestige.com/focus/','/not-found/'),commerce],
  ['noindex removed',s=>s.replace('noindex,nofollow','index,follow'),noForbiddenMarkup],
- ['wrong A/B copy',s=>s.replace('free twelve-minute starter','paid twelve-minute starter'),x=>substantivelySame(a,x)]
+ ['wrong A/B copy',s=>s.replace('What Zen12 actually sells','What Zen12 secretly sells'),x=>substantivelySame(a,x)]
  ];
  for (const [name,mutate,check] of mutants) {
    const altered=mutate(b); assert.notEqual(altered,b,'mutation ineffective: '+name);
