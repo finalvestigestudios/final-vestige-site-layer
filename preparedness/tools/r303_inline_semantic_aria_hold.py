@@ -106,9 +106,24 @@ def inline_compare(source: str, export: str, predecessor: Any) -> list[str]:
             if tag in INLINE_VOID:
                 self.handle_starttag(tag, attrs)
                 return
+            # HTML5 ignores the self-closing slash on *ordinary HTML non-void*
+            # elements: <strong/> is a start tag, NOT a balanced empty element.
+            # HTMLParser's default closes it anyway, and R302 used to certify
+            # matching but browser-malformed source/export pairs. This is a
+            # dangerous false negative for warnings, source labels and lists.
+            # SVG/Math foreign-content elements are not in these HTML sets.
+            html_nonvoid = (INLINE | predecessor.SEMANTIC |
+                frozenset(('a','script','style','textarea','title','select',
+                            'iframe','object','picture','audio','video'))) - (
+                            INLINE_VOID | predecessor.VOID)
+            if tag in html_nonvoid and self.active and not self.skip_stack:
+                self.errors.append('HTML5_NONVOID_SELF_CLOSED:' + tag)
             return super().handle_startendtag(tag, attrs)
 
         def handle_endtag(self, tag):
+            if tag in predecessor.VOID and self.active and not self.skip_stack and not self.cite:
+                self.errors.append('HTML5_VOID_EXPLICIT_CLOSE:' + tag)
+                return
             if tag not in INLINE or not self.active or self.skip_stack or self.cite:
                 return super().handle_endtag(tag)
             if tag in INLINE_VOID:
