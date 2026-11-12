@@ -1,0 +1,154 @@
+{
+  "snapshot_date": "2026-11-12",
+  "editorial_state": "UNPUBLISHED",
+  "commercial_state": "HARD_HOLD",
+  "products": [
+    {
+      "id": "zen12",
+      "seller": "Inspire3",
+      "official_catalog": "https://inspire3.com/",
+      "exact_offer": "https://zen12.com/about",
+      "checkout_observed": "https://zen12.com/getstarted",
+      "audience": "Person who likes guided 12-minute audio routines",
+      "verified_seller_description": "Twelve levels; four styles per level; complete bundle described as 48 MP3s; 12-minute listening sessions",
+      "dated_checkout_observation": "$87.99 promotional displayed total November 12 2026, conditional and subject to change",
+      "refund": "Seller advertises guarantee; independent eligibility/outcome not verified",
+      "unsupported_seller_claims": [
+        "Twelve minutes gives one hour meditation benefits",
+        "Audio automatically induces optimal brainwave state",
+        "Improves health or guaranteed focus"
+      ],
+      "fv_affiliate_acceptance": "UNVERIFIED",
+      "fv_issued_link": "NONE_VERIFIED",
+      "allowed_channels": "UNVERIFIED"
+    },
+    {
+      "id": "hypnosis_total_focus",
+      "exact_offer": "https://hypnosislive.com/mental-skills/total-focus",
+      "verified_seller_description": "33-minute recording, 47 MB; attributed to J.A. Amos",
+      "dated_price_observation": "$24.44 displayed seller price November 12 2026; not permanent",
+      "unsupported_seller_claims": [
+        "Limitless concentration",
+        "NLP reprogramming",
+        "Guaranteed better productivity"
+      ],
+      "fv_affiliate_acceptance": "UNVERIFIED"
+    },
+    {
+      "id": "brainwave_focus_shot",
+      "exact_offer": "https://brainwaveshots.com/focus-shot",
+      "verified_seller_description": "15- and 30-minute versions, additional brainwave-only recordings",
+      "dated_price_observation": "$17.99 displayed seller price November 12 2026; not permanent",
+      "unsupported_seller_claims": [
+        "Instant intense focus",
+        "Brainwave entrainment definitely causes performance gain"
+      ],
+      "fv_affiliate_acceptance": "UNVERIFIED"
+    }
+  ],
+  "independent_research": [
+    {
+      "claim": "2013 hypnosis lecture test worse quiz performance",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/23724570/",
+      "n": 43,
+      "classification": "abstract-supported specific experiment",
+      "product_specific": false
+    },
+    {
+      "claim": "2016 prospective memory reduced response time cost",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/26894423/",
+      "n": 23,
+      "classification": "abstract-supported separate task",
+      "product_specific": false
+    },
+    {
+      "claim": "1987 hypnotic group different visual-processing result",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/3430146/",
+      "classification": "abstract-supported older experiment",
+      "product_specific": false
+    },
+    {
+      "claim": "2006 suggestion affects Stroop task without induction",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/16466414/",
+      "classification": "specific highly suggestible group; no commercial generalization",
+      "product_specific": false
+    },
+    {
+      "claim": "2024 review catalogs theories of suggestion",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/39032268/",
+      "classification": "theory review; not brand efficacy",
+      "product_specific": false
+    }
+  ],
+  "policy_sources": [
+    "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+  ],
+  "live_references": [
+    "https://finalvestige.com/archive/",
+    "https://finalvestige.com/focus/",
+    "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/"
+  ],
+  "offer_funnel_blocker_owner": [
+    [
+      "Zen12",
+      "affiliate purchase",
+      "partner approval/permissions/tracking not authenticated",
+      "founder/Commerce"
+    ],
+    [
+      "FV-owned digital Mind SKU",
+      "paid purchase",
+      "active licensed fulfilled SKU + current checkout/refund terms unavailable",
+      "Commerce"
+    ],
+    [
+      "Grok social article",
+      "qualified article landing",
+      "exact three matching published media IDs not independently verified",
+      "Praxxis/Grok"
+    ],
+    [
+      "Fieldbook lead",
+      "provider-confirmed consent",
+      "existing Jetpack campaign attribution not established",
+      "Claude/Dispatch"
+    ],
+    [
+      "A/B purchase experiment",
+      "paid conversion",
+      "encoded film/browser QA/authorized merchant missing",
+      "Site QA/Claude"
+    ],
+    [
+      "Sale",
+      "realized net revenue",
+      "partner settlement/refund/fee and qualified denominator unverified",
+      "Commerce/Claude"
+    ]
+  ],
+  "holds": [
+    "No partner-specific acceptance",
+    "No issued unique earning URL",
+    "No approved affiliate creative",
+    "No permitted SEO channel documentation",
+    "No permitted TikTok channel documentation",
+    "No permitted YouTube channel documentation",
+    "No permitted email/Dispatch documentation",
+    "No current payout/attribution contract",
+    "No verified settled commissions",
+    "No rights-cleared paid FV Mind SKU",
+    "No verified FV digital checkout",
+    "No verified FV delivery/returns",
+    "No paid conversion attribution",
+    "No confirmed Jetpack signup attribution",
+    "No approved staging browser/a11y QA",
+    "No encoded and tested optional video",
+    "No founder commercial release signoff",
+    "No WordPress production release approval"
+  ],
+  "qualified_human_sessions": null,
+  "confirmed_paid_orders": null,
+  "realized_net_revenue": null,
+  "revenue_per_1000_qualified_sessions": null
+}
