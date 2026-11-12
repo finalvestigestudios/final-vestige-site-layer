@@ -1,0 +1,720 @@
+{
+  "schema": "fv-mind-claim-matrix-v1",
+  "sprint": "r323",
+  "date": "2026-11-12",
+  "status": "UNPUBLISHED_DRAFT_HARD_HOLD",
+  "owner": "Mind & Perception editorial/ethical offer presell",
+  "one_intended_offer": {
+    "name": "Zen12 full-course short meditation audio",
+    "offer_url": null,
+    "affiliate_earning_url": null,
+    "exact_checkout_price": null,
+    "merchant_partner_acceptance": "UNVERIFIED",
+    "eligibility": "HARD_HOLD",
+    "merchant_specific_customer_refund": "UNVERIFIED",
+    "claim": "SELLER_DESCRIBED_FORMAT_ONLY"
+  },
+  "fallback_owned_product": {
+    "sku": null,
+    "active_price": null,
+    "checkout_url": null,
+    "license": null,
+    "fulfillment": null,
+    "return_policy": null,
+    "assessment": "NOT_AUTHENTICATED; private Payhip inventory not accessible via this evidence"
+  },
+  "published_inventory": {
+    "historical_count_reported_in_issue171": 61,
+    "actual_full_61_individual_article_audit": "NOT_REEXECUTED",
+    "verified_this_run": [
+      "F01",
+      "F02",
+      "F03",
+      "F04"
+    ]
+  },
+  "sources": [
+    {
+      "id": "P01",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/15028213/",
+      "kind": "primary_bibliography",
+      "scope": "human fMRI saccadic suppression",
+      "review_date": "2026-11-12"
+    },
+    {
+      "id": "P02",
+      "url": "https://www.researchwithrutgers.org/en/publications/neural-correlates-of-saccadic-suppression-in-humans/",
+      "kind": "primary_abstract",
+      "scope": "stimulus selective neural effects",
+      "review_date": "2026-11-12"
+    },
+    {
+      "id": "P03",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/1138489/",
+      "kind": "primary_bibliography",
+      "scope": "1975 displacement; abstract absent",
+      "review_date": "2026-11-12"
+    },
+    {
+      "id": "P04",
+      "url": "https://www.nature.com/articles/35104551",
+      "kind": "primary_publisher_abstract",
+      "scope": "2001 chronostasis and target continuity",
+      "review_date": "2026-11-12"
+    },
+    {
+      "id": "P05",
+      "url": "https://doi.org/10.1016/S0960-9822(02)00707-8",
+      "kind": "research_commentary",
+      "scope": "2002 interpretation and historical attribution",
+      "review_date": "2026-11-12"
+    },
+    {
+      "id": "P06",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37392385/",
+      "kind": "primary_abstract",
+      "scope": "2023 primate visual cortex",
+      "review_date": "2026-11-12"
+    },
+    {
+      "id": "M01",
+      "url": "https://inspire3.com/",
+      "kind": "official_merchant_catalog",
+      "scope": "overall brand catalog",
+      "review_date": "2026-11-12"
+    },
+    {
+      "id": "M02",
+      "url": "https://zen12.com/about",
+      "kind": "official_product_description",
+      "scope": "12-minute sessions, 12 levels, 4 styles",
+      "review_date": "2026-11-12"
+    },
+    {
+      "id": "M03",
+      "url": "https://zen12.com/secret/",
+      "kind": "official_promo_offer_page",
+      "scope": "48 MP3, coupon-specific price as observed",
+      "review_date": "2026-11-12"
+    },
+    {
+      "id": "M04",
+      "url": "https://zen12.com/getstarted",
+      "kind": "official_checkout_attempt",
+      "scope": "FAILED to retrieve live with browser tool this run; do not rely on price",
+      "review_date": "2026-11-12"
+    },
+    {
+      "id": "M05",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "kind": "official_product_description",
+      "scope": "separate 33-minute hypnosis offer",
+      "review_date": "2026-11-12"
+    },
+    {
+      "id": "M06",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "kind": "official_product_description",
+      "scope": "separate 15/30-minute audio package",
+      "review_date": "2026-11-12"
+    },
+    {
+      "id": "M07",
+      "url": "https://affiliates.inspire3.com/",
+      "kind": "public_affiliate_marketing",
+      "scope": "recruitment is not account approval",
+      "review_date": "2026-11-12"
+    },
+    {
+      "id": "F01",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "kind": "verified_public_article",
+      "scope": "published editorial route",
+      "review_date": "2026-11-12"
+    },
+    {
+      "id": "F02",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "kind": "verified_public_archive",
+      "scope": "historical sources, claims and limits",
+      "review_date": "2026-11-12"
+    },
+    {
+      "id": "F03",
+      "url": "https://finalvestige.com/focus/",
+      "kind": "verified_public_resource",
+      "scope": "one 52-page free Fieldbook and Jetpack form",
+      "review_date": "2026-11-12"
+    },
+    {
+      "id": "F04",
+      "url": "https://finalvestige.com/editorial-standards/",
+      "kind": "verified_public_policy",
+      "scope": "commercial/editorial separation",
+      "review_date": "2026-11-12"
+    },
+    {
+      "id": "F05",
+      "url": "https://finalvestige.com/affiliate-disclosure/",
+      "kind": "site_disclosure_route",
+      "scope": "exists in live nav; direct fetch rate-limited this run",
+      "review_date": "2026-11-12"
+    },
+    {
+      "id": "C01",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "kind": "official_compliance",
+      "scope": "clear adjacent material connection disclosure",
+      "review_date": "2026-11-12"
+    },
+    {
+      "id": "C02",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "kind": "official_compliance",
+      "scope": "product-specific scientific substantiation",
+      "review_date": "2026-11-12"
+    }
+  ],
+  "claims": [
+    {
+      "id": "N01",
+      "text": "The 2004 human fMRI study discusses the mirror gaze demonstration.",
+      "classification": "primary_science",
+      "support": [
+        "P01",
+        "P02"
+      ],
+      "disposition": "USE_QUALIFIED"
+    },
+    {
+      "id": "N02",
+      "text": "Saccadic suppression can be stimulus-selective; not a uniform total visual blackout.",
+      "classification": "primary_science",
+      "support": [
+        "P01",
+        "P02"
+      ],
+      "disposition": "USE_QUALIFIED"
+    },
+    {
+      "id": "N03",
+      "text": "A 1975 study investigated failure to detect world displacement during saccades.",
+      "classification": "primary_bibliography_only",
+      "support": [
+        "P03"
+      ],
+      "disposition": "USE_METADATA_ONLY"
+    },
+    {
+      "id": "N04",
+      "text": "The 1975 experiment establishes a particular percentage failure rate.",
+      "classification": "unsupported",
+      "support": [
+        "P03"
+      ],
+      "disposition": "OMIT_NO_ABSTRACT"
+    },
+    {
+      "id": "N05",
+      "text": "2001 chronostasis results depended on perceived target spatial continuity.",
+      "classification": "primary_science",
+      "support": [
+        "P04"
+      ],
+      "disposition": "USE_QUALIFIED"
+    },
+    {
+      "id": "N06",
+      "text": "A later commentary distinguishes temporal, spatial and sensitivity phenomena.",
+      "classification": "scientific_commentary",
+      "support": [
+        "P05"
+      ],
+      "disposition": "USE_ATTRIBUTED"
+    },
+    {
+      "id": "N07",
+      "text": "A 2023 laminar mechanism study was conducted in primates, not in a representative human trial.",
+      "classification": "primary_science",
+      "support": [
+        "P06"
+      ],
+      "disposition": "USE_WITH_SPECIES"
+    },
+    {
+      "id": "N08",
+      "text": "An 1898 Erdmann and Dodge mirror quotation is directly verified.",
+      "classification": "historical_unverified",
+      "support": [
+        "P05"
+      ],
+      "disposition": "OMIT_DIRECT_QUOTE"
+    },
+    {
+      "id": "N09",
+      "text": "Saccadic suppression proves hypnosis or an audio program improves attention.",
+      "classification": "unsupported_inference",
+      "support": [
+        "P01",
+        "M02"
+      ],
+      "disposition": "REJECT"
+    },
+    {
+      "id": "H01",
+      "text": "Puységur source archive explicitly retains failed predictions and cure claims.",
+      "classification": "first_party_published",
+      "support": [
+        "F02"
+      ],
+      "disposition": "USE_HISTORICAL"
+    },
+    {
+      "id": "H02",
+      "text": "Puységur archive proves animal magnetism's medical effects.",
+      "classification": "unsupported_inference",
+      "support": [
+        "F02"
+      ],
+      "disposition": "REJECT"
+    },
+    {
+      "id": "V01",
+      "text": "Change Blindness investigation is a currently published navigable page.",
+      "classification": "live_observation",
+      "support": [
+        "F01"
+      ],
+      "disposition": "USE"
+    },
+    {
+      "id": "V02",
+      "text": "The Focus Fieldbook is an existing 52-page free resource with an existing signup.",
+      "classification": "live_observation",
+      "support": [
+        "F03"
+      ],
+      "disposition": "USE_NO_NEW_FORMS"
+    },
+    {
+      "id": "V03",
+      "text": "The Focus page displaying a PDF implies provider-confirmed email consent.",
+      "classification": "unsupported_attribution",
+      "support": [
+        "F03"
+      ],
+      "disposition": "REJECT"
+    },
+    {
+      "id": "V04",
+      "text": "Source-controlled Mind hub and R323 article are public WordPress pages.",
+      "classification": "not_published",
+      "support": [],
+      "disposition": "REJECT"
+    },
+    {
+      "id": "S01",
+      "text": "Inspire3 currently lists Zen12, Hypnosis Live and Brainwave Shots.",
+      "classification": "seller_catalog",
+      "support": [
+        "M01"
+      ],
+      "disposition": "USE_ATTRIBUTED"
+    },
+    {
+      "id": "S02",
+      "text": "Zen12 seller says sessions last 12 minutes.",
+      "classification": "seller_format",
+      "support": [
+        "M02"
+      ],
+      "disposition": "USE_ATTRIBUTED"
+    },
+    {
+      "id": "S03",
+      "text": "Zen12 seller describes 12 levels.",
+      "classification": "seller_format",
+      "support": [
+        "M02"
+      ],
+      "disposition": "USE_ATTRIBUTED"
+    },
+    {
+      "id": "S04",
+      "text": "Zen12 seller lists relaxation music, guided meditation, nature sound and white-noise alternatives per level.",
+      "classification": "seller_format",
+      "support": [
+        "M02"
+      ],
+      "disposition": "USE_ATTRIBUTED"
+    },
+    {
+      "id": "S05",
+      "text": "Every Zen12 recording is guided meditation.",
+      "classification": "product_mismatch",
+      "support": [
+        "M02"
+      ],
+      "disposition": "REJECT"
+    },
+    {
+      "id": "S06",
+      "text": "An official Zen12 special offer describes full course as 48 MP3s.",
+      "classification": "seller_package",
+      "support": [
+        "M03"
+      ],
+      "disposition": "USE_ATTRIBUTED"
+    },
+    {
+      "id": "S07",
+      "text": "Zen12 has one universal verified price.",
+      "classification": "checkout_unverified",
+      "support": [
+        "M03",
+        "M04"
+      ],
+      "disposition": "REJECT"
+    },
+    {
+      "id": "S08",
+      "text": "Official /secret promo displayed 37 dollars with a named coupon at inspection.",
+      "classification": "seller_dated_promotion",
+      "support": [
+        "M03"
+      ],
+      "disposition": "MATRIX_ONLY_NOT_COPY"
+    },
+    {
+      "id": "S09",
+      "text": "Any money-back or cancellation term applies to every Zen12 path automatically.",
+      "classification": "checkout_unverified",
+      "support": [
+        "M03",
+        "M04"
+      ],
+      "disposition": "REJECT"
+    },
+    {
+      "id": "S10",
+      "text": "Hypnosis Live Total Focus seller describes one 33-minute recorded session.",
+      "classification": "seller_format",
+      "support": [
+        "M05"
+      ],
+      "disposition": "USE_ATTRIBUTED"
+    },
+    {
+      "id": "S11",
+      "text": "Hypnosis Live page advertises a 14-day refund period.",
+      "classification": "seller_policy",
+      "support": [
+        "M05"
+      ],
+      "disposition": "MATRIX_ONLY_VERIFY_CHECKOUT"
+    },
+    {
+      "id": "S12",
+      "text": "Brainwave Shots Focus Shot page describes 15- and 30-minute versions.",
+      "classification": "seller_format",
+      "support": [
+        "M06"
+      ],
+      "disposition": "USE_ATTRIBUTED"
+    },
+    {
+      "id": "S13",
+      "text": "Focus Shot guarantees 4 hours or more improved concentration.",
+      "classification": "unsupported_seller_efficacy",
+      "support": [
+        "M06"
+      ],
+      "disposition": "REJECT"
+    },
+    {
+      "id": "S14",
+      "text": "Zen12 has proven effects equivalent to one hour of meditation in 12 minutes.",
+      "classification": "unsupported_seller_efficacy",
+      "support": [
+        "M01",
+        "M02"
+      ],
+      "disposition": "REJECT"
+    },
+    {
+      "id": "S15",
+      "text": "Product-specific neurological and health outcomes are established by saccadic experiments.",
+      "classification": "unsupported",
+      "support": [
+        "P01",
+        "M02",
+        "C02"
+      ],
+      "disposition": "REJECT"
+    },
+    {
+      "id": "A01",
+      "text": "Inspire3 has an open public affiliate recruitment portal.",
+      "classification": "official_public_portal",
+      "support": [
+        "M07"
+      ],
+      "disposition": "USE_AS_CONTEXT"
+    },
+    {
+      "id": "A02",
+      "text": "Public portal's advertised 60 percent or more commission is Final Vestige's approved payout.",
+      "classification": "not_account_evidence",
+      "support": [
+        "M07"
+      ],
+      "disposition": "REJECT"
+    },
+    {
+      "id": "A03",
+      "text": "Final Vestige is verified accepted, with an issued earning link and allowed social and email rights.",
+      "classification": "account_permission_unverified",
+      "support": [
+        "M07"
+      ],
+      "disposition": "HARD_HOLD"
+    },
+    {
+      "id": "A04",
+      "text": "The public portal is proof of a confirmed attributable paid sale.",
+      "classification": "unsupported_revenue",
+      "support": [
+        "M07"
+      ],
+      "disposition": "REJECT"
+    },
+    {
+      "id": "C01",
+      "text": "Material connection disclosures must be clear and near recommendations.",
+      "classification": "ftc_guidance",
+      "support": [
+        "C01"
+      ],
+      "disposition": "MUST_HAVE"
+    },
+    {
+      "id": "C02",
+      "text": "Objective health-related benefits need claim-relevant credible scientific substantiation.",
+      "classification": "ftc_guidance",
+      "support": [
+        "C02"
+      ],
+      "disposition": "MUST_HAVE"
+    },
+    {
+      "id": "C03",
+      "text": "A purchase link or word affiliate alone adequately discloses commission.",
+      "classification": "ftc_guidance",
+      "support": [
+        "C01"
+      ],
+      "disposition": "REJECT"
+    },
+    {
+      "id": "X01",
+      "text": "A visible affiliate_click proves a paid order or settled commission.",
+      "classification": "measurement_false",
+      "support": [],
+      "disposition": "REJECT"
+    },
+    {
+      "id": "X02",
+      "text": "Realized net revenue per 1000 eligible qualified sessions can be calculated before numerator and denominator are evidenced.",
+      "classification": "measurement_false",
+      "support": [],
+      "disposition": "REJECT"
+    }
+  ],
+  "commercial_authorization": [
+    {
+      "id": "publisher_accepted",
+      "state": "HARD_HOLD",
+      "required_proof": "Merchant dashboard or signed agreement must show Final Vestige-specific acceptance",
+      "verified_on": "2026-11-12",
+      "verification_status": "NOT_AUTHENTICATED"
+    },
+    {
+      "id": "merchant_legal_identity",
+      "state": "HARD_HOLD",
+      "required_proof": "Confirm publisher contractual identity matching Final Vestige",
+      "verified_on": "2026-11-12",
+      "verification_status": "NOT_AUTHENTICATED"
+    },
+    {
+      "id": "channel_social",
+      "state": "HARD_HOLD",
+      "required_proof": "Prove authorized social-platform promotion for exact offer",
+      "verified_on": "2026-11-12",
+      "verification_status": "NOT_AUTHENTICATED"
+    },
+    {
+      "id": "channel_email",
+      "state": "HARD_HOLD",
+      "required_proof": "Prove separately authorized Jetpack newsletter promotion",
+      "verified_on": "2026-11-12",
+      "verification_status": "NOT_AUTHENTICATED"
+    },
+    {
+      "id": "special_link_issued",
+      "state": "HARD_HOLD",
+      "required_proof": "Obtain actual unique earning URL from official account",
+      "verified_on": "2026-11-12",
+      "verification_status": "NOT_AUTHENTICATED"
+    },
+    {
+      "id": "offer_page_matched",
+      "state": "HARD_HOLD",
+      "required_proof": "Pin exact offer to exact approved URL and checkout",
+      "verified_on": "2026-11-12",
+      "verification_status": "NOT_AUTHENTICATED"
+    },
+    {
+      "id": "seller_format_current",
+      "state": "HARD_HOLD",
+      "required_proof": "Re-check current included files and styles",
+      "verified_on": "2026-11-12",
+      "verification_status": "NOT_AUTHENTICATED"
+    },
+    {
+      "id": "checkout_price_current",
+      "state": "HARD_HOLD",
+      "required_proof": "Verify one authentic time-stamped checkout with price/tax and terms",
+      "verified_on": "2026-11-12",
+      "verification_status": "NOT_AUTHENTICATED"
+    },
+    {
+      "id": "refund_terms_current",
+      "state": "HARD_HOLD",
+      "required_proof": "Verify exact binding refund/cancellation procedure and eligibility",
+      "verified_on": "2026-11-12",
+      "verification_status": "NOT_AUTHENTICATED"
+    },
+    {
+      "id": "rights_creatives",
+      "state": "HARD_HOLD",
+      "required_proof": "Original media and legal permission for merchant trademarks checked",
+      "verified_on": "2026-11-12",
+      "verification_status": "NOT_AUTHENTICATED"
+    },
+    {
+      "id": "claim_science",
+      "state": "HARD_HOLD",
+      "required_proof": "All implied health/benefit claims either substantiated on product or omitted",
+      "verified_on": "2026-11-12",
+      "verification_status": "NOT_AUTHENTICATED"
+    },
+    {
+      "id": "near_cta_disclosure",
+      "state": "HARD_HOLD",
+      "required_proof": "Clear commission notice near any eventual live recommendation",
+      "verified_on": "2026-11-12",
+      "verification_status": "NOT_AUTHENTICATED"
+    },
+    {
+      "id": "wp_release",
+      "state": "HARD_HOLD",
+      "required_proof": "Founder approves actual CMS publication and navigation",
+      "verified_on": "2026-11-12",
+      "verification_status": "NOT_AUTHENTICATED"
+    },
+    {
+      "id": "site_qa",
+      "state": "HARD_HOLD",
+      "required_proof": "Actual mobile/a11y/browser/WordPress sanitizer acceptance",
+      "verified_on": "2026-11-12",
+      "verification_status": "NOT_AUTHENTICATED"
+    },
+    {
+      "id": "video_qa",
+      "state": "HARD_HOLD",
+      "required_proof": "Encode optional film, make captions accurate, no autoplay, no-JS fallback",
+      "verified_on": "2026-11-12",
+      "verification_status": "NOT_AUTHENTICATED"
+    },
+    {
+      "id": "attribution_privacy",
+      "state": "HARD_HOLD",
+      "required_proof": "Claude checks existing first-party scheme without duplicate scripts or PII",
+      "verified_on": "2026-11-12",
+      "verification_status": "NOT_AUTHENTICATED"
+    },
+    {
+      "id": "merchant_confirmation",
+      "state": "HARD_HOLD",
+      "required_proof": "Independent merchant settled sale/commission, fees and reversals",
+      "verified_on": "2026-11-12",
+      "verification_status": "NOT_AUTHENTICATED"
+    },
+    {
+      "id": "founder_spend_launch",
+      "state": "HARD_HOLD",
+      "required_proof": "Founder approves releases, posting and any spending",
+      "verified_on": "2026-11-12",
+      "verification_status": "NOT_AUTHENTICATED"
+    }
+  ],
+  "creator_paths": [
+    {
+      "topic": "change_blindness",
+      "asset_id": null,
+      "platform_post_url": null,
+      "live_article": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "free_next": "https://finalvestige.com/focus/",
+      "offer": "Zen12 OPTIONAL AFTER APPROVAL",
+      "fit": "moderate-low: perception research alone is not meditation purchase intent"
+    },
+    {
+      "topic": "Franklin_Puysegur_hypnotism_history",
+      "asset_id": null,
+      "platform_post_url": null,
+      "live_article": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "free_next": "https://finalvestige.com/focus/",
+      "offer": "Total Focus separate HOLD; Zen12 only if explicit buyer-intent",
+      "fit": "historical readers should not be pushed to hypnosis efficacy"
+    },
+    {
+      "topic": "mirror_saccadic_suppression",
+      "asset_id": null,
+      "platform_post_url": null,
+      "live_article": null,
+      "draft_article": "mind/r323/THE-FRACTION-OF-A-SECOND-YOUR-EYES-NEVER-SHOW-YOU-UNPUBLISHED.md",
+      "free_next": "https://finalvestige.com/focus/",
+      "offer": "Zen12 format guide only if reader opts in",
+      "fit": "poor direct commercial fit; excellent sourced top-of-funnel editorial"
+    }
+  ],
+  "measurement_contract": {
+    "approved_implementation": "REUSE_EXISTING_CLAUDE_INSTRUMENTATION_ONLY",
+    "asset_id": "actual immutable Grok creator ID; unknown",
+    "utm_campaign": "unique source campaign; unknown",
+    "first_party_events": [
+      "qualified_human_session",
+      "source_article_view",
+      "fieldbook_cta_click",
+      "provider_confirmed_opt_in",
+      "affiliate_click",
+      "merchant_confirmed_paid_conversion",
+      "refund_or_reversal",
+      "net_realized_revenue"
+    ],
+    "prohibited_conflation": [
+      "free_pdf_display != provider_confirmed_opt_in",
+      "affiliate_click != paid_order",
+      "merchant_gross != net_revenue"
+    ],
+    "pii_policy": "no email, names, raw IP or unrestricted merchant identifiers in analytics",
+    "cohorts_days": [
+      7,
+      30
+    ],
+    "north_star": "settled revenue after refunds, processor fees and attributable commission reversals per 1000 independently qualified human sessions",
+    "north_star_value": null,
+    "why_null": "No authenticated sale/commission/reversal ledger and no qualified-session denominator."
+  },
+  "release": "HARD_HOLD"
+}
