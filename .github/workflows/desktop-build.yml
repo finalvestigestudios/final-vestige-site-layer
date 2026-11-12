@@ -503,6 +503,10 @@ jobs:
         run: |
           python -W error -m unittest discover -s products/desktop/tests -p 'test_candidate_exception_chains_r374.py'
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_candidate_exception_chains_r374.py'
+      - name: R375 premium registry SQLite bootstrap privacy and handle custody (12 methods per mode)
+        run: |
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_registry_bootstrap_r375.py'
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_registry_bootstrap_r375.py'
       - name: R242 checksum manifest staging custody (19 methods per mode; no EXE execution)
         run: |
           python -W error -m unittest discover -s products/desktop/tests -p 'test_inventory_staging_custody_r242.py'
@@ -2769,6 +2773,14 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R374 Windows normal candidate privacy FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_candidate_exception_chains_r374.py'
           if ($LASTEXITCODE -ne 0) { throw "R374 Windows optimized candidate privacy FAILED" }
+      - name: R375 Windows premium registry SQLite bootstrap custody (12 methods per mode)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_registry_bootstrap_r375.py'
+          if ($LASTEXITCODE -ne 0) { throw "R375 Windows normal registry bootstrap FAILED" }
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_registry_bootstrap_r375.py'
+          if ($LASTEXITCODE -ne 0) { throw "R375 Windows optimized registry bootstrap FAILED" }
       - name: R242 Windows checksum manifest staging custody before packaging (19 methods per mode)
         shell: pwsh
         run: |
