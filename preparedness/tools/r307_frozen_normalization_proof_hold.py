@@ -13,7 +13,7 @@ import json
 from pathlib import Path
 
 PREDECESSOR = 'preparedness/tools/r306_live_lineage_review_hold.py'
-PREDECESSOR_OID = '52b9431bb63ec6fcce46704448a1d1cb69780469'
+PREDECESSOR_OID = '5a81011b664183fecb5c5fd950776255a0ba17fd'
 LEDGER = 'preparedness/audits/r306_live_lineage_35_articles_HARD_HOLD.json'
 LEDGER_OID = 'c7ab84eeacbd43f17bb3cab72a888430cb102f25'
 SCHEMA = 'fv-preparedness-r307-frozen-normalization-proof-v1'
