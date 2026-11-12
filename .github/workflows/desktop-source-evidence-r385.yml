@@ -37,6 +37,10 @@ jobs:
         run: |
           python -W error -m unittest discover -s products/desktop/tests -p test_independent_ci_r385.py
           python -OO -W error -m unittest discover -s products/desktop/tests -p test_independent_ci_r385.py
+      - name: R386 reject fabricated source smoke output receipts (normal and optimized)
+        run: |
+          python -W error -m unittest discover -s products/desktop/tests -p test_smoke_result_custody_r386.py
+          python -OO -W error -m unittest discover -s products/desktop/tests -p test_smoke_result_custody_r386.py
       - name: Execute six synthetic engines with before-and-after SHA-256 source inventory
         run: |
           python -W error products/desktop/scripts/source_smoke_gate.py
