@@ -1,0 +1,321 @@
+{
+  "schema": "fv-preparedness-r322-authentic-source-use-crosswalk-group-v1",
+  "group": 4,
+  "source_manifest_blob": "9765091c5e113a65e0ccbc2fb647a1a96f40a7aa",
+  "docket_blob": "3119626a19175cec8f0dc4f03c5da57f319906d0",
+  "authentic_git_blobs_checked": 12,
+  "failures": [],
+  "limitations": "Regex source token inventory, not verified browser-visible claim support, review approval or native build",
+  "release": {
+    "publication_authorized": false,
+    "independent_qd_pass": false,
+    "qualified_safety_approved": false,
+    "automatic_merge": false
+  },
+  "rows": [
+    {
+      "path": "preparedness/content/tools/power-outage-planner.body.html",
+      "severity": "P0_LIFE_SAFETY",
+      "status": "UNRESOLVED_HOLD",
+      "variants": {
+        "integrated": {
+          "git_blob": "aa8f866aaaaab9253f41c4363d31919029c69234",
+          "body_citation_occurrences": 26,
+          "body_source_ids": [
+            "fsis-power-failure",
+            "shelter-cdc-co-basics",
+            "shelter-cdc-heat",
+            "shelter-cdc-power-outage",
+            "shelter-cdc-winter-storm",
+            "shelter-cpsc-co",
+            "shelter-fema-power-outage-sheet",
+            "shelter-nws-nwr",
+            "shelter-ready-disabilities",
+            "shelter-ready-evacuation",
+            "shelter-ready-heat",
+            "shelter-ready-plan-locations",
+            "shelter-ready-power-outages",
+            "shelter-ready-shelter",
+            "shelter-ready-tech",
+            "shelter-ready-winter-weather",
+            "shelter-usda-fsis-emergencies"
+          ]
+        },
+        "continuation": {
+          "git_blob": "66a70ecc4192166958fcde125ada2b6f98e92b6c",
+          "body_citation_occurrences": 24,
+          "body_source_ids": [
+            "shelter-cdc-co-basics",
+            "shelter-cdc-heat",
+            "shelter-cdc-power-outage",
+            "shelter-cdc-winter-storm",
+            "shelter-cpsc-co",
+            "shelter-fema-power-outage-sheet",
+            "shelter-nws-nwr",
+            "shelter-ready-disabilities",
+            "shelter-ready-evacuation",
+            "shelter-ready-heat",
+            "shelter-ready-plan-locations",
+            "shelter-ready-power-outages",
+            "shelter-ready-shelter",
+            "shelter-ready-tech",
+            "shelter-ready-winter-weather"
+          ]
+        },
+        "followup": {
+          "git_blob": "aa8f866aaaaab9253f41c4363d31919029c69234",
+          "body_citation_occurrences": 26,
+          "body_source_ids": [
+            "fsis-power-failure",
+            "shelter-cdc-co-basics",
+            "shelter-cdc-heat",
+            "shelter-cdc-power-outage",
+            "shelter-cdc-winter-storm",
+            "shelter-cpsc-co",
+            "shelter-fema-power-outage-sheet",
+            "shelter-nws-nwr",
+            "shelter-ready-disabilities",
+            "shelter-ready-evacuation",
+            "shelter-ready-heat",
+            "shelter-ready-plan-locations",
+            "shelter-ready-power-outages",
+            "shelter-ready-shelter",
+            "shelter-ready-tech",
+            "shelter-ready-winter-weather",
+            "shelter-usda-fsis-emergencies"
+          ]
+        }
+      },
+      "source_use_crosswalk": {
+        "integrated": {
+          "state": "UNREVIEWED_HARD_HOLD",
+          "cited_not_declared": [],
+          "declared_not_cited": []
+        },
+        "continuation": {
+          "state": "UNREVIEWED_HARD_HOLD",
+          "cited_not_declared": [],
+          "declared_not_cited": []
+        },
+        "followup": {
+          "state": "UNREVIEWED_HARD_HOLD",
+          "cited_not_declared": [],
+          "declared_not_cited": []
+        }
+      }
+    },
+    {
+      "path": "preparedness/content/tools/power-outage-planner.meta.json",
+      "severity": "P0_CITATION",
+      "status": "UNRESOLVED_HOLD",
+      "variants": {
+        "integrated": {
+          "git_blob": "8796bba2b323cce096639997002c402bd853e50f",
+          "metadata_source_ids": [
+            "fsis-power-failure",
+            "shelter-cdc-co-basics",
+            "shelter-cdc-heat",
+            "shelter-cdc-power-outage",
+            "shelter-cdc-winter-storm",
+            "shelter-cpsc-co",
+            "shelter-fema-power-outage-sheet",
+            "shelter-nws-nwr",
+            "shelter-ready-disabilities",
+            "shelter-ready-evacuation",
+            "shelter-ready-heat",
+            "shelter-ready-plan-locations",
+            "shelter-ready-power-outages",
+            "shelter-ready-shelter",
+            "shelter-ready-tech",
+            "shelter-ready-winter-weather",
+            "shelter-usda-fsis-emergencies"
+          ],
+          "publish_status": "draft",
+          "safety_state": "pending",
+          "tool_number": 103,
+          "slug": "power-outage-planner"
+        },
+        "continuation": {
+          "git_blob": "bcbe83a82cc3bfbd10e179e6e18742253683b3ab",
+          "metadata_source_ids": [
+            "shelter-cdc-co-basics",
+            "shelter-cdc-heat",
+            "shelter-cdc-power-outage",
+            "shelter-cdc-winter-storm",
+            "shelter-cpsc-co",
+            "shelter-fema-power-outage-sheet",
+            "shelter-nws-nwr",
+            "shelter-ready-disabilities",
+            "shelter-ready-evacuation",
+            "shelter-ready-heat",
+            "shelter-ready-plan-locations",
+            "shelter-ready-power-outages",
+            "shelter-ready-shelter",
+            "shelter-ready-tech",
+            "shelter-ready-winter-weather"
+          ],
+          "publish_status": "draft",
+          "safety_state": "pending",
+          "tool_number": 103,
+          "slug": "power-outage-planner"
+        },
+        "followup": {
+          "git_blob": "8796bba2b323cce096639997002c402bd853e50f",
+          "metadata_source_ids": [
+            "fsis-power-failure",
+            "shelter-cdc-co-basics",
+            "shelter-cdc-heat",
+            "shelter-cdc-power-outage",
+            "shelter-cdc-winter-storm",
+            "shelter-cpsc-co",
+            "shelter-fema-power-outage-sheet",
+            "shelter-nws-nwr",
+            "shelter-ready-disabilities",
+            "shelter-ready-evacuation",
+            "shelter-ready-heat",
+            "shelter-ready-plan-locations",
+            "shelter-ready-power-outages",
+            "shelter-ready-shelter",
+            "shelter-ready-tech",
+            "shelter-ready-winter-weather",
+            "shelter-usda-fsis-emergencies"
+          ],
+          "publish_status": "draft",
+          "safety_state": "pending",
+          "tool_number": 103,
+          "slug": "power-outage-planner"
+        }
+      }
+    },
+    {
+      "path": "preparedness/content/tools/reunification-plan.body.html",
+      "severity": "P0_TOOL_IDENTITY",
+      "status": "UNRESOLVED_HOLD",
+      "variants": {
+        "integrated": {
+          "git_blob": "3305578369183edb1d427c8f8f8002eaacee420f",
+          "body_citation_occurrences": 7,
+          "body_source_ids": [
+            "ready-are-you-ready",
+            "start-cdc-disability-plan",
+            "start-cdc-pyh-connected",
+            "start-cdc-pyh-prescriptions",
+            "start-ready-evacuation",
+            "start-ready-plan",
+            "start-ready-power"
+          ]
+        },
+        "continuation": {
+          "git_blob": "79fe2cf7c7d486c105bac7a6a256136c2e237a0f",
+          "body_citation_occurrences": 14,
+          "body_source_ids": [
+            "shelter-cdc-reunification",
+            "shelter-co-oss-reunification",
+            "shelter-fcc-comms",
+            "shelter-fema-reunification",
+            "shelter-ncmec-hotline",
+            "shelter-ready-evacuation",
+            "shelter-ready-plan",
+            "shelter-ready-plan-form",
+            "shelter-ready-tech"
+          ]
+        },
+        "followup": {
+          "git_blob": "be8698ac5d020476ff649d85813810e2000c6f98",
+          "body_citation_occurrences": 16,
+          "body_source_ids": [
+            "shelter-ca-cde-safety-plans",
+            "shelter-cdc-chemical-evac",
+            "shelter-cdc-reunification",
+            "shelter-co-oss-reunification",
+            "shelter-fcc-comms",
+            "shelter-fema-reunification",
+            "shelter-ncmec-hotline",
+            "shelter-ready-evacuation",
+            "shelter-ready-plan",
+            "shelter-ready-plan-form",
+            "shelter-ready-tech"
+          ]
+        }
+      },
+      "source_use_crosswalk": {
+        "integrated": {
+          "state": "UNREVIEWED_HARD_HOLD",
+          "cited_not_declared": [],
+          "declared_not_cited": []
+        },
+        "continuation": {
+          "state": "UNREVIEWED_HARD_HOLD",
+          "cited_not_declared": [],
+          "declared_not_cited": []
+        },
+        "followup": {
+          "state": "UNREVIEWED_HARD_HOLD",
+          "cited_not_declared": [],
+          "declared_not_cited": []
+        }
+      }
+    },
+    {
+      "path": "preparedness/content/tools/reunification-plan.meta.json",
+      "severity": "P0_TOOL_IDENTITY",
+      "status": "UNRESOLVED_HOLD",
+      "variants": {
+        "integrated": {
+          "git_blob": "10cd57dc8d39e366aaef8fd76cc3f8969b8c5348",
+          "metadata_source_ids": [
+            "ready-are-you-ready",
+            "start-cdc-disability-plan",
+            "start-cdc-pyh-connected",
+            "start-cdc-pyh-prescriptions",
+            "start-ready-evacuation",
+            "start-ready-plan",
+            "start-ready-power"
+          ],
+          "publish_status": "draft",
+          "safety_state": "pending",
+          "tool_number": 102,
+          "slug": "reunification-plan"
+        },
+        "continuation": {
+          "git_blob": "61187860e045e41dd5f8df992927ff702c0d5156",
+          "metadata_source_ids": [
+            "shelter-cdc-reunification",
+            "shelter-co-oss-reunification",
+            "shelter-fcc-comms",
+            "shelter-fema-reunification",
+            "shelter-ncmec-hotline",
+            "shelter-ready-evacuation",
+            "shelter-ready-plan",
+            "shelter-ready-plan-form",
+            "shelter-ready-tech"
+          ],
+          "publish_status": "draft",
+          "safety_state": "pending",
+          "tool_number": 104,
+          "slug": "reunification-plan"
+        },
+        "followup": {
+          "git_blob": "d4776aad104f59cfc50305e8eeed5220ec201cd5",
+          "metadata_source_ids": [
+            "shelter-ca-cde-safety-plans",
+            "shelter-cdc-chemical-evac",
+            "shelter-cdc-reunification",
+            "shelter-co-oss-reunification",
+            "shelter-fcc-comms",
+            "shelter-fema-reunification",
+            "shelter-ncmec-hotline",
+            "shelter-ready-evacuation",
+            "shelter-ready-plan",
+            "shelter-ready-plan-form",
+            "shelter-ready-tech"
+          ],
+          "publish_status": "draft",
+          "safety_state": "pending",
+          "tool_number": 104,
+          "slug": "reunification-plan"
+        }
+      }
+    }
+  ]
+}
