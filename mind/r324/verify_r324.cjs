@@ -69,7 +69,7 @@ const mutations=[
  ['add tracker JS',x=>x.b=x.b.replace('</head>','<script src="/pixels.js"></script></head>')],
  ['add iframe',x=>x.b=x.b.replace('</body>','<iframe src="about:blank"></iframe></body>')],
  ['add form',x=>x.hub=x.hub.replace('</main>','<form><input></form></main>')],
- ['remove Focus',x=>x.hub=x.hub.replace('href="https://finalvestige.com/focus/"','href="/new-list/"')],
+ ['remove Focus',x=>x.hub=x.hub.replaceAll('href="https://finalvestige.com/focus/"','href="/new-list/"')],
  ['introduce copy drift',x=>x.b=x.b.replace('A listening routine is not a laboratory result','Our audio scientifically guarantees results')],
  ['change closed gate',x=>{const j=JSON.parse(x.matrix);j.holds[0].status='OPEN';x.matrix=JSON.stringify(j)}],
  ['break claim citation',x=>{const j=JSON.parse(x.matrix);j.claims[0].source_ids=['fake_source'];x.matrix=JSON.stringify(j)}],
