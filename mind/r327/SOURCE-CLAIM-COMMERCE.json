@@ -1,0 +1,485 @@
+{
+  "milestone": "R327",
+  "local_date": "2026-11-12",
+  "scope": "UNPUBLISHED research; no WordPress/merchant/navigation changes",
+  "sources": [
+    {
+      "id": "r1992",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/1500880/",
+      "type": "primary abstract",
+      "claim": "Target / probe detection deficit in a particular 180–450 ms post-target interval under RSVP controls"
+    },
+    {
+      "id": "r1994",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/8189198/",
+      "type": "primary abstract",
+      "claim": "Seven experiments; first target object vs interval and late-selection interpretation"
+    },
+    {
+      "id": "o2005",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/15828972/",
+      "type": "primary abstract",
+      "claim": "Task-irrelevant mental activity/music reduced attentional blink in that experiment"
+    },
+    {
+      "id": "o2006",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/16634676/",
+      "type": "primary abstract",
+      "claim": "Additional memory task, positive-affect pictures, and focus-less instructions affected blink"
+    },
+    {
+      "id": "s2007",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17488185/",
+      "type": "primary abstract",
+      "claim": "Three months of intensive meditation associated with reduced attentional blink and first-target P3b"
+    },
+    {
+      "id": "s2007full",
+      "url": "https://doi.org/10.1371/journal.pbio.0050138",
+      "type": "published primary research DOI",
+      "claim": "Original publisher location; full-text independent review not claimed"
+    },
+    {
+      "id": "z2019",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31160812/",
+      "type": "primary abstract",
+      "claim": "Six-week distinct closed-loop app attention study; not Zen12"
+    },
+    {
+      "id": "inspire",
+      "url": "https://inspire3.com/",
+      "type": "official seller",
+      "claim": "Catalog and distinct seller brands"
+    },
+    {
+      "id": "zenabout",
+      "url": "https://zen12.com/about",
+      "type": "official seller",
+      "claim": "Twelve-minute tracks; twelve levels and four styles; unsupported equivalent-to-hour and automatic-state claims"
+    },
+    {
+      "id": "zencheck",
+      "url": "https://zen12.com/getstarted",
+      "type": "official checkout",
+      "claim": "48 MP3 complete course; support and guarantee seller terms; dynamic pricing not asserted"
+    },
+    {
+      "id": "totalfocus",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "type": "official seller",
+      "claim": "Total Focus is separate 33-minute hypnosis MP3; buyer claims remain seller claims"
+    },
+    {
+      "id": "focusshot",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "type": "official seller",
+      "claim": "Focus Shot 15/30-minute versions; claims of several-hour results not substantiated"
+    },
+    {
+      "id": "affiliate",
+      "url": "https://affiliates.inspire3.com/",
+      "type": "official partner signup page",
+      "claim": "Public recruitment not account-specific acceptance or issued earning link"
+    },
+    {
+      "id": "ftc",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "type": "regulatory guidance",
+      "claim": "Clear material-connection disclosures and no dishonest endorsement"
+    },
+    {
+      "id": "health",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "type": "regulatory guidance",
+      "claim": "Product-related health claims require appropriate evidence relevant to that product"
+    },
+    {
+      "id": "puy",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "type": "verified WordPress published page",
+      "claim": "Historical source dossier; method bridge only"
+    },
+    {
+      "id": "focus",
+      "url": "https://finalvestige.com/focus/",
+      "type": "verified WordPress published page",
+      "claim": "One existing free Focus Fieldbook lead route; do not duplicate Jetpack"
+    },
+    {
+      "id": "change",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "type": "verified WordPress published post",
+      "claim": "Existing modern perception article"
+    },
+    {
+      "id": "mesmer",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "type": "verified WordPress published post",
+      "claim": "Existing historical investigation"
+    },
+    {
+      "id": "standards",
+      "url": "https://finalvestige.com/editorial-standards/",
+      "type": "verified WordPress published page",
+      "claim": "Editorial independence and evidence"
+    },
+    {
+      "id": "disclosure",
+      "url": "https://finalvestige.com/affiliate-disclosure/",
+      "type": "verified WordPress published page",
+      "claim": "Existing site-wide affiliate notice does not replace near-link disclosure"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "1992 specified RSVP deficit",
+      "status": "supported_study_context",
+      "source_ids": [
+        "r1992"
+      ],
+      "limitation": "Never generalize to all visual recognition"
+    },
+    {
+      "id": "C02",
+      "claim": "1992 blank/no first identification controls",
+      "status": "supported_study_context",
+      "source_ids": [
+        "r1992"
+      ],
+      "limitation": "Does not establish universal brain capacity"
+    },
+    {
+      "id": "C03",
+      "claim": "1994 follow-up challenged first mechanism",
+      "status": "supported_study_context",
+      "source_ids": [
+        "r1994"
+      ],
+      "limitation": "Mechanism disputed"
+    },
+    {
+      "id": "C04",
+      "claim": "2005 music/free association effect",
+      "status": "supported_study_context",
+      "source_ids": [
+        "o2005"
+      ],
+      "limitation": "No generic productivity claim"
+    },
+    {
+      "id": "C05",
+      "claim": "2006 memory load/affect/instruction effects",
+      "status": "supported_study_context",
+      "source_ids": [
+        "o2006"
+      ],
+      "limitation": "Within tested conditions"
+    },
+    {
+      "id": "C06",
+      "claim": "2007 intensive three-month training changed task signals",
+      "status": "supported_study_context",
+      "source_ids": [
+        "s2007",
+        "s2007full"
+      ],
+      "limitation": "Not a consumer audio trial"
+    },
+    {
+      "id": "C07",
+      "claim": "2019 closed-loop app study different intervention",
+      "status": "supported_study_context",
+      "source_ids": [
+        "z2019"
+      ],
+      "limitation": "Does not support Zen12"
+    },
+    {
+      "id": "C08",
+      "claim": "Zen12 12 minutes and 12 levels",
+      "status": "seller_description",
+      "source_ids": [
+        "zenabout"
+      ],
+      "limitation": "Product format only"
+    },
+    {
+      "id": "C09",
+      "claim": "Zen12 4 tracks per level",
+      "status": "seller_description",
+      "source_ids": [
+        "zenabout"
+      ],
+      "limitation": "Music/guided/white noise/nature"
+    },
+    {
+      "id": "C10",
+      "claim": "Zen12 complete 48 MP3 package",
+      "status": "seller_description",
+      "source_ids": [
+        "zencheck"
+      ],
+      "limitation": "Confirm current terms before any sale"
+    },
+    {
+      "id": "C11",
+      "claim": "Zen12 equals one hour meditation",
+      "status": "seller_claim_excluded",
+      "source_ids": [
+        "zenabout"
+      ],
+      "limitation": "Unsupported equivalent dose"
+    },
+    {
+      "id": "C12",
+      "claim": "Zen12 automatically creates targeted brain state",
+      "status": "seller_claim_excluded",
+      "source_ids": [
+        "zenabout"
+      ],
+      "limitation": "No product-specific verified efficacy"
+    },
+    {
+      "id": "C13",
+      "claim": "Zen12 refund guarantee",
+      "status": "seller_claim_qualified",
+      "source_ids": [
+        "zencheck"
+      ],
+      "limitation": "Never assert refund entitlement or personal successful refund"
+    },
+    {
+      "id": "C14",
+      "claim": "Current Zen12 exact price",
+      "status": "withheld_dynamic",
+      "source_ids": [
+        "zencheck"
+      ],
+      "limitation": "Prior checkout observations varied; no price in buyer guide"
+    },
+    {
+      "id": "C15",
+      "claim": "Hypnosis Live Total Focus 33-minute MP3",
+      "status": "seller_description",
+      "source_ids": [
+        "totalfocus"
+      ],
+      "limitation": "Distinct product / seller benefit claims excluded"
+    },
+    {
+      "id": "C16",
+      "claim": "Hypnosis Live 100% focus success",
+      "status": "seller_claim_excluded",
+      "source_ids": [
+        "totalfocus"
+      ],
+      "limitation": "No credible product-specific support"
+    },
+    {
+      "id": "C17",
+      "claim": "Brainwave Shots Focus Shot 15 and 30 minute versions",
+      "status": "seller_description",
+      "source_ids": [
+        "focusshot"
+      ],
+      "limitation": "Distinct product"
+    },
+    {
+      "id": "C18",
+      "claim": "Brainwave Shots hours-long concentration results",
+      "status": "seller_claim_excluded",
+      "source_ids": [
+        "focusshot"
+      ],
+      "limitation": "Unverified"
+    },
+    {
+      "id": "C19",
+      "claim": "FV-specific Inspire3 affiliate approval",
+      "status": "not_verified",
+      "source_ids": [
+        "affiliate"
+      ],
+      "limitation": "Public registration is not acceptance"
+    },
+    {
+      "id": "C20",
+      "claim": "FV-specific commission rate, channels, link",
+      "status": "not_verified",
+      "source_ids": [
+        "affiliate"
+      ],
+      "limitation": "Do not infer from public marketing"
+    },
+    {
+      "id": "C21",
+      "claim": "Existing Focus Fieldbook",
+      "status": "verified_live",
+      "source_ids": [
+        "focus"
+      ],
+      "limitation": "One Jetpack list; confirmed signup requires provider proof"
+    },
+    {
+      "id": "C22",
+      "claim": "Puységur historical project",
+      "status": "verified_live",
+      "source_ids": [
+        "puy"
+      ],
+      "limitation": "No proof of magnetism or modern efficacy"
+    },
+    {
+      "id": "C23",
+      "claim": "Disclosure near a commercial link",
+      "status": "regulatory_requirement",
+      "source_ids": [
+        "ftc"
+      ],
+      "limitation": "Do not rely on sitewide disclosure"
+    },
+    {
+      "id": "C24",
+      "claim": "Health/cognitive benefits need adequate product-specific substantiation",
+      "status": "regulatory_requirement",
+      "source_ids": [
+        "health"
+      ],
+      "limitation": "Exclude unsupported guarantees"
+    },
+    {
+      "id": "C25",
+      "claim": "Native earned revenue from outbound click",
+      "status": "prohibited_inference",
+      "source_ids": [
+        "affiliate"
+      ],
+      "limitation": "Paid commission must be confirmed from merchant settlement"
+    }
+  ],
+  "commercial_holds": [
+    {
+      "id": "partner_acceptance_account_specific",
+      "passed": false,
+      "evidence": "not independently authenticated or not authorized for release"
+    },
+    {
+      "id": "approved_website_channel",
+      "passed": false,
+      "evidence": "not independently authenticated or not authorized for release"
+    },
+    {
+      "id": "approved_social_channel",
+      "passed": false,
+      "evidence": "not independently authenticated or not authorized for release"
+    },
+    {
+      "id": "approved_email_channel",
+      "passed": false,
+      "evidence": "not independently authenticated or not authorized for release"
+    },
+    {
+      "id": "issued_earning_url",
+      "passed": false,
+      "evidence": "not independently authenticated or not authorized for release"
+    },
+    {
+      "id": "authorized_promotion_creatives",
+      "passed": false,
+      "evidence": "not independently authenticated or not authorized for release"
+    },
+    {
+      "id": "actual_price_tax_total",
+      "passed": false,
+      "evidence": "not independently authenticated or not authorized for release"
+    },
+    {
+      "id": "actual_return_terms",
+      "passed": false,
+      "evidence": "not independently authenticated or not authorized for release"
+    },
+    {
+      "id": "seller_checkout_availability",
+      "passed": false,
+      "evidence": "not independently authenticated or not authorized for release"
+    },
+    {
+      "id": "merchant_buyer_receipt",
+      "passed": false,
+      "evidence": "not independently authenticated or not authorized for release"
+    },
+    {
+      "id": "merchant_settled_commission",
+      "passed": false,
+      "evidence": "not independently authenticated or not authorized for release"
+    },
+    {
+      "id": "net_fees_refunds",
+      "passed": false,
+      "evidence": "not independently authenticated or not authorized for release"
+    },
+    {
+      "id": "approved_claim_matrix",
+      "passed": false,
+      "evidence": "not independently authenticated or not authorized for release"
+    },
+    {
+      "id": "founder_commercial_release",
+      "passed": false,
+      "evidence": "not independently authenticated or not authorized for release"
+    },
+    {
+      "id": "independent_browser_wcag",
+      "passed": false,
+      "evidence": "not independently authenticated or not authorized for release"
+    },
+    {
+      "id": "playable_video_encode_and_caption_sync",
+      "passed": false,
+      "evidence": "not independently authenticated or not authorized for release"
+    },
+    {
+      "id": "wp_sanitization_and_mobile_cwv",
+      "passed": false,
+      "evidence": "not independently authenticated or not authorized for release"
+    },
+    {
+      "id": "confirmed_7_30d_human_attribution",
+      "passed": false,
+      "evidence": "not independently authenticated or not authorized for release"
+    }
+  ],
+  "partner_status": "NOT VERIFIED",
+  "fv_owned_mind_paid_sku": "NOT VERIFIED; public WordPress post list is not private Payhip inventory",
+  "film": "STATIC poster, transcript and VTT only; playable file absent",
+  "measurement_status": "paid commission, attributed orders, fees, refunds and qualified humans not independently verified",
+  "price_policy": "No current price quoted in buyer pages; checkout snapshots may differ; consumer must review actual terms when approved",
+  "disclosure_template": "If you purchase through this link, Final Vestige may earn a commission at no additional cost to you.",
+  "creator_fit": [
+    {
+      "topic": "attentional blink",
+      "published_media_id": null,
+      "article": "The Second Letter That Vanished While You Were Looking (R327 unpublished)",
+      "free_route": "https://finalvestige.com/focus/",
+      "optional_offer": "Zen12",
+      "fit": "moderate: routine convenience; not a fix for visual detection"
+    },
+    {
+      "topic": "change blindness",
+      "published_media_id": null,
+      "article": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "free_route": "https://finalvestige.com/focus/",
+      "optional_offer": "Zen12",
+      "fit": "low-moderate: reflective practice, no evidence of change-blindness treatment"
+    },
+    {
+      "topic": "invisible gorilla",
+      "published_media_id": null,
+      "article": "proposed Mind investigation (not public)",
+      "free_route": "https://finalvestige.com/focus/",
+      "optional_offer": "Hypnosis Live Total Focus (hold)",
+      "fit": "weak; do not force commercial recommendation"
+    }
+  ]
+}
