@@ -1,0 +1,30 @@
+THE DISPATCH / ISSUE 03 — REVIEW-ONLY, NOT ADOPTED, NOT SENT
+Subject: Twelve minutes is a duration, not a result
+Preheader: An eighteenth-century lesson in testing claims, and three checks before buying an audio routine.
+
+In 1784, a French royal commission examined animal magnetism at Benjamin Franklin's house in Passy. A boy, blindfolded, reported strong reactions as he approached several trees. But the trees that provoked the reactions had not been treated. The English translation printed in 1785 preserves the experiment and the commissioners' interpretation. The crucial distinction is between what was reported and what the proposed force predicted.
+
+The lesson is not that every unusual experience is imaginary, or that an eighteenth-century experiment answers a modern clinical question. It's that a persuasive experience and an explanation for it are two different kinds of evidence.
+
+That distinction matters when a meditation-audio seller promises a surprising amount of benefit in a short session. Zen12 describes a twelve-level course with multiple listening styles and twelve-minute recordings. It also markets the idea that twelve minutes offers the benefit of a much longer meditation session. The product description tells you what is offered and what the company claims; it does not establish a controlled, product-specific comparison.
+
+Before paying, try a three-day feasibility check that costs nothing. On each day, set a timer for twelve minutes in a safe, quiet setting. Record whether you actually completed it, the distractions that interrupted you, and whether the routine was comfortable enough to repeat. Don't turn mood or concentration scores into a medical efficacy claim. They can tell you something about fit and adherence, not whether proprietary audio beats an alternative.
+
+Then ask three buyer questions. What exact tracks and access rights would the proposed package include? Is there reliable, product-specific evidence for the outcome that interests you? And what do the current checkout and refund terms actually say for that specific package?
+
+General meditation research is mixed and methodologically varied. NIH's National Center for Complementary and Integrative Health discusses potential benefits and possible negative experiences, but that overview is not a clinical trial of Zen12. Someone who prefers silence or a free guided practice might reasonably decide they need no paid recording at all.
+
+One test worth keeping: write the promised result in one column, the evidence that would actually establish it in a second, and the seller's available proof in a third. If those columns do not match, that's useful information before spending.
+
+ONE RESERVED COMMERCIAL CTA — INACTIVE
+Read the Zen12 evidence-and-offer guide: [[APPROVED_ZEN12_WARMUP_GUIDE_URL_REQUIRED]]
+Commercial disclosure: If you buy through a qualifying link in a future vetted guide, Final Vestige may earn a commission. No such link is live or approved in this draft.
+
+Sources for the historical and independent-evidence discussion:
+Historical commission, 1785 English translation: https://www.gutenberg.org/files/78413/78413-h/78413-h.htm
+NCCIH meditation: effectiveness and safety: https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety
+Final Vestige Puységur archive: https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/
+
+Publisher postal address: [[VALID_POSTAL_ADDRESS_REQUIRED]]. Unsubscribe: [[JETPACK_UNSUBSCRIBE_LINK_MUST_BE_VERIFIED]].
+
+RELEASE STATUS: HOLD_UNSENT / HOLD_MERCHANT. No price, earning link or buyer guide has been approved. This is a source-review specimen, not a Jetpack preview.

@@ -1,0 +1,69 @@
+{
+  "schema": "dispatch-r292-evidence-v1",
+  "campaign": "fv-dispatch-six-issue-draft",
+  "issue_number": 3,
+  "kind": "commercial-review-pending",
+  "campaign_mix": {
+    "editorial": 4,
+    "commercial": 2
+  },
+  "evidence_class": "real",
+  "capture_kind": "none",
+  "source": {},
+  "observed_utc": "2026-11-12T00:40:28Z",
+  "wordpress": {
+    "newsletter_enabled": true,
+    "site_can_send_capability": true,
+    "automatic_new_post_email": false,
+    "email_content_format": "full",
+    "reply_to": "no-reply",
+    "welcome_configured": true,
+    "welcome_receipt_verified": false,
+    "subscribers_diagnostic": {
+      "total": 3,
+      "confirmed": 3,
+      "unconfirmed_requests": 2,
+      "suppressed": 0
+    },
+    "followers": {
+      "wpcom_reader": 3,
+      "email": 0,
+      "partial": false
+    },
+    "email_eligible_audience": null,
+    "last_five_newsletter_send_status": "never_sent_opted_out",
+    "native_preview_completed": false
+  },
+  "attestations": {
+    "founder_final_send_approval": false,
+    "provider_confirmed_eligible_audience": false,
+    "publisher_postal_address_verified": false,
+    "unsubscribe_function_verified": false,
+    "genuine_jetpack_render_verified": false,
+    "issue_specific_copy_approved": false,
+    "send_toggle_off_during_review": false,
+    "publisher_partner_accepted": false,
+    "email_channel_authorized": false,
+    "earning_url_issued": false,
+    "offer_guide_published_and_vetted": false,
+    "seller_terms_current": false,
+    "independent_claim_review_complete": false
+  },
+  "approval_record": {},
+  "postal_proof_ref": null,
+  "optout_proof_ref": null,
+  "final_decision": "HOLD_UNSENT",
+  "commercial_issue_decision": "HOLD_MERCHANT",
+  "revenue": {
+    "qualified_sessions": null,
+    "settled_paid_orders": null,
+    "realized_net_revenue": null,
+    "net_revenue_per_1000_qualified_sessions": null
+  },
+  "sources": [
+    "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/174",
+    "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+    "https://wordpress.com/support/newsletter/email-appearance/",
+    "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business"
+  ]
+}
