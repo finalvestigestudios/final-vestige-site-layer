@@ -1,0 +1,30 @@
+{
+  "id": "fv-dispatch-r315",
+  "source_master_pr": 175,
+  "master_sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "candidate_issue": 3,
+  "editorial_allocation": 4,
+  "commercial_allocation": 2,
+  "all_issues_send_authorized": false,
+  "issue_3": {
+    "adopted": false,
+    "send_authorized": false,
+    "guide_live": false,
+    "affiliate_account_accepted": false,
+    "merchant_email_permission": false,
+    "approved_creative": false,
+    "earning_link_verified": false,
+    "subscriber_eligibility_verified": false,
+    "native_jetpack_preview_verified": false,
+    "postal_address_verified": false,
+    "unsubscribe_received_verified": false,
+    "founder_final_approval": false
+  },
+  "measurement": {
+    "confirmed_signup": "Only first provider-confirmed transition (deduped); browser UI, follower count and form submit do not count",
+    "email_cta": "Email issue ID + stable verified first-party destination + permitted utm_source=dispatch; do not append PII",
+    "sale": "Only independently reported settled paid sale, net of refund/fee; no click-as-sale",
+    "net_revenue_per_1000_qualified_sessions": null
+  },
+  "status": "HOLD_UNSENT_HOLD_MERCHANT"
+}
