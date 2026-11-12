@@ -1,0 +1,41 @@
+{
+  "reviewed_on": "2026-11-12",
+  "scope": "public seller source only; no acceptance / checkout / email rights inferred",
+  "products": [
+    {
+      "issue": 3,
+      "offer": "Zen12",
+      "official_urls": [
+        "https://zen12.com/about",
+        "https://zen12.com/getstarted",
+        "https://affiliates.inspire3.com/"
+      ],
+      "seller_format": "Twelve levels and four listening styles; merchant describes forty-eight recordings",
+      "independent_product_efficacy_verified": false,
+      "affiliate_account_accepted_for_fv": false,
+      "email_promotion_permission_verified": false,
+      "issued_earning_url_verified": false,
+      "authorized_live_first_party_guide_verified": false,
+      "checkout_price_and_refunds_verified": false,
+      "decision": "HOLD_MERCHANT"
+    },
+    {
+      "issue": 5,
+      "offer": "Hypnosis Live Total Focus",
+      "official_urls": [
+        "https://hypnosislive.com/mental-skills/total-focus",
+        "https://affiliates.inspire3.com/"
+      ],
+      "seller_format": "33-minute, 47 MB audio download",
+      "independent_product_efficacy_verified": false,
+      "affiliate_account_accepted_for_fv": false,
+      "email_promotion_permission_verified": false,
+      "issued_earning_url_verified": false,
+      "authorized_live_first_party_guide_verified": false,
+      "checkout_price_and_refunds_verified": false,
+      "decision": "HOLD_MERCHANT"
+    }
+  ],
+  "disclosure": "If you buy through a qualifying link in our independent guide, Final Vestige may earn a commission. Place beside offer CTA in same issue.",
+  "interpretation": "not-verified does not establish absence of a private agreement; don't include secrets or subscriber PII"
+}

@@ -1,0 +1,31 @@
+{
+  "site": "https://finalvestige.com",
+  "as_of_utc": "2026-11-12T18:30:49Z",
+  "source": "Authenticated WordPress Jetpack newsletter status/get_settings (read-only)",
+  "settings": {
+    "subscriptions": true,
+    "email_new_posts_by_default": false,
+    "email_content_format": "full",
+    "sender_display": "Final Vestige Studios",
+    "reply_to": "no-reply",
+    "newsletter_categories_enabled": false,
+    "welcome_fieldbook_configured": true
+  },
+  "aggregate_diagnostics": {
+    "total": 3,
+    "confirmed": 3,
+    "unconfirmed": 2,
+    "suppressed": 0,
+    "paid": 0,
+    "subscriber_status_counts_not_additive": true,
+    "actual_email_eligible_count": null
+  },
+  "recent_post_notices": "Five never_sent_opted_out, NOT proof of zero lifetime sending",
+  "verified_provider_received_welcome": false,
+  "verified_provider_preview": false,
+  "verified_sender_postal_address": false,
+  "verified_functional_unsubscribe": false,
+  "verified_account_specific_affiliate_email_rights": false,
+  "release": "HOLD_UNSENT",
+  "pii_recorded": false
+}
