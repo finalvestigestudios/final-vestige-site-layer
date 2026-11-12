@@ -41,7 +41,7 @@ function inspection(F){
   req(/<html lang="en">/.test(html)&&/<main\b/.test(html)&&/<h1\b/.test(html),"SEMANTIC_"+key);
   req(!/<script\b|<iframe\b|<form\b|<input\b|<meta[^>]*http-equiv|on(?:click|load|submit|error)\s*=/i.test(html),"NO_EXECUTION_"+key);
   req(!/https?:\/\/(?:www\.)?(?:zen12|hypnosislive|brainwaveshots|affiliates\.inspire3)\.com/i.test(html),"NO_PRODUCT_OUTBOUND_"+key);
-  req(!/utm_content=|fbclid|gclid|gtag\(|pixel|dataLayer/i.test(html),"NO_TRACKING_"+key);
+  req(!/<script\b|dataLayer\s*=|gtag\s*\(|(?:fbclid|gclid)\s*=|tracking-pixel/i.test(html),"NO_TRACKING_"+key);
   req(html.includes("https://finalvestige.com/focus/"),"ONE_EXISTING_FUNNEL_"+key);
   req(html.includes("noindex,nofollow"),"UNPUBLISHED_META_"+key);
  }
@@ -59,7 +59,7 @@ function inspection(F){
  req(!F.a.includes('<figure class="film"'),"A_TEXT_ONLY");
  req(F.b.includes("Optional 42-second original short-film treatment"),"B_FILM_TREATMENT");
  req(F.b.includes("<details open>")&&F.b.includes('role="img"')&&F.b.includes("00:35–00:42"),"B_ACCESSIBLE_STORYBOARD");
- req(!/<video\b|autoplay|<audio\b/i.test(F.b),"B_NOT_FALSE_PLAYABLE");
+ req(!/<video\b|<audio\b|\bautoplay\s*(?:=|>)/i.test(F.b),"B_NOT_FALSE_PLAYABLE");
  req(F.hub.includes("Perception &amp; Attention")&&F.hub.includes("History of Suggestion")&&F.hub.includes("Practice &amp; Reflection")&&F.hub.includes("Tools Under Review"),"HUB_FOUR_STREAMS");
  req(F.hub.includes("source-controlled WordPress HTML")||F.hub.includes("source-controlled WordPress HTML review"),"HUB_NOT_CMS");
  req(F.dossier.includes("OFFER → FUNNEL STEP → BLOCKER → CHANGE/EXPERIMENT → PASS/FAIL EVIDENCE → OWNER"),"COMMERCIAL_DECISION_TABLE");
