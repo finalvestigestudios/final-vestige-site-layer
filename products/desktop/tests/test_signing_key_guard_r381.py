@@ -115,6 +115,23 @@ class SigningKeyGuardR381Tests(unittest.TestCase):
             self.denied("identity changed")
 
     def test_detect_path_replacement_after_read(self):
+        if os.name == "nt":
+            # Windows generally forbids unlinking a file while its FD is open.
+            original_lstat = guard.os.lstat
+            count = 0
+            def switched(path):
+                nonlocal count
+                count += 1
+                value = original_lstat(path)
+                if count == 1:
+                    return value
+                return SimpleNamespace(**{name: getattr(value, name, 0)
+                    + (1 if name == "st_ino" else 0) for name in
+                    ("st_dev", "st_ino", "st_mode", "st_nlink", "st_size",
+                     "st_mtime_ns", "st_ctime_ns", "st_uid")})
+            with patch.object(guard.os, "lstat", side_effect=switched):
+                self.denied("identity changed")
+            return
         original_read = guard.os.read
         other = self.root / "replacement.pem"
         other.write_bytes(self.secret)
@@ -133,6 +150,23 @@ class SigningKeyGuardR381Tests(unittest.TestCase):
             self.denied("identity changed")
 
     def test_detect_in_place_length_mutation_mid_read(self):
+        if os.name == "nt":
+            # Pure metadata fault injection on Windows; real append is POSIX.
+            real_fstat = guard.os.fstat
+            calls = 0
+            def mutated(fd):
+                nonlocal calls
+                calls += 1
+                original = real_fstat(fd)
+                if calls == 1:
+                    return original
+                return SimpleNamespace(**{name: getattr(original, name, 0)
+                    + (1 if name == "st_size" else 0) for name in
+                    ("st_dev", "st_ino", "st_mode", "st_nlink", "st_size",
+                     "st_mtime_ns", "st_ctime_ns", "st_uid")})
+            with patch.object(guard.os, "fstat", side_effect=mutated):
+                self.denied("identity changed")
+            return
         old_read = guard.os.read
         seen = False
         def corrupt(fd, n):
@@ -150,7 +184,7 @@ class SigningKeyGuardR381Tests(unittest.TestCase):
         original_lstat = guard.os.lstat
         def reparse(path):
             actual = original_lstat(path)
-            return SimpleNamespace(**{name: getattr(actual, name)
+            return SimpleNamespace(**{name: getattr(actual, name, 0)
                 for name in ("st_dev", "st_ino", "st_mode", "st_nlink", "st_size",
                              "st_mtime_ns", "st_ctime_ns", "st_uid")},
                 st_file_attributes=0x400)
