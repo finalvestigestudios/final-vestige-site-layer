@@ -126,6 +126,30 @@ def source_check(ctx, source, out: Path, max_bytes: int):
     )
     return row
 
+def ensure_browser_capture(ctx, row, out: Path):
+    """Independently try ordinary navigation even when API fetching got HTTP 403.
+
+    A site can treat automated fetches and a normal Chromium PDF viewer
+    differently. A screenshot is raw evidence for human review, never a PASS.
+    """
+    if row.get("browser_viewer_screenshot"):
+        return row
+    page = ctx.new_page()
+    page.set_viewport_size({"width": 1440, "height": 1000})
+    try:
+        page.goto(row["url"], wait_until="domcontentloaded", timeout=60000)
+        page.wait_for_timeout(2500)
+        fname = f"{row['id']}-anonymous-browser.png"
+        page.screenshot(path=str(out / fname), animations="disabled",
+                        timeout=20000)
+        row["browser_viewer_screenshot"] = fname
+        row["browser_final_host"] = urlsplit(page.url).hostname
+    except Exception as exc:
+        row["browser_navigation_error"] = type(exc).__name__
+    finally:
+        page.close()
+    return row
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--out", required=True, type=Path,
@@ -146,8 +170,11 @@ def main():
         # A fresh ephemeral context is isolated from any logged-in editor session.
         ctx = browser.new_context(accept_downloads=True, service_workers="block")
         try:
-            results = [source_check(ctx, source, args.out, args.max_mb * 1024 * 1024)
-                       for source in SOURCES]
+            results = []
+            for source in SOURCES:
+                row = source_check(ctx, source, args.out, args.max_mb * 1024 * 1024)
+                # Deliberately independent of API status / PDF bytes.
+                results.append(ensure_browser_capture(ctx, row, args.out))
         finally:
             ctx.close()
             if not args.cdp:
