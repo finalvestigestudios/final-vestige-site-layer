@@ -88,7 +88,7 @@ class SourceSmokeReceiptContractR387(unittest.TestCase):
         self.reject("procurement", [Path("a.csv"), Path("a.csv")])
 
     def test_windows_path_and_ads_rejected(self):
-        for path in (r"C:\customers\private.csv", "report.csv:secret", "sub\report.csv"):
+        for path in (r"C:\\customers\\private.csv", "report.csv:secret", "sub\\report.csv"):
             with self.subTest(path=path):
                 self.reject("ledger", [Path(path)])
 
