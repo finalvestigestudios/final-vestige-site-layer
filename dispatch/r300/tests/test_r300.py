@@ -38,7 +38,7 @@ class ReviewGate(unittest.TestCase):
  def test_historical_boundaries(self):
   for phrase in ('four other trees','Deslon','not','fluid'):
    self.assertIn(phrase.lower(),self.md.lower())
-  self.assertIn('1785 English translation',self.md)
+  self.assertIn('English translation published in 1785',self.md)
  def test_subject_and_preheader_parity(self):
   for body in (self.md,self.txt,self.html):
    self.assertIn(self.ledger['subject'],body)
