@@ -1,0 +1,253 @@
+{
+  "date": "2026-11-12",
+  "status": "research_only_commercial_hard_hold",
+  "links_activation": "none",
+  "sources": [
+    {
+      "category": "seller",
+      "url": "https://inspire3.com/",
+      "title": "seller catalog",
+      "access": "seller",
+      "grounding": "Zen12/Hypnosis Live/Brainwave Shots listed"
+    },
+    {
+      "category": "seller",
+      "url": "https://zen12.com/",
+      "title": "Zen12 exact tiers and promotional offers",
+      "access": "seller",
+      "grounding": "Beginner 6/24; Premium 12/48; Advanced 6/24, dated marketing prices"
+    },
+    {
+      "category": "seller",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "title": "Total Focus exact offer",
+      "access": "seller",
+      "grounding": "33min 47MB; guarantee says 14 days"
+    },
+    {
+      "category": "seller",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "title": "Focus Shot exact offer",
+      "access": "seller",
+      "grounding": "15/30min formats, one year seller guarantee"
+    },
+    {
+      "category": "partner_public",
+      "url": "https://affiliates.inspire3.com/",
+      "title": "public enrollment login",
+      "access": "partner_public",
+      "grounding": "Does not authenticate FV account"
+    },
+    {
+      "category": "research",
+      "url": "https://doi.org/10.1068/p6659",
+      "title": "Wong et al 2010",
+      "access": "abstract",
+      "grounding": "Thatcher effect not unique to faces"
+    },
+    {
+      "category": "research",
+      "url": "https://doi.org/10.1068/p7755",
+      "title": "Psalta Andrews 2014",
+      "access": "abstract",
+      "grounding": "Expression recognition dissociated from striking Thatcher percept"
+    },
+    {
+      "category": "research",
+      "url": "https://doi.org/10.1177/0956797613501521",
+      "title": "Psalta et al 2014",
+      "access": "article",
+      "grounding": "Orientation-dependent neural response in experiment"
+    },
+    {
+      "category": "research",
+      "url": "https://journals.sagepub.com/doi/10.1068/pmktho",
+      "title": "Thompson 1980 retrospective",
+      "access": "bibliographic",
+      "grounding": "Origin in 1980 illusion report"
+    },
+    {
+      "category": "fv",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "title": "Puységur dossier",
+      "access": "published",
+      "grounding": "153 source rows, consent/evidence caveats"
+    },
+    {
+      "category": "fv",
+      "url": "https://finalvestige.com/focus/",
+      "title": "Free Focus Fieldbook",
+      "access": "published",
+      "grounding": "52-page free resource existing Jetpack signup"
+    },
+    {
+      "category": "ftc",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "title": "endorsement guides",
+      "access": "official",
+      "grounding": "Proximate material-connection disclosure"
+    },
+    {
+      "category": "ftc",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "title": "health claims",
+      "access": "official",
+      "grounding": "Product-specific claim support required"
+    }
+  ],
+  "claims": [
+    {
+      "id": "Z01",
+      "claim": "Beginner consists of six levels and 24 MP3s",
+      "class": "seller_catalog_fact",
+      "source": "https://zen12.com/",
+      "eligible_for_buyer_copy": true
+    },
+    {
+      "id": "Z02",
+      "claim": "Premium consists of twelve levels and 48 MP3s",
+      "class": "seller_catalog_fact",
+      "source": "https://zen12.com/",
+      "eligible_for_buyer_copy": true
+    },
+    {
+      "id": "Z03",
+      "claim": "Advanced consists of last six levels and 24 MP3s",
+      "class": "seller_catalog_fact",
+      "source": "https://zen12.com/",
+      "eligible_for_buyer_copy": true
+    },
+    {
+      "id": "Z04",
+      "claim": "Seller-displayed prices 67.77/87.99/67.77 USD on November 12",
+      "class": "dated_seller_marketing_observation_not_checkout",
+      "source": "https://zen12.com/",
+      "eligible_for_buyer_copy": true,
+      "limitation": "No final payment/fees/refund audit"
+    },
+    {
+      "id": "Z05",
+      "claim": "One-year money-back guarantee",
+      "class": "seller_refund_promise_unverified_fulfillment",
+      "source": "https://zen12.com/",
+      "eligible_for_buyer_copy": true,
+      "limitation": "Check actual merchant conditions"
+    },
+    {
+      "id": "Z06",
+      "claim": "One hour advanced meditation benefits in 12 minutes",
+      "class": "unsupported_product_efficacy",
+      "source": "https://zen12.com/",
+      "eligible_for_buyer_copy": false
+    },
+    {
+      "id": "Z07",
+      "claim": "Instant focus, health, mood, creativity results or brain rewiring",
+      "class": "unsupported_product_efficacy",
+      "source": "https://zen12.com/",
+      "eligible_for_buyer_copy": false
+    },
+    {
+      "id": "Z08",
+      "claim": "Total Focus is 33min/47MB seller product",
+      "class": "seller_catalog_fact",
+      "source": "https://hypnosislive.com/mental-skills/total-focus",
+      "eligible_for_buyer_copy": true
+    },
+    {
+      "id": "Z09",
+      "claim": "Total Focus refund period is 14 days",
+      "class": "seller_refund_promise_unverified_fulfillment",
+      "source": "https://hypnosislive.com/mental-skills/total-focus",
+      "eligible_for_buyer_copy": true
+    },
+    {
+      "id": "Z10",
+      "claim": "Total Focus price $24.44 on directly opened live page",
+      "class": "dated_seller_marketing_observation_not_checkout",
+      "source": "https://hypnosislive.com/mental-skills/total-focus",
+      "eligible_for_buyer_copy": false,
+      "limitation": "Price differs from search-cached $17.95; no hardcoded CTA"
+    },
+    {
+      "id": "Z11",
+      "claim": "Focus Shot 15/30min audio plus brainwave-only versions",
+      "class": "seller_catalog_fact",
+      "source": "https://brainwaveshots.com/focus-shot",
+      "eligible_for_buyer_copy": true
+    },
+    {
+      "id": "Z12",
+      "claim": "Focus Shot 4 hours to all-day improved concentration",
+      "class": "unsupported_product_efficacy",
+      "source": "https://brainwaveshots.com/focus-shot",
+      "eligible_for_buyer_copy": false
+    },
+    {
+      "id": "R01",
+      "claim": "Thatcher-like inversion effects occur outside faces",
+      "class": "independent_scientific_abstract",
+      "source": "https://doi.org/10.1068/p6659",
+      "eligible_for_buyer_copy": true,
+      "limitation": "Not a test of audio"
+    },
+    {
+      "id": "R02",
+      "claim": "Expression identification and visible grotesqueness can dissociate",
+      "class": "independent_scientific_abstract",
+      "source": "https://doi.org/10.1068/p7755",
+      "eligible_for_buyer_copy": true,
+      "limitation": "Not a product outcome"
+    },
+    {
+      "id": "R03",
+      "claim": "Product-specific Zen12 cognitive improvement independently replicated",
+      "class": "unverified_no_product_specific_study_authenticated",
+      "source": null,
+      "eligible_for_buyer_copy": false
+    },
+    {
+      "id": "P01",
+      "claim": "FV account accepted into Inspire3 and authorized to promote on site/social/email",
+      "class": "not_verified",
+      "source": null,
+      "eligible_for_buyer_copy": false
+    },
+    {
+      "id": "P02",
+      "claim": "FV-owned live paid Mind Payhip SKU, rights, seller refunds authenticated",
+      "class": "not_verified",
+      "source": null,
+      "eligible_for_buyer_copy": false
+    }
+  ],
+  "release_gates": {
+    "publisher_approval": "HOLD",
+    "explicit_site_channels": "HOLD",
+    "explicit_social_channels": "HOLD",
+    "explicit_email_channels": "HOLD",
+    "issued_affiliate_url": "HOLD",
+    "correct_tier_destination": "HOLD",
+    "tracking_cookie_terms": "HOLD",
+    "commission_settlement_terms": "HOLD",
+    "exact_checkout_total": "HOLD",
+    "merchant_refund_details": "HOLD",
+    "seller_claim_substantiation": "HOLD",
+    "human_attribution": "HOLD",
+    "no_duplicate_jetpack": "HOLD",
+    "original_video_rights": "HOLD",
+    "captioned_playable_film": "HOLD",
+    "mobile_browser_qa": "HOLD",
+    "privacy_security_qa": "HOLD",
+    "founder_release_approval": "HOLD"
+  },
+  "metrics": {
+    "qualified_human_sessions": null,
+    "confirmed_subscribers": null,
+    "verified_orders": null,
+    "cleared_commission": null,
+    "refunds": null,
+    "fees": null,
+    "net_revenue_per_1000_qualified_human_sessions": null
+  }
+}
