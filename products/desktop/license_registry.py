@@ -12,7 +12,6 @@ import hmac
 import os
 import re
 import sqlite3
-import stat
 from contextlib import contextmanager
 from datetime import datetime, timezone
 from pathlib import Path
@@ -21,6 +20,7 @@ from registry_schema_guard import RegistrySchemaError, enforce_registry_schema
 from registry_row_guard import RegistryRowError, enforce_registry_rows
 from registry_write_guard import run_protected_write
 from registry_file_guard import verify_registry_file
+from issued_entitlement_guard import fingerprint_issued_entitlement
 
 PRODUCTS = frozenset({"grants", "procurement"})
 IDENTIFIER = re.compile(r"^[A-Za-z0-9_-]{4,64}$")
@@ -162,19 +162,10 @@ class IssuanceRegistry:
         destination = Path(output)
         if not destination.is_absolute() or destination.is_symlink():
             raise RegistryError("Issued file must be an absolute regular file")
-        flags = os.O_RDONLY | getattr(os, "O_BINARY", 0) | getattr(os, "O_NOFOLLOW", 0)
-        try:
-            fd = os.open(destination, flags)
-            with os.fdopen(fd, "rb") as handle:
-                metadata = os.fstat(handle.fileno())
-                if not stat.S_ISREG(metadata.st_mode) or metadata.st_size > MAX_LICENSE_BYTES:
-                    raise RegistryError("Issued file is not a bounded regular file")
-                content = handle.read(MAX_LICENSE_BYTES + 1)
-        except OSError as exc:
-            raise RegistryError("Cannot read issued entitlement for fingerprint") from exc
-        if len(content) > MAX_LICENSE_BYTES or not content:
-            raise RegistryError("Issued file is empty or exceeds size limit")
-        digest = hashlib.sha256(content).hexdigest()
+        # Fingerprint from one protected read-only descriptor; no hardlink aliases,
+        # special-file stalls, leaked raw descriptors or private OS error chains.
+        # Do not finalize if the bytes changed or the descriptor failed to close.
+        digest = fingerprint_issued_entitlement(destination, MAX_LICENSE_BYTES, RegistryError)
         if not hmac.compare_digest(digest, expected_sha256):
             raise RegistryError("Issued file differs from verified signed payload; reservation retained")
         with self._db() as db:
