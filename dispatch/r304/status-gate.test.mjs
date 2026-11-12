@@ -1,0 +1,27 @@
+import assert from "node:assert/strict";
+import {countSnapshot,eligibleFromStatuses,classifyProgression} from "./status-gate.mjs";
+const n={"newsletter":{"total":3,"confirmed":3,"unconfirmed":2},"followers":{"email":0,"wpcom":3}};
+const d={"source":"jetpack_email_subscription_status_mutually_exclusive_aggregate","contains_pii":false,"observed_at":"2026-11-12T12:30:52Z","total":3,"not_confirmed":2,"subscribed":1,"not_subscribed":1,"bounced":0,"emails_paused":1,"not_sending":0};
+const e={"provider":"jetpack","email_subscription":"subscribed","confirmation":"verified_wp_account","is_new_transition":true,"durable_dedup_applied":true,"suppressed":false,"bounced":false};
+let tests=0;
+function check(description,condition){assert.ok(condition,description);tests++;}
+check("pending excluded from total",countSnapshot(n).unconfirmed_not_in_total===2&&countSnapshot(n).eligible_email_recipients===null);
+check("no count arithmetic without provider statuses",countSnapshot(n).total===3&&countSnapshot(n).confirmed===3);
+check("missing aggregates fail closed",countSnapshot({followers:n.followers}).status==="INVALID_SNAPSHOT");
+check("negative aggregates fail closed",countSnapshot({newsletter:{...n.newsletter,total:-1},followers:n.followers}).status==="INVALID_SNAPSHOT");
+check("valid private aggregate returns subscribed only",eligibleFromStatuses(d).eligible_email_recipients===1);
+check("digest cadence not invented",eligibleFromStatuses(d).immediate_deliveries===null);
+check("no new signups from snapshot",eligibleFromStatuses(d).confirmed_signup_events===null);
+check("non-reconciling categories fail closed",eligibleFromStatuses({...d,total:4}).eligible_email_recipients===null);
+check("wrong source fails closed",eligibleFromStatuses({...d,source:"spreadsheet"}).eligible_email_recipients===null);
+check("partial statuses fail closed",eligibleFromStatuses({...d,bounced:undefined}).eligible_email_recipients===null);
+check("zero eligible is valid if properly observed",eligibleFromStatuses({...d,subscribed:0,not_subscribed:2}).eligible_email_recipients===0);
+check("already verified WP account supported",classifyProgression(e)==="ELIGIBLE_EVENT_CANDIDATE_NOT_EMITTED");
+check("email-link confirmation supported",classifyProgression({...e,confirmation:"confirmed_email_link"})==="ELIGIBLE_EVENT_CANDIDATE_NOT_EMITTED");
+check("existing subscribed not new",classifyProgression({...e,is_new_transition:false})==="NOT_VERIFIED_NEW_SIGNUP");
+check("missing durable dedup blocks",classifyProgression({...e,durable_dedup_applied:false})==="NOT_VERIFIED_NEW_SIGNUP");
+check("suppressed excluded",classifyProgression({...e,suppressed:true})==="NOT_VERIFIED_NEW_SIGNUP");
+check("bounced excluded",classifyProgression({...e,bounced:true})==="NOT_VERIFIED_NEW_SIGNUP");
+check("PII excluded",classifyProgression({...e,email:"private@example.com"})==="PII_PRESENT_REJECT");
+check("subscriber id excluded",classifyProgression({...e,subscriber_id:"private"})==="PII_PRESENT_REJECT");
+console.log("R304 native Node offline checks: "+tests+"/"+tests+" PASS; no provider calls or emissions");
