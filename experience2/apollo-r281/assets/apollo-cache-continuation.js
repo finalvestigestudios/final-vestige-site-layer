@@ -1,7 +1,7 @@
-/* Apollo R315: first-party editorial URL continuity; no analytics, storage, or network requests.
+/* Apollo R316: first-party editorial URL continuity; no analytics, storage, or network requests.
  * Staging only: this enhancement must not ship without cache, consent, and owner review.
  * A cached HTML body remains identical for every visitor; values are read on
- * trusted activation OR the opening of a native context menu (right-click).
+ * trusted activation OR the opening of a native mouse/keyboard context menu.
  * This is a per-visitor navigation hint, NOT a confirmed session or sale.
  */
 (() => {
@@ -46,13 +46,22 @@
 
   function handleActivation(event) {
     // Browsers dispatch click for primary mouse, keyboard and touch activation,
-    // auxclick for middle-button and contextmenu for right-click navigation/copy.
+    // auxclick for middle-button, contextmenu for right-click OR keyboard menu.
     // Reject synthetic, canceled, malformed and unrelated events. Never intercept navigation.
     if (!event.isTrusted || event.defaultPrevented) return;
     if (event.type === 'click' && event.button !== 0) return;
     if (event.type === 'auxclick' && event.button !== 1) return;
-    // This is a right-click menu preparation, NOT a paid click or checkout event.
-    if (event.type === 'contextmenu' && event.button !== 2) return;
+    // R316: Chromium emits trusted contextmenu with button=-1, buttons=0,
+    // detail=0 on Shift+F10 and the dedicated ContextMenu key. R315 had
+    // rejected this keyboard-only path, losing valid campaign continuity for
+    // keyboard and assistive-technology users who open/copy the native link.
+    // Keep mouse-right and keyboard-menu distinct; never intercept the menu.
+    // A context menu is NOT a counted click, signup, checkout or purchase.
+    if (event.type === 'contextmenu') {
+      const mouseRight = event.button === 2;
+      const keyboardMenu = event.button === -1 && event.buttons === 0 && event.detail === 0;
+      if (!mouseRight && !keyboardMenu) return;
+    }
     const link = intendedLink(event.target);
     if (!link) return;
     // Reset stale labels before each genuine activation, including SPA URL change.
