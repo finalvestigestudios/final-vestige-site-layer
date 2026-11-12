@@ -316,7 +316,7 @@ function fv_r281_render($attributes = []): string {
     // R292: an early direct source-catalogue route for visitors arriving from research-led films.
     // Targets the existing focusable first catalogue record; no extra tab stops, JS,
     // outbound commercial link, new source URL, or second investigation CTA.
-    $s.='<p class="fv-r292__source-route"><a href="#'.$id.'-source-1">Skip to the NASA source catalogue (first record)</a></p></header>';
+    $s.='<p class="fv-r292__source-route"><a href="#'.$id.'-source-1">Skip to the NASA source catalogue (first record)<span class="fv-r298__sr-only">'.fv_r281_escape($landmark_instance).'</span></a></p></header>';
     $s.='<nav class="fv-r281__rail" aria-label="Apollo 1 chronology'.$landmark_instance.'"><ol>';
     foreach ($records as $index=>$r) {
         $point=$id.'-event-'.($index+1);
@@ -381,8 +381,8 @@ function fv_r281_render($attributes = []): string {
         $authority_point=$id.'-authority-'.($index+1);
         $s.='<li id="'.$authority_point.'" tabindex="-1"><p class="fv-r281__authority-date"><time datetime="'.fv_r281_escape($entry['date']).'">'.fv_r281_escape($entry['label']).'</time></p>';
         $s.='<p>'.fv_r281_escape($entry['finding']).'</p><p class="fv-r281__authority-boundary"><strong>Limit:</strong> '.fv_r281_escape($entry['boundary']).'</p>';
-        $s.='<p><a href="'.fv_r281_escape($entry['url']).'" rel="noopener noreferrer" data-fv-link-purpose="official-evidence-source" data-fv-conversion-kind="noncommercial-source-reference">Inspect '.fv_r281_escape($entry['source']).' at NASA</a></p>';
-        $s.='<p class="fv-r281__authority-return"><a href="#'.$id.'-event-2">Return to January 28 evidence</a></p></li>';
+        $s.='<p><a href="'.fv_r281_escape($entry['url']).'" rel="noopener noreferrer" data-fv-link-purpose="official-evidence-source" data-fv-conversion-kind="noncommercial-source-reference">Inspect '.fv_r281_escape($entry['source']).' at NASA<span class="fv-r298__sr-only"> — '.fv_r281_escape($entry['label']).$landmark_instance.'</span></a></p>';
+        $s.='<p class="fv-r281__authority-return"><a href="#'.$id.'-event-2">Return to January 28 evidence<span class="fv-r298__sr-only"> from '.fv_r281_escape($entry['label']).$landmark_instance.'</span></a></p></li>';
     }
     // R296: on mobile, keep the disagreement and editorial boundary visible,
     // but make the three longer related NASA-source accounts opt-in. Native
@@ -392,7 +392,7 @@ function fv_r281_render($attributes = []): string {
     foreach ($date_reconciliation as $source) {
         $s.='<li><strong>'.fv_r281_escape($source['authority']).'</strong><p>'.fv_r281_escape($source['statement']).'</p>';
         $s.='<p class="fv-r281__reconciliation-boundary">Source boundary: '.fv_r281_escape($source['boundary']).'</p>';
-        $s.='<p><a href="'.fv_r281_escape($source['url']).'" rel="noopener noreferrer" data-fv-link-purpose="official-evidence-source" data-fv-conversion-kind="noncommercial-source-reference">Read source at NASA</a></p></li>';
+        $s.='<p><a href="'.fv_r281_escape($source['url']).'" rel="noopener noreferrer" data-fv-link-purpose="official-evidence-source" data-fv-conversion-kind="noncommercial-source-reference">Read '.fv_r281_escape($source['authority']).' at NASA</a></p></li>';
     }
     $s.='</ul></details><p>Original investigation and later NASA summaries are different records. Editorial reconciliation remains pending.</p></aside>';
     // R305: explicitly distinguish textual claim evidence from the independent
@@ -431,7 +431,7 @@ function fv_r281_render($attributes = []): string {
         foreach ($media as $m) {
             $s.='<li data-fv-media-record="'.fv_r281_escape($m['id']).'" data-fv-evidence-role="contextual-media-only" data-fv-image-rights="not-cleared-for-reuse" data-fv-claim-proof="no"><p class="fv-r281__source-type">NASA image catalogue · '.fv_r281_escape($m['id']).'</p>';
             $s.='<p><strong>'.fv_r281_escape($m['label']).'</strong> · <time datetime="'.fv_r281_escape($m['taken']).'">'.fv_r281_escape($m['taken']).'</time></p><p>'.fv_r281_escape($m['context']).'</p>';
-            $s.='<p><a href="'.fv_r281_escape($m['url']).'" rel="noopener noreferrer" data-fv-link-purpose="contextual-media-source" data-fv-conversion-kind="noncommercial-media-reference">Read NASA image detail (external)</a> · Source credit: '.fv_r281_escape($m['credit']).'</p></li>';
+            $s.='<p><a href="'.fv_r281_escape($m['url']).'" rel="noopener noreferrer" data-fv-link-purpose="contextual-media-source" data-fv-conversion-kind="noncommercial-media-reference">Read NASA image detail (external)<span class="fv-r298__sr-only"> — '.fv_r281_escape($m['id']).$landmark_instance.'</span></a> · Source credit: '.fv_r281_escape($m['credit']).'</p></li>';
         }
         $s.='</ul><p>Two additional Research Desk candidates are excluded while their exact archive records remain unresolved. Image references are not licenses or recommendations to reuse media commercially.</p></details>';
     } else {
