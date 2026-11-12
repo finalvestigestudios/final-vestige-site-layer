@@ -3,7 +3,7 @@
 const assert=require("node:assert/strict");
 const fs=require("node:fs");
 const path=require("node:path");
-function isHttps(s){try{return new URL(s).protocol==="https:"}catch{return false}}
+function isHttps(s){return typeof s==="string" && /^https:\/\/[^\/\s?#]+(?:\/|$)/i.test(s)}
 function validate(d){
  assert.equal(d.schema,"fv-media-live-part01-source-geometry-v1");
  assert.equal(d.method,"READ_ONLY_AUTHENTICATED_WORDPRESS_POST_EDIT_SOURCE");
