@@ -1,0 +1,32 @@
+THE DISPATCH — ISSUE 01 OPTIONAL UNSENT REVIEW
+Subject: The stranger who changed behind a door
+Proposed preheader (not verified in Jetpack): A 1998 street experiment, a missing detail, and what the evidence can actually say.
+
+Imagine stopping to help a stranger find a building. The stranger opens a map. You start giving directions. Then two people carrying a door walk between you.
+
+On the other side of the door, someone else is holding the map. The conversation continues.
+
+Would you notice?
+
+In 1998, psychologists Daniel Simons and Daniel Levin reported a real-world version of that exchange. An experimenter approached pedestrians on a university campus to ask directions. During the interruption, a different experimenter took his place. In the first experiment, 7 of 15 pedestrians reported noticing the swap. The other 8 did not.
+
+This was not a test of whether people were truthful or intelligent. The interruption disrupted their view of the person while the task of giving directions continued. The researchers asked how much detail survives a momentary change.
+
+A second version dressed the experimenters as construction workers. Only 4 of 12 student pedestrians initially reported noticing the swap. Both samples were small. The authors considered alternative explanations, including whether participants would admit what they noticed.
+
+Earlier laboratory work helps explain why the result was interesting. In 1997, Ronald Rensink, J. Kevin O'Regan, and James Clark alternated photographs and altered versions, inserting a brief blank field between them. Even conspicuous changes could be difficult to find. Changes to important parts of a scene were detected sooner.
+
+These studies reveal a gap between looking at a scene and retaining a complete record of its details. They do not prove that all eyewitness testimony is unreliable, that any attention training prevents such errors, or that an audio product can improve concentration.
+
+Here is one question worth keeping close when reading an archive: when a witness said they saw something, what was visible, what drew their attention, and what interrupted the view?
+
+Our published Change Blindness investigation lays out the original studies, their limitations, and an optional interactive demonstration. The illustration is ours, not footage from the 1990s experiments. If flashing effects are uncomfortable, use the reduced-motion/manual option or read the article without running the demo.
+
+READ THE INVESTIGATION AND OPTIONAL DEMO:
+https://finalvestige.com/2026/11/02/change-blindness/
+
+ORIGINAL STUDIES:
+Simons and Levin (1998): https://doi.org/10.3758/BF03208840
+Rensink, O'Regan and Clark (1997): https://doi.org/10.1111/j.1467-9280.1997.tb00427.x
+
+DO NOT SEND. Sender: Final Vestige Studios. Physical postal address: [[VALID_POSTAL_ADDRESS_REQUIRED]]. Unsubscribe: [[JETPACK_UNSUBSCRIBE_LINK_MUST_BE_VERIFIED]].

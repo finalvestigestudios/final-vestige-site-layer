@@ -1,0 +1,3 @@
+# R301 source-led Issue 01 — review only
+
+Stacked on draft PR #2166; master #175 and review #201 untouched. Seven review-only files in dispatch/r301: original manuscript, plaintext, email-safe static HTML, provider/claims evidence, funnel decision dossier, native Python test, README. Original Issue 01 is unchanged; R301 is NOT_ADOPTED. Existing historical 4 editorial/2 merchant allocation preserved. The HTML is an offline specimen, NOT a genuine Jetpack preview. Native test command: python -m unittest discover -s dispatch/r301/tests -v. No email, scheduling, publishing, affiliate links, subscriber export, WordPress writes, payment or script deployment is authorized.
