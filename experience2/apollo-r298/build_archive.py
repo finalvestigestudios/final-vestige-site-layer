@@ -19,6 +19,7 @@ files=[
  'QA/r298-1440-nojs.png','QA/r298-1920-nojs.png',
  'QA/r298-390-evidence-print.pdf','QA/r298-receipt.json',
  'QA/r297-negative-control.txt',
+ 'QA/r298-http-axe-gates.txt',
 ]
 manifest={f:{'sha256':hashlib.sha256((root/f).read_bytes()).hexdigest(),'bytes':(root/f).stat().st_size} for f in files}
 manifest_bytes=(json.dumps({'release':'R298','scope':'staging, no production authorization','files':manifest},indent=2,sort_keys=True)+'\n').encode()
