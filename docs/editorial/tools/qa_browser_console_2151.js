@@ -97,7 +97,7 @@
     'also discusses 2,472,000', 'recommends reporting approximately 2.47 million',
     'estimated peak if flow had remained confined'];
   const precisionParagraphs = [...article.querySelectorAll('p')].map(p =>
-    (p.textContent || '').replace(/\\s+/g, ' ').trim());
+    (p.textContent || '').replace(/\s+/g, ' ').trim());
   const precisionCorrectionOk = precisionParagraphs.some(p =>
     precisionMarkers.every(t => p.includes(t)));
   const brokenAnchors = [...article.querySelectorAll('a[href^="#"]')].filter(a => {
