@@ -33,7 +33,7 @@ function buyerSafety(html) {
     html.includes("What you would receive") &&
     html.includes("Reasons to consider it. Reasons not to.") &&
     html.includes("product-specific") &&
-    !/\b(guaranteed focus|cure anxiety|passive brain reprogramming proven|money guarantee|limited time!|I have used this)\b/i.test(html)
+    !/\b(we guarantee focus|cure anxiety|passive brain reprogramming proven|money guarantee|limited time!|I have used this)\b/i.test(html)
   );
 }
 check("A inactive merchant and adjacent disclosure",()=>buyerSafety(A));
@@ -72,7 +72,7 @@ const bad=[
   ["removed disclosure",A.replace("Affiliate disclosure:","Disclosed elsewhere:")],
   ["removed focus route",A.replaceAll("https://finalvestige.com/focus/","/newsletter/")],
   ["autoplay",A+'<video autoplay="autoplay"></video>'],
-  ["guaranteed efficacy",A+" Guaranteed focus"],
+  ["guaranteed efficacy",A+" We guarantee focus"],
   ["removed product explanation",A.replace("What you would receive","Something")],
   ["personal testimonial",A+" I have used this"],
 ];
