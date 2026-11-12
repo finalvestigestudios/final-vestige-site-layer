@@ -1,0 +1,454 @@
+{
+  "run": "Mind R328",
+  "checked_at": "2026-11-12",
+  "status": "UNPUBLISHED_DRAFT_COMMERCIAL_HARD_HOLD",
+  "affiliate_status": "UNVERIFIED",
+  "email_search_scope": "Targeted Gmail queries returned marketing/consumer messages, no account-specific publisher authentication. Search absence is not denial.",
+  "private_dashboard_authenticated": false,
+  "payhip_owned_paid_mind_sku": "NOT_VERIFIED; private catalog not accessed",
+  "source_records": [
+    {
+      "id": "F1",
+      "title": "Faraday original 1853",
+      "url": "https://en.wikisource.org/wiki/Experimental_Researches_in_Chemistry_and_Physics/Table-turning",
+      "access": "historical transcription",
+      "scope": "Supports table indicator and sincerity discussion"
+    },
+    {
+      "id": "F2",
+      "title": "Easton Shor 1975",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/1202145/",
+      "access": "verified abstract only",
+      "scope": "Chevreul imagery visual auditory feedback"
+    },
+    {
+      "id": "F3",
+      "title": "Cantergi Awasthi Friedman 2021",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34607165/",
+      "access": "verified abstract only",
+      "scope": "Motion capture, resonance, 40cm versus 80cm"
+    },
+    {
+      "id": "F4",
+      "title": "Andersen et al. 2018 online/2019 issue",
+      "url": "https://link.springer.com/article/10.1007/s11097-018-9585-8",
+      "access": "journal abstract",
+      "scope": "Ouija field eye tracking and pair-level explanations"
+    },
+    {
+      "id": "F5",
+      "title": "Senses of Agency review 2018",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5911504/",
+      "access": "accessible research review",
+      "scope": "Agency interpretations contested"
+    },
+    {
+      "id": "H1",
+      "title": "Puységur source archive live",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "access": "live page",
+      "scope": "Historical source limits and failures"
+    },
+    {
+      "id": "H2",
+      "title": "Mesmerism published investigation",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "access": "live page",
+      "scope": "1784 commission source report"
+    },
+    {
+      "id": "H3",
+      "title": "Live Final Vestige home investigations",
+      "url": "https://finalvestige.com/",
+      "access": "live page",
+      "scope": "Current editorial taxonomy and investigations"
+    },
+    {
+      "id": "H4",
+      "title": "Focus Fieldbook existing resource",
+      "url": "https://finalvestige.com/focus/",
+      "access": "live page",
+      "scope": "Existing 52-page resource, single Jetpack signup path"
+    },
+    {
+      "id": "M1",
+      "title": "Inspire3 official catalog",
+      "url": "https://inspire3.com/",
+      "access": "seller claim",
+      "scope": "Brand offerings; not efficacy proof"
+    },
+    {
+      "id": "M2",
+      "title": "Zen12 exact About",
+      "url": "https://zen12.com/about",
+      "access": "seller claim",
+      "scope": "12 minute sessions, 12 levels, four formats"
+    },
+    {
+      "id": "M3",
+      "title": "Zen12 exact checkout",
+      "url": "https://zen12.com/getstarted",
+      "access": "seller checkout observed 2026-11-12",
+      "scope": "48 MP3s, dated $87.99 shown; no active affiliate link"
+    },
+    {
+      "id": "M4",
+      "title": "Hypnosis Live Total Focus",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "access": "seller claim",
+      "scope": "33 minute/47 MB MP3; not same product as Zen12"
+    },
+    {
+      "id": "M5",
+      "title": "Brainwave Shots Focus Shot",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "access": "seller claim",
+      "scope": "15/30 minute versions; unverified benefits"
+    },
+    {
+      "id": "M6",
+      "title": "Inspire3 public affiliate enrollment",
+      "url": "https://affiliates.inspire3.com/",
+      "access": "public recruitment only",
+      "scope": "Not proof of FV acceptance or permitted channels"
+    },
+    {
+      "id": "C1",
+      "title": "FTC endorsement guides Q&A",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "access": "official guidance",
+      "scope": "Material connections and near-link disclosure"
+    },
+    {
+      "id": "C2",
+      "title": "FTC Health Products Compliance Guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "access": "official guidance",
+      "scope": "Objective health claims require appropriate substantiation"
+    },
+    {
+      "id": "C3",
+      "title": "FV public affiliate disclosure",
+      "url": "https://finalvestige.com/affiliate-disclosure/",
+      "access": "live site policy reference",
+      "scope": "General page does not replace link adjacency"
+    },
+    {
+      "id": "C4",
+      "title": "FV published editorial standards",
+      "url": "https://finalvestige.com/editorial-standards/",
+      "access": "live site policy reference",
+      "scope": "Claim separation and corrections"
+    },
+    {
+      "id": "P1",
+      "title": "2021 institutional pendulum bibliographic record",
+      "url": "https://weizmann.elsevierpure.com/en/publications/moving-objects-by-imagination-amount-of-finger-movement-and-pendu/",
+      "access": "institutional abstract",
+      "scope": "Corroborates study provenance"
+    }
+  ],
+  "claims": [
+    {
+      "id": "CL01",
+      "claim": "Faraday tested pressure direction in table-moving",
+      "support": [
+        "F1"
+      ],
+      "status": "supported-historical",
+      "limit": "limited to his experiments"
+    },
+    {
+      "id": "CL02",
+      "claim": "Participants could sincerely misattribute cause",
+      "support": [
+        "F1"
+      ],
+      "status": "supported-as-historical-account",
+      "limit": "not all experiencers"
+    },
+    {
+      "id": "CL03",
+      "claim": "Pendulum response can involve subtle motor contributions",
+      "support": [
+        "F2",
+        "F3"
+      ],
+      "status": "supported-in-tested-tasks",
+      "limit": "not mind-over-matter"
+    },
+    {
+      "id": "CL04",
+      "claim": "40 cm pendulum outperformed 80 cm in study",
+      "support": [
+        "F3"
+      ],
+      "status": "supported-in-study",
+      "limit": "not universal optimal length"
+    },
+    {
+      "id": "CL05",
+      "claim": "Visual and auditory stimuli influenced Chevreul task",
+      "support": [
+        "F2"
+      ],
+      "status": "supported-in-study",
+      "limit": "no commercial audio extrapolation"
+    },
+    {
+      "id": "CL06",
+      "claim": "Ouija study linked group meaning and sense of agency",
+      "support": [
+        "F4"
+      ],
+      "status": "supported-in-field-study",
+      "limit": "not general population"
+    },
+    {
+      "id": "CL07",
+      "claim": "Agency theories remain contested",
+      "support": [
+        "F5"
+      ],
+      "status": "supported-review",
+      "limit": "no metaphysical conclusion"
+    },
+    {
+      "id": "CL08",
+      "claim": "Puységur archive preserves source failures",
+      "support": [
+        "H1"
+      ],
+      "status": "published-archive-description",
+      "limit": "not proof of animal magnetism"
+    },
+    {
+      "id": "CL09",
+      "claim": "Zen12 12-min/12-level/four-style course format",
+      "support": [
+        "M2"
+      ],
+      "status": "seller-described-only",
+      "limit": "confirm product at checkout"
+    },
+    {
+      "id": "CL10",
+      "claim": "Zen12 complete checkout 48 MP3",
+      "support": [
+        "M3"
+      ],
+      "status": "seller-described-only",
+      "limit": "not verified delivered"
+    },
+    {
+      "id": "CL11",
+      "claim": "Zen12 displayed $87.99 discounted total on 2026-11-12",
+      "support": [
+        "M3"
+      ],
+      "status": "dated-checkout-observation",
+      "limit": "do not place price in evergreen CTAs"
+    },
+    {
+      "id": "CL12",
+      "claim": "Zen12 12 min equivalent to an hour of regular meditation",
+      "support": [
+        "M2"
+      ],
+      "status": "seller-efficacy-claim-EXCLUDED",
+      "limit": "no product-specific independent proof"
+    },
+    {
+      "id": "CL13",
+      "claim": "Zen12 automatically shifts brainwaves to deep relaxation",
+      "support": [
+        "M2"
+      ],
+      "status": "seller-efficacy-claim-EXCLUDED",
+      "limit": "no valid substantiation"
+    },
+    {
+      "id": "CL14",
+      "claim": "Total Focus 33-minute MP3 and 47MB",
+      "support": [
+        "M4"
+      ],
+      "status": "seller-described-only",
+      "limit": "not verified actual download"
+    },
+    {
+      "id": "CL15",
+      "claim": "Total Focus cures distraction/reprograms brain",
+      "support": [
+        "M4"
+      ],
+      "status": "seller-efficacy-claim-EXCLUDED",
+      "limit": "no adequate clinical evidence"
+    },
+    {
+      "id": "CL16",
+      "claim": "Focus Shot includes 15/30min versions",
+      "support": [
+        "M5"
+      ],
+      "status": "seller-described-only",
+      "limit": "no independent testing"
+    },
+    {
+      "id": "CL17",
+      "claim": "Focus Shot focus lasts for 4+ hours",
+      "support": [
+        "M5"
+      ],
+      "status": "seller-efficacy-claim-EXCLUDED",
+      "limit": "no specific substantiation"
+    },
+    {
+      "id": "CL18",
+      "claim": "Inspire3 publicly recruits affiliates",
+      "support": [
+        "M6"
+      ],
+      "status": "public-only",
+      "limit": "FV approval unverified"
+    },
+    {
+      "id": "CL19",
+      "claim": "Near-link earning commission disclosure is needed",
+      "support": [
+        "C1",
+        "C2"
+      ],
+      "status": "official-guidance",
+      "limit": "must be conspicuous on actual live link"
+    },
+    {
+      "id": "CL20",
+      "claim": "Focus Fieldbook live/free 52-page with existing Jetpack",
+      "support": [
+        "H4"
+      ],
+      "status": "live-observation",
+      "limit": "provider-confirmed signup not independently proven"
+    }
+  ],
+  "commercial_gates": [
+    {
+      "id": "G01",
+      "gate": "FV partner application authenticated accepted",
+      "status": "HOLD"
+    },
+    {
+      "id": "G02",
+      "gate": "Exact FV publisher account identity and status confirmed",
+      "status": "HOLD"
+    },
+    {
+      "id": "G03",
+      "gate": "Current signed affiliate terms captured securely",
+      "status": "HOLD"
+    },
+    {
+      "id": "G04",
+      "gate": "Website channel allowed",
+      "status": "HOLD"
+    },
+    {
+      "id": "G05",
+      "gate": "Organic social promotion allowed",
+      "status": "HOLD"
+    },
+    {
+      "id": "G06",
+      "gate": "Email/Dispatch channel separately permitted",
+      "status": "HOLD"
+    },
+    {
+      "id": "G07",
+      "gate": "Approved creatives/swipe authorized and reviewed",
+      "status": "HOLD"
+    },
+    {
+      "id": "G08",
+      "gate": "Issued genuine earning URL verified in account",
+      "status": "HOLD"
+    },
+    {
+      "id": "G09",
+      "gate": "Destination and redirects approved/checked",
+      "status": "HOLD"
+    },
+    {
+      "id": "G10",
+      "gate": "Commission, attribution and refund policies verified privately",
+      "status": "HOLD"
+    },
+    {
+      "id": "G11",
+      "gate": "Product exact format and content confirmed",
+      "status": "HOLD"
+    },
+    {
+      "id": "G12",
+      "gate": "Current checkout price and taxes confirmed at activation",
+      "status": "HOLD"
+    },
+    {
+      "id": "G13",
+      "gate": "Refund policy and customer remedy verified",
+      "status": "HOLD"
+    },
+    {
+      "id": "G14",
+      "gate": "Seller outcome claims product-specifically substantiated or excluded",
+      "status": "HOLD"
+    },
+    {
+      "id": "G15",
+      "gate": "Founder commercial and publishing approval",
+      "status": "HOLD"
+    },
+    {
+      "id": "G16",
+      "gate": "Site QA mobile/a11y/no-JS/security pass",
+      "status": "HOLD"
+    },
+    {
+      "id": "G17",
+      "gate": "Provider-confirmed purchase/commission reporting",
+      "status": "HOLD"
+    },
+    {
+      "id": "G18",
+      "gate": "Existing privacy-safe measurement and refunds/fees reconciliation",
+      "status": "HOLD"
+    }
+  ],
+  "policy": {
+    "purchase_urls_in_review_html": false,
+    "enabled_merchant_cta": false,
+    "newsletter_list_duplicate": false,
+    "paid_analytics_new_script": false,
+    "seller_health_claim_promoted": false
+  },
+  "grok_asset_links": [
+    {
+      "topic": "attentional-blink",
+      "asset_id": null,
+      "confirmed_published_url": null,
+      "route": "article -> free /focus/ -> optional gated Zen12 buyer guide"
+    },
+    {
+      "topic": "change-blindness",
+      "asset_id": null,
+      "confirmed_published_url": null,
+      "route": "source article -> free /focus/ -> optional buyer guide"
+    },
+    {
+      "topic": "invisible-gorilla",
+      "asset_id": null,
+      "confirmed_published_url": null,
+      "route": "source article -> free /focus/ -> optional buyer guide"
+    }
+  ]
+}
