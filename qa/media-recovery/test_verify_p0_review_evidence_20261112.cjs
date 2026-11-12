@@ -81,3 +81,11 @@ test('unsupported/empty image geometry fails closed',()=>{
  const f=fixture();delete f.r.geometry;
  assert.match(verifyP0ReviewEvidence(f.p,f.r,f.a).reason,/ASSET_FORMAT/);
 });
+test('real synthetic one-pixel JPEG passes structural dimensions and hashes',()=>{
+ const f=fixture();f.a.candidate_asset=Buffer.from('/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAsICAoIBwsKCQoNDAsNERwSEQ8PESIZGhQcKSQrKigkJyctMkA3LTA9MCcnOEw5PUNFSElIKzZPVU5GVEBHSEX/2wBDAQwNDREPESESEiFFLicuRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUX/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFAEBAAAAAAAAAAAAAAAAAAAABf/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AJYAqMf/2Q==','base64');
+ signUpdated(f);assert.equal(verifyP0ReviewEvidence(f.p,f.r,f.a).verified,true);
+});
+test('real synthetic one-pixel lossless WebP passes structural dimensions and hashes',()=>{
+ const f=fixture();f.a.candidate_asset=Buffer.from('UklGRh4AAABXRUJQVlA4TBEAAAAvAAAAAAdQqH7Ur/+BiOh/AAA=','base64');
+ signUpdated(f);assert.equal(verifyP0ReviewEvidence(f.p,f.r,f.a).verified,true);
+});
