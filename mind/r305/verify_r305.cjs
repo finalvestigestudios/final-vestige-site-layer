@@ -78,7 +78,7 @@ const trials=[
  ['remove claim',f=>f.matrix.claims.pop(),'CLAIMS'],
  ['bad claim source',f=>f.matrix.claims[0].source_id='NO_SOURCE','CLAIMS'],
  ['misstate experiment instrument',f=>f.matrix.claims.find(c=>c.id==='H09').decision='ALLOW_PROVEN','SOURCE_INSTRUMENT'],
- ['remove article source',f=>f.article=f.article.replace('https://www.gutenberg.org/files/78413/78413-h/78413-h.htm',''), 'EDITORIAL_SOURCE'],
+ ['remove article source',f=>f.article=f.article.replaceAll('https://www.gutenberg.org/files/78413/78413-h/78413-h.htm',''), 'EDITORIAL_SOURCE'],
  ['shorten article',f=>f.article='tiny article','EDITORIAL_LENGTH'],
  ['replace buyer Ouija',f=>f.buyer=f.buyer.replace('a 2012 Ouija-board experiment','a 2012 pendulum experiment'),'BUYER_2012_CORRECTION'],
  ['turn buyer button on',f=>f.buyer=f.buyer.replace(/<button\b([^>]*?)\sdisabled(?=\s|>)/,'<button$1'),'BUYER_DISABLED'],
