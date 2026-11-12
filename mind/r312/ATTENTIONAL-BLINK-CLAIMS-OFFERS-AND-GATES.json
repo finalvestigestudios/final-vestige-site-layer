@@ -1,0 +1,438 @@
+{
+  "milestone": "R312",
+  "date": "2026-11-11",
+  "release": "UNPUBLISHED_DRAFT_COMMERCIAL_HARD_HOLD",
+  "sources": [
+    {
+      "id": "S01",
+      "type": "research",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/1500880/",
+      "purpose": "Raymond et al 1992 RSVP task, timing, brief-blank and first-target controls",
+      "access": "PubMed abstract"
+    },
+    {
+      "id": "S02",
+      "type": "research",
+      "url": "https://journals.sagepub.com/doi/10.1080/02724980443000647",
+      "purpose": "Hommel and Akyurek 2005 lag-1 sparing, identity/order costs",
+      "access": "Publisher abstract"
+    },
+    {
+      "id": "S03",
+      "type": "research",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/16341546/",
+      "purpose": "Olivers et al published 2007, spreading the sparing, distractors",
+      "access": "PubMed abstract"
+    },
+    {
+      "id": "S04",
+      "type": "research",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17488185/",
+      "purpose": "Slagter et al 2007 intensive meditation training three months and attentional blink",
+      "access": "PubMed abstract and figure captions"
+    },
+    {
+      "id": "S05",
+      "type": "research",
+      "url": "https://www.nccih.nih.gov/research/research-results/researchers-develop-new-metrics-for-measuring-mental-states-during-meditation",
+      "purpose": "NCCIH 2020 16-person attention-state measurement research, not commercial efficacy",
+      "access": "NCCIH research summary"
+    },
+    {
+      "id": "S06",
+      "type": "merchant",
+      "url": "https://inspire3.com/",
+      "purpose": "Official Inspire3 brand catalogue; strong science claims unverified",
+      "access": "Seller site"
+    },
+    {
+      "id": "S07",
+      "type": "merchant",
+      "url": "https://zen12.com/about",
+      "purpose": "Zen12 session length and general efficacy representations",
+      "access": "Seller site"
+    },
+    {
+      "id": "S08",
+      "type": "merchant",
+      "url": "https://zen12.com/getstarted",
+      "purpose": "Zen12 complete bundle, 12 levels/48 MP3, countdown/offer-specific discount, mentioned guarantee",
+      "access": "Live seller checkout, no transaction"
+    },
+    {
+      "id": "S09",
+      "type": "merchant",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "purpose": "Total Focus is separate seller-described 33-minute hypnosis audio",
+      "access": "Seller page"
+    },
+    {
+      "id": "S10",
+      "type": "merchant",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "purpose": "Focus Shot seller lists 15 and 30-minute versions",
+      "access": "Seller page"
+    },
+    {
+      "id": "S11",
+      "type": "merchant_affiliate",
+      "url": "https://affiliates.inspire3.com/",
+      "purpose": "Public recruitment, not publisher-specific contract or issued referral URL",
+      "access": "Public recruiter; account-specific approval unavailable"
+    },
+    {
+      "id": "S12",
+      "type": "ftc",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "purpose": "Material connection disclosure needs understandable proximity to link",
+      "access": "FTC guidance"
+    },
+    {
+      "id": "S13",
+      "type": "ftc",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "purpose": "Health claims require competent and reliable product-specific evidence; guidance not safe harbor",
+      "access": "FTC staff guidance"
+    },
+    {
+      "id": "S14",
+      "type": "fv_public",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "purpose": "153 source rows, 16 dossiers, recorded claims and evidence limits",
+      "access": "Public FV"
+    },
+    {
+      "id": "S15",
+      "type": "fv_public",
+      "url": "https://finalvestige.com/focus/",
+      "purpose": "Single free 52-page Focus Fieldbook and Dispatch signup path",
+      "access": "Public FV"
+    },
+    {
+      "id": "S16",
+      "type": "fv_public",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "purpose": "Published editorial source investigation",
+      "access": "Public FV"
+    },
+    {
+      "id": "S17",
+      "type": "fv_public",
+      "url": "https://finalvestige.com/collection/",
+      "purpose": "Current free and curated product display; not proof of paid FV Mind SKU",
+      "access": "Public FV"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "1992 RSVP probe missed in roughly 270-ms window beginning 180 ms after T1",
+      "source_ids": [
+        "S01"
+      ],
+      "status": "SUPPORT_WITH_EXPERIMENT_CONTEXT"
+    },
+    {
+      "id": "C02",
+      "claim": "Original 1992 blank-interval and no-first-target-identification controls mattered",
+      "source_ids": [
+        "S01"
+      ],
+      "status": "SUPPORTED_ABSTRACT_ONLY"
+    },
+    {
+      "id": "C03",
+      "claim": "All people become blind during this window in ordinary life",
+      "source_ids": [
+        "S01"
+      ],
+      "status": "REJECT_UNIVERSAL_EXTRAPOLATION"
+    },
+    {
+      "id": "C04",
+      "claim": "Consecutive T2 sometimes spared at lag 1",
+      "source_ids": [
+        "S02"
+      ],
+      "status": "SUPPORTED_TASK_SPECIFIC"
+    },
+    {
+      "id": "C05",
+      "claim": "Lag-1 two-target order information may be degraded",
+      "source_ids": [
+        "S02"
+      ],
+      "status": "SUPPORTED_TASK_SPECIFIC"
+    },
+    {
+      "id": "C06",
+      "claim": "Additional targets with no interposed distractors can spread sparing",
+      "source_ids": [
+        "S03"
+      ],
+      "status": "SUPPORTED_TASK_SPECIFIC"
+    },
+    {
+      "id": "C07",
+      "claim": "Theoretical mechanism is settled as a fixed-capacity bottleneck",
+      "source_ids": [
+        "S02",
+        "S03"
+      ],
+      "status": "REJECT_OVERCLAIM"
+    },
+    {
+      "id": "C08",
+      "claim": "Three months intensive meditation associated with reduced blink and P3b changes",
+      "source_ids": [
+        "S04"
+      ],
+      "status": "SUPPORTED_STUDY_SPECIFIC"
+    },
+    {
+      "id": "C09",
+      "claim": "Slagter study proves any twelve-minute consumer audio improves focus",
+      "source_ids": [
+        "S04"
+      ],
+      "status": "PROHIBITED_PRODUCT_INFERENCE"
+    },
+    {
+      "id": "C10",
+      "claim": "NCCIH attention-state decoding of 16 adults establishes Zen12 efficacy",
+      "source_ids": [
+        "S05"
+      ],
+      "status": "PROHIBITED_PRODUCT_INFERENCE"
+    },
+    {
+      "id": "C11",
+      "claim": "Zen12 seller describes complete 12-level 48-MP3 package",
+      "source_ids": [
+        "S08"
+      ],
+      "status": "SELLER_FORMAT_ONLY"
+    },
+    {
+      "id": "C12",
+      "claim": "Zen12 advertises twelve-minute session",
+      "source_ids": [
+        "S07"
+      ],
+      "status": "SELLER_FORMAT_ONLY"
+    },
+    {
+      "id": "C13",
+      "claim": "Twelve minutes equals a full hour of meditation benefits for Zen12 users",
+      "source_ids": [
+        "S07"
+      ],
+      "status": "UNSUBSTANTIATED_SELLER_EFFICACY"
+    },
+    {
+      "id": "C14",
+      "claim": "Zen12 brainwave sounds automatically heal/reprogram concentration",
+      "source_ids": [
+        "S07"
+      ],
+      "status": "UNSUBSTANTIATED_SELLER_EFFICACY"
+    },
+    {
+      "id": "C15",
+      "claim": "Zen12 checkout guarantees permanent price or discount",
+      "source_ids": [
+        "S08"
+      ],
+      "status": "DYNAMIC_TERMS_UNVERIFIED"
+    },
+    {
+      "id": "C16",
+      "claim": "Zen12 refund unconditional and exactly as promoted",
+      "source_ids": [
+        "S08"
+      ],
+      "status": "WRITTEN_TERMS_UNVERIFIED"
+    },
+    {
+      "id": "C17",
+      "claim": "Total Focus seller lists 33 minutes",
+      "source_ids": [
+        "S09"
+      ],
+      "status": "SELLER_FORMAT_ONLY"
+    },
+    {
+      "id": "C18",
+      "claim": "Total Focus will treat ADHD or guarantee memory",
+      "source_ids": [
+        "S09"
+      ],
+      "status": "UNSUBSTANTIATED_SELLER_EFFICACY"
+    },
+    {
+      "id": "C19",
+      "claim": "Focus Shot seller lists 15 and 30 minute formats",
+      "source_ids": [
+        "S10"
+      ],
+      "status": "SELLER_FORMAT_ONLY"
+    },
+    {
+      "id": "C20",
+      "claim": "Focus Shot reliably entrains brains for instant attention",
+      "source_ids": [
+        "S10"
+      ],
+      "status": "UNSUBSTANTIATED_SELLER_EFFICACY"
+    },
+    {
+      "id": "C21",
+      "claim": "Inspire3 publicly recruits affiliates",
+      "source_ids": [
+        "S11"
+      ],
+      "status": "SUPPORTED_PUBLIC_PROGRAM_ONLY"
+    },
+    {
+      "id": "C22",
+      "claim": "Final Vestige approved and issued its special earning link",
+      "source_ids": [
+        "S11"
+      ],
+      "status": "UNVERIFIED_HARD_HOLD"
+    },
+    {
+      "id": "C23",
+      "claim": "FV approved for website plus TikTok plus newsletter promotion",
+      "source_ids": [
+        "S11"
+      ],
+      "status": "UNVERIFIED_HARD_HOLD"
+    },
+    {
+      "id": "C24",
+      "claim": "Clear understandable commission disclosure belongs adjacent to earning recommendation",
+      "source_ids": [
+        "S12"
+      ],
+      "status": "FTC_GUIDANCE"
+    },
+    {
+      "id": "C25",
+      "claim": "Generic meditation findings establish branded health claims",
+      "source_ids": [
+        "S13"
+      ],
+      "status": "REJECT_UNSUBSTANTIATED"
+    },
+    {
+      "id": "C26",
+      "claim": "Puységur historical records prove magnetic cures",
+      "source_ids": [
+        "S14"
+      ],
+      "status": "REJECT_EVIDENCE_MISUSE"
+    },
+    {
+      "id": "C27",
+      "claim": "One live Focus Fieldbook subscriber route exists",
+      "source_ids": [
+        "S15"
+      ],
+      "status": "PUBLICLY_SUPPORTED"
+    },
+    {
+      "id": "C28",
+      "claim": "Outbound affiliate click proves paid commission",
+      "source_ids": [],
+      "status": "REJECT_EVENT_CONFLATION"
+    },
+    {
+      "id": "C29",
+      "claim": "Owned FV Mind paid SKU is verified active and legally fulfilled",
+      "source_ids": [
+        "S17"
+      ],
+      "status": "UNVERIFIED_HARD_HOLD"
+    },
+    {
+      "id": "C30",
+      "claim": "Settled commercial net revenue is zero because no settlement dashboard was inspected",
+      "source_ids": [],
+      "status": "REJECT_MISSING_AS_ZERO"
+    }
+  ],
+  "authorization_gates": {
+    "publisher_account_approval": "HARD_HOLD",
+    "zen12_offer_approval": "HARD_HOLD",
+    "site_promotion_channel": "HARD_HOLD",
+    "social_promotion_channel": "HARD_HOLD",
+    "email_promotion_channel": "HARD_HOLD",
+    "issued_earning_link": "HARD_HOLD",
+    "destination_link_review": "HARD_HOLD",
+    "approved_creative_rights": "HARD_HOLD",
+    "current_final_checkout_price": "HARD_HOLD",
+    "exact_refund_policy": "HARD_HOLD",
+    "product_specific_claim_substantiation": "HARD_HOLD",
+    "adjacent_disclosure_review": "HARD_HOLD",
+    "visitor_privacy_basis": "HARD_HOLD",
+    "consent_appropriate_attribution": "HARD_HOLD",
+    "real_paid_sale_report": "HARD_HOLD",
+    "cleared_payout_evidence": "HARD_HOLD",
+    "refund_fee_reconciliation": "HARD_HOLD",
+    "founder_release_approval": "HARD_HOLD"
+  },
+  "creator_to_offer_fit": [
+    {
+      "topic": "attentional blink",
+      "grok_asset_id": null,
+      "link_status": "UNVERIFIED",
+      "article": "R312 manuscript, not live",
+      "focus": "https://finalvestige.com/focus/",
+      "offer": "Zen12 only for buyer seeking structured listening, never claimed cure"
+    },
+    {
+      "topic": "change blindness",
+      "grok_asset_id": null,
+      "link_status": "UNVERIFIED",
+      "article": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "focus": "https://finalvestige.com/focus/",
+      "offer": "optional source guide, not treatment"
+    },
+    {
+      "topic": "invisible gorilla",
+      "grok_asset_id": null,
+      "link_status": "UNVERIFIED",
+      "article": "R302 draft, not live",
+      "focus": "https://finalvestige.com/focus/",
+      "offer": "no direct medical-condition hard sell"
+    }
+  ],
+  "measurement": {
+    "events": [
+      "qualified_human_landing_if_provider_supported",
+      "article_to_fieldbook_click",
+      "provider_confirmed_jetpack_signup",
+      "affiliate_outbound_click_only_after_approval",
+      "independently_merchant_confirmed_purchase",
+      "cleared_commission",
+      "refund_and_fee_adjustment"
+    ],
+    "source_parameters": [
+      "utm_source",
+      "utm_medium",
+      "utm_campaign",
+      "utm_content"
+    ],
+    "personally_identifiable_data": "DO_NOT_COLLECT",
+    "duplicate_vendor_tags": "FORBIDDEN",
+    "session_to_sale_crosswalk": "UNVERIFIED",
+    "north_star": "1000 * (cleared_commission - reversals - fees) / qualified_human_sessions; NOT COMPUTABLE without validated values",
+    "cohorts_days": [
+      7,
+      30
+    ]
+  },
+  "account_check": "Targeted connected-mailbox search returned consumer promotional emails only; this search is not a comprehensive verification of a contract stored in another account/service.",
+  "owned_fallback": "Live Collection and Focus reviewed; private Payhip inventory, individual paid FV Mind SKU rights, price, refund and fulfillment NOT authenticated."
+}
