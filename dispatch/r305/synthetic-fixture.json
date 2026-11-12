@@ -6,10 +6,12 @@
       "type": "visit",
       "session": "demo_s1",
       "at": "2026-11-10T11:00:00Z",
-      "utm_source": "grok",
+      "utm_source": "youtube",
       "asset_id": "asset_001",
       "utm_campaign": "focus_pilot",
-      "human_verified": true
+      "human_verified": true,
+      "utm_medium": "organic_social",
+      "utm_content": "asset_001"
     },
     {
       "type": "form_submit",
@@ -86,10 +88,12 @@
       "type": "visit",
       "session": "demo_s2",
       "at": "2026-11-11T11:00:00Z",
-      "utm_source": "grok",
+      "utm_source": "tiktok",
       "asset_id": "asset_002",
       "utm_campaign": "focus_pilot",
-      "human_verified": true
+      "human_verified": true,
+      "utm_medium": "organic_social",
+      "utm_content": "asset_002"
     },
     {
       "type": "pdf_download",
@@ -100,11 +104,13 @@
       "type": "visit",
       "session": "demo_bot",
       "at": "2026-11-11T12:00:00Z",
-      "utm_source": "grok",
+      "utm_source": "youtube",
       "asset_id": "asset_003",
       "utm_campaign": "focus_pilot",
       "human_verified": false,
-      "bot_flag": true
+      "bot_flag": true,
+      "utm_medium": "organic_social",
+      "utm_content": "asset_003"
     }
   ]
 }
