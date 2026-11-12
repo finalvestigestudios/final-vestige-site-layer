@@ -515,6 +515,10 @@ jobs:
         run: |
           python -W error -m unittest discover -s products/desktop/tests -p 'test_registry_file_guard_r377.py'
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_registry_file_guard_r377.py'
+      - name: R380 premium registry path identity custody (12 methods per mode)
+        run: |
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_registry_path_identity_r380.py'
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_registry_path_identity_r380.py'
       - name: R378 issued license fingerprint custody (18 methods per mode)
         run: |
           python -W error -m unittest discover -s products/desktop/tests -p 'test_issued_entitlement_guard_r378.py'
@@ -2813,6 +2817,14 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R377 Windows normal registry file guard FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_registry_file_guard_r377.py'
           if ($LASTEXITCODE -ne 0) { throw "R377 Windows optimized registry file guard FAILED" }
+      - name: R380 Windows premium registry path identity custody (12 methods per mode)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_registry_path_identity_r380.py'
+          if ($LASTEXITCODE -ne 0) { throw "R380 Windows normal registry path identity FAILED" }
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_registry_path_identity_r380.py'
+          if ($LASTEXITCODE -ne 0) { throw "R380 Windows optimized registry path identity FAILED" }
       - name: R378 Windows issued license fingerprint custody (18 methods per mode)
         shell: pwsh
         run: |
