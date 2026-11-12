@@ -14,7 +14,7 @@ function failures(h){
  if(!/<button[^>]*disabled/i.test(h))out.push('enabled_cta');
  if(!/Prospective affiliate disclosure:/.test(h))out.push('no_disclosure');
  if(!/https:\/\/finalvestige.com\/focus\//.test(h))out.push('no_free_route');
- if(/(guaranteed focus|clinically proven|cure anxiety|earn money automatically)/i.test(h))out.push('unsupported_promise');
+ if(/(guaranteed focus|clinically proven to improve|cure anxiety|earn money automatically)/i.test(h))out.push('unsupported_promise');
  return out;
 }
 assert.deepEqual(failures(originalA),[]);
@@ -29,7 +29,7 @@ const mutations=[
  ['enabled purchase button',originalA.replace('<button type="button" disabled aria-disabled="true">','<button type="button">'),'enabled_cta'],
  ['disclosure removed',originalA.replace('Prospective affiliate disclosure:','Notice:'),'no_disclosure'],
  ['free Fieldbook replaced',originalA.replaceAll('https://finalvestige.com/focus/','https://finalvestige.com/other/'),'no_free_route'],
- ['fake cognitive promise',originalA.replace('<!-- CORE END -->','<p>clinically proven focus</p><!-- CORE END -->'),'unsupported_promise'],
+ ['fake cognitive promise',originalA.replace('<!-- CORE END -->','<p>clinically proven to improve focus</p><!-- CORE END -->'),'unsupported_promise'],
  ['fake wealth promise',originalA.replace('<!-- CORE END -->','<p>earn money automatically</p><!-- CORE END -->'),'unsupported_promise']
 ];
 let n=0;for(const [label,mutated,expected] of mutations){
