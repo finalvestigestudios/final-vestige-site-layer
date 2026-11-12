@@ -31,6 +31,10 @@ INLINE = frozenset(('strong', 'em', 'span', 'b', 'i', 'mark', 'small',
     'abbr', 'time', 'q', 'cite', 'sub', 'sup', 'u', 's', 'del', 'ins',
     'bdi', 'bdo', 'data', 'ruby', 'rt', 'rp', 'kbd', 'samp', 'var', 'wbr'))
 INLINE_VOID = frozenset(('wbr',))
+# HTMLParser passes a slash-terminated void tag to handle_startendtag(),
+# although the same HTML element may be written <wbr> or <wbr/>.
+# Both serialize to one void event; only an explicit </wbr> is rejected.
+BOOLEAN_INLINE_ATTRIBUTES = frozenset(('hidden', 'inert', 'itemscope'))
 SLUG = re.compile(r'[a-z0-9]+(?:-[a-z0-9]+)*\Z')
 
 
@@ -76,14 +80,33 @@ def inline_compare(source: str, export: str, predecessor: Any) -> list[str]:
         def handle_starttag(self, tag, attrs):
             if (tag not in INLINE or not self.active or self.skip_stack or self.cite
                 or (self.mode == 'export' and tag == 'sup'
-                    and 'pa-cite' in dict(attrs).get('class', '').split())):
+                    and 'pa-cite' in (dict(attrs).get('class') or '').split())):
                 return super().handle_starttag(tag, attrs)
+            # HTMLParser preserves duplicate and valueless attributes. A match
+            # between two equally malformed tags cannot constitute safe parity.
+            names = [name for name, _ in attrs]
+            if len(names) != len(set(names)):
+                self.errors.append('INLINE_DUPLICATE_ATTRIBUTE:' + tag)
+            for name, value in attrs:
+                if value is None and name not in BOOLEAN_INLINE_ATTRIBUTES:
+                    self.errors.append('INLINE_VALUELESS_ATTRIBUTE:' + tag + ':' + name)
             # All attrs matter: ARIA, role, lang, class, style, hidden, title etc.
             self._event('open', tag, tuple(sorted(attrs)))
             if tag not in INLINE_VOID:
                 self.structure.append(tag)
             else:
                 self._event('close', tag)
+
+        def handle_startendtag(self, tag, attrs):
+            # The R302 parent special-cases only its own block-level VOID set.
+            # A slash on an R303 inline void such as <wbr/> would otherwise
+            # dispatch an additional handle_endtag('wbr'), falsely marking a
+            # fully intact source/export as INLINE_VOID_CLOSED. Preserve the
+            # event stream of <wbr> without allowing a literal </wbr>.
+            if tag in INLINE_VOID:
+                self.handle_starttag(tag, attrs)
+                return
+            return super().handle_startendtag(tag, attrs)
 
         def handle_endtag(self, tag):
             if tag not in INLINE or not self.active or self.skip_stack or self.cite:
