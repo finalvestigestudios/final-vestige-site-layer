@@ -77,7 +77,7 @@ const mutations=[
  ['inject duplicate analytics',x=>{const j=JSON.parse(x.matrix);j.privacy_measurement_contract.tracking_scripts_added=1;x.matrix=JSON.stringify(j)}],
  ['release experiment',x=>{const j=JSON.parse(x.matrix);j.experiment.closed=false;x.matrix=JSON.stringify(j)}],
  ['break caption endpoint',x=>x.vtt=x.vtt.replace('00:00:42.000','00:00:55.000')],
- ['remove original source',x=>x.article=x.article.replace('pubmed.ncbi.nlm.nih.gov/5409744/','example.invalid')],
+ ['remove original source',x=>x.article=x.article.replaceAll('pubmed.ncbi.nlm.nih.gov/5409744/','example.invalid')],
  ['change draft discoverability',x=>x.hub=x.hub.replace('noindex,nofollow','index,follow')],
  ['remove hub disability',x=>x.hub=x.hub.replace('<button type="button" disabled','<button type="button"')],
  ['remove 42s transcript',x=>x.b=x.b.replace('42-second original short-film treatment','film coming soon')],
