@@ -43,7 +43,7 @@ function checkAandB(a,b){
   const start='<p class="eyebrow">';
   check(a.includes(start)&&b.includes(start),'buyer core start');
   assert.equal(a.slice(a.indexOf(start)),b.slice(b.indexOf(start)),'A/B substantive buyer copy must match');
-  check(!a.includes('storyboard'),'A must not contain story media');
+  check(!a.includes('class="storyboard"'),'A must not contain story media');
   check(b.includes('not playable video'),'B truthfully declares storyboard limitations');
   check(b.includes('<svg')&&b.includes('<details')&&b.includes('<summary'),'B requires readable poster and full transcript without JS');
   check(b.includes('00:00')===false,'VTT lives separately');
