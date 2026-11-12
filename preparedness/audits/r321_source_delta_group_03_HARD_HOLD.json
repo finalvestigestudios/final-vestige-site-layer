@@ -1,0 +1,275 @@
+{
+  "schema": "fv-prep-r321-audited-source-delta-group-v1",
+  "source_docket_git_blob": "3119626a19175cec8f0dc4f03c5da57f319906d0",
+  "group": 3,
+  "expected_count": 5,
+  "verified_records": 5,
+  "verified_blob_count": 15,
+  "safety_approved": false,
+  "qd_pass": false,
+  "publish_authorized": false,
+  "automatic_merge": false,
+  "limits": "Syntactic reviewer witnesses; no claim-level safety certification or native build",
+  "records": [
+    {
+      "path": "preparedness/content/articles/shelter-or-evacuate.meta.json",
+      "severity": "P0_CITATION",
+      "source_refs": {
+        "integrated": {
+          "sha": "cb559141d1e4a39debad16cf5cb796b746a01f19",
+          "size": 3938
+        },
+        "continuation": {
+          "sha": "0f4800f6808f54e0487de1f8426b4612f7d0a54f",
+          "size": 3736
+        },
+        "followup": {
+          "sha": "fb1081527e5afdd542299f2087397cf3308716c6",
+          "size": 3981
+        }
+      },
+      "comparisons": {
+        "continuation": {
+          "type": "metadata",
+          "changed_top_level_keys": [
+            "related",
+            "source_use"
+          ]
+        },
+        "followup": {
+          "type": "metadata",
+          "changed_top_level_keys": [
+            "related"
+          ]
+        }
+      },
+      "status": "UNRESOLVED_HOLD"
+    },
+    {
+      "path": "preparedness/content/tools/power-outage-planner.body.html",
+      "severity": "P0_LIFE_SAFETY",
+      "source_refs": {
+        "integrated": {
+          "sha": "aa8f866aaaaab9253f41c4363d31919029c69234",
+          "size": 39172
+        },
+        "continuation": {
+          "sha": "66a70ecc4192166958fcde125ada2b6f98e92b6c",
+          "size": 38695
+        },
+        "followup": {
+          "sha": "aa8f866aaaaab9253f41c4363d31919029c69234",
+          "size": 39172
+        }
+      },
+      "comparisons": {
+        "continuation": {
+          "type": "html",
+          "char_delta": -473,
+          "headings_removed": [],
+          "headings_added": [],
+          "citation_like_removed": [],
+          "citation_like_added": [],
+          "links_removed": [],
+          "links_added": [],
+          "form_count_before": 86,
+          "form_count_after": 86
+        },
+        "followup": {
+          "type": "html",
+          "char_delta": 0,
+          "headings_removed": [],
+          "headings_added": [],
+          "citation_like_removed": [],
+          "citation_like_added": [],
+          "links_removed": [],
+          "links_added": [],
+          "form_count_before": 86,
+          "form_count_after": 86
+        }
+      },
+      "status": "UNRESOLVED_HOLD"
+    },
+    {
+      "path": "preparedness/content/tools/power-outage-planner.meta.json",
+      "severity": "P0_CITATION",
+      "source_refs": {
+        "integrated": {
+          "sha": "8796bba2b323cce096639997002c402bd853e50f",
+          "size": 3033
+        },
+        "continuation": {
+          "sha": "bcbe83a82cc3bfbd10e179e6e18742253683b3ab",
+          "size": 2707
+        },
+        "followup": {
+          "sha": "8796bba2b323cce096639997002c402bd853e50f",
+          "size": 3033
+        }
+      },
+      "comparisons": {
+        "continuation": {
+          "type": "metadata",
+          "changed_top_level_keys": [
+            "source_use"
+          ]
+        },
+        "followup": {
+          "type": "metadata",
+          "changed_top_level_keys": []
+        }
+      },
+      "status": "UNRESOLVED_HOLD"
+    },
+    {
+      "path": "preparedness/content/tools/reunification-plan.body.html",
+      "severity": "P0_TOOL_IDENTITY",
+      "source_refs": {
+        "integrated": {
+          "sha": "3305578369183edb1d427c8f8f8002eaacee420f",
+          "size": 13745
+        },
+        "continuation": {
+          "sha": "79fe2cf7c7d486c105bac7a6a256136c2e237a0f",
+          "size": 18678
+        },
+        "followup": {
+          "sha": "be8698ac5d020476ff649d85813810e2000c6f98",
+          "size": 19145
+        }
+      },
+      "comparisons": {
+        "continuation": {
+          "type": "html",
+          "char_delta": 4933,
+          "headings_removed": [
+            "What this does",
+            "Build your plan",
+            "Your plan so far",
+            "Where the prompts come from",
+            "What this tool has and has not done"
+          ],
+          "headings_added": [
+            "What to do now",
+            "Your card",
+            "Preview",
+            "How to use it well",
+            "School and childcare reunification",
+            "Printing the card"
+          ],
+          "citation_like_removed": [
+            "data-pb-js",
+            "data-pb-print",
+            "data-pb-print",
+            "data-pb-print",
+            "data-pb-print",
+            "data-pb-print",
+            "data-pb-print",
+            "data-pb-print",
+            "data-pb-print",
+            "data-pb-print",
+            "data-pb-print",
+            "data-pb-print"
+          ],
+          "citation_like_added": [
+            "hidden"
+          ],
+          "links_removed": [],
+          "links_added": [],
+          "form_count_before": 0,
+          "form_count_after": 17
+        },
+        "followup": {
+          "type": "html",
+          "char_delta": 5400,
+          "headings_removed": [
+            "What this does",
+            "Build your plan",
+            "Your plan so far",
+            "Where the prompts come from",
+            "What this tool has and has not done"
+          ],
+          "headings_added": [
+            "What to do now",
+            "Your card",
+            "Preview",
+            "How to use it well",
+            "School and childcare reunification",
+            "Printing the card"
+          ],
+          "citation_like_removed": [
+            "data-pb-js",
+            "data-pb-print",
+            "data-pb-print",
+            "data-pb-print",
+            "data-pb-print",
+            "data-pb-print",
+            "data-pb-print",
+            "data-pb-print",
+            "data-pb-print",
+            "data-pb-print",
+            "data-pb-print",
+            "data-pb-print"
+          ],
+          "citation_like_added": [
+            "hidden"
+          ],
+          "links_removed": [],
+          "links_added": [],
+          "form_count_before": 0,
+          "form_count_after": 17
+        }
+      },
+      "status": "UNRESOLVED_HOLD"
+    },
+    {
+      "path": "preparedness/content/tools/reunification-plan.meta.json",
+      "severity": "P0_TOOL_IDENTITY",
+      "source_refs": {
+        "integrated": {
+          "sha": "10cd57dc8d39e366aaef8fd76cc3f8969b8c5348",
+          "size": 2040
+        },
+        "continuation": {
+          "sha": "61187860e045e41dd5f8df992927ff702c0d5156",
+          "size": 2093
+        },
+        "followup": {
+          "sha": "d4776aad104f59cfc50305e8eeed5220ec201cd5",
+          "size": 2394
+        }
+      },
+      "comparisons": {
+        "continuation": {
+          "type": "metadata",
+          "changed_top_level_keys": [
+            "dek",
+            "description",
+            "h1",
+            "n",
+            "recheck",
+            "related",
+            "source_use",
+            "tags",
+            "title"
+          ]
+        },
+        "followup": {
+          "type": "metadata",
+          "changed_top_level_keys": [
+            "dek",
+            "description",
+            "h1",
+            "n",
+            "recheck",
+            "related",
+            "source_use",
+            "tags",
+            "title"
+          ]
+        }
+      },
+      "status": "UNRESOLVED_HOLD"
+    }
+  ]
+}

@@ -1,0 +1,201 @@
+{
+  "schema": "fv-prep-r321-audited-source-delta-group-v1",
+  "source_docket_git_blob": "3119626a19175cec8f0dc4f03c5da57f319906d0",
+  "group": 1,
+  "expected_count": 5,
+  "verified_records": 5,
+  "verified_blob_count": 15,
+  "safety_approved": false,
+  "qd_pass": false,
+  "publish_authorized": false,
+  "automatic_merge": false,
+  "limits": "Syntactic reviewer witnesses; no claim-level safety certification or native build",
+  "records": [
+    {
+      "path": "preparedness/content/articles/family-communication-plan.body.html",
+      "severity": "P0_PRIVACY",
+      "source_refs": {
+        "integrated": {
+          "sha": "8ac8bd7dba3be15d477c15737e54d83364d72527",
+          "size": 26822
+        },
+        "continuation": {
+          "sha": "cbfe7830e9412ac99a1920c581a14d2913a9eaf6",
+          "size": 26248
+        },
+        "followup": {
+          "sha": "c97a79761dc3be1c44e5f9322a606ccc7fd11c6e",
+          "size": 26939
+        }
+      },
+      "comparisons": {
+        "continuation": {
+          "type": "html",
+          "char_delta": -574,
+          "headings_removed": [],
+          "headings_added": [],
+          "citation_like_removed": [],
+          "citation_like_added": [],
+          "links_removed": [],
+          "links_added": [],
+          "form_count_before": 0,
+          "form_count_after": 0
+        },
+        "followup": {
+          "type": "html",
+          "char_delta": 117,
+          "headings_removed": [],
+          "headings_added": [],
+          "citation_like_removed": [],
+          "citation_like_added": [],
+          "links_removed": [],
+          "links_added": [],
+          "form_count_before": 0,
+          "form_count_after": 0
+        }
+      },
+      "status": "UNRESOLVED_HOLD"
+    },
+    {
+      "path": "preparedness/content/articles/family-communication-plan.meta.json",
+      "severity": "P0_CITATION",
+      "source_refs": {
+        "integrated": {
+          "sha": "dcad79faa8e0e6f1aef6db03e9e6e9451e19d8d3",
+          "size": 4489
+        },
+        "continuation": {
+          "sha": "0ad68a8c456f50912ddef11c44bfc05c3c2d3513",
+          "size": 4191
+        },
+        "followup": {
+          "sha": "a8618235711cca039f142ad59962c1153654aa45",
+          "size": 4537
+        }
+      },
+      "comparisons": {
+        "continuation": {
+          "type": "metadata",
+          "changed_top_level_keys": [
+            "related",
+            "source_use"
+          ]
+        },
+        "followup": {
+          "type": "metadata",
+          "changed_top_level_keys": [
+            "related"
+          ]
+        }
+      },
+      "status": "UNRESOLVED_HOLD"
+    },
+    {
+      "path": "preparedness/content/articles/home-fire-escape-plan.body.html",
+      "severity": "P0_LIFE_SAFETY",
+      "source_refs": {
+        "integrated": {
+          "sha": "0412484304a3bcf08f0bb1b170110f617e3c2869",
+          "size": 31595
+        },
+        "continuation": {
+          "sha": "b8db7be7e0482334d8356f35616f21f36aaa2d4d",
+          "size": 31755
+        },
+        "followup": {
+          "sha": "b8db7be7e0482334d8356f35616f21f36aaa2d4d",
+          "size": 31755
+        }
+      },
+      "comparisons": {
+        "continuation": {
+          "type": "html",
+          "char_delta": 160,
+          "headings_removed": [],
+          "headings_added": [],
+          "citation_like_removed": [],
+          "citation_like_added": [],
+          "links_removed": [],
+          "links_added": [],
+          "form_count_before": 0,
+          "form_count_after": 0
+        },
+        "followup": {
+          "type": "html",
+          "char_delta": 160,
+          "headings_removed": [],
+          "headings_added": [],
+          "citation_like_removed": [],
+          "citation_like_added": [],
+          "links_removed": [],
+          "links_added": [],
+          "form_count_before": 0,
+          "form_count_after": 0
+        }
+      },
+      "status": "UNRESOLVED_HOLD"
+    },
+    {
+      "path": "preparedness/content/articles/home-fire-escape-plan.meta.json",
+      "severity": "P0_CITATION",
+      "source_refs": {
+        "integrated": {
+          "sha": "ff1246dcbfb0dd0bc864977f815badb9ad4e7ed8",
+          "size": 3711
+        },
+        "continuation": {
+          "sha": "7b76ebe8887c8d673fb4d2c14957ddee5233c4a9",
+          "size": 3758
+        },
+        "followup": {
+          "sha": "7b76ebe8887c8d673fb4d2c14957ddee5233c4a9",
+          "size": 3758
+        }
+      },
+      "comparisons": {
+        "continuation": {
+          "type": "metadata",
+          "changed_top_level_keys": []
+        },
+        "followup": {
+          "type": "metadata",
+          "changed_top_level_keys": []
+        }
+      },
+      "status": "UNRESOLVED_HOLD"
+    },
+    {
+      "path": "preparedness/content/articles/homemade-water-filters.meta.json",
+      "severity": "P0_HEALTH_SAFETY",
+      "source_refs": {
+        "integrated": {
+          "sha": "91c730bd1c7a61fa3140a86245c9bc0c88160c29",
+          "size": 2367
+        },
+        "continuation": {
+          "sha": "33789d3db0ec06007deb50d0293361f07cea27ae",
+          "size": 1973
+        },
+        "followup": {
+          "sha": "33789d3db0ec06007deb50d0293361f07cea27ae",
+          "size": 1973
+        }
+      },
+      "comparisons": {
+        "continuation": {
+          "type": "metadata",
+          "changed_top_level_keys": [
+            "source_use"
+          ]
+        },
+        "followup": {
+          "type": "metadata",
+          "changed_top_level_keys": [
+            "source_use"
+          ]
+        }
+      },
+      "status": "UNRESOLVED_HOLD"
+    }
+  ]
+}
