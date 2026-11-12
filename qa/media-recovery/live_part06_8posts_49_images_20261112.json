@@ -1,0 +1,2521 @@
+{
+  "schema": "fv-media-live-part06-49-v1",
+  "date_local": "2026-11-12",
+  "scope": "frozen 61-post / 355-image 2026-10-30 cohort; part 06 only; WordPress edit-context source/ALT/dimensions, NOT guest browser",
+  "method": "Authenticated read-only wpcom_mcp_posts_get, raw post HTML <img> order, paired with immutable PR183 frozen part06 and PR1703 historical 288-url register",
+  "provenance": {
+    "frozen_part_path": "qa/media-recovery/parts/06.json",
+    "frozen_part_blob": "0f3dfe398a76838049cebba7cb773d5c5a0c8c69",
+    "registry_path": "qa/media-recovery/coverage_288_exact_pr1703_20261110.json",
+    "registry_blob": "4965a862f7de7de46c1f4a1e26f3ca70a8c38805",
+    "site_qa_pr": 154,
+    "media_recovery_pr": 1703
+  },
+  "counts": {
+    "posts": 8,
+    "images": 49,
+    "source_equal": 49,
+    "alt_equal": 49,
+    "missing_both_dimensions": 43,
+    "both_dimensions": 6,
+    "partial_dimensions": 0,
+    "srcset_count": 0,
+    "commons_redirects": 28,
+    "other_external": 21,
+    "first_party": 0,
+    "catalog_candidates": 49,
+    "conditional_960_candidates": 24,
+    "guest_http_statuses_confirmed": 0
+  },
+  "policy": {
+    "historical_42_broken_browser_verified": false,
+    "claimed_76_percent_network_weight_saving_measured": false,
+    "oversized_wp_originals_gt_1_5MB": 15,
+    "oversized_original_stored_bytes": 47096779,
+    "no_release_without": "guest browser origin HTTP + naturalWidth/Height + item rights + pixel scene match + no-upscale conditional width <=960 + explicit editor approval",
+    "no_wordpress_changes": true,
+    "no_binary_downloads": true,
+    "site_qa_collector_owned_by_pr": 154
+  },
+  "posts": [
+    {
+      "post_id": 218,
+      "post_url": "https://finalvestige.com/2026/08/18/the-rock-had-to-be-real/",
+      "live_url": "https://finalvestige.com/2026/08/18/the-rock-had-to-be-real/",
+      "status": "publish",
+      "modified": "2026-10-29T16:01:32",
+      "frozen_image_count": 6,
+      "live_image_count": 6
+    },
+    {
+      "post_id": 217,
+      "post_url": "https://finalvestige.com/2026/08/18/the-gas-had-no-smell/",
+      "live_url": "https://finalvestige.com/2026/08/18/the-gas-had-no-smell/",
+      "status": "publish",
+      "modified": "2026-10-29T16:04:52",
+      "frozen_image_count": 6,
+      "live_image_count": 6
+    },
+    {
+      "post_id": 216,
+      "post_url": "https://finalvestige.com/2026/08/18/the-fire-department-was-already-there/",
+      "live_url": "https://finalvestige.com/2026/08/18/the-fire-department-was-already-there/",
+      "status": "publish",
+      "modified": "2026-11-02T21:39:36",
+      "frozen_image_count": 6,
+      "live_image_count": 6
+    },
+    {
+      "post_id": 215,
+      "post_url": "https://finalvestige.com/2026/08/18/a-wall-in-the-dark/",
+      "live_url": "https://finalvestige.com/2026/08/18/a-wall-in-the-dark/",
+      "status": "publish",
+      "modified": "2026-10-29T15:59:59",
+      "frozen_image_count": 6,
+      "live_image_count": 6
+    },
+    {
+      "post_id": 214,
+      "post_url": "https://finalvestige.com/2026/08/18/the-lifeboats-never-left-the-deck/",
+      "live_url": "https://finalvestige.com/2026/08/18/the-lifeboats-never-left-the-deck/",
+      "status": "publish",
+      "modified": "2026-11-02T21:39:34",
+      "frozen_image_count": 6,
+      "live_image_count": 6
+    },
+    {
+      "post_id": 213,
+      "post_url": "https://finalvestige.com/2026/08/18/the-fire-he-lit-himself/",
+      "live_url": "https://finalvestige.com/2026/08/18/the-fire-he-lit-himself/",
+      "status": "publish",
+      "modified": "2026-10-29T20:59:21",
+      "frozen_image_count": 7,
+      "live_image_count": 7
+    },
+    {
+      "post_id": 211,
+      "post_url": "https://finalvestige.com/2026/08/18/the-men-who-wouldnt-turn-left/",
+      "live_url": "https://finalvestige.com/2026/08/18/the-men-who-wouldnt-turn-left/",
+      "status": "publish",
+      "modified": "2026-11-02T21:39:32",
+      "frozen_image_count": 6,
+      "live_image_count": 6
+    },
+    {
+      "post_id": 190,
+      "post_url": "https://finalvestige.com/2026/08/18/the-hoses-that-wouldnt-fit/",
+      "live_url": "https://finalvestige.com/2026/08/18/the-hoses-that-wouldnt-fit/",
+      "status": "publish",
+      "modified": "2026-11-02T21:39:31",
+      "frozen_image_count": 6,
+      "live_image_count": 6
+    }
+  ],
+  "rows": [
+    {
+      "slot": "218:0",
+      "post_id": 218,
+      "post_url": "https://finalvestige.com/2026/08/18/the-rock-had-to-be-real/",
+      "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Glomar_Manganese_Nodule_Encased_in_Lucite.jpg?width=1280",
+      "live_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Glomar_Manganese_Nodule_Encased_in_Lucite.jpg?width=1280",
+      "source_equal": true,
+      "original_alt": "Manganese nodule recovered from the Pacific by the Glomar Explorer and preserved in Lucite by the CIA Museum.",
+      "live_alt": "Manganese nodule recovered from the Pacific by the Glomar Explorer and preserved in Lucite by the CIA Museum.",
+      "alt_equal": true,
+      "host": "commons.wikimedia.org",
+      "origin_kind": "commons_redirect",
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "archive_candidates": [
+        {
+          "catalog_url": "https://commons.wikimedia.org/wiki/File:Glomar_Manganese_Nodule_Encased_in_Lucite.jpg",
+          "authoritative_primary_url": "https://www.cia.gov/legacy/museum/artifact/manganese-nodule-encased-in-lucite/",
+          "source_authority": null,
+          "rights_observation": "CIA-photo public domain claim; actual published binary/crop still unverified.",
+          "conditional_960px": [
+            800,
+            533
+          ],
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false,
+          "rights_cleared": false
+        }
+      ],
+      "historical_retriever_wrappers": [
+        {
+          "batch": "azorian_218_six_source_20261109",
+          "observation": "TOOL_URL_NOT_ACCESSIBLE",
+          "wrapper_code": null
+        }
+      ],
+      "guest_origin_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_transferred_bytes": null,
+      "guest_image_failure_confirmed": null,
+      "guest_CLS": null,
+      "rights_cleared": false,
+      "exact_image_match_verified": false,
+      "cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_rewrite_authorized": false,
+      "conditional_960px_variants_only": true
+    },
+    {
+      "slot": "218:1",
+      "post_id": 218,
+      "post_url": "https://finalvestige.com/2026/08/18/the-rock-had-to-be-real/",
+      "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/USNS_Glomar_Explorer_(T-AG-193).jpg?width=1280",
+      "live_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/USNS_Glomar_Explorer_(T-AG-193).jpg?width=1280",
+      "source_equal": true,
+      "original_alt": "Hughes Glomar Explorer at sea, the vessel secretly built for Project AZORIAN.",
+      "live_alt": "Hughes Glomar Explorer at sea, the vessel secretly built for Project AZORIAN.",
+      "alt_equal": true,
+      "host": "commons.wikimedia.org",
+      "origin_kind": "commons_redirect",
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "archive_candidates": [
+        {
+          "catalog_url": "https://commons.wikimedia.org/wiki/File:USNS_Glomar_Explorer_(T-AG-193).jpg",
+          "authoritative_primary_url": "https://www.cia.gov/legacy/museum/exhibit/project-azorian/",
+          "source_authority": null,
+          "rights_observation": "Source says U.S. Government but does not establish photographer or unique original accession.",
+          "conditional_960px": [
+            960,
+            625
+          ],
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false,
+          "rights_cleared": false
+        }
+      ],
+      "historical_retriever_wrappers": [
+        {
+          "batch": "azorian_218_six_source_20261109",
+          "observation": "TOOL_URL_NOT_ACCESSIBLE",
+          "wrapper_code": null
+        }
+      ],
+      "guest_origin_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_transferred_bytes": null,
+      "guest_image_failure_confirmed": null,
+      "guest_CLS": null,
+      "rights_cleared": false,
+      "exact_image_match_verified": false,
+      "cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_rewrite_authorized": false,
+      "conditional_960px_variants_only": true
+    },
+    {
+      "slot": "218:2",
+      "post_id": 218,
+      "post_url": "https://finalvestige.com/2026/08/18/the-rock-had-to-be-real/",
+      "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Glomar_Patch.jpg?width=1280",
+      "live_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Glomar_Patch.jpg?width=1280",
+      "source_equal": true,
+      "original_alt": "Hughes Glomar Explorer crew patch bearing the Summa Corporation name used during Project AZORIAN.",
+      "live_alt": "Hughes Glomar Explorer crew patch bearing the Summa Corporation name used during Project AZORIAN.",
+      "alt_equal": true,
+      "host": "commons.wikimedia.org",
+      "origin_kind": "commons_redirect",
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "archive_candidates": [
+        {
+          "catalog_url": "https://commons.wikimedia.org/wiki/File:Glomar_Patch.jpg",
+          "authoritative_primary_url": "https://www.cia.gov/legacy/museum/artifact/glomar-explorer-crew-patch/",
+          "source_authority": null,
+          "rights_observation": "Photo public-domain claim does not automatically resolve separate logo or design rights.",
+          "conditional_960px": [
+            800,
+            533
+          ],
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false,
+          "rights_cleared": false
+        }
+      ],
+      "historical_retriever_wrappers": [
+        {
+          "batch": "azorian_218_six_source_20261109",
+          "observation": "TOOL_URL_NOT_ACCESSIBLE",
+          "wrapper_code": null
+        }
+      ],
+      "guest_origin_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_transferred_bytes": null,
+      "guest_image_failure_confirmed": null,
+      "guest_CLS": null,
+      "rights_cleared": false,
+      "exact_image_match_verified": false,
+      "cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_rewrite_authorized": false,
+      "conditional_960px_variants_only": true
+    },
+    {
+      "slot": "218:3",
+      "post_id": 218,
+      "post_url": "https://finalvestige.com/2026/08/18/the-rock-had-to-be-real/",
+      "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Model_of_the_sunken_and_deteriorated_K-129_submarine_was_created_by_the_CIA_during_the_AZORIAN_mission_that_has_never_been_displayed_before_at_the_CIA_Museum_in_2022.jpg?width=1280",
+      "live_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Model_of_the_sunken_and_deteriorated_K-129_submarine_was_created_by_the_CIA_during_the_AZORIAN_mission_that_has_never_been_displayed_before_at_the_CIA_Museum_in_2022.jpg?width=1280",
+      "source_equal": true,
+      "original_alt": "CIA model of the wrecked Soviet submarine K-129 created during Project AZORIAN.",
+      "live_alt": "CIA model of the wrecked Soviet submarine K-129 created during Project AZORIAN.",
+      "alt_equal": true,
+      "host": "commons.wikimedia.org",
+      "origin_kind": "commons_redirect",
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "archive_candidates": [
+        {
+          "catalog_url": "https://commons.wikimedia.org/wiki/File:Model_of_the_sunken_and_deteriorated_K-129_submarine_was_created_by_the_CIA_during_the_AZORIAN_mission_that_has_never_been_displayed_before_at_the_CIA_Museum_in_2022.jpg",
+          "authoritative_primary_url": "https://www.cia.gov/legacy/museum/exhibit/project-azorian/",
+          "source_authority": null,
+          "rights_observation": "CIA Flickr-origin photo PD claim; actual published binary/crop and model provenance unverified.",
+          "conditional_960px": [
+            960,
+            640
+          ],
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false,
+          "rights_cleared": false
+        }
+      ],
+      "historical_retriever_wrappers": [
+        {
+          "batch": "azorian_218_six_source_20261109",
+          "observation": "TOOL_URL_NOT_ACCESSIBLE",
+          "wrapper_code": null
+        }
+      ],
+      "guest_origin_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_transferred_bytes": null,
+      "guest_image_failure_confirmed": null,
+      "guest_CLS": null,
+      "rights_cleared": false,
+      "exact_image_match_verified": false,
+      "cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_rewrite_authorized": false,
+      "conditional_960px_variants_only": true
+    },
+    {
+      "slot": "218:4",
+      "post_id": 218,
+      "post_url": "https://finalvestige.com/2026/08/18/the-rock-had-to-be-real/",
+      "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Painting-of-AZORIAN-mission-approved.jpg?width=1280",
+      "live_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Painting-of-AZORIAN-mission-approved.jpg?width=1280",
+      "source_equal": true,
+      "original_alt": "Project AZORIAN lead engineer Sherman Wetmore looking at a painting of Glomar Explorer raising K-129 during a 2022 CIA Museum visit.",
+      "live_alt": "Project AZORIAN lead engineer Sherman Wetmore looking at a painting of Glomar Explorer raising K-129 during a 2022 CIA Museum visit.",
+      "alt_equal": true,
+      "host": "commons.wikimedia.org",
+      "origin_kind": "commons_redirect",
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "archive_candidates": [
+        {
+          "catalog_url": "https://commons.wikimedia.org/wiki/File:Painting-of-AZORIAN-mission-approved.jpg",
+          "authoritative_primary_url": "https://www.cia.gov/stories/story/honoring-the-mission-of-project-azorian/",
+          "source_authority": null,
+          "rights_observation": "Painting authorship and separate underlying artwork copyright unresolved even if CIA photo is PD.",
+          "conditional_960px": [
+            800,
+            709
+          ],
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false,
+          "rights_cleared": false
+        }
+      ],
+      "historical_retriever_wrappers": [
+        {
+          "batch": "azorian_218_six_source_20261109",
+          "observation": "TOOL_URL_NOT_ACCESSIBLE",
+          "wrapper_code": null
+        }
+      ],
+      "guest_origin_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_transferred_bytes": null,
+      "guest_image_failure_confirmed": null,
+      "guest_CLS": null,
+      "rights_cleared": false,
+      "exact_image_match_verified": false,
+      "cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_rewrite_authorized": false,
+      "conditional_960px_variants_only": true
+    },
+    {
+      "slot": "218:5",
+      "post_id": 218,
+      "post_url": "https://finalvestige.com/2026/08/18/the-rock-had-to-be-real/",
+      "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Hughes_Glomar_Explorer_coveralls_and_ashtray_are_examples_of_the_depth_of_cover_that_CIA_and_Hughes_manufactured_for_the_expedition_and_these_artifacts_have_never_been_displayed_before_at_the_CIA_Museum_in_2022.jpg?width=1280",
+      "live_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Hughes_Glomar_Explorer_coveralls_and_ashtray_are_examples_of_the_depth_of_cover_that_CIA_and_Hughes_manufactured_for_the_expedition_and_these_artifacts_have_never_been_displayed_before_at_the_CIA_Museum_in_2022.jpg?width=1280",
+      "source_equal": true,
+      "original_alt": "Glomar Explorer coveralls and ashtray created as part of the Hughes and Summa Corporation cover identity for Project AZORIAN.",
+      "live_alt": "Glomar Explorer coveralls and ashtray created as part of the Hughes and Summa Corporation cover identity for Project AZORIAN.",
+      "alt_equal": true,
+      "host": "commons.wikimedia.org",
+      "origin_kind": "commons_redirect",
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "archive_candidates": [
+        {
+          "catalog_url": "https://commons.wikimedia.org/wiki/File:Hughes_Glomar_Explorer_coveralls_and_ashtray_are_examples_of_the_depth_of_cover_that_CIA_and_Hughes_manufactured_for_the_expedition_and_these_artifacts_have_never_been_displayed_before_at_the_CIA_Museum_in_2022.jpg",
+          "authoritative_primary_url": "https://www.cia.gov/stories/story/honoring-the-mission-of-project-azorian/",
+          "source_authority": null,
+          "rights_observation": "CIA photo government-work PD claim may not cover contractor-produced underlying graphic/artifact designs.",
+          "conditional_960px": [
+            960,
+            1439
+          ],
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false,
+          "rights_cleared": false
+        }
+      ],
+      "historical_retriever_wrappers": [
+        {
+          "batch": "azorian_218_six_source_20261109",
+          "observation": "TOOL_URL_NOT_ACCESSIBLE",
+          "wrapper_code": null
+        }
+      ],
+      "guest_origin_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_transferred_bytes": null,
+      "guest_image_failure_confirmed": null,
+      "guest_CLS": null,
+      "rights_cleared": false,
+      "exact_image_match_verified": false,
+      "cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_rewrite_authorized": false,
+      "conditional_960px_variants_only": true
+    },
+    {
+      "slot": "217:0",
+      "post_id": 217,
+      "post_url": "https://finalvestige.com/2026/08/18/the-gas-had-no-smell/",
+      "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/New_London_School_explosion.jpg?width=1280",
+      "live_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/New_London_School_explosion.jpg?width=1280",
+      "source_equal": true,
+      "original_alt": "The shattered New London School after the March 18, 1937 gas explosion, with rescuers gathered around the ruins.",
+      "live_alt": "The shattered New London School after the March 18, 1937 gas explosion, with rescuers gathered around the ruins.",
+      "alt_equal": true,
+      "host": "commons.wikimedia.org",
+      "origin_kind": "commons_redirect",
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "archive_candidates": [
+        {
+          "catalog_url": "https://commons.wikimedia.org/wiki/File:New_London_School_explosion.jpg",
+          "authoritative_primary_url": "https://newsroom.ap.org/editorial-photos-videos/detail?itemid=6663ae6645e5da11af9f0014c2589dfb&mediatype=photo",
+          "source_authority": null,
+          "rights_observation": null,
+          "conditional_960px": [
+            760,
+            609
+          ],
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false,
+          "rights_cleared": false
+        }
+      ],
+      "historical_retriever_wrappers": [
+        {
+          "batch": "new_london_217_six_source_20261109",
+          "observation": "NOT_ACCESSIBLE_VIA_THIS_TOOL",
+          "wrapper_code": null
+        }
+      ],
+      "guest_origin_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_transferred_bytes": null,
+      "guest_image_failure_confirmed": null,
+      "guest_CLS": null,
+      "rights_cleared": false,
+      "exact_image_match_verified": false,
+      "cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_rewrite_authorized": false,
+      "conditional_960px_variants_only": true
+    },
+    {
+      "slot": "217:1",
+      "post_id": 217,
+      "post_url": "https://finalvestige.com/2026/08/18/the-gas-had-no-smell/",
+      "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/New_London_School_before_explosion.webp?width=1280",
+      "live_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/New_London_School_before_explosion.webp?width=1280",
+      "source_equal": true,
+      "original_alt": "London School in East Texas before the March 1937 explosion, showing the large modern school building intact.",
+      "live_alt": "London School in East Texas before the March 1937 explosion, showing the large modern school building intact.",
+      "alt_equal": true,
+      "host": "commons.wikimedia.org",
+      "origin_kind": "commons_redirect",
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "archive_candidates": [
+        {
+          "catalog_url": "https://commons.wikimedia.org/wiki/File:New_London_School_before_explosion.webp",
+          "authoritative_primary_url": "https://www.mysanantonio.com/entertainment/visual_arts/article/Books-chronicle-37-school-explosion-3410834.php",
+          "source_authority": null,
+          "rights_observation": null,
+          "conditional_960px": [
+            960,
+            685
+          ],
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false,
+          "rights_cleared": false
+        }
+      ],
+      "historical_retriever_wrappers": [
+        {
+          "batch": "new_london_217_six_source_20261109",
+          "observation": "NOT_ACCESSIBLE_VIA_THIS_TOOL",
+          "wrapper_code": null
+        }
+      ],
+      "guest_origin_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_transferred_bytes": null,
+      "guest_image_failure_confirmed": null,
+      "guest_CLS": null,
+      "rights_cleared": false,
+      "exact_image_match_verified": false,
+      "cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_rewrite_authorized": false,
+      "conditional_960px_variants_only": true
+    },
+    {
+      "slot": "217:2",
+      "post_id": 217,
+      "post_url": "https://finalvestige.com/2026/08/18/the-gas-had-no-smell/",
+      "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/INP_Photos_of_New_London_School_explosion.jpg?width=1280",
+      "live_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/INP_Photos_of_New_London_School_explosion.jpg?width=1280",
+      "source_equal": true,
+      "original_alt": "Rescuers and debris at New London School after the 1937 explosion, photographed for International News Photos.",
+      "live_alt": "Rescuers and debris at New London School after the 1937 explosion, photographed for International News Photos.",
+      "alt_equal": true,
+      "host": "commons.wikimedia.org",
+      "origin_kind": "commons_redirect",
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "archive_candidates": [
+        {
+          "catalog_url": "https://commons.wikimedia.org/wiki/File:INP_Photos_of_New_London_School_explosion.jpg",
+          "authoritative_primary_url": "https://www.newspapers.com/newspage/1260112112/",
+          "source_authority": null,
+          "rights_observation": null,
+          "conditional_960px": [
+            960,
+            753
+          ],
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false,
+          "rights_cleared": false
+        }
+      ],
+      "historical_retriever_wrappers": [
+        {
+          "batch": "new_london_217_six_source_20261109",
+          "observation": "NOT_ACCESSIBLE_VIA_THIS_TOOL",
+          "wrapper_code": null
+        }
+      ],
+      "guest_origin_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_transferred_bytes": null,
+      "guest_image_failure_confirmed": null,
+      "guest_CLS": null,
+      "rights_cleared": false,
+      "exact_image_match_verified": false,
+      "cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_rewrite_authorized": false,
+      "conditional_960px_variants_only": true
+    },
+    {
+      "slot": "217:3",
+      "post_id": 217,
+      "post_url": "https://finalvestige.com/2026/08/18/the-gas-had-no-smell/",
+      "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/INP_Photos_of_New_London_School_explosion_(1).jpg?width=1280",
+      "live_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/INP_Photos_of_New_London_School_explosion_(1).jpg?width=1280",
+      "source_equal": true,
+      "original_alt": "Emergency workers at the New London School ruins after the March 1937 explosion.",
+      "live_alt": "Emergency workers at the New London School ruins after the March 1937 explosion.",
+      "alt_equal": true,
+      "host": "commons.wikimedia.org",
+      "origin_kind": "commons_redirect",
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "archive_candidates": [
+        {
+          "catalog_url": "https://commons.wikimedia.org/wiki/File:INP_Photos_of_New_London_School_explosion_(1).jpg",
+          "authoritative_primary_url": "https://www.newspapers.com/newspage/1260112112/",
+          "source_authority": null,
+          "rights_observation": null,
+          "conditional_960px": [
+            960,
+            762
+          ],
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false,
+          "rights_cleared": false
+        }
+      ],
+      "historical_retriever_wrappers": [
+        {
+          "batch": "new_london_217_six_source_20261109",
+          "observation": "NOT_ACCESSIBLE_VIA_THIS_TOOL",
+          "wrapper_code": null
+        }
+      ],
+      "guest_origin_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_transferred_bytes": null,
+      "guest_image_failure_confirmed": null,
+      "guest_CLS": null,
+      "rights_cleared": false,
+      "exact_image_match_verified": false,
+      "cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_rewrite_authorized": false,
+      "conditional_960px_variants_only": true
+    },
+    {
+      "slot": "217:4",
+      "post_id": 217,
+      "post_url": "https://finalvestige.com/2026/08/18/the-gas-had-no-smell/",
+      "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/INP_Photos_of_New_London_School_explosion_(2).jpg?width=1280",
+      "live_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/INP_Photos_of_New_London_School_explosion_(2).jpg?width=1280",
+      "source_equal": true,
+      "original_alt": "Rescue and recovery activity among the wreckage of New London School after the gas explosion.",
+      "live_alt": "Rescue and recovery activity among the wreckage of New London School after the gas explosion.",
+      "alt_equal": true,
+      "host": "commons.wikimedia.org",
+      "origin_kind": "commons_redirect",
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "archive_candidates": [
+        {
+          "catalog_url": "https://commons.wikimedia.org/wiki/File:INP_Photos_of_New_London_School_explosion_(2).jpg",
+          "authoritative_primary_url": "https://www.newspapers.com/newspage/1260112112/",
+          "source_authority": null,
+          "rights_observation": null,
+          "conditional_960px": [
+            960,
+            728
+          ],
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false,
+          "rights_cleared": false
+        }
+      ],
+      "historical_retriever_wrappers": [
+        {
+          "batch": "new_london_217_six_source_20261109",
+          "observation": "NOT_ACCESSIBLE_VIA_THIS_TOOL",
+          "wrapper_code": null
+        }
+      ],
+      "guest_origin_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_transferred_bytes": null,
+      "guest_image_failure_confirmed": null,
+      "guest_CLS": null,
+      "rights_cleared": false,
+      "exact_image_match_verified": false,
+      "cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_rewrite_authorized": false,
+      "conditional_960px_variants_only": true
+    },
+    {
+      "slot": "217:5",
+      "post_id": 217,
+      "post_url": "https://finalvestige.com/2026/08/18/the-gas-had-no-smell/",
+      "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/New_London_School_Explosion_Memorial_-_46699056584.jpg?width=1280",
+      "live_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/New_London_School_Explosion_Memorial_-_46699056584.jpg?width=1280",
+      "source_equal": true,
+      "original_alt": "New London School Explosion Memorial in Texas, photographed in 2016.",
+      "live_alt": "New London School Explosion Memorial in Texas, photographed in 2016.",
+      "alt_equal": true,
+      "host": "commons.wikimedia.org",
+      "origin_kind": "commons_redirect",
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "archive_candidates": [
+        {
+          "catalog_url": "https://commons.wikimedia.org/wiki/File:New_London_School_Explosion_Memorial_-_46699056584.jpg",
+          "authoritative_primary_url": "https://www.flickr.com/photos/52855156@N00/46699056584/",
+          "source_authority": null,
+          "rights_observation": null,
+          "conditional_960px": [
+            960,
+            540
+          ],
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false,
+          "rights_cleared": false
+        }
+      ],
+      "historical_retriever_wrappers": [
+        {
+          "batch": "new_london_217_six_source_20261109",
+          "observation": "NOT_ACCESSIBLE_VIA_THIS_TOOL",
+          "wrapper_code": null
+        }
+      ],
+      "guest_origin_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_transferred_bytes": null,
+      "guest_image_failure_confirmed": null,
+      "guest_CLS": null,
+      "rights_cleared": false,
+      "exact_image_match_verified": false,
+      "cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_rewrite_authorized": false,
+      "conditional_960px_variants_only": true
+    },
+    {
+      "slot": "216:0",
+      "post_id": 216,
+      "post_url": "https://finalvestige.com/2026/08/18/the-fire-department-was-already-there/",
+      "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Txcitydisasterparkinglot.jpg?width=1280",
+      "live_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Txcitydisasterparkinglot.jpg?width=1280",
+      "source_equal": true,
+      "original_alt": "Wrecked automobiles in a parking lot about one quarter mile from the Texas City explosion, photographed April 18, 1947.",
+      "live_alt": "Wrecked automobiles in a parking lot about one quarter mile from the Texas City explosion, photographed April 18, 1947.",
+      "alt_equal": true,
+      "host": "commons.wikimedia.org",
+      "origin_kind": "commons_redirect",
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "archive_candidates": [
+        {
+          "catalog_url": "https://commons.wikimedia.org/wiki/File:Txcitydisasterparkinglot.jpg",
+          "authoritative_primary_url": "https://digitalcollections.lib.uh.edu/collections/0p0967712?locale=en&view=gallery",
+          "source_authority": "University of Houston Digital Collections; Commons derivative",
+          "rights_observation": "Commons says public domain; UH current primary description states Copyright Undetermined. Conflicting claims; permission NOT established.",
+          "conditional_960px": [
+            960,
+            747
+          ],
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false,
+          "rights_cleared": false
+        }
+      ],
+      "historical_retriever_wrappers": [
+        {
+          "batch": "texas_city_216_six_primary_rights_20261109",
+          "observation": "TOOL_URL_NOT_ACCESSIBLE",
+          "wrapper_code": null
+        }
+      ],
+      "guest_origin_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_transferred_bytes": null,
+      "guest_image_failure_confirmed": null,
+      "guest_CLS": null,
+      "rights_cleared": false,
+      "exact_image_match_verified": false,
+      "cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_rewrite_authorized": false,
+      "conditional_960px_variants_only": true
+    },
+    {
+      "slot": "216:1",
+      "post_id": 216,
+      "post_url": "https://finalvestige.com/2026/08/18/the-fire-department-was-already-there/",
+      "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Texas_City_Disaster_Firemen_Memorial.jpg?width=960",
+      "live_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Texas_City_Disaster_Firemen_Memorial.jpg?width=960",
+      "source_equal": true,
+      "original_alt": "Memorial to the Texas City firefighters killed in the 1947 disaster.",
+      "live_alt": "Memorial to the Texas City firefighters killed in the 1947 disaster.",
+      "alt_equal": true,
+      "host": "commons.wikimedia.org",
+      "origin_kind": "commons_redirect",
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "archive_candidates": [
+        {
+          "catalog_url": "https://commons.wikimedia.org/wiki/File:Texas_City_Disaster_Firemen_Memorial.jpg",
+          "authoritative_primary_url": "https://commons.wikimedia.org/wiki/File:Texas_City_Disaster_Firemen_Memorial.jpg",
+          "source_authority": "Creator's Commons upload",
+          "rights_observation": "Modern 2008 photo licensed CC BY-SA 4.0 by creator; credit/link/change indication/share-alike obligations. Not government public domain.",
+          "conditional_960px": [
+            960,
+            773
+          ],
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false,
+          "rights_cleared": false
+        }
+      ],
+      "historical_retriever_wrappers": [
+        {
+          "batch": "texas_city_216_six_primary_rights_20261109",
+          "observation": "TOOL_URL_NOT_ACCESSIBLE",
+          "wrapper_code": null
+        }
+      ],
+      "guest_origin_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_transferred_bytes": null,
+      "guest_image_failure_confirmed": null,
+      "guest_CLS": null,
+      "rights_cleared": false,
+      "exact_image_match_verified": false,
+      "cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_rewrite_authorized": false,
+      "conditional_960px_variants_only": true
+    },
+    {
+      "slot": "216:2",
+      "post_id": 216,
+      "post_url": "https://finalvestige.com/2026/08/18/the-fire-department-was-already-there/",
+      "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Txcitydisaster5storybuilding.jpg",
+      "live_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Txcitydisaster5storybuilding.jpg",
+      "source_equal": true,
+      "original_alt": "A damaged five-story building in Texas City two days after the 1947 explosions.",
+      "live_alt": "A damaged five-story building in Texas City two days after the 1947 explosions.",
+      "alt_equal": true,
+      "host": "commons.wikimedia.org",
+      "origin_kind": "commons_redirect",
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "archive_candidates": [
+        {
+          "catalog_url": "https://commons.wikimedia.org/wiki/File:Txcitydisaster5storybuilding.jpg",
+          "authoritative_primary_url": "https://digitalcollections.lib.uh.edu/collections/0p0967712?locale=en&view=gallery",
+          "source_authority": "University of Houston Digital Collections; Commons derivative",
+          "rights_observation": "Commons says public domain; University of Houston current primary description states Copyright Undetermined. Conflicting claims.",
+          "conditional_960px": [
+            960,
+            733
+          ],
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false,
+          "rights_cleared": false
+        }
+      ],
+      "historical_retriever_wrappers": [
+        {
+          "batch": "texas_city_216_six_primary_rights_20261109",
+          "observation": "TOOL_URL_NOT_ACCESSIBLE",
+          "wrapper_code": null
+        }
+      ],
+      "guest_origin_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_transferred_bytes": null,
+      "guest_image_failure_confirmed": null,
+      "guest_CLS": null,
+      "rights_cleared": false,
+      "exact_image_match_verified": false,
+      "cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_rewrite_authorized": false,
+      "conditional_960px_variants_only": true
+    },
+    {
+      "slot": "216:3",
+      "post_id": 216,
+      "post_url": "https://finalvestige.com/2026/08/18/the-fire-department-was-already-there/",
+      "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Texas_-_Texas_City_-_NARA_-_68149862.jpg?width=1280",
+      "live_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Texas_-_Texas_City_-_NARA_-_68149862.jpg?width=1280",
+      "source_equal": true,
+      "original_alt": "Aerial view of the Texas City industrial waterfront from a U.S. government photographic series dating to the 1940s.",
+      "live_alt": "Aerial view of the Texas City industrial waterfront from a U.S. government photographic series dating to the 1940s.",
+      "alt_equal": true,
+      "host": "commons.wikimedia.org",
+      "origin_kind": "commons_redirect",
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "archive_candidates": [
+        {
+          "catalog_url": "https://commons.wikimedia.org/wiki/File:Texas_-_Texas_City_-_NARA_-_68149862.jpg",
+          "authoritative_primary_url": "https://catalog.archives.gov/id/68149862",
+          "source_authority": "U.S. National Archives, Record Group 18 / Army Air Forces",
+          "rights_observation": "Commons carries US federal government public-domain rationale; item-level author/rights and exact binary still require confirmation.",
+          "conditional_960px": [
+            960,
+            761
+          ],
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false,
+          "rights_cleared": false
+        }
+      ],
+      "historical_retriever_wrappers": [
+        {
+          "batch": "texas_city_216_six_primary_rights_20261109",
+          "observation": "TOOL_URL_NOT_ACCESSIBLE",
+          "wrapper_code": null
+        }
+      ],
+      "guest_origin_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_transferred_bytes": null,
+      "guest_image_failure_confirmed": null,
+      "guest_CLS": null,
+      "rights_cleared": false,
+      "exact_image_match_verified": false,
+      "cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_rewrite_authorized": false,
+      "conditional_960px_variants_only": true
+    },
+    {
+      "slot": "216:4",
+      "post_id": 216,
+      "post_url": "https://finalvestige.com/2026/08/18/the-fire-department-was-already-there/",
+      "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Txcitydisasterboat.jpg",
+      "live_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Txcitydisasterboat.jpg",
+      "source_equal": true,
+      "original_alt": "A wrecked ship in the Texas City harbor after the 1947 explosions, associated with the High Flyer and Wilson B. Keene disaster area.",
+      "live_alt": "A wrecked ship in the Texas City harbor after the 1947 explosions, associated with the High Flyer and Wilson B. Keene disaster area.",
+      "alt_equal": true,
+      "host": "commons.wikimedia.org",
+      "origin_kind": "commons_redirect",
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "archive_candidates": [
+        {
+          "catalog_url": "https://commons.wikimedia.org/wiki/File:Txcitydisasterboat.jpg",
+          "authoritative_primary_url": "https://digitalcollections.lib.uh.edu/collections/0p0967712?locale=en&view=gallery",
+          "source_authority": "University of Houston Texas City Disaster Photographs collection; Commons derivative",
+          "rights_observation": "Commons claims public domain via historical UH source; UH collection shows Copyright Undetermined for historical images. Exact-item rights unresolved.",
+          "conditional_960px": [
+            960,
+            735
+          ],
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false,
+          "rights_cleared": false
+        }
+      ],
+      "historical_retriever_wrappers": [
+        {
+          "batch": "texas_city_216_six_primary_rights_20261109",
+          "observation": "TOOL_URL_NOT_ACCESSIBLE",
+          "wrapper_code": null
+        }
+      ],
+      "guest_origin_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_transferred_bytes": null,
+      "guest_image_failure_confirmed": null,
+      "guest_CLS": null,
+      "rights_cleared": false,
+      "exact_image_match_verified": false,
+      "cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_rewrite_authorized": false,
+      "conditional_960px_variants_only": true
+    },
+    {
+      "slot": "216:5",
+      "post_id": 216,
+      "post_url": "https://finalvestige.com/2026/08/18/the-fire-department-was-already-there/",
+      "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Grandcampanchor.jpg",
+      "live_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Grandcampanchor.jpg",
+      "source_equal": true,
+      "original_alt": "One of the Grandcamp anchors displayed in Texas City Memorial Park after the 1947 disaster.",
+      "live_alt": "One of the Grandcamp anchors displayed in Texas City Memorial Park after the 1947 disaster.",
+      "alt_equal": true,
+      "host": "commons.wikimedia.org",
+      "origin_kind": "commons_redirect",
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "archive_candidates": [
+        {
+          "catalog_url": "https://commons.wikimedia.org/wiki/File:Grandcampanchor.jpg",
+          "authoritative_primary_url": "https://commons.wikimedia.org/wiki/File:Grandcampanchor.jpg",
+          "source_authority": "Uploader-declared creator's photo on Commons",
+          "rights_observation": "Uploader marked PD-self (modern photograph, 2006); creator declaration and sculpture/property scope require item review.",
+          "conditional_960px": [
+            480,
+            320
+          ],
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false,
+          "rights_cleared": false
+        }
+      ],
+      "historical_retriever_wrappers": [
+        {
+          "batch": "texas_city_216_six_primary_rights_20261109",
+          "observation": "TOOL_URL_NOT_ACCESSIBLE",
+          "wrapper_code": null
+        }
+      ],
+      "guest_origin_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_transferred_bytes": null,
+      "guest_image_failure_confirmed": null,
+      "guest_CLS": null,
+      "rights_cleared": false,
+      "exact_image_match_verified": false,
+      "cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_rewrite_authorized": false,
+      "conditional_960px_variants_only": true
+    },
+    {
+      "slot": "215:0",
+      "post_id": 215,
+      "post_url": "https://finalvestige.com/2026/08/18/a-wall-in-the-dark/",
+      "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Cherry_Mine_disaster,_crowd_at_mouth_of_shaft.jpg?width=1280",
+      "live_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Cherry_Mine_disaster,_crowd_at_mouth_of_shaft.jpg?width=1280",
+      "source_equal": true,
+      "original_alt": "Crowd gathered at the mouth of the Cherry Mine shaft during the November 1909 disaster in Illinois.",
+      "live_alt": "Crowd gathered at the mouth of the Cherry Mine shaft during the November 1909 disaster in Illinois.",
+      "alt_equal": true,
+      "host": "commons.wikimedia.org",
+      "origin_kind": "commons_redirect",
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "archive_candidates": [
+        {
+          "catalog_url": "https://commons.wikimedia.org/wiki/File:Cherry_Mine_disaster,_crowd_at_mouth_of_shaft.jpg",
+          "authoritative_primary_url": "https://www.loc.gov/pictures/item/2014684365/",
+          "source_authority": "LIBRARY_OF_CONGRESS_BAIN_NEWS",
+          "rights_observation": "LOC no known publication restrictions, Commons US public-domain claim; individual release unapproved",
+          "conditional_960px": [
+            960,
+            672
+          ],
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false,
+          "rights_cleared": false
+        }
+      ],
+      "historical_retriever_wrappers": [
+        {
+          "batch": "cherry_mine_215_six_20261109",
+          "observation": "TOOL_URL_NOT_ACCESSIBLE",
+          "wrapper_code": null
+        }
+      ],
+      "guest_origin_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_transferred_bytes": null,
+      "guest_image_failure_confirmed": null,
+      "guest_CLS": null,
+      "rights_cleared": false,
+      "exact_image_match_verified": false,
+      "cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_rewrite_authorized": false,
+      "conditional_960px_variants_only": true
+    },
+    {
+      "slot": "215:1",
+      "post_id": 215,
+      "post_url": "https://finalvestige.com/2026/08/18/a-wall-in-the-dark/",
+      "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Cherry_Mine_fan_house_and_escape_shaft_postcard.jpg?width=1280",
+      "live_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Cherry_Mine_fan_house_and_escape_shaft_postcard.jpg?width=1280",
+      "source_equal": true,
+      "original_alt": "Ruins of the Cherry Mine fan house and escape shaft following the 1909 mine fire.",
+      "live_alt": "Ruins of the Cherry Mine fan house and escape shaft following the 1909 mine fire.",
+      "alt_equal": true,
+      "host": "commons.wikimedia.org",
+      "origin_kind": "commons_redirect",
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "archive_candidates": [
+        {
+          "catalog_url": "https://commons.wikimedia.org/wiki/File:Cherry_Mine_fan_house_and_escape_shaft_postcard.jpg",
+          "authoritative_primary_url": null,
+          "source_authority": "WIKIMEDIA_COMMONS_POSTCARD_ORIGINAL_CREATOR_UNKNOWN",
+          "rights_observation": "Commons reports US public domain for 1910 postcard; independent rights review needed",
+          "conditional_960px": [
+            600,
+            374
+          ],
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false,
+          "rights_cleared": false
+        }
+      ],
+      "historical_retriever_wrappers": [
+        {
+          "batch": "cherry_mine_215_six_20261109",
+          "observation": "TOOL_URL_NOT_ACCESSIBLE",
+          "wrapper_code": null
+        }
+      ],
+      "guest_origin_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_transferred_bytes": null,
+      "guest_image_failure_confirmed": null,
+      "guest_CLS": null,
+      "rights_cleared": false,
+      "exact_image_match_verified": false,
+      "cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_rewrite_authorized": false,
+      "conditional_960px_variants_only": true
+    },
+    {
+      "slot": "215:2",
+      "post_id": 215,
+      "post_url": "https://finalvestige.com/2026/08/18/a-wall-in-the-dark/",
+      "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/A_miner%27s_family_at_dinner_-_DPLA_-_5f57daf0a0ca864c0d59173171a22547.jpg?width=1280",
+      "live_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/A_miner%27s_family_at_dinner_-_DPLA_-_5f57daf0a0ca864c0d59173171a22547.jpg?width=1280",
+      "source_equal": true,
+      "original_alt": "A mother and children seated at a dinner table after the Cherry Mine disaster while waiting for the miner in their family to return.",
+      "live_alt": "A mother and children seated at a dinner table after the Cherry Mine disaster while waiting for the miner in their family to return.",
+      "alt_equal": true,
+      "host": "commons.wikimedia.org",
+      "origin_kind": "commons_redirect",
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "archive_candidates": [
+        {
+          "catalog_url": "https://commons.wikimedia.org/wiki/File:A_miner%27s_family_at_dinner_-_DPLA_-_5f57daf0a0ca864c0d59173171a22547.jpg",
+          "authoritative_primary_url": "https://dp.la/item/5f57daf0a0ca864c0d59173171a22547",
+          "source_authority": "COLORADO_BOULDER_DPLA_CONTRIBUTION",
+          "rights_observation": "University of Colorado Boulder statement: No Copyright - United States; other jurisdictions/permissions not warranted; item review HOLD",
+          "conditional_960px": [
+            960,
+            640
+          ],
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false,
+          "rights_cleared": false
+        }
+      ],
+      "historical_retriever_wrappers": [
+        {
+          "batch": "cherry_mine_215_six_20261109",
+          "observation": "TOOL_URL_NOT_ACCESSIBLE",
+          "wrapper_code": null
+        }
+      ],
+      "guest_origin_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_transferred_bytes": null,
+      "guest_image_failure_confirmed": null,
+      "guest_CLS": null,
+      "rights_cleared": false,
+      "exact_image_match_verified": false,
+      "cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_rewrite_authorized": false,
+      "conditional_960px_variants_only": true
+    },
+    {
+      "slot": "215:3",
+      "post_id": 215,
+      "post_url": "https://finalvestige.com/2026/08/18/a-wall-in-the-dark/",
+      "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/The_Appalling_Mine_Disaster_at_Cherry,_III._(1).png?width=1280",
+      "live_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/The_Appalling_Mine_Disaster_at_Cherry,_III._(1).png?width=1280",
+      "source_equal": true,
+      "original_alt": "Contemporary 1909 illustrated account of the Cherry Mine disaster showing rescue activity around the mine.",
+      "live_alt": "Contemporary 1909 illustrated account of the Cherry Mine disaster showing rescue activity around the mine.",
+      "alt_equal": true,
+      "host": "commons.wikimedia.org",
+      "origin_kind": "commons_redirect",
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "archive_candidates": [
+        {
+          "catalog_url": "https://commons.wikimedia.org/wiki/File:The_Appalling_Mine_Disaster_at_Cherry,_III._(1).png",
+          "authoritative_primary_url": null,
+          "source_authority": "UNVERIFIED_COMMONS_RECORD",
+          "rights_observation": "Item-level catalog and reuse status not independently verified",
+          "conditional_960px": null,
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false,
+          "rights_cleared": false
+        }
+      ],
+      "historical_retriever_wrappers": [
+        {
+          "batch": "cherry_mine_215_six_20261109",
+          "observation": "TOOL_URL_NOT_ACCESSIBLE",
+          "wrapper_code": null
+        }
+      ],
+      "guest_origin_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_transferred_bytes": null,
+      "guest_image_failure_confirmed": null,
+      "guest_CLS": null,
+      "rights_cleared": false,
+      "exact_image_match_verified": false,
+      "cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_rewrite_authorized": false,
+      "conditional_960px_variants_only": true
+    },
+    {
+      "slot": "215:4",
+      "post_id": 215,
+      "post_url": "https://finalvestige.com/2026/08/18/a-wall-in-the-dark/",
+      "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Cherry_Mine_disaster,_mourners_and_coffins_LCCN2014684364.jpg?width=1280",
+      "live_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Cherry_Mine_disaster,_mourners_and_coffins_LCCN2014684364.jpg?width=1280",
+      "source_equal": true,
+      "original_alt": "Mourners and coffins at Cherry, Illinois, after the November 1909 mine disaster.",
+      "live_alt": "Mourners and coffins at Cherry, Illinois, after the November 1909 mine disaster.",
+      "alt_equal": true,
+      "host": "commons.wikimedia.org",
+      "origin_kind": "commons_redirect",
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "archive_candidates": [
+        {
+          "catalog_url": "https://commons.wikimedia.org/wiki/File:Cherry_Mine_disaster,_mourners_and_coffins_LCCN2014684364.jpg",
+          "authoritative_primary_url": "https://www.loc.gov/pictures/item/2014684364/",
+          "source_authority": "LIBRARY_OF_CONGRESS_BAIN_NEWS",
+          "rights_observation": "LOC Bain collection no known restrictions on publication, not blanket permission/rehost clearance",
+          "conditional_960px": [
+            960,
+            700
+          ],
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false,
+          "rights_cleared": false
+        }
+      ],
+      "historical_retriever_wrappers": [
+        {
+          "batch": "cherry_mine_215_six_20261109",
+          "observation": "TOOL_URL_NOT_ACCESSIBLE",
+          "wrapper_code": null
+        }
+      ],
+      "guest_origin_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_transferred_bytes": null,
+      "guest_image_failure_confirmed": null,
+      "guest_CLS": null,
+      "rights_cleared": false,
+      "exact_image_match_verified": false,
+      "cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_rewrite_authorized": false,
+      "conditional_960px_variants_only": true
+    },
+    {
+      "slot": "215:5",
+      "post_id": 215,
+      "post_url": "https://finalvestige.com/2026/08/18/a-wall-in-the-dark/",
+      "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Group_made_orphans_by_Cherry_Mine_disaster_where_400_men_were_entombed,_Nov._13,_1909,_Cherry,_Ill._-_Washington_Photo_Co._LCCN2011661524.jpg?width=1280",
+      "live_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Group_made_orphans_by_Cherry_Mine_disaster_where_400_men_were_entombed,_Nov._13,_1909,_Cherry,_Ill._-_Washington_Photo_Co._LCCN2011661524.jpg?width=1280",
+      "source_equal": true,
+      "original_alt": "Children identified in a 1909 photograph as having been made orphans by the Cherry Mine disaster.",
+      "live_alt": "Children identified in a 1909 photograph as having been made orphans by the Cherry Mine disaster.",
+      "alt_equal": true,
+      "host": "commons.wikimedia.org",
+      "origin_kind": "commons_redirect",
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "archive_candidates": [
+        {
+          "catalog_url": "https://commons.wikimedia.org/wiki/File:Group_made_orphans_by_Cherry_Mine_disaster_where_400_men_were_entombed,_Nov._13,_1909,_Cherry,_Ill._-_Washington_Photo_Co._LCCN2011661524.jpg",
+          "authoritative_primary_url": "https://www.loc.gov/pictures/item/2011661524/",
+          "source_authority": "LIBRARY_OF_CONGRESS_RED_CROSS",
+          "rights_observation": "LOC no known publication restrictions, Commons US public-domain claim; item-level approval HOLD",
+          "conditional_960px": [
+            960,
+            650
+          ],
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false,
+          "rights_cleared": false
+        }
+      ],
+      "historical_retriever_wrappers": [
+        {
+          "batch": "cherry_mine_215_six_20261109",
+          "observation": "TOOL_URL_NOT_ACCESSIBLE",
+          "wrapper_code": null
+        }
+      ],
+      "guest_origin_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_transferred_bytes": null,
+      "guest_image_failure_confirmed": null,
+      "guest_CLS": null,
+      "rights_cleared": false,
+      "exact_image_match_verified": false,
+      "cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_rewrite_authorized": false,
+      "conditional_960px_variants_only": true
+    },
+    {
+      "slot": "214:0",
+      "post_id": 214,
+      "post_url": "https://finalvestige.com/2026/08/18/the-lifeboats-never-left-the-deck/",
+      "source_url": "https://cdn.loc.gov/service/pnp/ggbain/19600/19622v.jpg",
+      "live_source_url": "https://cdn.loc.gov/service/pnp/ggbain/19600/19622v.jpg",
+      "source_equal": true,
+      "original_alt": "SS Eastland lying on its side beside the Chicago River wharf after capsizing on July 24, 1915.",
+      "live_alt": "SS Eastland lying on its side beside the Chicago River wharf after capsizing on July 24, 1915.",
+      "alt_equal": true,
+      "host": "cdn.loc.gov",
+      "origin_kind": "offsite_external",
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "archive_candidates": [
+        {
+          "catalog_url": "https://www.loc.gov/pictures/resource/ggbain.19622/",
+          "authoritative_primary_url": null,
+          "source_authority": null,
+          "rights_observation": "LOC_ITEM_RIGHTS_REVIEW_REQUIRED",
+          "conditional_960px": null,
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false,
+          "rights_cleared": false
+        },
+        {
+          "catalog_url": "https://www.loc.gov/pictures/item/2014699553/",
+          "authoritative_primary_url": null,
+          "source_authority": null,
+          "rights_observation": null,
+          "conditional_960px": null,
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false,
+          "rights_cleared": false
+        }
+      ],
+      "historical_retriever_wrappers": [
+        {
+          "batch": "primary18",
+          "observation": "NOT_CHECKED_EXACT_URL",
+          "wrapper_code": null
+        },
+        {
+          "batch": "eastland_214_six_loc_nara_20261109",
+          "observation": "TOOL_INACCESSIBLE",
+          "wrapper_code": null
+        }
+      ],
+      "guest_origin_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_transferred_bytes": null,
+      "guest_image_failure_confirmed": null,
+      "guest_CLS": null,
+      "rights_cleared": false,
+      "exact_image_match_verified": false,
+      "cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_rewrite_authorized": false,
+      "conditional_960px_variants_only": true
+    },
+    {
+      "slot": "214:1",
+      "post_id": 214,
+      "post_url": "https://finalvestige.com/2026/08/18/the-lifeboats-never-left-the-deck/",
+      "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Wreck_of_the_Eastland,_Chicago,_1915.jpg",
+      "live_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Wreck_of_the_Eastland,_Chicago,_1915.jpg",
+      "source_equal": true,
+      "original_alt": "Panoramic view of the overturned Eastland and rescue activity along the Chicago River in 1915.",
+      "live_alt": "Panoramic view of the overturned Eastland and rescue activity along the Chicago River in 1915.",
+      "alt_equal": true,
+      "host": "commons.wikimedia.org",
+      "origin_kind": "commons_redirect",
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "archive_candidates": [
+        {
+          "catalog_url": "https://www.loc.gov/item/2007661460/",
+          "authoritative_primary_url": null,
+          "source_authority": null,
+          "rights_observation": null,
+          "conditional_960px": null,
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false,
+          "rights_cleared": false
+        }
+      ],
+      "historical_retriever_wrappers": [
+        {
+          "batch": "eastland_214_six_loc_nara_20261109",
+          "observation": "TOOL_INACCESSIBLE",
+          "wrapper_code": null
+        }
+      ],
+      "guest_origin_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_transferred_bytes": null,
+      "guest_image_failure_confirmed": null,
+      "guest_CLS": null,
+      "rights_cleared": false,
+      "exact_image_match_verified": false,
+      "cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_rewrite_authorized": false,
+      "conditional_960px_variants_only": true
+    },
+    {
+      "slot": "214:2",
+      "post_id": 214,
+      "post_url": "https://finalvestige.com/2026/08/18/the-lifeboats-never-left-the-deck/",
+      "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/EastlandKenosha.jpg",
+      "live_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/EastlandKenosha.jpg",
+      "source_equal": true,
+      "original_alt": "The tug Kenosha alongside the overturned Eastland, rescuing survivors from the exposed hull in the Chicago River.",
+      "live_alt": "The tug Kenosha alongside the overturned Eastland, rescuing survivors from the exposed hull in the Chicago River.",
+      "alt_equal": true,
+      "host": "commons.wikimedia.org",
+      "origin_kind": "commons_redirect",
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "archive_candidates": [
+        {
+          "catalog_url": "https://commons.wikimedia.org/wiki/File:EastlandKenosha.jpg",
+          "authoritative_primary_url": null,
+          "source_authority": null,
+          "rights_observation": null,
+          "conditional_960px": null,
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false,
+          "rights_cleared": false
+        }
+      ],
+      "historical_retriever_wrappers": [
+        {
+          "batch": "eastland_214_six_loc_nara_20261109",
+          "observation": "TOOL_INACCESSIBLE",
+          "wrapper_code": null
+        }
+      ],
+      "guest_origin_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_transferred_bytes": null,
+      "guest_image_failure_confirmed": null,
+      "guest_CLS": null,
+      "rights_cleared": false,
+      "exact_image_match_verified": false,
+      "cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_rewrite_authorized": false,
+      "conditional_960px_variants_only": true
+    },
+    {
+      "slot": "214:3",
+      "post_id": 214,
+      "post_url": "https://finalvestige.com/2026/08/18/the-lifeboats-never-left-the-deck/",
+      "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Helen_Repa_Eastland_Disaster_photo.png?width=1280",
+      "live_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Helen_Repa_Eastland_Disaster_photo.png?width=1280",
+      "source_equal": true,
+      "original_alt": "Western Electric nurse Helen Repa assisting a victim after the Eastland disaster in Chicago.",
+      "live_alt": "Western Electric nurse Helen Repa assisting a victim after the Eastland disaster in Chicago.",
+      "alt_equal": true,
+      "host": "commons.wikimedia.org",
+      "origin_kind": "commons_redirect",
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "archive_candidates": [
+        {
+          "catalog_url": "https://commons.wikimedia.org/wiki/File:Helen_Repa_Eastland_Disaster_photo.png",
+          "authoritative_primary_url": null,
+          "source_authority": null,
+          "rights_observation": null,
+          "conditional_960px": null,
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false,
+          "rights_cleared": false
+        }
+      ],
+      "historical_retriever_wrappers": [
+        {
+          "batch": "eastland_214_six_loc_nara_20261109",
+          "observation": "TOOL_INACCESSIBLE",
+          "wrapper_code": null
+        }
+      ],
+      "guest_origin_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_transferred_bytes": null,
+      "guest_image_failure_confirmed": null,
+      "guest_CLS": null,
+      "rights_cleared": false,
+      "exact_image_match_verified": false,
+      "cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_rewrite_authorized": false,
+      "conditional_960px_variants_only": true
+    },
+    {
+      "slot": "214:4",
+      "post_id": 214,
+      "post_url": "https://finalvestige.com/2026/08/18/the-lifeboats-never-left-the-deck/",
+      "source_url": "https://cdn.loc.gov/service/pnp/ggbain/19600/19623v.jpg",
+      "live_source_url": "https://cdn.loc.gov/service/pnp/ggbain/19600/19623v.jpg",
+      "source_equal": true,
+      "original_alt": "Rescuers attempting to revive a victim of the Eastland disaster in Chicago in July 1915.",
+      "live_alt": "Rescuers attempting to revive a victim of the Eastland disaster in Chicago in July 1915.",
+      "alt_equal": true,
+      "host": "cdn.loc.gov",
+      "origin_kind": "offsite_external",
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "archive_candidates": [
+        {
+          "catalog_url": "https://www.loc.gov/pictures/resource/ggbain.19623/",
+          "authoritative_primary_url": null,
+          "source_authority": null,
+          "rights_observation": "LOC_ITEM_RIGHTS_REVIEW_REQUIRED",
+          "conditional_960px": null,
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false,
+          "rights_cleared": false
+        },
+        {
+          "catalog_url": "https://www.loc.gov/pictures/item/2014699554/",
+          "authoritative_primary_url": null,
+          "source_authority": null,
+          "rights_observation": null,
+          "conditional_960px": null,
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false,
+          "rights_cleared": false
+        }
+      ],
+      "historical_retriever_wrappers": [
+        {
+          "batch": "primary18",
+          "observation": "NOT_CHECKED_EXACT_URL",
+          "wrapper_code": null
+        },
+        {
+          "batch": "eastland_214_six_loc_nara_20261109",
+          "observation": "TOOL_INACCESSIBLE",
+          "wrapper_code": null
+        }
+      ],
+      "guest_origin_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_transferred_bytes": null,
+      "guest_image_failure_confirmed": null,
+      "guest_CLS": null,
+      "rights_cleared": false,
+      "exact_image_match_verified": false,
+      "cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_rewrite_authorized": false,
+      "conditional_960px_variants_only": true
+    },
+    {
+      "slot": "214:5",
+      "post_id": 214,
+      "post_url": "https://finalvestige.com/2026/08/18/the-lifeboats-never-left-the-deck/",
+      "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Photograph_of_The_Eastland_(upside_down)_on_Chicago_River,_Chicago._-_NARA_-_281841.jpg?width=1280",
+      "live_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Photograph_of_The_Eastland_(upside_down)_on_Chicago_River,_Chicago._-_NARA_-_281841.jpg?width=1280",
+      "source_equal": true,
+      "original_alt": "National Archives photograph of the overturned Eastland in the Chicago River after the 1915 disaster.",
+      "live_alt": "National Archives photograph of the overturned Eastland in the Chicago River after the 1915 disaster.",
+      "alt_equal": true,
+      "host": "commons.wikimedia.org",
+      "origin_kind": "commons_redirect",
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "archive_candidates": [
+        {
+          "catalog_url": "https://www.archives.gov/chicago/highlights/eastland",
+          "authoritative_primary_url": null,
+          "source_authority": null,
+          "rights_observation": null,
+          "conditional_960px": null,
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false,
+          "rights_cleared": false
+        }
+      ],
+      "historical_retriever_wrappers": [
+        {
+          "batch": "eastland_214_six_loc_nara_20261109",
+          "observation": "TOOL_INACCESSIBLE",
+          "wrapper_code": null
+        }
+      ],
+      "guest_origin_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_transferred_bytes": null,
+      "guest_image_failure_confirmed": null,
+      "guest_CLS": null,
+      "rights_cleared": false,
+      "exact_image_match_verified": false,
+      "cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_rewrite_authorized": false,
+      "conditional_960px_variants_only": true
+    },
+    {
+      "slot": "213:0",
+      "post_id": 213,
+      "post_url": "https://finalvestige.com/2026/08/18/the-fire-he-lit-himself/",
+      "source_url": "https://research.fs.usda.gov/sites/default/files/2024-08/firelab-northface-manngulch-printable.jpg",
+      "live_source_url": "https://research.fs.usda.gov/sites/default/files/2024-08/firelab-northface-manngulch-printable.jpg",
+      "source_equal": true,
+      "original_alt": "Annotated view of the north slope of Mann Gulch showing the crew route, tool drop, Dodge escape fire, and firefighter locations.",
+      "live_alt": "Annotated view of the north slope of Mann Gulch showing the crew route, tool drop, Dodge escape fire, and firefighter locations.",
+      "alt_equal": true,
+      "host": "research.fs.usda.gov",
+      "origin_kind": "offsite_external",
+      "html_width_px": 1024,
+      "html_height_px": 622,
+      "literal_srcset": false,
+      "archive_candidates": [
+        {
+          "catalog_url": "https://research.fs.usda.gov/firelab/projects/manngulch",
+          "authoritative_primary_url": "https://research.fs.usda.gov/firelab/projects/manngulch",
+          "source_authority": null,
+          "rights_observation": "USDA-hosted composite; constituent photographer and map copyrights need item review",
+          "conditional_960px": null,
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false,
+          "rights_cleared": false
+        }
+      ],
+      "historical_retriever_wrappers": [
+        {
+          "batch": "mann_gulch_213_seven_20261109",
+          "observation": "IMAGE_DISPLAYED",
+          "wrapper_code": null
+        }
+      ],
+      "guest_origin_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_transferred_bytes": null,
+      "guest_image_failure_confirmed": null,
+      "guest_CLS": null,
+      "rights_cleared": false,
+      "exact_image_match_verified": false,
+      "cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_rewrite_authorized": false,
+      "conditional_960px_variants_only": true
+    },
+    {
+      "slot": "213:1",
+      "post_id": 213,
+      "post_url": "https://finalvestige.com/2026/08/18/the-fire-he-lit-himself/",
+      "source_url": "https://fs-prod-nwcg.s3.us-gov-west-1.amazonaws.com/s3fs-public/2023-11/sr-mg-fire-progression-map.jpg?VersionId=nXjGkeGzQeXNCaBmxg9oBNzb6As7WcRA",
+      "live_source_url": "https://fs-prod-nwcg.s3.us-gov-west-1.amazonaws.com/s3fs-public/2023-11/sr-mg-fire-progression-map.jpg?VersionId=nXjGkeGzQeXNCaBmxg9oBNzb6As7WcRA",
+      "source_equal": true,
+      "original_alt": "Topographic map showing the progression of the Mann Gulch Fire on August 5, 1949.",
+      "live_alt": "Topographic map showing the progression of the Mann Gulch Fire on August 5, 1949.",
+      "alt_equal": true,
+      "host": "fs-prod-nwcg.s3.us-gov-west-1.amazonaws.com",
+      "origin_kind": "offsite_external",
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "archive_candidates": [
+        {
+          "catalog_url": "https://www.nwcg.gov/wfldp/toolbox/staff-ride/library/mann-gulch-fire",
+          "authoritative_primary_url": "https://www.nwcg.gov/wfldp/toolbox/staff-ride/library/mann-gulch-fire",
+          "source_authority": null,
+          "rights_observation": "NWCG-hosted government source; specific map layers/creator clearance pending",
+          "conditional_960px": null,
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false,
+          "rights_cleared": false
+        }
+      ],
+      "historical_retriever_wrappers": [
+        {
+          "batch": "mann_gulch_213_seven_20261109",
+          "observation": "IMAGE_DISPLAYED",
+          "wrapper_code": null
+        }
+      ],
+      "guest_origin_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_transferred_bytes": null,
+      "guest_image_failure_confirmed": null,
+      "guest_CLS": null,
+      "rights_cleared": false,
+      "exact_image_match_verified": false,
+      "cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_rewrite_authorized": false,
+      "conditional_960px_variants_only": true
+    },
+    {
+      "slot": "213:2",
+      "post_id": 213,
+      "post_url": "https://finalvestige.com/2026/08/18/the-fire-he-lit-himself/",
+      "source_url": "https://fs-prod-nwcg.s3.us-gov-west-1.amazonaws.com/s3fs-public/2023-11/sr-mg-historical-map-race-pg5.jpg?VersionId=E03fTtNlZbsFr8cZyXxAMTHZfT8wEb4p",
+      "live_source_url": "https://fs-prod-nwcg.s3.us-gov-west-1.amazonaws.com/s3fs-public/2023-11/sr-mg-historical-map-race-pg5.jpg?VersionId=E03fTtNlZbsFr8cZyXxAMTHZfT8wEb4p",
+      "source_equal": true,
+      "original_alt": "Historical Mann Gulch diagram showing smokejumper movements, wind, fire positions, the tool drop, escape fire, and survivor locations.",
+      "live_alt": "Historical Mann Gulch diagram showing smokejumper movements, wind, fire positions, the tool drop, escape fire, and survivor locations.",
+      "alt_equal": true,
+      "host": "fs-prod-nwcg.s3.us-gov-west-1.amazonaws.com",
+      "origin_kind": "offsite_external",
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "archive_candidates": [
+        {
+          "catalog_url": "https://www.nwcg.gov/wfldp/toolbox/staff-ride/library/mann-gulch-fire",
+          "authoritative_primary_url": "https://www.nwcg.gov/wfldp/toolbox/staff-ride/library/mann-gulch-fire",
+          "source_authority": null,
+          "rights_observation": "Government historical report diagram; item creator and rights clearance pending",
+          "conditional_960px": null,
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false,
+          "rights_cleared": false
+        }
+      ],
+      "historical_retriever_wrappers": [
+        {
+          "batch": "mann_gulch_213_seven_20261109",
+          "observation": "IMAGE_DISPLAYED",
+          "wrapper_code": null
+        }
+      ],
+      "guest_origin_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_transferred_bytes": null,
+      "guest_image_failure_confirmed": null,
+      "guest_CLS": null,
+      "rights_cleared": false,
+      "exact_image_match_verified": false,
+      "cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_rewrite_authorized": false,
+      "conditional_960px_variants_only": true
+    },
+    {
+      "slot": "213:3",
+      "post_id": 213,
+      "post_url": "https://finalvestige.com/2026/08/18/the-fire-he-lit-himself/",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Mann_Gulch_Fire%2C_1949._US_Forest_Service%2C_retrieval_of_victim%27s_bodies.jpg",
+      "live_source_url": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Mann_Gulch_Fire%2C_1949._US_Forest_Service%2C_retrieval_of_victim%27s_bodies.jpg",
+      "source_equal": true,
+      "original_alt": "U.S. Forest Service recovery crew carrying a victim from the steep Mann Gulch slope on August 6, 1949.",
+      "live_alt": "U.S. Forest Service recovery crew carrying a victim from the steep Mann Gulch slope on August 6, 1949.",
+      "alt_equal": true,
+      "host": "upload.wikimedia.org",
+      "origin_kind": "offsite_external",
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "archive_candidates": [
+        {
+          "catalog_url": "https://commons.wikimedia.org/wiki/File:Mann_Gulch_Fire,_1949._US_Forest_Service,_retrieval_of_victim%27s_bodies.jpg",
+          "authoritative_primary_url": "https://commons.wikimedia.org/wiki/File:Mann_Gulch_Fire,_1949._US_Forest_Service,_retrieval_of_victim%27s_bodies.jpg",
+          "source_authority": null,
+          "rights_observation": "Commons cites USFS/Dick Wilson and federal public-domain rationale; cropped file identity needs confirmation",
+          "conditional_960px": [
+            960,
+            640
+          ],
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false,
+          "rights_cleared": false
+        }
+      ],
+      "historical_retriever_wrappers": [
+        {
+          "batch": "mann_gulch_213_seven_20261109",
+          "observation": "VIEWER_INTERNAL_ERROR",
+          "wrapper_code": null
+        }
+      ],
+      "guest_origin_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_transferred_bytes": null,
+      "guest_image_failure_confirmed": null,
+      "guest_CLS": null,
+      "rights_cleared": false,
+      "exact_image_match_verified": false,
+      "cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_rewrite_authorized": false,
+      "conditional_960px_variants_only": true
+    },
+    {
+      "slot": "213:4",
+      "post_id": 213,
+      "post_url": "https://finalvestige.com/2026/08/18/the-fire-he-lit-himself/",
+      "source_url": "https://research.fs.usda.gov/sites/default/files/2024-02/firelab-nffl_chamber97_0.jpg",
+      "live_source_url": "https://research.fs.usda.gov/sites/default/files/2024-02/firelab-nffl_chamber97_0.jpg",
+      "source_equal": true,
+      "original_alt": "Researchers conducting an early controlled fire experiment in the combustion chamber at the Missoula Fire Sciences Laboratory.",
+      "live_alt": "Researchers conducting an early controlled fire experiment in the combustion chamber at the Missoula Fire Sciences Laboratory.",
+      "alt_equal": true,
+      "host": "research.fs.usda.gov",
+      "origin_kind": "offsite_external",
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "archive_candidates": [
+        {
+          "catalog_url": "https://research.fs.usda.gov/firelab/projects/manngulch",
+          "authoritative_primary_url": "https://research.fs.usda.gov/firelab/projects/manngulch",
+          "source_authority": null,
+          "rights_observation": "USDA-hosted photo; individual photographer and rights not checked",
+          "conditional_960px": null,
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false,
+          "rights_cleared": false
+        }
+      ],
+      "historical_retriever_wrappers": [
+        {
+          "batch": "mann_gulch_213_seven_20261109",
+          "observation": "IMAGE_DISPLAYED",
+          "wrapper_code": null
+        }
+      ],
+      "guest_origin_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_transferred_bytes": null,
+      "guest_image_failure_confirmed": null,
+      "guest_CLS": null,
+      "rights_cleared": false,
+      "exact_image_match_verified": false,
+      "cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_rewrite_authorized": false,
+      "conditional_960px_variants_only": true
+    },
+    {
+      "slot": "213:5",
+      "post_id": 213,
+      "post_url": "https://finalvestige.com/2026/08/18/the-fire-he-lit-himself/",
+      "source_url": "https://research.fs.usda.gov/sites/default/files/2023-02/rmrs-firelabwindtunnel-courtesy-newyorktimes.jpg",
+      "live_source_url": "https://research.fs.usda.gov/sites/default/files/2023-02/rmrs-firelabwindtunnel-courtesy-newyorktimes.jpg",
+      "source_equal": true,
+      "original_alt": "Researchers observing a controlled wildfire experiment inside the Missoula Fire Sciences Laboratory wind tunnel and combustion chamber.",
+      "live_alt": "Researchers observing a controlled wildfire experiment inside the Missoula Fire Sciences Laboratory wind tunnel and combustion chamber.",
+      "alt_equal": true,
+      "host": "research.fs.usda.gov",
+      "origin_kind": "offsite_external",
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "archive_candidates": [
+        {
+          "catalog_url": "https://research.fs.usda.gov/firelab/projects/manngulch",
+          "authoritative_primary_url": "https://research.fs.usda.gov/firelab/projects/manngulch",
+          "source_authority": null,
+          "rights_observation": "STOP: file name says courtesy-newyorktimes; government hosting does not clear third-party NYT copyright",
+          "conditional_960px": null,
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false,
+          "rights_cleared": false
+        }
+      ],
+      "historical_retriever_wrappers": [
+        {
+          "batch": "mann_gulch_213_seven_20261109",
+          "observation": "IMAGE_DISPLAYED",
+          "wrapper_code": null
+        }
+      ],
+      "guest_origin_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_transferred_bytes": null,
+      "guest_image_failure_confirmed": null,
+      "guest_CLS": null,
+      "rights_cleared": false,
+      "exact_image_match_verified": false,
+      "cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_rewrite_authorized": false,
+      "conditional_960px_variants_only": true
+    },
+    {
+      "slot": "213:6",
+      "post_id": 213,
+      "post_url": "https://finalvestige.com/2026/08/18/the-fire-he-lit-himself/",
+      "source_url": "https://fs-prod-nwcg.s3.us-gov-west-1.amazonaws.com/s3fs-public/2023-11/sr-mg-historical-map-race-pg5.jpg?VersionId=E03fTtNlZbsFr8cZyXxAMTHZfT8wEb4p",
+      "live_source_url": "https://fs-prod-nwcg.s3.us-gov-west-1.amazonaws.com/s3fs-public/2023-11/sr-mg-historical-map-race-pg5.jpg?VersionId=E03fTtNlZbsFr8cZyXxAMTHZfT8wEb4p",
+      "source_equal": true,
+      "original_alt": "Mann Gulch staff-ride map marking the location where Wag Dodge set his escape fire and where the crew continued toward the ridge.",
+      "live_alt": "Mann Gulch staff-ride map marking the location where Wag Dodge set his escape fire and where the crew continued toward the ridge.",
+      "alt_equal": true,
+      "host": "fs-prod-nwcg.s3.us-gov-west-1.amazonaws.com",
+      "origin_kind": "offsite_external",
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "archive_candidates": [
+        {
+          "catalog_url": "https://www.nwcg.gov/wfldp/toolbox/staff-ride/library/mann-gulch-fire",
+          "authoritative_primary_url": "https://www.nwcg.gov/wfldp/toolbox/staff-ride/library/mann-gulch-fire",
+          "source_authority": null,
+          "rights_observation": "Same item-level rights hold as slot 213:2",
+          "conditional_960px": null,
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false,
+          "rights_cleared": false
+        }
+      ],
+      "historical_retriever_wrappers": [
+        {
+          "batch": "mann_gulch_213_seven_20261109",
+          "observation": "IMAGE_DISPLAYED",
+          "wrapper_code": null
+        }
+      ],
+      "guest_origin_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_transferred_bytes": null,
+      "guest_image_failure_confirmed": null,
+      "guest_CLS": null,
+      "rights_cleared": false,
+      "exact_image_match_verified": false,
+      "cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_rewrite_authorized": false,
+      "conditional_960px_variants_only": true
+    },
+    {
+      "slot": "211:0",
+      "post_id": 211,
+      "post_url": "https://finalvestige.com/2026/08/18/the-men-who-wouldnt-turn-left/",
+      "source_url": "https://www.nps.gov/common/uploads/pwr/park/poch/80CFA67B-03FC-82AE-99A5AD290D8C5371/80CFA67B-03FC-82AE-99A5AD290D8C5371.jpg?autorotate=false&maxHeight=1020&maxWidth=1300",
+      "live_source_url": "https://www.nps.gov/common/uploads/pwr/park/poch/80CFA67B-03FC-82AE-99A5AD290D8C5371/80CFA67B-03FC-82AE-99A5AD290D8C5371.jpg?autorotate=false&maxHeight=1020&maxWidth=1300",
+      "source_equal": true,
+      "original_alt": "African American sailors loading munitions onto a ship at Port Chicago Naval Magazine during World War II.",
+      "live_alt": "African American sailors loading munitions onto a ship at Port Chicago Naval Magazine during World War II.",
+      "alt_equal": true,
+      "host": "www.nps.gov",
+      "origin_kind": "offsite_external",
+      "html_width_px": 1024,
+      "html_height_px": 799,
+      "literal_srcset": false,
+      "archive_candidates": [
+        {
+          "catalog_url": "https://www.nps.gov/poch/learn/historyculture/index.htm",
+          "authoritative_primary_url": null,
+          "source_authority": null,
+          "rights_observation": "NPS_HOSTING_NOT_ITEM_RIGHTS_CLEARANCE",
+          "conditional_960px": null,
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false,
+          "rights_cleared": false
+        }
+      ],
+      "historical_retriever_wrappers": [
+        {
+          "batch": "primary18",
+          "observation": "NOT_CHECKED_EXACT_URL",
+          "wrapper_code": null
+        }
+      ],
+      "guest_origin_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_transferred_bytes": null,
+      "guest_image_failure_confirmed": null,
+      "guest_CLS": null,
+      "rights_cleared": false,
+      "exact_image_match_verified": false,
+      "cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_rewrite_authorized": false,
+      "conditional_960px_variants_only": true
+    },
+    {
+      "slot": "211:1",
+      "post_id": 211,
+      "post_url": "https://finalvestige.com/2026/08/18/the-men-who-wouldnt-turn-left/",
+      "source_url": "https://www.nps.gov/common/uploads/pwr/park/poch/80A5458E-F39E-DB01-9A32F52ABA3482BE/80A5458E-F39E-DB01-9A32F52ABA3482BE.jpg?autorotate=false&maxHeight=1020&maxWidth=1300",
+      "live_source_url": "https://www.nps.gov/common/uploads/pwr/park/poch/80A5458E-F39E-DB01-9A32F52ABA3482BE/80A5458E-F39E-DB01-9A32F52ABA3482BE.jpg?autorotate=false&maxHeight=1020&maxWidth=1300",
+      "source_equal": true,
+      "original_alt": "African American sailors handling munitions at Port Chicago Naval Magazine during World War II.",
+      "live_alt": "African American sailors handling munitions at Port Chicago Naval Magazine during World War II.",
+      "alt_equal": true,
+      "host": "www.nps.gov",
+      "origin_kind": "offsite_external",
+      "html_width_px": 1024,
+      "html_height_px": 816,
+      "literal_srcset": false,
+      "archive_candidates": [
+        {
+          "catalog_url": "https://www.nps.gov/poch/learn/historyculture/index.htm",
+          "authoritative_primary_url": null,
+          "source_authority": null,
+          "rights_observation": "NPS_HOSTING_NOT_ITEM_RIGHTS_CLEARANCE",
+          "conditional_960px": null,
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false,
+          "rights_cleared": false
+        }
+      ],
+      "historical_retriever_wrappers": [
+        {
+          "batch": "primary18",
+          "observation": "NOT_CHECKED_EXACT_URL",
+          "wrapper_code": null
+        }
+      ],
+      "guest_origin_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_transferred_bytes": null,
+      "guest_image_failure_confirmed": null,
+      "guest_CLS": null,
+      "rights_cleared": false,
+      "exact_image_match_verified": false,
+      "cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_rewrite_authorized": false,
+      "conditional_960px_variants_only": true
+    },
+    {
+      "slot": "211:2",
+      "post_id": 211,
+      "post_url": "https://finalvestige.com/2026/08/18/the-men-who-wouldnt-turn-left/",
+      "source_url": "https://www.nps.gov/common/uploads/pwr/park/poch/ED8E4950-C94B-14B3-1E358F1265D3F870/ED8E4950-C94B-14B3-1E358F1265D3F870.jpg?autorotate=false&maxHeight=1020&maxWidth=1300",
+      "live_source_url": "https://www.nps.gov/common/uploads/pwr/park/poch/ED8E4950-C94B-14B3-1E358F1265D3F870/ED8E4950-C94B-14B3-1E358F1265D3F870.jpg?autorotate=false&maxHeight=1020&maxWidth=1300",
+      "source_equal": true,
+      "original_alt": "Wreckage, destroyed structures, and damaged automobiles at Port Chicago after the July 17, 1944 explosion.",
+      "live_alt": "Wreckage, destroyed structures, and damaged automobiles at Port Chicago after the July 17, 1944 explosion.",
+      "alt_equal": true,
+      "host": "www.nps.gov",
+      "origin_kind": "offsite_external",
+      "html_width_px": 1024,
+      "html_height_px": 863,
+      "literal_srcset": false,
+      "archive_candidates": [
+        {
+          "catalog_url": "https://www.nps.gov/poch/learn/historyculture/index.htm",
+          "authoritative_primary_url": null,
+          "source_authority": null,
+          "rights_observation": "NPS_HOSTING_NOT_ITEM_RIGHTS_CLEARANCE",
+          "conditional_960px": null,
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false,
+          "rights_cleared": false
+        }
+      ],
+      "historical_retriever_wrappers": [
+        {
+          "batch": "primary18",
+          "observation": "NOT_CHECKED_EXACT_URL",
+          "wrapper_code": null
+        }
+      ],
+      "guest_origin_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_transferred_bytes": null,
+      "guest_image_failure_confirmed": null,
+      "guest_CLS": null,
+      "rights_cleared": false,
+      "exact_image_match_verified": false,
+      "cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_rewrite_authorized": false,
+      "conditional_960px_variants_only": true
+    },
+    {
+      "slot": "211:3",
+      "post_id": 211,
+      "post_url": "https://finalvestige.com/2026/08/18/the-men-who-wouldnt-turn-left/",
+      "source_url": "https://www.nps.gov/common/uploads/pwr/park/poch/14DAEF66-B99F-637F-316D6B52D59F0C1E/14DAEF66-B99F-637F-316D6B52D59F0C1E.jpg?autorotate=false&maxHeight=1020&maxWidth=1300",
+      "live_source_url": "https://www.nps.gov/common/uploads/pwr/park/poch/14DAEF66-B99F-637F-316D6B52D59F0C1E/14DAEF66-B99F-637F-316D6B52D59F0C1E.jpg?autorotate=false&maxHeight=1020&maxWidth=1300",
+      "source_equal": true,
+      "original_alt": "Railroad tracks and debris at Port Chicago Naval Magazine after the 1944 ammunition explosion.",
+      "live_alt": "Railroad tracks and debris at Port Chicago Naval Magazine after the 1944 ammunition explosion.",
+      "alt_equal": true,
+      "host": "www.nps.gov",
+      "origin_kind": "offsite_external",
+      "html_width_px": 1024,
+      "html_height_px": 828,
+      "literal_srcset": false,
+      "archive_candidates": [
+        {
+          "catalog_url": "https://www.nps.gov/poch/learn/historyculture/index.htm",
+          "authoritative_primary_url": null,
+          "source_authority": null,
+          "rights_observation": "NPS_HOSTING_NOT_ITEM_RIGHTS_CLEARANCE",
+          "conditional_960px": null,
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false,
+          "rights_cleared": false
+        }
+      ],
+      "historical_retriever_wrappers": [
+        {
+          "batch": "primary18",
+          "observation": "NOT_CHECKED_EXACT_URL",
+          "wrapper_code": null
+        }
+      ],
+      "guest_origin_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_transferred_bytes": null,
+      "guest_image_failure_confirmed": null,
+      "guest_CLS": null,
+      "rights_cleared": false,
+      "exact_image_match_verified": false,
+      "cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_rewrite_authorized": false,
+      "conditional_960px_variants_only": true
+    },
+    {
+      "slot": "211:4",
+      "post_id": 211,
+      "post_url": "https://finalvestige.com/2026/08/18/the-men-who-wouldnt-turn-left/",
+      "source_url": "https://www.nps.gov/poch/learn/historyculture/images/Mutiny-Trial.jpeg?autorotate=false&maxwidth=650",
+      "live_source_url": "https://www.nps.gov/poch/learn/historyculture/images/Mutiny-Trial.jpeg?autorotate=false&maxwidth=650",
+      "source_equal": true,
+      "original_alt": "The Port Chicago 50 seated in a Navy courtroom during the 1944 mutiny trial at Treasure Island.",
+      "live_alt": "The Port Chicago 50 seated in a Navy courtroom during the 1944 mutiny trial at Treasure Island.",
+      "alt_equal": true,
+      "host": "www.nps.gov",
+      "origin_kind": "offsite_external",
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "archive_candidates": [
+        {
+          "catalog_url": "https://www.nps.gov/poch/learn/historyculture/the-mutiny-trial.htm",
+          "authoritative_primary_url": null,
+          "source_authority": null,
+          "rights_observation": "NPS_HOSTING_NOT_ITEM_RIGHTS_CLEARANCE",
+          "conditional_960px": null,
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false,
+          "rights_cleared": false
+        }
+      ],
+      "historical_retriever_wrappers": [
+        {
+          "batch": "primary18",
+          "observation": "DIRECT_IMAGE_RENDERED_BY_WEB_RETRIEVER_NOT_BROWSER",
+          "wrapper_code": null
+        }
+      ],
+      "guest_origin_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_transferred_bytes": null,
+      "guest_image_failure_confirmed": null,
+      "guest_CLS": null,
+      "rights_cleared": false,
+      "exact_image_match_verified": false,
+      "cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_rewrite_authorized": false,
+      "conditional_960px_variants_only": true
+    },
+    {
+      "slot": "211:5",
+      "post_id": 211,
+      "post_url": "https://finalvestige.com/2026/08/18/the-men-who-wouldnt-turn-left/",
+      "source_url": "https://www.nps.gov/common/uploads/pwr/park/poch/16BF8B2E-0E6F-C0F7-83BB8EE76D13F26C/16BF8B2E-0E6F-C0F7-83BB8EE76D13F26C.jpg?autorotate=false&maxHeight=1020&maxWidth=1300",
+      "live_source_url": "https://www.nps.gov/common/uploads/pwr/park/poch/16BF8B2E-0E6F-C0F7-83BB8EE76D13F26C/16BF8B2E-0E6F-C0F7-83BB8EE76D13F26C.jpg?autorotate=false&maxHeight=1020&maxWidth=1300",
+      "source_equal": true,
+      "original_alt": "Destroyed pier and debris along the waterfront at Port Chicago after the July 1944 explosion.",
+      "live_alt": "Destroyed pier and debris along the waterfront at Port Chicago after the July 1944 explosion.",
+      "alt_equal": true,
+      "host": "www.nps.gov",
+      "origin_kind": "offsite_external",
+      "html_width_px": 1024,
+      "html_height_px": 818,
+      "literal_srcset": false,
+      "archive_candidates": [
+        {
+          "catalog_url": "https://www.nps.gov/poch/learn/historyculture/index.htm",
+          "authoritative_primary_url": null,
+          "source_authority": null,
+          "rights_observation": "NPS_HOSTING_NOT_ITEM_RIGHTS_CLEARANCE",
+          "conditional_960px": null,
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false,
+          "rights_cleared": false
+        }
+      ],
+      "historical_retriever_wrappers": [
+        {
+          "batch": "primary18",
+          "observation": "NOT_CHECKED_EXACT_URL",
+          "wrapper_code": null
+        }
+      ],
+      "guest_origin_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_transferred_bytes": null,
+      "guest_image_failure_confirmed": null,
+      "guest_CLS": null,
+      "rights_cleared": false,
+      "exact_image_match_verified": false,
+      "cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_rewrite_authorized": false,
+      "conditional_960px_variants_only": true
+    },
+    {
+      "slot": "190:0",
+      "post_id": 190,
+      "post_url": "https://finalvestige.com/2026/08/18/the-hoses-that-wouldnt-fit/",
+      "source_url": "https://cdn.loc.gov/service/pnp/npcc/18700/18735v.jpg",
+      "live_source_url": "https://cdn.loc.gov/service/pnp/npcc/18700/18735v.jpg",
+      "source_equal": true,
+      "original_alt": "Firefighters battling the Great Baltimore Fire on Baltimore Street in February 1904, with hose lines running through the street.",
+      "live_alt": "Firefighters battling the Great Baltimore Fire on Baltimore Street in February 1904, with hose lines running through the street.",
+      "alt_equal": true,
+      "host": "cdn.loc.gov",
+      "origin_kind": "offsite_external",
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "archive_candidates": [
+        {
+          "catalog_url": "https://www.loc.gov/pictures/resource/npcc.18735/",
+          "authoritative_primary_url": null,
+          "source_authority": null,
+          "rights_observation": "LOC_ITEM_RIGHTS_REVIEW_REQUIRED",
+          "conditional_960px": null,
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false,
+          "rights_cleared": false
+        }
+      ],
+      "historical_retriever_wrappers": [
+        {
+          "batch": "primary18",
+          "observation": "DIRECT_IMAGE_TOOL_INACCESSIBLE_NOT_ORIGIN_STATUS",
+          "wrapper_code": null
+        }
+      ],
+      "guest_origin_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_transferred_bytes": null,
+      "guest_image_failure_confirmed": null,
+      "guest_CLS": null,
+      "rights_cleared": false,
+      "exact_image_match_verified": false,
+      "cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_rewrite_authorized": false,
+      "conditional_960px_variants_only": true
+    },
+    {
+      "slot": "190:1",
+      "post_id": 190,
+      "post_url": "https://finalvestige.com/2026/08/18/the-hoses-that-wouldnt-fit/",
+      "source_url": "https://tile.loc.gov/storage-services/service/pnp/stereo/1s40000/1s46000/1s46000/1s46043v.jpg",
+      "live_source_url": "https://tile.loc.gov/storage-services/service/pnp/stereo/1s40000/1s46000/1s46000/1s46043v.jpg",
+      "source_equal": true,
+      "original_alt": "Engine 15 near the Hurst Building at the beginning of the Great Baltimore Fire on February 7, 1904.",
+      "live_alt": "Engine 15 near the Hurst Building at the beginning of the Great Baltimore Fire on February 7, 1904.",
+      "alt_equal": true,
+      "host": "tile.loc.gov",
+      "origin_kind": "offsite_external",
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "archive_candidates": [
+        {
+          "catalog_url": "https://www.loc.gov/item/2022653666/",
+          "authoritative_primary_url": "https://www.loc.gov/item/2022653666/",
+          "source_authority": "Library of Congress, stereo 1s46043; William H. Rau (1904)",
+          "rights_observation": "Photograph copyrighted in 1904 by William H. Rau; LOC says 'no known restrictions on publication', not a grant of copyright. Independent publication analysis before rehosting.",
+          "conditional_960px": null,
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false,
+          "rights_cleared": false
+        }
+      ],
+      "historical_retriever_wrappers": [
+        {
+          "batch": "final14",
+          "observation": "RETRIEVER_UNAVAILABLE",
+          "wrapper_code": "Internal Error"
+        }
+      ],
+      "guest_origin_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_transferred_bytes": null,
+      "guest_image_failure_confirmed": null,
+      "guest_CLS": null,
+      "rights_cleared": false,
+      "exact_image_match_verified": false,
+      "cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_rewrite_authorized": false,
+      "conditional_960px_variants_only": true
+    },
+    {
+      "slot": "190:2",
+      "post_id": 190,
+      "post_url": "https://finalvestige.com/2026/08/18/the-hoses-that-wouldnt-fit/",
+      "source_url": "https://cdn.loc.gov/service/pnp/npcc/18700/18713v.jpg",
+      "live_source_url": "https://cdn.loc.gov/service/pnp/npcc/18700/18713v.jpg",
+      "source_equal": true,
+      "original_alt": "Baltimore and Ohio locomotive and crew associated with transporting Washington firefighters to Baltimore during the 1904 fire.",
+      "live_alt": "Baltimore and Ohio locomotive and crew associated with transporting Washington firefighters to Baltimore during the 1904 fire.",
+      "alt_equal": true,
+      "host": "cdn.loc.gov",
+      "origin_kind": "offsite_external",
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "archive_candidates": [
+        {
+          "catalog_url": "https://www.loc.gov/pictures/resource/npcc.18713/",
+          "authoritative_primary_url": null,
+          "source_authority": null,
+          "rights_observation": "LOC_ITEM_RIGHTS_REVIEW_REQUIRED",
+          "conditional_960px": null,
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false,
+          "rights_cleared": false
+        }
+      ],
+      "historical_retriever_wrappers": [
+        {
+          "batch": "primary18",
+          "observation": "DIRECT_IMAGE_TOOL_INACCESSIBLE_NOT_ORIGIN_STATUS",
+          "wrapper_code": null
+        }
+      ],
+      "guest_origin_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_transferred_bytes": null,
+      "guest_image_failure_confirmed": null,
+      "guest_CLS": null,
+      "rights_cleared": false,
+      "exact_image_match_verified": false,
+      "cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_rewrite_authorized": false,
+      "conditional_960px_variants_only": true
+    },
+    {
+      "slot": "190:3",
+      "post_id": 190,
+      "post_url": "https://finalvestige.com/2026/08/18/the-hoses-that-wouldnt-fit/",
+      "source_url": "https://cdn.loc.gov/service/pnp/npcc/18700/18729v.jpg",
+      "live_source_url": "https://cdn.loc.gov/service/pnp/npcc/18700/18729v.jpg",
+      "source_equal": true,
+      "original_alt": "District of Columbia firefighters who traveled to Baltimore to assist during the Great Fire of 1904.",
+      "live_alt": "District of Columbia firefighters who traveled to Baltimore to assist during the Great Fire of 1904.",
+      "alt_equal": true,
+      "host": "cdn.loc.gov",
+      "origin_kind": "offsite_external",
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "archive_candidates": [
+        {
+          "catalog_url": "https://www.loc.gov/pictures/resource/npcc.18729/",
+          "authoritative_primary_url": null,
+          "source_authority": null,
+          "rights_observation": "LOC_ITEM_RIGHTS_REVIEW_REQUIRED",
+          "conditional_960px": null,
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false,
+          "rights_cleared": false
+        }
+      ],
+      "historical_retriever_wrappers": [
+        {
+          "batch": "primary18",
+          "observation": "DIRECT_IMAGE_TOOL_INACCESSIBLE_NOT_ORIGIN_STATUS",
+          "wrapper_code": null
+        }
+      ],
+      "guest_origin_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_transferred_bytes": null,
+      "guest_image_failure_confirmed": null,
+      "guest_CLS": null,
+      "rights_cleared": false,
+      "exact_image_match_verified": false,
+      "cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_rewrite_authorized": false,
+      "conditional_960px_variants_only": true
+    },
+    {
+      "slot": "190:4",
+      "post_id": 190,
+      "post_url": "https://finalvestige.com/2026/08/18/the-hoses-that-wouldnt-fit/",
+      "source_url": "https://cdn.loc.gov/service/pnp/npcc/18700/18712v.jpg",
+      "live_source_url": "https://cdn.loc.gov/service/pnp/npcc/18700/18712v.jpg",
+      "source_equal": true,
+      "original_alt": "Jones Falls in Baltimore after the 1904 fire, near the area where the advancing fire was finally checked.",
+      "live_alt": "Jones Falls in Baltimore after the 1904 fire, near the area where the advancing fire was finally checked.",
+      "alt_equal": true,
+      "host": "cdn.loc.gov",
+      "origin_kind": "offsite_external",
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "archive_candidates": [
+        {
+          "catalog_url": "https://www.loc.gov/pictures/resource/npcc.18712/",
+          "authoritative_primary_url": null,
+          "source_authority": null,
+          "rights_observation": "LOC_ITEM_RIGHTS_REVIEW_REQUIRED",
+          "conditional_960px": null,
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false,
+          "rights_cleared": false
+        }
+      ],
+      "historical_retriever_wrappers": [
+        {
+          "batch": "primary18",
+          "observation": "DIRECT_IMAGE_TOOL_INACCESSIBLE_NOT_ORIGIN_STATUS",
+          "wrapper_code": null
+        }
+      ],
+      "guest_origin_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_transferred_bytes": null,
+      "guest_image_failure_confirmed": null,
+      "guest_CLS": null,
+      "rights_cleared": false,
+      "exact_image_match_verified": false,
+      "cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_rewrite_authorized": false,
+      "conditional_960px_variants_only": true
+    },
+    {
+      "slot": "190:5",
+      "post_id": 190,
+      "post_url": "https://finalvestige.com/2026/08/18/the-hoses-that-wouldnt-fit/",
+      "source_url": "https://cdn.loc.gov/service/pnp/pan/6a05000/6a05800/6a05834r.jpg",
+      "live_source_url": "https://cdn.loc.gov/service/pnp/pan/6a05000/6a05800/6a05834r.jpg",
+      "source_equal": true,
+      "original_alt": "Panoramic view of Baltimore’s burned commercial district after the Great Fire of February 1904.",
+      "live_alt": "Panoramic view of Baltimore’s burned commercial district after the Great Fire of February 1904.",
+      "alt_equal": true,
+      "host": "cdn.loc.gov",
+      "origin_kind": "offsite_external",
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "archive_candidates": [
+        {
+          "catalog_url": "https://www.loc.gov/pictures/resource/pan.6a05834/",
+          "authoritative_primary_url": null,
+          "source_authority": null,
+          "rights_observation": "LOC_ITEM_NO_KNOWN_RESTRICTIONS_NEEDS_ITEM_REVIEW",
+          "conditional_960px": null,
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false,
+          "rights_cleared": false
+        }
+      ],
+      "historical_retriever_wrappers": [
+        {
+          "batch": "primary18",
+          "observation": "DIRECT_IMAGE_TOOL_INACCESSIBLE_NOT_ORIGIN_STATUS",
+          "wrapper_code": null
+        }
+      ],
+      "guest_origin_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_transferred_bytes": null,
+      "guest_image_failure_confirmed": null,
+      "guest_CLS": null,
+      "rights_cleared": false,
+      "exact_image_match_verified": false,
+      "cache_authorized": false,
+      "wordpress_upload_authorized": false,
+      "post_rewrite_authorized": false,
+      "conditional_960px_variants_only": true
+    }
+  ]
+}
