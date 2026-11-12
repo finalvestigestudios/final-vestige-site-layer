@@ -6,6 +6,7 @@ interpretation. Original source bytes and cited diff lines are authoritative.
 from __future__ import annotations
 
 import unicodedata
+from bisect import insort
 
 from .policy_confusable_budget_r365 import within_confusable_budget
 
@@ -101,6 +102,25 @@ def _owned_rows(
             grouped.setdefault(key, []).append((line, raw))
     return grouped, ((first, previous) if first is not None else None)
 
+def _retain_earliest_pair(
+    selected: list[tuple[int, int, int, str]],
+    candidate: tuple[int, int, int, str],
+    limit: int,
+) -> None:
+    """Retain at most ``limit`` lowest physical citations, irrespective of hash order.
+
+    Native source row validation makes the (hunk, before, after) coordinates
+    unique. A set intersection's iteration order depends on Python hash
+    randomization; taking its first matches would make audit cues unstable.
+    Never retain all matches when the report displays only a bounded subset.
+    """
+    if limit <= 0 or (len(selected) == limit and
+                      candidate[:3] >= selected[-1][:3]):
+        return
+    insort(selected, candidate)
+    if len(selected) > limit:
+        selected.pop()
+
 
 def render_local_confusable_evidence(hunks: list[dict]) -> str:
     """Cite uniquely paired substitutions inside the *same* source diff hunk.
@@ -138,7 +158,11 @@ def render_local_confusable_evidence(hunks: list[dict]) -> str:
         if after_span is not None:
             last_after = after_span[1]
         staged.append((hunk_no, removed, added))
-    found: list[tuple[int, int, int, str]] = []
+    # The renderer displays only _MAX_PAIRS; retain the earliest citations
+    # rather than materializing one output string per match. Count overflow
+    # separately so the omission notice stays accurate on dense documents.
+    selected: list[tuple[int, int, int, str]] = []
+    match_count = 0
     for hunk_no, removed, added in staged:
         for key in removed.keys() & added.keys():
             prior, following = removed[key], added[key]
@@ -148,10 +172,11 @@ def render_local_confusable_evidence(hunks: list[dict]) -> str:
             new_line, new_text = following[0]
             cue = _changes(old_text, new_text)
             if cue:
-                found.append((hunk_no, old_line, new_line, cue))
-    if not found:
+                match_count += 1
+                _retain_earliest_pair(
+                    selected, (hunk_no, old_line, new_line, cue), _MAX_PAIRS)
+    if not match_count:
         return ""
-    found.sort(key=lambda item: (item[0], item[1], item[2]))
     output = [
         "LOCAL REVIEW: possible cross-script look-alike letter substitutions "
         "at cited physical lines. Limited Latin/Cyrillic/Greek character "
@@ -159,10 +184,10 @@ def render_local_confusable_evidence(hunks: list[dict]) -> str:
         "intent, or a legal/compliance determination. Review the original "
         "files and exact source bytes; ambiguous duplicates are not paired.\n"
     ]
-    for hunk, before, after, cue in found[:_MAX_PAIRS]:
+    for hunk, before, after, cue in selected:
         output.append(f"Look-alike hunk {hunk:03d}: before L{before}; "
                       f"after L{after}; {cue}; human review.\n")
-    if len(found) > _MAX_PAIRS:
-        output.append(f"LOCAL REVIEW: +{len(found) - _MAX_PAIRS} additional "
+    if match_count > _MAX_PAIRS:
+        output.append(f"LOCAL REVIEW: +{match_count - _MAX_PAIRS} additional "
                       "look-alike pair(s) omitted from bounded navigation.\n")
     return "".join(output) + "\n"
