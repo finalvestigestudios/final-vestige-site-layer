@@ -30,6 +30,7 @@
       "refunds_cents": 300,
       "net_cents": 1180,
       "net_per_1000_qualified_sessions_cents": 590000,
+      "verified_paying_customers": 1,
       "paid_conversion_rate": 0.5,
       "lead_to_customer_rate": 1,
       "caveat": "entirely synthetic; no A/B claims or real-revenue inference"
@@ -43,6 +44,7 @@
       "refunds_cents": 300,
       "net_cents": 1180,
       "net_per_1000_qualified_sessions_cents": 590000,
+      "verified_paying_customers": 1,
       "paid_conversion_rate": 0.5,
       "lead_to_customer_rate": 1,
       "caveat": "entirely synthetic; no A/B claims or real-revenue inference"
