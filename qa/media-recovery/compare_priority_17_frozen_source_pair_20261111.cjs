@@ -65,7 +65,8 @@ function boundP0Evidence(slot,evidence){
     evidence.page_url!==row.post_url||
     evidence.stored_inline_ordinal!==Number(slot.split(':')[1])||
     evidence.stored_original_src!==row.stored_original_src||
-    evidence.dom_img_src!==row.stored_original_src)
+    evidence.dom_img_src!==row.stored_original_src||
+    evidence.dom_alt!==row.frozen_alt)
     return hold('P0_GUEST_SOURCE_NOT_PINNED',slot);
  return {status:'SOURCE_BOUND_ONLY_SITE_QA_P0_ADJUDICATION_REQUIRED',
    slot,source_binding_verified:true,observed_guest_http_status:null,
