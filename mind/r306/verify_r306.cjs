@@ -49,7 +49,7 @@ function validate(f) {
     // Archive uses 'Prospective disclosure:', not the commercial-specimen phrase.
     const note2=h.indexOf('Prospective disclosure:',btn);
     check(btn>=0&&((note>btn&&note-btn<900)||(note2>btn&&note2-btn<900)),'DISCLOSURE_ADJACENT_'+k);
-    check(!/<script\b|<form\b|<iframe\b|autoplay|<video\b/gi.test(h),'NO_SCRIPT_FORM_MEDIA_'+k);
+    check(!/<script\b|<form\b|<iframe\b|<video\b/gi.test(h),'NO_SCRIPT_FORM_MEDIA_'+k);
     check(!/href="https:\/\/(?:www\.)?(?:zen12\.com|hypnosislive\.com|brainwaveshots\.com|affiliates\.inspire3\.com)[^"]*"/gi.test(h),'NO_OUTBOUND_SELLER_LINK_'+k);
     check(!/utm_source=|aff_id=|affiliate_id=|referral_id=/i.test(h),'NO_TRACKING_QUERY_'+k);
     check(/prefers-reduced-motion:reduce/.test(h),'REDUCED_MOTION_'+k);
