@@ -86,6 +86,11 @@ function verifyP0ReviewEvidence(packet,review,artifacts){
     return denied('ARTIFACT_TYPES_UNVERIFIED');
   if(!capture_text||!rights_review_text||candidate_asset.length<1)
     return denied('MISSING_OR_INVALID_ARTIFACT_BYTES');
+  if(gitBlobSha(capture_text)!==packet.capture_git_blob_sha||
+     sha256(screenshot_png)!==packet.screenshot_sha256||
+     gitBlobSha(rights_review_text)!==review.rights_review_git_blob_sha||
+     sha256(candidate_asset)!==review.asset_sha256)
+    return denied('ARTIFACT_HASH_MISMATCH');
   const screen=pngGeometry(screenshot_png);
   if(!screen)return denied('MISSING_OR_INVALID_ARTIFACT_BYTES');
   const assetShape=imageGeometry(candidate_asset);
@@ -94,11 +99,6 @@ function verifyP0ReviewEvidence(packet,review,artifacts){
      assetShape.width!==review.geometry.output_width||
      assetShape.height!==review.geometry.output_height)
     return denied('ASSET_FORMAT_OR_OUTPUT_GEOMETRY_UNVERIFIED');
-  if(gitBlobSha(capture_text)!==packet.capture_git_blob_sha||
-     sha256(screenshot_png)!==packet.screenshot_sha256||
-     gitBlobSha(rights_review_text)!==review.rights_review_git_blob_sha||
-     sha256(candidate_asset)!==review.asset_sha256)
-    return denied('ARTIFACT_HASH_MISMATCH');
   let capture,rights;
   try{capture=JSON.parse(capture_text);rights=JSON.parse(rights_review_text);}
   catch{return denied('ARTIFACT_JSON_INVALID');}
