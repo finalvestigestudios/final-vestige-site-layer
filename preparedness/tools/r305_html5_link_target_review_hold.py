@@ -27,6 +27,7 @@ CONTROL = re.compile(r'[\x00-\x1f\x7f]')
 URL_SCHEME = re.compile(r'^([a-zA-Z][a-zA-Z0-9+.-]*):')
 SENSITIVE_ATTRS = ('href', 'src', 'action', 'formaction', 'poster', 'cite', 'data', 'xlink:href')
 BLOCKED_ELEMENTS = frozenset(('iframe','object','embed','base'))
+BAD_PERCENT_ESCAPE = re.compile(r'%(?![a-fA-F0-9]{2})')
 
 
 def blob(data: bytes) -> str:
@@ -81,6 +82,27 @@ def url_problem(raw: str | None) -> str | None:
     return None
 
 
+
+def decode_same_document_fragment(fragment: str) -> tuple[str | None, str | None]:
+    """Resolve URI-encoded #fragments to literal HTML IDs without guessing.
+
+    HTMLParser decodes HTML entities in the attribute. Browser navigation
+    percent-decodes UTF-8 in a URI fragment; HTML ids are NOT URL-decoded.
+    Invalid or control-character encodings remain an explicit review hold.
+    """
+    if not isinstance(fragment, str) or not fragment:
+        return None, 'EMPTY_FRAGMENT'
+    if BAD_PERCENT_ESCAPE.search(fragment):
+        return None, 'INVALID_PERCENT_ENCODED_FRAGMENT'
+    try:
+        decoded = unquote(fragment, encoding='utf-8', errors='strict')
+    except (UnicodeError, ValueError):
+        return None, 'INVALID_UTF8_FRAGMENT'
+    if not decoded or CONTROL.search(decoded):
+        return None, 'UNSAFE_DECODED_FRAGMENT'
+    return decoded, None
+
+
 class ReadOnlyMarkupAudit(HTMLParser):
     """Reject browser-unsafe links or broken in-page targets without changing HTML."""
     def __init__(self, mode: str):
@@ -116,7 +138,11 @@ class ReadOnlyMarkupAudit(HTMLParser):
                 problem = url_problem(v)
                 if problem: self.errors.append(problem + ':' + tag + ':' + k)
                 elif k in ('href','xlink:href') and v.startswith('#'):
-                    self.fragments.append(v[1:])
+                    target, issue = decode_same_document_fragment(v[1:])
+                    if issue:
+                        self.errors.append(issue + ':' + tag + ':' + k)
+                    else:
+                        self.fragments.append(target)
                 if k in ('href','xlink:href') and isinstance(v,str):
                     self.links.append(v)
             elif k == 'srcset':
