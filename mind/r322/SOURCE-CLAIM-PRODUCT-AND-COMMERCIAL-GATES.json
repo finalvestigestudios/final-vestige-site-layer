@@ -1,0 +1,672 @@
+{
+  "schema": "fv-mind-source-claims-v1",
+  "updated": "2026-11-12",
+  "status": "UNPUBLISHED_COMMERCIAL_HARD_HOLD",
+  "provenance_note": "Public-source facts and historical WordPress pages were reviewed; account-specific merchant dashboard and Payhip inventory are inaccessible/unauthenticated. Seller descriptions do not substantiate efficacy. Do not treat email marketing promotions as an affiliate acceptance record.",
+  "sources": [
+    {
+      "id": "kosslyn2000",
+      "type": "experiment",
+      "url": "https://doi.org/10.1176/appi.ajp.157.8.1279",
+      "observation": "Eight highly hypnotizable PET volunteers; color/gray instructions; conditional hemispheric effects; does NOT study an audio product",
+      "accessed_date": "2026-11-12"
+    },
+    {
+      "id": "kosslyn_pubmed",
+      "type": "experiment_index",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/10910791/",
+      "observation": "Independent indexing for title, n=8 and publication",
+      "accessed_date": "2026-11-12"
+    },
+    {
+      "id": "harvard2000",
+      "type": "institutional_secondary",
+      "url": "https://news.harvard.edu/gazette/story/2000/08/hypnosis-found-to-alter-the-brain-subjects-see-color-where-none-exists/",
+      "observation": "Institutional interview reports 125 prescreened; not experimental sample",
+      "accessed_date": "2026-11-12"
+    },
+    {
+      "id": "discover_kirsch",
+      "type": "journalism_interview",
+      "url": "https://www.discovermagazine.com/hypnosis-works-15486",
+      "observation": "Kirsch's task wording objection and response, secondary journalistic source",
+      "accessed_date": "2026-11-12"
+    },
+    {
+      "id": "zahedi2024",
+      "type": "systematic_theory_review",
+      "url": "https://doi.org/10.1016/j.concog.2024.103730",
+      "observation": "Theories of hypnotic suggestion remain contested",
+      "accessed_date": "2026-11-12"
+    },
+    {
+      "id": "fv_puysegur",
+      "type": "fv_live_primary_archive",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "observation": "Source-linked historical files including failures, not proof of magnetic cures",
+      "accessed_date": "2026-11-12"
+    },
+    {
+      "id": "fv_mesmerism",
+      "type": "fv_live_editorial",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "observation": "1784 Franklin commission account, Deslon specificity",
+      "accessed_date": "2026-11-12"
+    },
+    {
+      "id": "fv_change",
+      "type": "fv_live_editorial",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "observation": "Existing attention source article and flicker demo",
+      "accessed_date": "2026-11-12"
+    },
+    {
+      "id": "fv_focus",
+      "type": "fv_live_jetpack_resource",
+      "url": "https://finalvestige.com/focus/",
+      "observation": "52-page free Fieldbook; existing Jetpack form; display does not verify a subscriber",
+      "accessed_date": "2026-11-12"
+    },
+    {
+      "id": "fv_library",
+      "type": "fv_live_hub",
+      "url": "https://finalvestige.com/free-resources/",
+      "observation": "Free library and one Focus entry",
+      "accessed_date": "2026-11-12"
+    },
+    {
+      "id": "inspire3",
+      "type": "seller_catalog",
+      "url": "https://inspire3.com/",
+      "observation": "Catalog brand identities, not independent efficacy",
+      "accessed_date": "2026-11-12"
+    },
+    {
+      "id": "zen12_about",
+      "type": "seller_product_page",
+      "url": "https://zen12.com/about",
+      "observation": "12 levels/4 formats/12-minute sessions as seller describes",
+      "accessed_date": "2026-11-12"
+    },
+    {
+      "id": "zen12_checkout",
+      "type": "seller_checkout",
+      "url": "https://zen12.com/getstarted",
+      "observation": "48 MP3s, checkout terms and dated displayed subtotal/discount, not guaranteed price",
+      "accessed_date": "2026-11-12"
+    },
+    {
+      "id": "zen12_catalog",
+      "type": "seller_public_site",
+      "url": "https://zen12.com/",
+      "observation": "Seller has distinct tier/package prices; screenshot-free observations vary",
+      "accessed_date": "2026-11-12"
+    },
+    {
+      "id": "hypnosis_focus",
+      "type": "seller_product_page",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "observation": "33min/47MB MP3; seller advertises 14-day guarantee, unproven concentration benefit",
+      "accessed_date": "2026-11-12"
+    },
+    {
+      "id": "brainwave_focus",
+      "type": "seller_product_page",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "observation": "15/30-minute formats; seller advertises one-year guarantee; unproven hours of focus",
+      "accessed_date": "2026-11-12"
+    },
+    {
+      "id": "inspire_affiliates",
+      "type": "publisher_enrollment_page",
+      "url": "https://affiliates.inspire3.com/",
+      "observation": "Public recruitment only, not FV-specific acceptance, permissions or commissions",
+      "accessed_date": "2026-11-12"
+    },
+    {
+      "id": "ingendoh2023",
+      "type": "systematic_review",
+      "url": "https://doi.org/10.1371/journal.pone.0286023",
+      "observation": "14 EEG studies, 5 consistent, 8 contradictory, 1 mixed; no Zen12 tested",
+      "accessed_date": "2026-11-12"
+    },
+    {
+      "id": "ftc_endorsement",
+      "type": "regulatory_guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "observation": "Clear and conspicuous disclosure close to earning links",
+      "accessed_date": "2026-11-12"
+    },
+    {
+      "id": "ftc_health",
+      "type": "regulatory_guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "observation": "Adequate competent and reliable scientific support for health-related claims",
+      "accessed_date": "2026-11-12"
+    },
+    {
+      "id": "payhip_help",
+      "type": "platform_documentation",
+      "url": "https://help.payhip.com/article/67-find-your-store-and-product-urls",
+      "observation": "Payhip store/product URL authenticated only in actual account; public web lookup insufficient",
+      "accessed_date": "2026-11-12"
+    },
+    {
+      "id": "fv_business",
+      "type": "business_charter",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/818",
+      "observation": "Revenue validation and ownership constraints",
+      "accessed_date": "2026-11-12"
+    },
+    {
+      "id": "fv_conversion",
+      "type": "business_issue",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "observation": "Measurement provenance, qualified human sessions",
+      "accessed_date": "2026-11-12"
+    },
+    {
+      "id": "fv_mind",
+      "type": "editorial_issue",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "observation": "Mind editorial/commerce limitations",
+      "accessed_date": "2026-11-12"
+    }
+  ],
+  "claims": [
+    {
+      "id": "science01",
+      "text": "The 2000 PET experiment enrolled eight highly hypnotizable participants.",
+      "classification": "independent_experiment",
+      "source_ids": [
+        "kosslyn2000",
+        "kosslyn_pubmed"
+      ],
+      "action": "usable"
+    },
+    {
+      "id": "science02",
+      "text": "The Harvard interview reported 125 people initially screened; that number is NOT the trial sample.",
+      "classification": "reported_secondary",
+      "source_ids": [
+        "harvard2000"
+      ],
+      "action": "use_with_attribution"
+    },
+    {
+      "id": "science03",
+      "text": "Under hypnosis, left/right color-responsive activity followed verbal color/gray instruction.",
+      "classification": "independent_experiment",
+      "source_ids": [
+        "kosslyn2000"
+      ],
+      "action": "use_with_conditions"
+    },
+    {
+      "id": "science04",
+      "text": "Left-side result differed from right-side result in nonhypnotized conditions.",
+      "classification": "independent_experiment",
+      "source_ids": [
+        "kosslyn2000"
+      ],
+      "action": "use_with_conditions"
+    },
+    {
+      "id": "science05",
+      "text": "PET blood flow is not a direct readout of an individual's private conscious perception.",
+      "classification": "editorial_limit",
+      "source_ids": [
+        "kosslyn2000"
+      ],
+      "action": "use_as_methodological_caution"
+    },
+    {
+      "id": "science06",
+      "text": "Kirsch criticized differences in instructions between hypnotized and nonhypnotized conditions.",
+      "classification": "reported_critic",
+      "source_ids": [
+        "discover_kirsch"
+      ],
+      "action": "attribute_to_critic"
+    },
+    {
+      "id": "science07",
+      "text": "Hypnosis has no single settled theory of mechanism.",
+      "classification": "systematic_review",
+      "source_ids": [
+        "zahedi2024"
+      ],
+      "action": "use_as_cautious_summary"
+    },
+    {
+      "id": "science08",
+      "text": "Franklin's 1784 commission examined Deslon's magnetic-fluid claims, not every practice of Mesmer.",
+      "classification": "historical_source",
+      "source_ids": [
+        "fv_mesmerism"
+      ],
+      "action": "use"
+    },
+    {
+      "id": "science09",
+      "text": "Puységur historical case records include failed predictions and ethical disputes.",
+      "classification": "historical_source",
+      "source_ids": [
+        "fv_puysegur"
+      ],
+      "action": "use"
+    },
+    {
+      "id": "science10",
+      "text": "The 2000 color-perception experiment demonstrates Zen12 efficacy.",
+      "classification": "unsupported_commercial_leap",
+      "source_ids": [
+        "kosslyn2000",
+        "zen12_checkout"
+      ],
+      "action": "REJECT"
+    },
+    {
+      "id": "science11",
+      "text": "A 2023 review of 14 binaural beat EEG studies found 5 supportive, 8 contradictory and 1 mixed result.",
+      "classification": "systematic_review",
+      "source_ids": [
+        "ingendoh2023"
+      ],
+      "action": "use_with_protocol_limit"
+    },
+    {
+      "id": "science12",
+      "text": "Binaural-beat effects in EEG are equivalent to a specific customer cognitive benefit.",
+      "classification": "unsupported_commercial_leap",
+      "source_ids": [
+        "ingendoh2023"
+      ],
+      "action": "REJECT"
+    },
+    {
+      "id": "format01",
+      "text": "Inspire3 publicly lists the Zen12 meditation program.",
+      "classification": "seller_catalog",
+      "source_ids": [
+        "inspire3"
+      ],
+      "action": "seller_label"
+    },
+    {
+      "id": "format02",
+      "text": "Zen12 seller describes 12 levels and four styles of audio per level.",
+      "classification": "seller_product_feature",
+      "source_ids": [
+        "zen12_about"
+      ],
+      "action": "seller_label"
+    },
+    {
+      "id": "format03",
+      "text": "Complete Zen12 package is advertised as 48 MP3 files.",
+      "classification": "seller_product_feature",
+      "source_ids": [
+        "zen12_checkout"
+      ],
+      "action": "seller_label"
+    },
+    {
+      "id": "format04",
+      "text": "Zen12 offers sessions described as twelve minutes.",
+      "classification": "seller_product_feature",
+      "source_ids": [
+        "zen12_about"
+      ],
+      "action": "seller_label"
+    },
+    {
+      "id": "format05",
+      "text": "One-hour meditation equivalence in twelve minutes is independently proven.",
+      "classification": "unsubstantiated_seller_efficacy",
+      "source_ids": [
+        "zen12_catalog",
+        "ingendoh2023"
+      ],
+      "action": "REJECT"
+    },
+    {
+      "id": "format06",
+      "text": "Zen12 2026-11-12 public catalog displayed a different promotional total than its checkout snapshot.",
+      "classification": "seller_observation_variance",
+      "source_ids": [
+        "zen12_catalog",
+        "zen12_checkout"
+      ],
+      "action": "show_no_fixed_price"
+    },
+    {
+      "id": "format07",
+      "text": "The Zen12 checkout says it offers a one-year money-back guarantee.",
+      "classification": "seller_policy_claim",
+      "source_ids": [
+        "zen12_checkout"
+      ],
+      "action": "quote_as_seller_only_verify_terms"
+    },
+    {
+      "id": "format08",
+      "text": "Actual Zen12 refunds are independently verified to arrive.",
+      "classification": "unverified_merchant_fulfillment",
+      "source_ids": [
+        "zen12_checkout"
+      ],
+      "action": "REJECT"
+    },
+    {
+      "id": "format09",
+      "text": "Hypnosis Live Total Focus seller specifies an audio session of 33 minutes and 47 MB.",
+      "classification": "seller_product_feature",
+      "source_ids": [
+        "hypnosis_focus"
+      ],
+      "action": "seller_label"
+    },
+    {
+      "id": "format10",
+      "text": "Total Focus seller advertises a 14-day refund period.",
+      "classification": "seller_policy_claim",
+      "source_ids": [
+        "hypnosis_focus"
+      ],
+      "action": "seller_label_verify_policy"
+    },
+    {
+      "id": "format11",
+      "text": "Brainwave Shots Focus Shot seller lists 15- and 30-minute versions.",
+      "classification": "seller_product_feature",
+      "source_ids": [
+        "brainwave_focus"
+      ],
+      "action": "seller_label"
+    },
+    {
+      "id": "format12",
+      "text": "Focus Shot seller advertises a one-year refund guarantee.",
+      "classification": "seller_policy_claim",
+      "source_ids": [
+        "brainwave_focus"
+      ],
+      "action": "seller_label_verify_policy"
+    },
+    {
+      "id": "format13",
+      "text": "Total Focus or Focus Shot measurably enhances concentration for customers.",
+      "classification": "unsubstantiated_seller_efficacy",
+      "source_ids": [
+        "hypnosis_focus",
+        "brainwave_focus"
+      ],
+      "action": "REJECT"
+    },
+    {
+      "id": "com01",
+      "text": "The Inspire3 public affiliate recruitment page proves FV publisher acceptance.",
+      "classification": "unverified_authorization",
+      "source_ids": [
+        "inspire_affiliates"
+      ],
+      "action": "REJECT"
+    },
+    {
+      "id": "com02",
+      "text": "A consumer Inspire3 email reporting approved waiting-list access proves an affiliate relationship.",
+      "classification": "incorrect_email_interpretation",
+      "source_ids": [
+        "inspire_affiliates"
+      ],
+      "action": "REJECT"
+    },
+    {
+      "id": "com03",
+      "text": "An affiliate disclosure placed near a recommendation is required when earning links exist.",
+      "classification": "regulatory_guidance",
+      "source_ids": [
+        "ftc_endorsement"
+      ],
+      "action": "use"
+    },
+    {
+      "id": "com04",
+      "text": "Psychological health outcomes can be promoted without product-specific substantiation.",
+      "classification": "unsubstantiated_health_claim",
+      "source_ids": [
+        "ftc_health"
+      ],
+      "action": "REJECT"
+    },
+    {
+      "id": "com05",
+      "text": "A click on a merchant link establishes a paid commission.",
+      "classification": "invalid_attribution",
+      "source_ids": [
+        "fv_conversion"
+      ],
+      "action": "REJECT"
+    },
+    {
+      "id": "com06",
+      "text": "The live Focus page is a free resource, not paid conversion proof.",
+      "classification": "verified_live_route",
+      "source_ids": [
+        "fv_focus"
+      ],
+      "action": "use"
+    },
+    {
+      "id": "com07",
+      "text": "Public search failure proves FV has no product in its Payhip account.",
+      "classification": "invalid_inventory_inference",
+      "source_ids": [
+        "payhip_help"
+      ],
+      "action": "REJECT"
+    },
+    {
+      "id": "com08",
+      "text": "Private checkout and product rights require inventory owner review before a paid FV offer is marketed.",
+      "classification": "commercial_gate",
+      "source_ids": [
+        "fv_business",
+        "payhip_help"
+      ],
+      "action": "require_authentication"
+    }
+  ],
+  "gates": [
+    {
+      "id": "H01",
+      "description": "FV-specific Inspire3 acceptance letter/account status",
+      "status": "HOLD",
+      "verified": false,
+      "reason": "No account-specific release evidence established on 2026-11-12"
+    },
+    {
+      "id": "H02",
+      "description": "Publisher issued referral link for exact Zen12 offer",
+      "status": "HOLD",
+      "verified": false,
+      "reason": "No account-specific release evidence established on 2026-11-12"
+    },
+    {
+      "id": "H03",
+      "description": "Permitted website promotion channel confirmed",
+      "status": "HOLD",
+      "verified": false,
+      "reason": "No account-specific release evidence established on 2026-11-12"
+    },
+    {
+      "id": "H04",
+      "description": "Permitted email promotion channel confirmed separately",
+      "status": "HOLD",
+      "verified": false,
+      "reason": "No account-specific release evidence established on 2026-11-12"
+    },
+    {
+      "id": "H05",
+      "description": "Affiliate commission terms and return reversal rules authenticated",
+      "status": "HOLD",
+      "verified": false,
+      "reason": "No account-specific release evidence established on 2026-11-12"
+    },
+    {
+      "id": "H06",
+      "description": "Affiliate link target/redirect policy checked",
+      "status": "HOLD",
+      "verified": false,
+      "reason": "No account-specific release evidence established on 2026-11-12"
+    },
+    {
+      "id": "H07",
+      "description": "Actual checkout amount + currency/tax recaptured",
+      "status": "HOLD",
+      "verified": false,
+      "reason": "No account-specific release evidence established on 2026-11-12"
+    },
+    {
+      "id": "H08",
+      "description": "Merchant refund policy terms and contact independently inspected",
+      "status": "HOLD",
+      "verified": false,
+      "reason": "No account-specific release evidence established on 2026-11-12"
+    },
+    {
+      "id": "H09",
+      "description": "Specific product efficacy claims backed by independent matched trials or omitted",
+      "status": "HOLD",
+      "verified": false,
+      "reason": "No account-specific release evidence established on 2026-11-12"
+    },
+    {
+      "id": "H10",
+      "description": "No fictional purchase/experience/testimonial",
+      "status": "HOLD",
+      "verified": false,
+      "reason": "No account-specific release evidence established on 2026-11-12"
+    },
+    {
+      "id": "H11",
+      "description": "Adjacent clear FTC commission disclosure in final live layout",
+      "status": "HOLD",
+      "verified": false,
+      "reason": "No account-specific release evidence established on 2026-11-12"
+    },
+    {
+      "id": "H12",
+      "description": "Mobile WCAG keyboard/reduced-motion/no-JS checked in browser",
+      "status": "HOLD",
+      "verified": false,
+      "reason": "No account-specific release evidence established on 2026-11-12"
+    },
+    {
+      "id": "H13",
+      "description": "Original optional film playable with correct captions/transcript or transparently omitted",
+      "status": "HOLD",
+      "verified": false,
+      "reason": "No account-specific release evidence established on 2026-11-12"
+    },
+    {
+      "id": "H14",
+      "description": "Source-to-claim audit current at release",
+      "status": "HOLD",
+      "verified": false,
+      "reason": "No account-specific release evidence established on 2026-11-12"
+    },
+    {
+      "id": "H15",
+      "description": "Single existing Jetpack/Focus route preserved and signup evidence confirmed",
+      "status": "HOLD",
+      "verified": false,
+      "reason": "No account-specific release evidence established on 2026-11-12"
+    },
+    {
+      "id": "H16",
+      "description": "Grok published asset IDs, platform links, and utm campaign reconciled",
+      "status": "HOLD",
+      "verified": false,
+      "reason": "No account-specific release evidence established on 2026-11-12"
+    },
+    {
+      "id": "H17",
+      "description": "First-party attribution events verified WITHOUT duplicate analytics/PII",
+      "status": "HOLD",
+      "verified": false,
+      "reason": "No account-specific release evidence established on 2026-11-12"
+    },
+    {
+      "id": "H18",
+      "description": "Founder release approval including URL, commerce, deployment and posting",
+      "status": "HOLD",
+      "verified": false,
+      "reason": "No account-specific release evidence established on 2026-11-12"
+    }
+  ],
+  "offer_fit": [
+    {
+      "topic": "Change blindness / door swap",
+      "published_editorial_url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "actual_grok_asset_id": null,
+      "free_route": "https://finalvestige.com/focus/",
+      "candidate_paid_offer": "Zen12",
+      "fit": "medium",
+      "risk": "Do not imply a general attention illusion demonstrates meditation-audio improvement"
+    },
+    {
+      "topic": "Franklin/Mesmer/Puységur",
+      "published_editorial_url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "historical_archive": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "actual_grok_asset_id": null,
+      "free_route": "https://finalvestige.com/focus/",
+      "candidate_paid_offer": "Hypnosis Live Total Focus",
+      "fit": "medium",
+      "risk": "No historical cure equivalence, no suggestion evidence transferred to this MP3"
+    },
+    {
+      "topic": "Hypnotic color PET / science of suggestion",
+      "published_editorial_url": null,
+      "unpublished_file": "mind/r322/THE-COLOR-THE-SCREEN-NEVER-HAD-UNPUBLISHED.md",
+      "actual_grok_asset_id": null,
+      "free_route": "https://finalvestige.com/focus/",
+      "candidate_paid_offer": "Zen12 (optional)",
+      "fit": "low",
+      "risk": "2000 PET study tested hypnosis, not Zen12; recommend information only, not efficacy"
+    }
+  ],
+  "vendor_products": [
+    {
+      "name": "Zen12 full course",
+      "seller_source": "zen12_checkout",
+      "description": "48 MP3 files; 12 levels; 12-minute sessions described on about page",
+      "observed_catalog_price_2026_11_12": "$87.99 promotional Premium package advertised on public catalog",
+      "observed_checkout_price_2026_11_12": "$87.00 total visible on checkout snapshot",
+      "price_status": "CONFLICTING / VARIABLE; do not publish fixed offer or guarantee",
+      "seller_refund": "one-year advertised; actual terms and fulfillment not independently tested",
+      "fv_earning_url": null
+    },
+    {
+      "name": "Hypnosis Live Total Focus",
+      "seller_source": "hypnosis_focus",
+      "description": "33 minutes, 47 MB MP3",
+      "observed_price": "$17.95 seller price at observed page; not a future guarantee",
+      "seller_refund": "14 days advertised; exact terms unverified",
+      "fv_earning_url": null
+    },
+    {
+      "name": "Brainwave Shots Focus Shot",
+      "seller_source": "brainwave_focus",
+      "description": "15 and 30-minute recordings and brainwave-only versions",
+      "observed_price": "$17.95 seller price at observed page; not a future guarantee",
+      "seller_refund": "one year advertised; exact terms unverified",
+      "fv_earning_url": null
+    }
+  ],
+  "earned_commissions_verified": null,
+  "paid_FV_Mind_SKU_verified": null,
+  "realized_net_revenue_per_1000_qualified_sessions": null,
+  "data_quality": "NOT COMPUTABLE: no authenticated transaction/refund settlement and qualified-human session reconciliation."
+}
