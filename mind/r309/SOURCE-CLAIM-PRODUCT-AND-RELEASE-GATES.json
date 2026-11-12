@@ -1,0 +1,716 @@
+{
+  "version": "r309",
+  "as_of": "2026-11-11 America/Los_Angeles",
+  "release_status": "UNPUBLISHED_HARD_HOLD",
+  "read_depth_note": "Seller listings are seller claims, official FTC guides are guidance, YorkU is a transcription of a primary study, subsequent review full text not independently evaluated.",
+  "sources": [
+    {
+      "id": "S01",
+      "url": "https://psychclassics.yorku.ca/Stroop/",
+      "description": "transcription of 1935 original paper",
+      "inspection": "full transcription inspected",
+      "kind": "historical_primary_transcription"
+    },
+    {
+      "id": "S02",
+      "url": "https://doi.org/10.1037/h0054651",
+      "description": "APA original article publication/abstract",
+      "inspection": "abstract and bibliographic listing checked",
+      "kind": "publisher_record"
+    },
+    {
+      "id": "S03",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/2034749/",
+      "description": "MacLeod 1991 integrative review",
+      "inspection": "bibliographic record checked; no PubMed abstract",
+      "kind": "review_record"
+    },
+    {
+      "id": "S04",
+      "url": "https://www.mpi.nl/publications/item2355497/half-century-research-stroop-effect-integrative-review",
+      "description": "MacLeod review bibliographic archive",
+      "inspection": "record checked",
+      "kind": "review_record"
+    },
+    {
+      "id": "S05",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "description": "existing published FV investigation",
+      "inspection": "public route seen in Journal inventory",
+      "kind": "fv_published"
+    },
+    {
+      "id": "S06",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "description": "existing published Mesmerism investigation",
+      "inspection": "public route seen in Journal inventory",
+      "kind": "fv_published"
+    },
+    {
+      "id": "S07",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "description": "FV historical source archive",
+      "inspection": "live page inspected 153 rows/16 dossiers",
+      "kind": "fv_published"
+    },
+    {
+      "id": "S08",
+      "url": "https://finalvestige.com/focus/",
+      "description": "existing Seven Day Focus Fieldbook",
+      "inspection": "live page inspected, 52-page claim and existing opt-in",
+      "kind": "fv_published"
+    },
+    {
+      "id": "S09",
+      "url": "https://finalvestige.com/blog/",
+      "description": "FV published Journal inventory",
+      "inspection": "public display shows 66 results; not independently verified database count",
+      "kind": "fv_published"
+    },
+    {
+      "id": "S10",
+      "url": "https://finalvestige.com/collection/",
+      "description": "FV collection offer inventory",
+      "inspection": "public page checked; paid Mind SKU not authenticated",
+      "kind": "fv_published"
+    },
+    {
+      "id": "S11",
+      "url": "https://inspire3.com/",
+      "description": "Inspire3 seller catalog",
+      "inspection": "public catalog observed; not independent efficacy evidence",
+      "kind": "merchant"
+    },
+    {
+      "id": "S12",
+      "url": "https://affiliates.inspire3.com/",
+      "description": "Inspire3 public affiliate recruiting",
+      "inspection": "public recruitment only; individual authorization not known",
+      "kind": "merchant"
+    },
+    {
+      "id": "S13",
+      "url": "https://zen12.com/about",
+      "description": "Zen12 program and broad benefit claims",
+      "inspection": "public seller page inspected; claims not adopted",
+      "kind": "merchant"
+    },
+    {
+      "id": "S14",
+      "url": "https://zen12.com/getstarted",
+      "description": "Zen12 actual order page complete package",
+      "inspection": "public checkout page inspected 12 levels/48 MP3s; dynamic price observed, not approved for publishing",
+      "kind": "merchant"
+    },
+    {
+      "id": "S15",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "description": "Hypnosis Live Total Focus product",
+      "inspection": "public seller page inspected 33min/47MB and strong seller efficacy promises",
+      "kind": "merchant"
+    },
+    {
+      "id": "S16",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "description": "Brainwave Shots Focus Shot product",
+      "inspection": "public seller page inspected 15/30-minute package",
+      "kind": "merchant"
+    },
+    {
+      "id": "S17",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "description": "FTC material-connection guidance",
+      "inspection": "official guidance checked",
+      "kind": "regulatory"
+    },
+    {
+      "id": "S18",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "description": "FTC health-related advertising substantiation",
+      "inspection": "official guidance checked",
+      "kind": "regulatory"
+    },
+    {
+      "id": "S19",
+      "url": "https://finalvestige.com/editorial-standards/",
+      "description": "FV editorial commercial independence",
+      "inspection": "live page inspected",
+      "kind": "fv_published"
+    },
+    {
+      "id": "S20",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "description": "Mind workstream directive",
+      "inspection": "issue and latest comments read",
+      "kind": "internal_governance"
+    },
+    {
+      "id": "S21",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "description": "conversion measurement contract",
+      "inspection": "issue read",
+      "kind": "internal_governance"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "statement": "1935 original paper published in J Exp Psychol 18 pages 643-662",
+      "status": "SUPPORTED_HISTORICAL",
+      "source_ids": [
+        "S01",
+        "S02"
+      ],
+      "editorial_action": "retain"
+    },
+    {
+      "id": "C02",
+      "statement": "Original Stroop materials used red blue green brown purple mismatched inks",
+      "status": "SUPPORTED_HISTORICAL",
+      "source_ids": [
+        "S01"
+      ],
+      "editorial_action": "retain"
+    },
+    {
+      "id": "C03",
+      "statement": "Reading conflicting colored words added mean 2.3 sec per 100 words (5.6%); not reliable",
+      "status": "SUPPORTED_HISTORICAL",
+      "source_ids": [
+        "S01",
+        "S02"
+      ],
+      "editorial_action": "retain with qualifier"
+    },
+    {
+      "id": "C04",
+      "statement": "Naming 100 patches 63.3 sec versus ink in incongruent words 110.3 sec",
+      "status": "SUPPORTED_HISTORICAL",
+      "source_ids": [
+        "S01"
+      ],
+      "editorial_action": "retain as original sample means"
+    },
+    {
+      "id": "C05",
+      "statement": "47 sec 74.3% extra compared with patch-naming baseline",
+      "status": "SUPPORTED_HISTORICAL",
+      "source_ids": [
+        "S01",
+        "S02"
+      ],
+      "editorial_action": "not a universal focus statistic"
+    },
+    {
+      "id": "C06",
+      "statement": "Stroop experiment 2 tested 100 students",
+      "status": "SUPPORTED_HISTORICAL",
+      "source_ids": [
+        "S01"
+      ],
+      "editorial_action": "retain"
+    },
+    {
+      "id": "C07",
+      "statement": "Experiment 3 recruited 32; two irregular schedules and one color-vision case excluded",
+      "status": "SUPPORTED_HISTORICAL",
+      "source_ids": [
+        "S01"
+      ],
+      "editorial_action": "retain from full text"
+    },
+    {
+      "id": "C08",
+      "statement": "Eight practice days of 200 naming responses/day reduced but did not remove conflict",
+      "status": "SUPPORTED_HISTORICAL",
+      "source_ids": [
+        "S01"
+      ],
+      "editorial_action": "retain"
+    },
+    {
+      "id": "C09",
+      "statement": "Training increased reverse interference in word reading",
+      "status": "SUPPORTED_HISTORICAL",
+      "source_ids": [
+        "S01"
+      ],
+      "editorial_action": "retain with context"
+    },
+    {
+      "id": "C10",
+      "statement": "1991 MacLeod review challenged simplistic automaticity/single processing speed",
+      "status": "SECONDARY_REVIEW_SUMMARY",
+      "source_ids": [
+        "S03",
+        "S04"
+      ],
+      "editorial_action": "do not claim independent full-text review"
+    },
+    {
+      "id": "C11",
+      "statement": "Stroop finding proves Zen12 concentration improvement",
+      "status": "UNSUPPORTED_PRODUCT_EFFICACY",
+      "source_ids": [
+        "S01",
+        "S13",
+        "S18"
+      ],
+      "editorial_action": "exclude"
+    },
+    {
+      "id": "C12",
+      "statement": "Stroop exercise can diagnose ADHD in FV readers",
+      "status": "UNSUPPORTED_MEDICAL",
+      "source_ids": [
+        "S01",
+        "S18"
+      ],
+      "editorial_action": "exclude"
+    },
+    {
+      "id": "C13",
+      "statement": "FV Change Blindness investigation is publicly published",
+      "status": "VERIFIED_PUBLIC_ROUTE",
+      "source_ids": [
+        "S05",
+        "S09"
+      ],
+      "editorial_action": "link only existing live route"
+    },
+    {
+      "id": "C14",
+      "statement": "Puységur archive has 153 active source rows and 16 case dossiers",
+      "status": "VERIFIED_PUBLIC_DISPLAY",
+      "source_ids": [
+        "S07"
+      ],
+      "editorial_action": "label live display, not CMS audit"
+    },
+    {
+      "id": "C15",
+      "statement": "Existing Focus page describes 52-page Fieldbook",
+      "status": "VERIFIED_PUBLIC_DISPLAY",
+      "source_ids": [
+        "S08"
+      ],
+      "editorial_action": "preserve one route"
+    },
+    {
+      "id": "C16",
+      "statement": "Existing Focus page includes Dispatch opt-in disclosure",
+      "status": "VERIFIED_PUBLIC_DISPLAY",
+      "source_ids": [
+        "S08"
+      ],
+      "editorial_action": "no duplicate form"
+    },
+    {
+      "id": "C17",
+      "statement": "FV public Journal displayed 66 results Nov 11 2026",
+      "status": "VERIFIED_PUBLIC_DISPLAY",
+      "source_ids": [
+        "S09"
+      ],
+      "editorial_action": "not exact authenticated database count"
+    },
+    {
+      "id": "C18",
+      "statement": "FV Collection is proof of a currently sellable, FV-owned paid Mind SKU",
+      "status": "NOT_VERIFIED",
+      "source_ids": [
+        "S10"
+      ],
+      "editorial_action": "cannot offer as fallback yet"
+    },
+    {
+      "id": "C19",
+      "statement": "Inspire3 catalog includes Zen12 and Hypnosis Live",
+      "status": "SELLER_LISTING",
+      "source_ids": [
+        "S11"
+      ],
+      "editorial_action": "seller affiliation only"
+    },
+    {
+      "id": "C20",
+      "statement": "Zen12 seller says a session is equivalent to an hour's meditation",
+      "status": "UNSUBSTANTIATED_SELLER_CLAIM",
+      "source_ids": [
+        "S13",
+        "S18"
+      ],
+      "editorial_action": "do not repeat as fact"
+    },
+    {
+      "id": "C21",
+      "statement": "Zen12 exact checkout describes 12 levels and 48 MP3s",
+      "status": "SELLER_FORMAT_CLAIM",
+      "source_ids": [
+        "S14"
+      ],
+      "editorial_action": "attribute to seller"
+    },
+    {
+      "id": "C22",
+      "statement": "Zen12 order page displayed $87.99 total before personal tax or options on Nov 11 2026",
+      "status": "DYNAMIC_MERCHANT_PRICE",
+      "source_ids": [
+        "S14"
+      ],
+      "editorial_action": "record as dated observation, do not publish as fixed price"
+    },
+    {
+      "id": "C23",
+      "statement": "Zen12 current refund/return guarantee is independently contract-verified",
+      "status": "NOT_VERIFIED",
+      "source_ids": [
+        "S14"
+      ],
+      "editorial_action": "require exact applicable terms before recommending"
+    },
+    {
+      "id": "C24",
+      "statement": "Hypnosis Live Total Focus lists 33min and 47MB",
+      "status": "SELLER_FORMAT_CLAIM",
+      "source_ids": [
+        "S15"
+      ],
+      "editorial_action": "product-specific only"
+    },
+    {
+      "id": "C25",
+      "statement": "Total Focus enhances limitless concentration",
+      "status": "UNSUBSTANTIATED_SELLER_CLAIM",
+      "source_ids": [
+        "S15",
+        "S18"
+      ],
+      "editorial_action": "exclude"
+    },
+    {
+      "id": "C26",
+      "statement": "Brainwave Shots Focus Shot includes 15/30-minute recordings",
+      "status": "SELLER_FORMAT_CLAIM",
+      "source_ids": [
+        "S16"
+      ],
+      "editorial_action": "product-specific only"
+    },
+    {
+      "id": "C27",
+      "statement": "Focus Shot causes instant focus via brainwave activation",
+      "status": "UNSUBSTANTIATED_SELLER_CLAIM",
+      "source_ids": [
+        "S16",
+        "S18"
+      ],
+      "editorial_action": "exclude"
+    },
+    {
+      "id": "C28",
+      "statement": "Inspire3 affiliate public site recruits publishers and describes links/commissions",
+      "status": "PUBLIC_RECRUITMENT_ONLY",
+      "source_ids": [
+        "S12"
+      ],
+      "editorial_action": "do not infer FV acceptance, EPC or payout"
+    },
+    {
+      "id": "C29",
+      "statement": "FV publisher status, CHANNEL rights, creative rights, tracking URL, commission settlement",
+      "status": "NOT_VERIFIED",
+      "source_ids": [
+        "S12",
+        "S20"
+      ],
+      "editorial_action": "commercial HARD HOLD"
+    },
+    {
+      "id": "C30",
+      "statement": "FTC requires material connection disclosure near affiliate recommendation",
+      "status": "REGULATORY_GUIDANCE",
+      "source_ids": [
+        "S17"
+      ],
+      "editorial_action": "near CTA plus full disclosure page"
+    },
+    {
+      "id": "C31",
+      "statement": "FTC health advertising claims need reliable science for explicit/implied benefits",
+      "status": "REGULATORY_GUIDANCE",
+      "source_ids": [
+        "S18"
+      ],
+      "editorial_action": "do not claim unsupported health effects"
+    },
+    {
+      "id": "C32",
+      "statement": "Paid affiliate commission is the same thing as an affiliate outbound click",
+      "status": "FALSE_METRIC_INFERENCE",
+      "source_ids": [
+        "S21"
+      ],
+      "editorial_action": "events separated"
+    },
+    {
+      "id": "C33",
+      "statement": "Net revenue per 1k qualified-human sessions is presently calculable",
+      "status": "NOT_VERIFIED",
+      "source_ids": [
+        "S21"
+      ],
+      "editorial_action": "denominator and settlement unknown: NOT COMPUTABLE"
+    },
+    {
+      "id": "C34",
+      "statement": "The first-party Fieldbook is an independently verified paid product",
+      "status": "FALSE_OFFER_INFERENCE",
+      "source_ids": [
+        "S08",
+        "S10"
+      ],
+      "editorial_action": "it is free, not a verified paid SKU"
+    }
+  ],
+  "authorization_gates": [
+    {
+      "id": "G01",
+      "requirement": "FV affiliate publisher approved",
+      "proof": "signed account evidence",
+      "decision": "HARD_HOLD",
+      "proven": false
+    },
+    {
+      "id": "G02",
+      "requirement": "Zen12 exact offer permitted",
+      "proof": "partner dashboard evidence",
+      "decision": "HARD_HOLD",
+      "proven": false
+    },
+    {
+      "id": "G03",
+      "requirement": "Website promotional channel permitted",
+      "proof": "written affiliate terms",
+      "decision": "HARD_HOLD",
+      "proven": false
+    },
+    {
+      "id": "G04",
+      "requirement": "YouTube/TikTok social source permitted",
+      "proof": "channel-specific agreement",
+      "decision": "HARD_HOLD",
+      "proven": false
+    },
+    {
+      "id": "G05",
+      "requirement": "Email/Dispatch marketing permitted",
+      "proof": "channel-specific agreement",
+      "decision": "HARD_HOLD",
+      "proven": false
+    },
+    {
+      "id": "G06",
+      "requirement": "Link and tracking parameters issued to FV",
+      "proof": "dashboard link artifact",
+      "decision": "HARD_HOLD",
+      "proven": false
+    },
+    {
+      "id": "G07",
+      "requirement": "Approved affiliate creatives licensed",
+      "proof": "creative rights proof",
+      "decision": "HARD_HOLD",
+      "proven": false
+    },
+    {
+      "id": "G08",
+      "requirement": "Price checkout tier verified for target buyer",
+      "proof": "current order screen and all-in price",
+      "decision": "HARD_HOLD",
+      "proven": false
+    },
+    {
+      "id": "G09",
+      "requirement": "Refund terms and exclusions verified",
+      "proof": "official legally operative terms",
+      "decision": "HARD_HOLD",
+      "proven": false
+    },
+    {
+      "id": "G10",
+      "requirement": "Prohibited claims removed",
+      "proof": "claims reviewer approval",
+      "decision": "HARD_HOLD",
+      "proven": false
+    },
+    {
+      "id": "G11",
+      "requirement": "FTC adjacency accessible on page and media",
+      "proof": "QA browser check",
+      "decision": "HARD_HOLD",
+      "proven": false
+    },
+    {
+      "id": "G12",
+      "requirement": "A/B no-JS mobile accessible at 360/390/768/1440/1920",
+      "proof": "real browser review",
+      "decision": "HARD_HOLD",
+      "proven": false
+    },
+    {
+      "id": "G13",
+      "requirement": "Playable original video with rights and VTT",
+      "proof": "actual encoding/media QA",
+      "decision": "HARD_HOLD",
+      "proven": false
+    },
+    {
+      "id": "G14",
+      "requirement": "Analytics does not duplicate existing scripts",
+      "proof": "Claude engineering review",
+      "decision": "HARD_HOLD",
+      "proven": false
+    },
+    {
+      "id": "G15",
+      "requirement": "Grok actual creator IDs and destination permissions",
+      "proof": "Praxxis TASK-008 evidence",
+      "decision": "HARD_HOLD",
+      "proven": false
+    },
+    {
+      "id": "G16",
+      "requirement": "Qualified-human sessions independently validated",
+      "proof": "privacy-safe first-party analytics",
+      "decision": "HARD_HOLD",
+      "proven": false
+    },
+    {
+      "id": "G17",
+      "requirement": "Partner-reported purchase/commission and refund ledger",
+      "proof": "merchant dashboard settlement evidence",
+      "decision": "HARD_HOLD",
+      "proven": false
+    },
+    {
+      "id": "G18",
+      "requirement": "Founder production release and QA accepted",
+      "proof": "explicit final release authorization",
+      "decision": "HARD_HOLD",
+      "proven": false
+    }
+  ],
+  "offers": [
+    {
+      "id": "zen12",
+      "status": "CANDIDATE_ONLY_HARD_HOLD",
+      "audience": "12-minute structured audio-library buyers",
+      "merchant": "Inspire3 / Zen12",
+      "offer_proof": [
+        "S11",
+        "S13",
+        "S14"
+      ],
+      "price_display": "Dated merchant total $87.99 at Nov 11 scan, not eligible for fixed FV copy; local taxes/upsells/terms unverified",
+      "affiliate_url": null
+    },
+    {
+      "id": "total_focus",
+      "status": "RESEARCH_ONLY_HARD_HOLD",
+      "audience": "single prerecorded hypnosis buyers",
+      "offer_proof": [
+        "S15"
+      ],
+      "affiliate_url": null
+    },
+    {
+      "id": "focus_shot",
+      "status": "RESEARCH_ONLY_HARD_HOLD",
+      "audience": "15/30-min audio format buyers",
+      "offer_proof": [
+        "S16"
+      ],
+      "affiliate_url": null
+    },
+    {
+      "id": "fv_focus_fieldbook",
+      "status": "FREE_ONLY",
+      "audience": "attention journaling and first-step routines",
+      "offer_proof": [
+        "S08"
+      ],
+      "affiliate_url": null
+    },
+    {
+      "id": "fv_owned_mind_paid",
+      "status": "NOT_AUTHENTICATED",
+      "audience": "requires inventory check",
+      "offer_proof": [
+        "S10"
+      ],
+      "affiliate_url": null
+    }
+  ],
+  "proposed_creator_fit": [
+    {
+      "topic": "Change Blindness",
+      "platform": null,
+      "asset_id": null,
+      "status": "ACTUAL_SOCIAL_ASSET_UNVERIFIED",
+      "article": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "next": "https://finalvestige.com/focus/",
+      "offer": "Fieldbook free; Zen12 optional after eligibility",
+      "fit": "low-buy-intent research"
+    },
+    {
+      "topic": "Mesmerism and suggestion",
+      "platform": null,
+      "asset_id": null,
+      "status": "ACTUAL_SOCIAL_ASSET_UNVERIFIED",
+      "article": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "next": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "offer": "No automatic Hypnosis Live link",
+      "fit": "history only"
+    },
+    {
+      "topic": "Stroop color-word interference",
+      "platform": null,
+      "asset_id": null,
+      "status": "ARTICLE_UNPUBLISHED_MEDIA_UNVERIFIED",
+      "article": null,
+      "next": "https://finalvestige.com/focus/",
+      "offer": "Zen12 independent buyer guide under approval hold",
+      "fit": "research with conditional practical curiosity"
+    }
+  ],
+  "measurement": {
+    "event_contract": [
+      "qualified_human_campaign_landing",
+      "article_to_fieldbook_click",
+      "provider_confirmed_lead",
+      "commercial_guide_view",
+      "affiliate_outbound_click",
+      "merchant_confirmed_paid_conversion",
+      "refund_or_reversal",
+      "cleared_affiliate_commission"
+    ],
+    "event_instrumentation": "SPEC_ONLY_NOT_DEPLOYED",
+    "campaign_parameters": [
+      "utm_source",
+      "utm_medium",
+      "utm_campaign",
+      "utm_content",
+      "asset_id"
+    ],
+    "personal_data": "NO_EMAIL_IP_NAME_IN_EVENT_PAYLOAD",
+    "kpi": "realized FV net revenue / qualified human sessions * 1000",
+    "kpi_status": "NOT_COMPUTABLE",
+    "settlement_policy": "merchant gross order is not FV revenue; cleared commission net of unreconciled refunds/fees; do not subtract refunds twice",
+    "cohorts": [
+      7,
+      30
+    ],
+    "privacy_guard": "consent and existing measurement governance; no new script/pixel"
+  }
+}
