@@ -1,0 +1,637 @@
+{
+  "schema_version": "mind-r320-1",
+  "as_of": "2026-11-12",
+  "branch": "mind-r320-white-bear-rebound-evidence-20261112",
+  "source_count": 20,
+  "claim_count": 35,
+  "commercial_holds_count": 18,
+  "commercial_activation": "HARD_HOLD",
+  "owner": "Mind & Affiliate",
+  "sources": [
+    {
+      "id": "W87",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/3612492/",
+      "kind": "primary experimental index",
+      "verification": "1987 abstract read through indexed source"
+    },
+    {
+      "id": "W94",
+      "url": "https://doi.org/10.1037/0033-295X.101.1.34",
+      "kind": "theory",
+      "verification": "bibliographic DOI"
+    },
+    {
+      "id": "A01",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/11434226/",
+      "kind": "2001 systematic meta-analysis",
+      "verification": "indexed original abstract"
+    },
+    {
+      "id": "W20",
+      "url": "https://www.psychologicalscience.org/journals/perspectives/1745691619898795/",
+      "kind": "2020 peer-reviewed meta-analysis",
+      "verification": "publisher abstract read"
+    },
+    {
+      "id": "M23",
+      "url": "https://doi.org/10.1126/sciadv.adh5292",
+      "kind": "2023 primary experiment",
+      "verification": "published indexed abstract"
+    },
+    {
+      "id": "I3",
+      "url": "https://inspire3.com/",
+      "kind": "merchant catalog",
+      "verification": "retrieved; seller description only"
+    },
+    {
+      "id": "ZABOUT",
+      "url": "https://zen12.com/about",
+      "kind": "official Zen12 description",
+      "verification": "retrieved; seller claims not accepted as independent"
+    },
+    {
+      "id": "ZBUY",
+      "url": "https://zen12.com/getstarted",
+      "kind": "merchant checkout",
+      "verification": "retrieved; dynamic prices/refunds not guaranteed"
+    },
+    {
+      "id": "ZWELCOME",
+      "url": "https://zen12.com/welcome",
+      "kind": "merchant newsletter",
+      "verification": "not an FV Jetpack list; no replication"
+    },
+    {
+      "id": "HF",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "kind": "exact alternative offer page",
+      "verification": "retrieved; current price ambiguous/historical cache"
+    },
+    {
+      "id": "BS",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "kind": "exact alternative offer page",
+      "verification": "retrieved; seller-format only"
+    },
+    {
+      "id": "AFF",
+      "url": "https://affiliates.inspire3.com/",
+      "kind": "public partner recruitment",
+      "verification": "public recruitment not FV-specific approval"
+    },
+    {
+      "id": "FTCENDORSE",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "kind": "regulatory staff guidance",
+      "verification": "disclosure standards checked"
+    },
+    {
+      "id": "FTCHEALTH",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "kind": "regulatory staff guidance",
+      "verification": "claim substantiation standard checked"
+    },
+    {
+      "id": "PUY",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "kind": "WordPress published historical asset",
+      "verification": "WordPress authenticated view read"
+    },
+    {
+      "id": "FOCUS",
+      "url": "https://finalvestige.com/focus/",
+      "kind": "WordPress published existing list path",
+      "verification": "WordPress authenticated view read"
+    },
+    {
+      "id": "CHANGE",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "kind": "WordPress published post",
+      "verification": "WordPress authenticated published list"
+    },
+    {
+      "id": "MES",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "kind": "WordPress published post",
+      "verification": "WordPress authenticated published list"
+    },
+    {
+      "id": "EDIT",
+      "url": "https://finalvestige.com/editorial-standards/",
+      "kind": "published editorial policy",
+      "verification": "route from Issue 171; live runtime not independently tested"
+    },
+    {
+      "id": "DISC",
+      "url": "https://finalvestige.com/affiliate-disclosure/",
+      "kind": "published policy",
+      "verification": "route from Issue 171; live runtime not independently tested"
+    }
+  ],
+  "claims": [
+    {
+      "id": "SCI01",
+      "statement": "1987 study used two five-minute stream-of-consciousness periods",
+      "classification": "primary experiment",
+      "sources": [
+        "W87"
+      ],
+      "decision": "USE",
+      "limit": "Laboratory setting, not universal cognitive rate"
+    },
+    {
+      "id": "SCI02",
+      "statement": "Volunteers reported target thought through a bell",
+      "classification": "primary experiment",
+      "sources": [
+        "W87"
+      ],
+      "decision": "USE",
+      "limit": "Self-report behavior not direct recording of thought"
+    },
+    {
+      "id": "SCI03",
+      "statement": "Suppression-first group showed later target-thought rebound",
+      "classification": "primary experiment",
+      "sources": [
+        "W87"
+      ],
+      "decision": "USE",
+      "limit": "Later expression period; distinct from immediate enhancement"
+    },
+    {
+      "id": "SCI04",
+      "statement": "Specific distracter reduced later preoccupation in second experiment",
+      "classification": "primary experiment",
+      "sources": [
+        "W87"
+      ],
+      "decision": "USE",
+      "limit": "No universal advice or treatment inference"
+    },
+    {
+      "id": "SCI05",
+      "statement": "Ironic-process monitoring mechanism",
+      "classification": "theoretical proposal",
+      "sources": [
+        "W94"
+      ],
+      "decision": "QUALIFY",
+      "limit": "Hypothesis not measured neural circuit"
+    },
+    {
+      "id": "SCI06",
+      "statement": "2001 analysis reported small-to-moderate rebound",
+      "classification": "meta-analysis",
+      "sources": [
+        "A01"
+      ],
+      "decision": "USE",
+      "limit": "Magnitude varies by target and measurement"
+    },
+    {
+      "id": "SCI07",
+      "statement": "2001 clinical samples were limited",
+      "classification": "meta-analysis",
+      "sources": [
+        "A01"
+      ],
+      "decision": "USE",
+      "limit": "No conclusion about diagnosis or therapy"
+    },
+    {
+      "id": "SCI08",
+      "statement": "2020 analysis reviewed 31 studies",
+      "classification": "meta-analysis",
+      "sources": [
+        "W20"
+      ],
+      "decision": "USE",
+      "limit": "Eligible thought-suppression paradigm only"
+    },
+    {
+      "id": "SCI09",
+      "statement": "Rebound was distinct from immediate enhancement",
+      "classification": "meta-analysis",
+      "sources": [
+        "W20"
+      ],
+      "decision": "USE",
+      "limit": "Immediate enhancement associated with cognitive load"
+    },
+    {
+      "id": "SCI10",
+      "statement": "2023 online study included 120 participants across 16 countries",
+      "classification": "primary experimental",
+      "sources": [
+        "M23"
+      ],
+      "decision": "USE",
+      "limit": "Study-specific population/design"
+    },
+    {
+      "id": "SCI11",
+      "statement": "2023 trained suppression for three days",
+      "classification": "primary experimental",
+      "sources": [
+        "M23"
+      ],
+      "decision": "USE",
+      "limit": "Not the 1987 white-bear task"
+    },
+    {
+      "id": "SCI12",
+      "statement": "2023 authors reported reduced vividness and distress in their study",
+      "classification": "primary experimental",
+      "sources": [
+        "M23"
+      ],
+      "decision": "QUALIFY",
+      "limit": "Do not generalize to treatment; independent replication needed"
+    },
+    {
+      "id": "SCI13",
+      "statement": "Thought suppression always worsens unwanted thoughts",
+      "classification": "overclaim",
+      "sources": [
+        "W20",
+        "M23"
+      ],
+      "decision": "EXCLUDE",
+      "limit": "Unsupported universal statement"
+    },
+    {
+      "id": "SCI14",
+      "statement": "Zen12 was tested in Wegner 1987 or Mamat 2023",
+      "classification": "false product-specific inference",
+      "sources": [
+        "W87",
+        "M23"
+      ],
+      "decision": "EXCLUDE",
+      "limit": "Neither tested branded commercial audio"
+    },
+    {
+      "id": "M01",
+      "statement": "Inspire3 lists Zen12, Hypnosis Live and Brainwave Shots",
+      "classification": "merchant catalog",
+      "sources": [
+        "I3"
+      ],
+      "decision": "USE_AS_SELLER_DESCRIPTION",
+      "limit": "No efficacy inference"
+    },
+    {
+      "id": "M02",
+      "statement": "Zen12 seller describes 12-minute sessions",
+      "classification": "merchant format",
+      "sources": [
+        "ZABOUT"
+      ],
+      "decision": "USE_AS_SELLER_DESCRIPTION",
+      "limit": "Product duration not efficacy"
+    },
+    {
+      "id": "M03",
+      "statement": "Zen12 seller describes 12 levels and four styles per level",
+      "classification": "merchant format",
+      "sources": [
+        "ZABOUT"
+      ],
+      "decision": "USE_AS_SELLER_DESCRIPTION",
+      "limit": "Verify exact edition selected"
+    },
+    {
+      "id": "M04",
+      "statement": "Zen12 complete checkout describes 48 MP3s",
+      "classification": "merchant checkout",
+      "sources": [
+        "ZBUY"
+      ],
+      "decision": "USE_AS_SELLER_DESCRIPTION",
+      "limit": "Buyer may see other tiers/upsells"
+    },
+    {
+      "id": "M05",
+      "statement": "Zen12's hour-equivalence benefit",
+      "classification": "seller efficacy claim",
+      "sources": [
+        "ZABOUT"
+      ],
+      "decision": "EXCLUDE",
+      "limit": "No product-specific independent substantiation"
+    },
+    {
+      "id": "M06",
+      "statement": "Zen12 automatically removes stress/anxiety",
+      "classification": "seller therapeutic claim",
+      "sources": [
+        "ZABOUT"
+      ],
+      "decision": "EXCLUDE",
+      "limit": "No product-specific controlled substantiation"
+    },
+    {
+      "id": "M07",
+      "statement": "Zen12 checkout advertises money-back guarantee",
+      "classification": "merchant return claim",
+      "sources": [
+        "ZBUY"
+      ],
+      "decision": "QUALIFY",
+      "limit": "Exact refund conditions not authenticated"
+    },
+    {
+      "id": "M08",
+      "statement": "Zen12 promotional price is stable",
+      "classification": "merchant commercial claim",
+      "sources": [
+        "ZBUY"
+      ],
+      "decision": "EXCLUDE",
+      "limit": "Dynamic checkout pricing; current price not proven"
+    },
+    {
+      "id": "M09",
+      "statement": "Hypnosis Live Total Focus is a 33-minute audio",
+      "classification": "merchant format",
+      "sources": [
+        "HF"
+      ],
+      "decision": "USE_AS_SELLER_DESCRIPTION",
+      "limit": "33 minutes/47 MB on indexed page; not independently tested"
+    },
+    {
+      "id": "M10",
+      "statement": "Total Focus guarantees razor-sharp performance",
+      "classification": "merchant efficacy claim",
+      "sources": [
+        "HF"
+      ],
+      "decision": "EXCLUDE",
+      "limit": "No product-specific reliable efficacy evidence"
+    },
+    {
+      "id": "M11",
+      "statement": "Brainwave Shots Focus Shot describes 15- and 30-minute versions",
+      "classification": "merchant format",
+      "sources": [
+        "BS"
+      ],
+      "decision": "USE_AS_SELLER_DESCRIPTION",
+      "limit": "Seller claim about files only"
+    },
+    {
+      "id": "M12",
+      "statement": "Focus Shot creates four-hour-to-day concentration improvements",
+      "classification": "merchant efficacy claim",
+      "sources": [
+        "BS"
+      ],
+      "decision": "EXCLUDE",
+      "limit": "No product-specific controlled outcome evidence"
+    },
+    {
+      "id": "M13",
+      "statement": "Public Inspire3 recruitment proves FV affiliate approval",
+      "classification": "authorization inference",
+      "sources": [
+        "AFF"
+      ],
+      "decision": "EXCLUDE",
+      "limit": "Publisher dashboard/account-specific approval not verified"
+    },
+    {
+      "id": "M14",
+      "statement": "Public Inspire3 commission percentage guarantees FV payout",
+      "classification": "authorization inference",
+      "sources": [
+        "AFF"
+      ],
+      "decision": "EXCLUDE",
+      "limit": "No personal terms, attribution window or payouts verified"
+    },
+    {
+      "id": "FTC01",
+      "statement": "Material affiliate relationship disclosed close to recommendation",
+      "classification": "FTC guidance",
+      "sources": [
+        "FTCENDORSE"
+      ],
+      "decision": "REQUIRE",
+      "limit": "Actual link disclosure must be clear and conspicuous"
+    },
+    {
+      "id": "FTC02",
+      "statement": "Health and psychological claims require appropriate substantiation",
+      "classification": "FTC guidance",
+      "sources": [
+        "FTCHEALTH"
+      ],
+      "decision": "REQUIRE",
+      "limit": "Seller claims alone insufficient"
+    },
+    {
+      "id": "FV01",
+      "statement": "Existing /focus/ page is live and uses single established path",
+      "classification": "site authenticated",
+      "sources": [
+        "FOCUS"
+      ],
+      "decision": "PRESERVE",
+      "limit": "Do not duplicate signup form/welcome message"
+    },
+    {
+      "id": "FV02",
+      "statement": "Puységur source archive is published",
+      "classification": "site authenticated",
+      "sources": [
+        "PUY"
+      ],
+      "decision": "LINK_HISTORICAL",
+      "limit": "No physical-mechanism claim"
+    },
+    {
+      "id": "FV03",
+      "statement": "Published Change Blindness and Mesmerism posts",
+      "classification": "site authenticated",
+      "sources": [
+        "CHANGE",
+        "MES"
+      ],
+      "decision": "LINK_PUBLISHED",
+      "limit": "No social asset IDs verified"
+    },
+    {
+      "id": "KPI01",
+      "statement": "An outbound affiliate_click is a paid sale",
+      "classification": "measurement conflation",
+      "sources": [
+        "AFF"
+      ],
+      "decision": "EXCLUDE",
+      "limit": "Only independent merchant confirmed sale or refund-adjusted commission counts"
+    },
+    {
+      "id": "KPI02",
+      "statement": "Net revenue per 1000 qualified sessions is computable",
+      "classification": "measurement claim",
+      "sources": [],
+      "decision": "NOT_COMPUTABLE",
+      "limit": "Missing human sessions and settlement"
+    }
+  ],
+  "holds": [
+    {
+      "id": "publisher_status",
+      "status": "HARD_HOLD",
+      "evidence_required": "account-specific Inspire3 acceptance"
+    },
+    {
+      "id": "channel_terms",
+      "status": "HARD_HOLD",
+      "evidence_required": "social/website/email permitted-channel proof"
+    },
+    {
+      "id": "tracking_link",
+      "status": "HARD_HOLD",
+      "evidence_required": "issued account-linked earning URL"
+    },
+    {
+      "id": "attribution_terms",
+      "status": "HARD_HOLD",
+      "evidence_required": "cookie window, eligible orders and reversals"
+    },
+    {
+      "id": "commission_terms",
+      "status": "HARD_HOLD",
+      "evidence_required": "account-specific payout terms"
+    },
+    {
+      "id": "settlement_record",
+      "status": "HARD_HOLD",
+      "evidence_required": "real paid commission or Payhip fulfillment"
+    },
+    {
+      "id": "seller_checkout",
+      "status": "HARD_HOLD",
+      "evidence_required": "verified edition/cart/access"
+    },
+    {
+      "id": "buyer_price",
+      "status": "HARD_HOLD",
+      "evidence_required": "same-session final total"
+    },
+    {
+      "id": "refund_terms",
+      "status": "HARD_HOLD",
+      "evidence_required": "complete verified current legal conditions"
+    },
+    {
+      "id": "health_claims",
+      "status": "HARD_HOLD",
+      "evidence_required": "specific adequate evidence or exclude"
+    },
+    {
+      "id": "self_testimony",
+      "status": "HARD_HOLD",
+      "evidence_required": "no invented personal experience"
+    },
+    {
+      "id": "disclosure",
+      "status": "HARD_HOLD",
+      "evidence_required": "near-link plain-language commission statement"
+    },
+    {
+      "id": "consent",
+      "status": "HARD_HOLD",
+      "evidence_required": "privacy and partner permission"
+    },
+    {
+      "id": "qa_mobile",
+      "status": "HARD_HOLD",
+      "evidence_required": "browser verified 360/390/768/1440/1920"
+    },
+    {
+      "id": "qa_a11y",
+      "status": "HARD_HOLD",
+      "evidence_required": "keyboard/screenreader contrast/no-JS"
+    },
+    {
+      "id": "video_asset",
+      "status": "HARD_HOLD",
+      "evidence_required": "actual encoded rights-cleared 30–45s media"
+    },
+    {
+      "id": "tracking_impl",
+      "status": "HARD_HOLD",
+      "evidence_required": "Claude/QA approved no duplicate script"
+    },
+    {
+      "id": "release_approval",
+      "status": "HARD_HOLD",
+      "evidence_required": "founder explicit launch/merge permission"
+    }
+  ],
+  "creator_to_product_fit": [
+    {
+      "topic": "Change blindness",
+      "research_url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "asset_id": null,
+      "platform_post_url": null,
+      "landing_status": "PUBLISHED",
+      "message": "Missing large changes doesn't mean a broken brain",
+      "primary_action": "optional existing Focus Fieldbook",
+      "secondary_offer": "Zen12 optional only if approval verified"
+    },
+    {
+      "topic": "Mesmerism and Puységur",
+      "research_url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "asset_id": null,
+      "platform_post_url": null,
+      "landing_status": "PUBLISHED",
+      "message": "What the 1784 commission really tested",
+      "primary_action": "historical source and optional Fieldbook",
+      "secondary_offer": "Hypnosis Live only as separately vetted buyer guide"
+    },
+    {
+      "topic": "White bear / thought suppression",
+      "research_url": null,
+      "source_draft": "mind/r320/THE-BEAR-THAT-RETURNED-UNPUBLISHED.md",
+      "asset_id": null,
+      "platform_post_url": null,
+      "landing_status": "UNPUBLISHED",
+      "message": "The famous suppression effect happens after, not necessarily during",
+      "primary_action": "after editorial publishing, read source manuscript",
+      "secondary_offer": "Zen12 text-versus-video guide after commerce approval"
+    }
+  ],
+  "measurement": {
+    "kpi": "realized net revenue per 1000 qualified human sessions",
+    "status": "NOT_COMPUTABLE",
+    "required_events": [
+      "qualified_session",
+      "offer_view",
+      "cta_click",
+      "provider_confirmed_lead",
+      "merchant_confirmed_paid_order",
+      "affiliate_confirmed_commission",
+      "refund",
+      "fee",
+      "settled_net_revenue"
+    ],
+    "joins": "site: consent-permitted source/utm_campaign/utm_content; merchant: independently confirmed settlement only; do not infer merchant sales from affiliate_click",
+    "privacy": "do not append email, name, tokens, order IDs or sensitive thought content to UTMs; avoid third-party pixels or script duplication"
+  },
+  "experiment": {
+    "A": "independent text-only Zen12 buyer guide",
+    "B": "same buyer copy plus optional original 42s video treatment",
+    "media_status": "STORYBOARD_ONLY_NOT_PLAYABLE",
+    "hypothesis": "Optional film may improve verified paid conversion among qualified visitors; no assumed lift",
+    "primary_outcome": "settled net revenue per 1000 qualified human sessions",
+    "unit": "eligible visitor session",
+    "sample_warning": "Do not declare winner on tiny, nonrandom samples"
+  },
+  "note": "Public merchant sales claims and affiliate recruitment pages cannot authorize earning links. Product descriptions and seller guarantees are not legally verified customer terms."
+}
