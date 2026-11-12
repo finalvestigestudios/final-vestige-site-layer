@@ -40,6 +40,15 @@ EXPECTED_EVIDENCE_ROWS = 10
 REVISION_SENTINELS = (
     "2:17 p.m.", "$1,096,796.53", "Bohemia Spillway", "Acosta v.", "1991", "May 9, 1927", "$3,387,000", "Graham v. Jones",
 )
+# The Nov 12 07:43 revision corrected the USGS Peak-Flow File precision.
+# Earlier fingerprints shared every old sentinel, so they could falsely pass.
+# All markers must occur within ONE paragraph, not scattered across the post.
+PRECISION_CORRECTION_MARKERS = (
+    "Peak-Flow File lists 2,470,000",
+    "also discusses 2,472,000",
+    "recommends reporting approximately 2.47 million",
+    "estimated peak if flow had remained confined",
+)
 
 def local_asset_source(url):
     """Only original FV uploads or WordPress's image CDN proxy of those uploads."""
@@ -122,6 +131,11 @@ def inspect(page, width, out):
     photo_ok = all(found.values()) and len(photo_results) == 4
     revision_text = article.text_content(timeout=12000) or ""
     revision_sentinels = {token: token in revision_text for token in REVISION_SENTINELS}
+    precision_paragraphs = [" ".join(p.split()) for p in article.locator("p").all_text_contents()]
+    precision_correction_ok = any(
+        all(marker in p for marker in PRECISION_CORRECTION_MARKERS)
+        for p in precision_paragraphs
+    )
     sources = article.locator("h2#sources").first
     source_list = sources.locator("xpath=following-sibling::ul[1]")
     source_count = source_list.locator(":scope > li").count() if source_list.count() else 0
@@ -179,6 +193,7 @@ def inspect(page, width, out):
         "evidence_table_10_rows_including_header": bool(table_stats and table_stats["rows"] == EXPECTED_EVIDENCE_ROWS),
         "source_bibliography_42_entries": source_count == EXPECTED_SOURCES,
         "expected_editorial_revision_markers_present": all(revision_sentinels.values()),
+        "usgs_2026_11_12_precision_correction_present_in_one_paragraph": precision_correction_ok,
         "original_compensation_figure_present": chart_count == 1,
         "timeline_has_five_chronology_cards_and_four_source_links": bool(
             timeline_stats and timeline_stats["count"] == 5
@@ -221,7 +236,8 @@ def inspect(page, width, out):
             "overflowPx": overflow, "evidenceTable": table_stats,
             "originalTimeline": timeline_stats,
             "bibliographyEntryCount": source_count,
-            "editorialRevisionSentinels": revision_sentinels,
+            "usgsPrecisionCorrectionParagraphPresent": precision_correction_ok,
+        "editorialRevisionSentinels": revision_sentinels,
             "archivalImageChecks": found,
             "archivalImages": photo_results, "featuredImageOccurrences": hero_duplicates,
             "captured": captures, "consoleErrorCount": len(console_errors),
