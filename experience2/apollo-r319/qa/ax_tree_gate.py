@@ -80,6 +80,7 @@ def main():
                 if width==390 and mode=='js':
                     cta.evaluate('(n)=>{n.textContent="";n.removeAttribute("aria-label")}')
                     assert tree_audit(cdp)['unnamed'], 'Mutated empty link was not detected'
+                    cta.evaluate('(n)=>{n.textContent="Read the free Apollo 1 investigation"}')
                 if width in (390,1440) and mode in ('js','nojs'):
                     OUT.mkdir(parents=True,exist_ok=True)
                     pg.screenshot(path=str(OUT/f'r319-{width}-{mode}-ax.png'),full_page=True,animations='disabled')
