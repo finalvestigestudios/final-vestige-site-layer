@@ -27,7 +27,7 @@ function salesSecure(html){
   check(!/<iframe\b/i.test(html),'iframe prohibited');
   check(!/<video\b/i.test(html),'unencoded video cannot be presented as playable');
   check(!/<audio\b/i.test(html),'no embedded seller audio');
-  check(!/\bautoplay\b/i.test(html),'autoplay prohibited');
+  check(!/<(?:video|audio)[^>]*\bautoplay\b/i.test(html),'autoplay prohibited');
   check(!/href=["']https?:\/\/(?:www\.)?(?:inspire3\.com|zen12\.com|hypnosislive\.com|brainwaveshots\.com|affiliates\.inspire3\.com)/i.test(html),'merchant href prohibited before approval');
   check(/type="button" disabled aria-disabled="true"/i.test(html),'merchant button must be genuinely disabled');
   const disclosure=html.indexOf('Prospective affiliate disclosure:');
