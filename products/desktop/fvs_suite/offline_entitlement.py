@@ -20,6 +20,7 @@ from typing import Mapping
 from cryptography.exceptions import InvalidSignature
 from cryptography.hazmat.primitives.asymmetric.ed25519 import Ed25519PublicKey
 from .journal_io import read_regular_bytes
+from .entitlement_reader_privacy_r383 import read_private_entitlement
 
 DOMAIN = b"FinalVestigeLabs.entitlement.v1\x00"
 SCHEMA = "fvs.entitlement.v1"
@@ -86,15 +87,7 @@ def _read_signed_entitlement(source: str | Path) -> bytes:
     than trusting a separate is_file/stat/open sequence. Return only verified
     bytes to the signature validator; never echo private paths in GUI errors.
     """
-    try:
-        return read_regular_bytes(source, MAX_BYTES, "Entitlement file")
-    except ValueError as exc:
-        # The shared descriptor reader uses fixed, private-data-safe diagnostics.
-        if "exceeds" in str(exc):
-            raise EntitlementError("Entitlement file exceeds the size limit") from None
-        raise EntitlementError("Entitlement must be a stable, distinct regular file") from None
-    except OSError:
-        raise EntitlementError("Entitlement file is inaccessible or changed during verification") from None
+    return read_private_entitlement(source, MAX_BYTES, read_regular_bytes, EntitlementError)
 
 
 def verify_license(path: str | Path, product: str, *,
