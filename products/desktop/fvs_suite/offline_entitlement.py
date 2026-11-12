@@ -62,8 +62,10 @@ def _time(value: object, field: str) -> datetime:
         raise EntitlementError(f"{field} must be a canonical UTC timestamp")
     try:
         return datetime.strptime(value, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
-    except ValueError as exc:
-        raise EntitlementError(f"Invalid {field} UTC timestamp") from exc
+    except ValueError:
+        # Raise outside the handler: strptime's exception may contain input data.
+        pass
+    raise EntitlementError(f"Invalid {field} UTC timestamp")
 
 
 def _canonical_payload(data: dict) -> bytes:
@@ -105,12 +107,16 @@ def verify_license(path: str | Path, product: str, *,
     if not keys:
         raise EntitlementError("Premium entitlements are not activated in this pre-release build")
     data = _read_signed_entitlement(path)
+    malformed_document = False
     try:
         item = json.loads(data.decode("utf-8"), object_pairs_hook=_unique_fields,
                           parse_constant=lambda _: (_ for _ in ()).throw(
                               EntitlementError("Nonfinite entitlement field")))
-    except (UnicodeError, json.JSONDecodeError) as exc:
-        raise EntitlementError("Malformed entitlement document") from exc
+    except (UnicodeError, json.JSONDecodeError):
+        # JSONDecodeError.doc and UnicodeError.object can retain entire client files.
+        malformed_document = True
+    if malformed_document:
+        raise EntitlementError("Malformed entitlement document")
     if not isinstance(item, dict) or set(item) != FIELDS:
         raise EntitlementError("Unsupported or incomplete entitlement schema")
     for field in ("schema", "kid", "product", "license_id", "holder", "signature"):
@@ -137,18 +143,24 @@ def verify_license(path: str | Path, product: str, *,
     signature = item["signature"]
     if not SIGNATURE.fullmatch(signature):
         raise EntitlementError("Invalid entitlement signature format")
+    invalid_encoding = False
     try:
         raw_signature = base64.urlsafe_b64decode(signature + "==")
-    except (ValueError, binascii.Error) as exc:
-        raise EntitlementError("Invalid entitlement signature encoding") from exc
+    except (ValueError, binascii.Error):
+        invalid_encoding = True
+    if invalid_encoding:
+        raise EntitlementError("Invalid entitlement signature encoding")
     if len(raw_signature) != 64 or base64.urlsafe_b64encode(raw_signature).decode("ascii").rstrip("=") != signature:
         raise EntitlementError("Noncanonical entitlement signature")
     public_key = keys.get(item["kid"])
     if not isinstance(public_key, bytes) or len(public_key) != 32:
         raise EntitlementError("Unrecognized entitlement signing authority")
+    invalid_signature = False
     try:
         Ed25519PublicKey.from_public_bytes(public_key).verify(raw_signature, _canonical_payload(item))
-    except (InvalidSignature, ValueError) as exc:
-        raise EntitlementError("Entitlement signature failed verification") from exc
+    except (InvalidSignature, ValueError):
+        invalid_signature = True
+    if invalid_signature:
+        raise EntitlementError("Entitlement signature failed verification")
     return Entitlement(product=product, license_id=item["license_id"],
                        holder=holder, expires_at=end)
