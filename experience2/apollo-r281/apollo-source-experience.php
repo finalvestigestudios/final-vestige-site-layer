@@ -245,12 +245,12 @@ function fv_r281_render($attributes = []): string {
     // Targets the existing focusable first catalogue record; no extra tab stops, JS,
     // outbound commercial link, new source URL, or second investigation CTA.
     $s.='<p class="fv-r292__source-route"><a href="#'.$id.'-source-1">Skip to the NASA source catalogue (first record)</a></p></header>';
-    $s.='<nav class="fv-r281__rail" aria-label="Apollo 1 chronology'+$landmark_instance+'"><ol>';
+    $s.='<nav class="fv-r281__rail" aria-label="Apollo 1 chronology'.$landmark_instance.'"><ol>';
     foreach ($records as $index=>$r) {
         $point=$id.'-event-'.($index+1);
         $s.='<li><a href="#'.$point.'"><span class="fv-r281__rail-date">'.fv_r281_escape($r['when']).'</span><span>'.fv_r281_escape($r['title']).'</span></a></li>';
     }
-    $s.='</ol></nav><ol class="fv-r281__plates" aria-label="Apollo 1 evidence plates'+$landmark_instance+'">';
+    $s.='</ol></nav><ol class="fv-r281__plates" aria-label="Apollo 1 evidence plates'.$landmark_instance.'">';
     foreach ($records as $index=>$r) {
         $point=$id.'-event-'.($index+1);
         $s.='<li class="fv-r281__plate" id="'.$point.'" tabindex="-1"><article aria-labelledby="'.$point.'-heading"><p class="fv-r281__date"><time datetime="'.fv_r281_escape($r['date']).'">'.fv_r281_escape($r['when']).'</time></p>';
@@ -272,10 +272,10 @@ function fv_r281_render($attributes = []): string {
     // Do not silently flatten discrepant NASA dates into one unsupported claim.
     // Plain text is available without JS and in print; all source anchors are
     // direct official NASA destinations, with clear source-dependency labels.
-    $s.='</ol><aside class="fv-r281__reconciliation" aria-label="NASA source-date reconciliation'+$landmark_instance+'" data-fv-date-review="editorial-review-pending"><h3>Why NASA sources give different establishment dates</h3>';
+    $s.='</ol><aside class="fv-r281__reconciliation" aria-label="NASA source-date reconciliation'.$landmark_instance.'" data-fv-date-review="editorial-review-pending"><h3>Why NASA sources give different establishment dates</h3>';
     $s.='<p><strong>Unresolved source distinction:</strong> The Apollo 204 Review Board narrative dates its original oral authorization to January 27, 1967. A later NASA safety summary describes the Board as established on January 28. Both place its first Kennedy meeting on January 28. We preserve that distinction instead of calling two institutional descriptions independent corroboration.</p>';
     $s.='<h4>Document custody: four different dated actions</h4><p>These dates describe the Board\'s authority, meeting, memorandum and later confirmation. Its own 1967 narrative and proceedings are parts of the same investigation, not independent eyewitness corroboration.</p>';
-    $s.='<details class="fv-r291__authority-disclosure"><summary>Inspect all four dated Board authority records</summary><p class="fv-r291__disclosure-intro">Each entry identifies what the Board documented and what that record does not establish. Source links lead to NASA, not a commercial offer.</p><ol class="fv-r281__authority-ledger" aria-label="Board authority document chronology'+$landmark_instance+'">';
+    $s.='<details class="fv-r291__authority-disclosure"><summary>Inspect all four dated Board authority records</summary><p class="fv-r291__disclosure-intro">Each entry identifies what the Board documented and what that record does not establish. Source links lead to NASA, not a commercial offer.</p><ol class="fv-r281__authority-ledger" aria-label="Board authority document chronology'.$landmark_instance.'">';
     foreach ($authority_ledger as $index=>$entry) {
         $authority_point=$id.'-authority-'.($index+1);
         $s.='<li id="'.$authority_point.'" tabindex="-1"><p class="fv-r281__authority-date"><time datetime="'.fv_r281_escape($entry['date']).'">'.fv_r281_escape($entry['label']).'</time></p>';
@@ -294,7 +294,7 @@ function fv_r281_render($attributes = []): string {
         $s.='<p><a href="'.fv_r281_escape($source['url']).'" rel="noopener noreferrer">Read source at NASA</a></p></li>';
     }
     $s.='</ul></details><p>Original investigation and later NASA summaries are different records. Editorial reconciliation remains pending.</p></aside>';
-    $s.='<aside class="fv-r281__gallery" aria-label="Apollo source catalogue'+$landmark_instance+'"><h3>Inspect the document sources</h3><p>This is a text-only catalogue of three NASA records, not a photographic gallery or three independent eyewitness accounts. Review remains pending.</p><ul class="fv-r281__source-list">';
+    $s.='<aside class="fv-r281__gallery" aria-label="Apollo source catalogue'.$landmark_instance.'"><h3>Inspect the document sources</h3><p>This is a text-only catalogue of three NASA records, not a photographic gallery or three independent eyewitness accounts. Review remains pending.</p><ul class="fv-r281__source-list">';
     foreach ($records as $index=>$r) {
         // Every catalogue record has a stable target within this component instance.
         $source_point=$id.'-source-'.($index+1);
