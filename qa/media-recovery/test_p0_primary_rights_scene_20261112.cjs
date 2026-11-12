@@ -35,7 +35,7 @@ test('cannot claim rights approved without item review',()=>{
 test('cannot turn on caching globally',()=>{
  const x=copy();x.policy.no_cache=false;assert.equal(validate(x),false);
 });
-test('can't approve upscaled 1200 image',()=>{
+test('cannot approve upscaled 1200 image',()=>{
  const x=copy();x.records[0].conditional_960_no_upscale_px=[1200,800];assert.equal(validate(x),false);
 });
 test('duplicate slot fails 6-row coverage',()=>{
