@@ -2,7 +2,7 @@
 /* Offline-only auditor: never sends mail, creates posts or handles subscriber data. */
 const SELLERS=/\b(?:https?:\/\/)?(?:www\.)?(?:zen12\.com|hypnosislive\.com|inspire3\.com|brainwaveshots\.com)(?:\/|[?#\s]|$)/i;
 const PII=/(?:[?&](?:email|subscriber(?:_id)?|recipient|token|auth|user_id)=)|(?:[?&]utm_(?:content|term)=[^&\s]*(?:%40|@))/i;
-const BANNED=/\[\[(?:VALID_POSTAL_ADDRESS_REQUIRED|JETPACK_UNSUBSCRIBE_LINK_MUST_BE_VERIFIED|APPROVED_[A-Z_]+)\]\]/;
+const BANNED=/\[\[(?:VALID_POSTAL_ADDRESS_REQUIRED|JETPACK_UNSUBSCRIBE_LINK_MUST_BE_VERIFIED|APPROVED_[A-Z0-9_]+)\]\]/;
 const VALID_KIND=new Set(["native_editor_preview","received_mime"]);
 const REQUIRED_APPROVALS=["founder_final_send_approval","provider_confirmed_eligible_audience","publisher_postal_address_verified","unsubscribe_function_verified","genuine_jetpack_render_verified","issue_specific_copy_approved","send_toggle_off_during_review"];
 const MERCHANT_APPROVALS=["publisher_partner_accepted","email_channel_authorized","earning_url_issued","offer_guide_published_and_vetted","seller_terms_current","independent_claim_review_complete"];
