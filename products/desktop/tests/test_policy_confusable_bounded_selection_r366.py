@@ -258,10 +258,6 @@ class DeferredGlyphCuesR367(unittest.TestCase):
         self.assertNotIn("INTERNAL-XYZ", report)
         self.assertIn("U+0041->U+0391", report)
 
-if __name__ == "__main__":
-    unittest.main()
-
-
 # R368: exercise the bounded NFKC compatibility selector from the existing
 # mandatory Ubuntu/Windows normal and -OO Policy Delta test invocation.
 from fvs_suite.policy_compatibility_selection_r368 import earliest_nfkc_pairs
@@ -416,3 +412,7 @@ class BoundedCompatibilityR368(unittest.TestCase):
         self.assertIn("U+2469", index)
         self.assertIn("Owner: NEW", diff)
         self.assertIn("human review", index.lower())
+
+
+if __name__ == "__main__":
+    unittest.main()
