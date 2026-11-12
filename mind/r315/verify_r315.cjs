@@ -36,7 +36,7 @@ check('revenue classification',()=>{assert.equal(matrix.money.state,'NOT COMPUTA
 check('caption timings exactly 42 seconds',()=>{assert.ok(vtt.startsWith('WEBVTT'));const times=[...vtt.matchAll(/(\d\d:\d\d:\d\d\.\d{3}) --> (\d\d:\d\d:\d\d\.\d{3})/g)];assert.equal(times.length,6);assert.equal(times[0][1],'00:00:00.000');assert.equal(times.at(-1)[2],'00:00:42.000');for(let i=1;i<times.length;i++)assert.equal(times[i-1][2],times[i][1]);});
 check('article core source accuracy witnesses',()=>{for(const z of ['Five reported','eight reported','one reported mixed','g = 0.40','not a finding established','not a product review'])assert.ok(article.includes(z),'missing: '+z);});
 check('no external active merchant links even in research hub',()=>{for(const h of [a,b,hub])assert.ok(!merchantLinks.test(h));});
-check('near-link commission disclosure follows commercial heading',()=>{for(const h of [a,b,hub]){const p=h.indexOf('class="disclose'); const btn=h.indexOf('disabled aria-disabled="true"');assert.ok(p>0 && btn>p && btn-p<1500)}});
+check('near-link commission disclosure follows commercial heading',()=>{for(const h of [a,b,hub]){const p=h.search(/class="disclos(?:e|ure)/); const btn=h.indexOf('disabled aria-disabled="true"');assert.ok(p>0 && btn>p && btn-p<1500)}});
 check('WCAG static constructs present',()=>{for(const h of [a,b,hub]){assert.match(h,/<main id=/);assert.match(h,/:focus-visible/);assert.match(h,/prefers-reduced-motion/);assert.match(h,/@media\(max-width:/);}});
 const mutations=[
 '<script src="https://example.com/a.js"></script>','<iframe src="https://example.com"></iframe>','<form action="/new-list"></form>',
