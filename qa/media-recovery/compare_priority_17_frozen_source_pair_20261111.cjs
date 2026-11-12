@@ -103,6 +103,32 @@ function comparePrioritySourceBoundVisualPair(pair){
      b.dom_alt!==bound.frozen_alt||a.dom_alt!==bound.frozen_alt)
    return hold('FROZEN_STORED_URL_OR_ALT_MISMATCH',slot);
  }
+ // Bind actual decoded selected-resource geometry to the original WordPress
+ // media. Even two mutually consistent, same-URL captures may share the WRONG
+ // image crop (synthetic Vasa 4:3 rather than its frozen ~3:2 source) and
+ // otherwise yield a misleading 76% transfer saving.
+ for(const slot of pair.expected_slots){
+  const bound=sourceRow(slot),native=bound.native_media_dimensions_px;
+  if(!Array.isArray(native)||native.length!==2||
+     native.some(n=>!Number.isSafeInteger(n)||n<=0))
+   return hold('FROZEN_NATIVE_DIMENSIONS_UNVERIFIED',slot);
+  const ratio=native[0]/native[1];
+  for(const img of [before.get(slot),after.get(slot)]){
+   const w=img.decoded_selected_physical_width;
+   const h=img.decoded_selected_physical_height;
+   if(!Number.isSafeInteger(w)||!Number.isSafeInteger(h)||w<=0||h<=0||
+      !Number.isSafeInteger(img.natural_width)||
+      !Number.isSafeInteger(img.natural_height)||
+      img.natural_width<=0||img.natural_height<=0)
+    return hold('SELECTED_RESOURCE_GEOMETRY_NOT_PROVEN',slot);
+   if(w>native[0]||h>native[1])
+    return hold('SELECTED_RESOURCE_EXCEEDS_FROZEN_NATIVE_PIXELS',slot);
+   // Encoder rounding permitted; changed crop/framing is not silently allowed.
+   if(Math.abs((w/h)/ratio-1)>0.025||
+      Math.abs((img.natural_width/img.natural_height)/ratio-1)>0.025)
+    return hold('SELECTED_RESOURCE_FROZEN_ASPECT_MISMATCH',slot);
+  }
+ }
  // Other frozen inline slots on the article are not represented by this pair.
  // Never promote any measured subset to a site-wide, full-article or CWV claim.
  const result=compareColdPairVisualParity(pair);
