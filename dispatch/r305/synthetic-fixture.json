@@ -70,7 +70,9 @@
       "verified_attribution": true,
       "order_ref": "ORDER-SYNTHETIC-01",
       "gross_cents": 1600,
-      "fees_cents": 120
+      "fees_cents": 120,
+      "customer_ref": "CUSTOMER-SYNTHETIC-01",
+      "customer_ref_verified": true
     },
     {
       "type": "merchant_refund",
