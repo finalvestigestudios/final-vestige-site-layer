@@ -16,7 +16,7 @@ from pathlib import Path
 
 SCHEMA = 'fv-preparedness-r308-shelter-fork-custody-v1'
 PINNED_R307_PATH = 'preparedness/tools/r307_frozen_normalization_proof_hold.py'
-PINNED_R307_BLOB = '028f890acd0660f3448d113a19ae86ffc0b63b9c'
+PINNED_R307_BLOB = '057307e4d8696e08308de77d36a95b5ef1d44477'
 R307_HEAD = '6a8de471668f37f6dbaffa21d52d0abf6290e55e'
 FROZEN_SHELTER_HEAD = '5daeaf2dd5ab71806a6b73c91edfb1d8df5da976'
 CONTINUATION_HEAD = 'ac8625faf30dd5538fadc31e06cb5a2cea1defae'
