@@ -1,0 +1,23 @@
+# Caernarvon 1927 — revision-specific visual-QA safeguard (12 November 2026, ~08:31 Pacific)
+
+**Owner:** Investigations #1463. **Release dependency:** Site QA #1589. **Article:** WordPress post #2151, *The Levee They Blew on Purpose* (unpublished). **Scope:** two read-only inspection tools, *not* the WordPress manuscript, site template, homepage, or a publication.
+
+## Concrete release-testing defect
+
+The authenticated WordPress draft was corrected at site-local `2026-11-12T07:43:20`, and its independently recorded raw Gutenberg SHA-1 is `e89879d2b34a53de75d04f2a92bbab832de5aaf3` (81 blocks; 42 bibliography items). The correction explicitly distinguishes the USGS Peak-Flow File's **2,470,000 ft³/s** from another historically published **2,472,000 ft³/s**, notes the USGS recommendation to round to **approximately 2.47 million**, and labels the May Arkansas City value hypothetical rather than observed. Direct-source ledger: [Nov 12 USGS precision correction](./caernarvon-1927-arkansas-city-usgs-precision-correction-2026-11-12.md).
+
+**Pre-existing risk:** Both read-only preview inspectors contained older revision sentinels (`2:17 p.m.`, `Bohemia Spillway`, `Acosta v.`, etc.) that were already present in the superseded November 11 revision. The Python inspector's `--sha` argument was explicitly **declarative** and not a cryptographic hash calculated from browser content. Therefore a visually rendered **older preview could pass those revision-marker tests** despite a correctly typed new SHA, creating a risk of false publication readiness. This finding does **not** say either inspector was executed or falsely passed in production.
+
+## Repair, source controlled and independently read back
+
+1. [Playwright preview inspector](./tools/inspect_wp_draft_2151.py) — commit `081bf65d8e2d39d68c9e124c9d2c933a4017d07c`. Adds the explicit `usgs_2026_11_12_precision_correction_present_in_one_paragraph` check and reports its boolean. It requires all four text fragments **within one paragraph**: “Peak-Flow File lists 2,470,000”; “also discusses 2,472,000”; “recommends reporting approximately 2.47 million”; and “estimated peak if flow had remained confined.”
+2. [Editor-browser DevTools inspector](./tools/qa_browser_console_2151.js) — commits `1efcd84501b083685d4fe329decb72d1e92f0bb0` and `3493bcec6482c9c9dfe0340383bde6e4a45180a1` (whitespace-regex correction). Adds the identical one-paragraph release check and includes it in the boolean gate and sanitized evidence report. The final source has proper JavaScript whitespace normalization `/\\s+/g`.
+3. **Readback:** Retrieved both edited GitHub files through the GitHub connector, verified the new named check appears in both, and checked the source contains the intended text normalization. The exact four fragments were checked against the latest authenticated WordPress paragraph; **all four occur together exactly once**. Removing “also discusses 2,472,000” from that paragraph makes the predicate fail in a source-text simulation.
+
+## Scope and remaining blockers
+
+This is a **source-level regression repair, not an execution of the inspectors against an authenticated browser**. The paragraph marker detects this particular revision but **cannot cryptographically prove the entire live Gutenberg SHA**. The Site QA owner must still independently compare the current authenticated post digest, execute actual editor-authenticated production-theme checks and capture inspectable screenshots at **390px and 1440px**, including navigation, text legibility, featured-photo duplication, all four loaded NOAA/LOC images, source links, responsive comparison table and original graphics. The other outstanding gate is anonymous ordinary-browser checking of the technical Army Corps/USGS documents or rigorously sourced claim-equivalent replacements; crawler HTTP 403 does not prove reader failure.
+
+Latest read-only WordPress media inventory: NOAA #2148 (1821×1190); Library of Congress #2255 (1024×822), #2202 (506×640), and #2149 (1024×805). Each retains a locally hosted `/wp-content/uploads/` URL, descriptive alt text, provenance and caption/credit metadata. This does **not** establish visual rendering or rights beyond the underlying documented catalog advisories. Live public Journal still lists **66** investigations. [Editorial Standards](https://finalvestige.com/editorial-standards/) still require source provenance, explicit uncertainty and responsible image practice.
+
+**Release decision:** HOLD. No WordPress write, no first publication, no subscriber email, no Jetpack social sharing, no Grok distribution, no unrelated-agent edits, no new paid services. A future preview PASS may count only after actual browser execution and separate editorial review.
