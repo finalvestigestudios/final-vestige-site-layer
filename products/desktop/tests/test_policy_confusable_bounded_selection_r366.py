@@ -125,5 +125,138 @@ class BoundedCitationsR366(unittest.TestCase):
             self.assertEqual(render(values), reference)
 
 
+
+# R367 extends the already mandatory R366 Ubuntu/Windows source gate; no
+# additional workflow step or artifact privilege is introduced.
+from fvs_suite import policy_confusables as _r367_source
+
+
+def _r367_hunk(line, old="PAY A\n", new="PAY А\n"):
+    return {"removed_sources": [(line, old)],
+            "added_sources": [(line, new)]}
+
+
+class DeferredGlyphCuesR367(unittest.TestCase):
+    def test_500_later_hunks_only_render_16_glyph_cues(self):
+        with patch.object(_r367_source, "_changes",
+                          wraps=_r367_source._changes) as tracked:
+            report = render([_r367_hunk(i) for i in range(1, 501)])
+        self.assertEqual(tracked.call_count, 16)
+        self.assertEqual(report.count("Look-alike hunk"), 16)
+        self.assertIn("hunk 016: before L16", report)
+        self.assertNotIn("hunk 017:", report)
+        self.assertIn("+484 additional look-alike pair(s) omitted", report)
+
+    def test_small_capacity_skips_unneeded_glyph_cues(self):
+        with patch.object(_r367_source, "_MAX_PAIRS", 2), patch.object(
+                _r367_source, "_changes",
+                wraps=_r367_source._changes) as tracked:
+            report = render([_r367_hunk(i) for i in range(1, 52)])
+        self.assertEqual(tracked.call_count, 2)
+        self.assertEqual(report.count("Look-alike hunk"), 2)
+        self.assertIn("+49 additional look-alike pair(s) omitted", report)
+
+    def test_zero_capacity_never_formats_glyph_names(self):
+        with patch.object(_r367_source, "_MAX_PAIRS", 0), patch.object(
+                _r367_source, "_changes",
+                wraps=_r367_source._changes) as tracked:
+            report = render([_r367_hunk(i) for i in range(1, 31)])
+        self.assertEqual(tracked.call_count, 0)
+        self.assertNotIn("before L", report)
+        self.assertIn("+30 additional look-alike pair(s) omitted", report)
+
+    def test_unchanged_sources_neither_count_nor_format(self):
+        with patch.object(_r367_source, "_changes",
+                          wraps=_r367_source._changes) as tracked:
+            report = render([_r367_hunk(i, "PAY A\n", "PAY A\n")
+                             for i in range(1, 24)])
+        self.assertEqual(tracked.call_count, 0)
+        self.assertEqual(report, "")
+
+    def test_unchanged_sources_do_not_consume_display_budget(self):
+        values = [_r367_hunk(i, "PAY A\n", "PAY A\n")
+                  for i in range(1, 30)]
+        values += [_r367_hunk(i) for i in range(30, 49)]
+        report = render(values)
+        self.assertIn("before L30", report)
+        self.assertIn("before L45", report)
+        self.assertIn("+3 additional look-alike pair(s) omitted", report)
+
+    def test_lowercase_cyrillic_character_name(self):
+        report = render([_r367_hunk(1, "code o\n", "code о\n")])
+        self.assertIn("LATIN SMALL LETTER O", report)
+        self.assertIn("CYRILLIC SMALL LETTER O", report)
+
+    def test_greek_character_name(self):
+        report = render([_r367_hunk(1, "A\n", "Α\n")])
+        self.assertIn("GREEK CAPITAL LETTER ALPHA", report)
+        self.assertIn("LATIN CAPITAL LETTER A", report)
+
+    def test_ambiguous_source_not_counted(self):
+        ambiguous = {"removed_sources": [(1, "A"), (2, "А")],
+                     "added_sources": [(1, "Α")]}
+        report = render([ambiguous, _r367_hunk(3)])
+        self.assertEqual(report.count("Look-alike hunk"), 1)
+        self.assertNotIn("additional look-alike", report)
+
+    def test_long_source_is_not_citable(self):
+        report = render([_r367_hunk(1, "A" * 4097, "А" * 4097),
+                         _r367_hunk(2)])
+        self.assertEqual(report.count("Look-alike hunk"), 1)
+        self.assertNotIn("before L1", report)
+        self.assertIn("before L2", report)
+
+    def test_bad_last_hunk_suppresses_all_citations(self):
+        bad = {"removed_sources": [(45, "A")],
+               "added_sources": [(0, "А")]}
+        self.assertEqual(render([_r367_hunk(i) for i in range(1, 45)]
+                                + [bad]), "")
+
+    def test_private_originals_never_echo_or_mutate(self):
+        private = [_r367_hunk(i, f"customer-7781 A {i}\n",
+                              f"customer-7781 А {i}\n")
+                   for i in range(1, 45)]
+        snapshot = repr(private)
+        report = render(private)
+        self.assertNotIn("customer-7781", report)
+        self.assertEqual(repr(private), snapshot)
+
+    def test_displayed_citations_in_physical_order(self):
+        report = render([_r367_hunk(i) for i in range(1, 70)])
+        positions = [report.index(f"before L{i};") for i in range(1, 17)]
+        self.assertEqual(positions, sorted(positions))
+        self.assertNotIn("before L17;", report)
+
+    def test_200_matches_one_hunk_retain_earliest(self):
+        values = {"removed_sources": [(i, f"Rule {i:03d} A\n")
+                                     for i in range(1, 201)],
+                  "added_sources": [(i, f"Rule {i:03d} А\n")
+                                    for i in range(1, 201)]}
+        report = render([values])
+        self.assertEqual(report.count("Look-alike hunk"), 16)
+        self.assertIn("before L16;", report)
+        self.assertIn("+184 additional look-alike pair(s) omitted", report)
+
+    def test_no_autonomous_legal_claim(self):
+        report = render([_r367_hunk(1)])
+        self.assertIn("NOT a comprehensive confusable scan", report)
+        self.assertIn("human review", report)
+        self.assertIn("original files and exact source bytes", report)
+
+    def test_all_supported_substitutions_have_cues(self):
+        for nonlatin, latin in _r367_source._TO_LATIN.items():
+            with self.subTest(character=ord(nonlatin)):
+                self.assertEqual(_r367_source._skeleton(nonlatin),
+                                 _r367_source._skeleton(latin))
+                self.assertTrue(_r367_source._changes(latin, nonlatin))
+                self.assertTrue(_r367_source._changes(nonlatin, latin))
+
+    def test_private_text_not_in_rendered_glyph_cue(self):
+        report = render([_r367_hunk(1, "INTERNAL-XYZ A",
+                                    "INTERNAL-XYZ Α")])
+        self.assertIn("before L1; after L1", report)
+        self.assertNotIn("INTERNAL-XYZ", report)
+        self.assertIn("U+0041->U+0391", report)
+
 if __name__ == "__main__":
     unittest.main()
