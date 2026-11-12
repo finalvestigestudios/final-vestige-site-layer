@@ -1,0 +1,20 @@
+{
+  "status": "HOLD_UNSENT",
+  "issue": 4,
+  "findings": [
+    "founder_final_campaign_approval_not_asserted",
+    "publisher_address_independently_unverified",
+    "recipient_consent_independently_unverified",
+    "working_optout_independently_unverified"
+  ],
+  "send_authorized": false,
+  "source": "local_untrusted_eml",
+  "review": {
+    "has_plain": true,
+    "has_html": true,
+    "contains_first_party_cta": true,
+    "commercial_slot": false,
+    "list_unsubscribe_header_observed": true
+  },
+  "note": "Structural findings, NOT proof of email delivery, recipient eligibility or legal compliance."
+}
