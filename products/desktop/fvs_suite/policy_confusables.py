@@ -170,9 +170,20 @@ def render_local_confusable_evidence(hunks: list[dict]) -> str:
                 continue  # A duplicated look-alike has no unique citation.
             old_line, old_text = prior[0]
             new_line, new_text = following[0]
+            # A unique pair of exact-str source rows in the same skeleton
+            # group has a genuine substitution iff its originals differ:
+            # the skeleton maps one codepoint to exactly one codepoint.
+            # Count every such pair, including omitted late candidates, but
+            # defer costly Unicode names/formatting until it can be displayed.
+            if old_text == new_text:
+                continue
+            match_count += 1
+            if (_MAX_PAIRS <= 0 or
+                    (len(selected) == _MAX_PAIRS and
+                     (hunk_no, old_line, new_line) >= selected[-1][:3])):
+                continue
             cue = _changes(old_text, new_text)
             if cue:
-                match_count += 1
                 _retain_earliest_pair(
                     selected, (hunk_no, old_line, new_line, cue), _MAX_PAIRS)
     if not match_count:
