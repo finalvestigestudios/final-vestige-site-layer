@@ -14,7 +14,7 @@ const FV_R281_FREE = 'https://finalvestige.com/2026/08/20/the-hatch-opened-inwar
 const FV_R281_STYLE = 'fv-apollo-evidence-r281';
 // R294: stylesheet version is tied to reviewed CSS bytes (sha256 prefix). Keep
 // WordPress's enqueued link and the no-preflight body fallback cache-consistent.
-const FV_R294_STYLE_VERSION = 'r298-f5505d2c9594';
+const FV_R294_STYLE_VERSION = 'r307-c85b6b2d9dd9';
 // Staging-only digest of corrected chronology, pending independent historical editorial
 // approval. It detects accidental data drift; it does not certify publication.
 const FV_R287_STAGING_EVENTS_SHA256 = '2a473986ed2e9c8ca98d19fb5ce0d32fea62d060d9dadcd2fa4613167eba36ef';
@@ -311,7 +311,7 @@ function fv_r281_render($attributes = []): string {
     // The three native fragment routes point to the EXISTING catalogue below.
     // Closed by default to avoid adding friction; opens with keyboard/touch/no-JS.
     // No new external requests, paid CTA, tracking or source assertions are added.
-    $s.='</ol><footer class="fv-r281__next" data-fv-funnel-step="evidence-to-investigation"><p>Continue with the investigation, including the original evidence and its uncertainties. Detailed NASA source custody remains available below.</p>';
+    $s.='</ol><footer class="fv-r281__next" id="'.$id.'-continue" tabindex="-1" data-fv-funnel-step="evidence-to-investigation"><p>Continue with the investigation, including the original evidence and its uncertainties. Detailed NASA source custody remains available below.</p>';
     $s.='<details class="fv-r281__drawer fv-r306__source-receipt" data-fv-custody-trail="three-documentary-records"><summary>Check the three NASA source records before continuing<span class="fv-r298__sr-only">'.fv_r281_escape($landmark_instance).'</span></summary><p>These are three institutional documentary records, not three independent witnesses. None establishes a precise ignition location, and none certifies commercial image rights.</p><ol>';
     foreach ($records as $index=>$r) {
         $source_point=$id.'-source-'.($index+1);
@@ -355,7 +355,11 @@ function fv_r281_render($attributes = []): string {
         $s.='<p><strong>FV reference key:</strong> '.fv_r281_escape($r['source_id']).' (editorial identifier, not a NASA archive number)</p>';
         $s.='<a href="'.fv_r281_escape($r['source_url']).'" rel="noopener noreferrer" data-fv-link-purpose="official-evidence-source" data-fv-conversion-kind="noncommercial-source-reference">Inspect '.fv_r281_escape($r['source_name']).' (NASA)</a>';
         $s.='<p>'.fv_r281_escape($r['source_dependency']).'</p>';
-        $s.='<p class="fv-r281__source-return"><a href="#'.$event_point.'">Return to evidence: '.fv_r281_escape($r['title']).'</a></p></li>';
+        // R307: a source-custody excursion must return to the SAME Atlas instance's
+        // existing decision point, without duplicating the CTA or generating
+        // analytics. The target is focusable, requiring no client-side script.
+        $s.='<p class="fv-r281__source-return"><a href="#'.$event_point.'">Return to evidence: '.fv_r281_escape($r['title']).'</a></p>';
+        $s.='<p class="fv-r307__source-continuation"><a class="fv-r307__continue-return" href="#'.$id.'-continue">Return to free-investigation continuation<span class="fv-r298__sr-only"> after '.fv_r281_escape($r['source_name']).$landmark_instance.'</span></a></p></li>';
     }
     $s.='</ul><p>No archive image, geolocation, ownership or commercial rights are inferred from these source links. NASA does not endorse this website.</p></aside>';
     $s.='</section>';
