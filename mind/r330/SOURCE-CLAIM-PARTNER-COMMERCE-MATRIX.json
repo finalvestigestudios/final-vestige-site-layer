@@ -1,0 +1,539 @@
+{
+  "schema": "fv-mind-claim-custody-v1",
+  "date_checked": "2026-11-12",
+  "status": "DRAFT_HARD_HOLD",
+  "sources": [
+    {
+      "id": "study-choice-2005",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/16210542/",
+      "level": "peer-reviewed-abstract",
+      "scope": "choice-blindness face-choice manipulation; no brand evidence",
+      "checked_at": "2026-11-12",
+      "full_text_validated": false
+    },
+    {
+      "id": "study-choice-2006",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17049881/",
+      "level": "peer-reviewed-abstract",
+      "scope": "post hoc introspective report analysis",
+      "checked_at": "2026-11-12",
+      "full_text_validated": false
+    },
+    {
+      "id": "study-market-2010",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/20637455/",
+      "level": "peer-reviewed-abstract",
+      "scope": "jam/tea swaps; trial-level not population-level detection",
+      "checked_at": "2026-11-12",
+      "full_text_validated": false
+    },
+    {
+      "id": "study-sweden-2013",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23593244/",
+      "level": "peer-reviewed-abstract",
+      "scope": "political questionnaire manipulation; potential willingness not vote count",
+      "checked_at": "2026-11-12",
+      "full_text_validated": false
+    },
+    {
+      "id": "study-argentina-2017",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/28196093/",
+      "level": "peer-reviewed-abstract",
+      "scope": "did not find changed voting intentions",
+      "checked_at": "2026-11-12",
+      "full_text_validated": false
+    },
+    {
+      "id": "study-attitudes-2018",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30148387/",
+      "level": "peer-reviewed-abstract",
+      "scope": "attitude shifts in two experiments; survey outcomes not elections",
+      "checked_at": "2026-11-12",
+      "full_text_validated": false
+    },
+    {
+      "id": "review-preference-method-2013",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3566335/",
+      "level": "methodological-review",
+      "scope": "free-choice preference paradigm distinct from choice blindness",
+      "checked_at": "2026-11-12",
+      "full_text_validated": false
+    },
+    {
+      "id": "seller-inspire3",
+      "url": "https://inspire3.com/",
+      "level": "official-seller-catalog",
+      "scope": "brand list; broad benefit pitches not independent substantiation",
+      "checked_at": "2026-11-12",
+      "full_text_validated": true
+    },
+    {
+      "id": "seller-zen12-about",
+      "url": "https://zen12.com/about",
+      "level": "official-seller-description",
+      "scope": "12-minute sessions; 12 levels 4 styles; mechanism claims rejected",
+      "checked_at": "2026-11-12",
+      "full_text_validated": true
+    },
+    {
+      "id": "seller-zen12-checkout",
+      "url": "https://zen12.com/getstarted",
+      "level": "official-seller-checkout",
+      "scope": "12 levels 48 MP3s; dated $87.99 total 2026-11-12; seller refund representation",
+      "checked_at": "2026-11-12",
+      "full_text_validated": true
+    },
+    {
+      "id": "seller-total-focus",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "level": "official-seller-product",
+      "scope": "33-min 47-MB MP3, dated displayed $24.44; efficacy excluded",
+      "checked_at": "2026-11-12",
+      "full_text_validated": true
+    },
+    {
+      "id": "seller-focus-shot",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "level": "official-seller-product",
+      "scope": "15-/30-minute recordings; dated displayed $17.99; efficacy excluded",
+      "checked_at": "2026-11-12",
+      "full_text_validated": true
+    },
+    {
+      "id": "publisher-recruitment",
+      "url": "https://affiliates.inspire3.com/",
+      "level": "official-affiliate-marketing",
+      "scope": "public signup page; cannot verify FV account/channel/creatives/payout",
+      "checked_at": "2026-11-12",
+      "full_text_validated": true
+    },
+    {
+      "id": "ftc-endorsements",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "level": "regulator-guidance",
+      "scope": "adjacent clear material connection disclosure",
+      "checked_at": "2026-11-12",
+      "full_text_validated": true
+    },
+    {
+      "id": "ftc-health",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "level": "regulator-guidance",
+      "scope": "specific benefit claims require appropriate evidence",
+      "checked_at": "2026-11-12",
+      "full_text_validated": true
+    },
+    {
+      "id": "fv-archive",
+      "url": "https://finalvestige.com/archive/",
+      "level": "live-first-party",
+      "scope": "six historical themes; snapshot counts not current total",
+      "checked_at": "2026-11-12",
+      "full_text_validated": true
+    },
+    {
+      "id": "fv-puysegur",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "level": "live-first-party",
+      "scope": "153 active master source rows, 16 case dossiers at verification",
+      "checked_at": "2026-11-12",
+      "full_text_validated": true
+    },
+    {
+      "id": "fv-focus",
+      "url": "https://finalvestige.com/focus/",
+      "level": "live-first-party",
+      "scope": "52-page free fieldbook existing signup; signup confirmation not proved",
+      "checked_at": "2026-11-12",
+      "full_text_validated": true
+    },
+    {
+      "id": "fv-journal",
+      "url": "https://finalvestige.com/blog/",
+      "level": "live-first-party",
+      "scope": "editorial journal route",
+      "checked_at": "2026-11-12",
+      "full_text_validated": false
+    },
+    {
+      "id": "github-mind-source",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "level": "internal-owner-spec",
+      "scope": "hub scope and release governance",
+      "checked_at": "2026-11-12",
+      "full_text_validated": false
+    },
+    {
+      "id": "github-conversion-source",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "level": "internal-conversion-spec",
+      "scope": "net revenue/1000 qualified-human sessions contract",
+      "checked_at": "2026-11-12",
+      "full_text_validated": false
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "text": "Choice blindness involves choice/outcome mismatch after covert substitution",
+      "disposition": "supported-in-specific-experiments",
+      "source_ids": [
+        "study-choice-2005"
+      ],
+      "qualification": "Not evidence every reason is fabricated"
+    },
+    {
+      "id": "C02",
+      "text": "Jam/tea study detected no more than one third of manipulated trials",
+      "disposition": "supported-in-study-abstract",
+      "source_ids": [
+        "study-market-2010"
+      ],
+      "qualification": "Trial denominator, not all shoppers"
+    },
+    {
+      "id": "C03",
+      "text": "2013 Swedish political survey recorded no more than 22% manipulated-answer detection",
+      "disposition": "supported-in-study-abstract",
+      "source_ids": [
+        "study-sweden-2013"
+      ],
+      "qualification": "Not real vote switching"
+    },
+    {
+      "id": "C04",
+      "text": "2017 Argentina study did not find voting-intention changes",
+      "disposition": "supported-contrary-finding",
+      "source_ids": [
+        "study-argentina-2017"
+      ],
+      "qualification": "Must retain in coverage"
+    },
+    {
+      "id": "C05",
+      "text": "2018 studies observed attitude rating shifts over measured follow-up",
+      "disposition": "supported-in-study-abstract",
+      "source_ids": [
+        "study-attitudes-2018"
+      ],
+      "qualification": "Not general mind control"
+    },
+    {
+      "id": "C06",
+      "text": "Zen12 about page states 12-minute sessions 12 levels four styles",
+      "disposition": "seller-format",
+      "source_ids": [
+        "seller-zen12-about"
+      ],
+      "qualification": "Package/formats reconfirm at final checkout"
+    },
+    {
+      "id": "C07",
+      "text": "Zen12 checkout stated 48 MP3s complete course",
+      "disposition": "seller-format",
+      "source_ids": [
+        "seller-zen12-checkout"
+      ],
+      "qualification": "Not validated by independent purchase"
+    },
+    {
+      "id": "C08",
+      "text": "Zen12 checkout displayed $87.99 total Nov 12",
+      "disposition": "dated-price-observation",
+      "source_ids": [
+        "seller-zen12-checkout"
+      ],
+      "qualification": "Taxes/location/offers may change; not evergreen"
+    },
+    {
+      "id": "C09",
+      "text": "Zen12 promises one-year or money-back guarantee",
+      "disposition": "seller-policy-claim",
+      "source_ids": [
+        "seller-zen12-checkout"
+      ],
+      "qualification": "Actual terms and refund performance unverified"
+    },
+    {
+      "id": "C10",
+      "text": "Zen12 12 minutes is equivalent to an hour of meditation",
+      "disposition": "excluded-unsubstantiated-benefit",
+      "source_ids": [
+        "seller-zen12-about"
+      ],
+      "qualification": "No product-specific independent comparative study confirmed"
+    },
+    {
+      "id": "C11",
+      "text": "Brainwave sounds automatically shift states or boost focus",
+      "disposition": "excluded-unsubstantiated-mechanism",
+      "source_ids": [
+        "seller-zen12-about",
+        "seller-focus-shot"
+      ],
+      "qualification": "Do not repeat as independent scientific finding"
+    },
+    {
+      "id": "C12",
+      "text": "Hypnosis Live Total Focus 33min 47 MB, advertised $24.44",
+      "disposition": "seller-format-and-dated-price",
+      "source_ids": [
+        "seller-total-focus"
+      ],
+      "qualification": "Different offer; excludes efficacy promise"
+    },
+    {
+      "id": "C13",
+      "text": "Brainwave Focus Shot sells 15/30-minute formats",
+      "disposition": "seller-format",
+      "source_ids": [
+        "seller-focus-shot"
+      ],
+      "qualification": "Different offer, not Zen12 equivalence"
+    },
+    {
+      "id": "C14",
+      "text": "Published Puységur archive is evidence of eighteenth-century claims",
+      "disposition": "supported-historical-archive",
+      "source_ids": [
+        "fv-puysegur"
+      ],
+      "qualification": "Not proof of magnetic force"
+    },
+    {
+      "id": "C15",
+      "text": "Focus is free existing 52-page fieldbook and Dispatch option",
+      "disposition": "live-first-party",
+      "source_ids": [
+        "fv-focus"
+      ],
+      "qualification": "Delivery, confirmation, attribution separately unverified"
+    },
+    {
+      "id": "C16",
+      "text": "Public Inspire3 affiliate recruitment establishes FV eligibility",
+      "disposition": "blocked-unsupported",
+      "source_ids": [
+        "publisher-recruitment"
+      ],
+      "qualification": "Requires account-specific confirmation"
+    },
+    {
+      "id": "C17",
+      "text": "Personalized tracked earning link is valid",
+      "disposition": "blocked-no-credential",
+      "source_ids": [
+        "publisher-recruitment"
+      ],
+      "qualification": "No authorized URL in repository"
+    },
+    {
+      "id": "C18",
+      "text": "FV may claim actual paid affiliate commission or realized revenue",
+      "disposition": "blocked-no-payment-proof",
+      "source_ids": [],
+      "qualification": "No approved partner sales ledger"
+    },
+    {
+      "id": "C19",
+      "text": "Material connection disclosure must be clear and close to endorsement",
+      "disposition": "regulatory-guidance",
+      "source_ids": [
+        "ftc-endorsements"
+      ],
+      "qualification": "Proposed language adjacent to disabled control"
+    },
+    {
+      "id": "C20",
+      "text": "Efficacy and health benefits require relevant substantiation",
+      "disposition": "regulatory-guidance",
+      "source_ids": [
+        "ftc-health"
+      ],
+      "qualification": "Seller pitches are not independent support"
+    },
+    {
+      "id": "C21",
+      "text": "Choice blindness directly proves branded hypnosis/meditation audio efficacy",
+      "disposition": "excluded-category-error",
+      "source_ids": [
+        "study-choice-2005",
+        "seller-zen12-about"
+      ],
+      "qualification": "Different intervention and endpoints"
+    },
+    {
+      "id": "C22",
+      "text": "Text+video variant outconverts text-only",
+      "disposition": "hypothesis-only",
+      "source_ids": [],
+      "qualification": "Randomized consent-aware experiment only after eligible paid product"
+    },
+    {
+      "id": "C23",
+      "text": "Current 61 published posts inventory",
+      "disposition": "historical-snapshot",
+      "source_ids": [
+        "github-mind-source"
+      ],
+      "qualification": "Oct 30 2026 snapshot; do not claim live recount"
+    },
+    {
+      "id": "C24",
+      "text": "Actual paid Mind SKU through FV Payhip exists",
+      "disposition": "blocked-private-inventory",
+      "source_ids": [],
+      "qualification": "Not authenticated; no negative inference"
+    },
+    {
+      "id": "C25",
+      "text": "Affiliate payout rates advertised publicly apply to FV",
+      "disposition": "blocked-account-specific-terms",
+      "source_ids": [
+        "publisher-recruitment"
+      ],
+      "qualification": "Do not quote as entitlement or estimate"
+    },
+    {
+      "id": "C26",
+      "text": "Merchant clicks equal paid orders",
+      "disposition": "false-definition",
+      "source_ids": [
+        "github-conversion-source"
+      ],
+      "qualification": "Require independent merchant settlement records"
+    }
+  ],
+  "gates": [
+    {
+      "id": "G01",
+      "name": "FV partner acceptance evidence",
+      "status": "HOLD",
+      "pass_evidence": null
+    },
+    {
+      "id": "G02",
+      "name": "Publisher agreement valid on intended site",
+      "status": "HOLD",
+      "pass_evidence": null
+    },
+    {
+      "id": "G03",
+      "name": "Exact Zen12 campaign approved",
+      "status": "HOLD",
+      "pass_evidence": null
+    },
+    {
+      "id": "G04",
+      "name": "Permitted social traffic channel confirmed",
+      "status": "HOLD",
+      "pass_evidence": null
+    },
+    {
+      "id": "G05",
+      "name": "Permitted website article context confirmed",
+      "status": "HOLD",
+      "pass_evidence": null
+    },
+    {
+      "id": "G06",
+      "name": "Permitted email channel if ever proposed",
+      "status": "HOLD",
+      "pass_evidence": null
+    },
+    {
+      "id": "G07",
+      "name": "Exact issued link verified",
+      "status": "HOLD",
+      "pass_evidence": null
+    },
+    {
+      "id": "G08",
+      "name": "Approved creative/claims policy reviewed",
+      "status": "HOLD",
+      "pass_evidence": null
+    },
+    {
+      "id": "G09",
+      "name": "Final target landing and terms match",
+      "status": "HOLD",
+      "pass_evidence": null
+    },
+    {
+      "id": "G10",
+      "name": "Seller checkout current price and taxes refreshed",
+      "status": "HOLD",
+      "pass_evidence": null
+    },
+    {
+      "id": "G11",
+      "name": "Refund entitlement actual legal terms inspected",
+      "status": "HOLD",
+      "pass_evidence": null
+    },
+    {
+      "id": "G12",
+      "name": "Independent claim support vs seller separated",
+      "status": "HOLD",
+      "pass_evidence": null
+    },
+    {
+      "id": "G13",
+      "name": "Buyer disclosure adjacent and conspicuous",
+      "status": "HOLD",
+      "pass_evidence": null
+    },
+    {
+      "id": "G14",
+      "name": "No added Jetpack form/list",
+      "status": "HOLD",
+      "pass_evidence": null
+    },
+    {
+      "id": "G15",
+      "name": "No duplicate analytics / privacy consent compatible",
+      "status": "HOLD",
+      "pass_evidence": null
+    },
+    {
+      "id": "G16",
+      "name": "Live mobile/keyboard/reduced-motion/no-JS QA",
+      "status": "HOLD",
+      "pass_evidence": null
+    },
+    {
+      "id": "G17",
+      "name": "Founder production release signoff",
+      "status": "HOLD",
+      "pass_evidence": null
+    },
+    {
+      "id": "G18",
+      "name": "Verified settlement reconciliation and refunds",
+      "status": "HOLD",
+      "pass_evidence": null
+    }
+  ],
+  "affiliate_status": {
+    "acceptance": "UNVERIFIED",
+    "partner_login": "NOT_AUTHENTICATED",
+    "issued_earning_url": "NONE_VERIFIED",
+    "channel_rights": "UNVERIFIED",
+    "approved_swipes": "NOT_ACCESSIBLE",
+    "cleared_commissions": "UNVERIFIED",
+    "public_signup_not_acceptance": true
+  },
+  "fv_product_status": {
+    "mind_paid_sku": "UNVERIFIED",
+    "private_payhip_audit": "NOT_PERFORMED",
+    "sale_verified": false
+  },
+  "safety": {
+    "never_infer_negative_from_search": true,
+    "merchant_links_in_public_html": false,
+    "disabled_ctas": true,
+    "adjacent_prospective_disclosure": true,
+    "no_pii_tracking": true,
+    "no_new_forms": true
+  }
+}
