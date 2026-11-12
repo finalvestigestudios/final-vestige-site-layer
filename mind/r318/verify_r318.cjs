@@ -61,7 +61,7 @@ function main() {
     assert.match(sources.article,/Original full text not represented as inspected|original full text not represented as inspected/i);
     assert.match(sources.article,/2018|Magnotti/);
     assert.match(sources.article,/Puységur/);
-    assert.match(sources.article,/not establish an Inspire3 outcome|not establish those products' advertised outcomes/i);
+    assert.match(sources.article,/It is not evidence that someone can control thoughts|Neither is an alternative version of Zen12/i);
     assert.doesNotMatch(sources.article,/https?:\/\/affiliates\.inspire3\.com\/\?/, 'no invented URL');
   });
   pass('matrix authenticity and gates',()=>{
