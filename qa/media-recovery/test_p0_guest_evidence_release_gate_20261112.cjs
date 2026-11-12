@@ -61,7 +61,8 @@ test('upscaling from 819 physical pixels blocked',()=>held((p,r)=>{r.geometry.na
 test('distorted aspect ratio blocked',()=>held((p,r)=>{r.geometry.output_height=480},/960PX/));
 test('staging screenshots at DPR are mandatory',()=>held((p,r)=>{r.compared_screenshots_at_target_dpr=false},/960PX/));
 test('valid mock review is only staging packet, never cache or WordPress permission',()=>{
- const a=adjudicateP0(packet(),review());assert.equal(a.status,'STAGING_REVIEW_PACKET_ELIGIBLE_NO_WRITE');
+ const a=adjudicateP0(packet(),review());assert.equal(a.status,'GUEST_FAILURE_EVIDENCE_RECORDED_REVIEW_REQUIRED');
+ assert.match(a.reason,/BYTE_BOUND_ARTIFACTS_REQUIRED/);
  assert.equal(a.production_write_allowed,false);assert.equal(a.wordpress_upload_allowed,false);
  assert.equal(a.third_party_cache_allowed,false);assert.equal(a.historical_42_broken_verified,false);
  assert.equal(a.sitewide_76_percent_verified,false);});
@@ -69,8 +70,9 @@ test('cleared editorial alternative still not a silent same-photo replacement',(
  const p=packet(),r=review();r.replacement_mode='DISCLOSED_EDITORIAL_ALTERNATIVE';
  r.exact_photo_identity_verified=false;r.alternative_disclosed=true;
  r.revised_alt='Editorially selected archive photograph of the Scotch Cap shoreline';
- const a=adjudicateP0(p,r);assert.equal(a.status,'STAGING_REVIEW_PACKET_ELIGIBLE_NO_WRITE');
- assert.equal(a.staging_reviewer_packet.mode,'DISCLOSED_EDITORIAL_ALTERNATIVE');});
+ const a=adjudicateP0(p,r);assert.equal(a.status,'GUEST_FAILURE_EVIDENCE_RECORDED_REVIEW_REQUIRED');
+ assert.match(a.reason,/BYTE_BOUND_ARTIFACTS_REQUIRED/);
+ assert.equal(a.staging_reviewer_packet,null);});
 
 test('unrelated image 404 is not attributed to pinned original',()=>held(p=>{
  p.guest.current_src=p.guest.request_url=p.guest.final_response_url='https://unrelated.example/broken.jpg';
