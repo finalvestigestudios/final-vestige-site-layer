@@ -14,7 +14,7 @@ import re
 from pathlib import Path
 
 PREDECESSOR = 'preparedness/tools/r305_html5_link_target_review_hold.py'
-PREDECESSOR_OID = 'd91b96a9f2ae5d771f001b3d03b2c1224185430a'
+PREDECESSOR_OID = '06b00c46a704c59eb0a4f78360b3a92a43d133e9'
 FROZEN = 'preparedness/audits/r200_seven_cluster_35_article_frozen_custody.json'
 FROZEN_OID = '5822f9dfde21d1f3bdfc26658769d852c639438c'
 LEDGER = 'preparedness/audits/r306_live_lineage_35_articles_HARD_HOLD.json'
