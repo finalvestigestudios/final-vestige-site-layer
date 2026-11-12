@@ -79,7 +79,7 @@ function mutationCases(F){
  ["article",/47 seconds/,"several seconds"],["article",/2\.3 seconds/,"2 seconds"],
  ["article",/not regard as reliable/,"regard as highly reliable"],
  ["article",/https:\/\/psychclassics.yorku.ca\/Stroop\//g,"https://example.invalid/"],
- ["article",/not a universal/,"a universal"],["article",/Unpublished/,"Published"],
+ ["article",/not a universal/,"a universal"],["article",/Unpublished/g,"Published"],
  ["a",/ disabled aria-disabled="true"/,' aria-disabled="true"'],["b",/ disabled aria-disabled="true"/,' aria-disabled="true"'],
  ["a",/Affiliate disclosure:/,"Editorial aside:"],["b",/Affiliate disclosure:/,"Advertisement:"],
  ["a",/<\/main>/,'<script src="https://tracker.example/x.js"></script></main>'],
