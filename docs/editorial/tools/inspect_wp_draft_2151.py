@@ -49,6 +49,15 @@ PRECISION_CORRECTION_MARKERS = (
     "recommends reporting approximately 2.47 million",
     "estimated peak if flow had remained confined",
 )
+# The Nov 12 11:34 revision cites the verified 2018 USACE caption rather
+# than claiming the earlier edition's precise wording was directly inspected.
+# Match all four fragments in a SINGLE paragraph to reject stale previews.
+CORPS_PROVENANCE_MARKERS = (
+    "2018 Corps spillway booklet",
+    "The same caption also claims the cut saved the city",
+    "single institutional retrospective",
+    "not an original 1927 decision record",
+)
 
 def local_asset_source(url):
     """Only original FV uploads or WordPress's image CDN proxy of those uploads."""
@@ -136,6 +145,10 @@ def inspect(page, width, out):
         all(marker in p for marker in PRECISION_CORRECTION_MARKERS)
         for p in precision_paragraphs
     )
+    corps_provenance_ok = any(
+        all(marker in p for marker in CORPS_PROVENANCE_MARKERS)
+        for p in precision_paragraphs
+    )
     sources = article.locator("h2#sources").first
     source_list = sources.locator("xpath=following-sibling::ul[1]")
     source_count = source_list.locator(":scope > li").count() if source_list.count() else 0
@@ -194,6 +207,7 @@ def inspect(page, width, out):
         "source_bibliography_42_entries": source_count == EXPECTED_SOURCES,
         "expected_editorial_revision_markers_present": all(revision_sentinels.values()),
         "usgs_2026_11_12_precision_correction_present_in_one_paragraph": precision_correction_ok,
+        "corps_2026_11_12_provenance_correction_present_in_one_paragraph": corps_provenance_ok,
         "original_compensation_figure_present": chart_count == 1,
         "timeline_has_five_chronology_cards_and_four_source_links": bool(
             timeline_stats and timeline_stats["count"] == 5
