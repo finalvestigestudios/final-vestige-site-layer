@@ -22,7 +22,7 @@ for(const n of ['01','04','06']) test('issue '+n+' safe exact claim/CTA/footer',
  for(const s of ['[[VALID_POSTAL_ADDRESS_REQUIRED]]','[[JETPACK_UNSUBSCRIBE_LINK_MUST_BE_VERIFIED]]']) assert.ok(md.includes(s)&&html.includes(s));
  assert.ok(html.includes('role="presentation"')&&html.includes('<html lang="en">'));
  assert.ok(!html.includes('<script')&&!html.includes('<form')&&!html.includes('utm_source='));
- assert.ok(!html.includes('javascript:')&&!html.includes('affiliate')===false || !html.includes('affiliate link'));
+ assert.ok(!html.includes('javascript:')&&!html.includes('affiliates.inspire3.com')&&!html.includes('zen12.com/getstarted')&&!html.includes('hypnosislive.com/'));
 });
 test('01 actually serves change-blindness and not duplicate Puységur CTA',()=>{assert.ok(file('01','md').includes('/change-blindness/'));assert.ok(!file('01','md').includes('/puysegurs-animal-magnetism-files/'));});
 test('04 cites final board, avoids fragile 14-second hook',()=>{assert.ok(file('04','md').includes('no single ignition source'));assert.ok(file('04','md').includes('nasa.gov'));assert.ok(!/Fourteen seconds|14-second/i.test(file('04','md')));});
