@@ -1,0 +1,21 @@
+{
+  "checked_on": "2026-11-12",
+  "observed_on": "2026-11-12",
+  "affiliate_url": "https://www.awin1.com/cread.php?q=552988&r=3055117&s=4236132&v=89949",
+  "resolved_url": "https://shop.minimuseum.com/pages/mini-museum-fourth-edition-mm4",
+  "expected_merchant_host": "shop.minimuseum.com",
+  "featured_offer": {
+    "name": "Mini Museum Fourth Edition (LARGE — 29 specimens)",
+    "availability": "sold_out"
+  },
+  "landing_type": "specific_edition",
+  "cta_copy": "SEE THE CURRENT COLLECTION",
+  "other_stock_note": "Adjacent Fourth Edition collection has individual specimens in stock; this does not mean the featured full edition is buyable.",
+  "source_urls": [
+    "https://finalvestige.com/mini-museum-history-collectibles/",
+    "https://finalvestige.com/collection/",
+    "https://shop.minimuseum.com/pages/mini-museum-fourth-edition-mm4",
+    "https://shop.minimuseum.com/collections/fourth-edition-mm4",
+    "https://shop.minimuseum.com/collections/fourth-edition-collection"
+  ]
+}
