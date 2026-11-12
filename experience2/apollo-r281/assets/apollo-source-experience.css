@@ -123,3 +123,8 @@
 /* R298: keep native <details> summary visible while adding per-record/per-instance
    screen-reader text. In CSS failure the plain text remains human-readable. */
 .fv-r281 .fv-r298__sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+
+/* R307: native fragment navigation lands visibly on the existing decision point, no JS needed. */
+.fv-r281 .fv-r281__next:focus{outline:3px solid var(--gold);outline-offset:4px}
+@media(forced-colors:active){.fv-r281 .fv-r281__next:focus{outline-color:Highlight}}
+@media print{.fv-r281 .fv-r307__source-continuation{display:none!important}}
