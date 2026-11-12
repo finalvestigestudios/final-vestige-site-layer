@@ -1,0 +1,522 @@
+{
+  "schema": "FV-MIND-R306-v1",
+  "snapshot": "2026-11-11 PT",
+  "published": false,
+  "commerce": "HARD_HOLD",
+  "sources": [
+    {
+      "id": "S01",
+      "type": "primary_abstract",
+      "title": "Neuschatz et al. 2002",
+      "url": "https://doi.org/10.2190/YPC4-WMK6-XU4R-KUV9",
+      "access": "abstract_only"
+    },
+    {
+      "id": "S02",
+      "type": "primary_abstract",
+      "title": "Green et al. 1998",
+      "url": "https://doi.org/10.1002/(SICI)1099-0720(199810)12:5%3C431::AID-ACP516%3E3.0.CO;2-R",
+      "access": "abstract_only"
+    },
+    {
+      "id": "S03",
+      "type": "primary_abstract",
+      "title": "Ready et al. 1997",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/8991296/",
+      "access": "abstract_only"
+    },
+    {
+      "id": "S04",
+      "type": "review_abstract",
+      "title": "Lynn et al., Hypnosis in the Forensic Arena",
+      "url": "https://doi.org/10.1300/J158v01n01_08",
+      "access": "abstract_only"
+    },
+    {
+      "id": "S05",
+      "type": "review_abstract",
+      "title": "Forensic Hypnosis 2015",
+      "url": "https://doi.org/10.1002/9781118625392.wbecp363",
+      "access": "abstract_only"
+    },
+    {
+      "id": "S06",
+      "type": "published_research_dossier",
+      "title": "FV Puységur's Animal Magnetism Files",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "access": "read_public_page"
+    },
+    {
+      "id": "S07",
+      "type": "seller",
+      "title": "Inspire3 brand catalogue",
+      "url": "https://inspire3.com/",
+      "access": "read_public_page"
+    },
+    {
+      "id": "S08",
+      "type": "seller",
+      "title": "Zen12 complete checkout",
+      "url": "https://zen12.com/getstarted",
+      "access": "read_public_page"
+    },
+    {
+      "id": "S09",
+      "type": "seller",
+      "title": "Zen12 brand site",
+      "url": "https://zen12.com/",
+      "access": "read_public_page"
+    },
+    {
+      "id": "S10",
+      "type": "seller",
+      "title": "Hypnosis Live Total Focus",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "access": "read_public_page"
+    },
+    {
+      "id": "S11",
+      "type": "seller",
+      "title": "Brainwave Shots Focus Shot",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "access": "read_public_page"
+    },
+    {
+      "id": "S12",
+      "type": "seller_recruitment",
+      "title": "Inspire3 affiliate signup",
+      "url": "https://affiliates.inspire3.com/",
+      "access": "public_not_account"
+    },
+    {
+      "id": "S13",
+      "type": "regulatory",
+      "title": "FTC Endorsement Guides",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "access": "read_public_page"
+    },
+    {
+      "id": "S14",
+      "type": "regulatory",
+      "title": "FTC Health Products Compliance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "access": "read_public_page"
+    },
+    {
+      "id": "S15",
+      "type": "fv_existing_funnel",
+      "title": "Seven Day Focus Fieldbook",
+      "url": "https://finalvestige.com/focus/",
+      "access": "read_public_page"
+    },
+    {
+      "id": "S16",
+      "type": "fv_existing_disclosure",
+      "title": "FV Affiliate Disclosure",
+      "url": "https://finalvestige.com/affiliate-disclosure/",
+      "access": "read_public_page"
+    },
+    {
+      "id": "S17",
+      "type": "fv_existing_article",
+      "title": "Change Blindness",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "access": "read_public_page"
+    },
+    {
+      "id": "S18",
+      "type": "fv_existing_dispatch",
+      "title": "The Dispatch",
+      "url": "https://finalvestige.com/dispatch/",
+      "access": "read_public_page"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "statement": "Neuschatz 2002 hypnotized N=21, control N=20; high false recognition in both",
+      "source_id": "S01",
+      "status": "supported_abstract",
+      "scope": "research"
+    },
+    {
+      "id": "C02",
+      "statement": "Neuschatz result proves hypnosis always creates false memories",
+      "source_id": "S01",
+      "status": "prohibited_overstatement",
+      "scope": "research"
+    },
+    {
+      "id": "C03",
+      "statement": "1998 suggested-noise acceptance warned 12/32 vs unwarned 12/16",
+      "source_id": "S02",
+      "status": "supported_abstract",
+      "scope": "research"
+    },
+    {
+      "id": "C04",
+      "statement": "1998 subgroup false-memory percentages generalize to commercial products",
+      "source_id": "S02",
+      "status": "prohibited_extrapolation",
+      "scope": "research"
+    },
+    {
+      "id": "C05",
+      "statement": "1997 study found no significant general factual recall improvement across interventions",
+      "source_id": "S03",
+      "status": "supported_with_subgroup_caveat",
+      "scope": "research"
+    },
+    {
+      "id": "C06",
+      "statement": "Hypnosis always makes witnesses inaccurate",
+      "source_id": "S03",
+      "status": "prohibited_overstatement",
+      "scope": "research"
+    },
+    {
+      "id": "C07",
+      "statement": "Forensic review cautions against routine hypnotic memory excavation",
+      "source_id": "S04",
+      "status": "supported_review_abstract",
+      "scope": "research"
+    },
+    {
+      "id": "C08",
+      "statement": "Puységur archive authenticates the magnetic-fluid mechanism",
+      "source_id": "S06",
+      "status": "prohibited_inference",
+      "scope": "history"
+    },
+    {
+      "id": "C09",
+      "statement": "Puységur archive contains historical consent and operator-pressure concerns",
+      "source_id": "S06",
+      "status": "supported_as_archive_report",
+      "scope": "history"
+    },
+    {
+      "id": "C10",
+      "statement": "Zen12 exact checkout lists 12 levels and 48 MP3s",
+      "source_id": "S08",
+      "status": "seller_package_description_only",
+      "scope": "Zen12"
+    },
+    {
+      "id": "C11",
+      "statement": "Zen12 four audio styles per level",
+      "source_id": "S09",
+      "status": "seller_description_only",
+      "scope": "Zen12"
+    },
+    {
+      "id": "C12",
+      "statement": "Zen12 delivers one-hour meditation benefits in 12 minutes",
+      "source_id": "S09",
+      "status": "unsupported_merchant_efficacy_exclude",
+      "scope": "Zen12"
+    },
+    {
+      "id": "C13",
+      "statement": "Zen12 solves clinical anxiety or improves objective cognition",
+      "source_id": "S09",
+      "status": "unsupported_merchant_efficacy_exclude",
+      "scope": "Zen12"
+    },
+    {
+      "id": "C14",
+      "statement": "Hypnosis Live Total Focus is a seller-described 33-minute MP3",
+      "source_id": "S10",
+      "status": "seller_package_description_only",
+      "scope": "HypnosisLive"
+    },
+    {
+      "id": "C15",
+      "statement": "Hypnosis Live rewires the brain, guarantees focus",
+      "source_id": "S10",
+      "status": "unsupported_merchant_efficacy_exclude",
+      "scope": "HypnosisLive"
+    },
+    {
+      "id": "C16",
+      "statement": "Focus Shot seller lists 15 and 30 minute recordings",
+      "source_id": "S11",
+      "status": "seller_package_description_only",
+      "scope": "BrainwaveShots"
+    },
+    {
+      "id": "C17",
+      "statement": "Focus Shot induces effortless focus through proven entrainment",
+      "source_id": "S11",
+      "status": "unsupported_merchant_efficacy_exclude",
+      "scope": "BrainwaveShots"
+    },
+    {
+      "id": "C18",
+      "statement": "Inspire3 public program exists",
+      "source_id": "S12",
+      "status": "public_program_only",
+      "scope": "affiliate"
+    },
+    {
+      "id": "C19",
+      "statement": "FV is approved by Inspire3",
+      "source_id": "S12",
+      "status": "not_verified_hard_hold",
+      "scope": "affiliate"
+    },
+    {
+      "id": "C20",
+      "statement": "FV has approved link/commission or email channel rights",
+      "source_id": "S12",
+      "status": "not_verified_hard_hold",
+      "scope": "affiliate"
+    },
+    {
+      "id": "C21",
+      "statement": "FTC requires clear conspicuous material connection disclosure close to relevant recommendation",
+      "source_id": "S13",
+      "status": "regulatory_guidance",
+      "scope": "compliance"
+    },
+    {
+      "id": "C22",
+      "statement": "Health claims require product and outcome-relevant reliable substantiation",
+      "source_id": "S14",
+      "status": "regulatory_guidance",
+      "scope": "compliance"
+    },
+    {
+      "id": "C23",
+      "statement": "FV has one existing free 52-page Fieldbook and Dispatch funnel",
+      "source_id": "S15",
+      "status": "supported_public_page",
+      "scope": "lead"
+    },
+    {
+      "id": "C24",
+      "statement": "The Fieldbook is clinically proven to improve productivity",
+      "source_id": "S15",
+      "status": "prohibited_unsubstantiated",
+      "scope": "lead"
+    },
+    {
+      "id": "C25",
+      "statement": "FV currently operates a sellable paid Mind product",
+      "source_id": "S15",
+      "status": "not_authenticated_hard_hold",
+      "scope": "owned"
+    },
+    {
+      "id": "C26",
+      "statement": "Source-study evidence permits Zen12 product-specific claim transfer",
+      "source_id": "S01",
+      "status": "prohibited_extrapolation",
+      "scope": "Zen12"
+    },
+    {
+      "id": "C27",
+      "statement": "Commercial CTA is blocked pending approval and issued earning link",
+      "source_id": "S12",
+      "status": "implementation_requirement",
+      "scope": "affiliate"
+    },
+    {
+      "id": "C28",
+      "statement": "Net affiliate revenue equals merchant gross sales",
+      "source_id": "S12",
+      "status": "prohibited_accounting",
+      "scope": "revenue"
+    },
+    {
+      "id": "C29",
+      "statement": "Text and optional video will increase paid conversion",
+      "source_id": "S13",
+      "status": "untested_experiment_only",
+      "scope": "ab"
+    },
+    {
+      "id": "C30",
+      "statement": "Published Change Blindness article can be used as an editorial starting route",
+      "source_id": "S17",
+      "status": "supported_public_page",
+      "scope": "creator"
+    }
+  ],
+  "gates": [
+    {
+      "id": "publisher_account_id",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "publisher_acceptance_proof",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "approved_web_channel",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "approved_social_channel",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "approved_email_channel_if_used",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "signed_merchant_terms",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "product_specific_permissions",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "issued_affiliate_earning_url",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "link_attribution_rules",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "merchant_payout_method",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "commission_terms",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "refund_adjustment_terms",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "creative_reuse_rights",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "current_checkout_and_guarantee_verified_at_release",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "product_specific_claim_support_or_all_claims_removed",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "founder_release_approval",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "independent_site_qa",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "settlement_reconciliation_proof",
+      "status": "HARD_HOLD",
+      "proof": null
+    }
+  ],
+  "offers": [
+    {
+      "id": "zen12",
+      "commercial_status": "POTENTIAL_ONLY",
+      "exact_seller_page": "https://zen12.com/getstarted",
+      "earning_url": null,
+      "verified_fv_commission": null,
+      "price_for_fv": null,
+      "returns_final_verification": "PENDING",
+      "preferred_candidate": true
+    },
+    {
+      "id": "hypnosislive_total_focus",
+      "commercial_status": "EDITORIAL_COMPARATOR",
+      "earning_url": null
+    },
+    {
+      "id": "brainwaveshots_focus_shot",
+      "commercial_status": "EDITORIAL_COMPARATOR",
+      "earning_url": null
+    },
+    {
+      "id": "fv_paid_mind_product",
+      "commercial_status": "NOT_AUTHENTICATED",
+      "sku": null,
+      "checkout": null
+    }
+  ],
+  "creator_routes": [
+    {
+      "topic": "Change Blindness",
+      "asset_id": null,
+      "media_url": null,
+      "article_url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "next_url": "https://finalvestige.com/focus/",
+      "offer": "optional_zen12_after_authorization"
+    },
+    {
+      "topic": "Attentional Blink",
+      "asset_id": null,
+      "media_url": null,
+      "article_url": null,
+      "planned_source_controlled_article": "mind/r301/THE-SECOND-LETTER-THAT-VANISHED-UNPUBLISHED.md",
+      "next_url": "https://finalvestige.com/focus/",
+      "offer": "optional_zen12_after_authorization"
+    },
+    {
+      "topic": "Suggestion & Hypnosis",
+      "asset_id": null,
+      "media_url": null,
+      "article_url": null,
+      "planned_source_controlled_article": "mind/r306/THE-MEMORY-HYPNOSIS-COULD-NOT-VERIFY-UNPUBLISHED.md",
+      "next_url": "https://finalvestige.com/focus/",
+      "offer": "no_direct_product_upsell_from_sensitive_memory_topic"
+    }
+  ],
+  "tracking": {
+    "primary_kpi": "net_realized_FV_revenue_per_1000_qualified_human_sessions",
+    "events": [
+      "campaign_landing_visit",
+      "relevant_cta_click",
+      "confirmed_opt_in",
+      "affiliate_click",
+      "verified_merchant_conversion",
+      "cleared_affiliate_commission",
+      "refund_adjustment"
+    ],
+    "privacy": "no PII, no IP/client fingerprint, no new SDK/script, consent controls as applicable",
+    "reported_performance": "NOT_COMPUTABLE",
+    "cohort_days": [
+      7,
+      30
+    ]
+  },
+  "ab": {
+    "hypothesis": "original optional 42s media may help some buyers understand the offer, not guaranteed",
+    "variant_a": "mind/r306/ZEN12-TEXT-ONLY-REVIEW.html",
+    "variant_b": "mind/r306/ZEN12-OPTIONAL-VIDEO-REVIEW.html",
+    "shared_offer_copy_required": true,
+    "video_rendered": false,
+    "video_hosted": false,
+    "media_playback_tested": false,
+    "rollout_allowed": false
+  }
+}
