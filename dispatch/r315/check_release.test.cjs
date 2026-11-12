@@ -1,0 +1,35 @@
+'use strict';
+const assert=require('node:assert/strict');
+const fs=require('node:fs'),path=require('node:path');
+const {inspect}=require('./check_release.cjs');
+const dir=__dirname,s=JSON.parse(fs.readFileSync(path.join(dir,'email_source.json'),'utf8')),g=JSON.parse(fs.readFileSync(path.join(dir,'release_gate.json'),'utf8')),h=fs.readFileSync(path.join(dir,'issue03-review.html'),'utf8'),t=fs.readFileSync(path.join(dir,'issue03-review.txt'),'utf8');
+let n=0;function ok(c,msg){assert.ok(c,msg);n++}
+const r=inspect(s,g,h,t);for(const [k,v] of Object.entries(r))if(typeof v==='boolean')ok(k==='release_authorized'?v===false:v===true,k);
+ok(s.blocks.filter(x=>x.type==='cta').length===1,'single inactive guide CTA');
+ok(s.blocks.find(x=>x.type==='disclosure').text.toLowerCase().includes('commission'),'near link disclosure');
+ok(s.sources.some(x=>x.url.includes('nccih.nih.gov')),'NIH source');
+ok(s.sources.some(x=>x.url.includes('zen12.com')),'actual official seller');
+ok(s.sources.some(x=>x.url.includes('ftc.gov')),'FTC source');
+ok(g.editorial_allocation===4&&g.commercial_allocation===2,'campaign mix');
+ok(g.source_master_pr===175,'master provenance');
+ok(!g.issue_3.merchant_email_permission,'publisher channel not approved');
+ok(!g.issue_3.guide_live,'no fake live guide');
+ok(!g.issue_3.postal_address_verified,'postal missing');
+ok(!g.issue_3.unsubscribe_received_verified,'unsub missing');
+ok(h.indexOf('data-near-offer-disclosure')>h.indexOf('data-primary-cta'),'disclosure adjacent');
+ok(!h.includes('<script'),'email static');
+ok(!h.includes('<iframe'),'no embed');
+ok(!h.includes('<img'),'no remote images');
+ok(!h.includes('<form'),'no secondary list');
+ok(h.includes('EDITORIAL REVIEW ONLY'),'must stay marked non-send');
+ok(t.includes('NO WordPress publication'),'plain holds');
+ok(g.measurement.net_revenue_per_1000_qualified_sessions===null,'no made-up KPI');
+// Mutant inputs must fail at least one guard, NEVER enable release.
+const mutant1=JSON.parse(JSON.stringify(s));mutant1.blocks.push({type:'cta',text:'Buy now'});ok(inspect(mutant1,g,h,t).one_cta===false,'two CTA mutant');
+const mutant2=JSON.parse(JSON.stringify(s));mutant2.blocks.splice(mutant2.blocks.findIndex(x=>x.type==='disclosure'),1);ok(!inspect(mutant2,g,h,t).near_disclosure,'missing disclosure');
+const mutant3=h.replace('data-primary-cta="inactive"','data-primary-cta="active"');ok(!inspect(s,g,mutant3,t).no_live_cta,'active CTA mutant');
+const mutant4=h.replace('[[VALID_FV_POSTAL_ADDRESS_REQUIRED]]','');ok(!inspect(s,g,mutant4,t).preserved_holds,'missing postal hold');
+const mutant5=t+'\nhttps://example.com/?affiliate_id=123';ok(!inspect(s,g,h,mutant5).no_affiliate_link,'affiliate URL mutant');
+const mutant6=JSON.parse(JSON.stringify(g));mutant6.issue_3.merchant_email_permission=true;ok(!inspect(s,mutant6,h,t).fail_closed,'permission override mutant');
+ok(inspect(s,g,h,t).release_authorized===false,'never send even with no flags');
+process.stdout.write('R315 offline source and mutation tests: '+n+'/'+n+' PASS. No native Jetpack rendering.\n');
