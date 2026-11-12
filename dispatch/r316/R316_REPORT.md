@@ -1,0 +1,31 @@
+# R316 — FTC primary-purpose and expiring-source gate
+
+**Scope:** The Dispatch six-issue *unsent* campaign. This is a new **isolated, stacked draft**, not a change to canonical [#175](https://github.com/finalvestigestudios/final-vestige-site-layer/pull/175), historical QA [#201](https://github.com/finalvestigestudios/final-vestige-site-layer/pull/201), or optional R315 [#2258](https://github.com/finalvestigestudios/final-vestige-site-layer/pull/2258). Issue owner [#174](https://github.com/finalvestigestudios/final-vestige-site-layer/issues/174), Mind partner [#171](https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171). Homepage PR #49 remains untouched.
+
+## Newly uncovered compliance risk
+
+An **editorial/commercial allocation is not a legal primary-purpose finding**. Even ostensibly editorial emails with commercial-site destinations require an independent assessment of final rendered content, subject and commercial purpose. An advertisement for a first-party guide leading to a merchant offer may still be commercial; do not treat issues 01/02/04/06 as categorically exempt. Under the [FTC CAN-SPAM Act guide](https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business) check sender identities, accurate subject, commercial identity as applicable, a **valid Final Vestige publisher postal address**, functioning unsubscribe and suppression handling. Neither a Jetpack/Automattic address nor Inspire3's postal address satisfies that requirement simply by appearing in a third-party email. Exact legal classification requires individual review; this is QA guidance, not legal advice.
+
+## Source freshness: no stale merchant claims
+
+`release_gate.mjs` validates provenance, specific approved domains, proof age, exact six source blob IDs, 4:2 mix and real mail/legal witness. Internal conservative evidence TTLs: subscriber eligibility + guide live 1 day; merchant terms/pricing 2 days; unsubscribe, native preview, earning links and founder final decision 7 days; partner acceptance/email channel/creative permissions and claim review 14 days; publisher postal proof 30 days. These are QA policies, **not statutory deadlines**. A successful checklist only becomes `HUMAN_REVIEW_CANDIDATE_ONLY`; **never automatically authorized to publish or send**.
+
+The live source pages assessed on Nov 12, 2026: [Zen12](https://zen12.com/) describes 12 levels × four MP3 variants and claims 12 minutes has one-hour benefits (NOT independently proven product-specifically); [Hypnosis Live Total Focus](https://hypnosislive.com/mental-skills/total-focus) describes 33-minute / 47 MB audio, displays $24.44 and a seller-stated 14-day refund. Listed pricing can vary; none is a verified checkout or enduring promise. [Inspire3 public affiliate portal](https://affiliates.inspire3.com/) does not verify FV account acceptance, email permission, approved creative, exact earning link or current terms. Proposed first-party /mind/zen12-guide/ and /mind/hypnosis-live-guide/ were **not found published in authenticated WordPress slug lookup**, so commercial CTAs stay inactive.
+
+## Current live WordPress evidence (read only, 2026-11-12 23:35 UTC)
+
+Newsletter enabled / can send; automatic email to new post **OFF**; `email_content_format=full`; Welcome 52-page Fieldbook configured but **not proven received**. Counts **total=3 / confirmed=3 / unconfirmed=2 / suppressed=0** overlap and are not additive; **eligible email recipients unknown**. WordPress [subscriber documentation](https://wordpress.com/support/subscribers/) distinguishes `Subscribed` for actual email opt-in from Reader-only, not-confirmed, bounced and paused. Last five posts show `never_sent_opted_out`, not proof of zero historical sends. [Dispatch](https://finalvestige.com/dispatch/) publicly displays input+button; [Focus](https://finalvestige.com/focus/) continues with the free Fieldbook; [Editorial Standards](https://finalvestige.com/editorial-standards/) maintain record-first sourcing. No live signup, consent/welcome, native email-rendering or opt-out test was performed.
+
+## Priority: OFFER → FUNNEL → BLOCKER → CHANGE/EXPERIMENT → EVIDENCE → OWNER
+
+| Offer → funnel | Blocker | Change / experiment | Evidence | Owner |
+|---|---|---|---|---|
+| Zen12 → approved guide → independently settled affiliate sale | No verified email rights, earning URL or live guide | Obtain signed partner-specific email permission, published vetted guide and actual order ledger | **HOLD_MERCHANT** | Mind / Commerce |
+| Total Focus → vetted guide → paid sale | Same; current merchant price/claim terms not checkout verified | Retrieve valid account terms, specific approved creative and guide status | **HOLD_MERCHANT** | Mind / Commerce |
+| Grok video → Focus → confirmed subscriber | Provider-specific eligibility unknown; `?subscribe=` state is not consent | Claude deduplicates `confirmed_signup` only on actual provider transition; reconcile tracked asset_id UTMs | **UNKNOWN** | Claude / Focus / Grok |
+| Jetpack Dispatch → delivered message | Native preview, FV postal address and functional unsubscribe not witnessed | Founder-authorized *non-sending* editor preview; capture sanitized footer and preheader evidence, never publish | **HOLD_UNSENT** | Dispatch / Founder |
+| Qualified human visit → verified paid order → net | No settlement, refund/fee and visit cohort evidence | Reconcile 7/30-day independently reported sales + qualified sessions; don't mistake email clicks for orders | **NOT COMPUTABLE** | Commerce / Claude |
+
+## QA evidence and boundaries
+
+Original PR #175 has exact SHA `d57ccdba3aee8f065e143e101c2945f4f3d01647`, its archived 8 source blobs were previously verified and 6 Python tests were **re-executed natively this run: PASS 6/6**. New module + six native Node test cases are committed; executing `node --test dispatch/r316/release_gate.test.mjs` on an exact GitHub checkout remains separate. Current read-only V8 structural checks do not substitute for native Node/WordPress received-email/browser tests. No subscribers exported/emailed, no WordPress draft/post/settings change, affiliate activation, paid service, tracking script, social posting, or production release.

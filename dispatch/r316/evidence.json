@@ -1,0 +1,95 @@
+{
+  "schema": "fv-dispatch-r316",
+  "date_utc": "2026-11-12T23:42:00Z",
+  "master_pr": "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/175",
+  "master_sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "editions": [
+    {
+      "number": 1,
+      "slug": "01-the-mind-is-not-a-camera",
+      "source_blob": "039b452b5cb7cd6dc2fed6fac4d2dd77fa9d49c8",
+      "kind": "editorial",
+      "ftc_purpose_review": false,
+      "real_inbox_preview": false,
+      "merchant_email_permission": false,
+      "disclosure_adjacent_verified": false,
+      "guide_published": false,
+      "affiliate_link": null
+    },
+    {
+      "number": 2,
+      "slug": "02-before-hypnosis-had-a-name",
+      "source_blob": "faa207ab7deafd86460d36f8c17fe62d392d0e14",
+      "kind": "editorial",
+      "ftc_purpose_review": false,
+      "real_inbox_preview": false,
+      "merchant_email_permission": false,
+      "disclosure_adjacent_verified": false,
+      "guide_published": false,
+      "affiliate_link": null
+    },
+    {
+      "number": 3,
+      "slug": "03-the-twelve-minute-question",
+      "source_blob": "aeeef34efea0cc281f69901488e4501fea851245",
+      "kind": "commercial-review-pending",
+      "ftc_purpose_review": false,
+      "real_inbox_preview": false,
+      "merchant_email_permission": false,
+      "disclosure_adjacent_verified": false,
+      "guide_published": false,
+      "affiliate_link": null
+    },
+    {
+      "number": 4,
+      "slug": "04-the-hatch-and-the-spark",
+      "source_blob": "89635bfb9c8d1ff17297a59b6b5b5b2a176934ca",
+      "kind": "editorial",
+      "ftc_purpose_review": false,
+      "real_inbox_preview": false,
+      "merchant_email_permission": false,
+      "disclosure_adjacent_verified": false,
+      "guide_published": false,
+      "affiliate_link": null
+    },
+    {
+      "number": 5,
+      "slug": "05-before-you-press-play",
+      "source_blob": "a9dfaa450ba025a7b5113ade8a294d6dbad778dc",
+      "kind": "commercial-review-pending",
+      "ftc_purpose_review": false,
+      "real_inbox_preview": false,
+      "merchant_email_permission": false,
+      "disclosure_adjacent_verified": false,
+      "guide_published": false,
+      "affiliate_link": null
+    },
+    {
+      "number": 6,
+      "slug": "06-the-evidence-log",
+      "source_blob": "004d558df6376d2ad6f4f79a4581e8d2c444e355",
+      "kind": "editorial",
+      "ftc_purpose_review": false,
+      "real_inbox_preview": false,
+      "merchant_email_permission": false,
+      "disclosure_adjacent_verified": false,
+      "guide_published": false,
+      "affiliate_link": null
+    }
+  ],
+  "proofs": {},
+  "site_snapshot": {
+    "newsletter_on": true,
+    "new_post_emails_default": false,
+    "email_content": "full",
+    "welcome_configured": true,
+    "welcome_received": "UNVERIFIED",
+    "subscribers_total": 3,
+    "confirmed": 3,
+    "unconfirmed": 2,
+    "actual_email_eligible": "UNKNOWN",
+    "last_five_posts": "never_sent_opted_out"
+  },
+  "send_allowed": false,
+  "merchant_allowed": false
+}
