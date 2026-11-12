@@ -1,0 +1,341 @@
+{
+  "run": "R319",
+  "date": "2026-11-12",
+  "status": "UNPUBLISHED_COMMERCIAL_HARD_HOLD",
+  "sources": [
+    {
+      "id": "H01",
+      "url": "https://www.huntington.org/collections/lib-705184",
+      "note": "1854 Chevreul catalog"
+    },
+    {
+      "id": "H02",
+      "url": "https://wellcomecollection.org/works/k532hmn2",
+      "note": "1852 Carpenter historical paper"
+    },
+    {
+      "id": "H03",
+      "url": "https://www.scientificamerican.com/article/table-moving-spirit-rappings-and-sc/",
+      "note": "1853 Faraday discussion"
+    },
+    {
+      "id": "S01",
+      "url": "https://doi.org/10.1080/00221309.1976.9710871",
+      "note": "1976 experimental summary N=60"
+    },
+    {
+      "id": "S02",
+      "url": "https://digitalcommons.chapman.edu/psychology_articles/82/",
+      "note": "2017 study N80, 57% vs 53%"
+    },
+    {
+      "id": "S03",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35184700/",
+      "note": "2022 null finding"
+    },
+    {
+      "id": "S04",
+      "url": "https://link.springer.com/article/10.1007/s11097-018-9585-8",
+      "note": "2018/2019 Ouija field study"
+    },
+    {
+      "id": "S05",
+      "url": "https://doi.org/10.1080/00029157.2011.10401754",
+      "note": "2011 clinical history"
+    },
+    {
+      "id": "FV1",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "note": "historical archive"
+    },
+    {
+      "id": "FV2",
+      "url": "https://finalvestige.com/focus/",
+      "note": "existing Focus Fieldbook"
+    },
+    {
+      "id": "FV3",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "note": "published live investigation"
+    },
+    {
+      "id": "M01",
+      "url": "https://inspire3.com/",
+      "note": "official catalog"
+    },
+    {
+      "id": "M02",
+      "url": "https://zen12.com/about",
+      "note": "Zen12 product description"
+    },
+    {
+      "id": "M03",
+      "url": "https://zen12.com/getstarted",
+      "note": "Zen12 exact full-course checkout"
+    },
+    {
+      "id": "M04",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "note": "Total Focus offer"
+    },
+    {
+      "id": "M05",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "note": "Focus Shot offer"
+    },
+    {
+      "id": "M06",
+      "url": "https://affiliates.inspire3.com/",
+      "note": "public affiliate recruitment"
+    },
+    {
+      "id": "FTC1",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "note": "endorsements/disclosures"
+    },
+    {
+      "id": "FTC2",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "note": "health claims substantiation"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "Chevreul book dated 1854",
+      "status": "bibliographic_verified",
+      "source": "H01"
+    },
+    {
+      "id": "C02",
+      "claim": "Carpenter suggestion-and-muscle paper 1852",
+      "status": "bibliographic_verified",
+      "source": "H02"
+    },
+    {
+      "id": "C03",
+      "claim": "Faraday table pressure contemporary report",
+      "status": "historical_secondary_account",
+      "source": "H03"
+    },
+    {
+      "id": "C04",
+      "claim": "1976 pendulum study 60 participants",
+      "status": "publisher_abstract_verified",
+      "source": "S01"
+    },
+    {
+      "id": "C05",
+      "claim": "2017 pendulum 53% vs verbal 57% accuracy",
+      "status": "institutional_abstract_verified",
+      "source": "S02"
+    },
+    {
+      "id": "C06",
+      "claim": "2022 pendulum no privileged general-knowledge accuracy",
+      "status": "peer_review_abstract_verified",
+      "source": "S03"
+    },
+    {
+      "id": "C07",
+      "claim": "Ouija field study N40 eye tracking",
+      "status": "published_full_text",
+      "source": "S04"
+    },
+    {
+      "id": "C08",
+      "claim": "Puységur documents establish magnetism efficacy",
+      "status": "rejected_historical_inference",
+      "source": "FV1"
+    },
+    {
+      "id": "C09",
+      "claim": "Zen12 twelve levels four styles",
+      "status": "seller_format_claim_only",
+      "source": "M02"
+    },
+    {
+      "id": "C10",
+      "claim": "Zen12 full-course 48 MP3s",
+      "status": "seller_checkout_description_only",
+      "source": "M03"
+    },
+    {
+      "id": "C11",
+      "claim": "Zen12 short audio is one hour meditation equivalent",
+      "status": "unsubstantiated_seller_efficacy_excluded",
+      "source": "M02"
+    },
+    {
+      "id": "C12",
+      "claim": "Zen12 improves mental health and cognition",
+      "status": "unsubstantiated_seller_efficacy_excluded",
+      "source": "M02"
+    },
+    {
+      "id": "C13",
+      "claim": "Zen12 price and refund same for any buyer",
+      "status": "unverified_dynamic_checkout",
+      "source": "M03"
+    },
+    {
+      "id": "C14",
+      "claim": "Hypnosis Live Total Focus one 33-minute recording",
+      "status": "seller_format_claim_only",
+      "source": "M04"
+    },
+    {
+      "id": "C15",
+      "claim": "Total Focus gives limitless concentration",
+      "status": "seller_efficacy_claim_excluded",
+      "source": "M04"
+    },
+    {
+      "id": "C16",
+      "claim": "Brainwave Shots Focus Shot 15/30-minute formats",
+      "status": "seller_format_claim_only",
+      "source": "M05"
+    },
+    {
+      "id": "C17",
+      "claim": "Focus Shot creates lasting superior focus",
+      "status": "seller_efficacy_claim_excluded",
+      "source": "M05"
+    },
+    {
+      "id": "C18",
+      "claim": "Public affiliate page approves this publisher",
+      "status": "unverified_do_not_infer",
+      "source": "M06"
+    },
+    {
+      "id": "C19",
+      "claim": "FTC material connection disclosed near recommendation",
+      "status": "agency_guidance",
+      "source": "FTC1"
+    },
+    {
+      "id": "C20",
+      "claim": "FTC health benefit requires reliable product evidence",
+      "status": "agency_guidance",
+      "source": "FTC2"
+    },
+    {
+      "id": "C21",
+      "claim": "Fieldbook remains one existing free opt-in",
+      "status": "live_site",
+      "source": "FV2"
+    },
+    {
+      "id": "C22",
+      "claim": "Paid FV Mind SKU exists and is purchasable",
+      "status": "merchant_inventory_unverified",
+      "source": "FV2"
+    },
+    {
+      "id": "C23",
+      "claim": "Affiliate click is a settled paid commission",
+      "status": "false_financial_inference",
+      "source": "M06"
+    },
+    {
+      "id": "C24",
+      "claim": "Static optional short will improve paid sales",
+      "status": "untested_AB_hypothesis",
+      "source": "FTC1"
+    }
+  ],
+  "authorization": [
+    {
+      "id": "publisher_acceptance",
+      "status": "HARD_HOLD",
+      "reason": "Evidence necessary for enabling this offer not yet authenticated"
+    },
+    {
+      "id": "legal_publisher_identity",
+      "status": "HARD_HOLD",
+      "reason": "Evidence necessary for enabling this offer not yet authenticated"
+    },
+    {
+      "id": "permitted_website",
+      "status": "HARD_HOLD",
+      "reason": "Evidence necessary for enabling this offer not yet authenticated"
+    },
+    {
+      "id": "permitted_social_platforms",
+      "status": "HARD_HOLD",
+      "reason": "Evidence necessary for enabling this offer not yet authenticated"
+    },
+    {
+      "id": "permitted_email_marketing",
+      "status": "HARD_HOLD",
+      "reason": "Evidence necessary for enabling this offer not yet authenticated"
+    },
+    {
+      "id": "offer_specific_tracking_link",
+      "status": "HARD_HOLD",
+      "reason": "Evidence necessary for enabling this offer not yet authenticated"
+    },
+    {
+      "id": "offer_link_destination",
+      "status": "HARD_HOLD",
+      "reason": "Evidence necessary for enabling this offer not yet authenticated"
+    },
+    {
+      "id": "payout_schedule",
+      "status": "HARD_HOLD",
+      "reason": "Evidence necessary for enabling this offer not yet authenticated"
+    },
+    {
+      "id": "commission_eligibility",
+      "status": "HARD_HOLD",
+      "reason": "Evidence necessary for enabling this offer not yet authenticated"
+    },
+    {
+      "id": "attribution_terms",
+      "status": "HARD_HOLD",
+      "reason": "Evidence necessary for enabling this offer not yet authenticated"
+    },
+    {
+      "id": "refund_reversals",
+      "status": "HARD_HOLD",
+      "reason": "Evidence necessary for enabling this offer not yet authenticated"
+    },
+    {
+      "id": "cart_package_and_delivery",
+      "status": "HARD_HOLD",
+      "reason": "Evidence necessary for enabling this offer not yet authenticated"
+    },
+    {
+      "id": "checkout_total_tax",
+      "status": "HARD_HOLD",
+      "reason": "Evidence necessary for enabling this offer not yet authenticated"
+    },
+    {
+      "id": "return_eligibility",
+      "status": "HARD_HOLD",
+      "reason": "Evidence necessary for enabling this offer not yet authenticated"
+    },
+    {
+      "id": "claim_substantiation",
+      "status": "HARD_HOLD",
+      "reason": "Evidence necessary for enabling this offer not yet authenticated"
+    },
+    {
+      "id": "privacy_analytics_consent",
+      "status": "HARD_HOLD",
+      "reason": "Evidence necessary for enabling this offer not yet authenticated"
+    },
+    {
+      "id": "independent_browser_accessibility",
+      "status": "HARD_HOLD",
+      "reason": "Evidence necessary for enabling this offer not yet authenticated"
+    },
+    {
+      "id": "founder_release_approval",
+      "status": "HARD_HOLD",
+      "reason": "Evidence necessary for enabling this offer not yet authenticated"
+    }
+  ],
+  "observations": "Public Zen12 seller cart showed a promotional offer on 2026-11-12; pricing, taxation, refund eligibility, currency and final cart are not guaranteed for a buyer. Public recruitment and buyer mail are not publisher acceptance. Payhip merchant inventory unavailable; a rights-cleared currently purchasable FV owned Mind SKU is NOT authenticated."
+}
