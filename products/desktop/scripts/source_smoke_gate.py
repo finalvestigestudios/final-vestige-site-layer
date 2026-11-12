@@ -13,6 +13,7 @@ import stat
 from pathlib import Path
 
 from report_evidence import prepare_report_path, publish_report
+from scripts.smoke_result_custody_r386 import checked_smoke_outputs
 
 APPS = (
     ("LedgerDiffLite", "ledger"),
@@ -179,11 +180,7 @@ def verify_smokes(run_smoke) -> list[dict[str, object]]:
     results = []
     for name, app_id in APPS:
         outputs = run_smoke(app_id)
-        if not outputs:
-            raise RuntimeError(f"{name} returned no source-smoke outputs")
-        paths = [Path(p) for p in outputs]
-        if any(p.is_absolute() or p.name in ("", ".", "..") or len(p.parts) != 1 for p in paths):
-            raise RuntimeError(f"{name} returned an unsafe source-smoke output reference")
+        paths = checked_smoke_outputs(outputs)
         results.append({"app": name, "engine": app_id,
                         "result": "PASS", "synthetic_output_count": len(paths)})
     return results
