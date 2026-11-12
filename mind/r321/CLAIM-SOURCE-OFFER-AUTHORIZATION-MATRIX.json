@@ -1,0 +1,464 @@
+{
+  "schema_version": "mind-r321-1",
+  "as_of": "2026-11-12",
+  "owner": "Mind & Affiliate",
+  "review_only": true,
+  "commercial_activation": "HARD_HOLD",
+  "partner_status": "FV-specific acceptance and earning-link not authenticated",
+  "sources": [
+    {
+      "id": "R98",
+      "url": "https://doi.org/10.1038/35784",
+      "note": "1998 original Nature correspondence; public abstract"
+    },
+    {
+      "id": "R11",
+      "url": "https://doi.org/10.1371/journal.pone.0021659",
+      "note": "2011 primary experiment; drift/ownership dissociation"
+    },
+    {
+      "id": "R21",
+      "url": "https://doi.org/10.1038/s41598-021-84595-x",
+      "note": "2021 study; 298 participants, 18-item embodiment scale"
+    },
+    {
+      "id": "L20",
+      "url": "https://doi.org/10.1525/collabra.325",
+      "note": "2020 demand-characteristics critique"
+    },
+    {
+      "id": "L24",
+      "url": "https://online.ucpress.edu/collabra/article/10/1/116190/200587/Order-Effects-on-the-Rubber-Hand-Illusion",
+      "note": "2024 expectancy replication/extension"
+    },
+    {
+      "id": "I3",
+      "url": "https://inspire3.com/",
+      "note": "official Inspire3 catalog; marketing claims only"
+    },
+    {
+      "id": "ZA",
+      "url": "https://zen12.com/about",
+      "note": "official Zen12 about; marketer claims only"
+    },
+    {
+      "id": "ZC",
+      "url": "https://zen12.com/getstarted",
+      "note": "exact Zen12 package/order page snapshot 2026-11-12"
+    },
+    {
+      "id": "AF",
+      "url": "https://affiliates.inspire3.com/",
+      "note": "public recruitment, NOT publisher authorization"
+    },
+    {
+      "id": "HL",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "note": "exact Total Focus seller page"
+    },
+    {
+      "id": "BS",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "note": "exact Focus Shot seller page"
+    },
+    {
+      "id": "FTC1",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "note": "FTC endorsement and material connection guidance"
+    },
+    {
+      "id": "FTC2",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "note": "FTC scientific substantiation"
+    },
+    {
+      "id": "P",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "note": "live archival source"
+    },
+    {
+      "id": "F",
+      "url": "https://finalvestige.com/focus/",
+      "note": "single existing free conversion path"
+    },
+    {
+      "id": "CB",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "note": "verified live perception article"
+    },
+    {
+      "id": "MS",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "note": "previously verified historical article; latest request rate-limited"
+    }
+  ],
+  "claims": [
+    {
+      "id": "SCI01",
+      "statement": "Rubber-hand illusion published 19 Feb 1998",
+      "decision": "USE",
+      "sources": [
+        "R98"
+      ],
+      "limit": "Original public abstract; no numerical participant claim"
+    },
+    {
+      "id": "SCI02",
+      "statement": "Vision/touch/proprioception can be brought into conflict experimentally",
+      "decision": "USE",
+      "sources": [
+        "R98"
+      ],
+      "limit": "Lab procedures, not a universal outcome"
+    },
+    {
+      "id": "SCI03",
+      "statement": "Synchronous stroking can support reports of ownership",
+      "decision": "QUALIFY",
+      "sources": [
+        "R98"
+      ],
+      "limit": "Depends on conditions and participant"
+    },
+    {
+      "id": "SCI04",
+      "statement": "Proprioceptive drift and ownership are not equivalent",
+      "decision": "USE",
+      "sources": [
+        "R11"
+      ],
+      "limit": "2011 results; avoid claiming no relationship anywhere"
+    },
+    {
+      "id": "SCI05",
+      "statement": "2011 work varied 10/40/120-second measurement intervals",
+      "decision": "USE",
+      "sources": [
+        "R11"
+      ],
+      "limit": "Original published procedure"
+    },
+    {
+      "id": "SCI06",
+      "statement": "Drift appeared under some control conditions",
+      "decision": "USE",
+      "sources": [
+        "R11"
+      ],
+      "limit": "Depends on measurement frequency"
+    },
+    {
+      "id": "SCI07",
+      "statement": "2021 questionnaire sample was 298 participants",
+      "decision": "USE",
+      "sources": [
+        "R21"
+      ],
+      "limit": "Not an estimate of general susceptibility"
+    },
+    {
+      "id": "SCI08",
+      "statement": "2021 scale shortened 27 items to 18",
+      "decision": "USE",
+      "sources": [
+        "R21"
+      ],
+      "limit": "Three-component questionnaire"
+    },
+    {
+      "id": "SCI09",
+      "statement": "Embodiment correlations with self-esteem and empathy",
+      "decision": "QUALIFY",
+      "sources": [
+        "R21"
+      ],
+      "limit": "Correlations, not intervention effects"
+    },
+    {
+      "id": "SCI10",
+      "statement": "Demand expectations can confound some standard RHI comparisons",
+      "decision": "QUALIFY",
+      "sources": [
+        "L20"
+      ],
+      "limit": "Interpretive debate, not universal debunk"
+    },
+    {
+      "id": "SCI11",
+      "statement": "2024 study explored order effects in expectancy reports",
+      "decision": "USE",
+      "sources": [
+        "L24"
+      ],
+      "limit": "Do not overstate replication conclusions"
+    },
+    {
+      "id": "SCI12",
+      "statement": "A rubber hand study proves hypnosis or mind control",
+      "decision": "EXCLUDE",
+      "sources": [
+        "R98"
+      ],
+      "limit": "No mechanism evidence"
+    },
+    {
+      "id": "SCI13",
+      "statement": "RHI predicts Zen12 results",
+      "decision": "EXCLUDE",
+      "sources": [
+        "ZA"
+      ],
+      "limit": "No branded efficacy trial"
+    },
+    {
+      "id": "PROD01",
+      "statement": "Zen12 describes 12-minute sessions and twelve levels",
+      "decision": "SELLER_ONLY",
+      "sources": [
+        "ZA"
+      ],
+      "limit": "Format described, not validated benefit"
+    },
+    {
+      "id": "PROD02",
+      "statement": "Zen12 checkout lists 48 MP3s",
+      "decision": "SELLER_ONLY",
+      "sources": [
+        "ZC"
+      ],
+      "limit": "Seller package claim, reverify at release"
+    },
+    {
+      "id": "PROD03",
+      "statement": "Zen12 includes four listening styles per level",
+      "decision": "SELLER_ONLY",
+      "sources": [
+        "ZA"
+      ],
+      "limit": "Music/guided/white noise/nature"
+    },
+    {
+      "id": "PROD04",
+      "statement": "Seller said 12 minutes equals an hour of meditation",
+      "decision": "EXCLUDE",
+      "sources": [
+        "ZA"
+      ],
+      "limit": "No product-specific independent support"
+    },
+    {
+      "id": "PROD05",
+      "statement": "Zen12 checkout showed $87.99 on 2026-11-12",
+      "decision": "DATED_OBSERVATION_NOT_COPY",
+      "sources": [
+        "ZC"
+      ],
+      "limit": "Promotional conditional price; no evergreen or guaranteed price"
+    },
+    {
+      "id": "PROD06",
+      "statement": "Seller presents a one-year money-back guarantee",
+      "decision": "HOLD_TERMS",
+      "sources": [
+        "ZC"
+      ],
+      "limit": "Terms, exclusions, jurisdiction and purchase path unreviewed"
+    },
+    {
+      "id": "PROD07",
+      "statement": "Total Focus seller lists 33-minute, 47 MB audio",
+      "decision": "SELLER_ONLY",
+      "sources": [
+        "HL"
+      ],
+      "limit": "Not Zen12; price varies $24.44 vs historical $17.95"
+    },
+    {
+      "id": "PROD08",
+      "statement": "Focus Shot seller lists 15/30 minute sessions",
+      "decision": "SELLER_ONLY",
+      "sources": [
+        "BS"
+      ],
+      "limit": "Not Zen12"
+    },
+    {
+      "id": "PROD09",
+      "statement": "Focus Shot seller says results last hours",
+      "decision": "EXCLUDE",
+      "sources": [
+        "BS"
+      ],
+      "limit": "Unsupported product-specific claim"
+    },
+    {
+      "id": "PROD10",
+      "statement": "Inspire3 public site advertises commission percentages",
+      "decision": "EXCLUDE",
+      "sources": [
+        "AF"
+      ],
+      "limit": "Not authenticated account payout"
+    },
+    {
+      "id": "AFF01",
+      "statement": "FV can issue an earning CTA now",
+      "decision": "EXCLUDE",
+      "sources": [
+        "AF"
+      ],
+      "limit": "No account-specific approval/link/channel rights"
+    },
+    {
+      "id": "FTC01",
+      "statement": "Proximate material-connection disclosure needed",
+      "decision": "USE",
+      "sources": [
+        "FTC1"
+      ],
+      "limit": "Near each future earning CTA; general policy alone insufficient"
+    },
+    {
+      "id": "FTC02",
+      "statement": "Health efficacy needs appropriate scientific support",
+      "decision": "USE",
+      "sources": [
+        "FTC2"
+      ],
+      "limit": "Seller materials alone insufficient"
+    },
+    {
+      "id": "FV01",
+      "statement": "Focus Fieldbook has one established live /focus/ route",
+      "decision": "USE",
+      "sources": [
+        "F"
+      ],
+      "limit": "Do not duplicate subscription stack"
+    },
+    {
+      "id": "FV02",
+      "statement": "Puységur historical files prove animal magnetism",
+      "decision": "EXCLUDE",
+      "sources": [
+        "P"
+      ],
+      "limit": "Historical records not mechanism verification"
+    },
+    {
+      "id": "FUNNEL01",
+      "statement": "Affiliate outbound click equals paid order",
+      "decision": "EXCLUDE",
+      "sources": [
+        "AF"
+      ],
+      "limit": "Independently reported paid affiliate conversion required"
+    }
+  ],
+  "commercial_holds": [
+    {
+      "id": "H01",
+      "name": "FV-specific partner acceptance",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "H02",
+      "name": "exact eligible offer",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "H03",
+      "name": "issued earning URL",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "H04",
+      "name": "allowed website channel",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "H05",
+      "name": "allowed social platform channels",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "H06",
+      "name": "allowed email channel",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "H07",
+      "name": "attribution window",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "H08",
+      "name": "cookie rules",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "H09",
+      "name": "refund reversal rules",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "H10",
+      "name": "commission accounting",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "H11",
+      "name": "settled paid payout",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "H12",
+      "name": "current checkout availability",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "H13",
+      "name": "checkout price and taxes",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "H14",
+      "name": "written refund conditions",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "H15",
+      "name": "product-specific efficacy support",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "H16",
+      "name": "consent/privacy plan",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "H17",
+      "name": "browser accessibility and security QA",
+      "status": "HARD_HOLD"
+    },
+    {
+      "id": "H18",
+      "name": "founder release authorization",
+      "status": "HARD_HOLD"
+    }
+  ],
+  "alternate_owned_offer": {
+    "status": "NOT_AUTHENTICATED",
+    "requirements": [
+      "actual live Payhip SKU",
+      "price/currency",
+      "rights to sell",
+      "checkout",
+      "delivery",
+      "refund obligations",
+      "fees",
+      "actual order source"
+    ],
+    "decision": "No invented FV-owned product fallback"
+  }
+}
