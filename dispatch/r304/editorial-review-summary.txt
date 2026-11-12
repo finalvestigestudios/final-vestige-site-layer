@@ -1,0 +1,16 @@
+FINAL VESTIGE DISPATCH | R304 REVIEW NOTE | UNSENT / NOT ADOPTED
+As of 2026-11-12 12:30 UTC. Origin: PR #175, Issue #174. Companion Issue #171.
+
+NEW FACT: WordPress says Not confirmed subscribers do not enter total subscribers. Jetpack 3 total / 3 confirmed / 2 unconfirmed is therefore not intrinsically inconsistent. The email-eligible count still cannot be derived from this or 3 WP.com / 0 email follower statistics. Only privately observed Email Subscription=Subscribed status can establish eligible audience. No subscriber records were accessed.
+
+ISSUE DECISIONS (all HOLD):
+01: perception topic with Puységur CTA overlaps 02; compare unsent R301 alternative.
+02: historical archive repeats 01 CTA; compare R300 Franklin experiment alternative.
+03: Zen12 reserved commercial; first-party buyer guide not live, partner EMAIL permission and earning link not proven. HOLD_MERCHANT.
+04: 14-second Apollo 1 subject unsupported; require historical correction; compare R302.
+05: Hypnosis Live Total Focus specificity needed, merchant price changes and refund remain checkout-unverified. No affiliate authorization. HOLD_MERCHANT.
+06: link back to /focus/ may re-ask existing subscriber for signup; compare R299 direct PDF after HTTP check.
+
+CURRENT PROVIDER: newsletter enabled, new-post emails disabled, full text, Fieldbook welcome configured but not received in the inspected inbox. No native preview. No Final Vestige physical postal address / functional unsubscribe proven. No settled sales, commissions or net revenue denominators. No send or release authorized.
+
+PRIORITY: Get merchant email rights + approved first-party guide (Mind/Commerce), read-only email status reconciliation (Claude/Focus), real provider preview+footer (Dispatch/Founder), qualified-human-to-order proof (Claude/Commerce). Grok continues social creation; no takeover.
