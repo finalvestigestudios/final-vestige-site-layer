@@ -1,0 +1,90 @@
+{
+  "sprint": "R300",
+  "date": "2026-11-12",
+  "status": "UNSENT_NOT_ADOPTED",
+  "original_manifest_sha": "86df98ad8a84e583ff5df64ddbf8c0eaa1335b00",
+  "source_issues": [
+    "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/174",
+    "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171"
+  ],
+  "alternate_issue": 2,
+  "subject": "What happened at the fourth tree?",
+  "proposed_preheader": "A blindfolded experiment in 1784 tested what a witness could know.",
+  "preheader_native_jetpack": "UNVERIFIED",
+  "primary_cta": "https://finalvestige.com/2026/11/02/mesmerism/",
+  "source_links": [
+    "https://www.gutenberg.org/ebooks/78413",
+    "https://publicdomainreview.org/essay/mesmerising-science-the-franklin-commission-and-the-modern-clinical-trial"
+  ],
+  "commercial": false,
+  "offer_allocations_unchanged": {
+    "editorial": [
+      1,
+      2,
+      4,
+      6
+    ],
+    "commercial_held": [
+      3,
+      5
+    ]
+  },
+  "source_provenance": [
+    {
+      "claim": "In 1784 the commissioners reported a blindfolded boy embracing four untreated trees and fainting at the fourth",
+      "source": "https://www.gutenberg.org/ebooks/78413",
+      "layer": "1785 English translation of 1784 report",
+      "status": "SOURCE_ALIGNED"
+    },
+    {
+      "claim": "Commission tested Deslon's practice, not all Mesmer therapies; no proof of magnetic fluid",
+      "source": "https://www.gutenberg.org/ebooks/78413",
+      "layer": "commission report",
+      "status": "SOURCE_ALIGNED"
+    },
+    {
+      "claim": "Calling the method an early blinded test is a later interpretation",
+      "source": "https://publicdomainreview.org/essay/mesmerising-science-the-franklin-commission-and-the-modern-clinical-trial",
+      "layer": "modern secondary essay",
+      "status": "ATTRIBUTED_INTERPRETATION"
+    },
+    {
+      "claim": "Published Final Vestige full treatment exists and links back to both sources",
+      "source": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "layer": "live owned article WordPress post 1924",
+      "status": "VERIFIED_LIVE_READ_ONLY"
+    }
+  ],
+  "provider_snapshot": {
+    "as_of": "2026-11-12T08:31:13Z",
+    "newsletter": true,
+    "new_post_auto_send": false,
+    "format": "full",
+    "diagnostic_counts": {
+      "total": 3,
+      "confirmed": 3,
+      "unconfirmed": 2
+    },
+    "separate_followers": {
+      "wpcom": 3,
+      "email": 0
+    },
+    "email_eligible": "UNKNOWN",
+    "welcome_message": "CONFIGURED_NOT_RECEIVED",
+    "postal": "NOT_VERIFIED",
+    "unsub": "NOT_VERIFIED",
+    "native_preview": "NOT_PRODUCED"
+  },
+  "merchant_review": {
+    "zen12_email_permission": "UNKNOWN",
+    "hypnosis_live_email_permission": "UNKNOWN",
+    "earning_links": "NONE_VERIFIED",
+    "seller_specific_claims": "UNPROVEN",
+    "approved_live_guides": "NONE_VERIFIED",
+    "issues_03_05": "HOLD_MERCHANT"
+  },
+  "no_send": true,
+  "founder_final_send_approval": false,
+  "settled_revenue": "UNKNOWN",
+  "qualified_sessions": "UNKNOWN"
+}
