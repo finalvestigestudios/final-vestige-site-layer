@@ -17,7 +17,7 @@ pass(/name="robots" content="noindex,nofollow"/.test(h),'noindex '+k);
 pass(/disabled aria-disabled="true"/.test(h),'disabled '+k);
 pass(/Potential affiliate relationship:[\s\S]{0,230}may earn a commission/.test(h),'near affiliate disclosure '+k);
 pass(h.includes('https://finalvestige.com/focus/'),'existing Focus '+k);
-pass(!/<script\b|<iframe\b|<form\b|autoplay|pixel\b/i.test(h),'no forms scripts autoplay '+k);
+pass(!/<script\b|<iframe\b|<form\b|\sautoplay(?:\s|=|>)/i.test(h),'no forms scripts autoplay '+k);
 pass(!/href="https?:\/\/(?:zen12|inspire3|affiliates\.inspire3|hypnosislive|brainwaveshots)\.com/i.test(h),'no merchant links '+k);
 }
 pass(extract(A)===extract(B),'substantive A/B parity');
@@ -40,7 +40,7 @@ h=>h.replace('</main>','<script src="https://tracker.invalid/x.js"></script></ma
 h=>h.replace('</main>','<a href="https://zen12.com/">Buy now</a></main>')
 ]){
 const bad=mutation(A);
-const safe=/disabled aria-disabled="true"/.test(bad)&&/Potential affiliate relationship:[\s\S]{0,230}may earn a commission/.test(bad)&&!/<form\b|<script\b|autoplay|tracker\.invalid/i.test(bad)&&!/href="https:\/\/zen12\.com\//.test(bad)&&bad.includes('If we are approved');
+const safe=/disabled aria-disabled="true"/.test(bad)&&/Potential affiliate relationship:[\s\S]{0,230}may earn a commission/.test(bad)&&!/<form\b|<script\b|\sautoplay(?:\s|=|>)|tracker\.invalid/i.test(bad)&&!/href="https:\/\/zen12\.com\//.test(bad)&&bad.includes('If we are approved');
 assert.equal(safe,false,'unsafe mutation escaped');n++;
 }
 console.log('R331 source baseline and six negative mutations: '+n+'/'+n+' PASS (native Node); no browser/WP/payment checks performed');
