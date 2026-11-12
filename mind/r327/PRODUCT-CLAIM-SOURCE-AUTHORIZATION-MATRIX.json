@@ -621,11 +621,12 @@
       "seller_details": "12 levels, 4 styles each, 48 MP3s complete course",
       "price": "Seller checkout $87.99 observed Nov 12 2026; not guaranteed",
       "returns": "Seller money-back language; independently unverified",
-      "publisher_eligible": false,
+      "publisher_eligible": null,
       "eligibility_evidence": "NOT_VERIFIED",
       "affiliate_url": null,
       "conversion_status": "NO_VALIDATED_SALE",
-      "launch": "HARD_HOLD"
+      "launch": "HARD_HOLD",
+      "publisher_eligibility_status": "UNKNOWN_UNVERIFIED"
     },
     {
       "id": "hypnosis-total-focus",
