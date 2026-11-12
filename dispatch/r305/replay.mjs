@@ -47,12 +47,12 @@ export function replay({asOf,events}) {
  for(const days of [7,30]){
   const ss=[...sessions].filter(([_,v])=>v.qualified&&v.at>now-days*86400000&&v.at<=now);
   const keys=new Set(ss.map(([k])=>k)),os=[...orders.values()].filter(o=>keys.has(o.session));
-  const q=ss.length,n=os.length,l=ss.filter(([_,s])=>s.lead).length;
+  const q=ss.length,n=os.length,l=ss.filter(([_,s])=>s.lead).length,customers=new Set(os.map(o=>o.session)).size;
   const gross=os.reduce((a,o)=>a+o.gross,0),fees=os.reduce((a,o)=>a+o.fees,0),refunds=os.reduce((a,o)=>a+o.refund,0);
   result.cohorts["d"+days]={qualified_human_sessions:q,confirmed_signups:l,settled_orders:n,gross_cents:n?gross:null,fees_cents:n?fees:null,
    refunds_cents:n?refunds:null,net_cents:n?gross-fees-refunds:null,
    net_per_1000_qualified_sessions_cents:n&&q?Math.round(1000*(gross-fees-refunds)/q):null,
-   paid_conversion_rate:n&&q?n/q:null,lead_to_customer_rate:n&&l?n/l:null,
+   verified_paying_customers:n?customers:null,paid_conversion_rate:n&&q?customers/q:null,lead_to_customer_rate:n&&l?customers/l:null,
    caveat:"entirely synthetic; no A/B claims or real-revenue inference"};
  }
  return result;
