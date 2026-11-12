@@ -1,0 +1,55 @@
+{
+  "sprint": "R299",
+  "snapshot_utc": "2026-11-12T07:35:53Z",
+  "master_pr": 175,
+  "master_sha": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "base_draft_pr": 2156,
+  "source_read": {
+    "issue_174": true,
+    "issue_171": true,
+    "master_manifest_and_six_issues": true,
+    "wordpress_dispatch": true,
+    "wordpress_focus": true,
+    "editorial_standards": true,
+    "merchant_public_pages": true
+  },
+  "tests": {
+    "exact_master_source_v8_assertions_passed": 26,
+    "optional_html_plaintext_offline_assertions_passed": 15,
+    "native_python_this_sprint": "NOT_RUN",
+    "real_jetpack_preview": "NOT_RUN",
+    "email_received": "NOT_RUN",
+    "live_pdf_download": "NOT_RUN"
+  },
+  "newsletter": {
+    "enabled": true,
+    "new_post_auto_send": false,
+    "email_content_format": "full",
+    "welcome_configured": true,
+    "welcome_received": "UNKNOWN",
+    "subscriber_diag_total": 3,
+    "subscriber_diag_confirmed": 3,
+    "subscriber_diag_unconfirmed": 2,
+    "wpcom_followers": 3,
+    "email_followers": 0,
+    "actual_eligible_recipient_count": null
+  },
+  "new_finding": "Original Issue 06 returns existing recipient to /focus/ acquisition/signup. PDF is linked on published /focus/ but direct download not independently tested.",
+  "preheader": "NOT VERIFIED by native Jetpack delivery; WordPress post title is documented email subject.",
+  "affiliate": {
+    "zen12_email_permission": "UNKNOWN",
+    "hypnosislive_email_permission": "UNKNOWN",
+    "verified_issued_earning_urls": 0,
+    "active_approved_guides": 0
+  },
+  "holds": [
+    "ALL_SIX_HOLD_UNSENT",
+    "ISSUES_03_05_HOLD_MERCHANT",
+    "ISSUE06_OPTION_NOT_ADOPTED",
+    "FOUNDER_FINAL_APPROVAL_ABSENT"
+  ],
+  "realized_net_revenue_per_1000_qualified_sessions": null,
+  "emails_sent": 0,
+  "production_changes": 0,
+  "subscribers_contacted": 0
+}
