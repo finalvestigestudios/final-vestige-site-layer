@@ -1,0 +1,446 @@
+{
+  "schema": "FV-MIND-R307-v1",
+  "date_pt": "2026-11-11",
+  "published": false,
+  "commercial_status": "HARD_HOLD",
+  "publisher_accepted": "UNVERIFIED",
+  "issue": "#171",
+  "sources": [
+    {
+      "id": "B1843",
+      "url": "https://wellcomecollection.org/works/demkv24m",
+      "kind": "archive-catalog",
+      "reading_scope": "Braid 1843 publication record, not full-book transcription"
+    },
+    {
+      "id": "B1850",
+      "url": "https://wellcomecollection.org/works/mayx5tgs",
+      "kind": "archive-catalog",
+      "reading_scope": "Braid 1850 publication record"
+    },
+    {
+      "id": "C1785",
+      "url": "https://www.gutenberg.org/files/78413/78413-h/78413-h.htm",
+      "kind": "historical-text",
+      "reading_scope": "1785 English translation, not the full range of Mesmerist practice"
+    },
+    {
+      "id": "FVM",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "kind": "owned-editorial",
+      "reading_scope": "FV Franklin Mesmerism investigation"
+    },
+    {
+      "id": "FVP",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "kind": "owned-editorial",
+      "reading_scope": "FV Puységur archive with limitations"
+    },
+    {
+      "id": "APADEF",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25928776/",
+      "kind": "abstract",
+      "reading_scope": "Revised APA Division 30 definition abstract"
+    },
+    {
+      "id": "APAN",
+      "url": "https://www.apa.org/research/action/hypnosis",
+      "kind": "professional-overview",
+      "reading_scope": "APA science and definition overview"
+    },
+    {
+      "id": "NCCIH",
+      "url": "https://www.nccih.nih.gov/health/hypnosis",
+      "kind": "federal-guidance",
+      "reading_scope": "NCCIH review of specific clinical hypotheses"
+    },
+    {
+      "id": "SLEEP2023",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37399315/",
+      "kind": "abstract",
+      "reading_scope": "44-study systematic review abstract; no product validation"
+    },
+    {
+      "id": "NEURO2017",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/28238944/",
+      "kind": "abstract",
+      "reading_scope": "Neuroimaging review abstract"
+    },
+    {
+      "id": "JHM",
+      "url": "https://www.hopkinsmedicine.org/health/wellness-and-prevention/hypnosis",
+      "kind": "clinical-education",
+      "reading_scope": "Memory retrieval safety guidance"
+    },
+    {
+      "id": "I3",
+      "url": "https://inspire3.com/",
+      "kind": "merchant-parent",
+      "reading_scope": "Brand descriptions are seller claims"
+    },
+    {
+      "id": "Z12",
+      "url": "https://zen12.com/",
+      "kind": "merchant-site",
+      "reading_scope": "Promoted 12-minute routine and asserted outcomes"
+    },
+    {
+      "id": "Z12CHECK",
+      "url": "https://zen12.com/getstarted",
+      "kind": "merchant-checkout",
+      "reading_scope": "12 levels 48 MP3s and additional materials, changeable terms"
+    },
+    {
+      "id": "HL",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "kind": "merchant-page",
+      "reading_scope": "33-minute 47MB Total Focus seller listing"
+    },
+    {
+      "id": "BS",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "kind": "merchant-page",
+      "reading_scope": "15- and 30-minute Focus Shot offer"
+    },
+    {
+      "id": "I3AFF",
+      "url": "https://affiliates.inspire3.com/",
+      "kind": "merchant-recruiting",
+      "reading_scope": "Public recruitment is not publisher approval"
+    },
+    {
+      "id": "FTCEND",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "kind": "regulatory-guidance",
+      "reading_scope": "Near-recommendation material relationship disclosures"
+    },
+    {
+      "id": "FTCHEALTH",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "kind": "regulatory-guidance",
+      "reading_scope": "Adequate scientific substantiation for benefit and safety claims"
+    },
+    {
+      "id": "FVFOCUS",
+      "url": "https://finalvestige.com/focus/",
+      "kind": "owned-live",
+      "reading_scope": "Single established free Focus opt-in"
+    },
+    {
+      "id": "FVCHANGE",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "kind": "owned-live",
+      "reading_scope": "Published study review"
+    },
+    {
+      "id": "FVSTD",
+      "url": "https://finalvestige.com/editorial-standards/",
+      "kind": "owned-live",
+      "reading_scope": "Editorial / commercial separation"
+    }
+  ],
+  "claims": [
+    {
+      "id": "hist_1843",
+      "source_id": "B1843",
+      "status": "SUPPORTED_SCOPE",
+      "scope": "Braid authored a book published in 1843; the catalog does not verify clinical efficacy"
+    },
+    {
+      "id": "hist_1850",
+      "source_id": "B1850",
+      "status": "SUPPORTED_SCOPE",
+      "scope": "Second Braid book dates to 1850"
+    },
+    {
+      "id": "hist_commission",
+      "source_id": "C1785",
+      "status": "HISTORICAL_REPORT",
+      "scope": "The 1784 commission's surviving translated report is historically situated, not a modern randomized clinical trial"
+    },
+    {
+      "id": "hist_FV_commission",
+      "source_id": "FVM",
+      "status": "SECONDARY",
+      "scope": "FV distinguishes the d'Eslon testing from every magnetism practice"
+    },
+    {
+      "id": "hist_FV_puysegur",
+      "source_id": "FVP",
+      "status": "SECONDARY",
+      "scope": "FV dossier does not constitute independent clinical evidence"
+    },
+    {
+      "id": "hypnosis_definition",
+      "source_id": "APADEF",
+      "status": "SUPPORTED_ABSTRACT",
+      "scope": "Focused attention and response to suggestion definition"
+    },
+    {
+      "id": "hypnosis_debate",
+      "source_id": "APAN",
+      "status": "SUPPORTED_SUMMARY",
+      "scope": "Mechanisms and state interpretations remain debated"
+    },
+    {
+      "id": "nccih_IBS",
+      "source_id": "NCCIH",
+      "status": "CONTEXT_ONLY",
+      "scope": "NCCIH reports very-low-quality evidence underlying conditional gut-directed recommendation"
+    },
+    {
+      "id": "nccih_smoking",
+      "source_id": "NCCIH",
+      "status": "CONTEXT_ONLY",
+      "scope": "Smoking cessation hypnosis findings conflict"
+    },
+    {
+      "id": "nccih_anxiety",
+      "source_id": "NCCIH",
+      "status": "CONTEXT_ONLY",
+      "scope": "Promising but not conclusive procedure-anxiety research"
+    },
+    {
+      "id": "sleep_review",
+      "source_id": "SLEEP2023",
+      "status": "SUPPORTED_ABSTRACT",
+      "scope": "44 heterogeneous adult studies; 47.7 positive, 22.7 mixed, 29.5 no impact; not a product trial"
+    },
+    {
+      "id": "sleep_overreach",
+      "source_id": "SLEEP2023",
+      "status": "PROHIBITED_INFERENCE",
+      "scope": "Cannot claim 47.7 percent of Zen12 users improve sleep"
+    },
+    {
+      "id": "neuro_review",
+      "source_id": "NEURO2017",
+      "status": "SUPPORTED_ABSTRACT",
+      "scope": "Imaging analyses find few common patterns; not product validation"
+    },
+    {
+      "id": "memory_retrieval",
+      "source_id": "JHM",
+      "status": "SAFETY",
+      "scope": "Hypnotic memory recovery can be unreliable"
+    },
+    {
+      "id": "inspire_brand",
+      "source_id": "I3",
+      "status": "SELLER_CLAIM",
+      "scope": "Seller portfolio identifies separate brands"
+    },
+    {
+      "id": "zen12_12min",
+      "source_id": "Z12",
+      "status": "SELLER_CLAIM",
+      "scope": "Twelve-minute use claim is not validated as hour equivalence"
+    },
+    {
+      "id": "zen12_bundle",
+      "source_id": "Z12CHECK",
+      "status": "SELLER_PACKAGE",
+      "scope": "Complete course seller lists twelve levels and 48 MP3 recordings"
+    },
+    {
+      "id": "zen12_support",
+      "source_id": "Z12CHECK",
+      "status": "SELLER_PACKAGE",
+      "scope": "Seller lists manuals/support/bonus items; recheck on release"
+    },
+    {
+      "id": "zen12_proof",
+      "source_id": "Z12",
+      "status": "PROHIBITED_INFERENCE",
+      "scope": "No source here supports Zen12-specific guaranteed concentration, treatment or hour equivalence"
+    },
+    {
+      "id": "HL_length",
+      "source_id": "HL",
+      "status": "SELLER_PACKAGE",
+      "scope": "Total Focus seller lists 33-minute/47MB recording, not Zen12"
+    },
+    {
+      "id": "HL_claim",
+      "source_id": "HL",
+      "status": "PROHIBITED_INFERENCE",
+      "scope": "Seller's concentration benefits not independently validated for this recording"
+    },
+    {
+      "id": "BS_formats",
+      "source_id": "BS",
+      "status": "SELLER_PACKAGE",
+      "scope": "Seller lists 15- and 30-minute Focus Shot versions"
+    },
+    {
+      "id": "BS_claim",
+      "source_id": "BS",
+      "status": "PROHIBITED_INFERENCE",
+      "scope": "Brainwave Shots efficacy assertion does not establish independent performance"
+    },
+    {
+      "id": "affiliate_recruit",
+      "source_id": "I3AFF",
+      "status": "MERCHANT_RECRUIT",
+      "scope": "General program enrollment invitation does not certify FV acceptance"
+    },
+    {
+      "id": "affiliate_rate",
+      "source_id": "I3AFF",
+      "status": "NOT_AUTHORIZED",
+      "scope": "Public recruiting payout/EPC representations are not FV entitlement; no rate used"
+    },
+    {
+      "id": "ftc_disclosure",
+      "source_id": "FTCEND",
+      "status": "COMPLIANCE_REQUIRED",
+      "scope": "Near prospective link material relationship disclosure is necessary"
+    },
+    {
+      "id": "health_claim",
+      "source_id": "FTCHEALTH",
+      "status": "COMPLIANCE_REQUIRED",
+      "scope": "Product efficacy claims need appropriate adequate product-specific substantiation"
+    },
+    {
+      "id": "free_route",
+      "source_id": "FVFOCUS",
+      "status": "LIVE_VERIFIED",
+      "scope": "Existing free Fieldbook; no duplicate signup invented"
+    },
+    {
+      "id": "creator_change",
+      "source_id": "FVCHANGE",
+      "status": "LIVE_VERIFIED",
+      "scope": "Change blindness article is published, social media asset not authenticated"
+    },
+    {
+      "id": "editorial_integrity",
+      "source_id": "FVSTD",
+      "status": "POLICY",
+      "scope": "Separate commerce from investigation conclusions"
+    }
+  ],
+  "gates": [
+    {
+      "id": "publisher_acceptance",
+      "status": "HARD_HOLD",
+      "required_proof": "Document actual affiliate publisher approval"
+    },
+    {
+      "id": "affiliate_identity",
+      "status": "HARD_HOLD",
+      "required_proof": "Verify approval applies to Final Vestige"
+    },
+    {
+      "id": "earning_url",
+      "status": "HARD_HOLD",
+      "required_proof": "Authenticate the issued publisher tracking link"
+    },
+    {
+      "id": "website_rights",
+      "status": "HARD_HOLD",
+      "required_proof": "Verify WordPress website promotion allowed"
+    },
+    {
+      "id": "email_rights",
+      "status": "HARD_HOLD",
+      "required_proof": "Verify Dispatch email placement expressly allowed"
+    },
+    {
+      "id": "social_rights",
+      "status": "HARD_HOLD",
+      "required_proof": "Verify TikTok/YouTube referral allowed"
+    },
+    {
+      "id": "creative_rights",
+      "status": "HARD_HOLD",
+      "required_proof": "Verify official creatives usage or original creative permission"
+    },
+    {
+      "id": "link_terms",
+      "status": "HARD_HOLD",
+      "required_proof": "Verify direct vs redirect links and attribution constraints"
+    },
+    {
+      "id": "privacy_terms",
+      "status": "HARD_HOLD",
+      "required_proof": "Check permitted identifiers and consent requirements"
+    },
+    {
+      "id": "seller_package",
+      "status": "HARD_HOLD",
+      "required_proof": "Reverify exact correct product and product variation"
+    },
+    {
+      "id": "checkout_price",
+      "status": "HARD_HOLD",
+      "required_proof": "Reverify buyer price/currency and geo"
+    },
+    {
+      "id": "refund_terms",
+      "status": "HARD_HOLD",
+      "required_proof": "Reverify seller refund terms, eligibility and exclusions"
+    },
+    {
+      "id": "final_claims",
+      "status": "HARD_HOLD",
+      "required_proof": "Evidence-check every promise before activation"
+    },
+    {
+      "id": "disclosure_review",
+      "status": "HARD_HOLD",
+      "required_proof": "Verify link-adjacent FTC disclosure on all layouts"
+    },
+    {
+      "id": "a11y_browser",
+      "status": "HARD_HOLD",
+      "required_proof": "Keyboard/WCAG/no-JS and responsive browser QA"
+    },
+    {
+      "id": "video_asset",
+      "status": "HARD_HOLD",
+      "required_proof": "License, encode, caption, poster, transcript, performance-test actual video"
+    },
+    {
+      "id": "commercial_reconciliation",
+      "status": "HARD_HOLD",
+      "required_proof": "Verify vendor reports and refunds/fees, not clicks"
+    },
+    {
+      "id": "founder_release",
+      "status": "HARD_HOLD",
+      "required_proof": "Obtain explicit founder production release approval"
+    }
+  ],
+  "creator_paths": [
+    {
+      "topic": "Change blindness",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "asset_id": null,
+      "merchant_route": "NONE",
+      "next": "existing /focus/ optional"
+    },
+    {
+      "topic": "Mesmer and Puységur",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "asset_id": null,
+      "merchant_route": "NONE",
+      "next": "existing /focus/ optional"
+    },
+    {
+      "topic": "Self hypnosis, Braid and buying Zen12",
+      "url": null,
+      "asset_id": null,
+      "merchant_route": "HOLD",
+      "next": "unpublished R307 guide; no merchant link"
+    }
+  ],
+  "financial_status": {
+    "qualified_human_sessions": null,
+    "confirmed_leads": null,
+    "cleared_affiliate_commission": null,
+    "net_revenue_per_1000_humans": null,
+    "statement": "NOT COMPUTABLE; no fabricated zeros"
+  }
+}
