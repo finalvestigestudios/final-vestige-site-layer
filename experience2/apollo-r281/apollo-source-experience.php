@@ -230,7 +230,7 @@ function fv_r281_render($attributes = []): string {
     $date_reconciliation=fv_r288_source_reconciliation();
     $authority_ledger=fv_r289_authority_ledger();
     if (!fv_r281_valid_records($records) || !fv_r288_reconciliation_valid($date_reconciliation) || !fv_r289_authority_ledger_valid($authority_ledger)) {
-        return '<aside aria-label="Apollo source fallback"><p>Evidence experience unavailable.</p><a href="'.FV_R281_NASA_BOARD.'">Read the NASA Review Board report</a> · <a href="'.FV_R281_FREE.'">Read the free Apollo investigation</a></aside>';
+        return '<aside aria-label="Apollo source fallback"><p>Evidence experience unavailable.</p><a href="'.FV_R281_NASA_BOARD.'" data-fv-link-purpose="official-evidence-source" data-fv-conversion-kind="noncommercial-source-reference">Read the NASA Review Board report</a> · <a href="'.FV_R281_FREE.'">Read the free Apollo investigation</a></aside>';
     }
     static $sequence=0, $linked=false;
     $sequence++;
@@ -278,7 +278,7 @@ function fv_r281_render($attributes = []): string {
         // If CSS fails, the suffix becomes visible rather than disappearing.
         $drawer_suffix=' — '.$r['title'].$landmark_instance;
         $s.='<details class="fv-r281__drawer"><summary>Inspect the source and custody record<span class="fv-r298__sr-only">'.fv_r281_escape($drawer_suffix).'</span></summary><div class="fv-r281__drawer-body"><p><strong>Custodian:</strong> NASA · <strong>Record:</strong> '.fv_r281_escape($r['source_id']).' · <strong>Editorial review:</strong> Pending</p><p><strong>Record type:</strong> '.fv_r281_escape($r['source_type']).'. <strong>Source relationship:</strong> '.fv_r281_escape($r['source_dependency']).'</p>';
-        $s.='<p><a href="'.fv_r281_escape($r['source_url']).'" rel="noopener noreferrer">Open '.fv_r281_escape($r['source_name']).' (NASA)</a></p>';
+        $s.='<p><a href="'.fv_r281_escape($r['source_url']).'" rel="noopener noreferrer" data-fv-link-purpose="official-evidence-source" data-fv-conversion-kind="noncommercial-source-reference">Open '.fv_r281_escape($r['source_name']).' (NASA)</a></p>';
         $s.='<p>This is an official-source link, not a claim of NASA endorsement or clearance for promotional use of agency marks, astronaut likenesses, or media.</p></div></details>';
         $s.='</article></li>';
     }
@@ -302,7 +302,7 @@ function fv_r281_render($attributes = []): string {
         $authority_point=$id.'-authority-'.($index+1);
         $s.='<li id="'.$authority_point.'" tabindex="-1"><p class="fv-r281__authority-date"><time datetime="'.fv_r281_escape($entry['date']).'">'.fv_r281_escape($entry['label']).'</time></p>';
         $s.='<p>'.fv_r281_escape($entry['finding']).'</p><p class="fv-r281__authority-boundary"><strong>Limit:</strong> '.fv_r281_escape($entry['boundary']).'</p>';
-        $s.='<p><a href="'.fv_r281_escape($entry['url']).'" rel="noopener noreferrer">Inspect '.fv_r281_escape($entry['source']).' at NASA</a></p>';
+        $s.='<p><a href="'.fv_r281_escape($entry['url']).'" rel="noopener noreferrer" data-fv-link-purpose="official-evidence-source" data-fv-conversion-kind="noncommercial-source-reference">Inspect '.fv_r281_escape($entry['source']).' at NASA</a></p>';
         $s.='<p class="fv-r281__authority-return"><a href="#'.$id.'-event-2">Return to January 28 evidence</a></p></li>';
     }
     // R296: on mobile, keep the disagreement and editorial boundary visible,
@@ -313,7 +313,7 @@ function fv_r281_render($attributes = []): string {
     foreach ($date_reconciliation as $source) {
         $s.='<li><strong>'.fv_r281_escape($source['authority']).'</strong><p>'.fv_r281_escape($source['statement']).'</p>';
         $s.='<p class="fv-r281__reconciliation-boundary">Source boundary: '.fv_r281_escape($source['boundary']).'</p>';
-        $s.='<p><a href="'.fv_r281_escape($source['url']).'" rel="noopener noreferrer">Read source at NASA</a></p></li>';
+        $s.='<p><a href="'.fv_r281_escape($source['url']).'" rel="noopener noreferrer" data-fv-link-purpose="official-evidence-source" data-fv-conversion-kind="noncommercial-source-reference">Read source at NASA</a></p></li>';
     }
     $s.='</ul></details><p>Original investigation and later NASA summaries are different records. Editorial reconciliation remains pending.</p></aside>';
     $s.='<aside class="fv-r281__gallery" aria-label="Apollo source catalogue'.$landmark_instance.'"><h3>Inspect the document sources</h3><p>This is a text-only catalogue of three NASA records, not a photographic gallery or three independent eyewitness accounts. Review remains pending.</p><ul class="fv-r281__source-list">';
@@ -322,7 +322,7 @@ function fv_r281_render($attributes = []): string {
         $source_point=$id.'-source-'.($index+1);
         $event_point=$id.'-event-'.($index+1);
         $s.='<li id="'.$source_point.'" tabindex="-1"><p class="fv-r281__source-type">'.fv_r281_escape($r['source_type']).'</p>';
-        $s.='<a href="'.fv_r281_escape($r['source_url']).'" rel="noopener noreferrer">Inspect '.fv_r281_escape($r['source_name']).' (NASA)</a>';
+        $s.='<a href="'.fv_r281_escape($r['source_url']).'" rel="noopener noreferrer" data-fv-link-purpose="official-evidence-source" data-fv-conversion-kind="noncommercial-source-reference">Inspect '.fv_r281_escape($r['source_name']).' (NASA)</a>';
         $s.='<p>'.fv_r281_escape($r['source_dependency']).'</p>';
         $s.='<p class="fv-r281__source-return"><a href="#'.$event_point.'">Return to evidence: '.fv_r281_escape($r['title']).'</a></p></li>';
     }
