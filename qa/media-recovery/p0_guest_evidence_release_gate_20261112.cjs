@@ -19,6 +19,17 @@ const P0=Object.freeze({
 });
 const BASE={production_write_allowed:false,wordpress_upload_allowed:false,third_party_cache_allowed:false,
  historical_42_broken_verified:false,sitewide_76_percent_verified:false};
+// A failed request for some other image must never count as a failure of this article's original.
+// Rewrites and srcset selections require independent DOM-to-request custody, not a guessed identity.
+const redirectEvidenceBound=g=>{
+ if(g.request_url===g.final_response_url)return true;
+ const chain=g.redirect_chain;
+ return g.redirect_chain_verified===true&&Array.isArray(chain)&&chain.length>=2&&chain.length<=10&&
+  chain[0]?.url===g.request_url&&chain[chain.length-1]?.url===g.final_response_url&&
+  new Set(chain.map(h=>h?.url)).size===chain.length&&
+  chain.every((h,i)=>h&&https(h.url)&&h.cdp_request_id===g.cdp_request_id&&
+   (i===chain.length-1?h.response_status===g.final_status:[301,302,303,307,308].includes(h.response_status)));
+};
 const hold=(reason,slot=null)=>({...BASE,status:'HOLD',reason,slot,visitor_observation:null,staging_reviewer_packet:null});
 /** Packet is an attached Site QA evidence record, not a self-attested 'broken' flag.
  * A Git SHA is only a pointer, not cryptographic validation without fetching the blob.
@@ -31,7 +42,7 @@ function adjudicateP0(packet,review=null){
   !SHA40.test(packet.capture_git_blob_sha||'')||!SHA256.test(packet.screenshot_sha256||'')||
   packet.post_id!==locked.post_id||packet.page_url!==locked.page||
   packet.published_original_src!==locked.src||
-  !g||!https(g.current_src)||g.current_src!==g.request_url||
+  !g||!https(g.current_src)||g.current_src!==g.request_url||g.current_src!==locked.src||
   !https(g.final_response_url)||typeof g.cdp_request_id!=='string'||!g.cdp_request_id.trim()||
   g.response_event_provenance!=='CDP_NETWORK_RESPONSE_RECEIVED'||
   g.completion_event_provenance!=='CDP_NETWORK_LOADING_FINISHED'||
@@ -43,7 +54,7 @@ function adjudicateP0(packet,review=null){
   typeof g.image_decoded!=='boolean'||
   !positive(g.viewport_css_width)||!positive(g.viewport_css_height)||
   !(typeof g.dpr==='number'&&Number.isFinite(g.dpr)&&g.dpr>=1&&g.dpr<=5)||
-  (g.request_url!==g.final_response_url&&g.redirect_chain_verified!==true))
+  !redirectEvidenceBound(g))
   return hold('MISSING_OR_UNBOUND_ACTUAL_GUEST_CDP_EVIDENCE',slot);
  // Do not call a timeout, wrapper 403 or bare user-provided "broken" label a visitor failure.
  if(g.final_status===200&&g.image_decoded===true&&
