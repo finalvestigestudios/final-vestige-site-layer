@@ -1,0 +1,612 @@
+{
+  "project": "Final Vestige Studios Mind & Perception",
+  "milestone": "r315",
+  "date": "2026-11-12",
+  "publication_state": "UNPUBLISHED",
+  "partner_state": "NOT AUTHENTICATED",
+  "merchant_url_state": "WITHHELD",
+  "product_safety_claims": "SELLER CLAIMS ONLY",
+  "sources": {
+    "s01": {
+      "url": "https://doi.org/10.1371/journal.pone.0286023",
+      "type": "independent peer-reviewed systematic review",
+      "access": "full text inspected",
+      "date": "2023-05-19"
+    },
+    "s02": {
+      "url": "https://doi.org/10.1038/scientificamerican1073-94",
+      "type": "scientific magazine historical article",
+      "access": "publisher summary only",
+      "date": "1973-10-01"
+    },
+    "s03": {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35842538/",
+      "type": "independent published meta-analysis",
+      "access": "indexed abstract",
+      "date": "2023 print / 2022 online"
+    },
+    "s04": {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38458383/",
+      "type": "independent scientific systematic review",
+      "access": "indexed abstract",
+      "date": "2024"
+    },
+    "s05": {
+      "url": "https://doi.org/10.1080/18387357.2024.2374759",
+      "type": "independent systematic review of RCTs",
+      "access": "publisher abstract",
+      "date": "2024-07-10 online / 2025 issue"
+    },
+    "s06": {
+      "url": "https://inspire3.com/",
+      "type": "merchant catalog",
+      "access": "public seller copy",
+      "date": "checked 2026-11-12"
+    },
+    "s07": {
+      "url": "https://zen12.com/about",
+      "type": "merchant product page",
+      "access": "public seller copy",
+      "date": "checked 2026-11-12"
+    },
+    "s08": {
+      "url": "https://zen12.com/getstarted",
+      "type": "merchant checkout landing page",
+      "access": "public seller copy, checkout not transacted",
+      "date": "checked 2026-11-12"
+    },
+    "s09": {
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "type": "merchant product page",
+      "access": "public seller copy, dynamic price display",
+      "date": "checked 2026-11-12"
+    },
+    "s10": {
+      "url": "https://brainwaveshots.com/focus-shot",
+      "type": "merchant product page",
+      "access": "public seller copy",
+      "date": "checked 2026-11-12"
+    },
+    "s11": {
+      "url": "https://affiliates.inspire3.com/",
+      "type": "merchant affiliate recruitment",
+      "access": "public page, NOT account approval",
+      "date": "checked 2026-11-12"
+    },
+    "s12": {
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "type": "regulator endorsement guidance",
+      "access": "FTC full web text",
+      "date": "checked 2026-11-12"
+    },
+    "s13": {
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "type": "regulator health-advertising guidance",
+      "access": "FTC full web text",
+      "date": "checked 2026-11-12"
+    },
+    "s14": {
+      "url": "https://finalvestige.com/focus/",
+      "type": "first-party live resource",
+      "access": "published page",
+      "date": "checked 2026-11-12"
+    },
+    "s15": {
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "type": "first-party historical source-dossier",
+      "access": "published page",
+      "date": "checked 2026-11-12"
+    },
+    "s16": {
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "type": "first-party live investigation",
+      "access": "published page",
+      "date": "checked 2026-11-12"
+    },
+    "s17": {
+      "url": "https://finalvestige.com/dispatch/",
+      "type": "first-party live newsletter page",
+      "access": "published page",
+      "date": "checked 2026-11-12"
+    },
+    "s18": {
+      "url": "https://finalvestige.com/affiliate-disclosure/",
+      "type": "first-party disclosure",
+      "access": "published linked page not independently deeply audited",
+      "date": "checked link 2026-11-12"
+    },
+    "s19": {
+      "url": "https://finalvestige.com/editorial-standards/",
+      "type": "first-party standards",
+      "access": "published linked page not independently deeply audited",
+      "date": "checked link 2026-11-12"
+    }
+  },
+  "claims": [
+    {
+      "id": "c01",
+      "claim": "A binaural beat may be perceived from two slightly different tones separately presented to the ears.",
+      "classification": "supported acoustic/perceptual fact",
+      "source_ids": [
+        "s01",
+        "s02"
+      ],
+      "disposition": "ALLOW qualified statement"
+    },
+    {
+      "id": "c02",
+      "claim": "Binaural beats cause a third physical sound to play from speakers.",
+      "classification": "false inference",
+      "source_ids": [
+        "s01"
+      ],
+      "disposition": "PROHIBIT"
+    },
+    {
+      "id": "c03",
+      "claim": "Fourteen EEG entrainment studies were included in the 2023 PLOS systematic review.",
+      "classification": "supported review description",
+      "source_ids": [
+        "s01"
+      ],
+      "disposition": "ALLOW"
+    },
+    {
+      "id": "c04",
+      "claim": "Five entrainment studies supported, eight contradicted, one was mixed.",
+      "classification": "supported review description",
+      "source_ids": [
+        "s01"
+      ],
+      "disposition": "ALLOW with heterogeneity caveat"
+    },
+    {
+      "id": "c05",
+      "claim": "EEG entrainment is reliably established in every listener.",
+      "classification": "unsupported generalization",
+      "source_ids": [
+        "s01"
+      ],
+      "disposition": "PROHIBIT"
+    },
+    {
+      "id": "c06",
+      "claim": "2023 memory/attention synthesis analyzed 15 studies and 31 effects, overall g=.40.",
+      "classification": "supported abstract summary",
+      "source_ids": [
+        "s03"
+      ],
+      "disposition": "ALLOW with mixed-outcome and no-brand caveats"
+    },
+    {
+      "id": "c07",
+      "claim": "The pooled effect means Zen12 improves attention by forty percent.",
+      "classification": "invalid study-to-product inference",
+      "source_ids": [
+        "s03",
+        "s07"
+      ],
+      "disposition": "PROHIBIT"
+    },
+    {
+      "id": "c08",
+      "claim": "2024 arousal/cognition review included 31 studies and found results mixed or insufficient.",
+      "classification": "supported abstract summary",
+      "source_ids": [
+        "s04"
+      ],
+      "disposition": "ALLOW"
+    },
+    {
+      "id": "c09",
+      "claim": "Stress-management RCT review included 12 trials and did not support widespread recommendation.",
+      "classification": "supported abstract summary",
+      "source_ids": [
+        "s05"
+      ],
+      "disposition": "ALLOW only for non-clinical stress review"
+    },
+    {
+      "id": "c10",
+      "claim": "Oster published Auditory Beats in the Brain in 1973.",
+      "classification": "supported publisher metadata",
+      "source_ids": [
+        "s02"
+      ],
+      "disposition": "ALLOW"
+    },
+    {
+      "id": "c11",
+      "claim": "Oster proved modern meditation MP3s improve attention.",
+      "classification": "unfounded historical leap",
+      "source_ids": [
+        "s02"
+      ],
+      "disposition": "PROHIBIT"
+    },
+    {
+      "id": "c12",
+      "claim": "Inspire3 groups Zen12, Hypnosis Live and other personal-development brands.",
+      "classification": "merchant catalog fact",
+      "source_ids": [
+        "s06"
+      ],
+      "disposition": "ATTRIBUTE TO SELLER"
+    },
+    {
+      "id": "c13",
+      "claim": "Zen12 seller describes 12 levels with four styles per level.",
+      "classification": "merchant package description",
+      "source_ids": [
+        "s07"
+      ],
+      "disposition": "ATTRIBUTE TO SELLER"
+    },
+    {
+      "id": "c14",
+      "claim": "Zen12 complete checkout page describes 48 MP3s.",
+      "classification": "merchant package description",
+      "source_ids": [
+        "s08"
+      ],
+      "disposition": "ATTRIBUTE TO SELLER"
+    },
+    {
+      "id": "c15",
+      "claim": "Zen12 12 minutes confers equivalent benefit to an hour of meditation.",
+      "classification": "unsupported merchant efficacy claim",
+      "source_ids": [
+        "s07",
+        "s01"
+      ],
+      "disposition": "EXCLUDE; may note seller advertises unproven equivalence"
+    },
+    {
+      "id": "c16",
+      "claim": "Zen12 guaranteed relaxation, creativity, anxiety relief or EEG change.",
+      "classification": "unsupported efficacy/health claims",
+      "source_ids": [
+        "s07",
+        "s13"
+      ],
+      "disposition": "PROHIBIT"
+    },
+    {
+      "id": "c17",
+      "claim": "Zen12 checkout price and refund terms are fixed and independently verified.",
+      "classification": "commercial status unverified",
+      "source_ids": [
+        "s08"
+      ],
+      "disposition": "EXCLUDE"
+    },
+    {
+      "id": "c18",
+      "claim": "Total Focus seller describes a 33-minute 47MB hypnosis audio.",
+      "classification": "merchant feature description",
+      "source_ids": [
+        "s09"
+      ],
+      "disposition": "ATTRIBUTE TO SELLER"
+    },
+    {
+      "id": "c19",
+      "claim": "Total Focus brain reprogramming or guaranteed concentration is independently proved.",
+      "classification": "unsupported health/cognitive claim",
+      "source_ids": [
+        "s09",
+        "s13"
+      ],
+      "disposition": "PROHIBIT"
+    },
+    {
+      "id": "c20",
+      "claim": "Total Focus fixed price is independently verified across sessions.",
+      "classification": "dynamic seller price unverified",
+      "source_ids": [
+        "s09"
+      ],
+      "disposition": "EXCLUDE"
+    },
+    {
+      "id": "c21",
+      "claim": "Focus Shot seller describes 15/30 minute audio with auxiliary versions.",
+      "classification": "merchant feature description",
+      "source_ids": [
+        "s10"
+      ],
+      "disposition": "ATTRIBUTE TO SELLER"
+    },
+    {
+      "id": "c22",
+      "claim": "Focus Shot guarantees focus for four hours or all day.",
+      "classification": "unsupported branded efficacy claim",
+      "source_ids": [
+        "s10",
+        "s01"
+      ],
+      "disposition": "PROHIBIT"
+    },
+    {
+      "id": "c23",
+      "claim": "Merchant-issued refund guarantees imply refunds have been independently honored.",
+      "classification": "unsupported merchant fulfillment claim",
+      "source_ids": [
+        "s08",
+        "s10"
+      ],
+      "disposition": "PROHIBIT"
+    },
+    {
+      "id": "c24",
+      "claim": "Public affiliate network advertises special earning links and commissions.",
+      "classification": "public merchant recruitment statement",
+      "source_ids": [
+        "s11"
+      ],
+      "disposition": "ATTRIBUTE TO SELLER; NO rates copied"
+    },
+    {
+      "id": "c25",
+      "claim": "Final Vestige is accepted as an Inspire3 affiliate.",
+      "classification": "unverified account-specific status",
+      "source_ids": [
+        "s11"
+      ],
+      "disposition": "HARD HOLD"
+    },
+    {
+      "id": "c26",
+      "claim": "Final Vestige has web and email affiliate permissions and issued earning URL.",
+      "classification": "unverified account-specific status",
+      "source_ids": [
+        "s11"
+      ],
+      "disposition": "HARD HOLD"
+    },
+    {
+      "id": "c27",
+      "claim": "Personal endorsement requires honest opinions and material connection disclosure.",
+      "classification": "FTC guidance",
+      "source_ids": [
+        "s12"
+      ],
+      "disposition": "IMPLEMENT before any earning link"
+    },
+    {
+      "id": "c28",
+      "claim": "Objective health-benefit product claims require substantiation prior to advertising.",
+      "classification": "FTC guidance",
+      "source_ids": [
+        "s13"
+      ],
+      "disposition": "REQUIRE product-specific adequate evidence"
+    },
+    {
+      "id": "c29",
+      "claim": "Focus Fieldbook offers a 52-page free workbook through the existing signup.",
+      "classification": "first-party public description",
+      "source_ids": [
+        "s14",
+        "s17"
+      ],
+      "disposition": "ALLOW; no efficacy guarantee"
+    },
+    {
+      "id": "c30",
+      "claim": "Animal Magnetism Files document cases, failures and consent flags.",
+      "classification": "first-party source dossier",
+      "source_ids": [
+        "s15"
+      ],
+      "disposition": "ALLOW attributed, no mechanism proof"
+    },
+    {
+      "id": "c31",
+      "claim": "Change Blindness article documents real-world door swap and flicker studies.",
+      "classification": "first-party published article",
+      "source_ids": [
+        "s16"
+      ],
+      "disposition": "ALLOW"
+    },
+    {
+      "id": "c32",
+      "claim": "Affiliate outbound clicks establish paid commissions.",
+      "classification": "invalid financial inference",
+      "source_ids": [
+        "s11"
+      ],
+      "disposition": "PROHIBIT; settlement required"
+    },
+    {
+      "id": "c33",
+      "claim": "Zen12 buyer guide author has used all products.",
+      "classification": "unverified testimonial",
+      "source_ids": [
+        "s07",
+        "s09",
+        "s10"
+      ],
+      "disposition": "PROHIBIT"
+    },
+    {
+      "id": "c34",
+      "claim": "The current /mind/ hub is already published in WordPress.",
+      "classification": "unverified CMS state",
+      "source_ids": [
+        "s14"
+      ],
+      "disposition": "PROHIBIT"
+    },
+    {
+      "id": "c35",
+      "claim": "Affiliate earning link disclosure next to CTA is optional.",
+      "classification": "regulatory risk",
+      "source_ids": [
+        "s12"
+      ],
+      "disposition": "PROHIBIT"
+    }
+  ],
+  "gates": [
+    {
+      "id": "g01",
+      "name": "Final Vestige-specific publisher identity verified",
+      "status": "HARD_HOLD",
+      "evidence": "not authenticated for release; no override by public marketing page"
+    },
+    {
+      "id": "g02",
+      "name": "Written acceptance in affiliate system",
+      "status": "HARD_HOLD",
+      "evidence": "not authenticated for release; no override by public marketing page"
+    },
+    {
+      "id": "g03",
+      "name": "Permitted website traffic channel confirmed",
+      "status": "HARD_HOLD",
+      "evidence": "not authenticated for release; no override by public marketing page"
+    },
+    {
+      "id": "g04",
+      "name": "Permitted email channel confirmed separately",
+      "status": "HARD_HOLD",
+      "evidence": "not authenticated for release; no override by public marketing page"
+    },
+    {
+      "id": "g05",
+      "name": "Affiliate program terms and restrictions inspected",
+      "status": "HARD_HOLD",
+      "evidence": "not authenticated for release; no override by public marketing page"
+    },
+    {
+      "id": "g06",
+      "name": "Specific Zen12 offer approved",
+      "status": "HARD_HOLD",
+      "evidence": "not authenticated for release; no override by public marketing page"
+    },
+    {
+      "id": "g07",
+      "name": "Issued trackable earning URL independently verified",
+      "status": "HARD_HOLD",
+      "evidence": "not authenticated for release; no override by public marketing page"
+    },
+    {
+      "id": "g08",
+      "name": "Link redirect and destination match approved offer",
+      "status": "HARD_HOLD",
+      "evidence": "not authenticated for release; no override by public marketing page"
+    },
+    {
+      "id": "g09",
+      "name": "Product-specific claim review cleared",
+      "status": "HARD_HOLD",
+      "evidence": "not authenticated for release; no override by public marketing page"
+    },
+    {
+      "id": "g10",
+      "name": "No implied medical or wealth guarantees",
+      "status": "HARD_HOLD",
+      "evidence": "not authenticated for release; no override by public marketing page"
+    },
+    {
+      "id": "g11",
+      "name": "Exact checkout terms captured at release",
+      "status": "HARD_HOLD",
+      "evidence": "not authenticated for release; no override by public marketing page"
+    },
+    {
+      "id": "g12",
+      "name": "Refund procedure and policy captured at release",
+      "status": "HARD_HOLD",
+      "evidence": "not authenticated for release; no override by public marketing page"
+    },
+    {
+      "id": "g13",
+      "name": "FTC near-link disclosure accepted by Site QA",
+      "status": "HARD_HOLD",
+      "evidence": "not authenticated for release; no override by public marketing page"
+    },
+    {
+      "id": "g14",
+      "name": "Mobile and keyboard WCAG 2.2 AA QA passed",
+      "status": "HARD_HOLD",
+      "evidence": "not authenticated for release; no override by public marketing page"
+    },
+    {
+      "id": "g15",
+      "name": "No-JS user journey tested",
+      "status": "HARD_HOLD",
+      "evidence": "not authenticated for release; no override by public marketing page"
+    },
+    {
+      "id": "g16",
+      "name": "Privacy consent and first-party event review passed",
+      "status": "HARD_HOLD",
+      "evidence": "not authenticated for release; no override by public marketing page"
+    },
+    {
+      "id": "g17",
+      "name": "Source-controlled PR approved by founder and site QA",
+      "status": "HARD_HOLD",
+      "evidence": "not authenticated for release; no override by public marketing page"
+    },
+    {
+      "id": "g18",
+      "name": "Commission verification/reporting reconciliation proven",
+      "status": "HARD_HOLD",
+      "evidence": "not authenticated for release; no override by public marketing page"
+    }
+  ],
+  "creator_topic_product_fit": [
+    {
+      "topic": "Attentional Blink",
+      "public_article": "VERIFY exact live route",
+      "video_asset_id": null,
+      "video_url": null,
+      "context_offer": "Zen12 (optional structured course); no claim it fixes blink",
+      "journey": "Grok video → sourced article → existing Focus Fieldbook/Dispatch → optional held guide",
+      "fit": "medium; overclaim risk high"
+    },
+    {
+      "topic": "Change Blindness",
+      "public_article": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "video_asset_id": null,
+      "video_url": null,
+      "context_offer": "Zen12 after separate buyer-intent decision",
+      "journey": "Grok asset ID → live investigation → /focus/ → optional held guide",
+      "fit": "medium; prevent claim of attention cure"
+    },
+    {
+      "topic": "Thatcher Illusion",
+      "public_article": "UNPUBLISHED feature source-controlled only",
+      "video_asset_id": null,
+      "video_url": null,
+      "context_offer": "No direct offer from illusion; only editorial bridge",
+      "journey": "Grok asset ID → future sourced feature → free Fieldbook, optional separate guide",
+      "fit": "low; monetize only if reader voluntarily seeks audio"
+    }
+  ],
+  "money": {
+    "denominator": "qualified_human_sessions from first-party, bot-screened, deduplicated sessions and matched asset_id",
+    "numerator": "cleared paid net affiliate or owned product revenue minus refunds/fees",
+    "kpi": "USD net realized revenue per 1,000 qualified human sessions",
+    "state": "NOT COMPUTABLE",
+    "reason": "No authenticated paid merchant orders/cleared commissions and no trustworthy matched qualified-session denominator",
+    "cohorts": [
+      7,
+      30
+    ],
+    "events": [
+      "campaign_landing",
+      "article_to_resource_click",
+      "focus_signup_confirmed_provider",
+      "affiliate_click (only once approved)",
+      "merchant_confirmed_paid_order",
+      "refund",
+      "realized_net_settlement"
+    ],
+    "implementation": "reuse Claude-owned first-party instrumentation; NO duplicate scripts"
+  }
+}
