@@ -73,7 +73,7 @@ const attacks=[
   a+'<form action="/subscribe"></form>',
   a+'<iframe src="https://seller.example/"></iframe>',
   a+'<video autoplay></video>',
-  a.replace('https://finalvestige.com/focus/','/new-duplicate-mailing-list'),
+  a.replaceAll('https://finalvestige.com/focus/','/new-duplicate-mailing-list'),
   a+'<a href="https://zen12.com/getstarted">buy</a>',
   a+'<a href="https://affiliates.inspire3.com/?id=unknown">affiliate</a>',
   a.replace('name="robots" content="noindex,nofollow"','name="robots" content="index"'),
