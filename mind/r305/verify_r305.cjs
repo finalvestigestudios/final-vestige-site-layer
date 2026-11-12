@@ -46,7 +46,7 @@ function checkMatrix(raw){
  return m;
 }
 function checkVideo(s,c){
- fail(s.startsWith('#!/usr/bin/env bash')&&s.includes('ffmpeg'),'VIDEO_GENERATOR_MISSING');
+ fail(s.startsWith('#!/usr/bin/env bash')&&/(?:^|\n)ffmpeg -hide_banner/.test(s),'VIDEO_GENERATOR_MISSING');
  fail(s.includes('d=42')&&s.includes('-an -t 42'),'VIDEO_LENGTH_OR_AUDIO');
  fail(!/curl|wget|https?:\/\//.test(s),'VIDEO_EXTERNAL_FETCH');
  fail(c.startsWith('WEBVTT')&&c.includes('00:00:33.000 --> 00:00:42.000'),'CAPTIONS_MISSING_42S');
