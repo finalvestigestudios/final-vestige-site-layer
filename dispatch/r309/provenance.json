@@ -1,0 +1,89 @@
+{
+  "sprint": "R309",
+  "source_pr": 175,
+  "source_commit": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "manifest_blob_sha": "86df98ad8a84e583ff5df64ddbf8c0eaa1335b00",
+  "date_utc": "2026-11-12",
+  "status": "HOLD_UNSENT",
+  "commercial_hold": [
+    3,
+    5
+  ],
+  "copyright_note": "Original source text preserved for review only; no alternative adopted.",
+  "emails_sent": 0,
+  "settings_changed": 0,
+  "partner_authorization_verified": false,
+  "real_unsubscribe_verified": false,
+  "publisher_address_verified": false,
+  "real_inbox_preview_verified": false,
+  "real_email_eligibility_verified": false,
+  "welcome_receipt_verified": false,
+  "issues": [
+    {
+      "number": 1,
+      "slug": "01-the-mind-is-not-a-camera",
+      "source_git_blob": "039b452b5cb7cd6dc2fed6fac4d2dd77fa9d49c8",
+      "kind": "editorial",
+      "subject": "The mind is not a camera",
+      "preheader": "What an old record can teach us about the difference between seeing and knowing.",
+      "html": "html/01-the-mind-is-not-a-camera.html",
+      "plaintext": "text/01-the-mind-is-not-a-camera.txt",
+      "review_status": "HOLD_UNSENT"
+    },
+    {
+      "number": 2,
+      "slug": "02-before-hypnosis-had-a-name",
+      "source_git_blob": "faa207ab7deafd86460d36f8c17fe62d392d0e14",
+      "kind": "editorial",
+      "subject": "Before hypnosis had a name",
+      "preheader": "The eighteenth-century witnesses who left behind a problem of proof.",
+      "html": "html/02-before-hypnosis-had-a-name.html",
+      "plaintext": "text/02-before-hypnosis-had-a-name.txt",
+      "review_status": "HOLD_UNSENT"
+    },
+    {
+      "number": 3,
+      "slug": "03-the-twelve-minute-question",
+      "source_git_blob": "aeeef34efea0cc281f69901488e4501fea851245",
+      "kind": "commercial-review-pending",
+      "subject": "The twelve-minute meditation question",
+      "preheader": "An honest way to evaluate a short audio practice before you spend anything.",
+      "html": "html/03-the-twelve-minute-question.html",
+      "plaintext": "text/03-the-twelve-minute-question.txt",
+      "review_status": "HOLD_UNSENT"
+    },
+    {
+      "number": 4,
+      "slug": "04-the-hatch-and-the-spark",
+      "source_git_blob": "89635bfb9c8d1ff17297a59b6b5b2a176934ca",
+      "kind": "editorial",
+      "subject": "Fourteen seconds. A much longer explanation.",
+      "preheader": "Apollo 1, the surviving record, and why a tidy cause can mislead.",
+      "html": "html/04-the-hatch-and-the-spark.html",
+      "plaintext": "text/04-the-hatch-and-the-spark.txt",
+      "review_status": "HOLD_UNSENT"
+    },
+    {
+      "number": 5,
+      "slug": "05-before-you-press-play",
+      "source_git_blob": "a9dfaa450ba025a7b5113ade8a294d6dbad778dc",
+      "kind": "commercial-review-pending",
+      "subject": "Before you press play on a hypnosis audio",
+      "preheader": "Three questions that matter more than an impressive promise.",
+      "html": "html/05-before-you-press-play.html",
+      "plaintext": "text/05-before-you-press-play.txt",
+      "review_status": "HOLD_UNSENT"
+    },
+    {
+      "number": 6,
+      "slug": "06-the-evidence-log",
+      "source_git_blob": "004d558df6376d2ad6f4f79a4581e8d2c444e355",
+      "kind": "editorial",
+      "subject": "What did seven days of attention reveal?",
+      "preheader": "A small experiment, a useful notebook, and no miracle claims.",
+      "html": "html/06-the-evidence-log.html",
+      "plaintext": "text/06-the-evidence-log.txt",
+      "review_status": "HOLD_UNSENT"
+    }
+  ]
+}
