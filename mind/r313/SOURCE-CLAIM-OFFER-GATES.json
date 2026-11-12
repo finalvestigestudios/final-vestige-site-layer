@@ -1,0 +1,502 @@
+{
+  "date_checked": "2026-11-12",
+  "state": "REVIEW_ONLY_NO_AFFILIATE_ACTIVATION",
+  "sources": [
+    {
+      "id": "S01",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/22726569/",
+      "note": "original indexed abstract; 2012 Dalton/Fraenkel; 19s, no 70/10 in abstract"
+    },
+    {
+      "id": "S02",
+      "url": "https://link.springer.com/article/10.3758/s13414-022-02553-9",
+      "note": "later published paper retelling 70% vs 10% finding; secondary"
+    },
+    {
+      "id": "S03",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4677383/",
+      "note": "2015 primary open-access full study; four experiments, detection sensitivity"
+    },
+    {
+      "id": "S04",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/24652341/",
+      "note": "2014 original indexed music experiment abstract"
+    },
+    {
+      "id": "S05",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "note": "published historical FV archive and limits"
+    },
+    {
+      "id": "S06",
+      "url": "https://zen12.com/about",
+      "note": "official Zen12 seller about; twelve levels, four versions, unsubstantiated efficacy"
+    },
+    {
+      "id": "S07",
+      "url": "https://zen12.com/getstarted",
+      "note": "official exact seller checkout: 48 MP3 and dynamic countdown/price, one-year claim"
+    },
+    {
+      "id": "S08",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "note": "official Total Focus; 33 min/47 MB, variable price, seller fourteen-day claim"
+    },
+    {
+      "id": "S09",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "note": "official Focus Shot; 15 and 30 minutes, seller one-year claim"
+    },
+    {
+      "id": "S10",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37205669/",
+      "note": "2023 14-study binaural beat EEG review, 5 supportive / 8 contrary / 1 mixed"
+    },
+    {
+      "id": "S11",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35842538/",
+      "note": "2022 15-study binaural beat cognitive systematic review/meta-analysis, g=.40 pooled/mixed"
+    },
+    {
+      "id": "S12",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "note": "FTC adjacent material-connection disclosure guidance"
+    },
+    {
+      "id": "S13",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "note": "FTC health-product substantiation guidance"
+    },
+    {
+      "id": "S14",
+      "url": "https://finalvestige.com/focus/",
+      "note": "published single 52-page free Fieldbook route"
+    },
+    {
+      "id": "S15",
+      "url": "https://finalvestige.com/affiliate-disclosure/",
+      "note": "existing FV affiliate policy; not substitute for near-link disclosure"
+    },
+    {
+      "id": "S16",
+      "url": "https://finalvestige.com/editorial-standards/",
+      "note": "existing FV editorial policy"
+    },
+    {
+      "id": "S17",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "note": "published FV perception article"
+    },
+    {
+      "id": "S18",
+      "url": "https://affiliates.inspire3.com/",
+      "note": "public affiliate recruitment not FV-specific acceptance"
+    },
+    {
+      "id": "S19",
+      "url": "https://inspire3.com/",
+      "note": "official Inspire3 product catalog"
+    },
+    {
+      "id": "S20",
+      "url": "https://finalvestige.com/collection/",
+      "note": "FV published product/affiliate overview, paid Mind SKU unverified"
+    },
+    {
+      "id": "S21",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "note": "charter/release authority"
+    },
+    {
+      "id": "S22",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "note": "net-revenue measurement authority"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "statement": "Auditory gorilla lasted nineteen seconds",
+      "status": "EVIDENCE_INDEXED_ABSTRACT",
+      "source_ids": [
+        "S01"
+      ]
+    },
+    {
+      "id": "C02",
+      "statement": "2012 participants missed voice ~70% vs ~10% by attended stream",
+      "status": "SECONDARY_REPORT_ONLY",
+      "source_ids": [
+        "S02",
+        "S01"
+      ]
+    },
+    {
+      "id": "C03",
+      "statement": "70% of all people are unable to hear obvious sound",
+      "status": "REJECT_UNIVERSALIZATION",
+      "source_ids": [
+        "S01",
+        "S02"
+      ]
+    },
+    {
+      "id": "C04",
+      "statement": "2015 study comprised four experimental auditory-detection tasks",
+      "status": "EVIDENCE_OPEN_FULL_TEXT",
+      "source_ids": [
+        "S03"
+      ]
+    },
+    {
+      "id": "C05",
+      "statement": "Higher visual load reduced sound sensitivity in these experiments",
+      "status": "EVIDENCE_OPEN_FULL_TEXT",
+      "source_ids": [
+        "S03"
+      ]
+    },
+    {
+      "id": "C06",
+      "statement": "26% laboratory accuracy change predicts daily-life hearing loss",
+      "status": "REJECT_UNJUSTIFIED_TRANSFER",
+      "source_ids": [
+        "S03"
+      ]
+    },
+    {
+      "id": "C07",
+      "statement": "2014 music study reports n=115 and n=47 analyzed",
+      "status": "EVIDENCE_INDEXED_ABSTRACT",
+      "source_ids": [
+        "S04"
+      ]
+    },
+    {
+      "id": "C08",
+      "statement": "These experiments confirm literal deafness or hearing damage",
+      "status": "REJECT_HEALTH_INFERENCE",
+      "source_ids": [
+        "S01",
+        "S03"
+      ]
+    },
+    {
+      "id": "C09",
+      "statement": "Puységur archive has 153 source rows and 16 case dossiers",
+      "status": "PUBLISHED_FV_FACT",
+      "source_ids": [
+        "S05"
+      ]
+    },
+    {
+      "id": "C10",
+      "statement": "Auditory neuroscience proves historical animal magnetism",
+      "status": "REJECT_CAUSAL_LEAP",
+      "source_ids": [
+        "S01",
+        "S05"
+      ]
+    },
+    {
+      "id": "C11",
+      "statement": "Zen12 About describes twelve levels",
+      "status": "MERCHANT_FORMAT_ONLY",
+      "source_ids": [
+        "S06"
+      ]
+    },
+    {
+      "id": "C12",
+      "statement": "Zen12 About describes four listening versions per level",
+      "status": "MERCHANT_FORMAT_ONLY",
+      "source_ids": [
+        "S06"
+      ]
+    },
+    {
+      "id": "C13",
+      "statement": "Zen12 full-course checkout lists 48 MP3s",
+      "status": "MERCHANT_FORMAT_ONLY",
+      "source_ids": [
+        "S07"
+      ]
+    },
+    {
+      "id": "C14",
+      "statement": "12 minutes of Zen12 equal one hour of meditation",
+      "status": "REJECT_UNSUBSTANTIATED_BRAND_OUTCOME",
+      "source_ids": [
+        "S06",
+        "S13"
+      ]
+    },
+    {
+      "id": "C15",
+      "statement": "Zen12 guarantees stress or anxiety relief",
+      "status": "REJECT_UNSUBSTANTIATED_HEALTH_CLAIM",
+      "source_ids": [
+        "S06",
+        "S13"
+      ]
+    },
+    {
+      "id": "C16",
+      "statement": "Zen12 checkout says one-year guarantee",
+      "status": "MERCHANT_TERMS_ONLY_UNTESTED",
+      "source_ids": [
+        "S07"
+      ]
+    },
+    {
+      "id": "C17",
+      "statement": "Checkout snapshot is a fixed actual customer price",
+      "status": "REJECT_DYNAMIC_PRICE",
+      "source_ids": [
+        "S07"
+      ]
+    },
+    {
+      "id": "C18",
+      "statement": "Total Focus describes 33-minute 47 MB recording",
+      "status": "MERCHANT_FORMAT_ONLY",
+      "source_ids": [
+        "S08"
+      ]
+    },
+    {
+      "id": "C19",
+      "statement": "Total Focus guarantees mental concentration",
+      "status": "REJECT_UNSUBSTANTIATED_BRAND_OUTCOME",
+      "source_ids": [
+        "S08",
+        "S13"
+      ]
+    },
+    {
+      "id": "C20",
+      "statement": "Total Focus seller advertises 14-day refund",
+      "status": "MERCHANT_TERMS_ONLY_UNTESTED",
+      "source_ids": [
+        "S08"
+      ]
+    },
+    {
+      "id": "C21",
+      "statement": "Focus Shot describes 15/30-minute versions",
+      "status": "MERCHANT_FORMAT_ONLY",
+      "source_ids": [
+        "S09"
+      ]
+    },
+    {
+      "id": "C22",
+      "statement": "Focus Shot is guaranteed to improve focus for hours",
+      "status": "REJECT_UNSUBSTANTIATED_BRAND_OUTCOME",
+      "source_ids": [
+        "S09",
+        "S13"
+      ]
+    },
+    {
+      "id": "C23",
+      "statement": "2023 binaural EEG systematic review found heterogeneous inconsistent evidence",
+      "status": "INDEPENDENT_SYNTHESIS",
+      "source_ids": [
+        "S10"
+      ]
+    },
+    {
+      "id": "C24",
+      "statement": "2022 cognitive meta-analysis reported positive pooled g=0.40, mixed studies",
+      "status": "INDEPENDENT_SYNTHESIS_WITH_LIMITS",
+      "source_ids": [
+        "S11"
+      ]
+    },
+    {
+      "id": "C25",
+      "statement": "General reviews establish actual Zen12 clinical efficacy",
+      "status": "REJECT_PRODUCT_UNTESTED",
+      "source_ids": [
+        "S10",
+        "S11",
+        "S07"
+      ]
+    },
+    {
+      "id": "C26",
+      "statement": "FTC recommends clear adjacent commission disclosure",
+      "status": "REGULATORY_GUIDANCE",
+      "source_ids": [
+        "S12"
+      ]
+    },
+    {
+      "id": "C27",
+      "statement": "Generic disclosure page by itself makes separated affiliate CTA adequate",
+      "status": "REJECT_INADEQUATE_DISCLOSURE",
+      "source_ids": [
+        "S12",
+        "S15"
+      ]
+    },
+    {
+      "id": "C28",
+      "statement": "Health advertising can use broad unsupported claims",
+      "status": "REJECT_SUBSTANTIATION_DEFICIT",
+      "source_ids": [
+        "S13"
+      ]
+    },
+    {
+      "id": "C29",
+      "statement": "Free Focus Fieldbook exists as existing 52-page single-list offer",
+      "status": "PUBLISHED_FV_FACT",
+      "source_ids": [
+        "S14"
+      ]
+    },
+    {
+      "id": "C30",
+      "statement": "Inspire3 affiliate recruitment is approval of FV earning account",
+      "status": "REJECT_AUTHENTICATION_GAP",
+      "source_ids": [
+        "S18"
+      ]
+    },
+    {
+      "id": "C31",
+      "statement": "All three published Grok creator asset IDs are authenticated",
+      "status": "UNVERIFIED_NOT_FOR_DISPLAY",
+      "source_ids": [
+        "S21"
+      ]
+    },
+    {
+      "id": "C32",
+      "statement": "FV paid owned Mind SKU with refund delivery is currently authenticated",
+      "status": "UNVERIFIED_NOT_FOR_DISPLAY",
+      "source_ids": [
+        "S20"
+      ]
+    },
+    {
+      "id": "C33",
+      "statement": "Affiliate outbound click equals settled paid conversion",
+      "status": "REJECT_REVENUE_CONFLATION",
+      "source_ids": [
+        "S22"
+      ]
+    },
+    {
+      "id": "C34",
+      "statement": "Merchant gross order equals FV net receipts",
+      "status": "REJECT_FINANCIAL_CONFLATION",
+      "source_ids": [
+        "S22"
+      ]
+    },
+    {
+      "id": "C35",
+      "statement": "42-second static storyboard is a playable encoded film",
+      "status": "REJECT_MEDIA_STATUS_ERROR",
+      "source_ids": [
+        "S21"
+      ]
+    },
+    {
+      "id": "C36",
+      "statement": "Audio entrainment findings confirm the 2012 gorilla result's commercial application",
+      "status": "REJECT_UNRELATED_FINDINGS",
+      "source_ids": [
+        "S01",
+        "S10"
+      ]
+    },
+    {
+      "id": "C37",
+      "statement": "An unverified merchant refund guarantee may be repeated as independently assured",
+      "status": "REJECT_REFUND_ASSURANCE",
+      "source_ids": [
+        "S07",
+        "S13"
+      ]
+    }
+  ],
+  "authorization_gates": {
+    "account_specific_publisher_acceptance": "HARD_HOLD",
+    "legal_entity_matching": "HARD_HOLD",
+    "permitted_web_promotion": "HARD_HOLD",
+    "permitted_social_promotion": "HARD_HOLD",
+    "permitted_email_promotion": "HARD_HOLD",
+    "issued_earning_url": "HARD_HOLD",
+    "authorized_creatives": "HARD_HOLD",
+    "cookie_referral_window_terms": "HARD_HOLD",
+    "commission_rate_terms": "HARD_HOLD",
+    "payment_threshold_currency": "HARD_HOLD",
+    "product_rights_license": "HARD_HOLD",
+    "checkout_tax_upsell_final_amount": "HARD_HOLD",
+    "exact_refund_written_terms": "HARD_HOLD",
+    "order_verification_feed": "HARD_HOLD",
+    "settled_commission_report": "HARD_HOLD",
+    "owned_paid_sku_fallback": "HARD_HOLD",
+    "qualified_human_session_attribution": "HARD_HOLD",
+    "net_receipt_refund_reconciliation": "HARD_HOLD"
+  },
+  "seller_snapshot_notes": [
+    {
+      "offer": "Zen12 full course",
+      "source": "S07",
+      "observed": "Nov 12 checkout displayed discounted USD 87.99 and countdown; seller advertises 1-year guarantee; dynamic, not checked purchase or verified refund",
+      "publish_price": false
+    },
+    {
+      "offer": "Hypnosis Live Total Focus",
+      "source": "S08",
+      "observed": "Nov 12 seller page displayed USD 24.44 single item; older indexed page showed a different amount; seller advertises 14-day refund; no validated chronology, not a real paid test",
+      "publish_price": false
+    },
+    {
+      "offer": "Brainwave Shots Focus Shot",
+      "source": "S09",
+      "observed": "Nov 12 seller page displayed USD 17.99, 15/30 min versions, seller 1-year guarantee; no authenticated cart or actual refund",
+      "publish_price": false
+    }
+  ],
+  "creator_map": [
+    {
+      "topic": "Change Blindness",
+      "source_article": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "grok_asset_id": null,
+      "free_funnel": "https://finalvestige.com/focus/",
+      "optional_merchant": "Zen12 only after approval"
+    },
+    {
+      "topic": "Attentional Blink",
+      "source_article": null,
+      "grok_asset_id": null,
+      "free_funnel": "https://finalvestige.com/focus/",
+      "optional_merchant": "Zen12 only after approval; R312 unpublished"
+    },
+    {
+      "topic": "Invisible/Auditory Gorilla",
+      "source_article": null,
+      "grok_asset_id": null,
+      "free_funnel": "https://finalvestige.com/focus/",
+      "optional_merchant": "none by default; R313 unpublished"
+    }
+  ],
+  "kpi": {
+    "metric": "FV_realized_net_USD_per_1000_qualified_human_sessions",
+    "value": null,
+    "denominator": null,
+    "verified_orders": null,
+    "status": "NOT_COMPUTABLE",
+    "windows_days": [
+      7,
+      30
+    ],
+    "provenance": "Only provider-confirmed paid orders or affiliate commission settlements; minus fees/refunds/chargebacks; never clicks"
+  }
+}
