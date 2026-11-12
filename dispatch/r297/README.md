@@ -1,0 +1,20 @@
+# Dispatch R297 — visible-action MIME QA (review only)
+
+No sends, CMS/list changes, affiliate activation, merchant transactions or new platform. Stacked on draft #2143; originals #175, #201 and frozen homepage #49 unchanged. Coordinates #174, #171, #129, #820.
+
+## Reproduced R296 structural false negative
+Previous received_email_audit.py accepted the text "Unsubscribe" in an inline-hidden HTML block as visible opt-out wording. It also accepted a matching first-party CTA in an image src attribute as though a clickable HTML link existed. In a locally constructed SYNTHETIC MIME (hidden word, image-only CTA, no actionable plain-text opt-out), R296 reported only the ever-present founder approval hold when synthetic booleans were set true. **No send bypass existed:** R296 always returns HOLD_UNSENT. This is a test-quality issue, not evidence of an actual received message or regulatory violation.
+
+## New source and tested deliverables
+- The text-only GitHub carrier source_only.tar.xz.b64 contains ordinary email_semantics.py + test_email_semantics.py, because the available write connector only takes UTF-8. Decode with: base64 -d source_only.tar.xz.b64 > source_only.tar.xz ; tar -xJf source_only.tar.xz.
+- Source TAR.XZ SHA256: ddccb4564f05f73f533719ff9038ef3095f11f0b1368f6d8cc5a5782ae4b50b9. Exact Git text blob: d2e697453303032d7e1624b8576191a64e8bb2c9.
+- Second-stage, offline, read-only detector for genuinely visible HTML CTA anchors (not image src), inline-hidden unsubscribe, actionable HTML + plaintext opt-out, merchant-domain exposures, personal query params, unresolved placeholders, commercial disclosure adjacency and MIME alternative structure. It warns that CSS visibility cannot be fully validated without an actual email client. It prints no email body, addresses, raw URLs, PII or secrets and can NEVER approve sending.
+- Actual native local Python: new 40/40 PASS, inherited R296 MIME 22/22 PASS, original PR #175 6/6 PASS. Eight original source files matched exact current #175 Git blob IDs. All email fixtures synthetic. No native Jetpack preview, sent or received email.
+
+## WordPress read-only 2026-11-12 05:41 UTC
+Newsletter on; technically capable of sending; new-post automatic OFF; full format; sender Final Vestige Studios; no-reply; Fieldbook welcome CONFIGURED only. Diagnostic total/confirmed/unconfirmed 3/3/2; Stats WP.com/email followers 3/0, DISTINCT NONADDITIVE. Real consented email-eligible recipients UNKNOWN until private provider Email Subscription: Subscribed status filter, including bounced/paused/not-sending. Last five displayed post statuses opted out, NOT lifetime-zero assertion. Real received Fieldbook, valid publisher-owned postal address, tested unsubscribe and real Jetpack preview UNVERIFIED. Dispatch signup expectations differ from Focus on possible commissions; review-only parity draft #2131 unadopted.
+
+## Merchant / legal / revenue holds
+Official https://zen12.com/about describes 12 levels and four formats; 12-minute equivalence is seller claim, NOT independently demonstrated. Official https://hypnosislive.com/mental-skills/total-focus describes 33 min / 47MB; claimed powerful concentration outcomes remain seller claims. Pricing/refund/creative/email permission/account-specific earning links and approved live buyer guides UNVERIFIED; Mind PR #2147 explicitly keeps merchant EMAIL HOLD. FTC https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business ; WP https://wordpress.com/support/subscribers/ and https://wordpress.com/support/newsletter/email-appearance/ .
+
+The six original issues remain HOLD_UNSENT; 03/05 additionally HOLD_MERCHANT; 4 editorial and 2 commercial slots unchanged. Founder draft allocation is NOT final campaign authorization. No paid orders confirmed and net revenue per 1000 qualified human sessions NOT COMPUTABLE.
