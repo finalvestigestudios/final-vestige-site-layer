@@ -1,0 +1,94 @@
+{
+  "as_of_utc": "2026-11-12T11:32:56Z",
+  "source_master": "#175 d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "base_pr": "#2180",
+  "mind_handoff": "#2182",
+  "wordpress": {
+    "newsletter_enabled": true,
+    "new_post_emails": false,
+    "format": "full",
+    "welcome": "CONFIGURED_RECEIPT_UNVERIFIED",
+    "diagnostics": {
+      "total": 3,
+      "confirmed": 3,
+      "unconfirmed": 2
+    },
+    "followers": {
+      "wpcom": 3,
+      "email": 0
+    },
+    "actual_eligible": "UNKNOWN"
+  },
+  "publisher_specific_merchant_email_rights": "NOT_VERIFIED",
+  "commercial_offers": [
+    3,
+    5
+  ],
+  "revenue_verified": "NOT_COMPUTABLE",
+  "all_proofs": {
+    "email_subscription_permission": {
+      "status": "unverified",
+      "evidence_url": null
+    },
+    "provider_eligible_status": {
+      "status": "unverified",
+      "evidence_url": null
+    },
+    "confirmed_signup_dedup": {
+      "status": "unverified",
+      "evidence_url": null
+    },
+    "welcome_received": {
+      "status": "unverified",
+      "evidence_url": null
+    },
+    "native_jetpack_preview": {
+      "status": "unverified",
+      "evidence_url": null
+    },
+    "publisher_address_in_received_email": {
+      "status": "unverified",
+      "evidence_url": null
+    },
+    "functional_unsubscribe_in_received_email": {
+      "status": "unverified",
+      "evidence_url": null
+    },
+    "founder_campaign_approval": {
+      "status": "unverified",
+      "evidence_url": null
+    },
+    "publisher_affiliate_account_acceptance": {
+      "status": "unverified",
+      "evidence_url": null
+    },
+    "explicit_email_promotion_permission": {
+      "status": "unverified",
+      "evidence_url": null
+    },
+    "issued_permitted_earning_url": {
+      "status": "unverified",
+      "evidence_url": null
+    },
+    "approved_live_first_party_guide": {
+      "status": "unverified",
+      "evidence_url": null
+    },
+    "offer_specific_claim_check": {
+      "status": "unverified",
+      "evidence_url": null
+    },
+    "current_checkout_refund_terms": {
+      "status": "unverified",
+      "evidence_url": null
+    },
+    "adjacent_commission_disclosure": {
+      "status": "unverified",
+      "evidence_url": null
+    },
+    "verified_paid_conversion_reporting": {
+      "status": "unverified",
+      "evidence_url": null
+    }
+  }
+}
