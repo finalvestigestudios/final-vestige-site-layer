@@ -122,47 +122,24 @@ function fv_r281_events(): array {
     ];
 }
 /**
- * R308 — passive, first-party editorial campaign continuity (STAGING ONLY).
- * Accepted parameters are labels, NEVER authenticated session/purchase evidence.
- * No analytics, cookies, request hooks, redirects, merchant URLs or user PII.
- * Reject incomplete, array-valued, unknown or malformed input in its entirety.
- * The only target is FV_R281_FREE, an unchanged first-party editorial article.
+ * R311 CACHE-ISOLATION FAIL-SAFE (STAGING ONLY).
+ *
+ * R308's server-rendered UTM forwarding made a shared-cacheable page body
+ * depend on the visitor's query string. Until Claude independently verifies
+ * WordPress/CDN cache-key partitioning and consented attribution, we MUST NOT
+ * stamp a campaign identifier into a reusable HTML response: it could then be
+ * served to another visitor and falsely attributed.
+ *
+ * Keep this legacy function name because two healthy/recovery render paths
+ * call it. Deliberately ignore *all* request data and return the same first-
+ * party editorial URL on every request. No query forwarding, cookies, JS,
+ * redirects, payment assertions, or URL-based personalization. This disables
+ * R308's earlier feature rather than claiming cache handling is configured.
+ *
+ * Future attribution changes require a separate reviewed and tested PR.
  */
 function fv_r308_editorial_continuation_url(?array $query = null): string {
-    $query = $query ?? ($_GET ?? []);
-    if (!is_array($query)) { return FV_R281_FREE; }
-    $keys = ['utm_source','utm_medium','utm_campaign','utm_content'];
-    // PHP's parse_str collapses duplicate scalar query keys. Inspect the original
-    // URL spelling so `utm_source=youtube&utm_source=tiktok` cannot be laundered
-    // into a single seemingly valid campaign identity.
-    $raw = $_SERVER['QUERY_STRING'] ?? null;
-    if (!is_string($raw) || $raw === '' || strlen($raw) > 1024) { return FV_R281_FREE; }
-    $seen = array_fill_keys($keys, 0);
-    foreach (explode('&', $raw) as $part) {
-        $encodedKey = explode('=', $part, 2)[0];
-        $key = rawurldecode($encodedKey);
-        if (array_key_exists($key, $seen)) {
-            if (++$seen[$key] > 1) { return FV_R281_FREE; }
-        } elseif (array_key_exists(str_replace(['.',' '], '_', $key), $seen)) {
-            // Reject aliases that PHP normalizes into an expected input field.
-            return FV_R281_FREE;
-        }
-    }
-    if (in_array(0, $seen, true)) { return FV_R281_FREE; }
-    $validated = [];
-    foreach ($keys as $key) {
-        if (!isset($query[$key]) || !is_string($query[$key])) { return FV_R281_FREE; }
-        $validated[$key] = $query[$key];
-    }
-    if (!in_array($validated['utm_source'], ['youtube','tiktok','instagram','facebook','pinterest','x','bluesky'], true) ||
-        $validated['utm_medium'] !== 'organic_social' ||
-        $validated['utm_campaign'] !== 'history_pilot_2026_11' ||
-        !preg_match('/\A[a-zA-Z0-9][a-zA-Z0-9_-]{2,63}\z/D', $validated['utm_content'])) {
-        return FV_R281_FREE;
-    }
-    // Additional params (e.g. personal identifiers) are discarded, never forwarded.
-    // Preserves only the approved four labels, in deterministic order.
-    return FV_R281_FREE . '?' . http_build_query($validated, '', '&', PHP_QUERY_RFC3986);
+    return FV_R281_FREE;
 }
 /**
  * R309 contextual MEDIA RECORD INDEX (links only; never a gallery of loaded images).
@@ -313,7 +290,7 @@ function fv_r281_render($attributes = []): string {
     if (!fv_r281_valid_records($records) || !fv_r288_reconciliation_valid($date_reconciliation) || !fv_r289_authority_ledger_valid($authority_ledger)) {
         static $recovery_sequence = 0;
         $recovery_sequence++;
-        return '<aside aria-label="Apollo 1 source integrity recovery '. $recovery_sequence .'" data-fv-evidence-status="source-integrity-failed" data-fv-funnel-scope="editorial-recovery">'
+        return '<aside aria-label="Apollo 1 source integrity recovery '. $recovery_sequence .'" data-fv-evidence-status="source-integrity-failed" data-fv-funnel-scope="editorial-recovery" data-fv-attribution-policy="cache-stable-no-query-forwarding">'
             .'<p><strong>The Apollo evidence display is unavailable because its source verification did not pass.</strong> Historical claims from this display have been withheld pending review.</p>'
             .'<p><a href="'.fv_r281_escape(FV_R281_NASA_BOARD).'" rel="noopener noreferrer" data-fv-link-purpose="official-evidence-source" data-fv-conversion-kind="noncommercial-source-reference">Read the original Apollo 204 Review Board report at NASA</a></p>'
             .'<p data-fv-funnel-step="recovery-to-investigation"><a href="'.fv_r281_escape(fv_r308_editorial_continuation_url()).'" data-fv-cta="apollo-read-free-investigation" data-fv-conversion-kind="editorial-continuation">Read the free Apollo 1 investigation</a> (editorial reading, not a purchase)</p>'
@@ -328,7 +305,7 @@ function fv_r281_render($attributes = []): string {
     // R301: declarative and consent-neutral analytics handoff contract. These
     // attributes are NOT instrumentation: no script, cookie, request, campaign
     // inference, or commercial conversion is generated by this component.
-    $s='<section class="fv-r281" aria-labelledby="'.$id.'-heading" data-fv-evidence-status="editorial-review-pending" data-fv-experience="apollo-1" data-fv-funnel-scope="editorial-evidence">';
+    $s='<section class="fv-r281" aria-labelledby="'.$id.'-heading" data-fv-evidence-status="editorial-review-pending" data-fv-experience="apollo-1" data-fv-funnel-scope="editorial-evidence" data-fv-attribution-policy="cache-stable-no-query-forwarding">';
     // R300: the containing <section> is a named region via aria-labelledby.
     // Distinct IDs alone are insufficient: repeated shortcode instances otherwise
     // have *identical* accessible region names. Include the stable instance in
