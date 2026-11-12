@@ -74,7 +74,7 @@ const unsafeMutations=[
  x=>x.replace('may earn a commission','may get something'),
  x=>x.replace('No affiliate link is active','An earning link is active'),
  x=>x.replace('prefers-reduced-motion','prefers-normal-motion'),
- x=>x.replace(':focus-visible',':hover'),
+ x=>x.replace(/:focus-visible/g,':hover'),
  x=>x.replace('href="#main"','href="#other"'),
  x=>x.replace('</main>','<iframe src="https://example.org/pixel"></iframe></main>'),
  x=>x.replace('</main>','<video autoplay></video></main>'),
