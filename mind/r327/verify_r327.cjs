@@ -14,7 +14,7 @@ check(name+' no forms, scripts, live merchant links',()=>{assert(!/<script\b|<fo
 check(name+' valid accessible basics',()=>{assert(/<html lang="en">/.test(x));assert(/<meta name="viewport"/.test(x));assert(/<main\b/.test(x));assert(/<h1>/.test(x));assert(/prefers-reduced-motion/.test(x));});
 }
 for(const [name,x] of [['buyer A',a],['buyer B',b]]) {
-check(name+' genuinely disabled checkout + near-link disclosure',()=>{assert(/<button[^>]*\bdisabled\b[^>]*>/.test(x));assert(x.indexOf('may earn a commission')>x.indexOf('<button type="button" disabled'));assert(x.indexOf('may earn a commission')-x.indexOf('<button type="button" disabled')<650);assert(x.includes('https://finalvestige.com/focus/'));});
+check(name+' genuinely disabled checkout + near-link disclosure',()=>{assert(/<button[^>]*\sdisabled(?:\s|=|>)/.test(x));assert(x.indexOf('may earn a commission')>x.indexOf('<button type="button" disabled'));assert(x.indexOf('may earn a commission')-x.indexOf('<button type="button" disabled')<650);assert(x.includes('https://finalvestige.com/focus/'));});
 check(name+' no price or unverified universal guarantee',()=>{assert(!/\$\d/.test(x));assert(!/guaranteed cognitive|100% focus|cures anxiety|results in hours/i.test(x));});
 }
 check('optional film present B only, transcript and original SVG',()=>{assert(!a.includes('<!-- FILM START -->'));assert(b.includes('<!-- FILM START -->'));assert(b.includes('aria-labelledby="fvfilm-title fvfilm-desc"'));assert(b.includes('<details>'));assert(b.includes('00:35–00:42'));});
@@ -25,4 +25,11 @@ check('all authorization holds strictly closed',()=>{assert.equal(m.commercial_h
 check('no misleading claim passed off as proven',()=>{for(const c of m.claims)if(c.status==='seller_claim_excluded')assert(/exclude|not|unverified|unsupported|no /i.test(c.limitation));});
 check('source article has primary limits and lived content',()=>{assert(paper.split(/\s+/).length>1400);for(const x of ['1992','1994','2005','2006','2007','2019','Puységur','not a randomized trial','Source limitation'])assert(paper.includes(x),x);});
 check('hub has accurate published paths and no fake mind publication',()=>{for(const x of ['change-blindness/','mesmerism/','puysegurs-animal-magnetism-files/','/focus/','not created in WordPress CMS'])assert(h.toLowerCase().includes(x.toLowerCase()))});
+function safeBuyer(x){return !/<(?:script|form|iframe)\b/i.test(x)&&!/<a\b[^>]*href=["'][^"']*(?:zen12\.com|hypnosislive\.com|brainwaveshots\.com)/i.test(x)&&/<button[^>]*\sdisabled(?:\s|=|>)/.test(x)&&x.includes('may earn a commission');}
+check('adversarial: injected script rejected',()=>assert(!safeBuyer(a+'<script>alert(1)</script>')));
+check('adversarial: injected form rejected',()=>assert(!safeBuyer(a+'<form action="/"></form>')));
+check('adversarial: injected iframe rejected',()=>assert(!safeBuyer(a+'<iframe src="//x"></iframe>')));
+check('adversarial: active merchant anchor rejected',()=>assert(!safeBuyer(a+'<a href="https://zen12.com/getstarted">Buy</a>')));
+check('adversarial: enabled merchant button rejected',()=>assert(!safeBuyer(a.replace('type="button" disabled','type="button"'))));
+check('adversarial: removed disclosure rejected',()=>assert(!safeBuyer(a.replace('may earn a commission','may receive a gift'))));
 console.log('TOTAL PASS:',n);
