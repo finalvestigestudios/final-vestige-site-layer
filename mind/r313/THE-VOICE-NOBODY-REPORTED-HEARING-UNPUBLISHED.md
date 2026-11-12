@@ -1,4 +1,4 @@
-# The Voice Nobody Reported Hearing
+# The Gorilla Voice Some Listeners Missed
 
 **Final Vestige Studios · Mind & Perception Archive**  
 **Editorial state: unpublished, original source-review draft · November 12, 2026**
