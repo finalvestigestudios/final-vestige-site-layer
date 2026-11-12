@@ -1,0 +1,217 @@
+{
+  "original_python_tests": "6/6 PASS independently on GitHub blob identical local copies",
+  "original_sha_verified": [
+    {
+      "issue": "01",
+      "sha": "039b452b5cb7cd6dc2fed6fac4d2dd77fa9d49c8"
+    },
+    {
+      "issue": "02",
+      "sha": "faa207ab7deafd86460d36f8c17fe62d392d0e14"
+    },
+    {
+      "issue": "03",
+      "sha": "aeeef34efea0cc281f69901488e4501fea851245"
+    },
+    {
+      "issue": "04",
+      "sha": "89635bfb9c8d1ff17297a59b6b5b5b2a176934ca"
+    },
+    {
+      "issue": "05",
+      "sha": "a9dfaa450ba025a7b5113ade8a294d6dbad778dc"
+    },
+    {
+      "issue": "06",
+      "sha": "004d558df6376d2ad6f4f79a4581e8d2c444e355"
+    }
+  ],
+  "assertions": [
+    {
+      "label": "six source files",
+      "pass": true
+    },
+    {
+      "label": "four editorial two commercial",
+      "pass": true
+    },
+    {
+      "label": "all source blob SHAs present",
+      "pass": true
+    },
+    {
+      "label": "six unsent and no merchant approvals",
+      "pass": true
+    },
+    {
+      "label": "retains original subjects",
+      "pass": true
+    },
+    {
+      "label": "no fabricated preheader support",
+      "pass": true
+    },
+    {
+      "label": "issue 1 Gutenberg delimiter balance",
+      "pass": true
+    },
+    {
+      "label": "issue 1 no JS, form or tracking pixel",
+      "pass": true
+    },
+    {
+      "label": "issue 1 explicit send prohibition",
+      "pass": true
+    },
+    {
+      "label": "issue 1 explicit legal hold",
+      "pass": true
+    },
+    {
+      "label": "issue 1 subject not hidden in body",
+      "pass": true
+    },
+    {
+      "label": "issue 1 original CTA preserved",
+      "pass": true
+    },
+    {
+      "label": "issue 2 Gutenberg delimiter balance",
+      "pass": true
+    },
+    {
+      "label": "issue 2 no JS, form or tracking pixel",
+      "pass": true
+    },
+    {
+      "label": "issue 2 explicit send prohibition",
+      "pass": true
+    },
+    {
+      "label": "issue 2 explicit legal hold",
+      "pass": true
+    },
+    {
+      "label": "issue 2 subject not hidden in body",
+      "pass": true
+    },
+    {
+      "label": "issue 2 original CTA preserved",
+      "pass": true
+    },
+    {
+      "label": "issue 3 Gutenberg delimiter balance",
+      "pass": true
+    },
+    {
+      "label": "issue 3 no JS, form or tracking pixel",
+      "pass": true
+    },
+    {
+      "label": "issue 3 explicit send prohibition",
+      "pass": true
+    },
+    {
+      "label": "issue 3 explicit legal hold",
+      "pass": true
+    },
+    {
+      "label": "issue 3 subject not hidden in body",
+      "pass": true
+    },
+    {
+      "label": "issue 3 original CTA preserved",
+      "pass": true
+    },
+    {
+      "label": "issue 3 commercial placeholders non-link",
+      "pass": true
+    },
+    {
+      "label": "issue 4 Gutenberg delimiter balance",
+      "pass": true
+    },
+    {
+      "label": "issue 4 no JS, form or tracking pixel",
+      "pass": true
+    },
+    {
+      "label": "issue 4 explicit send prohibition",
+      "pass": true
+    },
+    {
+      "label": "issue 4 explicit legal hold",
+      "pass": true
+    },
+    {
+      "label": "issue 4 subject not hidden in body",
+      "pass": true
+    },
+    {
+      "label": "issue 4 original CTA preserved",
+      "pass": true
+    },
+    {
+      "label": "issue 5 Gutenberg delimiter balance",
+      "pass": true
+    },
+    {
+      "label": "issue 5 no JS, form or tracking pixel",
+      "pass": true
+    },
+    {
+      "label": "issue 5 explicit send prohibition",
+      "pass": true
+    },
+    {
+      "label": "issue 5 explicit legal hold",
+      "pass": true
+    },
+    {
+      "label": "issue 5 subject not hidden in body",
+      "pass": true
+    },
+    {
+      "label": "issue 5 original CTA preserved",
+      "pass": true
+    },
+    {
+      "label": "issue 5 commercial placeholders non-link",
+      "pass": true
+    },
+    {
+      "label": "issue 6 Gutenberg delimiter balance",
+      "pass": true
+    },
+    {
+      "label": "issue 6 no JS, form or tracking pixel",
+      "pass": true
+    },
+    {
+      "label": "issue 6 explicit send prohibition",
+      "pass": true
+    },
+    {
+      "label": "issue 6 explicit legal hold",
+      "pass": true
+    },
+    {
+      "label": "issue 6 subject not hidden in body",
+      "pass": true
+    },
+    {
+      "label": "issue 6 original CTA preserved",
+      "pass": true
+    },
+    {
+      "label": "only valid first-party live editorial CTAs",
+      "pass": true
+    }
+  ],
+  "count": 45,
+  "passes": 45,
+  "actual_jetpack_test": "NOT_RUN",
+  "native_new_tests": "NOT_RUN",
+  "cms_writes": 0,
+  "emails_sent": 0
+}
