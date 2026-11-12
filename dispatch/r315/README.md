@@ -2,7 +2,7 @@
 Source of truth Issue #174; companion #171; master PR #175 exact `d57ccdba3aee8f065e143e101c2945f4f3d01647`; independent gate #201; Mind's separate source/affiliate matrix PR #2255. Nothing in this PR alters those files.
 
 ### Distinct value
-- A fully developed **optional** original Issue 03 message (subject, preheader, 494+ words of research-led copy, useful buyer questions, one inactive guide CTA and near-offer commercial disclosure).
+- A fully developed **optional** original Issue 03 message (subject, preheader, approximately 450 words of research-led copy, useful buyer questions, one inactive guide CTA and near-offer commercial disclosure).
 - Product-specific source/claim analysis aligned to the **real Zen12 seller landing page** (12 levels × 4 styles = 48 MP3s; *not* evidence of an hour's meditation in twelve minutes), the NIH meditation overview and the FTC health-claims standard. No copied vendor testimonials or approved-creative assumptions.
 - Real HTML and plaintext static reviewer assets; the HTML uses an email table, inline styling, semantic headings, high-contrast words, no images, media embeds, forms, tracking or functional checkout, and a prominently visible hard legal hold. It is **not** a native Jetpack preview.
 - Exactly one qualifying commercial guide CTA slot, **inactive** pending the Mind team's single canonical approved guide, account rights and founder's approval; no guessing product links.
