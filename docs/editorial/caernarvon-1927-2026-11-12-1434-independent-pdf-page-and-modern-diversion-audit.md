@@ -1,0 +1,42 @@
+# Caernarvon 1927 — independent visible-PDF audit and modern-diversion distinction
+**Checked:** 2026-11-12, approximately 14:34–14:50 Pacific. **Investigation:** WordPress draft #2151, *The Levee They Blew on Purpose*. **State:** editorial research/QA handoff only; NOT a publication authorization.
+
+## Why this matters
+
+The investigative article's ecological afterlife section rightly distinguishes the **uncontrolled 1927 levee breach** from the **modern gated Caernarvon Freshwater Diversion**. A newly completed visual inspection of the 2014 original geological paper adds a substantial distinction: **8,000 cfs is the modern structure's design maximum, not its historical typical operation, and it was not run to maximize sediment delivery.** These conditions make direct numerical comparisons to the 1927 estimated crevasse flows exceptionally liable to mislead.
+
+## Source actually read and page images inspected
+
+**Lopez, John A., Theryn K. Henkel, Andreas M. Moshogianis, Andy D. Baker, Ezra C. Boyd, Eva R. Hillmann, Paul F. Connor, and David B. Baker.** “Examination of Deltaic Processes of Mississippi River Outlets—Caernarvon Delta and Bohemia Spillway in Southeastern Louisiana.” *GCAGS Journal* 3 (2014): 79–93. https://www.gcags.org/Journal/2014.GCAGS.Journal/GCAGS.Journal.2014.vol3.p79-93.Lopez.et.al.pdf . Institutional publisher-hosted **15-page PDF**, accessible to an ordinary web index during this run. **Actual PDF page screenshots were returned and visually inspected for printed pp. 79, 80, 81** (PDF pages 1–3); not merely text-search snippets. Verify official source's printable page numbers; PDF page indices are 0, 1, 2.
+
+- **p. 79 (PDF index 0):** Abstract identifies the gated modern diversion's designed **up-to-8,000 cfs** flow and explains its operation does not maximize sediment capture; identifies 1926 Bohemia Spillway, a different structure. Clearly marked “Copyright © 2014. Gulf Coast Association of Geological Societies. All rights reserved.” Do **not** copy/rehost the report's maps, photographs or plots without separate permission; cite/link only.
+- **p. 80 (PDF index 1):** Historical diversion **constructed in 1991**; designed for **five 15-foot gated box culverts** and up-to-8,000 cfs. For the authors' historic data period, average discharge since 1992 estimated about **2,500 cfs**; 1993–2001 mean about **2,200 cfs**, closed **55%** of time; 2001–2012 closed **40%** of time with mean about **2,700 cfs**. These are study-specific historical operating summaries, **NOT live 2026 diversion readings**.
+- **p. 81 (PDF index 2):** Authors' sediment budget calculated roughly **264,000 cubic yards** delivered December 2009–2012, compared with hypothetical greater volumes from more aggressive operation; they expressly say operators cannot always maximize discharge because of **salinity concerns**. The comparison is a modeled management scenario; do not turn it into actual additional land built.
+- The paper differentiates the 1927 breach's abrupt, large sediment pulse from the smaller modern gated operation. The stronger editorial explanation is **capacity vs ordinary use; freshwater/salinity operation vs uncontrolled flood; sediment volume vs area of durable wetland**. A contemporary management choice does not solve the original 1927 counterfactual.
+
+**Suggested tightly scoped optional edit, if a compelling narrative reason arises later** (do not add merely to lengthen the current already-substantial draft): “Even that 8,000-cubic-foot-per-second figure is a design ceiling, not the usual flow. The 2014 researchers calculated average operation closer to 2,500 cubic feet per second over the period they reviewed, with long closures and salinity constraints; the managed diversion is no stand-in for the explosive, uncontrolled 1927 crevasse.” Cite the *existing* Lopez et al. link after the sentence and qualify that it is the report's period-average. This is a prepared editorial candidate, **not** a WP change.
+
+## Additional independently accessible reader-facing scholarly source
+
+Smith, James A., and Mary Lynn Baeck, “Prophetic vision, vivid imagination”: The 1927 Mississippi River flood, *Water Resources Research* 51(12) (2015), full-text publisher HTML https://agupubs.onlinelibrary.wiley.com/doi/full/10.1002/2015WR017927 (checked during this run; published Nov 30, 2015). Its introduction describes **2,472,000 cfs** as a historical flood-record figure and quotes the 2008 Costa/Jarrett review's **absence of directly observed or indirectly measured May crest**; see introduction near Figure 1. NOAA institutional metadata page for the same study is publicly accessible: https://repository.library.noaa.gov/view/noaa/59807 . That is a credible **reader-accessible corroborating route for the uncertain-peak claim**, not a new direct gauge record or a complete substitute for all USGS appendix assertions.
+
+## Specific unresolved public-source availability
+
+- **Official 2008 USGS Appendix A**, https://pubs.usgs.gov/sir/2008/5164/pdf/sir20085164_AppendixA.pdf : direct browser/index PDF-open returned HTTP **403** in this run. Search-engine parsed text separately displays its technical figures, but **no actual page screenshot of this URL was captured**. The reader-accessible AGU/NOAA scholarly route above can support the *limited* numerical-uncertainty claim, not every appendix claim.
+- **Official 2018 USACE Bonnet Carré booklet**, https://www.mvn.usace.army.mil/Portals/56/docs/Recreation/BCS/Brochures/BC%20spillway%20booklet%20Dec%202018%20.pdf : direct PDF-open returned **403**, while independent search indexing reproduces the caption containing both **“With MRC approval”** and **“saved the city”**. These two clauses belong to **the same institutional caption**. A third-party ebook mirror exists at https://anyflip.com/lcfc/yudk/basic, but is not a substitute for independent official-brochure provenance or automatic rights clearance. No USACE PDF page screenshot obtained.
+- An accessible **GCAGS** PDF with *actual visible page screenshots* shows that the graphical PDF inspection path can work when the host permits it; it does **not** clear unrelated USACE/USGS links or the **authenticated WordPress preview gate**. HTTP 403 from automated inspection alone is neither proof that ordinary human readers cannot open the source nor a PASS.
+
+## Release identity and blockers, deliberately unchanged
+
+WordPress post **#2151**, `draft`, **modified 2026-11-12T12:44:30 site-local**, original-Gutenberg SHA-1 `6449c7fc2963f58f3f96aa1ea19e97f370ee3af1`, **82 top-level blocks / 43 Sources & Further Reading items**, 11 H2, 4 FV-hosted credited NOAA/LOC documentary photographs and 2 original FV evidence graphics. Current post suppresses first-publish subscriber email and auto social; article **not published**.
+
+**Release HOLD:** Actual editor-authenticated production-theme WordPress draft screenshots **plus responsive DOM checks at 390px and 1440px** for *this* SHA, and ordinary-reader source-PDF access/visual verification of the official 2018 USACE and 2008 USGS document passages, or carefully documented claim-level substitutes. Neither is implied by this new GCAGS page PASS. Never publish under a checklist-only PASS, no subscribers/publicize/Grok before publication.
+
+## Site coordination / restraint
+
+- Live published Journal had **66** entries and no conflicting Caernarvon article when checked. Editorial Standards https://finalvestige.com/editorial-standards/ require verifiable quotations, caveated inference and rights records.
+- GitHub issue #1589's outdated internal acceptance criterion mistakenly said **42** bibliography items despite its correct current 43-item header. That checklist line was corrected to **43** without modifying other tasks or historical release notes.
+- Current writer chose **not to alter the WordPress manuscript** for the optional 2014 nuance during an active screenshot-QA hold. This deliberately preserves the exact SHA already assigned to Site QA.
+- No paid services, no third-party copyrighted figure republication, no homepage/shared-template change, no newsletter or social distribution.
+
+**Next needed action:** Site QA owner to capture real authenticated #2151 production-theme pixels+DOM at 390/1440; source QA owner to capture human-readable Corps/USGS claim pages or adopt a specifically mapped alternative for each sentence. Once those are logged, independently read back and consider release under existing no-email/no-publicize safeguards.
