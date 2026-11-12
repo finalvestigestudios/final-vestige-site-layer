@@ -1,0 +1,202 @@
+{
+  "schema": "fv-prep-r321-audited-source-delta-group-v1",
+  "source_docket_git_blob": "3119626a19175cec8f0dc4f03c5da57f319906d0",
+  "group": 2,
+  "expected_count": 5,
+  "verified_records": 5,
+  "verified_blob_count": 15,
+  "safety_approved": false,
+  "qd_pass": false,
+  "publish_authorized": false,
+  "automatic_merge": false,
+  "limits": "Syntactic reviewer witnesses; no claim-level safety certification or native build",
+  "records": [
+    {
+      "path": "preparedness/content/articles/making-water-safer.meta.json",
+      "severity": "P0_HEALTH_SAFETY",
+      "source_refs": {
+        "integrated": {
+          "sha": "827d861eb3beebfd010ee98fcca764b23a2de90e",
+          "size": 3523
+        },
+        "continuation": {
+          "sha": "bcb567905444687b5ae0a261cbbdb7a24a9e7870",
+          "size": 2987
+        },
+        "followup": {
+          "sha": "bcb567905444687b5ae0a261cbbdb7a24a9e7870",
+          "size": 2987
+        }
+      },
+      "comparisons": {
+        "continuation": {
+          "type": "metadata",
+          "changed_top_level_keys": [
+            "safety_review"
+          ]
+        },
+        "followup": {
+          "type": "metadata",
+          "changed_top_level_keys": [
+            "safety_review"
+          ]
+        }
+      },
+      "status": "UNRESOLVED_HOLD"
+    },
+    {
+      "path": "preparedness/content/articles/outage-heat-cold-generators.body.html",
+      "severity": "P0_LIFE_SAFETY",
+      "source_refs": {
+        "integrated": {
+          "sha": "2cd3e30b3a7e3dfdb3fd30cfd2b832355f58dfe2",
+          "size": 33137
+        },
+        "continuation": {
+          "sha": "55a1e3018e3413b79378c6677f15e536bb777377",
+          "size": 33238
+        },
+        "followup": {
+          "sha": "5608a28249a0e351710e0c756d878048c8e41e24",
+          "size": 33265
+        }
+      },
+      "comparisons": {
+        "continuation": {
+          "type": "html",
+          "char_delta": 101,
+          "headings_removed": [],
+          "headings_added": [],
+          "citation_like_removed": [],
+          "citation_like_added": [],
+          "links_removed": [],
+          "links_added": [],
+          "form_count_before": 0,
+          "form_count_after": 0
+        },
+        "followup": {
+          "type": "html",
+          "char_delta": 128,
+          "headings_removed": [],
+          "headings_added": [],
+          "citation_like_removed": [],
+          "citation_like_added": [],
+          "links_removed": [],
+          "links_added": [],
+          "form_count_before": 0,
+          "form_count_after": 0
+        }
+      },
+      "status": "UNRESOLVED_HOLD"
+    },
+    {
+      "path": "preparedness/content/articles/outage-heat-cold-generators.meta.json",
+      "severity": "P0_CITATION",
+      "source_refs": {
+        "integrated": {
+          "sha": "be37b602d0b82593d438083dfc8a1e5ef595dd44",
+          "size": 5155
+        },
+        "continuation": {
+          "sha": "debfd11fb189cb43a688862867dc60172fb6eb3a",
+          "size": 5096
+        },
+        "followup": {
+          "sha": "593e7bd6fef0446f05d7a86551e702ceaa38eabb",
+          "size": 5210
+        }
+      },
+      "comparisons": {
+        "continuation": {
+          "type": "metadata",
+          "changed_top_level_keys": [
+            "source_use"
+          ]
+        },
+        "followup": {
+          "type": "metadata",
+          "changed_top_level_keys": []
+        }
+      },
+      "status": "UNRESOLVED_HOLD"
+    },
+    {
+      "path": "preparedness/content/articles/salt-beef-salt-pork-age-of-sail.meta.json",
+      "severity": "P0_HEALTH_SAFETY",
+      "source_refs": {
+        "integrated": {
+          "sha": "1c4c5396da703f3724b584c67e49e2128ab1f4c6",
+          "size": 3433
+        },
+        "continuation": {
+          "sha": "06b1cec809cb78a3315f7a7655b028c0a27dd642",
+          "size": 2897
+        },
+        "followup": {
+          "sha": "06b1cec809cb78a3315f7a7655b028c0a27dd642",
+          "size": 2897
+        }
+      },
+      "comparisons": {
+        "continuation": {
+          "type": "metadata",
+          "changed_top_level_keys": [
+            "safety_review"
+          ]
+        },
+        "followup": {
+          "type": "metadata",
+          "changed_top_level_keys": [
+            "safety_review"
+          ]
+        }
+      },
+      "status": "UNRESOLVED_HOLD"
+    },
+    {
+      "path": "preparedness/content/articles/shelter-or-evacuate.body.html",
+      "severity": "P0_LIFE_SAFETY",
+      "source_refs": {
+        "integrated": {
+          "sha": "de3cb805041904cf22d4f216296bd4c8ddec17c1",
+          "size": 31374
+        },
+        "continuation": {
+          "sha": "ed6e6bc4dc1344d1aa25679c6f4380f76d82927e",
+          "size": 30877
+        },
+        "followup": {
+          "sha": "a8c36cd63517fdeb723dca201b31802c2a721ddf",
+          "size": 31507
+        }
+      },
+      "comparisons": {
+        "continuation": {
+          "type": "html",
+          "char_delta": -497,
+          "headings_removed": [],
+          "headings_added": [],
+          "citation_like_removed": [],
+          "citation_like_added": [],
+          "links_removed": [],
+          "links_added": [],
+          "form_count_before": 0,
+          "form_count_after": 0
+        },
+        "followup": {
+          "type": "html",
+          "char_delta": 133,
+          "headings_removed": [],
+          "headings_added": [],
+          "citation_like_removed": [],
+          "citation_like_added": [],
+          "links_removed": [],
+          "links_added": [],
+          "form_count_before": 0,
+          "form_count_after": 0
+        }
+      },
+      "status": "UNRESOLVED_HOLD"
+    }
+  ]
+}
