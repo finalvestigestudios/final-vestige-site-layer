@@ -1,0 +1,473 @@
+{
+  "schema": "fv-mind-r305-evidence-commerce-v1",
+  "date": "2026-11-11",
+  "status": "DRAFT_UNPUBLISHED_HARD_HOLD",
+  "sources": [
+    {
+      "id": "LOFTUS74",
+      "url": "https://doi.org/10.1016/S0022-5371(74)80011-3",
+      "scope": "publisher abstract; complete paywalled article not read"
+    },
+    {
+      "id": "GABBERT03",
+      "url": "https://abdn.elsevierpure.com/en/publications/memory-conformity-can-eyewitnesses-influence-each-others-memories/",
+      "scope": "university-hosted original study abstract"
+    },
+    {
+      "id": "LOFTUS05",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/16027179/",
+      "scope": "author review abstract and bibliographic metadata"
+    },
+    {
+      "id": "AMA85",
+      "url": "https://jamanetwork.com/journals/jama/article-abstract/397702",
+      "scope": "professional society forensic review abstract"
+    },
+    {
+      "id": "PUY",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "scope": "published original historical source archive"
+    },
+    {
+      "id": "MES",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "scope": "published Final Vestige historical investigation"
+    },
+    {
+      "id": "CHANGE",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "scope": "published original Final Vestige experiment explainer"
+    },
+    {
+      "id": "FOCUS",
+      "url": "https://finalvestige.com/focus/",
+      "scope": "existing free Focus Fieldbook"
+    },
+    {
+      "id": "INSPIRE",
+      "url": "https://inspire3.com/",
+      "scope": "merchant public catalog only"
+    },
+    {
+      "id": "AFFIL",
+      "url": "https://affiliates.inspire3.com/",
+      "scope": "public recruiting program; no FV-specific authorization"
+    },
+    {
+      "id": "ZEN",
+      "url": "https://zen12.com/",
+      "scope": "official marketing page; seller claims only"
+    },
+    {
+      "id": "ZCHECK",
+      "url": "https://zen12.com/getstarted",
+      "scope": "exact seller checkout; route-specific dynamic pricing"
+    },
+    {
+      "id": "HYPN",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "scope": "exact separate product offer"
+    },
+    {
+      "id": "BRAIN",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "scope": "exact separate product offer"
+    },
+    {
+      "id": "FTCEND",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "scope": "FTC official endorsements guidance"
+    },
+    {
+      "id": "FTCHEALTH",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "scope": "FTC official substantiation guidance"
+    },
+    {
+      "id": "ISS171",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "scope": "workstream editorial governance"
+    },
+    {
+      "id": "ISS820",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "scope": "measurement and release governance"
+    },
+    {
+      "id": "PR205",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/blob/b7db21946df67a5d17939e9c396c10599e0e9617/mind/r205/the-pendulum-that-answered-ideomotor-science-UNPUBLISHED.md",
+      "scope": "prior same-topic ideomotor manuscript; do not repeat"
+    },
+    {
+      "id": "PR223",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/blob/2d7a9e6cced9d44a63e3d1f128d3bdeaec7268ba/mind/r223/the-pendulum-that-answered-IDEOMOTOR-UNPUBLISHED.md",
+      "scope": "prior same-topic ideomotor manuscript; consolidation gate"
+    }
+  ],
+  "claims": [
+    {
+      "id": "L1",
+      "statement": "1974 two experiments used changed vehicle-collision verbs and later broken-glass question",
+      "decision": "ALLOW_ORIGINAL_ABSTRACT",
+      "source_id": "LOFTUS74"
+    },
+    {
+      "id": "L2",
+      "statement": "The original 1974 article full table and participant data were read",
+      "decision": "DENY_NOT_READ",
+      "source_id": "LOFTUS74"
+    },
+    {
+      "id": "L3",
+      "statement": "Changing verb in the experiment influenced some later reports",
+      "decision": "ALLOW_EXPERIMENT_BOUND",
+      "source_id": "LOFTUS74"
+    },
+    {
+      "id": "L4",
+      "statement": "All eyewitness memories are unreliable or permanently rewritten",
+      "decision": "DENY_OVERGENERALIZATION",
+      "source_id": "LOFTUS74"
+    },
+    {
+      "id": "G1",
+      "statement": "2003 study used differing co-witness video versions and discussion condition",
+      "decision": "ALLOW_ORIGINAL_ABSTRACT",
+      "source_id": "GABBERT03"
+    },
+    {
+      "id": "G2",
+      "statement": "71% participants in discussion condition erroneously recalled acquired details",
+      "decision": "ALLOW_CONDITION_SPECIFIC",
+      "source_id": "GABBERT03"
+    },
+    {
+      "id": "G3",
+      "statement": "71% of real eyewitness testimony is false",
+      "decision": "DENY_DENOMINATOR_ERROR",
+      "source_id": "GABBERT03"
+    },
+    {
+      "id": "H1",
+      "statement": "AMA 1985 review warns hypnosis-refresh recall can contain confabulation",
+      "decision": "ALLOW_FORENSIC_SCOPE",
+      "source_id": "AMA85"
+    },
+    {
+      "id": "H2",
+      "statement": "AMA forensic caution establishes every hypnosis audio product is ineffective",
+      "decision": "DENY_CATEGORY_LEAP",
+      "source_id": "AMA85"
+    },
+    {
+      "id": "M1",
+      "statement": "Misinformation effect recognized in 2005 field review",
+      "decision": "ALLOW_REVIEW_SCOPE",
+      "source_id": "LOFTUS05"
+    },
+    {
+      "id": "P1",
+      "statement": "Puységur historical archive documents historical claims, not modern treatment efficacy",
+      "decision": "ALLOW_HISTORY",
+      "source_id": "PUY"
+    },
+    {
+      "id": "P2",
+      "statement": "Historical magnetic somnambulism proves modern Zen12 benefit",
+      "decision": "DENY_CROSS_DOMAIN",
+      "source_id": "PUY"
+    },
+    {
+      "id": "F1",
+      "statement": "Existing Focus Fieldbook is free, same signup pathway",
+      "decision": "ALLOW_EXISTING",
+      "source_id": "FOCUS"
+    },
+    {
+      "id": "Z1",
+      "statement": "Zen12 full-course checkout lists 12 levels, 48 MP3s",
+      "decision": "SELLER_FORMAT",
+      "source_id": "ZCHECK"
+    },
+    {
+      "id": "Z2",
+      "statement": "Zen12 all tracks are guided and every package has 48 MP3s",
+      "decision": "DENY_PACKAGE_MISMATCH",
+      "source_id": "ZEN"
+    },
+    {
+      "id": "Z3",
+      "statement": "A 12-minute Zen12 session produces same results as hour-long meditation",
+      "decision": "DENY_UNSUBSTANTIATED",
+      "source_id": "ZEN"
+    },
+    {
+      "id": "Z4",
+      "statement": "Seller cart displayed $87.99 on Nov 11 2026, not FV approved fixed price",
+      "decision": "ROUTE_SNAPSHOT_INTERNAL_ONLY",
+      "source_id": "ZCHECK"
+    },
+    {
+      "id": "Z5",
+      "statement": "Seller checkout displays an urgency countdown",
+      "decision": "OBSERVED_SELLER_PRESENTATION_NOT_ADOPTED",
+      "source_id": "ZCHECK"
+    },
+    {
+      "id": "Z6",
+      "statement": "Zen12 seller states a guarantee, but current refund fulfillment for FV referral independently confirmed",
+      "decision": "DENY_UNVERIFIED_FULFILLMENT",
+      "source_id": "ZCHECK"
+    },
+    {
+      "id": "I1",
+      "statement": "Inspire3 lists affiliated personal-development brands",
+      "decision": "ALLOW_SELLER_CATALOG",
+      "source_id": "INSPIRE"
+    },
+    {
+      "id": "I2",
+      "statement": "Public Inspire3 recruitment proves FV publisher approval or payout",
+      "decision": "DENY_ACCOUNT_SPECIFIC",
+      "source_id": "AFFIL"
+    },
+    {
+      "id": "I3",
+      "statement": "Gmail marketing/product welcomes are publisher approval",
+      "decision": "DENY_INFERENCE",
+      "source_id": "AFFIL"
+    },
+    {
+      "id": "Y1",
+      "statement": "Hypnosis Live Total Focus seller lists 33 minutes and 47 MB",
+      "decision": "SELLER_FORMAT",
+      "source_id": "HYPN"
+    },
+    {
+      "id": "B1",
+      "statement": "Brainwave Shots Focus Shot seller lists 15 and 30 minute variants",
+      "decision": "SELLER_FORMAT",
+      "source_id": "BRAIN"
+    },
+    {
+      "id": "D1",
+      "statement": "Clear adjacent commission disclosures required for endorsements",
+      "decision": "ALLOW_REGULATORY",
+      "source_id": "FTCEND"
+    },
+    {
+      "id": "D2",
+      "statement": "General site disclosure alone covers distant recommendation link",
+      "decision": "DENY_DISCLOSURE_DISTANCE",
+      "source_id": "FTCEND"
+    },
+    {
+      "id": "C1",
+      "statement": "Specific health/efficacy claims need adequate substantiation",
+      "decision": "ALLOW_REGULATORY",
+      "source_id": "FTCHEALTH"
+    },
+    {
+      "id": "C2",
+      "statement": "Generic meditation studies substantiate particular commercial Zen12 outcome",
+      "decision": "DENY_UNSUBSTANTIATED",
+      "source_id": "FTCHEALTH"
+    },
+    {
+      "id": "C3",
+      "statement": "Click-through or signup is a paid commission",
+      "decision": "DENY_METRIC_SUBSTITUTION",
+      "source_id": "ISS820"
+    },
+    {
+      "id": "V1",
+      "statement": "R304 buyer description treated 2012 Ouija result as pendulum positive study",
+      "decision": "CORRECT_PRIOR_DRAFT",
+      "source_id": "PR205"
+    },
+    {
+      "id": "V2",
+      "statement": "R205 and R223 prior ideomotor drafts require consolidation rather than new slot",
+      "decision": "DEDUPLICATE",
+      "source_id": "PR223"
+    }
+  ],
+  "gates": [
+    {
+      "id": "account_specific_inspire3_approval",
+      "status": "HARD_HOLD",
+      "evidence": "not independently established for the proposed FV release"
+    },
+    {
+      "id": "promotion_channel_rights",
+      "status": "HARD_HOLD",
+      "evidence": "not independently established for the proposed FV release"
+    },
+    {
+      "id": "written_partner_terms",
+      "status": "HARD_HOLD",
+      "evidence": "not independently established for the proposed FV release"
+    },
+    {
+      "id": "issued_affiliate_url",
+      "status": "HARD_HOLD",
+      "evidence": "not independently established for the proposed FV release"
+    },
+    {
+      "id": "tracking_parameters_permitted",
+      "status": "HARD_HOLD",
+      "evidence": "not independently established for the proposed FV release"
+    },
+    {
+      "id": "seller_creatives_authorized",
+      "status": "HARD_HOLD",
+      "evidence": "not independently established for the proposed FV release"
+    },
+    {
+      "id": "official_exact_offer_reconfirmed",
+      "status": "HARD_HOLD",
+      "evidence": "not independently established for the proposed FV release"
+    },
+    {
+      "id": "price_checkout_route_verification",
+      "status": "HARD_HOLD",
+      "evidence": "not independently established for the proposed FV release"
+    },
+    {
+      "id": "refund_terms_and_exceptions",
+      "status": "HARD_HOLD",
+      "evidence": "not independently established for the proposed FV release"
+    },
+    {
+      "id": "product_specific_claim_substantiation",
+      "status": "HARD_HOLD",
+      "evidence": "not independently established for the proposed FV release"
+    },
+    {
+      "id": "near_link_disclosure_qa",
+      "status": "HARD_HOLD",
+      "evidence": "not independently established for the proposed FV release"
+    },
+    {
+      "id": "founder_commercial_release",
+      "status": "HARD_HOLD",
+      "evidence": "not independently established for the proposed FV release"
+    },
+    {
+      "id": "real_product_video_encoded",
+      "status": "HARD_HOLD",
+      "evidence": "not independently established for the proposed FV release"
+    },
+    {
+      "id": "caption_transcript_media_qa",
+      "status": "HARD_HOLD",
+      "evidence": "not independently established for the proposed FV release"
+    },
+    {
+      "id": "mobile_browser_wCAG_qa",
+      "status": "HARD_HOLD",
+      "evidence": "not independently established for the proposed FV release"
+    },
+    {
+      "id": "privacy_measurement_release",
+      "status": "HARD_HOLD",
+      "evidence": "not independently established for the proposed FV release"
+    },
+    {
+      "id": "confirmed_attributed_purchase_reporting",
+      "status": "HARD_HOLD",
+      "evidence": "not independently established for the proposed FV release"
+    },
+    {
+      "id": "settlement_net_commission_reporting",
+      "status": "HARD_HOLD",
+      "evidence": "not independently established for the proposed FV release"
+    }
+  ],
+  "offers": [
+    {
+      "id": "zen12",
+      "type": "affiliate_candidate",
+      "selected_for": "high-intent buyer comparison only",
+      "seller_url": "https://zen12.com/getstarted",
+      "status": "NOT_ACTIVATABLE",
+      "reason": "No FV-specific partner approval, link or permission verified; buyer terms dynamic"
+    },
+    {
+      "id": "focus-fieldbook",
+      "type": "existing_free_resource",
+      "url": "https://finalvestige.com/focus/",
+      "status": "EXISTING",
+      "reason": "Not a paid product or purchase proof"
+    },
+    {
+      "id": "fv-owned-paid-mind",
+      "type": "fallback",
+      "status": "NOT_AUTHENTICATED",
+      "reason": "No rights-cleared, purchasable, fulfilled Mind SKU identified from checked accessible sources"
+    }
+  ],
+  "creator_map": [
+    {
+      "topic": "Change Blindness",
+      "article_url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "asset_id": null,
+      "media_url": null,
+      "next": "existing Focus only; owner/Praxxis verify post and rights"
+    },
+    {
+      "topic": "Mesmerism and Puységur",
+      "article_url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "asset_id": null,
+      "media_url": null,
+      "next": "evidence-only history; no direct paid CTA"
+    },
+    {
+      "topic": "Rosenhan source trail",
+      "article_url": null,
+      "asset_id": "zctcIECAZ2s",
+      "media_url": "https://www.youtube.com/watch?v=zctcIECAZ2s",
+      "status": "OWNER_REPORTED_NOT_PLATFORM_VERIFIED",
+      "next": "use independently approved source companion, not Zen12 pitch"
+    }
+  ],
+  "event_contract": {
+    "campaign_fields": [
+      "utm_source",
+      "utm_medium",
+      "utm_campaign",
+      "utm_content"
+    ],
+    "asset_id": "verified immutable Grok platform ID, never guessed",
+    "events": [
+      "campaign_landing",
+      "article_to_focus_click",
+      "confirmed_signup_when_provider_verified",
+      "offer_guide_view",
+      "affiliate_outbound_only_after_authorization",
+      "partner_confirmed_sale",
+      "commission_cleared",
+      "commission_reversal"
+    ],
+    "privacy": "No PII, fingerprinting, duplicate tracking or unauthorized scripts",
+    "paid_revenue_formula": "net cleared attributable FV commission minus any fees/refunds not already netted by merchant; do not double subtract",
+    "kpi": "1000 * realized_net_fv_earnings / qualified_human_sessions; null when denominator or payout unavailable",
+    "cohort_days": [
+      7,
+      30
+    ],
+    "observed": {
+      "qualified_human_sessions": null,
+      "attributed_paid_orders": null,
+      "net_realized_earnings": null,
+      "kpi": null
+    }
+  },
+  "editorial_guardrails": [
+    "No duplicate ideomotor/R304 content slot until prior R205/R223 consolidation",
+    "2012 positive guessed-answer study used Ouija board; 2022 replication used pendulum",
+    "Do not represent text transcripts/posters as playable video",
+    "Never link live WordPress to unpublished article URLs",
+    "Keep PR #49, Mind PR #172, Issue #150, Jetpack and Dispatch untouched"
+  ]
+}
