@@ -121,6 +121,49 @@ function fv_r281_events(): array {
          'source_type'=>'1967 investigative primary report', 'source_dependency'=>'A contemporary institutional investigation, not a conclusive ignition-site identification.'],
     ];
 }
+/**
+ * R308 — passive, first-party editorial campaign continuity (STAGING ONLY).
+ * Accepted parameters are labels, NEVER authenticated session/purchase evidence.
+ * No analytics, cookies, request hooks, redirects, merchant URLs or user PII.
+ * Reject incomplete, array-valued, unknown or malformed input in its entirety.
+ * The only target is FV_R281_FREE, an unchanged first-party editorial article.
+ */
+function fv_r308_editorial_continuation_url(?array $query = null): string {
+    $query = $query ?? ($_GET ?? []);
+    if (!is_array($query)) { return FV_R281_FREE; }
+    $keys = ['utm_source','utm_medium','utm_campaign','utm_content'];
+    // PHP's parse_str collapses duplicate scalar query keys. Inspect the original
+    // URL spelling so `utm_source=youtube&utm_source=tiktok` cannot be laundered
+    // into a single seemingly valid campaign identity.
+    $raw = $_SERVER['QUERY_STRING'] ?? null;
+    if (!is_string($raw) || $raw === '' || strlen($raw) > 1024) { return FV_R281_FREE; }
+    $seen = array_fill_keys($keys, 0);
+    foreach (explode('&', $raw) as $part) {
+        $encodedKey = explode('=', $part, 2)[0];
+        $key = rawurldecode($encodedKey);
+        if (array_key_exists($key, $seen)) {
+            if (++$seen[$key] > 1) { return FV_R281_FREE; }
+        } elseif (array_key_exists(str_replace(['.',' '], '_', $key), $seen)) {
+            // Reject aliases that PHP normalizes into an expected input field.
+            return FV_R281_FREE;
+        }
+    }
+    if (in_array(0, $seen, true)) { return FV_R281_FREE; }
+    $validated = [];
+    foreach ($keys as $key) {
+        if (!isset($query[$key]) || !is_string($query[$key])) { return FV_R281_FREE; }
+        $validated[$key] = $query[$key];
+    }
+    if (!in_array($validated['utm_source'], ['youtube','tiktok','instagram','facebook','pinterest','x','bluesky'], true) ||
+        $validated['utm_medium'] !== 'organic_social' ||
+        $validated['utm_campaign'] !== 'history_pilot_2026_11' ||
+        !preg_match('/\A[a-zA-Z0-9][a-zA-Z0-9_-]{2,63}\z/D', $validated['utm_content'])) {
+        return FV_R281_FREE;
+    }
+    // Additional params (e.g. personal identifiers) are discarded, never forwarded.
+    // Preserves only the approved four labels, in deterministic order.
+    return FV_R281_FREE . '?' . http_build_query($validated, '', '&', PHP_QUERY_RFC3986);
+}
 function fv_r281_escape(string $text): string {
     return htmlspecialchars($text, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
 }
@@ -239,7 +282,7 @@ function fv_r281_render($attributes = []): string {
         return '<aside aria-label="Apollo 1 source integrity recovery '. $recovery_sequence .'" data-fv-evidence-status="source-integrity-failed" data-fv-funnel-scope="editorial-recovery">'
             .'<p><strong>The Apollo evidence display is unavailable because its source verification did not pass.</strong> Historical claims from this display have been withheld pending review.</p>'
             .'<p><a href="'.fv_r281_escape(FV_R281_NASA_BOARD).'" rel="noopener noreferrer" data-fv-link-purpose="official-evidence-source" data-fv-conversion-kind="noncommercial-source-reference">Read the original Apollo 204 Review Board report at NASA</a></p>'
-            .'<p data-fv-funnel-step="recovery-to-investigation"><a href="'.fv_r281_escape(FV_R281_FREE).'" data-fv-cta="apollo-read-free-investigation" data-fv-conversion-kind="editorial-continuation">Read the free Apollo 1 investigation</a> (editorial reading, not a purchase)</p>'
+            .'<p data-fv-funnel-step="recovery-to-investigation"><a href="'.fv_r281_escape(fv_r308_editorial_continuation_url()).'" data-fv-cta="apollo-read-free-investigation" data-fv-conversion-kind="editorial-continuation">Read the free Apollo 1 investigation</a> (editorial reading, not a purchase)</p>'
             .'<p>NASA is an external source, not an endorser. No sale or signup is recorded by these links.</p></aside>';
     }
     static $sequence=0, $linked=false;
@@ -318,7 +361,7 @@ function fv_r281_render($attributes = []): string {
         $s.='<li data-fv-custody-source-id="'.fv_r281_escape($r['source_id']).'" data-fv-cites-claim="apollo-1-claim-'.($index+1).'"><a href="#'.$source_point.'">'.fv_r281_escape($r['when']).' — '.fv_r281_escape($r['source_name']).'</a><span> · '.fv_r281_escape($r['source_type']).'</span></li>';
     }
     $s.='</ol><p>The catalogue entries below contain the original NASA links and each source\'s limitations. The free investigation is editorial reading, not a sale.</p></details>';
-    $s.='<p><a href="'.FV_R281_FREE.'" data-fv-cta="apollo-read-free-investigation" data-fv-conversion-kind="editorial-continuation">Read the free Apollo 1 investigation</a></p></footer>';
+    $s.='<p><a href="'.fv_r281_escape(fv_r308_editorial_continuation_url()).'" data-fv-cta="apollo-read-free-investigation" data-fv-conversion-kind="editorial-continuation">Read the free Apollo 1 investigation</a></p></footer>';
     $s.='<aside class="fv-r281__reconciliation" aria-label="NASA source-date reconciliation'.$landmark_instance.'" data-fv-date-review="editorial-review-pending"><h3>Why NASA sources give different establishment dates</h3>';
     $s.='<p><strong>Unresolved source distinction:</strong> The Apollo 204 Review Board narrative dates its original oral authorization to January 27, 1967. A later NASA safety summary describes the Board as established on January 28. Both place its first Kennedy meeting on January 28. We preserve that distinction instead of calling two institutional descriptions independent corroboration.</p>';
     $s.='<h4>Document custody: four different dated actions</h4><p>These dates describe the Board\'s authority, meeting, memorandum and later confirmation. Its own 1967 narrative and proceedings are parts of the same investigation, not independent eyewitness corroboration.</p>';
