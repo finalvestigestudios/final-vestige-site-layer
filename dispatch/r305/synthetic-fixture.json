@@ -1,0 +1,108 @@
+{
+  "asOf": "2026-11-12",
+  "fixture_is_synthetic": true,
+  "events": [
+    {
+      "type": "visit",
+      "session": "demo_s1",
+      "at": "2026-11-10T11:00:00Z",
+      "utm_source": "grok",
+      "asset_id": "asset_001",
+      "utm_campaign": "focus_pilot",
+      "human_verified": true
+    },
+    {
+      "type": "form_submit",
+      "session": "demo_s1",
+      "at": "2026-11-10T11:01:00Z"
+    },
+    {
+      "type": "pdf_download",
+      "session": "demo_s1",
+      "at": "2026-11-10T11:02:00Z"
+    },
+    {
+      "type": "provider_subscribed",
+      "session": "demo_s1",
+      "at": "2026-11-10T11:03:00Z",
+      "status": "Subscribed",
+      "consent_to_dispatch": true,
+      "path": "existing_verified_wp_account",
+      "provider_account_verified": true,
+      "proof_ref": "PROOF-SYNTHETIC-01"
+    },
+    {
+      "type": "provider_subscribed",
+      "session": "demo_s1",
+      "at": "2026-11-10T11:04:00Z",
+      "status": "Subscribed",
+      "consent_to_dispatch": true,
+      "path": "existing_verified_wp_account",
+      "provider_account_verified": true,
+      "proof_ref": "PROOF-SYNTHETIC-01"
+    },
+    {
+      "type": "welcome_received",
+      "session": "demo_s1",
+      "at": "2026-11-10T11:05:00Z",
+      "receipt_verified": true
+    },
+    {
+      "type": "guide_click",
+      "session": "demo_s1",
+      "at": "2026-11-10T11:06:00Z",
+      "destination": "approved_first_party_guide",
+      "guide_live_verified": true
+    },
+    {
+      "type": "merchant_click",
+      "session": "demo_s1",
+      "at": "2026-11-10T11:07:00Z",
+      "email_permission_verified": true,
+      "issued_link_verified": true
+    },
+    {
+      "type": "merchant_settled_order",
+      "session": "demo_s1",
+      "at": "2026-11-10T11:08:00Z",
+      "status": "settled",
+      "independent_partner_report": true,
+      "verified_attribution": true,
+      "order_ref": "ORDER-SYNTHETIC-01",
+      "gross_cents": 1600,
+      "fees_cents": 120
+    },
+    {
+      "type": "merchant_refund",
+      "session": "demo_s1",
+      "at": "2026-11-10T11:09:00Z",
+      "partner_refund_verified": true,
+      "order_ref": "ORDER-SYNTHETIC-01",
+      "refund_cents": 300
+    },
+    {
+      "type": "visit",
+      "session": "demo_s2",
+      "at": "2026-11-11T11:00:00Z",
+      "utm_source": "grok",
+      "asset_id": "asset_002",
+      "utm_campaign": "focus_pilot",
+      "human_verified": true
+    },
+    {
+      "type": "pdf_download",
+      "session": "demo_s2",
+      "at": "2026-11-11T11:01:00Z"
+    },
+    {
+      "type": "visit",
+      "session": "demo_bot",
+      "at": "2026-11-11T12:00:00Z",
+      "utm_source": "grok",
+      "asset_id": "asset_003",
+      "utm_campaign": "focus_pilot",
+      "human_verified": false,
+      "bot_flag": true
+    }
+  ]
+}
