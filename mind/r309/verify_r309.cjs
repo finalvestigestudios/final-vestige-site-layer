@@ -98,7 +98,7 @@ function mutationCases(F){
  ["b",/role="img"/,'role="presentation"'],
  ["b",/00:35–00:42/,"final words"],
  ["b",/<\/main>/,'<video autoplay></video></main>'],
- ["hub",/History of Suggestion/,"History of Something"],
+ ["hub",/History of Suggestion/g,"History of Something"],
  ["matrix",/"decision": "HARD_HOLD"/,'"decision": "APPROVED"'],
  ["matrix",/"affiliate_url": null/,'"affiliate_url": "https://merchant.example/earned"'],
  ["matrix",/"kpi_status": "NOT_COMPUTABLE"/,'"kpi_status": "VERIFIED_REVENUE"'],
