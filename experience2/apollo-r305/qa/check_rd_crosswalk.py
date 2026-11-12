@@ -20,7 +20,17 @@ doc=json.loads(MANIFEST.read_text())
 assert valid(doc)
 assert doc['source_blob_sha1']=='403d128c57b9bc82dac7c619651689070edef86c'
 assert 'data-fv-evidence-role="documented-textual-claim"' in ATLAS
-assert all(r['url'] not in ATLAS and r['id'] not in ATLAS for r in doc['archive_records'])
+# R309 controlled expansion: four verified NASA image-detail pages are linked ONLY
+# in a separately labeled contextual disclosure. Two unverified candidates are
+# not linked, and no image is embedded or promoted as causal evidence.
+LINKED=['S67-15717','S66-58038','S67-21294','KSC-20170124-PH_KLS01_0090']
+OMITTED=set(EXPECTED)-set(LINKED)
+assert all(r['id'] in ATLAS and r['url'] in ATLAS for r in doc['archive_records'] if r['id'] in LINKED)
+assert all(r['id'] not in ATLAS and r['url'] not in ATLAS for r in doc['archive_records'] if r['id'] in OMITTED)
+assert 'data-fv-media-record=' in ATLAS and 'data-fv-image-rights="not-cleared-for-reuse"' in ATLAS
+assert 'data-fv-claim-proof="no"' in ATLAS
+assert '<img' not in ATLAS and '<iframe' not in ATLAS
+assert 'data-fv-conversion-kind="noncommercial-media-reference"' in ATLAS
 mutations=0
 for i in range(6):
     for key,value in [('role','causal-evidence'),('claim_support','verified-ignition-source'),('image_rights','approved'),('url','https://tracker.example.org/a/')]:
@@ -28,4 +38,4 @@ for i in range(6):
         tampered['archive_records'][i][key]=value
         assert not valid(tampered)
         mutations+=1
-print(json.dumps({'manifest_records':6,'misattributed_photo_controls_rejected':mutations,'atlas_photo_links':0,'media_licensing':'NOT CLEARED','research_desk_pr':'UNCHANGED'}))
+print(json.dumps({'manifest_records':6,'misattributed_photo_controls_rejected':mutations,'atlas_photo_index_links':len(LINKED),'withheld_candidates':len(OMITTED),'media_licensing':'NOT CLEARED','research_desk_pr':'UNCHANGED'}))
