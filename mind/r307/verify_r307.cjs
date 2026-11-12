@@ -50,7 +50,7 @@ function validate(f){
  check(!filmRe.test(f.a)&&filmRe.test(f.b),'FILM_VARIANT');
  check(f.a===f.b.replace(filmRe,''),'A_B_COPY_IDENTICAL_EXCEPT_FILM');
  check(/42-second/.test(f.b)&&/caption concept/.test(f.b)&&/<svg\b/.test(f.b)&&/<details open>/.test(f.b),'B_STATIC_ACCESSIBLE_FILM');
- check(/No video player is present/.test(f.b)&&/not yet an encoded or playable video/i.test(f.plan),'NO_FALSE_VIDEO');
+ check(/No video player is present/.test(f.b)&&/NOT an encoded, playable or hosted video/i.test(f.plan),'NO_FALSE_VIDEO');
  check(/<h1>Don't buy twelve minutes of a promise\.<\/h1>/.test(f.a),'BUYER_HOOK');
  check(/12 levels and 48 MP3 recordings/.test(f.a),'EXACT_PACKAGE');
  check(/33 minutes and 47 MB/.test(f.a)&&/15- and 30-minute/.test(f.a),'PRODUCTS_DISTINCT');
