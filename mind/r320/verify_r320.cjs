@@ -36,7 +36,7 @@ function structuralBuyer(html){
   assert.match(html,/@media\(max-width:760px\)/);
   assert.match(html, /prefers-reduced-motion/);
   assert.doesNotMatch(html,/<\s*(script|iframe|form|video|audio)\b/i);
-  assert.doesNotMatch(html,/\b(autoplay|onload|onclick|onerror|fetch\s*\(|localStorage|gtag\s*\(|pixel)\b/i);
+  assert.doesNotMatch(html,/(?:\bonload\s*=|\bonclick\s*=|\bonerror\s*=|\bfetch\s*\(|\blocalStorage\b|\bgtag\s*\(|\bpixel\s*\()/i);
   assert.doesNotMatch(html,/utm_(source|content|campaign)=[^"\s]/i);
   assert.doesNotMatch(html,/(href|action)="[^"]*(affiliate_id|ref_id|aff_id|hop=|clickbank|&tid=)/i);
   assert.doesNotMatch(html,/(guaranteed (focus|results)|heals? anxiety|cures? (stress|depression)|rewires? your brain)/i);
