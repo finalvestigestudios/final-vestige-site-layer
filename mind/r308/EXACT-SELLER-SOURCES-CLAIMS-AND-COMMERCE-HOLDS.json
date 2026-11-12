@@ -1,0 +1,477 @@
+{
+  "version": "mind-r308",
+  "snapshot_date": "2026-11-11",
+  "source_control_only": true,
+  "release_status": "HARD_HOLD",
+  "seller_claims_are_not_efficacy_evidence": true,
+  "authorization": {
+    "account_specific_inspire3_approval": "NOT_VERIFIED",
+    "partner_link": "WITHHELD",
+    "approved_merchant_creatives": "NOT_VERIFIED",
+    "paid_fv_owned_mind_offer": "NOT_VERIFIED",
+    "confirmed_affiliate_earnings": "NOT_VERIFIED"
+  },
+  "sources": [
+    {
+      "id": "C1953",
+      "url": "https://doi.org/10.1121/1.1907229",
+      "depth": "journal_publisher_abstract",
+      "scope": "Cherry 1953 original speech experiments; abstract only"
+    },
+    {
+      "id": "M1959",
+      "url": "https://journals.sagepub.com/doi/10.1080/17470215908416289",
+      "depth": "journal_publisher_abstract",
+      "scope": "Moray 1959 own-name interruption; abstract only"
+    },
+    {
+      "id": "W1995",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/7876773/",
+      "depth": "pubmed_abstract",
+      "scope": "Wood and Cowan 34 participants; 34.6% reported their names"
+    },
+    {
+      "id": "R2021",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/32833466/",
+      "depth": "pubmed_abstract",
+      "scope": "Röer and Cowan preregistered replication 29%"
+    },
+    {
+      "id": "FTCEND",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "depth": "regulatory_guidance",
+      "scope": "Adjacent clear material connection disclosures"
+    },
+    {
+      "id": "FTCHEALTH",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "depth": "regulatory_guidance",
+      "scope": "Product-specific substantiation required for implied and express health claims"
+    },
+    {
+      "id": "INSPIRE",
+      "url": "https://inspire3.com/",
+      "depth": "official_seller_home",
+      "scope": "Inspire3 owner and brand catalog"
+    },
+    {
+      "id": "ZENABOUT",
+      "url": "https://zen12.com/about",
+      "depth": "official_seller_product",
+      "scope": "12 levels; four audio styles; seller efficacy claims"
+    },
+    {
+      "id": "ZENHNP",
+      "url": "https://zen12.com/hnp",
+      "depth": "official_seller_sales_page",
+      "scope": "Tier differences, 48 files in full library, advertised 1-year guarantee; dynamic checkout not confirmed"
+    },
+    {
+      "id": "HYPNOSIS",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "depth": "official_seller_product",
+      "scope": "Total Focus standalone 33-minute 47MB seller listing"
+    },
+    {
+      "id": "BRAINWAVE",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "depth": "official_seller_product",
+      "scope": "Focus Shot 15/30 min, bonus audio variations; efficacy and safety claims not substantiated"
+    },
+    {
+      "id": "FVFOCUS",
+      "url": "https://finalvestige.com/focus/",
+      "depth": "published_first_party_page",
+      "scope": "Existing free Focus Fieldbook and subscription route"
+    },
+    {
+      "id": "FVPUY",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "depth": "published_first_party_page",
+      "scope": "Puységur historical record portal"
+    },
+    {
+      "id": "FVCHANGE",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "depth": "published_first_party_post",
+      "scope": "Change Blindness investigation"
+    },
+    {
+      "id": "FVMESMER",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "depth": "published_first_party_post",
+      "scope": "Franklin / mesmerism investigation"
+    },
+    {
+      "id": "FVCOLLECTION",
+      "url": "https://finalvestige.com/collection/",
+      "depth": "published_first_party_page",
+      "scope": "Free Fieldbook and sponsor products; no authenticated owned paid Mind SKU"
+    }
+  ],
+  "claims": [
+    {
+      "id": "A01",
+      "statement": "Cherry 1953 used speech-recognition experiments with two ears",
+      "evidence_level": "research_abstract_support",
+      "source_id": "C1953",
+      "decision": "permit"
+    },
+    {
+      "id": "A02",
+      "statement": "Cherry proved complete semantic filtering of all ignored speech",
+      "evidence_level": "overbroad_inference",
+      "source_id": "C1953",
+      "decision": "reject"
+    },
+    {
+      "id": "A03",
+      "statement": "Moray 1959 reported names can sometimes intrude in ignored stream",
+      "evidence_level": "research_abstract_support",
+      "source_id": "M1959",
+      "decision": "permit"
+    },
+    {
+      "id": "A04",
+      "statement": "Everyone always hears their own name",
+      "evidence_level": "not_supported",
+      "source_id": "M1959",
+      "decision": "reject"
+    },
+    {
+      "id": "A05",
+      "statement": "1995 experiment sample n=34",
+      "evidence_level": "research_abstract_support",
+      "source_id": "W1995",
+      "decision": "permit"
+    },
+    {
+      "id": "A06",
+      "statement": "1995 study reported own-name detection 34.6%",
+      "evidence_level": "research_abstract_support",
+      "source_id": "W1995",
+      "decision": "permit_context_only"
+    },
+    {
+      "id": "A07",
+      "statement": "2021 preregistered follow-up reported own-name detection 29%",
+      "evidence_level": "research_abstract_support",
+      "source_id": "R2021",
+      "decision": "permit_context_only"
+    },
+    {
+      "id": "A08",
+      "statement": "2021 paper found unexpected words rarely noticed",
+      "evidence_level": "research_abstract_support",
+      "source_id": "R2021",
+      "decision": "permit"
+    },
+    {
+      "id": "A09",
+      "statement": "Results show Zen12 improves focus",
+      "evidence_level": "cross_product_inference",
+      "source_id": "W1995",
+      "decision": "reject"
+    },
+    {
+      "id": "A10",
+      "statement": "Results show hypnosis improves recall",
+      "evidence_level": "cross_product_inference",
+      "source_id": "R2021",
+      "decision": "reject"
+    },
+    {
+      "id": "P01",
+      "statement": "Inspire3 catalog contains Zen12 Hypnosis Live",
+      "evidence_level": "seller_identification",
+      "source_id": "INSPIRE",
+      "decision": "permit_attribution"
+    },
+    {
+      "id": "P02",
+      "statement": "Zen12 is 12 levels with four styles each",
+      "evidence_level": "seller_package_claim",
+      "source_id": "ZENABOUT",
+      "decision": "permit_as_seller_describes"
+    },
+    {
+      "id": "P03",
+      "statement": "Every full Zen12 package is 48 MP3s",
+      "evidence_level": "seller_tier_sensitive",
+      "source_id": "ZENHNP",
+      "decision": "permit_only_full_package_tier"
+    },
+    {
+      "id": "P04",
+      "statement": "Zen12 12 min equals hour of conventional meditation",
+      "evidence_level": "unsubstantiated_seller_benefit",
+      "source_id": "ZENABOUT",
+      "decision": "reject"
+    },
+    {
+      "id": "P05",
+      "statement": "Zen12 automatically reduces anxiety",
+      "evidence_level": "unsubstantiated_health_claim",
+      "source_id": "ZENABOUT",
+      "decision": "reject"
+    },
+    {
+      "id": "P06",
+      "statement": "Zen12 brainwave audio proved to improve sustained attention",
+      "evidence_level": "product_specific_evidence_missing",
+      "source_id": "ZENABOUT",
+      "decision": "reject"
+    },
+    {
+      "id": "P07",
+      "statement": "Zen12 seller advertises one-year guarantee",
+      "evidence_level": "seller_return_claim",
+      "source_id": "ZENHNP",
+      "decision": "reference_only_reverify_checkout"
+    },
+    {
+      "id": "P08",
+      "statement": "Zen12 current settled checkout price is known",
+      "evidence_level": "seller_dynamic_checkout_not_verified",
+      "source_id": "ZENHNP",
+      "decision": "reject"
+    },
+    {
+      "id": "P09",
+      "statement": "Hypnosis Live Total Focus is separate standalone audio",
+      "evidence_level": "seller_package_claim",
+      "source_id": "HYPNOSIS",
+      "decision": "permit_as_seller_describes"
+    },
+    {
+      "id": "P10",
+      "statement": "Total Focus gives 100% concentration",
+      "evidence_level": "unsubstantiated_seller_mental_claim",
+      "source_id": "HYPNOSIS",
+      "decision": "reject"
+    },
+    {
+      "id": "P11",
+      "statement": "Brainwave Shots Focus Shot offers 15 and 30 min variants",
+      "evidence_level": "seller_package_claim",
+      "source_id": "BRAINWAVE",
+      "decision": "permit_as_seller_describes"
+    },
+    {
+      "id": "P12",
+      "statement": "Focus Shot guarantees 4 hours of attention benefit",
+      "evidence_level": "unsubstantiated_product_claim",
+      "source_id": "BRAINWAVE",
+      "decision": "reject"
+    },
+    {
+      "id": "C01",
+      "statement": "Affiliate disclosure near buying link needed",
+      "evidence_level": "regulatory",
+      "source_id": "FTCEND",
+      "decision": "require_if_approved"
+    },
+    {
+      "id": "C02",
+      "statement": "Health benefits need product-specific scientific substantiation",
+      "evidence_level": "regulatory",
+      "source_id": "FTCHEALTH",
+      "decision": "require"
+    },
+    {
+      "id": "C03",
+      "statement": "Inspire3 catalog proves FV partner acceptance",
+      "evidence_level": "authorization_not_established",
+      "source_id": "INSPIRE",
+      "decision": "reject"
+    },
+    {
+      "id": "C04",
+      "statement": "FV Fieldbook is a live free alternative",
+      "evidence_level": "first_party",
+      "source_id": "FVFOCUS",
+      "decision": "permit"
+    },
+    {
+      "id": "C05",
+      "statement": "Published Puységur page supports history context not hypnosis efficacy",
+      "evidence_level": "first_party",
+      "source_id": "FVPUY",
+      "decision": "permit_context_only"
+    },
+    {
+      "id": "C06",
+      "statement": "Paid FV-owned Mind SKU already authenticated",
+      "evidence_level": "ownership_checkout_unverified",
+      "source_id": "FVCOLLECTION",
+      "decision": "reject"
+    },
+    {
+      "id": "C07",
+      "statement": "Outbound clicks count as merchant sales",
+      "evidence_level": "measurement_not_supported",
+      "source_id": "FTCEND",
+      "decision": "reject"
+    },
+    {
+      "id": "C08",
+      "statement": "Current total settled affiliate commission verified",
+      "evidence_level": "provider_records_absent",
+      "source_id": "INSPIRE",
+      "decision": "reject"
+    }
+  ],
+  "gates": [
+    {
+      "id": "publisher_approval",
+      "status": "HARD_HOLD",
+      "evidence": "not independently authenticated"
+    },
+    {
+      "id": "exact_partner_identity",
+      "status": "HARD_HOLD",
+      "evidence": "not independently authenticated"
+    },
+    {
+      "id": "eligible_traffic_sources",
+      "status": "HARD_HOLD",
+      "evidence": "not independently authenticated"
+    },
+    {
+      "id": "allowed_social_promotion",
+      "status": "HARD_HOLD",
+      "evidence": "not independently authenticated"
+    },
+    {
+      "id": "allowed_email_promotion",
+      "status": "HARD_HOLD",
+      "evidence": "not independently authenticated"
+    },
+    {
+      "id": "approved_evidence_based_copy",
+      "status": "HARD_HOLD",
+      "evidence": "not independently authenticated"
+    },
+    {
+      "id": "approved_original_creatives",
+      "status": "HARD_HOLD",
+      "evidence": "not independently authenticated"
+    },
+    {
+      "id": "specific_zen12_offer_tier",
+      "status": "HARD_HOLD",
+      "evidence": "not independently authenticated"
+    },
+    {
+      "id": "issued_earning_url",
+      "status": "HARD_HOLD",
+      "evidence": "not independently authenticated"
+    },
+    {
+      "id": "merchant_domain_allowlist",
+      "status": "HARD_HOLD",
+      "evidence": "not independently authenticated"
+    },
+    {
+      "id": "terms_and_commission_basis",
+      "status": "HARD_HOLD",
+      "evidence": "not independently authenticated"
+    },
+    {
+      "id": "current_checkout_price",
+      "status": "HARD_HOLD",
+      "evidence": "not independently authenticated"
+    },
+    {
+      "id": "current_refund_terms",
+      "status": "HARD_HOLD",
+      "evidence": "not independently authenticated"
+    },
+    {
+      "id": "merchant_tracking_privacy_terms",
+      "status": "HARD_HOLD",
+      "evidence": "not independently authenticated"
+    },
+    {
+      "id": "first_party_analytics_owner_signoff",
+      "status": "HARD_HOLD",
+      "evidence": "not independently authenticated"
+    },
+    {
+      "id": "accessible_browser_QA",
+      "status": "HARD_HOLD",
+      "evidence": "not independently authenticated"
+    },
+    {
+      "id": "founder_commercial_release",
+      "status": "HARD_HOLD",
+      "evidence": "not independently authenticated"
+    },
+    {
+      "id": "verified_settled_payout",
+      "status": "HARD_HOLD",
+      "evidence": "not independently authenticated"
+    }
+  ],
+  "creator_routes": [
+    {
+      "topic": "change blindness",
+      "live_article": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "grok_asset_id": null,
+      "post_url": null,
+      "status": "unverified creator link; no proposed commerce hop"
+    },
+    {
+      "topic": "attentional blink",
+      "live_article": null,
+      "grok_asset_id": null,
+      "post_url": null,
+      "status": "draft research only; verify existing asset before mapping"
+    },
+    {
+      "topic": "invisible gorilla",
+      "live_article": null,
+      "grok_asset_id": null,
+      "post_url": null,
+      "status": "published social series owner-reported; exact id and live article unverified"
+    },
+    {
+      "topic": "Rosenhan / Ninth Patient",
+      "live_article": null,
+      "grok_asset_id": "zctcIECAZ2s",
+      "post_url": "https://www.youtube.com/watch?v=zctcIECAZ2s",
+      "status": "existing handoff owner-reported; external independent platform verification pending; only editorial route"
+    }
+  ],
+  "attribution_contract": {
+    "allowed_utm_keys": [
+      "utm_source",
+      "utm_medium",
+      "utm_campaign",
+      "utm_content"
+    ],
+    "utm_content": "verified published asset_id only",
+    "event_types": [
+      "campaign_landing",
+      "article_to_focus_click",
+      "confirmed_signup_provider_only",
+      "affiliate_click_if_authorized",
+      "paid_conversion_provider_only",
+      "refund_or_reversal_provider_only"
+    ],
+    "forbidden": [
+      "raw IP",
+      "email hash",
+      "cross_site_fingerprint",
+      "duplicate scripts",
+      "referrer with personal details"
+    ],
+    "primary_kpi": "cleared FV net revenue * 1000 / qualified human sessions",
+    "value_status": "NOT_COMPUTABLE",
+    "cohort_days": [
+      7,
+      30
+    ]
+  },
+  "claim_review_instruction": "Never assert use, outcomes, commission payout, prices or rights absent account-specific proof. Compare exact merchant tiers immediately before approval. Text and film variants have same buyer copy; film remains a concept."
+}
