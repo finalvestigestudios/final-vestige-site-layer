@@ -330,13 +330,17 @@ function fv_r281_render($attributes = []): string {
         $s.='<p><a href="'.fv_r281_escape($source['url']).'" rel="noopener noreferrer" data-fv-link-purpose="official-evidence-source" data-fv-conversion-kind="noncommercial-source-reference">Read source at NASA</a></p></li>';
     }
     $s.='</ul></details><p>Original investigation and later NASA summaries are different records. Editorial reconciliation remains pending.</p></aside>';
-    $s.='<aside class="fv-r281__gallery" aria-label="Apollo source catalogue'.$landmark_instance.'"><h3>Inspect the document sources</h3><p>This is a text-only catalogue of three NASA records, not a photographic gallery or three independent eyewitness accounts. Review remains pending.</p><ul class="fv-r281__source-list">';
+    // R305: explicitly distinguish textual claim evidence from the independent
+    // Research Desk's image-record index. Archive photograph IDs may be useful
+    // for context, but a photograph's catalogue number does not establish
+    // an investigation finding or confer promotional image rights.
+    $s.='<aside class="fv-r281__gallery" aria-label="Apollo source catalogue'.$landmark_instance.'" data-fv-gallery-status="text-only-source-custody"><h3>Inspect the document sources</h3><p>This is a text-only catalogue of three NASA records, not a photographic gallery or three independent eyewitness accounts. A NASA photograph accession number in a separate Research Desk is contextual media metadata, not primary support for a fire-cause claim or clearance for commercial image reuse. Review remains pending.</p><ul class="fv-r281__source-list">';
     foreach ($records as $index=>$r) {
         // Every catalogue record has a stable target within this component instance.
         $source_point=$id.'-source-'.($index+1);
         $event_point=$id.'-event-'.($index+1);
         $claim_key='apollo-1-claim-'.($index+1);
-        $s.='<li id="'.$source_point.'" tabindex="-1" data-fv-cites-claim="'.$claim_key.'" data-fv-source-id="'.fv_r281_escape($r['source_id']).'"><p class="fv-r281__source-type">'.fv_r281_escape($r['source_type']).'</p>';
+        $s.='<li id="'.$source_point.'" tabindex="-1" data-fv-cites-claim="'.$claim_key.'" data-fv-source-id="'.fv_r281_escape($r['source_id']).'" data-fv-evidence-role="documented-textual-claim"><p class="fv-r281__source-type">'.fv_r281_escape($r['source_type']).'</p>';
         $s.='<p><strong>FV reference key:</strong> '.fv_r281_escape($r['source_id']).' (editorial identifier, not a NASA archive number)</p>';
         $s.='<a href="'.fv_r281_escape($r['source_url']).'" rel="noopener noreferrer" data-fv-link-purpose="official-evidence-source" data-fv-conversion-kind="noncommercial-source-reference">Inspect '.fv_r281_escape($r['source_name']).' (NASA)</a>';
         $s.='<p>'.fv_r281_escape($r['source_dependency']).'</p>';
