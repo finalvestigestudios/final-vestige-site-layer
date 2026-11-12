@@ -44,7 +44,7 @@ The named experiment alone cannot conclusively decide between all versions of th
 
 How often does the name escape? Much later, Noelle Wood and Nelson Cowan directly revisited the question.
 
-Their January 1995 study, published in the *Journal of Experimental Psychology: Learning, Memory, and Cognition*, used a sample of 34 college students. The PubMed abstract reports that **34.6%** recalled their own name from the channel they had been told to ignore. Only those who noticed their names showed corresponding, transient changes in the ongoing shadowing task, on the following two items. ([Wood & Cowan 1995, PubMed abstract](https://pubmed.ncbi.nlm.nih.gov/7876773/).)
+Their January 1995 study, published in the *Journal of Experimental Psychology: Learning, Memory, and Cognition*, used a sample of 34 college students. The full Methods and Results (printed pp. 256–257) resolve the abstract's ambiguous denominator: **nine of 26 participants exposed to their own name (34.6%)** later recalled it; the 34 analyzed participants also included **eight no-name controls**. This is not nine of all 34. See the [author-hosted 1995 paper](https://memory.psych.missouri.edu/assets/doc/articles/1995/wood--cowan-1995-jeplmc.pdf#page=3). Only those who noticed their names showed corresponding, transient changes in the ongoing shadowing task, on the following two items. ([Wood & Cowan 1995, PubMed abstract](https://pubmed.ncbi.nlm.nih.gov/7876773/).)
 
 The 34.6% is an **observed proportion in this particular laboratory sample**, not a guaranteed probability for every listener, setting, language or recording. It was not a product trial, and it did not measure whether a person had become better at concentrating.
 
