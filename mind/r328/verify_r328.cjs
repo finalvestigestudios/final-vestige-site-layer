@@ -38,7 +38,7 @@ function buyerSafety(html) {
 }
 check("A inactive merchant and adjacent disclosure",()=>buyerSafety(A));
 check("B inactive merchant and adjacent disclosure",()=>buyerSafety(B));
-check("A/B substantive-copy equivalence",()=>B.replace(/<section class="film"\b[\s\S]*?<\/section>/,"").replace("A/B prototype B","A/B prototype A")===A);
+check("A/B substantive-copy equivalence",()=>B.replace(/<section class="film"[\s\S]*?<\/section>/,"").replace("A/B prototype B","A/B prototype A")===A);
 check("one optional storyboard with readable transcript",()=>B.includes('<details>')&&B.includes('Complete 42-second transcript'));
 check("film original poster is inline SVG not remote asset",()=>B.includes('<svg viewBox="0 0 720 355"')&&!B.includes("https://player.vimeo.com"));
 check("captions 00 to 42s",()=>vtt.startsWith("WEBVTT")&&vtt.includes("00:00:42.000"));
