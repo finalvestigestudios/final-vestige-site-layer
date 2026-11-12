@@ -111,7 +111,8 @@ class ReadOnlyMarkupAudit(HTMLParser):
         self.mode = mode
         self.errors: list[str] = []
         self.ids: set[str] = set()
-        self.fragments: list[str] = []
+        self.fragments: list[tuple[str, str]] = []
+        self.resolved_fragments: list[str] = []
         self.links: list[str] = []
         self.tags = 0
 
@@ -142,7 +143,8 @@ class ReadOnlyMarkupAudit(HTMLParser):
                     if issue:
                         self.errors.append(issue + ':' + tag + ':' + k)
                     else:
-                        self.fragments.append(target)
+                        # HTML selects a literal matching ID first; decoded is fallback.
+                        self.fragments.append((v[1:], target))
                 if k in ('href','xlink:href') and isinstance(v,str):
                     self.links.append(v)
             elif k == 'srcset':
@@ -160,9 +162,16 @@ class ReadOnlyMarkupAudit(HTMLParser):
         self.handle_starttag(tag, attrs)
 
     def finish(self):
-        for ref in self.fragments:
-            if ref not in self.ids:
-                self.errors.append('MISSING_SAME_DOCUMENT_TARGET:' + ref)
+        for raw, decoded in self.fragments:
+            # Browser fragment navigation tries the raw fragment ID before the
+            # UTF-8 percent-decoded variant. The decoded form is not equivalent
+            # when both IDs exist. Keep strict malformed/control policy upstream.
+            if raw in self.ids:
+                self.resolved_fragments.append(raw)
+            elif decoded in self.ids:
+                self.resolved_fragments.append(decoded)
+            else:
+                self.errors.append('MISSING_SAME_DOCUMENT_TARGET:' + decoded)
         return sorted(set(self.errors))
 
 
@@ -171,7 +180,8 @@ def scan(html: str, mode: str) -> tuple[list[str], dict]:
     parser.feed(html)
     errors = parser.finish()
     return errors, {'tag_count':parser.tags,'link_count':len(parser.links),
-                    'unique_ids':len(parser.ids),'in_page_links':len(parser.fragments)}
+                    'unique_ids':len(parser.ids),'in_page_links':len(parser.fragments),
+                    'resolved_fragment_ids':list(parser.resolved_fragments)}
 
 
 def audit(root: Path, custody: dict, previous: dict | None = None) -> dict:
