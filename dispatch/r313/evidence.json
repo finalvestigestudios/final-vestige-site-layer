@@ -1,0 +1,69 @@
+{
+  "milestone": "R313",
+  "as_of": "2026-11-12T20:38:10Z",
+  "status": "DRAFT_NOT_ADOPTED_NO_SEND",
+  "issue": 5,
+  "master_pr": 175,
+  "master_head": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "master_manifest_blob": "86df98ad8a84e583ff5df64ddbf8c0eaa1335b00",
+  "original_mix": {
+    "editorial": [
+      1,
+      2,
+      4,
+      6
+    ],
+    "commercial_hold": [
+      3,
+      5
+    ]
+  },
+  "wordpress": {
+    "subscriptions": true,
+    "email_new_posts_by_default": false,
+    "email_content_format": "full",
+    "sender_display": "Final Vestige Studios",
+    "reply_to": "no-reply",
+    "subscriber_total": 3,
+    "confirmed": 3,
+    "unconfirmed": 2,
+    "suppressed": 0,
+    "actual_eligible_email_recipients": null,
+    "subscriber_counts_are_additive": false,
+    "welcome_fieldbook_configured": true,
+    "welcome_received_verified": false
+  },
+  "offer": "Hypnosis Live Total Focus",
+  "seller_description": "33 minutes; 47 MB; credited to J. A. Amos",
+  "seller_effectiveness_independently_verified": false,
+  "affiliate_acceptance_verified": false,
+  "affiliate_email_permission_verified": false,
+  "affiliate_tracking_link_verified": false,
+  "affiliate_url": null,
+  "merchant_current_checkout_terms_locked": false,
+  "postal_verified": false,
+  "unsubscribe_verified": false,
+  "native_jetpack_preview_verified": false,
+  "founder_final_send_approval": false,
+  "live_guide_verified": false,
+  "release_state": "HOLD_UNSENT_AND_HOLD_MERCHANT",
+  "attributed_paid_orders": null,
+  "realized_net_per_1000_qualified_human_sessions": null,
+  "sources": [
+    "https://hypnosislive.com/mental-skills/total-focus",
+    "https://affiliates.inspire3.com/",
+    "https://finalvestige.com/editorial-standards/",
+    "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business",
+    "https://wordpress.com/support/newsletter/email-appearance/"
+  ],
+  "connected_inbox_review": "Targeted Inspire3 messages seen were consumer marketing/affiliate promotions, not account-specific Final Vestige acceptance; Gmail's October 25 message was only subscription confirmation, not completed welcome",
+  "ownership": {
+    "commercial_guide": "FV Mind & Affiliate Studio",
+    "merchant_proof": "FV Mind & Affiliate Studio",
+    "recipient_consent": "Claude/Focus",
+    "source_copy": "Dispatch",
+    "post_editor_preview": "Dispatch/Founder",
+    "creator_asset_attribution": "Grok/Praxxis",
+    "settled_orders": "Commerce/Claude"
+  }
+}
