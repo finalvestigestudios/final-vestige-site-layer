@@ -20,6 +20,7 @@ from pathlib import Path
 from registry_schema_guard import RegistrySchemaError, enforce_registry_schema
 from registry_row_guard import RegistryRowError, enforce_registry_rows
 from registry_write_guard import run_protected_write
+from registry_file_guard import verify_registry_file
 
 PRODUCTS = frozenset({"grants", "procurement"})
 IDENTIFIER = re.compile(r"^[A-Za-z0-9_-]{4,64}$")
@@ -60,26 +61,9 @@ class IssuanceRegistry:
             raise RegistryError("Registry directory must be owner-only (0700)")
 
     def _check_file(self) -> None:
-        if self.path.is_symlink():
-            raise RegistryError("Registry must not be a symlink")
-        flags = os.O_RDWR | getattr(os, "O_BINARY", 0) | getattr(os, "O_NOFOLLOW", 0)
-        try:
-            descriptor = os.open(self.path, flags | os.O_CREAT | os.O_EXCL, 0o600)
-        except FileExistsError:
-            try:
-                descriptor = os.open(self.path, flags)
-            except OSError as exc:
-                raise RegistryError("Cannot open protected registry") from exc
-        except OSError as exc:
-            raise RegistryError("Cannot create protected registry") from exc
-        with os.fdopen(descriptor, "rb", closefd=True) as handle:
-            metadata = os.fstat(handle.fileno())
-            if not stat.S_ISREG(metadata.st_mode):
-                raise RegistryError("Registry must be a regular file")
-            if os.name == "posix" and (
-                metadata.st_mode & 0o077 or metadata.st_uid != os.getuid()
-            ):
-                raise RegistryError("Registry file must be owned and readable only by operator")
+        # The helper enforces a single-link private file and closes its raw fd.
+        # Never store private OS exceptions in public RegistryError chains.
+        verify_registry_file(self.path, RegistryError)
 
     @contextmanager
     def _db(self):
