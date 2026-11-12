@@ -1,6 +1,8 @@
-/* Apollo R314: first-party editorial URL continuity; no analytics, storage, or network requests.
+/* Apollo R315: first-party editorial URL continuity; no analytics, storage, or network requests.
  * Staging only: this enhancement must not ship without cache, consent, and owner review.
- * A cached HTML body remains identical for every visitor; values are read on ACTUAL click.
+ * A cached HTML body remains identical for every visitor; values are read on
+ * trusted activation OR the opening of a native context menu (right-click).
+ * This is a per-visitor navigation hint, NOT a confirmed session or sale.
  */
 (() => {
   'use strict';
@@ -44,11 +46,13 @@
 
   function handleActivation(event) {
     // Browsers dispatch click for primary mouse, keyboard and touch activation,
-    // but auxclick for middle-button open-in-new-tab. Reject synthetic, canceled,
-    // right-button and unrelated events; do not intercept or prevent navigation.
+    // auxclick for middle-button and contextmenu for right-click navigation/copy.
+    // Reject synthetic, canceled, malformed and unrelated events. Never intercept navigation.
     if (!event.isTrusted || event.defaultPrevented) return;
     if (event.type === 'click' && event.button !== 0) return;
     if (event.type === 'auxclick' && event.button !== 1) return;
+    // This is a right-click menu preparation, NOT a paid click or checkout event.
+    if (event.type === 'contextmenu' && event.button !== 2) return;
     const link = intendedLink(event.target);
     if (!link) return;
     // Reset stale labels before each genuine activation, including SPA URL change.
@@ -63,4 +67,5 @@
 
   document.addEventListener('click', handleActivation, true);
   document.addEventListener('auxclick', handleActivation, true);
+  document.addEventListener('contextmenu', handleActivation, true);
 })();
