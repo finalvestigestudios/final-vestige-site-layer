@@ -1,0 +1,3405 @@
+{
+  "schema": "fv-media-live-frozen-part04-v1",
+  "date": "2026-11-12",
+  "method": "WORDPRESS_AUTHENTICATED_EDIT_CONTEXT_READ_ONLY",
+  "provenance": {
+    "frozen_pr": 183,
+    "frozen_path": "qa/media-recovery/parts/04.json",
+    "frozen_blob_sha": "6df3251e5a67a971d87a516a1ba4a0cc32f51f96",
+    "register_path": "qa/media-recovery/coverage_288_exact_pr1703_20261110.json",
+    "register_blob_sha": "4965a862f7de7de46c1f4a1e26f3ca70a8c38805",
+    "oversize_bridge_path": "qa/media-recovery/browser_handoff_6_p0_15_oversize_20261110.json",
+    "oversize_bridge_blob_sha": "d1a9c7a499510ec37bcdba5858d45165752587e0",
+    "media_pr": 1703,
+    "site_qa_pr": 154
+  },
+  "cohort": {
+    "frozen_posts": 61,
+    "frozen_inline_images": 355,
+    "frozen_offsite": 288,
+    "this_part_posts": 8,
+    "this_part_images": 56
+  },
+  "counts": {
+    "posts": 8,
+    "images": 56,
+    "source_equal": 56,
+    "alt_equal": 56,
+    "missing_dimensions": 54,
+    "both_dimensions": 2,
+    "partial_dimensions": 0,
+    "literal_srcset": 0,
+    "offsite_generic": 34,
+    "commons_redirect": 15,
+    "first_party": 7,
+    "candidate_mapped": 48,
+    "conditional_960px": 29,
+    "oversize_inline": 1,
+    "oversize_stored_bytes": 1543002,
+    "remaining_42_guest_confirmed": false,
+    "measured_76_pct_savings": false
+  },
+  "posts": [
+    {
+      "post_id": 278,
+      "url": "https://finalvestige.com/2026/08/19/they-walked-beyond-the-search-lady-be-good/",
+      "modified": "2026-11-02T21:39:52",
+      "status": "publish",
+      "live_count": 7,
+      "frozen_count": 7
+    },
+    {
+      "post_id": 277,
+      "url": "https://finalvestige.com/2026/08/19/the-boat-went-over-the-trees-lituya-bay/",
+      "modified": "2026-08-21T00:32:52",
+      "status": "publish",
+      "live_count": 6,
+      "frozen_count": 6
+    },
+    {
+      "post_id": 276,
+      "url": "https://finalvestige.com/2026/08/19/add-no-more-load-quebec-bridge/",
+      "modified": "2026-11-02T21:37:08",
+      "status": "publish",
+      "live_count": 6,
+      "frozen_count": 6
+    },
+    {
+      "post_id": 274,
+      "url": "https://finalvestige.com/2026/08/19/twenty-four-feet-from-air-uss-tang/",
+      "modified": "2026-11-02T21:39:50",
+      "status": "publish",
+      "live_count": 7,
+      "frozen_count": 7
+    },
+    {
+      "post_id": 269,
+      "url": "https://finalvestige.com/2026/08/18/the-watch-lost-its-hands-halifax-explosion/",
+      "modified": "2026-11-02T21:39:48",
+      "status": "publish",
+      "live_count": 7,
+      "frozen_count": 7
+    },
+    {
+      "post_id": 268,
+      "url": "https://finalvestige.com/2026/08/18/they-painted-over-archimedes/",
+      "modified": "2026-10-30T01:10:13",
+      "status": "publish",
+      "live_count": 10,
+      "frozen_count": 10
+    },
+    {
+      "post_id": 258,
+      "url": "https://finalvestige.com/2026/08/18/inside-the-joint-silver-bridge/",
+      "modified": "2026-11-02T21:39:47",
+      "status": "publish",
+      "live_count": 6,
+      "frozen_count": 6
+    },
+    {
+      "post_id": 257,
+      "url": "https://finalvestige.com/2026/08/18/the-numbers-came-back-apollo-12/",
+      "modified": "2026-10-29T20:59:35",
+      "status": "publish",
+      "live_count": 7,
+      "frozen_count": 7
+    }
+  ],
+  "rows": [
+    {
+      "slot": "278:0",
+      "post_id": 278,
+      "post_url": "https://finalvestige.com/2026/08/19/they-walked-beyond-the-search-lady-be-good/",
+      "frozen_source_url": "https://media.defense.gov/2007/Jan/25/2000519451/-1/-1/0/070125-F-0000Z-099.JPG",
+      "live_source_url": "https://media.defense.gov/2007/Jan/25/2000519451/-1/-1/0/070125-F-0000Z-099.JPG",
+      "source_equal": true,
+      "source_host": "media.defense.gov",
+      "source_kind": "external",
+      "frozen_alt": "The B-24D Lady Be Good lying largely intact in the Libyan Desert after its discovery.",
+      "live_alt": "The B-24D Lady Be Good lying largely intact in the Libyan Desert after its discovery.",
+      "alt_equal": true,
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "registry_evidence": [
+        {
+          "batch": "lady_be_good_278_seven_20261109",
+          "path": "qa/media-recovery/lady_be_good_278_seven_20261109.json",
+          "blob_sha": "a4902c436d48b4a71e3bc38b2bc6ad13f19b0e70",
+          "retriever_only_observation": "WRAPPER_403",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "catalog_candidates": [],
+      "oversized_original_matches": [],
+      "actual_origin_http_status": null,
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_image_transfer_bytes": null,
+      "guest_broken": null,
+      "measured_cls": null,
+      "exact_photo_identity_verified": false,
+      "item_rights_cleared": false,
+      "cache_approved": false,
+      "wordpress_media_upload_approved": false,
+      "post_rewrite_approved": false,
+      "staging": {
+        "max_width_px": 960,
+        "no_upscale": true,
+        "require_same_scene": true,
+        "require_item_rights_clearance": true,
+        "require_full_size_access_for_detail": true,
+        "require_browser_proof_before_change": true
+      }
+    },
+    {
+      "slot": "278:1",
+      "post_id": 278,
+      "post_url": "https://finalvestige.com/2026/08/19/they-walked-beyond-the-search-lady-be-good/",
+      "frozen_source_url": "https://media.defense.gov/2006/May/30/2000572755/2000/2000/0/050606-F-1234P-012.JPG",
+      "live_source_url": "https://media.defense.gov/2006/May/30/2000572755/2000/2000/0/050606-F-1234P-012.JPG",
+      "source_equal": true,
+      "source_host": "media.defense.gov",
+      "source_kind": "external",
+      "frozen_alt": "The nine members of the Lady Be Good crew posed in front of a B-24 before the 1943 mission.",
+      "live_alt": "The nine members of the Lady Be Good crew posed in front of a B-24 before the 1943 mission.",
+      "alt_equal": true,
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "registry_evidence": [
+        {
+          "batch": "lady_be_good_278_seven_20261109",
+          "path": "qa/media-recovery/lady_be_good_278_seven_20261109.json",
+          "blob_sha": "a4902c436d48b4a71e3bc38b2bc6ad13f19b0e70",
+          "retriever_only_observation": "WRAPPER_403",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "catalog_candidates": [
+        {
+          "catalog_url": "https://www.nationalmuseum.af.mil/Upcoming/Photos/igphoto/2000572755/",
+          "authoritative_primary_url": null,
+          "source_authority": "NATIONAL_MUSEUM_USAF",
+          "rights_observation": null,
+          "conditional_960px": null,
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "oversized_original_matches": [],
+      "actual_origin_http_status": null,
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_image_transfer_bytes": null,
+      "guest_broken": null,
+      "measured_cls": null,
+      "exact_photo_identity_verified": false,
+      "item_rights_cleared": false,
+      "cache_approved": false,
+      "wordpress_media_upload_approved": false,
+      "post_rewrite_approved": false,
+      "staging": {
+        "max_width_px": 960,
+        "no_upscale": true,
+        "require_same_scene": true,
+        "require_item_rights_clearance": true,
+        "require_full_size_access_for_detail": true,
+        "require_browser_proof_before_change": true
+      }
+    },
+    {
+      "slot": "278:2",
+      "post_id": 278,
+      "post_url": "https://finalvestige.com/2026/08/19/they-walked-beyond-the-search-lady-be-good/",
+      "frozen_source_url": "https://upload.wikimedia.org/wikipedia/commons/4/49/0000050606-F-1234P-014.jpg",
+      "live_source_url": "https://upload.wikimedia.org/wikipedia/commons/4/49/0000050606-F-1234P-014.jpg",
+      "source_equal": true,
+      "source_host": "upload.wikimedia.org",
+      "source_kind": "external",
+      "frozen_alt": "The preserved wreck of Lady Be Good in the Libyan Desert.",
+      "live_alt": "The preserved wreck of Lady Be Good in the Libyan Desert.",
+      "alt_equal": true,
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "registry_evidence": [
+        {
+          "batch": "lady_be_good_278_seven_20261109",
+          "path": "qa/media-recovery/lady_be_good_278_seven_20261109.json",
+          "blob_sha": "a4902c436d48b4a71e3bc38b2bc6ad13f19b0e70",
+          "retriever_only_observation": "IMAGE_DISPLAYED",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "catalog_candidates": [
+        {
+          "catalog_url": "https://www.nationalmuseum.af.mil/Upcoming/Photos/igphoto/2000572753/",
+          "authoritative_primary_url": null,
+          "source_authority": "NATIONAL_MUSEUM_USAF_PLUS_COMMONS_FILE",
+          "rights_observation": null,
+          "conditional_960px": null,
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "oversized_original_matches": [],
+      "actual_origin_http_status": null,
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_image_transfer_bytes": null,
+      "guest_broken": null,
+      "measured_cls": null,
+      "exact_photo_identity_verified": false,
+      "item_rights_cleared": false,
+      "cache_approved": false,
+      "wordpress_media_upload_approved": false,
+      "post_rewrite_approved": false,
+      "staging": {
+        "max_width_px": 960,
+        "no_upscale": true,
+        "require_same_scene": true,
+        "require_item_rights_clearance": true,
+        "require_full_size_access_for_detail": true,
+        "require_browser_proof_before_change": true
+      }
+    },
+    {
+      "slot": "278:3",
+      "post_id": 278,
+      "post_url": "https://finalvestige.com/2026/08/19/they-walked-beyond-the-search-lady-be-good/",
+      "frozen_source_url": "https://qmmuseum.army.mil/assets/img/aotm/2012/09_M1910_canteen_1.jpg",
+      "live_source_url": "https://qmmuseum.army.mil/assets/img/aotm/2012/09_M1910_canteen_1.jpg",
+      "source_equal": true,
+      "source_host": "qmmuseum.army.mil",
+      "source_kind": "external",
+      "frozen_alt": "The Model 1910 canteen recovered from the Lady Be Good crew's desert trail.",
+      "live_alt": "The Model 1910 canteen recovered from the Lady Be Good crew's desert trail.",
+      "alt_equal": true,
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "registry_evidence": [
+        {
+          "batch": "lady_be_good_278_seven_20261109",
+          "path": "qa/media-recovery/lady_be_good_278_seven_20261109.json",
+          "blob_sha": "a4902c436d48b4a71e3bc38b2bc6ad13f19b0e70",
+          "retriever_only_observation": "WRAPPER_502",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "catalog_candidates": [
+        {
+          "catalog_url": "https://qmmuseum.army.mil/explore/artifact-of-the-month/2012.html",
+          "authoritative_primary_url": null,
+          "source_authority": "US_ARMY_MUSEUM_HOST_ONLY",
+          "rights_observation": null,
+          "conditional_960px": null,
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "oversized_original_matches": [],
+      "actual_origin_http_status": null,
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_image_transfer_bytes": null,
+      "guest_broken": null,
+      "measured_cls": null,
+      "exact_photo_identity_verified": false,
+      "item_rights_cleared": false,
+      "cache_approved": false,
+      "wordpress_media_upload_approved": false,
+      "post_rewrite_approved": false,
+      "staging": {
+        "max_width_px": 960,
+        "no_upscale": true,
+        "require_same_scene": true,
+        "require_item_rights_clearance": true,
+        "require_full_size_access_for_detail": true,
+        "require_browser_proof_before_change": true
+      }
+    },
+    {
+      "slot": "278:4",
+      "post_id": 278,
+      "post_url": "https://finalvestige.com/2026/08/19/they-walked-beyond-the-search-lady-be-good/",
+      "frozen_source_url": "https://www.ladybegood.net/diaries/full/Toner_Diary2%20.jpg",
+      "live_source_url": "https://www.ladybegood.net/diaries/full/Toner_Diary2%20.jpg",
+      "source_equal": true,
+      "source_host": "www.ladybegood.net",
+      "source_kind": "external",
+      "frozen_alt": "A page from Robert Toner's diary recovered with members of the Lady Be Good crew.",
+      "live_alt": "A page from Robert Toner's diary recovered with members of the Lady Be Good crew.",
+      "alt_equal": true,
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "registry_evidence": [
+        {
+          "batch": "lady_be_good_278_seven_20261109",
+          "path": "qa/media-recovery/lady_be_good_278_seven_20261109.json",
+          "blob_sha": "a4902c436d48b4a71e3bc38b2bc6ad13f19b0e70",
+          "retriever_only_observation": "IMAGE_DISPLAYED",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "catalog_candidates": [
+        {
+          "catalog_url": "https://www.ladybegood.net/diaries/full/Toner_Diary2%20.jpg",
+          "authoritative_primary_url": null,
+          "source_authority": "PRIVATE_DIARY_IMAGE_AND_NARA_CONTEXT",
+          "rights_observation": null,
+          "conditional_960px": null,
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "oversized_original_matches": [],
+      "actual_origin_http_status": null,
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_image_transfer_bytes": null,
+      "guest_broken": null,
+      "measured_cls": null,
+      "exact_photo_identity_verified": false,
+      "item_rights_cleared": false,
+      "cache_approved": false,
+      "wordpress_media_upload_approved": false,
+      "post_rewrite_approved": false,
+      "staging": {
+        "max_width_px": 960,
+        "no_upscale": true,
+        "require_same_scene": true,
+        "require_item_rights_clearance": true,
+        "require_full_size_access_for_detail": true,
+        "require_browser_proof_before_change": true
+      }
+    },
+    {
+      "slot": "278:5",
+      "post_id": 278,
+      "post_url": "https://finalvestige.com/2026/08/19/they-walked-beyond-the-search-lady-be-good/",
+      "frozen_source_url": "https://unwritten-record.blogs.archives.gov/wp-content/uploads/sites/6/2017/06/111-c-17240-scaled.jpg",
+      "live_source_url": "https://unwritten-record.blogs.archives.gov/wp-content/uploads/sites/6/2017/06/111-c-17240-scaled.jpg",
+      "source_equal": true,
+      "source_host": "unwritten-record.blogs.archives.gov",
+      "source_kind": "external",
+      "frozen_alt": "U.S. military investigators examining the Lady Be Good wreck in the Libyan Desert.",
+      "live_alt": "U.S. military investigators examining the Lady Be Good wreck in the Libyan Desert.",
+      "alt_equal": true,
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "registry_evidence": [
+        {
+          "batch": "lady_be_good_278_seven_20261109",
+          "path": "qa/media-recovery/lady_be_good_278_seven_20261109.json",
+          "blob_sha": "a4902c436d48b4a71e3bc38b2bc6ad13f19b0e70",
+          "retriever_only_observation": "IMAGE_DISPLAYED",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "catalog_candidates": [
+        {
+          "catalog_url": "https://unwritten-record.blogs.archives.gov/2017/06/16/lost-and-found-the-story-of-lady-be-good-and-her-crew/",
+          "authoritative_primary_url": null,
+          "source_authority": "NATIONAL_ARCHIVES_BLOG",
+          "rights_observation": null,
+          "conditional_960px": null,
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "oversized_original_matches": [],
+      "actual_origin_http_status": null,
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_image_transfer_bytes": null,
+      "guest_broken": null,
+      "measured_cls": null,
+      "exact_photo_identity_verified": false,
+      "item_rights_cleared": false,
+      "cache_approved": false,
+      "wordpress_media_upload_approved": false,
+      "post_rewrite_approved": false,
+      "staging": {
+        "max_width_px": 960,
+        "no_upscale": true,
+        "require_same_scene": true,
+        "require_item_rights_clearance": true,
+        "require_full_size_access_for_detail": true,
+        "require_browser_proof_before_change": true
+      }
+    },
+    {
+      "slot": "278:6",
+      "post_id": 278,
+      "post_url": "https://finalvestige.com/2026/08/19/they-walked-beyond-the-search-lady-be-good/",
+      "frozen_source_url": "https://media.defense.gov/2006/Jun/02/2000554420/-1/-1/0/060530-F-1234S-041.JPG",
+      "live_source_url": "https://media.defense.gov/2006/Jun/02/2000554420/-1/-1/0/060530-F-1234S-041.JPG",
+      "source_equal": true,
+      "source_host": "media.defense.gov",
+      "source_kind": "external",
+      "frozen_alt": "Search and recovery personnel working around Lady Be Good in the Libyan Desert.",
+      "live_alt": "Search and recovery personnel working around Lady Be Good in the Libyan Desert.",
+      "alt_equal": true,
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "registry_evidence": [
+        {
+          "batch": "lady_be_good_278_seven_20261109",
+          "path": "qa/media-recovery/lady_be_good_278_seven_20261109.json",
+          "blob_sha": "a4902c436d48b4a71e3bc38b2bc6ad13f19b0e70",
+          "retriever_only_observation": "WRAPPER_403",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "catalog_candidates": [
+        {
+          "catalog_url": "https://www.nationalmuseum.af.mil/Upcoming/Photos/igphoto/2000554420/",
+          "authoritative_primary_url": null,
+          "source_authority": "NATIONAL_MUSEUM_USAF",
+          "rights_observation": null,
+          "conditional_960px": null,
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "oversized_original_matches": [],
+      "actual_origin_http_status": null,
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_image_transfer_bytes": null,
+      "guest_broken": null,
+      "measured_cls": null,
+      "exact_photo_identity_verified": false,
+      "item_rights_cleared": false,
+      "cache_approved": false,
+      "wordpress_media_upload_approved": false,
+      "post_rewrite_approved": false,
+      "staging": {
+        "max_width_px": 960,
+        "no_upscale": true,
+        "require_same_scene": true,
+        "require_item_rights_clearance": true,
+        "require_full_size_access_for_detail": true,
+        "require_browser_proof_before_change": true
+      }
+    },
+    {
+      "slot": "277:0",
+      "post_id": 277,
+      "post_url": "https://finalvestige.com/2026/08/19/the-boat-went-over-the-trees-lituya-bay/",
+      "frozen_source_url": "https://www.datosfreak.org/wp-content/uploads/2019/01/Tsunami-maremoto-Lituya-Alaska-1958-1.jpg",
+      "live_source_url": "https://www.datosfreak.org/wp-content/uploads/2019/01/Tsunami-maremoto-Lituya-Alaska-1958-1.jpg",
+      "source_equal": true,
+      "source_host": "www.datosfreak.org",
+      "source_kind": "external",
+      "frozen_alt": "Aerial view of Lituya Bay after the July 1958 megatsunami showing the stripped shoreline and runup scar.",
+      "live_alt": "Aerial view of Lituya Bay after the July 1958 megatsunami showing the stripped shoreline and runup scar.",
+      "alt_equal": true,
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "registry_evidence": [
+        {
+          "batch": "lituya277",
+          "path": "qa/media-recovery/lituya_277_six_usgs_nasa_composite_rights_20261110.json",
+          "blob_sha": "22b917e632f9429456c0582355f2f912c2ed614b",
+          "retriever_only_observation": "IMAGE_DISPLAYED_BY_WEB_RETRIEVER_NOT_GUEST",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "catalog_candidates": [
+        {
+          "catalog_url": "https://www.usgs.gov/media/images/lituya-bay-1958",
+          "authoritative_primary_url": "https://www.usgs.gov/media/images/lituya-bay-1958",
+          "source_authority": "USGS / Don J. Miller 1958 overview is alternative source; original commercial-hosted two-panel annotated infographic is a distinct work",
+          "rights_observation": "Original annotated two-panel graphic has unverified diagram/annotation copyright; USGS base photo public domain does not clear composed image",
+          "conditional_960px": [
+            750,
+            580
+          ],
+          "source_intrinsic_px": null,
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false,
+          "license_review": "HOLD",
+          "visual_integrity_note": "HIGH: exact published image is two-panel annotated scientific graphic (landslide mechanics upper panel, aerial view lower), not solely an aerial photograph as ALT implies. Proposed external primary-source photograph is NOT a pixel-identical replacement."
+        }
+      ],
+      "oversized_original_matches": [],
+      "actual_origin_http_status": null,
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_image_transfer_bytes": null,
+      "guest_broken": null,
+      "measured_cls": null,
+      "exact_photo_identity_verified": false,
+      "item_rights_cleared": false,
+      "cache_approved": false,
+      "wordpress_media_upload_approved": false,
+      "post_rewrite_approved": false,
+      "staging": {
+        "max_width_px": 960,
+        "no_upscale": true,
+        "require_same_scene": true,
+        "require_item_rights_clearance": true,
+        "require_full_size_access_for_detail": true,
+        "require_browser_proof_before_change": true
+      }
+    },
+    {
+      "slot": "277:1",
+      "post_id": 277,
+      "post_url": "https://finalvestige.com/2026/08/19/the-boat-went-over-the-trees-lituya-bay/",
+      "frozen_source_url": "https://www.researchgate.net/profile/Tim-Davies-4/publication/258771194/figure/fig10/AS:669504034914309@1536632655693/Lituya-Bay-following-the-1958-tsunami-a-NW-panoramic-view-of-Lituya-Bay-and-Centoaph.png",
+      "live_source_url": "https://www.researchgate.net/profile/Tim-Davies-4/publication/258771194/figure/fig10/AS:669504034914309@1536632655693/Lituya-Bay-following-the-1958-tsunami-a-NW-panoramic-view-of-Lituya-Bay-and-Centoaph.png",
+      "source_equal": true,
+      "source_host": "www.researchgate.net",
+      "source_kind": "external",
+      "frozen_alt": "Scientific aerial view of Lituya Bay showing the fjord, Cenotaph Island and tsunami damage.",
+      "live_alt": "Scientific aerial view of Lituya Bay showing the fjord, Cenotaph Island and tsunami damage.",
+      "alt_equal": true,
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "registry_evidence": [
+        {
+          "batch": "lituya277",
+          "path": "qa/media-recovery/lituya_277_six_usgs_nasa_composite_rights_20261110.json",
+          "blob_sha": "22b917e632f9429456c0582355f2f912c2ed614b",
+          "retriever_only_observation": "WEB_RETRIEVER_INACCESSIBLE_NOT_ORIGIN_STATUS",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "catalog_candidates": [
+        {
+          "catalog_url": "https://www.researchgate.net/figure/Lituya-Bay-following-the-1958-tsunami-a-NW-panoramic-view-of-Lituya-Bay-and-Centoaph_fig10_258771194",
+          "authoritative_primary_url": "https://www.usgs.gov/media/images/lituya-bay-1958",
+          "source_authority": "Robinson & Davies 2013 research-paper figure 10 combines USGS panoramic photographs; USGS 1958 published photo is an alternative, not full identical figure",
+          "rights_observation": "ResearchGate explicitly says figure content may be subject to copyright; composed 2013 multi-panel research figure not freely reusable solely because individual photo credits USGS",
+          "conditional_960px": [
+            750,
+            580
+          ],
+          "source_intrinsic_px": null,
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false,
+          "license_review": "HOLD",
+          "visual_integrity_note": "Research figure 10 is a MULTIPANEL composite (a,b,c); the ALT describes a single scientific aerial view. Source retriever disabled; exact binary and panels not visually verified."
+        }
+      ],
+      "oversized_original_matches": [],
+      "actual_origin_http_status": null,
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_image_transfer_bytes": null,
+      "guest_broken": null,
+      "measured_cls": null,
+      "exact_photo_identity_verified": false,
+      "item_rights_cleared": false,
+      "cache_approved": false,
+      "wordpress_media_upload_approved": false,
+      "post_rewrite_approved": false,
+      "staging": {
+        "max_width_px": 960,
+        "no_upscale": true,
+        "require_same_scene": true,
+        "require_item_rights_clearance": true,
+        "require_full_size_access_for_detail": true,
+        "require_browser_proof_before_change": true
+      }
+    },
+    {
+      "slot": "277:2",
+      "post_id": 277,
+      "post_url": "https://finalvestige.com/2026/08/19/the-boat-went-over-the-trees-lituya-bay/",
+      "frozen_source_url": "https://indomgb.s3.amazonaws.com/wp-content/uploads/2025/10/29031840/gigantesca-cicatriz-en-el-acantilado-que-se-ID7X2VZ6AZGR5EAPSHH3IDCIUQ.jpg",
+      "live_source_url": "https://indomgb.s3.amazonaws.com/wp-content/uploads/2025/10/29031840/gigantesca-cicatriz-en-el-acantilado-que-se-ID7X2VZ6AZGR5EAPSHH3IDCIUQ.jpg",
+      "source_equal": true,
+      "source_host": "indomgb.s3.amazonaws.com",
+      "source_kind": "external",
+      "frozen_alt": "The enormous landslide and runup scar at the head of Lituya Bay.",
+      "live_alt": "The enormous landslide and runup scar at the head of Lituya Bay.",
+      "alt_equal": true,
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "registry_evidence": [
+        {
+          "batch": "lituya277",
+          "path": "qa/media-recovery/lituya_277_six_usgs_nasa_composite_rights_20261110.json",
+          "blob_sha": "22b917e632f9429456c0582355f2f912c2ed614b",
+          "retriever_only_observation": "IMAGE_DISPLAYED_BY_WEB_RETRIEVER_NOT_GUEST",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "catalog_candidates": [
+        {
+          "catalog_url": "https://commons.wikimedia.org/wiki/File:Lituya_Bay_rockslide_1.jpg",
+          "authoritative_primary_url": "https://www.usgs.gov/media/images/lituya-bay-1958",
+          "source_authority": "USGS Don J. Miller original post-tsunami photography; Commons rockslide 1 is a distinct scene-level candidate, 750x586",
+          "rights_observation": "Underlying USGS photographs have an explicit public-domain agency record, but commercial S3 syndicated derivative identity, crop and upstream reuse cannot be assumed",
+          "conditional_960px": [
+            750,
+            586
+          ],
+          "source_intrinsic_px": null,
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false,
+          "license_review": "HOLD",
+          "visual_integrity_note": "Exact published image preview depicts a dark rocky cliff landslide scar above the glacial edge, but no verified match to the separate USGS Commons rockslide 1 candidate. Do not silently change historical angle."
+        }
+      ],
+      "oversized_original_matches": [],
+      "actual_origin_http_status": null,
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_image_transfer_bytes": null,
+      "guest_broken": null,
+      "measured_cls": null,
+      "exact_photo_identity_verified": false,
+      "item_rights_cleared": false,
+      "cache_approved": false,
+      "wordpress_media_upload_approved": false,
+      "post_rewrite_approved": false,
+      "staging": {
+        "max_width_px": 960,
+        "no_upscale": true,
+        "require_same_scene": true,
+        "require_item_rights_clearance": true,
+        "require_full_size_access_for_detail": true,
+        "require_browser_proof_before_change": true
+      }
+    },
+    {
+      "slot": "277:3",
+      "post_id": 277,
+      "post_url": "https://finalvestige.com/2026/08/19/the-boat-went-over-the-trees-lituya-bay/",
+      "frozen_source_url": "https://imagerenderer.com/images/rendered/default/greeting-card/images-medium-5/4-damage-from-1958-lituya-bay-tsunami-us-geological-surveyscience-photo-library.jpg",
+      "live_source_url": "https://imagerenderer.com/images/rendered/default/greeting-card/images-medium-5/4-damage-from-1958-lituya-bay-tsunami-us-geological-surveyscience-photo-library.jpg",
+      "source_equal": true,
+      "source_host": "imagerenderer.com",
+      "source_kind": "external",
+      "frozen_alt": "Shoreline stripped of mature forest by the 1958 Lituya Bay tsunami.",
+      "live_alt": "Shoreline stripped of mature forest by the 1958 Lituya Bay tsunami.",
+      "alt_equal": true,
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "registry_evidence": [
+        {
+          "batch": "lituya277",
+          "path": "qa/media-recovery/lituya_277_six_usgs_nasa_composite_rights_20261110.json",
+          "blob_sha": "22b917e632f9429456c0582355f2f912c2ed614b",
+          "retriever_only_observation": "WEB_RETRIEVER_INACCESSIBLE_NOT_ORIGIN_STATUS",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "catalog_candidates": [
+        {
+          "catalog_url": "https://sciencephotogallery.com/featured/4-damage-from-1958-lituya-bay-tsunami-us-geological-surveyscience-photo-library.html",
+          "authoritative_primary_url": "https://www.usgs.gov/media/images/lituya-bay-1958",
+          "source_authority": "Science Photo Library commercial print of D.J. Miller USGS August 1958 photo; USGS 1958 gallery as distinct archive alternative",
+          "rights_observation": "The exact URL embeds a merchant greeting-card renderer and commercially distributed preview; do not mirror or mistake storefront-use terms for public-domain clearance. Separate original USGS image rights from commercial preview art.",
+          "conditional_960px": [
+            750,
+            590
+          ],
+          "source_intrinsic_px": null,
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false,
+          "license_review": "HOLD",
+          "visual_integrity_note": "Original is third-party greeting-card render (not a primary original). Underlying archive image may be USGS, but specific USGS frame is not yet proven."
+        }
+      ],
+      "oversized_original_matches": [],
+      "actual_origin_http_status": null,
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_image_transfer_bytes": null,
+      "guest_broken": null,
+      "measured_cls": null,
+      "exact_photo_identity_verified": false,
+      "item_rights_cleared": false,
+      "cache_approved": false,
+      "wordpress_media_upload_approved": false,
+      "post_rewrite_approved": false,
+      "staging": {
+        "max_width_px": 960,
+        "no_upscale": true,
+        "require_same_scene": true,
+        "require_item_rights_clearance": true,
+        "require_full_size_access_for_detail": true,
+        "require_browser_proof_before_change": true
+      }
+    },
+    {
+      "slot": "277:4",
+      "post_id": 277,
+      "post_url": "https://finalvestige.com/2026/08/19/the-boat-went-over-the-trees-lituya-bay/",
+      "frozen_source_url": "https://miro.medium.com/v2/resize:fit:1400/1*NtiMuQy8rJhpG_xg-nv92g.png",
+      "live_source_url": "https://miro.medium.com/v2/resize:fit:1400/1*NtiMuQy8rJhpG_xg-nv92g.png",
+      "source_equal": true,
+      "source_host": "miro.medium.com",
+      "source_kind": "external",
+      "frozen_alt": "Aerial photograph showing the pale band left where the 1958 wave stripped forest around Lituya Bay.",
+      "live_alt": "Aerial photograph showing the pale band left where the 1958 wave stripped forest around Lituya Bay.",
+      "alt_equal": true,
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "registry_evidence": [
+        {
+          "batch": "lituya277",
+          "path": "qa/media-recovery/lituya_277_six_usgs_nasa_composite_rights_20261110.json",
+          "blob_sha": "22b917e632f9429456c0582355f2f912c2ed614b",
+          "retriever_only_observation": "IMAGE_DISPLAYED_BY_WEB_RETRIEVER_NOT_GUEST",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "catalog_candidates": [
+        {
+          "catalog_url": "https://commons.wikimedia.org/wiki/File:Lituya-Bay-overview-with-arrows.png",
+          "authoritative_primary_url": "https://www.usgs.gov/media/images/lituya-bay-1958",
+          "source_authority": "D.J. Miller USGS original photograph with later red and yellow explanatory arrows in a secondary composite, 750x580 Commons",
+          "rights_observation": "USGS underlying photo is public-domain per agency; rights to additions/annotations and exact identity of Medium resized copy require separate review",
+          "conditional_960px": [
+            750,
+            580
+          ],
+          "source_intrinsic_px": null,
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false,
+          "license_review": "HOLD",
+          "visual_integrity_note": "The published source preview clearly contains bold red and yellow directional arrows. ALT calls it only an aerial photograph, omitting annotations and possibly confusing readers; proposed text clarifies."
+        }
+      ],
+      "oversized_original_matches": [],
+      "actual_origin_http_status": null,
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_image_transfer_bytes": null,
+      "guest_broken": null,
+      "measured_cls": null,
+      "exact_photo_identity_verified": false,
+      "item_rights_cleared": false,
+      "cache_approved": false,
+      "wordpress_media_upload_approved": false,
+      "post_rewrite_approved": false,
+      "staging": {
+        "max_width_px": 960,
+        "no_upscale": true,
+        "require_same_scene": true,
+        "require_item_rights_clearance": true,
+        "require_full_size_access_for_detail": true,
+        "require_browser_proof_before_change": true
+      }
+    },
+    {
+      "slot": "277:5",
+      "post_id": 277,
+      "post_url": "https://finalvestige.com/2026/08/19/the-boat-went-over-the-trees-lituya-bay/",
+      "frozen_source_url": "https://upload.wikimedia.org/wikipedia/commons/a/aa/Lituyabay_Earth_Observatory_image_2020.jpg",
+      "live_source_url": "https://upload.wikimedia.org/wikipedia/commons/a/aa/Lituyabay_Earth_Observatory_image_2020.jpg",
+      "source_equal": true,
+      "source_host": "upload.wikimedia.org",
+      "source_kind": "external",
+      "frozen_alt": "Modern satellite view of Lituya Bay, Alaska, with forest regrown around the shoreline.",
+      "live_alt": "Modern satellite view of Lituya Bay, Alaska, with forest regrown around the shoreline.",
+      "alt_equal": true,
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "registry_evidence": [
+        {
+          "batch": "lituya277",
+          "path": "qa/media-recovery/lituya_277_six_usgs_nasa_composite_rights_20261110.json",
+          "blob_sha": "22b917e632f9429456c0582355f2f912c2ed614b",
+          "retriever_only_observation": "IMAGE_DISPLAYED_BY_WEB_RETRIEVER_NOT_GUEST",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "catalog_candidates": [
+        {
+          "catalog_url": "https://commons.wikimedia.org/wiki/File:Lituyabay_Earth_Observatory_image_2020.jpg",
+          "authoritative_primary_url": "https://science.nasa.gov/earth/earth-observatory/lituya-bays-apocalyptic-wave-147557/",
+          "source_authority": "NASA Earth Observatory / Lauren Dauphin, July 1, 2020 Landsat 8 false-color visualization from USGS data",
+          "rights_observation": "Commons lists public domain because created solely by NASA; verify specific NASA credit and do not imply NASA endorsement; media attribution required for editorial context",
+          "conditional_960px": [
+            720,
+            480
+          ],
+          "source_intrinsic_px": [
+            720,
+            480
+          ],
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false,
+          "license_review": "HOLD",
+          "visual_integrity_note": "Original is NASA processed false-color image, not a natural-color contemporary photograph; the lighter green shows younger re-growth, not an in-the-moment 1958 satellite record. 720x480 original must NOT be enlarged to 960."
+        }
+      ],
+      "oversized_original_matches": [],
+      "actual_origin_http_status": null,
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_image_transfer_bytes": null,
+      "guest_broken": null,
+      "measured_cls": null,
+      "exact_photo_identity_verified": false,
+      "item_rights_cleared": false,
+      "cache_approved": false,
+      "wordpress_media_upload_approved": false,
+      "post_rewrite_approved": false,
+      "staging": {
+        "max_width_px": 960,
+        "no_upscale": true,
+        "require_same_scene": true,
+        "require_item_rights_clearance": true,
+        "require_full_size_access_for_detail": true,
+        "require_browser_proof_before_change": true
+      }
+    },
+    {
+      "slot": "276:0",
+      "post_id": 276,
+      "post_url": "https://finalvestige.com/2026/08/19/add-no-more-load-quebec-bridge/",
+      "frozen_source_url": "https://cdn2.picryl.com/photo/1907/12/31/quebec-bridge-hs85-10-18815-460e1c-1024.jpg",
+      "live_source_url": "https://cdn2.picryl.com/photo/1907/12/31/quebec-bridge-hs85-10-18815-460e1c-1024.jpg",
+      "source_equal": true,
+      "source_host": "cdn2.picryl.com",
+      "source_kind": "external",
+      "frozen_alt": "The first Quebec Bridge under construction shortly before its 1907 collapse.",
+      "live_alt": "The first Quebec Bridge under construction shortly before its 1907 collapse.",
+      "alt_equal": true,
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "registry_evidence": [
+        {
+          "batch": "quebec_276_six_1907_1916_archival_20261110",
+          "path": "qa/media-recovery/quebec_276_six_1907_1916_archival_20261110.json",
+          "blob_sha": "fd39d7d055007974ec2c6d0dda3dd850b7053395",
+          "retriever_only_observation": "IMAGE_DISPLAYED_BY_WEB_RETRIEVER_NOT_GUEST",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "catalog_candidates": [
+        {
+          "catalog_url": "https://commons.wikimedia.org/wiki/File:Quebec_bridge_(HS85-10-18815).jpg",
+          "authoritative_primary_url": "https://searcharchives.bl.uk/",
+          "source_authority": "British Library Picturing Canada accession HS85/10/18815; photographer F. E. Cudworth (Commons catalog)",
+          "rights_observation": "Commons asserts Canada and U.S. public domain for 1907 F.E. Cudworth photograph; accession provenance available, specific derivative and binary unverified",
+          "conditional_960px": [
+            960,
+            753
+          ],
+          "catalog_px": [
+            2780,
+            2180
+          ],
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false,
+          "visual_integrity_note": "Stored ALT 'shortly before' not proven by catalog's year-only date. PICRYL 1024px derivative visually displayed; not a 2780px original-file retrieval."
+        }
+      ],
+      "oversized_original_matches": [],
+      "actual_origin_http_status": null,
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_image_transfer_bytes": null,
+      "guest_broken": null,
+      "measured_cls": null,
+      "exact_photo_identity_verified": false,
+      "item_rights_cleared": false,
+      "cache_approved": false,
+      "wordpress_media_upload_approved": false,
+      "post_rewrite_approved": false,
+      "staging": {
+        "max_width_px": 960,
+        "no_upscale": true,
+        "require_same_scene": true,
+        "require_item_rights_clearance": true,
+        "require_full_size_access_for_detail": true,
+        "require_browser_proof_before_change": true
+      }
+    },
+    {
+      "slot": "276:1",
+      "post_id": 276,
+      "post_url": "https://finalvestige.com/2026/08/19/add-no-more-load-quebec-bridge/",
+      "frozen_source_url": "https://historicbridges.org/quebec/quebec/oldbridge3.jpg",
+      "live_source_url": "https://historicbridges.org/quebec/quebec/oldbridge3.jpg",
+      "source_equal": true,
+      "source_host": "historicbridges.org",
+      "source_kind": "external",
+      "frozen_alt": "Quebec Bridge wreckage after the August 29, 1907 collapse.",
+      "live_alt": "Quebec Bridge wreckage after the August 29, 1907 collapse.",
+      "alt_equal": true,
+      "html_width_px": 1024,
+      "html_height_px": 832,
+      "literal_srcset": false,
+      "registry_evidence": [
+        {
+          "batch": "quebec_276_six_1907_1916_archival_20261110",
+          "path": "qa/media-recovery/quebec_276_six_1907_1916_archival_20261110.json",
+          "blob_sha": "fd39d7d055007974ec2c6d0dda3dd850b7053395",
+          "retriever_only_observation": "IMAGE_DISPLAYED_BY_WEB_RETRIEVER_NOT_GUEST",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "catalog_candidates": [
+        {
+          "catalog_url": "https://historicbridges.org/bridges/browser/?bridgebrowser=quebec/quebec/",
+          "authoritative_primary_url": "https://historicbridges.org/bridges/browser/?bridgebrowser=quebec/quebec/",
+          "source_authority": "HistoricBridges.org compilation; caption credits 1919 Quebec Bridge Government Board of Engineers report (historical source)",
+          "rights_observation": "Historical source likely 1919 government report; publisher re-digitization, image version, Canadian and U.S. rights must be reviewed item by item",
+          "conditional_960px": null,
+          "catalog_px": null,
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false,
+          "visual_integrity_note": "Stored Gutenberg width 1024 and height 832 are declarations not verified source-intrinsic dimensions; conditional 960 sizing must await actual native size."
+        }
+      ],
+      "oversized_original_matches": [],
+      "actual_origin_http_status": null,
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_image_transfer_bytes": null,
+      "guest_broken": null,
+      "measured_cls": null,
+      "exact_photo_identity_verified": false,
+      "item_rights_cleared": false,
+      "cache_approved": false,
+      "wordpress_media_upload_approved": false,
+      "post_rewrite_approved": false,
+      "staging": {
+        "max_width_px": 960,
+        "no_upscale": true,
+        "require_same_scene": true,
+        "require_item_rights_clearance": true,
+        "require_full_size_access_for_detail": true,
+        "require_browser_proof_before_change": true
+      }
+    },
+    {
+      "slot": "276:2",
+      "post_id": 276,
+      "post_url": "https://finalvestige.com/2026/08/19/add-no-more-load-quebec-bridge/",
+      "frozen_source_url": "https://ids.si.edu/ids/deliveryService?id=NMAH-AC1026-0000002",
+      "live_source_url": "https://ids.si.edu/ids/deliveryService?id=NMAH-AC1026-0000002",
+      "source_equal": true,
+      "source_host": "ids.si.edu",
+      "source_kind": "external",
+      "frozen_alt": "Twisted steel wreckage of the Quebec Bridge after the 1907 collapse.",
+      "live_alt": "Twisted steel wreckage of the Quebec Bridge after the 1907 collapse.",
+      "alt_equal": true,
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "registry_evidence": [
+        {
+          "batch": "quebec_276_six_1907_1916_archival_20261110",
+          "path": "qa/media-recovery/quebec_276_six_1907_1916_archival_20261110.json",
+          "blob_sha": "fd39d7d055007974ec2c6d0dda3dd850b7053395",
+          "retriever_only_observation": "IMAGE_DISPLAYED_BY_WEB_RETRIEVER_NOT_GUEST",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "catalog_candidates": [
+        {
+          "catalog_url": "https://americanhistory.si.edu/collections/archival-collection/sova-nmah-ac-1026",
+          "authoritative_primary_url": "https://ids.si.edu/ids/deliveryService?id=NMAH-AC1026-0000002",
+          "source_authority": "Smithsonian National Museum of American History Quebec Bridge Photograph Collection NMAH.AC.1026, exact IDS item id",
+          "rights_observation": "Smithsonian item Open Access license/rights not verified; institutional custody does not equate to CC0 permission",
+          "conditional_960px": null,
+          "catalog_px": null,
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false,
+          "visual_integrity_note": "Exact live published Smithsonian IDS delivery URL independently rendered in retriever; image size and transfer unknown. Smithsonian finding aid covers 1907–1965 photographs."
+        }
+      ],
+      "oversized_original_matches": [],
+      "actual_origin_http_status": null,
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_image_transfer_bytes": null,
+      "guest_broken": null,
+      "measured_cls": null,
+      "exact_photo_identity_verified": false,
+      "item_rights_cleared": false,
+      "cache_approved": false,
+      "wordpress_media_upload_approved": false,
+      "post_rewrite_approved": false,
+      "staging": {
+        "max_width_px": 960,
+        "no_upscale": true,
+        "require_same_scene": true,
+        "require_item_rights_clearance": true,
+        "require_full_size_access_for_detail": true,
+        "require_browser_proof_before_change": true
+      }
+    },
+    {
+      "slot": "276:3",
+      "post_id": 276,
+      "post_url": "https://finalvestige.com/2026/08/19/add-no-more-load-quebec-bridge/",
+      "frozen_source_url": "https://quebecblogue.com/files/2023/04/tragedie-pont-quebec.jpg",
+      "live_source_url": "https://quebecblogue.com/files/2023/04/tragedie-pont-quebec.jpg",
+      "source_equal": true,
+      "source_host": "quebecblogue.com",
+      "source_kind": "external",
+      "frozen_alt": "Historical view of the twisted Quebec Bridge wreckage in the St. Lawrence after the 1907 collapse.",
+      "live_alt": "Historical view of the twisted Quebec Bridge wreckage in the St. Lawrence after the 1907 collapse.",
+      "alt_equal": true,
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "registry_evidence": [
+        {
+          "batch": "quebec_276_six_1907_1916_archival_20261110",
+          "path": "qa/media-recovery/quebec_276_six_1907_1916_archival_20261110.json",
+          "blob_sha": "fd39d7d055007974ec2c6d0dda3dd850b7053395",
+          "retriever_only_observation": "WEB_RETRIEVER_520_ERROR_NOT_ORIGIN_STATUS",
+          "retriever_wrapper_code": 520
+        }
+      ],
+      "catalog_candidates": [
+        {
+          "catalog_url": null,
+          "authoritative_primary_url": "https://americanhistory.si.edu/collections/archival-collection/sova-nmah-ac-1026",
+          "source_authority": "Smithsonian NMAH collection is a thematic alternative ONLY; not matched to publisher photo",
+          "rights_observation": "quebecblogue.com photographer, original archival attribution and publishing rights unavailable; do not mirror or treat nearby archival scene as equivalent",
+          "conditional_960px": null,
+          "catalog_px": null,
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false,
+          "visual_integrity_note": "Exact stored publisher JPEG produced web tool 520 on November 10 2026. This is NOT a guest HTTP status. No identical-photo candidate found; no replacement decision."
+        }
+      ],
+      "oversized_original_matches": [],
+      "actual_origin_http_status": null,
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_image_transfer_bytes": null,
+      "guest_broken": null,
+      "measured_cls": null,
+      "exact_photo_identity_verified": false,
+      "item_rights_cleared": false,
+      "cache_approved": false,
+      "wordpress_media_upload_approved": false,
+      "post_rewrite_approved": false,
+      "staging": {
+        "max_width_px": 960,
+        "no_upscale": true,
+        "require_same_scene": true,
+        "require_item_rights_clearance": true,
+        "require_full_size_access_for_detail": true,
+        "require_browser_proof_before_change": true
+      }
+    },
+    {
+      "slot": "276:4",
+      "post_id": 276,
+      "post_url": "https://finalvestige.com/2026/08/19/add-no-more-load-quebec-bridge/",
+      "frozen_source_url": "https://cdn2.picryl.com/photo/1916/09/11/quebec-bridge-collapse-of-the-suspended-span-5a20eb-1024.jpg",
+      "live_source_url": "https://cdn2.picryl.com/photo/1916/09/11/quebec-bridge-collapse-of-the-suspended-span-5a20eb-1024.jpg",
+      "source_equal": true,
+      "source_host": "cdn2.picryl.com",
+      "source_kind": "external",
+      "frozen_alt": "Quebec Bridge center span after it fell during erection in September 1916.",
+      "live_alt": "Quebec Bridge center span after it fell during erection in September 1916.",
+      "alt_equal": true,
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "registry_evidence": [
+        {
+          "batch": "quebec_276_six_1907_1916_archival_20261110",
+          "path": "qa/media-recovery/quebec_276_six_1907_1916_archival_20261110.json",
+          "blob_sha": "fd39d7d055007974ec2c6d0dda3dd850b7053395",
+          "retriever_only_observation": "IMAGE_DISPLAYED_BY_WEB_RETRIEVER_NOT_GUEST",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "catalog_candidates": [
+        {
+          "catalog_url": "https://commons.wikimedia.org/wiki/Category:Bridge_collapses_in_Canada",
+          "authoritative_primary_url": "https://commons.wikimedia.org/wiki/File:Quebec_Bridge_Collapse_of_the_Suspended_Span.tif",
+          "source_authority": "Wikimedia Commons 1916 original TIFF category; PICRYL caption dates 11 September 1916",
+          "rights_observation": "PICRYL/Commons public-domain assertion only; photographer and both Canada/U.S. terms, original TIFF-to-JPEG relation unverified; no binary match",
+          "conditional_960px": [
+            960,
+            720
+          ],
+          "catalog_px": [
+            12000,
+            9000
+          ],
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false,
+          "visual_integrity_note": "Commons catalog TIFF 12000x9000 describes different file format. 960x720 is TIFF reference only, NOT confirmed for published PICRYL 1024 JPEG. Editorial chronology must distinctly label 1916."
+        }
+      ],
+      "oversized_original_matches": [],
+      "actual_origin_http_status": null,
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_image_transfer_bytes": null,
+      "guest_broken": null,
+      "measured_cls": null,
+      "exact_photo_identity_verified": false,
+      "item_rights_cleared": false,
+      "cache_approved": false,
+      "wordpress_media_upload_approved": false,
+      "post_rewrite_approved": false,
+      "staging": {
+        "max_width_px": 960,
+        "no_upscale": true,
+        "require_same_scene": true,
+        "require_item_rights_clearance": true,
+        "require_full_size_access_for_detail": true,
+        "require_browser_proof_before_change": true
+      }
+    },
+    {
+      "slot": "276:5",
+      "post_id": 276,
+      "post_url": "https://finalvestige.com/2026/08/19/add-no-more-load-quebec-bridge/",
+      "frozen_source_url": "https://historicbridges.org/quebec/quebec/complete_large.jpg",
+      "live_source_url": "https://historicbridges.org/quebec/quebec/complete_large.jpg",
+      "source_equal": true,
+      "source_host": "historicbridges.org",
+      "source_kind": "external",
+      "frozen_alt": "The completed Quebec Bridge across the St. Lawrence River.",
+      "live_alt": "The completed Quebec Bridge across the St. Lawrence River.",
+      "alt_equal": true,
+      "html_width_px": 1024,
+      "html_height_px": 607,
+      "literal_srcset": false,
+      "registry_evidence": [
+        {
+          "batch": "quebec_276_six_1907_1916_archival_20261110",
+          "path": "qa/media-recovery/quebec_276_six_1907_1916_archival_20261110.json",
+          "blob_sha": "fd39d7d055007974ec2c6d0dda3dd850b7053395",
+          "retriever_only_observation": "IMAGE_DISPLAYED_BY_WEB_RETRIEVER_NOT_GUEST",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "catalog_candidates": [
+        {
+          "catalog_url": "https://historicbridges.org/bridges/browser/?bridgebrowser=quebec/quebec/",
+          "authoritative_primary_url": "https://historicbridges.org/bridges/browser/?bridgebrowser=quebec/quebec/",
+          "source_authority": "HistoricBridges.org historical reproduction; site cites Transactions of Engineering Institute of Canada (1919) for completed bridge image in its narrative",
+          "rights_observation": "Original photograph identity and publication/copyright not item-verified; third-party reproduction under compilation's terms remains hold",
+          "conditional_960px": null,
+          "catalog_px": null,
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false,
+          "visual_integrity_note": "Stored HTML width 1024 height 607 are not native dimensions; historical scene belongs to completed 1917 bridge, not first 1907 structure."
+        }
+      ],
+      "oversized_original_matches": [],
+      "actual_origin_http_status": null,
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_image_transfer_bytes": null,
+      "guest_broken": null,
+      "measured_cls": null,
+      "exact_photo_identity_verified": false,
+      "item_rights_cleared": false,
+      "cache_approved": false,
+      "wordpress_media_upload_approved": false,
+      "post_rewrite_approved": false,
+      "staging": {
+        "max_width_px": 960,
+        "no_upscale": true,
+        "require_same_scene": true,
+        "require_item_rights_clearance": true,
+        "require_full_size_access_for_detail": true,
+        "require_browser_proof_before_change": true
+      }
+    },
+    {
+      "slot": "274:0",
+      "post_id": 274,
+      "post_url": "https://finalvestige.com/2026/08/19/twenty-four-feet-from-air-uss-tang/",
+      "frozen_source_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/USS_Tang_%28SS-306%29_off_the_Mare_Island_Naval_Shipyard%2C_California_%28USA%29%2C_2_December_1943_%28NH_42273%29.jpg/1280px-USS_Tang_%28SS-306%29_off_the_Mare_Island_Naval_Shipyard%2C_California_%28USA%29%2C_2_December_1943_%28NH_42273%29.jpg",
+      "live_source_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/USS_Tang_%28SS-306%29_off_the_Mare_Island_Naval_Shipyard%2C_California_%28USA%29%2C_2_December_1943_%28NH_42273%29.jpg/1280px-USS_Tang_%28SS-306%29_off_the_Mare_Island_Naval_Shipyard%2C_California_%28USA%29%2C_2_December_1943_%28NH_42273%29.jpg",
+      "source_equal": true,
+      "source_host": "upload.wikimedia.org",
+      "source_kind": "external",
+      "frozen_alt": "USS Tang SS-306 underway off Mare Island Navy Yard on December 2, 1943.",
+      "live_alt": "USS Tang SS-306 underway off Mare Island Navy Yard on December 2, 1943.",
+      "alt_equal": true,
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "registry_evidence": [
+        {
+          "batch": "final14",
+          "path": "qa/media-recovery/remaining_14_all_primary_provenance_live_20261110.json",
+          "blob_sha": "85bdb11ff744e41750c89974249ddd12fc090c38",
+          "retriever_only_observation": "IMAGE_DISPLAYED",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "catalog_candidates": [
+        {
+          "catalog_url": "https://www.history.navy.mil/content/history/nhhc/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/NH-42000/nh-42273-uss-tang--ss-306-.html",
+          "authoritative_primary_url": "https://www.history.navy.mil/content/history/nhhc/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/NH-42000/nh-42273-uss-tang--ss-306-.html",
+          "source_authority": "Naval History and Heritage Command, NH 42273",
+          "rights_observation": "NHHC describes official U.S. Navy photograph; Commons federal-government public-domain claim. Confirm published file's provenance/version before caching.",
+          "conditional_960px": [
+            960,
+            587
+          ],
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "oversized_original_matches": [],
+      "actual_origin_http_status": null,
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_image_transfer_bytes": null,
+      "guest_broken": null,
+      "measured_cls": null,
+      "exact_photo_identity_verified": false,
+      "item_rights_cleared": false,
+      "cache_approved": false,
+      "wordpress_media_upload_approved": false,
+      "post_rewrite_approved": false,
+      "staging": {
+        "max_width_px": 960,
+        "no_upscale": true,
+        "require_same_scene": true,
+        "require_item_rights_clearance": true,
+        "require_full_size_access_for_detail": true,
+        "require_browser_proof_before_change": true
+      }
+    },
+    {
+      "slot": "274:1",
+      "post_id": 274,
+      "post_url": "https://finalvestige.com/2026/08/19/twenty-four-feet-from-air-uss-tang/",
+      "frozen_source_url": "https://www.history.navy.mil/content/history/nhhc/research/library/online-reading-room/title-list-alphabetically/u/united-states-submarine-losses/tang-ss-306/_jcr_content/body/media_asset_3/image.img.jpg/1485804525424.jpg",
+      "live_source_url": "https://www.history.navy.mil/content/history/nhhc/research/library/online-reading-room/title-list-alphabetically/u/united-states-submarine-losses/tang-ss-306/_jcr_content/body/media_asset_3/image.img.jpg/1485804525424.jpg",
+      "source_equal": true,
+      "source_host": "www.history.navy.mil",
+      "source_kind": "external",
+      "frozen_alt": "Richard O'Kane with twenty-two American aircrewmen rescued by USS Tang off Truk in May 1944.",
+      "live_alt": "Richard O'Kane with twenty-two American aircrewmen rescued by USS Tang off Truk in May 1944.",
+      "alt_equal": true,
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "registry_evidence": [
+        {
+          "batch": "navy7",
+          "path": "qa/media-recovery/navy_west_loch_tang_7_live_20261109.json",
+          "blob_sha": "86d4ed137fb27a2db7b77f11077461936fa53736",
+          "retriever_only_observation": "TOOL_WRAPPER_502",
+          "retriever_wrapper_code": 502
+        }
+      ],
+      "catalog_candidates": [
+        {
+          "catalog_url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nara-series/80-g/80-G-220000/80-g-227987-uss-tang--ss-306-.html",
+          "authoritative_primary_url": null,
+          "source_authority": null,
+          "rights_observation": "https://www.history.navy.mil/about-us/instructions-and-forms/obtain-duplications-of-records-and-photos.html",
+          "conditional_960px": [
+            960,
+            1163
+          ],
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "oversized_original_matches": [],
+      "actual_origin_http_status": null,
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_image_transfer_bytes": null,
+      "guest_broken": null,
+      "measured_cls": null,
+      "exact_photo_identity_verified": false,
+      "item_rights_cleared": false,
+      "cache_approved": false,
+      "wordpress_media_upload_approved": false,
+      "post_rewrite_approved": false,
+      "staging": {
+        "max_width_px": 960,
+        "no_upscale": true,
+        "require_same_scene": true,
+        "require_item_rights_clearance": true,
+        "require_full_size_access_for_detail": true,
+        "require_browser_proof_before_change": true
+      }
+    },
+    {
+      "slot": "274:2",
+      "post_id": 274,
+      "post_url": "https://finalvestige.com/2026/08/19/twenty-four-feet-from-air-uss-tang/",
+      "frozen_source_url": "https://www.history.navy.mil/content/history/nhhc/browse-by-topic/exploration-and-innovation/navy-torpedoes/_jcr_content/body/media_asset_1279725910/image.img.jpg/1701176168705.jpg",
+      "live_source_url": "https://www.history.navy.mil/content/history/nhhc/browse-by-topic/exploration-and-innovation/navy-torpedoes/_jcr_content/body/media_asset_1279725910/image.img.jpg/1701176168705.jpg",
+      "source_equal": true,
+      "source_host": "www.history.navy.mil",
+      "source_kind": "external",
+      "frozen_alt": "Mark 18-2 electric submarine torpedo photographed by the U.S. Navy during World War II.",
+      "live_alt": "Mark 18-2 electric submarine torpedo photographed by the U.S. Navy during World War II.",
+      "alt_equal": true,
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "registry_evidence": [
+        {
+          "batch": "navy7",
+          "path": "qa/media-recovery/navy_west_loch_tang_7_live_20261109.json",
+          "blob_sha": "86d4ed137fb27a2db7b77f11077461936fa53736",
+          "retriever_only_observation": "TOOL_WRAPPER_502",
+          "retriever_wrapper_code": 502
+        }
+      ],
+      "catalog_candidates": [
+        {
+          "catalog_url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/NH-84000/NH-84498.html",
+          "authoritative_primary_url": null,
+          "source_authority": null,
+          "rights_observation": "https://www.history.navy.mil/about-us/instructions-and-forms/obtain-duplications-of-records-and-photos.html",
+          "conditional_960px": [
+            960,
+            753
+          ],
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "oversized_original_matches": [],
+      "actual_origin_http_status": null,
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_image_transfer_bytes": null,
+      "guest_broken": null,
+      "measured_cls": null,
+      "exact_photo_identity_verified": false,
+      "item_rights_cleared": false,
+      "cache_approved": false,
+      "wordpress_media_upload_approved": false,
+      "post_rewrite_approved": false,
+      "staging": {
+        "max_width_px": 960,
+        "no_upscale": true,
+        "require_same_scene": true,
+        "require_item_rights_clearance": true,
+        "require_full_size_access_for_detail": true,
+        "require_browser_proof_before_change": true
+      }
+    },
+    {
+      "slot": "274:3",
+      "post_id": 274,
+      "post_url": "https://finalvestige.com/2026/08/19/twenty-four-feet-from-air-uss-tang/",
+      "frozen_source_url": "https://warfarehistorynetwork.com/wp-content/uploads/W-Profile-4-HT-May10.jpg",
+      "live_source_url": "https://warfarehistorynetwork.com/wp-content/uploads/W-Profile-4-HT-May10.jpg",
+      "source_equal": true,
+      "source_host": "warfarehistorynetwork.com",
+      "source_kind": "external",
+      "frozen_alt": "U.S. Navy submariner demonstrating the Momsen escape lung and submarine escape hatch during trials in July 1930.",
+      "live_alt": "U.S. Navy submariner demonstrating the Momsen escape lung and submarine escape hatch during trials in July 1930.",
+      "alt_equal": true,
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "registry_evidence": [
+        {
+          "batch": "final14",
+          "path": "qa/media-recovery/remaining_14_all_primary_provenance_live_20261110.json",
+          "blob_sha": "85bdb11ff744e41750c89974249ddd12fc090c38",
+          "retriever_only_observation": "RETRIEVER_UNAVAILABLE",
+          "retriever_wrapper_code": "Internal Error"
+        }
+      ],
+      "catalog_candidates": [
+        {
+          "catalog_url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/NH-45000/NH-45641.html",
+          "authoritative_primary_url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/NH-45000/NH-45641.html",
+          "source_authority": "NHHC NH 45641; V-5 crewman A.L. Rosenkotter at after escape hatch, July 1930",
+          "rights_observation": "NHHC catalog identifies archival Navy photo; published Warfare History derivative is not proven identical/version-authorized. Verify photograph and rights before localization.",
+          "conditional_960px": null,
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "oversized_original_matches": [],
+      "actual_origin_http_status": null,
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_image_transfer_bytes": null,
+      "guest_broken": null,
+      "measured_cls": null,
+      "exact_photo_identity_verified": false,
+      "item_rights_cleared": false,
+      "cache_approved": false,
+      "wordpress_media_upload_approved": false,
+      "post_rewrite_approved": false,
+      "staging": {
+        "max_width_px": 960,
+        "no_upscale": true,
+        "require_same_scene": true,
+        "require_item_rights_clearance": true,
+        "require_full_size_access_for_detail": true,
+        "require_browser_proof_before_change": true
+      }
+    },
+    {
+      "slot": "274:4",
+      "post_id": 274,
+      "post_url": "https://finalvestige.com/2026/08/19/twenty-four-feet-from-air-uss-tang/",
+      "frozen_source_url": "https://www.history.navy.mil/bin/imageDownload?image=%2Fcontent%2Fdam%2Fmuseums%2Fnmusn%2FPhotography%2FNARA+II%2F80-G%2F80-G-300000%2F80-G-344565.tif&rendition=cq5dam.web.1280.1280.jpeg",
+      "live_source_url": "https://www.history.navy.mil/bin/imageDownload?image=%2Fcontent%2Fdam%2Fmuseums%2Fnmusn%2FPhotography%2FNARA+II%2F80-G%2F80-G-300000%2F80-G-344565.tif&amp;rendition=cq5dam.web.1280.1280.jpeg",
+      "source_equal": true,
+      "source_host": "www.history.navy.mil",
+      "source_kind": "external",
+      "frozen_alt": "USS Tang commander Richard O'Kane after liberation from Japanese captivity in September 1945.",
+      "live_alt": "USS Tang commander Richard O'Kane after liberation from Japanese captivity in September 1945.",
+      "alt_equal": true,
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "registry_evidence": [
+        {
+          "batch": "navy7",
+          "path": "qa/media-recovery/navy_west_loch_tang_7_live_20261109.json",
+          "blob_sha": "86d4ed137fb27a2db7b77f11077461936fa53736",
+          "retriever_only_observation": "TOOL_WRAPPER_502",
+          "retriever_wrapper_code": 502
+        }
+      ],
+      "catalog_candidates": [
+        {
+          "catalog_url": "https://www.history.navy.mil/content/history/museums/nmusn/explore/photography/wwii/wwii-pacific/japanese-surrender/allied-prisoners-of-war/80-g-344565.html",
+          "authoritative_primary_url": null,
+          "source_authority": null,
+          "rights_observation": "https://www.history.navy.mil/about-us/instructions-and-forms/obtain-duplications-of-records-and-photos.html",
+          "conditional_960px": [
+            960,
+            1271
+          ],
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "oversized_original_matches": [],
+      "actual_origin_http_status": null,
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_image_transfer_bytes": null,
+      "guest_broken": null,
+      "measured_cls": null,
+      "exact_photo_identity_verified": false,
+      "item_rights_cleared": false,
+      "cache_approved": false,
+      "wordpress_media_upload_approved": false,
+      "post_rewrite_approved": false,
+      "staging": {
+        "max_width_px": 960,
+        "no_upscale": true,
+        "require_same_scene": true,
+        "require_item_rights_clearance": true,
+        "require_full_size_access_for_detail": true,
+        "require_browser_proof_before_change": true
+      }
+    },
+    {
+      "slot": "274:5",
+      "post_id": 274,
+      "post_url": "https://finalvestige.com/2026/08/19/twenty-four-feet-from-air-uss-tang/",
+      "frozen_source_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Vought_OS2U_Kingfisher_with_rescued_airmen_off_Truk_on_1_May_1944_%2880-G-227991%29.jpg/1280px-Vought_OS2U_Kingfisher_with_rescued_airmen_off_Truk_on_1_May_1944_%2880-G-227991%29.jpg",
+      "live_source_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Vought_OS2U_Kingfisher_with_rescued_airmen_off_Truk_on_1_May_1944_%2880-G-227991%29.jpg/1280px-Vought_OS2U_Kingfisher_with_rescued_airmen_off_Truk_on_1_May_1944_%2880-G-227991%29.jpg",
+      "source_equal": true,
+      "source_host": "upload.wikimedia.org",
+      "source_kind": "external",
+      "frozen_alt": "Overloaded Vought OS2U Kingfisher with rescued American airmen off Truk awaiting pickup by USS Tang on May 1, 1944.",
+      "live_alt": "Overloaded Vought OS2U Kingfisher with rescued American airmen off Truk awaiting pickup by USS Tang on May 1, 1944.",
+      "alt_equal": true,
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "registry_evidence": [
+        {
+          "batch": "final14",
+          "path": "qa/media-recovery/remaining_14_all_primary_provenance_live_20261110.json",
+          "blob_sha": "85bdb11ff744e41750c89974249ddd12fc090c38",
+          "retriever_only_observation": "IMAGE_DISPLAYED",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "catalog_candidates": [
+        {
+          "catalog_url": "https://commons.wikimedia.org/wiki/File:Vought_OS2U_Kingfisher_with_rescued_airmen_off_Truk_on_1_May_1944_(80-G-227991).jpg",
+          "authoritative_primary_url": "https://commons.wikimedia.org/wiki/File:Vought_OS2U_Kingfisher_with_rescued_airmen_off_Truk_on_1_May_1944_(80-G-227991).jpg",
+          "source_authority": "U.S. Navy/National Archives photograph 80-G-227991, Commons catalog",
+          "rights_observation": "Commons marks photo official U.S. Navy work, public domain in US; verify specific Commons derivative and provenance before rehosting.",
+          "conditional_960px": [
+            960,
+            703
+          ],
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "oversized_original_matches": [],
+      "actual_origin_http_status": null,
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_image_transfer_bytes": null,
+      "guest_broken": null,
+      "measured_cls": null,
+      "exact_photo_identity_verified": false,
+      "item_rights_cleared": false,
+      "cache_approved": false,
+      "wordpress_media_upload_approved": false,
+      "post_rewrite_approved": false,
+      "staging": {
+        "max_width_px": 960,
+        "no_upscale": true,
+        "require_same_scene": true,
+        "require_item_rights_clearance": true,
+        "require_full_size_access_for_detail": true,
+        "require_browser_proof_before_change": true
+      }
+    },
+    {
+      "slot": "274:6",
+      "post_id": 274,
+      "post_url": "https://finalvestige.com/2026/08/19/twenty-four-feet-from-air-uss-tang/",
+      "frozen_source_url": "https://www.warhistoryonline.com/wp-content/uploads/sites/64/2016/04/uss_tang_ss-306_rescues_airmen_off_truk_in_1944-640x432.jpg",
+      "live_source_url": "https://www.warhistoryonline.com/wp-content/uploads/sites/64/2016/04/uss_tang_ss-306_rescues_airmen_off_truk_in_1944-640x432.jpg",
+      "source_equal": true,
+      "source_host": "www.warhistoryonline.com",
+      "source_kind": "external",
+      "frozen_alt": "USS Tang crewmen taking a rescued American airman aboard the submarine off Truk in May 1944.",
+      "live_alt": "USS Tang crewmen taking a rescued American airman aboard the submarine off Truk in May 1944.",
+      "alt_equal": true,
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "registry_evidence": [
+        {
+          "batch": "final14",
+          "path": "qa/media-recovery/remaining_14_all_primary_provenance_live_20261110.json",
+          "blob_sha": "85bdb11ff744e41750c89974249ddd12fc090c38",
+          "retriever_only_observation": "RETRIEVER_UNAVAILABLE",
+          "retriever_wrapper_code": "Internal Error"
+        }
+      ],
+      "catalog_candidates": [
+        {
+          "catalog_url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nara-series/80-g/80-G-220000/80-G-227989.html",
+          "authoritative_primary_url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nara-series/80-g/80-G-220000/80-G-227989.html",
+          "source_authority": "NHHC/NARA official Navy photo 80-G-227989",
+          "rights_observation": "NHHC describes official U.S. Navy photo; War History Online rendition unverified. Do not copy the secondary publisher's image; evaluate archival source rights and exact identity.",
+          "conditional_960px": [
+            960,
+            780
+          ],
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "oversized_original_matches": [],
+      "actual_origin_http_status": null,
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_image_transfer_bytes": null,
+      "guest_broken": null,
+      "measured_cls": null,
+      "exact_photo_identity_verified": false,
+      "item_rights_cleared": false,
+      "cache_approved": false,
+      "wordpress_media_upload_approved": false,
+      "post_rewrite_approved": false,
+      "staging": {
+        "max_width_px": 960,
+        "no_upscale": true,
+        "require_same_scene": true,
+        "require_item_rights_clearance": true,
+        "require_full_size_access_for_detail": true,
+        "require_browser_proof_before_change": true
+      }
+    },
+    {
+      "slot": "269:0",
+      "post_id": 269,
+      "post_url": "https://finalvestige.com/2026/08/18/the-watch-lost-its-hands-halifax-explosion/",
+      "frozen_source_url": "https://finalvestige.com/wp-content/uploads/2026/10/halifax-explosion-blast-cloud-1917.jpg",
+      "live_source_url": "https://finalvestige.com/wp-content/uploads/2026/10/halifax-explosion-blast-cloud-1917.jpg",
+      "source_equal": true,
+      "source_host": "finalvestige.com",
+      "source_kind": "first_party",
+      "frozen_alt": "The blast cloud rising above Halifax Harbour after the Mont-Blanc exploded on December 6, 1917.",
+      "live_alt": "The blast cloud rising above Halifax Harbour after the Mont-Blanc exploded on December 6, 1917.",
+      "alt_equal": true,
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "registry_evidence": [],
+      "catalog_candidates": [],
+      "oversized_original_matches": [],
+      "actual_origin_http_status": null,
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_image_transfer_bytes": null,
+      "guest_broken": null,
+      "measured_cls": null,
+      "exact_photo_identity_verified": false,
+      "item_rights_cleared": false,
+      "cache_approved": false,
+      "wordpress_media_upload_approved": false,
+      "post_rewrite_approved": false,
+      "staging": {
+        "max_width_px": 960,
+        "no_upscale": true,
+        "require_same_scene": true,
+        "require_item_rights_clearance": true,
+        "require_full_size_access_for_detail": true,
+        "require_browser_proof_before_change": true
+      }
+    },
+    {
+      "slot": "269:1",
+      "post_id": 269,
+      "post_url": "https://finalvestige.com/2026/08/18/the-watch-lost-its-hands-halifax-explosion/",
+      "frozen_source_url": "https://finalvestige.com/wp-content/uploads/2026/10/halifax-explosion-map.png",
+      "live_source_url": "https://finalvestige.com/wp-content/uploads/2026/10/halifax-explosion-map.png",
+      "source_equal": true,
+      "source_host": "finalvestige.com",
+      "source_kind": "first_party",
+      "frozen_alt": "Map of Halifax Harbour showing the 1917 coastline, the area destroyed by the explosion and the tsunami zone.",
+      "live_alt": "Map of Halifax Harbour showing the 1917 coastline, the area destroyed by the explosion and the tsunami zone.",
+      "alt_equal": true,
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "registry_evidence": [],
+      "catalog_candidates": [],
+      "oversized_original_matches": [
+        {
+          "media_id": 1714,
+          "original_url": "https://finalvestige.com/wp-content/uploads/2026/10/halifax-explosion-map.png",
+          "stored_original_bytes": 1543002,
+          "native_px": [
+            1280,
+            1280
+          ],
+          "conditional_960px": [
+            960,
+            960
+          ],
+          "generated_subsizes": 5,
+          "rights_observation": "ORIGINAL_MAP_AUTHOR_RIGHTS_UNVERIFIED",
+          "real_wire_bytes": null,
+          "derivative_authorized": false
+        }
+      ],
+      "actual_origin_http_status": null,
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_image_transfer_bytes": null,
+      "guest_broken": null,
+      "measured_cls": null,
+      "exact_photo_identity_verified": false,
+      "item_rights_cleared": false,
+      "cache_approved": false,
+      "wordpress_media_upload_approved": false,
+      "post_rewrite_approved": false,
+      "staging": {
+        "max_width_px": 960,
+        "no_upscale": true,
+        "require_same_scene": true,
+        "require_item_rights_clearance": true,
+        "require_full_size_access_for_detail": true,
+        "require_browser_proof_before_change": true
+      }
+    },
+    {
+      "slot": "269:2",
+      "post_id": 269,
+      "post_url": "https://finalvestige.com/2026/08/18/the-watch-lost-its-hands-halifax-explosion/",
+      "frozen_source_url": "https://finalvestige.com/wp-content/uploads/2026/10/halifax-explosion-campbell-road.jpg",
+      "live_source_url": "https://finalvestige.com/wp-content/uploads/2026/10/halifax-explosion-campbell-road.jpg",
+      "source_equal": true,
+      "source_host": "finalvestige.com",
+      "source_kind": "first_party",
+      "frozen_alt": "Wrecked homes on Campbell Road in Halifax's north end after the December 1917 explosion.",
+      "live_alt": "Wrecked homes on Campbell Road in Halifax's north end after the December 1917 explosion.",
+      "alt_equal": true,
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "registry_evidence": [],
+      "catalog_candidates": [],
+      "oversized_original_matches": [],
+      "actual_origin_http_status": null,
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_image_transfer_bytes": null,
+      "guest_broken": null,
+      "measured_cls": null,
+      "exact_photo_identity_verified": false,
+      "item_rights_cleared": false,
+      "cache_approved": false,
+      "wordpress_media_upload_approved": false,
+      "post_rewrite_approved": false,
+      "staging": {
+        "max_width_px": 960,
+        "no_upscale": true,
+        "require_same_scene": true,
+        "require_item_rights_clearance": true,
+        "require_full_size_access_for_detail": true,
+        "require_browser_proof_before_change": true
+      }
+    },
+    {
+      "slot": "269:3",
+      "post_id": 269,
+      "post_url": "https://finalvestige.com/2026/08/18/the-watch-lost-its-hands-halifax-explosion/",
+      "frozen_source_url": "https://finalvestige.com/wp-content/uploads/2026/10/halifax-explosion-damaged-houses.jpg",
+      "live_source_url": "https://finalvestige.com/wp-content/uploads/2026/10/halifax-explosion-damaged-houses.jpg",
+      "source_equal": true,
+      "source_host": "finalvestige.com",
+      "source_kind": "first_party",
+      "frozen_alt": "Houses wrecked by the December 6, 1917 Halifax explosion.",
+      "live_alt": "Houses wrecked by the December 6, 1917 Halifax explosion.",
+      "alt_equal": true,
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "registry_evidence": [],
+      "catalog_candidates": [],
+      "oversized_original_matches": [],
+      "actual_origin_http_status": null,
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_image_transfer_bytes": null,
+      "guest_broken": null,
+      "measured_cls": null,
+      "exact_photo_identity_verified": false,
+      "item_rights_cleared": false,
+      "cache_approved": false,
+      "wordpress_media_upload_approved": false,
+      "post_rewrite_approved": false,
+      "staging": {
+        "max_width_px": 960,
+        "no_upscale": true,
+        "require_same_scene": true,
+        "require_item_rights_clearance": true,
+        "require_full_size_access_for_detail": true,
+        "require_browser_proof_before_change": true
+      }
+    },
+    {
+      "slot": "269:4",
+      "post_id": 269,
+      "post_url": "https://finalvestige.com/2026/08/18/the-watch-lost-its-hands-halifax-explosion/",
+      "frozen_source_url": "https://finalvestige.com/wp-content/uploads/2026/10/halifax-explosion-waterfront-panorama.jpg",
+      "live_source_url": "https://finalvestige.com/wp-content/uploads/2026/10/halifax-explosion-waterfront-panorama.jpg",
+      "source_equal": true,
+      "source_host": "finalvestige.com",
+      "source_kind": "first_party",
+      "frozen_alt": "Panoramic photograph of wrecked buildings along the Halifax waterfront after the December 1917 explosion.",
+      "live_alt": "Panoramic photograph of wrecked buildings along the Halifax waterfront after the December 1917 explosion.",
+      "alt_equal": true,
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "registry_evidence": [],
+      "catalog_candidates": [],
+      "oversized_original_matches": [],
+      "actual_origin_http_status": null,
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_image_transfer_bytes": null,
+      "guest_broken": null,
+      "measured_cls": null,
+      "exact_photo_identity_verified": false,
+      "item_rights_cleared": false,
+      "cache_approved": false,
+      "wordpress_media_upload_approved": false,
+      "post_rewrite_approved": false,
+      "staging": {
+        "max_width_px": 960,
+        "no_upscale": true,
+        "require_same_scene": true,
+        "require_item_rights_clearance": true,
+        "require_full_size_access_for_detail": true,
+        "require_browser_proof_before_change": true
+      }
+    },
+    {
+      "slot": "269:5",
+      "post_id": 269,
+      "post_url": "https://finalvestige.com/2026/08/18/the-watch-lost-its-hands-halifax-explosion/",
+      "frozen_source_url": "https://finalvestige.com/wp-content/uploads/2026/10/halifax-explosion-ymca-hospital.jpg",
+      "live_source_url": "https://finalvestige.com/wp-content/uploads/2026/10/halifax-explosion-ymca-hospital.jpg",
+      "source_equal": true,
+      "source_host": "finalvestige.com",
+      "source_kind": "first_party",
+      "frozen_alt": "Emergency relief hospital operating inside the YMCA on Barrington Street after the Halifax Explosion.",
+      "live_alt": "Emergency relief hospital operating inside the YMCA on Barrington Street after the Halifax Explosion.",
+      "alt_equal": true,
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "registry_evidence": [],
+      "catalog_candidates": [],
+      "oversized_original_matches": [],
+      "actual_origin_http_status": null,
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_image_transfer_bytes": null,
+      "guest_broken": null,
+      "measured_cls": null,
+      "exact_photo_identity_verified": false,
+      "item_rights_cleared": false,
+      "cache_approved": false,
+      "wordpress_media_upload_approved": false,
+      "post_rewrite_approved": false,
+      "staging": {
+        "max_width_px": 960,
+        "no_upscale": true,
+        "require_same_scene": true,
+        "require_item_rights_clearance": true,
+        "require_full_size_access_for_detail": true,
+        "require_browser_proof_before_change": true
+      }
+    },
+    {
+      "slot": "269:6",
+      "post_id": 269,
+      "post_url": "https://finalvestige.com/2026/08/18/the-watch-lost-its-hands-halifax-explosion/",
+      "frozen_source_url": "https://finalvestige.com/wp-content/uploads/2026/10/halifax-ferry-vincent-coleman.jpg",
+      "live_source_url": "https://finalvestige.com/wp-content/uploads/2026/10/halifax-ferry-vincent-coleman.jpg",
+      "source_equal": true,
+      "source_host": "finalvestige.com",
+      "source_kind": "first_party",
+      "frozen_alt": "Halifax Transit ferry Vincent Coleman arriving at the Halifax Ferry Terminal.",
+      "live_alt": "Halifax Transit ferry Vincent Coleman arriving at the Halifax Ferry Terminal.",
+      "alt_equal": true,
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "registry_evidence": [],
+      "catalog_candidates": [],
+      "oversized_original_matches": [],
+      "actual_origin_http_status": null,
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_image_transfer_bytes": null,
+      "guest_broken": null,
+      "measured_cls": null,
+      "exact_photo_identity_verified": false,
+      "item_rights_cleared": false,
+      "cache_approved": false,
+      "wordpress_media_upload_approved": false,
+      "post_rewrite_approved": false,
+      "staging": {
+        "max_width_px": 960,
+        "no_upscale": true,
+        "require_same_scene": true,
+        "require_item_rights_clearance": true,
+        "require_full_size_access_for_detail": true,
+        "require_browser_proof_before_change": true
+      }
+    },
+    {
+      "slot": "268:0",
+      "post_id": 268,
+      "post_url": "https://finalvestige.com/2026/08/18/they-painted-over-archimedes/",
+      "frozen_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Archimedes%20Palimpsest.jpg?width=1280",
+      "live_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Archimedes%20Palimpsest.jpg?width=1280",
+      "source_equal": true,
+      "source_host": "commons.wikimedia.org",
+      "source_kind": "wikimedia_redirect",
+      "frozen_alt": "Open page of the Archimedes Palimpsest showing the later prayer-book text written across older erased Greek mathematics and diagrams.",
+      "live_alt": "Open page of the Archimedes Palimpsest showing the later prayer-book text written across older erased Greek mathematics and diagrams.",
+      "alt_equal": true,
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "registry_evidence": [
+        {
+          "batch": "cross",
+          "path": "qa/media-recovery/cross_ledger_43_source_15_oversize_20261109.json",
+          "blob_sha": "8526557c7a5138e1ca22a347e3f9839503d48b2c",
+          "retriever_only_observation": "TOOL_INACCESSIBLE",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "catalog_candidates": [
+        {
+          "catalog_url": "https://commons.wikimedia.org/wiki/File:Archimedes_Palimpsest.jpg",
+          "authoritative_primary_url": null,
+          "source_authority": null,
+          "rights_observation": "COMMONS_PD_US_CLAIM",
+          "conditional_960px": [
+            665,
+            448
+          ],
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "oversized_original_matches": [],
+      "actual_origin_http_status": null,
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_image_transfer_bytes": null,
+      "guest_broken": null,
+      "measured_cls": null,
+      "exact_photo_identity_verified": false,
+      "item_rights_cleared": false,
+      "cache_approved": false,
+      "wordpress_media_upload_approved": false,
+      "post_rewrite_approved": false,
+      "staging": {
+        "max_width_px": 960,
+        "no_upscale": true,
+        "require_same_scene": true,
+        "require_item_rights_clearance": true,
+        "require_full_size_access_for_detail": true,
+        "require_browser_proof_before_change": true
+      }
+    },
+    {
+      "slot": "268:1",
+      "post_id": 268,
+      "post_url": "https://finalvestige.com/2026/08/18/they-painted-over-archimedes/",
+      "frozen_source_url": "https://archimedespalimpsest.org/assets/img/imaging_x8.jpg",
+      "live_source_url": "https://archimedespalimpsest.org/assets/img/imaging_x8.jpg",
+      "source_equal": true,
+      "source_host": "archimedespalimpsest.org",
+      "source_kind": "external",
+      "frozen_alt": "A forged painted page in the Archimedes Palimpsest covering older erased writing beneath the medieval prayer text.",
+      "live_alt": "A forged painted page in the Archimedes Palimpsest covering older erased writing beneath the medieval prayer text.",
+      "alt_equal": true,
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "registry_evidence": [
+        {
+          "batch": "cross",
+          "path": "qa/media-recovery/cross_ledger_43_source_15_oversize_20261109.json",
+          "blob_sha": "8526557c7a5138e1ca22a347e3f9839503d48b2c",
+          "retriever_only_observation": "WRAPPER_403",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "catalog_candidates": [
+        {
+          "catalog_url": "https://www.archimedespalimpsest.org/about/imaging/capture.php",
+          "authoritative_primary_url": null,
+          "source_authority": null,
+          "rights_observation": "PROJECT_SITE_STATIC_RIGHTS_UNVERIFIED",
+          "conditional_960px": null,
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "oversized_original_matches": [],
+      "actual_origin_http_status": null,
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_image_transfer_bytes": null,
+      "guest_broken": null,
+      "measured_cls": null,
+      "exact_photo_identity_verified": false,
+      "item_rights_cleared": false,
+      "cache_approved": false,
+      "wordpress_media_upload_approved": false,
+      "post_rewrite_approved": false,
+      "staging": {
+        "max_width_px": 960,
+        "no_upscale": true,
+        "require_same_scene": true,
+        "require_item_rights_clearance": true,
+        "require_full_size_access_for_detail": true,
+        "require_browser_proof_before_change": true
+      }
+    },
+    {
+      "slot": "268:2",
+      "post_id": 268,
+      "post_url": "https://finalvestige.com/2026/08/18/they-painted-over-archimedes/",
+      "frozen_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/002r-001v%20Arch13r%20Sinar%20uvblue%20norm8%20Euchologion%20up%20%289737603804%29.jpg?width=960",
+      "live_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/002r-001v%20Arch13r%20Sinar%20uvblue%20norm8%20Euchologion%20up%20%289737603804%29.jpg?width=960",
+      "source_equal": true,
+      "source_host": "commons.wikimedia.org",
+      "source_kind": "wikimedia_redirect",
+      "frozen_alt": "Ultraviolet image of a folio from the Archimedes Palimpsest showing the medieval prayer text and faint erased undertext.",
+      "live_alt": "Ultraviolet image of a folio from the Archimedes Palimpsest showing the medieval prayer text and faint erased undertext.",
+      "alt_equal": true,
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "registry_evidence": [
+        {
+          "batch": "cross",
+          "path": "qa/media-recovery/cross_ledger_43_source_15_oversize_20261109.json",
+          "blob_sha": "8526557c7a5138e1ca22a347e3f9839503d48b2c",
+          "retriever_only_observation": "TOOL_INACCESSIBLE",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "catalog_candidates": [
+        {
+          "catalog_url": "https://commons.wikimedia.org/wiki/File:002r-001v_Arch13r_Sinar_uvblue_norm8_Euchologion_up_(9737603804).jpg",
+          "authoritative_primary_url": null,
+          "source_authority": null,
+          "rights_observation": "COMMONS_CC_BY_2_0_PROJECT_CC_BY_3_0_CONFLICT",
+          "conditional_960px": [
+            960,
+            720
+          ],
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "oversized_original_matches": [],
+      "actual_origin_http_status": null,
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_image_transfer_bytes": null,
+      "guest_broken": null,
+      "measured_cls": null,
+      "exact_photo_identity_verified": false,
+      "item_rights_cleared": false,
+      "cache_approved": false,
+      "wordpress_media_upload_approved": false,
+      "post_rewrite_approved": false,
+      "staging": {
+        "max_width_px": 960,
+        "no_upscale": true,
+        "require_same_scene": true,
+        "require_item_rights_clearance": true,
+        "require_full_size_access_for_detail": true,
+        "require_browser_proof_before_change": true
+      }
+    },
+    {
+      "slot": "268:3",
+      "post_id": 268,
+      "post_url": "https://finalvestige.com/2026/08/18/they-painted-over-archimedes/",
+      "frozen_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/017r-016v%20Heiberg-UV-blue%20%289737623542%29.jpg?width=960",
+      "live_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/017r-016v%20Heiberg-UV-blue%20%289737623542%29.jpg?width=960",
+      "source_equal": true,
+      "source_host": "commons.wikimedia.org",
+      "source_kind": "wikimedia_redirect",
+      "frozen_alt": "Image of an Archimedes Palimpsest folio associated with Heiberg's early twentieth-century study and modern ultraviolet imaging.",
+      "live_alt": "Image of an Archimedes Palimpsest folio associated with Heiberg's early twentieth-century study and modern ultraviolet imaging.",
+      "alt_equal": true,
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "registry_evidence": [
+        {
+          "batch": "cross",
+          "path": "qa/media-recovery/cross_ledger_43_source_15_oversize_20261109.json",
+          "blob_sha": "8526557c7a5138e1ca22a347e3f9839503d48b2c",
+          "retriever_only_observation": "TOOL_INACCESSIBLE",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "catalog_candidates": [
+        {
+          "catalog_url": "https://commons.wikimedia.org/wiki/File:017r-016v_Heiberg-UV-blue_(9737623542).jpg",
+          "authoritative_primary_url": null,
+          "source_authority": null,
+          "rights_observation": "COMMONS_CC_BY_2_0_PROJECT_CC_BY_3_0_CONFLICT",
+          "conditional_960px": [
+            960,
+            1280
+          ],
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "oversized_original_matches": [],
+      "actual_origin_http_status": null,
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_image_transfer_bytes": null,
+      "guest_broken": null,
+      "measured_cls": null,
+      "exact_photo_identity_verified": false,
+      "item_rights_cleared": false,
+      "cache_approved": false,
+      "wordpress_media_upload_approved": false,
+      "post_rewrite_approved": false,
+      "staging": {
+        "max_width_px": 960,
+        "no_upscale": true,
+        "require_same_scene": true,
+        "require_item_rights_clearance": true,
+        "require_full_size_access_for_detail": true,
+        "require_browser_proof_before_change": true
+      }
+    },
+    {
+      "slot": "268:4",
+      "post_id": 268,
+      "post_url": "https://finalvestige.com/2026/08/18/they-painted-over-archimedes/",
+      "frozen_source_url": "https://www.archimedespalimpsest.org/assets/img/imagecapture-capture2b.jpg",
+      "live_source_url": "https://www.archimedespalimpsest.org/assets/img/imagecapture-capture2b.jpg",
+      "source_equal": true,
+      "source_host": "www.archimedespalimpsest.org",
+      "source_kind": "external",
+      "frozen_alt": "A conservator handling a separated Archimedes Palimpsest leaf during preparation for imaging.",
+      "live_alt": "A conservator handling a separated Archimedes Palimpsest leaf during preparation for imaging.",
+      "alt_equal": true,
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "registry_evidence": [
+        {
+          "batch": "cross",
+          "path": "qa/media-recovery/cross_ledger_43_source_15_oversize_20261109.json",
+          "blob_sha": "8526557c7a5138e1ca22a347e3f9839503d48b2c",
+          "retriever_only_observation": "WRAPPER_403",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "catalog_candidates": [
+        {
+          "catalog_url": "https://www.archimedespalimpsest.org/about/imaging/capture.php",
+          "authoritative_primary_url": null,
+          "source_authority": null,
+          "rights_observation": "PROJECT_SITE_STATIC_RIGHTS_UNVERIFIED",
+          "conditional_960px": null,
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "oversized_original_matches": [],
+      "actual_origin_http_status": null,
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_image_transfer_bytes": null,
+      "guest_broken": null,
+      "measured_cls": null,
+      "exact_photo_identity_verified": false,
+      "item_rights_cleared": false,
+      "cache_approved": false,
+      "wordpress_media_upload_approved": false,
+      "post_rewrite_approved": false,
+      "staging": {
+        "max_width_px": 960,
+        "no_upscale": true,
+        "require_same_scene": true,
+        "require_item_rights_clearance": true,
+        "require_full_size_access_for_detail": true,
+        "require_browser_proof_before_change": true
+      }
+    },
+    {
+      "slot": "268:5",
+      "post_id": 268,
+      "post_url": "https://finalvestige.com/2026/08/18/they-painted-over-archimedes/",
+      "frozen_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/017r-016v%20Arch07r%20Sinar%20pseudo%20no-veil%20%289734386225%29.jpg?width=960",
+      "live_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/017r-016v%20Arch07r%20Sinar%20pseudo%20no-veil%20%289734386225%29.jpg?width=960",
+      "source_equal": true,
+      "source_host": "commons.wikimedia.org",
+      "source_kind": "wikimedia_redirect",
+      "frozen_alt": "Processed multispectral image of an Archimedes Palimpsest folio making the erased undertext more legible beneath the prayer book.",
+      "live_alt": "Processed multispectral image of an Archimedes Palimpsest folio making the erased undertext more legible beneath the prayer book.",
+      "alt_equal": true,
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "registry_evidence": [
+        {
+          "batch": "cross",
+          "path": "qa/media-recovery/cross_ledger_43_source_15_oversize_20261109.json",
+          "blob_sha": "8526557c7a5138e1ca22a347e3f9839503d48b2c",
+          "retriever_only_observation": "TOOL_INACCESSIBLE",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "catalog_candidates": [
+        {
+          "catalog_url": "https://commons.wikimedia.org/wiki/File:017r-016v_Arch07r_Sinar_pseudo_no-veil_(9734386225).jpg",
+          "authoritative_primary_url": null,
+          "source_authority": null,
+          "rights_observation": "COMMONS_CC_BY_2_0_PROJECT_CC_BY_3_0_CONFLICT",
+          "conditional_960px": [
+            960,
+            1280
+          ],
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "oversized_original_matches": [],
+      "actual_origin_http_status": null,
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_image_transfer_bytes": null,
+      "guest_broken": null,
+      "measured_cls": null,
+      "exact_photo_identity_verified": false,
+      "item_rights_cleared": false,
+      "cache_approved": false,
+      "wordpress_media_upload_approved": false,
+      "post_rewrite_approved": false,
+      "staging": {
+        "max_width_px": 960,
+        "no_upscale": true,
+        "require_same_scene": true,
+        "require_item_rights_clearance": true,
+        "require_full_size_access_for_detail": true,
+        "require_browser_proof_before_change": true
+      }
+    },
+    {
+      "slot": "268:6",
+      "post_id": 268,
+      "post_url": "https://finalvestige.com/2026/08/18/they-painted-over-archimedes/",
+      "frozen_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/028v-021r%20Arch08r%20XRF%20FeFront%20registered%20%289734104759%29.jpg?width=1280",
+      "live_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/028v-021r%20Arch08r%20XRF%20FeFront%20registered%20%289734104759%29.jpg?width=1280",
+      "source_equal": true,
+      "source_host": "commons.wikimedia.org",
+      "source_kind": "wikimedia_redirect",
+      "frozen_alt": "X-ray fluorescence iron map of an Archimedes Palimpsest folio revealing erased writing through elemental imaging.",
+      "live_alt": "X-ray fluorescence iron map of an Archimedes Palimpsest folio revealing erased writing through elemental imaging.",
+      "alt_equal": true,
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "registry_evidence": [
+        {
+          "batch": "cross",
+          "path": "qa/media-recovery/cross_ledger_43_source_15_oversize_20261109.json",
+          "blob_sha": "8526557c7a5138e1ca22a347e3f9839503d48b2c",
+          "retriever_only_observation": "TOOL_INACCESSIBLE",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "catalog_candidates": [
+        {
+          "catalog_url": "https://commons.wikimedia.org/wiki/File:028v-021r_Arch08r_XRF_FeFront_registered_(9734104759).jpg",
+          "authoritative_primary_url": null,
+          "source_authority": null,
+          "rights_observation": "COMMONS_CC_BY_2_0_PROJECT_CC_BY_3_0_CONFLICT",
+          "conditional_960px": [
+            960,
+            1280
+          ],
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "oversized_original_matches": [],
+      "actual_origin_http_status": null,
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_image_transfer_bytes": null,
+      "guest_broken": null,
+      "measured_cls": null,
+      "exact_photo_identity_verified": false,
+      "item_rights_cleared": false,
+      "cache_approved": false,
+      "wordpress_media_upload_approved": false,
+      "post_rewrite_approved": false,
+      "staging": {
+        "max_width_px": 960,
+        "no_upscale": true,
+        "require_same_scene": true,
+        "require_item_rights_clearance": true,
+        "require_full_size_access_for_detail": true,
+        "require_browser_proof_before_change": true
+      }
+    },
+    {
+      "slot": "268:7",
+      "post_id": 268,
+      "post_url": "https://finalvestige.com/2026/08/18/they-painted-over-archimedes/",
+      "frozen_source_url": "https://archimedespalimpsest.org/assets/img/imaging_x12.jpg",
+      "live_source_url": "https://archimedespalimpsest.org/assets/img/imaging_x12.jpg",
+      "source_equal": true,
+      "source_host": "archimedespalimpsest.org",
+      "source_kind": "external",
+      "frozen_alt": "An Archimedes Palimpsest leaf mounted vertically on a scanning stage for X-ray fluorescence imaging at Stanford Synchrotron Radiation Laboratory.",
+      "live_alt": "An Archimedes Palimpsest leaf mounted vertically on a scanning stage for X-ray fluorescence imaging at Stanford Synchrotron Radiation Laboratory.",
+      "alt_equal": true,
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "registry_evidence": [
+        {
+          "batch": "cross",
+          "path": "qa/media-recovery/cross_ledger_43_source_15_oversize_20261109.json",
+          "blob_sha": "8526557c7a5138e1ca22a347e3f9839503d48b2c",
+          "retriever_only_observation": "WRAPPER_403",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "catalog_candidates": [
+        {
+          "catalog_url": "https://www.archimedespalimpsest.org/about/imaging/capture.php",
+          "authoritative_primary_url": null,
+          "source_authority": null,
+          "rights_observation": "PROJECT_SITE_STATIC_RIGHTS_UNVERIFIED",
+          "conditional_960px": null,
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "oversized_original_matches": [],
+      "actual_origin_http_status": null,
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_image_transfer_bytes": null,
+      "guest_broken": null,
+      "measured_cls": null,
+      "exact_photo_identity_verified": false,
+      "item_rights_cleared": false,
+      "cache_approved": false,
+      "wordpress_media_upload_approved": false,
+      "post_rewrite_approved": false,
+      "staging": {
+        "max_width_px": 960,
+        "no_upscale": true,
+        "require_same_scene": true,
+        "require_item_rights_clearance": true,
+        "require_full_size_access_for_detail": true,
+        "require_browser_proof_before_change": true
+      }
+    },
+    {
+      "slot": "268:8",
+      "post_id": 268,
+      "post_url": "https://finalvestige.com/2026/08/18/they-painted-over-archimedes/",
+      "frozen_source_url": "https://archimedespalimpsest.org/assets/img/imaging_x9.jpg",
+      "live_source_url": "https://archimedespalimpsest.org/assets/img/imaging_x9.jpg",
+      "source_equal": true,
+      "source_host": "archimedespalimpsest.org",
+      "source_kind": "external",
+      "frozen_alt": "X-ray fluorescence result from a forged Archimedes Palimpsest page revealing erased ancient writing beneath the paint.",
+      "live_alt": "X-ray fluorescence result from a forged Archimedes Palimpsest page revealing erased ancient writing beneath the paint.",
+      "alt_equal": true,
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "registry_evidence": [
+        {
+          "batch": "cross",
+          "path": "qa/media-recovery/cross_ledger_43_source_15_oversize_20261109.json",
+          "blob_sha": "8526557c7a5138e1ca22a347e3f9839503d48b2c",
+          "retriever_only_observation": "TOOL_INACCESSIBLE",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "catalog_candidates": [
+        {
+          "catalog_url": "https://www.archimedespalimpsest.org/about/imaging/capture.php",
+          "authoritative_primary_url": null,
+          "source_authority": null,
+          "rights_observation": "PROJECT_SITE_STATIC_RIGHTS_UNVERIFIED",
+          "conditional_960px": null,
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "oversized_original_matches": [],
+      "actual_origin_http_status": null,
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_image_transfer_bytes": null,
+      "guest_broken": null,
+      "measured_cls": null,
+      "exact_photo_identity_verified": false,
+      "item_rights_cleared": false,
+      "cache_approved": false,
+      "wordpress_media_upload_approved": false,
+      "post_rewrite_approved": false,
+      "staging": {
+        "max_width_px": 960,
+        "no_upscale": true,
+        "require_same_scene": true,
+        "require_item_rights_clearance": true,
+        "require_full_size_access_for_detail": true,
+        "require_browser_proof_before_change": true
+      }
+    },
+    {
+      "slot": "268:9",
+      "post_id": 268,
+      "post_url": "https://finalvestige.com/2026/08/18/they-painted-over-archimedes/",
+      "frozen_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/176r-173v%20Hype03r%20Sinar%20LED445-735%20pseudo%20%289734660151%29.jpg?width=960",
+      "live_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/176r-173v%20Hype03r%20Sinar%20LED445-735%20pseudo%20%289734660151%29.jpg?width=960",
+      "source_equal": true,
+      "source_host": "commons.wikimedia.org",
+      "source_kind": "wikimedia_redirect",
+      "frozen_alt": "Processed multispectral image of a Palimpsest folio containing erased text by the Athenian orator Hyperides.",
+      "live_alt": "Processed multispectral image of a Palimpsest folio containing erased text by the Athenian orator Hyperides.",
+      "alt_equal": true,
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "registry_evidence": [
+        {
+          "batch": "cross",
+          "path": "qa/media-recovery/cross_ledger_43_source_15_oversize_20261109.json",
+          "blob_sha": "8526557c7a5138e1ca22a347e3f9839503d48b2c",
+          "retriever_only_observation": "TOOL_INACCESSIBLE",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "catalog_candidates": [
+        {
+          "catalog_url": "https://commons.wikimedia.org/wiki/File:176r-173v_Hype03r_Sinar_LED445-735_pseudo_(9734660151).jpg",
+          "authoritative_primary_url": null,
+          "source_authority": null,
+          "rights_observation": "COMMONS_CC_BY_2_0_PROJECT_CC_BY_3_0_CONFLICT",
+          "conditional_960px": [
+            960,
+            1382
+          ],
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "oversized_original_matches": [],
+      "actual_origin_http_status": null,
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_image_transfer_bytes": null,
+      "guest_broken": null,
+      "measured_cls": null,
+      "exact_photo_identity_verified": false,
+      "item_rights_cleared": false,
+      "cache_approved": false,
+      "wordpress_media_upload_approved": false,
+      "post_rewrite_approved": false,
+      "staging": {
+        "max_width_px": 960,
+        "no_upscale": true,
+        "require_same_scene": true,
+        "require_item_rights_clearance": true,
+        "require_full_size_access_for_detail": true,
+        "require_browser_proof_before_change": true
+      }
+    },
+    {
+      "slot": "258:0",
+      "post_id": 258,
+      "post_url": "https://finalvestige.com/2026/08/18/inside-the-joint-silver-bridge/",
+      "frozen_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Silver%20Bridge%2C%201928.jpg",
+      "live_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Silver%20Bridge%2C%201928.jpg",
+      "source_equal": true,
+      "source_host": "commons.wikimedia.org",
+      "source_kind": "wikimedia_redirect",
+      "frozen_alt": "Silver Bridge spanning the Ohio River between Point Pleasant, West Virginia, and Ohio shortly after completion in 1928.",
+      "live_alt": "Silver Bridge spanning the Ohio River between Point Pleasant, West Virginia, and Ohio shortly after completion in 1928.",
+      "alt_equal": true,
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "registry_evidence": [
+        {
+          "batch": "silver_bridge_258_six",
+          "path": "qa/media-recovery/silver_bridge_258_six_ntsb_fhwa_dpla_20261110.json",
+          "blob_sha": "9836935f4db3aaa9a7f73e68576f1d4db92b8c38",
+          "retriever_only_observation": "TOOL_INACCESSIBLE_NOT_ORIGIN_STATUS",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "catalog_candidates": [
+        {
+          "catalog_url": "https://commons.wikimedia.org/wiki/File:Silver_Bridge,_1928.jpg",
+          "authoritative_primary_url": "https://www.fhwa.dot.gov/byday/fhbd1215.htm",
+          "source_authority": "Wikimedia Commons describes original as Federal Highway Administration/U.S. DOT work; source link not independently resolved",
+          "rights_observation": "Commons PD-USGov-DOT assertion, but original government photographer/record not independently matched; item-level review HOLD",
+          "conditional_960px": [
+            286,
+            154
+          ],
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "oversized_original_matches": [],
+      "actual_origin_http_status": null,
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_image_transfer_bytes": null,
+      "guest_broken": null,
+      "measured_cls": null,
+      "exact_photo_identity_verified": false,
+      "item_rights_cleared": false,
+      "cache_approved": false,
+      "wordpress_media_upload_approved": false,
+      "post_rewrite_approved": false,
+      "staging": {
+        "max_width_px": 960,
+        "no_upscale": true,
+        "require_same_scene": true,
+        "require_item_rights_clearance": true,
+        "require_full_size_access_for_detail": true,
+        "require_browser_proof_before_change": true
+      }
+    },
+    {
+      "slot": "258:1",
+      "post_id": 258,
+      "post_url": "https://finalvestige.com/2026/08/18/inside-the-joint-silver-bridge/",
+      "frozen_source_url": "https://www-d.ntsb.gov/investigations/PublishingImages/80267-img.jpg",
+      "live_source_url": "https://www-d.ntsb.gov/investigations/PublishingImages/80267-img.jpg",
+      "source_equal": true,
+      "source_host": "www-d.ntsb.gov",
+      "source_kind": "external",
+      "frozen_alt": "National Transportation Safety Board diagram showing a typical Silver Bridge eyebar-chain and hanger connection.",
+      "live_alt": "National Transportation Safety Board diagram showing a typical Silver Bridge eyebar-chain and hanger connection.",
+      "alt_equal": true,
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "registry_evidence": [
+        {
+          "batch": "silver_bridge_258_six",
+          "path": "qa/media-recovery/silver_bridge_258_six_ntsb_fhwa_dpla_20261110.json",
+          "blob_sha": "9836935f4db3aaa9a7f73e68576f1d4db92b8c38",
+          "retriever_only_observation": "TOOL_INACCESSIBLE_NOT_ORIGIN_STATUS",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "catalog_candidates": [
+        {
+          "catalog_url": "https://www.ntsb.gov/investigations/Pages/80267.aspx",
+          "authoritative_primary_url": "https://www-s.ntsb.gov/investigations/Pages/80267.aspx",
+          "source_authority": "National Transportation Safety Board investigation 80267, Silver Bridge collapse (Dec 15 1967)",
+          "rights_observation": "Government investigation hosts technical detail but exact illustration's author and downstream reuse terms not independently determined",
+          "conditional_960px": null,
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "oversized_original_matches": [],
+      "actual_origin_http_status": null,
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_image_transfer_bytes": null,
+      "guest_broken": null,
+      "measured_cls": null,
+      "exact_photo_identity_verified": false,
+      "item_rights_cleared": false,
+      "cache_approved": false,
+      "wordpress_media_upload_approved": false,
+      "post_rewrite_approved": false,
+      "staging": {
+        "max_width_px": 960,
+        "no_upscale": true,
+        "require_same_scene": true,
+        "require_item_rights_clearance": true,
+        "require_full_size_access_for_detail": true,
+        "require_browser_proof_before_change": true
+      }
+    },
+    {
+      "slot": "258:2",
+      "post_id": 258,
+      "post_url": "https://finalvestige.com/2026/08/18/inside-the-joint-silver-bridge/",
+      "frozen_source_url": "https://www.fhwa.dot.gov/highwayhistory/images/national_bridge_inspection_standards/bridge_inspection_1_thumb.jpg",
+      "live_source_url": "https://www.fhwa.dot.gov/highwayhistory/images/national_bridge_inspection_standards/bridge_inspection_1_thumb.jpg",
+      "source_equal": true,
+      "source_host": "www.fhwa.dot.gov",
+      "source_kind": "external",
+      "frozen_alt": "Collapsed Silver Bridge steel and roadway on the Ohio bank after the December 1967 disaster.",
+      "live_alt": "Collapsed Silver Bridge steel and roadway on the Ohio bank after the December 1967 disaster.",
+      "alt_equal": true,
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "registry_evidence": [
+        {
+          "batch": "silver_bridge_258_six",
+          "path": "qa/media-recovery/silver_bridge_258_six_ntsb_fhwa_dpla_20261110.json",
+          "blob_sha": "9836935f4db3aaa9a7f73e68576f1d4db92b8c38",
+          "retriever_only_observation": "IMAGE_DISPLAYED_BY_RETRIEVER_NOT_GUEST_HTTP",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "catalog_candidates": [
+        {
+          "catalog_url": "https://www.fhwa.dot.gov/highwayhistory/national_bridge_inspection_standards.cfm",
+          "authoritative_primary_url": "https://www.fhwa.dot.gov/highwayhistory/national_bridge_inspection_standards.cfm",
+          "source_authority": "FHWA / U.S. DOT original bridge-safety historical article (updated 2021-06-24)",
+          "rights_observation": "FHWA-hosted photograph, but item photographer/donor status not supplied in article; federal host alone does not constitute item rights clearance",
+          "conditional_960px": null,
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "oversized_original_matches": [],
+      "actual_origin_http_status": null,
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_image_transfer_bytes": null,
+      "guest_broken": null,
+      "measured_cls": null,
+      "exact_photo_identity_verified": false,
+      "item_rights_cleared": false,
+      "cache_approved": false,
+      "wordpress_media_upload_approved": false,
+      "post_rewrite_approved": false,
+      "staging": {
+        "max_width_px": 960,
+        "no_upscale": true,
+        "require_same_scene": true,
+        "require_item_rights_clearance": true,
+        "require_full_size_access_for_detail": true,
+        "require_browser_proof_before_change": true
+      }
+    },
+    {
+      "slot": "258:3",
+      "post_id": 258,
+      "post_url": "https://finalvestige.com/2026/08/18/inside-the-joint-silver-bridge/",
+      "frozen_source_url": "https://www.fhwa.dot.gov/highwayhistory/images/national_bridge_inspection_standards/bridge_inspection_1B.jpg",
+      "live_source_url": "https://www.fhwa.dot.gov/highwayhistory/images/national_bridge_inspection_standards/bridge_inspection_1B.jpg",
+      "source_equal": true,
+      "source_host": "www.fhwa.dot.gov",
+      "source_kind": "external",
+      "frozen_alt": "Investigators and responders standing among collapsed Silver Bridge members at the Ohio end after the 1967 disaster.",
+      "live_alt": "Investigators and responders standing among collapsed Silver Bridge members at the Ohio end after the 1967 disaster.",
+      "alt_equal": true,
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "registry_evidence": [
+        {
+          "batch": "silver_bridge_258_six",
+          "path": "qa/media-recovery/silver_bridge_258_six_ntsb_fhwa_dpla_20261110.json",
+          "blob_sha": "9836935f4db3aaa9a7f73e68576f1d4db92b8c38",
+          "retriever_only_observation": "IMAGE_DISPLAYED_BY_RETRIEVER_NOT_GUEST_HTTP",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "catalog_candidates": [
+        {
+          "catalog_url": "https://www.fhwa.dot.gov/highwayhistory/national_bridge_inspection_standards.cfm",
+          "authoritative_primary_url": "https://www.fhwa.dot.gov/highwayhistory/national_bridge_inspection_standards.cfm",
+          "source_authority": "FHWA / U.S. DOT original bridge-safety historical article (updated 2021-06-24)",
+          "rights_observation": "FHWA-hosted photograph, item-level photographer/donor attribution not established",
+          "conditional_960px": null,
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "oversized_original_matches": [],
+      "actual_origin_http_status": null,
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_image_transfer_bytes": null,
+      "guest_broken": null,
+      "measured_cls": null,
+      "exact_photo_identity_verified": false,
+      "item_rights_cleared": false,
+      "cache_approved": false,
+      "wordpress_media_upload_approved": false,
+      "post_rewrite_approved": false,
+      "staging": {
+        "max_width_px": 960,
+        "no_upscale": true,
+        "require_same_scene": true,
+        "require_item_rights_clearance": true,
+        "require_full_size_access_for_detail": true,
+        "require_browser_proof_before_change": true
+      }
+    },
+    {
+      "slot": "258:4",
+      "post_id": 258,
+      "post_url": "https://finalvestige.com/2026/08/18/inside-the-joint-silver-bridge/",
+      "frozen_source_url": "https://www.fhwa.dot.gov/highwayhistory/images/national_bridge_inspection_standards/bridge_inspection_4.jpg",
+      "live_source_url": "https://www.fhwa.dot.gov/highwayhistory/images/national_bridge_inspection_standards/bridge_inspection_4.jpg",
+      "source_equal": true,
+      "source_host": "www.fhwa.dot.gov",
+      "source_kind": "external",
+      "frozen_alt": "Five Federal Highway Administration engineers standing behind the 18-foot scale model built to study the Silver Bridge collapse.",
+      "live_alt": "Five Federal Highway Administration engineers standing behind the 18-foot scale model built to study the Silver Bridge collapse.",
+      "alt_equal": true,
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "registry_evidence": [
+        {
+          "batch": "silver_bridge_258_six",
+          "path": "qa/media-recovery/silver_bridge_258_six_ntsb_fhwa_dpla_20261110.json",
+          "blob_sha": "9836935f4db3aaa9a7f73e68576f1d4db92b8c38",
+          "retriever_only_observation": "IMAGE_DISPLAYED_BY_RETRIEVER_NOT_GUEST_HTTP",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "catalog_candidates": [
+        {
+          "catalog_url": "https://www.fhwa.dot.gov/highwayhistory/national_bridge_inspection_standards.cfm",
+          "authoritative_primary_url": "https://www.fhwa.dot.gov/highwayhistory/national_bridge_inspection_standards.cfm",
+          "source_authority": "FHWA / U.S. DOT historical caption of engineering scale model and named builders",
+          "rights_observation": "FHWA hosts group photograph; specific photographer and reproduction terms still require item review",
+          "conditional_960px": null,
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "oversized_original_matches": [],
+      "actual_origin_http_status": null,
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_image_transfer_bytes": null,
+      "guest_broken": null,
+      "measured_cls": null,
+      "exact_photo_identity_verified": false,
+      "item_rights_cleared": false,
+      "cache_approved": false,
+      "wordpress_media_upload_approved": false,
+      "post_rewrite_approved": false,
+      "staging": {
+        "max_width_px": 960,
+        "no_upscale": true,
+        "require_same_scene": true,
+        "require_item_rights_clearance": true,
+        "require_full_size_access_for_detail": true,
+        "require_browser_proof_before_change": true
+      }
+    },
+    {
+      "slot": "258:5",
+      "post_id": 258,
+      "post_url": "https://finalvestige.com/2026/08/18/inside-the-joint-silver-bridge/",
+      "frozen_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Silver%20Bridge%20-%20DPLA%20-%209fc0bcf07698072f128124fc79edd1c7%20%28page%202%29.jpg",
+      "live_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Silver%20Bridge%20-%20DPLA%20-%209fc0bcf07698072f128124fc79edd1c7%20%28page%202%29.jpg",
+      "source_equal": true,
+      "source_host": "commons.wikimedia.org",
+      "source_kind": "wikimedia_redirect",
+      "frozen_alt": "Historical view of the Silver Bridge crossing the Ohio River before its 1967 collapse.",
+      "live_alt": "Historical view of the Silver Bridge crossing the Ohio River before its 1967 collapse.",
+      "alt_equal": true,
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "registry_evidence": [
+        {
+          "batch": "silver_bridge_258_six",
+          "path": "qa/media-recovery/silver_bridge_258_six_ntsb_fhwa_dpla_20261110.json",
+          "blob_sha": "9836935f4db3aaa9a7f73e68576f1d4db92b8c38",
+          "retriever_only_observation": "TOOL_INACCESSIBLE_NOT_ORIGIN_STATUS",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "catalog_candidates": [
+        {
+          "catalog_url": "https://commons.wikimedia.org/wiki/File:Silver_Bridge_-_DPLA_-_9fc0bcf07698072f128124fc79edd1c7_(page_2).jpg",
+          "authoritative_primary_url": "https://dp.la/item/9fc0bcf07698072f128124fc79edd1c7",
+          "source_authority": "Columbus Metropolitan Library / Digital Public Library of America (Kanauga00001)",
+          "rights_observation": "RightsStatements.org No Known Copyright; NOT equivalent to a conclusive public-domain ruling or permission for republication; institution disclaims determination warranty",
+          "conditional_960px": [
+            960,
+            606
+          ],
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "oversized_original_matches": [],
+      "actual_origin_http_status": null,
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_image_transfer_bytes": null,
+      "guest_broken": null,
+      "measured_cls": null,
+      "exact_photo_identity_verified": false,
+      "item_rights_cleared": false,
+      "cache_approved": false,
+      "wordpress_media_upload_approved": false,
+      "post_rewrite_approved": false,
+      "staging": {
+        "max_width_px": 960,
+        "no_upscale": true,
+        "require_same_scene": true,
+        "require_item_rights_clearance": true,
+        "require_full_size_access_for_detail": true,
+        "require_browser_proof_before_change": true
+      }
+    },
+    {
+      "slot": "257:0",
+      "post_id": 257,
+      "post_url": "https://finalvestige.com/2026/08/18/the-numbers-came-back-apollo-12/",
+      "frozen_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Apollo%2012%20Blitzeinschlag.jpg?width=1280",
+      "live_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Apollo%2012%20Blitzeinschlag.jpg?width=1280",
+      "source_equal": true,
+      "source_host": "commons.wikimedia.org",
+      "source_kind": "wikimedia_redirect",
+      "frozen_alt": "Lightning channel reaching Launch Pad 39A shortly after Apollo 12 passed through clouds during launch on November 14, 1969.",
+      "live_alt": "Lightning channel reaching Launch Pad 39A shortly after Apollo 12 passed through clouds during launch on November 14, 1969.",
+      "alt_equal": true,
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "registry_evidence": [
+        {
+          "batch": "apollo12_257_seven_nasa_20261110",
+          "path": "qa/media-recovery/apollo12_257_seven_nasa_20261110.json",
+          "blob_sha": "e91a87c83e702c86e6f28900034ec3d1f71b54b3",
+          "retriever_only_observation": "TEXT_RETRIEVER_INACCESSIBLE_NOT_HTTP",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "catalog_candidates": [
+        {
+          "catalog_url": "https://commons.wikimedia.org/wiki/File:Apollo_12_Blitzeinschlag.jpg",
+          "authoritative_primary_url": "https://images.nasa.gov/details/S69-60068",
+          "source_authority": "NASA catalog ID via Commons; official first party NASA page available for context only, exact binary not yet verified",
+          "archive_id": "S69-60068",
+          "rights_observation": "Commons item asserts NASA U.S.-government public domain; NASA source acknowledgement, absence of implied commercial endorsement, logo/person rights and any third-party scan/derivative rights remain item review. No release approval.",
+          "conditional_960px": [
+            960,
+            665
+          ],
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "oversized_original_matches": [],
+      "actual_origin_http_status": null,
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_image_transfer_bytes": null,
+      "guest_broken": null,
+      "measured_cls": null,
+      "exact_photo_identity_verified": false,
+      "item_rights_cleared": false,
+      "cache_approved": false,
+      "wordpress_media_upload_approved": false,
+      "post_rewrite_approved": false,
+      "staging": {
+        "max_width_px": 960,
+        "no_upscale": true,
+        "require_same_scene": true,
+        "require_item_rights_clearance": true,
+        "require_full_size_access_for_detail": true,
+        "require_browser_proof_before_change": true
+      }
+    },
+    {
+      "slot": "257:1",
+      "post_id": 257,
+      "post_url": "https://finalvestige.com/2026/08/18/the-numbers-came-back-apollo-12/",
+      "frozen_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Apollo%2012%20crew%20walk%20to%20transfer%20van%20%28KSC-69PC-646%29.jpg?width=1280",
+      "live_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Apollo%2012%20crew%20walk%20to%20transfer%20van%20%28KSC-69PC-646%29.jpg?width=1280",
+      "source_equal": true,
+      "source_host": "commons.wikimedia.org",
+      "source_kind": "wikimedia_redirect",
+      "frozen_alt": "Apollo 12 astronauts Pete Conrad, Richard Gordon and Alan Bean walking to the transfer van in rainy weather on the morning of launch.",
+      "live_alt": "Apollo 12 astronauts Pete Conrad, Richard Gordon and Alan Bean walking to the transfer van in rainy weather on the morning of launch.",
+      "alt_equal": true,
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "registry_evidence": [
+        {
+          "batch": "apollo12_257_seven_nasa_20261110",
+          "path": "qa/media-recovery/apollo12_257_seven_nasa_20261110.json",
+          "blob_sha": "e91a87c83e702c86e6f28900034ec3d1f71b54b3",
+          "retriever_only_observation": "TEXT_RETRIEVER_INACCESSIBLE_NOT_HTTP",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "catalog_candidates": [
+        {
+          "catalog_url": "https://commons.wikimedia.org/wiki/File:Apollo_12_crew_walk_to_transfer_van_(KSC-69PC-646).jpg",
+          "authoritative_primary_url": "https://history.nasa.gov/afj/ap12fj/01launch_to_earth_orbit.html",
+          "source_authority": "NASA catalog ID via Commons; official first party NASA page available for context only, exact binary not yet verified",
+          "archive_id": "KSC-69PC-646 / 69-HC-1181",
+          "rights_observation": "Commons item asserts NASA U.S.-government public domain; NASA source acknowledgement, absence of implied commercial endorsement, logo/person rights and any third-party scan/derivative rights remain item review. No release approval.",
+          "conditional_960px": [
+            960,
+            699
+          ],
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "oversized_original_matches": [],
+      "actual_origin_http_status": null,
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_image_transfer_bytes": null,
+      "guest_broken": null,
+      "measured_cls": null,
+      "exact_photo_identity_verified": false,
+      "item_rights_cleared": false,
+      "cache_approved": false,
+      "wordpress_media_upload_approved": false,
+      "post_rewrite_approved": false,
+      "staging": {
+        "max_width_px": 960,
+        "no_upscale": true,
+        "require_same_scene": true,
+        "require_item_rights_clearance": true,
+        "require_full_size_access_for_detail": true,
+        "require_browser_proof_before_change": true
+      }
+    },
+    {
+      "slot": "257:2",
+      "post_id": 257,
+      "post_url": "https://finalvestige.com/2026/08/18/the-numbers-came-back-apollo-12/",
+      "frozen_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Apollo%2012%20Saturn%20V%20launch.jpg?width=1280",
+      "live_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Apollo%2012%20Saturn%20V%20launch.jpg?width=1280",
+      "source_equal": true,
+      "source_host": "commons.wikimedia.org",
+      "source_kind": "wikimedia_redirect",
+      "frozen_alt": "Apollo 12 Saturn V lifting from Pad 39A on November 14, 1969.",
+      "live_alt": "Apollo 12 Saturn V lifting from Pad 39A on November 14, 1969.",
+      "alt_equal": true,
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "registry_evidence": [
+        {
+          "batch": "apollo12_257_seven_nasa_20261110",
+          "path": "qa/media-recovery/apollo12_257_seven_nasa_20261110.json",
+          "blob_sha": "e91a87c83e702c86e6f28900034ec3d1f71b54b3",
+          "retriever_only_observation": "TEXT_RETRIEVER_INACCESSIBLE_NOT_HTTP",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "catalog_candidates": [
+        {
+          "catalog_url": "https://commons.wikimedia.org/wiki/File:Apollo_12_Saturn_V_launch.jpg",
+          "authoritative_primary_url": "https://images.nasa.gov/details/S69-58564",
+          "source_authority": "NASA catalog ID via Commons; official first party NASA page available for context only, exact binary not yet verified",
+          "archive_id": "S69-58564",
+          "rights_observation": "Commons item asserts NASA U.S.-government public domain; NASA source acknowledgement, absence of implied commercial endorsement, logo/person rights and any third-party scan/derivative rights remain item review. No release approval.",
+          "conditional_960px": [
+            960,
+            1258
+          ],
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "oversized_original_matches": [],
+      "actual_origin_http_status": null,
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_image_transfer_bytes": null,
+      "guest_broken": null,
+      "measured_cls": null,
+      "exact_photo_identity_verified": false,
+      "item_rights_cleared": false,
+      "cache_approved": false,
+      "wordpress_media_upload_approved": false,
+      "post_rewrite_approved": false,
+      "staging": {
+        "max_width_px": 960,
+        "no_upscale": true,
+        "require_same_scene": true,
+        "require_item_rights_clearance": true,
+        "require_full_size_access_for_detail": true,
+        "require_browser_proof_before_change": true
+      }
+    },
+    {
+      "slot": "257:3",
+      "post_id": 257,
+      "post_url": "https://finalvestige.com/2026/08/18/the-numbers-came-back-apollo-12/",
+      "frozen_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/KSC-69P-0856.jpg?width=1280",
+      "live_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/KSC-69P-0856.jpg?width=1280",
+      "source_equal": true,
+      "source_host": "commons.wikimedia.org",
+      "source_kind": "wikimedia_redirect",
+      "frozen_alt": "Controllers in Firing Room 2 monitoring Apollo 12 during the early minutes of launch on November 14, 1969.",
+      "live_alt": "Controllers in Firing Room 2 monitoring Apollo 12 during the early minutes of launch on November 14, 1969.",
+      "alt_equal": true,
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "registry_evidence": [
+        {
+          "batch": "apollo12_257_seven_nasa_20261110",
+          "path": "qa/media-recovery/apollo12_257_seven_nasa_20261110.json",
+          "blob_sha": "e91a87c83e702c86e6f28900034ec3d1f71b54b3",
+          "retriever_only_observation": "TEXT_RETRIEVER_INACCESSIBLE_NOT_HTTP",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "catalog_candidates": [
+        {
+          "catalog_url": "https://commons.wikimedia.org/wiki/File:KSC-69P-0856.jpg",
+          "authoritative_primary_url": "https://images.nasa.gov/details/KSC-69P-0856",
+          "source_authority": "NASA catalog ID via Commons; official first party NASA page available for context only, exact binary not yet verified",
+          "archive_id": "KSC-69P-0856",
+          "rights_observation": "Commons item asserts NASA U.S.-government public domain; NASA source acknowledgement, absence of implied commercial endorsement, logo/person rights and any third-party scan/derivative rights remain item review. No release approval.",
+          "conditional_960px": [
+            960,
+            640
+          ],
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "oversized_original_matches": [],
+      "actual_origin_http_status": null,
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_image_transfer_bytes": null,
+      "guest_broken": null,
+      "measured_cls": null,
+      "exact_photo_identity_verified": false,
+      "item_rights_cleared": false,
+      "cache_approved": false,
+      "wordpress_media_upload_approved": false,
+      "post_rewrite_approved": false,
+      "staging": {
+        "max_width_px": 960,
+        "no_upscale": true,
+        "require_same_scene": true,
+        "require_item_rights_clearance": true,
+        "require_full_size_access_for_detail": true,
+        "require_browser_proof_before_change": true
+      }
+    },
+    {
+      "slot": "257:4",
+      "post_id": 257,
+      "post_url": "https://finalvestige.com/2026/08/18/the-numbers-came-back-apollo-12/",
+      "frozen_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Apollo%20Command%20Module%20Main%20Control%20Panel.gif?width=1280",
+      "live_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Apollo%20Command%20Module%20Main%20Control%20Panel.gif?width=1280",
+      "source_equal": true,
+      "source_host": "commons.wikimedia.org",
+      "source_kind": "wikimedia_redirect",
+      "frozen_alt": "Technical drawing of the Apollo command module main control panel showing hundreds of switches, gauges, warning lights and circuit breakers.",
+      "live_alt": "Technical drawing of the Apollo command module main control panel showing hundreds of switches, gauges, warning lights and circuit breakers.",
+      "alt_equal": true,
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "registry_evidence": [
+        {
+          "batch": "apollo12_257_seven_nasa_20261110",
+          "path": "qa/media-recovery/apollo12_257_seven_nasa_20261110.json",
+          "blob_sha": "e91a87c83e702c86e6f28900034ec3d1f71b54b3",
+          "retriever_only_observation": "TEXT_RETRIEVER_INACCESSIBLE_NOT_HTTP",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "catalog_candidates": [
+        {
+          "catalog_url": "https://commons.wikimedia.org/wiki/File:Apollo_Command_Module_Main_Control_Panel.gif",
+          "authoritative_primary_url": "https://history.nasa.gov/diagrams/ad019.gif",
+          "source_authority": "NASA catalog ID via Commons; official first party NASA page available for context only, exact binary not yet verified",
+          "archive_id": "Apollo Operations Handbook, Block II spacecraft, main panel",
+          "rights_observation": "Commons item asserts NASA U.S.-government public domain; NASA source acknowledgement, absence of implied commercial endorsement, logo/person rights and any third-party scan/derivative rights remain item review. No release approval.",
+          "conditional_960px": [
+            960,
+            460
+          ],
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "oversized_original_matches": [],
+      "actual_origin_http_status": null,
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_image_transfer_bytes": null,
+      "guest_broken": null,
+      "measured_cls": null,
+      "exact_photo_identity_verified": false,
+      "item_rights_cleared": false,
+      "cache_approved": false,
+      "wordpress_media_upload_approved": false,
+      "post_rewrite_approved": false,
+      "staging": {
+        "max_width_px": 960,
+        "no_upscale": true,
+        "require_same_scene": true,
+        "require_item_rights_clearance": true,
+        "require_full_size_access_for_detail": true,
+        "require_browser_proof_before_change": true
+      }
+    },
+    {
+      "slot": "257:5",
+      "post_id": 257,
+      "post_url": "https://finalvestige.com/2026/08/18/the-numbers-came-back-apollo-12/",
+      "frozen_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Lunar%20module%20AS12-51-7507.jpg?width=1280",
+      "live_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Lunar%20module%20AS12-51-7507.jpg?width=1280",
+      "source_equal": true,
+      "source_host": "commons.wikimedia.org",
+      "source_kind": "wikimedia_redirect",
+      "frozen_alt": "Apollo 12 lunar module Intrepid in lunar orbit before descent on November 19, 1969.",
+      "live_alt": "Apollo 12 lunar module Intrepid in lunar orbit before descent on November 19, 1969.",
+      "alt_equal": true,
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "registry_evidence": [
+        {
+          "batch": "apollo12_257_seven_nasa_20261110",
+          "path": "qa/media-recovery/apollo12_257_seven_nasa_20261110.json",
+          "blob_sha": "e91a87c83e702c86e6f28900034ec3d1f71b54b3",
+          "retriever_only_observation": "TEXT_RETRIEVER_INACCESSIBLE_NOT_HTTP",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "catalog_candidates": [
+        {
+          "catalog_url": "https://commons.wikimedia.org/wiki/File:Lunar_module_AS12-51-7507.jpg",
+          "authoritative_primary_url": "https://www.nasa.gov/history/55-years-ago-apollo-12-makes-a-pinpoint-landing-on-the-moon/",
+          "source_authority": "NASA catalog ID via Commons; official first party NASA page available for context only, exact binary not yet verified",
+          "archive_id": "AS12-51-7507",
+          "rights_observation": "Commons item asserts NASA U.S.-government public domain; NASA source acknowledgement, absence of implied commercial endorsement, logo/person rights and any third-party scan/derivative rights remain item review. No release approval.",
+          "conditional_960px": [
+            960,
+            965
+          ],
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "oversized_original_matches": [],
+      "actual_origin_http_status": null,
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_image_transfer_bytes": null,
+      "guest_broken": null,
+      "measured_cls": null,
+      "exact_photo_identity_verified": false,
+      "item_rights_cleared": false,
+      "cache_approved": false,
+      "wordpress_media_upload_approved": false,
+      "post_rewrite_approved": false,
+      "staging": {
+        "max_width_px": 960,
+        "no_upscale": true,
+        "require_same_scene": true,
+        "require_item_rights_clearance": true,
+        "require_full_size_access_for_detail": true,
+        "require_browser_proof_before_change": true
+      }
+    },
+    {
+      "slot": "257:6",
+      "post_id": 257,
+      "post_url": "https://finalvestige.com/2026/08/18/the-numbers-came-back-apollo-12/",
+      "frozen_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Apollo%2012%20LRO.jpg?width=1280",
+      "live_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Apollo%2012%20LRO.jpg?width=1280",
+      "source_equal": true,
+      "source_host": "commons.wikimedia.org",
+      "source_kind": "wikimedia_redirect",
+      "frozen_alt": "Lunar Reconnaissance Orbiter image of the Apollo 12 landing site showing the Intrepid descent stage, ALSEP experiment package and Surveyor 3 spacecraft.",
+      "live_alt": "Lunar Reconnaissance Orbiter image of the Apollo 12 landing site showing the Intrepid descent stage, ALSEP experiment package and Surveyor 3 spacecraft.",
+      "alt_equal": true,
+      "html_width_px": null,
+      "html_height_px": null,
+      "literal_srcset": false,
+      "registry_evidence": [
+        {
+          "batch": "apollo12_257_seven_nasa_20261110",
+          "path": "qa/media-recovery/apollo12_257_seven_nasa_20261110.json",
+          "blob_sha": "e91a87c83e702c86e6f28900034ec3d1f71b54b3",
+          "retriever_only_observation": "TEXT_RETRIEVER_INACCESSIBLE_NOT_HTTP",
+          "retriever_wrapper_code": null
+        }
+      ],
+      "catalog_candidates": [
+        {
+          "catalog_url": "https://commons.wikimedia.org/wiki/File:Apollo_12_LRO.jpg",
+          "authoritative_primary_url": "https://science.nasa.gov/photojournal/first-look-apollo-12-and-surveyor-3/",
+          "source_authority": "NASA catalog ID via Commons; official first party NASA page available for context only, exact binary not yet verified",
+          "archive_id": "2009 LRO site image, likely related to PIA12903, unproven identical rendering",
+          "rights_observation": "Commons item asserts NASA U.S.-government public domain; NASA source acknowledgement, absence of implied commercial endorsement, logo/person rights and any third-party scan/derivative rights remain item review. No release approval.",
+          "conditional_960px": [
+            800,
+            800
+          ],
+          "exact_image_match_verified": false,
+          "item_rights_cleared": false
+        }
+      ],
+      "oversized_original_matches": [],
+      "actual_origin_http_status": null,
+      "guest_http_status": null,
+      "guest_current_src": null,
+      "guest_decoded_px": null,
+      "guest_image_transfer_bytes": null,
+      "guest_broken": null,
+      "measured_cls": null,
+      "exact_photo_identity_verified": false,
+      "item_rights_cleared": false,
+      "cache_approved": false,
+      "wordpress_media_upload_approved": false,
+      "post_rewrite_approved": false,
+      "staging": {
+        "max_width_px": 960,
+        "no_upscale": true,
+        "require_same_scene": true,
+        "require_item_rights_clearance": true,
+        "require_full_size_access_for_detail": true,
+        "require_browser_proof_before_change": true
+      }
+    }
+  ],
+  "priority_flags": [
+    {
+      "slot": "269:1",
+      "risk": "OVER_1_5_MB_STORED_ORIGINAL_NOT_WIRE_BYTES",
+      "media_ids": [
+        1714
+      ],
+      "rights_hold": true,
+      "legibility_hold": true
+    },
+    {
+      "slot": "269:1",
+      "risk": "DETAIL_LEGIBILITY_ON_RESIZE",
+      "full_resolution_view_required": true
+    },
+    {
+      "slot": "268:0",
+      "risk": "DETAIL_LEGIBILITY_ON_RESIZE",
+      "full_resolution_view_required": true
+    },
+    {
+      "slot": "268:1",
+      "risk": "DETAIL_LEGIBILITY_ON_RESIZE",
+      "full_resolution_view_required": true
+    },
+    {
+      "slot": "268:2",
+      "risk": "DETAIL_LEGIBILITY_ON_RESIZE",
+      "full_resolution_view_required": true
+    },
+    {
+      "slot": "268:5",
+      "risk": "DETAIL_LEGIBILITY_ON_RESIZE",
+      "full_resolution_view_required": true
+    },
+    {
+      "slot": "268:6",
+      "risk": "DETAIL_LEGIBILITY_ON_RESIZE",
+      "full_resolution_view_required": true
+    },
+    {
+      "slot": "268:9",
+      "risk": "DETAIL_LEGIBILITY_ON_RESIZE",
+      "full_resolution_view_required": true
+    },
+    {
+      "slot": "258:1",
+      "risk": "DETAIL_LEGIBILITY_ON_RESIZE",
+      "full_resolution_view_required": true
+    }
+  ],
+  "official_reference_addenda": [
+    {
+      "slot": "277:0",
+      "official_url": "https://www.usgs.gov/media/images/lituya-bay-1958",
+      "custodian": "USGS / photographer Don J. Miller",
+      "source_record_note": "USGS explicitly marks a 1958 Lituya Bay aerial photograph Public Domain; published 277:0 is a different-host upload, exact pixel/crop match not established",
+      "release": "CANDIDATE_ONLY_NO_REHOST"
+    },
+    {
+      "slot": "257:0",
+      "official_url": "https://science.nasa.gov/resource/lightning-strikes-twice/",
+      "custodian": "NASA",
+      "source_record_note": "NASA catalog documents Apollo 12 lightning at launch. This is historical subject corroboration only, not confirmed pixel-identity with published Commons redirect image",
+      "release": "CANDIDATE_ONLY_NO_REHOST"
+    }
+  ],
+  "claims": {
+    "reported_broken_images": 42,
+    "guest_confirmed_broken_images": null,
+    "claimed_reduction_percent": 76,
+    "actual_cold_before_bytes": null,
+    "actual_cold_after_bytes": null,
+    "actual_reduction_percent": null,
+    "oversized_original_count_sitewide": 15,
+    "oversized_original_bytes_stored_sitewide": 47096779,
+    "production_repairs": 0
+  },
+  "release": {
+    "wordpress_production_write": false,
+    "third_party_download": false,
+    "asset_cache": false,
+    "license_approval": false,
+    "home_page_visual_changes": false,
+    "deployment": false,
+    "subscription_spend_usd": 0
+  },
+  "next_gate": "Site QA #154 existing collector must produce actual guest-cold HTTP/MIME/redirect/decoded-currentSrc/layout/transfer evidence for the six P0 slots before restore. Stage same-photo, rights-cleared, no-upscale variants with 960px maximum *only where detail/DPR/native-size allow*. Do not rewrite Gutenberg blocks."
+}
