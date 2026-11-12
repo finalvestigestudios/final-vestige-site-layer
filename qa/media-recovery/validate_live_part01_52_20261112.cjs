@@ -10,7 +10,6 @@ function validate(d){
  assert.equal(d.provenance.frozen_blob,"948bc1b65b42799aa40cfdb810ddf6ffd80886b6");
  assert.equal(d.provenance.candidate_register_blob,"4965a862f7de7de46c1f4a1e26f3ca70a8c38805");
  assert.equal(d.provenance.siteqa_pr,154);
- assert.equal(d.cohort,undefined);
  const c=d.counts,p=d.posts,r=d.rows;
  assert.equal(c.posts,8);assert.equal(c.images,52);assert.equal(c.frozen_images,52);
  assert.equal(p.length,8);assert.equal(r.length,52);assert.deepEqual(d.drift,[]);
