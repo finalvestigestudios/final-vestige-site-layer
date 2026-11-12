@@ -1,0 +1,72 @@
+{
+  "run": "R301",
+  "date_utc": "2026-11-12",
+  "master_pr": 175,
+  "commercial_review_pr": 201,
+  "stacked_on_pr": 2166,
+  "owner_issue": 174,
+  "mind_issue": 171,
+  "status": "HOLD_UNSENT",
+  "founder_adoption": false,
+  "subject": "The stranger who changed behind a door",
+  "proposed_preheader": "A 1998 street experiment, a missing detail, and what the evidence can actually say.",
+  "jetpack_native_preheader_verified": false,
+  "primary_cta": "https://finalvestige.com/2026/11/02/change-blindness/",
+  "primary_cta_count": 1,
+  "wordpress_post_id": 1922,
+  "post_publication": "VERIFIED_READ_ONLY",
+  "original_studies": [
+    "https://doi.org/10.3758/BF03208840",
+    "https://doi.org/10.1111/j.1467-9280.1997.tb00427.x"
+  ],
+  "commercial_link": null,
+  "disclaimer_placeholders_present": true,
+  "mix": {
+    "editorial": [
+      1,
+      2,
+      4,
+      6
+    ],
+    "commercial_held": [
+      3,
+      5
+    ]
+  },
+  "newsletter": {
+    "enabled": true,
+    "auto_new_post": false,
+    "full": true,
+    "reply_to": "no-reply",
+    "welcome": "CONFIGURED_NOT_RECEIVED",
+    "email_preview": "NOT_VERIFIED",
+    "unsub": "NOT_VERIFIED",
+    "publisher_postal": "NOT_VERIFIED"
+  },
+  "provider": {
+    "diagnostic_total": 3,
+    "confirmed": 3,
+    "unconfirmed": 2,
+    "wpcom_followers": 3,
+    "email_followers": 0,
+    "email_eligible": "UNKNOWN",
+    "counts_additive": false
+  },
+  "hard_holds": {
+    "recipient_status": false,
+    "legal_footer": false,
+    "unsubscribe": false,
+    "merchant_email_permission": false,
+    "published_vetted_offer": false,
+    "settled_payment_evidence": false,
+    "founder_final_send": false
+  },
+  "revenue": {
+    "human_sessions": null,
+    "paid_orders": null,
+    "settled_commissions": null,
+    "refunds": null,
+    "fees": null,
+    "net_revenue_per_1000": null
+  }
+}
