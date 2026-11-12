@@ -229,8 +229,18 @@ function fv_r281_render($attributes = []): string {
     $records=fv_r281_events();
     $date_reconciliation=fv_r288_source_reconciliation();
     $authority_ledger=fv_r289_authority_ledger();
+    // R303: source-digest failure must not silently look like a successful
+    // evidence impression or paid outcome. Preserve ONLY pinned recovery URLs,
+    // make the uncertainty legible without CSS or JS, and label BOTH outbound
+    // source/reference and free editorial continuation for later consented QA.
     if (!fv_r281_valid_records($records) || !fv_r288_reconciliation_valid($date_reconciliation) || !fv_r289_authority_ledger_valid($authority_ledger)) {
-        return '<aside aria-label="Apollo source fallback"><p>Evidence experience unavailable.</p><a href="'.FV_R281_NASA_BOARD.'" data-fv-link-purpose="official-evidence-source" data-fv-conversion-kind="noncommercial-source-reference">Read the NASA Review Board report</a> · <a href="'.FV_R281_FREE.'">Read the free Apollo investigation</a></aside>';
+        static $recovery_sequence = 0;
+        $recovery_sequence++;
+        return '<aside aria-label="Apollo 1 source integrity recovery '. $recovery_sequence .'" data-fv-evidence-status="source-integrity-failed" data-fv-funnel-scope="editorial-recovery">'
+            .'<p><strong>The Apollo evidence display is unavailable because its source verification did not pass.</strong> Historical claims from this display have been withheld pending review.</p>'
+            .'<p><a href="'.fv_r281_escape(FV_R281_NASA_BOARD).'" rel="noopener noreferrer" data-fv-link-purpose="official-evidence-source" data-fv-conversion-kind="noncommercial-source-reference">Read the original Apollo 204 Review Board report at NASA</a></p>'
+            .'<p data-fv-funnel-step="recovery-to-investigation"><a href="'.fv_r281_escape(FV_R281_FREE).'" data-fv-cta="apollo-read-free-investigation" data-fv-conversion-kind="editorial-continuation">Read the free Apollo 1 investigation</a> (editorial reading, not a purchase)</p>'
+            .'<p>NASA is an external source, not an endorser. No sale or signup is recorded by these links.</p></aside>';
     }
     static $sequence=0, $linked=false;
     $sequence++;
