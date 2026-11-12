@@ -51,7 +51,7 @@ let mutants=[
 ["lang",f=>f.b=f.b.replace('lang="en"','lang=""')],
 ["h1",f=>f.b=f.b.replace("<h1>","<h2>")],
 ["remove-film",f=>f.b=f.b.replace(film,"")],
-["alter-buyer-copy",f=>f.b=f.b.replace("A convenient format is understandable.","A miraculous cure.")],
+["alter-buyer-copy",f=>f.b=f.b.replace("Its refund guarantee is seller-advertised","Its refund guarantee is absolutely proven")],
 ["remove-last-caption",f=>f.vtt=f.vtt.replace(/00:00:35\.000 --> 00:00:42\.000[\s\S]*/,"")],
 ["caption-end",f=>f.vtt=f.vtt.replace("00:00:42.000","00:00:49.000")],
 ["denominator",f=>f.article=f.article.replace("135 of 206","135 of 300")],
