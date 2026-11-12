@@ -11,7 +11,7 @@ export function replay({asOf,events}) {
   const ts=day(e.at);if(ts>now){reject("future");continue;}
   if(e.type==="visit"){
    if(sessions.has(e.session)){reject("repeated_visit");continue;}
-   const tagged=e.utm_source==="grok"&&/^[a-z0-9_-]{3,50}$/i.test(e.asset_id||"")&&/^[a-z0-9_-]{3,80}$/i.test(e.utm_campaign||"");
+   const tagged=["youtube","tiktok","instagram","facebook","x","bluesky"].includes(e.utm_source)&&e.utm_medium==="organic_social"&&e.utm_content===e.asset_id&&/^[a-z0-9_-]{3,50}$/i.test(e.asset_id||"")&&/^[a-z0-9_-]{3,80}$/i.test(e.utm_campaign||"");
    const qualified=tagged&&e.human_verified===true&&e.bot_flag!==true;
    sessions.set(e.session,{at:ts,last_at:ts,qualified,lead:false,guide:false,outbound:false});
    if(!qualified)reject("unqualified_visit");continue;
