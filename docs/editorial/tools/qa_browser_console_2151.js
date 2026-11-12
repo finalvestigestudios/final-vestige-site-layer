@@ -4,8 +4,8 @@
  * Paste into DevTools Console at responsive widths 390px, then 1440px.
  * Save sanitized console output plus manual screenshots. Does not read cookies,
  * preview URLs, credentials, localStorage or tokens, or write/fetch/upload data.
- * Current article revision (2026-11-12 07:43 Pacific): 81 blocks, 42 sources,
- * SHA-1 e89879d2b34a53de75d04f2a92bbab832de5aaf3 (must be independently checked).
+ * Current article revision (2026-11-12 11:34 Pacific): 81 blocks, 42 sources,
+ * SHA-1 6b06724152de158fc3e94d40fae2c6b46395a383 (must be independently checked).
  * A console PASS is NOT a Gutenberg SHA check, visual review or publication gate.
  */
 (async () => {
@@ -100,6 +100,13 @@
     (p.textContent || '').replace(/\s+/g, ' ').trim());
   const precisionCorrectionOk = precisionParagraphs.some(p =>
     precisionMarkers.every(t => p.includes(t)));
+  // Nov 12 11:34: exact 2018 Corps caption lineage corrected in the SAME paragraph.
+  // Treating the unverified earlier brochure as independently quoted is stale.
+  const provenanceMarkers = ['2018 Corps spillway booklet',
+    'The same caption also claims the cut saved the city',
+    'single institutional retrospective', 'not an original 1927 decision record'];
+  const provenanceCorrectionOk = precisionParagraphs.some(p =>
+    provenanceMarkers.every(t => p.includes(t)));
   const brokenAnchors = [...article.querySelectorAll('a[href^="#"]')].filter(a => {
     const target = a.getAttribute('href')?.slice(1);
     if (!target) return false;
@@ -131,6 +138,7 @@
       timelineReport.captionFontPx >= 14),
     revision_sentinels_present: missingSentinels.length === 0,
     usgs_2026_11_12_precision_correction_present_in_one_paragraph: precisionCorrectionOk,
+    corps_2026_11_12_provenance_correction_present_in_one_paragraph: provenanceCorrectionOk,
     header_and_footer_present: !!document.querySelector('header') && !!document.querySelector('footer')
   };
   const result = {
