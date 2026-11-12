@@ -1,0 +1,459 @@
+{
+  "release": "UNPUBLISHED_HARD_HOLD",
+  "as_of": "2026-11-12",
+  "branch": "mind-r317-suggestion-without-trance-buyer-proof-20261112",
+  "study_limitations": "2006 publisher abstract directly inspected; full original paper not claimed read. Other experiments and seller pages distinct. No user/product testing.",
+  "sources": [
+    {
+      "id": "S01",
+      "kind": "primary-publisher-abstract",
+      "url": "https://doi.org/10.1111/j.1467-9280.2006.01669.x",
+      "scope": "2006 Raz et al: induction comparison among highly suggestible participants"
+    },
+    {
+      "id": "S02",
+      "kind": "primary-indexed",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/12470132/",
+      "scope": "2002 Raz et al: 16 highly/16 less suggestible controls"
+    },
+    {
+      "id": "S03",
+      "kind": "primary-indexed",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/15994228/",
+      "scope": "2005 Raz et al PNAS neuroimaging original"
+    },
+    {
+      "id": "S04",
+      "kind": "systematic-theoretical-review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39032268/",
+      "scope": "2024 Zahedi et al mechanisms and competing accounts"
+    },
+    {
+      "id": "S05",
+      "kind": "historical-site-archive",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "scope": "Puységur historical documents, NOT efficacy"
+    },
+    {
+      "id": "S06",
+      "kind": "existing-live-site",
+      "url": "https://finalvestige.com/focus/",
+      "scope": "Only existing 52-page Focus/Dispatch pathway"
+    },
+    {
+      "id": "S07",
+      "kind": "existing-live-site",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "scope": "Published change-blindness article"
+    },
+    {
+      "id": "S08",
+      "kind": "existing-live-site",
+      "url": "https://finalvestige.com/archive/",
+      "scope": "Published historical archive; editorial category counts are not unique-post counts"
+    },
+    {
+      "id": "S09",
+      "kind": "seller-catalog",
+      "url": "https://inspire3.com/",
+      "scope": "Seller catalog, not independent clinical proof"
+    },
+    {
+      "id": "S10",
+      "kind": "seller-product",
+      "url": "https://zen12.com/about",
+      "scope": "Zen12 12-minute sessions, seller hour-equivalence claim excluded"
+    },
+    {
+      "id": "S11",
+      "kind": "seller-checkout-volatile",
+      "url": "https://zen12.com/getstarted",
+      "scope": "Zen12 full course 12 levels and 48 MP3s; cart/promotions not fixed"
+    },
+    {
+      "id": "S12",
+      "kind": "seller-product",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "scope": "Seller describes separate 33-minute Total Focus"
+    },
+    {
+      "id": "S13",
+      "kind": "seller-product",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "scope": "Seller describes separate 15- and 30-minute versions"
+    },
+    {
+      "id": "S14",
+      "kind": "regulator",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "scope": "Clear proximate material connection disclosures; true endorsement"
+    },
+    {
+      "id": "S15",
+      "kind": "regulator",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "scope": "Health-related claim substantiation"
+    },
+    {
+      "id": "S16",
+      "kind": "site-disclosure",
+      "url": "https://finalvestige.com/affiliate-disclosure/",
+      "scope": "Existing studio disclosure; not substitute for near-link disclosure"
+    },
+    {
+      "id": "S17",
+      "kind": "primary-abstract",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/16765063/",
+      "scope": "2007 Stroop replication/extension, highly hypnotizable population"
+    },
+    {
+      "id": "S18",
+      "kind": "owner-issue",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "scope": "Mandate and commercial release holds"
+    },
+    {
+      "id": "S19",
+      "kind": "owner-business-issue",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "scope": "Conversion-first attribution and settlement mandate"
+    },
+    {
+      "id": "S20",
+      "kind": "owner-issue",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/174",
+      "scope": "Dispatch owns email; Mind owns presell only"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "text": "The 2006 study compared suggestion with vs without induction",
+      "source_id": "S01",
+      "disposition": "SUPPORTED_SELECTED_POPULATION"
+    },
+    {
+      "id": "C02",
+      "text": "The 2006 study recruited highly suggestible people",
+      "source_id": "S01",
+      "disposition": "SUPPORTED_SELECTED_POPULATION"
+    },
+    {
+      "id": "C03",
+      "text": "Suggestion reduced Stroop interference in the 2006 sample",
+      "source_id": "S01",
+      "disposition": "SUPPORTED_TASK_ONLY"
+    },
+    {
+      "id": "C04",
+      "text": "~45% refers to variance in Stroop responding, not improvement rate",
+      "source_id": "S01",
+      "disposition": "SUPPORTED_STATISTIC_CONTEXT"
+    },
+    {
+      "id": "C05",
+      "text": "Induction not necessary for effect in this 2006 design",
+      "source_id": "S01",
+      "disposition": "SUPPORTED_TASK_ONLY"
+    },
+    {
+      "id": "C06",
+      "text": "16 highly/16 less suggestible in 2002 comparison",
+      "source_id": "S02",
+      "disposition": "SUPPORTED_ABSTRACT"
+    },
+    {
+      "id": "C07",
+      "text": "2002 results differed by suggestibility category",
+      "source_id": "S02",
+      "disposition": "SUPPORTED_ABSTRACT"
+    },
+    {
+      "id": "C08",
+      "text": "2005 suggestion involved imaging and EEG methods",
+      "source_id": "S03",
+      "disposition": "SUPPORTED_INDEXED_ORIGINAL"
+    },
+    {
+      "id": "C09",
+      "text": "2005 reported regional differences in brain activity",
+      "source_id": "S03",
+      "disposition": "SUPPORTED_CONTEXTUAL"
+    },
+    {
+      "id": "C10",
+      "text": "2024 review reports competing mechanisms",
+      "source_id": "S04",
+      "disposition": "SUPPORTED_THEORETICAL_REVIEW"
+    },
+    {
+      "id": "C11",
+      "text": "Hypnosis fixes concentration for everyone",
+      "source_id": "S01",
+      "disposition": "BLOCK_UNSUPPORTED_GENERALIZATION"
+    },
+    {
+      "id": "C12",
+      "text": "Zen12 reproduces 2006 induction comparison",
+      "source_id": "S01",
+      "disposition": "BLOCK_UNTESTED_BRANDED_EFFICACY"
+    },
+    {
+      "id": "C13",
+      "text": "Zen12 sessions are twelve minutes",
+      "source_id": "S10",
+      "disposition": "SELLER_DESCRIPTION"
+    },
+    {
+      "id": "C14",
+      "text": "Zen12 complete course describes 12 levels/48 MP3s",
+      "source_id": "S11",
+      "disposition": "SELLER_DESCRIPTION"
+    },
+    {
+      "id": "C15",
+      "text": "Each Zen12 session equals one hour of meditation",
+      "source_id": "S10",
+      "disposition": "BLOCK_SELLER_EFFICACY"
+    },
+    {
+      "id": "C16",
+      "text": "Zen12 is proven to relieve anxiety/ADHD",
+      "source_id": "S10",
+      "disposition": "BLOCK_UNSUPPORTED_HEALTH_CLAIM"
+    },
+    {
+      "id": "C17",
+      "text": "Total Focus is a separate 33-minute recording",
+      "source_id": "S12",
+      "disposition": "SELLER_DESCRIPTION"
+    },
+    {
+      "id": "C18",
+      "text": "Total Focus rewires your brain",
+      "source_id": "S12",
+      "disposition": "BLOCK_SELLER_EFFICACY"
+    },
+    {
+      "id": "C19",
+      "text": "Focus Shot includes 15- and 30-minute versions",
+      "source_id": "S13",
+      "disposition": "SELLER_DESCRIPTION"
+    },
+    {
+      "id": "C20",
+      "text": "Focus Shot permanently increases cognitive power",
+      "source_id": "S13",
+      "disposition": "BLOCK_SELLER_EFFICACY"
+    },
+    {
+      "id": "C21",
+      "text": "Full checkout describes a money-back guarantee",
+      "source_id": "S11",
+      "disposition": "SELLER_REPRESENTATION_NOT_POLICY_CERTIFIED"
+    },
+    {
+      "id": "C22",
+      "text": "Current checkout figure is guaranteed to visitor",
+      "source_id": "S11",
+      "disposition": "BLOCK_VOLATILE_CART"
+    },
+    {
+      "id": "C23",
+      "text": "Inspire3 catalogue is evidence of publisher eligibility",
+      "source_id": "S09",
+      "disposition": "BLOCK_NOT_PUBLISHER_ACCEPTANCE"
+    },
+    {
+      "id": "C24",
+      "text": "Existing Fieldbook lives at /focus/",
+      "source_id": "S06",
+      "disposition": "SUPPORTED_LIVE_ROUTE"
+    },
+    {
+      "id": "C25",
+      "text": "Puységur historical testimony proves animal magnetism",
+      "source_id": "S05",
+      "disposition": "BLOCK_HISTORICAL_CAUSAL_INFERENCE"
+    },
+    {
+      "id": "C26",
+      "text": "Research editorial and commercial guide must remain separate",
+      "source_id": "S18",
+      "disposition": "EDITORIAL_POLICY"
+    },
+    {
+      "id": "C27",
+      "text": "Prospective affiliate disclosure must be adjacent to commercial control",
+      "source_id": "S14",
+      "disposition": "COMPLIANCE_DESIGN"
+    },
+    {
+      "id": "C28",
+      "text": "General disclosure page alone satisfies a hidden recommendation",
+      "source_id": "S14",
+      "disposition": "BLOCK_INSUFFICIENT_DISCLOSURE"
+    },
+    {
+      "id": "C29",
+      "text": "Unconfirmed outgoing click counts as a verified sale",
+      "source_id": "S19",
+      "disposition": "BLOCK_FALSE_KPI"
+    },
+    {
+      "id": "C30",
+      "text": "Qualified-source revenue requires cleared orders/refunds/fees",
+      "source_id": "S19",
+      "disposition": "ACCEPTANCE_ONLY"
+    },
+    {
+      "id": "C31",
+      "text": "Existing free Fieldbook must not spawn duplicate email capture",
+      "source_id": "S18",
+      "disposition": "ACCEPTANCE_ONLY"
+    },
+    {
+      "id": "C32",
+      "text": "No claim of personal use/review of product",
+      "source_id": "S14",
+      "disposition": "COMPLIANCE_DESIGN"
+    }
+  ],
+  "commercial_holds": [
+    {
+      "id": "G01",
+      "gate": "FV-specific publisher acceptance",
+      "status": "HARD_HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "G02",
+      "gate": "Product-level authorization",
+      "status": "HARD_HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "G03",
+      "gate": "Social channel permission",
+      "status": "HARD_HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "G04",
+      "gate": "Web promotion permission",
+      "status": "HARD_HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "G05",
+      "gate": "Email permission separately",
+      "status": "HARD_HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "G06",
+      "gate": "Issued earning URL",
+      "status": "HARD_HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "G07",
+      "gate": "Link structure and tracking terms",
+      "status": "HARD_HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "G08",
+      "gate": "Merchant-price observation at release",
+      "status": "HARD_HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "G09",
+      "gate": "Refund/terms review at release",
+      "status": "HARD_HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "G10",
+      "gate": "Product-format check at release",
+      "status": "HARD_HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "G11",
+      "gate": "Independent efficacy substantiation for any benefits",
+      "status": "HARD_HOLD",
+      "owner": "Mind/Site-QA"
+    },
+    {
+      "id": "G12",
+      "gate": "Nearby FTC material connection disclosure",
+      "status": "HARD_HOLD",
+      "owner": "Mind/Site-QA"
+    },
+    {
+      "id": "G13",
+      "gate": "Independent editorial separation",
+      "status": "HARD_HOLD",
+      "owner": "Mind/Site-QA"
+    },
+    {
+      "id": "G14",
+      "gate": "Signed-out/mobile buyer QA",
+      "status": "HARD_HOLD",
+      "owner": "Mind/Site-QA"
+    },
+    {
+      "id": "G15",
+      "gate": "No-JS and keyboard/a11y QA",
+      "status": "HARD_HOLD",
+      "owner": "Mind/Site-QA"
+    },
+    {
+      "id": "G16",
+      "gate": "Grok asset rights/IDs verified",
+      "status": "HARD_HOLD",
+      "owner": "Praxxis/Grok"
+    },
+    {
+      "id": "G17",
+      "gate": "Provider-confirmed paid conversions",
+      "status": "HARD_HOLD",
+      "owner": "Commerce/Claude"
+    },
+    {
+      "id": "G18",
+      "gate": "Refund-adjusted cleared settlement and consent",
+      "status": "HARD_HOLD",
+      "owner": "Commerce/Claude"
+    }
+  ],
+  "creator_candidate_fit": [
+    {
+      "topic": "Attentional blink",
+      "grok_asset_id": null,
+      "article_destination": "Pending authenticated article approval; existing Change Blindness available",
+      "free_route": "https://finalvestige.com/focus/",
+      "offer": "Zen12 only after publisher approval; no evidence of product benefit"
+    },
+    {
+      "topic": "Change blindness",
+      "grok_asset_id": null,
+      "article_destination": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "free_route": "https://finalvestige.com/focus/",
+      "offer": "First the free Fieldbook; optional Zen12 only when eligible"
+    },
+    {
+      "topic": "Mesmer/Puységur suggestion",
+      "grok_asset_id": null,
+      "article_destination": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "free_route": "https://finalvestige.com/focus/",
+      "offer": "Product comparison not a causal proof; no active merchant CTA"
+    }
+  ],
+  "kpi_status": "NOT_COMPUTABLE",
+  "privacy": "No cookies, pixels or duplicate analytics deployed; events specified separately",
+  "merchant_url_status": "Withheld; only non-affiliate research sources in matrix",
+  "commercial_authorization": "No FV-specific acceptance or link established; the 2023 Inspire3 'access approved' customer email concerns a waiting list for Reprogram.ME, not publisher acceptance."
+}
