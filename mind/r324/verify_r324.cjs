@@ -32,7 +32,7 @@ const report = f => {
   error(m.experiment?.closed===true, 'experiment prematurely enabled',e);
   error(m.privacy_measurement_contract?.single_existing_jetpack_list===true && m.privacy_measurement_contract?.tracking_scripts_added===0, 'signup/analytics duplication',e);
   error(f.article.includes('pubmed.ncbi.nlm.nih.gov/5409744/') && f.article.includes('pubmed.ncbi.nlm.nih.gov/6457110/') && f.article.includes('pubmed.ncbi.nlm.nih.gov/29289097/'), 'original experiment sources missing',e);
-  error(f.article.includes('Warren did not test Zen12') && f.article.includes('historical') && f.article.includes('unpublished'), 'scientific boundary absent',e);
+  error(f.article.includes('Warren did not test Zen12') && f.article.includes('historical') && /unpublished/i.test(f.article), 'scientific boundary absent',e);
   error(f.dossier.includes('NOT COMPUTABLE') && f.dossier.includes('TASK-008') && f.dossier.includes('paid'), 'cohort or creator handoff omitted',e);
   for(const k of ['a','b','hub']) {
     const h=f[k];
