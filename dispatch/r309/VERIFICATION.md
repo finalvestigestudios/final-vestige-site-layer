@@ -1,4 +1,4 @@
-# R309 — Executed verification record (2026-11-12 16:36–17:XX UTC; no send)
+# R309 — Executed verification record (2026-11-12 UTC; no send)
 
 ## Source integrity
 Original six issue Markdown blobs + manifest + native Python test file (8 files) were read from immutable canonical PR #175 commit `d57ccdba3aee8f065e143e101c2945f4f3d01647`; their local Git object IDs matched all eight exact GitHub blob IDs. Thus the six original Python unit tests ran on byte-identical source, not edited approximations.
