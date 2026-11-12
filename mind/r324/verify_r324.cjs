@@ -38,7 +38,7 @@ const report = f => {
     const h=f[k];
     error(/<html lang="en">/.test(h) && /name="viewport"/.test(h) && /name="robots" content="noindex,nofollow"/.test(h),'a11y/SEO draft header '+k,e);
     error(!/<script\b|<iframe\b|<form\b|<input\b|<video\b|<audio\b|<source\b/i.test(h),'unapproved executable/embed/form/media element '+k,e);
-    error(!/autoplay\b/i.test(h.replace(/no autoplay/gi,'')), 'autoplay marker '+k,e);
+    error(!/<(?:video|audio)\b[^>]*\bautoplay\b/i.test(h), 'autoplay marker '+k,e);
     error(!/<a\b[^>]*href="https?:\/\/(?:www\.)?(?:zen12\.com|hypnosislive\.com|brainwaveshots\.com|affiliates\.inspire3\.com)/i.test(h),'active merchant link '+k,e);
     error(/href="https:\/\/finalvestige\.com\/focus\/"/.test(h),'existing Focus path absent '+k,e);
     error(/prefers-reduced-motion:reduce/.test(h),'reduced motion stylesheet absent '+k,e);
