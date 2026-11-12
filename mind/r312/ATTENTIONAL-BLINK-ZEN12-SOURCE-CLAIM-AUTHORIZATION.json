@@ -1,0 +1,565 @@
+{
+  "title": "Final Vestige Mind R312 — source, offer, attribution and release evidence",
+  "version": "2026-11-11-r312",
+  "classification": "UNPUBLISHED / NO EARNING LINKS / NO LIVE A-B",
+  "sources": [
+    {
+      "id": "S01",
+      "title": "1992 peer-reviewed record and abstract",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/1500880/",
+      "verification_depth": "abstract"
+    },
+    {
+      "id": "S02",
+      "title": "1992 original DOI",
+      "url": "https://doi.org/10.1037/0096-1523.18.3.849",
+      "verification_depth": "bibliographic"
+    },
+    {
+      "id": "S03",
+      "title": "2020 online / 2021 print full double replication",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8062350/",
+      "verification_depth": "full_html_methods_tables_discussion"
+    },
+    {
+      "id": "S04",
+      "title": "replication preregistration",
+      "url": "https://osf.io/hp9nk/",
+      "verification_depth": "linked_not_reanalysed"
+    },
+    {
+      "id": "S05",
+      "title": "replication deposited data scripts",
+      "url": "https://figshare.com/s/ef5a62fd5fa70c214b62",
+      "verification_depth": "linked_not_reanalysed"
+    },
+    {
+      "id": "S06",
+      "title": "1994 further attentional blink study abstract",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/8189198/",
+      "verification_depth": "abstract"
+    },
+    {
+      "id": "S07",
+      "title": "FV live change blindness article",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "verification_depth": "live_page"
+    },
+    {
+      "id": "S08",
+      "title": "FV live Puységur provenance archive",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "verification_depth": "live_page"
+    },
+    {
+      "id": "S09",
+      "title": "FV existing Fieldbook",
+      "url": "https://finalvestige.com/focus/",
+      "verification_depth": "live_page"
+    },
+    {
+      "id": "S10",
+      "title": "FTC endorsements and material connections",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "verification_depth": "regulatory_guidance"
+    },
+    {
+      "id": "S11",
+      "title": "FTC health products compliance guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "verification_depth": "regulatory_guidance"
+    },
+    {
+      "id": "S12",
+      "title": "Inspire3 official catalog",
+      "url": "https://inspire3.com/",
+      "verification_depth": "seller"
+    },
+    {
+      "id": "S13",
+      "title": "Zen12 official about",
+      "url": "https://zen12.com/about",
+      "verification_depth": "seller"
+    },
+    {
+      "id": "S14",
+      "title": "Zen12 complete-course checkout",
+      "url": "https://zen12.com/getstarted",
+      "verification_depth": "seller_current_session_no_price_republished"
+    },
+    {
+      "id": "S15",
+      "title": "Hypnosis Live Total Focus seller page",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "verification_depth": "seller"
+    },
+    {
+      "id": "S16",
+      "title": "Brainwave Shots Focus Shot seller page",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "verification_depth": "seller"
+    },
+    {
+      "id": "S17",
+      "title": "Inspire3 affiliate recruiting portal",
+      "url": "https://affiliates.inspire3.com/",
+      "verification_depth": "public_recruitment_only"
+    },
+    {
+      "id": "S18",
+      "title": "FV existing commercial collection",
+      "url": "https://finalvestige.com/collection/",
+      "verification_depth": "live_page_not_owned_paid_mind_sku_proof"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "The 1992 study indexed abstract describes impaired probe detection in 270ms interval starting 180ms after first target",
+      "source_ids": [
+        "S01"
+      ],
+      "status": "independently_supported",
+      "limit": "scoped_to_1992_RSVP"
+    },
+    {
+      "id": "C02",
+      "claim": "1992 original investigation included only ten participants in its iconic experiment",
+      "source_ids": [
+        "S03"
+      ],
+      "status": "replication_authors_reconstruct_original",
+      "limit": "not_comprehensive_original_paper_review"
+    },
+    {
+      "id": "C03",
+      "claim": "A white target and possible X probe separate target identification from probe detection",
+      "source_ids": [
+        "S03"
+      ],
+      "status": "independently_supported",
+      "limit": "laboratory_design"
+    },
+    {
+      "id": "C04",
+      "claim": "The 2021 paper describes preregistered replications conducted by independent laboratory groups",
+      "source_ids": [
+        "S03",
+        "S04"
+      ],
+      "status": "independently_supported",
+      "limit": "author_methods"
+    },
+    {
+      "id": "C05",
+      "claim": "Padova recruitment N=100; final analysis N=98",
+      "source_ids": [
+        "S03"
+      ],
+      "status": "independently_supported",
+      "limit": "do_not_swap_denominators"
+    },
+    {
+      "id": "C06",
+      "claim": "Liverpool recruitment N=30; final analysis N=29",
+      "source_ids": [
+        "S03"
+      ],
+      "status": "independently_supported",
+      "limit": "one_control_only_excluded"
+    },
+    {
+      "id": "C07",
+      "claim": "Experiment 1 lag 2 correct detection control=.75 experimental=.33",
+      "source_ids": [
+        "S03"
+      ],
+      "status": "independently_supported",
+      "limit": "table_2_group_means_not_universal_risk"
+    },
+    {
+      "id": "C08",
+      "claim": "Experiment 2 lag 2 correct detection control=.77 experimental=.28",
+      "source_ids": [
+        "S03"
+      ],
+      "status": "independently_supported",
+      "limit": "table_2_group_means"
+    },
+    {
+      "id": "C09",
+      "claim": "In two replications blink central pattern returned, numerical timeline differed from original",
+      "source_ids": [
+        "S03"
+      ],
+      "status": "independently_supported",
+      "limit": "critical_qualification"
+    },
+    {
+      "id": "C10",
+      "claim": "Attentional blink is not an eyelid blink",
+      "source_ids": [
+        "S01",
+        "S03"
+      ],
+      "status": "independently_supported",
+      "limit": "methodological_definition"
+    },
+    {
+      "id": "C11",
+      "claim": "1994 abstract favored a late-selection account",
+      "source_ids": [
+        "S06"
+      ],
+      "status": "abstract_level",
+      "limit": "not_sole_consensus"
+    },
+    {
+      "id": "C12",
+      "claim": "Findings prove Zen12 improves concentration",
+      "source_ids": [
+        "S01",
+        "S03",
+        "S13"
+      ],
+      "status": "prohibited_unsupported",
+      "limit": "omit"
+    },
+    {
+      "id": "C13",
+      "claim": "12-minute session has same benefit as one hour meditation",
+      "source_ids": [
+        "S13"
+      ],
+      "status": "seller_claim_only",
+      "limit": "do_not_republish_as_verified"
+    },
+    {
+      "id": "C14",
+      "claim": "Zen12 described as short structured meditation audio",
+      "source_ids": [
+        "S13"
+      ],
+      "status": "seller_format_only",
+      "limit": "no_product_test"
+    },
+    {
+      "id": "C15",
+      "claim": "Complete Zen12 seller checkout lists 12 levels / 48 MP3",
+      "source_ids": [
+        "S14"
+      ],
+      "status": "seller_format_only",
+      "limit": "not_independent_merchant_fulfillment_test"
+    },
+    {
+      "id": "C16",
+      "claim": "Zen12 seller advertises money-back guarantee",
+      "source_ids": [
+        "S14"
+      ],
+      "status": "seller_claim_only",
+      "limit": "terms/refund_eligibility_unverified"
+    },
+    {
+      "id": "C17",
+      "claim": "Hypnosis Live Total Focus seller page lists a 33-minute recording",
+      "source_ids": [
+        "S15"
+      ],
+      "status": "seller_format_only",
+      "limit": "no_efficacy"
+    },
+    {
+      "id": "C18",
+      "claim": "Brainwave Shots Focus Shot lists 15/30 minute tracks",
+      "source_ids": [
+        "S16"
+      ],
+      "status": "seller_format_only",
+      "limit": "no_efficacy"
+    },
+    {
+      "id": "C19",
+      "claim": "Brainwave entrainment in these products causes reliable focus",
+      "source_ids": [
+        "S13",
+        "S16"
+      ],
+      "status": "prohibited_unsupported",
+      "limit": "omit"
+    },
+    {
+      "id": "C20",
+      "claim": "Any seller price/discount/payout qualifies as verified current FV offer",
+      "source_ids": [
+        "S14",
+        "S17"
+      ],
+      "status": "prohibited_unsupported",
+      "limit": "omit"
+    },
+    {
+      "id": "C21",
+      "claim": "Public Inspire3 portal recruits affiliates",
+      "source_ids": [
+        "S17"
+      ],
+      "status": "publicly_visible",
+      "limit": "not_partner_specific_authorization"
+    },
+    {
+      "id": "C22",
+      "claim": "Final Vestige accepted into Inspire3 network",
+      "source_ids": [
+        "S17"
+      ],
+      "status": "unverified_private_account",
+      "limit": "HARD_HOLD"
+    },
+    {
+      "id": "C23",
+      "claim": "Final Vestige owns an issued Zen12 earning URL with site/email/social channel rights",
+      "source_ids": [
+        "S17"
+      ],
+      "status": "unverified_private_account",
+      "limit": "HARD_HOLD"
+    },
+    {
+      "id": "C24",
+      "claim": "Affiliate disclosure should appear clearly near earning recommendation",
+      "source_ids": [
+        "S10"
+      ],
+      "status": "regulatory_guidance",
+      "limit": "conditional_module_adjacent"
+    },
+    {
+      "id": "C25",
+      "claim": "Named product health efficacy needs competent reliable substantiation",
+      "source_ids": [
+        "S11"
+      ],
+      "status": "regulatory_guidance",
+      "limit": "do_not_inherit_from_general_science"
+    },
+    {
+      "id": "C26",
+      "claim": "Existing Fieldbook is a free lead pathway",
+      "source_ids": [
+        "S09"
+      ],
+      "status": "confirmed_public_route",
+      "limit": "provider_confirmed_signup_unverified"
+    },
+    {
+      "id": "C27",
+      "claim": "Published FV Collection includes other affiliates but is not proof of paid owned Mind SKU",
+      "source_ids": [
+        "S18"
+      ],
+      "status": "public_observation",
+      "limit": "do_not_assume_owner_rights"
+    },
+    {
+      "id": "C28",
+      "claim": "Confirmed affiliate click indicates a settled commission",
+      "source_ids": [
+        "S17"
+      ],
+      "status": "prohibited_metric_conflation",
+      "limit": "separate_events"
+    },
+    {
+      "id": "C29",
+      "claim": "Reported session implies qualified unique human",
+      "source_ids": [
+        "S09"
+      ],
+      "status": "unverified_analytics",
+      "limit": "exclude_without_provenance"
+    },
+    {
+      "id": "C30",
+      "claim": "One text-vs-video buyer pilot can be compared by independently reported orders",
+      "source_ids": [
+        "S10"
+      ],
+      "status": "hypothesis_only",
+      "limit": "not_live_test"
+    }
+  ],
+  "gates": [
+    {
+      "id": "G01",
+      "gate": "network_acceptance",
+      "status": "HARD_HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "G02",
+      "gate": "approved_brand_and_offer",
+      "status": "HARD_HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "G03",
+      "gate": "website_promotion_allowed",
+      "status": "HARD_HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "G04",
+      "gate": "organic_tiktok_allowed",
+      "status": "HARD_HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "G05",
+      "gate": "youtube_allowed",
+      "status": "HARD_HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "G06",
+      "gate": "email_channel_allowed",
+      "status": "HARD_HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "G07",
+      "gate": "issued_earning_url",
+      "status": "HARD_HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "G08",
+      "gate": "valid_redirect_tracking_terms",
+      "status": "HARD_HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "G09",
+      "gate": "approved_creatives_usage_rights",
+      "status": "HARD_HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "G10",
+      "gate": "up_to_date_checkout_terms",
+      "status": "HARD_HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "G11",
+      "gate": "refund_and_cancellation_terms",
+      "status": "HARD_HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "G12",
+      "gate": "claims_review",
+      "status": "HARD_HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "G13",
+      "gate": "near_link_affiliate_disclosure",
+      "status": "HARD_HOLD",
+      "owner": "Mind/QA"
+    },
+    {
+      "id": "G14",
+      "gate": "privacy_safe_tracking_authorization",
+      "status": "HARD_HOLD",
+      "owner": "Mind/QA"
+    },
+    {
+      "id": "G15",
+      "gate": "browser_wcag_review",
+      "status": "HARD_HOLD",
+      "owner": "Mind/QA"
+    },
+    {
+      "id": "G16",
+      "gate": "wp_sanitizer_review",
+      "status": "HARD_HOLD",
+      "owner": "Mind/QA"
+    },
+    {
+      "id": "G17",
+      "gate": "founder_release_approval",
+      "status": "HARD_HOLD",
+      "owner": "Founder/Commerce"
+    },
+    {
+      "id": "G18",
+      "gate": "independent_commission_confirmation",
+      "status": "HARD_HOLD",
+      "owner": "Founder/Commerce"
+    }
+  ],
+  "creator_to_offer": [
+    {
+      "topic": "Attentional blink",
+      "existing_creator_asset_id": null,
+      "canonical_article": "UNPUBLISHED R312 manuscript",
+      "free_route": "https://finalvestige.com/focus/",
+      "optional_offer": "Zen12 only if verified",
+      "fit": "high curiosity; moderate format consideration; no efficacy promise",
+      "status": "Grok/Praxxis media verification pending"
+    },
+    {
+      "topic": "Change blindness",
+      "existing_creator_asset_id": null,
+      "canonical_article": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "free_route": "https://finalvestige.com/focus/",
+      "optional_offer": "Zen12 context-only after approval",
+      "fit": "perception demonstration → practice interest, not treatment",
+      "status": "Grok/Praxxis asset verification pending"
+    },
+    {
+      "topic": "History of hypnosis/Puységur",
+      "existing_creator_asset_id": null,
+      "canonical_article": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "free_route": "https://finalvestige.com/focus/",
+      "optional_offer": "Hypnosis Live guide only if separate claims/approval passed",
+      "fit": "historical audience may not be buyers; do not force offer",
+      "status": "Grok/Praxxis asset verification pending"
+    }
+  ],
+  "measurement": {
+    "qualified_human_session": "only deduplicated, consent-appropriate, source-classified qualified session; no raw IP or cross-device fingerprint",
+    "utm_source": "platform",
+    "utm_medium": "organic_social",
+    "utm_campaign": "mind_approved_pilot_yyyy_mm",
+    "utm_content": "grok_verified_asset_id only",
+    "events": [
+      "landing",
+      "article_to_fieldbook_click",
+      "provider_confirmed_lead_if_accessible",
+      "qualified_offer_guide_visit",
+      "affiliate_click_only_after_approved_url",
+      "merchant_confirmed_order",
+      "settled_commission",
+      "refund_fee_adjustment"
+    ],
+    "revenue_per_1000_formula": "1000 * realized_net_attributable_fv_revenue / qualified_human_sessions",
+    "current_kpi_state": "NOT_COMPUTABLE",
+    "cohorts_days": [
+      7,
+      30
+    ],
+    "rule": "never count clicks or provisional orders as cleared sales; tiny n warning"
+  },
+  "published_state": {
+    "cms_write": false,
+    "merge": false,
+    "site_navigation_change": false,
+    "merchant_url_active": false,
+    "paid_vendor": false,
+    "dispatch_email_write": false,
+    "additional_jetpack_form": false
+  }
+}
