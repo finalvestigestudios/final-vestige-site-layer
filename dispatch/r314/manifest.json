@@ -1,0 +1,70 @@
+{
+  "status": "ALL_REVIEW_ONLY_HOLD_UNSENT",
+  "source_pr": 175,
+  "original_source_head": "d57ccdba3aee8f065e143e101c2945f4f3d01647",
+  "draft_ratio": "4 editorial / 2 commercial — unchanged",
+  "founder_adopted": false,
+  "issues": [
+    {
+      "issue": 1,
+      "subject": "The change you didn't see",
+      "preheader": "An experiment in attention—and why observation deserves a second look.",
+      "cta": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "adopted": false,
+      "email_allowed": false,
+      "sources": [
+        "https://pubmed.ncbi.nlm.nih.gov/15639436/",
+        "https://pubmed.ncbi.nlm.nih.gov/18797511/"
+      ]
+    },
+    {
+      "issue": 4,
+      "subject": "Apollo 1: the cause the report could not pin down",
+      "preheader": "Investigators identified lethal conditions without proving one exact ignition point.",
+      "cta": "https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/",
+      "adopted": false,
+      "email_allowed": false,
+      "sources": [
+        "https://www.nasa.gov/missions/apollo/apollo-1/report-of-the-apollo-204-review-board/",
+        "https://sma.nasa.gov/sma-disciplines/accllp/apollo-1"
+      ]
+    },
+    {
+      "issue": 6,
+      "subject": "Your seven-day focus experiment isn't a verdict",
+      "preheader": "A useful evidence log shows what worked without pretending to prove a cure.",
+      "cta": "https://finalvestige.com/wp-content/uploads/2026/10/Final_Vestige_Seven_Day_Focus_Fieldbook_Complete_Edition.pdf",
+      "adopted": false,
+      "email_allowed": false,
+      "sources": [
+        "https://finalvestige.com/wp-content/uploads/2026/10/Final_Vestige_Seven_Day_Focus_Fieldbook_Complete_Edition.pdf",
+        "https://finalvestige.com/editorial-standards/"
+      ]
+    }
+  ],
+  "commercial": [
+    {
+      "issue": 3,
+      "status": "HOLD_MERCHANT",
+      "email_permission_verified": false,
+      "issued_link_verified": false,
+      "approved_live_guide": false
+    },
+    {
+      "issue": 5,
+      "status": "HOLD_MERCHANT",
+      "email_permission_verified": false,
+      "issued_link_verified": false,
+      "approved_live_guide": false
+    }
+  ],
+  "actual_email_eligible_recipients": "UNKNOWN",
+  "received_welcome": "UNVERIFIED",
+  "actual_jetpack_preview": "NOT_TESTED",
+  "publisher_postal_address": "UNVERIFIED",
+  "functional_unsubscribe": "UNVERIFIED",
+  "qualified_human_sessions": "UNKNOWN",
+  "settled_paid_orders": "UNKNOWN",
+  "net_revenue_per_1000": "NOT_COMPUTABLE",
+  "snapshot_utc": "2026-11-12T21:37:48Z"
+}
