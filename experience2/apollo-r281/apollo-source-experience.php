@@ -14,7 +14,7 @@ const FV_R281_FREE = 'https://finalvestige.com/2026/08/20/the-hatch-opened-inwar
 const FV_R281_STYLE = 'fv-apollo-evidence-r281';
 // R294: stylesheet version is tied to reviewed CSS bytes (sha256 prefix). Keep
 // WordPress's enqueued link and the no-preflight body fallback cache-consistent.
-const FV_R294_STYLE_VERSION = 'r296-41ab84cba066';
+const FV_R294_STYLE_VERSION = 'r298-f5505d2c9594';
 // Staging-only digest of corrected chronology, pending independent historical editorial
 // approval. It detects accidental data drift; it does not certify publication.
 const FV_R287_STAGING_EVENTS_SHA256 = '2a473986ed2e9c8ca98d19fb5ce0d32fea62d060d9dadcd2fa4613167eba36ef';
@@ -264,7 +264,12 @@ function fv_r281_render($attributes = []): string {
         if ($index === 1) {
             $s.='<p class="fv-r281__authority-jump"><a href="#'.$id.'-authority-1">Examine the four dated Board authority records</a></p>';
         }
-        $s.='<details class="fv-r281__drawer"><summary>Inspect the source and custody record</summary><div class="fv-r281__drawer-body"><p><strong>Custodian:</strong> NASA · <strong>Record:</strong> '.fv_r281_escape($r['source_id']).' · <strong>Editorial review:</strong> Pending</p><p><strong>Record type:</strong> '.fv_r281_escape($r['source_type']).'. <strong>Source relationship:</strong> '.fv_r281_escape($r['source_dependency']).'</p>';
+        // R298: Chromium gives native <details> its accessible name from
+        // summary *text*, not summary aria-label. The screen-reader-only suffix
+        // differentiates controls across records and repeated shortcode instances.
+        // If CSS fails, the suffix becomes visible rather than disappearing.
+        $drawer_suffix=' — '.$r['title'].$landmark_instance;
+        $s.='<details class="fv-r281__drawer"><summary>Inspect the source and custody record<span class="fv-r298__sr-only">'.fv_r281_escape($drawer_suffix).'</span></summary><div class="fv-r281__drawer-body"><p><strong>Custodian:</strong> NASA · <strong>Record:</strong> '.fv_r281_escape($r['source_id']).' · <strong>Editorial review:</strong> Pending</p><p><strong>Record type:</strong> '.fv_r281_escape($r['source_type']).'. <strong>Source relationship:</strong> '.fv_r281_escape($r['source_dependency']).'</p>';
         $s.='<p><a href="'.fv_r281_escape($r['source_url']).'" rel="noopener noreferrer">Open '.fv_r281_escape($r['source_name']).' (NASA)</a></p>';
         $s.='<p>This is an official-source link, not a claim of NASA endorsement or clearance for promotional use of agency marks, astronaut likenesses, or media.</p></div></details>';
         $s.='</article></li>';
@@ -275,7 +280,7 @@ function fv_r281_render($attributes = []): string {
     $s.='</ol><aside class="fv-r281__reconciliation" aria-label="NASA source-date reconciliation'.$landmark_instance.'" data-fv-date-review="editorial-review-pending"><h3>Why NASA sources give different establishment dates</h3>';
     $s.='<p><strong>Unresolved source distinction:</strong> The Apollo 204 Review Board narrative dates its original oral authorization to January 27, 1967. A later NASA safety summary describes the Board as established on January 28. Both place its first Kennedy meeting on January 28. We preserve that distinction instead of calling two institutional descriptions independent corroboration.</p>';
     $s.='<h4>Document custody: four different dated actions</h4><p>These dates describe the Board\'s authority, meeting, memorandum and later confirmation. Its own 1967 narrative and proceedings are parts of the same investigation, not independent eyewitness corroboration.</p>';
-    $s.='<details class="fv-r291__authority-disclosure"><summary>Inspect all four dated Board authority records</summary><p class="fv-r291__disclosure-intro">Each entry identifies what the Board documented and what that record does not establish. Source links lead to NASA, not a commercial offer.</p><ol class="fv-r281__authority-ledger" aria-label="Board authority document chronology'.$landmark_instance.'">';
+    $s.='<details class="fv-r291__authority-disclosure"><summary>Inspect all four dated Board authority records<span class="fv-r298__sr-only">'.fv_r281_escape($landmark_instance).'</span></summary><p class="fv-r291__disclosure-intro">Each entry identifies what the Board documented and what that record does not establish. Source links lead to NASA, not a commercial offer.</p><ol class="fv-r281__authority-ledger" aria-label="Board authority document chronology'.$landmark_instance.'">';
     foreach ($authority_ledger as $index=>$entry) {
         $authority_point=$id.'-authority-'.($index+1);
         $s.='<li id="'.$authority_point.'" tabindex="-1"><p class="fv-r281__authority-date"><time datetime="'.fv_r281_escape($entry['date']).'">'.fv_r281_escape($entry['label']).'</time></p>';
@@ -287,7 +292,7 @@ function fv_r281_render($attributes = []): string {
     // but make the three longer related NASA-source accounts opt-in. Native
     // details is keyboard/touch/no-JS capable; print exposes the full custody
     // record; source URLs are unchanged and never rewritten as commercial links.
-    $s.='</ol></details><details class="fv-r296__date-disclosure"><summary>Compare all three NASA source descriptions</summary><p class="fv-r296__date-guide">Three related NASA institutional records, not three independent witnesses. Each source states a date or documents an action, with its limits shown below.</p><ul class="fv-r281__reconciliation-list">';
+    $s.='</ol></details><details class="fv-r296__date-disclosure"><summary>Compare all three NASA source descriptions<span class="fv-r298__sr-only">'.fv_r281_escape($landmark_instance).'</span></summary><p class="fv-r296__date-guide">Three related NASA institutional records, not three independent witnesses. Each source states a date or documents an action, with its limits shown below.</p><ul class="fv-r281__reconciliation-list">';
     foreach ($date_reconciliation as $source) {
         $s.='<li><strong>'.fv_r281_escape($source['authority']).'</strong><p>'.fv_r281_escape($source['statement']).'</p>';
         $s.='<p class="fv-r281__reconciliation-boundary">Source boundary: '.fv_r281_escape($source['boundary']).'</p>';
