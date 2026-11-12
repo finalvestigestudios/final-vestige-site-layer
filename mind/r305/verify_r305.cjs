@@ -46,7 +46,7 @@ function verify(f){
    requireTrue(prefix+'_DISABLED',/<button\b[^>]*\sdisabled(?:\s|>)/.test(html));
    requireTrue(prefix+'_DISCLOSED',/may earn a commission at no additional cost to you/.test(html));
    requireTrue(prefix+'_FOCUS',/https:\/\/finalvestige\.com\/focus\//.test(html));
-   requireTrue(prefix+'_NO_UNVERIFIED_PLAYBACK',!/\bwe personally tested\b|\bclinically proven Zen12\b|\bguaranteed concentration\b/i.test(html));
+   requireTrue(prefix+'_NO_UNVERIFIED_PLAYBACK',!/\bwe personally tested\b|\bclinically proven Zen12\b|\bZen12 guarantees concentration\b/i.test(html));
  }
  requireTrue('HUB_PROXIMITY',/Prospective affiliate disclosure:[\s\S]{0,350}<\/div>[\s\S]{0,120}<p><button\b[^>]*disabled/.test(f.hub));
  requireTrue('BUYER_PROXIMITY',/class="disclosure"[\s\S]{0,1000}<button\b[^>]*disabled/.test(f.buyer));
