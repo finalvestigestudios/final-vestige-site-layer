@@ -4,14 +4,14 @@
  * Paste into DevTools Console at responsive widths 390px, then 1440px.
  * Save sanitized console output plus manual screenshots. Does not read cookies,
  * preview URLs, credentials, localStorage or tokens, or write/fetch/upload data.
- * Current article revision (2026-11-12 11:34 Pacific): 81 blocks, 42 sources,
- * SHA-1 6b06724152de158fc3e94d40fae2c6b46395a383 (must be independently checked).
+ * Current article revision (2026-11-12 12:44 Pacific): 82 blocks, 43 sources,
+ * SHA-1 6449c7fc2963f58f3f96aa1ea19e97f370ee3af1 (must be independently checked).
  * A console PASS is NOT a Gutenberg SHA check, visual review or publication gate.
  */
 (async () => {
   'use strict';
   const EXPECTED = { title: 'The Levee They Blew on Purpose', photos: 4,
-    bibliography: 42, headings: 11, tableRows: 10, chronologyCards: 5,
+    bibliography: 43, headings: 11, tableRows: 10, chronologyCards: 5,
     chronologyLinks: 4 };
   const MEDIA = {
     '2148': ['NOAA'], '2255': ['Library of Congress', 'LOC'],
@@ -107,6 +107,12 @@
     'single institutional retrospective', 'not an original 1927 decision record'];
   const provenanceCorrectionOk = precisionParagraphs.some(p =>
     provenanceMarkers.every(t => p.includes(t)));
+  // Nov 12 12:44: Dantoni's 1955 tax line is not proof of payouts or collection.
+  const dantoniMarkers = ['Dantoni v. Board of Levee Commissioners',
+    'March 21, 1955', '5½-mill property tax', 'Half a mill was designated',
+    'not establish whether the proposed tax was collected'];
+  const dantoniAfterlifeOk = precisionParagraphs.some(p =>
+    dantoniMarkers.every(t => p.includes(t)));
   const brokenAnchors = [...article.querySelectorAll('a[href^="#"]')].filter(a => {
     const target = a.getAttribute('href')?.slice(1);
     if (!target) return false;
@@ -122,7 +128,7 @@
   const checks = {
     expected_title: true,
     correct_four_locally_hosted_credited_images: allImagesOk,
-    exactly_42_bibliography_entries: sources === EXPECTED.bibliography,
+    exactly_43_bibliography_entries: sources === EXPECTED.bibliography,
     eleven_h2_sections: article.querySelectorAll('h2').length === EXPECTED.headings,
     evidence_table_ten_rows: tableReport.rows === EXPECTED.tableRows,
     internal_anchors_resolve: brokenAnchors === 0,
@@ -139,6 +145,7 @@
     revision_sentinels_present: missingSentinels.length === 0,
     usgs_2026_11_12_precision_correction_present_in_one_paragraph: precisionCorrectionOk,
     corps_2026_11_12_provenance_correction_present_in_one_paragraph: provenanceCorrectionOk,
+    dantoni_1955_reparation_tax_scope_present_in_one_paragraph: dantoniAfterlifeOk,
     header_and_footer_present: !!document.querySelector('header') && !!document.querySelector('footer')
   };
   const result = {
@@ -147,6 +154,7 @@
     allAutomatedChecksPassed: Object.values(checks).every(Boolean),
     checks, evidence: { imageReports, sourceCount: sources, timelineReport,
       tableReport, brokenAnchors, missingSentinels, precisionCorrectionOk,
+      provenanceCorrectionOk, dantoniAfterlifeOk,
       pageOverflowPx: document.documentElement.scrollWidth - width },
     manualGatesRemain: [
       'Verify this is WP #2151 in editor; separately compare fresh Gutenberg SHA.',
