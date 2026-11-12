@@ -7,10 +7,20 @@ qualified claim/safety/source review and authentic native exports remain separat
 from __future__ import annotations
 import argparse
 import copy
+import importlib.util
 import json
 from pathlib import Path
 
-from preparedness.tools import r319_three_way_custody_hold as custody
+# Load the sibling, pinned custody validator by path: python -I script.py works
+# without trusting a mutable PYTHONPATH or importing unrelated site packages.
+_CUSTODY_FILE = Path(__file__).with_name('r319_three_way_custody_hold.py')
+if _CUSTODY_FILE.is_symlink():
+    raise RuntimeError('linked custody validator')
+_spec = importlib.util.spec_from_file_location('fv_r319_custody', _CUSTODY_FILE)
+if _spec is None or _spec.loader is None:
+    raise RuntimeError('missing custody validator')
+custody = importlib.util.module_from_spec(_spec)
+_spec.loader.exec_module(custody)
 
 SCHEMA = 'fv-preparedness-r320-conflict-adjudication-docket-v1'
 SOURCE_MANIFEST_PATH = custody.MANIFEST_PATH
