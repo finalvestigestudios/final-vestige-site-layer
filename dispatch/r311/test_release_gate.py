@@ -32,10 +32,10 @@ class ReleaseGateTests(unittest.TestCase):
     def test_reader_only_not_signup(self):
         self.assertFalse(confirmed_signup({"source":"authenticated_provider", "new_email_status":"reader"}))
     def test_synthetic_transition(self):
-        p = {"source":"authenticated_provider", "confirmation_attested":True, "prior_email_status":"pending",
+        p = {"source":"authenticated_provider", "confirmation_attested":True, "prior_email_status":"pending", "confirmation_proof_id":"synthetic-proof-01",
              "new_email_status":"subscribed", "opaque_provider_key":"synthetic-key-123", "deduplicated":True, "opted_out":False}
         self.assertTrue(confirmed_signup(p))
-        for field, value in [("prior_email_status", "subscribed"),("new_email_status", "paused"),
+        for field, value in [("prior_email_status", "subscribed"),("prior_email_status", None),("confirmation_proof_id", None),("new_email_status", "paused"),
                              ("confirmation_attested",False),("deduplicated",False),("opted_out",True),
                              ("opaque_provider_key","test@example.com")]:
             with self.subTest(field=field):
@@ -47,11 +47,11 @@ class ReleaseGateTests(unittest.TestCase):
     def test_inferred_click_is_not_order(self):
         self.assertEqual(qualified_revenue_rate(10,[{"click":True}])["status"], "NOT_COMPUTABLE")
     def test_synthetic_revenue(self):
-        row={"settled":True,"source_verified":True,"opaque_order_id":"synthetic-order-01","gross":"30.00","refunds":"5.00","fees":"2.00","currency":"USD"}
+        row={"settled":True,"source_verified":True,"attribution_verified":True,"cohort":"7d","opaque_order_id":"synthetic-order-01","gross":"30.00","refunds":"5.00","fees":"2.00","currency":"USD"}
         out=qualified_revenue_rate(100,[row])
         self.assertEqual(out["rate"],"230.00")
         self.assertEqual(qualified_revenue_rate(100,[row,row])["status"],"NOT_COMPUTABLE")
-        for k,val in [("settled",False),("source_verified",False),("fees",None),("currency","EUR"),("refunds","31.00"),("gross","NaN")]:
+        for k,val in [("settled",False),("source_verified",False),("attribution_verified",False),("cohort",None),("fees",None),("currency","EUR"),("refunds","31.00"),("gross","NaN")]:
             with self.subTest(k=k):
                 self.assertEqual(qualified_revenue_rate(100,[{**row,k:val}])["status"],"NOT_COMPUTABLE")
     def test_manifest_flags(self):
