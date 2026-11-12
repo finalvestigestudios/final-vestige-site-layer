@@ -69,6 +69,34 @@ class DocketIntegrity(unittest.TestCase):
         self.assertIn('R319_SOURCE_MANIFEST_INVALID',self.report()['errors'])
 
 
+    def test_corrupt_integrated_ref_never_crashes(self):
+        rec=next(r for r in self.m['records'] if r['disposition']=='HUMAN_REVIEW_REQUIRED')
+        rec['integrated']=None
+        self.assertEqual(self.report()['state'],'INVALID_HARD_HOLD')
+        self.assertIn('R319_SOURCE_MANIFEST_INVALID',self.report()['errors'])
+    def test_corrupt_followup_ref_never_crashes(self):
+        rec=next(r for r in self.m['records'] if r['disposition']=='HUMAN_REVIEW_REQUIRED')
+        rec['followup']=[]
+        self.assertEqual(self.report()['state'],'INVALID_HARD_HOLD')
+    def test_missing_path_in_source_never_crashes(self):
+        self.m['records'][0].pop('path')
+        self.assertEqual(self.report()['state'],'INVALID_HARD_HOLD')
+    def test_untrusted_metadata_cannot_claim_approval(self):
+        self.d['records'][0]['claim_by_claim_verified']='yes'
+        self.assertEqual(self.report()['state'],'INVALID_HARD_HOLD')
+    def test_untrusted_truthy_automatic_merge_rejected(self):
+        self.d['release']['automatic_merge_permitted']=1
+        self.assertEqual(self.report()['state'],'INVALID_HARD_HOLD')
+    def test_missing_review_action_rejected(self):
+        self.d['records'][0]['review_task']=None
+        self.assertEqual(self.report()['state'],'INVALID_HARD_HOLD')
+    def test_duplicate_source_record_holds(self):
+        self.m['records'].append(copy.deepcopy(self.m['records'][0]))
+        self.assertEqual(self.report()['state'],'INVALID_HARD_HOLD')
+    def test_deleted_source_pair_holds(self):
+        self.m['records'].pop()
+        self.assertEqual(self.report()['state'],'INVALID_HARD_HOLD')
+
 def source_ref_mutation(index, field):
     def test(self):
         self.d['records'][index]['source_refs'][field]={'sha':'e'*40,'size':700}
