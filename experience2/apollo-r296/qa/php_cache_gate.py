@@ -8,7 +8,7 @@ from pathlib import Path
 BASE=Path(__file__).resolve().parents[2]
 PHP=BASE/'apollo-r281/apollo-source-experience.php'
 CSS=BASE/'apollo-r281/assets/apollo-source-experience.css'
-EXPECTED='r296-'+hashlib.sha256(CSS.read_bytes()).hexdigest()[:12]
+EXPECTED='r298-'+hashlib.sha256(CSS.read_bytes()).hexdigest()[:12]
 TESTS=[]
 
 def check(flag, label):
