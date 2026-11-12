@@ -131,7 +131,7 @@ class BoundedCitationsR366(unittest.TestCase):
 from fvs_suite import policy_confusables as _r367_source
 
 
-def _r367_hunk(line, old="PAY A\\n", new="PAY А\\n"):
+def _r367_hunk(line, old="PAY A\n", new="PAY А\n"):
     return {"removed_sources": [(line, old)],
             "added_sources": [(line, new)]}
 
@@ -168,13 +168,13 @@ class DeferredGlyphCuesR367(unittest.TestCase):
     def test_unchanged_sources_neither_count_nor_format(self):
         with patch.object(_r367_source, "_changes",
                           wraps=_r367_source._changes) as tracked:
-            report = render([_r367_hunk(i, "PAY A\\n", "PAY A\\n")
+            report = render([_r367_hunk(i, "PAY A\n", "PAY A\n")
                              for i in range(1, 24)])
         self.assertEqual(tracked.call_count, 0)
         self.assertEqual(report, "")
 
     def test_unchanged_sources_do_not_consume_display_budget(self):
-        values = [_r367_hunk(i, "PAY A\\n", "PAY A\\n")
+        values = [_r367_hunk(i, "PAY A\n", "PAY A\n")
                   for i in range(1, 30)]
         values += [_r367_hunk(i) for i in range(30, 49)]
         report = render(values)
@@ -183,12 +183,12 @@ class DeferredGlyphCuesR367(unittest.TestCase):
         self.assertIn("+3 additional look-alike pair(s) omitted", report)
 
     def test_lowercase_cyrillic_character_name(self):
-        report = render([_r367_hunk(1, "code o\\n", "code о\\n")])
+        report = render([_r367_hunk(1, "code o\n", "code о\n")])
         self.assertIn("LATIN SMALL LETTER O", report)
         self.assertIn("CYRILLIC SMALL LETTER O", report)
 
     def test_greek_character_name(self):
-        report = render([_r367_hunk(1, "A\\n", "Α\\n")])
+        report = render([_r367_hunk(1, "A\n", "Α\n")])
         self.assertIn("GREEK CAPITAL LETTER ALPHA", report)
         self.assertIn("LATIN CAPITAL LETTER A", report)
 
@@ -213,8 +213,8 @@ class DeferredGlyphCuesR367(unittest.TestCase):
                                 + [bad]), "")
 
     def test_private_originals_never_echo_or_mutate(self):
-        private = [_r367_hunk(i, f"customer-7781 A {i}\\n",
-                              f"customer-7781 А {i}\\n")
+        private = [_r367_hunk(i, f"customer-7781 A {i}\n",
+                              f"customer-7781 А {i}\n")
                    for i in range(1, 45)]
         snapshot = repr(private)
         report = render(private)
@@ -228,9 +228,9 @@ class DeferredGlyphCuesR367(unittest.TestCase):
         self.assertNotIn("before L17;", report)
 
     def test_200_matches_one_hunk_retain_earliest(self):
-        values = {"removed_sources": [(i, f"Rule {i:03d} A\\n")
+        values = {"removed_sources": [(i, f"Rule {i:03d} A\n")
                                      for i in range(1, 201)],
-                  "added_sources": [(i, f"Rule {i:03d} А\\n")
+                  "added_sources": [(i, f"Rule {i:03d} А\n")
                                     for i in range(1, 201)]}
         report = render([values])
         self.assertEqual(report.count("Look-alike hunk"), 16)
