@@ -69,13 +69,61 @@ class LibraryTests(unittest.TestCase):
                 build.Library(root=sandbox)
 
     def test_register_fragments_cannot_duplicate_ids(self):
-        frag = ROOT / "sources" / "fragments" / "_dup_test.json"
-        frag.write_text('{"sources": [{"id": "cdc-water-store", "title": "x", "url": "https://example.gov/x", "kind": "regulator", "publisher": "x", "verified_on": "2026-10-29", "supports": "x"}]}', encoding="utf-8")
-        try:
-            with self.assertRaises(ValueError):
-                build.Library()
-        finally:
-            frag.unlink()
+        """Duplicate-source rejection must run only inside a disposable copy.
+
+        A real checkout's source fragments are immutable inputs, even while a
+        parallel reviewer or builder reads them.
+        """
+        import shutil
+        import tempfile
+
+        with tempfile.TemporaryDirectory(prefix="fvs-preparedness-duplicate-") as td:
+            sandbox = Path(td) / "preparedness"
+            shutil.copytree(ROOT, sandbox, ignore=shutil.ignore_patterns(
+                "build", "__pycache__"))
+            fragment = sandbox / "sources" / "fragments" / "_dup_test.json"
+            self.assertFalse(fragment.exists(), "synthetic fixture name collided in sandbox")
+            fragment.write_text(json.dumps({"sources": [{
+                "id": "cdc-water-store",
+                "title": "synthetic duplicate",
+                "url": "https://example.org/fvs-only-test-duplicate",
+                "kind": "regulator",
+                "publisher": "synthetic",
+                "verified_on": "2026-10-29",
+                "supports": "Duplicate-source rejection fixture only",
+            }]}), encoding="utf-8")
+            with self.assertRaisesRegex(ValueError, "duplicate source id"):
+                build.Library(root=sandbox)
+
+    def test_fixture_tests_never_write_or_unlink_in_canonical_checkout(self):
+        """Runtime guard covers both source fixture tests, not just static AST."""
+        from unittest.mock import patch
+
+        original_write = Path.write_text
+        original_unlink = Path.unlink
+        canonical_root = ROOT.resolve()
+        sandbox_writes = []
+
+        def check_target(path):
+            resolved = path.resolve()
+            if resolved == canonical_root or canonical_root in resolved.parents:
+                self.fail("Fixture test attempted a canonical Preparedness write: " +
+                          str(resolved))
+            return resolved
+
+        def guarded_write(path, *args, **kwargs):
+            sandbox_writes.append(str(check_target(path)))
+            return original_write(path, *args, **kwargs)
+
+        def guarded_unlink(path, *args, **kwargs):
+            check_target(path)
+            return original_unlink(path, *args, **kwargs)
+
+        with patch.object(Path, "write_text", guarded_write), patch.object(
+                Path, "unlink", guarded_unlink):
+            self.test_fragment_may_upgrade_a_placeholder_but_not_a_verified_source()
+            self.test_register_fragments_cannot_duplicate_ids()
+        self.assertGreaterEqual(len(sandbox_writes), 4)
 
     def test_no_article_is_published_without_review(self):
         for slug, meta in self.lib.articles.items():
