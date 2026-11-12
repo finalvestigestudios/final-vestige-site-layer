@@ -48,6 +48,7 @@ test('page URL tampering rejected',()=>held(p=>{p.page_url='https://finalvestige
 test('unverified redirect rejected',()=>held(p=>{p.guest.final_response_url='https://example.org/elsewhere.jpg'},/MISSING_OR_UNBOUND/));
 test('linked completed redirect may be evaluated',()=>{
  const p=packet();p.guest.final_response_url='https://example.org/other.jpg';p.guest.redirect_chain_verified=true;
+ p.guest.redirect_chain=[{url:p.guest.request_url,cdp_request_id:'req-1',response_status:302},{url:p.guest.final_response_url,cdp_request_id:'req-1',response_status:404}];
  assert.equal(adjudicateP0(p).status,'GUEST_FAILURE_EVIDENCE_RECORDED_REVIEW_REQUIRED');});
 test('invalid screenshot hash rejected',()=>held(p=>{p.screenshot_sha256='x'.repeat(64)},/MISSING_OR_UNBOUND/));
 test('HTTP 404 but positive decoded pixels cannot count as broken',()=>held(p=>{p.guest.natural_width=900},/INCONSISTENT/));
@@ -70,3 +71,47 @@ test('cleared editorial alternative still not a silent same-photo replacement',(
  r.revised_alt='Editorially selected archive photograph of the Scotch Cap shoreline';
  const a=adjudicateP0(p,r);assert.equal(a.status,'STAGING_REVIEW_PACKET_ELIGIBLE_NO_WRITE');
  assert.equal(a.staging_reviewer_packet.mode,'DISCLOSED_EDITORIAL_ALTERNATIVE');});
+
+test('unrelated image 404 is not attributed to pinned original',()=>held(p=>{
+ p.guest.current_src=p.guest.request_url=p.guest.final_response_url='https://unrelated.example/broken.jpg';
+},/MISSING_OR_UNBOUND/));
+test('unrelated image successful load is not evidence pinned source loads',()=>{
+ const p=packet('418:1',200);
+ p.guest.current_src=p.guest.request_url=p.guest.final_response_url='https://unrelated.example/healthy.jpg';
+ Object.assign(p.guest,{natural_width:960,natural_height:540,image_decoded:true});
+ assert.equal(adjudicateP0(p).status,'HOLD');
+});
+test('swapped image currentSrc across P0 slots is rejected',()=>held(p=>{
+ p.guest.current_src=p.guest.request_url=p.guest.final_response_url=P0['418:2'].src;
+},/MISSING_OR_UNBOUND/));
+test('unverified runtime rewrite requires Site QA source-binding proof',()=>held(p=>{
+ p.guest.current_src=p.guest.request_url=p.guest.final_response_url=P0['418:1'].src+'?rewritten=1';
+},/MISSING_OR_UNBOUND/));
+test('bare redirect verified boolean cannot admit a failed image',()=>held(p=>{
+ p.guest.final_response_url='https://example.org/other.jpg';p.guest.redirect_chain_verified=true;
+},/MISSING_OR_UNBOUND/));
+test('redirect array must begin at captured original URL',()=>held(p=>{
+ p.guest.final_response_url='https://example.org/other.jpg';p.guest.redirect_chain_verified=true;
+ p.guest.redirect_chain=[{url:'https://other.example/other.jpg',cdp_request_id:'req-1',response_status:302},{url:p.guest.final_response_url,cdp_request_id:'req-1',response_status:404}];
+},/MISSING_OR_UNBOUND/));
+test('redirect chain terminal status must match final observation',()=>held(p=>{
+ p.guest.final_response_url='https://example.org/other.jpg';p.guest.redirect_chain_verified=true;
+ p.guest.redirect_chain=[{url:p.guest.request_url,cdp_request_id:'req-1',response_status:302},{url:p.guest.final_response_url,cdp_request_id:'req-1',response_status:200}];
+},/MISSING_OR_UNBOUND/));
+test('redirect chain must bind same CDP request ID',()=>held(p=>{
+ p.guest.final_response_url='https://example.org/other.jpg';p.guest.redirect_chain_verified=true;
+ p.guest.redirect_chain=[{url:p.guest.request_url,cdp_request_id:'req-1',response_status:302},{url:p.guest.final_response_url,cdp_request_id:'other',response_status:404}];
+},/MISSING_OR_UNBOUND/));
+test('redirect cycles do not establish coherent request chain',()=>held(p=>{
+ p.guest.final_response_url='https://example.org/other.jpg';p.guest.redirect_chain_verified=true;
+ p.guest.redirect_chain=[{url:p.guest.request_url,cdp_request_id:'req-1',response_status:302},{url:p.guest.request_url,cdp_request_id:'req-1',response_status:302},{url:p.guest.final_response_url,cdp_request_id:'req-1',response_status:404}];
+},/MISSING_OR_UNBOUND/));
+test('redirect chain cannot invent HTTP success as intermediate redirect',()=>held(p=>{
+ p.guest.final_response_url='https://example.org/other.jpg';p.guest.redirect_chain_verified=true;
+ p.guest.redirect_chain=[{url:p.guest.request_url,cdp_request_id:'req-1',response_status:200},{url:p.guest.final_response_url,cdp_request_id:'req-1',response_status:404}];
+},/MISSING_OR_UNBOUND/));
+test('all six frozen originals still allow coherent synthetic failed-capture triage only',()=>{
+ for(const slot of Object.keys(P0)){const a=adjudicateP0(packet(slot));
+  assert.equal(a.status,'GUEST_FAILURE_EVIDENCE_RECORDED_REVIEW_REQUIRED');
+  assert.equal(a.production_write_allowed,false);}
+});
