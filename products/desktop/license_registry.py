@@ -83,6 +83,9 @@ class IssuanceRegistry:
     @contextmanager
     def _db(self):
         self._check_file()
+        conn = None
+        initialized = False
+        setup_fault = False
         try:
             conn = sqlite3.connect(str(self.path), timeout=5, isolation_level=None)
             conn.execute("PRAGMA busy_timeout=5000")
@@ -98,8 +101,22 @@ class IssuanceRegistry:
                 reserved_at TEXT NOT NULL,
                 issued_at TEXT
             )""")
-        except sqlite3.Error as exc:
-            raise RegistryError("Cannot initialize protected registry") from exc
+            initialized = True
+        except sqlite3.Error:
+            setup_fault = True
+        finally:
+            # SQLite connect can succeed and a subsequent PRAGMA/DDL can fail.
+            # No partially configured connection may remain open on failure,
+            # including KeyboardInterrupt/SystemExit paths.
+            if not initialized and conn is not None:
+                try:
+                    conn.close()
+                except sqlite3.Error:
+                    pass
+        # Raise only after the private SQLite fault has left the handler.
+        # Chaining (even "from None") retains paths in __context__.
+        if setup_fault:
+            raise RegistryError("Cannot initialize protected registry")
         try:
             yield conn
         finally:
