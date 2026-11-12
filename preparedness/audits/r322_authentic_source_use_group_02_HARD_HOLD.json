@@ -1,0 +1,313 @@
+{
+  "schema": "fv-preparedness-r322-authentic-source-use-crosswalk-group-v1",
+  "group": 2,
+  "source_manifest_blob": "9765091c5e113a65e0ccbc2fb647a1a96f40a7aa",
+  "docket_blob": "3119626a19175cec8f0dc4f03c5da57f319906d0",
+  "authentic_git_blobs_checked": 12,
+  "failures": [],
+  "limitations": "Regex source token inventory, not verified browser-visible claim support, review approval or native build",
+  "release": {
+    "publication_authorized": false,
+    "independent_qd_pass": false,
+    "qualified_safety_approved": false,
+    "automatic_merge": false
+  },
+  "rows": [
+    {
+      "path": "preparedness/content/articles/homemade-water-filters.meta.json",
+      "severity": "P0_HEALTH_SAFETY",
+      "status": "UNRESOLVED_HOLD",
+      "variants": {
+        "integrated": {
+          "git_blob": "91c730bd1c7a61fa3140a86245c9bc0c88160c29",
+          "metadata_source_ids": [
+            "cdc-find-clean-water",
+            "cdc-water-hiking",
+            "cdc-water-safe",
+            "epa-emergency-disinfection",
+            "nps-purify-water",
+            "ready-water"
+          ],
+          "publish_status": "draft",
+          "safety_state": "pending",
+          "tool_number": 7,
+          "slug": "homemade-water-filters"
+        },
+        "continuation": {
+          "git_blob": "33789d3db0ec06007deb50d0293361f07cea27ae",
+          "metadata_source_ids": [
+            "cdc-water-hiking",
+            "cdc-water-safe",
+            "epa-emergency-disinfection",
+            "nps-purify-water",
+            "ready-water"
+          ],
+          "publish_status": "draft",
+          "safety_state": "pending",
+          "tool_number": 7,
+          "slug": "homemade-water-filters"
+        },
+        "followup": {
+          "git_blob": "33789d3db0ec06007deb50d0293361f07cea27ae",
+          "metadata_source_ids": [
+            "cdc-water-hiking",
+            "cdc-water-safe",
+            "epa-emergency-disinfection",
+            "nps-purify-water",
+            "ready-water"
+          ],
+          "publish_status": "draft",
+          "safety_state": "pending",
+          "tool_number": 7,
+          "slug": "homemade-water-filters"
+        }
+      }
+    },
+    {
+      "path": "preparedness/content/articles/making-water-safer.meta.json",
+      "severity": "P0_HEALTH_SAFETY",
+      "status": "UNRESOLVED_HOLD",
+      "variants": {
+        "integrated": {
+          "git_blob": "827d861eb3beebfd010ee98fcca764b23a2de90e",
+          "metadata_source_ids": [
+            "cdc-water-advisories",
+            "cdc-water-hiking",
+            "cdc-water-safe",
+            "cdc-water-store",
+            "epa-emergency-disinfection",
+            "nps-purify-water",
+            "ready-water",
+            "usscm-brenckle-2019"
+          ],
+          "publish_status": "draft",
+          "safety_state": "approved",
+          "tool_number": 6,
+          "slug": "making-water-safer"
+        },
+        "continuation": {
+          "git_blob": "bcb567905444687b5ae0a261cbbdb7a24a9e7870",
+          "metadata_source_ids": [
+            "cdc-water-advisories",
+            "cdc-water-hiking",
+            "cdc-water-safe",
+            "cdc-water-store",
+            "epa-emergency-disinfection",
+            "nps-purify-water",
+            "ready-water",
+            "usscm-brenckle-2019"
+          ],
+          "publish_status": "draft",
+          "safety_state": "approved",
+          "tool_number": 6,
+          "slug": "making-water-safer"
+        },
+        "followup": {
+          "git_blob": "bcb567905444687b5ae0a261cbbdb7a24a9e7870",
+          "metadata_source_ids": [
+            "cdc-water-advisories",
+            "cdc-water-hiking",
+            "cdc-water-safe",
+            "cdc-water-store",
+            "epa-emergency-disinfection",
+            "nps-purify-water",
+            "ready-water",
+            "usscm-brenckle-2019"
+          ],
+          "publish_status": "draft",
+          "safety_state": "approved",
+          "tool_number": 6,
+          "slug": "making-water-safer"
+        }
+      }
+    },
+    {
+      "path": "preparedness/content/articles/outage-heat-cold-generators.body.html",
+      "severity": "P0_LIFE_SAFETY",
+      "status": "UNRESOLVED_HOLD",
+      "variants": {
+        "integrated": {
+          "git_blob": "2cd3e30b3a7e3dfdb3fd30cfd2b832355f58dfe2",
+          "body_citation_occurrences": 121,
+          "body_source_ids": [
+            "cdc-co-generators",
+            "fsis-power-failure",
+            "shelter-cdc-co-basics",
+            "shelter-cdc-heat",
+            "shelter-cdc-power-outage",
+            "shelter-cdc-winter-storm",
+            "shelter-cpsc-co",
+            "shelter-cpsc-co-tips",
+            "shelter-cpsc-heaters",
+            "shelter-fema-power-outage-sheet",
+            "shelter-nws-winter-during",
+            "shelter-ready-disabilities",
+            "shelter-ready-evacuation",
+            "shelter-ready-heat",
+            "shelter-ready-home-fires",
+            "shelter-ready-hurricanes",
+            "shelter-ready-power-outages",
+            "shelter-ready-shelter",
+            "shelter-ready-winter-weather"
+          ]
+        },
+        "continuation": {
+          "git_blob": "55a1e3018e3413b79378c6677f15e536bb777377",
+          "body_citation_occurrences": 120,
+          "body_source_ids": [
+            "cdc-co-generators",
+            "shelter-cdc-co-basics",
+            "shelter-cdc-heat",
+            "shelter-cdc-power-outage",
+            "shelter-cdc-winter-storm",
+            "shelter-cpsc-co",
+            "shelter-cpsc-co-tips",
+            "shelter-cpsc-heaters",
+            "shelter-fema-power-outage-sheet",
+            "shelter-nws-winter-during",
+            "shelter-ready-disabilities",
+            "shelter-ready-evacuation",
+            "shelter-ready-heat",
+            "shelter-ready-home-fires",
+            "shelter-ready-hurricanes",
+            "shelter-ready-power-outages",
+            "shelter-ready-shelter",
+            "shelter-ready-winter-weather"
+          ]
+        },
+        "followup": {
+          "git_blob": "5608a28249a0e351710e0c756d878048c8e41e24",
+          "body_citation_occurrences": 121,
+          "body_source_ids": [
+            "cdc-co-generators",
+            "fsis-power-failure",
+            "shelter-cdc-co-basics",
+            "shelter-cdc-heat",
+            "shelter-cdc-power-outage",
+            "shelter-cdc-winter-storm",
+            "shelter-cpsc-co",
+            "shelter-cpsc-co-tips",
+            "shelter-cpsc-heaters",
+            "shelter-fema-power-outage-sheet",
+            "shelter-nws-winter-during",
+            "shelter-ready-disabilities",
+            "shelter-ready-evacuation",
+            "shelter-ready-heat",
+            "shelter-ready-home-fires",
+            "shelter-ready-hurricanes",
+            "shelter-ready-power-outages",
+            "shelter-ready-shelter",
+            "shelter-ready-winter-weather"
+          ]
+        }
+      },
+      "source_use_crosswalk": {
+        "integrated": {
+          "state": "UNREVIEWED_HARD_HOLD",
+          "cited_not_declared": [],
+          "declared_not_cited": []
+        },
+        "continuation": {
+          "state": "UNREVIEWED_HARD_HOLD",
+          "cited_not_declared": [],
+          "declared_not_cited": []
+        },
+        "followup": {
+          "state": "UNREVIEWED_HARD_HOLD",
+          "cited_not_declared": [],
+          "declared_not_cited": []
+        }
+      }
+    },
+    {
+      "path": "preparedness/content/articles/outage-heat-cold-generators.meta.json",
+      "severity": "P0_CITATION",
+      "status": "UNRESOLVED_HOLD",
+      "variants": {
+        "integrated": {
+          "git_blob": "be37b602d0b82593d438083dfc8a1e5ef595dd44",
+          "metadata_source_ids": [
+            "cdc-co-generators",
+            "fsis-power-failure",
+            "shelter-cdc-co-basics",
+            "shelter-cdc-heat",
+            "shelter-cdc-power-outage",
+            "shelter-cdc-winter-storm",
+            "shelter-cpsc-co",
+            "shelter-cpsc-co-tips",
+            "shelter-cpsc-heaters",
+            "shelter-fema-power-outage-sheet",
+            "shelter-nws-winter-during",
+            "shelter-ready-disabilities",
+            "shelter-ready-evacuation",
+            "shelter-ready-heat",
+            "shelter-ready-home-fires",
+            "shelter-ready-hurricanes",
+            "shelter-ready-power-outages",
+            "shelter-ready-shelter",
+            "shelter-ready-winter-weather"
+          ],
+          "publish_status": "draft",
+          "safety_state": "pending",
+          "tool_number": 12,
+          "slug": "outage-heat-cold-generators"
+        },
+        "continuation": {
+          "git_blob": "debfd11fb189cb43a688862867dc60172fb6eb3a",
+          "metadata_source_ids": [
+            "cdc-co-generators",
+            "shelter-cdc-co-basics",
+            "shelter-cdc-heat",
+            "shelter-cdc-power-outage",
+            "shelter-cdc-winter-storm",
+            "shelter-cpsc-co",
+            "shelter-cpsc-co-tips",
+            "shelter-cpsc-heaters",
+            "shelter-fema-power-outage-sheet",
+            "shelter-nws-winter-during",
+            "shelter-ready-disabilities",
+            "shelter-ready-evacuation",
+            "shelter-ready-heat",
+            "shelter-ready-home-fires",
+            "shelter-ready-hurricanes",
+            "shelter-ready-power-outages",
+            "shelter-ready-shelter",
+            "shelter-ready-winter-weather"
+          ],
+          "publish_status": "draft",
+          "safety_state": "pending",
+          "tool_number": 12,
+          "slug": "outage-heat-cold-generators"
+        },
+        "followup": {
+          "git_blob": "593e7bd6fef0446f05d7a86551e702ceaa38eabb",
+          "metadata_source_ids": [
+            "cdc-co-generators",
+            "fsis-power-failure",
+            "shelter-cdc-co-basics",
+            "shelter-cdc-heat",
+            "shelter-cdc-power-outage",
+            "shelter-cdc-winter-storm",
+            "shelter-cpsc-co",
+            "shelter-cpsc-co-tips",
+            "shelter-cpsc-heaters",
+            "shelter-fema-power-outage-sheet",
+            "shelter-nws-winter-during",
+            "shelter-ready-disabilities",
+            "shelter-ready-evacuation",
+            "shelter-ready-heat",
+            "shelter-ready-home-fires",
+            "shelter-ready-hurricanes",
+            "shelter-ready-power-outages",
+            "shelter-ready-shelter",
+            "shelter-ready-winter-weather"
+          ],
+          "publish_status": "draft",
+          "safety_state": "pending",
+          "tool_number": 12,
+          "slug": "outage-heat-cold-generators"
+        }
+      }
+    }
+  ]
+}
