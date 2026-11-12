@@ -16,6 +16,8 @@ test("PII input blocked and public aggregate contains no individual keys",()=>{c
 test("hard holds remain, independently of synthetic positive fixture",()=>{const d=replay(fixture);assert.equal(d.send_authorized,false);assert.ok(d.holds.some(h=>h.includes("postal")));assert.ok(d.holds.some(h=>h.includes("founder")))});
 
 test("multiple orders per one customer do not inflate customer conversion rates",()=>{
- const x=cp(fixture);x.events.push({type:"merchant_settled_order",session:"demo_s1",at:"2026-11-10T11:12:00Z",status:"settled",independent_partner_report:true,verified_attribution:true,order_ref:"ORDER-SYNTHETIC-02",gross_cents:900,fees_cents:50});
+ const x=cp(fixture);x.events.push({type:"merchant_settled_order",session:"demo_s1",at:"2026-11-10T11:12:00Z",status:"settled",independent_partner_report:true,verified_attribution:true,order_ref:"ORDER-SYNTHETIC-02",gross_cents:900,fees_cents:50,customer_ref:"CUSTOMER-SYNTHETIC-01",customer_ref_verified:true});
  const d=replay(x).cohorts.d7;assert.equal(d.settled_orders,2);assert.equal(d.verified_paying_customers,1);assert.equal(d.paid_conversion_rate,0.5);assert.equal(d.lead_to_customer_rate,1);
 });
+
+test("customer conversion withheld when partner does not provide independently verified customer reference",()=>{const x=cp(fixture);const o=x.events.find(e=>e.type==="merchant_settled_order");delete o.customer_ref_verified;const d=replay(x).cohorts.d7;assert.equal(d.settled_orders,1);assert.equal(d.net_cents,1180);assert.equal(d.verified_paying_customers,null);assert.equal(d.paid_conversion_rate,null)});
