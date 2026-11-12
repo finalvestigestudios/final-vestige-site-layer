@@ -1,0 +1,28 @@
+{
+  "as_of": "2026-11-12T01:30:51Z",
+  "snapshot_type": "READ_ONLY_AGGREGATE",
+  "newsletter_diagnostics": {
+    "total": 3,
+    "confirmed": 3,
+    "unconfirmed": 2,
+    "suppressed": 0
+  },
+  "follower_stats": {
+    "email": 0,
+    "wpcom": 3,
+    "comment": 0,
+    "partial": false
+  },
+  "settings": {
+    "newsletter_enabled": true,
+    "new_posts_auto_email": false,
+    "email_format": "full",
+    "welcome_configured": true
+  },
+  "provider_verified_active_email_recipient_count": null,
+  "provider_confirmed_consent_audited": false,
+  "welcome_receipt_verified": false,
+  "commercial_partner_email_permission_verified": false,
+  "commercial_partner_earning_url_verified": false,
+  "realized_revenue_source_authenticated": false
+}
