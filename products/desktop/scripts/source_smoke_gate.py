@@ -13,7 +13,7 @@ import stat
 from pathlib import Path
 
 from report_evidence import prepare_report_path, publish_report
-from scripts.smoke_result_custody_r386 import checked_smoke_outputs
+from scripts.smoke_receipt_contract_r387 import checked_app_smoke_receipt
 
 APPS = (
     ("LedgerDiffLite", "ledger"),
@@ -180,7 +180,7 @@ def verify_smokes(run_smoke) -> list[dict[str, object]]:
     results = []
     for name, app_id in APPS:
         outputs = run_smoke(app_id)
-        paths = checked_smoke_outputs(outputs)
+        paths = checked_app_smoke_receipt(app_id, outputs)
         results.append({"app": name, "engine": app_id,
                         "result": "PASS", "synthetic_output_count": len(paths)})
     return results
