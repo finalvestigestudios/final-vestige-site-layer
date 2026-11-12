@@ -1,0 +1,620 @@
+{
+  "schema": "fv_mind_claims_v1",
+  "run": "R318",
+  "date": "2026-11-12",
+  "status": "UNPUBLISHED_HARD_HOLD",
+  "sources": [
+    {
+      "id": "S1",
+      "url": "https://www.nature.com/articles/264746a0-",
+      "title": "1976 McGurk MacDonald publisher abstract",
+      "evidence_scope": "abstract only"
+    },
+    {
+      "id": "S2",
+      "url": "https://www.nature.com/articles/s41598-018-36772-8",
+      "title": "2018 Magnotti et al original experimental study",
+      "evidence_scope": "full HTML inspected"
+    },
+    {
+      "id": "S3",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4580505/",
+      "title": "2015 variability and response-method study",
+      "evidence_scope": "indexed discussion; full fetch challenge"
+    },
+    {
+      "id": "S4",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/21787869/",
+      "title": "2012 Nath and Beauchamp MRI study",
+      "evidence_scope": "abstract"
+    },
+    {
+      "id": "S5",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9894660/",
+      "title": "2022 audiovisual speech beyond McGurk",
+      "evidence_scope": "full HTML inspected"
+    },
+    {
+      "id": "S6",
+      "url": "https://pubs.asha.org/doi/10.1044/2014_JSLHR-H-14-0059",
+      "title": "2014 individual variability and lipreading",
+      "evidence_scope": "abstract"
+    },
+    {
+      "id": "FV1",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "title": "Historical source archive",
+      "evidence_scope": "live page"
+    },
+    {
+      "id": "FV2",
+      "url": "https://finalvestige.com/focus/",
+      "title": "Free Seven Day Focus Fieldbook",
+      "evidence_scope": "live page"
+    },
+    {
+      "id": "FV3",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "title": "Published change blindness article",
+      "evidence_scope": "live page"
+    },
+    {
+      "id": "FV4",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "title": "Published historical Mesmer investigation",
+      "evidence_scope": "live page"
+    },
+    {
+      "id": "FV5",
+      "url": "https://finalvestige.com/collection/",
+      "title": "Live FV Collection",
+      "evidence_scope": "live catalog; no paid Mind SKU independently authenticated"
+    },
+    {
+      "id": "FV6",
+      "url": "https://finalvestige.com/dispatch/",
+      "title": "Existing Dispatch signup",
+      "evidence_scope": "live route; delivery not independently verified"
+    },
+    {
+      "id": "M0",
+      "url": "https://inspire3.com/",
+      "title": "Seller brand catalog",
+      "evidence_scope": "official seller"
+    },
+    {
+      "id": "M1",
+      "url": "https://zen12.com/about",
+      "title": "Zen12 seller product description",
+      "evidence_scope": "official seller"
+    },
+    {
+      "id": "M2",
+      "url": "https://zen12.com/getstarted",
+      "title": "Zen12 exact checkout observed 2026-11-12",
+      "evidence_scope": "dynamic checkout; not a purchase, terms uncertain"
+    },
+    {
+      "id": "M3",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "title": "Total Focus exact offer",
+      "evidence_scope": "official seller"
+    },
+    {
+      "id": "M4",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "title": "Focus Shot exact offer",
+      "evidence_scope": "official seller"
+    },
+    {
+      "id": "M5",
+      "url": "https://affiliates.inspire3.com/",
+      "title": "Public program signup",
+      "evidence_scope": "NOT partner acceptance"
+    },
+    {
+      "id": "FTC1",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "title": "FTC endorsement FAQs",
+      "evidence_scope": "official regulator"
+    },
+    {
+      "id": "FTC2",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "title": "FTC health-claims guidance",
+      "evidence_scope": "official regulator"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "Audio /ba/ + visible /ga/ may yield perceived /da/",
+      "classification": "independent_primary_abstract",
+      "support": [
+        "S1"
+      ],
+      "status": "allowed_with_laboratory_context"
+    },
+    {
+      "id": "C02",
+      "claim": "Original report saw very high McGurk responses",
+      "classification": "secondary_reporting_of_original",
+      "support": [
+        "S2",
+        "S1"
+      ],
+      "status": "allowed_if_population_limit"
+    },
+    {
+      "id": "C03",
+      "claim": "2018 paper notes 98% original adults and 17–81% in later studies",
+      "classification": "independent_research",
+      "support": [
+        "S2"
+      ],
+      "status": "allowed_with_protocol_limits"
+    },
+    {
+      "id": "C04",
+      "claim": "2018 comparison 48% vs 68% responses in 76 participants",
+      "classification": "independent_research",
+      "support": [
+        "S2"
+      ],
+      "status": "allowed_only_with_conditions"
+    },
+    {
+      "id": "C05",
+      "claim": "2015 360 people and 20 stimuli showed broad individual differences",
+      "classification": "independent_study_indexed",
+      "support": [
+        "S3"
+      ],
+      "status": "allowed_with_read_scope"
+    },
+    {
+      "id": "C06",
+      "claim": "Forced-choice response raised observed illusion by estimated 18 percentage points in 2015 study",
+      "classification": "independent_study_indexed",
+      "support": [
+        "S3"
+      ],
+      "status": "allowed_with_design_caveat"
+    },
+    {
+      "id": "C07",
+      "claim": "Left STS activity associated with susceptibility",
+      "classification": "independent_abstract",
+      "support": [
+        "S4"
+      ],
+      "status": "allowed_association_only"
+    },
+    {
+      "id": "C08",
+      "claim": "McGurk susceptibility not reliable proxy for natural speech comprehension",
+      "classification": "independent_review",
+      "support": [
+        "S5"
+      ],
+      "status": "allowed_review_context"
+    },
+    {
+      "id": "C09",
+      "claim": "Original video clip owned or licensed by Final Vestige",
+      "classification": "rights_unverified",
+      "support": [
+        "S1"
+      ],
+      "status": "prohibited"
+    },
+    {
+      "id": "C10",
+      "claim": "Perceptual illusions prove hypnosis or audio efficacy",
+      "classification": "unsupported_inference",
+      "support": [
+        "S1",
+        "M1"
+      ],
+      "status": "prohibited"
+    },
+    {
+      "id": "C11",
+      "claim": "Puységur has 153 source rows and 16 dossiers",
+      "classification": "first_party_live_content",
+      "support": [
+        "FV1"
+      ],
+      "status": "allowed_site_description"
+    },
+    {
+      "id": "C12",
+      "claim": "Historical notarial testimony validates animal magnetism",
+      "classification": "unsupported_historical_inference",
+      "support": [
+        "FV1"
+      ],
+      "status": "prohibited"
+    },
+    {
+      "id": "C13",
+      "claim": "Existing Focus Fieldbook is 52 pages, seven days, 30-day log",
+      "classification": "first_party_live_content",
+      "support": [
+        "FV2"
+      ],
+      "status": "allowed_product_description"
+    },
+    {
+      "id": "C14",
+      "claim": "Focus Fieldbook clinically treats attention disorders",
+      "classification": "unsupported_medical_claim",
+      "support": [
+        "FV2"
+      ],
+      "status": "prohibited"
+    },
+    {
+      "id": "C15",
+      "claim": "Focus and Dispatch use one established subscriber route",
+      "classification": "first_party_live_content",
+      "support": [
+        "FV2",
+        "FV6"
+      ],
+      "status": "allowed_funnel_description_not_confirmation"
+    },
+    {
+      "id": "C16",
+      "claim": "Zen12 seller describes twelve 12-minute levels, four audio flavors per level",
+      "classification": "seller_format",
+      "support": [
+        "M1"
+      ],
+      "status": "allowed_as_seller_description"
+    },
+    {
+      "id": "C17",
+      "claim": "Zen12 complete checkout lists 48 MP3s and associated guides/support",
+      "classification": "seller_checkout_format",
+      "support": [
+        "M2"
+      ],
+      "status": "allowed_as_dated_seller_description"
+    },
+    {
+      "id": "C18",
+      "claim": "Zen12 12 minutes equals an hour of ordinary meditation",
+      "classification": "seller_efficacy",
+      "support": [
+        "M1"
+      ],
+      "status": "prohibited_as_fact"
+    },
+    {
+      "id": "C19",
+      "claim": "Zen12 automatically erases anxiety",
+      "classification": "seller_health_claim",
+      "support": [
+        "M1"
+      ],
+      "status": "prohibited_as_fact"
+    },
+    {
+      "id": "C20",
+      "claim": "Zen12 merchant checkout on 2026-11-12 displayed promotional total 87.99 USD before variability/tax",
+      "classification": "volatile_seller_price",
+      "support": [
+        "M2"
+      ],
+      "status": "observation_only_never_fixed_price_in_guide"
+    },
+    {
+      "id": "C21",
+      "claim": "Zen12 merchant lists a money-back guarantee",
+      "classification": "seller_terms",
+      "support": [
+        "M2"
+      ],
+      "status": "attributed_only_full_policy_unverified"
+    },
+    {
+      "id": "C22",
+      "claim": "Hypnosis Live Total Focus is a 33-minute 47-MB recording",
+      "classification": "seller_format",
+      "support": [
+        "M3"
+      ],
+      "status": "allowed_as_seller_description"
+    },
+    {
+      "id": "C23",
+      "claim": "Total Focus reprograms concentration or guarantees productivity",
+      "classification": "seller_efficacy",
+      "support": [
+        "M3"
+      ],
+      "status": "prohibited_as_fact"
+    },
+    {
+      "id": "C24",
+      "claim": "Hypnosis Live public product displays price and 14-day refund promise",
+      "classification": "seller_terms",
+      "support": [
+        "M3"
+      ],
+      "status": "dated_observation_only_channel_terms_unverified"
+    },
+    {
+      "id": "C25",
+      "claim": "Focus Shot has 15- and 30-minute recordings plus brainwave-only versions",
+      "classification": "seller_format",
+      "support": [
+        "M4"
+      ],
+      "status": "allowed_as_seller_description"
+    },
+    {
+      "id": "C26",
+      "claim": "Focus Shot yields hours of laser-sharp attention",
+      "classification": "seller_efficacy",
+      "support": [
+        "M4"
+      ],
+      "status": "prohibited_as_fact"
+    },
+    {
+      "id": "C27",
+      "claim": "Focus Shot shows a 1-year money-back representation",
+      "classification": "seller_terms",
+      "support": [
+        "M4"
+      ],
+      "status": "not_guaranteed_fv_referral_terms"
+    },
+    {
+      "id": "C28",
+      "claim": "Public Inspire3 program advertises earning links",
+      "classification": "seller_program_description",
+      "support": [
+        "M5"
+      ],
+      "status": "not_acceptance_or_issued_link"
+    },
+    {
+      "id": "C29",
+      "claim": "Final Vestige is accepted affiliate with approved channels",
+      "classification": "authorization_unverified",
+      "support": [
+        "M5"
+      ],
+      "status": "prohibited_until_direct_proof"
+    },
+    {
+      "id": "C30",
+      "claim": "Affiliate email promotion rights approved",
+      "classification": "authorization_unverified",
+      "support": [
+        "M5"
+      ],
+      "status": "prohibited_until_direct_proof"
+    },
+    {
+      "id": "C31",
+      "claim": "Final Vestige earned an Inspire3 commission",
+      "classification": "financial_data_unverified",
+      "support": [],
+      "status": "prohibited_until_partner_settlement"
+    },
+    {
+      "id": "C32",
+      "claim": "A qualified site outbound click is a paid order",
+      "classification": "metric_category_error",
+      "support": [],
+      "status": "prohibited"
+    },
+    {
+      "id": "C33",
+      "claim": "FTC calls for close clear affiliate disclosures",
+      "classification": "regulatory_guidance",
+      "support": [
+        "FTC1"
+      ],
+      "status": "required_near_link"
+    },
+    {
+      "id": "C34",
+      "claim": "Health-related product benefits need competent reliable substantiation",
+      "classification": "regulatory_guidance",
+      "support": [
+        "FTC2"
+      ],
+      "status": "required_before_marketing"
+    },
+    {
+      "id": "C35",
+      "claim": "FV Collection provides a verified active paid rights-cleared Mind SKU",
+      "classification": "owned_sku_unverified",
+      "support": [
+        "FV5"
+      ],
+      "status": "prohibited_until_private_inventory"
+    },
+    {
+      "id": "C36",
+      "claim": "Optional original short video will increase sales",
+      "classification": "hypothesis_only",
+      "support": [],
+      "status": "test_only_no_guarantee"
+    },
+    {
+      "id": "C37",
+      "claim": "Public subscriber form proves confirmed leads",
+      "classification": "metric_category_error",
+      "support": [
+        "FV6"
+      ],
+      "status": "prohibited_without_provider_confirmation"
+    },
+    {
+      "id": "C38",
+      "claim": "A seller's published testimonials are evidence of product efficacy",
+      "classification": "unsubstantiated_testimonial",
+      "support": [
+        "M1",
+        "FTC2"
+      ],
+      "status": "prohibited"
+    }
+  ],
+  "commercial_gates": [
+    {
+      "gate": "partner_identity_verified",
+      "status": "HARD_HOLD",
+      "evidence": "Not established in this run; public seller pages and consumer emails cannot unlock a private partner gate"
+    },
+    {
+      "gate": "partner_account_approved",
+      "status": "HARD_HOLD",
+      "evidence": "Not established in this run; public seller pages and consumer emails cannot unlock a private partner gate"
+    },
+    {
+      "gate": "promotion_channel_web_approved",
+      "status": "HARD_HOLD",
+      "evidence": "Not established in this run; public seller pages and consumer emails cannot unlock a private partner gate"
+    },
+    {
+      "gate": "promotion_channel_email_approved",
+      "status": "HARD_HOLD",
+      "evidence": "Not established in this run; public seller pages and consumer emails cannot unlock a private partner gate"
+    },
+    {
+      "gate": "commission_terms_verified",
+      "status": "HARD_HOLD",
+      "evidence": "Not established in this run; public seller pages and consumer emails cannot unlock a private partner gate"
+    },
+    {
+      "gate": "issued_earning_url_verified",
+      "status": "HARD_HOLD",
+      "evidence": "Not established in this run; public seller pages and consumer emails cannot unlock a private partner gate"
+    },
+    {
+      "gate": "tracking_cookie_attribution_terms_verified",
+      "status": "HARD_HOLD",
+      "evidence": "Not established in this run; public seller pages and consumer emails cannot unlock a private partner gate"
+    },
+    {
+      "gate": "public_guidance_claims_legally_reviewed",
+      "status": "HARD_HOLD",
+      "evidence": "Not established in this run; public seller pages and consumer emails cannot unlock a private partner gate"
+    },
+    {
+      "gate": "purchase_page_exact_offer_checked",
+      "status": "HARD_HOLD",
+      "evidence": "Not established in this run; public seller pages and consumer emails cannot unlock a private partner gate"
+    },
+    {
+      "gate": "current_price_tax_disclosed",
+      "status": "HARD_HOLD",
+      "evidence": "Not established in this run; public seller pages and consumer emails cannot unlock a private partner gate"
+    },
+    {
+      "gate": "refund_terms_for_this_offer_verified",
+      "status": "HARD_HOLD",
+      "evidence": "Not established in this run; public seller pages and consumer emails cannot unlock a private partner gate"
+    },
+    {
+      "gate": "checkout_delivery_verified",
+      "status": "HARD_HOLD",
+      "evidence": "Not established in this run; public seller pages and consumer emails cannot unlock a private partner gate"
+    },
+    {
+      "gate": "affiliate_redirect_rules_checked",
+      "status": "HARD_HOLD",
+      "evidence": "Not established in this run; public seller pages and consumer emails cannot unlock a private partner gate"
+    },
+    {
+      "gate": "original_video_rights_and_encoded_file_verified",
+      "status": "HARD_HOLD",
+      "evidence": "Not established in this run; public seller pages and consumer emails cannot unlock a private partner gate"
+    },
+    {
+      "gate": "browser_wcag_22aa_reviewed",
+      "status": "HARD_HOLD",
+      "evidence": "Not established in this run; public seller pages and consumer emails cannot unlock a private partner gate"
+    },
+    {
+      "gate": "wordpress_sanitization_verified",
+      "status": "HARD_HOLD",
+      "evidence": "Not established in this run; public seller pages and consumer emails cannot unlock a private partner gate"
+    },
+    {
+      "gate": "approved_release_founder",
+      "status": "HARD_HOLD",
+      "evidence": "Not established in this run; public seller pages and consumer emails cannot unlock a private partner gate"
+    },
+    {
+      "gate": "independent_sale_refund_fee_settlement_verified",
+      "status": "HARD_HOLD",
+      "evidence": "Not established in this run; public seller pages and consumer emails cannot unlock a private partner gate"
+    }
+  ],
+  "products": [
+    {
+      "offer": "Zen12 complete course",
+      "official_offer": "M2",
+      "buyer_problem": "short repeated meditation sessions with choice of audio style",
+      "claim_boundary": "format only",
+      "affiliate_status": "UNVERIFIED",
+      "referral_url": null
+    },
+    {
+      "offer": "Hypnosis Live Total Focus",
+      "official_offer": "M3",
+      "buyer_problem": "single self-hypnosis recording for focus-themed reflection",
+      "claim_boundary": "format only",
+      "affiliate_status": "UNVERIFIED",
+      "referral_url": null
+    },
+    {
+      "offer": "Brainwave Shots Focus Shot",
+      "official_offer": "M4",
+      "buyer_problem": "short nonguided audio packs",
+      "claim_boundary": "format only",
+      "affiliate_status": "UNVERIFIED",
+      "referral_url": null
+    },
+    {
+      "offer": "FV-owned paid Mind SKU",
+      "official_offer": "FV5",
+      "buyer_problem": "prefer owned product with verified checkout",
+      "claim_boundary": "no authenticated paid Mind SKU found",
+      "affiliate_status": "not_applicable",
+      "referral_url": null
+    }
+  ],
+  "measurement": {
+    "status": "NOT_COMPUTABLE",
+    "event_order": [
+      "qualified_human_session",
+      "landing_visit",
+      "contextual_cta_click",
+      "provider_confirmed_lead",
+      "independently_verified_paid_order_or_affiliate_sale",
+      "refund_and_fees_reconciliation",
+      "realized_net_revenue"
+    ],
+    "prohibited_equivalences": [
+      "affiliate_click != paid_sale",
+      "checkout_start != confirmed_order",
+      "form_submit != confirmed_lead"
+    ],
+    "kpi": "1000 * realized_net_revenue_usd / qualified_human_sessions",
+    "privacy": "No names/emails/IPs/fingerprints; dedupe aggregate qualified sessions; campaign and asset_id only after Praxxis/Grok identity confirmed; consent policy before analytics change"
+  },
+  "notes": [
+    "Pricing and terms vary between official merchant observations; do not represent snapshots as fixed offer price or guarantees.",
+    "Static B storyboard is not a playable encoded film and no A/B test has run.",
+    "No CMS, mail, merchant, paid acquisition or production alteration authorized."
+  ]
+}
