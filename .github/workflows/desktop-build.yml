@@ -519,6 +519,10 @@ jobs:
         run: |
           python -W error -m unittest discover -s products/desktop/tests -p 'test_registry_path_identity_r380.py'
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_registry_path_identity_r380.py'
+      - name: R381 operator signing-key FD custody and real encrypted Ed25519 (19 methods per mode)
+        run: |
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_signing_key_guard_r381.py'
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_signing_key_guard_r381.py'
       - name: R378 issued license fingerprint custody (18 methods per mode)
         run: |
           python -W error -m unittest discover -s products/desktop/tests -p 'test_issued_entitlement_guard_r378.py'
@@ -2825,6 +2829,14 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "R380 Windows normal registry path identity FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_registry_path_identity_r380.py'
           if ($LASTEXITCODE -ne 0) { throw "R380 Windows optimized registry path identity FAILED" }
+      - name: R381 Windows operator signing-key FD custody and real encrypted Ed25519 (19 methods per mode)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "products/desktop"
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_signing_key_guard_r381.py'
+          if ($LASTEXITCODE -ne 0) { throw "R381 Windows normal signing-key custody FAILED" }
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_signing_key_guard_r381.py'
+          if ($LASTEXITCODE -ne 0) { throw "R381 Windows optimized signing-key custody FAILED" }
       - name: R378 Windows issued license fingerprint custody (18 methods per mode)
         shell: pwsh
         run: |
