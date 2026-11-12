@@ -154,7 +154,7 @@ test('Vasa Jetpack transformed source is bound exactly, not to the 8MB stored or
 test('P0 source-only evidence returns NO browser broken claim even with correct URL',()=>{
  const row=get('287:5');
  const e={post_id:row.post_id,page_url:row.post_url,stored_inline_ordinal:5,
-  stored_original_src:row.stored_original_src,dom_img_src:row.stored_original_src};
+  stored_original_src:row.stored_original_src,dom_img_src:row.stored_original_src,dom_alt:row.frozen_alt};
  const r=boundP0Evidence('287:5',e);
  assert.equal(r.status,'SOURCE_BOUND_ONLY_SITE_QA_P0_ADJUDICATION_REQUIRED');
  assert.equal(r.observed_guest_http_status,null);assert.equal(r.confirmed_broken,false);
@@ -164,7 +164,7 @@ test('all six P0 rows require source proof, no wrapper HTTP is guest HTTP',()=>{
  for(const row of audit.rows.filter(x=>x.priority==='P0_SUSPECTED_BROKEN')){
   const e={post_id:row.post_id,page_url:row.post_url,
    stored_inline_ordinal:Number(row.slot.split(':')[1]),
-   stored_original_src:row.stored_original_src,dom_img_src:row.stored_original_src};
+   stored_original_src:row.stored_original_src,dom_img_src:row.stored_original_src,dom_alt:row.frozen_alt};
   assert.equal(boundP0Evidence(row.slot,e).status,
    'SOURCE_BOUND_ONLY_SITE_QA_P0_ADJUDICATION_REQUIRED');
  }
@@ -172,13 +172,13 @@ test('all six P0 rows require source proof, no wrapper HTTP is guest HTTP',()=>{
 test('P0 event from wrong article is not accepted',()=>{
  const r=get('285:5');
  const e={post_id:r.post_id,page_url:'https://finalvestige.com/other/',stored_inline_ordinal:5,
-  stored_original_src:r.stored_original_src,dom_img_src:r.stored_original_src};
+  stored_original_src:r.stored_original_src,dom_img_src:r.stored_original_src,dom_alt:r.frozen_alt};
  assert.equal(boundP0Evidence('285:5',e).reason,'P0_GUEST_SOURCE_NOT_PINNED');
 });
 test('P0 event from wrong DOM ordinal is not accepted',()=>{
  const r=get('285:5');
  const e={post_id:r.post_id,page_url:r.post_url,stored_inline_ordinal:2,
-  stored_original_src:r.stored_original_src,dom_img_src:r.stored_original_src};
+  stored_original_src:r.stored_original_src,dom_img_src:r.stored_original_src,dom_alt:r.frozen_alt};
  assert.equal(boundP0Evidence('285:5',e).reason,'P0_GUEST_SOURCE_NOT_PINNED');
 });
 test('P0 event with forged DOM original is rejected',()=>{
@@ -186,6 +186,12 @@ test('P0 event with forged DOM original is rejected',()=>{
  const e={post_id:r.post_id,page_url:r.post_url,stored_inline_ordinal:1,
   stored_original_src:r.stored_original_src,dom_img_src:'https://finalvestige.com/other.jpg'};
  assert.equal(boundP0Evidence('418:1',e).reason,'P0_GUEST_SOURCE_NOT_PINNED');
+});
+test('P0 frozen alternative text is mandatory',()=>{
+ const row=get('287:5');const e={post_id:row.post_id,page_url:row.post_url,
+  stored_inline_ordinal:5,stored_original_src:row.stored_original_src,
+  dom_img_src:row.stored_original_src,dom_alt:'Other event'};
+ assert.equal(boundP0Evidence('287:5',e).reason,'P0_GUEST_SOURCE_NOT_PINNED');
 });
 test('P1 source does not masquerade as P0 adjudication',()=>{
  assert.equal(boundP0Evidence('621:0',{}).reason,'NOT_A_PINNED_P0');
