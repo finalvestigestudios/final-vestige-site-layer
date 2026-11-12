@@ -19,6 +19,7 @@ from pathlib import Path
 
 from registry_schema_guard import RegistrySchemaError, enforce_registry_schema
 from registry_row_guard import RegistryRowError, enforce_registry_rows
+from registry_write_guard import run_protected_write
 
 PRODUCTS = frozenset({"grants", "procurement"})
 IDENTIFIER = re.compile(r"^[A-Za-z0-9_-]{4,64}$")
@@ -141,28 +142,27 @@ class IssuanceRegistry:
         if destination.exists() or destination.is_symlink():
             raise RegistryError("Entitlement output already exists; never overwrite")
         with self._db() as db:
-            try:
-                db.execute("BEGIN IMMEDIATE")
+            def write_reservation(conn):
                 try:
-                    enforce_registry_schema(db)
-                    enforce_registry_rows(db)
+                    enforce_registry_schema(conn)
+                    enforce_registry_rows(conn)
                 except (RegistrySchemaError, RegistryRowError) as exc:
                     raise RegistryError("Unsafe registry schema or issuance records; investigate manually") from exc
                 output_hash = _path_fingerprint(destination)
-                if db.execute("SELECT 1 FROM issuance WHERE output_path_sha256=? LIMIT 1",
-                              (output_hash,)).fetchone():
+                if conn.execute("SELECT 1 FROM issuance WHERE output_path_sha256=? LIMIT 1",
+                                (output_hash,)).fetchone():
                     raise RegistryError("Entitlement destination already reserved; investigate manually")
-                db.execute("""INSERT INTO issuance
+                conn.execute("""INSERT INTO issuance
                     (license_id, product, kid, output_path_sha256, state, reserved_at)
                     VALUES (?, ?, ?, ?, 'reserved', ?)""",
-                           (license_id, product, kid, output_hash, _stamp()))
-                db.execute("COMMIT")
-            except sqlite3.IntegrityError as exc:
-                db.execute("ROLLBACK")
-                raise RegistryError("License ID already reserved or issued; do not reuse") from exc
-            except sqlite3.Error as exc:
-                db.execute("ROLLBACK")
-                raise RegistryError("Could not durably reserve license ID") from exc
+                             (license_id, product, kid, output_hash, _stamp()))
+
+            run_protected_write(
+                db, write_reservation,
+                conflict_message="License ID already reserved or issued; do not reuse",
+                database_message="Could not durably reserve license ID",
+                error_type=RegistryError,
+            )
 
     def finalize(self, *, license_id: str, product: str, kid: str,
                  output: str | Path, expected_sha256: str) -> str:
@@ -194,15 +194,14 @@ class IssuanceRegistry:
         if not hmac.compare_digest(digest, expected_sha256):
             raise RegistryError("Issued file differs from verified signed payload; reservation retained")
         with self._db() as db:
-            try:
-                db.execute("BEGIN IMMEDIATE")
+            def write_finalization(conn):
                 try:
-                    enforce_registry_schema(db)
-                    enforce_registry_rows(db)
+                    enforce_registry_schema(conn)
+                    enforce_registry_rows(conn)
                 except (RegistrySchemaError, RegistryRowError) as exc:
                     raise RegistryError("Unsafe registry schema or issuance records; investigate manually") from exc
                 finalized_at = _stamp()
-                cursor = db.execute("""UPDATE issuance SET state='issued',
+                cursor = conn.execute("""UPDATE issuance SET state='issued',
                     license_sha256=?, issued_at=? WHERE license_id=?
                     AND product=? AND kid=? AND output_path_sha256=?
                     AND state='reserved' AND license_sha256 IS NULL
@@ -210,10 +209,12 @@ class IssuanceRegistry:
                     (digest, finalized_at, license_id, product, kid,
                      _path_fingerprint(destination), finalized_at))
                 if cursor.rowcount != 1:
-                    db.execute("ROLLBACK")
                     raise RegistryError("No matching reserved issuance or unsafe clock; investigate manually")
-                db.execute("COMMIT")
-            except sqlite3.Error as exc:
-                db.execute("ROLLBACK")
-                raise RegistryError("Could not durably finalize issuance") from exc
+
+            run_protected_write(
+                db, write_finalization,
+                conflict_message="Could not durably finalize issuance",
+                database_message="Could not durably finalize issuance",
+                error_type=RegistryError,
+            )
         return digest
