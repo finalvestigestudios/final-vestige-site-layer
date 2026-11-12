@@ -6,6 +6,7 @@ exact source text and byte hashes remain the authority for any human review.
 from __future__ import annotations
 
 import unicodedata
+from bisect import insort
 
 
 # Metadata must remain bounded even when a private policy line contains a
@@ -14,6 +15,7 @@ _MAX_DISTINCT_NONASCII = 64
 _MAX_CODEPOINT_CUES = 12
 _MAX_SOURCE_LINE = 50_000  # Matches the policy file reader's physical-line cap.
 _MAX_NAV_LINE_CHARS = 4096  # Skip long evidence navigation; original diff remains.
+_MAX_REVIEW_PAIRS = 16
 
 
 def _nonascii_counts(text: str) -> dict[int, int] | None:
@@ -94,6 +96,37 @@ def _verified_canonical_hunks(hunks: list[dict]) -> list[tuple[int, dict, dict]]
     return staged
 
 
+def _earliest_canonical_pairs(
+    staged: list[tuple[int, dict, dict]], limit: int = _MAX_REVIEW_PAIRS,
+) -> tuple[list[tuple[int, int, int, str, str]], int]:
+    """Keep only earliest physical citations, count all unique NFC edits.
+
+    Source row provenance was validated across the whole diff before this
+    helper runs. Dict-key intersections are hash-order-dependent, so order by
+    (hunk, before line, after line), never by iteration/discovery order.
+    """
+    selected: list[tuple[int, int, int, str, str]] = []
+    total = 0
+    for hunk_number, removed, added in staged:
+        for normalized in removed.keys() & added.keys():
+            old_group, new_group = removed[normalized], added[normalized]
+            if len(old_group) != 1 or len(new_group) != 1:
+                continue  # No defensible one-to-one physical source citation.
+            old_number, old_raw = old_group[0]
+            new_number, new_raw = new_group[0]
+            if old_raw == new_raw:
+                continue
+            total += 1
+            coordinates = (hunk_number, old_number, new_number)
+            if limit <= 0 or (len(selected) == limit and
+                              coordinates >= selected[-1][:3]):
+                continue
+            insort(selected, (*coordinates, old_raw, new_raw))
+            if len(selected) > limit:
+                selected.pop()
+    return selected, total
+
+
 def render_local_canonical_evidence(hunks: list[dict]) -> str:
     """Cite unique NFC-equivalent *changed* lines within each existing hunk.
 
@@ -104,34 +137,24 @@ def render_local_canonical_evidence(hunks: list[dict]) -> str:
     staged = _verified_canonical_hunks(hunks)
     if staged is None:
         return ""  # Never emit partial or contradictory source citations.
-    candidates: list[tuple[int, int, int, str, str]] = []
-    for hunk_number, removed, added in staged:
-        for normalized in removed.keys() & added.keys():
-            old_group, new_group = removed[normalized], added[normalized]
-            if len(old_group) != 1 or len(new_group) != 1:
-                continue  # No defensible one-to-one physical source citation.
-            old_number, old_raw = old_group[0]
-            new_number, new_raw = new_group[0]
-            if old_raw != new_raw:
-                candidates.append((hunk_number, old_number, new_number, old_raw, new_raw))
-    if not candidates:
+    selected, total = _earliest_canonical_pairs(staged)
+    if not total:
         return ""
-    candidates.sort(key=lambda row: (row[0], row[1], row[2]))
     result = [
         "LOCAL REVIEW: NFC-only canonical Unicode changes at cited physical "
         "source lines, including mixed revisions. These are navigation cues, "
         "NOT legal or semantic equivalence; inspect both original files. "
         "Ambiguous duplicate lines are intentionally not paired.\n"
     ]
-    for hunk, before, after, old_raw, new_raw in candidates[:16]:
+    for hunk, before, after, old_raw, new_raw in selected:
         result.append(
             f"Canonical hunk {hunk:03d}: before L{before}; after L{after}; "
             "NFC-only candidate; " + _canonical_codepoint_cue(old_raw, new_raw) +
             "; human review.\n"
         )
-    if len(candidates) > 16:
+    if total > _MAX_REVIEW_PAIRS:
         result.append(
-            f"LOCAL REVIEW: +{len(candidates) - 16} additional canonical "
+            f"LOCAL REVIEW: +{total - _MAX_REVIEW_PAIRS} additional canonical "
             "candidate pair(s) omitted from bounded navigation.\n"
         )
     return "".join(result) + "\n"
