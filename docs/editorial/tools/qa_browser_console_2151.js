@@ -4,12 +4,14 @@
  * Paste into DevTools Console at responsive widths 390px, then 1440px.
  * Save sanitized console output plus manual screenshots. Does not read cookies,
  * preview URLs, credentials, localStorage or tokens, or write/fetch/upload data.
+ * Current article revision (2026-11-11 20:42 Pacific): 81 blocks, 42 sources,
+ * SHA-1 b52d0225d81c99239c4e2336789999ceebfea858 (must be independently checked).
  * A console PASS is NOT a Gutenberg SHA check, visual review or publication gate.
  */
 (async () => {
   'use strict';
   const EXPECTED = { title: 'The Levee They Blew on Purpose', photos: 4,
-    bibliography: 41, headings: 11, tableRows: 10, chronologyCards: 5,
+    bibliography: 42, headings: 11, tableRows: 10, chronologyCards: 5,
     chronologyLinks: 4 };
   const MEDIA = {
     '2148': ['NOAA'], '2255': ['Library of Congress', 'LOC'],
@@ -104,7 +106,7 @@
   const checks = {
     expected_title: true,
     correct_four_locally_hosted_credited_images: allImagesOk,
-    exactly_41_bibliography_entries: sources === EXPECTED.bibliography,
+    exactly_42_bibliography_entries: sources === EXPECTED.bibliography,
     eleven_h2_sections: article.querySelectorAll('h2').length === EXPECTED.headings,
     evidence_table_ten_rows: tableReport.rows === EXPECTED.tableRows,
     internal_anchors_resolve: brokenAnchors === 0,
