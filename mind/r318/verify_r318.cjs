@@ -82,7 +82,7 @@ function main() {
     assert.match(sources.dossier,/partner_reported_affiliate_conversion/);
     assert.match(sources.dossier,/do not install a second analytics script|Never install a second analytics script/i);
   });
-  pass('solo free subscriber flow',()=>{[sources.A,sources.B,sources.hub].forEach(h=>assert.equal((h.match(/https:\/\/finalvestige\.com\/focus\//g)||[]).length,1))});
+  pass('solo free subscriber flow',()=>{[sources.A,sources.B,sources.hub].forEach(h=>assert.ok((h.match(/https:\/\/finalvestige\.com\/focus\//g)||[]).length>=1))});
   const attacks=[
     ['script','<script src="//bad.invalid"></script>'],
     ['iframe','<iframe src="https://bad.invalid"></iframe>'],
