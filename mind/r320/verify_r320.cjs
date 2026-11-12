@@ -15,7 +15,7 @@ const files={
   matrix:read("SOURCE-CLAIM-OFFER-AND-COMMERCE-GATES.json"),
   dossier:read("OFFER-FUNNEL-CONVERSION-QA-RELEASE-ACCEPTANCE.md")
 };
-const filmBlock=/<figure class="film"\b[\s\S]*?<\/figure>/;
+const filmBlock=/<figure class="film"[\s\S]*?<\/figure>/;
 const assertions=[];
 function must(name,fn){fn();assertions.push(name)}
 function rejection(name,fn){assert.throws(fn,undefined,name);assertions.push("reject:"+name)}
