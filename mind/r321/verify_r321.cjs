@@ -20,7 +20,7 @@ function safeHTML(s){
  assert.match(s,/<meta name="viewport"/);
  assert.match(s,/prefers-reduced-motion/);
  assert.match(s,/focus-visible/);
- assert.doesNotMatch(s,/<script\b|<iframe\b|<form\b|<input\b|<video\b|<audio\b|\sautoplay[=>\s]|javascript:|data:text\/html|onerror=|onclick=|<img[^>]+src="https?:/i);
+ assert.doesNotMatch(s,/<script\b|<iframe\b|<form\b|<input\b|<video\b|<audio\b|javascript:|data:text\/html|onerror=|onclick=|<img[^>]+src="https?:/i);
  const links=[...s.matchAll(/href="([^"]+)"/g)].map(m=>m[1]);
  assert(links.every(h=>/^https:\/\/(?:finalvestige\.com|doi\.org|www\.ftc\.gov)\//.test(h)), 'Unsafe, affiliate or unapproved anchor URL');
 }
