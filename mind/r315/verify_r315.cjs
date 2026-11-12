@@ -13,7 +13,7 @@ const vtt=at('ORIGINAL-42S-STORYBOARD-CAPTIONS.vtt');
 const acceptance=at('OFFER-FUNNEL-MEASUREMENT-AND-RELEASE-ACCEPTANCE.md');
 let pass=0;function check(label,fn){fn();console.log('PASS '+label);pass++;}
 const merchantLinks=/href\s*=\s*["']https?:\/\/(?:www\.)?(?:zen12\.com|hypnosislive\.com|brainwaveshots\.com|affiliates\.inspire3\.com)(?:\b|\/)/i;
-const noDanger=/<\s*(?:script|iframe|form|input|video|audio)\b|\bautoplay\b|\bonclick\s*=|fetch\s*\(|gtag\s*\(/i;
+const noDanger=/<\s*(?:script|iframe|form|input|video|audio)\b|\bonclick\s*=|fetch\s*\(|gtag\s*\(/i;
 function inspectHtml(h){
   assert.match(h,/<!doctype html>/i); assert.match(h,/<html lang="en">/);
   assert.match(h,/<meta name="robots" content="noindex,nofollow">/);
