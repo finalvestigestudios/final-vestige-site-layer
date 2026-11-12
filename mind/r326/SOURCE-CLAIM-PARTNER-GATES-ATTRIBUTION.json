@@ -1,0 +1,638 @@
+{
+  "title": "Mind R326 claim and offer authorization register",
+  "reviewed_date": "2026-11-12",
+  "commercial_release": "HARD_HOLD",
+  "source_reading_limit": "Indexed abstracts and public seller pages; full primary paper and private affiliate account not authenticated",
+  "sources": [
+    {
+      "id": "s01",
+      "title": "Deese 1959 primary index",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/13664879/",
+      "evidence": "abstract unavailable"
+    },
+    {
+      "id": "s02",
+      "title": "Roediger & McDermott 1995 APA abstract",
+      "url": "https://doi.org/10.1037/0278-7393.21.4.803",
+      "evidence": "abstract consulted, full text not authenticated"
+    },
+    {
+      "id": "s03",
+      "title": "Freyd and colleagues 1996 caution",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/8656157/",
+      "evidence": "indexed abstract"
+    },
+    {
+      "id": "s04",
+      "title": "2024 true-vs-false autobiographical memory scoping review",
+      "url": "https://doi.org/10.1027/1016-9040/a000513",
+      "evidence": "abstract"
+    },
+    {
+      "id": "s05",
+      "title": "Final Vestige Puységur source archive",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "evidence": "live public"
+    },
+    {
+      "id": "s06",
+      "title": "Final Vestige Mesmerism source study",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "evidence": "live public"
+    },
+    {
+      "id": "s07",
+      "title": "Final Vestige Change Blindness article",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "evidence": "live public"
+    },
+    {
+      "id": "s08",
+      "title": "Final Vestige Focus landing",
+      "url": "https://finalvestige.com/focus/",
+      "evidence": "live public"
+    },
+    {
+      "id": "s09",
+      "title": "Final Vestige Library Fieldbook description",
+      "url": "https://finalvestige.com/free-resources/",
+      "evidence": "live public"
+    },
+    {
+      "id": "s10",
+      "title": "FTC disclosure Q&A",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "evidence": "regulator"
+    },
+    {
+      "id": "s11",
+      "title": "FTC health claims substantiation",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "evidence": "regulator"
+    },
+    {
+      "id": "s12",
+      "title": "Inspire3 maker homepage",
+      "url": "https://inspire3.com/",
+      "evidence": "seller"
+    },
+    {
+      "id": "s13",
+      "title": "Zen12 seller About",
+      "url": "https://zen12.com/about",
+      "evidence": "seller"
+    },
+    {
+      "id": "s14",
+      "title": "Zen12 exact get-started order",
+      "url": "https://zen12.com/getstarted",
+      "evidence": "seller checkout observed 2026-11-12"
+    },
+    {
+      "id": "s15",
+      "title": "Hypnosis Live Total Focus",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "evidence": "seller"
+    },
+    {
+      "id": "s16",
+      "title": "Brainwave Shots Focus Shot",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "evidence": "seller"
+    },
+    {
+      "id": "s17",
+      "title": "Inspire3 public affiliate recruitment",
+      "url": "https://affiliates.inspire3.com/",
+      "evidence": "public recruitment not individual acceptance"
+    },
+    {
+      "id": "s18",
+      "title": "Final Vestige editorial standards",
+      "url": "https://finalvestige.com/editorial-standards/",
+      "evidence": "public"
+    },
+    {
+      "id": "s19",
+      "title": "GitHub Issue #171 lane",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171",
+      "evidence": "project"
+    },
+    {
+      "id": "s20",
+      "title": "GitHub conversion program #820",
+      "url": "https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820",
+      "evidence": "project"
+    },
+    {
+      "id": "s21",
+      "title": "Praxxis-Grok TASK-008",
+      "url": "https://docs.google.com/document/d/1_dqcJeqxbvYb1prGxy0nSWTsHu8p0PSRsDB_NPNbL48/edit",
+      "evidence": "internal coordination, not public claim support"
+    }
+  ],
+  "claims": [
+    {
+      "id": "M01",
+      "claim": "Deese published verbal intrusion work in 1959",
+      "evidence": "primary record",
+      "decision": "supported",
+      "source_ids": [
+        "s01"
+      ]
+    },
+    {
+      "id": "M02",
+      "claim": "1995 word-list study used associated but missing critical word",
+      "evidence": "indexed peer-reviewed abstract",
+      "decision": "supported",
+      "source_ids": [
+        "s02"
+      ]
+    },
+    {
+      "id": "M03",
+      "claim": "1995 experiment 1 reported 40% false free recall under its conditions",
+      "evidence": "indexed abstract",
+      "decision": "supported only for specific experiment",
+      "source_ids": [
+        "s02"
+      ]
+    },
+    {
+      "id": "M04",
+      "claim": "1995 experiment 2 reported 55% false free recall under its conditions",
+      "evidence": "indexed abstract",
+      "decision": "supported only for specific experiment",
+      "source_ids": [
+        "s02"
+      ]
+    },
+    {
+      "id": "M05",
+      "claim": "These rates apply universally to eyewitnesses",
+      "evidence": "unwarranted extrapolation",
+      "decision": "exclude",
+      "source_ids": [
+        "s02",
+        "s03"
+      ]
+    },
+    {
+      "id": "M06",
+      "claim": "Freyd et al cautioned against direct recovered-memory extrapolation",
+      "evidence": "indexed scholarly abstract",
+      "decision": "supported",
+      "source_ids": [
+        "s03"
+      ]
+    },
+    {
+      "id": "M07",
+      "claim": "2024 review noted conceptual caveats in autobiographical-memory comparisons",
+      "evidence": "scholarly abstract",
+      "decision": "supported with limitations",
+      "source_ids": [
+        "s04"
+      ]
+    },
+    {
+      "id": "M08",
+      "claim": "Confidence always identifies a true or false memory",
+      "evidence": "not supported",
+      "decision": "exclude",
+      "source_ids": [
+        "s04"
+      ]
+    },
+    {
+      "id": "M09",
+      "claim": "Animal magnetism source record has 153 active master-source rows",
+      "evidence": "FV public archive",
+      "decision": "supported by live page",
+      "source_ids": [
+        "s05"
+      ]
+    },
+    {
+      "id": "M10",
+      "claim": "Franklin commission investigated Deslon's practice in 1784",
+      "evidence": "FV historical source trail",
+      "decision": "supported",
+      "source_ids": [
+        "s06"
+      ]
+    },
+    {
+      "id": "M11",
+      "claim": "Historical magnetism was a proven physical force",
+      "evidence": "unsupported historic claim",
+      "decision": "exclude",
+      "source_ids": [
+        "s05",
+        "s06"
+      ]
+    },
+    {
+      "id": "M12",
+      "claim": "Existing Focus Fieldbook is 52 pages",
+      "evidence": "first-party live page",
+      "decision": "supported",
+      "source_ids": [
+        "s08",
+        "s09"
+      ]
+    },
+    {
+      "id": "M13",
+      "claim": "Focus uses existing Dispatch signup",
+      "evidence": "first-party page",
+      "decision": "supported, delivery not independently tested",
+      "source_ids": [
+        "s08"
+      ]
+    },
+    {
+      "id": "M14",
+      "claim": "Zen12 offers 12 levels",
+      "evidence": "seller description",
+      "decision": "seller stated",
+      "source_ids": [
+        "s13",
+        "s14"
+      ]
+    },
+    {
+      "id": "M15",
+      "claim": "Zen12 includes four listening options per level",
+      "evidence": "seller description",
+      "decision": "seller stated",
+      "source_ids": [
+        "s13"
+      ]
+    },
+    {
+      "id": "M16",
+      "claim": "Zen12 full course includes 48 MP3s",
+      "evidence": "seller checkout description",
+      "decision": "seller stated",
+      "source_ids": [
+        "s14"
+      ]
+    },
+    {
+      "id": "M17",
+      "claim": "Zen12 checkout displayed $87.99 on 2026-11-12",
+      "evidence": "dated seller checkout observation",
+      "decision": "dated, volatile not guaranteed",
+      "source_ids": [
+        "s14"
+      ]
+    },
+    {
+      "id": "M18",
+      "claim": "Zen12 refund is guaranteed to any individual purchaser",
+      "evidence": "full terms/customer outcomes unavailable",
+      "decision": "exclude; seller advertises promise only",
+      "source_ids": [
+        "s13",
+        "s14"
+      ]
+    },
+    {
+      "id": "M19",
+      "claim": "Zen12 12 mins equals an hour of meditation",
+      "evidence": "seller's mental-performance claim",
+      "decision": "not independently substantiated; exclude",
+      "source_ids": [
+        "s13",
+        "s11"
+      ]
+    },
+    {
+      "id": "M20",
+      "claim": "Zen12 brainwave tones reprogram brain reliably",
+      "evidence": "seller efficacy claim",
+      "decision": "not independently substantiated; exclude",
+      "source_ids": [
+        "s13",
+        "s11"
+      ]
+    },
+    {
+      "id": "M21",
+      "claim": "Hypnosis Live Total Focus is described as a 33-minute 47-MB MP3",
+      "evidence": "seller page",
+      "decision": "seller stated",
+      "source_ids": [
+        "s15"
+      ]
+    },
+    {
+      "id": "M22",
+      "claim": "Hypnosis Live Total Focus guarantees 100% focus",
+      "evidence": "seller outcome claim",
+      "decision": "exclude",
+      "source_ids": [
+        "s15",
+        "s11"
+      ]
+    },
+    {
+      "id": "M23",
+      "claim": "Hypnosis Live says 14-day return window",
+      "evidence": "seller page",
+      "decision": "seller stated; require terms check at release",
+      "source_ids": [
+        "s15"
+      ]
+    },
+    {
+      "id": "M24",
+      "claim": "Brainwave Shots Focus Shot describes 15/30-minute versions",
+      "evidence": "seller page",
+      "decision": "seller stated",
+      "source_ids": [
+        "s16"
+      ]
+    },
+    {
+      "id": "M25",
+      "claim": "Brainwave Shots Focus Shot guarantees focus lasting four hours to all-day",
+      "evidence": "seller outcome claim",
+      "decision": "exclude",
+      "source_ids": [
+        "s16",
+        "s11"
+      ]
+    },
+    {
+      "id": "M26",
+      "claim": "Brainwave Shots Focus Shot scientifically established by vendor branding",
+      "evidence": "unverified branded performance claim",
+      "decision": "exclude",
+      "source_ids": [
+        "s16",
+        "s11"
+      ]
+    },
+    {
+      "id": "M27",
+      "claim": "General FTC guidance requires clear and conspicuous affiliate disclosure near recommendation",
+      "evidence": "regulatory guidance",
+      "decision": "supported",
+      "source_ids": [
+        "s10"
+      ]
+    },
+    {
+      "id": "M28",
+      "claim": "A label only saying affiliate link is enough",
+      "evidence": "regulator warns consumers may not understand",
+      "decision": "exclude",
+      "source_ids": [
+        "s10"
+      ]
+    },
+    {
+      "id": "M29",
+      "claim": "FTC health claims require substantiation appropriate to objective claim",
+      "evidence": "regulatory guidance",
+      "decision": "supported",
+      "source_ids": [
+        "s11"
+      ]
+    },
+    {
+      "id": "M30",
+      "claim": "Public affiliate signup shows specific FV partner acceptance",
+      "evidence": "not established",
+      "decision": "exclude",
+      "source_ids": [
+        "s17"
+      ]
+    },
+    {
+      "id": "M31",
+      "claim": "A mere affiliate outbound click proves a paid purchase",
+      "evidence": "business measurement invalid",
+      "decision": "exclude",
+      "source_ids": [
+        "s20"
+      ]
+    },
+    {
+      "id": "M32",
+      "claim": "A confirmed newsletter subscriber proves a paid order",
+      "evidence": "business measurement invalid",
+      "decision": "exclude",
+      "source_ids": [
+        "s20"
+      ]
+    },
+    {
+      "id": "M33",
+      "claim": "The new article has been published on WordPress",
+      "evidence": "draft only",
+      "decision": "exclude",
+      "source_ids": [
+        "s19"
+      ]
+    },
+    {
+      "id": "M34",
+      "claim": "Zen12 full course has been tested firsthand by FV",
+      "evidence": "no evidence",
+      "decision": "exclude",
+      "source_ids": [
+        "s13"
+      ]
+    },
+    {
+      "id": "M35",
+      "claim": "Zen12 audio treats anxiety or repairs false memory",
+      "evidence": "no product-specific clinical substantiation",
+      "decision": "exclude",
+      "source_ids": [
+        "s11",
+        "s02"
+      ]
+    },
+    {
+      "id": "M36",
+      "claim": "Optional film increases conversion",
+      "evidence": "not tested",
+      "decision": "A/B hypothesis only",
+      "source_ids": [
+        "s20"
+      ]
+    }
+  ],
+  "authorization_gates": [
+    {
+      "id": "G01",
+      "requirement": "Inspire3 legal entity/publisher account acceptance",
+      "status": "HARD_HOLD",
+      "evidence": "not authenticated in this run; no inference from public recruitment or seller promotion"
+    },
+    {
+      "id": "G02",
+      "requirement": "Partner dashboard access confirmed without sharing secrets",
+      "status": "HARD_HOLD",
+      "evidence": "not authenticated in this run; no inference from public recruitment or seller promotion"
+    },
+    {
+      "id": "G03",
+      "requirement": "Exact Zen12 campaign/publisher eligibility",
+      "status": "HARD_HOLD",
+      "evidence": "not authenticated in this run; no inference from public recruitment or seller promotion"
+    },
+    {
+      "id": "G04",
+      "requirement": "Approved website/editorial promotion channel",
+      "status": "HARD_HOLD",
+      "evidence": "not authenticated in this run; no inference from public recruitment or seller promotion"
+    },
+    {
+      "id": "G05",
+      "requirement": "Approved TikTok-origin social promotion channel",
+      "status": "HARD_HOLD",
+      "evidence": "not authenticated in this run; no inference from public recruitment or seller promotion"
+    },
+    {
+      "id": "G06",
+      "requirement": "Approved YouTube-origin social promotion channel",
+      "status": "HARD_HOLD",
+      "evidence": "not authenticated in this run; no inference from public recruitment or seller promotion"
+    },
+    {
+      "id": "G07",
+      "requirement": "Approved Dispatch/email promotion channel",
+      "status": "HARD_HOLD",
+      "evidence": "not authenticated in this run; no inference from public recruitment or seller promotion"
+    },
+    {
+      "id": "G08",
+      "requirement": "Exact unmodified tracked earning URL issued",
+      "status": "HARD_HOLD",
+      "evidence": "not authenticated in this run; no inference from public recruitment or seller promotion"
+    },
+    {
+      "id": "G09",
+      "requirement": "Merchant URL domain allowlist/redirect terms",
+      "status": "HARD_HOLD",
+      "evidence": "not authenticated in this run; no inference from public recruitment or seller promotion"
+    },
+    {
+      "id": "G10",
+      "requirement": "Approved artwork/creative reuse terms",
+      "status": "HARD_HOLD",
+      "evidence": "not authenticated in this run; no inference from public recruitment or seller promotion"
+    },
+    {
+      "id": "G11",
+      "requirement": "Non-copying compliant offer copy approved",
+      "status": "HARD_HOLD",
+      "evidence": "not authenticated in this run; no inference from public recruitment or seller promotion"
+    },
+    {
+      "id": "G12",
+      "requirement": "Product-specific scientific substantiation for any efficacy claim",
+      "status": "HARD_HOLD",
+      "evidence": "not authenticated in this run; no inference from public recruitment or seller promotion"
+    },
+    {
+      "id": "G13",
+      "requirement": "Current seller checkout total/tax/delivery independently validated",
+      "status": "HARD_HOLD",
+      "evidence": "not authenticated in this run; no inference from public recruitment or seller promotion"
+    },
+    {
+      "id": "G14",
+      "requirement": "Current refund/terms jurisdiction and customer entitlement validated",
+      "status": "HARD_HOLD",
+      "evidence": "not authenticated in this run; no inference from public recruitment or seller promotion"
+    },
+    {
+      "id": "G15",
+      "requirement": "Live landing route approved by founder and QA",
+      "status": "HARD_HOLD",
+      "evidence": "not authenticated in this run; no inference from public recruitment or seller promotion"
+    },
+    {
+      "id": "G16",
+      "requirement": "Browser accessibility/security/CWV acceptance",
+      "status": "HARD_HOLD",
+      "evidence": "not authenticated in this run; no inference from public recruitment or seller promotion"
+    },
+    {
+      "id": "G17",
+      "requirement": "Source-confirmed paid transaction and refunds/fees access",
+      "status": "HARD_HOLD",
+      "evidence": "not authenticated in this run; no inference from public recruitment or seller promotion"
+    },
+    {
+      "id": "G18",
+      "requirement": "First-party consentful attribution/campaign identity acceptance",
+      "status": "HARD_HOLD",
+      "evidence": "not authenticated in this run; no inference from public recruitment or seller promotion"
+    }
+  ],
+  "creator_to_purchase_candidate": [
+    {
+      "topic": "Change blindness",
+      "article": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "actual_asset_id": null,
+      "post_url": null,
+      "source_compatibility": "strong",
+      "buy_intent": "low from curiosity; optional Focus Fieldbook; buyer guide only if visitor intentionally requests short meditation audio",
+      "offer": "Zen12 (conditional)",
+      "status": "no confirmed Grok exact published media mapping"
+    },
+    {
+      "topic": "Attentional blink",
+      "article": "UNPUBLISHED; do not invent public URL",
+      "actual_asset_id": null,
+      "post_url": null,
+      "source_compatibility": "strong after article release",
+      "buy_intent": "low/medium only after reader asks for a daily routine",
+      "offer": "Zen12 (conditional)",
+      "status": "no published article or media-ID match authenticated"
+    },
+    {
+      "topic": "Mesmerism and Puységur",
+      "article": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "archive": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "actual_asset_id": null,
+      "post_url": null,
+      "source_compatibility": "strong primary history",
+      "buy_intent": "not evidence of hypnotic audio; optional independent guide",
+      "offer": "Hypnosis Live Total Focus only if verified and contextually appropriate",
+      "status": "no verified asset-ID/rights/approved route"
+    }
+  ],
+  "attribution_contract": {
+    "qualified_human_session": "first-party consented human-filtered unique session keyed to campaign asset, exclusions documented",
+    "utm_source": "actual published social platform",
+    "utm_medium": "organic_social",
+    "utm_campaign": "mind_pilot_2026_11",
+    "utm_content": "exact authenticated published asset_id or platform-profile-source label, never fabricated",
+    "event_order": [
+      "landing_visit",
+      "qualified_offer_view",
+      "relevant_cta_click",
+      "provider_confirmed_lead_optional",
+      "merchant_confirmed_paid_order_or_approved_affiliate_conversion",
+      "refund_and_fee_adjustment",
+      "realized_net_revenue"
+    ],
+    "commercial_events": {
+      "affiliate_click": "outbound visit, not sale",
+      "confirmed_subscriber": "email provider truth, not buyer",
+      "paid_order": "independent Payhip/partner record, not checkout start",
+      "realized_net_revenue": "cleared paid receipts less refunds fees verified"
+    },
+    "reporting": "7/30-day cohorts, tiny sample warnings, unknown attribution, no PII/no duplicate tracking",
+    "kpi": "1000 * realized_net_revenue / qualified_human_sessions; NOT COMPUTABLE until both verified"
+  }
+}
