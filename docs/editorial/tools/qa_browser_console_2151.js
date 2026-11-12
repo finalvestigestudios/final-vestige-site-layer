@@ -91,6 +91,15 @@
   const sentinels = ['2:17 p.m.', '$1,096,796.53', 'Bohemia Spillway',
     'Acosta v.', '1991', 'May 9, 1927', '$3,387,000', 'Graham v. Jones'];
   const missingSentinels = sentinels.filter(t => !bodyText.includes(t));
+  // Nov 12 07:43 USGS correction: all four markers must be IN ONE paragraph.
+  // Previous revisions share the older sentinels and must not false-PASS.
+  const precisionMarkers = ['Peak-Flow File lists 2,470,000',
+    'also discusses 2,472,000', 'recommends reporting approximately 2.47 million',
+    'estimated peak if flow had remained confined'];
+  const precisionParagraphs = [...article.querySelectorAll('p')].map(p =>
+    (p.textContent || '').replace(/\\s+/g, ' ').trim());
+  const precisionCorrectionOk = precisionParagraphs.some(p =>
+    precisionMarkers.every(t => p.includes(t)));
   const brokenAnchors = [...article.querySelectorAll('a[href^="#"]')].filter(a => {
     const target = a.getAttribute('href')?.slice(1);
     if (!target) return false;
@@ -121,6 +130,7 @@
       !timelineReport.clippedCards && timelineReport.minimumDescriptionFontPx >= 14 &&
       timelineReport.captionFontPx >= 14),
     revision_sentinels_present: missingSentinels.length === 0,
+    usgs_2026_11_12_precision_correction_present_in_one_paragraph: precisionCorrectionOk,
     header_and_footer_present: !!document.querySelector('header') && !!document.querySelector('footer')
   };
   const result = {
@@ -128,7 +138,7 @@
     dateUtc: new Date().toISOString(), viewportPx: width, outerViewportPx: innerWidth,
     allAutomatedChecksPassed: Object.values(checks).every(Boolean),
     checks, evidence: { imageReports, sourceCount: sources, timelineReport,
-      tableReport, brokenAnchors, missingSentinels,
+      tableReport, brokenAnchors, missingSentinels, precisionCorrectionOk,
       pageOverflowPx: document.documentElement.scrollWidth - width },
     manualGatesRemain: [
       'Verify this is WP #2151 in editor; separately compare fresh Gutenberg SHA.',
