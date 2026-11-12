@@ -17,7 +17,7 @@ function checkHtml(h,type){
  fail(/<!doctype html>/i.test(h)&&/<html lang="en">/i.test(h),'SEMANTIC_ROOT_'+type);
  for(const r of [/<main\b/,/<h1\b/,/href="#content"/,/@media\(max-width:/,/prefers-reduced-motion/,/noindex,nofollow/,/https:\/\/finalvestige\.com\/focus\//])fail(r.test(h),'BASIC_A11Y_'+type+'_'+r);
  for(const r of [/<script\b/i,/<iframe\b/i,/<form\b/i,/\bonclick\s*=/i,/<(?:video|audio)[^>]*\bautoplay\b/i,/<a[^>]*\bhref=["']https?:\/\/(?:www\.)?(?:zen12\.com|hypnosislive\.com|brainwaveshots\.com|affiliates\.inspire3\.com)/i])fail(!r.test(h),'UNAUTHORIZED_HTML_'+type+'_'+r);
- fail(!/guaranteed (focus|memory|income|cure)|clinically proven Zen12|we have used Zen12/i.test(h),'UNSUPPORTED_COPY_'+type);
+ fail(!/guaranteed (focus|memory|income|cure)|clinically proven Zen12|Zen12 is clinically proven|we have used Zen12/i.test(h),'UNSUPPORTED_COPY_'+type);
  const btns=[...h.matchAll(/<button\b[^>]*>/gi)].map(x=>x[0]);
  fail(btns.length===1,'SINGLE_MERCHANT_CONTROL_'+type);
  fail(/(?:\s|^)disabled(?:\s|>)/i.test(btns[0]),'MUST_HAVE_REAL_DISABLED_ATTRIBUTE_'+type);
