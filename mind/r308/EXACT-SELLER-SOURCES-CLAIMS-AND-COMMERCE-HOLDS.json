@@ -26,9 +26,9 @@
     },
     {
       "id": "W1995",
-      "url": "https://pubmed.ncbi.nlm.nih.gov/7876773/",
-      "depth": "pubmed_abstract",
-      "scope": "Wood and Cowan 34 participants; 34.6% reported their names"
+      "url": "https://memory.psych.missouri.edu/assets/doc/articles/1995/wood--cowan-1995-jeplmc.pdf",
+      "depth": "author_hosted_full_paper_printed_pages_256_257_and_pubmed_abstract",
+      "scope": "34 analyzed participants: 26 exposed to own name and eight no-name controls; nine of 26 (34.6%) reported own names"
     },
     {
       "id": "R2021",
@@ -147,7 +147,7 @@
     },
     {
       "id": "A06",
-      "statement": "1995 study reported own-name detection 34.6%",
+      "statement": "1995 experiment: nine of 26 name-exposed participants (34.6%) reported their name; 34 analyzed total including eight controls",
       "evidence_level": "research_abstract_support",
       "source_id": "W1995",
       "decision": "permit_context_only"

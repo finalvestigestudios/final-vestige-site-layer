@@ -1,0 +1,511 @@
+{
+  "version": "mind_r310_2026_11_11",
+  "status": "DRAFT_NOT_LIVE",
+  "sources": [
+    {
+      "id": "ORIGINAL_1974",
+      "url": "https://web.stanford.edu/class/psych205/papers/Loftus-Palmer-1974.pdf",
+      "depth": "full_primary_paper_screenshot_checked_pp586_587",
+      "role": "eyewitness experiment"
+    },
+    {
+      "id": "WOOD_1995",
+      "url": "https://memory.psych.missouri.edu/assets/doc/articles/1995/wood--cowan-1995-jeplmc.pdf",
+      "depth": "full_primary_paper_screenshot_checked_pp256_257",
+      "role": "denominator correction"
+    },
+    {
+      "id": "WOOD_PUBMED",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/7876773/",
+      "depth": "abstract",
+      "role": "1995 abstract denominator ambiguity"
+    },
+    {
+      "id": "R2024",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38696106/",
+      "depth": "abstract",
+      "role": "misinformation susceptibility review"
+    },
+    {
+      "id": "FAKENEWS_2024",
+      "url": "https://www.cambridge.org/core/journals/memory-mind-and-media/article/fake-memories-a-metaanalysis-on-the-effect-of-fake-news-on-the-creation-of-false-memories-and-false-beliefs/B6A66A305AFD6724E1C1C56A68BB5CF2",
+      "depth": "open_journal_article_text",
+      "role": "fake-news false memory meta-analysis"
+    },
+    {
+      "id": "FV_PUY",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "depth": "live_public_page",
+      "role": "historical source trail"
+    },
+    {
+      "id": "FV_FOCUS",
+      "url": "https://finalvestige.com/focus/",
+      "depth": "live_public_page",
+      "role": "single existing free lead magnet"
+    },
+    {
+      "id": "FV_COLLECTION",
+      "url": "https://finalvestige.com/collection/",
+      "depth": "public_page_prior_and_current_review_context",
+      "role": "not proof of paid SKU"
+    },
+    {
+      "id": "INSPIRE3",
+      "url": "https://inspire3.com/",
+      "depth": "official_brand_catalog_page",
+      "role": "seller catalog"
+    },
+    {
+      "id": "ZEN_ABOUT",
+      "url": "https://zen12.com/about",
+      "depth": "official_seller_page",
+      "role": "product format and seller claims"
+    },
+    {
+      "id": "ZEN_HNP",
+      "url": "https://zen12.com/hnp",
+      "depth": "official_sales_page",
+      "role": "seller pitch and tier distinctions"
+    },
+    {
+      "id": "ZEN_CHECKOUT",
+      "url": "https://zen12.com/getstarted",
+      "depth": "official_seller_checkout_snapshot_2026_11_11",
+      "role": "product configuration and dynamic checkout terms"
+    },
+    {
+      "id": "HYPNOSIS_TOTAL",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "depth": "official_seller_product_page",
+      "role": "distinct hypnosis offer"
+    },
+    {
+      "id": "BRAIN_FOCUS",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "depth": "official_seller_product_page",
+      "role": "distinct brainwave audio offer"
+    },
+    {
+      "id": "FTC_ENDORSE",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "depth": "official_current_guidance",
+      "role": "clear conspicuous commissions"
+    },
+    {
+      "id": "FTC_HEALTH",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "depth": "official_current_guidance",
+      "role": "adequate product claim substantiation"
+    }
+  ],
+  "claims": [
+    {
+      "id": "E01",
+      "statement": "1974 crash study first experiment included 45 participants and verb-dependent mean speed estimates",
+      "classification": "supported_primary",
+      "source_ids": [
+        "ORIGINAL_1974"
+      ]
+    },
+    {
+      "id": "E02",
+      "statement": "1974 experiment two had 150 participants, three groups of 50",
+      "classification": "supported_primary",
+      "source_ids": [
+        "ORIGINAL_1974"
+      ]
+    },
+    {
+      "id": "E03",
+      "statement": "1974 broken-glass YES counts 16 smashed, 7 hit, 6 control",
+      "classification": "supported_primary",
+      "source_ids": [
+        "ORIGINAL_1974"
+      ]
+    },
+    {
+      "id": "E04",
+      "statement": "Original accident film had no broken glass",
+      "classification": "supported_primary",
+      "source_ids": [
+        "ORIGINAL_1974"
+      ]
+    },
+    {
+      "id": "E05",
+      "statement": "One response proves a visual memory was implanted",
+      "classification": "not_supported_do_not_publish",
+      "source_ids": [
+        "ORIGINAL_1974"
+      ]
+    },
+    {
+      "id": "E06",
+      "statement": "2024 systematic review covered nine adult eyewitness misinformation studies",
+      "classification": "supported_abstract",
+      "source_ids": [
+        "R2024"
+      ]
+    },
+    {
+      "id": "E07",
+      "statement": "No single cognitive ability confers immunity to misinformation",
+      "classification": "supported_review_abstract",
+      "source_ids": [
+        "R2024"
+      ]
+    },
+    {
+      "id": "E08",
+      "statement": "2024 fake-news meta-analysis included 13 articles and outcomes have different denominators",
+      "classification": "supported_publisher",
+      "source_ids": [
+        "FAKENEWS_2024"
+      ]
+    },
+    {
+      "id": "E09",
+      "statement": "Fake-news meta-analysis applies directly to 1974 witness experiment",
+      "classification": "false_cross_study_inference",
+      "source_ids": [
+        "FAKENEWS_2024",
+        "ORIGINAL_1974"
+      ]
+    },
+    {
+      "id": "E10",
+      "statement": "1995 own-name recall denominator was 9/26 among name-exposed participants, eight additional no-name controls",
+      "classification": "supported_primary_corrected",
+      "source_ids": [
+        "WOOD_1995"
+      ]
+    },
+    {
+      "id": "E11",
+      "statement": "1995 34.6 percent applies to all 34 participants",
+      "classification": "false_denominator_rejected",
+      "source_ids": [
+        "WOOD_1995"
+      ]
+    },
+    {
+      "id": "P01",
+      "statement": "Inspire3 names Zen12, Hypnosis Live and Brainwave Shots among brands",
+      "classification": "seller_catalog",
+      "source_ids": [
+        "INSPIRE3"
+      ]
+    },
+    {
+      "id": "P02",
+      "statement": "Zen12 seller advertises 12 levels and four versions per level",
+      "classification": "seller_description_only",
+      "source_ids": [
+        "ZEN_ABOUT"
+      ]
+    },
+    {
+      "id": "P03",
+      "statement": "Zen12 full official checkout describes 12 levels/48 MP3s",
+      "classification": "seller_checkout_snapshot_only",
+      "source_ids": [
+        "ZEN_CHECKOUT"
+      ]
+    },
+    {
+      "id": "P04",
+      "statement": "Zen12 12 minutes equals one hour meditation",
+      "classification": "unsupported_product_efficacy_rejected",
+      "source_ids": [
+        "ZEN_HNP",
+        "FTC_HEALTH"
+      ]
+    },
+    {
+      "id": "P05",
+      "statement": "Zen12 is clinically proven to erase stress or anxiety",
+      "classification": "unsupported_medical_efficacy_rejected",
+      "source_ids": [
+        "ZEN_ABOUT",
+        "FTC_HEALTH"
+      ]
+    },
+    {
+      "id": "P06",
+      "statement": "Zen12 checkout lists dynamic discounts and money-back language",
+      "classification": "seller_dynamic_terms_do_not_quote_current_price",
+      "source_ids": [
+        "ZEN_CHECKOUT"
+      ]
+    },
+    {
+      "id": "P07",
+      "statement": "Hypnosis Live Total Focus is a 33 minute hypnosis recording",
+      "classification": "seller_format_only",
+      "source_ids": [
+        "HYPNOSIS_TOTAL"
+      ]
+    },
+    {
+      "id": "P08",
+      "statement": "Total Focus guarantees increased concentration or career benefits",
+      "classification": "unsupported_product_efficacy_rejected",
+      "source_ids": [
+        "HYPNOSIS_TOTAL",
+        "FTC_HEALTH"
+      ]
+    },
+    {
+      "id": "P09",
+      "statement": "Brainwave Shots Focus Shot includes 15 and 30 minute audio options",
+      "classification": "seller_format_only",
+      "source_ids": [
+        "BRAIN_FOCUS"
+      ]
+    },
+    {
+      "id": "P10",
+      "statement": "Focus Shot guarantees hours of cognitive enhancement",
+      "classification": "unsupported_product_efficacy_rejected",
+      "source_ids": [
+        "BRAIN_FOCUS",
+        "FTC_HEALTH"
+      ]
+    },
+    {
+      "id": "C01",
+      "statement": "Affiliate disclosure must be clear and conspicuous near earning link",
+      "classification": "regulatory_guidance",
+      "source_ids": [
+        "FTC_ENDORSE"
+      ]
+    },
+    {
+      "id": "C02",
+      "statement": "A broad footer affiliate disclaimer alone is sufficient for isolated product CTA",
+      "classification": "not_sufficient",
+      "source_ids": [
+        "FTC_ENDORSE"
+      ]
+    },
+    {
+      "id": "C03",
+      "statement": "Commercial health-related efficacy needs adequate product-specific substantiation",
+      "classification": "regulatory_guidance",
+      "source_ids": [
+        "FTC_HEALTH"
+      ]
+    },
+    {
+      "id": "C04",
+      "statement": "Final Vestige has accepted Inspire3 terms and active earning link",
+      "classification": "not_verified_no_activation",
+      "source_ids": [
+        "INSPIRE3"
+      ]
+    },
+    {
+      "id": "C05",
+      "statement": "Current FV owned paid Mind SKU with rights/checkout and refunds was authenticated",
+      "classification": "not_verified_no_owned_checkout",
+      "source_ids": [
+        "FV_COLLECTION"
+      ]
+    },
+    {
+      "id": "C06",
+      "statement": "Existing free Focus Fieldbook uses single established signup route",
+      "classification": "publicly_observed_not_provider_signup_verified",
+      "source_ids": [
+        "FV_FOCUS"
+      ]
+    },
+    {
+      "id": "C07",
+      "statement": "Affiliate click establishes confirmed commission",
+      "classification": "false_outcome_equivalence",
+      "source_ids": [
+        "FTC_ENDORSE"
+      ]
+    },
+    {
+      "id": "C08",
+      "statement": "Seller gross paid basket equals FV net realized earnings",
+      "classification": "false_financial_equivalence",
+      "source_ids": []
+    }
+  ],
+  "authorization_gates": [
+    {
+      "id": "publisher_identity",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "written_partner_acceptance",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "authorized_website_channel",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "authorized_tiktok_channel",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "authorized_youtube_channel",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "authorized_email_channel",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "issued_affiliate_url",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "link_redirect_permissions",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "approved_creative_usage",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "claim_substantiation",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "actual_tier_terms",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "current_price_verified",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "refund_terms_verified",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "inventory_checkout_test",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "privacy_measurement_review",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "mobile_keyboard_a11y",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "playable_media_qa",
+      "status": "HARD_HOLD",
+      "proof": null
+    },
+    {
+      "id": "founder_release_approval",
+      "status": "HARD_HOLD",
+      "proof": null
+    }
+  ],
+  "creator_paths": [
+    {
+      "topic": "Change Blindness",
+      "asset_id": null,
+      "published_media_verified": false,
+      "article_url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "next_step": "existing https://finalvestige.com/focus/",
+      "commerce": "Zen12 optional guide after approval; not a claim that perception research proves it"
+    },
+    {
+      "topic": "Attentional Blink",
+      "asset_id": null,
+      "published_media_verified": false,
+      "article_url": null,
+      "source_controlled_draft": "mind/r301/THE-SECOND-LETTER-THAT-VANISHED-UNPUBLISHED.md",
+      "next_step": "existing https://finalvestige.com/focus/",
+      "commerce": "optional separate buying guide if visitor expresses routine-format intent"
+    },
+    {
+      "topic": "Invisible Gorilla / Inattentional Blindness",
+      "asset_id": null,
+      "published_media_verified": false,
+      "article_url": null,
+      "source_controlled_draft": "mind/r302/THE-GORILLA-IN-THE-SCAN-UNPUBLISHED.md",
+      "next_step": "existing https://finalvestige.com/focus/",
+      "commerce": "no direct medical/performance audio leap"
+    }
+  ],
+  "offer_priority": [
+    {
+      "offer": "Zen12 full course",
+      "buyer_intent": "short, structured self-paced guided meditation audio",
+      "is_sellable_by_fv": "NOT_VERIFIED",
+      "reason": "partner acceptance and tracking permissions not verified",
+      "merchant_terms": "Seller page is dynamic and not licensed affiliate sales copy",
+      "cta": "disabled"
+    },
+    {
+      "offer": "Final Vestige owned paid Mind SKU",
+      "is_sellable_by_fv": "NOT_VERIFIED",
+      "reason": "Payhip rights, active product, checkout and fulfillment evidence unavailable",
+      "cta": "disabled"
+    }
+  ],
+  "measurement": {
+    "unit": "qualified human session by verified asset_id plus utm_campaign, consent-respecting first-party only",
+    "events": [
+      "landing",
+      "article_to_fieldbook_click",
+      "provider_confirmed_subscribed_lead",
+      "affiliate_outbound_click_after_authorization",
+      "merchant_confirmed_paid_order",
+      "cleared_affiliate_commission"
+    ],
+    "exclude": [
+      "impressions",
+      "unconfirmed form submits as leads",
+      "outbound clicks as sales",
+      "seller gross as FV revenue"
+    ],
+    "kpi": "1000 * realized attributable net FV revenue / qualified human sessions",
+    "denominator_status": "NOT_VERIFIED",
+    "numerator_status": "NOT_VERIFIED",
+    "value": "NOT_COMPUTABLE",
+    "cohorts_days": [
+      7,
+      30
+    ],
+    "tiny_sample_rule": "show raw numerator and denominator; no conversion superiority claim without adequate power"
+  },
+  "restrictions": [
+    "no live CMS edits",
+    "no affiliate URL",
+    "no new list",
+    "no tracking script",
+    "no social posts",
+    "no commercial email",
+    "no merge/deploy",
+    "no spend"
+  ]
+}
