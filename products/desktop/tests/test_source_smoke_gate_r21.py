@@ -61,7 +61,9 @@ class SourceSmokeGateR21Tests(unittest.TestCase):
         calls = []
         def fake(app):
             calls.append(app)
-            return [Path("report.csv")]
+            # All six real smoke contracts have fixed report multiplicity.
+            from scripts.smoke_receipt_contract_r387 import EXPECTED_REPORT_COUNTS
+            return [Path(f"report-{i}.csv") for i in range(EXPECTED_REPORT_COUNTS[app])]
         data = gate.report_data(self.root, fake, commit="abc123")
         self.assertEqual(calls, [app for _, app in gate.APPS])
         self.assertTrue(data["all_six_passed"])
