@@ -40,6 +40,12 @@ def run_smoke_checked(launch: Callable, exe: Path, root: Path, *,
     """
     if type(timeout) is not int or not 1 <= timeout <= 600:
         raise SmokeRunError("Smoke timeout must be between 1 and 600 seconds")
+    # Never raise a redacted error while handling the original exception.
+    # "raise ... from None" hides traceback rendering but still retains the
+    # original (potentially private) fault in SmokeRunError.__context__.
+    # Classify the failure, exit the handler, then raise with clean context.
+    launch_failure = None
+    result = None
     try:
         result = launch([str(exe.resolve()), "--smoke-test"],
                         cwd=str(root.resolve()), timeout=timeout,
@@ -47,13 +53,17 @@ def run_smoke_checked(launch: Callable, exe: Path, root: Path, *,
                         stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
                         env=private_child_environment())
     except subprocess.TimeoutExpired:
-        raise SmokeRunError(f"{name}: smoke timed out") from None
+        launch_failure = "timeout"
     except Exception:
-        raise SmokeRunError(f"{name}: could not execute packaged EXE") from None
+        launch_failure = "execution"
+    if launch_failure == "timeout":
+        raise SmokeRunError(f"{name}: smoke timed out")
+    if launch_failure is not None:
+        raise SmokeRunError(f"{name}: could not execute packaged EXE")
     try:
         code = result.returncode
     except Exception:
-        raise SmokeRunError(f"{name}: invalid smoke result") from None
+        code = None
     if type(code) is not int:
         raise SmokeRunError(f"{name}: invalid smoke result")
     if code != 0:
