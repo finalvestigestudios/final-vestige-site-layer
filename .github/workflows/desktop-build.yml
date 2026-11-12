@@ -492,7 +492,9 @@ jobs:
       - name: R240 reject private PE stream I/O failures (16 methods per mode)
         run: |
           python -W error -m unittest discover -s products/desktop/tests -p 'test_pe_stream_privacy_r240.py'
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_pe_private_chains_r373.py'
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_pe_stream_privacy_r240.py'
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_pe_private_chains_r373.py'
       - name: R241 candidate EXE and manifest post-handoff privacy (18 methods per mode)
         run: |
           python -W error -m unittest discover -s products/desktop/tests -p 'test_candidate_stream_privacy_r241.py'
@@ -2742,8 +2744,10 @@ jobs:
         run: |
           $env:PYTHONPATH = "products/desktop"
           python -W error -m unittest discover -s products/desktop/tests -p 'test_pe_stream_privacy_r240.py'
+          python -W error -m unittest discover -s products/desktop/tests -p 'test_pe_private_chains_r373.py'
           if ($LASTEXITCODE -ne 0) { throw "R240 normal PE stream privacy FAILED" }
           python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_pe_stream_privacy_r240.py'
+          python -OO -W error -m unittest discover -s products/desktop/tests -p 'test_pe_private_chains_r373.py'
           if ($LASTEXITCODE -ne 0) { throw "R240 optimized PE stream privacy FAILED" }
       - name: R241 Windows candidate EXE and manifest stream custody before packaging (18 methods per mode)
         shell: pwsh

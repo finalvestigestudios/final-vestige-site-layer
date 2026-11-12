@@ -19,21 +19,19 @@ class PEFormatError(ValueError):
 
 @contextmanager
 def _private_pe_stream(stream):
-    """Redact failed stream operations after fdopen hands off ownership.
+    """Preserve stream ownership and cleanup across inspection failures.
 
-    If stream.__enter__ fails, no context manager owns the stream yet; attempt
-    explicit cleanup. Normal body/exit failures are closed by ``with stream``.
-    Never reclassify a deliberate PE format failure or intercept interrupts.
+    The caller sanitizes unexpected errors *outside* an active exception
+    handler: a generator-based context manager cannot reliably clear private
+    exception chains from faults thrown into its suspended ``yield``.
+    If __enter__ fails, explicitly close the unowned stream; after a successful
+    enter, the stream context owns cleanup. Never swallow interrupts.
     """
     entered = False
     try:
         with stream:
             entered = True
             yield stream
-    except PEFormatError:
-        raise
-    except Exception:
-        raise PEFormatError("Cannot inspect candidate file") from None
     finally:
         if not entered:
             try:
@@ -75,11 +73,15 @@ def verify_amd64_pe(path: str | Path) -> None:
     """
     filename = Path(path)
     flags = os.O_RDONLY | getattr(os, "O_BINARY", 0) | getattr(os, "O_NOFOLLOW", 0)
+    fd = None
     try:
         fd = os.open(filename, flags)
     except OSError:
         # OS exception messages can contain private candidate directories.
-        raise PEFormatError("Cannot open candidate without following file symlinks") from None
+        pass
+    if fd is None:
+        raise PEFormatError("Cannot open candidate without following file symlinks")
+    prestream_fault = False
     try:
         metadata = os.fstat(fd)
         if not stat.S_ISREG(metadata.st_mode):
@@ -94,98 +96,112 @@ def verify_amd64_pe(path: str | Path) -> None:
         except OSError:
             pass
         if isinstance(exc, Exception) and not isinstance(exc, PEFormatError):
-            raise PEFormatError("Cannot inspect candidate file") from None
+            prestream_fault = True
+        else:
+            raise
+    if prestream_fault:
+        raise PEFormatError("Cannot inspect candidate file")
+    stream_fault = False
+    try:
+        with _private_pe_stream(stream):
+            length = metadata.st_size
+            if length < 512:
+                raise PEFormatError("Truncated Windows image")
+            dos = _read_at(stream, 0, 64, length)
+            if dos[:2] != b"MZ":
+                raise PEFormatError("Missing DOS MZ signature")
+            pe_offset = _u32(dos, 0x3C)
+            if not 64 <= pe_offset <= 65536:
+                raise PEFormatError("Unsafe PE header offset")
+            nt = _read_at(stream, pe_offset, 24, length)
+            if nt[:4] != b"PE\x00\x00":
+                raise PEFormatError("Missing NT PE signature")
+            machine = _u16(nt, 4)
+            section_count = _u16(nt, 6)
+            optional_bytes = _u16(nt, 20)
+            characteristics = _u16(nt, 22)
+            if machine != 0x8664:
+                raise PEFormatError("Expected Windows AMD64 executable")
+            if not 1 <= section_count <= 96:
+                raise PEFormatError("Invalid PE section count")
+            if not 112 <= optional_bytes <= 4096:
+                raise PEFormatError("Invalid PE32+ optional-header size")
+            if not characteristics & 0x0002 or characteristics & (0x2000 | 0x1000):
+                raise PEFormatError("PE is not a user-mode executable image")
+            optional_start = pe_offset + 24
+            section_start = optional_start + optional_bytes
+            section_table_bytes = section_count * 40
+            sections_end = section_start + section_table_bytes
+            if sections_end > length:
+                raise PEFormatError("PE section table is truncated")
+            optional = _read_at(stream, optional_start, optional_bytes, length)
+            if _u16(optional, 0) != 0x20B:
+                raise PEFormatError("Expected PE32+, not PE32")
+            entry_rva = _u32(optional, 16)
+            if entry_rva == 0:
+                raise PEFormatError("Executable has no entry point")
+            section_align = _u32(optional, 32)
+            file_align = _u32(optional, 36)
+            if (not _power_of_two(file_align) or not _power_of_two(section_align)
+                    or section_align < file_align):
+                raise PEFormatError("Invalid PE image/file alignments")
+            image_size = _u32(optional, 56)
+            headers_size = _u32(optional, 60)
+            if not sections_end <= headers_size <= length or image_size < headers_size:
+                raise PEFormatError("Invalid PE image/header extent")
+            if _u16(optional, 68) not in (2, 3):
+                raise PEFormatError("Expected user-mode GUI or console subsystem")
+            if (headers_size % file_align or image_size % section_align
+                    or entry_rva >= image_size):
+                raise PEFormatError("Misaligned image extents or entry point outside image")
+            table = _read_at(stream, section_start, section_table_bytes, length)
+            virtual_ranges: list[tuple[int, int]] = []
+            file_ranges: list[tuple[int, int]] = []
+            backed_entry = False
+            for offset in range(0, len(table), 40):
+                virtual_bytes = _u32(table, offset + 8)
+                virtual_rva = _u32(table, offset + 12)
+                raw_bytes = _u32(table, offset + 16)
+                raw_offset = _u32(table, offset + 20)
+                section_flags = _u32(table, offset + 36)
+                # R370: release candidates must never request pages that are both
+                # writable and executable. Check EVERY mapped section, including
+                # non-entry and zero-filled sections; a valid entry point alone
+                # does not make an unsafe PE suitable for review/distribution.
+                # This is a conservative format policy, not an AV or signing check.
+                if section_flags & 0xA0000000 == 0xA0000000:
+                    raise PEFormatError("PE section requests writable executable memory")
+                mapped_bytes = max(virtual_bytes, raw_bytes)
+                if (not mapped_bytes or virtual_rva < headers_size
+                        or virtual_rva % section_align
+                        or virtual_rva + mapped_bytes > image_size):
+                    raise PEFormatError("Invalid mapped PE section extent")
+                virtual_ranges.append((virtual_rva, virtual_rva + mapped_bytes))
+                if raw_bytes:
+                    if (raw_offset < headers_size or raw_offset % file_align
+                            or raw_bytes % file_align
+                            or raw_offset + raw_bytes > length):
+                        raise PEFormatError("PE section bytes unaligned or outside image")
+                    file_ranges.append((raw_offset, raw_offset + raw_bytes))
+                    # An entry in executable zero-fill or file padding is not
+                    # backed by actual code. Never accept another section's flags.
+                    code_end = virtual_rva + min(raw_bytes, virtual_bytes or raw_bytes)
+                    if (section_flags & 0x20000000
+                            and virtual_rva <= entry_rva < code_end):
+                        backed_entry = True
+            for ranges in (virtual_ranges, file_ranges):
+                ranges.sort()
+                if any(prev[1] > current[0]
+                       for prev, current in zip(ranges, ranges[1:])):
+                    raise PEFormatError("Overlapping PE section extents")
+            if not backed_entry:
+                raise PEFormatError("Entry point is not backed by executable section bytes")
+    except PEFormatError:
         raise
-    with _private_pe_stream(stream):
-        length = metadata.st_size
-        if length < 512:
-            raise PEFormatError("Truncated Windows image")
-        dos = _read_at(stream, 0, 64, length)
-        if dos[:2] != b"MZ":
-            raise PEFormatError("Missing DOS MZ signature")
-        pe_offset = _u32(dos, 0x3C)
-        if not 64 <= pe_offset <= 65536:
-            raise PEFormatError("Unsafe PE header offset")
-        nt = _read_at(stream, pe_offset, 24, length)
-        if nt[:4] != b"PE\x00\x00":
-            raise PEFormatError("Missing NT PE signature")
-        machine = _u16(nt, 4)
-        section_count = _u16(nt, 6)
-        optional_bytes = _u16(nt, 20)
-        characteristics = _u16(nt, 22)
-        if machine != 0x8664:
-            raise PEFormatError("Expected Windows AMD64 executable")
-        if not 1 <= section_count <= 96:
-            raise PEFormatError("Invalid PE section count")
-        if not 112 <= optional_bytes <= 4096:
-            raise PEFormatError("Invalid PE32+ optional-header size")
-        if not characteristics & 0x0002 or characteristics & (0x2000 | 0x1000):
-            raise PEFormatError("PE is not a user-mode executable image")
-        optional_start = pe_offset + 24
-        section_start = optional_start + optional_bytes
-        section_table_bytes = section_count * 40
-        sections_end = section_start + section_table_bytes
-        if sections_end > length:
-            raise PEFormatError("PE section table is truncated")
-        optional = _read_at(stream, optional_start, optional_bytes, length)
-        if _u16(optional, 0) != 0x20B:
-            raise PEFormatError("Expected PE32+, not PE32")
-        entry_rva = _u32(optional, 16)
-        if entry_rva == 0:
-            raise PEFormatError("Executable has no entry point")
-        section_align = _u32(optional, 32)
-        file_align = _u32(optional, 36)
-        if (not _power_of_two(file_align) or not _power_of_two(section_align)
-                or section_align < file_align):
-            raise PEFormatError("Invalid PE image/file alignments")
-        image_size = _u32(optional, 56)
-        headers_size = _u32(optional, 60)
-        if not sections_end <= headers_size <= length or image_size < headers_size:
-            raise PEFormatError("Invalid PE image/header extent")
-        if _u16(optional, 68) not in (2, 3):
-            raise PEFormatError("Expected user-mode GUI or console subsystem")
-        if (headers_size % file_align or image_size % section_align
-                or entry_rva >= image_size):
-            raise PEFormatError("Misaligned image extents or entry point outside image")
-        table = _read_at(stream, section_start, section_table_bytes, length)
-        virtual_ranges: list[tuple[int, int]] = []
-        file_ranges: list[tuple[int, int]] = []
-        backed_entry = False
-        for offset in range(0, len(table), 40):
-            virtual_bytes = _u32(table, offset + 8)
-            virtual_rva = _u32(table, offset + 12)
-            raw_bytes = _u32(table, offset + 16)
-            raw_offset = _u32(table, offset + 20)
-            section_flags = _u32(table, offset + 36)
-            # R370: release candidates must never request pages that are both
-            # writable and executable. Check EVERY mapped section, including
-            # non-entry and zero-filled sections; a valid entry point alone
-            # does not make an unsafe PE suitable for review/distribution.
-            # This is a conservative format policy, not an AV or signing check.
-            if section_flags & 0xA0000000 == 0xA0000000:
-                raise PEFormatError("PE section requests writable executable memory")
-            mapped_bytes = max(virtual_bytes, raw_bytes)
-            if (not mapped_bytes or virtual_rva < headers_size
-                    or virtual_rva % section_align
-                    or virtual_rva + mapped_bytes > image_size):
-                raise PEFormatError("Invalid mapped PE section extent")
-            virtual_ranges.append((virtual_rva, virtual_rva + mapped_bytes))
-            if raw_bytes:
-                if (raw_offset < headers_size or raw_offset % file_align
-                        or raw_bytes % file_align
-                        or raw_offset + raw_bytes > length):
-                    raise PEFormatError("PE section bytes unaligned or outside image")
-                file_ranges.append((raw_offset, raw_offset + raw_bytes))
-                # An entry in executable zero-fill or file padding is not
-                # backed by actual code. Never accept another section's flags.
-                code_end = virtual_rva + min(raw_bytes, virtual_bytes or raw_bytes)
-                if (section_flags & 0x20000000
-                        and virtual_rva <= entry_rva < code_end):
-                    backed_entry = True
-        for ranges in (virtual_ranges, file_ranges):
-            ranges.sort()
-            if any(prev[1] > current[0]
-                   for prev, current in zip(ranges, ranges[1:])):
-                raise PEFormatError("Overlapping PE section extents")
-        if not backed_entry:
-            raise PEFormatError("Entry point is not backed by executable section bytes")
+    except Exception:
+        # Private read/seek, context-enter/exit, parse and I/O faults must
+        # not survive via the exception-chain object graph. The handler ends
+        # before we construct the redacted public exception.
+        stream_fault = True
+    if stream_fault:
+        raise PEFormatError("Cannot inspect candidate file")
