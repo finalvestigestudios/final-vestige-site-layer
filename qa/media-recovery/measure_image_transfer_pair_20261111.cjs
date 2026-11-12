@@ -19,6 +19,33 @@ const fail = (code, detail) => ({status:'HOLD', reason:code, detail:detail || nu
   sitewide_transfer_savings_verified:false, production_change_allowed:false});
 const equalLists = (a,b) => JSON.stringify([...a].sort()) === JSON.stringify([...b].sort());
 
+/** Bounded, fully linked redirect evidence from QA's CDP requestWillBeSent events.
+ * This module does not collect browser traffic, fetch URLs, or clear image rights.
+ */
+function redirectLineageOk(img) {
+  const chain=img.redirect_chain;
+  if(img.request_url===img.final_response_url)
+    return chain===undefined || (Array.isArray(chain)&&chain.length===0);
+  if(!Array.isArray(chain)||chain.length<1||chain.length>5)return false;
+  let current=img.request_url;
+  const seen=new Set([current]);
+  for(const hop of chain) {
+    if(!hop||hop.request_id!==img.request_id||
+       hop.from_url!==current||hop.response_url!==current||
+       hop.provenance!=='CDP_NETWORK_REQUEST_WILL_BE_SENT_REDIRECT_RESPONSE'||
+       ![301,302,303,307,308].includes(hop.http_status)||
+       !https(hop.to_url)||seen.has(hop.to_url))return false;
+    // Do not trust a redirect that downgrades or embeds credentials/fragment/port.
+    const authority=hop.to_url.match(/^https:\/\/([^/?#]+)\//i)?.[1];
+    if(!authority||authority.includes('@')||
+       (authority.includes(':')&&!authority.endsWith(':443'))||
+       hop.to_url.includes('#'))return false;
+    current=hop.to_url;
+    seen.add(current);
+  }
+  return current===img.final_response_url;
+}
+
 function validateCapture(c, expectedSlots, postId) {
   if (!c || c.method !== 'CHROME_CDP_LOGGED_OUT_COLD' ||
       c.post_id !== postId || !https(c.page_url) ||
@@ -38,7 +65,7 @@ function validateCapture(c, expectedSlots, postId) {
         !img.request_id ||
         img.resource_type !== 'Image' || !https(img.current_src) ||
         !https(img.request_url) || img.current_src !== img.request_url ||
-        !https(img.final_response_url) || img.final_response_url !== img.request_url ||
+        !https(img.final_response_url) || !redirectLineageOk(img) ||
         !goodMime(img.response_mime_type) ||
         !Number.isInteger(img.final_http_status) ||
         img.final_http_status !== 200 ||
@@ -57,7 +84,8 @@ function validateCapture(c, expectedSlots, postId) {
       img.final_http_status,img.loading_finished,img.encoded_data_length,
       img.network_data_received_bytes,img.network_data_received_provenance,
       img.natural_width,img.natural_height,img.image_identity,
-      img.from_disk_cache,img.from_memory_cache,img.from_service_worker]);
+      img.from_disk_cache,img.from_memory_cache,img.from_service_worker,
+      img.redirect_chain || null]);
     const prior = requestById.get(img.request_id);
     if (prior && prior.signature !== signature)
       return {error:'CONFLICTING_SHARED_IMAGE_REQUEST',slot:img.slot};
@@ -109,6 +137,10 @@ function evaluatePair(input) {
     unique_completed_requests_after:after.requests.size,
     shared_request_slots_before:before.shared_slots,
     shared_request_slots_after:after.shared_slots,
+    redirected_unique_requests_before:[...before.requests.values()].filter(x=>Array.isArray(x.redirect_chain)&&x.redirect_chain.length>0).length,
+    redirected_unique_requests_after:[...after.requests.values()].filter(x=>Array.isArray(x.redirect_chain)&&x.redirect_chain.length>0).length,
+    recorded_redirect_hops_before:[...before.requests.values()].reduce((n,x)=>n+(x.redirect_chain?.length||0),0),
+    recorded_redirect_hops_after:[...after.requests.values()].reduce((n,x)=>n+(x.redirect_chain?.length||0),0),
     network_metric:'CDP Network.loadingFinished encodedDataLength',
     image_network_before_bytes:initial, image_network_after_bytes:candidate,
     reduction_percent:Math.round(pct*100)/100,
