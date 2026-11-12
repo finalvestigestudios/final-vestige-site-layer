@@ -105,17 +105,18 @@ def load_price_policy(path: str | Path | None = None) -> PricePolicy:
     # The exact JSON bytes used for review must also be bound into the inventory.
     # A descriptor-verified bounded read rejects symlink/path-swap input attacks.
     from .csv_snapshot import read_csv_snapshot
+    from .procurement_policy_private_json_r388 import decode_price_policy_document
     try:
         data = read_csv_snapshot(file, 8192)
     except ValueError:
-        raise ValueError("Price policy requires a stable regular JSON file (8 KiB maximum)") from None
+        unsafe_policy_read = True
+    else:
+        unsafe_policy_read = False
+    # Translation after the handler eliminates retained private-path __context__.
+    if unsafe_policy_read:
+        raise ValueError("Price policy requires a stable regular JSON file (8 KiB maximum)")
     digest = hashlib.sha256(data).hexdigest()
-    try:
-        content = json.loads(data.decode("utf-8-sig"), object_pairs_hook=_unique_object,
-                             parse_constant=lambda value: (_ for _ in ()).throw(
-                                 ValueError("Nonfinite JSON values are not allowed")))
-    except (UnicodeError, json.JSONDecodeError) as exc:
-        raise ValueError("Invalid UTF-8 JSON price policy") from exc
+    content = decode_price_policy_document(data)
     if not isinstance(content, dict):
         raise ValueError("Price policy must be a JSON object")
     expected = {"version", "price_absolute", "price_fraction"}
