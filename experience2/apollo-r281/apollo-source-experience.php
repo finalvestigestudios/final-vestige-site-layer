@@ -438,6 +438,11 @@ function fv_r281_render($attributes = []): string {
         $s.='<p class="fv-r281__source-return"><a href="#'.$event_point.'">Return to evidence: '.fv_r281_escape($r['title']).'</a></p>';
         $s.='<p class="fv-r307__source-continuation"><a class="fv-r307__continue-return" href="#'.$id.'-continue">Return to free-investigation continuation<span class="fv-r298__sr-only"> after '.fv_r281_escape($r['source_name']).$landmark_instance.'</span></a></p></li>';
     }
+    // R310: a source catalogue <ul> may contain <li> children only.
+    // Keep this independently reviewable photo disclosure OUTSIDE the list;
+    // otherwise browser/AT list semantics include the <details> as an invalid
+    // fourth list child, even though it is not a documentary source entry.
+    $s.='</ul>';
     // R309: optional LINK-ONLY contextual photo records from independent
     // Research Desk #158. Not part of the causal source list and never a product.
     // Deliberate separate disclosure prevents promoting media IDs as proof of an
@@ -457,7 +462,7 @@ function fv_r281_render($attributes = []): string {
         // verified historical evidence or turn source clicks into conversions.
         $s.='<p data-fv-media-status="withheld">Contextual photo records are withheld until their source details can be verified. The documentary evidence above remains available.</p>';
     }
-    $s.='</ul><p>No archive image, geolocation, ownership or commercial rights are inferred from these source links. NASA does not endorse this website.</p></aside>';
+    $s.='<p>No archive image, geolocation, ownership or commercial rights are inferred from these source links. NASA does not endorse this website.</p></aside>';
     $s.='</section>';
     // Body-placed stylesheet is a progressive fallback where an unknown dynamic
     // shortcode executes after wp_head. Never inject JS or remote analytics.
