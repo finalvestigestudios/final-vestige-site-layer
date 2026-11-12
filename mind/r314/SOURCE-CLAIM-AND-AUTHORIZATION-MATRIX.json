@@ -1,0 +1,322 @@
+{
+  "review_date": "2026-11-12 PT",
+  "state": "DRAFT_HARD_HOLD",
+  "sources": {
+    "thompson": "https://doi.org/10.1068/p090483",
+    "wong": "https://pubmed.ncbi.nlm.nih.gov/20942363/",
+    "primates": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2982021/",
+    "psalta": "https://doi.org/10.1068/p7755",
+    "fmri": "https://doi.org/10.1177/0956797613501521",
+    "inspire": "https://inspire3.com/",
+    "zen": "https://zen12.com/about",
+    "zencart": "https://zen12.com/getstarted",
+    "hypnosis": "https://hypnosislive.com/mental-skills/total-focus",
+    "focusshot": "https://brainwaveshots.com/focus-shot",
+    "affiliate": "https://affiliates.inspire3.com/",
+    "ftc": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+    "health": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+    "puy": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+    "focus": "https://finalvestige.com/focus/",
+    "change": "https://finalvestige.com/2026/11/02/change-blindness/"
+  },
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "Thompson original 1980 citation",
+      "classification": "verified_publisher_metadata",
+      "sources": [
+        "thompson"
+      ],
+      "release_limit": "Full paper restricted; no effect sizes"
+    },
+    {
+      "id": "C02",
+      "claim": "Thatcher illusion local feature orientation",
+      "classification": "research_abstract",
+      "sources": [
+        "thompson",
+        "wong"
+      ],
+      "release_limit": "Not everyone always fooled"
+    },
+    {
+      "id": "C03",
+      "claim": "Wong 2010 non-face categories",
+      "classification": "research_abstract",
+      "sources": [
+        "wong"
+      ],
+      "release_limit": "Not face-exclusive test effect"
+    },
+    {
+      "id": "C04",
+      "claim": "Human/monkey comparative research",
+      "classification": "research_abstract",
+      "sources": [
+        "primates"
+      ],
+      "release_limit": "Task-specific"
+    },
+    {
+      "id": "C05",
+      "claim": "Facial expression reversal finding",
+      "classification": "research_abstract",
+      "sources": [
+        "psalta"
+      ],
+      "release_limit": "Expression identification differs from alteration detection"
+    },
+    {
+      "id": "C06",
+      "claim": "Superior temporal sulcus fMRI observation",
+      "classification": "research_abstract",
+      "sources": [
+        "fmri"
+      ],
+      "release_limit": "No clinical or mind-reading inference"
+    },
+    {
+      "id": "C07",
+      "claim": "Zen12 twelve levels four styles",
+      "classification": "seller_format",
+      "sources": [
+        "zen"
+      ],
+      "release_limit": "Not independently tested efficacy"
+    },
+    {
+      "id": "C08",
+      "claim": "Zen12 twelve-minute session",
+      "classification": "seller_format",
+      "sources": [
+        "zen"
+      ],
+      "release_limit": "Length not benefit"
+    },
+    {
+      "id": "C09",
+      "claim": "Zen12 long-session equivalence",
+      "classification": "seller_unsubstantiated",
+      "sources": [
+        "zen"
+      ],
+      "release_limit": "EXCLUDE"
+    },
+    {
+      "id": "C10",
+      "claim": "Zen12 automated brainwave improvement",
+      "classification": "seller_unsubstantiated",
+      "sources": [
+        "zen"
+      ],
+      "release_limit": "EXCLUDE"
+    },
+    {
+      "id": "C11",
+      "claim": "Zen12 exact checkout price",
+      "classification": "unverified",
+      "sources": [
+        "zencart"
+      ],
+      "release_limit": "Exclude until cart approved"
+    },
+    {
+      "id": "C12",
+      "claim": "Zen12 returns terms",
+      "classification": "seller_claim_only",
+      "sources": [
+        "zencart"
+      ],
+      "release_limit": "Do not promise tested refund"
+    },
+    {
+      "id": "C13",
+      "claim": "Hypnosis Live Total Focus 33-min length",
+      "classification": "seller_format",
+      "sources": [
+        "hypnosis"
+      ],
+      "release_limit": "Not evidence of effect"
+    },
+    {
+      "id": "C14",
+      "claim": "Focus Shot 15/30 minute formats",
+      "classification": "seller_format",
+      "sources": [
+        "focusshot"
+      ],
+      "release_limit": "Not evidence of effect"
+    },
+    {
+      "id": "C15",
+      "claim": "Focus Shot instant results claims",
+      "classification": "seller_unsubstantiated",
+      "sources": [
+        "focusshot"
+      ],
+      "release_limit": "EXCLUDE"
+    },
+    {
+      "id": "C16",
+      "claim": "Public Inspire3 affiliate recruitment",
+      "classification": "public_only",
+      "sources": [
+        "affiliate"
+      ],
+      "release_limit": "No FV approval"
+    },
+    {
+      "id": "C17",
+      "claim": "FTC transparent adjacent material connection",
+      "classification": "regulatory_guidance",
+      "sources": [
+        "ftc"
+      ],
+      "release_limit": "Near any future active earning link"
+    },
+    {
+      "id": "C18",
+      "claim": "FTC product health benefit substantiation",
+      "classification": "regulatory_guidance",
+      "sources": [
+        "health"
+      ],
+      "release_limit": "Objective claims require appropriate science"
+    },
+    {
+      "id": "C19",
+      "claim": "Published FV Puységur dossier",
+      "classification": "live_published_source",
+      "sources": [
+        "puy"
+      ],
+      "release_limit": "Historical bridge only"
+    },
+    {
+      "id": "C20",
+      "claim": "Published FV Change Blindness",
+      "classification": "live_published_source",
+      "sources": [
+        "change"
+      ],
+      "release_limit": "Distinct laboratory paradigm"
+    },
+    {
+      "id": "C21",
+      "claim": "Existing free Focus Fieldbook",
+      "classification": "live_published_resource",
+      "sources": [
+        "focus"
+      ],
+      "release_limit": "One subscriber list"
+    },
+    {
+      "id": "C22",
+      "claim": "FV issued affiliate URL",
+      "classification": "not_verified",
+      "sources": [
+        "affiliate"
+      ],
+      "release_limit": "Hard hold"
+    },
+    {
+      "id": "C23",
+      "claim": "FV settled commissions",
+      "classification": "not_verified",
+      "sources": [
+        "affiliate"
+      ],
+      "release_limit": "Clicks do not equal sales"
+    },
+    {
+      "id": "C24",
+      "claim": "FV owned paid Mind SKU",
+      "classification": "not_verified",
+      "sources": [
+        "focus"
+      ],
+      "release_limit": "Free route is not paid product"
+    }
+  ],
+  "commercial_gates": [
+    {
+      "id": "publisher_acceptance",
+      "verified": false
+    },
+    {
+      "id": "channel_terms",
+      "verified": false
+    },
+    {
+      "id": "issued_tracking_url",
+      "verified": false
+    },
+    {
+      "id": "approved_creative_rights",
+      "verified": false
+    },
+    {
+      "id": "exact_cart_checkout",
+      "verified": false
+    },
+    {
+      "id": "price_verified",
+      "verified": false
+    },
+    {
+      "id": "refund_entitlement",
+      "verified": false
+    },
+    {
+      "id": "commission_feed",
+      "verified": false
+    },
+    {
+      "id": "settled_commissions",
+      "verified": false
+    },
+    {
+      "id": "paid_fv_mind_sku",
+      "verified": false
+    },
+    {
+      "id": "verified_fulfillment",
+      "verified": false
+    },
+    {
+      "id": "qualified_human_sessions",
+      "verified": false
+    },
+    {
+      "id": "provider_confirmed_leads",
+      "verified": false
+    },
+    {
+      "id": "grok_media_asset_ids",
+      "verified": false
+    },
+    {
+      "id": "live_accessibility_review",
+      "verified": false
+    },
+    {
+      "id": "playable_film_and_captions",
+      "verified": false
+    },
+    {
+      "id": "founder_release_approval",
+      "verified": false
+    },
+    {
+      "id": "production_engineering_approval",
+      "verified": false
+    }
+  ],
+  "outcomes": {
+    "confirmed_paid_orders": null,
+    "settled_affiliate_commissions": null,
+    "refund_adjusted_net_revenue": null,
+    "qualified_human_sessions": null,
+    "net_revenue_per_thousand": null
+  }
+}
