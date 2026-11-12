@@ -11,7 +11,6 @@ import getpass
 import hashlib
 import json
 import os
-import stat
 import sys
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -21,6 +20,7 @@ from cryptography.hazmat.primitives.asymmetric.ed25519 import Ed25519PrivateKey
 
 from fvs_suite import offline_entitlement as verifier
 from license_registry import IssuanceRegistry, RegistryError
+from signing_key_guard import read_signing_key
 
 MAX_KEY_BYTES = 16 * 1024
 KEY_HEADER = b"-----BEGIN ENCRYPTED PRIVATE KEY-----\n"
@@ -38,28 +38,22 @@ def _key_from_encrypted_pem(path: str | Path, password: bytes) -> Ed25519Private
     # A key created inside any Git worktree risks being committed by mistake.
     if any((ancestor / ".git").exists() for ancestor in (source.parent, *source.parents)):
         raise IssuanceError("Signing keys must live outside Git repositories")
-    if source.is_symlink():
-        raise IssuanceError("Signing key must not be a symlink")
-    flags = os.O_RDONLY | getattr(os, "O_BINARY", 0) | getattr(os, "O_NOFOLLOW", 0)
-    try:
-        descriptor = os.open(source, flags)
-    except OSError as exc:
-        raise IssuanceError("Cannot open signing key as a regular file") from exc
-    with os.fdopen(descriptor, "rb") as stream:
-        metadata = os.fstat(stream.fileno())
-        if not stat.S_ISREG(metadata.st_mode) or metadata.st_size > MAX_KEY_BYTES:
-            raise IssuanceError("Signing key is not a bounded regular file")
-        # On POSIX, fail closed when the private key is readable by group/others.
-        # Windows permissions require separate ACL review by the key custodian.
-        if os.name == "posix" and metadata.st_mode & 0o077:
-            raise IssuanceError("Signing key permissions must be owner-only (0600)")
-        pem = stream.read(MAX_KEY_BYTES + 1)
-    if len(pem) > MAX_KEY_BYTES or not pem.startswith(KEY_HEADER):
+    # Inspect/read through a single bounded descriptor, rejecting hardlinks,
+    # path replacements and exposed reparse points. No private OS exception
+    # can survive in a public IssuanceError chain.
+    pem = read_signing_key(source, MAX_KEY_BYTES, IssuanceError)
+    if not pem.startswith(KEY_HEADER):
         raise IssuanceError("Expected encrypted PKCS#8 PEM (not plaintext or oversized)")
+    decrypt_failed = False
+    key = None
     try:
         key = serialization.load_pem_private_key(pem, password=password)
-    except (TypeError, ValueError) as exc:
-        raise IssuanceError("Cannot decrypt encrypted signing key") from exc
+    except (TypeError, ValueError):
+        decrypt_failed = True
+    # Leave the cryptography handler before raising a public error; "from None"
+    # alone would still retain the original sensitive __context__ reference.
+    if decrypt_failed:
+        raise IssuanceError("Cannot decrypt encrypted signing key")
     if not isinstance(key, Ed25519PrivateKey):
         raise IssuanceError("Signing authority must use an Ed25519 private key")
     return key
