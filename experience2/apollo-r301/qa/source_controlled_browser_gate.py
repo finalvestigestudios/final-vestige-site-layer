@@ -19,6 +19,9 @@ html = re.sub(r'<link\b[^>]*rel="stylesheet"[^>]*>', '', html)
 html = html.replace('</head>', '<style>' + css + '</style></head>')
 url = 'https://finalvestige.com/2026/08/20/the-hatch-opened-inward-apollo-1/'
 passes = 0
+negative_controls = 0
+def require_editorial(cta):
+    assert cta.get_attribute('data-fv-conversion-kind') == 'editorial-continuation', 'non-editorial event category'
 with sync_playwright() as p:
     browser = p.chromium.launch(executable_path='/usr/bin/chromium', args=['--no-sandbox'])
     for width in (320, 390, 768, 1440, 1920):
@@ -37,7 +40,7 @@ with sync_playwright() as p:
                 cta = section.locator('[data-fv-cta]')
                 assert cta.count() == 1
                 assert cta.get_attribute('data-fv-cta') == 'apollo-read-free-investigation'
-                assert cta.get_attribute('data-fv-conversion-kind') == 'editorial-continuation'
+                require_editorial(cta)
                 assert cta.get_attribute('href') == url
                 assert section.locator('a[href*="nasa.gov/"]').count() >= 12
                 assert section.locator('script,form').count() == 0
@@ -61,8 +64,14 @@ with sync_playwright() as p:
             # Deliberate policy failure: never count an editorial click as a sale.
             cta = sections.first.locator('[data-fv-cta]')
             cta.evaluate("e=>e.setAttribute('data-fv-conversion-kind','paid-order')")
-            assert cta.get_attribute('data-fv-conversion-kind') != 'editorial-continuation'
+            try:
+                require_editorial(cta)
+            except AssertionError as exc:
+                assert str(exc) == 'non-editorial event category'
+                negative_controls += 1
+            else:
+                raise AssertionError('false paid-order event was accepted')
             page.close()
     browser.close()
-assert passes == 20
-print('R301: 10/10 Chromium contexts, 20/20 CTA + keyboard/source routes PASS; negative control detected')
+assert passes == 20 and negative_controls == 10
+print('R301: 10/10 Chromium contexts, 20/20 CTA + keyboard/source routes PASS; 10/10 false-paid-order controls REJECTED')
