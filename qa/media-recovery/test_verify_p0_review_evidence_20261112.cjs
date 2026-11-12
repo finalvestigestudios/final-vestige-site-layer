@@ -4,7 +4,7 @@ const {verifyP0ReviewEvidence,gitBlobSha,sha256}=require('./verify_p0_review_evi
 function fixture(){
  const p={slot:'418:1',post_id:418,published_original_src:'https://media.defense.gov/x.jpg',siteqa_pr:154,guest:{cdp_request_id:'req-1'},screenshot_sha256:null};
  const r={slot:'418:1',candidate_catalog:'https://www.history.uscg.mil/a',asset_url:'https://media.defense.gov/a.jpg',asset_sha256:null,rights_review_git_blob_sha:null,replacement_mode:'SAME_PHOTO'};
- const png=Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO1pKj0AAAAASUVORK5CYII=','base64');
+ const png=Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=','base64');
  const screenshot=Buffer.from(png),asset=Buffer.from(png);
  r.geometry={output_width:1,output_height:1};
  p.screenshot_sha256=sha256(screenshot);r.asset_sha256=sha256(asset);
