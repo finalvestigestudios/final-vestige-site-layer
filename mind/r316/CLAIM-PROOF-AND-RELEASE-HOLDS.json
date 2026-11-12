@@ -1,0 +1,404 @@
+{
+  "title": "FV Mind r316 sources and commerce holds",
+  "sources": [
+    {
+      "id": "S1",
+      "kind": "independent primary",
+      "url": "https://www.nature.com/articles/s41598-023-49279-8",
+      "description": "400-person breathing RCT"
+    },
+    {
+      "id": "S2",
+      "kind": "publisher abstract",
+      "url": "https://doi.org/10.1097/j.pain.0000000000002593",
+      "description": "153-person balanced placebo mindfulness pain"
+    },
+    {
+      "id": "S3",
+      "kind": "PubMed abstract",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37422545/",
+      "description": "1000 home participants binaural task"
+    },
+    {
+      "id": "S4",
+      "kind": "independent primary",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5694826/",
+      "description": "2017 binaural EEG null study"
+    },
+    {
+      "id": "S5",
+      "kind": "systematic review",
+      "url": "https://doi.org/10.1371/journal.pone.0286023",
+      "description": "2023 14-study EEG review"
+    },
+    {
+      "id": "S6",
+      "kind": "live FV history",
+      "url": "https://finalvestige.com/2026/11/02/mesmerism/",
+      "description": "Franklin commission"
+    },
+    {
+      "id": "S7",
+      "kind": "live FV archive",
+      "url": "https://finalvestige.com/free-resources/puysegurs-animal-magnetism-files/",
+      "description": "Puységur"
+    },
+    {
+      "id": "S8",
+      "kind": "seller only",
+      "url": "https://zen12.com/about",
+      "description": "Zen12 public description"
+    },
+    {
+      "id": "S9",
+      "kind": "seller checkout",
+      "url": "https://zen12.com/getstarted",
+      "description": "dynamic checkout not fixed terms"
+    },
+    {
+      "id": "S10",
+      "kind": "seller only",
+      "url": "https://hypnosislive.com/mental-skills/total-focus",
+      "description": "Total Focus"
+    },
+    {
+      "id": "S11",
+      "kind": "seller only",
+      "url": "https://brainwaveshots.com/focus-shot",
+      "description": "Focus Shot"
+    },
+    {
+      "id": "S12",
+      "kind": "seller catalog",
+      "url": "https://inspire3.com/",
+      "description": "Inspire3 products"
+    },
+    {
+      "id": "S13",
+      "kind": "FTC",
+      "url": "https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking",
+      "description": "near-link material connection"
+    },
+    {
+      "id": "S14",
+      "kind": "FTC",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance",
+      "description": "substantiation"
+    },
+    {
+      "id": "S15",
+      "kind": "live FV free route",
+      "url": "https://finalvestige.com/focus/",
+      "description": "one Jetpack Fieldbook funnel"
+    },
+    {
+      "id": "S16",
+      "kind": "live FV article",
+      "url": "https://finalvestige.com/2026/11/02/change-blindness/",
+      "description": "creator article"
+    },
+    {
+      "id": "S17",
+      "kind": "live FV policy",
+      "url": "https://finalvestige.com/editorial-standards/",
+      "description": "editorial standards"
+    },
+    {
+      "id": "S18",
+      "kind": "live FV policy",
+      "url": "https://finalvestige.com/affiliate-disclosure/",
+      "description": "general disclosure"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "400 participants 5.5 vs 12 breaths/min",
+      "source_ids": [
+        "S1"
+      ],
+      "status": "independent trial"
+    },
+    {
+      "id": "C02",
+      "claim": "No significant main study stress group*time difference",
+      "source_ids": [
+        "S1"
+      ],
+      "status": "independent result"
+    },
+    {
+      "id": "C03",
+      "claim": "Both conditions improved with time",
+      "source_ids": [
+        "S1"
+      ],
+      "status": "independent observation not unique efficacy"
+    },
+    {
+      "id": "C04",
+      "claim": "153-person balanced-placebo brief mindfulness/pain experiment",
+      "source_ids": [
+        "S2"
+      ],
+      "status": "publisher abstract only"
+    },
+    {
+      "id": "C05",
+      "claim": "Expectancy predicted some pain outcomes in tested setting",
+      "source_ids": [
+        "S2"
+      ],
+      "status": "scope-limited"
+    },
+    {
+      "id": "C06",
+      "claim": "1000 home participants binaural beats impaired study task scores",
+      "source_ids": [
+        "S3"
+      ],
+      "status": "indexed abstract only"
+    },
+    {
+      "id": "C07",
+      "claim": "2017 tested binaural conditions no EEG enhancement",
+      "source_ids": [
+        "S4"
+      ],
+      "status": "scope-limited"
+    },
+    {
+      "id": "C08",
+      "claim": "2023 review five positive eight negative one mixed of 14",
+      "source_ids": [
+        "S5"
+      ],
+      "status": "independent evidence"
+    },
+    {
+      "id": "C09",
+      "claim": "Franklin commission rejected animal magnetic fluid proof",
+      "source_ids": [
+        "S6"
+      ],
+      "status": "historical"
+    },
+    {
+      "id": "C10",
+      "claim": "Puységur archive records failure and coercive operator pressures",
+      "source_ids": [
+        "S7"
+      ],
+      "status": "historical"
+    },
+    {
+      "id": "C11",
+      "claim": "Zen12 12 levels 4 formats",
+      "source_ids": [
+        "S8"
+      ],
+      "status": "seller product format"
+    },
+    {
+      "id": "C12",
+      "claim": "Zen12 12-minute hour-equivalence claim",
+      "source_ids": [
+        "S8"
+      ],
+      "status": "seller only: NOT SUBSTANTIATED"
+    },
+    {
+      "id": "C13",
+      "claim": "Zen12 guaranteed immediate relaxation claim",
+      "source_ids": [
+        "S8"
+      ],
+      "status": "seller only: NOT SUBSTANTIATED"
+    },
+    {
+      "id": "C14",
+      "claim": "Zen12 current price and refund terms unverified",
+      "source_ids": [
+        "S9"
+      ],
+      "status": "hold"
+    },
+    {
+      "id": "C15",
+      "claim": "Hypnosis Live Total Focus format 33 min",
+      "source_ids": [
+        "S10"
+      ],
+      "status": "seller format"
+    },
+    {
+      "id": "C16",
+      "claim": "Hypnosis Live focus improvement claimed",
+      "source_ids": [
+        "S10"
+      ],
+      "status": "seller efficacy NOT SUBSTANTIATED"
+    },
+    {
+      "id": "C17",
+      "claim": "Focus Shot 15/30-minute options",
+      "source_ids": [
+        "S11"
+      ],
+      "status": "seller format"
+    },
+    {
+      "id": "C18",
+      "claim": "Focus Shot hours of productivity claimed",
+      "source_ids": [
+        "S11"
+      ],
+      "status": "seller efficacy NOT SUBSTANTIATED"
+    },
+    {
+      "id": "C19",
+      "claim": "Inspire3 catalog does not imply FV publisher approval",
+      "source_ids": [
+        "S12"
+      ],
+      "status": "hold"
+    },
+    {
+      "id": "C20",
+      "claim": "Disclose near paid links",
+      "source_ids": [
+        "S13"
+      ],
+      "status": "FTC"
+    },
+    {
+      "id": "C21",
+      "claim": "Do not adopt unsupported health claims",
+      "source_ids": [
+        "S14"
+      ],
+      "status": "FTC"
+    },
+    {
+      "id": "C22",
+      "claim": "Existing Fieldbook not a clinically tested therapy",
+      "source_ids": [
+        "S15"
+      ],
+      "status": "site confirmation"
+    },
+    {
+      "id": "C23",
+      "claim": "Change Blindness public bridge, Grok asset ID unverified",
+      "source_ids": [
+        "S16"
+      ],
+      "status": "live route only"
+    },
+    {
+      "id": "C24",
+      "claim": "General disclosure alone inadequate near actual affiliate link",
+      "source_ids": [
+        "S18"
+      ],
+      "status": "FTC plus policy"
+    }
+  ],
+  "commercial_holds": [
+    {
+      "key": "fv_inspire3_account_identity",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "key": "publisher_acceptance",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "key": "approved_social_channels",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "key": "approved_email_permission",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "key": "issued_earning_url",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "key": "affiliate_link_terms",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "key": "approved_creatives",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "key": "exact_product_sku",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "key": "checkout_current_price",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "key": "checkout_currency_tax_fees",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "key": "refund_terms",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "key": "product_specific_efficacy",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "key": "consented_measurement",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "key": "nonduplicated_analytics",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "key": "real_grok_media_ids",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "key": "browser_wcag_qa",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "key": "cleared_paid_commission",
+      "status": "HARD_HOLD",
+      "evidence": null
+    },
+    {
+      "key": "founder_release_approval",
+      "status": "HARD_HOLD",
+      "evidence": null
+    }
+  ],
+  "verified_partner_approval": false,
+  "merchant_link_active": false,
+  "net_revenue_per_1000_qualified_human_sessions": null,
+  "net_revenue_state": "NOT_COMPUTABLE",
+  "buyer_test": "UNPUBLISHED_TEXT_A_VS_STATIC_STORYBOARD_B"
+}

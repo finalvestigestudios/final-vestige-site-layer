@@ -1,0 +1,16 @@
+# Seller checkout and returns evidence | 2026-11-12 PT | REVIEW ONLY
+
+**This is a dated observation of public merchant content, not the price, refund entitlement or financial outcome guaranteed to an FV visitor. Nothing purchased. No affiliate link accessed or issued.**
+
+| Official merchant | Dated public product/checkout observation | Status and what still needs validation |
+|---|---|---|
+| [Zen12 exact order page](https://zen12.com/getstarted) | Public anonymous order review displayed "Entire Zen12 Course" $187.99, "VIP discount" -$100.00, local sales tax $0.00 and order total **$87.99**; package described as **12 levels, 48 MP3s**, manuals, support call and extras. The page states **1 Year Money Back Guarantee**. | Seller-presented session-specific cart snapshot; may differ by geography, cookie, currency, tax, campaign, coupon, or date. NO checkout submitted. The full contract, policy limitations and dispute/refund execution were not verified. **Not approved copy for FV landing page without final cart recheck.** |
+| [Hypnosis Live Total Focus](https://hypnosislive.com/mental-skills/total-focus) | Public page currently displayed **33 minutes / 47 MB**, single item **$24.44**, comparison $29.95; separate two-item bundle $39.90. Seller text claims a 14-day refund request window. | A previous indexed search extract displayed a different single-session price. Distinct SKU and promotion. DO NOT reuse as a fixed price; written refund policy and exact cart must be checked before any CTA. Claims about guaranteed 'razor-sharp' focus are unsubstantiated seller advertising. |
+| [Brainwave Shots Focus Shot](https://brainwaveshots.com/focus-shot) | Public page currently displayed **$17.99**, compared against $22.99; listed 15- and 30-minute focus tracks, additional 'brainwave only' options, quick start video and a **1-year money-back guarantee** in its sales copy. | Seller format and return representation only. Exact terms, checkout charges, actual guarantee eligibility and outcomes unverified. Hours-long focus promise is NOT independently established. |
+| [Inspire3 official product catalog](https://inspire3.com/) | Catalog links the individual brands and an [affiliate recruitment page](https://affiliates.inspire3.com/). | General affiliate recruitment is **not** Final Vestige account approval. No issued earning URL, per-channel permission, commission schedule, or proven cleared payment. |
+
+**Commerce verification priority:** Founder/Commerce must authenticate the affiliate account, current contract, exact product-specific promotional rights, merchant-issued trackable link, cart, actual written refund conditions and partner settlement reporting. If unavailable, evaluate an already sellable FV-owned product using provider-authoritative inventory, rights, delivery and checkout. None is verified here.
+
+**Evidence boundary:** Price is only a public snapshot. Refund language is a seller statement, not observed successful refund. Seller product descriptions are not independent studies. No merchant button in the R316 prototypes navigates to a commercial destination.
+
+**FTCs:** https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking ; https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance
