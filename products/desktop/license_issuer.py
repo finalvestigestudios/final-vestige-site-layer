@@ -21,6 +21,7 @@ from cryptography.hazmat.primitives.asymmetric.ed25519 import Ed25519PrivateKey
 from fvs_suite import offline_entitlement as verifier
 from license_registry import IssuanceRegistry, RegistryError
 from signing_key_guard import read_signing_key
+from license_output_guard import create_issued_license
 
 MAX_KEY_BYTES = 16 * 1024
 KEY_HEADER = b"-----BEGIN ENCRYPTED PRIVATE KEY-----\n"
@@ -120,16 +121,10 @@ def issue_entitlement(*, key_path: str | Path, password: bytes,
     if len(serialized) > verifier.MAX_BYTES:
         raise IssuanceError("Signed entitlement exceeds the verifier size limit")
 
-    # The kernel refuses overwrite even when an attacker installs a symlink.
-    flags = os.O_WRONLY | os.O_CREAT | os.O_EXCL | getattr(os, "O_BINARY", 0)
-    try:
-        descriptor = os.open(destination, flags, 0o600)
-    except FileExistsError as exc:
-        raise IssuanceError("Entitlement output already exists; no overwrite permitted") from exc
-    with os.fdopen(descriptor, "wb") as stream:
-        stream.write(serialized)
-        stream.flush()
-        os.fsync(stream.fileno())
+    # Operator-only O_EXCL output custody: one owned FD, bounded writes,
+    # fsync, path/descriptor witness, and no private OS exception chains.
+    # Any uncertain/partial file stays reserved for human investigation.
+    create_issued_license(destination, serialized, IssuanceError)
     # Verify R11 acceptance against the public key derived from the authority.
     # The verification test clock is start, so future-valid entitlements work.
     public_key = key.public_key().public_bytes(
