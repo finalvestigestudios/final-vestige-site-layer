@@ -6,6 +6,7 @@ from __future__ import annotations
 
 import os
 import subprocess
+import traceback
 import tempfile
 import unittest
 from pathlib import Path
@@ -144,6 +145,85 @@ class SmokeRunnerR336(unittest.TestCase):
     def test_system_exit_propagates(self):
         with self.assertRaises(SystemExit):
             self.run_case(Mock(side_effect=SystemExit(73)))
+
+
+# R372: inspect programmatic error chains, not just user-visible text.  The
+# original R336 redaction used "from None", leaving secrets in __context__.
+# All credential and child-output values here are synthetic canaries.
+_R372_CANARY = "FVS_R372_SYNTHETIC_PRIVATE_CHILD_FAULT"
+
+
+class SmokeFaultContextPrivacyR372(unittest.TestCase):
+    def _attempt(self, runner):
+        return run_smoke_checked(
+            runner, Path("GrantAuditStudioPro.exe"), Path("."),
+            name="GrantAuditStudioPro.exe", timeout=12,
+        )
+
+    def _assert_unlinked(self, runner, label):
+        with self.assertRaises(SmokeRunError) as caught:
+            self._attempt(runner)
+        error = caught.exception
+        self.assertIn(label, str(error))
+        self.assertNotIn(_R372_CANARY, str(error))
+        self.assertIsNone(error.__cause__)
+        self.assertIsNone(error.__context__)
+        self.assertNotIn(_R372_CANARY, "".join(traceback.format_exception(error)))
+
+    def test_r372_timeout_drops_private_cmd_and_output_context(self):
+        self._assert_unlinked(
+            Mock(side_effect=subprocess.TimeoutExpired(
+                "C:/private/" + _R372_CANARY, 12,
+                output=_R372_CANARY.encode("utf-8"))), "timed out")
+
+    def test_r372_os_launch_error_drops_private_path_context(self):
+        self._assert_unlinked(Mock(side_effect=OSError(_R372_CANARY)),
+                              "could not execute")
+
+    def test_r372_subprocess_error_drops_private_output_context(self):
+        self._assert_unlinked(
+            Mock(side_effect=subprocess.SubprocessError(_R372_CANARY)),
+            "could not execute")
+
+    def test_r372_runtime_fault_drops_private_exception_context(self):
+        self._assert_unlinked(Mock(side_effect=RuntimeError(_R372_CANARY)),
+                              "could not execute")
+
+    def test_r372_returncode_accessor_drops_private_exception_context(self):
+        class UnsafeResult:
+            @property
+            def returncode(self):
+                raise RuntimeError(_R372_CANARY)
+        self._assert_unlinked(lambda *_a, **_kw: UnsafeResult(),
+                              "invalid smoke result")
+
+    def test_r372_child_environment_failure_drops_private_context(self):
+        with patch("smoke_runner_r336.private_child_environment",
+                   side_effect=OSError(_R372_CANARY)):
+            self._assert_unlinked(
+                lambda *_a, **_kw: SimpleNamespace(returncode=0),
+                "could not execute")
+
+    def test_r372_zero_exit_still_succeeds_without_release_claim(self):
+        self.assertIsNone(self._attempt(
+            lambda *_a, **_kw: SimpleNamespace(returncode=0)))
+
+    def test_r372_nonzero_exit_still_rejected_with_clean_context(self):
+        self._assert_unlinked(
+            lambda *_a, **_kw: SimpleNamespace(returncode=11),
+            "exit code 11")
+
+    def test_r372_missing_returncode_still_rejected_without_chain(self):
+        self._assert_unlinked(lambda *_a, **_kw: object(),
+                              "invalid smoke result")
+
+    def test_r372_keyboard_interrupt_still_propagates(self):
+        with self.assertRaises(KeyboardInterrupt):
+            self._attempt(Mock(side_effect=KeyboardInterrupt()))
+
+    def test_r372_system_exit_still_propagates(self):
+        with self.assertRaises(SystemExit):
+            self._attempt(Mock(side_effect=SystemExit(73)))
 
 
 if __name__ == "__main__":
