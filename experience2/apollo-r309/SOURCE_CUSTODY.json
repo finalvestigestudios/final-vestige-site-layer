@@ -1,0 +1,19 @@
+{
+  "schema": "fv-apollo-r309-link-only-media-custody-v1",
+  "checked_on": "2026-11-12",
+  "verification_method": "Manual source-page inspection using NASA image-detail pages; not a production HTTP availability, rights clearance, or image ingestion test",
+  "independent_research_desk": "https://github.com/finalvestigestudios/final-vestige-site-layer/pull/158",
+  "canonical_claim_sources": "Existing pinned NASA Board report, proceedings, and mission records in Apollo R281; do not replace these with photographs",
+  "linked_contextual_records": [
+    {"accession":"S67-15717","date":"1967-01-03","url":"https://www.nasa.gov/image-detail/amf-s67-15717/","record":"Apollo Spacecraft 012 moved before the flight","claim_proof":false,"commercial_image_rights":"not-cleared"},
+    {"accession":"S66-58038","date":"1966-10-18","url":"https://www.nasa.gov/image-detail/amf-s66-58038/","record":"Crew altitude-chamber training","claim_proof":false,"commercial_image_rights":"not-cleared"},
+    {"accession":"S67-21294","date":"1967-01-28","url":"https://www.nasa.gov/image-detail/amf-s67-21294/","record":"Fire-damaged command module interior; source page contains aftermath imagery","claim_proof":false,"commercial_image_rights":"not-cleared"},
+    {"accession":"KSC-20170124-PH_KLS01_0090","date":"2017-01-24","url":"https://www.nasa.gov/image-detail/amf-ksc-20170124-ph_kls01_0090/","record":"Apollo 1 tribute exhibit; NASA/Kim Shiflett credit","claim_proof":false,"commercial_image_rights":"not-cleared"}
+  ],
+  "withheld_candidates": [
+    {"accession":"S67-19766","url":"https://www.nasa.gov/image-detail/apollo-1-crew-honored/","reason":"Page reachable, but exact accession-to-page mapping not confirmed in the retrieved text"},
+    {"accession":"KSC-20170124-PH_KLS01_0164","url":"https://www.nasa.gov/image-detail/amf-ksc-20170124-ph_kls01_0164/","reason":"Could not independently resolve NASA source page in this run"}
+  ],
+  "rights_guidance": "https://www.nasa.gov/nasa-brand-center/",
+  "editorial_limitations": "Link-only; no NASA images, marks, remote assets or map pins embedded; no historical claim assigned to photo records; no NASA commercial endorsement; records remain staged"
+}

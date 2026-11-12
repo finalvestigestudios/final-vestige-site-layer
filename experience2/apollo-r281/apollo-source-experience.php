@@ -14,7 +14,7 @@ const FV_R281_FREE = 'https://finalvestige.com/2026/08/20/the-hatch-opened-inwar
 const FV_R281_STYLE = 'fv-apollo-evidence-r281';
 // R294: stylesheet version is tied to reviewed CSS bytes (sha256 prefix). Keep
 // WordPress's enqueued link and the no-preflight body fallback cache-consistent.
-const FV_R294_STYLE_VERSION = 'r307-c85b6b2d9dd9';
+const FV_R294_STYLE_VERSION = 'r309-0c31dbffe1a7';
 // Staging-only digest of corrected chronology, pending independent historical editorial
 // approval. It detects accidental data drift; it does not certify publication.
 const FV_R287_STAGING_EVENTS_SHA256 = '2a473986ed2e9c8ca98d19fb5ce0d32fea62d060d9dadcd2fa4613167eba36ef';
@@ -163,6 +163,40 @@ function fv_r308_editorial_continuation_url(?array $query = null): string {
     // Additional params (e.g. personal identifiers) are discarded, never forwarded.
     // Preserves only the approved four labels, in deterministic order.
     return FV_R281_FREE . '?' . http_build_query($validated, '', '&', PHP_QUERY_RFC3986);
+}
+/**
+ * R309 contextual MEDIA RECORD INDEX (links only; never a gallery of loaded images).
+ * Four accession identifiers and captions checked against NASA image-detail pages.
+ * A photograph of the subject/crew/damage does not independently prove the
+ * Board's causal determination. Source link permission != commercial media clearance.
+ * Two Research Desk candidates are withheld pending record-level verification.
+ */
+const FV_R309_MEDIA_REGISTRY_SHA256 = '8c85cb157440cf05b91d73dc3f7c843b9a3a8a2d822c13b899fd3bf045550ba0';
+function fv_r309_context_media(): array {
+    return [
+        ['id'=>'S67-15717','taken'=>'1967-01-03','label'=>'Spacecraft 012 before the flight','context'=>'NASA describes movement of the command/service module for mating to the adapter. This photograph does not establish a fire cause.','url'=>'https://www.nasa.gov/image-detail/amf-s67-15717/','credit'=>'NASA / JSC'],
+        ['id'=>'S66-58038','taken'=>'1966-10-18','label'=>'Crew altitude-chamber training','context'=>'The crew is shown preparing to enter the spacecraft during training. This is not a photograph of the January 27 fire.','url'=>'https://www.nasa.gov/image-detail/amf-s66-58038/','credit'=>'NASA / JSC'],
+        ['id'=>'S67-21294','taken'=>'1967-01-28','label'=>'Command module after the fire','context'=>'NASA describes fire damage inside Spacecraft 012. Source page contains aftermath imagery; the image alone does not identify an ignition source.','url'=>'https://www.nasa.gov/image-detail/amf-s67-21294/','credit'=>'NASA / JSC'],
+        ['id'=>'KSC-20170124-PH_KLS01_0090','taken'=>'2017-01-24','label'=>'Apollo 1 tribute exhibition','context'=>'A photograph of the 2017 tribute exhibit, not a 1967 accident-site record or proof of the original hatch configuration.','url'=>'https://www.nasa.gov/image-detail/amf-ksc-20170124-ph_kls01_0090/','credit'=>'NASA / Kim Shiflett'],
+    ];
+}
+function fv_r309_media_valid(array $items): bool {
+    if (count($items)!==4 || array_keys($items)!==[0,1,2,3]) { return false; }
+    $ids=['S67-15717','S66-58038','S67-21294','KSC-20170124-PH_KLS01_0090'];
+    $urls=['https://www.nasa.gov/image-detail/amf-s67-15717/',
+           'https://www.nasa.gov/image-detail/amf-s66-58038/',
+           'https://www.nasa.gov/image-detail/amf-s67-21294/',
+           'https://www.nasa.gov/image-detail/amf-ksc-20170124-ph_kls01_0090/'];
+    foreach ($items as $index=>$item) {
+        if (array_keys($item)!==['id','taken','label','context','url','credit'] ||
+            $item['id']!==$ids[$index] || $item['url']!==$urls[$index] ||
+            !preg_match('/\A(?:1966|1967|2017)-\d{2}-\d{2}\z/D',$item['taken'])) { return false; }
+        foreach (['label','context','credit'] as $field) {
+            if (!is_string($item[$field]) || trim($item[$field])==='') { return false; }
+        }
+    }
+    $encoded=json_encode($items,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return is_string($encoded) && hash_equals(FV_R309_MEDIA_REGISTRY_SHA256,hash('sha256',$encoded));
 }
 function fv_r281_escape(string $text): string {
     return htmlspecialchars($text, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
@@ -403,6 +437,25 @@ function fv_r281_render($attributes = []): string {
         // analytics. The target is focusable, requiring no client-side script.
         $s.='<p class="fv-r281__source-return"><a href="#'.$event_point.'">Return to evidence: '.fv_r281_escape($r['title']).'</a></p>';
         $s.='<p class="fv-r307__source-continuation"><a class="fv-r307__continue-return" href="#'.$id.'-continue">Return to free-investigation continuation<span class="fv-r298__sr-only"> after '.fv_r281_escape($r['source_name']).$landmark_instance.'</span></a></p></li>';
+    }
+    // R309: optional LINK-ONLY contextual photo records from independent
+    // Research Desk #158. Not part of the causal source list and never a product.
+    // Deliberate separate disclosure prevents promoting media IDs as proof of an
+    // ignition finding, photo-reuse clearance or additional conversion events.
+    $media=fv_r309_context_media();
+    if (fv_r309_media_valid($media)) {
+        $s.='<details class="fv-r281__drawer fv-r309__media-index" data-fv-media-status="contextual-records-link-only"><summary>Inspect four related NASA photo records (source links only)<span class="fv-r298__sr-only">'.fv_r281_escape($landmark_instance).'</span></summary>';
+        $s.='<p>These four NASA image catalogue pages provide historical context, not independent proof of the accident cause. No photographs are loaded here. Media reuse, publicity rights and trademark use have not been cleared for commercial promotion. One linked record contains post-fire imagery.</p><ul class="fv-r309__media-list">';
+        foreach ($media as $m) {
+            $s.='<li data-fv-media-record="'.fv_r281_escape($m['id']).'" data-fv-evidence-role="contextual-media-only" data-fv-image-rights="not-cleared-for-reuse" data-fv-claim-proof="no"><p class="fv-r281__source-type">NASA image catalogue · '.fv_r281_escape($m['id']).'</p>';
+            $s.='<p><strong>'.fv_r281_escape($m['label']).'</strong> · <time datetime="'.fv_r281_escape($m['taken']).'">'.fv_r281_escape($m['taken']).'</time></p><p>'.fv_r281_escape($m['context']).'</p>';
+            $s.='<p><a href="'.fv_r281_escape($m['url']).'" rel="noopener noreferrer" data-fv-link-purpose="contextual-media-source" data-fv-conversion-kind="noncommercial-media-reference">Read NASA image detail (external)</a> · Source credit: '.fv_r281_escape($m['credit']).'</p></li>';
+        }
+        $s.='</ul><p>Two additional Research Desk candidates are excluded while their exact archive records remain unresolved. Image references are not licenses or recommendations to reuse media commercially.</p></details>';
+    } else {
+        // A failed contextual-media audit must NOT suppress independently
+        // verified historical evidence or turn source clicks into conversions.
+        $s.='<p data-fv-media-status="withheld">Contextual photo records are withheld until their source details can be verified. The documentary evidence above remains available.</p>';
     }
     $s.='</ul><p>No archive image, geolocation, ownership or commercial rights are inferred from these source links. NASA does not endorse this website.</p></aside>';
     $s.='</section>';
