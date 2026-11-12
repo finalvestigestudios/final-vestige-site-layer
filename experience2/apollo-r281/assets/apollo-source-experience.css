@@ -128,3 +128,14 @@
 .fv-r281 .fv-r281__next:focus{outline:3px solid var(--gold);outline-offset:4px}
 @media(forced-colors:active){.fv-r281 .fv-r281__next:focus{outline-color:Highlight}}
 @media print{.fv-r281 .fv-r307__source-continuation{display:none!important}}
+
+/* R309 optional, noncommercial NASA media-record index. No images are fetched. */
+.fv-r281 .fv-r309__media-index{margin-top:1.25rem;padding:.65rem 1rem 1rem;border:1px solid var(--line);background:#20252a;min-width:0}
+.fv-r281 .fv-r309__media-list{list-style:none;margin:1rem 0;padding:0;display:grid;gap:.8rem;grid-template-columns:minmax(0,1fr)}
+.fv-r281 .fv-r309__media-list>li{min-width:0;padding:.85rem 1rem;border:1px solid var(--line);background:#191d21;overflow-wrap:anywhere}
+.fv-r281 .fv-r309__media-list p{margin:.45rem 0;color:var(--muted);line-height:1.6}
+.fv-r281 .fv-r309__media-list .fv-r281__source-type{font:.76rem/1.5 ui-monospace,monospace;letter-spacing:.04em;color:var(--gold)}
+.fv-r281 .fv-r309__media-list strong{color:var(--paper)}
+@media(min-width:50rem){.fv-r281 .fv-r309__media-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(forced-colors:active){.fv-r281 .fv-r309__media-index,.fv-r281 .fv-r309__media-list>li{background:Canvas;color:CanvasText;border-color:CanvasText}.fv-r281 .fv-r309__media-list p,.fv-r281 .fv-r309__media-list strong,.fv-r281 .fv-r309__media-list .fv-r281__source-type{color:CanvasText}}
+@media print{.fv-r281 .fv-r309__media-index,.fv-r281 .fv-r309__media-list>li{background:#fff!important;color:#000!important;border-color:#000!important}.fv-r281 .fv-r309__media-index::details-content{content-visibility:visible!important;display:block!important}.fv-r281 .fv-r309__media-list{display:block}.fv-r281 .fv-r309__media-list>li{break-inside:avoid;margin:.5rem 0}.fv-r281 .fv-r309__media-list a::after{content:' <' attr(href) '>';display:block;overflow-wrap:anywhere;font-size:.75rem}}
