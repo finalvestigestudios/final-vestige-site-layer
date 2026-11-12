@@ -105,7 +105,8 @@ def source_check(ctx, source, out: Path, max_bytes: int):
     # The next capture is separately made from the real public URL in Chromium.
     # Headless/PDF-plugin limitations may show a blank viewer; screenshots MUST
     # be visually reviewed and are never auto-promoted to a passing result.
-    page = ctx.new_page(viewport={"width": 1440, "height": 1000})
+    page = ctx.new_page()
+    page.set_viewport_size({"width": 1440, "height": 1000})
     try:
         page.goto(url, wait_until="domcontentloaded", timeout=60000)
         page.wait_for_timeout(2500)
