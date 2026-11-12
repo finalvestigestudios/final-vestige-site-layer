@@ -4,8 +4,8 @@
  * Paste into DevTools Console at responsive widths 390px, then 1440px.
  * Save sanitized console output plus manual screenshots. Does not read cookies,
  * preview URLs, credentials, localStorage or tokens, or write/fetch/upload data.
- * Current article revision (2026-11-11 20:42 Pacific): 81 blocks, 42 sources,
- * SHA-1 b52d0225d81c99239c4e2336789999ceebfea858 (must be independently checked).
+ * Current article revision (2026-11-12 07:43 Pacific): 81 blocks, 42 sources,
+ * SHA-1 e89879d2b34a53de75d04f2a92bbab832de5aaf3 (must be independently checked).
  * A console PASS is NOT a Gutenberg SHA check, visual review or publication gate.
  */
 (async () => {
