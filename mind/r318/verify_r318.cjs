@@ -27,7 +27,7 @@ function commercialGuard(html) {
   assert.doesNotMatch(html,/<script\b|<iframe\b|<form\b|<video\b|autoplay\b|<input\b/i,'no active code/video/forms');
   assert.doesNotMatch(html,/href\s*=\s*["'](?:https?:)?\/\/(?:www\.)?(?:zen12\.com|inspire3\.com|affiliates\.inspire3\.com|hypnosislive\.com|brainwaveshots\.com)/i,'no merchant CTA');
   assert.doesNotMatch(html,/data-(?:pixel|track)|onclick\s*=|onerror\s*=/i,'no event/pixel injection');
-  assert.match(html,/<button[^>]*\bdisabled\b[^>]*>/i,'disabled button required');
+  assert.match(html,/<button[^>]*\sdisabled(?:\s|=)[^>]*>/i,'disabled button required');
   assert.match(html,/aria-disabled="true"/,'disabled ARIA state required');
   assert.match(html,/purchase link unavailable|merchant offer unavailable/i,'gated CTA visible');
   assert.match(html,/If you purchase through an earning link|If a future product recommendation contains an earning link/i,'plain prospective commission disclosure required');
