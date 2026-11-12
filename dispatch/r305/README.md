@@ -1,0 +1,25 @@
+# Dispatch R305 — Offline First-Mile and Settled Revenue Contract
+
+**HOLD_UNSENT · Synthetic QA only · No production change.** Built independently from main and does not modify original master [PR #175](https://github.com/finalvestigestudios/final-vestige-site-layer/pull/175), readiness [PR #201](https://github.com/finalvestigestudios/final-vestige-site-layer/pull/201), homepage frozen #49 or later alternatives.
+
+## Why
+A newsletter PDF download, signup form submission or affiliate click can look like a conversion while producing **no provider-confirmed subscriber and no paid revenue**. This package supplies a strict, privacy-safe, *offline* deterministic replay for Grok asset-tagged human visits → provider-confirmed signup → first-party guide → merchant outbound click → independently settled order minus verified refunds and fees.
+
+The fictional fixture intentionally contains 2 qualified human sessions, 1 subscriber, 1 independently settled order and a refund. **These are fabricated software tests, never actual FV results.** No new tracking tag, data collector, site script, mailing system, or list was installed. Claude owns any real implementation, and Grok/Praxxis own published social asset IDs.
+
+Run on Node 20+ with JSON import attributes: `node --test dispatch/r305/tests/replay.test.mjs`. No packages, no credentials, no live network. The file `synthetic-result.json` is an example only, not evidence of revenue.
+
+## Confirmed read-only first-mile facts, 2026-11-12
+Live `/focus/` discloses some commission-earning recommendations near its signup block; `/dispatch/` does not contain that notice next to its form. A copy parity proposal is in `copy-parity.md`, but **not adopted or published**. Focus also displays an immediate public PDF download action: it does not itself prove confirmed signup or delivered welcome.
+
+At 13:38 UTC authenticated Jetpack: newsletter ON, new-post email default OFF, FULL format, welcome Fieldbook configured, subscriber total 3 / confirmed 3 / unconfirmed 2. These are **not additive populations**; true `Email subscription=Subscribed` recipients still unknown. Recent five posts are opted out, not a claim of lifetime zero sends. WordPress also permits a post-specific email toggle, so default OFF does **not** guarantee that publishing any post will never send.
+
+## Decisions
+Four original editorial issues (01/02/04/06) stay held, including the unsupported 14-second Apollo subject in 04. Issues 03/05 are commercial hold, pending publisher-specific affiliate EMAIL rights, issued earning links, claim-checked **live** first-party guides, current merchant terms, and valid address/working unsubscribe in an actual received newsletter. Preview in the editor is not an actual received message. All six require founder final approval of exact copy, audience and schedule.
+
+## References
+[Dispatch #174](https://github.com/finalvestigestudios/final-vestige-site-layer/issues/174) · [Mind #171](https://github.com/finalvestigestudios/final-vestige-site-layer/issues/171) · [Focus #129](https://github.com/finalvestigestudios/final-vestige-site-layer/issues/129) · [Conversion #820](https://github.com/finalvestigestudios/final-vestige-site-layer/issues/820). Official: https://wordpress.com/support/subscribers/ ; https://wordpress.com/support/newsletter/disable-newsletter-emails/ ; https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business ; https://hypnosislive.com/mental-skills/total-focus .
+
+**Customer-level proof refinement:** An order count is not a unique-customer count. If the merchant provides only settled orders (without a stable, privacy-safe verified customer reference), aggregate settled revenue and order count may be calculated but **unique customers, paid customer rate and lead-to-customer rate are UNKNOWN**. Avoid deriving customer identity from browser sessions or raw email addresses. The synthetic fixture uses a made-up merchant customer reference to exercise repeat-order deduplication; it is not evidence of merchant reporting capability.
+
+**Canonical tracking correction:** The Grok bot is the *creator/distributor*, **not** a UTM source. Use `utm_source` = actual platform (e.g. `youtube` or `tiktok`), `utm_medium=organic_social`, `utm_campaign` = approved cluster/campaign, `utm_content=asset_id`. The asset ID must match its originating published video/post inventory. This contract aligns with Issue #820; it does **not** ask Grok to alter TASK-008 or existing posts. Unmatched, missing or bot-flagged tags are excluded from qualified sessions.

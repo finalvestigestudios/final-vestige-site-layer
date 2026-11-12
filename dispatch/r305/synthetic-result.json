@@ -1,0 +1,53 @@
+{
+  "status": "SYNTHETIC_OFFLINE_ONLY",
+  "send_authorized": false,
+  "holds": [
+    "founder_final_send_approval_missing",
+    "merchant_publisher_email_permission_unverified",
+    "guide_live_unverified",
+    "eligible_recipient_population_unknown",
+    "real_received_email_unsubscribe_and_publisher_postal_address_missing",
+    "genuine_jetpack_preview_unverified"
+  ],
+  "counts": {
+    "observed_opaque_sessions": 3,
+    "unique_provider_proofs": 1,
+    "verified_orders": 1
+  },
+  "rejection_counts": {
+    "form_submit_not_signup": 1,
+    "pdf_download_not_signup": 2,
+    "duplicate_confirmed_signup": 1,
+    "unqualified_visit": 1
+  },
+  "cohorts": {
+    "d7": {
+      "qualified_human_sessions": 2,
+      "confirmed_signups": 1,
+      "settled_orders": 1,
+      "gross_cents": 1600,
+      "fees_cents": 120,
+      "refunds_cents": 300,
+      "net_cents": 1180,
+      "net_per_1000_qualified_sessions_cents": 590000,
+      "verified_paying_customers": 1,
+      "paid_conversion_rate": 0.5,
+      "lead_to_customer_rate": 1,
+      "caveat": "entirely synthetic; no A/B claims or real-revenue inference"
+    },
+    "d30": {
+      "qualified_human_sessions": 2,
+      "confirmed_signups": 1,
+      "settled_orders": 1,
+      "gross_cents": 1600,
+      "fees_cents": 120,
+      "refunds_cents": 300,
+      "net_cents": 1180,
+      "net_per_1000_qualified_sessions_cents": 590000,
+      "verified_paying_customers": 1,
+      "paid_conversion_rate": 0.5,
+      "lead_to_customer_rate": 1,
+      "caveat": "entirely synthetic; no A/B claims or real-revenue inference"
+    }
+  }
+}
