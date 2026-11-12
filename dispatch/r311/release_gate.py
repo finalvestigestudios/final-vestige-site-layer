@@ -53,7 +53,10 @@ def confirmed_signup(proof: Mapping) -> bool:
     return (
         proof.get("source") == "authenticated_provider"
         and proof.get("confirmation_attested") is True
-        and proof.get("prior_email_status") != "subscribed"
+        and proof.get("prior_email_status") in ("pending", "unconfirmed")
+        and isinstance(proof.get("confirmation_proof_id"), str)
+        and len(proof["confirmation_proof_id"].strip()) >= 8
+        and "@" not in proof["confirmation_proof_id"]
         and proof.get("new_email_status") == "subscribed"
         and isinstance(proof.get("opaque_provider_key"), str)
         and len(proof["opaque_provider_key"].strip()) >= 12
@@ -74,16 +77,18 @@ def qualified_revenue_rate(qualified_sessions, orders) -> dict:
     if not isinstance(orders, list) or not orders:
         return {"status": "NOT_COMPUTABLE", "reason": "paid_order_evidence_missing", "rate": None}
     currencies = set()
+    cohorts = set()
     seen = set()
     net = Decimal("0")
     for item in orders:
-        if not isinstance(item, dict) or item.get("settled") is not True or item.get("source_verified") is not True:
+        if not isinstance(item, dict) or item.get("settled") is not True or item.get("source_verified") is not True or item.get("attribution_verified") is not True:
             return {"status": "NOT_COMPUTABLE", "reason": "unverified_order", "rate": None}
         order_id = item.get("opaque_order_id")
         if not isinstance(order_id, str) or len(order_id) < 8 or order_id in seen or "@" in order_id:
             return {"status": "NOT_COMPUTABLE", "reason": "order_identity_unreconciled", "rate": None}
         seen.add(order_id)
         currencies.add(item.get("currency"))
+        cohorts.add(item.get("cohort"))
         try:
             vals = [Decimal(str(item[k])) for k in ("gross", "refunds", "fees")]
         except (KeyError, InvalidOperation, TypeError, ValueError):
@@ -91,10 +96,12 @@ def qualified_revenue_rate(qualified_sessions, orders) -> dict:
         if not all(v.is_finite() and v >= 0 for v in vals) or vals[1] > vals[0]:
             return {"status": "NOT_COMPUTABLE", "reason": "invalid_amount", "rate": None}
         net += vals[0] - vals[1] - vals[2]
+    if len(cohorts) != 1 or next(iter(cohorts)) not in ("7d", "30d"):
+        return {"status": "NOT_COMPUTABLE", "reason": "cohort_not_reconciled", "rate": None}
     if len(currencies) != 1 or next(iter(currencies)) not in ("USD",):
         return {"status": "NOT_COMPUTABLE", "reason": "currency_not_reconciled", "rate": None}
     return {"status": "COMPUTED_FROM_SUPPLIED_EVIDENCE", "rate": str((net * 1000 / qualified_sessions).quantize(Decimal("0.01"))),
-            "currency": "USD", "verified_order_rows": len(seen), "net": str(net)}
+            "currency": "USD", "cohort": next(iter(cohorts)), "verified_order_rows": len(seen), "net": str(net)}
 
 
 def static_subject_audit(manifest: Mapping) -> dict:
