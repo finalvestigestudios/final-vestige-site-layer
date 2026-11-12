@@ -353,6 +353,15 @@
         "AF"
       ],
       "limit": "Independently reported paid affiliate conversion required"
+    },
+    {
+      "id": "FV03",
+      "statement": "An additional Mind mailing list or email form is necessary for the free Fieldbook",
+      "decision": "EXCLUDE",
+      "sources": [
+        "F"
+      ],
+      "limit": "One existing Jetpack/Focus route; no new list or form"
     }
   ],
   "commercial_holds": [
