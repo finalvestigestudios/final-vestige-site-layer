@@ -1,0 +1,2276 @@
+{
+  "schema": "fv-media-upstream-clusters-v1",
+  "audit_date": "2026-11-11",
+  "scope": "FROZEN_SOURCE_EVIDENCE_ONLY_NOT_GUEST_BROWSER_OR_ORIGIN_HTTP",
+  "provenance": {
+    "source_ledger": "qa/media-recovery/coverage_288_exact_pr1703_20261110.json",
+    "source_blob_sha": "4965a862f7de7de46c1f4a1e26f3ca70a8c38805",
+    "worklist_draft_pr": 183,
+    "site_qa_pr": 154,
+    "media_recovery_pr": 1703
+  },
+  "counts": {
+    "posts": 61,
+    "inline_images": 355,
+    "external_positions": 288,
+    "upstream_hosts": 80,
+    "web_retriever_wrapper_4xx_5xx_slots": 27,
+    "top_three_host_positions": 151,
+    "reported_42_guest_confirmed": false,
+    "confirmed_guest_broken": 0,
+    "proposed_76_percent_wire_saving_measured": false,
+    "oversize_originals_gt_1500000": 15,
+    "oversize_stored_bytes": 47096779
+  },
+  "p0_queue": [
+    {
+      "slot": "285:5",
+      "original_url": "https://images.saymedia-content.com/.image/ar_16:9,c_fill,cs_srgb,fl_progressive,q_auto:eco,w_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg",
+      "web_retriever_wrapper_codes_not_guest": [
+        404
+      ],
+      "guest_http_status": null,
+      "guest_broken": null,
+      "candidates": [
+        {
+          "catalog_url": "https://commons.wikimedia.org/wiki/File:Three_mile_island_062010.jpg",
+          "authority": null,
+          "rights_note": "PD_SELF",
+          "conditional_960px": [
+            819,
+            614
+          ],
+          "cleared": false
+        }
+      ],
+      "staging_approval": false
+    },
+    {
+      "slot": "285:2",
+      "original_url": "https://blog.ucsusa.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+      "web_retriever_wrapper_codes_not_guest": [
+        500
+      ],
+      "guest_http_status": null,
+      "guest_broken": null,
+      "candidates": [
+        {
+          "catalog_url": "https://blog.ucs.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+          "authority": null,
+          "rights_note": "UNKNOWN",
+          "conditional_960px": null,
+          "cleared": false
+        }
+      ],
+      "staging_approval": false
+    },
+    {
+      "slot": "287:5",
+      "original_url": "https://stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+      "web_retriever_wrapper_codes_not_guest": [
+        404
+      ],
+      "guest_http_status": null,
+      "guest_broken": null,
+      "candidates": [
+        {
+          "catalog_url": "https://media.stpetecatalyst.com/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+          "authority": null,
+          "rights_note": "RIGHTS_UNVERIFIED",
+          "conditional_960px": null,
+          "cleared": false
+        }
+      ],
+      "staging_approval": false
+    },
+    {
+      "slot": "418:1",
+      "original_url": "https://media.defense.gov/2021/Mar/30/2002610812/1920/1080/0/210330-G-DE713-0002.JPG",
+      "web_retriever_wrapper_codes_not_guest": [
+        403
+      ],
+      "guest_http_status": null,
+      "guest_broken": null,
+      "candidates": [
+        {
+          "catalog_url": "https://www.history.uscg.mil/Our-Collections/Photos/igphoto/2002905913/",
+          "authority": null,
+          "rights_note": "USCG_PUBLIC_DOMAIN_RELEASE_CATALOG",
+          "conditional_960px": null,
+          "cleared": false
+        },
+        {
+          "catalog_url": "https://www.history.uscg.mil/Our-Collections/Photos/igphoto/2002905913/",
+          "authority": null,
+          "rights_note": "USCG_ITEM_ATTRIBUTION_USE_LIMITS_REVIEW",
+          "conditional_960px": null,
+          "cleared": false
+        }
+      ],
+      "staging_approval": false
+    },
+    {
+      "slot": "418:2",
+      "original_url": "https://www.history.uscg.mil/Portals/6/5_%20Scotch_Cap_debris2_1946.jpg",
+      "web_retriever_wrapper_codes_not_guest": [
+        403
+      ],
+      "guest_http_status": null,
+      "guest_broken": null,
+      "candidates": [
+        {
+          "catalog_url": "https://www.lighthousefriends.com/Scotch_Cap_debris2_1946.jpg",
+          "authority": null,
+          "rights_note": "RIGHTS_UNVERIFIED",
+          "conditional_960px": null,
+          "cleared": false
+        },
+        {
+          "catalog_url": "https://www.history.uscg.mil/Research/THE-LONG-BLUE-LINE/Article/2866442/the-long-blue-line-standing-a-deadly-watch-75-years-agofinal-hours-of-scotch-ca/",
+          "authority": null,
+          "rights_note": "USCG_ITEM_ATTRIBUTION_USE_LIMITS_REVIEW",
+          "conditional_960px": null,
+          "cleared": false
+        }
+      ],
+      "staging_approval": false
+    },
+    {
+      "slot": "407:1",
+      "original_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/img7535.jpg",
+      "web_retriever_wrapper_codes_not_guest": [
+        400
+      ],
+      "guest_http_status": null,
+      "guest_broken": null,
+      "candidates": [
+        {
+          "catalog_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/thumbnails/image/img7535.jpg",
+          "authority": null,
+          "rights_note": "USGS_PUBLIC_DOMAIN_CATALOG",
+          "conditional_960px": null,
+          "cleared": false
+        }
+      ],
+      "staging_approval": false
+    }
+  ],
+  "jetpack_delivery_vs_upstream": [
+    {
+      "slot": "285:1",
+      "delivery_host": "i0.wp.com",
+      "upstream_host": "www.squawkpoint.com",
+      "stored_url": "https://i0.wp.com/www.squawkpoint.com/wp-content/uploads/2019/02/Three-Mile-Island-Control-Centre.jpg?ssl=1"
+    },
+    {
+      "slot": "291:0",
+      "delivery_host": "i0.wp.com",
+      "upstream_host": "text-message.blogs.archives.gov",
+      "stored_url": "https://i0.wp.com/text-message.blogs.archives.gov/wp-content/uploads/sites/5/2016/05/teton_failing_fourth-scaled.jpg?ssl=1"
+    }
+  ],
+  "upstream_hosts": [
+    {
+      "upstream_host": "commons.wikimedia.org",
+      "source_positions": 118,
+      "affected_posts": 20,
+      "source_slots": [
+        "166:2",
+        "166:3",
+        "166:4",
+        "166:5",
+        "166:6",
+        "214:1",
+        "214:2",
+        "214:3",
+        "214:5",
+        "215:0",
+        "215:1",
+        "215:2",
+        "215:3",
+        "215:4",
+        "215:5",
+        "216:0",
+        "216:1",
+        "216:2",
+        "216:3",
+        "216:4",
+        "216:5",
+        "217:0",
+        "217:1",
+        "217:2",
+        "217:3",
+        "217:4",
+        "217:5",
+        "218:0",
+        "218:1",
+        "218:2",
+        "218:3",
+        "218:4",
+        "218:5",
+        "219:0",
+        "219:1",
+        "219:2",
+        "219:3",
+        "219:4",
+        "219:5",
+        "220:0",
+        "220:1",
+        "220:2",
+        "220:3",
+        "220:4",
+        "220:5",
+        "220:6",
+        "221:0",
+        "221:1",
+        "221:2",
+        "221:3",
+        "221:4",
+        "221:5",
+        "221:6",
+        "252:0",
+        "252:1",
+        "252:2",
+        "252:3",
+        "252:4",
+        "252:5",
+        "253:0",
+        "253:1",
+        "253:2",
+        "253:3",
+        "253:4",
+        "253:5",
+        "253:6",
+        "254:0",
+        "254:1",
+        "254:2",
+        "254:3",
+        "254:4",
+        "254:5",
+        "254:6",
+        "255:0",
+        "255:1",
+        "255:2",
+        "255:3",
+        "255:4",
+        "255:5",
+        "255:6",
+        "256:0",
+        "256:1",
+        "256:2",
+        "256:3",
+        "256:4",
+        "256:5",
+        "256:6",
+        "257:0",
+        "257:1",
+        "257:2",
+        "257:3",
+        "257:4",
+        "257:5",
+        "257:6",
+        "258:0",
+        "258:5",
+        "268:0",
+        "268:2",
+        "268:3",
+        "268:5",
+        "268:6",
+        "268:9",
+        "367:1",
+        "367:2",
+        "367:3",
+        "367:5",
+        "367:6",
+        "367:7",
+        "367:8",
+        "425:1",
+        "425:2",
+        "425:3",
+        "425:4",
+        "425:5",
+        "425:6",
+        "425:7",
+        "425:8",
+        "431:5"
+      ],
+      "web_wrapper_error_positions": 0,
+      "web_wrapper_error_slots": [],
+      "sample_exact_source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/St.%20Francis%20abutment.jpg?width=1280",
+      "sample_candidate_catalog_url": "https://commons.wikimedia.org/wiki/File:St._Francis_abutment.jpg",
+      "origin_status": null,
+      "guest_confirmed_broken": null,
+      "rights_cleared": false
+    },
+    {
+      "upstream_host": "upload.wikimedia.org",
+      "source_positions": 18,
+      "affected_posts": 10,
+      "source_slots": [
+        "101:1",
+        "101:2",
+        "101:4",
+        "101:6",
+        "213:3",
+        "274:0",
+        "274:5",
+        "277:5",
+        "278:2",
+        "279:1",
+        "279:4",
+        "289:0",
+        "290:2",
+        "431:2",
+        "433:1",
+        "433:2",
+        "433:3",
+        "433:4"
+      ],
+      "web_wrapper_error_positions": 0,
+      "web_wrapper_error_slots": [],
+      "sample_exact_source_url": "https://upload.wikimedia.org/wikipedia/commons/5/59/North_End_molasses_tank.jpg",
+      "sample_candidate_catalog_url": "https://commons.wikimedia.org/wiki/File:North_End_molasses_tank.jpg",
+      "origin_status": null,
+      "guest_confirmed_broken": null,
+      "rights_cleared": false
+    },
+    {
+      "upstream_host": "www.history.navy.mil",
+      "source_positions": 15,
+      "affected_posts": 4,
+      "source_slots": [
+        "274:1",
+        "274:2",
+        "274:4",
+        "280:0",
+        "280:1",
+        "280:2",
+        "280:3",
+        "280:4",
+        "280:5",
+        "288:0",
+        "288:2",
+        "370:0",
+        "370:1",
+        "370:3",
+        "370:4"
+      ],
+      "web_wrapper_error_positions": 12,
+      "web_wrapper_error_slots": [
+        "274:1",
+        "274:2",
+        "274:4",
+        "280:0",
+        "280:1",
+        "280:2",
+        "280:3",
+        "280:5",
+        "288:0",
+        "288:2",
+        "370:0",
+        "370:3"
+      ],
+      "sample_exact_source_url": "https://www.history.navy.mil/content/history/nhhc/research/library/online-reading-room/title-list-alphabetically/u/united-states-submarine-losses/tang-ss-306/_jcr_content/body/media_asset_3/image.img.jpg/1485804525424.jpg",
+      "sample_candidate_catalog_url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nara-series/80-g/80-G-220000/80-g-227987-uss-tang--ss-306-.html",
+      "origin_status": null,
+      "guest_confirmed_broken": null,
+      "rights_cleared": false
+    },
+    {
+      "upstream_host": "d9-wret.s3.us-west-2.amazonaws.com",
+      "source_positions": 9,
+      "affected_posts": 2,
+      "source_slots": [
+        "407:0",
+        "407:1",
+        "407:2",
+        "407:3",
+        "407:4",
+        "407:5",
+        "407:6",
+        "407:7",
+        "418:5"
+      ],
+      "web_wrapper_error_positions": 1,
+      "web_wrapper_error_slots": [
+        "407:1"
+      ],
+      "sample_exact_source_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/vhp_img317.jpg",
+      "sample_candidate_catalog_url": "https://www.usgs.gov/media/images/earthquake-damage-1959-hebgen-lake-event-yellowstone-plateau",
+      "origin_status": null,
+      "guest_confirmed_broken": null,
+      "rights_cleared": false
+    },
+    {
+      "upstream_host": "cdn.loc.gov",
+      "source_positions": 7,
+      "affected_posts": 2,
+      "source_slots": [
+        "190:0",
+        "190:2",
+        "190:3",
+        "190:4",
+        "190:5",
+        "214:0",
+        "214:4"
+      ],
+      "web_wrapper_error_positions": 0,
+      "web_wrapper_error_slots": [],
+      "sample_exact_source_url": "https://cdn.loc.gov/service/pnp/npcc/18700/18735v.jpg",
+      "sample_candidate_catalog_url": "https://www.loc.gov/pictures/resource/npcc.18735/",
+      "origin_status": null,
+      "guest_confirmed_broken": null,
+      "rights_cleared": false
+    },
+    {
+      "upstream_host": "tile.loc.gov",
+      "source_positions": 7,
+      "affected_posts": 4,
+      "source_slots": [
+        "166:1",
+        "190:1",
+        "413:1",
+        "413:3",
+        "413:4",
+        "413:5",
+        "428:5"
+      ],
+      "web_wrapper_error_positions": 0,
+      "web_wrapper_error_slots": [],
+      "sample_exact_source_url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/ca/ca3000/ca3095/sheet/00002a.gif",
+      "sample_candidate_catalog_url": "https://www.loc.gov/item/ca3095/",
+      "origin_status": null,
+      "guest_confirmed_broken": null,
+      "rights_cleared": false
+    },
+    {
+      "upstream_host": "www.floridamemory.com",
+      "source_positions": 7,
+      "affected_posts": 1,
+      "source_slots": [
+        "432:0",
+        "432:1",
+        "432:2",
+        "432:3",
+        "432:4",
+        "432:5",
+        "432:6"
+      ],
+      "web_wrapper_error_positions": 7,
+      "web_wrapper_error_slots": [
+        "432:0",
+        "432:1",
+        "432:2",
+        "432:3",
+        "432:4",
+        "432:5",
+        "432:6"
+      ],
+      "sample_exact_source_url": "https://www.floridamemory.com/fpc/prints/pr04493.jpg",
+      "sample_candidate_catalog_url": "https://floridamemory.com/items/show/4144",
+      "origin_status": null,
+      "guest_confirmed_broken": null,
+      "rights_cleared": false
+    },
+    {
+      "upstream_host": "www.nps.gov",
+      "source_positions": 6,
+      "affected_posts": 1,
+      "source_slots": [
+        "211:0",
+        "211:1",
+        "211:2",
+        "211:3",
+        "211:4",
+        "211:5"
+      ],
+      "web_wrapper_error_positions": 0,
+      "web_wrapper_error_slots": [],
+      "sample_exact_source_url": "https://www.nps.gov/common/uploads/pwr/park/poch/80CFA67B-03FC-82AE-99A5AD290D8C5371/80CFA67B-03FC-82AE-99A5AD290D8C5371.jpg?autorotate=false&maxHeight=1020&maxWidth=1300",
+      "sample_candidate_catalog_url": "https://www.nps.gov/poch/learn/historyculture/index.htm",
+      "origin_status": null,
+      "guest_confirmed_broken": null,
+      "rights_cleared": false
+    },
+    {
+      "upstream_host": "images-assets.nasa.gov",
+      "source_positions": 5,
+      "affected_posts": 1,
+      "source_slots": [
+        "434:1",
+        "434:2",
+        "434:3",
+        "434:4",
+        "434:5"
+      ],
+      "web_wrapper_error_positions": 0,
+      "web_wrapper_error_slots": [],
+      "sample_exact_source_url": "https://images-assets.nasa.gov/image/S67-15717/S67-15717~large.jpg",
+      "sample_candidate_catalog_url": "https://images.nasa.gov/details/S67-15717",
+      "origin_status": null,
+      "guest_confirmed_broken": null,
+      "rights_cleared": false
+    },
+    {
+      "upstream_host": "media.defense.gov",
+      "source_positions": 5,
+      "affected_posts": 3,
+      "source_slots": [
+        "278:0",
+        "278:1",
+        "278:6",
+        "289:4",
+        "418:1"
+      ],
+      "web_wrapper_error_positions": 2,
+      "web_wrapper_error_slots": [
+        "289:4",
+        "418:1"
+      ],
+      "sample_exact_source_url": "https://media.defense.gov/2007/Jan/25/2000519451/-1/-1/0/070125-F-0000Z-099.JPG",
+      "sample_candidate_catalog_url": null,
+      "origin_status": null,
+      "guest_confirmed_broken": null,
+      "rights_cleared": false
+    },
+    {
+      "upstream_host": "cloudfront-us-east-1.images.arcpublishing.com",
+      "source_positions": 4,
+      "affected_posts": 3,
+      "source_slots": [
+        "287:1",
+        "290:1",
+        "291:2",
+        "291:5"
+      ],
+      "web_wrapper_error_positions": 0,
+      "web_wrapper_error_slots": [],
+      "sample_exact_source_url": "https://cloudfront-us-east-1.images.arcpublishing.com/tbt/555OWMWIJMI6TGNIIBWI6S7HAY.jpg",
+      "sample_candidate_catalog_url": "https://mymanatee.contentdm.oclc.org/digital/collection/p16681coll1/id/29902/",
+      "origin_status": null,
+      "guest_confirmed_broken": null,
+      "rights_cleared": false
+    },
+    {
+      "upstream_host": "objects.lib.uidaho.edu",
+      "source_positions": 4,
+      "affected_posts": 1,
+      "source_slots": [
+        "428:1",
+        "428:2",
+        "428:3",
+        "428:4"
+      ],
+      "web_wrapper_error_positions": 0,
+      "web_wrapper_error_slots": [],
+      "sample_exact_source_url": "https://objects.lib.uidaho.edu/bigburn/bigburn23.jpg",
+      "sample_candidate_catalog_url": "https://www.lib.uidaho.edu/digital/bigburn/items/bigburn23.html",
+      "origin_status": null,
+      "guest_confirmed_broken": null,
+      "rights_cleared": false
+    },
+    {
+      "upstream_host": "archimedespalimpsest.org",
+      "source_positions": 3,
+      "affected_posts": 1,
+      "source_slots": [
+        "268:1",
+        "268:7",
+        "268:8"
+      ],
+      "web_wrapper_error_positions": 0,
+      "web_wrapper_error_slots": [],
+      "sample_exact_source_url": "https://archimedespalimpsest.org/assets/img/imaging_x8.jpg",
+      "sample_candidate_catalog_url": "https://www.archimedespalimpsest.org/about/imaging/capture.php",
+      "origin_status": null,
+      "guest_confirmed_broken": null,
+      "rights_cleared": false
+    },
+    {
+      "upstream_host": "fs-prod-nwcg.s3.us-gov-west-1.amazonaws.com",
+      "source_positions": 3,
+      "affected_posts": 1,
+      "source_slots": [
+        "213:1",
+        "213:2",
+        "213:6"
+      ],
+      "web_wrapper_error_positions": 0,
+      "web_wrapper_error_slots": [],
+      "sample_exact_source_url": "https://fs-prod-nwcg.s3.us-gov-west-1.amazonaws.com/s3fs-public/2023-11/sr-mg-fire-progression-map.jpg?VersionId=nXjGkeGzQeXNCaBmxg9oBNzb6As7WcRA",
+      "sample_candidate_catalog_url": "https://www.nwcg.gov/wfldp/toolbox/staff-ride/library/mann-gulch-fire",
+      "origin_status": null,
+      "guest_confirmed_broken": null,
+      "rights_cleared": false
+    },
+    {
+      "upstream_host": "research.fs.usda.gov",
+      "source_positions": 3,
+      "affected_posts": 1,
+      "source_slots": [
+        "213:0",
+        "213:4",
+        "213:5"
+      ],
+      "web_wrapper_error_positions": 0,
+      "web_wrapper_error_slots": [],
+      "sample_exact_source_url": "https://research.fs.usda.gov/sites/default/files/2024-08/firelab-northface-manngulch-printable.jpg",
+      "sample_candidate_catalog_url": "https://research.fs.usda.gov/firelab/projects/manngulch",
+      "origin_status": null,
+      "guest_confirmed_broken": null,
+      "rights_cleared": false
+    },
+    {
+      "upstream_host": "www.fhwa.dot.gov",
+      "source_positions": 3,
+      "affected_posts": 1,
+      "source_slots": [
+        "258:2",
+        "258:3",
+        "258:4"
+      ],
+      "web_wrapper_error_positions": 0,
+      "web_wrapper_error_slots": [],
+      "sample_exact_source_url": "https://www.fhwa.dot.gov/highwayhistory/images/national_bridge_inspection_standards/bridge_inspection_1_thumb.jpg",
+      "sample_candidate_catalog_url": "https://www.fhwa.dot.gov/highwayhistory/national_bridge_inspection_standards.cfm",
+      "origin_status": null,
+      "guest_confirmed_broken": null,
+      "rights_cleared": false
+    },
+    {
+      "upstream_host": "www.history.uscg.mil",
+      "source_positions": 3,
+      "affected_posts": 1,
+      "source_slots": [
+        "418:0",
+        "418:2",
+        "418:3"
+      ],
+      "web_wrapper_error_positions": 1,
+      "web_wrapper_error_slots": [
+        "418:2"
+      ],
+      "sample_exact_source_url": "https://www.history.uscg.mil/Portals/6/2_%20new%20and%20old%20lighthouses%2019849609_web1_1_-Scotch-Cap-lighthouse-1200x984.jpg",
+      "sample_candidate_catalog_url": "https://www.history.uscg.mil/Research/THE-LONG-BLUE-LINE/Article/2866442/the-long-blue-line-standing-a-deadly-watch-75-years-agofinal-hours-of-scotch-ca/",
+      "origin_status": null,
+      "guest_confirmed_broken": null,
+      "rights_cleared": false
+    },
+    {
+      "upstream_host": "cdn2.picryl.com",
+      "source_positions": 2,
+      "affected_posts": 1,
+      "source_slots": [
+        "276:0",
+        "276:4"
+      ],
+      "web_wrapper_error_positions": 0,
+      "web_wrapper_error_slots": [],
+      "sample_exact_source_url": "https://cdn2.picryl.com/photo/1907/12/31/quebec-bridge-hs85-10-18815-460e1c-1024.jpg",
+      "sample_candidate_catalog_url": "https://commons.wikimedia.org/wiki/File:Quebec_bridge_(HS85-10-18815).jpg",
+      "origin_status": null,
+      "guest_confirmed_broken": null,
+      "rights_cleared": false
+    },
+    {
+      "upstream_host": "historicbridges.org",
+      "source_positions": 2,
+      "affected_posts": 1,
+      "source_slots": [
+        "276:1",
+        "276:5"
+      ],
+      "web_wrapper_error_positions": 0,
+      "web_wrapper_error_slots": [],
+      "sample_exact_source_url": "https://historicbridges.org/quebec/quebec/oldbridge3.jpg",
+      "sample_candidate_catalog_url": "https://historicbridges.org/bridges/browser/?bridgebrowser=quebec/quebec/",
+      "origin_status": null,
+      "guest_confirmed_broken": null,
+      "rights_cleared": false
+    },
+    {
+      "upstream_host": "miro.medium.com",
+      "source_positions": 2,
+      "affected_posts": 2,
+      "source_slots": [
+        "277:4",
+        "283:1"
+      ],
+      "web_wrapper_error_positions": 0,
+      "web_wrapper_error_slots": [],
+      "sample_exact_source_url": "https://miro.medium.com/v2/resize:fit:1400/1*NtiMuQy8rJhpG_xg-nv92g.png",
+      "sample_candidate_catalog_url": "https://commons.wikimedia.org/wiki/File:Lituya-Bay-overview-with-arrows.png",
+      "origin_status": null,
+      "guest_confirmed_broken": null,
+      "rights_cleared": false
+    },
+    {
+      "upstream_host": "www.geoinstitute.org",
+      "source_positions": 2,
+      "affected_posts": 1,
+      "source_slots": [
+        "431:1",
+        "431:3"
+      ],
+      "web_wrapper_error_positions": 0,
+      "web_wrapper_error_slots": [],
+      "sample_exact_source_url": "https://www.geoinstitute.org/sites/default/files/inline-images/Image%2003_3.jpg",
+      "sample_candidate_catalog_url": "https://www.geoinstitute.org/news/case-study-frank-slide",
+      "origin_status": null,
+      "guest_confirmed_broken": null,
+      "rights_cleared": false
+    },
+    {
+      "upstream_host": "www.researchgate.net",
+      "source_positions": 2,
+      "affected_posts": 2,
+      "source_slots": [
+        "277:1",
+        "290:5"
+      ],
+      "web_wrapper_error_positions": 0,
+      "web_wrapper_error_slots": [],
+      "sample_exact_source_url": "https://www.researchgate.net/profile/Tim-Davies-4/publication/258771194/figure/fig10/AS:669504034914309@1536632655693/Lituya-Bay-following-the-1958-tsunami-a-NW-panoramic-view-of-Lituya-Bay-and-Centoaph.png",
+      "sample_candidate_catalog_url": "https://www.researchgate.net/figure/Lituya-Bay-following-the-1958-tsunami-a-NW-panoramic-view-of-Lituya-Bay-and-Centoaph_fig10_258771194",
+      "origin_status": null,
+      "guest_confirmed_broken": null,
+      "rights_cleared": false
+    },
+    {
+      "upstream_host": "2.bp.blogspot.com",
+      "source_positions": 1,
+      "affected_posts": 1,
+      "source_slots": [
+        "283:0"
+      ],
+      "web_wrapper_error_positions": 0,
+      "web_wrapper_error_slots": [],
+      "sample_exact_source_url": "https://2.bp.blogspot.com/-vFf9zOG42QU/W2shS055U-I/AAAAAAAACc0/uHswGJB19E4OgUANkDatBX7LSCIEswfZgCLcBGAs/s1600/Fire%2BEscape%2BDoors%2BPortrait%2BMode.jpg",
+      "sample_candidate_catalog_url": "https://commons.wikimedia.org/wiki/File:Iroquois_Theatre_fire_-_DPLA_-_c9e2f3b69954059bcfebf35bf12d84b9.jpg",
+      "origin_status": null,
+      "guest_confirmed_broken": null,
+      "rights_cleared": false
+    },
+    {
+      "upstream_host": "ahoy.tk-jk.net",
+      "source_positions": 1,
+      "affected_posts": 1,
+      "source_slots": [
+        "288:1"
+      ],
+      "web_wrapper_error_positions": 0,
+      "web_wrapper_error_slots": [],
+      "sample_exact_source_url": "https://ahoy.tk-jk.net/Images8/Honda/DelphiAndNicholasAtHondaPoint.jpg",
+      "sample_candidate_catalog_url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/NH-69000/NH-69059.html",
+      "origin_status": null,
+      "guest_confirmed_broken": null,
+      "rights_cleared": false
+    },
+    {
+      "upstream_host": "arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com",
+      "source_positions": 1,
+      "affected_posts": 1,
+      "source_slots": [
+        "287:0"
+      ],
+      "web_wrapper_error_positions": 0,
+      "web_wrapper_error_slots": [],
+      "sample_exact_source_url": "https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/IIYZWAFLJUQD3YGEYEKMG5PVXY.jpg",
+      "sample_candidate_catalog_url": "https://mymanatee.contentdm.oclc.org/digital/collection/p16681coll1/id/29937/",
+      "origin_status": null,
+      "guest_confirmed_broken": null,
+      "rights_cleared": false
+    },
+    {
+      "upstream_host": "bkimg.cdn.bcebos.com",
+      "source_positions": 1,
+      "affected_posts": 1,
+      "source_slots": [
+        "279:2"
+      ],
+      "web_wrapper_error_positions": 0,
+      "web_wrapper_error_slots": [],
+      "sample_exact_source_url": "https://bkimg.cdn.bcebos.com/pic/024f78f0f736afc379317e1bd848fcc4b74543a9b436",
+      "sample_candidate_catalog_url": "https://commons.wikimedia.org/wiki/File:Cosmos-954_scheme.png",
+      "origin_status": null,
+      "guest_confirmed_broken": null,
+      "rights_cleared": false
+    },
+    {
+      "upstream_host": "blog.ucsusa.org",
+      "source_positions": 1,
+      "affected_posts": 1,
+      "source_slots": [
+        "285:2"
+      ],
+      "web_wrapper_error_positions": 1,
+      "web_wrapper_error_slots": [
+        "285:2"
+      ],
+      "sample_exact_source_url": "https://blog.ucsusa.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+      "sample_candidate_catalog_url": "https://blog.ucs.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+      "origin_status": null,
+      "guest_confirmed_broken": null,
+      "rights_cleared": false
+    },
+    {
+      "upstream_host": "bloximages.chicago2.vip.townnews.com",
+      "source_positions": 1,
+      "affected_posts": 1,
+      "source_slots": [
+        "283:3"
+      ],
+      "web_wrapper_error_positions": 0,
+      "web_wrapper_error_slots": [],
+      "sample_exact_source_url": "https://bloximages.chicago2.vip.townnews.com/enidnews.com/content/tncms/assets/v3/editorial/b/4e/b4e59e84-74da-5f9e-b24f-5e9e3658fd34/54716e12ac97b.image.jpg?resize=1200%2C804",
+      "sample_candidate_catalog_url": "https://fk-sandbox.library.northwestern.edu/historical/iroquois/",
+      "origin_status": null,
+      "guest_confirmed_broken": null,
+      "rights_cleared": false
+    },
+    {
+      "upstream_host": "brightspotcdn.byui.edu",
+      "source_positions": 1,
+      "affected_posts": 1,
+      "source_slots": [
+        "291:3"
+      ],
+      "web_wrapper_error_positions": 0,
+      "web_wrapper_error_slots": [],
+      "sample_exact_source_url": "https://brightspotcdn.byui.edu/dims4/default/37ddf06/2147483647/strip/true/crop/2048x1365+0+0/resize/1200x800!/quality/90/?url=https%3A%2F%2Fk3-prod-byuifulbrightspot.s3.us-west-2.amazonaws.com%2Fbrightspot%2F33%2F7d%2F67f04f174772ab1d35419706138c%2Fteton-dam-flooding-aerial.jpg",
+      "sample_candidate_catalog_url": "https://www.byui.edu/radio/local-news/50-years-of-memories-the-teton-dam-disaster-remembered",
+      "origin_status": null,
+      "guest_confirmed_broken": null,
+      "rights_cleared": false
+    },
+    {
+      "upstream_host": "cdn-sw.spidersweb.pl",
+      "source_positions": 1,
+      "affected_posts": 1,
+      "source_slots": [
+        "279:0"
+      ],
+      "web_wrapper_error_positions": 0,
+      "web_wrapper_error_slots": [],
+      "sample_exact_source_url": "https://cdn-sw.spidersweb.pl/2024/02/kosmos_954.jpg",
+      "sample_candidate_catalog_url": "https://commons.wikimedia.org/wiki/File:Cosmos_954_-_Recovery_002.jpg",
+      "origin_status": null,
+      "guest_confirmed_broken": null,
+      "rights_cleared": false
+    },
+    {
+      "upstream_host": "cgaviationhistory.org",
+      "source_positions": 1,
+      "affected_posts": 1,
+      "source_slots": [
+        "292:3"
+      ],
+      "web_wrapper_error_positions": 0,
+      "web_wrapper_error_slots": [],
+      "sample_exact_source_url": "https://cgaviationhistory.org/wp-content/uploads/MS_Prisendam_sinking_off_Alaska_with_USCG_HH-3F_1980.jpg",
+      "sample_candidate_catalog_url": "https://www.history.uscg.mil/Our-Collections/Photos/igphoto/2002603427/",
+      "origin_status": null,
+      "guest_confirmed_broken": null,
+      "rights_cleared": false
+    },
+    {
+      "upstream_host": "chicagology.com",
+      "source_positions": 1,
+      "affected_posts": 1,
+      "source_slots": [
+        "283:2"
+      ],
+      "web_wrapper_error_positions": 0,
+      "web_wrapper_error_slots": [],
+      "sample_exact_source_url": "https://chicagology.com/wp-content/themes/revolution-20/chicagoimages2/iroquoispromenade.jpg",
+      "sample_candidate_catalog_url": "https://commons.wikimedia.org/wiki/File:Foyer_of_the_Iroquois_Theater_Chicago_1903.jpg",
+      "origin_status": null,
+      "guest_confirmed_broken": null,
+      "rights_cleared": false
+    },
+    {
+      "upstream_host": "d1ldvf68ux039x.cloudfront.net",
+      "source_positions": 1,
+      "affected_posts": 1,
+      "source_slots": [
+        "289:5"
+      ],
+      "web_wrapper_error_positions": 0,
+      "web_wrapper_error_slots": [],
+      "sample_exact_source_url": "https://d1ldvf68ux039x.cloudfront.net/thumbs/photos/1307/985674/1000w_q95.jpg",
+      "sample_candidate_catalog_url": "https://www.dvidshub.net/image/985674/uss-forrestal-memorial-ceremony",
+      "origin_status": null,
+      "guest_confirmed_broken": null,
+      "rights_cleared": false
+    },
+    {
+      "upstream_host": "d3d0lqu00lnqvz.cloudfront.net",
+      "source_positions": 1,
+      "affected_posts": 1,
+      "source_slots": [
+        "433:5"
+      ],
+      "web_wrapper_error_positions": 0,
+      "web_wrapper_error_slots": [],
+      "sample_exact_source_url": "https://d3d0lqu00lnqvz.cloudfront.net/media/media/cea975ac-62ed-4c2f-bf13-67a0f3a90092.jpg",
+      "sample_candidate_catalog_url": "https://commons.wikimedia.org/wiki/File:Reward_for_finding_Franklin_Expedition.jpg",
+      "origin_status": null,
+      "guest_confirmed_broken": null,
+      "rights_cleared": false
+    },
+    {
+      "upstream_host": "dmt55mxnkgbz2.cloudfront.net",
+      "source_positions": 1,
+      "affected_posts": 1,
+      "source_slots": [
+        "291:1"
+      ],
+      "web_wrapper_error_positions": 0,
+      "web_wrapper_error_slots": [],
+      "sample_exact_source_url": "https://dmt55mxnkgbz2.cloudfront.net/1205x0_s3-30217-W-AP-PNW-TETON-COLLAPSE-1.jpg",
+      "sample_candidate_catalog_url": "https://www.usbr.gov/pn/snakeriver/dams/uppersnake/teton/",
+      "origin_status": null,
+      "guest_confirmed_broken": null,
+      "rights_cleared": false
+    },
+    {
+      "upstream_host": "florencekelley.northwestern.edu",
+      "source_positions": 1,
+      "affected_posts": 1,
+      "source_slots": [
+        "283:6"
+      ],
+      "web_wrapper_error_positions": 0,
+      "web_wrapper_error_slots": [],
+      "sample_exact_source_url": "https://florencekelley.northwestern.edu/img/galleries/historical/iroquois/i36009aa.jpg",
+      "sample_candidate_catalog_url": "https://fk-sandbox.library.northwestern.edu/historical/iroquois/",
+      "origin_status": null,
+      "guest_confirmed_broken": null,
+      "rights_cleared": false
+    },
+    {
+      "upstream_host": "i.insider.com",
+      "source_positions": 1,
+      "affected_posts": 1,
+      "source_slots": [
+        "285:3"
+      ],
+      "web_wrapper_error_positions": 0,
+      "web_wrapper_error_slots": [],
+      "sample_exact_source_url": "https://i.insider.com/5d5eb5f754c75f23dc72ed4c?auto=webp&format=jpeg&width=800",
+      "sample_candidate_catalog_url": null,
+      "origin_status": null,
+      "guest_confirmed_broken": null,
+      "rights_cleared": false
+    },
+    {
+      "upstream_host": "ids.si.edu",
+      "source_positions": 1,
+      "affected_posts": 1,
+      "source_slots": [
+        "276:2"
+      ],
+      "web_wrapper_error_positions": 0,
+      "web_wrapper_error_slots": [],
+      "sample_exact_source_url": "https://ids.si.edu/ids/deliveryService?id=NMAH-AC1026-0000002",
+      "sample_candidate_catalog_url": "https://americanhistory.si.edu/collections/archival-collection/sova-nmah-ac-1026",
+      "origin_status": null,
+      "guest_confirmed_broken": null,
+      "rights_cleared": false
+    },
+    {
+      "upstream_host": "imagerenderer.com",
+      "source_positions": 1,
+      "affected_posts": 1,
+      "source_slots": [
+        "277:3"
+      ],
+      "web_wrapper_error_positions": 0,
+      "web_wrapper_error_slots": [],
+      "sample_exact_source_url": "https://imagerenderer.com/images/rendered/default/greeting-card/images-medium-5/4-damage-from-1958-lituya-bay-tsunami-us-geological-surveyscience-photo-library.jpg",
+      "sample_candidate_catalog_url": "https://sciencephotogallery.com/featured/4-damage-from-1958-lituya-bay-tsunami-us-geological-surveyscience-photo-library.html",
+      "origin_status": null,
+      "guest_confirmed_broken": null,
+      "rights_cleared": false
+    },
+    {
+      "upstream_host": "images.pixels.com",
+      "source_positions": 1,
+      "affected_posts": 1,
+      "source_slots": [
+        "285:4"
+      ],
+      "web_wrapper_error_positions": 0,
+      "web_wrapper_error_slots": [],
+      "sample_exact_source_url": "https://images.pixels.com/images-medium-large-5/three-mile-island-damaged-reactor-core-nuclear-regulatory-commissionscience-photo-library.jpg",
+      "sample_candidate_catalog_url": "https://www.nrc.gov/education-regulatory-research/research/state-of-the-art-reactor-consequence-analyses-soarca/frequently-asked-questions",
+      "origin_status": null,
+      "guest_confirmed_broken": null,
+      "rights_cleared": false
+    },
+    {
+      "upstream_host": "images.pubble.cloud",
+      "source_positions": 1,
+      "affected_posts": 1,
+      "source_slots": [
+        "292:2"
+      ],
+      "web_wrapper_error_positions": 0,
+      "web_wrapper_error_slots": [],
+      "sample_exact_source_url": "https://images.pubble.cloud/worker/jpg/quick/1920/3077598/96897487/content/2024/6/cf6d9b51-c16b-4938-800c-833b86ac5740",
+      "sample_candidate_catalog_url": null,
+      "origin_status": null,
+      "guest_confirmed_broken": null,
+      "rights_cleared": false
+    },
+    {
+      "upstream_host": "images.saymedia-content.com",
+      "source_positions": 1,
+      "affected_posts": 1,
+      "source_slots": [
+        "285:5"
+      ],
+      "web_wrapper_error_positions": 1,
+      "web_wrapper_error_slots": [
+        "285:5"
+      ],
+      "sample_exact_source_url": "https://images.saymedia-content.com/.image/ar_16:9,c_fill,cs_srgb,fl_progressive,q_auto:eco,w_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg",
+      "sample_candidate_catalog_url": "https://commons.wikimedia.org/wiki/File:Three_mile_island_062010.jpg",
+      "origin_status": null,
+      "guest_confirmed_broken": null,
+      "rights_cleared": false
+    },
+    {
+      "upstream_host": "images2.minutemediacdn.com",
+      "source_positions": 1,
+      "affected_posts": 1,
+      "source_slots": [
+        "283:5"
+      ],
+      "web_wrapper_error_positions": 0,
+      "web_wrapper_error_slots": [],
+      "sample_exact_source_url": "https://images2.minutemediacdn.com/image/upload/c_fill,w_720,ar_16:9,f_auto,q_auto,g_auto/shape/cover/sport/627134-wikimedia-iroquois-fire-66b8dccd06d18b8b1200a566c6d50b53.jpg",
+      "sample_candidate_catalog_url": "https://commons.wikimedia.org/wiki/File:Iroquois_Theatre_fire_-_DPLA_-_c9e2f3b69954059bcfebf35bf12d84b9.jpg",
+      "origin_status": null,
+      "guest_confirmed_broken": null,
+      "rights_cleared": false
+    },
+    {
+      "upstream_host": "img.connatix.com",
+      "source_positions": 1,
+      "affected_posts": 1,
+      "source_slots": [
+        "287:3"
+      ],
+      "web_wrapper_error_positions": 0,
+      "web_wrapper_error_slots": [],
+      "sample_exact_source_url": "https://img.connatix.com/ecf95169-f8cd-4cd5-8698-9bc54211f8e9/1_th.jpg",
+      "sample_candidate_catalog_url": "https://mymanatee.contentdm.oclc.org/digital/collection/p16681coll1/id/29937/",
+      "origin_status": null,
+      "guest_confirmed_broken": null,
+      "rights_cleared": false
+    },
+    {
+      "upstream_host": "indomgb.s3.amazonaws.com",
+      "source_positions": 1,
+      "affected_posts": 1,
+      "source_slots": [
+        "277:2"
+      ],
+      "web_wrapper_error_positions": 0,
+      "web_wrapper_error_slots": [],
+      "sample_exact_source_url": "https://indomgb.s3.amazonaws.com/wp-content/uploads/2025/10/29031840/gigantesca-cicatriz-en-el-acantilado-que-se-ID7X2VZ6AZGR5EAPSHH3IDCIUQ.jpg",
+      "sample_candidate_catalog_url": "https://commons.wikimedia.org/wiki/File:Lituya_Bay_rockslide_1.jpg",
+      "origin_status": null,
+      "guest_confirmed_broken": null,
+      "rights_cleared": false
+    },
+    {
+      "upstream_host": "k-static.appmobile.cn",
+      "source_positions": 1,
+      "affected_posts": 1,
+      "source_slots": [
+        "289:3"
+      ],
+      "web_wrapper_error_positions": 0,
+      "web_wrapper_error_slots": [],
+      "sample_exact_source_url": "https://k-static.appmobile.cn/uploads3/allimg/2603/15/1K1364K1-2.jpg",
+      "sample_candidate_catalog_url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nara-series/usn/USN-1120000/USN-1124794.html",
+      "origin_status": null,
+      "guest_confirmed_broken": null,
+      "rights_cleared": false
+    },
+    {
+      "upstream_host": "k.sinaimg.cn",
+      "source_positions": 1,
+      "affected_posts": 1,
+      "source_slots": [
+        "289:2"
+      ],
+      "web_wrapper_error_positions": 0,
+      "web_wrapper_error_slots": [],
+      "sample_exact_source_url": "https://k.sinaimg.cn/n/spider20191227/356/w640h516/20191227/d15a-imfiehq8368462.jpg/w700d1q75cms.jpg?by=cms_fixed_width",
+      "sample_candidate_catalog_url": "https://www.history.navy.mil/our-collections/photography/us-navy-ships/alphabetical-listing/f/uss-forrestal--cva-59-cv-59--0.html",
+      "origin_status": null,
+      "guest_confirmed_broken": null,
+      "rights_cleared": false
+    },
+    {
+      "upstream_host": "live.staticflickr.com",
+      "source_positions": 1,
+      "affected_posts": 1,
+      "source_slots": [
+        "285:0"
+      ],
+      "web_wrapper_error_positions": 0,
+      "web_wrapper_error_slots": [],
+      "sample_exact_source_url": "https://live.staticflickr.com/7278/7447166686_5d24dff6db_b.jpg",
+      "sample_candidate_catalog_url": null,
+      "origin_status": null,
+      "guest_confirmed_broken": null,
+      "rights_cleared": false
+    },
+    {
+      "upstream_host": "media.licdn.com",
+      "source_positions": 1,
+      "affected_posts": 1,
+      "source_slots": [
+        "279:5"
+      ],
+      "web_wrapper_error_positions": 0,
+      "web_wrapper_error_slots": [],
+      "sample_exact_source_url": "https://media.licdn.com/dms/image/v2/D4D12AQHmW14R-yIi1g/article-inline_image-shrink_1000_1488/B4DZctCqx_q4AM-/0/1748804514162?e=2147483647&v=beta&t=cK4Wg6FhyvLGIEHJU44N_Rj9uCSsywcjtMc_ZoQSgaA",
+      "sample_candidate_catalog_url": "https://commons.wikimedia.org/wiki/File:Cosmos_954_-_Recovery_002.jpg",
+      "origin_status": null,
+      "guest_confirmed_broken": null,
+      "rights_cleared": false
+    },
+    {
+      "upstream_host": "nationalcoastguardmuseum.org",
+      "source_positions": 1,
+      "affected_posts": 1,
+      "source_slots": [
+        "292:0"
+      ],
+      "web_wrapper_error_positions": 0,
+      "web_wrapper_error_slots": [],
+      "sample_exact_source_url": "https://nationalcoastguardmuseum.org/wp-content/uploads/2023/08/DF-SN-86-12843-header-image-900x675.jpeg",
+      "sample_candidate_catalog_url": "https://www.history.uscg.mil/Our-Collections/Photos/igphoto/2002603427/",
+      "origin_status": null,
+      "guest_confirmed_broken": null,
+      "rights_cleared": false
+    },
+    {
+      "upstream_host": "navalunderseamuseum.org",
+      "source_positions": 1,
+      "affected_posts": 1,
+      "source_slots": [
+        "367:4"
+      ],
+      "web_wrapper_error_positions": 0,
+      "web_wrapper_error_slots": [],
+      "sample_exact_source_url": "https://navalunderseamuseum.org/wp-content/uploads/2016/03/CURV-I-H-Bomb-Recovery-300x243.jpg",
+      "sample_candidate_catalog_url": "https://navalunderseamuseum.org/petrel-helmet/",
+      "origin_status": null,
+      "guest_confirmed_broken": null,
+      "rights_cleared": false
+    },
+    {
+      "upstream_host": "qmmuseum.army.mil",
+      "source_positions": 1,
+      "affected_posts": 1,
+      "source_slots": [
+        "278:3"
+      ],
+      "web_wrapper_error_positions": 0,
+      "web_wrapper_error_slots": [],
+      "sample_exact_source_url": "https://qmmuseum.army.mil/assets/img/aotm/2012/09_M1910_canteen_1.jpg",
+      "sample_candidate_catalog_url": "https://qmmuseum.army.mil/explore/artifact-of-the-month/2012.html",
+      "origin_status": null,
+      "guest_confirmed_broken": null,
+      "rights_cleared": false
+    },
+    {
+      "upstream_host": "quebecblogue.com",
+      "source_positions": 1,
+      "affected_posts": 1,
+      "source_slots": [
+        "276:3"
+      ],
+      "web_wrapper_error_positions": 1,
+      "web_wrapper_error_slots": [
+        "276:3"
+      ],
+      "sample_exact_source_url": "https://quebecblogue.com/files/2023/04/tragedie-pont-quebec.jpg",
+      "sample_candidate_catalog_url": null,
+      "origin_status": null,
+      "guest_confirmed_broken": null,
+      "rights_cleared": false
+    },
+    {
+      "upstream_host": "scitechdaily.com",
+      "source_positions": 1,
+      "affected_posts": 1,
+      "source_slots": [
+        "290:4"
+      ],
+      "web_wrapper_error_positions": 0,
+      "web_wrapper_error_slots": [],
+      "sample_exact_source_url": "https://scitechdaily.com/images/Camp-Century-Ice-Cores.jpg",
+      "sample_candidate_catalog_url": "https://www.campcentury.org/press/photos",
+      "origin_status": null,
+      "guest_confirmed_broken": null,
+      "rights_cleared": false
+    },
+    {
+      "upstream_host": "skywaydisaster.com",
+      "source_positions": 1,
+      "affected_posts": 1,
+      "source_slots": [
+        "287:2"
+      ],
+      "web_wrapper_error_positions": 0,
+      "web_wrapper_error_slots": [],
+      "sample_exact_source_url": "https://skywaydisaster.com/images/timeline2.jpg",
+      "sample_candidate_catalog_url": "https://www.ntsb.gov/investigations/Pages/DCA80AM050.aspx",
+      "origin_status": null,
+      "guest_confirmed_broken": null,
+      "rights_cleared": false
+    },
+    {
+      "upstream_host": "specials-images.forbesimg.com",
+      "source_positions": 1,
+      "affected_posts": 1,
+      "source_slots": [
+        "289:1"
+      ],
+      "web_wrapper_error_positions": 0,
+      "web_wrapper_error_slots": [],
+      "sample_exact_source_url": "https://specials-images.forbesimg.com/imageserve/69a2157d5ca34a424f6e4791/0x0.jpg",
+      "sample_candidate_catalog_url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nara-series/usn/USN-1120000/USN-1124794.html",
+      "origin_status": null,
+      "guest_confirmed_broken": null,
+      "rights_cleared": false
+    },
+    {
+      "upstream_host": "stadsarchief.rotterdam.nl",
+      "source_positions": 1,
+      "affected_posts": 1,
+      "source_slots": [
+        "292:1"
+      ],
+      "web_wrapper_error_positions": 0,
+      "web_wrapper_error_slots": [],
+      "sample_exact_source_url": "https://stadsarchief.rotterdam.nl/sites/default/files/styles/gallery_large/public/2025-04/hal-prinsendam-nl-rtsa_4121_24162-1-14.jpg?h=3e6ca723&itok=wjXwUo3w",
+      "sample_candidate_catalog_url": "https://stadsarchief.rotterdam.nl/holland-amerika-lijn",
+      "origin_status": null,
+      "guest_confirmed_broken": null,
+      "rights_cleared": false
+    },
+    {
+      "upstream_host": "static.ags.aer.ca",
+      "source_positions": 1,
+      "affected_posts": 1,
+      "source_slots": [
+        "431:4"
+      ],
+      "web_wrapper_error_positions": 0,
+      "web_wrapper_error_slots": [],
+      "sample_exact_source_url": "https://static.ags.aer.ca/files/styles/wysiwyg_image/azblob/image-content/figure-46-720px.jpg?itok=vVXzpUCQ",
+      "sample_candidate_catalog_url": "https://ags.aer.ca/our-science/turtle-mountain/turtle-mountain-studies-and-research",
+      "origin_status": null,
+      "guest_confirmed_broken": null,
+      "rights_cleared": false
+    },
+    {
+      "upstream_host": "static.thisdayinaviation.com",
+      "source_positions": 1,
+      "affected_posts": 1,
+      "source_slots": [
+        "292:5"
+      ],
+      "web_wrapper_error_positions": 0,
+      "web_wrapper_error_slots": [],
+      "sample_exact_source_url": "https://static.thisdayinaviation.com/wp-content/uploads/tdia/2020/10/Screen-Shot-2020-10-03-at-14.51.27.png",
+      "sample_candidate_catalog_url": null,
+      "origin_status": null,
+      "guest_confirmed_broken": null,
+      "rights_cleared": false
+    },
+    {
+      "upstream_host": "stpetecatalyst.com",
+      "source_positions": 1,
+      "affected_posts": 1,
+      "source_slots": [
+        "287:5"
+      ],
+      "web_wrapper_error_positions": 1,
+      "web_wrapper_error_slots": [
+        "287:5"
+      ],
+      "sample_exact_source_url": "https://stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+      "sample_candidate_catalog_url": "https://media.stpetecatalyst.com/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+      "origin_status": null,
+      "guest_confirmed_broken": null,
+      "rights_cleared": false
+    },
+    {
+      "upstream_host": "text-message.blogs.archives.gov",
+      "source_positions": 1,
+      "affected_posts": 1,
+      "source_slots": [
+        "291:0"
+      ],
+      "web_wrapper_error_positions": 0,
+      "web_wrapper_error_slots": [],
+      "sample_exact_source_url": "https://i0.wp.com/text-message.blogs.archives.gov/wp-content/uploads/sites/5/2016/05/teton_failing_fourth-scaled.jpg?ssl=1",
+      "sample_candidate_catalog_url": "https://text-message.blogs.archives.gov/2016/05/31/the-unforgettable-calamity-40th-anniversary-of-the-teton-dam-failure/",
+      "origin_status": null,
+      "guest_confirmed_broken": null,
+      "rights_cleared": false
+    },
+    {
+      "upstream_host": "unwritten-record.blogs.archives.gov",
+      "source_positions": 1,
+      "affected_posts": 1,
+      "source_slots": [
+        "278:5"
+      ],
+      "web_wrapper_error_positions": 0,
+      "web_wrapper_error_slots": [],
+      "sample_exact_source_url": "https://unwritten-record.blogs.archives.gov/wp-content/uploads/sites/6/2017/06/111-c-17240-scaled.jpg",
+      "sample_candidate_catalog_url": "https://unwritten-record.blogs.archives.gov/2017/06/16/lost-and-found-the-story-of-lady-be-good-and-her-crew/",
+      "origin_status": null,
+      "guest_confirmed_broken": null,
+      "rights_cleared": false
+    },
+    {
+      "upstream_host": "warfarehistorynetwork.com",
+      "source_positions": 1,
+      "affected_posts": 1,
+      "source_slots": [
+        "274:3"
+      ],
+      "web_wrapper_error_positions": 0,
+      "web_wrapper_error_slots": [],
+      "sample_exact_source_url": "https://warfarehistorynetwork.com/wp-content/uploads/W-Profile-4-HT-May10.jpg",
+      "sample_candidate_catalog_url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/NH-45000/NH-45641.html",
+      "origin_status": null,
+      "guest_confirmed_broken": null,
+      "rights_cleared": false
+    },
+    {
+      "upstream_host": "www-d.ntsb.gov",
+      "source_positions": 1,
+      "affected_posts": 1,
+      "source_slots": [
+        "258:1"
+      ],
+      "web_wrapper_error_positions": 0,
+      "web_wrapper_error_slots": [],
+      "sample_exact_source_url": "https://www-d.ntsb.gov/investigations/PublishingImages/80267-img.jpg",
+      "sample_candidate_catalog_url": "https://www.ntsb.gov/investigations/Pages/80267.aspx",
+      "origin_status": null,
+      "guest_confirmed_broken": null,
+      "rights_cleared": false
+    },
+    {
+      "upstream_host": "www.archimedespalimpsest.org",
+      "source_positions": 1,
+      "affected_posts": 1,
+      "source_slots": [
+        "268:4"
+      ],
+      "web_wrapper_error_positions": 0,
+      "web_wrapper_error_slots": [],
+      "sample_exact_source_url": "https://www.archimedespalimpsest.org/assets/img/imagecapture-capture2b.jpg",
+      "sample_candidate_catalog_url": "https://www.archimedespalimpsest.org/about/imaging/capture.php",
+      "origin_status": null,
+      "guest_confirmed_broken": null,
+      "rights_cleared": false
+    },
+    {
+      "upstream_host": "www.datosfreak.org",
+      "source_positions": 1,
+      "affected_posts": 1,
+      "source_slots": [
+        "277:0"
+      ],
+      "web_wrapper_error_positions": 0,
+      "web_wrapper_error_slots": [],
+      "sample_exact_source_url": "https://www.datosfreak.org/wp-content/uploads/2019/01/Tsunami-maremoto-Lituya-Alaska-1958-1.jpg",
+      "sample_candidate_catalog_url": "https://www.usgs.gov/media/images/lituya-bay-1958",
+      "origin_status": null,
+      "guest_confirmed_broken": null,
+      "rights_cleared": false
+    },
+    {
+      "upstream_host": "www.flmd.uscourts.gov",
+      "source_positions": 1,
+      "affected_posts": 1,
+      "source_slots": [
+        "287:4"
+      ],
+      "web_wrapper_error_positions": 0,
+      "web_wrapper_error_slots": [],
+      "sample_exact_source_url": "https://www.flmd.uscourts.gov/sites/flmd/files/images/figure-9-sunshine-skyway-bridge-3.jpg",
+      "sample_candidate_catalog_url": "https://www.flmd.uscourts.gov/node/913",
+      "origin_status": null,
+      "guest_confirmed_broken": null,
+      "rights_cleared": false
+    },
+    {
+      "upstream_host": "www.hawaiimagazine.com",
+      "source_positions": 1,
+      "affected_posts": 1,
+      "source_slots": [
+        "418:4"
+      ],
+      "web_wrapper_error_positions": 0,
+      "web_wrapper_error_slots": [],
+      "sample_exact_source_url": "https://www.hawaiimagazine.com/wp-content/uploads/2020/12/Tsunami1946NOAA2.jpg",
+      "sample_candidate_catalog_url": "https://prod-01-alb-www-noaa.woc.noaa.gov/noaa-collections/photo-library/pl23theb2705jpg",
+      "origin_status": null,
+      "guest_confirmed_broken": null,
+      "rights_cleared": false
+    },
+    {
+      "upstream_host": "www.ibiblio.org",
+      "source_positions": 1,
+      "affected_posts": 1,
+      "source_slots": [
+        "288:4"
+      ],
+      "web_wrapper_error_positions": 0,
+      "web_wrapper_error_slots": [],
+      "sample_exact_source_url": "https://www.ibiblio.org/hyperwar/OnlineLibrary/photos/images/h84000/h84822.jpg",
+      "sample_candidate_catalog_url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/NH-84000/NH-84822.html",
+      "origin_status": null,
+      "guest_confirmed_broken": null,
+      "rights_cleared": false
+    },
+    {
+      "upstream_host": "www.ladybegood.net",
+      "source_positions": 1,
+      "affected_posts": 1,
+      "source_slots": [
+        "278:4"
+      ],
+      "web_wrapper_error_positions": 0,
+      "web_wrapper_error_slots": [],
+      "sample_exact_source_url": "https://www.ladybegood.net/diaries/full/Toner_Diary2%20.jpg",
+      "sample_candidate_catalog_url": "https://www.ladybegood.net/diaries/full/Toner_Diary2%20.jpg",
+      "origin_status": null,
+      "guest_confirmed_broken": null,
+      "rights_cleared": false
+    },
+    {
+      "upstream_host": "www.navsource.net",
+      "source_positions": 1,
+      "affected_posts": 1,
+      "source_slots": [
+        "288:3"
+      ],
+      "web_wrapper_error_positions": 0,
+      "web_wrapper_error_slots": [],
+      "sample_exact_source_url": "https://www.navsource.net/archives/05/pix1/0531104.jpg",
+      "sample_candidate_catalog_url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/NH-84000/NH-84820.html",
+      "origin_status": null,
+      "guest_confirmed_broken": null,
+      "rights_cleared": false
+    },
+    {
+      "upstream_host": "www.popsci.com",
+      "source_positions": 1,
+      "affected_posts": 1,
+      "source_slots": [
+        "290:0"
+      ],
+      "web_wrapper_error_positions": 0,
+      "web_wrapper_error_slots": [],
+      "sample_exact_source_url": "https://www.popsci.com/wp-content/uploads/2024/11/campcentury_aerial_radar_lrg.jpg",
+      "sample_candidate_catalog_url": "https://commons.wikimedia.org/wiki/File:New_View_of_the_%E2%80%9CCity_Under_the_Ice%E2%80%9D_%28153616_-_aerial_radar_lrg%29.jpg",
+      "origin_status": null,
+      "guest_confirmed_broken": null,
+      "rights_cleared": false
+    },
+    {
+      "upstream_host": "www.rexburgonline.com",
+      "source_positions": 1,
+      "affected_posts": 1,
+      "source_slots": [
+        "291:4"
+      ],
+      "web_wrapper_error_positions": 0,
+      "web_wrapper_error_slots": [],
+      "sample_exact_source_url": "https://www.rexburgonline.com/wp-content/uploads/2016/05/fb-0053.jpg",
+      "sample_candidate_catalog_url": "https://www.rexburgonline.com/",
+      "origin_status": null,
+      "guest_confirmed_broken": null,
+      "rights_cleared": false
+    },
+    {
+      "upstream_host": "www.spaceacademy.net.au",
+      "source_positions": 1,
+      "affected_posts": 1,
+      "source_slots": [
+        "279:3"
+      ],
+      "web_wrapper_error_positions": 0,
+      "web_wrapper_error_slots": [],
+      "sample_exact_source_url": "https://www.spaceacademy.net.au/watch/debris/oml.jpg",
+      "sample_candidate_catalog_url": "https://commons.wikimedia.org/wiki/File:Cosmos_954_-_Recovery_002.jpg",
+      "origin_status": null,
+      "guest_confirmed_broken": null,
+      "rights_cleared": false
+    },
+    {
+      "upstream_host": "www.squawkpoint.com",
+      "source_positions": 1,
+      "affected_posts": 1,
+      "source_slots": [
+        "285:1"
+      ],
+      "web_wrapper_error_positions": 0,
+      "web_wrapper_error_slots": [],
+      "sample_exact_source_url": "https://i0.wp.com/www.squawkpoint.com/wp-content/uploads/2019/02/Three-Mile-Island-Control-Centre.jpg?ssl=1",
+      "sample_candidate_catalog_url": null,
+      "origin_status": null,
+      "guest_confirmed_broken": null,
+      "rights_cleared": false
+    },
+    {
+      "upstream_host": "www.travelserver.net",
+      "source_positions": 1,
+      "affected_posts": 1,
+      "source_slots": [
+        "292:4"
+      ],
+      "web_wrapper_error_positions": 0,
+      "web_wrapper_error_slots": [],
+      "sample_exact_source_url": "https://www.travelserver.net/travelpage/aspgallery/pictures/Ad_1981_12.jpg",
+      "sample_candidate_catalog_url": null,
+      "origin_status": null,
+      "guest_confirmed_broken": null,
+      "rights_cleared": false
+    },
+    {
+      "upstream_host": "www.usni.org",
+      "source_positions": 1,
+      "affected_posts": 1,
+      "source_slots": [
+        "288:5"
+      ],
+      "web_wrapper_error_positions": 0,
+      "web_wrapper_error_slots": [],
+      "sample_exact_source_url": "https://www.usni.org/sites/default/files/styles/hero_image/public/LWF-PRO-3-20%201_0.jpg?itok=ex2XHVlK",
+      "sample_candidate_catalog_url": "https://www.usni.org/magazines/proceedings/2020/march/chaos-devils-jaw-0",
+      "origin_status": null,
+      "guest_confirmed_broken": null,
+      "rights_cleared": false
+    },
+    {
+      "upstream_host": "www.vol.at",
+      "source_positions": 1,
+      "affected_posts": 1,
+      "source_slots": [
+        "290:3"
+      ],
+      "web_wrapper_error_positions": 0,
+      "web_wrapper_error_slots": [],
+      "sample_exact_source_url": "https://www.vol.at/2024/11/camp-century-plans.jpg",
+      "sample_candidate_catalog_url": "https://commons.wikimedia.org/wiki/File:Camp_Century_layout_plan.png",
+      "origin_status": null,
+      "guest_confirmed_broken": null,
+      "rights_cleared": false
+    },
+    {
+      "upstream_host": "www.warhistoryonline.com",
+      "source_positions": 1,
+      "affected_posts": 1,
+      "source_slots": [
+        "274:6"
+      ],
+      "web_wrapper_error_positions": 0,
+      "web_wrapper_error_slots": [],
+      "sample_exact_source_url": "https://www.warhistoryonline.com/wp-content/uploads/sites/64/2016/04/uss_tang_ss-306_rescues_airmen_off_truk_in_1944-640x432.jpg",
+      "sample_candidate_catalog_url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nara-series/80-g/80-G-220000/80-G-227989.html",
+      "origin_status": null,
+      "guest_confirmed_broken": null,
+      "rights_cleared": false
+    },
+    {
+      "upstream_host": "www.wttw.com",
+      "source_positions": 1,
+      "affected_posts": 1,
+      "source_slots": [
+        "283:4"
+      ],
+      "web_wrapper_error_positions": 0,
+      "web_wrapper_error_slots": [],
+      "sample_exact_source_url": "https://www.wttw.com/sites/default/files/csdd-investigators_02.jpg",
+      "sample_candidate_catalog_url": "https://www.wttw.com/chicago-stories/downtown-disasters/the-tragedy-of-the-iroquois-theater-fire",
+      "origin_status": null,
+      "guest_confirmed_broken": null,
+      "rights_cleared": false
+    }
+  ],
+  "web_retriever_warning_rows": [
+    {
+      "slot": "274:1",
+      "post_id": 274,
+      "post_url": "https://finalvestige.com/2026/08/19/twenty-four-feet-from-air-uss-tang/",
+      "original_exact_url": "https://www.history.navy.mil/content/history/nhhc/research/library/online-reading-room/title-list-alphabetically/u/united-states-submarine-losses/tang-ss-306/_jcr_content/body/media_asset_3/image.img.jpg/1485804525424.jpg",
+      "origin_host": "www.history.navy.mil",
+      "web_retriever_codes_not_origin_status": [
+        502
+      ],
+      "guest_status": null,
+      "visitor_broken": null,
+      "guest_wire_bytes": null,
+      "catalog_candidates": [
+        {
+          "catalog_url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nara-series/80-g/80-G-220000/80-g-227987-uss-tang--ss-306-.html",
+          "rights_observation": "https://www.history.navy.mil/about-us/instructions-and-forms/obtain-duplications-of-records-and-photos.html",
+          "conditional_960px": [
+            960,
+            1163
+          ],
+          "item_cleared": false,
+          "visual_identity_verified": false
+        }
+      ],
+      "release": "HOLD"
+    },
+    {
+      "slot": "274:2",
+      "post_id": 274,
+      "post_url": "https://finalvestige.com/2026/08/19/twenty-four-feet-from-air-uss-tang/",
+      "original_exact_url": "https://www.history.navy.mil/content/history/nhhc/browse-by-topic/exploration-and-innovation/navy-torpedoes/_jcr_content/body/media_asset_1279725910/image.img.jpg/1701176168705.jpg",
+      "origin_host": "www.history.navy.mil",
+      "web_retriever_codes_not_origin_status": [
+        502
+      ],
+      "guest_status": null,
+      "visitor_broken": null,
+      "guest_wire_bytes": null,
+      "catalog_candidates": [
+        {
+          "catalog_url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/NH-84000/NH-84498.html",
+          "rights_observation": "https://www.history.navy.mil/about-us/instructions-and-forms/obtain-duplications-of-records-and-photos.html",
+          "conditional_960px": [
+            960,
+            753
+          ],
+          "item_cleared": false,
+          "visual_identity_verified": false
+        }
+      ],
+      "release": "HOLD"
+    },
+    {
+      "slot": "274:4",
+      "post_id": 274,
+      "post_url": "https://finalvestige.com/2026/08/19/twenty-four-feet-from-air-uss-tang/",
+      "original_exact_url": "https://www.history.navy.mil/bin/imageDownload?image=%2Fcontent%2Fdam%2Fmuseums%2Fnmusn%2FPhotography%2FNARA+II%2F80-G%2F80-G-300000%2F80-G-344565.tif&rendition=cq5dam.web.1280.1280.jpeg",
+      "origin_host": "www.history.navy.mil",
+      "web_retriever_codes_not_origin_status": [
+        502
+      ],
+      "guest_status": null,
+      "visitor_broken": null,
+      "guest_wire_bytes": null,
+      "catalog_candidates": [
+        {
+          "catalog_url": "https://www.history.navy.mil/content/history/museums/nmusn/explore/photography/wwii/wwii-pacific/japanese-surrender/allied-prisoners-of-war/80-g-344565.html",
+          "rights_observation": "https://www.history.navy.mil/about-us/instructions-and-forms/obtain-duplications-of-records-and-photos.html",
+          "conditional_960px": [
+            960,
+            1271
+          ],
+          "item_cleared": false,
+          "visual_identity_verified": false
+        }
+      ],
+      "release": "HOLD"
+    },
+    {
+      "slot": "276:3",
+      "post_id": 276,
+      "post_url": "https://finalvestige.com/2026/08/19/add-no-more-load-quebec-bridge/",
+      "original_exact_url": "https://quebecblogue.com/files/2023/04/tragedie-pont-quebec.jpg",
+      "origin_host": "quebecblogue.com",
+      "web_retriever_codes_not_origin_status": [
+        520
+      ],
+      "guest_status": null,
+      "visitor_broken": null,
+      "guest_wire_bytes": null,
+      "catalog_candidates": [
+        {
+          "catalog_url": null,
+          "rights_observation": "quebecblogue.com photographer, original archival attribution and publishing rights unavailable; do not mirror or treat nearby archival scene as equivalent",
+          "conditional_960px": null,
+          "item_cleared": false,
+          "visual_identity_verified": false
+        }
+      ],
+      "release": "HOLD"
+    },
+    {
+      "slot": "280:0",
+      "post_id": 280,
+      "post_url": "https://finalvestige.com/2026/08/19/the-sledgehammers-broke-first-uss-pueblo/",
+      "original_exact_url": "https://www.history.navy.mil/content/history/museums/nmusn/explore/photography/ships-us/ships-usn-p/uss-pueblo-ager-2/428-gx-usn-1129207/_jcr_content/mediaitem/image.img.jpg/1504112093611.jpg",
+      "origin_host": "www.history.navy.mil",
+      "web_retriever_codes_not_origin_status": [
+        400
+      ],
+      "guest_status": null,
+      "visitor_broken": null,
+      "guest_wire_bytes": null,
+      "catalog_candidates": [
+        {
+          "catalog_url": "https://www.history.navy.mil/content/history/museums/nmusn/explore/photography/ships-us/ships-usn-p/uss-pueblo-ager-2/428-gx-usn-1129207.html",
+          "rights_observation": "PENDING_ITEM_LEVEL_RIGHTS_CONFIRMATION",
+          "conditional_960px": null,
+          "item_cleared": false,
+          "visual_identity_verified": false
+        }
+      ],
+      "release": "HOLD"
+    },
+    {
+      "slot": "280:1",
+      "post_id": 280,
+      "post_url": "https://finalvestige.com/2026/08/19/the-sledgehammers-broke-first-uss-pueblo/",
+      "original_exact_url": "https://www.history.navy.mil/content/history/nhhc/research/histories/ship-histories/danfs/p/pueblo-iii/_jcr_content/body/media_asset_1086930325/image.img.jpg/1514467381634.jpg",
+      "origin_host": "www.history.navy.mil",
+      "web_retriever_codes_not_origin_status": [
+        400
+      ],
+      "guest_status": null,
+      "visitor_broken": null,
+      "guest_wire_bytes": null,
+      "catalog_candidates": [
+        {
+          "catalog_url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/NH-75000/NH-75559.html",
+          "rights_observation": "PENDING_ITEM_LEVEL_RIGHTS_CONFIRMATION",
+          "conditional_960px": null,
+          "item_cleared": false,
+          "visual_identity_verified": false
+        }
+      ],
+      "release": "HOLD"
+    },
+    {
+      "slot": "280:2",
+      "post_id": 280,
+      "post_url": "https://finalvestige.com/2026/08/19/the-sledgehammers-broke-first-uss-pueblo/",
+      "original_exact_url": "https://www.history.navy.mil/bin/imageDownload?image=%2Fcontent%2Fdam%2Fnhhc%2Four-collections%2Fphotography%2Fimages%2FNH+75000%2FNH+75561&rendition=cq5dam.web.1280.1280.jpeg",
+      "origin_host": "www.history.navy.mil",
+      "web_retriever_codes_not_origin_status": [
+        400
+      ],
+      "guest_status": null,
+      "visitor_broken": null,
+      "guest_wire_bytes": null,
+      "catalog_candidates": [
+        {
+          "catalog_url": "https://www.history.navy.mil/content/history/nhhc/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/NH-75000/NH-75561.html",
+          "rights_observation": "PENDING_ITEM_LEVEL_RIGHTS_CONFIRMATION",
+          "conditional_960px": null,
+          "item_cleared": false,
+          "visual_identity_verified": false
+        }
+      ],
+      "release": "HOLD"
+    },
+    {
+      "slot": "280:3",
+      "post_id": 280,
+      "post_url": "https://finalvestige.com/2026/08/19/the-sledgehammers-broke-first-uss-pueblo/",
+      "original_exact_url": "https://www.history.navy.mil/content/history/nhhc/our-collections/photography/numerical-list-of-images/nara-series/80-g-k/80-G-K-60000/K-64683/_jcr_content/mediaitem/image.img.jpg/1459314791691.jpg",
+      "origin_host": "www.history.navy.mil",
+      "web_retriever_codes_not_origin_status": [
+        400
+      ],
+      "guest_status": null,
+      "visitor_broken": null,
+      "guest_wire_bytes": null,
+      "catalog_candidates": [
+        {
+          "catalog_url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nara-series/80-g-k/80-G-K-60000/K-64683.html",
+          "rights_observation": "PENDING_ITEM_LEVEL_RIGHTS_CONFIRMATION",
+          "conditional_960px": null,
+          "item_cleared": false,
+          "visual_identity_verified": false
+        }
+      ],
+      "release": "HOLD"
+    },
+    {
+      "slot": "280:5",
+      "post_id": 280,
+      "post_url": "https://finalvestige.com/2026/08/19/the-sledgehammers-broke-first-uss-pueblo/",
+      "original_exact_url": "https://www.history.navy.mil/content/history/nhhc/our-collections/photography/numerical-list-of-images/nara-series/80-g-k/80-G-K-60000/K-64728/_jcr_content/mediaitem/image.img.jpg/1424360116159.jpg",
+      "origin_host": "www.history.navy.mil",
+      "web_retriever_codes_not_origin_status": [
+        400
+      ],
+      "guest_status": null,
+      "visitor_broken": null,
+      "guest_wire_bytes": null,
+      "catalog_candidates": [
+        {
+          "catalog_url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nara-series/80-g-k/80-G-K-60000/K-64728.html",
+          "rights_observation": "PENDING_ITEM_LEVEL_RIGHTS_CONFIRMATION",
+          "conditional_960px": null,
+          "item_cleared": false,
+          "visual_identity_verified": false
+        }
+      ],
+      "release": "HOLD"
+    },
+    {
+      "slot": "285:2",
+      "post_id": 285,
+      "post_url": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+      "original_exact_url": "https://blog.ucsusa.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+      "origin_host": "blog.ucsusa.org",
+      "web_retriever_codes_not_origin_status": [
+        500
+      ],
+      "guest_status": null,
+      "visitor_broken": null,
+      "guest_wire_bytes": null,
+      "catalog_candidates": [
+        {
+          "catalog_url": "https://blog.ucs.org/wp-content/uploads/2022/10/DBD-42-Figure-4-tmi-panel.jpg",
+          "rights_observation": "UNKNOWN",
+          "conditional_960px": null,
+          "item_cleared": false,
+          "visual_identity_verified": false
+        }
+      ],
+      "release": "HOLD"
+    },
+    {
+      "slot": "285:5",
+      "post_id": 285,
+      "post_url": "https://finalvestige.com/2026/08/19/the-light-said-closed-three-mile-island/",
+      "original_exact_url": "https://images.saymedia-content.com/.image/ar_16:9,c_fill,cs_srgb,fl_progressive,q_auto:eco,w_1200/MTg5ODU1MTM1NjYzNDAwNjM2/the-china-syndrome-blockbuster-movie-becomes-eerie-prophecy.jpg",
+      "origin_host": "images.saymedia-content.com",
+      "web_retriever_codes_not_origin_status": [
+        404
+      ],
+      "guest_status": null,
+      "visitor_broken": null,
+      "guest_wire_bytes": null,
+      "catalog_candidates": [
+        {
+          "catalog_url": "https://commons.wikimedia.org/wiki/File:Three_mile_island_062010.jpg",
+          "rights_observation": "PD_SELF",
+          "conditional_960px": [
+            819,
+            614
+          ],
+          "item_cleared": false,
+          "visual_identity_verified": false
+        }
+      ],
+      "release": "HOLD"
+    },
+    {
+      "slot": "287:5",
+      "post_id": 287,
+      "post_url": "https://finalvestige.com/2026/08/19/the-warning-was-a-man-waving-sunshine-skyway/",
+      "original_exact_url": "https://stpetecatalyst.com/wp-content/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+      "origin_host": "stpetecatalyst.com",
+      "web_retriever_codes_not_origin_status": [
+        404
+      ],
+      "guest_status": null,
+      "visitor_broken": null,
+      "guest_wire_bytes": null,
+      "catalog_candidates": [
+        {
+          "catalog_url": "https://media.stpetecatalyst.com/uploads/2020/04/Skyway-Bridge-documentary.jpg",
+          "rights_observation": "RIGHTS_UNVERIFIED",
+          "conditional_960px": null,
+          "item_cleared": false,
+          "visual_identity_verified": false
+        }
+      ],
+      "release": "HOLD"
+    },
+    {
+      "slot": "288:0",
+      "post_id": 288,
+      "post_url": "https://finalvestige.com/2026/08/19/the-bearing-was-right-honda-point/",
+      "original_exact_url": "https://www.history.navy.mil/content/history/nhhc/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/NH-69000/NH-69586/_jcr_content/mediaitem/image.img.jpg/1438378291110.jpg",
+      "origin_host": "www.history.navy.mil",
+      "web_retriever_codes_not_origin_status": [
+        502
+      ],
+      "guest_status": null,
+      "visitor_broken": null,
+      "guest_wire_bytes": null,
+      "catalog_candidates": [
+        {
+          "catalog_url": "https://www.history.navy.mil/content/history/nhhc/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/NH-69000/NH-69586.html",
+          "rights_observation": "COURTESY_PRIVATE_COLLECTION_VERIFY_ITEM_RIGHTS",
+          "conditional_960px": null,
+          "item_cleared": false,
+          "visual_identity_verified": false
+        }
+      ],
+      "release": "HOLD"
+    },
+    {
+      "slot": "288:2",
+      "post_id": 288,
+      "post_url": "https://finalvestige.com/2026/08/19/the-bearing-was-right-honda-point/",
+      "original_exact_url": "https://www.history.navy.mil/content/history/nhhc/our-collections/photography/technology/communications/radio/ug-21--us-naval-california-radio-station-collection/mare-island-naval-radio-station/ug-21-01-02-mare-island-naval-radio/jcr%3Acontent/mediaitem/image.img.jpg/1564510769845.jpg",
+      "origin_host": "www.history.navy.mil",
+      "web_retriever_codes_not_origin_status": [
+        502
+      ],
+      "guest_status": null,
+      "visitor_broken": null,
+      "guest_wire_bytes": null,
+      "catalog_candidates": [],
+      "release": "HOLD"
+    },
+    {
+      "slot": "289:4",
+      "post_id": 289,
+      "post_url": "https://finalvestige.com/2026/08/19/they-thought-they-had-ten-minutes-forrestal/",
+      "original_exact_url": "https://media.defense.gov/2021/Dec/04/2002903623/1460/1280/0/210811-N-SG189-1105.JPG",
+      "origin_host": "media.defense.gov",
+      "web_retriever_codes_not_origin_status": [
+        403
+      ],
+      "guest_status": null,
+      "visitor_broken": null,
+      "guest_wire_bytes": null,
+      "catalog_candidates": [
+        {
+          "catalog_url": "https://www.dvidshub.net/image/6947585/farrier-firefighting-school",
+          "rights_observation": "DVIDS identifies J. Keith Wilson US Navy released public-domain photograph with DVIDS copyright/use restrictions. Rights clearance for caching remains HOLD.",
+          "conditional_960px": [
+            960,
+            639
+          ],
+          "item_cleared": false,
+          "visual_identity_verified": false
+        }
+      ],
+      "release": "HOLD"
+    },
+    {
+      "slot": "370:0",
+      "post_id": 370,
+      "post_url": "https://finalvestige.com/2026/08/19/the-lines-were-in-the-fire-west-loch/",
+      "original_exact_url": "https://www.history.navy.mil/bin/imageDownload?image=%2Fcontent%2Fdam%2Fnhhc%2Four-collections%2Fphotography%2Fimages%2F80-G-270000%2F80-G-276907&rendition=cq5dam.web.1280.1280.jpeg",
+      "origin_host": "www.history.navy.mil",
+      "web_retriever_codes_not_origin_status": [
+        502
+      ],
+      "guest_status": null,
+      "visitor_broken": null,
+      "guest_wire_bytes": null,
+      "catalog_candidates": [
+        {
+          "catalog_url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nara-series/80-g/80-G-270000/80-G-276907.html",
+          "rights_observation": "https://www.history.navy.mil/about-us/instructions-and-forms/obtain-duplications-of-records-and-photos.html",
+          "conditional_960px": [
+            960,
+            1007
+          ],
+          "item_cleared": false,
+          "visual_identity_verified": false
+        }
+      ],
+      "release": "HOLD"
+    },
+    {
+      "slot": "370:3",
+      "post_id": 370,
+      "post_url": "https://finalvestige.com/2026/08/19/the-lines-were-in-the-fire-west-loch/",
+      "original_exact_url": "https://www.history.navy.mil/bin/imageDownload?image=%2Fcontent%2Fdam%2Fnhhc%2Four-collections%2Fphotography%2Fimages%2F80-G-270000%2F80-G-276940&rendition=cq5dam.web.1280.1280.jpeg",
+      "origin_host": "www.history.navy.mil",
+      "web_retriever_codes_not_origin_status": [
+        502
+      ],
+      "guest_status": null,
+      "visitor_broken": null,
+      "guest_wire_bytes": null,
+      "catalog_candidates": [
+        {
+          "catalog_url": "https://www.history.navy.mil/our-collections/photography/numerical-list-of-images/nara-series/80-g/80-G-270000/80-G-276940.html",
+          "rights_observation": "https://www.history.navy.mil/about-us/instructions-and-forms/obtain-duplications-of-records-and-photos.html",
+          "conditional_960px": [
+            960,
+            768
+          ],
+          "item_cleared": false,
+          "visual_identity_verified": false
+        }
+      ],
+      "release": "HOLD"
+    },
+    {
+      "slot": "407:1",
+      "post_id": 407,
+      "post_url": "https://finalvestige.com/2026/08/20/the-lake-wasnt-there-yesterday-hebgen/",
+      "original_exact_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/img7535.jpg",
+      "origin_host": "d9-wret.s3.us-west-2.amazonaws.com",
+      "web_retriever_codes_not_origin_status": [
+        400
+      ],
+      "guest_status": null,
+      "visitor_broken": null,
+      "guest_wire_bytes": null,
+      "catalog_candidates": [
+        {
+          "catalog_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/thumbnails/image/img7535.jpg",
+          "rights_observation": "USGS_PUBLIC_DOMAIN_CATALOG",
+          "conditional_960px": null,
+          "item_cleared": false,
+          "visual_identity_verified": false
+        }
+      ],
+      "release": "HOLD"
+    },
+    {
+      "slot": "418:1",
+      "post_id": 418,
+      "post_url": "https://finalvestige.com/2026/08/20/the-lighthouse-was-gone-at-dawn-1946-tsunami/",
+      "original_exact_url": "https://media.defense.gov/2021/Mar/30/2002610812/1920/1080/0/210330-G-DE713-0002.JPG",
+      "origin_host": "media.defense.gov",
+      "web_retriever_codes_not_origin_status": [
+        403
+      ],
+      "guest_status": null,
+      "visitor_broken": null,
+      "guest_wire_bytes": null,
+      "catalog_candidates": [
+        {
+          "catalog_url": "https://www.history.uscg.mil/Our-Collections/Photos/igphoto/2002905913/",
+          "rights_observation": "USCG_PUBLIC_DOMAIN_RELEASE_CATALOG",
+          "conditional_960px": null,
+          "item_cleared": false,
+          "visual_identity_verified": false
+        },
+        {
+          "catalog_url": "https://www.history.uscg.mil/Our-Collections/Photos/igphoto/2002905913/",
+          "rights_observation": "USCG_ITEM_ATTRIBUTION_USE_LIMITS_REVIEW",
+          "conditional_960px": null,
+          "item_cleared": false,
+          "visual_identity_verified": false
+        }
+      ],
+      "release": "HOLD"
+    },
+    {
+      "slot": "418:2",
+      "post_id": 418,
+      "post_url": "https://finalvestige.com/2026/08/20/the-lighthouse-was-gone-at-dawn-1946-tsunami/",
+      "original_exact_url": "https://www.history.uscg.mil/Portals/6/5_%20Scotch_Cap_debris2_1946.jpg",
+      "origin_host": "www.history.uscg.mil",
+      "web_retriever_codes_not_origin_status": [
+        403
+      ],
+      "guest_status": null,
+      "visitor_broken": null,
+      "guest_wire_bytes": null,
+      "catalog_candidates": [
+        {
+          "catalog_url": "https://www.lighthousefriends.com/Scotch_Cap_debris2_1946.jpg",
+          "rights_observation": "RIGHTS_UNVERIFIED",
+          "conditional_960px": null,
+          "item_cleared": false,
+          "visual_identity_verified": false
+        },
+        {
+          "catalog_url": "https://www.history.uscg.mil/Research/THE-LONG-BLUE-LINE/Article/2866442/the-long-blue-line-standing-a-deadly-watch-75-years-agofinal-hours-of-scotch-ca/",
+          "rights_observation": "USCG_ITEM_ATTRIBUTION_USE_LIMITS_REVIEW",
+          "conditional_960px": null,
+          "item_cleared": false,
+          "visual_identity_verified": false
+        }
+      ],
+      "release": "HOLD"
+    },
+    {
+      "slot": "432:0",
+      "post_id": 432,
+      "post_url": "https://finalvestige.com/2026/08/20/they-buried-the-dead-apart-okeechobee-1928/",
+      "original_exact_url": "https://www.floridamemory.com/fpc/prints/pr04493.jpg",
+      "origin_host": "www.floridamemory.com",
+      "web_retriever_codes_not_origin_status": [
+        500
+      ],
+      "guest_status": null,
+      "visitor_broken": null,
+      "guest_wire_bytes": null,
+      "catalog_candidates": [
+        {
+          "catalog_url": "https://floridamemory.com/items/show/4144",
+          "rights_observation": "ITEM_RIGHTS_NOT_ESTABLISHED",
+          "conditional_960px": null,
+          "item_cleared": false,
+          "visual_identity_verified": false
+        }
+      ],
+      "release": "HOLD"
+    },
+    {
+      "slot": "432:1",
+      "post_id": 432,
+      "post_url": "https://finalvestige.com/2026/08/20/they-buried-the-dead-apart-okeechobee-1928/",
+      "original_exact_url": "https://www.floridamemory.com/fpc/reference/rc17068.jpg",
+      "origin_host": "www.floridamemory.com",
+      "web_retriever_codes_not_origin_status": [
+        500
+      ],
+      "guest_status": null,
+      "visitor_broken": null,
+      "guest_wire_bytes": null,
+      "catalog_candidates": [
+        {
+          "catalog_url": "https://floridamemory.com/items/show/38362",
+          "rights_observation": "ITEM_RIGHTS_NOT_ESTABLISHED",
+          "conditional_960px": null,
+          "item_cleared": false,
+          "visual_identity_verified": false
+        }
+      ],
+      "release": "HOLD"
+    },
+    {
+      "slot": "432:2",
+      "post_id": 432,
+      "post_url": "https://finalvestige.com/2026/08/20/they-buried-the-dead-apart-okeechobee-1928/",
+      "original_exact_url": "https://www.floridamemory.com/fpc/reference/rc10673.jpg",
+      "origin_host": "www.floridamemory.com",
+      "web_retriever_codes_not_origin_status": [
+        500
+      ],
+      "guest_status": null,
+      "visitor_broken": null,
+      "guest_wire_bytes": null,
+      "catalog_candidates": [
+        {
+          "catalog_url": "https://floridamemory.com/items/show/33289",
+          "rights_observation": "ITEM_RIGHTS_NOT_ESTABLISHED",
+          "conditional_960px": null,
+          "item_cleared": false,
+          "visual_identity_verified": false
+        }
+      ],
+      "release": "HOLD"
+    },
+    {
+      "slot": "432:3",
+      "post_id": 432,
+      "post_url": "https://finalvestige.com/2026/08/20/they-buried-the-dead-apart-okeechobee-1928/",
+      "original_exact_url": "https://www.floridamemory.com/fpc/general/n031889.jpg",
+      "origin_host": "www.floridamemory.com",
+      "web_retriever_codes_not_origin_status": [
+        500
+      ],
+      "guest_status": null,
+      "visitor_broken": null,
+      "guest_wire_bytes": null,
+      "catalog_candidates": [
+        {
+          "catalog_url": "https://floridamemory.com/items/show/141398",
+          "rights_observation": "ITEM_RIGHTS_NOT_ESTABLISHED",
+          "conditional_960px": null,
+          "item_cleared": false,
+          "visual_identity_verified": false
+        }
+      ],
+      "release": "HOLD"
+    },
+    {
+      "slot": "432:4",
+      "post_id": 432,
+      "post_url": "https://finalvestige.com/2026/08/20/they-buried-the-dead-apart-okeechobee-1928/",
+      "original_exact_url": "https://www.floridamemory.com/fpc/reference/rc04344.jpg",
+      "origin_host": "www.floridamemory.com",
+      "web_retriever_codes_not_origin_status": [
+        500
+      ],
+      "guest_status": null,
+      "visitor_broken": null,
+      "guest_wire_bytes": null,
+      "catalog_candidates": [
+        {
+          "catalog_url": "https://floridamemory.com/items/show/27848",
+          "rights_observation": "ITEM_RIGHTS_NOT_ESTABLISHED",
+          "conditional_960px": null,
+          "item_cleared": false,
+          "visual_identity_verified": false
+        }
+      ],
+      "release": "HOLD"
+    },
+    {
+      "slot": "432:5",
+      "post_id": 432,
+      "post_url": "https://finalvestige.com/2026/08/20/they-buried-the-dead-apart-okeechobee-1928/",
+      "original_exact_url": "https://www.floridamemory.com/fpc/reference/rc07668.jpg",
+      "origin_host": "www.floridamemory.com",
+      "web_retriever_codes_not_origin_status": [
+        500
+      ],
+      "guest_status": null,
+      "visitor_broken": null,
+      "guest_wire_bytes": null,
+      "catalog_candidates": [
+        {
+          "catalog_url": "https://floridamemory.com/items/show/30741",
+          "rights_observation": "ITEM_RIGHTS_NOT_ESTABLISHED",
+          "conditional_960px": null,
+          "item_cleared": false,
+          "visual_identity_verified": false
+        }
+      ],
+      "release": "HOLD"
+    },
+    {
+      "slot": "432:6",
+      "post_id": 432,
+      "post_url": "https://finalvestige.com/2026/08/20/they-buried-the-dead-apart-okeechobee-1928/",
+      "original_exact_url": "https://www.floridamemory.com/fpc/msf/MSF-PB11548-001.jpg",
+      "origin_host": "www.floridamemory.com",
+      "web_retriever_codes_not_origin_status": [
+        500
+      ],
+      "guest_status": null,
+      "visitor_broken": null,
+      "guest_wire_bytes": null,
+      "catalog_candidates": [
+        {
+          "catalog_url": "https://floridamemory.com/items/show/340182",
+          "rights_observation": "ITEM_RIGHTS_NOT_ESTABLISHED",
+          "conditional_960px": null,
+          "item_cleared": false,
+          "visual_identity_verified": false
+        }
+      ],
+      "release": "HOLD"
+    }
+  ],
+  "release": {
+    "download": false,
+    "cache": false,
+    "wordpress_write": false,
+    "homepage_change": false,
+    "deploy": false,
+    "spend": false
+  }
+}
