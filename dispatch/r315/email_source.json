@@ -1,0 +1,112 @@
+{
+  "id": "dispatch-03-r315-review-only",
+  "status": "OPTIONAL_NOT_ADOPTED_HOLD_UNSENT_HOLD_MERCHANT",
+  "subject": "What can twelve minutes actually prove?",
+  "preheader": "Zen12's audio format is clear. The claims about its results need a closer look.",
+  "brand": "Final Vestige Studios — The Dispatch",
+  "issue": 3,
+  "kind": "commercial-review-pending",
+  "editorial_conclusion": "Specific product features can be documented; seller's claimed equivalence and mental outcomes have not been independently substantiated for this product.",
+  "blocks": [
+    {
+      "type": "p",
+      "text": "Twelve minutes is a manageable amount of time. It is also a measurement of duration—not a measurement of results."
+    },
+    {
+      "type": "p",
+      "text": "When we examine an old eyewitness account at Final Vestige, we separate what a document says from what it can prove. The same habit matters when a product promises to change how your mind works."
+    },
+    {
+      "type": "p",
+      "text": "Consider Zen12. The seller describes twelve progression levels, four listening styles for each level, and a complete library of forty-eight MP3s. Sessions last twelve minutes. Those are useful details if you prefer guided listening, nature sounds, music or white noise. They tell you what the program is designed to provide."
+    },
+    {
+      "type": "p",
+      "text": "The seller makes a much larger claim, too: that one twelve-minute session delivers the benefits of an hour's meditation. A product description isn't a product-specific controlled comparison. We have not verified independent evidence establishing that equivalence, or any guaranteed gains in attention, health or creativity from this particular recording."
+    },
+    {
+      "type": "p",
+      "text": "The U.S. National Center for Complementary and Integrative Health discusses research on meditation and mindfulness as broad practices. The quality of evidence and outcomes vary. Research on meditation generally cannot automatically prove that a commercial audio package has the benefits its seller advertises."
+    },
+    {
+      "type": "h2",
+      "text": "Three questions before paying"
+    },
+    {
+      "type": "p",
+      "text": "First, what are you buying? The twelve levels and four listening formats are more concrete than a promise to transform your mind. Ask which tracks you would actually use."
+    },
+    {
+      "type": "p",
+      "text": "Second, what would count as an improvement? A calm twelve-minute break, a better routine, and a measurable change in your work are three different outcomes. Decide which matters before treating a persuasive headline as evidence."
+    },
+    {
+      "type": "p",
+      "text": "Third, what are the real terms today? Check the actual checkout, listening requirements, access conditions and refund policy at the time of purchase. A price or guarantee seen in an old promotion isn't a lasting promise."
+    },
+    {
+      "type": "p",
+      "text": "You don't need to buy anything to begin. The free 52-page Seven Day Focus Fieldbook supplied through our existing welcome message includes a twelve-minute starting routine and a log. Using it can show whether a short practice fits your schedule; it cannot prove the efficacy of Zen12 or any other paid audio."
+    },
+    {
+      "type": "p",
+      "text": "We're preparing an independent Zen12 guide that will put the seller's specifications next to the unanswered questions. It is not yet a live destination, and no commercial recommendation is authorized for email."
+    },
+    {
+      "type": "cta",
+      "text": "Read the independent Zen12 evaluation — currently unavailable; no active link"
+    },
+    {
+      "type": "disclosure",
+      "text": "Commercial disclosure: If you eventually purchase through a qualifying link in the evaluation guide, Final Vestige may earn a commission. No such link is active in this draft."
+    },
+    {
+      "type": "p",
+      "text": "The useful starting point is still the same: find out what the evidence says, what it doesn't, and what you'd need to know before spending money."
+    }
+  ],
+  "sources": [
+    {
+      "label": "Official Zen12 product description (seller statements; not independent testing)",
+      "url": "https://zen12.com/"
+    },
+    {
+      "label": "NIH NCCIH — Meditation and Mindfulness: Effectiveness and Safety",
+      "url": "https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety"
+    },
+    {
+      "label": "FTC — Health Products Compliance Guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/health-products-compliance-guidance"
+    }
+  ],
+  "recipient_rights": {
+    "subscriber_email_eligible_verified": false,
+    "welcome_received_verified": false,
+    "valid_fv_postal_address_verified": false,
+    "unsubscribe_in_received_jetpack_verified": false,
+    "native_jetpack_preview_verified": false,
+    "founder_final_campaign_approval": false
+  },
+  "merchant_rights": {
+    "fv_account_accepted_verified": false,
+    "email_promotion_permission_verified": false,
+    "issued_earning_link_verified": false,
+    "independent_guide_live_verified": false,
+    "approved_affiliate_creative_verified": false,
+    "current_checkout_refund_terms_verified": false
+  },
+  "campaign": {
+    "editorial_issues": [
+      1,
+      2,
+      4,
+      6
+    ],
+    "offer_issues": [
+      3,
+      5
+    ],
+    "send_authorized": false,
+    "post_publish_authorized": false
+  }
+}
